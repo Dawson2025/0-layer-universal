@@ -359,3 +359,36 @@ Following https://byuidatascience.github.io/DS250-Course-Draft/Setup/git_github_
 **Documentation**: Complete and comprehensive  
 **Status**: ✅ Ready for DS 250 coursework!
 
+---
+
+## Follow-up Session: AI Context Separation & Repo Ownership Update (Nov 11, 2025 – Evening)
+
+### Goals
+1. Eliminate every AI artifact from the public DS250 repository.
+2. Create personal private repositories for universal and project-specific context backups.
+3. Document the new “school wrapper” pattern so future workspaces stay compliant.
+
+### Actions Completed
+- **Wrapper migration**: `pac20026_fall2025/` now lives in `/home/dawson/code/school-pac20026_fall2025/` next to a private `0_context/` and `.ai_workspace`.
+- **AI traces removed**: Deleted `0_context/` + `0_CONTEXT_COPY_COMPLETE.md` from the public repo; added the ignore rules to `.git/info/exclude` so they are enforced locally but invisible on GitHub.
+- **Private repos stood up**:
+  - `Dawson2025/0-universal-context` (tracks `/home/dawson/code/0_ai_context`)
+  - `Dawson2025/1-project-context-pac20026_fall2025` (tracks `/home/dawson/code/school-pac20026_fall2025/0_context`)
+  - Both repos received full history plus add/remove test commits to prove push/pull works.
+- **Documentation refreshed**:
+  - Workspace README lists all three repos (public + two private).
+  - `.ai_workspace` records current ownership.
+  - `MASTER_DOCUMENTATION_INDEX.md` gained the “School Wrapper Pattern Standardized” entry describing structure/ownership expectations.
+- **Quarto verified**: `quarto preview --no-browser --port 7777` ran from the relocated public repo, confirming the move did not break rendering.
+
+### Org Repo Cleanup Attempt
+- Tried deleting `byui-math-dept/1-project-context-pac20026_fall2025` via the GitHub REST API.
+- Response: `403 Organization members cannot delete repositories.` A byui-math-dept org admin must remove it manually in the GitHub UI to avoid confusion.
+
+### Push Status
+- Public repo: still on `byui-math-dept/pac20026_fall2025` with `PUBLISHING_COMPLETE.md` and `SETUP_COMPLETE.md` staged for the next commit.
+- Universal context: clean on `Dawson2025/0-universal-context` (tracking `main`).
+- Project context: clean on `Dawson2025/1-project-context-pac20026_fall2025` (tracking `main`).
+- Credential helper unchanged; pushes continue to work without prompts.
+
+**Result**: Public repo stays clean, AI documentation lives in private Dawson-owned repositories, and the wrapper pattern is now codified for future DS250 workspaces. Only remaining action is for an org admin to delete the legacy byui-math-dept project-context repo.
