@@ -66,7 +66,7 @@ This master index provides a comprehensive overview of all documentation organiz
 
 - Wrapper directories named `school-<project>` carry:
   - Public repo (e.g., `pac20026_fall2025/` → `byui-math-dept/pac20026_fall2025`)
-  - Private project context repo (`0_context/` → `byui-math-dept/1-project-context-pac20026_fall2025`)
+  - Private project context repo (`0_context/` → `Dawson2025/1-project-context-pac20026_fall2025`)
   - Workspace metadata (`.ai_workspace`) + README describing flow
 - Universal context canonical location: `/home/dawson/code/0_ai_context` (repo `Dawson2025/0-universal-context`)
 - Public repos must exclude every AI artifact; all AI docs live inside private context repos
