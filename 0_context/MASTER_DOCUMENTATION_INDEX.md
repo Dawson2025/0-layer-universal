@@ -62,6 +62,16 @@ This master index provides a comprehensive overview of all documentation organiz
 
 **Purpose**: Consolidate universal, reusable documentation that applies to ANY project, making the 0_ai_context directory the single source of truth for universal AI agent protocols.
 
+## 🆕 SCHOOL WRAPPER PATTERN STANDARDIZED - November 11, 2025
+
+- Wrapper directories named `school-<project>` carry:
+  - Public repo (e.g., `pac20026_fall2025/` → `byui-math-dept/pac20026_fall2025`)
+  - Private project context repo (`0_context/` → `byui-math-dept/1-project-context-pac20026_fall2025`)
+  - Workspace metadata (`.ai_workspace`) + README describing flow
+- Universal context canonical location: `/home/dawson/code/0_ai_context` (repo `Dawson2025/0-universal-context`)
+- Public repos must exclude every AI artifact; all AI docs live inside private context repos
+- This wrapper + dual-private-repo structure is now the baseline DS250 school workspace template
+
 ## 🗂️ Directory Structure Overview
 
 ```
