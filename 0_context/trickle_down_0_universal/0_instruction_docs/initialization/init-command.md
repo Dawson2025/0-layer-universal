@@ -124,12 +124,12 @@ Session Goals: [based on focus area or ask user]
 - Context window management
 
 **Critical Terminal Tool Rules**:
-- **MANDATORY**: Read `UNIVERSAL_AGENT_TERMINAL_PROTOCOL.md` for complete terminal execution protocol
-- Python scripts → Always use `python3 scripts/terminal_wrapper.py --script <script>`
-- Node.js commands → Use `run_terminal_cmd("npx <command> ; exit")` directly
-- System commands → Use `run_terminal_cmd("<command> ; exit")` directly
+- **MANDATORY**: Read `MASTER_DOCUMENTATION.md` for complete documentation
+- **Universal Terminal**: See `UNIVERSAL_TERMINAL_EXECUTION.md` for universal best practices
+- **Cursor-Specific**: If you are a Cursor agent, see `CURSOR_TERMINAL_EXECUTION.md` for Python script handling
+- Node.js commands → Use agent's terminal tool directly: `<agent_tool>("npx <command> ; exit")`
+- System commands → Use agent's terminal tool directly: `<agent_tool>("<command> ; exit")`
 - Always add `; exit` to commands to prevent hanging on both success and failure
-- **See**: `terminal-tool-replacement.md` for detailed guide
 
 ### For GitHub Copilot Agent
 **Preparation steps**:

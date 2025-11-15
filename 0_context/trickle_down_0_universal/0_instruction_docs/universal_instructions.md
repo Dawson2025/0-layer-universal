@@ -72,14 +72,14 @@ Before making changes:
 ### 6b. Terminal Execution Protocol (CRITICAL)
 **MANDATORY for ALL AI Agents**: Before executing any terminal commands, read and follow:
 
-- **`UNIVERSAL_AGENT_TERMINAL_PROTOCOL.md`** - Universal rules for terminal execution
-- **Key Rules**:
-  - Python scripts → Always use `python3 scripts/terminal_wrapper.py --script <script>`
-  - Node.js commands → Use `run_terminal_cmd("npx <command> ; exit")` directly
-  - System commands → Use `run_terminal_cmd("<command> ; exit")` directly
+- **`MASTER_DOCUMENTATION.md`** - Complete overview of all systems
+- **`UNIVERSAL_TERMINAL_EXECUTION.md`** - Universal rules for terminal execution
+- **Key Rules (Universal)**:
+  - Node.js commands → Use agent's terminal tool directly: `<agent_tool>("npx <command> ; exit")`
+  - System commands → Use agent's terminal tool directly: `<agent_tool>("<command> ; exit")`
   - Always add `; exit` to prevent hanging on both success and failure
 
-**See**: `AGENT_DISCOVERY_GUIDE.md` for how to find this documentation in your agent
+**Agent-Specific**: If you are a Cursor agent, see `CURSOR_TERMINAL_EXECUTION.md` for Cursor-specific Python script handling.
 
 ### 7. Update 0_context Documentation Before Ending Turn
 **CRITICAL:** Before completing any task or ending your turn as an AI agent:
@@ -446,7 +446,7 @@ If you find poor organization:
 
 Before marking any task complete or ending your turn, verify:
 
-- [ ] **CRITICAL: Terminal protocol followed** - Read `UNIVERSAL_AGENT_TERMINAL_PROTOCOL.md` and used correct tools
+- [ ] **CRITICAL: Terminal protocol followed** - Read `MASTER_DOCUMENTATION.md` and `UNIVERSAL_TERMINAL_EXECUTION.md`, used correct tools
 - [ ] TODO list created and maintained
 - [ ] Existing code read and understood
 - [ ] Implementation follows project patterns

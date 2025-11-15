@@ -1,9 +1,22 @@
 # Master Terminal Execution Reference
-*Single Source of Truth for ALL AI Agents*
+*Legacy Document - See MASTER_DOCUMENTATION.md*
 
-## 🎯 Purpose
+## ⚠️ Status: Superseded
 
-This is the **authoritative reference** for terminal execution protocol. **ALL agent-specific configuration files** (Cursor, Claude Code, Codex, Gemini CLI, Warp, etc.) should reference this document rather than duplicating the rules.
+**This document has been superseded by `MASTER_DOCUMENTATION.md`**, which provides a comprehensive overview of all universal systems, not just terminal execution.
+
+**For terminal execution:**
+- **Universal rules**: See `MASTER_DOCUMENTATION.md` → Universal Section → Terminal Execution
+- **Universal best practices**: See `UNIVERSAL_TERMINAL_EXECUTION.md`
+- **Cursor-specific solutions**: See `CURSOR_TERMINAL_EXECUTION.md`
+
+**This document is kept for reference but should not be used as the primary source.**
+
+---
+
+## 🎯 Purpose (Legacy)
+
+This was the **authoritative reference** for terminal execution protocol. **ALL agent-specific configuration files** (Cursor, Claude Code, Codex, Gemini CLI, Warp, etc.) should now reference `MASTER_DOCUMENTATION.md` instead.
 
 ## 📍 Location
 

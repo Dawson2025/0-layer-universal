@@ -11,6 +11,8 @@
 
 This directory contains **universal instructions** for AI agents that apply to ANY software project, regardless of technology stack, domain, or size.
 
+**📌 START HERE**: See `MASTER_DOCUMENTATION.md` for the comprehensive overview of all universal systems and agent-specific guides.
+
 ---
 
 ## 📚 **Core Universal Systems**
@@ -54,32 +56,34 @@ This directory contains **universal instructions** for AI agents that apply to A
 
 ### **3. Terminal Execution System** 💻
 
+**Master Reference**: See `MASTER_DOCUMENTATION.md` for complete overview
+
 **Universal Components**:
-- `MASTER_TERMINAL_EXECUTION_REFERENCE.md` - **MASTER REFERENCE** - Single source of truth for ALL agent-specific config files
-- `UNIVERSAL_AGENT_TERMINAL_PROTOCOL.md` - Complete universal protocol (referenced by master)
-- `AGENT_DISCOVERY_GUIDE.md` - How agents discover and use this documentation
+- `UNIVERSAL_TERMINAL_EXECUTION.md` - **Universal best practices** for all agents
+- `CURSOR_TERMINAL_EXECUTION.md` - **Cursor-specific** terminal hanging solution
+- `CURSOR_AGENT_GUIDE.md` - All Cursor-specific solutions
 - `terminal-tool-replacement.md` - Complete terminal execution guide
 - `when-to-use-terminal-wrapper.md` - Decision guide (when to use wrapper vs run_terminal_cmd)
 - `why-&&-exit-works.md` - Technical explanation of `; exit` workaround
 - `playwright-installation-confusion-analysis.md` - Root cause analysis
 - `cursor_terminal_issues.md` - Cursor-specific terminal issues
-- `terminal_execution_protocol.md` - Legacy protocol (see UNIVERSAL_AGENT_TERMINAL_PROTOCOL.md)
+- `terminal_execution_protocol.md` - Legacy protocol
 - `terminal-quick-reference.md` - Quick reference guide
+- `MASTER_TERMINAL_EXECUTION_REFERENCE.md` - Legacy (superseded by MASTER_DOCUMENTATION.md)
 
 **What it is**: Best practices for terminal command execution in AI agents
 
 **Use it to**:
-- Avoid terminal hanging issues (especially Python scripts)
-- Use proper tools for different command types (Python vs Node.js vs system commands)
+- Follow universal terminal execution best practices
+- Understand Cursor-specific terminal hanging issues (if using Cursor)
+- Use proper tools for different command types (Node.js vs system commands)
 - Execute commands safely with `; exit` workaround
-- Handle terminal output correctly
-- Prevent confusion (e.g., Python Playwright vs Node.js Playwright)
 
-**Key Rules** (for ALL agents):
-- ✅ Python scripts → Always use terminal wrapper
-- ✅ Node.js commands → Use agent's terminal tool directly (with `; exit`)
-- ✅ System commands → Use agent's terminal tool directly (with `; exit`)
-- ✅ Always add `; exit` to prevent hanging on both success and failure
+**Key Rules**:
+- **Universal**: Node.js commands → Use agent's terminal tool directly (with `; exit`)
+- **Universal**: System commands → Use agent's terminal tool directly (with `; exit`)
+- **Universal**: Always add `; exit` to prevent hanging on both success and failure
+- **Cursor-Specific**: Python scripts → Use terminal wrapper (see CURSOR_TERMINAL_EXECUTION.md)
 
 ---
 

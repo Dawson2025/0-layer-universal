@@ -4,20 +4,23 @@ This file provides configuration guidance for all AI agents working with the Lan
 
 ## 🚨 Terminal Execution Protocol
 
-**MANDATORY**: See `0_context/trickle_down_0_universal/0_instruction_docs/MASTER_TERMINAL_EXECUTION_REFERENCE.md` for complete terminal execution rules.
+**MANDATORY**: See `0_context/trickle_down_0_universal/0_instruction_docs/MASTER_DOCUMENTATION.md` for complete documentation.
+
+**Universal Terminal Execution**: See `0_context/trickle_down_0_universal/0_instruction_docs/UNIVERSAL_TERMINAL_EXECUTION.md` for universal best practices.
 
 **Quick Reference (Universal for ALL Agents):**
-- Python scripts → `python3 scripts/terminal_wrapper.py --script <script>`
 - Node.js commands → Use agent's terminal tool directly: `<agent_tool>("npx <command> ; exit")`
 - System commands → Use agent's terminal tool directly: `<agent_tool>("<command> ; exit")`
 - Always add `; exit` to prevent hanging on both success and failure
 
 **Agent-Specific Tool Names:**
-- Cursor: `run_terminal_cmd`
+- Cursor: `run_terminal_cmd` (see CURSOR_TERMINAL_EXECUTION.md for Python script handling)
 - Claude Code: `run_terminal_cmd`
 - Codex: `run_terminal_cmd`
 - Warp: `run_command`
 - Gemini CLI: Direct terminal execution
+
+**Note**: Python wrapper solutions are Cursor-specific. Other agents can use their terminal tools directly for Python scripts.
 
 ## Trickle-Down Documentation System
 

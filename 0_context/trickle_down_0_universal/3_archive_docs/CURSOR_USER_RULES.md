@@ -2,7 +2,9 @@
 
 ## 🚨 **CRITICAL: Terminal Tool Replacement Rules**
 
-**MASTER REFERENCE**: See `0_context/trickle_down_0_universal/0_instruction_docs/MASTER_TERMINAL_EXECUTION_REFERENCE.md` for the complete, authoritative rules.
+**MASTER REFERENCE**: See `0_context/trickle_down_0_universal/0_instruction_docs/MASTER_DOCUMENTATION.md` for complete documentation.
+
+**Cursor-Specific Terminal Solutions**: See `0_context/trickle_down_0_universal/0_instruction_docs/CURSOR_TERMINAL_EXECUTION.md` for Cursor-specific terminal hanging solutions.
 
 Copy and paste the following into your Cursor User Rules:
 

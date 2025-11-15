@@ -4,13 +4,16 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## 🚨 Terminal Execution Protocol
 
-**MANDATORY**: See `0_context/trickle_down_0_universal/0_instruction_docs/MASTER_TERMINAL_EXECUTION_REFERENCE.md` for complete terminal execution rules.
+**MANDATORY**: See `0_context/trickle_down_0_universal/0_instruction_docs/MASTER_DOCUMENTATION.md` for complete documentation.
+
+**Universal Terminal Execution**: See `0_context/trickle_down_0_universal/0_instruction_docs/UNIVERSAL_TERMINAL_EXECUTION.md` for universal best practices.
 
 **Quick Reference for Claude Code:**
-- Python scripts → `python3 scripts/terminal_wrapper.py --script <script>`
 - Node.js commands → `run_terminal_cmd("npx <command> ; exit")`
 - System commands → `run_terminal_cmd("<command> ; exit")`
 - Always add `; exit` to prevent hanging on both success and failure
+
+**Note**: Python wrapper solutions are Cursor-specific. Claude Code can use `run_terminal_cmd` directly for Python scripts.
 
 ## Trickle-Down Documentation System
 
