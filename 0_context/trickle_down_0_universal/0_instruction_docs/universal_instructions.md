@@ -69,6 +69,18 @@ Before making changes:
 - Keep requirements/specifications up to date
 - Create or update architecture docs for significant changes
 
+### 6b. Terminal Execution Protocol (CRITICAL)
+**MANDATORY for ALL AI Agents**: Before executing any terminal commands, read and follow:
+
+- **`UNIVERSAL_AGENT_TERMINAL_PROTOCOL.md`** - Universal rules for terminal execution
+- **Key Rules**:
+  - Python scripts → Always use `python3 scripts/terminal_wrapper.py --script <script>`
+  - Node.js commands → Use `run_terminal_cmd("npx <command> ; exit")` directly
+  - System commands → Use `run_terminal_cmd("<command> ; exit")` directly
+  - Always add `; exit` to prevent hanging on both success and failure
+
+**See**: `AGENT_DISCOVERY_GUIDE.md` for how to find this documentation in your agent
+
 ### 7. Update 0_context Documentation Before Ending Turn
 **CRITICAL:** Before completing any task or ending your turn as an AI agent:
 
@@ -434,6 +446,7 @@ If you find poor organization:
 
 Before marking any task complete or ending your turn, verify:
 
+- [ ] **CRITICAL: Terminal protocol followed** - Read `UNIVERSAL_AGENT_TERMINAL_PROTOCOL.md` and used correct tools
 - [ ] TODO list created and maintained
 - [ ] Existing code read and understood
 - [ ] Implementation follows project patterns

@@ -2,6 +2,8 @@
 
 ## 🚨 **CRITICAL: Terminal Tool Replacement Rules**
 
+**MASTER REFERENCE**: See `0_context/trickle_down_0_universal/0_instruction_docs/MASTER_TERMINAL_EXECUTION_REFERENCE.md` for the complete, authoritative rules.
+
 Copy and paste the following into your Cursor User Rules:
 
 ---
@@ -18,21 +20,66 @@ Due to a known bug in Cursor's `run_terminal_cmd` tool that causes hanging on Py
 
 **QUICK REFERENCE:**
 - Python scripts: `python3 scripts/terminal_wrapper.py --script <script_path>`
-- Shell commands: `python3 scripts/terminal_wrapper.py "<command>"`
+- Shell commands (complex): `python3 scripts/terminal_wrapper.py "<command> ; exit"`
+- Node.js commands: `run_terminal_cmd("npx <command> ; exit")` or `run_terminal_cmd("npm <command> ; exit")`
+- System commands: `run_terminal_cmd("apt install <package> ; exit")` or `run_terminal_cmd("wget <url> ; exit")`
 - Long processes: `python3 scripts/run_with_visibility.py <script> <timeout>`
 - Complex scripts: `python3 scripts/robust_script_runner.py <script>`
 
+**WHEN TO USE WRAPPER:**
+- ✅ Python scripts (always)
+- ✅ Complex shell commands
+- ✅ Commands that might hang
+
+**WHEN NOT TO USE WRAPPER:**
+- ✅ Node.js commands (`npx`, `npm`) - Can use `run_terminal_cmd` directly
+- ✅ System package managers (`apt`, `apt-get`) - Can use `run_terminal_cmd` directly
+- ✅ Simple commands (`ls`, `echo`, `cat`) - Can use `run_terminal_cmd` directly
+
+**CRITICAL: Always add `; exit` to commands (whether using wrapper or `run_terminal_cmd`) to prevent hanging on both success and failure**
+
 **EXAMPLES:**
+
+**Python Scripts (ALWAYS use wrapper):**
 ```bash
 # Instead of: run_terminal_cmd("python3 scripts/quick_verify.py")
 python3 scripts/terminal_wrapper.py --script scripts/quick_verify.py
 
 # Instead of: run_terminal_cmd("python3 scripts/setup.py --verbose")
 python3 scripts/terminal_wrapper.py --script scripts/setup.py --verbose
-
-# Instead of: run_terminal_cmd("curl -s https://api.example.com")
-python3 scripts/terminal_wrapper.py "curl -s https://api.example.com"
 ```
+
+**Node.js Commands (Can use run_terminal_cmd directly):**
+```bash
+# ✅ CORRECT - Node.js commands don't need wrapper
+run_terminal_cmd("npx -y playwright@latest install chromium ; exit")
+run_terminal_cmd("npm install ; exit")
+
+# ❌ UNNECESSARY - Don't wrap Node.js commands
+# python3 scripts/terminal_wrapper.py "npx playwright install chromium ; exit"
+```
+
+**System Commands (Can use run_terminal_cmd directly):**
+```bash
+# ✅ CORRECT - System commands don't need wrapper
+run_terminal_cmd("sudo apt install ./package.deb ; exit")
+run_terminal_cmd("wget https://example.com/file.deb ; exit")
+
+# ❌ UNNECESSARY - Don't wrap simple system commands
+# python3 scripts/terminal_wrapper.py "apt install package ; exit"
+```
+
+**Complex Shell Commands (Use wrapper for better handling):**
+```bash
+# ✅ CORRECT - Complex commands benefit from wrapper
+python3 scripts/terminal_wrapper.py "quarto render ; exit"
+python3 scripts/terminal_wrapper.py "curl -s https://api.example.com | jq . ; exit"
+```
+
+**WHY `; exit`?**
+- `; exit` always closes terminal (works for both success AND failure)
+- Prevents hanging on failed commands (unlike `&& exit` which only works on success)
+- Completion detection is more critical than exit code checking in automation
 
 **CRITICAL WARNINGS:**
 - ❌ NEVER use `run_terminal_cmd` for Python scripts (will hang)
@@ -43,11 +90,12 @@ python3 scripts/terminal_wrapper.py "curl -s https://api.example.com"
 - ✅ ALWAYS use our robust script runner for critical operations
 
 **BENEFITS:**
-- ✅ No hanging - scripts complete properly
+- ✅ No hanging - scripts complete properly (both success and failure with `; exit`)
 - ✅ Real-time output display
 - ✅ Timeout protection
 - ✅ Proper error handling
 - ✅ Clean process management
+- ✅ Always closes terminal - prevents hanging on failed commands
 
 **VERIFICATION:**
 Test the solution with: `python3 scripts/terminal_wrapper.py --script scripts/simple_test.py`

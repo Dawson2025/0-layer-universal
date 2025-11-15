@@ -2,6 +2,16 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
+## 🚨 Terminal Execution Protocol
+
+**MANDATORY**: See `0_context/trickle_down_0_universal/0_instruction_docs/MASTER_TERMINAL_EXECUTION_REFERENCE.md` for complete terminal execution rules.
+
+**Quick Reference for Claude Code:**
+- Python scripts → `python3 scripts/terminal_wrapper.py --script <script>`
+- Node.js commands → `run_terminal_cmd("npx <command> ; exit")`
+- System commands → `run_terminal_cmd("<command> ; exit")`
+- Always add `; exit` to prevent hanging on both success and failure
+
 ## Trickle-Down Documentation System
 
 **CRITICAL:** This project uses a hierarchical trickle-down documentation system. You MUST follow the context loading order:

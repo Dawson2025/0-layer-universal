@@ -62,7 +62,7 @@ From [Terminal Output Handling Issues](https://forum.cursor.com/t/terminal-outpu
 From [Cannot See Output for Agent/Composer](https://forum.cursor.com/t/cannot-see-output-for-agent-composer-in-non-interactive-terminal/52685):
 
 - **Hidden output**: All output is hidden in non-interactive mode
-- **Pop-out terminal**: Breaks agent interaction when used
+- **Pop-out terminal**: Manual UI button that forces Cursor to refresh terminal state (see `pop-out-terminal-explanation.md` for details)
 - **Background processes**: Agent loses ability to track completion
 - **Workaround**: Use "Use Preview Box" setting (though not always effective)
 

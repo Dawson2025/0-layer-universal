@@ -124,11 +124,12 @@ Session Goals: [based on focus area or ask user]
 - Context window management
 
 **Critical Terminal Tool Rules**:
-- Interactive terminal commands cannot be used as they never exit
-- Always use non-interactive commands with explicit timeouts
-- Prefer using our robust script runner (`scripts/terminal_wrapper.py`) for Python scripts
-- Avoid `run_terminal_cmd` for Python scripts due to known hanging issues
-- **MANDATORY**: Read `docs/0_context/0_universal_instructions/terminal-tool-replacement.md` for complete terminal tool replacement protocol
+- **MANDATORY**: Read `UNIVERSAL_AGENT_TERMINAL_PROTOCOL.md` for complete terminal execution protocol
+- Python scripts → Always use `python3 scripts/terminal_wrapper.py --script <script>`
+- Node.js commands → Use `run_terminal_cmd("npx <command> ; exit")` directly
+- System commands → Use `run_terminal_cmd("<command> ; exit")` directly
+- Always add `; exit` to commands to prevent hanging on both success and failure
+- **See**: `terminal-tool-replacement.md` for detailed guide
 
 ### For GitHub Copilot Agent
 **Preparation steps**:

@@ -70,6 +70,42 @@ Install the Chromium browser for Playwright:
 npx -y playwright@latest install chromium
 ```
 
+**⚠️ CRITICAL: Use Node.js Playwright, NOT Python Playwright**
+
+The MCP server uses **Node.js Playwright** (`npx playwright`), which is different from Python Playwright (`python3 -m playwright`). They install browsers to different locations and use different browser builds.
+
+**✅ CORRECT (for MCP servers):**
+```bash
+# Use run_terminal_cmd directly (don't wrap Node.js commands in Python wrapper)
+run_terminal_cmd("npx -y playwright@latest install chromium ; exit")
+```
+
+**❌ WRONG (will NOT work with MCP servers):**
+```bash
+# Don't use Python Playwright
+python3 -m playwright install chromium  # Don't use this!
+
+# Don't wrap Node.js commands unnecessarily
+python3 scripts/terminal_wrapper.py "npx playwright install chromium ; exit"  # Unnecessary
+```
+
+**Why not wrap Node.js commands:**
+- Wrapping Node.js commands in Python wrapper can cause confusion
+- Seeing `python3` at the start might lead to using Python Playwright instead
+- Node.js commands don't have Python subprocess hanging issues
+- Direct `run_terminal_cmd` with `; exit` is clearer and simpler
+
+**Why this matters:**
+- Python Playwright installs browsers that the MCP server cannot find
+- The MCP server expects browsers installed via Node.js Playwright
+- Using Python Playwright will cause "Browser not installed" errors even after installation
+- You'll end up downloading browsers multiple times unnecessarily
+
+**If you accidentally used Python Playwright:**
+1. Remove the Python-installed browsers: `rm -rf ~/.cache/ms-playwright/chromium-*` (keep only the Node.js version)
+2. Install using Node.js: `npx -y playwright@latest install chromium`
+3. Restart Cursor/Claude Code
+
 This will download:
 - Chromium browser (~174 MB)
 - FFMPEG (~2.3 MB)
@@ -101,9 +137,92 @@ After completing the setup:
 
 ## Troubleshooting
 
+### Issue: "Browser specified in your config is not installed"
+
+**Error message:**
+```
+Error: Browser specified in your config is not installed. Either install it (likely) or change the config.
+```
+
+**Common cause:** You installed browsers using Python Playwright instead of Node.js Playwright.
+
+**Solution:**
+1. Check which browsers are installed:
+   ```bash
+   ls -la ~/.cache/ms-playwright/ | grep chromium
+   ```
+
+2. If you see multiple chromium directories (e.g., `chromium-1187`, `chromium-1200`), you likely have both Python and Node.js installations.
+
+3. Remove Python-installed browsers (they use different version numbers):
+   ```bash
+   # Check which is the Node.js version (usually the newest)
+   # Then remove the Python-installed ones
+   rm -rf ~/.cache/ms-playwright/chromium-1200 ~/.cache/ms-playwright/chromium_headless_shell-1200
+   ```
+
+4. Install using Node.js Playwright (the correct method):
+   ```bash
+   npx -y playwright@latest install chromium
+   ```
+
+5. Restart Cursor/Claude Code completely.
+
+**Prevention:** Always use `npx -y playwright@latest install chromium` for MCP servers, never `python3 -m playwright install chromium`.
+
 ### Issue: "Chromium distribution 'chrome' is not found"
 
-**Solution:** The configuration is trying to use Chrome instead of Chromium. Update `.mcp.json` to include `"--browser", "chromium"` in the args array.
+**Error message:**
+```
+Error: Chromium distribution 'chrome' is not found at /opt/google/chrome/chrome
+Run "npx playwright install chrome"
+```
+
+**Common cause:** The configuration is trying to use Chrome instead of Chromium, or Chrome is not properly installed.
+
+**Solution 1: Use Chromium (Recommended)**
+1. Update `.mcp.json` to use Chromium:
+   ```json
+   {
+     "mcpServers": {
+       "playwright": {
+         "command": "npx",
+         "args": [
+           "-y",
+           "@playwright/mcp@latest",
+           "--browser",
+           "chromium"
+         ]
+       }
+     }
+   }
+   ```
+
+2. Install Chromium:
+   ```bash
+   npx -y playwright@latest install chromium
+   ```
+
+3. Restart Claude Code
+
+**Solution 2: Use Chrome (If you specifically need Chrome)**
+1. Install system Chrome first (if not already installed):
+   ```bash
+   # On Ubuntu/WSL2:
+   wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+   sudo apt install ./google-chrome-stable_current_amd64.deb
+   ```
+
+2. Install Playwright Chrome channel:
+   ```bash
+   npx -y playwright@latest install chrome
+   ```
+
+3. Ensure `.mcp.json` uses `"--browser", "chrome"` (not "chromium")
+
+4. Restart Claude Code
+
+**Note:** For most use cases, Chromium is recommended as it's more stable and doesn't require system Chrome installation.
 
 ### Issue: "Active lockfile found"
 
@@ -142,11 +261,37 @@ npx -y playwright@latest install chromium
 
 While this guide uses Chromium (recommended), Playwright supports other browsers:
 
-- **chromium** (recommended) - Most reliable, fully tested
-- **chrome** - Google Chrome (requires different installation)
+- **chromium** (recommended) - Most reliable, fully tested, automatically installed via Playwright
+- **chrome** - Google Chrome (requires system Chrome installation + Playwright Chrome channel)
 - **firefox** - Mozilla Firefox
 - **webkit** - Safari's engine
 - **msedge** - Microsoft Edge
+
+### Important: Chrome vs Chromium
+
+**Chromium** (recommended):
+- Open-source browser automatically installed by Playwright
+- No additional system installation needed
+- Use: `npx -y playwright@latest install chromium`
+- Configure: `"--browser", "chromium"` in `.mcp.json`
+
+**Chrome** (Google Chrome):
+- Requires **both** system Chrome installation AND Playwright Chrome channel
+- System Chrome must be installed separately (not via Playwright)
+- Then install Playwright Chrome channel: `npx -y playwright@latest install chrome`
+- Configure: `"--browser", "chrome"` in `.mcp.json`
+- **Note**: Chrome DevTools MCP server requires system Chrome, not Playwright Chromium
+
+**⚠️ Common Error with Chrome:**
+```
+Error: Chromium distribution 'chrome' is not found at /opt/google/chrome/chrome
+Run "npx playwright install chrome"
+```
+
+**Solution:**
+1. Install system Chrome first (if not already installed)
+2. Then run: `npx -y playwright@latest install chrome`
+3. Ensure `.mcp.json` uses `"--browser", "chrome"` (not "chromium")
 
 To use a different browser:
 1. Install it: `npx -y playwright@latest install <browser-name>`

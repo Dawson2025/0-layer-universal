@@ -13,7 +13,7 @@ This master index provides a comprehensive overview of all documentation organiz
 
 **📊 COMPREHENSIVE USER STORY TESTING COMPLETED**: All 71 user stories tested across 18 categories with 36 test runs. Results show 61.1% pass rate (22/36), identifying 4 completely broken categories (admin, cloud features). See `USER_STORY_TEST_RESULTS_JAN_24_2025.md` for detailed analysis.
 
-**🔧 CURSOR TERMINAL ISSUES DOCUMENTED**: Critical terminal output handling issues in Cursor IDE that affect all AI agents have been comprehensively documented with community-verified solutions from Cursor forums. See `trickle_down_0_universal/0_instruction_docs/cursor_terminal_issues.md` for complete analysis, workarounds, and best practices.
+**🔧 UNIVERSAL TERMINAL EXECUTION PROTOCOL**: Comprehensive terminal execution protocol for ALL AI agents (Cursor, Codex, Gemini CLI, Claude Code, Warp). Includes Python wrapper usage, Node.js command handling, and `; exit` workaround. See `trickle_down_0_universal/0_instruction_docs/UNIVERSAL_AGENT_TERMINAL_PROTOCOL.md` for complete rules and `AGENT_DISCOVERY_GUIDE.md` for how agents discover this documentation.
 
 **📝 AI AGENT DOCUMENTATION RULE**: Universal rule requiring all AI agents to create, update, and maintain comprehensive documentation for every single AI turn in every session. Includes mandatory git commit requirements. See `trickle_down_0_universal/0_instruction_docs/ai_agent_documentation_rule.md` for complete requirements and `trickle_down_0_universal/0_instruction_docs/git_commit_rule.md` for git commit standards.
 
