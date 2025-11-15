@@ -17,7 +17,7 @@ These patterns apply to any local BYU CSE 351 assignment that couples a Python c
 2. Start a fresh server and log output to `/tmp`.
 3. Run the automated harness (`test_lesson10.sh` template) so the server lifecycle + proof run share the same terminal session.
 4. Tail both `/tmp` logs plus `lesson_##/prove/logs/assignment.log` to capture timings and API counts immediately after the run.
-5. For the C# port (Lesson 14) add `.dotnet` to PATH and run from `lesson_14/prove/assignment14/Assignment14`; collect timings from `lesson_14/assignment.log` because console logging is disabled during performance runs.
+5. For the C# port (Lesson 14) add `.dotnet` to PATH and run from `lesson_14/prove/assignment14/Assignment14`; collect timings from `lesson_14/prove/logs/assignment.log` because console logging is disabled during performance runs. The HTTP gate can be overridden with `FS_HTTP_GATE` (default 45) and is logged at startup.
 
 ## Common Pitfalls & Fixes
 - **`ModuleNotFoundError: cse351`** – add the `.venv` site-packages folder to `PYTHONPATH`.
