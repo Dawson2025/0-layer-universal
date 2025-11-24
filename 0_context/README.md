@@ -118,6 +118,7 @@ To adapt this context system for your project:
 - **NEVER** use `run_terminal_cmd` for Python scripts (hangs)
 - **ALWAYS** use `python3 scripts/terminal_wrapper.py --script <script>` for Python scripts
 - **FOLLOW** the initialization protocol for proper context loading
+- **COMMENTING STYLE FOR EXPLANATORY COPIES**: When producing fully commented versions of code files (e.g., instructional variants), use concise, imperative, command-like comments that describe the action on each line. Keep the executable code unchanged and place the verbose version alongside the original and the cleaned version as separate files.
 - **READ** terminal execution protocol before executing commands
 
 ## 📚 **Documentation Hierarchy**
