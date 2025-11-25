@@ -69,7 +69,16 @@ Before making changes:
 - Keep requirements/specifications up to date
 - Create or update architecture docs for significant changes
 
-### 6b. Terminal Execution Protocol (CRITICAL)
+### 6b. Git Sync Protocol (CRITICAL - MANDATORY)
+**MANDATORY for ALL AI Agents**: Git sync is required at specific points:
+
+- **START OF EVERY SESSION**: Pull from cloud (`git pull origin <branch>`) before any work begins
+- **START OF EVERY TURN**: Pull from cloud (`git pull origin <branch>`) before making any changes
+- **END OF EVERY TURN**: Commit all changes (`git commit`) and push to cloud (`git push origin <branch>`)
+
+**See `git_commit_rule.md` for complete requirements and procedures.**
+
+### 6c. Terminal Execution Protocol (CRITICAL)
 **MANDATORY for ALL AI Agents**: Before executing any terminal commands, read and follow:
 
 - **`MASTER_DOCUMENTATION.md`** - Complete overview of all systems

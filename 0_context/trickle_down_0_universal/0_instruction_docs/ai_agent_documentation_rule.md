@@ -21,17 +21,26 @@
 
 **NO AI TURN IS EXEMPT FROM THIS REQUIREMENT.**
 
-### **GIT COMMIT REQUIREMENT**
+### **GIT SYNC AND COMMIT REQUIREMENT**
 
-**ALL AI agents MUST commit ALL changes to git at the end of EVERY SINGLE AI TURN in EVERY SESSION, regardless of the scope or type of changes made.**
+**ALL AI agents MUST:**
 
-**GIT COMMIT REQUIREMENTS:**
-1. **Every Turn Must Commit**: No turn is complete without a git commit
-2. **Comprehensive Commits**: All changes made during the turn must be committed
-3. **Descriptive Commit Messages**: Clear, detailed commit messages explaining what was done
-4. **Atomic Commits**: Each turn should result in a single, cohesive commit
-5. **No Partial Commits**: All changes from a turn must be committed together
-6. **Documentation Included**: All documentation updates must be included in the commit
+1. **Pull from cloud at START of EVERY SESSION** - Sync with remote repository before beginning work
+2. **Pull from cloud at START of EVERY AI TURN** - Ensure local repository is up to date before making changes
+3. **Commit ALL changes to git at END of EVERY SINGLE AI TURN** - Track all changes in version control
+4. **Push to cloud at END of EVERY SINGLE AI TURN** - Sync all commits to remote repository immediately
+
+**GIT SYNC AND COMMIT REQUIREMENTS:**
+1. **Every Session Must Start with Pull**: Pull from remote before any work begins
+2. **Every Turn Must Start with Pull**: Pull from remote before making any changes
+3. **Every Turn Must Commit**: No turn is complete without a git commit
+4. **Every Turn Must Push**: No turn is complete without pushing to remote
+5. **Comprehensive Commits**: All changes made during the turn must be committed
+6. **Descriptive Commit Messages**: Clear, detailed commit messages explaining what was done
+7. **Atomic Commits**: Each turn should result in a single, cohesive commit
+8. **No Partial Commits**: All changes from a turn must be committed together
+9. **Documentation Included**: All documentation updates must be included in the commit
+10. **Immediate Sync**: Push to cloud immediately after commit, no delays
 
 ## **RULE SCOPE**
 
@@ -50,7 +59,17 @@ This rule applies to:
 
 ### **1. IMMEDIATE DOCUMENTATION (Every AI Turn)**
 
-For EVERY SINGLE AI TURN in EVERY SESSION, agents MUST:
+**At the START of EVERY SESSION, agents MUST:**
+
+1. **Pull from Cloud**: `git pull origin <branch>` to sync with remote repository
+2. **Verify Sync**: `git status` to confirm local is up to date with remote
+
+**At the START of EVERY AI TURN, agents MUST:**
+
+1. **Pull from Cloud**: `git pull origin <branch>` to sync with remote repository
+2. **Verify Sync**: `git status` to confirm local is up to date with remote
+
+**For EVERY SINGLE AI TURN in EVERY SESSION, agents MUST:**
 
 1. **Create/Update Change Log**: Document what was changed, why, and when
 2. **Update Technical Documentation**: Reflect changes in relevant technical docs
@@ -61,7 +80,8 @@ For EVERY SINGLE AI TURN in EVERY SESSION, agents MUST:
 7. **Update Session Log**: Maintain session-level documentation
 8. **Preserve Context**: Document context and reasoning for future turns
 9. **Commit to Git**: Commit all changes with descriptive commit message
-10. **Verify Git Status**: Ensure all changes are properly committed
+10. **Push to Cloud**: `git push origin <branch>` to sync all commits to remote
+11. **Verify Git Status**: Ensure all changes are committed and pushed
 
 ### **2. DOCUMENTATION STRUCTURE**
 
