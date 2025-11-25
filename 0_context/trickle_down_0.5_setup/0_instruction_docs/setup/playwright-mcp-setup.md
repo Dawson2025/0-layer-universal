@@ -2,6 +2,8 @@
 
 This guide documents the complete setup process for the Playwright MCP (Model Context Protocol) server for use with Claude Code.
 
+**For Cursor IDE setup on Ubuntu, see [Playwright MCP Cursor Setup](playwright-mcp-cursor-setup.md).**
+
 ## Prerequisites
 
 - Node.js and npm installed
