@@ -3,16 +3,16 @@
 Use this when defining the universal layer for any ecosystem.
 
 ## Slots
-- 0.0_basic_prompts_throughout: session init, what-to-do-next, core prompts.
-- 0.1_software_engineering_knowledge_system: general SE knowledge map.
-- 0.2_universal_principles: philosophies, values.
-- 0.3_universal_rules: hard constraints (git, terminal, security).
-- 0.4_os_setup: OS-specific setup (macOS/Linux/Windows).
-- 0.5_coding_app_setup: IDE/editor configuration.
-- 0.6_apps_browsers_extensions_setup: general apps, browsers, extensions.
-- 0.7_ai_apps_tools_setup: AI clients/CLIs and integrations.
-- 0.8_ai_models: approved models and guidance.
-- 0.9_universal_tools: cross-project scripts/utilities.
+- 0.00_basic_prompts_throughout: session init, what-to-do-next, core prompts.
+- 0.10_software_engineering_knowledge_system: general SE knowledge map.
+- 0.20_universal_principles: philosophies, values.
+- 0.30_universal_rules: hard constraints (git, terminal, security).
+- 0.40_os_setup: OS-specific setup (macOS/Linux/Windows).
+- 0.50_coding_app_setup: IDE/editor configuration.
+- 0.60_apps_browsers_extensions_setup: general apps, browsers, extensions.
+- 0.70_ai_apps_tools_setup: AI clients/CLIs and integrations.
+- 0.80_ai_models: approved models and guidance.
+- 0.90_universal_tools: cross-project scripts/utilities.
 - 0.99_stages: stage folders and status template.
 
 ## Stages (0.99)

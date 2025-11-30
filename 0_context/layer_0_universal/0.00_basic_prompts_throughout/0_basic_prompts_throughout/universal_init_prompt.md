@@ -17,7 +17,7 @@ Do this at the start of the chat/session before any other action.
 ### 1. Discover Your Location & Read the Master Index
 
 **First, find where you are:**
-- This file's location = `<universal_context_root>/0_context/layer_0_universal/0.0_basic_prompts_throughout/0_basic_prompts_throughout/universal_init_prompt.md`
+- This file's location = `<universal_context_root>/0_context/layer_0_universal/0.00_basic_prompts_throughout/0_basic_prompts_throughout/universal_init_prompt.md`
 - Master Index location = `<universal_context_root>/0_context/MASTER_DOCUMENTATION_INDEX.md`
 
 **Expected directory structure (Layer System):**
@@ -96,10 +96,10 @@ ls -d */0_context/0_context/0_basic_prompts_throughout/project_init_prompt.md 2>
 - `USAGE_GUIDE.md` - How to navigate and use the system
 
 #### Essential Universal Protocols:
-- `layer_0_universal/0.3_universal_rules/trickle_down_0_universal/0_instruction_docs/UNIVERSAL_AGENT_TERMINAL_PROTOCOL.md`
-- `layer_0_universal/0.3_universal_rules/trickle_down_0_universal/0_instruction_docs/cursor_terminal_issues.md`
-- `layer_0_universal/0.3_universal_rules/trickle_down_0_universal/0_instruction_docs/ai_agent_documentation_rule.md`
-- `layer_0_universal/0.3_universal_rules/trickle_down_0_universal/0_instruction_docs/git_commit_rule.md`
+- `layer_0_universal/0.30_universal_rules/trickle_down_0_universal/0_instruction_docs/UNIVERSAL_AGENT_TERMINAL_PROTOCOL.md`
+- `layer_0_universal/0.30_universal_rules/trickle_down_0_universal/0_instruction_docs/cursor_terminal_issues.md`
+- `layer_0_universal/0.30_universal_rules/trickle_down_0_universal/0_instruction_docs/ai_agent_documentation_rule.md`
+- `layer_0_universal/0.30_universal_rules/trickle_down_0_universal/0_instruction_docs/git_commit_rule.md`
 
 ---
 
@@ -115,49 +115,49 @@ ls -d */0_context/0_context/0_basic_prompts_throughout/project_init_prompt.md 2>
 
 ### For Git Operations
 **Read before making commits:**
-- `layer_0_universal/0.3_universal_rules/trickle_down_0_universal/0_instruction_docs/git_commit_rule.md`
-- `layer_0_universal/0.3_universal_rules/trickle_down_0_universal/0_instruction_docs/context_update_rule.md`
+- `layer_0_universal/0.30_universal_rules/trickle_down_0_universal/0_instruction_docs/git_commit_rule.md`
+- `layer_0_universal/0.30_universal_rules/trickle_down_0_universal/0_instruction_docs/context_update_rule.md`
 
 ### For Terminal Commands
 **Read before executing commands:**
-- `layer_0_universal/0.3_universal_rules/trickle_down_0_universal/0_instruction_docs/UNIVERSAL_AGENT_TERMINAL_PROTOCOL.md`
-- `layer_0_universal/0.3_universal_rules/trickle_down_0_universal/0_instruction_docs/cursor_terminal_issues.md`
-- `layer_0_universal/0.3_universal_rules/trickle_down_0_universal/0_instruction_docs/terminal_execution_protocol.md`
-- `layer_0_universal/0.3_universal_rules/trickle_down_0_universal/0_instruction_docs/terminal-quick-reference.md`
+- `layer_0_universal/0.30_universal_rules/trickle_down_0_universal/0_instruction_docs/UNIVERSAL_AGENT_TERMINAL_PROTOCOL.md`
+- `layer_0_universal/0.30_universal_rules/trickle_down_0_universal/0_instruction_docs/cursor_terminal_issues.md`
+- `layer_0_universal/0.30_universal_rules/trickle_down_0_universal/0_instruction_docs/terminal_execution_protocol.md`
+- `layer_0_universal/0.30_universal_rules/trickle_down_0_universal/0_instruction_docs/terminal-quick-reference.md`
 
 ### For Browser Automation
 **Read before opening browsers:**
-- `layer_0_universal/0.3_universal_rules/trickle_down_0_universal/0_instruction_docs/browser_management_policy.md`
-- `layer_0_universal/0.3_universal_rules/trickle_down_0_universal/0_instruction_docs/browser_opening_rule.md`
-- `layer_0_universal/0.9_universal_tools/trickle_down_0.75_universal_tools/0_instruction_docs/browser-automation/README.md`
+- `layer_0_universal/0.30_universal_rules/trickle_down_0_universal/0_instruction_docs/browser_management_policy.md`
+- `layer_0_universal/0.30_universal_rules/trickle_down_0_universal/0_instruction_docs/browser_opening_rule.md`
+- `layer_0_universal/0.90_universal_tools/trickle_down_0.75_universal_tools/0_instruction_docs/browser-automation/README.md`
 
 ### For Testing
 **Read when creating or running tests:**
-- `layer_0_universal/0.3_universal_rules/trickle_down_0_universal/0_instruction_docs/TESTING_AGENT_SYSTEM_README.md`
-- `layer_0_universal/0.3_universal_rules/trickle_down_0_universal/0_instruction_docs/testing-agent-protocol.md`
-- `layer_0_universal/0.3_universal_rules/trickle_down_0_universal/0_instruction_docs/testing-agent-instructions.md`
+- `layer_0_universal/0.30_universal_rules/trickle_down_0_universal/0_instruction_docs/TESTING_AGENT_SYSTEM_README.md`
+- `layer_0_universal/0.30_universal_rules/trickle_down_0_universal/0_instruction_docs/testing-agent-protocol.md`
+- `layer_0_universal/0.30_universal_rules/trickle_down_0_universal/0_instruction_docs/testing-agent-instructions.md`
 
 ### For MCP Tools
 **Read when using Model Context Protocol servers:**
-- `layer_0_universal/0.9_universal_tools/trickle_down_0.75_universal_tools/0_instruction_docs/mcp-tools/README.md`
-- `layer_0_universal/0.9_universal_tools/trickle_down_0.75_universal_tools/0_instruction_docs/mcp-tools/MCP_SYSTEM_GUIDE.md`
-- `layer_0_universal/0.9_universal_tools/trickle_down_0.75_universal_tools/0_instruction_docs/mcp-tools/MCP_CONFIGURATION_GUIDE.md`
+- `layer_0_universal/0.90_universal_tools/trickle_down_0.75_universal_tools/0_instruction_docs/mcp-tools/README.md`
+- `layer_0_universal/0.90_universal_tools/trickle_down_0.75_universal_tools/0_instruction_docs/mcp-tools/MCP_SYSTEM_GUIDE.md`
+- `layer_0_universal/0.90_universal_tools/trickle_down_0.75_universal_tools/0_instruction_docs/mcp-tools/MCP_CONFIGURATION_GUIDE.md`
 
 ### For Claude Code Specific
 **Read when using Claude Code CLI:**
-- `layer_0_universal/0.9_universal_tools/trickle_down_0.75_universal_tools/0_instruction_docs/claude-code-config/README.md`
-- `layer_0_universal/0.9_universal_tools/trickle_down_0.75_universal_tools/0_instruction_docs/claude-code-config/QUICK_START.md`
-- `layer_0_universal/0.9_universal_tools/trickle_down_0.75_universal_tools/0_instruction_docs/claude-code-config/WHAT_ACTUALLY_WORKS.md`
+- `layer_0_universal/0.90_universal_tools/trickle_down_0.75_universal_tools/0_instruction_docs/claude-code-config/README.md`
+- `layer_0_universal/0.90_universal_tools/trickle_down_0.75_universal_tools/0_instruction_docs/claude-code-config/QUICK_START.md`
+- `layer_0_universal/0.90_universal_tools/trickle_down_0.75_universal_tools/0_instruction_docs/claude-code-config/WHAT_ACTUALLY_WORKS.md`
 
 ### For Database Operations (Supabase)
 **MANDATORY - Read before any database work:**
-- `layer_0_universal/0.3_universal_rules/trickle_down_0_universal/0_instruction_docs/supabase_javascript_integration_rule.md`
-- `layer_0_universal/0.3_universal_rules/trickle_down_0_universal/0_instruction_docs/supabase_javascript_quick_reference.md`
+- `layer_0_universal/0.30_universal_rules/trickle_down_0_universal/0_instruction_docs/supabase_javascript_integration_rule.md`
+- `layer_0_universal/0.30_universal_rules/trickle_down_0_universal/0_instruction_docs/supabase_javascript_quick_reference.md`
 
 ### For OAuth/Security Setup
 **Read when implementing authentication:**
-- `layer_0_universal/0.3_universal_rules/trickle_down_0_universal/0_instruction_docs/google_oauth_production_ready.md`
-- `layer_0_universal/0.3_universal_rules/trickle_down_0_universal/0_instruction_docs/sudo_password_management.md`
+- `layer_0_universal/0.30_universal_rules/trickle_down_0_universal/0_instruction_docs/google_oauth_production_ready.md`
+- `layer_0_universal/0.30_universal_rules/trickle_down_0_universal/0_instruction_docs/sudo_password_management.md`
 
 ---
 

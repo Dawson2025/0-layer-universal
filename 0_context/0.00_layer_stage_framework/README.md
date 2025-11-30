@@ -1,9 +1,9 @@
 # Layer + Stage Framework
 
-This repository uses two orthogonal systems to manage AI context and workflows:
+This repository uses two orthogonal systems to manage AI context and workflows. Numbering is zero-padded for lexicographic stability (e.g., 1.00, 1.10, 1.20).
 
-- **Layer System (specificity)**: from universal → project → feature → component. Lower numbers are more universal and are prerequisites for higher numbers. Example universal 0.x band: 0.0 basic prompts, 0.1 SE knowledge, 0.2 principles, 0.3 rules, 0.4 OS setup, 0.5 coding app setup, 0.6 apps/browsers/extensions, 0.7 AI apps/tools, 0.8 AI models, 0.9 universal tools.
-- **Stage System (chronology)**: inside every layer, stages 0.0–0.7 capture workflow time: 0.0 instructions, 0.1 planning, 0.2 design, 0.3 development, 0.4 testing, 0.5 criticism, 0.6 fixing, 0.7 archives.
+- **Layer System (specificity)**: from universal → project → feature → component. Lower numbers are more universal and are prerequisites for higher numbers. Example universal 0.x band: 0.00 basic prompts, 0.10 SE knowledge, 0.20 principles, 0.30 rules, 0.40 OS setup, 0.50 coding app setup, 0.60 apps/browsers/extensions, 0.70 AI apps/tools, 0.80 AI models, 0.90 universal tools.
+- **Stage System (chronology)**: inside every layer, stages 0.00–0.70 capture workflow time: 0.00 instructions, 0.10 planning, 0.20 design, 0.30 development, 0.40 testing, 0.50 criticism, 0.60 fixing, 0.70 archives.
 
 ## Purpose
 - **Deterministic navigation**: Each layer has a root and numbered slots; each layer has a `*.99_stages` folder for the Stage System. This lets agents locate the exact context by Layer + Stage instead of fuzzy search.
@@ -18,8 +18,8 @@ This folder contains templates to scaffold layers:
 - `3_component_template/`
 
 Each template includes:
-- Numbered slots for that layer (e.g., 1.0–1.9 for project, 2.0–2.9 for feature, etc.).
-- A `*.99_stages/` folder with stage subfolders and a `status_template.json`.
+- Numbered slots for that layer (e.g., 1.00–1.90 for project, 2.00–2.90 for feature, etc.).
+- A `*.99_stages/` folder with stage subfolders (0.00–0.70) and a `status_template.json`.
 
 ## How to instantiate for a real context
 1) Copy the appropriate template to your context repo and rename (e.g., `layer_0_universal`, `layer_1_project`, `layer_2_feature_X`, `layer_3_component_Y`).

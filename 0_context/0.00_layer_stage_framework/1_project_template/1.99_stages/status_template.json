@@ -1,14 +1,46 @@
 {
   "layer_id": "1_project_<name>",
-  "current_stage": "0.0_instructions",
+  "current_stage": "0.00_instructions",
   "stages": {
-    "0.0_instructions": { "state": "not_started", "last_update": null, "notes": "" },
-    "0.1_planning":     { "state": "not_started", "last_update": null, "notes": "" },
-    "0.2_design":       { "state": "not_started", "last_update": null, "notes": "" },
-    "0.3_development":  { "state": "not_started", "last_update": null, "notes": "" },
-    "0.4_testing":      { "state": "not_started", "last_update": null, "notes": "" },
-    "0.5_criticism":    { "state": "not_started", "last_update": null, "notes": "" },
-    "0.6_fixing":       { "state": "not_started", "last_update": null, "notes": "" },
-    "0.7_archives":     { "state": "not_started", "last_update": null, "notes": "" }
+    "0.00_instructions": {
+      "state": "not_started",
+      "last_update": null,
+      "notes": ""
+    },
+    "0.01_planning": {
+      "state": "not_started",
+      "last_update": null,
+      "notes": ""
+    },
+    "0.02_design": {
+      "state": "not_started",
+      "last_update": null,
+      "notes": ""
+    },
+    "0.03_development": {
+      "state": "not_started",
+      "last_update": null,
+      "notes": ""
+    },
+    "0.04_testing": {
+      "state": "not_started",
+      "last_update": null,
+      "notes": ""
+    },
+    "0.05_criticism": {
+      "state": "not_started",
+      "last_update": null,
+      "notes": ""
+    },
+    "0.06_fixing": {
+      "state": "not_started",
+      "last_update": null,
+      "notes": ""
+    },
+    "0.07_archives": {
+      "state": "not_started",
+      "last_update": null,
+      "notes": ""
+    }
   }
 }
