@@ -1,43 +1,43 @@
 {
   "layer_id": "0_universal",
-  "current_stage": "0.00_instructions",
+  "current_stage": "0.01_instructions",
   "stages": {
-    "0.00_instructions": {
+    "0.01_instructions": {
       "state": "not_started",
       "last_update": null,
       "notes": ""
     },
-    "0.01_planning": {
+    "0.02_planning": {
       "state": "not_started",
       "last_update": null,
       "notes": ""
     },
-    "0.02_design": {
+    "0.03_design": {
       "state": "not_started",
       "last_update": null,
       "notes": ""
     },
-    "0.03_development": {
+    "0.04_development": {
       "state": "not_started",
       "last_update": null,
       "notes": ""
     },
-    "0.04_testing": {
+    "0.05_testing": {
       "state": "not_started",
       "last_update": null,
       "notes": ""
     },
-    "0.05_criticism": {
+    "0.06_criticism": {
       "state": "not_started",
       "last_update": null,
       "notes": ""
     },
-    "0.06_fixing": {
+    "0.07_fixing": {
       "state": "not_started",
       "last_update": null,
       "notes": ""
     },
-    "0.07_archives": {
+    "0.08_archives": {
       "state": "not_started",
       "last_update": null,
       "notes": ""
