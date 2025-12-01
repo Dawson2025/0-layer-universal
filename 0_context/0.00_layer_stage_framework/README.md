@@ -1,16 +1,42 @@
-# Layer + Stage Framework Templates
+# Layer + Stage Framework
 
-Use these templates to scaffold any new context (universal, project, feature, component).
-- **Layers (specificity):** lower numbers are more universal and are prerequisites for higher numbers.
-- **Stages (workflow):** numbered 0.0–0.7 inside each `.99_stages` folder.
-- **Status:** each layer has a `status_template.json` in its `.99_stages` folder (copy and adapt per layer).
+This repository uses two orthogonal systems to manage AI context and workflows:
 
-Structure per layer:
-- 0/1/2/3.x subfolders hold the layer content (basic prompts, principles, rules, setup, architecture, tools).
-- `.99_stages/` contains stage folders `0.0_instructions` through `0.7_archives` plus a status template.
+- **Layer System (specificity)**: from universal → project → feature → component. Lower numbers are more universal and are prerequisites for higher numbers. Example universal 0.x band: 0.0 basic prompts, 0.1 SE knowledge, 0.2 principles, 0.3 rules, 0.4 OS setup, 0.5 coding app setup, 0.6 apps/browsers/extensions, 0.7 AI apps/tools, 0.8 AI models, 0.9 universal tools.
+- **Stage System (chronology)**: inside every layer, stages 0.0–0.7 capture workflow time: 0.0 instructions, 0.1 planning, 0.2 design, 0.3 development, 0.4 testing, 0.5 criticism, 0.6 fixing, 0.7 archives.
 
-To instantiate for a real project/feature/component:
-1) Copy the appropriate template folder.
-2) Rename it (e.g., `1_project_<name>`, `2_feature_<name>`, `3_component_<name>`).
-3) Fill in the README placeholders and status file.
-4) Populate the stage folders with the right docs.
+## Purpose
+- **Deterministic navigation**: Each layer has a root and numbered slots; each layer has a `*.99_stages` folder for the Stage System. This lets agents locate the exact context by Layer + Stage instead of fuzzy search.
+- **Dependency clarity**: Higher layers depend on lower ones (e.g., models depend on tools depend on OS; features depend on project architecture depend on universal rules).
+- **Handoff & audit**: Stages and per-layer status files support handoffs, progress tracking, and archival for replay/debug.
+
+## Templates here
+This folder contains templates to scaffold layers:
+- `0_universal_template/`
+- `1_project_template/`
+- `2_feature_template/`
+- `3_component_template/`
+
+Each template includes:
+- Numbered slots for that layer (e.g., 1.0–1.9 for project, 2.0–2.9 for feature, etc.).
+- A `*.99_stages/` folder with stage subfolders and a `status_template.json`.
+
+## How to instantiate for a real context
+1) Copy the appropriate template to your context repo and rename (e.g., `layer_0_universal`, `layer_1_project`, `layer_2_feature_X`, `layer_3_component_Y`).
+2) Populate the numbered slots with your actual content. Use lower numbers for more foundational items.
+3) Keep existing docs as-is or move them; you can place legacy material in a `legacy_import/` subfolder under the appropriate slot while you reorganize.
+4) Use the Stage folders to file work artifacts by lifecycle, and update the `status.json` to track progress per layer.
+
+## How it works with sessions
+- At session start, load the universal layer (`layer_0_universal`), then the relevant project (`layer_1_*`), feature (`layer_2_*`), and component (`layer_3_*`) layers as needed.
+- Within each layer, load the current Stage folders (e.g., instructions, design, development, testing) based on the task.
+- The manager agent can address a point in the grid as (Layer, Stage), e.g., `(layer_2_feature_checkout, 0.3_development)`, to fetch the right docs and update status.
+
+## Status tracking
+- Each layer’s `*.99_stages/status*.json` tracks `current_stage` and per-stage state (`not_started | in_progress | blocked | done`).
+- This enables dashboards and automated routing for agents.
+
+## Why this structure
+- Mirrors hierarchical memory best practices: scoped layers + typed, chronological stages.
+- Git-friendly, human-readable, deterministic; complements search/RAG rather than replacing it.
+- Scales across universal/project/feature/component without changing the mental model.
