@@ -106,6 +106,16 @@ ls -d */0_context/0_context/0_basic_prompts_throughout/project_init_prompt.md 2>
 - `layer_0_universal/0.04_universal_rules/trickle_down_0_universal/0_instruction_docs/ai_agent_documentation_rule.md`
 - `layer_0_universal/0.04_universal_rules/trickle_down_0_universal/0_instruction_docs/git_commit_rule.md`
 
+### 4. Load the Context Management System (Layer + Stage + Agents)
+- **Layer System:** universal (0) → project (1) → feature (2) → component (3). Each layer has:
+  - `<N>.00_ai_manager_system/` (manager agent home)
+  - `<N>.01_manager_handoff_documents/` (`<N>.00_to_universal/`, `<N>.01_to_specific/`)
+  - `<N>.02_sub_layers/` (slots, e.g., `sub_layer_0.01_basic_prompts_throughout`)
+  - `<N>.99_stages/` (stage folders with `hand_off_documents/` and `ai_agent_system/`)
+- **Stage System:** instructions, planning, design, development, testing, criticism, fixing, archives. One stage agent per stage per layer.
+- **Agent hierarchy:** universal manager oversees project managers; project managers oversee feature managers; feature managers oversee component managers; stage agents report to their layer’s manager. Upstream reports: `<N>.00_to_universal/`; downstream/context: `<N>.01_to_specific/`.
+- **Registry:** see `0.00_layer_stage_framework/agent_registry_template.md` to register managers/stage agents for discovery.
+
 ---
 
 ## 📚 Documentation Reference by Task
