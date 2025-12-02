@@ -17,7 +17,7 @@ Use this to scaffold any feature-level context. Depends on universal (0.x) and p
 - 2.12_feature_tools: scripts/migrations/backfills specific to this feature.
 - 2.99_stages: stage folders and status template.
 
-## Stages (2.99, stored under `2.99_stages/`)
-2.01 instructions → 2.02 planning → 2.03 design → 2.04 development → 2.05 testing → 2.06 criticism → 2.07 fixing → 2.08 archives.
+## Stages (2.99, stored under `2.99_stages/`, folders named `stage_2.xx_*`)
+stage_2.01_instructions → stage_2.02_planning → stage_2.03_design → stage_2.04_development → stage_2.05_testing → stage_2.06_criticism → stage_2.07_fixing → stage_2.08_archives.
 
 Copy, rename to your feature, and populate each slot.

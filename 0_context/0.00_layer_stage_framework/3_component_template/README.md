@@ -17,7 +17,7 @@ Use this to scaffold any component-level context. Depends on universal (0.x), pr
 - 3.12_component_tools: helper scripts/utilities for this component.
 - 3.99_stages: stage folders and status template.
 
-## Stages (3.99, stored under `3.99_stages/`)
-3.01 instructions → 3.02 planning → 3.03 design → 3.04 development → 3.05 testing → 3.06 criticism → 3.07 fixing → 3.08 archives.
+## Stages (3.99, stored under `3.99_stages/`, folders named `stage_3.xx_*`)
+stage_3.01_instructions → stage_3.02_planning → stage_3.03_design → stage_3.04_development → stage_3.05_testing → stage_3.06_criticism → stage_3.07_fixing → stage_3.08_archives.
 
 Copy, rename to your component, and populate each slot.

@@ -15,14 +15,14 @@ Use this when defining the universal layer for any ecosystem.
 - 0.10_universal_tools: cross-project scripts/utilities.
 - 0.99_stages: stage folders and status template.
 
-## Stages (0.99)
-- 0.01 instructions
-- 0.02 planning
-- 0.03 design
-- 0.04 development
-- 0.05 testing
-- 0.06 criticism
-- 0.07 fixing
-- 0.08 archives
+## Stages (0.99, folders named `stage_0.xx_*`)
+- stage_0.01_instructions
+- stage_0.02_planning
+- stage_0.03_design
+- stage_0.04_development
+- stage_0.05_testing
+- stage_0.06_criticism
+- stage_0.07_fixing
+- stage_0.08_archives
 
 Copy this template, rename for your universal context, and populate per slot.
