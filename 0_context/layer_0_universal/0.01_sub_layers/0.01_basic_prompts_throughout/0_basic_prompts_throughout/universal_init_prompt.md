@@ -17,7 +17,7 @@ Do this at the start of the chat/session before any other action.
 ### 1. Discover Your Location & Read the Master Index
 
 **First, find where you are:**
-- This file's location = `<universal_context_root>/0_context/layer_0_universal/0.01_basic_prompts_throughout/0_basic_prompts_throughout/universal_init_prompt.md`
+- This file's location = `<universal_context_root>/0_context/layer_0_universal/0.01_sub_layers/0.01_basic_prompts_throughout/0_basic_prompts_throughout/universal_init_prompt.md`
 - Master Index location = `<universal_context_root>/0_context/MASTER_DOCUMENTATION_INDEX.md`
 
 **Expected directory structure (Layer System):**
@@ -30,18 +30,19 @@ Do this at the start of the chat/session before any other action.
 │       ├── USAGE_GUIDE.md
 │       ├── 0.00_layer_stage_framework/   # Templates
 │       └── layer_0_universal/            # Universal layer (content)
-│           ├── 0.01_basic_prompts_throughout/
-│           │   └── 0_basic_prompts_throughout/
-│           │       └── universal_init_prompt.md  ← You are here
-│           ├── 0.02_software_engineering_knowledge_system/
-│           ├── 0.03_universal_principles/
-│           ├── 0.04_universal_rules/
-│           ├── 0.05_os_setup/
-│           ├── 0.06_coding_app_setup/
-│           ├── 0.07_apps_browsers_extensions_setup/
-│           ├── 0.08_ai_apps_tools_setup/
-│           ├── 0.09_ai_models/
-│           ├── 0.10_universal_tools/
+│           ├── 0.01_sub_layers/          # All universal slots live here
+│           │   ├── 0.01_basic_prompts_throughout/
+│           │   │   └── 0_basic_prompts_throughout/
+│           │   │       └── universal_init_prompt.md  ← You are here
+│           │   ├── 0.02_software_engineering_knowledge_system/
+│           │   ├── 0.03_universal_principles/
+│           │   ├── 0.04_universal_rules/
+│           │   ├── 0.05_os_setup/
+│           │   ├── 0.06_coding_app_setup/
+│           │   ├── 0.07_apps_browsers_extensions_setup/
+│           │   ├── 0.08_ai_apps_tools_setup/
+│           │   ├── 0.09_ai_models/
+│           │   └── 0.10_universal_tools/
 │           └── 0.99_stages/
 └── <project_name>/                  # Project-specific context repo
     └── 0_context/
@@ -111,7 +112,7 @@ ls -d */0_context/0_context/0_basic_prompts_throughout/project_init_prompt.md 2>
 - Templates for universal/project/feature/component layers: `0.00_layer_stage_framework/`
 - Stage folders (0.01–0.08) and status templates live under each `*.99_stages/`
 - Read `0.00_layer_stage_framework/README.md` for how to copy/rename/populate per project
-- Live universal layer (actual content): `layer_0_universal/`
+- Live universal layer (actual content): `layer_0_universal/0.01_sub_layers/`
 
 ### For Git Operations
 **Read before making commits:**
@@ -127,9 +128,9 @@ ls -d */0_context/0_context/0_basic_prompts_throughout/project_init_prompt.md 2>
 
 ### For Browser Automation
 **Read before opening browsers:**
-- `layer_0_universal/0.04_universal_rules/trickle_down_0_universal/0_instruction_docs/browser_management_policy.md`
-- `layer_0_universal/0.04_universal_rules/trickle_down_0_universal/0_instruction_docs/browser_opening_rule.md`
-- `layer_0_universal/0.10_universal_tools/trickle_down_0.75_universal_tools/0_instruction_docs/browser-automation/README.md`
+- `layer_0_universal/0.01_sub_layers/0.04_universal_rules/trickle_down_0_universal/0_instruction_docs/browser_management_policy.md`
+- `layer_0_universal/0.01_sub_layers/0.04_universal_rules/trickle_down_0_universal/0_instruction_docs/browser_opening_rule.md`
+- `layer_0_universal/0.01_sub_layers/0.10_universal_tools/trickle_down_0.75_universal_tools/0_instruction_docs/browser-automation/README.md`
 
 ### For Testing
 **Read when creating or running tests:**
@@ -139,25 +140,25 @@ ls -d */0_context/0_context/0_basic_prompts_throughout/project_init_prompt.md 2>
 
 ### For MCP Tools
 **Read when using Model Context Protocol servers:**
-- `layer_0_universal/0.10_universal_tools/trickle_down_0.75_universal_tools/0_instruction_docs/mcp-tools/README.md`
-- `layer_0_universal/0.10_universal_tools/trickle_down_0.75_universal_tools/0_instruction_docs/mcp-tools/MCP_SYSTEM_GUIDE.md`
-- `layer_0_universal/0.10_universal_tools/trickle_down_0.75_universal_tools/0_instruction_docs/mcp-tools/MCP_CONFIGURATION_GUIDE.md`
+- `layer_0_universal/0.01_sub_layers/0.10_universal_tools/trickle_down_0.75_universal_tools/0_instruction_docs/mcp-tools/README.md`
+- `layer_0_universal/0.01_sub_layers/0.10_universal_tools/trickle_down_0.75_universal_tools/0_instruction_docs/mcp-tools/MCP_SYSTEM_GUIDE.md`
+- `layer_0_universal/0.01_sub_layers/0.10_universal_tools/trickle_down_0.75_universal_tools/0_instruction_docs/mcp-tools/MCP_CONFIGURATION_GUIDE.md`
 
 ### For Claude Code Specific
 **Read when using Claude Code CLI:**
-- `layer_0_universal/0.10_universal_tools/trickle_down_0.75_universal_tools/0_instruction_docs/claude-code-config/README.md`
-- `layer_0_universal/0.10_universal_tools/trickle_down_0.75_universal_tools/0_instruction_docs/claude-code-config/QUICK_START.md`
-- `layer_0_universal/0.10_universal_tools/trickle_down_0.75_universal_tools/0_instruction_docs/claude-code-config/WHAT_ACTUALLY_WORKS.md`
+- `layer_0_universal/0.01_sub_layers/0.10_universal_tools/trickle_down_0.75_universal_tools/0_instruction_docs/claude-code-config/README.md`
+- `layer_0_universal/0.01_sub_layers/0.10_universal_tools/trickle_down_0.75_universal_tools/0_instruction_docs/claude-code-config/QUICK_START.md`
+- `layer_0_universal/0.01_sub_layers/0.10_universal_tools/trickle_down_0.75_universal_tools/0_instruction_docs/claude-code-config/WHAT_ACTUALLY_WORKS.md`
 
 ### For Database Operations (Supabase)
 **MANDATORY - Read before any database work:**
-- `layer_0_universal/0.04_universal_rules/trickle_down_0_universal/0_instruction_docs/supabase_javascript_integration_rule.md`
-- `layer_0_universal/0.04_universal_rules/trickle_down_0_universal/0_instruction_docs/supabase_javascript_quick_reference.md`
+- `layer_0_universal/0.01_sub_layers/0.04_universal_rules/trickle_down_0_universal/0_instruction_docs/supabase_javascript_integration_rule.md`
+- `layer_0_universal/0.01_sub_layers/0.04_universal_rules/trickle_down_0_universal/0_instruction_docs/supabase_javascript_quick_reference.md`
 
 ### For OAuth/Security Setup
 **Read when implementing authentication:**
-- `layer_0_universal/0.04_universal_rules/trickle_down_0_universal/0_instruction_docs/google_oauth_production_ready.md`
-- `layer_0_universal/0.04_universal_rules/trickle_down_0_universal/0_instruction_docs/sudo_password_management.md`
+- `layer_0_universal/0.01_sub_layers/0.04_universal_rules/trickle_down_0_universal/0_instruction_docs/google_oauth_production_ready.md`
+- `layer_0_universal/0.01_sub_layers/0.04_universal_rules/trickle_down_0_universal/0_instruction_docs/sudo_password_management.md`
 
 ---
 

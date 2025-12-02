@@ -2,7 +2,7 @@
 
 Use this to scaffold any feature-level context. Depends on universal (0.x) and project (1.x) layers.
 
-## Slots
+## Slots (stored under `2.01_sub_layers/`)
 - 2.01_basic_prompts: feature init + what-to-do-next.
 - 2.02_feature_knowledge: domain/UX/business knowledge specific to this feature.
 - 2.03_feature_principles: local design/perf/security principles.

@@ -2,7 +2,7 @@
 
 Use this to scaffold any component-level context. Depends on universal (0.x), project (1.x), and feature (2.x) layers.
 
-## Slots
+## Slots (stored under `3.01_sub_layers/`)
 - 3.01_basic_prompts: component init + what-to-do-next.
 - 3.02_component_knowledge: what this component does; contracts/invariants.
 - 3.03_component_principles: micro-principles (purity, idempotency, perf goals).

@@ -2,7 +2,7 @@
 
 Use this when defining the universal layer for any ecosystem.
 
-## Slots
+## Slots (stored under `0.01_sub_layers/`)
 - 0.01_basic_prompts_throughout: session init, what-to-do-next, core prompts.
 - 0.02_software_engineering_knowledge_system: general SE knowledge map.
 - 0.03_universal_principles: philosophies, values.

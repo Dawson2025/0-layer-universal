@@ -2,7 +2,7 @@
 
 This repository uses two orthogonal systems to manage AI context and workflows. Numbering is zero-padded (two digits after the decimal) for lexicographic stability (e.g., 1.01, 1.10, 1.12).
 
-- **Layer System (specificity)**: from universal → project → feature → component. Lower numbers are more universal and are prerequisites for higher numbers. Example universal 0.x band: 0.01 basic prompts, 0.02 SE knowledge, 0.03 principles, 0.04 rules, 0.05 OS setup, 0.06 coding app setup, 0.07 apps/browsers/extensions, 0.08 AI apps/tools, 0.09 AI models, 0.10 universal tools. Project (1.x), feature (2.x), and component (3.x) bands mirror the same pattern with their own numbering (e.g., 1.01–1.12).
+- **Layer System (specificity)**: from universal → project → feature → component. Lower numbers are more universal and are prerequisites for higher numbers. Each layer stores its numbered slots inside a `*.01_sub_layers/` folder. Example universal 0.x band: 0.01 basic prompts, 0.02 SE knowledge, 0.03 principles, 0.04 rules, 0.05 OS setup, 0.06 coding app setup, 0.07 apps/browsers/extensions, 0.08 AI apps/tools, 0.09 AI models, 0.10 universal tools. Project (1.x), feature (2.x), and component (3.x) bands mirror the same pattern with their own numbering (e.g., 1.01–1.12).
 - **Stage System (chronology)**: inside every layer, stages 0.01–0.08 capture workflow time: 0.01 instructions, 0.02 planning, 0.03 design, 0.04 development, 0.05 testing, 0.06 criticism, 0.07 fixing, 0.08 archives.
 
 ## Purpose (how context management works)

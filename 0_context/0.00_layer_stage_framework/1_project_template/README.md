@@ -2,7 +2,7 @@
 
 Use this to scaffold any project-level context. Mirrors the universal 0.x stack but specialized for a single project.
 
-## Slots
+## Slots (stored under `1.01_sub_layers/`)
 - 1.01_basic_prompts: project init + what-to-do-next prompts.
 - 1.02_project_se_knowledge: SE/domain knowledge this project relies on.
 - 1.03_project_principles: project-specific design/UX/security principles.
