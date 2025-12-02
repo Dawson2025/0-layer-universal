@@ -116,6 +116,12 @@ ls -d */0_context/0_context/0_basic_prompts_throughout/project_init_prompt.md 2>
 - **Agent hierarchy:** universal manager oversees project managers; project managers oversee feature managers; feature managers oversee component managers; stage agents report to their layer’s manager. Upstream reports: `<N>.00_to_universal/`; downstream/context: `<N>.01_to_specific/`.
 - **Registry:** see `0.00_layer_stage_framework/agent_registry_template.md` to register managers/stage agents for discovery.
 
+### 5. Summaries must keep entrypoints
+When summarizing context for any session, you must explicitly retain:
+- A reference to this universal init prompt (`layer_0_universal/0.02_sub_layers/sub_layer_0.01_basic_prompts_throughout/0_basic_prompts_throughout/universal_init_prompt.md`) with an instruction to follow it.
+- A reference to the active project init prompt (e.g., `<project>/0_context/0_context/0_basic_prompts_throughout/project_init_prompt.md` or its Layer/Stage location) with an instruction to follow it.
+Do not remove these references during summarization; they are required navigation anchors.
+
 ---
 
 ## 📚 Documentation Reference by Task
