@@ -36,6 +36,12 @@ Each template includes:
 - **Status:** Each `status*.json` records the active stage and per-stage state so a manager agent can route work, unblock, or archive consistently.
 - **Agent roles:** Each layer has a manager agent for that layer. The universal manager coordinates all project managers; each project manager coordinates all feature managers for that project; each feature manager coordinates all component managers for that feature. Within a layer, there is one stage agent per stage (instructions, planning, design, development, testing, criticism, fixing, archives), and each stage agent reports to that layer’s manager. Upward reports go to `<N>.01_manager_handoff_documents/<N>.00_to_universal/`; downstream/context packets go to `<N>.01_manager_handoff_documents/<N>.01_to_specific/`.
 
+## Agent system
+- **Hierarchy:** Universal manager → Project managers → Feature managers → Component managers. Each manager oversees all stage agents in its own layer and the manager agents of the immediately more specific layer.
+- **Stage agents:** One per stage per layer (instructions, planning, design, development, testing, criticism, fixing, archives). They execute work for that layer/stage and report to their layer’s manager.
+- **Communication paths:** Upward reports/rollups: `<N>.01_manager_handoff_documents/<N>.00_to_universal/` (to managers of broader layers). Downstream/context packets: `<N>.01_manager_handoff_documents/<N>.01_to_specific/` (to managers of more specific layers). Stage-level handoffs live inside each `stage_<N.xx>_*` folder under `hand_off_documents/` and `ai_agent_system/`.
+- **Routing:** Managers decide which stage agent to activate, collect results, and escalate or delegate via the handoff folders; status files in `*.99_stages/` keep `current_stage` and per-stage states in sync.
+
 ## How it works with sessions
 - At session start, load the universal layer (`layer_0_universal`), then the relevant project (`layer_1_*`), feature (`layer_2_*`), and component (`layer_3_*`) layers as needed.
 - Within each layer, operate in the current Stage (instructions/design/development/testing/criticism/fixing/archives) and update status on exit.
