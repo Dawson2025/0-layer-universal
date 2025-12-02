@@ -20,6 +20,7 @@ This folder contains templates to scaffold layers:
 Each template includes:
 - Numbered slots for that layer (e.g., project 1.01–1.12, feature 2.01–2.12, component 3.01–3.12) stored as `sub_layer_<slot>/` inside `*.01_sub_layers/`.
 - A `*.99_stages/` folder with stage subfolders named `stage_L.xx_*` and a `status_template.json`.
+- The template itself already includes the `*.01_sub_layers/` directory and the stage folders to mirror the live layout.
 
 ## How to instantiate for a real context
 1) Copy the appropriate template to your context repo and rename (e.g., `layer_0_universal`, `layer_1_project`, `layer_2_feature_X`, `layer_3_component_Y`).
