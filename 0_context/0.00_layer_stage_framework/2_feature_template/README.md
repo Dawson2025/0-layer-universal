@@ -2,7 +2,11 @@
 
 Use this to scaffold any feature-level context. Depends on universal (0.x) and project (1.x) layers.
 
-## Slots (stored under `2.01_sub_layers/` as `sub_layer_2.xx_*`)
+## Manager + handoff
+- 2.00_ai_manager_system: feature manager docs/configs.
+- 2.01_manager_handoff_documents: `2.00_to_universal/` and `2.01_to_specific/` for up/downstream handoffs.
+
+## Slots (stored under `2.02_sub_layers/` as `sub_layer_2.xx_*`)
 - sub_layer_2.01_basic_prompts: feature init + what-to-do-next.
 - sub_layer_2.02_feature_knowledge: domain/UX/business knowledge specific to this feature.
 - sub_layer_2.03_feature_principles: local design/perf/security principles.

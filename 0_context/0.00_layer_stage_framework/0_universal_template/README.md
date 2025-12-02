@@ -2,7 +2,11 @@
 
 Use this when defining the universal layer for any ecosystem.
 
-## Slots (stored under `0.01_sub_layers/` as `sub_layer_0.xx_*`)
+## Manager + handoff
+- 0.00_ai_manager_system: manager docs/configs.
+- 0.01_manager_handoff_documents: `0.00_to_universal/` and `0.01_to_specific/` for cross-layer handoffs.
+
+## Slots (stored under `0.02_sub_layers/` as `sub_layer_0.xx_*`)
 - sub_layer_0.01_basic_prompts_throughout: session init, what-to-do-next, core prompts.
 - sub_layer_0.02_software_engineering_knowledge_system: general SE knowledge map.
 - sub_layer_0.03_universal_principles: philosophies, values.

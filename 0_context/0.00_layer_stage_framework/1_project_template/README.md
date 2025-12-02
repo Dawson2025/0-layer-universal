@@ -2,7 +2,11 @@
 
 Use this to scaffold any project-level context. Mirrors the universal 0.x stack but specialized for a single project.
 
-## Slots (stored under `1.01_sub_layers/` as `sub_layer_1.xx_*`)
+## Manager + handoff
+- 1.00_ai_manager_system: project-level manager docs/configs.
+- 1.01_manager_handoff_documents: `1.00_to_universal/` and `1.01_to_specific/` for up/downstream handoffs.
+
+## Slots (stored under `1.02_sub_layers/` as `sub_layer_1.xx_*`)
 - sub_layer_1.01_basic_prompts: project init + what-to-do-next prompts.
 - sub_layer_1.02_project_se_knowledge: SE/domain knowledge this project relies on.
 - sub_layer_1.03_project_principles: project-specific design/UX/security principles.

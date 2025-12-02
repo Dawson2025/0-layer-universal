@@ -1,6 +1,6 @@
 # Universal AI Context System - Usage Guide
 
-This directory now follows the Layer + Stage framework (layers: universal/project/feature/component; stages: instructions → planning → design → development → testing → criticism → fixing → archives). Slots live under `layer_<N>_*/*01_sub_layers/sub_layer_<N.xx>_*` and stages under `*.99_stages/stage_<N.xx>_*` (each with `hand_off_documents/` and `ai_agent_system/`). Legacy `trickle_down_*` references remain below for historical context; prefer the layer paths for new work.
+This directory now follows the Layer + Stage framework (layers: universal/project/feature/component; stages: instructions → planning → design → development → testing → criticism → fixing → archives). Each layer has `<N>.00_ai_manager_system/`, `<N>.01_manager_handoff_documents/<N>.00_to_universal|<N>.01_to_specific/`, slots under `layer_<N>_*/*02_sub_layers/sub_layer_<N.xx>_*`, and stages under `*.99_stages/stage_<N.xx>_*` (each with `hand_off_documents/` and `ai_agent_system/`). Legacy `trickle_down_*` references remain below for historical context; prefer the layer paths for new work.
 
 ## 🎯 Quick Start
 

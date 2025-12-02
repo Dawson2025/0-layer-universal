@@ -2,7 +2,11 @@
 
 Use this to scaffold any component-level context. Depends on universal (0.x), project (1.x), and feature (2.x) layers.
 
-## Slots (stored under `3.01_sub_layers/` as `sub_layer_3.xx_*`)
+## Manager + handoff
+- 3.00_ai_manager_system: component manager docs/configs.
+- 3.01_manager_handoff_documents: `3.00_to_universal/` and `3.01_to_specific/` for up/downstream handoffs.
+
+## Slots (stored under `3.02_sub_layers/` as `sub_layer_3.xx_*`)
 - sub_layer_3.01_basic_prompts: component init + what-to-do-next.
 - sub_layer_3.02_component_knowledge: what this component does; contracts/invariants.
 - sub_layer_3.03_component_principles: micro-principles (purity, idempotency, perf goals).
