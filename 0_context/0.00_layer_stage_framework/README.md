@@ -8,7 +8,7 @@ This repository uses two orthogonal systems to manage AI context and workflows. 
 ## Purpose (how context management works)
 - **Deterministic navigation**: Each layer has numbered slots and a `*.99_stages` folder. Agents address work as (Layer, Stage) to load only what’s needed instead of fuzzy search.
 - **Dependency clarity**: Higher layers depend on lower ones (e.g., models → tools → OS; features → project architecture → universal rules).
-- **Handoff & audit**: Stages and per-layer status files support handoffs, progress tracking, and archival for replay/debug. This is the spine of the context management system.
+- **Handoff & audit**: The manager system (`<N>.00_ai_manager_system/`) + handoff hub (`<N>.01_manager_handoff_documents/<N>.00_to_universal|<N>.01_to_specific/`) + stage handoff folders allow clean up/downstream communication; stages and per-layer status files support handoffs, progress tracking, and archival for replay/debug. This is the spine of the context management system.
 
 ## Templates here
 This folder contains templates to scaffold layers:
@@ -28,6 +28,7 @@ Each template includes:
 2) Populate the numbered slots with your actual content. Use lower numbers for more foundational items. Legacy material can live in a `legacy_import/` subfolder while you reorganize.
 3) File artifacts by Stage inside `*.99_stages/` and keep the per-layer `status*.json` updated.
 4) The manager/worker agents navigate by Layer + Stage (e.g., `layer_2_feature_checkout` + `stage_2.04_development`) to load, work, and record status.
+5) For inter-layer coordination, use the manager folders: drop upward reports in `<N>.01_manager_handoff_documents/<N>.00_to_universal/` and downward/context packets in `<N>.01_manager_handoff_documents/<N>.01_to_specific/`.
 
 ## How the context file system works
 - **Traversal:** A session loads from the outside in (layer_0 → layer_1 → layer_2 → layer_3) and within each layer moves through the applicable stage folder. This keeps context scoped and deterministic.
