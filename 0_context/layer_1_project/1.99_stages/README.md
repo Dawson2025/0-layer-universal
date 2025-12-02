@@ -1,12 +1,12 @@
 # layer_1_project: Stage System (1.99)
 
-- 0.0_instructions
-- 0.1_planning
-- 0.2_design
-- 0.3_development
-- 0.4_testing
-- 0.5_criticism
-- 0.6_fixing
-- 0.7_archives
+- 1.01_instructions
+- 1.02_planning
+- 1.03_design
+- 1.04_development
+- 1.05_testing
+- 1.06_criticism
+- 1.07_fixing
+- 1.08_archives
 
 Use status.json to track progress for this layer.

@@ -1,43 +1,43 @@
 {
   "layer_id": "2_feature_<name>",
-  "current_stage": "0.00_instructions",
+  "current_stage": "2.00_instructions",
   "stages": {
-    "0.00_instructions": {
+    "2.00_instructions": {
       "state": "not_started",
       "last_update": null,
       "notes": ""
     },
-    "0.01_planning": {
+    "2.01_planning": {
       "state": "not_started",
       "last_update": null,
       "notes": ""
     },
-    "0.02_design": {
+    "2.02_design": {
       "state": "not_started",
       "last_update": null,
       "notes": ""
     },
-    "0.03_development": {
+    "2.03_development": {
       "state": "not_started",
       "last_update": null,
       "notes": ""
     },
-    "0.04_testing": {
+    "2.04_testing": {
       "state": "not_started",
       "last_update": null,
       "notes": ""
     },
-    "0.05_criticism": {
+    "2.05_criticism": {
       "state": "not_started",
       "last_update": null,
       "notes": ""
     },
-    "0.06_fixing": {
+    "2.06_fixing": {
       "state": "not_started",
       "last_update": null,
       "notes": ""
     },
-    "0.07_archives": {
+    "2.07_archives": {
       "state": "not_started",
       "last_update": null,
       "notes": ""

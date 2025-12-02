@@ -17,7 +17,7 @@ Use this to scaffold any project-level context. Mirrors the universal 0.x stack 
 - 1.12_project_tools: project-specific scripts/CLIs/migrations.
 - 1.99_stages: stage folders and status template.
 
-## Stages (1.99)
-0.01 instructions → 0.02 planning → 0.03 design → 0.04 development → 0.05 testing → 0.06 criticism → 0.07 fixing → 0.08 archives.
+## Stages (1.99, stored under `1.99_stages/`)
+1.01 instructions → 1.02 planning → 1.03 design → 1.04 development → 1.05 testing → 1.06 criticism → 1.07 fixing → 1.08 archives.
 
 Copy, rename to your project, and populate each slot.

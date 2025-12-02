@@ -1,12 +1,12 @@
 # layer_3_components: Stage System (3.99)
 
-- 0.0_instructions
-- 0.1_planning
-- 0.2_design
-- 0.3_development
-- 0.4_testing
-- 0.5_criticism
-- 0.6_fixing
-- 0.7_archives
+- 3.01_instructions
+- 3.02_planning
+- 3.03_design
+- 3.04_development
+- 3.05_testing
+- 3.06_criticism
+- 3.07_fixing
+- 3.08_archives
 
 Use status.json to track progress for this layer.
