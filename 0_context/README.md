@@ -1,136 +1,33 @@
-# AI Agent Context System
-*Universal Trickle-Down Documentation for AI Coding Agents*
+# AI Agent Context System (Layer + Stage Framework)
 
-## 🚨 **CRITICAL: Terminal Hanging Fix**
+This repo is the universal context hub for all AI agents. It uses two orthogonal dimensions:
 
-**IMPORTANT**: Before using any terminal commands, read the terminal hanging fix:
-- **Quick Fix**: `TERMINAL_HANGING_FIX.md` - Immediate solution
-- **Full Protocol**: `trickle_down_0_universal/0_instruction_docs/terminal-tool-replacement.md`
-- **Quick Reference**: `trickle_down_0_universal/0_instruction_docs/terminal-quick-reference.md`
+- **Layer System (specificity):** universal → project → feature → component. Numbered with zero‑padded decimals (e.g., 0.01, 1.01) and stored under `layer_<N>_*/*01_sub_layers/sub_layer_<N.xx>_*`.
+- **Stage System (chronology):** instructions → planning → design → development → testing → criticism → fixing → archives. Stage folders mirror the layer prefix (e.g., `stage_1.03_design`) and live under `*.99_stages/`, each with `hand_off_documents/` and `ai_agent_system/` drop points.
 
-## 🚨 **CRITICAL: Manual Steps Execution**
+## Repo layout (top level)
+- `0.00_layer_stage_framework/` — templates and README describing how to scaffold new layers and stages.
+- `layer_0_universal/` — universal content (0.01–0.10 slots + 0.99 stages).
+- `layer_1_project/` — project-level content (1.01–1.12 slots + 1.99 stages).
+- `layer_2_features/` — feature-level content (2.01–2.12 slots + 2.99 stages).
+- `layer_3_components/` — component-level content (3.01–3.12 slots + 3.99 stages).
 
-**IMPORTANT**: AI agents must execute ALL manual steps directly using available tools:
-- **Manual Steps Protocol**: `trickle_down_0_universal/0_instruction_docs/manual-steps-automation.md`
-- **Browser Automation**: Use MCP tools for web interface interaction
-- **No Delegation**: Never ask users to perform manual steps
+Legacy `trickle_down_*` material remains inside `legacy_import/` folders within the appropriate sub_layer directories for reference; new work should use the Layer/Stage paths above.
 
-## 📁 **Directory Structure**
+## Navigation (start here)
+1. Read `layer_0_universal/0.01_sub_layers/sub_layer_0.01_basic_prompts_throughout/0_basic_prompts_throughout/universal_init_prompt.md`.
+2. Read `MASTER_DOCUMENTATION_INDEX.md` and `SYSTEM_OVERVIEW.md` for the map.
+3. Load the relevant project/feature/component layers and operate inside their current stage (see `*.99_stages/status*.json`).
 
-### **trickle_down_0_universal/**
-Universal instructions for all AI agents
-- `0_instruction_docs/` - How-to guides, protocols, and procedures
-- `1_status_progress_docs/` - Current status and progress reports
-- `2_archive_docs/` - Completed work and resolutions
-- **Key universal lessons inside `0_instruction_docs/`:**
-  - `browser_management_policy.md` and `browser_opening_rule.md` - Keep automation browsers open and use Playwright MCP by default
-  - `universal_instructions.md` - Fundamental mindset, analysis, and execution rules for any AI agent
-  - `trickle-down-0.0-ai-coding-systems/` - Framework for selecting an AI coding system (Spec Kit, BMAD, AFD, etc.)
-  - `agent-patterns/assignment-*.md` - Two-agent planning/execution workflow template for multi-step tasks
-  - `cursor_terminal_issues.md` - Cursor IDE output corruption diagnosis plus verified workarounds (preview box toggle, wrapper usage, logging pattern)
-  - `canvas_submission_protocol.md` - Required evidence files, upload steps, and integrity rules for Canvas submissions (auto-generated logs only)
+## Naming conventions
+- Slots: `sub_layer_<N.xx>_*` inside `<layer>/0.01_sub_layers/`, zero‑padded (e.g., `sub_layer_1.05_project_architecture`).
+- Stages: `stage_<N.xx>_*` inside `<layer>/*.99_stages/`, zero‑padded (e.g., `stage_2.04_development`). Each stage has `hand_off_documents/` and `ai_agent_system/`.
+- Status: per-layer status JSON in `*.99_stages/` using stage keys like `stage_1.03_design`.
 
-### **trickle_down_0.5_setup/**
-Setup and configuration systems
-- `0_instruction_docs/` - Setup guides and configuration procedures
-- `1_status_progress_docs/` - Setup status and progress
-- `2_archive_docs/` - Completed setup documentation
+## Quick sync rules
+- Start every session with `git pull` and `git status` for all repos you will touch.
+- End each response by committing and pushing relevant changes, and updating context/docs/stage status.
 
-### **trickle_down_0.75_universal_tools/**
-Universal tools and utilities
-- `0_instruction_docs/` - Tool usage guides and procedures
-- `1_status_progress_docs/` - Tool development status
-- `2_archive_docs/` - Completed tool implementations
+## Need templates?
+Copy from `0.00_layer_stage_framework/` to scaffold a new universal/project/feature/component layer. Templates already include sub_layers, stages, handoff folders, and a status template.
 
-### **trickle_down_1_project/**
-Project-specific documentation
-- `0_instruction_docs/` - Project constitution and standards
-- `1_status_progress_docs/` - Project status and progress
-- `2_archive_docs/` - Project completion documentation
-- `2_testing_docs/` - Testing documentation
-
-### **trickle_down_1.5_project_tools/**
-Project-specific tools and implementations
-- `0_instruction_docs/` - Tool specifications and usage
-- `1_status_progress_docs/` - Tool development status
-- `2_archive_docs/` - Completed tool implementations
-
-### **trickle_down_2_features/**
-Feature-specific documentation
-- `0_instruction_docs/` - Feature specifications and guides
-- `1_status_progress_docs/` - Feature development status
-- `2_archive_docs/` - Completed feature implementations
-- `2_testing_docs/` - Testing documentation
-
-### **trickle_down_2_implementation/**
-Implementation-specific documentation
-- Contains detailed implementation guides and completed implementations
-
-### **trickle_down_3_components/**
-Component-specific documentation
-- `0_instruction_docs/` - Component specifications and guides
-- `1_status_progress_docs/` - Component development status
-- `2_archive_docs/` - Completed component implementations
-
-### **trickle_down_3_testing/**
-Testing-specific documentation
-- Contains testing guides, test results, and bug reports
-
-## 📦 Integrated Project Imports
-
-- Project-level trickle-down docs now live inside `integrated_from_projects/0_ai_context/...` under the main numbered directories.
-- Look in `trickle_down_<level>/0_instruction_docs/integrated_from_projects/0_ai_context` for constitutions, environment specs, and tooling guides.
-- Run `/init` when starting a session so your agent reloads the flattened layout.
-- Refresh any personal tooling that referenced the removed nested `trickle-down-*` directories.
-
-## 🚀 **Quick Start for AI Agents**
-
-1. **Read Terminal Fix**: `TERMINAL_HANGING_FIX.md`
-2. **Read Project Overview**: `0_basic_prompts_throughout/what_to_do_next.md` (update the path in this file to point to your project)
-3. **Read Environments Guide**: `trickle_down_1_project/0_instruction_docs/ENVIRONMENTS_AND_INTEGRATIONS.md` (if exists)
-4. **Read Project Constitution**: `trickle_down_1_project/0_instruction_docs/constitution.md` (if exists)
-5. **Initialize**: Follow `trickle_down_0_universal/0_instruction_docs/initialization/init-command.md` (if exists)
-6. **Use Proper Tools**: Always use `terminal_wrapper.py` for Python scripts
-
-## 🔧 **Customization for Your Project**
-
-To adapt this context system for your project:
-
-1. **Update `0_basic_prompts_throughout/what_to_do_next.md`**:
-   - Replace project-specific paths
-   - Update project overview
-   - Add your project's technology stack
-   - Define current priorities
-
-2. **Add Project-Specific Documentation**:
-   - Create `trickle_down_1_project/0_instruction_docs/project_constitution.md` for your project standards
-   - Add project-specific tools to `trickle_down_1.5_project_tools/`
-   - Document features in `trickle_down_2_features/`
-   - Add component docs to `trickle_down_3_components/`
-
-3. **Configure Your Stack**:
-   - Update setup documentation in `trickle_down_0.5_setup/`
-   - Add environment-specific configurations
-   - Document deployment procedures
-
-## ⚠️ **Critical Rules**
-
-- **NEVER** use `run_terminal_cmd` for Python scripts (hangs)
-- **ALWAYS** use `python3 scripts/terminal_wrapper.py --script <script>` for Python scripts
-- **FOLLOW** the initialization protocol for proper context loading
-- **COMMENTING STYLE FOR EXPLANATORY COPIES**: When producing fully commented versions of code files (e.g., instructional variants), use concise, imperative, command-like comments that describe the action on each line. Keep the executable code unchanged and place the verbose version alongside the original and the cleaned version as separate files.
-- **READ** terminal execution protocol before executing commands
-
-## 📚 **Documentation Hierarchy**
-
-This directory follows the Trickle-Down documentation pattern:
-- **0_universal_instructions**: Universal rules for all AI agents
-- **0.5_setup**: Setup and configuration systems
-- **0.75_universal_tools**: Universal tools and utilities
-- **1_project**: Project-specific documentation
-- **2_features**: Feature-specific documentation
-- **3_components**: Component-specific documentation
-
----
-
-**Remember: Always use the robust script runner system to prevent terminal hanging issues!**

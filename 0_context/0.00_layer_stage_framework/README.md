@@ -28,6 +28,11 @@ Each template includes:
 3) File artifacts by Stage inside `*.99_stages/` and keep the per-layer `status*.json` updated.
 4) The manager/worker agents navigate by Layer + Stage (e.g., `layer_2_feature_checkout` + `stage_2.04_development`) to load, work, and record status.
 
+## How the context file system works
+- **Traversal:** A session loads from the outside in (layer_0 → layer_1 → layer_2 → layer_3) and within each layer moves through the applicable stage folder. This keeps context scoped and deterministic.
+- **Handoffs:** Every stage folder contains `hand_off_documents/` (for briefs, decisions, outputs) and `ai_agent_system/` (runbooks/configs for the stage owner agent). This is the canonical place for intra-agent transfers.
+- **Status:** Each `status*.json` records the active stage and per-stage state so a manager agent can route work, unblock, or archive consistently.
+
 ## How it works with sessions
 - At session start, load the universal layer (`layer_0_universal`), then the relevant project (`layer_1_*`), feature (`layer_2_*`), and component (`layer_3_*`) layers as needed.
 - Within each layer, operate in the current Stage (instructions/design/development/testing/criticism/fixing/archives) and update status on exit.

@@ -1,6 +1,8 @@
 # Master Documentation Index
 *Complete Index of All Organized Documentation*
 
+> **Note:** This repo now uses the Layer + Stage framework. Canonical content lives under `layer_0_universal/`, `layer_1_project/`, `layer_2_features/`, and `layer_3_components/` (slots in `*.01_sub_layers/sub_layer_<N.xx>_*`, stages in `*.99_stages/stage_<N.xx>_*`). Legacy `trickle_down_*` paths referenced below are kept for historical context; migrate or reference them via the new layer structure when practical.
+
 ## 📋 Overview
 
 This master index provides a comprehensive overview of all documentation organized within the trickle-down structure. All documents follow the standardized naming convention and are categorized by their purpose and content.

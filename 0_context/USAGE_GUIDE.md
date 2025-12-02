@@ -1,6 +1,6 @@
 # Universal AI Context System - Usage Guide
 
-This directory contains a universal trickle-down documentation system that can be used for any AI-assisted coding project. Follow this guide to adapt it for your specific project.
+This directory now follows the Layer + Stage framework (layers: universal/project/feature/component; stages: instructions → planning → design → development → testing → criticism → fixing → archives). Slots live under `layer_<N>_*/*01_sub_layers/sub_layer_<N.xx>_*` and stages under `*.99_stages/stage_<N.xx>_*` (each with `hand_off_documents/` and `ai_agent_system/`). Legacy `trickle_down_*` references remain below for historical context; prefer the layer paths for new work.
 
 ## 🎯 Quick Start
 
@@ -244,4 +244,3 @@ Include:
 ---
 
 **Need Help?** Review existing documentation in the trickle_down directories for examples and best practices.
-
