@@ -18,14 +18,14 @@ This folder contains templates to scaffold layers:
 - `3_component_template/`
 
 Each template includes:
-- Numbered slots for that layer (e.g., project 1.01–1.12, feature 2.01–2.12, component 3.01–3.12).
-- A `*.99_stages/` folder with stage subfolders (0.01–0.08) and a `status_template.json`.
+- Numbered slots for that layer (e.g., project 1.01–1.12, feature 2.01–2.12, component 3.01–3.12) stored as `sub_layer_<slot>/` inside `*.01_sub_layers/`.
+- A `*.99_stages/` folder with stage subfolders named `stage_L.xx_*` and a `status_template.json`.
 
 ## How to instantiate for a real context
 1) Copy the appropriate template to your context repo and rename (e.g., `layer_0_universal`, `layer_1_project`, `layer_2_feature_X`, `layer_3_component_Y`).
 2) Populate the numbered slots with your actual content. Use lower numbers for more foundational items. Legacy material can live in a `legacy_import/` subfolder while you reorganize.
 3) File artifacts by Stage inside `*.99_stages/` and keep the per-layer `status*.json` updated.
-4) The manager/worker agents navigate by Layer + Stage (e.g., `layer_2_feature_checkout` + `0.04_development`) to load, work, and record status.
+4) The manager/worker agents navigate by Layer + Stage (e.g., `layer_2_feature_checkout` + `stage_2.04_development`) to load, work, and record status.
 
 ## How it works with sessions
 - At session start, load the universal layer (`layer_0_universal`), then the relevant project (`layer_1_*`), feature (`layer_2_*`), and component (`layer_3_*`) layers as needed.
