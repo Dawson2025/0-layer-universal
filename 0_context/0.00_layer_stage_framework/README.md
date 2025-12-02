@@ -2,8 +2,8 @@
 
 This repository uses two orthogonal systems to manage AI context and workflows. Numbering is zero-padded (two digits after the decimal) for lexicographic stability (e.g., 1.01, 1.10, 1.12).
 
-- **Layer System (specificity)**: from universal → project → feature → component. Lower numbers are more universal and are prerequisites for higher numbers. Each layer stores its numbered slots inside a `*.01_sub_layers/` folder. Example universal 0.x band: 0.01 basic prompts, 0.02 SE knowledge, 0.03 principles, 0.04 rules, 0.05 OS setup, 0.06 coding app setup, 0.07 apps/browsers/extensions, 0.08 AI apps/tools, 0.09 AI models, 0.10 universal tools. Project (1.x), feature (2.x), and component (3.x) bands mirror the same pattern with their own numbering (e.g., 1.01–1.12).
-- **Stage System (chronology)**: inside every layer, stages mirror the layer prefix and are named `stage_L.xx_*` (e.g., universal uses stage_0.01–stage_0.08, project uses stage_1.01–stage_1.08, etc.) covering: instructions, planning, design, development, testing, criticism, fixing, archives.
+- **Layer System (specificity)**: from universal → project → feature → component. Lower numbers are more universal and are prerequisites for higher numbers. Each layer stores its numbered slots inside a `*.01_sub_layers/` folder and each slot directory is prefixed with `sub_layer_`. Example universal 0.x band: 0.01 basic prompts, 0.02 SE knowledge, 0.03 principles, 0.04 rules, 0.05 OS setup, 0.06 coding app setup, 0.07 apps/browsers/extensions, 0.08 AI apps/tools, 0.09 AI models, 0.10 universal tools. Project (1.x), feature (2.x), and component (3.x) bands mirror the same pattern with their own numbering (e.g., 1.01–1.12).
+- **Stage System (chronology)**: inside every layer, stages mirror the layer prefix and are named `stage_L.xx_*` (e.g., universal uses stage_0.01–stage_0.08, project uses stage_1.01–stage_1.08, etc.) covering: instructions, planning, design, development, testing, criticism, fixing, archives. Each stage folder contains `hand_off_documents/` and `ai_agent_system/` subfolders for structured handoffs and agent configs.
 
 ## Purpose (how context management works)
 - **Deterministic navigation**: Each layer has numbered slots and a `*.99_stages` folder. Agents address work as (Layer, Stage) to load only what’s needed instead of fuzzy search.
@@ -19,7 +19,7 @@ This folder contains templates to scaffold layers:
 
 Each template includes:
 - Numbered slots for that layer (e.g., project 1.01–1.12, feature 2.01–2.12, component 3.01–3.12) stored as `sub_layer_<slot>/` inside `*.01_sub_layers/`.
-- A `*.99_stages/` folder with stage subfolders named `stage_L.xx_*` and a `status_template.json`.
+- A `*.99_stages/` folder with stage subfolders named `stage_L.xx_*` and a `status_template.json`. Every stage folder already contains `hand_off_documents/` and `ai_agent_system/` directories (with `.gitkeep`) so agents have a canonical drop-point.
 - The template itself already includes the `*.01_sub_layers/` directory and the stage folders to mirror the live layout.
 
 ## How to instantiate for a real context
