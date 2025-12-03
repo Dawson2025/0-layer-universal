@@ -2,13 +2,65 @@
 
 This repository uses two orthogonal systems to manage AI context and workflows. Numbering is zero-padded (two digits after the decimal) for lexicographic stability (e.g., 1.01, 1.10, 1.12).
 
-- **Layer System (specificity)**: from universal → project → feature → component. Lower numbers are more universal and are prerequisites for higher numbers. Each layer starts with a manager system (`<N>.00_ai_manager_system/`), a manager handoff hub (`<N>.01_manager_handoff_documents/` with `<N>.00_to_universal/` and `<N>.01_to_specific/`), then its slots live inside `<N>.02_sub_layers/` with directories prefixed `sub_layer_`. Example universal 0.x band inside `0.02_sub_layers/`: 0.01 basic prompts, 0.02 SE knowledge, 0.03 principles, 0.04 rules, 0.05 OS setup, 0.06 coding app setup, 0.07 apps/browsers/extensions, 0.08 AI apps/tools, 0.09 AI models, 0.10 universal tools. Project (1.x), feature (2.x), and component (3.x) bands mirror the same pattern with their own numbering (e.g., 1.01–1.12).
+- **Layer System (specificity)**: from universal → project → feature → component. Lower numbers are more universal and are prerequisites for higher numbers. Each layer starts with a manager system (`<N>.00_ai_manager_system/`), a manager handoff hub (`<N>.01_manager_handoff_documents/` with `<N>.00_to_universal/` and `<N>.01_to_specific/`), then its slots live inside `<N>.02_sub_layers/` with directories prefixed `sub_layer_`. Example universal 0.x band inside `0.02_sub_layers/`: 0.01 basic prompts, 0.02 SE knowledge, 0.03 principles, 0.04 rules, 0.05 OS setup, 0.06 coding app setup, 0.07 apps/browsers/extensions, 0.08 AI apps/tools, 0.09 MCP servers and tools setup, 0.10 AI models, 0.11 agent setup, 0.12 universal tools. Project (1.x), feature (2.x), and component (3.x) bands mirror the same pattern with their own numbering (e.g., 1.01–1.12).
 - **Stage System (chronology)**: inside every layer, stages mirror the layer prefix and are named `stage_L.xx_*` (e.g., universal uses stage_0.01–stage_0.08, project uses stage_1.01–stage_1.08, etc.) covering: instructions, planning, design, development, testing, criticism, fixing, archives. Each stage folder contains `hand_off_documents/` and `ai_agent_system/` subfolders for structured handoffs and agent configs.
 
 ## Purpose (how context management works)
-- **Deterministic navigation**: Each layer has numbered slots and a `*.99_stages` folder. Agents address work as (Layer, Stage) to load only what’s needed instead of fuzzy search.
-- **Dependency clarity**: Higher layers depend on lower ones (e.g., models → tools → OS; features → project architecture → universal rules).
+- **Deterministic navigation**: Each layer has numbered slots and a `*.99_stages` folder. Agents address work as (Layer, Stage) to load only what's needed instead of fuzzy search.
+- **Dependency clarity**: Higher layers depend on lower ones (e.g., models → tools → OS; features → project architecture → universal rules). The AI setup dependency chain is particularly important: 0.08 AI apps/tools → 0.09 MCP servers → 0.10 AI models → 0.11 agent setup.
 - **Handoff & audit**: The manager system (`<N>.00_ai_manager_system/`) + handoff hub (`<N>.01_manager_handoff_documents/<N>.00_to_universal|<N>.01_to_specific/`) + stage handoff folders allow clean up/downstream communication; stages and per-layer status files support handoffs, progress tracking, and archival for replay/debug. This is the spine of the context management system.
+
+## AI Setup Dependency Chain (Universal Layer 0.08–0.11)
+
+The universal layer includes a critical dependency chain for AI agent setup:
+
+### 0.08 AI Apps/Tools Setup
+- **Purpose**: Installation and configuration of AI applications and CLI tools (Cursor IDE, Claude Code, etc.)
+- **Dependencies**: None (foundational)
+- **Output**: Configured AI applications ready for MCP and model integration
+
+### 0.09 MCP Servers and Tools Setup
+- **Purpose**: Model Context Protocol (MCP) server setup and configuration
+- **Dependencies**: **0.08** (MCP servers are configured within specific AI apps/tools)
+- **Output**: Configured MCP servers providing capabilities (browser automation, documentation, search, etc.)
+- **App-Specific**: MCP configuration is app-specific (e.g., `~/.cursor/mcp.json` for Cursor, `~/.claude/mcp.json` for Claude Code)
+
+### 0.10 AI Models
+- **Purpose**: Approved AI models and usage guidance
+- **Dependencies**: **0.08** (models are accessed through AI apps/tools)
+- **Output**: Model selection guidance and approved model list
+- **Model Types**: Primary models, fallback models, model-specific capabilities
+
+### 0.11 Agent Setup
+- **Purpose**: Agent configuration and setup for AI applications
+- **Dependencies**: **0.08** (agents run within AI apps/tools), **0.09** (agents use MCP servers), **0.10** (agents require models)
+- **Output**: Configured agents with model fallbacks and MCP integration
+- **Key Features**:
+  - **Model Fallback Strategy**: Agents configured with primary models and ordered fallback models
+  - **MCP Integration**: Agent instructions for using specific MCP servers and capabilities
+  - **App-Specific Configurations**: Agent setups tailored to specific AI applications
+  - **Model-Specific Instructions**: Instructions that vary by model capabilities
+
+### Dependency Flow
+```
+0.08 AI Apps/Tools Setup
+    ↓ (provides: AI application environment)
+0.09 MCP Servers and Tools Setup
+    ↓ (provides: MCP capabilities)
+0.10 AI Models
+    ↓ (provides: Model selection)
+0.11 Agent Setup
+    ↓ (provides: Configured agents ready for work)
+0.12 Universal Tools (independent, provides cross-cutting utilities)
+```
+
+### Agent Configuration Example
+An agent setup in 0.11 might specify:
+- **Primary Model**: Claude Sonnet 4.5
+- **Fallback Order**: Claude Sonnet 4.0 → GPT-4 → Claude Haiku
+- **MCP Servers**: Browser automation (Playwright), Documentation (Context7)
+- **App Context**: Cursor IDE with specific workspace settings
+- **Model-Specific Instructions**: Instructions that adapt based on which model is active
 
 ## Templates here
 This folder contains templates to scaffold layers:

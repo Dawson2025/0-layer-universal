@@ -2,6 +2,16 @@
 
 Use this file (copy/rename to your repo, e.g., `agent_registry.md`) to register manager and stage agents so the universal manager knows where to find and call them.
 
+## Context: AI Setup Dependency Chain
+
+Agents depend on the AI setup dependency chain in the universal layer (0.08–0.11):
+- **0.08 AI Apps/Tools Setup**: Agents run within AI applications (Cursor IDE, Claude Code, etc.)
+- **0.09 MCP Servers and Tools Setup**: Agents use MCP servers for capabilities (browser automation, documentation, etc.)
+- **0.10 AI Models**: Agents require AI models to function
+- **0.11 Agent Setup**: Agent configuration with model fallbacks and MCP integration
+
+When registering agents, ensure the AI setup layers (0.08–0.11) are configured before agents can be invoked.
+
 ## Required entries
 - **layer**: `0|1|2|3`
 - **name**: human-friendly label (e.g., `universal_manager`, `project_checkout_manager`).
@@ -44,7 +54,26 @@ Use this file (copy/rename to your repo, e.g., `agent_registry.md`) to register 
     - For feature delegation, place packets in 1.01_to_specific/.
 ```
 
+## Agent Configuration and Model Fallbacks
+
+When configuring agents in the registry, consider:
+
+- **Model Selection**: Agents should specify primary models and fallback order (see `sub_layer_0.11_agent_setup`)
+- **MCP Integration**: Agents may depend on specific MCP servers configured in `sub_layer_0.09_mcp_servers_and_tools_setup`
+- **App Context**: Agents run within AI applications configured in `sub_layer_0.08_ai_apps_tools_setup`
+
+Example agent configuration with model fallbacks:
+```yaml
+invoke_notes: |
+  - Primary model: Claude Sonnet 4.5
+  - Fallback order: Claude Sonnet 4.0 → GPT-4 → Claude Haiku
+  - MCP servers: browser-automation (Playwright), documentation (Context7)
+  - App context: Cursor IDE
+```
+
 ## Usage
 1) Copy this template to your repo (e.g., `agent_registry.yaml`).
-2) Fill entries for every manager agent you will use in the session.
-3) Keep it near the top-level context (e.g., next to `MASTER_DOCUMENTATION_INDEX.md`) so universal manager can load it first.
+2) Ensure AI setup layers (0.08–0.11) are configured before registering agents.
+3) Fill entries for every manager agent you will use in the session.
+4) Specify model fallbacks and MCP dependencies in `invoke_notes`.
+5) Keep it near the top-level context (e.g., next to `MASTER_DOCUMENTATION_INDEX.md`) so universal manager can load it first.

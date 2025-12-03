@@ -45,8 +45,10 @@ Do this at the start of the chat/session before any other action.
 │           │   ├── sub_layer_0.06_coding_app_setup/
 │           │   ├── sub_layer_0.07_apps_browsers_extensions_setup/
 │           │   ├── sub_layer_0.08_ai_apps_tools_setup/
-│           │   ├── sub_layer_0.09_ai_models/
-│           │   └── sub_layer_0.10_universal_tools/
+│           │   ├── sub_layer_0.09_mcp_servers_and_tools_setup/
+│           │   ├── sub_layer_0.10_ai_models/
+│           │   ├── sub_layer_0.11_agent_setup/
+│           │   └── sub_layer_0.12_universal_tools/
 │           └── 0.99_stages/
 └── <project_name>/                  # Project-specific context repo
     └── 0_context/
@@ -150,7 +152,7 @@ Do not remove these references during summarization; they are required navigatio
 **Read before opening browsers:**
 - `layer_0_universal/0.02_sub_layers/0.04_universal_rules/trickle_down_0_universal/0_instruction_docs/browser_management_policy.md`
 - `layer_0_universal/0.02_sub_layers/0.04_universal_rules/trickle_down_0_universal/0_instruction_docs/browser_opening_rule.md`
-- `layer_0_universal/0.02_sub_layers/0.10_universal_tools/trickle_down_0.75_universal_tools/0_instruction_docs/browser-automation/README.md`
+- `layer_0_universal/0.02_sub_layers/sub_layer_0.12_universal_tools/trickle_down_0.75_universal_tools/0_instruction_docs/browser-automation/README.md`
 
 ### For Testing
 **Read when creating or running tests:**
@@ -160,15 +162,15 @@ Do not remove these references during summarization; they are required navigatio
 
 ### For MCP Tools
 **Read when using Model Context Protocol servers:**
-- `layer_0_universal/0.02_sub_layers/0.10_universal_tools/trickle_down_0.75_universal_tools/0_instruction_docs/mcp-tools/README.md`
-- `layer_0_universal/0.02_sub_layers/0.10_universal_tools/trickle_down_0.75_universal_tools/0_instruction_docs/mcp-tools/MCP_SYSTEM_GUIDE.md`
-- `layer_0_universal/0.02_sub_layers/0.10_universal_tools/trickle_down_0.75_universal_tools/0_instruction_docs/mcp-tools/MCP_CONFIGURATION_GUIDE.md`
+- `layer_0_universal/0.02_sub_layers/sub_layer_0.09_mcp_servers_and_tools_setup/trickle_down_0.75_universal_tools/0_instruction_docs/mcp-tools/README.md`
+- `layer_0_universal/0.02_sub_layers/sub_layer_0.09_mcp_servers_and_tools_setup/trickle_down_0.75_universal_tools/0_instruction_docs/mcp-tools/MCP_SYSTEM_GUIDE.md`
+- `layer_0_universal/0.02_sub_layers/sub_layer_0.09_mcp_servers_and_tools_setup/trickle_down_0.75_universal_tools/0_instruction_docs/mcp-tools/MCP_CONFIGURATION_GUIDE.md`
 
 ### For Claude Code Specific
 **Read when using Claude Code CLI:**
-- `layer_0_universal/0.02_sub_layers/0.10_universal_tools/trickle_down_0.75_universal_tools/0_instruction_docs/claude-code-config/README.md`
-- `layer_0_universal/0.02_sub_layers/0.10_universal_tools/trickle_down_0.75_universal_tools/0_instruction_docs/claude-code-config/QUICK_START.md`
-- `layer_0_universal/0.02_sub_layers/0.10_universal_tools/trickle_down_0.75_universal_tools/0_instruction_docs/claude-code-config/WHAT_ACTUALLY_WORKS.md`
+- `layer_0_universal/0.02_sub_layers/sub_layer_0.12_universal_tools/trickle_down_0.75_universal_tools/0_instruction_docs/claude-code-config/README.md`
+- `layer_0_universal/0.02_sub_layers/sub_layer_0.12_universal_tools/trickle_down_0.75_universal_tools/0_instruction_docs/claude-code-config/QUICK_START.md`
+- `layer_0_universal/0.02_sub_layers/sub_layer_0.12_universal_tools/trickle_down_0.75_universal_tools/0_instruction_docs/claude-code-config/WHAT_ACTUALLY_WORKS.md`
 
 ### For Database Operations (Supabase)
 **MANDATORY - Read before any database work:**

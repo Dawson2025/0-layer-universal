@@ -89,14 +89,22 @@ This master index provides a comprehensive overview of all documentation organiz
 │   ├── 1_status_progress_docs/ # Setup status and progress
 │   ├── 2_archive_docs/         # Completed setup documentation
 │   └── 2_testing_docs/         # Testing documentation
-├── trickle_down_0.75_universal_tools/
-│   ├── 0_instruction_docs/     # Universal tool guides
-│   │   ├── mcp-tools/          # MCP server management tools
-│   │   ├── browser-automation/ # Browser automation tools
-│   │   ├── meta-intelligent-orchestration/ # Orchestration tools
-│   │   ├── project-analysis/   # Project analysis tools
-│   │   ├── visual-orchestration/ # Visual planning tools
-│   │   └── claude-code-config/ # Claude-specific configurations
+├── layer_0_universal/0.02_sub_layers/
+│   ├── sub_layer_0.09_mcp_servers_and_tools_setup/  # MCP server setup (depends on 0.08)
+│   │   └── trickle_down_0.75_universal_tools/0_instruction_docs/mcp-tools/
+│   ├── sub_layer_0.11_agent_setup/            # Agent setup (depends on 0.08, 0.09, 0.10)
+│   │   └── trickle_down_0.75_universal_tools/0_instruction_docs/
+│   │       ├── agent-configs/          # Agent configuration files
+│   │       ├── model-fallbacks/        # Model fallback configurations
+│   │       ├── app-specific-agents/    # App-specific agent setups
+│   │       └── mcp-agent-integration/  # MCP server agent integration
+│   ├── sub_layer_0.12_universal_tools/        # Universal tools
+│   │   └── trickle_down_0.75_universal_tools/0_instruction_docs/
+│   │       ├── browser-automation/ # Browser automation tools
+│   │       ├── meta-intelligent-orchestration/ # Orchestration tools
+│   │       ├── project-analysis/   # Project analysis tools
+│   │       ├── visual-orchestration/ # Visual planning tools
+│   │       └── claude-code-config/ # Claude-specific configurations
 │   ├── 1_status_progress_docs/ # Tool development status
 │   ├── 2_archive_docs/         # Completed tool implementations
 │   └── 2_testing_docs/         # Testing documentation
@@ -318,10 +326,10 @@ This master index provides a comprehensive overview of all documentation organiz
 - **Status**: ✅ Active development
 
 ### **MCP Tools (Model Context Protocol)**
-- **Overview**: `trickle_down_0.75_universal_tools/0_instruction_docs/mcp-tools/README.md`
-- **Context7 Setup**: `trickle_down_0.75_universal_tools/0_instruction_docs/mcp-tools/CONTEXT7_CLAUDE_SETUP.md`
-- **Context7 Quick Reference**: `trickle_down_0.75_universal_tools/0_instruction_docs/mcp-tools/CONTEXT7_QUICK_REFERENCE.md`
-- **Configuration Guide**: `trickle_down_0.75_universal_tools/0_instruction_docs/mcp-tools/MCP_CONFIGURATION_GUIDE.md`
+- **Overview**: `layer_0_universal/0.02_sub_layers/sub_layer_0.09_mcp_servers_and_tools_setup/trickle_down_0.75_universal_tools/0_instruction_docs/mcp-tools/README.md`
+- **Context7 Setup**: `layer_0_universal/0.02_sub_layers/sub_layer_0.09_mcp_servers_and_tools_setup/trickle_down_0.75_universal_tools/0_instruction_docs/mcp-tools/CONTEXT7_CLAUDE_SETUP.md`
+- **Context7 Quick Reference**: `layer_0_universal/0.02_sub_layers/sub_layer_0.09_mcp_servers_and_tools_setup/trickle_down_0.75_universal_tools/0_instruction_docs/mcp-tools/CONTEXT7_QUICK_REFERENCE.md`
+- **Configuration Guide**: `layer_0_universal/0.02_sub_layers/sub_layer_0.09_mcp_servers_and_tools_setup/trickle_down_0.75_universal_tools/0_instruction_docs/mcp-tools/MCP_CONFIGURATION_GUIDE.md`
 
 ### **By Timeline**
 - **Current Work**: Check `1_status_progress_docs/` folders
