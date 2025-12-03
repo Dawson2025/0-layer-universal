@@ -11,15 +11,25 @@ Use this to scaffold any project-level context. Mirrors the universal 0.x stack 
 - sub_layer_1.02_project_se_knowledge: SE/domain knowledge this project relies on.
 - sub_layer_1.03_project_principles: project-specific design/UX/security principles.
 - sub_layer_1.04_project_rules: hard rules (branching, testing, compliance).
-- sub_layer_1.05_project_os: OS targets/requirements for dev/prod.
-- sub_layer_1.06_project_env_repo_layout: local/remote env details; repo layout/monorepo notes.
-- sub_layer_1.07_project_architecture: stack (FE/BE/Data/Auth/Storage/Integrations) + diagrams.
-- sub_layer_1.08_project_coding_app_setup: IDE/run/debug configs for this project.
-- sub_layer_1.09_project_apps_browsers_tools: dashboards, admin panels, monitoring tools.
-- sub_layer_1.10_project_ai_app_tool_usage: approved AI tools/agents and scopes.
-- sub_layer_1.11_project_model_usage: approved models for this project and their uses.
+- sub_layer_1.05_project_os_setup: OS targets/requirements for dev/prod.
+- sub_layer_1.06_project_coding_app_setup: IDE/run/debug configs for this project.
+- sub_layer_1.07_project_apps_browsers_extensions_setup: dashboards, admin panels, monitoring tools, browser extensions.
+- sub_layer_1.08_project_ai_apps_tools_setup: project-specific AI apps/tools configuration.
+- sub_layer_1.09_project_mcp_servers_and_tools_setup: project-specific MCP server setup (depends on 1.08).
+- sub_layer_1.10_project_ai_models: approved models for this project and their uses.
+- sub_layer_1.11_project_agent_setup: project-specific agent configuration with model fallbacks (depends on 1.08, 1.09, 1.10).
 - sub_layer_1.12_project_tools: project-specific scripts/CLIs/migrations.
 - 1.99_stages: stage folders and status template.
+
+## Project AI Setup Dependency Chain (1.08–1.11)
+
+The slots 1.08–1.11 form a dependency chain for project-level AI agent setup:
+- **1.08** → **1.09**: Project MCP servers are configured within project AI apps/tools
+- **1.09** → **1.10**: Project models may be accessed via MCP servers
+- **1.10** → **1.11**: Project agents require models to function
+- **1.11** depends on all three: agents run in project apps (1.08), use project MCP servers (1.09), and require project models (1.10)
+
+Configure these in order when setting up project-specific AI environments.
 
 ## Stages (1.99, stored under `1.99_stages/`, folders named `stage_1.xx_*`)
 stage_1.01_instructions → stage_1.02_planning → stage_1.03_design → stage_1.04_development → stage_1.05_testing → stage_1.06_criticism → stage_1.07_fixing → stage_1.08_archives.
