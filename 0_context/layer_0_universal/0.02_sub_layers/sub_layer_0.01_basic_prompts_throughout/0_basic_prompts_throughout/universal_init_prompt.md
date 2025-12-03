@@ -154,6 +154,8 @@ Do not remove these references during summarization; they are required navigatio
 - `layer_0_universal/0.02_sub_layers/0.04_universal_rules/trickle_down_0_universal/0_instruction_docs/browser_opening_rule.md`
 - `layer_0_universal/0.02_sub_layers/sub_layer_0.12_universal_tools/trickle_down_0.75_universal_tools/0_instruction_docs/browser-automation/README.md`
 
+**⚠️ Linux/Ubuntu Note**: Browser MCP tools have platform-specific issues. See MCP Tools section above for Linux limitations.
+
 ### For Testing
 **Read when creating or running tests:**
 - `layer_0_universal/0.04_universal_rules/trickle_down_0_universal/0_instruction_docs/TESTING_AGENT_SYSTEM_README.md`
@@ -165,6 +167,18 @@ Do not remove these references during summarization; they are required navigatio
 - `layer_0_universal/0.02_sub_layers/sub_layer_0.09_mcp_servers_and_tools_setup/trickle_down_0.75_universal_tools/0_instruction_docs/mcp-tools/README.md`
 - `layer_0_universal/0.02_sub_layers/sub_layer_0.09_mcp_servers_and_tools_setup/trickle_down_0.75_universal_tools/0_instruction_docs/mcp-tools/MCP_SYSTEM_GUIDE.md`
 - `layer_0_universal/0.02_sub_layers/sub_layer_0.09_mcp_servers_and_tools_setup/trickle_down_0.75_universal_tools/0_instruction_docs/mcp-tools/MCP_CONFIGURATION_GUIDE.md`
+
+**⚠️ CRITICAL: Linux/Ubuntu-Specific MCP Issues**
+**MANDATORY - Read if running on Linux/Ubuntu:**
+- `layer_0_universal/0.02_sub_layers/sub_layer_0.09_mcp_servers_and_tools_setup/trickle_down_0.75_universal_tools/0_instruction_docs/mcp-tools/BROWSER_MCP_SETUP_EXPERIENCE.md` - **Read Lesson 1 first!**
+
+**Key Linux/Ubuntu Limitations:**
+1. **Playwright MCP Tools**: Server connects and reports tools, but Cursor IDE on Linux does NOT expose them to AI agents. Tools registered but not accessible.
+2. **Browser Path Detection**: Always fails on Linux - must use explicit `--executable-path` in MCP config.
+3. **NVM/Node.js**: Requires bash wrapper to load NVM in MCP server processes.
+4. **Tool Naming**: May differ from Windows/macOS documentation.
+
+**Workaround**: Use `mcp_browser_*` tools from `@agent-infra/mcp-server-browser` instead of Playwright MCP on Linux.
 
 ### For Claude Code Specific
 **Read when using Claude Code CLI:**
