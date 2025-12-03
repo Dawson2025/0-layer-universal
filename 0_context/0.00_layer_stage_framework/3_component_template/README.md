@@ -17,17 +17,18 @@ Use this to scaffold any component-level context. Depends on universal (0.x), pr
 - sub_layer_3.08_component_ai_apps_tools_setup: component-level AI apps/tools configuration.
 - sub_layer_3.09_component_mcp_servers_and_tools_setup: component-specific MCP server setup (depends on 3.08).
 - sub_layer_3.10_component_ai_models: models wired into this component (if any).
-- sub_layer_3.11_component_agent_setup: component-specific agent configuration with model fallbacks (depends on 3.08, 3.09, 3.10).
-- sub_layer_3.12_component_tools: helper scripts/utilities for this component.
+- sub_layer_3.11_component_tools: helper scripts/utilities for this component.
+- sub_layer_3.12_component_agent_setup: component-specific agent configuration with model fallbacks (depends on 3.08, 3.09, 3.10, 3.11).
 - 3.99_stages: stage folders and status template.
 
-## Component AI Setup Dependency Chain (3.08–3.11)
+## Component AI Setup Dependency Chain (3.08–3.12)
 
-The slots 3.08–3.11 form a dependency chain for component-level AI agent setup:
+The slots 3.08–3.12 form a dependency chain for component-level AI agent setup:
 - **3.08** → **3.09**: Component MCP servers are configured within component AI apps/tools
 - **3.09** → **3.10**: Component models may be accessed via MCP servers
-- **3.10** → **3.11**: Component agents require models to function
-- **3.11** depends on all three: agents run in component apps (3.08), use component MCP servers (3.09), and require component models (3.10)
+- **3.10** → **3.11**: Component tools provide capabilities that agents can use
+- **3.11** → **3.12**: Component agents require tools (including component tools) to function
+- **3.12** depends on all four: agents run in component apps (3.08), use component MCP servers (3.09), require component models (3.10), and use component tools (3.11)
 
 Configure these in order when setting up component-specific AI environments.
 

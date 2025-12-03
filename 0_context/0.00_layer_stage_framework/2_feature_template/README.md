@@ -17,17 +17,18 @@ Use this to scaffold any feature-level context. Depends on universal (0.x) and p
 - sub_layer_2.08_feature_ai_apps_tools_setup: feature-level AI apps/tools configuration.
 - sub_layer_2.09_feature_mcp_servers_and_tools_setup: feature-specific MCP server setup (depends on 2.08).
 - sub_layer_2.10_feature_ai_models: models wired into this feature (if any).
-- sub_layer_2.11_feature_agent_setup: feature-specific agent configuration with model fallbacks (depends on 2.08, 2.09, 2.10).
-- sub_layer_2.12_feature_tools: scripts/migrations/backfills specific to this feature.
+- sub_layer_2.11_feature_tools: scripts/migrations/backfills specific to this feature.
+- sub_layer_2.12_feature_agent_setup: feature-specific agent configuration with model fallbacks (depends on 2.08, 2.09, 2.10, 2.11).
 - 2.99_stages: stage folders and status template.
 
-## Feature AI Setup Dependency Chain (2.08–2.11)
+## Feature AI Setup Dependency Chain (2.08–2.12)
 
-The slots 2.08–2.11 form a dependency chain for feature-level AI agent setup:
+The slots 2.08–2.12 form a dependency chain for feature-level AI agent setup:
 - **2.08** → **2.09**: Feature MCP servers are configured within feature AI apps/tools
 - **2.09** → **2.10**: Feature models may be accessed via MCP servers
-- **2.10** → **2.11**: Feature agents require models to function
-- **2.11** depends on all three: agents run in feature apps (2.08), use feature MCP servers (2.09), and require feature models (2.10)
+- **2.10** → **2.11**: Feature tools provide capabilities that agents can use
+- **2.11** → **2.12**: Feature agents require tools (including feature tools) to function
+- **2.12** depends on all four: agents run in feature apps (2.08), use feature MCP servers (2.09), require feature models (2.10), and use feature tools (2.11)
 
 Configure these in order when setting up feature-specific AI environments.
 

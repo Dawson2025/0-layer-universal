@@ -17,17 +17,18 @@ Use this to scaffold any project-level context. Mirrors the universal 0.x stack 
 - sub_layer_1.08_project_ai_apps_tools_setup: project-specific AI apps/tools configuration.
 - sub_layer_1.09_project_mcp_servers_and_tools_setup: project-specific MCP server setup (depends on 1.08).
 - sub_layer_1.10_project_ai_models: approved models for this project and their uses.
-- sub_layer_1.11_project_agent_setup: project-specific agent configuration with model fallbacks (depends on 1.08, 1.09, 1.10).
-- sub_layer_1.12_project_tools: project-specific scripts/CLIs/migrations.
+- sub_layer_1.11_project_tools: project-specific scripts/CLIs/migrations.
+- sub_layer_1.12_project_agent_setup: project-specific agent configuration with model fallbacks (depends on 1.08, 1.09, 1.10, 1.11).
 - 1.99_stages: stage folders and status template.
 
-## Project AI Setup Dependency Chain (1.08–1.11)
+## Project AI Setup Dependency Chain (1.08–1.12)
 
-The slots 1.08–1.11 form a dependency chain for project-level AI agent setup:
+The slots 1.08–1.12 form a dependency chain for project-level AI agent setup:
 - **1.08** → **1.09**: Project MCP servers are configured within project AI apps/tools
 - **1.09** → **1.10**: Project models may be accessed via MCP servers
-- **1.10** → **1.11**: Project agents require models to function
-- **1.11** depends on all three: agents run in project apps (1.08), use project MCP servers (1.09), and require project models (1.10)
+- **1.10** → **1.11**: Project tools provide capabilities that agents can use
+- **1.11** → **1.12**: Project agents require tools (including project tools) to function
+- **1.12** depends on all four: agents run in project apps (1.08), use project MCP servers (1.09), require project models (1.10), and use project tools (1.11)
 
 Configure these in order when setting up project-specific AI environments.
 
