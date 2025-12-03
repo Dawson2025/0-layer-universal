@@ -66,6 +66,14 @@ cat MASTER_DOCUMENTATION_INDEX.md
 
 This is your map of the entire universal documentation system.
 
+**Read the Context Management Framework:**
+```bash
+# From universal context root:
+cat 0.00_layer_stage_framework/README.md
+```
+
+This explains how the layer + stage system works, how to maintain documentation, and how the agent hierarchy operates. **CRITICAL** for understanding how to navigate and update the context system.
+
 ### 2. Discover & Read Project-Specific Init Prompt
 
 **How to find it:**
@@ -109,14 +117,179 @@ ls -d */0_context/0_context/0_basic_prompts_throughout/project_init_prompt.md 2>
 - `layer_0_universal/0.04_universal_rules/trickle_down_0_universal/0_instruction_docs/git_commit_rule.md`
 
 ### 4. Load the Context Management System (Layer + Stage + Agents)
-- **Layer System:** universal (0) → project (1) → feature (2) → component (3). Each layer has:
-  - `<N>.00_ai_manager_system/` (manager agent home)
-  - `<N>.01_manager_handoff_documents/` (`<N>.00_to_universal/`, `<N>.01_to_specific/`)
-  - `<N>.02_sub_layers/` (slots, e.g., `sub_layer_0.01_basic_prompts_throughout`)
-  - `<N>.99_stages/` (stage folders with `hand_off_documents/` and `ai_agent_system/`)
-- **Stage System:** instructions, planning, design, development, testing, criticism, fixing, archives. One stage agent per stage per layer.
-- **Agent hierarchy:** universal manager oversees project managers; project managers oversee feature managers; feature managers oversee component managers; stage agents report to their layer’s manager. Upstream reports: `<N>.00_to_universal/`; downstream/context: `<N>.01_to_specific/`.
-- **Registry:** see `0.00_layer_stage_framework/agent_registry_template.md` to register managers/stage agents for discovery.
+
+**CRITICAL:** Read `0.00_layer_stage_framework/README.md` for complete system documentation.
+
+#### 4.1 Understanding the Layer System (Specificity Hierarchy)
+
+The layer system organizes context by specificity, from universal to specific:
+
+- **Layer 0 (Universal)**: Applies to all projects. Contains universal rules, principles, OS setup, AI tools, models, etc.
+- **Layer 1 (Project)**: Project-specific context. Depends on Layer 0.
+- **Layer 2 (Feature)**: Feature-specific context within a project. Depends on Layers 0 and 1.
+- **Layer 3 (Component)**: Component-specific context within a feature. Depends on Layers 0, 1, and 2.
+
+**Each layer follows this structure:**
+```
+layer_<N>_<name>/
+├── <N>.00_ai_manager_system/          # Manager agent home for this layer
+├── <N>.01_manager_handoff_documents/  # Inter-layer communication hub
+│   ├── <N>.00_to_universal/          # Upward reports (to broader layers)
+│   └── <N>.01_to_specific/           # Downstream context (to more specific layers)
+├── <N>.02_sub_layers/                # Numbered content slots
+│   ├── sub_layer_<N>.01_basic_prompts_throughout/
+│   ├── sub_layer_<N>.02_software_engineering_knowledge_system/
+│   ├── sub_layer_<N>.03_universal_principles/
+│   ├── ... (numbered slots 0.01-0.12 for universal, 1.01-1.12 for project, etc.)
+│   └── sub_layer_<N>.12_agent_setup/
+└── <N>.99_stages/                    # Chronological workflow stages
+    ├── stage_<N>.01_instructions/
+    ├── stage_<N>.02_planning/
+    ├── stage_<N>.03_design/
+    ├── stage_<N>.04_development/
+    ├── stage_<N>.05_testing/
+    ├── stage_<N>.06_criticism/
+    ├── stage_<N>.07_fixing/
+    ├── stage_<N>.08_archives/
+    └── status_<N>.json                # Tracks current stage and per-stage state
+```
+
+**Key Principles:**
+- **Numbering**: Zero-padded two digits (e.g., 0.01, 0.10, 0.12) for lexicographic stability
+- **Dependency Flow**: Lower-numbered layers are prerequisites for higher-numbered layers
+- **Deterministic Navigation**: Agents address work as (Layer, Stage) to load only what's needed
+
+#### 4.2 Understanding the Stage System (Chronological Workflow)
+
+Within each layer, stages represent the chronological workflow:
+
+1. **stage_<N>.01_instructions** - Initial requirements and instructions
+2. **stage_<N>.02_planning** - Planning and architecture decisions
+3. **stage_<N>.03_design** - Design specifications
+4. **stage_<N>.04_development** - Active development work
+5. **stage_<N>.05_testing** - Testing and validation
+6. **stage_<N>.06_criticism** - Review and critique
+7. **stage_<N>.07_fixing** - Bug fixes and corrections
+8. **stage_<N>.08_archives** - Completed/archived work
+
+**Each stage folder contains:**
+```
+stage_<N>.xx_<name>/
+├── hand_off_documents/    # Briefs, decisions, outputs for agent handoffs
+└── ai_agent_system/      # Runbooks/configs for the stage owner agent
+```
+
+**Status Tracking:**
+- Each layer's `status_<N>.json` tracks `current_stage` and per-stage state
+- States: `not_started | in_progress | blocked | done`
+- Enables dashboards and automated routing for agents
+
+#### 4.3 How Layers and Stages Work Together
+
+**Navigation Pattern:**
+- Load from outside in: `layer_0 → layer_1 → layer_2 → layer_3`
+- Within each layer, operate in the current Stage
+- Update status on exit
+
+**Session Workflow:**
+1. At session start, load universal layer (`layer_0_universal`)
+2. Load relevant project (`layer_1_*`), feature (`layer_2_*`), component (`layer_3_*`) as needed
+3. Within each layer, operate in the current Stage
+4. Update `status_<N>.json` on exit
+
+**Example Navigation:**
+```
+Working on feature checkout in project ecommerce:
+- Load: layer_0_universal (universal rules)
+- Load: layer_1_project_ecommerce (project context)
+- Load: layer_2_feature_checkout (feature context)
+- Operate in: stage_2.04_development (current stage)
+- Update: status_2.json when done
+```
+
+#### 4.4 Understanding the Agent Hierarchy
+
+**Manager Agents (Hierarchical):**
+- **Universal Manager (Layer 0)**: Oversees all project managers
+- **Project Managers (Layer 1)**: Each project has one manager; oversees feature managers for that project
+- **Feature Managers (Layer 2)**: Each feature has one manager; oversees component managers for that feature
+- **Component Managers (Layer 3)**: Each component has one manager
+
+**Stage Agents (Per Layer):**
+- One stage agent per stage per layer (8 stage agents per layer)
+- Each stage agent reports to its layer's manager
+- Stage agents execute work for their (Layer, Stage) combination
+
+**Communication Paths:**
+- **Upward Reports**: `<N>.01_manager_handoff_documents/<N>.00_to_universal/`
+  - Reports from more specific layers to broader layers
+  - Example: Project manager reports to universal manager
+- **Downstream Context**: `<N>.01_manager_handoff_documents/<N>.01_to_specific/`
+  - Context packets from broader layers to more specific layers
+  - Example: Universal manager provides context to project managers
+- **Stage Handoffs**: Inside each `stage_<N>.xx_*/hand_off_documents/` and `ai_agent_system/`
+  - Intra-agent transfers within a stage
+
+**Agent Routing:**
+- Managers decide which stage agent to activate
+- Managers collect results and escalate/delegate via handoff folders
+- Status files in `*.99_stages/` keep `current_stage` and per-stage states in sync
+
+#### 4.5 Agent Registry System
+
+**Purpose:** Register manager and stage agents so the universal manager can discover and call them.
+
+**Location:** `0.00_layer_stage_framework/agent_registry_template.md`
+
+**Required Information for Each Agent:**
+- `layer`: `0|1|2|3`
+- `name`: Human-friendly label (e.g., `universal_manager`, `project_checkout_manager`)
+- `manager_path`: Path to manager folder (e.g., `layer_1_project/1.00_ai_manager_system/`)
+- `handoff_up`: Path to `<N>.00_to_universal/` (null for universal layer)
+- `handoff_down`: Path to `<N>.01_to_specific/`
+- `stages_root`: Path to `<N>.99_stages/`
+- `stage_agents`: List of stage agent entries with stage id and location
+- `invoke_notes`: How to call the manager/stage agents (CLI/API prompt patterns)
+
+**Agent Configuration Considerations:**
+- **Model Selection**: Specify primary models and fallback order (see `sub_layer_0.12_agent_setup`)
+- **MCP Integration**: Dependencies on MCP servers (see `sub_layer_0.09_mcp_servers_and_tools_setup`)
+- **Tool Access**: Universal tools available (see `sub_layer_0.11_universal_tools`)
+- **App Context**: AI application context (see `sub_layer_0.08_ai_apps_tools_setup`)
+
+**Usage:**
+1. Copy `agent_registry_template.md` to your repo (e.g., `agent_registry.yaml`)
+2. Ensure AI setup layers (0.08–0.12) are configured before registering agents
+3. Fill entries for every manager agent you will use
+4. Specify model fallbacks and MCP dependencies in `invoke_notes`
+5. Keep it near top-level context (e.g., next to `MASTER_DOCUMENTATION_INDEX.md`)
+
+#### 4.6 How to Maintain and Update Documentation
+
+**Documentation Update Workflow:**
+1. **Identify the Correct Layer**: Determine if content is universal (0), project (1), feature (2), or component (3)
+2. **Identify the Correct Slot**: Use numbered slots (e.g., 0.01 for basic prompts, 0.04 for rules, 0.11 for tools)
+3. **Update in Place**: Edit files directly in their slot location
+4. **Stage Artifacts**: File artifacts by Stage inside `*.99_stages/`
+5. **Update Status**: Keep per-layer `status_<N>.json` updated
+6. **Commit Changes**: Follow git commit rules (see Section 3.6)
+
+**When Creating New Content:**
+- **New Layer**: Copy template from `0.00_layer_stage_framework/` (e.g., `1_project_template/`)
+- **New Sub-layer Slot**: Create `sub_layer_<N>.xx_<name>/` inside `<N>.02_sub_layers/`
+- **New Stage**: Stages are pre-created in templates; use existing `stage_<N>.xx_*/` folders
+- **Legacy Material**: Can live in `legacy_import/` subfolder while reorganizing
+
+**Documentation Organization Principles:**
+- **Deterministic Navigation**: Each layer has numbered slots and stages
+- **Dependency Clarity**: Higher layers depend on lower ones
+- **Handoff & Audit**: Manager system + handoff hub + stage handoff folders enable clean communication
+- **Git-Friendly**: Structure is human-readable and version-control friendly
+
+**Updating Master Documentation:**
+- Update `MASTER_DOCUMENTATION_INDEX.md` when adding new major sections
+- Update `SYSTEM_OVERVIEW.md` when structure changes
+- Update this `universal_init_prompt.md` when navigation patterns change
 
 ### 5. Summaries must keep entrypoints
 When summarizing context for any session, you must explicitly retain:
@@ -131,10 +304,20 @@ Do not remove these references during summarization; they are required navigatio
 **All paths relative to `<universal_context_root>/0_context/`**
 
 ### Layer + Stage Framework Templates
+**MANDATORY READING for context management:**
+- **`0.00_layer_stage_framework/README.md`** - Complete documentation of the layer + stage system, how context management works, how to maintain documentation, and how the agent hierarchy operates
+- **`0.00_layer_stage_framework/agent_registry_template.md`** - How to register manager and stage agents for discovery
+
+**Templates and Structure:**
 - Templates for universal/project/feature/component layers: `0.00_layer_stage_framework/`
 - Stage folders (0.01–0.08) and status templates live under each `*.99_stages/`
-- Read `0.00_layer_stage_framework/README.md` for how to copy/rename/populate per project
 - Live universal layer (actual content): `layer_0_universal/0.02_sub_layers/`
+
+**Key Concepts (see Section 4 for details):**
+- Layer System: universal (0) → project (1) → feature (2) → component (3)
+- Stage System: instructions → planning → design → development → testing → criticism → fixing → archives
+- Agent Hierarchy: Universal Manager → Project Managers → Feature Managers → Component Managers
+- Stage Agents: One per stage per layer, reporting to their layer's manager
 
 ### For Git Operations
 **Read before making commits:**
@@ -225,10 +408,13 @@ cd ../../<project_name>/0_context/0_context/
 
 - [ ] Identified universal context root directory
 - [ ] Read `MASTER_DOCUMENTATION_INDEX.md` (universal)
+- [ ] **Read `0.00_layer_stage_framework/README.md`** (context management system)
+- [ ] **Read `0.00_layer_stage_framework/agent_registry_template.md`** (agent hierarchy)
 - [ ] Discovered project context directory (sibling to universal)
 - [ ] Read project init prompt (if exists)
 - [ ] Read `SYSTEM_OVERVIEW.md` and `USAGE_GUIDE.md`
 - [ ] Loaded task-specific universal documentation
+- [ ] Understood layer + stage system (Section 4)
 - [ ] Checked git branch in working repository
 - [ ] Synced repositories (start-of-session pull for every relevant repo)
 - [ ] Reviewed current task context
