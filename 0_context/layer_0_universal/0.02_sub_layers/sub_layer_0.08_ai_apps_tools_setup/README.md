@@ -187,6 +187,23 @@ When adding new AI app or tool documentation:
 5. Update the Master Documentation Index if needed
 6. Follow the context update rule: `layer_0_universal/0.04_universal_rules/trickle_down_0_universal/0_instruction_docs/context_update_rule.md`
 
+## ⚠️ Linux/Ubuntu-Specific MCP Issues
+
+**CRITICAL**: AI apps and tools on Linux have platform-specific MCP limitations. Read:
+
+- **[Linux/Ubuntu AI Apps MCP Issues](trickle_down_0.5_setup/0_instruction_docs/LINUX_UBUNTU_AI_APPS_MCP_ISSUES.md)**: AI app-specific Linux limitations
+
+**Key Issues**:
+- Cursor IDE: Playwright MCP tools not exposed on Linux
+- Claude Code: Different MCP configuration method
+- NVM dependencies require bash wrappers
+- Platform-specific configuration patterns needed
+
+**Related Documentation**:
+- **OS-Level Issues**: `../sub_layer_0.05_os_setup/trickle_down_0.5_setup/0_instruction_docs/LINUX_UBUNTU_MCP_ISSUES.md`
+- **Cursor IDE Issues**: `../sub_layer_0.06_coding_app_setup/trickle_down_0.5_setup/0_instruction_docs/CURSOR_IDE_LINUX_MCP_ISSUES.md`
+- **MCP Setup**: `../sub_layer_0.09_mcp_servers_and_tools_setup/`
+
 ### Troubleshooting
 
 #### Codex CLI Issues
