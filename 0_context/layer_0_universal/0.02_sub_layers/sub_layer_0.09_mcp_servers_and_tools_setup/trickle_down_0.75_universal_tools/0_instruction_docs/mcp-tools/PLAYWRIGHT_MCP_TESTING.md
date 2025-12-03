@@ -10,6 +10,8 @@ The Playwright MCP server is configured and running (22 tools enabled in Cursor 
 - Expected: `mcp__playwright__browser_navigate` (double underscore)
 - Available: `mcp_cursor-browser-extension_browser_navigate` (single underscore, different prefix)
 
+**Linux/Ubuntu-Specific Issue**: This appears to be a platform-specific problem. The Playwright MCP server successfully connects and reports 22 tools, but Cursor IDE on Linux/Ubuntu does not expose these tools to the AI agent. This is likely a Cursor IDE integration issue specific to Linux systems.
+
 ## Current Status
 
 ### MCP Servers Running
@@ -37,11 +39,19 @@ The Playwright MCP server is configured and running (22 tools enabled in Cursor 
 }
 ```
 
-**Status**: ⏳ Requires Cursor restart to take effect.
+**Status**: ✅ Configuration fix successful - server connects after restart.
+
+**Test Results After Restart (2025-12-02)**:
+- ✅ Playwright MCP server starts successfully with bash wrapper
+- ✅ Server connects: "Successfully connected to stdio server"
+- ✅ Server reports: "Found 22 tools, 0 prompts, and 0 resources"
+- ⚠️ **Linux/Ubuntu Issue**: Tools are NOT accessible to AI agent despite successful connection
+- ⚠️ **Root Cause**: Cursor IDE on Linux does not expose Playwright MCP tools to agents
 
 ### Tools Available
 - `mcp_cursor-browser-extension_*` (18 tools) - Not working (requires Chrome extension)
-- Playwright tools (22 tools) - Status unknown, may have different naming
+- `mcp_browser_*` (21 tools) - Accessible, but browser detection issues
+- Playwright tools (22 tools) - Registered but not exposed on Linux/Ubuntu
 
 ## Testing Approach
 

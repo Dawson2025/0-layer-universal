@@ -53,7 +53,25 @@ This document captures our experience setting up and troubleshooting browser MCP
 
 ## Key Lessons Learned
 
-### Lesson 1: Linux/Ubuntu Requires Explicit Browser Paths
+### Lesson 1: Linux/Ubuntu Has Platform-Specific MCP Issues
+
+**Critical Finding**: Linux/Ubuntu systems experience unique challenges with MCP servers in Cursor IDE that don't occur on Windows or macOS.
+
+**Known Linux/Ubuntu Issues**:
+1. **MCP Tool Exposure**: Tools may be registered with MCP servers but not exposed to AI agents
+2. **Browser Path Detection**: Automatic browser detection fails, requires explicit paths
+3. **Server Startup**: More prone to connection and initialization failures
+4. **Environment Variables**: NVM and Node.js paths require explicit configuration
+5. **Tool Naming**: May use different naming conventions than Windows/macOS
+
+**Evidence**:
+- Playwright MCP: Server connects, reports 22 tools, but tools not accessible
+- Browser MCP: Tools accessible but browser detection fails
+- Community reports: GitHub issues #942, #1113 document Ubuntu-specific problems
+
+**Recommendation**: Always test MCP configurations on Linux separately from Windows/macOS documentation.
+
+### Lesson 2: Linux/Ubuntu Requires Explicit Browser Paths
 
 **Problem**: Browser MCP servers on Linux often fail with "Browser specified in your config is not installed" even when browsers are installed.
 
@@ -82,7 +100,7 @@ This document captures our experience setting up and troubleshooting browser MCP
 }
 ```
 
-### Lesson 2: Playwright MCP vs Browser MCP vs Cursor Browser Extension
+### Lesson 3: Playwright MCP vs Browser MCP vs Cursor Browser Extension
 
 **Three Different Browser Automation Options**:
 
@@ -106,7 +124,7 @@ This document captures our experience setting up and troubleshooting browser MCP
 
 **Recommendation**: Use Playwright MCP or Browser MCP on Linux. Avoid `cursor-browser-extension` until Linux support improves.
 
-### Lesson 3: Tool Naming Conventions Are Inconsistent
+### Lesson 4: Tool Naming Conventions Are Inconsistent
 
 **Observation**: Different MCP servers use different naming conventions:
 - `mcp_browser_*` (single underscore, server name)
@@ -338,12 +356,24 @@ This document captures our experience setting up and troubleshooting browser MCP
 2. Wrapped npx call in bash script that loads NVM
 3. Added `PLAYWRIGHT_BROWSERS_PATH` environment variable to ensure browser detection
 
-**Status**: ⏳ Configuration updated, requires Cursor restart to take effect.
+**Status**: ✅ Configuration fix successful - Playwright MCP server connects after restart.
 
-**Next Steps**:
-1. Restart Cursor IDE completely
-2. Test Playwright MCP tools after restart
-3. Verify tool naming convention (may be `mcp_playwright_*` or different)
+**Test Results After Restart (2025-12-02)**:
+- ✅ Playwright MCP server starts successfully with bash wrapper
+- ✅ Server connects: "Successfully connected to stdio server"
+- ✅ Server reports: "Found 22 tools, 0 prompts, and 0 resources"
+- ⚠️ **Issue**: Tools are NOT accessible to AI agent with `mcp_playwright_*` prefix
+- ⚠️ **Available tools**: Only `mcp_browser_*` (21 tools) and `mcp_cursor-browser-extension_*` (18 tools) are accessible
+
+**Root Cause**: Playwright MCP tools are registered with the server but Cursor IDE is not exposing them to the AI agent. This appears to be a **Linux/Ubuntu-specific issue** with Cursor IDE's MCP tool exposure mechanism.
+
+**Linux/Ubuntu-Specific Issues Confirmed**:
+- Browser initialization failures on Ubuntu (GitHub issues #942, #1113)
+- Server startup and connection problems on Linux
+- Tool execution errors in Linux environments
+- MCP tool exposure may work differently on Linux vs Windows/macOS
+
+**Workaround**: Use `mcp_browser_*` tools from `@agent-infra/mcp-server-browser` server, which are accessible and functional.
 
 ### Test 6: Precalc Work Attempt (2025-12-02)
 
