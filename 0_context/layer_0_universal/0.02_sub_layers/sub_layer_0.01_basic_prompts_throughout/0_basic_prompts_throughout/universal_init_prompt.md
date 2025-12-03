@@ -125,6 +125,15 @@ ls -d */0_context/0_context/0_basic_prompts_throughout/project_init_prompt.md 2>
 
 2. If user agrees, use template in Section 7
 
+**⚠️ CRITICAL PROJECT STRUCTURE REQUIREMENT:**
+**Before working on any project, verify it has proper instantiation and organization:**
+1. **Check for proper layer structure**: Project must have `layer_1_project/` with proper sub-layers (1.00-1.12) and stages (1.99_stages/)
+2. **Check for templates**: If missing, project should be instantiated from `0_ai_context/0_context/0.00_layer_stage_framework/1_project_template/`
+3. **Verify organization**: Project structure must match the universal context organization pattern
+4. **If structure is missing or incomplete**: You MUST notify the user and help set it up before proceeding with work
+
+See Section 4.9 for detailed project structure requirements and instantiation process.
+
 ### 3. Load Core Universal Documentation
 
 **All paths relative to `<universal_context_root>/0_context/`:**
@@ -318,7 +327,7 @@ Working on feature checkout in project ecommerce:
 
 **This is the core workflow for using the context management system. Follow these steps for every user request.**
 
-##### Step 1: Interpret the User's Prompt
+##### Step 1: Interpret the User's Prompt and Outline Stages
 
 **Analyze the user's request to determine:**
 - **What** they want to accomplish (the task/goal)
@@ -333,6 +342,12 @@ Working on feature checkout in project ecommerce:
 - Is this component-specific? → Component layer (3)
 - What stage of work is this? (instructions, planning, design, development, testing, criticism, fixing, archives)
 
+**CRITICAL: Outline the stages that will be carried out BEFORE proceeding:**
+- Identify which stages are needed for this task
+- Determine the starting stage
+- Determine the sequence of stages
+- Present this outline to the user (or in your internal plan)
+
 **Example Analysis:**
 ```
 User: "Add a checkout feature to the ecommerce project"
@@ -341,11 +356,22 @@ Interpretation:
 - Task: Create new feature
 - Location: ecommerce project, checkout feature
 - Layers needed: 0 (universal), 1 (project_ecommerce), 2 (feature_checkout)
-- Stage: Likely starting at stage_2.01_instructions or stage_2.02_planning
 - Sub-layers needed: 
   - Universal: 0.01 (prompts), 0.03 (principles), 0.04 (rules), 0.11 (tools)
   - Project: 1.01 (prompts), 1.03 (principles), 1.04 (rules)
   - Feature: 2.01 (prompts), 2.02 (SE knowledge), 2.03 (principles)
+
+Stages to be carried out (at Layer 2 - Feature level):
+1. stage_2.01_instructions - Gather requirements and initial instructions
+2. stage_2.02_planning - Plan the checkout feature architecture
+3. stage_2.03_design - Design the checkout flow and components
+4. stage_2.04_development - Implement the checkout feature
+5. stage_2.05_testing - Test the checkout feature
+6. stage_2.06_criticism - Review and critique the implementation
+7. stage_2.07_fixing - Fix any issues found
+8. stage_2.08_archives - Archive completed work
+
+Starting stage: stage_2.01_instructions
 ```
 
 ##### Step 2: Load Context Layers (Outside-In)
@@ -369,6 +395,27 @@ cd 0_context/layer_0_universal/
 - **For AI/agent work**: `sub_layer_0.09_mcp_servers_and_tools_setup/`, `sub_layer_0.10_ai_models/`, `sub_layer_0.12_agent_setup/`
 
 **2.2 Load Project Layer (Layer 1) - If project-specific**
+
+**CRITICAL: Check if project exists before loading:**
+```bash
+# Check if project context exists:
+if [ ! -d "../../<project_name>/0_context/0_context/layer_1_project/" ]; then
+  echo "⚠️ Project '<project_name>' does not exist or is not properly instantiated"
+  echo "I can help create it. Would you like me to:"
+  echo "  1. Create the project structure from template?"
+  echo "  2. Set up layer_1_project with all required sub-layers and stages?"
+  # STOP and wait for user confirmation
+fi
+```
+
+**If project is missing:**
+1. **STOP** - Do not proceed until project structure exists
+2. **NOTIFY** - Inform user that the project doesn't exist or isn't properly instantiated
+3. **OFFER** - Offer to create the project structure using the template (see Section 4.9)
+4. **WAIT** - Wait for user confirmation before creating structure
+5. **CREATE** - If confirmed, follow instantiation process in Section 4.9
+
+**If project exists, navigate and load:**
 ```bash
 # Navigate to project context (sibling to universal):
 cd ../../<project_name>/0_context/0_context/layer_1_project/
@@ -381,6 +428,29 @@ cd ../../<project_name>/0_context/0_context/layer_1_project/
 - Task-specific sub-layers as needed
 
 **2.3 Load Feature Layer (Layer 2) - If feature-specific**
+
+**CRITICAL: Check if feature exists before loading:**
+```bash
+# From project context, check if feature exists:
+if [ ! -d "../layer_2_features/layer_2_feature_<name>/" ]; then
+  echo "⚠️ Feature '<name>' does not exist in project '<project_name>'"
+  echo "I can help create it. Would you like me to:"
+  echo "  1. Create the feature structure from template?"
+  echo "  2. Set up layer_2_feature_<name> with all required sub-layers and stages?"
+  # STOP and wait for user confirmation
+fi
+```
+
+**If feature is missing:**
+1. **STOP** - Do not proceed until feature structure exists
+2. **NOTIFY** - Inform user that the feature doesn't exist
+3. **OFFER** - Offer to create the feature structure using the template:
+   - Copy from: `0_ai_context/0_context/0.00_layer_stage_framework/2_feature_template/`
+   - To: `<project>/0_context/0_context/layer_2_features/layer_2_feature_<name>/`
+4. **WAIT** - Wait for user confirmation before creating structure
+5. **CREATE** - If confirmed, create feature structure following template pattern
+
+**If feature exists, navigate and load:**
 ```bash
 # From project context:
 cd ../layer_2_features/layer_2_feature_<name>/
@@ -393,6 +463,29 @@ cd ../layer_2_features/layer_2_feature_<name>/
 - Task-specific sub-layers as needed
 
 **2.4 Load Component Layer (Layer 3) - If component-specific**
+
+**CRITICAL: Check if component exists before loading:**
+```bash
+# From feature context, check if component exists:
+if [ ! -d "../layer_3_components/layer_3_component_<name>/" ]; then
+  echo "⚠️ Component '<name>' does not exist in feature '<feature_name>'"
+  echo "I can help create it. Would you like me to:"
+  echo "  1. Create the component structure from template?"
+  echo "  2. Set up layer_3_component_<name> with all required sub-layers and stages?"
+  # STOP and wait for user confirmation
+fi
+```
+
+**If component is missing:**
+1. **STOP** - Do not proceed until component structure exists
+2. **NOTIFY** - Inform user that the component doesn't exist
+3. **OFFER** - Offer to create the component structure using the template:
+   - Copy from: `0_ai_context/0_context/0.00_layer_stage_framework/3_component_template/`
+   - To: `<project>/0_context/0_context/layer_2_features/layer_2_feature_<name>/layer_3_components/layer_3_component_<name>/`
+4. **WAIT** - Wait for user confirmation before creating structure
+5. **CREATE** - If confirmed, create component structure following template pattern
+
+**If component exists, navigate and load:**
 ```bash
 # From feature context:
 cd ../layer_3_components/layer_3_component_<name>/
@@ -446,15 +539,45 @@ Feature (Layer 2):
 - Check stage_2.07_fixing/ for existing fix attempts
 ```
 
-##### Step 4: Determine and Load the Appropriate Stage
+##### Step 4: Outline Stages and Determine Appropriate Level
 
-**Check the current stage status:**
+**CRITICAL: Before executing, outline all stages that will be carried out at the appropriate layer level.**
+
+**4.1 Check Current Stage Status:**
 ```bash
 # From the relevant layer directory:
 cat <N>.99_stages/status_<N>.json
 ```
 
-**Stage Selection Logic:**
+**4.2 Determine Which Layer Level to Work At:**
+- **Universal work** (affects all projects): Work at Layer 0 level
+- **Project work** (affects entire project): Work at Layer 1 level
+- **Feature work** (affects specific feature): Work at Layer 2 level
+- **Component work** (affects specific component): Work at Layer 3 level
+
+**4.3 Outline the Stages That Will Be Carried Out:**
+
+**Present a clear outline of stages before proceeding. Example:**
+```
+For task: "Add checkout feature to ecommerce project"
+
+Working at: Layer 2 (Feature level) - layer_2_feature_checkout
+
+Stages to be carried out:
+1. stage_2.01_instructions - Gather requirements and initial instructions
+2. stage_2.02_planning - Plan checkout feature architecture
+3. stage_2.03_design - Design checkout flow and components
+4. stage_2.04_development - Implement checkout feature
+5. stage_2.05_testing - Test checkout feature
+6. stage_2.06_criticism - Review and critique implementation
+7. stage_2.07_fixing - Fix any issues found
+8. stage_2.08_archives - Archive completed work
+
+Starting at: stage_2.01_instructions
+Current status: All stages marked as "not_started"
+```
+
+**4.4 Stage Selection Logic:**
 - **New work/feature**: Start at `stage_<N>.01_instructions` or `stage_<N>.02_planning`
 - **Continuing work**: Check `status_<N>.json` for `current_stage`
 - **Bug fixes**: Use `stage_<N>.07_fixing`
@@ -462,7 +585,7 @@ cat <N>.99_stages/status_<N>.json
 - **Review/critique**: Use `stage_<N>.06_criticism`
 - **Archiving**: Use `stage_<N>.08_archives`
 
-**Load Stage Context:**
+**4.5 Load Stage Context:**
 ```bash
 # Navigate to the appropriate stage:
 cd <N>.99_stages/stage_<N>.xx_<name>/
@@ -479,44 +602,81 @@ cat ai_agent_system/*.md
 - `ai_agent_system/` - Runbooks and configs for the stage agent
 - These help you understand what's already been done and what's needed
 
-##### Step 5: Execute the Work
+**4.6 Confirm Stage Outline with User (if needed):**
+- If the task is complex or ambiguous, present the stage outline to the user
+- Get confirmation that the outlined stages match their expectations
+- Adjust the outline based on user feedback before proceeding
+
+##### Step 5: Execute the Work at the Appropriate Level
+
+**CRITICAL: Execute work at the layer level determined in Step 4.2, following the stages outlined in Step 4.3.**
 
 **5.1 Review Loaded Context**
-- Verify you have all necessary layers loaded
+- Verify you have all necessary layers loaded (universal → project → feature → component)
 - Confirm you understand the task scope
+- Verify you're working at the correct layer level
 - Check for any blocking issues or dependencies
+- Ensure all required project/feature/component structures exist (from Step 2)
 
 **5.2 Follow Layer-Specific Rules**
 - Apply universal rules from Layer 0 (git, terminal, documentation)
-- Apply project-specific rules from Layer 1
-- Apply feature/component-specific rules from Layer 2/3
+- Apply project-specific rules from Layer 1 (if working at project level or below)
+- Apply feature-specific rules from Layer 2 (if working at feature level or below)
+- Apply component-specific rules from Layer 3 (if working at component level)
 
-**5.3 Execute the Task**
-- Use the appropriate tools (from `sub_layer_0.11_universal_tools/` or project-specific tools)
-- Follow principles from loaded sub-layers
+**5.3 Execute the Task at the Appropriate Level**
+
+**Work at the layer level determined in Step 4:**
+- **Layer 0 (Universal)**: Work affects all projects - execute in `layer_0_universal/<N>.99_stages/stage_0.xx_*/`
+- **Layer 1 (Project)**: Work affects entire project - execute in `layer_1_project/1.99_stages/stage_1.xx_*/`
+- **Layer 2 (Feature)**: Work affects specific feature - execute in `layer_2_feature_<name>/2.99_stages/stage_2.xx_*/`
+- **Layer 3 (Component)**: Work affects specific component - execute in `layer_3_component_<name>/3.99_stages/stage_3.xx_*/`
+
+**Follow the outlined stages from Step 4.3:**
+- Execute each stage in sequence
+- Complete one stage before moving to the next
+- Update status after each stage completion
+- Use stage-specific tools and documentation
+
+**Execution Guidelines:**
+- Use the appropriate tools (from `sub_layer_0.11_universal_tools/` or project/feature-specific tools)
+- Follow principles from loaded sub-layers at the working level
 - Make decisions consistent with the context hierarchy
+- Create artifacts in the appropriate stage folder at the working level
 
-**5.4 Document and Update Status**
-- Update relevant documentation in the appropriate sub-layers
-- Create/update handoff documents in the current stage folder
-- Update `status_<N>.json` to reflect progress:
-  ```json
-  {
-    "current_stage": "stage_<N>.04_development",
-    "stages": {
-      "stage_<N>.01_instructions": "done",
-      "stage_<N>.02_planning": "done",
-      "stage_<N>.03_design": "done",
-      "stage_<N>.04_development": "in_progress",
-      ...
-    }
+**5.4 Document and Update Status at the Working Level**
+
+**Update documentation in the appropriate sub-layers at the working level:**
+- If working at Layer 1: Update `layer_1_project/1.02_sub_layers/sub_layer_1.xx_*/`
+- If working at Layer 2: Update `layer_2_feature_<name>/2.02_sub_layers/sub_layer_2.xx_*/`
+- If working at Layer 3: Update `layer_3_component_<name>/3.02_sub_layers/sub_layer_3.xx_*/`
+
+**Create/update handoff documents in the current stage folder:**
+- Place in: `<N>.99_stages/stage_<N>.xx_*/hand_off_documents/`
+- Document decisions, outputs, and context for next stage
+
+**Update `status_<N>.json` at the working level to reflect progress:**
+```json
+{
+  "current_stage": "stage_<N>.04_development",
+  "stages": {
+    "stage_<N>.01_instructions": "done",
+    "stage_<N>.02_planning": "done",
+    "stage_<N>.03_design": "done",
+    "stage_<N>.04_development": "in_progress",
+    "stage_<N>.05_testing": "not_started",
+    "stage_<N>.06_criticism": "not_started",
+    "stage_<N>.07_fixing": "not_started",
+    "stage_<N>.08_archives": "not_started"
   }
-  ```
+}
+```
 
 **5.5 Commit and Sync**
 - Follow git commit rules (see Section 3.6)
-- Commit changes to the appropriate repository
+- Commit changes to the appropriate repository (universal, project, or both)
 - Push to sync cloud/local
+- Update status files reflect the current state
 
 ##### Step 6: Navigation Commands Reference
 
@@ -562,24 +722,53 @@ ls -d <project>/0_context/0_context/layer_2_features/layer_2_*/layer_3_component
 
 **User Request:** "Add user authentication to the ecommerce project"
 
-**Step 1: Interpret**
+**Step 1: Interpret and Outline Stages**
 - Task: New feature (authentication)
 - Location: ecommerce project
 - Layers: 0 (universal), 1 (project_ecommerce), 2 (feature_auth)
-- Stage: Start at `stage_2.01_instructions`
 - Sub-layers: 0.01, 0.03, 0.04, 0.11; 1.01, 1.03, 1.04; 2.01, 2.02, 2.03
 
-**Step 2: Load Layers**
+**Stages to be carried out (at Layer 2 - Feature level):**
+1. stage_2.01_instructions - Gather authentication requirements
+2. stage_2.02_planning - Plan authentication architecture
+3. stage_2.03_design - Design authentication flow and components
+4. stage_2.04_development - Implement authentication feature
+5. stage_2.05_testing - Test authentication feature
+6. stage_2.06_criticism - Review and critique implementation
+7. stage_2.07_fixing - Fix any issues found
+8. stage_2.08_archives - Archive completed work
+
+**Starting stage:** stage_2.01_instructions
+
+**Step 2: Load Layers (Check for Missing Structure)**
 ```bash
-# Load universal
+# Load universal (always exists)
 cd ~/code/0_ai_context/0_context/layer_0_universal/
 # Read: sub_layer_0.01/, sub_layer_0.03/, sub_layer_0.04/, sub_layer_0.11/
 
-# Load project
+# Check if project exists
+if [ ! -d "../../ecommerce/0_context/0_context/layer_1_project/" ]; then
+  echo "⚠️ Project 'ecommerce' does not exist or is not properly instantiated"
+  echo "I can help create it. Would you like me to set up the project structure?"
+  # STOP and wait for user confirmation
+  # If confirmed, follow Section 4.9 instantiation process
+fi
+
+# Load project (after verification)
 cd ../../ecommerce/0_context/0_context/layer_1_project/
 # Read: sub_layer_1.01/, sub_layer_1.03/, sub_layer_1.04/
 
-# Load/create feature
+# Check if feature exists
+if [ ! -d "../layer_2_features/layer_2_feature_auth/" ]; then
+  echo "⚠️ Feature 'auth' does not exist in project 'ecommerce'"
+  echo "I can help create it. Would you like me to:"
+  echo "  1. Create the feature structure from template?"
+  echo "  2. Set up layer_2_feature_auth with all required sub-layers and stages?"
+  # STOP and wait for user confirmation
+  # If confirmed, copy from 2_feature_template/
+fi
+
+# Load/create feature (after verification or creation)
 cd ../layer_2_features/layer_2_feature_auth/
 # Read: sub_layer_2.01/, sub_layer_2.02/, sub_layer_2.03/
 ```
@@ -589,23 +778,39 @@ cd ../layer_2_features/layer_2_feature_auth/
 - Project architecture and patterns
 - Feature requirements and design
 
-**Step 4: Determine Stage**
+**Step 4: Outline Stages and Determine Level**
 ```bash
-# Check if feature exists and current stage
+# Check current stage status
 cat 2.99_stages/status_2.json
-# If new, start at stage_2.01_instructions
+
+# Working at: Layer 2 (Feature level) - layer_2_feature_auth
+# Stages outlined in Step 1
+# Starting at: stage_2.01_instructions
+
 cd 2.99_stages/stage_2.01_instructions/
 ```
 
-**Step 5: Execute**
+**Step 5: Execute at Layer 2 Level**
 - Follow universal and project rules
+- Execute work in `layer_2_feature_auth/2.99_stages/stage_2.xx_*/`
 - Create authentication feature
-- Update documentation
-- Update status_2.json
+- Update documentation in `layer_2_feature_auth/2.02_sub_layers/sub_layer_2.xx_*/`
+- Update status_2.json at Layer 2 level:
+  ```json
+  {
+    "current_stage": "stage_2.01_instructions",
+    "stages": {
+      "stage_2.01_instructions": "in_progress",
+      "stage_2.02_planning": "not_started",
+      ...
+    }
+  }
+  ```
 
 **Step 6: Commit**
 - Commit changes following git rules
 - Push to sync
+- Status files updated at Layer 2 level
 
 #### 4.8 Quick Reference: Where to Find Context for Common Situations
 
@@ -783,6 +988,194 @@ cd 2.99_stages/stage_2.01_instructions/
 - **...find project rules** → `<project>/0_context/0_context/layer_1_project/1.02_sub_layers/sub_layer_1.04_project_rules/`
 - **...understand the system** → `0.00_layer_stage_framework/README.md` + Section 4 of this file
 - **...navigate the system** → Section 4.7 of this file (navigation workflow)
+
+#### 4.9 Project Structure Requirements and Instantiation
+
+**MANDATORY RULE: Any project being worked on MUST have proper instantiation and organization as laid out in the universal context repository.**
+
+##### Required Project Structure
+
+**A properly instantiated project must have:**
+
+1. **Project Context Root**: `<parent>/<project_name>/0_context/0_context/`
+
+2. **Layer 1 (Project Layer)**: `layer_1_project/` with complete structure:
+   ```
+   layer_1_project/
+   ├── 1.00_ai_manager_system/          # Manager agent home
+   ├── 1.01_manager_handoff_documents/  # Inter-layer communication
+   │   ├── 1.00_to_universal/          # Upward reports
+   │   └── 1.01_to_specific/           # Downstream context
+   ├── 1.02_sub_layers/                 # Numbered content slots
+   │   ├── sub_layer_1.01_basic_prompts_throughout/
+   │   ├── sub_layer_1.02_project_se_knowledge/
+   │   ├── sub_layer_1.03_project_principles/
+   │   ├── sub_layer_1.04_project_rules/
+   │   ├── sub_layer_1.05_project_os_setup/
+   │   ├── sub_layer_1.06_project_coding_app_setup/
+   │   ├── sub_layer_1.07_project_apps_browsers_extensions_setup/
+   │   ├── sub_layer_1.08_project_ai_apps_tools_setup/
+   │   ├── sub_layer_1.09_project_mcp_servers_and_tools_setup/
+   │   ├── sub_layer_1.10_project_ai_models/
+   │   ├── sub_layer_1.11_project_tools/
+   │   └── sub_layer_1.12_project_agent_setup/
+   └── 1.99_stages/                     # Chronological workflow stages
+       ├── stage_1.01_instructions/
+       ├── stage_1.02_planning/
+       ├── stage_1.03_design/
+       ├── stage_1.04_development/
+       ├── stage_1.05_testing/
+       ├── stage_1.06_criticism/
+       ├── stage_1.07_fixing/
+       ├── stage_1.08_archives/
+       └── status_1.json                # Tracks current stage and per-stage state
+   ```
+
+3. **Project Init Prompt**: `<project>/0_context/0_context/0_basic_prompts_throughout/project_init_prompt.md`
+   - Or located in: `layer_1_project/1.02_sub_layers/sub_layer_1.01_basic_prompts_throughout/`
+
+4. **Master Documentation Index**: `<project>/0_context/0_context/MASTER_DOCUMENTATION_INDEX.md`
+
+5. **Optional but Recommended**:
+   - `layer_2_features/` - For feature-specific layers
+   - `layer_3_components/` - For component-specific layers
+
+##### Verification Checklist
+
+**Before starting work on any project, verify:**
+
+- [ ] Project has `0_context/0_context/` directory structure
+- [ ] Project has `layer_1_project/` directory
+- [ ] `layer_1_project/` has `1.00_ai_manager_system/` directory
+- [ ] `layer_1_project/` has `1.01_manager_handoff_documents/` with `1.00_to_universal/` and `1.01_to_specific/`
+- [ ] `layer_1_project/` has `1.02_sub_layers/` directory
+- [ ] `layer_1_project/` has `1.99_stages/` directory with all 8 stage folders
+- [ ] `layer_1_project/1.99_stages/status_1.json` exists
+- [ ] Project init prompt exists (either in `0_basic_prompts_throughout/` or `sub_layer_1.01_basic_prompts_throughout/`)
+- [ ] Project structure mirrors universal context organization pattern
+
+##### Instantiation Process
+
+**If a project is missing proper structure, you MUST help set it up:**
+
+**Step 1: Identify Missing Structure**
+```bash
+# From project context root:
+cd <project>/0_context/0_context/
+
+# Check for layer_1_project:
+ls -d layer_1_project/ 2>/dev/null || echo "MISSING: layer_1_project/"
+
+# Check for required subdirectories:
+[ -d "layer_1_project/1.02_sub_layers" ] || echo "MISSING: 1.02_sub_layers/"
+[ -d "layer_1_project/1.99_stages" ] || echo "MISSING: 1.99_stages/"
+```
+
+**Step 2: Copy Template from Universal Context**
+```bash
+# From universal context root:
+cd <parent>/0_ai_context/0_context/0.00_layer_stage_framework/
+
+# Copy project template to project context:
+cp -r 1_project_template/ <parent>/<project>/0_context/0_context/layer_1_project/
+```
+
+**Step 3: Rename and Customize**
+```bash
+# From project context root:
+cd <project>/0_context/0_context/layer_1_project/
+
+# The template should already have correct numbering (1.00, 1.01, etc.)
+# Customize sub-layer content as needed
+# Populate project-specific content in sub_layers
+```
+
+**Step 4: Create Project Init Prompt**
+- Use template from Section 7 of this file
+- Place in: `<project>/0_context/0_context/0_basic_prompts_throughout/project_init_prompt.md`
+- Or in: `layer_1_project/1.02_sub_layers/sub_layer_1.01_basic_prompts_throughout/`
+
+**Step 5: Create Master Documentation Index**
+- Create: `<project>/0_context/0_context/MASTER_DOCUMENTATION_INDEX.md`
+- Reference universal index structure
+- Document project-specific documentation locations
+
+**Step 6: Initialize Status File**
+```bash
+# Create status_1.json:
+cat > layer_1_project/1.99_stages/status_1.json << 'EOF'
+{
+  "current_stage": "stage_1.01_instructions",
+  "stages": {
+    "stage_1.01_instructions": "not_started",
+    "stage_1.02_planning": "not_started",
+    "stage_1.03_design": "not_started",
+    "stage_1.04_development": "not_started",
+    "stage_1.05_testing": "not_started",
+    "stage_1.06_criticism": "not_started",
+    "stage_1.07_fixing": "not_started",
+    "stage_1.08_archives": "not_started"
+  }
+}
+EOF
+```
+
+**Step 7: Verify Structure**
+- Run verification checklist above
+- Ensure all required directories exist
+- Ensure all required files exist
+
+##### When to Enforce This Rule
+
+**You MUST check and enforce this rule when:**
+
+1. **Starting work on a new project** - Verify structure exists before proceeding
+2. **User requests work on a project** - Check structure as part of Step 2 (Discover Project)
+3. **Project context seems incomplete** - Verify all required components exist
+4. **Navigating to project layers** - Ensure structure matches expected pattern
+
+**If structure is missing:**
+1. **STOP** - Do not proceed with work until structure is in place
+2. **NOTIFY** - Inform user that project needs proper instantiation
+3. **OFFER HELP** - Offer to set up the structure using the instantiation process
+4. **WAIT** - Wait for user confirmation before creating structure
+
+##### Benefits of Proper Structure
+
+**Projects with proper structure enable:**
+- Deterministic navigation (agents know where to find context)
+- Proper layer hierarchy (project depends on universal)
+- Stage-based workflow tracking
+- Manager/agent system integration
+- Clean handoff documents and communication
+- Status tracking and progress monitoring
+- Consistent documentation organization
+
+**Projects without proper structure:**
+- Cannot leverage the context management system
+- Make navigation and context loading difficult
+- Prevent proper agent hierarchy integration
+- Block stage-based workflow tracking
+- Create maintenance and organization problems
+
+##### Template Location
+
+**Project template is located at:**
+```
+<universal_context_root>/0_context/0.00_layer_stage_framework/1_project_template/
+```
+
+**Template includes:**
+- Complete `layer_1_project/` structure
+- All required sub-layers (1.01-1.12)
+- All required stages (1.01-1.08)
+- Manager system folders
+- Handoff document folders
+- Status template
+
+**See also:**
+- `0.00_layer_stage_framework/README.md` - How to instantiate layers
+- Section 4.6 - How to maintain and update documentation
 
 ### 5. Summaries must keep entrypoints
 When summarizing context for any session, you must explicitly retain:
