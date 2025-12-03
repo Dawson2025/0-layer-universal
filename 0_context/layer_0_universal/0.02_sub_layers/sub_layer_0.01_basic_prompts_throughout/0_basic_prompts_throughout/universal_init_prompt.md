@@ -84,6 +84,19 @@ After understanding the framework, read **Section 4.7** of this file for the ste
 
 **This workflow (Section 4.7) is your guide for every user request.**
 
+**Quick Reference for Common Situations:**
+**Section 4.8** provides a quick lookup guide mapping common situations to specific context locations. Use it when you need to quickly find where to get context for:
+- Development tasks (coding, debugging, testing)
+- Setup tasks (OS, IDE, AI tools, MCP servers)
+- Git operations
+- Terminal commands
+- Browser automation
+- Database work
+- Documentation tasks
+- And more...
+
+**Bookmark Section 4.8 for quick reference during work.**
+
 ### 2. Discover & Read Project-Specific Init Prompt
 
 **How to find it:**
@@ -594,6 +607,183 @@ cd 2.99_stages/stage_2.01_instructions/
 - Commit changes following git rules
 - Push to sync
 
+#### 4.8 Quick Reference: Where to Find Context for Common Situations
+
+**Use this as a quick lookup guide when you need to know where to find context for specific situations.**
+
+**All paths are relative to `<universal_context_root>/0_context/`**
+
+##### Development & Coding Tasks
+
+**Starting a new feature:**
+- Universal: `layer_0_universal/0.02_sub_layers/sub_layer_0.01_basic_prompts_throughout/` (this file)
+- Universal: `layer_0_universal/0.02_sub_layers/sub_layer_0.02_software_engineering_knowledge_system/` (SE knowledge)
+- Universal: `layer_0_universal/0.02_sub_layers/sub_layer_0.03_universal_principles/` (principles)
+- Universal: `layer_0_universal/0.02_sub_layers/sub_layer_0.04_universal_rules/` (rules)
+- Project: `<project>/0_context/0_context/layer_1_project/1.02_sub_layers/sub_layer_1.02_project_se_knowledge/`
+- Feature: `<project>/0_context/0_context/layer_2_features/layer_2_feature_<name>/2.99_stages/stage_2.01_instructions/`
+
+**Writing code:**
+- Universal: `layer_0_universal/0.02_sub_layers/sub_layer_0.02_software_engineering_knowledge_system/`
+- Universal: `layer_0_universal/0.02_sub_layers/sub_layer_0.11_universal_tools/` (development tools)
+- Project: `<project>/0_context/0_context/layer_1_project/1.02_sub_layers/sub_layer_1.02_project_se_knowledge/`
+- Feature: `<project>/0_context/0_context/layer_2_features/layer_2_feature_<name>/2.02_sub_layers/sub_layer_2.02_feature_knowledge/`
+- Stage: Check `2.99_stages/status_2.json` for current stage, then load `stage_2.04_development/`
+
+**Debugging/Fixing bugs:**
+- Universal: `layer_0_universal/0.02_sub_layers/sub_layer_0.04_universal_rules/trickle_down_0_universal/0_instruction_docs/` (testing rules)
+- Universal: `layer_0_universal/0.02_sub_layers/sub_layer_0.11_universal_tools/` (debugging tools)
+- Feature: `<project>/0_context/0_context/layer_2_features/layer_2_feature_<name>/2.99_stages/stage_2.07_fixing/`
+- Check: `2.99_stages/stage_2.07_fixing/hand_off_documents/` for previous fix attempts
+
+**Testing:**
+- Universal: `layer_0_universal/0.02_sub_layers/sub_layer_0.04_universal_rules/trickle_down_0_universal/0_instruction_docs/TESTING_AGENT_SYSTEM_README.md`
+- Universal: `layer_0_universal/0.02_sub_layers/sub_layer_0.11_universal_tools/` (testing tools)
+- Feature: `<project>/0_context/0_context/layer_2_features/layer_2_feature_<name>/2.99_stages/stage_2.05_testing/`
+
+##### Setup & Configuration Tasks
+
+**OS/System setup:**
+- Universal: `layer_0_universal/0.02_sub_layers/sub_layer_0.05_os_setup/`
+- Check: `sub_layer_0.05_os_setup/trickle_down_0.5_setup/0_instruction_docs/` for OS-specific guides
+
+**IDE/Editor setup:**
+- Universal: `layer_0_universal/0.02_sub_layers/sub_layer_0.06_coding_app_setup/`
+- Check: `sub_layer_0.06_coding_app_setup/trickle_down_0.5_setup/0_instruction_docs/` for IDE-specific guides
+
+**Browser/Extension setup:**
+- Universal: `layer_0_universal/0.02_sub_layers/sub_layer_0.07_apps_browsers_extensions_setup/`
+
+**AI Apps/Tools setup:**
+- Universal: `layer_0_universal/0.02_sub_layers/sub_layer_0.08_ai_apps_tools_setup/`
+- Check: `sub_layer_0.08_ai_apps_tools_setup/trickle_down_0.5_setup/0_instruction_docs/` for app-specific guides
+
+**MCP Servers setup:**
+- Universal: `layer_0_universal/0.02_sub_layers/sub_layer_0.09_mcp_servers_and_tools_setup/`
+- Check: `sub_layer_0.09_mcp_servers_and_tools_setup/trickle_down_0.75_universal_tools/0_instruction_docs/mcp-tools/`
+- **Linux/Ubuntu users**: Read `BROWSER_MCP_SETUP_EXPERIENCE.md` first!
+
+**AI Models configuration:**
+- Universal: `layer_0_universal/0.02_sub_layers/sub_layer_0.10_ai_models/`
+- Check: `sub_layer_0.10_ai_models/trickle_down_0.5_setup/0_instruction_docs/` for model access issues
+
+**Agent setup:**
+- Universal: `layer_0_universal/0.02_sub_layers/sub_layer_0.12_agent_setup/`
+- Registry: `0.00_layer_stage_framework/agent_registry_template.md`
+
+##### Git & Version Control
+
+**Making commits:**
+- Universal: `layer_0_universal/0.02_sub_layers/sub_layer_0.04_universal_rules/trickle_down_0_universal/0_instruction_docs/git_commit_rule.md`
+- Universal: `layer_0_universal/0.02_sub_layers/sub_layer_0.04_universal_rules/trickle_down_0_universal/0_instruction_docs/context_update_rule.md`
+
+**Syncing repos:**
+- Always start with: `git pull` and `git status` in each relevant repo
+- See Section 0 (Quick Start) for sync workflow
+
+##### Terminal & Command Execution
+
+**Running terminal commands:**
+- Universal: `layer_0_universal/0.02_sub_layers/sub_layer_0.04_universal_rules/trickle_down_0_universal/0_instruction_docs/UNIVERSAL_AGENT_TERMINAL_PROTOCOL.md`
+- Universal: `layer_0_universal/0.02_sub_layers/sub_layer_0.04_universal_rules/trickle_down_0_universal/0_instruction_docs/cursor_terminal_issues.md`
+- Universal: `layer_0_universal/0.02_sub_layers/sub_layer_0.04_universal_rules/trickle_down_0_universal/0_instruction_docs/terminal_execution_protocol.md`
+- **Python scripts**: Use `python3 scripts/terminal_wrapper.py --script <script_path>`
+
+##### Browser Automation
+
+**Browser automation tasks:**
+- Universal: `layer_0_universal/0.02_sub_layers/sub_layer_0.04_universal_rules/trickle_down_0_universal/0_instruction_docs/browser_management_policy.md`
+- Universal: `layer_0_universal/0.02_sub_layers/sub_layer_0.04_universal_rules/trickle_down_0_universal/0_instruction_docs/browser_opening_rule.md`
+- Universal: `layer_0_universal/0.02_sub_layers/sub_layer_0.11_universal_tools/trickle_down_0.75_universal_tools/0_instruction_docs/browser-automation/`
+
+**MCP Browser tools (Linux/Ubuntu):**
+- Universal: `layer_0_universal/0.02_sub_layers/sub_layer_0.09_mcp_servers_and_tools_setup/trickle_down_0.75_universal_tools/0_instruction_docs/mcp-tools/BROWSER_MCP_SETUP_EXPERIENCE.md`
+- **CRITICAL**: Read Lesson 1 first! Playwright MCP tools don't work on Linux in Cursor IDE.
+
+##### Database Operations
+
+**Supabase/Database work:**
+- Universal: `layer_0_universal/0.02_sub_layers/sub_layer_0.04_universal_rules/trickle_down_0_universal/0_instruction_docs/supabase_javascript_integration_rule.md`
+- Universal: `layer_0_universal/0.02_sub_layers/sub_layer_0.04_universal_rules/trickle_down_0_universal/0_instruction_docs/supabase_javascript_quick_reference.md`
+
+##### Authentication & Security
+
+**OAuth/Security setup:**
+- Universal: `layer_0_universal/0.02_sub_layers/sub_layer_0.04_universal_rules/trickle_down_0_universal/0_instruction_docs/google_oauth_production_ready.md`
+- Universal: `layer_0_universal/0.02_sub_layers/sub_layer_0.04_universal_rules/trickle_down_0_universal/0_instruction_docs/sudo_password_management.md`
+
+##### Documentation Tasks
+
+**Updating documentation:**
+- Universal: `layer_0_universal/0.02_sub_layers/sub_layer_0.04_universal_rules/trickle_down_0_universal/0_instruction_docs/ai_agent_documentation_rule.md`
+- Universal: `layer_0_universal/0.02_sub_layers/sub_layer_0.04_universal_rules/trickle_down_0_universal/0_instruction_docs/context_update_rule.md`
+- See Section 4.6 for documentation maintenance workflow
+
+**Finding project documentation:**
+- Project: `<project>/0_context/0_context/MASTER_DOCUMENTATION_INDEX.md`
+- Project: `<project>/0_context/0_context/layer_1_project/1.02_sub_layers/sub_layer_1.01_basic_prompts_throughout/` (project init prompt)
+
+##### Planning & Design Tasks
+
+**Planning a new feature:**
+- Universal: `layer_0_universal/0.02_sub_layers/sub_layer_0.03_universal_principles/`
+- Project: `<project>/0_context/0_context/layer_1_project/1.02_sub_layers/sub_layer_1.03_project_principles/`
+- Feature: `<project>/0_context/0_context/layer_2_features/layer_2_feature_<name>/2.99_stages/stage_2.02_planning/`
+
+**Design work:**
+- Feature: `<project>/0_context/0_context/layer_2_features/layer_2_feature_<name>/2.99_stages/stage_2.03_design/`
+- Check: `stage_2.03_design/hand_off_documents/` for design decisions
+
+##### Review & Critique
+
+**Code review/critique:**
+- Feature: `<project>/0_context/0_context/layer_2_features/layer_2_feature_<name>/2.99_stages/stage_2.06_criticism/`
+- Check: `stage_2.06_criticism/hand_off_documents/` for review notes
+
+##### Agent & Manager Tasks
+
+**Registering agents:**
+- Template: `0.00_layer_stage_framework/agent_registry_template.md`
+- Agent setup: `layer_0_universal/0.02_sub_layers/sub_layer_0.12_agent_setup/`
+
+**Manager handoffs:**
+- Upward reports: `<N>.01_manager_handoff_documents/<N>.00_to_universal/`
+- Downstream context: `<N>.01_manager_handoff_documents/<N>.01_to_specific/`
+- Stage handoffs: `<N>.99_stages/stage_<N>.xx_*/hand_off_documents/`
+
+##### Finding Current Status
+
+**Check what stage work is in:**
+- Feature: `<project>/0_context/0_context/layer_2_features/layer_2_feature_<name>/2.99_stages/status_2.json`
+- Project: `<project>/0_context/0_context/layer_1_project/1.99_stages/status_1.json`
+
+**Find previous work/decisions:**
+- Check: `<N>.99_stages/stage_<N>.xx_*/hand_off_documents/` for previous decisions
+- Check: `<N>.99_stages/stage_<N>.08_archives/` for completed work
+
+##### Platform-Specific Issues
+
+**Linux/Ubuntu issues:**
+- MCP: `layer_0_universal/0.02_sub_layers/sub_layer_0.05_os_setup/trickle_down_0.5_setup/0_instruction_docs/LINUX_UBUNTU_MCP_ISSUES.md`
+- Cursor IDE: `layer_0_universal/0.02_sub_layers/sub_layer_0.06_coding_app_setup/trickle_down_0.5_setup/0_instruction_docs/CURSOR_IDE_LINUX_MCP_ISSUES.md`
+- AI Apps: `layer_0_universal/0.02_sub_layers/sub_layer_0.08_ai_apps_tools_setup/trickle_down_0.5_setup/0_instruction_docs/LINUX_UBUNTU_AI_APPS_MCP_ISSUES.md`
+- Models: `layer_0_universal/0.02_sub_layers/sub_layer_0.10_ai_models/trickle_down_0.5_setup/0_instruction_docs/LINUX_UBUNTU_MODEL_ACCESS_ISSUES.md`
+- Tools: `layer_0_universal/0.02_sub_layers/sub_layer_0.11_universal_tools/trickle_down_0.75_universal_tools/0_instruction_docs/LINUX_UBUNTU_TOOL_ACCESS_ISSUES.md`
+
+##### Quick Decision Tree
+
+**"I need to..."**
+
+- **...write code** → `sub_layer_0.02_software_engineering_knowledge_system/` + `sub_layer_0.11_universal_tools/` + project/feature SE knowledge
+- **...run a terminal command** → `sub_layer_0.04_universal_rules/.../UNIVERSAL_AGENT_TERMINAL_PROTOCOL.md`
+- **...make a git commit** → `sub_layer_0.04_universal_rules/.../git_commit_rule.md`
+- **...set up something** → `sub_layer_0.05_os_setup/` through `sub_layer_0.12_agent_setup/` (depending on what)
+- **...use browser automation** → `sub_layer_0.11_universal_tools/.../browser-automation/` + MCP tools docs
+- **...work on a feature** → Load layers 0 → 1 → 2, check `2.99_stages/status_2.json` for current stage
+- **...find project rules** → `<project>/0_context/0_context/layer_1_project/1.02_sub_layers/sub_layer_1.04_project_rules/`
+- **...understand the system** → `0.00_layer_stage_framework/README.md` + Section 4 of this file
+- **...navigate the system** → Section 4.7 of this file (navigation workflow)
+
 ### 5. Summaries must keep entrypoints
 When summarizing context for any session, you must explicitly retain:
 - A reference to this universal init prompt (`layer_0_universal/0.02_sub_layers/sub_layer_0.01_basic_prompts_throughout/0_basic_prompts_throughout/universal_init_prompt.md`) with an instruction to follow it.
@@ -719,6 +909,7 @@ cd ../../<project_name>/0_context/0_context/
 - [ ] Loaded task-specific universal documentation
 - [ ] Understood layer + stage system (Section 4.1-4.6)
 - [ ] **Read and understood navigation/execution workflow (Section 4.7)**
+- [ ] **Familiarized with quick reference guide (Section 4.8)** - bookmark for later use
 - [ ] Checked git branch in working repository
 - [ ] Synced repositories (start-of-session pull for every relevant repo)
 - [ ] Reviewed current task context
