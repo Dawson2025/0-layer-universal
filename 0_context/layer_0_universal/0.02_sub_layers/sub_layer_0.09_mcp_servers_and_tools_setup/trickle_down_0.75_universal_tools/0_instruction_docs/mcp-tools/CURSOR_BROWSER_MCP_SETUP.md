@@ -18,13 +18,14 @@ This document documents the setup and troubleshooting of browser MCP servers in 
 {
   "mcpServers": {
     "playwright": {
-      "command": "npx",
+      "command": "bash",
       "args": [
-        "-y",
-        "@playwright/mcp@latest",
-        "--browser",
-        "chromium"
-      ]
+        "-c",
+        "export NVM_DIR=\"$HOME/.nvm\" && [ -s \"$NVM_DIR/nvm.sh\" ] && \\. \"$NVM_DIR/nvm.sh\" && npx -y @playwright/mcp@latest --browser chromium"
+      ],
+      "env": {
+        "PLAYWRIGHT_BROWSERS_PATH": "/home/dawson/.cache/ms-playwright"
+      }
     },
     "browser": {
       "command": "npx",
@@ -38,6 +39,8 @@ This document documents the setup and troubleshooting of browser MCP servers in 
   }
 }
 ```
+
+**Note (2025-12-02)**: Playwright MCP configuration updated to use bash wrapper that loads NVM, ensuring Node.js/npx is available to the MCP process. This fixes issues where Playwright MCP couldn't find Node.js when NVM is used.
 
 ### Status
 

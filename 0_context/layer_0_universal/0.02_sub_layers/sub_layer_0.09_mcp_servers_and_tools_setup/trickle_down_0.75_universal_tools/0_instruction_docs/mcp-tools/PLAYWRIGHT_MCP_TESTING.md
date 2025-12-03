@@ -15,7 +15,29 @@ The Playwright MCP server is configured and running (22 tools enabled in Cursor 
 ### MCP Servers Running
 - ✅ Playwright MCP: 3+ processes active
 - ✅ Browser MCP: 1 process active
-- ✅ Configuration: Correct in `~/.cursor/mcp.json`
+- ✅ Configuration: Updated in `~/.cursor/mcp.json` (2025-12-02)
+
+### Configuration Fix Applied (2025-12-02)
+
+**Issue**: Playwright MCP may not have access to Node.js/npx if NVM is not loaded.
+
+**Solution**: Updated configuration to use bash wrapper that loads NVM:
+```json
+{
+  "playwright": {
+    "command": "bash",
+    "args": [
+      "-c",
+      "export NVM_DIR=\"$HOME/.nvm\" && [ -s \"$NVM_DIR/nvm.sh\" ] && \\. \"$NVM_DIR/nvm.sh\" && npx -y @playwright/mcp@latest --browser chromium"
+    ],
+    "env": {
+      "PLAYWRIGHT_BROWSERS_PATH": "/home/dawson/.cache/ms-playwright"
+    }
+  }
+}
+```
+
+**Status**: ⏳ Requires Cursor restart to take effect.
 
 ### Tools Available
 - `mcp_cursor-browser-extension_*` (18 tools) - Not working (requires Chrome extension)

@@ -308,7 +308,44 @@ This document captures our experience setting up and troubleshooting browser MCP
 
 **Status**: ⚠️ All browser MCP tools currently non-functional on this Linux system
 
-### Test 5: Precalc Work Attempt (2025-12-02)
+### Test 5: Playwright MCP Configuration Fix (2025-12-02)
+
+**Issue**: Playwright MCP server may not have access to Node.js/npx if NVM is not loaded in the MCP process environment.
+
+**Root Cause**: 
+- Cursor's MCP process may not inherit NVM environment variables
+- `npx` command may not be in PATH when MCP server starts
+- Node.js may not be accessible without loading NVM first
+
+**Fix Applied**: Updated `~/.cursor/mcp.json` to use bash wrapper that loads NVM:
+```json
+{
+  "playwright": {
+    "command": "bash",
+    "args": [
+      "-c",
+      "export NVM_DIR=\"$HOME/.nvm\" && [ -s \"$NVM_DIR/nvm.sh\" ] && \\. \"$NVM_DIR/nvm.sh\" && npx -y @playwright/mcp@latest --browser chromium"
+    ],
+    "env": {
+      "PLAYWRIGHT_BROWSERS_PATH": "/home/dawson/.cache/ms-playwright"
+    }
+  }
+}
+```
+
+**Key Changes**:
+1. Changed `command` from `"npx"` to `"bash"`
+2. Wrapped npx call in bash script that loads NVM
+3. Added `PLAYWRIGHT_BROWSERS_PATH` environment variable to ensure browser detection
+
+**Status**: ⏳ Configuration updated, requires Cursor restart to take effect.
+
+**Next Steps**:
+1. Restart Cursor IDE completely
+2. Test Playwright MCP tools after restart
+3. Verify tool naming convention (may be `mcp_playwright_*` or different)
+
+### Test 6: Precalc Work Attempt (2025-12-02)
 
 **Context**: Attempted to continue precalc ALEKS work in browser
 
