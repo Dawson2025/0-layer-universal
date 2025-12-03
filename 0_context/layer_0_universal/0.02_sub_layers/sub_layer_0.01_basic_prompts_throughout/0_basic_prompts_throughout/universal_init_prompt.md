@@ -47,8 +47,8 @@ Do this at the start of the chat/session before any other action.
 │           │   ├── sub_layer_0.08_ai_apps_tools_setup/
 │           │   ├── sub_layer_0.09_mcp_servers_and_tools_setup/
 │           │   ├── sub_layer_0.10_ai_models/
-│           │   ├── sub_layer_0.11_agent_setup/
-│           │   └── sub_layer_0.12_universal_tools/
+│           │   ├── sub_layer_0.11_universal_tools/
+│           │   └── sub_layer_0.12_agent_setup/
 │           └── 0.99_stages/
 └── <project_name>/                  # Project-specific context repo
     └── 0_context/

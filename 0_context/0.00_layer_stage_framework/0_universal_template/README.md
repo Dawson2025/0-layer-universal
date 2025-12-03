@@ -17,17 +17,18 @@ Use this when defining the universal layer for any ecosystem.
 - sub_layer_0.08_ai_apps_tools_setup: AI clients/CLIs and integrations.
 - sub_layer_0.09_mcp_servers_and_tools_setup: MCP server setup and configuration (depends on 0.08).
 - sub_layer_0.10_ai_models: approved models and usage guidance.
-- sub_layer_0.11_agent_setup: agent configuration with model fallbacks and MCP integration (depends on 0.08, 0.09, 0.10).
-- sub_layer_0.12_universal_tools: cross-project scripts/utilities.
+- sub_layer_0.11_universal_tools: cross-project scripts/utilities.
+- sub_layer_0.12_agent_setup: agent configuration with model fallbacks and MCP integration (depends on 0.08, 0.09, 0.10, 0.11).
 - 0.99_stages: stage folders and status template.
 
-## AI Setup Dependency Chain (0.08–0.11)
+## AI Setup Dependency Chain (0.08–0.12)
 
-The slots 0.08–0.11 form a critical dependency chain for AI agent setup:
+The slots 0.08–0.12 form a critical dependency chain for AI agent setup:
 - **0.08** → **0.09**: MCP servers are configured within AI apps/tools
 - **0.09** → **0.10**: Models may be accessed via MCP servers
-- **0.10** → **0.11**: Agents require models to function
-- **0.11** depends on all three: agents run in apps (0.08), use MCP servers (0.09), and require models (0.10)
+- **0.10** → **0.11**: Universal tools provide capabilities that agents can use
+- **0.11** → **0.12**: Agents require tools (including universal tools) to function
+- **0.12** depends on all four: agents run in apps (0.08), use MCP servers (0.09), require models (0.10), and use universal tools (0.11)
 
 Configure these in order when setting up a new AI environment.
 

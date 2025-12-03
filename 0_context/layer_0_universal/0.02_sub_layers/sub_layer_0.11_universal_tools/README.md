@@ -1,4 +1,4 @@
-# sub_layer_0.12_universal_tools
+# sub_layer_0.11_universal_tools
 
 **Purpose**: Cross-project scripts, utilities, and universal tools.
 
@@ -35,6 +35,7 @@ sub_layer_0.11_universal_tools/
 ## Notes
 
 - MCP-related tools have been moved to `sub_layer_0.09_mcp_servers_and_tools_setup`
+- Universal tools are used by agents configured in `sub_layer_0.12_agent_setup`
 - Add slot-specific docs here over time
 - Keep mappings up to date if paths change
 

@@ -17,8 +17,8 @@ This overlay maps existing universal content into the Layer/Stage system without
 - 0.08_ai_apps_tools_setup → (AI clients/CLIs and integrations setup)
 - 0.09_mcp_servers_and_tools_setup → `./0.02_sub_layers/sub_layer_0.09_mcp_servers_and_tools_setup/trickle_down_0.75_universal_tools/0_instruction_docs/mcp-tools/`
 - 0.10_ai_models → `./0.02_sub_layers/sub_layer_0.10_ai_models/` (document approved models and usage guidance here)
-- 0.11_agent_setup → `./0.02_sub_layers/sub_layer_0.11_agent_setup/trickle_down_0.75_universal_tools/0_instruction_docs/` (agent configuration, model fallbacks, MCP integration)
-- 0.12_universal_tools → `./0.02_sub_layers/sub_layer_0.12_universal_tools/trickle_down_0.75_universal_tools/`
+- 0.11_universal_tools → `./0.02_sub_layers/sub_layer_0.11_universal_tools/trickle_down_0.75_universal_tools/`
+- 0.12_agent_setup → `./0.02_sub_layers/sub_layer_0.12_agent_setup/trickle_down_0.75_universal_tools/0_instruction_docs/` (agent configuration, model fallbacks, MCP integration, tool access)
 - 0.99_stages → stage folders + status for this layer
 
 ## How to use

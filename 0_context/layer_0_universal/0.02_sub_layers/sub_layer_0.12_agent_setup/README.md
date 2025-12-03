@@ -1,4 +1,4 @@
-# sub_layer_0.11_agent_setup
+# sub_layer_0.12_agent_setup
 
 **Purpose**: Agent configuration and setup for AI applications and tools.
 
@@ -46,11 +46,13 @@ Agent setup follows this dependency order:
 ```
 0.08_ai_apps_tools_setup
     ↓
-0.09_mcp_servers_and_tools (depends on 0.08)
+0.09_mcp_servers_and_tools_setup (depends on 0.08)
     ↓
 0.10_ai_models
     ↓
-0.11_agent_setup (depends on 0.08, 0.09, 0.10) ← You are here
+0.11_universal_tools
+    ↓
+0.12_agent_setup (depends on 0.08, 0.09, 0.10, 0.11) ← You are here
 ```
 
 ## Relationship to Other Sublayers
@@ -59,6 +61,7 @@ Agent setup follows this dependency order:
   - `sub_layer_0.08_ai_apps_tools_setup` - Agents run within AI apps/tools
   - `sub_layer_0.09_mcp_servers_and_tools_setup` - Agents use MCP servers for capabilities
   - `sub_layer_0.10_ai_models` - Agents require models to function
+  - `sub_layer_0.11_universal_tools` - Agents use universal tools for capabilities
 - **Provides to**: All layers that need configured agents for work
 
 ## Key Concepts

@@ -24,7 +24,7 @@ Legacy `trickle_down_*` content is preserved under `legacy_import/` within the c
 4. **Sync habit:** `git pull` at session start for all repos you will touch; `git commit` + `git push` and update docs/status before ending a response.
 
 ## Slot numbers (zero‑padded examples)
-- Universal 0.xx (slots): 0.01 basic prompts, 0.02 SE knowledge, 0.03 principles, 0.04 rules, 0.05 OS setup, 0.06 coding app setup, 0.07 apps/browsers/extensions, 0.08 AI apps/tools, 0.09 MCP servers and tools setup, 0.10 AI models, 0.11 agent setup, 0.12 universal tools.
+- Universal 0.xx (slots): 0.01 basic prompts, 0.02 SE knowledge, 0.03 principles, 0.04 rules, 0.05 OS setup, 0.06 coding app setup, 0.07 apps/browsers/extensions, 0.08 AI apps/tools, 0.09 MCP servers and tools setup, 0.10 AI models, 0.11 universal tools, 0.12 agent setup.
 - Project 1.xx mirrors 0.xx with project-specific content (e.g., 1.05 project architecture).
 - Feature 2.xx and Component 3.xx mirror the same pattern at finer scope.
 
