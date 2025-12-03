@@ -292,6 +292,49 @@ This document captures our experience setting up and troubleshooting browser MCP
 
 **Status**: ✅ Tool is functional
 
+### Test 4: Cursor Browser Extension Tools (2025-12-02)
+
+**Commands Tested**:
+- `mcp_cursor-browser-extension_browser_snapshot()`
+- `mcp_cursor-browser-extension_browser_navigate()`
+- `mcp_cursor-browser-extension_browser_tabs()`
+
+**Result**: All tools return error - "Browser specified in your config is not installed"
+
+**Analysis**:
+- Same error as browser MCP tools
+- Cursor browser extension MCP also requires browser to be properly configured
+- Issue persists across all browser MCP servers
+
+**Status**: ⚠️ All browser MCP tools currently non-functional on this Linux system
+
+### Test 5: Precalc Work Attempt (2025-12-02)
+
+**Context**: Attempted to continue precalc ALEKS work in browser
+
+**Commands Tested**:
+- `mcp_browser_browser_navigate("https://byui.instructure.com/courses/353368/external_tools/20009")` - Failed
+- `mcp_cursor-browser-extension_browser_snapshot()` - Failed
+- `mcp_cursor-browser-extension_browser_navigate()` - Failed
+
+**System State**:
+- Firefox browser process running (user may have opened manually)
+- Chromium installed at configured path: `/home/dawson/.cache/ms-playwright/chromium-1200/chrome-linux64/chrome`
+- All MCP browser tools returning "Browser not installed" error
+- Browser tab list showed Google search page, but tools cannot interact with it
+
+**Impact**: Cannot automate browser for precalc ALEKS work until MCP browser tools are fixed
+
+**Blocking Issue**: Browser MCP servers cannot find/connect to browser despite:
+- Browser executable existing at configured path
+- Browser being executable and runnable manually
+- Explicit path configuration in MCP config
+
+**Next Steps Needed**:
+1. Fix browser MCP configuration to resolve "Browser not installed" error
+2. Test navigation to Canvas ALEKS URL: `https://byui.instructure.com/courses/353368/external_tools/20009`
+3. Resume precalc problem-solving workflow once browser automation works
+
 ## Recommendations
 
 ### For New Setups
