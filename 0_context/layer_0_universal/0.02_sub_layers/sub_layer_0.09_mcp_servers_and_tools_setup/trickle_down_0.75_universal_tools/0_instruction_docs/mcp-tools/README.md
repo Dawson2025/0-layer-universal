@@ -76,6 +76,7 @@ claude mcp add --transport http context7 https://mcp.context7.com/mcp --header "
 - **chrome-devtools**: Chrome DevTools integration for debugging
 - **playwright**: Cross-browser testing and automation
 - **browser**: Simple browser automation
+- **[Browser MCP Setup Experience](BROWSER_MCP_SETUP_EXPERIENCE.md)**: Comprehensive documentation of setup experience, lessons learned, and troubleshooting for Linux/Ubuntu
 
 ### Search & Research
 - **web-search**: Tavily web search integration
