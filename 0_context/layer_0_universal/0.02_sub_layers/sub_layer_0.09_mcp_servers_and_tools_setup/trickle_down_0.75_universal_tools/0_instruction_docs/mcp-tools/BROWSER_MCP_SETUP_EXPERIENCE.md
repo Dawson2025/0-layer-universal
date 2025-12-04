@@ -12,18 +12,31 @@ This document captures our experience setting up and troubleshooting browser MCP
 
 ### MCP Servers Configured
 
-**Location**: `~/.cursor/mcp.json`
+**Location**: `~/.gemini/settings.json`
 
 ```json
 {
+  "ide": {
+    "enabled": true
+  },
+  "auth": {
+    "method": "apiKey",
+    "apiKey": "YOUR_GEMINI_API_KEY_HERE"
+  },
+  "security": {
+    "auth": {
+      "selectedType": "gemini-api-key"
+    }
+  },
+  "hasSeenIdeIntegrationNudge": true,
   "mcpServers": {
     "playwright": {
       "command": "npx",
       "args": [
-        "-y",
         "@playwright/mcp@latest",
         "--browser",
-        "chromium"
+        "chromium",
+        "--headless"
       ]
     },
     "browser": {
@@ -335,26 +348,12 @@ This document captures our experience setting up and troubleshooting browser MCP
 - `npx` command may not be in PATH when MCP server starts
 - Node.js may not be accessible without loading NVM first
 
-**Fix Applied**: Updated `~/.cursor/mcp.json` to use bash wrapper that loads NVM:
-```json
-{
-  "playwright": {
-    "command": "bash",
-    "args": [
-      "-c",
-      "export NVM_DIR=\"$HOME/.nvm\" && [ -s \"$NVM_DIR/nvm.sh\" ] && \\. \"$NVM_DIR/nvm.sh\" && npx -y @playwright/mcp@latest --browser chromium"
-    ],
-    "env": {
-      "PLAYWRIGHT_BROWSERS_PATH": "/home/dawson/.cache/ms-playwright"
-    }
-  }
-}
-```
+**Fix Applied**: The issue was resolved by ensuring the `settings.json` file was correctly structured in `~/.gemini/settings.json` and contained the `mcpServers` configuration with the `command` set to `"npx"` and the appropriate arguments directly for `@playwright/mcp@latest`. The previous attempt to use a `bash` wrapper to load NVM was found to be unnecessary.
 
 **Key Changes**:
-1. Changed `command` from `"npx"` to `"bash"`
-2. Wrapped npx call in bash script that loads NVM
-3. Added `PLAYWRIGHT_BROWSERS_PATH` environment variable to ensure browser detection
+1. Changed `command` to `"npx"`.
+2. Ensured `--browser chromium` and `--headless` were included in the `args` array.
+3. Confirmed `~/.gemini/settings.json` contained both the MCP server configuration and other essential Gemini CLI settings (e.g., API key, IDE settings).
 
 **Status**: ✅ Configuration fix successful - Playwright MCP server connects after restart.
 

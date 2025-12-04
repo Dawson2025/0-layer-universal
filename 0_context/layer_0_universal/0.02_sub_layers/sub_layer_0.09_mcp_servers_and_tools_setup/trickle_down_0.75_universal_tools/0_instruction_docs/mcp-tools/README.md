@@ -78,6 +78,15 @@ claude mcp add --transport http context7 https://mcp.context7.com/mcp --header "
 - **browser**: Simple browser automation
 - **[Browser MCP Setup Experience](BROWSER_MCP_SETUP_EXPERIENCE.md)**: Comprehensive documentation of setup experience, lessons learned, and troubleshooting for Linux/Ubuntu
 
+#### Recent lessons (Linux, Chrome/Playwright MCP)
+- Playwright MCP can report “Browser specified in your config is not installed” and drop the transport even when `playwright install chromium` is done and `--executable-path` points to `~/.cache/ms-playwright/.../chrome`. Adding `PLAYWRIGHT_BROWSERS_PATH` and `--no-sandbox` did not resolve; the server exited before tools were usable.
+- chrome-devtools MCP may also close transport immediately even with a running Chrome on `--remote-debugging-port=9222`.
+- Reliable workaround: launch Chrome manually with remote debugging (`google-chrome --remote-debugging-port=9222 --user-data-dir ~/.config/mcp/playwright-profile`) and connect via Playwright CDP directly:
+  ```bash
+  node -e "const { chromium } = require('playwright'); (async() => { const b = await chromium.connectOverCDP('http://127.0.0.1:9222'); const ctx = b.contexts()[0]; const page = await ctx.newPage(); await page.goto('https://www.aleks.com'); console.log('Opened page via CDP.'); })();"
+  ```
+- If MCP servers remain unstable, prefer direct CDP scripts (above) or the `browser` server as fallback to interact with the already-open Chrome.
+
 ### Search & Research
 - **web-search**: Tavily web search integration
 - **github-search**: GitHub repository search
@@ -137,11 +146,44 @@ python3 scripts/context7-setup.py setup-hybrid
 python3 scripts/context7-setup.py status
 ```
 
-## 📊 Configuration Files
+## 📝 Gemini CLI `settings.json` Configuration
 
-### Main Configuration
-- **`.mcp.json`**: Current active MCP configuration
-- **`config/mcp/mcp-system.json`**: Main system configuration
+For the Gemini CLI to correctly detect and use MCP servers, the `settings.json` file must be located at `~/.gemini/settings.json`.
+
+**Crucially, this file should contain *all* your Gemini CLI settings, including API keys, IDE integration settings, and the `mcpServers` configuration.** Do not create separate `settings.json` files for different configurations; merge them into a single file.
+
+**Example `settings.json` structure:**
+
+```json
+{
+  "ide": {
+    "enabled": true
+  },
+  "auth": {
+    "method": "apiKey",
+    "apiKey": "YOUR_GEMINI_API_KEY_HERE"
+  },
+  "security": {
+    "auth": {
+      "selectedType": "gemini-api-key"
+    }
+  },
+  "hasSeenIdeIntegrationNudge": true,
+  "mcpServers": {
+    "playwright": {
+      "command": "npx",
+      "args": [
+        "@playwright/mcp@latest",
+        "--browser", "chromium",
+        "--headless"
+      ]
+    }
+    // Add other MCP server configurations here if needed
+  }
+}
+```
+
+**After updating `~/.gemini/settings.json`, you *must* restart the Gemini CLI for the changes to take effect.**
 
 ### Environment Configurations
 - **`config/mcp/development.json`**: Development environment
