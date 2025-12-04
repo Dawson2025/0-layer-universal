@@ -1,4 +1,4 @@
-# Universal Session Initialization - Navigation Hub
+ok, I want # Universal Session Initialization - Navigation Hub
 
 **Purpose:** This is the entry point for ALL new AI assistant sessions. It directs you to the right documentation based on your current task.
 
@@ -1241,13 +1241,268 @@ Do not remove these references during summarization; they are required navigatio
 **MANDATORY - Read if running on Linux/Ubuntu:**
 - `layer_0_universal/0.02_sub_layers/sub_layer_0.09_mcp_servers_and_tools_setup/trickle_down_0.75_universal_tools/0_instruction_docs/mcp-tools/BROWSER_MCP_SETUP_EXPERIENCE.md` - **Read Lesson 1 first!**
 
-**Key Linux/Ubuntu Limitations:**
+### For ALEKS Mathematics Input (Critical!)
+
+**When entering mathematical expressions with exponents in ALEKS:**
+
+- **Use the Exponent button** to insert exponents in the equation editor
+- **CRITICAL: After entering the exponent, ALWAYS press the right arrow key (→)** to exit the exponent space
+- **Without the right arrow**, subsequent characters will be entered as part of the exponent or in the wrong location
+- Example: To enter "x^2 + 3x - 14":
+  1. Type "x"
+  2. Click Exponent button
+  3. Type "2"
+  4. **Press right arrow (→) to exit exponent**
+  5. Type "+ 3x - 14"
+- This applies to all ALEKS math editor interactions with exponents
+
+### ALEKS Math Input Helper Functions (Playwright)
+
+**Use these reusable Playwright functions when automating ALEKS math expression entry:**
+
+#### 1. Enter Fraction (numerator/denominator)
+
+```javascript
+// Enters a fraction using ALEKS Fraction button
+async function enterFraction(page, numerator, denominator) {
+  // Click Fraction button
+  await page.getByRole('button', { name: 'Fraction' }).first().click();
+  await page.waitForTimeout(150);
+
+  // Type numerator
+  await page.keyboard.type(numerator);
+  await page.waitForTimeout(100);
+
+  // Tab to denominator
+  await page.keyboard.press('Tab');
+  await page.waitForTimeout(100);
+
+  // Type denominator
+  await page.keyboard.type(denominator);
+  await page.waitForTimeout(200);
+}
+```
+
+#### 2. Enter Exponent (with critical right arrow)
+```javascript
+// Enters a single exponent with right arrow exit (CRITICAL)
+async function enterExponent(page, base, exponent) {
+  // Type base variable
+  await page.keyboard.type(base);
+  await page.waitForTimeout(100);
+
+  // Click Exponent button
+  await page.getByRole('button', { name: 'Exponent' }).click();
+  await page.waitForTimeout(150);
+
+  // Type exponent
+  await page.keyboard.type(exponent);
+  await page.waitForTimeout(100);
+
+  // CRITICAL: Press right arrow to exit exponent space
+  await page.keyboard.press('ArrowRight');
+  await page.waitForTimeout(100);
+}
+```
+
+#### 3. Enter Square Root
+```javascript
+// Enters content under a square root
+async function enterSquareRoot(page, content) {
+  // Click Square root button
+  await page.getByRole('button', { name: 'Square root' }).click();
+  await page.waitForTimeout(150);
+
+  // Type content under square root
+  await page.keyboard.type(content);
+  await page.waitForTimeout(200);
+}
+```
+
+#### 4. Enter Polynomial with Exponents
+```javascript
+// Enters polynomial like x^2 + 3x - 14 with correct exponent handling
+async function enterPolynomial(page, terms) {
+  // terms = [{base: 'x', exp: '2'}, {op: '+', coef: '3', var: 'x'}, {op: '-', num: '14'}]
+
+  for (const term of terms) {
+    if (term.base && term.exp) {
+      // Term with exponent
+      await enterExponent(page, term.base, term.exp);
+    } else if (term.coef && term.var) {
+      // Coefficient and variable
+      await page.keyboard.type(term.op || '');
+      await page.keyboard.type(term.coef);
+      await page.keyboard.type(term.var);
+      await page.waitForTimeout(100);
+    } else if (term.num) {
+      // Just a number
+      await page.keyboard.type(term.op || '');
+      await page.keyboard.type(term.num);
+      await page.waitForTimeout(100);
+    }
+  }
+}
+```
+
+#### 5. Fill Answer Field with Complex Expression
+```javascript
+// Main handler for filling an ALEKS answer field with expression
+async function fillALEKSAnswer(page, fieldRef, expressionType, expressionData) {
+  // Focus on the field
+  const field = await page.locator(`[ref="${fieldRef}"]`);
+  await field.focus();
+  await page.waitForTimeout(300);
+
+  switch(expressionType) {
+    case 'fraction':
+      await enterFraction(page, expressionData.numerator, expressionData.denominator);
+      break;
+    case 'exponent':
+      await enterExponent(page, expressionData.base, expressionData.exponent);
+      break;
+    case 'sqrt':
+      await enterSquareRoot(page, expressionData.content);
+      break;
+    case 'polynomial':
+      await enterPolynomial(page, expressionData.terms);
+      break;
+    case 'sqrt-polynomial':
+      await enterSquareRoot(page, expressionData.polynomialContent);
+      break;
+  }
+}
+```
+
+#### 6. Enter Domain Intervals with Union Notation (CRITICAL!)
+
+**When entering domain intervals with union notation (e.g., (-∞, -1) ∪ (-1, ∞)):**
+
+**The PROCEDURE (MUST FOLLOW THIS ORDER):**
+1. **Click the parentheses/brackets button** for the first interval (e.g., "Left paren comma right paren")
+2. **Fill it out**, pressing Tab between the two numbers/symbols you're inputting
+3. **Once complete, press the RIGHT ARROW KEY** - This exits the cursor OUT of the parentheses (CRITICAL!)
+4. **Click the union button**
+5. **Click the parentheses/brackets button** for the second interval
+6. **Fill that one too** (Tab between numbers)
+
+**Example: Entering (-∞, -1) ∪ (-1, ∞):**
+- Click "Left paren comma right paren" button
+- Click "Negative infinity" button (for -∞)
+- Press Tab
+- Type "-1"
+- **Press RIGHT ARROW KEY** (EXIT THE PARENTHESES - this is critical!)
+- Click "Union" button
+- Click "Left paren comma right paren" button
+- Type "-1"
+- Press Tab
+- Click "Infinity" button (for ∞)
+
+**Why the right arrow key is critical:** Without pressing the right arrow to exit each interval, the ALEKS parser doesn't properly close the parentheses and the next element (union or additional interval) won't format correctly.
+
+```javascript
+// Helper function for entering domain with union
+async function enterDomainWithUnion(page, interval1, interval2, button1Type, button2Type) {
+  // interval1 = {value1: '-∞', value2: '-1'} with button type (e.g., 'Left paren comma right paren')
+  // interval2 = {value1: '-1', value2: '∞'} with button type (e.g., 'Left paren comma right paren')
+
+  // First interval
+  const btn1 = await page.locator(`button[aria-label="${button1Type}"]`);
+  await btn1.click({ force: true });
+  await page.waitForTimeout(200);
+
+  // Handle special symbols for interval1.value1
+  if (interval1.value1 === '-∞') {
+    const negInfBtn = await page.locator('button[aria-label="Negative infinity"]');
+    await negInfBtn.click({ force: true });
+  } else {
+    await page.keyboard.type(interval1.value1);
+  }
+  await page.waitForTimeout(100);
+
+  // Tab to next field
+  await page.keyboard.press('Tab');
+  await page.waitForTimeout(100);
+
+  // Enter second value
+  await page.keyboard.type(interval1.value2);
+  await page.waitForTimeout(100);
+
+  // CRITICAL: Exit the parentheses with right arrow
+  await page.keyboard.press('ArrowRight');
+  await page.waitForTimeout(200);
+
+  // Union button
+  const unionBtn = await page.locator('button[aria-label="Union"]');
+  await unionBtn.click({ force: true });
+  await page.waitForTimeout(300);
+
+  // Second interval
+  const btn2 = await page.locator(`button[aria-label="${button2Type}"]`);
+  await btn2.click({ force: true });
+  await page.waitForTimeout(200);
+
+  // Enter first value
+  await page.keyboard.type(interval2.value1);
+  await page.waitForTimeout(100);
+
+  // Tab to next field
+  await page.keyboard.press('Tab');
+  await page.waitForTimeout(100);
+
+  // Handle special symbols for interval2.value2
+  if (interval2.value2 === '∞') {
+    const infBtn = await page.locator('button[aria-label="Infinity"]');
+    await infBtn.click({ force: true });
+  } else {
+    await page.keyboard.type(interval2.value2);
+  }
+  await page.waitForTimeout(200);
+}
+```
+
+**Usage Example:**
+```javascript
+// Enter f(5/x) = (20 + 3x)/(25 + 2x)
+await fillALEKSAnswer(page, 'e1503', 'fraction', {
+  numerator: '20+3x',
+  denominator: '25+2x'
+});
+
+// Enter g(x-3) = √(x² - 14x + 33)
+// First, click Square root, then type with exponent handling:
+await page.getByRole('button', { name: 'Square root' }).click();
+await page.waitForTimeout(150);
+await enterExponent(page, 'x', '2');
+await page.keyboard.type('-14x+33');
+
+// Enter domain with union: (-∞, -1) ∪ (-1, ∞)
+await enterDomainWithUnion(page,
+  { value1: '-∞', value2: '-1' },
+  { value1: '-1', value2: '∞' },
+  'Left paren comma right paren',
+  'Left paren comma right paren'
+);
+```
+
+### Key Linux/Ubuntu Limitations
+
+
 1. **Playwright MCP Tools**: Server connects and reports tools, but Cursor IDE on Linux does NOT expose them to AI agents. Tools registered but not accessible.
 2. **Browser Path Detection**: Always fails on Linux - must use explicit `--executable-path` in MCP config.
 3. **NVM/Node.js**: Requires bash wrapper to load NVM in MCP server processes.
 4. **Tool Naming**: May differ from Windows/macOS documentation.
 
 **Workaround**: Use `mcp_browser_*` tools from `@agent-infra/mcp-server-browser` instead of Playwright MCP on Linux.
+
+### For Lesson Plan Development (Graphing)
+**IMPORTANT: Read before creating lesson plans with interactive graphs:**
+- `layer_0_universal/0.02_sub_layers/sub_layer_0.01_basic_prompts_throughout/0_basic_prompts_throughout/lesson-plan-graphing-best-practices.md` (when created)
+- **Key lesson learned**: Use simple public shareable Desmos graph URLs instead of state-encoded parameter URLs
+  - State parameters are unreliable and format inconsistently across browsers
+  - Public shareable URLs (`https://www.desmos.com/calculator/GRAPHID`) are stable and work consistently
+  - For future lesson plans: Provide simple shareable graph links or guide students to create graphs themselves
+  - See project context for detailed notes in `precalc/0_context/0_context/0_context/layer_1_project/1.02_sub_layers/lesson_plans/FUTURE_LESSON_PLAN_NOTES.md`
 
 ### For Claude Code Specific
 **Read when using Claude Code CLI:**
