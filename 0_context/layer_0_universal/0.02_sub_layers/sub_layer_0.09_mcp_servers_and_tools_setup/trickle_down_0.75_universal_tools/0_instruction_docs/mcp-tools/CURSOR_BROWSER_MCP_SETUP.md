@@ -1,8 +1,8 @@
 # Cursor IDE Browser MCP Setup - Linux/Ubuntu
 
 **Location**: Universal Tools → MCP Tools  
-**Last Updated**: 2025-12-02  
-**Status**: Configured, requires testing
+**Last Updated**: 2025-12-04  
+**Status**: ✅ Working and tested
 
 ## Overview
 
@@ -14,39 +14,97 @@ This document documents the setup and troubleshooting of browser MCP servers in 
 
 **Location**: `~/.cursor/mcp.json`
 
+**Working Configuration (Verified 2025-12-04)**:
+Simplified configuration that works reliably in Cursor IDE on Linux/Ubuntu:
+
 ```json
 {
   "mcpServers": {
     "playwright": {
-      "command": "bash",
+      "command": "npx",
       "args": [
-        "-c",
-        "export NVM_DIR=\"$HOME/.nvm\" && [ -s \"$NVM_DIR/nvm.sh\" ] && \\. \"$NVM_DIR/nvm.sh\" && npx -y @playwright/mcp@latest --browser chromium"
-      ],
-      "env": {
-        "PLAYWRIGHT_BROWSERS_PATH": "/home/dawson/.cache/ms-playwright"
-      }
+        "-y",
+        "@playwright/mcp@latest",
+        "--browser",
+        "chromium"
+      ]
     },
     "browser": {
       "command": "npx",
       "args": [
-        "-y",
-        "@agent-infra/mcp-server-browser",
-        "--executable-path",
-        "/home/dawson/.cache/ms-playwright/chromium-1200/chrome-linux64/chrome"
+        "@agent-infra/mcp-server-browser"
       ]
+    },
+    "web-search": {
+      "command": "npx",
+      "args": ["tavily-mcp"],
+      "env": {
+        "TAVILY_API_KEY": "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"
+      }
+    },
+    "context7": {
+      "command": "npx",
+      "args": ["-y", "@upstash/context7-mcp"],
+      "env": {
+        "CONTEXT7_API_KEY": "136116c4-6c35-4ffd-b8fa-cc8f11cb22a4"
+      }
     }
   }
 }
 ```
 
-**Note (2025-12-02)**: Playwright MCP configuration updated to use bash wrapper that loads NVM, ensuring Node.js/npx is available to the MCP process. This fixes issues where Playwright MCP couldn't find Node.js when NVM is used.
+**Key Configuration Details**:
+- **Simplified Playwright config**: Removed complex options (executable-path, user-data-dir, output-dir, viewport-size, etc.)
+- Uses `--browser chromium` (Playwright will auto-detect the installed browser)
+- No explicit paths needed - Playwright MCP handles browser detection automatically
+- Same simple pattern works across different projects
+- Configuration matches working setup from other projects (e.g., `code/I-eat-repo/.mcp.json`)
+
+**Previous Complex Configuration (Not Recommended)**:
+The previous configuration had many options that may cause issues:
+- Explicit `--executable-path` pointing to `/usr/bin/google-chrome`
+- Custom `--user-data-dir` and `--output-dir`
+- `--viewport-size` and `--save-session` flags
+- `PLAYWRIGHT_BROWSERS_PATH` environment variable
+
+**Lesson Learned**: Simpler is better. The Playwright MCP server can automatically find and use Chromium without explicit paths.
 
 ### Status
 
-- ✅ **Playwright MCP**: Configured, running (22 tools enabled)
-- ✅ **Browser MCP**: Configured with explicit executable path (21 tools, 1 resource enabled)
-- ⚠️ **cursor-browser-extension**: Shows "No server info found" - requires Chrome extension
+- ✅ **Playwright MCP**: Configured, running, and **tested successfully** (2025-12-04)
+- ✅ **Browser MCP**: Configured and working
+- ✅ **Cursor IDE Browser Tools**: Working (`mcp_cursor-ide-browser_*` tools available)
+- ⚠️ **cursor-browser-extension**: Shows "No server info found" - requires Chrome extension (not needed)
+
+### Successful Setup Process (2025-12-04)
+
+**Problem**: Playwright MCP was configured but needed verification and simplification.
+
+**Solution**:
+1. Located Cursor MCP config at `~/.cursor/mcp.json`
+2. Compared with working configuration from other projects (`code/I-eat-repo/.mcp.json`)
+3. Simplified Playwright configuration to match working pattern
+4. Removed unnecessary options (executable-path, user-data-dir, output-dir, viewport-size, etc.)
+5. Changed from `--browser chrome` to `--browser chromium` for auto-detection
+
+**Testing Results**:
+- ✅ Navigation: Successfully navigated to multiple websites (example.com, wikipedia.org, google.com, duckduckgo.com)
+- ✅ Clicking: Successfully clicked links and buttons
+- ✅ Typing: Successfully typed into search boxes and submitted forms
+- ✅ Scrolling: Successfully scrolled pages
+- ✅ Screenshots: Successfully captured screenshots
+- ✅ Browser control: Full control over browser window (resize, navigate, interact)
+
+**Available Tool Sets**:
+1. **Cursor IDE Browser Tools** (`mcp_cursor-ide-browser_*`): 
+   - Better integrated with Cursor IDE's built-in browser view
+   - Tools: `browser_navigate`, `browser_snapshot`, `browser_click`, `browser_type`, `browser_hover`, `browser_resize`, `browser_take_screenshot`, etc.
+   
+2. **Playwright MCP Tools** (`mcp_browser_*`):
+   - Direct Playwright MCP server tools
+   - Tools: `browser_navigate`, `browser_click`, `browser_type`, `browser_scroll`, `browser_screenshot`, etc.
+
+**Both tool sets work and provide full browser automation capabilities.**
 
 ## Browser Installation
 
@@ -194,7 +252,55 @@ tail -20 "$LATEST_LOG"
 - Universal Browser Opening Rule: `layer_0_universal/0.02_sub_layers/sub_layer_0.04_universal_rules/trickle_down_0_universal/0_instruction_docs/browser_opening_rule.md`
 - Playwright MCP Usage: `layer_0_universal/0.02_sub_layers/sub_layer_0.05_os_setup/trickle_down_0.5_setup/0_instruction_docs/setup/playwright-mcp-usage.md`
 
+## Setup Instructions
+
+### Quick Setup for Cursor IDE
+
+1. **Edit Cursor MCP Configuration**:
+   ```bash
+   # Edit the Cursor MCP config file
+   nano ~/.cursor/mcp.json
+   ```
+
+2. **Add Simplified Playwright Configuration**:
+   ```json
+   {
+     "mcpServers": {
+       "playwright": {
+         "command": "npx",
+         "args": [
+           "-y",
+           "@playwright/mcp@latest",
+           "--browser",
+           "chromium"
+         ]
+       }
+     }
+   }
+   ```
+
+3. **Restart Cursor IDE**:
+   - Close and reopen Cursor IDE to load the new MCP configuration
+   - The Playwright MCP server will start automatically
+
+4. **Verify Installation**:
+   - Check that Chromium is installed: `npx playwright install chromium`
+   - Verify MCP server is running in Cursor IDE settings
+
+### Verification Test
+
+After setup, test browser control:
+- Navigate to a website
+- Click links
+- Type in search boxes
+- Take screenshots
+- Scroll pages
+
+All of these should work with both:
+- Cursor IDE browser tools (`mcp_cursor-ide-browser_*`)
+- Playwright MCP tools (`mcp_browser_*`)
+
 ---
 
-**Next Steps**: Test Playwright MCP tools directly to verify they work without the cursor-browser-extension.
+**Status**: ✅ Playwright MCP is working and tested in Cursor IDE (2025-12-04). Both Cursor IDE browser tools and Playwright MCP tools are functional.
 
