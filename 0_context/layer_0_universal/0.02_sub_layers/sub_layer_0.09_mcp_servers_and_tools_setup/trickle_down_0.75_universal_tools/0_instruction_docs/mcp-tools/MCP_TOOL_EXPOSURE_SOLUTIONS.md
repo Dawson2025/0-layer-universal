@@ -10,12 +10,19 @@ This document provides solutions and workarounds for the Cursor IDE MCP tool exp
 
 ## Quick Reference: Most Promising Solutions
 
+**CRITICAL: Ensure You're Logged In** (Solution 22):
+- **Login to Cursor IDE** - This may be required for MCP tool exposure!
+- After login, Playwright MCP tools became available (`mcp_playwright_*`)
+- This was the breakthrough that made tools accessible
+
 **Try These First** (in order):
-1. **Delete and Regenerate mcp.json** (Solution 8) - ✅ User-reported success
-2. **Disable Internal Browser Automation** (Solution 9) - Prevents interference
-3. **Use Cursor CLI** (Solution 1) - May bypass IDE bug entirely
-4. **Reorder MCP Servers** (Solution 10) - Move problematic server to top
-5. **Check for Duplicates** (Solution 12) - Remove duplicate entries
+1. **Ensure You're Logged Into Cursor IDE** (Solution 22) - ✅ **BREAKTHROUGH DISCOVERY**
+2. **Delete and Regenerate mcp.json** (Solution 8) - ✅ User-reported success
+3. **Use Playwright Browser Install Tool** (Solution 23) - If tools available but browser not found
+4. **Disable Internal Browser Automation** (Solution 9) - Prevents interference
+5. **Use Cursor CLI** (Solution 1) - May bypass IDE bug entirely
+6. **Reorder MCP Servers** (Solution 10) - Move problematic server to top
+7. **Check for Duplicates** (Solution 12) - Remove duplicate entries
 
 **If Above Don't Work**:
 - Use Cursor Browser Extension tools (Solution 3) - These work
@@ -409,7 +416,69 @@ cp ~/.cursor/mcp.json .cursor/mcp.json
 - Version 1.4.0: MCP tools not recognized
 - Older versions: Various MCP issues
 
-### Solution 22: Report to Cursor Team
+### Solution 22: Ensure You're Logged Into Cursor IDE
+
+**Status**: ✅ **CRITICAL DISCOVERY** - Login may be required!
+
+**Finding (2025-12-05)**: After user logged into Cursor IDE, Playwright MCP tools became available!
+
+**Action**:
+1. Ensure you're logged into Cursor IDE
+2. Check your account status in Cursor Settings
+3. Verify MCP tools are exposed after login
+4. Tools may not be available until authenticated
+
+**Evidence**:
+- Before login: Playwright MCP tools not available
+- After login: Playwright MCP tools **NOW AVAILABLE** (`mcp_playwright_*`)
+- This suggests authentication/login is required for MCP tool exposure
+
+**Tool Naming After Login**:
+- Playwright MCP: `mcp_playwright_browser_*` (22 tools)
+- Browser MCP: `mcp_browser_browser_*` (21 tools)
+
+**Note**: Even after login, browser detection may still fail - see Solution 23.
+
+### Solution 23: Use Browser MCP Tools (Working Solution!)
+
+**Status**: ✅ **CONFIRMED WORKING** - Browser MCP tools work after login!
+
+**Success Confirmed (2025-12-05)**:
+- Tool: `mcp_browser_browser_navigate` - ✅ **WORKS**
+- Tool: `mcp_browser_browser_screenshot` - ✅ **WORKS**
+- Tool: `mcp_browser_browser_tab_list` - ✅ **WORKS**
+
+**Action**: Use `mcp_browser_*` tools instead of Playwright tools:
+- `mcp_browser_browser_navigate` - Navigate to URLs
+- `mcp_browser_browser_screenshot` - Take screenshots
+- `mcp_browser_browser_click` - Click elements
+- `mcp_browser_browser_type` - Type text
+- And 17+ more browser tools
+
+**Why This Works**: Browser MCP server (`@agent-infra/mcp-server-browser`) has better browser detection than Playwright MCP in this environment.
+
+### Solution 24: Use Playwright Browser Install Tool
+
+**Status**: ⚠️ **May Fix Browser Detection** - Try this if Playwright tools are available but browser not found
+
+**Action**: If Playwright MCP tools are available but getting "Browser not installed" error:
+
+1. Use the Playwright install tool:
+   - Tool: `mcp_playwright_browser_install`
+   - This may install/configure the browser properly
+
+2. Or install via command line:
+   ```bash
+   npx playwright install chromium
+   ```
+
+3. Ensure environment variables are set (Solution 5)
+
+4. Restart Cursor after installation
+
+**Current Status**: Tools are available but browser detection failing - this may resolve it.
+
+### Solution 25: Report to Cursor Team
 
 **Status**: ✅ **Important for Long-term Fix**
 
@@ -455,22 +524,29 @@ cp ~/.cursor/mcp.json .cursor/mcp.json
 
 ### For Immediate Use
 
-1. **Try Cursor CLI** (Solution 1):
+1. **✅ USE BROWSER MCP TOOLS** (Solution 23) - **CONFIRMED WORKING!**
+   - Tools: `mcp_browser_browser_*` (21 tools)
+   - Status: ✅ **WORKING** after user login
+   - Tested: Navigation, screenshots, tab management all work
+   - **This is your best option right now!**
+
+2. **Ensure You're Logged In** (Solution 22):
+   - Login to Cursor IDE
+   - This made tools available in our testing
+   - Critical requirement for MCP tool exposure
+
+3. **Try Cursor CLI** (Solution 1):
    - Install: `curl https://cursor.com/install -fsS | bash`
    - Test if MCP tools are exposed via CLI
    - Use CLI for tasks requiring MCP tools
+   - Note: Requires MCP server approval
 
-2. **Use Cursor Browser Extension** (Solution 3):
+4. **Use Cursor Browser Extension** (Solution 3):
    - Configure browser path in Cursor Settings
    - Use `mcp_cursor-browser-extension_*` tools
    - These are available and work
 
-3. **Use Project-Specific Config** (Solution 11):
-   - Create `.cursor/mcp.json` in project directory
-   - CLI requires project-specific configs
-   - May improve tool exposure
-
-4. **Update Cursor** (Solution 2):
+5. **Update Cursor** (Solution 2):
    - Check for updates
    - Update to latest version
    - Test if bug is fixed
@@ -549,7 +625,16 @@ cp ~/.cursor/mcp.json .cursor/mcp.json
 
 ## Changelog
 
-### 2025-12-05 (Updated)
+### 2025-12-05 (Updated - Second Update)
+- **BREAKTHROUGH DISCOVERY**: Login to Cursor IDE may be required for MCP tool exposure!
+- After user login, Playwright MCP tools became available (`mcp_playwright_*`)
+- Browser MCP tools also became available (`mcp_browser_*`)
+- Added Solution 22: Ensure logged into Cursor IDE (CRITICAL)
+- Added Solution 23: Use Playwright browser install tool
+- Updated quick reference with login requirement as #1 priority
+- Created MCP_TOOL_EXPOSURE_TESTING_LOG.md documenting testing journey
+
+### 2025-12-05 (Updated - First Update)
 - **Added 15 additional workarounds** from comprehensive internet research:
   - Delete and regenerate mcp.json (reported success)
   - Disable internal browser automation
