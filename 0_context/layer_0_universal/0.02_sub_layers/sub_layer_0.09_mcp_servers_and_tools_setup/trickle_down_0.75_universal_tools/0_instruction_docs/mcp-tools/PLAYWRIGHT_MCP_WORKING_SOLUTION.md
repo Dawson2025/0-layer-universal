@@ -142,25 +142,34 @@ Playwright MCP tools were configured in `mcp.json` but not available to AI agent
 ### Critical Discovery #1: UI Enablement Required
 **MCP servers must be enabled in Cursor Settings UI**, not just configured in mcp.json.
 
-### Critical Discovery #2: MCP Server/Tool Limits
-**Cursor may have limits on the number of active MCP servers and tools.**
+### Critical Discovery #2: MCP Server/Tool Limits ✅ **RESEARCHED & CONFIRMED**
 
-**Finding (2025-12-05)**: User reported that Cursor was warning about "too many MCP servers and too many tools" before disabling unused servers.
+**Cursor has a hard limit of 40 tools total across all enabled MCP servers.**
 
-**Action Taken**:
-- Disabled unused MCP servers in Cursor Settings UI
-- Only enabled servers that were actually needed
-- This may have helped Playwright tools become available
+**Research Findings (2025-12-05)**:
+- **Hard Limit**: 40 tools total (confirmed by multiple sources)
+- **Warning Threshold**: 40 tools triggers performance warning
+- **Actual Hard Cap**: May be 80 tools, but 40 is the practical limit
+- **Why**: Limits exist to manage context window and help AI choose tools effectively
+
+**User Experience**:
+- User reported Cursor warning: "too many MCP servers and too many tools"
+- After disabling unused MCP servers, Playwright tools became available
+- This freed up capacity within the 40-tool limit
 
 **Implication**:
-- There may be a maximum number of MCP servers that can be active simultaneously
-- There may be a maximum number of tools that can be exposed to AI agents
-- Disabling unused servers may free up capacity for needed tools
+- **40-tool hard limit** - Tools beyond this won't be available to AI agents
+- Disabling unused servers is **essential** to stay under the limit
+- Only the first 40 tools are sent to the AI agent
+- If you have 41+ tools, the 41st tool won't be accessible
 
 **Recommendation**:
-- Only enable MCP servers that you actively need
-- Disable servers that aren't being used
-- If tools aren't appearing, try disabling other servers to free up capacity
+- **Only enable MCP servers you actively need**
+- **Disable servers that aren't being used**
+- **Monitor tool count** in Cursor Settings → Tools & MCP
+- **If tools aren't appearing, disable other servers** to free up capacity
+
+**See Also**: [MCP Tool Limits Research](./MCP_TOOL_LIMITS_RESEARCH.md) for comprehensive research findings.
 
 ### Configuration Requirements
 1. **mcp.json configuration** - Required for server setup
