@@ -41,6 +41,7 @@ sub_layer_0.09_mcp_servers_and_tools_setup/
 - **[Browser MCP Setup Experience](trickle_down_0.75_universal_tools/0_instruction_docs/mcp-tools/BROWSER_MCP_SETUP_EXPERIENCE.md)**: Linux/Ubuntu-specific issues and lessons learned
 
 ### Critical Issue Documentation (2025-12-05)
+- **[Playwright MCP Working Solution](trickle_down_0.75_universal_tools/0_instruction_docs/mcp-tools/PLAYWRIGHT_MCP_WORKING_SOLUTION.md)**: ✅ **CONFIRMED WORKING** - Complete solution for getting Playwright MCP tools working
 - **[MCP Tool Exposure OS Analysis](trickle_down_0.75_universal_tools/0_instruction_docs/mcp-tools/MCP_TOOL_EXPOSURE_OS_ANALYSIS.md)**: Comprehensive analysis of MCP tool exposure across platforms - **CRITICAL: This is a Cursor IDE bug, not OS-specific**
 - **[MCP Tool Exposure Solutions](trickle_down_0.75_universal_tools/0_instruction_docs/mcp-tools/MCP_TOOL_EXPOSURE_SOLUTIONS.md)**: 22 workarounds and solutions for MCP tool exposure issues
 - **[Browser Environment Variable Fix](trickle_down_0.75_universal_tools/0_instruction_docs/mcp-tools/BROWSER_ENV_VAR_FIX.md)**: Fix for recurring browser installation issues
@@ -87,9 +88,11 @@ MCP servers are configured per AI application:
 - **22 Workarounds Documented**: Comprehensive solutions guide created
 
 **New Documentation**:
+- `PLAYWRIGHT_MCP_WORKING_SOLUTION.md` - ✅ **CONFIRMED WORKING** - Complete solution
 - `MCP_TOOL_EXPOSURE_OS_ANALYSIS.md` - Cross-platform analysis
 - `MCP_TOOL_EXPOSURE_SOLUTIONS.md` - 22 workarounds and solutions
 - `BROWSER_ENV_VAR_FIX.md` - Environment variable configuration fix
+- `MCP_FIX_ATTEMPTS_LOG.md` - Complete testing log
 
 **Updated Documentation**:
 - `CURSOR_IDE_LINUX_MCP_ISSUES.md` - Added WSL findings

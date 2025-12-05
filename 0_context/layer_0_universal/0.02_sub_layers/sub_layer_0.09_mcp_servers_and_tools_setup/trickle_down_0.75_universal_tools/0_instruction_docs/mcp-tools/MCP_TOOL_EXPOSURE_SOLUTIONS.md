@@ -10,15 +10,20 @@ This document provides solutions and workarounds for the Cursor IDE MCP tool exp
 
 ## Quick Reference: Most Promising Solutions
 
-**CRITICAL: Ensure You're Logged In** (Solution 22):
-- **Login to Cursor IDE** - This may be required for MCP tool exposure!
-- After login, Playwright MCP tools became available (`mcp_playwright_*`)
-- This was the breakthrough that made tools accessible
+**CRITICAL: Enable MCP Servers in UI** (Solution 22):
+- **Enable MCP servers in Cursor Settings → Tools & MCP** - This is REQUIRED!
+- Configuration in mcp.json is not enough - servers must be toggled ON in UI
+- After enabling Playwright in UI: "22 tools enabled" and tools became available
+- **This is the critical step that was missing!**
+
+**Also Important: Ensure You're Logged In** (Solution 23):
+- **Login to Cursor IDE** - This may also be required for MCP tool exposure!
+- After login, MCP servers can be enabled in UI
 
 **Try These First** (in order):
 1. **Ensure You're Logged Into Cursor IDE** (Solution 22) - ✅ **BREAKTHROUGH DISCOVERY**
 2. **Delete and Regenerate mcp.json** (Solution 8) - ✅ User-reported success
-3. **Use Playwright Browser Install Tool** (Solution 23) - If tools available but browser not found
+3. **Use Playwright Browser Install Tool** (Solution 25) - If tools available but browser not found
 4. **Disable Internal Browser Automation** (Solution 9) - Prevents interference
 5. **Use Cursor CLI** (Solution 1) - May bypass IDE bug entirely
 6. **Reorder MCP Servers** (Solution 10) - Move problematic server to top
@@ -443,7 +448,33 @@ cp ~/.cursor/mcp.json .cursor/mcp.json
 - Version 1.4.0: MCP tools not recognized
 - Older versions: Various MCP issues
 
-### Solution 22: Ensure You're Logged Into Cursor IDE
+### Solution 22: Enable MCP Servers in Cursor Settings UI ⚠️ **CRITICAL STEP!**
+
+**Status**: ✅ **BREAKTHROUGH DISCOVERY** - UI enablement is required!
+
+**Finding (2025-12-05)**: MCP servers must be **enabled in Cursor Settings UI**, not just configured in mcp.json!
+
+**Action**:
+1. Go to Cursor Settings → Tools & MCP
+2. Find your MCP servers in the list
+3. **Toggle each server ON** (green toggle switch)
+4. Wait for server to show "X tools enabled" status
+5. Tools will then be available to AI agents
+
+**Evidence**:
+- Playwright server was configured in mcp.json but disabled in UI
+- After enabling in UI: "22 tools enabled" appeared
+- Tools immediately became available after UI enablement
+- Navigation test successful after enabling
+
+**Why This Matters**:
+- Configuration in `mcp.json` is not enough
+- Servers can be configured but disabled by default
+- UI toggle is the final step to expose tools
+
+**Note**: This is separate from login requirement (Solution 23 below).
+
+### Solution 23: Ensure You're Logged Into Cursor IDE
 
 **Status**: ✅ **CRITICAL DISCOVERY** - Login may be required!
 
@@ -464,9 +495,9 @@ cp ~/.cursor/mcp.json .cursor/mcp.json
 - Playwright MCP: `mcp_playwright_browser_*` (22 tools)
 - Browser MCP: `mcp_browser_browser_*` (21 tools)
 
-**Note**: Even after login, browser detection may still fail - see Solution 23.
+**Note**: Even after login, browser detection may still fail - see Solution 24.
 
-### Solution 23: Use Browser MCP Tools (Working Solution!)
+### Solution 24: Use Browser MCP Tools (Working Solution!)
 
 **Status**: ✅ **CONFIRMED WORKING** - Browser MCP tools work after login!
 
@@ -484,7 +515,7 @@ cp ~/.cursor/mcp.json .cursor/mcp.json
 
 **Why This Works**: Browser MCP server (`@agent-infra/mcp-server-browser`) has better browser detection than Playwright MCP in this environment.
 
-### Solution 24: Use Playwright Browser Install Tool
+### Solution 25: Use Playwright Browser Install Tool
 
 **Status**: ⚠️ **May Fix Browser Detection** - Try this if Playwright tools are available but browser not found
 
@@ -551,13 +582,13 @@ cp ~/.cursor/mcp.json .cursor/mcp.json
 
 ### For Immediate Use
 
-1. **✅ USE BROWSER MCP TOOLS** (Solution 23) - **CONFIRMED WORKING!**
+1. **✅ USE BROWSER MCP TOOLS** (Solution 24) - **CONFIRMED WORKING!**
    - Tools: `mcp_browser_browser_*` (21 tools)
    - Status: ✅ **WORKING** after user login
    - Tested: Navigation, screenshots, tab management all work
    - **This is your best option right now!**
 
-2. **Ensure You're Logged In** (Solution 22):
+2. **Ensure You're Logged In** (Solution 23):
    - Login to Cursor IDE
    - This made tools available in our testing
    - Critical requirement for MCP tool exposure

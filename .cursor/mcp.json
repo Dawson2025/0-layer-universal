@@ -1,0 +1,66 @@
+{
+  "mcpServers": {
+    "playwright": {
+      "command": "/home/dawson/.nvm/versions/node/v22.20.0/bin/npx",
+      "args": [
+        "-y",
+        "@playwright/mcp@latest",
+        "--browser",
+        "chromium"
+      ],
+      "env": {
+        "PLAYWRIGHT_BROWSERS_PATH": "/home/dawson/.cache/ms-playwright",
+        "HOME": "/home/dawson"
+      }
+    },
+    "browser": {
+      "command": "/home/dawson/.nvm/versions/node/v22.20.0/bin/npx",
+      "args": [
+        "@agent-infra/mcp-server-browser"
+      ],
+      "env": {
+        "PLAYWRIGHT_BROWSERS_PATH": "/home/dawson/.cache/ms-playwright",
+        "HOME": "/home/dawson"
+      }
+    },
+    "context7": {
+      "command": "npx",
+      "args": ["-y", "@upstash/context7-mcp"],
+      "env": {
+        "CONTEXT7_API_KEY": "136116c4-6c35-4ffd-b8fa-cc8f11cb22a4"
+      }
+    },
+    "chrome-devtools": {
+        "command": "npx",
+        "args": [
+          "-y",
+          "chrome-devtools-mcp@latest",
+          "--browserUrl",
+          "http://127.0.0.1:9222",
+          "--logFile",
+          "/tmp/mcp-chrome.log"
+        ]
+    },
+    "web-search": {
+      "command": "npx",
+      "args": ["tavily-mcp"],
+      "env": {
+        "TAVILY_API_KEY": "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"
+      }
+    },
+    "github-search": {
+      "command": "npx",
+      "args": ["github-mcp-server"],
+      "env": {
+        "GITHUB_TOKEN": "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"
+      }
+    },
+    "filesystem": {
+      "command": "npx",
+      "args": [
+        "@modelcontextprotocol/server-filesystem",
+        "/home/dawson/code/DS250-Course-Draft"
+      ]
+    }
+  }
+}
