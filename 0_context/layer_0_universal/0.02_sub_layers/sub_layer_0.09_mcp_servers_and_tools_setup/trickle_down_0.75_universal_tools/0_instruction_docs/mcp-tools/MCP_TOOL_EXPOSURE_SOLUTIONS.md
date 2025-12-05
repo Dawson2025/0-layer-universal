@@ -42,12 +42,31 @@ This document provides solutions and workarounds for the Cursor IDE MCP tool exp
 
 ### Solution 1: Use Cursor CLI (Recommended Workaround)
 
-**Status**: ✅ **Potential Workaround** - CLI may not have the same bug
+**Status**: ✅ **Official Tool** - CLI is legitimate and officially supported by Cursor
+
+**Verification (2025-12-05)**:
+- ✅ **Legitimate**: Official product from Cursor team, documented on cursor.com
+- ✅ **Real-world usage**: Used by developers for terminal-centric AI coding workflows
+- ✅ **Production-ready**: Guides and tutorials treat it as production-ready tool
+- ✅ **Security**: Ships with permission system for file operations and shell commands
 
 **Why This Might Work**:
 - Cursor CLI uses the same MCP configuration as the IDE
 - CLI may have different tool exposure mechanism
 - Some users report better MCP tool access via CLI
+- Can be used from any editor (Neovim, VS Code, JetBrains) or remote environments
+
+**IDE vs CLI Tradeoffs**:
+- **IDE Better For**: Interactive coding, navigation, inline diffs, day-to-day editing
+- **CLI Better For**: Automation, CI/CD, scripted refactors, headless runs, remote environments
+- **Hybrid Approach**: Use IDE for interactive work, CLI for automation and batch tasks
+
+**TUI vs GUI Bugs**:
+- **TUI (CLI)**: More frequent UI glitches (endless scrolling, rendering issues, bugged states)
+- **GUI (IDE)**: Less frequent but broader stability issues (freezes, crashes)
+- **Recommendation**: For WSL, prioritize GUI for interactive work, use CLI for automation
+
+**Note**: CLI requires MCP server approval separate from IDE approval
 
 **Installation**:
 ```bash
@@ -85,6 +104,14 @@ cursor-agent mcp list-tools browser
 **References**:
 - [Cursor CLI Documentation](https://cursor.com/docs/cli)
 - [Cursor CLI MCP Guide](https://cursor.com/docs/cli/mcp)
+- [Cursor CLI Overview](https://cursor.com/cli)
+- [Getting Started with Cursor CLI](https://www.codecademy.com/article/getting-started-with-cursor-cli)
+
+**Research Sources (2025-12-05)**:
+- Perplexity AI research confirming CLI legitimacy
+- Developer reviews and tutorials
+- Forum discussions on IDE vs CLI tradeoffs
+- Bug reports comparing TUI vs GUI stability
 
 ### Solution 2: Update Cursor IDE
 

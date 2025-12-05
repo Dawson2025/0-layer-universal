@@ -227,9 +227,60 @@ ls -la ~/.cache/ms-playwright/chromium-*/chrome-linux64/chrome
 - [MCP Tool Exposure OS Analysis](./MCP_TOOL_EXPOSURE_OS_ANALYSIS.md) - Platform comparison
 - [Browser Environment Variable Fix](./BROWSER_ENV_VAR_FIX.md) - Environment variable solution
 
+## Cursor CLI Research Findings (2025-12-05)
+
+### CLI Legitimacy Confirmed
+- ✅ **Official Product**: Cursor CLI is legitimate and officially supported by Cursor team
+- ✅ **Documented**: Official documentation on cursor.com with install/auth/configuration
+- ✅ **Production-Ready**: Used by developers in real-world scenarios
+- ✅ **Security**: Permission system for file operations and shell commands
+
+### IDE vs CLI Comparison
+**IDE Better For**:
+- Interactive coding and navigation
+- Inline diffs and editing
+- Day-to-day development work
+- Rich project context and indexing
+
+**CLI Better For**:
+- Automation and CI/CD
+- Scripted refactors and batch tasks
+- Headless/remote environments
+- Working from other editors (Neovim, VS Code, JetBrains)
+
+**Hybrid Approach Recommended**:
+- Use IDE for interactive work
+- Use CLI for automation and repeatable workflows
+- Both share same config (rules, MCP servers)
+
+### TUI vs GUI Bug Comparison
+**TUI (CLI) Bugs**:
+- More frequent UI glitches
+- Endless scrolling/resetting issues
+- Rendering failures and bugged states
+- Prompt editing annoyances
+- More visible rough edges
+
+**GUI (IDE) Bugs**:
+- Less frequent but broader stability issues
+- Freezes and crashes (especially on Windows/WSL)
+- High GPU usage
+- Responsiveness drops
+
+**Recommendation for WSL**:
+- Prioritize GUI for interactive work
+- Use CLI for automation/headless tasks
+- Expect TUI glitches to compound terminal quirks in WSL
+
 ## Changelog
 
-### 2025-12-05
+### 2025-12-05 (Updated)
+- Added Cursor CLI research findings
+- Documented IDE vs CLI tradeoffs
+- Documented TUI vs GUI bug comparison
+- Added recommendation for WSL users
+
+### 2025-12-05 (Initial)
 - **BREAKTHROUGH**: Playwright MCP tools became available after user login
 - Documented tool naming: `mcp_playwright_*` prefix confirmed
 - Identified login/authentication as potential requirement
