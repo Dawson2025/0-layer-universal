@@ -1,78 +1,103 @@
 # Playwright MCP Server Usage Guide
 
-This guide explains how to start, use, and manage the Playwright MCP server with Claude Code.
+**Location**: Universal Tools → MCP Tools  
+**Last Updated**: 2025-12-05  
+**Status**: ✅ Working
+
+This guide explains how to start, use, and manage the Playwright MCP server with AI applications (Cursor IDE, Claude Code, etc.).
 
 ## How the MCP Server Works
 
-The Playwright MCP server is **automatically started by Claude Code** when you launch the application. There is no manual startup process required.
+The Playwright MCP server is **automatically started by the AI application** when you launch it. There is no manual startup process required.
 
 ### Automatic Startup Process
 
-1. Claude Code reads `.mcp.json` on startup
-2. For each MCP server configured, Claude Code executes the specified command
-3. The MCP server starts in the background and connects to Claude Code
+1. AI application reads MCP configuration on startup
+   - **Cursor IDE**: `~/.config/mcp/mcp.json` (or `~/.cursor/mcp.json`)
+   - **Claude Code**: `.mcp.json` in project root
+2. For each MCP server configured, the AI application executes the specified command
+3. The MCP server starts in the background and connects to the AI application
 4. MCP tools become available for use in the conversation
 
 ### Server Lifecycle
 
-- **Starts:** When Claude Code launches
+- **Starts:** When the AI application launches
 - **Runs:** Continuously in the background during your session
-- **Stops:** When Claude Code closes
+- **Stops:** When the AI application closes
 
 ## Starting the MCP Server
 
 ### First Time Setup
 
-1. Ensure you've completed the setup process (see `playwright-mcp-setup.md`)
-2. Verify `.mcp.json` exists in your project root with valid configuration
-3. Launch Claude Code
+1. Ensure you've completed the setup process (see `PLAYWRIGHT_MCP_CURSOR_SETUP.md` for Cursor IDE)
+2. Verify MCP configuration exists with valid configuration
+3. Launch the AI application
 
 The server will start automatically.
 
 ### After Configuration Changes
 
-If you modify `.mcp.json`:
+If you modify the MCP configuration:
 
 1. Save the file
-2. **Completely close Claude Code** (not just the window, ensure the process is terminated)
-3. Restart Claude Code
+2. **Completely close the AI application** (not just the window, ensure the process is terminated)
+3. Restart the AI application
 4. The MCP server will start with the new configuration
 
 ## Verifying the Server is Running
 
 ### Check 1: MCP Tools Available
 
-In a Claude Code conversation, MCP tools will be available if the server is running. These tools start with `mcp__playwright__`:
+In an AI application conversation, MCP tools will be available if the server is running. Tool naming varies by application:
 
-- `mcp__playwright__browser_navigate`
-- `mcp__playwright__browser_snapshot`
-- `mcp__playwright__browser_click`
-- `mcp__playwright__browser_type`
+- **Cursor IDE**: Tools may be available as `mcp_browser_*` or through Playwright MCP
+- **Claude Code**: Tools start with `mcp__playwright__` (double underscore)
+
+Common tools:
+- `browser_navigate` - Navigate to a URL
+- `browser_snapshot` - Get accessibility snapshot
+- `browser_click` - Click on elements
+- `browser_type` - Type text into inputs
 - And many more...
 
 ### Check 2: Test Navigation
 
-Ask Claude to navigate to a website:
+Ask the AI to navigate to a website:
 
 ```
 Please navigate to https://example.com
 ```
 
-If the server is working, Claude will successfully navigate and show you the page snapshot.
+If the server is working, the AI will successfully navigate and show you the page snapshot.
 
 ### Check 3: Manual Server Test
 
 You can manually test if the MCP server starts correctly:
 
 ```bash
+# Load nvm if needed
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+
+# Test the server
 npx -y @playwright/mcp@latest --browser chromium
 ```
 
 This should start the server without errors. Press Ctrl+C to stop.
 
+### Check 4: Verify in Application Settings
+
+**Cursor IDE**:
+- Go to Settings → Tools & MCP → Installed MCP Servers
+- Should show "playwright" with "22 tools enabled"
+
+**Claude Code**:
+- Check application logs for MCP server startup messages
+- Verify tools are available in conversation
+
 ## Available Playwright Tools
 
-Once the MCP server is running, Claude Code has access to these tools:
+Once the MCP server is running, the AI application has access to these tools:
 
 ### Navigation
 - `browser_navigate` - Navigate to a URL
@@ -115,7 +140,7 @@ Once the MCP server is running, Claude Code has access to these tools:
 Navigate to https://news.ycombinator.com and tell me the top 3 stories
 ```
 
-Claude will:
+The AI will:
 1. Use `browser_navigate` to load the page
 2. Use `browser_snapshot` to get the page structure
 3. Parse the snapshot and extract the information
@@ -129,7 +154,7 @@ Go to https://example.com/contact and fill out the contact form with:
 - Message: Hello, this is a test
 ```
 
-Claude will:
+The AI will:
 1. Navigate to the page
 2. Use `browser_snapshot` to identify form fields
 3. Use `browser_fill_form` to fill all fields
@@ -141,7 +166,7 @@ Claude will:
 Navigate to https://example.com and take a screenshot
 ```
 
-Claude will:
+The AI will:
 1. Navigate to the page
 2. Use `browser_take_screenshot` to capture the page
 3. Save the screenshot to a file
@@ -156,7 +181,7 @@ Test the login flow on https://example.com/login:
 4. Verify we're redirected to the dashboard
 ```
 
-Claude will:
+The AI will:
 1. Navigate to the login page
 2. Use `browser_type` to enter credentials
 3. Use `browser_click` to click the button
@@ -166,30 +191,41 @@ Claude will:
 
 ### Server Not Starting
 
-**Symptom:** MCP tools are not available, error message: "No such tool available: mcp__playwright__browser_navigate"
+**Symptom:** MCP tools are not available, error message about tools not being available
 
 **Solutions:**
-1. Verify `.mcp.json` exists and has valid JSON syntax
-2. Check that the configuration matches the format in `playwright-mcp-setup.md`
-3. Completely restart Claude Code (ensure the process is terminated)
-4. Check Claude Code logs for MCP server startup errors
+1. Verify MCP configuration exists and has valid JSON syntax
+2. Check that the configuration matches the format in `PLAYWRIGHT_MCP_CURSOR_SETUP.md`
+3. Completely restart the AI application (ensure the process is terminated)
+4. Check application logs for MCP server startup errors
 
 ### Browser Not Found
 
-**Symptom:** Error: "Chromium distribution 'chrome' is not found"
+**Symptom:** Error: "Chromium distribution 'chrome' is not found" or "Browser specified in your config is not installed"
 
 **Solutions:**
 1. Verify browser is installed: `ls -la ~/.cache/ms-playwright/`
-2. Reinstall browser: `npx -y playwright@latest install chromium`
-3. Check `.mcp.json` specifies the correct browser with `"--browser", "chromium"`
-4. Restart Claude Code
+2. Reinstall browser: 
+   ```bash
+   export NVM_DIR="$HOME/.nvm"
+   [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+   npx -y playwright@latest install chromium
+   ```
+3. Check MCP configuration specifies the correct browser with `"--browser", "chromium"`
+4. Restart the AI application
 
 ### Server Crashes or Disconnects
 
 **Solutions:**
 1. Check if browser binaries are corrupted
-2. Reinstall browser: `rm -rf ~/.cache/ms-playwright/ && npx -y playwright@latest install chromium`
-3. Restart Claude Code
+2. Reinstall browser: 
+   ```bash
+   rm -rf ~/.cache/ms-playwright/
+   export NVM_DIR="$HOME/.nvm"
+   [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+   npx -y playwright@latest install chromium
+   ```
+3. Restart the AI application
 
 ### Performance Issues
 
@@ -205,6 +241,10 @@ If the browser is slow or unresponsive:
 For debugging purposes, you can manually start the MCP server:
 
 ```bash
+# Load nvm if needed
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+
 # Basic startup
 npx -y @playwright/mcp@latest --browser chromium
 
@@ -214,7 +254,7 @@ npx -y @playwright/mcp@latest \
   --allowed-origins "*"
 ```
 
-**Note:** This is only for testing. Claude Code will manage the server automatically during normal use.
+**Note:** This is only for testing. The AI application will manage the server automatically during normal use.
 
 ### Useful Command Options
 
@@ -234,7 +274,30 @@ npx -y @playwright/mcp@latest --browser chromium --blocked-origins "https://ads.
 
 ## Configuration Reference
 
-### Basic Configuration
+### Basic Configuration (Cursor IDE)
+
+```json
+{
+  "mcpServers": {
+    "playwright": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@playwright/mcp@latest",
+        "--browser",
+        "chromium"
+      ],
+      "env": {
+        "PLAYWRIGHT_BROWSERS_PATH": "0"
+      }
+    }
+  }
+}
+```
+
+**Location**: `~/.config/mcp/mcp.json` (or `~/.cursor/mcp.json`)
+
+### Basic Configuration (Claude Code)
 
 ```json
 {
@@ -251,6 +314,8 @@ npx -y @playwright/mcp@latest --browser chromium --blocked-origins "https://ads.
   }
 }
 ```
+
+**Location**: `.mcp.json` in project root
 
 ### Advanced Configuration
 
@@ -281,7 +346,7 @@ npx -y @playwright/mcp@latest --browser chromium --blocked-origins "https://ads.
 
 1. **Keep it Simple:** Use the basic configuration unless you have specific needs
 2. **Use Chromium:** It's the most reliable and well-tested browser option
-3. **Restart After Config Changes:** Always restart Claude Code after modifying `.mcp.json`
+3. **Restart After Config Changes:** Always restart the AI application after modifying MCP configuration
 4. **Close Unused Tabs:** Browser tabs consume memory; close them when done
 5. **Check Snapshots First:** Use `browser_snapshot` before taking screenshots (it's faster)
 6. **Handle Errors Gracefully:** Be prepared for network issues, timeouts, and page errors
@@ -337,27 +402,36 @@ To block service workers:
 ### Check Documentation
 - Official Playwright Docs: https://playwright.dev/
 - MCP Protocol Docs: https://modelcontextprotocol.io/
+- [Playwright MCP Cursor Setup](./PLAYWRIGHT_MCP_CURSOR_SETUP.md) - Setup guide for Cursor IDE
 
 ### Common Issues
-- See `playwright-mcp-setup.md` for setup troubleshooting
-- Check Claude Code logs for error messages
+- See `PLAYWRIGHT_MCP_CURSOR_SETUP.md` for setup troubleshooting
+- Check application logs for error messages
 - Verify browser installation: `ls -la ~/.cache/ms-playwright/`
 
 ### Manual Testing
 Test if the MCP server can start manually:
 ```bash
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 npx -y @playwright/mcp@latest --browser chromium
 ```
 
-If this fails, the issue is with the installation, not Claude Code.
+If this fails, the issue is with the installation, not the AI application.
 
 ## Summary
 
-- **Starting:** Automatic when Claude Code launches
-- **Stopping:** Automatic when Claude Code closes
-- **Restarting:** Close and reopen Claude Code
-- **Configuration:** Edit `.mcp.json` and restart Claude Code
-- **Verification:** Ask Claude to navigate to a website
-- **Troubleshooting:** Check logs, verify installation, restart Claude Code
+- **Starting:** Automatic when AI application launches
+- **Stopping:** Automatic when AI application closes
+- **Restarting:** Close and reopen the AI application
+- **Configuration:** Edit MCP config file and restart the AI application
+- **Verification:** Ask the AI to navigate to a website
+- **Troubleshooting:** Check logs, verify installation, restart the AI application
 
-The Playwright MCP server requires no manual management during normal use. Just launch Claude Code and start automating!
+The Playwright MCP server requires no manual management during normal use. Just launch your AI application and start automating!
+
+---
+
+**Last Updated**: 2025-12-05  
+**Status**: ✅ Working
+

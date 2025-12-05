@@ -1,12 +1,16 @@
 # Cursor IDE Browser MCP Setup - Linux/Ubuntu
 
 **Location**: Universal Tools → MCP Tools  
-**Last Updated**: 2025-12-04  
-**Status**: ✅ Working and tested
+**Last Updated**: 2025-12-05  
+**Status**: ✅ Working and tested (Linux/Ubuntu), ⚠️ Partially working (WSL)
 
 ## Overview
 
-This document documents the setup and troubleshooting of browser MCP servers in Cursor IDE on Linux/Ubuntu systems. It covers Playwright MCP, browser MCP, and cursor-browser-extension MCP server configurations.
+This document documents the setup and troubleshooting of browser MCP servers in Cursor IDE on Linux/Ubuntu systems, including WSL (Windows Subsystem for Linux) environments. It covers Playwright MCP, browser MCP, and cursor-browser-extension MCP server configurations.
+
+**Platforms Covered**:
+- ✅ Native Linux/Ubuntu
+- ⚠️ WSL2 (Ubuntu 24.04) on Windows 11 (Lenovo Yoga 9 Pro)
 
 ## Current Configuration
 
@@ -197,6 +201,229 @@ npx -y playwright@latest install chromium
 - Location: `/tmp/cursor-mcp-extension` (if cloned)
 
 **Note**: According to Cursor documentation, browser automation is "native" and doesn't require an extension. The `cursor-browser-extension` MCP server may be separate from native browser automation.
+
+## WSL (Windows Subsystem for Linux) Setup - Lenovo Yoga 9 Pro
+
+**Last Updated**: 2025-12-05  
+**Environment**: WSL2 (Ubuntu 24.04) on Windows 11, Lenovo Yoga 9 Pro  
+**Status**: ⚠️ Partially Working - Configuration documented, requires Windows Chrome path
+
+### WSL-Specific Configuration
+
+When running Cursor IDE within WSL, the browser automation setup requires special consideration because:
+
+1. **Cursor IDE runs on Windows** but connects to WSL for terminal/development
+2. **Chrome can be installed in both WSL and Windows**
+3. **Browser extension needs Windows Chrome path**, not WSL Chrome path
+
+### System Configuration
+
+**WSL Environment**:
+- OS: Ubuntu 24.04 (WSL2)
+- Display: `DISPLAY=:0` (X11 forwarding configured)
+- Chrome in WSL: `/usr/bin/google-chrome` → `/opt/google/chrome/google-chrome` (symlink)
+- Chrome in Windows: `C:\Program Files\Google\Chrome\Application\chrome.exe`
+- Chrome Version (WSL): 142.0.7444.162
+- Chrome Version (Windows): Available and accessible from WSL
+
+### Setup Process Attempted (2025-12-05)
+
+#### Step 1: Initial WSL Chrome Path Configuration
+
+**Attempted**: Configure Cursor with WSL Chrome path
+- **Path tried**: `/usr/bin/google-chrome`
+- **Result**: Settings showed "Ready (Chrome detected)" but MCP server returned "Browser specified in your config is not installed"
+- **Logs showed**: "No server info found" errors
+
+**Verification**:
+```bash
+# Chrome exists in WSL
+which google-chrome
+# Output: /usr/bin/google-chrome
+
+# Follow symlink to actual location
+readlink -f /usr/bin/google-chrome
+# Output: /opt/google/chrome/google-chrome
+
+# Verify executable
+test -x /opt/google/chrome/google-chrome && echo "Executable"
+# Output: Executable exists and is executable
+```
+
+#### Step 2: Updated to Actual Executable Path
+
+**Attempted**: Use resolved symlink path
+- **Path tried**: `/opt/google/chrome/google-chrome`
+- **Result**: Settings showed "Ready (Chrome detected)" but MCP server still returned errors
+- **MCP logs**: Still showing "No server info found"
+
+#### Step 3: Windows Chrome Path Configuration
+
+**Attempted**: Configure with Windows Chrome path (since Cursor runs on Windows)
+- **Path tried**: `C:\Program Files\Google\Chrome\Application\chrome.exe`
+- **Result**: ✅ Settings showed "Ready (Chrome detected)" and Chrome window opened when settings were saved
+- **Status**: Configuration appears correct, but MCP server tools still return errors
+
+**Verification**:
+```bash
+# Windows Chrome accessible from WSL
+ls -la "/mnt/c/Program Files/Google/Chrome/Application/chrome.exe"
+# Output: File exists and is readable
+
+# Test Windows Chrome execution
+"/mnt/c/Program Files/Google/Chrome/Application/chrome.exe" --version
+# Output: Opens in existing browser session (works)
+```
+
+### Current Configuration (WSL)
+
+**Cursor Settings → Tools → Browser Automation**:
+- **Connection Type**: "Custom Executable Path"
+- **Chrome Executable Path**: `C:\Program Files\Google\Chrome\Application\chrome.exe`
+- **Status**: "Ready (Chrome detected)"
+- **Show Localhost Links in Browser**: Enabled
+
+**MCP Configuration** (`~/.config/mcp/mcp.json`):
+```json
+{
+  "mcpServers": {
+    "playwright": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@playwright/mcp@latest",
+        "--browser",
+        "chromium"
+      ],
+      "env": {
+        "PLAYWRIGHT_BROWSERS_PATH": "0"
+      }
+    },
+    "browser": {
+      "command": "npx",
+      "args": [
+        "@agent-infra/mcp-server-browser"
+      ],
+      "env": {
+        "BROWSER_PATH": "/opt/google/chrome/google-chrome"
+      }
+    }
+  }
+}
+```
+
+### WSL-Specific Issues Encountered
+
+#### Issue 1: MCP Server Not Reading Browser Path
+
+**Symptoms**:
+- Cursor UI shows "Ready (Chrome detected)" with correct path
+- `cursor-browser-extension` MCP server logs show "No server info found"
+- Browser tools return: "Browser specified in your config is not installed"
+
+**Root Cause Analysis**:
+- The `cursor-browser-extension` MCP server appears to be a built-in Cursor feature
+- It should read browser path from Cursor's UI settings, but isn't picking it up
+- This may be a bug in how Cursor passes configuration to the MCP server layer
+- WSL environment may add complexity to path resolution
+
+**Attempted Solutions**:
+1. ✅ Updated browser path in Cursor Settings UI
+2. ✅ Tried both WSL path (`/opt/google/chrome/google-chrome`) and Windows path (`C:\Program Files\Google\Chrome\Application\chrome.exe`)
+3. ✅ Restarted Cursor multiple times
+4. ✅ Verified Chrome executable exists and is accessible
+5. ⚠️ MCP server still not connecting properly
+
+#### Issue 2: Path Resolution in WSL
+
+**Finding**: Chrome in WSL is a symlink chain:
+```
+/usr/bin/google-chrome → /etc/alternatives/google-chrome → /opt/google/chrome/google-chrome
+```
+
+**Impact**: Using `/usr/bin/google-chrome` should work (symlinks are resolved), but explicit path may be more reliable.
+
+### WSL Troubleshooting Steps
+
+#### Check WSL Chrome Installation
+```bash
+# Find Chrome in WSL
+which google-chrome
+readlink -f $(which google-chrome)
+
+# Verify executable
+test -x /opt/google/chrome/google-chrome && echo "WSL Chrome OK"
+```
+
+#### Check Windows Chrome from WSL
+```bash
+# Verify Windows Chrome accessible
+test -f "/mnt/c/Program Files/Google/Chrome/Application/chrome.exe" && echo "Windows Chrome OK"
+
+# Test execution
+"/mnt/c/Program Files/Google/Chrome/Application/chrome.exe" --version
+```
+
+#### Check MCP Server Logs
+```bash
+# Find latest cursor-browser-extension log
+find ~/.cursor-server/data/logs -name "*cursor-browser-extension.log" -type f -exec ls -t {} + | head -1
+
+# View recent errors
+tail -30 "$(find ~/.cursor-server/data/logs -name '*cursor-browser-extension.log' -type f -exec ls -t {} + | head -1)"
+```
+
+#### Check Display Configuration
+```bash
+# Verify X11 forwarding
+echo $DISPLAY
+# Should output: :0 or similar
+
+# Check if GUI apps can run
+which xeyes || echo "X11 apps not available"
+```
+
+### Recommended WSL Configuration
+
+**For Cursor IDE Browser Automation in WSL**:
+
+1. **Use Windows Chrome Path** (Primary recommendation):
+   - Set Chrome Executable Path to: `C:\Program Files\Google\Chrome\Application\chrome.exe`
+   - This works because Cursor IDE runs on Windows and needs to launch Windows Chrome
+   - Status should show "Ready (Chrome detected)"
+
+2. **Alternative: Use Playwright MCP** (If cursor-browser-extension doesn't work):
+   - Playwright MCP works independently and doesn't rely on Cursor's browser extension
+   - Configured in `~/.config/mcp/mcp.json` with `--browser chromium`
+   - Playwright will use its own browser binaries or system Chromium
+
+3. **If Issues Persist**:
+   - Toggle browser extension MCP server off/on in Cursor Settings
+   - Restart Cursor completely
+   - Check MCP server logs for specific errors
+   - Consider using Playwright MCP tools directly instead
+
+### WSL-Specific Notes
+
+- **X11 Forwarding**: Required for GUI applications in WSL. Verify with `echo $DISPLAY`
+- **Path Format**: Use Windows paths (`C:\...`) for Cursor settings, Linux paths (`/opt/...`) for MCP env vars
+- **Chrome Installation**: Chrome can exist in both WSL and Windows - use Windows path for Cursor
+- **MCP Server Location**: MCP config is at `~/.config/mcp/mcp.json` (symlinked from `~/.cursor/mcp.json`)
+- **Log Location**: Cursor server logs at `~/.cursor-server/data/logs/`
+
+### Next Steps for WSL Users
+
+1. ✅ Configure Cursor Settings with Windows Chrome path: `C:\Program Files\Google\Chrome\Application\chrome.exe`
+2. ✅ Verify Chrome opens when settings are saved (indicates configuration is correct)
+3. ⚠️ If MCP tools still don't work, use Playwright MCP as alternative
+4. 🔄 Monitor Cursor updates for potential fixes to browser extension MCP server
+
+### Related WSL Documentation
+
+- WSL Setup: `../../sub_layer_0.05_os_setup/trickle_down_0.5_setup/0_instruction_docs/setup/WSL_SETUP.md`
+- Linux MCP Issues: `../../sub_layer_0.05_os_setup/trickle_down_0.5_setup/0_instruction_docs/LINUX_UBUNTU_MCP_ISSUES.md`
+
+---
 
 ## Verification
 

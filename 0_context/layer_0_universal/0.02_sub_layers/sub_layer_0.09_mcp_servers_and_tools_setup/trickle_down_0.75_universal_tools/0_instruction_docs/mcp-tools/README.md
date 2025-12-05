@@ -66,9 +66,10 @@ claude mcp add --transport http context7 https://mcp.context7.com/mcp --header "
 - **[Quick Reference](CONTEXT7_QUICK_REFERENCE.md)**: Quick commands and troubleshooting
 
 ### MCP Management System
-- **[MCP System Guide](../../../../MCP_SYSTEM_GUIDE.md)**: Complete MCP management system documentation
-- **Configuration Files**: Located in `config/mcp/`
-- **Management Scripts**: Located in `scripts/`
+- **[MCP System Guide](MCP_SYSTEM_GUIDE.md)**: Complete MCP management system documentation
+- **[MCP Configuration Guide](MCP_CONFIGURATION_GUIDE.md)**: How to configure MCP servers
+- **[MCP Server Setup](MCP_SERVER_SETUP.md)**: General MCP server setup guide
+- **[MCP Work Log](MCP_WORK_LOG.md)**: Development work log for MCP server implementation
 
 ## 🔧 Available MCP Servers
 
@@ -76,7 +77,18 @@ claude mcp add --transport http context7 https://mcp.context7.com/mcp --header "
 - **chrome-devtools**: Chrome DevTools integration for debugging
 - **playwright**: Cross-browser testing and automation
 - **browser**: Simple browser automation
+- **[Playwright MCP Cursor Setup](PLAYWRIGHT_MCP_CURSOR_SETUP.md)**: Complete setup guide for Playwright MCP in Cursor IDE (Linux/Ubuntu and WSL)
+- **[Playwright MCP Usage](PLAYWRIGHT_MCP_USAGE.md)**: Usage guide for Playwright MCP server (all AI applications)
+- **[Playwright MCP Testing](PLAYWRIGHT_MCP_TESTING.md)**: Testing documentation and troubleshooting
+- **[Chrome DevTools MCP Setup](CHROME_DEVTOOLS_MCP_SETUP.md)**: Setup guide for Chrome DevTools MCP server
+- **[Cursor Browser MCP Setup](CURSOR_BROWSER_MCP_SETUP.md)**: Browser automation setup for Cursor IDE (includes WSL notes)
 - **[Browser MCP Setup Experience](BROWSER_MCP_SETUP_EXPERIENCE.md)**: Comprehensive documentation of setup experience, lessons learned, and troubleshooting for Linux/Ubuntu
+- **[Testing MCP](TESTING_MCP.md)**: Testing guide for MCP servers
+
+### Linux/Ubuntu-Specific Issues
+- **[Linux/Ubuntu MCP Issues](LINUX_UBUNTU_MCP_ISSUES.md)**: OS-level MCP issues on Linux/Ubuntu
+- **[Cursor IDE Linux MCP Issues](CURSOR_IDE_LINUX_MCP_ISSUES.md)**: Cursor IDE-specific MCP issues on Linux
+- **[Linux/Ubuntu AI Apps MCP Issues](LINUX_UBUNTU_AI_APPS_MCP_ISSUES.md)**: AI apps and tools MCP issues on Linux
 
 #### Recent lessons (Linux, Chrome/Playwright MCP)
 - Playwright MCP can report “Browser specified in your config is not installed” and drop the transport even when `playwright install chromium` is done and `--executable-path` points to `~/.cache/ms-playwright/.../chrome`. Adding `PLAYWRIGHT_BROWSERS_PATH` and `--no-sandbox` did not resolve; the server exited before tools were usable.
