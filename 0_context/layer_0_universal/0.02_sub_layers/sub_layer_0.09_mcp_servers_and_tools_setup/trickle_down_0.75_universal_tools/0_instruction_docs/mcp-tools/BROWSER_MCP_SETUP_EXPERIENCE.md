@@ -84,34 +84,52 @@ This document captures our experience setting up and troubleshooting browser MCP
 
 **Recommendation**: Always test MCP configurations on Linux separately from Windows/macOS documentation.
 
-### Lesson 2: Linux/Ubuntu Requires Explicit Browser Paths
+### Lesson 2: MCP Servers Need Environment Variables (Critical Fix - 2025-12-05)
 
-**Problem**: Browser MCP servers on Linux often fail with "Browser specified in your config is not installed" even when browsers are installed.
+**Problem**: Browser MCP servers on Linux (and all platforms) fail with "Browser specified in your config is not installed" even when browsers are installed. This problem keeps recurring because browsers appear to need constant reinstallation.
 
 **Root Cause**: 
-- Linux doesn't have a standard browser installation location
-- MCP servers may not detect browsers in common locations
-- Path detection logic may be Windows/macOS-centric
+- MCP servers run via `npx` in isolated execution environments
+- They don't inherit your shell's environment variables (like those in `.bashrc`)
+- `PLAYWRIGHT_BROWSERS_PATH` isn't set, so servers can't find browsers in `~/.cache/ms-playwright/`
+- Each Cursor restart spawns new MCP processes that need the environment configured
+- This is NOT a Linux-specific issue - it affects all platforms
 
 **Solution**:
-- Always specify `--executable-path` explicitly for browser MCP servers
-- Use absolute paths to browser executables
-- Verify browser executable exists and is executable: `ls -la /path/to/browser`
-
-**Example Configuration**:
-```json
-{
-  "browser": {
-    "command": "npx",
-    "args": [
-      "-y",
-      "@agent-infra/mcp-server-browser",
-      "--executable-path",
-      "/home/dawson/.cache/ms-playwright/chromium-1200/chrome-linux64/chrome"
-    ]
+- **Always set environment variables in MCP server configuration**:
+  ```json
+  {
+    "playwright": {
+      "command": "npx",
+      "args": ["-y", "@playwright/mcp@latest", "--browser", "chromium"],
+      "env": {
+        "PLAYWRIGHT_BROWSERS_PATH": "/home/dawson/.cache/ms-playwright",
+        "HOME": "/home/dawson"
+      }
+    },
+    "browser": {
+      "command": "npx",
+      "args": ["@agent-infra/mcp-server-browser"],
+      "env": {
+        "PLAYWRIGHT_BROWSERS_PATH": "/home/dawson/.cache/ms-playwright",
+        "HOME": "/home/dawson"
+      }
+    }
   }
-}
-```
+  ```
+- Replace `/home/dawson` with your actual home directory
+- The browsers ARE installed - the MCP server just can't find them without the environment variable
+- This fix prevents the constant "browser needs installation" problem
+
+**Why This Keeps Happening**:
+- `npx` creates isolated execution environments
+- Environment variables from your shell aren't automatically passed to MCP servers
+- The MCP server needs explicit configuration to find user-installed browsers
+- Each time Cursor restarts, it spawns new MCP server processes that need the environment set
+
+**Previous Approach (Less Reliable)**:
+- Using `--executable-path` with explicit browser paths can work, but environment variables are more reliable
+- The environment variable approach works for all Playwright-installed browsers automatically
 
 ### Lesson 3: Playwright MCP vs Browser MCP vs Cursor Browser Extension
 
@@ -245,23 +263,38 @@ This document captures our experience setting up and troubleshooting browser MCP
 
 ## Troubleshooting Guide
 
-### Issue: "Browser specified in your config is not installed"
+### Issue: "Browser specified in your config is not installed" (FIXED - 2025-12-05)
+
+**Root Cause**: MCP servers can't find browsers because `PLAYWRIGHT_BROWSERS_PATH` environment variable isn't set.
 
 **Checklist**:
-- [ ] Browser executable exists at specified path
-- [ ] Browser is executable (`chmod +x /path/to/browser`)
-- [ ] Browser runs manually (`/path/to/browser --version`)
-- [ ] Path is absolute (not relative)
+- [ ] Browser executable exists: `ls -la ~/.cache/ms-playwright/chromium-*/chrome-linux64/chrome`
+- [ ] Browser is executable (`chmod +x /path/to/browser` if needed)
+- [ ] Browser runs manually (`~/.cache/ms-playwright/chromium-*/chrome-linux64/chrome --version`)
+- [ ] **MCP config has `PLAYWRIGHT_BROWSERS_PATH` environment variable set** (CRITICAL)
+- [ ] **MCP config has `HOME` environment variable set** (CRITICAL)
 - [ ] MCP config JSON is valid
 - [ ] Cursor has been restarted after config change
 - [ ] MCP server process is running (`ps aux | grep mcp`)
 
-**Solutions**:
-1. Install browser: `npx playwright install chromium`
-2. Use explicit path: `--executable-path /absolute/path/to/browser`
-3. Check permissions: `chmod +x /path/to/browser`
-4. Verify config: `cat ~/.cursor/mcp.json | jq`
-5. Restart Cursor IDE
+**Solutions** (In Order of Priority):
+1. **Add environment variables to MCP config** (PRIMARY FIX):
+   ```json
+   {
+     "playwright": {
+       "command": "npx",
+       "args": ["-y", "@playwright/mcp@latest", "--browser", "chromium"],
+       "env": {
+         "PLAYWRIGHT_BROWSERS_PATH": "/home/dawson/.cache/ms-playwright",
+         "HOME": "/home/dawson"
+       }
+     }
+   }
+   ```
+2. Verify browsers are installed: `npx playwright install chromium` (if needed)
+3. Verify config: `cat ~/.cursor/mcp.json | jq`
+4. Restart Cursor IDE
+5. (Optional) Use explicit path as backup: `--executable-path /absolute/path/to/browser`
 
 ### Issue: "No server info found" (cursor-browser-extension)
 

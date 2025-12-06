@@ -14,13 +14,21 @@
         "@playwright/mcp@latest",
         "--browser",
         "chromium"
-      ]
+      ],
+      "env": {
+        "PLAYWRIGHT_BROWSERS_PATH": "/home/dawson/.cache/ms-playwright",
+        "HOME": "/home/dawson"
+      }
     },
     "browser": {
       "command": "npx",
       "args": [
         "@agent-infra/mcp-server-browser"
-      ]
+      ],
+      "env": {
+        "PLAYWRIGHT_BROWSERS_PATH": "/home/dawson/.cache/ms-playwright",
+        "HOME": "/home/dawson"
+      }
     },
     "web-search": {
       "command": "npx",

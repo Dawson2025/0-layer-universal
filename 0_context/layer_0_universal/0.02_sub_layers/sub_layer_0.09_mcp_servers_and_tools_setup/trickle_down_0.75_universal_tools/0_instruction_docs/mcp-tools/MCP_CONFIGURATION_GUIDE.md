@@ -173,10 +173,16 @@ GITHUB_TOKEN=your_github_token_here
   "name": "playwright",
   "command": "npx",
   "args": ["-y", "@playwright/mcp@latest", "--browser", "chromium"],
+  "env": {
+    "PLAYWRIGHT_BROWSERS_PATH": "/home/dawson/.cache/ms-playwright",
+    "HOME": "/home/dawson"
+  },
   "category": "browser_automation",
   "dependencies": ["node", "browsers"]
 }
 ```
+
+**Critical Configuration Note**: The `PLAYWRIGHT_BROWSERS_PATH` environment variable must be set to the directory where Playwright browsers are installed (typically `~/.cache/ms-playwright`). Without this, the MCP server running via `npx` in an isolated environment cannot find the browsers, even if they're installed. This is why browsers appear to need constant reinstallation - the MCP server process doesn't inherit your shell's environment variables.
 
 #### Browser
 ```json
@@ -184,10 +190,16 @@ GITHUB_TOKEN=your_github_token_here
   "name": "browser",
   "command": "npx",
   "args": ["@agent-infra/mcp-server-browser"],
+  "env": {
+    "PLAYWRIGHT_BROWSERS_PATH": "/home/dawson/.cache/ms-playwright",
+    "HOME": "/home/dawson"
+  },
   "category": "browser_automation",
   "dependencies": ["browser"]
 }
 ```
+
+**Critical Configuration Note**: The `@agent-infra/mcp-server-browser` server also needs `PLAYWRIGHT_BROWSERS_PATH` set to find browsers installed via Playwright. Additionally, set `HOME` to ensure the MCP server process can access user-specific paths and configurations.
 
 ### Search & Research Servers
 
@@ -360,6 +372,48 @@ python3 scripts/mcp-cli.py validate development
 ## 🚨 Troubleshooting
 
 ### Common Issues and Solutions
+
+#### Browser "Not Installed" Error (Most Common)
+
+**Problem**: MCP browser servers report "Browser specified in your config is not installed" even when browsers are installed.
+
+**Root Cause**: 
+- MCP servers run via `npx` in isolated environments
+- They don't inherit your shell's environment variables
+- `PLAYWRIGHT_BROWSERS_PATH` isn't set, so servers can't find browsers in `~/.cache/ms-playwright/`
+- This is why browsers appear to need constant reinstallation - they're installed, but the MCP server can't find them
+
+**Solution**:
+1. Add environment variables to your MCP server configuration:
+   ```json
+   {
+     "playwright": {
+       "command": "npx",
+       "args": ["-y", "@playwright/mcp@latest", "--browser", "chromium"],
+       "env": {
+         "PLAYWRIGHT_BROWSERS_PATH": "/home/dawson/.cache/ms-playwright",
+         "HOME": "/home/dawson"
+       }
+     },
+     "browser": {
+       "command": "npx",
+       "args": ["@agent-infra/mcp-server-browser"],
+       "env": {
+         "PLAYWRIGHT_BROWSERS_PATH": "/home/dawson/.cache/ms-playwright",
+         "HOME": "/home/dawson"
+       }
+     }
+   }
+   ```
+2. Replace `/home/dawson` with your actual home directory path
+3. Verify browsers are installed: `ls -la ~/.cache/ms-playwright/chromium-*/chrome-linux64/chrome`
+4. Restart Cursor IDE after updating the configuration
+
+**Why This Keeps Happening**:
+- Each time Cursor restarts, it spawns new MCP server processes
+- These processes run via `npx` which creates isolated execution environments
+- Environment variables from your shell (like those in `.bashrc`) aren't automatically passed to MCP servers
+- The MCP server needs explicit configuration to find user-installed browsers
 
 #### Server Won't Start
 ```bash

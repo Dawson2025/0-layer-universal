@@ -18,8 +18,8 @@ This document documents the setup and troubleshooting of browser MCP servers in 
 
 **Location**: `~/.cursor/mcp.json`
 
-**Working Configuration (Verified 2025-12-04)**:
-Simplified configuration that works reliably in Cursor IDE on Linux/Ubuntu:
+**Working Configuration (Verified 2025-12-05 - Updated with Environment Variables)**:
+Configuration that works reliably in Cursor IDE on Linux/Ubuntu with proper environment variable setup:
 
 ```json
 {
@@ -31,13 +31,21 @@ Simplified configuration that works reliably in Cursor IDE on Linux/Ubuntu:
         "@playwright/mcp@latest",
         "--browser",
         "chromium"
-      ]
+      ],
+      "env": {
+        "PLAYWRIGHT_BROWSERS_PATH": "/home/dawson/.cache/ms-playwright",
+        "HOME": "/home/dawson"
+      }
     },
     "browser": {
       "command": "npx",
       "args": [
         "@agent-infra/mcp-server-browser"
-      ]
+      ],
+      "env": {
+        "PLAYWRIGHT_BROWSERS_PATH": "/home/dawson/.cache/ms-playwright",
+        "HOME": "/home/dawson"
+      }
     },
     "web-search": {
       "command": "npx",
@@ -57,12 +65,18 @@ Simplified configuration that works reliably in Cursor IDE on Linux/Ubuntu:
 }
 ```
 
+**Critical Configuration Notes**:
+- **Environment Variables Required**: The `PLAYWRIGHT_BROWSERS_PATH` and `HOME` environment variables are essential for MCP servers to find installed browsers
+- **Why This Matters**: MCP servers run via `npx` in isolated environments and don't inherit your shell's environment variables
+- **Prevents Recurring Issues**: This configuration prevents the constant "browser needs installation" problem
+- **Replace Paths**: Replace `/home/dawson` with your actual home directory path
+
 **Key Configuration Details**:
+- **Environment Variables**: `PLAYWRIGHT_BROWSERS_PATH` and `HOME` are required for MCP servers to find browsers
 - **Simplified Playwright config**: Removed complex options (executable-path, user-data-dir, output-dir, viewport-size, etc.)
-- Uses `--browser chromium` (Playwright will auto-detect the installed browser)
-- No explicit paths needed - Playwright MCP handles browser detection automatically
-- Same simple pattern works across different projects
-- Configuration matches working setup from other projects (e.g., `code/I-eat-repo/.mcp.json`)
+- Uses `--browser chromium` (Playwright will auto-detect the installed browser when environment variables are set)
+- **Critical Fix**: Environment variables prevent the recurring "browser needs installation" problem
+- Same pattern works across different projects when environment variables are included
 
 **Previous Complex Configuration (Not Recommended)**:
 The previous configuration had many options that may cause issues:
@@ -206,7 +220,8 @@ npx -y playwright@latest install chromium
 
 **Last Updated**: 2025-12-05  
 **Environment**: WSL2 (Ubuntu 24.04) on Windows 11, Lenovo Yoga 9 Pro  
-**Status**: ⚠️ Partially Working - Configuration documented, requires Windows Chrome path
+**Status**: ⚠️ Partially Working - Configuration documented, requires Windows Chrome path  
+**Critical Finding (2025-12-05)**: In WSL, both Playwright and Browser MCP tools are NOT exposed to AI agents. Only `mcp_cursor-browser-extension_*` tools are available.
 
 ### WSL-Specific Configuration
 
@@ -392,10 +407,11 @@ which xeyes || echo "X11 apps not available"
    - This works because Cursor IDE runs on Windows and needs to launch Windows Chrome
    - Status should show "Ready (Chrome detected)"
 
-2. **Alternative: Use Playwright MCP** (If cursor-browser-extension doesn't work):
-   - Playwright MCP works independently and doesn't rely on Cursor's browser extension
-   - Configured in `~/.config/mcp/mcp.json` with `--browser chromium`
-   - Playwright will use its own browser binaries or system Chromium
+2. **WSL Limitation - Playwright/Browser MCP Not Available**:
+   - ⚠️ **In WSL, Playwright MCP tools are NOT exposed to AI agents** (2025-12-05 finding)
+   - ⚠️ **In WSL, Browser MCP tools are also NOT exposed** (2025-12-05 finding)
+   - Even though servers connect and report tools, they are not accessible to agents
+   - **Use `mcp_cursor-browser-extension_*` tools instead** - these are the only browser automation tools available in WSL
 
 3. **If Issues Persist**:
    - Toggle browser extension MCP server off/on in Cursor Settings

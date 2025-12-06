@@ -25,9 +25,15 @@ This document outlines Linux/Ubuntu-specific issues with Cursor IDE's MCP (Model
 - AI agent tool list: No `mcp_playwright_*` tools available
 - Available tools: Only `mcp_browser_*` and `mcp_cursor-browser-extension_*` are accessible
 
-**Root Cause**: Cursor IDE's MCP tool exposure mechanism has platform-specific behavior. On Linux, Playwright MCP tools are not exposed to agents despite successful server connection.
+**Root Cause**: 
+- **Primary**: Cursor IDE bug (version 2.0.77 has known issue where MCP tools aren't exposed to agents)
+- **Secondary**: Cursor IDE's MCP tool exposure mechanism may have platform-specific behavior
+- **Evidence**: Internet research (2025-12-05) shows Windows users also experiencing the same issues
+- **Conclusion**: This is primarily a Cursor IDE bug affecting multiple platforms, not just Linux
 
-**Workaround**: Use `mcp_browser_*` tools from `@agent-infra/mcp-server-browser` instead of Playwright MCP tools.
+**Workaround**: 
+- **Native Linux**: Use `mcp_browser_*` tools from `@agent-infra/mcp-server-browser` (if available) or `mcp_cursor-browser-extension_*` tools
+- **WSL**: Use `mcp_cursor-browser-extension_*` tools (both Playwright and Browser MCP tools are not exposed in WSL)
 
 ### 2. Browser Path Configuration
 
@@ -80,11 +86,17 @@ This document outlines Linux/Ubuntu-specific issues with Cursor IDE's MCP (Model
 ## Available vs. Unavailable Tools
 
 ### ✅ Available on Linux
-- `mcp_browser_*` (21 tools) - From `@agent-infra/mcp-server-browser`
 - `mcp_cursor-browser-extension_*` (18 tools) - From Cursor's browser extension (may have browser detection issues)
+
+### ⚠️ May Be Available on Linux (Needs Verification)
+- `mcp_browser_*` (21 tools) - From `@agent-infra/mcp-server-browser` (documentation claims should work, but needs testing)
 
 ### ❌ Not Available on Linux
 - `mcp_playwright_*` (22 tools) - Server connects but tools not exposed to agents
+
+### ❌ Not Available on WSL (2025-12-05 Update)
+- `mcp_playwright_*` (22 tools) - Server connects but tools not exposed to agents
+- `mcp_browser_*` (21 tools) - **NEW FINDING**: Server runs but tools NOT exposed to agents (more severe than native Linux)
 
 ## Troubleshooting
 
@@ -118,15 +130,26 @@ In Cursor IDE:
 
 ## Recommendations for Linux Users
 
-1. **Use Browser MCP Instead of Playwright MCP**:
-   - Browser MCP tools (`mcp_browser_*`) are accessible on Linux
-   - Configure with explicit browser path
-   - Use bash wrapper for NVM support
+1. **Use Cursor Browser Extension Tools** (Most Reliable):
+   - `mcp_cursor-browser-extension_*` tools are accessible on both Linux and WSL
+   - Configure browser path in Cursor Settings → Tools & MCP → Browser Automation
+   - These tools work despite other MCP tools not being exposed
 
-2. **Avoid cursor-browser-extension**:
-   - Requires Chrome extension
-   - Has Linux-specific browser detection issues
-   - Not reliably supported on Linux
+2. **For Native Linux: Try Browser MCP** (If Available):
+   - Browser MCP tools (`mcp_browser_*`) may be accessible on native Linux
+   - Configure with explicit browser path and environment variables
+   - Use bash wrapper for NVM support if needed
+   - **Note**: Needs verification - documentation claims should work but not confirmed
+
+3. **For WSL: Use Cursor Browser Extension Only**:
+   - Both Playwright and Browser MCP tools are NOT exposed in WSL
+   - Only `mcp_cursor-browser-extension_*` tools are available
+   - This is more severe than native Linux
+
+2. **For WSL: cursor-browser-extension is the Only Option**:
+   - In WSL, both Playwright and Browser MCP tools are not exposed
+   - `mcp_cursor-browser-extension_*` tools are the only browser automation tools available
+   - Configure browser path in Cursor Settings (use Windows Chrome path: `C:\Program Files\Google\Chrome\Application\chrome.exe`)
 
 3. **Always Use Explicit Paths**:
    - Never rely on automatic browser detection
@@ -149,9 +172,41 @@ In Cursor IDE:
 - Cursor IDE Documentation: https://cursor.com/docs
 - GitHub Issues: #942, #1113 (Ubuntu-specific Playwright MCP problems)
 - Cursor Forum: Browser Automation Linux Install Path discussions
+- **Internet Research (2025-12-05)**:
+  - Cursor Forum: "MCP servers are not exposed to agents" (version 2.0.77 bug)
+  - Cursor Forum: "Browser Agent Tools Not Accessible Despite 'Ready' Status" (Windows users)
+  - Cursor Forum: "Playwright MCP not working on Cursor" (cross-platform)
+  - See [MCP Tool Exposure OS Analysis](./MCP_TOOL_EXPOSURE_OS_ANALYSIS.md) for comprehensive findings
 
 ---
 
-**Last Updated**: 2025-12-02  
-**Version**: 1.0
+## WSL-Specific Findings (2025-12-05)
+
+### Critical WSL Discovery
+
+**Finding**: In WSL2, BOTH Playwright AND Browser MCP tools are NOT exposed to AI agents, even though:
+- Both servers connect successfully
+- Both servers report tools as registered
+- Server processes are running correctly
+- Environment variables are configured properly
+
+**Impact**: This is MORE severe than native Linux, where Browser MCP tools may be available.
+
+**Available Tools in WSL**:
+- ✅ `mcp_cursor-browser-extension_*` (18 tools) - Only browser automation option in WSL
+- ❌ `mcp_playwright_*` (22 tools) - Not exposed
+- ❌ `mcp_browser_*` (21 tools) - Not exposed
+
+**WSL Configuration Notes**:
+- Cursor IDE runs on Windows but connects to WSL
+- MCP servers run in WSL environment
+- Browser path in Cursor Settings should use Windows path: `C:\Program Files\Google\Chrome\Application\chrome.exe`
+- Environment variables in MCP config use Linux paths: `/home/dawson/.cache/ms-playwright`
+
+**See Also**: [MCP Tool Exposure OS Analysis](./MCP_TOOL_EXPOSURE_OS_ANALYSIS.md) for comprehensive platform comparison
+
+---
+
+**Last Updated**: 2025-12-05  
+**Version**: 2.0
 
