@@ -448,7 +448,31 @@ cp ~/.cursor/mcp.json .cursor/mcp.json
 - Version 1.4.0: MCP tools not recognized
 - Older versions: Various MCP issues
 
-### Solution 22: Enable MCP Servers in Cursor Settings UI ⚠️ **CRITICAL STEP!**
+### Solution 22: Disable Unused MCP Servers (If Cursor Warns About Limits)
+
+**Status**: ⚠️ **May Be Required** - If Cursor warns about too many servers/tools
+
+**Finding (2025-12-05)**: User reported Cursor was warning about "too many MCP servers and too many tools" before disabling unused servers.
+
+**Action**:
+1. Go to Cursor Settings → Tools & MCP
+2. Review all installed MCP servers
+3. **Disable servers you're not actively using** (toggle OFF)
+4. This may free up capacity for needed tools
+
+**Why This Matters**:
+- Cursor may have limits on active MCP servers/tools
+- Too many enabled servers may prevent new tools from being exposed
+- Disabling unused servers may resolve tool availability issues
+
+**Evidence**:
+- User disabled unused servers and Playwright tools became available
+- Cursor was warning about too many servers/tools before
+- After disabling unused servers, warning disappeared and tools worked
+
+**Recommendation**: Only enable MCP servers that you actively need.
+
+### Solution 23: Enable MCP Servers in Cursor Settings UI ⚠️ **CRITICAL STEP!**
 
 **Status**: ✅ **BREAKTHROUGH DISCOVERY** - UI enablement is required!
 
@@ -474,7 +498,7 @@ cp ~/.cursor/mcp.json .cursor/mcp.json
 
 **Note**: This is separate from login requirement (Solution 23 below).
 
-### Solution 23: Ensure You're Logged Into Cursor IDE
+### Solution 24: Ensure You're Logged Into Cursor IDE
 
 **Status**: ✅ **CRITICAL DISCOVERY** - Login may be required!
 
@@ -497,7 +521,7 @@ cp ~/.cursor/mcp.json .cursor/mcp.json
 
 **Note**: Even after login, browser detection may still fail - see Solution 24.
 
-### Solution 24: Use Browser MCP Tools (Working Solution!)
+### Solution 25: Use Browser MCP Tools (Working Solution!)
 
 **Status**: ✅ **CONFIRMED WORKING** - Browser MCP tools work after login!
 
@@ -515,7 +539,7 @@ cp ~/.cursor/mcp.json .cursor/mcp.json
 
 **Why This Works**: Browser MCP server (`@agent-infra/mcp-server-browser`) has better browser detection than Playwright MCP in this environment.
 
-### Solution 25: Use Playwright Browser Install Tool
+### Solution 26: Use Playwright Browser Install Tool
 
 **Status**: ⚠️ **May Fix Browser Detection** - Try this if Playwright tools are available but browser not found
 

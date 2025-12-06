@@ -48,7 +48,22 @@ Playwright MCP tools were configured in `mcp.json` but not available to AI agent
    - `HOME`: Ensures proper home directory resolution
 3. **Browser specification**: `--browser chromium` flag
 
-### Step 2: Enable MCP Server in Cursor Settings UI ⚠️ **CRITICAL**
+### Step 2: Disable Unused MCP Servers (If Needed) ⚠️ **May Be Required**
+
+**If Cursor warns about too many MCP servers/tools:**
+
+**Action**:
+1. Go to **Cursor Settings** → **Tools & MCP**
+2. Review all installed MCP servers
+3. **Disable servers you're not actively using** (toggle OFF)
+4. This may free up capacity for needed tools
+
+**Why This Matters**:
+- Cursor may have limits on active MCP servers/tools
+- Too many enabled servers may prevent new tools from being exposed
+- Disabling unused servers may resolve tool availability issues
+
+### Step 3: Enable MCP Server in Cursor Settings UI ⚠️ **CRITICAL**
 
 **This is the step that was missing!**
 
@@ -65,7 +80,7 @@ Playwright MCP tools were configured in `mcp.json` but not available to AI agent
 - UI toggle is the final step to expose tools to AI agents
 - Tools will not be available until server is enabled in UI
 
-### Step 3: Verify Tools Are Available ✅
+### Step 4: Verify Tools Are Available ✅
 
 **Test**:
 - Tool: `mcp_playwright_browser_navigate("https://www.aleks.com")`
@@ -108,12 +123,44 @@ Playwright MCP tools were configured in `mcp.json` but not available to AI agent
 4. ✅ Reordered servers - Didn't help
 5. ✅ Checked for duplicates - None found
 6. ✅ Created project-specific config - Didn't help
-7. ❌ **Missing**: Enable in Cursor Settings UI - **This was the critical step!**
+7. ✅ Disabled unused MCP servers - **May have helped** (freed up capacity)
+8. ❌ **Missing**: Enable in Cursor Settings UI - **This was the critical step!**
+
+## Complete Solution (All Steps)
+
+**To get Playwright MCP tools working, you need:**
+
+1. ✅ **Configure in mcp.json** - Full paths, environment variables
+2. ✅ **Disable unused MCP servers** - Free up capacity (if Cursor warns about limits)
+3. ✅ **Enable Playwright server in Cursor Settings UI** - **CRITICAL**
+4. ✅ **Verify tools are available** - Test navigation
+
+**All steps may be necessary for success.**
 
 ## Key Learnings
 
-### Critical Discovery
+### Critical Discovery #1: UI Enablement Required
 **MCP servers must be enabled in Cursor Settings UI**, not just configured in mcp.json.
+
+### Critical Discovery #2: MCP Server/Tool Limits
+**Cursor may have limits on the number of active MCP servers and tools.**
+
+**Finding (2025-12-05)**: User reported that Cursor was warning about "too many MCP servers and too many tools" before disabling unused servers.
+
+**Action Taken**:
+- Disabled unused MCP servers in Cursor Settings UI
+- Only enabled servers that were actually needed
+- This may have helped Playwright tools become available
+
+**Implication**:
+- There may be a maximum number of MCP servers that can be active simultaneously
+- There may be a maximum number of tools that can be exposed to AI agents
+- Disabling unused servers may free up capacity for needed tools
+
+**Recommendation**:
+- Only enable MCP servers that you actively need
+- Disable servers that aren't being used
+- If tools aren't appearing, try disabling other servers to free up capacity
 
 ### Configuration Requirements
 1. **mcp.json configuration** - Required for server setup
@@ -150,6 +197,13 @@ Playwright MCP tools were configured in `mcp.json` but not available to AI agent
 2. Re-enable if needed
 3. Enablement may not persist across restarts
 
+### Cursor Warning About Too Many MCP Servers/Tools
+1. Go to Cursor Settings → Tools & MCP
+2. Review all enabled servers
+3. Disable servers you're not actively using
+4. Try enabling the server you need again
+5. This may free up capacity for new tools
+
 ### Browser Detection Issues
 1. Verify `PLAYWRIGHT_BROWSERS_PATH` is set correctly
 2. Check browser installation: `ls ~/.cache/ms-playwright/chromium-*/`
@@ -174,5 +228,8 @@ Playwright MCP tools were configured in `mcp.json` but not available to AI agent
 
 ---
 
-**Key Takeaway**: Configuration in `mcp.json` + **Enablement in Cursor Settings UI** = Working Playwright MCP tools!
+**Key Takeaways**: 
+1. Configuration in `mcp.json` + **Enablement in Cursor Settings UI** = Working Playwright MCP tools!
+2. **Disable unused MCP servers** if Cursor warns about too many servers/tools - this may free up capacity
+3. Cursor may have limits on active MCP servers and tools - manage which servers are enabled
 
