@@ -98,6 +98,19 @@ After understanding the framework, read **Section 4.7** of this file for the ste
 
 **Bookmark Section 4.8 for quick reference during work.**
 
+### 1.1 Sublayer Navigation Rule (Stable IDs)
+
+**Important**: Sublayer numbers (e.g., `sub_layer_0.10_*`) indicate **ordering**, not identity. The stable identifier is the **slug** (e.g., `mcp_servers_and_tools_setup`).
+
+To avoid breaking links when we reorder/renumber, prefer linking to the **alias files**:
+
+- Sublayer registry: `layer_0_universal/0.02_sub_layers/0.00_sub_layer_registry/sub_layer_registry.yaml`
+- Alias links (stable): `layer_0_universal/0.02_sub_layers/0.00_sub_layer_registry/aliases/<slug>.md`
+
+Example:
+- Use: `layer_0_universal/0.02_sub_layers/0.00_sub_layer_registry/aliases/mcp_servers_and_tools_setup.md`
+- Avoid: `layer_0_universal/0.02_sub_layers/sub_layer_0.10_mcp_servers_and_tools_setup/` (this number can change)
+
 ### 2. Discover & Read Project-Specific Init Prompt
 
 **How to find it:**
@@ -122,6 +135,8 @@ ls -d */0_context/0_context/0_basic_prompts_throughout/project_init_prompt.md 2>
 If the task involves MCP servers/tools (browser automation, web-search, etc.), load the MCP sublayer and pick your OS + AI app:
 - Universal MCP hub:
   - `0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.10_mcp_servers_and_tools_setup/`
+- Stable alias (preferred for docs/links):
+  - `0_context/layer_0_universal/0.02_sub_layers/0.00_sub_layer_registry/aliases/mcp_servers_and_tools_setup.md`
 - OS-specific runbooks:
   - `.../sub_layer_0.10_mcp_servers_and_tools_setup/0.02_mcp_config_options_0_file_tree_0/0.03_operating_systems/<os>/`
 - App-specific runbooks:

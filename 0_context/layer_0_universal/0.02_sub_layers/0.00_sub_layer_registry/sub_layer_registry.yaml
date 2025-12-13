@@ -1,0 +1,55 @@
+# Auto-generated. Do not edit by hand.
+generated_at_utc: 2025-12-13T23:46:27+00:00
+sublayers:
+  - slug: basic_prompts_throughout
+    number: "0.01"
+    folder: sub_layer_0.01_basic_prompts_throughout
+    path: layer_0_universal/0.02_sub_layers/sub_layer_0.01_basic_prompts_throughout
+  - slug: software_engineering_knowledge_system
+    number: "0.02"
+    folder: sub_layer_0.02_software_engineering_knowledge_system
+    path: layer_0_universal/0.02_sub_layers/sub_layer_0.02_software_engineering_knowledge_system
+  - slug: universal_principles
+    number: "0.03"
+    folder: sub_layer_0.03_universal_principles
+    path: layer_0_universal/0.02_sub_layers/sub_layer_0.03_universal_principles
+  - slug: universal_rules
+    number: "0.04"
+    folder: sub_layer_0.04_universal_rules
+    path: layer_0_universal/0.02_sub_layers/sub_layer_0.04_universal_rules
+  - slug: os_setup
+    number: "0.05"
+    folder: sub_layer_0.05_os_setup
+    path: layer_0_universal/0.02_sub_layers/sub_layer_0.05_os_setup
+  - slug: environment_setup
+    number: "0.06"
+    folder: sub_layer_0.06_environment_setup
+    path: layer_0_universal/0.02_sub_layers/sub_layer_0.06_environment_setup
+  - slug: coding_app_setup
+    number: "0.07"
+    folder: sub_layer_0.07_coding_app_setup
+    path: layer_0_universal/0.02_sub_layers/sub_layer_0.07_coding_app_setup
+  - slug: apps_browsers_extensions_setup
+    number: "0.08"
+    folder: sub_layer_0.08_apps_browsers_extensions_setup
+    path: layer_0_universal/0.02_sub_layers/sub_layer_0.08_apps_browsers_extensions_setup
+  - slug: ai_apps_tools_setup
+    number: "0.09"
+    folder: sub_layer_0.09_ai_apps_tools_setup
+    path: layer_0_universal/0.02_sub_layers/sub_layer_0.09_ai_apps_tools_setup
+  - slug: mcp_servers_and_tools_setup
+    number: "0.10"
+    folder: sub_layer_0.10_mcp_servers_and_tools_setup
+    path: layer_0_universal/0.02_sub_layers/sub_layer_0.10_mcp_servers_and_tools_setup
+  - slug: ai_models
+    number: "0.11"
+    folder: sub_layer_0.11_ai_models
+    path: layer_0_universal/0.02_sub_layers/sub_layer_0.11_ai_models
+  - slug: universal_tools
+    number: "0.12"
+    folder: sub_layer_0.12_universal_tools
+    path: layer_0_universal/0.02_sub_layers/sub_layer_0.12_universal_tools
+  - slug: agent_setup
+    number: "0.13"
+    folder: sub_layer_0.13_agent_setup
+    path: layer_0_universal/0.02_sub_layers/sub_layer_0.13_agent_setup
