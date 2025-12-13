@@ -1,7 +1,0 @@
-# chrome-devtools-mcp (cursor_agent on wsl)
-
-## Canonical docs
-- ../../../../../../0.05_mcp_servers/chrome-devtools-mcp/
-
-## Notes
-Add wsl + cursor_agent specific setup notes here.
