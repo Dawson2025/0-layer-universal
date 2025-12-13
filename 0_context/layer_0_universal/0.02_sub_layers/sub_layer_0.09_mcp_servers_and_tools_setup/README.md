@@ -10,21 +10,21 @@ This sublayer contains documentation and configuration for setting up MCP server
 
 ```
 sub_layer_0.09_mcp_servers_and_tools_setup/
-└── trickle_down_0.75_universal_tools/
-    └── 0_instruction_docs/
-        └── mcp-tools/
-            ├── README.md
-            ├── MCP_SYSTEM_GUIDE.md
-            ├── MCP_CONFIGURATION_GUIDE.md
-            ├── MCP_TOOL_EXPOSURE_OS_ANALYSIS.md (NEW - 2025-12-05)
-            ├── MCP_TOOL_EXPOSURE_SOLUTIONS.md (NEW - 2025-12-05)
-            ├── BROWSER_ENV_VAR_FIX.md (NEW - 2025-12-05)
-            ├── CURSOR_BROWSER_MCP_SETUP.md
-            ├── CURSOR_IDE_LINUX_MCP_ISSUES.md
-            ├── BROWSER_MCP_SETUP_EXPERIENCE.md
-            ├── PLAYWRIGHT_MCP_TESTING.md
-            ├── CONTEXT7_CLAUDE_SETUP.md
-            └── CONTEXT7_QUICK_REFERENCE.md
+├── 0.01_core-system/                      # Cross-app system docs (source of truth)
+├── 0.02_ai_apps/                          # App-specific MCP setup runbooks
+│   ├── claude_code_cli/
+│   ├── gemini_cli/
+│   ├── codex_cli/
+│   └── cursor_agent/
+├── 0.02_mcp_config_options_0_file_tree_0/  # Traversable file tree (OS → AI app → MCP options → issues)
+│   └── operating_system/
+│       ├── windows/
+│       ├── wsl/
+│       ├── macos/
+│       └── linux_ubuntu/
+├── 0.03_automation/                       # Setup automation scripts
+├── 0.04_general-issues ->                 # Compatibility link (contents live in file tree)
+└── 0.05_mcp_servers ->                    # Compatibility link (contents live in file tree)
 ```
 
 ## Relationship to Other Sublayers
@@ -67,9 +67,19 @@ sub_layer_0.09_mcp_servers_and_tools_setup/
 ## App-Specific MCP Setup
 
 MCP servers are configured per AI application:
-- **Cursor IDE**: `~/.cursor/mcp.json`
-- **Claude Code**: `~/.claude/mcp.json`
-- **Other tools**: Check respective documentation
+- **Codex CLI**: `~/.codex/config.toml` (generated via `automation/scripts/codex_mcp_sync.py`)
+- **Gemini CLI**: `~/.gemini/settings.json` (`mcpServers` block; often points to wrapper scripts)
+- **Claude Code CLI**: `~/.claude.json` (project/server entries and `claude mcp` commands)
+- **Cursor**: `~/.cursor/mcp.json` (IDE tool exposure quirks may apply)
+
+See `0.02_ai_apps/` for per-app runbooks.
+
+## OS-Specific MCP Setup
+When a setup depends on the OS/runtime (especially browser automation), start here:
+- `0.02_mcp_config_options_0_file_tree_0/operating_system/wsl/` (WSLg headed browser notes)
+- `0.02_mcp_config_options_0_file_tree_0/operating_system/windows/`
+- `0.02_mcp_config_options_0_file_tree_0/operating_system/macos/`
+- `0.02_mcp_config_options_0_file_tree_0/operating_system/linux_ubuntu/`
 
 ## Common MCP Servers
 
@@ -105,4 +115,3 @@ MCP servers are configured per AI application:
 
 **Last Updated**: 2025-12-05  
 **Version**: 2.0
-

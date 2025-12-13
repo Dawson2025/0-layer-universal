@@ -113,6 +113,21 @@ ls -d */0_context/0_context/0_basic_prompts_throughout/project_init_prompt.md 2>
 
 **If project init prompt EXISTS:** Read and follow it immediately.
 
+**Then load the active stage agent system:**
+- For each layer you touch (project/feature/component), enter the current stage folder (e.g., `.../1.99_stages/stage_1.xx_*` or `2.99_stages/stage_2.xx_*`) and open `ai_agent_system/README.md`.
+- Follow the init prompts listed there (this universal init + the project init) so every agent session is anchored to both universal and project context.
+
+### 2.1 MCP / Tooling Context (OS + App aware)
+If the task involves MCP servers/tools (browser automation, web-search, etc.), load the MCP sublayer and pick your OS + AI app:
+- Universal MCP hub:
+  - `0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.09_mcp_servers_and_tools_setup/`
+- OS-specific runbooks:
+  - `.../sub_layer_0.09_mcp_servers_and_tools_setup/0.01_operating_system/<os>/`
+- App-specific runbooks:
+  - `.../sub_layer_0.09_mcp_servers_and_tools_setup/0.02_ai_apps/<ai_app>/`
+
+This is where you confirm “headed vs headless” requirements, WSLg env vars, and which MCP server is recommended for the current CLI.
+
 **If project init prompt DOES NOT EXIST:**
 1. Notify the user:
    ```
@@ -207,9 +222,14 @@ Within each layer, stages represent the chronological workflow:
 **Each stage folder contains:**
 ```
 stage_<N>.xx_<name>/
+├── docs/                 # Persistent stage notes (checklists, criticism/fix logs)
 ├── hand_off_documents/    # Briefs, decisions, outputs for agent handoffs
 └── ai_agent_system/      # Runbooks/configs for the stage owner agent
 ```
+
+**Stage logging rule (critical):**
+- Store **criticism** in `stage_<N>.06_criticism/docs/` and **fixes** in `stage_<N>.07_fixing/docs/` for the relevant layer/workflow.
+- Do not embed workflow-specific criticism/fix content inside init prompts; init prompts should only describe *where* to record it.
 
 **Status Tracking:**
 - Each layer's `status_<N>.json` tracks `current_stage` and per-stage state
@@ -1232,14 +1252,8 @@ Do not remove these references during summarization; they are required navigatio
 - `layer_0_universal/0.04_universal_rules/trickle_down_0_universal/0_instruction_docs/testing-agent-instructions.md`
 
 ### For MCP Tools
-**Read when using Model Context Protocol servers:**
-- `layer_0_universal/0.02_sub_layers/sub_layer_0.09_mcp_servers_and_tools_setup/trickle_down_0.75_universal_tools/0_instruction_docs/mcp-tools/README.md`
-- `layer_0_universal/0.02_sub_layers/sub_layer_0.09_mcp_servers_and_tools_setup/trickle_down_0.75_universal_tools/0_instruction_docs/mcp-tools/MCP_SYSTEM_GUIDE.md`
-- `layer_0_universal/0.02_sub_layers/sub_layer_0.09_mcp_servers_and_tools_setup/trickle_down_0.75_universal_tools/0_instruction_docs/mcp-tools/MCP_CONFIGURATION_GUIDE.md`
-
-**⚠️ CRITICAL: Linux/Ubuntu-Specific MCP Issues**
-**MANDATORY - Read if running on Linux/Ubuntu:**
-- `layer_0_universal/0.02_sub_layers/sub_layer_0.09_mcp_servers_and_tools_setup/trickle_down_0.75_universal_tools/0_instruction_docs/mcp-tools/BROWSER_MCP_SETUP_EXPERIENCE.md` - **Read Lesson 1 first!**
+**Read when using Model Context Protocol servers or troubleshooting issues:**
+- `layer_0_universal/0.02_sub_layers/sub_layer_0.09_mcp_servers_and_tools_setup/trickle_down_0.75_universal_tools/0_instruction_docs/mcp-tools/README.md` - **Start here for an overview of MCP setup, automation, and specific OS/AI tool documentation.**
 
 ### For ALEKS Mathematics Input (Critical!)
 
@@ -1485,15 +1499,15 @@ await enterDomainWithUnion(page,
 );
 ```
 
-### Key Linux/Ubuntu Limitations
+### Key Cursor IDE MCP Limitations (Affects Linux, Windows, WSL)
 
 
-1. **Playwright MCP Tools**: Server connects and reports tools, but Cursor IDE on Linux does NOT expose them to AI agents. Tools registered but not accessible.
+1. **Playwright MCP Tools**: Server connects and reports tools, but Cursor IDE (v2.0.77+) fails to expose them to AI agents on Linux, Windows, and WSL. This is a Cursor IDE bug, not specific to Linux.
 2. **Browser Path Detection**: Always fails on Linux - must use explicit `--executable-path` in MCP config.
-3. **NVM/Node.js**: Requires bash wrapper to load NVM in MCP server processes.
+3. **NVM/Node.js**: Requires bash wrapper to load NVM in MCP server processes (especially on Linux).
 4. **Tool Naming**: May differ from Windows/macOS documentation.
 
-**Workaround**: Use `mcp_browser_*` tools from `@agent-infra/mcp-server-browser` instead of Playwright MCP on Linux.
+**Workaround**: Use `mcp_browser_*` tools from `@agent-infra/mcp-server-browser` instead of Playwright MCP on Linux/WSL.
 
 ### For Lesson Plan Development (Graphing)
 **IMPORTANT: Read before creating lesson plans with interactive graphs:**
