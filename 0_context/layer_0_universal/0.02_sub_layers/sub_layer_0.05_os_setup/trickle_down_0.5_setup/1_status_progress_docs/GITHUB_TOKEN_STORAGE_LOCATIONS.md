@@ -4,26 +4,21 @@
 
 This document tracks where GitHub Personal Access Tokens are stored for the pac20026_fall2025 repository and provides quick reference for future access.
 
-## Primary Storage Location
+## Primary Storage Location (Preferred)
 
-### Git Credentials File (Secure Storage)
+### Org-scoped credential helper + local PAT file
 
-**Location**: `~/.git-credentials`  
-**Full Path**: `/home/dawson/.git-credentials`
+**Goal**: Store a PAT for a single SSO-protected org (e.g., `byui-math-dept`) without using `~/.git-credentials` and without embedding tokens in remotes.
 
-**Contents**:
-```
-https://dawson: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@github.com
-```
+**Token file** (local only; never commit):
+- `~/.config/git/pats/byui-math-dept.pat` (permissions: `chmod 600`)
 
-**Security**:
-- Permissions: `600` (read/write for owner only)
-- Protected by file system permissions
-- Used automatically by Git for authentication
+**Credential helper** (local only):
+- `~/.local/bin/git-credential-github-byui-math-dept`
 
-**Configuration**:
+**Critical git config** (enables org-scoped matching):
 ```bash
-git config --global credential.helper store
+git config --global credential.useHttpPath true
 ```
 
 ## Secondary Documentation Location
@@ -42,23 +37,22 @@ git config --global credential.helper store
 - Added to `.gitignore` to prevent accidental commits
 - Local file only (never committed to repository)
 
-## GitHub Web Interface
+## GitHub Web Interface (Token Management)
 
 **Token Management**: https://github.com/settings/tokens  
-**Token ID**: 2803295200  
-**Token Name**: "Clone pac20026_fall2025 repo"
+**Token ID / Value**: Do not store token IDs or token values in committed docs.
 
-### Token Details:
-- **Scopes**: `repo` (full repository access)
-- **Expires**: December 11, 2025
-- **SSO Authorized**: ✅ byui-math-dept organization
-- **Status**: Active and working
+### Token Details (example fields to track locally)
+- **Scopes**: `repo` (minimum for private repo access)
+- **Expires**: `<date>` or `No expiration` (per org policy)
+- **SSO Authorized**: ✅ (must be explicitly authorized)
+- **Status**: Active
 
-## Universal Documentation
+## Universal Documentation (Source of Truth)
 
 **Complete Setup Guide**: 
 ```
-/home/dawson/code/0_ai_context/0_context/trickle_down_0.5_setup/0_instruction_docs/github_sso_token_setup.md
+/home/dawson/code/0_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.06_environment_setup/trickle_down_0.5_setup/0_instruction_docs/github/github_sso_token_setup.md
 ```
 
 Contains:
@@ -70,14 +64,9 @@ Contains:
 
 ## Quick Reference Commands
 
-### View Stored Token
+### Check Token File Permissions
 ```bash
-cat ~/.git-credentials
-```
-
-### Check Token Permissions
-```bash
-ls -la ~/.git-credentials
+ls -la ~/.config/git/pats/byui-math-dept.pat
 ```
 
 ### Test Repository Access
@@ -89,7 +78,8 @@ git pull
 
 ### View Git Configuration
 ```bash
-git config --global credential.helper
+git config --global --get-all credential.helper
+git config --global credential.useHttpPath
 ```
 
 ## Repository Configuration
@@ -112,9 +102,9 @@ git config --global credential.helper
 ## Security Best Practices
 
 ### ✅ Do:
-- Keep token in `~/.git-credentials` with 600 permissions
+- Keep token in a local file with `600` permissions (or an OS-native credential manager)
 - Add token documentation to `.gitignore`
-- Use `credential.helper = store` for automatic authentication
+- Use an org-scoped helper (or OS-native credential manager) for automatic authentication
 - Authorize token for SSO immediately after creation
 - Document token expiration date
 
@@ -161,4 +151,3 @@ When token expires (December 11, 2025):
 ---
 
 **Note**: This document is in the universal 0_ai_context directory so it can be referenced across all future AI sessions.
-

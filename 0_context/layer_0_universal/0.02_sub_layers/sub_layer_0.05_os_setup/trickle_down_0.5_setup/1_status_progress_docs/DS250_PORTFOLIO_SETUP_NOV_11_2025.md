@@ -25,7 +25,7 @@
 #### Token Creation
 - **Token Name**: "Cursor (read:user repo user:email workflow) 2"
 - **Token ID**: 2803378689  
-- **Token**: `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`
+- **Token**: `<REDACTED>`
 - **Scopes**: Full permissions (admin:enterprise, admin:org, repo, user, workflow, etc.)
 - **Expires**: December 11, 2025
 
@@ -41,7 +41,7 @@ Used MCP browser automation to complete SAML SSO authorization:
 #### Git Credentials Storage
 ```bash
 # Updated credentials file
-echo "https://dawson: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@github.com" > ~/.git-credentials
+echo "https://<username>:<token>@github.com" > ~/.git-credentials
 chmod 600 ~/.git-credentials
 
 # Git configuration

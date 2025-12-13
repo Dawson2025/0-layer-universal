@@ -12,23 +12,24 @@ Use this when defining the universal layer for any ecosystem.
 - sub_layer_0.03_universal_principles: philosophies, values.
 - sub_layer_0.04_universal_rules: hard constraints (git, terminal, security).
 - sub_layer_0.05_os_setup: OS-specific setup (macOS/Linux/Windows).
-- sub_layer_0.06_coding_app_setup: IDE/editor configuration.
-- sub_layer_0.07_apps_browsers_extensions_setup: general apps, browsers, extensions.
-- sub_layer_0.08_ai_apps_tools_setup: AI clients/CLIs and integrations.
-- sub_layer_0.09_mcp_servers_and_tools_setup: MCP server setup and configuration (depends on 0.08).
-- sub_layer_0.10_ai_models: approved models and usage guidance.
-- sub_layer_0.11_universal_tools: cross-project scripts/utilities.
-- sub_layer_0.12_agent_setup: agent configuration with model fallbacks and MCP integration (depends on 0.08, 0.09, 0.10, 0.11).
+- sub_layer_0.06_environment_setup: environment-level setup (git/github auth, credentials, shells).
+- sub_layer_0.07_coding_app_setup: IDE/editor configuration.
+- sub_layer_0.08_apps_browsers_extensions_setup: general apps, browsers, extensions.
+- sub_layer_0.09_ai_apps_tools_setup: AI clients/CLIs and integrations.
+- sub_layer_0.10_mcp_servers_and_tools_setup: MCP server setup and configuration (depends on 0.09).
+- sub_layer_0.11_ai_models: approved models and usage guidance.
+- sub_layer_0.12_universal_tools: cross-project scripts/utilities.
+- sub_layer_0.13_agent_setup: agent configuration with model fallbacks and MCP integration (depends on 0.09, 0.10, 0.11, 0.12).
 - 0.99_stages: stage folders and status template.
 
-## AI Setup Dependency Chain (0.08–0.12)
+## AI Setup Dependency Chain (0.09–0.13)
 
-The slots 0.08–0.12 form a critical dependency chain for AI agent setup:
-- **0.08** → **0.09**: MCP servers are configured within AI apps/tools
-- **0.09** → **0.10**: Models may be accessed via MCP servers
-- **0.10** → **0.11**: Universal tools provide capabilities that agents can use
-- **0.11** → **0.12**: Agents require tools (including universal tools) to function
-- **0.12** depends on all four: agents run in apps (0.08), use MCP servers (0.09), require models (0.10), and use universal tools (0.11)
+The slots 0.09–0.13 form a critical dependency chain for AI agent setup:
+- **0.09** → **0.10**: MCP servers are configured within AI apps/tools
+- **0.10** → **0.11**: Models may be accessed via MCP servers
+- **0.11** → **0.12**: Universal tools provide capabilities that agents can use
+- **0.12** → **0.13**: Agents require tools (including universal tools) to function
+- **0.13** depends on all four: agents run in apps (0.09), use MCP servers (0.10), require models (0.11), and use universal tools (0.12)
 
 Configure these in order when setting up a new AI environment.
 

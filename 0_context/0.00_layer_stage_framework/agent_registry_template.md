@@ -4,14 +4,14 @@ Use this file (copy/rename to your repo, e.g., `agent_registry.md`) to register 
 
 ## Context: AI Setup Dependency Chain
 
-Agents depend on the AI setup dependency chain in the universal layer (0.08–0.12):
-- **0.08 AI Apps/Tools Setup**: Agents run within AI applications (Cursor IDE, Claude Code, etc.)
-- **0.09 MCP Servers and Tools Setup**: Agents use MCP servers for capabilities (browser automation, documentation, etc.)
-- **0.10 AI Models**: Agents require AI models to function
-- **0.11 Universal Tools**: Agents use universal tools for capabilities (browser automation, development frameworks, etc.)
-- **0.12 Agent Setup**: Agent configuration with model fallbacks, MCP integration, and tool access
+Agents depend on the AI setup dependency chain in the universal layer (0.09–0.13):
+- **0.09 AI Apps/Tools Setup**: Agents run within AI applications (Cursor IDE, Claude Code, etc.)
+- **0.10 MCP Servers and Tools Setup**: Agents use MCP servers for capabilities (browser automation, documentation, etc.)
+- **0.11 AI Models**: Agents require AI models to function
+- **0.12 Universal Tools**: Agents use universal tools for capabilities (browser automation, development frameworks, etc.)
+- **0.13 Agent Setup**: Agent configuration with model fallbacks, MCP integration, and tool access
 
-When registering agents, ensure the AI setup layers (0.08–0.12) are configured before agents can be invoked.
+When registering agents, ensure the AI setup layers (0.09–0.13) are configured before agents can be invoked.
 
 ## Required entries
 - **layer**: `0|1|2|3`
@@ -59,10 +59,10 @@ When registering agents, ensure the AI setup layers (0.08–0.12) are configured
 
 When configuring agents in the registry, consider:
 
-- **Model Selection**: Agents should specify primary models and fallback order (see `sub_layer_0.12_agent_setup`)
-- **MCP Integration**: Agents may depend on specific MCP servers configured in `sub_layer_0.09_mcp_servers_and_tools_setup`
-- **Tool Access**: Agents may use universal tools from `sub_layer_0.11_universal_tools`
-- **App Context**: Agents run within AI applications configured in `sub_layer_0.08_ai_apps_tools_setup`
+- **Model Selection**: Agents should specify primary models and fallback order (see `sub_layer_0.13_agent_setup`)
+- **MCP Integration**: Agents may depend on specific MCP servers configured in `sub_layer_0.10_mcp_servers_and_tools_setup`
+- **Tool Access**: Agents may use universal tools from `sub_layer_0.12_universal_tools`
+- **App Context**: Agents run within AI applications configured in `sub_layer_0.09_ai_apps_tools_setup`
 
 Example agent configuration with model fallbacks:
 ```yaml
@@ -75,7 +75,7 @@ invoke_notes: |
 
 ## Usage
 1) Copy this template to your repo (e.g., `agent_registry.yaml`).
-2) Ensure AI setup layers (0.08–0.12) are configured before registering agents.
+2) Ensure AI setup layers (0.09–0.13) are configured before registering agents.
 3) Fill entries for every manager agent you will use in the session.
 4) Specify model fallbacks and MCP dependencies in `invoke_notes`.
 5) Keep it near the top-level context (e.g., next to `MASTER_DOCUMENTATION_INDEX.md`) so universal manager can load it first.

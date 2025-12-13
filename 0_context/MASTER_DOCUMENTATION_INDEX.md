@@ -90,21 +90,15 @@ This master index provides a comprehensive overview of all documentation organiz
 │   ├── 2_archive_docs/         # Completed setup documentation
 │   └── 2_testing_docs/         # Testing documentation
 ├── layer_0_universal/0.02_sub_layers/
-│   ├── sub_layer_0.09_mcp_servers_and_tools_setup/  # MCP server setup (depends on 0.08)
-│   │   └── trickle_down_0.75_universal_tools/0_instruction_docs/mcp-tools/
-│   ├── sub_layer_0.11_agent_setup/            # Agent setup (depends on 0.08, 0.09, 0.10)
-│   │   └── trickle_down_0.75_universal_tools/0_instruction_docs/
-│   │       ├── agent-configs/          # Agent configuration files
-│   │       ├── model-fallbacks/        # Model fallback configurations
-│   │       ├── app-specific-agents/    # App-specific agent setups
-│   │       └── mcp-agent-integration/  # MCP server agent integration
-│   ├── sub_layer_0.12_universal_tools/        # Universal tools
-│   │   └── trickle_down_0.75_universal_tools/0_instruction_docs/
-│   │       ├── browser-automation/ # Browser automation tools
-│   │       ├── meta-intelligent-orchestration/ # Orchestration tools
-│   │       ├── project-analysis/   # Project analysis tools
-│   │       ├── visual-orchestration/ # Visual planning tools
-│   │       └── claude-code-config/ # Claude-specific configurations
+│   ├── sub_layer_0.06_environment_setup/            # Git/GitHub auth, credentials, cross-app environment rules
+│   ├── sub_layer_0.09_ai_apps_tools_setup/          # AI apps/tools setup (required before MCP setup)
+│   ├── sub_layer_0.10_mcp_servers_and_tools_setup/  # MCP server setup (depends on 0.09)
+│   │   ├── 0.01_core-system/
+│   │   ├── 0.02_mcp_config_options_0_file_tree_0/
+│   │   └── 0.06_automation/
+│   ├── sub_layer_0.11_ai_models/                    # AI models guidance
+│   ├── sub_layer_0.12_universal_tools/              # Universal tools
+│   └── sub_layer_0.13_agent_setup/                  # Agent setup (depends on 0.09–0.12)
 │   ├── 1_status_progress_docs/ # Tool development status
 │   ├── 2_archive_docs/         # Completed tool implementations
 │   └── 2_testing_docs/         # Testing documentation
@@ -240,7 +234,7 @@ This master index provides a comprehensive overview of all documentation organiz
 - **AI Agent Protocols**: `trickle_down_0_universal/`
 - **Basic Prompts Throughout**: `0_basic_prompts_throughout/` (CRITICAL for all AI agents)
 - **Environment Setup**: `trickle_down_0.5_setup/`
-  - **GitHub SSO Setup**: `trickle_down_0.5_setup/0_instruction_docs/github_sso_token_setup.md` (Complete guide for SAML SSO token authorization)
+  - **GitHub SSO Setup**: `layer_0_universal/0.02_sub_layers/sub_layer_0.06_environment_setup/trickle_down_0.5_setup/0_instruction_docs/github/github_sso_token_setup.md` (Complete guide for SAML SSO token authorization)
 - **Universal Tools**: `trickle_down_0.75_universal_tools/`
 - **Project Standards**: `trickle_down_1_project/`
 - **Project Tools**: `trickle_down_1.5_project_tools/`
@@ -326,10 +320,10 @@ This master index provides a comprehensive overview of all documentation organiz
 - **Status**: ✅ Active development
 
 ### **MCP Tools (Model Context Protocol)**
-- **Overview**: `layer_0_universal/0.02_sub_layers/sub_layer_0.09_mcp_servers_and_tools_setup/trickle_down_0.75_universal_tools/0_instruction_docs/mcp-tools/README.md`
-- **Context7 Setup**: `layer_0_universal/0.02_sub_layers/sub_layer_0.09_mcp_servers_and_tools_setup/trickle_down_0.75_universal_tools/0_instruction_docs/mcp-tools/CONTEXT7_CLAUDE_SETUP.md`
-- **Context7 Quick Reference**: `layer_0_universal/0.02_sub_layers/sub_layer_0.09_mcp_servers_and_tools_setup/trickle_down_0.75_universal_tools/0_instruction_docs/mcp-tools/CONTEXT7_QUICK_REFERENCE.md`
-- **Configuration Guide**: `layer_0_universal/0.02_sub_layers/sub_layer_0.09_mcp_servers_and_tools_setup/trickle_down_0.75_universal_tools/0_instruction_docs/mcp-tools/MCP_CONFIGURATION_GUIDE.md`
+- **MCP System Guide**: `layer_0_universal/0.02_sub_layers/sub_layer_0.10_mcp_servers_and_tools_setup/0.01_core-system/MCP_SYSTEM_GUIDE.md`
+- **MCP Configuration Guide**: `layer_0_universal/0.02_sub_layers/sub_layer_0.10_mcp_servers_and_tools_setup/0.01_core-system/MCP_CONFIGURATION_GUIDE.md`
+- **MCP Server Matrix**: `layer_0_universal/0.02_sub_layers/sub_layer_0.10_mcp_servers_and_tools_setup/0.01_core-system/MCP_SERVER_MATRIX.md`
+- **Browser MCP Routing Table**: `layer_0_universal/0.02_sub_layers/sub_layer_0.10_mcp_servers_and_tools_setup/0.01_core-system/BROWSER_MCP_ROUTING_TABLE.md`
 
 ### **By Timeline**
 - **Current Work**: Check `1_status_progress_docs/` folders
