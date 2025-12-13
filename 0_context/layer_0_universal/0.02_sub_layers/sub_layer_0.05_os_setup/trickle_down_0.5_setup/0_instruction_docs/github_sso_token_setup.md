@@ -59,6 +59,8 @@ When Git shows an authorization URL:
 
 ### Step 3: Store Token Securely
 
+#### Option A (Legacy): `credential.helper store` + `~/.git-credentials`
+
 Configure Git credential storage:
 
 ```bash
@@ -69,6 +71,28 @@ git config --global credential.helper store
 echo "https://USERNAME:TOKEN@github.com" > ~/.git-credentials
 chmod 600 ~/.git-credentials
 ```
+
+#### Option B (Preferred for SSO Orgs): Org-scoped credential helper (no `.git-credentials`)
+
+For `byui-math-dept` repos, a safer pattern is a **custom Git credential helper** that only activates for:
+
+`https://github.com/byui-math-dept/*`
+
+This avoids storing a broad GitHub token in `~/.git-credentials` and prevents accidental reuse for other orgs.
+
+**Where it lives (Linux / WSL / macOS):**
+- Helper script: `~/.local/bin/git-credential-github-byui-math-dept`
+- Token file: `~/.config/git/pats/byui-math-dept.pat` (permissions: `chmod 600`)
+- Git config:
+  - `credential.helper=~/.local/bin/git-credential-github-byui-math-dept`
+  - `credential.useHttpPath=true` (required so Git includes `byui-math-dept/<repo>.git` in credential requests)
+
+**OS / environment compatibility (this helper approach):**
+- ✅ **WSL (Ubuntu/Debian/etc.)**: works inside the distro user environment.
+- ✅ **Native Linux**: works per-user.
+- ✅ **macOS**: works per-user (same Git credential helper mechanism).
+- ⚠️ **Windows**: requires separate setup in Git-for-Windows (different paths; helper can be reimplemented in PowerShell).
+- ⚠️ **CI/containers**: use CI secrets and ephemeral tokens instead of local PAT files.
 
 ### Step 4: Configure Git Remote
 
@@ -192,4 +216,3 @@ Today's successful setup using cursor-browser-extension MCP:
 ---
 
 *This guide ensures reliable GitHub access for SAML SSO-protected repositories across all future sessions.*
-
