@@ -16,6 +16,7 @@ sub_layer_0.09_mcp_servers_and_tools_setup/
 - **MCP Server Matrix**: `MCP_SERVER_MATRIX.md` (what servers exist, where they’re used, and automation status)
 - **Browser Routing Table**: `BROWSER_MCP_ROUTING_TABLE.md` (which browser MCP to use per AI app / OS)
 - **Codex CLI MCP Setup**: `CODEX_CLI_MCP_SETUP.md` (where Codex config lives; enable/disable patterns)
+- **GitHub SSO PAT Helper**: `GITHUB_BYUI_MATH_DEPT_PAT_HELPER.md` (Git-over-HTTPS auth for `byui-math-dept`)
 - **System Guide**: `MCP_SYSTEM_GUIDE.md` (overall architecture and conventions)
 
 ## Detailed Per-OS / Per-App Docs
