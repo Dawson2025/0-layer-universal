@@ -102,14 +102,52 @@ After understanding the framework, read **Section 4.7** of this file for the ste
 
 **Important**: Sublayer numbers (e.g., `sub_layer_0.10_*`) indicate **ordering**, not identity. The stable identifier is the **slug** (e.g., `mcp_servers_and_tools_setup`).
 
-To avoid breaking links when we reorder/renumber, prefer linking to the **alias files**:
+To avoid breaking links when we reorder/renumber, prefer linking to the **alias files** (generated from the registry):
 
 - Sublayer registry: `layer_0_universal/0.02_sub_layers/0.00_sub_layer_registry/sub_layer_registry.yaml`
+- Registry docs: `layer_0_universal/0.02_sub_layers/0.00_sub_layer_registry/README.md`
 - Alias links (stable): `layer_0_universal/0.02_sub_layers/0.00_sub_layer_registry/aliases/<slug>.md`
 
 Example:
 - Use: `layer_0_universal/0.02_sub_layers/0.00_sub_layer_registry/aliases/mcp_servers_and_tools_setup.md`
 - Avoid: `layer_0_universal/0.02_sub_layers/sub_layer_0.10_mcp_servers_and_tools_setup/` (this number can change)
+
+### 1.2 Context Change Protocol (Ordering / Naming)
+
+When you need to change the context system (reorder, renumber, rename, or move sublayers), follow this to avoid breaking links.
+
+#### A) Reorder / Renumber a sublayer (safe)
+
+1. Change the numbered folder name(s) under `layer_0_universal/0.02_sub_layers/` as needed (ordering labels only).
+2. Regenerate the registry + aliases:
+   ```bash
+   cd <universal_context_root>/0_context
+   python3 layer_0_universal/0.02_sub_layers/0.00_sub_layer_registry/scripts/sub_layer_registry.py generate
+   ```
+3. Find and fix any docs that still hard-link numeric paths:
+   ```bash
+   cd <universal_context_root>/0_context
+   python3 layer_0_universal/0.02_sub_layers/0.00_sub_layer_registry/scripts/sub_layer_registry.py check-hardlinks
+   ```
+4. Update docs to link to alias files (`.../aliases/<slug>.md`) instead of numeric `sub_layer_0.xx_*` paths.
+
+#### B) Rename a sublayer slug (avoid if possible)
+
+Slug changes are **identity changes** and will break stable references. Prefer keeping slugs stable and only renumbering.
+
+If a slug rename is unavoidable:
+1. Rename the folder slug.
+2. Regenerate registry + aliases (command above).
+3. Add a **manual redirect alias** file for the old slug so old links keep working:
+   - Create: `layer_0_universal/0.02_sub_layers/0.00_sub_layer_registry/aliases/<old_slug>.md`
+   - Make it point to the new slug’s alias file.
+4. Update any docs that referenced the old slug to the new slug.
+
+#### C) Moving content between sublayers
+
+If you move docs/tools between sublayers, treat it like a small migration:
+- Keep the **alias** for the original sublayer as the stable entry point.
+- Add a short note in the original sublayer’s `README.md` pointing to the new location.
 
 ### 2. Discover & Read Project-Specific Init Prompt
 
