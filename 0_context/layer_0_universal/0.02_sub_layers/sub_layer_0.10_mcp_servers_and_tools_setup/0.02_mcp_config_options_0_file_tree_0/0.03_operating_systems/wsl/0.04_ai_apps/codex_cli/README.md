@@ -7,6 +7,13 @@
 Use the Codex sync automation:
 - `automation/scripts/codex_mcp_sync.py`
 
+### Quickstart (headed, visible browser)
+```bash
+cd /home/dawson/code/0_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.10_mcp_servers_and_tools_setup/0.06_automation/scripts
+python3 codex_mcp_sync.py --env development
+```
+Restart Codex CLI after running the sync.
+
 Key requirements for headed browser on WSLg:
 - Inject WSLg env vars into the MCP server process:
   - `DISPLAY=:0`
@@ -17,6 +24,17 @@ Key requirements for headed browser on WSLg:
   - `launchOptions.args=["--ozone-platform=wayland","--enable-features=UseOzonePlatform"]`
   - `isolated=true` to avoid profile lock
   - `executablePath` pointing at `~/.cache/ms-playwright/chromium-*/chrome-linux64/chrome`
+
+### If no WSLg (no visible Linux GUI browser)
+If `/mnt/wslg/runtime-dir` does not exist, you will not get a visible headed browser from WSL.
+
+Options:
+- Use Playwright MCP headless:
+  ```bash
+  python3 codex_mcp_sync.py --env development --headless
+  ```
+- Use a Windows-visible browser:
+  - Start Windows Chrome with remote debugging and use `chrome-devtools-mcp` from WSL.
 
 ## Secrets
 Put API keys in `~/.codex/mcp.env` and re-run the sync:

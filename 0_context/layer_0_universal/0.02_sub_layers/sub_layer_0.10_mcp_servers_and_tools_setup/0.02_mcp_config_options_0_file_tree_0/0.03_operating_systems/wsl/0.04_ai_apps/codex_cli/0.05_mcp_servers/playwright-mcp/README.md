@@ -14,6 +14,23 @@
   - `launchOptions.args`: `["--ozone-platform=wayland","--enable-features=UseOzonePlatform"]`
   - `launchOptions.executablePath`: `~/.cache/ms-playwright/chromium-*/chrome-linux64/chrome`
 
+## Open a visible browser (WSL Codex CLI)
+
+1. Ensure WSLg exists:
+   ```bash
+   test -d /mnt/wslg/runtime-dir && echo "WSLg OK"
+   ```
+2. Apply the Codex MCP sync (headed/default):
+   ```bash
+   cd /home/dawson/code/0_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.10_mcp_servers_and_tools_setup/0.06_automation/scripts
+   python3 codex_mcp_sync.py --env development
+   ```
+3. Restart Codex CLI, then use Playwright MCP tools; Chromium should open visibly.
+
+If the server fails to start, check for:
+- `--headless=false` anywhere in your config (remove it; headed is default).
+- Missing WSLg (`/mnt/wslg/runtime-dir`), in which case use `--headless` or a Windows-visible browser fallback.
+
 ## Codex integration
 - Use `0.06_automation/scripts/codex_mcp_sync.py` to generate `~/.codex/config.toml` and the Playwright config file under `~/.codex/`.
 
