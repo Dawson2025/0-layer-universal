@@ -386,6 +386,28 @@ Working on feature checkout in project ecommerce:
 - **New Stage**: Stages are pre-created in templates; use existing `stage_<N>.xx_*/` folders
 - **Legacy Material**: Can live in `legacy_import/` subfolder while reorganizing
 
+#### 4.6.1 Referencing vs. Duplicating Context (Upstream Rule)
+
+**MANDATORY RULE:** When a specific layer (Project, Feature, Component) needs information that already exists in a broader/higher layer (Universal, Project), you **MUST** reference it using a relative path instead of duplicating the content.
+
+**Why?**
+- Prevents drift where copies get out of sync.
+- Keeps specific layers lightweight and focused on their unique deltas.
+- Ensures a "single source of truth."
+
+**How to Reference:**
+Create a `README.md` or specialized doc in the specific layer that points to the upstream source.
+
+**Example (Feature referencing Project context):**
+```markdown
+# Feature Tools
+
+For general strategies, refer to the project-level documentation:
+
+*   **Workflow Overview:** `../../../1_context_school/0_context/layer_1_project/1.02_sub_layers/sub_layer_1.12_project_tools/canvas_workflow_tools/README.md`
+*   **Automation Guide:** `../../../1_context_school/0_context/layer_1_project/1.02_sub_layers/sub_layer_1.12_project_tools/browser_automation/README.md`
+```
+
 **Documentation Organization Principles:**
 - **Deterministic Navigation**: Each layer has numbered slots and stages
 - **Dependency Clarity**: Higher layers depend on lower ones
@@ -1063,9 +1085,23 @@ cd 2.99_stages/stage_2.01_instructions/
 - **...understand the system** → `0.00_layer_stage_framework/README.md` + Section 4 of this file
 - **...navigate the system** → Section 4.7 of this file (navigation workflow)
 
+#### 4.8.1 Handling User "Remember" Requests
+
+**MANDATORY RULE:** When the user explicitly asks you to "remember" something, you must follow the strict protocol defined in the Universal Protocols layer.
+
+**Protocol Location:**
+`layer_0_universal/0.02_sub_layers/sub_layer_0.05_universal_protocols/0_instruction_docs/memory_handling_protocol.md`
+
+**Key Requirement:**
+You must explicitly confirm **Where recorded**, **Exact Directory Location**, **How context was updated**, and **Thing Remembered/Emphasis on the Code** in your response.
+
 #### 4.9 Project Structure Requirements and Instantiation
 
 **MANDATORY RULE: Any project being worked on MUST have proper instantiation and organization as laid out in the universal context repository.**
+
+For detailed instructions on instantiating various layer types (Universal, Project, Feature, Component), including specific guidance on **Workflow Features**, refer to:
+
+*   **`0.00_layer_stage_framework/README.md`** - Specifically the "Instantiating Workflow Features" section.
 
 ##### Required Project Structure
 
