@@ -7,7 +7,7 @@
 ## 🚀 Quick Start (3 Steps)
 
 ### 0. Sync Before Anything Else
-For every relevant repo (universal + any project/assignment you will touch in this session):
+For every relevant repo (universal + any project/assignment you will touch in this session): 
 ```bash
 git pull
 git status

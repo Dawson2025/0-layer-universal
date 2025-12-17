@@ -16,9 +16,10 @@ Use this when running AI CLIs inside WSL (Ubuntu) and using MCP servers (especia
 ## Critical browser automation findings (WSLg)
 - Playwright MCP is headed by default; use `--headless` to force headless.
 - Do **not** use `--headless=false` (newer `@playwright/mcp` versions reject it).
-- Headed Chromium can crash on WSLg unless launched with Wayland/Ozone flags:
+- **CRITICAL**: Headed Chromium can crash on WSLg unless launched with Wayland/Ozone flags:
   - `--ozone-platform=wayland`
   - `--enable-features=UseOzonePlatform`
+- **See**: `0.04_ai_apps/cursor_agent/0.05_mcp_servers/playwright-mcp/general_issues_and_fixes/WSLG_BROWSER_CRASH_FIX.md` for complete setup instructions
 - Avoid browser profile lock issues by using Playwright MCP `isolated` mode.
 
 ## Quickstart: visible browser from WSL (Codex CLI)
