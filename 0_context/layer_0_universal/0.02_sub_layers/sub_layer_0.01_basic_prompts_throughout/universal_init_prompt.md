@@ -1773,6 +1773,8 @@ ls ../../0_ai_context/0_context/MASTER_DOCUMENTATION_INDEX.md
 - `MASTER_DOCUMENTATION_INDEX.md`
 - `trickle_down_1_project/0_instruction_docs/...`
 - etc.
+ - `layer_2_features/` contains feature instances named `layer_2_feature_<slug>/`
+ - `layer_3_components/` contains component instances named `layer_3_component_<slug>/`
 
 ## 5. Reference Documentation by Task
 - Link to project-specific docs (relative paths)
