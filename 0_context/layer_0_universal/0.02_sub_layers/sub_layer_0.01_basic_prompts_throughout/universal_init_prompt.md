@@ -1637,8 +1637,8 @@ await enterDomainWithUnion(page,
     └── 0_context/
         ├── MASTER_DOCUMENTATION_INDEX.md   # Start here for project docs
         ├── layer_1_project/
-        ├── layer_2_features/
-        └── layer_3_components/
+        ├── layer_2_features/               # Contains feature instances (layer_2_feature_<slug>/)
+        └── layer_3_components/             # Contains component instances (layer_3_component_<slug>/)
 ```
 
 **To navigate from universal to project:**
