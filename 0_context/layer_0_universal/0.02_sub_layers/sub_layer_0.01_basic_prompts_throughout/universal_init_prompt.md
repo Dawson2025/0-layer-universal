@@ -1696,6 +1696,7 @@ git status
 
 **Notes:**
 - This applies to every response in every session/chat. Do not close a response until context/docs are updated and git state is synced (or explicitly note no changes to commit).
+- For any project using this init prompt, after **each file change** you must immediately stage, commit, and push (or explicitly note no changes to commit) before continuing further work.
 - Use project init prompt for branch rules (e.g., `personal-version` vs `main`).
 - Never push to upstream; push to your fork remotes.
 - If multiple repos are active (universal + project + assignment), repeat the end-of-response sync for each touched repo.
