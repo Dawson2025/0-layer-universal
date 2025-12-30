@@ -9,6 +9,107 @@ This directory now follows the Layer + Stage framework (layers: universal/projec
 3. **Add project-specific documentation** as needed
 4. **Update file paths** to match your project structure
 
+## 🏗️ Working with the AI Manager Hierarchy
+
+This system implements the **AI Manager Hierarchy System** - an Agent OS architecture for coordinating AI work across layers and stages.
+
+### Understanding the Hierarchy
+
+**Layers (Abstraction Levels):**
+- **L0 (Universal)**: Global rules, tools, and standards that apply everywhere
+- **L1 (Project)**: Project-specific constraints, architecture, and tech stack
+- **L2 (Feature)**: Individual features within the project (auth, payments, reporting)
+- **L3 (Component)**: Concrete implementation units (LoginForm, PaymentGateway)
+- **L4+ (Sub-component)**: Optional deeper splits for parallelism
+
+**Stages (Chronological Pipeline):**
+Each layer moves work through stages:
+1. **request** - Clarify what needs to be done
+2. **instructions** - Define explicit requirements and constraints
+3. **planning** - Break work into subtasks
+4. **design** - Choose architectures and interfaces
+5. **implementation** - Write code
+6. **testing** - Verify functionality
+7. **criticism** - Review against standards
+8. **fixing** - Apply corrections
+9. **archiving** - Document and close
+
+**Handoffs (Communication):**
+- Stages and layers communicate via **handoff documents** (JSON/Markdown)
+- Each handoff contains: task, constraints, artifacts, subtasks, results, status
+- Location: `hand_off_documents/incoming.json` and `outgoing.json` in each stage
+
+### Which Docs to Read First
+
+**For AI Agents Starting Work:**
+1. **Start**: `layer_0_universal/.../universal_init_prompt.md` - Core initialization
+2. **Overview**: `SYSTEM_OVERVIEW.md` - Understand layer + stage structure
+3. **Hierarchy**: [`-1_research/.../overview/IDEAL_AI_MANAGER_HIERARCHY_SYSTEM.md`](-1_research/-1.01_things_researched/ai_manager_hierarchy_system/overview/IDEAL_AI_MANAGER_HIERARCHY_SYSTEM.md) - Agent OS architecture
+4. **Layer Context**: Load appropriate L0 → L1 → L2 → L3 context for your task
+5. **Stage Handoff**: Read `hand_off_documents/incoming.json` in your current stage
+
+**For Specific Tasks:**
+- **Manager role** (coordinating work): Read `supervisor_patterns.md` and `framework_orchestration.md`
+- **Worker role** (executing tasks): Read `cli_recursion_syntax.md` and stage-specific `ai_agent_system/`
+- **Tool selection**: Read `model_selection_strategy.md` and `tools_and_context_systems.md`
+- **Parallel work**: Read `parallel_execution.md`
+- **Production deployment**: Read `production_deployment.md`, `observability_and_logging.md`, `safety_and_governance.md`
+
+### Which Layers/Stages to Touch
+
+**When to work at each layer:**
+- **L0**: Only when changing universal rules that affect ALL projects
+- **L1**: When adding/modifying project-wide constraints, architecture, or standards
+- **L2**: When implementing new features or modifying feature-level logic
+- **L3**: Most common - implementing specific components or fixing bugs
+- **L4+**: When parallelizing component work or managing sub-components
+
+**Stage transitions:**
+- Start in `request` or `instructions` for new work
+- Jump to `implementation` if requirements are clear
+- Always pass through `testing` and `criticism` before completing
+- End in `archiving` to document completed work
+
+### Handoff Documents
+
+**Structure:**
+```json
+{
+  "schemaVersion": "1.0.0",
+  "id": "handoff-l2-auth-impl",
+  "layer": 2,
+  "stage": "implementation",
+  "from": "layer_2/auth/planning",
+  "to": "layer_2/auth/implementation",
+  "task": "Implement login component",
+  "constraints": ["TypeScript", "React", "Accessibility"],
+  "artifacts": {
+    "files": ["src/components/LoginForm.tsx"]
+  },
+  "status": "pending"
+}
+```
+
+**Location:**
+- Read: `<layer>/<stage>/hand_off_documents/incoming.json`
+- Write: `<layer>/<stage>/hand_off_documents/outgoing.json`
+
+**For detailed handoff specification:**
+See `layer_0_universal/0.01_manager_handoff_documents/0.00_to_universal/handoff_schema.md` (to be created)
+
+### Tool Selection by Layer/Stage
+
+- **L0-L2 Managers**: Claude Code (deep reasoning, cascading CLAUDE.md)
+- **L3-L4 Workers**: Codex CLI (fast, atomic tasks, short sessions)
+- **Request/Instructions**: Gemini CLI (long dialogues, research-heavy)
+- **Criticism**: Claude Code (multi-file review, complex reasoning)
+- **Interactive debugging**: Cursor IDE (human-in-the-loop)
+
+### More Information
+
+- **Complete Hierarchy Docs**: [`-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/`](-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/)
+- **Master Index**: [MASTER_DOCUMENTATION_INDEX.md](MASTER_DOCUMENTATION_INDEX.md#-canonical-agent-os-architecture---ai-manager-hierarchy-system)
+
 ## 📋 Step-by-Step Setup
 
 ### Step 1: Copy to Your Project

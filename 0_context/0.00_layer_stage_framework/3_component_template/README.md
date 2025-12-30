@@ -2,6 +2,12 @@
 
 Use this to scaffold any component-level context. Depends on universal (0.x), project (1.x), and feature (2.x) layers.
 
+**This template implements Layer 3 (Component) of the [Ideal AI Manager Hierarchy System](../../-1_research/-1.01_things_researched/ai_manager_hierarchy_system/overview/IDEAL_AI_MANAGER_HIERARCHY_SYSTEM.md).**
+
+The Component layer inherits Universal (L0), Project (L1), and Feature (L2) constraints and represents concrete implementation units. For architectural details, see:
+- [`architecture.md`](../../-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/architecture.md) – Component-level workers and execution
+- [`tools_and_context_systems.md`](../../-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/tools_and_context_systems.md) – Worker agent selection (Codex CLI for atomic tasks)
+
 ## Manager + handoff
 - 3.00_ai_manager_system: component manager docs/configs.
 - 3.01_manager_handoff_documents: `3.00_to_universal/` and `3.01_to_specific/` for up/downstream handoffs.
@@ -33,6 +39,14 @@ The slots 3.08–3.12 form a dependency chain for component-level AI agent setup
 Configure these in order when setting up component-specific AI environments.
 
 ## Stages (3.99, stored under `3.99_stages/`, folders named `stage_3.xx_*`)
-stage_3.01_instructions → stage_3.02_planning → stage_3.03_design → stage_3.04_development → stage_3.05_testing → stage_3.06_criticism → stage_3.07_fixing → stage_3.08_archives.
+- stage_3.00_request_gathering
+- stage_3.01_instructions
+- stage_3.02_planning
+- stage_3.03_design
+- stage_3.04_implementation
+- stage_3.05_testing
+- stage_3.06_criticism
+- stage_3.07_fixing
+- stage_3.08_archiving
 
 Copy, rename to your component, and populate each slot.

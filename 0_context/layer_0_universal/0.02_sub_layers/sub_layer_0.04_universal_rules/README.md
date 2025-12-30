@@ -1,16 +1,53 @@
-# 0.3_universal_rules
+# 0.04_universal_rules
 
-This slot maps to existing universal content.
+This sub-layer contains universal rules that apply across all layers, stages, OS, and tool contexts.
 
-## Primary sources
-(See parent README in 0_universal for mapped paths.)
+## Directory Structure
+
+```
+0.04_universal_rules/
+├── README.md                          # This file
+├── LAYER_CONTEXT_HEADER_PROTOCOL.md   # File header requirements
+├── safety_governance.md               # Safety and governance rules (NEW)
+└── trickle_down_0_universal/          # Legacy universal rules
+    └── 0_instruction_docs/
+        └── git_commit_rule.md         # Git commit requirements
+```
+
+## Core Universal Rules
+
+### Safety, Permissions, and Governance
+**Location**: `safety_governance.md`
+**Status**: Active (Mandatory)
+**Purpose**: Security boundaries, permission models, and governance policies for the AI Manager Hierarchy
+
+**Key Features**:
+- Permission levels by layer (L0-L4+)
+- Filesystem, network, and command execution boundaries
+- Human-in-the-loop approval gates
+- Budget governance and resource quotas
+- Audit trail and compliance requirements
+- Integration with existing git commit and layer context rules
+
+**Reference**: See normative spec in `-1_research/.../ideal_ai_manager_hierarchy_system/safety_and_governance.md`
+
+### Layer Context Header Protocol
+**Location**: `LAYER_CONTEXT_HEADER_PROTOCOL.md`
+**Status**: Active (Mandatory)
+**Purpose**: Standardized file headers for layer/component identification
+
+### Git Commit and Sync Rule
+**Location**: `trickle_down_0_universal/0_instruction_docs/git_commit_rule.md`
+**Status**: Active (Mandatory)
+**Purpose**: Git workflow requirements for all AI sessions
+
+**Requirements**:
+- At minimum: `git pull` before work, `git add/commit` after work
+- Stronger default: also `git push` after every turn
+- Extended for hierarchy: Commit format includes layer, stage, handoff-id, cost
 
 ## Notes
-- Add slot-specific docs here over time.
-- Keep mappings up to date if paths change.
 
-### Universal Rules (examples)
-
-- **Git Commit and Sync Rule**: `trickle_down_0_universal/0_instruction_docs/git_commit_rule.md`  
-  - At minimum: every AI session/turn must `git pull` before work and `git add/commit` after work.  
-  - Stronger default in this rule: also `git push` after *every* turn (satisfying and exceeding the “push every 5 turns” expectation).
+- All rules in this directory are **mandatory** unless explicitly marked as optional
+- Safety and governance rules take precedence over other rules in case of conflict
+- See observability protocol for logging requirements: `../sub_layer_0.13_universal_protocols/observability/`

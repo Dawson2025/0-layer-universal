@@ -2,6 +2,12 @@
 
 Use this to scaffold any feature-level context. Depends on universal (0.x) and project (1.x) layers.
 
+**This template implements Layer 2 (Feature) of the [Ideal AI Manager Hierarchy System](../../-1_research/-1.01_things_researched/ai_manager_hierarchy_system/overview/IDEAL_AI_MANAGER_HIERARCHY_SYSTEM.md).**
+
+The Feature layer inherits Universal (L0) and Project (L1) constraints and adds feature-specific logic and invariants. For architectural details, see:
+- [`architecture.md`](../../-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/architecture.md) – Feature-level responsibilities and decomposition
+- [`parallel_execution.md`](../../-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/parallel_execution.md) – Parallelizing feature work across components
+
 ## Manager + handoff
 - 2.00_ai_manager_system: feature manager docs/configs.
 - 2.01_manager_handoff_documents: `2.00_to_universal/` and `2.01_to_specific/` for up/downstream handoffs.
@@ -33,6 +39,14 @@ The slots 2.08–2.12 form a dependency chain for feature-level AI agent setup:
 Configure these in order when setting up feature-specific AI environments.
 
 ## Stages (2.99, stored under `2.99_stages/`, folders named `stage_2.xx_*`)
-stage_2.01_instructions → stage_2.02_planning → stage_2.03_design → stage_2.04_development → stage_2.05_testing → stage_2.06_criticism → stage_2.07_fixing → stage_2.08_archives.
+- stage_2.00_request_gathering
+- stage_2.01_instructions
+- stage_2.02_planning
+- stage_2.03_design
+- stage_2.04_implementation
+- stage_2.05_testing
+- stage_2.06_criticism
+- stage_2.07_fixing
+- stage_2.08_archiving
 
 Copy, rename to your feature, and populate each slot.

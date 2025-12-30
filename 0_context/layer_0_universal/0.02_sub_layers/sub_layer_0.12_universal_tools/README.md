@@ -21,16 +21,69 @@ sub_layer_0.12_universal_tools/
 
 ## Relationship to Other Sublayers
 
-- **Depends on**: 
+- **Depends on**:
   - `sub_layer_0.09_ai_apps_tools_setup` - Tools may require AI apps to be set up first
   - `sub_layer_0.10_mcp_servers_and_tools_setup` - Some tools may use MCP servers
 - **Provides to**: All layers that need universal utilities and scripts
+
+## Tool Context Files and OS Variants
+
+Universal tools integrate with the **OS Variant and Quartet Pattern** defined in the Ideal AI Manager Hierarchy System:
+
+- **Normative Specification**: `/home/dawson/code/0_ai_context/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/os_and_quartets.md`
+
+### Quartet Pattern Overview
+
+Each layer/stage location can have OS-specific context files organized as **quartets** (or N-tuples):
+
+- `CLAUDE.md` - Claude Code specific instructions
+- `AGENTS.md` - General agent instructions (Codex CLI, etc.)
+- `GEMINI.md` - Gemini CLI specific instructions
+- `.cursor/rules/*.mdc` - Cursor IDE rules (future)
+
+These files are organized under `os/<os-id>/` directories where `<os-id>` can be:
+- `wsl` - Windows Subsystem for Linux
+- `linux_ubuntu` - Native Ubuntu Linux
+- `windows` - Native Windows
+- `macos` - macOS
+- Custom variants as needed
+
+### Implementation Locations
+
+OS variant context files have been implemented at:
+- `layer_0_universal/0.99_stages/stage_0.01_instructions/ai_agent_system/os/`
+- `layer_1_project/1.99_stages/stage_1.01_instructions/ai_agent_system/os/`
+- `layer_2_features/2.99_stages/stage_2.01_instructions/ai_agent_system/os/`
+- `layer_3_components/3.99_stages/stage_3.01_instructions/ai_agent_system/os/`
+
+### Tool-Specific Context
+
+Universal tools should be aware of:
+- **OS detection**: Supervisors detect OS and select appropriate context
+- **Context cascade**: Layer N inherits from Layer 0...N-1
+- **Tool specialization**: Each tool reads its specific context file
+- **Extensibility**: New tools add their own context file pattern to the quartet/N-tuple
 
 ## Key Documentation
 
 - **[Browser Automation](trickle_down_0.75_universal_tools/0_instruction_docs/browser-automation/README.md)**: Browser automation tools and guides
 - **[Claude Code Config](trickle_down_0.75_universal_tools/0_instruction_docs/claude-code-config/README.md)**: Claude Code CLI configuration
 - **[AI Development Frameworks](trickle_down_0.75_universal_tools/0_instruction_docs/ai-development-frameworks/README.md)**: AI coding assistant frameworks
+
+## AI Manager Hierarchy Integration
+
+This sub-layer integrates with the AI Manager Hierarchy System for orchestration and CLI patterns:
+
+### Framework Orchestration
+For guidance on integrating multi-agent frameworks (LangGraph, AutoGen, CrewAI, MetaGPT) with the hierarchy, see:
+- **[Framework Orchestration Overview](../sub_layer_0.13_universal_protocols/framework_orchestration/0_instruction_docs/framework_orchestration_overview.md)**: When to use framework-based orchestration vs. simple handoff coordination
+- **Existing Framework Docs**: `trickle_down_0.75_universal_tools/0_instruction_docs/ai-development-frameworks/` (complementary guidance on Spec Kit, BMAD Method, and AI coding assistants)
+
+### CLI Recursion Patterns
+For patterns on using CLI recursion to spawn deep agent hierarchies, see:
+- **[CLI Recursion Syntax](../sub_layer_0.13_universal_protocols/cli_recursion/0_instruction_docs/cli_recursion_syntax.md)**: Concrete examples of managers spawning workers via Claude Code, Codex CLI, and Gemini CLI
+- OS-adapted examples for WSL/Ubuntu
+- Tool selection, parallel execution, and error handling patterns
 
 ## ⚠️ Linux/Ubuntu-Specific Tool Access Issues
 

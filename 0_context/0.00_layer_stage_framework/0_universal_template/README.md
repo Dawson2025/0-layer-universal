@@ -2,6 +2,13 @@
 
 Use this when defining the universal layer for any ecosystem.
 
+**This template implements Layer 0 (Universal) of the [Ideal AI Manager Hierarchy System](../../-1_research/-1.01_things_researched/ai_manager_hierarchy_system/overview/IDEAL_AI_MANAGER_HIERARCHY_SYSTEM.md).**
+
+The Universal layer defines global rules, tools, and standards that cascade down to all other layers (Project, Feature, Component). For architectural details, see:
+- [`architecture.md`](../../-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/architecture.md) – Layer responsibilities and context stacking
+- [`tools_and_context_systems.md`](../../-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/tools_and_context_systems.md) – Tool specialization at each layer
+- [`os_and_quartets.md`](../../-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/os_and_quartets.md) – OS-specific context variants
+
 ## Manager + handoff
 - 0.00_ai_manager_system: manager docs/configs.
 - 0.01_manager_handoff_documents: `0.00_to_universal/` and `0.01_to_specific/` for cross-layer handoffs.
@@ -34,13 +41,14 @@ The slots 0.09–0.13 form a critical dependency chain for AI agent setup:
 Configure these in order when setting up a new AI environment.
 
 ## Stages (0.99, folders named `stage_0.xx_*`)
+- stage_0.00_request_gathering
 - stage_0.01_instructions
 - stage_0.02_planning
 - stage_0.03_design
-- stage_0.04_development
+- stage_0.04_implementation
 - stage_0.05_testing
 - stage_0.06_criticism
 - stage_0.07_fixing
-- stage_0.08_archives
+- stage_0.08_archiving
 
 Copy this template, rename for your universal context, and populate per slot.

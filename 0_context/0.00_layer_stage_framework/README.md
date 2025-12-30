@@ -2,8 +2,29 @@
 
 This repository uses two orthogonal systems to manage AI context and workflows. Numbering is zero-padded (two digits after the decimal) for lexicographic stability (e.g., 1.01, 1.10, 1.12).
 
-- **Layer System (specificity)**: from universal → project → feature → component. Lower numbers are more universal and are prerequisites for higher numbers. Each layer starts with a manager system (`<N>.00_ai_manager_system/`), a manager handoff hub (`<N>.01_manager_handoff_documents/` with `<N>.00_to_universal/` and `<N>.01_to_specific/`), then its slots live inside `<N>.02_sub_layers/` with directories prefixed `sub_layer_`. Example universal 0.x band inside `0.02_sub_layers/`: 0.01 basic prompts, 0.02 SE knowledge, 0.03 principles, 0.04 rules, 0.05 OS setup, 0.06 coding app setup, 0.07 apps/browsers/extensions, 0.08 AI apps/tools, 0.09 MCP servers and tools setup, 0.10 AI models, 0.11 universal tools, 0.12 agent setup. Project (1.x), feature (2.x), and component (3.x) bands mirror the same pattern with their own numbering (e.g., 1.01–1.12).
-- **Stage System (chronology)**: inside every layer, stages mirror the layer prefix and are named `stage_L.xx_*` (e.g., universal uses stage_0.00–stage_0.08, project uses stage_1.00–stage_1.08, etc.) covering: request_gathering (0.00) followed by instructions, planning, design, development, testing, criticism, fixing, archives. Each stage folder contains `hand_off_documents/` and `ai_agent_system/` subfolders for structured handoffs and agent configs.
+**This framework implements the [Ideal AI Manager Hierarchy System](../code/0_ai_context/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/overview/IDEAL_AI_MANAGER_HIERARCHY_SYSTEM.md), the canonical Agent OS architecture for all AI work in this repository.**
+
+- **Layer System (specificity)**: from universal → project → feature → component → sub-component (optional). Lower numbers are more universal and are prerequisites for higher numbers. Each layer starts with a manager system (`<N>.00_ai_manager_system/`), a manager handoff hub (`<N>.01_manager_handoff_documents/` with `<N>.00_to_universal/` and `<N>.01_to_specific/`), then its slots live inside `<N>.02_sub_layers/` with directories prefixed `sub_layer_`.
+  - **L0 (Universal)**: Global rules, tools, and standards that apply everywhere (e.g., TypeScript by default, security-first practices, testing expectations)
+  - **L1 (Project)**: Project-specific constraints, architecture, and tech stack (e.g., e-commerce platform, ALEKS automation)
+  - **L2 (Feature)**: Individual features within the project (e.g., auth-system, shopping-cart, reporting-dashboard)
+  - **L3 (Component)**: Concrete implementation units (e.g., LoginForm, PaymentGateway, GradeCalculator)
+  - **L4+ (Sub-component)**: Optional deeper splits for parallelism or complexity management (e.g., login/form-ui, login/validation, login/api-handler)
+
+  Example universal 0.x band inside `0.02_sub_layers/`: 0.01 basic prompts, 0.02 SE knowledge, 0.03 principles, 0.04 rules, 0.05 OS setup, 0.06 coding app setup, 0.07 apps/browsers/extensions, 0.08 AI apps/tools, 0.09 MCP servers and tools setup, 0.10 AI models, 0.11 universal tools, 0.12 agent setup. Project (1.x), feature (2.x), and component (3.x) bands mirror the same pattern with their own numbering (e.g., 1.01–1.12).
+
+- **Stage System (chronology)**: inside every layer, stages mirror the layer prefix and are named `stage_L.xx_*` (e.g., universal uses stage_0.00–stage_0.08, project uses stage_1.00–stage_1.08, etc.) covering the complete chronological pipeline:
+  1. **request** (stage_0.00_request_gathering) – Clarify what needs to be done
+  2. **instructions** – Define explicit requirements and constraints
+  3. **planning** – Break work into subtasks with dependencies
+  4. **design** – Choose architectures, interfaces, and data flows
+  5. **implementation** – Write code, modify modules, create configs
+  6. **testing** – Verify functionality, run tests, collect results
+  7. **criticism** – Review against standards and quality criteria
+  8. **fixing** – Apply corrections, refactor, re-run tests
+  9. **archiving** – Document and close completed work
+
+  Each stage folder contains `hand_off_documents/` and `ai_agent_system/` subfolders for structured handoffs and agent configs.
 
 ## Purpose (how context management works)
 - **Deterministic navigation**: Each layer has numbered slots and a `*.99_stages` folder. Agents address work as (Layer, Stage) to load only what's needed instead of fuzzy search.
@@ -74,6 +95,24 @@ An agent setup in 0.12 might specify:
 - **Available Tools**: Universal tools from 0.11 (browser automation, development frameworks, etc.)
 - **App Context**: Cursor IDE with specific workspace settings
 - **Model-Specific Instructions**: Instructions that adapt based on which model is active
+
+## Design Rationale
+
+This Layer + Stage Framework is derived from the **Ideal AI Manager Hierarchy System**, which provides the complete architectural foundation for organizing AI work across abstraction layers and chronological stages.
+
+**Core Architecture Documentation:**
+- **Overview**: [`-1_research/-1.01_things_researched/ai_manager_hierarchy_system/overview/IDEAL_AI_MANAGER_HIERARCHY_SYSTEM.md`](../-1_research/-1.01_things_researched/ai_manager_hierarchy_system/overview/IDEAL_AI_MANAGER_HIERARCHY_SYSTEM.md) – Summary of the Agent OS concept
+- **Architecture**: [`architecture.md`](../-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/architecture.md) – Deep dive on layers, stages, agents, handoffs, supervisors, and parallelism
+- **Tools & Context**: [`tools_and_context_systems.md`](../-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/tools_and_context_systems.md) – How Claude Code, Codex CLI, Gemini CLI, and Cursor IDE work within the hierarchy
+- **OS Variants**: [`os_and_quartets.md`](../-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/os_and_quartets.md) – OS-specific layouts and context file variants
+
+**Key Architectural Principles:**
+- **Layers cascade constraints**: Universal (L0) rules flow down through Project (L1), Feature (L2), and Component (L3+) layers
+- **Stages form pipelines**: Work moves through request → instructions → planning → design → implementation → testing → criticism → fixing → archiving
+- **Managers coordinate, workers execute**: Managers decompose tasks and spawn workers; workers perform bounded work and exit
+- **Handoffs enable communication**: Structured JSON/Markdown documents pass state between layers and stages
+- **Tools specialize by role**: Claude Code for managers/criticism, Codex CLI for atomic workers, Gemini CLI for research/planning, Cursor IDE for interactive work
+- **OS-aware context**: Each layer/stage can include `os/<os-id>/` directories for OS-specific instructions
 
 ## Templates here
 This folder contains templates to scaffold layers:

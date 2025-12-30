@@ -74,6 +74,55 @@ This master index provides a comprehensive overview of all documentation organiz
 - Public repos must exclude every AI artifact; all AI docs live inside private context repos
 - This wrapper + dual-private-repo structure is now the baseline DS250 school workspace template
 
+## 🏗️ **CANONICAL AGENT OS ARCHITECTURE - AI Manager Hierarchy System**
+
+**The Ideal AI Manager Hierarchy System is the canonical architectural design for all AI work in this repository.**
+
+This comprehensive system defines how AI agents are organized, coordinated, and executed across layers of abstraction using a **manager/worker pattern** with **handoff documents** for inter-agent communication.
+
+### **Core Documentation:**
+
+- **Quick Overview**: [`-1_research/-1.01_things_researched/ai_manager_hierarchy_system/overview/README.md`](code/0_ai_context/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/overview/README.md)
+- **System Summary**: [`-1_research/-1.01_things_researched/ai_manager_hierarchy_system/overview/IDEAL_AI_MANAGER_HIERARCHY_SYSTEM.md`](code/0_ai_context/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/overview/IDEAL_AI_MANAGER_HIERARCHY_SYSTEM.md)
+
+### **Detailed Specifications:**
+
+All detailed documentation is located in: [`-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/`](code/0_ai_context/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/)
+
+**Core Architecture:**
+- `summary/IDEAL_AI_MANAGER_HIERARCHY_SYSTEM.md` - Long-form specification
+- `architecture.md` - Layers, stages, agents, handoffs, supervisors, and parallelism
+- `tools_and_context_systems.md` - Claude/Codex/Gemini/Cursor behavior and context systems
+- `os_and_quartets.md` - OS-specific layouts and context variants
+- `token_and_policy_strategy.md` - Cost-aware routing and tool selection policies
+
+**Implementation Guides:**
+- `framework_orchestration.md` - Using LangGraph, AutoGen, CrewAI, MetaGPT
+- `model_selection_strategy.md` - Choosing models (Qwen, StarCoder, Codestral) based on cost/quality
+- `supervisor_patterns.md` - Concrete supervisor implementations
+- `parallel_execution.md` - Parallelizing work across layers and components
+- `cli_recursion_syntax.md` - CLI examples for recursive agent delegation
+
+**Operational Concerns:**
+- `observability_and_logging.md` - Structured logging, metrics, tracing, and dashboards
+- `safety_and_governance.md` - Permissions, security boundaries, approval gates, budget controls
+- `production_deployment.md` - Deployment architectures, scaling, reliability, and best practices
+
+**Extensions:**
+- `mcp_extensions.md` - Adding MCP servers for new tools and capabilities
+- `persona_library.md` - Creating reusable agent personas (Security Reviewer, Test Generator, etc.)
+
+### **Key Concepts:**
+
+- **Layers**: L0 (Universal) → L1 (Project) → L2 (Feature) → L3 (Component) → L4+ (Sub-component)
+- **Stages**: request → instructions → planning → design → implementation → testing → criticism → fixing → archiving
+- **Managers**: Coordinate work, spawn workers, aggregate results
+- **Workers**: Execute bounded tasks, write handoffs, exit
+- **Handoffs**: JSON/Markdown documents passing state between layers and stages
+- **Tools**: Claude Code (managers), Codex CLI (workers), Gemini CLI (research), Cursor IDE (interactive)
+
+This system provides the foundation for all agent orchestration, tool selection, and workflow patterns in this repository.
+
 ## 🗂️ Directory Structure Overview
 
 ```

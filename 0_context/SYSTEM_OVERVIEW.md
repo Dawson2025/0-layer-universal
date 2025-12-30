@@ -5,6 +5,44 @@
 - **Stage System (chronology):** instructions → planning → design → development → testing → criticism → fixing → archives. Stages mirror the layer prefix (e.g., `stage_2.04_development`) inside `*.99_stages/`, each with `hand_off_documents/` and `ai_agent_system/`.
 - **Status:** per-layer status JSON inside `*.99_stages/` tracks `current_stage` and each stage state (`not_started | in_progress | blocked | done`).
 
+## Agent OS Architecture
+
+This layer + stage framework implements the **AI Manager Hierarchy System** - a comprehensive **Agent Operating System** for software development.
+
+### Core Concepts
+
+The Agent OS organizes AI work through:
+
+- **Layers of Abstraction**: L0 (Universal) → L1 (Project) → L2 (Feature) → L3 (Component) → L4+ (Sub-component)
+  - Lower layers define constraints that cascade to higher layers
+  - Each layer has managers that coordinate work and workers that execute tasks
+
+- **Chronological Stages**: Work moves through a pipeline within each layer
+  - request → instructions → planning → design → implementation → testing → criticism → fixing → archiving
+  - Each stage reads incoming handoffs, performs work, and writes outgoing handoffs
+
+- **Manager/Worker Pattern**:
+  - **Managers** read handoffs, decompose tasks, spawn workers (possibly in parallel), and aggregate results
+  - **Workers** read one handoff, execute bounded work, write one handoff, and exit
+  - Communication happens through structured **handoff documents** (JSON/Markdown)
+
+- **Tool Specialization**:
+  - **Claude Code**: Managers, criticism, complex multi-file work
+  - **Codex CLI**: Short, atomic implementation/testing tasks (leaf workers)
+  - **Gemini CLI**: Long-running request/instructions/planning and research
+  - **Cursor IDE**: Interactive debugging and refactors
+  - **Frameworks** (LangGraph, AutoGen, CrewAI): Optional orchestrators
+
+- **Persistent Instructions**: System-level prompts (CLAUDE.md, AGENTS.md, GEMINI.md, .cursor/rules/) cascade from L0 down, keeping instructions sticky without chat history bloat
+
+### Where to Learn More
+
+- **Quick Start**: [`-1_research/-1.01_things_researched/ai_manager_hierarchy_system/overview/IDEAL_AI_MANAGER_HIERARCHY_SYSTEM.md`](-1_research/-1.01_things_researched/ai_manager_hierarchy_system/overview/IDEAL_AI_MANAGER_HIERARCHY_SYSTEM.md)
+- **Detailed Specs**: [`-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/`](-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/)
+- **Master Index**: [MASTER_DOCUMENTATION_INDEX.md](MASTER_DOCUMENTATION_INDEX.md#-canonical-agent-os-architecture---ai-manager-hierarchy-system)
+
+This Agent OS design is the **canonical architecture** for all AI agent coordination in this repository.
+
 ## Layout map (current repo)
 ```
 0_context/

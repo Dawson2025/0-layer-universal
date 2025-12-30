@@ -51,14 +51,30 @@ When giving an agent high-level context for working with this system:
 
 ### 4. Where to Find Details
 
-More detailed documents live under:
+More detailed documents live under `../things_learned/ideal_ai_manager_hierarchy_system/`:
 
-- `../things_learned/ideal_ai_manager_hierarchy_system/`, including:
-  - `summary/IDEAL_AI_MANAGER_HIERARCHY_SYSTEM.md` – long-form specification.
-  - `architecture.md` – deep dive on layers, stages, agents, handoffs, supervisors, and parallelism.
-  - `tools_and_context_systems.md` – detailed behavior for Claude/Codex/Gemini/Cursor and their context systems.
-  - `os_and_quartets.md` – OS-specific layouts and context variants.
-  - `token_and_policy_strategy.md` – cost-aware routing and policy for choosing tools per stage/layer.
+**Core Architecture:**
+- `summary/IDEAL_AI_MANAGER_HIERARCHY_SYSTEM.md` – long-form specification
+- `architecture.md` – deep dive on layers, stages, agents, handoffs, supervisors, and parallelism
+- `tools_and_context_systems.md` – detailed behavior for Claude/Codex/Gemini/Cursor and their context systems
+- `os_and_quartets.md` – OS-specific layouts and context variants
+- `token_and_policy_strategy.md` – cost-aware routing and policy for choosing tools per stage/layer
+
+**Implementation Guides:**
+- `framework_orchestration.md` – using LangGraph, AutoGen, CrewAI, MetaGPT within the hierarchy
+- `model_selection_strategy.md` – choosing models (Qwen, StarCoder, Codestral, etc.) based on cost/quality tradeoffs
+- `supervisor_patterns.md` – concrete supervisor implementations (file-watching, queue-based, LangGraph)
+- `parallel_execution.md` – patterns for parallelizing work across layers and components
+- `cli_recursion_syntax.md` – concrete CLI examples for recursive agent delegation
+
+**Operational Concerns:**
+- `observability_and_logging.md` – structured logging, metrics, tracing, and dashboards
+- `safety_and_governance.md` – permissions, security boundaries, approval gates, budget controls
+- `production_deployment.md` – deployment architectures, scaling, reliability, and operational best practices
+
+**Extensions:**
+- `mcp_extensions.md` – adding MCP servers for new tools and capabilities
+- `persona_library.md` – creating reusable agent personas (Security Reviewer, Test Generator, etc.)
 
 This `overview/IDEAL_AI_MANAGER_HIERARCHY_SYSTEM.md` stays short and is intended as the primary context snippet for agents.
 

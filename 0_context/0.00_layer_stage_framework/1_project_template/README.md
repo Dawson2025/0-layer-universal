@@ -2,6 +2,12 @@
 
 Use this to scaffold any project-level context. Mirrors the universal 0.x stack but specialized for a single project.
 
+**This template implements Layer 1 (Project) of the [Ideal AI Manager Hierarchy System](../../-1_research/-1.01_things_researched/ai_manager_hierarchy_system/overview/IDEAL_AI_MANAGER_HIERARCHY_SYSTEM.md).**
+
+The Project layer inherits Universal (L0) constraints and adds project-specific architecture, tech stack, and requirements. For architectural details, see:
+- [`architecture.md`](../../-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/architecture.md) – Layer inheritance and project-level responsibilities
+- [`tools_and_context_systems.md`](../../-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/tools_and_context_systems.md) – Tool selection for project managers vs. workers
+
 ## Manager + handoff
 - 1.00_ai_manager_system: project-level manager docs/configs.
 - 1.01_manager_handoff_documents: `1.00_to_universal/` and `1.01_to_specific/` for up/downstream handoffs.
@@ -33,6 +39,14 @@ The slots 1.08–1.12 form a dependency chain for project-level AI agent setup:
 Configure these in order when setting up project-specific AI environments.
 
 ## Stages (1.99, stored under `1.99_stages/`, folders named `stage_1.xx_*`)
-stage_1.01_instructions → stage_1.02_planning → stage_1.03_design → stage_1.04_development → stage_1.05_testing → stage_1.06_criticism → stage_1.07_fixing → stage_1.08_archives.
+- stage_1.00_request_gathering
+- stage_1.01_instructions
+- stage_1.02_planning
+- stage_1.03_design
+- stage_1.04_implementation
+- stage_1.05_testing
+- stage_1.06_criticism
+- stage_1.07_fixing
+- stage_1.08_archiving
 
 Copy, rename to your project, and populate each slot.
