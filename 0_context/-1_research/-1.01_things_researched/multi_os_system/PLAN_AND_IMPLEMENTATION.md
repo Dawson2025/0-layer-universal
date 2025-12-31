@@ -172,3 +172,24 @@ Quick checklist:
 **Files Updated:**
 - `DEVICE_IDS.md` - Ubuntu device ID added
 - This file (`PLAN_AND_IMPLEMENTATION.md`) - Ubuntu status documented
+
+**Remote Access Attempt (2025-12-31):**
+- Discovered WSL Syncthing at IP: `192.168.160.140`
+- WSL host is reachable (ping successful, 0% packet loss)
+- ❌ Cannot access WSL Syncthing remotely from Ubuntu
+- Reason: WSL Syncthing listens only on localhost (127.0.0.1:8384) for security
+- This is the default and recommended security configuration
+- Conclusion: WSL configuration **must be done from WSL itself** or Windows host
+- Remote configuration from Ubuntu is not possible without compromising security
+
+**Why Remote Access Doesn't Work:**
+1. Syncthing defaults to localhost-only binding (127.0.0.1:8384)
+2. This prevents unauthorized network access to the web UI
+3. WSL's Syncthing was not configured to allow network connections
+4. This is intentional and recommended for security
+5. Changing this would require WSL access anyway, defeating the purpose
+
+**Final Documentation Created:**
+- `/home/dawson/dawson-workspace/WSL_SETUP_REQUIRED.md` (7.1 KB) - Complete setup guide
+- `/home/dawson/dawson-workspace/syncthing-status.html` - Visual status page
+- `/home/dawson/dawson-workspace/add-ubuntu-to-wsl-syncthing.sh` - Helper script
