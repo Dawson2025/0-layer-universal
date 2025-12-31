@@ -18,9 +18,9 @@ This document contains the device IDs for all three systems in the multi-OS work
 
 ### Ubuntu Desktop
 - **Device Name**: Ubuntu-Dawson
-- **Device ID**: ______________ (fill this in during Ubuntu setup - step 5.2)
+- **Device ID**: 7UVVQQS-O3463OC-GUTDI63-EWLX3SE-LRX4ZU3-MEOWA34-KSCMF6K-DR7GEAH
 - **Path**: /home/dawson/dawson-workspace
-- **Status**: ⏳ Pending setup
+- **Status**: ✅ Active and syncing
 
 ## How to Find Your Device ID
 

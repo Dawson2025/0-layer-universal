@@ -212,5 +212,5 @@ Once Ubuntu is set up:
 - Dotfiles keep your shell environment consistent
 
 ---
-**Setup completed on**: _________________ (fill in when done)
-**Ubuntu device ID**: _________________ (record this)
+**Setup completed on**: 2025-12-31
+**Ubuntu device ID**: 7UVVQQS-O3463OC-GUTDI63-EWLX3SE-LRX4ZU3-MEOWA34-KSCMF6K-DR7GEAH

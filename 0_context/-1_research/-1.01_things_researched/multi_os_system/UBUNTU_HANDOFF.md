@@ -7,7 +7,8 @@ This handoff document provides a streamlined checklist for setting up the Ubuntu
 - ✅ WSL workspace configured and running
 - ✅ Windows workspace configured and running
 - ✅ WSL ↔ Windows sync verified and working
-- ⏳ Ubuntu desktop awaiting setup
+- ✅ Ubuntu desktop configured and ready (2025-12-31)
+- ⏳ Three-way sync pending (needs WSL/Windows to add Ubuntu device)
 
 ## Prerequisites Before You Start on Ubuntu
 
