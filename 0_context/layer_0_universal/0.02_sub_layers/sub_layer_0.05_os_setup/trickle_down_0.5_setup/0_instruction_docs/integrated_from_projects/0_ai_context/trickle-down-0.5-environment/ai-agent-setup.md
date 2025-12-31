@@ -15,11 +15,11 @@ Since this project uses WSL Ubuntu, AI agents must adapt to this environment:
 ### Warp AI Assistant (for this WSL Ubuntu project):
 - Must enter WSL environment: wsl command if starting from Windows
 - Add Warp integration: Auto-warpify configuration (as we did)
-- Verify location: pwd should show /home/dawson/code/lang-trak-in-progress
+- Verify location: pwd should show /home/dawson/dawson-workspace/code/lang-trak-in-progress
 
 ### Other AI Agents (Claude Code, Copilot, Cursor, etc.):
 - Must work within this project's chosen WSL Ubuntu environment
-- Project location: /home/dawson/code/lang-trak-in-progress/ (NOT Windows paths)
+- Project location: /home/dawson/dawson-workspace/code/lang-trak-in-progress/ (NOT Windows paths)
 - Use WSL Ubuntu development tools (Node.js, Python, Firebase CLI, etc.)
 
 ## Why These Environment Rules Exist for THIS Project

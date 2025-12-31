@@ -60,7 +60,7 @@ This master index provides a comprehensive overview of all documentation organiz
 - ✅ `Parallelism and Concurrency/0_context` - Verified (identical to main)
 - ✅ `DS250-Course-Draft/0_context` - Project-specific only
 
-**Location**: All new files added to `/home/dawson/code/0_ai_context/0_context/`
+**Location**: All new files added to `/home/dawson/dawson-workspace/code/0_ai_context/0_context/`
 
 **Purpose**: Consolidate universal, reusable documentation that applies to ANY project, making the 0_ai_context directory the single source of truth for universal AI agent protocols.
 
@@ -70,7 +70,7 @@ This master index provides a comprehensive overview of all documentation organiz
   - Public repo (e.g., `pac20026_fall2025/` → `byui-math-dept/pac20026_fall2025`)
   - Private project context repo (`0_context/` → `Dawson2025/1-project-context-pac20026_fall2025`)
   - Workspace metadata (`.ai_workspace`) + README describing flow
-- Universal context canonical location: `/home/dawson/code/0_ai_context` (repo `Dawson2025/0-universal-context`)
+- Universal context canonical location: `/home/dawson/dawson-workspace/code/0_ai_context` (repo `Dawson2025/0-universal-context`)
 - Public repos must exclude every AI artifact; all AI docs live inside private context repos
 - This wrapper + dual-private-repo structure is now the baseline DS250 school workspace template
 

@@ -61,7 +61,7 @@ Codex' built-in `notify` hook runs an external program after each turn. Point it
 
 ```toml
 # ~/.codex/config.toml
-notify = ["/home/dawson/code/lang-trak-in-progress/scripts/dev/codex-turn-notify.py"]
+notify = ["/home/dawson/dawson-workspace/code/lang-trak-in-progress/scripts/dev/codex-turn-notify.py"]
 ```
 
 The hook reuses the same `CODEX_NOTIFY_*` environment variables shown above. Add the optional variables `CODEX_NOTIFY_TURN_*` to customize the title/text/sound specifically for "waiting for input" events. The script emits:

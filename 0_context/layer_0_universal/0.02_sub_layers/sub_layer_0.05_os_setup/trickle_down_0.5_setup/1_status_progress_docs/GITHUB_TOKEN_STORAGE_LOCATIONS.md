@@ -25,7 +25,7 @@ git config --global credential.useHttpPath true
 
 ### Repository Reference File
 
-**Location**: `/home/dawson/code/pac20026_fall2025/GITHUB_TOKEN_INFO.md`
+**Location**: `/home/dawson/dawson-workspace/code/pac20026_fall2025/GITHUB_TOKEN_INFO.md`
 
 **Purpose**: 
 - Human-readable reference
@@ -52,7 +52,7 @@ git config --global credential.useHttpPath true
 
 **Complete Setup Guide**: 
 ```
-/home/dawson/code/0_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.06_environment_setup/trickle_down_0.5_setup/0_instruction_docs/github/github_sso_token_setup.md
+/home/dawson/dawson-workspace/code/0_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.06_environment_setup/trickle_down_0.5_setup/0_instruction_docs/github/github_sso_token_setup.md
 ```
 
 Contains:
@@ -71,7 +71,7 @@ ls -la ~/.config/git/pats/byui-math-dept.pat
 
 ### Test Repository Access
 ```bash
-cd /home/dawson/code/pac20026_fall2025
+cd /home/dawson/dawson-workspace/code/pac20026_fall2025
 git status
 git pull
 ```
@@ -86,7 +86,7 @@ git config --global credential.useHttpPath
 
 ### pac20026_fall2025
 
-- **Local Path**: `/home/dawson/code/pac20026_fall2025`
+- **Local Path**: `/home/dawson/dawson-workspace/code/pac20026_fall2025`
 - **Remote URL**: `https://github.com/byui-math-dept/pac20026_fall2025.git`
 - **Branch**: main
 - **Organization**: byui-math-dept (SSO-protected)

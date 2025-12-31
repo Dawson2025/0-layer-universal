@@ -23,7 +23,7 @@ All documents reference the normative specifications from the ideal hierarchy, i
 
 ### 1. Observability and Logging Protocol
 
-**Location**: `/home/dawson/code/0_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.13_universal_protocols/observability/README.md`
+**Location**: `/home/dawson/dawson-workspace/code/0_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.13_universal_protocols/observability/README.md`
 
 **Type**: Universal Protocol
 **Status**: Active
@@ -57,7 +57,7 @@ All documents reference the normative specifications from the ideal hierarchy, i
 
 ### 2. Safety, Permissions, and Governance Rules
 
-**Location**: `/home/dawson/code/0_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.04_universal_rules/safety_governance.md`
+**Location**: `/home/dawson/dawson-workspace/code/0_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.04_universal_rules/safety_governance.md`
 
 **Type**: Universal Rule (Mandatory)
 **Status**: Active
@@ -109,7 +109,7 @@ All documents reference the normative specifications from the ideal hierarchy, i
 
 ### 3. AI Manager Hierarchy Deployment Overview
 
-**Location**: `/home/dawson/code/0_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.05_os_setup/trickle_down_0.5_setup/0_instruction_docs/deployment/AI_MANAGER_HIERARCHY_DEPLOYMENT.md`
+**Location**: `/home/dawson/dawson-workspace/code/0_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.05_os_setup/trickle_down_0.5_setup/0_instruction_docs/deployment/AI_MANAGER_HIERARCHY_DEPLOYMENT.md`
 
 **Type**: Deployment Guide
 **Status**: Active
@@ -157,7 +157,7 @@ All documents reference the normative specifications from the ideal hierarchy, i
 
 ### 1. Universal Protocols README
 
-**Location**: `/home/dawson/code/0_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.13_universal_protocols/README.md`
+**Location**: `/home/dawson/dawson-workspace/code/0_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.13_universal_protocols/README.md`
 
 **Changes**:
 - Added Section 8: "Observability and Logging"
@@ -166,7 +166,7 @@ All documents reference the normative specifications from the ideal hierarchy, i
 
 ### 2. Universal Rules README
 
-**Location**: `/home/dawson/code/0_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.04_universal_rules/README.md`
+**Location**: `/home/dawson/dawson-workspace/code/0_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.04_universal_rules/README.md`
 
 **Changes**:
 - Complete rewrite for clarity and completeness
@@ -341,13 +341,13 @@ layer_0_universal/0.02_sub_layers/
 ## Files Modified
 
 ### Created (3 new files):
-1. `/home/dawson/code/0_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.13_universal_protocols/observability/README.md`
-2. `/home/dawson/code/0_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.04_universal_rules/safety_governance.md`
-3. `/home/dawson/code/0_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.05_os_setup/trickle_down_0.5_setup/0_instruction_docs/deployment/AI_MANAGER_HIERARCHY_DEPLOYMENT.md`
+1. `/home/dawson/dawson-workspace/code/0_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.13_universal_protocols/observability/README.md`
+2. `/home/dawson/dawson-workspace/code/0_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.04_universal_rules/safety_governance.md`
+3. `/home/dawson/dawson-workspace/code/0_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.05_os_setup/trickle_down_0.5_setup/0_instruction_docs/deployment/AI_MANAGER_HIERARCHY_DEPLOYMENT.md`
 
 ### Updated (2 files):
-1. `/home/dawson/code/0_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.13_universal_protocols/README.md`
-2. `/home/dawson/code/0_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.04_universal_rules/README.md`
+1. `/home/dawson/dawson-workspace/code/0_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.13_universal_protocols/README.md`
+2. `/home/dawson/dawson-workspace/code/0_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.04_universal_rules/README.md`
 
 ### Created (1 summary):
 1. `/home/dawson/.cursor/plans/phase_6_ops_safety_deployment_summary_2025-12-24.md` (this file)

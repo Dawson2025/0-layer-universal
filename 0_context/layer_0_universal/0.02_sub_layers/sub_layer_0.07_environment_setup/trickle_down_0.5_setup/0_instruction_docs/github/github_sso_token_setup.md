@@ -219,7 +219,7 @@ Today's successful setup using cursor-browser-extension MCP:
 ## Reference
 
 - **Date Documented**: November 11, 2025
-- **Working Example**: `/home/dawson/code/pac20026_fall2025`
+- **Working Example**: `/home/dawson/dawson-workspace/code/pac20026_fall2025`
 - **Token Storage**: Prefer org-scoped helper + `~/.config/git/pats/byui-math-dept.pat` (or an equivalent secure OS-native credential manager)
 - **Status**: ✅ Fully functional and tested
 - **Related Docs**: 

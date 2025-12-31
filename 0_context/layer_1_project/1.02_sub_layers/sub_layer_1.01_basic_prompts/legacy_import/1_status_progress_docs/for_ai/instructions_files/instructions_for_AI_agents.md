@@ -22,7 +22,7 @@ All AI agents must load context in this exact hierarchical order before beginnin
 
 **MANDATORY:** All AI agents must comply with TD0.5 environment standards:
 - All file operations within WSL Ubuntu file system
-- Project location: /home/dawson/code/lang-trak-in-progress/
+- Project location: /home/dawson/dawson-workspace/code/lang-trak-in-progress/
 - No Windows C:\ drive operations
 - Use WSL Ubuntu development tools exclusively
 

@@ -382,7 +382,7 @@ Full schema reserved for complex tasks (> 15 minutes, > $1 cost, multiple subtas
 - `config.staging.yaml`: Staging environment config
 - `config.prod.yaml`: Production environment config
 
-**Example**: See `/home/dawson/code/0_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.05_os_setup/trickle_down_0.5_setup/0_instruction_docs/deployment/AI_MANAGER_HIERARCHY_DEPLOYMENT.md` for full config examples
+**Example**: See `/home/dawson/dawson-workspace/code/0_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.05_os_setup/trickle_down_0.5_setup/0_instruction_docs/deployment/AI_MANAGER_HIERARCHY_DEPLOYMENT.md` for full config examples
 
 ---
 
@@ -493,22 +493,22 @@ Full schema reserved for complex tasks (> 15 minutes, > $1 cost, multiple subtas
 
 **Rollout and Adoption**:
 - Rollout Plan: `/home/dawson/.cursor/plans/ai_manager_hierarchy_rollout_plan.md`
-- Adoption Checklist: `/home/dawson/code/0_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.01_basic_prompts_throughout/HIERARCHY_ADOPTION_CHECKLIST.md`
-- Migration Guide: `/home/dawson/code/0_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.01_basic_prompts_throughout/MIGRATION_GUIDE.md`
-- Quick Start: `/home/dawson/code/0_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.01_basic_prompts_throughout/HIERARCHY_QUICK_START.md` (to be created)
+- Adoption Checklist: `/home/dawson/dawson-workspace/code/0_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.01_basic_prompts_throughout/HIERARCHY_ADOPTION_CHECKLIST.md`
+- Migration Guide: `/home/dawson/dawson-workspace/code/0_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.01_basic_prompts_throughout/MIGRATION_GUIDE.md`
+- Quick Start: `/home/dawson/dawson-workspace/code/0_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.01_basic_prompts_throughout/HIERARCHY_QUICK_START.md` (to be created)
 
 **Normative Specifications**:
-- Ideal Hierarchy Root: `/home/dawson/code/0_ai_context/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/`
+- Ideal Hierarchy Root: `/home/dawson/dawson-workspace/code/0_ai_context/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/`
 - Architecture: `.../ideal_ai_manager_hierarchy_system/architecture.md`
 - OS and Quartets: `.../ideal_ai_manager_hierarchy_system/os_and_quartets.md`
 - Framework Orchestration: `.../ideal_ai_manager_hierarchy_system/framework_orchestration.md`
 - CLI Recursion: `.../ideal_ai_manager_hierarchy_system/cli_recursion_syntax.md`
 
 **Implementation Docs**:
-- Handoff Schema: `/home/dawson/code/0_ai_context/0_context/layer_0_universal/0.01_manager_handoff_documents/0.00_to_universal/handoff_schema.md`
-- Observability: `/home/dawson/code/0_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.13_universal_protocols/observability/README.md`
-- Safety Rules: `/home/dawson/code/0_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.04_universal_rules/safety_governance.md`
-- Deployment: `/home/dawson/code/0_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.05_os_setup/trickle_down_0.5_setup/0_instruction_docs/deployment/AI_MANAGER_HIERARCHY_DEPLOYMENT.md`
+- Handoff Schema: `/home/dawson/dawson-workspace/code/0_ai_context/0_context/layer_0_universal/0.01_manager_handoff_documents/0.00_to_universal/handoff_schema.md`
+- Observability: `/home/dawson/dawson-workspace/code/0_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.13_universal_protocols/observability/README.md`
+- Safety Rules: `/home/dawson/dawson-workspace/code/0_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.04_universal_rules/safety_governance.md`
+- Deployment: `/home/dawson/dawson-workspace/code/0_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.05_os_setup/trickle_down_0.5_setup/0_instruction_docs/deployment/AI_MANAGER_HIERARCHY_DEPLOYMENT.md`
 
 ---
 

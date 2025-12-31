@@ -438,7 +438,7 @@ The Language Tracker application demonstrates **strong foundational architecture
 ## Test Artifacts
 
 ### Files Modified During Testing
-1. `/home/dawson/code/lang-trak-in-progress/templates/main_menu.html`
+1. `/home/dawson/dawson-workspace/code/lang-trak-in-progress/templates/main_menu.html`
    - Fixed 9 incorrect Flask blueprint endpoint references
    - All url_for() calls now include proper blueprint prefixes
 

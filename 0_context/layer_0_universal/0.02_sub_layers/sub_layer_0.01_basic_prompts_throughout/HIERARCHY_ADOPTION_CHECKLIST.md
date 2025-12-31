@@ -25,17 +25,17 @@ This checklist guides you through adopting the AI Manager Hierarchy System for y
 **Time**: 30-45 minutes
 
 - [ ] **Read MASTER_DOCUMENTATION_INDEX.md**
-  - Location: `/home/dawson/code/0_ai_context/0_context/MASTER_DOCUMENTATION_INDEX.md`
+  - Location: `/home/dawson/dawson-workspace/code/0_ai_context/0_context/MASTER_DOCUMENTATION_INDEX.md`
   - Focus: "AI Manager Hierarchy System" section (lines 77-101)
   - Goal: Understand what the hierarchy is and where docs live
 
 - [ ] **Read SYSTEM_OVERVIEW.md**
-  - Location: `/home/dawson/code/0_ai_context/0_context/SYSTEM_OVERVIEW.md`
+  - Location: `/home/dawson/dawson-workspace/code/0_ai_context/0_context/SYSTEM_OVERVIEW.md`
   - Focus: "Agent OS Architecture" section (lines 8-44)
   - Goal: Understand core concepts (layers, stages, manager/worker, tool specialization)
 
 - [ ] **Read USAGE_GUIDE.md**
-  - Location: `/home/dawson/code/0_ai_context/0_context/USAGE_GUIDE.md`
+  - Location: `/home/dawson/dawson-workspace/code/0_ai_context/0_context/USAGE_GUIDE.md`
   - Focus: "Working with the AI Manager Hierarchy" section (lines 12-111)
   - Goal: Know which docs to read first, which layers to touch, how handoffs work
 
@@ -44,7 +44,7 @@ This checklist guides you through adopting the AI Manager Hierarchy System for y
 **Time**: 20-30 minutes
 
 - [ ] **Read Layer/Stage Framework README**
-  - Location: `/home/dawson/code/0_ai_context/0_context/0.00_layer_stage_framework/README.md`
+  - Location: `/home/dawson/dawson-workspace/code/0_ai_context/0_context/0.00_layer_stage_framework/README.md`
   - Goal: Understand L0-L4+ layers and stage pipeline
   - Note: This framework implements the Ideal AI Manager Hierarchy System
 
@@ -63,19 +63,19 @@ This checklist guides you through adopting the AI Manager Hierarchy System for y
 **Time**: 30-40 minutes
 
 - [ ] **Read Layer 0 Manager System README**
-  - Location: `/home/dawson/code/0_ai_context/0_context/layer_0_universal/0.00_ai_manager_system/README.md`
+  - Location: `/home/dawson/dawson-workspace/code/0_ai_context/0_context/layer_0_universal/0.00_ai_manager_system/README.md`
   - Goal: Understand universal manager/worker patterns
 
 - [ ] **Read Layer 1 Manager System README** (if you're working at L1)
-  - Location: `/home/dawson/code/0_ai_context/0_context/layer_1_project/1.00_ai_manager_system/README.md`
+  - Location: `/home/dawson/dawson-workspace/code/0_ai_context/0_context/layer_1_project/1.00_ai_manager_system/README.md`
   - Goal: Understand project-level manager/worker patterns
 
 - [ ] **Read Layer 2 Manager System README** (if you're working at L2)
-  - Location: `/home/dawson/code/0_ai_context/0_context/layer_2_features/2.00_ai_manager_system/README.md`
+  - Location: `/home/dawson/dawson-workspace/code/0_ai_context/0_context/layer_2_features/2.00_ai_manager_system/README.md`
   - Goal: Understand feature-level manager/worker patterns
 
 - [ ] **Read Layer 3 Manager System README** (if you're working at L3)
-  - Location: `/home/dawson/code/0_ai_context/0_context/layer_3_components/3.00_ai_manager_system/README.md`
+  - Location: `/home/dawson/dawson-workspace/code/0_ai_context/0_context/layer_3_components/3.00_ai_manager_system/README.md`
   - Goal: Understand component-level manager/worker patterns
 
 ### Review Handoff Schema (Must-Have)
@@ -83,7 +83,7 @@ This checklist guides you through adopting the AI Manager Hierarchy System for y
 **Time**: 15-20 minutes
 
 - [ ] **Read Handoff Schema Definition**
-  - Location: `/home/dawson/code/0_ai_context/0_context/layer_0_universal/0.01_manager_handoff_documents/0.00_to_universal/handoff_schema.md`
+  - Location: `/home/dawson/dawson-workspace/code/0_ai_context/0_context/layer_0_universal/0.01_manager_handoff_documents/0.00_to_universal/handoff_schema.md`
   - Goal: Understand handoff structure and required fields
   - Key fields: schemaVersion, id, kind, layer, stage, from, to, task, constraints, artifacts, status
 
@@ -106,10 +106,10 @@ This checklist guides you through adopting the AI Manager Hierarchy System for y
   - Current system: `__OS_VARIANT_HERE__` (to be filled in by agent)
 
 - [ ] **Locate OS-specific context for your layer**
-  - L0: `/home/dawson/code/0_ai_context/0_context/layer_0_universal/0.99_stages/stage_0.01_instructions/ai_agent_system/os/<os-id>/`
-  - L1: `/home/dawson/code/0_ai_context/0_context/layer_1_project/1.99_stages/stage_1.01_instructions/ai_agent_system/os/<os-id>/`
-  - L2: `/home/dawson/code/0_ai_context/0_context/layer_2_features/2.99_stages/stage_2.01_instructions/ai_agent_system/os/<os-id>/`
-  - L3: `/home/dawson/code/0_ai_context/0_context/layer_3_components/3.99_stages/stage_3.01_instructions/ai_agent_system/os/<os-id>/`
+  - L0: `/home/dawson/dawson-workspace/code/0_ai_context/0_context/layer_0_universal/0.99_stages/stage_0.01_instructions/ai_agent_system/os/<os-id>/`
+  - L1: `/home/dawson/dawson-workspace/code/0_ai_context/0_context/layer_1_project/1.99_stages/stage_1.01_instructions/ai_agent_system/os/<os-id>/`
+  - L2: `/home/dawson/dawson-workspace/code/0_ai_context/0_context/layer_2_features/2.99_stages/stage_2.01_instructions/ai_agent_system/os/<os-id>/`
+  - L3: `/home/dawson/dawson-workspace/code/0_ai_context/0_context/layer_3_components/3.99_stages/stage_3.01_instructions/ai_agent_system/os/<os-id>/`
 
 - [ ] **Review OS-specific context files**
   - CLAUDE.md: Manager context (if you're a manager or implementation agent)
@@ -140,7 +140,7 @@ This checklist guides you through adopting the AI Manager Hierarchy System for y
 **Time**: 20-30 minutes
 
 - [ ] **Read Observability Protocol**
-  - Location: `/home/dawson/code/0_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.13_universal_protocols/observability/README.md`
+  - Location: `/home/dawson/dawson-workspace/code/0_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.13_universal_protocols/observability/README.md`
   - Goal: Understand log levels, structured logging, log locations
 
 - [ ] **Set up log directory for your project**
@@ -163,7 +163,7 @@ This checklist guides you through adopting the AI Manager Hierarchy System for y
 **Time**: 15-20 minutes
 
 - [ ] **Read Safety and Governance Rules**
-  - Location: `/home/dawson/code/0_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.04_universal_rules/safety_governance.md`
+  - Location: `/home/dawson/dawson-workspace/code/0_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.04_universal_rules/safety_governance.md`
   - Goal: Understand permission levels, approval gates, budget limits
 
 - [ ] **Identify your permission level**
@@ -190,7 +190,7 @@ This checklist guides you through adopting the AI Manager Hierarchy System for y
 **Time**: 20-30 minutes
 
 - [ ] **Read Deployment Guide**
-  - Location: `/home/dawson/code/0_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.05_os_setup/trickle_down_0.5_setup/0_instruction_docs/deployment/AI_MANAGER_HIERARCHY_DEPLOYMENT.md`
+  - Location: `/home/dawson/dawson-workspace/code/0_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.05_os_setup/trickle_down_0.5_setup/0_instruction_docs/deployment/AI_MANAGER_HIERARCHY_DEPLOYMENT.md`
   - Goal: Understand deployment patterns (dev, staging, production)
 
 - [ ] **Select deployment pattern for your project**
@@ -221,7 +221,7 @@ This checklist guides you through adopting the AI Manager Hierarchy System for y
   - Subdirectories: `incoming/`, `outgoing/`, `archive/`
 
 - [ ] **Create first handoff document** (from L0 to L1, or L1 to L2)
-  - Use handoff schema: `/home/dawson/code/0_ai_context/0_context/layer_0_universal/0.01_manager_handoff_documents/0.00_to_universal/handoff_schema.md`
+  - Use handoff schema: `/home/dawson/dawson-workspace/code/0_ai_context/0_context/layer_0_universal/0.01_manager_handoff_documents/0.00_to_universal/handoff_schema.md`
   - Include all required fields: schemaVersion, id, kind, layer, stage, from, to, task, constraints, artifacts, status
   - Example filename: `handoff_L0_to_L1_<project-name>_<timestamp>.json`
 
@@ -331,7 +331,7 @@ This checklist guides you through adopting the AI Manager Hierarchy System for y
 **Time**: 15-20 minutes
 
 - [ ] **Read Framework Orchestration Overview** (if using frameworks)
-  - Location: `/home/dawson/code/0_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.13_universal_protocols/framework_orchestration/0_instruction_docs/framework_orchestration_overview.md`
+  - Location: `/home/dawson/dawson-workspace/code/0_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.13_universal_protocols/framework_orchestration/0_instruction_docs/framework_orchestration_overview.md`
   - Goal: Understand when to use LangGraph, AutoGen, CrewAI, MetaGPT
 
 - [ ] **Decide if framework orchestration is needed**
@@ -343,7 +343,7 @@ This checklist guides you through adopting the AI Manager Hierarchy System for y
 **Time**: 15-20 minutes
 
 - [ ] **Read CLI Recursion Syntax** (if implementing deep hierarchies)
-  - Location: `/home/dawson/code/0_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.13_universal_protocols/cli_recursion/0_instruction_docs/cli_recursion_syntax.md`
+  - Location: `/home/dawson/dawson-workspace/code/0_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.13_universal_protocols/cli_recursion/0_instruction_docs/cli_recursion_syntax.md`
   - Goal: Understand how managers spawn workers via CLI
 
 - [ ] **Decide if CLI recursion is needed**
@@ -364,7 +364,7 @@ This checklist guides you through adopting the AI Manager Hierarchy System for y
 **Time**: 15-20 minutes
 
 - [ ] **Document your experience**
-  - Location: `/home/dawson/code/0_ai_context/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/implementation_lessons_learned.md`
+  - Location: `/home/dawson/dawson-workspace/code/0_ai_context/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/implementation_lessons_learned.md`
   - What worked well?
   - What didn't work as expected?
   - Recommended improvements?
@@ -535,31 +535,31 @@ This checklist guides you through adopting the AI Manager Hierarchy System for y
 ## Related Documentation
 
 **Top-Level Docs**:
-- MASTER_DOCUMENTATION_INDEX.md: `/home/dawson/code/0_ai_context/0_context/MASTER_DOCUMENTATION_INDEX.md`
-- SYSTEM_OVERVIEW.md: `/home/dawson/code/0_ai_context/0_context/SYSTEM_OVERVIEW.md`
-- USAGE_GUIDE.md: `/home/dawson/code/0_ai_context/0_context/USAGE_GUIDE.md`
+- MASTER_DOCUMENTATION_INDEX.md: `/home/dawson/dawson-workspace/code/0_ai_context/0_context/MASTER_DOCUMENTATION_INDEX.md`
+- SYSTEM_OVERVIEW.md: `/home/dawson/dawson-workspace/code/0_ai_context/0_context/SYSTEM_OVERVIEW.md`
+- USAGE_GUIDE.md: `/home/dawson/dawson-workspace/code/0_ai_context/0_context/USAGE_GUIDE.md`
 
 **Framework and Manager Docs**:
-- Layer/Stage Framework: `/home/dawson/code/0_ai_context/0_context/0.00_layer_stage_framework/README.md`
-- L0 Manager: `/home/dawson/code/0_ai_context/0_context/layer_0_universal/0.00_ai_manager_system/README.md`
-- L1 Manager: `/home/dawson/code/0_ai_context/0_context/layer_1_project/1.00_ai_manager_system/README.md`
-- L2 Manager: `/home/dawson/code/0_ai_context/0_context/layer_2_features/2.00_ai_manager_system/README.md`
-- L3 Manager: `/home/dawson/code/0_ai_context/0_context/layer_3_components/3.00_ai_manager_system/README.md`
+- Layer/Stage Framework: `/home/dawson/dawson-workspace/code/0_ai_context/0_context/0.00_layer_stage_framework/README.md`
+- L0 Manager: `/home/dawson/dawson-workspace/code/0_ai_context/0_context/layer_0_universal/0.00_ai_manager_system/README.md`
+- L1 Manager: `/home/dawson/dawson-workspace/code/0_ai_context/0_context/layer_1_project/1.00_ai_manager_system/README.md`
+- L2 Manager: `/home/dawson/dawson-workspace/code/0_ai_context/0_context/layer_2_features/2.00_ai_manager_system/README.md`
+- L3 Manager: `/home/dawson/dawson-workspace/code/0_ai_context/0_context/layer_3_components/3.00_ai_manager_system/README.md`
 
 **Handoff and Operational Docs**:
-- Handoff Schema: `/home/dawson/code/0_ai_context/0_context/layer_0_universal/0.01_manager_handoff_documents/0.00_to_universal/handoff_schema.md`
-- Observability: `/home/dawson/code/0_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.13_universal_protocols/observability/README.md`
-- Safety Rules: `/home/dawson/code/0_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.04_universal_rules/safety_governance.md`
-- Deployment: `/home/dawson/code/0_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.05_os_setup/trickle_down_0.5_setup/0_instruction_docs/deployment/AI_MANAGER_HIERARCHY_DEPLOYMENT.md`
+- Handoff Schema: `/home/dawson/dawson-workspace/code/0_ai_context/0_context/layer_0_universal/0.01_manager_handoff_documents/0.00_to_universal/handoff_schema.md`
+- Observability: `/home/dawson/dawson-workspace/code/0_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.13_universal_protocols/observability/README.md`
+- Safety Rules: `/home/dawson/dawson-workspace/code/0_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.04_universal_rules/safety_governance.md`
+- Deployment: `/home/dawson/dawson-workspace/code/0_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.05_os_setup/trickle_down_0.5_setup/0_instruction_docs/deployment/AI_MANAGER_HIERARCHY_DEPLOYMENT.md`
 
 **Orchestration Docs**:
-- Framework Orchestration: `/home/dawson/code/0_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.13_universal_protocols/framework_orchestration/0_instruction_docs/framework_orchestration_overview.md`
-- CLI Recursion: `/home/dawson/code/0_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.13_universal_protocols/cli_recursion/0_instruction_docs/cli_recursion_syntax.md`
+- Framework Orchestration: `/home/dawson/dawson-workspace/code/0_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.13_universal_protocols/framework_orchestration/0_instruction_docs/framework_orchestration_overview.md`
+- CLI Recursion: `/home/dawson/dawson-workspace/code/0_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.13_universal_protocols/cli_recursion/0_instruction_docs/cli_recursion_syntax.md`
 
 **Rollout Plan**:
 - Rollout Plan: `/home/dawson/.cursor/plans/ai_manager_hierarchy_rollout_plan.md`
-- Migration Guide: `/home/dawson/code/0_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.01_basic_prompts_throughout/MIGRATION_GUIDE.md` (to be created)
-- Quick Start: `/home/dawson/code/0_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.01_basic_prompts_throughout/HIERARCHY_QUICK_START.md` (to be created)
+- Migration Guide: `/home/dawson/dawson-workspace/code/0_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.01_basic_prompts_throughout/MIGRATION_GUIDE.md` (to be created)
+- Quick Start: `/home/dawson/dawson-workspace/code/0_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.01_basic_prompts_throughout/HIERARCHY_QUICK_START.md` (to be created)
 
 ---
 

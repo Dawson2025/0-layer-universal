@@ -21,7 +21,7 @@ bash scripts/dev/start_services.sh --stop     # terminate both services
 If you’d like the services to start automatically whenever you open a new terminal, add the following alias to your shell profile (e.g., `~/.bashrc` or `~/.zshrc`):
 
 ```bash
-alias codex-start='cd /home/dawson/code/lang-trak-in-progress && bash scripts/dev/start_services.sh'
+alias codex-start='cd /home/dawson/dawson-workspace/code/lang-trak-in-progress && bash scripts/dev/start_services.sh'
 ```
 
 Then run `codex-start` after launching Codex in a fresh terminal.
@@ -46,7 +46,7 @@ The hook is configured as:
         "hooks": [
           {
             "type": "command",
-            "command": "bash /home/dawson/code/lang-trak-in-progress/scripts/dev/start_services.sh",
+            "command": "bash /home/dawson/dawson-workspace/code/lang-trak-in-progress/scripts/dev/start_services.sh",
             "timeout": 30
           }
         ]

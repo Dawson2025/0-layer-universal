@@ -19,7 +19,7 @@ This file provides guidance to Warp AI Assistant when working with the Language 
 
 **File System Operations:**
 - ? All file operations must occur within WSL Ubuntu file system
-- ? Use WSL Ubuntu paths: `/home/dawson/code/lang-trak-in-progress/`
+- ? Use WSL Ubuntu paths: `/home/dawson/dawson-workspace/code/lang-trak-in-progress/`
 - ? Respect WSL Ubuntu permissions and file ownership
 - ? Never use Windows C:\ drive paths for development operations
 - ? Never bypass WSL Ubuntu environment requirements

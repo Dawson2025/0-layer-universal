@@ -10,12 +10,12 @@ This directory contains universal scripts that can be used across any project.
 
 **Usage**:
 ```bash
-/home/dawson/code/0-universal-context/0_context/trickle_down_0.75_universal_tools/0_instruction_docs/scripts/sync-context-repos.sh
+/home/dawson/dawson-workspace/code/0-universal-context/0_context/trickle_down_0.75_universal_tools/0_instruction_docs/scripts/sync-context-repos.sh
 ```
 
 Or create an alias:
 ```bash
-alias sync-context='bash /home/dawson/code/0-universal-context/0_context/trickle_down_0.75_universal_tools/0_instruction_docs/scripts/sync-context-repos.sh'
+alias sync-context='bash /home/dawson/dawson-workspace/code/0-universal-context/0_context/trickle_down_0.75_universal_tools/0_instruction_docs/scripts/sync-context-repos.sh'
 ```
 
 **What it does**:
@@ -24,8 +24,8 @@ alias sync-context='bash /home/dawson/code/0-universal-context/0_context/trickle
 - Displays repository status and latest commit info
 
 **Repositories synced**:
-- `/home/dawson/code/0-universal-context`
-- `/home/dawson/code/setup-hub`
+- `/home/dawson/dawson-workspace/code/0-universal-context`
+- `/home/dawson/dawson-workspace/code/setup-hub`
 
 **Note**: This script will warn you if there are uncommitted changes but won't commit or push them automatically. You should commit and push changes manually after reviewing them.
 

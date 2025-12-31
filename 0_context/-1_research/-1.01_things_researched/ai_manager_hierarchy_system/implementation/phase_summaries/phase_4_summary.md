@@ -3,7 +3,7 @@
 **Date**: 2025-12-24
 **Phase**: Phase 4 of AI Manager Hierarchy Integration
 **Plan Reference**: `/home/dawson/.cursor/plans/integrate_ideal_ai_manager_hierarchy_system_into_0aicontext_8473a05b.plan.md`
-**Normative Spec**: `/home/dawson/code/0_ai_context/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/os_and_quartets.md`
+**Normative Spec**: `/home/dawson/dawson-workspace/code/0_ai_context/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/os_and_quartets.md`
 
 ---
 
@@ -35,7 +35,7 @@ Phase 4 implementation is **COMPLETE**. OS variant structures and tool context q
 ### 1. OS Folder Structure Created
 
 #### Layer 0 (Universal)
-**Location**: `/home/dawson/code/0_ai_context/0_context/layer_0_universal/0.99_stages/stage_0.01_instructions/ai_agent_system/os/`
+**Location**: `/home/dawson/dawson-workspace/code/0_ai_context/0_context/layer_0_universal/0.99_stages/stage_0.01_instructions/ai_agent_system/os/`
 
 ```
 os/
@@ -52,17 +52,17 @@ os/
 ```
 
 #### Layer 1 (Project)
-**Location**: `/home/dawson/code/0_ai_context/0_context/layer_1_project/1.99_stages/stage_1.01_instructions/ai_agent_system/os/`
+**Location**: `/home/dawson/dawson-workspace/code/0_ai_context/0_context/layer_1_project/1.99_stages/stage_1.01_instructions/ai_agent_system/os/`
 
 Same structure as Layer 0, with project-level context additions.
 
 #### Layer 2 (Feature)
-**Location**: `/home/dawson/code/0_ai_context/0_context/layer_2_features/2.99_stages/stage_2.01_instructions/ai_agent_system/os/`
+**Location**: `/home/dawson/dawson-workspace/code/0_ai_context/0_context/layer_2_features/2.99_stages/stage_2.01_instructions/ai_agent_system/os/`
 
 Same structure, with minimal scaffolds (to be fleshed out as needed).
 
 #### Layer 3 (Component)
-**Location**: `/home/dawson/code/0_ai_context/0_context/layer_3_components/3.99_stages/stage_3.01_instructions/ai_agent_system/os/`
+**Location**: `/home/dawson/dawson-workspace/code/0_ai_context/0_context/layer_3_components/3.99_stages/stage_3.01_instructions/ai_agent_system/os/`
 
 Same structure, with minimal scaffolds (to be fleshed out as needed).
 
@@ -159,7 +159,7 @@ Same structure, with minimal scaffolds (to be fleshed out as needed).
 ### 5. Documentation Updates
 
 #### Universal Tools Documentation
-**File**: `/home/dawson/code/0_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.12_universal_tools/README.md`
+**File**: `/home/dawson/dawson-workspace/code/0_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.12_universal_tools/README.md`
 
 **Added Section**: "Tool Context Files and OS Variants"
 - References normative os_and_quartets.md specification
@@ -169,7 +169,7 @@ Same structure, with minimal scaffolds (to be fleshed out as needed).
 - Explains tool-specific context cascade
 
 #### MCP Servers Documentation
-**File**: `/home/dawson/code/0_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.10_mcp_servers_and_tools_setup/0.02_mcp_config_options_0_file_tree_0/0.03_operating_systems/README.md`
+**File**: `/home/dawson/dawson-workspace/code/0_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.10_mcp_servers_and_tools_setup/0.02_mcp_config_options_0_file_tree_0/0.03_operating_systems/README.md`
 
 **Added Section**: "Relationship to OS Variant and Quartet Pattern"
 - Maps MCP OS structure to ideal hierarchy specification
@@ -206,7 +206,7 @@ Every context file includes:
 ## Normative Specification
 
 This file implements the OS-specific context pattern defined in:
-- `/home/dawson/code/0_ai_context/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/os_and_quartets.md`
+- `/home/dawson/dawson-workspace/code/0_ai_context/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/os_and_quartets.md`
 
 Refer to that document for the canonical specification of the OS variant system.
 ```
@@ -325,19 +325,19 @@ Structure supports auto-detection:
 ## References
 
 ### Normative Specifications
-- **OS and Quartets Spec**: `/home/dawson/code/0_ai_context/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/os_and_quartets.md`
-- **Architecture Spec**: `/home/dawson/code/0_ai_context/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/architecture.md`
-- **Tools and Context Systems**: `/home/dawson/code/0_ai_context/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/tools_and_context_systems.md`
+- **OS and Quartets Spec**: `/home/dawson/dawson-workspace/code/0_ai_context/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/os_and_quartets.md`
+- **Architecture Spec**: `/home/dawson/dawson-workspace/code/0_ai_context/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/architecture.md`
+- **Tools and Context Systems**: `/home/dawson/dawson-workspace/code/0_ai_context/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/tools_and_context_systems.md`
 
 ### Implementation Locations
-- **Layer 0**: `/home/dawson/code/0_ai_context/0_context/layer_0_universal/0.99_stages/stage_0.01_instructions/ai_agent_system/os/`
-- **Layer 1**: `/home/dawson/code/0_ai_context/0_context/layer_1_project/1.99_stages/stage_1.01_instructions/ai_agent_system/os/`
-- **Layer 2**: `/home/dawson/code/0_ai_context/0_context/layer_2_features/2.99_stages/stage_2.01_instructions/ai_agent_system/os/`
-- **Layer 3**: `/home/dawson/code/0_ai_context/0_context/layer_3_components/3.99_stages/stage_3.01_instructions/ai_agent_system/os/`
+- **Layer 0**: `/home/dawson/dawson-workspace/code/0_ai_context/0_context/layer_0_universal/0.99_stages/stage_0.01_instructions/ai_agent_system/os/`
+- **Layer 1**: `/home/dawson/dawson-workspace/code/0_ai_context/0_context/layer_1_project/1.99_stages/stage_1.01_instructions/ai_agent_system/os/`
+- **Layer 2**: `/home/dawson/dawson-workspace/code/0_ai_context/0_context/layer_2_features/2.99_stages/stage_2.01_instructions/ai_agent_system/os/`
+- **Layer 3**: `/home/dawson/dawson-workspace/code/0_ai_context/0_context/layer_3_components/3.99_stages/stage_3.01_instructions/ai_agent_system/os/`
 
 ### Related Documentation
-- **Universal Tools**: `/home/dawson/code/0_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.12_universal_tools/README.md`
-- **MCP OS Setup**: `/home/dawson/code/0_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.10_mcp_servers_and_tools_setup/0.02_mcp_config_options_0_file_tree_0/0.03_operating_systems/README.md`
+- **Universal Tools**: `/home/dawson/dawson-workspace/code/0_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.12_universal_tools/README.md`
+- **MCP OS Setup**: `/home/dawson/dawson-workspace/code/0_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.10_mcp_servers_and_tools_setup/0.02_mcp_config_options_0_file_tree_0/0.03_operating_systems/README.md`
 - **Integration Plan**: `/home/dawson/.cursor/plans/integrate_ideal_ai_manager_hierarchy_system_into_0aicontext_8473a05b.plan.md`
 - **Progress Assessment**: `/home/dawson/.cursor/plans/integration_progress_assessment_2025-12-24.md`
 
@@ -347,7 +347,7 @@ Structure supports auto-detection:
 
 ### Layer 0 (Universal)
 ```
-/home/dawson/code/0_ai_context/0_context/layer_0_universal/0.99_stages/stage_0.01_instructions/ai_agent_system/os/
+/home/dawson/dawson-workspace/code/0_ai_context/0_context/layer_0_universal/0.99_stages/stage_0.01_instructions/ai_agent_system/os/
 ├── wsl/
 │   ├── CLAUDE.md    (Created: 2025-12-24)
 │   ├── AGENTS.md    (Created: 2025-12-24)
@@ -362,7 +362,7 @@ Structure supports auto-detection:
 
 ### Layer 1 (Project)
 ```
-/home/dawson/code/0_ai_context/0_context/layer_1_project/1.99_stages/stage_1.01_instructions/ai_agent_system/os/
+/home/dawson/dawson-workspace/code/0_ai_context/0_context/layer_1_project/1.99_stages/stage_1.01_instructions/ai_agent_system/os/
 ├── wsl/
 │   ├── CLAUDE.md    (Created: 2025-12-24)
 │   ├── AGENTS.md    (Created: 2025-12-24)
@@ -377,7 +377,7 @@ Structure supports auto-detection:
 
 ### Layer 2 (Feature)
 ```
-/home/dawson/code/0_ai_context/0_context/layer_2_features/2.99_stages/stage_2.01_instructions/ai_agent_system/os/
+/home/dawson/dawson-workspace/code/0_ai_context/0_context/layer_2_features/2.99_stages/stage_2.01_instructions/ai_agent_system/os/
 ├── wsl/
 │   ├── CLAUDE.md    (Created: 2025-12-24, minimal scaffold)
 │   ├── AGENTS.md    (Created: 2025-12-24, minimal scaffold)
@@ -392,7 +392,7 @@ Structure supports auto-detection:
 
 ### Layer 3 (Component)
 ```
-/home/dawson/code/0_ai_context/0_context/layer_3_components/3.99_stages/stage_3.01_instructions/ai_agent_system/os/
+/home/dawson/dawson-workspace/code/0_ai_context/0_context/layer_3_components/3.99_stages/stage_3.01_instructions/ai_agent_system/os/
 ├── wsl/
 │   ├── CLAUDE.md    (Created: 2025-12-24, minimal scaffold)
 │   ├── AGENTS.md    (Created: 2025-12-24, minimal scaffold)

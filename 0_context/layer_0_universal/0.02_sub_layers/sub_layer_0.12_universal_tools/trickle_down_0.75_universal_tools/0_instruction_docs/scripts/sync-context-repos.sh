@@ -4,8 +4,8 @@
 
 set -e
 
-REPO1="/home/dawson/code/0-universal-context"
-REPO2="/home/dawson/code/setup-hub"
+REPO1="/home/dawson/dawson-workspace/code/0-universal-context"
+REPO2="/home/dawson/dawson-workspace/code/setup-hub"
 
 echo "🔄 Syncing context repositories..."
 echo ""

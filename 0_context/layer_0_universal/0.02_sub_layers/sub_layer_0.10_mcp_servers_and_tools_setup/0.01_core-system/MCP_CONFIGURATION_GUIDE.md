@@ -265,7 +265,7 @@ GITHUB_TOKEN=your_github_token_here
 {
   "name": "filesystem",
   "command": "npx",
-  "args": ["@modelcontextprotocol/server-filesystem", "/home/dawson/code/lang-trak-in-progress"],
+  "args": ["@modelcontextprotocol/server-filesystem", "/home/dawson/dawson-workspace/code/lang-trak-in-progress"],
   "category": "filesystem",
   "dependencies": ["node"]
 }

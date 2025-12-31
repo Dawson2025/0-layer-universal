@@ -153,7 +153,7 @@ pip install -r requirements-prod.txt
 ### Step 1: Prepare Environment
 
 ```bash
-cd /home/dawson/code/lang-trak-in-progress
+cd /home/dawson/dawson-workspace/code/lang-trak-in-progress
 
 # Activate virtual environment
 source .venv/bin/activate

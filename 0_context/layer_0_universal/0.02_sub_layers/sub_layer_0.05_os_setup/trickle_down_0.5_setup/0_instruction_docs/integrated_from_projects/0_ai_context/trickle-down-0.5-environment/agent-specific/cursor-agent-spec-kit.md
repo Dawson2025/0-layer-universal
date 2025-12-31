@@ -7,7 +7,7 @@
 ```
 AI Agent: Cursor AI Assistant
 Project: Language Tracker (lang-trak-in-progress)
-Environment: WSL Ubuntu (/home/dawson/code/lang-trak-in-progress)
+Environment: WSL Ubuntu (/home/dawson/dawson-workspace/code/lang-trak-in-progress)
 Coding System: GitHub Spec Kit
 Session Focus: [specify current work area - e.g., "Authentication Feature", "TDD Setup", "Environment Config"]
 ```

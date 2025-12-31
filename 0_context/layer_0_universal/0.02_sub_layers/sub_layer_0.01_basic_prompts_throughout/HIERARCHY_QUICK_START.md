@@ -46,41 +46,41 @@ L0 (Universal) → L1 (Project) → L2 (Feature) → L3 (Component)
 ### Start Here
 
 1. **MASTER_DOCUMENTATION_INDEX.md**
-   - `/home/dawson/code/0_ai_context/0_context/MASTER_DOCUMENTATION_INDEX.md`
+   - `/home/dawson/dawson-workspace/code/0_ai_context/0_context/MASTER_DOCUMENTATION_INDEX.md`
    - Your navigation hub - find anything from here
 
 2. **SYSTEM_OVERVIEW.md**
-   - `/home/dawson/code/0_ai_context/0_context/SYSTEM_OVERVIEW.md`
+   - `/home/dawson/dawson-workspace/code/0_ai_context/0_context/SYSTEM_OVERVIEW.md`
    - High-level architecture and concepts
 
 3. **USAGE_GUIDE.md**
-   - `/home/dawson/code/0_ai_context/0_context/USAGE_GUIDE.md`
+   - `/home/dawson/dawson-workspace/code/0_ai_context/0_context/USAGE_GUIDE.md`
    - How to work with the hierarchy
 
 ### When You Need Details
 
 4. **Layer/Stage Framework**
-   - `/home/dawson/code/0_ai_context/0_context/0.00_layer_stage_framework/README.md`
+   - `/home/dawson/dawson-workspace/code/0_ai_context/0_context/0.00_layer_stage_framework/README.md`
    - Detailed layer and stage definitions
 
 5. **Handoff Schema**
-   - `/home/dawson/code/0_ai_context/0_context/layer_0_universal/0.01_manager_handoff_documents/0.00_to_universal/handoff_schema.md`
+   - `/home/dawson/dawson-workspace/code/0_ai_context/0_context/layer_0_universal/0.01_manager_handoff_documents/0.00_to_universal/handoff_schema.md`
    - JSON schema for handoff documents
 
 6. **Layer Manager READMEs**
-   - L0: `/home/dawson/code/0_ai_context/0_context/layer_0_universal/0.00_ai_manager_system/README.md`
-   - L1: `/home/dawson/code/0_ai_context/0_context/layer_1_project/1.00_ai_manager_system/README.md`
-   - L2: `/home/dawson/code/0_ai_context/0_context/layer_2_features/2.00_ai_manager_system/README.md`
-   - L3: `/home/dawson/code/0_ai_context/0_context/layer_3_components/3.00_ai_manager_system/README.md`
+   - L0: `/home/dawson/dawson-workspace/code/0_ai_context/0_context/layer_0_universal/0.00_ai_manager_system/README.md`
+   - L1: `/home/dawson/dawson-workspace/code/0_ai_context/0_context/layer_1_project/1.00_ai_manager_system/README.md`
+   - L2: `/home/dawson/dawson-workspace/code/0_ai_context/0_context/layer_2_features/2.00_ai_manager_system/README.md`
+   - L3: `/home/dawson/dawson-workspace/code/0_ai_context/0_context/layer_3_components/3.00_ai_manager_system/README.md`
 
 ### When You're Ready to Adopt
 
 7. **Adoption Checklist**
-   - `/home/dawson/code/0_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.01_basic_prompts_throughout/HIERARCHY_ADOPTION_CHECKLIST.md`
+   - `/home/dawson/dawson-workspace/code/0_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.01_basic_prompts_throughout/HIERARCHY_ADOPTION_CHECKLIST.md`
    - Step-by-step guide to adopting the hierarchy
 
 8. **Migration Guide**
-   - `/home/dawson/code/0_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.01_basic_prompts_throughout/MIGRATION_GUIDE.md`
+   - `/home/dawson/dawson-workspace/code/0_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.01_basic_prompts_throughout/MIGRATION_GUIDE.md`
    - Retrofit existing projects with hierarchy patterns
 
 ---
@@ -394,18 +394,18 @@ You aggregate L2 results and report completion to L0 supervisor:
 ## Related Documentation
 
 **Essential**:
-- Adoption Checklist: `/home/dawson/code/0_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.01_basic_prompts_throughout/HIERARCHY_ADOPTION_CHECKLIST.md`
-- Migration Guide: `/home/dawson/code/0_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.01_basic_prompts_throughout/MIGRATION_GUIDE.md`
+- Adoption Checklist: `/home/dawson/dawson-workspace/code/0_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.01_basic_prompts_throughout/HIERARCHY_ADOPTION_CHECKLIST.md`
+- Migration Guide: `/home/dawson/dawson-workspace/code/0_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.01_basic_prompts_throughout/MIGRATION_GUIDE.md`
 
 **Deep Dive**:
-- Master Index: `/home/dawson/code/0_ai_context/0_context/MASTER_DOCUMENTATION_INDEX.md`
-- System Overview: `/home/dawson/code/0_ai_context/0_context/SYSTEM_OVERVIEW.md`
-- Usage Guide: `/home/dawson/code/0_ai_context/0_context/USAGE_GUIDE.md`
+- Master Index: `/home/dawson/dawson-workspace/code/0_ai_context/0_context/MASTER_DOCUMENTATION_INDEX.md`
+- System Overview: `/home/dawson/dawson-workspace/code/0_ai_context/0_context/SYSTEM_OVERVIEW.md`
+- Usage Guide: `/home/dawson/dawson-workspace/code/0_ai_context/0_context/USAGE_GUIDE.md`
 
 **Operational**:
-- Observability: `/home/dawson/code/0_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.13_universal_protocols/observability/README.md`
-- Safety Rules: `/home/dawson/code/0_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.04_universal_rules/safety_governance.md`
-- Deployment: `/home/dawson/code/0_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.05_os_setup/trickle_down_0.5_setup/0_instruction_docs/deployment/AI_MANAGER_HIERARCHY_DEPLOYMENT.md`
+- Observability: `/home/dawson/dawson-workspace/code/0_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.13_universal_protocols/observability/README.md`
+- Safety Rules: `/home/dawson/dawson-workspace/code/0_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.04_universal_rules/safety_governance.md`
+- Deployment: `/home/dawson/dawson-workspace/code/0_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.05_os_setup/trickle_down_0.5_setup/0_instruction_docs/deployment/AI_MANAGER_HIERARCHY_DEPLOYMENT.md`
 
 ---
 

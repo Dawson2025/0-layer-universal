@@ -18,7 +18,7 @@
 ```
 ============================= test session starts ==============================
 platform linux -- Python 3.12.3, pytest-8.4.2, pluggy-1.6.0
-rootdir: /home/dawson/code/lang-trak-in-progress
+rootdir: /home/dawson/dawson-workspace/code/lang-trak-in-progress
 configfile: pytest.ini
 plugins: anyio-4.11.0, cov-7.0.0, timeout-2.4.0, asyncio-1.2.0
 collected 8 items

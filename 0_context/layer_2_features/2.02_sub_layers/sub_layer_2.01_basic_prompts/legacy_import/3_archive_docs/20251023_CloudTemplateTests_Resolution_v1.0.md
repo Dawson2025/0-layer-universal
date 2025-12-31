@@ -179,8 +179,8 @@ All 8 cloud template tests now passing (100% success rate):
 - `POST /api/cloud-templates/<template_id>/download` - Download cloud template
 
 ### Related Documentation
-- `/home/dawson/code/lang-trak-in-progress/docs/0_context/trickle_down_0_universal_instructions/0_instruction_docs/post-completion-documentation-protocol.md`
-- `/home/dawson/code/lang-trak-in-progress/docs/0_context/README.md`
+- `/home/dawson/dawson-workspace/code/lang-trak-in-progress/docs/0_context/trickle_down_0_universal_instructions/0_instruction_docs/post-completion-documentation-protocol.md`
+- `/home/dawson/dawson-workspace/code/lang-trak-in-progress/docs/0_context/README.md`
 
 ---
 

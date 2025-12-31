@@ -355,7 +355,7 @@ Following https://byuidatascience.github.io/DS250-Course-Draft/Setup/git_github_
 
 **Session Completed By**: AI Assistant (Claude Sonnet 4.5)  
 **Date**: November 11, 2025  
-**Repository**: /home/dawson/code/pac20026_fall2025  
+**Repository**: /home/dawson/dawson-workspace/code/pac20026_fall2025  
 **Documentation**: Complete and comprehensive  
 **Status**: ✅ Ready for DS 250 coursework!
 
@@ -369,11 +369,11 @@ Following https://byuidatascience.github.io/DS250-Course-Draft/Setup/git_github_
 3. Document the new “school wrapper” pattern so future workspaces stay compliant.
 
 ### Actions Completed
-- **Wrapper migration**: `pac20026_fall2025/` now lives in `/home/dawson/code/school-pac20026_fall2025/` next to a private `0_context/` and `.ai_workspace`.
+- **Wrapper migration**: `pac20026_fall2025/` now lives in `/home/dawson/dawson-workspace/code/school-pac20026_fall2025/` next to a private `0_context/` and `.ai_workspace`.
 - **AI traces removed**: Deleted `0_context/` + `0_CONTEXT_COPY_COMPLETE.md` from the public repo; added the ignore rules to `.git/info/exclude` so they are enforced locally but invisible on GitHub.
 - **Private repos stood up**:
-  - `Dawson2025/0-universal-context` (tracks `/home/dawson/code/0_ai_context`)
-  - `Dawson2025/1-project-context-pac20026_fall2025` (tracks `/home/dawson/code/school-pac20026_fall2025/0_context`)
+  - `Dawson2025/0-universal-context` (tracks `/home/dawson/dawson-workspace/code/0_ai_context`)
+  - `Dawson2025/1-project-context-pac20026_fall2025` (tracks `/home/dawson/dawson-workspace/code/school-pac20026_fall2025/0_context`)
   - Both repos received full history plus add/remove test commits to prove push/pull works.
 - **Documentation refreshed**:
   - Workspace README lists all three repos (public + two private).

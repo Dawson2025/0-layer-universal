@@ -59,7 +59,7 @@
       "command": "npx",
       "args": [
         "@modelcontextprotocol/server-filesystem",
-        "/home/dawson/code/DS250-Course-Draft"
+        "/home/dawson/dawson-workspace/code/DS250-Course-Draft"
       ]
     }
   }

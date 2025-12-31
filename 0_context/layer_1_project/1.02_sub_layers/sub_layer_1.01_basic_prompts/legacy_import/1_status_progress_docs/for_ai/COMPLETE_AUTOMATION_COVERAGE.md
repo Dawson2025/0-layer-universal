@@ -514,7 +514,7 @@ Four comprehensive journey scripts covering complete workflows:
 
 1. **Environment Setup**:
    ```bash
-   cd /home/dawson/code/lang-trak-in-progress
+   cd /home/dawson/dawson-workspace/code/lang-trak-in-progress
    source .venv/bin/activate
    ```
 

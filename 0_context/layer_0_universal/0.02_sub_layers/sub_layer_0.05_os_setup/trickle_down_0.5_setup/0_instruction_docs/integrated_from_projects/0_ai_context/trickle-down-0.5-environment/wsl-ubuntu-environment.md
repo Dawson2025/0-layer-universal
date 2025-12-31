@@ -6,7 +6,7 @@
 ### Operating Environment
 - **Host System**: Windows with WSL2 Ubuntu integration
 - **Development Environment**: WSL Ubuntu file system exclusively
-- **Working Location**: `/home/dawson/code/lang-trak-in-progress/`
+- **Working Location**: `/home/dawson/dawson-workspace/code/lang-trak-in-progress/`
 - **Access Pattern**: Windows PowerShell accessing WSL Ubuntu via `\\wsl.localhost\Ubuntu\`
 
 ### Environment-Specific Rules
@@ -16,7 +16,7 @@
 ## File System Standards
 
 ### Correct Path Usage
-- **WSL Ubuntu Paths**: `/home/dawson/code/lang-trak-in-progress/`
+- **WSL Ubuntu Paths**: `/home/dawson/dawson-workspace/code/lang-trak-in-progress/`
 - **Relative Paths**: `./docs/trickle-down-1-project/constitution.md`
 - **Home Directory**: `~/code/lang-trak-in-progress/`
 
@@ -35,7 +35,7 @@
 - **Git Configuration**: Git configured with proper credentials in WSL Ubuntu
 
 ### Path Resolution Rules
-- **Project Root**: Always reference from `/home/dawson/code/lang-trak-in-progress/`
+- **Project Root**: Always reference from `/home/dawson/dawson-workspace/code/lang-trak-in-progress/`
 - **Documentation**: `docs/` subdirectories using relative paths
 - **Source Code**: All source files within WSL Ubuntu file system
 - **Dependencies**: npm/pip packages installed in WSL Ubuntu environment
@@ -86,7 +86,7 @@ Before any development work:
 ### Environment Test Commands
 ```bash
 # Verify WSL Ubuntu environment
-pwd  # Should show /home/dawson/code/lang-trak-in-progress
+pwd  # Should show /home/dawson/dawson-workspace/code/lang-trak-in-progress
 which python3  # Should show WSL Ubuntu Python path
 which node  # Should show WSL Ubuntu Node.js path
 which firebase  # Should show WSL Ubuntu Firebase CLI path

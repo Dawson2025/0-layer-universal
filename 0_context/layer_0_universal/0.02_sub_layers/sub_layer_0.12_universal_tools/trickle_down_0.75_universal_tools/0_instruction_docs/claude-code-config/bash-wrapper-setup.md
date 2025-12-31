@@ -222,7 +222,7 @@ if [ -x "$_claude_real" ]; then
     done
 
     # Enable bypass when CLAUDE_UNSAFE=1 or when in the project directory
-    if [ "${CLAUDE_UNSAFE:-0}" = "1" ] || [[ "$PWD" == "/home/dawson/code/lang-trak-in-progress"* ]]; then
+    if [ "${CLAUDE_UNSAFE:-0}" = "1" ] || [[ "$PWD" == "/home/dawson/dawson-workspace/code/lang-trak-in-progress"* ]]; then
       command "$_claude_real" --dangerously-skip-permissions "$@"
     else
       command "$_claude_real" "$@"
@@ -235,7 +235,7 @@ fi
 **Testing Results:**
 ```bash
 # Inside project
-$ cd /home/dawson/code/lang-trak-in-progress
+$ cd /home/dawson/dawson-workspace/code/lang-trak-in-progress
 $ claude -p "echo hello"
 hello  # No permission prompt
 
