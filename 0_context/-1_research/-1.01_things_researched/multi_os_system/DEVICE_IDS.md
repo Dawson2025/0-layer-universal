@@ -8,19 +8,19 @@ This document contains the device IDs for all three systems in the multi-OS work
 - **Device Name**: WSL-Dawson
 - **Device ID**: IF2WOGZ-RVSVKT3-RCRN3TT-6NDFXQX-KCCCFPW-ABIWRWT-3BFX37C-CDHKTAN
 - **Path**: /home/dawson/dawson-workspace
-- **Status**: ✅ Active and syncing
+- **Status**: ✅ Active, syncing with Windows, ✅ Ubuntu device added (discovering)
 
 ### Windows
-- **Device Name**: Win-Dawson
-- **Device ID**: Check Windows Syncthing web UI (Actions → Show ID) and fill in here
+- **Device Name**: Windows-Dawson
+- **Device ID**: PKA5NY2-47573F4-SAHSF6Z-3UXFJCU-AEFHZKL-WKVIHVA-OBF4M2V-5P7AXAE
 - **Path**: C:\Users\Dawson\dawson-workspace
-- **Status**: ✅ Active and syncing
+- **Status**: ✅ Active and syncing with WSL, ⏳ Pending Ubuntu connection
 
 ### Ubuntu Desktop
 - **Device Name**: Ubuntu-Dawson
 - **Device ID**: 7UVVQQS-O3463OC-GUTDI63-EWLX3SE-LRX4ZU3-MEOWA34-KSCMF6K-DR7GEAH
 - **Path**: /home/dawson/dawson-workspace
-- **Status**: ✅ Active and syncing
+- **Status**: ✅ Ready, ✅ WSL added, ⏳ Pending Windows connection
 
 ## How to Find Your Device ID
 
