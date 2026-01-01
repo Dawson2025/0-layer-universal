@@ -129,7 +129,7 @@ The complete integration of the **Ideal AI Manager Hierarchy System** into the `
   - HIERARCHY_ADOPTION_CHECKLIST.md
   - MIGRATION_GUIDE.md
   - HIERARCHY_QUICK_START.md
-- Template: `/home/dawson/dawson-workspace/code/0_ai_context/0_context/-1_research/.../implementation_lessons_learned.md`
+- Template: `/home/dawson/code/0_ai_context/0_context/-1_research/.../implementation_lessons_learned.md`
 
 **Outcome**: Clear path from documentation to real-world adoption
 
@@ -168,11 +168,11 @@ The complete integration of the **Ideal AI Manager Hierarchy System** into the `
 
 ### Immediate (This Week)
 1. **Review the Quick Start Guide**:
-   - `/home/dawson/dawson-workspace/code/0_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.01_basic_prompts_throughout/HIERARCHY_QUICK_START.md`
+   - `/home/dawson/code/0_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.01_basic_prompts_throughout/HIERARCHY_QUICK_START.md`
 
 2. **Review the Rollout Plan**:
    - `/home/dawson/.cursor/plans/ai_manager_hierarchy_rollout_plan.md`
-   - Note: Recommends `/home/dawson/dawson-workspace/code/1_school/web-app` as pilot project
+   - Note: Recommends `/home/dawson/code/1_school/web-app` as pilot project
 
 ### Short-term (Next 2-3 Weeks) - Phase 4 of Rollout Plan
 3. **Pilot Project Adoption**:
@@ -286,7 +286,7 @@ The complete integration of the **Ideal AI Manager Hierarchy System** into the `
 ## Architecture Compliance
 
 All implementation follows the normative specifications from:
-`/home/dawson/dawson-workspace/code/0_ai_context/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/`
+`/home/dawson/code/0_ai_context/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/`
 
 ### Core Architecture Principles ✅
 - ✅ Layers of abstraction (L0→L1→L2→L3→L4+)
@@ -339,7 +339,7 @@ All implementation follows the normative specifications from:
 
 ### Next Phase
 **Rollout Phase 4** - Pilot Project Adoption
-Recommended pilot: `/home/dawson/dawson-workspace/code/1_school/web-app`
+Recommended pilot: `/home/dawson/code/1_school/web-app`
 Timeline: 2-3 weeks
 See rollout plan for details
 

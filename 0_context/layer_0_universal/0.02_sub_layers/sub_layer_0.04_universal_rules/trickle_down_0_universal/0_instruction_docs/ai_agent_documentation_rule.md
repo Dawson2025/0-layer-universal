@@ -2,7 +2,7 @@
 
 ## **MANDATORY REQUIREMENT**
 
-**ALL AI agents MUST create, update, and maintain comprehensive documentation in the `/home/dawson/dawson-workspace/code/I-eat-repo/0_context` directory for EVERY SINGLE AI TURN in EVERY SESSION, regardless of the scope or type of changes made.**
+**ALL AI agents MUST create, update, and maintain comprehensive documentation in the `/home/dawson/code/I-eat-repo/0_context` directory for EVERY SINGLE AI TURN in EVERY SESSION, regardless of the scope or type of changes made.**
 
 ### **TURN-BY-TURN DOCUMENTATION REQUIREMENT**
 
@@ -85,7 +85,7 @@ This rule applies to:
 
 ### **2. DOCUMENTATION STRUCTURE**
 
-All documentation must follow the established hierarchy in `/home/dawson/dawson-workspace/code/I-eat-repo/0_context`:
+All documentation must follow the established hierarchy in `/home/dawson/code/I-eat-repo/0_context`:
 
 ```
 0_context/

@@ -10,7 +10,7 @@
 ## Normative Specification
 
 This file implements the OS-specific context pattern defined in:
-- `/home/dawson/dawson-workspace/code/0_ai_context/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/os_and_quartets.md`
+- `/home/dawson/code/0_ai_context/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/os_and_quartets.md`
 
 Refer to that document for the canonical specification of the OS variant system.
 
@@ -21,7 +21,7 @@ Refer to that document for the canonical specification of the OS variant system.
 This context builds on Layer 0 Universal Ubuntu context and adds project-level execution patterns.
 
 ### Project-Level Command Execution
-- Execute commands from project root: `/home/dawson/dawson-workspace/code/<project>/`
+- Execute commands from project root: `/home/dawson/code/<project>/`
 - Use relative paths within project structure
 - Scripts use bash shebang: `#!/bin/bash`
 - Check exit codes: `$?` for error handling

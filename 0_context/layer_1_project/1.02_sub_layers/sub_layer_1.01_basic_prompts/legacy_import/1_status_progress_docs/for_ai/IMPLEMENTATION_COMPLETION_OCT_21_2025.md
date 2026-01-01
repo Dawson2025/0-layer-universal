@@ -23,7 +23,7 @@ Following the GitHub Spec Kit methodology, I conducted a comprehensive codebase 
 
 **Status**: **FULLY IMPLEMENTED**
 
-**Location**: `/home/dawson/dawson-workspace/code/lang-trak-in-progress/app.py` (lines 2580-2673)
+**Location**: `/home/dawson/code/lang-trak-in-progress/app.py` (lines 2580-2673)
 
 **Endpoint**: `POST /api/admin/recalculate-phoneme-frequencies`
 
@@ -56,7 +56,7 @@ def api_admin_recalculate_phoneme_frequencies():
 
 **Status**: **ALREADY IMPLEMENTED** (Verified existing implementation)
 
-**Location**: `/home/dawson/dawson-workspace/code/lang-trak-in-progress/features/auth/registration.py` (lines 55-58)
+**Location**: `/home/dawson/code/lang-trak-in-progress/features/auth/registration.py` (lines 55-58)
 
 **Functionality**:
 ```python

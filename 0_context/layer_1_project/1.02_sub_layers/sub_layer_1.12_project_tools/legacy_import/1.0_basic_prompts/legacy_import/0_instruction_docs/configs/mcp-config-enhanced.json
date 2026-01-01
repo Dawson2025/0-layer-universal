@@ -52,7 +52,7 @@
       "command": "npx",
       "args": [
         "@modelcontextprotocol/server-filesystem",
-        "/home/dawson/dawson-workspace/code/lang-trak-in-progress"
+        "/home/dawson/code/lang-trak-in-progress"
       ]
     },
     "slack": {

@@ -240,7 +240,7 @@ kill -HUP $(cat gunicorn.pid)
 
 # Full restart
 kill $(cat gunicorn.pid)
-cd /home/dawson/dawson-workspace/code/lang-trak-in-progress
+cd /home/dawson/code/lang-trak-in-progress
 source .venv/bin/activate
 gunicorn --config gunicorn.conf.py --daemon app:app
 ```
@@ -252,7 +252,7 @@ kill $(cat gunicorn.pid)
 
 ### Start
 ```bash
-cd /home/dawson/dawson-workspace/code/lang-trak-in-progress
+cd /home/dawson/code/lang-trak-in-progress
 source .venv/bin/activate
 gunicorn --config gunicorn.conf.py --daemon app:app
 ```
@@ -279,7 +279,7 @@ gunicorn --config gunicorn.conf.py --daemon app:app
    ```bash
    # Add to crontab
    crontab -e
-   # Add: 0 2 * * * cp /home/dawson/dawson-workspace/code/lang-trak-in-progress/data/phonemes.db /backups/phonemes.db.$(date +\%Y\%m\%d)
+   # Add: 0 2 * * * cp /home/dawson/code/lang-trak-in-progress/data/phonemes.db /backups/phonemes.db.$(date +\%Y\%m\%d)
    ```
 
 ### Optional Enhancements

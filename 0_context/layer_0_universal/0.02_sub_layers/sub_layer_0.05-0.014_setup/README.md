@@ -69,14 +69,17 @@ The file tree at `0.01_universal_setup_file_tree_0/` is the **primary organizati
 3. **Combination-specific docs** - Setup for specific OS + IDE + MCP combinations
 4. **Discoverability** - Browse to find relevant documentation
 
-### Legacy Content
+### Content Organization
 
-Additional setup documentation may exist in:
+All content from the old sublayers (0.05-0.14) has been integrated into the file tree at appropriate levels:
 
-- `trickle_down_0.5_setup/` - Original OS setup docs (legacy)
-- `ui_controls/` - UI-specific setup (legacy)
+- **Level 1 (_shared)**: OS and environment setup docs
+- **Level 5 (_shared/0.06_mcp_servers/_shared/)**: MCP core documentation and configuration guides
+- **Level 7 (_shared/.../0.08_universal_tools/)**: Universal tools documentation
+- **Level 8 (_shared/.../0.09_protocols/)**: Protocol specifications and standards
+- **Level 9**: Agent setup documentation
 
-These will be gradually migrated into the file tree structure or referenced from it.
+Each level's `_shared/` directory contains documentation that applies across all options at that level.
 
 ---
 
@@ -164,25 +167,35 @@ This sublayer works alongside other universal sublayers:
 
 ## Migration Status
 
-### Completed
+### Completed ✅
 
 ✅ File tree structure created (`0.01_universal_setup_file_tree_0/`)
 ✅ Sublayer renamed to `sub_layer_0.05-0.014_setup`
-✅ Documentation created (README, QUICK_START, etc.)
-✅ Example configurations documented (Linux + Cursor + Playwright, MCP core issues)
+✅ Documentation created (README, QUICK_START, DESIGN_DOCUMENTATION, etc.)
+✅ Content from old sublayers (0.06-0.14) migrated into file tree at appropriate levels
+✅ Sublayer registry updated to reflect consolidation
+✅ References in universal_init_prompt.md updated
+✅ Old sublayer directories removed
 
-### In Progress
+### Content Integration Mapping
 
-⏳ Migrate content from old sublayers (0.06-0.14) into file tree
-⏳ Update sublayer registry to reflect consolidation
-⏳ Update references in universal_init_prompt.md
-⏳ Archive old sublayer directories
+All content has been integrated into the file tree hierarchy:
 
-### Future
+- **sub_layer_0.05 → Level 1**: OS-specific setup in `0.02_operating_systems/`
+- **sub_layer_0.07 → Level 2**: Environment setup in `0.03_environments/`
+- **sub_layer_0.06 → Level 3**: Coding app setup in `0.04_coding_apps/`
+- **sub_layer_0.09 → Level 4**: AI apps setup in `0.05_ai_apps/`
+- **sub_layer_0.10 → Level 5**: MCP servers in `0.06_mcp_servers/_shared/`
+- **sub_layer_0.11 → Level 6**: AI models in `0.07_ai_models/`
+- **sub_layer_0.12 → Level 7**: Universal tools in `0.08_universal_tools/`
+- **sub_layer_0.13 → Level 8**: Protocols in `0.09_protocols/`
+- **sub_layer_0.14 → Level 9**: Agent setup in `0.10_agent_setup/`
 
-🔮 Complete migration of all legacy setup docs
-🔮 Deprecate old sublayers 0.06-0.14
-🔮 Update all cross-references in documentation
+### Future Enhancements
+
+🔮 Continue organizing content within the hierarchy
+🔮 Add more terminal node documentation at specific paths
+🔮 Create cross-references between related documentation
 
 ---
 
@@ -234,5 +247,5 @@ For issues or questions about this sublayer:
 
 ---
 
-**Last Updated**: 2025-12-31
-**Version**: 1.0 (Consolidated Setup Sublayer)
+**Last Updated**: 2026-01-01
+**Version**: 2.0 (Fully Integrated Hierarchical Setup)

@@ -46,7 +46,7 @@ All deliverables are complete and ready to support the transition from documenta
   - Integration with existing documentation
 
 - 🔄 **Phase 4 (In Progress)**: Pilot Project Adoption
-  - **Recommended Pilot**: `/home/dawson/dawson-workspace/code/1_school/web-app`
+  - **Recommended Pilot**: `/home/dawson/code/1_school/web-app`
   - Rationale: Right size (Flask web app), active development, clear architecture
   - 3-week plan: Assessment → L1 Setup → Feature Implementation → Measurement
   - Success criteria defined (10 metrics)
@@ -75,7 +75,7 @@ All deliverables are complete and ready to support the transition from documenta
 
 ### 2. Hierarchy Adoption Checklist
 
-**Location**: `/home/dawson/dawson-workspace/code/0_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.01_basic_prompts_throughout/HIERARCHY_ADOPTION_CHECKLIST.md`
+**Location**: `/home/dawson/code/0_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.01_basic_prompts_throughout/HIERARCHY_ADOPTION_CHECKLIST.md`
 
 **Size**: ~35 KB
 **Type**: Operational Checklist
@@ -142,7 +142,7 @@ All deliverables are complete and ready to support the transition from documenta
 
 ### 3. Migration Guide for Existing Projects
 
-**Location**: `/home/dawson/dawson-workspace/code/0_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.01_basic_prompts_throughout/MIGRATION_GUIDE.md`
+**Location**: `/home/dawson/code/0_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.01_basic_prompts_throughout/MIGRATION_GUIDE.md`
 
 **Size**: ~32 KB
 **Type**: Strategic Guide
@@ -246,7 +246,7 @@ All deliverables are complete and ready to support the transition from documenta
 
 ### 4. Implementation Lessons Learned Template
 
-**Location**: `/home/dawson/dawson-workspace/code/0_ai_context/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/implementation_lessons_learned.md`
+**Location**: `/home/dawson/code/0_ai_context/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/implementation_lessons_learned.md`
 
 **Size**: ~25 KB
 **Type**: Living Document (Template)
@@ -311,7 +311,7 @@ All deliverables are complete and ready to support the transition from documenta
 
 ### 5. Hierarchy Quick Start Guide
 
-**Location**: `/home/dawson/dawson-workspace/code/0_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.01_basic_prompts_throughout/HIERARCHY_QUICK_START.md`
+**Location**: `/home/dawson/code/0_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.01_basic_prompts_throughout/HIERARCHY_QUICK_START.md`
 
 **Size**: ~18 KB
 **Type**: Rapid Onboarding Guide
@@ -420,7 +420,7 @@ All five documents are fully cross-linked:
 ### 7.1 Rollout Plan
 
 - ✅ Phased rollout plan defined (6 phases: 1-3 complete, 4 in progress, 5-6 planned)
-- ✅ Pilot project recommended (`/home/dawson/dawson-workspace/code/1_school/web-app`) with rationale
+- ✅ Pilot project recommended (`/home/dawson/code/1_school/web-app`) with rationale
 - ✅ Success criteria defined for each phase
 - ✅ Timeline defined (11 weeks to full adoption)
 - ✅ Incremental rollout strategy defined (Tier 1-3 projects)
@@ -478,10 +478,10 @@ All five documents are fully cross-linked:
 ### Created Files (5 new documents)
 
 1. `/home/dawson/.cursor/plans/ai_manager_hierarchy_rollout_plan.md` (~45 KB)
-2. `/home/dawson/dawson-workspace/code/0_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.01_basic_prompts_throughout/HIERARCHY_ADOPTION_CHECKLIST.md` (~35 KB)
-3. `/home/dawson/dawson-workspace/code/0_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.01_basic_prompts_throughout/MIGRATION_GUIDE.md` (~32 KB)
-4. `/home/dawson/dawson-workspace/code/0_ai_context/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/implementation_lessons_learned.md` (~25 KB)
-5. `/home/dawson/dawson-workspace/code/0_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.01_basic_prompts_throughout/HIERARCHY_QUICK_START.md` (~18 KB)
+2. `/home/dawson/code/0_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.01_basic_prompts_throughout/HIERARCHY_ADOPTION_CHECKLIST.md` (~35 KB)
+3. `/home/dawson/code/0_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.01_basic_prompts_throughout/MIGRATION_GUIDE.md` (~32 KB)
+4. `/home/dawson/code/0_ai_context/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/implementation_lessons_learned.md` (~25 KB)
+5. `/home/dawson/code/0_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.01_basic_prompts_throughout/HIERARCHY_QUICK_START.md` (~18 KB)
 
 ### Summary File (this document)
 
@@ -558,7 +558,7 @@ All five documents are fully cross-linked:
 
 ### 1. Pilot Project Selection
 
-**Decision**: Recommend `/home/dawson/dawson-workspace/code/1_school/web-app` as pilot project
+**Decision**: Recommend `/home/dawson/code/1_school/web-app` as pilot project
 
 **Rationale**:
 - Right size (Flask web app with database, routing, templates)
@@ -657,10 +657,10 @@ All five documents are fully cross-linked:
 ### Rollout and Adoption Docs
 
 - **Rollout Plan**: `/home/dawson/.cursor/plans/ai_manager_hierarchy_rollout_plan.md`
-- **Adoption Checklist**: `/home/dawson/dawson-workspace/code/0_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.01_basic_prompts_throughout/HIERARCHY_ADOPTION_CHECKLIST.md`
-- **Migration Guide**: `/home/dawson/dawson-workspace/code/0_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.01_basic_prompts_throughout/MIGRATION_GUIDE.md`
-- **Lessons Learned**: `/home/dawson/dawson-workspace/code/0_ai_context/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/implementation_lessons_learned.md`
-- **Quick Start**: `/home/dawson/dawson-workspace/code/0_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.01_basic_prompts_throughout/HIERARCHY_QUICK_START.md`
+- **Adoption Checklist**: `/home/dawson/code/0_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.01_basic_prompts_throughout/HIERARCHY_ADOPTION_CHECKLIST.md`
+- **Migration Guide**: `/home/dawson/code/0_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.01_basic_prompts_throughout/MIGRATION_GUIDE.md`
+- **Lessons Learned**: `/home/dawson/code/0_ai_context/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/implementation_lessons_learned.md`
+- **Quick Start**: `/home/dawson/code/0_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.01_basic_prompts_throughout/HIERARCHY_QUICK_START.md`
 
 ### Plan and Progress Docs
 
@@ -681,7 +681,7 @@ Phase 7 (Rollout and Migration Strategy) is complete. All five deliverables have
 
 **Total Documentation**: 7 phases, 155 KB of new rollout/migration docs, comprehensive integration plan
 
-**Next Phase**: Execute pilot project adoption (Phase 4 of rollout plan) with `/home/dawson/dawson-workspace/code/1_school/web-app`
+**Next Phase**: Execute pilot project adoption (Phase 4 of rollout plan) with `/home/dawson/code/1_school/web-app`
 
 **Status**: Phase 7 is **COMPLETED** ✅
 

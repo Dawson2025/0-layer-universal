@@ -10,7 +10,7 @@
 ## Normative Specification
 
 This file implements the OS-specific context pattern defined in:
-- `/home/dawson/dawson-workspace/code/0_ai_context/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/os_and_quartets.md`
+- `/home/dawson/code/0_ai_context/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/os_and_quartets.md`
 
 Refer to that document for the canonical specification of the OS variant system.
 
@@ -25,7 +25,7 @@ Refer to that document for the canonical specification of the OS variant system.
 - Industry-standard server and development platform
 
 ### File System Considerations
-- **Primary workspace**: `/home/dawson/dawson-workspace/code/`
+- **Primary workspace**: `/home/dawson/code/`
 - **System directories**: `/usr/`, `/opt/`, `/var/`, `/etc/`
 - **Filesystem type**: ext4, btrfs, or xfs (typically)
 - **Permissions**: Standard Unix DAC (Discretionary Access Control)

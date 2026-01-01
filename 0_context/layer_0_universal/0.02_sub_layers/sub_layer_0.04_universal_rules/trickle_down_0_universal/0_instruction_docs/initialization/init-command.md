@@ -23,7 +23,7 @@ The `/init` command provides complete project context to any AI coding agent by 
 ```
 AI Agent: [Agent Name - e.g., Warp AI Assistant, Claude Code, Cursor, etc.]
 Project: Language Tracker (lang-trak-in-progress)
-Environment: WSL Ubuntu (/home/dawson/dawson-workspace/code/lang-trak-in-progress)
+Environment: WSL Ubuntu (/home/dawson/code/lang-trak-in-progress)
 Coding System: GitHub Spec Kit
 Session Focus: [focus area if specified, otherwise "Full Context Loading"]
 Initialize: Starting Trickle-Down context loading...

@@ -10,7 +10,7 @@
 ## Normative Specification
 
 This file implements the OS-specific context pattern defined in:
-- `/home/dawson/dawson-workspace/code/0_ai_context/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/os_and_quartets.md`
+- `/home/dawson/code/0_ai_context/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/os_and_quartets.md`
 
 Refer to that document for the canonical specification of the OS variant system.
 
@@ -32,7 +32,7 @@ Refer to that document for the canonical specification of the OS variant system.
 ### File Operations
 - Read/write to `/home/dawson/` filesystem (native Linux)
 - Avoid `/mnt/c/` for performance-critical operations
-- Use forward slashes in paths: `/home/dawson/dawson-workspace/code/`
+- Use forward slashes in paths: `/home/dawson/code/`
 - Line endings: prefer LF (Unix-style), avoid CRLF
 
 ### Package Management

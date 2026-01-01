@@ -74,7 +74,7 @@ if [ -x "$_claude_real" ]; then
     done
 
     # Enable bypass when CLAUDE_UNSAFE=1 or when in the project directory (and its subdirs)
-    if [ "${CLAUDE_UNSAFE:-0}" = "1" ] || [[ "$PWD" == "/home/dawson/dawson-workspace/code/lang-trak-in-progress"* ]]; then
+    if [ "${CLAUDE_UNSAFE:-0}" = "1" ] || [[ "$PWD" == "/home/dawson/code/lang-trak-in-progress"* ]]; then
       command "$_claude_real" --dangerously-skip-permissions "$@"
     else
       command "$_claude_real" "$@"
@@ -143,7 +143,7 @@ To tighten project permissions (recommended):
 
 - Option B (Conditional wrapper): Implemented — the `~/.bashrc` now contains a conditional wrapper that enables bypass only when either:
   - `CLAUDE_UNSAFE=1` is set in the environment, or
-  - You are inside the project directory `/home/dawson/dawson-workspace/code/lang-trak-in-progress` (or any subdirectory).
+  - You are inside the project directory `/home/dawson/code/lang-trak-in-progress` (or any subdirectory).
 
   Wrapper behavior summary:
   - In the project directory, `claude` runs with `--dangerously-skip-permissions` by default.

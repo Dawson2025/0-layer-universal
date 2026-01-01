@@ -179,7 +179,7 @@ Create or update files in these directories as needed:
 
 Search for and update these common patterns:
 
-1. **Project paths**: Search for `/home/dawson/dawson-workspace/code/` and replace with your paths
+1. **Project paths**: Search for `/home/dawson/code/` and replace with your paths
 2. **Project names**: Update any hardcoded project names
 3. **Technology references**: Update technology stack references if different
 
