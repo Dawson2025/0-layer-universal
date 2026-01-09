@@ -33,55 +33,16 @@
     │                       ├── cursor_agent/
     │                       ├── codex_cli/
     │                       └── gemini_cli/
-    │                           └── 0.06_mcp_servers/
-    │                               ├── README.md
-    │                               ├── _shared/                # Cross-MCP-server setup
-    │                               ├── _mcp_core/              # Core MCP issues (all servers)
-    │                               │   └── general_setup_and_config/
-    │                               ├── browser-mcp/
-    │                               │   └── general_setup_and_config/
-    │                               ├── playwright-mcp/
-    │                               │   └── general_setup_and_config/
-    │                               ├── chrome-devtools-mcp/
-    │                               │   └── general_setup_and_config/
-    │                               ├── tavily-mcp/
-    │                               │   └── general_setup_and_config/
-    │                               └── context7-mcp/
-    │                                   └── general_setup_and_config/
-    │                                       └── 0.07_ai_models/
-    │                                           ├── _shared/               # Cross-model setup
-    │                                           ├── claude-sonnet/
-    │                                           │   └── general_setup_and_config/
-    │                                           ├── claude-opus/
-    │                                           │   └── general_setup_and_config/
-    │                                           ├── claude-haiku/
-    │                                           │   └── general_setup_and_config/
-    │                                           ├── gpt-4/
-    │                                           │   └── general_setup_and_config/
-    │                                           └── gemini/
-    │                                               └── general_setup_and_config/
-    │                                                   └── 0.08_universal_tools/
-    │                                                       ├── _shared/          # Cross-tool setup
-    │                                                       ├── git/
-    │                                                       │   └── general_setup_and_config/
-    │                                                       ├── docker/
-    │                                                       │   └── general_setup_and_config/
-    │                                                       ├── npm/
-    │                                                       │   └── general_setup_and_config/
-    │                                                       └── python/
-    │                                                           └── general_setup_and_config/
-    │                                                               └── 0.09_protocols/
-    │                                                                   ├── _shared/                 # Cross-protocol setup
-    │                                                                   ├── terminal_protocol/
-    │                                                                   │   └── general_setup_and_config/
-    │                                                                   ├── browser_protocol/
-    │                                                                   │   └── general_setup_and_config/
-    │                                                                   ├── git_protocol/
-    │                                                                   │   └── general_setup_and_config/
-    │                                                                   └── testing_protocol/
-    │                                                                       └── general_setup_and_config/
-    │                                                                           └── 0.10_agent_setup/
-    │                                                                               └── general_setup_and_config/
+    │                           ├── 0.06_mcp_servers/
+    │                           │   └── (MCP servers and configs)
+    │                           ├── 0.06_ai_models/
+    │                           │   └── (AI model access)
+    │                           ├── 0.07_universal_tools/
+    │                           │   └── (Tools, shared + per-tool)
+    │                           ├── 0.08_protocols/
+    │                           │   └── (Protocols)
+    │                           └── 0.09_agent_setup/
+    │                               └── (Agent setup)
     │
     ├── linux_ubuntu/                   # Linux Ubuntu-specific setup
     │   ├── README.md
@@ -114,9 +75,7 @@
 → 0.03_environments/_shared/
 → 0.04_coding_apps/_shared/
 → 0.05_ai_apps/_shared/
-→ 0.06_mcp_servers/_shared/
-→ 0.07_ai_models/_shared/
-→ 0.08_universal_tools/git/
+→ 0.07_universal_tools/git/
 → general_setup_and_config/
 ```
 

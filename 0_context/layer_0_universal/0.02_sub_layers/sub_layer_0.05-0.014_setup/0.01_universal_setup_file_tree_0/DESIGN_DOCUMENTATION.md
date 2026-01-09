@@ -175,10 +175,10 @@ cat 0.00_sub_layer_registry/sub_layer_registry.yaml
 3. **0.04_coding_apps/** - IDE/editor choice
 4. **0.05_ai_apps/** - AI tool choice
 5. **0.06_mcp_servers/** - MCP server choice
-6. **0.07_ai_models/** - AI model choice
-7. **0.08_universal_tools/** - Universal tool choice
-8. **0.09_protocols/** - Protocol choice
-9. **0.10_agent_setup/** - Agent configuration (terminal level)
+6. **0.06_ai_models/** - AI model choice
+7. **0.07_universal_tools/** - Universal tool choice
+8. **0.08_protocols/** - Protocol choice
+9. **0.09_agent_setup/** - Agent configuration (terminal level)
 
 **Reasoning**:
 - OS first (most fundamental choice)
@@ -557,7 +557,7 @@ Each `general_setup_and_config/README.md` follows this pattern:
 **Steps**:
 1. Start at: `0.02_operating_systems/_shared/`
 2. Navigate through: `_shared/` folders at each level
-3. End at: `0.08_universal_tools/git/general_setup_and_config/`
+3. End at: `0.07_universal_tools/git/general_setup_and_config/`
 
 **Result**: Finds universal Git setup that works on any OS, any environment, any coding app
 
@@ -609,10 +609,10 @@ File Tree (Navigation)          Sublayers (Detailed Docs)
 0.04_coding_apps/          ←→  sub_layer_0.07_coding_app_setup/
 0.05_ai_apps/              ←→  sub_layer_0.09_ai_apps_tools_setup/
 0.06_mcp_servers/          ←→  sub_layer_0.10_mcp_servers_and_tools_setup/
-0.07_ai_models/            ←→  sub_layer_0.11_ai_models/
-0.08_universal_tools/      ←→  sub_layer_0.12_universal_tools/
-0.09_protocols/            ←→  sub_layer_0.13_universal_protocols/
-0.10_agent_setup/          ←→  sub_layer_0.14_agent_setup/
+0.06_ai_models/            ←→  sub_layer_0.11_ai_models/
+0.07_universal_tools/      ←→  sub_layer_0.12_universal_tools/
+0.08_protocols/            ←→  sub_layer_0.13_universal_protocols/
+0.09_agent_setup/          ←→  sub_layer_0.14_agent_setup/
 ```
 
 ### Division of Responsibility

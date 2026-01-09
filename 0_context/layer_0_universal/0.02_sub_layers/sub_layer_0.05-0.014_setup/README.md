@@ -75,8 +75,8 @@ All content from the old sublayers (0.05-0.14) has been integrated into the file
 
 - **Level 1 (_shared)**: OS and environment setup docs
 - **Level 5 (_shared/0.06_mcp_servers/_shared/)**: MCP core documentation and configuration guides
-- **Level 7 (_shared/.../0.08_universal_tools/)**: Universal tools documentation
-- **Level 8 (_shared/.../0.09_protocols/)**: Protocol specifications and standards
+- **Level 7 (_shared/.../0.07_universal_tools/)**: Universal tools documentation
+- **Level 8 (_shared/.../0.08_protocols/)**: Protocol specifications and standards
 - **Level 9**: Agent setup documentation
 
 Each level's `_shared/` directory contains documentation that applies across all options at that level.
@@ -119,10 +119,24 @@ This sublayer consolidates what were previously 10 separate sublayers:
 | sub_layer_0.08_apps_browsers_extensions_setup | File tree: (browsers under coding apps) |
 | sub_layer_0.09_ai_apps_tools_setup | File tree: `0.05_ai_apps/` |
 | sub_layer_0.10_mcp_servers_and_tools_setup | File tree: `0.06_mcp_servers/` |
-| sub_layer_0.11_ai_models | File tree: `0.07_ai_models/` |
-| sub_layer_0.12_universal_tools | File tree: `0.08_universal_tools/` |
-| sub_layer_0.13_universal_protocols | File tree: `0.09_protocols/` |
-| sub_layer_0.14_agent_setup | File tree: `0.10_agent_setup/` |
+| sub_layer_0.11_ai_models | File tree: `0.06_ai_models/` |
+| sub_layer_0.12_universal_tools | File tree: `0.07_universal_tools/` |
+| sub_layer_0.13_universal_protocols | File tree: `0.08_protocols/` |
+| sub_layer_0.14_agent_setup | File tree: `0.09_agent_setup/` |
+
+---
+
+## Audit Status
+
+An audit and recovery pass completed on 2026-01-09. The report and recovery artifacts live alongside this README:
+
+- `MISSING_CONTENT_AUDIT_REPORT.md`
+- `missing_recovery_map.csv`
+- `recover_missing_setup_files.sh`
+
+Legacy sublayer root READMEs (including backup variants) are preserved in:
+
+- `legacy_sublayer_readmes/`
 
 ### Integration with Non-Setup Sublayers
 
@@ -186,10 +200,10 @@ All content has been integrated into the file tree hierarchy:
 - **sub_layer_0.06 → Level 3**: Coding app setup in `0.04_coding_apps/`
 - **sub_layer_0.09 → Level 4**: AI apps setup in `0.05_ai_apps/`
 - **sub_layer_0.10 → Level 5**: MCP servers in `0.06_mcp_servers/_shared/`
-- **sub_layer_0.11 → Level 6**: AI models in `0.07_ai_models/`
-- **sub_layer_0.12 → Level 7**: Universal tools in `0.08_universal_tools/`
-- **sub_layer_0.13 → Level 8**: Protocols in `0.09_protocols/`
-- **sub_layer_0.14 → Level 9**: Agent setup in `0.10_agent_setup/`
+- **sub_layer_0.11 → Level 6**: AI models in `0.06_ai_models/`
+- **sub_layer_0.12 → Level 7**: Universal tools in `0.07_universal_tools/`
+- **sub_layer_0.13 → Level 8**: Protocols in `0.08_protocols/`
+- **sub_layer_0.14 → Level 9**: Agent setup in `0.09_agent_setup/`
 
 ### Future Enhancements
 
@@ -211,8 +225,8 @@ All content has been integrated into the file tree hierarchy:
 → 0.04_coding_apps/_shared/
 → 0.05_ai_apps/_shared/
 → 0.06_mcp_servers/_shared/
-→ 0.07_ai_models/_shared/
-→ 0.08_universal_tools/git/
+→ 0.06_ai_models/_shared/
+→ 0.07_universal_tools/git/
 → general_setup_and_config/
 ```
 
