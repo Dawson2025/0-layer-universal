@@ -294,7 +294,11 @@ layer_<N>_<type>_<name>/              # type = feature, mini_feature, mini*2_fea
     └── layer_<N+1>_mini*2_component_<name>/   # Each follows same structure
 ```
 
-**Note:** Layer 2 uses `layer_2_features/` and `layer_2_components/` (no "mini" prefix). From Layer 3 onwards, use mini naming: `mini_features/`, `mini*2_features/`, `mini*3_features/`, etc.
+**Important Notes:**
+- **Layer 2** uses `layer_2_features/` and `layer_2_components/` (no "mini" prefix)
+- **Layer 3+** uses mini naming: `mini_features/`, `mini*2_features/`, `mini*3_features/`, etc.
+- **Every layer has sub_layers**: ALL features, mini_features, components, and mini_components have `<N>.02_sub_layers/` with 12 content slots
+- **Use sub_layers for**: Visual notes (Excalidraw), knowledge bases, tools, documentation, any specialized content
 
 **Flexible Nesting (N ≥ 2):**
 - Any feature or component at layer N can contain:

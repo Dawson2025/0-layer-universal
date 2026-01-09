@@ -19,7 +19,8 @@ The flexible layering system allows **arbitrary nesting** of features and compon
 3. **Any layer can contain mini-features AND mini-components**
 4. **Infinite nesting** - create as many levels as needed
 5. **Each layer follows the same structure** (manager, handoffs, sub-layers, stages)
-6. **Consistent numbering** shows position in hierarchy
+6. **Every layer has sub_layers**: ALL features, mini_features, components, and mini_components have `<N>.02_sub_layers/` with 12 content slots
+7. **Consistent numbering** shows position in hierarchy
 
 ---
 
@@ -163,11 +164,16 @@ layer_N_mini*n_component_<name>/
   - `N.00_to_universal/`
   - `N.01_to_specific/`
 
-**Sub-layers:**
+**Sub-layers (Every Layer Has These):**
 - `N.02_sub_layers/`
-  - `sub_layer_N.01_<name>/`
-  - `sub_layer_N.02_<name>/`
-  - ... through `sub_layer_N.12_<name>/`
+  - `sub_layer_N.01_<name>/` through `sub_layer_N.12_<name>/`
+  - **Purpose**: Specialized content at this layer level
+  - **Common uses**:
+    - `sub_layer_N.01_visual_notes/excalidraw/` - Excalidraw diagrams
+    - `sub_layer_N.02_knowledge/` - Documentation, references
+    - `sub_layer_N.03_tools/` - Scripts, utilities
+    - `sub_layer_N.04_resources/` - Files, assets
+  - **Available in**: ALL features, mini_features, components, mini_components
 
 **Stages:**
 - `N.99_stages/`
