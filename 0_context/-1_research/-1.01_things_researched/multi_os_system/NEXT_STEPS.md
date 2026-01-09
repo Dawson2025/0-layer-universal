@@ -13,14 +13,13 @@
 
 ### Task 1: Restore Ubuntu Connection (URGENT)
 
-**Blocked By:** Missing IP Address for Ubuntu machine.
+**IP Address Identified:** `10.200.164.40`
 
 **Instructions for Agent:**
-1.  **Ask User for IP:** Request the LAN IP of the Ubuntu desktop.
-2.  **Verify SSH:** Connect via `ssh user@<ip>`.
-3.  **Check Service:** Ensure `syncthing` is running on Ubuntu (`systemctl --user status syncthing`).
-4.  **Check Firewall:** Ensure port 22000 is open (`sudo ufw status`).
-5.  **Manual Peer:** If auto-discovery fails, manually add `tcp://<ip>:22000` to the WSL/Windows Syncthing config.
+1.  **Manual Peer:** Add `tcp://10.200.164.40:22000` to the WSL/Windows Syncthing config for the Ubuntu device.
+2.  **Check Service:** Ensure `syncthing` is running on Ubuntu (`systemctl --user status syncthing`).
+3.  **Check Firewall:** Ensure port 22000 is open (`sudo ufw status`).
+4.  **Verify:** Confirm status changes to "Connected".
 
 ---
 

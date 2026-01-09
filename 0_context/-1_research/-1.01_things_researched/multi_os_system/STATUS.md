@@ -6,33 +6,24 @@
 | :--- | :--- | :--- | :--- |
 | **WSL** | 🟢 Running | Send & Receive | Canonical source |
 | **Windows** | 🟢 Running | Send & Receive | **FIXED:** Service started, connected to WSL |
-| **Ubuntu** | 🔴 Disconnected | Send & Receive | **Unknown IP / Not Reachable** |
+| **Ubuntu** | 🔴 Disconnected | Send & Receive | **IP: 10.200.164.40** (Ready for connection) |
 
-## Immediate Action Required (Agent Instruction)
+## Immediate Action Required (WSL/Windows Agent)
 
 **Goal:** Establish connection to the Ubuntu machine.
 
-**Step 1: Ask the User for IP**
-You must explicitly ask the user:
-> "To fix the Ubuntu connection, I need its IP address. Please run `ip addr` on your Ubuntu machine and provide the LAN IP address (e.g., `10.200.164.x`)."
+**Step 1: Use Provided IP**
+The Ubuntu IP address is: **10.200.164.40**
 
-**Step 2: Verify Access**
-Once the user provides the IP:
-1.  Run `ssh user@<provided-ip>` from Windows/WSL to confirm SSH access.
-2.  If SSH fails, ask the user to check if the Ubuntu machine is powered on and connected to the same Wi-Fi/Ethernet.
+**Step 2: Fix Syncthing Connection on WSL/Windows**
+1.  Open Syncthing Web UI (or use config file).
+2.  Edit the Ubuntu device (`7UVVQQS...`).
+3.  Change "Addresses" from `dynamic` to `tcp://10.200.164.40:22000,dynamic`.
+4.  Save and wait 60 seconds.
 
-**Step 3: Fix Syncthing Connection**
-Once SSH is working:
-1.  SSH into Ubuntu.
-2.  Restart Syncthing: `systemctl --user restart syncthing`.
-3.  Check status: `systemctl --user status syncthing`.
-4.  If still not connecting, add the Ubuntu IP address manually to the Windows/WSL Syncthing config (`config.xml`) inside the `<device>` block for Ubuntu:
-    ```xml
-    <device id="...">
-      <address>tcp://<ubuntu-ip>:22000</address>
-      <address>dynamic</address>
-    </device>
-    ```
+**Step 3: Verify**
+- Check if Ubuntu status changes to "Connected".
+- If still failing, check firewall on port 22000.
 
 ## Recent Log
 - **2026-01-09:** Windows Syncthing service was down. Restarted it. WSL connection restored immediately.

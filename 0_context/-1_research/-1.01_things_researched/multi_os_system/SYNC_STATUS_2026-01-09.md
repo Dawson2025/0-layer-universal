@@ -23,9 +23,9 @@
 
 ### Ubuntu (Ubuntu-Dawson)
 - **Device ID:** `7UVVQQS-O3463OC-GUTDI63-EWLX3SE-LRX4ZU3-MEOWA34-KSCMF6K-DR7GEAH`
-- **Status:** **Disconnected** (Connection Timed Out)
-- **Issue:** Unable to auto-discover IP address from Windows.
-- **Next Step:** Obtain Ubuntu IP address to SSH and troubleshoot.
+- **Status:** **Ready for Sync** (IP Identified)
+- **IP Address:** `10.200.164.40`
+- **Next Step:** Update WSL/Windows Syncthing to use this IP manually.
 
 ## Repairs Executed (2026-01-09)
 
