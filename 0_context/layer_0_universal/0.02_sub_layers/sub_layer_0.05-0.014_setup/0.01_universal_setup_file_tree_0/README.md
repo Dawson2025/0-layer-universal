@@ -2,6 +2,8 @@
 
 This folder is the **traversable universal setup documentation file tree**. It is organized so you can always navigate through the complete setup hierarchy:
 
+- See `HIERARCHY_SYSTEM_OVERVIEW.md` for the current hierarchy rules and traversal pattern.
+
 `Operating System → Environment → Coding App → AI App → {MCP Servers, AI Models, Universal Tools, Protocols, Agent Setup}`
 
 ## Canonical Tree
