@@ -6,7 +6,7 @@
 
 ✅ **WSL ↔ Windows sync: OPERATIONAL**
 ⚠️ **1,022 "Failed Items" - EXPECTED BEHAVIOR (see details below)**
-❌ **Ubuntu device: OFFLINE (expected - waiting for device to come online)**
+❌ **Ubuntu device: ONLINE but DISCONNECTED (Connectivity Issue)**
 
 ## Current Sync Status
 
@@ -23,11 +23,37 @@
 - **Connection:** TCP LAN (active)
 - **Data Transfer:** Downloaded 222 KiB, Uploaded 148 KiB
 - **Sync:** Bidirectional (Send & Receive)
+- **Versioning:** Staggered, 14-day retention
 
 ### Ubuntu (Ubuntu-Dawson)
 - **Device ID:** `7UVVQQS-O3463OC-GUTDI63-EWLX3SE-LRX4ZU3-MEOWA34-KSCMF6K-DR7GEAH`
 - **Status:** **Disconnected (Inactive)** - Device is offline
 - **Expected:** Normal - Ubuntu desktop is not currently running
+
+## Ubuntu Verification Report (2026-01-09 Update)
+
+**Status:** ❌ **Verification Failed - Connectivity Issue**
+**Reporter:** Claude Code (Ubuntu)
+
+### Findings
+1. **Service Status:** ✅ Active (running since 01:19 MST)
+2. **Local Configuration:** ✅ Correct (Device ID, Folder Path, Git Config)
+3. **Workspace State:** ❌ Incomplete (40 files, 316K vs ~1.5GB expected).
+4. **Connectivity:** ❌ Disconnected.
+   - Ubuntu Syncthing sees WSL device (`IF2WOGZ...`) as "Disconnected".
+   - No connection history ("Last seen: Never").
+
+### Analysis
+The Ubuntu device is online and configured, but cannot establish a connection to the WSL device.
+Possible causes:
+- WSL instance might be suspended/off.
+- Network traversal issue (WSL behind NAT).
+- Device ID mismatch or pending acceptance on WSL side (contradicting `COMPLETION_SUMMARY.md`?).
+
+### Action Items
+1. Verify WSL is running on the Windows host.
+2. Check WSL Syncthing logs for connection attempts from Ubuntu.
+3. Ensure "Global Discovery" and "Relaying" are enabled on both sides if on different networks.
 
 ## "Failed Items" Analysis
 
