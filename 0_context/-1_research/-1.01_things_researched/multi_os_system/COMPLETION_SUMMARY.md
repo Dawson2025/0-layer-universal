@@ -7,6 +7,8 @@
 
 The multi-OS workspace sync project is **functionally complete**. All three devices (WSL, Windows, Ubuntu) are configured, and WSL ↔ Windows bidirectional sync is actively operational.
 
+> **📌 For Claude Code on Ubuntu:** See [START_HERE_UBUNTU.md](./START_HERE_UBUNTU.md) for verification steps and what to do next.
+
 ## Completion Checklist
 
 ### ✅ All 9 Core Tasks Complete
@@ -108,9 +110,11 @@ The multi-OS workspace sync project is **functionally complete**. All three devi
 - `COMPLETION_SUMMARY.md` - This file
 
 ### Setup Guides
+- `START_HERE_UBUNTU.md` - **Primary guide for Claude Code on Ubuntu** ⭐
+- `ubuntu-quick-check.sh` - Automated health check script for Ubuntu
 - `UBUNTU_SETUP_INSTRUCTIONS.md` - Step-by-step Ubuntu setup
 - `UBUNTU_HANDOFF.md` - Quick 30-minute checklist
-- `WSL_SETUP_REQUIRED.md` - WSL configuration guide
+- `WSL_SETUP_REQUIRED.md` - WSL configuration guide (WSL complete)
 
 ### Reference
 - `DEVICE_IDS.md` - All device IDs for reference
