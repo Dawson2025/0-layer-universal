@@ -25,12 +25,10 @@
 
 ## 🔄 Remaining Tasks
 
-> **⚠️ Important Security Note:**
-> These tasks **cannot** be completed remotely from Ubuntu. WSL's Syncthing is configured to listen only on localhost (127.0.0.1:8384) for security, which prevents network access from other devices. This is the default and recommended configuration. You must perform these tasks directly from WSL or the Windows host.
->
-> **Attempted:** Remote configuration from Ubuntu (IP: 192.168.160.140)
-> **Result:** Connection blocked - localhost-only binding active
-> **Conclusion:** Direct WSL/Windows access required
+> **🚨 URGENT UPDATE (2026-01-09):**
+> Ubuntu has been checked and is **ONLINE** but **DISCONNECTED** from WSL.
+> Direct action is required on the **WSL side** to investigate why the connection is failing.
+> See `STATUS.md` for the latest debug info.
 
 ### Task 1: Add Ubuntu Device to WSL (5 minutes)
 
