@@ -7,8 +7,7 @@ This handoff document provides a streamlined checklist for setting up the Ubuntu
 - ✅ WSL workspace configured and running
 - ✅ Windows workspace configured and running
 - ✅ WSL ↔ Windows sync verified and working
-- ✅ Ubuntu desktop configured and ready (2025-12-31)
-- ⏳ Three-way sync pending (needs WSL/Windows to add Ubuntu device)
+- ⏳ Ubuntu desktop awaiting setup
 
 ## Prerequisites Before You Start on Ubuntu
 
@@ -72,10 +71,10 @@ After completing this checklist:
 
 ## Troubleshooting Quick Reference
 
-**Syncthing wont start**
-- Check logs: journalctl --user -u syncthing.service -f
+**Syncthing won't start**
+- Check logs: `journalctl --user -u syncthing.service -f`
 
-**Devices wont connect**
+**Devices won't connect**
 - Check firewall port 22000
 - Verify device IDs are correct
 
@@ -95,11 +94,12 @@ After completing this checklist:
 - Detailed instructions: UBUNTU_SETUP_INSTRUCTIONS.md
 - Device IDs: DEVICE_IDS.md
 - Overall plan: PLAN_AND_IMPLEMENTATION.md
+- Current status: ../../../docs/CURRENT_STATUS.md
 
 ## Questions or Issues?
 If you encounter problems:
 1. Check UBUNTU_SETUP_INSTRUCTIONS.md troubleshooting section
-2. Check Syncthing logs
+2. Check Syncthing logs: `journalctl --user -u syncthing.service`
 3. Verify all device IDs are correct in DEVICE_IDS.md
 4. Check that WSL and Windows Syncthing instances are still running
 

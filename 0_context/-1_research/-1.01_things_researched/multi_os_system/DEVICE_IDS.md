@@ -6,21 +6,21 @@ This document contains the device IDs for all three systems in the multi-OS work
 
 ### WSL (Canonical Origin)
 - **Device Name**: WSL-Dawson
-- **Device ID**: IF2WOGZ-RVSVKT3-RCRN3TT-6NDFXQX-KCCCFPW-ABIWRWT-3BFX37C-CDHKTAN
-- **Path**: /home/dawson/dawson-workspace
-- **Status**: ✅ Active, syncing with Windows, ✅ Ubuntu device added (discovering)
+- **Device ID**: `IF2WOGZ-RVSVKT3-RCRN3TT-6NDFXQX-KCCCFPW-ABIWRWT-3BFX37C-CDHKTAN`
+- **Path**: `/home/dawson/dawson-workspace`
+- **Status**: ✅ Active and syncing
 
 ### Windows
-- **Device Name**: Windows-Dawson
-- **Device ID**: PKA5NY2-47573F4-SAHSF6Z-3UXFJCU-AEFHZKL-WKVIHVA-OBF4M2V-5P7AXAE
-- **Path**: C:\Users\Dawson\dawson-workspace
-- **Status**: ✅ Active and syncing with WSL, ⏳ Pending Ubuntu connection
+- **Device Name**: Win-Dawson
+- **Device ID**: Check Windows Syncthing web UI (Actions → Show ID) and fill in here: __________________
+- **Path**: `C:\Users\Dawson\dawson-workspace`
+- **Status**: ✅ Active and syncing
 
 ### Ubuntu Desktop
 - **Device Name**: Ubuntu-Dawson
-- **Device ID**: 7UVVQQS-O3463OC-GUTDI63-EWLX3SE-LRX4ZU3-MEOWA34-KSCMF6K-DR7GEAH
-- **Path**: /home/dawson/dawson-workspace
-- **Status**: ✅ Ready, ✅ WSL added, ⏳ Pending Windows connection
+- **Device ID**: ______________ (fill this in during Ubuntu setup - step 5.2)
+- **Path**: `/home/dawson/dawson-workspace`
+- **Status**: ⏳ Pending setup
 
 ## How to Find Your Device ID
 
@@ -32,17 +32,19 @@ This document contains the device IDs for all three systems in the multi-OS work
 
 ### From Command Line
 On Linux (WSL or Ubuntu):
-PKA5NY2-47573F4-SAHSF6Z-3UXFJCU-AEFHZKL-WKVIHVA-OBF4M2V-5P7AXAE
+```bash
+syncthing --device-id
+```
 
 ## Adding Devices
 
 When setting up a new device, you need to:
-1. Get the new device ID (see above)
+1. Get the new device's ID (see above)
 2. On each existing device:
    - Open http://localhost:8384
    - Click **Add Remote Device**
    - Paste the new device ID
-   - Give it a descriptive name (e.g., Ubuntu-Dawson)
+   - Give it a descriptive name (e.g., `Ubuntu-Dawson`)
    - Click **Save**
 3. On the new device:
    - Accept any folder share requests

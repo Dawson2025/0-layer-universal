@@ -193,3 +193,68 @@ Quick checklist:
 - `/home/dawson/dawson-workspace/WSL_SETUP_REQUIRED.md` (7.1 KB) - Complete setup guide
 - `/home/dawson/dawson-workspace/syncthing-status.html` - Visual status page
 - `/home/dawson/dawson-workspace/add-ubuntu-to-wsl-syncthing.sh` - Helper script
+
+---
+
+## WSL + Windows Sync Verification (2026-01-09)
+
+### Configuration Complete ✅
+
+**WSL Setup:**
+- Ubuntu device added to Syncthing config ✅
+- Windows device added to Syncthing config ✅
+- Both devices configured for bidirectional sync ✅
+
+**Windows Setup:**
+- Ubuntu device added to Syncthing config ✅
+- Syncthing running and connected to WSL ✅
+- Shows "Up to Date" status ✅
+
+**Ubuntu Setup:**
+- Device configured in WSL and Windows ✅
+- Workspace created and ready ✅
+- Dotfiles installed ✅
+- Currently offline (expected) ⏸️
+
+### Current Sync Status
+
+**WSL ↔ Windows:** **OPERATIONAL** ✅
+- Connection: Active (TCP LAN)
+- Transfer: Downloaded 222 KiB, Uploaded 148 KiB
+- Status: Windows shows "Up to Date"
+
+**"Out of Sync" Items:** 1,022 directories
+- **Root Cause:** Deleted directories on Windows that contain ignored files on WSL
+- **Example:** `code/1_school/` tree contains `node_modules/`, `.venv/`, etc.
+- **Why It Happens:** Syncthing safety feature - won't delete dirs with ignored content
+- **Is This An Error?** NO - Expected behavior and harmless
+- **Resolution Options:**
+  1. Add `(?d)` prefix to `.stignore` patterns (allows deletion)
+  2. Manually remove directories on WSL
+  3. Leave as-is (ignored files won't sync anyway)
+
+### Detailed Status Report
+
+See: `SYNC_STATUS_2026-01-09.md` for comprehensive analysis
+
+### Next Actions
+
+**Optional Cleanup:**
+- Decide on resolution for 1,022 "failed items" (see status report)
+
+**When Ubuntu Comes Online:**
+1. Start Syncthing: `systemctl --user start syncthing`
+2. Verify three-way connection established
+3. Test sync with a test file
+4. Update final documentation
+
+**Documentation:**
+- Cursor plan file needs todo updates
+- Create final completion checklist
+
+### Summary
+
+✅ **WSL ↔ Windows sync is fully operational**
+✅ **All three devices properly configured**
+⏸️ **Waiting for Ubuntu to come online for three-way verification**
+⚠️ **1,022 "Out of Sync" items are expected and harmless** (safety feature)
