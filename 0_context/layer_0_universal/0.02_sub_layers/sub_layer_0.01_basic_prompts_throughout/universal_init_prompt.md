@@ -233,32 +233,33 @@ The layer system organizes context by specificity, from universal to specific:
 
 **Flexible Layers (2-N) - Arbitrary Nesting:**
 - **Layer 2**: Top-level features in a project
-- **Layer 3**: Sub-features of Layer 2 OR components of Layer 2
-- **Layer 4**: Sub-features of Layer 3 OR components of Layer 3 OR sub-components of Layer 3
-- **Layer N**: Features or components at any depth N
+- **Layer 3**: Mini-features of Layer 2 OR mini-components of Layer 2
+- **Layer 4**: Mini*2-features of Layer 3 OR mini*2-components of Layer 3
+- **Layer N**: Mini*n-features or mini*n-components at any depth N
 
 **Key Points:**
 - **Layer number = depth** in the hierarchy tree
-- **Any layer N ≥ 2** can contain both `layer_N+1_features/` (sub-features) AND `layer_N+1_components/` (components)
+- **Mini naming convention** shows nesting depth: `mini`, `mini*2`, `mini*3`, ... `mini*n`
+- **Any layer N ≥ 2** can contain both `layer_N+1_mini_features/` (or `mini*2_features/`, etc.) AND `layer_N+1_mini_components/`
 - **Infinite nesting** - create as many levels as needed
 - **Each layer** follows the same structural pattern
 
 **Example: Applied Calculus with Deep Nesting**
 ```
-layer_2_feature_derivatives/              # Main topic (depth 2)
-└── layer_3_features/                     # Sub-features
-    └── layer_3_feature_power_rule/       # Subtopic (depth 3)
-        ├── layer_4_features/             # Sub-sub-features
-        │   └── layer_4_feature_negative_exponents/  # (depth 4)
-        │       └── layer_5_features/     # Even deeper!
-        │           └── layer_5_feature_minus_two/   # (depth 5)
-        └── layer_4_components/           # Components
-            └── layer_4_component_practice_set_1/    # (depth 4)
+layer_2_feature_in_class_work/                    # Container (depth 2)
+└── layer_3_mini_features/                        # Mini-features folder
+    └── layer_3_mini_feature_derivatives/         # Main topic (depth 3)
+        ├── layer_4_mini*2_features/              # Mini*2-features folder
+        │   └── layer_4_mini*2_feature_power_rule/        # Subtopic (depth 4)
+        │       └── layer_5_mini*3_features/              # Mini*3-features folder
+        │           └── layer_5_mini*3_feature_negative_exponents/  # (depth 5)
+        └── layer_4_mini*2_components/            # Mini*2-components folder
+            └── layer_4_mini*2_component_practice_set_1/  # (depth 4)
 ```
 
 **Each layer follows this structure:**
 ```
-layer_<N>_<name>/                      # "feature" or "component"
+layer_<N>_<type>_<name>/              # type = feature, mini_feature, mini*2_feature, component, mini_component, etc.
 ├── <N>.00_ai_manager_system/          # Manager agent home for this layer
 ├── <N>.01_manager_handoff_documents/  # Inter-layer communication hub
 │   ├── <N>.00_to_universal/          # Upward reports (to broader layers)
@@ -279,18 +280,26 @@ layer_<N>_<name>/                      # "feature" or "component"
 │   ├── stage_<N>.07_fixing/
 │   ├── stage_<N>.08_archives/
 │   └── status_<N>.json                # Tracks current stage and per-stage state
-├── layer_<N+1>_features/              # Sub-features (optional, recursive)
+├── layer_<N+1>_mini_features/         # Layer 3+: mini-features (optional, recursive)
 │   ├── README.md
-│   └── layer_<N+1>_feature_<subname>/ # Each follows same structure
-└── layer_<N+1>_components/            # Components (optional, recursive)
+│   └── layer_<N+1>_mini_feature_<name>/       # Each follows same structure
+├── layer_<N+1>_mini*2_features/       # Layer 4+: mini*2-features (optional, recursive)
+│   ├── README.md
+│   └── layer_<N+1>_mini*2_feature_<name>/     # Each follows same structure
+├── layer_<N+1>_mini_components/       # Layer 3+: mini-components (optional, recursive)
+│   ├── README.md
+│   └── layer_<N+1>_mini_component_<name>/     # Each follows same structure
+└── layer_<N+1>_mini*2_components/     # Layer 4+: mini*2-components (optional, recursive)
     ├── README.md
-    └── layer_<N+1>_component_<compname>/ # Each follows same structure
+    └── layer_<N+1>_mini*2_component_<name>/   # Each follows same structure
 ```
+
+**Note:** Layer 2 uses `layer_2_features/` and `layer_2_components/` (no "mini" prefix). From Layer 3 onwards, use mini naming: `mini_features/`, `mini*2_features/`, `mini*3_features/`, etc.
 
 **Flexible Nesting (N ≥ 2):**
 - Any feature or component at layer N can contain:
-  - `layer_N+1_features/` directory with sub-features
-  - `layer_N+1_components/` directory with components
+  - `layer_N+1_mini_features/` (or `mini*2_features/`, etc.) with nested features
+  - `layer_N+1_mini_components/` (or `mini*2_components/`, etc.) with nested components
 - Each nested feature/component follows the same structure recursively
 - Create depth only when it helps organize and clarify!
 
