@@ -223,16 +223,42 @@ See Section 4.9 for detailed project structure requirements and instantiation pr
 
 #### 4.1 Understanding the Layer System (Specificity Hierarchy)
 
+**IMPORTANT:** The system now supports **flexible, arbitrary nesting** of features and components to unlimited depth. See `0.00_layer_stage_framework/FLEXIBLE_LAYERING_SYSTEM.md` for complete documentation.
+
 The layer system organizes context by specificity, from universal to specific:
 
+**Fixed Layers (0-1):**
 - **Layer 0 (Universal)**: Applies to all projects. Contains universal rules, principles, OS setup, AI tools, models, etc.
 - **Layer 1 (Project)**: Project-specific context. Depends on Layer 0.
-- **Layer 2 (Feature)**: Feature-specific context within a project. Depends on Layers 0 and 1.
-- **Layer 3 (Component)**: Component-specific context within a feature. Depends on Layers 0, 1, and 2.
+
+**Flexible Layers (2-N) - Arbitrary Nesting:**
+- **Layer 2**: Top-level features in a project
+- **Layer 3**: Sub-features of Layer 2 OR components of Layer 2
+- **Layer 4**: Sub-features of Layer 3 OR components of Layer 3 OR sub-components of Layer 3
+- **Layer N**: Features or components at any depth N
+
+**Key Points:**
+- **Layer number = depth** in the hierarchy tree
+- **Any layer N ≥ 2** can contain both `layer_N+1_features/` (sub-features) AND `layer_N+1_components/` (components)
+- **Infinite nesting** - create as many levels as needed
+- **Each layer** follows the same structural pattern
+
+**Example: Applied Calculus with Deep Nesting**
+```
+layer_2_feature_derivatives/              # Main topic (depth 2)
+└── layer_3_features/                     # Sub-features
+    └── layer_3_feature_power_rule/       # Subtopic (depth 3)
+        ├── layer_4_features/             # Sub-sub-features
+        │   └── layer_4_feature_negative_exponents/  # (depth 4)
+        │       └── layer_5_features/     # Even deeper!
+        │           └── layer_5_feature_minus_two/   # (depth 5)
+        └── layer_4_components/           # Components
+            └── layer_4_component_practice_set_1/    # (depth 4)
+```
 
 **Each layer follows this structure:**
 ```
-layer_<N>_<name>/
+layer_<N>_<name>/                      # "feature" or "component"
 ├── <N>.00_ai_manager_system/          # Manager agent home for this layer
 ├── <N>.01_manager_handoff_documents/  # Inter-layer communication hub
 │   ├── <N>.00_to_universal/          # Upward reports (to broader layers)
@@ -243,22 +269,130 @@ layer_<N>_<name>/
 │   ├── sub_layer_<N>.03_universal_principles/
 │   ├── ... (numbered slots 0.01-0.12 for universal, 1.01-1.12 for project, etc.)
 │   └── sub_layer_<N>.12_agent_setup/
-└── <N>.99_stages/                    # Chronological workflow stages
-    ├── stage_<N>.01_instructions/
-    ├── stage_<N>.02_planning/
-    ├── stage_<N>.03_design/
-    ├── stage_<N>.04_development/
-    ├── stage_<N>.05_testing/
-    ├── stage_<N>.06_criticism/
-    ├── stage_<N>.07_fixing/
-    ├── stage_<N>.08_archives/
-    └── status_<N>.json                # Tracks current stage and per-stage state
+├── <N>.99_stages/                    # Chronological workflow stages
+│   ├── stage_<N>.01_instructions/
+│   ├── stage_<N>.02_planning/
+│   ├── stage_<N>.03_design/
+│   ├── stage_<N>.04_development/
+│   ├── stage_<N>.05_testing/
+│   ├── stage_<N>.06_criticism/
+│   ├── stage_<N>.07_fixing/
+│   ├── stage_<N>.08_archives/
+│   └── status_<N>.json                # Tracks current stage and per-stage state
+├── layer_<N+1>_features/              # Sub-features (optional, recursive)
+│   ├── README.md
+│   └── layer_<N+1>_feature_<subname>/ # Each follows same structure
+└── layer_<N+1>_components/            # Components (optional, recursive)
+    ├── README.md
+    └── layer_<N+1>_component_<compname>/ # Each follows same structure
 ```
+
+**Flexible Nesting (N ≥ 2):**
+- Any feature or component at layer N can contain:
+  - `layer_N+1_features/` directory with sub-features
+  - `layer_N+1_components/` directory with components
+- Each nested feature/component follows the same structure recursively
+- Create depth only when it helps organize and clarify!
 
 **Key Principles:**
 - **Numbering**: Zero-padded two digits (e.g., 0.01, 0.10, 0.12) for lexicographic stability
 - **Dependency Flow**: Lower-numbered layers are prerequisites for higher-numbered layers
 - **Deterministic Navigation**: Agents address work as (Layer, Stage) to load only what's needed
+
+#### 4.1.1 Advanced Patterns: Extending the Framework
+
+**For most projects, the standard structure above is sufficient.** However, when you need distinct phases, workflow management, or multiple instances, the framework supports extensions.
+
+**Standard Structure (90% of projects):**
+```
+layer_<N>_<type>_<name>/
+├── <N>.00_ai_manager_system/           # REQUIRED
+├── <N>.01_manager_handoff_documents/   # REQUIRED
+├── <N>.02_sub_layers/                  # REQUIRED (slots 01-12)
+├── <N>.99_stages/                      # REQUIRED (stages 01-08)
+├── layer_<N+1>_features/               # OPTIONAL: Sub-features
+└── layer_<N+1>_components/             # OPTIONAL: Components
+```
+
+**Extended Structure (10% of projects):**
+```
+layer_<N>_<type>_<name>/
+├── <N>.00_ai_manager_system/           # REQUIRED
+├── <N>.01_manager_handoff_documents/   # REQUIRED
+├── <N>.02_sub_layers/                  # REQUIRED
+├── <N>.03_<custom_purpose>/            # OPTIONAL: Custom phase
+│   └── <N>.99_stages/                  # Can have nested stages
+├── <N>.04_<custom_purpose>/            # OPTIONAL: Custom phase
+│   ├── instance_1/                     # Can use slot pattern
+│   │   └── <N>.99_stages/              # Instance-level stages
+│   └── instance_2/
+├── <N>.98_<custom_purpose>/            # OPTIONAL: Up to .98
+├── <N>.99_stages/                      # REQUIRED
+├── layer_<N+1>_features/               # OPTIONAL
+└── layer_<N+1>_components/             # OPTIONAL
+```
+
+**Reserved Numbers:**
+- `.00` = ai_manager_system (required)
+- `.01` = manager_handoff_documents (required)
+- `.02` = sub_layers (required)
+- `.03-.98` = **Available for custom directories** (your choice)
+- `.99` = stages (required)
+
+**When to Extend:**
+- ⚠️ Standard stages don't fit your workflow
+- ⚠️ You need distinct phases (creation → production → results)
+- ⚠️ You need multiple instances (workflows, experiments, versions)
+- ⚠️ You have parallel or cyclical processes
+
+**Complete Extension Guide:** See `0.00_layer_stage_framework/EXTENDING_THE_FRAMEWORK.md` for:
+- Custom numbered directories (`.03-.98`)
+- Slot directories for multiple instances
+- Nested stages at different levels
+- Hybrid approaches
+- Decision framework
+- Real-world examples (workflow management, experimentation, etc.)
+
+**Examples of Extensions:**
+1. **Workflow Management**: `.03_workflow_creation/`, `.04_workflows/`, `.05_results/`
+2. **Experimentation**: `.03_design/`, `.04_data_collection/`, `.05_analysis/`, `.06_publication/`
+3. **Version Control**: `.03_development/`, `.04_versions/` (with v1.0, v1.1 slots)
+
+**Important:** Start with standard structure. Only extend when standard patterns don't fit your specific needs.
+
+#### 4.1.2 Choosing the Right Feature Type
+
+When creating a new feature, you need to decide between **standard features** and **workflow features**:
+
+**Standard Features (90% of use cases):**
+- ✅ Use for: Topics, concepts, learning material, hierarchical organization
+- ✅ Structure: Single `.99_stages/` with 8 stages (instructions → archives)
+- ✅ Examples: Class topics, research areas, documentation sections
+
+**Workflow Features (10% of use cases):**
+- ⚠️ Use for: Repeatable processes that need development and execution tracking
+- ⚠️ Structure: `.03_workflow_creation/` → `.04_workflows/` → `.05_results/`
+- ⚠️ Examples: Assignment workflows, testing procedures, deployment processes
+
+**Quick Decision:**
+- **Creating/organizing content?** → Standard Feature
+- **Building a repeatable process?** → Workflow Feature
+- **Not sure?** → Start with Standard Feature (easier to use, more flexible)
+
+**Tools Available:**
+- **Standard Feature**: Copy template from `0.00_layer_stage_framework/2_feature_template/`
+- **Workflow Feature**: Run script: `bash 0.00_layer_stage_framework/scripts/create_workflow_feature.sh <layer> <name>`
+
+**Complete Decision Guide:** See `0.00_layer_stage_framework/FEATURE_TYPE_DECISION_GUIDE.md` for:
+- Detailed decision tree
+- Comparison matrix
+- Real-world scenarios
+- Examples from multiple projects
+- When to use each pattern
+
+**Workflow Feature Documentation:**
+- Pattern guide: `0.00_layer_stage_framework/WORKFLOW_FEATURE_PATTERN.md`
+- Example projects: PAC School DS250 assignments and coding challenges
 
 #### 4.2 Understanding the Stage System (Chronological Workflow)
 
