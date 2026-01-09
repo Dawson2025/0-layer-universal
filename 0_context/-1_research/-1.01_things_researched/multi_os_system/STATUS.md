@@ -4,45 +4,23 @@
 
 | Device | Status | Sync Mode | Notes |
 | :--- | :--- | :--- | :--- |
-| **WSL** | 🟢 Running | Send & Receive | Canonical source |
-| **Windows** | 🟢 Running | Send & Receive | Service restarted & Firewall verified |
-| **Ubuntu** | 🟡 Running | Send & Receive | **Connectivity Issue - Disconnected** |
+| **WSL** | 🟢 Running | Send & Receive | Connected to Windows |
+| **Windows** | 🟢 Running | Send & Receive | **FIXED:** Service started, connected to WSL |
+| **Ubuntu** | 🔴 Disconnected | Send & Receive | **Unknown IP / Not Reachable** |
 
-## Recent Repairs (Windows)
-**Date:** 2026-01-09
-**Issue:** Windows node was offline, isolating WSL.
-**Fix:** Started `syncthing.exe` on Windows host and confirmed firewall rules (TCP 22000 Allowed).
+## Immediate Action Required
 
-## Critical Issue: Ubuntu Connection Failure
+**We need the IP address of the Ubuntu machine.**
 
-The Ubuntu device (`7UVVQQS...`) is online and local configuration is correct, but it cannot see the WSL device (`IF2WOGZ...`).
+1.  **On Ubuntu:** Run `ip addr` to find the LAN IP (likely `10.200.164.x`).
+2.  **On Windows:** Run `ssh user@<ubuntu-ip>` to verify access.
+3.  **Update Config:** Add the IP manually to Windows/WSL Syncthing config if auto-discovery fails.
 
-**Reported by Ubuntu Agent (2026-01-09):**
-- Syncthing service is active.
-- Device ID is correct.
-- Folder path is correct.
-- **Problem:** Connection status to WSL is "Disconnected" (Never seen).
+## Recent Log
+- **2026-01-09:** Windows Syncthing service was down. Restarted it. WSL connection restored immediately.
+- **2026-01-09:** Attempted to ping `ubuntu`/`ubuntu.local` from Windows. Failed.
 
-## Instructions for Agent
-
-**Priority #1:** Establish connection to Ubuntu.
-
-### 1. Wait for Auto-Discovery
-Since Windows is now running, global discovery might help bridge the connection if they are on the same LAN.
-
-### 2. Verify Ubuntu Connectivity
-- SSH into Ubuntu (if possible).
-- Check `syncthing` logs on Ubuntu for connection attempts to Windows/WSL.
-- Verify Ubuntu firewall (`ufw status`) allows port 22000.
-
-### 3. Add Ubuntu Device (if missing)
-Run the helper script (if available on your local disk):
-```bash
-cd ~/dawson-workspace
-./add-ubuntu-to-wsl-syncthing.sh
-```
-
-## Pending Verification (After Connection)
-1. Verify `dawson-workspace` folder starts syncing (expect ~1.5GB).
-2. Confirm 100% completion.
-3. Perform Three-Way Sync Test (see `NEXT_STEPS.md`).
+## Next Steps
+1.  Get Ubuntu IP.
+2.  SSH into Ubuntu and restart Syncthing (`systemctl --user restart syncthing`).
+3.  Verify 3-way sync.
