@@ -1,97 +1,40 @@
 # Next Steps for Multi-OS Workspace Sync
 
-## Current Status (2025-12-31)
+## Current Status (2026-01-09)
 
-### ✅ Completed Systems
-
-1. **WSL (LAPTOP-GF3B5QV4)**
-   - Device ID: `IF2WOGZ-RVSVKT3-RCRN3TT-6NDFXQX-KCCCFPW-ABIWRWT-3BFX37C-CDHKTAN`
-   - Workspace: `/home/dawson/dawson-workspace`
-   - Status: Running and syncing with Windows
-
-2. **Windows (Windows-Dawson)**
-   - Workspace: `C:\Users\Dawson\dawson-workspace`
-   - Status: Running and syncing with WSL
-
-3. **Ubuntu Desktop (dawson-Yoga-Pro-9-16IMH9)** - NEW! ✅
-   - Device ID: `7UVVQQS-O3463OC-GUTDI63-EWLX3SE-LRX4ZU3-MEOWA34-KSCMF6K-DR7GEAH`
-   - Workspace: `/home/dawson/dawson-workspace`
-   - Syncthing: v1.30.0 installed and running
-   - Dotfiles: Installed
-   - Git: Configured
-   - Status: Ready to sync, waiting for WSL/Windows to add device
+### System Health
+- **WSL:** ✅ Online & Syncing with Windows
+- **Windows:** ✅ Online & Syncing with WSL
+- **Ubuntu:** ❌ **Disconnected** (IP Address Unknown)
 
 ---
 
-## 🔄 Remaining Tasks
+## 🔄 Active Tasks
 
-> **🚨 URGENT UPDATE (2026-01-09):**
-> Ubuntu has been checked and is **ONLINE** but **DISCONNECTED** from WSL.
-> Direct action is required on the **WSL side** to investigate why the connection is failing.
-> See `STATUS.md` for the latest debug info.
+### Task 1: Restore Ubuntu Connection (URGENT)
 
-### Task 1: Add Ubuntu Device to WSL (5 minutes)
+**Blocked By:** Missing IP Address for Ubuntu machine.
 
-**Location:** Run this from WSL (direct access required)
-
-**Steps:**
-```bash
-# Method 1: Using the helper script (RECOMMENDED)
-cd /home/dawson/dawson-workspace
-./add-ubuntu-to-wsl-syncthing.sh
-
-# Method 2: Manual via Web UI
-# 1. Open http://localhost:8384 on WSL
-# 2. Click "Add Remote Device"
-# 3. Enter Ubuntu Device ID: 7UVVQQS-O3463OC-GUTDI63-EWLX3SE-LRX4ZU3-MEOWA34-KSCMF6K-DR7GEAH
-# 4. Name it: Ubuntu-Dawson
-# 5. Save
-# 6. Edit dawson-workspace folder
-# 7. Go to Sharing tab
-# 8. Check Ubuntu-Dawson
-# 9. Save
-```
-
-**Verification:**
-- Check Syncthing web UI on WSL
-- Ubuntu-Dawson should show as "Connected"
-- dawson-workspace folder should show "Syncing" with Ubuntu
+**Instructions for Agent:**
+1.  **Ask User for IP:** Request the LAN IP of the Ubuntu desktop.
+2.  **Verify SSH:** Connect via `ssh user@<ip>`.
+3.  **Check Service:** Ensure `syncthing` is running on Ubuntu (`systemctl --user status syncthing`).
+4.  **Check Firewall:** Ensure port 22000 is open (`sudo ufw status`).
+5.  **Manual Peer:** If auto-discovery fails, manually add `tcp://<ip>:22000` to the WSL/Windows Syncthing config.
 
 ---
 
-### Task 2: Add Ubuntu Device to Windows (5 minutes)
+### Task 2: Verify Three-Way Sync
 
-**Location:** Run this from Windows
-
-**Steps:**
-1. Open http://localhost:8384 on Windows
-2. Click "Add Remote Device"
-3. Enter Ubuntu Device ID: `7UVVQQS-O3463OC-GUTDI63-EWLX3SE-LRX4ZU3-MEOWA34-KSCMF6K-DR7GEAH`
-4. Name it: `Ubuntu-Dawson`
-5. Click "Save"
-6. Click on "dawson-workspace" folder
-7. Go to "Sharing" tab
-8. Check "Ubuntu-Dawson" device
-9. Click "Save"
-
-**Verification:**
-- Check Syncthing web UI on Windows
-- Ubuntu-Dawson should show as "Connected"
-- dawson-workspace folder should show "Syncing" with Ubuntu
-
----
-
-### Task 3: Verify Three-Way Sync (10 minutes)
-
-**Test Plan:**
+**Test Plan (Once Ubuntu is Connected):**
 
 #### 3.1 WSL → Ubuntu → Windows Test
 ```bash
 # On WSL:
-echo "Test from WSL - $(date)" > ~/dawson-workspace/test-wsl.txt
+ echo "Test from WSL - $(date)" > ~/dawson-workspace/test-wsl.txt
 
 # Wait 10 seconds, then check on Ubuntu:
-cat ~/dawson-workspace/test-wsl.txt
+ cat ~/dawson-workspace/test-wsl.txt
 
 # Wait 10 seconds, then check on Windows:
 # type C:\Users\Dawson\dawson-workspace\test-wsl.txt
@@ -100,10 +43,10 @@ cat ~/dawson-workspace/test-wsl.txt
 #### 3.2 Ubuntu → WSL → Windows Test
 ```bash
 # On Ubuntu:
-echo "Test from Ubuntu - $(date)" > ~/dawson-workspace/test-ubuntu.txt
+ echo "Test from Ubuntu - $(date)" > ~/dawson-workspace/test-ubuntu.txt
 
 # Wait 10 seconds, then check on WSL:
-cat ~/dawson-workspace/test-ubuntu.txt
+ cat ~/dawson-workspace/test-ubuntu.txt
 
 # Wait 10 seconds, then check on Windows:
 # type C:\Users\Dawson\dawson-workspace\test-ubuntu.txt
@@ -112,13 +55,13 @@ cat ~/dawson-workspace/test-ubuntu.txt
 #### 3.3 Windows → WSL → Ubuntu Test
 ```powershell
 # On Windows:
-echo "Test from Windows - $(Get-Date)" > C:\Users\Dawson\dawson-workspace\test-windows.txt
+ echo "Test from Windows - $(Get-Date)" > C:\Users\Dawson\dawson-workspace\test-windows.txt
 
 # Wait 10 seconds, then check on WSL:
 # cat ~/dawson-workspace/test-windows.txt
 
 # Wait 10 seconds, then check on Ubuntu:
-cat ~/dawson-workspace/test-windows.txt
+ cat ~/dawson-workspace/test-windows.txt
 ```
 
 **Success Criteria:**
@@ -129,7 +72,7 @@ cat ~/dawson-workspace/test-windows.txt
 
 ---
 
-### Task 4: Final Documentation (5 minutes)
+### Task 3: Final Documentation
 
 After verifying three-way sync works:
 
@@ -190,17 +133,6 @@ Start-Process "http://localhost:8384"
 
 ---
 
-## 🎯 Expected Timeline
-
-- Task 1 (WSL device add): 5 minutes
-- Task 2 (Windows device add): 5 minutes
-- Task 3 (Sync verification): 10 minutes
-- Task 4 (Documentation): 5 minutes
-
-**Total Time: ~25 minutes**
-
----
-
 ## 📁 Important Files
 
 ### On Ubuntu:
@@ -240,17 +172,9 @@ Start-Process "http://localhost:8384"
 - ✅ Git configuration verified
 - ✅ Helper script created for WSL
 - ✅ All documentation updated
-- ✅ Changes committed and pushed to GitHub
+- ✅ Windows Syncthing Service Repaired (2026-01-09)
+- ✅ Windows ↔ WSL Sync Restored (2026-01-09)
 
 ---
 
-## 🚀 Ready to Go!
-
-The Ubuntu side is **100% complete**. The system is ready to sync as soon as WSL and Windows add the Ubuntu device to their Syncthing configurations.
-
-**Next Action:** Switch to WSL and run the helper script to complete the setup!
-
----
-
-**Last Updated:** 2025-12-31
-**Ubuntu Setup Completed By:** Claude Code
+**Next Action:** Obtain Ubuntu IP address and troubleshoot connection.
