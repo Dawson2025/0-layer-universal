@@ -1,12 +1,13 @@
 # Status: Multi-OS Workspace Sync
 
-## System Health (2026-01-09)
+## System Health (2026-01-10)
 
 | Device | Status | Sync Mode | Notes |
 | :--- | :--- | :--- | :--- |
 | **WSL** | 🟢 Running | Send & Receive | Canonical source |
 | **Windows** | 🟢 Running | Send & Receive | Connected to WSL |
 | **Ubuntu** | ⏸️ **Dual Boot** | Send & Receive | **Offline (Expected)** |
+| **Oracle Cloud VPS** | 🚧 **Provisioning** | Send & Receive | **Free Tier, 24GB RAM** |
 
 ## ⚠️ Architecture Constraints Identified
 
@@ -29,15 +30,23 @@ To keep these systems in sync, you need an **Intermediary Device** (Store-and-Fo
 2.  *Reboot to Ubuntu.*
 3.  **Ubuntu** runs -> Syncs changes **from Phone/Server**.
 
-## Immediate Action Required
+## Immediate Action (IN PROGRESS - 2026-01-10)
 
-**Do you have a 3rd device to act as the bridge?**
-If not, Syncthing cannot sync these two systems directly. You might consider using a **Shared NTFS Partition** instead of network syncing.
+**Selected Bridge Solution:** Oracle Cloud Free Tier VPS
+- **Cost:** $0/month (permanent free tier)
+- **Specs:** 4 ARM CPUs, 24GB RAM, 200GB storage
+- **Status:** Account signup in progress
+- **Next:** Install Syncthing and connect Windows/Ubuntu
 
 ## Recent Log
+- **2026-01-10:** Selected Oracle Cloud Free Tier VPS as relay solution. Account signup in progress.
+- **2026-01-10:** Expanded vision to include VNC desktop + browser automation for mobile viewing.
 - **2026-01-09:** Identified system as Dual Boot. Ceased network scanning for Ubuntu IP.
 - **2026-01-09:** Windows Syncthing service fixed.
 
 ## Next Steps
-1.  Determine sync strategy (Intermediary Device vs. Shared Partition).
-2.  Configure the chosen bridge.
+1.  Complete Oracle Cloud account signup and verification.
+2.  Provision Ubuntu ARM VPS instance.
+3.  Install Syncthing on VPS and configure relay.
+4.  Connect Windows/WSL and Ubuntu to VPS.
+5.  Test dual-boot sync workflow.
