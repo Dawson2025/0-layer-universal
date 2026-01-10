@@ -1,53 +1,41 @@
 # Multi-OS Workspace Sync Status Report
-**Date:** 2026-01-09 05:55 AM
+**Date:** 2026-01-09 06:10 AM
 **Reporter:** Gemini CLI (Windows)
 
 ## Executive Summary
 
 ✅ **WSL ↔ Windows sync: OPERATIONAL & CONNECTED**
-⚠️ **Ubuntu ↔ Windows sync: PHYSICALLY IMPOSSIBLE (Directly)**
-ℹ️ **Reason:** System is **Dual Boot**. OSes never run simultaneously.
-
-## Architecture Update: Dual Boot Constraint
-
-We have confirmed that the "Ubuntu Device" and "Windows Device" share the same physical hardware (Dual Boot).
-
-**Implications:**
-1.  **No Direct Connection:** Windows cannot ping Ubuntu, and vice versa.
-2.  **Store-and-Forward Required:** Syncing requires a third device (e.g., Phone, VPS, NAS) to hold the data while the laptop reboots.
+⚠️ **Sync Strategy PIVOT: DUAL BOOT ARCHITECTURE IDENTIFIED**
+❌ **Ubuntu device: OFFLINE (Expected behavior for Dual Boot)**
 
 ## Current Sync Status
 
 ### WSL (LAPTOP-GF3B5QV4)
-- **Status:** ✅ Running
-- **Connection:** Connected to Windows (Local Network)
+- **Status:** ✅ Running, Connected to Windows
+- **Workspace:** `/home/dawson/dawson-workspace`
 
 ### Windows (Windows-Dawson)
-- **Status:** ✅ Running
-- **Connection:** Connected to WSL (Local Network)
+- **Status:** ✅ **Service Restored & Running**
+- **Action:** Restarted `syncthing.exe` (PID 19160).
+- **Workspace:** `C:\Users\Dawson\dawson-workspace`
 
 ### Ubuntu (Ubuntu-Dawson)
-- **Status:** ⏸️ **Offline** (System is currently booted into Windows)
-- **Action:** Waiting for Intermediary Device configuration.
+- **Status:** ⏸️ **Offline (System Booted to Windows)**
+- **Architecture:** Dual Boot (Native Ubuntu on same hardware).
+- **Sync Blocker:** Direct peer-to-peer sync is impossible because OSes never run simultaneously.
 
-## Strategic Pivot
+## Research Insights (Perplexity AI - 2026-01-09)
 
-We are pausing network troubleshooting for Ubuntu. The "Disconnected" error is not a bug; it is a feature of dual booting.
+We conducted deep research into "Dual Boot + WSL" sync best practices. Key findings:
 
-### Proposed Solutions
+1.  **Three-Replica Model:** Maintain native working copies in all three environments (Windows NTFS, WSL ext4, Ubuntu ext4).
+2.  **Store-and-Forward Relay Required:** To bridge the dual-boot gap, an "Always On" 3rd device (Phone, VPS, or NAS) is mandatory.
+3.  **Dependency Isolation:** Never sync `node_modules`, `.venv`, or `.cache`. These must be regenerated per-OS to avoid I/O bottlenecks and corruption.
+4.  **Sync Fabric:** Mutagen or Unison are recommended for high-performance dev sync, while Syncthing remains viable via a relay node.
 
-#### Option 1: The "Bridge" Device (Recommended for Syncthing)
-Add a 3rd device (like your phone) to the cluster.
-- **Path:** Windows -> Phone -> Ubuntu
-- **Pros:** Automatic, version history, works over internet.
-- **Cons:** Need a 3rd device.
+## Corrected Findings
+- **IP Correction:** `10.200.164.40` was mistakenly identified as Ubuntu; it is actually the **Windows Host** IP.
+- **Connectivity:** Confirmed that "Disconnected" status for Ubuntu is the expected state while Windows is running.
 
-#### Option 2: Shared Partition (No Syncthing)
-Move `dawson-workspace` to a shared NTFS partition accessible by both OSes.
-- **Pros:** Instant, no duplication.
-- **Cons:** File permission issues (Linux permissions on NTFS), potential corruption if hibernation is enabled.
-
-## Conclusion
-
-**Windows Side is Fixed.** The Syncthing service is running.
-**Ubuntu Side:** We need to define a new sync strategy suitable for dual boot.
+## Strategic Goal
+Implement a **Store-and-Forward Relay** (e.g., using an Android phone or VPS) to allow the Ubuntu partition to pick up where Windows/WSL left off after a reboot.
