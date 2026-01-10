@@ -169,26 +169,216 @@ VPS Running:
 ### Requirements
 Accessing Unreal Engine 3D environment and gaming from phone requires GPU capabilities, which Oracle Free Tier does not provide.
 
-### Option A: Stream from Local Laptop (Recommended for start)
-When your laptop is powered on:
-- **Software:** Moonlight + Sunshine, or Steam Link
+### Option A: Stream from Local Laptop ($0/month)
+**Best for:** Zero cost, laptop available
+
+**Setup:**
+- **Software:** Moonlight (phone) + Sunshine (laptop server)
+- **Alternative:** Steam Link or Parsec
 - **Network:** Via Tailscale for secure access
-- **Workflow:** Phone → Tailscale → Laptop GPU
-- **Cost:** $0 (uses existing laptop hardware)
-- **Limitation:** Laptop must be powered on and online
+- **Workflow:** Phone → Tailscale VPN → Laptop GPU → Unreal Engine
+- **Performance:** 1080p/60fps or 4K/60fps on good connection
+- **Latency:** 5-50ms on home WiFi, 30-100ms on 4G/5G
 
-### Option B: Cloud GPU Instance (Future upgrade)
-For always-available gaming/Unreal access:
-- **Provider:** AWS EC2 G4/G5, GCP with T4/A100, or Paperspace
-- **Cost:** $0.50-2.00/hour ($15-60/mo if always on)
-- **Specs:** NVIDIA GPU (T4 or better)
-- **Use Case:** Professional game dev work, always-on access
+**Installation Steps:**
+1. Install Sunshine on Windows laptop (free, open-source)
+2. Install Moonlight app on phone (iOS/Android)
+3. Connect via Tailscale network
+4. Stream Unreal Engine display to phone
+5. Use touch controls or Bluetooth controller
 
-### Option C: Hybrid Approach (Best of both)
-- **Lightweight tasks:** Use Oracle Free VPS (code, browsers, agents)
-- **GPU tasks:** Stream from laptop when home
-- **Professional work:** Rent cloud GPU hourly as needed
-- **Cost:** Minimal, pay only when GPU needed
+**Pros:**
+- $0 cost, uses existing hardware
+- Low latency when on same network
+- Full GPU power of your laptop
+
+**Cons:**
+- Laptop must be powered on
+- Requires laptop to be accessible (home or with you)
+- Network dependent (need decent upload speed)
+
+**Advanced:** Use Wake-on-LAN to remotely power on laptop when needed
+
+---
+
+### Option B: Cloud GPU Instance (Always Available - No Laptop Required)
+
+For 24/7 Unreal access when laptop is off or unavailable.
+
+#### B1. Paperspace (Recommended for Game Dev)
+
+**Pay-As-You-Go (Core Plan):**
+- **Cost:** $0.51-1.10/hour, no monthly base fee
+- **GPU Options:**
+  - M4000 (8GB VRAM): $0.51/hr - Good for Unreal Editor
+  - P4000 (8GB VRAM): $0.78/hr - Better performance
+  - RTX 4000 (8GB VRAM): $0.82/hr - Ray tracing support
+  - RTX 5000 (16GB VRAM): $1.10/hr - Heavy projects
+- **Specs:** 8-30GB RAM depending on tier
+- **Streaming:** Built-in Parsec-style streaming
+- **Best for:** Occasional use, pay only when working
+
+**Usage Examples:**
+- 10 hrs/month = ~$5-10/month
+- 30 hrs/month = ~$15-33/month
+- 100 hrs/month = ~$51-110/month
+
+**Growth Plan (Dedicated GPU):**
+- **Cost:** $8/month base + $0.51/hr GPU usage
+- **Best for:** Regular users (saves money at 50+ hrs/month)
+
+#### B2. Shadow PC (Consumer Gaming Service)
+
+**Subscription Model:**
+- **Cost:** $29.99-49.99/month flat rate (unlimited usage)
+- **Specs:** Dedicated Windows PC with GPU (varies by tier)
+  - Base: GTX 1080 equivalent
+  - Higher tiers: RTX-level performance
+- **Streaming:** Built-in, optimized for gaming/low latency
+- **Platform:** Works like a full remote Windows PC
+
+**Pros:**
+- Simplest setup (consumer-friendly)
+- Unlimited usage for flat fee
+- Optimized streaming experience
+- No need to manage server/software
+
+**Cons:**
+- Less control than cloud VPS
+- Fixed hardware specs
+- Subscription required even if not using
+
+**Best for:** Daily Unreal users who want "it just works" experience
+
+#### B3. AWS EC2 with NVIDIA GPUs
+
+**g4dn.xlarge (T4 GPU):**
+- **Cost:** ~$0.526/hour (~$380/month if always-on)
+- **Specs:** 4 vCPU, 16GB RAM, NVIDIA T4 (16GB VRAM)
+- **Streaming:** Install Moonlight/Sunshine or Parsec yourself
+- **Advantage:** Enterprise-grade, integrates with AWS ecosystem
+- **Save money:** Stop instance when not using
+
+**Spot Instances (70% cheaper):**
+- **Cost:** ~$0.16/hour
+- **Limitation:** Can be terminated with 2-min notice
+- **Best for:** Non-critical testing, rendering
+
+**Best for:**
+- Already using AWS infrastructure
+- Professional workflows requiring reliability
+- Need to integrate with other AWS services
+
+#### B4. Maximum Labs (Best Price/Performance)
+
+**RTX 3070 Instance:**
+- **Cost:** ~$0.41/hour (~$300/month always-on)
+- **Specs:** RTX 3070 (8GB VRAM), excellent for Unreal
+- **Advantage:** Cheaper than AWS/GCP for GPU power
+- **Streaming:** Install Moonlight/Sunshine
+
+**RTX 4090 Instance:**
+- **Cost:** ~$0.80/hour
+- **Specs:** Top-tier consumer GPU, 24GB VRAM
+- **Best for:** Heavy Unreal 5 projects, ray tracing
+
+**Pros:**
+- Better GPU price/performance
+- Modern consumer GPUs
+
+**Cons:**
+- Smaller company (less infrastructure than AWS)
+- Fewer regions
+
+---
+
+### Option C: Hybrid Model (RECOMMENDED - Best Cost Optimization)
+
+**Architecture:**
+```
+Oracle Free VPS (Always-on, $0/mo)
+  - Code editing
+  - File sync (Syncthing)
+  - AI agents
+  - Browser automation
+  - SSH/CLI access
+
++
+
+Cloud GPU (On-demand)
+  - Paperspace/Shadow/AWS
+  - Unreal Engine
+  - Gaming
+  - 3D rendering
+  - Only running when needed
+```
+
+**Workflow:**
+1. Use Oracle VPS for daily code/AI work ($0)
+2. When you need Unreal: Start cloud GPU instance
+3. Stream GPU to phone via Moonlight/Parsec
+4. Work on Unreal project
+5. Stop GPU instance when done
+6. Code changes already synced to all devices via VPS
+
+**Cost Examples:**
+- **Light Unreal use (10-20 hrs/mo):** $5-20/month
+- **Regular use (30-50 hrs/mo):** $15-50/month
+- **Heavy use (100+ hrs/mo):** Consider Shadow PC ($30-50 flat)
+
+**Annual Cost Comparison:**
+- Hybrid on-demand: $60-240/year
+- Always-on cloud GPU: $3,600-4,800/year
+- **Savings:** $3,300-4,500/year
+
+---
+
+### Phase 4 Recommendations by Use Case
+
+| Use Case | Recommended Solution | Monthly Cost |
+|----------|---------------------|--------------|
+| **Occasional Unreal (10-20 hrs/mo)** | Paperspace Pay-As-You-Go | $5-20 |
+| **Regular Unreal (30-50 hrs/mo)** | Paperspace or Shadow PC | $15-50 |
+| **Daily Unreal (50-100 hrs/mo)** | Shadow PC Subscription | $30-50 |
+| **Professional 24/7 work** | AWS g4dn (stop/start) | $100-200 |
+| **Enterprise/Team** | AWS g4dn always-on | $380+ |
+| **Budget-conscious** | Laptop + Moonlight | $0 |
+| **Laptop + backup cloud** | Laptop + Paperspace on-demand | $0-30 |
+
+### Network Requirements for Streaming
+
+**Minimum:**
+- **Download (phone):** 10 Mbps for 1080p/30fps
+- **Upload (server):** 10 Mbps from cloud/laptop
+- **Latency:** <100ms for acceptable experience
+
+**Recommended:**
+- **Download:** 25+ Mbps for 1080p/60fps
+- **Upload:** 25+ Mbps for smooth streaming
+- **Latency:** <50ms for good responsiveness
+
+**Optimal:**
+- **Download:** 50+ Mbps for 4K streaming
+- **Upload:** 50+ Mbps
+- **Latency:** <20ms for near-native feel
+
+### Mobile Streaming Apps
+
+**VNC (for VPS browser control):**
+- VNC Viewer (RealVNC)
+- Jump Desktop
+- TigerVNC Viewer
+
+**GPU Streaming (for Unreal/gaming):**
+- Moonlight (free, best for Nvidia GameStream/Sunshine)
+- Parsec (free tier available)
+- Steam Link (free, Steam games)
+- Shadow PC app (if using Shadow)
+
+**Controllers:**
+- Xbox/PlayStation Bluetooth controller
+- Backbone/Razer Kishi (phone mount controllers)
+- Touch controls (less ideal for 3D work)
 
 ## Cost Analysis
 
