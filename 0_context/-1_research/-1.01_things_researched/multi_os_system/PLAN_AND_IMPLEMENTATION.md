@@ -2,51 +2,66 @@
 
 ## Plan Summary
 
-Goal: Maintain a canonical WSL workspace that syncs bidirectionally across Windows 11, WSL2, and Native Ubuntu (Dual Boot) on a single laptop.
+Goal: Create a **Hybrid AI Development Ecosystem** that combines the raw performance of a local laptop (Dual Boot) with the accessibility and orchestration power of a Remote AI Hub.
 
-### Core Strategic Pivot (2026-01-09)
-Because Windows/WSL and Native Ubuntu share the same hardware (Dual Boot), they are never online at the same time. **Direct peer-to-peer sync is physically impossible.**
+### Core Architecture: "The Hybrid Mesh"
 
-**New Architectural Pattern:**
-- **Triple Replica:** Local working copies on Windows (NTFS), WSL (ext4), and Ubuntu (ext4).
-- **Relay Bridge:** Use a 3rd "Always On" device (Phone, VPS, or NAS) as a Syncthing relay to store changes during reboots.
-- **Dependency Exclusion:** Strict exclusion of build/dependency folders (`node_modules`, `.venv`) from the sync fabric.
+This architecture solves the Dual Boot sync problem *and* enables the "Phone/Agent Access" vision simultaneously.
+
+1.  **Local Nodes (High Performance):**
+    *   **Windows 11 (Host):** Runs Unreal Engine, Games, Adobe Suite.
+    *   **Native Ubuntu (Dual Boot):** Runs heavyweight Code, Docker, AI Model Training.
+    *   *Constraint:* Never online at the same time.
+
+2.  **Remote Hub (High Availability):**
+    *   **Cloud VPS (Ubuntu):** A cheap ($5-10/mo) "Always On" server.
+    *   **Role 1 (Sync Bridge):** Acts as the Store-and-Forward relay. Windows pushes here; Ubuntu pulls from here.
+    *   **Role 2 (Agent Backend):** Hosts the Voice/Video AI agents and CLI tools.
+    *   **Role 3 (Mobile Access):** You SSH/WebRTC into *this* server from your phone to trigger agents or edit code.
+
+3.  **The Sync Fabric:**
+    *   **Syncthing:** Maintains an identical copy of `~/dawson-workspace` on Windows, Ubuntu, and the VPS.
+    *   **Result:** Edit on Laptop (Local speed) -> Syncs to VPS -> Accessible on Phone immediately.
+
+## Implementation Roadmap
+
+### Phase 1: The Cloud Relay (Fixing Dual Boot)
+*   **Action:** Provision a small VPS (DigitalOcean/Hetzner/Linode).
+*   **Setup:** Install Syncthing on VPS.
+*   **Connect:** Link Windows and Ubuntu to the VPS.
+*   **Result:** Seamless switching between Windows and Ubuntu.
+
+### Phase 2: Remote Access (Mobile)
+*   **Network:** Install Tailscale on VPS, Laptop, and Phone.
+*   **Access:** Use Blink Shell (Phone) to SSH into the VPS.
+*   **Result:** Full CLI access to your workspace from anywhere.
+
+### Phase 3: AI Agent Integration
+*   **Deploy:** Install your CLI Agents (Claude/Codex) on the VPS.
+*   **Voice:** Set up the WebRTC/LiveKit backend on the VPS.
+*   **Control:** Agents running on the VPS can read/write the synced files, effectively "coding on your laptop" remotely.
+
+### Phase 4: 3D Integration (Unreal)
+*   **Local:** Run Unreal Engine on your Laptop (using local GPU).
+*   **Remote:** For phone access, use the VPS to proxy commands to your Laptop (when running) or deploy a dedicated GPU node later.
+
+## Immediate Next Step (URGENT)
+To unblock the Dual Boot sync, we need the **Phase 1 Relay**.
+1.  **Option A (Free):** Use your iPhone as a temporary relay (requires app open).
+2.  **Option B (Recommended):** Spin up a $5 VPS to be the permanent hub.
+
+---
 
 ## Current System Status (2026-01-09)
 
-| Environment | OS | Status | Connection |
+| Environment | OS | Status | Notes |
 | :--- | :--- | :--- | :--- |
 | **WSL2** | Ubuntu 24.04 | ✅ Running | Connected to Windows |
-| **Host** | Windows 11 | ✅ Running | Connected to WSL |
-| **Native** | Ubuntu Desktop | ⏸️ Offline | **Dual Boot - Requires Relay** |
-
-### Recent Implementation (2026-01-09)
-- **Windows Recovery:** Discovered `syncthing.exe` service was down on the host. Restarted process and verified firewall rules. WSL ↔ Windows sync restored.
-- **IP Correction:** Documentation previously listed `10.200.164.40` as Ubuntu; this has been corrected to the **Windows Host** IP.
-- **Architecture Validation:** Research confirmed that Dual Boot requires a Store-and-Forward relay for seamless "pick up where you left off" workflows.
-
-## Remaining Implementation Steps
-
-### Phase 1: The Relay (URGENT)
-1.  **Identify Relay Device:** Choose a 3rd device (e.g., Android Phone with Syncthing, or a VPS).
-2.  **Add Relay to Cluster:** Add the Relay Device ID to Windows, WSL, and Ubuntu.
-3.  **Establish Data Bridge:** 
-    - Windows/WSL syncs to Relay.
-    - Reboot.
-    - Ubuntu pulls from Relay.
-
-### Phase 2: Performance & Hygiene
-1.  **Update `.stignore`:** Ensure `(?d)` prefix is added to allow deletion of ignored directories.
-2.  **Verify Sync Speed:** Confirm that excluding `node_modules` keeps the reboot-sync window under 30 seconds.
-
-### Phase 3: Final Verification
-1.  **3-Way Test:**
-    - Edit file in Windows.
-    - Verify sync to Relay.
-    - Reboot to Ubuntu.
-    - Verify file appears in Ubuntu.
+| **Windows** | Windows 11 | ✅ Running | Connected to WSL |
+| **Ubuntu** | Desktop | ⏸️ Offline | **Waiting for Relay** |
+| **Remote Hub** | Linux VPS | ❌ Missing | **Required for Sync & Agents** |
 
 ## Documentation
 - Detailed Status: `SYNC_STATUS_2026-01-09.md`
-- Research Results: `1 I am a software engineer looking for the optimal.md` (Perplexity Research)
-- Troubleshooting: `ubuntu-quick-check.sh`
+- Research Results: `1 I am a software engineer looking for the optimal.md`
+- Vision: `Architecture_Remote_AI_Hub.md` (To Be Created)
