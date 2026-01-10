@@ -56,11 +56,18 @@ This architecture solves the Dual Boot sync problem *and* enables the "Phone/Age
 ## Immediate Next Step (IN PROGRESS - 2026-01-10)
 To unblock the Dual Boot sync, we are provisioning the **Phase 1 Relay**.
 
-**Selected Solution:** Oracle Cloud Free Tier VPS
-*   **Cost:** $0/mo (permanent free tier)
-*   **Specs:** 4 ARM CPUs, 24GB RAM, 200GB storage
-*   **Advantage:** Sufficient resources for all phases (1-4) without future upgrades
-*   **Status:** Account signup in progress
+**Initial Attempt:** Oracle Cloud Free Tier VPS
+*   **Status:** ❌ Signup blocked by fraud prevention
+*   **Issue:** Oracle's automated system rejected signup despite meeting all requirements
+*   **Action:** Support ticket submitted (48-hour response time)
+*   **Decision:** Proceed with Hetzner while waiting for Oracle resolution
+
+**Current Solution:** Hetzner Cloud CPX11
+*   **Cost:** €3.79/mo (~$4.15 USD)
+*   **Specs:** 2 vCPUs, 2GB RAM, 40GB SSD
+*   **Advantage:** Instant provisioning, reliable, sufficient for Phases 1-3
+*   **Migration Path:** Can migrate to Oracle later if account approved
+*   **Status:** Provisioning now
 
 ---
 
