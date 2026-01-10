@@ -5,31 +5,39 @@
 | Device | Status | Sync Mode | Notes |
 | :--- | :--- | :--- | :--- |
 | **WSL** | 🟢 Running | Send & Receive | Canonical source |
-| **Windows** | 🟢 Running | Send & Receive | **FIXED:** Service started, connected to WSL |
-| **Ubuntu** | 🔴 Disconnected | Send & Receive | **IP: 10.200.164.40** (Ready for connection) |
+| **Windows** | 🟢 Running | Send & Receive | Connected to WSL |
+| **Ubuntu** | ⏸️ **Dual Boot** | Send & Receive | **Offline (Expected)** |
 
-## Immediate Action Required (WSL/Windows Agent)
+## ⚠️ Architecture Constraints Identified
 
-**Goal:** Establish connection to the Ubuntu machine.
+**The Ubuntu system is a Dual Boot installation on the same hardware.**
 
-**Step 1: Use Provided IP**
-The Ubuntu IP address is: **10.200.164.40**
+1.  **Direct Sync is Impossible:** Windows and Ubuntu are never running at the same time. They cannot "connect" to each other.
+2.  **"Disconnected" Status is Normal:** When you are in Windows, Ubuntu is off. When you are in Ubuntu, Windows is off.
 
-**Step 2: Fix Syncthing Connection on WSL/Windows**
-1.  Open Syncthing Web UI (or use config file).
-2.  Edit the Ubuntu device (`7UVVQQS...`).
-3.  Change "Addresses" from `dynamic` to `tcp://10.200.164.40:22000,dynamic`.
-4.  Save and wait 60 seconds.
+## How to Sync in Dual Boot
 
-**Step 3: Verify**
-- Check if Ubuntu status changes to "Connected".
-- If still failing, check firewall on port 22000.
+To keep these systems in sync, you need an **Intermediary Device** (Store-and-Forward).
+
+**Required: A 3rd "Always On" Device**
+- **Option A:** A Smartphone (Android/iOS) running Syncthing.
+- **Option B:** A VPS or Home Server (Raspberry Pi).
+- **Option C:** A NAS.
+
+**Workflow:**
+1.  **Windows/WSL** runs -> Syncs changes to **Phone/Server**.
+2.  *Reboot to Ubuntu.*
+3.  **Ubuntu** runs -> Syncs changes **from Phone/Server**.
+
+## Immediate Action Required
+
+**Do you have a 3rd device to act as the bridge?**
+If not, Syncthing cannot sync these two systems directly. You might consider using a **Shared NTFS Partition** instead of network syncing.
 
 ## Recent Log
-- **2026-01-09:** Windows Syncthing service was down. Restarted it. WSL connection restored immediately.
-- **2026-01-09:** Attempted to ping `ubuntu`/`ubuntu.local` from Windows. Failed.
+- **2026-01-09:** Identified system as Dual Boot. Ceased network scanning for Ubuntu IP.
+- **2026-01-09:** Windows Syncthing service fixed.
 
 ## Next Steps
-1.  Get Ubuntu IP (User Input Required).
-2.  SSH into Ubuntu and restart Syncthing.
-3.  Verify 3-way sync.
+1.  Determine sync strategy (Intermediary Device vs. Shared Partition).
+2.  Configure the chosen bridge.
