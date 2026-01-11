@@ -4,10 +4,10 @@
 
 | Device | Status | Sync Mode | Notes |
 | :--- | :--- | :--- | :--- |
-| **WSL** | 🟢 Running | Send & Receive | Canonical source |
-| **Windows** | 🟢 Running | Send & Receive | Connected to WSL |
+| **WSL** | 🟢 Running | Send & Receive | Connected to Windows + VPS |
+| **Windows** | 🟢 Running | Send & Receive | Connected to WSL + VPS |
 | **Ubuntu** | ⏸️ **Dual Boot** | Send & Receive | **Offline (Expected)** |
-| **Hetzner VPS** | 🟢 **Running + Syncthing** | Send & Receive | **CX23, 4GB RAM, 46.224.184.10** |
+| **Hetzner VPS** | 🟢 **Connected + Syncing** | Send & Receive | **CX23, 4GB RAM, 46.224.184.10, IPv6 Active** |
 
 ## ⚠️ Architecture Constraints Identified
 
@@ -52,6 +52,9 @@ To keep these systems in sync, you need an **Intermediary Device** (Store-and-Fo
 - **Migration Path:** Can move to Oracle later if account approved
 
 ## Recent Log
+- **2026-01-11:** ✅ Windows/WSL successfully connected to VPS relay. Syncing 165MB+ data via IPv6.
+- **2026-01-11:** VPS folder configured at /root/sync/dawson-workspace. Two-way sync active.
+- **2026-01-11:** Windows Syncthing configured via API. VPS device added and folder shared.
 - **2026-01-11:** ✅ Syncthing v1.30.0 installed and configured on VPS. GUI accessible at http://46.224.184.10:8384
 - **2026-01-11:** SSH key authentication configured. Password-less access enabled.
 - **2026-01-11:** Password changed on VPS. Server fully secured.
@@ -67,7 +70,7 @@ To keep these systems in sync, you need an **Intermediary Device** (Store-and-Fo
 ## Next Steps
 1.  ✅ ~~SSH into Hetzner VPS and change default password~~
 2.  ✅ ~~Install Syncthing on VPS and configure as relay~~
-3.  **IN PROGRESS:** Connect Windows/WSL Syncthing to VPS relay (Device ID: JTAFCHA-VWKO4GU-W5N6GWM-GHAZC6Y-GCLT4VI-PWAXY45-UBCP3RJ-2ZPJWQR)
-4.  Connect Ubuntu (dual boot) Syncthing to VPS relay
+3.  ✅ ~~Connect Windows/WSL Syncthing to VPS relay~~
+4.  **NEXT:** Connect Ubuntu (dual boot) Syncthing to VPS relay
 5.  Test three-way sync workflow (Windows ↔ VPS ↔ Ubuntu)
 6.  (Background) Monitor Oracle Cloud support ticket response
