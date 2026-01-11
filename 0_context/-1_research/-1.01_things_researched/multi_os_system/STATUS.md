@@ -1,76 +1,163 @@
 # Status: Multi-OS Workspace Sync
 
-## System Health (2026-01-10)
+**Last Updated:** 2026-01-11 16:45 MST (from Ubuntu)
 
-| Device | Status | Sync Mode | Notes |
-| :--- | :--- | :--- | :--- |
-| **WSL** | 🟢 Running | Send & Receive | Connected to Windows + VPS |
-| **Windows** | 🟢 Running | Send & Receive | Connected to WSL + VPS |
-| **Ubuntu** | ⏸️ **Dual Boot** | Send & Receive | **Offline (Expected)** |
-| **Hetzner VPS** | 🟢 **Connected + Syncing** | Send & Receive | **CX23, 4GB RAM, 46.224.184.10, IPv6 Active** |
+## Current System State
 
-## ⚠️ Architecture Constraints Identified
+| Device | Status | Sync Mode | Connection | Notes |
+| :--- | :--- | :--- | :--- | :--- |
+| **Ubuntu (Native)** | 🟢 **ACTIVE** | Send & Receive | VPS via IPv6 TLS 1.3 | Currently running, sync complete |
+| **Hetzner VPS** | 🟢 **Online** | Send & Receive | Always on | Relay server at 46.224.184.10 |
+| **Windows/WSL** | ⏸️ Offline | Send & Receive | VPS via IPv6 | Will connect when booted |
 
-**The Ubuntu system is a Dual Boot installation on the same hardware.**
+## Architecture Overview
 
-1.  **Direct Sync is Impossible:** Windows and Ubuntu are never running at the same time. They cannot "connect" to each other.
-2.  **"Disconnected" Status is Normal:** When you are in Windows, Ubuntu is off. When you are in Ubuntu, Windows is off.
+```
+┌─────────────────┐                    ┌─────────────────┐
+│  Ubuntu Native  │◄──── IPv6 TLS ────►│  Hetzner VPS    │
+│  (Dual Boot)    │      1.3           │  46.224.184.10  │
+│  CURRENTLY ON   │                    │  ALWAYS ON      │
+└─────────────────┘                    └────────┬────────┘
+                                                │
+                                       IPv6 TLS 1.3
+                                                │
+                                       ┌────────▼────────┐
+                                       │  Windows/WSL    │
+                                       │  (Dual Boot)    │
+                                       │  CURRENTLY OFF  │
+                                       └─────────────────┘
+```
 
-## How to Sync in Dual Boot
+**Key Constraint:** Ubuntu and Windows are on the SAME physical machine (dual boot). They can NEVER be online simultaneously. The VPS acts as a relay.
 
-To keep these systems in sync, you need an **Intermediary Device** (Store-and-Forward).
+## What's Working
 
-**Required: A 3rd "Always On" Device**
-- **Option A:** A Smartphone (Android/iOS) running Syncthing.
-- **Option B:** A VPS or Home Server (Raspberry Pi).
-- **Option C:** A NAS.
+### Syncthing Three-Way Sync
+- **Ubuntu ↔ VPS:** ✅ Connected and syncing
+- **Windows ↔ VPS:** ✅ Configured (will connect when Windows boots)
+- **Sync Folder:** `dawson-workspace` (~1.5 GB, 50,000+ files)
+- **Sync Status:** Complete on Ubuntu side
 
-**Workflow:**
-1.  **Windows/WSL** runs -> Syncs changes to **Phone/Server**.
-2.  *Reboot to Ubuntu.*
-3.  **Ubuntu** runs -> Syncs changes **from Phone/Server**.
+### SSH Access to VPS
+- **From Ubuntu:** ✅ Working (`ssh -i ~/.ssh/id_ed25519 root@46.224.184.10`)
+- **From Windows:** ✅ Working (`ssh -i ~/.ssh/id_ed25519 root@46.224.184.10`)
 
-## Immediate Action (IN PROGRESS - 2026-01-10)
+### Test File for Verification
+A test file was created on Ubuntu to verify the dual boot sync:
+- **File:** `SYNC_TEST_UBUNTU_TO_WINDOWS.md`
+- **Location:** Root of dawson-workspace folder
+- **Status:** ✅ Synced to VPS, waiting for Windows to pick it up
 
-**Initial Attempt:** Oracle Cloud Free Tier VPS
-- **Status:** ❌ Signup blocked by fraud prevention system
-- **Issue:** Automated rejection despite meeting all requirements
-- **Support:** Ticket submitted (48-hour response time)
+---
 
-**Current Solution:** Hetzner Cloud CX23
-- **Cost:** €3.49/month + €0.60 IPv4 = €4.09/month (~$4.50 USD)
-- **Specs:** 2 vCPUs, 4GB RAM, 40GB SSD, Ubuntu 24.04
-- **Location:** Nuremberg, Germany (eu-central)
-- **IP Address:** 46.224.184.10
-- **Status:** ✅ Server created, Syncthing installed and running
-- **Syncthing:**
-  - Version: 1.30.0
-  - Device ID: JTAFCHA-VWKO4GU-W5N6GWM-GHAZC6Y-GCLT4VI-PWAXY45-UBCP3RJ-2ZPJWQR
-  - GUI: http://46.224.184.10:8384
-  - Service: Active and enabled (systemd)
-- **Next:** Connect Windows/WSL and Ubuntu clients to VPS relay
-- **Migration Path:** Can move to Oracle later if account approved
+## FOR WINDOWS AGENTS: What To Do When Booted
+
+When the user boots into Windows, the following should happen automatically:
+
+### 1. Verify Syncthing Connection
+```powershell
+# Check Syncthing is running
+Get-Process syncthing
+
+# Or open the Web GUI
+Start-Process "http://localhost:8384"
+```
+
+In the Syncthing GUI:
+- **Hetzner-VPS** should show as connected (green)
+- **dawson-workspace** folder should show "Up to Date" after syncing
+
+### 2. Verify Test File Synced
+Check if this file exists:
+```
+C:\Users\<username>\dawson-workspace\SYNC_TEST_UBUNTU_TO_WINDOWS.md
+```
+
+If this file exists and is readable, the dual boot sync is working!
+
+### 3. (Optional) Create Reverse Test
+To verify Windows → Ubuntu sync:
+1. Create a file: `SYNC_TEST_WINDOWS_TO_UBUNTU.md` in dawson-workspace
+2. Wait for it to sync to VPS (check Syncthing GUI)
+3. When user reboots to Ubuntu, the file should appear
+
+---
+
+## Key Configuration Details
+
+### Syncthing Device IDs
+| Device | ID |
+| :--- | :--- |
+| Ubuntu | `7UVVQQS-O3463OC-GUTDI63-EWLX3SE-LRX4ZU3-MEOWA34-KSCMF6K-DR7GEAH` |
+| Windows/WSL | `IF2WOGZ-RVSVKT3-RCRN3TT-6NDFXQX-KCCCFPW-ABIWRWT-3BFX37C-CDHKTAN` |
+| Hetzner VPS | `JTAFCHA-VWKO4GU-W5N6GWM-GHAZC6Y-GCLT4VI-PWAXY45-UBCP3RJ-2ZPJWQR` |
+
+### VPS Details
+- **IP:** 46.224.184.10
+- **IPv6:** 2a01:4f8:1c1a:885b::1
+- **Syncthing GUI:** http://46.224.184.10:8384 (user: admin, pass: SyncthingVPS2026)
+- **SSH:** `ssh -i ~/.ssh/id_ed25519 root@46.224.184.10`
+- **Sync Folder on VPS:** `/root/sync/dawson-workspace`
+
+### Syncthing Ports
+- 22000/TCP - Data transfer
+- 21027/UDP - Local discovery
+- 8384/TCP - Web GUI
+
+---
 
 ## Recent Log
-- **2026-01-11:** ✅ Windows/WSL successfully connected to VPS relay. Syncing 165MB+ data via IPv6.
-- **2026-01-11:** VPS folder configured at /root/sync/dawson-workspace. Two-way sync active.
-- **2026-01-11:** Windows Syncthing configured via API. VPS device added and folder shared.
-- **2026-01-11:** ✅ Syncthing v1.30.0 installed and configured on VPS. GUI accessible at http://46.224.184.10:8384
-- **2026-01-11:** SSH key authentication configured. Password-less access enabled.
-- **2026-01-11:** Password changed on VPS. Server fully secured.
-- **2026-01-10:** ✅ Hetzner CX23 VPS successfully created (IP: 46.224.184.10, Nuremberg).
-- **2026-01-10:** Server credentials received via email.
-- **2026-01-10:** Oracle Cloud signup rejected by fraud prevention. Pivoting to Hetzner.
-- **2026-01-10:** Submitted Oracle support ticket. Will migrate from Hetzner if approved.
-- **2026-01-10:** Selected Oracle Cloud Free Tier VPS as relay solution. Account signup attempted.
-- **2026-01-10:** Expanded vision to include VNC desktop + browser automation for mobile viewing.
-- **2026-01-09:** Identified system as Dual Boot. Ceased network scanning for Ubuntu IP.
-- **2026-01-09:** Windows Syncthing service fixed.
 
-## Next Steps
-1.  ✅ ~~SSH into Hetzner VPS and change default password~~
-2.  ✅ ~~Install Syncthing on VPS and configure as relay~~
-3.  ✅ ~~Connect Windows/WSL Syncthing to VPS relay~~
-4.  **NEXT:** Connect Ubuntu (dual boot) Syncthing to VPS relay
-5.  Test three-way sync workflow (Windows ↔ VPS ↔ Ubuntu)
-6.  (Background) Monitor Oracle Cloud support ticket response
+- **2026-01-11 16:45:** Documentation updated for Windows agent handoff.
+- **2026-01-11 16:38:** ✅ Ubuntu SSH key added to VPS. Can now SSH directly from Ubuntu to VPS.
+- **2026-01-11 14:11:** ✅ Dual boot test file created and synced to VPS. Ready for Windows verification.
+- **2026-01-11 14:03:** ✅ THREE-WAY SYNC OPERATIONAL! Ubuntu ↔ VPS ↔ Windows/WSL all configured.
+- **2026-01-11 14:00:** Ubuntu connected to VPS via Syncthing REST API.
+- **2026-01-11:** Windows/WSL connected to VPS. Initial sync complete.
+- **2026-01-10:** Hetzner VPS created and configured as relay server.
+
+---
+
+## Completed Tasks
+
+1. ✅ Create Hetzner VPS as relay server
+2. ✅ Install and configure Syncthing on VPS
+3. ✅ Connect Windows/WSL to VPS
+4. ✅ Connect Ubuntu to VPS
+5. ✅ Configure SSH access from both Ubuntu and Windows
+6. ✅ Create test file for dual boot verification
+7. ✅ Update documentation for agent handoff
+
+## Pending Tasks
+
+1. ⏳ **Verify Windows sync** - User needs to boot to Windows and confirm test file appears
+2. ⏳ **Create Windows → Ubuntu test** - Optional reverse test
+3. ⏳ **Monitor Oracle Cloud ticket** - May migrate to free tier if approved
+
+---
+
+## Troubleshooting
+
+### Syncthing not connecting on Windows
+1. Check if Syncthing service is running: `Get-Process syncthing`
+2. Check Windows Firewall allows port 22000
+3. Open GUI at http://localhost:8384 and check device status
+
+### Files not syncing
+1. Check folder status in Syncthing GUI
+2. Look for "Out of Sync" items
+3. Check `.stignore` file for excluded patterns
+4. Force rescan: Folder actions → Rescan
+
+### SSH connection issues
+- Ensure using correct key: `~/.ssh/id_ed25519`
+- VPS IP: 46.224.184.10
+- Username: root
+
+---
+
+## Related Documentation
+
+- [VPS_CREDENTIALS.md](./VPS_CREDENTIALS.md) - Full VPS access details
+- [DUAL_BOOT_TEST_INSTRUCTIONS.md](./DUAL_BOOT_TEST_INSTRUCTIONS.md) - Testing procedure
+- [README.md](./README.md) - Project overview

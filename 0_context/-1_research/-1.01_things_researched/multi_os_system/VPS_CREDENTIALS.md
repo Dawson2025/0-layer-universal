@@ -15,8 +15,15 @@
 
 **Username:** root
 **Authentication:** SSH key (ed25519)
-**Key Location:** `~/.ssh/id_ed25519`
-**Public Key:** `ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINCwG5FmcXbdNrp+cldX8WLgCwCRc9OEd0xmtRlH60kn dawson-windows-git`
+
+**From Windows/WSL:**
+- **Key Location:** `~/.ssh/id_ed25519`
+- **Public Key:** `ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINCwG5FmcXbdNrp+cldX8WLgCwCRc9OEd0xmtRlH60kn dawson-windows-git`
+
+**From Ubuntu (Native):**
+- **Key Location:** `~/.ssh/id_ed25519`
+- **Public Key:** `ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOsafGsGzpQ+h/kQx5DE16EJXj3FwlPdDwE0Gf8LBUSF dawson@github`
+- **Status:** ✅ Working (added 2026-01-11)
 
 **Connect:**
 ```bash
@@ -76,8 +83,9 @@ systemctl start syncthing@root
 
 ### Ubuntu (Ubuntu-Dawson)
 - **Device ID:** 7UVVQQS-O3463OC-GUTDI63-EWLX3SE-LRX4ZU3-MEOWA34-KSCMF6K-DR7GEAH
-- **Status:** Not yet connected (pending)
-- **Shared Folder:** dawson-workspace (to be configured)
+- **Status:** ✅ Connected via IPv6 TLS 1.3
+- **Connection:** tcp-server (2a01:4f8:1c1a:885b::1)
+- **Shared Folder:** dawson-workspace (active, syncing)
 
 ### WSL (WSL-Dawson)
 - **Device ID:** PKA5NY2-47573F4-SAHSF6Z-3UXFJCU-AEFHZKL-WKVIHVA-OBF4M2V-5P7AXAE
