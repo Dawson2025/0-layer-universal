@@ -7,7 +7,7 @@
 | **WSL** | 🟢 Running | Send & Receive | Canonical source |
 | **Windows** | 🟢 Running | Send & Receive | Connected to WSL |
 | **Ubuntu** | ⏸️ **Dual Boot** | Send & Receive | **Offline (Expected)** |
-| **Hetzner VPS** | 🟢 **Running** | Send & Receive | **CX23, 4GB RAM, 46.224.184.10** |
+| **Hetzner VPS** | 🟢 **Running + Syncthing** | Send & Receive | **CX23, 4GB RAM, 46.224.184.10** |
 
 ## ⚠️ Architecture Constraints Identified
 
@@ -42,13 +42,21 @@ To keep these systems in sync, you need an **Intermediary Device** (Store-and-Fo
 - **Specs:** 2 vCPUs, 4GB RAM, 40GB SSD, Ubuntu 24.04
 - **Location:** Nuremberg, Germany (eu-central)
 - **IP Address:** 46.224.184.10
-- **Status:** ✅ Server created and running
-- **Next:** Initial SSH login to change password, then install Syncthing
+- **Status:** ✅ Server created, Syncthing installed and running
+- **Syncthing:**
+  - Version: 1.30.0
+  - Device ID: JTAFCHA-VWKO4GU-W5N6GWM-GHAZC6Y-GCLT4VI-PWAXY45-UBCP3RJ-2ZPJWQR
+  - GUI: http://46.224.184.10:8384
+  - Service: Active and enabled (systemd)
+- **Next:** Connect Windows/WSL and Ubuntu clients to VPS relay
 - **Migration Path:** Can move to Oracle later if account approved
 
 ## Recent Log
+- **2026-01-11:** ✅ Syncthing v1.30.0 installed and configured on VPS. GUI accessible at http://46.224.184.10:8384
+- **2026-01-11:** SSH key authentication configured. Password-less access enabled.
+- **2026-01-11:** Password changed on VPS. Server fully secured.
 - **2026-01-10:** ✅ Hetzner CX23 VPS successfully created (IP: 46.224.184.10, Nuremberg).
-- **2026-01-10:** Server credentials received via email. Awaiting initial password change.
+- **2026-01-10:** Server credentials received via email.
 - **2026-01-10:** Oracle Cloud signup rejected by fraud prevention. Pivoting to Hetzner.
 - **2026-01-10:** Submitted Oracle support ticket. Will migrate from Hetzner if approved.
 - **2026-01-10:** Selected Oracle Cloud Free Tier VPS as relay solution. Account signup attempted.
@@ -57,9 +65,9 @@ To keep these systems in sync, you need an **Intermediary Device** (Store-and-Fo
 - **2026-01-09:** Windows Syncthing service fixed.
 
 ## Next Steps
-1.  SSH into Hetzner VPS and change default password.
-2.  Install Syncthing on VPS and configure as relay.
-3.  Connect Windows/WSL to VPS relay.
-4.  Connect Ubuntu (dual boot) to VPS relay.
-5.  Test three-way sync workflow (Windows ↔ VPS ↔ Ubuntu).
-6.  (Background) Monitor Oracle Cloud support ticket response.
+1.  ✅ ~~SSH into Hetzner VPS and change default password~~
+2.  ✅ ~~Install Syncthing on VPS and configure as relay~~
+3.  **IN PROGRESS:** Connect Windows/WSL Syncthing to VPS relay (Device ID: JTAFCHA-VWKO4GU-W5N6GWM-GHAZC6Y-GCLT4VI-PWAXY45-UBCP3RJ-2ZPJWQR)
+4.  Connect Ubuntu (dual boot) Syncthing to VPS relay
+5.  Test three-way sync workflow (Windows ↔ VPS ↔ Ubuntu)
+6.  (Background) Monitor Oracle Cloud support ticket response
