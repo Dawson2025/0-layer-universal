@@ -133,6 +133,12 @@ gemini login
 gemini  # Start interactive CLI
 ```
 
+## 🔄 Updating Gemini CLI
+
+For detailed update instructions, see:
+- **Update Guide:** `UPDATE.md` (in this directory)
+- **Quick Update:** Run `npm install -g @google/gemini-cli@latest`
+
 ### Installation Checklist
 
 When setting up a new development environment:

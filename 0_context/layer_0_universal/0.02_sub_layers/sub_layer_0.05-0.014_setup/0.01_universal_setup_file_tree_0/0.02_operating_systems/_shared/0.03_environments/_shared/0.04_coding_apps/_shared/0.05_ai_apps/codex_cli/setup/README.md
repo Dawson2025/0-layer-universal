@@ -107,6 +107,12 @@ codex
 npm install -g @openai/codex@latest
 ```
 
+## 🔄 Updating Codex CLI
+
+For detailed update instructions, see:
+- **Update Guide:** `UPDATE.md` (in this directory)
+- **Quick Update:** Run `npm install -g @openai/codex@latest`
+
 **Documentation**:
 - Official: https://developers.openai.com/codex/cli
 - Setup guide: `../../sub_layer_0.05_os_setup/trickle_down_0.5_setup/0_instruction_docs/setup/CODEX_SETUP_README.md`

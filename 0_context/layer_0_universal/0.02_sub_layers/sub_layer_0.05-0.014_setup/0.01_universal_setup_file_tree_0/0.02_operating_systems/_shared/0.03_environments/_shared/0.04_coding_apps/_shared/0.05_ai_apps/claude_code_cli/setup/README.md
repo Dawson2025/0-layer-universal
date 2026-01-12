@@ -270,6 +270,12 @@ git status
 
 ---
 
+## 🔄 Updating Claude Code CLI
+
+For detailed update instructions, see:
+- **Update Guide:** `UPDATE.md` (in this directory)
+- **Quick Update:** Run `claude update` to automatically update to the latest version
+
 **Last Updated:** 2025-01-26  
 **Version:** 1.1 (Enhanced with Codex CLI documentation and universal init prompt patterns)  
 **Based on:** `universal_init_prompt.md` patterns and structure
