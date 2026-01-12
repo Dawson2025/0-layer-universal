@@ -1,0 +1,30 @@
+{
+  "name": "0-universal-context",
+  "description": "Universal AI context and documentation system",
+  "remote": {
+    "origin": "git@github.com:Dawson2025/0-universal-context.git",
+    "https": "https://github.com/Dawson2025/0-universal-context.git"
+  },
+  "branch": "main",
+  "setup_instructions": {
+    "summary": "This directory should be connected to the 0-universal-context GitHub repository.",
+    "auto_setup": "Run ~/dawson-workspace/setup-git-repos.sh from any OS to automatically set up all git repos.",
+    "manual_setup": [
+      "cd ~/dawson-workspace/code/0_ai_context",
+      "git init --initial-branch=main",
+      "git remote add origin git@github.com:Dawson2025/0-universal-context.git",
+      "git fetch origin",
+      "git reset --mixed origin/main",
+      "git branch --set-upstream-to=origin/main main"
+    ],
+    "verify": [
+      "git remote -v   # Should show origin pointing to 0-universal-context",
+      "git status      # Should show 'On branch main' and 'up to date'"
+    ]
+  },
+  "notes": {
+    "syncthing": "The .git directory is excluded from Syncthing sync (via .stignore) to prevent conflicts. Each OS maintains its own .git directory.",
+    "workflow": "File changes sync via Syncthing. Run 'git pull' after booting to get any commits made on other OS. Run 'git push' after committing to share with other OS."
+  },
+  "last_updated": "2026-01-11"
+}
