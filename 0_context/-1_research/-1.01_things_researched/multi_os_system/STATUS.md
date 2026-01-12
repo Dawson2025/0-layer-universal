@@ -1,14 +1,14 @@
 # Status: Multi-OS Workspace Sync
 
-**Last Updated:** 2026-01-11 16:45 MST (from Ubuntu)
+**Last Updated:** 2026-01-12 00:10 MST (from Windows)
 
 ## Current System State
 
 | Device | Status | Sync Mode | Connection | Notes |
 | :--- | :--- | :--- | :--- | :--- |
-| **Ubuntu (Native)** | 🟢 **ACTIVE** | Send & Receive | VPS via IPv6 TLS 1.3 | Currently running, sync complete |
+| **Windows/WSL** | 🟢 **ACTIVE** | Send & Receive | VPS via IPv6 TLS 1.3 | Currently running, sync verified |
 | **Hetzner VPS** | 🟢 **Online** | Send & Receive | Always on | Relay server at 46.224.184.10 |
-| **Windows/WSL** | ⏸️ Offline | Send & Receive | VPS via IPv6 | Will connect when booted |
+| **Ubuntu (Native)** | ⏸️ Offline | Send & Receive | VPS via IPv6 | Will connect when booted |
 
 ## Architecture Overview
 
@@ -16,70 +16,114 @@
 ┌─────────────────┐                    ┌─────────────────┐
 │  Ubuntu Native  │◄──── IPv6 TLS ────►│  Hetzner VPS    │
 │  (Dual Boot)    │      1.3           │  46.224.184.10  │
-│  CURRENTLY ON   │                    │  ALWAYS ON      │
+│  CURRENTLY OFF  │                    │  ALWAYS ON      │
 └─────────────────┘                    └────────┬────────┘
-                                                │
-                                       IPv6 TLS 1.3
-                                                │
+                                               │
+                                      IPv6 TLS 1.3
+                                               │
                                        ┌────────▼────────┐
                                        │  Windows/WSL    │
                                        │  (Dual Boot)    │
-                                       │  CURRENTLY OFF  │
+                                       │  CURRENTLY ON   │
                                        └─────────────────┘
 ```
 
 **Key Constraint:** Ubuntu and Windows are on the SAME physical machine (dual boot). They can NEVER be online simultaneously. The VPS acts as a relay.
 
+---
+
+## Sync Verification Status
+
+| Direction | Status | Verified Date |
+| :--- | :--- | :--- |
+| **Ubuntu → VPS → Windows** | ✅ **VERIFIED WORKING** | 2026-01-12 |
+| **Windows → VPS → Ubuntu** | ⏳ **Pending Ubuntu verification** | -- |
+
+---
+
+## FOR UBUNTU AGENTS: PRIORITY TASK
+
+**When you boot into Ubuntu, complete the following verification steps:**
+
+### Step 1: Verify Syncthing is Running
+```bash
+# Check Syncthing status
+systemctl --user status syncthing
+
+# If not running, start it
+systemctl --user start syncthing
+
+# Open Syncthing GUI (optional)
+xdg-open http://localhost:8384
+```
+
+### Step 2: Check VPS Connection
+In the Syncthing GUI (http://localhost:8384):
+- **Hetzner-VPS** should show as connected (green)
+- **dawson-workspace** folder should show "Up to Date" after syncing
+
+Or via command line:
+```bash
+# Check if connected to VPS
+curl -s http://localhost:8384/rest/system/connections | grep -A5 "JTAFCHA"
+```
+
+### Step 3: Verify Windows Test File Synced
+
+**THIS IS THE KEY VERIFICATION STEP**
+
+```bash
+# Check if the Windows test file exists
+ls -la ~/dawson-workspace/SYNC_TEST_WINDOWS_TO_UBUNTU.md
+
+# Read the file contents
+cat ~/dawson-workspace/SYNC_TEST_WINDOWS_TO_UBUNTU.md
+```
+
+**Expected content:** A file created on Windows on 2026-01-12 with sync test information.
+
+**If this file exists and is readable, the bidirectional dual boot sync is FULLY VERIFIED!**
+
+### Step 4: Update This Documentation
+
+After verifying the sync works, update this STATUS.md file:
+
+1. Change the "Windows → VPS → Ubuntu" status to ✅ **VERIFIED WORKING**
+2. Add the verification date
+3. Update the Recent Log section
+4. Commit and push changes:
+```bash
+cd ~/dawson-workspace/code/0_ai_context
+git add -A
+git commit -m "Verify Windows → Ubuntu sync working"
+git push
+```
+
+### Step 5: (Optional) Quick Verification Script
+```bash
+~/dawson-workspace/code/0_ai_context/0_context/-1_research/-1.01_things_researched/multi_os_system/ubuntu-quick-check.sh
+```
+
+---
+
 ## What's Working
 
 ### Syncthing Three-Way Sync
-- **Ubuntu ↔ VPS:** ✅ Connected and syncing
-- **Windows ↔ VPS:** ✅ Configured (will connect when Windows boots)
-- **Sync Folder:** `dawson-workspace` (~1.5 GB, 50,000+ files)
-- **Sync Status:** Complete on Ubuntu side
+- **Ubuntu ↔ VPS:** ✅ Configured and tested
+- **Windows ↔ VPS:** ✅ Connected and verified (2026-01-12)
+- **Sync Folder:** `dawson-workspace` (~1.67 GB, 67,423 files)
+- **Sync Status:** Complete on Windows side
 
 ### SSH Access to VPS
 - **From Ubuntu:** ✅ Working (`ssh -i ~/.ssh/id_ed25519 root@46.224.184.10`)
 - **From Windows:** ✅ Working (`ssh -i ~/.ssh/id_ed25519 root@46.224.184.10`)
 
-### Test File for Verification
-A test file was created on Ubuntu to verify the dual boot sync:
-- **File:** `SYNC_TEST_UBUNTU_TO_WINDOWS.md`
-- **Location:** Root of dawson-workspace folder
-- **Status:** ✅ Synced to VPS, waiting for Windows to pick it up
+### Test Files for Verification
 
----
-
-## FOR WINDOWS AGENTS: What To Do When Booted
-
-When the user boots into Windows, the following should happen automatically:
-
-### 1. Verify Syncthing Connection
-```powershell
-# Check Syncthing is running
-Get-Process syncthing
-
-# Or open the Web GUI
-Start-Process "http://localhost:8384"
-```
-
-In the Syncthing GUI:
-- **Hetzner-VPS** should show as connected (green)
-- **dawson-workspace** folder should show "Up to Date" after syncing
-
-### 2. Verify Test File Synced
-Check if this file exists:
-```
-C:\Users\<username>\dawson-workspace\SYNC_TEST_UBUNTU_TO_WINDOWS.md
-```
-
-If this file exists and is readable, the dual boot sync is working!
-
-### 3. (Optional) Create Reverse Test
-To verify Windows → Ubuntu sync:
-1. Create a file: `SYNC_TEST_WINDOWS_TO_UBUNTU.md` in dawson-workspace
-2. Wait for it to sync to VPS (check Syncthing GUI)
-3. When user reboots to Ubuntu, the file should appear
+| File | Created On | Status |
+| :--- | :--- | :--- |
+| `SYNC_TEST_UBUNTU_TO_WINDOWS.md` | Ubuntu (2026-01-11 14:11 MST) | ✅ Verified on Windows |
+| `SYNC_TEST_WINDOWS_TO_UBUNTU.md` | Windows (2026-01-12 00:10 MST) | ⏳ Synced to VPS, pending Ubuntu verification |
 
 ---
 
@@ -108,12 +152,12 @@ To verify Windows → Ubuntu sync:
 
 ## Recent Log
 
+- **2026-01-12 00:10:** ✅ Windows verification complete. Ubuntu → Windows sync confirmed working. Created reverse test file for Ubuntu verification.
+- **2026-01-12 00:01:** Windows Syncthing started, connected to VPS via IPv6.
 - **2026-01-11 16:45:** Documentation updated for Windows agent handoff.
-- **2026-01-11 16:38:** ✅ Ubuntu SSH key added to VPS. Can now SSH directly from Ubuntu to VPS.
-- **2026-01-11 14:11:** ✅ Dual boot test file created and synced to VPS. Ready for Windows verification.
+- **2026-01-11 16:38:** ✅ Ubuntu SSH key added to VPS.
+- **2026-01-11 14:11:** ✅ Dual boot test file created on Ubuntu and synced to VPS.
 - **2026-01-11 14:03:** ✅ THREE-WAY SYNC OPERATIONAL! Ubuntu ↔ VPS ↔ Windows/WSL all configured.
-- **2026-01-11 14:00:** Ubuntu connected to VPS via Syncthing REST API.
-- **2026-01-11:** Windows/WSL connected to VPS. Initial sync complete.
 - **2026-01-10:** Hetzner VPS created and configured as relay server.
 
 ---
@@ -125,29 +169,36 @@ To verify Windows → Ubuntu sync:
 3. ✅ Connect Windows/WSL to VPS
 4. ✅ Connect Ubuntu to VPS
 5. ✅ Configure SSH access from both Ubuntu and Windows
-6. ✅ Create test file for dual boot verification
-7. ✅ Update documentation for agent handoff
+6. ✅ Create Ubuntu → Windows test file
+7. ✅ **Verify Ubuntu → Windows sync (2026-01-12)**
+8. ✅ Create Windows → Ubuntu test file
 
 ## Pending Tasks
 
-1. ⏳ **Verify Windows sync** - User needs to boot to Windows and confirm test file appears
-2. ⏳ **Create Windows → Ubuntu test** - Optional reverse test
-3. ⏳ **Monitor Oracle Cloud ticket** - May migrate to free tier if approved
+1. ⏳ **Verify Windows → Ubuntu sync** - Boot to Ubuntu and confirm `SYNC_TEST_WINDOWS_TO_UBUNTU.md` appears
+2. ⏳ **Monitor Oracle Cloud ticket** - May migrate to free tier if approved
 
 ---
 
 ## Troubleshooting
 
-### Syncthing not connecting on Windows
-1. Check if Syncthing service is running: `Get-Process syncthing`
-2. Check Windows Firewall allows port 22000
-3. Open GUI at http://localhost:8384 and check device status
+### Ubuntu: Syncthing not running
+```bash
+# Check status
+systemctl --user status syncthing
 
-### Files not syncing
-1. Check folder status in Syncthing GUI
+# Start if needed
+systemctl --user start syncthing
+
+# Check logs
+journalctl --user -u syncthing -f
+```
+
+### Ubuntu: Files not syncing
+1. Check folder status in Syncthing GUI (http://localhost:8384)
 2. Look for "Out of Sync" items
 3. Check `.stignore` file for excluded patterns
-4. Force rescan: Folder actions → Rescan
+4. Force rescan: `curl -X POST http://localhost:8384/rest/db/scan?folder=dawson-workspace`
 
 ### SSH connection issues
 - Ensure using correct key: `~/.ssh/id_ed25519`
