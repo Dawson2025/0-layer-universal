@@ -17,7 +17,7 @@ Do this at the start of the chat/session before any other action.
 ### 1. Discover Your Location & Read the Master Index
 
 **First, find where you are:**
-- This file's location = `<universal_context_root>/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.01_basic_prompts_throughout/0_basic_prompts_throughout/universal_init_prompt.md`
+- This file's location = `<universal_context_root>/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.01_basic_prompts_throughout/universal_init_prompt.md`
 - Master Index location = `<universal_context_root>/0_context/MASTER_DOCUMENTATION_INDEX.md`
 
 **Expected directory structure (Layer System):**
@@ -35,21 +35,14 @@ Do this at the start of the chat/session before any other action.
 │           │   ├── 0.00_to_universal/
 │           │   └── 0.01_to_specific/
 │           ├── 0.02_sub_layers/          # All universal slots live here
+│           │   ├── 0.00_sub_layer_registry/  # Registry + aliases for stable linking
 │           │   ├── sub_layer_0.01_basic_prompts_throughout/
-│           │   │   └── 0_basic_prompts_throughout/
-│           │   │       └── universal_init_prompt.md  ← You are here
+│           │   │   └── universal_init_prompt.md  ← You are here
 │           │   ├── sub_layer_0.02_software_engineering_knowledge_system/
 │           │   ├── sub_layer_0.03_universal_principles/
 │           │   ├── sub_layer_0.04_universal_rules/
-│           │   ├── sub_layer_0.05_os_setup/
-│           │   ├── sub_layer_0.06_environment_setup/
-│           │   ├── sub_layer_0.07_coding_app_setup/
-│           │   ├── sub_layer_0.08_apps_browsers_extensions_setup/
-│           │   ├── sub_layer_0.09_ai_apps_tools_setup/
-│           │   ├── sub_layer_0.10_mcp_servers_and_tools_setup/
-│           │   ├── sub_layer_0.11_ai_models/
-│           │   ├── sub_layer_0.12_universal_tools/
-│           │   └── sub_layer_0.13_agent_setup/
+│           │   └── sub_layer_0.05-0.014_setup_dependant_sub_layers/  # Unified setup tree
+│           │       └── 0.01_universal_setup_file_tree_0/  # Contains OS, AI apps, MCP, tools, protocols
 │           └── 0.99_stages/
 └── <project_name>/                  # Project-specific context repo
     └── 0_context/
@@ -98,19 +91,26 @@ After understanding the framework, read **Section 4.7** of this file for the ste
 
 **Bookmark Section 4.8 for quick reference during work.**
 
-### 1.1 Sublayer Navigation Rule (Stable IDs)
+### 1.1 Sublayer Navigation Rule (Consolidated Structure)
 
-**Important**: Sublayer numbers (e.g., `sub_layer_0.10_*`) indicate **ordering**, not identity. The stable identifier is the **slug** (e.g., `mcp_servers_and_tools_setup`).
+**Important**: Most setup-related sub_layers (0.05-0.14) have been consolidated into a single unified file tree:
 
-To avoid breaking links when we reorder/renumber, prefer linking to the **alias files** (generated from the registry):
+```
+sub_layer_0.05-0.014_setup_dependant_sub_layers/
+└── 0.01_universal_setup_file_tree_0/
+    └── 0.02_operating_systems/...  # Contains OS, environments, coding apps, AI apps, MCP, tools, protocols, agent setup
+```
 
+**Current Active Sub_Layers:**
+- `sub_layer_0.01_basic_prompts_throughout` - Init prompts (this file)
+- `sub_layer_0.02_software_engineering_knowledge_system` - Engineering knowledge
+- `sub_layer_0.03_universal_principles` - Core principles
+- `sub_layer_0.04_universal_rules` - Universal rules
+- `sub_layer_0.05-0.014_setup_dependant_sub_layers` - **Unified setup tree** (OS, AI apps, MCP, tools, protocols, agent setup)
+
+**Registry and Aliases:**
 - Sublayer registry: `layer_0_universal/0.02_sub_layers/0.00_sub_layer_registry/sub_layer_registry.yaml`
 - Registry docs: `layer_0_universal/0.02_sub_layers/0.00_sub_layer_registry/README.md`
-- Alias links (stable): `layer_0_universal/0.02_sub_layers/0.00_sub_layer_registry/aliases/<slug>.md`
-
-Example:
-- Use: `layer_0_universal/0.02_sub_layers/0.00_sub_layer_registry/aliases/mcp_servers_and_tools_setup.md`
-- Avoid: `layer_0_universal/0.02_sub_layers/sub_layer_0.10_mcp_servers_and_tools_setup/` (this number can change)
 
 ### 1.2 Context Change Protocol (Ordering / Naming)
 
@@ -170,15 +170,13 @@ ls -d */0_context/0_context/0_basic_prompts_throughout/project_init_prompt.md 2>
 - Follow the init prompts listed there (this universal init + the project init) so every agent session is anchored to both universal and project context.
 
 ### 2.1 MCP / Tooling Context (OS + App aware)
-If the task involves MCP servers/tools (browser automation, web-search, etc.), load the MCP sublayer and pick your OS + AI app:
-- Universal MCP hub:
-  - `0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.10_mcp_servers_and_tools_setup/`
-- Stable alias (preferred for docs/links):
-  - `0_context/layer_0_universal/0.02_sub_layers/0.00_sub_layer_registry/aliases/mcp_servers_and_tools_setup.md`
-- OS-specific runbooks:
-  - `.../sub_layer_0.10_mcp_servers_and_tools_setup/0.02_mcp_config_options_0_file_tree_0/0.03_operating_systems/<os>/`
-- App-specific runbooks:
-  - `.../sub_layer_0.10_mcp_servers_and_tools_setup/0.02_mcp_config_options_0_file_tree_0/0.03_operating_systems/<os>/0.04_ai_apps/<ai_app>/`
+If the task involves MCP servers/tools (browser automation, web-search, etc.), use the unified setup file tree:
+- MCP documentation hub:
+  - `.../sub_layer_0.05-0.014_setup_dependant_sub_layers/0.01_universal_setup_file_tree_0/0.02_operating_systems/_shared/.../0.06_mcp_servers/`
+- OS-specific MCP:
+  - `.../0.02_operating_systems/<os>/0.03_environments/_shared/0.04_coding_apps/_shared/0.05_ai_apps/_shared/0.06_mcp_servers/`
+- App-specific MCP:
+  - `.../0.05_ai_apps/<ai_app>/0.06_mcp_servers/`
 
 This is where you confirm "headed vs headless" requirements, WSLg env vars, and which MCP server is recommended for the current CLI.
 
@@ -188,7 +186,7 @@ For OS, environment, coding app, AI app, MCP server, tools, protocols, and agent
 
 **Root Location:**
 ```
-layer_0_universal/0.02_sub_layers/sub_layer_0.05-0.014_setup/0.01_universal_setup_file_tree_0/
+layer_0_universal/0.02_sub_layers/sub_layer_0.05-0.014_setup_dependant_sub_layers/0.01_universal_setup_file_tree_0/
 ```
 
 **Traversal Hierarchy (10 levels deep):**
@@ -287,7 +285,7 @@ See Section 4.9 for detailed project structure requirements and instantiation pr
 
 #### Chat/Conversation Documentation Protocol:
 When you need to document findings from chats, research conversations, or other raw content into structured documentation:
-- `layer_0_universal/0.02_sub_layers/sub_layer_0.13_universal_protocols/file_documentation_and_organization/0_instruction_docs/file_documentation_and_organization_protocol.md`
+- `layer_0_universal/0.02_sub_layers/sub_layer_0.05-0.014_setup_dependant_sub_layers/0.01_universal_setup_file_tree_0/0.02_operating_systems/_shared/0.03_environments/_shared/0.04_coding_apps/_shared/0.05_ai_apps/_shared/0.08_protocols/file_documentation_and_organization/0_instruction_docs/file_documentation_and_organization_protocol.md`
 
 This protocol covers:
 - Converting raw chats/transcripts into durable documentation
@@ -584,9 +582,9 @@ Working on feature checkout in project ecommerce:
 - `invoke_notes`: How to call the manager/stage agents (CLI/API prompt patterns)
 
 **Agent Configuration Considerations:**
-- **Model Selection**: Specify primary models and fallback order (see `sub_layer_0.13_agent_setup`)
-- **MCP Integration**: Dependencies on MCP servers (see `sub_layer_0.10_mcp_servers_and_tools_setup`)
-- **Tool Access**: Universal tools available (see `sub_layer_0.12_universal_tools`)
+- **Model Selection**: Specify primary models and fallback order (see `sub_layer_0.05-0.014_setup_dependant_sub_layers/0.01_universal_setup_file_tree_0/.../0.09_agent_setup`)
+- **MCP Integration**: Dependencies on MCP servers (see `sub_layer_0.05-0.014_setup_dependant_sub_layers/0.01_universal_setup_file_tree_0/.../0.06_mcp_servers`)
+- **Tool Access**: Universal tools available (see `sub_layer_0.05-0.014_setup_dependant_sub_layers/0.01_universal_setup_file_tree_0/.../0.07_universal_tools`)
 - **App Context**: AI application context (see `sub_layer_0.09_ai_apps_tools_setup`)
 
 **Usage:**
@@ -712,9 +710,9 @@ cd 0_context/layer_0_universal/
 - `sub_layer_0.04_universal_rules/` - Universal rules (git, terminal, documentation, etc.)
 
 **Then load task-specific universal sub-layers:**
-- **For development work**: `sub_layer_0.02_software_engineering_knowledge_system/`, `sub_layer_0.12_universal_tools/`
+- **For development work**: `sub_layer_0.02_software_engineering_knowledge_system/`, `sub_layer_0.05-0.014_setup_dependant_sub_layers/0.01_universal_setup_file_tree_0/.../0.07_universal_tools/`
 - **For setup/configuration**: `sub_layer_0.05_os_setup/`, `sub_layer_0.06_environment_setup/`, `sub_layer_0.07_coding_app_setup/`, `sub_layer_0.09_ai_apps_tools_setup/`
-- **For AI/agent work**: `sub_layer_0.10_mcp_servers_and_tools_setup/`, `sub_layer_0.11_ai_models/`, `sub_layer_0.13_agent_setup/`
+- **For AI/agent work**: `sub_layer_0.05-0.014_setup_dependant_sub_layers/0.01_universal_setup_file_tree_0/.../0.06_mcp_servers/`, `sub_layer_0.05-0.014_setup_dependant_sub_layers/0.01_universal_setup_file_tree_0/.../0.06_ai_models/`, `sub_layer_0.05-0.014_setup_dependant_sub_layers/0.01_universal_setup_file_tree_0/.../0.09_agent_setup/`
 
 **2.2 Load Project Layer (Layer 1) - If project-specific**
 
@@ -961,7 +959,7 @@ cat ai_agent_system/*.md
 - Use stage-specific tools and documentation
 
 **Execution Guidelines:**
-- Use the appropriate tools (from `sub_layer_0.12_universal_tools/` or project/feature-specific tools)
+- Use the appropriate tools (from `sub_layer_0.05-0.014_setup_dependant_sub_layers/0.01_universal_setup_file_tree_0/.../0.07_universal_tools/` or project/feature-specific tools)
 - Follow principles from loaded sub-layers at the working level
 - Make decisions consistent with the context hierarchy
 - Create artifacts in the appropriate stage folder at the working level
@@ -1152,20 +1150,20 @@ cd 2.99_stages/stage_2.01_instructions/
 
 **Writing code:**
 - Universal: `layer_0_universal/0.02_sub_layers/sub_layer_0.02_software_engineering_knowledge_system/`
-- Universal: `layer_0_universal/0.02_sub_layers/sub_layer_0.12_universal_tools/` (development tools)
+- Universal: `layer_0_universal/0.02_sub_layers/sub_layer_0.05-0.014_setup_dependant_sub_layers/0.01_universal_setup_file_tree_0/.../0.07_universal_tools/` (development tools)
 - Project: `<project>/0_context/0_context/layer_1_project/1.02_sub_layers/sub_layer_1.02_project_se_knowledge/`
 - Feature: `<project>/0_context/0_context/layer_2_features/layer_2_feature_<name>/2.02_sub_layers/sub_layer_2.02_feature_knowledge/`
 - Stage: Check `2.99_stages/status_2.json` for current stage, then load `stage_2.04_development/`
 
 **Debugging/Fixing bugs:**
 - Universal: `layer_0_universal/0.02_sub_layers/sub_layer_0.04_universal_rules/trickle_down_0_universal/0_instruction_docs/` (testing rules)
-- Universal: `layer_0_universal/0.02_sub_layers/sub_layer_0.12_universal_tools/` (debugging tools)
+- Universal: `layer_0_universal/0.02_sub_layers/sub_layer_0.05-0.014_setup_dependant_sub_layers/0.01_universal_setup_file_tree_0/.../0.07_universal_tools/` (debugging tools)
 - Feature: `<project>/0_context/0_context/layer_2_features/layer_2_feature_<name>/2.99_stages/stage_2.07_fixing/`
 - Check: `2.99_stages/stage_2.07_fixing/hand_off_documents/` for previous fix attempts
 
 **Testing:**
 - Universal: `layer_0_universal/0.02_sub_layers/sub_layer_0.04_universal_rules/trickle_down_0_universal/0_instruction_docs/TESTING_AGENT_SYSTEM_README.md`
-- Universal: `layer_0_universal/0.02_sub_layers/sub_layer_0.12_universal_tools/` (testing tools)
+- Universal: `layer_0_universal/0.02_sub_layers/sub_layer_0.05-0.014_setup_dependant_sub_layers/0.01_universal_setup_file_tree_0/.../0.07_universal_tools/` (testing tools)
 - Feature: `<project>/0_context/0_context/layer_2_features/layer_2_feature_<name>/2.99_stages/stage_2.05_testing/`
 
 ##### Setup & Configuration Tasks
@@ -1186,16 +1184,16 @@ cd 2.99_stages/stage_2.01_instructions/
 - Check: `sub_layer_0.09_ai_apps_tools_setup/trickle_down_0.5_setup/0_instruction_docs/` for app-specific guides
 
 **MCP Servers setup:**
-- Universal: `layer_0_universal/0.02_sub_layers/sub_layer_0.10_mcp_servers_and_tools_setup/`
-- Check: `sub_layer_0.10_mcp_servers_and_tools_setup/0.01_core-system/README.md` for MCP architecture + runbooks
+- Universal: `layer_0_universal/0.02_sub_layers/sub_layer_0.05-0.014_setup_dependant_sub_layers/0.01_universal_setup_file_tree_0/.../0.06_mcp_servers/`
+- Check: `sub_layer_0.05-0.014_setup_dependant_sub_layers/0.01_universal_setup_file_tree_0/.../0.06_mcp_servers/0.01_core-system/README.md` for MCP architecture + runbooks
 - **Linux/Ubuntu users**: Read `BROWSER_MCP_SETUP_EXPERIENCE.md` first!
 
 **AI Models configuration:**
-- Universal: `layer_0_universal/0.02_sub_layers/sub_layer_0.11_ai_models/`
-- Check: `sub_layer_0.11_ai_models/trickle_down_0.5_setup/0_instruction_docs/` for model access issues
+- Universal: `layer_0_universal/0.02_sub_layers/sub_layer_0.05-0.014_setup_dependant_sub_layers/0.01_universal_setup_file_tree_0/.../0.06_ai_models/`
+- Check: `sub_layer_0.05-0.014_setup_dependant_sub_layers/0.01_universal_setup_file_tree_0/.../0.06_ai_models/trickle_down_0.5_setup/0_instruction_docs/` for model access issues
 
 **Agent setup:**
-- Universal: `layer_0_universal/0.02_sub_layers/sub_layer_0.13_agent_setup/`
+- Universal: `layer_0_universal/0.02_sub_layers/sub_layer_0.05-0.014_setup_dependant_sub_layers/0.01_universal_setup_file_tree_0/.../0.09_agent_setup/`
 - Registry: `0.00_layer_stage_framework/agent_registry_template.md`
 
 ##### Git & Version Control
@@ -1221,10 +1219,10 @@ cd 2.99_stages/stage_2.01_instructions/
 **Browser automation tasks:**
 - Universal: `layer_0_universal/0.02_sub_layers/sub_layer_0.04_universal_rules/trickle_down_0_universal/0_instruction_docs/browser_management_policy.md`
 - Universal: `layer_0_universal/0.02_sub_layers/sub_layer_0.04_universal_rules/trickle_down_0_universal/0_instruction_docs/browser_opening_rule.md`
-- Universal: `layer_0_universal/0.02_sub_layers/sub_layer_0.12_universal_tools/trickle_down_0.75_universal_tools/0_instruction_docs/browser-automation/`
+- Universal: `layer_0_universal/0.02_sub_layers/sub_layer_0.05-0.014_setup_dependant_sub_layers/0.01_universal_setup_file_tree_0/.../0.07_universal_tools/trickle_down_0.75_universal_tools/0_instruction_docs/browser-automation/`
 
 **MCP Browser tools (Linux/Ubuntu):**
-- Universal: `layer_0_universal/0.02_sub_layers/sub_layer_0.10_mcp_servers_and_tools_setup/0.01_core-system/BROWSER_MCP_ROUTING_TABLE.md`
+- Universal: `layer_0_universal/0.02_sub_layers/sub_layer_0.05-0.014_setup_dependant_sub_layers/0.01_universal_setup_file_tree_0/.../0.06_mcp_servers/0.01_core-system/BROWSER_MCP_ROUTING_TABLE.md`
 - **CRITICAL**: Read Lesson 1 first! Playwright MCP tools don't work on Linux in Cursor IDE.
 
 ##### Database Operations
@@ -1271,7 +1269,7 @@ cd 2.99_stages/stage_2.01_instructions/
 
 **Registering agents:**
 - Template: `0.00_layer_stage_framework/agent_registry_template.md`
-- Agent setup: `layer_0_universal/0.02_sub_layers/sub_layer_0.13_agent_setup/`
+- Agent setup: `layer_0_universal/0.02_sub_layers/sub_layer_0.05-0.014_setup_dependant_sub_layers/0.01_universal_setup_file_tree_0/.../0.09_agent_setup/`
 
 **Manager handoffs:**
 - Upward reports: `<N>.01_manager_handoff_documents/<N>.00_to_universal/`
@@ -1294,18 +1292,18 @@ cd 2.99_stages/stage_2.01_instructions/
 - MCP: `layer_0_universal/0.02_sub_layers/sub_layer_0.05_os_setup/trickle_down_0.5_setup/0_instruction_docs/LINUX_UBUNTU_MCP_ISSUES.md`
 - Cursor IDE: `layer_0_universal/0.02_sub_layers/sub_layer_0.07_coding_app_setup/trickle_down_0.5_setup/0_instruction_docs/CURSOR_IDE_LINUX_MCP_ISSUES.md`
 - AI Apps: `layer_0_universal/0.02_sub_layers/sub_layer_0.09_ai_apps_tools_setup/trickle_down_0.5_setup/0_instruction_docs/LINUX_UBUNTU_AI_APPS_MCP_ISSUES.md`
-- Models: `layer_0_universal/0.02_sub_layers/sub_layer_0.11_ai_models/trickle_down_0.5_setup/0_instruction_docs/LINUX_UBUNTU_MODEL_ACCESS_ISSUES.md`
-- Tools: `layer_0_universal/0.02_sub_layers/sub_layer_0.12_universal_tools/trickle_down_0.75_universal_tools/0_instruction_docs/LINUX_UBUNTU_TOOL_ACCESS_ISSUES.md`
+- Models: `layer_0_universal/0.02_sub_layers/sub_layer_0.05-0.014_setup_dependant_sub_layers/0.01_universal_setup_file_tree_0/.../0.06_ai_models/trickle_down_0.5_setup/0_instruction_docs/LINUX_UBUNTU_MODEL_ACCESS_ISSUES.md`
+- Tools: `layer_0_universal/0.02_sub_layers/sub_layer_0.05-0.014_setup_dependant_sub_layers/0.01_universal_setup_file_tree_0/.../0.07_universal_tools/trickle_down_0.75_universal_tools/0_instruction_docs/LINUX_UBUNTU_TOOL_ACCESS_ISSUES.md`
 
 ##### Quick Decision Tree
 
 **"I need to..."**
 
-- **...write code** → `sub_layer_0.02_software_engineering_knowledge_system/` + `sub_layer_0.12_universal_tools/` + project/feature SE knowledge
+- **...write code** → `sub_layer_0.02_software_engineering_knowledge_system/` + `sub_layer_0.05-0.014_setup_dependant_sub_layers/0.01_universal_setup_file_tree_0/.../0.07_universal_tools/` + project/feature SE knowledge
 - **...run a terminal command** → `sub_layer_0.04_universal_rules/.../UNIVERSAL_AGENT_TERMINAL_PROTOCOL.md`
 - **...make a git commit** → `sub_layer_0.04_universal_rules/.../git_commit_rule.md`
-- **...set up something** → `sub_layer_0.05_os_setup/` through `sub_layer_0.13_agent_setup/` (depending on what)
-- **...use browser automation** → `sub_layer_0.12_universal_tools/.../browser-automation/` + `sub_layer_0.10_mcp_servers_and_tools_setup/` (browser routing table)
+- **...set up something** → `sub_layer_0.05_os_setup/` through `sub_layer_0.05-0.014_setup_dependant_sub_layers/0.01_universal_setup_file_tree_0/.../0.09_agent_setup/` (depending on what)
+- **...use browser automation** → `sub_layer_0.05-0.014_setup_dependant_sub_layers/0.01_universal_setup_file_tree_0/.../0.07_universal_tools/.../browser-automation/` + `sub_layer_0.05-0.014_setup_dependant_sub_layers/0.01_universal_setup_file_tree_0/.../0.06_mcp_servers/` (browser routing table)
 - **...work on a feature** → Load layers 0 → 1 → 2, check `2.99_stages/status_2.json` for current stage
 - **...find project rules** → `<project>/0_context/0_context/layer_1_project/1.02_sub_layers/sub_layer_1.04_project_rules/`
 - **...understand the system** → `0.00_layer_stage_framework/README.md` + Section 4 of this file
@@ -1557,7 +1555,7 @@ Do not remove these references during summarization; they are required navigatio
 **Read before opening browsers:**
 - `layer_0_universal/0.02_sub_layers/0.04_universal_rules/trickle_down_0_universal/0_instruction_docs/browser_management_policy.md`
 - `layer_0_universal/0.02_sub_layers/0.04_universal_rules/trickle_down_0_universal/0_instruction_docs/browser_opening_rule.md`
-- `layer_0_universal/0.02_sub_layers/sub_layer_0.12_universal_tools/trickle_down_0.75_universal_tools/0_instruction_docs/browser-automation/README.md`
+- `layer_0_universal/0.02_sub_layers/sub_layer_0.05-0.014_setup_dependant_sub_layers/0.01_universal_setup_file_tree_0/.../0.07_universal_tools/trickle_down_0.75_universal_tools/0_instruction_docs/browser-automation/README.md`
 
 **⚠️ Linux/Ubuntu Note**: Browser MCP tools have platform-specific issues. See MCP Tools section above for Linux limitations.
 
@@ -1569,7 +1567,7 @@ Do not remove these references during summarization; they are required navigatio
 
 ### For MCP Tools
 **Read when using Model Context Protocol servers or troubleshooting issues:**
-- `layer_0_universal/0.02_sub_layers/sub_layer_0.10_mcp_servers_and_tools_setup/0.01_core-system/README.md` - **Start here for an overview of MCP setup, automation, and specific OS/AI tool documentation.**
+- `layer_0_universal/0.02_sub_layers/sub_layer_0.05-0.014_setup_dependant_sub_layers/0.01_universal_setup_file_tree_0/.../0.06_mcp_servers/0.01_core-system/README.md` - **Start here for an overview of MCP setup, automation, and specific OS/AI tool documentation.**
 
 ### For ALEKS Mathematics Input (Critical!)
 
@@ -1836,9 +1834,9 @@ await enterDomainWithUnion(page,
 
 ### For Claude Code Specific
 **Read when using Claude Code CLI:**
-- `layer_0_universal/0.02_sub_layers/sub_layer_0.12_universal_tools/trickle_down_0.75_universal_tools/0_instruction_docs/claude-code-config/README.md`
-- `layer_0_universal/0.02_sub_layers/sub_layer_0.12_universal_tools/trickle_down_0.75_universal_tools/0_instruction_docs/claude-code-config/QUICK_START.md`
-- `layer_0_universal/0.02_sub_layers/sub_layer_0.12_universal_tools/trickle_down_0.75_universal_tools/0_instruction_docs/claude-code-config/WHAT_ACTUALLY_WORKS.md`
+- `layer_0_universal/0.02_sub_layers/sub_layer_0.05-0.014_setup_dependant_sub_layers/0.01_universal_setup_file_tree_0/.../0.07_universal_tools/trickle_down_0.75_universal_tools/0_instruction_docs/claude-code-config/README.md`
+- `layer_0_universal/0.02_sub_layers/sub_layer_0.05-0.014_setup_dependant_sub_layers/0.01_universal_setup_file_tree_0/.../0.07_universal_tools/trickle_down_0.75_universal_tools/0_instruction_docs/claude-code-config/QUICK_START.md`
+- `layer_0_universal/0.02_sub_layers/sub_layer_0.05-0.014_setup_dependant_sub_layers/0.01_universal_setup_file_tree_0/.../0.07_universal_tools/trickle_down_0.75_universal_tools/0_instruction_docs/claude-code-config/WHAT_ACTUALLY_WORKS.md`
 
 ### For Database Operations (Supabase)
 **MANDATORY - Read before any database work:**

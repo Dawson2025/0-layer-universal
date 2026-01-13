@@ -1,59 +1,41 @@
-# Auto-generated. Do not edit by hand.
-generated_at_utc: 2025-12-24T07:01:18+00:00
+# Sub-layer registry for layer_0_universal
+# Updated: 2026-01-13
+# Note: Old sub_layers (0.05-0.14) consolidated into unified setup tree
+
+generated_at_utc: 2026-01-13T00:00:00+00:00
 sublayers:
   - slug: basic_prompts_throughout
     number: "0.01"
     folder: sub_layer_0.01_basic_prompts_throughout
     path: layer_0_universal/0.02_sub_layers/sub_layer_0.01_basic_prompts_throughout
+
   - slug: software_engineering_knowledge_system
     number: "0.02"
     folder: sub_layer_0.02_software_engineering_knowledge_system
     path: layer_0_universal/0.02_sub_layers/sub_layer_0.02_software_engineering_knowledge_system
+
   - slug: universal_principles
     number: "0.03"
     folder: sub_layer_0.03_universal_principles
     path: layer_0_universal/0.02_sub_layers/sub_layer_0.03_universal_principles
+
   - slug: universal_rules
     number: "0.04"
     folder: sub_layer_0.04_universal_rules
     path: layer_0_universal/0.02_sub_layers/sub_layer_0.04_universal_rules
-  - slug: os_setup
-    number: "0.05"
-    folder: sub_layer_0.05_os_setup
-    path: layer_0_universal/0.02_sub_layers/sub_layer_0.05_os_setup
-  - slug: environment_setup
-    number: "0.06"
-    folder: sub_layer_0.06_environment_setup
-    path: layer_0_universal/0.02_sub_layers/sub_layer_0.06_environment_setup
-  - slug: coding_app_setup
-    number: "0.07"
-    folder: sub_layer_0.07_coding_app_setup
-    path: layer_0_universal/0.02_sub_layers/sub_layer_0.07_coding_app_setup
-  - slug: apps_browsers_extensions_setup
-    number: "0.08"
-    folder: sub_layer_0.08_apps_browsers_extensions_setup
-    path: layer_0_universal/0.02_sub_layers/sub_layer_0.08_apps_browsers_extensions_setup
-  - slug: ai_apps_tools_setup
-    number: "0.09"
-    folder: sub_layer_0.09_ai_apps_tools_setup
-    path: layer_0_universal/0.02_sub_layers/sub_layer_0.09_ai_apps_tools_setup
-  - slug: mcp_servers_and_tools_setup
-    number: "0.10"
-    folder: sub_layer_0.10_mcp_servers_and_tools_setup
-    path: layer_0_universal/0.02_sub_layers/sub_layer_0.10_mcp_servers_and_tools_setup
-  - slug: ai_models
-    number: "0.11"
-    folder: sub_layer_0.11_ai_models
-    path: layer_0_universal/0.02_sub_layers/sub_layer_0.11_ai_models
-  - slug: universal_tools
-    number: "0.12"
-    folder: sub_layer_0.12_universal_tools
-    path: layer_0_universal/0.02_sub_layers/sub_layer_0.12_universal_tools
-  - slug: universal_protocols
-    number: "0.13"
-    folder: sub_layer_0.13_universal_protocols
-    path: layer_0_universal/0.02_sub_layers/sub_layer_0.13_universal_protocols
-  - slug: agent_setup
-    number: "0.14"
-    folder: sub_layer_0.14_agent_setup
-    path: layer_0_universal/0.02_sub_layers/sub_layer_0.14_agent_setup
+
+  - slug: setup_dependant_sub_layers
+    number: "0.05-0.014"
+    folder: sub_layer_0.05-0.014_setup_dependant_sub_layers
+    path: layer_0_universal/0.02_sub_layers/sub_layer_0.05-0.014_setup_dependant_sub_layers
+    description: |
+      Unified setup file tree containing:
+      - OS setup (0.02_operating_systems)
+      - Environment setup (0.03_environments)
+      - Coding app setup (0.04_coding_apps)
+      - AI apps setup (0.05_ai_apps)
+      - MCP servers (0.06_mcp_servers)
+      - AI models (0.06_ai_models)
+      - Universal tools (0.07_universal_tools)
+      - Protocols (0.08_protocols)
+      - Agent setup (0.09_agent_setup)
