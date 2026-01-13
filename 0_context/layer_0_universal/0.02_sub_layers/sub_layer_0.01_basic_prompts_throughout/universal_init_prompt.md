@@ -180,7 +180,75 @@ If the task involves MCP servers/tools (browser automation, web-search, etc.), l
 - App-specific runbooks:
   - `.../sub_layer_0.10_mcp_servers_and_tools_setup/0.02_mcp_config_options_0_file_tree_0/0.03_operating_systems/<os>/0.04_ai_apps/<ai_app>/`
 
-This is where you confirm “headed vs headless” requirements, WSLg env vars, and which MCP server is recommended for the current CLI.
+This is where you confirm "headed vs headless" requirements, WSLg env vars, and which MCP server is recommended for the current CLI.
+
+### 2.2 Setup File Tree Traversal (Consolidated Hierarchy)
+
+For OS, environment, coding app, AI app, MCP server, tools, protocols, and agent setup documentation, use the **consolidated setup file tree**:
+
+**Root Location:**
+```
+layer_0_universal/0.02_sub_layers/sub_layer_0.05-0.014_setup/0.01_universal_setup_file_tree_0/
+```
+
+**Traversal Hierarchy (10 levels deep):**
+```
+0.02_operating_systems/
+├── _shared/                    ← Universal (applies to ALL OSes)
+├── linux_ubuntu/               ← Linux-specific + inherited _shared
+├── macos/                      ← Mac-specific + inherited _shared
+├── windows/                    ← Windows-specific + inherited _shared
+└── wsl/                        ← WSL-specific + inherited _shared
+    └── 0.03_environments/
+        ├── _shared/            ← Universal (all environments)
+        ├── local/              ← Local dev environment
+        └── remote/             ← Remote/cloud environment
+            └── 0.04_coding_apps/
+                ├── _shared/    ← Universal (all coding apps)
+                └── cursor/     ← Cursor-specific
+                    └── 0.05_ai_apps/
+                        ├── _shared/           ← Universal (all AI apps)
+                        ├── claude_code_cli/   ← Claude Code specific
+                        ├── codex_cli/         ← Codex specific
+                        └── gemini_cli/        ← Gemini specific
+                            ├── 0.06_mcp_servers/
+                            │   ├── _shared/           ← Universal MCP
+                            │   ├── playwright-mcp/    ← Playwright specific
+                            │   ├── chrome-devtools-mcp/
+                            │   └── claude_in_chrome/
+                            ├── 0.06_ai_models/
+                            │   ├── claude-3.5-sonnet/
+                            │   └── claude-3.5-haiku/
+                            ├── 0.07_universal_tools/  ← Tools docs (gcloud, etc.)
+                            ├── 0.08_protocols/        ← Workflow protocols
+                            └── 0.09_agent_setup/      ← Agent configuration
+```
+
+**Key Traversal Rules:**
+1. **_shared = inherited by all siblings** - Content in `_shared/` applies to all directories at that level
+2. **Specificity increases as you descend** - Start with _shared, then add OS/env/app-specific
+3. **Each level has its own _shared** - Check _shared at every level of the hierarchy
+
+**Common Traversal Paths:**
+
+| Need | Path Pattern |
+|------|--------------|
+| Universal tools (gcloud, Canvas API) | `.../_shared/.../0.07_universal_tools/_shared/trickle_down_0.75_universal_tools/0_instruction_docs/` |
+| Linux + Claude Code + Playwright | `.../linux_ubuntu/0.03_environments/local/0.04_coding_apps/cursor/0.05_ai_apps/claude_code_cli/0.06_mcp_servers/playwright-mcp/` |
+| All MCP issues (any OS) | `.../_shared/.../0.06_mcp_servers/_mcp_core/general_issues_and_fixes/` |
+| Browser automation protocols | `.../_shared/.../0.08_protocols/` |
+
+**Quick Access Commands:**
+```bash
+# Find google-cloud docs (gcloud, Secret Manager, Canvas API)
+find <setup_root> -name "google-cloud" -type d
+
+# Find all _shared directories at a level
+ls -la <any_level>/_shared/
+
+# Find OS-specific content
+ls -la <setup_root>/0.02_operating_systems/linux_ubuntu/
+```
 
 **If project init prompt DOES NOT EXIST:**
 1. Notify the user:
