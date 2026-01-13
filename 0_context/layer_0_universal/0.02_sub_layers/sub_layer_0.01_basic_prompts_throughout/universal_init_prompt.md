@@ -217,6 +217,17 @@ See Section 4.9 for detailed project structure requirements and instantiation pr
 - `layer_0_universal/0.04_universal_rules/trickle_down_0_universal/0_instruction_docs/ai_agent_documentation_rule.md`
 - `layer_0_universal/0.04_universal_rules/trickle_down_0_universal/0_instruction_docs/git_commit_rule.md`
 
+#### Chat/Conversation Documentation Protocol:
+When you need to document findings from chats, research conversations, or other raw content into structured documentation:
+- `layer_0_universal/0.02_sub_layers/sub_layer_0.13_universal_protocols/file_documentation_and_organization/0_instruction_docs/file_documentation_and_organization_protocol.md`
+
+This protocol covers:
+- Converting raw chats/transcripts into durable documentation
+- Creating `chat_history/`, `things_learned/`, and `overview/` structures
+- Discovery passes for concept mapping
+- Summary-neutral, pattern-first writing rules
+- Maintenance rules for keeping documentation current
+
 ### 4. Load the Context Management System (Layer + Stage + Agents)
 
 **CRITICAL:** Read `0.00_layer_stage_framework/README.md` for complete system documentation.

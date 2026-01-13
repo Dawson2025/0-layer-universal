@@ -14,6 +14,12 @@
 - Display/graphics environment setup required
 - File permissions and path conventions differ
 
+## Setup Documentation
+
+### Input
+- **[Trackpad Configuration](input/trackpad/)**: Cursor speed, acceleration, scroll speed (Wayland & X11)
+- **[Speech-to-Text / Dictation](input/speech_to_text/)**: System-wide voice dictation tools (WisprFlow alternatives)
+
 ## Related Documentation
 
 - **Cursor IDE Issues**: `../sub_layer_0.07_coding_app_setup/trickle_down_0.5_setup/0_instruction_docs/CURSOR_IDE_LINUX_MCP_ISSUES.md`
