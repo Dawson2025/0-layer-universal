@@ -143,7 +143,34 @@ Each layer has stages representing workflow phases:
 2. **Read before writing** - Understand existing context
 3. **Follow terminal protocol** - See `UNIVERSAL_AGENT_TERMINAL_PROTOCOL.md`
 4. **Document changes** - Update relevant docs when making changes
-5. **Commit appropriately** - Follow `git_commit_rule.md`
+5. **Commit & push at significant points** - See below
+
+### Commit & Push Protocol
+
+**Commit and push to remote at each significant milestone**, not just at the end of a session. This ensures:
+- Work is preserved if session is interrupted
+- Progress is trackable
+- Changes can be reviewed incrementally
+
+**When to commit & push:**
+- After completing a logical unit of work (feature, fix, refactor)
+- After updating documentation
+- After making structural changes (renames, reorganization)
+- Before starting a risky operation
+- At natural breakpoints in multi-step tasks
+
+**Commit message format:**
+```
+<type>: <short description>
+
+<optional body explaining what/why>
+
+Co-Authored-By: <AI model> <noreply@anthropic.com>
+```
+
+**Types:** `feat`, `fix`, `docs`, `refactor`, `chore`, `style`, `test`
+
+See `git_commit_rule.md` for full guidelines.
 
 ---
 
