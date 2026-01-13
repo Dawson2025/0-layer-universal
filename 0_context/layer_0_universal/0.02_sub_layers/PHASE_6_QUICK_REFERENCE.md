@@ -207,7 +207,7 @@ When in doubt, **refer to the normative source** for authoritative details.
 
 **Previous Phases**:
 - Phase 1: Navigation and overview (MASTER_DOCUMENTATION_INDEX, SYSTEM_OVERVIEW, USAGE_GUIDE)
-- Phase 2: Framework alignment (0.00_layer_stage_framework)
+- Phase 2: Framework alignment (0.01_layer_stage_framework)
 - Phase 3: Manager/worker standardization (handoff_schema.md, layer READMEs)
 - Phase 4: OS/tool variants (os/<os-id>/ directories)
 - Phase 5: Orchestration and CLI recursion (cli_recursion, framework_orchestration)

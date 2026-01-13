@@ -46,7 +46,8 @@ This Agent OS design is the **canonical architecture** for all AI agent coordina
 ## Layout map (current repo)
 ```
 0_context/
-├── 0.00_layer_stage_framework/     # templates + framework README
+├── 0.00_layer_stage_system/         # system management & planning
+├── 0.01_layer_stage_framework/      # templates + framework README
 ├── layer_0_universal/               # universal layer (0.xx slots + 0.99 stages)
 ├── layer_1_project/                 # project layer (1.xx slots + 1.99 stages)
 ├── layer_2_features/                # feature layer (2.xx slots + 2.99 stages)

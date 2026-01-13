@@ -6,7 +6,9 @@
 
 ## Overview
 
-BlabbyAI is an upcoming native Linux application for system-wide voice typing. It claims to outperform Google and Microsoft services in automatic punctuation, capitalization, and grammar.
+BlabbyAI is an upcoming native Linux application for true system-wide voice typing. It claims to outperform Google and Microsoft services in automatic punctuation, capitalization, and grammar formatting.
+
+**Key Differentiator**: Purpose-built for Linux with a focus on formatting quality that reportedly exceeds mainstream cloud services.
 
 ## Status
 

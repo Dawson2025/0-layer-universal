@@ -779,7 +779,7 @@ You can adopt the hierarchy at three levels of depth:
 - MASTER_DOCUMENTATION_INDEX: `/home/dawson/code/0_ai_context/0_context/MASTER_DOCUMENTATION_INDEX.md`
 - SYSTEM_OVERVIEW: `/home/dawson/code/0_ai_context/0_context/SYSTEM_OVERVIEW.md`
 - USAGE_GUIDE: `/home/dawson/code/0_ai_context/0_context/USAGE_GUIDE.md`
-- Layer/Stage Framework: `/home/dawson/code/0_ai_context/0_context/0.00_layer_stage_framework/README.md`
+- Layer/Stage Framework: `/home/dawson/code/0_ai_context/0_context/0.01_layer_stage_framework/README.md`
 
 **Handoff and Manager Docs**:
 - Handoff Schema: `/home/dawson/code/0_ai_context/0_context/layer_0_universal/0.01_manager_handoff_documents/0.00_to_universal/handoff_schema.md`

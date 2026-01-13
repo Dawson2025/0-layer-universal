@@ -6,7 +6,7 @@ This repo is the universal context hub for all AI agents. It uses two orthogonal
 - **Stage System (chronology):** instructions → planning → design → development → testing → criticism → fixing → archives. Stage folders mirror the layer prefix (e.g., `stage_1.03_design`) and live under `*.99_stages/`, each with `hand_off_documents/` and `ai_agent_system/` drop points.
 
 ## Repo layout (top level)
-- `0.00_layer_stage_framework/` — templates and README describing how to scaffold new layers and stages.
+- `0.01_layer_stage_framework/` — templates and README describing how to scaffold new layers and stages.
 - `layer_0_universal/` — universal content (0.01–0.10 slots + 0.99 stages).
 - `layer_1_project/` — project-level content (1.01–1.12 slots + 1.99 stages).
 - `layer_2_features/` — feature-level content (2.01–2.12 slots + 2.99 stages).
@@ -30,4 +30,4 @@ Legacy `trickle_down_*` material remains inside `legacy_import/` folders within 
 - End each response by committing and pushing relevant changes, and updating context/docs/stage status.
 
 ## Need templates?
-Copy from `0.00_layer_stage_framework/` to scaffold a new universal/project/feature/component layer. Templates already include sub_layers, stages, handoff folders, and a status template.
+Copy from `0.01_layer_stage_framework/` to scaffold a new universal/project/feature/component layer. Templates already include sub_layers, stages, handoff folders, and a status template.

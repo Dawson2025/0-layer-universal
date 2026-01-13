@@ -8,6 +8,8 @@
 
 Whisper-Dictation is an open-source dictation tool that runs OpenAI's Whisper model locally on your machine. It's designed for KDE/Wayland environments and provides system-wide dictation without sending audio to the cloud.
 
+**Key Strength**: Highly customizable for developers, with clipboard or direct input into focused fields via hotkeys. Ideal for users who prioritize privacy and want full control over their dictation setup.
+
 ## Platform Support
 
 | Platform | Supported |

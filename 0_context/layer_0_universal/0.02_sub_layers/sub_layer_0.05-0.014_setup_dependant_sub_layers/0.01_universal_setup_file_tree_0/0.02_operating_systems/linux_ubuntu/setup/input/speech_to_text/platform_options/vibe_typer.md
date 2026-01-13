@@ -1,12 +1,14 @@
 # Vibe Typer
 
-**Last Updated**: January 12, 2026
+**Last Updated**: January 13, 2026
 **Website**: [vibetyper.com](https://vibetyper.com)
 **Category**: Best "just works" option for WisprFlow-like UX
 
 ## Overview
 
-Vibe Typer is a native desktop app that provides WisprFlow-style system-wide dictation on Linux and Windows. It's the top recommendation for users who want minimal setup and don't require local processing.
+Vibe Typer is a native desktop app that provides WisprFlow-style system-wide dictation on Linux and Windows. It's the **top recommendation** for users who want minimal setup and don't require local processing.
+
+**Key Strength**: Delivers instant transcription with seamless productivity across VS Code, terminals, browsers, and chat applications.
 
 ## Platform Support
 
@@ -24,9 +26,10 @@ Vibe Typer is a native desktop app that provides WisprFlow-style system-wide dic
 | System-wide dictation | Works in any app or text field |
 | Hotkey activation | Hold hotkey, speak, release - text appears |
 | Real-time transcription | Text appears as you speak |
-| AI rewrite tools | Rewrite text professionally, casually, etc. |
+| AI rewrite tools | Rewrite text professionally, casually, etc. (e.g., "rewrite professionally") |
 | AI reply tools | Generate replies using clipboard context |
 | Smart context | Uses clipboard for contextual responses |
+| Instant transcription | Text appears in real-time as you speak |
 
 ## How It Works
 
@@ -48,10 +51,46 @@ Vibe Typer is a native desktop app that provides WisprFlow-style system-wide dic
 
 ## Installation
 
+### Quick Install
+
 1. Download from [vibetyper.com/downloads](https://vibetyper.com/downloads)
 2. Install the package for your distro
 3. Launch and set your preferred global hotkey
 4. Start dictating
+
+### Detailed Install (Ubuntu 24+ / Wayland)
+
+```bash
+# 1. Install required dependencies
+sudo apt install -y libfuse2 wl-clipboard
+
+# 2. Add yourself to input group (required for global hotkeys on Wayland)
+sudo usermod -aG input $USER
+
+# 3. Download the AppImage
+# Go to https://vibetyper.com/downloads and download, or:
+wget -O ~/Downloads/VibeTyper.AppImage "https://vibetyper.com/downloads/linux"
+
+# 4. Make executable
+chmod +x ~/Downloads/VibeTyper.AppImage
+
+# 5. Run it
+~/Downloads/VibeTyper.AppImage
+
+# 6. IMPORTANT: Log out and log back in for input group to take effect
+```
+
+### Add to Autostart
+
+```bash
+# Copy the desktop file to autostart directory
+mkdir -p ~/.config/autostart
+cp ~/.local/share/applications/com.vibetyper.app.desktop ~/.config/autostart/
+```
+
+### Default Hotkey
+
+After installation, the default hotkey is **Ctrl + Space** (hold to dictate, release to insert text).
 
 ## Desktop Environment Compatibility
 
@@ -66,7 +105,29 @@ Works across most Linux desktop environments:
 | Display Server | Status |
 |----------------|--------|
 | X11 | Full support |
-| Wayland | Should work (verify with your DE) |
+| Wayland | Works with additional setup (see below) |
+
+### Wayland Requirements
+
+On Wayland sessions (Ubuntu 22.04+, Fedora, etc.), you need:
+
+1. **libfuse2** - For AppImage support
+   ```bash
+   sudo apt install libfuse2
+   ```
+
+2. **wl-clipboard** - For clipboard integration
+   ```bash
+   sudo apt install wl-clipboard
+   ```
+
+3. **input group membership** - For global hotkey access
+   ```bash
+   sudo usermod -aG input $USER
+   # Then log out and log back in
+   ```
+
+Without these, VibeTyper will fall back to Electron shortcuts which may have limited functionality.
 
 ## Troubleshooting
 
@@ -76,6 +137,11 @@ Works across most Linux desktop environments:
 | Text not appearing | Verify app supports the input method |
 | No audio detected | Check microphone permissions |
 | Slow transcription | Check network connection |
+| AppImage won't launch | Install libfuse2: `sudo apt install libfuse2` |
+| "No keyboard devices found" error | Add to input group: `sudo usermod -aG input $USER` then re-login |
+| "wl-copy not found" warning | Install wl-clipboard: `sudo apt install wl-clipboard` |
+| Hotkeys not working on Wayland | Ensure all Wayland requirements are met (see above), then log out/in |
+| Falls back to Electron shortcuts | Install Wayland dependencies and add to input group |
 
 ## Comparison to WisprFlow
 
@@ -91,5 +157,8 @@ Works across most Linux desktop environments:
 ## Sources
 
 - [Vibe Typer Website](https://vibetyper.com)
+- [Vibe Typer Downloads](https://vibetyper.com/downloads)
 - [WisprFlow Alternative for Linux Guide](https://vibetyper.com/blog/wisprflow-alternative-linux-guide)
-- [Reddit Discussion](https://www.reddit.com/r/linux4noobs/comments/1n6zvpr/any_good_linux_alternatives_to_wispr_flow_or/)
+- [Wispr Flow Linux Alternative 2025](https://vibetyper.com/blog/wispr-flow-linux-alternative-2025)
+- [Reddit r/linux4noobs Discussion](https://www.reddit.com/r/linux4noobs/comments/1n6zvpr/any_good_linux_alternatives_to_wispr_flow_or/)
+- [It's FOSS: Vibe Coding Tools Linux](https://itsfoss.com/vibe-coding-tools-linux/)

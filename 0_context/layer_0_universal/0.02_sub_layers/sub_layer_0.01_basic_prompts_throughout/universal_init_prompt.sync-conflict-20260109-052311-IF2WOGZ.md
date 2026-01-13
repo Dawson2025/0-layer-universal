@@ -28,7 +28,7 @@ Do this at the start of the chat/session before any other action.
 │       ├── MASTER_DOCUMENTATION_INDEX.md
 │       ├── SYSTEM_OVERVIEW.md
 │       ├── USAGE_GUIDE.md
-│       ├── 0.00_layer_stage_framework/   # Templates
+│       ├── 0.01_layer_stage_framework/   # Templates
 │       └── layer_0_universal/            # Universal layer (content)
 │           ├── 0.00_ai_manager_system/
 │           ├── 0.01_manager_handoff_documents/
@@ -70,7 +70,7 @@ This is your map of the entire universal documentation system.
 **Read the Context Management Framework:**
 ```bash
 # From universal context root:
-cat 0.00_layer_stage_framework/README.md
+cat 0.01_layer_stage_framework/README.md
 ```
 
 This explains how the layer + stage system works, how to maintain documentation, and how the agent hierarchy operates. **CRITICAL** for understanding how to navigate and update the context system.
@@ -197,7 +197,7 @@ This is where you confirm “headed vs headless” requirements, WSLg env vars, 
 **⚠️ CRITICAL PROJECT STRUCTURE REQUIREMENT:**
 **Before working on any project, verify it has proper instantiation and organization:**
 1. **Check for proper layer structure**: Project must have `layer_1_project/` with proper sub-layers (1.00-1.12) and stages (1.99_stages/)
-2. **Check for templates**: If missing, project should be instantiated from `0_ai_context/0_context/0.00_layer_stage_framework/1_project_template/`
+2. **Check for templates**: If missing, project should be instantiated from `0_ai_context/0_context/0.01_layer_stage_framework/1_project_template/`
 3. **Verify organization**: Project structure must match the universal context organization pattern
 4. **If structure is missing or incomplete**: You MUST notify the user and help set it up before proceeding with work
 
@@ -219,11 +219,11 @@ See Section 4.9 for detailed project structure requirements and instantiation pr
 
 ### 4. Load the Context Management System (Layer + Stage + Agents)
 
-**CRITICAL:** Read `0.00_layer_stage_framework/README.md` for complete system documentation.
+**CRITICAL:** Read `0.01_layer_stage_framework/README.md` for complete system documentation.
 
 #### 4.1 Understanding the Layer System (Specificity Hierarchy)
 
-**IMPORTANT:** The system now supports **flexible, arbitrary nesting** of features and components to unlimited depth. See `0.00_layer_stage_framework/FLEXIBLE_LAYERING_SYSTEM.md` for complete documentation.
+**IMPORTANT:** The system now supports **flexible, arbitrary nesting** of features and components to unlimited depth. See `0.01_layer_stage_framework/FLEXIBLE_LAYERING_SYSTEM.md` for complete documentation.
 
 The layer system organizes context by specificity, from universal to specific:
 
@@ -384,7 +384,7 @@ Working on feature checkout in project ecommerce:
 
 **Purpose:** Register manager and stage agents so the universal manager can discover and call them.
 
-**Location:** `0.00_layer_stage_framework/agent_registry_template.md`
+**Location:** `0.01_layer_stage_framework/agent_registry_template.md`
 
 **Required Information for Each Agent:**
 - `layer`: `0|1|2|3`
@@ -420,7 +420,7 @@ Working on feature checkout in project ecommerce:
 6. **Commit Changes**: Follow git commit rules (see Section 3.6)
 
 **When Creating New Content:**
-- **New Layer**: Copy template from `0.00_layer_stage_framework/` (e.g., `1_project_template/`)
+- **New Layer**: Copy template from `0.01_layer_stage_framework/` (e.g., `1_project_template/`)
 - **New Sub-layer Slot**: Create `sub_layer_<N>.xx_<name>/` inside `<N>.02_sub_layers/`
 - **New Stage**: Stages are pre-created in templates; use existing `stage_<N>.xx_*/` folders
 - **Legacy Material**: Can live in `legacy_import/` subfolder while reorganizing
@@ -580,7 +580,7 @@ fi
 1. **STOP** - Do not proceed until feature structure exists
 2. **NOTIFY** - Inform user that the feature doesn't exist
 3. **OFFER** - Offer to create the feature structure using the template:
-   - Copy from: `0_ai_context/0_context/0.00_layer_stage_framework/2_feature_template/`
+   - Copy from: `0_ai_context/0_context/0.01_layer_stage_framework/2_feature_template/`
    - To: `<project>/0_context/0_context/layer_2_features/layer_2_feature_<name>/`
 4. **WAIT** - Wait for user confirmation before creating structure
 5. **CREATE** - If confirmed, create feature structure following template pattern
@@ -615,7 +615,7 @@ fi
 1. **STOP** - Do not proceed until component structure exists
 2. **NOTIFY** - Inform user that the component doesn't exist
 3. **OFFER** - Offer to create the component structure using the template:
-   - Copy from: `0_ai_context/0_context/0.00_layer_stage_framework/3_component_template/`
+   - Copy from: `0_ai_context/0_context/0.01_layer_stage_framework/3_component_template/`
    - To: `<project>/0_context/0_context/layer_2_features/layer_2_feature_<name>/layer_3_components/layer_3_component_<name>/`
 4. **WAIT** - Wait for user confirmation before creating structure
 5. **CREATE** - If confirmed, create component structure following template pattern
@@ -1009,7 +1009,7 @@ cd 2.99_stages/stage_2.01_instructions/
 
 **Agent setup:**
 - Universal: `layer_0_universal/0.02_sub_layers/sub_layer_0.13_agent_setup/`
-- Registry: `0.00_layer_stage_framework/agent_registry_template.md`
+- Registry: `0.01_layer_stage_framework/agent_registry_template.md`
 
 ##### Git & Version Control
 
@@ -1083,7 +1083,7 @@ cd 2.99_stages/stage_2.01_instructions/
 ##### Agent & Manager Tasks
 
 **Registering agents:**
-- Template: `0.00_layer_stage_framework/agent_registry_template.md`
+- Template: `0.01_layer_stage_framework/agent_registry_template.md`
 - Agent setup: `layer_0_universal/0.02_sub_layers/sub_layer_0.13_agent_setup/`
 
 **Manager handoffs:**
@@ -1121,7 +1121,7 @@ cd 2.99_stages/stage_2.01_instructions/
 - **...use browser automation** → `sub_layer_0.12_universal_tools/.../browser-automation/` + `sub_layer_0.10_mcp_servers_and_tools_setup/` (browser routing table)
 - **...work on a feature** → Load layers 0 → 1 → 2, check `2.99_stages/status_2.json` for current stage
 - **...find project rules** → `<project>/0_context/0_context/layer_1_project/1.02_sub_layers/sub_layer_1.04_project_rules/`
-- **...understand the system** → `0.00_layer_stage_framework/README.md` + Section 4 of this file
+- **...understand the system** → `0.01_layer_stage_framework/README.md` + Section 4 of this file
 - **...navigate the system** → Section 4.7 of this file (navigation workflow)
 
 #### 4.8.1 Handling User "Remember" Requests
@@ -1140,7 +1140,7 @@ You must explicitly confirm **Where recorded**, **Exact Directory Location**, **
 
 For detailed instructions on instantiating various layer types (Universal, Project, Feature, Component), including specific guidance on **Workflow Features**, refer to:
 
-*   **`0.00_layer_stage_framework/README.md`** - Specifically the "Instantiating Workflow Features" section.
+*   **`0.01_layer_stage_framework/README.md`** - Specifically the "Instantiating Workflow Features" section.
 
 ##### Required Project Structure
 
@@ -1223,7 +1223,7 @@ ls -d layer_1_project/ 2>/dev/null || echo "MISSING: layer_1_project/"
 **Step 2: Copy Template from Universal Context**
 ```bash
 # From universal context root:
-cd <parent>/0_ai_context/0_context/0.00_layer_stage_framework/
+cd <parent>/0_ai_context/0_context/0.01_layer_stage_framework/
 
 # Copy project template to project context:
 cp -r 1_project_template/ <parent>/<project>/0_context/0_context/layer_1_project/
@@ -1311,7 +1311,7 @@ EOF
 
 **Project template is located at:**
 ```
-<universal_context_root>/0_context/0.00_layer_stage_framework/1_project_template/
+<universal_context_root>/0_context/0.01_layer_stage_framework/1_project_template/
 ```
 
 **Template includes:**
@@ -1323,7 +1323,7 @@ EOF
 - Status template
 
 **See also:**
-- `0.00_layer_stage_framework/README.md` - How to instantiate layers
+- `0.01_layer_stage_framework/README.md` - How to instantiate layers
 - Section 4.6 - How to maintain and update documentation
 
 ### 5. Summaries must keep entrypoints
@@ -1340,11 +1340,11 @@ Do not remove these references during summarization; they are required navigatio
 
 ### Layer + Stage Framework Templates
 **MANDATORY READING for context management:**
-- **`0.00_layer_stage_framework/README.md`** - Complete documentation of the layer + stage system, how context management works, how to maintain documentation, and how the agent hierarchy operates
-- **`0.00_layer_stage_framework/agent_registry_template.md`** - How to register manager and stage agents for discovery
+- **`0.01_layer_stage_framework/README.md`** - Complete documentation of the layer + stage system, how context management works, how to maintain documentation, and how the agent hierarchy operates
+- **`0.01_layer_stage_framework/agent_registry_template.md`** - How to register manager and stage agents for discovery
 
 **Templates and Structure:**
-- Templates for universal/project/feature/component layers: `0.00_layer_stage_framework/`
+- Templates for universal/project/feature/component layers: `0.01_layer_stage_framework/`
 - Stage folders (0.01–0.08) and status templates live under each `*.99_stages/`
 - Live universal layer (actual content): `layer_0_universal/0.02_sub_layers/`
 
@@ -1692,8 +1692,8 @@ cd ../../<project_name>/0_context/0_context/
 
 - [ ] Identified universal context root directory
 - [ ] Read `MASTER_DOCUMENTATION_INDEX.md` (universal)
-- [ ] **Read `0.00_layer_stage_framework/README.md`** (context management system)
-- [ ] **Read `0.00_layer_stage_framework/agent_registry_template.md`** (agent hierarchy)
+- [ ] **Read `0.01_layer_stage_framework/README.md`** (context management system)
+- [ ] **Read `0.01_layer_stage_framework/agent_registry_template.md`** (agent hierarchy)
 - [ ] Discovered project context directory (sibling to universal)
 - [ ] Read project init prompt (if exists)
 - [ ] Read `SYSTEM_OVERVIEW.md` and `USAGE_GUIDE.md`

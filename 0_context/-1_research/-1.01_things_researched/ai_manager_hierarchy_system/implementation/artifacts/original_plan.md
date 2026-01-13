@@ -6,7 +6,7 @@ todos:
     content: Update MASTER_DOCUMENTATION_INDEX, SYSTEM_OVERVIEW, and USAGE_GUIDE to reference and briefly summarize the Ideal AI Manager Hierarchy System overview and things_learned docs.
     status: pending
   - id: framework-alignment
-    content: Align 0.00_layer_stage_framework docs and templates with the ideal hierarchy’s definitions of layers, stages, and the Agent OS.
+    content: Align 0.01_layer_stage_framework docs and templates with the ideal hierarchy’s definitions of layers, stages, and the Agent OS.
     status: pending
     dependencies:
       - nav-and-overview-integration
@@ -61,11 +61,11 @@ We will weave the "Ideal AI Manager Hierarchy System" spec into the existing `0_
 ## 2. Align the Layer/Stage Framework With the Ideal Architecture
 
 - **2.1 Framework docs**
-- Update [`0.00_layer_stage_framework/README.md`](code/0_ai_context/0_context/0.00_layer_stage_framework/README.md) so that:
+- Update [`0.01_layer_stage_framework/README.md`](code/0_ai_context/0_context/0.01_layer_stage_framework/README.md) so that:
     - Its description of layers (L0–L3, optional L4+) matches `architecture.md` and `summary/IDEAL_AI_MANAGER_HIERARCHY_SYSTEM.md`.
     - Its stage list explicitly includes `stage_0.00_request_gathering` and matches the chronological pipeline defined in the ideal spec.
     - It references the ideal hierarchy docs as the **design rationale** for the framework templates.
-- Where appropriate, add short references in the layer templates under `0.00_layer_stage_framework` (L0–L3 templates) that:
+- Where appropriate, add short references in the layer templates under `0.01_layer_stage_framework` (L0–L3 templates) that:
     - Link to the relevant sections of `architecture.md`, `tools_and_context_systems.md`, and `os_and_quartets.md`.
 
 ## 3. Standardize Manager/Worker + Handoff Behavior Across Layers

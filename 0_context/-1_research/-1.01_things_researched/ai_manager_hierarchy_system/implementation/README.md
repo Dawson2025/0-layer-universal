@@ -152,7 +152,7 @@ The implementation establishes the AI Manager Hierarchy System as the **canonica
 - `USAGE_GUIDE.md` - Working with the hierarchy guide
 
 ### Framework & Standards
-- `0.00_layer_stage_framework/README.md` - Layer/stage framework
+- `0.01_layer_stage_framework/README.md` - Layer/stage framework
 - `layer_*/N.00_ai_manager_system/README.md` - Manager system docs (L0-L3)
 - `handoff_schema.md` - Canonical handoff document schema
 

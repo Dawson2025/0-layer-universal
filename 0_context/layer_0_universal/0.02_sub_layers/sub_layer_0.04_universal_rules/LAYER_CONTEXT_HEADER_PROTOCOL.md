@@ -152,7 +152,7 @@ validate-layer-headers /path/to/0_context
 
 For existing files without headers:
 
-1. **Phase 1**: Add headers to all template files in `0.00_layer_stage_framework`
+1. **Phase 1**: Add headers to all template files in `0.01_layer_stage_framework`
 2. **Phase 2**: Add headers to all `README.md` files across all layers
 3. **Phase 3**: Add headers to all `.md` documentation files
 4. **Phase 4**: Add headers to all source code files (`.ts`, `.py`, `.sh`, etc.)

@@ -60,7 +60,7 @@ L0 (Universal) → L1 (Project) → L2 (Feature) → L3 (Component)
 ### When You Need Details
 
 4. **Layer/Stage Framework**
-   - `/home/dawson/code/0_ai_context/0_context/0.00_layer_stage_framework/README.md`
+   - `/home/dawson/code/0_ai_context/0_context/0.01_layer_stage_framework/README.md`
    - Detailed layer and stage definitions
 
 5. **Handoff Schema**

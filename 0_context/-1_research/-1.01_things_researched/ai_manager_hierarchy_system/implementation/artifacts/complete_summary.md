@@ -33,7 +33,7 @@ The complete integration of the **Ideal AI Manager Hierarchy System** into the `
 **Verified**: 2025-12-24
 
 **Deliverables**:
-- ✅ 0.00_layer_stage_framework/README.md explicitly implements ideal hierarchy
+- ✅ 0.01_layer_stage_framework/README.md explicitly implements ideal hierarchy
 - ✅ Layer definitions (L0-L4+) match architecture.md
 - ✅ Stage pipeline includes all 9 stages (request through archiving)
 - ✅ AI Setup Dependency Chain documented (0.08→0.09→0.10→0.11→0.12)
@@ -245,7 +245,7 @@ The complete integration of the **Ideal AI Manager Hierarchy System** into the `
   - production_deployment.md
 
 ### Implementation Guidance
-- **Layer Framework**: `0.00_layer_stage_framework/README.md`
+- **Layer Framework**: `0.01_layer_stage_framework/README.md`
 - **Manager Systems**: `layer_*/N.00_ai_manager_system/README.md`
 - **Handoff Schema**: `layer_0_universal/0.01_manager_handoff_documents/0.00_to_universal/handoff_schema.md`
 

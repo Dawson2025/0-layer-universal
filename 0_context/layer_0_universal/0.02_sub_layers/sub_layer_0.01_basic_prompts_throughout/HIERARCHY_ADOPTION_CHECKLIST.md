@@ -44,7 +44,7 @@ This checklist guides you through adopting the AI Manager Hierarchy System for y
 **Time**: 20-30 minutes
 
 - [ ] **Read Layer/Stage Framework README**
-  - Location: `/home/dawson/code/0_ai_context/0_context/0.00_layer_stage_framework/README.md`
+  - Location: `/home/dawson/code/0_ai_context/0_context/0.01_layer_stage_framework/README.md`
   - Goal: Understand L0-L4+ layers and stage pipeline
   - Note: This framework implements the Ideal AI Manager Hierarchy System
 
@@ -540,7 +540,7 @@ This checklist guides you through adopting the AI Manager Hierarchy System for y
 - USAGE_GUIDE.md: `/home/dawson/code/0_ai_context/0_context/USAGE_GUIDE.md`
 
 **Framework and Manager Docs**:
-- Layer/Stage Framework: `/home/dawson/code/0_ai_context/0_context/0.00_layer_stage_framework/README.md`
+- Layer/Stage Framework: `/home/dawson/code/0_ai_context/0_context/0.01_layer_stage_framework/README.md`
 - L0 Manager: `/home/dawson/code/0_ai_context/0_context/layer_0_universal/0.00_ai_manager_system/README.md`
 - L1 Manager: `/home/dawson/code/0_ai_context/0_context/layer_1_project/1.00_ai_manager_system/README.md`
 - L2 Manager: `/home/dawson/code/0_ai_context/0_context/layer_2_features/2.00_ai_manager_system/README.md`

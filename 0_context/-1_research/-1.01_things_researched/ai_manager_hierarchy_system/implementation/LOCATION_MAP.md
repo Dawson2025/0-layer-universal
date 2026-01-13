@@ -89,7 +89,7 @@ Files in each: `CLAUDE.md` (managers), `AGENTS.md` (workers), `GEMINI.md` (plann
 ### Framework & Standards
 | What | Where |
 |------|-------|
-| Layer/stage framework | `0.00_layer_stage_framework/README.md` |
+| Layer/stage framework | `0.01_layer_stage_framework/README.md` |
 | L0 manager system | `layer_0_universal/0.00_ai_manager_system/README.md` |
 | L1 manager system | `layer_1_project/1.00_ai_manager_system/README.md` |
 | L2 manager system | `layer_2_features/2.00_ai_manager_system/README.md` |
@@ -223,7 +223,7 @@ layer_3_components/
 - `USAGE_GUIDE.md` (updated)
 
 ### Phase 2: Framework Alignment
-- `0.00_layer_stage_framework/README.md` (updated)
+- `0.01_layer_stage_framework/README.md` (updated)
 
 ### Phase 3: Manager/Worker Standardization
 - `layer_*/N.00_ai_manager_system/README.md` (4 files)

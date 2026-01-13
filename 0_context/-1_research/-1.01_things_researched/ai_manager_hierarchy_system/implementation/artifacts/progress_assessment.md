@@ -38,7 +38,7 @@ The integration of the Ideal AI Manager Hierarchy System into the 0_ai_context s
 **Status**: Fully completed
 
 **Evidence**:
-- ✅ `0.00_layer_stage_framework/README.md` (line 5): Explicit statement that framework implements the Ideal AI Manager Hierarchy System
+- ✅ `0.01_layer_stage_framework/README.md` (line 5): Explicit statement that framework implements the Ideal AI Manager Hierarchy System
 - ✅ Layer definitions (L0-L4+) match `architecture.md` and summary spec
 - ✅ Stage pipeline explicitly includes `stage_0.00_request_gathering` and matches chronological flow
 - ✅ Framework references ideal hierarchy as design rationale

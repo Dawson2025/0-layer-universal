@@ -20,7 +20,7 @@ Ensure the layer/stage framework documentation:
 ## Deliverables Completed
 
 ### 1. Framework README Updated
-**Location**: `/code/0_ai_context/0_context/0.00_layer_stage_framework/README.md`
+**Location**: `/code/0_ai_context/0_context/0.01_layer_stage_framework/README.md`
 **Key Changes**:
 
 **Line 5 - Explicit Implementation Statement**:

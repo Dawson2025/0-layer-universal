@@ -8,6 +8,8 @@
 
 Linux-Dictation-Project is an open-source tool that goes beyond simple dictation. It provides Whisper-based speech-to-text plus voice commands for full desktop control, including copy/paste, key chords, and system commands.
 
+**Key Strength**: Full desktop control as well as text input - aimed at complete hands-free operation for accessibility and productivity use cases.
+
 ## Platform Support
 
 | Platform | Supported |

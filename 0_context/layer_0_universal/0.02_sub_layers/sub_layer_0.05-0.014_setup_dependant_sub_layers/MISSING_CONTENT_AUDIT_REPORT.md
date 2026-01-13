@@ -73,4 +73,4 @@ Artifacts used:
 ## Follow-ups
 
 - Decide whether the legacy README archive should stay or be merged into the hierarchy over time.
-- Template files under `0_context/0.00_layer_stage_framework/` were excluded from this recovery because they are not part of the consolidated setup sublayers.
+- Template files under `0_context/0.01_layer_stage_framework/` were excluded from this recovery because they are not part of the consolidated setup sublayers.

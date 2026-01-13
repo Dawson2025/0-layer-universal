@@ -17,7 +17,7 @@ git pull && git status
 |----------|----------|------|
 | 1 | Master Index | `0_context/MASTER_DOCUMENTATION_INDEX.md` |
 | 2 | System Overview | `0_context/SYSTEM_OVERVIEW.md` |
-| 3 | Framework Guide | `0_context/0.00_layer_stage_framework/README.md` |
+| 3 | Framework Guide | `0_context/0.01_layer_stage_framework/README.md` |
 
 ### 2. Find Project Init Prompt
 ```bash
@@ -33,7 +33,8 @@ ls -d ../**/project_init_prompt.md 2>/dev/null
 0_ai_context/0_context/
 ├── MASTER_DOCUMENTATION_INDEX.md    # Start here
 ├── SYSTEM_OVERVIEW.md
-├── 0.00_layer_stage_framework/      # Templates & framework docs
+├── 0.00_layer_stage_system/         # System management & planning
+├── 0.01_layer_stage_framework/      # Templates & framework docs
 └── layer_0_universal/
     └── 0.02_sub_layers/
         ├── sub_layer_0.01_basic_prompts_throughout/  ← You are here
@@ -132,7 +133,7 @@ Each layer has stages representing workflow phases:
 6. **Execute work** - Follow stage guidelines
 7. **Update status** - Mark progress
 
-**Full workflow:** See `0.00_layer_stage_framework/README.md`
+**Full workflow:** See `0.01_layer_stage_framework/README.md`
 
 ---
 
@@ -152,11 +153,12 @@ For detailed information, see these documents:
 
 | Topic | Document |
 |-------|----------|
-| Layer/Stage System | `0.00_layer_stage_framework/README.md` |
-| Flexible Layering | `0.00_layer_stage_framework/FLEXIBLE_LAYERING_SYSTEM.md` |
-| Extending Framework | `0.00_layer_stage_framework/EXTENDING_THE_FRAMEWORK.md` |
-| Feature Types | `0.00_layer_stage_framework/FEATURE_TYPE_DECISION_GUIDE.md` |
-| Workflow Features | `0.00_layer_stage_framework/WORKFLOW_FEATURE_PATTERN.md` |
+| System Management | `0.00_layer_stage_system/README.md` |
+| Layer/Stage Framework | `0.01_layer_stage_framework/README.md` |
+| Flexible Layering | `0.01_layer_stage_framework/FLEXIBLE_LAYERING_SYSTEM.md` |
+| Extending Framework | `0.01_layer_stage_framework/EXTENDING_THE_FRAMEWORK.md` |
+| Feature Types | `0.01_layer_stage_framework/FEATURE_TYPE_DECISION_GUIDE.md` |
+| Workflow Features | `0.01_layer_stage_framework/WORKFLOW_FEATURE_PATTERN.md` |
 | Sub-layer Registry | `0.02_sub_layers/0.00_sub_layer_registry/README.md` |
 
 ---

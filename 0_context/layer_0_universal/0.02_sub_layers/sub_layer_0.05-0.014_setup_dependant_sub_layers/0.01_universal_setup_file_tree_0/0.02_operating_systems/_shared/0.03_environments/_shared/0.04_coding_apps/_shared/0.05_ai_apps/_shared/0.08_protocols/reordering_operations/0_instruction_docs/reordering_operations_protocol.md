@@ -36,7 +36,7 @@
 ### 1.2 For Stage Reordering
 
 1. **Read the Layer/Stage Framework:**
-   - `0_context/0.00_layer_stage_framework/README.md`
+   - `0_context/0.01_layer_stage_framework/README.md`
    - Understand how stages are numbered and organized.
 
 2. **Check Current Stage Structure:**

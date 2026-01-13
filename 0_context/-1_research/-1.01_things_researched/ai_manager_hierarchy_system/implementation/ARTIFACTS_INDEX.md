@@ -14,7 +14,7 @@
 | MASTER_DOCUMENTATION_INDEX.md | `/code/0_ai_context/0_context/` | 25KB | Added AI Manager Hierarchy section (lines 77-101) |
 | SYSTEM_OVERVIEW.md | `/code/0_ai_context/0_context/` | 5.5KB | Added Agent OS Architecture section (lines 8-44) |
 | USAGE_GUIDE.md | `/code/0_ai_context/0_context/` | 13KB | Added "Working with AI Manager Hierarchy" (lines 12-111) |
-| 0.00_layer_stage_framework/README.md | `/code/0_ai_context/0_context/0.00_layer_stage_framework/` | ~15KB | Line 5: Explicit hierarchy implementation statement |
+| 0.01_layer_stage_framework/README.md | `/code/0_ai_context/0_context/0.01_layer_stage_framework/` | ~15KB | Line 5: Explicit hierarchy implementation statement |
 
 ---
 

@@ -140,7 +140,7 @@ layer_N/stage_N.01_instructions/ai_agent_system/os/
 ### Phase 2: Framework Alignment
 **What**: Aligned layer/stage framework with ideal specifications
 **Impact**: Framework explicitly implements and references the ideal hierarchy
-**Files**: 0.00_layer_stage_framework/README.md + layer templates
+**Files**: 0.01_layer_stage_framework/README.md + layer templates
 
 ### Phase 3: Manager/Worker Standardization
 **What**: Defined manager/worker patterns and canonical handoff schema
@@ -323,7 +323,7 @@ This implementation was accomplished through:
 
 ### Technical References
 - **Normative Specs**: `../things_learned/ideal_ai_manager_hierarchy_system/`
-- **Framework Docs**: `0.00_layer_stage_framework/README.md`
+- **Framework Docs**: `0.01_layer_stage_framework/README.md`
 - **Manager Systems**: `layer_*/N.00_ai_manager_system/README.md`
 - **Handoff Schema**: `handoff_schema.md`
 
