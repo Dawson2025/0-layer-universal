@@ -270,6 +270,14 @@ git status
 
 ---
 
+## 🔄 Updating Claude Code CLI
+
+For detailed update instructions, see:
+- **Update Guide:** `../../../../../../_shared/0.03_environments/_shared/0.04_coding_apps/_shared/0.05_ai_apps/claude_code_cli/setup/UPDATE.md`
+- **Quick Update:** Run `claude update` to automatically update to the latest version
+
+**Note:** Update procedures are the same across all platforms. See the shared documentation for complete details.
+
 **Last Updated:** 2025-01-26  
 **Version:** 1.1 (Enhanced with Codex CLI documentation and universal init prompt patterns)  
 **Based on:** `universal_init_prompt.md` patterns and structure

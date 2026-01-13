@@ -1,0 +1,46 @@
+{
+  "layer_id": "2_sub_project_<name>",
+  "current_stage": "2.01_instructions",
+  "stages": {
+    "2.01_instructions": {
+      "state": "not_started",
+      "last_update": null,
+      "notes": ""
+    },
+    "2.02_planning": {
+      "state": "not_started",
+      "last_update": null,
+      "notes": ""
+    },
+    "2.03_design": {
+      "state": "not_started",
+      "last_update": null,
+      "notes": ""
+    },
+    "2.04_development": {
+      "state": "not_started",
+      "last_update": null,
+      "notes": ""
+    },
+    "2.05_testing": {
+      "state": "not_started",
+      "last_update": null,
+      "notes": ""
+    },
+    "2.06_criticism": {
+      "state": "not_started",
+      "last_update": null,
+      "notes": ""
+    },
+    "2.07_fixing": {
+      "state": "not_started",
+      "last_update": null,
+      "notes": ""
+    },
+    "2.08_archives": {
+      "state": "not_started",
+      "last_update": null,
+      "notes": ""
+    }
+  }
+}

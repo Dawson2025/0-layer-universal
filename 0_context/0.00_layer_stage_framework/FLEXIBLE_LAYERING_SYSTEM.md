@@ -5,21 +5,21 @@
 **Location:** `0_ai_context/0_context/0.00_layer_stage_framework/FLEXIBLE_LAYERING_SYSTEM.md`
 
 **Last Updated:** 2026-01-09
-**Version:** 2.1 - Mini Naming Convention
+**Version:** 2.2 - Sub Naming Convention
 
 ---
 
 ## 🎯 Overview
 
-The flexible layering system allows **arbitrary nesting** of features and components to any depth required by your project's complexity, using the **mini naming convention** to clearly indicate nesting depth.
+The flexible layering system allows **arbitrary nesting** of features and components to any depth required by your project's complexity, using the **sub naming convention** to clearly indicate nesting depth.
 
 **Key Principles:**
 1. **Layer numbers indicate depth**, not fixed types
-2. **Mini naming shows nesting level**: `mini`, `mini*2`, `mini*3`, ... `mini*n`
-3. **Any layer can contain mini-features AND mini-components**
+2. **Sub naming shows nesting level**: `sub`, `sub*2`, `sub*3`, ... `sub*n`
+3. **Any layer can contain sub-features AND sub-components**
 4. **Infinite nesting** - create as many levels as needed
 5. **Each layer follows the same structure** (manager, handoffs, sub-layers, stages)
-6. **Every layer has sub_layers**: ALL features, mini_features, components, and mini_components have `<N>.02_sub_layers/` with 12 content slots
+6. **Every layer has sub_layers**: ALL features, sub_features, components, and sub_components have `<N>.02_sub_layers/` with 12 content slots
 7. **Consistent numbering** shows position in hierarchy
 
 ---
@@ -33,21 +33,21 @@ The flexible layering system allows **arbitrary nesting** of features and compon
 
 ### Flexible Layers (2-N)
 
-Starting at Layer 2, the system supports **arbitrary depth** using **mini naming convention**:
+Starting at Layer 2, the system supports **arbitrary depth** using **sub naming convention**:
 
 - **Layer 2:** Top-level `features` and `components`
-- **Layer 3:** `mini_features` and `mini_components` (1st level of nesting)
-- **Layer 4:** `mini*2_features` and `mini*2_components` (2nd level of nesting)
-- **Layer 5:** `mini*3_features` and `mini*3_components` (3rd level of nesting)
-- **Layer N:** `mini*n_features` and `mini*n_components` (nth level of nesting)
+- **Layer 3:** `sub_features` and `sub_components` (1st level of nesting)
+- **Layer 4:** `sub*2_features` and `sub*2_components` (2nd level of nesting)
+- **Layer 5:** `sub*3_features` and `sub*3_components` (3rd level of nesting)
+- **Layer N:** `sub*n_features` and `sub*n_components` (nth level of nesting)
 
 **The layer number = depth in the hierarchy tree**
 
 **Mini naming indicates nesting depth:**
-- No "mini" = Layer 2 (top-level)
-- `mini` = Layer 3 (1 level deep)
-- `mini*2` = Layer 4 (2 levels deep)
-- `mini*n` = Layer N (n-2 levels deep)
+- No "sub" prefix = Layer 2 (top-level)
+- `sub` = Layer 3 (1 level deep)
+- `sub*2` = Layer 4 (2 levels deep)
+- `sub*n` = Layer N (n-2 levels deep)
 
 ---
 
@@ -71,18 +71,18 @@ layer_2_feature_<name>/                      # OR layer_2_component_<name>/
 │   ├── ... (2.01 through 2.08)
 │   ├── stage_2.08_archives/
 │   └── status_2.json                        # Status tracker
-├── layer_3_mini_features/                   # Mini-features (optional)
+├── layer_3_sub_features/                   # Sub-features (optional)
 │   ├── README.md
-│   └── layer_3_mini_feature_<name>/         # Recursive structure
-└── layer_3_mini_components/                 # Mini-components (optional)
+│   └── layer_3_sub_feature_<name>/         # Recursive structure
+└── layer_3_sub_components/                 # Sub-components (optional)
     ├── README.md
-    └── layer_3_mini_component_<name>/       # Recursive structure
+    └── layer_3_sub_component_<name>/       # Recursive structure
 ```
 
 ### Pattern for Layer 3+ (Nested Layers)
 
 ```
-layer_N_mini*x_feature_<name>/               # OR layer_N_mini*x_component_<name>/
+layer_N_sub*x_feature_<name>/               # OR layer_N_sub*x_component_<name>/
 ├── N.00_ai_manager_system/                  # Manager for this layer
 ├── N.01_manager_handoff_documents/          # Communication
 │   ├── N.00_to_universal/                   # Reports up
@@ -97,18 +97,18 @@ layer_N_mini*x_feature_<name>/               # OR layer_N_mini*x_component_<name
 │   ├── ... (N.01 through N.08)
 │   ├── stage_N.08_archives/
 │   └── status_N.json                        # Status tracker
-├── layer_N+1_mini*x+1_features/             # Deeper mini-features (optional)
+├── layer_N+1_sub*x+1_features/             # Deeper sub-features (optional)
 │   ├── README.md
-│   └── layer_N+1_mini*x+1_feature_<name>/   # Recursive structure
-└── layer_N+1_mini*x+1_components/           # Deeper mini-components (optional)
+│   └── layer_N+1_sub*x+1_feature_<name>/   # Recursive structure
+└── layer_N+1_sub*x+1_components/           # Deeper sub-components (optional)
     ├── README.md
-    └── layer_N+1_mini*x+1_component_<name>/ # Recursive structure
+    └── layer_N+1_sub*x+1_component_<name>/ # Recursive structure
 ```
 
 **Key Points:**
 - **Every layer** follows this structure
-- **Layer 2** uses `layer_3_mini_features/` and `layer_3_mini_components/` (no "mini" at Layer 2 itself)
-- **Layer 3+** uses `mini`, `mini*2`, `mini*3`, etc. in both folder names AND item names
+- **Layer 2** uses `layer_3_sub_features/` and `layer_3_sub_components/` (no "sub" prefix at Layer 2 itself)
+- **Layer 3+** uses `sub`, `sub*2`, `sub*3`, etc. in both folder names AND item names
 - **Recursion:** Each nested feature/component follows the same pattern
 
 ---
@@ -124,17 +124,17 @@ layer_2_feature_<name>/
 
 **Layer 3+ (Nested):**
 ```
-layer_3_mini_feature_<name>/
-layer_4_mini*2_feature_<name>/
-layer_5_mini*3_feature_<name>/
-layer_N_mini*n_feature_<name>/
+layer_3_sub_feature_<name>/
+layer_4_sub*2_feature_<name>/
+layer_5_sub*3_feature_<name>/
+layer_N_sub*n_feature_<name>/
 ```
 
 **Examples:**
 - `layer_2_feature_in_class_work/` - Top-level feature (depth 2)
-- `layer_3_mini_feature_derivatives/` - Mini-feature (depth 3, 1 level deep)
-- `layer_4_mini*2_feature_power_rule/` - Mini*2-feature (depth 4, 2 levels deep)
-- `layer_5_mini*3_feature_negative_exponents/` - Mini*3-feature (depth 5, 3 levels deep)
+- `layer_3_sub_feature_derivatives/` - Sub-feature (depth 3, 1 level deep)
+- `layer_4_sub*2_feature_power_rule/` - Mini*2-feature (depth 4, 2 levels deep)
+- `layer_5_sub*3_feature_negative_exponents/` - Mini*3-feature (depth 5, 3 levels deep)
 
 ### Component Naming
 
@@ -145,16 +145,16 @@ layer_2_component_<name>/
 
 **Layer 3+ (Nested):**
 ```
-layer_3_mini_component_<name>/
-layer_4_mini*2_component_<name>/
-layer_5_mini*3_component_<name>/
-layer_N_mini*n_component_<name>/
+layer_3_sub_component_<name>/
+layer_4_sub*2_component_<name>/
+layer_5_sub*3_component_<name>/
+layer_N_sub*n_component_<name>/
 ```
 
 **Examples:**
-- `layer_3_mini_component_worksheet_1/` - Mini-component (depth 3)
-- `layer_4_mini*2_component_practice_set/` - Mini*2-component (depth 4)
-- `layer_5_mini*3_component_2026_01_09_class/` - Mini*3-component (depth 5)
+- `layer_3_sub_component_worksheet_1/` - Sub-component (depth 3)
+- `layer_4_sub*2_component_practice_set/` - Mini*2-component (depth 4)
+- `layer_5_sub*3_component_2026_01_09_class/` - Mini*3-component (depth 5)
 
 ### Directory Naming Within Layers
 
@@ -173,7 +173,7 @@ layer_N_mini*n_component_<name>/
     - `sub_layer_N.02_knowledge/` - Documentation, references
     - `sub_layer_N.03_tools/` - Scripts, utilities
     - `sub_layer_N.04_resources/` - Files, assets
-  - **Available in**: ALL features, mini_features, components, mini_components
+  - **Available in**: ALL features, sub_features, components, sub_components
 
 **Stages:**
 - `N.99_stages/`
@@ -197,8 +197,8 @@ layer_1_project/                                 # Applied Calculus Project (dep
         │   └── sub_layer_2.01_visual_notes/    # General class notes
         ├── 2.99_stages/
         │   └── status_2.json
-        └── layer_3_mini_features/               # Mini-features folder
-            └── layer_3_mini_feature_derivatives/      # Main topic (depth 3)
+        └── layer_3_sub_features/               # Sub-features folder
+            └── layer_3_sub_feature_derivatives/      # Main topic (depth 3)
                 ├── 3.00_ai_manager_system/
                 ├── 3.02_sub_layers/
                 │   └── sub_layer_3.01_visual_notes/  # Derivatives overview diagrams
@@ -207,21 +207,21 @@ layer_1_project/                                 # Applied Calculus Project (dep
                 │   │   └── hand_off_documents/
                 │   │       └── proactor_lecture_2026-01-09_derivatives.md
                 │   └── status_3.json
-                └── layer_4_mini*2_features/          # Mini*2-features folder
-                    └── layer_4_mini*2_feature_power_rule/    # Subtopic (depth 4)
+                └── layer_4_sub*2_features/          # Mini*2-features folder
+                    └── layer_4_sub*2_feature_power_rule/    # Subtopic (depth 4)
                         ├── 4.00_ai_manager_system/
                         ├── 4.02_sub_layers/
                         │   └── sub_layer_4.01_visual_notes/  # Power rule specific diagrams
                         ├── 4.99_stages/
                         │   └── status_4.json
-                        ├── layer_5_mini*3_features/      # Mini*3-features folder
-                        │   └── layer_5_mini*3_feature_negative_exponents/  # (depth 5)
+                        ├── layer_5_sub*3_features/      # Mini*3-features folder
+                        │   └── layer_5_sub*3_feature_negative_exponents/  # (depth 5)
                         │       ├── 5.00_ai_manager_system/
                         │       ├── 5.02_sub_layers/
                         │       └── 5.99_stages/
                         │           └── status_5.json
-                        └── layer_5_mini*3_components/    # Daily work folder
-                            ├── layer_5_mini*3_component_2026_01_09_class/  # (depth 5)
+                        └── layer_5_sub*3_components/    # Daily work folder
+                            ├── layer_5_sub*3_component_2026_01_09_class/  # (depth 5)
                             │   ├── 5.00_ai_manager_system/
                             │   ├── 5.02_sub_layers/
                             │   │   └── sub_layer_5.01_visual_notes/
@@ -232,7 +232,7 @@ layer_1_project/                                 # Applied Calculus Project (dep
                             │       └── stage_5.05_testing/
                             │           └── hand_off_documents/
                             │               └── byui_math_problems_jan09.md
-                            └── layer_5_mini*3_component_2026_01_11_class/  # (depth 5)
+                            └── layer_5_sub*3_component_2026_01_11_class/  # (depth 5)
                                 └── ...
 ```
 
@@ -247,17 +247,17 @@ layer_1_project/                                 # Applied Calculus Project (dep
 1. **Container Feature:** In-Class Work → Create `layer_2_feature_in_class_work/`
 
 2. **Main Topic:** Derivatives
-   - Create: `layer_2_feature_in_class_work/layer_3_mini_features/layer_3_mini_feature_derivatives/`
+   - Create: `layer_2_feature_in_class_work/layer_3_sub_features/layer_3_sub_feature_derivatives/`
    - Save Proactor AI transcript in: `3.99_stages/stage_3.04_development/hand_off_documents/`
    - Save overview diagrams in: `3.02_sub_layers/sub_layer_3.01_visual_notes/`
 
 3. **Subtopic in lecture:** Power Rule
-   - Create: `layer_3_mini_feature_derivatives/layer_4_mini*2_features/layer_4_mini*2_feature_power_rule/`
+   - Create: `layer_3_sub_feature_derivatives/layer_4_sub*2_features/layer_4_sub*2_feature_power_rule/`
    - Save Proactor AI transcript in: `4.99_stages/stage_4.04_development/hand_off_documents/`
    - Save Excalidraw work in: `4.02_sub_layers/sub_layer_4.01_visual_notes/`
 
 4. **Daily Practice Problems from BYUI Math page**
-   - Create: `layer_4_mini*2_feature_power_rule/layer_5_mini*3_components/layer_5_mini*3_component_2026_01_09_class/`
+   - Create: `layer_4_sub*2_feature_power_rule/layer_5_sub*3_components/layer_5_sub*3_component_2026_01_09_class/`
    - Show your work in Excalidraw, save to: `5.02_sub_layers/sub_layer_5.01_visual_notes/excalidraw/`
    - Document problems from BYUI Math page in: `5.99_stages/stage_5.05_testing/hand_off_documents/`
 

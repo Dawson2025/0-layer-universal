@@ -270,6 +270,13 @@ git status
 
 ---
 
+## 🔄 Updating Gemini CLI
+
+For detailed update instructions specific to Linux Ubuntu, see:
+- **Update Guide:** `UPDATE.md` (in this directory)
+- **Shared Update Guide:** `../../../../../../_shared/0.03_environments/_shared/0.04_coding_apps/_shared/0.05_ai_apps/gemini_cli/setup/UPDATE.md`
+- **Quick Update:** Run `npm install -g @google/gemini-cli@latest`
+
 **Last Updated:** 2025-01-26  
 **Version:** 1.1 (Enhanced with Codex CLI documentation and universal init prompt patterns)  
 **Based on:** `universal_init_prompt.md` patterns and structure
