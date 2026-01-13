@@ -14,7 +14,7 @@ ORIGINAL SUBLAYERS → NEW LOCATION:
 - sub_layer_0.07_environment_setup → 0.03_environments/
 - sub_layer_0.08_apps_browsers_extensions_setup → (integrated into coding apps)
 - sub_layer_0.09_ai_apps_tools_setup → 0.05_ai_apps/
-- sub_layer_0.10_mcp_servers_and_tools_setup → 0.06_mcp_servers/_shared/
+- sub_layer_0.10_mcp_servers_and_tools_setup → 0.06_mcp_servers_and_apis_and_secrets/_shared/
 - sub_layer_0.11_ai_models → 0.06_ai_models/
 - sub_layer_0.12_universal_tools → 0.07_universal_tools/
 - sub_layer_0.13_universal_protocols → 0.08_protocols/

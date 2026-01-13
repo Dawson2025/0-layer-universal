@@ -74,7 +74,7 @@ The file tree at `0.01_universal_setup_file_tree_0/` is the **primary organizati
 All content from the old sublayers (0.05-0.14) has been integrated into the file tree at appropriate levels:
 
 - **Level 1 (_shared)**: OS and environment setup docs
-- **Level 5 (_shared/0.06_mcp_servers/_shared/)**: MCP core documentation and configuration guides
+- **Level 5 (_shared/0.06_mcp_servers_and_apis_and_secrets/_shared/)**: MCP core documentation and configuration guides
 - **Level 7 (_shared/.../0.08_universal_tools/)**: Universal tools documentation
 - **Level 8 (_shared/.../0.09_protocols/)**: Protocol specifications and standards
 - **Level 9**: Agent setup documentation
@@ -118,7 +118,7 @@ This sublayer consolidates what were previously 10 separate sublayers:
 | sub_layer_0.07_coding_app_setup | File tree: `0.04_coding_apps/` |
 | sub_layer_0.08_apps_browsers_extensions_setup | File tree: (browsers under coding apps) |
 | sub_layer_0.09_ai_apps_tools_setup | File tree: `0.05_ai_apps/` |
-| sub_layer_0.10_mcp_servers_and_tools_setup | File tree: `0.06_mcp_servers/` |
+| sub_layer_0.10_mcp_servers_and_tools_setup | File tree: `0.06_mcp_servers_and_apis_and_secrets/` |
 | sub_layer_0.11_ai_models | File tree: `0.07_ai_models/` |
 | sub_layer_0.12_universal_tools | File tree: `0.08_universal_tools/` |
 | sub_layer_0.13_universal_protocols | File tree: `0.09_protocols/` |
@@ -185,7 +185,7 @@ All content has been integrated into the file tree hierarchy:
 - **sub_layer_0.07 → Level 2**: Environment setup in `0.03_environments/`
 - **sub_layer_0.06 → Level 3**: Coding app setup in `0.04_coding_apps/`
 - **sub_layer_0.09 → Level 4**: AI apps setup in `0.05_ai_apps/`
-- **sub_layer_0.10 → Level 5**: MCP servers in `0.06_mcp_servers/_shared/`
+- **sub_layer_0.10 → Level 5**: MCP servers in `0.06_mcp_servers_and_apis_and_secrets/_shared/`
 - **sub_layer_0.11 → Level 6**: AI models in `0.07_ai_models/`
 - **sub_layer_0.12 → Level 7**: Universal tools in `0.08_universal_tools/`
 - **sub_layer_0.13 → Level 8**: Protocols in `0.09_protocols/`
@@ -210,7 +210,7 @@ All content has been integrated into the file tree hierarchy:
 → 0.03_environments/_shared/
 → 0.04_coding_apps/_shared/
 → 0.05_ai_apps/_shared/
-→ 0.06_mcp_servers/_shared/
+→ 0.06_mcp_servers_and_apis_and_secrets/_shared/
 → 0.07_ai_models/_shared/
 → 0.08_universal_tools/git/
 → general_setup_and_config/
@@ -223,7 +223,7 @@ All content has been integrated into the file tree hierarchy:
 → 0.03_environments/development/
 → 0.04_coding_apps/cursor/
 → 0.05_ai_apps/cursor_agent/
-→ 0.06_mcp_servers/playwright-mcp/
+→ 0.06_mcp_servers_and_apis_and_secrets/playwright-mcp/
 → general_setup_and_config/
 ```
 
@@ -232,7 +232,7 @@ All content has been integrated into the file tree hierarchy:
 0.01_universal_setup_file_tree_0/
 → 0.02_operating_systems/_shared/
 → .../_shared/
-→ 0.06_mcp_servers/_mcp_core/
+→ 0.06_mcp_servers_and_apis_and_secrets/_mcp_core/
 → general_setup_and_config/
 ```
 

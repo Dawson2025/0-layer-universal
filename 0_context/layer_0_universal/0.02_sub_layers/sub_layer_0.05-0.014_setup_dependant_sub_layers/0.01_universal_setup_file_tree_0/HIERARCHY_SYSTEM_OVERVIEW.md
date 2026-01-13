@@ -19,7 +19,7 @@ Use the following path pattern for any setup configuration:
           <coding_app>/
             0.05_ai_apps/
               <ai_app>/
-                0.06_mcp_servers/
+                0.06_mcp_servers_and_apis_and_secrets/
                   <mcp_server>/
                 0.06_ai_models/
                   <model>/
@@ -51,7 +51,7 @@ Use the following path pattern for any setup configuration:
   0.03_environments/local/
     0.04_coding_apps/cursor/
       0.05_ai_apps/claude_code_cli/
-        0.06_mcp_servers/playwright-mcp/
+        0.06_mcp_servers_and_apis_and_secrets/playwright-mcp/
 ```
 
 ## Integration Notes

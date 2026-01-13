@@ -70,7 +70,7 @@ sub_layer_0.05-0.014_setup_dependant_sub_layers/0.01_universal_setup_file_tree_0
         └── 0.03_environments/
             └── 0.04_coding_apps/
                 └── 0.05_ai_apps/
-                    ├── 0.06_mcp_servers/
+                    ├── 0.06_mcp_servers_and_apis_and_secrets/
                     ├── 0.06_ai_models/
                     ├── 0.07_universal_tools/
                     ├── 0.08_protocols/
@@ -83,7 +83,7 @@ sub_layer_0.05-0.014_setup_dependant_sub_layers/0.01_universal_setup_file_tree_0
 
 | Task | Go To |
 |------|-------|
-| MCP setup | `.../0.06_mcp_servers/_mcp_core/` |
+| MCP setup | `.../0.06_mcp_servers_and_apis_and_secrets/_mcp_core/` |
 | Browser automation | `.../0.08_protocols/` |
 | Git operations | `sub_layer_0.04_universal_rules/.../git_commit_rule.md` |
 | Terminal issues | `sub_layer_0.04_universal_rules/.../cursor_terminal_issues.md` |
@@ -160,6 +160,24 @@ For detailed information, see these documents:
 | Feature Types | `0.01_layer_stage_framework/FEATURE_TYPE_DECISION_GUIDE.md` |
 | Workflow Features | `0.01_layer_stage_framework/WORKFLOW_FEATURE_PATTERN.md` |
 | Sub-layer Registry | `0.02_sub_layers/0.00_sub_layer_registry/README.md` |
+
+---
+
+## Maintenance Note
+
+> **When making structural changes to the framework** (renaming directories, adding new stages/layers, modifying the hierarchy), ALL of the following MUST be updated:
+>
+> | Priority | File | What to Update |
+> |----------|------|----------------|
+> | 1 | `0.00_layer_stage_system/README.md` | Master checklist & change log |
+> | 2 | **This file** (`universal_init_prompt.md`) | Directory paths & structure diagrams |
+> | 3 | `0.00_sub_layer_registry/sub_layer_registry.yaml` | Registry entries |
+> | 4 | `0.01_layer_stage_framework/` templates | Template structures & paths |
+> | 5 | All `*.md`, `*.yaml` files | Use `find` + `sed` for bulk path updates |
+>
+> **Full checklist:** `0_context/0.00_layer_stage_system/README.md`
+>
+> **Last updated:** 2026-01-13 (Renamed `0.06_mcp_servers` → `0.06_mcp_servers_and_apis_and_secrets`)
 
 ---
 

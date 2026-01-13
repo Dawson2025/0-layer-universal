@@ -86,7 +86,7 @@ OS → Environment → Coding App → AI App → MCP Server → AI Model → Too
     - AI app options
     - App-specific setup notes
 
-11. **0.06_mcp_servers/README.md** (71 lines)
+11. **0.06_mcp_servers_and_apis_and_secrets/README.md** (71 lines)
     - MCP server categories
     - Setup checklist
     - Platform-specific notes
@@ -108,7 +108,7 @@ OS → Environment → Coding App → AI App → MCP Server → AI Model → Too
     - Server timeout issues
     - Configuration syntax issues
     - Debugging checklist
-    - Path: `_shared/.../_shared/.../0.06_mcp_servers/_mcp_core/general_setup_and_config/README.md`
+    - Path: `_shared/.../_shared/.../0.06_mcp_servers_and_apis_and_secrets/_mcp_core/general_setup_and_config/README.md`
 
 ---
 
@@ -163,7 +163,7 @@ Level 1:  0.02_operating_systems/        (linux_ubuntu, macos, windows, wsl, _sh
 Level 2:  0.03_environments/              (development, production, testing, _shared)
 Level 3:  0.04_coding_apps/               (vscode, cursor, vim, emacs, _shared)
 Level 4:  0.05_ai_apps/                   (claude_code_cli, cursor_agent, codex_cli, gemini_cli, _shared)
-Level 5:  0.06_mcp_servers/               (browser-mcp, playwright-mcp, _mcp_core, _shared, ...)
+Level 5:  0.06_mcp_servers_and_apis_and_secrets/               (browser-mcp, playwright-mcp, _mcp_core, _shared, ...)
 Level 6:  0.06_ai_models/                 (claude-sonnet, claude-opus, gpt-4, gemini, _shared)
 Level 7:  0.07_universal_tools/           (git, docker, npm, python, _shared)
 Level 8:  0.08_protocols/                 (terminal_protocol, browser_protocol, git_protocol, _shared)
@@ -178,7 +178,7 @@ Level 9:  0.09_agent_setup/               (general_setup_and_config)
 → 0.03_environments/_shared/
 → 0.04_coding_apps/_shared/
 → 0.05_ai_apps/_shared/
-→ 0.06_mcp_servers/_shared/
+→ 0.06_mcp_servers_and_apis_and_secrets/_shared/
 → 0.06_ai_models/_shared/
 → 0.07_universal_tools/git/
 → general_setup_and_config/
@@ -190,7 +190,7 @@ Level 9:  0.09_agent_setup/               (general_setup_and_config)
 → 0.03_environments/development/
 → 0.04_coding_apps/cursor/
 → 0.05_ai_apps/cursor_agent/
-→ 0.06_mcp_servers/playwright-mcp/
+→ 0.06_mcp_servers_and_apis_and_secrets/playwright-mcp/
 → general_setup_and_config/
 ```
 
@@ -278,7 +278,7 @@ This file tree **complements** existing setup sublayers:
 | 0.03_environments | sub_layer_0.06_environment_setup |
 | 0.04_coding_apps | sub_layer_0.07_coding_app_setup |
 | 0.05_ai_apps | sub_layer_0.09_ai_apps_tools_setup |
-| 0.06_mcp_servers | sub_layer_0.10_mcp_servers_and_tools_setup |
+| 0.06_mcp_servers_and_apis_and_secrets | sub_layer_0.10_mcp_servers_and_tools_setup |
 | 0.06_ai_models | sub_layer_0.11_ai_models |
 | 0.07_universal_tools | sub_layer_0.12_universal_tools |
 | 0.08_protocols | sub_layer_0.13_universal_protocols |

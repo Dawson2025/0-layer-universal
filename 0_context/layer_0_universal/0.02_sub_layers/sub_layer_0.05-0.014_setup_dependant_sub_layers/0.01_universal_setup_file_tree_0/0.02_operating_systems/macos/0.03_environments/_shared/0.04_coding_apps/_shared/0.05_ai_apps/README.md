@@ -13,7 +13,7 @@ This level organizes setup documentation by AI application or tool.
 ## How to Navigate
 
 1. Choose your AI app directory
-2. Navigate down to `0.06_mcp_servers/` to continue the setup hierarchy
+2. Navigate down to `0.06_mcp_servers_and_apis_and_secrets/` to continue the setup hierarchy
 3. Use `_shared/` when the setup applies to all AI apps
 
 ## AI App-Specific Considerations

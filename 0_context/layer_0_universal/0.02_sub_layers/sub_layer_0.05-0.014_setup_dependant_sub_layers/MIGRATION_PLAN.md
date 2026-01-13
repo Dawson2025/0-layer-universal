@@ -44,12 +44,12 @@ Analysis of old sub_layers (0.05-0.14) vs the unified file tree reveals:
 
 ### sub_layer_0.10_mcp_servers_and_tools_setup
 This has its own nested file tree (`0.02_mcp_config_options_0_file_tree_0`). Options:
-1. **Merge into unified tree's MCP sections** (under each AI app's `0.06_mcp_servers/`)
+1. **Merge into unified tree's MCP sections** (under each AI app's `0.06_mcp_servers_and_apis_and_secrets/`)
 2. **Keep as separate MCP-focused tree** (if structure is significantly different)
 
 Analysis shows it has a different hierarchy:
 - Old: `0.03_operating_systems/_shared/0.04_ai_apps/_shared/0.05_mcp_servers/`
-- New: `0.02_operating_systems/.../0.05_ai_apps/.../0.06_mcp_servers/`
+- New: `0.02_operating_systems/.../0.05_ai_apps/.../0.06_mcp_servers_and_apis_and_secrets/`
 
 **Recommendation**: Migrate unique content from old MCP tree into the unified tree's existing MCP server directories.
 

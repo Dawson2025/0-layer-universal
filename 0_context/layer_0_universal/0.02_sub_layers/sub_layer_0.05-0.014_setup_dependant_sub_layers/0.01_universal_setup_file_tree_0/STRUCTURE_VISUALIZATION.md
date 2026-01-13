@@ -33,7 +33,7 @@
     │                       ├── cursor_agent/
     │                       ├── codex_cli/
     │                       └── gemini_cli/
-    │                           ├── 0.06_mcp_servers/
+    │                           ├── 0.06_mcp_servers_and_apis_and_secrets/
     │                           │   └── (MCP servers and configs)
     │                           ├── 0.06_ai_models/
     │                           │   └── (AI model access)
@@ -89,7 +89,7 @@
 → 0.03_environments/development/
 → 0.04_coding_apps/cursor/
 → 0.05_ai_apps/cursor_agent/
-→ 0.06_mcp_servers/playwright-mcp/
+→ 0.06_mcp_servers_and_apis_and_secrets/playwright-mcp/
 → general_setup_and_config/
 ```
 
@@ -103,7 +103,7 @@
 → 0.03_environments/development/
 → 0.04_coding_apps/vscode/
 → 0.05_ai_apps/claude_code_cli/
-→ 0.06_mcp_servers/browser-mcp/
+→ 0.06_mcp_servers_and_apis_and_secrets/browser-mcp/
 → general_setup_and_config/
 ```
 
@@ -117,7 +117,7 @@
 → 0.03_environments/_shared/
 → 0.04_coding_apps/_shared/
 → 0.05_ai_apps/_shared/
-→ 0.06_mcp_servers/_mcp_core/
+→ 0.06_mcp_servers_and_apis_and_secrets/_mcp_core/
 → general_setup_and_config/
 ```
 
@@ -177,7 +177,7 @@ mkdir -p 0.02_operating_systems/_shared/0.03_environments/_shared/0.04_coding_ap
 
 ### To add a new MCP server:
 ```bash
-mkdir -p 0.02_operating_systems/_shared/0.03_environments/_shared/0.04_coding_apps/_shared/0.05_ai_apps/_shared/0.06_mcp_servers/<new_server>/general_setup_and_config/
+mkdir -p 0.02_operating_systems/_shared/0.03_environments/_shared/0.04_coding_apps/_shared/0.05_ai_apps/_shared/0.06_mcp_servers_and_apis_and_secrets/<new_server>/general_setup_and_config/
 # Add setup documentation for the new server
 ```
 

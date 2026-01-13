@@ -37,7 +37,7 @@ gh repo create {owner}/{repo-name} --private --clone --gitignore Python --licens
 ```
 
 #### Via Browser (Playwright/Claude-in-Chrome)
-See: `0.06_mcp_servers/playwright-mcp/0.08_protocols/github_browser_automation.md`
+See: `0.06_mcp_servers_and_apis_and_secrets/playwright-mcp/0.08_protocols/github_browser_automation.md`
 
 ### Cloning a Repository
 ```bash

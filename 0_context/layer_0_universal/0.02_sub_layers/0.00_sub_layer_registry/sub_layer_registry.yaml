@@ -34,7 +34,7 @@ sublayers:
       - Environment setup (0.03_environments)
       - Coding app setup (0.04_coding_apps)
       - AI apps setup (0.05_ai_apps)
-      - MCP servers (0.06_mcp_servers)
+      - MCP servers and APIs and Secrets (0.06_mcp_servers_and_apis_and_secrets)
       - AI models (0.06_ai_models)
       - Universal tools (0.07_universal_tools)
       - Protocols (0.08_protocols)

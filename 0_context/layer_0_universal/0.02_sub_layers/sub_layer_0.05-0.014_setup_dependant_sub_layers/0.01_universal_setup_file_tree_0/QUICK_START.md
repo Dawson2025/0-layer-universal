@@ -27,7 +27,7 @@ Each level has numbered directories that guide you deeper:
 3. `0.04_coding_apps/` - Choose your IDE (vscode/cursor/vim/emacs)
 4. `0.05_ai_apps/` - Choose your AI tool (claude_code_cli/cursor_agent/etc)
 5. At the AI apps level, choose a sibling branch:
-   - `0.06_mcp_servers/` - MCP servers (browser-mcp/playwright-mcp/etc)
+   - `0.06_mcp_servers_and_apis_and_secrets/` - MCP servers (browser-mcp/playwright-mcp/etc)
    - `0.06_ai_models/` - AI models (claude-sonnet/gpt-4/etc)
    - `0.07_universal_tools/` - Tools (git/docker/npm/python)
    - `0.08_protocols/` - Protocols (terminal/browser/git)
@@ -41,7 +41,7 @@ At **every level**, there's a `_shared/` folder for cross-cutting setup:
 - `0.03_environments/_shared/` = Works in all environments
 - `0.04_coding_apps/_shared/` = Works with all coding apps
 - `0.05_ai_apps/_shared/` = Works with all AI apps
-- `0.06_mcp_servers/_shared/` = Works with all MCP servers
+- `0.06_mcp_servers_and_apis_and_secrets/_shared/` = Works with all MCP servers
 - `0.06_ai_models/_shared/` = Works with all AI models
 - `0.07_universal_tools/_shared/` = Works with all tools
 - `0.08_protocols/_shared/` = Works with all protocols
@@ -69,7 +69,7 @@ Navigate to the deepest level `general_setup_and_config/` folder for actual setu
 → 0.03_environments/development/
 → 0.04_coding_apps/cursor/
 → 0.05_ai_apps/cursor_agent/
-→ 0.06_mcp_servers/playwright-mcp/
+→ 0.06_mcp_servers_and_apis_and_secrets/playwright-mcp/
 → general_setup_and_config/README.md
 ```
 
@@ -79,7 +79,7 @@ Navigate to the deepest level `general_setup_and_config/` folder for actual setu
 → 0.03_environments/_shared/
 → 0.04_coding_apps/_shared/
 → 0.05_ai_apps/_shared/
-→ 0.06_mcp_servers/_mcp_core/
+→ 0.06_mcp_servers_and_apis_and_secrets/_mcp_core/
 → general_setup_and_config/README.md
 ```
 

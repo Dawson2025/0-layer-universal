@@ -15,7 +15,7 @@ Setup documentation specific to macOS systems.
 
 ### MCP Servers on macOS
 - macOS-specific MCP server setup lives under:
-  `0.06_mcp_servers/_shared/0.02_mcp_config_options_0_file_tree_0/0.03_operating_systems/macos/`
+  `0.06_mcp_servers_and_apis_and_secrets/_shared/0.02_mcp_config_options_0_file_tree_0/0.03_operating_systems/macos/`
 
 ## Next Level
 

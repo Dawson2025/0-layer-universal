@@ -25,7 +25,7 @@ Unified setup file tree containing all setup-related documentation organized by 
         └── 0.03_environments/
             └── 0.04_coding_apps/
                 └── 0.05_ai_apps/
-                    ├── 0.06_mcp_servers/
+                    ├── 0.06_mcp_servers_and_apis_and_secrets/
                     ├── 0.06_ai_models/
                     ├── 0.07_universal_tools/
                     ├── 0.08_protocols/
@@ -50,7 +50,7 @@ This unified tree replaces the following old sub_layers:
 
 | Need | Path |
 |------|------|
-| MCP servers | `.../0.06_mcp_servers/` |
+| MCP servers | `.../0.06_mcp_servers_and_apis_and_secrets/` |
 | Protocols | `.../0.08_protocols/` |
 | Universal tools | `.../0.07_universal_tools/` |
 | Agent setup | `.../0.09_agent_setup/` |

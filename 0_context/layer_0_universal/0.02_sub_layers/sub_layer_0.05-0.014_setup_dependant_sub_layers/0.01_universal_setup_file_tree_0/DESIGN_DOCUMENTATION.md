@@ -174,7 +174,7 @@ cat 0.00_sub_layer_registry/sub_layer_registry.yaml
 2. **0.03_environments/** - Environment type (dev/prod/test)
 3. **0.04_coding_apps/** - IDE/editor choice
 4. **0.05_ai_apps/** - AI tool choice
-5. **0.06_mcp_servers/** - MCP server choice
+5. **0.06_mcp_servers_and_apis_and_secrets/** - MCP server choice
 6. **0.06_ai_models/** - AI model choice
 7. **0.07_universal_tools/** - Universal tool choice
 8. **0.08_protocols/** - Protocol choice
@@ -240,7 +240,7 @@ mkdir -p 0.02_operating_systems/_shared/0.03_environments/{development,productio
    - `0.03_environments/README.md`
    - `0.04_coding_apps/README.md`
    - `0.05_ai_apps/README.md`
-   - `0.06_mcp_servers/README.md`
+   - `0.06_mcp_servers_and_apis_and_secrets/README.md`
 
 5. **Example setup documentation**:
    - `linux_ubuntu/.../cursor/.../cursor_agent/.../playwright-mcp/general_setup_and_config/README.md`
@@ -352,7 +352,7 @@ git commit -m "feat: Create universal setup file tree structure..."
 - `0.02_operating_systems/_shared/` = Works on all OSes
 - `0.03_environments/_shared/` = Works in all environments
 - `0.04_coding_apps/_shared/` = Works with all coding apps
-- `0.06_mcp_servers/_shared/` = Works with all MCP servers
+- `0.06_mcp_servers_and_apis_and_secrets/_shared/` = Works with all MCP servers
 
 ### Decision 3: Terminal Node Naming
 
@@ -545,7 +545,7 @@ Each `general_setup_and_config/README.md` follows this pattern:
 3. Navigate to: `0.03_environments/development/`
 4. Navigate to: `0.04_coding_apps/cursor/`
 5. Navigate to: `0.05_ai_apps/cursor_agent/`
-6. Navigate to: `0.06_mcp_servers/playwright-mcp/`
+6. Navigate to: `0.06_mcp_servers_and_apis_and_secrets/playwright-mcp/`
 7. Read: `general_setup_and_config/README.md`
 
 **Result**: Finds Linux-specific Playwright MCP setup with known issues and workarounds
@@ -568,7 +568,7 @@ Each `general_setup_and_config/README.md` follows this pattern:
 **Steps**:
 1. Start at: `0.02_operating_systems/_shared/`
 2. Navigate through: `_shared/` folders to MCP level
-3. Choose: `0.06_mcp_servers/_mcp_core/`
+3. Choose: `0.06_mcp_servers_and_apis_and_secrets/_mcp_core/`
 4. Read: `general_setup_and_config/README.md`
 
 **Result**: Finds core MCP issues that affect multiple servers
@@ -578,7 +578,7 @@ Each `general_setup_and_config/README.md` follows this pattern:
 **Scenario**: User wants to see all supported MCP servers
 
 **Steps**:
-1. Navigate to any path ending in: `0.06_mcp_servers/`
+1. Navigate to any path ending in: `0.06_mcp_servers_and_apis_and_secrets/`
 2. List directories: `ls`
 
 **Result**: Sees `_shared/`, `_mcp_core/`, `browser-mcp/`, `playwright-mcp/`, etc.
@@ -608,7 +608,7 @@ File Tree (Navigation)          Sublayers (Detailed Docs)
 0.03_environments/         ←→  sub_layer_0.06_environment_setup/
 0.04_coding_apps/          ←→  sub_layer_0.07_coding_app_setup/
 0.05_ai_apps/              ←→  sub_layer_0.09_ai_apps_tools_setup/
-0.06_mcp_servers/          ←→  sub_layer_0.10_mcp_servers_and_tools_setup/
+0.06_mcp_servers_and_apis_and_secrets/          ←→  sub_layer_0.10_mcp_servers_and_tools_setup/
 0.06_ai_models/            ←→  sub_layer_0.11_ai_models/
 0.07_universal_tools/      ←→  sub_layer_0.12_universal_tools/
 0.08_protocols/            ←→  sub_layer_0.13_universal_protocols/
@@ -687,7 +687,7 @@ mkdir -p 0.02_operating_systems/_shared/0.03_environments/_shared/\
 #### New MCP Server
 ```bash
 # Add to _shared path (or OS-specific if needed)
-mkdir -p path/to/0.06_mcp_servers/new-server/general_setup_and_config/
+mkdir -p path/to/0.06_mcp_servers_and_apis_and_secrets/new-server/general_setup_and_config/
 # Create README with setup docs
 ```
 

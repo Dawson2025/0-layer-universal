@@ -36,7 +36,7 @@ Key commits in this consolidation:
 3. `sub_layer_0.07_environment_setup` → Level 2: `0.03_environments/`
 4. `sub_layer_0.08_apps_browsers_extensions_setup` → (browsers under coding apps)
 5. `sub_layer_0.09_ai_apps_tools_setup` → Level 4: `0.05_ai_apps/`
-6. `sub_layer_0.10_mcp_servers_and_tools_setup` → Level 5: `0.06_mcp_servers/_shared/`
+6. `sub_layer_0.10_mcp_servers_and_tools_setup` → Level 5: `0.06_mcp_servers_and_apis_and_secrets/_shared/`
 7. `sub_layer_0.11_ai_models` → Level 6: `0.06_ai_models/`
 8. `sub_layer_0.12_universal_tools` → Level 7: `0.07_universal_tools/`
 9. `sub_layer_0.13_universal_protocols` → Level 8: `0.08_protocols/`
@@ -53,7 +53,7 @@ sub_layer_0.05-0.014_setup/
             └── 0.03_environments/_shared/
                 └── 0.04_coding_apps/_shared/
                     └── 0.05_ai_apps/_shared/
-                        └── 0.06_mcp_servers/_shared/
+                        └── 0.06_mcp_servers_and_apis_and_secrets/_shared/
                             └── 0.06_ai_models/_shared/
                                 └── 0.07_universal_tools/
                                     └── _shared/

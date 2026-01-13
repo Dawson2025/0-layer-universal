@@ -18,7 +18,7 @@ This folder is the **traversable universal setup documentation file tree**. It i
     │       │       ├── _shared/                    # Cross-coding-app defaults
     │       │       │   └── 0.05_ai_apps/
     │       │       │       ├── _shared/            # Cross-AI-app defaults
-    │       │       │       │   └── 0.06_mcp_servers/
+    │       │       │       │   └── 0.06_mcp_servers_and_apis_and_secrets/
     │       │       │       │       ├── _shared/    # Cross-MCP-server defaults
     │       │       │       │       │   └── 0.06_ai_models/
     │       │       │       │       │       ├── _shared/           # Cross-model defaults
@@ -39,7 +39,7 @@ This folder is the **traversable universal setup documentation file tree**. It i
     │       │       │       │       └── <mcp_server>/
     │       │       │       │           └── general_setup_and_config/
     │       │       │       └── <ai_app>/                       # Specific AI app setup
-    │       │       │           └── 0.06_mcp_servers/
+    │       │       │           └── 0.06_mcp_servers_and_apis_and_secrets/
     │       │       │               └── (same structure)
     │       │       └── <coding_app>/                           # Specific coding app setup
     │       │           └── 0.05_ai_apps/
@@ -78,10 +78,10 @@ This folder is the **traversable universal setup documentation file tree**. It i
    - Cursor Agent: `0.05_ai_apps/cursor_agent/`
    - Codex CLI: `0.05_ai_apps/codex_cli/`
 
-5. **Navigate to MCP server**: `0.06_mcp_servers/<mcp_server>/general_setup_and_config/`
-   - Browser MCP: `0.06_mcp_servers/browser-mcp/`
-   - Playwright MCP: `0.06_mcp_servers/playwright-mcp/`
-   - Core issues: `0.06_mcp_servers/_mcp_core/`
+5. **Navigate to MCP server**: `0.06_mcp_servers_and_apis_and_secrets/<mcp_server>/general_setup_and_config/`
+   - Browser MCP: `0.06_mcp_servers_and_apis_and_secrets/browser-mcp/`
+   - Playwright MCP: `0.06_mcp_servers_and_apis_and_secrets/playwright-mcp/`
+   - Core issues: `0.06_mcp_servers_and_apis_and_secrets/_mcp_core/`
 
 6. **Navigate to AI model**: `0.06_ai_models/<ai_model>/general_setup_and_config/`
    - Claude Sonnet: `0.06_ai_models/claude-sonnet/`
@@ -111,7 +111,7 @@ Use `_shared/` folders when guidance applies across multiple options at that lev
 - `0.03_environments/_shared/` - Setup that works in all environments
 - `0.04_coding_apps/_shared/` - Setup that works with all coding apps
 - `0.05_ai_apps/_shared/` - Setup that works with all AI apps
-- `0.06_mcp_servers/_shared/` - Setup that works with all MCP servers
+- `0.06_mcp_servers_and_apis_and_secrets/_shared/` - Setup that works with all MCP servers
 - `0.06_ai_models/_shared/` - Setup that works with all AI models
 - `0.07_universal_tools/_shared/` - Setup that works with all tools
 - `0.08_protocols/_shared/` - Setup that works with all protocols
@@ -124,7 +124,7 @@ Path: 0.02_operating_systems/linux_ubuntu/
       → 0.03_environments/development/
       → 0.04_coding_apps/_shared/
       → 0.05_ai_apps/claude_code_cli/
-      → 0.06_mcp_servers/playwright-mcp/
+      → 0.06_mcp_servers_and_apis_and_secrets/playwright-mcp/
       → general_setup_and_config/
 ```
 
@@ -134,7 +134,7 @@ Path: 0.02_operating_systems/_shared/
       → 0.03_environments/_shared/
       → 0.04_coding_apps/_shared/
       → 0.05_ai_apps/_shared/
-      → 0.06_mcp_servers/_shared/
+      → 0.06_mcp_servers_and_apis_and_secrets/_shared/
       → 0.06_ai_models/_shared/
       → 0.07_universal_tools/git/
       → general_setup_and_config/
@@ -146,7 +146,7 @@ Path: 0.02_operating_systems/macos/
       → 0.03_environments/development/
       → 0.04_coding_apps/cursor/
       → 0.05_ai_apps/cursor_agent/
-      → 0.06_mcp_servers/browser-mcp/
+      → 0.06_mcp_servers_and_apis_and_secrets/browser-mcp/
       → general_setup_and_config/
 ```
 
@@ -165,7 +165,7 @@ Path: 0.02_operating_systems/macos/
 - `0.05_ai_apps/<ai_app>/README.md` - AI tool installation, authentication, configuration
 
 ### Where to place MCP server setup docs:
-- `0.06_mcp_servers/<mcp_server>/general_setup_and_config/` - MCP server installation, configuration, issues
+- `0.06_mcp_servers_and_apis_and_secrets/<mcp_server>/general_setup_and_config/` - MCP server installation, configuration, issues
 
 ### Where to place AI model setup docs:
 - `0.06_ai_models/<ai_model>/general_setup_and_config/` - Model access, API keys, rate limits
