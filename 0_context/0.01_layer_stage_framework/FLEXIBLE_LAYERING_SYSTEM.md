@@ -4,22 +4,22 @@
 
 **Location:** `0_ai_context/0_context/0.01_layer_stage_framework/FLEXIBLE_LAYERING_SYSTEM.md`
 
-**Last Updated:** 2026-01-09
-**Version:** 2.2 - Sub Naming Convention
+**Last Updated:** 2026-01-14
+**Version:** 3.0 - Same-Type Nesting Convention
 
 ---
 
 ## 🎯 Overview
 
-The flexible layering system allows **arbitrary nesting** of features and components to any depth required by your project's complexity, using the **sub naming convention** to clearly indicate nesting depth.
+The flexible layering system allows **arbitrary nesting** of features and components to any depth required by your project's complexity, using the **same-type nesting convention** to clearly indicate relationships.
 
 **Key Principles:**
 1. **Layer numbers indicate depth**, not fixed types
-2. **Sub naming shows nesting level**: `sub`, `sub*2`, `sub*3`, ... `sub*n`
-3. **Any layer can contain sub-features AND sub-components**
+2. **"Sub" prefix only applies to same-type nesting**: A project inside a project = sub_project. A feature inside a feature = sub_feature. But a feature inside a project = feature (NOT sub_feature).
+3. **Any layer can contain features AND components** (not sub_features/sub_components at the base level)
 4. **Infinite nesting** - create as many levels as needed
 5. **Each layer follows the same structure** (manager, handoffs, sub-layers, stages)
-6. **Every layer has sub_layers**: ALL features, sub_features, components, and sub_components have `<N>.02_sub_layers/` with 12 content slots
+6. **Every layer has sub_layers**: ALL features, sub_features, components, and sub_components have `<N>.02_sub_layers/` with content slots
 7. **Consistent numbering** shows position in hierarchy
 
 ---
@@ -33,128 +33,167 @@ The flexible layering system allows **arbitrary nesting** of features and compon
 
 ### Flexible Layers (2-N)
 
-Starting at Layer 2, the system supports **arbitrary depth** using **sub naming convention**:
+Starting at Layer 2, the system supports **arbitrary depth** using **same-type nesting convention**:
 
-- **Layer 2:** Top-level `features` and `components`
-- **Layer 3:** `sub_features` and `sub_components` (1st level of nesting)
-- **Layer 4:** `sub*2_features` and `sub*2_components` (2nd level of nesting)
-- **Layer 5:** `sub*3_features` and `sub*3_components` (3rd level of nesting)
-- **Layer N:** `sub*n_features` and `sub*n_components` (nth level of nesting)
+**CRITICAL NAMING RULE:** The "sub" prefix ONLY applies when nesting the SAME type of entity:
+- Project inside project = **sub_project**
+- Feature inside feature = **sub_feature**
+- Component inside component = **sub_component**
+
+But DIFFERENT types don't get the "sub" prefix:
+- Feature inside project = **feature** (NOT sub_feature)
+- Component inside project = **component** (NOT sub_component)
+- Feature inside sub_project = **feature** (NOT sub_feature)
+- Feature inside sub*2_project = **feature** (NOT sub_feature)
+
+**Examples of same-type nesting depth:**
+- `sub_project` = project 1 level deep
+- `sub*2_project` = project 2 levels deep
+- `sub_feature` = feature 1 level deep (inside another feature)
+- `sub*2_feature` = feature 2 levels deep (inside a sub_feature)
 
 **The layer number = depth in the hierarchy tree**
-
-**Mini naming indicates nesting depth:**
-- No "sub" prefix = Layer 2 (top-level)
-- `sub` = Layer 3 (1 level deep)
-- `sub*2` = Layer 4 (2 levels deep)
-- `sub*n` = Layer N (n-2 levels deep)
 
 ---
 
 ## 🌳 Directory Structure Pattern
 
-### Pattern for Layer 2 (Top-Level)
+### Pattern for Project/Sub_Project/Sub*N_Project
+
+Projects (and sub_projects) contain **features** and **components** directly (not sub_features/sub_components):
 
 ```
-layer_2_feature_<name>/                      # OR layer_2_component_<name>/
-├── 2.00_ai_manager_system/                  # Manager for this layer
-├── 2.01_manager_handoff_documents/          # Communication
-│   ├── 2.00_to_universal/                   # Reports up
-│   └── 2.01_to_specific/                    # Context down
-├── 2.02_sub_layers/                         # Content slots
-│   ├── sub_layer_2.01_basic_prompts_throughout/
-│   ├── sub_layer_2.02_knowledge/
-│   ├── ... (2.01 through 2.12)
-│   └── sub_layer_2.12_agent_setup/
-├── 2.99_stages/                             # Workflow stages
-│   ├── stage_2.01_instructions/
-│   ├── ... (2.01 through 2.08)
-│   ├── stage_2.08_archives/
-│   └── status_2.json                        # Status tracker
-├── layer_3_sub_features/                   # Sub-features (optional)
-│   ├── README.md
-│   └── layer_3_sub_feature_<name>/         # Recursive structure
-└── layer_3_sub_components/                 # Sub-components (optional)
-    ├── README.md
-    └── layer_3_sub_component_<name>/       # Recursive structure
+layer_1_project/                             # OR layer_2_sub_project_<name>/ OR layer_3_sub*2_project_<name>/
+├── <N>.00_ai_manager_system/                # Manager for this layer
+├── <N>.01_manager_handoff_documents/        # Communication
+│   ├── <N>.00_to_universal/                 # Reports up
+│   └── <N>.01_to_specific/                  # Context down
+├── <N>.02_sub_layers/                       # Content slots
+│   └── sub_layer_<N>.xx.../
+├── <N>.99_stages/                           # Workflow stages
+│   └── status_<N>.json                      # Status tracker
+├── layer_<N+1>_sub_projects/               # Sub-projects (same-type nesting)
+│   └── layer_<N+1>_sub_project_<name>/
+├── layer_<N+1>_features/                   # Features (NOT sub_features!)
+│   └── layer_<N+1>_feature_<name>/
+└── layer_<N+1>_components/                 # Components (NOT sub_components!)
+    └── layer_<N+1>_component_<name>/
 ```
 
-### Pattern for Layer 3+ (Nested Layers)
+### Pattern for Feature/Sub_Feature/Sub*N_Feature
+
+Features contain **sub_features** and **sub_components** (because feature inside feature = sub_feature):
 
 ```
-layer_N_sub*x_feature_<name>/               # OR layer_N_sub*x_component_<name>/
-├── N.00_ai_manager_system/                  # Manager for this layer
-├── N.01_manager_handoff_documents/          # Communication
-│   ├── N.00_to_universal/                   # Reports up
-│   └── N.01_to_specific/                    # Context down
-├── N.02_sub_layers/                         # Content slots
-│   ├── sub_layer_N.01_basic_prompts_throughout/
-│   ├── sub_layer_N.02_knowledge/
-│   ├── ... (N.01 through N.12)
-│   └── sub_layer_N.12_agent_setup/
-├── N.99_stages/                             # Workflow stages
-│   ├── stage_N.01_instructions/
-│   ├── ... (N.01 through N.08)
-│   ├── stage_N.08_archives/
-│   └── status_N.json                        # Status tracker
-├── layer_N+1_sub*x+1_features/             # Deeper sub-features (optional)
-│   ├── README.md
-│   └── layer_N+1_sub*x+1_feature_<name>/   # Recursive structure
-└── layer_N+1_sub*x+1_components/           # Deeper sub-components (optional)
-    ├── README.md
-    └── layer_N+1_sub*x+1_component_<name>/ # Recursive structure
+layer_2_feature_<name>/                      # OR layer_3_sub_feature_<name>/ OR layer_4_sub*2_feature_<name>/
+├── <N>.00_ai_manager_system/                # Manager for this layer
+├── <N>.01_manager_handoff_documents/        # Communication
+│   ├── <N>.00_to_universal/                 # Reports up
+│   └── <N>.01_to_specific/                  # Context down
+├── <N>.02_sub_layers/                       # Content slots
+│   └── sub_layer_<N>.xx.../
+├── <N>.99_stages/                           # Workflow stages
+│   └── status_<N>.json                      # Status tracker
+├── layer_<N+1>_sub_features/               # Sub-features (feature inside feature)
+│   └── layer_<N+1>_sub_feature_<name>/
+└── layer_<N+1>_sub_components/             # Sub-components (component inside feature context)
+    └── layer_<N+1>_sub_component_<name>/
+```
+
+### Pattern for Component/Sub_Component/Sub*N_Component
+
+Components contain **sub_components** (because component inside component = sub_component):
+
+```
+layer_2_component_<name>/                    # OR layer_3_sub_component_<name>/ OR layer_4_sub*2_component_<name>/
+├── <N>.00_ai_manager_system/                # Manager for this layer
+├── <N>.01_manager_handoff_documents/        # Communication
+│   ├── <N>.00_to_universal/                 # Reports up
+│   └── <N>.01_to_specific/                  # Context down
+├── <N>.02_sub_layers/                       # Content slots
+│   └── sub_layer_<N>.xx.../
+├── <N>.99_stages/                           # Workflow stages
+│   └── status_<N>.json                      # Status tracker
+└── layer_<N+1>_sub_components/             # Sub-components (component inside component)
+    └── layer_<N+1>_sub_component_<name>/
 ```
 
 **Key Points:**
-- **Every layer** follows this structure
-- **Layer 2** uses `layer_3_sub_features/` and `layer_3_sub_components/` (no "sub" prefix at Layer 2 itself)
-- **Layer 3+** uses `sub`, `sub*2`, `sub*3`, etc. in both folder names AND item names
-- **Recursion:** Each nested feature/component follows the same pattern
+- **Projects** contain `features/` and `components/` (no "sub" prefix)
+- **Sub_projects** also contain `features/` and `components/` (no "sub" prefix, because feature inside project ≠ sub_feature)
+- **Features** contain `sub_features/` and `sub_components/` (because feature inside feature = sub_feature)
+- **Components** contain `sub_components/` (because component inside component = sub_component)
+- **Same-type nesting** uses: `sub`, `sub*2`, `sub*3`, etc.
 
 ---
 
 ## 🔢 Naming Conventions
 
+### The "Sub" Prefix Rule
+
+**CRITICAL:** The "sub" prefix indicates **same-type nesting only**:
+
+| Parent Type | Child Type | Uses "sub" prefix? |
+|-------------|------------|-------------------|
+| Project | Project | YES → `sub_project` |
+| Project | Feature | NO → `feature` |
+| Project | Component | NO → `component` |
+| Sub_project | Feature | NO → `feature` |
+| Sub_project | Component | NO → `component` |
+| Feature | Feature | YES → `sub_feature` |
+| Feature | Component | YES → `sub_component` (in feature context) |
+| Component | Component | YES → `sub_component` |
+
+### Project Naming
+
+```
+layer_1_project/
+layer_2_sub_project_<name>/
+layer_3_sub*2_project_<name>/
+layer_N_sub*<N-1>_project_<name>/
+```
+
 ### Feature Naming
 
-**Layer 2 (Top-Level):**
+**In a project/sub_project (no "sub" prefix):**
 ```
-layer_2_feature_<name>/
+layer_2_feature_<name>/        # Feature in project
+layer_3_feature_<name>/        # Feature in sub_project
+layer_4_feature_<name>/        # Feature in sub*2_project
 ```
 
-**Layer 3+ (Nested):**
+**In another feature (uses "sub" prefix):**
 ```
-layer_3_sub_feature_<name>/
-layer_4_sub*2_feature_<name>/
-layer_5_sub*3_feature_<name>/
-layer_N_sub*n_feature_<name>/
+layer_3_sub_feature_<name>/    # Feature inside a feature
+layer_4_sub*2_feature_<name>/  # Feature inside a sub_feature
+layer_5_sub*3_feature_<name>/  # Feature inside a sub*2_feature
 ```
 
 **Examples:**
-- `layer_2_feature_in_class_work/` - Top-level feature (depth 2)
-- `layer_3_sub_feature_derivatives/` - Sub-feature (depth 3, 1 level deep)
-- `layer_4_sub*2_feature_power_rule/` - Mini*2-feature (depth 4, 2 levels deep)
-- `layer_5_sub*3_feature_negative_exponents/` - Mini*3-feature (depth 5, 3 levels deep)
+- `layer_2_feature_in_class_work/` - Feature directly in project (depth 2)
+- `layer_3_feature_machine_learning/` - Feature in sub_project (depth 3, still "feature" not "sub_feature")
+- `layer_3_sub_feature_derivatives/` - Sub-feature inside a feature (depth 3)
+- `layer_4_sub*2_feature_power_rule/` - Sub*2-feature inside a sub_feature (depth 4)
 
 ### Component Naming
 
-**Layer 2 (Top-Level):**
+**In a project/sub_project (no "sub" prefix):**
 ```
-layer_2_component_<name>/
+layer_2_component_<name>/      # Component in project
+layer_3_component_<name>/      # Component in sub_project
+layer_4_component_<name>/      # Component in sub*2_project
 ```
 
-**Layer 3+ (Nested):**
+**In a feature or another component (uses "sub" prefix):**
 ```
-layer_3_sub_component_<name>/
-layer_4_sub*2_component_<name>/
-layer_5_sub*3_component_<name>/
-layer_N_sub*n_component_<name>/
+layer_3_sub_component_<name>/  # Component inside a feature
+layer_4_sub*2_component_<name>/ # Component inside a sub_component
 ```
 
 **Examples:**
-- `layer_3_sub_component_worksheet_1/` - Sub-component (depth 3)
-- `layer_4_sub*2_component_practice_set/` - Mini*2-component (depth 4)
-- `layer_5_sub*3_component_2026_01_09_class/` - Mini*3-component (depth 5)
+- `layer_2_component_worksheet_1/` - Component in project (depth 2)
+- `layer_3_component_web_app/` - Component in sub_project (depth 3, still "component" not "sub_component")
+- `layer_3_sub_component_practice_set/` - Sub-component inside a feature (depth 3)
 
 ### Directory Naming Within Layers
 
@@ -272,57 +311,75 @@ Create a **feature** when you have:
 - Content that benefits from organized study stages
 - Subtopics that need further breakdown
 
-**Examples:**
-- Layer 2: `layer_2_feature_derivatives/` (main calculus topic)
-- Layer 3: `layer_3_feature_power_rule/` (specific derivative rule)
-- Layer 4: `layer_4_feature_negative_exponents/` (specific case of power rule)
-- Layer 5: `layer_5_feature_minus_two_exponent/` (even more specific example)
+**In Project/Sub_Project context (uses "feature"):**
+- `layer_2_feature_derivatives/` - Feature in project
+- `layer_3_feature_machine_learning/` - Feature in sub_project
+
+**In Feature context (uses "sub_feature"):**
+- `layer_3_sub_feature_power_rule/` - Sub-feature inside a feature
+- `layer_4_sub*2_feature_negative_exponents/` - Sub*2-feature inside a sub_feature
 
 ### Components (Work/Artifacts)
 
 Create a **component** when you have:
 - Practice problems to work through
 - Homework assignments
-- Worksheets from BYUI Math page
+- Worksheets
 - Specific examples or exercises
 - Exam prep materials
 
-**Examples:**
-- Layer 3: `layer_3_component_homework_1/` (homework for derivatives)
-- Layer 4: `layer_4_component_practice_set_1/` (practice for power rule)
-- Layer 5: `layer_5_component_problem_7/` (single complex problem)
+**In Project/Sub_Project context (uses "component"):**
+- `layer_2_component_homework_1/` - Component in project
+- `layer_3_component_web_app/` - Component in sub_project
+
+**In Feature/Component context (uses "sub_component"):**
+- `layer_3_sub_component_practice_set_1/` - Sub-component inside a feature
+- `layer_4_sub*2_component_problem_7/` - Sub*2-component inside a sub_component
 
 ---
 
 ## 📋 Navigation Patterns
 
-### Depth-First Navigation
+### Depth-First Navigation (Feature inside Feature)
 
 ```bash
 # From project context root
 cd layer_2_features/layer_2_feature_derivatives/
 
-# Navigate to sub-feature
-cd layer_3_features/layer_3_feature_power_rule/
+# Navigate to sub-feature (feature inside feature uses "sub")
+cd layer_3_sub_features/layer_3_sub_feature_power_rule/
 
-# Navigate to sub-sub-feature
-cd layer_4_features/layer_4_feature_negative_exponents/
+# Navigate to sub*2-feature (feature inside sub_feature)
+cd layer_4_sub*2_features/layer_4_sub*2_feature_negative_exponents/
 
-# Navigate to component at this level
-cd ../../layer_4_components/layer_4_component_practice_set_1/
+# Navigate to sub*2-component at this level (component inside feature context)
+cd ../../layer_4_sub*2_components/layer_4_sub*2_component_practice_set_1/
 ```
 
 ### Breadth Navigation (Siblings at Same Level)
 
 ```bash
-# From a layer 3 feature
-cd layer_3_features/layer_3_feature_power_rule/
+# From a layer 3 sub_feature (inside a feature)
+cd layer_3_sub_features/layer_3_sub_feature_power_rule/
 
-# Move to sibling feature at same level
-cd ../layer_3_feature_product_rule/
+# Move to sibling sub_feature at same level
+cd ../layer_3_sub_feature_product_rule/
 
 # Move to another sibling
-cd ../layer_3_feature_chain_rule/
+cd ../layer_3_sub_feature_chain_rule/
+```
+
+### Navigation in Sub_Project Context (uses features, not sub_features)
+
+```bash
+# From a sub_project
+cd layer_2_sub_project_classes/
+
+# Navigate to feature (NOT sub_feature, because different type)
+cd layer_3_features/layer_3_feature_machine_learning/
+
+# Navigate to component (NOT sub_component, because different type)
+cd ../layer_3_components/layer_3_component_web_app/
 ```
 
 ### Upward Navigation (Parent Layers)
@@ -478,12 +535,25 @@ Document problem sources and answers at the appropriate component layer:
 
 ## 📝 Quick Reference
 
+### Same-Type Nesting Rules (CRITICAL)
+
+| Context | Features Are | Components Are |
+|---------|-------------|----------------|
+| Project | `features` | `components` |
+| Sub_project | `features` | `components` |
+| Sub*N_project | `features` | `components` |
+| Feature | `sub_features` | `sub_components` |
+| Sub_feature | `sub*2_features` | `sub*2_components` |
+| Component | N/A | `sub_components` |
+
+**Rule:** "sub" prefix ONLY for same-type nesting (project→project, feature→feature, component→component)
+
 ### Maximum Flexibility Rules
 
-1. ✅ Features can contain sub-features to any depth
-2. ✅ Features can contain components at any level
-3. ✅ Components can contain sub-components to any depth
-4. ✅ Any layer N can have both `layer_N+1_features/` AND `layer_N+1_components/` directories
+1. ✅ Projects/Sub_projects contain `features/` and `components/` (NOT sub_*)
+2. ✅ Features contain `sub_features/` and `sub_components/`
+3. ✅ Components contain `sub_components/`
+4. ✅ Same-type nesting increases depth: `sub`, `sub*2`, `sub*3`...
 5. ✅ Layer number always indicates depth in hierarchy tree
 6. ✅ Each layer follows the same structural pattern
 
@@ -500,6 +570,6 @@ While **unlimited depth is supported**, consider these practical guidelines:
 
 ---
 
-**Location:** `C:\Users\Dawson\dawson-workspace\code\0_ai_context\0_context\0.01_layer_stage_framework\FLEXIBLE_LAYERING_SYSTEM.md`
-**Last Updated:** 2026-01-08
-**Version:** 2.0 - Arbitrary Nesting Support
+**Location:** `0_ai_context/0_context/0.01_layer_stage_framework/FLEXIBLE_LAYERING_SYSTEM.md`
+**Last Updated:** 2026-01-14
+**Version:** 3.0 - Same-Type Nesting Convention

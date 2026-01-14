@@ -38,6 +38,14 @@ The slots 1.08–1.12 form a dependency chain for project-level AI agent setup:
 
 Configure these in order when setting up project-specific AI environments.
 
+## Nested Content Directories
+
+**Same-Type Nesting Rule:** The "sub" prefix only applies to same-type nesting. Since features and components are different types from projects, they do NOT use the "sub" prefix.
+
+- layer_2_sub_projects/: Sub-projects within this project (project→project = same-type, uses "sub")
+- layer_2_features/: Features within this project (project→feature = different type, NO "sub")
+- layer_2_components/: Components within this project (project→component = different type, NO "sub")
+
 ## Stages (1.99, stored under `1.99_stages/`, folders named `stage_1.xx_*`)
 - stage_1.00_request_gathering
 - stage_1.01_instructions

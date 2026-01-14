@@ -38,6 +38,12 @@ The slots 3.08–3.12 form a dependency chain for component-level AI agent setup
 
 Configure these in order when setting up component-specific AI environments.
 
+## Nested Content Directories
+
+**Same-Type Nesting Rule:** The "sub" prefix applies when nesting the same type. Since a component inside a component is same-type nesting, sub-components here DO use the "sub" prefix.
+
+- layer_4_sub_components/: Sub-components within this component (component→component = same-type, uses "sub")
+
 ## Stages (3.99, stored under `3.99_stages/`, folders named `stage_3.xx_*`)
 - stage_3.00_request_gathering
 - stage_3.01_instructions

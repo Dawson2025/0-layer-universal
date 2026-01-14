@@ -38,6 +38,13 @@ The slots 2.08–2.12 form a dependency chain for feature-level AI agent setup:
 
 Configure these in order when setting up feature-specific AI environments.
 
+## Nested Content Directories
+
+**Same-Type Nesting Rule:** The "sub" prefix applies when nesting the same type. Since a feature inside a feature is same-type nesting, sub-features and sub-components here DO use the "sub" prefix.
+
+- layer_3_sub_features/: Sub-features within this feature (feature→feature = same-type, uses "sub")
+- layer_3_sub_components/: Sub-components within this feature (in feature context, uses "sub")
+
 ## Stages (2.99, stored under `2.99_stages/`, folders named `stage_2.xx_*`)
 - stage_2.00_request_gathering
 - stage_2.01_instructions

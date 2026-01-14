@@ -35,9 +35,12 @@ Use this template when you have a nested project that:
 - sub_layer_2.12_sub_project_agent_setup: sub-project-specific agent configuration with model fallbacks.
 
 ## Nested Content Directories
-- layer_3_sub*2_projects/: Nested sub-projects (sub*2-projects) within this sub-project
-- layer_3_sub_features/: Features within this sub-project
-- layer_3_sub_components/: Components within this sub-project
+
+**Same-Type Nesting Rule:** The "sub" prefix only applies to same-type nesting. Since a feature inside a sub_project is a different type (not project→project), features and components here do NOT use the "sub" prefix.
+
+- layer_3_sub*2_projects/: Nested sub*2-projects within this sub-project (project→project = same-type)
+- layer_3_features/: Features within this sub-project (project→feature = different type, NO "sub")
+- layer_3_components/: Components within this sub-project (project→component = different type, NO "sub")
 
 ## Stages (2.99, stored under `2.99_stages/`, folders named `stage_2.xx_*`)
 - stage_2.00_request_gathering
