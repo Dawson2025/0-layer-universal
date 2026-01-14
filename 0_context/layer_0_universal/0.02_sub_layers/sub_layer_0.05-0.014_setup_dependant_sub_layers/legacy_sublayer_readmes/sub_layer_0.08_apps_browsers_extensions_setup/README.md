@@ -13,9 +13,9 @@ sub_layer_0.05-0.014_setup/0.01_universal_setup_file_tree_0/
 ```
 
 Navigate the file tree by your configuration:
-1. Choose your OS: `0.02_operating_systems/<os>/`
-2. Choose your environment: `0.03_environments/<env>/`
-3. Choose your coding app: `0.04_coding_apps/<app>/`
+1. Choose your OS: `0.05_operating_systems/<os>/`
+2. Choose your environment: `0.06_environments/<env>/`
+3. Choose your coding app: `0.07_coding_apps/<app>/`
 4. Continue through all levels to find your specific setup documentation
 
 ## Why Consolidate?

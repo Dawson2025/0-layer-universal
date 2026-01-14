@@ -61,20 +61,20 @@ sub_layer_0.04_universal_rules/0_instruction_docs/
 ### Setup & Configuration (Unified Tree)
 ```
 sub_layer_0.05-0.014_setup_dependant_sub_layers/0.01_universal_setup_file_tree_0/
-└── 0.02_operating_systems/
+└── 0.05_operating_systems/
     ├── _shared/          # Universal (all OSes)
     ├── linux_ubuntu/
     ├── macos/
     ├── windows/
     └── wsl/
-        └── 0.03_environments/
-            └── 0.04_coding_apps/
-                └── 0.05_ai_apps/
-                    ├── 0.06_mcp_servers_and_apis_and_secrets/
-                    ├── 0.06_ai_models/
-                    ├── 0.07_universal_tools/
-                    ├── 0.08_protocols/
-                    └── 0.09_agent_setup/
+        └── 0.06_environments/
+            └── 0.07_coding_apps/
+                └── 0.09_ai_apps/
+                    ├── 0.10_mcp_servers_and_apis_and_secrets/
+                    ├── 0.11_ai_models/
+                    ├── 0.12_universal_tools/
+                    ├── 0.13_protocols/
+                    └── 0.14_agent_setup/
 ```
 
 ---
@@ -83,12 +83,12 @@ sub_layer_0.05-0.014_setup_dependant_sub_layers/0.01_universal_setup_file_tree_0
 
 | Task | Go To |
 |------|-------|
-| MCP setup | `.../0.06_mcp_servers_and_apis_and_secrets/_mcp_core/` |
-| Browser automation | `.../0.08_protocols/` |
+| MCP setup | `.../0.10_mcp_servers_and_apis_and_secrets/_mcp_core/` |
+| Browser automation | `.../0.13_protocols/` |
 | Git operations | `sub_layer_0.04_universal_rules/.../git_commit_rule.md` |
 | Terminal issues | `sub_layer_0.04_universal_rules/.../cursor_terminal_issues.md` |
-| Universal tools | `.../0.07_universal_tools/` |
-| Documentation protocol | `.../0.08_protocols/file_documentation_and_organization/` |
+| Universal tools | `.../0.12_universal_tools/` |
+| Documentation protocol | `.../0.13_protocols/file_documentation_and_organization/` |
 
 ---
 
@@ -204,7 +204,7 @@ For detailed information, see these documents:
 >
 > **Full checklist:** `0_context/0.00_layer_stage_system/README.md`
 >
-> **Last updated:** 2026-01-13 (Renamed `0.06_mcp_servers` → `0.06_mcp_servers_and_apis_and_secrets`)
+> **Last updated:** 2026-01-13 (Renamed `0.10_mcp_servers` → `0.10_mcp_servers_and_apis_and_secrets`)
 
 ---
 

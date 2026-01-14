@@ -15,8 +15,8 @@ Analysis of old sub_layers (0.05-0.14) vs the unified file tree reveals:
 
 | Sub_Layer | Files | Status |
 |-----------|-------|--------|
-| `sub_layer_0.12_universal_tools` | 37 files | **Fully duplicated** in `0.07_universal_tools` |
-| `sub_layer_0.13_universal_protocols` | 20 files | **Fully duplicated** in `0.08_protocols` |
+| `sub_layer_0.12_universal_tools` | 37 files | **Fully duplicated** in `0.12_universal_tools` |
+| `sub_layer_0.13_universal_protocols` | 20 files | **Fully duplicated** in `0.13_protocols` |
 
 ### Empty/Placeholder (Delete Immediately)
 
@@ -40,21 +40,21 @@ Analysis of old sub_layers (0.05-0.14) vs the unified file tree reveals:
 ## Migration Destinations
 
 ### sub_layer_0.07_environment_setup/github_sso_token_setup.md
-→ `0.01_universal_setup_file_tree_0/0.02_operating_systems/_shared/0.03_environments/_shared/setup/github/`
+→ `0.01_universal_setup_file_tree_0/0.05_operating_systems/_shared/0.06_environments/_shared/setup/github/`
 
 ### sub_layer_0.10_mcp_servers_and_tools_setup
 This has its own nested file tree (`0.02_mcp_config_options_0_file_tree_0`). Options:
-1. **Merge into unified tree's MCP sections** (under each AI app's `0.06_mcp_servers_and_apis_and_secrets/`)
+1. **Merge into unified tree's MCP sections** (under each AI app's `0.10_mcp_servers_and_apis_and_secrets/`)
 2. **Keep as separate MCP-focused tree** (if structure is significantly different)
 
 Analysis shows it has a different hierarchy:
 - Old: `0.03_operating_systems/_shared/0.04_ai_apps/_shared/0.05_mcp_servers/`
-- New: `0.02_operating_systems/.../0.05_ai_apps/.../0.06_mcp_servers_and_apis_and_secrets/`
+- New: `0.05_operating_systems/.../0.09_ai_apps/.../0.10_mcp_servers_and_apis_and_secrets/`
 
 **Recommendation**: Migrate unique content from old MCP tree into the unified tree's existing MCP server directories.
 
 ### sub_layer_0.11_ai_models/LINUX_UBUNTU_MODEL_ACCESS_ISSUES.md
-→ `0.01_universal_setup_file_tree_0/0.02_operating_systems/linux_ubuntu/0.03_environments/_shared/ai_models/`
+→ `0.01_universal_setup_file_tree_0/0.05_operating_systems/linux_ubuntu/0.06_environments/_shared/ai_models/`
 
 ### sub_layer_0.05_os_setup/trickle_down_0.5_setup
 This contains **project-specific** content (Firebase setup, WSL, deployment guides for a specific project).
@@ -82,22 +82,22 @@ This contains **project-specific** content (Firebase setup, WSL, deployment guid
 ## Verification
 
 Before deleting, verify:
-- [x] 0.12_universal_tools content matches 0.07_universal_tools in unified tree (VERIFIED - identical)
-- [x] 0.13_universal_protocols content matches 0.08_protocols in unified tree (VERIFIED - identical)
-- [x] 0.10_mcp_servers_and_tools_setup content matches 0.06_mcp_servers in unified tree (VERIFIED - identical)
+- [x] 0.12_universal_tools content matches 0.12_universal_tools in unified tree (VERIFIED - identical)
+- [x] 0.13_universal_protocols content matches 0.13_protocols in unified tree (VERIFIED - identical)
+- [x] 0.10_mcp_servers_and_tools_setup content matches 0.10_mcp_servers in unified tree (VERIFIED - identical)
 - [x] All migrated files are in correct locations
 - [ ] No broken references in other documentation
 
 ## Migration Status (Updated January 12, 2026)
 
 ### Completed Migrations:
-1. **github_sso_token_setup.md** → `0.02_operating_systems/_shared/0.03_environments/_shared/setup/github/`
-2. **LINUX_UBUNTU_MODEL_ACCESS_ISSUES.md** → `0.02_operating_systems/linux_ubuntu/0.03_environments/_shared/ai_models/`
+1. **github_sso_token_setup.md** → `0.05_operating_systems/_shared/0.06_environments/_shared/setup/github/`
+2. **LINUX_UBUNTU_MODEL_ACCESS_ISSUES.md** → `0.05_operating_systems/linux_ubuntu/0.06_environments/_shared/ai_models/`
 
 ### Verified Duplications (Safe to Delete):
-- `sub_layer_0.10_mcp_servers_and_tools_setup` - Content exists in unified tree's `0.06_mcp_servers`
-- `sub_layer_0.12_universal_tools` - Content exists in unified tree's `0.07_universal_tools`
-- `sub_layer_0.13_universal_protocols` - Content exists in unified tree's `0.08_protocols`
+- `sub_layer_0.10_mcp_servers_and_tools_setup` - Content exists in unified tree's `0.10_mcp_servers`
+- `sub_layer_0.12_universal_tools` - Content exists in unified tree's `0.12_universal_tools`
+- `sub_layer_0.13_universal_protocols` - Content exists in unified tree's `0.13_protocols`
 
 ### Empty Sub_Layers (Safe to Delete):
 - `sub_layer_0.06_coding_app_setup`
@@ -142,7 +142,7 @@ Before deleting, verify:
 
 **Universal content extracted:**
 1. `WSL_STABILITY_FIX.md` → `windows/wsl_setup/`
-2. `CLAUDE_CODE_CLI_GUIDE.md` → `_shared/.../0.05_ai_apps/claude_code_cli/setup/`
+2. `CLAUDE_CODE_CLI_GUIDE.md` → `_shared/.../0.09_ai_apps/claude_code_cli/setup/`
 
 **Project-specific content deleted:**
 - All Firebase documentation (project-specific)

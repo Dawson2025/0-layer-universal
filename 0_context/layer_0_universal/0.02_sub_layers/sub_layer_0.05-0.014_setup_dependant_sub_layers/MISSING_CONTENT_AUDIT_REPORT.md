@@ -68,7 +68,7 @@ Artifacts used:
 
 - Every file from `d64c065` in sublayers 0.06–0.14 is either mapped into the hierarchy or preserved in `legacy_sublayer_readmes/`.
 - Restored MCP docs exist in the hierarchy at:
-  `0.01_universal_setup_file_tree_0/0.02_operating_systems/_shared/0.03_environments/_shared/0.04_coding_apps/_shared/0.05_ai_apps/_shared/0.06_mcp_servers_and_apis_and_secrets/_shared/0.02_mcp_config_options_0_file_tree_0/0.03_operating_systems/wsl/0.04_ai_apps/claude_code_cli/0.05_mcp_servers/claude_in_chrome/`
+  `0.01_universal_setup_file_tree_0/0.05_operating_systems/_shared/0.06_environments/_shared/0.07_coding_apps/_shared/0.09_ai_apps/_shared/0.10_mcp_servers_and_apis_and_secrets/_shared/0.02_mcp_config_options_0_file_tree_0/0.03_operating_systems/wsl/0.04_ai_apps/claude_code_cli/0.05_mcp_servers/claude_in_chrome/`
 
 ## Follow-ups
 

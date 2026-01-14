@@ -31,16 +31,16 @@ Key commits in this consolidation:
 
 ## Original Sublayers That Were Consolidated
 
-1. `sub_layer_0.05_os_setup` → Level 1: `0.02_operating_systems/`
-2. `sub_layer_0.06_coding_app_setup` → Level 3: `0.04_coding_apps/`
-3. `sub_layer_0.07_environment_setup` → Level 2: `0.03_environments/`
+1. `sub_layer_0.05_os_setup` → Level 1: `0.05_operating_systems/`
+2. `sub_layer_0.06_coding_app_setup` → Level 3: `0.07_coding_apps/`
+3. `sub_layer_0.07_environment_setup` → Level 2: `0.06_environments/`
 4. `sub_layer_0.08_apps_browsers_extensions_setup` → (browsers under coding apps)
-5. `sub_layer_0.09_ai_apps_tools_setup` → Level 4: `0.05_ai_apps/`
-6. `sub_layer_0.10_mcp_servers_and_tools_setup` → Level 5: `0.06_mcp_servers_and_apis_and_secrets/_shared/`
-7. `sub_layer_0.11_ai_models` → Level 6: `0.06_ai_models/`
-8. `sub_layer_0.12_universal_tools` → Level 7: `0.07_universal_tools/`
-9. `sub_layer_0.13_universal_protocols` → Level 8: `0.08_protocols/`
-10. `sub_layer_0.14_agent_setup` → Level 9: `0.09_agent_setup/`
+5. `sub_layer_0.09_ai_apps_tools_setup` → Level 4: `0.09_ai_apps/`
+6. `sub_layer_0.10_mcp_servers_and_tools_setup` → Level 5: `0.10_mcp_servers_and_apis_and_secrets/_shared/`
+7. `sub_layer_0.11_ai_models` → Level 6: `0.11_ai_models/`
+8. `sub_layer_0.12_universal_tools` → Level 7: `0.12_universal_tools/`
+9. `sub_layer_0.13_universal_protocols` → Level 8: `0.13_protocols/`
+10. `sub_layer_0.14_agent_setup` → Level 9: `0.14_agent_setup/`
 
 ## Current Hierarchical Structure
 
@@ -48,17 +48,17 @@ Content should be nested in:
 ```
 sub_layer_0.05-0.014_setup/
 └── 0.01_universal_setup_file_tree_0/
-    └── 0.02_operating_systems/
+    └── 0.05_operating_systems/
         └── _shared/
-            └── 0.03_environments/_shared/
-                └── 0.04_coding_apps/_shared/
-                    └── 0.05_ai_apps/_shared/
-                        └── 0.06_mcp_servers_and_apis_and_secrets/_shared/
-                            └── 0.06_ai_models/_shared/
-                                └── 0.07_universal_tools/
+            └── 0.06_environments/_shared/
+                └── 0.07_coding_apps/_shared/
+                    └── 0.09_ai_apps/_shared/
+                        └── 0.10_mcp_servers_and_apis_and_secrets/_shared/
+                            └── 0.11_ai_models/_shared/
+                                └── 0.12_universal_tools/
                                     └── _shared/
-                                        └── 0.08_protocols/
-                                            └── 0.09_agent_setup/
+                                        └── 0.13_protocols/
+                                            └── 0.14_agent_setup/
 ```
 
 ## Investigation Steps You Should Plan

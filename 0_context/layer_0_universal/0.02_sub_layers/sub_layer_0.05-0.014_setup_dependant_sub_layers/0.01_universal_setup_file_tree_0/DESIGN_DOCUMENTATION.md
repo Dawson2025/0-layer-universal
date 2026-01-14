@@ -57,18 +57,18 @@ Operating System → Environment → Coding App → AI App → MCP Server → AI
 
 ```
 0.01_universal_setup_file_tree_0/
-└── 0.02_operating_systems/
+└── 0.05_operating_systems/
     ├── _shared/                    # Cross-OS setup
     ├── linux_ubuntu/
     ├── macos/
     ├── windows/
     └── wsl/
-        └── 0.03_environments/
+        └── 0.06_environments/
             ├── _shared/            # Cross-environment setup
             ├── development/
             ├── production/
             └── testing/
-                └── 0.04_coding_apps/
+                └── 0.07_coding_apps/
                     ├── _shared/    # Cross-coding-app setup
                     ├── vscode/
                     ├── cursor/
@@ -170,15 +170,15 @@ cat 0.00_sub_layer_registry/sub_layer_registry.yaml
 **Action**: Defined 10 levels of hierarchy based on setup dimensions
 
 **Hierarchy design**:
-1. **0.02_operating_systems/** - OS is the foundation
-2. **0.03_environments/** - Environment type (dev/prod/test)
-3. **0.04_coding_apps/** - IDE/editor choice
-4. **0.05_ai_apps/** - AI tool choice
-5. **0.06_mcp_servers_and_apis_and_secrets/** - MCP server choice
-6. **0.06_ai_models/** - AI model choice
-7. **0.07_universal_tools/** - Universal tool choice
-8. **0.08_protocols/** - Protocol choice
-9. **0.09_agent_setup/** - Agent configuration (terminal level)
+1. **0.05_operating_systems/** - OS is the foundation
+2. **0.06_environments/** - Environment type (dev/prod/test)
+3. **0.07_coding_apps/** - IDE/editor choice
+4. **0.09_ai_apps/** - AI tool choice
+5. **0.10_mcp_servers_and_apis_and_secrets/** - MCP server choice
+6. **0.11_ai_models/** - AI model choice
+7. **0.12_universal_tools/** - Universal tool choice
+8. **0.13_protocols/** - Protocol choice
+9. **0.14_agent_setup/** - Agent configuration (terminal level)
 
 **Reasoning**:
 - OS first (most fundamental choice)
@@ -194,12 +194,12 @@ cat 0.00_sub_layer_registry/sub_layer_registry.yaml
 
 ```bash
 # Create OS level
-mkdir -p 0.02_operating_systems/_shared
-mkdir -p 0.02_operating_systems/{linux_ubuntu,macos,windows,wsl}
+mkdir -p 0.05_operating_systems/_shared
+mkdir -p 0.05_operating_systems/{linux_ubuntu,macos,windows,wsl}
 
 # Create environment level
-mkdir -p 0.02_operating_systems/_shared/0.03_environments/_shared
-mkdir -p 0.02_operating_systems/_shared/0.03_environments/{development,production,testing}
+mkdir -p 0.05_operating_systems/_shared/0.06_environments/_shared
+mkdir -p 0.05_operating_systems/_shared/0.06_environments/{development,production,testing}
 
 # Continue for all 10 levels...
 ```
@@ -234,13 +234,13 @@ mkdir -p 0.02_operating_systems/_shared/0.03_environments/{development,productio
    - Adding new options
 
 4. **Level-specific READMEs**:
-   - `0.02_operating_systems/README.md`
-   - `0.02_operating_systems/_shared/README.md`
-   - `0.02_operating_systems/linux_ubuntu/README.md`
-   - `0.03_environments/README.md`
-   - `0.04_coding_apps/README.md`
-   - `0.05_ai_apps/README.md`
-   - `0.06_mcp_servers_and_apis_and_secrets/README.md`
+   - `0.05_operating_systems/README.md`
+   - `0.05_operating_systems/_shared/README.md`
+   - `0.05_operating_systems/linux_ubuntu/README.md`
+   - `0.06_environments/README.md`
+   - `0.07_coding_apps/README.md`
+   - `0.09_ai_apps/README.md`
+   - `0.10_mcp_servers_and_apis_and_secrets/README.md`
 
 5. **Example setup documentation**:
    - `linux_ubuntu/.../cursor/.../cursor_agent/.../playwright-mcp/general_setup_and_config/README.md`
@@ -349,10 +349,10 @@ git commit -m "feat: Create universal setup file tree structure..."
 - **Flexibility**: Can document at the right level of generality
 
 **Examples**:
-- `0.02_operating_systems/_shared/` = Works on all OSes
-- `0.03_environments/_shared/` = Works in all environments
-- `0.04_coding_apps/_shared/` = Works with all coding apps
-- `0.06_mcp_servers_and_apis_and_secrets/_shared/` = Works with all MCP servers
+- `0.05_operating_systems/_shared/` = Works on all OSes
+- `0.06_environments/_shared/` = Works in all environments
+- `0.07_coding_apps/_shared/` = Works with all coding apps
+- `0.10_mcp_servers_and_apis_and_secrets/_shared/` = Works with all MCP servers
 
 ### Decision 3: Terminal Node Naming
 
@@ -375,7 +375,7 @@ git commit -m "feat: Create universal setup file tree structure..."
 **Options considered**:
 1. No numbers (e.g., `operating_systems/`)
 2. Single digits (e.g., `2_operating_systems/`)
-3. Two-digit decimals (e.g., `0.02_operating_systems/`)
+3. Two-digit decimals (e.g., `0.05_operating_systems/`)
 
 **Decision**: Two-digit decimals (0.02, 0.03, etc.)
 
@@ -454,9 +454,9 @@ git commit -m "feat: Create universal setup file tree structure..."
 mkdir -p base/level1/{_shared,option1,option2}/level2/{_shared,optionA,optionB}/...
 
 # Example: Create OS → Environment → Coding App
-mkdir -p 0.02_operating_systems/_shared/0.03_environments/_shared/0.04_coding_apps/_shared
-mkdir -p 0.02_operating_systems/_shared/0.03_environments/{development,production,testing}
-mkdir -p 0.02_operating_systems/{linux_ubuntu,macos,windows,wsl}
+mkdir -p 0.05_operating_systems/_shared/0.06_environments/_shared/0.07_coding_apps/_shared
+mkdir -p 0.05_operating_systems/_shared/0.06_environments/{development,production,testing}
+mkdir -p 0.05_operating_systems/{linux_ubuntu,macos,windows,wsl}
 ```
 
 ### README Generation Pattern
@@ -540,12 +540,12 @@ Each `general_setup_and_config/README.md` follows this pattern:
 **Scenario**: User needs to set up Playwright MCP on Linux with Cursor
 
 **Steps**:
-1. Start at: `0.02_operating_systems/`
+1. Start at: `0.05_operating_systems/`
 2. Choose: `linux_ubuntu/`
-3. Navigate to: `0.03_environments/development/`
-4. Navigate to: `0.04_coding_apps/cursor/`
-5. Navigate to: `0.05_ai_apps/cursor_agent/`
-6. Navigate to: `0.06_mcp_servers_and_apis_and_secrets/playwright-mcp/`
+3. Navigate to: `0.06_environments/development/`
+4. Navigate to: `0.07_coding_apps/cursor/`
+5. Navigate to: `0.09_ai_apps/cursor_agent/`
+6. Navigate to: `0.10_mcp_servers_and_apis_and_secrets/playwright-mcp/`
 7. Read: `general_setup_and_config/README.md`
 
 **Result**: Finds Linux-specific Playwright MCP setup with known issues and workarounds
@@ -555,9 +555,9 @@ Each `general_setup_and_config/README.md` follows this pattern:
 **Scenario**: User needs to set up Git (works same on all platforms)
 
 **Steps**:
-1. Start at: `0.02_operating_systems/_shared/`
+1. Start at: `0.05_operating_systems/_shared/`
 2. Navigate through: `_shared/` folders at each level
-3. End at: `0.07_universal_tools/git/general_setup_and_config/`
+3. End at: `0.12_universal_tools/git/general_setup_and_config/`
 
 **Result**: Finds universal Git setup that works on any OS, any environment, any coding app
 
@@ -566,9 +566,9 @@ Each `general_setup_and_config/README.md` follows this pattern:
 **Scenario**: User has MCP server tool exposure issue (affects multiple servers)
 
 **Steps**:
-1. Start at: `0.02_operating_systems/_shared/`
+1. Start at: `0.05_operating_systems/_shared/`
 2. Navigate through: `_shared/` folders to MCP level
-3. Choose: `0.06_mcp_servers_and_apis_and_secrets/_mcp_core/`
+3. Choose: `0.10_mcp_servers_and_apis_and_secrets/_mcp_core/`
 4. Read: `general_setup_and_config/README.md`
 
 **Result**: Finds core MCP issues that affect multiple servers
@@ -578,7 +578,7 @@ Each `general_setup_and_config/README.md` follows this pattern:
 **Scenario**: User wants to see all supported MCP servers
 
 **Steps**:
-1. Navigate to any path ending in: `0.06_mcp_servers_and_apis_and_secrets/`
+1. Navigate to any path ending in: `0.10_mcp_servers_and_apis_and_secrets/`
 2. List directories: `ls`
 
 **Result**: Sees `_shared/`, `_mcp_core/`, `browser-mcp/`, `playwright-mcp/`, etc.
@@ -588,8 +588,8 @@ Each `general_setup_and_config/README.md` follows this pattern:
 **Scenario**: Admin wants to add new OS (e.g., FreeBSD)
 
 **Steps**:
-1. Create directory: `0.02_operating_systems/freebsd/`
-2. Copy structure from: `_shared/0.03_environments/` (as template)
+1. Create directory: `0.05_operating_systems/freebsd/`
+2. Copy structure from: `_shared/0.06_environments/` (as template)
 3. Customize for FreeBSD specifics
 4. Create README: `freebsd/README.md`
 
@@ -604,15 +604,15 @@ Each `general_setup_and_config/README.md` follows this pattern:
 ```
 File Tree (Navigation)          Sublayers (Detailed Docs)
 =======================         =========================
-0.02_operating_systems/    ←→  sub_layer_0.05_os_setup/
-0.03_environments/         ←→  sub_layer_0.06_environment_setup/
-0.04_coding_apps/          ←→  sub_layer_0.07_coding_app_setup/
-0.05_ai_apps/              ←→  sub_layer_0.09_ai_apps_tools_setup/
-0.06_mcp_servers_and_apis_and_secrets/          ←→  sub_layer_0.10_mcp_servers_and_tools_setup/
-0.06_ai_models/            ←→  sub_layer_0.11_ai_models/
-0.07_universal_tools/      ←→  sub_layer_0.12_universal_tools/
-0.08_protocols/            ←→  sub_layer_0.13_universal_protocols/
-0.09_agent_setup/          ←→  sub_layer_0.14_agent_setup/
+0.05_operating_systems/    ←→  sub_layer_0.05_os_setup/
+0.06_environments/         ←→  sub_layer_0.06_environment_setup/
+0.07_coding_apps/          ←→  sub_layer_0.07_coding_app_setup/
+0.09_ai_apps/              ←→  sub_layer_0.09_ai_apps_tools_setup/
+0.10_mcp_servers_and_apis_and_secrets/          ←→  sub_layer_0.10_mcp_servers_and_tools_setup/
+0.11_ai_models/            ←→  sub_layer_0.11_ai_models/
+0.12_universal_tools/      ←→  sub_layer_0.12_universal_tools/
+0.13_protocols/            ←→  sub_layer_0.13_universal_protocols/
+0.14_agent_setup/          ←→  sub_layer_0.14_agent_setup/
 ```
 
 ### Division of Responsibility
@@ -669,25 +669,25 @@ For quick navigation to your specific configuration, see:
 #### New Operating System
 ```bash
 # Create new OS directory with full hierarchy
-mkdir -p 0.02_operating_systems/arch_linux/0.03_environments/
+mkdir -p 0.05_operating_systems/arch_linux/0.06_environments/
 # Copy structure from _shared as template
-cp -r 0.02_operating_systems/_shared/0.03_environments/ \
-      0.02_operating_systems/arch_linux/
+cp -r 0.05_operating_systems/_shared/0.06_environments/ \
+      0.05_operating_systems/arch_linux/
 # Customize for Arch Linux specifics
 ```
 
 #### New Coding App
 ```bash
 # Create at all OS paths or just _shared
-mkdir -p 0.02_operating_systems/_shared/0.03_environments/_shared/\
-0.04_coding_apps/jetbrains/0.05_ai_apps/
+mkdir -p 0.05_operating_systems/_shared/0.06_environments/_shared/\
+0.07_coding_apps/jetbrains/0.09_ai_apps/
 # Copy AI apps structure from existing app
 ```
 
 #### New MCP Server
 ```bash
 # Add to _shared path (or OS-specific if needed)
-mkdir -p path/to/0.06_mcp_servers_and_apis_and_secrets/new-server/general_setup_and_config/
+mkdir -p path/to/0.10_mcp_servers_and_apis_and_secrets/new-server/general_setup_and_config/
 # Create README with setup docs
 ```
 

@@ -8,60 +8,60 @@
 ├── README.md                           # Main navigation guide
 ├── STRUCTURE_VISUALIZATION.md          # This file
 │
-└── 0.02_operating_systems/
+└── 0.05_operating_systems/
     ├── README.md
     │
     ├── _shared/                        # Cross-OS setup (works on all platforms)
     │   ├── README.md
-    │   └── 0.03_environments/
+    │   └── 0.06_environments/
     │       ├── README.md
     │       ├── _shared/                # Cross-environment setup
     │       ├── development/
     │       ├── production/
     │       └── testing/
-    │           └── 0.04_coding_apps/
+    │           └── 0.07_coding_apps/
     │               ├── README.md
     │               ├── _shared/        # Cross-coding-app setup
     │               ├── vscode/
     │               ├── cursor/
     │               ├── vim/
     │               └── emacs/
-    │                   └── 0.05_ai_apps/
+    │                   └── 0.09_ai_apps/
     │                       ├── README.md
     │                       ├── _shared/           # Cross-AI-app setup
     │                       ├── claude_code_cli/
     │                       ├── cursor_agent/
     │                       ├── codex_cli/
     │                       └── gemini_cli/
-    │                           ├── 0.06_mcp_servers_and_apis_and_secrets/
+    │                           ├── 0.10_mcp_servers_and_apis_and_secrets/
     │                           │   └── (MCP servers and configs)
-    │                           ├── 0.06_ai_models/
+    │                           ├── 0.11_ai_models/
     │                           │   └── (AI model access)
-    │                           ├── 0.07_universal_tools/
+    │                           ├── 0.12_universal_tools/
     │                           │   └── (Tools, shared + per-tool)
-    │                           ├── 0.08_protocols/
+    │                           ├── 0.13_protocols/
     │                           │   └── (Protocols)
-    │                           └── 0.09_agent_setup/
+    │                           └── 0.14_agent_setup/
     │                               └── (Agent setup)
     │
     ├── linux_ubuntu/                   # Linux Ubuntu-specific setup
     │   ├── README.md
-    │   └── 0.03_environments/
+    │   └── 0.06_environments/
     │       └── (mirrors _shared structure with Ubuntu-specific content)
     │
     ├── macos/                          # macOS-specific setup
     │   ├── README.md
-    │   └── 0.03_environments/
+    │   └── 0.06_environments/
     │       └── (mirrors _shared structure with macOS-specific content)
     │
     ├── windows/                        # Windows-specific setup
     │   ├── README.md
-    │   └── 0.03_environments/
+    │   └── 0.06_environments/
     │       └── (mirrors _shared structure with Windows-specific content)
     │
     └── wsl/                           # WSL-specific setup
         ├── README.md
-        └── 0.03_environments/
+        └── 0.06_environments/
             └── (mirrors _shared structure with WSL-specific content)
 ```
 
@@ -71,11 +71,11 @@
 
 **Path**:
 ```
-0.02_operating_systems/_shared/
-→ 0.03_environments/_shared/
-→ 0.04_coding_apps/_shared/
-→ 0.05_ai_apps/_shared/
-→ 0.07_universal_tools/git/
+0.05_operating_systems/_shared/
+→ 0.06_environments/_shared/
+→ 0.07_coding_apps/_shared/
+→ 0.09_ai_apps/_shared/
+→ 0.12_universal_tools/git/
 → general_setup_and_config/
 ```
 
@@ -85,11 +85,11 @@
 
 **Path**:
 ```
-0.02_operating_systems/linux_ubuntu/
-→ 0.03_environments/development/
-→ 0.04_coding_apps/cursor/
-→ 0.05_ai_apps/cursor_agent/
-→ 0.06_mcp_servers_and_apis_and_secrets/playwright-mcp/
+0.05_operating_systems/linux_ubuntu/
+→ 0.06_environments/development/
+→ 0.07_coding_apps/cursor/
+→ 0.09_ai_apps/cursor_agent/
+→ 0.10_mcp_servers_and_apis_and_secrets/playwright-mcp/
 → general_setup_and_config/
 ```
 
@@ -99,11 +99,11 @@
 
 **Path**:
 ```
-0.02_operating_systems/macos/
-→ 0.03_environments/development/
-→ 0.04_coding_apps/vscode/
-→ 0.05_ai_apps/claude_code_cli/
-→ 0.06_mcp_servers_and_apis_and_secrets/browser-mcp/
+0.05_operating_systems/macos/
+→ 0.06_environments/development/
+→ 0.07_coding_apps/vscode/
+→ 0.09_ai_apps/claude_code_cli/
+→ 0.10_mcp_servers_and_apis_and_secrets/browser-mcp/
 → general_setup_and_config/
 ```
 
@@ -113,11 +113,11 @@
 
 **Path**:
 ```
-0.02_operating_systems/_shared/
-→ 0.03_environments/_shared/
-→ 0.04_coding_apps/_shared/
-→ 0.05_ai_apps/_shared/
-→ 0.06_mcp_servers_and_apis_and_secrets/_mcp_core/
+0.05_operating_systems/_shared/
+→ 0.06_environments/_shared/
+→ 0.07_coding_apps/_shared/
+→ 0.09_ai_apps/_shared/
+→ 0.10_mcp_servers_and_apis_and_secrets/_mcp_core/
 → general_setup_and_config/
 ```
 
@@ -132,7 +132,7 @@
 
 ### 2. Shared Folders at Every Level
 - `_shared/` folders contain documentation that applies to all options at that level
-- Example: `0.03_environments/_shared/` = works in dev, prod, and testing environments
+- Example: `0.06_environments/_shared/` = works in dev, prod, and testing environments
 - Allows for maximum reuse while supporting specific overrides
 
 ### 3. Symmetric Structure
@@ -163,21 +163,21 @@
 
 ### To add a new OS:
 ```bash
-mkdir -p 0.02_operating_systems/<new_os>/0.03_environments/
-# Copy structure from _shared/0.03_environments/
+mkdir -p 0.05_operating_systems/<new_os>/0.06_environments/
+# Copy structure from _shared/0.06_environments/
 # Customize for the new OS
 ```
 
 ### To add a new coding app:
 ```bash
-mkdir -p 0.02_operating_systems/_shared/0.03_environments/_shared/0.04_coding_apps/<new_app>/0.05_ai_apps/
-# Copy structure from _shared/0.05_ai_apps/
+mkdir -p 0.05_operating_systems/_shared/0.06_environments/_shared/0.07_coding_apps/<new_app>/0.09_ai_apps/
+# Copy structure from _shared/0.09_ai_apps/
 # Customize for the new coding app
 ```
 
 ### To add a new MCP server:
 ```bash
-mkdir -p 0.02_operating_systems/_shared/0.03_environments/_shared/0.04_coding_apps/_shared/0.05_ai_apps/_shared/0.06_mcp_servers_and_apis_and_secrets/<new_server>/general_setup_and_config/
+mkdir -p 0.05_operating_systems/_shared/0.06_environments/_shared/0.07_coding_apps/_shared/0.09_ai_apps/_shared/0.10_mcp_servers_and_apis_and_secrets/<new_server>/general_setup_and_config/
 # Add setup documentation for the new server
 ```
 
