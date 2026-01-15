@@ -7,9 +7,16 @@ This directory contains documentation and plans for **managing the layering and 
 | File/Folder | Purpose |
 |-------------|---------|
 | `MCP_DOCUMENTATION_PLAN.md` | Plan for documenting MCP servers & APIs |
+| `changes/` | Procedures for making system changes (restructuring, migration) |
 | `plans/` | Active planning documents |
 | `setup/` | Setup guides for the system |
 | `management/` | Ongoing management protocols |
+
+## Important: Restructuring Projects
+
+When restructuring projects (creating new layer structure, renaming folders), you must **migrate actual content** from legacy folders, not just create empty structures.
+
+**See:** `changes/restructuring_migration_protocol.md`
 
 ## Distinction from `0.01_layer_stage_framework/`
 

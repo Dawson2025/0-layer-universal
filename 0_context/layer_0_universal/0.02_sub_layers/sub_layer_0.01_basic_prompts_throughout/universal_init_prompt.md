@@ -181,6 +181,7 @@ For detailed information, see these documents:
 | Topic | Document |
 |-------|----------|
 | System Management | `0.00_layer_stage_system/README.md` |
+| Restructuring/Migration | `0.00_layer_stage_system/changes/restructuring_migration_protocol.md` |
 | Layer/Stage Framework | `0.01_layer_stage_framework/README.md` |
 | Flexible Layering | `0.01_layer_stage_framework/FLEXIBLE_LAYERING_SYSTEM.md` |
 | Extending Framework | `0.01_layer_stage_framework/EXTENDING_THE_FRAMEWORK.md` |
@@ -192,7 +193,9 @@ For detailed information, see these documents:
 
 ## Maintenance Note
 
-> **When making structural changes to the framework** (renaming directories, adding new stages/layers, modifying the hierarchy), ALL of the following MUST be updated:
+> **When making structural changes to the framework** (renaming directories, adding new stages/layers, modifying the hierarchy):
+>
+> **Critical:** Structural migration ≠ Content migration. You must migrate actual content from legacy folders, not just create empty structures. See `0.00_layer_stage_system/changes/restructuring_migration_protocol.md`.
 >
 > | Priority | File | What to Update |
 > |----------|------|----------------|
@@ -204,7 +207,7 @@ For detailed information, see these documents:
 >
 > **Full checklist:** `0_context/0.00_layer_stage_system/README.md`
 >
-> **Last updated:** 2026-01-13 (Renamed `0.10_mcp_servers` → `0.10_mcp_servers_and_apis_and_secrets`)
+> **Last updated:** 2026-01-15 (Added restructuring/migration protocol)
 
 ---
 
