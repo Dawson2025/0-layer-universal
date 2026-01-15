@@ -9,11 +9,25 @@ The Universal layer defines global rules, tools, and standards that cascade down
 - [`tools_and_context_systems.md`](../../-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/tools_and_context_systems.md) – Tool specialization at each layer
 - [`os_and_quartets.md`](../../-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/os_and_quartets.md) – OS-specific context variants
 
-## Manager + handoff
-- 0.00_ai_manager_system: manager docs/configs.
-- 0.01_manager_handoff_documents: `0.00_to_universal/` and `0.01_to_specific/` for cross-layer handoffs.
+## Directory Structure
 
-## Slots (stored under `0.02_sub_layers/` as `sub_layer_0.xx_*`)
+```
+0_universal_template/
+├── layer_0/                              # Layer 0 grouping folder
+│   ├── layer_0_00_ai_manager_system/     # Manager docs/configs
+│   ├── layer_0_01_manager_handoff_documents/
+│   │   ├── 0.00_to_universal/
+│   │   └── 0.01_to_specific/
+│   ├── layer_0_02_sub_layers/            # Sub-layer slots
+│   └── layer_0_99_stages/                # Stage folders
+└── README.md
+```
+
+## Manager + Handoff (layer_0/)
+- layer_0_00_ai_manager_system: manager docs/configs.
+- layer_0_01_manager_handoff_documents: `0.00_to_universal/` and `0.01_to_specific/` for cross-layer handoffs.
+
+## Slots (stored under `layer_0/layer_0_02_sub_layers/` as `sub_layer_0.xx_*`)
 - sub_layer_0.01_basic_prompts_throughout: session init, what-to-do-next, core prompts.
 - sub_layer_0.02_software_engineering_knowledge_system: general SE knowledge map.
 - sub_layer_0.03_universal_principles: philosophies, values.
@@ -27,7 +41,6 @@ The Universal layer defines global rules, tools, and standards that cascade down
 - sub_layer_0.11_ai_models: approved models and usage guidance.
 - sub_layer_0.12_universal_tools: cross-project scripts/utilities.
 - sub_layer_0.13_agent_setup: agent configuration with model fallbacks and MCP integration (depends on 0.09, 0.10, 0.11, 0.12).
-- 0.99_stages: stage folders and status template.
 
 ## AI Setup Dependency Chain (0.09–0.13)
 
@@ -40,7 +53,7 @@ The slots 0.09–0.13 form a critical dependency chain for AI agent setup:
 
 Configure these in order when setting up a new AI environment.
 
-## Stages (0.99, folders named `stage_0.xx_*`)
+## Stages (layer_0/layer_0_99_stages/, folders named `stage_0.xx_*`)
 - stage_0.00_request_gathering
 - stage_0.01_instructions
 - stage_0.02_planning

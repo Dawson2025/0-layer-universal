@@ -8,11 +8,29 @@ The Project layer inherits Universal (L0) constraints and adds project-specific 
 - [`architecture.md`](../../-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/architecture.md) – Layer inheritance and project-level responsibilities
 - [`tools_and_context_systems.md`](../../-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/tools_and_context_systems.md) – Tool selection for project managers vs. workers
 
-## Manager + handoff
-- 1.00_ai_manager_system: project-level manager docs/configs.
-- 1.01_manager_handoff_documents: `1.00_to_universal/` and `1.01_to_specific/` for up/downstream handoffs.
+## Directory Structure
 
-## Slots (stored under `1.02_sub_layers/` as `sub_layer_1.xx_*`)
+```
+1_project_template/
+├── layer_1/                              # Layer 1 grouping folder
+│   ├── layer_1_00_ai_manager_system/     # Manager docs/configs
+│   ├── layer_1_01_manager_handoff_documents/
+│   │   ├── 1.00_to_universal/
+│   │   └── 1.01_to_specific/
+│   ├── layer_1_02_sub_layers/            # Sub-layer slots
+│   └── layer_1_99_stages/                # Stage folders
+├── layer_2/                              # Layer 2 grouping folder (sibling)
+│   ├── layer_2_sub_projects/
+│   ├── layer_2_features/
+│   └── layer_2_components/
+└── README.md
+```
+
+## Manager + Handoff (layer_1/)
+- layer_1_00_ai_manager_system: project-level manager docs/configs.
+- layer_1_01_manager_handoff_documents: `1.00_to_universal/` and `1.01_to_specific/` for up/downstream handoffs.
+
+## Slots (stored under `layer_1/layer_1_02_sub_layers/` as `sub_layer_1.xx_*`)
 - sub_layer_1.01_basic_prompts: project init + what-to-do-next prompts.
 - sub_layer_1.02_project_se_knowledge: SE/domain knowledge this project relies on.
 - sub_layer_1.03_project_principles: project-specific design/UX/security principles.
@@ -25,7 +43,6 @@ The Project layer inherits Universal (L0) constraints and adds project-specific 
 - sub_layer_1.10_project_ai_models: approved models for this project and their uses.
 - sub_layer_1.11_project_tools: project-specific scripts/CLIs/migrations.
 - sub_layer_1.12_project_agent_setup: project-specific agent configuration with model fallbacks (depends on 1.08, 1.09, 1.10, 1.11).
-- 1.99_stages: stage folders and status template.
 
 ## Project AI Setup Dependency Chain (1.08–1.12)
 
@@ -38,15 +55,15 @@ The slots 1.08–1.12 form a dependency chain for project-level AI agent setup:
 
 Configure these in order when setting up project-specific AI environments.
 
-## Nested Content Directories
+## Nested Content Directories (layer_2/)
 
 **Same-Type Nesting Rule:** The "sub" prefix only applies to same-type nesting. Since features and components are different types from projects, they do NOT use the "sub" prefix.
 
-- layer_2_sub_projects/: Sub-projects within this project (project→project = same-type, uses "sub")
-- layer_2_features/: Features within this project (project→feature = different type, NO "sub")
-- layer_2_components/: Components within this project (project→component = different type, NO "sub")
+- layer_2/layer_2_sub_projects/: Sub-projects within this project (project→project = same-type, uses "sub")
+- layer_2/layer_2_features/: Features within this project (project→feature = different type, NO "sub")
+- layer_2/layer_2_components/: Components within this project (project→component = different type, NO "sub")
 
-## Stages (1.99, stored under `1.99_stages/`, folders named `stage_1.xx_*`)
+## Stages (layer_1/layer_1_99_stages/, folders named `stage_1.xx_*`)
 - stage_1.00_request_gathering
 - stage_1.01_instructions
 - stage_1.02_planning

@@ -8,11 +8,28 @@ The Feature layer inherits Universal (L0) and Project (L1) constraints and adds 
 - [`architecture.md`](../../-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/architecture.md) – Feature-level responsibilities and decomposition
 - [`parallel_execution.md`](../../-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/parallel_execution.md) – Parallelizing feature work across components
 
-## Manager + handoff
-- 2.00_ai_manager_system: feature manager docs/configs.
-- 2.01_manager_handoff_documents: `2.00_to_universal/` and `2.01_to_specific/` for up/downstream handoffs.
+## Directory Structure
 
-## Slots (stored under `2.02_sub_layers/` as `sub_layer_2.xx_*`)
+```
+2_feature_template/
+├── layer_2/                              # Layer 2 grouping folder
+│   ├── layer_2_00_ai_manager_system/     # Manager docs/configs
+│   ├── layer_2_01_manager_handoff_documents/
+│   │   ├── 2.00_to_universal/
+│   │   └── 2.01_to_specific/
+│   ├── layer_2_02_sub_layers/            # Sub-layer slots
+│   └── layer_2_99_stages/                # Stage folders
+├── layer_3/                              # Layer 3 grouping folder (sibling)
+│   ├── layer_3_sub_features/
+│   └── layer_3_sub_components/
+└── README.md
+```
+
+## Manager + Handoff (layer_2/)
+- layer_2_00_ai_manager_system: feature manager docs/configs.
+- layer_2_01_manager_handoff_documents: `2.00_to_universal/` and `2.01_to_specific/` for up/downstream handoffs.
+
+## Slots (stored under `layer_2/layer_2_02_sub_layers/` as `sub_layer_2.xx_*`)
 - sub_layer_2.01_basic_prompts: feature init + what-to-do-next.
 - sub_layer_2.02_feature_knowledge: domain/UX/business knowledge specific to this feature.
 - sub_layer_2.03_feature_principles: local design/perf/security principles.
@@ -25,7 +42,6 @@ The Feature layer inherits Universal (L0) and Project (L1) constraints and adds 
 - sub_layer_2.10_feature_ai_models: models wired into this feature (if any).
 - sub_layer_2.11_feature_tools: scripts/migrations/backfills specific to this feature.
 - sub_layer_2.12_feature_agent_setup: feature-specific agent configuration with model fallbacks (depends on 2.08, 2.09, 2.10, 2.11).
-- 2.99_stages: stage folders and status template.
 
 ## Feature AI Setup Dependency Chain (2.08–2.12)
 
@@ -38,14 +54,14 @@ The slots 2.08–2.12 form a dependency chain for feature-level AI agent setup:
 
 Configure these in order when setting up feature-specific AI environments.
 
-## Nested Content Directories
+## Nested Content Directories (layer_3/)
 
 **Same-Type Nesting Rule:** The "sub" prefix applies when nesting the same type. Since a feature inside a feature is same-type nesting, sub-features and sub-components here DO use the "sub" prefix.
 
-- layer_3_sub_features/: Sub-features within this feature (feature→feature = same-type, uses "sub")
-- layer_3_sub_components/: Sub-components within this feature (in feature context, uses "sub")
+- layer_3/layer_3_sub_features/: Sub-features within this feature (feature→feature = same-type, uses "sub")
+- layer_3/layer_3_sub_components/: Sub-components within this feature (in feature context, uses "sub")
 
-## Stages (2.99, stored under `2.99_stages/`, folders named `stage_2.xx_*`)
+## Stages (layer_2/layer_2_99_stages/, folders named `stage_2.xx_*`)
 - stage_2.00_request_gathering
 - stage_2.01_instructions
 - stage_2.02_planning

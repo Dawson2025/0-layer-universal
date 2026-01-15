@@ -16,11 +16,29 @@ Use this template when you have a nested project that:
 - Contains multiple features/components of its own
 - Examples: Individual classes within a school project, microservices within a monorepo
 
-## Manager + Handoff
-- 2.00_ai_manager_system: sub-project-level manager docs/configs.
-- 2.01_manager_handoff_documents: `2.00_to_universal/` and `2.01_to_specific/` for up/downstream handoffs.
+## Directory Structure
 
-## Slots (stored under `2.02_sub_layers/` as `sub_layer_2.xx_*`)
+```
+2_sub_project_template/
+├── layer_2/                              # Layer 2 grouping folder
+│   ├── layer_2_00_ai_manager_system/     # Manager docs/configs
+│   ├── layer_2_01_manager_handoff_documents/
+│   │   ├── 2.00_to_universal/
+│   │   └── 2.01_to_specific/
+│   ├── layer_2_02_sub_layers/            # Sub-layer slots
+│   └── layer_2_99_stages/                # Stage folders
+├── layer_3/                              # Layer 3 grouping folder (sibling)
+│   ├── layer_3_sub*2_projects/
+│   ├── layer_3_features/
+│   └── layer_3_components/
+└── README.md
+```
+
+## Manager + Handoff (layer_2/)
+- layer_2_00_ai_manager_system: sub-project-level manager docs/configs.
+- layer_2_01_manager_handoff_documents: `2.00_to_universal/` and `2.01_to_specific/` for up/downstream handoffs.
+
+## Slots (stored under `layer_2/layer_2_02_sub_layers/` as `sub_layer_2.xx_*`)
 - sub_layer_2.01_basic_prompts: sub-project init + what-to-do-next prompts.
 - sub_layer_2.02_sub_project_se_knowledge: SE/domain knowledge this sub-project relies on.
 - sub_layer_2.03_sub_project_principles: sub-project-specific design/UX/security principles.
@@ -34,15 +52,15 @@ Use this template when you have a nested project that:
 - sub_layer_2.11_sub_project_tools: sub-project-specific scripts/CLIs/migrations.
 - sub_layer_2.12_sub_project_agent_setup: sub-project-specific agent configuration with model fallbacks.
 
-## Nested Content Directories
+## Nested Content Directories (layer_3/)
 
 **Same-Type Nesting Rule:** The "sub" prefix only applies to same-type nesting. Since a feature inside a sub_project is a different type (not project→project), features and components here do NOT use the "sub" prefix.
 
-- layer_3_sub*2_projects/: Nested sub*2-projects within this sub-project (project→project = same-type)
-- layer_3_features/: Features within this sub-project (project→feature = different type, NO "sub")
-- layer_3_components/: Components within this sub-project (project→component = different type, NO "sub")
+- layer_3/layer_3_sub*2_projects/: Nested sub*2-projects within this sub-project (project→project = same-type)
+- layer_3/layer_3_features/: Features within this sub-project (project→feature = different type, NO "sub")
+- layer_3/layer_3_components/: Components within this sub-project (project→component = different type, NO "sub")
 
-## Stages (2.99, stored under `2.99_stages/`, folders named `stage_2.xx_*`)
+## Stages (layer_2/layer_2_99_stages/, folders named `stage_2.xx_*`)
 - stage_2.00_request_gathering
 - stage_2.01_instructions
 - stage_2.02_planning
