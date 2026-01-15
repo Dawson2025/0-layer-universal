@@ -13,7 +13,7 @@ This repository uses two orthogonal systems to manage AI context and workflows. 
 
   Example universal 0.x band inside `layer_0/layer_0_02_sub_layers/`: 0.01 basic prompts, 0.02 SE knowledge, 0.03 principles, 0.04 rules, 0.05 OS setup, 0.06 coding app setup, 0.07 apps/browsers/extensions, 0.08 AI apps/tools, 0.09 MCP servers and tools setup, 0.10 AI models, 0.11 universal tools, 0.12 agent setup. Project (1.x), feature (2.x), and component (3.x) bands mirror the same pattern with their own numbering (e.g., 1.01-1.12).
 
-- **Stage System (chronology)**: inside every layer, stages are located in `layer_N/layer_N_99_stages/` and are named `stage_L.xx_*` (e.g., universal uses stage_0.00-stage_0.08, project uses stage_1.00-stage_1.08, etc.) covering the complete chronological pipeline:
+- **Stage System (chronology)**: inside every layer, stages are located in `layer_N/layer_N_99_stages/` and are named `stage_L.xx_*` (e.g., universal uses stage_0.00-stage_0.09, project uses stage_1.00-stage_1.09, etc.) covering the complete chronological pipeline:
   1. **request** (stage_0.00_request_gathering) - Clarify what needs to be done
   2. **instructions** - Define explicit requirements and constraints
   3. **planning** - Break work into subtasks with dependencies
@@ -22,7 +22,8 @@ This repository uses two orthogonal systems to manage AI context and workflows. 
   6. **testing** - Verify functionality, run tests, collect results
   7. **criticism** - Review against standards and quality criteria
   8. **fixing** - Apply corrections, refactor, re-run tests
-  9. **archiving** - Document and close completed work
+  9. **current_product** - The actual deliverable (current code/files/output)
+  10. **archives** - Historical versions and completed work
 
   Each stage folder contains `hand_off_documents/` and `ai_agent_system/` subfolders for structured handoffs and agent configs.
 

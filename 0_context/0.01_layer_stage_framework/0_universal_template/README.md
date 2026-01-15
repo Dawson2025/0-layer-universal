@@ -62,6 +62,6 @@ Configure these in order when setting up a new AI environment.
 - stage_0.05_testing
 - stage_0.06_criticism
 - stage_0.07_fixing
-- stage_0.08_archiving
+- stage_0.09_archives
 
 Copy this template, rename for your universal context, and populate per slot.

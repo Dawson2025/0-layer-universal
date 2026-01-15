@@ -398,7 +398,8 @@ cp -r .../3_component_template/ layer_3_component_login_form/
 | N.05 | testing | Verification |
 | N.06 | criticism | Review |
 | N.07 | fixing | Corrections |
-| N.08 | archives | Completion |
+| N.08 | current_product | **The actual deliverable** (current code/files/output) |
+| N.09 | archives | Historical versions (previous iterations) |
 
 **Each stage folder contains:**
 ```

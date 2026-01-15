@@ -208,7 +208,7 @@ Layer 3 operates through the chronological pipeline (often abbreviated for simpl
 6. **stage_3.05_testing**: Write and run unit/component tests
 7. **stage_3.06_criticism**: Review code quality and correctness
 8. **stage_3.07_fixing**: Fix bugs and refactor
-9. **stage_3.08_archives**: Document component and finalize
+9. **stage_3.09_archives**: Document component and finalize
 
 For simple components, stages 1-4 may be very brief, with most work in stages 5-7 (development, testing, fixing).
 

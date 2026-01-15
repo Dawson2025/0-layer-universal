@@ -33,7 +33,7 @@ layer_2_features/
 │   ├── stage_2.05_testing/
 │   ├── stage_2.06_criticism/
 │   ├── stage_2.07_fixing/
-│   └── stage_2.08_archives/
+│   └── stage_2.09_archives/
 └── layer_2_feature_<N>.<XX>_*/           # Individual feature folders
     └── [feature-specific content]
 ```

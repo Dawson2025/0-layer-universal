@@ -68,6 +68,6 @@ Configure these in order when setting up component-specific AI environments.
 - stage_3.05_testing
 - stage_3.06_criticism
 - stage_3.07_fixing
-- stage_3.08_archiving
+- stage_3.09_archives
 
 Copy, rename to your component, and populate each slot.

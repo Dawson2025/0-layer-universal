@@ -178,7 +178,7 @@ Layer 1 operates through the same chronological pipeline as all layers:
 6. **stage_1.05_testing**: Integration and end-to-end testing across features
 7. **stage_1.06_criticism**: Review against project goals and quality standards
 8. **stage_1.07_fixing**: Resolve cross-feature issues and refactor
-9. **stage_1.08_archives**: Document project decisions and final state
+9. **stage_1.09_archives**: Document project decisions and final state
 
 ## Manager/Worker Workflow at Layer 1
 

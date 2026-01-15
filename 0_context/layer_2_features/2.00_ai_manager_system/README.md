@@ -190,7 +190,7 @@ Layer 2 operates through the chronological pipeline:
 6. **stage_2.05_testing**: Integration testing across all components
 7. **stage_2.06_criticism**: Review against feature goals
 8. **stage_2.07_fixing**: Resolve integration issues
-9. **stage_2.08_archives**: Document feature architecture and decisions
+9. **stage_2.09_archives**: Document feature architecture and decisions
 
 ## Manager/Worker Workflow at Layer 2
 

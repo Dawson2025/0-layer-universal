@@ -138,7 +138,7 @@ layer_<N>_feature_<name>/
 5. `stage_<N>.05_testing` - Test workflow
 6. `stage_<N>.06_criticism` - Review and refine
 7. `stage_<N>.07_fixing` - Fix issues
-8. `stage_<N>.08_archives` - Workflow validated, ready for production
+8. `stage_<N>.09_archives` - Workflow validated, ready for production
 
 **Output:** Validated workflow document ready to move to production
 
@@ -156,7 +156,7 @@ layer_<N>_feature_<name>/
 1. `stage_<N>.01_instructions` - Workflow instructions
 2. `stage_<N>.04_development` - Execute workflow
 3. `stage_<N>.05_testing` - Verify results
-4. `stage_<N>.08_archives` - Execution complete
+4. `stage_<N>.09_archives` - Execution complete
 
 ### Phase 3: Results (`.05_results/`)
 
@@ -223,7 +223,7 @@ cat > "$FEATURE_DIR/${LAYER}.03_workflow_creation/${LAYER}.99_stages/status_${LA
     "stage_${LAYER}.05_testing": "not_started",
     "stage_${LAYER}.06_criticism": "not_started",
     "stage_${LAYER}.07_fixing": "not_started",
-    "stage_${LAYER}.08_archives": "not_started"
+    "stage_${LAYER}.09_archives": "not_started"
   },
   "notes": "Developing workflow for <name>"
 }

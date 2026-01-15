@@ -277,7 +277,7 @@ layer_<N>_<name>/                      # "feature" or "component"
 │   ├── stage_<N>.05_testing/
 │   ├── stage_<N>.06_criticism/
 │   ├── stage_<N>.07_fixing/
-│   ├── stage_<N>.08_archives/
+│   ├── stage_<N>.09_archives/
 │   └── status_<N>.json                # Tracks current stage and per-stage state
 ├── layer_<N+1>_features/              # Sub-features (optional, recursive)
 │   ├── README.md
@@ -310,7 +310,7 @@ Within each layer, stages represent the chronological workflow:
 5. **stage_<N>.05_testing** - Testing and validation
 6. **stage_<N>.06_criticism** - Review and critique
 7. **stage_<N>.07_fixing** - Bug fixes and corrections
-8. **stage_<N>.08_archives** - Completed/archived work
+8. **stage_<N>.09_archives** - Completed/archived work
 
 **Each stage folder contains:**
 ```
@@ -504,7 +504,7 @@ Stages to be carried out (at Layer 2 - Feature level):
 5. stage_2.05_testing - Test the checkout feature
 6. stage_2.06_criticism - Review and critique the implementation
 7. stage_2.07_fixing - Fix any issues found
-8. stage_2.08_archives - Archive completed work
+8. stage_2.09_archives - Archive completed work
 
 Starting stage: stage_2.01_instructions
 ```
@@ -706,7 +706,7 @@ Stages to be carried out:
 5. stage_2.05_testing - Test checkout feature
 6. stage_2.06_criticism - Review and critique implementation
 7. stage_2.07_fixing - Fix any issues found
-8. stage_2.08_archives - Archive completed work
+8. stage_2.09_archives - Archive completed work
 
 Starting at: stage_2.01_instructions
 Current status: All stages marked as "not_started"
@@ -718,7 +718,7 @@ Current status: All stages marked as "not_started"
 - **Bug fixes**: Use `stage_<N>.07_fixing`
 - **Testing**: Use `stage_<N>.05_testing`
 - **Review/critique**: Use `stage_<N>.06_criticism`
-- **Archiving**: Use `stage_<N>.08_archives`
+- **Archiving**: Use `stage_<N>.09_archives`
 
 **4.5 Load Stage Context:**
 ```bash
@@ -802,7 +802,7 @@ cat ai_agent_system/*.md
     "stage_<N>.05_testing": "not_started",
     "stage_<N>.06_criticism": "not_started",
     "stage_<N>.07_fixing": "not_started",
-    "stage_<N>.08_archives": "not_started"
+    "stage_<N>.09_archives": "not_started"
   }
 }
 ```
@@ -871,7 +871,7 @@ ls -d <project>/0_context/0_context/layer_2_features/layer_2_*/layer_3_component
 5. stage_2.05_testing - Test authentication feature
 6. stage_2.06_criticism - Review and critique implementation
 7. stage_2.07_fixing - Fix any issues found
-8. stage_2.08_archives - Archive completed work
+8. stage_2.09_archives - Archive completed work
 
 **Starting stage:** stage_2.01_instructions
 
@@ -1099,7 +1099,7 @@ cd 2.99_stages/stage_2.01_instructions/
 
 **Find previous work/decisions:**
 - Check: `<N>.99_stages/stage_<N>.xx_*/hand_off_documents/` for previous decisions
-- Check: `<N>.99_stages/stage_<N>.08_archives/` for completed work
+- Check: `<N>.99_stages/stage_<N>.09_archives/` for completed work
 
 ##### Platform-Specific Issues
 
@@ -1176,7 +1176,7 @@ For detailed instructions on instantiating various layer types (Universal, Proje
        ├── stage_1.05_testing/
        ├── stage_1.06_criticism/
        ├── stage_1.07_fixing/
-       ├── stage_1.08_archives/
+       ├── stage_1.09_archives/
        └── status_1.json                # Tracks current stage and per-stage state
    ```
 
@@ -1263,7 +1263,7 @@ cat > layer_1_project/1.99_stages/status_1.json << 'EOF'
     "stage_1.05_testing": "not_started",
     "stage_1.06_criticism": "not_started",
     "stage_1.07_fixing": "not_started",
-    "stage_1.08_archives": "not_started"
+    "stage_1.09_archives": "not_started"
   }
 }
 EOF

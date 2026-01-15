@@ -94,7 +94,7 @@ Layer 0 operates through a chronological pipeline of stages:
 6. **stage_0.05_testing**: Verify universal rules and infrastructure
 7. **stage_0.06_criticism**: Review against universal quality standards
 8. **stage_0.07_fixing**: Resolve issues found in criticism
-9. **stage_0.08_archives**: Record decisions, patterns, and final artifacts
+9. **stage_0.09_archives**: Record decisions, patterns, and final artifacts
 
 Each stage:
 - Reads from its `incoming` handoff
@@ -200,7 +200,7 @@ layer_0_universal/
     ├── stage_0.05_testing/
     ├── stage_0.06_criticism/
     ├── stage_0.07_fixing/
-    └── stage_0.08_archives/
+    └── stage_0.09_archives/
 ```
 
 ## Best Practices

@@ -69,6 +69,6 @@ Use this template when you have a nested project that:
 - stage_2.05_testing
 - stage_2.06_criticism
 - stage_2.07_fixing
-- stage_2.08_archives
+- stage_2.09_archives
 
 Copy, rename to `layer_2_sub_project_<name>`, and populate each slot.

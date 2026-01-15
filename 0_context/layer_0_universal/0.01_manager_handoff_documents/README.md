@@ -82,7 +82,7 @@ This schema defines:
   "id": "external-response-20241223-001",
   "layer": 0,
   "stage": "archiving",
-  "from": "layer_0/stage_0.08_archives",
+  "from": "layer_0/stage_0.09_archives",
   "to": "user:john@example.com",
   "task": "Web application project management system",
   "status": "completed",

@@ -271,7 +271,7 @@ layer_4_sub*2_component_<name>/ # Component inside a sub_component
 **Stages (inside `layer_N/`):**
 - `layer_N_99_stages/`
   - `stage_N.01_instructions/`
-  - ... through `stage_N.08_archives/`
+  - ... through `stage_N.09_archives/`
   - `status_N.json`
 
 ---
@@ -568,7 +568,7 @@ Each layer maintains its own `status_N.json` inside `layer_N/layer_N_99_stages/`
     "stage_N.05_testing": "not_started",
     "stage_N.06_criticism": "not_started",
     "stage_N.07_fixing": "not_started",
-    "stage_N.08_archives": "not_started"
+    "stage_N.09_archives": "not_started"
   },
   "sub_features": [
     "layer_<N+1>_feature_<name1>",

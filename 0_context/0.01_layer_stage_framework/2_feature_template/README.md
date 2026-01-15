@@ -70,6 +70,6 @@ Configure these in order when setting up feature-specific AI environments.
 - stage_2.05_testing
 - stage_2.06_criticism
 - stage_2.07_fixing
-- stage_2.08_archiving
+- stage_2.09_archives
 
 Copy, rename to your feature, and populate each slot.

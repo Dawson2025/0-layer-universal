@@ -72,6 +72,6 @@ Configure these in order when setting up project-specific AI environments.
 - stage_1.05_testing
 - stage_1.06_criticism
 - stage_1.07_fixing
-- stage_1.08_archiving
+- stage_1.09_archives
 
 Copy, rename to your project, and populate each slot.

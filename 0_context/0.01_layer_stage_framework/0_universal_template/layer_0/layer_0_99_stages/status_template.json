@@ -37,7 +37,12 @@
       "last_update": null,
       "notes": ""
     },
-    "0.08_archives": {
+    "0.08_current_product": {
+      "state": "not_started",
+      "last_update": null,
+      "notes": ""
+    },
+    "0.09_archives": {
       "state": "not_started",
       "last_update": null,
       "notes": ""

@@ -46,7 +46,7 @@ layer_<N>_<type>_<name>/
 5. `stage_N.05_testing` - Testing/validation
 6. `stage_N.06_criticism` - Review/critique
 7. `stage_N.07_fixing` - Corrections
-8. `stage_N.08_archives` - Completion
+8. `stage_N.09_archives` - Completion
 
 ---
 
@@ -239,20 +239,20 @@ layer_2_feature_assignments/
 ├── 2.99_stages/                         # LEVEL 1: Feature lifecycle
 │   ├── stage_2.01_instructions/         # Planning assignments feature
 │   ├── stage_2.04_development/          # Developing workflows
-│   └── stage_2.08_archives/             # Feature complete
+│   └── stage_2.09_archives/             # Feature complete
 ├── 2.03_workflow_creation/
 │   └── 2.99_stages/                     # LEVEL 2: Workflow development
 │       ├── stage_2.01_instructions/     # Define workflow requirements
 │       ├── stage_2.04_development/      # Build workflow
 │       ├── stage_2.05_testing/          # Test workflow
-│       └── stage_2.08_archives/         # Workflow validated
+│       └── stage_2.09_archives/         # Workflow validated
 └── 2.04_workflows/
     └── workflow_1/
         └── 2.99_stages/                 # LEVEL 3: Workflow execution
             ├── stage_2.01_instructions/ # Workflow instructions
             ├── stage_2.04_development/  # Execute workflow
             ├── stage_2.05_testing/      # Verify results
-            └── stage_2.08_archives/     # Execution complete
+            └── stage_2.09_archives/     # Execution complete
 ```
 
 **Three Different Purposes:**
