@@ -320,10 +320,10 @@ with ThreadPoolExecutor() as executor:
 
 For comprehensive understanding of the manager/worker model, handoff protocol, and orchestration patterns, see:
 
-- **Architecture**: [ideal_ai_manager_hierarchy_system/architecture.md](../../../code/0_ai_context/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/architecture.md)
-- **Tools and Context**: [ideal_ai_manager_hierarchy_system/tools_and_context_systems.md](../../../code/0_ai_context/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/tools_and_context_systems.md)
-- **Parallel Execution**: [ideal_ai_manager_hierarchy_system/parallel_execution.md](../../../code/0_ai_context/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/parallel_execution.md)
-- **Supervisor Patterns**: [ideal_ai_manager_hierarchy_system/supervisor_patterns.md](../../../code/0_ai_context/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/supervisor_patterns.md)
+- **Architecture**: [ideal_ai_manager_hierarchy_system/architecture.md](../../../code/0_layer_ai_context/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/architecture.md)
+- **Tools and Context**: [ideal_ai_manager_hierarchy_system/tools_and_context_systems.md](../../../code/0_layer_ai_context/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/tools_and_context_systems.md)
+- **Parallel Execution**: [ideal_ai_manager_hierarchy_system/parallel_execution.md](../../../code/0_layer_ai_context/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/parallel_execution.md)
+- **Supervisor Patterns**: [ideal_ai_manager_hierarchy_system/supervisor_patterns.md](../../../code/0_layer_ai_context/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/supervisor_patterns.md)
 - **Handoff Schema**: [../layer_0_universal/0.01_manager_handoff_documents/0.00_to_universal/handoff_schema.md](../../layer_0_universal/0.01_manager_handoff_documents/0.00_to_universal/handoff_schema.md)
 
 ## Directory Structure

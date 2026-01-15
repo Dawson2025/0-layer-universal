@@ -116,10 +116,10 @@ See `layer_0_universal/0.01_manager_handoff_documents/0.00_to_universal/handoff_
 
 ```bash
 # From the location where 0_context currently exists
-cp -r /path/to/0_ai_context/0_context /path/to/your/project/docs/
+cp -r /path/to/0_layer_ai_context/0_context /path/to/your/project/docs/
 
 # Or if you want it in your project root:
-cp -r /path/to/0_ai_context/0_context /path/to/your/project/
+cp -r /path/to/0_layer_ai_context/0_context /path/to/your/project/
 ```
 
 ### Step 2: Customize Core Prompt

@@ -9,7 +9,7 @@
 ## Normative Specification
 
 This file implements the OS-specific context pattern defined in:
-- `/home/dawson/code/0_ai_context/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/os_and_quartets.md`
+- `/home/dawson/code/0_layer_ai_context/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/os_and_quartets.md`
 
 Refer to that document for the canonical specification of the OS variant system.
 
@@ -25,7 +25,7 @@ Refer to that document for the canonical specification of the OS variant system.
 
 ### Path Conventions
 - **Home directory**: `/home/dawson/...`
-- **Project root**: `/home/dawson/code/0_ai_context/`
+- **Project root**: `/home/dawson/code/0_layer_ai_context/`
 - **System paths**: `/usr/local/bin`, `/usr/bin`, `/bin`
 - **Temporary files**: `/tmp/`
 

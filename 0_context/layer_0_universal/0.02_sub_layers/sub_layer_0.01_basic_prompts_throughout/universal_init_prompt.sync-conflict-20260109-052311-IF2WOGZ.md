@@ -152,7 +152,7 @@ If you move docs/tools between sublayers, treat it like a small migration:
 ### 2. Discover & Read Project-Specific Init Prompt
 
 **How to find it:**
-1. Your universal context is at `<parent>/0_ai_context/0_context/`
+1. Your universal context is at `<parent>/0_layer_ai_context/0_context/`
 2. Project contexts are siblings: `<parent>/<project_name>/0_context/`
 3. Look for: `<parent>/<project_name>/0_context/0_context/0_basic_prompts_throughout/project_init_prompt.md`
 
@@ -160,7 +160,7 @@ If you move docs/tools between sublayers, treat it like a small migration:
 ```bash
 # From universal context root, list all potential project repos:
 cd ../../  # Go to parent directory
-ls -d */0_context/0_context/0_basic_prompts_throughout/project_init_prompt.md 2>/dev/null | grep -v "0_ai_context"
+ls -d */0_context/0_context/0_basic_prompts_throughout/project_init_prompt.md 2>/dev/null | grep -v "0_layer_ai_context"
 ```
 
 **If project init prompt EXISTS:** Read and follow it immediately.
@@ -818,7 +818,7 @@ cat ai_agent_system/*.md
 **Find Universal Context Root:**
 ```bash
 # If you know this file's location:
-cd "$(dirname "$(find ~ -name universal_init_prompt.md -path "*/0_ai_context/*" | head -1)")"
+cd "$(dirname "$(find ~ -name universal_init_prompt.md -path "*/0_layer_ai_context/*" | head -1)")"
 cd ../../..  # Now at <universal_context_root>/0_context/
 ```
 
@@ -838,7 +838,7 @@ cd layer_3_components/layer_3_component_<name>/
 ```bash
 # From universal context root:
 cd ../../
-find . -maxdepth 2 -type d -name "0_context" | grep -v "0_ai_context"
+find . -maxdepth 2 -type d -name "0_context" | grep -v "0_layer_ai_context"
 ```
 
 **List Available Layers:**
@@ -878,7 +878,7 @@ ls -d <project>/0_context/0_context/layer_2_features/layer_2_*/layer_3_component
 **Step 2: Load Layers (Check for Missing Structure)**
 ```bash
 # Load universal (always exists)
-cd ~/code/0_ai_context/0_context/layer_0_universal/
+cd ~/code/0_layer_ai_context/0_context/layer_0_universal/
 # Read: sub_layer_0.01/, sub_layer_0.03/, sub_layer_0.04/, sub_layer_0.11/
 
 # Check if project exists
@@ -1223,7 +1223,7 @@ ls -d layer_1_project/ 2>/dev/null || echo "MISSING: layer_1_project/"
 **Step 2: Copy Template from Universal Context**
 ```bash
 # From universal context root:
-cd <parent>/0_ai_context/0_context/0.01_layer_stage_framework/
+cd <parent>/0_layer_ai_context/0_context/0.01_layer_stage_framework/
 
 # Copy project template to project context:
 cp -r 1_project_template/ <parent>/<project>/0_context/0_context/layer_1_project/
@@ -1747,7 +1747,7 @@ git status
 ### Find Universal Context Root
 ```bash
 # If you know this file's location:
-cd "$(dirname "$(find ~ -name universal_init_prompt.md -path "*/0_ai_context/*" | head -1)")"
+cd "$(dirname "$(find ~ -name universal_init_prompt.md -path "*/0_layer_ai_context/*" | head -1)")"
 cd ../..  # Now at <universal_context_root>/0_context/
 ```
 
@@ -1755,14 +1755,14 @@ cd ../..  # Now at <universal_context_root>/0_context/
 ```bash
 # From <universal_context_root>/0_context/:
 cd ../../
-find . -maxdepth 2 -type d -name "0_context" | grep -v "0_ai_context"
+find . -maxdepth 2 -type d -name "0_context" | grep -v "0_layer_ai_context"
 ```
 
 ### Find Project Init Prompts
 ```bash
 # From parent directory:
 find . -path "*/0_context/0_context/0_basic_prompts_throughout/project_init_prompt.md" \
-  | grep -v "0_ai_context"
+  | grep -v "0_layer_ai_context"
 ```
 
 ---
@@ -1777,11 +1777,11 @@ If generating a new project init prompt, use this structure:
 ## 🔍 Repository Discovery
 
 ### Universal Context Location
-**Relative path from project context:** `../../0_ai_context/0_context/`
+**Relative path from project context:** `../../0_layer_ai_context/0_context/`
 
 ```bash
 # Verify universal context exists:
-ls ../../0_ai_context/0_context/MASTER_DOCUMENTATION_INDEX.md
+ls ../../0_layer_ai_context/0_context/MASTER_DOCUMENTATION_INDEX.md
 ```
 
 ### Project Context Location
@@ -1817,7 +1817,7 @@ ls ../../0_ai_context/0_context/MASTER_DOCUMENTATION_INDEX.md
 
 ## 5. Reference Documentation by Task
 - Link to project-specific docs (relative paths)
-- Reference universal docs: `../../0_ai_context/0_context/...`
+- Reference universal docs: `../../0_layer_ai_context/0_context/...`
 - Quick reference commands
 
 ## 6. Troubleshooting
@@ -1840,12 +1840,12 @@ Example: `trickle_down_0_universal/0_instruction_docs/git_commit_rule.md`
 Example: `trickle_down_1_project/0_instruction_docs/constitution.md`
 
 ### Cross-References (Project → Universal)
-**Use relative path:** `../../0_ai_context/0_context/<path>`
+**Use relative path:** `../../0_layer_ai_context/0_context/<path>`
 
 Example from project context:
 ```bash
 # Read universal git rules:
-cat ../../0_ai_context/0_context/trickle_down_0_universal/0_instruction_docs/git_commit_rule.md
+cat ../../0_layer_ai_context/0_context/trickle_down_0_universal/0_instruction_docs/git_commit_rule.md
 ```
 
 ---
@@ -1860,6 +1860,6 @@ cat ../../0_ai_context/0_context/trickle_down_0_universal/0_instruction_docs/git
 
 ---
 
-**Location Pattern:** `<parent>/0_ai_context/0_context/0_basic_prompts_throughout/`
+**Location Pattern:** `<parent>/0_layer_ai_context/0_context/0_basic_prompts_throughout/`
 **Last Updated:** 2025-01-26
 **Version:** 2.1 (Portable Paths)

@@ -8,8 +8,8 @@
 ## Quick Lookup by Need
 
 ### "I need to understand the hierarchy"
-→ Start here: `/code/0_ai_context/0_context/SYSTEM_OVERVIEW.md`
-→ Complete guide: `/code/0_ai_context/0_context/USAGE_GUIDE.md`
+→ Start here: `/code/0_layer_ai_context/0_context/SYSTEM_OVERVIEW.md`
+→ Complete guide: `/code/0_layer_ai_context/0_context/USAGE_GUIDE.md`
 → Quick start: `layer_0_universal/.../HIERARCHY_QUICK_START.md`
 
 ### "I need the normative specifications"
@@ -81,9 +81,9 @@ Files in each: `CLAUDE.md` (managers), `AGENTS.md` (workers), `GEMINI.md` (plann
 ### Entry Points & Navigation
 | What | Where |
 |------|-------|
-| Master index | `/code/0_ai_context/0_context/MASTER_DOCUMENTATION_INDEX.md` |
-| System overview | `/code/0_ai_context/0_context/SYSTEM_OVERVIEW.md` |
-| Usage guide | `/code/0_ai_context/0_context/USAGE_GUIDE.md` |
+| Master index | `/code/0_layer_ai_context/0_context/MASTER_DOCUMENTATION_INDEX.md` |
+| System overview | `/code/0_layer_ai_context/0_context/SYSTEM_OVERVIEW.md` |
+| Usage guide | `/code/0_layer_ai_context/0_context/USAGE_GUIDE.md` |
 | Quick start | `layer_0_universal/.../sub_layer_0.01.../HIERARCHY_QUICK_START.md` |
 
 ### Framework & Standards
@@ -259,25 +259,25 @@ layer_3_components/
 ### Most Common Paths
 ```bash
 # Top-level navigation
-/home/dawson/code/0_ai_context/0_context/SYSTEM_OVERVIEW.md
+/home/dawson/code/0_layer_ai_context/0_context/SYSTEM_OVERVIEW.md
 
 # OS context for Layer 0, WSL, Claude
-/home/dawson/code/0_ai_context/0_context/layer_0_universal/0.99_stages/stage_0.01_instructions/ai_agent_system/os/wsl/CLAUDE.md
+/home/dawson/code/0_layer_ai_context/0_context/layer_0_universal/0.99_stages/stage_0.01_instructions/ai_agent_system/os/wsl/CLAUDE.md
 
 # Handoff schema
-/home/dawson/code/0_ai_context/0_context/layer_0_universal/0.01_manager_handoff_documents/0.00_to_universal/handoff_schema.md
+/home/dawson/code/0_layer_ai_context/0_context/layer_0_universal/0.01_manager_handoff_documents/0.00_to_universal/handoff_schema.md
 
 # Observability protocol
-/home/dawson/code/0_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.13_universal_protocols/observability/README.md
+/home/dawson/code/0_layer_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.13_universal_protocols/observability/README.md
 
 # Quick start guide
-/home/dawson/code/0_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.01_basic_prompts_throughout/HIERARCHY_QUICK_START.md
+/home/dawson/code/0_layer_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.01_basic_prompts_throughout/HIERARCHY_QUICK_START.md
 
 # Rollout plan
 /home/dawson/.cursor/plans/ai_manager_hierarchy_rollout_plan.md
 
 # Implementation docs
-/home/dawson/code/0_ai_context/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/implementation/
+/home/dawson/code/0_layer_ai_context/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/implementation/
 ```
 
 ---
@@ -305,7 +305,7 @@ layer_3_components/
 
 ### From project root
 ```bash
-cd /home/dawson/code/0_ai_context/0_context
+cd /home/dawson/code/0_layer_ai_context/0_context
 ```
 
 ### To specific areas

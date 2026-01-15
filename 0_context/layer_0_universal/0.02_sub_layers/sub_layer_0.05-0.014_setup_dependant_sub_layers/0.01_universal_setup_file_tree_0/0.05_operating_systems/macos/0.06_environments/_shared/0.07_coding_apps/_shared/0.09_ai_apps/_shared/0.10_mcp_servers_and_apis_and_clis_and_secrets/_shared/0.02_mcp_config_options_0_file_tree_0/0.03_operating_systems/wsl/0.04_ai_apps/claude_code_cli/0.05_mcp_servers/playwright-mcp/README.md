@@ -101,7 +101,7 @@ To enable **simultaneous** Playwright MCP browser use in both Codex CLI and Clau
 
 ```bash
 # Navigate to automation scripts
-cd /home/dawson/dawson-workspace/code/0_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.10_mcp_servers_and_tools_setup/0.06_automation/scripts
+cd /home/dawson/dawson-workspace/code/0_layer_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.10_mcp_servers_and_tools_setup/0.06_automation/scripts
 
 # Set up OS+tool-specific concurrent browser configs (auto-detects OS)
 python3 mcp_concurrent_browser.py setup --tools codex claude

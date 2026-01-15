@@ -29,7 +29,7 @@
 
 ## Legacy Source
 
-Source: `/home/dawson/dawson-workspace/code/0_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.08_apps_browsers_extensions_setup/README.md`
+Source: `/home/dawson/dawson-workspace/code/0_layer_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.08_apps_browsers_extensions_setup/README.md`
 
 # Sub Layer 0.08: Apps, Browsers, and Extensions Setup
 

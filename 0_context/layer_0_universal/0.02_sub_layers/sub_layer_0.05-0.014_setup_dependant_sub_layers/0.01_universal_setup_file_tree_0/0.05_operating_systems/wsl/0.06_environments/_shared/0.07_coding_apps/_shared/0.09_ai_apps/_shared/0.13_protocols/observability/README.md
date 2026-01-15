@@ -15,7 +15,7 @@ This protocol defines structured logging, monitoring, and observability patterns
 
 This document is a **derived implementation guide** from the canonical specification:
 
-- **Source**: `/home/dawson/dawson-workspace/code/0_ai_context/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/observability_and_logging.md`
+- **Source**: `/home/dawson/dawson-workspace/code/0_layer_ai_context/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/observability_and_logging.md`
 - **Status**: Normative (refer to source for authoritative details)
 
 ---
@@ -516,7 +516,7 @@ This protocol defines structured logging, monitoring, and observability patterns
 
 This document is a **derived implementation guide** from the canonical specification:
 
-- **Source**: `/home/dawson/code/0_ai_context/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/observability_and_logging.md`
+- **Source**: `/home/dawson/code/0_layer_ai_context/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/observability_and_logging.md`
 - **Status**: Normative (refer to source for authoritative details)
 
 ---
@@ -1001,7 +1001,7 @@ This protocol follows the **Protocol Writing Standard**:
 
 ## Legacy Source
 
-Source: `/home/dawson/dawson-workspace/code/0_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.13_universal_protocols/observability/README.md`
+Source: `/home/dawson/dawson-workspace/code/0_layer_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.13_universal_protocols/observability/README.md`
 
 # Observability and Logging Protocol
 
@@ -1020,7 +1020,7 @@ This protocol defines structured logging, monitoring, and observability patterns
 
 This document is a **derived implementation guide** from the canonical specification:
 
-- **Source**: `/home/dawson/code/0_ai_context/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/observability_and_logging.md`
+- **Source**: `/home/dawson/code/0_layer_ai_context/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/observability_and_logging.md`
 - **Status**: Normative (refer to source for authoritative details)
 
 ---

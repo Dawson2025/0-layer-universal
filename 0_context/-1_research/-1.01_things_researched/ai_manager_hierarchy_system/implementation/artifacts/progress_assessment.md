@@ -236,5 +236,5 @@ Integration is complete when:
 ## Reference Links
 
 - **Plan File**: `/home/dawson/.cursor/plans/integrate_ideal_ai_manager_hierarchy_system_into_0aicontext_8473a05b.plan.md`
-- **Ideal Hierarchy Specs**: `/home/dawson/code/0_ai_context/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/`
-- **0_ai_context Root**: `/home/dawson/code/0_ai_context/0_context/`
+- **Ideal Hierarchy Specs**: `/home/dawson/code/0_layer_ai_context/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/`
+- **0_ai_context Root**: `/home/dawson/code/0_layer_ai_context/0_context/`

@@ -65,7 +65,7 @@ The multi-OS workspace sync project is **functionally complete**. All three devi
 **This is expected behavior and NOT an error.**
 
 **Cause:**
-- Windows deleted `code/1_school/` directory tree
+- Windows deleted `code/1_layer_school/` directory tree
 - WSL still has this tree, containing ignored files (`node_modules/`, `.venv/`, etc.)
 - Syncthing safety feature: won't delete directories with ignored content
 
@@ -73,7 +73,7 @@ The multi-OS workspace sync project is **functionally complete**. All three devi
 
 **Resolution Options:**
 1. Add `(?d)` prefix to `.stignore` patterns (allows deletion of dirs with ignored content)
-2. Manually remove `code/1_school/` on WSL
+2. Manually remove `code/1_layer_school/` on WSL
 3. Leave as-is (no functional impact)
 
 ## Key Achievements

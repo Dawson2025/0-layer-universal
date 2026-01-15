@@ -15,10 +15,10 @@ This document provides concrete CLI recursion patterns for creating deep agent h
 - **OS**: WSL (Windows Subsystem for Linux), Linux Ubuntu
 - **Shell**: bash
 - **CLI Tools**: Claude Code, Codex CLI, Gemini CLI
-- **Working Directory**: `/home/dawson/dawson-workspace/code/0_ai_context/0_context/`
+- **Working Directory**: `/home/dawson/dawson-workspace/code/0_layer_ai_context/0_context/`
 
 For the normative specification with additional patterns and examples, see:
-- **Normative Spec**: `/home/dawson/dawson-workspace/code/0_ai_context/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/cli_recursion_syntax.md`
+- **Normative Spec**: `/home/dawson/dawson-workspace/code/0_layer_ai_context/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/cli_recursion_syntax.md`
 
 ---
 
@@ -47,10 +47,10 @@ Each invocation:
 
 ```bash
 # L0 manager spawning L1 manager
-cd /home/dawson/dawson-workspace/code/0_ai_context/0_context/layer_1_project
+cd /home/dawson/dawson-workspace/code/0_layer_ai_context/0_context/layer_1_project
 
 claude-code \
-  --working-dir "/home/dawson/dawson-workspace/code/0_ai_context/0_context/layer_1_project" \
+  --working-dir "/home/dawson/dawson-workspace/code/0_layer_ai_context/0_context/layer_1_project" \
   --allowed "B(cla:*)" \
   process-handoff 1.01_manager_handoff_documents/1.00_to_universal/incoming.json
 ```
@@ -66,7 +66,7 @@ claude-code \
 ```bash
 # Allow subprocess to call claude-code and codex
 claude-code \
-  --working-dir "/home/dawson/dawson-workspace/code/0_ai_context/0_context/layer_2_features" \
+  --working-dir "/home/dawson/dawson-workspace/code/0_layer_ai_context/0_context/layer_2_features" \
   --allowed "B(cla:*,codex:*)" \
   process-handoff 2.01_manager_handoff_documents/incoming.json
 ```
@@ -75,7 +75,7 @@ claude-code \
 ```bash
 # Allow subprocess to call any binary
 claude-code \
-  --working-dir "/home/dawson/dawson-workspace/code/0_ai_context/0_context/layer_1_project" \
+  --working-dir "/home/dawson/dawson-workspace/code/0_layer_ai_context/0_context/layer_1_project" \
   --allowed "B(*)" \
   process-handoff 1.01_manager_handoff_documents/incoming.json
 ```
@@ -84,7 +84,7 @@ claude-code \
 ```bash
 # No subprocess binary execution allowed
 claude-code \
-  --working-dir "/home/dawson/dawson-workspace/code/0_ai_context/0_context/layer_3_components" \
+  --working-dir "/home/dawson/dawson-workspace/code/0_layer_ai_context/0_context/layer_3_components" \
   process-handoff 3.01_manager_handoff_documents/incoming.json
 ```
 
@@ -99,7 +99,7 @@ claude-code \
 # L1 manager script: layer_1_project/scripts/process_handoff.sh
 
 # Path to L1 layer
-L1_DIR="/home/dawson/dawson-workspace/code/0_ai_context/0_context/layer_1_project"
+L1_DIR="/home/dawson/dawson-workspace/code/0_layer_ai_context/0_context/layer_1_project"
 
 # Read incoming handoff
 HANDOFF_FILE="$L1_DIR/1.01_manager_handoff_documents/1.00_to_universal/incoming.json"
@@ -115,7 +115,7 @@ FEATURES=$(echo "$HANDOFF" | jq -r '.features[]')
 for FEATURE in $FEATURES; do
   echo "Spawning L2 manager for feature: $FEATURE"
 
-  L2_DIR="/home/dawson/dawson-workspace/code/0_ai_context/0_context/layer_2_features/$FEATURE"
+  L2_DIR="/home/dawson/dawson-workspace/code/0_layer_ai_context/0_context/layer_2_features/$FEATURE"
 
   # Create L2 handoff
   cat > "$L2_DIR/2.01_manager_handoff_documents/incoming.json" <<EOF
@@ -162,7 +162,7 @@ import subprocess
 import json
 from pathlib import Path
 
-BASE_DIR = Path("/home/dawson/dawson-workspace/code/0_ai_context/0_context")
+BASE_DIR = Path("/home/dawson/dawson-workspace/code/0_layer_ai_context/0_context")
 
 def spawn_l1_project_manager(project_name, task, constraints):
     """Spawn L1 manager for specific project."""
@@ -234,7 +234,7 @@ import json
 from pathlib import Path
 from concurrent.futures import ProcessPoolExecutor
 
-BASE_DIR = Path("/home/dawson/dawson-workspace/code/0_ai_context/0_context")
+BASE_DIR = Path("/home/dawson/dawson-workspace/code/0_layer_ai_context/0_context")
 L1_DIR = BASE_DIR / "layer_1_project"
 
 def spawn_l2_feature_manager(feature_name, task, constraints):
@@ -313,7 +313,7 @@ import json
 from pathlib import Path
 from concurrent.futures import ThreadPoolExecutor
 
-BASE_DIR = Path("/home/dawson/dawson-workspace/code/0_ai_context/0_context")
+BASE_DIR = Path("/home/dawson/dawson-workspace/code/0_layer_ai_context/0_context")
 
 def spawn_l3_component_worker(component_name, task, tool="codex"):
     """Spawn L3 worker for component implementation."""
@@ -493,7 +493,7 @@ STAGE=$2
 HANDOFF=$3
 TOOL=${4:-auto}  # auto, claude, codex, gemini
 
-BASE_DIR="/home/dawson/dawson-workspace/code/0_ai_context/0_context"
+BASE_DIR="/home/dawson/dawson-workspace/code/0_layer_ai_context/0_context"
 
 # Auto-select tool if not specified
 if [ "$TOOL" = "auto" ]; then
@@ -654,7 +654,7 @@ switch ($Tool) {
 ### macOS (bash/zsh)
 Same as WSL/Ubuntu with potential path adjustments:
 ```bash
-BASE_DIR="/Users/yourname/code/0_ai_context/0_context"
+BASE_DIR="/Users/yourname/code/0_layer_ai_context/0_context"
 ```
 
 ---
@@ -663,14 +663,14 @@ BASE_DIR="/Users/yourname/code/0_ai_context/0_context"
 
 **Within 0_ai_context**:
 - **Framework Orchestration**: `sub_layer_0.13_universal_protocols/framework_orchestration/0_instruction_docs/framework_orchestration_overview.md`
-- **Handoff Schema**: `/home/dawson/dawson-workspace/code/0_ai_context/0_context/layer_0_universal/0.01_manager_handoff_documents/0.00_to_universal/handoff_schema.md`
-- **OS Variants (Quartets)**: `/home/dawson/dawson-workspace/code/0_ai_context/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/os_and_quartets.md`
-- **Tool Context Systems**: `/home/dawson/dawson-workspace/code/0_ai_context/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/tools_and_context_systems.md`
+- **Handoff Schema**: `/home/dawson/dawson-workspace/code/0_layer_ai_context/0_context/layer_0_universal/0.01_manager_handoff_documents/0.00_to_universal/handoff_schema.md`
+- **OS Variants (Quartets)**: `/home/dawson/dawson-workspace/code/0_layer_ai_context/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/os_and_quartets.md`
+- **Tool Context Systems**: `/home/dawson/dawson-workspace/code/0_layer_ai_context/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/tools_and_context_systems.md`
 
 **Normative Specification**:
-- **CLI Recursion (Detailed)**: `/home/dawson/dawson-workspace/code/0_ai_context/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/cli_recursion_syntax.md`
-- **Architecture**: `/home/dawson/dawson-workspace/code/0_ai_context/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/architecture.md`
-- **Parallel Execution**: `/home/dawson/dawson-workspace/code/0_ai_context/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/parallel_execution.md`
+- **CLI Recursion (Detailed)**: `/home/dawson/dawson-workspace/code/0_layer_ai_context/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/cli_recursion_syntax.md`
+- **Architecture**: `/home/dawson/dawson-workspace/code/0_layer_ai_context/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/architecture.md`
+- **Parallel Execution**: `/home/dawson/dawson-workspace/code/0_layer_ai_context/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/parallel_execution.md`
 
 ---
 
@@ -712,10 +712,10 @@ This document provides concrete CLI recursion patterns for creating deep agent h
 - **OS**: WSL (Windows Subsystem for Linux), Linux Ubuntu
 - **Shell**: bash
 - **CLI Tools**: Claude Code, Codex CLI, Gemini CLI
-- **Working Directory**: `/home/dawson/code/0_ai_context/0_context/`
+- **Working Directory**: `/home/dawson/code/0_layer_ai_context/0_context/`
 
 For the normative specification with additional patterns and examples, see:
-- **Normative Spec**: `/home/dawson/code/0_ai_context/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/cli_recursion_syntax.md`
+- **Normative Spec**: `/home/dawson/code/0_layer_ai_context/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/cli_recursion_syntax.md`
 
 ---
 
@@ -744,10 +744,10 @@ Each invocation:
 
 ```bash
 # L0 manager spawning L1 manager
-cd /home/dawson/code/0_ai_context/0_context/layer_1_project
+cd /home/dawson/code/0_layer_ai_context/0_context/layer_1_project
 
 claude-code \
-  --working-dir "/home/dawson/code/0_ai_context/0_context/layer_1_project" \
+  --working-dir "/home/dawson/code/0_layer_ai_context/0_context/layer_1_project" \
   --allowed "B(cla:*)" \
   process-handoff 1.01_manager_handoff_documents/1.00_to_universal/incoming.json
 ```
@@ -763,7 +763,7 @@ claude-code \
 ```bash
 # Allow subprocess to call claude-code and codex
 claude-code \
-  --working-dir "/home/dawson/code/0_ai_context/0_context/layer_2_features" \
+  --working-dir "/home/dawson/code/0_layer_ai_context/0_context/layer_2_features" \
   --allowed "B(cla:*,codex:*)" \
   process-handoff 2.01_manager_handoff_documents/incoming.json
 ```
@@ -772,7 +772,7 @@ claude-code \
 ```bash
 # Allow subprocess to call any binary
 claude-code \
-  --working-dir "/home/dawson/code/0_ai_context/0_context/layer_1_project" \
+  --working-dir "/home/dawson/code/0_layer_ai_context/0_context/layer_1_project" \
   --allowed "B(*)" \
   process-handoff 1.01_manager_handoff_documents/incoming.json
 ```
@@ -781,7 +781,7 @@ claude-code \
 ```bash
 # No subprocess binary execution allowed
 claude-code \
-  --working-dir "/home/dawson/code/0_ai_context/0_context/layer_3_components" \
+  --working-dir "/home/dawson/code/0_layer_ai_context/0_context/layer_3_components" \
   process-handoff 3.01_manager_handoff_documents/incoming.json
 ```
 
@@ -796,7 +796,7 @@ claude-code \
 # L1 manager script: layer_1_project/scripts/process_handoff.sh
 
 # Path to L1 layer
-L1_DIR="/home/dawson/code/0_ai_context/0_context/layer_1_project"
+L1_DIR="/home/dawson/code/0_layer_ai_context/0_context/layer_1_project"
 
 # Read incoming handoff
 HANDOFF_FILE="$L1_DIR/1.01_manager_handoff_documents/1.00_to_universal/incoming.json"
@@ -812,7 +812,7 @@ FEATURES=$(echo "$HANDOFF" | jq -r '.features[]')
 for FEATURE in $FEATURES; do
   echo "Spawning L2 manager for feature: $FEATURE"
 
-  L2_DIR="/home/dawson/code/0_ai_context/0_context/layer_2_features/$FEATURE"
+  L2_DIR="/home/dawson/code/0_layer_ai_context/0_context/layer_2_features/$FEATURE"
 
   # Create L2 handoff
   cat > "$L2_DIR/2.01_manager_handoff_documents/incoming.json" <<EOF
@@ -859,7 +859,7 @@ import subprocess
 import json
 from pathlib import Path
 
-BASE_DIR = Path("/home/dawson/code/0_ai_context/0_context")
+BASE_DIR = Path("/home/dawson/code/0_layer_ai_context/0_context")
 
 def spawn_l1_project_manager(project_name, task, constraints):
     """Spawn L1 manager for specific project."""
@@ -931,7 +931,7 @@ import json
 from pathlib import Path
 from concurrent.futures import ProcessPoolExecutor
 
-BASE_DIR = Path("/home/dawson/code/0_ai_context/0_context")
+BASE_DIR = Path("/home/dawson/code/0_layer_ai_context/0_context")
 L1_DIR = BASE_DIR / "layer_1_project"
 
 def spawn_l2_feature_manager(feature_name, task, constraints):
@@ -1010,7 +1010,7 @@ import json
 from pathlib import Path
 from concurrent.futures import ThreadPoolExecutor
 
-BASE_DIR = Path("/home/dawson/code/0_ai_context/0_context")
+BASE_DIR = Path("/home/dawson/code/0_layer_ai_context/0_context")
 
 def spawn_l3_component_worker(component_name, task, tool="codex"):
     """Spawn L3 worker for component implementation."""
@@ -1190,7 +1190,7 @@ STAGE=$2
 HANDOFF=$3
 TOOL=${4:-auto}  # auto, claude, codex, gemini
 
-BASE_DIR="/home/dawson/code/0_ai_context/0_context"
+BASE_DIR="/home/dawson/code/0_layer_ai_context/0_context"
 
 # Auto-select tool if not specified
 if [ "$TOOL" = "auto" ]; then
@@ -1351,7 +1351,7 @@ switch ($Tool) {
 ### macOS (bash/zsh)
 Same as WSL/Ubuntu with potential path adjustments:
 ```bash
-BASE_DIR="/Users/yourname/code/0_ai_context/0_context"
+BASE_DIR="/Users/yourname/code/0_layer_ai_context/0_context"
 ```
 
 ---
@@ -1360,14 +1360,14 @@ BASE_DIR="/Users/yourname/code/0_ai_context/0_context"
 
 **Within 0_ai_context**:
 - **Framework Orchestration**: `sub_layer_0.13_universal_protocols/framework_orchestration/0_instruction_docs/framework_orchestration_overview.md`
-- **Handoff Schema**: `/home/dawson/code/0_ai_context/0_context/layer_0_universal/0.01_manager_handoff_documents/0.00_to_universal/handoff_schema.md`
-- **OS Variants (Quartets)**: `/home/dawson/code/0_ai_context/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/os_and_quartets.md`
-- **Tool Context Systems**: `/home/dawson/code/0_ai_context/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/tools_and_context_systems.md`
+- **Handoff Schema**: `/home/dawson/code/0_layer_ai_context/0_context/layer_0_universal/0.01_manager_handoff_documents/0.00_to_universal/handoff_schema.md`
+- **OS Variants (Quartets)**: `/home/dawson/code/0_layer_ai_context/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/os_and_quartets.md`
+- **Tool Context Systems**: `/home/dawson/code/0_layer_ai_context/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/tools_and_context_systems.md`
 
 **Normative Specification**:
-- **CLI Recursion (Detailed)**: `/home/dawson/code/0_ai_context/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/cli_recursion_syntax.md`
-- **Architecture**: `/home/dawson/code/0_ai_context/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/architecture.md`
-- **Parallel Execution**: `/home/dawson/code/0_ai_context/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/parallel_execution.md`
+- **CLI Recursion (Detailed)**: `/home/dawson/code/0_layer_ai_context/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/cli_recursion_syntax.md`
+- **Architecture**: `/home/dawson/code/0_layer_ai_context/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/architecture.md`
+- **Parallel Execution**: `/home/dawson/code/0_layer_ai_context/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/parallel_execution.md`
 
 ---
 
@@ -1393,7 +1393,7 @@ This pattern is framework-agnostic and works with any CLI-based agent tool that 
 
 ## Legacy Source
 
-Source: `/home/dawson/dawson-workspace/code/0_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.13_universal_protocols/cli_recursion/0_instruction_docs/cli_recursion_syntax.md`
+Source: `/home/dawson/dawson-workspace/code/0_layer_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.13_universal_protocols/cli_recursion/0_instruction_docs/cli_recursion_syntax.md`
 
 # CLI Recursion Syntax and Patterns
 
@@ -1412,10 +1412,10 @@ This document provides concrete CLI recursion patterns for creating deep agent h
 - **OS**: WSL (Windows Subsystem for Linux), Linux Ubuntu
 - **Shell**: bash
 - **CLI Tools**: Claude Code, Codex CLI, Gemini CLI
-- **Working Directory**: `/home/dawson/code/0_ai_context/0_context/`
+- **Working Directory**: `/home/dawson/code/0_layer_ai_context/0_context/`
 
 For the normative specification with additional patterns and examples, see:
-- **Normative Spec**: `/home/dawson/code/0_ai_context/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/cli_recursion_syntax.md`
+- **Normative Spec**: `/home/dawson/code/0_layer_ai_context/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/cli_recursion_syntax.md`
 
 ---
 
@@ -1444,10 +1444,10 @@ Each invocation:
 
 ```bash
 # L0 manager spawning L1 manager
-cd /home/dawson/code/0_ai_context/0_context/layer_1_project
+cd /home/dawson/code/0_layer_ai_context/0_context/layer_1_project
 
 claude-code \
-  --working-dir "/home/dawson/code/0_ai_context/0_context/layer_1_project" \
+  --working-dir "/home/dawson/code/0_layer_ai_context/0_context/layer_1_project" \
   --allowed "B(cla:*)" \
   process-handoff 1.01_manager_handoff_documents/1.00_to_universal/incoming.json
 ```
@@ -1463,7 +1463,7 @@ claude-code \
 ```bash
 # Allow subprocess to call claude-code and codex
 claude-code \
-  --working-dir "/home/dawson/code/0_ai_context/0_context/layer_2_features" \
+  --working-dir "/home/dawson/code/0_layer_ai_context/0_context/layer_2_features" \
   --allowed "B(cla:*,codex:*)" \
   process-handoff 2.01_manager_handoff_documents/incoming.json
 ```
@@ -1472,7 +1472,7 @@ claude-code \
 ```bash
 # Allow subprocess to call any binary
 claude-code \
-  --working-dir "/home/dawson/code/0_ai_context/0_context/layer_1_project" \
+  --working-dir "/home/dawson/code/0_layer_ai_context/0_context/layer_1_project" \
   --allowed "B(*)" \
   process-handoff 1.01_manager_handoff_documents/incoming.json
 ```
@@ -1481,7 +1481,7 @@ claude-code \
 ```bash
 # No subprocess binary execution allowed
 claude-code \
-  --working-dir "/home/dawson/code/0_ai_context/0_context/layer_3_components" \
+  --working-dir "/home/dawson/code/0_layer_ai_context/0_context/layer_3_components" \
   process-handoff 3.01_manager_handoff_documents/incoming.json
 ```
 
@@ -1496,7 +1496,7 @@ claude-code \
 # L1 manager script: layer_1_project/scripts/process_handoff.sh
 
 # Path to L1 layer
-L1_DIR="/home/dawson/code/0_ai_context/0_context/layer_1_project"
+L1_DIR="/home/dawson/code/0_layer_ai_context/0_context/layer_1_project"
 
 # Read incoming handoff
 HANDOFF_FILE="$L1_DIR/1.01_manager_handoff_documents/1.00_to_universal/incoming.json"
@@ -1512,7 +1512,7 @@ FEATURES=$(echo "$HANDOFF" | jq -r '.features[]')
 for FEATURE in $FEATURES; do
   echo "Spawning L2 manager for feature: $FEATURE"
 
-  L2_DIR="/home/dawson/code/0_ai_context/0_context/layer_2_features/$FEATURE"
+  L2_DIR="/home/dawson/code/0_layer_ai_context/0_context/layer_2_features/$FEATURE"
 
   # Create L2 handoff
   cat > "$L2_DIR/2.01_manager_handoff_documents/incoming.json" <<EOF
@@ -1559,7 +1559,7 @@ import subprocess
 import json
 from pathlib import Path
 
-BASE_DIR = Path("/home/dawson/code/0_ai_context/0_context")
+BASE_DIR = Path("/home/dawson/code/0_layer_ai_context/0_context")
 
 def spawn_l1_project_manager(project_name, task, constraints):
     """Spawn L1 manager for specific project."""
@@ -1631,7 +1631,7 @@ import json
 from pathlib import Path
 from concurrent.futures import ProcessPoolExecutor
 
-BASE_DIR = Path("/home/dawson/code/0_ai_context/0_context")
+BASE_DIR = Path("/home/dawson/code/0_layer_ai_context/0_context")
 L1_DIR = BASE_DIR / "layer_1_project"
 
 def spawn_l2_feature_manager(feature_name, task, constraints):
@@ -1710,7 +1710,7 @@ import json
 from pathlib import Path
 from concurrent.futures import ThreadPoolExecutor
 
-BASE_DIR = Path("/home/dawson/code/0_ai_context/0_context")
+BASE_DIR = Path("/home/dawson/code/0_layer_ai_context/0_context")
 
 def spawn_l3_component_worker(component_name, task, tool="codex"):
     """Spawn L3 worker for component implementation."""
@@ -1890,7 +1890,7 @@ STAGE=$2
 HANDOFF=$3
 TOOL=${4:-auto}  # auto, claude, codex, gemini
 
-BASE_DIR="/home/dawson/code/0_ai_context/0_context"
+BASE_DIR="/home/dawson/code/0_layer_ai_context/0_context"
 
 # Auto-select tool if not specified
 if [ "$TOOL" = "auto" ]; then
@@ -2051,7 +2051,7 @@ switch ($Tool) {
 ### macOS (bash/zsh)
 Same as WSL/Ubuntu with potential path adjustments:
 ```bash
-BASE_DIR="/Users/yourname/code/0_ai_context/0_context"
+BASE_DIR="/Users/yourname/code/0_layer_ai_context/0_context"
 ```
 
 ---
@@ -2060,14 +2060,14 @@ BASE_DIR="/Users/yourname/code/0_ai_context/0_context"
 
 **Within 0_ai_context**:
 - **Framework Orchestration**: `sub_layer_0.13_universal_protocols/framework_orchestration/0_instruction_docs/framework_orchestration_overview.md`
-- **Handoff Schema**: `/home/dawson/code/0_ai_context/0_context/layer_0_universal/0.01_manager_handoff_documents/0.00_to_universal/handoff_schema.md`
-- **OS Variants (Quartets)**: `/home/dawson/code/0_ai_context/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/os_and_quartets.md`
-- **Tool Context Systems**: `/home/dawson/code/0_ai_context/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/tools_and_context_systems.md`
+- **Handoff Schema**: `/home/dawson/code/0_layer_ai_context/0_context/layer_0_universal/0.01_manager_handoff_documents/0.00_to_universal/handoff_schema.md`
+- **OS Variants (Quartets)**: `/home/dawson/code/0_layer_ai_context/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/os_and_quartets.md`
+- **Tool Context Systems**: `/home/dawson/code/0_layer_ai_context/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/tools_and_context_systems.md`
 
 **Normative Specification**:
-- **CLI Recursion (Detailed)**: `/home/dawson/code/0_ai_context/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/cli_recursion_syntax.md`
-- **Architecture**: `/home/dawson/code/0_ai_context/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/architecture.md`
-- **Parallel Execution**: `/home/dawson/code/0_ai_context/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/parallel_execution.md`
+- **CLI Recursion (Detailed)**: `/home/dawson/code/0_layer_ai_context/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/cli_recursion_syntax.md`
+- **Architecture**: `/home/dawson/code/0_layer_ai_context/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/architecture.md`
+- **Parallel Execution**: `/home/dawson/code/0_layer_ai_context/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/parallel_execution.md`
 
 ---
 

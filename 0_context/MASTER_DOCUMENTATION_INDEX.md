@@ -60,7 +60,7 @@ This master index provides a comprehensive overview of all documentation organiz
 - ✅ `Parallelism and Concurrency/0_context` - Verified (identical to main)
 - ✅ `DS250-Course-Draft/0_context` - Project-specific only
 
-**Location**: All new files added to `/home/dawson/code/0_ai_context/0_context/`
+**Location**: All new files added to `/home/dawson/code/0_layer_ai_context/0_context/`
 
 **Purpose**: Consolidate universal, reusable documentation that applies to ANY project, making the 0_ai_context directory the single source of truth for universal AI agent protocols.
 
@@ -82,12 +82,12 @@ This comprehensive system defines how AI agents are organized, coordinated, and 
 
 ### **Core Documentation:**
 
-- **Quick Overview**: [`-1_research/-1.01_things_researched/ai_manager_hierarchy_system/overview/README.md`](code/0_ai_context/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/overview/README.md)
-- **System Summary**: [`-1_research/-1.01_things_researched/ai_manager_hierarchy_system/overview/IDEAL_AI_MANAGER_HIERARCHY_SYSTEM.md`](code/0_ai_context/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/overview/IDEAL_AI_MANAGER_HIERARCHY_SYSTEM.md)
+- **Quick Overview**: [`-1_research/-1.01_things_researched/ai_manager_hierarchy_system/overview/README.md`](code/0_layer_ai_context/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/overview/README.md)
+- **System Summary**: [`-1_research/-1.01_things_researched/ai_manager_hierarchy_system/overview/IDEAL_AI_MANAGER_HIERARCHY_SYSTEM.md`](code/0_layer_ai_context/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/overview/IDEAL_AI_MANAGER_HIERARCHY_SYSTEM.md)
 
 ### **Detailed Specifications:**
 
-All detailed documentation is located in: [`-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/`](code/0_ai_context/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/)
+All detailed documentation is located in: [`-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/`](code/0_layer_ai_context/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/)
 
 **Core Architecture:**
 - `summary/IDEAL_AI_MANAGER_HIERARCHY_SYSTEM.md` - Long-form specification

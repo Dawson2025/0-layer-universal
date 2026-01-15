@@ -15,7 +15,7 @@ This document defines security boundaries, permission models, and governance pol
 
 This document is a **derived implementation guide** from the canonical specification:
 
-- **Source**: `/home/dawson/code/0_ai_context/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/safety_and_governance.md`
+- **Source**: `/home/dawson/code/0_layer_ai_context/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/safety_and_governance.md`
 - **Status**: Normative (refer to source for authoritative details)
 
 ---

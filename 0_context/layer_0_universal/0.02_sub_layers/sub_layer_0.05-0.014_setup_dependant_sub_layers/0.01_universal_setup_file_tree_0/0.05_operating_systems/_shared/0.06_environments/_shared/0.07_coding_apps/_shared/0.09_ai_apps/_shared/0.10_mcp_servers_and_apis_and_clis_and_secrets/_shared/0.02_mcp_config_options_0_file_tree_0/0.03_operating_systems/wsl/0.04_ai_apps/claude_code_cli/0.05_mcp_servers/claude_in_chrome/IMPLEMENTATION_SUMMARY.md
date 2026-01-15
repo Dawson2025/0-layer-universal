@@ -315,10 +315,10 @@ These are fully documented in QUICK_SETUP.md and BATCH_BRIDGE_SETUP.md.
 ## Resources
 
 ### Created Documentation
-- `/home/dawson/dawson-workspace/code/0_ai_context/.../claude_in_chrome/README.md`
-- `/home/dawson/dawson-workspace/code/0_ai_context/.../claude_in_chrome/QUICK_SETUP.md`
-- `/home/dawson/dawson-workspace/code/0_ai_context/.../claude_in_chrome/BATCH_BRIDGE_SETUP.md`
-- `/home/dawson/dawson-workspace/code/0_ai_context/.../claude_in_chrome/IMPLEMENTATION_SUMMARY.md`
+- `/home/dawson/dawson-workspace/code/0_layer_ai_context/.../claude_in_chrome/README.md`
+- `/home/dawson/dawson-workspace/code/0_layer_ai_context/.../claude_in_chrome/QUICK_SETUP.md`
+- `/home/dawson/dawson-workspace/code/0_layer_ai_context/.../claude_in_chrome/BATCH_BRIDGE_SETUP.md`
+- `/home/dawson/dawson-workspace/code/0_layer_ai_context/.../claude_in_chrome/IMPLEMENTATION_SUMMARY.md`
 
 ### Created Scripts
 - `/home/dawson/bin/claude-chrome-host.sh` (WSL wrapper)

@@ -204,7 +204,7 @@ git push
 - **Public repo** (`pac20026_fall2025/`) contains ONLY student work - no AI evidence
 - **Private repo** (`0_context/`) contains all AI documentation - never public
 - Both repos are backed up to GitHub
-- Universal AI context is at `/home/dawson/code/0_ai_context/` (separate private repo)
+- Universal AI context is at `/home/dawson/code/0_layer_ai_context/` (separate private repo)
 
 ---
 
@@ -287,7 +287,7 @@ git push
 - **Public repo** (`pac20026_fall2025/`) contains ONLY student work - no AI evidence
 - **Private repo** (`0_context/`) contains all AI documentation - never public
 - Both repos are backed up to GitHub
-- Universal AI context is at `/home/dawson/code/0_ai_context/` (separate private repo)
+- Universal AI context is at `/home/dawson/code/0_layer_ai_context/` (separate private repo)
 
 ---
 
@@ -371,7 +371,7 @@ git push
 - **Private repo** (`0_context/`) contains all AI documentation - never public
 - **Git worktree setup**: `pac20026_fall2025-gh/` is a git worktree containing the gh-pages branch for GitHub Pages
 - Both repos are backed up to GitHub
-- Universal AI context is at `/home/dawson/code/0_ai_context/` (separate private repo)
+- Universal AI context is at `/home/dawson/code/0_layer_ai_context/` (separate private repo)
 
 ---
 

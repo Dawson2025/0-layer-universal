@@ -63,7 +63,7 @@ sub_layer_0.12_universal_tools/
 
 Universal tools integrate with the **OS Variant and Quartet Pattern** defined in the Ideal AI Manager Hierarchy System:
 
-- **Normative Specification**: `/home/dawson/dawson-workspace/code/0_ai_context/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/os_and_quartets.md`
+- **Normative Specification**: `/home/dawson/dawson-workspace/code/0_layer_ai_context/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/os_and_quartets.md`
 
 ### Quartet Pattern Overview
 

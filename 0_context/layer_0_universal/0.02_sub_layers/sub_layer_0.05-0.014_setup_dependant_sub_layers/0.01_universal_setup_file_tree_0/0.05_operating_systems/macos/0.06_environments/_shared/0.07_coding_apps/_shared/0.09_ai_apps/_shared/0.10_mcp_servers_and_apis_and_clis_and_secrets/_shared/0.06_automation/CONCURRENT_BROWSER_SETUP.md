@@ -41,7 +41,7 @@ macos_cursor         ~/.config/mcp/playwright.macos_cursor.json ~/.cache/ms-play
 
 ```bash
 # Navigate to the automation scripts directory
-cd /home/dawson/dawson-workspace/code/0_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.10_mcp_servers_and_tools_setup/0.06_automation/scripts
+cd /home/dawson/dawson-workspace/code/0_layer_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.10_mcp_servers_and_tools_setup/0.06_automation/scripts
 
 # 1. Set up OS-specific concurrent browser configs (auto-detects OS)
 python3 mcp_concurrent_browser.py setup
@@ -390,9 +390,9 @@ python3 mcp_concurrent_browser.py setup --tools newtool
 
 ## Related Documentation
 
-- Codex Playwright MCP: `/home/dawson/dawson-workspace/code/0_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.10_mcp_servers_and_tools_setup/0.02_mcp_config_options_0_file_tree_0/0.03_operating_systems/wsl/0.04_ai_apps/codex_cli/0.05_mcp_servers/playwright-mcp/README.md`
-- Claude Code Playwright MCP: `/home/dawson/dawson-workspace/code/0_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.10_mcp_servers_and_tools_setup/0.02_mcp_config_options_0_file_tree_0/0.03_operating_systems/wsl/0.04_ai_apps/claude_code_cli/0.05_mcp_servers/playwright-mcp/README.md`
-- MCP Server Automation: `/home/dawson/dawson-workspace/code/0_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.10_mcp_servers_and_tools_setup/0.06_automation/README.md`
+- Codex Playwright MCP: `/home/dawson/dawson-workspace/code/0_layer_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.10_mcp_servers_and_tools_setup/0.02_mcp_config_options_0_file_tree_0/0.03_operating_systems/wsl/0.04_ai_apps/codex_cli/0.05_mcp_servers/playwright-mcp/README.md`
+- Claude Code Playwright MCP: `/home/dawson/dawson-workspace/code/0_layer_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.10_mcp_servers_and_tools_setup/0.02_mcp_config_options_0_file_tree_0/0.03_operating_systems/wsl/0.04_ai_apps/claude_code_cli/0.05_mcp_servers/playwright-mcp/README.md`
+- MCP Server Automation: `/home/dawson/dawson-workspace/code/0_layer_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.10_mcp_servers_and_tools_setup/0.06_automation/README.md`
 
 ---
 

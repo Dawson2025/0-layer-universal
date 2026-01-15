@@ -239,7 +239,7 @@ layer_2_feature_blog/
 1. **Copy template:**
 ```bash
 cd your_project/0_context/0_context/layer_2_features/
-cp -r "../../../../0_ai_context/0_context/0.01_layer_stage_framework/2_feature_template" \
+cp -r "../../../../0_layer_ai_context/0_context/0.01_layer_stage_framework/2_feature_template" \
   "layer_2_feature_<your_topic>"
 ```
 
@@ -257,7 +257,7 @@ cp -r "../../../../0_ai_context/0_context/0.01_layer_stage_framework/2_feature_t
 1. **Run script:**
 ```bash
 cd your_project/0_context/0_context/layer_2_features/
-bash "../../../../0_ai_context/0_context/0.01_layer_stage_framework/scripts/create_workflow_feature.sh" 2 <name>
+bash "../../../../0_layer_ai_context/0_context/0.01_layer_stage_framework/scripts/create_workflow_feature.sh" 2 <name>
 ```
 
 2. **Develop workflow:**

@@ -11,10 +11,10 @@
 ### Updated Files (Phases 1-2)
 | File | Location | Size | Purpose |
 |------|----------|------|---------|
-| MASTER_DOCUMENTATION_INDEX.md | `/code/0_ai_context/0_context/` | 25KB | Added AI Manager Hierarchy section (lines 77-101) |
-| SYSTEM_OVERVIEW.md | `/code/0_ai_context/0_context/` | 5.5KB | Added Agent OS Architecture section (lines 8-44) |
-| USAGE_GUIDE.md | `/code/0_ai_context/0_context/` | 13KB | Added "Working with AI Manager Hierarchy" (lines 12-111) |
-| 0.01_layer_stage_framework/README.md | `/code/0_ai_context/0_context/0.01_layer_stage_framework/` | ~15KB | Line 5: Explicit hierarchy implementation statement |
+| MASTER_DOCUMENTATION_INDEX.md | `/code/0_layer_ai_context/0_context/` | 25KB | Added AI Manager Hierarchy section (lines 77-101) |
+| SYSTEM_OVERVIEW.md | `/code/0_layer_ai_context/0_context/` | 5.5KB | Added Agent OS Architecture section (lines 8-44) |
+| USAGE_GUIDE.md | `/code/0_layer_ai_context/0_context/` | 13KB | Added "Working with AI Manager Hierarchy" (lines 12-111) |
+| 0.01_layer_stage_framework/README.md | `/code/0_layer_ai_context/0_context/0.01_layer_stage_framework/` | ~15KB | Line 5: Explicit hierarchy implementation statement |
 
 ---
 
@@ -252,24 +252,24 @@ layer_3_components/3.99_stages/stage_3.01_instructions/ai_agent_system/os/
 ### By Function
 
 **For Navigation**:
-- `/code/0_ai_context/0_context/MASTER_DOCUMENTATION_INDEX.md`
-- `/code/0_ai_context/0_context/SYSTEM_OVERVIEW.md`
-- `/code/0_ai_context/0_context/USAGE_GUIDE.md`
+- `/code/0_layer_ai_context/0_context/MASTER_DOCUMENTATION_INDEX.md`
+- `/code/0_layer_ai_context/0_context/SYSTEM_OVERVIEW.md`
+- `/code/0_layer_ai_context/0_context/USAGE_GUIDE.md`
 
 **For OS Context**:
-- `/code/0_ai_context/0_context/layer_*/stage_*.01_instructions/ai_agent_system/os/{wsl,linux_ubuntu}/`
+- `/code/0_layer_ai_context/0_context/layer_*/stage_*.01_instructions/ai_agent_system/os/{wsl,linux_ubuntu}/`
 
 **For Protocols**:
-- `/code/0_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.13_universal_protocols/`
+- `/code/0_layer_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.13_universal_protocols/`
 
 **For Rules**:
-- `/code/0_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.04_universal_rules/`
+- `/code/0_layer_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.04_universal_rules/`
 
 **For Adoption**:
-- `/code/0_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.01_basic_prompts_throughout/`
+- `/code/0_layer_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.01_basic_prompts_throughout/`
 
 **For Implementation History**:
-- `/code/0_ai_context/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/implementation/`
+- `/code/0_layer_ai_context/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/implementation/`
 
 ---
 

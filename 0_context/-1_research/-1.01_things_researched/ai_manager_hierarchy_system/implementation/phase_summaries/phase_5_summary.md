@@ -17,7 +17,7 @@ Phase 5 has been successfully completed. Framework orchestration guidance and CL
 ## Deliverables Created
 
 ### 1. Framework Orchestration Overview
-**Location**: `/home/dawson/code/0_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.13_universal_protocols/framework_orchestration/0_instruction_docs/framework_orchestration_overview.md`
+**Location**: `/home/dawson/code/0_layer_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.13_universal_protocols/framework_orchestration/0_instruction_docs/framework_orchestration_overview.md`
 
 **Purpose**: Guidance on integrating multi-agent orchestration frameworks (LangGraph, AutoGen, CrewAI, MetaGPT) with the AI Manager Hierarchy System.
 
@@ -41,7 +41,7 @@ Phase 5 has been successfully completed. Framework orchestration guidance and CL
 - **Scope**: OS: universal; Tools: universal
 
 ### 2. CLI Recursion Syntax Document
-**Location**: `/home/dawson/code/0_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.13_universal_protocols/cli_recursion/0_instruction_docs/cli_recursion_syntax.md`
+**Location**: `/home/dawson/code/0_layer_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.13_universal_protocols/cli_recursion/0_instruction_docs/cli_recursion_syntax.md`
 
 **Purpose**: Concrete CLI recursion patterns for creating deep agent hierarchies where managers spawn workers via CLI commands.
 
@@ -79,7 +79,7 @@ Phase 5 has been successfully completed. Framework orchestration guidance and CL
 - PowerShell and macOS variants provided for cross-platform reference
 
 ### 3. Updated Universal Protocols README
-**Location**: `/home/dawson/code/0_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.13_universal_protocols/README.md`
+**Location**: `/home/dawson/code/0_layer_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.13_universal_protocols/README.md`
 
 **Changes**:
 - Added Section 6: Framework Orchestration
@@ -87,7 +87,7 @@ Phase 5 has been successfully completed. Framework orchestration guidance and CL
 - Both sections include brief descriptions and links to full documentation
 
 ### 4. Updated Universal Tools README
-**Location**: `/home/dawson/code/0_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.12_universal_tools/README.md`
+**Location**: `/home/dawson/code/0_layer_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.12_universal_tools/README.md`
 
 **Changes**:
 - Added "AI Manager Hierarchy Integration" section
@@ -167,10 +167,10 @@ layer_0_universal/0.02_sub_layers/sub_layer_0.13_universal_protocols/
 
 ## Files Modified
 
-1. `/home/dawson/code/0_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.13_universal_protocols/README.md`
+1. `/home/dawson/code/0_layer_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.13_universal_protocols/README.md`
    - Added sections 6 and 7 for new protocols
 
-2. `/home/dawson/code/0_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.12_universal_tools/README.md`
+2. `/home/dawson/code/0_layer_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.12_universal_tools/README.md`
    - Added "AI Manager Hierarchy Integration" section with cross-links
 
 ---
@@ -192,7 +192,7 @@ layer_0_universal/0.02_sub_layers/sub_layer_0.13_universal_protocols/
 - Links are absolute paths for agent discoverability
 
 ✅ **Examples are concrete and applicable to the current environment**
-- CLI recursion examples use `/home/dawson/code/0_ai_context/0_context/` paths
+- CLI recursion examples use `/home/dawson/code/0_layer_ai_context/0_context/` paths
 - Shell scripts use bash (WSL/Ubuntu)
 - Tool commands match current setup (claude-code, codex, gemini)
 
@@ -276,17 +276,17 @@ See: `/home/dawson/.cursor/plans/integration_progress_assessment_2025-12-24.md` 
 ## Related Documentation
 
 **Created in This Phase**:
-1. Framework Orchestration Overview: `/home/dawson/code/0_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.13_universal_protocols/framework_orchestration/0_instruction_docs/framework_orchestration_overview.md`
-2. CLI Recursion Syntax: `/home/dawson/code/0_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.13_universal_protocols/cli_recursion/0_instruction_docs/cli_recursion_syntax.md`
+1. Framework Orchestration Overview: `/home/dawson/code/0_layer_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.13_universal_protocols/framework_orchestration/0_instruction_docs/framework_orchestration_overview.md`
+2. CLI Recursion Syntax: `/home/dawson/code/0_layer_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.13_universal_protocols/cli_recursion/0_instruction_docs/cli_recursion_syntax.md`
 
 **Modified in This Phase**:
-1. Universal Protocols README: `/home/dawson/code/0_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.13_universal_protocols/README.md`
-2. Universal Tools README: `/home/dawson/code/0_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.12_universal_tools/README.md`
+1. Universal Protocols README: `/home/dawson/code/0_layer_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.13_universal_protocols/README.md`
+2. Universal Tools README: `/home/dawson/code/0_layer_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.12_universal_tools/README.md`
 
 **Normative Specifications Referenced**:
-1. Framework Orchestration: `/home/dawson/code/0_ai_context/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/framework_orchestration.md`
-2. CLI Recursion: `/home/dawson/code/0_ai_context/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/cli_recursion_syntax.md`
-3. Architecture: `/home/dawson/code/0_ai_context/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/architecture.md`
+1. Framework Orchestration: `/home/dawson/code/0_layer_ai_context/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/framework_orchestration.md`
+2. CLI Recursion: `/home/dawson/code/0_layer_ai_context/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/cli_recursion_syntax.md`
+3. Architecture: `/home/dawson/code/0_layer_ai_context/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/architecture.md`
 
 **Integration Plan**:
 - Plan File: `/home/dawson/.cursor/plans/integrate_ideal_ai_manager_hierarchy_system_into_0aicontext_8473a05b.plan.md`

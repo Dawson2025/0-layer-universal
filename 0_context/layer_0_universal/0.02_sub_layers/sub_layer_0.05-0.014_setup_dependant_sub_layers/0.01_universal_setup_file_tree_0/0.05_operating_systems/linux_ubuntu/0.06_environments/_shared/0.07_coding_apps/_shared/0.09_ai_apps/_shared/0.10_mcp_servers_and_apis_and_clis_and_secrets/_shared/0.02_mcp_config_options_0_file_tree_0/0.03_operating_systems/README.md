@@ -14,7 +14,7 @@ Use this when a setup is sensitive to OS/display/runtime differences (e.g., WSLg
 
 This OS-specific MCP structure follows the broader **OS Variant Pattern** defined in the Ideal AI Manager Hierarchy System:
 
-- **Normative Specification**: `/home/dawson/dawson-workspace/code/0_ai_context/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/os_and_quartets.md`
+- **Normative Specification**: `/home/dawson/dawson-workspace/code/0_layer_ai_context/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/os_and_quartets.md`
 
 ### How MCP OS Structure Maps to the Ideal Spec
 
@@ -77,7 +77,7 @@ Use this when a setup is sensitive to OS/display/runtime differences (e.g., WSLg
 
 This OS-specific MCP structure follows the broader **OS Variant Pattern** defined in the Ideal AI Manager Hierarchy System:
 
-- **Normative Specification**: `/home/dawson/code/0_ai_context/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/os_and_quartets.md`
+- **Normative Specification**: `/home/dawson/code/0_layer_ai_context/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/os_and_quartets.md`
 
 ### How MCP OS Structure Maps to the Ideal Spec
 

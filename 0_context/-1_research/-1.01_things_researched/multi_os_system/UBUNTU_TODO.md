@@ -56,7 +56,7 @@ After successful verification, update these files:
 ### 5️⃣ Fifth: Commit and Push
 
 ```bash
-cd /home/dawson/dawson-workspace/code/0_ai_context
+cd /home/dawson/dawson-workspace/code/0_layer_ai_context
 git add 0_context/-1_research/-1.01_things_researched/multi_os_system/
 git commit -m "Verify Ubuntu three-way sync completion
 

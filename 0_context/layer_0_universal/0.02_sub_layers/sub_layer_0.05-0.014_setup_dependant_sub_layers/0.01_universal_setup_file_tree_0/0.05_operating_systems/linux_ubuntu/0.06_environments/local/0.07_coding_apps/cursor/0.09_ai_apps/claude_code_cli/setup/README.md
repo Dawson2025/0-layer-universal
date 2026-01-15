@@ -266,7 +266,7 @@ git status
 
 **To reference this sub-layer from other locations:**
 - From universal context root: `layer_0_universal/0.02_sub_layers/sub_layer_0.09_ai_apps_tools_setup/`
-- From project context: `../../0_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.09_ai_apps_tools_setup/`
+- From project context: `../../0_layer_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.09_ai_apps_tools_setup/`
 
 ---
 

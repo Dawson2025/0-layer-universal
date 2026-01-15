@@ -2,7 +2,7 @@
 
 This repository uses two orthogonal systems to manage AI context and workflows. Numbering is zero-padded (two digits after the decimal) for lexicographic stability (e.g., 1.01, 1.10, 1.12).
 
-**This framework implements the [Ideal AI Manager Hierarchy System](../code/0_ai_context/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/overview/IDEAL_AI_MANAGER_HIERARCHY_SYSTEM.md), the canonical Agent OS architecture for all AI work in this repository.**
+**This framework implements the [Ideal AI Manager Hierarchy System](../code/0_layer_ai_context/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/overview/IDEAL_AI_MANAGER_HIERARCHY_SYSTEM.md), the canonical Agent OS architecture for all AI work in this repository.**
 
 - **Layer System (specificity)**: from universal -> project -> feature -> component -> sub-component (optional). Lower numbers are more universal and are prerequisites for higher numbers. Each layer uses the **layer grouping pattern**: entity internals live in `layer_N/` (containing `layer_N_00_ai_manager_system/`, `layer_N_01_manager_handoff_documents/`, `layer_N_02_sub_layers/`, `layer_N_99_stages/`), while nested content lives in `layer_N+1/` as a sibling folder.
   - **L0 (Universal)**: Global rules, tools, and standards that apply everywhere (e.g., TypeScript by default, security-first practices, testing expectations)

@@ -12,7 +12,7 @@
 This document provides guidance on integrating multi-agent orchestration frameworks (LangGraph, AutoGen, CrewAI, MetaGPT) with the AI Manager Hierarchy System. It explains when to use framework-based orchestration versus simple handoff-based coordination, and how to maintain compatibility with the hierarchy's handoff protocol.
 
 For detailed integration patterns, examples, and framework-specific guidance, see the normative specification:
-- **Normative Spec**: `/home/dawson/dawson-workspace/code/0_ai_context/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/framework_orchestration.md`
+- **Normative Spec**: `/home/dawson/dawson-workspace/code/0_layer_ai_context/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/framework_orchestration.md`
 
 ---
 
@@ -341,17 +341,17 @@ If starting from scratch or migrating existing workflows:
 ## Related Documentation
 
 **Within 0_ai_context**:
-- **AI Framework Docs**: `/home/dawson/dawson-workspace/code/0_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.12_universal_tools/trickle_down_0.75_universal_tools/0_instruction_docs/ai-development-frameworks/`
+- **AI Framework Docs**: `/home/dawson/dawson-workspace/code/0_layer_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.12_universal_tools/trickle_down_0.75_universal_tools/0_instruction_docs/ai-development-frameworks/`
   - `framework-comparison.md` - Comparison of Spec Kit, BMAD Method, and other frameworks
   - `integration-guide.md` - Integration with existing tools
   - `tool-selection-guide.md` - Decision framework for tool selection
 - **CLI Recursion**: `sub_layer_0.13_universal_protocols/cli_recursion/0_instruction_docs/cli_recursion_syntax.md`
-- **Handoff Schema**: `/home/dawson/dawson-workspace/code/0_ai_context/0_context/layer_0_universal/0.01_manager_handoff_documents/0.00_to_universal/handoff_schema.md`
+- **Handoff Schema**: `/home/dawson/dawson-workspace/code/0_layer_ai_context/0_context/layer_0_universal/0.01_manager_handoff_documents/0.00_to_universal/handoff_schema.md`
 
 **Normative Specification**:
-- **Framework Orchestration (Detailed)**: `/home/dawson/dawson-workspace/code/0_ai_context/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/framework_orchestration.md`
-- **Architecture**: `/home/dawson/dawson-workspace/code/0_ai_context/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/architecture.md`
-- **Supervisor Patterns**: `/home/dawson/dawson-workspace/code/0_ai_context/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/supervisor_patterns.md`
+- **Framework Orchestration (Detailed)**: `/home/dawson/dawson-workspace/code/0_layer_ai_context/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/framework_orchestration.md`
+- **Architecture**: `/home/dawson/dawson-workspace/code/0_layer_ai_context/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/architecture.md`
+- **Supervisor Patterns**: `/home/dawson/dawson-workspace/code/0_layer_ai_context/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/supervisor_patterns.md`
 
 ---
 
@@ -384,7 +384,7 @@ The handoff protocol ensures you can swap frameworks or remove them entirely wit
 This document provides guidance on integrating multi-agent orchestration frameworks (LangGraph, AutoGen, CrewAI, MetaGPT) with the AI Manager Hierarchy System. It explains when to use framework-based orchestration versus simple handoff-based coordination, and how to maintain compatibility with the hierarchy's handoff protocol.
 
 For detailed integration patterns, examples, and framework-specific guidance, see the normative specification:
-- **Normative Spec**: `/home/dawson/code/0_ai_context/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/framework_orchestration.md`
+- **Normative Spec**: `/home/dawson/code/0_layer_ai_context/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/framework_orchestration.md`
 
 ---
 
@@ -713,17 +713,17 @@ If starting from scratch or migrating existing workflows:
 ## Related Documentation
 
 **Within 0_ai_context**:
-- **AI Framework Docs**: `/home/dawson/code/0_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.12_universal_tools/trickle_down_0.75_universal_tools/0_instruction_docs/ai-development-frameworks/`
+- **AI Framework Docs**: `/home/dawson/code/0_layer_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.12_universal_tools/trickle_down_0.75_universal_tools/0_instruction_docs/ai-development-frameworks/`
   - `framework-comparison.md` - Comparison of Spec Kit, BMAD Method, and other frameworks
   - `integration-guide.md` - Integration with existing tools
   - `tool-selection-guide.md` - Decision framework for tool selection
 - **CLI Recursion**: `sub_layer_0.13_universal_protocols/cli_recursion/0_instruction_docs/cli_recursion_syntax.md`
-- **Handoff Schema**: `/home/dawson/code/0_ai_context/0_context/layer_0_universal/0.01_manager_handoff_documents/0.00_to_universal/handoff_schema.md`
+- **Handoff Schema**: `/home/dawson/code/0_layer_ai_context/0_context/layer_0_universal/0.01_manager_handoff_documents/0.00_to_universal/handoff_schema.md`
 
 **Normative Specification**:
-- **Framework Orchestration (Detailed)**: `/home/dawson/code/0_ai_context/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/framework_orchestration.md`
-- **Architecture**: `/home/dawson/code/0_ai_context/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/architecture.md`
-- **Supervisor Patterns**: `/home/dawson/code/0_ai_context/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/supervisor_patterns.md`
+- **Framework Orchestration (Detailed)**: `/home/dawson/code/0_layer_ai_context/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/framework_orchestration.md`
+- **Architecture**: `/home/dawson/code/0_layer_ai_context/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/architecture.md`
+- **Supervisor Patterns**: `/home/dawson/code/0_layer_ai_context/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/supervisor_patterns.md`
 
 ---
 
@@ -743,7 +743,7 @@ The handoff protocol ensures you can swap frameworks or remove them entirely wit
 
 ## Legacy Source
 
-Source: `/home/dawson/dawson-workspace/code/0_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.13_universal_protocols/framework_orchestration/0_instruction_docs/framework_orchestration_overview.md`
+Source: `/home/dawson/dawson-workspace/code/0_layer_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.13_universal_protocols/framework_orchestration/0_instruction_docs/framework_orchestration_overview.md`
 
 # Framework Orchestration Overview
 
@@ -759,7 +759,7 @@ Source: `/home/dawson/dawson-workspace/code/0_ai_context/0_context/layer_0_unive
 This document provides guidance on integrating multi-agent orchestration frameworks (LangGraph, AutoGen, CrewAI, MetaGPT) with the AI Manager Hierarchy System. It explains when to use framework-based orchestration versus simple handoff-based coordination, and how to maintain compatibility with the hierarchy's handoff protocol.
 
 For detailed integration patterns, examples, and framework-specific guidance, see the normative specification:
-- **Normative Spec**: `/home/dawson/code/0_ai_context/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/framework_orchestration.md`
+- **Normative Spec**: `/home/dawson/code/0_layer_ai_context/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/framework_orchestration.md`
 
 ---
 
@@ -1088,17 +1088,17 @@ If starting from scratch or migrating existing workflows:
 ## Related Documentation
 
 **Within 0_ai_context**:
-- **AI Framework Docs**: `/home/dawson/code/0_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.12_universal_tools/trickle_down_0.75_universal_tools/0_instruction_docs/ai-development-frameworks/`
+- **AI Framework Docs**: `/home/dawson/code/0_layer_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.12_universal_tools/trickle_down_0.75_universal_tools/0_instruction_docs/ai-development-frameworks/`
   - `framework-comparison.md` - Comparison of Spec Kit, BMAD Method, and other frameworks
   - `integration-guide.md` - Integration with existing tools
   - `tool-selection-guide.md` - Decision framework for tool selection
 - **CLI Recursion**: `sub_layer_0.13_universal_protocols/cli_recursion/0_instruction_docs/cli_recursion_syntax.md`
-- **Handoff Schema**: `/home/dawson/code/0_ai_context/0_context/layer_0_universal/0.01_manager_handoff_documents/0.00_to_universal/handoff_schema.md`
+- **Handoff Schema**: `/home/dawson/code/0_layer_ai_context/0_context/layer_0_universal/0.01_manager_handoff_documents/0.00_to_universal/handoff_schema.md`
 
 **Normative Specification**:
-- **Framework Orchestration (Detailed)**: `/home/dawson/code/0_ai_context/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/framework_orchestration.md`
-- **Architecture**: `/home/dawson/code/0_ai_context/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/architecture.md`
-- **Supervisor Patterns**: `/home/dawson/code/0_ai_context/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/supervisor_patterns.md`
+- **Framework Orchestration (Detailed)**: `/home/dawson/code/0_layer_ai_context/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/framework_orchestration.md`
+- **Architecture**: `/home/dawson/code/0_layer_ai_context/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/architecture.md`
+- **Supervisor Patterns**: `/home/dawson/code/0_layer_ai_context/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/supervisor_patterns.md`
 
 ---
 

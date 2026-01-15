@@ -29,7 +29,7 @@ Navigate to `0.06_environments/` to continue down the setup hierarchy.
 
 ## Legacy Source
 
-Source: `/home/dawson/dawson-workspace/code/0_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.05_os_setup/README.md`
+Source: `/home/dawson/dawson-workspace/code/0_layer_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.05_os_setup/README.md`
 
 # Sub Layer 0.05: OS Setup
 

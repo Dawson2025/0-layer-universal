@@ -227,7 +227,7 @@ layer_N/stage_N.01_instructions/ai_agent_system/os/
 3. **Understand Current State**: All documentation is in place, ready for pilot adoption
 
 ### Short-term (2-3 Weeks) - Rollout Phase 4
-4. **Select Pilot Project**: Recommended `/home/dawson/code/1_school/web-app`
+4. **Select Pilot Project**: Recommended `/home/dawson/code/1_layer_school/web-app`
 5. **Follow Adoption Checklist**: `HIERARCHY_ADOPTION_CHECKLIST.md`
 6. **Create First Handoffs**: Implement real handoff documents
 7. **Measure Success**: Track against defined criteria

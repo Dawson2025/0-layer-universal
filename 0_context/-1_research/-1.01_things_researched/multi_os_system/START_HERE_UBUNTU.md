@@ -9,7 +9,7 @@ This file contains the final steps to complete the multi-OS workspace sync from 
 Want a fast automated check? Run this script:
 
 ```bash
-cd /home/dawson/dawson-workspace/code/0_ai_context/0_context/-1_research/-1.01_things_researched/multi_os_system
+cd /home/dawson/dawson-workspace/code/0_layer_ai_context/0_context/-1_research/-1.01_things_researched/multi_os_system
 ./ubuntu-quick-check.sh
 ```
 
@@ -315,7 +315,7 @@ You'll know everything is working when:
 ## What to Do After Completion
 
 1. **Update documentation** (see "Documentation to Update" section above)
-2. **Commit and push changes** to the `0_ai_context` submodule
+2. **Commit and push changes** to the `0_layer_ai_context` submodule
 3. **Delete temporary setup files** if desired:
    - `WSL_SETUP_REQUIRED.md`
    - `syncthing-status.html`

@@ -16,7 +16,7 @@ whoami  # Expected: dawson
 
 \\ash
 # Navigate to your code directory (if it exists, otherwise skip)
-cd ~/code/0_ai_context/0_context/-1_research/-1.01_things_researched/multi_os_system 2>/dev/null || echo 'Will create workspace first'
+cd ~/code/0_layer_ai_context/0_context/-1_research/-1.01_things_researched/multi_os_system 2>/dev/null || echo 'Will create workspace first'
 
 # If the directory exists, pull latest
 git pull 2>/dev/null || echo 'Will set up via Syncthing instead'
@@ -168,7 +168,7 @@ echo 'Final Ubuntu verification - 12/31/2025 07:45:32' > ~/dawson-workspace/ubun
 
 \\ash
 # Mark Ubuntu setup as complete in the status document
-cd ~/dawson-workspace/code/0_ai_context/0_context/-1_research/-1.01_things_researched/multi_os_system
+cd ~/dawson-workspace/code/0_layer_ai_context/0_context/-1_research/-1.01_things_researched/multi_os_system
 
 # Edit PLAN_AND_IMPLEMENTATION.md to add Ubuntu completion status
 # Then commit and push

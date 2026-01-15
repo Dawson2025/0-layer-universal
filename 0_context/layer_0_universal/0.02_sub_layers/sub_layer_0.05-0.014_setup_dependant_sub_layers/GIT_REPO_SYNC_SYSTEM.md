@@ -103,7 +103,7 @@ Automation script that:
 
 ### 4. `.git-repo.json` (Per Repository)
 
-Located in each git repo directory, e.g.: `~/dawson-workspace/code/0_ai_context/.git-repo.json`
+Located in each git repo directory, e.g.: `~/dawson-workspace/code/0_layer_ai_context/.git-repo.json`
 
 Documents the individual repository for manual setup or reference:
 
@@ -150,7 +150,7 @@ Documents the individual repository for manual setup or reference:
    ```
 3. **Pull latest commits** (if any were made on other OS):
    ```bash
-   cd ~/dawson-workspace/code/0_ai_context
+   cd ~/dawson-workspace/code/0_layer_ai_context
    git pull
    ```
 

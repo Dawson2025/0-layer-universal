@@ -52,7 +52,7 @@ git config --global credential.useHttpPath true
 
 **Complete Setup Guide**: 
 ```
-/home/dawson/code/0_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.06_environment_setup/trickle_down_0.5_setup/0_instruction_docs/github/github_sso_token_setup.md
+/home/dawson/code/0_layer_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.06_environment_setup/trickle_down_0.5_setup/0_instruction_docs/github/github_sso_token_setup.md
 ```
 
 Contains:

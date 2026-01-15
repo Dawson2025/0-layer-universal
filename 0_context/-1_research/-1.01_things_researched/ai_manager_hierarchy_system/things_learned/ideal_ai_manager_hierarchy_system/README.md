@@ -60,7 +60,7 @@ For an **AI agent**:
 
 This directory is part of:
 
-- `code/0_ai_context/0_context/-1_research/things_learned/`
+- `code/0_layer_ai_context/0_context/-1_research/things_learned/`
 
 and is meant to capture **what you’ve learned** about:
 

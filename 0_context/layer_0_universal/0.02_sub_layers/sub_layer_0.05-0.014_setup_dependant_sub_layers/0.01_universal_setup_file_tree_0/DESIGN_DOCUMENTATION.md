@@ -295,7 +295,7 @@ mkdir -p 0.05_operating_systems/_shared/0.06_environments/{development,productio
 **Action**: Committed all changes to git repository
 
 ```bash
-cd /home/dawson/dawson-workspace/code/0_ai_context
+cd /home/dawson/dawson-workspace/code/0_layer_ai_context
 git add -A
 git commit -m "feat: Create universal setup file tree structure..."
 ```

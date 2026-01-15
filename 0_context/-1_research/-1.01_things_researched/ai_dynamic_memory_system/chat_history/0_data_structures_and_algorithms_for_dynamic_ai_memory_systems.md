@@ -637,7 +637,7 @@ This is your map of the entire universal documentation system.
 
 **How to find it:**
 
-1. Your universal context is at `<parent>/0_ai_context/0_context/`
+1. Your universal context is at `<parent>/0_layer_ai_context/0_context/`
 2. Project contexts are siblings: `<parent>/<project_name>/0_context/`
 3. Look for: `<parent>/<project_name>/0_context/0_context/0_basic_prompts_throughout/project_init_prompt.md`
 
@@ -646,7 +646,7 @@ This is your map of the entire universal documentation system.
 ```bash
 # From universal context root, list all potential project repos:
 cd ../../  # Go to parent directory
-ls -d */0_context/0_context/0_basic_prompts_throughout/project_init_prompt.md 2>/dev/null | grep -v "0_ai_context"
+ls -d */0_context/0_context/0_basic_prompts_throughout/project_init_prompt.md 2>/dev/null | grep -v "0_layer_ai_context"
 ```
 
 **If project init prompt EXISTS:** Read and follow it immediately.
@@ -805,7 +805,7 @@ cd ../../<project_name>/0_context/0_context/
 
 ```bash
 # If you know this file's location:
-cd "$(dirname "$(find ~ -name universal_init_prompt.md -path "*/0_ai_context/*" | head -1)")"
+cd "$(dirname "$(find ~ -name universal_init_prompt.md -path "*/0_layer_ai_context/*" | head -1)")"
 cd ../..  # Now at <universal_context_root>/0_context/
 ```
 
@@ -815,7 +815,7 @@ cd ../..  # Now at <universal_context_root>/0_context/
 ```bash
 # From <universal_context_root>/0_context/:
 cd ../../
-find . -maxdepth 2 -type d -name "0_context" | grep -v "0_ai_context"
+find . -maxdepth 2 -type d -name "0_context" | grep -v "0_layer_ai_context"
 ```
 
 
@@ -824,7 +824,7 @@ find . -maxdepth 2 -type d -name "0_context" | grep -v "0_ai_context"
 ```bash
 # From parent directory:
 find . -path "*/0_context/0_context/0_basic_prompts_throughout/project_init_prompt.md" \
-  | grep -v "0_ai_context"
+  | grep -v "0_layer_ai_context"
 ```
 
 
@@ -840,11 +840,11 @@ If generating a new project init prompt, use this structure:
 ## 🔍 Repository Discovery
 
 ### Universal Context Location
-**Relative path from project context:** `../../0_ai_context/0_context/`
+**Relative path from project context:** `../../0_layer_ai_context/0_context/`
 
 ```bash
 # Verify universal context exists:
-ls ../../0_ai_context/0_context/MASTER_DOCUMENTATION_INDEX.md
+ls ../../0_layer_ai_context/0_context/MASTER_DOCUMENTATION_INDEX.md
 ```
 
 
@@ -893,7 +893,7 @@ ls ../../0_ai_context/0_context/MASTER_DOCUMENTATION_INDEX.md
 ## 5. Reference Documentation by Task
 
 - Link to project-specific docs (relative paths)
-- Reference universal docs: `../../0_ai_context/0_context/...`
+- Reference universal docs: `../../0_layer_ai_context/0_context/...`
 - Quick reference commands
 
 
@@ -919,12 +919,12 @@ Example: `trickle_down_0_universal/0_instruction_docs/git_commit_rule.md`
 Example: `trickle_down_1_project/0_instruction_docs/constitution.md`
 
 ### Cross-References (Project → Universal)
-**Use relative path:** `../../0_ai_context/0_context/<path>`
+**Use relative path:** `../../0_layer_ai_context/0_context/<path>`
 
 Example from project context:
 ```bash
 # Read universal git rules:
-cat ../../0_ai_context/0_context/trickle_down_0_universal/0_instruction_docs/git_commit_rule.md
+cat ../../0_layer_ai_context/0_context/trickle_down_0_universal/0_instruction_docs/git_commit_rule.md
 ```
 
 
@@ -940,7 +940,7 @@ cat ../../0_ai_context/0_context/trickle_down_0_universal/0_instruction_docs/git
 
 ---
 
-**Location Pattern:** `<parent>/0_ai_context/0_context/0_basic_prompts_throughout/`
+**Location Pattern:** `<parent>/0_layer_ai_context/0_context/0_basic_prompts_throughout/`
 **Last Updated:** 2025-01-26
 **Version:** 2.1 (Portable Paths)
 
@@ -949,7 +949,7 @@ Yes, this init file fits your system really cleanly: it’s basically the **entr
 ## What this init file is doing
 
 - It defines the **universal starting point**: “You are here” in `0_ai_context/0_context/0_basic_prompts_throughout/universal_init_prompt.md`, and it orients the agent to the universal **MASTER_DOCUMENTATION_INDEX.md** and other core docs.[^25_1]
-- It encodes the **directory relationships** between the universal context repo (`0_ai_context`) and any sibling project context repos (`<project_name>/0_context/…`), including how to discover them via `find` and `ls`.
+- It encodes the **directory relationships** between the universal context repo (`0_layer_ai_context`) and any sibling project context repos (`<project_name>/0_context/…`), including how to discover them via `find` and `ls`.
 - It gives **task-based routing**: “If you’re doing Git, read these files; if you’re doing testing, read those files; if MCP tools, read those files,” all via relative paths inside `trickle_down_0_universal` and `trickle_down_0.75_universal_tools`.
 
 In other words: this file is the **navigation hub and contract** that tells any new session how to enter the Layer System (universal → project) and where to find task-specific Stage docs for the universal layer.

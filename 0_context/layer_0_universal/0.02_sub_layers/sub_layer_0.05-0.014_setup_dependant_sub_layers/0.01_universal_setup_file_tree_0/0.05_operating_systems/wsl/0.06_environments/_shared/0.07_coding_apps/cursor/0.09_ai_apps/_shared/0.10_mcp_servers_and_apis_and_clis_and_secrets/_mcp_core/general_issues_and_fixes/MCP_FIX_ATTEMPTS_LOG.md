@@ -77,7 +77,7 @@
 ### Attempt 4: Create Project-Specific Config ✅
 **Solution**: Solution 11 - Use project-specific `.cursor/mcp.json`  
 **Time**: < 1 minute  
-**Action**: Created `.cursor/mcp.json` in project directory (`/home/dawson/code/0_ai_context/.cursor/mcp.json`)  
+**Action**: Created `.cursor/mcp.json` in project directory (`/home/dawson/code/0_layer_ai_context/.cursor/mcp.json`)  
 **Result**: ✅ **Project-specific config created** - Copied from global config
 
 **Status**: ✅ Completed - CLI may prefer project-specific configs
@@ -126,7 +126,7 @@
 
 ### Files Modified:
 - `~/.cursor/mcp.json` - Reordered, full paths added
-- `/home/dawson/code/0_ai_context/.cursor/mcp.json` - Project-specific config created
+- `/home/dawson/code/0_layer_ai_context/.cursor/mcp.json` - Project-specific config created
 - `~/.cursor/mcp.json.backup.*` - Backup created
 
 ## Expected Results After Restart

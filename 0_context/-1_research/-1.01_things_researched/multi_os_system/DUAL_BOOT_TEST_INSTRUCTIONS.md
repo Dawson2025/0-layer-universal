@@ -73,7 +73,7 @@ cat ~/dawson-workspace/SYNC_TEST_WINDOWS_TO_UBUNTU.md
 
 Edit `STATUS.md` in this directory:
 ```bash
-nano ~/dawson-workspace/code/0_ai_context/0_context/-1_research/-1.01_things_researched/multi_os_system/STATUS.md
+nano ~/dawson-workspace/code/0_layer_ai_context/0_context/-1_research/-1.01_things_researched/multi_os_system/STATUS.md
 ```
 
 Update:
@@ -82,7 +82,7 @@ Update:
 
 Then commit:
 ```bash
-cd ~/dawson-workspace/code/0_ai_context
+cd ~/dawson-workspace/code/0_layer_ai_context
 git add -A
 git commit -m "Verify Windows → Ubuntu sync working - bidirectional sync complete"
 git push

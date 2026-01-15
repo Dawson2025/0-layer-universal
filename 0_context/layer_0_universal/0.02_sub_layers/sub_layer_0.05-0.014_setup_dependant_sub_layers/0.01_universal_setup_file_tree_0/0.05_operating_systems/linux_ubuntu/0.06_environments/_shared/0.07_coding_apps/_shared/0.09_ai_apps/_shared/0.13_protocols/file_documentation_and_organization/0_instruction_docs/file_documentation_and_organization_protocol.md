@@ -32,7 +32,7 @@
    - Choose a short, stable slug for the subject (e.g., `ai_manager_hierarchy_system`, `ai_dynamic_memory_system`, `workflow_orchestration`, `security_principles`).
 
 2. **Create or reuse the container directory**  
-   - Path: `code/0_ai_context/0_context/-1_research/-1.01_things_researched/<topic_slug>/`
+   - Path: `code/0_layer_ai_context/0_context/-1_research/-1.01_things_researched/<topic_slug>/`
    - Inside it, ensure these subdirectories exist:
      - `chat_history/`
      - `things_learned/`

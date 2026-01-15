@@ -247,7 +247,7 @@ implementation/
 ### Adoption
 1. Review rollout plan: `/home/dawson/.cursor/plans/ai_manager_hierarchy_rollout_plan.md`
 2. Follow adoption checklist: `HIERARCHY_ADOPTION_CHECKLIST.md`
-3. Start with pilot project (recommended: `/home/dawson/code/1_school/web-app`)
+3. Start with pilot project (recommended: `/home/dawson/code/1_layer_school/web-app`)
 
 ### Continuous Improvement
 1. Use lessons learned template: `implementation_lessons_learned.md`
