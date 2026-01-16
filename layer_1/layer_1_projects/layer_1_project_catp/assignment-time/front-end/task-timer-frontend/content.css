@@ -1,0 +1,49 @@
+/* Setting the sidebar CSS */
+#mySidebar {
+  width: 20rem;
+  padding: 20px;
+  box-sizing: border-box;
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  overflow-y: auto;
+  z-index: 1000;
+}
+
+#mySidebar h2 {
+  font-size: xx-large;
+  font-style: bold;
+}
+
+#mySidebar form {
+  text-align: center;
+  border-top: 1px solid black;
+  padding: 20px;
+}
+
+#myBellCurve {
+  text-align: center;
+  border-top: 1px solid black;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+/* Making room for the sidebar in the overall DOM */
+body {
+  margin-right: 20rem !important;
+}
+
+/* Making the sidebar disappear on a smaller screen */
+@media (max-width: 900px) {
+
+  #mySidebar {
+      width: 0;
+      padding: 0;
+      overflow: hidden;
+  }
+
+  body {
+    margin-right: 0rem !important;
+  }
+}

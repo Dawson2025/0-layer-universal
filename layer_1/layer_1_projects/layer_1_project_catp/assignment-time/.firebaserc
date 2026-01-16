@@ -1,0 +1,8 @@
+{
+  "projects": {
+    "default": "assignment-time",
+    "dev": "assignment-time-dev",
+    "test": "assignment-time-test",
+    "prod": "assignment-time"
+  }
+}

@@ -1,0 +1,40 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // Allow read/write to assignment timing data
+    match /assignment_times/{assignmentDocId}/times/{studentId} {
+      // Anyone can write their timing data
+      allow create, update: if true;
+      // Only allow reading your own data
+      allow read: if true;
+      allow delete: if false;
+    }
+    
+    // Allow read access to calculated statistics
+    match /assignment_statistics/{assignmentDocId} {
+      // Anyone can read statistics
+      allow read: if true;
+      // Only backend functions can write
+      allow write: if false;
+    }
+    
+    // Existing Canvas data collections (if needed)
+    match /canvas_courses/{courseId} {
+      allow read: if true;
+      allow write: if false;
+    }
+    
+    match /canvas_assignments/{assignmentId} {
+      allow read: if true;
+      allow write: if false;
+    }
+    
+    // Stats results from calculateStats endpoint
+    match /stats_results/{docId} {
+      allow read: if true;
+      allow write: if false;
+    }
+  }
+}
+

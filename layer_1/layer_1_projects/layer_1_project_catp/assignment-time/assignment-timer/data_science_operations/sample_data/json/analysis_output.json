@@ -1,0 +1,162 @@
+{
+  "projectId": "sample-data",
+  "totalCount": 13,
+  "summary": {
+    "count": 13,
+    "mean": 5029.2307692307695,
+    "median": 4200.0,
+    "std_dev": 2323.378328850977,
+    "min_value": 2400.0,
+    "max_value": 9000.0
+  },
+  "groups": {
+    "assignmentId:15071971": {
+      "count": 4,
+      "stats": {
+        "count": 4,
+        "mean": 4331.25,
+        "median": 4337.5,
+        "std_dev": 602.555322494679,
+        "min_value": 3600.0,
+        "max_value": 5050.0
+      }
+    },
+    "assignmentId:15071972": {
+      "count": 2,
+      "stats": {
+        "count": 2,
+        "mean": 3600.0,
+        "median": 3600.0,
+        "std_dev": 424.26406871192853,
+        "min_value": 3300.0,
+        "max_value": 3900.0
+      }
+    },
+    "assignmentId:15952989": {
+      "count": 3,
+      "stats": {
+        "count": 3,
+        "mean": 2718.3333333333335,
+        "median": 2755.0,
+        "std_dev": 301.6758746292672,
+        "min_value": 2400.0,
+        "max_value": 3000.0
+      }
+    },
+    "assignmentId:16600123": {
+      "count": 2,
+      "stats": {
+        "count": 2,
+        "mean": 7650.0,
+        "median": 7650.0,
+        "std_dev": 636.3961030678928,
+        "min_value": 7200.0,
+        "max_value": 8100.0
+      }
+    },
+    "assignmentId:16600124": {
+      "count": 2,
+      "stats": {
+        "count": 2,
+        "mean": 8700.0,
+        "median": 8700.0,
+        "std_dev": 424.26406871192853,
+        "min_value": 8400.0,
+        "max_value": 9000.0
+      }
+    }
+  },
+  "records": [
+    {
+      "assignment_id": 15071971,
+      "assignment_name": "W08-Prepare: Module 4 Plan",
+      "course_id": 351068,
+      "course_name": "Applied Programming",
+      "time_in_seconds": 4200.0
+    },
+    {
+      "assignment_id": 15071971,
+      "assignment_name": "W08-Prepare: Module 4 Plan",
+      "course_id": 351068,
+      "course_name": "Applied Programming",
+      "time_in_seconds": 3600.0
+    },
+    {
+      "assignment_id": 15071971,
+      "assignment_name": "W08-Prepare: Module 4 Plan",
+      "course_id": 351068,
+      "course_name": "Applied Programming",
+      "time_in_seconds": 5050.0
+    },
+    {
+      "assignment_id": 15071971,
+      "assignment_name": "W08-Prepare: Module 4 Plan",
+      "course_id": 351068,
+      "course_name": "Applied Programming",
+      "time_in_seconds": 4475.0
+    },
+    {
+      "assignment_id": 15071972,
+      "assignment_name": "W08-Teach: Module 4 Walkthrough",
+      "course_id": 351068,
+      "course_name": "Applied Programming",
+      "time_in_seconds": 3900.0
+    },
+    {
+      "assignment_id": 15071972,
+      "assignment_name": "W08-Teach: Module 4 Walkthrough",
+      "course_id": 351068,
+      "course_name": "Applied Programming",
+      "time_in_seconds": 3300.0
+    },
+    {
+      "assignment_id": 15952989,
+      "assignment_name": "L02 Teach: Team Activity",
+      "course_id": 351102,
+      "course_name": "Parallelism and Concurrency",
+      "time_in_seconds": 2400.0
+    },
+    {
+      "assignment_id": 15952989,
+      "assignment_name": "L02 Teach: Team Activity",
+      "course_id": 351102,
+      "course_name": "Parallelism and Concurrency",
+      "time_in_seconds": 3000.0
+    },
+    {
+      "assignment_id": 15952989,
+      "assignment_name": "L02 Teach: Team Activity",
+      "course_id": 351102,
+      "course_name": "Parallelism and Concurrency",
+      "time_in_seconds": 2755.0
+    },
+    {
+      "assignment_id": 16600123,
+      "assignment_name": "Project Milestone 1",
+      "course_id": 351150,
+      "course_name": "Data Science Lab",
+      "time_in_seconds": 7200.0
+    },
+    {
+      "assignment_id": 16600123,
+      "assignment_name": "Project Milestone 1",
+      "course_id": 351150,
+      "course_name": "Data Science Lab",
+      "time_in_seconds": 8100.0
+    },
+    {
+      "assignment_id": 16600124,
+      "assignment_name": "Project Milestone 2",
+      "course_id": 351150,
+      "course_name": "Data Science Lab",
+      "time_in_seconds": 8400.0
+    },
+    {
+      "assignment_id": 16600124,
+      "assignment_name": "Project Milestone 2",
+      "course_id": 351150,
+      "course_name": "Data Science Lab",
+      "time_in_seconds": 9000.0
+    }
+  ]
+}

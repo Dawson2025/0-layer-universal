@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas Assignment Timer - Demo</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: #f5f5f5;
+            padding: 20px;
+        }
+
+        .demo-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            gap: 20px;
+        }
+
+        .canvas-page {
+            flex: 1;
+            background: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .breadcrumbs {
+            color: #666;
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+
+        .breadcrumbs li {
+            display: inline;
+            list-style: none;
+        }
+
+        .breadcrumbs li:after {
+            content: " / ";
+            padding: 0 5px;
+        }
+
+        .breadcrumbs li:last-child:after {
+            content: "";
+        }
+
+        .assignment-header {
+            border-bottom: 2px solid #008EE2;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+
+        .assignment-title {
+            font-size: 28px;
+            color: #2D3B45;
+            margin-bottom: 10px;
+        }
+
+        .assignment-details {
+            color: #666;
+            font-size: 14px;
+        }
+
+        .assignment-content {
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Extension Sidebar Styles */
+        #mySidebar {
+            width: 320px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+            position: sticky;
+            top: 20px;
+            height: fit-content;
+        }
+
+        #mySidebar h2 {
+            font-size: 20px;
+            margin-bottom: 20px;
+            text-align: center;
+            border-bottom: 2px solid rgba(255,255,255,0.3);
+            padding-bottom: 15px;
+        }
+
+        #mySidebar h2 span {
+            display: block;
+            font-size: 32px;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        .timeData {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .timeData > div {
+            flex: 1;
+            background: rgba(255,255,255,0.15);
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .timeData p:first-child {
+            font-size: 12px;
+            opacity: 0.9;
+            margin-bottom: 5px;
+        }
+
+        .timeData p:last-child {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        #timer {
+            background: rgba(255,255,255,0.15);
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        #timer p:first-child {
+            font-size: 14px;
+            opacity: 0.9;
+            margin-bottom: 10px;
+        }
+
+        #timerSeconds {
+            font-size: 36px !important;
+            font-weight: bold;
+            margin: 10px 0 !important;
+        }
+
+        #pause {
+            background: white;
+            color: #667eea;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: transform 0.2s;
+        }
+
+        #pause:hover {
+            transform: scale(1.05);
+        }
+
+        #myBellCurve {
+            background: rgba(255,255,255,0.15);
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        #myBellCurve canvas {
+            width: 100% !important;
+            height: auto !important;
+        }
+
+        #timeForm {
+            background: rgba(255,255,255,0.15);
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        #timeForm label {
+            display: block;
+            font-size: 14px;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        #timeForm input {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 6px;
+            margin-bottom: 15px;
+            font-size: 14px;
+        }
+
+        #timeForm input[type="number"] {
+            width: calc(33% - 5px);
+            display: inline-block;
+            margin-right: 5px;
+        }
+
+        #timeForm input[type="number"]:last-of-type {
+            margin-right: 0;
+        }
+
+        #timeForm button {
+            width: 100%;
+            background: white;
+            color: #667eea;
+            border: none;
+            padding: 12px;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        #timeForm button:hover {
+            transform: scale(1.02);
+        }
+
+        .header-banner {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .header-banner h1 {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .header-banner p {
+            font-size: 16px;
+            opacity: 0.95;
+        }
+
+        .status-badge {
+            display: inline-block;
+            background: #10b981;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+
+        .firestore-indicator {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #10b981;
+            color: white;
+            padding: 15px 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            font-size: 14px;
+            font-weight: bold;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+
+        .firestore-indicator:before {
+            content: "🔥";
+            margin-right: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header-banner">
+        <h1>🎉 Canvas Assignment Timer - Live Demo</h1>
+        <p>Firestore-Based Implementation (No Canvas API Key Required)</p>
+        <div class="status-badge">✅ DEPLOYED & RUNNING</div>
+    </div>
+
+    <div class="demo-container">
+        <!-- Simulated Canvas Page Content -->
+        <div class="canvas-page">
+            <ul class="breadcrumbs" id="breadcrumbs">
+                <li>BYU-Idaho</li>
+                <li>CS 101 - Introduction to Programming</li>
+                <li>Assignments</li>
+                <li>Essay 1: Variables and Data Types</li>
+            </ul>
+
+            <div class="assignment-header">
+                <h1 class="assignment-title">Essay 1: Variables and Data Types</h1>
+                <div class="assignment-details">
+                    <strong>Due:</strong> Dec 15, 2025 at 11:59pm | 
+                    <strong>Points:</strong> 100 | 
+                    <strong>Submitting:</strong> a text entry box or a file upload
+                </div>
+            </div>
+
+            <div class="assignment-content">
+                <h3>Assignment Description</h3>
+                <p>Write a comprehensive essay explaining the concept of variables and data types in programming. Your essay should cover:</p>
+                <ul style="margin: 15px 0 15px 30px; line-height: 2;">
+                    <li>Definition and purpose of variables</li>
+                    <li>Common data types (integers, strings, booleans, etc.)</li>
+                    <li>Type conversion and casting</li>
+                    <li>Real-world examples and use cases</li>
+                    <li>Best practices for variable naming</li>
+                </ul>
+                <p style="margin-top: 20px;">Your essay should be 1000-1500 words and include code examples where appropriate.</p>
+                
+                <div style="background: #f0f9ff; border-left: 4px solid #0284c7; padding: 20px; margin: 30px 0; border-radius: 4px;">
+                    <strong>📝 Submission Guidelines:</strong>
+                    <ul style="margin: 10px 0 0 20px; line-height: 1.8;">
+                        <li>Submit as a PDF or directly in the text box</li>
+                        <li>Use proper citations for any references</li>
+                        <li>Include at least 3 code examples</li>
+                        <li>Proofread for grammar and spelling</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Extension Sidebar (Injected) -->
+        <div id="mySidebar">
+            <div id="mySidebarContent">
+                <h2>Mean Time: <span id="meanTime">1h 25m 30s</span></h2>
+                <div class="timeData">
+                    <div>
+                        <p>Median:</p>
+                        <p id="medianTime">1h 20m 15s</p>
+                    </div>
+                    <div>
+                        <p>Mode:</p>
+                        <p id="modeTime">1h 30m 0s</p>
+                    </div>
+                </div>
+
+                <div id="timer">
+                    <p>Your Timer</p>
+                    <h2 id="timerSeconds">00:45:23</h2>
+                    <button id="pause">Pause</button>
+                </div>
+
+                <div id="myBellCurve">
+                    <svg width="100%" height="120" viewBox="0 0 280 120" style="background: rgba(255,255,255,0.2); border-radius: 6px;">
+                        <path d="M 10,110 Q 70,110 140,20 Q 210,110 270,110" 
+                              fill="rgba(255,255,255,0.3)" 
+                              stroke="white" 
+                              stroke-width="2"/>
+                        <circle cx="140" cy="20" r="4" fill="#fbbf24"/>
+                        <text x="140" y="15" text-anchor="middle" fill="white" font-size="12">You</text>
+                    </svg>
+                    <p id="userTime" style="text-align: center; margin-top: 8px; font-size: 12px;">
+                        📊 Based on <strong>47 student submissions</strong>
+                    </p>
+                </div>
+
+                <form id="timeForm">
+                    <label for="assignmentName">Assignment Name:</label>
+                    <input type="text" id="assignmentName" placeholder="e.g. Essay 1" value="Essay 1: Variables">
+
+                    <label>Time Spent:</label>
+                    <input type="number" placeholder="hrs" id="hours" min="0" value="1">
+                    <input type="number" placeholder="min" id="minutes" min="0" max="59" value="30">
+                    <input type="number" placeholder="sec" id="inputSeconds" min="0" max="59" value="0">
+
+                    <button type="submit">Add Time</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="firestore-indicator">
+        Connected to Firestore • Real-time Updates Active
+    </div>
+
+    <script>
+        // Simulate timer
+        let seconds = 2723; // 45 minutes 23 seconds
+        setInterval(() => {
+            seconds++;
+            const hours = Math.floor(seconds / 3600);
+            const mins = Math.floor((seconds % 3600) / 60);
+            const secs = seconds % 60;
+            document.getElementById('timerSeconds').textContent = 
+                `${String(hours).padStart(2, '0')}:${String(mins).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
+        }, 1000);
+
+        // Simulate form submission
+        document.getElementById('timeForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const btn = e.target.querySelector('button');
+            btn.textContent = 'Submitted! ✓';
+            btn.style.background = '#10b981';
+            btn.style.color = 'white';
+            setTimeout(() => {
+                btn.textContent = 'Add Time';
+                btn.style.background = 'white';
+                btn.style.color = '#667eea';
+            }, 2000);
+        });
+
+        // Simulate pause/resume
+        let paused = false;
+        document.getElementById('pause').addEventListener('click', () => {
+            paused = !paused;
+            document.getElementById('pause').textContent = paused ? 'Resume' : 'Pause';
+        });
+    </script>
+</body>
+</html>
+
+
+
+

@@ -1,0 +1,145 @@
+﻿[
+  {
+    "assignmentId": 15071971,
+    "assignmentName": "W08-Prepare: Module 4 Plan",
+    "courseId": 351068,
+    "courseName": "Applied Programming",
+    "module": "Module 4",
+    "canvasUserId": 900001,
+    "canvasUserName": "Avery Jackson",
+    "timeInSeconds": 4200,
+    "timestamp": "2025-03-04T10:15:00Z"
+  },
+  {
+    "assignmentId": 15071971,
+    "assignmentName": "W08-Prepare: Module 4 Plan",
+    "courseId": 351068,
+    "courseName": "Applied Programming",
+    "module": "Module 4",
+    "canvasUserId": 900002,
+    "canvasUserName": "Blake Martinez",
+    "timeInSeconds": 3600,
+    "timestamp": "2025-03-04T19:35:00Z"
+  },
+  {
+    "assignmentId": 15071971,
+    "assignmentName": "W08-Prepare: Module 4 Plan",
+    "courseId": 351068,
+    "courseName": "Applied Programming",
+    "module": "Module 4",
+    "canvasUserId": 900003,
+    "canvasUserName": "Casey Nguyen",
+    "timeInSeconds": 5050,
+    "timestamp": "2025-03-05T07:22:00Z"
+  },
+  {
+    "assignmentId": 15071971,
+    "assignmentName": "W08-Prepare: Module 4 Plan",
+    "courseId": 351068,
+    "courseName": "Applied Programming",
+    "module": "Module 4",
+    "canvasUserId": 900004,
+    "canvasUserName": "Devon Patel",
+    "timeInSeconds": 4475,
+    "timestamp": "2025-03-06T12:18:00Z"
+  },
+  {
+    "assignmentId": 15071972,
+    "assignmentName": "W08-Teach: Module 4 Walkthrough",
+    "courseId": 351068,
+    "courseName": "Applied Programming",
+    "module": "Module 4",
+    "canvasUserId": 900001,
+    "canvasUserName": "Avery Jackson",
+    "timeInSeconds": 3900,
+    "timestamp": "2025-03-07T08:05:00Z"
+  },
+  {
+    "assignmentId": 15071972,
+    "assignmentName": "W08-Teach: Module 4 Walkthrough",
+    "courseId": 351068,
+    "courseName": "Applied Programming",
+    "module": "Module 4",
+    "canvasUserId": 900002,
+    "canvasUserName": "Blake Martinez",
+    "timeInSeconds": 3300,
+    "timestamp": "2025-03-07T13:40:00Z"
+  },
+  {
+    "assignmentId": 15952989,
+    "assignmentName": "L02 Teach: Team Activity",
+    "courseId": 351102,
+    "courseName": "Parallelism and Concurrency",
+    "module": "Lesson 02",
+    "canvasUserId": 910101,
+    "canvasUserName": "Erin Wallace",
+    "timeInSeconds": 2400,
+    "timestamp": "2025-03-03T09:20:00Z"
+  },
+  {
+    "assignmentId": 15952989,
+    "assignmentName": "L02 Teach: Team Activity",
+    "courseId": 351102,
+    "courseName": "Parallelism and Concurrency",
+    "module": "Lesson 02",
+    "canvasUserId": 910102,
+    "canvasUserName": "Felix Young",
+    "timeInSeconds": 3000,
+    "timestamp": "2025-03-04T11:10:00Z"
+  },
+  {
+    "assignmentId": 15952989,
+    "assignmentName": "L02 Teach: Team Activity",
+    "courseId": 351102,
+    "courseName": "Parallelism and Concurrency",
+    "module": "Lesson 02",
+    "canvasUserId": 910103,
+    "canvasUserName": "Gina Rivera",
+    "timeInSeconds": 2755,
+    "timestamp": "2025-03-05T15:33:00Z"
+  },
+  {
+    "assignmentId": 16600123,
+    "assignmentName": "Project Milestone 1",
+    "courseId": 351150,
+    "courseName": "Data Science Lab",
+    "module": "Milestones",
+    "canvasUserId": 920201,
+    "canvasUserName": "Harper Lee",
+    "timeInSeconds": 7200,
+    "timestamp": "2025-03-02T14:05:00Z"
+  },
+  {
+    "assignmentId": 16600123,
+    "assignmentName": "Project Milestone 1",
+    "courseId": 351150,
+    "courseName": "Data Science Lab",
+    "module": "Milestones",
+    "canvasUserId": 920202,
+    "canvasUserName": "Isla Morgan",
+    "timeInSeconds": 8100,
+    "timestamp": "2025-03-04T16:25:00Z"
+  },
+  {
+    "assignmentId": 16600124,
+    "assignmentName": "Project Milestone 2",
+    "courseId": 351150,
+    "courseName": "Data Science Lab",
+    "module": "Milestones",
+    "canvasUserId": 920201,
+    "canvasUserName": "Harper Lee",
+    "timeInSeconds": 8400,
+    "timestamp": "2025-03-08T10:12:00Z"
+  },
+  {
+    "assignmentId": 16600124,
+    "assignmentName": "Project Milestone 2",
+    "courseId": 351150,
+    "courseName": "Data Science Lab",
+    "module": "Milestones",
+    "canvasUserId": 920203,
+    "canvasUserName": "Jonah Wright",
+    "timeInSeconds": 9000,
+    "timestamp": "2025-03-09T18:47:00Z"
+  }
+]

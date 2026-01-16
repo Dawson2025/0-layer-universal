@@ -1,0 +1,44 @@
+name: Integration Tests
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  integration-tests:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Write service account credentials
+        run: echo "${{ secrets.TESTING_SA_KEY }}" > /tmp/testing-ci.json
+
+      - name: Authenticate to Google Cloud
+        uses: google-github-actions/auth@v2
+        with:
+          credentials_json: ${{ secrets.TESTING_SA_KEY }}
+
+      - name: Setup gcloud
+        uses: google-github-actions/setup-gcloud@v1
+        with:
+          project_id: assignment-time-test
+
+      - name: Get CANVAS_API_KEY_TEST from Secret Manager
+        run: |
+          CANVAS_API_KEY_TEST=$(gcloud secrets versions access latest --secret=CANVAS_API_KEY_TEST)
+          echo "CANVAS_API_KEY_TEST=$CANVAS_API_KEY_TEST" >> $GITHUB_ENV
+
+      - name: Run integration tests
+        env:
+          CANVAS_API_KEY: ${{ env.CANVAS_API_KEY_TEST }}
+        run: |
+          cd functions
+          npm install
+          npm test
+
+      - name: Cleanup
+        run: rm /tmp/testing-ci.json
