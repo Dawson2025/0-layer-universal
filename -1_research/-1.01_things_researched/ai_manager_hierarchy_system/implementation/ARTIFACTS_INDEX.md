@@ -11,10 +11,10 @@
 ### Updated Files (Phases 1-2)
 | File | Location | Size | Purpose |
 |------|----------|------|---------|
-| MASTER_DOCUMENTATION_INDEX.md | `/code/0_layer_ai_context/0_context/` | 25KB | Added AI Manager Hierarchy section (lines 77-101) |
-| SYSTEM_OVERVIEW.md | `/code/0_layer_ai_context/0_context/` | 5.5KB | Added Agent OS Architecture section (lines 8-44) |
-| USAGE_GUIDE.md | `/code/0_layer_ai_context/0_context/` | 13KB | Added "Working with AI Manager Hierarchy" (lines 12-111) |
-| 0.01_layer_stage_framework/README.md | `/code/0_layer_ai_context/0_context/0.01_layer_stage_framework/` | ~15KB | Line 5: Explicit hierarchy implementation statement |
+| MASTER_DOCUMENTATION_INDEX.md | `/code/0_layer_universal/0_context/` | 25KB | Added AI Manager Hierarchy section (lines 77-101) |
+| SYSTEM_OVERVIEW.md | `/code/0_layer_universal/0_context/` | 5.5KB | Added Agent OS Architecture section (lines 8-44) |
+| USAGE_GUIDE.md | `/code/0_layer_universal/0_context/` | 13KB | Added "Working with AI Manager Hierarchy" (lines 12-111) |
+| layer_1/layer_1_features/layer_1_feature_layer_stage_system/layer_1/layer_1_02_sub_layers/README.md | `/code/0_layer_universal/0_context/layer_1/layer_1_features/layer_1_feature_layer_stage_system/layer_1/layer_1_02_sub_layers/` | ~15KB | Line 5: Explicit hierarchy implementation statement |
 
 ---
 
@@ -23,7 +23,7 @@
 ### Manager System READMEs
 | File | Location | Size | Created |
 |------|----------|------|---------|
-| layer_0_universal/0.00_ai_manager_system/README.md | Layer 0 | 12KB | 2025-12-24 00:03 |
+| layer_0/0.00_ai_manager_system/README.md | Layer 0 | 12KB | 2025-12-24 00:03 |
 | layer_1_project/1.00_ai_manager_system/README.md | Layer 1 | 12KB | 2025-12-24 00:03 |
 | layer_2_features/2.00_ai_manager_system/README.md | Layer 2 | 13KB | 2025-12-24 00:04 |
 | layer_3_components/3.00_ai_manager_system/README.md | Layer 3 | 15KB | 2025-12-24 00:06 |
@@ -31,7 +31,7 @@
 ### Handoff Schema
 | File | Location | Size | Purpose |
 |------|----------|------|---------|
-| handoff_schema.md | `layer_0_universal/0.01_manager_handoff_documents/0.00_to_universal/` | ~8KB | Canonical handoff document schema (JSON Schema + examples) |
+| handoff_schema.md | `layer_0/0.01_manager_handoff_documents/0.00_to_universal/` | ~8KB | Canonical handoff document schema (JSON Schema + examples) |
 
 ---
 
@@ -39,7 +39,7 @@
 
 ### Directory Structure (16 directories created)
 ```
-layer_0_universal/0.99_stages/stage_0.01_instructions/ai_agent_system/os/
+layer_0/0.99_stages/stage_0_01_instructions/ai_agent_system/os/
 ├── wsl/
 ├── linux_ubuntu/
 ├── windows/
@@ -133,7 +133,7 @@ layer_3_components/3.99_stages/stage_3.01_instructions/ai_agent_system/os/
 | observability/README.md | `sub_layer_0.13_universal_protocols/observability/` | 20KB | Logging, metrics, tracing protocol |
 | safety_governance.md | `sub_layer_0.04_universal_rules/` | 24KB | Permission levels, approval gates, governance |
 | AI_MANAGER_HIERARCHY_DEPLOYMENT.md | `sub_layer_0.05_os_setup/.../deployment/` | 28KB | Production deployment patterns |
-| PHASE_6_QUICK_REFERENCE.md | `sub_layer_0.02_sub_layers/` | 5KB | Quick reference for Phase 6 content |
+| PHASE_6_QUICK_REFERENCE.md | `sub_layer_0_02_sub_layers/` | 5KB | Quick reference for Phase 6 content |
 
 ### Updated Documentation (Phase 6)
 | File | Location | Update |
@@ -153,9 +153,9 @@ layer_3_components/3.99_stages/stage_3.01_instructions/ai_agent_system/os/
 ### Adoption Guides
 | File | Location | Size | Purpose |
 |------|----------|------|---------|
-| HIERARCHY_ADOPTION_CHECKLIST.md | `sub_layer_0.01_basic_prompts_throughout/` | 22KB | Comprehensive project onboarding checklist |
-| MIGRATION_GUIDE.md | `sub_layer_0.01_basic_prompts_throughout/` | 26KB | Multi-strategy migration for existing projects |
-| HIERARCHY_QUICK_START.md | `sub_layer_0.01_basic_prompts_throughout/` | 14KB | 5-10 minute rapid onboarding guide |
+| HIERARCHY_ADOPTION_CHECKLIST.md | `sub_layer_0_01_basic_prompts_throughout/` | 22KB | Comprehensive project onboarding checklist |
+| MIGRATION_GUIDE.md | `sub_layer_0_01_basic_prompts_throughout/` | 26KB | Multi-strategy migration for existing projects |
+| HIERARCHY_QUICK_START.md | `sub_layer_0_01_basic_prompts_throughout/` | 14KB | 5-10 minute rapid onboarding guide |
 
 ### Continuous Improvement
 | File | Location | Size | Purpose |
@@ -252,24 +252,24 @@ layer_3_components/3.99_stages/stage_3.01_instructions/ai_agent_system/os/
 ### By Function
 
 **For Navigation**:
-- `/code/0_layer_ai_context/0_context/MASTER_DOCUMENTATION_INDEX.md`
-- `/code/0_layer_ai_context/0_context/SYSTEM_OVERVIEW.md`
-- `/code/0_layer_ai_context/0_context/USAGE_GUIDE.md`
+- `/code/0_layer_universal/0_context/MASTER_DOCUMENTATION_INDEX.md`
+- `/code/0_layer_universal/0_context/SYSTEM_OVERVIEW.md`
+- `/code/0_layer_universal/0_context/USAGE_GUIDE.md`
 
 **For OS Context**:
-- `/code/0_layer_ai_context/0_context/layer_*/stage_*.01_instructions/ai_agent_system/os/{wsl,linux_ubuntu}/`
+- `/code/0_layer_universal/0_context/layer_*/stage_*.01_instructions/ai_agent_system/os/{wsl,linux_ubuntu}/`
 
 **For Protocols**:
-- `/code/0_layer_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.13_universal_protocols/`
+- `/code/0_layer_universal/0_context/layer_0/0.02_sub_layers/sub_layer_0.13_universal_protocols/`
 
 **For Rules**:
-- `/code/0_layer_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.04_universal_rules/`
+- `/code/0_layer_universal/0_context/layer_0/0.02_sub_layers/sub_layer_0.04_universal_rules/`
 
 **For Adoption**:
-- `/code/0_layer_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.01_basic_prompts_throughout/`
+- `/code/0_layer_universal/0_context/layer_0/0.02_sub_layers/sub_layer_0_01_basic_prompts_throughout/`
 
 **For Implementation History**:
-- `/code/0_layer_ai_context/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/implementation/`
+- `/code/0_layer_universal/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/implementation/`
 
 ---
 

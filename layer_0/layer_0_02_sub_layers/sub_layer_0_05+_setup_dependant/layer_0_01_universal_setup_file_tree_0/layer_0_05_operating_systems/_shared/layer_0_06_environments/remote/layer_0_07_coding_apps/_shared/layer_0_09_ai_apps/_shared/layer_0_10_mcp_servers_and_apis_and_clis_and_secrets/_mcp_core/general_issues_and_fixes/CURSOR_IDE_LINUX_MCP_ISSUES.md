@@ -163,9 +163,9 @@ In Cursor IDE:
 
 ## Related Documentation
 
-- **OS-Level Issues**: `layer_0_universal/0.02_sub_layers/sub_layer_0.05_os_setup/trickle_down_0.5_setup/0_instruction_docs/LINUX_UBUNTU_MCP_ISSUES.md`
+- **OS-Level Issues**: `layer_0/0.02_sub_layers/sub_layer_0.05_os_setup/trickle_down_0.5_setup/0_instruction_docs/LINUX_UBUNTU_MCP_ISSUES.md`
 - **Browser MCP Setup Experience**: `../../browser-mcp/BROWSER_MCP_SETUP_EXPERIENCE.md`
-- **AI Apps Setup**: `layer_0_universal/0.02_sub_layers/sub_layer_0.09_ai_apps_tools_setup/`
+- **AI Apps Setup**: `layer_0/0.02_sub_layers/sub_layer_0.09_ai_apps_tools_setup/`
 
 ## References
 

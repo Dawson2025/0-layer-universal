@@ -61,7 +61,7 @@
 Use OS+tool-specific Playwright configs so Cursor Agent can run a headed browser concurrently with Codex/Claude:
 
 ```bash
-cd /home/dawson/dawson-workspace/code/0_layer_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.11_mcp_servers_and_tools_setup/0.06_automation/scripts
+cd /home/dawson/dawson-workspace/code/0_layer_universal/0_context/layer_0/0.02_sub_layers/sub_layer_0.11_mcp_servers_and_tools_setup/0.06_automation/scripts
 
 # Create the WSL + Cursor config (and any others you want)
 python3 mcp_concurrent_browser.py setup --os wsl --tools cursor
@@ -145,7 +145,7 @@ Expected outputs:
 Use OS+tool-specific Playwright configs so Cursor Agent can run a headed browser concurrently with Codex/Claude:
 
 ```bash
-cd /home/dawson/code/0_layer_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.11_mcp_servers_and_tools_setup/0.06_automation/scripts
+cd /home/dawson/code/0_layer_universal/0_context/layer_0/0.02_sub_layers/sub_layer_0.11_mcp_servers_and_tools_setup/0.06_automation/scripts
 
 # Create the WSL + Cursor config (and any others you want)
 python3 mcp_concurrent_browser.py setup --os wsl --tools cursor

@@ -17,7 +17,7 @@ Every file within the layer system MUST include a standardized header that refer
 <!-- LAYER CONTEXT HEADER -->
 <!-- Layer N File: [Brief Description] -->
 <!-- Context Cascade (L0 → L{N}): -->
-<!-- - L0 Universal Init: ../../../layer_0_universal/0.02_sub_layers/sub_layer_0.01_basic_prompts_throughout/universal_init_prompt.md -->
+<!-- - L0 Universal Init: ../../../layer_0/0.02_sub_layers/sub_layer_0_01_basic_prompts_throughout/universal_init_prompt.md -->
 <!-- - L1 Project Init: ../../layer_1_project/1.02_sub_layers/sub_layer_1.01_basic_prompts/project_init_prompt.md (if exists) -->
 <!-- - L2 Feature Init: ../layer_2_features/2.02_sub_layers/sub_layer_2.01_basic_prompts/feature_init_prompt.md (if exists) -->
 <!-- - L3 Component Init: ./layer_3_components/3.02_sub_layers/sub_layer_3.01_basic_prompts/component_init_prompt.md (if exists) -->
@@ -28,7 +28,7 @@ Every file within the layer system MUST include a standardized header that refer
 
 Each layer MUST maintain its init prompt at a standard location:
 
-- **L0 (Universal)**: `layer_0_universal/0.02_sub_layers/sub_layer_0.01_basic_prompts_throughout/universal_init_prompt.md`
+- **L0 (Universal)**: `layer_0/0.02_sub_layers/sub_layer_0_01_basic_prompts_throughout/universal_init_prompt.md`
 - **L1 (Project)**: `layer_1_project/1.02_sub_layers/sub_layer_1.01_basic_prompts/project_init_prompt.md`
 - **L2 (Feature)**: `layer_2_features/2.02_sub_layers/sub_layer_2.01_basic_prompts/feature_init_prompt.md`
 - **L3 (Component)**: `layer_3_components/3.02_sub_layers/sub_layer_3.01_basic_prompts/component_init_prompt.md`
@@ -49,19 +49,19 @@ Paths in headers are **relative to the file's location**. This ensures headers r
 <!-- LAYER CONTEXT HEADER -->
 <!-- Layer 2 File: Feature Knowledge README -->
 <!-- Context Cascade (L0 → L2): -->
-<!-- - L0 Universal Init: ../../../layer_0_universal/0.02_sub_layers/sub_layer_0.01_basic_prompts_throughout/universal_init_prompt.md -->
+<!-- - L0 Universal Init: ../../../layer_0/0.02_sub_layers/sub_layer_0_01_basic_prompts_throughout/universal_init_prompt.md -->
 <!-- - L1 Project Init: ../../../layer_1_project/1.02_sub_layers/sub_layer_1.01_basic_prompts/project_init_prompt.md -->
 <!-- - L2 Feature Init: ../sub_layer_2.01_basic_prompts/feature_init_prompt.md -->
 <!-- END LAYER CONTEXT HEADER -->
 ```
 
-**Example 2**: File at `layer_0_universal/0.02_sub_layers/sub_layer_0.11_universal_tools/TOOLS_INDEX.md`
+**Example 2**: File at `layer_0/0.02_sub_layers/sub_layer_0.11_universal_tools/TOOLS_INDEX.md`
 
 ```markdown
 <!-- LAYER CONTEXT HEADER -->
 <!-- Layer 0 File: Universal Tools Index -->
 <!-- Context Cascade (L0 only): -->
-<!-- - L0 Universal Init: ../sub_layer_0.01_basic_prompts_throughout/universal_init_prompt.md -->
+<!-- - L0 Universal Init: ../sub_layer_0_01_basic_prompts_throughout/universal_init_prompt.md -->
 <!-- END LAYER CONTEXT HEADER -->
 ```
 
@@ -72,7 +72,7 @@ Paths in headers are **relative to the file's location**. This ensures headers r
  * LAYER CONTEXT HEADER
  * Layer 3 File: LoginForm Component
  * Context Cascade (L0 → L3):
- * - L0 Universal Init: ../../../layer_0_universal/0.02_sub_layers/sub_layer_0.01_basic_prompts_throughout/universal_init_prompt.md
+ * - L0 Universal Init: ../../../layer_0/0.02_sub_layers/sub_layer_0_01_basic_prompts_throughout/universal_init_prompt.md
  * - L1 Project Init: ../../../layer_1_project/1.02_sub_layers/sub_layer_1.01_basic_prompts/project_init_prompt.md
  * - L2 Feature Init: ../../../layer_2_features/2.02_sub_layers/sub_layer_2.01_basic_prompts/feature_init_prompt.md
  * - L3 Component Init: ../sub_layer_3.01_basic_prompts/component_init_prompt.md
@@ -125,7 +125,7 @@ END LAYER CONTEXT HEADER
     "layer": 2,
     "description": "Feature Configuration",
     "contextCascade": {
-      "L0": "../../../layer_0_universal/0.02_sub_layers/sub_layer_0.01_basic_prompts_throughout/universal_init_prompt.md",
+      "L0": "../../../layer_0/0.02_sub_layers/sub_layer_0_01_basic_prompts_throughout/universal_init_prompt.md",
       "L1": "../../../layer_1_project/1.02_sub_layers/sub_layer_1.01_basic_prompts/project_init_prompt.md",
       "L2": "../sub_layer_2.01_basic_prompts/feature_init_prompt.md"
     }
@@ -152,7 +152,7 @@ validate-layer-headers /path/to/0_context
 
 For existing files without headers:
 
-1. **Phase 1**: Add headers to all template files in `0.01_layer_stage_framework`
+1. **Phase 1**: Add headers to all template files in `layer_1/layer_1_features/layer_1_feature_layer_stage_system/layer_1/layer_1_02_sub_layers`
 2. **Phase 2**: Add headers to all `README.md` files across all layers
 3. **Phase 3**: Add headers to all `.md` documentation files
 4. **Phase 4**: Add headers to all source code files (`.ts`, `.py`, `.sh`, etc.)

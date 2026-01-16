@@ -476,7 +476,7 @@ layer_2_feature_ai_manager_hierarchy/
 
 ---
 
-**Document Location:** `/home/dawson/dawson-workspace/code/0_layer_ai_context/0_context/0.00_layer_stage_system/stages/stage_0.01_instructions/hand_off_documents/INSTRUCTIONS_AI_MANAGER_HIERARCHY_SYSTEM.md`
+**Document Location:** `/home/dawson/dawson-workspace/code/0_layer_universal/0_context/layer_1/layer_1_features/layer_1_feature_layer_stage_system/stages/stage_0_01_instructions/hand_off_documents/INSTRUCTIONS_AI_MANAGER_HIERARCHY_SYSTEM.md`
 
 **Last Updated:** 2026-01-15
 

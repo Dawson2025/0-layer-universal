@@ -492,8 +492,8 @@ tail -20 "$LATEST_LOG"
 
 ## Related Documentation
 
-- Universal Browser Opening Rule: `layer_0_universal/0.02_sub_layers/sub_layer_0.04_universal_rules/trickle_down_0_universal/0_instruction_docs/browser_opening_rule.md`
-- Playwright MCP Usage: `layer_0_universal/0.02_sub_layers/sub_layer_0.05_os_setup/trickle_down_0.5_setup/0_instruction_docs/setup/playwright-mcp-usage.md`
+- Universal Browser Opening Rule: `layer_0/0.02_sub_layers/sub_layer_0.04_universal_rules/trickle_down_0_universal/0_instruction_docs/browser_opening_rule.md`
+- Playwright MCP Usage: `layer_0/0.02_sub_layers/sub_layer_0.05_os_setup/trickle_down_0.5_setup/0_instruction_docs/setup/playwright-mcp-usage.md`
 
 ## Setup Instructions
 

@@ -1,7 +1,7 @@
 # Master Documentation Index
 *Complete Index of All Organized Documentation*
 
-> **Note:** This repo now uses the Layer + Stage framework. Canonical content lives under `layer_0_universal/`, `layer_1_project/`, `layer_2_features/`, and `layer_3_components/` (slots in `*.01_sub_layers/sub_layer_<N.xx>_*`, stages in `*.99_stages/stage_<N.xx>_*`). Legacy `trickle_down_*` paths referenced below are kept for historical context; migrate or reference them via the new layer structure when practical.
+> **Note:** This repo now uses the Layer + Stage framework. Canonical content lives under `layer_0/`, `layer_1_project/`, `layer_2_features/`, and `layer_3_components/` (slots in `*.01_sub_layers/sub_layer_<N.xx>_*`, stages in `*.99_stages/stage_<N.xx>_*`). Legacy `trickle_down_*` paths referenced below are kept for historical context; migrate or reference them via the new layer structure when practical.
 
 ## 📋 Overview
 
@@ -60,9 +60,9 @@ This master index provides a comprehensive overview of all documentation organiz
 - ✅ `Parallelism and Concurrency/0_context` - Verified (identical to main)
 - ✅ `DS250-Course-Draft/0_context` - Project-specific only
 
-**Location**: All new files added to `/home/dawson/code/0_layer_ai_context/0_context/`
+**Location**: All new files added to `/home/dawson/code/0_layer_universal/0_context/`
 
-**Purpose**: Consolidate universal, reusable documentation that applies to ANY project, making the 0_layer_ai_context directory the single source of truth for universal AI agent protocols.
+**Purpose**: Consolidate universal, reusable documentation that applies to ANY project, making the 0_layer_universal directory the single source of truth for universal AI agent protocols.
 
 ## 🆕 SCHOOL WRAPPER PATTERN STANDARDIZED - November 11, 2025
 
@@ -70,7 +70,7 @@ This master index provides a comprehensive overview of all documentation organiz
   - Public repo (e.g., `pac20026_fall2025/` → `byui-math-dept/pac20026_fall2025`)
   - Private project context repo (`0_context/` → `Dawson2025/1-project-context-pac20026_fall2025`)
   - Workspace metadata (`.ai_workspace`) + README describing flow
-- Universal context canonical location: `/home/dawson/code/0_layer_ai_context` (repo `Dawson2025/0-universal-context`)
+- Universal context canonical location: `/home/dawson/code/0_layer_universal` (repo `Dawson2025/0-universal-context`)
 - Public repos must exclude every AI artifact; all AI docs live inside private context repos
 - This wrapper + dual-private-repo structure is now the baseline DS250 school workspace template
 
@@ -82,12 +82,12 @@ This comprehensive system defines how AI agents are organized, coordinated, and 
 
 ### **Core Documentation:**
 
-- **Quick Overview**: [`-1_research/-1.01_things_researched/ai_manager_hierarchy_system/overview/README.md`](code/0_layer_ai_context/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/overview/README.md)
-- **System Summary**: [`-1_research/-1.01_things_researched/ai_manager_hierarchy_system/overview/IDEAL_AI_MANAGER_HIERARCHY_SYSTEM.md`](code/0_layer_ai_context/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/overview/IDEAL_AI_MANAGER_HIERARCHY_SYSTEM.md)
+- **Quick Overview**: [`-1_research/-1.01_things_researched/ai_manager_hierarchy_system/overview/README.md`](code/0_layer_universal/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/overview/README.md)
+- **System Summary**: [`-1_research/-1.01_things_researched/ai_manager_hierarchy_system/overview/IDEAL_AI_MANAGER_HIERARCHY_SYSTEM.md`](code/0_layer_universal/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/overview/IDEAL_AI_MANAGER_HIERARCHY_SYSTEM.md)
 
 ### **Detailed Specifications:**
 
-All detailed documentation is located in: [`-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/`](code/0_layer_ai_context/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/)
+All detailed documentation is located in: [`-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/`](code/0_layer_universal/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/)
 
 **Core Architecture:**
 - `summary/IDEAL_AI_MANAGER_HIERARCHY_SYSTEM.md` - Long-form specification
@@ -138,7 +138,7 @@ This system provides the foundation for all agent orchestration, tool selection,
 │   ├── 1_status_progress_docs/ # Setup status and progress
 │   ├── 2_archive_docs/         # Completed setup documentation
 │   └── 2_testing_docs/         # Testing documentation
-├── layer_0_universal/0.02_sub_layers/
+├── layer_0/0.02_sub_layers/
 │   ├── sub_layer_0.06_environment_setup/            # Git/GitHub auth, credentials, cross-app environment rules
 │   ├── sub_layer_0.09_ai_apps_tools_setup/          # AI apps/tools setup (required before MCP setup)
 │   ├── sub_layer_0.10_mcp_servers_and_tools_setup/  # MCP server setup (depends on 0.09)
@@ -283,7 +283,7 @@ This system provides the foundation for all agent orchestration, tool selection,
 - **AI Agent Protocols**: `trickle_down_0_universal/`
 - **Basic Prompts Throughout**: `0_basic_prompts_throughout/` (CRITICAL for all AI agents)
 - **Environment Setup**: `trickle_down_0.5_setup/`
-  - **GitHub SSO Setup**: `layer_0_universal/0.02_sub_layers/sub_layer_0.06_environment_setup/trickle_down_0.5_setup/0_instruction_docs/github/github_sso_token_setup.md` (Complete guide for SAML SSO token authorization)
+  - **GitHub SSO Setup**: `layer_0/0.02_sub_layers/sub_layer_0.06_environment_setup/trickle_down_0.5_setup/0_instruction_docs/github/github_sso_token_setup.md` (Complete guide for SAML SSO token authorization)
 - **Universal Tools**: `trickle_down_0.75_universal_tools/`
 - **Project Standards**: `trickle_down_1_project/`
 - **Project Tools**: `trickle_down_1.5_project_tools/`
@@ -369,10 +369,10 @@ This system provides the foundation for all agent orchestration, tool selection,
 - **Status**: ✅ Active development
 
 ### **MCP Tools (Model Context Protocol)**
-- **MCP System Guide**: `layer_0_universal/0.02_sub_layers/sub_layer_0.10_mcp_servers_and_tools_setup/0.01_core-system/MCP_SYSTEM_GUIDE.md`
-- **MCP Configuration Guide**: `layer_0_universal/0.02_sub_layers/sub_layer_0.10_mcp_servers_and_tools_setup/0.01_core-system/MCP_CONFIGURATION_GUIDE.md`
-- **MCP Server Matrix**: `layer_0_universal/0.02_sub_layers/sub_layer_0.10_mcp_servers_and_tools_setup/0.01_core-system/MCP_SERVER_MATRIX.md`
-- **Browser MCP Routing Table**: `layer_0_universal/0.02_sub_layers/sub_layer_0.10_mcp_servers_and_tools_setup/0.01_core-system/BROWSER_MCP_ROUTING_TABLE.md`
+- **MCP System Guide**: `layer_0/0.02_sub_layers/sub_layer_0.10_mcp_servers_and_tools_setup/0.01_core-system/MCP_SYSTEM_GUIDE.md`
+- **MCP Configuration Guide**: `layer_0/0.02_sub_layers/sub_layer_0.10_mcp_servers_and_tools_setup/0.01_core-system/MCP_CONFIGURATION_GUIDE.md`
+- **MCP Server Matrix**: `layer_0/0.02_sub_layers/sub_layer_0.10_mcp_servers_and_tools_setup/0.01_core-system/MCP_SERVER_MATRIX.md`
+- **Browser MCP Routing Table**: `layer_0/0.02_sub_layers/sub_layer_0.10_mcp_servers_and_tools_setup/0.01_core-system/BROWSER_MCP_ROUTING_TABLE.md`
 
 ### **By Timeline**
 - **Current Work**: Check `1_status_progress_docs/` folders

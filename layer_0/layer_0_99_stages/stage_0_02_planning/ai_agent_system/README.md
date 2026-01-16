@@ -19,7 +19,7 @@ The planning stage:
 
 1. **Read Incoming Handoff**:
    - Location: `../hand_off_documents/incoming.json`
-   - Source: Previous stage (stage_0.01_instructions)
+   - Source: Previous stage (stage_0_01_instructions)
    - Contains: Clarified requirements with universal constraints applied
 
 2. **Analyze and Decompose**:
@@ -68,7 +68,7 @@ Worker pattern:
   "id": "l0-instructions-to-planning-20241223",
   "layer": 0,
   "stage": "instructions",
-  "from": "layer_0/stage_0.01_instructions",
+  "from": "layer_0/stage_0_01_instructions",
   "to": "layer_0/stage_0.02_planning",
   "task": "Create new web application for project management",
   "constraints": [

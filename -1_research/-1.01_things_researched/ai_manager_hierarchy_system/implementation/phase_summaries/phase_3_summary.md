@@ -22,7 +22,7 @@ Establish consistent operational patterns by:
 ### 1. Layer Manager System READMEs (4 files)
 
 #### Layer 0 (Universal)
-**File**: `layer_0_universal/0.00_ai_manager_system/README.md`
+**File**: `layer_0/0.00_ai_manager_system/README.md`
 **Size**: 12KB
 **Created**: 2025-12-24 00:03
 **Content**:
@@ -76,7 +76,7 @@ Establish consistent operational patterns by:
 
 ### 2. Canonical Handoff Schema
 
-**File**: `layer_0_universal/0.01_manager_handoff_documents/0.00_to_universal/handoff_schema.md`
+**File**: `layer_0/0.01_manager_handoff_documents/0.00_to_universal/handoff_schema.md`
 **Size**: ~8KB
 **Content**:
 
@@ -117,8 +117,8 @@ Establish consistent operational patterns by:
 **Status**: Partially complete
 **Evidence**: Some stage READMEs reference hierarchy patterns
 **Example files**:
-- `layer_0_universal/0.99_stages/stage_0.02_planning/ai_agent_system/README.md`
-- `layer_0_universal/0.99_stages/stage_0.04_development/ai_agent_system/README.md`
+- `layer_0/0.99_stages/stage_0.02_planning/ai_agent_system/README.md`
+- `layer_0/0.99_stages/stage_0.04_development/ai_agent_system/README.md`
 
 **Remaining Work**:
 - Full audit of all stage-level `ai_agent_system/README.md` files

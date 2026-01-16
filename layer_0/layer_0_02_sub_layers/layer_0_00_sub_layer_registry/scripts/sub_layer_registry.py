@@ -23,17 +23,17 @@ SUB_LAYER_RE = re.compile(r"^sub_layer_(\d+\.\d+)_([a-z0-9_]+)$")
 
 
 def repo_root_from_here() -> Path:
-    # .../layer_0_universal/0.02_sub_layers/0.00_sub_layer_registry/scripts/sub_layer_registry.py
+    # .../layer_0/0.02_sub_layers/0.00_sub_layer_registry/scripts/sub_layer_registry.py
     return Path(__file__).resolve().parents[5]
 
 
 def sublayers_root() -> Path:
-    # .../layer_0_universal/0.02_sub_layers/
+    # .../layer_0/0.02_sub_layers/
     return Path(__file__).resolve().parents[2]
 
 
 def registry_dir() -> Path:
-    # .../layer_0_universal/0.02_sub_layers/0.00_sub_layer_registry/
+    # .../layer_0/0.02_sub_layers/0.00_sub_layer_registry/
     return Path(__file__).resolve().parents[1]
 
 
@@ -75,7 +75,7 @@ def write_registry_yaml(sublayers: Iterable[SubLayer]) -> Path:
     lines.append(f"generated_at_utc: {now}")
     lines.append("sublayers:")
     for sl in sublayers:
-        path = f"layer_0_universal/0.02_sub_layers/{sl.folder_name}"
+        path = f"layer_0/0.02_sub_layers/{sl.folder_name}"
         lines.append(f"  - slug: {sl.slug}")
         lines.append(f"    number: \"{sl.number}\"")
         lines.append(f"    folder: {sl.folder_name}")
@@ -162,7 +162,7 @@ def check_hardlinks() -> int:
 
     print()
     print("Fix guidance:")
-    print("- Prefer alias links under `layer_0_universal/0.02_sub_layers/0.00_sub_layer_registry/aliases/`")
+    print("- Prefer alias links under `layer_0/0.02_sub_layers/0.00_sub_layer_registry/aliases/`")
     print("- Regenerate aliases with: python3 .../sub_layer_registry.py generate")
     return 2
 

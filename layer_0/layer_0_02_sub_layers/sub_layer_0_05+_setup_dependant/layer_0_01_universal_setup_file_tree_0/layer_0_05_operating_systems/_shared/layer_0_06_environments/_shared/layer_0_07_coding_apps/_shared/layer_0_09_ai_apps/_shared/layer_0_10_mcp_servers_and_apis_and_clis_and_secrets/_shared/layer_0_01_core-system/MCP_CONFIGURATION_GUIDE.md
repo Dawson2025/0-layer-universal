@@ -495,7 +495,7 @@ python3 scripts/mcp-cli.py report
 
 ## Legacy MCP Source
 
-Source: `/home/dawson/dawson-workspace/code/0_layer_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.10_mcp_servers_and_tools_setup/0.01_core-system/MCP_CONFIGURATION_GUIDE.md`
+Source: `/home/dawson/dawson-workspace/code/0_layer_universal/0_context/layer_0/0.02_sub_layers/sub_layer_0.10_mcp_servers_and_tools_setup/0.01_core-system/MCP_CONFIGURATION_GUIDE.md`
 
 # MCP Configuration Guide - Universal Tools
 

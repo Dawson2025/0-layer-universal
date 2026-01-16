@@ -159,7 +159,7 @@ def spawn_l1_project_manager(project_name, task):
     return result
 
 # Process universal request
-universal_request = load_handoff("layer_0_universal/incoming.json")
+universal_request = load_handoff("layer_0/incoming.json")
 
 # Decompose to projects
 projects = decompose_to_projects(universal_request)

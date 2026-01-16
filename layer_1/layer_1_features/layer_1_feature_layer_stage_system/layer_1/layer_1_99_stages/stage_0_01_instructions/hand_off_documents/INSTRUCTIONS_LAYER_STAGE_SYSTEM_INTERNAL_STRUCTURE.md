@@ -97,7 +97,7 @@ layer_1_feature_layer_stage_system/
 │   │   │   └── structure_rules.md
 │   │   └── sub_layer_1_05+_setup_dependant/
 │   │       │
-│   │       ├── sub_layer_1_05_framework_docs/        # FROM 0.01_layer_stage_framework
+│   │       ├── sub_layer_1_05_framework_docs/        # FROM layer_1/layer_1_features/layer_1_feature_layer_stage_system/layer_1/layer_1_02_sub_layers
 │   │       │   ├── FLEXIBLE_LAYERING_SYSTEM.md
 │   │       │   ├── EXTENDING_THE_FRAMEWORK.md
 │   │       │   ├── WORKFLOW_FEATURE_PATTERN.md
@@ -105,7 +105,7 @@ layer_1_feature_layer_stage_system/
 │   │       │   ├── UNIVERSAL_SYSTEM_EVALUATION.md
 │   │       │   └── CLASSROOM_WORKFLOW_STRATEGIES.md
 │   │       │
-│   │       ├── sub_layer_1_06_templates/             # FROM 0.01_layer_stage_framework
+│   │       ├── sub_layer_1_06_templates/             # FROM layer_1/layer_1_features/layer_1_feature_layer_stage_system/layer_1/layer_1_02_sub_layers
 │   │       │   ├── 0_universal_template/
 │   │       │   ├── 1_project_template/
 │   │       │   ├── 2_sub_project_template/
@@ -429,13 +429,13 @@ Each init_prompt references:
 
 | Current Location | New Location |
 |-----------------|--------------|
-| `0.00_layer_stage_system/` | `layer_1_feature_layer_stage_system/` |
-| `0.00_layer_stage_system/stages/` | `.../layer_1/layer_1_99_stages/` |
-| `0.00_layer_stage_system/stages/stage_0.08_current_product/setup/` | `.../stage_1_08_current_product/setup/` |
-| `0.00_layer_stage_system/stages/stage_0.08_current_product/changes/` | `.../stage_1_08_current_product/changes/` |
-| `0.01_layer_stage_framework/` | `.../layer_1/layer_1_02_sub_layers/sub_layer_1_05+_setup_dependant/` |
-| `0.01_layer_stage_framework/*.md` | `.../sub_layer_1_05_framework_docs/` |
-| `0.01_layer_stage_framework/*_template/` | `.../sub_layer_1_06_templates/` |
+| `layer_1/layer_1_features/layer_1_feature_layer_stage_system/` | `layer_1_feature_layer_stage_system/` |
+| `layer_1/layer_1_features/layer_1_feature_layer_stage_system/stages/` | `.../layer_1/layer_1_99_stages/` |
+| `layer_1/layer_1_features/layer_1_feature_layer_stage_system/stages/stage_0.08_current_product/setup/` | `.../stage_1_08_current_product/setup/` |
+| `layer_1/layer_1_features/layer_1_feature_layer_stage_system/stages/stage_0.08_current_product/changes/` | `.../stage_1_08_current_product/changes/` |
+| `layer_1/layer_1_features/layer_1_feature_layer_stage_system/layer_1/layer_1_02_sub_layers/` | `.../layer_1/layer_1_02_sub_layers/sub_layer_1_05+_setup_dependant/` |
+| `layer_1/layer_1_features/layer_1_feature_layer_stage_system/layer_1/layer_1_02_sub_layers/*.md` | `.../sub_layer_1_05_framework_docs/` |
+| `layer_1/layer_1_features/layer_1_feature_layer_stage_system/layer_1/layer_1_02_sub_layers/*_template/` | `.../sub_layer_1_06_templates/` |
 | `-1_research/ai_manager_hierarchy_system/` | `.../layer_2/layer_2_features/layer_2_feature_ai_manager_hierarchy/` |
 
 ---
@@ -465,7 +465,7 @@ Each init_prompt references:
 
 ---
 
-**Document Location:** `/home/dawson/dawson-workspace/code/0_layer_ai_context/0_context/0.00_layer_stage_system/stages/stage_0.01_instructions/hand_off_documents/INSTRUCTIONS_LAYER_STAGE_SYSTEM_INTERNAL_STRUCTURE.md`
+**Document Location:** `/home/dawson/dawson-workspace/code/0_layer_universal/0_context/layer_1/layer_1_features/layer_1_feature_layer_stage_system/stages/stage_0_01_instructions/hand_off_documents/INSTRUCTIONS_LAYER_STAGE_SYSTEM_INTERNAL_STRUCTURE.md`
 
 **Last Updated:** 2026-01-15
 

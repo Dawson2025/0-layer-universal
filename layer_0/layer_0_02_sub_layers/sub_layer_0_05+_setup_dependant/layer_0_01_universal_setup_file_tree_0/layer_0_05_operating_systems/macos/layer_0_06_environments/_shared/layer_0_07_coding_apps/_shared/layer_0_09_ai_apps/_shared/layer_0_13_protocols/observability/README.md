@@ -15,7 +15,7 @@ This protocol defines structured logging, monitoring, and observability patterns
 
 This document is a **derived implementation guide** from the canonical specification:
 
-- **Source**: `/home/dawson/dawson-workspace/code/0_layer_ai_context/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/observability_and_logging.md`
+- **Source**: `/home/dawson/dawson-workspace/code/0_layer_universal/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/observability_and_logging.md`
 - **Status**: Normative (refer to source for authoritative details)
 
 ---
@@ -415,7 +415,7 @@ Observability logs feed into safety/governance systems:
 - Permission violations are audited
 - Human approvals are logged with full context
 
-See: `layer_0_universal/0.02_sub_layers/sub_layer_0.04_universal_rules/safety_governance.md`
+See: `layer_0/0.02_sub_layers/sub_layer_0.04_universal_rules/safety_governance.md`
 
 ### With Deployment
 
@@ -425,7 +425,7 @@ Production deployments require observability infrastructure:
 - Metrics collection and visualization
 - Distributed tracing setup
 
-See: `layer_0_universal/0.02_sub_layers/sub_layer_0.05_os_setup/trickle_down_0.5_setup/0_instruction_docs/DEPLOYMENT_GUIDE.md`
+See: `layer_0/0.02_sub_layers/sub_layer_0.05_os_setup/trickle_down_0.5_setup/0_instruction_docs/DEPLOYMENT_GUIDE.md`
 
 ---
 
@@ -479,9 +479,9 @@ logger.log_event("task.started", task_id="task-L2-auth-impl", estimated_cost=0.5
 ## References
 
 - **Normative Spec**: `.../-1_research/.../ideal_ai_manager_hierarchy_system/observability_and_logging.md`
-- **Handoff Schema**: `layer_0_universal/0.01_manager_handoff_documents/0.00_to_universal/handoff_schema.md`
-- **Safety & Governance**: `layer_0_universal/0.02_sub_layers/sub_layer_0.04_universal_rules/safety_governance.md`
-- **Deployment Guide**: `layer_0_universal/0.02_sub_layers/sub_layer_0.05_os_setup/.../DEPLOYMENT_GUIDE.md`
+- **Handoff Schema**: `layer_0/0.01_manager_handoff_documents/0.00_to_universal/handoff_schema.md`
+- **Safety & Governance**: `layer_0/0.02_sub_layers/sub_layer_0.04_universal_rules/safety_governance.md`
+- **Deployment Guide**: `layer_0/0.02_sub_layers/sub_layer_0.05_os_setup/.../DEPLOYMENT_GUIDE.md`
 
 ---
 
@@ -489,7 +489,7 @@ logger.log_event("task.started", task_id="task-L2-auth-impl", estimated_cost=0.5
 
 This protocol follows the **Protocol Writing Standard**:
 
-- See: `layer_0_universal/0.02_sub_layers/sub_layer_0.13_universal_protocols/protocol_writing_standard/`
+- See: `layer_0/0.02_sub_layers/sub_layer_0.13_universal_protocols/protocol_writing_standard/`
 
 **Last Updated**: 2025-12-24
 **Version**: 1.0.0
@@ -516,7 +516,7 @@ This protocol defines structured logging, monitoring, and observability patterns
 
 This document is a **derived implementation guide** from the canonical specification:
 
-- **Source**: `/home/dawson/code/0_layer_ai_context/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/observability_and_logging.md`
+- **Source**: `/home/dawson/code/0_layer_universal/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/observability_and_logging.md`
 - **Status**: Normative (refer to source for authoritative details)
 
 ---
@@ -916,7 +916,7 @@ Observability logs feed into safety/governance systems:
 - Permission violations are audited
 - Human approvals are logged with full context
 
-See: `layer_0_universal/0.02_sub_layers/sub_layer_0.04_universal_rules/safety_governance.md`
+See: `layer_0/0.02_sub_layers/sub_layer_0.04_universal_rules/safety_governance.md`
 
 ### With Deployment
 
@@ -926,7 +926,7 @@ Production deployments require observability infrastructure:
 - Metrics collection and visualization
 - Distributed tracing setup
 
-See: `layer_0_universal/0.02_sub_layers/sub_layer_0.05_os_setup/trickle_down_0.5_setup/0_instruction_docs/DEPLOYMENT_GUIDE.md`
+See: `layer_0/0.02_sub_layers/sub_layer_0.05_os_setup/trickle_down_0.5_setup/0_instruction_docs/DEPLOYMENT_GUIDE.md`
 
 ---
 
@@ -980,9 +980,9 @@ logger.log_event("task.started", task_id="task-L2-auth-impl", estimated_cost=0.5
 ## References
 
 - **Normative Spec**: `.../-1_research/.../ideal_ai_manager_hierarchy_system/observability_and_logging.md`
-- **Handoff Schema**: `layer_0_universal/0.01_manager_handoff_documents/0.00_to_universal/handoff_schema.md`
-- **Safety & Governance**: `layer_0_universal/0.02_sub_layers/sub_layer_0.04_universal_rules/safety_governance.md`
-- **Deployment Guide**: `layer_0_universal/0.02_sub_layers/sub_layer_0.05_os_setup/.../DEPLOYMENT_GUIDE.md`
+- **Handoff Schema**: `layer_0/0.01_manager_handoff_documents/0.00_to_universal/handoff_schema.md`
+- **Safety & Governance**: `layer_0/0.02_sub_layers/sub_layer_0.04_universal_rules/safety_governance.md`
+- **Deployment Guide**: `layer_0/0.02_sub_layers/sub_layer_0.05_os_setup/.../DEPLOYMENT_GUIDE.md`
 
 ---
 
@@ -990,7 +990,7 @@ logger.log_event("task.started", task_id="task-L2-auth-impl", estimated_cost=0.5
 
 This protocol follows the **Protocol Writing Standard**:
 
-- See: `layer_0_universal/0.02_sub_layers/sub_layer_0.13_universal_protocols/protocol_writing_standard/`
+- See: `layer_0/0.02_sub_layers/sub_layer_0.13_universal_protocols/protocol_writing_standard/`
 
 **Last Updated**: 2025-12-24
 **Version**: 1.0.0
@@ -1001,7 +1001,7 @@ This protocol follows the **Protocol Writing Standard**:
 
 ## Legacy Source
 
-Source: `/home/dawson/dawson-workspace/code/0_layer_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.13_universal_protocols/observability/README.md`
+Source: `/home/dawson/dawson-workspace/code/0_layer_universal/0_context/layer_0/0.02_sub_layers/sub_layer_0.13_universal_protocols/observability/README.md`
 
 # Observability and Logging Protocol
 
@@ -1020,7 +1020,7 @@ This protocol defines structured logging, monitoring, and observability patterns
 
 This document is a **derived implementation guide** from the canonical specification:
 
-- **Source**: `/home/dawson/code/0_layer_ai_context/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/observability_and_logging.md`
+- **Source**: `/home/dawson/code/0_layer_universal/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/observability_and_logging.md`
 - **Status**: Normative (refer to source for authoritative details)
 
 ---
@@ -1420,7 +1420,7 @@ Observability logs feed into safety/governance systems:
 - Permission violations are audited
 - Human approvals are logged with full context
 
-See: `layer_0_universal/0.02_sub_layers/sub_layer_0.04_universal_rules/safety_governance.md`
+See: `layer_0/0.02_sub_layers/sub_layer_0.04_universal_rules/safety_governance.md`
 
 ### With Deployment
 
@@ -1430,7 +1430,7 @@ Production deployments require observability infrastructure:
 - Metrics collection and visualization
 - Distributed tracing setup
 
-See: `layer_0_universal/0.02_sub_layers/sub_layer_0.05_os_setup/trickle_down_0.5_setup/0_instruction_docs/DEPLOYMENT_GUIDE.md`
+See: `layer_0/0.02_sub_layers/sub_layer_0.05_os_setup/trickle_down_0.5_setup/0_instruction_docs/DEPLOYMENT_GUIDE.md`
 
 ---
 
@@ -1484,9 +1484,9 @@ logger.log_event("task.started", task_id="task-L2-auth-impl", estimated_cost=0.5
 ## References
 
 - **Normative Spec**: `.../-1_research/.../ideal_ai_manager_hierarchy_system/observability_and_logging.md`
-- **Handoff Schema**: `layer_0_universal/0.01_manager_handoff_documents/0.00_to_universal/handoff_schema.md`
-- **Safety & Governance**: `layer_0_universal/0.02_sub_layers/sub_layer_0.04_universal_rules/safety_governance.md`
-- **Deployment Guide**: `layer_0_universal/0.02_sub_layers/sub_layer_0.05_os_setup/.../DEPLOYMENT_GUIDE.md`
+- **Handoff Schema**: `layer_0/0.01_manager_handoff_documents/0.00_to_universal/handoff_schema.md`
+- **Safety & Governance**: `layer_0/0.02_sub_layers/sub_layer_0.04_universal_rules/safety_governance.md`
+- **Deployment Guide**: `layer_0/0.02_sub_layers/sub_layer_0.05_os_setup/.../DEPLOYMENT_GUIDE.md`
 
 ---
 
@@ -1494,7 +1494,7 @@ logger.log_event("task.started", task_id="task-L2-auth-impl", estimated_cost=0.5
 
 This protocol follows the **Protocol Writing Standard**:
 
-- See: `layer_0_universal/0.02_sub_layers/sub_layer_0.13_universal_protocols/protocol_writing_standard/`
+- See: `layer_0/0.02_sub_layers/sub_layer_0.13_universal_protocols/protocol_writing_standard/`
 
 **Last Updated**: 2025-12-24
 **Version**: 1.0.0

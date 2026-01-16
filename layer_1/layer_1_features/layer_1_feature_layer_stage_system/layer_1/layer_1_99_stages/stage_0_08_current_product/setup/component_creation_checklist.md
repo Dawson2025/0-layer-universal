@@ -37,9 +37,9 @@ cd <parent_component>/layer_<N+1>/layer_<N+1>_sub_components/
 
 ```bash
 # Same template used for both components and sub-components
-cp -r <path_to>/0.01_layer_stage_framework/3_component_template/ layer_<N+1>_component_<name>/
+cp -r <path_to>/layer_1/layer_1_features/layer_1_feature_layer_stage_system/layer_1/layer_1_02_sub_layers/3_component_template/ layer_<N+1>_component_<name>/
 # Or for sub-component:
-cp -r <path_to>/0.01_layer_stage_framework/3_component_template/ layer_<N+1>_sub_component_<name>/
+cp -r <path_to>/layer_1/layer_1_features/layer_1_feature_layer_stage_system/layer_1/layer_1_02_sub_layers/3_component_template/ layer_<N+1>_sub_component_<name>/
 ```
 
 - [ ] Copied component template

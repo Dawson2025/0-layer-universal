@@ -8,9 +8,9 @@
 ## Quick Lookup by Need
 
 ### "I need to understand the hierarchy"
-→ Start here: `/code/0_layer_ai_context/0_context/SYSTEM_OVERVIEW.md`
-→ Complete guide: `/code/0_layer_ai_context/0_context/USAGE_GUIDE.md`
-→ Quick start: `layer_0_universal/.../HIERARCHY_QUICK_START.md`
+→ Start here: `/code/0_layer_universal/0_context/SYSTEM_OVERVIEW.md`
+→ Complete guide: `/code/0_layer_universal/0_context/USAGE_GUIDE.md`
+→ Quick start: `layer_0/.../HIERARCHY_QUICK_START.md`
 
 ### "I need the normative specifications"
 → Overview: `-1_research/.../ai_manager_hierarchy_system/overview/IDEAL_AI_MANAGER_HIERARCHY_SYSTEM.md`
@@ -25,12 +25,12 @@
 
 ### "I want to adopt this in my project"
 → Rollout plan: `/home/dawson/.cursor/plans/ai_manager_hierarchy_rollout_plan.md`
-→ Adoption checklist: `layer_0_universal/.../HIERARCHY_ADOPTION_CHECKLIST.md`
-→ Migration guide: `layer_0_universal/.../MIGRATION_GUIDE.md`
-→ Quick start: `layer_0_universal/.../HIERARCHY_QUICK_START.md`
+→ Adoption checklist: `layer_0/.../HIERARCHY_ADOPTION_CHECKLIST.md`
+→ Migration guide: `layer_0/.../MIGRATION_GUIDE.md`
+→ Quick start: `layer_0/.../HIERARCHY_QUICK_START.md`
 
 ### "I need OS-specific context for my tool"
-→ Layer 0: `layer_0_universal/0.99_stages/stage_0.01_instructions/ai_agent_system/os/{wsl|linux_ubuntu}/`
+→ Layer 0: `layer_0/0.99_stages/stage_0_01_instructions/ai_agent_system/os/{wsl|linux_ubuntu}/`
 → Layer 1: `layer_1_project/1.99_stages/stage_1.01_instructions/ai_agent_system/os/{wsl|linux_ubuntu}/`
 → Layer 2: `layer_2_features/2.99_stages/stage_2.01_instructions/ai_agent_system/os/{wsl|linux_ubuntu}/`
 → Layer 3: `layer_3_components/3.99_stages/stage_3.01_instructions/ai_agent_system/os/{wsl|linux_ubuntu}/`
@@ -38,13 +38,13 @@
 Files in each: `CLAUDE.md` (managers), `AGENTS.md` (workers), `GEMINI.md` (planning)
 
 ### "I need to understand manager/worker patterns"
-→ Layer 0: `layer_0_universal/0.00_ai_manager_system/README.md`
+→ Layer 0: `layer_0/0.00_ai_manager_system/README.md`
 → Layer 1: `layer_1_project/1.00_ai_manager_system/README.md`
 → Layer 2: `layer_2_features/2.00_ai_manager_system/README.md`
 → Layer 3: `layer_3_components/3.00_ai_manager_system/README.md`
 
 ### "I need the handoff schema"
-→ Canonical schema: `layer_0_universal/0.01_manager_handoff_documents/0.00_to_universal/handoff_schema.md`
+→ Canonical schema: `layer_0/0.01_manager_handoff_documents/0.00_to_universal/handoff_schema.md`
 → Usage examples: In schema doc + manager system READMEs
 
 ### "I need framework orchestration patterns"
@@ -81,25 +81,25 @@ Files in each: `CLAUDE.md` (managers), `AGENTS.md` (workers), `GEMINI.md` (plann
 ### Entry Points & Navigation
 | What | Where |
 |------|-------|
-| Master index | `/code/0_layer_ai_context/0_context/MASTER_DOCUMENTATION_INDEX.md` |
-| System overview | `/code/0_layer_ai_context/0_context/SYSTEM_OVERVIEW.md` |
-| Usage guide | `/code/0_layer_ai_context/0_context/USAGE_GUIDE.md` |
-| Quick start | `layer_0_universal/.../sub_layer_0.01.../HIERARCHY_QUICK_START.md` |
+| Master index | `/code/0_layer_universal/0_context/MASTER_DOCUMENTATION_INDEX.md` |
+| System overview | `/code/0_layer_universal/0_context/SYSTEM_OVERVIEW.md` |
+| Usage guide | `/code/0_layer_universal/0_context/USAGE_GUIDE.md` |
+| Quick start | `layer_0/.../sub_layer_0.01.../HIERARCHY_QUICK_START.md` |
 
 ### Framework & Standards
 | What | Where |
 |------|-------|
-| Layer/stage framework | `0.01_layer_stage_framework/README.md` |
-| L0 manager system | `layer_0_universal/0.00_ai_manager_system/README.md` |
+| Layer/stage framework | `layer_1/layer_1_features/layer_1_feature_layer_stage_system/layer_1/layer_1_02_sub_layers/README.md` |
+| L0 manager system | `layer_0/0.00_ai_manager_system/README.md` |
 | L1 manager system | `layer_1_project/1.00_ai_manager_system/README.md` |
 | L2 manager system | `layer_2_features/2.00_ai_manager_system/README.md` |
 | L3 manager system | `layer_3_components/3.00_ai_manager_system/README.md` |
-| Handoff schema | `layer_0_universal/0.01_manager_handoff_documents/0.00_to_universal/handoff_schema.md` |
+| Handoff schema | `layer_0/0.01_manager_handoff_documents/0.00_to_universal/handoff_schema.md` |
 
 ### OS/Tool Context Files
 | Layer | WSL Location | Linux Ubuntu Location |
 |-------|--------------|----------------------|
-| L0 | `layer_0_universal/.../stage_0.01_instructions/ai_agent_system/os/wsl/` | `.../os/linux_ubuntu/` |
+| L0 | `layer_0/.../stage_0_01_instructions/ai_agent_system/os/wsl/` | `.../os/linux_ubuntu/` |
 | L1 | `layer_1_project/.../stage_1.01_instructions/ai_agent_system/os/wsl/` | `.../os/linux_ubuntu/` |
 | L2 | `layer_2_features/.../stage_2.01_instructions/ai_agent_system/os/wsl/` | `.../os/linux_ubuntu/` |
 | L3 | `layer_3_components/.../stage_3.01_instructions/ai_agent_system/os/wsl/` | `.../os/linux_ubuntu/` |
@@ -119,9 +119,9 @@ In each directory: `CLAUDE.md`, `AGENTS.md`, `GEMINI.md`
 | What | Where |
 |------|-------|
 | Rollout plan | `/home/dawson/.cursor/plans/ai_manager_hierarchy_rollout_plan.md` |
-| Adoption checklist | `sub_layer_0.01_basic_prompts_throughout/HIERARCHY_ADOPTION_CHECKLIST.md` |
-| Migration guide | `sub_layer_0.01_basic_prompts_throughout/MIGRATION_GUIDE.md` |
-| Quick start | `sub_layer_0.01_basic_prompts_throughout/HIERARCHY_QUICK_START.md` |
+| Adoption checklist | `sub_layer_0_01_basic_prompts_throughout/HIERARCHY_ADOPTION_CHECKLIST.md` |
+| Migration guide | `sub_layer_0_01_basic_prompts_throughout/MIGRATION_GUIDE.md` |
+| Quick start | `sub_layer_0_01_basic_prompts_throughout/HIERARCHY_QUICK_START.md` |
 | Lessons learned | `-1_research/.../ai_manager_hierarchy_system/implementation_lessons_learned.md` |
 
 ### Implementation Documentation
@@ -153,13 +153,13 @@ In each directory: `CLAUDE.md`, `AGENTS.md`, `GEMINI.md`
 
 ### Universal (Layer 0)
 ```
-layer_0_universal/
+layer_0/
 ├── 0.00_ai_manager_system/README.md
 ├── 0.01_manager_handoff_documents/
 │   ├── README.md
 │   └── 0.00_to_universal/handoff_schema.md
 ├── 0.02_sub_layers/
-│   ├── sub_layer_0.01_basic_prompts_throughout/
+│   ├── sub_layer_0_01_basic_prompts_throughout/
 │   │   ├── HIERARCHY_QUICK_START.md
 │   │   ├── HIERARCHY_ADOPTION_CHECKLIST.md
 │   │   └── MIGRATION_GUIDE.md
@@ -175,7 +175,7 @@ layer_0_universal/
 │       ├── cli_recursion/
 │       └── observability/
 └── 0.99_stages/
-    └── stage_0.01_instructions/ai_agent_system/os/
+    └── stage_0_01_instructions/ai_agent_system/os/
         ├── wsl/{CLAUDE.md, AGENTS.md, GEMINI.md}
         └── linux_ubuntu/{CLAUDE.md, AGENTS.md, GEMINI.md}
 ```
@@ -223,7 +223,7 @@ layer_3_components/
 - `USAGE_GUIDE.md` (updated)
 
 ### Phase 2: Framework Alignment
-- `0.01_layer_stage_framework/README.md` (updated)
+- `layer_1/layer_1_features/layer_1_feature_layer_stage_system/layer_1/layer_1_02_sub_layers/README.md` (updated)
 
 ### Phase 3: Manager/Worker Standardization
 - `layer_*/N.00_ai_manager_system/README.md` (4 files)
@@ -259,25 +259,25 @@ layer_3_components/
 ### Most Common Paths
 ```bash
 # Top-level navigation
-/home/dawson/code/0_layer_ai_context/0_context/SYSTEM_OVERVIEW.md
+/home/dawson/code/0_layer_universal/0_context/SYSTEM_OVERVIEW.md
 
 # OS context for Layer 0, WSL, Claude
-/home/dawson/code/0_layer_ai_context/0_context/layer_0_universal/0.99_stages/stage_0.01_instructions/ai_agent_system/os/wsl/CLAUDE.md
+/home/dawson/code/0_layer_universal/0_context/layer_0/0.99_stages/stage_0_01_instructions/ai_agent_system/os/wsl/CLAUDE.md
 
 # Handoff schema
-/home/dawson/code/0_layer_ai_context/0_context/layer_0_universal/0.01_manager_handoff_documents/0.00_to_universal/handoff_schema.md
+/home/dawson/code/0_layer_universal/0_context/layer_0/0.01_manager_handoff_documents/0.00_to_universal/handoff_schema.md
 
 # Observability protocol
-/home/dawson/code/0_layer_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.13_universal_protocols/observability/README.md
+/home/dawson/code/0_layer_universal/0_context/layer_0/0.02_sub_layers/sub_layer_0.13_universal_protocols/observability/README.md
 
 # Quick start guide
-/home/dawson/code/0_layer_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.01_basic_prompts_throughout/HIERARCHY_QUICK_START.md
+/home/dawson/code/0_layer_universal/0_context/layer_0/0.02_sub_layers/sub_layer_0_01_basic_prompts_throughout/HIERARCHY_QUICK_START.md
 
 # Rollout plan
 /home/dawson/.cursor/plans/ai_manager_hierarchy_rollout_plan.md
 
 # Implementation docs
-/home/dawson/code/0_layer_ai_context/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/implementation/
+/home/dawson/code/0_layer_universal/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/implementation/
 ```
 
 ---
@@ -291,10 +291,10 @@ layer_3_components/
 `layer_N_.../N.99_stages/stage_N.01_instructions/ai_agent_system/os/{wsl|linux_ubuntu|windows|macos}/{CLAUDE|AGENTS|GEMINI}.md`
 
 ### Universal protocols
-`layer_0_universal/0.02_sub_layers/sub_layer_0.13_universal_protocols/{protocol_name}/`
+`layer_0/0.02_sub_layers/sub_layer_0.13_universal_protocols/{protocol_name}/`
 
 ### Universal rules
-`layer_0_universal/0.02_sub_layers/sub_layer_0.04_universal_rules/{rule_name}.md`
+`layer_0/0.02_sub_layers/sub_layer_0.04_universal_rules/{rule_name}.md`
 
 ### Normative specs
 `-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/{spec_name}.md`
@@ -305,22 +305,22 @@ layer_3_components/
 
 ### From project root
 ```bash
-cd /home/dawson/code/0_layer_ai_context/0_context
+cd /home/dawson/code/0_layer_universal/0_context
 ```
 
 ### To specific areas
 ```bash
 # Universal layer
-cd layer_0_universal
+cd layer_0
 
 # OS context (Layer 0, WSL)
-cd layer_0_universal/0.99_stages/stage_0.01_instructions/ai_agent_system/os/wsl
+cd layer_0/0.99_stages/stage_0_01_instructions/ai_agent_system/os/wsl
 
 # Protocols
-cd layer_0_universal/0.02_sub_layers/sub_layer_0.13_universal_protocols
+cd layer_0/0.02_sub_layers/sub_layer_0.13_universal_protocols
 
 # Adoption guides
-cd layer_0_universal/0.02_sub_layers/sub_layer_0.01_basic_prompts_throughout
+cd layer_0/0.02_sub_layers/sub_layer_0_01_basic_prompts_throughout
 
 # Implementation docs
 cd -1_research/-1.01_things_researched/ai_manager_hierarchy_system/implementation

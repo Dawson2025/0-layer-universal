@@ -9,7 +9,7 @@
 
 ## 🎉 Mission Accomplished
 
-The complete integration of the **Ideal AI Manager Hierarchy System** into the `0_layer_ai_context` structure has been successfully completed. All 7 phases of the integration plan have been implemented, tested, and documented.
+The complete integration of the **Ideal AI Manager Hierarchy System** into the `0_layer_universal` structure has been successfully completed. All 7 phases of the integration plan have been implemented, tested, and documented.
 
 ---
 
@@ -33,7 +33,7 @@ The complete integration of the **Ideal AI Manager Hierarchy System** into the `
 **Verified**: 2025-12-24
 
 **Deliverables**:
-- ✅ 0.01_layer_stage_framework/README.md explicitly implements ideal hierarchy
+- ✅ layer_1/layer_1_features/layer_1_feature_layer_stage_system/layer_1/layer_1_02_sub_layers/README.md explicitly implements ideal hierarchy
 - ✅ Layer definitions (L0-L4+) match architecture.md
 - ✅ Stage pipeline includes all 9 stages (request through archiving)
 - ✅ AI Setup Dependency Chain documented (0.08→0.09→0.10→0.11→0.12)
@@ -86,8 +86,8 @@ The complete integration of the **Ideal AI Manager Hierarchy System** into the `
 - ✅ Integration with existing AI framework docs
 
 **Key Locations**:
-- `layer_0_universal/.../sub_layer_0.13_universal_protocols/framework_orchestration/`
-- `layer_0_universal/.../sub_layer_0.13_universal_protocols/cli_recursion/`
+- `layer_0/.../sub_layer_0.13_universal_protocols/framework_orchestration/`
+- `layer_0/.../sub_layer_0.13_universal_protocols/cli_recursion/`
 
 **Outcome**: Agents can discover and apply orchestration and CLI recursion patterns
 
@@ -104,9 +104,9 @@ The complete integration of the **Ideal AI Manager Hierarchy System** into the `
 - ✅ Quick reference guide for Phase 6 content
 
 **Key Locations**:
-- `layer_0_universal/.../sub_layer_0.13_universal_protocols/observability/`
-- `layer_0_universal/.../sub_layer_0.04_universal_rules/safety_governance.md`
-- `layer_0_universal/.../sub_layer_0.05_os_setup/.../deployment/`
+- `layer_0/.../sub_layer_0.13_universal_protocols/observability/`
+- `layer_0/.../sub_layer_0.04_universal_rules/safety_governance.md`
+- `layer_0/.../sub_layer_0.05_os_setup/.../deployment/`
 
 **Outcome**: Production-ready guidance for observability, safety, and deployment
 
@@ -125,11 +125,11 @@ The complete integration of the **Ideal AI Manager Hierarchy System** into the `
 
 **Key Locations**:
 - Plan: `/home/dawson/.cursor/plans/ai_manager_hierarchy_rollout_plan.md`
-- Guides: `layer_0_universal/.../sub_layer_0.01_basic_prompts_throughout/`
+- Guides: `layer_0/.../sub_layer_0_01_basic_prompts_throughout/`
   - HIERARCHY_ADOPTION_CHECKLIST.md
   - MIGRATION_GUIDE.md
   - HIERARCHY_QUICK_START.md
-- Template: `/home/dawson/code/0_layer_ai_context/0_context/-1_research/.../implementation_lessons_learned.md`
+- Template: `/home/dawson/code/0_layer_universal/0_context/-1_research/.../implementation_lessons_learned.md`
 
 **Outcome**: Clear path from documentation to real-world adoption
 
@@ -168,7 +168,7 @@ The complete integration of the **Ideal AI Manager Hierarchy System** into the `
 
 ### Immediate (This Week)
 1. **Review the Quick Start Guide**:
-   - `/home/dawson/code/0_layer_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.01_basic_prompts_throughout/HIERARCHY_QUICK_START.md`
+   - `/home/dawson/code/0_layer_universal/0_context/layer_0/0.02_sub_layers/sub_layer_0_01_basic_prompts_throughout/HIERARCHY_QUICK_START.md`
 
 2. **Review the Rollout Plan**:
    - `/home/dawson/.cursor/plans/ai_manager_hierarchy_rollout_plan.md`
@@ -231,7 +231,7 @@ The complete integration of the **Ideal AI Manager Hierarchy System** into the `
 - **Start Here**: `SYSTEM_OVERVIEW.md`
 - **Complete Index**: `MASTER_DOCUMENTATION_INDEX.md`
 - **Usage Guide**: `USAGE_GUIDE.md`
-- **Quick Start**: `layer_0_universal/.../HIERARCHY_QUICK_START.md`
+- **Quick Start**: `layer_0/.../HIERARCHY_QUICK_START.md`
 
 ### Normative Specifications (Ideal Hierarchy)
 - **Overview**: `-1_research/.../ai_manager_hierarchy_system/overview/`
@@ -245,25 +245,25 @@ The complete integration of the **Ideal AI Manager Hierarchy System** into the `
   - production_deployment.md
 
 ### Implementation Guidance
-- **Layer Framework**: `0.01_layer_stage_framework/README.md`
+- **Layer Framework**: `layer_1/layer_1_features/layer_1_feature_layer_stage_system/layer_1/layer_1_02_sub_layers/README.md`
 - **Manager Systems**: `layer_*/N.00_ai_manager_system/README.md`
-- **Handoff Schema**: `layer_0_universal/0.01_manager_handoff_documents/0.00_to_universal/handoff_schema.md`
+- **Handoff Schema**: `layer_0/0.01_manager_handoff_documents/0.00_to_universal/handoff_schema.md`
 
 ### OS/Tool Context
 - **OS Variants**: `layer_*/N.99_stages/stage_N.01_instructions/ai_agent_system/os/{wsl,linux_ubuntu,windows,macos}/`
 - **Context Files**: CLAUDE.md (managers), AGENTS.md (workers), GEMINI.md (planning)
 
 ### Operational Guidance
-- **Orchestration**: `layer_0_universal/.../sub_layer_0.13_universal_protocols/framework_orchestration/`
-- **CLI Recursion**: `layer_0_universal/.../sub_layer_0.13_universal_protocols/cli_recursion/`
-- **Observability**: `layer_0_universal/.../sub_layer_0.13_universal_protocols/observability/`
-- **Safety/Governance**: `layer_0_universal/.../sub_layer_0.04_universal_rules/safety_governance.md`
-- **Deployment**: `layer_0_universal/.../sub_layer_0.05_os_setup/.../deployment/`
+- **Orchestration**: `layer_0/.../sub_layer_0.13_universal_protocols/framework_orchestration/`
+- **CLI Recursion**: `layer_0/.../sub_layer_0.13_universal_protocols/cli_recursion/`
+- **Observability**: `layer_0/.../sub_layer_0.13_universal_protocols/observability/`
+- **Safety/Governance**: `layer_0/.../sub_layer_0.04_universal_rules/safety_governance.md`
+- **Deployment**: `layer_0/.../sub_layer_0.05_os_setup/.../deployment/`
 
 ### Adoption Resources
 - **Rollout Plan**: `/home/dawson/.cursor/plans/ai_manager_hierarchy_rollout_plan.md`
-- **Adoption Checklist**: `layer_0_universal/.../HIERARCHY_ADOPTION_CHECKLIST.md`
-- **Migration Guide**: `layer_0_universal/.../MIGRATION_GUIDE.md`
+- **Adoption Checklist**: `layer_0/.../HIERARCHY_ADOPTION_CHECKLIST.md`
+- **Migration Guide**: `layer_0/.../MIGRATION_GUIDE.md`
 - **Lessons Learned**: `-1_research/.../implementation_lessons_learned.md`
 
 ---
@@ -286,7 +286,7 @@ The complete integration of the **Ideal AI Manager Hierarchy System** into the `
 ## Architecture Compliance
 
 All implementation follows the normative specifications from:
-`/home/dawson/code/0_layer_ai_context/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/`
+`/home/dawson/code/0_layer_universal/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/`
 
 ### Core Architecture Principles ✅
 - ✅ Layers of abstraction (L0→L1→L2→L3→L4+)

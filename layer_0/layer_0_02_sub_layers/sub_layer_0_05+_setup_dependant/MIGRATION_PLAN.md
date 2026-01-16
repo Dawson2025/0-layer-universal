@@ -127,8 +127,8 @@ Before deleting, verify:
 
 **Remaining sub_layers in directory:**
 - `0.00_sub_layer_registry` - Meta registry (keep)
-- `sub_layer_0.01_basic_prompts_throughout` - Active
-- `sub_layer_0.02_software_engineering_knowledge_system` - Active
+- `sub_layer_0_01_basic_prompts_throughout` - Active
+- `sub_layer_0_02_software_engineering_knowledge_system` - Active
 - `sub_layer_0.03_universal_principles` - Active
 - `sub_layer_0.04_universal_rules` - Active
 - `sub_layer_0.05-0.014_setup` - Unified file tree (this is the target)
@@ -156,8 +156,8 @@ Before deleting, verify:
 ```
 0.02_sub_layers/
 ├── 0.00_sub_layer_registry/        # Meta registry
-├── sub_layer_0.01_basic_prompts_throughout/
-├── sub_layer_0.02_software_engineering_knowledge_system/
+├── sub_layer_0_01_basic_prompts_throughout/
+├── sub_layer_0_02_software_engineering_knowledge_system/
 ├── sub_layer_0.03_universal_principles/
 ├── sub_layer_0.04_universal_rules/
 └── sub_layer_0.05-0.014_setup/     # ← Unified file tree (COMPLETE)

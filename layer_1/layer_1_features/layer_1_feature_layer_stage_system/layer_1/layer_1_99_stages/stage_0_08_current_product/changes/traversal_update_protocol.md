@@ -31,11 +31,11 @@ These documents are the **entry points** for AI agent navigation. They MUST be u
 
 | Document | Location | Purpose |
 |----------|----------|---------|
-| `universal_init_prompt.md` | `layer_0_universal/0.02_sub_layers/sub_layer_0.01_basic_prompts_throughout/` | Primary entry point for all sessions |
+| `universal_init_prompt.md` | `layer_0/0.02_sub_layers/sub_layer_0_01_basic_prompts_throughout/` | Primary entry point for all sessions |
 | `MASTER_DOCUMENTATION_INDEX.md` | `0_context/` | Master reference for all docs |
 | `SYSTEM_OVERVIEW.md` | `0_context/` | System architecture overview |
-| `instantiation_guide.md` | `0.00_layer_stage_system/setup/` | How to create entities |
-| Framework `README.md` | `0.01_layer_stage_framework/` | Layer/stage system explanation |
+| `instantiation_guide.md` | `layer_1/layer_1_features/layer_1_feature_layer_stage_system/setup/` | How to create entities |
+| Framework `README.md` | `layer_1/layer_1_features/layer_1_feature_layer_stage_system/layer_1/layer_1_02_sub_layers/` | Layer/stage system explanation |
 
 ---
 
@@ -79,20 +79,20 @@ Run this after ANY structural change:
 #!/bin/bash
 # verify_paths.sh - Check that documented paths exist
 
-CONTEXT_ROOT="/home/dawson/dawson-workspace/code/0_layer_ai_context/0_context"
+CONTEXT_ROOT="/home/dawson/dawson-workspace/code/0_layer_universal/0_context"
 
 echo "=== Verifying Documented Paths ==="
 
 # Extract paths from universal_init_prompt.md and check they exist
-INIT_PROMPT="$CONTEXT_ROOT/layer_0_universal/0.02_sub_layers/sub_layer_0.01_basic_prompts_throughout/universal_init_prompt.md"
+INIT_PROMPT="$CONTEXT_ROOT/layer_0/0.02_sub_layers/sub_layer_0_01_basic_prompts_throughout/universal_init_prompt.md"
 
 # Check critical paths mentioned in init prompt
 CRITICAL_PATHS=(
-  "$CONTEXT_ROOT/0.01_layer_stage_framework/README.md"
+  "$CONTEXT_ROOT/layer_1/layer_1_features/layer_1_feature_layer_stage_system/layer_1/layer_1_02_sub_layers/README.md"
   "$CONTEXT_ROOT/MASTER_DOCUMENTATION_INDEX.md"
   "$CONTEXT_ROOT/SYSTEM_OVERVIEW.md"
-  "$CONTEXT_ROOT/0.00_layer_stage_system/setup/instantiation_guide.md"
-  "$CONTEXT_ROOT/layer_0_universal/0.99_stages/"
+  "$CONTEXT_ROOT/layer_1/layer_1_features/layer_1_feature_layer_stage_system/setup/instantiation_guide.md"
+  "$CONTEXT_ROOT/layer_0/0.99_stages/"
   "$CONTEXT_ROOT/layer_1_project/1.99_stages/"
 )
 
@@ -125,7 +125,7 @@ After changes, manually verify an agent can:
 ### Test 1: Entry Point → Framework Docs
 ```
 universal_init_prompt.md
-  → 0.01_layer_stage_framework/README.md (should exist)
+  → layer_1/layer_1_features/layer_1_feature_layer_stage_system/layer_1/layer_1_02_sub_layers/README.md (should exist)
   → MASTER_DOCUMENTATION_INDEX.md (should exist)
   → SYSTEM_OVERVIEW.md (should exist)
 ```
@@ -141,9 +141,9 @@ From init prompt:
 ### Test 3: Find Setup/Creation Guides
 ```
 From init prompt:
-  → 0.00_layer_stage_system/setup/instantiation_guide.md
-  → 0.01_layer_stage_framework/1_project_template/
-  → 0.01_layer_stage_framework/2_feature_template/
+  → layer_1/layer_1_features/layer_1_feature_layer_stage_system/setup/instantiation_guide.md
+  → layer_1/layer_1_features/layer_1_feature_layer_stage_system/layer_1/layer_1_02_sub_layers/1_project_template/
+  → layer_1/layer_1_features/layer_1_feature_layer_stage_system/layer_1/layer_1_02_sub_layers/2_feature_template/
 ```
 
 ### Test 4: Find Current Work Stage
@@ -222,5 +222,5 @@ This protocol works alongside:
 ## Related Documents
 
 - `restructuring_migration_protocol.md` - Content migration checklist
-- `../../0.01_layer_stage_framework/README.md` - Layer structure reference
+- `../../layer_1/layer_1_features/layer_1_feature_layer_stage_system/layer_1/layer_1_02_sub_layers/README.md` - Layer structure reference
 - `../../SYSTEM_OVERVIEW.md` - Current system architecture

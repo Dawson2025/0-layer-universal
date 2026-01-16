@@ -346,9 +346,9 @@ This file tree **complements** existing setup sublayers:
 ### Location
 
 ```
-/home/dawson/dawson-workspace/code/0_layer_ai_context/
+/home/dawson/dawson-workspace/code/0_layer_universal/
 └── 0_context/
-    └── layer_0_universal/
+    └── layer_0/
         └── 0.02_sub_layers/
             └── sub_layer_0.05_os_setup/
                 └── 0.01_universal_setup_file_tree_0/

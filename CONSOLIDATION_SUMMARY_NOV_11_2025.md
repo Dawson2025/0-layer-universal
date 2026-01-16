@@ -129,7 +129,7 @@ Complete framework for separation of development and testing concerns:
 
 ### **Files Added**
 ```bash
-/home/dawson/code/0_layer_ai_context/0_context/
+/home/dawson/code/0_layer_universal/0_context/
 ├── SYSTEM_OVERVIEW.md (NEW)
 ├── trickle_down_0_universal/0_instruction_docs/
 │   ├── README.md (NEW - overwrites if existed)
@@ -143,7 +143,7 @@ Complete framework for separation of development and testing concerns:
 
 ### **Files Updated**
 ```bash
-/home/dawson/code/0_layer_ai_context/0_context/
+/home/dawson/code/0_layer_universal/0_context/
 └── MASTER_DOCUMENTATION_INDEX.md (UPDATED)
     - Added consolidation summary section
     - Updated "For AI Agents" navigation guide
@@ -226,16 +226,16 @@ Complete framework for separation of development and testing concerns:
 
 ### **Files Successfully Copied**
 ```bash
-$ ls -la /home/dawson/code/0_layer_ai_context/0_context/SYSTEM_OVERVIEW.md
+$ ls -la /home/dawson/code/0_layer_universal/0_context/SYSTEM_OVERVIEW.md
 -rw-r--r-- 1 dawson dawson 11232 Nov 11 15:27
 
-$ ls -la /home/dawson/code/0_layer_ai_context/0_context/trickle_down_0_universal/0_instruction_docs/testing-agent*
+$ ls -la /home/dawson/code/0_layer_universal/0_context/trickle_down_0_universal/0_instruction_docs/testing-agent*
 -rw-r--r-- 1 dawson dawson  9880 Nov 11 15:27 testing-agent-handoff-template.md
 -rw-r--r-- 1 dawson dawson 13456 Nov 11 15:27 testing-agent-instructions.md
 -rw-r--r-- 1 dawson dawson 12438 Nov 11 15:27 testing-agent-protocol.md
 -rw-r--r-- 1 dawson dawson  9009 Nov 11 15:27 testing-agent-report-template.md
 
-$ ls -la /home/dawson/code/0_layer_ai_context/0_context/trickle_down_0_universal/0_instruction_docs/TESTING_AGENT*
+$ ls -la /home/dawson/code/0_layer_universal/0_context/trickle_down_0_universal/0_instruction_docs/TESTING_AGENT*
 -rw-r--r-- 1 dawson dawson 13181 Nov 11 15:27 TESTING_AGENT_SYSTEM_README.md
 ```
 

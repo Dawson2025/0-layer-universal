@@ -30,7 +30,7 @@ Use this when running AI CLIs inside WSL (Ubuntu) and using MCP servers (especia
    ```
 2. Configure Codex CLI MCP (headed):
    ```bash
-   cd /home/dawson/dawson-workspace/code/0_layer_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.10_mcp_servers_and_tools_setup/0.06_automation/scripts
+   cd /home/dawson/dawson-workspace/code/0_layer_universal/0_context/layer_0/0.02_sub_layers/sub_layer_0.10_mcp_servers_and_tools_setup/0.06_automation/scripts
    python3 codex_mcp_sync.py --env development
    ```
 3. Restart Codex CLI.
@@ -79,7 +79,7 @@ Use this when running AI CLIs inside WSL (Ubuntu) and using MCP servers (especia
    ```
 2. Configure Codex CLI MCP (headed):
    ```bash
-   cd /home/dawson/code/0_layer_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.10_mcp_servers_and_tools_setup/0.06_automation/scripts
+   cd /home/dawson/code/0_layer_universal/0_context/layer_0/0.02_sub_layers/sub_layer_0.10_mcp_servers_and_tools_setup/0.06_automation/scripts
    python3 codex_mcp_sync.py --env development
    ```
 3. Restart Codex CLI.

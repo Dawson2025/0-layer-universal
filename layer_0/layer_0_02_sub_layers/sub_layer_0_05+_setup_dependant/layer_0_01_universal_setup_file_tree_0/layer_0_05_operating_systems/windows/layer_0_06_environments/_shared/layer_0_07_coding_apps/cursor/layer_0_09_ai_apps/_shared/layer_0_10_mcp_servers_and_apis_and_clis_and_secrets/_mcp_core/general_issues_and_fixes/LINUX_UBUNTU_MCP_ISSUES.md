@@ -147,8 +147,8 @@ ps aux | grep -E "playwright|mcp" | grep -v grep
 ## Related Documentation
 
 - **Browser MCP Setup Experience**: `../../browser-mcp/BROWSER_MCP_SETUP_EXPERIENCE.md`
-- **Cursor IDE Setup**: `layer_0_universal/0.02_sub_layers/sub_layer_0.07_coding_app_setup/`
-- **AI Apps Setup**: `layer_0_universal/0.02_sub_layers/sub_layer_0.09_ai_apps_tools_setup/`
+- **Cursor IDE Setup**: `layer_0/0.02_sub_layers/sub_layer_0.07_coding_app_setup/`
+- **AI Apps Setup**: `layer_0/0.02_sub_layers/sub_layer_0.09_ai_apps_tools_setup/`
 
 ## References
 

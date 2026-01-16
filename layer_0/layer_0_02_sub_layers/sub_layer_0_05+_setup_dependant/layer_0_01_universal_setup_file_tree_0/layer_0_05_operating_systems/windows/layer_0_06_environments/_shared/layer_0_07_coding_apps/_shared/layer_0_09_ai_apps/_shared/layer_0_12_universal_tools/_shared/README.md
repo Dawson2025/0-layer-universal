@@ -63,7 +63,7 @@ sub_layer_0.12_universal_tools/
 
 Universal tools integrate with the **OS Variant and Quartet Pattern** defined in the Ideal AI Manager Hierarchy System:
 
-- **Normative Specification**: `/home/dawson/dawson-workspace/code/0_layer_ai_context/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/os_and_quartets.md`
+- **Normative Specification**: `/home/dawson/dawson-workspace/code/0_layer_universal/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/os_and_quartets.md`
 
 ### Quartet Pattern Overview
 
@@ -84,7 +84,7 @@ These files are organized under `os/<os-id>/` directories where `<os-id>` can be
 ### Implementation Locations
 
 OS variant context files have been implemented at:
-- `layer_0_universal/0.99_stages/stage_0.01_instructions/ai_agent_system/os/`
+- `layer_0/0.99_stages/stage_0_01_instructions/ai_agent_system/os/`
 - `layer_1_project/1.99_stages/stage_1.01_instructions/ai_agent_system/os/`
 - `layer_2_features/2.99_stages/stage_2.01_instructions/ai_agent_system/os/`
 - `layer_3_components/3.99_stages/stage_3.01_instructions/ai_agent_system/os/`
@@ -152,7 +152,7 @@ For patterns on using CLI recursion to spawn deep agent hierarchies, see:
 
 ## Legacy Source
 
-Source: `/home/dawson/dawson-workspace/code/0_layer_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.12_universal_tools/README.md`
+Source: `/home/dawson/dawson-workspace/code/0_layer_universal/0_context/layer_0/0.02_sub_layers/sub_layer_0.12_universal_tools/README.md`
 
 # sub_layer_0.12_universal_tools
 
@@ -186,7 +186,7 @@ sub_layer_0.12_universal_tools/
 
 Universal tools integrate with the **OS Variant and Quartet Pattern** defined in the Ideal AI Manager Hierarchy System:
 
-- **Normative Specification**: `/home/dawson/code/0_layer_ai_context/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/os_and_quartets.md`
+- **Normative Specification**: `/home/dawson/code/0_layer_universal/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/os_and_quartets.md`
 
 ### Quartet Pattern Overview
 
@@ -207,7 +207,7 @@ These files are organized under `os/<os-id>/` directories where `<os-id>` can be
 ### Implementation Locations
 
 OS variant context files have been implemented at:
-- `layer_0_universal/0.99_stages/stage_0.01_instructions/ai_agent_system/os/`
+- `layer_0/0.99_stages/stage_0_01_instructions/ai_agent_system/os/`
 - `layer_1_project/1.99_stages/stage_1.01_instructions/ai_agent_system/os/`
 - `layer_2_features/2.99_stages/stage_2.01_instructions/ai_agent_system/os/`
 - `layer_3_components/3.99_stages/stage_3.01_instructions/ai_agent_system/os/`

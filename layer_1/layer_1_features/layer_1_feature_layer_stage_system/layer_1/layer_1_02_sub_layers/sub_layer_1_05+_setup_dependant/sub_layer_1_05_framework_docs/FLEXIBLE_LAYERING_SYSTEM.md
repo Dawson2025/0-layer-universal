@@ -2,7 +2,7 @@
 
 **Purpose:** This document defines the flexible, arbitrarily-nested layer system that supports unlimited depth of features and components.
 
-**Location:** `0_layer_ai_context/0_context/0.01_layer_stage_framework/FLEXIBLE_LAYERING_SYSTEM.md`
+**Location:** `0_layer_universal/0_context/layer_1/layer_1_features/layer_1_feature_layer_stage_system/layer_1/layer_1_02_sub_layers/FLEXIBLE_LAYERING_SYSTEM.md`
 
 **Last Updated:** 2026-01-14
 **Version:** 4.0 - Layer Grouping Convention
@@ -490,7 +490,7 @@ All layers N >= 2 use the same template structure, just with different numbers.
 **For Features:**
 ```bash
 # Copy template and rename to appropriate layer number
-cp -r "<universal_context>/0.01_layer_stage_framework/2_feature_template" \
+cp -r "<universal_context>/layer_1/layer_1_features/layer_1_feature_layer_stage_system/layer_1/layer_1_02_sub_layers/2_feature_template" \
   "layer_N_feature_<name>"
 
 # Update all numbers inside from 2 to N
@@ -500,7 +500,7 @@ cp -r "<universal_context>/0.01_layer_stage_framework/2_feature_template" \
 **For Components:**
 ```bash
 # Copy component template
-cp -r "<universal_context>/0.01_layer_stage_framework/3_component_template" \
+cp -r "<universal_context>/layer_1/layer_1_features/layer_1_feature_layer_stage_system/layer_1/layer_1_02_sub_layers/3_component_template" \
   "layer_N_component_<name>"
 
 # Update all numbers inside from 3 to N
@@ -528,7 +528,7 @@ else
 fi
 
 # Copy template
-cp -r "<universal_context>/0.01_layer_stage_framework/$TEMPLATE" \
+cp -r "<universal_context>/layer_1/layer_1_features/layer_1_feature_layer_stage_system/layer_1/layer_1_02_sub_layers/$TEMPLATE" \
   "$PARENT_PATH/layer_${LAYER_NUM}_${TYPE}_${NAME}"
 
 # Navigate and update numbers
@@ -666,6 +666,6 @@ While **unlimited depth is supported**, consider these practical guidelines:
 
 ---
 
-**Location:** `0_layer_ai_context/0_context/0.01_layer_stage_framework/FLEXIBLE_LAYERING_SYSTEM.md`
+**Location:** `0_layer_universal/0_context/layer_1/layer_1_features/layer_1_feature_layer_stage_system/layer_1/layer_1_02_sub_layers/FLEXIBLE_LAYERING_SYSTEM.md`
 **Last Updated:** 2026-01-14
 **Version:** 4.0 - Layer Grouping Convention

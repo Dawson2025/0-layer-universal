@@ -42,7 +42,7 @@ Each layer moves work through stages:
 ### Which Docs to Read First
 
 **For AI Agents Starting Work:**
-1. **Start**: `layer_0_universal/.../universal_init_prompt.md` - Core initialization
+1. **Start**: `layer_0/.../universal_init_prompt.md` - Core initialization
 2. **Overview**: `SYSTEM_OVERVIEW.md` - Understand layer + stage structure
 3. **Hierarchy**: [`-1_research/.../overview/IDEAL_AI_MANAGER_HIERARCHY_SYSTEM.md`](-1_research/-1.01_things_researched/ai_manager_hierarchy_system/overview/IDEAL_AI_MANAGER_HIERARCHY_SYSTEM.md) - Agent OS architecture
 4. **Layer Context**: Load appropriate L0 → L1 → L2 → L3 context for your task
@@ -95,7 +95,7 @@ Each layer moves work through stages:
 - Write: `<layer>/<stage>/hand_off_documents/outgoing.json`
 
 **For detailed handoff specification:**
-See `layer_0_universal/0.01_manager_handoff_documents/0.00_to_universal/handoff_schema.md` (to be created)
+See `layer_0/0.01_manager_handoff_documents/0.00_to_universal/handoff_schema.md` (to be created)
 
 ### Tool Selection by Layer/Stage
 
@@ -116,10 +116,10 @@ See `layer_0_universal/0.01_manager_handoff_documents/0.00_to_universal/handoff_
 
 ```bash
 # From the location where 0_context currently exists
-cp -r /path/to/0_layer_ai_context/0_context /path/to/your/project/docs/
+cp -r /path/to/0_layer_universal/0_context /path/to/your/project/docs/
 
 # Or if you want it in your project root:
-cp -r /path/to/0_layer_ai_context/0_context /path/to/your/project/
+cp -r /path/to/0_layer_universal/0_context /path/to/your/project/
 ```
 
 ### Step 2: Customize Core Prompt

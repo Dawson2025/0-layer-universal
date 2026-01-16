@@ -18,25 +18,25 @@
 ### 1.1 For Sub-Layer Reordering
 
 1. **Read the Sub-Layer Registry System:**
-   - `layer_0_universal/0.02_sub_layers/0.00_sub_layer_registry/README.md`
+   - `layer_0/0.02_sub_layers/0.00_sub_layer_registry/README.md`
    - This explains the stable slug system and why numeric ordering can change.
 
 2. **Read the Registry Script Documentation:**
-   - `layer_0_universal/0.02_sub_layers/0.00_sub_layer_registry/scripts/sub_layer_registry.py`
+   - `layer_0/0.02_sub_layers/0.00_sub_layer_registry/scripts/sub_layer_registry.py`
    - Understand how the registry generation works.
 
 3. **Check Current Registry State:**
-   - `layer_0_universal/0.02_sub_layers/0.00_sub_layer_registry/sub_layer_registry.yaml`
+   - `layer_0/0.02_sub_layers/0.00_sub_layer_registry/sub_layer_registry.yaml`
    - This shows the current numbering and slugs.
 
 4. **Review Universal Init Prompt for Reordering Guidance:**
-   - `layer_0_universal/0.02_sub_layers/sub_layer_0.01_basic_prompts_throughout/universal_init_prompt.md`
+   - `layer_0/0.02_sub_layers/sub_layer_0_01_basic_prompts_throughout/universal_init_prompt.md`
    - Section 1.2 "Context Change Protocol (Ordering / Naming)" contains detailed reordering steps.
 
 ### 1.2 For Stage Reordering
 
 1. **Read the Layer/Stage Framework:**
-   - `0_context/0.01_layer_stage_framework/README.md`
+   - `0_context/layer_1/layer_1_features/layer_1_feature_layer_stage_system/layer_1/layer_1_02_sub_layers/README.md`
    - Understand how stages are numbered and organized.
 
 2. **Check Current Stage Structure:**
@@ -71,7 +71,7 @@
 - **CRITICAL:** After renaming, you MUST regenerate the registry:
   ```bash
   cd <universal_context_root>/0_context
-  python3 layer_0_universal/0.02_sub_layers/0.00_sub_layer_registry/scripts/sub_layer_registry.py generate
+  python3 layer_0/0.02_sub_layers/0.00_sub_layer_registry/scripts/sub_layer_registry.py generate
   ```
 
 **Step 4: Verify Changes**
@@ -82,7 +82,7 @@
 **Step 5: Check for Hard-Linked References (Optional but Recommended)**
 - Run the check script to find docs that still use numeric paths:
   ```bash
-  python3 layer_0_universal/0.02_sub_layers/0.00_sub_layer_registry/scripts/sub_layer_registry.py check-hardlinks
+  python3 layer_0/0.02_sub_layers/0.00_sub_layer_registry/scripts/sub_layer_registry.py check-hardlinks
   ```
 - Update any critical hard-linked references to use alias paths instead.
 
@@ -94,10 +94,10 @@
 
 **Step 2: Rename Stage Folders**
 - Use temporary high numbers to avoid conflicts.
-- Example: To swap `stage_0.01_instructions` and `stage_0.02_planning`:
+- Example: To swap `stage_0_01_instructions` and `stage_0.02_planning`:
   ```bash
-  mv stage_0.01_instructions stage_0.99_instructions
-  mv stage_0.02_planning stage_0.01_planning
+  mv stage_0_01_instructions stage_0.99_instructions
+  mv stage_0.02_planning stage_0_01_planning
   mv stage_0.99_instructions stage_0.02_instructions
   ```
 

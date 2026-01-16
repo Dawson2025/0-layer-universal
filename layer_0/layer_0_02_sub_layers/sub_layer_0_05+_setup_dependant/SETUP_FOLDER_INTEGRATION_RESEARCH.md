@@ -10,25 +10,25 @@ Key references in the existing context system:
   - Points to `trickle_down_0.5_setup/0_instruction_docs/` as the canonical setup procedures.
   - Explicitly lists setup sublayers for environment, AI apps/tools, MCP servers, universal tools, and agent setup.
 
-- `0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.10_mcp_servers_and_tools_setup/0.01_core-system/`
+- `0_context/layer_0/0.02_sub_layers/sub_layer_0.10_mcp_servers_and_tools_setup/0.01_core-system/`
   - Core MCP setup docs (`MCP_SYSTEM_GUIDE.md`, `MCP_CONFIGURATION_GUIDE.md`, `MCP_SERVER_MATRIX.md`, `BROWSER_MCP_ROUTING_TABLE.md`).
   - Serves as the baseline "setup" guidance for MCP server levels.
 
-- `0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.10_mcp_servers_and_tools_setup/0.06_automation/`
+- `0_context/layer_0/0.02_sub_layers/sub_layer_0.10_mcp_servers_and_tools_setup/0.06_automation/`
   - Automation scripts and setup helpers (used to populate per-server `setup/` folders).
 
-- `0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.05_os_setup/trickle_down_0.5_setup/0_instruction_docs/`
+- `0_context/layer_0/0.02_sub_layers/sub_layer_0.05_os_setup/trickle_down_0.5_setup/0_instruction_docs/`
   - OS-level setup content (WSL stability, Firebase, deployment, etc.).
   - Use this as the source for OS and environment `setup/` folders where applicable.
 
-- `0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.12_universal_tools/`
+- `0_context/layer_0/0.02_sub_layers/sub_layer_0.12_universal_tools/`
   - Universal tools setup docs (frameworks, tooling, scripts).
   - Merged into shared universal tools in the hierarchy.
 
-- `0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.13_universal_protocols/`
+- `0_context/layer_0/0.02_sub_layers/sub_layer_0.13_universal_protocols/`
   - Protocol documentation (cli recursion, memory handling, file documentation, etc.).
 
-- `0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.11_ai_models/`
+- `0_context/layer_0/0.02_sub_layers/sub_layer_0.11_ai_models/`
   - Model access issues and model-specific constraints.
 
 ## External Guidance (Best Practice Summary)

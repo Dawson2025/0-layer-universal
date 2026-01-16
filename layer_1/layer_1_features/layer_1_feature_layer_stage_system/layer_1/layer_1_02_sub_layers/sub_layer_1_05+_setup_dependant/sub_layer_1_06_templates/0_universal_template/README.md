@@ -28,8 +28,8 @@ The Universal layer defines global rules, tools, and standards that cascade down
 - layer_0_01_manager_handoff_documents: `0.00_to_universal/` and `0.01_to_specific/` for cross-layer handoffs.
 
 ## Slots (stored under `layer_0/layer_0_02_sub_layers/` as `sub_layer_0.xx_*`)
-- sub_layer_0.01_basic_prompts_throughout: session init, what-to-do-next, core prompts.
-- sub_layer_0.02_software_engineering_knowledge_system: general SE knowledge map.
+- sub_layer_0_01_basic_prompts_throughout: session init, what-to-do-next, core prompts.
+- sub_layer_0_02_software_engineering_knowledge_system: general SE knowledge map.
 - sub_layer_0.03_universal_principles: philosophies, values.
 - sub_layer_0.04_universal_rules: hard constraints (git, terminal, security).
 - sub_layer_0.05_os_setup: OS-specific setup (macOS/Linux/Windows).
@@ -55,7 +55,7 @@ Configure these in order when setting up a new AI environment.
 
 ## Stages (layer_0/layer_0_99_stages/, folders named `stage_0.xx_*`)
 - stage_0.00_request_gathering
-- stage_0.01_instructions
+- stage_0_01_instructions
 - stage_0.02_planning
 - stage_0.03_design
 - stage_0.04_implementation

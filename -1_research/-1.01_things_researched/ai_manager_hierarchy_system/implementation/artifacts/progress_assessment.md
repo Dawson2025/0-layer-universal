@@ -38,7 +38,7 @@ The integration of the Ideal AI Manager Hierarchy System into the 0_ai_context s
 **Status**: Fully completed
 
 **Evidence**:
-- ✅ `0.01_layer_stage_framework/README.md` (line 5): Explicit statement that framework implements the Ideal AI Manager Hierarchy System
+- ✅ `layer_1/layer_1_features/layer_1_feature_layer_stage_system/layer_1/layer_1_02_sub_layers/README.md` (line 5): Explicit statement that framework implements the Ideal AI Manager Hierarchy System
 - ✅ Layer definitions (L0-L4+) match `architecture.md` and summary spec
 - ✅ Stage pipeline explicitly includes `stage_0.00_request_gathering` and matches chronological flow
 - ✅ Framework references ideal hierarchy as design rationale
@@ -56,13 +56,13 @@ The integration of the Ideal AI Manager Hierarchy System into the 0_ai_context s
 
 **Evidence**:
 - ✅ Layer manager system READMEs created:
-  - `layer_0_universal/0.00_ai_manager_system/README.md` (12KB, updated 2025-12-24 00:03)
+  - `layer_0/0.00_ai_manager_system/README.md` (12KB, updated 2025-12-24 00:03)
   - `layer_1_project/1.00_ai_manager_system/README.md` (12KB, updated 2025-12-24 00:03)
   - `layer_2_features/2.00_ai_manager_system/README.md` (13KB, updated 2025-12-24 00:04)
   - `layer_3_components/3.00_ai_manager_system/README.md` (15KB, updated 2025-12-24 00:06)
 
 - ✅ Handoff schema defined:
-  - `layer_0_universal/0.01_manager_handoff_documents/0.00_to_universal/handoff_schema.md`
+  - `layer_0/0.01_manager_handoff_documents/0.00_to_universal/handoff_schema.md`
   - JSON Schema format with examples
   - Fields: schemaVersion, id, kind, layer, stage, from, to, task, constraints, artifacts, status
 
@@ -95,7 +95,7 @@ The integration of the Ideal AI Manager Hierarchy System into the 0_ai_context s
 
 **Implementation Details**:
 1. **OS folder structure** created at:
-   - `layer_0_universal/0.99_stages/stage_0.01_instructions/ai_agent_system/os/`
+   - `layer_0/0.99_stages/stage_0_01_instructions/ai_agent_system/os/`
    - `layer_1_project/1.99_stages/stage_1.01_instructions/ai_agent_system/os/`
    - `layer_2_features/2.99_stages/stage_2.01_instructions/ai_agent_system/os/`
    - `layer_3_components/3.99_stages/stage_3.01_instructions/ai_agent_system/os/`
@@ -236,5 +236,5 @@ Integration is complete when:
 ## Reference Links
 
 - **Plan File**: `/home/dawson/.cursor/plans/integrate_ideal_ai_manager_hierarchy_system_into_0aicontext_8473a05b.plan.md`
-- **Ideal Hierarchy Specs**: `/home/dawson/code/0_layer_ai_context/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/`
-- **0_ai_context Root**: `/home/dawson/code/0_layer_ai_context/0_context/`
+- **Ideal Hierarchy Specs**: `/home/dawson/code/0_layer_universal/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/`
+- **0_ai_context Root**: `/home/dawson/code/0_layer_universal/0_context/`

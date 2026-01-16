@@ -7,7 +7,7 @@
 ## Path
 
 ```
-layer_0_universal/0.02_sub_layers/sub_layer_0.05-0.014_setup_dependant_sub_layers/
+layer_0/0.02_sub_layers/sub_layer_0.05-0.014_setup_dependant_sub_layers/
 ```
 
 ## Description

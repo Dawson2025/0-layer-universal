@@ -123,7 +123,7 @@ Define personas at different layers:
 
 **Universal Layer (L0):**
 ```
-layer_0_universal/ai_agent_system/personas/
+layer_0/ai_agent_system/personas/
 ├── code-quality-enforcer.md
 ├── dependency-auditor.md
 └── license-checker.md

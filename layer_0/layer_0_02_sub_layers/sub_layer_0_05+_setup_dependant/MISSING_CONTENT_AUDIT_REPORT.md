@@ -27,14 +27,14 @@ Git history validated: `3c687b8`, `d64c065`, `3dda597`, `e505fbc` are present in
 Baseline basename diff against the current hierarchy shows missing `README.md`/`README.md.backup` variants from the old sublayer roots.
 These were legacy overviews or backup variants, not integrated into the hierarchy tree.
 Original paths include:
-- `0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.06_coding_app_setup/README.md.backup`
-- `0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.07_environment_setup/README.md.backup`
-- `0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.08_apps_browsers_extensions_setup/README.md.backup`
-- `0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.09_ai_apps_tools_setup/README.md.backup`
-- `0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.11_ai_models/README.md.backup`
-- `0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.12_universal_tools/README.md.backup`
-- `0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.13_universal_protocols/README.md.backup`
-- `0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.14_agent_setup/README.md.backup`
+- `0_context/layer_0/0.02_sub_layers/sub_layer_0.06_coding_app_setup/README.md.backup`
+- `0_context/layer_0/0.02_sub_layers/sub_layer_0.07_environment_setup/README.md.backup`
+- `0_context/layer_0/0.02_sub_layers/sub_layer_0.08_apps_browsers_extensions_setup/README.md.backup`
+- `0_context/layer_0/0.02_sub_layers/sub_layer_0.09_ai_apps_tools_setup/README.md.backup`
+- `0_context/layer_0/0.02_sub_layers/sub_layer_0.11_ai_models/README.md.backup`
+- `0_context/layer_0/0.02_sub_layers/sub_layer_0.12_universal_tools/README.md.backup`
+- `0_context/layer_0/0.02_sub_layers/sub_layer_0.13_universal_protocols/README.md.backup`
+- `0_context/layer_0/0.02_sub_layers/sub_layer_0.14_agent_setup/README.md.backup`
 Additional legacy README variants in the old sublayers (AI models, universal tools) were also outside the hierarchy.
 
 ## Root Cause Analysis
@@ -73,4 +73,4 @@ Artifacts used:
 ## Follow-ups
 
 - Decide whether the legacy README archive should stay or be merged into the hierarchy over time.
-- Template files under `0_context/0.01_layer_stage_framework/` were excluded from this recovery because they are not part of the consolidated setup sublayers.
+- Template files under `0_context/layer_1/layer_1_features/layer_1_feature_layer_stage_system/layer_1/layer_1_02_sub_layers/` were excluded from this recovery because they are not part of the consolidated setup sublayers.

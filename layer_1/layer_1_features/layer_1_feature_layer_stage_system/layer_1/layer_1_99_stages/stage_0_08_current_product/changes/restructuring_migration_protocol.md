@@ -44,7 +44,7 @@ Look for:
 
 ### 2. Create New Structure
 
-Use templates from `0.01_layer_stage_framework/` to create:
+Use templates from `layer_1/layer_1_features/layer_1_feature_layer_stage_system/layer_1/layer_1_02_sub_layers/` to create:
 - `layer_N/` grouping folder
 - `layer_N_00_ai_manager_system/`
 - `layer_N_01_manager_handoff_documents/`
@@ -206,5 +206,5 @@ find <project> -name "status_*.json"
 
 - `traversal_update_protocol.md` - **Path verification after changes** (read this!)
 - `../README.md` - Structural change checklist (which docs to update)
-- `../../0.01_layer_stage_framework/FLEXIBLE_LAYERING_SYSTEM.md` - Layer structure reference
-- `../../0.01_layer_stage_framework/` - Templates for new structures
+- `../../layer_1/layer_1_features/layer_1_feature_layer_stage_system/layer_1/layer_1_02_sub_layers/FLEXIBLE_LAYERING_SYSTEM.md` - Layer structure reference
+- `../../layer_1/layer_1_features/layer_1_feature_layer_stage_system/layer_1/layer_1_02_sub_layers/` - Templates for new structures

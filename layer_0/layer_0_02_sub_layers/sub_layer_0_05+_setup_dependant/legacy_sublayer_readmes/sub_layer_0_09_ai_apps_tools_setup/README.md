@@ -36,8 +36,8 @@ The original content of this sublayer is preserved below for reference, but shou
 **Purpose:** This sub-layer contains documentation and setup instructions for AI applications and tools used across all projects.
 
 **Location in Layer System:**
-- Universal Layer: `layer_0_universal/0.02_sub_layers/sub_layer_0.09_ai_apps_tools_setup/`
-- Referenced in: `layer_0_universal/0.02_sub_layers/sub_layer_0.01_basic_prompts_throughout/0_basic_prompts_throughout/universal_init_prompt.md`
+- Universal Layer: `layer_0/0.02_sub_layers/sub_layer_0.09_ai_apps_tools_setup/`
+- Referenced in: `layer_0/0.02_sub_layers/sub_layer_0_01_basic_prompts_throughout/0_basic_prompts_throughout/universal_init_prompt.md`
 
 ---
 
@@ -46,7 +46,7 @@ The original content of this sublayer is preserved below for reference, but shou
 **Before working with AI apps and tools, follow the universal initialization protocol:**
 
 1. **Read the Universal Init Prompt:**
-   - Path: `layer_0_universal/0.02_sub_layers/sub_layer_0.01_basic_prompts_throughout/0_basic_prompts_throughout/universal_init_prompt.md`
+   - Path: `layer_0/0.02_sub_layers/sub_layer_0_01_basic_prompts_throughout/0_basic_prompts_throughout/universal_init_prompt.md`
    - This provides the complete navigation hub and initialization checklist
 
 2. **Sync Repositories:**
@@ -65,36 +65,36 @@ The original content of this sublayer is preserved below for reference, but shou
 ## 📚 Related Documentation
 
 ### Universal Context Entry Points
-- **Universal Init Prompt:** `layer_0_universal/0.02_sub_layers/sub_layer_0.01_basic_prompts_throughout/0_basic_prompts_throughout/universal_init_prompt.md`
+- **Universal Init Prompt:** `layer_0/0.02_sub_layers/sub_layer_0_01_basic_prompts_throughout/0_basic_prompts_throughout/universal_init_prompt.md`
 - **System Overview:** `0_context/SYSTEM_OVERVIEW.md`
 - **Usage Guide:** `0_context/USAGE_GUIDE.md`
 - **Master Index:** `0_context/MASTER_DOCUMENTATION_INDEX.md`
 
 ### Related Sub-Layers
 - **Sub Layer 0.05:** OS Setup
-  - Path: `layer_0_universal/0.02_sub_layers/sub_layer_0.05_os_setup/`
+  - Path: `layer_0/0.02_sub_layers/sub_layer_0.05_os_setup/`
   - System-level prerequisites and setup
 - **Sub Layer 0.06:** Environment Setup
-  - Path: `layer_0_universal/0.02_sub_layers/sub_layer_0.06_environment_setup/`
+  - Path: `layer_0/0.02_sub_layers/sub_layer_0.06_environment_setup/`
   - Git/GitHub auth, credentials, and cross-app environment conventions
 - **Sub Layer 0.07:** Coding App Setup
-  - Path: `layer_0_universal/0.02_sub_layers/sub_layer_0.07_coding_app_setup/`
+  - Path: `layer_0/0.02_sub_layers/sub_layer_0.07_coding_app_setup/`
   - IDE and editor setup
 - **Sub Layer 0.10:** MCP Servers and Tools Setup
-  - Path: `layer_0_universal/0.02_sub_layers/sub_layer_0.10_mcp_servers_and_tools_setup/`
+  - Path: `layer_0/0.02_sub_layers/sub_layer_0.10_mcp_servers_and_tools_setup/`
   - For Model Context Protocol servers and tools
   - **Note**: MCP setup requires AI apps/tools to be installed first (this sub-layer)
 - **Sub Layer 0.11:** AI Models
-  - Path: `layer_0_universal/0.02_sub_layers/sub_layer_0.11_ai_models/`
+  - Path: `layer_0/0.02_sub_layers/sub_layer_0.11_ai_models/`
   - AI model configuration and usage
 - **Sub Layer 0.12:** Universal Tools
-  - Path: `layer_0_universal/0.02_sub_layers/sub_layer_0.12_universal_tools/`
+  - Path: `layer_0/0.02_sub_layers/sub_layer_0.12_universal_tools/`
   - Contains Claude Code configuration documentation
 
 ### Universal Rules & Protocols
-- **Terminal Protocol:** `layer_0_universal/0.04_universal_rules/trickle_down_0_universal/0_instruction_docs/UNIVERSAL_AGENT_TERMINAL_PROTOCOL.md`
-- **Git Commit Rules:** `layer_0_universal/0.04_universal_rules/trickle_down_0_universal/0_instruction_docs/git_commit_rule.md`
-- **Context Update Rules:** `layer_0_universal/0.04_universal_rules/trickle_down_0_universal/0_instruction_docs/context_update_rule.md`
+- **Terminal Protocol:** `layer_0/0.04_universal_rules/trickle_down_0_universal/0_instruction_docs/UNIVERSAL_AGENT_TERMINAL_PROTOCOL.md`
+- **Git Commit Rules:** `layer_0/0.04_universal_rules/trickle_down_0_universal/0_instruction_docs/git_commit_rule.md`
+- **Context Update Rules:** `layer_0/0.04_universal_rules/trickle_down_0_universal/0_instruction_docs/context_update_rule.md`
 
 ---
 
@@ -221,7 +221,7 @@ When adding new AI app or tool documentation:
 3. Update this README with references
 4. Ensure paths are relative to the universal context root (`<universal_context_root>/0_context/`)
 5. Update the Master Documentation Index if needed
-6. Follow the context update rule: `layer_0_universal/0.04_universal_rules/trickle_down_0_universal/0_instruction_docs/context_update_rule.md`
+6. Follow the context update rule: `layer_0/0.04_universal_rules/trickle_down_0_universal/0_instruction_docs/context_update_rule.md`
 
 ## ⚠️ Linux/Ubuntu-Specific MCP Issues
 
@@ -298,8 +298,8 @@ git status
 - Universal context root: `<universal_context_root>/0_context/`
 
 **To reference this sub-layer from other locations:**
-- From universal context root: `layer_0_universal/0.02_sub_layers/sub_layer_0.09_ai_apps_tools_setup/`
-- From project context: `../../0_layer_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.09_ai_apps_tools_setup/`
+- From universal context root: `layer_0/0.02_sub_layers/sub_layer_0.09_ai_apps_tools_setup/`
+- From project context: `../../0_layer_universal/0_context/layer_0/0.02_sub_layers/sub_layer_0.09_ai_apps_tools_setup/`
 
 ---
 

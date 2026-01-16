@@ -55,11 +55,11 @@ layer_<N>_feature_<topic_name>/
 ### How to Create:
 ```bash
 # Copy standard feature template
-cp -r "<universal_context>/0.01_layer_stage_framework/2_feature_template" \
+cp -r "<universal_context>/layer_1/layer_1_features/layer_1_feature_layer_stage_system/layer_1/layer_1_02_sub_layers/2_feature_template" \
   "layer_<N>_feature_<topic_name>"
 ```
 
-**Template Location:** `0.01_layer_stage_framework/2_feature_template/`
+**Template Location:** `layer_1/layer_1_features/layer_1_feature_layer_stage_system/layer_1/layer_1_02_sub_layers/2_feature_template/`
 
 ---
 
@@ -95,10 +95,10 @@ layer_<N>_feature_<workflow_name>/
 ### How to Create:
 ```bash
 # Use workflow feature script
-bash "<universal_context>/0.01_layer_stage_framework/scripts/create_workflow_feature.sh" <layer> <name>
+bash "<universal_context>/layer_1/layer_1_features/layer_1_feature_layer_stage_system/layer_1/layer_1_02_sub_layers/scripts/create_workflow_feature.sh" <layer> <name>
 ```
 
-**Pattern Guide:** `0.01_layer_stage_framework/WORKFLOW_FEATURE_PATTERN.md`
+**Pattern Guide:** `layer_1/layer_1_features/layer_1_feature_layer_stage_system/layer_1/layer_1_02_sub_layers/WORKFLOW_FEATURE_PATTERN.md`
 
 ---
 
@@ -239,7 +239,7 @@ layer_2_feature_blog/
 1. **Copy template:**
 ```bash
 cd your_project/0_context/0_context/layer_2_features/
-cp -r "../../../../0_layer_ai_context/0_context/0.01_layer_stage_framework/2_feature_template" \
+cp -r "../../../../0_layer_universal/0_context/layer_1/layer_1_features/layer_1_feature_layer_stage_system/layer_1/layer_1_02_sub_layers/2_feature_template" \
   "layer_2_feature_<your_topic>"
 ```
 
@@ -257,7 +257,7 @@ cp -r "../../../../0_layer_ai_context/0_context/0.01_layer_stage_framework/2_fea
 1. **Run script:**
 ```bash
 cd your_project/0_context/0_context/layer_2_features/
-bash "../../../../0_layer_ai_context/0_context/0.01_layer_stage_framework/scripts/create_workflow_feature.sh" 2 <name>
+bash "../../../../0_layer_universal/0_context/layer_1/layer_1_features/layer_1_feature_layer_stage_system/layer_1/layer_1_02_sub_layers/scripts/create_workflow_feature.sh" 2 <name>
 ```
 
 2. **Develop workflow:**
@@ -315,6 +315,6 @@ layer_2_features/
 
 ---
 
-**Location:** `C:\Users\Dawson\dawson-workspace\code\0_layer_ai_context\0_context\0.01_layer_stage_framework\FEATURE_TYPE_DECISION_GUIDE.md`
+**Location:** `C:\Users\Dawson\dawson-workspace\code\0_layer_universal\0_context\layer_1/layer_1_features/layer_1_feature_layer_stage_system/layer_1/layer_1_02_sub_layers\FEATURE_TYPE_DECISION_GUIDE.md`
 **Last Updated:** 2026-01-09
 **Version:** 1.0

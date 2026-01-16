@@ -93,7 +93,7 @@ After verifying the sync works, update this STATUS.md file:
 3. Update the Recent Log section
 4. Commit and push changes:
 ```bash
-cd ~/dawson-workspace/code/0_layer_ai_context
+cd ~/dawson-workspace/code/0_layer_universal
 git add -A
 git commit -m "Verify Windows → Ubuntu sync working"
 git push
@@ -101,7 +101,7 @@ git push
 
 ### Step 5: (Optional) Quick Verification Script
 ```bash
-~/dawson-workspace/code/0_layer_ai_context/0_context/-1_research/-1.01_things_researched/multi_os_system/ubuntu-quick-check.sh
+~/dawson-workspace/code/0_layer_universal/0_context/-1_research/-1.01_things_researched/multi_os_system/ubuntu-quick-check.sh
 ```
 
 ---

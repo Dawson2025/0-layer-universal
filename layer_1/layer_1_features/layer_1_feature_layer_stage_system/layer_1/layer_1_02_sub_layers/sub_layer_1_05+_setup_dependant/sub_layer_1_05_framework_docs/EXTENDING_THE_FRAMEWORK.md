@@ -573,6 +573,6 @@ Need organization?
 
 ---
 
-**Location:** `C:\Users\Dawson\dawson-workspace\code\0_layer_ai_context\0_context\0.01_layer_stage_framework\EXTENDING_THE_FRAMEWORK.md`
+**Location:** `C:\Users\Dawson\dawson-workspace\code\0_layer_universal\0_context\layer_1/layer_1_features/layer_1_feature_layer_stage_system/layer_1/layer_1_02_sub_layers\EXTENDING_THE_FRAMEWORK.md`
 **Last Updated:** 2026-01-09
 **Version:** 2.0

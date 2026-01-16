@@ -445,7 +445,7 @@ You can adopt the hierarchy at three levels of depth:
 3. **Stage-to-Stage Handoff Template**
    - Use for planning → development, development → testing, etc.
 
-**Template Example**: See handoff schema at `/home/dawson/code/0_layer_ai_context/0_context/layer_0_universal/0.01_manager_handoff_documents/0.00_to_universal/handoff_schema.md`
+**Template Example**: See handoff schema at `/home/dawson/code/0_layer_universal/0_context/layer_0/0.01_manager_handoff_documents/0.00_to_universal/handoff_schema.md`
 
 **Deliverable**: 3-5 handoff templates for common workflows
 
@@ -762,7 +762,7 @@ You can adopt the hierarchy at three levels of depth:
 1. **Use the hierarchy** for all new work
 2. **Review logs** weekly to identify patterns and improvements
 3. **Iterate on templates** based on real usage
-4. **Contribute lessons learned** to `/home/dawson/code/0_layer_ai_context/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/implementation_lessons_learned.md`
+4. **Contribute lessons learned** to `/home/dawson/code/0_layer_universal/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/implementation_lessons_learned.md`
 5. **Onboard new agents** using HIERARCHY_ADOPTION_CHECKLIST.md
 6. **Expand adoption** to more features or deeper layers (L3, L4+)
 
@@ -772,26 +772,26 @@ You can adopt the hierarchy at three levels of depth:
 
 **Adoption and Rollout**:
 - Rollout Plan: `/home/dawson/.cursor/plans/ai_manager_hierarchy_rollout_plan.md`
-- Adoption Checklist: `/home/dawson/code/0_layer_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.01_basic_prompts_throughout/HIERARCHY_ADOPTION_CHECKLIST.md`
-- Quick Start: `/home/dawson/code/0_layer_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.01_basic_prompts_throughout/HIERARCHY_QUICK_START.md` (to be created)
+- Adoption Checklist: `/home/dawson/code/0_layer_universal/0_context/layer_0/0.02_sub_layers/sub_layer_0_01_basic_prompts_throughout/HIERARCHY_ADOPTION_CHECKLIST.md`
+- Quick Start: `/home/dawson/code/0_layer_universal/0_context/layer_0/0.02_sub_layers/sub_layer_0_01_basic_prompts_throughout/HIERARCHY_QUICK_START.md` (to be created)
 
 **Core Hierarchy Docs**:
-- MASTER_DOCUMENTATION_INDEX: `/home/dawson/code/0_layer_ai_context/0_context/MASTER_DOCUMENTATION_INDEX.md`
-- SYSTEM_OVERVIEW: `/home/dawson/code/0_layer_ai_context/0_context/SYSTEM_OVERVIEW.md`
-- USAGE_GUIDE: `/home/dawson/code/0_layer_ai_context/0_context/USAGE_GUIDE.md`
-- Layer/Stage Framework: `/home/dawson/code/0_layer_ai_context/0_context/0.01_layer_stage_framework/README.md`
+- MASTER_DOCUMENTATION_INDEX: `/home/dawson/code/0_layer_universal/0_context/MASTER_DOCUMENTATION_INDEX.md`
+- SYSTEM_OVERVIEW: `/home/dawson/code/0_layer_universal/0_context/SYSTEM_OVERVIEW.md`
+- USAGE_GUIDE: `/home/dawson/code/0_layer_universal/0_context/USAGE_GUIDE.md`
+- Layer/Stage Framework: `/home/dawson/code/0_layer_universal/0_context/layer_1/layer_1_features/layer_1_feature_layer_stage_system/layer_1/layer_1_02_sub_layers/README.md`
 
 **Handoff and Manager Docs**:
-- Handoff Schema: `/home/dawson/code/0_layer_ai_context/0_context/layer_0_universal/0.01_manager_handoff_documents/0.00_to_universal/handoff_schema.md`
-- L0 Manager: `/home/dawson/code/0_layer_ai_context/0_context/layer_0_universal/0.00_ai_manager_system/README.md`
-- L1 Manager: `/home/dawson/code/0_layer_ai_context/0_context/layer_1_project/1.00_ai_manager_system/README.md`
-- L2 Manager: `/home/dawson/code/0_layer_ai_context/0_context/layer_2_features/2.00_ai_manager_system/README.md`
-- L3 Manager: `/home/dawson/code/0_layer_ai_context/0_context/layer_3_components/3.00_ai_manager_system/README.md`
+- Handoff Schema: `/home/dawson/code/0_layer_universal/0_context/layer_0/0.01_manager_handoff_documents/0.00_to_universal/handoff_schema.md`
+- L0 Manager: `/home/dawson/code/0_layer_universal/0_context/layer_0/0.00_ai_manager_system/README.md`
+- L1 Manager: `/home/dawson/code/0_layer_universal/0_context/layer_1_project/1.00_ai_manager_system/README.md`
+- L2 Manager: `/home/dawson/code/0_layer_universal/0_context/layer_2_features/2.00_ai_manager_system/README.md`
+- L3 Manager: `/home/dawson/code/0_layer_universal/0_context/layer_3_components/3.00_ai_manager_system/README.md`
 
 **Operational Docs**:
-- Observability: `/home/dawson/code/0_layer_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.13_universal_protocols/observability/README.md`
-- Safety Rules: `/home/dawson/code/0_layer_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.04_universal_rules/safety_governance.md`
-- Deployment: `/home/dawson/code/0_layer_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.05_os_setup/trickle_down_0.5_setup/0_instruction_docs/deployment/AI_MANAGER_HIERARCHY_DEPLOYMENT.md`
+- Observability: `/home/dawson/code/0_layer_universal/0_context/layer_0/0.02_sub_layers/sub_layer_0.13_universal_protocols/observability/README.md`
+- Safety Rules: `/home/dawson/code/0_layer_universal/0_context/layer_0/0.02_sub_layers/sub_layer_0.04_universal_rules/safety_governance.md`
+- Deployment: `/home/dawson/code/0_layer_universal/0_context/layer_0/0.02_sub_layers/sub_layer_0.05_os_setup/trickle_down_0.5_setup/0_instruction_docs/deployment/AI_MANAGER_HIERARCHY_DEPLOYMENT.md`
 
 ---
 

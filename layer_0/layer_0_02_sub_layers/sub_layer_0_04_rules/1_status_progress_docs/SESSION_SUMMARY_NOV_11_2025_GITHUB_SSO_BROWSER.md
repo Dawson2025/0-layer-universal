@@ -162,17 +162,17 @@ Many users create tokens but forget the separate SSO authorization step, leading
 
 ### Modified:
 ```
-/home/dawson/code/0_layer_ai_context/0_context/trickle_down_0_universal/0_instruction_docs/browser_management_policy.md
-/home/dawson/code/0_layer_ai_context/0_context/trickle_down_0_universal/0_instruction_docs/browser_opening_rule.md
-/home/dawson/code/0_layer_ai_context/0_context/MASTER_DOCUMENTATION_INDEX.md
+/home/dawson/code/0_layer_universal/0_context/trickle_down_0_universal/0_instruction_docs/browser_management_policy.md
+/home/dawson/code/0_layer_universal/0_context/trickle_down_0_universal/0_instruction_docs/browser_opening_rule.md
+/home/dawson/code/0_layer_universal/0_context/MASTER_DOCUMENTATION_INDEX.md
 /home/dawson/.gitconfig
 /home/dawson/.git-credentials
 ```
 
 ### Created:
 ```
-/home/dawson/code/0_layer_ai_context/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.06_environment_setup/trickle_down_0.5_setup/0_instruction_docs/github/github_sso_token_setup.md
-/home/dawson/code/0_layer_ai_context/0_context/trickle_down_0_universal/1_status_progress_docs/SESSION_SUMMARY_NOV_11_2025_GITHUB_SSO_BROWSER.md
+/home/dawson/code/0_layer_universal/0_context/layer_0/0.02_sub_layers/sub_layer_0.06_environment_setup/trickle_down_0.5_setup/0_instruction_docs/github/github_sso_token_setup.md
+/home/dawson/code/0_layer_universal/0_context/trickle_down_0_universal/1_status_progress_docs/SESSION_SUMMARY_NOV_11_2025_GITHUB_SSO_BROWSER.md
 ```
 
 ## 🎯 Success Metrics

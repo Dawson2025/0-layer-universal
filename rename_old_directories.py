@@ -14,10 +14,10 @@ BASE_DIR = Path("/home/dawson/dawson-workspace/code/0_layer_universal")
 
 # Patterns to match and their replacements
 PATTERNS = [
-    # Stage directories: stage_0.01_* -> stage_0_01_*
+    # Stage directories: stage_0_01_* -> stage_0_01_*
     (r'^stage_(\d+)\.(\d+)_(.*)$', r'stage_\1_\2_\3'),
 
-    # Sub-layer directories: sub_layer_0.01_* -> sub_layer_0_01_*
+    # Sub-layer directories: sub_layer_0_01_* -> sub_layer_0_01_*
     (r'^sub_layer_(\d+)\.(\d+)(.*)$', r'sub_layer_\1_\2\3'),
 
     # Handoff subdirectories: 0.00_to_* -> layer_0_00_to_*

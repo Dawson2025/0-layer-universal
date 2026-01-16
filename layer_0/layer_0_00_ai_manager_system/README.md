@@ -47,7 +47,7 @@ Layer 0 receives handoffs from:
 - **External Users**: Initial requests via `stage_0.00_request_gathering`
 - **System Triggers**: Automated tasks (e.g., scheduled audits, dependency updates)
 
-**Location**: `layer_0_universal/0.99_stages/stage_0.00_request_gathering/hand_off_documents/incoming.json`
+**Location**: `layer_0/0.99_stages/stage_0.00_request_gathering/hand_off_documents/incoming.json`
 
 **Characteristics**:
 - May be informal or unstructured initially
@@ -61,7 +61,7 @@ Layer 0 produces handoffs for:
 - **Internal Stages**: Between Layer 0 stages (request → instructions → planning → etc.)
 
 **Vertical Handoffs to Layer 1**:
-- **Location**: `layer_0_universal/0.01_manager_handoff_documents/0.01_to_specific/outgoing.json`
+- **Location**: `layer_0/0.01_manager_handoff_documents/0.01_to_specific/outgoing.json`
 - **Content**:
   - High-level project goals
   - All applicable universal constraints
@@ -75,7 +75,7 @@ Layer 0 produces handoffs for:
 ### Upward Handoffs (From Layer 1)
 
 Layer 0 receives result handoffs from Layer 1:
-- **Location**: `layer_0_universal/0.01_manager_handoff_documents/0.01_to_specific/incoming.json`
+- **Location**: `layer_0/0.01_manager_handoff_documents/0.01_to_specific/incoming.json`
 - **Content**:
   - Aggregated results from all project-level work
   - Metrics and outcomes
@@ -87,7 +87,7 @@ Layer 0 receives result handoffs from Layer 1:
 Layer 0 operates through a chronological pipeline of stages:
 
 1. **stage_0.00_request_gathering**: Clarify and structure incoming requests
-2. **stage_0.01_instructions**: Transform requests into explicit instructions with universal constraints
+2. **stage_0_01_instructions**: Transform requests into explicit instructions with universal constraints
 3. **stage_0.02_planning**: Decompose into project-level tasks and dependencies
 4. **stage_0.03_design**: Define high-level architecture and cross-project patterns
 5. **stage_0.04_development**: Implement universal infrastructure or update universal docs
@@ -127,7 +127,7 @@ Each stage:
      "id": "l0-instructions-new-webapp-20241223",
      "layer": 0,
      "stage": "instructions",
-     "from": "layer_0/stage_0.01_instructions",
+     "from": "layer_0/stage_0_01_instructions",
      "to": "layer_0/stage_0.02_planning",
      "task": "Create new web application for task management",
      "constraints": [
@@ -178,7 +178,7 @@ For comprehensive understanding of the manager/worker model, handoff protocol, a
 ## Directory Structure
 
 ```
-layer_0_universal/
+layer_0/
 ├── 0.00_ai_manager_system/
 │   └── README.md (this file)
 ├── 0.01_manager_handoff_documents/
@@ -193,7 +193,7 @@ layer_0_universal/
 │   └── (Universal sub-systems: rules, tools, protocols, etc.)
 └── 0.99_stages/
     ├── stage_0.00_request_gathering/
-    ├── stage_0.01_instructions/
+    ├── stage_0_01_instructions/
     ├── stage_0.02_planning/
     ├── stage_0.03_design/
     ├── stage_0.04_development/
@@ -214,5 +214,5 @@ layer_0_universal/
 ## Related Documentation
 
 - Layer 0 Context Files: See `CLAUDE.md`, `AGENTS.md`, `GEMINI.md` in this directory and sub-layers
-- Universal Rules: `layer_0_universal/0.02_sub_layers/sub_layer_0.04_universal_rules/`
-- Universal Protocols: `layer_0_universal/0.02_sub_layers/sub_layer_0.13_universal_protocols/`
+- Universal Rules: `layer_0/0.02_sub_layers/sub_layer_0.04_universal_rules/`
+- Universal Protocols: `layer_0/0.02_sub_layers/sub_layer_0.13_universal_protocols/`

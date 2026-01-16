@@ -29,23 +29,23 @@ Use **stable slugs** (e.g., `setup_dependant_sub_layers`) and resolve them via:
 
 When writing docs, prefer linking to:
 
-`layer_0_universal/0.02_sub_layers/0.00_sub_layer_registry/aliases/<slug>.md`
+`layer_0/0.02_sub_layers/0.00_sub_layer_registry/aliases/<slug>.md`
 
 Instead of linking directly to:
 
-`layer_0_universal/0.02_sub_layers/sub_layer_0.xx_<slug>/...`
+`layer_0/0.02_sub_layers/sub_layer_0.xx_<slug>/...`
 
 ## Automation
 
 Generate/update the registry + aliases:
 
 ```bash
-python3 layer_0_universal/0.02_sub_layers/0.00_sub_layer_registry/scripts/sub_layer_registry.py generate
+python3 layer_0/0.02_sub_layers/0.00_sub_layer_registry/scripts/sub_layer_registry.py generate
 ```
 
 Check for hard-linked numeric references in docs:
 
 ```bash
-python3 layer_0_universal/0.02_sub_layers/0.00_sub_layer_registry/scripts/sub_layer_registry.py check-hardlinks
+python3 layer_0/0.02_sub_layers/0.00_sub_layer_registry/scripts/sub_layer_registry.py check-hardlinks
 ```
 

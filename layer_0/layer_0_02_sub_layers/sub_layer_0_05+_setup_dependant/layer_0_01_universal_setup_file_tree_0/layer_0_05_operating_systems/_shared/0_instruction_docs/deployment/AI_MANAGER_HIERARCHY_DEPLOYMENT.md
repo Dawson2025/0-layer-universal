@@ -14,7 +14,7 @@ This document provides deployment guidance specific to the **AI Manager Hierarch
 
 This document is a **derived implementation guide** from the canonical specification:
 
-- **Source**: `/home/dawson/code/0_layer_ai_context/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/production_deployment.md`
+- **Source**: `/home/dawson/code/0_layer_universal/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/production_deployment.md`
 - **Status**: Normative (refer to source for authoritative details)
 
 For application-specific deployment (Flask, Node.js, etc.), see:
@@ -646,7 +646,7 @@ kubectl delete deployment supervisor-v1
 ### Dashboards
 
 See observability documentation for dashboard specifications:
-- **Reference**: `layer_0_universal/0.02_sub_layers/sub_layer_0.13_universal_protocols/observability/`
+- **Reference**: `layer_0/0.02_sub_layers/sub_layer_0.13_universal_protocols/observability/`
 
 ### Alerts
 
@@ -675,7 +675,7 @@ See observability documentation for dashboard specifications:
 ### Budget Management
 
 See safety/governance documentation:
-- **Reference**: `layer_0_universal/0.02_sub_layers/sub_layer_0.04_universal_rules/safety_governance.md`
+- **Reference**: `layer_0/0.02_sub_layers/sub_layer_0.04_universal_rules/safety_governance.md`
 
 ---
 
@@ -692,7 +692,7 @@ See safety/governance documentation:
 ### Compliance
 
 See safety/governance documentation for compliance requirements:
-- **Reference**: `layer_0_universal/0.02_sub_layers/sub_layer_0.04_universal_rules/safety_governance.md`
+- **Reference**: `layer_0/0.02_sub_layers/sub_layer_0.04_universal_rules/safety_governance.md`
 
 ---
 

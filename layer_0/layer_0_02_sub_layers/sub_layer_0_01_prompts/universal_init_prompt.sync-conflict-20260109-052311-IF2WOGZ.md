@@ -17,7 +17,7 @@ Do this at the start of the chat/session before any other action.
 ### 1. Discover Your Location & Read the Master Index
 
 **First, find where you are:**
-- This file's location = `<universal_context_root>/0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.01_basic_prompts_throughout/0_basic_prompts_throughout/universal_init_prompt.md`
+- This file's location = `<universal_context_root>/0_context/layer_0/0.02_sub_layers/sub_layer_0_01_basic_prompts_throughout/0_basic_prompts_throughout/universal_init_prompt.md`
 - Master Index location = `<universal_context_root>/0_context/MASTER_DOCUMENTATION_INDEX.md`
 
 **Expected directory structure (Layer System):**
@@ -28,17 +28,17 @@ Do this at the start of the chat/session before any other action.
 │       ├── MASTER_DOCUMENTATION_INDEX.md
 │       ├── SYSTEM_OVERVIEW.md
 │       ├── USAGE_GUIDE.md
-│       ├── 0.01_layer_stage_framework/   # Templates
-│       └── layer_0_universal/            # Universal layer (content)
+│       ├── layer_1/layer_1_features/layer_1_feature_layer_stage_system/layer_1/layer_1_02_sub_layers/   # Templates
+│       └── layer_0/            # Universal layer (content)
 │           ├── 0.00_ai_manager_system/
 │           ├── 0.01_manager_handoff_documents/
 │           │   ├── 0.00_to_universal/
 │           │   └── 0.01_to_specific/
 │           ├── 0.02_sub_layers/          # All universal slots live here
-│           │   ├── sub_layer_0.01_basic_prompts_throughout/
+│           │   ├── sub_layer_0_01_basic_prompts_throughout/
 │           │   │   └── 0_basic_prompts_throughout/
 │           │   │       └── universal_init_prompt.md  ← You are here
-│           │   ├── sub_layer_0.02_software_engineering_knowledge_system/
+│           │   ├── sub_layer_0_02_software_engineering_knowledge_system/
 │           │   ├── sub_layer_0.03_universal_principles/
 │           │   ├── sub_layer_0.04_universal_rules/
 │           │   ├── sub_layer_0.05_os_setup/
@@ -70,7 +70,7 @@ This is your map of the entire universal documentation system.
 **Read the Context Management Framework:**
 ```bash
 # From universal context root:
-cat 0.01_layer_stage_framework/README.md
+cat layer_1/layer_1_features/layer_1_feature_layer_stage_system/layer_1/layer_1_02_sub_layers/README.md
 ```
 
 This explains how the layer + stage system works, how to maintain documentation, and how the agent hierarchy operates. **CRITICAL** for understanding how to navigate and update the context system.
@@ -104,13 +104,13 @@ After understanding the framework, read **Section 4.7** of this file for the ste
 
 To avoid breaking links when we reorder/renumber, prefer linking to the **alias files** (generated from the registry):
 
-- Sublayer registry: `layer_0_universal/0.02_sub_layers/0.00_sub_layer_registry/sub_layer_registry.yaml`
-- Registry docs: `layer_0_universal/0.02_sub_layers/0.00_sub_layer_registry/README.md`
-- Alias links (stable): `layer_0_universal/0.02_sub_layers/0.00_sub_layer_registry/aliases/<slug>.md`
+- Sublayer registry: `layer_0/0.02_sub_layers/0.00_sub_layer_registry/sub_layer_registry.yaml`
+- Registry docs: `layer_0/0.02_sub_layers/0.00_sub_layer_registry/README.md`
+- Alias links (stable): `layer_0/0.02_sub_layers/0.00_sub_layer_registry/aliases/<slug>.md`
 
 Example:
-- Use: `layer_0_universal/0.02_sub_layers/0.00_sub_layer_registry/aliases/mcp_servers_and_tools_setup.md`
-- Avoid: `layer_0_universal/0.02_sub_layers/sub_layer_0.10_mcp_servers_and_tools_setup/` (this number can change)
+- Use: `layer_0/0.02_sub_layers/0.00_sub_layer_registry/aliases/mcp_servers_and_tools_setup.md`
+- Avoid: `layer_0/0.02_sub_layers/sub_layer_0.10_mcp_servers_and_tools_setup/` (this number can change)
 
 ### 1.2 Context Change Protocol (Ordering / Naming)
 
@@ -118,16 +118,16 @@ When you need to change the context system (reorder, renumber, rename, or move s
 
 #### A) Reorder / Renumber a sublayer (safe)
 
-1. Change the numbered folder name(s) under `layer_0_universal/0.02_sub_layers/` as needed (ordering labels only).
+1. Change the numbered folder name(s) under `layer_0/0.02_sub_layers/` as needed (ordering labels only).
 2. Regenerate the registry + aliases:
    ```bash
    cd <universal_context_root>/0_context
-   python3 layer_0_universal/0.02_sub_layers/0.00_sub_layer_registry/scripts/sub_layer_registry.py generate
+   python3 layer_0/0.02_sub_layers/0.00_sub_layer_registry/scripts/sub_layer_registry.py generate
    ```
 3. Find and fix any docs that still hard-link numeric paths:
    ```bash
    cd <universal_context_root>/0_context
-   python3 layer_0_universal/0.02_sub_layers/0.00_sub_layer_registry/scripts/sub_layer_registry.py check-hardlinks
+   python3 layer_0/0.02_sub_layers/0.00_sub_layer_registry/scripts/sub_layer_registry.py check-hardlinks
    ```
 4. Update docs to link to alias files (`.../aliases/<slug>.md`) instead of numeric `sub_layer_0.xx_*` paths.
 
@@ -139,7 +139,7 @@ If a slug rename is unavoidable:
 1. Rename the folder slug.
 2. Regenerate registry + aliases (command above).
 3. Add a **manual redirect alias** file for the old slug so old links keep working:
-   - Create: `layer_0_universal/0.02_sub_layers/0.00_sub_layer_registry/aliases/<old_slug>.md`
+   - Create: `layer_0/0.02_sub_layers/0.00_sub_layer_registry/aliases/<old_slug>.md`
    - Make it point to the new slug’s alias file.
 4. Update any docs that referenced the old slug to the new slug.
 
@@ -152,7 +152,7 @@ If you move docs/tools between sublayers, treat it like a small migration:
 ### 2. Discover & Read Project-Specific Init Prompt
 
 **How to find it:**
-1. Your universal context is at `<parent>/0_layer_ai_context/0_context/`
+1. Your universal context is at `<parent>/0_layer_universal/0_context/`
 2. Project contexts are siblings: `<parent>/<project_name>/0_context/`
 3. Look for: `<parent>/<project_name>/0_context/0_context/0_basic_prompts_throughout/project_init_prompt.md`
 
@@ -160,7 +160,7 @@ If you move docs/tools between sublayers, treat it like a small migration:
 ```bash
 # From universal context root, list all potential project repos:
 cd ../../  # Go to parent directory
-ls -d */0_context/0_context/0_basic_prompts_throughout/project_init_prompt.md 2>/dev/null | grep -v "0_layer_ai_context"
+ls -d */0_context/0_context/0_basic_prompts_throughout/project_init_prompt.md 2>/dev/null | grep -v "0_layer_universal"
 ```
 
 **If project init prompt EXISTS:** Read and follow it immediately.
@@ -172,9 +172,9 @@ ls -d */0_context/0_context/0_basic_prompts_throughout/project_init_prompt.md 2>
 ### 2.1 MCP / Tooling Context (OS + App aware)
 If the task involves MCP servers/tools (browser automation, web-search, etc.), load the MCP sublayer and pick your OS + AI app:
 - Universal MCP hub:
-  - `0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.10_mcp_servers_and_tools_setup/`
+  - `0_context/layer_0/0.02_sub_layers/sub_layer_0.10_mcp_servers_and_tools_setup/`
 - Stable alias (preferred for docs/links):
-  - `0_context/layer_0_universal/0.02_sub_layers/0.00_sub_layer_registry/aliases/mcp_servers_and_tools_setup.md`
+  - `0_context/layer_0/0.02_sub_layers/0.00_sub_layer_registry/aliases/mcp_servers_and_tools_setup.md`
 - OS-specific runbooks:
   - `.../sub_layer_0.10_mcp_servers_and_tools_setup/0.02_mcp_config_options_0_file_tree_0/0.03_operating_systems/<os>/`
 - App-specific runbooks:
@@ -197,7 +197,7 @@ This is where you confirm “headed vs headless” requirements, WSLg env vars, 
 **⚠️ CRITICAL PROJECT STRUCTURE REQUIREMENT:**
 **Before working on any project, verify it has proper instantiation and organization:**
 1. **Check for proper layer structure**: Project must have `layer_1_project/` with proper sub-layers (1.00-1.12) and stages (1.99_stages/)
-2. **Check for templates**: If missing, project should be instantiated from `0_ai_context/0_context/0.01_layer_stage_framework/1_project_template/`
+2. **Check for templates**: If missing, project should be instantiated from `0_ai_context/0_context/layer_1/layer_1_features/layer_1_feature_layer_stage_system/layer_1/layer_1_02_sub_layers/1_project_template/`
 3. **Verify organization**: Project structure must match the universal context organization pattern
 4. **If structure is missing or incomplete**: You MUST notify the user and help set it up before proceeding with work
 
@@ -212,18 +212,18 @@ See Section 4.9 for detailed project structure requirements and instantiation pr
 - `USAGE_GUIDE.md` - How to navigate and use the system
 
 #### Essential Universal Protocols:
-- `layer_0_universal/0.04_universal_rules/trickle_down_0_universal/0_instruction_docs/UNIVERSAL_AGENT_TERMINAL_PROTOCOL.md`
-- `layer_0_universal/0.04_universal_rules/trickle_down_0_universal/0_instruction_docs/cursor_terminal_issues.md`
-- `layer_0_universal/0.04_universal_rules/trickle_down_0_universal/0_instruction_docs/ai_agent_documentation_rule.md`
-- `layer_0_universal/0.04_universal_rules/trickle_down_0_universal/0_instruction_docs/git_commit_rule.md`
+- `layer_0/0.04_universal_rules/trickle_down_0_universal/0_instruction_docs/UNIVERSAL_AGENT_TERMINAL_PROTOCOL.md`
+- `layer_0/0.04_universal_rules/trickle_down_0_universal/0_instruction_docs/cursor_terminal_issues.md`
+- `layer_0/0.04_universal_rules/trickle_down_0_universal/0_instruction_docs/ai_agent_documentation_rule.md`
+- `layer_0/0.04_universal_rules/trickle_down_0_universal/0_instruction_docs/git_commit_rule.md`
 
 ### 4. Load the Context Management System (Layer + Stage + Agents)
 
-**CRITICAL:** Read `0.01_layer_stage_framework/README.md` for complete system documentation.
+**CRITICAL:** Read `layer_1/layer_1_features/layer_1_feature_layer_stage_system/layer_1/layer_1_02_sub_layers/README.md` for complete system documentation.
 
 #### 4.1 Understanding the Layer System (Specificity Hierarchy)
 
-**IMPORTANT:** The system now supports **flexible, arbitrary nesting** of features and components to unlimited depth. See `0.01_layer_stage_framework/FLEXIBLE_LAYERING_SYSTEM.md` for complete documentation.
+**IMPORTANT:** The system now supports **flexible, arbitrary nesting** of features and components to unlimited depth. See `layer_1/layer_1_features/layer_1_feature_layer_stage_system/layer_1/layer_1_02_sub_layers/FLEXIBLE_LAYERING_SYSTEM.md` for complete documentation.
 
 The layer system organizes context by specificity, from universal to specific:
 
@@ -337,7 +337,7 @@ stage_<N>.xx_<name>/
 - Update status on exit
 
 **Session Workflow:**
-1. At session start, load universal layer (`layer_0_universal`)
+1. At session start, load universal layer (`layer_0`)
 2. Load relevant project (`layer_1_*`), feature (`layer_2_*`), component (`layer_3_*`) as needed
 3. Within each layer, operate in the current Stage
 4. Update `status_<N>.json` on exit
@@ -345,7 +345,7 @@ stage_<N>.xx_<name>/
 **Example Navigation:**
 ```
 Working on feature checkout in project ecommerce:
-- Load: layer_0_universal (universal rules)
+- Load: layer_0 (universal rules)
 - Load: layer_1_project_ecommerce (project context)
 - Load: layer_2_feature_checkout (feature context)
 - Operate in: stage_2.04_development (current stage)
@@ -384,7 +384,7 @@ Working on feature checkout in project ecommerce:
 
 **Purpose:** Register manager and stage agents so the universal manager can discover and call them.
 
-**Location:** `0.01_layer_stage_framework/agent_registry_template.md`
+**Location:** `layer_1/layer_1_features/layer_1_feature_layer_stage_system/layer_1/layer_1_02_sub_layers/agent_registry_template.md`
 
 **Required Information for Each Agent:**
 - `layer`: `0|1|2|3`
@@ -420,7 +420,7 @@ Working on feature checkout in project ecommerce:
 6. **Commit Changes**: Follow git commit rules (see Section 3.6)
 
 **When Creating New Content:**
-- **New Layer**: Copy template from `0.01_layer_stage_framework/` (e.g., `1_project_template/`)
+- **New Layer**: Copy template from `layer_1/layer_1_features/layer_1_feature_layer_stage_system/layer_1/layer_1_02_sub_layers/` (e.g., `1_project_template/`)
 - **New Sub-layer Slot**: Create `sub_layer_<N>.xx_<name>/` inside `<N>.02_sub_layers/`
 - **New Stage**: Stages are pre-created in templates; use existing `stage_<N>.xx_*/` folders
 - **Legacy Material**: Can live in `legacy_import/` subfolder while reorganizing
@@ -516,16 +516,16 @@ Starting stage: stage_2.01_instructions
 **2.1 Load Universal Layer (Layer 0) - REQUIRED**
 ```bash
 # From universal context root:
-cd 0_context/layer_0_universal/
+cd 0_context/layer_0/
 ```
 
 **Load these universal sub-layers first (foundational):**
-- `sub_layer_0.01_basic_prompts_throughout/` - This file and navigation patterns
+- `sub_layer_0_01_basic_prompts_throughout/` - This file and navigation patterns
 - `sub_layer_0.03_universal_principles/` - Universal principles that apply everywhere
 - `sub_layer_0.04_universal_rules/` - Universal rules (git, terminal, documentation, etc.)
 
 **Then load task-specific universal sub-layers:**
-- **For development work**: `sub_layer_0.02_software_engineering_knowledge_system/`, `sub_layer_0.12_universal_tools/`
+- **For development work**: `sub_layer_0_02_software_engineering_knowledge_system/`, `sub_layer_0.12_universal_tools/`
 - **For setup/configuration**: `sub_layer_0.05_os_setup/`, `sub_layer_0.06_environment_setup/`, `sub_layer_0.07_coding_app_setup/`, `sub_layer_0.09_ai_apps_tools_setup/`
 - **For AI/agent work**: `sub_layer_0.10_mcp_servers_and_tools_setup/`, `sub_layer_0.11_ai_models/`, `sub_layer_0.13_agent_setup/`
 
@@ -580,7 +580,7 @@ fi
 1. **STOP** - Do not proceed until feature structure exists
 2. **NOTIFY** - Inform user that the feature doesn't exist
 3. **OFFER** - Offer to create the feature structure using the template:
-   - Copy from: `0_ai_context/0_context/0.01_layer_stage_framework/2_feature_template/`
+   - Copy from: `0_ai_context/0_context/layer_1/layer_1_features/layer_1_feature_layer_stage_system/layer_1/layer_1_02_sub_layers/2_feature_template/`
    - To: `<project>/0_context/0_context/layer_2_features/layer_2_feature_<name>/`
 4. **WAIT** - Wait for user confirmation before creating structure
 5. **CREATE** - If confirmed, create feature structure following template pattern
@@ -615,7 +615,7 @@ fi
 1. **STOP** - Do not proceed until component structure exists
 2. **NOTIFY** - Inform user that the component doesn't exist
 3. **OFFER** - Offer to create the component structure using the template:
-   - Copy from: `0_ai_context/0_context/0.01_layer_stage_framework/3_component_template/`
+   - Copy from: `0_ai_context/0_context/layer_1/layer_1_features/layer_1_feature_layer_stage_system/layer_1/layer_1_02_sub_layers/3_component_template/`
    - To: `<project>/0_context/0_context/layer_2_features/layer_2_feature_<name>/layer_3_components/layer_3_component_<name>/`
 4. **WAIT** - Wait for user confirmation before creating structure
 5. **CREATE** - If confirmed, create component structure following template pattern
@@ -762,7 +762,7 @@ cat ai_agent_system/*.md
 **5.3 Execute the Task at the Appropriate Level**
 
 **Work at the layer level determined in Step 4:**
-- **Layer 0 (Universal)**: Work affects all projects - execute in `layer_0_universal/<N>.99_stages/stage_0.xx_*/`
+- **Layer 0 (Universal)**: Work affects all projects - execute in `layer_0/<N>.99_stages/stage_0.xx_*/`
 - **Layer 1 (Project)**: Work affects entire project - execute in `layer_1_project/1.99_stages/stage_1.xx_*/`
 - **Layer 2 (Feature)**: Work affects specific feature - execute in `layer_2_feature_<name>/2.99_stages/stage_2.xx_*/`
 - **Layer 3 (Component)**: Work affects specific component - execute in `layer_3_component_<name>/3.99_stages/stage_3.xx_*/`
@@ -818,7 +818,7 @@ cat ai_agent_system/*.md
 **Find Universal Context Root:**
 ```bash
 # If you know this file's location:
-cd "$(dirname "$(find ~ -name universal_init_prompt.md -path "*/0_layer_ai_context/*" | head -1)")"
+cd "$(dirname "$(find ~ -name universal_init_prompt.md -path "*/0_layer_universal/*" | head -1)")"
 cd ../../..  # Now at <universal_context_root>/0_context/
 ```
 
@@ -838,7 +838,7 @@ cd layer_3_components/layer_3_component_<name>/
 ```bash
 # From universal context root:
 cd ../../
-find . -maxdepth 2 -type d -name "0_context" | grep -v "0_layer_ai_context"
+find . -maxdepth 2 -type d -name "0_context" | grep -v "0_layer_universal"
 ```
 
 **List Available Layers:**
@@ -878,7 +878,7 @@ ls -d <project>/0_context/0_context/layer_2_features/layer_2_*/layer_3_component
 **Step 2: Load Layers (Check for Missing Structure)**
 ```bash
 # Load universal (always exists)
-cd ~/code/0_layer_ai_context/0_context/layer_0_universal/
+cd ~/code/0_layer_universal/0_context/layer_0/
 # Read: sub_layer_0.01/, sub_layer_0.03/, sub_layer_0.04/, sub_layer_0.11/
 
 # Check if project exists
@@ -956,66 +956,66 @@ cd 2.99_stages/stage_2.01_instructions/
 ##### Development & Coding Tasks
 
 **Starting a new feature:**
-- Universal: `layer_0_universal/0.02_sub_layers/sub_layer_0.01_basic_prompts_throughout/` (this file)
-- Universal: `layer_0_universal/0.02_sub_layers/sub_layer_0.02_software_engineering_knowledge_system/` (SE knowledge)
-- Universal: `layer_0_universal/0.02_sub_layers/sub_layer_0.03_universal_principles/` (principles)
-- Universal: `layer_0_universal/0.02_sub_layers/sub_layer_0.04_universal_rules/` (rules)
+- Universal: `layer_0/0.02_sub_layers/sub_layer_0_01_basic_prompts_throughout/` (this file)
+- Universal: `layer_0/0.02_sub_layers/sub_layer_0_02_software_engineering_knowledge_system/` (SE knowledge)
+- Universal: `layer_0/0.02_sub_layers/sub_layer_0.03_universal_principles/` (principles)
+- Universal: `layer_0/0.02_sub_layers/sub_layer_0.04_universal_rules/` (rules)
 - Project: `<project>/0_context/0_context/layer_1_project/1.02_sub_layers/sub_layer_1.02_project_se_knowledge/`
 - Feature: `<project>/0_context/0_context/layer_2_features/layer_2_feature_<name>/2.99_stages/stage_2.01_instructions/`
 
 **Writing code:**
-- Universal: `layer_0_universal/0.02_sub_layers/sub_layer_0.02_software_engineering_knowledge_system/`
-- Universal: `layer_0_universal/0.02_sub_layers/sub_layer_0.12_universal_tools/` (development tools)
+- Universal: `layer_0/0.02_sub_layers/sub_layer_0_02_software_engineering_knowledge_system/`
+- Universal: `layer_0/0.02_sub_layers/sub_layer_0.12_universal_tools/` (development tools)
 - Project: `<project>/0_context/0_context/layer_1_project/1.02_sub_layers/sub_layer_1.02_project_se_knowledge/`
 - Feature: `<project>/0_context/0_context/layer_2_features/layer_2_feature_<name>/2.02_sub_layers/sub_layer_2.02_feature_knowledge/`
 - Stage: Check `2.99_stages/status_2.json` for current stage, then load `stage_2.04_development/`
 
 **Debugging/Fixing bugs:**
-- Universal: `layer_0_universal/0.02_sub_layers/sub_layer_0.04_universal_rules/trickle_down_0_universal/0_instruction_docs/` (testing rules)
-- Universal: `layer_0_universal/0.02_sub_layers/sub_layer_0.12_universal_tools/` (debugging tools)
+- Universal: `layer_0/0.02_sub_layers/sub_layer_0.04_universal_rules/trickle_down_0_universal/0_instruction_docs/` (testing rules)
+- Universal: `layer_0/0.02_sub_layers/sub_layer_0.12_universal_tools/` (debugging tools)
 - Feature: `<project>/0_context/0_context/layer_2_features/layer_2_feature_<name>/2.99_stages/stage_2.07_fixing/`
 - Check: `2.99_stages/stage_2.07_fixing/hand_off_documents/` for previous fix attempts
 
 **Testing:**
-- Universal: `layer_0_universal/0.02_sub_layers/sub_layer_0.04_universal_rules/trickle_down_0_universal/0_instruction_docs/TESTING_AGENT_SYSTEM_README.md`
-- Universal: `layer_0_universal/0.02_sub_layers/sub_layer_0.12_universal_tools/` (testing tools)
+- Universal: `layer_0/0.02_sub_layers/sub_layer_0.04_universal_rules/trickle_down_0_universal/0_instruction_docs/TESTING_AGENT_SYSTEM_README.md`
+- Universal: `layer_0/0.02_sub_layers/sub_layer_0.12_universal_tools/` (testing tools)
 - Feature: `<project>/0_context/0_context/layer_2_features/layer_2_feature_<name>/2.99_stages/stage_2.05_testing/`
 
 ##### Setup & Configuration Tasks
 
 **OS/System setup:**
-- Universal: `layer_0_universal/0.02_sub_layers/sub_layer_0.05_os_setup/`
+- Universal: `layer_0/0.02_sub_layers/sub_layer_0.05_os_setup/`
 - Check: `sub_layer_0.05_os_setup/trickle_down_0.5_setup/0_instruction_docs/` for OS-specific guides
 
 **IDE/Editor setup:**
-- Universal: `layer_0_universal/0.02_sub_layers/sub_layer_0.07_coding_app_setup/`
+- Universal: `layer_0/0.02_sub_layers/sub_layer_0.07_coding_app_setup/`
 - Check: `sub_layer_0.07_coding_app_setup/trickle_down_0.5_setup/0_instruction_docs/` for IDE-specific guides
 
 **Browser/Extension setup:**
-- Universal: `layer_0_universal/0.02_sub_layers/sub_layer_0.08_apps_browsers_extensions_setup/`
+- Universal: `layer_0/0.02_sub_layers/sub_layer_0.08_apps_browsers_extensions_setup/`
 
 **AI Apps/Tools setup:**
-- Universal: `layer_0_universal/0.02_sub_layers/sub_layer_0.09_ai_apps_tools_setup/`
+- Universal: `layer_0/0.02_sub_layers/sub_layer_0.09_ai_apps_tools_setup/`
 - Check: `sub_layer_0.09_ai_apps_tools_setup/trickle_down_0.5_setup/0_instruction_docs/` for app-specific guides
 
 **MCP Servers setup:**
-- Universal: `layer_0_universal/0.02_sub_layers/sub_layer_0.10_mcp_servers_and_tools_setup/`
+- Universal: `layer_0/0.02_sub_layers/sub_layer_0.10_mcp_servers_and_tools_setup/`
 - Check: `sub_layer_0.10_mcp_servers_and_tools_setup/0.01_core-system/README.md` for MCP architecture + runbooks
 - **Linux/Ubuntu users**: Read `BROWSER_MCP_SETUP_EXPERIENCE.md` first!
 
 **AI Models configuration:**
-- Universal: `layer_0_universal/0.02_sub_layers/sub_layer_0.11_ai_models/`
+- Universal: `layer_0/0.02_sub_layers/sub_layer_0.11_ai_models/`
 - Check: `sub_layer_0.11_ai_models/trickle_down_0.5_setup/0_instruction_docs/` for model access issues
 
 **Agent setup:**
-- Universal: `layer_0_universal/0.02_sub_layers/sub_layer_0.13_agent_setup/`
-- Registry: `0.01_layer_stage_framework/agent_registry_template.md`
+- Universal: `layer_0/0.02_sub_layers/sub_layer_0.13_agent_setup/`
+- Registry: `layer_1/layer_1_features/layer_1_feature_layer_stage_system/layer_1/layer_1_02_sub_layers/agent_registry_template.md`
 
 ##### Git & Version Control
 
 **Making commits:**
-- Universal: `layer_0_universal/0.02_sub_layers/sub_layer_0.04_universal_rules/trickle_down_0_universal/0_instruction_docs/git_commit_rule.md`
-- Universal: `layer_0_universal/0.02_sub_layers/sub_layer_0.04_universal_rules/trickle_down_0_universal/0_instruction_docs/context_update_rule.md`
+- Universal: `layer_0/0.02_sub_layers/sub_layer_0.04_universal_rules/trickle_down_0_universal/0_instruction_docs/git_commit_rule.md`
+- Universal: `layer_0/0.02_sub_layers/sub_layer_0.04_universal_rules/trickle_down_0_universal/0_instruction_docs/context_update_rule.md`
 
 **Syncing repos:**
 - Always start with: `git pull` and `git status` in each relevant repo
@@ -1024,39 +1024,39 @@ cd 2.99_stages/stage_2.01_instructions/
 ##### Terminal & Command Execution
 
 **Running terminal commands:**
-- Universal: `layer_0_universal/0.02_sub_layers/sub_layer_0.04_universal_rules/trickle_down_0_universal/0_instruction_docs/UNIVERSAL_AGENT_TERMINAL_PROTOCOL.md`
-- Universal: `layer_0_universal/0.02_sub_layers/sub_layer_0.04_universal_rules/trickle_down_0_universal/0_instruction_docs/cursor_terminal_issues.md`
-- Universal: `layer_0_universal/0.02_sub_layers/sub_layer_0.04_universal_rules/trickle_down_0_universal/0_instruction_docs/terminal_execution_protocol.md`
+- Universal: `layer_0/0.02_sub_layers/sub_layer_0.04_universal_rules/trickle_down_0_universal/0_instruction_docs/UNIVERSAL_AGENT_TERMINAL_PROTOCOL.md`
+- Universal: `layer_0/0.02_sub_layers/sub_layer_0.04_universal_rules/trickle_down_0_universal/0_instruction_docs/cursor_terminal_issues.md`
+- Universal: `layer_0/0.02_sub_layers/sub_layer_0.04_universal_rules/trickle_down_0_universal/0_instruction_docs/terminal_execution_protocol.md`
 - **Python scripts**: Use `python3 scripts/terminal_wrapper.py --script <script_path>`
 
 ##### Browser Automation
 
 **Browser automation tasks:**
-- Universal: `layer_0_universal/0.02_sub_layers/sub_layer_0.04_universal_rules/trickle_down_0_universal/0_instruction_docs/browser_management_policy.md`
-- Universal: `layer_0_universal/0.02_sub_layers/sub_layer_0.04_universal_rules/trickle_down_0_universal/0_instruction_docs/browser_opening_rule.md`
-- Universal: `layer_0_universal/0.02_sub_layers/sub_layer_0.12_universal_tools/trickle_down_0.75_universal_tools/0_instruction_docs/browser-automation/`
+- Universal: `layer_0/0.02_sub_layers/sub_layer_0.04_universal_rules/trickle_down_0_universal/0_instruction_docs/browser_management_policy.md`
+- Universal: `layer_0/0.02_sub_layers/sub_layer_0.04_universal_rules/trickle_down_0_universal/0_instruction_docs/browser_opening_rule.md`
+- Universal: `layer_0/0.02_sub_layers/sub_layer_0.12_universal_tools/trickle_down_0.75_universal_tools/0_instruction_docs/browser-automation/`
 
 **MCP Browser tools (Linux/Ubuntu):**
-- Universal: `layer_0_universal/0.02_sub_layers/sub_layer_0.10_mcp_servers_and_tools_setup/0.01_core-system/BROWSER_MCP_ROUTING_TABLE.md`
+- Universal: `layer_0/0.02_sub_layers/sub_layer_0.10_mcp_servers_and_tools_setup/0.01_core-system/BROWSER_MCP_ROUTING_TABLE.md`
 - **CRITICAL**: Read Lesson 1 first! Playwright MCP tools don't work on Linux in Cursor IDE.
 
 ##### Database Operations
 
 **Supabase/Database work:**
-- Universal: `layer_0_universal/0.02_sub_layers/sub_layer_0.04_universal_rules/trickle_down_0_universal/0_instruction_docs/supabase_javascript_integration_rule.md`
-- Universal: `layer_0_universal/0.02_sub_layers/sub_layer_0.04_universal_rules/trickle_down_0_universal/0_instruction_docs/supabase_javascript_quick_reference.md`
+- Universal: `layer_0/0.02_sub_layers/sub_layer_0.04_universal_rules/trickle_down_0_universal/0_instruction_docs/supabase_javascript_integration_rule.md`
+- Universal: `layer_0/0.02_sub_layers/sub_layer_0.04_universal_rules/trickle_down_0_universal/0_instruction_docs/supabase_javascript_quick_reference.md`
 
 ##### Authentication & Security
 
 **OAuth/Security setup:**
-- Universal: `layer_0_universal/0.02_sub_layers/sub_layer_0.04_universal_rules/trickle_down_0_universal/0_instruction_docs/google_oauth_production_ready.md`
-- Universal: `layer_0_universal/0.02_sub_layers/sub_layer_0.04_universal_rules/trickle_down_0_universal/0_instruction_docs/sudo_password_management.md`
+- Universal: `layer_0/0.02_sub_layers/sub_layer_0.04_universal_rules/trickle_down_0_universal/0_instruction_docs/google_oauth_production_ready.md`
+- Universal: `layer_0/0.02_sub_layers/sub_layer_0.04_universal_rules/trickle_down_0_universal/0_instruction_docs/sudo_password_management.md`
 
 ##### Documentation Tasks
 
 **Updating documentation:**
-- Universal: `layer_0_universal/0.02_sub_layers/sub_layer_0.04_universal_rules/trickle_down_0_universal/0_instruction_docs/ai_agent_documentation_rule.md`
-- Universal: `layer_0_universal/0.02_sub_layers/sub_layer_0.04_universal_rules/trickle_down_0_universal/0_instruction_docs/context_update_rule.md`
+- Universal: `layer_0/0.02_sub_layers/sub_layer_0.04_universal_rules/trickle_down_0_universal/0_instruction_docs/ai_agent_documentation_rule.md`
+- Universal: `layer_0/0.02_sub_layers/sub_layer_0.04_universal_rules/trickle_down_0_universal/0_instruction_docs/context_update_rule.md`
 - See Section 4.6 for documentation maintenance workflow
 
 **Finding project documentation:**
@@ -1066,7 +1066,7 @@ cd 2.99_stages/stage_2.01_instructions/
 ##### Planning & Design Tasks
 
 **Planning a new feature:**
-- Universal: `layer_0_universal/0.02_sub_layers/sub_layer_0.03_universal_principles/`
+- Universal: `layer_0/0.02_sub_layers/sub_layer_0.03_universal_principles/`
 - Project: `<project>/0_context/0_context/layer_1_project/1.02_sub_layers/sub_layer_1.03_project_principles/`
 - Feature: `<project>/0_context/0_context/layer_2_features/layer_2_feature_<name>/2.99_stages/stage_2.02_planning/`
 
@@ -1083,8 +1083,8 @@ cd 2.99_stages/stage_2.01_instructions/
 ##### Agent & Manager Tasks
 
 **Registering agents:**
-- Template: `0.01_layer_stage_framework/agent_registry_template.md`
-- Agent setup: `layer_0_universal/0.02_sub_layers/sub_layer_0.13_agent_setup/`
+- Template: `layer_1/layer_1_features/layer_1_feature_layer_stage_system/layer_1/layer_1_02_sub_layers/agent_registry_template.md`
+- Agent setup: `layer_0/0.02_sub_layers/sub_layer_0.13_agent_setup/`
 
 **Manager handoffs:**
 - Upward reports: `<N>.01_manager_handoff_documents/<N>.00_to_universal/`
@@ -1104,24 +1104,24 @@ cd 2.99_stages/stage_2.01_instructions/
 ##### Platform-Specific Issues
 
 **Linux/Ubuntu issues:**
-- MCP: `layer_0_universal/0.02_sub_layers/sub_layer_0.05_os_setup/trickle_down_0.5_setup/0_instruction_docs/LINUX_UBUNTU_MCP_ISSUES.md`
-- Cursor IDE: `layer_0_universal/0.02_sub_layers/sub_layer_0.07_coding_app_setup/trickle_down_0.5_setup/0_instruction_docs/CURSOR_IDE_LINUX_MCP_ISSUES.md`
-- AI Apps: `layer_0_universal/0.02_sub_layers/sub_layer_0.09_ai_apps_tools_setup/trickle_down_0.5_setup/0_instruction_docs/LINUX_UBUNTU_AI_APPS_MCP_ISSUES.md`
-- Models: `layer_0_universal/0.02_sub_layers/sub_layer_0.11_ai_models/trickle_down_0.5_setup/0_instruction_docs/LINUX_UBUNTU_MODEL_ACCESS_ISSUES.md`
-- Tools: `layer_0_universal/0.02_sub_layers/sub_layer_0.12_universal_tools/trickle_down_0.75_universal_tools/0_instruction_docs/LINUX_UBUNTU_TOOL_ACCESS_ISSUES.md`
+- MCP: `layer_0/0.02_sub_layers/sub_layer_0.05_os_setup/trickle_down_0.5_setup/0_instruction_docs/LINUX_UBUNTU_MCP_ISSUES.md`
+- Cursor IDE: `layer_0/0.02_sub_layers/sub_layer_0.07_coding_app_setup/trickle_down_0.5_setup/0_instruction_docs/CURSOR_IDE_LINUX_MCP_ISSUES.md`
+- AI Apps: `layer_0/0.02_sub_layers/sub_layer_0.09_ai_apps_tools_setup/trickle_down_0.5_setup/0_instruction_docs/LINUX_UBUNTU_AI_APPS_MCP_ISSUES.md`
+- Models: `layer_0/0.02_sub_layers/sub_layer_0.11_ai_models/trickle_down_0.5_setup/0_instruction_docs/LINUX_UBUNTU_MODEL_ACCESS_ISSUES.md`
+- Tools: `layer_0/0.02_sub_layers/sub_layer_0.12_universal_tools/trickle_down_0.75_universal_tools/0_instruction_docs/LINUX_UBUNTU_TOOL_ACCESS_ISSUES.md`
 
 ##### Quick Decision Tree
 
 **"I need to..."**
 
-- **...write code** → `sub_layer_0.02_software_engineering_knowledge_system/` + `sub_layer_0.12_universal_tools/` + project/feature SE knowledge
+- **...write code** → `sub_layer_0_02_software_engineering_knowledge_system/` + `sub_layer_0.12_universal_tools/` + project/feature SE knowledge
 - **...run a terminal command** → `sub_layer_0.04_universal_rules/.../UNIVERSAL_AGENT_TERMINAL_PROTOCOL.md`
 - **...make a git commit** → `sub_layer_0.04_universal_rules/.../git_commit_rule.md`
 - **...set up something** → `sub_layer_0.05_os_setup/` through `sub_layer_0.13_agent_setup/` (depending on what)
 - **...use browser automation** → `sub_layer_0.12_universal_tools/.../browser-automation/` + `sub_layer_0.10_mcp_servers_and_tools_setup/` (browser routing table)
 - **...work on a feature** → Load layers 0 → 1 → 2, check `2.99_stages/status_2.json` for current stage
 - **...find project rules** → `<project>/0_context/0_context/layer_1_project/1.02_sub_layers/sub_layer_1.04_project_rules/`
-- **...understand the system** → `0.01_layer_stage_framework/README.md` + Section 4 of this file
+- **...understand the system** → `layer_1/layer_1_features/layer_1_feature_layer_stage_system/layer_1/layer_1_02_sub_layers/README.md` + Section 4 of this file
 - **...navigate the system** → Section 4.7 of this file (navigation workflow)
 
 #### 4.8.1 Handling User "Remember" Requests
@@ -1129,7 +1129,7 @@ cd 2.99_stages/stage_2.01_instructions/
 **MANDATORY RULE:** When the user explicitly asks you to "remember" something, you must follow the strict protocol defined in the Universal Protocols layer.
 
 **Protocol Location:**
-`layer_0_universal/0.02_sub_layers/sub_layer_0.05_universal_protocols/0_instruction_docs/memory_handling_protocol.md`
+`layer_0/0.02_sub_layers/sub_layer_0.05_universal_protocols/0_instruction_docs/memory_handling_protocol.md`
 
 **Key Requirement:**
 You must explicitly confirm **Where recorded**, **Exact Directory Location**, **How context was updated**, and **Thing Remembered/Emphasis on the Code** in your response.
@@ -1140,7 +1140,7 @@ You must explicitly confirm **Where recorded**, **Exact Directory Location**, **
 
 For detailed instructions on instantiating various layer types (Universal, Project, Feature, Component), including specific guidance on **Workflow Features**, refer to:
 
-*   **`0.01_layer_stage_framework/README.md`** - Specifically the "Instantiating Workflow Features" section.
+*   **`layer_1/layer_1_features/layer_1_feature_layer_stage_system/layer_1/layer_1_02_sub_layers/README.md`** - Specifically the "Instantiating Workflow Features" section.
 
 ##### Required Project Structure
 
@@ -1223,7 +1223,7 @@ ls -d layer_1_project/ 2>/dev/null || echo "MISSING: layer_1_project/"
 **Step 2: Copy Template from Universal Context**
 ```bash
 # From universal context root:
-cd <parent>/0_layer_ai_context/0_context/0.01_layer_stage_framework/
+cd <parent>/0_layer_universal/0_context/layer_1/layer_1_features/layer_1_feature_layer_stage_system/layer_1/layer_1_02_sub_layers/
 
 # Copy project template to project context:
 cp -r 1_project_template/ <parent>/<project>/0_context/0_context/layer_1_project/
@@ -1311,7 +1311,7 @@ EOF
 
 **Project template is located at:**
 ```
-<universal_context_root>/0_context/0.01_layer_stage_framework/1_project_template/
+<universal_context_root>/0_context/layer_1/layer_1_features/layer_1_feature_layer_stage_system/layer_1/layer_1_02_sub_layers/1_project_template/
 ```
 
 **Template includes:**
@@ -1323,12 +1323,12 @@ EOF
 - Status template
 
 **See also:**
-- `0.01_layer_stage_framework/README.md` - How to instantiate layers
+- `layer_1/layer_1_features/layer_1_feature_layer_stage_system/layer_1/layer_1_02_sub_layers/README.md` - How to instantiate layers
 - Section 4.6 - How to maintain and update documentation
 
 ### 5. Summaries must keep entrypoints
 When summarizing context for any session, you must explicitly retain:
-- A reference to this universal init prompt (`layer_0_universal/0.02_sub_layers/sub_layer_0.01_basic_prompts_throughout/0_basic_prompts_throughout/universal_init_prompt.md`) with an instruction to follow it.
+- A reference to this universal init prompt (`layer_0/0.02_sub_layers/sub_layer_0_01_basic_prompts_throughout/0_basic_prompts_throughout/universal_init_prompt.md`) with an instruction to follow it.
 - A reference to the active project init prompt (e.g., `<project>/0_context/0_context/0_basic_prompts_throughout/project_init_prompt.md` or its Layer/Stage location) with an instruction to follow it.
 Do not remove these references during summarization; they are required navigation anchors.
 
@@ -1340,13 +1340,13 @@ Do not remove these references during summarization; they are required navigatio
 
 ### Layer + Stage Framework Templates
 **MANDATORY READING for context management:**
-- **`0.01_layer_stage_framework/README.md`** - Complete documentation of the layer + stage system, how context management works, how to maintain documentation, and how the agent hierarchy operates
-- **`0.01_layer_stage_framework/agent_registry_template.md`** - How to register manager and stage agents for discovery
+- **`layer_1/layer_1_features/layer_1_feature_layer_stage_system/layer_1/layer_1_02_sub_layers/README.md`** - Complete documentation of the layer + stage system, how context management works, how to maintain documentation, and how the agent hierarchy operates
+- **`layer_1/layer_1_features/layer_1_feature_layer_stage_system/layer_1/layer_1_02_sub_layers/agent_registry_template.md`** - How to register manager and stage agents for discovery
 
 **Templates and Structure:**
-- Templates for universal/project/feature/component layers: `0.01_layer_stage_framework/`
+- Templates for universal/project/feature/component layers: `layer_1/layer_1_features/layer_1_feature_layer_stage_system/layer_1/layer_1_02_sub_layers/`
 - Stage folders (0.01–0.08) and status templates live under each `*.99_stages/`
-- Live universal layer (actual content): `layer_0_universal/0.02_sub_layers/`
+- Live universal layer (actual content): `layer_0/0.02_sub_layers/`
 
 **Key Concepts (see Section 4 for details):**
 - Layer System: universal (0) → project (1) → feature (2) → component (3)
@@ -1356,33 +1356,33 @@ Do not remove these references during summarization; they are required navigatio
 
 ### For Git Operations
 **Read before making commits:**
-- `layer_0_universal/0.04_universal_rules/trickle_down_0_universal/0_instruction_docs/git_commit_rule.md`
-- `layer_0_universal/0.04_universal_rules/trickle_down_0_universal/0_instruction_docs/context_update_rule.md`
+- `layer_0/0.04_universal_rules/trickle_down_0_universal/0_instruction_docs/git_commit_rule.md`
+- `layer_0/0.04_universal_rules/trickle_down_0_universal/0_instruction_docs/context_update_rule.md`
 
 ### For Terminal Commands
 **Read before executing commands:**
-- `layer_0_universal/0.04_universal_rules/trickle_down_0_universal/0_instruction_docs/UNIVERSAL_AGENT_TERMINAL_PROTOCOL.md`
-- `layer_0_universal/0.04_universal_rules/trickle_down_0_universal/0_instruction_docs/cursor_terminal_issues.md`
-- `layer_0_universal/0.04_universal_rules/trickle_down_0_universal/0_instruction_docs/terminal_execution_protocol.md`
-- `layer_0_universal/0.04_universal_rules/trickle_down_0_universal/0_instruction_docs/terminal-quick-reference.md`
+- `layer_0/0.04_universal_rules/trickle_down_0_universal/0_instruction_docs/UNIVERSAL_AGENT_TERMINAL_PROTOCOL.md`
+- `layer_0/0.04_universal_rules/trickle_down_0_universal/0_instruction_docs/cursor_terminal_issues.md`
+- `layer_0/0.04_universal_rules/trickle_down_0_universal/0_instruction_docs/terminal_execution_protocol.md`
+- `layer_0/0.04_universal_rules/trickle_down_0_universal/0_instruction_docs/terminal-quick-reference.md`
 
 ### For Browser Automation
 **Read before opening browsers:**
-- `layer_0_universal/0.02_sub_layers/0.04_universal_rules/trickle_down_0_universal/0_instruction_docs/browser_management_policy.md`
-- `layer_0_universal/0.02_sub_layers/0.04_universal_rules/trickle_down_0_universal/0_instruction_docs/browser_opening_rule.md`
-- `layer_0_universal/0.02_sub_layers/sub_layer_0.12_universal_tools/trickle_down_0.75_universal_tools/0_instruction_docs/browser-automation/README.md`
+- `layer_0/0.02_sub_layers/0.04_universal_rules/trickle_down_0_universal/0_instruction_docs/browser_management_policy.md`
+- `layer_0/0.02_sub_layers/0.04_universal_rules/trickle_down_0_universal/0_instruction_docs/browser_opening_rule.md`
+- `layer_0/0.02_sub_layers/sub_layer_0.12_universal_tools/trickle_down_0.75_universal_tools/0_instruction_docs/browser-automation/README.md`
 
 **⚠️ Linux/Ubuntu Note**: Browser MCP tools have platform-specific issues. See MCP Tools section above for Linux limitations.
 
 ### For Testing
 **Read when creating or running tests:**
-- `layer_0_universal/0.04_universal_rules/trickle_down_0_universal/0_instruction_docs/TESTING_AGENT_SYSTEM_README.md`
-- `layer_0_universal/0.04_universal_rules/trickle_down_0_universal/0_instruction_docs/testing-agent-protocol.md`
-- `layer_0_universal/0.04_universal_rules/trickle_down_0_universal/0_instruction_docs/testing-agent-instructions.md`
+- `layer_0/0.04_universal_rules/trickle_down_0_universal/0_instruction_docs/TESTING_AGENT_SYSTEM_README.md`
+- `layer_0/0.04_universal_rules/trickle_down_0_universal/0_instruction_docs/testing-agent-protocol.md`
+- `layer_0/0.04_universal_rules/trickle_down_0_universal/0_instruction_docs/testing-agent-instructions.md`
 
 ### For MCP Tools
 **Read when using Model Context Protocol servers or troubleshooting issues:**
-- `layer_0_universal/0.02_sub_layers/sub_layer_0.10_mcp_servers_and_tools_setup/0.01_core-system/README.md` - **Start here for an overview of MCP setup, automation, and specific OS/AI tool documentation.**
+- `layer_0/0.02_sub_layers/sub_layer_0.10_mcp_servers_and_tools_setup/0.01_core-system/README.md` - **Start here for an overview of MCP setup, automation, and specific OS/AI tool documentation.**
 
 ### For ALEKS Mathematics Input (Critical!)
 
@@ -1640,7 +1640,7 @@ await enterDomainWithUnion(page,
 
 ### For Lesson Plan Development (Graphing)
 **IMPORTANT: Read before creating lesson plans with interactive graphs:**
-- `layer_0_universal/0.02_sub_layers/sub_layer_0.01_basic_prompts_throughout/0_basic_prompts_throughout/lesson-plan-graphing-best-practices.md` (when created)
+- `layer_0/0.02_sub_layers/sub_layer_0_01_basic_prompts_throughout/0_basic_prompts_throughout/lesson-plan-graphing-best-practices.md` (when created)
 - **Key lesson learned**: Use simple public shareable Desmos graph URLs instead of state-encoded parameter URLs
   - State parameters are unreliable and format inconsistently across browsers
   - Public shareable URLs (`https://www.desmos.com/calculator/GRAPHID`) are stable and work consistently
@@ -1649,19 +1649,19 @@ await enterDomainWithUnion(page,
 
 ### For Claude Code Specific
 **Read when using Claude Code CLI:**
-- `layer_0_universal/0.02_sub_layers/sub_layer_0.12_universal_tools/trickle_down_0.75_universal_tools/0_instruction_docs/claude-code-config/README.md`
-- `layer_0_universal/0.02_sub_layers/sub_layer_0.12_universal_tools/trickle_down_0.75_universal_tools/0_instruction_docs/claude-code-config/QUICK_START.md`
-- `layer_0_universal/0.02_sub_layers/sub_layer_0.12_universal_tools/trickle_down_0.75_universal_tools/0_instruction_docs/claude-code-config/WHAT_ACTUALLY_WORKS.md`
+- `layer_0/0.02_sub_layers/sub_layer_0.12_universal_tools/trickle_down_0.75_universal_tools/0_instruction_docs/claude-code-config/README.md`
+- `layer_0/0.02_sub_layers/sub_layer_0.12_universal_tools/trickle_down_0.75_universal_tools/0_instruction_docs/claude-code-config/QUICK_START.md`
+- `layer_0/0.02_sub_layers/sub_layer_0.12_universal_tools/trickle_down_0.75_universal_tools/0_instruction_docs/claude-code-config/WHAT_ACTUALLY_WORKS.md`
 
 ### For Database Operations (Supabase)
 **MANDATORY - Read before any database work:**
-- `layer_0_universal/0.02_sub_layers/0.04_universal_rules/trickle_down_0_universal/0_instruction_docs/supabase_javascript_integration_rule.md`
-- `layer_0_universal/0.02_sub_layers/0.04_universal_rules/trickle_down_0_universal/0_instruction_docs/supabase_javascript_quick_reference.md`
+- `layer_0/0.02_sub_layers/0.04_universal_rules/trickle_down_0_universal/0_instruction_docs/supabase_javascript_integration_rule.md`
+- `layer_0/0.02_sub_layers/0.04_universal_rules/trickle_down_0_universal/0_instruction_docs/supabase_javascript_quick_reference.md`
 
 ### For OAuth/Security Setup
 **Read when implementing authentication:**
-- `layer_0_universal/0.02_sub_layers/0.04_universal_rules/trickle_down_0_universal/0_instruction_docs/google_oauth_production_ready.md`
-- `layer_0_universal/0.02_sub_layers/0.04_universal_rules/trickle_down_0_universal/0_instruction_docs/sudo_password_management.md`
+- `layer_0/0.02_sub_layers/0.04_universal_rules/trickle_down_0_universal/0_instruction_docs/google_oauth_production_ready.md`
+- `layer_0/0.02_sub_layers/0.04_universal_rules/trickle_down_0_universal/0_instruction_docs/sudo_password_management.md`
 
 ---
 
@@ -1692,8 +1692,8 @@ cd ../../<project_name>/0_context/0_context/
 
 - [ ] Identified universal context root directory
 - [ ] Read `MASTER_DOCUMENTATION_INDEX.md` (universal)
-- [ ] **Read `0.01_layer_stage_framework/README.md`** (context management system)
-- [ ] **Read `0.01_layer_stage_framework/agent_registry_template.md`** (agent hierarchy)
+- [ ] **Read `layer_1/layer_1_features/layer_1_feature_layer_stage_system/layer_1/layer_1_02_sub_layers/README.md`** (context management system)
+- [ ] **Read `layer_1/layer_1_features/layer_1_feature_layer_stage_system/layer_1/layer_1_02_sub_layers/agent_registry_template.md`** (agent hierarchy)
 - [ ] Discovered project context directory (sibling to universal)
 - [ ] Read project init prompt (if exists)
 - [ ] Read `SYSTEM_OVERVIEW.md` and `USAGE_GUIDE.md`
@@ -1747,7 +1747,7 @@ git status
 ### Find Universal Context Root
 ```bash
 # If you know this file's location:
-cd "$(dirname "$(find ~ -name universal_init_prompt.md -path "*/0_layer_ai_context/*" | head -1)")"
+cd "$(dirname "$(find ~ -name universal_init_prompt.md -path "*/0_layer_universal/*" | head -1)")"
 cd ../..  # Now at <universal_context_root>/0_context/
 ```
 
@@ -1755,14 +1755,14 @@ cd ../..  # Now at <universal_context_root>/0_context/
 ```bash
 # From <universal_context_root>/0_context/:
 cd ../../
-find . -maxdepth 2 -type d -name "0_context" | grep -v "0_layer_ai_context"
+find . -maxdepth 2 -type d -name "0_context" | grep -v "0_layer_universal"
 ```
 
 ### Find Project Init Prompts
 ```bash
 # From parent directory:
 find . -path "*/0_context/0_context/0_basic_prompts_throughout/project_init_prompt.md" \
-  | grep -v "0_layer_ai_context"
+  | grep -v "0_layer_universal"
 ```
 
 ---
@@ -1777,11 +1777,11 @@ If generating a new project init prompt, use this structure:
 ## 🔍 Repository Discovery
 
 ### Universal Context Location
-**Relative path from project context:** `../../0_layer_ai_context/0_context/`
+**Relative path from project context:** `../../0_layer_universal/0_context/`
 
 ```bash
 # Verify universal context exists:
-ls ../../0_layer_ai_context/0_context/MASTER_DOCUMENTATION_INDEX.md
+ls ../../0_layer_universal/0_context/MASTER_DOCUMENTATION_INDEX.md
 ```
 
 ### Project Context Location
@@ -1817,7 +1817,7 @@ ls ../../0_layer_ai_context/0_context/MASTER_DOCUMENTATION_INDEX.md
 
 ## 5. Reference Documentation by Task
 - Link to project-specific docs (relative paths)
-- Reference universal docs: `../../0_layer_ai_context/0_context/...`
+- Reference universal docs: `../../0_layer_universal/0_context/...`
 - Quick reference commands
 
 ## 6. Troubleshooting
@@ -1840,12 +1840,12 @@ Example: `trickle_down_0_universal/0_instruction_docs/git_commit_rule.md`
 Example: `trickle_down_1_project/0_instruction_docs/constitution.md`
 
 ### Cross-References (Project → Universal)
-**Use relative path:** `../../0_layer_ai_context/0_context/<path>`
+**Use relative path:** `../../0_layer_universal/0_context/<path>`
 
 Example from project context:
 ```bash
 # Read universal git rules:
-cat ../../0_layer_ai_context/0_context/trickle_down_0_universal/0_instruction_docs/git_commit_rule.md
+cat ../../0_layer_universal/0_context/trickle_down_0_universal/0_instruction_docs/git_commit_rule.md
 ```
 
 ---
@@ -1860,6 +1860,6 @@ cat ../../0_layer_ai_context/0_context/trickle_down_0_universal/0_instruction_do
 
 ---
 
-**Location Pattern:** `<parent>/0_layer_ai_context/0_context/0_basic_prompts_throughout/`
+**Location Pattern:** `<parent>/0_layer_universal/0_context/0_basic_prompts_throughout/`
 **Last Updated:** 2025-01-26
 **Version:** 2.1 (Portable Paths)

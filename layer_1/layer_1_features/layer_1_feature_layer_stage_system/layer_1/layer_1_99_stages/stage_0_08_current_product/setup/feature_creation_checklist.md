@@ -37,9 +37,9 @@ cd <parent_feature>/layer_<N+1>/layer_<N+1>_sub_features/
 
 ```bash
 # Same template used for both features and sub-features
-cp -r <path_to>/0.01_layer_stage_framework/2_feature_template/ layer_<N+1>_feature_<name>/
+cp -r <path_to>/layer_1/layer_1_features/layer_1_feature_layer_stage_system/layer_1/layer_1_02_sub_layers/2_feature_template/ layer_<N+1>_feature_<name>/
 # Or for sub-feature:
-cp -r <path_to>/0.01_layer_stage_framework/2_feature_template/ layer_<N+1>_sub_feature_<name>/
+cp -r <path_to>/layer_1/layer_1_features/layer_1_feature_layer_stage_system/layer_1/layer_1_02_sub_layers/2_feature_template/ layer_<N+1>_sub_feature_<name>/
 ```
 
 - [ ] Copied feature template

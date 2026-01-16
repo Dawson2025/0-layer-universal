@@ -7,8 +7,8 @@ This overlay maps existing universal content into the Layer/Stage system without
 - 0.01_manager_handoff_documents → `./0.01_manager_handoff_documents/` with `0.00_to_universal/` and `0.01_to_specific/`
 
 ## Slots (0.x, inside `0.02_sub_layers/`)
-- 0.01_basic_prompts_throughout → `./0.02_sub_layers/sub_layer_0.01_basic_prompts_throughout/0_basic_prompts_throughout/`
-- 0.02_software_engineering_knowledge_system → `./0.02_sub_layers/sub_layer_0.02_software_engineering_knowledge_system/software_engineering_knowledge_system/`
+- 0.01_basic_prompts_throughout → `./0.02_sub_layers/sub_layer_0_01_basic_prompts_throughout/0_basic_prompts_throughout/`
+- 0.02_software_engineering_knowledge_system → `./0.02_sub_layers/sub_layer_0_02_software_engineering_knowledge_system/software_engineering_knowledge_system/`
 - 0.03_universal_principles → `../SYSTEM_OVERVIEW.md`, `../USAGE_GUIDE.md` (kept at root for now)
 - 0.04_universal_rules → `./0.02_sub_layers/sub_layer_0.04_universal_rules/trickle_down_0_universal/0_instruction_docs/`
 - 0.05_os_setup → `./0.02_sub_layers/sub_layer_0.05_os_setup/trickle_down_0.5_setup/`

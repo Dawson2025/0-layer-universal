@@ -14,7 +14,7 @@ This document outlines Linux/Ubuntu-specific issues that affect MCP (Model Conte
 
 **Issue**: Playwright MCP tools are not exposed to AI agents despite successful server connection.
 
-**Details**: See `layer_0_universal/0.02_sub_layers/sub_layer_0.07_coding_app_setup/trickle_down_0.5_setup/0_instruction_docs/CURSOR_IDE_LINUX_MCP_ISSUES.md`
+**Details**: See `layer_0/0.02_sub_layers/sub_layer_0.07_coding_app_setup/trickle_down_0.5_setup/0_instruction_docs/CURSOR_IDE_LINUX_MCP_ISSUES.md`
 
 **Impact**: 
 - Browser automation limited to `mcp_browser_*` tools
@@ -156,9 +156,9 @@ When setting up AI apps on Linux/Ubuntu:
 
 ## Related Documentation
 
-- **OS-Level Issues**: `layer_0_universal/0.02_sub_layers/sub_layer_0.05_os_setup/trickle_down_0.5_setup/0_instruction_docs/LINUX_UBUNTU_MCP_ISSUES.md`
-- **Cursor IDE Issues**: `layer_0_universal/0.02_sub_layers/sub_layer_0.07_coding_app_setup/trickle_down_0.5_setup/0_instruction_docs/CURSOR_IDE_LINUX_MCP_ISSUES.md`
-- **MCP Setup**: `layer_0_universal/0.02_sub_layers/sub_layer_0.10_mcp_servers_and_tools_setup/`
+- **OS-Level Issues**: `layer_0/0.02_sub_layers/sub_layer_0.05_os_setup/trickle_down_0.5_setup/0_instruction_docs/LINUX_UBUNTU_MCP_ISSUES.md`
+- **Cursor IDE Issues**: `layer_0/0.02_sub_layers/sub_layer_0.07_coding_app_setup/trickle_down_0.5_setup/0_instruction_docs/CURSOR_IDE_LINUX_MCP_ISSUES.md`
+- **MCP Setup**: `layer_0/0.02_sub_layers/sub_layer_0.10_mcp_servers_and_tools_setup/`
 
 ## References
 

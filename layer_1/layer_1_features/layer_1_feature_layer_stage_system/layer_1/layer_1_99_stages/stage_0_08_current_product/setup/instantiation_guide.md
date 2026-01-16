@@ -10,12 +10,12 @@
 
 | Entity Type | Description | Template Location |
 |-------------|-------------|-------------------|
-| **Project** | Top-level container (Layer 1) | `0.01_layer_stage_framework/1_project_template/` |
-| **Sub-project** | Project nested under project (sub*1, sub*2, etc.) | `0.01_layer_stage_framework/2_sub_project_template/` |
-| **Feature** | Distinct capability within a project | `0.01_layer_stage_framework/2_feature_template/` |
-| **Sub-feature** | Feature nested under feature | `0.01_layer_stage_framework/2_feature_template/` (reused) |
-| **Component** | Implementation unit within a feature | `0.01_layer_stage_framework/3_component_template/` |
-| **Sub-component** | Component nested under component | `0.01_layer_stage_framework/3_component_template/` (reused) |
+| **Project** | Top-level container (Layer 1) | `layer_1/layer_1_features/layer_1_feature_layer_stage_system/layer_1/layer_1_02_sub_layers/1_project_template/` |
+| **Sub-project** | Project nested under project (sub*1, sub*2, etc.) | `layer_1/layer_1_features/layer_1_feature_layer_stage_system/layer_1/layer_1_02_sub_layers/2_sub_project_template/` |
+| **Feature** | Distinct capability within a project | `layer_1/layer_1_features/layer_1_feature_layer_stage_system/layer_1/layer_1_02_sub_layers/2_feature_template/` |
+| **Sub-feature** | Feature nested under feature | `layer_1/layer_1_features/layer_1_feature_layer_stage_system/layer_1/layer_1_02_sub_layers/2_feature_template/` (reused) |
+| **Component** | Implementation unit within a feature | `layer_1/layer_1_features/layer_1_feature_layer_stage_system/layer_1/layer_1_02_sub_layers/3_component_template/` |
+| **Sub-component** | Component nested under component | `layer_1/layer_1_features/layer_1_feature_layer_stage_system/layer_1/layer_1_02_sub_layers/3_component_template/` (reused) |
 | **Sub-layer** | Content slot within any entity (N.01-N.12) | Manual creation |
 | **Stage** | Workflow phase within any entity | Included in templates |
 
@@ -105,7 +105,7 @@ When projects nest inside projects, track the nesting depth:
 
 2. **Copy template:**
    ```bash
-   cp -r <path_to>/0.01_layer_stage_framework/1_project_template/* .
+   cp -r <path_to>/layer_1/layer_1_features/layer_1_feature_layer_stage_system/layer_1/layer_1_02_sub_layers/1_project_template/* .
    ```
 
 3. **Rename layer folders to match your layer number:**
@@ -153,7 +153,7 @@ When projects nest inside projects, track the nesting depth:
 
 2. **Copy sub-project template:**
    ```bash
-   cp -r <path_to>/0.01_layer_stage_framework/2_sub_project_template/ layer_<N+1>_sub*<X>_project_<name>/
+   cp -r <path_to>/layer_1/layer_1_features/layer_1_feature_layer_stage_system/layer_1/layer_1_02_sub_layers/2_sub_project_template/ layer_<N+1>_sub*<X>_project_<name>/
    ```
 
 3. **Rename internal layer folders:**
@@ -200,7 +200,7 @@ cp -r .../2_sub_project_template/ layer_3_sub*2_project_computer_science/
 
 2. **Copy feature template:**
    ```bash
-   cp -r <path_to>/0.01_layer_stage_framework/2_feature_template/ layer_<N+1>_feature_<name>/
+   cp -r <path_to>/layer_1/layer_1_features/layer_1_feature_layer_stage_system/layer_1/layer_1_02_sub_layers/2_feature_template/ layer_<N+1>_feature_<name>/
    ```
 
 3. **Rename internal layer folders:**
@@ -242,7 +242,7 @@ cp -r .../2_feature_template/ layer_2_feature_authentication/
 
 2. **Copy feature template (reused for sub-features):**
    ```bash
-   cp -r <path_to>/0.01_layer_stage_framework/2_feature_template/ layer_<N+1>_sub_feature_<name>/
+   cp -r <path_to>/layer_1/layer_1_features/layer_1_feature_layer_stage_system/layer_1/layer_1_02_sub_layers/2_feature_template/ layer_<N+1>_sub_feature_<name>/
    ```
 
 3. **Rename internal folders to correct layer numbers**
@@ -279,7 +279,7 @@ cp -r .../2_feature_template/ layer_3_sub_feature_oauth/
 
 2. **Copy component template:**
    ```bash
-   cp -r <path_to>/0.01_layer_stage_framework/3_component_template/ layer_<N+1>_component_<name>/
+   cp -r <path_to>/layer_1/layer_1_features/layer_1_feature_layer_stage_system/layer_1/layer_1_02_sub_layers/3_component_template/ layer_<N+1>_component_<name>/
    ```
 
 3. **Rename internal layer folders**
@@ -315,7 +315,7 @@ cp -r .../3_component_template/ layer_3_component_login_form/
 
 2. **Copy component template (reused for sub-components):**
    ```bash
-   cp -r <path_to>/0.01_layer_stage_framework/3_component_template/ layer_<N+1>_sub_component_<name>/
+   cp -r <path_to>/layer_1/layer_1_features/layer_1_feature_layer_stage_system/layer_1/layer_1_02_sub_layers/3_component_template/ layer_<N+1>_sub_component_<name>/
    ```
 
 3. **Rename internal folders to correct layer numbers**
@@ -483,5 +483,5 @@ stage_N.XX_<name>/
 
 - `project_creation_checklist.md` - Detailed project creation checklist
 - `../changes/restructuring_migration_protocol.md` - When restructuring existing entities
-- `../../0.01_layer_stage_framework/README.md` - Framework overview
-- `../../0.01_layer_stage_framework/FLEXIBLE_LAYERING_SYSTEM.md` - Layer system details
+- `../../layer_1/layer_1_features/layer_1_feature_layer_stage_system/layer_1/layer_1_02_sub_layers/README.md` - Framework overview
+- `../../layer_1/layer_1_features/layer_1_feature_layer_stage_system/layer_1/layer_1_02_sub_layers/FLEXIBLE_LAYERING_SYSTEM.md` - Layer system details

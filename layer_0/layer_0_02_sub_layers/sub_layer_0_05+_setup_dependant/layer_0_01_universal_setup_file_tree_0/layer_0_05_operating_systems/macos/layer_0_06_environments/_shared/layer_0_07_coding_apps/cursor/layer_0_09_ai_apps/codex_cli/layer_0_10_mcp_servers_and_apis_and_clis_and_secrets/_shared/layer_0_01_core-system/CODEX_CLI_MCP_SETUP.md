@@ -107,7 +107,7 @@ args = ["mcp-filesystem-server"]
 - Use the generator `automation/scripts/codex_mcp_sync.py`:
   ```bash
   # From repo root:
-  python3 0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.10_mcp_servers_and_tools_setup/0.06_automation/scripts/codex_mcp_sync.py --env development
+  python3 0_context/layer_0/0.02_sub_layers/sub_layer_0.10_mcp_servers_and_tools_setup/0.06_automation/scripts/codex_mcp_sync.py --env development
   # Optional: disable specific servers
   python3 .../codex_mcp_sync.py --env development --disable chrome-devtools web-search
   # Optional: run Playwright headless (more reliable on systems without GUI)

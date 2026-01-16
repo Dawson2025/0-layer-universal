@@ -1,0 +1,46 @@
+{
+  "layer_id": "layer_3_components",
+  "current_stage": "3.01_instructions",
+  "stages": {
+    "3.01_instructions": {
+      "state": "not_started",
+      "last_update": null,
+      "notes": ""
+    },
+    "3.02_planning": {
+      "state": "not_started",
+      "last_update": null,
+      "notes": ""
+    },
+    "3.03_design": {
+      "state": "not_started",
+      "last_update": null,
+      "notes": ""
+    },
+    "3.04_development": {
+      "state": "not_started",
+      "last_update": null,
+      "notes": ""
+    },
+    "3.05_testing": {
+      "state": "not_started",
+      "last_update": null,
+      "notes": ""
+    },
+    "3.06_criticism": {
+      "state": "not_started",
+      "last_update": null,
+      "notes": ""
+    },
+    "3.07_fixing": {
+      "state": "not_started",
+      "last_update": null,
+      "notes": ""
+    },
+    "3.08_archives": {
+      "state": "not_started",
+      "last_update": null,
+      "notes": ""
+    }
+  }
+}

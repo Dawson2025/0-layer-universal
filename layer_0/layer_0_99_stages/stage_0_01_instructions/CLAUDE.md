@@ -27,7 +27,7 @@ Define WHAT needs to be done. This stage transforms gathered requests into clear
 
 ## Directory Structure
 ```
-stage_0.01_instructions/
+stage_0_01_instructions/
 ├── CLAUDE.md             # This file
 ├── ai_agent_system/      # AI tool configs for this stage
 └── hand_off_documents/   # Stage handoffs

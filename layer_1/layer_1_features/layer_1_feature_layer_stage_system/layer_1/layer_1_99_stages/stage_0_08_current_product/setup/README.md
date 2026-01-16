@@ -28,5 +28,5 @@ Setup guides for initializing the layer/stage system in new projects.
 
 ## Related
 
-- `../../0.01_layer_stage_framework/` - Templates to use during setup
+- `../../layer_1/layer_1_features/layer_1_feature_layer_stage_system/layer_1/layer_1_02_sub_layers/` - Templates to use during setup
 - `../changes/` - Procedures for modifying existing setups

@@ -128,8 +128,8 @@ This sublayer consolidates what were previously 10 separate sublayers:
 
 This sublayer works alongside other universal sublayers:
 
-- **sub_layer_0.01_basic_prompts_throughout** - Init prompts
-- **sub_layer_0.02_software_engineering_knowledge_system** - SE knowledge
+- **sub_layer_0_01_basic_prompts_throughout** - Init prompts
+- **sub_layer_0_02_software_engineering_knowledge_system** - SE knowledge
 - **sub_layer_0.03_universal_principles** - Universal principles
 - **sub_layer_0.04_universal_rules** - Universal rules
 

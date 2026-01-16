@@ -17,7 +17,7 @@ git pull && git status
 |----------|----------|------|
 | 1 | Master Index | `0_context/MASTER_DOCUMENTATION_INDEX.md` |
 | 2 | System Overview | `0_context/SYSTEM_OVERVIEW.md` |
-| 3 | Framework Guide | `0_context/0.01_layer_stage_framework/README.md` |
+| 3 | Framework Guide | `0_context/layer_1/layer_1_features/layer_1_feature_layer_stage_system/layer_1/layer_1_02_sub_layers/README.md` |
 
 ### 2. Find Project Init Prompt
 ```bash
@@ -30,19 +30,19 @@ ls -d ../**/project_init_prompt.md 2>/dev/null
 ## Directory Structure
 
 ```
-0_layer_ai_context/0_context/
+0_layer_universal/0_context/
 ├── MASTER_DOCUMENTATION_INDEX.md    # Start here
 ├── SYSTEM_OVERVIEW.md
-├── 0.00_layer_stage_system/         # System management & planning
+├── layer_1/layer_1_features/layer_1_feature_layer_stage_system/         # System management & planning
 │   └── stages/
 │       └── stage_0.08_current_product/
 │           ├── changes/             # Change protocols
 │           └── setup/               # Entity creation guides
-├── 0.01_layer_stage_framework/      # Templates & framework docs
-└── layer_0_universal/
+├── layer_1/layer_1_features/layer_1_feature_layer_stage_system/layer_1/layer_1_02_sub_layers/      # Templates & framework docs
+└── layer_0/
     ├── 0.02_sub_layers/
-    │   ├── sub_layer_0.01_basic_prompts_throughout/  ← You are here
-    │   ├── sub_layer_0.02_software_engineering_knowledge_system/
+    │   ├── sub_layer_0_01_basic_prompts_throughout/  ← You are here
+    │   ├── sub_layer_0_02_software_engineering_knowledge_system/
     │   ├── sub_layer_0.03_universal_principles/
     │   ├── sub_layer_0.04_universal_rules/
     │   └── sub_layer_0.05-0.014_setup_dependant_sub_layers/
@@ -94,7 +94,7 @@ sub_layer_0.05-0.014_setup_dependant_sub_layers/0.01_universal_setup_file_tree_0
 | Terminal issues | `sub_layer_0.04_universal_rules/0_instruction_docs/cursor_terminal_issues.md` |
 | Universal tools | `.../0.12_universal_tools/` |
 | Documentation protocol | `.../0.13_protocols/file_documentation_and_organization/` |
-| **Create new entity** | `0.00_layer_stage_system/stages/stage_0.08_current_product/setup/instantiation_guide.md` |
+| **Create new entity** | `layer_1/layer_1_features/layer_1_feature_layer_stage_system/stages/stage_0.08_current_product/setup/instantiation_guide.md` |
 | **Subagent decisions** | `sub_layer_0.04_universal_rules/0_instruction_docs/subagent_usage_decision_matrix.md` |
 
 ---
@@ -103,7 +103,7 @@ sub_layer_0.05-0.014_setup_dependant_sub_layers/0.01_universal_setup_file_tree_0
 
 | Layer | Purpose | Location |
 |-------|---------|----------|
-| 0 | Universal | `layer_0_universal/` - Applies to all projects |
+| 0 | Universal | `layer_0/` - Applies to all projects |
 | 1+ | Project | `<N>_layer_<project>/layer_<N>/` - Project-specific |
 | N+1 | Features/Components | `<project>/layer_<N+1>/` - Nested under project |
 
@@ -143,7 +143,7 @@ Each layer has stages representing workflow phases:
 6. **Execute work** - Follow stage guidelines
 7. **Update status** - Mark progress
 
-**Full workflow:** See `0.01_layer_stage_framework/README.md`
+**Full workflow:** See `layer_1/layer_1_features/layer_1_feature_layer_stage_system/layer_1/layer_1_02_sub_layers/README.md`
 
 ---
 
@@ -190,16 +190,16 @@ For detailed information, see these documents:
 
 | Topic | Document |
 |-------|----------|
-| System Management | `0.00_layer_stage_system/README.md` |
-| **Creating Entities** | `0.00_layer_stage_system/stages/stage_0.08_current_product/setup/instantiation_guide.md` |
-| Restructuring/Migration | `0.00_layer_stage_system/stages/stage_0.08_current_product/changes/restructuring_migration_protocol.md` |
-| **Traversal/Path Updates** | `0.00_layer_stage_system/stages/stage_0.08_current_product/changes/traversal_update_protocol.md` |
-| Layer/Stage Framework | `0.01_layer_stage_framework/README.md` |
-| Flexible Layering | `0.01_layer_stage_framework/FLEXIBLE_LAYERING_SYSTEM.md` |
-| Extending Framework | `0.01_layer_stage_framework/EXTENDING_THE_FRAMEWORK.md` |
-| Feature Types | `0.01_layer_stage_framework/FEATURE_TYPE_DECISION_GUIDE.md` |
-| Workflow Features | `0.01_layer_stage_framework/WORKFLOW_FEATURE_PATTERN.md` |
-| Sub-layer Registry | `layer_0_universal/0.02_sub_layers/0.00_sub_layer_registry/README.md` |
+| System Management | `layer_1/layer_1_features/layer_1_feature_layer_stage_system/README.md` |
+| **Creating Entities** | `layer_1/layer_1_features/layer_1_feature_layer_stage_system/stages/stage_0.08_current_product/setup/instantiation_guide.md` |
+| Restructuring/Migration | `layer_1/layer_1_features/layer_1_feature_layer_stage_system/stages/stage_0.08_current_product/changes/restructuring_migration_protocol.md` |
+| **Traversal/Path Updates** | `layer_1/layer_1_features/layer_1_feature_layer_stage_system/stages/stage_0.08_current_product/changes/traversal_update_protocol.md` |
+| Layer/Stage Framework | `layer_1/layer_1_features/layer_1_feature_layer_stage_system/layer_1/layer_1_02_sub_layers/README.md` |
+| Flexible Layering | `layer_1/layer_1_features/layer_1_feature_layer_stage_system/layer_1/layer_1_02_sub_layers/FLEXIBLE_LAYERING_SYSTEM.md` |
+| Extending Framework | `layer_1/layer_1_features/layer_1_feature_layer_stage_system/layer_1/layer_1_02_sub_layers/EXTENDING_THE_FRAMEWORK.md` |
+| Feature Types | `layer_1/layer_1_features/layer_1_feature_layer_stage_system/layer_1/layer_1_02_sub_layers/FEATURE_TYPE_DECISION_GUIDE.md` |
+| Workflow Features | `layer_1/layer_1_features/layer_1_feature_layer_stage_system/layer_1/layer_1_02_sub_layers/WORKFLOW_FEATURE_PATTERN.md` |
+| Sub-layer Registry | `layer_0/0.02_sub_layers/0.00_sub_layer_registry/README.md` |
 
 ---
 
@@ -212,15 +212,15 @@ For detailed information, see these documents:
 > 2. **Traversal updates** - Update ALL navigation docs so agents can find the new paths
 >
 > See:
-> - `0.00_layer_stage_system/stages/stage_0.08_current_product/changes/restructuring_migration_protocol.md`
-> - `0.00_layer_stage_system/stages/stage_0.08_current_product/changes/traversal_update_protocol.md`
+> - `layer_1/layer_1_features/layer_1_feature_layer_stage_system/stages/stage_0.08_current_product/changes/restructuring_migration_protocol.md`
+> - `layer_1/layer_1_features/layer_1_feature_layer_stage_system/stages/stage_0.08_current_product/changes/traversal_update_protocol.md`
 >
 > | Priority | File | What to Update |
 > |----------|------|----------------|
 > | 1 | **This file** (`universal_init_prompt.md`) | Directory paths & structure diagrams |
 > | 2 | `MASTER_DOCUMENTATION_INDEX.md` | Document links |
 > | 3 | `SYSTEM_OVERVIEW.md` | Architecture description |
-> | 4 | `0.01_layer_stage_framework/README.md` | Framework structure |
+> | 4 | `layer_1/layer_1_features/layer_1_feature_layer_stage_system/layer_1/layer_1_02_sub_layers/README.md` | Framework structure |
 > | 5 | All `*.md` files with hardcoded paths | Use `grep` + `sed` for bulk updates |
 >
 > **Verify:** After changes, test navigation from this file to new locations.

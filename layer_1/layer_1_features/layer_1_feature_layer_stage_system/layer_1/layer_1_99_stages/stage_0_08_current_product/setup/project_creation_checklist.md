@@ -40,9 +40,9 @@ git init  # If separate repo
 ### 2. Copy Template
 
 ```bash
-cp -r <path_to>/0.01_layer_stage_framework/1_project_template/* .
+cp -r <path_to>/layer_1/layer_1_features/layer_1_feature_layer_stage_system/layer_1/layer_1_02_sub_layers/1_project_template/* .
 # Or for sub-project:
-cp -r <path_to>/0.01_layer_stage_framework/2_sub_project_template/* .
+cp -r <path_to>/layer_1/layer_1_features/layer_1_feature_layer_stage_system/layer_1/layer_1_02_sub_layers/2_sub_project_template/* .
 ```
 
 - [ ] Copied appropriate template

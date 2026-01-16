@@ -19,7 +19,7 @@ Make the Ideal AI Manager Hierarchy System discoverable from top-level navigatio
 ## Deliverables Completed
 
 ### 1. MASTER_DOCUMENTATION_INDEX.md Updated
-**Location**: `/code/0_layer_ai_context/0_context/MASTER_DOCUMENTATION_INDEX.md`
+**Location**: `/code/0_layer_universal/0_context/MASTER_DOCUMENTATION_INDEX.md`
 **Changes**: Lines 77-101
 **Content Added**:
 - New section: "🏗️ CANONICAL AGENT OS ARCHITECTURE - AI Manager Hierarchy System"
@@ -31,7 +31,7 @@ Make the Ideal AI Manager Hierarchy System discoverable from top-level navigatio
 - Lists key specification files (architecture.md, tools_and_context_systems.md, etc.)
 
 ### 2. SYSTEM_OVERVIEW.md Enhanced
-**Location**: `/code/0_layer_ai_context/0_context/SYSTEM_OVERVIEW.md`
+**Location**: `/code/0_layer_universal/0_context/SYSTEM_OVERVIEW.md`
 **Changes**: Lines 8-44
 **Content Added**:
 - New section: "Agent OS Architecture"
@@ -45,7 +45,7 @@ Make the Ideal AI Manager Hierarchy System discoverable from top-level navigatio
 - Statement: "This Agent OS design is the canonical architecture"
 
 ### 3. USAGE_GUIDE.md Extended
-**Location**: `/code/0_layer_ai_context/0_context/USAGE_GUIDE.md`
+**Location**: `/code/0_layer_universal/0_context/USAGE_GUIDE.md`
 **Changes**: Lines 12-111
 **Content Added**:
 - New section: "🏗️ Working with the AI Manager Hierarchy"

@@ -10,7 +10,7 @@
 1.  **Record the Memory:** Update the appropriate context file (e.g., `universal_init_prompt.md`, a feature `README.md`, or a specific rule file).
 2.  **Confirm with Exactness:** In your response to the user, you MUST explicitly provide the following in this specific order:
     *   **Where recorded:** Describe the location in natural language (e.g., "I've added this to the feature-level tools documentation...").
-    *   **Exact Directory Location:** Provide the **full, absolute, or root-relative path** to the file(s) you modified. Do not just say "in the project folder." Show the path starting from `0_layer_ai_context` or the project root.
+    *   **Exact Directory Location:** Provide the **full, absolute, or root-relative path** to the file(s) you modified. Do not just say "in the project folder." Show the path starting from `0_layer_universal` or the project root.
     *   **How context was updated:** Briefly explain the edit (e.g., "I appended a new 'Submission Safety Rule' section...").
     *   **Thing Remembered/Emphasis on the Code:** Explicitly point out the area/section where the memory was coded/written.
 

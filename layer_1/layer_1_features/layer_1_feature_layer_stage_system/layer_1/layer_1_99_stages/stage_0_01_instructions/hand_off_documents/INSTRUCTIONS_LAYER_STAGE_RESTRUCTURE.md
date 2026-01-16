@@ -20,7 +20,7 @@ Restructure the entire layer-stage system to:
 
 ### 2.1 Root Structure Requirements
 
-- **R1**: Rename `0_layer_ai_context` to `0_layer_universal`
+- **R1**: Rename `0_layer_universal` to `0_layer_universal`
 - **R2**: Flatten `0_context/` so contents are at root
 - **R3**: All projects, features, components must be nested under layer 0
 - **R4**: Root must have tool-specific files (CLAUDE.md, .claude/, .cursorrules, etc.)
@@ -34,8 +34,8 @@ Restructure the entire layer-stage system to:
 ### 2.3 Naming Convention Requirements
 
 - **R8**: Change from `0.00_name` to `layer_0_00_name` pattern
-- **R9**: Change from `sub_layer_0.01_name` to `sub_layer_0_01_name` pattern
-- **R10**: Change from `stage_0.01_name` to `stage_0_01_name` pattern
+- **R9**: Change from `sub_layer_0_01_name` to `sub_layer_0_01_name` pattern
+- **R10**: Change from `stage_0_01_name` to `stage_0_01_name` pattern
 - **R11**: Status files renamed to `status_N.json` where N = layer number
 
 ### 2.4 AI Manager System Requirements
@@ -276,10 +276,10 @@ The planning stage (`stage_0.02_planning`) defines HOW to do it.
 ## 10. References
 
 ### Current Locations (Before Restructure)
-- `0_layer_ai_context/0_context/0.00_layer_stage_system/`
-- `0_layer_ai_context/0_context/0.01_layer_stage_framework/`
-- `0_layer_ai_context/0_context/layer_0_universal/`
-- `0_layer_ai_context/0_context/-1_research/`
+- `0_layer_universal/0_context/layer_1/layer_1_features/layer_1_feature_layer_stage_system/`
+- `0_layer_universal/0_context/layer_1/layer_1_features/layer_1_feature_layer_stage_system/layer_1/layer_1_02_sub_layers/`
+- `0_layer_universal/0_context/layer_0/`
+- `0_layer_universal/0_context/-1_research/`
 
 ### Research Reference
 - `-1_research/-1.01_things_researched/ai_manager_hierarchy_system/`
@@ -292,7 +292,7 @@ The planning stage (`stage_0.02_planning`) defines HOW to do it.
 
 ---
 
-**Document Location:** `/home/dawson/dawson-workspace/code/0_layer_ai_context/0_context/0.00_layer_stage_system/stages/stage_0.01_instructions/hand_off_documents/INSTRUCTIONS_LAYER_STAGE_RESTRUCTURE.md`
+**Document Location:** `/home/dawson/dawson-workspace/code/0_layer_universal/0_context/layer_1/layer_1_features/layer_1_feature_layer_stage_system/stages/stage_0_01_instructions/hand_off_documents/INSTRUCTIONS_LAYER_STAGE_RESTRUCTURE.md`
 
 **Last Updated:** 2026-01-15
 

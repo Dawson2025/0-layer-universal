@@ -3,8 +3,8 @@
 Migrate content from old directory structure to new structure.
 
 This script:
-1. Moves content from layer_0_universal/ to layer_0/
-2. Moves content from 0.00_layer_stage_system/ and 0.01_layer_stage_framework/
+1. Moves content from layer_0/ to layer_0/
+2. Moves content from layer_1/layer_1_features/layer_1_feature_layer_stage_system/ and layer_1/layer_1_features/layer_1_feature_layer_stage_system/layer_1/layer_1_02_sub_layers/
    to layer_1/layer_1_features/layer_1_feature_layer_stage_system/
 
 Usage: python3 migrate_content.py
@@ -56,13 +56,13 @@ def copy_tree_contents(src, dst, dry_run=False):
 
     return copied
 
-def migrate_layer_0_universal(dry_run=False):
-    """Migrate layer_0_universal/ contents to layer_0/"""
+def migrate_layer_0(dry_run=False):
+    """Migrate layer_0/ contents to layer_0/"""
     print("\n" + "=" * 80)
-    print("MIGRATION 1: layer_0_universal/ -> layer_0/")
+    print("MIGRATION 1: layer_0/ -> layer_0/")
     print("=" * 80)
 
-    src = BASE_DIR / "layer_0_universal"
+    src = BASE_DIR / "layer_0"
     dst = BASE_DIR / "layer_0"
 
     # Mapping of old names to new names
@@ -95,8 +95,8 @@ def migrate_framework_docs(dry_run=False):
     print("MIGRATION 2: Framework docs -> layer_1_feature_layer_stage_system")
     print("=" * 80)
 
-    # Source: 0.01_layer_stage_framework (or layer_0_01_layer_stage_framework if renamed)
-    old_src = BASE_DIR / "0.01_layer_stage_framework"
+    # Source: layer_1/layer_1_features/layer_1_feature_layer_stage_system/layer_1/layer_1_02_sub_layers (or layer_0_01_layer_stage_framework if renamed)
+    old_src = BASE_DIR / "layer_1/layer_1_features/layer_1_feature_layer_stage_system/layer_1/layer_1_02_sub_layers"
     new_src = BASE_DIR / "layer_0_01_layer_stage_framework"
     src = old_src if old_src.exists() else new_src
 
@@ -155,13 +155,13 @@ def migrate_framework_docs(dry_run=False):
     return total
 
 def migrate_stage_system_content(dry_run=False):
-    """Migrate 0.00_layer_stage_system content to the feature."""
+    """Migrate layer_1/layer_1_features/layer_1_feature_layer_stage_system content to the feature."""
     print("\n" + "=" * 80)
     print("MIGRATION 3: Stage system content -> layer_1_feature_layer_stage_system")
     print("=" * 80)
 
     # Source
-    old_src = BASE_DIR / "0.00_layer_stage_system"
+    old_src = BASE_DIR / "layer_1/layer_1_features/layer_1_feature_layer_stage_system"
     new_src = BASE_DIR / "layer_0_00_layer_stage_system"
     src = old_src if old_src.exists() else new_src
 
@@ -194,7 +194,7 @@ def main():
     print(f"Base directory: {BASE_DIR}")
 
     total = 0
-    total += migrate_layer_0_universal(dry_run)
+    total += migrate_layer_0(dry_run)
     total += migrate_framework_docs(dry_run)
     total += migrate_stage_system_content(dry_run)
 

@@ -47,4 +47,4 @@ When making ANY structural change:
 - `../README.md` - System management overview
 - `../setup/` - Entity creation guides
 - `../plans/` - Planning documents before making changes
-- `../../0.01_layer_stage_framework/` - Templates for new structures
+- `../../layer_1/layer_1_features/layer_1_feature_layer_stage_system/layer_1/layer_1_02_sub_layers/` - Templates for new structures

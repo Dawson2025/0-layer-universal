@@ -208,10 +208,10 @@ grep -r "mcp_playwright_" .
 
 ## Related Documentation
 
-- **OS-Level Issues**: `layer_0_universal/0.02_sub_layers/sub_layer_0.05_os_setup/trickle_down_0.5_setup/0_instruction_docs/LINUX_UBUNTU_MCP_ISSUES.md`
-- **Cursor IDE Issues**: `layer_0_universal/0.02_sub_layers/sub_layer_0.07_coding_app_setup/trickle_down_0.5_setup/0_instruction_docs/CURSOR_IDE_LINUX_MCP_ISSUES.md`
-- **MCP Setup**: `layer_0_universal/0.02_sub_layers/sub_layer_0.10_mcp_servers_and_tools_setup/`
-- **Browser Automation**: `layer_0_universal/0.02_sub_layers/sub_layer_0.12_universal_tools/trickle_down_0.75_universal_tools/0_instruction_docs/browser-automation/`
+- **OS-Level Issues**: `layer_0/0.02_sub_layers/sub_layer_0.05_os_setup/trickle_down_0.5_setup/0_instruction_docs/LINUX_UBUNTU_MCP_ISSUES.md`
+- **Cursor IDE Issues**: `layer_0/0.02_sub_layers/sub_layer_0.07_coding_app_setup/trickle_down_0.5_setup/0_instruction_docs/CURSOR_IDE_LINUX_MCP_ISSUES.md`
+- **MCP Setup**: `layer_0/0.02_sub_layers/sub_layer_0.10_mcp_servers_and_tools_setup/`
+- **Browser Automation**: `layer_0/0.02_sub_layers/sub_layer_0.12_universal_tools/trickle_down_0.75_universal_tools/0_instruction_docs/browser-automation/`
 
 ## References
 

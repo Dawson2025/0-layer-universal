@@ -91,6 +91,6 @@ When creating a project's `features_init_prompt.md`:
 ## Related Documentation
 
 - **Universal Init Prompt**: `universal_init_prompt.md` (same directory)
-- **Layer/Stage Framework**: `../../0.01_layer_stage_framework/README.md`
-- **Feature Template**: `../../0.01_layer_stage_framework/2_feature_template/`
+- **Layer/Stage Framework**: `../../layer_1/layer_1_features/layer_1_feature_layer_stage_system/layer_1/layer_1_02_sub_layers/README.md`
+- **Feature Template**: `../../layer_1/layer_1_features/layer_1_feature_layer_stage_system/layer_1/layer_1_02_sub_layers/2_feature_template/`
 

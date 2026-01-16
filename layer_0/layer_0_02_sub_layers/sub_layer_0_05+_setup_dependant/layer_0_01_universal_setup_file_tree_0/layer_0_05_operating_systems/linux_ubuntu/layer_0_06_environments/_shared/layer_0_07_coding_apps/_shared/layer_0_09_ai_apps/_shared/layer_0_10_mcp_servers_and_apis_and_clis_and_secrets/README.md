@@ -205,10 +205,10 @@ For each MCP server:
 ### When Making Structural Changes
 
 See the **Structural Change Checklist** in:
-`0_context/0.00_layer_stage_system/README.md`
+`0_context/layer_1/layer_1_features/layer_1_feature_layer_stage_system/README.md`
 
 Key files to update:
-1. `0.00_layer_stage_system/README.md` - change log
+1. `layer_1/layer_1_features/layer_1_feature_layer_stage_system/README.md` - change log
 2. `universal_init_prompt.md` - directory paths
 3. `sub_layer_registry.yaml` - registry entries
 4. All docs via `find` + `sed` for bulk path updates

@@ -7,7 +7,7 @@
 
 ## Quick Start (5 Minutes)
 
-1. **Read**: `HIERARCHY_QUICK_START.md` in `sub_layer_0.01_basic_prompts_throughout/`
+1. **Read**: `HIERARCHY_QUICK_START.md` in `sub_layer_0_01_basic_prompts_throughout/`
 2. **Understand**: Layers (L0-L3), Stages (9-step pipeline), Handoffs (JSON communication)
 3. **Find your OS context**: `layer_N/.../os/{wsl|linux_ubuntu}/CLAUDE.md`
 4. **Check adoption checklist**: `HIERARCHY_ADOPTION_CHECKLIST.md`
@@ -65,7 +65,7 @@ HIERARCHY_QUICK_START.md                    → 5-10 min onboarding
 
 ### Manager/Worker Patterns
 ```
-layer_0_universal/0.00_ai_manager_system/   → L0 manager patterns
+layer_0/0.00_ai_manager_system/   → L0 manager patterns
 layer_1_project/1.00_ai_manager_system/     → L1 manager patterns
 layer_2_features/2.00_ai_manager_system/    → L2 manager patterns
 layer_3_components/3.00_ai_manager_system/  → L3 manager patterns
@@ -73,7 +73,7 @@ layer_3_components/3.00_ai_manager_system/  → L3 manager patterns
 
 ### Handoff Schema
 ```
-layer_0_universal/0.01_manager_handoff_documents/0.00_to_universal/handoff_schema.md
+layer_0/0.01_manager_handoff_documents/0.00_to_universal/handoff_schema.md
 ```
 
 ### OS Context (replace N with layer number, OS with wsl/linux_ubuntu)

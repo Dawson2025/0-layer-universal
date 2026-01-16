@@ -51,8 +51,8 @@ def create_specific_structure(base_dir):
     return created_count
 
 def main():
-    # Default target directory - using layer_0_universal which is the actual path
-    default_target = "/home/dawson/dawson-workspace/code/0_layer_universal/layer_0_universal/layer_0_00_ai_manager_system"
+    # Default target directory - using layer_0 which is the actual path
+    default_target = "/home/dawson/dawson-workspace/code/0_layer_universal/layer_0/layer_0_00_ai_manager_system"
 
     # Get target from command line or use default
     target_dir = sys.argv[1] if len(sys.argv) > 1 else default_target

@@ -114,18 +114,18 @@ layer_N_00_ai_manager_system/
 ```bash
 # Backup current state
 cd /home/dawson/dawson-workspace/code
-cp -r 0_layer_ai_context 0_layer_ai_context_backup_$(date +%Y%m%d_%H%M%S)
+cp -r 0_layer_universal 0_layer_universal_backup_$(date +%Y%m%d_%H%M%S)
 ```
 
 ### 1.2 Document Current State
 ```bash
 # Generate current structure snapshot
-find 0_layer_ai_context -type d > current_structure_$(date +%Y%m%d).txt
+find 0_layer_universal -type d > current_structure_$(date +%Y%m%d).txt
 ```
 
 ### 1.3 Commit Current State
 ```bash
-cd 0_layer_ai_context
+cd 0_layer_universal
 git add -A
 git commit -m "Pre-restructure snapshot: $(date +%Y-%m-%d)"
 git push
@@ -137,13 +137,13 @@ git push
 
 ### 2.1 Rename Directory
 ```
-BEFORE: /home/dawson/dawson-workspace/code/0_layer_ai_context/
+BEFORE: /home/dawson/dawson-workspace/code/0_layer_universal/
 AFTER:  /home/dawson/dawson-workspace/code/0_layer_universal/
 ```
 
 ```bash
 cd /home/dawson/dawson-workspace/code
-mv 0_layer_ai_context 0_layer_universal
+mv 0_layer_universal 0_layer_universal
 ```
 
 ### 2.2 Flatten 0_context
@@ -247,10 +247,10 @@ mkdir -p 0_layer_universal/layer_0
 ### 4.2 Move & Rename Universal Internals
 ```
 MOVE & RENAME:
-layer_0_universal/0.00_ai_manager_system/     → layer_0/layer_0_00_ai_manager_system/
-layer_0_universal/0.01_manager_handoff_documents/ → layer_0/layer_0_01_manager_handoff_documents/
-layer_0_universal/0.02_sub_layers/            → layer_0/layer_0_02_sub_layers/
-layer_0_universal/0.99_stages/                → layer_0/layer_0_99_stages/
+layer_0/0.00_ai_manager_system/     → layer_0/layer_0_00_ai_manager_system/
+layer_0/0.01_manager_handoff_documents/ → layer_0/layer_0_01_manager_handoff_documents/
+layer_0/0.02_sub_layers/            → layer_0/layer_0_02_sub_layers/
+layer_0/0.99_stages/                → layer_0/layer_0_99_stages/
 ```
 
 ### 4.3 Create Agnostic/Specific Structure in AI Manager
@@ -295,15 +295,15 @@ layer_0/layer_0_00_ai_manager_system/
 ### 4.4 Rename Sub-layers
 ```
 RENAME:
-sub_layer_0.01_* → sub_layer_0_01_*
-sub_layer_0.02_* → sub_layer_0_02_*
+sub_layer_0_01_* → sub_layer_0_01_*
+sub_layer_0_02_* → sub_layer_0_02_*
 ...etc
 ```
 
 ### 4.5 Rename Stages
 ```
 RENAME:
-stage_0.01_* → stage_0_01_*
+stage_0_01_* → stage_0_01_*
 stage_0.02_* → stage_0_02_*
 ...etc
 ```
@@ -417,7 +417,7 @@ layer_1_feature_layer_stage_system/layer_1/
 │   ├── sub_layer_1_03_principles/
 │   ├── sub_layer_1_04_rules/
 │   └── sub_layer_1_05+_setup_dependant/
-│       ├── sub_layer_1_05_framework_docs/    # MOVE from 0.01_layer_stage_framework
+│       ├── sub_layer_1_05_framework_docs/    # MOVE from layer_1/layer_1_features/layer_1_feature_layer_stage_system/layer_1/layer_1_02_sub_layers
 │       │   ├── FLEXIBLE_LAYERING_SYSTEM.md
 │       │   ├── EXTENDING_THE_FRAMEWORK.md
 │       │   ├── WORKFLOW_FEATURE_PATTERN.md
@@ -439,7 +439,7 @@ layer_1_feature_layer_stage_system/layer_1/
     ├── stage_1_05_testing/
     ├── stage_1_06_criticism/
     ├── stage_1_07_fixing/
-    ├── stage_1_08_current_product/           # MOVE from 0.00_layer_stage_system
+    ├── stage_1_08_current_product/           # MOVE from layer_1/layer_1_features/layer_1_feature_layer_stage_system
     │   ├── setup/
     │   │   ├── instantiation_guide.md
     │   │   ├── project_creation_checklist.md
@@ -578,10 +578,10 @@ PATTERN CHANGES:
 0.02_* → layer_0_02_*
 0.99_* → layer_0_99_*
 
-sub_layer_0.01_* → sub_layer_0_01_*
-sub_layer_0.02_* → sub_layer_0_02_*
+sub_layer_0_01_* → sub_layer_0_01_*
+sub_layer_0_02_* → sub_layer_0_02_*
 
-stage_0.01_* → stage_0_01_*
+stage_0_01_* → stage_0_01_*
 stage_0.02_* → stage_0_02_*
 
 (Apply same pattern at all layer depths)
@@ -707,9 +707,9 @@ stage_N_XX_<name>/
 ## Path Mappings
 | Old Path | New Path |
 |----------|----------|
-| 0.00_layer_stage_system/ | layer_1/layer_1_features/layer_1_feature_layer_stage_system/ |
-| 0.01_layer_stage_framework/ | .../layer_1_02_sub_layers/sub_layer_1_05+_setup_dependant/ |
-| layer_0_universal/ | layer_0/ |
+| layer_1/layer_1_features/layer_1_feature_layer_stage_system/ | layer_1/layer_1_features/layer_1_feature_layer_stage_system/ |
+| layer_1/layer_1_features/layer_1_feature_layer_stage_system/layer_1/layer_1_02_sub_layers/ | .../layer_1_02_sub_layers/sub_layer_1_05+_setup_dependant/ |
+| layer_0/ | layer_0/ |
 | -1_research/ | .../layer_2_features/layer_2_feature_ai_manager_hierarchy/ |
 ```
 
@@ -868,8 +868,8 @@ Each phase should be executed by dedicated subagents to maximize efficiency and 
 You are the Preparation & Backup Agent.
 
 Tasks:
-1. Create backup: cp -r 0_layer_ai_context 0_layer_ai_context_backup_$(date +%Y%m%d)
-2. Document current structure: find 0_layer_ai_context -type d > current_structure.txt
+1. Create backup: cp -r 0_layer_universal 0_layer_universal_backup_$(date +%Y%m%d)
+2. Document current structure: find 0_layer_universal -type d > current_structure.txt
 3. Git commit: git add -A && git commit -m "Pre-restructure snapshot"
 
 Report: List of backup files created, git commit hash
@@ -880,7 +880,7 @@ Report: List of backup files created, git commit hash
 You are the Root Restructure Agent.
 
 Tasks:
-1. Rename directory: mv 0_layer_ai_context 0_layer_universal
+1. Rename directory: mv 0_layer_universal 0_layer_universal
 2. Flatten 0_context: mv 0_layer_universal/0_context/* 0_layer_universal/ && rmdir 0_layer_universal/0_context
 
 Constraints:
@@ -1030,9 +1030,9 @@ Report: Directory tree of created feature
 
 ```
 DELETE (after content moved):
-- 0.00_layer_stage_system/           # Merged into layer_1_feature_layer_stage_system
-- 0.01_layer_stage_framework/        # Moved to sub_layer_1_05_framework_docs
-- layer_0_universal/                 # Restructured into layer_0/
+- layer_1/layer_1_features/layer_1_feature_layer_stage_system/           # Merged into layer_1_feature_layer_stage_system
+- layer_1/layer_1_features/layer_1_feature_layer_stage_system/layer_1/layer_1_02_sub_layers/        # Moved to sub_layer_1_05_framework_docs
+- layer_0/                 # Restructured into layer_0/
 - -1_research/                       # Moved to layer_2_feature_ai_manager_hierarchy
 - layer_1_project/                   # Restructured
 - layer_2_features/                  # Restructured
@@ -1041,7 +1041,7 @@ DELETE (after content moved):
 
 ---
 
-**Document Location:** `/home/dawson/dawson-workspace/code/0_layer_ai_context/0_context/0.00_layer_stage_system/stages/stage_0.02_planning/IMPLEMENTATION_PLAN_LAYER_STAGE_RESTRUCTURE.md`
+**Document Location:** `/home/dawson/dawson-workspace/code/0_layer_universal/0_context/layer_1/layer_1_features/layer_1_feature_layer_stage_system/stages/stage_0.02_planning/IMPLEMENTATION_PLAN_LAYER_STAGE_RESTRUCTURE.md`
 
 **Last Updated:** 2026-01-15
 
