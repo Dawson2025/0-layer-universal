@@ -1,0 +1,33 @@
+[submodule "layer_1/layer_1_projects/layer_1_project_school"]
+	path = layer_1/layer_1_projects/layer_1_project_school
+	url = https://github.com/Dawson2025/1-school.git
+[submodule "layer_1/layer_1_projects/layer_1_project_physics_simulation"]
+	path = layer_1/layer_1_projects/layer_1_project_physics_simulation
+	url = https://github.com/Dawson2025/1-physics-simulation.git
+[submodule "layer_1/layer_1_components/layer_1_component_setup_hub"]
+	path = layer_1/layer_1_components/layer_1_component_setup_hub
+	url = https://github.com/Dawson2025/setup-hub.git
+[submodule "layer_1/layer_1_projects/layer_1_project_portfolio"]
+	path = layer_1/layer_1_projects/layer_1_project_portfolio
+	url = https://github.com/Dawson2025/dawson-packer-portfolio.git
+[submodule "layer_1/layer_1_projects/layer_1_project_parallelism"]
+	path = layer_1/layer_1_projects/layer_1_project_parallelism
+	url = https://github.com/Dawson2025/Parallelism-and-Concurrency.git
+[submodule "layer_1/layer_1_projects/layer_1_project_ds250_course"]
+	path = layer_1/layer_1_projects/layer_1_project_ds250_course
+	url = https://github.com/Dawson2025/DS250-Course-Draft.git
+[submodule "layer_1/layer_1_projects/layer_1_project_buying_list"]
+	path = layer_1/layer_1_projects/layer_1_project_buying_list
+	url = https://github.com/Dawson2025/buying-list.git
+[submodule "layer_1/layer_1_projects/layer_1_project_life_administration"]
+	path = layer_1/layer_1_projects/layer_1_project_life_administration
+	url = https://github.com/Dawson2025/1-life-administration.git
+[submodule "layer_1/layer_1_components/layer_1_component_dotfiles"]
+	path = layer_1/layer_1_components/layer_1_component_dotfiles
+	url = https://github.com/Dawson2025/dotfiles.git
+[submodule "layer_1/layer_1_projects/layer_1_project_language_tracker"]
+	path = layer_1/layer_1_projects/layer_1_project_language_tracker
+	url = https://github.com/Dawson2025/language-tracker-app.git
+[submodule "layer_1/layer_1_projects/layer_1_project_machine_learning"]
+	path = layer_1/layer_1_projects/layer_1_project_machine_learning
+	url = https://github.com/Dawson2025/1-machine-learning.git
