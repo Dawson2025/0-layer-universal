@@ -6,11 +6,12 @@ This directory contains documentation and plans for **managing the layering and 
 
 | File/Folder | Purpose |
 |-------------|---------|
-| `MCP_DOCUMENTATION_PLAN.md` | Plan for documenting MCP servers & APIs |
-| `changes/` | Procedures for making system changes (restructuring, migration) |
+| `changes/` | Procedures for making system changes (restructuring, traversal) |
+| `setup/` | Setup guides for entity creation |
 | `plans/` | Active planning documents |
-| `setup/` | Setup guides for the system |
 | `management/` | Ongoing management protocols |
+| `stages/` | Workflow stages for system management work |
+| `MCP_DOCUMENTATION_PLAN.md` | Plan for documenting MCP servers & APIs |
 
 ## Important: Restructuring Projects
 
@@ -51,6 +52,10 @@ find /path/to/0_ai_context -type f \( -name "*.md" -o -name "*.yaml" -o -name "*
 
 | Date | Change |
 |------|--------|
+| 2026-01-15 | Added `stages/` folder for system management workflow |
+| 2026-01-15 | Added `traversal_update_protocol.md` and `verify_paths.sh` |
+| 2026-01-15 | Added stage N.08 `current_product` (renumbered archives to N.09) |
+| 2026-01-15 | Renamed top-level folders to `<N>_layer_<name>/` format |
 | 2026-01-13 | Renamed `0.06_mcp_servers` → `0.06_mcp_servers_and_apis_and_secrets` |
 
 ## Related
