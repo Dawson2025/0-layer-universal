@@ -1,0 +1,75 @@
+CONTEXT:
+We consolidated 10 separate setup sublayers (0.06-0.14) into a hierarchical structure at sub_layer_0.05-0.014_setup/0.01_universal_setup_file_tree_0/. Not all original content from the old sublayers appears to be in the new structure.
+
+YOUR TASK:
+Create a plan to audit, identify, and recover all missing content from the original sublayers.
+
+GIT HISTORY:
+- Commit d64c065: Reverted deletion (restored 290 files from old sublayers)
+- Commit 3dda597: Moved content to legacy_content/
+- Commit e505fbc: Integrated content into hierarchical structure
+
+ORIGINAL SUBLAYERS → NEW LOCATION:
+- sub_layer_0.06_coding_app_setup → 0.04_coding_apps/
+- sub_layer_0.07_environment_setup → 0.03_environments/
+- sub_layer_0.08_apps_browsers_extensions_setup → (integrated into coding apps)
+- sub_layer_0.09_ai_apps_tools_setup → 0.05_ai_apps/
+- sub_layer_0.10_mcp_servers_and_tools_setup → 0.06_mcp_servers_and_apis_and_secrets/_shared/
+- sub_layer_0.11_ai_models → 0.06_ai_models/
+- sub_layer_0.12_universal_tools → 0.07_universal_tools/
+- sub_layer_0.13_universal_protocols → 0.08_protocols/
+- sub_layer_0.14_agent_setup → 0.09_agent_setup/
+
+INVESTIGATION STEPS:
+
+1. AUDIT ORIGINAL CONTENT:
+   - Use `git ls-tree -r d64c065 --name-only | grep -E 'sub_layer_0\.(0[6-9]|1[0-4])'` to list all files from old sublayers
+   - Count total files: `git ls-tree -r d64c065 --name-only | grep -E 'sub_layer_0\.(0[6-9]|1[0-4])' | wc -l`
+   - Save to file for comparison: `git ls-tree -r d64c065 --name-only | grep -E 'sub_layer_0\.(0[6-9]|1[0-4])' > /tmp/original_files.txt`
+
+2. AUDIT CURRENT CONTENT:
+   - List all files in new structure: `find 0.01_universal_setup_file_tree_0 -type f > /tmp/current_files.txt`
+   - Count total files: `find 0.01_universal_setup_file_tree_0 -type f | wc -l`
+
+3. IDENTIFY MISSING CONTENT:
+   - Compare file basenames: `comm -23 <(cat /tmp/original_files.txt | xargs -n1 basename | sort | uniq) <(cat /tmp/current_files.txt | xargs -n1 basename | sort | uniq)`
+   - For each old sublayer, check if its content exists in the corresponding hierarchy level
+   - Identify patterns in missing files (entire directories? specific file types?)
+
+4. ROOT CAUSE ANALYSIS:
+   - Check if content was in legacy_content/: `git show 3dda597:0_context/layer_0_universal/0.02_sub_layers/sub_layer_0.05-0.014_setup/legacy_content/`
+   - Verify what was moved in commit e505fbc: `git show --name-status e505fbc | grep -E 'sub_layer_0\.(0[6-9]|1[0-4])'`
+   - Determine if files were lost, not copied, or went to wrong location
+
+5. RECOVERY PLAN:
+   - For each missing file/directory, determine proper location in hierarchy
+   - Use `git show d64c065:path/to/file` to recover file content
+   - Create recovery script or manual steps
+   - Ensure content goes to correct nesting level
+
+6. EXECUTE RECOVERY:
+   - Recover missing files from git history
+   - Place in appropriate hierarchy levels following the mapping above
+   - Verify no duplicates created
+   - Update any broken cross-references
+
+7. VERIFICATION:
+   - Compare file counts: original vs recovered
+   - Spot-check critical files (MCP docs, protocols, tools)
+   - Ensure all 10 sublayers' content is represented
+   - Verify git history tracks all moves properly
+
+DELIVERABLES:
+1. List of missing files with their original and target paths
+2. Root cause explanation
+3. Recovery commands or script
+4. Verification report showing before/after comparison
+5. Restored content integrated into hierarchy
+
+START BY:
+- Running the audit commands to get exact file counts
+- Creating a detailed comparison report
+- Identifying the top 10-20 most important missing items
+- Proposing recovery strategy for approval
+
+Be thorough. We need 100% of the original content integrated into the hierarchical structure.

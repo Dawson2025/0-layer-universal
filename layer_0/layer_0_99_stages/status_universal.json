@@ -1,0 +1,46 @@
+{
+  "layer_id": "0_universal",
+  "current_stage": "0.000_instructions",
+  "stages": {
+    "0.000_instructions": {
+      "state": "not_started",
+      "last_update": null,
+      "notes": ""
+    },
+    "0.001_planning": {
+      "state": "not_started",
+      "last_update": null,
+      "notes": ""
+    },
+    "0.002_design": {
+      "state": "not_started",
+      "last_update": null,
+      "notes": ""
+    },
+    "0.003_development": {
+      "state": "not_started",
+      "last_update": null,
+      "notes": ""
+    },
+    "0.004_testing": {
+      "state": "not_started",
+      "last_update": null,
+      "notes": ""
+    },
+    "0.005_criticism": {
+      "state": "not_started",
+      "last_update": null,
+      "notes": ""
+    },
+    "0.006_fixing": {
+      "state": "not_started",
+      "last_update": null,
+      "notes": ""
+    },
+    "0.007_archives": {
+      "state": "not_started",
+      "last_update": null,
+      "notes": ""
+    }
+  }
+}
