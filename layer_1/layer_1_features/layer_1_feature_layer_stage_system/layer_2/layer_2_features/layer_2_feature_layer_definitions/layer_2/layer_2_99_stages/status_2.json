@@ -1,0 +1,19 @@
+{
+  "entity": "layer_2_feature_layer_definitions",
+  "stage": 2,
+  "stage_name": "setup",
+  "status": "complete",
+  "description": "Layer definitions feature structure created with all documentation",
+  "created": "2026-01-15",
+  "contents": {
+    "documentation": [
+      "layer_numbering.md",
+      "entity_types.md",
+      "nesting_rules.md",
+      "depth_markers.md"
+    ],
+    "ai_prompts": [
+      "init_prompt.md"
+    ]
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "layer_id": "1_project_<name>",
+  "current_stage": "1.01_instructions",
+  "stages": {
+    "1.01_instructions": {
+      "state": "not_started",
+      "last_update": null,
+      "notes": ""
+    },
+    "1.02_planning": {
+      "state": "not_started",
+      "last_update": null,
+      "notes": ""
+    },
+    "1.03_design": {
+      "state": "not_started",
+      "last_update": null,
+      "notes": ""
+    },
+    "1.04_development": {
+      "state": "not_started",
+      "last_update": null,
+      "notes": ""
+    },
+    "1.05_testing": {
+      "state": "not_started",
+      "last_update": null,
+      "notes": ""
+    },
+    "1.06_criticism": {
+      "state": "not_started",
+      "last_update": null,
+      "notes": ""
+    },
+    "1.07_fixing": {
+      "state": "not_started",
+      "last_update": null,
+      "notes": ""
+    },
+    "1.08_current_product": {
+      "state": "not_started",
+      "last_update": null,
+      "notes": ""
+    },
+    "1.09_archives": {
+      "state": "not_started",
+      "last_update": null,
+      "notes": ""
+    }
+  }
+}

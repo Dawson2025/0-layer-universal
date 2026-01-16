@@ -1,0 +1,18 @@
+# Layer-Stage Framework - Cursor Rules
+
+## Context
+This is the universal root (Layer 0) of the Layer-Stage Framework.
+
+## Navigation
+- layer_0/ contains universal framework internals
+- layer_1/ contains projects, features, components
+
+## Naming Conventions
+- Directories: layer_N_XX_name (underscores, not dots)
+- Sub-layers: sub_layer_N_XX_name
+- Stages: stage_N_XX_name
+
+## When Working Here
+- Check CLAUDE.md for context
+- Check layer_0/layer_0_00_ai_manager_system/agnostic/ for init prompts
+- Follow the entity pattern for all new content
