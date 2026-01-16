@@ -31,3 +31,15 @@
 [submodule "layer_1/layer_1_projects/layer_1_project_machine_learning"]
 	path = layer_1/layer_1_projects/layer_1_project_machine_learning
 	url = https://github.com/Dawson2025/1-machine-learning.git
+[submodule "layer_1/layer_1_projects/layer_1_project_lang_trak"]
+	path = layer_1/layer_1_projects/layer_1_project_lang_trak
+	url = https://github.com/Dawson2025/lang-trak-in-progress.git
+[submodule "layer_1/layer_1_projects/layer_1_project_web_app"]
+	path = layer_1/layer_1_projects/layer_1_project_web_app
+	url = https://github.com/Dawson2025/web-app.git
+[submodule "layer_1/layer_1_projects/layer_1_project_central_website"]
+	path = layer_1/layer_1_projects/layer_1_project_central_website
+	url = https://github.com/Dawson2025/central-website-for-apps.git
+[submodule "layer_1/layer_1_projects/layer_1_project_internship_prep"]
+	path = layer_1/layer_1_projects/layer_1_project_internship_prep
+	url = https://github.com/Dawson2025/Internship-Preparations.git
