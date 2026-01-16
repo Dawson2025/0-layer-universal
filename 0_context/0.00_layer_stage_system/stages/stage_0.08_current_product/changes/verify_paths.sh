@@ -16,17 +16,19 @@ CRITICAL_DOCS=(
   "$CONTEXT_ROOT/MASTER_DOCUMENTATION_INDEX.md"
   "$CONTEXT_ROOT/SYSTEM_OVERVIEW.md"
   "$CONTEXT_ROOT/0.00_layer_stage_system/README.md"
-  "$CONTEXT_ROOT/0.00_layer_stage_system/setup/instantiation_guide.md"
-  "$CONTEXT_ROOT/0.00_layer_stage_system/changes/restructuring_migration_protocol.md"
-  "$CONTEXT_ROOT/0.00_layer_stage_system/changes/traversal_update_protocol.md"
+  "$CONTEXT_ROOT/0.00_layer_stage_system/stages/stage_0.08_current_product/setup/instantiation_guide.md"
+  "$CONTEXT_ROOT/0.00_layer_stage_system/stages/stage_0.08_current_product/changes/restructuring_migration_protocol.md"
+  "$CONTEXT_ROOT/0.00_layer_stage_system/stages/stage_0.08_current_product/changes/traversal_update_protocol.md"
   "$CONTEXT_ROOT/0.01_layer_stage_framework/README.md"
   "$CONTEXT_ROOT/layer_0_universal/0.02_sub_layers/sub_layer_0.01_basic_prompts_throughout/universal_init_prompt.md"
 )
 
 # Critical directories
 CRITICAL_DIRS=(
-  "$CONTEXT_ROOT/0.00_layer_stage_system/setup"
-  "$CONTEXT_ROOT/0.00_layer_stage_system/changes"
+  "$CONTEXT_ROOT/0.00_layer_stage_system/stages"
+  "$CONTEXT_ROOT/0.00_layer_stage_system/stages/stage_0.08_current_product/setup"
+  "$CONTEXT_ROOT/0.00_layer_stage_system/stages/stage_0.08_current_product/changes"
+  "$CONTEXT_ROOT/0.00_layer_stage_system/stages/stage_0.02_planning/hand_off_documents"
   "$CONTEXT_ROOT/0.01_layer_stage_framework"
   "$CONTEXT_ROOT/layer_0_universal/0.02_sub_layers"
   "$CONTEXT_ROOT/layer_0_universal/0.99_stages"
@@ -59,8 +61,10 @@ done
 
 echo ""
 echo "=== Checking for Stale References ==="
+echo "(Excluding historical documents: *SUMMARY*, *_archives*)"
 
 # Check for old path patterns that should have been updated
+# Exclude historical documents that intentionally preserve old paths
 OLD_PATTERNS=(
   "0_ai_context[^_]"           # Old name without _layer_
   "mcp_servers_and_apis_and_secrets[^_]"  # Missing _clis_
@@ -68,7 +72,7 @@ OLD_PATTERNS=(
 )
 
 for pattern in "${OLD_PATTERNS[@]}"; do
-  count=$(grep -r "$pattern" "$CONTEXT_ROOT"/*.md "$CONTEXT_ROOT"/0.00_layer_stage_system/**/*.md "$CONTEXT_ROOT"/0.01_layer_stage_framework/*.md 2>/dev/null | wc -l)
+  count=$(grep -r "$pattern" "$CONTEXT_ROOT"/*.md "$CONTEXT_ROOT"/0.00_layer_stage_system/**/*.md "$CONTEXT_ROOT"/0.01_layer_stage_framework/*.md 2>/dev/null | grep -v "SUMMARY" | grep -v "_archives" | wc -l)
   if [ "$count" -gt 0 ]; then
     echo "⚠ Found $count references to stale pattern: $pattern"
     FAILED=$((FAILED + 1))

@@ -34,8 +34,10 @@ ls -d ../**/project_init_prompt.md 2>/dev/null
 ├── MASTER_DOCUMENTATION_INDEX.md    # Start here
 ├── SYSTEM_OVERVIEW.md
 ├── 0.00_layer_stage_system/         # System management & planning
-│   ├── changes/                     # Change protocols (restructuring, traversal)
-│   └── setup/                       # Entity creation guides
+│   └── stages/
+│       └── stage_0.08_current_product/
+│           ├── changes/             # Change protocols
+│           └── setup/               # Entity creation guides
 ├── 0.01_layer_stage_framework/      # Templates & framework docs
 └── layer_0_universal/
     ├── 0.02_sub_layers/
@@ -92,7 +94,7 @@ sub_layer_0.05-0.014_setup_dependant_sub_layers/0.01_universal_setup_file_tree_0
 | Terminal issues | `sub_layer_0.04_universal_rules/0_instruction_docs/cursor_terminal_issues.md` |
 | Universal tools | `.../0.12_universal_tools/` |
 | Documentation protocol | `.../0.13_protocols/file_documentation_and_organization/` |
-| **Create new entity** | `0.00_layer_stage_system/setup/instantiation_guide.md` |
+| **Create new entity** | `0.00_layer_stage_system/stages/stage_0.08_current_product/setup/instantiation_guide.md` |
 | **Subagent decisions** | `sub_layer_0.04_universal_rules/0_instruction_docs/subagent_usage_decision_matrix.md` |
 
 ---
@@ -189,9 +191,9 @@ For detailed information, see these documents:
 | Topic | Document |
 |-------|----------|
 | System Management | `0.00_layer_stage_system/README.md` |
-| **Creating Entities** | `0.00_layer_stage_system/setup/instantiation_guide.md` |
-| Restructuring/Migration | `0.00_layer_stage_system/changes/restructuring_migration_protocol.md` |
-| **Traversal/Path Updates** | `0.00_layer_stage_system/changes/traversal_update_protocol.md` |
+| **Creating Entities** | `0.00_layer_stage_system/stages/stage_0.08_current_product/setup/instantiation_guide.md` |
+| Restructuring/Migration | `0.00_layer_stage_system/stages/stage_0.08_current_product/changes/restructuring_migration_protocol.md` |
+| **Traversal/Path Updates** | `0.00_layer_stage_system/stages/stage_0.08_current_product/changes/traversal_update_protocol.md` |
 | Layer/Stage Framework | `0.01_layer_stage_framework/README.md` |
 | Flexible Layering | `0.01_layer_stage_framework/FLEXIBLE_LAYERING_SYSTEM.md` |
 | Extending Framework | `0.01_layer_stage_framework/EXTENDING_THE_FRAMEWORK.md` |
@@ -210,8 +212,8 @@ For detailed information, see these documents:
 > 2. **Traversal updates** - Update ALL navigation docs so agents can find the new paths
 >
 > See:
-> - `0.00_layer_stage_system/changes/restructuring_migration_protocol.md`
-> - `0.00_layer_stage_system/changes/traversal_update_protocol.md`
+> - `0.00_layer_stage_system/stages/stage_0.08_current_product/changes/restructuring_migration_protocol.md`
+> - `0.00_layer_stage_system/stages/stage_0.08_current_product/changes/traversal_update_protocol.md`
 >
 > | Priority | File | What to Update |
 > |----------|------|----------------|

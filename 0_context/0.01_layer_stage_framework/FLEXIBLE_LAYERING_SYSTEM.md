@@ -2,7 +2,7 @@
 
 **Purpose:** This document defines the flexible, arbitrarily-nested layer system that supports unlimited depth of features and components.
 
-**Location:** `0_ai_context/0_context/0.01_layer_stage_framework/FLEXIBLE_LAYERING_SYSTEM.md`
+**Location:** `0_layer_ai_context/0_context/0.01_layer_stage_framework/FLEXIBLE_LAYERING_SYSTEM.md`
 
 **Last Updated:** 2026-01-14
 **Version:** 4.0 - Layer Grouping Convention
@@ -666,6 +666,6 @@ While **unlimited depth is supported**, consider these practical guidelines:
 
 ---
 
-**Location:** `0_ai_context/0_context/0.01_layer_stage_framework/FLEXIBLE_LAYERING_SYSTEM.md`
+**Location:** `0_layer_ai_context/0_context/0.01_layer_stage_framework/FLEXIBLE_LAYERING_SYSTEM.md`
 **Last Updated:** 2026-01-14
 **Version:** 4.0 - Layer Grouping Convention

@@ -315,6 +315,6 @@ Both work, but **Option A** follows the universal pattern better.
 
 ---
 
-**Location:** `C:\Users\Dawson\dawson-workspace\code\0_ai_context\0_context\0.01_layer_stage_framework\UNIVERSAL_SYSTEM_EVALUATION.md`
+**Location:** `C:\Users\Dawson\dawson-workspace\code\0_layer_ai_context\0_context\0.01_layer_stage_framework\UNIVERSAL_SYSTEM_EVALUATION.md`
 **Last Updated:** 2026-01-09
 **Version:** 1.0

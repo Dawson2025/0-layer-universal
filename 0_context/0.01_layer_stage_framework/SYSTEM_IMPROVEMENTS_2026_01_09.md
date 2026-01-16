@@ -22,7 +22,7 @@
 ## 📚 New Documentation Created
 
 ### 1. EXTENDING_THE_FRAMEWORK.md (NEW)
-**Location:** `0_ai_context/0_context/0.01_layer_stage_framework/EXTENDING_THE_FRAMEWORK.md`
+**Location:** `0_layer_ai_context/0_context/0.01_layer_stage_framework/EXTENDING_THE_FRAMEWORK.md`
 
 **Contents:**
 - **Extension Pattern 1:** Custom Numbered Directories (`.03-.98`)
@@ -57,7 +57,7 @@
 - Directly addresses user request for workflow features to "come up in suggestions"
 
 ### 3. WORKFLOW_FEATURE_PATTERN.md (NEW)
-**Location:** `0_ai_context/0_context/0.01_layer_stage_framework/WORKFLOW_FEATURE_PATTERN.md`
+**Location:** `0_layer_ai_context/0_context/0.01_layer_stage_framework/WORKFLOW_FEATURE_PATTERN.md`
 
 **Contents:**
 - Explicit documentation of PAC School workflow pattern
@@ -71,7 +71,7 @@
 **Key Achievement:** Formally documents and validates the PAC school pattern as an official framework extension
 
 ### 4. FEATURE_TYPE_DECISION_GUIDE.md (NEW)
-**Location:** `0_ai_context/0_context/0.01_layer_stage_framework/FEATURE_TYPE_DECISION_GUIDE.md`
+**Location:** `0_layer_ai_context/0_context/0.01_layer_stage_framework/FEATURE_TYPE_DECISION_GUIDE.md`
 
 **Contents:**
 - Quick decision framework: standard (90%) vs workflow (10%)
@@ -84,7 +84,7 @@
 **Key Achievement:** Provides the "suggestions" system the user requested - workflow features now appear in recommendations
 
 ### 5. create_workflow_feature.sh (NEW)
-**Location:** `0_ai_context/0_context/0.01_layer_stage_framework/scripts/create_workflow_feature.sh`
+**Location:** `0_layer_ai_context/0_context/0.01_layer_stage_framework/scripts/create_workflow_feature.sh`
 
 **Contents:**
 - Executable bash script for creating workflow features
