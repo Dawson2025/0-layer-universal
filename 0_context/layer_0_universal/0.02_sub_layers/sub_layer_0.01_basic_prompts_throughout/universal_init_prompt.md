@@ -30,19 +30,22 @@ ls -d ../**/project_init_prompt.md 2>/dev/null
 ## Directory Structure
 
 ```
-0_ai_context/0_context/
+0_layer_ai_context/0_context/
 ├── MASTER_DOCUMENTATION_INDEX.md    # Start here
 ├── SYSTEM_OVERVIEW.md
 ├── 0.00_layer_stage_system/         # System management & planning
+│   ├── changes/                     # Change protocols (restructuring, traversal)
+│   └── setup/                       # Entity creation guides
 ├── 0.01_layer_stage_framework/      # Templates & framework docs
 └── layer_0_universal/
-    └── 0.02_sub_layers/
-        ├── sub_layer_0.01_basic_prompts_throughout/  ← You are here
-        ├── sub_layer_0.02_software_engineering_knowledge_system/
-        ├── sub_layer_0.03_universal_principles/
-        ├── sub_layer_0.04_universal_rules/
-        └── sub_layer_0.05-0.014_setup_dependant_sub_layers/
-            └── 0.01_universal_setup_file_tree_0/    # OS, AI apps, MCP, tools, protocols
+    ├── 0.02_sub_layers/
+    │   ├── sub_layer_0.01_basic_prompts_throughout/  ← You are here
+    │   ├── sub_layer_0.02_software_engineering_knowledge_system/
+    │   ├── sub_layer_0.03_universal_principles/
+    │   ├── sub_layer_0.04_universal_rules/
+    │   └── sub_layer_0.05-0.014_setup_dependant_sub_layers/
+    │       └── 0.01_universal_setup_file_tree_0/    # OS, AI apps, MCP, tools, protocols
+    └── 0.99_stages/                 # Universal layer stages (N.00-N.09)
 ```
 
 ---
@@ -70,7 +73,7 @@ sub_layer_0.05-0.014_setup_dependant_sub_layers/0.01_universal_setup_file_tree_0
         └── 0.06_environments/
             └── 0.07_coding_apps/
                 └── 0.09_ai_apps/
-                    ├── 0.10_mcp_servers_and_apis_and_secrets/
+                    ├── 0.10_mcp_servers_and_apis_and_clis_and_secrets/
                     ├── 0.11_ai_models/
                     ├── 0.12_universal_tools/
                     ├── 0.13_protocols/
@@ -83,12 +86,14 @@ sub_layer_0.05-0.014_setup_dependant_sub_layers/0.01_universal_setup_file_tree_0
 
 | Task | Go To |
 |------|-------|
-| MCP setup | `.../0.10_mcp_servers_and_apis_and_secrets/_mcp_core/` |
+| MCP setup | `.../0.10_mcp_servers_and_apis_and_clis_and_secrets/` |
 | Browser automation | `.../0.13_protocols/` |
-| Git operations | `sub_layer_0.04_universal_rules/.../git_commit_rule.md` |
-| Terminal issues | `sub_layer_0.04_universal_rules/.../cursor_terminal_issues.md` |
+| Git operations | `sub_layer_0.04_universal_rules/0_instruction_docs/git_commit_rule.md` |
+| Terminal issues | `sub_layer_0.04_universal_rules/0_instruction_docs/cursor_terminal_issues.md` |
 | Universal tools | `.../0.12_universal_tools/` |
 | Documentation protocol | `.../0.13_protocols/file_documentation_and_organization/` |
+| **Create new entity** | `0.00_layer_stage_system/setup/instantiation_guide.md` |
+| **Subagent decisions** | `sub_layer_0.04_universal_rules/0_instruction_docs/subagent_usage_decision_matrix.md` |
 
 ---
 
@@ -97,10 +102,11 @@ sub_layer_0.05-0.014_setup_dependant_sub_layers/0.01_universal_setup_file_tree_0
 | Layer | Purpose | Location |
 |-------|---------|----------|
 | 0 | Universal | `layer_0_universal/` - Applies to all projects |
-| 1 | Project | `<project>/0_context/` - Project-specific |
-| 2+ | Features/Components | Nested under project |
+| 1+ | Project | `<N>_layer_<project>/layer_<N>/` - Project-specific |
+| N+1 | Features/Components | `<project>/layer_<N+1>/` - Nested under project |
 
 **Key principle:** Lower layers are prerequisites for higher layers.
+**Naming:** Top-level projects use `<N>_layer_<name>/` format (e.g., `1_layer_school/`)
 
 ---
 
@@ -108,18 +114,20 @@ sub_layer_0.05-0.014_setup_dependant_sub_layers/0.01_universal_setup_file_tree_0
 
 Each layer has stages representing workflow phases:
 
-| Stage | Purpose |
-|-------|---------|
-| 01 | Instructions |
-| 02 | Planning |
-| 03 | Design |
-| 04 | Development |
-| 05 | Testing |
-| 06 | Criticism |
-| 07 | Fixing |
-| 08 | Archives |
+| Stage | Name | Purpose |
+|-------|------|---------|
+| 00 | request_gathering | Clarify requirements |
+| 01 | instructions | Define constraints |
+| 02 | planning | Break into subtasks |
+| 03 | design | Architecture decisions |
+| 04 | development | Implementation |
+| 05 | testing | Verification |
+| 06 | criticism | Review |
+| 07 | fixing | Corrections |
+| 08 | **current_product** | **The actual deliverable** |
+| 09 | archives | Historical versions |
 
-**Current stage tracked in:** `<layer>/.99_stages/status_<N>.json`
+**Current stage tracked in:** `<layer>/layer_<N>_99_stages/status_<N>.json`
 
 ---
 
@@ -181,13 +189,15 @@ For detailed information, see these documents:
 | Topic | Document |
 |-------|----------|
 | System Management | `0.00_layer_stage_system/README.md` |
+| **Creating Entities** | `0.00_layer_stage_system/setup/instantiation_guide.md` |
 | Restructuring/Migration | `0.00_layer_stage_system/changes/restructuring_migration_protocol.md` |
+| **Traversal/Path Updates** | `0.00_layer_stage_system/changes/traversal_update_protocol.md` |
 | Layer/Stage Framework | `0.01_layer_stage_framework/README.md` |
 | Flexible Layering | `0.01_layer_stage_framework/FLEXIBLE_LAYERING_SYSTEM.md` |
 | Extending Framework | `0.01_layer_stage_framework/EXTENDING_THE_FRAMEWORK.md` |
 | Feature Types | `0.01_layer_stage_framework/FEATURE_TYPE_DECISION_GUIDE.md` |
 | Workflow Features | `0.01_layer_stage_framework/WORKFLOW_FEATURE_PATTERN.md` |
-| Sub-layer Registry | `0.02_sub_layers/0.00_sub_layer_registry/README.md` |
+| Sub-layer Registry | `layer_0_universal/0.02_sub_layers/0.00_sub_layer_registry/README.md` |
 
 ---
 
@@ -195,19 +205,25 @@ For detailed information, see these documents:
 
 > **When making structural changes to the framework** (renaming directories, adding new stages/layers, modifying the hierarchy):
 >
-> **Critical:** Structural migration ≠ Content migration. You must migrate actual content from legacy folders, not just create empty structures. See `0.00_layer_stage_system/changes/restructuring_migration_protocol.md`.
+> **Critical:**
+> 1. **Content migration** - Migrate actual content, not just create empty structures
+> 2. **Traversal updates** - Update ALL navigation docs so agents can find the new paths
+>
+> See:
+> - `0.00_layer_stage_system/changes/restructuring_migration_protocol.md`
+> - `0.00_layer_stage_system/changes/traversal_update_protocol.md`
 >
 > | Priority | File | What to Update |
 > |----------|------|----------------|
-> | 1 | `0.00_layer_stage_system/README.md` | Master checklist & change log |
-> | 2 | **This file** (`universal_init_prompt.md`) | Directory paths & structure diagrams |
-> | 3 | `0.00_sub_layer_registry/sub_layer_registry.yaml` | Registry entries |
-> | 4 | `0.01_layer_stage_framework/` templates | Template structures & paths |
-> | 5 | All `*.md`, `*.yaml` files | Use `find` + `sed` for bulk path updates |
+> | 1 | **This file** (`universal_init_prompt.md`) | Directory paths & structure diagrams |
+> | 2 | `MASTER_DOCUMENTATION_INDEX.md` | Document links |
+> | 3 | `SYSTEM_OVERVIEW.md` | Architecture description |
+> | 4 | `0.01_layer_stage_framework/README.md` | Framework structure |
+> | 5 | All `*.md` files with hardcoded paths | Use `grep` + `sed` for bulk updates |
 >
-> **Full checklist:** `0_context/0.00_layer_stage_system/README.md`
+> **Verify:** After changes, test navigation from this file to new locations.
 >
-> **Last updated:** 2026-01-15 (Added restructuring/migration protocol)
+> **Last updated:** 2026-01-15 (Fixed paths, added traversal protocol, updated stages)
 
 ---
 

@@ -99,7 +99,28 @@ rm -rf <project>/legacy_context
 # Remove old N.xx folders if they existed at root
 ```
 
-### 6. Commit and Push
+### 6. Update Traversal Documentation (Critical)
+
+**Do not skip this step.** After restructuring, paths have changed. Update:
+
+```bash
+# Find all references to old paths
+grep -r "old_path_or_name" --include="*.md" <0_context_root>/
+
+# Update navigation documents:
+# - universal_init_prompt.md (Quick Reference table)
+# - MASTER_DOCUMENTATION_INDEX.md
+# - SYSTEM_OVERVIEW.md
+# - Any layer-specific init prompts
+```
+
+**Verify navigation works:**
+- Follow paths from `universal_init_prompt.md` to new locations
+- Ensure agents can find the restructured content
+
+See `traversal_update_protocol.md` for full verification checklist.
+
+### 7. Commit and Push
 
 ```bash
 git add -A
@@ -107,6 +128,7 @@ git commit -m "Restructure to layer system and migrate content from legacy
 
 - Created layer_N/ and layer_N+1/ structure
 - Migrated content from 0_context/legacy_* to proper locations
+- Updated traversal documentation with new paths
 - Removed legacy folders after verification
 
 Co-Authored-By: Claude <noreply@anthropic.com>"
@@ -123,6 +145,8 @@ git push
 | Delete legacy before verifying | Lost content | Check file counts first |
 | Migrate structure but not status.json | Lost progress tracking | Include status files |
 | Forget nested features | Features stuck in old naming | Check layer_N+1 content |
+| **Skip traversal doc updates** | **Agents can't find content** | **Always update navigation docs** |
+| Hardcode paths without verification | Broken links after moves | Use relative paths, verify |
 
 ---
 
@@ -180,6 +204,7 @@ find <project> -name "status_*.json"
 
 ## Related Documents
 
+- `traversal_update_protocol.md` - **Path verification after changes** (read this!)
 - `../README.md` - Structural change checklist (which docs to update)
 - `../../0.01_layer_stage_framework/FLEXIBLE_LAYERING_SYSTEM.md` - Layer structure reference
 - `../../0.01_layer_stage_framework/` - Templates for new structures
