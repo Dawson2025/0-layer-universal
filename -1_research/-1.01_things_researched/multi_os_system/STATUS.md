@@ -1,6 +1,6 @@
 # Status: Multi-OS Workspace Sync
 
-**Last Updated:** 2026-01-11 17:27 MST (from Ubuntu)
+**Last Updated:** 2026-01-17 12:30 MST (from Ubuntu)
 
 ## Current System State
 
@@ -111,8 +111,8 @@ git push
 ### Syncthing Three-Way Sync
 - **Ubuntu ↔ VPS:** ✅ Configured and tested
 - **Windows ↔ VPS:** ✅ Connected and verified (2026-01-12)
-- **Sync Folder:** `dawson-workspace` (~1.67 GB, 67,423 files)
-- **Sync Status:** Complete on Windows side
+- **Sync Folder:** `dawson-workspace` (only folder - "Default Folder" removed 2026-01-17)
+- **Sync Status:** Complete, all devices connected
 
 ### SSH Access to VPS
 - **From Ubuntu:** ✅ Working (`ssh -i ~/.ssh/id_ed25519 root@46.224.184.10`)
@@ -152,6 +152,8 @@ git push
 
 ## Recent Log
 
+- **2026-01-17 12:30:** ✅ Integrated `0_ai_context` into `0_layer_universal`. Removed empty "Default Folder" from Syncthing. Cleaned up `/home/dawson/Sync`.
+- **2026-01-17 11:48:** Syncthing running, connected to VPS. Login loop fix holding (LightDM).
 - **2026-01-11 17:27:** ✅ **BIDIRECTIONAL SYNC FULLY VERIFIED!** Windows → Ubuntu sync confirmed working on Ubuntu boot.
 - **2026-01-12 00:10:** ✅ Windows verification complete. Ubuntu → Windows sync confirmed working. Created reverse test file for Ubuntu verification.
 - **2026-01-12 00:01:** Windows Syncthing started, connected to VPS via IPv6.
@@ -173,6 +175,9 @@ git push
 6. ✅ Create Ubuntu → Windows test file
 7. ✅ **Verify Ubuntu → Windows sync (2026-01-12)**
 8. ✅ Create Windows → Ubuntu test file
+9. ✅ **Fix Ubuntu login loop** - Switched from GDM3 to LightDM (2026-01-17)
+10. ✅ **Integrate 0_ai_context into 0_layer_universal** (2026-01-17)
+11. ✅ **Clean up Syncthing** - Removed empty "Default Folder" (2026-01-17)
 
 ## Pending Tasks
 
