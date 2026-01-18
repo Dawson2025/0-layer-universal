@@ -1,65 +1,73 @@
 # Stage 0.03 Handoff: Execution Progress
 
-## Status: IN PROGRESS
+## Status: MOSTLY COMPLETE
 
 ## Summary
-VPS and Windows setup complete. Waiting for user to boot Linux to continue.
+Linux login loop fixed (switched to LightDM). VPS and cross-device SSH working. Remaining: Termius on iPhone/Linux, full mesh connections.
 
 ## Current State
 | Component | Status |
 |-----------|--------|
 | VPS AI CLIs | ✅ Working (Gemini, Claude, Codex) |
-| VPS Menu | ✅ Working (`menu` command) |
+| VPS Tailscale | ✅ Connected (100.93.148.5) |
+| Linux Login | ✅ FIXED (LightDM, was GDM3 issue) |
+| Linux Tailscale | ✅ Connected (100.73.84.89) |
+| Linux SSH | ✅ Working |
+| Linux Syncthing | ✅ Syncing to VPS |
 | Windows Termius | ✅ Installed, VPS connected |
 | Windows SSH Config | ✅ Updated |
 | iPhone Termius | ⏳ User to download |
-| Linux Login | ❌ BLOCKED (login loop) |
-| Linux Termius | ⏳ After fix |
+| Linux Termius | ⏳ Optional |
+| Termius CLI Automation | ❌ Blocked (encryption incompatibility) |
+| Termius Host Groups | 📄 Documented (manual setup required) |
+| Pass Password Manager | ✅ Configured on Linux |
 
-## Quick Commands (VPS)
+## What Was Fixed (2026-01-17)
+
+### Login Loop Resolution
+- **Problem**: GDM3 + NVIDIA hybrid graphics = session registration failure
+- **Solution**: Switched to LightDM
+- **Commands used**:
 ```bash
-ssh vps          # From Windows
-menu             # Interactive menu on VPS
-g "question"     # Gemini
-c "question"     # Claude
+apt install -y lightdm
+echo '/usr/sbin/lightdm' > /etc/X11/default-display-manager
+systemctl disable gdm3
+ln -sf /usr/lib/systemd/system/lightdm.service /etc/systemd/system/display-manager.service
+reboot
 ```
 
-## Next Actions
+### Tailscale Network
+| Device | IP | Hostname |
+|--------|-----|----------|
+| Ubuntu | 100.73.84.89 | dawson-yoga-pro-9-16imh9 |
+| VPS | 100.93.148.5 | ubuntu-4gb-nbg1-1 |
+| iPhone | 100.75.210.27 | iphone171 |
 
-### Immediate (Fix Linux)
-1. User boots Linux, gets IP via TTY (`ip addr`)
-2. User runs menu option 6 to set Linux IP
-3. User runs menu option 4 to SSH to Linux
-4. User runs menu option 5 to fix login loop
-5. Reboot Linux and verify
+## Quick Commands
+```bash
+# SSH to Linux from VPS
+ssh dawson@100.73.84.89
 
-### After Linux Fixed
-6. Install Termius on Linux
-7. Enable Windows SSH Server
-8. Get Windows local IP
-9. Configure full mesh connections
-10. Download Termius on iPhone, sign in to sync
+# SSH to VPS from Linux
+ssh root@100.93.148.5
 
-### Full Mesh Goal
-See `FULL_MESH_SSH_PLAN.md` for complete connectivity plan:
-- VPS ↔ Windows ↔ Linux (bidirectional)
-- iPhone → all (outbound only, iOS limitation)
+# Check Tailscale
+tailscale status
+```
+
+## Remaining Tasks
+
+### Optional Enhancements
+1. Download Termius on iPhone (for mobile SSH)
+2. Install Termius on Linux (`sudo snap install termius-app`)
+3. Enable Windows SSH Server for incoming connections
+4. Configure full mesh (see FULL_MESH_SSH_PLAN.md)
 
 ## Output Files
 - `output/PROGRESS_fix_linux_login_loop_via_cloud_ssh.md` - Detailed progress
 - `output/PROGRESS_termius_cross_device_ssh.md` - Cross-device status
 
-## Generated Files (in 0_instruction_docs/setup/)
-- Scripts: `fix_linux_login_loop.sh`, `menu.sh`, etc.
-- Docs: `TERMIUS_CROSS_DEVICE_SETUP.md`, etc.
-
-## Blockers
-| Blocker | Resolution |
-|---------|------------|
-| Linux login loop | Fix via VPS SSH |
-| Linux IP unknown | Get after boot |
-
-## Pickup Instructions
-1. Ask user if ready to boot Linux
-2. Guide through menu options 6 → 4 → 5
-3. After fix, install Termius on Linux
+## Related Docs
+- `SESSION_LOG_2026-01-17.md` in multi_os_system - Full session details
+- `ssh_vps_setup/` - Scripts and guides
+- `ssh_vps_setup/TERMIUS_HOST_GROUPS_AND_AUTOMATION.md` - Host groups structure and CLI limitations
