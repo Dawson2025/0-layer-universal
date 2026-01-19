@@ -1,7 +1,7 @@
 # Termius Host Groups and Automation Setup
 
 **Status**: PARTIALLY WORKING
-**Last Updated**: 2026-01-18
+**Last Updated**: 2026-01-18 (session 2)
 
 ---
 
@@ -154,7 +154,7 @@ pass termius/password
 | Task | Status | Notes |
 |------|--------|-------|
 | Create group structure in Termius | Pending | Use NEW HOST dropdown → New Group |
-| VPS host configured | ✅ Done | 46.224.184.10, user: root (via Quick Connect) |
+| VPS host configured | ✅ Done | 46.224.184.10, user: root, created via Quick Connect |
 | Linux host configured | Pending | Need to add via Tailscale IP 100.73.84.89 |
 | iPhone app installed | Pending | User to download, hosts will sync |
 | Windows SSH server | Optional | For incoming connections |
@@ -218,6 +218,56 @@ xdotool type --window $TERMIUS_WIN "text to type"
 
 # Click at coordinates (requires window to be focused)
 xdotool mousemove 176 88 && xdotool click 1
+```
+
+### Coordinates and Visual Information
+
+**Window identification:**
+```bash
+# Find Termius window ID
+xdotool search --name "Termius" | head -1
+```
+
+**Key UI element coordinates (relative to window):**
+| Element | Approximate Coordinates | Notes |
+|---------|------------------------|-------|
+| NEW HOST dropdown arrow | x=380, y=250 | Click this to reveal dropdown menu (not the button itself) |
+| "New Group" option in dropdown | x=505, y=340 | Appears after clicking dropdown arrow |
+
+**Host list entry visual:**
+- Each host entry shows IP address and details like "ssh, telnet, root"
+- Host entries are clickable to open connection
+- Right-click for context menu options
+
+### Creating Groups via Dropdown
+
+To create a new host group:
+
+1. Navigate to Hosts page (Ctrl+1 or click "Hosts" in sidebar)
+2. Click the **downward arrow** next to "NEW HOST" button (not the button itself)
+3. Dropdown menu appears with options:
+   - New Group
+   - Import
+   - AWS Integration
+   - DigitalOcean Integration
+   - Azure Integration
+4. Click "New Group" to create a new host group
+5. Enter group name following naming convention (e.g., `for_iphone`)
+
+**xdotool automation for creating a group:**
+```bash
+TERMIUS_WIN=$(xdotool search --name "Termius" | head -1)
+xdotool windowactivate --sync $TERMIUS_WIN
+sleep 0.5
+
+# Click dropdown arrow (adjust coordinates as needed)
+xdotool mousemove --window $TERMIUS_WIN 380 250
+xdotool click 1
+sleep 0.3
+
+# Click "New Group" option
+xdotool mousemove --window $TERMIUS_WIN 505 340
+xdotool click 1
 ```
 
 ### Termius UI Navigation
