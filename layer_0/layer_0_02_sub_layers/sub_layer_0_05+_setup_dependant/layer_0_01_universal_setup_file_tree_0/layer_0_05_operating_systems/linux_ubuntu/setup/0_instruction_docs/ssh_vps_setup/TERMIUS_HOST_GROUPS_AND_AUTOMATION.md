@@ -57,6 +57,57 @@ Current known public keys:
 
 ---
 
+## Manual Steps Required
+
+Due to GUI automation limitations with multi-line content (private keys), the following must be done manually:
+
+### 1. Import Linux Laptop Key to Termius Keychain
+
+1. Open Termius → Click "Vaults" tab
+2. Click on the Key icon (🔑) in the left sidebar
+3. Click "KEY" dropdown → Select to add new key
+4. Fill in:
+   - **Label**: `linux-laptop-key`
+   - **Private key**: Copy entire content from `~/.ssh/id_ed25519`:
+     ```
+     -----BEGIN OPENSSH PRIVATE KEY-----
+     [key content here]
+     -----END OPENSSH PRIVATE KEY-----
+     ```
+   - Public key will auto-populate after valid private key is entered
+5. Save the key
+
+### 2. Assign Keys to Hosts
+
+For each host in `for_laptop_linux` group:
+1. Click on the host to edit
+2. Scroll down to find "Key" field
+3. Select `linux-laptop-key` from dropdown
+4. Save
+
+### 3. Add Linux Laptop Host to Groups
+
+The Linux laptop (Tailscale IP: 100.73.84.89) needs to be added to:
+- `for_vps` group (so VPS can connect to Linux laptop)
+- `for_iphone` group (so iPhone can connect to Linux laptop)
+
+For each:
+1. NEW HOST → Enter details:
+   - Address: `100.73.84.89`
+   - Label: `for_vps_linux` or `for_iphone_linux`
+   - Username: `dawson`
+   - Parent Group: Select appropriate group
+   - Key: Select appropriate key (VPS key for for_vps, iPhone key for for_iphone)
+2. Save
+
+### 4. Verify authorized_keys on Linux Laptop
+
+Ensure `/home/dawson/.ssh/authorized_keys` contains public keys from:
+- VPS: `ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICRiRcYM71J8iBgoPG6qzc220hzGJcSKiaT346zIWu4w root@ubuntu-4gb-nbg1-1`
+- iPhone (from Termius app)
+
+---
+
 ## Host Groups Strategy
 
 ### Naming Convention
@@ -231,9 +282,11 @@ pass termius/password
 | for_laptop_windows group created | ✅ Done | Contains VPS host (for_laptop_windows_vps, needs key assigned) |
 | for_vps group created | ✅ Done | Needs: Linux laptop host + key assignment |
 | Linux host configured | ⏳ Pending | Need to add via Tailscale IP 100.73.84.89 to for_iphone, for_vps |
-| **Import Linux key to Keychain** | ⏳ Pending | Import `~/.ssh/id_ed25519` → Termius Keychain |
+| **Import Linux key to Keychain** | 📋 Manual | Manual - see steps above |
 | **Import VPS key to Keychain** | ⏳ Pending | Import VPS `/root/.ssh/id_ed25519` → Termius Keychain |
-| **Assign keys to hosts** | ⏳ Pending | Each host needs correct key from Keychain |
+| **Configure host keys per group** | 📋 Manual | Manual - see steps above |
+| Add Linux host to for_vps group | ⏳ Pending | Manual step required |
+| Add Linux host to for_iphone group | ⏳ Pending | Manual step required |
 | iPhone app installed | ⏳ Pending | User to download, hosts will sync |
 | Windows SSH server | Optional | For incoming connections |
 | CLI automation | ❌ Blocked | Python 3.12 incompatibility (getargspec) |
