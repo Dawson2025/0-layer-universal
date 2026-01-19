@@ -153,13 +153,14 @@ pass termius/password
 
 | Task | Status | Notes |
 |------|--------|-------|
-| Create group structure in Termius | Manual | Use app, not CLI |
-| VPS host configured | Done | On Windows, syncs to others |
-| Linux host configured | Done | Via Tailscale IP |
-| iPhone app installed | Pending | User to download |
+| Create group structure in Termius | Pending | Use NEW HOST dropdown → New Group |
+| VPS host configured | ✅ Done | 46.224.184.10, user: root (via Quick Connect) |
+| Linux host configured | Pending | Need to add via Tailscale IP 100.73.84.89 |
+| iPhone app installed | Pending | User to download, hosts will sync |
 | Windows SSH server | Optional | For incoming connections |
-| CLI automation | Blocked | Encryption incompatibility |
-| Pass password manager | Done | On Linux laptop |
+| CLI automation | ❌ Blocked | Python 3.12 incompatibility (getargspec) |
+| xdotool GUI automation | ✅ Working | Use --window flag to target specific windows |
+| Pass password manager | ✅ Done | On Linux laptop |
 
 ---
 
@@ -222,7 +223,7 @@ xdotool mousemove 176 88 && xdotool click 1
 ### Termius UI Navigation
 
 **To access the NEW HOST dropdown menu:**
-1. Go to Hosts page (click "Hosts" in sidebar)
+1. Go to Hosts page (click "Hosts" in sidebar or use Ctrl+1)
 2. Click the **downward arrow** next to "NEW HOST" button
 3. Dropdown shows:
    - New Group
@@ -231,7 +232,15 @@ xdotool mousemove 176 88 && xdotool click 1
    - DigitalOcean Integration
    - Azure Integration
 
-**To create a host:**
+**To create a host via Quick Connect (easiest method):**
+1. Type IP in the search bar at top: `46.224.184.10`
+2. Press Enter → "Choose protocol" dialog appears
+3. Select SSH, click Continue
+4. Enter username (e.g., `root`)
+5. Click "Continue & Save" → Host is saved!
+6. Choose authentication (Password or Public Key)
+
+**To create a host via form:**
 - Click "NEW HOST" button directly (not the arrow)
 - Or use the "Create host" form in the main area
 
