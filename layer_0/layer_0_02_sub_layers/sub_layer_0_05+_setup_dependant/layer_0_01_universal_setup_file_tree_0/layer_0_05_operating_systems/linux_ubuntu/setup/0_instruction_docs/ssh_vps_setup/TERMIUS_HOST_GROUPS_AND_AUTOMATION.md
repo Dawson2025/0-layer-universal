@@ -196,6 +196,65 @@ Since CLI automation doesn't work:
 
 ---
 
+## xdotool GUI Automation (Working Method)
+
+Since the Termius CLI is broken, you can automate the GUI using `xdotool` on X11.
+
+### Key Technique: Target Specific Windows
+
+```bash
+# Get the Termius window ID
+TERMIUS_WIN=$(xdotool search --name "Termius" | head -1)
+
+# Activate the window (bring to front and focus)
+xdotool windowactivate --sync $TERMIUS_WIN
+
+# Send keys to that specific window
+xdotool key --window $TERMIUS_WIN ctrl+k
+
+# Type in that window
+xdotool type --window $TERMIUS_WIN "text to type"
+
+# Click at coordinates (requires window to be focused)
+xdotool mousemove 176 88 && xdotool click 1
+```
+
+### Termius UI Navigation
+
+**To access the NEW HOST dropdown menu:**
+1. Go to Hosts page (click "Hosts" in sidebar)
+2. Click the **downward arrow** next to "NEW HOST" button
+3. Dropdown shows:
+   - New Group
+   - Import
+   - AWS Integration
+   - DigitalOcean Integration
+   - Azure Integration
+
+**To create a host:**
+- Click "NEW HOST" button directly (not the arrow)
+- Or use the "Create host" form in the main area
+
+**To import from SSH config:**
+- Click dropdown arrow → Import
+- Select SSH config file
+
+### Useful Tools
+
+| Tool | Purpose | Install |
+|------|---------|---------|
+| `xdotool` | X11 GUI automation | `apt install xdotool` |
+| `wmctrl` | Window management | `apt install wmctrl` |
+| `scrot` | Screenshots | `apt install scrot` |
+
+### Example: List Windows
+```bash
+wmctrl -l  # List all windows with IDs
+xdotool search --name "Termius"  # Get Termius window ID
+```
+
+---
+
 ## Future Improvements
 
 1. **Wait for Termius CLI fix**: Future versions may support newer encryption
