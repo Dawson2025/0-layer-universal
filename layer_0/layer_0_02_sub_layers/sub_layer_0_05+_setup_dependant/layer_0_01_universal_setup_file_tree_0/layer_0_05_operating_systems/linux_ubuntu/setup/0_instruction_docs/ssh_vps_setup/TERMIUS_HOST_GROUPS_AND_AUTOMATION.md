@@ -1,7 +1,7 @@
 # Termius Host Groups and Automation Setup
 
 **Status**: PARTIALLY WORKING
-**Last Updated**: 2026-01-18 (session 2)
+**Last Updated**: 2026-01-18 (session 3)
 
 ---
 
@@ -153,9 +153,12 @@ pass termius/password
 
 | Task | Status | Notes |
 |------|--------|-------|
-| Create group structure in Termius | Pending | Use NEW HOST dropdown → New Group |
-| for_iphone group created | ✅ Done | Created via GUI, VPS host assigned |
-| VPS host configured | ✅ Done | 46.224.184.10, user: root, created via Quick Connect |
+| Create group structure in Termius | ✅ Done | All 4 groups created: for_iphone, for_laptop_linux, for_laptop_windows, for_vps |
+| VPS host configured | ✅ Done | 46.224.184.10, user: root (via Quick Connect) |
+| for_iphone group created | ✅ Done | Contains VPS host |
+| for_laptop_linux group created | ✅ Done | Contains VPS host (for_laptop_linux_vps) |
+| for_laptop_windows group created | ✅ Done | Contains VPS host (for_laptop_windows_vps) |
+| for_vps group created | ✅ Done | Pending: needs Linux laptop host |
 | Linux host configured | Pending | Need to add via Tailscale IP 100.73.84.89 |
 | iPhone app installed | Pending | User to download, hosts will sync |
 | Windows SSH server | Optional | For incoming connections |
