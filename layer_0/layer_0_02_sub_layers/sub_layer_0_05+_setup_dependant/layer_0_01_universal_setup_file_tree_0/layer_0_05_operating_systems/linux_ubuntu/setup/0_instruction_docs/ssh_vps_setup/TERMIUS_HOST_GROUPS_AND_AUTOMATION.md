@@ -550,6 +550,30 @@ For importing SSH keys, manual interaction is required (official Termius docs re
 - Text input gets misdirected to wrong fields
 - No reliable programmatic API exists (CLI is dead)
 
+### Research Findings (January 2026)
+
+**Perplexity search results:** No guides or documentation exist for automating Termius with xdotool.
+
+**Why Termius automation is uniquely difficult:**
+
+1. **Electron app** - Termius is built on Electron (Chromium), which has its own event handling
+2. **XSendEvent rejection** - Electron apps often don't accept synthetic X11 events from xdotool
+3. **Known xdotool issues with Electron** - GitHub issue #458 documents "xdotool works in Firefox but not Brave" (Brave is also Electron-based)
+4. **No API available** - Termius CLI was archived March 2025, broken with Python 3.12
+5. **Proprietary vault encryption** - Even if CLI worked, vault uses chacha20-poly1305 incompatible with CLI
+
+**Related resources found:**
+- Kinto project (github.com/rbreaves/kinto) issue #846 - documents Termius WM_CLASS as "Termius" for keyboard remapping
+- xdotool issue #453 - "cannot send key combinations to Qt-based applications"
+- xdotool issue #458 - "works in Firefox but not Brave" (Electron app issue)
+
+**Alternatives considered:**
+- ydotool (for Wayland) - won't help since X11 is being used
+- Selenium/Playwright - could work but overkill for one-time setup
+- pyautogui - Python alternative, same Electron limitations
+
+**Conclusion:** Manual setup is the only reliable method for Termius on Linux
+
 ### Window Coordinates Reference
 
 When Termius window is positioned at 600,100:
