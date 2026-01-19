@@ -226,18 +226,40 @@ pass termius/password
 |------|--------|-------|
 | Create group structure in Termius | ✅ Done | All 4 groups created: for_iphone, for_laptop_linux, for_laptop_windows, for_vps |
 | VPS host configured | ✅ Done | 46.224.184.10, user: root (via Quick Connect) |
-| for_iphone group created | ✅ Done | Contains VPS host |
-| for_laptop_linux group created | ✅ Done | Contains VPS host (for_laptop_linux_vps) |
-| for_laptop_windows group created | ✅ Done | Contains VPS host (for_laptop_windows_vps) |
-| for_vps group created | ✅ Done | Pending: needs Linux laptop host |
-| Linux host configured | Pending | Need to add via Tailscale IP 100.73.84.89 |
-| iPhone app installed | Pending | User to download, hosts will sync |
+| for_iphone group created | ✅ Done | Contains VPS host (needs key assigned) |
+| for_laptop_linux group created | ✅ Done | Contains VPS host (for_laptop_linux_vps, needs key assigned) |
+| for_laptop_windows group created | ✅ Done | Contains VPS host (for_laptop_windows_vps, needs key assigned) |
+| for_vps group created | ✅ Done | Needs: Linux laptop host + key assignment |
+| Linux host configured | ⏳ Pending | Need to add via Tailscale IP 100.73.84.89 to for_iphone, for_vps |
+| **Import Linux key to Keychain** | ⏳ Pending | Import `~/.ssh/id_ed25519` → Termius Keychain |
+| **Import VPS key to Keychain** | ⏳ Pending | Import VPS `/root/.ssh/id_ed25519` → Termius Keychain |
+| **Assign keys to hosts** | ⏳ Pending | Each host needs correct key from Keychain |
+| iPhone app installed | ⏳ Pending | User to download, hosts will sync |
 | Windows SSH server | Optional | For incoming connections |
 | CLI automation | ❌ Blocked | Python 3.12 incompatibility (getargspec) |
 | xdotool GUI automation | ✅ Working | Use --window flag to target specific windows |
 | Pass password manager | ✅ Done | On Linux laptop |
-| Import Linux key to Termius Keychain | Pending | Required for for_laptop_linux hosts to authenticate |
-| Configure host keys per group | Pending | Each host needs correct key assigned |
+
+### Next Steps (Priority Order)
+
+1. **Import Linux laptop SSH key into Termius Keychain**
+   - In Termius: Keychain → Import → select `~/.ssh/id_ed25519`
+   - This key is used for `for_laptop_linux` group hosts
+
+2. **Assign keys to existing hosts**
+   - Edit each host → select appropriate key from Keychain
+   - `for_laptop_linux_vps` → Linux key
+   - `for_laptop_windows_vps` → Windows key (when available)
+   - etc.
+
+3. **Add Linux laptop host** to `for_iphone` and `for_vps` groups
+   - Address: 100.73.84.89 (Tailscale)
+   - User: dawson
+
+4. **Generate/import iPhone key**
+   - In Termius iOS: Settings → Keychain → Generate Key
+   - Add public key to Linux laptop's `~/.ssh/authorized_keys`
+   - Add public key to VPS's `/root/.ssh/authorized_keys`
 
 ---
 
