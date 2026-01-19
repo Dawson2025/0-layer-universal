@@ -154,6 +154,7 @@ pass termius/password
 | Task | Status | Notes |
 |------|--------|-------|
 | Create group structure in Termius | Pending | Use NEW HOST dropdown → New Group |
+| for_iphone group created | ✅ Done | Created via GUI, VPS host assigned |
 | VPS host configured | ✅ Done | 46.224.184.10, user: root, created via Quick Connect |
 | Linux host configured | Pending | Need to add via Tailscale IP 100.73.84.89 |
 | iPhone app installed | Pending | User to download, hosts will sync |
@@ -281,6 +282,27 @@ xdotool click 1
    - AWS Integration
    - DigitalOcean Integration
    - Azure Integration
+
+#### Adding Hosts to Groups
+
+**Method: Use the Parent Group dropdown in Host Details panel**
+
+1. Click on a host in the host list to open the Host Details panel (right side)
+2. In the Host Details panel, click on the "Parent Group" field
+3. A dropdown appears listing all available groups
+4. Select the desired group (e.g., "for_iphone")
+5. The change auto-saves immediately
+
+**Important Notes:**
+- If Termius account encryption is enabled, you may be prompted for your encryption password when syncing changes
+- **Drag-and-drop does NOT work**: In testing, dragging a host to a group did not successfully assign it. Always use the Parent Group dropdown method instead.
+
+**Host Details Panel UI Coordinates (relative to Termius window):**
+| Element | Approximate Coordinates | Notes |
+|---------|------------------------|-------|
+| Host card in list | x=430, y=700 | Click to select and open details panel |
+| Parent Group field | y=679 (in right panel) | Click to show group dropdown |
+| Group dropdown options | Below Parent Group field | Appears after clicking Parent Group |
 
 **To create a host via Quick Connect (easiest method):**
 1. Type IP in the search bar at top: `46.224.184.10`
