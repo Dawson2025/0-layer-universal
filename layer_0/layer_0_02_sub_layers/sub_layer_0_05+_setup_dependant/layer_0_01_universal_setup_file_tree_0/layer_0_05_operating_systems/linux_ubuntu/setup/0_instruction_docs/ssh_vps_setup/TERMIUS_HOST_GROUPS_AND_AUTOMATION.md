@@ -1,7 +1,7 @@
 # Termius Host Groups and Automation Setup
 
 **Status**: PARTIALLY WORKING
-**Last Updated**: 2026-01-18 (session 3)
+**Last Updated**: 2026-01-18 (session 3 - final findings)
 
 ---
 
@@ -184,23 +184,30 @@ Ensure `/home/dawson/.ssh/authorized_keys` contains public keys from:
 ## What Doesn't Work
 
 ### Termius CLI Automation
-**Problem**: Termius CLI uses newer encryption algorithms incompatible with the vault
+**Problem**: Termius CLI is archived and broken
 
-**Error observed**:
+**Status (as of January 2026)**:
+- Termius CLI repository was **archived in March 2025**
+- CLI is **broken with Python 3.12+** due to use of deprecated `inspect.getargspec`
+- No official support or fixes planned
+
+**Error observed (Python 3.12)**:
+```
+AttributeError: module 'inspect' has no attribute 'getargspec'
+```
+
+**Error observed (vault encryption)**:
 ```
 Error: Unsupported cipher: chacha20-poly1305
 ```
 
 **Explanation**:
-- Termius stores credentials in an encrypted vault
-- Newer versions use chacha20-poly1305 encryption
-- The CLI tool (especially older versions or certain builds) can't decrypt this
-- This prevents scripted automation of host creation
+- Termius CLI was archived and is no longer maintained
+- Python 3.12 removed `inspect.getargspec` (deprecated since Python 3.0)
+- Termius vault uses chacha20-poly1305 encryption incompatible with CLI
+- This prevents any scripted automation via CLI
 
-**Attempted workarounds**:
-1. Using .deb instead of snap (no improvement)
-2. Exporting/importing JSON configs (requires manual vault access)
-3. Using pass password manager as credential store (partial success)
+**Conclusion**: Use GUI only. Termius CLI is dead.
 
 ### Scripted Host Creation
 Cannot automate via scripts due to CLI limitations above.
@@ -532,10 +539,16 @@ This section documents learnings from automation attempts with Termius using xdo
 
 ### Recommended Manual Steps
 
-For importing SSH keys, manual interaction is more reliable:
+For importing SSH keys, manual interaction is required (official Termius docs recommend drag-and-drop):
 1. Click KEY button (left part, not dropdown) to open New Key dialog
-2. Drag and drop the key file from file manager into the dialog
-3. Set the label manually
+2. **Drag and drop** the key file (`~/.ssh/id_ed25519`) from file manager into the Private key field
+3. Set the label manually (e.g., "linux-laptop")
+4. Click Save
+
+**Why drag-and-drop?** Termius official documentation recommends this method. xdotool automation fails because:
+- Electron apps don't reliably receive automated clicks
+- Text input gets misdirected to wrong fields
+- No reliable programmatic API exists (CLI is dead)
 
 ### Window Coordinates Reference
 
