@@ -487,6 +487,75 @@ xdotool search --name "Termius"  # Get Termius window ID
 
 ---
 
+## xdotool Automation Challenges
+
+This section documents learnings from automation attempts with Termius using xdotool and wmctrl.
+
+### What Works
+
+1. **Window management**: `wmctrl` works well for positioning and focusing Termius window
+   - `wmctrl -i -a <window_id>` to focus
+   - `wmctrl -i -r <window_id> -e 0,x,y,w,h` to position/resize
+   - `xdotool search --name "Termius"` to find window ID
+
+2. **Creating groups**: Successfully created 4 groups (for_iphone, for_laptop_linux, for_laptop_windows, for_vps) using:
+   - Click NEW HOST dropdown arrow → New Group
+   - Type group name in Label field
+   - Groups auto-save
+
+3. **Creating hosts via Quick Connect**: Works well
+   - Type IP in search bar at top
+   - Press Enter → Choose protocol dialog
+   - Select SSH → Continue → Enter username → Continue & Save
+
+4. **Adding hosts to groups**: Works via Parent Group dropdown
+   - Click on host to open Host Details
+   - Click Parent Group field → Select group from dropdown
+
+### What Doesn't Work Well
+
+1. **KEY button in Keychain**: Automated clicks don't register reliably
+   - Tried single clicks, double clicks at various coordinates
+   - The button seems unresponsive to xdotool clicks (possibly Electron app issue)
+   - Hamburger menu opens if clicking too far left
+
+2. **Dropdown menus**: Menu items are hard to click
+   - Menu appears but clicks on menu items often miss
+   - Keyboard navigation (Down, Enter) doesn't work reliably
+
+3. **Text input in New Key dialog**: Text goes to wrong fields
+   - Label field is hard to target
+   - Text often ends up in Private key textarea instead
+
+4. **xdotool type**: Unreliable in Termius
+   - Clipboard paste (xclip + ctrl+v) works better but still has issues
+
+### Recommended Manual Steps
+
+For importing SSH keys, manual interaction is more reliable:
+1. Click KEY button (left part, not dropdown) to open New Key dialog
+2. Drag and drop the key file from file manager into the dialog
+3. Set the label manually
+
+### Window Coordinates Reference
+
+When Termius window is positioned at 600,100:
+
+| Element | X Coordinate | Y Coordinate | Notes |
+|---------|--------------|--------------|-------|
+| Hamburger menu | ~665 | - | Opens if clicking too far left |
+| KEY button | ~695-710 | ~155 | Left part of button |
+| KEY dropdown arrow | ~720 | ~155 | Right part with arrow |
+| CERTIFICATE button | ~760 | ~155 | Next button to the right |
+| First key entry in list | - | ~190 | Below the buttons |
+
+### VPS Chat History Location
+
+The VPS chat history with Termius setup information has been copied to:
+`/home/dawson/dawson-workspace/code/0_layer_universal/layer_0/.../ssh_vps_setup/VPS_CHAT_HISTORY_TERMIUS.jsonl`
+
+---
+
 ## Future Improvements
 
 1. **Wait for Termius CLI fix**: Future versions may support newer encryption
