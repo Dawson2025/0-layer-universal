@@ -1,0 +1,12 @@
+# Syncthing temp files
+~syncthing~*.tmp
+.stfolder
+.stignore
+
+# Secrets
+.env
+*.env
+
+# OS files
+.DS_Store
+Thumbs.db
