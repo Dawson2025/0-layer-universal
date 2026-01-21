@@ -1,7 +1,7 @@
 # Termius Host Groups and Automation Setup
 
-**Status**: PARTIALLY WORKING
-**Last Updated**: 2026-01-18 (session 3 - final findings)
+**Status**: LINUX AUTOMATION NOT RECOMMENDED - USE WINDOWS
+**Last Updated**: 2026-01-20 (added Windows AutoHotkey recommendation)
 
 ---
 
@@ -573,6 +573,22 @@ For importing SSH keys, manual interaction is required (official Termius docs re
 - pyautogui - Python alternative, same Electron limitations
 
 **Conclusion:** Manual setup is the only reliable method for Termius on Linux
+
+### Better Alternative: Use Windows + AutoHotkey
+
+If automated Termius setup is required, **use Windows instead of Linux**:
+
+| Factor | Linux (xdotool) | Windows (AutoHotkey) |
+|--------|-----------------|---------------------|
+| Electron app support | ❌ Poor | ✅ Excellent |
+| API integration | ❌ XSendEvent rejected | ✅ Native Windows API |
+| Control targeting | ❌ Coordinates only | ✅ By ID/class possible |
+| Documentation | ❌ None for Termius | ✅ Well documented |
+| Reliability | ❌ Unreliable | ✅ Reliable |
+
+**Recommendation:** Boot into Windows and use AutoHotkey for Termius host group creation and SSH key import. See:
+- `0_layer_universal/-1_research/-1.01_things_researched/multi_os_system/STATUS.md`
+- Section: "Windows GUI Automation (AutoHotkey)"
 
 ### Window Coordinates Reference
 
