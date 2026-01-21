@@ -200,6 +200,34 @@ done
 
 ---
 
+## AI CLI Tools (System-Wide)
+
+All AI coding assistants are installed system-wide for access by any user including root and rescue mode.
+
+| Tool | Command | Version | Location |
+|------|---------|---------|----------|
+| Claude Code | `claude` | 2.1.14 | /usr/bin/claude |
+| Gemini CLI | `gemini` | 0.25.0 | /usr/bin/gemini |
+| OpenAI Codex | `codex` | 0.87.0 | /usr/bin/codex |
+| OpenCode | `opencode` | latest | /usr/bin/opencode |
+
+### Root Access Configuration
+
+- Auth configs copied to `/root/.claude/`, `/root/.codex/`, `/root/.gemini/`
+- API keys in `/root/.bashrc`
+- System profile at `/etc/profile.d/ai-cli-tools.sh`
+
+### Quick Aliases
+
+```bash
+ai-claude    # Claude Code
+ai-gemini    # Gemini CLI
+ai-codex     # OpenAI Codex
+ai-opencode  # OpenCode
+```
+
+---
+
 ## Emergency Recovery Procedure
 
 ### When GUI Breaks (Login Loop, etc.)
@@ -207,8 +235,12 @@ done
 1. **From iPhone**: Open Termius
 2. **Connect to VPS**: Use `tailscale_for_iphone_to_vps`
 3. **On VPS**: Run `ssh dawson@100.73.84.89` (Linux laptop Tailscale IP)
-4. **On Linux**: Start Claude Code with `claude`
-5. **Use Claude**: To diagnose and fix the issue
+4. **On Linux**: Start any AI assistant:
+   - `claude` - Claude Code (recommended)
+   - `gemini` - Gemini CLI
+   - `codex` - OpenAI Codex
+   - `opencode` - OpenCode (multi-provider)
+5. **Use AI**: To diagnose and fix the issue
 
 ### When SSH via Tailscale Fails
 
