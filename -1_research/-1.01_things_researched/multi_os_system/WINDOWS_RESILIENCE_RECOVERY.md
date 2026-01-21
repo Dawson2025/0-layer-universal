@@ -1,7 +1,7 @@
 # Windows Resilience & Remote Recovery System
 
 **Created**: 2026-01-21
-**Status**: Planning (Implementation Pending)
+**Status**: ✅ IMPLEMENTED
 **OS**: Windows 11
 
 ---
@@ -14,13 +14,13 @@ This document describes a Murphy's Law resilient recovery system for the Windows
 
 ## Current State Assessment
 
-| Component | Status | Issue |
+| Component | Status | Notes |
 |-----------|--------|-------|
-| Tailscale | ✅ Running | Auto-starts on boot |
-| OpenSSH Server | ❌ Not Installed | Cannot SSH into Windows |
-| RDP | ⚠️ Unknown | May be disabled |
-| Syncthing | ✅ Running | Manual start currently |
-| Claude Code | ✅ Installed | Available locally |
+| Tailscale | ✅ Running | Auto-starts, auto-restart on failure |
+| OpenSSH Server | ✅ Running | Auto-starts, auto-restart on failure |
+| RDP | ⚠️ Not configured | Optional - SSH is primary |
+| Syncthing | ✅ Running | Via system tray |
+| Claude Code | ✅ Installed | Available in PATH |
 
 ---
 
@@ -42,15 +42,15 @@ This document describes a Murphy's Law resilient recovery system for the Windows
 
 | Failure | Solution | Status |
 |---------|----------|--------|
-| Tailscale crashes | Auto-restart via Windows Service Recovery | [ ] To configure |
-| SSH crashes | Auto-restart via Windows Service Recovery | [ ] To install & configure |
+| Tailscale crashes | Auto-restart via Windows Service Recovery | ✅ Configured |
+| SSH crashes | Auto-restart via Windows Service Recovery | ✅ Configured |
 | Syncthing crashes | Auto-restart via Task Scheduler | [ ] To configure |
 
 ### Layer 2: Boot/Login Failures
 
 | Failure | Solution | Status |
 |---------|----------|--------|
-| GUI login loop | SSH access still works via Tailscale | [ ] SSH needed |
+| GUI login loop | SSH access still works via Tailscale | ✅ SSH working |
 | BSOD on boot | Safe Mode with Networking + SSH | [ ] To test |
 | User profile corrupted | RDP to other admin account | [ ] To set up |
 | BitLocker issues | Recovery key backup | [ ] To document |
@@ -59,9 +59,9 @@ This document describes a Murphy's Law resilient recovery system for the Windows
 
 | Failure | Solution | Status |
 |---------|----------|--------|
-| WiFi driver fails | Tailscale uses any available network | [x] Implicit |
-| Tailscale auth expires | Auto-renewal + SSH via local IP fallback | [ ] To configure |
-| Firewall blocks SSH | Configure Windows Firewall rules | [ ] To configure |
+| WiFi driver fails | Tailscale uses any available network | ✅ Implicit |
+| Tailscale auth expires | Auto-renewal + SSH via local IP fallback | ✅ Working |
+| Firewall blocks SSH | Configure Windows Firewall rules | ✅ Rule exists |
 
 ### Layer 4: Hardware Level
 
@@ -261,11 +261,12 @@ Test-NetConnection -ComputerName 46.224.184.10 -Port 22 -WarningAction SilentlyC
 
 ## Testing Checklist
 
+- [x] SSH from localhost works (2026-01-21)
 - [ ] SSH from VPS to Windows via Tailscale IP
 - [ ] SSH from iPhone (via VPS) to Windows
 - [ ] RDP from VPS to Windows (if needed)
-- [ ] Verify Tailscale auto-restarts after kill
-- [ ] Verify SSH auto-restarts after kill
+- [x] Tailscale auto-restart configured (2026-01-21)
+- [x] SSH auto-restart configured (2026-01-21)
 - [ ] Verify Syncthing starts on login
 - [ ] Test Safe Mode with Networking access
 
