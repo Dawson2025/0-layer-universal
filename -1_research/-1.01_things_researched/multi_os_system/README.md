@@ -4,8 +4,9 @@ This directory contains documentation for the multi-OS workspace sync project, w
 
 ## Current Status: ✅ FULLY OPERATIONAL
 
-**Last Updated:** 2026-01-11
+**Last Updated:** 2026-01-21
 **All systems configured and syncing via Hetzner VPS relay**
+**Windows & VPS resilience implemented with auto-recovery**
 
 ### Verification Progress
 | Direction | Status |
@@ -47,6 +48,9 @@ This directory contains documentation for the multi-OS workspace sync project, w
 | **[STATUS.md](./STATUS.md)** | Current system state, what's working, next steps |
 | **[VPS_CREDENTIALS.md](./VPS_CREDENTIALS.md)** | VPS access details, SSH commands, API keys |
 | **[DUAL_BOOT_TEST_INSTRUCTIONS.md](./DUAL_BOOT_TEST_INSTRUCTIONS.md)** | How to verify sync is working |
+| **[WINDOWS_RESILIENCE_RECOVERY.md](./WINDOWS_RESILIENCE_RECOVERY.md)** | Windows SSH setup, auto-recovery, remote access |
+| **[VPS_RESILIENCE_RECOVERY.md](./VPS_RESILIENCE_RECOVERY.md)** | VPS hardening, fail2ban, auto-restart configs |
+| **[LINUX_RESILIENCE_RECOVERY.md](./LINUX_RESILIENCE_RECOVERY.md)** | Ubuntu recovery procedures |
 
 ## Quick Commands
 
@@ -100,6 +104,34 @@ systemctl status syncthing@root
 4. **You reboot to Ubuntu:** Ubuntu Syncthing connects to VPS, pulls changes
 
 The VPS is always online and acts as a store-and-forward relay.
+
+## Auto-Start & Real-Time Sync Configuration
+
+All systems are configured for automatic startup and real-time file synchronization:
+
+| Setting | Windows | VPS | Ubuntu |
+| :--- | :--- | :--- | :--- |
+| **Auto-start on boot** | ✅ Registry Run key | ✅ systemd enabled | ✅ systemd --user |
+| **File watcher (real-time)** | ✅ Enabled | ✅ Enabled | ✅ Enabled |
+| **Backup rescan interval** | 1 hour | 1 hour | 1 hour |
+| **Service auto-restart** | ✅ Configured | ✅ Configured | ✅ Configured |
+
+### How Real-Time Sync Works
+- **File watcher** monitors the filesystem for changes and triggers sync within seconds
+- **Backup rescan** runs hourly to catch any changes the watcher might miss
+- **Auto-restart** ensures Syncthing restarts automatically if it crashes
+
+### Windows Auto-Start Location
+```
+HKCU:\Software\Microsoft\Windows\CurrentVersion\Run\Syncthing
+```
+
+### VPS/Ubuntu Service
+```bash
+# Check status
+systemctl status syncthing@root    # VPS
+systemctl --user status syncthing  # Ubuntu
+```
 
 ## Verification Test
 
