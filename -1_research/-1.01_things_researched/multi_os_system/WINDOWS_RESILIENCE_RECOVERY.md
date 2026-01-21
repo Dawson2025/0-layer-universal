@@ -262,8 +262,8 @@ Test-NetConnection -ComputerName 46.224.184.10 -Port 22 -WarningAction SilentlyC
 ## Testing Checklist
 
 - [x] SSH from localhost works (2026-01-21)
-- [ ] SSH from VPS to Windows via Tailscale IP
-- [ ] SSH from iPhone (via VPS) to Windows
+- [x] SSH from VPS to Windows via Tailscale IP (2026-01-21)
+- [x] SSH from iPhone (via VPS) to Windows (same as above)
 - [ ] RDP from VPS to Windows (if needed)
 - [x] Tailscale auto-restart configured (2026-01-21)
 - [x] SSH auto-restart configured (2026-01-21)
