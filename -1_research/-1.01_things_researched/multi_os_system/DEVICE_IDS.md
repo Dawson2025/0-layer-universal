@@ -55,4 +55,35 @@ When setting up a new device, you need to:
 All devices should show as **Connected** in the Syncthing web UI when they are online and on the same network (or have port 22000 accessible).
 
 ---
-Last updated: 2025-12-31
+
+## SSH Keys
+
+### Windows
+- **Key Type**: ed25519
+- **Public Key**: `ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINCwG5FmcXbdNrp+cldX8WLgCwCRc9OEd0xmtRlH60kn dawson-windows-git`
+- **Private Key Location**: `~/.ssh/id_ed25519`
+
+### Linux Laptop
+- **Key Type**: ed25519
+- **Public Key**: `ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOsafGsGzpQ+h/kQx5DE16EJXj3FwlPdDwE0Gf8LBUSF dawson@github`
+
+### VPS (Hetzner)
+- **Key Type**: ed25519
+- **Public Key**: `ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICRiRcYM71J8iBgoPG6qzc220hzGJcSKiaT346zIWu4w root@ubuntu-4gb-nbg1-1`
+
+### iPhone (Termius)
+- Check Termius app → Keychain → export public key
+
+---
+
+## Tailscale IPs
+
+| Device | Tailscale IP | Notes |
+|--------|--------------|-------|
+| VPS | 100.93.148.5 | Public IP: 46.224.184.10 |
+| Linux Laptop | 100.73.84.89 | |
+| iPhone | 100.75.210.27 | Client only |
+| Windows | 100.91.229.9 | laptop-gf3b5qv4 |
+
+---
+Last updated: 2026-01-21
