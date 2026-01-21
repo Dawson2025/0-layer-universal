@@ -449,6 +449,79 @@ scp linux:/tmp/state.png /tmp/state.png
 3. ⏳ **Add Windows to SSH mesh** - Add VPS, Linux, iPhone public keys to Windows authorized_keys
 4. ⏳ **Set up Termius on Windows** - Already installed, needs login
 5. ⏳ **Add Windows host to iPhone Termius** - Manual setup required
+6. ⏳ **Termius Host Groups & Keys via AutoHotkey** - Automate host group creation and SSH key import (see Windows Automation section below)
+
+### Windows GUI Automation (AutoHotkey)
+
+**Why Windows for Termius Automation?**
+- Linux xdotool has **known issues with Electron apps** (like Termius)
+- Windows AutoHotkey is the **easiest GUI automation tool** across all OSes
+- AutoHotkey has native Windows API integration for precise window/control targeting
+- Better reliability than xdotool for Electron apps
+
+**Termius Tasks to Automate on Windows:**
+
+1. **Create Host Groups:**
+   - `for_iphone` - hosts accessible from iPhone
+   - `for_laptop_linux` - hosts accessible from Linux laptop
+   - `for_laptop_windows` - hosts accessible from Windows
+   - `for_vps` - hosts accessible from VPS
+
+2. **Import SSH Keys to Keychain:**
+   - Windows laptop key (`~/.ssh/id_ed25519`) → label "windows-laptop"
+   - Can use AutoHotkey to navigate to KEY button, open dialog, and automate import
+
+3. **Assign Keys to Hosts:**
+   - Each host should use the appropriate key for the source device
+
+**AutoHotkey Script Template (save as `termius-setup.ahk`):**
+```autohotkey
+; Termius Host Group Automation
+#Requires AutoHotkey v2.0
+
+; Helper function to wait for Termius window
+WaitForTermius() {
+    WinWait "Termius"
+    WinActivate "Termius"
+    Sleep 500
+}
+
+; Create a new host group
+CreateHostGroup(groupName) {
+    WaitForTermius()
+
+    ; Click NEW HOST dropdown (adjust coordinates as needed)
+    Click 200, 100  ; Adjust to NEW HOST button location
+    Sleep 300
+
+    ; Select "New Group" from dropdown
+    Send "{Down}{Down}{Enter}"  ; Navigate to New Group option
+    Sleep 500
+
+    ; Type group name
+    Send groupName
+    Sleep 200
+    Send "{Enter}"
+    Sleep 500
+}
+
+; Main script - create all groups
+^!t::  ; Ctrl+Alt+T to run
+{
+    CreateHostGroup("for_iphone")
+    CreateHostGroup("for_laptop_linux")
+    CreateHostGroup("for_laptop_windows")
+    CreateHostGroup("for_vps")
+    MsgBox "Host groups created!"
+}
+```
+
+**Resources:**
+- AutoHotkey v2 docs: https://www.autohotkey.com/docs/v2/
+- Window Spy tool (included with AHK) to find control coordinates
+- Use `ControlClick` for more reliable clicking on specific controls
+
+**Note:** Unlike Linux xdotool, AutoHotkey can reliably click on Electron app buttons because it uses Windows native APIs that Electron properly responds to.
 
 ### Future
 6. ⏳ **Monitor Oracle Cloud ticket** - May migrate to free tier if approved

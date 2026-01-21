@@ -20,6 +20,39 @@ Define WHAT needs to be done. This stage transforms gathered requests into clear
 - Document constraints and dependencies
 - Identify success criteria
 - Create instruction documents
+- **Evaluate optimal OS/environment for the task** (see below)
+
+## Environment Assessment Checklist
+
+Before starting implementation, evaluate which OS/environment is best suited:
+
+### GUI Automation Tasks
+| OS | Tool | Ease | Electron App Support |
+|----|------|------|---------------------|
+| **Windows** | AutoHotkey | ⭐⭐⭐ Best | ✅ Excellent |
+| **macOS** | AppleScript | ⭐⭐ Medium | ⚠️ Fair |
+| **Linux** | xdotool | ⭐ Lowest | ❌ Poor (Electron issues) |
+
+**Key insight:** If task involves automating Electron apps (VS Code, Termius, Slack, Discord, etc.), **prefer Windows with AutoHotkey**.
+
+### Development Tasks
+- **Cross-platform CLI tools**: Any OS works
+- **Linux-specific tools**: Use Linux or WSL
+- **Windows-specific tools**: Use Windows
+- **GPU-intensive (ML, Unreal)**: Check GPU passthrough support
+
+### Questions to Ask
+1. Does this task involve GUI automation? → Consider Windows
+2. Is the target app Electron-based? → Strongly consider Windows
+3. Are there CLI alternatives? → CLI is more portable than GUI automation
+4. Is there an API? → API > GUI automation always
+5. What OS has the best tooling for this specific task?
+
+### Research Before Implementation
+- Search for existing automation guides/scripts for the target application
+- Check if CLI/API alternatives exist (often more reliable than GUI automation)
+- Verify tool compatibility (e.g., xdotool doesn't work on Wayland)
+- Document findings before proceeding
 
 ## Handoffs
 - **From Previous (00_request_gathering)**: REQUEST_DOCUMENT
