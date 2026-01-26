@@ -22,6 +22,7 @@ Research project exploring how to improve the AI system architecture, including 
 | `layer_0_feature_ai_manager_hierarchy_system` | ~57% implemented | Hierarchical AI manager/worker patterns |
 | `layer_0_feature_ai_dynamic_memory_system` | Early research | Dynamic memory structures for AI |
 | `layer_0_feature_multi_os_system` | ~85% complete | Cross-OS workspace sync and remote access infrastructure |
+| `layer_0_feature_better_layer_stage_system` | ~5% setup | Improvements to Layer-Stage Framework |
 
 ## Key Documents
 - `layer_0/layer_0_features/layer_0_feature_ai_manager_hierarchy_system/layer_0/layer_0_03_sub_layers/sub_layer_0_02_knowledge_system/overview/`
