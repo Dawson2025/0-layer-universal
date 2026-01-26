@@ -1,6 +1,7 @@
 {
   "current_stage": "stage_0_09_current_product",
   "last_updated": "2026-01-25",
+  "system_status": "running",
   "issues": [
     {
       "id": "inotify_exhaustion",
@@ -10,6 +11,15 @@
       "date_reported": "2026-01-25",
       "date_resolved": "2026-01-25",
       "output": "stage_0_09_current_product/outputs/inotify_fix.md"
+    },
+    {
+      "id": "sync_health_service",
+      "title": "Sync Health Service Path Outdated",
+      "status": "resolved",
+      "stage": "stage_0_09_current_product",
+      "date_reported": "2026-01-25",
+      "date_resolved": "2026-01-25",
+      "output": "stage_0_09_current_product/outputs/sync_health_service_fix.md"
     }
   ]
 }
