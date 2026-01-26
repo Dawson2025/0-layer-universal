@@ -4,8 +4,8 @@
 Research feature focused on improving the Layer-Stage Framework system. This includes enhancements to layer organization, stage workflows, numbering conventions, and integration patterns.
 
 ## Status
-**Progress**: ~5% (Initial Setup)
-**Current Stage**: 01_request_gathering
+**Progress**: ~15% (Research)
+**Current Stage**: 02_research
 
 ## Purpose
 Research and design improvements to the Layer-Stage Framework:
@@ -50,9 +50,10 @@ layer_0_feature_better_layer_stage_system/
 ## Key Locations
 | Content | Location |
 |---------|----------|
+| **Reference Implementation** | `layer_0/layer_0_03_sub_layers/sub_layer_0_02_knowledge_system/reference_implementation/` |
 | Overview | `layer_0/layer_0_03_sub_layers/sub_layer_0_02_knowledge_system/overview/` |
 | Research findings | `layer_0/layer_0_03_sub_layers/sub_layer_0_02_knowledge_system/things_learned/` |
-| Current stage outputs | `layer_0/layer_0_99_stages/stage_0_01_request_gathering/outputs/` |
+| Current stage outputs | `layer_0/layer_0_99_stages/stage_0_02_research/outputs/` |
 
 ## Research Areas
 1. **Layer Numbering Improvements**
