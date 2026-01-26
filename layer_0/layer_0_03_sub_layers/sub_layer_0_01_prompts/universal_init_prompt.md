@@ -15,14 +15,14 @@ git pull && git status
 
 | Priority | Document | Path |
 |----------|----------|------|
-| 1 | Master Index | `0_context/MASTER_DOCUMENTATION_INDEX.md` |
-| 2 | System Overview | `0_context/SYSTEM_OVERVIEW.md` |
-| 3 | Framework Guide | `0_context/layer_1/layer_1_features/layer_1_feature_layer_stage_system/layer_1/layer_1_02_sub_layers/README.md` |
+| 1 | This File | You're reading it |
+| 2 | Layer-Stage Framework | `layer_1/layer_1_features/layer_1_feature_layer_stage_system/` |
+| 3 | Project CLAUDE.md | Find via `find . -name "CLAUDE.md" -type f` |
 
 ### 2. Find Project Init Prompt
 ```bash
 # List project init prompts
-ls -d ../**/project_init_prompt.md 2>/dev/null
+find . -name "project_init_prompt.md" -type f 2>/dev/null
 ```
 
 ---
@@ -30,24 +30,26 @@ ls -d ../**/project_init_prompt.md 2>/dev/null
 ## Directory Structure
 
 ```
-0_layer_universal/0_context/
-├── MASTER_DOCUMENTATION_INDEX.md    # Start here
-├── SYSTEM_OVERVIEW.md
-├── layer_1/layer_1_features/layer_1_feature_layer_stage_system/         # System management & planning
-│   └── stages/
-│       └── stage_0.08_current_product/
-│           ├── changes/             # Change protocols
-│           └── setup/               # Entity creation guides
-├── layer_1/layer_1_features/layer_1_feature_layer_stage_system/layer_1/layer_1_02_sub_layers/      # Templates & framework docs
-└── layer_0/
-    ├── 0.02_sub_layers/
-    │   ├── sub_layer_0_01_basic_prompts_throughout/  ← You are here
-    │   ├── sub_layer_0_02_software_engineering_knowledge_system/
-    │   ├── sub_layer_0.03_universal_principles/
-    │   ├── sub_layer_0.04_universal_rules/
-    │   └── sub_layer_0.05-0.014_setup_dependant_sub_layers/
-    │       └── 0.01_universal_setup_file_tree_0/    # OS, AI apps, MCP, tools, protocols
-    └── 0.99_stages/                 # Universal layer stages (N.00-N.09)
+0_layer_universal/
+├── CLAUDE.md                           # Root AI context
+├── layer_0/                            # Universal layer (applies to all)
+│   ├── layer_0_00_layer_registry/      # Layer registry
+│   ├── layer_0_01_ai_manager_system/   # AI agent management
+│   │   ├── agnostic/                   # Tool-agnostic config
+│   │   └── specific/                   # Tool-specific config
+│   ├── layer_0_02_manager_handoff_documents/
+│   ├── layer_0_03_sub_layers/          # Sub-layers (you are here)
+│   │   ├── sub_layer_0_01_prompts/     # ← You are here
+│   │   ├── sub_layer_0_02_knowledge_system/
+│   │   ├── sub_layer_0_03_principles/
+│   │   ├── sub_layer_0_04_rules/
+│   │   └── sub_layer_0_05+_setup_dependant/
+│   └── layer_0_99_stages/              # Universal stages
+├── layer_1/
+│   └── layer_1_features/
+│       └── layer_1_feature_layer_stage_system/  # Framework definition
+└── layer_-1_research/                  # Research projects
+    └── layer_-1_better_ai_system/      # AI system improvements
 ```
 
 ---
@@ -56,30 +58,23 @@ ls -d ../**/project_init_prompt.md 2>/dev/null
 
 ### Universal Rules & Protocols
 ```
-sub_layer_0.04_universal_rules/0_instruction_docs/
-├── UNIVERSAL_AGENT_TERMINAL_PROTOCOL.md
-├── cursor_terminal_issues.md
-├── ai_agent_documentation_rule.md
-└── git_commit_rule.md
+layer_0/layer_0_03_sub_layers/sub_layer_0_04_rules/
+├── 0_instruction_docs/
+│   ├── MASTER_TERMINAL_EXECUTION_REFERENCE.md
+│   ├── git_commit_rule.md
+│   └── subagent_usage_decision_matrix.md
+├── CROSS_OS_COMPATIBILITY_RULES.md
+└── LAYER_CONTEXT_HEADER_PROTOCOL.md
 ```
 
-### Setup & Configuration (Unified Tree)
+### Setup & Configuration
 ```
-sub_layer_0.05-0.014_setup_dependant_sub_layers/0.01_universal_setup_file_tree_0/
-└── 0.05_operating_systems/
-    ├── _shared/          # Universal (all OSes)
-    ├── linux_ubuntu/
-    ├── macos/
-    ├── windows/
-    └── wsl/
-        └── 0.06_environments/
-            └── 0.07_coding_apps/
-                └── 0.09_ai_apps/
-                    ├── 0.10_mcp_servers_and_apis_and_clis_and_secrets/
-                    ├── 0.11_ai_models/
-                    ├── 0.12_universal_tools/
-                    ├── 0.13_protocols/
-                    └── 0.14_agent_setup/
+layer_0/layer_0_03_sub_layers/sub_layer_0_05+_setup_dependant/
+└── sub_layer_0_05_operating_systems/
+    ├── sub_layer_0_05_linux_ubuntu/
+    ├── sub_layer_0_05_macos/
+    ├── sub_layer_0_05_windows/
+    └── sub_layer_0_05_wsl/
 ```
 
 ---
@@ -88,14 +83,10 @@ sub_layer_0.05-0.014_setup_dependant_sub_layers/0.01_universal_setup_file_tree_0
 
 | Task | Go To |
 |------|-------|
-| MCP setup | `.../0.10_mcp_servers_and_apis_and_clis_and_secrets/` |
-| Browser automation | `.../0.13_protocols/` |
-| Git operations | `sub_layer_0.04_universal_rules/0_instruction_docs/git_commit_rule.md` |
-| Terminal issues | `sub_layer_0.04_universal_rules/0_instruction_docs/cursor_terminal_issues.md` |
-| Universal tools | `.../0.12_universal_tools/` |
-| Documentation protocol | `.../0.13_protocols/file_documentation_and_organization/` |
-| **Create new entity** | `layer_1/layer_1_features/layer_1_feature_layer_stage_system/stages/stage_0.08_current_product/setup/instantiation_guide.md` |
-| **Subagent decisions** | `sub_layer_0.04_universal_rules/0_instruction_docs/subagent_usage_decision_matrix.md` |
+| Git operations | `sub_layer_0_04_rules/0_instruction_docs/git_commit_rule.md` |
+| Terminal protocol | `sub_layer_0_04_rules/0_instruction_docs/MASTER_TERMINAL_EXECUTION_REFERENCE.md` |
+| **Create new entity** | `layer_1/layer_1_features/layer_1_feature_layer_stage_system/layer_1/layer_1_99_stages/stage_0_08_current_product/setup/instantiation_guide.md` |
+| **Subagent decisions** | `sub_layer_0_04_rules/0_instruction_docs/subagent_usage_decision_matrix.md` |
 
 ---
 
@@ -103,12 +94,13 @@ sub_layer_0.05-0.014_setup_dependant_sub_layers/0.01_universal_setup_file_tree_0
 
 | Layer | Purpose | Location |
 |-------|---------|----------|
+| -1 | Research | `layer_-1_research/` - Experimental projects |
 | 0 | Universal | `layer_0/` - Applies to all projects |
-| 1+ | Project | `<N>_layer_<project>/layer_<N>/` - Project-specific |
-| N+1 | Features/Components | `<project>/layer_<N+1>/` - Nested under project |
+| 1+ | Projects/Features | `layer_1/layer_1_features/` - Project-specific |
 
 **Key principle:** Lower layers are prerequisites for higher layers.
-**Naming:** Top-level projects use `<N>_layer_<name>/` format (e.g., `1_layer_school/`)
+
+**Naming Convention:** Use underscores, not dots: `layer_0_01_name`, `stage_0_02_name`
 
 ---
 
@@ -118,41 +110,40 @@ Each layer has stages representing workflow phases:
 
 | Stage | Name | Purpose |
 |-------|------|---------|
-| 00 | request_gathering | Clarify requirements |
-| 01 | **research** | Explore problem space, gather info |
-| 02 | instructions | Define constraints |
-| 03 | planning | Break into subtasks |
-| 04 | design | Architecture decisions |
-| 05 | development | Implementation |
-| 06 | testing | Verification |
-| 07 | criticism | Review |
-| 08 | fixing | Corrections |
-| 09 | **current_product** | **The actual deliverable** |
-| 10 | archives | Historical versions |
+| 01 | request_gathering | Clarify requirements |
+| 02 | research | Explore problem space, gather info |
+| 03 | instructions | Define constraints |
+| 04 | planning | Break into subtasks |
+| 05 | design | Architecture decisions |
+| 06 | development | Implementation |
+| 07 | testing | Verification |
+| 08 | criticism | Review |
+| 09 | fixing | Corrections |
+| 10 | current_product | The actual deliverable |
+| 11 | archives | Historical versions |
 
 **Stage structure:**
 ```
-stage_N_XX_name/
+stage_0_XX_name/
 ├── ai_agent_system/       # Agent configuration
 ├── hand_off_documents/    # Concise handoff notes (reference outputs)
 └── outputs/               # Stage artifacts
 ```
 
-**Current stage tracked in:** `<layer>/layer_<N>_99_stages/status_<N>.json`
+**Current stage tracked in:** `<layer>/layer_N_99_stages/status.json`
 
 ---
 
 ## Workflow (Abbreviated)
 
 1. **Sync repos** - `git pull`
-2. **Read master index** - Understand available docs
-3. **Load project init** - If working on a project
-4. **Identify layer/stage** - What level? What phase?
-5. **Load relevant sub_layers** - Based on task type
-6. **Execute work** - Follow stage guidelines
-7. **Update status** - Mark progress
+2. **Read CLAUDE.md** - Start from root or project CLAUDE.md
+3. **Identify layer/stage** - What level? What phase?
+4. **Load relevant sub_layers** - Based on task type
+5. **Execute work** - Follow stage guidelines
+6. **Update status** - Mark progress in status.json
 
-**Full workflow:** See `layer_1/layer_1_features/layer_1_feature_layer_stage_system/layer_1/layer_1_02_sub_layers/README.md`
+**Full workflow:** See `layer_1/layer_1_features/layer_1_feature_layer_stage_system/`
 
 ---
 
@@ -160,23 +151,19 @@ stage_N_XX_name/
 
 1. **Always sync first** - `git pull` before any work
 2. **Read before writing** - Understand existing context
-3. **Follow terminal protocol** - See `UNIVERSAL_AGENT_TERMINAL_PROTOCOL.md`
+3. **Follow terminal protocol** - See `MASTER_TERMINAL_EXECUTION_REFERENCE.md`
 4. **Document changes** - Update relevant docs when making changes
 5. **Commit & push at significant points** - See below
 
 ### Commit & Push Protocol
 
-**Commit and push to remote at each significant milestone**, not just at the end of a session. This ensures:
-- Work is preserved if session is interrupted
-- Progress is trackable
-- Changes can be reviewed incrementally
+**Commit and push to remote at each significant milestone**, not just at the end of a session.
 
 **When to commit & push:**
 - After completing a logical unit of work (feature, fix, refactor)
 - After updating documentation
 - After making structural changes (renames, reorganization)
 - Before starting a risky operation
-- At natural breakpoints in multi-step tasks
 
 **Commit message format:**
 ```
@@ -189,52 +176,47 @@ Co-Authored-By: <AI model> <noreply@anthropic.com>
 
 **Types:** `feat`, `fix`, `docs`, `refactor`, `chore`, `style`, `test`
 
-See `git_commit_rule.md` for full guidelines.
-
 ---
 
 ## Reference Documents
 
-For detailed information, see these documents:
-
 | Topic | Document |
 |-------|----------|
-| System Management | `layer_1/layer_1_features/layer_1_feature_layer_stage_system/README.md` |
-| **Creating Entities** | `layer_1/layer_1_features/layer_1_feature_layer_stage_system/stages/stage_0.08_current_product/setup/instantiation_guide.md` |
-| Restructuring/Migration | `layer_1/layer_1_features/layer_1_feature_layer_stage_system/stages/stage_0.08_current_product/changes/restructuring_migration_protocol.md` |
-| **Traversal/Path Updates** | `layer_1/layer_1_features/layer_1_feature_layer_stage_system/stages/stage_0.08_current_product/changes/traversal_update_protocol.md` |
-| Layer/Stage Framework | `layer_1/layer_1_features/layer_1_feature_layer_stage_system/layer_1/layer_1_02_sub_layers/README.md` |
-| Flexible Layering | `layer_1/layer_1_features/layer_1_feature_layer_stage_system/layer_1/layer_1_02_sub_layers/FLEXIBLE_LAYERING_SYSTEM.md` |
-| Extending Framework | `layer_1/layer_1_features/layer_1_feature_layer_stage_system/layer_1/layer_1_02_sub_layers/EXTENDING_THE_FRAMEWORK.md` |
-| Feature Types | `layer_1/layer_1_features/layer_1_feature_layer_stage_system/layer_1/layer_1_02_sub_layers/FEATURE_TYPE_DECISION_GUIDE.md` |
-| Workflow Features | `layer_1/layer_1_features/layer_1_feature_layer_stage_system/layer_1/layer_1_02_sub_layers/WORKFLOW_FEATURE_PATTERN.md` |
-| Sub-layer Registry | `layer_0/0.02_sub_layers/0.00_sub_layer_registry/README.md` |
+| Layer-Stage Framework | `layer_1/layer_1_features/layer_1_feature_layer_stage_system/CLAUDE.md` |
+| **Creating Entities** | `.../layer_1_99_stages/stage_0_08_current_product/setup/instantiation_guide.md` |
+| Framework Docs | `.../layer_1_02_sub_layers/sub_layer_1_05+_setup_dependant/sub_layer_1_05_framework_docs/` |
+| Context Gathering | `layer_0/layer_0_01_ai_manager_system/agnostic/context_gathering_rules.md` |
+| Sub-layer Registry | `layer_0/layer_0_03_sub_layers/layer_0_00_sub_layer_registry/README.md` |
+
+---
+
+## Known Issues & Research
+
+> **Active Research:** The AI system has known inconsistencies being addressed in:
+> `layer_-1_research/layer_-1_better_ai_system/`
+>
+> **Key Issues:**
+> - Naming conventions (standardizing to underscores)
+> - Stage numbering (11 stages: 00-10)
+> - Documentation drift from implementation
+>
+> See: `layer_-1_research/layer_-1_better_ai_system/layer_0/layer_0_99_stages/stage_0_02_research/outputs/ai_system_problems_audit.md`
 
 ---
 
 ## Maintenance Note
 
-> **When making structural changes to the framework** (renaming directories, adding new stages/layers, modifying the hierarchy):
+> **When making structural changes to the framework:**
 >
-> **Critical:**
 > 1. **Content migration** - Migrate actual content, not just create empty structures
 > 2. **Traversal updates** - Update ALL navigation docs so agents can find the new paths
 >
-> See:
-> - `layer_1/layer_1_features/layer_1_feature_layer_stage_system/stages/stage_0.08_current_product/changes/restructuring_migration_protocol.md`
-> - `layer_1/layer_1_features/layer_1_feature_layer_stage_system/stages/stage_0.08_current_product/changes/traversal_update_protocol.md`
+> **Priority files to update:**
+> 1. **This file** (`universal_init_prompt.md`)
+> 2. Root `CLAUDE.md`
+> 3. Framework docs in `layer_1_feature_layer_stage_system`
 >
-> | Priority | File | What to Update |
-> |----------|------|----------------|
-> | 1 | **This file** (`universal_init_prompt.md`) | Directory paths & structure diagrams |
-> | 2 | `MASTER_DOCUMENTATION_INDEX.md` | Document links |
-> | 3 | `SYSTEM_OVERVIEW.md` | Architecture description |
-> | 4 | `layer_1/layer_1_features/layer_1_feature_layer_stage_system/layer_1/layer_1_02_sub_layers/README.md` | Framework structure |
-> | 5 | All `*.md` files with hardcoded paths | Use `grep` + `sed` for bulk updates |
->
-> **Verify:** After changes, test navigation from this file to new locations.
->
-> **Last updated:** 2026-01-25 (Added research stage (01), outputs folders, stage_registry system)
+> **Last updated:** 2026-01-25 (Fixed naming to use underscores, updated paths to match actual structure)
 
 ---
 

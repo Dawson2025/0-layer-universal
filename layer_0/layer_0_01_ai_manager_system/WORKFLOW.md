@@ -18,13 +18,10 @@ Every stage in the staging system includes an `_ai_manager/` folder that tells A
 ## Stage Structure (with AI Manager)
 
 ```
-stage_X.XX_[name]/
-├── HANDOFF.md              ← Status summary (read first)
-├── _ai_manager/            ← AI coordination
-│   ├── INSTRUCTIONS.md     ← What to do at this stage
-│   ├── CONTEXT.md          ← Background info (optional)
-│   └── RULES.md            ← Stage-specific rules (optional)
-└── output/                 ← Detailed artifacts
+stage_0_XX_[name]/
+├── ai_agent_system/        ← AI coordination (stage-specific guidance)
+├── hand_off_documents/     ← incoming.json / outgoing.json
+└── outputs/                ← Detailed artifacts
     └── [OUTPUT_FILES].md
 ```
 
@@ -32,13 +29,13 @@ stage_X.XX_[name]/
 
 ## AI Manager by Stage
 
-### Stage 0.00: Request Gathering
+### Stage 0.01: Request Gathering
 
 **Role**: Understand and document requirements
 
 **Entry Protocol**:
-1. Read HANDOFF.md
-2. Read _ai_manager/INSTRUCTIONS.md
+1. Read hand_off_documents/incoming.json
+2. Read ai_agent_system/ guidance
 3. Review user's original request
 
 **Tasks**:
@@ -47,20 +44,20 @@ stage_X.XX_[name]/
 - Define acceptance criteria
 
 **Exit Protocol**:
-- Create `output/REQUEST_*.md`
-- Update HANDOFF.md → COMPLETE
-- Note: "Ready for stage_0.01"
+- Create `outputs/REQUEST_*.md`
+- Update hand_off_documents/outgoing.json → COMPLETE
+- Note: "Ready for stage_0_03"
 
 ---
 
-### Stage 0.01: Instructions/Specifications
+### Stage 0.03: Instructions/Specifications
 
 **Role**: Create technical specifications
 
 **Entry Protocol**:
-1. Read HANDOFF.md
-2. Read _ai_manager/INSTRUCTIONS.md
-3. Read stage_0.00/output/REQUEST_*.md
+1. Read hand_off_documents/incoming.json
+2. Read ai_agent_system/ guidance
+3. Read stage_0_01_request_gathering/outputs/REQUEST_*.md
 
 **Tasks**:
 - Define technical approach
@@ -68,20 +65,20 @@ stage_X.XX_[name]/
 - Document constraints
 
 **Exit Protocol**:
-- Create `output/SPEC_*.md`
-- Update HANDOFF.md → COMPLETE
-- Note: "Ready for stage_0.02"
+- Create `outputs/SPEC_*.md`
+- Update hand_off_documents/outgoing.json → COMPLETE
+- Note: "Ready for stage_0_04"
 
 ---
 
-### Stage 0.02: Planning
+### Stage 0.04: Planning
 
 **Role**: Create execution plan
 
 **Entry Protocol**:
-1. Read HANDOFF.md
-2. Read _ai_manager/INSTRUCTIONS.md
-3. Read stage_0.01/output/SPEC_*.md
+1. Read hand_off_documents/incoming.json
+2. Read ai_agent_system/ guidance
+3. Read stage_0_03_instructions/outputs/SPEC_*.md
 
 **Tasks**:
 - Break into phases/steps
@@ -89,20 +86,20 @@ stage_X.XX_[name]/
 - Create rollback plan
 
 **Exit Protocol**:
-- Create `output/PLAN_*.md`
-- Update HANDOFF.md → COMPLETE
-- Note: "Ready for stage_0.03"
+- Create `outputs/PLAN_*.md`
+- Update hand_off_documents/outgoing.json → COMPLETE
+- Note: "Ready for stage_0_05"
 
 ---
 
-### Stage 0.03: Execution
+### Stage 0.06: Development
 
 **Role**: Execute plan, track progress
 
 **Entry Protocol**:
-1. Read HANDOFF.md
-2. Read _ai_manager/INSTRUCTIONS.md
-3. Read stage_0.02/output/PLAN_*.md
+1. Read hand_off_documents/incoming.json
+2. Read ai_agent_system/ guidance
+3. Read stage_0_04_planning/outputs/PLAN_*.md
 
 **Tasks**:
 - Execute steps from plan
@@ -111,9 +108,9 @@ stage_X.XX_[name]/
 - Generate outputs
 
 **Exit Protocol**:
-- Update `output/PROGRESS_*.md`
-- Store generated files in output/
-- Update HANDOFF.md with final status
+- Update `outputs/PROGRESS_*.md`
+- Store generated files in outputs/
+- Update hand_off_documents/outgoing.json with final status
 
 ---
 
@@ -125,12 +122,12 @@ stage_X.XX_[name]/
 3. **USE** lowercase with underscores
 
 ### Token Efficiency
-1. Read HANDOFF.md first (~500 tokens)
-2. Only read output/ files when details needed
+1. Read hand_off_documents/incoming.json first (~500 tokens)
+2. Only read outputs/ files when details needed
 3. Reference files, don't repeat content
 
 ### Handoff Protocol
-1. Update HANDOFF.md before stopping
+1. Update hand_off_documents/outgoing.json before stopping
 2. List clear next actions
 3. Note any blockers
 4. Another agent should be able to continue seamlessly
@@ -151,10 +148,10 @@ See `_templates/` folder for:
 
 ## Creating a New Project
 
-1. Create `0.99_stages/` folder
-2. Create stage folders: `stage_0.00_*`, `stage_0.01_*`, etc.
+1. Create `layer_0_99_stages/` folder
+2. Create stage folders: `stage_0_01_*`, `stage_0_02_*`, etc.
 3. In each stage, create:
-   - `HANDOFF.md` (from template)
-   - `_ai_manager/INSTRUCTIONS.md` (from template)
-   - `output/` folder
-4. Start work in stage_0.00
+   - `ai_agent_system/` (from template)
+   - `hand_off_documents/`
+   - `outputs/`
+4. Start work in stage_0_01_request_gathering

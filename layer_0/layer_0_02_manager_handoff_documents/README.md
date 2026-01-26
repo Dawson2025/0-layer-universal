@@ -62,7 +62,7 @@ This schema defines:
   "layer": 0,
   "stage": "request",
   "from": "user:john@example.com",
-  "to": "layer_0/stage_0.00_request_gathering",
+  "to": "layer_0/stage_0_01_request_gathering",
   "task": "Create new web application for project management",
   "status": "pending",
   "createdAt": "2024-12-23T10:00:00Z"
@@ -82,7 +82,7 @@ This schema defines:
   "id": "external-response-20241223-001",
   "layer": 0,
   "stage": "archiving",
-  "from": "layer_0/stage_0.09_archives",
+  "from": "layer_0/stage_0_09_archives",
   "to": "user:john@example.com",
   "task": "Web application project management system",
   "status": "completed",
@@ -110,7 +110,7 @@ This schema defines:
   "id": "l0-to-l1-webapp-20241223",
   "kind": "vertical",
   "layer": 0,
-  "from": "layer_0/stage_0.02_planning",
+  "from": "layer_0/stage_0_04_planning",
   "to": "layer_1/projects/pm-webapp/request",
   "task": "Implement project management web application",
   "constraints": [

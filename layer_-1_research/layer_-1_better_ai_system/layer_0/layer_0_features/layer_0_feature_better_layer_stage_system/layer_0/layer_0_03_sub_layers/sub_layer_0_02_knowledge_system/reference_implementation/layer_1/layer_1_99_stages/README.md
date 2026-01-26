@@ -31,14 +31,14 @@ See `status.json` for current stage tracking.
 
 ## What Goes Where
 
-### stage_0.08_current_product/
+### stage_0_08_current_product/
 The actual deliverables of system management work:
 - Current change protocols
 - Current setup guides
 - Current verification scripts
 - Active system documentation
 
-### stage_0.09_archives/
+### stage_0_09_archives/
 Previous versions:
 - Old protocol versions
 - Deprecated guides

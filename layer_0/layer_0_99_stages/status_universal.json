@@ -1,43 +1,59 @@
 {
-  "layer_id": "0_universal",
-  "current_stage": "0.000_instructions",
+  "layer_id": "layer_0",
+  "layer_name": "Universal",
+  "current_stage": "stage_0_01_request_gathering",
   "stages": {
-    "0.000_instructions": {
+    "stage_0_01_request_gathering": {
       "state": "not_started",
       "last_update": null,
       "notes": ""
     },
-    "0.001_planning": {
+    "stage_0_02_research": {
       "state": "not_started",
       "last_update": null,
       "notes": ""
     },
-    "0.002_design": {
+    "stage_0_03_instructions": {
       "state": "not_started",
       "last_update": null,
       "notes": ""
     },
-    "0.003_development": {
+    "stage_0_04_planning": {
       "state": "not_started",
       "last_update": null,
       "notes": ""
     },
-    "0.004_testing": {
+    "stage_0_05_design": {
       "state": "not_started",
       "last_update": null,
       "notes": ""
     },
-    "0.005_criticism": {
+    "stage_0_06_development": {
       "state": "not_started",
       "last_update": null,
       "notes": ""
     },
-    "0.006_fixing": {
+    "stage_0_07_testing": {
       "state": "not_started",
       "last_update": null,
       "notes": ""
     },
-    "0.007_archives": {
+    "stage_0_08_criticism": {
+      "state": "not_started",
+      "last_update": null,
+      "notes": ""
+    },
+    "stage_0_09_fixing": {
+      "state": "not_started",
+      "last_update": null,
+      "notes": ""
+    },
+    "stage_0_10_current_product": {
+      "state": "not_started",
+      "last_update": null,
+      "notes": ""
+    },
+    "stage_0_11_archives": {
       "state": "not_started",
       "last_update": null,
       "notes": ""

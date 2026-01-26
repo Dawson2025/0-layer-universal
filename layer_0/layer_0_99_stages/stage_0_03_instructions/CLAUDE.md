@@ -60,7 +60,7 @@ Before starting implementation, evaluate which OS/environment is best suited:
 
 ## Directory Structure
 ```
-stage_0_01_instructions/
+stage_0_03_instructions/
 ├── CLAUDE.md             # This file
 ├── ai_agent_system/      # AI tool configs for this stage
 └── hand_off_documents/   # Stage handoffs

@@ -21,7 +21,7 @@ Use manager pattern when implementing complex universal systems that span multip
 
 1. **Read Incoming Handoff**:
    - Location: `../hand_off_documents/incoming.json`
-   - Source: stage_0.03_design
+   - Source: stage_0_05_design
    - Contains: Design specifications, architecture, interfaces
 
 2. **Decompose to Workers**:
@@ -41,7 +41,7 @@ Use manager pattern when implementing complex universal systems that span multip
 
 5. **Write Outgoing Handoff**:
    - Location: `../hand_off_documents/outgoing.json`
-   - Destination: stage_0.05_testing
+   - Destination: stage_0_07_testing
    - Contains: List of files created/modified, implementation notes, deviations
 
 ### Worker Workflow (Most Common for Development)
@@ -79,8 +79,8 @@ For focused implementation tasks (single file, module, or small set of related f
   "id": "l0-design-to-dev-20241223",
   "layer": 0,
   "stage": "design",
-  "from": "layer_0/stage_0.03_design",
-  "to": "layer_0/stage_0.04_development",
+  "from": "layer_0/stage_0_05_design",
+  "to": "layer_0/stage_0_06_development",
   "task": "Implement new universal logging protocol",
   "constraints": [
     "All Layer 0 constraints apply",
@@ -139,8 +139,8 @@ For focused implementation tasks (single file, module, or small set of related f
   "id": "l0-dev-to-testing-20241223",
   "layer": 0,
   "stage": "development",
-  "from": "layer_0/stage_0.04_development",
-  "to": "layer_0/stage_0.05_testing",
+  "from": "layer_0/stage_0_06_development",
+  "to": "layer_0/stage_0_07_testing",
   "task": "Universal logging protocol implementation complete",
   "status": "completed",
   "results": {

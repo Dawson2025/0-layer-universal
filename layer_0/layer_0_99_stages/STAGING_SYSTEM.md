@@ -10,72 +10,52 @@
 ## Stage Structure
 
 ```
-0.99_stages/
-├── stage_0.00_request_gathering/
-│   ├── HANDOFF.md              # Short summary (read first)
-│   ├── _ai_manager/            # AI coordination
-│   │   └── INSTRUCTIONS.md     # What AI should do here
-│   └── output/                 # Detailed artifacts
-│       └── REQUEST_*.md        # Full request details
+layer_0_99_stages/
+├── stage_0_01_request_gathering/
+│   ├── ai_agent_system/        # AI coordination
+│   ├── hand_off_documents/     # incoming.json / outgoing.json
+│   └── outputs/                # Detailed artifacts
 │
-├── stage_0.01_instructions/
-│   ├── HANDOFF.md
-│   ├── _ai_manager/
-│   │   └── INSTRUCTIONS.md
-│   └── output/
-│       └── SPEC_*.md           # Technical specifications
+├── stage_0_02_research/
+│   ├── ai_agent_system/
+│   ├── hand_off_documents/
+│   └── outputs/
 │
-├── stage_0.02_planning/
-│   ├── HANDOFF.md
-│   ├── _ai_manager/
-│   │   └── INSTRUCTIONS.md
-│   └── output/
-│       └── PLAN_*.md           # Execution plans
+├── stage_0_03_instructions/
+│   ├── ai_agent_system/
+│   ├── hand_off_documents/
+│   └── outputs/
 │
-└── stage_0.03_execution/
-    ├── HANDOFF.md
-    ├── _ai_manager/
-    │   └── INSTRUCTIONS.md
-    └── output/
-        ├── PROGRESS_*.md       # Progress tracking
-        └── [generated files]   # Scripts, configs, etc.
+├── stage_0_04_planning/
+├── stage_0_05_design/
+├── stage_0_06_development/
+├── stage_0_07_testing/
+├── stage_0_08_criticism/
+├── stage_0_09_fixing/
+├── stage_0_10_current_product/
+└── stage_0_11_archives/
 ```
 
 ---
 
 ## Handoff Documents
 
-**Purpose**: Short documents (~20-50 lines) that let agents quickly understand:
+**Purpose**: Concise handoff files that let agents quickly understand:
 - Current status
 - What's been done
 - What needs to be done next
 - Where to find detailed info
 
-**Format**:
-```markdown
-# Stage X.XX Handoff: [Project Name]
-
-## Status: [In Progress / Blocked / Complete]
-
-## Summary
-[2-3 sentences]
-
-## Completed
-- Item 1
-- Item 2
-
-## Next Actions
-- [ ] Action 1
-- [ ] Action 2
-
-## Output Files
-- `output/FILE.md` - Description
-
-## Blockers
-- [Any blockers]
-
-## Pickup Instructions
-[What the next agent should do first]
+**Format** (JSON handoff):
+```json
+{
+  "schemaVersion": "1.0.0",
+  "stage": "stage_0_03_instructions",
+  "status": "in_progress",
+  "summary": "Constraints defined, pending planning.",
+  "next_actions": ["Create planning outline", "Identify dependencies"],
+  "outputs": ["outputs/SPEC_LAYER_STAGE.md"]
+}
 ```
 
 ---
@@ -100,24 +80,47 @@
 
 ## Stage Definitions
 
-### Stage 0.00: Request Gathering
+### Stage 0.01: Request Gathering
 - Capture user requirements
 - Define problem statement
 - List acceptance criteria
 
-### Stage 0.01: Instructions (Spec)
+### Stage 0.02: Research
+- Gather context and explore options
+- Validate assumptions
+- Capture constraints or unknowns
+
+### Stage 0.03: Instructions (Spec)
 - Technical specifications
 - API/interface definitions
 - Data structures
 
-### Stage 0.02: Planning
+### Stage 0.04: Planning
 - Step-by-step execution plan
 - Dependencies
 - Time estimates
 - Rollback plans
 
-### Stage 0.03: Execution
-- Track progress
+### Stage 0.05: Design
+- Architecture and interface decisions
+
+### Stage 0.06: Development
+- Implement changes
+
+### Stage 0.07: Testing
+- Verify functionality
+
+### Stage 0.08: Criticism
+- Review against standards
+
+### Stage 0.09: Fixing
+- Address review findings
+
+### Stage 0.10: Current Product
+- Active deliverables and guides
+
+### Stage 0.11: Archives
+- Historical artifacts and superseded docs
 - Log completed items
 - Note blockers
 - Store generated output

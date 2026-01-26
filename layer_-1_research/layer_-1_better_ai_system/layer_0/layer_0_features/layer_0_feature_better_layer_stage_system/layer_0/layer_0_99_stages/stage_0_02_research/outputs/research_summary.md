@@ -83,6 +83,20 @@
 
 ---
 
+## Full System Audit
+
+A comprehensive audit of the entire AI system was completed as part of this research.
+
+**Location**: `../../../../../../layer_0/layer_0_99_stages/stage_0_02_research/outputs/ai_system_problems_audit.md`
+
+This audit covers problems beyond just the Layer-Stage system, including:
+- AI Manager System issues
+- Sub-layer problems
+- Rules & protocols conflicts
+- Documentation drift across all components
+
+---
+
 ## Next Research Tasks
 
 1. [ ] Deep dive into stage workflow patterns
@@ -90,6 +104,8 @@
 3. [ ] Research CLI automation opportunities
 4. [ ] Design migration strategy for existing entities
 5. [ ] Create proof-of-concept for registry system
+6. [ ] Address critical issues from full system audit
+7. [ ] Coordinate with other research features (ai_manager_hierarchy, multi_os)
 
 ---
 
@@ -100,8 +116,9 @@
 - [x] Document current system
 - [x] Identify inconsistencies
 - [x] Create improvement proposals
+- [x] Complete full system audit (parent research project)
 - [ ] Design detailed specifications
 - [ ] Create migration scripts
 - [ ] Test improvements
 
-**Estimated Progress**: 35%
+**Estimated Progress**: 40%

@@ -27,20 +27,20 @@ The Universal layer defines global rules, tools, and standards that cascade down
 - layer_0_00_ai_manager_system: manager docs/configs.
 - layer_0_01_manager_handoff_documents: `0.00_to_universal/` and `0.01_to_specific/` for cross-layer handoffs.
 
-## Slots (stored under `layer_0/layer_0_02_sub_layers/` as `sub_layer_0.xx_*`)
+## Slots (stored under `layer_0/layer_0_02_sub_layers/` as `sub_layer_0_xx_*`)
 - sub_layer_0_01_basic_prompts_throughout: session init, what-to-do-next, core prompts.
 - sub_layer_0_02_software_engineering_knowledge_system: general SE knowledge map.
-- sub_layer_0.03_universal_principles: philosophies, values.
-- sub_layer_0.04_universal_rules: hard constraints (git, terminal, security).
-- sub_layer_0.05_os_setup: OS-specific setup (macOS/Linux/Windows).
-- sub_layer_0.06_environment_setup: environment-level setup (git/github auth, credentials, shells).
-- sub_layer_0.07_coding_app_setup: IDE/editor configuration.
-- sub_layer_0.08_apps_browsers_extensions_setup: general apps, browsers, extensions.
-- sub_layer_0.09_ai_apps_tools_setup: AI clients/CLIs and integrations.
-- sub_layer_0.10_mcp_servers_and_tools_setup: MCP server setup and configuration (depends on 0.09).
-- sub_layer_0.11_ai_models: approved models and usage guidance.
-- sub_layer_0.12_universal_tools: cross-project scripts/utilities.
-- sub_layer_0.13_agent_setup: agent configuration with model fallbacks and MCP integration (depends on 0.09, 0.10, 0.11, 0.12).
+- sub_layer_0_03_universal_principles: philosophies, values.
+- sub_layer_0_04_universal_rules: hard constraints (git, terminal, security).
+- sub_layer_0_05_os_setup: OS-specific setup (macOS/Linux/Windows).
+- sub_layer_0_06_environment_setup: environment-level setup (git/github auth, credentials, shells).
+- sub_layer_0_07_coding_app_setup: IDE/editor configuration.
+- sub_layer_0_08_apps_browsers_extensions_setup: general apps, browsers, extensions.
+- sub_layer_0_09_ai_apps_tools_setup: AI clients/CLIs and integrations.
+- sub_layer_0_10_mcp_servers_and_tools_setup: MCP server setup and configuration (depends on 0.09).
+- sub_layer_0_11_ai_models: approved models and usage guidance.
+- sub_layer_0_12_universal_tools: cross-project scripts/utilities.
+- sub_layer_0_13_agent_setup: agent configuration with model fallbacks and MCP integration (depends on 0.09, 0.10, 0.11, 0.12).
 
 ## AI Setup Dependency Chain (0.09–0.13)
 
@@ -53,15 +53,15 @@ The slots 0.09–0.13 form a critical dependency chain for AI agent setup:
 
 Configure these in order when setting up a new AI environment.
 
-## Stages (layer_0/layer_0_99_stages/, folders named `stage_0.xx_*`)
-- stage_0.00_request_gathering
+## Stages (layer_0/layer_0_99_stages/, folders named `stage_0_xx_*`)
+- stage_0_00_request_gathering
 - stage_0_01_instructions
-- stage_0.02_planning
-- stage_0.03_design
-- stage_0.04_implementation
-- stage_0.05_testing
-- stage_0.06_criticism
-- stage_0.07_fixing
-- stage_0.09_archives
+- stage_0_02_planning
+- stage_0_03_design
+- stage_0_04_implementation
+- stage_0_05_testing
+- stage_0_06_criticism
+- stage_0_07_fixing
+- stage_0_09_archives
 
 Copy this template, rename for your universal context, and populate per slot.

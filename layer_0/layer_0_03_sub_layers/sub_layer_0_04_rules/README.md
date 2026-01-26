@@ -50,4 +50,4 @@ This sub-layer contains universal rules that apply across all layers, stages, OS
 
 - All rules in this directory are **mandatory** unless explicitly marked as optional
 - Safety and governance rules take precedence over other rules in case of conflict
-- See observability protocol for logging requirements: `../sub_layer_0.13_universal_protocols/observability/`
+- See observability protocol for logging requirements: `../sub_layer_0_13_universal_protocols/observability/`

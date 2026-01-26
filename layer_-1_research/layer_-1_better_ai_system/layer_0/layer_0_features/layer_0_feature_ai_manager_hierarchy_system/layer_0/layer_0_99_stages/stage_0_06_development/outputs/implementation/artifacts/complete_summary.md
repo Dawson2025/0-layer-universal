@@ -86,8 +86,8 @@ The complete integration of the **Ideal AI Manager Hierarchy System** into the `
 - ✅ Integration with existing AI framework docs
 
 **Key Locations**:
-- `layer_0/.../sub_layer_0.13_universal_protocols/framework_orchestration/`
-- `layer_0/.../sub_layer_0.13_universal_protocols/cli_recursion/`
+- `layer_0/.../sub_layer_0_13_universal_protocols/framework_orchestration/`
+- `layer_0/.../sub_layer_0_13_universal_protocols/cli_recursion/`
 
 **Outcome**: Agents can discover and apply orchestration and CLI recursion patterns
 
@@ -104,9 +104,9 @@ The complete integration of the **Ideal AI Manager Hierarchy System** into the `
 - ✅ Quick reference guide for Phase 6 content
 
 **Key Locations**:
-- `layer_0/.../sub_layer_0.13_universal_protocols/observability/`
-- `layer_0/.../sub_layer_0.04_universal_rules/safety_governance.md`
-- `layer_0/.../sub_layer_0.05_os_setup/.../deployment/`
+- `layer_0/.../sub_layer_0_13_universal_protocols/observability/`
+- `layer_0/.../sub_layer_0_04_universal_rules/safety_governance.md`
+- `layer_0/.../sub_layer_0_05_os_setup/.../deployment/`
 
 **Outcome**: Production-ready guidance for observability, safety, and deployment
 
@@ -254,11 +254,11 @@ The complete integration of the **Ideal AI Manager Hierarchy System** into the `
 - **Context Files**: CLAUDE.md (managers), AGENTS.md (workers), GEMINI.md (planning)
 
 ### Operational Guidance
-- **Orchestration**: `layer_0/.../sub_layer_0.13_universal_protocols/framework_orchestration/`
-- **CLI Recursion**: `layer_0/.../sub_layer_0.13_universal_protocols/cli_recursion/`
-- **Observability**: `layer_0/.../sub_layer_0.13_universal_protocols/observability/`
-- **Safety/Governance**: `layer_0/.../sub_layer_0.04_universal_rules/safety_governance.md`
-- **Deployment**: `layer_0/.../sub_layer_0.05_os_setup/.../deployment/`
+- **Orchestration**: `layer_0/.../sub_layer_0_13_universal_protocols/framework_orchestration/`
+- **CLI Recursion**: `layer_0/.../sub_layer_0_13_universal_protocols/cli_recursion/`
+- **Observability**: `layer_0/.../sub_layer_0_13_universal_protocols/observability/`
+- **Safety/Governance**: `layer_0/.../sub_layer_0_04_universal_rules/safety_governance.md`
+- **Deployment**: `layer_0/.../sub_layer_0_05_os_setup/.../deployment/`
 
 ### Adoption Resources
 - **Rollout Plan**: `/home/dawson/.cursor/plans/ai_manager_hierarchy_rollout_plan.md`

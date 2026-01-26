@@ -2,7 +2,7 @@
 
 **OS Variant**: Windows Subsystem for Linux (WSL)
 **Layer**: 0 (Universal)
-**Stage**: stage_0_01_instructions
+**Stage**: stage_0_03_instructions
 **Tool Context**: Gemini CLI (research, planning, long reasoning)
 
 ---

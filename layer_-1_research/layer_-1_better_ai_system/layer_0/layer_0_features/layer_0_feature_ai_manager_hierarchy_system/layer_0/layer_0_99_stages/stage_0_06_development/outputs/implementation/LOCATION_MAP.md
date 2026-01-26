@@ -48,24 +48,24 @@ Files in each: `CLAUDE.md` (managers), `AGENTS.md` (workers), `GEMINI.md` (plann
 → Usage examples: In schema doc + manager system READMEs
 
 ### "I need framework orchestration patterns"
-→ Overview: `sub_layer_0.13_universal_protocols/framework_orchestration/0_instruction_docs/framework_orchestration_overview.md`
+→ Overview: `sub_layer_0_13_universal_protocols/framework_orchestration/0_instruction_docs/framework_orchestration_overview.md`
 → Normative spec: `-1_research/.../things_learned/ideal_ai_manager_hierarchy_system/framework_orchestration.md`
 
 ### "I need CLI recursion examples"
-→ Adapted syntax: `sub_layer_0.13_universal_protocols/cli_recursion/0_instruction_docs/cli_recursion_syntax.md`
+→ Adapted syntax: `sub_layer_0_13_universal_protocols/cli_recursion/0_instruction_docs/cli_recursion_syntax.md`
 → Normative spec: `-1_research/.../things_learned/ideal_ai_manager_hierarchy_system/cli_recursion_syntax.md`
 
 ### "I need observability guidance"
-→ Protocol: `sub_layer_0.13_universal_protocols/observability/README.md`
+→ Protocol: `sub_layer_0_13_universal_protocols/observability/README.md`
 → Normative spec: `-1_research/.../things_learned/ideal_ai_manager_hierarchy_system/observability_and_logging.md`
 
 ### "I need safety/governance rules"
-→ Rules: `sub_layer_0.04_universal_rules/safety_governance.md`
+→ Rules: `sub_layer_0_04_universal_rules/safety_governance.md`
 → Normative spec: `-1_research/.../things_learned/ideal_ai_manager_hierarchy_system/safety_and_governance.md`
 
 ### "I need deployment guidance"
-→ AI Manager deployment: `sub_layer_0.05_os_setup/.../deployment/AI_MANAGER_HIERARCHY_DEPLOYMENT.md`
-→ Application deployment: `sub_layer_0.05_os_setup/.../DEPLOYMENT_GUIDE.md`
+→ AI Manager deployment: `sub_layer_0_05_os_setup/.../deployment/AI_MANAGER_HIERARCHY_DEPLOYMENT.md`
+→ Application deployment: `sub_layer_0_05_os_setup/.../DEPLOYMENT_GUIDE.md`
 → Normative spec: `-1_research/.../things_learned/ideal_ai_manager_hierarchy_system/production_deployment.md`
 
 ### "I want to see what was implemented"
@@ -84,7 +84,7 @@ Files in each: `CLAUDE.md` (managers), `AGENTS.md` (workers), `GEMINI.md` (plann
 | Master index | `/code/0_layer_universal/0_context/MASTER_DOCUMENTATION_INDEX.md` |
 | System overview | `/code/0_layer_universal/0_context/SYSTEM_OVERVIEW.md` |
 | Usage guide | `/code/0_layer_universal/0_context/USAGE_GUIDE.md` |
-| Quick start | `layer_0/.../sub_layer_0.01.../HIERARCHY_QUICK_START.md` |
+| Quick start | `layer_0/.../sub_layer_0_01.../HIERARCHY_QUICK_START.md` |
 
 ### Framework & Standards
 | What | Where |
@@ -109,11 +109,11 @@ In each directory: `CLAUDE.md`, `AGENTS.md`, `GEMINI.md`
 ### Operational Protocols
 | What | Where |
 |------|-------|
-| Framework orchestration | `sub_layer_0.13_universal_protocols/framework_orchestration/0_instruction_docs/` |
-| CLI recursion | `sub_layer_0.13_universal_protocols/cli_recursion/0_instruction_docs/` |
-| Observability | `sub_layer_0.13_universal_protocols/observability/` |
-| Safety/governance | `sub_layer_0.04_universal_rules/safety_governance.md` |
-| Deployment | `sub_layer_0.05_os_setup/.../deployment/` |
+| Framework orchestration | `sub_layer_0_13_universal_protocols/framework_orchestration/0_instruction_docs/` |
+| CLI recursion | `sub_layer_0_13_universal_protocols/cli_recursion/0_instruction_docs/` |
+| Observability | `sub_layer_0_13_universal_protocols/observability/` |
+| Safety/governance | `sub_layer_0_04_universal_rules/safety_governance.md` |
+| Deployment | `sub_layer_0_05_os_setup/.../deployment/` |
 
 ### Adoption Resources
 | What | Where |
@@ -163,13 +163,13 @@ layer_0/
 │   │   ├── HIERARCHY_QUICK_START.md
 │   │   ├── HIERARCHY_ADOPTION_CHECKLIST.md
 │   │   └── MIGRATION_GUIDE.md
-│   ├── sub_layer_0.04_universal_rules/
+│   ├── sub_layer_0_04_universal_rules/
 │   │   ├── README.md
 │   │   └── safety_governance.md
-│   ├── sub_layer_0.05_os_setup/
+│   ├── sub_layer_0_05_os_setup/
 │   │   └── .../deployment/AI_MANAGER_HIERARCHY_DEPLOYMENT.md
-│   ├── sub_layer_0.12_universal_tools/README.md
-│   └── sub_layer_0.13_universal_protocols/
+│   ├── sub_layer_0_12_universal_tools/README.md
+│   └── sub_layer_0_13_universal_protocols/
 │       ├── README.md
 │       ├── framework_orchestration/
 │       ├── cli_recursion/
@@ -268,7 +268,7 @@ layer_3_components/
 /home/dawson/code/0_layer_universal/0_context/layer_0/0.01_manager_handoff_documents/0.00_to_universal/handoff_schema.md
 
 # Observability protocol
-/home/dawson/code/0_layer_universal/0_context/layer_0/0.02_sub_layers/sub_layer_0.13_universal_protocols/observability/README.md
+/home/dawson/code/0_layer_universal/0_context/layer_0/0.02_sub_layers/sub_layer_0_13_universal_protocols/observability/README.md
 
 # Quick start guide
 /home/dawson/code/0_layer_universal/0_context/layer_0/0.02_sub_layers/sub_layer_0_01_basic_prompts_throughout/HIERARCHY_QUICK_START.md
@@ -291,10 +291,10 @@ layer_3_components/
 `layer_N_.../N.99_stages/stage_N.01_instructions/ai_agent_system/os/{wsl|linux_ubuntu|windows|macos}/{CLAUDE|AGENTS|GEMINI}.md`
 
 ### Universal protocols
-`layer_0/0.02_sub_layers/sub_layer_0.13_universal_protocols/{protocol_name}/`
+`layer_0/0.02_sub_layers/sub_layer_0_13_universal_protocols/{protocol_name}/`
 
 ### Universal rules
-`layer_0/0.02_sub_layers/sub_layer_0.04_universal_rules/{rule_name}.md`
+`layer_0/0.02_sub_layers/sub_layer_0_04_universal_rules/{rule_name}.md`
 
 ### Normative specs
 `-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/{spec_name}.md`
@@ -317,7 +317,7 @@ cd layer_0
 cd layer_0/0.99_stages/stage_0_01_instructions/ai_agent_system/os/wsl
 
 # Protocols
-cd layer_0/0.02_sub_layers/sub_layer_0.13_universal_protocols
+cd layer_0/0.02_sub_layers/sub_layer_0_13_universal_protocols
 
 # Adoption guides
 cd layer_0/0.02_sub_layers/sub_layer_0_01_basic_prompts_throughout

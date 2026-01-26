@@ -99,7 +99,7 @@ sub_layer_2.05-2.14_setup_dependant_sub_layers/
 
 ## Relationship to Universal Context
 
-This structure mirrors the universal context's `sub_layer_0.05-0.014_setup_dependant_sub_layers/`. The numbering aligns:
+This structure mirrors the universal context's `sub_layer_0_05-0.014_setup_dependant_sub_layers/`. The numbering aligns:
 
 | Universal | Sub-Project | Purpose |
 |-----------|-------------|---------|

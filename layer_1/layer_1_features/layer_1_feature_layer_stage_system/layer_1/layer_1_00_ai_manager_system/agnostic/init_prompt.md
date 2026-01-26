@@ -1,7 +1,7 @@
 # Layer 1: Layer-Stage System Feature
 
 ## Inherited From
-- Parent: ../../layer_0/layer_0_00_ai_manager_system/agnostic/init_prompt.md
+- Parent: ../../layer_0/layer_0_01_ai_manager_system/agnostic/init_prompt.md
 
 ## Purpose
 This feature defines the Layer-Stage Framework patterns used throughout the system.
@@ -12,7 +12,7 @@ This feature defines the Layer-Stage Framework patterns used throughout the syst
 - Child features (Layer 2) define specific concepts
 
 ## Current Stage
-- See layer_1_99_stages/status_1.json
+- See layer_1_99_stages/status.json
 
 ## Children
 - layer_2/layer_2_features/layer_2_feature_stage_definitions/

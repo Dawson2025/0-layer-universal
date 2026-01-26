@@ -9,7 +9,7 @@
 ## Contents
 
 ```
-stage_0.08_current_product/
+stage_0_08_current_product/
 ├── README.md                 ← You are here
 ├── changes/                  # Change protocols
 │   ├── README.md
@@ -51,12 +51,12 @@ stage_0.08_current_product/
 
 ## When to Archive
 
-Move content to `../stage_0.09_archives/` when:
+Move content to `../stage_0_09_archives/` when:
 - Creating a major new version of a protocol
 - Deprecating a guide in favor of a new approach
 - Significant restructuring of the system
 
-Archive format: `../stage_0.09_archives/v<version>_<date>/`
+Archive format: `../stage_0_09_archives/v<version>_<date>/`
 
 ---
 
@@ -64,5 +64,5 @@ Archive format: `../stage_0.09_archives/v<version>_<date>/`
 
 | Stage | Purpose |
 |-------|---------|
-| `stage_0.02_planning/` | Planning docs (MCP_DOCUMENTATION_PLAN.md) |
-| `stage_0.09_archives/` | Historical versions |
+| `stage_0_02_planning/` | Planning docs (MCP_DOCUMENTATION_PLAN.md) |
+| `stage_0_09_archives/` | Historical versions |

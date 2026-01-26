@@ -8,4 +8,4 @@ Snapshot before layer-stage system restructure
 - directory_structure.txt: Full directory tree (3 levels deep)
 
 ## Related Documents
-- stages/stage_0.02_planning/hand_off_documents/IMPLEMENTATION_PLAN_LAYER_STAGE_RESTRUCTURE.md
+- stages/stage_0_02_planning/hand_off_documents/IMPLEMENTATION_PLAN_LAYER_STAGE_RESTRUCTURE.md

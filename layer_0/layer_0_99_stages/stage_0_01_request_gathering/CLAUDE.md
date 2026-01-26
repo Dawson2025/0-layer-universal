@@ -1,4 +1,4 @@
-# Stage 00: Request Gathering
+# Stage 01: Request Gathering
 
 ## Purpose
 Capture and document initial requests from stakeholders. This stage is the entry point where raw requirements, ideas, and needs are collected before being formalized.
@@ -26,7 +26,7 @@ Capture and document initial requests from stakeholders. This stage is the entry
 
 ## Directory Structure
 ```
-stage_0.00_request_gathering/
+stage_0_01_request_gathering/
 ├── CLAUDE.md             # This file
 ├── ai_agent_system/      # AI tool configs for this stage
 └── hand_off_documents/   # Stage handoffs

@@ -40,7 +40,7 @@ The integration of the Ideal AI Manager Hierarchy System into the 0_ai_context s
 **Evidence**:
 - ✅ `layer_1/layer_1_features/layer_1_feature_layer_stage_system/layer_1/layer_1_02_sub_layers/README.md` (line 5): Explicit statement that framework implements the Ideal AI Manager Hierarchy System
 - ✅ Layer definitions (L0-L4+) match `architecture.md` and summary spec
-- ✅ Stage pipeline explicitly includes `stage_0.00_request_gathering` and matches chronological flow
+- ✅ Stage pipeline explicitly includes `stage_0_00_request_gathering` and matches chronological flow
 - ✅ Framework references ideal hierarchy as design rationale
 - ✅ AI Setup Dependency Chain (0.08 → 0.09 → 0.10 → 0.11 → 0.12) documented
 
@@ -67,7 +67,7 @@ The integration of the Ideal AI Manager Hierarchy System into the 0_ai_context s
   - Fields: schemaVersion, id, kind, layer, stage, from, to, task, constraints, artifacts, status
 
 - ⚠️ Stage-specific manager/worker workflows:
-  - Some stage READMEs reference the hierarchy (e.g., `stage_0.02_planning/ai_agent_system/README.md`, `stage_0.04_development/ai_agent_system/README.md`)
+  - Some stage READMEs reference the hierarchy (e.g., `stage_0_02_planning/ai_agent_system/README.md`, `stage_0_04_development/ai_agent_system/README.md`)
   - Need to verify all L0-L3 stage READMEs consistently document manager/worker patterns
 
 **Remaining Work**:
@@ -107,8 +107,8 @@ The integration of the Ideal AI Manager Hierarchy System into the 0_ai_context s
    - ✅ All files include normative spec reference
 
 3. **Documentation updates**:
-   - ✅ `sub_layer_0.12_universal_tools/README.md` - Added "Tool Context Files and OS Variants" section
-   - ✅ `sub_layer_0.10_mcp_servers_and_tools_setup/.../0.03_operating_systems/README.md` - Added integration section
+   - ✅ `sub_layer_0_12_universal_tools/README.md` - Added "Tool Context Files and OS Variants" section
+   - ✅ `sub_layer_0_10_mcp_servers_and_tools_setup/.../0.03_operating_systems/README.md` - Added integration section
    - ✅ Both link to `os_and_quartets.md` as normative specification
 
 **Key Design Patterns**:
@@ -133,12 +133,12 @@ The integration of the Ideal AI Manager Hierarchy System into the 0_ai_context s
 - ❌ No dedicated `cli_recursion_syntax.md` found in universal tools/protocols
 - ❌ No framework orchestration index document found
 - ✅ Some related content exists:
-  - `sub_layer_0.12_universal_tools/.../ai-development-frameworks/` (framework comparison, integration guide, tool selection)
+  - `sub_layer_0_12_universal_tools/.../ai-development-frameworks/` (framework comparison, integration guide, tool selection)
   - Need to align this with ideal hierarchy's `framework_orchestration.md` and `cli_recursion_syntax.md`
 
 **Required Work**:
 1. **Framework Orchestration**:
-   - Create index document in `sub_layer_0.12_universal_tools` or `sub_layer_0.13_universal_protocols`
+   - Create index document in `sub_layer_0_12_universal_tools` or `sub_layer_0_13_universal_protocols`
    - Summarize LangGraph, AutoGen, CrewAI, MetaGPT integration per `framework_orchestration.md`
    - Link to detailed orchestration doc
 
@@ -159,19 +159,19 @@ The integration of the Ideal AI Manager Hierarchy System into the 0_ai_context s
 **Status**: Not started
 
 **Evidence**:
-- ✅ Some deployment content exists: `sub_layer_0.05_os_setup/.../DEPLOYMENT_GUIDE.md`
+- ✅ Some deployment content exists: `sub_layer_0_05_os_setup/.../DEPLOYMENT_GUIDE.md`
 - ❌ No dedicated observability/logging doc aligned with ideal hierarchy
 - ❌ No safety/governance doc in universal rules/protocols aligned with ideal hierarchy
 - ❌ Deployment content not aligned with `production_deployment.md` from ideal spec
 
 **Required Work**:
 1. **Observability & Logging**:
-   - Create `observability.md` in universal sub-layer (likely `sub_layer_0.12_universal_tools` or dedicated observability folder)
+   - Create `observability.md` in universal sub-layer (likely `sub_layer_0_12_universal_tools` or dedicated observability folder)
    - Summarize logging/metrics/tracing from `observability_and_logging.md`
    - Specify where logs live in layer/stage/handoff structure
 
 2. **Safety & Governance**:
-   - Add safety/governance rule or protocol in `sub_layer_0.04_universal_rules` or `sub_layer_0.13_universal_protocols`
+   - Add safety/governance rule or protocol in `sub_layer_0_04_universal_rules` or `sub_layer_0_13_universal_protocols`
    - Encode guardrails from `safety_and_governance.md`
    - Tie into existing git rules, approval gates, budget limits
 

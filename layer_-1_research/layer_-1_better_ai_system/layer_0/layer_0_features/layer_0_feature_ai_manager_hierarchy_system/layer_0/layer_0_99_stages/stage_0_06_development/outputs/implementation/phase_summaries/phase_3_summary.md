@@ -117,8 +117,8 @@ Establish consistent operational patterns by:
 **Status**: Partially complete
 **Evidence**: Some stage READMEs reference hierarchy patterns
 **Example files**:
-- `layer_0/0.99_stages/stage_0.02_planning/ai_agent_system/README.md`
-- `layer_0/0.99_stages/stage_0.04_development/ai_agent_system/README.md`
+- `layer_0/0.99_stages/stage_0_02_planning/ai_agent_system/README.md`
+- `layer_0/0.99_stages/stage_0_04_development/ai_agent_system/README.md`
 
 **Remaining Work**:
 - Full audit of all stage-level `ai_agent_system/README.md` files

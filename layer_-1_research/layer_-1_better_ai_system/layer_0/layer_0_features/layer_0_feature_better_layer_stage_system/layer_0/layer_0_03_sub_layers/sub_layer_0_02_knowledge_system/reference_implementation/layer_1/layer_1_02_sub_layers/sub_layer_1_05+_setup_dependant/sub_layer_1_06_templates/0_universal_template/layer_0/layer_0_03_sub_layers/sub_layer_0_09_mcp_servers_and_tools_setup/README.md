@@ -1,4 +1,4 @@
-# sub_layer_0.09
+# sub_layer_0_09
 
 This slot is part of the universal layer template.
 See the parent template README for slot descriptions.

@@ -17,31 +17,31 @@
 ## Common Tasks
 
 ### "I need to spawn a worker agent"
-1. Read CLI recursion syntax: `sub_layer_0.13_universal_protocols/cli_recursion/`
+1. Read CLI recursion syntax: `sub_layer_0_13_universal_protocols/cli_recursion/`
 2. Check your OS context: `layer_N/.../os/{your_os}/AGENTS.md`
 3. Create handoff document using schema: `handoff_schema.md`
 4. Use CLI pattern from syntax guide
 
 ### "I need to integrate a framework (LangGraph, AutoGen, etc.)"
-1. Read framework orchestration: `sub_layer_0.13_universal_protocols/framework_orchestration/`
+1. Read framework orchestration: `sub_layer_0_13_universal_protocols/framework_orchestration/`
 2. Check when to use frameworks vs. handoffs
 3. Follow integration patterns in guide
 4. Reference normative spec: `framework_orchestration.md` in ideal hierarchy
 
 ### "I need to log/monitor my work"
-1. Read observability protocol: `sub_layer_0.13_universal_protocols/observability/`
+1. Read observability protocol: `sub_layer_0_13_universal_protocols/observability/`
 2. Follow structured logging format (JSON)
 3. Place logs in: `layer_N/stage_N.XX_.../ai_agent_system/logs/`
 4. Include trace_id for distributed tracing
 
 ### "I need to check my permissions"
-1. Read safety/governance: `sub_layer_0.04_universal_rules/safety_governance.md`
+1. Read safety/governance: `sub_layer_0_04_universal_rules/safety_governance.md`
 2. Find your layer's permission level
 3. Check approval gate requirements
 4. Verify budget limits
 
 ### "I need to deploy to production"
-1. Read deployment overview: `sub_layer_0.05_os_setup/.../deployment/AI_MANAGER_HIERARCHY_DEPLOYMENT.md`
+1. Read deployment overview: `sub_layer_0_05_os_setup/.../deployment/AI_MANAGER_HIERARCHY_DEPLOYMENT.md`
 2. Choose architecture (single-machine, distributed, production scale)
 3. Configure environment (dev/staging/prod)
 4. Follow deployment pipeline
@@ -85,19 +85,19 @@ layer_N/.../stage_N.01_instructions/ai_agent_system/os/{OS}/GEMINI.md
 
 ### Operational Protocols
 ```
-sub_layer_0.13_universal_protocols/framework_orchestration/
-sub_layer_0.13_universal_protocols/cli_recursion/
-sub_layer_0.13_universal_protocols/observability/
+sub_layer_0_13_universal_protocols/framework_orchestration/
+sub_layer_0_13_universal_protocols/cli_recursion/
+sub_layer_0_13_universal_protocols/observability/
 ```
 
 ### Rules & Governance
 ```
-sub_layer_0.04_universal_rules/safety_governance.md
+sub_layer_0_04_universal_rules/safety_governance.md
 ```
 
 ### Deployment
 ```
-sub_layer_0.05_os_setup/.../deployment/AI_MANAGER_HIERARCHY_DEPLOYMENT.md
+sub_layer_0_05_os_setup/.../deployment/AI_MANAGER_HIERARCHY_DEPLOYMENT.md
 ```
 
 ### Adoption Resources

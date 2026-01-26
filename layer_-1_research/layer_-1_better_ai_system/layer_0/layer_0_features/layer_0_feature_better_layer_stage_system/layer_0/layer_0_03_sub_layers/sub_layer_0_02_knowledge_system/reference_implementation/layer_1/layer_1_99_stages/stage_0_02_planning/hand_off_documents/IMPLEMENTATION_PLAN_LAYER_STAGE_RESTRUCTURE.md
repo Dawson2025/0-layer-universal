@@ -304,7 +304,7 @@ sub_layer_0_02_* → sub_layer_0_02_*
 ```
 RENAME:
 stage_0_01_* → stage_0_01_*
-stage_0.02_* → stage_0_02_*
+stage_0_02_* → stage_0_02_*
 ...etc
 ```
 
@@ -582,7 +582,7 @@ sub_layer_0_01_* → sub_layer_0_01_*
 sub_layer_0_02_* → sub_layer_0_02_*
 
 stage_0_01_* → stage_0_01_*
-stage_0.02_* → stage_0_02_*
+stage_0_02_* → stage_0_02_*
 
 (Apply same pattern at all layer depths)
 ```
@@ -1041,7 +1041,7 @@ DELETE (after content moved):
 
 ---
 
-**Document Location:** `/home/dawson/dawson-workspace/code/0_layer_universal/0_context/layer_1/layer_1_features/layer_1_feature_layer_stage_system/stages/stage_0.02_planning/IMPLEMENTATION_PLAN_LAYER_STAGE_RESTRUCTURE.md`
+**Document Location:** `/home/dawson/dawson-workspace/code/0_layer_universal/0_context/layer_1/layer_1_features/layer_1_feature_layer_stage_system/stages/stage_0_02_planning/IMPLEMENTATION_PLAN_LAYER_STAGE_RESTRUCTURE.md`
 
 **Last Updated:** 2026-01-15
 

@@ -28,7 +28,7 @@ Preserve completed work for future reference. This stage maintains historical re
 
 ## Directory Structure
 ```
-stage_0.09_archives/
+stage_0_11_archives/
 ├── CLAUDE.md             # This file
 ├── ai_agent_system/      # AI tool configs for this stage
 └── hand_off_documents/   # Stage handoffs

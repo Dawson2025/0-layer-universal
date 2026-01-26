@@ -7,4 +7,4 @@ Fill in:
 - How it discovers active projects (agent registry path, selection rules).
 - Escalation/rollup path: `../0.01_manager_handoff_documents/0.00_to_universal/` (usually unused at universal).
 - Downstream path: `../0.01_manager_handoff_documents/0.01_to_specific/` (for packets to project managers).
-- Stage agents: map stage id → `../../0.99_stages/stage_0.xx_*/ai_agent_system/` entrypoints.
+- Stage agents: map stage id → `../../0.99_stages/stage_0_xx_*/ai_agent_system/` entrypoints.

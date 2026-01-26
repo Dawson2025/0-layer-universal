@@ -159,7 +159,7 @@ Same structure, with minimal scaffolds (to be fleshed out as needed).
 ### 5. Documentation Updates
 
 #### Universal Tools Documentation
-**File**: `/home/dawson/code/0_layer_universal/0_context/layer_0/0.02_sub_layers/sub_layer_0.12_universal_tools/README.md`
+**File**: `/home/dawson/code/0_layer_universal/0_context/layer_0/0.02_sub_layers/sub_layer_0_12_universal_tools/README.md`
 
 **Added Section**: "Tool Context Files and OS Variants"
 - References normative os_and_quartets.md specification
@@ -169,7 +169,7 @@ Same structure, with minimal scaffolds (to be fleshed out as needed).
 - Explains tool-specific context cascade
 
 #### MCP Servers Documentation
-**File**: `/home/dawson/code/0_layer_universal/0_context/layer_0/0.02_sub_layers/sub_layer_0.10_mcp_servers_and_tools_setup/0.02_mcp_config_options_0_file_tree_0/0.03_operating_systems/README.md`
+**File**: `/home/dawson/code/0_layer_universal/0_context/layer_0/0.02_sub_layers/sub_layer_0_10_mcp_servers_and_tools_setup/0.02_mcp_config_options_0_file_tree_0/0.03_operating_systems/README.md`
 
 **Added Section**: "Relationship to OS Variant and Quartet Pattern"
 - Maps MCP OS structure to ideal hierarchy specification
@@ -241,7 +241,7 @@ Structure supports auto-detection:
 ## Integration with Existing Systems
 
 ### 1. MCP Server Setup
-- MCP OS structure at `sub_layer_0.10_mcp_servers_and_tools_setup/0.02_mcp_config_options_0_file_tree_0/0.03_operating_systems/`
+- MCP OS structure at `sub_layer_0_10_mcp_servers_and_tools_setup/0.02_mcp_config_options_0_file_tree_0/0.03_operating_systems/`
 - Agent context OS structure at `*/stage_*.01_instructions/ai_agent_system/os/`
 - Documentation now links these two patterns
 - Agents can reference both MCP setup and execution context
@@ -336,8 +336,8 @@ Structure supports auto-detection:
 - **Layer 3**: `/home/dawson/code/0_layer_universal/0_context/layer_3_components/3.99_stages/stage_3.01_instructions/ai_agent_system/os/`
 
 ### Related Documentation
-- **Universal Tools**: `/home/dawson/code/0_layer_universal/0_context/layer_0/0.02_sub_layers/sub_layer_0.12_universal_tools/README.md`
-- **MCP OS Setup**: `/home/dawson/code/0_layer_universal/0_context/layer_0/0.02_sub_layers/sub_layer_0.10_mcp_servers_and_tools_setup/0.02_mcp_config_options_0_file_tree_0/0.03_operating_systems/README.md`
+- **Universal Tools**: `/home/dawson/code/0_layer_universal/0_context/layer_0/0.02_sub_layers/sub_layer_0_12_universal_tools/README.md`
+- **MCP OS Setup**: `/home/dawson/code/0_layer_universal/0_context/layer_0/0.02_sub_layers/sub_layer_0_10_mcp_servers_and_tools_setup/0.02_mcp_config_options_0_file_tree_0/0.03_operating_systems/README.md`
 - **Integration Plan**: `/home/dawson/.cursor/plans/integrate_ideal_ai_manager_hierarchy_system_into_0aicontext_8473a05b.plan.md`
 - **Progress Assessment**: `/home/dawson/.cursor/plans/integration_progress_assessment_2025-12-24.md`
 

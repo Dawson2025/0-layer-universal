@@ -104,8 +104,8 @@ layer_3_components/3.99_stages/stage_3.01_instructions/ai_agent_system/os/
 ### Updated Documentation (Phase 4)
 | File | Location | Update |
 |------|----------|--------|
-| sub_layer_0.12_universal_tools/README.md | Universal tools | Added "Tool Context Files and OS Variants" section |
-| sub_layer_0.10_mcp_servers.../0.03_operating_systems/README.md | MCP OS setup | Added "Relationship to OS Variant and Quartet Pattern" |
+| sub_layer_0_12_universal_tools/README.md | Universal tools | Added "Tool Context Files and OS Variants" section |
+| sub_layer_0_10_mcp_servers.../0.03_operating_systems/README.md | MCP OS setup | Added "Relationship to OS Variant and Quartet Pattern" |
 
 ---
 
@@ -114,14 +114,14 @@ layer_3_components/3.99_stages/stage_3.01_instructions/ai_agent_system/os/
 ### New Protocols Created
 | File | Location | Size | Purpose |
 |------|----------|------|---------|
-| framework_orchestration_overview.md | `sub_layer_0.13_universal_protocols/framework_orchestration/0_instruction_docs/` | ~15KB | LangGraph, AutoGen, CrewAI, MetaGPT integration |
-| cli_recursion_syntax.md | `sub_layer_0.13_universal_protocols/cli_recursion/0_instruction_docs/` | ~18KB | CLI patterns for spawning workers (OS-adapted) |
+| framework_orchestration_overview.md | `sub_layer_0_13_universal_protocols/framework_orchestration/0_instruction_docs/` | ~15KB | LangGraph, AutoGen, CrewAI, MetaGPT integration |
+| cli_recursion_syntax.md | `sub_layer_0_13_universal_protocols/cli_recursion/0_instruction_docs/` | ~18KB | CLI patterns for spawning workers (OS-adapted) |
 
 ### Updated Documentation (Phase 5)
 | File | Location | Update |
 |------|----------|--------|
-| sub_layer_0.13_universal_protocols/README.md | Universal protocols | Added sections 6 & 7 (orchestration, CLI recursion) |
-| sub_layer_0.12_universal_tools/README.md | Universal tools | Added "AI Manager Hierarchy Integration" section |
+| sub_layer_0_13_universal_protocols/README.md | Universal protocols | Added sections 6 & 7 (orchestration, CLI recursion) |
+| sub_layer_0_12_universal_tools/README.md | Universal tools | Added "AI Manager Hierarchy Integration" section |
 
 ---
 
@@ -130,16 +130,16 @@ layer_3_components/3.99_stages/stage_3.01_instructions/ai_agent_system/os/
 ### New Protocols and Rules
 | File | Location | Size | Purpose |
 |------|----------|------|---------|
-| observability/README.md | `sub_layer_0.13_universal_protocols/observability/` | 20KB | Logging, metrics, tracing protocol |
-| safety_governance.md | `sub_layer_0.04_universal_rules/` | 24KB | Permission levels, approval gates, governance |
-| AI_MANAGER_HIERARCHY_DEPLOYMENT.md | `sub_layer_0.05_os_setup/.../deployment/` | 28KB | Production deployment patterns |
+| observability/README.md | `sub_layer_0_13_universal_protocols/observability/` | 20KB | Logging, metrics, tracing protocol |
+| safety_governance.md | `sub_layer_0_04_universal_rules/` | 24KB | Permission levels, approval gates, governance |
+| AI_MANAGER_HIERARCHY_DEPLOYMENT.md | `sub_layer_0_05_os_setup/.../deployment/` | 28KB | Production deployment patterns |
 | PHASE_6_QUICK_REFERENCE.md | `sub_layer_0_02_sub_layers/` | 5KB | Quick reference for Phase 6 content |
 
 ### Updated Documentation (Phase 6)
 | File | Location | Update |
 |------|----------|--------|
-| sub_layer_0.13_universal_protocols/README.md | Universal protocols | Added observability protocol section |
-| sub_layer_0.04_universal_rules/README.md | Universal rules | Added safety/governance rules section |
+| sub_layer_0_13_universal_protocols/README.md | Universal protocols | Added observability protocol section |
+| sub_layer_0_04_universal_rules/README.md | Universal rules | Added safety/governance rules section |
 
 ---
 
@@ -260,10 +260,10 @@ layer_3_components/3.99_stages/stage_3.01_instructions/ai_agent_system/os/
 - `/code/0_layer_universal/0_context/layer_*/stage_*.01_instructions/ai_agent_system/os/{wsl,linux_ubuntu}/`
 
 **For Protocols**:
-- `/code/0_layer_universal/0_context/layer_0/0.02_sub_layers/sub_layer_0.13_universal_protocols/`
+- `/code/0_layer_universal/0_context/layer_0/0.02_sub_layers/sub_layer_0_13_universal_protocols/`
 
 **For Rules**:
-- `/code/0_layer_universal/0_context/layer_0/0.02_sub_layers/sub_layer_0.04_universal_rules/`
+- `/code/0_layer_universal/0_context/layer_0/0.02_sub_layers/sub_layer_0_04_universal_rules/`
 
 **For Adoption**:
 - `/code/0_layer_universal/0_context/layer_0/0.02_sub_layers/sub_layer_0_01_basic_prompts_throughout/`

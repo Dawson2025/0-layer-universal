@@ -431,8 +431,8 @@ Each init_prompt references:
 |-----------------|--------------|
 | `layer_1/layer_1_features/layer_1_feature_layer_stage_system/` | `layer_1_feature_layer_stage_system/` |
 | `layer_1/layer_1_features/layer_1_feature_layer_stage_system/stages/` | `.../layer_1/layer_1_99_stages/` |
-| `layer_1/layer_1_features/layer_1_feature_layer_stage_system/stages/stage_0.08_current_product/setup/` | `.../stage_1_08_current_product/setup/` |
-| `layer_1/layer_1_features/layer_1_feature_layer_stage_system/stages/stage_0.08_current_product/changes/` | `.../stage_1_08_current_product/changes/` |
+| `layer_1/layer_1_features/layer_1_feature_layer_stage_system/stages/stage_0_08_current_product/setup/` | `.../stage_1_08_current_product/setup/` |
+| `layer_1/layer_1_features/layer_1_feature_layer_stage_system/stages/stage_0_08_current_product/changes/` | `.../stage_1_08_current_product/changes/` |
 | `layer_1/layer_1_features/layer_1_feature_layer_stage_system/layer_1/layer_1_02_sub_layers/` | `.../layer_1/layer_1_02_sub_layers/sub_layer_1_05+_setup_dependant/` |
 | `layer_1/layer_1_features/layer_1_feature_layer_stage_system/layer_1/layer_1_02_sub_layers/*.md` | `.../sub_layer_1_05_framework_docs/` |
 | `layer_1/layer_1_features/layer_1_feature_layer_stage_system/layer_1/layer_1_02_sub_layers/*_template/` | `.../sub_layer_1_06_templates/` |
@@ -471,4 +471,4 @@ Each init_prompt references:
 
 **Related Documents:**
 - `INSTRUCTIONS_LAYER_STAGE_RESTRUCTURE.md` (overall restructure instructions)
-- `../../stage_0.02_planning/hand_off_documents/IMPLEMENTATION_PLAN_LAYER_STAGE_RESTRUCTURE.md` (implementation plan)
+- `../../stage_0_02_planning/hand_off_documents/IMPLEMENTATION_PLAN_LAYER_STAGE_RESTRUCTURE.md` (implementation plan)

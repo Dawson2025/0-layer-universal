@@ -17,7 +17,7 @@ setup/
 │   └── sub_layer_03_system_services/
 │       └── systemd_user_services.md
 ├── sub_layer_0_06_99_stages/
-│   ├── stage_0_00_request_gathering/outputs/
+│   ├── stage_0_01_request_gathering/outputs/
 │   ├── stage_0_01_research/outputs/
 │   ├── stage_0_02_instructions/outputs/
 │   ├── stage_0_03_planning/outputs/
@@ -48,7 +48,7 @@ Traverse from universal → specific:
 
 | Stage | Purpose |
 |-------|---------|
-| `stage_0_00_request_gathering` | Problem reports |
+| `stage_0_01_request_gathering` | Problem reports |
 | `stage_0_01_research` | Investigation |
 | `stage_0_02_instructions` | Constraints/requirements |
 | `stage_0_03_planning` | Solution design |

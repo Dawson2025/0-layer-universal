@@ -2,7 +2,7 @@
 
 **Created:** 2026-01-15
 **Status:** Instructions Complete
-**Next Stage:** Planning (stage_0.02_planning)
+**Next Stage:** Planning (stage_0_02_planning)
 
 ---
 
@@ -267,7 +267,7 @@ layer_N_<type>_<name>/
 ## 9. Handoff to Planning
 
 This document defines WHAT needs to be done.
-The planning stage (`stage_0.02_planning`) defines HOW to do it.
+The planning stage (`stage_0_02_planning`) defines HOW to do it.
 
 **Planning Document:** `IMPLEMENTATION_PLAN_LAYER_STAGE_RESTRUCTURE.md`
 

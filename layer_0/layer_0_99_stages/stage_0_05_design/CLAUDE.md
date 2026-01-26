@@ -29,7 +29,7 @@ Create the blueprint for implementation. This stage produces architectural decis
 
 ## Directory Structure
 ```
-stage_0.03_design/
+stage_0_05_design/
 ├── CLAUDE.md             # This file
 ├── ai_agent_system/      # AI tool configs for this stage
 └── hand_off_documents/   # Stage handoffs

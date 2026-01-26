@@ -139,15 +139,15 @@ This system provides the foundation for all agent orchestration, tool selection,
 │   ├── 2_archive_docs/         # Completed setup documentation
 │   └── 2_testing_docs/         # Testing documentation
 ├── layer_0/0.02_sub_layers/
-│   ├── sub_layer_0.06_environment_setup/            # Git/GitHub auth, credentials, cross-app environment rules
-│   ├── sub_layer_0.09_ai_apps_tools_setup/          # AI apps/tools setup (required before MCP setup)
-│   ├── sub_layer_0.10_mcp_servers_and_tools_setup/  # MCP server setup (depends on 0.09)
+│   ├── sub_layer_0_06_environment_setup/            # Git/GitHub auth, credentials, cross-app environment rules
+│   ├── sub_layer_0_09_ai_apps_tools_setup/          # AI apps/tools setup (required before MCP setup)
+│   ├── sub_layer_0_10_mcp_servers_and_tools_setup/  # MCP server setup (depends on 0.09)
 │   │   ├── 0.01_core-system/
 │   │   ├── 0.02_mcp_config_options_0_file_tree_0/
 │   │   └── 0.06_automation/
-│   ├── sub_layer_0.11_ai_models/                    # AI models guidance
-│   ├── sub_layer_0.12_universal_tools/              # Universal tools
-│   └── sub_layer_0.13_agent_setup/                  # Agent setup (depends on 0.09–0.12)
+│   ├── sub_layer_0_11_ai_models/                    # AI models guidance
+│   ├── sub_layer_0_12_universal_tools/              # Universal tools
+│   └── sub_layer_0_13_agent_setup/                  # Agent setup (depends on 0.09–0.12)
 │   ├── 1_status_progress_docs/ # Tool development status
 │   ├── 2_archive_docs/         # Completed tool implementations
 │   └── 2_testing_docs/         # Testing documentation
@@ -283,7 +283,7 @@ This system provides the foundation for all agent orchestration, tool selection,
 - **AI Agent Protocols**: `trickle_down_0_universal/`
 - **Basic Prompts Throughout**: `0_basic_prompts_throughout/` (CRITICAL for all AI agents)
 - **Environment Setup**: `trickle_down_0.5_setup/`
-  - **GitHub SSO Setup**: `layer_0/0.02_sub_layers/sub_layer_0.06_environment_setup/trickle_down_0.5_setup/0_instruction_docs/github/github_sso_token_setup.md` (Complete guide for SAML SSO token authorization)
+  - **GitHub SSO Setup**: `layer_0/0.02_sub_layers/sub_layer_0_06_environment_setup/trickle_down_0.5_setup/0_instruction_docs/github/github_sso_token_setup.md` (Complete guide for SAML SSO token authorization)
 - **Universal Tools**: `trickle_down_0.75_universal_tools/`
 - **Project Standards**: `trickle_down_1_project/`
 - **Project Tools**: `trickle_down_1.5_project_tools/`
@@ -369,10 +369,10 @@ This system provides the foundation for all agent orchestration, tool selection,
 - **Status**: ✅ Active development
 
 ### **MCP Tools (Model Context Protocol)**
-- **MCP System Guide**: `layer_0/0.02_sub_layers/sub_layer_0.10_mcp_servers_and_tools_setup/0.01_core-system/MCP_SYSTEM_GUIDE.md`
-- **MCP Configuration Guide**: `layer_0/0.02_sub_layers/sub_layer_0.10_mcp_servers_and_tools_setup/0.01_core-system/MCP_CONFIGURATION_GUIDE.md`
-- **MCP Server Matrix**: `layer_0/0.02_sub_layers/sub_layer_0.10_mcp_servers_and_tools_setup/0.01_core-system/MCP_SERVER_MATRIX.md`
-- **Browser MCP Routing Table**: `layer_0/0.02_sub_layers/sub_layer_0.10_mcp_servers_and_tools_setup/0.01_core-system/BROWSER_MCP_ROUTING_TABLE.md`
+- **MCP System Guide**: `layer_0/0.02_sub_layers/sub_layer_0_10_mcp_servers_and_tools_setup/0.01_core-system/MCP_SYSTEM_GUIDE.md`
+- **MCP Configuration Guide**: `layer_0/0.02_sub_layers/sub_layer_0_10_mcp_servers_and_tools_setup/0.01_core-system/MCP_CONFIGURATION_GUIDE.md`
+- **MCP Server Matrix**: `layer_0/0.02_sub_layers/sub_layer_0_10_mcp_servers_and_tools_setup/0.01_core-system/MCP_SERVER_MATRIX.md`
+- **Browser MCP Routing Table**: `layer_0/0.02_sub_layers/sub_layer_0_10_mcp_servers_and_tools_setup/0.01_core-system/BROWSER_MCP_ROUTING_TABLE.md`
 
 ### **By Timeline**
 - **Current Work**: Check `1_status_progress_docs/` folders

@@ -30,7 +30,7 @@ Address identified issues and defects. This stage implements fixes, improvements
 
 ## Directory Structure
 ```
-stage_0.07_fixing/
+stage_0_09_fixing/
 ├── CLAUDE.md             # This file
 ├── ai_agent_system/      # AI tool configs for this stage
 └── hand_off_documents/   # Stage handoffs

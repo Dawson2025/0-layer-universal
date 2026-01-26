@@ -171,7 +171,7 @@ Many users create tokens but forget the separate SSO authorization step, leading
 
 ### Created:
 ```
-/home/dawson/code/0_layer_universal/0_context/layer_0/0.02_sub_layers/sub_layer_0.06_environment_setup/trickle_down_0.5_setup/0_instruction_docs/github/github_sso_token_setup.md
+/home/dawson/code/0_layer_universal/0_context/layer_0/0.02_sub_layers/sub_layer_0_06_environment_setup/trickle_down_0.5_setup/0_instruction_docs/github/github_sso_token_setup.md
 /home/dawson/code/0_layer_universal/0_context/trickle_down_0_universal/1_status_progress_docs/SESSION_SUMMARY_NOV_11_2025_GITHUB_SSO_BROWSER.md
 ```
 

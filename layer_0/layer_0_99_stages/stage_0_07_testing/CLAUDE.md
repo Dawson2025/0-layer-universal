@@ -30,7 +30,7 @@ Verify the implementation meets requirements. This stage performs systematic tes
 
 ## Directory Structure
 ```
-stage_0.05_testing/
+stage_0_07_testing/
 ├── CLAUDE.md             # This file
 ├── ai_agent_system/      # AI tool configs for this stage
 └── hand_off_documents/   # Stage handoffs

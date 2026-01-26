@@ -19,7 +19,7 @@ The planning stage:
 
 1. **Read Incoming Handoff**:
    - Location: `../hand_off_documents/incoming.json`
-   - Source: Previous stage (stage_0_01_instructions)
+   - Source: Previous stage (stage_0_03_instructions)
    - Contains: Clarified requirements with universal constraints applied
 
 2. **Analyze and Decompose**:
@@ -40,7 +40,7 @@ The planning stage:
 
 5. **Write Outgoing Handoff**:
    - Location: `../hand_off_documents/outgoing.json`
-   - Destination: Next stage (stage_0.03_design) OR Layer 1 managers
+   - Destination: Next stage (stage_0_05_design) OR Layer 1 managers
    - Contains: Structured plan with subtasks, dependencies, acceptance criteria
 
 ### Worker Workflow (Less Common for Planning)
@@ -68,8 +68,8 @@ Worker pattern:
   "id": "l0-instructions-to-planning-20241223",
   "layer": 0,
   "stage": "instructions",
-  "from": "layer_0/stage_0_01_instructions",
-  "to": "layer_0/stage_0.02_planning",
+  "from": "layer_0/stage_0_03_instructions",
+  "to": "layer_0/stage_0_04_planning",
   "task": "Create new web application for project management",
   "constraints": [
     "Use TypeScript strict mode",
@@ -100,8 +100,8 @@ Worker pattern:
   "id": "l0-planning-to-design-20241223",
   "layer": 0,
   "stage": "planning",
-  "from": "layer_0/stage_0.02_planning",
-  "to": "layer_0/stage_0.03_design",
+  "from": "layer_0/stage_0_04_planning",
+  "to": "layer_0/stage_0_05_design",
   "task": "Design architecture for project management web app",
   "constraints": [
     "All Layer 0 constraints from instructions stage",
@@ -146,7 +146,7 @@ Worker pattern:
   "id": "l0-to-l1-pm-webapp-20241223",
   "kind": "vertical",
   "layer": 0,
-  "from": "layer_0/stage_0.02_planning",
+  "from": "layer_0/stage_0_04_planning",
   "to": "layer_1/projects/pm-webapp/request",
   "task": "Implement project management web application",
   "constraints": [

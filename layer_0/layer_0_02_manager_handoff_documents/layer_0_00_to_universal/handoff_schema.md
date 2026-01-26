@@ -361,12 +361,12 @@ stage_X.YY_<stage_name>/
 
 Each layer's manager handoff directory:
 ```
-layer_N_<name>/
-  N.01_manager_handoff_documents/
-    N.00_to_universal/
+layer_N/
+  layer_N_02_manager_handoff_documents/
+    layer_N_00_to_universal/
       incoming.json     # From L(N-1) to this layer
       outgoing.json     # From this layer back to L(N-1)
-    N.01_to_specific/
+    layer_N_01_to_specific/
       incoming.json     # From this layer to L(N+1)
       outgoing.json     # From L(N+1) back to this layer
 ```
@@ -408,9 +408,9 @@ When the schema evolves:
 ## Reference Implementations
 
 For detailed implementation patterns, see:
-- **Architecture**: `/code/0_layer_universal/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/architecture.md`
-- **Parallel Execution**: `/code/0_layer_universal/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/parallel_execution.md`
-- **Supervisor Patterns**: `/code/0_layer_universal/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/supervisor_patterns.md`
+- **Architecture**: `/code/0_layer_universal/layer_-1_research/layer_-1_better_ai_system/layer_0/layer_0_features/layer_0_feature_ai_manager_hierarchy_system/layer_0/layer_0_03_sub_layers/sub_layer_0_02_knowledge_system/things_learned/ideal_ai_manager_hierarchy_system/architecture.md`
+- **Parallel Execution**: `/code/0_layer_universal/layer_-1_research/layer_-1_better_ai_system/layer_0/layer_0_features/layer_0_feature_ai_manager_hierarchy_system/layer_0/layer_0_03_sub_layers/sub_layer_0_02_knowledge_system/things_learned/ideal_ai_manager_hierarchy_system/parallel_execution.md`
+- **Supervisor Patterns**: `/code/0_layer_universal/layer_-1_research/layer_-1_better_ai_system/layer_0/layer_0_features/layer_0_feature_ai_manager_hierarchy_system/layer_0/layer_0_03_sub_layers/sub_layer_0_02_knowledge_system/things_learned/ideal_ai_manager_hierarchy_system/supervisor_patterns.md`
 
 ## Usage Guidelines
 

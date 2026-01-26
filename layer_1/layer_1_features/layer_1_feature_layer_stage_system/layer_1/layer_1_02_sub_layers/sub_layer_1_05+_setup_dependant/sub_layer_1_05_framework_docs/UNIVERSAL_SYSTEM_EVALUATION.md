@@ -3,7 +3,7 @@
 **Purpose:** Evaluate how well the universal init prompt supports creating custom feature organizations like workflow features.
 
 **Evaluation Date:** 2026-01-09
-**Universal Init Prompt:** `layer_0/0.02_sub_layers/sub_layer_0_01_basic_prompts_throughout/universal_init_prompt.md`
+**Universal Init Prompt:** `layer_0/layer_0_03_sub_layers/sub_layer_0_01_prompts/universal_init_prompt.md`
 
 ---
 
@@ -315,6 +315,6 @@ Both work, but **Option A** follows the universal pattern better.
 
 ---
 
-**Location:** `C:\Users\Dawson\dawson-workspace\code\0_layer_universal\0_context\layer_1/layer_1_features/layer_1_feature_layer_stage_system/layer_1/layer_1_02_sub_layers\UNIVERSAL_SYSTEM_EVALUATION.md`
+**Location:** `C:\Users\Dawson\dawson-workspace\code\0_layer_universal\layer_1\layer_1_features\layer_1_feature_layer_stage_system\layer_1\layer_1_02_sub_layers\sub_layer_1_05+_setup_dependant\sub_layer_1_05_framework_docs\UNIVERSAL_SYSTEM_EVALUATION.md`
 **Last Updated:** 2026-01-09
 **Version:** 1.0

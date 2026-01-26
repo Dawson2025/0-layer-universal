@@ -140,7 +140,7 @@ This checklist guides you through adopting the AI Manager Hierarchy System for y
 **Time**: 20-30 minutes
 
 - [ ] **Read Observability Protocol**
-  - Location: `/home/dawson/code/0_layer_universal/0_context/layer_0/0.02_sub_layers/sub_layer_0.13_universal_protocols/observability/README.md`
+  - Location: `/home/dawson/code/0_layer_universal/0_context/layer_0/0.02_sub_layers/sub_layer_0_13_universal_protocols/observability/README.md`
   - Goal: Understand log levels, structured logging, log locations
 
 - [ ] **Set up log directory for your project**
@@ -163,7 +163,7 @@ This checklist guides you through adopting the AI Manager Hierarchy System for y
 **Time**: 15-20 minutes
 
 - [ ] **Read Safety and Governance Rules**
-  - Location: `/home/dawson/code/0_layer_universal/0_context/layer_0/0.02_sub_layers/sub_layer_0.04_universal_rules/safety_governance.md`
+  - Location: `/home/dawson/code/0_layer_universal/0_context/layer_0/0.02_sub_layers/sub_layer_0_04_universal_rules/safety_governance.md`
   - Goal: Understand permission levels, approval gates, budget limits
 
 - [ ] **Identify your permission level**
@@ -190,7 +190,7 @@ This checklist guides you through adopting the AI Manager Hierarchy System for y
 **Time**: 20-30 minutes
 
 - [ ] **Read Deployment Guide**
-  - Location: `/home/dawson/code/0_layer_universal/0_context/layer_0/0.02_sub_layers/sub_layer_0.05_os_setup/trickle_down_0.5_setup/0_instruction_docs/deployment/AI_MANAGER_HIERARCHY_DEPLOYMENT.md`
+  - Location: `/home/dawson/code/0_layer_universal/0_context/layer_0/0.02_sub_layers/sub_layer_0_05_os_setup/trickle_down_0.5_setup/0_instruction_docs/deployment/AI_MANAGER_HIERARCHY_DEPLOYMENT.md`
   - Goal: Understand deployment patterns (dev, staging, production)
 
 - [ ] **Select deployment pattern for your project**
@@ -331,7 +331,7 @@ This checklist guides you through adopting the AI Manager Hierarchy System for y
 **Time**: 15-20 minutes
 
 - [ ] **Read Framework Orchestration Overview** (if using frameworks)
-  - Location: `/home/dawson/code/0_layer_universal/0_context/layer_0/0.02_sub_layers/sub_layer_0.13_universal_protocols/framework_orchestration/0_instruction_docs/framework_orchestration_overview.md`
+  - Location: `/home/dawson/code/0_layer_universal/0_context/layer_0/0.02_sub_layers/sub_layer_0_13_universal_protocols/framework_orchestration/0_instruction_docs/framework_orchestration_overview.md`
   - Goal: Understand when to use LangGraph, AutoGen, CrewAI, MetaGPT
 
 - [ ] **Decide if framework orchestration is needed**
@@ -343,7 +343,7 @@ This checklist guides you through adopting the AI Manager Hierarchy System for y
 **Time**: 15-20 minutes
 
 - [ ] **Read CLI Recursion Syntax** (if implementing deep hierarchies)
-  - Location: `/home/dawson/code/0_layer_universal/0_context/layer_0/0.02_sub_layers/sub_layer_0.13_universal_protocols/cli_recursion/0_instruction_docs/cli_recursion_syntax.md`
+  - Location: `/home/dawson/code/0_layer_universal/0_context/layer_0/0.02_sub_layers/sub_layer_0_13_universal_protocols/cli_recursion/0_instruction_docs/cli_recursion_syntax.md`
   - Goal: Understand how managers spawn workers via CLI
 
 - [ ] **Decide if CLI recursion is needed**
@@ -548,13 +548,13 @@ This checklist guides you through adopting the AI Manager Hierarchy System for y
 
 **Handoff and Operational Docs**:
 - Handoff Schema: `/home/dawson/code/0_layer_universal/0_context/layer_0/0.01_manager_handoff_documents/0.00_to_universal/handoff_schema.md`
-- Observability: `/home/dawson/code/0_layer_universal/0_context/layer_0/0.02_sub_layers/sub_layer_0.13_universal_protocols/observability/README.md`
-- Safety Rules: `/home/dawson/code/0_layer_universal/0_context/layer_0/0.02_sub_layers/sub_layer_0.04_universal_rules/safety_governance.md`
-- Deployment: `/home/dawson/code/0_layer_universal/0_context/layer_0/0.02_sub_layers/sub_layer_0.05_os_setup/trickle_down_0.5_setup/0_instruction_docs/deployment/AI_MANAGER_HIERARCHY_DEPLOYMENT.md`
+- Observability: `/home/dawson/code/0_layer_universal/0_context/layer_0/0.02_sub_layers/sub_layer_0_13_universal_protocols/observability/README.md`
+- Safety Rules: `/home/dawson/code/0_layer_universal/0_context/layer_0/0.02_sub_layers/sub_layer_0_04_universal_rules/safety_governance.md`
+- Deployment: `/home/dawson/code/0_layer_universal/0_context/layer_0/0.02_sub_layers/sub_layer_0_05_os_setup/trickle_down_0.5_setup/0_instruction_docs/deployment/AI_MANAGER_HIERARCHY_DEPLOYMENT.md`
 
 **Orchestration Docs**:
-- Framework Orchestration: `/home/dawson/code/0_layer_universal/0_context/layer_0/0.02_sub_layers/sub_layer_0.13_universal_protocols/framework_orchestration/0_instruction_docs/framework_orchestration_overview.md`
-- CLI Recursion: `/home/dawson/code/0_layer_universal/0_context/layer_0/0.02_sub_layers/sub_layer_0.13_universal_protocols/cli_recursion/0_instruction_docs/cli_recursion_syntax.md`
+- Framework Orchestration: `/home/dawson/code/0_layer_universal/0_context/layer_0/0.02_sub_layers/sub_layer_0_13_universal_protocols/framework_orchestration/0_instruction_docs/framework_orchestration_overview.md`
+- CLI Recursion: `/home/dawson/code/0_layer_universal/0_context/layer_0/0.02_sub_layers/sub_layer_0_13_universal_protocols/cli_recursion/0_instruction_docs/cli_recursion_syntax.md`
 
 **Rollout Plan**:
 - Rollout Plan: `/home/dawson/.cursor/plans/ai_manager_hierarchy_rollout_plan.md`

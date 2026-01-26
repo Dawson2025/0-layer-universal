@@ -1,10 +1,10 @@
 # Universal AI Context System - Usage Guide
 
-This directory now follows the Layer + Stage framework (layers: universal/project/feature/component; stages: instructions → planning → design → development → testing → criticism → fixing → archives). Each layer has `<N>.00_ai_manager_system/`, `<N>.01_manager_handoff_documents/<N>.00_to_universal|<N>.01_to_specific/`, slots under `layer_<N>_*/*02_sub_layers/sub_layer_<N.xx>_*`, and stages under `*.99_stages/stage_<N.xx>_*` (each with `hand_off_documents/` and `ai_agent_system/`). Legacy `trickle_down_*` references remain below for historical context; prefer the layer paths for new work.
+This directory now follows the Layer + Stage framework (layers: universal/project/feature/component; stages: request_gathering → research → instructions → planning → design → development → testing → criticism → fixing → current_product → archives). Each layer has `layer_<N>_01_ai_manager_system/`, `layer_<N>_02_manager_handoff_documents/layer_<N>_00_to_universal|layer_<N>_01_to_specific/`, sub-layers under `layer_<N>_0X_sub_layers/sub_layer_<N>_XX_*`, and stages under `layer_<N>_99_stages/stage_<N>_XX_*` (each with `hand_off_documents/` and `ai_agent_system/`). Legacy `trickle_down_*` references remain below for historical context; prefer the layer paths for new work.
 
 ## 🎯 Quick Start
 
-1. **Copy the entire `0_context` directory** to your project root (or desired location)
+1. **Copy the `0_layer_universal/` directory** to your project root (or desired location) if you need to vendor the framework
 2. **Update the core prompt file**: Edit `0_basic_prompts_throughout/what_to_do_next.md`
 3. **Add project-specific documentation** as needed
 4. **Update file paths** to match your project structure
@@ -25,14 +25,16 @@ This system implements the **AI Manager Hierarchy System** - an Agent OS archite
 **Stages (Chronological Pipeline):**
 Each layer moves work through stages:
 1. **request** - Clarify what needs to be done
-2. **instructions** - Define explicit requirements and constraints
-3. **planning** - Break work into subtasks
-4. **design** - Choose architectures and interfaces
-5. **implementation** - Write code
-6. **testing** - Verify functionality
-7. **criticism** - Review against standards
-8. **fixing** - Apply corrections
-9. **archiving** - Document and close
+2. **research** - Gather context and explore options
+3. **instructions** - Define explicit requirements and constraints
+4. **planning** - Break work into subtasks
+5. **design** - Choose architectures and interfaces
+6. **development** - Write code
+7. **testing** - Verify functionality
+8. **criticism** - Review against standards
+9. **fixing** - Apply corrections
+10. **current_product** - Ship the deliverable
+11. **archives** - Document and close
 
 **Handoffs (Communication):**
 - Stages and layers communicate via **handoff documents** (JSON/Markdown)
@@ -42,7 +44,7 @@ Each layer moves work through stages:
 ### Which Docs to Read First
 
 **For AI Agents Starting Work:**
-1. **Start**: `layer_0/.../universal_init_prompt.md` - Core initialization
+1. **Start**: `layer_0/layer_0_03_sub_layers/sub_layer_0_01_prompts/universal_init_prompt.md` - Core initialization
 2. **Overview**: `SYSTEM_OVERVIEW.md` - Understand layer + stage structure
 3. **Hierarchy**: [`-1_research/.../overview/IDEAL_AI_MANAGER_HIERARCHY_SYSTEM.md`](-1_research/-1.01_things_researched/ai_manager_hierarchy_system/overview/IDEAL_AI_MANAGER_HIERARCHY_SYSTEM.md) - Agent OS architecture
 4. **Layer Context**: Load appropriate L0 → L1 → L2 → L3 context for your task
@@ -95,7 +97,7 @@ Each layer moves work through stages:
 - Write: `<layer>/<stage>/hand_off_documents/outgoing.json`
 
 **For detailed handoff specification:**
-See `layer_0/0.01_manager_handoff_documents/0.00_to_universal/handoff_schema.md` (to be created)
+See `layer_0/layer_0_02_manager_handoff_documents/layer_0_00_to_universal/handoff_schema.md`
 
 ### Tool Selection by Layer/Stage
 

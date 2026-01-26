@@ -29,7 +29,7 @@ Determine HOW to accomplish the instructions. This stage creates the execution p
 
 ## Directory Structure
 ```
-stage_0.02_planning/
+stage_0_04_planning/
 ├── CLAUDE.md             # This file
 ├── ai_agent_system/      # AI tool configs for this stage
 └── hand_off_documents/   # Stage handoffs

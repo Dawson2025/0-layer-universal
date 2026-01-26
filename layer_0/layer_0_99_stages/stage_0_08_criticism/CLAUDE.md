@@ -29,7 +29,7 @@ Critically evaluate the work product. This stage provides objective assessment, 
 
 ## Directory Structure
 ```
-stage_0.06_criticism/
+stage_0_08_criticism/
 ├── CLAUDE.md             # This file
 ├── ai_agent_system/      # AI tool configs for this stage
 └── hand_off_documents/   # Stage handoffs

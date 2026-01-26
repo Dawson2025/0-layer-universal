@@ -1,9 +1,9 @@
 # System Overview (Layer + Stage)
 
 ## Big picture
-- **Layer System (specificity):** universal (0) → project (1) → feature (2) → component (3). Lower numbers are prerequisites. Each layer has `<N>.00_ai_manager_system/`, `<N>.01_manager_handoff_documents/<N>.00_to_universal|<N>.01_to_specific/`, slots in `layer_<N>_*/<N>.02_sub_layers/sub_layer_<N.xx>_*`.
-- **Stage System (chronology):** instructions → planning → design → development → testing → criticism → fixing → current_product → archives. Stages mirror the layer prefix (e.g., `stage_2.04_development`) inside `*.99_stages/`, each with `hand_off_documents/` and `ai_agent_system/`.
-- **Status:** per-layer status JSON inside `*.99_stages/` tracks `current_stage` and each stage state (`not_started | in_progress | blocked | done`).
+- **Layer System (specificity):** universal (0) → project (1) → feature (2) → component (3). Lower numbers are prerequisites. Each layer has `layer_<N>_01_ai_manager_system/`, `layer_<N>_02_manager_handoff_documents/layer_<N>_00_to_universal|layer_<N>_01_to_specific/`, and sub-layers in `layer_<N>_0X_sub_layers/` (layer 0 uses `layer_0_03_sub_layers/`).
+- **Stage System (chronology):** request_gathering → research → instructions → planning → design → development → testing → criticism → fixing → current_product → archives. Stages mirror the layer prefix (e.g., `stage_2_05_design`) inside `layer_<N>_99_stages/`, each with `hand_off_documents/` and `ai_agent_system/`.
+- **Status:** per-layer status JSON inside `layer_<N>_99_stages/` tracks `current_stage` and each stage state (`not_started | in_progress | blocked | done`).
 
 ## Agent OS Architecture
 
@@ -45,19 +45,17 @@ This Agent OS design is the **canonical architecture** for all AI agent coordina
 
 ## Layout map (current repo)
 ```
-0_context/
-├── layer_1/layer_1_features/layer_1_feature_layer_stage_system/         # system management & planning
-├── layer_1/layer_1_features/layer_1_feature_layer_stage_system/layer_1/layer_1_02_sub_layers/      # templates + framework README
-├── layer_0/               # universal layer (0.xx slots + 0.99 stages)
-├── layer_1_project/                 # project layer (1.xx slots + 1.99 stages)
-├── layer_2_features/                # feature layer (2.xx slots + 2.99 stages)
-└── layer_3_components/              # component layer (3.xx slots + 3.99 stages)
+0_layer_universal/
+├── layer_0/                         # universal layer (sub-layers + stages)
+├── layer_1/                         # project/feature layers
+│   └── layer_1_features/            # framework + feature definitions
+└── layer_-1_research/               # research projects
 ```
 
 Legacy `trickle_down_*` content is preserved under `legacy_import/` within the closest matching sub_layer; do not add new work there.
 
 ## How to work in this system
-1. **Start in universal:** `layer_0/0.02_sub_layers/sub_layer_0_01_basic_prompts_throughout/0_basic_prompts_throughout/universal_init_prompt.md` then `MASTER_DOCUMENTATION_INDEX.md`.
+1. **Start in universal:** `layer_0/layer_0_03_sub_layers/sub_layer_0_01_prompts/universal_init_prompt.md` then `MASTER_DOCUMENTATION_INDEX.md`.
 2. **Load needed layers:** project (`layer_1_*`), feature (`layer_2_*`), component (`layer_3_*`).
 3. **Enter a stage:** use the layer’s `*.99_stages/` directory; read/update `status*.json`; use `hand_off_documents/` and `ai_agent_system/` inside the current stage.
 4. **Sync habit:** `git pull` at session start for all repos you will touch; `git commit` + `git push` and update docs/status before ending a response.
@@ -68,7 +66,7 @@ Legacy `trickle_down_*` content is preserved under `legacy_import/` within the c
 - Feature 2.xx and Component 3.xx mirror the same pattern at finer scope.
 
 ## Stage numbers (per layer)
-- For layer N: stages are `stage_N.00_request_gathering`, `stage_N.01_instructions`, `stage_N.02_planning`, `stage_N.03_design`, `stage_N.04_development`, `stage_N.05_testing`, `stage_N.06_criticism`, `stage_N.07_fixing`, `stage_N.08_current_product`, `stage_N.09_archives` under `N.99_stages/`.
+- For layer N: stages are `stage_N_01_request_gathering`, `stage_N_02_research`, `stage_N_03_instructions`, `stage_N_04_planning`, `stage_N_05_design`, `stage_N_06_development`, `stage_N_07_testing`, `stage_N_08_criticism`, `stage_N_09_fixing`, `stage_N_10_current_product`, `stage_N_11_archives` under `layer_N_99_stages/`.
 
 ## Why this structure
 - Deterministic, git-friendly navigation; no reliance on fuzzy search.

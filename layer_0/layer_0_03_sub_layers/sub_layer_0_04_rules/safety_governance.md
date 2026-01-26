@@ -15,7 +15,7 @@ This document defines security boundaries, permission models, and governance pol
 
 This document is a **derived implementation guide** from the canonical specification:
 
-- **Source**: `/home/dawson/code/0_layer_universal/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/safety_and_governance.md`
+- **Source**: `/home/dawson/dawson-workspace/code/0_layer_universal/layer_-1_research/layer_-1_better_ai_system/layer_0/layer_0_features/layer_0_feature_ai_manager_hierarchy_system/layer_0/layer_0_03_sub_layers/sub_layer_0_02_knowledge_system/things_learned/ideal_ai_manager_hierarchy_system/safety_and_governance.md`
 - **Status**: Normative (refer to source for authoritative details)
 
 ---
@@ -464,7 +464,7 @@ Handoff: <handoff-id>
 Cost: $<cost>
 ```
 
-**Reference**: `layer_0/0.02_sub_layers/sub_layer_0.04_universal_rules/trickle_down_0_universal/0_instruction_docs/git_commit_rule.md`
+**Reference**: `layer_0/0.02_sub_layers/sub_layer_0_04_universal_rules/trickle_down_0_universal/0_instruction_docs/git_commit_rule.md`
 
 ### Layer Context Header Protocol
 
@@ -485,7 +485,7 @@ permissions:
 ---
 ```
 
-**Reference**: `layer_0/0.02_sub_layers/sub_layer_0.04_universal_rules/LAYER_CONTEXT_HEADER_PROTOCOL.md`
+**Reference**: `layer_0/0.02_sub_layers/sub_layer_0_04_universal_rules/LAYER_CONTEXT_HEADER_PROTOCOL.md`
 
 ---
 
@@ -626,9 +626,9 @@ export EMERGENCY_STOP=true
 ## References
 
 - **Normative Spec**: `.../-1_research/.../ideal_ai_manager_hierarchy_system/safety_and_governance.md`
-- **Observability**: `layer_0/0.02_sub_layers/sub_layer_0.13_universal_protocols/observability/`
-- **Git Commit Rule**: `layer_0/0.02_sub_layers/sub_layer_0.04_universal_rules/trickle_down_0_universal/0_instruction_docs/git_commit_rule.md`
-- **Layer Context Header**: `layer_0/0.02_sub_layers/sub_layer_0.04_universal_rules/LAYER_CONTEXT_HEADER_PROTOCOL.md`
+- **Observability**: `layer_0/0.02_sub_layers/sub_layer_0_13_universal_protocols/observability/`
+- **Git Commit Rule**: `layer_0/0.02_sub_layers/sub_layer_0_04_universal_rules/trickle_down_0_universal/0_instruction_docs/git_commit_rule.md`
+- **Layer Context Header**: `layer_0/0.02_sub_layers/sub_layer_0_04_universal_rules/LAYER_CONTEXT_HEADER_PROTOCOL.md`
 
 ---
 

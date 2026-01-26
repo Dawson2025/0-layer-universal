@@ -107,7 +107,7 @@ layer_1_project_<name>/                          # OR layer_2_sub_project_<name>
 │   ├── layer_1_02_sub_layers/                   # Content slots
 │   │   └── sub_layer_1.xx.../
 │   └── layer_1_99_stages/                       # Workflow stages
-│       └── status_1.json                        # Status tracker
+│       └── status.json                        # Status tracker
 └── layer_2/                                     # Nested content
     ├── layer_2_sub_projects/                    # Sub-projects (same-type nesting)
     │   └── layer_2_sub_project_<name>/

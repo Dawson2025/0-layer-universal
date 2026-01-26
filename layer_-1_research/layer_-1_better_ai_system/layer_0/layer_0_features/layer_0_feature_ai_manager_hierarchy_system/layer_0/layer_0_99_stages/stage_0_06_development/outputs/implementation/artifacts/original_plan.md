@@ -63,7 +63,7 @@ We will weave the "Ideal AI Manager Hierarchy System" spec into the existing `0_
 - **2.1 Framework docs**
 - Update [`layer_1/layer_1_features/layer_1_feature_layer_stage_system/layer_1/layer_1_02_sub_layers/README.md`](code/0_layer_universal/0_context/layer_1/layer_1_features/layer_1_feature_layer_stage_system/layer_1/layer_1_02_sub_layers/README.md) so that:
     - Its description of layers (L0–L3, optional L4+) matches `architecture.md` and `summary/IDEAL_AI_MANAGER_HIERARCHY_SYSTEM.md`.
-    - Its stage list explicitly includes `stage_0.00_request_gathering` and matches the chronological pipeline defined in the ideal spec.
+    - Its stage list explicitly includes `stage_0_00_request_gathering` and matches the chronological pipeline defined in the ideal spec.
     - It references the ideal hierarchy docs as the **design rationale** for the framework templates.
 - Where appropriate, add short references in the layer templates under `layer_1/layer_1_features/layer_1_feature_layer_stage_system/layer_1/layer_1_02_sub_layers` (L0–L3 templates) that:
     - Link to the relevant sections of `architecture.md`, `tools_and_context_systems.md`, and `os_and_quartets.md`.
@@ -111,19 +111,19 @@ flowchart TD
     - Stub or copy in initial `CLAUDE.md`, `AGENTS.md`, `GEMINI.md` scaffolds.
     - Add comments pointing back to `os_and_quartets.md` as the normative spec.
 - **4.2 Tool-specific context patterns**
-- In `layer_0/0.02_sub_layers/sub_layer_0.12_universal_tools` and `sub_layer_0.10_mcp_servers_and_tools_setup`:
+- In `layer_0/0.02_sub_layers/sub_layer_0_12_universal_tools` and `sub_layer_0_10_mcp_servers_and_tools_setup`:
     - Ensure docs reference the quartet/N-tuple pattern for tool context (Claude, Codex, Gemini, Cursor, plus future tools).
-    - Tie existing MCP OS/app layout under `sub_layer_0.10_mcp_servers_and_tools_setup/0.02_mcp_config_options_0_file_tree_0/0.03_operating_systems/` back to the ideal-spec OS-variant description.
+    - Tie existing MCP OS/app layout under `sub_layer_0_10_mcp_servers_and_tools_setup/0.02_mcp_config_options_0_file_tree_0/0.03_operating_systems/` back to the ideal-spec OS-variant description.
 
 ## 5. Integrate Tool & Framework Orchestration Guidance
 
 - **5.1 Framework orchestration**
-- In an appropriate universal tools/protocols area (likely under `sub_layer_0.12_universal_tools` or `sub_layer_0.13_universal_protocols`):
+- In an appropriate universal tools/protocols area (likely under `sub_layer_0_12_universal_tools` or `sub_layer_0_13_universal_protocols`):
     - Add a short index document that:
     - Summarizes how LangGraph, AutoGen, CrewAI, MetaGPT, etc. can be plugged into the hierarchy per [`framework_orchestration.md`](code/0_layer_universal/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/framework_orchestration.md).
     - Links to the detailed orchestration doc.
 - **5.2 CLI recursion syntax and examples**
-- In a dedicated file under universal tools/protocols (e.g., `sub_layer_0.12_universal_tools/.../cli_recursion_syntax.md`):
+- In a dedicated file under universal tools/protocols (e.g., `sub_layer_0_12_universal_tools/.../cli_recursion_syntax.md`):
     - Lift the concrete CLI examples from [`cli_recursion_syntax.md`](code/0_layer_universal/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/cli_recursion_syntax.md).
     - Adapt them to your current terminal wrapper and environment (keeping `OS/Tool scope` explicit in the Applicability section, following the Protocol Writing Standard).
 
@@ -135,7 +135,7 @@ flowchart TD
     - Summarizes key logging/metrics/tracing expectations from [`observability_and_logging.md`](code/0_layer_universal/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/observability_and_logging.md).
     - Specifies where logs should live in the layer/stage/handoff structure.
 - **6.2 Safety & governance**
-- Under `sub_layer_0.04_universal_rules` or `sub_layer_0.13_universal_protocols`:
+- Under `sub_layer_0_04_universal_rules` or `sub_layer_0_13_universal_protocols`:
     - Add a safety/governance rule or protocol that:
     - Encodes key guardrails from [`safety_and_governance.md`](code/0_layer_universal/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/safety_and_governance.md).
     - Ties into existing git rules, approval gates, and budget limits.

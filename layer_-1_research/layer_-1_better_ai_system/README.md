@@ -1,14 +1,22 @@
 # Better AI System - Research Project
 
-**Status**: Stage 01 (Research) - Active
+**Status**: Stage 02 (Research) - Active
 
 ## Purpose
 
 Research and design improvements to the AI-assisted development system, exploring:
+- Framework orchestration patterns (Layer-Stage System)
 - Hierarchical manager/worker architectures
 - Dynamic memory systems for AI context
-- Framework orchestration patterns
-- Observability and safety mechanisms
+- Setup and multi-OS workspace synchronization
+- Documentation, context, rules, and automation systems
+
+## Full System Audit
+
+A comprehensive audit of the entire AI system has been completed:
+- **Location**: `layer_0/layer_0_99_stages/stage_0_02_research/outputs/ai_system_problems_audit.md`
+- **Findings**: 15 critical, 12 major, 8 minor issues
+- **Key Problems**: Naming inconsistencies, stage numbering conflicts, documentation drift, missing registries
 
 ## Structure
 
@@ -16,70 +24,67 @@ Research and design improvements to the AI-assisted development system, explorin
 better_ai_system/
 ├── CLAUDE.md                    # AI context for this project
 ├── README.md                    # This file
-├── layer_1/                     # Project organization
-│   ├── layer_1_00_ai_manager_system/
-│   ├── layer_1_01_manager_handoff_documents/
-│   ├── layer_1_02_sub_layers/
-│   └── layer_1_99_stages/       # Project stages
-│       ├── stage_1_00_request_gathering/
-│       ├── stage_1_01_research/      # CURRENT STAGE
-│       ├── stage_1_02_instructions/
-│       └── ...
-└── layer_2/
-    └── layer_2_features/        # Research topics
-        ├── layer_2_feature_ai_manager_hierarchy_system/
-        ├── layer_2_feature_ai_dynamic_memory_system/
-        └── layer_2_feature_multi_os_system/
+├── layer_0/
+│   ├── layer_0_features/        # Research topics
+│   │   ├── layer_0_feature_better_layer_stage_system/     # Framework improvements
+│   │   ├── layer_0_feature_better_setup_system/           # Setup & Multi-OS
+│   │   │   └── layer_1/layer_1_features/
+│   │   │       └── layer_1_feature_multi_os_system/       # Child feature
+│   │   ├── layer_0_feature_ai_manager_hierarchy_system/   # Manager/worker patterns
+│   │   ├── layer_0_feature_ai_dynamic_memory_system/      # Memory systems
+│   │   ├── layer_0_feature_ai_documentation_system/       # Documentation fixes
+│   │   ├── layer_0_feature_ai_context_system/             # Context gathering
+│   │   ├── layer_0_feature_ai_rules_system/               # Rules & protocols
+│   │   └── layer_0_feature_ai_automation_system/          # Validation & tooling
+│   └── layer_0_99_stages/
+│       └── stage_0_02_research/
+│           └── outputs/
+│               └── ai_system_problems_audit.md            # Full audit
+└── layer_-1/                    # Project-level stages
 ```
 
 ## Research Features
 
-### 1. AI Manager Hierarchy System (~57% complete)
-Designing a hierarchical system where:
-- **Managers** coordinate work, spawn workers, aggregate results
-- **Workers** do bounded tasks and exit
-- **Handoffs** pass structured state between agents
-- **Tools** are specialized (Claude Code for managers, Codex for workers, etc.)
+### Core Framework Features
 
-**Key Docs:**
-- `layer_2/layer_2_features/layer_2_feature_ai_manager_hierarchy_system/overview/IDEAL_AI_MANAGER_HIERARCHY_SYSTEM.md`
-- `layer_2/layer_2_features/layer_2_feature_ai_manager_hierarchy_system/implementation/artifacts/progress_assessment.md`
+| Feature | Status | Description |
+|---------|--------|-------------|
+| `better_layer_stage_system` | ~40% | Layer/stage naming, numbering, registries |
+| `better_setup_system` | ~20% | Setup configuration, multi-OS (contains multi_os_system) |
+| `ai_manager_hierarchy_system` | ~57% | Manager/worker patterns, handoffs |
+| `ai_dynamic_memory_system` | ~5% | Dynamic context, memory hierarchies |
 
-### 2. AI Dynamic Memory System (Early Research)
-Exploring data structures and algorithms for:
-- Dynamic context management
-- Memory hierarchies for AI agents
-- Efficient retrieval and storage patterns
+### Problem-Focused Features
 
-**Key Docs:**
-- `layer_2/layer_2_features/layer_2_feature_ai_dynamic_memory_system/chat_history/`
+| Feature | Status | Problems Addressed |
+|---------|--------|-------------------|
+| `ai_documentation_system` | ~5% | Broken paths, init prompt confusion, structure mismatch |
+| `ai_context_system` | ~5% | Scattered rules, agnostic/specific pattern, entry points |
+| `ai_rules_system` | ~5% | Conflicting protocols, no priority, archive confusion |
+| `ai_automation_system` | ~5% | Missing validation, no migration scripts, no entity scaffolding |
 
-### 3. Multi-OS System (~85% complete)
-Cross-OS workspace synchronization and remote access:
-- **Syncthing**: File sync via VPS relay (Ubuntu ↔ VPS ↔ Windows)
-- **SSH Mesh**: Full connectivity between all devices
-- **Health Monitoring**: Automated status checks and self-healing
+## Problem Distribution
 
-**Key Docs:**
-- `layer_2/layer_2_features/layer_2_feature_multi_os_system/STATUS.md`
-- `layer_2/layer_2_features/layer_2_feature_multi_os_system/README.md`
+| Feature | Critical | Major | Minor |
+|---------|----------|-------|-------|
+| `better_layer_stage_system` | 4 | 4 | 2 |
+| `ai_documentation_system` | 3 | 3 | 1 |
+| `ai_automation_system` | 1 | 3 | 2 |
+| `ai_context_system` | 0 | 2 | 3 |
+| `ai_rules_system` | 0 | 2 | 3 |
+| `better_setup_system` | 0 | 1 | 5 |
 
 ## Current Focus
 
-The AI Manager Hierarchy System has phases 1-4 complete:
-1. ✅ Navigation and overview integration
-2. ✅ Framework alignment
-3. ✅ Manager/Worker + Handoff standardization
-4. ✅ OS and Tool Variants (quartets)
-
-Remaining work:
-5. ❌ Orchestration and CLI recursion
-6. ❌ Observability, safety, deployment
-7. ❌ Rollout and migration strategy
+1. **Immediate**: Fix naming conventions (dots vs underscores)
+2. **Immediate**: Create missing registries
+3. **Short-term**: Standardize stage numbering
+4. **Short-term**: Fix broken documentation paths
+5. **Medium-term**: Build validation tooling
 
 ## How to Contribute
 
-1. Check the current stage in `layer_1/layer_1_99_stages/status_1.json`
-2. Review existing research in `layer_2/layer_2_features/`
-3. Add findings to the appropriate feature's `things_learned/` directory
+1. Check the full audit: `layer_0/layer_0_99_stages/stage_0_02_research/outputs/ai_system_problems_audit.md`
+2. Review feature-specific problems in each feature's `things_learned/` directory
+3. Add findings to the appropriate feature
 4. Update handoff documents when transitioning work

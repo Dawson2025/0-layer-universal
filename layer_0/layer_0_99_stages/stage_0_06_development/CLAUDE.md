@@ -29,7 +29,7 @@ Implement the design. This stage produces the actual code, configurations, and a
 
 ## Directory Structure
 ```
-stage_0.04_development/
+stage_0_06_development/
 ├── CLAUDE.md             # This file
 ├── ai_agent_system/      # AI tool configs for this stage
 └── hand_off_documents/   # Stage handoffs

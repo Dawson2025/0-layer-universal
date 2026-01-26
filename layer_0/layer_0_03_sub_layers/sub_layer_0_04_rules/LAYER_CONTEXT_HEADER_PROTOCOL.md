@@ -55,7 +55,7 @@ Paths in headers are **relative to the file's location**. This ensures headers r
 <!-- END LAYER CONTEXT HEADER -->
 ```
 
-**Example 2**: File at `layer_0/0.02_sub_layers/sub_layer_0.11_universal_tools/TOOLS_INDEX.md`
+**Example 2**: File at `layer_0/0.02_sub_layers/sub_layer_0_11_universal_tools/TOOLS_INDEX.md`
 
 ```markdown
 <!-- LAYER CONTEXT HEADER -->
