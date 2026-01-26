@@ -1,0 +1,14 @@
+{
+  "context": {
+    "stage": "stage_0_11_archives",
+    "layer": 0,
+    "purpose": "Historical versions and deprecated content"
+  },
+  "permissions": {
+    "allow": [],
+    "deny": [],
+    "ask": []
+  },
+  "env": {},
+  "hooks": {}
+}

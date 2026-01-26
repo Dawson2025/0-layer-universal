@@ -79,13 +79,13 @@ But DIFFERENT types don't get the "sub" prefix:
 - Feature inside project = **feature** (NOT sub_feature)
 - Component inside project = **component** (NOT sub_component)
 - Feature inside sub_project = **feature** (NOT sub_feature)
-- Feature inside sub*2_project = **feature** (NOT sub_feature)
+- Feature inside subx2_project = **feature** (NOT sub_feature)
 
 **Examples of same-type nesting depth:**
 - `sub_project` = project 1 level deep
-- `sub*2_project` = project 2 levels deep
+- `subx2_project` = project 2 levels deep
 - `sub_feature` = feature 1 level deep (inside another feature)
-- `sub*2_feature` = feature 2 levels deep (inside a sub_feature)
+- `subx2_feature` = feature 2 levels deep (inside a sub_feature)
 
 **The layer number = depth in the hierarchy tree**
 
@@ -98,7 +98,7 @@ But DIFFERENT types don't get the "sub" prefix:
 Projects (and sub_projects) contain **features** and **components** directly (not sub_features/sub_components):
 
 ```
-layer_1_project_<name>/                          # OR layer_2_sub_project_<name>/ OR layer_3_sub*2_project_<name>/
+layer_1_project_<name>/                          # OR layer_2_sub_project_<name>/ OR layer_3_subx2_project_<name>/
 ├── layer_1/                                     # This entity's internals
 │   ├── layer_1_00_ai_manager_system/            # Manager for this layer
 │   ├── layer_1_01_manager_handoff_documents/    # Communication
@@ -122,7 +122,7 @@ layer_1_project_<name>/                          # OR layer_2_sub_project_<name>
 Features contain **sub_features** and **sub_components** (because feature inside feature = sub_feature):
 
 ```
-layer_2_feature_<name>/                          # OR layer_3_sub_feature_<name>/ OR layer_4_sub*2_feature_<name>/
+layer_2_feature_<name>/                          # OR layer_3_sub_feature_<name>/ OR layer_4_subx2_feature_<name>/
 ├── layer_2/                                     # This entity's internals
 │   ├── layer_2_00_ai_manager_system/            # Manager for this layer
 │   ├── layer_2_01_manager_handoff_documents/    # Communication
@@ -144,7 +144,7 @@ layer_2_feature_<name>/                          # OR layer_3_sub_feature_<name>
 Components contain **sub_components** (because component inside component = sub_component):
 
 ```
-layer_2_component_<name>/                        # OR layer_3_sub_component_<name>/ OR layer_4_sub*2_component_<name>/
+layer_2_component_<name>/                        # OR layer_3_sub_component_<name>/ OR layer_4_subx2_component_<name>/
 ├── layer_2/                                     # This entity's internals
 │   ├── layer_2_00_ai_manager_system/            # Manager for this layer
 │   ├── layer_2_01_manager_handoff_documents/    # Communication
@@ -164,7 +164,7 @@ layer_2_component_<name>/                        # OR layer_3_sub_component_<nam
 - **Sub_projects** also contain `features/` and `components/` (no "sub" prefix, because feature inside project != sub_feature)
 - **Features** contain `sub_features/` and `sub_components/` (because feature inside feature = sub_feature)
 - **Components** contain `sub_components/` (because component inside component = sub_component)
-- **Same-type nesting** uses: `sub`, `sub*2`, `sub*3`, etc.
+- **Same-type nesting** uses: `sub`, `subx2`, `subx3`, etc.
 
 ---
 
@@ -203,7 +203,7 @@ The layer grouping convention changes how internal directories are named:
 ```
 layer_1_project_<name>/
 layer_2_sub_project_<name>/
-layer_3_sub*2_project_<name>/
+layer_3_subx2_project_<name>/
 layer_N_sub*<N-1>_project_<name>/
 ```
 
@@ -213,21 +213,21 @@ layer_N_sub*<N-1>_project_<name>/
 ```
 layer_2_feature_<name>/        # Feature in project
 layer_3_feature_<name>/        # Feature in sub_project
-layer_4_feature_<name>/        # Feature in sub*2_project
+layer_4_feature_<name>/        # Feature in subx2_project
 ```
 
 **In another feature (uses "sub" prefix):**
 ```
 layer_3_sub_feature_<name>/    # Feature inside a feature
-layer_4_sub*2_feature_<name>/  # Feature inside a sub_feature
-layer_5_sub*3_feature_<name>/  # Feature inside a sub*2_feature
+layer_4_subx2_feature_<name>/  # Feature inside a sub_feature
+layer_5_subx3_feature_<name>/  # Feature inside a subx2_feature
 ```
 
 **Examples:**
 - `layer_2_feature_in_class_work/` - Feature directly in project (depth 2)
 - `layer_3_feature_machine_learning/` - Feature in sub_project (depth 3, still "feature" not "sub_feature")
 - `layer_3_sub_feature_derivatives/` - Sub-feature inside a feature (depth 3)
-- `layer_4_sub*2_feature_power_rule/` - Sub*2-feature inside a sub_feature (depth 4)
+- `layer_4_subx2_feature_power_rule/` - Sub*2-feature inside a sub_feature (depth 4)
 
 ### Component Naming
 
@@ -235,13 +235,13 @@ layer_5_sub*3_feature_<name>/  # Feature inside a sub*2_feature
 ```
 layer_2_component_<name>/      # Component in project
 layer_3_component_<name>/      # Component in sub_project
-layer_4_component_<name>/      # Component in sub*2_project
+layer_4_component_<name>/      # Component in subx2_project
 ```
 
 **In a feature or another component (uses "sub" prefix):**
 ```
 layer_3_sub_component_<name>/  # Component inside a feature
-layer_4_sub*2_component_<name>/ # Component inside a sub_component
+layer_4_subx2_component_<name>/ # Component inside a sub_component
 ```
 
 **Examples:**
@@ -310,8 +310,8 @@ layer_1_project_applied_calculus/                    # Applied Calculus Project 
                         │       │       └── proactor_lecture_2026-01-09_derivatives.md
                         │       └── status_3.json
                         └── layer_4/                         # Nested content
-                            ├── layer_4_sub*2_features/
-                            │   └── layer_4_sub*2_feature_power_rule/    # Subtopic (depth 4)
+                            ├── layer_4_subx2_features/
+                            │   └── layer_4_subx2_feature_power_rule/    # Subtopic (depth 4)
                             │       ├── layer_4/
                             │       │   ├── layer_4_00_ai_manager_system/
                             │       │   ├── layer_4_02_sub_layers/
@@ -319,11 +319,11 @@ layer_1_project_applied_calculus/                    # Applied Calculus Project 
                             │       │   └── layer_4_99_stages/
                             │       │       └── status_4.json
                             │       └── layer_5/
-                            │           ├── layer_5_sub*3_features/
-                            │           │   └── layer_5_sub*3_feature_negative_exponents/
+                            │           ├── layer_5_subx3_features/
+                            │           │   └── layer_5_subx3_feature_negative_exponents/
                             │           │       └── ...
-                            │           └── layer_5_sub*3_components/
-                            │               ├── layer_5_sub*3_component_2026_01_09_class/
+                            │           └── layer_5_subx3_components/
+                            │               ├── layer_5_subx3_component_2026_01_09_class/
                             │               │   ├── layer_5/
                             │               │   │   ├── layer_5_00_ai_manager_system/
                             │               │   │   ├── layer_5_02_sub_layers/
@@ -336,10 +336,10 @@ layer_1_project_applied_calculus/                    # Applied Calculus Project 
                             │               │   │           └── hand_off_documents/
                             │               │   │               └── byui_math_problems_jan09.md
                             │               │   └── layer_6/
-                            │               │       └── layer_6_sub*4_components/
-                            │               └── layer_5_sub*3_component_2026_01_11_class/
+                            │               │       └── layer_6_subx4_components/
+                            │               └── layer_5_subx3_component_2026_01_11_class/
                             │                   └── ...
-                            └── layer_4_sub*2_components/
+                            └── layer_4_subx2_components/
                                 └── ...
 ```
 
@@ -359,12 +359,12 @@ layer_1_project_applied_calculus/                    # Applied Calculus Project 
    - Save overview diagrams in: `layer_3/layer_3_02_sub_layers/sub_layer_3.01_visual_notes/`
 
 3. **Subtopic in lecture:** Power Rule
-   - Create: `layer_3_sub_feature_derivatives/layer_4/layer_4_sub*2_features/layer_4_sub*2_feature_power_rule/`
+   - Create: `layer_3_sub_feature_derivatives/layer_4/layer_4_subx2_features/layer_4_subx2_feature_power_rule/`
    - Save Proactor AI transcript in: `layer_4/layer_4_99_stages/stage_4.04_development/hand_off_documents/`
    - Save Excalidraw work in: `layer_4/layer_4_02_sub_layers/sub_layer_4.01_visual_notes/`
 
 4. **Daily Practice Problems from BYUI Math page**
-   - Create: `layer_4_sub*2_feature_power_rule/layer_5/layer_5_sub*3_components/layer_5_sub*3_component_2026_01_09_class/`
+   - Create: `layer_4_subx2_feature_power_rule/layer_5/layer_5_subx3_components/layer_5_subx3_component_2026_01_09_class/`
    - Show your work in Excalidraw, save to: `layer_5/layer_5_02_sub_layers/sub_layer_5.01_visual_notes/excalidraw/`
    - Document problems from BYUI Math page in: `layer_5/layer_5_99_stages/stage_5.05_testing/hand_off_documents/`
 
@@ -385,7 +385,7 @@ Create a **feature** when you have:
 
 **In Feature context (uses "sub_feature"):**
 - `layer_3_sub_feature_power_rule/` - Sub-feature inside a feature
-- `layer_4_sub*2_feature_negative_exponents/` - Sub*2-feature inside a sub_feature
+- `layer_4_subx2_feature_negative_exponents/` - Sub*2-feature inside a sub_feature
 
 ### Components (Work/Artifacts)
 
@@ -402,7 +402,7 @@ Create a **component** when you have:
 
 **In Feature/Component context (uses "sub_component"):**
 - `layer_3_sub_component_practice_set_1/` - Sub-component inside a feature
-- `layer_4_sub*2_component_problem_7/` - Sub*2-component inside a sub_component
+- `layer_4_subx2_component_problem_7/` - Sub*2-component inside a sub_component
 
 ---
 
@@ -420,11 +420,11 @@ cd layer_2/layer_2_00_ai_manager_system/
 # Navigate to sub-feature (feature inside feature uses "sub")
 cd ../../layer_3/layer_3_sub_features/layer_3_sub_feature_power_rule/
 
-# Navigate to sub*2-feature (feature inside sub_feature)
-cd layer_4/layer_4_sub*2_features/layer_4_sub*2_feature_negative_exponents/
+# Navigate to subx2-feature (feature inside sub_feature)
+cd layer_4/layer_4_subx2_features/layer_4_subx2_feature_negative_exponents/
 
-# Navigate to sub*2-component at this level (component inside feature context)
-cd ../layer_4_sub*2_components/layer_4_sub*2_component_practice_set_1/
+# Navigate to subx2-component at this level (component inside feature context)
+cd ../layer_4_subx2_components/layer_4_subx2_component_practice_set_1/
 ```
 
 ### Breadth Navigation (Siblings at Same Level)
@@ -603,7 +603,7 @@ Store lecture transcripts at the **most specific** applicable layer:
 
 - General derivatives lecture -> `layer_2_feature_derivatives/layer_2/layer_2_99_stages/stage_2.04_development/hand_off_documents/`
 - Power rule specific lecture -> `layer_3_sub_feature_power_rule/layer_3/layer_3_99_stages/stage_3.04_development/hand_off_documents/`
-- Negative exponents discussion -> `layer_4_sub*2_feature_negative_exponents/layer_4/layer_4_99_stages/stage_4.04_development/hand_off_documents/`
+- Negative exponents discussion -> `layer_4_subx2_feature_negative_exponents/layer_4/layer_4_99_stages/stage_4.04_development/hand_off_documents/`
 
 ### Excalidraw Placement
 
@@ -611,13 +611,13 @@ Store visual notes at the **layer where the work was done**:
 
 - Derivatives overview diagram -> `layer_2_feature_derivatives/layer_2/layer_2_02_sub_layers/sub_layer_2.01_visual_notes/`
 - Power rule examples -> `layer_3_sub_feature_power_rule/layer_3/layer_3_02_sub_layers/sub_layer_3.01_visual_notes/`
-- Practice problem work -> `layer_4_sub*2_component_practice_set_1/layer_4/layer_4_02_sub_layers/sub_layer_4.01_visual_notes/`
+- Practice problem work -> `layer_4_subx2_component_practice_set_1/layer_4/layer_4_02_sub_layers/sub_layer_4.01_visual_notes/`
 
 ### BYUI Math Page References
 
 Document problem sources and answers at the appropriate component layer:
 
-- `layer_4_sub*2_component_practice_set_1/layer_4/layer_4_99_stages/stage_4.05_testing/hand_off_documents/byui_math_problems.md`
+- `layer_4_subx2_component_practice_set_1/layer_4/layer_4_99_stages/stage_4.05_testing/hand_off_documents/byui_math_problems.md`
 
 ---
 
@@ -631,7 +631,7 @@ Document problem sources and answers at the appropriate component layer:
 | Sub_project | `features` | `components` |
 | Sub*N_project | `features` | `components` |
 | Feature | `sub_features` | `sub_components` |
-| Sub_feature | `sub*2_features` | `sub*2_components` |
+| Sub_feature | `subx2_features` | `subx2_components` |
 | Component | N/A | `sub_components` |
 
 **Rule:** "sub" prefix ONLY for same-type nesting (project->project, feature->feature, component->component)
@@ -648,7 +648,7 @@ Document problem sources and answers at the appropriate component layer:
 1. Projects/Sub_projects contain `features/` and `components/` (NOT sub_*)
 2. Features contain `sub_features/` and `sub_components/`
 3. Components contain `sub_components/`
-4. Same-type nesting increases depth: `sub`, `sub*2`, `sub*3`...
+4. Same-type nesting increases depth: `sub`, `subx2`, `subx3`...
 5. Layer number always indicates depth in hierarchy tree
 6. Each layer follows the same structural pattern
 7. Entity internals in `layer_N/`, nested content in `layer_N+1/`

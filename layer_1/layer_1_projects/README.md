@@ -13,7 +13,7 @@ layer_1_project_<name>/
 │   ├── layer_1_02_sub_layers/
 │   └── layer_1_99_stages/
 └── layer_2/              # Project's children
-    ├── layer_2_sub*1_projects/
+    ├── layer_2_subx1_projects/
     ├── layer_2_features/
     └── layer_2_components/
 ```

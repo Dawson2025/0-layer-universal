@@ -28,7 +28,7 @@ Use this template when you have a nested project that:
 │   ├── layer_2_02_sub_layers/            # Sub-layer slots
 │   └── layer_2_99_stages/                # Stage folders
 ├── layer_3/                              # Layer 3 grouping folder (sibling)
-│   ├── layer_3_sub*2_projects/
+│   ├── layer_3_subx2_projects/
 │   ├── layer_3_features/
 │   └── layer_3_components/
 └── README.md
@@ -56,7 +56,7 @@ Use this template when you have a nested project that:
 
 **Same-Type Nesting Rule:** The "sub" prefix only applies to same-type nesting. Since a feature inside a sub_project is a different type (not project→project), features and components here do NOT use the "sub" prefix.
 
-- layer_3/layer_3_sub*2_projects/: Nested sub*2-projects within this sub-project (project→project = same-type)
+- layer_3/layer_3_subx2_projects/: Nested subx2-projects within this sub-project (project→project = same-type)
 - layer_3/layer_3_features/: Features within this sub-project (project→feature = different type, NO "sub")
 - layer_3/layer_3_components/: Components within this sub-project (project→component = different type, NO "sub")
 

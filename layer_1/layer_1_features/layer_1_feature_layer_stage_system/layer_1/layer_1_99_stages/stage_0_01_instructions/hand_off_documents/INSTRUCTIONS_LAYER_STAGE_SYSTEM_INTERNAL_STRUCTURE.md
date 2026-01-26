@@ -149,7 +149,7 @@ layer_1_feature_layer_stage_system/
 │ LAYER 2 CHILDREN (Framework's Features & Components)
 │ ═══════════════════════════════════════════════════════════════════════════
 └── layer_2/
-    ├── layer_2_sub*1_projects/                       # Sub-projects (if any)
+    ├── layer_2_subx1_projects/                       # Sub-projects (if any)
     │
     ├── layer_2_features/                             # FEATURES OF THE FRAMEWORK
     │   │

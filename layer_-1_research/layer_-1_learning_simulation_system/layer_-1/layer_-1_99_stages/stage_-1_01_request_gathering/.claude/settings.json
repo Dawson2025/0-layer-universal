@@ -1,0 +1,14 @@
+{
+  "context": {
+    "stage": "stage_-1_01_request_gathering",
+    "layer": -1,
+    "purpose": "Collect and clarify requirements"
+  },
+  "permissions": {
+    "allow": [],
+    "deny": [],
+    "ask": []
+  },
+  "env": {},
+  "hooks": {}
+}

@@ -21,8 +21,8 @@ Every entity has:
 - `layer_N+1/` - Its children
 
 ### Depth Markers
-- `sub*1` indicates 1 level down from project
-- `sub*2` indicates 2 levels down from project
+- `subx1` indicates 1 level down from project
+- `subx2` indicates 2 levels down from project
 - Used in: `layer_N_sub*X_projects/`
 
 ## Documentation

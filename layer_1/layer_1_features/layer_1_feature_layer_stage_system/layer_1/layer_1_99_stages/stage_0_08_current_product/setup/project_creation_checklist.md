@@ -10,7 +10,7 @@
 
 - [ ] Determine project name (use lowercase with hyphens or underscores)
 - [ ] Determine if this is a top-level project or sub-project
-- [ ] If sub-project, identify parent and nesting level (sub*1, sub*2, etc.)
+- [ ] If sub-project, identify parent and nesting level (subx1, subx2, etc.)
 - [ ] Decide if project will be a git submodule or part of parent repo
 
 ---

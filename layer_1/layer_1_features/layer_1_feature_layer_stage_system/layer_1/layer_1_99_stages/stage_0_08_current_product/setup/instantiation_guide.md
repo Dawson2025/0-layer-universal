@@ -11,7 +11,7 @@
 | Entity Type | Description | Template Location |
 |-------------|-------------|-------------------|
 | **Project** | Top-level container (Layer 1) | `layer_1/layer_1_features/layer_1_feature_layer_stage_system/layer_1/layer_1_02_sub_layers/1_project_template/` |
-| **Sub-project** | Project nested under project (sub*1, sub*2, etc.) | `layer_1/layer_1_features/layer_1_feature_layer_stage_system/layer_1/layer_1_02_sub_layers/2_sub_project_template/` |
+| **Sub-project** | Project nested under project (subx1, subx2, etc.) | `layer_1/layer_1_features/layer_1_feature_layer_stage_system/layer_1/layer_1_02_sub_layers/2_sub_project_template/` |
 | **Feature** | Distinct capability within a project | `layer_1/layer_1_features/layer_1_feature_layer_stage_system/layer_1/layer_1_02_sub_layers/2_feature_template/` |
 | **Sub-feature** | Feature nested under feature | `layer_1/layer_1_features/layer_1_feature_layer_stage_system/layer_1/layer_1_02_sub_layers/2_feature_template/` (reused) |
 | **Component** | Implementation unit within a feature | `layer_1/layer_1_features/layer_1_feature_layer_stage_system/layer_1/layer_1_02_sub_layers/3_component_template/` |
@@ -33,8 +33,8 @@ layer_<N>_<type>_<name>/
 | Entity | Naming Pattern | Example |
 |--------|----------------|---------|
 | Project | `<N>_layer_<name>/` (top-level repo) | `1_layer_school/` |
-| Sub-project | `layer_<N>_sub*<X>_project_<name>/` | `layer_2_sub*1_project_classes/` |
-| Sub*2-project | `layer_<N>_sub*<X>_project_<name>/` | `layer_3_sub*2_project_computer_science/` |
+| Sub-project | `layer_<N>_sub*<X>_project_<name>/` | `layer_2_subx1_project_classes/` |
+| Sub*2-project | `layer_<N>_sub*<X>_project_<name>/` | `layer_3_subx2_project_computer_science/` |
 | Feature | `layer_<N>_feature_<name>/` | `layer_2_feature_authentication/` |
 | Sub-feature | `layer_<N>_sub_feature_<name>/` | `layer_3_sub_feature_oauth/` |
 | Component | `layer_<N>_component_<name>/` | `layer_3_component_login_form/` |
@@ -54,8 +54,8 @@ layer_<N>_<type>_<name>/
 ### Sub*X Numbering for Projects
 
 When projects nest inside projects, track the nesting depth:
-- `sub*1_project` = 1 level deep (project inside project)
-- `sub*2_project` = 2 levels deep (project inside project inside project)
+- `subx1_project` = 1 level deep (project inside project)
+- `subx2_project` = 2 levels deep (project inside project inside project)
 - `sub*N_project` = N levels deep
 
 ---
@@ -66,11 +66,11 @@ When projects nest inside projects, track the nesting depth:
 1_layer_school/                              # Project (L1)
 ├── layer_1/                                 # L1 internals
 └── layer_2/                                 # L2 content
-    ├── layer_2_sub*1_projects/              # Sub-projects go here
-    │   └── layer_2_sub*1_project_classes/   # A sub-project (L2)
+    ├── layer_2_subx1_projects/              # Sub-projects go here
+    │   └── layer_2_subx1_project_classes/   # A sub-project (L2)
     │       ├── layer_2/                     # Its L2 internals
     │       └── layer_3/                     # Its L3 content
-    │           ├── layer_3_sub*2_projects/  # Sub*2-projects
+    │           ├── layer_3_subx2_projects/  # Sub*2-projects
     │           ├── layer_3_features/        # Features
     │           └── layer_3_components/      # Components
     ├── layer_2_features/                    # Features go here
@@ -117,7 +117,7 @@ When projects nest inside projects, track the nesting depth:
 
 4. **Create the three nested content folders:**
    ```bash
-   mkdir -p layer_2/layer_2_sub*1_projects
+   mkdir -p layer_2/layer_2_subx1_projects
    mkdir -p layer_2/layer_2_features
    mkdir -p layer_2/layer_2_components
    ```
@@ -176,10 +176,10 @@ When projects nest inside projects, track the nesting depth:
    git submodule add <remote_url> layer_<N+1>_sub*<X>_projects/layer_<N+1>_sub*<X>_project_<name>
    ```
 
-**Example:** Creating `layer_3_sub*2_project_computer_science` inside `layer_2_sub*1_project_classes`:
+**Example:** Creating `layer_3_subx2_project_computer_science` inside `layer_2_subx1_project_classes`:
 ```bash
-cd layer_2_sub*1_project_classes/layer_3/layer_3_sub*2_projects/
-cp -r .../2_sub_project_template/ layer_3_sub*2_project_computer_science/
+cd layer_2_subx1_project_classes/layer_3/layer_3_subx2_projects/
+cp -r .../2_sub_project_template/ layer_3_subx2_project_computer_science/
 # Rename internals to layer_3/layer_4
 ```
 
@@ -449,11 +449,11 @@ stage_N.XX_<name>/
 ```
 1_layer_school/                           # Project
 └── layer_2/
-    └── layer_2_sub*1_projects/
-        └── layer_2_sub*1_project_classes/  # Sub-project
+    └── layer_2_subx1_projects/
+        └── layer_2_subx1_project_classes/  # Sub-project
             └── layer_3/
-                └── layer_3_sub*2_projects/
-                    └── layer_3_sub*2_project_cs101/  # Sub*2-project
+                └── layer_3_subx2_projects/
+                    └── layer_3_subx2_project_cs101/  # Sub*2-project
                         └── layer_4/
                             ├── layer_4_features/
                             │   └── layer_4_feature_week1/  # Feature

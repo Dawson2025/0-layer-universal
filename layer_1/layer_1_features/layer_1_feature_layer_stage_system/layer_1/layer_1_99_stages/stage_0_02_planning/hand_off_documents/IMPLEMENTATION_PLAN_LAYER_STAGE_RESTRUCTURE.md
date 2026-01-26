@@ -456,7 +456,7 @@ layer_1_feature_layer_stage_system/layer_1/
 ### 6.4 Create layer_2/ (Feature's Children)
 ```
 layer_1_feature_layer_stage_system/layer_2/
-├── layer_2_sub*1_projects/
+├── layer_2_subx1_projects/
 ├── layer_2_features/                         # Created in Phase 7
 └── layer_2_components/
 ```

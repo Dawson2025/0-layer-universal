@@ -26,7 +26,7 @@ Every entity contains:
 - `layer_N+1/` - Its children entities
 
 ### Depth Markers
-- `sub*1`, `sub*2`, etc. indicate depth from project root
+- `subx1`, `subx2`, etc. indicate depth from project root
 - Used in grouping directories: `layer_N_sub*X_projects/`
 
 ## Documentation Location
