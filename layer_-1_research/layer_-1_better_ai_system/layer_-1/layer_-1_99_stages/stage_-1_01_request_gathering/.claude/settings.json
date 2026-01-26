@@ -1,8 +1,47 @@
 {
   "context": {
+    "project": "better_ai_system",
     "stage": "stage_-1_01_request_gathering",
     "layer": -1,
-    "purpose": "Collect and clarify requirements"
+    "purpose": "Collect and clarify requirements for AI system improvements"
+  },
+  "tree_of_needs": {
+    "version": "1.4.0",
+    "structure": "DAG",
+    "root": "00_seamless_ai_collaboration",
+    "branches": {
+      "01_capable": ["persistent_knowledge", "scalable_context", "discoverable", "multimodal"],
+      "02_continuous": ["tool_portable", "session_resilient", "failure_recoverable", "evolvable", "cross_platform"],
+      "03_trustworthy": ["rule_compliant", "predictable", "bounded"],
+      "04_observable": ["transparent", "debuggable", "auditable"],
+      "05_engaging": ["multimodal"]
+    },
+    "shared_needs": {
+      "multimodal": ["01_capable", "05_engaging"]
+    },
+    "total_needs": 15,
+    "total_branches": 5,
+    "principles": ["future_proof", "technology_agnostic", "incremental_adoption", "human_ai_partnership", "simplicity"]
+  },
+  "key_files": {
+    "tree_root": "outputs/requests/tree_of_needs/00_seamless_ai_collaboration/README.md",
+    "principles": "outputs/requests/tree_of_needs/_meta/PRINCIPLES.md",
+    "dependencies": "outputs/requests/tree_of_needs/_meta/DEPENDENCIES.md",
+    "extension_guide": "outputs/requests/tree_of_needs/_meta/EXTENSION_GUIDE.md",
+    "changelog": "outputs/requests/tree_of_needs/_meta/CHANGELOG.md",
+    "version": "outputs/requests/tree_of_needs/_meta/VERSION.md"
+  },
+  "skills": {
+    "tree-of-needs-status": "Check Tree of Needs status and coverage",
+    "add-need": "Add a new need to the tree",
+    "check-dependencies": "Verify need dependencies"
+  },
+  "implementation_priority": {
+    "phase_1_foundation": ["persistent_knowledge", "discoverable", "scalable_context"],
+    "phase_2_continuity": ["tool_portable", "session_resilient", "failure_recoverable", "evolvable", "cross_platform"],
+    "phase_3_trust": ["rule_compliant", "predictable", "bounded"],
+    "phase_4_observability": ["debuggable", "transparent", "auditable"],
+    "phase_5_engagement": ["multimodal"]
   },
   "permissions": {
     "allow": [],
