@@ -72,7 +72,32 @@ lightdm/gdm3
 2. **Portal crashes**: File dialogs, app launching broken
 3. **Display access**: Services can't connect to X11/Wayland
 4. **D-Bus issues**: Inter-process communication fails
+5. **Inotify exhaustion**: Services fail to start, systemd gives up
+
+## Settings Daemon Recovery
+
+### Why They Don't Auto-Restart
+
+gsd-* services are configured with `RefuseManualStart=true`:
+- Can only be started by gnome-session
+- Systemd gives up after 5 rapid restart failures
+- Manual `/usr/libexec/gsd-*` runs work but aren't managed
+
+### Recovery Options
+
+1. **Log out and back in** - Cleanest, lets gnome-session restart everything
+2. **Manual restart** - `DISPLAY=:0 /usr/libexec/gsd-media-keys &`
+3. **Keepalive timer** - Periodic check and restart (see gsd_keepalive_fix.md)
+
+### Symptoms of Failed gsd-*
+
+| Daemon | Symptom |
+|--------|---------|
+| `gsd-media-keys` | Volume buttons don't work |
+| `gsd-power` | Brightness buttons don't work |
+| `gsd-keyboard` | Keyboard shortcuts broken |
 
 ## Related Documentation
 - [Linux Fundamentals](../sub_layer_01_linux_fundamentals/)
 - [System Services](../sub_layer_03_system_services/)
+- [Audio Stack](../sub_layer_04_audio/)
