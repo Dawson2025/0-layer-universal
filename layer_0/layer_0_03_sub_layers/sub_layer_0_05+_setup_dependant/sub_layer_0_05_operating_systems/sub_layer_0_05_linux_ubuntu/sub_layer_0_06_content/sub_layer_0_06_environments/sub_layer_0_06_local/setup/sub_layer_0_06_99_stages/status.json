@@ -34,19 +34,57 @@
     {
       "id": "audio_quality_degraded",
       "title": "Laptop Speaker Audio Quality Worse Than Windows",
-      "status": "mitigated",
+      "status": "implemented",
       "stage": "stage_0_09_current_product",
       "date_reported": "2026-01-26",
       "date_resolved": "2026-01-26",
-      "notes": "Improved but not Windows-equivalent. Missing proprietary Dolby/Lenovo processing.",
+      "notes": "Captured Windows Dolby impulse response and applied via convolution. Should closely match Windows.",
       "documentation": {
         "request": "stage_0_00_request_gathering/requests/REQ_001_improve_laptop_speaker_audio.md",
         "research": "stage_0_01_research/outputs/REQ_001_audio_improvement_research.md",
+        "advanced_research": "stage_0_01_research/outputs/REQ_001_advanced_audio_research.md",
         "implementation": "stage_0_05_development/outputs/REQ_001_audio_implementation.md",
+        "windows_instructions": "stage_0_05_development/outputs/WINDOWS_INSTRUCTIONS_capture_dolby_impulse.md",
         "testing": "stage_0_06_testing/outputs/REQ_001_audio_testing.md",
         "fixes": "stage_0_08_fixing/outputs/REQ_001_audio_fixes.md",
         "final_config": "stage_0_09_current_product/outputs/REQ_001_audio_final_config.md"
       }
+    },
+    {
+      "id": "wireplumber_crash",
+      "title": "WirePlumber Crashes Due to Broken Lua Script",
+      "status": "resolved",
+      "stage": "stage_0_09_current_product",
+      "date_reported": "2026-01-26",
+      "date_resolved": "2026-01-26",
+      "output": "stage_0_09_current_product/outputs/wireplumber_crash_fix.md",
+      "notes": "51-easyeffects-volume.lua referenced non-existent default_nodes_rules variable"
+    },
+    {
+      "id": "subwoofer_i2c_bypass",
+      "title": "Yoga Pro 9 Subwoofer Disabled by Default",
+      "status": "resolved",
+      "stage": "stage_0_09_current_product",
+      "date_reported": "2026-01-26",
+      "date_resolved": "2026-01-26",
+      "output": "stage_0_09_current_product/outputs/REQ_002_yoga_speaker_final_config.md",
+      "notes": "Subwoofer disabled due to kernel bug. Enabled via I2C bypass script from GitHub repo.",
+      "documentation": {
+        "research": "stage_0_01_research/outputs/REQ_002_yoga_speaker_i2c_research.md",
+        "implementation": "stage_0_05_development/outputs/REQ_002_yoga_speaker_implementation.md",
+        "testing": "stage_0_06_testing/outputs/REQ_002_yoga_speaker_testing.md",
+        "fixes": "stage_0_08_fixing/outputs/REQ_002_yoga_speaker_fixes.md",
+        "final_config": "stage_0_09_current_product/outputs/REQ_002_yoga_speaker_final_config.md"
+      }
+    },
+    {
+      "id": "tas2781_driver_conflict",
+      "title": "TAS2781 Kernel Driver Resets I2C Configuration",
+      "status": "resolved",
+      "stage": "stage_0_09_current_product",
+      "date_reported": "2026-01-26",
+      "date_resolved": "2026-01-26",
+      "notes": "Driver snd_hda_scodec_tas2781_i2c was resetting I2C config. Blacklisted in /etc/modprobe.d/"
     }
   ],
   "active_services": [
@@ -56,19 +94,39 @@
       "status": "enabled"
     },
     {
+      "name": "yoga-16imh9-speakers.service",
+      "purpose": "Enable subwoofer via I2C bypass script",
+      "status": "enabled",
+      "script": "/usr/local/bin/2pa-byps.sh"
+    },
+    {
       "name": "easyeffects",
-      "purpose": "Audio enhancement for laptop speakers",
+      "purpose": "Audio enhancement for Yoga Pro 9 speakers",
       "status": "autostart",
-      "preset": "Dolby-Like (Framework)"
+      "preset": "Yoga Pro 9i Official"
+    }
+  ],
+  "blacklisted_drivers": [
+    {
+      "driver": "snd_hda_scodec_tas2781_i2c",
+      "reason": "Resets I2C configuration set by bypass script",
+      "config_file": "/etc/modprobe.d/disable-tas2781-driver.conf"
     }
   ],
   "active_requests": [
     {
       "id": "REQ_001",
       "title": "Improve Laptop Speaker Audio Quality",
-      "status": "implemented",
+      "status": "superseded",
       "satisfaction": "partial",
-      "notes": "Audio improved but not matching Windows Dolby quality"
+      "notes": "Initial attempt with EasyEffects presets and Dolby IR capture. Superseded by REQ_002."
+    },
+    {
+      "id": "REQ_002",
+      "title": "Fix Yoga Pro 9 Subwoofer/Speaker Quality",
+      "status": "completed",
+      "satisfaction": "high",
+      "notes": "Subwoofer was disabled by default. Enabled via I2C bypass script + driver blacklist. Sound much fuller."
     }
   ]
 }
