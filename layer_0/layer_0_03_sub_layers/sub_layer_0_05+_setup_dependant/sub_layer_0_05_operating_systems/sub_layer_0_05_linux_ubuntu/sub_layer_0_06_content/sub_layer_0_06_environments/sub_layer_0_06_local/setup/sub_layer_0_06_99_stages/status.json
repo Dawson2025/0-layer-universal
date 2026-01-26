@@ -85,6 +85,21 @@
       "date_reported": "2026-01-26",
       "date_resolved": "2026-01-26",
       "notes": "Driver snd_hda_scodec_tas2781_i2c was resetting I2C config. Blacklisted in /etc/modprobe.d/"
+    },
+    {
+      "id": "gsd_display_variable",
+      "title": "GSD Daemons Fail After Reboot Due to Missing DISPLAY",
+      "status": "resolved",
+      "stage": "stage_0_09_current_product",
+      "date_reported": "2026-01-26",
+      "date_resolved": "2026-01-26",
+      "notes": "Systemd service lacked DISPLAY=:0 environment variable. Added Environment=DISPLAY=:0 to gsd-keepalive.service",
+      "documentation": {
+        "testing": "stage_0_06_testing/outputs/ISSUE_004_gsd_display_testing.md",
+        "criticism": "stage_0_07_criticism/outputs/ISSUE_004_gsd_display_criticism.md",
+        "fixing": "stage_0_08_fixing/outputs/ISSUE_004_gsd_display_fix.md",
+        "final_config": "stage_0_09_current_product/outputs/gsd_keepalive_fix.md"
+      }
     }
   ],
   "active_services": [

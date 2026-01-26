@@ -37,12 +37,15 @@ After=graphical-session.target
 [Service]
 Type=oneshot
 RemainAfterExit=yes
+Environment=DISPLAY=:0
 ExecStart=/bin/bash -c 'pgrep -x gsd-media-keys || /usr/libexec/gsd-media-keys & pgrep -x gsd-power || /usr/libexec/gsd-power &'
 ExecStop=/bin/true
 
 [Install]
 WantedBy=default.target
 ```
+
+> **IMPORTANT**: The `Environment=DISPLAY=:0` line is required! Without it, the daemons fail with "Cannot open display:" after reboot because systemd services don't inherit the X11 display variable.
 
 **~/.config/systemd/user/gsd-keepalive.timer**
 ```ini
