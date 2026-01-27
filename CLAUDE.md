@@ -1,14 +1,74 @@
 # 0_layer_universal
 
-## FIRST: Read Universal Rules
+## Role
 
-**BEFORE doing any work**, read and follow rules from:
+**Root Manager** - Coordinates all layers in the system.
+
+## Responsibilities
+
+- Receive user requests via `hand_off_documents/incoming/from_above/`
+- Delegate tasks to appropriate layers (layer_0, layer_1, layer_-1_research)
+- Aggregate results from layers via `hand_off_documents/incoming/from_below/`
+- Report final results to user via `hand_off_documents/outgoing/to_above/`
+- Handle escalations from any descendant
+
+## On Session Start
+
+1. Check `hand_off_documents/incoming/from_above/` for user requests
+2. Check `hand_off_documents/incoming/from_below/` for layer results/escalations
+3. Process pending work or await user input
+
+## Children
+
+| Layer | Purpose | Scope |
+|-------|---------|-------|
+| `layer_0/` | Universal | Rules, prompts, knowledge, principles (applies to ALL) |
+| `layer_1/` | Projects | Projects, features, components |
+| `layer_-1_research/` | Research | Research projects, experiments |
+
+---
+
+## Universal Rules (ALWAYS FOLLOW)
+
+### AI Context Modification Protocol
+
+Before modifying AI context files (CLAUDE.md, .claude/, rules, prompts, knowledge):
+
+1. **Show diagram** of proposed changes (full paths, before/after)
+2. **Wait for user approval** - do not proceed until confirmed
+3. **Execute approved changes** - follow diagram exactly
+
+**Scope**: `CLAUDE.md`, `.claude/`, `*_rules/`, `*_prompts/`, `*_knowledge/`, `status.json`
+
+### AI Context Commit/Push Rule
+
+After approved AI context changes:
+
+1. `git add [specific files]` - stage changed files
+2. `git commit -m "[AI Context] description"` - descriptive message
+3. `git push` - sync to remote
+
+### Safety Governance (Key Principles)
+
+1. **Least Privilege**: Operate with minimum permissions needed
+2. **Defense in Depth**: Multiple protection layers
+3. **Human Oversight**: Critical decisions require approval
+4. **Fail Secure**: When in doubt, deny and escalate
+5. **Audit Everything**: Log actions for review
+
+**Full rules**: `layer_0/layer_0_03_sub_layers/sub_layer_0_04_rules/`
+
+---
+
+## Detailed Rules Reference
+
+For complete rule documentation, read from:
 
 ```
 layer_0/layer_0_03_sub_layers/sub_layer_0_04_rules/
-├── AI_CONTEXT_MODIFICATION_PROTOCOL.md   ← Show diagram before modifying AI context
-├── AI_CONTEXT_COMMIT_PUSH_RULE.md        ← Commit and push after AI context changes
-├── safety_governance.md                   ← Security boundaries and permissions
+├── AI_CONTEXT_MODIFICATION_PROTOCOL.md   ← Full modification protocol
+├── AI_CONTEXT_COMMIT_PUSH_RULE.md        ← Full commit/push rule
+├── safety_governance.md                   ← Full security governance
 └── LAYER_CONTEXT_HEADER_PROTOCOL.md      ← File header requirements
 ```
 
@@ -55,8 +115,13 @@ layer_0/layer_0_03_sub_layers/sub_layer_0_04_rules/
 
 ```
 0_layer_universal/
-├── CLAUDE.md                 ← You are here (navigation guide)
-├── .claude/settings.json     ← Tool permissions
+├── CLAUDE.md                 ← You are here (Root Manager)
+├── .claude/                  ← Tool permissions, settings
+├── hand_off_documents/       ← Four-directional communication
+│   ├── incoming/from_above/  ← User requests
+│   ├── incoming/from_below/  ← Layer results
+│   ├── outgoing/to_above/    ← Results to user
+│   └── outgoing/to_below/    ← Tasks to layers
 ├── layer_0/                  ← Universal (applies to ALL)
 │   ├── layer_0_03_sub_layers/
 │   │   ├── sub_layer_0_01_prompts/      ← Session init
