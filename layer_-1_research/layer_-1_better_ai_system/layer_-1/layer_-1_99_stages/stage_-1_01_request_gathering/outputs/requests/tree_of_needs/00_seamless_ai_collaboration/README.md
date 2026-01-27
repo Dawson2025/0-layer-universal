@@ -90,7 +90,11 @@ This root need branches into five fundamental concerns:
 │   ├── need_02_session_resilient     Survives session breaks
 │   ├── need_03_failure_recoverable   Recovers from errors
 │   ├── need_04_evolvable             Adapts to technology changes
-│   └── need_05_cross_platform        Works across OS/machines
+│   ├── need_05_cross_platform        Works across OS/machines
+│   ├── need_06_universal_rules_cross_device  Rules everywhere, accessible remotely
+│   ├── need_07_resilient_system_state  Survives storage failures
+│   ├── need_08_universal_context_discovery  Context accessible anywhere
+│   └── need_09_universal_ai_tool_support  Works with any AI tool
 │
 ├── 03_trustworthy/                   AI can be trusted
 │   ├── need_01_rule_compliant        Follows rules
