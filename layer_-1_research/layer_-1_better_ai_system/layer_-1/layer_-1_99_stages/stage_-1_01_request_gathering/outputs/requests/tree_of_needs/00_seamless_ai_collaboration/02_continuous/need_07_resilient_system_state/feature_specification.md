@@ -264,6 +264,5 @@ See `RESILIENCE_SYSTEM_STAGING_PLAN.md` for detailed breakdown of how this featu
 
 - [`RESILIENCE_READINESS_ASSESSMENT.md`](../../../RESILIENCE_READINESS_ASSESSMENT.md): Current system analysis
 - [`RESILIENCE_SYSTEM_STAGING_PLAN.md`](../RESILIENCE_SYSTEM_STAGING_PLAN.md): How to document through stages
-- [`need_06_universal_rules_and_cross_device_access`](tree_of_needs/00_seamless_ai_collaboration/02_continuous/need_06_universal_rules_and_cross_device_access/): Related requirement
-- [`existing_infrastructure.md`](overview/existing_infrastructure.md): Current Syncthing system
-
+- [`need_06_universal_rules_and_cross_device_access`](../need_06_universal_rules_and_cross_device_access/): Related requirement
+- [`existing_infrastructure.md`](../../overview/existing_infrastructure.md): Current Syncthing system
