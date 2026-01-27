@@ -20,7 +20,11 @@ requests/
         │   ├── need_02_session_resilient
         │   ├── need_03_failure_recoverable
         │   ├── need_04_evolvable
-        │   └── need_05_cross_platform
+        │   ├── need_05_cross_platform
+        │   ├── need_06_universal_rules_and_cross_device_access
+        │   ├── need_07_resilient_system_state
+        │   ├── need_08_universal_context_discovery
+        │   └── need_09_universal_ai_tool_support
         │
         ├── 03_trustworthy/                  "Can I trust AI?"
         │   ├── need_01_rule_compliant
@@ -69,6 +73,10 @@ requests/
 | Failure Recoverable | What if something breaks? | Idempotent setup + rollback capability |
 | Evolvable | Will it still work as AI evolves? | Modular architecture + forward-compatible formats |
 | Cross-Platform | Works on Mac, Linux, Windows? | OS abstraction + config portability |
+| Universal Rules & Cross-Device | Rules consistent? Can access remotely? | FHS locations + Syncthing + multi-user access |
+| Resilient System State | Survives storage failures? | Multi-tier redundancy + recovery partitions + backups |
+| Context Discovery | Can find context anywhere? | Universal discovery protocol + 5-tier storage |
+| AI Tool Support | Works with any AI tool? | Unified access API + tool adapters + cross-tool sync |
 | **03_trustworthy** | | |
 | Rule Compliant | Does AI follow rules? | Rule hierarchies + conflict resolution |
 | Predictable | Is behavior consistent? | Version tracking + consistent patterns |

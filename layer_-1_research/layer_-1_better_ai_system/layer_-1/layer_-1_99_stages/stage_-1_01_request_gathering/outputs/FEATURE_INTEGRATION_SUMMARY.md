@@ -366,10 +366,10 @@ Feature 3 (Tool Access) ← Depends on Feature 1 + Feature 2
 
 ## Related Documents
 
-### Feature Requests (Stage 01)
-- [`feature_resilience_system.md`](requests/feature_resilience_system.md) - Full Phase 1 resilience
-- [`feature_universal_context_hierarchy.md`](requests/feature_universal_context_hierarchy.md) - CLAUDE.md everywhere
-- [`feature_universal_ai_tool_access.md`](requests/feature_universal_ai_tool_access.md) - Any tool access
+### Feature Specifications (Integrated into Tree of Needs)
+- [`need_07: feature_specification.md`](requests/tree_of_needs/00_seamless_ai_collaboration/02_continuous/need_07_resilient_system_state/feature_specification.md) - Full Phase 1 resilience
+- [`need_08: feature_specification.md`](requests/tree_of_needs/00_seamless_ai_collaboration/02_continuous/need_08_universal_context_discovery/feature_specification.md) - CLAUDE.md everywhere
+- [`need_09: feature_specification.md`](requests/tree_of_needs/00_seamless_ai_collaboration/02_continuous/need_09_universal_ai_tool_support/feature_specification.md) - Any tool access
 
 ### Tree of Needs Integration (Stage 01)
 - [`need_07_resilient_system_state/`](requests/tree_of_needs/00_seamless_ai_collaboration/02_continuous/need_07_resilient_system_state/) - Data survival requirements
