@@ -31,6 +31,9 @@ For work to be continuous, it must not be blocked by:
 | [need_04_evolvable](./need_04_evolvable/) | "Will this still work as AI evolves?" | System adapts to technology changes |
 | [need_05_cross_platform](./need_05_cross_platform/) | "Does it work on Mac, Linux, Windows?" | Works across OS and machines |
 | [need_06_universal_rules_and_cross_device_access](./need_06_universal_rules_and_cross_device_access/) | "Are rules consistent everywhere? Can AI access system from any machine?" | Universal rules across all users/locations/machines, cross-device skill/memory access |
+| [need_07_resilient_system_state](./need_07_resilient_system_state/) | "Will my AI system survive storage failures and corrupted filesystems?" | Multi-tier resilience: recovery partitions, A/B redundancy, backups, live boot, network recovery |
+| [need_08_universal_context_discovery](./need_08_universal_context_discovery/) | "Can AI tools find and load context from any location in any system state?" | Context discovery from anywhere, recovery mode support, cross-machine access |
+| [need_09_universal_ai_tool_support](./need_09_universal_ai_tool_support/) | "Can AI tools other than Claude Code access the system?" | Support Copilot, Gemini, clawdbot, and future tools with unified access layer |
 
 ---
 
