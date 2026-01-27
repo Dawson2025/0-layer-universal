@@ -39,7 +39,7 @@ Research that is being developed and refined. Not yet approved.
 | by_topic | `existing_solutions.md` | Clawdbot analysis | Complete |
 | by_topic | `memory_systems.md` | Memory approaches (Clawdbot, Layer-Stage, SHIMI) | Complete |
 | by_topic | `rule_propagation_problem.md` | Universal rules not loading | In Progress |
-| by_topic | `system_prompt_architecture.md` | What goes IN vs REFERENCED | Draft - Awaiting Input |
+| | | | |
 
 ---
 
@@ -49,7 +49,9 @@ Research that has been approved and is ready to move to the instructions stage.
 
 ### Current Contents
 
-(Empty - no finished understanding yet)
+| Folder | File | Topic | Status |
+|--------|------|-------|--------|
+| by_topic | `system_prompt_architecture.md` | System prompt design, container-as-manager, agent hierarchy, handoffs | APPROVED 2026-01-26 |
 
 ---
 
@@ -74,10 +76,15 @@ Research that has been approved and is ready to move to the instructions stage.
 │ understanding/          │  ← Move when approved
 └───────────┬─────────────┘
             ▼
-┌─────────────────────────┐
-│ stage_-1_03_            │
-│ instructions/outputs/   │  ← Move for implementation
-└─────────────────────────┘
+┌───────────────────────────────────────────┐
+│ stage_-1_03_instructions/outputs/         │
+│ 01_instructions_in_progress/              │  ← Create instructions
+└───────────┬───────────────────────────────┘
+            ▼
+┌───────────────────────────────────────────┐
+│ stage_-1_03_instructions/outputs/         │
+│ 02_finished_instructions/                 │  ← When approved
+└───────────────────────────────────────────┘
 ```
 
 ---
