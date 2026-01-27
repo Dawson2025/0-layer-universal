@@ -30,6 +30,7 @@ For work to be continuous, it must not be blocked by:
 | [need_03_failure_recoverable](./need_03_failure_recoverable/) | "What happens when something goes wrong?" | System recovers gracefully |
 | [need_04_evolvable](./need_04_evolvable/) | "Will this still work as AI evolves?" | System adapts to technology changes |
 | [need_05_cross_platform](./need_05_cross_platform/) | "Does it work on Mac, Linux, Windows?" | Works across OS and machines |
+| [need_06_universal_rules_and_cross_device_access](./need_06_universal_rules_and_cross_device_access/) | "Are rules consistent everywhere? Can AI access system from any machine?" | Universal rules across all users/locations/machines, cross-device skill/memory access |
 
 ---
 
