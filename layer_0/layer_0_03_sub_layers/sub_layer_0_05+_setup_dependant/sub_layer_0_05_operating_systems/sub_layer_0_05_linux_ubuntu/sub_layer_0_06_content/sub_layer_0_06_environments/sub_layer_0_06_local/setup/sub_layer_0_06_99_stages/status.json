@@ -1,6 +1,6 @@
 {
   "current_stage": "stage_0_09_current_product",
-  "last_updated": "2026-01-26",
+  "last_updated": "2026-01-28",
   "system_status": "running",
   "issues": [
     {
@@ -100,6 +100,21 @@
         "fixing": "stage_0_08_fixing/outputs/ISSUE_004_gsd_display_fix.md",
         "final_config": "stage_0_09_current_product/outputs/gsd_keepalive_fix.md"
       }
+    },
+    {
+      "id": "portal_apps_not_opening",
+      "title": "Files and Terminal Apps Not Opening",
+      "status": "resolved",
+      "stage": "stage_0_09_current_product",
+      "date_reported": "2026-01-28",
+      "date_resolved": "2026-01-28",
+      "notes": "xdg-desktop-portal-gnome crashes with SEGFAULT. Fixed by using GTK portal, D-Bus service overrides, and autostart script.",
+      "documentation": {
+        "testing": "stage_0_06_testing/outputs/ISSUE_005_portal_apps_testing.md",
+        "criticism": "stage_0_07_criticism/outputs/ISSUE_005_portal_apps_criticism.md",
+        "fixing": "stage_0_08_fixing/outputs/ISSUE_005_portal_apps_fix.md",
+        "final_config": "stage_0_09_current_product/outputs/ISSUE_005_portal_apps_final_config.md"
+      }
     }
   ],
   "active_services": [
@@ -107,6 +122,12 @@
       "name": "gsd-keepalive.timer",
       "purpose": "Auto-restart GNOME settings daemons",
       "status": "enabled"
+    },
+    {
+      "name": "fix-portal-services.desktop",
+      "purpose": "Autostart portal and terminal services with DISPLAY",
+      "status": "autostart",
+      "script": "~/.local/bin/fix-portal-services.sh"
     },
     {
       "name": "yoga-16imh9-speakers.service",
