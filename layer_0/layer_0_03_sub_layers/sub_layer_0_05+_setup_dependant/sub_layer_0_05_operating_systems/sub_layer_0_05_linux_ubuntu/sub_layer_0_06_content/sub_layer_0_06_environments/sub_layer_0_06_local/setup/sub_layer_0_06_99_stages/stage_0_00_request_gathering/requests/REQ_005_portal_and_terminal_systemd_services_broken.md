@@ -195,27 +195,29 @@ The issue is deep enough that we likely need to:
 
 ---
 
-## Solution 1 Implementation (In Progress)
+## Solution 1 Implementation (SUCCESSFUL)
 
-### Approach: Display-Ready Target
+### Approach: Display-Ready Target + Environment Wrappers
 
-Created a systemd service-based solution that waits for X11 to be accessible before starting portal/terminal services:
+Created a systemd service-based solution that waits for X11 to be accessible and properly sets environment variables before starting portal/terminal services:
 
 **Created Files**:
-- `~/.config/systemd/user/display-ready.service` - Waits for X11 readiness
-- `~/.config/systemd/user/xdg-desktop-portal.service.d/override.conf` - Updated to require display-ready
-- `~/.config/systemd/user/gnome-terminal-server.service.d/override.conf` - Updated with wrapper script
-- `~/.config/systemd/user/xdg-desktop-portal-gtk.service.d/override.conf` - Updated with wrapper script
-- `~/.local/bin/gnome-terminal-server-env.sh` - Wrapper to set DISPLAY before execution
-- `~/.local/bin/xdg-desktop-portal-gtk-env.sh` - Wrapper to set DISPLAY before execution
+- `~/.config/systemd/user/display-ready.service` - Waits for X11 readiness ✅
+- `~/.config/systemd/user/xdg-desktop-portal.service.d/override.conf` - Uses display-ready dependency
+- `~/.config/systemd/user/gnome-terminal-server.service.d/override.conf` - Uses wrapper script
+- `~/.config/systemd/user/xdg-desktop-portal-gtk.service.d/override.conf` - Uses wrapper script
+- `~/.local/bin/gnome-terminal-server-env.sh` - Wrapper sets DISPLAY + DBUS_SESSION_BUS_ADDRESS ✅
+- `~/.local/bin/xdg-desktop-portal-gtk-env.sh` - Wrapper sets DISPLAY + DBUS_SESSION_BUS_ADDRESS
 
-**Status**: Partially successful
+**Status**: FULLY FUNCTIONAL ✅
 - ✅ display-ready.service works (correctly detects X11 readiness)
-- ✅ Files app (nautilus) now opens successfully
-- ✓ Terminal server process starts and runs
-- ⚠️ D-BUS service activation still has issues with GNOME Terminal
+- ✅ Files app (nautilus) opens and works via GUI
+- ✅ GNOME Terminal server process starts and stays running
+- ✅ D-BUS service name 'org.gnome.Terminal' is successfully claimed
+- ✅ gnome-terminal application opens and creates new terminal windows
+- ✅ Both portal and terminal services now fully functional
 
-**Issue**: Even with proper process execution, D-BUS service activation for gnome-terminal still fails with "Process org.gnome.Terminal exited with status 10" when trying to construct proxy.
+**Key Fix**: Added `DBUS_SESSION_BUS_ADDRESS` export to wrapper scripts. The terminal server couldn't claim the D-BUS service name without proper access to the user's D-BUS session bus.
 
 ## Investigation Checklist
 
@@ -223,8 +225,12 @@ Created a systemd service-based solution that waits for X11 to be accessible bef
 - [x] Identified Terminal server crashes at service startup
 - [x] Found that manual scripts work fine
 - [x] Confirmed DISPLAY environment issue
-- [x] Attempted systemd wrapper solutions (partially successful)
-- [x] Implemented display-ready.service solution (files work, terminal partial)
+- [x] Attempted systemd wrapper solutions (initially unsuccessful - missing DBUS_SESSION_BUS_ADDRESS)
+- [x] Implemented display-ready.service solution (successful)
+- [x] Fixed D-BUS service name registration (added DBUS_SESSION_BUS_ADDRESS)
+- [x] Verified Files app works via GUI
+- [x] Verified GNOME Terminal works and can open windows
+- [x] Solution 1 complete: Portal and Terminal services fully functional
 - [x] Confirmed `portal-init.service` partial fix
 - [ ] Try socket activation approach
 - [ ] Try custom systemd target approach
