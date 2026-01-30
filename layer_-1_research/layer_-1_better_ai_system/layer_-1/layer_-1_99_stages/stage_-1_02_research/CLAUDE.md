@@ -1,5 +1,22 @@
 # stage_-1_02_research
 
+## [MANDATORY] Output-First Protocol
+
+**Before ANY response to user, you MUST:**
+
+1. Write your output to a file in `outputs/` first
+2. Update `outputs/episodic/` with session/change info
+3. THEN respond to user
+
+**Why**: Ensures session continuity across auto-compact, reboots, and new sessions.
+
+**File Locations**:
+- Research findings: `outputs/01_understanding_in_progress/by_topic/`
+- Session logs: `outputs/episodic/sessions/`
+- Change logs: `outputs/episodic/changes/`
+
+---
+
 ## Purpose
 Explore problem space, gather information, analyze options for each need in the Tree of Needs.
 
