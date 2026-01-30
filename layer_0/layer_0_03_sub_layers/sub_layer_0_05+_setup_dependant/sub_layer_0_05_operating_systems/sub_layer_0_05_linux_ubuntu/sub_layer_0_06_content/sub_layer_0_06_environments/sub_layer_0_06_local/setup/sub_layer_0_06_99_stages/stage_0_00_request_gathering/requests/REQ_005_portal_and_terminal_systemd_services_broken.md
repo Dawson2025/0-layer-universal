@@ -163,39 +163,71 @@ This is a **known limitation of systemd user services and Xwayland/X11 integrati
 
 ---
 
-## Current Workaround Status
+## Current Status Summary
 
-**Manual Fix**: ✅ Works 100%
+### What Works ✅
+- **Files App (nautilus)**: Fully functional
+  - Opens via GUI without issues
+  - Can be closed and reopened without problems
+  - Portal services auto-restart if they crash
+
+### What Doesn't Work ❌
+- **GNOME Terminal**: D-BUS service activation blocked
+  - Terminal server process CAN start with proper environment
+  - But cannot claim the `org.gnome.Terminal` D-BUS service name
+  - Results in "Error calling StartServiceByName" when trying to open terminal via GUI
+
+### Workaround (Temporary)
+If terminal service dies, restart it manually:
+```bash
+pkill -9 gnome-terminal-server
+DISPLAY=:0 XAUTHORITY=/home/dawson/.Xauthority /usr/libexec/gnome-terminal-server &
+```
+
+### Original Fix Script (Still Works)
 ```bash
 bash /home/dawson/.local/bin/fix-portal-services.sh
 ```
-After running this, Files, Terminal, and LibreOffice all open successfully.
-
-**Automated At Login**: ⚠️ Partially works
-- `fix-portal-services.desktop` (autostart) - doesn't run early enough
-- `portal-init.service` (new systemd service) - runs but GTK portal still has issues
+This kills all portal processes and restarts them with proper timing/environment. Used as last resort when services are in bad state.
 
 ---
 
-## Recommendations
+## Next Steps / Future Investigation
 
-### Immediate (For Current Session)
-Until we find a permanent fix, run this at login:
-```bash
-bash /home/dawson/.local/bin/fix-portal-services.sh
-```
+### Files App: DONE ✅
+The Files app issue is fully resolved. Portal services work correctly.
 
-### Long-Term (Permanent Fix)
-Need to implement **Solution 1** or **Solution 2** above.
+### Terminal: Requires Different Approach
+The Terminal D-BUS service activation issue is a fundamental incompatibility between:
+- D-BUS service activation mechanism (expects systemd to manage service lifecycle)
+- systemd `Type=dbus` strict initialization protocol
+- Environment variable propagation in systemd services
 
-The issue is deep enough that we likely need to:
-1. Create a custom target that checks X11 readiness
-2. Make portal/terminal services depend on that target
-3. Or rewrite with socket activation
+**Possible Future Solutions**:
+
+1. **Option A: Use Alternative Terminal**
+   - Install xfce4-terminal: `sudo apt install xfce4-terminal`
+   - This doesn't depend on the problematic D-BUS service activation
+   - Would completely bypass the systemd/D-BUS issue
+
+2. **Option B: Patch D-BUS Service File**
+   - Remove `SystemdService=` line from `/usr/share/dbus-1/services/org.gnome.Terminal.service`
+   - Replace with direct `Exec=` invocation with full environment
+   - Risk: May break when gnome-terminal is updated
+
+3. **Option C: Investigate gnome-terminal-server Source**
+   - Understand why it can't claim D-BUS name when environment is set externally
+   - May involve gnome-shell or session-related initialization
+   - Would require deeper C-level debugging
+
+4. **Option D: Use Socket Activation**
+   - Implement D-BUS socket activation instead of service activation
+   - More complex but bypasses the systemd/D-BUS incompatibility
+   - Would require creating custom `.socket` units
 
 ---
 
-## Solution 1 Implementation (SUCCESSFUL)
+## Solution 1 Implementation (PARTIAL SUCCESS)
 
 ### Approach: Display-Ready Target + Environment Wrappers
 
@@ -203,34 +235,67 @@ Created a systemd service-based solution that waits for X11 to be accessible and
 
 **Created Files**:
 - `~/.config/systemd/user/display-ready.service` - Waits for X11 readiness ✅
-- `~/.config/systemd/user/xdg-desktop-portal.service.d/override.conf` - Uses display-ready dependency
-- `~/.config/systemd/user/gnome-terminal-server.service.d/override.conf` - Uses wrapper script
-- `~/.config/systemd/user/xdg-desktop-portal-gtk.service.d/override.conf` - Uses wrapper script
-- `~/.local/bin/gnome-terminal-server-env.sh` - Wrapper sets DISPLAY + DBUS_SESSION_BUS_ADDRESS ✅
+- `~/.config/systemd/user/xdg-desktop-portal.service.d/override.conf` - Uses display-ready dependency + Restart=on-failure
+- `~/.config/systemd/user/gnome-terminal-server.service.d/override.conf` - Uses environment wrapper + Restart=on-failure
+- `~/.config/systemd/user/xdg-desktop-portal-gtk.service.d/override.conf` - Uses display-ready dependency
+- `~/.local/bin/gnome-terminal-server-env.sh` - Wrapper sets DISPLAY + DBUS_SESSION_BUS_ADDRESS
 - `~/.local/bin/xdg-desktop-portal-gtk-env.sh` - Wrapper sets DISPLAY + DBUS_SESSION_BUS_ADDRESS
+- `~/.local/bin/start-gnome-terminal-server.sh` - Alternative wrapper script
+- `~/.config/autostart/gnome-terminal-server-startup.desktop` - Autostart desktop entry
 
-**Status**: FULLY FUNCTIONAL ✅
+**Status**: PARTIAL SUCCESS
 - ✅ display-ready.service works (correctly detects X11 readiness)
 - ✅ Files app (nautilus) opens and works via GUI
-- ✅ GNOME Terminal server process starts and stays running
-- ✅ D-BUS service name 'org.gnome.Terminal' is successfully claimed
-- ✅ gnome-terminal application opens and creates new terminal windows
-- ✅ Both portal and terminal services now fully functional
+- ✅ Files app can be closed and reopened without issues
+- ✅ Portal services have Restart=on-failure configured
+- ⚠️ GNOME Terminal server process can be started with proper environment
+- ❌ D-BUS service name 'org.gnome.Terminal' cannot be claimed/registered
+- ❌ gnome-terminal command fails: "Error calling StartServiceByName for org.gnome.Terminal: Process org.gnome.Terminal exited with status 10"
 
-**Key Fix**: Added `DBUS_SESSION_BUS_ADDRESS` export to wrapper scripts. The terminal server couldn't claim the D-BUS service name without proper access to the user's D-BUS session bus.
+**What Works**: Files app fully functional with proper restart behavior
+
+**What Doesn't Work**: GNOME Terminal D-BUS service activation
+
+### The Terminal Issue
+
+Even though gnome-terminal-server process CAN run with proper environment (DISPLAY=:0, XAUTHORITY, DBUS_SESSION_BUS_ADDRESS set), it fails to register the `org.gnome.Terminal` D-BUS service name. This prevents the `gnome-terminal` command from working via D-BUS activation.
+
+**Attempts Made**:
+1. Setting `Environment=` variables in systemd override - Process exits with "Cannot open display"
+2. Using wrapper scripts with explicit `export` - Process runs but D-BUS registration fails
+3. Using `/usr/bin/env` to pass environment - Process runs but D-BUS still fails
+4. Using `bash -c` with inline exports - Process runs but D-BUS still fails
+5. Creating autostart desktop entry - Process runs but D-BUS still fails
+6. Running gnome-terminal-server directly - Process runs but D-BUS still fails
+7. Changing `Type=dbus` to `Type=simple` with `Restart=on-failure` - No improvement
+
+**Root Cause**: The D-BUS service file at `/usr/share/dbus-1/services/org.gnome.Terminal.service` references `SystemdService=gnome-terminal-server.service`, which means D-BUS expects systemd to manage the lifecycle. However, the service initialization protocol between systemd (Type=dbus) and D-BUS service activation is not compatible with our environment-setting approach. The gnome-terminal-server process cannot claim the service name during its startup handshake with D-BUS.
 
 ## Investigation Checklist
 
+### Completed
 - [x] Identified GTK portal crashes at service startup
 - [x] Identified Terminal server crashes at service startup
 - [x] Found that manual scripts work fine
 - [x] Confirmed DISPLAY environment issue
-- [x] Attempted systemd wrapper solutions (initially unsuccessful - missing DBUS_SESSION_BUS_ADDRESS)
-- [x] Implemented display-ready.service solution (successful)
-- [x] Fixed D-BUS service name registration (added DBUS_SESSION_BUS_ADDRESS)
+- [x] Attempted systemd wrapper solutions (initially unsuccessful)
+- [x] Implemented display-ready.service solution
+- [x] Added DBUS_SESSION_BUS_ADDRESS to environment
 - [x] Verified Files app works via GUI
-- [x] Verified GNOME Terminal works and can open windows
-- [x] Solution 1 complete: Portal and Terminal services fully functional
+- [x] Verified Files app reopens after closing (persistent)
+- [x] Added Restart=on-failure to auto-recovery
+- [x] Created multiple wrapper/startup scripts
+- [x] Tested 7+ different approaches to fix Terminal D-BUS activation
+
+### Blocked / Open
+- [ ] GNOME Terminal D-BUS service registration (stuck on D-BUS activation protocol)
+- [ ] Terminal server cannot claim org.gnome.Terminal service name
+- [ ] Root cause appears to be systemd/D-BUS compatibility issue
+
+### Status
+- **Files App**: ✅ RESOLVED (fully functional)
+- **Portal Services**: ✅ RESOLVED (working with auto-restart)
+- **Terminal**: ❌ UNRESOLVED (requires different approach - see Next Steps)
 - [x] Confirmed `portal-init.service` partial fix
 - [ ] Try socket activation approach
 - [ ] Try custom systemd target approach
