@@ -1,9 +1,3 @@
-# CLAUDE.md - Auto-generated from AGNOSTIC.md
-# DO NOT EDIT - Changes will be overwritten
-# Edit AGNOSTIC.md instead, then run: agnostic-sync
-# Generated: 2026-01-30T14:44:22-07:00
-
-
 # AGNOSTIC.md - Layer -1 (Research), Stage 02 (Research)
 
 ## Identity
