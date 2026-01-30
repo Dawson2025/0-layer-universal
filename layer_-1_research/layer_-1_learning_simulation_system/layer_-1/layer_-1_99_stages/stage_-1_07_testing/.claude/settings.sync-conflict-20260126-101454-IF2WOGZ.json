@@ -1,0 +1,14 @@
+{
+  "context": {
+    "stage": "stage_-1_07_testing",
+    "layer": -1,
+    "purpose": "Quality assurance and validation"
+  },
+  "permissions": {
+    "allow": [],
+    "deny": [],
+    "ask": []
+  },
+  "env": {},
+  "hooks": {}
+}

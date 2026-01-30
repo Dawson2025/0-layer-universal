@@ -1,0 +1,70 @@
+version: "3.0"  # v1: 00-09, v2: 00-10 with research, v3: 01-11 (00 = registry)
+entity: "learning_simulation_system"
+layer: -1
+
+stages:
+  - slug: stage_registry
+    number: "00"
+    name: Stage Registry
+    purpose: Reserved for stage metadata and registration
+
+  - slug: request_gathering
+    number: "01"
+    name: Request Gathering
+    purpose: Collect and clarify requirements
+
+  - slug: research
+    number: "02"
+    name: Research
+    purpose: Explore problem space, gather information
+    current: true
+
+  - slug: instructions
+    number: "03"
+    name: Instructions
+    purpose: Document setup and usage instructions
+
+  - slug: planning
+    number: "04"
+    name: Planning
+    purpose: Create implementation plan
+
+  - slug: design
+    number: "05"
+    name: Design
+    purpose: Technical design and architecture
+
+  - slug: development
+    number: "06"
+    name: Development
+    purpose: Implementation and coding
+
+  - slug: testing
+    number: "07"
+    name: Testing
+    purpose: Quality assurance and validation
+
+  - slug: criticism
+    number: "08"
+    name: Criticism
+    purpose: Review and identify improvements
+
+  - slug: fixing
+    number: "09"
+    name: Fixing
+    purpose: Address issues from criticism
+
+  - slug: current_product
+    number: "10"
+    name: Current Product
+    purpose: Production-ready artifacts
+
+  - slug: archives
+    number: "11"
+    name: Archives
+    purpose: Historical versions and deprecated content
+
+stage_components:
+  - ai_agent_system
+  - hand_off_documents
+  - outputs

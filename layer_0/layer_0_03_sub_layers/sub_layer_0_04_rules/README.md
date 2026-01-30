@@ -1,53 +1,88 @@
-# 0.04_universal_rules
+# sub_layer_0_04_rules
 
-This sub-layer contains universal rules that apply across all layers, stages, OS, and tool contexts.
+Universal rules that apply across all layers, stages, OS, and tool contexts.
+
+---
 
 ## Directory Structure
 
 ```
-0.04_universal_rules/
-├── README.md                          # This file
-├── LAYER_CONTEXT_HEADER_PROTOCOL.md   # File header requirements
-├── safety_governance.md               # Safety and governance rules (NEW)
-└── trickle_down_0_universal/          # Legacy universal rules
-    └── 0_instruction_docs/
-        └── git_commit_rule.md         # Git commit requirements
+sub_layer_0_04_rules/
+├── README.md                    # This file
+├── 0_every_api_request/         # Rules for EVERY interaction (include in prompts)
+│   ├── AI_CONTEXT_MODIFICATION_PROTOCOL.md
+│   ├── AI_CONTEXT_COMMIT_PUSH_RULE.md
+│   └── CONTEXT_TRAVERSAL_RULE.md
+├── 1_scenario_based/            # Rules for specific scenarios (reference, don't include)
+│   ├── safety_governance.md
+│   ├── AI_DOCUMENTATION_PROTOCOL.md
+│   ├── LAYER_CONTEXT_HEADER_PROTOCOL.md
+│   ├── sequential_development_methodology.md
+│   └── CROSS_OS_COMPATIBILITY_RULES.md
+└── 0_instruction_docs/          # Additional instruction documents
 ```
 
-## Core Universal Rules
+---
 
-### Safety, Permissions, and Governance
-**Location**: `safety_governance.md`
-**Status**: Active (Mandatory)
-**Purpose**: Security boundaries, permission models, and governance policies for the AI Manager Hierarchy
+## 0_every_api_request (Always Apply)
 
-**Key Features**:
-- Permission levels by layer (L0-L4+)
-- Filesystem, network, and command execution boundaries
-- Human-in-the-loop approval gates
-- Budget governance and resource quotas
-- Audit trail and compliance requirements
-- Integration with existing git commit and layer context rules
+These rules MUST be followed on EVERY interaction. They should be **summarized in CLAUDE.md files**.
 
-**Reference**: See normative spec in `-1_research/.../ideal_ai_manager_hierarchy_system/safety_and_governance.md`
+| Rule | Summary |
+|------|---------|
+| **AI_CONTEXT_MODIFICATION_PROTOCOL** | Show diagram, wait for approval before modifying AI context |
+| **AI_CONTEXT_COMMIT_PUSH_RULE** | Git add/commit/push after approved AI context changes |
+| **CONTEXT_TRAVERSAL_RULE** | Read CLAUDE.md files and gather context before starting work |
 
-### Layer Context Header Protocol
-**Location**: `LAYER_CONTEXT_HEADER_PROTOCOL.md`
-**Status**: Active (Mandatory)
-**Purpose**: Standardized file headers for layer/component identification
+---
 
-### Git Commit and Sync Rule
-**Location**: `trickle_down_0_universal/0_instruction_docs/git_commit_rule.md`
-**Status**: Active (Mandatory)
-**Purpose**: Git workflow requirements for all AI sessions
+## 1_scenario_based (Apply When Relevant)
 
-**Requirements**:
-- At minimum: `git pull` before work, `git add/commit` after work
-- Stronger default: also `git push` after every turn
-- Extended for hierarchy: Commit format includes layer, stage, handoff-id, cost
+These rules are important but only apply in specific scenarios. **Reference them in CLAUDE.md** but don't include full content.
+
+| Rule | When to Apply |
+|------|---------------|
+| **safety_governance** | Security decisions, permission escalations, sensitive operations |
+| **AI_DOCUMENTATION_PROTOCOL** | Creating/organizing documentation |
+| **LAYER_CONTEXT_HEADER_PROTOCOL** | Creating new files that need layer/stage headers |
+| **sequential_development_methodology** | Multi-step development tasks |
+| **CROSS_OS_COMPATIBILITY_RULES** | Cross-platform code/scripts |
+
+---
+
+## How to Use in CLAUDE.md Files
+
+### Include summaries of 0_every_api_request rules:
+
+```markdown
+## Universal Rules (ALWAYS FOLLOW)
+
+### 1. AI Context Modification Protocol
+Before modifying AI context files: show diagram, wait for approval, then execute.
+
+### 2. AI Context Commit/Push Rule
+After approved changes: git add, commit, push.
+
+### 3. Context Traversal Rule
+Before starting: read CLAUDE.md files in path, identify layer/stage, check sub_layers.
+```
+
+### Reference 1_scenario_based rules:
+
+```markdown
+## Scenario-Based Rules (Read When Needed)
+
+| Scenario | Rule Location |
+|----------|---------------|
+| Security decisions | `sub_layer_0_04_rules/1_scenario_based/safety_governance.md` |
+| Documentation | `sub_layer_0_04_rules/1_scenario_based/AI_DOCUMENTATION_PROTOCOL.md` |
+| File headers | `sub_layer_0_04_rules/1_scenario_based/LAYER_CONTEXT_HEADER_PROTOCOL.md` |
+```
+
+---
 
 ## Notes
 
-- All rules in this directory are **mandatory** unless explicitly marked as optional
-- Safety and governance rules take precedence over other rules in case of conflict
-- See observability protocol for logging requirements: `../sub_layer_0_13_universal_protocols/observability/`
+- All rules are **mandatory** unless explicitly marked optional
+- Safety rules take precedence over other rules in case of conflict
+- Rules in `0_every_api_request/` save context by being summarized rather than fully included

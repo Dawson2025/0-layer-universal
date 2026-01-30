@@ -1,29 +1,101 @@
 # Perplexity MCP Server Setup for Gemini CLI
 
-This document outlines the setup process for the Perplexity MCP server for use with the Gemini CLI in this environment.
+**Last Updated**: 2026-01-26
 
-## Directory Structure
+## Overview
 
-The directory structure for this MCP server has been created at:
-
-`/home/dawson/dawson-workspace/code/0_layer_universal/layer_0/layer_0_03_sub_layers/sub_layer_0_05+_setup_dependant/sub_layer_0_05_operating_systems/sub_layer_0_05_linux_ubuntu/sub_layer_0_06_content/sub_layer_0_06_environments/sub_layer_0_06_local/sub_layer_0_07_coding_apps/sub_layer_0_07_cursor/sub_layer_0_09_ai_apps/sub_layer_0_09_gemini_cli/sub_layer_0_10_mcp_servers_and_apis_and_clis_and_secrets/sub_layer_0_10_perplexity-mcp`
-
-It contains the following subdirectories:
-- `setup`
-- `sub_layer_0_12_universal_tools`
-- `sub_layer_0_13_protocols`
-- `sub_layer_0_14_agent_setup`
+The Perplexity MCP server provides web search and research capabilities through the Perplexity AI API.
 
 ## Configuration
 
-**This section needs to be completed with the actual configuration details.**
+### Config File Location
+`~/.gemini/settings.json`
 
-1.  **Perplexity MCP Server:**
-    - Create a configuration file in this `setup` directory (e.g., `config.json`).
-    - The configuration should include the Perplexity API endpoint, API key, and any other necessary parameters.
+### Configuration Block
+```json
+{
+  "mcpServers": {
+    "perplexity": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["-y", "@perplexity-ai/mcp-server"],
+      "env": {
+        "PERPLEXITY_API_KEY": "pplx-YOUR_API_KEY_HERE"
+      }
+    }
+  }
+}
+```
 
-## Installation and Running
+## Getting an API Key
 
-**This section needs to be completed.**
+1. Go to https://www.perplexity.ai/settings/api
+2. Add credits (API access requires credits, separate from Pro subscription)
+   - Pro subscribers get $5/month in free credits
+   - Otherwise, add payment method and purchase credits
+3. Create an API Group (required before creating keys)
+4. Click **"+ Create key"**
+5. Copy the key immediately (shown only once)
+6. Keys start with `pplx-`
 
-- Add instructions for installing dependencies and running the server.
+## Available Tools
+
+| Tool | Description |
+|------|-------------|
+| `perplexity_ask` | General Q&A with web search |
+| `perplexity_search` | Web search with ranked results |
+| `perplexity_research` | Deep research with citations |
+| `perplexity_reason` | Reasoning tasks with sonar-reasoning-pro model |
+
+## Troubleshooting
+
+### 401 Unauthorized Error
+
+**Symptom**: API calls return `401 Authorization Required`
+
+**Causes**:
+1. **Credits exhausted** - Most common cause
+2. **API key revoked or expired**
+3. **Invalid API key format**
+
+**Solution**:
+1. Check your credit balance at https://www.perplexity.ai/settings/api
+2. Add more credits if balance is $0
+3. Verify the API key is correct and starts with `pplx-`
+4. Regenerate key if necessary
+
+**Note**: When credits run out, the API returns 401 (not a quota error). Once you add credits, the same key works again.
+
+### "Tool execution denied by policy" Error
+
+**Symptom**: Gemini CLI shows this error before retrying
+
+**Cause**: Gemini's safety policies may block certain queries
+
+**Solution**: Rephrase the query or use a different approach
+
+### Rate Limiting
+
+**Symptom**: "You have exhausted your capacity on this model"
+
+**Cause**: Too many requests in a short time
+
+**Solution**: Wait for quota reset (usually seconds to minutes)
+
+## Testing
+
+Test the API key directly:
+```bash
+curl -X POST "https://api.perplexity.ai/chat/completions" \
+  -H "Authorization: Bearer YOUR_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{"model": "sonar", "messages": [{"role": "user", "content": "Hello"}]}'
+```
+
+Expected: JSON response with completion
+Error: HTML with "401 Authorization Required" = invalid key or no credits
+
+## Related
+
+- Canvas MCP: `../sub_layer_0_10_canvas-mcp/`
+- Claude Code CLI setup: `../../sub_layer_0_09_claude_code_cli/sub_layer_0_10_mcp_servers_and_apis_and_clis_and_secrets/`

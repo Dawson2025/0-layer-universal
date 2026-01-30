@@ -1,0 +1,62 @@
+{
+  "layer_id": "layer_0",
+  "layer_name": "Universal",
+  "current_stage": "stage_0_01_request_gathering",
+  "stages": {
+    "stage_0_01_request_gathering": {
+      "state": "not_started",
+      "last_update": null,
+      "notes": ""
+    },
+    "stage_0_02_research": {
+      "state": "not_started",
+      "last_update": null,
+      "notes": ""
+    },
+    "stage_0_03_instructions": {
+      "state": "not_started",
+      "last_update": null,
+      "notes": ""
+    },
+    "stage_0_04_planning": {
+      "state": "not_started",
+      "last_update": null,
+      "notes": ""
+    },
+    "stage_0_05_design": {
+      "state": "not_started",
+      "last_update": null,
+      "notes": ""
+    },
+    "stage_0_06_development": {
+      "state": "not_started",
+      "last_update": null,
+      "notes": ""
+    },
+    "stage_0_07_testing": {
+      "state": "not_started",
+      "last_update": null,
+      "notes": ""
+    },
+    "stage_0_08_criticism": {
+      "state": "not_started",
+      "last_update": null,
+      "notes": ""
+    },
+    "stage_0_09_fixing": {
+      "state": "not_started",
+      "last_update": null,
+      "notes": ""
+    },
+    "stage_0_10_current_product": {
+      "state": "not_started",
+      "last_update": null,
+      "notes": ""
+    },
+    "stage_0_11_archives": {
+      "state": "not_started",
+      "last_update": null,
+      "notes": ""
+    }
+  }
+}

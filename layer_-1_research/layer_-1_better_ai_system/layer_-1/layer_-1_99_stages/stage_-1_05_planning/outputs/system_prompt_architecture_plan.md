@@ -10,12 +10,17 @@
 
 ## Execution Summary
 
+**FULL SYSTEM IMPLEMENTATION** - Apply to entire `0_layer_universal/`
+
 | Phase | Description | Scope |
 |-------|-------------|-------|
-| 1 | Pilot: better_ai_system project | This research project only |
-| 2 | Expand: layer_0 universal | Universal layer |
-| 3 | Expand: layer_1 projects | All projects |
-| 4 | Verify & Document | Full system |
+| 1 | Root & Layer Containers | 0_layer_universal/, layer_0/, layer_1/, layer_-1_research/ |
+| 2 | All Stages Containers | Every layer_X_99_stages/ |
+| 3 | All Sub_layers Containers | Every layer_X_03_sub_layers/ |
+| 4 | All Individual Stages | Every stage_X_XX_*/ |
+| 5 | All Individual Sub_layers | Every sub_layer_X_XX_*/ |
+| 6 | Root CLAUDE.md with Rules | Embed universal rules |
+| 7 | Verify & Test | Full system validation |
 
 ---
 

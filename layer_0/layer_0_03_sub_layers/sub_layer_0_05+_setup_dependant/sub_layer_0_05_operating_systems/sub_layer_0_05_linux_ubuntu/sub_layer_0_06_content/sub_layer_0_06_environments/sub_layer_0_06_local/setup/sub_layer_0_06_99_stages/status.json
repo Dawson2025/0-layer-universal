@@ -1,7 +1,7 @@
 {
   "current_stage": "stage_0_00_request_gathering",
   "last_updated": "2026-01-29",
-  "system_status": "degraded",
+  "system_status": "degraded_portal_broken",
   "issues": [
     {
       "id": "inotify_exhaustion",
@@ -180,9 +180,16 @@
     {
       "id": "REQ_003",
       "title": "Vibe-Typer Audio & LibreOffice Portal Issues",
+      "status": "partial",
+      "satisfaction": "audio_fixed_portal_broken",
+      "notes": "Vibe-typer FIXED by reboot (audio renderer timeout resolved). LibreOffice and portal still broken - regex caused by autostart script not running early enough at boot. Manual fix script execution restores functionality."
+    },
+    {
+      "id": "REQ_004",
+      "title": "Portal Service Regression After Reboot",
       "status": "active",
       "satisfaction": "blocking",
-      "notes": "Vibe-typer can't record (audio renderer timeout). LibreOffice won't open (portal crashed). Possible regression from REQ_001/REQ_002 audio fixes or 3+ day uptime issue. Awaiting investigation."
+      "notes": "xdg-desktop-portal crashes at boot before autostart fix script runs. Autostart delay=5s is too late (portal crashes at +6s). Manual fix script workaround works. Need systemd service to run earlier."
     }
   ]
 }

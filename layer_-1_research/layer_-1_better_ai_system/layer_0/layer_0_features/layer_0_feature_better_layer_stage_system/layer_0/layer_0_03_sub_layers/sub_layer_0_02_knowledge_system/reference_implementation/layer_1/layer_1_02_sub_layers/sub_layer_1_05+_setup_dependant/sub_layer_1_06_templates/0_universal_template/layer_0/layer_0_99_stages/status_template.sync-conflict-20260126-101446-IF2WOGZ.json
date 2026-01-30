@@ -1,0 +1,51 @@
+{
+  "layer_id": "0_universal",
+  "current_stage": "0.01_instructions",
+  "stages": {
+    "0.01_instructions": {
+      "state": "not_started",
+      "last_update": null,
+      "notes": ""
+    },
+    "0.02_planning": {
+      "state": "not_started",
+      "last_update": null,
+      "notes": ""
+    },
+    "0.03_design": {
+      "state": "not_started",
+      "last_update": null,
+      "notes": ""
+    },
+    "0.04_development": {
+      "state": "not_started",
+      "last_update": null,
+      "notes": ""
+    },
+    "0.05_testing": {
+      "state": "not_started",
+      "last_update": null,
+      "notes": ""
+    },
+    "0.06_criticism": {
+      "state": "not_started",
+      "last_update": null,
+      "notes": ""
+    },
+    "0.07_fixing": {
+      "state": "not_started",
+      "last_update": null,
+      "notes": ""
+    },
+    "0.08_current_product": {
+      "state": "not_started",
+      "last_update": null,
+      "notes": ""
+    },
+    "0.09_archives": {
+      "state": "not_started",
+      "last_update": null,
+      "notes": ""
+    }
+  }
+}

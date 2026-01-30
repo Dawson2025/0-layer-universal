@@ -1,0 +1,133 @@
+# Stage registry for Layer-Stage Framework
+# Updated: 2026-01-25
+# Note: Position 00 reserved for stage_registry, stages are numbered 01-11
+
+generated_at_utc: 2026-01-25T19:45:00+00:00
+version: "3.0"  # v1: 00-09, v2: 00-10 with research, v3: 01-11 (00 = registry)
+
+stages:
+  - slug: stage_registry
+    number: "00"
+    name: Stage Registry
+    purpose: Reserved for stage metadata and registration
+    folder_pattern: stage_N_00_stage_registry
+    note: Not a workflow stage - metadata only
+
+  - slug: request_gathering
+    number: "01"
+    name: Request Gathering
+    purpose: Gather initial requirements from user
+    folder_pattern: stage_N_01_request_gathering
+    outputs:
+      - requirements.md
+      - questions.md
+      - clarifications.md
+
+  - slug: research
+    number: "02"
+    name: Research
+    purpose: Explore problem space, gather information, validate assumptions
+    folder_pattern: stage_N_02_research
+    outputs:
+      - findings/
+      - poc/
+      - decisions/
+      - chat_history/
+
+  - slug: instructions
+    number: "03"
+    name: Instructions
+    purpose: Define what needs to be done
+    folder_pattern: stage_N_03_instructions
+    outputs:
+      - task_definitions.md
+      - constraints.md
+
+  - slug: planning
+    number: "04"
+    name: Planning
+    purpose: Plan how to accomplish the work
+    folder_pattern: stage_N_04_planning
+    outputs:
+      - implementation_plan.md
+      - task_breakdown.md
+      - timeline.md
+
+  - slug: design
+    number: "05"
+    name: Design
+    purpose: Architecture and solution design
+    folder_pattern: stage_N_05_design
+    outputs:
+      - architecture.md
+      - diagrams/
+      - api_specs/
+
+  - slug: development
+    number: "06"
+    name: Development
+    purpose: Implementation of the solution
+    folder_pattern: stage_N_06_development
+    outputs:
+      - code/
+      - docs/
+      - build_logs/
+
+  - slug: testing
+    number: "07"
+    name: Testing
+    purpose: Verify implementation works correctly
+    folder_pattern: stage_N_07_testing
+    outputs:
+      - test_results/
+      - coverage_reports/
+
+  - slug: criticism
+    number: "08"
+    name: Criticism
+    purpose: Review and critique the work
+    folder_pattern: stage_N_08_criticism
+    outputs:
+      - review_notes.md
+      - issues_found.md
+
+  - slug: fixing
+    number: "09"
+    name: Fixing
+    purpose: Address issues found during review/testing
+    folder_pattern: stage_N_09_fixing
+    outputs:
+      - fixes_applied.md
+      - regression_tests/
+
+  - slug: current_product
+    number: "10"
+    name: Current Product
+    purpose: The working deliverable
+    folder_pattern: stage_N_10_current_product
+    outputs:
+      - release/
+      - documentation/
+
+  - slug: archives
+    number: "11"
+    name: Archives
+    purpose: Historical records and previous versions
+    folder_pattern: stage_N_11_archives
+    outputs:
+      - versions/
+      - changelogs/
+
+# Stage structure template
+stage_structure:
+  - ai_agent_system/        # Agent configuration
+  - hand_off_documents/     # Concise handoff notes
+  - outputs/                # Stage artifacts (referenced by handoffs)
+
+# Workflow pattern
+workflow:
+  linear: [01, 02, 03, 04, 05, 06, 07, 08, 09, 10]
+  iteration_loop_from: 10
+  iteration_loop_to: 01
+  archival_from: 10
+  archival_to: 11

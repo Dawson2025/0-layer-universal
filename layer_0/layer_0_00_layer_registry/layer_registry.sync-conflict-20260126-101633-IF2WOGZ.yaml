@@ -1,0 +1,70 @@
+# Layer Registry for Layer-Stage Framework
+# Updated: 2026-01-25
+# Defines the internal structure of layers
+
+generated_at_utc: 2026-01-25T19:42:00+00:00
+version: "2.0"
+
+# Layer internal components (position 00 reserved for registry)
+layer_components:
+  - slug: layer_registry
+    number: "00"
+    name: Layer Registry
+    purpose: Metadata and registration for this layer
+    folder_pattern: layer_N_00_layer_registry
+
+  - slug: ai_manager_system
+    number: "01"
+    name: AI Manager System
+    purpose: AI agent configuration (agnostic and specific)
+    folder_pattern: layer_N_01_ai_manager_system
+    contains:
+      - agnostic/    # Universal prompts
+      - specific/    # OS/env/app specific configs
+
+  - slug: manager_handoff_documents
+    number: "02"
+    name: Manager Handoff Documents
+    purpose: Session transition state between agents
+    folder_pattern: layer_N_02_manager_handoff_documents
+
+  - slug: sub_layers
+    number: "03"
+    name: Sub-Layers
+    purpose: Knowledge, prompts, principles, rules, setup
+    folder_pattern: layer_N_03_sub_layers
+    contains:
+      - sub_layer_N_00_sub_layer_registry/
+      - sub_layer_N_01_prompts/
+      - sub_layer_N_02_knowledge_system/
+      - sub_layer_N_03_principles/
+      - sub_layer_N_04_rules/
+      - sub_layer_N_05+_setup_dependant/
+
+  - slug: stages
+    number: "99"
+    name: Stages
+    purpose: Workflow stages (01-11)
+    folder_pattern: layer_N_99_stages
+    note: Position 99 keeps stages at the end for visibility
+
+# Layer hierarchy
+layer_hierarchy:
+  - number: -1
+    name: Research
+    description: Exploratory research outside main hierarchy
+  - number: 0
+    name: Universal
+    description: Global rules, constraints, and infrastructure
+  - number: 1
+    name: Project
+    description: Project-level organization
+  - number: 2
+    name: Feature
+    description: Feature-level implementation
+  - number: 3
+    name: Component
+    description: Component-level details
+  - number: 4+
+    name: Sub-component
+    description: Nested sub-components as needed
