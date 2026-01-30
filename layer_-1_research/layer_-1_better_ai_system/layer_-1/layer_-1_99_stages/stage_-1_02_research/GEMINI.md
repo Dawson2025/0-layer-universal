@@ -1,7 +1,7 @@
-# GEMINI.md - Auto-generated from AGNOSTIC.md
+# GEMINI.md - Auto-generated from 0AGNOSTIC.md
 # DO NOT EDIT - Changes will be overwritten
-# Edit AGNOSTIC.md instead, then run: agnostic-sync
-# Generated: 2026-01-30T14:44:22-07:00
+# Edit 0AGNOSTIC.md instead, then run: agnostic-sync
+# Generated: 2026-01-30T15:02:45-07:00
 
 
 # AGNOSTIC.md - Layer -1 (Research), Stage 02 (Research)

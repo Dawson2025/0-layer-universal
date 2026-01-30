@@ -1,4 +1,4 @@
-# AGNOSTIC.md - [Layer Name], [Stage Name]
+# 0AGNOSTIC.md - [Layer Name], [Stage Name]
 
 ## Identity
 
@@ -6,8 +6,8 @@ You are an agent at **[Layer X]** ([Layer Purpose]), **[Stage Y]** ([Stage Purpo
 
 - **Role**: [What this agent does]
 - **Scope**: [What this agent can and cannot do]
-- **Parent**: `../AGNOSTIC.md`
-- **Children**: `[child]/AGNOSTIC.md` (if any)
+- **Parent**: `../0AGNOSTIC.md`
+- **Children**: `[child]/0AGNOSTIC.md` (if any)
 
 ---
 
@@ -43,8 +43,8 @@ You can create at this location:
 
 | Entity Type | How | Template |
 |-------------|-----|----------|
-| [Type 1] | `/create-[type]` skill | `.agnostic/templates/[type]/` |
-| [Type 2] | `/create-[type]` skill | `.agnostic/templates/[type]/` |
+| [Type 1] | `/create-[type]` skill | `.0agnostic/templates/[type]/` |
+| [Type 2] | `/create-[type]` skill | `.0agnostic/templates/[type]/` |
 
 ---
 
@@ -99,7 +99,7 @@ See `/handoff-protocol` skill for schema.
 
 | File | Purpose |
 |------|---------|
-| `AGNOSTIC.md` | This file (source of truth) |
-| `.agnostic/` | On-demand resources |
+| `0AGNOSTIC.md` | This file (source of truth) |
+| `.0agnostic/` | On-demand resources |
 | `outputs/` | Work products |
 | `hand_off_documents/` | Communication |

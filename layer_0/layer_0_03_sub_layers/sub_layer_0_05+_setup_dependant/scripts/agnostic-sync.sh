@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# agnostic-sync.sh - Sync AGNOSTIC.md + .agnostic/ to tool-specific formats
+# agnostic-sync.sh - Sync 0AGNOSTIC.md + .0agnostic/ to tool-specific formats
 # Location: layer_0/layer_0_03_sub_layers/sub_layer_0_05+_setup_dependant/scripts/
 #
 # Usage: agnostic-sync [options] [path]
@@ -23,24 +23,28 @@ FORCE=false
 VERBOSE=false
 TARGET_DIR="."
 
+# Source file names (numbered for explicit ordering)
+AGNOSTIC_MD="0AGNOSTIC.md"
+AGNOSTIC_DIR=".0agnostic"
+
 # Shim templates
-CLAUDE_SHIM="# CLAUDE.md - Auto-generated from AGNOSTIC.md
+CLAUDE_SHIM="# CLAUDE.md - Auto-generated from 0AGNOSTIC.md
 # DO NOT EDIT - Changes will be overwritten
-# Edit AGNOSTIC.md instead, then run: agnostic-sync
+# Edit 0AGNOSTIC.md instead, then run: agnostic-sync
 # Generated: $(date -Iseconds)
 
 "
 
-AGENTS_SHIM="# AGENTS.md - Auto-generated from AGNOSTIC.md
+AGENTS_SHIM="# AGENTS.md - Auto-generated from 0AGNOSTIC.md
 # DO NOT EDIT - Changes will be overwritten
-# Edit AGNOSTIC.md instead, then run: agnostic-sync
+# Edit 0AGNOSTIC.md instead, then run: agnostic-sync
 # Generated: $(date -Iseconds)
 
 "
 
-GEMINI_SHIM="# GEMINI.md - Auto-generated from AGNOSTIC.md
+GEMINI_SHIM="# GEMINI.md - Auto-generated from 0AGNOSTIC.md
 # DO NOT EDIT - Changes will be overwritten
-# Edit AGNOSTIC.md instead, then run: agnostic-sync
+# Edit 0AGNOSTIC.md instead, then run: agnostic-sync
 # Generated: $(date -Iseconds)
 
 "
@@ -70,7 +74,7 @@ log_verbose() {
 
 show_help() {
     cat << EOF
-agnostic-sync - Sync AGNOSTIC.md + .agnostic/ to tool-specific formats
+agnostic-sync - Sync 0AGNOSTIC.md + .0agnostic/ to tool-specific formats
 
 USAGE:
     agnostic-sync [options] [path]
@@ -82,7 +86,7 @@ OPTIONS:
     --help       Show this help message
 
 ARGUMENTS:
-    path         Directory containing AGNOSTIC.md (default: current directory)
+    path         Directory containing 0AGNOSTIC.md (default: current directory)
 
 EXAMPLES:
     agnostic-sync                     # Sync current directory
@@ -90,12 +94,20 @@ EXAMPLES:
     agnostic-sync /path/to/layer      # Sync specific directory
     agnostic-sync --verbose --force . # Force sync with detailed output
 
-GENERATED FILES:
-    AGNOSTIC.md      →  CLAUDE.md, AGENTS.md, GEMINI.md
-    .agnostic/skills →  .claude/skills/
-    .agnostic/agents →  .claude/agents/
-    .agnostic/rules  →  .claude/rules/, .cursor/rules/
-    .agnostic/automation → .claude/hooks/
+SOURCE FILES (edit these):
+    0AGNOSTIC.md      - Primary agnostic context (sorts first)
+    .0agnostic/       - Agnostic resources (sorts before .claude/)
+      ├── skills/     - Skill definitions
+      ├── agents/     - Agent definitions
+      ├── rules/      - Rule definitions
+      └── automation/ - Hooks/automation
+
+GENERATED FILES (do not edit):
+    0AGNOSTIC.md       →  CLAUDE.md, AGENTS.md, GEMINI.md
+    .0agnostic/skills  →  .claude/skills/
+    .0agnostic/agents  →  .claude/agents/
+    .0agnostic/rules   →  .claude/rules/, .cursor/rules/
+    .0agnostic/automation → .claude/hooks/
 
 PRESERVED FILES (not overwritten):
     .claude/settings.json
@@ -123,7 +135,7 @@ should_preserve() {
     return 1
 }
 
-# Generate tool-specific MD file from AGNOSTIC.md
+# Generate tool-specific MD file from 0AGNOSTIC.md
 generate_md() {
     local source="$1"
     local target="$2"
@@ -230,35 +242,35 @@ sync_directory() {
 
     log_info "Syncing: $dir"
 
-    # Check for AGNOSTIC.md
-    if [[ ! -f "$dir/AGNOSTIC.md" ]]; then
-        log_warn "No AGNOSTIC.md found in $dir"
-        log_info "Checking for .agnostic/ folder only..."
+    # Check for 0AGNOSTIC.md
+    if [[ ! -f "$dir/$AGNOSTIC_MD" ]]; then
+        log_warn "No $AGNOSTIC_MD found in $dir"
+        log_info "Checking for $AGNOSTIC_DIR/ folder only..."
     else
         # Generate tool-specific MD files
-        generate_md "$dir/AGNOSTIC.md" "$dir/CLAUDE.md" "$CLAUDE_SHIM"
-        generate_md "$dir/AGNOSTIC.md" "$dir/AGENTS.md" "$AGENTS_SHIM"
-        generate_md "$dir/AGNOSTIC.md" "$dir/GEMINI.md" "$GEMINI_SHIM"
+        generate_md "$dir/$AGNOSTIC_MD" "$dir/CLAUDE.md" "$CLAUDE_SHIM"
+        generate_md "$dir/$AGNOSTIC_MD" "$dir/AGENTS.md" "$AGENTS_SHIM"
+        generate_md "$dir/$AGNOSTIC_MD" "$dir/GEMINI.md" "$GEMINI_SHIM"
     fi
 
-    # Sync .agnostic/ folders
-    if [[ -d "$dir/.agnostic" ]]; then
-        log_info "Syncing .agnostic/ resources..."
+    # Sync .0agnostic/ folders
+    if [[ -d "$dir/$AGNOSTIC_DIR" ]]; then
+        log_info "Syncing $AGNOSTIC_DIR/ resources..."
 
         # Skills
-        copy_dir "$dir/.agnostic/skills" "$dir/.claude/skills"
+        copy_dir "$dir/$AGNOSTIC_DIR/skills" "$dir/.claude/skills"
 
         # Agents
-        copy_dir "$dir/.agnostic/agents" "$dir/.claude/agents"
+        copy_dir "$dir/$AGNOSTIC_DIR/agents" "$dir/.claude/agents"
 
         # Rules (to both .claude and .cursor)
-        copy_dir "$dir/.agnostic/rules" "$dir/.claude/rules"
-        convert_to_mdc "$dir/.agnostic/rules" "$dir/.cursor/rules"
+        copy_dir "$dir/$AGNOSTIC_DIR/rules" "$dir/.claude/rules"
+        convert_to_mdc "$dir/$AGNOSTIC_DIR/rules" "$dir/.cursor/rules"
 
         # Automation → Hooks
-        copy_dir "$dir/.agnostic/automation" "$dir/.claude/hooks"
+        copy_dir "$dir/$AGNOSTIC_DIR/automation" "$dir/.claude/hooks"
     else
-        log_verbose "No .agnostic/ folder found in $dir"
+        log_verbose "No $AGNOSTIC_DIR/ folder found in $dir"
     fi
 
     log_success "Sync complete: $dir"
