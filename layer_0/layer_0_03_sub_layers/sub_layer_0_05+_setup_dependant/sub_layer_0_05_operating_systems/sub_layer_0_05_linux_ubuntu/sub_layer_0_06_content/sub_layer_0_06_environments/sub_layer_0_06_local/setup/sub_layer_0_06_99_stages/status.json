@@ -1,7 +1,7 @@
 {
-  "current_stage": "stage_0_09_current_product",
-  "last_updated": "2026-01-28",
-  "system_status": "running",
+  "current_stage": "stage_0_00_request_gathering",
+  "last_updated": "2026-01-29",
+  "system_status": "degraded",
   "issues": [
     {
       "id": "inotify_exhaustion",
@@ -115,6 +115,19 @@
         "fixing": "stage_0_08_fixing/outputs/ISSUE_005_portal_apps_fix.md",
         "final_config": "stage_0_09_current_product/outputs/ISSUE_005_portal_apps_final_config.md"
       }
+    },
+    {
+      "id": "vibe_typer_audio_renderer_timeout",
+      "title": "Vibe-Typer & LibreOffice: Audio Renderer Timeout + Portal Service Crash",
+      "status": "investigating",
+      "stage": "stage_0_00_request_gathering",
+      "date_reported": "2026-01-29",
+      "date_resolved": null,
+      "notes": "Two related issues: (1) vibe-typer times out waiting for audio renderer (PipeWire ALSA error 'Invalid argument'), (2) LibreOffice won't open (xdg-desktop-portal service crashed and not recovering). Both may be related to audio system changes or 3+ day uptime without reboot.",
+      "documentation": {
+        "request": "stage_0_00_request_gathering/requests/REQ_003_vibe_typer_and_libreoffice_failures.md",
+        "research": "stage_0_01_research/outputs/REQ_003_diagnostic_findings.md"
+      }
     }
   ],
   "active_services": [
@@ -163,6 +176,13 @@
       "status": "completed",
       "satisfaction": "high",
       "notes": "Subwoofer was disabled by default. Enabled via I2C bypass script + driver blacklist. Sound much fuller."
+    },
+    {
+      "id": "REQ_003",
+      "title": "Vibe-Typer Audio & LibreOffice Portal Issues",
+      "status": "active",
+      "satisfaction": "blocking",
+      "notes": "Vibe-typer can't record (audio renderer timeout). LibreOffice won't open (portal crashed). Possible regression from REQ_001/REQ_002 audio fixes or 3+ day uptime issue. Awaiting investigation."
     }
   ]
 }
