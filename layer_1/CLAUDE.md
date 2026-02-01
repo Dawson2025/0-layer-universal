@@ -1,43 +1,47 @@
-# layer_1
+# Claude Code Context
 
-## Role
+## Identity
+You are an AI agent working within the layer_1 (projects) context. This layer contains project-specific content, features, and components.
 
-**Layer Manager** - Projects, features, and components layer.
-
-## Responsibilities
-
-- Manage project-level work (layer_1_projects/)
-- Manage feature-level work (layer_1_features/)
-- Manage component-level work (layer_1_components/)
-- Receive tasks from Root Manager via `hand_off_documents/incoming/from_above/`
-- Delegate to appropriate project, feature, or component
-- Aggregate results and report via `hand_off_documents/outgoing/to_above/`
-- Handle escalations from projects, features, components
-
-## On Session Start
-
-1. Check `hand_off_documents/incoming/from_above/` for tasks from root
-2. Check `hand_off_documents/incoming/from_below/` for results/escalations
-3. Process pending work or await delegation
-
-## Children
-
-| Child | Purpose |
-|-------|---------|
-| `layer_1_projects/` | Full project implementations |
-| `layer_1_features/` | Cross-project features |
-| `layer_1_components/` | Reusable components |
 
 ## Navigation
+- **Detailed resources**: `.0agnostic/` folder
+- **Universal rules**: Inherit from `../layer_0/.0agnostic/rules/`
+- **Project features**: `layer_1_features/`
+- **Project components**: `layer_1_components/`
 
-- **Parent**: `../` (0_layer_universal - Root Manager)
-- **Projects**: `layer_1_projects/`
-- **Features**: `layer_1_features/`
-- **Components**: `layer_1_components/`
 
-## Scope
+## Key Behaviors
 
-This layer contains:
-- **Projects**: Complete applications or systems (each with own stages)
-- **Features**: Functionality that spans projects
-- **Components**: Reusable building blocks
+
+## Triggers
+
+| Situation | Action |
+|-----------|--------|
+| Need universal rules | Load `../layer_0/.0agnostic/rules/` |
+| Need project-specific rules | Load `.0agnostic/rules/` |
+| Starting new session | Read `outputs/episodic/index.md` |
+| Modifying outputs | Check `.locks/` first |
+| Working on feature | Navigate to `layer_1_features/` |
+
+
+
+## Claude-Specific Rules
+
+### CLAUDE.md Integration
+This file is auto-generated from 0AGNOSTIC.md. Edit 0AGNOSTIC.md to make changes.
+
+### Tool Usage
+- Use Read tool to load .0agnostic/ resources on-demand
+- Use Bash for git operations and commands
+- Use Write/Edit for file modifications
+- Use Task tool for complex multi-step work
+
+### Session Continuity
+- Read outputs/episodic/index.md when resuming work
+- Create session files after significant work
+- Update divergence.log when modifying outputs
+
+---
+*Auto-generated from 0AGNOSTIC.md via agnostic-sync.sh*
+*Do not edit directly - edit 0AGNOSTIC.md instead*
