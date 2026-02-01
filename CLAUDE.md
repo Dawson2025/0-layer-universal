@@ -58,6 +58,14 @@ After approved AI context changes:
 
 **Full rules**: `layer_0/layer_0_03_sub_layers/sub_layer_0_04_rules/`
 
+### [CRITICAL] File Path Linking Rule
+
+When creating or updating files, ALWAYS include the full clickable file path in the response.
+
+**Format**: `**File**: /full/path/to/file.md`
+
+**Full rules**: `layer_0/layer_0_03_sub_layers/sub_layer_0_04_rules/FILE_PATH_LINKING_RULE.md`
+
 ---
 
 ## Detailed Rules Reference
@@ -69,7 +77,8 @@ layer_0/layer_0_03_sub_layers/sub_layer_0_04_rules/
 ├── AI_CONTEXT_MODIFICATION_PROTOCOL.md   ← Full modification protocol
 ├── AI_CONTEXT_COMMIT_PUSH_RULE.md        ← Full commit/push rule
 ├── safety_governance.md                   ← Full security governance
-└── LAYER_CONTEXT_HEADER_PROTOCOL.md      ← File header requirements
+├── LAYER_CONTEXT_HEADER_PROTOCOL.md      ← File header requirements
+└── FILE_PATH_LINKING_RULE.md             ← [CRITICAL] Always include file paths
 ```
 
 ## Navigation: How to Find Things
