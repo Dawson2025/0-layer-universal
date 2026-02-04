@@ -7,6 +7,7 @@
 
   "@id": "layer_0_feature_tooling_framework",
   "@type": "Feature",
+  "layer": 0,
 
   "name": "Tooling Framework",
   "description": "Systems for automation and documentation",
@@ -14,6 +15,15 @@
   "nav:parent": {
     "@id": "../",
     "name": "layer_0_features"
+  },
+
+  "conventions": {
+    "childNaming": {
+      "pattern": "layer_{N+1}_{type}_{name}",
+      "currentLayer": 0,
+      "childLayer": 1,
+      "example": "layer_1_sub_feature_automation_system"
+    }
   },
 
   "rel:treeOfNeedsBranch": {
@@ -27,17 +37,17 @@
     ]
   },
 
-  "subfeatures": [
+  "children": [
     {
-      "@id": "subfeature_automation_system/",
-      "@type": "Subfeature",
+      "@id": "layer_1_sub_feature_automation_system/",
+      "@type": "SubFeature",
       "name": "Automation System",
       "description": "Automation patterns and workflows",
       "formerName": "ai_automation_system"
     },
     {
-      "@id": "subfeature_documentation_system/",
-      "@type": "Subfeature",
+      "@id": "layer_1_sub_feature_documentation_system/",
+      "@type": "SubFeature",
       "name": "Documentation System",
       "description": "AI-friendly documentation patterns",
       "formerName": "ai_documentation_system"

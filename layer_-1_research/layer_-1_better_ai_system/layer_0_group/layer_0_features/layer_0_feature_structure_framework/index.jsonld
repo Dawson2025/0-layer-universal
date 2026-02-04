@@ -7,6 +7,7 @@
 
   "@id": "layer_0_feature_structure_framework",
   "@type": "Feature",
+  "layer": 0,
 
   "name": "Structure Framework",
   "description": "Systems for organizing projects using the layer-stage pattern and setup/configuration",
@@ -16,21 +17,30 @@
     "name": "layer_0_features"
   },
 
+  "conventions": {
+    "childNaming": {
+      "pattern": "layer_{N+1}_{type}_{name}",
+      "currentLayer": 0,
+      "childLayer": 1,
+      "example": "layer_1_sub_feature_layer_stage_system"
+    }
+  },
+
   "rel:treeOfNeedsBranch": {
     "note": "Supports organization across all branches"
   },
 
-  "subfeatures": [
+  "children": [
     {
-      "@id": "subfeature_layer_stage_system/",
-      "@type": "Subfeature",
+      "@id": "layer_1_sub_feature_layer_stage_system/",
+      "@type": "SubFeature",
       "name": "Layer Stage System",
       "description": "Layer-stage organization patterns and improvements",
       "formerName": "better_layer_stage_system"
     },
     {
-      "@id": "subfeature_setup_system/",
-      "@type": "Subfeature",
+      "@id": "layer_1_sub_feature_setup_system/",
+      "@type": "SubFeature",
       "name": "Setup System",
       "description": "Project setup and configuration",
       "formerName": "better_setup_system"

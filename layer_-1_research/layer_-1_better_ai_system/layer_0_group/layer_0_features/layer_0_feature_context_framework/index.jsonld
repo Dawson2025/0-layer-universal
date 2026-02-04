@@ -7,6 +7,7 @@
 
   "@id": "layer_0_feature_context_framework",
   "@type": "Feature",
+  "layer": 0,
 
   "name": "Context Framework",
   "description": "Systems for context delivery, memory persistence, and navigation to ensure agents receive the right information at the right time",
@@ -14,6 +15,15 @@
   "nav:parent": {
     "@id": "../",
     "name": "layer_0_features"
+  },
+
+  "conventions": {
+    "childNaming": {
+      "pattern": "layer_{N+1}_{type}_{name}",
+      "currentLayer": 0,
+      "childLayer": 1,
+      "example": "layer_1_sub_feature_context_system"
+    }
   },
 
   "rel:treeOfNeedsBranch": {
@@ -29,27 +39,26 @@
     ]
   },
 
-  "subfeatures": [
+  "children": [
     {
-      "@id": "subfeature_context_system/",
-      "@type": "Subfeature",
+      "@id": "layer_1_sub_feature_context_system/",
+      "@type": "SubFeature",
       "name": "Context System",
       "description": "Core context loading and management",
       "formerName": "ai_context_system"
     },
     {
-      "@id": "subfeature_dynamic_memory/",
-      "@type": "Subfeature",
+      "@id": "layer_1_sub_feature_dynamic_memory/",
+      "@type": "SubFeature",
       "name": "Dynamic Memory",
       "description": "Session memory and state persistence",
       "formerName": "ai_dynamic_memory_system"
     },
     {
-      "@id": "subfeature_navigation_system/",
-      "@type": "Subfeature",
+      "@id": "layer_1_sub_feature_navigation_system/",
+      "@type": "SubFeature",
       "name": "Navigation System",
       "description": "JSON-LD navigation, links, and triggers",
-      "formerName": null,
       "note": "New - contains JSON-LD prototype"
     }
   ]

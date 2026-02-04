@@ -6,8 +6,9 @@
     "trigger": "https://layer-stage.dev/trigger#"
   },
 
-  "@id": "subfeature_navigation_system",
-  "@type": "Subfeature",
+  "@id": "layer_1_sub_feature_navigation_system",
+  "@type": "SubFeature",
+  "layer": 1,
 
   "name": "Navigation System",
   "description": "JSON-LD based navigation, links, and triggers for agent context delivery",
@@ -18,9 +19,18 @@
   },
 
   "nav:siblings": [
-    {"@id": "../subfeature_context_system/", "name": "Context System"},
-    {"@id": "../subfeature_dynamic_memory/", "name": "Dynamic Memory"}
+    {"@id": "../layer_1_sub_feature_context_system/", "name": "Context System"},
+    {"@id": "../layer_1_sub_feature_dynamic_memory/", "name": "Dynamic Memory"}
   ],
+
+  "conventions": {
+    "childNaming": {
+      "pattern": "layer_{N+1}_{type}_{name}",
+      "currentLayer": 1,
+      "childLayer": 2,
+      "example": "layer_2_component_link_validator"
+    }
+  },
 
   "rel:treeOfNeedsBranch": {
     "branch": "06_context_flow",
@@ -31,21 +41,21 @@
     ]
   },
 
-  "components": [
+  "children": [
     {
-      "@id": "component_jsonld_schema/",
+      "@id": "layer_2_component_jsonld_schema/",
       "name": "JSON-LD Schema",
       "description": "Vocabulary definitions for layer-stage navigation",
       "status": "prototype"
     },
     {
-      "@id": "component_index_files/",
+      "@id": "layer_2_component_index_files/",
       "name": "Index Files",
       "description": "index.jsonld patterns for registries and navigation",
       "status": "prototype"
     },
     {
-      "@id": "component_link_validator/",
+      "@id": "layer_2_component_link_validator/",
       "name": "Link Validator",
       "description": "Tool to validate @id links resolve correctly",
       "status": "planned"
@@ -53,7 +63,7 @@
   ],
 
   "prototype": {
-    "location": "Prototype was at subfeature_layer_stage_system, now consolidated here",
+    "location": "Prototype was at layer_1_sub_feature_layer_stage_system, now consolidated here",
     "files": [
       "index.jsonld patterns",
       ".claude/schema/layer-stage-schema.jsonld",
