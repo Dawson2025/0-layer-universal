@@ -14,7 +14,7 @@ Research and design improvements to the AI-assisted development system, explorin
 ## Full System Audit
 
 A comprehensive audit of the entire AI system has been completed:
-- **Location**: `layer_0/layer_0_99_stages/stage_0_02_research/outputs/ai_system_problems_audit.md`
+- **Location**: `layer_0_group/layer_0_99_stages/stage_0_02_research/outputs/ai_system_problems_audit.md`
 - **Findings**: 15 critical, 12 major, 8 minor issues
 - **Key Problems**: Naming inconsistencies, stage numbering conflicts, documentation drift, missing registries
 
@@ -24,7 +24,7 @@ A comprehensive audit of the entire AI system has been completed:
 better_ai_system/
 ├── CLAUDE.md                    # AI context for this project
 ├── README.md                    # This file
-├── layer_0/
+├── layer_0_group/
 │   ├── layer_0_features/        # Research topics
 │   │   ├── layer_0_feature_better_layer_stage_system/     # Framework improvements
 │   │   ├── layer_0_feature_better_setup_system/           # Setup & Multi-OS
@@ -40,7 +40,7 @@ better_ai_system/
 │       └── stage_0_02_research/
 │           └── outputs/
 │               └── ai_system_problems_audit.md            # Full audit
-└── layer_-1/                    # Project-level stages
+└── layer_-1_group/                    # Project-level stages
 ```
 
 ## Research Features
@@ -84,7 +84,7 @@ better_ai_system/
 
 ## How to Contribute
 
-1. Check the full audit: `layer_0/layer_0_99_stages/stage_0_02_research/outputs/ai_system_problems_audit.md`
+1. Check the full audit: `layer_0_group/layer_0_99_stages/stage_0_02_research/outputs/ai_system_problems_audit.md`
 2. Review feature-specific problems in each feature's `things_learned/` directory
 3. Add findings to the appropriate feature
 4. Update handoff documents when transitioning work

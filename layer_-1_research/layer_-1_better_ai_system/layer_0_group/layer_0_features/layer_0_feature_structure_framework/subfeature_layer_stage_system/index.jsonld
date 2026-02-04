@@ -1,0 +1,101 @@
+{
+  "@context": {
+    "@vocab": "https://layer-stage.dev/schema#",
+    "nav": "https://layer-stage.dev/nav#",
+    "trigger": "https://layer-stage.dev/trigger#",
+    "rel": "https://layer-stage.dev/rel#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+
+  "@id": "layer_0_feature_better_layer_stage_system",
+  "@type": "Feature",
+
+  "name": "Better Layer Stage System",
+  "description": "A consistent, navigable layer-stage system that AI agents can work with effectively",
+  "layer": 0,
+  "version": "1.0.0",
+
+  "nav:parent": {
+    "@id": "../",
+    "name": "layer_0_features",
+    "@type": "FeatureGroup"
+  },
+
+  "nav:children": [
+    {
+      "@id": "layer_0_group/",
+      "name": "Layer 0 Group (Universal)",
+      "@type": "LayerGroup"
+    },
+    {
+      "@id": "layer_1_group/",
+      "name": "Layer 1 Group (Project-Specific)",
+      "@type": "LayerGroup"
+    }
+  ],
+
+  "nav:skills": {
+    "@id": ".claude/skills/",
+    "index": ".claude/skills/index.jsonld"
+  },
+
+  "nav:context": {
+    "@id": "CLAUDE.md",
+    "format": "markdown"
+  },
+
+  "nav:treeOfNeeds": {
+    "@id": "layer_0_group/layer_0_99_stages/stage_0_01_request_gathering/outputs/requests/tree_of_needs/",
+    "readme": "layer_0_group/layer_0_99_stages/stage_0_01_request_gathering/outputs/requests/tree_of_needs/README.md"
+  },
+
+  "nav:stages": {
+    "@id": "layer_0_group/layer_0_99_stages/",
+    "pattern": "stage_0_{01-11}_*"
+  },
+
+  "trigger:onSessionStart": [
+    {
+      "action": "read",
+      "target": "CLAUDE.md",
+      "priority": 1
+    },
+    {
+      "action": "read",
+      "target": "index.jsonld",
+      "priority": 2,
+      "purpose": "Load navigation graph"
+    }
+  ],
+
+  "trigger:onEntityCreation": {
+    "@id": ".claude/skills/entity-creation/",
+    "description": "Skill to invoke when creating new entities"
+  },
+
+  "trigger:onStageWork": {
+    "pattern": "stage_0_{stage}_*",
+    "skill": ".claude/skills/{stage}-workflow/"
+  },
+
+  "rel:satisfiesNeed": {
+    "@id": "../../layer_-1_group/layer_-1_99_stages/stage_-1_01_request_gathering/outputs/requests/tree_of_needs/00_seamless_ai_collaboration/",
+    "needPath": "00_seamless_ai_collaboration > 02_scalable_context > need_03_discoverable"
+  },
+
+  "rel:siblings": [
+    {
+      "@id": "../layer_0_feature_ai_context_system/",
+      "relationship": "related",
+      "description": "Context system this feature improves"
+    },
+    {
+      "@id": "../layer_0_feature_ai_documentation_system/",
+      "relationship": "related",
+      "description": "Documentation patterns this follows"
+    }
+  ],
+
+  "meta:created": "2026-02-03",
+  "meta:lastModified": "2026-02-04"
+}

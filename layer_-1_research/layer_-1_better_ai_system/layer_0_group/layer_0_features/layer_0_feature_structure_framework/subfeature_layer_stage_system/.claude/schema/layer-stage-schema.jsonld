@@ -1,0 +1,153 @@
+{
+  "@context": {
+    "@vocab": "https://layer-stage.dev/schema#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+
+  "@graph": [
+    {
+      "@id": "https://layer-stage.dev/schema#",
+      "@type": "rdfs:Ontology",
+      "rdfs:label": "Layer-Stage Navigation Schema",
+      "rdfs:comment": "Schema for AI agent navigation in layer-stage hierarchies",
+      "version": "1.0.0"
+    },
+
+    {
+      "@id": "https://layer-stage.dev/schema#Feature",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Feature",
+      "rdfs:comment": "A feature within the layer-stage system"
+    },
+    {
+      "@id": "https://layer-stage.dev/schema#LayerGroup",
+      "@type": "rdfs:Class",
+      "rdfs:label": "LayerGroup",
+      "rdfs:comment": "A group of content at a specific layer level (layer_N_group)"
+    },
+    {
+      "@id": "https://layer-stage.dev/schema#Stage",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Stage",
+      "rdfs:comment": "One of the 11 development stages (01-11)"
+    },
+    {
+      "@id": "https://layer-stage.dev/schema#TreeOfNeeds",
+      "@type": "rdfs:Class",
+      "rdfs:label": "TreeOfNeeds",
+      "rdfs:comment": "Hierarchical requirements structure"
+    },
+    {
+      "@id": "https://layer-stage.dev/schema#SkillsIndex",
+      "@type": "rdfs:Class",
+      "rdfs:label": "SkillsIndex",
+      "rdfs:comment": "Index of available skills and workflows"
+    },
+
+    {
+      "@id": "https://layer-stage.dev/nav#parent",
+      "@type": "rdfs:Property",
+      "rdfs:label": "parent",
+      "rdfs:comment": "Link to parent entity in hierarchy"
+    },
+    {
+      "@id": "https://layer-stage.dev/nav#children",
+      "@type": "rdfs:Property",
+      "rdfs:label": "children",
+      "rdfs:comment": "Links to child entities"
+    },
+    {
+      "@id": "https://layer-stage.dev/nav#skills",
+      "@type": "rdfs:Property",
+      "rdfs:label": "skills",
+      "rdfs:comment": "Link to skills folder/index"
+    },
+    {
+      "@id": "https://layer-stage.dev/nav#treeOfNeeds",
+      "@type": "rdfs:Property",
+      "rdfs:label": "treeOfNeeds",
+      "rdfs:comment": "Link to tree of needs for this entity"
+    },
+    {
+      "@id": "https://layer-stage.dev/nav#stages",
+      "@type": "rdfs:Property",
+      "rdfs:label": "stages",
+      "rdfs:comment": "Link to stages folder with stage index"
+    },
+    {
+      "@id": "https://layer-stage.dev/nav#previous",
+      "@type": "rdfs:Property",
+      "rdfs:label": "previous",
+      "rdfs:comment": "Link to previous stage in sequence"
+    },
+    {
+      "@id": "https://layer-stage.dev/nav#next",
+      "@type": "rdfs:Property",
+      "rdfs:label": "next",
+      "rdfs:comment": "Link to next stage in sequence"
+    },
+    {
+      "@id": "https://layer-stage.dev/nav#context",
+      "@type": "rdfs:Property",
+      "rdfs:label": "context",
+      "rdfs:comment": "Link to CLAUDE.md or equivalent context file"
+    },
+
+    {
+      "@id": "https://layer-stage.dev/trigger#onSessionStart",
+      "@type": "rdfs:Property",
+      "rdfs:label": "onSessionStart",
+      "rdfs:comment": "Actions to take when starting a session at this entity"
+    },
+    {
+      "@id": "https://layer-stage.dev/trigger#onEnter",
+      "@type": "rdfs:Property",
+      "rdfs:label": "onEnter",
+      "rdfs:comment": "Actions to take when entering this entity"
+    },
+    {
+      "@id": "https://layer-stage.dev/trigger#onEntityCreation",
+      "@type": "rdfs:Property",
+      "rdfs:label": "onEntityCreation",
+      "rdfs:comment": "Skill to invoke when creating child entities"
+    },
+    {
+      "@id": "https://layer-stage.dev/trigger#skill",
+      "@type": "rdfs:Property",
+      "rdfs:label": "skill",
+      "rdfs:comment": "Link to skill/workflow for this context"
+    },
+    {
+      "@id": "https://layer-stage.dev/trigger#when",
+      "@type": "rdfs:Property",
+      "rdfs:label": "when",
+      "rdfs:comment": "Condition that triggers this skill"
+    },
+
+    {
+      "@id": "https://layer-stage.dev/rel#satisfiesNeed",
+      "@type": "rdfs:Property",
+      "rdfs:label": "satisfiesNeed",
+      "rdfs:comment": "Link to the need this entity satisfies"
+    },
+    {
+      "@id": "https://layer-stage.dev/rel#siblings",
+      "@type": "rdfs:Property",
+      "rdfs:label": "siblings",
+      "rdfs:comment": "Links to related entities at same level"
+    },
+    {
+      "@id": "https://layer-stage.dev/rel#mapsTo",
+      "@type": "rdfs:Property",
+      "rdfs:label": "mapsTo",
+      "rdfs:comment": "How this need maps to further layering"
+    },
+    {
+      "@id": "https://layer-stage.dev/rel#informsFurtherLayering",
+      "@type": "rdfs:Property",
+      "rdfs:label": "informsFurtherLayering",
+      "rdfs:comment": "How tree hierarchy informs child entity organization"
+    }
+  ]
+}

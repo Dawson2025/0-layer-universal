@@ -1,0 +1,41 @@
+{
+  "@context": {
+    "@vocab": "https://layer-stage.dev/schema#",
+    "nav": "https://layer-stage.dev/nav#"
+  },
+
+  "@id": "layer_0_group",
+  "@type": "LayerGroup",
+
+  "name": "Layer 0 Group",
+  "description": "Further layering for the better_ai_system research project - features, components, and subprojects",
+  "layer": 0,
+
+  "nav:parent": {
+    "@id": "../",
+    "name": "layer_-1_better_ai_system"
+  },
+
+  "nav:children": [
+    {
+      "@id": "layer_0_features/",
+      "@type": "FeaturesRegistry",
+      "name": "Features",
+      "description": "High-level features (context, structure, governance, tooling)"
+    },
+    {
+      "@id": "layer_0_components/",
+      "@type": "ComponentsRegistry",
+      "name": "Components",
+      "description": "Shared components (empty for now)"
+    },
+    {
+      "@id": "layer_0_subprojects/",
+      "@type": "SubprojectsRegistry",
+      "name": "Subprojects",
+      "description": "Subprojects (empty for now)"
+    }
+  ],
+
+  "note": "Infrastructure (registry, managers, handoffs, sub_layers, stages) is in layer_-1_group, not here"
+}

@@ -1,0 +1,44 @@
+{
+  "@context": {
+    "@vocab": "https://layer-stage.dev/schema#",
+    "nav": "https://layer-stage.dev/nav#",
+    "rel": "https://layer-stage.dev/rel#"
+  },
+
+  "@id": "layer_0_feature_governance_framework",
+  "@type": "Feature",
+
+  "name": "Governance Framework",
+  "description": "Systems for rules management and agent hierarchy/delegation",
+
+  "nav:parent": {
+    "@id": "../",
+    "name": "layer_0_features"
+  },
+
+  "rel:treeOfNeedsBranch": {
+    "primary": "03_trustworthy",
+    "needs": [
+      "need_01_rule_compliant",
+      "need_02_predictable",
+      "need_03_bounded"
+    ]
+  },
+
+  "subfeatures": [
+    {
+      "@id": "subfeature_rules_system/",
+      "@type": "Subfeature",
+      "name": "Rules System",
+      "description": "Rule discovery, application, and compliance",
+      "formerName": "ai_rules_system"
+    },
+    {
+      "@id": "subfeature_manager_hierarchy/",
+      "@type": "Subfeature",
+      "name": "Manager Hierarchy",
+      "description": "Agent hierarchy and delegation patterns",
+      "formerName": "ai_manager_hierarchy_system"
+    }
+  ]
+}

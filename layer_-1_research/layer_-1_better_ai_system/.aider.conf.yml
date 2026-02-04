@@ -1,0 +1,13 @@
+# Aider Configuration - Auto-generated from 0AGNOSTIC.md
+
+# Read the project context
+read:
+  - 0AGNOSTIC.md
+  - 0INDEX.md
+
+# Project description (from 0AGNOSTIC.md Identity section)
+# Layer -1 Research Project: better_ai_system
+# Researching improvements to AI system architecture
+
+---
+# Auto-generated from 0AGNOSTIC.md via agnostic-sync.sh

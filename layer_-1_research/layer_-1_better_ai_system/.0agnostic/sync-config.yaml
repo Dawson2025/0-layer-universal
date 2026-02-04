@@ -1,0 +1,63 @@
+# Agnostic Sync Configuration
+# Defines how 0AGNOSTIC.md and .0agnostic/ are synced to tool-specific outputs
+
+version: "1.0"
+
+# Source of truth
+source:
+  agnostic_md: "0AGNOSTIC.md"
+  agnostic_dir: ".0agnostic/"
+
+# Target tools and their merge workspaces
+targets:
+  claude:
+    merge_dir: ".1claude_merge/"
+    output_files:
+      - "CLAUDE.md"
+      - ".claude/"
+
+  cursor:
+    merge_dir: ".1cursor_merge/"
+    output_files:
+      - ".cursorrules"
+      - ".cursor/rules/"
+
+  copilot:
+    merge_dir: ".1copilot_merge/"
+    output_files:
+      - ".github/copilot-instructions.md"
+      - ".github/instructions/"
+
+  gemini:
+    merge_dir: ".1gemini_merge/"
+    output_files:
+      - "GEMINI.md"
+
+  aider:
+    merge_dir: ".1aider_merge/"
+    output_files:
+      - ".aider.conf.yml"
+
+  codex:
+    merge_dir: ".1codex_merge/"
+    output_files:
+      - "AGENTS.md"
+
+# Sync behavior
+sync:
+  # What to copy from .0agnostic/ to each tool's 0_synced/
+  copy_dirs:
+    - agents
+    - skills
+    - hooks
+
+  # Files to generate
+  generate:
+    - from: "0AGNOSTIC.md"
+      to_template: "{tool}_md"  # e.g., CLAUDE.md, GEMINI.md
+
+# Merge priority (lower = higher priority)
+merge_priority:
+  - "0_synced"      # Base from .0agnostic/
+  - "1_overrides"   # Tool-specific overrides
+  - "2_additions"   # Tool-specific additions

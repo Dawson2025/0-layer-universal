@@ -1,0 +1,8 @@
+# Divergence Log (layer_1)
+# Format: TIMESTAMP | AGENT_ID | PATH | ACTION | BEFORE_HASH → AFTER_HASH
+
+2026-01-30T17:30:00Z | claude_opus | layer_1/0AGNOSTIC.md | CREATED | - → initial
+2026-01-30T17:30:00Z | claude_opus | layer_1/0INDEX.md | CREATED | - → initial
+2026-01-30T17:30:00Z | claude_opus | layer_1/CLAUDE.md | CREATED | - → generated
+2026-01-30T17:30:00Z | claude_opus | layer_1/outputs/episodic/ | CREATED | - → initial
+

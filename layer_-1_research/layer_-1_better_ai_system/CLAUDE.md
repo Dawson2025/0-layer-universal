@@ -1,60 +1,39 @@
-# better_ai_system (Research Project)
+# Claude Code Context
 
-## Overview
-Research project exploring how to improve the AI system architecture, including framework improvements, setup systems, manager hierarchies, and supporting infrastructure.
+## Identity
 
-## Current Stage
-**Stage 02: Research** - Actively exploring problem space
+You are an agent at **Layer -1** (Research), **Project**: better_ai_system.
 
-## Purpose
-- Research better architectures for AI-assisted development
-- Design improved framework patterns (Layer-Stage System)
-- Improve setup and multi-OS systems
-- Fix documentation, context, rules, and automation issues
+- **Role**: Research Project Manager - Coordinate research into improving AI system architecture
+- **Scope**: Research, design, planning for AI framework improvements. Does not implement in production systems.
+- **Parent**: `../0AGNOSTIC.md` (layer_-1_research)
+- **Children**: `layer_0_group/layer_0_features/` contains 8 research features
 
-## Structure
-- `layer_-1/` - Project-level organization and stages
-- `layer_0/layer_0_features/` - Research topics as features
 
-## Features (Research Topics)
+## Navigation
+- **Detailed resources**: `.0agnostic/` folder
+- **Proposals**: `layer_-1_group/layer_-1_00_layer_registry/proposals/`
+- **Features**: `layer_0_group/layer_0_features/`
 
-### Core Features
-| Feature | Status | Description |
-|---------|--------|-------------|
-| `layer_0_feature_better_layer_stage_system` | ~40% | Framework naming, numbering, registries |
-| `layer_0_feature_better_setup_system` | ~20% | Setup configuration, contains multi_os_system |
-| `layer_0_feature_ai_manager_hierarchy_system` | ~57% | Hierarchical manager/worker patterns |
-| `layer_0_feature_ai_dynamic_memory_system` | ~5% | Dynamic memory structures for AI |
+## Key Behaviors
 
-### Problem-Focused Features
-| Feature | Status | Description |
-|---------|--------|-------------|
-| `layer_0_feature_ai_documentation_system` | ~5% | Fix broken paths, documentation drift |
-| `layer_0_feature_ai_context_system` | ~5% | Context gathering, agnostic/specific pattern |
-| `layer_0_feature_ai_rules_system` | ~5% | Rules conflicts, priority system |
-| `layer_0_feature_ai_automation_system` | ~5% | Validation tooling, migration scripts |
+Load this context when:
+- User mentions: "better ai system", "framework improvements", "layer-stage research"
+- Working on: AI architecture, context systems, memory systems, manager hierarchies
+- Entering: `/layer_-1_research/layer_-1_better_ai_system/`
 
-## Full System Audit
-**Location**: `layer_0/layer_0_99_stages/stage_0_02_research/outputs/ai_system_problems_audit.md`
 
-| Severity | Count | Examples |
-|----------|-------|----------|
-| Critical | 15 | Naming inconsistencies, broken paths, missing registries |
-| Major | 12 | Empty handoffs, conflicting protocols, status tracking gaps |
-| Minor | 8 | Legacy code, scattered rules, incomplete features |
+## Claude-Specific Rules
 
-## Key Locations
+### CLAUDE.md Integration
+This file is auto-generated from 0AGNOSTIC.md. Edit 0AGNOSTIC.md to make changes.
 
-| Content | Location |
-|---------|----------|
-| Full System Audit | `layer_0/layer_0_99_stages/stage_0_02_research/outputs/ai_system_problems_audit.md` |
-| Framework Research | `layer_0/layer_0_features/layer_0_feature_better_layer_stage_system/` |
-| Setup Research | `layer_0/layer_0_features/layer_0_feature_better_setup_system/` |
-| Problem Documentation | Each feature's `things_learned/01_*_problems.md` |
+### Tool Usage
+- Use Read tool to load .0agnostic/ resources on-demand
+- Use Bash for git operations and commands
+- Use Write/Edit for file modifications
+- Use Task tool for complex multi-step work
 
-## Next Steps
-1. Fix naming conventions (dots vs underscores)
-2. Create missing registries
-3. Standardize stage numbering
-4. Fix broken documentation paths
-5. Build validation tooling
+---
+*Auto-generated from 0AGNOSTIC.md via agnostic-sync.sh*
+*Do not edit directly - edit 0AGNOSTIC.md instead*

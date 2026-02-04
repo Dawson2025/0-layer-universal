@@ -1,0 +1,87 @@
+{
+  "@context": {
+    "@vocab": "https://layer-stage.dev/schema#",
+    "nav": "https://layer-stage.dev/nav#",
+    "trigger": "https://layer-stage.dev/trigger#"
+  },
+
+  "@id": "skills",
+  "@type": "SkillsIndex",
+
+  "nav:parent": {
+    "@id": "../../",
+    "name": "layer_0_feature_better_layer_stage_system"
+  },
+
+  "skills": [
+    {
+      "@id": "context-gathering/",
+      "name": "context-gathering",
+      "command": "/context",
+      "description": "Gather context about current location in layer-stage hierarchy",
+      "trigger:when": "Agent needs to understand current position",
+      "invocable": true
+    },
+    {
+      "@id": "entity-creation/",
+      "name": "entity-creation",
+      "command": "/create-entity",
+      "description": "Create new projects, features, or components",
+      "trigger:when": "Creating new layers or entities",
+      "invocable": true
+    },
+    {
+      "@id": "handoff-creation/",
+      "name": "handoff-creation",
+      "command": "/handoff",
+      "description": "Create handoff documents for session transitions",
+      "trigger:when": "Session ending or transitioning",
+      "invocable": true
+    },
+    {
+      "@id": "00_stage_manager-workflow/",
+      "name": "00_stage_manager-workflow",
+      "description": "Workflow for stage metadata and registration",
+      "trigger:when": "Working on 00_stage_registry tasks",
+      "invocable": false,
+      "isWorkflow": true
+    },
+    {
+      "@id": "01_request_gathering-workflow/",
+      "name": "01_request_gathering-workflow",
+      "description": "Workflow for collecting requirements",
+      "trigger:when": "Working on 01_request_gathering tasks",
+      "invocable": false,
+      "isWorkflow": true
+    },
+    {
+      "@id": "02_research-workflow/",
+      "name": "02_research-workflow",
+      "description": "Workflow for exploring problem space",
+      "trigger:when": "Working on 02_research tasks",
+      "invocable": false,
+      "isWorkflow": true
+    },
+    {
+      "@id": "03_instructions-workflow/",
+      "name": "03_instructions-workflow",
+      "description": "Workflow for documenting setup and usage",
+      "trigger:when": "Working on 03_instructions tasks",
+      "invocable": false,
+      "isWorkflow": true
+    },
+    {
+      "@id": "handoff-protocol/",
+      "name": "handoff-protocol",
+      "description": "Protocol for session handoffs at current stage",
+      "trigger:when": "Creating handoff documents",
+      "invocable": false
+    }
+  ],
+
+  "trigger:patterns": {
+    "stage_XX_01_request_gathering": "01_request_gathering-workflow/",
+    "stage_XX_02_research": "02_research-workflow/",
+    "stage_XX_03_instructions": "03_instructions-workflow/"
+  }
+}

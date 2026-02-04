@@ -1,0 +1,9 @@
+# Conflicts Log
+# Format: TIMESTAMP | AGENT_A | AGENT_B | PATH | RESOLUTION | DETAILS
+# Resolutions: LWW (last-write-wins), MANUAL, MERGED
+# This log tracks all detected conflicts for audit
+
+# No conflicts detected yet - system just initialized
+# Example entry:
+# 2026-01-30T16:00:00Z | agent_1 | agent_2 | outputs/file.md | LWW | agent_2 version kept (later timestamp)
+

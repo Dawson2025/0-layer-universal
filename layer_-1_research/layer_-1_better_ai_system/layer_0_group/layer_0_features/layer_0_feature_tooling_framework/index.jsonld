@@ -1,0 +1,46 @@
+{
+  "@context": {
+    "@vocab": "https://layer-stage.dev/schema#",
+    "nav": "https://layer-stage.dev/nav#",
+    "rel": "https://layer-stage.dev/rel#"
+  },
+
+  "@id": "layer_0_feature_tooling_framework",
+  "@type": "Feature",
+
+  "name": "Tooling Framework",
+  "description": "Systems for automation and documentation",
+
+  "nav:parent": {
+    "@id": "../",
+    "name": "layer_0_features"
+  },
+
+  "rel:treeOfNeedsBranch": {
+    "primary": ["02_continuous", "04_observable"],
+    "needs": [
+      "need_01_tool_portable",
+      "need_04_evolvable",
+      "need_01_transparent",
+      "need_02_debuggable",
+      "need_03_auditable"
+    ]
+  },
+
+  "subfeatures": [
+    {
+      "@id": "subfeature_automation_system/",
+      "@type": "Subfeature",
+      "name": "Automation System",
+      "description": "Automation patterns and workflows",
+      "formerName": "ai_automation_system"
+    },
+    {
+      "@id": "subfeature_documentation_system/",
+      "@type": "Subfeature",
+      "name": "Documentation System",
+      "description": "AI-friendly documentation patterns",
+      "formerName": "ai_documentation_system"
+    }
+  ]
+}

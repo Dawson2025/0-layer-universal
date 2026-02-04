@@ -1,0 +1,33 @@
+{
+  "@context": {
+    "@vocab": "https://layer-stage.dev/schema#",
+    "nav": "https://layer-stage.dev/nav#"
+  },
+
+  "@id": "layer_1_group",
+  "@type": "LayerGroup",
+
+  "name": "Layer 1 Group (Project-Specific)",
+  "description": "Content specific to this feature as a project",
+  "layer": 1,
+
+  "nav:parent": {
+    "@id": "../",
+    "name": "layer_0_feature_better_layer_stage_system"
+  },
+
+  "nav:children": [
+    {
+      "@id": "layer_1_projects/",
+      "@type": "ProjectsFolder",
+      "description": "Sub-projects of this feature"
+    },
+    {
+      "@id": "layer_1_99_stages/",
+      "@type": "StagesFolder",
+      "description": "Project-specific stages"
+    }
+  ],
+
+  "note": "Layer 1 contains project-specific implementations while Layer 0 contains universal patterns"
+}

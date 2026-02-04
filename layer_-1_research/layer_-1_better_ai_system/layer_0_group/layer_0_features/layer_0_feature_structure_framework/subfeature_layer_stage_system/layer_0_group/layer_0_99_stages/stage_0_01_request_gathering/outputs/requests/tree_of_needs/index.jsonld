@@ -1,0 +1,133 @@
+{
+  "@context": {
+    "@vocab": "https://layer-stage.dev/schema#",
+    "nav": "https://layer-stage.dev/nav#",
+    "rel": "https://layer-stage.dev/rel#",
+    "need": "https://layer-stage.dev/need#"
+  },
+
+  "@id": "tree_of_needs",
+  "@type": "TreeOfNeeds",
+
+  "name": "Tree of Needs - Better Layer Stage System",
+  "version": "1.0.0",
+
+  "nav:parent": {
+    "@id": "../../../",
+    "name": "stage_0_01_request_gathering"
+  },
+
+  "rootNeed": {
+    "@id": "00_better_layer_stage_system/",
+    "@type": "RootNeed",
+    "name": "Better Layer Stage System",
+    "description": "A consistent, navigable layer-stage system that AI agents can work with effectively",
+
+    "branches": [
+      {
+        "@id": "00_better_layer_stage_system/01_consistent_structure/",
+        "@type": "Branch",
+        "name": "Consistent Structure",
+        "description": "All entities follow same patterns",
+        "rel:mapsTo": {
+          "relativeDepth": "+1",
+          "entityType": "Feature",
+          "targetPath": "../../../../layer_0_features/layer_0_feature_consistent_structure/"
+        },
+        "needs": [
+          {
+            "@id": "00_better_layer_stage_system/01_consistent_structure/need_01_all_stages_exist/",
+            "@type": "Need",
+            "name": "All Stages Exist",
+            "description": "Every entity has all 11 stages",
+            "rel:mapsTo": {
+              "relativeDepth": "+2",
+              "entityType": "Component"
+            }
+          },
+          {
+            "@id": "00_better_layer_stage_system/01_consistent_structure/need_02_standard_naming/",
+            "@type": "Need",
+            "name": "Standard Naming",
+            "description": "Consistent naming conventions"
+          },
+          {
+            "@id": "00_better_layer_stage_system/01_consistent_structure/need_03_required_files/",
+            "@type": "Need",
+            "name": "Required Files",
+            "description": "Each stage has required outputs"
+          }
+        ]
+      },
+      {
+        "@id": "00_better_layer_stage_system/02_navigable_hierarchy/",
+        "@type": "Branch",
+        "name": "Navigable Hierarchy",
+        "description": "Agents can traverse easily",
+        "rel:mapsTo": {
+          "relativeDepth": "+1",
+          "entityType": "Feature"
+        },
+        "needs": [
+          {
+            "@id": "00_better_layer_stage_system/02_navigable_hierarchy/need_01_jsonld_links/",
+            "@type": "Need",
+            "name": "JSON-LD Links",
+            "description": "Machine-readable navigation"
+          },
+          {
+            "@id": "00_better_layer_stage_system/02_navigable_hierarchy/need_02_parent_child_refs/",
+            "@type": "Need",
+            "name": "Parent-Child References",
+            "description": "Clear up/down navigation"
+          },
+          {
+            "@id": "00_better_layer_stage_system/02_navigable_hierarchy/need_03_sibling_refs/",
+            "@type": "Need",
+            "name": "Sibling References",
+            "description": "Related entity links"
+          }
+        ]
+      },
+      {
+        "@id": "00_better_layer_stage_system/03_trigger_system/",
+        "@type": "Branch",
+        "name": "Trigger System",
+        "description": "Skills and workflows activated contextually",
+        "rel:mapsTo": {
+          "relativeDepth": "+1",
+          "entityType": "Feature"
+        },
+        "needs": [
+          {
+            "@id": "00_better_layer_stage_system/03_trigger_system/need_01_stage_triggers/",
+            "@type": "Need",
+            "name": "Stage Triggers",
+            "description": "Workflows for each stage"
+          },
+          {
+            "@id": "00_better_layer_stage_system/03_trigger_system/need_02_action_triggers/",
+            "@type": "Need",
+            "name": "Action Triggers",
+            "description": "Skills for specific actions"
+          }
+        ]
+      }
+    ]
+  },
+
+  "rel:informsFurtherLayering": {
+    "description": "This tree hierarchy maps to feature/component organization",
+    "pattern": {
+      "rootNeed": "This feature (current entity)",
+      "branch": "Child feature (layer +1)",
+      "need": "Component (layer +2)",
+      "subNeed": "Sub-component (layer +3)"
+    }
+  },
+
+  "meta:sessions": {
+    "@id": "_meta/sessions/",
+    "description": "Session logs that contributed to this tree"
+  }
+}

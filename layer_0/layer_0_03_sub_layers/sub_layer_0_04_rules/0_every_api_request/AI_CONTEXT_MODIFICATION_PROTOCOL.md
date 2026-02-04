@@ -4,18 +4,28 @@
 
 Before modifying ANY files within the AI context system (sublayers, stages, rules, prompts, knowledge system), the AI MUST:
 
-1. **Present a DIAGRAM** showing the proposed changes
+1. **Store proposal in registry**
+   - Location: `layer_X_00_layer_registry/proposals/YYYY-MM-DD_description/`
+   - Create `SUMMARY.md` with full proposal details
+   - For multi-layer changes: modular proposals per layer, summary at common parent
+
+2. **Present a DIAGRAM** showing the proposed changes
+   - Reference the stored proposal file
    - Show full file paths (not abbreviated)
    - Show before/after state where applicable
    - Summarize content of new files
 
-2. **Wait for explicit user approval**
+3. **Wait for explicit user approval**
    - Do not proceed until user confirms
    - User may request modifications to the plan
 
-3. **Only then proceed with modifications**
+4. **Proceed with modifications**
    - Follow the approved diagram exactly
    - Report completion when done
+
+5. **Update proposal status**
+   - Change status to "Executed" in SUMMARY.md
+   - Mark approval checkboxes as complete
 
 ## Scope
 

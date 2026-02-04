@@ -1,0 +1,39 @@
+{
+  "@context": {
+    "@vocab": "https://layer-stage.dev/schema#",
+    "nav": "https://layer-stage.dev/nav#",
+    "rel": "https://layer-stage.dev/rel#"
+  },
+
+  "@id": "layer_0_feature_structure_framework",
+  "@type": "Feature",
+
+  "name": "Structure Framework",
+  "description": "Systems for organizing projects using the layer-stage pattern and setup/configuration",
+
+  "nav:parent": {
+    "@id": "../",
+    "name": "layer_0_features"
+  },
+
+  "rel:treeOfNeedsBranch": {
+    "note": "Supports organization across all branches"
+  },
+
+  "subfeatures": [
+    {
+      "@id": "subfeature_layer_stage_system/",
+      "@type": "Subfeature",
+      "name": "Layer Stage System",
+      "description": "Layer-stage organization patterns and improvements",
+      "formerName": "better_layer_stage_system"
+    },
+    {
+      "@id": "subfeature_setup_system/",
+      "@type": "Subfeature",
+      "name": "Setup System",
+      "description": "Project setup and configuration",
+      "formerName": "better_setup_system"
+    }
+  ]
+}

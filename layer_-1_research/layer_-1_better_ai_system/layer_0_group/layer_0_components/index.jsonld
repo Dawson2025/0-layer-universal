@@ -1,0 +1,24 @@
+{
+  "@context": {
+    "@vocab": "https://layer-stage.dev/schema#",
+    "nav": "https://layer-stage.dev/nav#"
+  },
+
+  "@id": "layer_0_components",
+  "@type": "ComponentsRegistry",
+
+  "name": "Layer 0 Components",
+  "description": "Shared components used across features",
+
+  "nav:parent": {
+    "@id": "../",
+    "name": "layer_0_group"
+  },
+
+  "nav:siblings": [
+    {"@id": "../layer_0_features/", "name": "Features"},
+    {"@id": "../layer_0_subprojects/", "name": "Subprojects"}
+  ],
+
+  "components": []
+}

@@ -1,0 +1,9 @@
+# Codex/Agents Context - better_setup_system
+
+Feature: better_setup_system (Layer 0)
+Part of: better_ai_system research project
+
+See 0AGNOSTIC.md for full context.
+
+---
+*Auto-generated from 0AGNOSTIC.md*
