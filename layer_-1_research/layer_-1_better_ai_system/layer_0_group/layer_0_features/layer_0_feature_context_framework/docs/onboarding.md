@@ -16,6 +16,13 @@
 | What do agents start with? | Agent Instantiation Chain | `../layer_1_sub_feature_context_visualization/diagrams/current/agent_instantiation_chain.md` |
 | What's the exact loading order? | Context Loading Sequence | `../layer_1_sub_feature_context_visualization/diagrams/current/context_loading_sequence.md` |
 
+### Official vs Custom Loading
+
+| Question | Diagram | Path |
+|----------|---------|------|
+| What does Claude Code auto-load? | Official Claude Code Loading | `../layer_1_sub_feature_context_visualization/diagrams/current/official_claude_code_loading.md` |
+| What have we added on top? | Custom Layer-Stage Loading | `../layer_1_sub_feature_context_visualization/diagrams/current/custom_layer_stage_loading.md` |
+
 ### Specific Operation Flows
 
 | Operation | Diagram | Path |

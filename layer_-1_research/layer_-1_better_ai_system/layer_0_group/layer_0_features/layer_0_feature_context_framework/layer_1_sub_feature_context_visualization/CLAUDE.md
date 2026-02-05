@@ -22,6 +22,13 @@ Make context flow **visible** and **predictable** through standardized diagrams.
 | Agent Instantiation Chain | `diagrams/current/agent_instantiation_chain.md` | What agents start with and how they load more |
 | Context Loading Sequence | `diagrams/current/context_loading_sequence.md` | Exact order from session start to end |
 
+### Official vs Custom Loading
+
+| Type | File | Purpose |
+|------|------|---------|
+| Official Claude Code Loading | `diagrams/current/official_claude_code_loading.md` | What Claude Code auto-loads (tool's behavior) |
+| Custom Layer-Stage Loading | `diagrams/current/custom_layer_stage_loading.md` | What we've added (index.jsonld, skills, etc.) |
+
 ### Specific Operation Flows
 
 | Type | File | Purpose |

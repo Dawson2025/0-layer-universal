@@ -52,6 +52,18 @@
           "answers": "What order does context load in?"
         },
         {
+          "@id": "current/official_claude_code_loading.md",
+          "name": "Official Claude Code Loading",
+          "purpose": "How Claude Code (the tool) officially loads context",
+          "answers": "What does Claude Code auto-load?"
+        },
+        {
+          "@id": "current/custom_layer_stage_loading.md",
+          "name": "Custom Layer-Stage Loading",
+          "purpose": "How our system extends Claude Code with custom conventions",
+          "answers": "What have we added on top of official behavior?"
+        },
+        {
           "@id": "current/specific_flows/",
           "name": "Specific Operation Flows",
           "purpose": "How context loads for specific operations",
