@@ -1,0 +1,51 @@
+{
+  "@context": {
+    "@vocab": "https://layer-stage.dev/schema#",
+    "nav": "https://layer-stage.dev/nav#"
+  },
+
+  "@id": "diagrams",
+  "@type": "DiagramsRegistry",
+
+  "name": "Context Visualization Diagrams",
+  "description": "Visual diagrams of context architecture, flow, and propagation",
+
+  "nav:parent": {
+    "@id": "../",
+    "name": "layer_1_sub_feature_context_visualization"
+  },
+
+  "diagramCategories": [
+    {
+      "@id": "current/",
+      "name": "Current State Diagrams",
+      "description": "Diagrams showing how context works today",
+      "diagrams": [
+        {
+          "@id": "current/context_architecture.md",
+          "name": "Context Architecture",
+          "purpose": "What context exists and where it lives",
+          "answers": "What context is available?"
+        },
+        {
+          "@id": "current/context_flow.md",
+          "name": "Context Flow",
+          "purpose": "When context loads and in what order",
+          "answers": "When does context load?"
+        },
+        {
+          "@id": "current/context_propagation.md",
+          "name": "Context Propagation",
+          "purpose": "How context moves through hierarchy",
+          "answers": "How does context propagate?"
+        }
+      ]
+    },
+    {
+      "@id": "proposed/",
+      "name": "Proposed State Diagrams",
+      "description": "Before/after diagrams for proposals",
+      "note": "Each proposal gets its own subdirectory with before.md and after.md"
+    }
+  ]
+}

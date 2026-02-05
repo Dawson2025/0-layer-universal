@@ -60,6 +60,13 @@
       "name": "Navigation System",
       "description": "JSON-LD navigation, links, and triggers",
       "note": "New - contains JSON-LD prototype"
+    },
+    {
+      "@id": "layer_1_sub_feature_context_visualization/",
+      "@type": "SubFeature",
+      "name": "Context Visualization",
+      "description": "Diagrams and tools for visualizing context flow, architecture, and propagation",
+      "note": "New - provides visual understanding of context system"
     }
   ]
 }

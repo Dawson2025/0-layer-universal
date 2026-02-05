@@ -20,7 +20,8 @@
 
   "nav:siblings": [
     {"@id": "../layer_1_sub_feature_context_system/", "name": "Context System"},
-    {"@id": "../layer_1_sub_feature_dynamic_memory/", "name": "Dynamic Memory"}
+    {"@id": "../layer_1_sub_feature_dynamic_memory/", "name": "Dynamic Memory"},
+    {"@id": "../layer_1_sub_feature_context_visualization/", "name": "Context Visualization"}
   ],
 
   "conventions": {
