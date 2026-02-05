@@ -2,6 +2,24 @@
 
 **Purpose**: Document how our layer-stage system extends Claude Code's official context loading with custom conventions, navigation, and triggers.
 
+**Relationship to Official**: See [Official Claude Code Loading](./official_claude_code_loading.md) for what Claude Code auto-loads. This document shows what we've built on top.
+
+---
+
+## Extension Strategy
+
+Our system extends Claude Code through **two mechanisms**:
+
+1. **Instructions in CLAUDE.md files** - Tell the agent to read additional files (index.jsonld, SKILL.md, etc.)
+2. **Directory conventions** - Use naming patterns that encode meaning (layer_N, stage_NN, sub_layer_N_NN)
+
+We do NOT currently use:
+- SessionStart hooks (could automate context loading)
+- .claude/rules/ directory (could put universal rules there)
+- @import system (could chain CLAUDE.md files)
+
+**Future Enhancement Opportunity**: We could use Claude Code's official hooks and @import system to make context loading more automatic.
+
 ---
 
 ## Architecture: Official + Custom
@@ -239,14 +257,83 @@
 
 ## Our Custom File Types
 
-| File Type | Purpose | How Loaded |
-|-----------|---------|------------|
-| `index.jsonld` | Navigation, conventions, triggers | CLAUDE.md instructs agent to read |
-| `SKILL.md` | Detailed procedures | trigger: in index.jsonld |
-| `schema.jsonld` | Type definitions, validation | SKILL.md references |
-| `sub_layer_*/` | Rules, knowledge, principles | CLAUDE.md references |
-| `status.json` | Current state | CLAUDE.md instructs |
-| `AGENTS.md` | Delegation rules | CLAUDE.md references |
+| File Type | Purpose | How Loaded | Location Pattern |
+|-----------|---------|------------|------------------|
+| `index.jsonld` | Navigation, conventions, triggers | CLAUDE.md instructs agent | Every entity directory |
+| `SKILL.md` | Detailed procedures | trigger: in index.jsonld | `.claude/skills/*/SKILL.md` |
+| `schema.jsonld` | Type definitions, validation | SKILL.md references | `.claude/schema/*.jsonld` |
+| `sub_layer_*/` | Rules, knowledge, principles | CLAUDE.md references | `layer_N/layer_N_03_sub_layers/` |
+| `status.json` | Current state | CLAUDE.md instructs | Any directory with state |
+| `AGENTS.md` | Delegation rules | CLAUDE.md references | Deprecated, use .claude/ |
+| `0AGNOSTIC.md` | Tool-agnostic instructions | Synced to CLAUDE.md | Same dir as CLAUDE.md |
+
+### Detailed File Descriptions
+
+#### index.jsonld
+
+JSON-LD file providing structured navigation and metadata for an entity:
+
+```json
+{
+  "@context": { "@vocab": "https://layer-stage.dev/schema#" },
+  "@type": "Feature",
+  "name": "Context Framework",
+  "nav:parent": { "@id": "../" },
+  "nav:children": [{ "@id": "layer_1_sub_feature_context_system/" }],
+  "conventions": {
+    "childNaming": "layer_{parentLayer+1}_sub_feature_{kebab-case-name}"
+  },
+  "trigger:onEntityCreation": ".claude/skills/entity-creation/SKILL.md"
+}
+```
+
+**Key Properties**:
+- `@type` - Entity type (Project, Feature, SubFeature, Stage, etc.)
+- `nav:*` - Navigation links (parent, children, siblings)
+- `conventions.*` - Naming and structure rules
+- `trigger:*` - Actions to take on events
+
+#### SKILL.md
+
+Markdown file with detailed procedures for specific tasks:
+
+```markdown
+---
+name: Entity Creation
+description: Create new entities following conventions
+tokenCost: ~500
+---
+
+# Entity Creation Skill
+
+## When to Use
+- Creating new features, sub-features, components
+
+## Procedure
+1. Read parent's index.jsonld
+2. Get conventions.childNaming pattern
+3. Create directory with correct name
+...
+```
+
+**YAML Frontmatter**: Loaded at session start (lightweight)
+**Full Content**: Loaded on-demand when skill invoked
+
+#### schema.jsonld
+
+JSON-LD schema defining types, patterns, and validation:
+
+```json
+{
+  "@context": { "@vocab": "https://layer-stage.dev/schema#" },
+  "entityTypes": {
+    "SubFeature": {
+      "pattern": "layer_{N}_sub_feature_{name}",
+      "requiredFiles": ["CLAUDE.md", "index.jsonld"]
+    }
+  }
+}
+```
 
 ---
 
@@ -309,4 +396,128 @@ Our system works because CLAUDE.md files (which Claude Code auto-loads) contain 
 
 ---
 
+## Potential Improvements Using Official Features
+
+Claude Code provides several features we could leverage to improve our context loading:
+
+### 1. SessionStart Hooks
+
+**Current**: Agent reads rules manually when instructed
+**Improvement**: Use SessionStart hook to automatically load context
+
+```json
+// .claude/settings.json
+{
+  "hooks": {
+    "SessionStart": [{
+      "command": "cat layer_0/layer_0_03_sub_layers/sub_layer_0_04_rules/*.md"
+    }]
+  }
+}
+```
+
+**Benefit**: Rules loaded automatically, no agent decision required
+
+### 2. .claude/rules/ Directory
+
+**Current**: Rules in `sub_layer_0_04_rules/`, agent must navigate
+**Improvement**: Symlink or copy critical rules to `.claude/rules/`
+
+```
+.claude/rules/
+├── context_modification.md    → auto-loaded
+├── commit_push_rule.md        → auto-loaded
+└── file_path_linking.md       → auto-loaded
+```
+
+**Benefit**: Critical rules auto-loaded, always present
+
+### 3. @import System in CLAUDE.md
+
+**Current**: CLAUDE.md files are independent, contain instructions to read others
+**Improvement**: Use @import to chain files automatically
+
+```markdown
+# CLAUDE.md
+
+@layer_0/layer_0_03_sub_layers/sub_layer_0_04_rules/critical_rules.md
+@.claude/schema/layer-stage-schema.jsonld
+```
+
+**Benefit**: Context loaded when CLAUDE.md loads, no agent action needed
+
+### 4. CLAUDE.local.md for Personal Preferences
+
+**Current**: All context is shared via git
+**Improvement**: Use CLAUDE.local.md for personal workflow preferences
+
+```markdown
+# CLAUDE.local.md (gitignored)
+
+## My Preferences
+- Always show full file paths
+- Prefer verbose explanations
+- Default to stage 06 (development)
+```
+
+**Benefit**: Personal customization without affecting shared config
+
+---
+
+## Migration Path
+
+If we decide to adopt official features:
+
+| Current Approach | Official Feature | Migration Steps |
+|-----------------|------------------|-----------------|
+| Instructions in CLAUDE.md | SessionStart hooks | Create hook scripts, update settings.json |
+| sub_layer_0_04_rules/ | .claude/rules/ | Symlink or move critical rules |
+| "Read index.jsonld" instructions | @import | Convert to @import statements |
+| Shared-only config | CLAUDE.local.md | Document personal override patterns |
+
+**Risk**: Over-automation could make the system harder to understand and debug.
+
+**Recommendation**: Start with .claude/rules/ for critical rules, evaluate hooks later.
+
+---
+
+## Directory Naming Conventions
+
+Our system encodes meaning in directory names:
+
+```
+layer_{N}_{type}_{name}
+  │     │    │       │
+  │     │    │       └── Descriptive name (kebab-case or snake_case)
+  │     │    └────────── Type: feature, sub_feature, component, stage, etc.
+  │     └─────────────── Layer number: 0=universal, 1=project, -1=research
+  └───────────────────── Literal "layer_"
+
+stage_{NN}_{name}
+  │     │     │
+  │     │     └── Stage name
+  │     └──────── Two-digit stage number (01-11)
+  └────────────── Literal "stage_"
+
+sub_layer_{L}_{NN}_{name}
+  │          │   │     │
+  │          │   │     └── Sub-layer name
+  │          │   └──────── Two-digit sub-layer number
+  │          └──────────── Parent layer number
+  └─────────────────────── Literal "sub_layer_"
+```
+
+**Examples**:
+- `layer_0_feature_context_framework` - Layer 0, Feature type, context-framework name
+- `layer_1_sub_feature_context_system` - Layer 1, SubFeature type
+- `stage_06_development` - Stage 06 (development phase)
+- `sub_layer_0_04_rules` - Sub-layer of layer 0, #04 (rules)
+
+---
+
 *Last updated: 2026-02-05*
+
+**Related Documentation**:
+- [Official Claude Code Loading](./official_claude_code_loading.md) - What Claude Code auto-loads
+- [Context Architecture](./context_architecture.md) - What context exists
+- [Agent Instantiation Chain](./agent_instantiation_chain.md) - How agents get context

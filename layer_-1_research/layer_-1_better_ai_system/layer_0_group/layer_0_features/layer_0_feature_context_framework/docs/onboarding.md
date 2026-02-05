@@ -23,6 +23,8 @@
 | What does Claude Code auto-load? | Official Claude Code Loading | `../layer_1_sub_feature_context_visualization/diagrams/current/official_claude_code_loading.md` |
 | What have we added on top? | Custom Layer-Stage Loading | `../layer_1_sub_feature_context_visualization/diagrams/current/custom_layer_stage_loading.md` |
 
+**Key Insight**: Claude Code auto-loads CLAUDE.md files via upward traversal (cwd → /). Our system uses instructions in those CLAUDE.md files to tell the agent to read our custom files (index.jsonld, SKILL.md, etc.).
+
 ### Specific Operation Flows
 
 | Operation | Diagram | Path |
@@ -137,12 +139,28 @@ Read: `context_flow.md`
 
 ---
 
+## Official Features We Could Adopt
+
+Claude Code provides features we don't currently use:
+
+| Feature | What It Does | Potential Use |
+|---------|--------------|---------------|
+| SessionStart hooks | Run scripts when session starts | Auto-load rules, check git status |
+| .claude/rules/ | Auto-load .md files | Put critical rules there |
+| @import in CLAUDE.md | Chain file loading | Import schemas, rules automatically |
+| CLAUDE.local.md | Personal overrides (gitignored) | User preferences |
+
+**See**: Custom Layer-Stage Loading diagram for detailed analysis and migration path.
+
+---
+
 ## Next Steps
 
-1. **Start with diagrams**: Read the 4 current state diagrams
-2. **Trace a real example**: Pick a working directory and trace what loads
-3. **Try entity creation**: Create a test entity and see how conventions flow
-4. **Propose improvements**: Use before/after diagrams for any changes
+1. **Start with diagrams**: Read the core diagrams (architecture, flow, propagation)
+2. **Understand official vs custom**: Read both loading diagrams to see how they interact
+3. **Trace a real example**: Pick a working directory and trace what loads
+4. **Try entity creation**: Create a test entity and see how conventions flow
+5. **Propose improvements**: Use before/after diagrams for any changes
 
 ---
 
