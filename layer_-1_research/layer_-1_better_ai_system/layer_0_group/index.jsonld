@@ -1,19 +1,47 @@
 {
   "@context": {
     "@vocab": "https://layer-stage.dev/schema#",
-    "nav": "https://layer-stage.dev/nav#"
+    "nav": "https://layer-stage.dev/nav#",
+    "trigger": "https://layer-stage.dev/trigger#"
   },
 
   "@id": "layer_0_group",
   "@type": "LayerGroup",
+  "layer": 0,
 
   "name": "Layer 0 Group",
   "description": "Further layering for the better_ai_system research project - features, components, and subprojects",
-  "layer": 0,
 
   "nav:parent": {
     "@id": "../",
     "name": "layer_-1_better_ai_system"
+  },
+
+  "conventions": {
+    "childNaming": {
+      "pattern": "layer_{N}_{type}_{name}",
+      "currentLayer": 0,
+      "types": {
+        "feature": "layer_0_feature_{name}",
+        "component": "layer_0_component_{name}",
+        "subproject": "layer_0_subproject_{name}"
+      },
+      "examples": [
+        "layer_0_feature_context_framework",
+        "layer_0_component_shared_utils",
+        "layer_0_subproject_prototype"
+      ]
+    },
+    "underscoreTypes": ["sub_feature", "sub_layer"],
+    "singleWordTypes": ["feature", "component", "subproject"]
+  },
+
+  "trigger:onEntityCreation": {
+    "skill": ".claude/skills/entity-creation/",
+    "loads": ["conventions.childNaming"],
+    "validates": {
+      "namePattern": "^layer_\\d+_(feature|sub_feature|component|subproject)_.+$"
+    }
   },
 
   "nav:children": [

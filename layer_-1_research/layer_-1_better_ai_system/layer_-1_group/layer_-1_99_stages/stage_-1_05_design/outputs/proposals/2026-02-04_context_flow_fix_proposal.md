@@ -3,7 +3,7 @@
 **Date**: 2026-02-04
 **Layer**: -1 (Research)
 **Stage**: 05 (Design)
-**Status**: Proposed
+**Status**: Implemented
 
 ---
 
@@ -365,12 +365,14 @@ Add trigger mechanism to JSON-LD schema:
 
 ### To Be Implemented
 
-| Item | Priority | Effort |
-|------|----------|--------|
-| Add entityTypes to root schema | High | Low |
-| Update all remaining index.jsonld with layer + conventions | High | Medium |
-| Create entity-creation skill with validation | Medium | Medium |
-| Add trigger:onEntityCreation to schema | Medium | High |
+| Item | Priority | Effort | Status |
+|------|----------|--------|--------|
+| Add entityTypes to root schema | High | Low | ✅ Done |
+| Update all remaining index.jsonld with layer + conventions | High | Medium | ✅ Done |
+| Create entity-creation skill with validation | Medium | Medium | ✅ Done |
+| Add trigger:onEntityCreation to schema | Medium | High | ✅ Done |
+
+**All items implemented on 2026-02-04.**
 
 ---
 

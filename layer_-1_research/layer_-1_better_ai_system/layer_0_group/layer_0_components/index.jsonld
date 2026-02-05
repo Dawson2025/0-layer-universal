@@ -1,11 +1,13 @@
 {
   "@context": {
     "@vocab": "https://layer-stage.dev/schema#",
-    "nav": "https://layer-stage.dev/nav#"
+    "nav": "https://layer-stage.dev/nav#",
+    "trigger": "https://layer-stage.dev/trigger#"
   },
 
   "@id": "layer_0_components",
   "@type": "ComponentsRegistry",
+  "layer": 0,
 
   "name": "Layer 0 Components",
   "description": "Shared components used across features",
@@ -20,5 +22,19 @@
     {"@id": "../layer_0_subprojects/", "name": "Subprojects"}
   ],
 
-  "components": []
+  "conventions": {
+    "childNaming": {
+      "pattern": "layer_{N+1}_{type}_{name}",
+      "currentLayer": 0,
+      "childLayer": 1,
+      "example": "layer_1_component_shared_utils"
+    }
+  },
+
+  "trigger:onEntityCreation": {
+    "skill": "../.claude/skills/entity-creation/",
+    "loads": ["conventions.childNaming"]
+  },
+
+  "children": []
 }

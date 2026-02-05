@@ -148,6 +148,91 @@
       "@type": "rdfs:Property",
       "rdfs:label": "informsFurtherLayering",
       "rdfs:comment": "How tree hierarchy informs child entity organization"
+    },
+
+    {
+      "@id": "https://layer-stage.dev/schema#SubFeature",
+      "@type": "rdfs:Class",
+      "rdfs:label": "SubFeature",
+      "rdfs:comment": "A sub-feature within a feature (layer N+1)"
+    },
+    {
+      "@id": "https://layer-stage.dev/schema#Component",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Component",
+      "rdfs:comment": "A reusable component (layer N+1 or deeper)"
+    },
+    {
+      "@id": "https://layer-stage.dev/schema#Subproject",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Subproject",
+      "rdfs:comment": "A subproject within a project (layer N+1)"
+    },
+    {
+      "@id": "https://layer-stage.dev/schema#FeaturesRegistry",
+      "@type": "rdfs:Class",
+      "rdfs:label": "FeaturesRegistry",
+      "rdfs:comment": "Registry of features at a layer level"
+    },
+    {
+      "@id": "https://layer-stage.dev/schema#ComponentsRegistry",
+      "@type": "rdfs:Class",
+      "rdfs:label": "ComponentsRegistry",
+      "rdfs:comment": "Registry of components at a layer level"
+    },
+    {
+      "@id": "https://layer-stage.dev/schema#SubprojectsRegistry",
+      "@type": "rdfs:Class",
+      "rdfs:label": "SubprojectsRegistry",
+      "rdfs:comment": "Registry of subprojects at a layer level"
+    },
+
+    {
+      "@id": "https://layer-stage.dev/schema#entityTypes",
+      "@type": "rdfs:Property",
+      "rdfs:label": "entityTypes",
+      "rdfs:comment": "Definitions of entity types with naming patterns",
+      "value": {
+        "Feature": {
+          "pattern": "layer_{N}_feature_{name}",
+          "example": "layer_0_feature_context_framework",
+          "description": "High-level features that address tree of needs branches"
+        },
+        "SubFeature": {
+          "pattern": "layer_{N}_sub_feature_{name}",
+          "example": "layer_1_sub_feature_context_system",
+          "description": "Sub-features within features (note: underscore in sub_feature)"
+        },
+        "Component": {
+          "pattern": "layer_{N}_component_{name}",
+          "example": "layer_2_component_link_validator",
+          "description": "Reusable components shared across features"
+        },
+        "Subproject": {
+          "pattern": "layer_{N}_subproject_{name}",
+          "example": "layer_1_subproject_prototype",
+          "description": "Subprojects within projects"
+        }
+      }
+    },
+
+    {
+      "@id": "https://layer-stage.dev/schema#conventions",
+      "@type": "rdfs:Property",
+      "rdfs:label": "conventions",
+      "rdfs:comment": "Conventions for child entity naming and structure"
+    },
+    {
+      "@id": "https://layer-stage.dev/schema#childNaming",
+      "@type": "rdfs:Property",
+      "rdfs:label": "childNaming",
+      "rdfs:comment": "Naming pattern for child entities"
+    },
+    {
+      "@id": "https://layer-stage.dev/schema#layer",
+      "@type": "rdfs:Property",
+      "rdfs:label": "layer",
+      "rdfs:comment": "The layer number of this entity (0, 1, 2, -1, etc.)"
     }
   ]
 }

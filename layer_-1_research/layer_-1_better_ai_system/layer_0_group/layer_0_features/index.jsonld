@@ -2,11 +2,13 @@
   "@context": {
     "@vocab": "https://layer-stage.dev/schema#",
     "nav": "https://layer-stage.dev/nav#",
-    "rel": "https://layer-stage.dev/rel#"
+    "rel": "https://layer-stage.dev/rel#",
+    "trigger": "https://layer-stage.dev/trigger#"
   },
 
   "@id": "layer_0_features",
   "@type": "FeaturesRegistry",
+  "layer": 0,
 
   "name": "Layer 0 Features",
   "description": "High-level features for the better_ai_system research project",
@@ -21,6 +23,20 @@
     {"@id": "../layer_0_subprojects/", "name": "Subprojects"}
   ],
 
+  "conventions": {
+    "childNaming": {
+      "pattern": "layer_{N}_{type}_{name}",
+      "currentLayer": 0,
+      "example": "layer_0_feature_context_framework",
+      "note": "Features are at same layer as registry; sub_features inside are layer+1"
+    }
+  },
+
+  "trigger:onEntityCreation": {
+    "skill": "../.claude/skills/entity-creation/",
+    "loads": ["conventions.childNaming"]
+  },
+
   "features": [
     {
       "@id": "layer_0_feature_context_framework/",
@@ -28,10 +44,10 @@
       "name": "Context Framework",
       "description": "Context delivery, memory, and navigation systems",
       "rel:treeOfNeedsBranch": ["06_context_flow", "01_capable"],
-      "subfeatures": [
-        "subfeature_context_system",
-        "subfeature_dynamic_memory",
-        "subfeature_navigation_system"
+      "children": [
+        "layer_1_sub_feature_context_system",
+        "layer_1_sub_feature_dynamic_memory",
+        "layer_1_sub_feature_navigation_system"
       ]
     },
     {
@@ -39,9 +55,9 @@
       "@type": "Feature",
       "name": "Structure Framework",
       "description": "Layer-stage organization and setup systems",
-      "subfeatures": [
-        "subfeature_layer_stage_system",
-        "subfeature_setup_system"
+      "children": [
+        "layer_1_sub_feature_layer_stage_system",
+        "layer_1_sub_feature_setup_system"
       ]
     },
     {
@@ -50,9 +66,9 @@
       "name": "Governance Framework",
       "description": "Rules and manager hierarchy systems",
       "rel:treeOfNeedsBranch": ["03_trustworthy"],
-      "subfeatures": [
-        "subfeature_rules_system",
-        "subfeature_manager_hierarchy"
+      "children": [
+        "layer_1_sub_feature_rules_system",
+        "layer_1_sub_feature_manager_hierarchy"
       ]
     },
     {
@@ -61,9 +77,9 @@
       "name": "Tooling Framework",
       "description": "Automation and documentation systems",
       "rel:treeOfNeedsBranch": ["02_continuous", "04_observable"],
-      "subfeatures": [
-        "subfeature_automation_system",
-        "subfeature_documentation_system"
+      "children": [
+        "layer_1_sub_feature_automation_system",
+        "layer_1_sub_feature_documentation_system"
       ]
     }
   ]
