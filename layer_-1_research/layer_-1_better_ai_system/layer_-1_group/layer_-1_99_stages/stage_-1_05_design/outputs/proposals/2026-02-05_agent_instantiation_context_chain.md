@@ -9,684 +9,352 @@
 
 ## Problem Statement
 
-Current context visualization diagrams show **what** context exists and **how** it flows, but they don't show:
+Current context diagrams show **what** context exists and **how** it flows, but they don't show:
 
-1. **What agents start with** when instantiated at a given location
-2. **The complete boot sequence** from system prompt to loaded context
-3. **How foundational context leads to loading more context**
-4. **Decision points** where agents choose to load more or spawn sub-agents
-
-We need a diagram that shows the **complete agent context chain** from instantiation to full operation.
+1. **What agents start with** - The foundational context present at instantiation
+2. **How working directory affects context** - Different starting points = different context
+3. **The full chain** - From system prompt → tools → personal files → skills → jsonld → sub_layers → sub-agents
+4. **Decision points** - Where agents decide to load more context or spawn sub-agents
 
 ---
 
-## Proposed Diagram: Agent Instantiation & Context Chain
-
-### Purpose
-
-Answer: "When an agent starts at location X, what context does it have and how does it get more?"
-
-### What It Shows
-
-1. **Immutable foundation** - System prompt we can't change
-2. **Platform layer** - Claude Code tools, MCP servers
-3. **Global layer** - ~/.claude/ configuration
-4. **Path-based layer** - CLAUDE.md files in path to working directory
-5. **Directory layer** - Local context files (.claude/, index.jsonld)
-6. **Triggered layer** - Context loaded by triggers
-7. **On-demand layer** - Context loaded by agent decisions
-8. **Delegation layer** - Sub-agent instantiation
-
----
-
-## The Complete Context Chain
-
-### Layer 0: Immutable System Prompt (Anthropic)
+## Diagram: Agent Instantiation & Context Chain
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────────┐
-│ LAYER 0: IMMUTABLE SYSTEM PROMPT                                                 │
-│ ════════════════════════════════                                                 │
-│                                                                                  │
-│ Source: Anthropic (cannot be changed)                                            │
-│                                                                                  │
-│ Contains:                                                                        │
-│ ┌─────────────────────────────────────────────────────────────────────────────┐ │
-│ │ • Model identity and capabilities                                            │ │
-│ │ • Safety guidelines and refusals                                             │ │
-│ │ • Base behaviors and ethics                                                  │ │
-│ │ • Tool usage instructions                                                    │ │
-│ │ • Output formatting defaults                                                 │ │
-│ └─────────────────────────────────────────────────────────────────────────────┘ │
-│                                                                                  │
-│ Status: ✅ Always present, cannot modify                                         │
-│ Agent sees: Implicitly, shapes all behavior                                      │
+│              AGENT INSTANTIATION & CONTEXT CHAIN                                 │
 └─────────────────────────────────────────────────────────────────────────────────┘
-                                         │
-                                         ▼
-```
 
-### Layer 1: Platform Layer (Claude Code)
-
-```
+                              AGENT INSTANTIATED
+                              (claude code starts)
+                                      │
+                                      ▼
 ┌─────────────────────────────────────────────────────────────────────────────────┐
-│ LAYER 1: PLATFORM LAYER (Claude Code)                                            │
+│ TIER 0: IMMUTABLE FOUNDATION                                                     │
+│ ════════════════════════════                                                     │
+│                                                                                  │
+│ Source: Anthropic (cannot be changed by user)                                    │
+│                                                                                  │
+│ ┌─────────────────────────────────────────────────────────────────────────────┐ │
+│ │                         SYSTEM PROMPT                                        │ │
+│ │  • Model identity (Claude)                                                   │ │
+│ │  • Safety rules and boundaries                                               │ │
+│ │  • Tool usage instructions                                                   │ │
+│ │  • Ethical guidelines                                                        │ │
+│ │                                                                              │ │
+│ │  Status: LOCKED - User cannot modify                                         │ │
+│ └─────────────────────────────────────────────────────────────────────────────┘ │
+└─────────────────────────────────────────────────────────────────────────────────┘
+                                      │
+                                      ▼
+┌─────────────────────────────────────────────────────────────────────────────────┐
+│ TIER 1: PLATFORM LAYER                                                           │
+│ ══════════════════════                                                           │
+│                                                                                  │
+│ Source: Claude Code application                                                  │
+│                                                                                  │
+│ ┌──────────────────────────┐  ┌──────────────────────────┐                      │
+│ │      BUILT-IN TOOLS      │  │      MCP SERVERS         │                      │
+│ │  • Read, Write, Edit     │  │  From: ~/.claude/        │                      │
+│ │  • Bash, Glob, Grep      │  │        settings.json     │                      │
+│ │  • Task (subagents)      │  │                          │                      │
+│ │  • WebFetch, WebSearch   │  │  • mcp__perplexity__*    │                      │
+│ │  • AskUserQuestion       │  │  • mcp__playwright__*    │                      │
+│ │  • Skill                 │  │  • mcp__canvas__*        │                      │
+│ │  • ...                   │  │  • mcp__ide__*           │                      │
+│ └──────────────────────────┘  └──────────────────────────┘                      │
+│                                                                                  │
+│ ┌─────────────────────────────────────────────────────────────────────────────┐ │
+│ │  ~/.claude/settings.json - MCP configs, permissions, model prefs             │ │
+│ │  Project .claude/settings.json - Project-specific permissions                │ │
+│ └─────────────────────────────────────────────────────────────────────────────┘ │
+└─────────────────────────────────────────────────────────────────────────────────┘
+                                      │
+                                      ▼
+┌─────────────────────────────────────────────────────────────────────────────────┐
+│ TIER 2: GLOBAL PERSONAL SYSTEM PROMPT                                            │
 │ ═════════════════════════════════════                                            │
 │                                                                                  │
-│ Source: Claude Code CLI application                                              │
+│ Source: User's global configuration                                              │
+│ Auto-loaded: YES (Claude Code handles)                                           │
 │                                                                                  │
-│ ┌───────────────────────────────────────────────────────────────────────────┐   │
-│ │ BUILT-IN TOOLS                                                             │   │
-│ │ ─────────────                                                              │   │
-│ │ • Read, Write, Edit (file operations)                                      │   │
-│ │ • Bash (command execution)                                                 │   │
-│ │ • Glob, Grep (search)                                                      │   │
-│ │ • Task (sub-agent spawning)                                                │   │
-│ │ • WebFetch, WebSearch (web access)                                         │   │
-│ │ • AskUserQuestion (interaction)                                            │   │
-│ └───────────────────────────────────────────────────────────────────────────┘   │
-│                                                                                  │
-│ ┌───────────────────────────────────────────────────────────────────────────┐   │
-│ │ MCP SERVERS & TOOLS                                                        │   │
-│ │ ────────────────────                                                       │   │
-│ │ Configured in: ~/.claude/settings.json or project .claude/settings.json   │   │
-│ │                                                                            │   │
-│ │ Examples:                                                                  │   │
-│ │ • mcp__perplexity__* (research tools)                                      │   │
-│ │ • mcp__canvas__* (Canvas LMS tools)                                        │   │
-│ │ • mcp__playwright__* (browser automation)                                  │   │
-│ │ • mcp__claude-in-chrome__* (Chrome extension)                              │   │
-│ │ • mcp__ide__* (IDE integration)                                            │   │
-│ └───────────────────────────────────────────────────────────────────────────┘   │
-│                                                                                  │
-│ ┌───────────────────────────────────────────────────────────────────────────┐   │
-│ │ ENVIRONMENT INFO                                                           │   │
-│ │ ────────────────                                                           │   │
-│ │ • Working directory                                                        │   │
-│ │ • Platform (linux/mac/windows)                                             │   │
-│ │ • Git repo status                                                          │   │
-│ │ • Today's date                                                             │   │
-│ │ • Model name                                                               │   │
-│ └───────────────────────────────────────────────────────────────────────────┘   │
-│                                                                                  │
-│ Status: ✅ Always present when using Claude Code                                 │
-│ Agent sees: In system prompt, available for use                                  │
+│ ┌─────────────────────────────────────────────────────────────────────────────┐ │
+│ │  ~/.claude/CLAUDE.md                                                         │ │
+│ │  • Machine-level rules                                                       │ │
+│ │  • Universal behaviors                                                       │ │
+│ │  • Critical rules (modification protocol, commit rules)                      │ │
+│ │  • Self-compliance checklist                                                 │ │
+│ └─────────────────────────────────────────────────────────────────────────────┘ │
 └─────────────────────────────────────────────────────────────────────────────────┘
-                                         │
-                                         ▼
-```
-
-### Layer 2: Global User Configuration
-
-```
+                                      │
+                                      ▼
 ┌─────────────────────────────────────────────────────────────────────────────────┐
-│ LAYER 2: GLOBAL USER CONFIGURATION                                               │
-│ ══════════════════════════════════                                               │
+│ TIER 3: PATH-BASED CONTEXT (varies by working directory)                         │
+│ ════════════════════════════════════════════════════════                         │
 │                                                                                  │
-│ Source: ~/.claude/ directory                                                     │
+│ Claude Code traverses from ~ to working directory, loading each CLAUDE.md       │
 │                                                                                  │
-│ ┌───────────────────────────────────────────────────────────────────────────┐   │
-│ │ ~/.claude/CLAUDE.md                                                        │   │
-│ │ ─────────────────────                                                      │   │
-│ │ • Machine-level rules (CRITICAL rules that apply everywhere)               │   │
-│ │ • Universal behaviors                                                      │   │
-│ │ • Global settings                                                          │   │
-│ │ • Cross-project conventions                                                │   │
-│ │                                                                            │   │
-│ │ Loaded: ✅ Automatically by Claude Code                                    │   │
-│ └───────────────────────────────────────────────────────────────────────────┘   │
+│ ╔═══════════════════════════════════════════════════════════════════════════╗   │
+│ ║  WORKING DIR: ~/                                                           ║   │
+│ ║  Loads: ~/CLAUDE.md                                                        ║   │
+│ ║  Context: User root, workspace pointers                                    ║   │
+│ ╚═══════════════════════════════════════════════════════════════════════════╝   │
 │                                                                                  │
-│ ┌───────────────────────────────────────────────────────────────────────────┐   │
-│ │ ~/.claude/settings.json                                                    │   │
-│ │ ─────────────────────────                                                  │   │
-│ │ • MCP server configurations                                                │   │
-│ │ • Permission settings                                                      │   │
-│ │ • Default behaviors                                                        │   │
-│ │                                                                            │   │
-│ │ Loaded: ✅ Automatically by Claude Code                                    │   │
-│ └───────────────────────────────────────────────────────────────────────────┘   │
+│ ╔═══════════════════════════════════════════════════════════════════════════╗   │
+│ ║  WORKING DIR: ~/dawson-workspace/                                          ║   │
+│ ║  Loads: ~/CLAUDE.md → ~/dawson-workspace/CLAUDE.md                         ║   │
+│ ║  Context: + Workspace conventions, sync awareness                          ║   │
+│ ╚═══════════════════════════════════════════════════════════════════════════╝   │
 │                                                                                  │
-│ Status: ✅ Loaded at session start                                               │
-│ Agent sees: As part of system context                                            │
-└─────────────────────────────────────────────────────────────────────────────────┘
-                                         │
-                                         ▼
-```
-
-### Layer 3: Path-Based Context Chain
-
-```
-┌─────────────────────────────────────────────────────────────────────────────────┐
-│ LAYER 3: PATH-BASED CONTEXT CHAIN                                                │
-│ ═════════════════════════════════                                                │
+│ ╔═══════════════════════════════════════════════════════════════════════════╗   │
+│ ║  WORKING DIR: ~/dawson-workspace/code/0_layer_universal/                   ║   │
+│ ║  Loads: ~/CLAUDE.md → .../dawson-workspace/CLAUDE.md                       ║   │
+│ ║         → .../code/CLAUDE.md → .../0_layer_universal/CLAUDE.md             ║   │
+│ ║  Context: + Layer-stage framework, universal rules, navigation             ║   │
+│ ╚═══════════════════════════════════════════════════════════════════════════╝   │
 │                                                                                  │
-│ Source: CLAUDE.md files from ~ to working directory                              │
-│                                                                                  │
-│ Claude Code traverses path and loads each CLAUDE.md:                             │
-│                                                                                  │
-│ ┌───────────────────────────────────────────────────────────────────────────┐   │
-│ │                                                                            │   │
-│ │   ~/CLAUDE.md                                                              │   │
-│ │       │ • User root context                                                │   │
-│ │       │ • Workspace pointers                                               │   │
-│ │       ▼                                                                    │   │
-│ │   ~/dawson-workspace/CLAUDE.md                                             │   │
-│ │       │ • Workspace conventions                                            │   │
-│ │       │ • Sync awareness                                                   │   │
-│ │       ▼                                                                    │   │
-│ │   ~/dawson-workspace/code/CLAUDE.md                                        │   │
-│ │       │ • Code root context                                                │   │
-│ │       │ • Project pointers                                                 │   │
-│ │       ▼                                                                    │   │
-│ │   0_layer_universal/CLAUDE.md                                              │   │
-│ │       │ • Layer-stage rules                                                │   │
-│ │       │ • Universal conventions                                            │   │
-│ │       │ • Sub-layer navigation                                             │   │
-│ │       ▼                                                                    │   │
-│ │   layer_-1_research/CLAUDE.md                                              │   │
-│ │       │ • Research layer context                                           │   │
-│ │       ▼                                                                    │   │
-│ │   layer_-1_better_ai_system/CLAUDE.md                                      │   │
-│ │       │ • Project-specific context                                         │   │
-│ │       ▼                                                                    │   │
-│ │   (continues to working directory)                                         │   │
-│ │                                                                            │   │
-│ └───────────────────────────────────────────────────────────────────────────┘   │
-│                                                                                  │
-│ Inheritance: Each level inherits from parent, can extend/override               │
-│ Status: ✅ Loaded automatically by Claude Code                                   │
-│ Agent sees: Merged context from all levels                                       │
-└─────────────────────────────────────────────────────────────────────────────────┘
-                                         │
-                                         ▼
-```
-
-### Layer 4: Working Directory Context
-
-```
-┌─────────────────────────────────────────────────────────────────────────────────┐
-│ LAYER 4: WORKING DIRECTORY CONTEXT                                               │
-│ ══════════════════════════════════                                               │
-│                                                                                  │
-│ Source: Files in working directory                                               │
-│                                                                                  │
-│ ┌───────────────────────────────────────────────────────────────────────────┐   │
-│ │ index.jsonld                                                               │   │
-│ │ ────────────                                                               │   │
-│ │ • Navigation graph (nav:parent, nav:children, nav:siblings)                │   │
-│ │ • Conventions (childNaming, layer numbers)                                 │   │
-│ │ • Triggers (onEntityCreation, onStageEnter)                                │   │
-│ │ • Tree of needs links                                                      │   │
-│ │                                                                            │   │
-│ │ Loaded: ⚠️ Agent should read, but not automatic                            │   │
-│ └───────────────────────────────────────────────────────────────────────────┘   │
-│                                                                                  │
-│ ┌───────────────────────────────────────────────────────────────────────────┐   │
-│ │ .claude/ directory                                                         │   │
-│ │ ─────────────────                                                          │   │
-│ │                                                                            │   │
-│ │ .claude/settings.json                                                      │   │
-│ │ • Project-specific MCP servers                                             │   │
-│ │ • Project permissions                                                      │   │
-│ │ Loaded: ✅ Automatic                                                       │   │
-│ │                                                                            │   │
-│ │ .claude/skills/                                                            │   │
-│ │ • Workflow skills (SKILL.md files)                                         │   │
-│ │ • Stage-specific workflows                                                 │   │
-│ │ • Entity creation skill                                                    │   │
-│ │ Loaded: ⚠️ On-demand or triggered                                          │   │
-│ │                                                                            │   │
-│ │ .claude/commands/                                                          │   │
-│ │ • Custom slash commands                                                    │   │
-│ │ Loaded: ✅ Available for invocation                                        │   │
-│ │                                                                            │   │
-│ │ .claude/hooks/                                                             │   │
-│ │ • Pre/post action hooks                                                    │   │
-│ │ Loaded: ✅ Automatic                                                       │   │
-│ └───────────────────────────────────────────────────────────────────────────┘   │
-│                                                                                  │
-│ ┌───────────────────────────────────────────────────────────────────────────┐   │
-│ │ Other context files                                                        │   │
-│ │ ────────────────────                                                       │   │
-│ │ • AGENTS.md - Multi-agent coordination info                                │   │
-│ │ • 0AGNOSTIC.md - Platform-agnostic context                                 │   │
-│ │ • status.json - Current state (dynamic)                                    │   │
-│ │                                                                            │   │
-│ │ Loaded: ⚠️ Agent should read, but not automatic                            │   │
-│ └───────────────────────────────────────────────────────────────────────────┘   │
-│                                                                                  │
-│ Status: Partially automatic, partially agent-driven                              │
-└─────────────────────────────────────────────────────────────────────────────────┘
-                                         │
-                                         ▼
-```
-
-### Layer 5: Triggered Context Loading
-
-```
-┌─────────────────────────────────────────────────────────────────────────────────┐
-│ LAYER 5: TRIGGERED CONTEXT LOADING                                               │
-│ ══════════════════════════════════                                               │
-│                                                                                  │
-│ Source: Triggers defined in index.jsonld → load additional context              │
-│                                                                                  │
-│ ┌───────────────────────────────────────────────────────────────────────────┐   │
-│ │ TRIGGER: onEntityCreation                                                  │   │
-│ │ ─────────────────────────────                                              │   │
-│ │                                                                            │   │
-│ │ When: Agent creates new directory/file                                     │   │
-│ │                                                                            │   │
-│ │ Loads:                                                                     │   │
-│ │ ├── .claude/skills/entity-creation/SKILL.md                                │   │
-│ │ │   └── Contains: Naming conventions, validation rules                     │   │
-│ │ │                                                                          │   │
-│ │ ├── conventions.childNaming from parent index.jsonld                       │   │
-│ │ │   └── Contains: Pattern, example, layer numbers                          │   │
-│ │ │                                                                          │   │
-│ │ └── entityTypes from schema                                                │   │
-│ │     └── Contains: Valid types and patterns                                 │   │
-│ │                                                                            │   │
-│ │ Status: ⚠️ Defined but not auto-enforced                                   │   │
-│ └───────────────────────────────────────────────────────────────────────────┘   │
-│                                                                                  │
-│ ┌───────────────────────────────────────────────────────────────────────────┐   │
-│ │ TRIGGER: onStageEnter                                                      │   │
-│ │ ────────────────────────                                                   │   │
-│ │                                                                            │   │
-│ │ When: Agent enters stage_*_* directory                                     │   │
-│ │                                                                            │   │
-│ │ Loads:                                                                     │   │
-│ │ ├── .claude/skills/{stage}-workflow/SKILL.md                               │   │
-│ │ │   └── Contains: Stage-specific workflow guidance                         │   │
-│ │ │                                                                          │   │
-│ │ ├── stage CLAUDE.md                                                        │   │
-│ │ │   └── Contains: Stage identity, behaviors                                │   │
-│ │ │                                                                          │   │
-│ │ └── hand_off_documents/incoming/                                           │   │
-│ │     └── Contains: Tasks from parent                                        │   │
-│ │                                                                            │   │
-│ │ Status: ⚠️ Defined but not auto-enforced                                   │   │
-│ └───────────────────────────────────────────────────────────────────────────┘   │
-│                                                                                  │
-│ ┌───────────────────────────────────────────────────────────────────────────┐   │
-│ │ TRIGGER: onSessionStart                                                    │   │
-│ │ ──────────────────────────                                                 │   │
-│ │                                                                            │   │
-│ │ When: New session begins                                                   │   │
-│ │                                                                            │   │
-│ │ Loads:                                                                     │   │
-│ │ ├── CLAUDE.md (already automatic)                                          │   │
-│ │ ├── index.jsonld (should be automatic)                                     │   │
-│ │ └── status.json (for current state)                                        │   │
-│ │                                                                            │   │
-│ │ Status: Partially automatic                                                │   │
-│ └───────────────────────────────────────────────────────────────────────────┘   │
+│ ╔═══════════════════════════════════════════════════════════════════════════╗   │
+│ ║  WORKING DIR: .../layer_-1_better_ai_system/layer_0_group/                 ║   │
+│ ║  Loads: (all above) + layer_-1_research/CLAUDE.md                          ║   │
+│ ║         + layer_-1_better_ai_system/CLAUDE.md                              ║   │
+│ ║  Context: + Research project context, feature organization                 ║   │
+│ ╚═══════════════════════════════════════════════════════════════════════════╝   │
 │                                                                                  │
 └─────────────────────────────────────────────────────────────────────────────────┘
-                                         │
-                                         ▼
-```
-
-### Layer 6: On-Demand Context Loading
-
-```
+                                      │
+                                      ▼
 ┌─────────────────────────────────────────────────────────────────────────────────┐
-│ LAYER 6: ON-DEMAND CONTEXT LOADING                                               │
-│ ══════════════════════════════════                                               │
+│ TIER 4: DIRECTORY-LEVEL CONTEXT                                                  │
+│ ═══════════════════════════════                                                  │
 │                                                                                  │
-│ Source: Agent follows links in loaded context                                    │
+│ ┌──────────────────────────┐  ┌──────────────────────────┐                      │
+│ │  AUTO-LOADED             │  │  AGENT MUST READ         │                      │
+│ │  • CLAUDE.md (in path)   │  │  • index.jsonld          │                      │
+│ │  • .claude/settings.json │  │  • AGENTS.md             │                      │
+│ │                          │  │  • status.json           │                      │
+│ │  Status: ✅              │  │  Status: ⚠️ Optional     │                      │
+│ └──────────────────────────┘  └──────────────────────────┘                      │
 │                                                                                  │
-│ ┌───────────────────────────────────────────────────────────────────────────┐   │
-│ │ FOLLOWING nav: LINKS                                                       │   │
-│ │ ────────────────────────                                                   │   │
-│ │                                                                            │   │
-│ │ index.jsonld contains:                                                     │   │
-│ │                                                                            │   │
-│ │ nav:parent → "../"                                                         │   │
-│ │ └── Agent reads parent's index.jsonld for broader context                  │   │
-│ │                                                                            │   │
-│ │ nav:children → ["layer_1_sub_feature_*/"]                                  │   │
-│ │ └── Agent explores children for detailed context                           │   │
-│ │                                                                            │   │
-│ │ nav:siblings → ["../layer_1_sub_feature_*/"]                               │   │
-│ │ └── Agent finds related entities                                           │   │
-│ │                                                                            │   │
-│ │ nav:skills → ".claude/skills/"                                             │   │
-│ │ └── Agent loads skill for specific task                                    │   │
-│ │                                                                            │   │
-│ │ nav:stages → "layer_0_group/layer_0_99_stages/"                            │   │
-│ │ └── Agent navigates to appropriate stage                                   │   │
-│ │                                                                            │   │
-│ └───────────────────────────────────────────────────────────────────────────┘   │
-│                                                                                  │
-│ ┌───────────────────────────────────────────────────────────────────────────┐   │
-│ │ FOLLOWING rel: LINKS                                                       │   │
-│ │ ────────────────────────                                                   │   │
-│ │                                                                            │   │
-│ │ rel:treeOfNeedsBranch → links to requirements                              │   │
-│ │ └── Agent understands why this entity exists                               │   │
-│ │                                                                            │   │
-│ │ rel:satisfiesNeed → links to specific need                                 │   │
-│ │ └── Agent understands what problem this solves                             │   │
-│ │                                                                            │   │
-│ └───────────────────────────────────────────────────────────────────────────┘   │
-│                                                                                  │
-│ ┌───────────────────────────────────────────────────────────────────────────┐   │
-│ │ LOADING DETAILED CONTEXT                                                   │   │
-│ │ ──────────────────────────                                                 │   │
-│ │                                                                            │   │
-│ │ SKILL.md can reference:                                                    │   │
-│ │ ├── Other skills: "../other-skill/SKILL.md"                                │   │
-│ │ ├── JSON-LD files: "index.jsonld" for navigation                           │   │
-│ │ ├── Schema files: ".claude/schema/*.jsonld"                                │   │
-│ │ └── Documentation: "README.md", detailed docs                              │   │
-│ │                                                                            │   │
-│ │ index.jsonld can reference:                                                │   │
-│ │ ├── CLAUDE.md for identity context                                         │   │
-│ │ ├── SKILL.md for workflow context                                          │   │
-│ │ └── Other index.jsonld for navigation                                      │   │
-│ │                                                                            │   │
-│ │ Markdown may be better for:                                                │   │
-│ │ ├── Complex instructions (model performs better)                           │   │
-│ │ ├── Examples and code snippets                                             │   │
-│ │ └── Detailed explanations                                                  │   │
-│ │                                                                            │   │
-│ │ JSON-LD is better for:                                                     │   │
-│ │ ├── Navigation graphs                                                      │   │
-│ │ ├── Structured data (conventions, triggers)                                │   │
-│ │ └── Machine-parseable relationships                                        │   │
-│ │                                                                            │   │
-│ └───────────────────────────────────────────────────────────────────────────┘   │
-│                                                                                  │
-│ Status: Agent-driven, based on task needs                                        │
+│ ┌─────────────────────────────────────────────────────────────────────────────┐ │
+│ │  .claude/ FOLDER                                                             │ │
+│ │  ├── settings.json      ← Auto-loaded                                        │ │
+│ │  ├── skills/            ← Agent discovers via CLAUDE.md or index.jsonld      │ │
+│ │  │   └── {skill}/SKILL.md                                                    │ │
+│ │  └── schema/*.jsonld    ← Agent discovers via skills                         │ │
+│ └─────────────────────────────────────────────────────────────────────────────┘ │
 └─────────────────────────────────────────────────────────────────────────────────┘
-                                         │
-                                         ▼
-```
-
-### Layer 7: Sub-Agent Delegation
-
-```
+                                      │
+                                      ▼
 ┌─────────────────────────────────────────────────────────────────────────────────┐
-│ LAYER 7: SUB-AGENT DELEGATION                                                    │
-│ ═════════════════════════════                                                    │
+│ TIER 5: INSTRUCTION-TRIGGERED CONTEXT (Chain Loading)                            │
+│ ═════════════════════════════════════════════════════                            │
 │                                                                                  │
-│ Source: Agent decides to spawn sub-agents for specific tasks                     │
+│ Each file can reference others, creating a CONTEXT CHAIN:                        │
 │                                                                                  │
-│ ┌───────────────────────────────────────────────────────────────────────────┐   │
-│ │ DECISION POINTS                                                            │   │
-│ │ ───────────────                                                            │   │
-│ │                                                                            │   │
-│ │ Agent may spawn sub-agent when:                                            │   │
-│ │ • Task requires different layer context                                    │   │
-│ │ • Task is complex and benefits from isolation                              │   │
-│ │ • Parallel work is possible                                                │   │
-│ │ • Different expertise is needed                                            │   │
-│ │                                                                            │   │
-│ └───────────────────────────────────────────────────────────────────────────┘   │
+│ ┌─────────────────────────────────────────────────────────────────────────────┐ │
+│ │                                                                              │ │
+│ │  CLAUDE.md                                                                   │ │
+│ │      │ says: "Read sub_layer_0_04_rules/ for universal rules"               │ │
+│ │      ▼                                                                       │ │
+│ │  sub_layer_0_04_rules/safety_governance.md                                   │ │
+│ │      │ says: "See principles for guidance"                                   │ │
+│ │      ▼                                                                       │ │
+│ │  sub_layer_0_03_principles/least_privilege.md                                │ │
+│ │                                                                              │ │
+│ └─────────────────────────────────────────────────────────────────────────────┘ │
 │                                                                                  │
-│ ┌───────────────────────────────────────────────────────────────────────────┐   │
-│ │ SUB-AGENT INSTANTIATION                                                    │   │
-│ │ ───────────────────────────                                                │   │
-│ │                                                                            │   │
-│ │ Using Task tool:                                                           │   │
-│ │                                                                            │   │
-│ │ Task(                                                                      │   │
-│ │   subagent_type: "Explore" | "Plan" | "Bash" | etc.                        │   │
-│ │   prompt: "Task description with context"                                  │   │
-│ │   working_directory: "/path/to/target/"  ◄── Different location!           │   │
-│ │ )                                                                          │   │
-│ │                                                                            │   │
-│ │ Sub-agent gets:                                                            │   │
-│ │ • Fresh Layer 0-4 context for NEW working directory                        │   │
-│ │ • Task description from parent agent                                       │   │
-│ │ • NO memory of parent's session                                            │   │
-│ │                                                                            │   │
-│ └───────────────────────────────────────────────────────────────────────────┘   │
+│ ┌─────────────────────────────────────────────────────────────────────────────┐ │
+│ │                                                                              │ │
+│ │  index.jsonld                                                                │ │
+│ │      │ has: trigger:onEntityCreation → skill path                           │ │
+│ │      ▼                                                                       │ │
+│ │  .claude/skills/entity-creation/SKILL.md                                     │ │
+│ │      │ says: "See schema for entityTypes"                                    │ │
+│ │      ▼                                                                       │ │
+│ │  .claude/schema/layer-stage-schema.jsonld                                    │ │
+│ │      │ defines: entityTypes, conventions                                     │ │
+│ │      ▼                                                                       │ │
+│ │  Agent now has naming conventions for entity creation                        │ │
+│ │                                                                              │ │
+│ └─────────────────────────────────────────────────────────────────────────────┘ │
 │                                                                                  │
-│ ┌───────────────────────────────────────────────────────────────────────────┐   │
-│ │ HANDOFF PATTERN                                                            │   │
-│ │ ───────────────                                                            │   │
-│ │                                                                            │   │
-│ │ Parent Agent                        Sub-Agent                              │   │
-│ │ ────────────                        ─────────                              │   │
-│ │      │                                   │                                 │   │
-│ │      │ Write task to:                    │                                 │   │
-│ │      │ hand_off_documents/outgoing/      │                                 │   │
-│ │      │ to_below/                         │                                 │   │
-│ │      │──────────────────────────────────▶│                                 │   │
-│ │      │                                   │ Reads from:                     │   │
-│ │      │                                   │ hand_off_documents/incoming/    │   │
-│ │      │                                   │ from_above/                     │   │
-│ │      │                                   │                                 │   │
-│ │      │                                   │ Does work...                    │   │
-│ │      │                                   │                                 │   │
-│ │      │                                   │ Write result to:                │   │
-│ │      │                                   │ hand_off_documents/outgoing/    │   │
-│ │      │◀──────────────────────────────────│ to_above/                       │   │
-│ │      │ Reads from:                       │                                 │   │
-│ │      │ hand_off_documents/incoming/      │                                 │   │
-│ │      │ from_below/                       │                                 │   │
-│ │      │                                   │                                 │   │
-│ │      ▼                                   ▼                                 │   │
-│ │                                                                            │   │
-│ └───────────────────────────────────────────────────────────────────────────┘   │
+│ MARKDOWN ←→ JSONLD ←→ MARKDOWN ←→ JSONLD ... (chain continues)                  │
 │                                                                                  │
-│ Status: Agent-driven delegation                                                  │
+└─────────────────────────────────────────────────────────────────────────────────┘
+                                      │
+                                      ▼
+┌─────────────────────────────────────────────────────────────────────────────────┐
+│ TIER 6: AGENT DECISIONS                                                          │
+│ ═══════════════════════                                                          │
+│                                                                                  │
+│ Based on context loaded, agent decides:                                          │
+│                                                                                  │
+│ ┌─────────────────────────────────────────────────────────────────────────────┐ │
+│ │  DECISION 1: Navigate or Stay?                                               │ │
+│ │                                                                              │ │
+│ │  ├── Stay (have enough context for task)                                     │ │
+│ │  ├── Navigate deeper (nav:children → sub_features, components)               │ │
+│ │  ├── Navigate up (nav:parent → broader context)                              │ │
+│ │  └── Navigate sideways (nav:siblings → related entities)                     │ │
+│ └─────────────────────────────────────────────────────────────────────────────┘ │
+│                                                                                  │
+│ ┌─────────────────────────────────────────────────────────────────────────────┐ │
+│ │  DECISION 2: Do Myself or Spawn Sub-Agent?                                   │ │
+│ │                                                                              │ │
+│ │  Do myself if:                                                               │ │
+│ │  • Task is within current context                                            │ │
+│ │  • Don't need to lose current context                                        │ │
+│ │                                                                              │ │
+│ │  Spawn sub-agent if:                                                         │ │
+│ │  • Task needs different layer's context                                      │ │
+│ │  • Want to preserve current context                                          │ │
+│ │  • Task is parallelizable                                                    │ │
+│ │                                                                              │ │
+│ │  Sub-agent process:                                                          │ │
+│ │  1. Task tool spawns with working directory                                  │ │
+│ │  2. Sub-agent starts at TIER 0, builds own context chain                     │ │
+│ │  3. Sub-agent works and returns result                                       │ │
+│ │  4. Parent integrates result                                                 │ │
+│ └─────────────────────────────────────────────────────────────────────────────┘ │
+│                                                                                  │
+│ ┌─────────────────────────────────────────────────────────────────────────────┐ │
+│ │  DECISION 3: What On-Demand Context to Load?                                 │ │
+│ │                                                                              │ │
+│ │  • "Need naming convention" → read conventions.childNaming                   │ │
+│ │  • "Need requirements" → follow rel:treeOfNeedsBranch                        │ │
+│ │  • "Need stage workflow" → read .claude/skills/{stage}-workflow              │ │
+│ │  • "Need deeper detail" → follow nav:children links                          │ │
+│ └─────────────────────────────────────────────────────────────────────────────┘ │
+│                                                                                  │
 └─────────────────────────────────────────────────────────────────────────────────┘
 ```
 
 ---
 
-## Example: Agent Instantiation at Different Locations
-
-### Example 1: Starting at ~/
+## File Format Roles in the Chain
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────────┐
-│ WORKING DIRECTORY: ~/                                                            │
+│                    FILE FORMATS & THEIR ROLES                                    │
 └─────────────────────────────────────────────────────────────────────────────────┘
 
-CONTEXT LOADED:
-├── Layer 0: Anthropic system prompt ✅
-├── Layer 1: Claude Code tools, MCP servers ✅
-├── Layer 2: ~/.claude/CLAUDE.md, ~/.claude/settings.json ✅
-├── Layer 3: ~/CLAUDE.md ✅
-├── Layer 4: (none - no project context) ⚠️
-├── Layer 5: (no triggers) ⚠️
-└── Layer 6: (limited navigation) ⚠️
+┌────────────────────┬────────────────────┬────────────────────┬──────────────────┐
+│     CLAUDE.md      │    index.jsonld    │     SKILL.md       │  schema.jsonld   │
+├────────────────────┼────────────────────┼────────────────────┼──────────────────┤
+│                    │                    │                    │                  │
+│  PURPOSE:          │  PURPOSE:          │  PURPOSE:          │  PURPOSE:        │
+│  Identity, rules,  │  Navigation,       │  Detailed task     │  Type defs,      │
+│  human-readable    │  conventions,      │  instructions,     │  validation,     │
+│  instructions      │  triggers          │  procedures        │  vocabulary      │
+│                    │                    │                    │                  │
+├────────────────────┼────────────────────┼────────────────────┼──────────────────┤
+│  AUTO-LOADED: ✅   │  AUTO-LOADED: ❌   │  AUTO-LOADED: ❌   │  AUTO-LOADED: ❌ │
+│  (Claude Code)     │  (agent reads)     │  (via trigger)     │  (via skill)     │
+│                    │                    │                    │                  │
+├────────────────────┼────────────────────┼────────────────────┼──────────────────┤
+│  BEST FOR:         │  BEST FOR:         │  BEST FOR:         │  BEST FOR:       │
+│  • Complex rules   │  • Nav graphs      │  • Procedures      │  • Type systems  │
+│  • Identity        │  • Conventions     │  • Validation      │  • Patterns      │
+│  • Behaviors       │  • Triggers        │  • Examples        │  • Vocabulary    │
+│                    │                    │                    │                  │
+├────────────────────┼────────────────────┼────────────────────┼──────────────────┤
+│  REFERENCES:       │  REFERENCES:       │  REFERENCES:       │  REFERENCES:     │
+│  → rules/          │  → skills/         │  → schema/         │  → (terminal)    │
+│  → principles/     │  → children        │  → other md        │                  │
+│  → sub_layers/     │  → siblings        │  → jsonld          │                  │
+│                    │                    │                    │                  │
+└────────────────────┴────────────────────┴────────────────────┴──────────────────┘
 
-AGENT KNOWS:
-• Universal rules from ~/.claude/CLAUDE.md
-• User preferences
-• Where workspaces are (pointers in ~/CLAUDE.md)
+                          TYPICAL CHAIN:
 
-AGENT DOESN'T KNOW:
-• Project-specific context
-• Layer-stage conventions
-• Current tasks or state
-```
-
-### Example 2: Starting at ~/dawson-workspace/code/0_layer_universal/
-
-```
-┌─────────────────────────────────────────────────────────────────────────────────┐
-│ WORKING DIRECTORY: ~/dawson-workspace/code/0_layer_universal/                    │
-└─────────────────────────────────────────────────────────────────────────────────┘
-
-CONTEXT LOADED:
-├── Layer 0: Anthropic system prompt ✅
-├── Layer 1: Claude Code tools, MCP servers ✅
-├── Layer 2: ~/.claude/CLAUDE.md, ~/.claude/settings.json ✅
-├── Layer 3: ✅
-│   ├── ~/CLAUDE.md
-│   ├── ~/dawson-workspace/CLAUDE.md
-│   ├── ~/dawson-workspace/code/CLAUDE.md
-│   └── ~/dawson-workspace/code/0_layer_universal/CLAUDE.md
-├── Layer 4: ✅
-│   ├── .claude/settings.json (project MCP servers)
-│   ├── (should read index.jsonld) ⚠️
-│   └── (should read status.json) ⚠️
-├── Layer 5: (triggers available if index.jsonld read) ⚠️
-└── Layer 6: (navigation available if index.jsonld read) ⚠️
-
-AGENT KNOWS:
-• Universal rules
-• Layer-stage conventions
-• Sub-layer navigation (rules, knowledge, prompts, principles)
-• Modification protocol
-• Commit/push rules
-
-AGENT SHOULD ALSO KNOW (if reads index.jsonld):
-• Navigation graph
-• Conventions for child naming
-• Triggers for entity creation
-```
-
-### Example 3: Starting at a Feature Directory
-
-```
-┌─────────────────────────────────────────────────────────────────────────────────┐
-│ WORKING DIRECTORY: .../layer_0_feature_context_framework/                        │
-└─────────────────────────────────────────────────────────────────────────────────┘
-
-CONTEXT LOADED:
-├── Layer 0: Anthropic system prompt ✅
-├── Layer 1: Claude Code tools, MCP servers ✅
-├── Layer 2: ~/.claude/CLAUDE.md ✅
-├── Layer 3: All CLAUDE.md files in path ✅
-│   ├── ~/CLAUDE.md
-│   ├── .../0_layer_universal/CLAUDE.md
-│   ├── .../layer_-1_research/CLAUDE.md
-│   └── .../layer_-1_better_ai_system/CLAUDE.md
-├── Layer 4: ✅
-│   ├── index.jsonld (if read) ⚠️
-│   │   ├── conventions.childNaming
-│   │   ├── trigger:onEntityCreation
-│   │   └── nav:children (sub_features)
-│   └── CLAUDE.md (feature identity)
-├── Layer 5: Triggers ⚠️
-│   └── onEntityCreation → entity-creation skill
-└── Layer 6: Navigation available
-    ├── nav:parent → layer_0_features/
-    ├── nav:children → layer_1_sub_feature_*/
-    └── rel:treeOfNeedsBranch → 06_context_flow
-
-AGENT KNOWS:
-• Feature identity and purpose
-• What sub-features exist
-• Tree of needs this addresses
-
-AGENT CAN DO:
-• Navigate to sub-features
-• Create new sub-features (if reads conventions)
-• Understand requirements context
+    CLAUDE.md ──────▶ index.jsonld ──────▶ SKILL.md ──────▶ schema.jsonld
+        │                  │                   │
+        ▼                  ▼                   ▼
+    rules/*.md        nav:children        other/*.md
+    principles/       nav:siblings
+    sub_layers/       rel:treeOfNeeds
 ```
 
 ---
 
-## Complete Flow Diagram
+## Sub-Agent Spawning
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────────┐
-│                    COMPLETE AGENT CONTEXT CHAIN                                  │
+│                        SUB-AGENT SPAWNING                                        │
 └─────────────────────────────────────────────────────────────────────────────────┘
 
-                         ┌─────────────────────────┐
-                         │    INSTANTIATION        │
-                         │    (claude code start)  │
-                         └───────────┬─────────────┘
-                                     │
-                    ┌────────────────┼────────────────┐
-                    │                │                │
-                    ▼                ▼                ▼
-            ┌─────────────┐  ┌─────────────┐  ┌─────────────┐
-            │  Layer 0    │  │  Layer 1    │  │  Layer 2    │
-            │  (Immutable)│  │  (Platform) │  │  (Global)   │
-            │             │  │             │  │             │
-            │ System      │  │ Tools       │  │ ~/.claude/  │
-            │ prompt      │  │ MCP servers │  │ CLAUDE.md   │
-            │             │  │ Environment │  │ settings    │
-            └──────┬──────┘  └──────┬──────┘  └──────┬──────┘
-                   │                │                │
-                   └────────────────┼────────────────┘
-                                    │
-                                    ▼
-                         ┌─────────────────────────┐
-                         │       Layer 3           │
-                         │    (Path-based)         │
-                         │                         │
-                         │  CLAUDE.md chain from   │
-                         │  ~ to working directory │
-                         └───────────┬─────────────┘
-                                     │
-                                     ▼
-                         ┌─────────────────────────┐
-                         │       Layer 4           │
-                         │   (Working Directory)   │
-                         │                         │
-                         │  index.jsonld ⚠️        │
-                         │  .claude/skills/ ⚠️     │
-                         │  status.json ⚠️         │
-                         └───────────┬─────────────┘
-                                     │
-                    ┌────────────────┼────────────────┐
-                    │                │                │
-                    ▼                ▼                ▼
-            ┌─────────────┐  ┌─────────────┐  ┌─────────────┐
-            │  Layer 5    │  │  Layer 6    │  │  Layer 7    │
-            │ (Triggered) │  │ (On-demand) │  │ (Delegation)│
-            │             │  │             │  │             │
-            │ onCreate ⚠️ │  │ nav: links  │  │ Task tool   │
-            │ onEnter ⚠️  │  │ rel: links  │  │ Sub-agents  │
-            │ onStart ⚠️  │  │ SKILL.md    │  │ Handoffs    │
-            └─────────────┘  └─────────────┘  └─────────────┘
-
-            ✅ = Automatic        ⚠️ = Agent must explicitly read/trigger
+    PARENT AGENT (layer_0_group/)
+           │
+           │ Task requires different context
+           │
+           ▼
+    ┌──────────────────────────────────────────────────────────────────┐
+    │  Task(                                                            │
+    │    subagent_type="Explore",                                       │
+    │    prompt="Research X in layer_1_sub_feature_Y"                   │
+    │  )                                                                │
+    └──────────────────────────────────────────────────────────────────┘
+           │
+           │ Sub-agent instantiated
+           │
+           ▼
+    ┌──────────────────────────────────────────────────────────────────┐
+    │  SUB-AGENT CONTEXT CHAIN                                          │
+    │                                                                   │
+    │  TIER 0: Same system prompt                                       │
+    │  TIER 1: Same tools + MCP servers                                 │
+    │  TIER 2: Same global CLAUDE.md                                    │
+    │  TIER 3: PATH from parent's working directory                     │
+    │  TIER 4-6: Sub-agent builds own chain                             │
+    │                                                                   │
+    │  Key: Sub-agent has FRESH context appropriate to its task         │
+    └──────────────────────────────────────────────────────────────────┘
+           │
+           │ Sub-agent completes
+           │
+           ▼
+    PARENT AGENT (receives result, integrates, continues)
 ```
+
+---
+
+## Context Summary by Starting Point
+
+| Working Directory | CLAUDE.md Files Loaded | Key Context |
+|-------------------|------------------------|-------------|
+| `~/` | 1 (user root) | Basic pointers |
+| `~/dawson-workspace/` | 2 | + Sync awareness |
+| `.../0_layer_universal/` | 4 | + Layer-stage framework |
+| `.../layer_-1_better_ai_system/` | 6 | + Research project |
+| `.../layer_0_feature_*/` | 7+ | + Feature conventions |
 
 ---
 
 ## Implementation Plan
 
-### Phase 1: Diagram Creation
-- [ ] Create `agent_instantiation_chain.md` in `diagrams/current/`
-- [ ] Create location-specific examples
-- [ ] Document the 7 layers
+### Phase 1: Create Diagram File
+- [ ] Create `diagrams/current/agent_instantiation_chain.md`
+- [ ] Add to diagrams/index.jsonld
 
-### Phase 2: Integration
-- [ ] Update CLAUDE.md files to reference this diagram
-- [ ] Add "what you have" section to entry points
-- [ ] Document what agents should read at each location
+### Phase 2: Working Directory Examples
+- [ ] Document 5+ common starting points
+- [ ] Show exact context at each
 
-### Phase 3: Enforcement Research
-- [ ] Investigate Claude Code hooks for auto-loading index.jsonld
-- [ ] Investigate trigger enforcement mechanisms
-- [ ] Document gaps between "should load" and "actually loads"
-
----
-
-## Files to Create
-
-| File | Purpose |
-|------|---------|
-| `diagrams/current/agent_instantiation_chain.md` | Complete 7-layer chain |
-| `diagrams/current/location_examples.md` | Examples at different working directories |
+### Phase 3: Integration
+- [ ] Reference from context visualization CLAUDE.md
+- [ ] Add to onboarding docs
 
 ---
 
 ## Summary
 
-This diagram shows the **complete picture** of how an agent "boots up":
+This diagram shows:
 
-1. **Immutable foundation** - Can't change (Anthropic system prompt)
-2. **Platform** - Claude Code provides (tools, MCP, environment)
-3. **Global** - User configures (~/.claude/)
-4. **Path-based** - Automatically loaded (CLAUDE.md chain)
-5. **Directory** - Should be read (index.jsonld, skills)
-6. **Triggered** - Should fire on actions
-7. **Delegation** - Agent spawns sub-agents
+1. **TIER 0-2**: Every agent starts with (immutable + tools + global)
+2. **TIER 3**: How working directory determines path-based context
+3. **TIER 4**: Directory-level files (auto vs manual)
+4. **TIER 5**: How instructions chain to more context (md → jsonld → md → ...)
+5. **TIER 6**: Agent decisions (navigate, spawn, load on-demand)
 
-The key insight: **Layers 0-3 are automatic, Layers 4-7 are agent-driven or should-be-triggered**.
-
-This explains why the naming convention mistake happened: Layer 5 triggers weren't enforced, so the agent never loaded conventions before creating entities.
+**Key insight**: Working directory determines initial context, instructions create chains.
