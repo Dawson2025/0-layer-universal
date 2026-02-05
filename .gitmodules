@@ -43,3 +43,6 @@
 [submodule "layer_1/layer_1_projects/layer_1_project_internship_prep"]
 	path = layer_1/layer_1_projects/layer_1_project_internship_prep
 	url = https://github.com/Dawson2025/Internship-Preparations.git
+[submodule "layer_0/layer_0_03_sub_layers/sub_layer_0_01_ai_system"]
+	path = layer_0/layer_0_03_sub_layers/sub_layer_0_01_ai_system
+	url = https://github.com/Dawson2025/AALang-Gab.git

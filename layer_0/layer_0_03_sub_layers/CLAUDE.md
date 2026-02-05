@@ -23,11 +23,12 @@
 | Number | Name | Purpose |
 |--------|------|---------|
 | 00 | sub_layer_registry | Sub_layer definitions and metadata (data only) |
-| 01 | prompts | Session init prompts, context prompts |
+| 01 | ai_system | AALang AI system (git submodule) |
 | 02 | knowledge_system | Domain knowledge, reference materials |
 | 03 | principles | Guiding principles for decisions |
 | 04 | rules | Universal rules (modification protocol, commit rule, etc.) |
-| 05+ | setup_dependant | OS/tool specific configuration |
+| 05 | protocols | Session init protocols, context protocols |
+| 06+ | setup_dependant_hierarchy | OS/tool specific configuration |
 
 ## Navigation
 
@@ -38,6 +39,7 @@
 
 | Sub_layer | Key Files |
 |-----------|-----------|
-| prompts | `universal_init_prompt.md` |
+| ai_system | AALang language and gab compiler |
+| protocols | `universal_init_prompt.md` |
 | rules | `AI_CONTEXT_MODIFICATION_PROTOCOL.md`, `AI_CONTEXT_COMMIT_PUSH_RULE.md`, `safety_governance.md` |
 | principles | Guiding principles documentation |

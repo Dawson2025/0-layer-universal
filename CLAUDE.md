@@ -87,11 +87,12 @@ layer_0/layer_0_03_sub_layers/sub_layer_0_04_rules/
 
 | Sub-Layer | Purpose | When to Read |
 |-----------|---------|--------------|
-| `sub_layer_0_01_prompts/` | Init prompts, session start | Start of session |
+| `sub_layer_0_01_ai_system/` | AALang AI system (submodule) | AI language design |
 | `sub_layer_0_02_knowledge_system/` | Domain knowledge | When context needed |
 | `sub_layer_0_03_principles/` | Guiding principles | Design decisions |
 | `sub_layer_0_04_rules/` | **Universal rules** | **ALWAYS** |
-| `sub_layer_0_05+_setup_dependant/` | OS/tool setup | Environment issues |
+| `sub_layer_0_05_protocols/` | Init protocols, session start | Start of session |
+| `sub_layer_0_06+_setup_dependant_hierarchy/` | OS/tool setup | Environment issues |
 
 ### Stages (layer_N/layer_N_99_stages/)
 
@@ -113,7 +114,8 @@ layer_0/layer_0_03_sub_layers/sub_layer_0_04_rules/
 
 | Need | Location |
 |------|----------|
-| Universal init prompt | `layer_0/layer_0_03_sub_layers/sub_layer_0_01_prompts/universal_init_prompt.md` |
+| AALang AI System | `layer_0/layer_0_03_sub_layers/sub_layer_0_01_ai_system/` |
+| Universal init protocol | `layer_0/layer_0_03_sub_layers/sub_layer_0_05_protocols/universal_init_prompt.md` |
 | All rules | `layer_0/layer_0_03_sub_layers/sub_layer_0_04_rules/` |
 | Git rules | `sub_layer_0_04_rules/0_instruction_docs/git_commit_rule.md` |
 | Terminal protocol | `sub_layer_0_04_rules/0_instruction_docs/MASTER_TERMINAL_EXECUTION_REFERENCE.md` |
@@ -133,11 +135,12 @@ layer_0/layer_0_03_sub_layers/sub_layer_0_04_rules/
 │   └── outgoing/to_below/    ← Tasks to layers
 ├── layer_0/                  ← Universal (applies to ALL)
 │   ├── layer_0_03_sub_layers/
-│   │   ├── sub_layer_0_01_prompts/      ← Session init
+│   │   ├── sub_layer_0_01_ai_system/    ← AALang (submodule)
 │   │   ├── sub_layer_0_02_knowledge/    ← Domain knowledge
 │   │   ├── sub_layer_0_03_principles/   ← Principles
 │   │   ├── sub_layer_0_04_rules/        ← RULES (read first!)
-│   │   └── sub_layer_0_05+_setup/       ← OS/tool config
+│   │   ├── sub_layer_0_05_protocols/    ← Session init protocols
+│   │   └── sub_layer_0_06+_setup/       ← OS/tool config
 │   └── layer_0_99_stages/    ← Universal stages
 ├── layer_1/                  ← Projects, features
 └── layer_-1_research/        ← Research projects
@@ -147,7 +150,7 @@ layer_0/layer_0_03_sub_layers/sub_layer_0_04_rules/
 
 1. **Sync**: `git pull && git status`
 2. **Read rules**: `sub_layer_0_04_rules/` (especially modification protocol)
-3. **Read init prompt**: `sub_layer_0_01_prompts/universal_init_prompt.md`
+3. **Read init protocol**: `sub_layer_0_05_protocols/universal_init_prompt.md`
 4. **Identify context**: What layer? What stage?
 5. **Do work**: Follow stage guidelines
 6. **Commit/push**: Per AI_CONTEXT_COMMIT_PUSH_RULE.md
@@ -157,4 +160,4 @@ layer_0/layer_0_03_sub_layers/sub_layer_0_04_rules/
 - **Naming**: Use underscores: `layer_0_01_name`, `stage_0_02_name`
 - **Layers**: Lower numbers = more universal (Layer 0 applies to all)
 - **Stages**: 01-11, workflow phases
-- **Sub-layers**: 01-05+, content types (prompts, knowledge, rules, etc.)
+- **Sub-layers**: 01-06+, content types (ai_system, knowledge, principles, rules, protocols, setup)
