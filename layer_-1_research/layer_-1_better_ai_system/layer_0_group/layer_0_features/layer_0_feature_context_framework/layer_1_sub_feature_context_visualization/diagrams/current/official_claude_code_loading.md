@@ -1,226 +1,378 @@
 # Official Claude Code Context Loading
 
-**Purpose**: Document how Claude Code (the tool) officially loads context, separate from any custom additions.
+**Purpose**: Document how Claude Code officially loads context, based on official Anthropic documentation.
 
-**Source**: Claude Code's built-in behavior as of 2026-02
+**Sources**:
+- [Claude Code Memory Documentation](https://code.claude.com/docs/en/memory)
+- [Claude Code Settings Documentation](https://code.claude.com/docs/en/settings)
+- [Claude Code How It Works](https://code.claude.com/docs/en/how-claude-code-works)
+- [Claude Code MCP Documentation](https://code.claude.com/docs/en/mcp)
+- [Claude Code Hooks Documentation](https://code.claude.com/docs/en/hooks)
+- [Claude Code CLI Reference](https://code.claude.com/docs/en/cli-reference)
 
 ---
 
-## Official Loading Sequence
+## Session Initialization Sequence
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────────┐
-│         OFFICIAL CLAUDE CODE CONTEXT LOADING (Tool's Built-in Behavior)         │
+│         OFFICIAL CLAUDE CODE SESSION INITIALIZATION SEQUENCE                     │
+│         (What happens when you run `claude` in a directory)                      │
 └─────────────────────────────────────────────────────────────────────────────────┘
 
     User runs: claude [options] [directory]
                     │
-                    │ Working directory determined
-                    │ (defaults to current directory)
+                    │ Working directory captured
                     │
     ════════════════════════════════════════════════════════════════════════════
-    PHASE 1: ANTHROPIC SYSTEM PROMPT (Hardcoded, Immutable)
-    ════════════════════════════════════════════════════════════════════════════
-                    │
-                    ▼
-    ┌───────────────────────────────────────────────────────────────────────────┐
-    │  ORDER 1: System Prompt Injection                                         │
-    │                                                                           │
-    │  SOURCE: Hardcoded in Claude Code binary                                  │
-    │  CONTROLLED BY: Anthropic                                                 │
-    │                                                                           │
-    │  CONTAINS:                                                                │
-    │  • "You are Claude Code, Anthropic's official CLI for Claude"             │
-    │  • Model identity and safety rules                                        │
-    │  • Tool usage instructions (how to use Read, Write, Bash, etc.)           │
-    │  • Git Safety Protocol                                                    │
-    │  • Security rules for browser automation                                  │
-    │  • Copyright requirements                                                 │
-    │                                                                           │
-    │  USER CONTROL: ❌ None                                                    │
-    └───────────────────────────────────────────────────────────────────────────┘
-                    │
-    ════════════════════════════════════════════════════════════════════════════
-    PHASE 2: TOOL REGISTRATION (Built into Claude Code)
+    STEP 1: SessionStart Hook Fires (if configured)
     ════════════════════════════════════════════════════════════════════════════
                     │
                     ▼
     ┌───────────────────────────────────────────────────────────────────────────┐
-    │  ORDER 2: Built-in Tools                                                  │
-    │                                                                           │
-    │  SOURCE: Claude Code application                                          │
-    │  CONTROLLED BY: Anthropic                                                 │
-    │                                                                           │
-    │  TOOLS REGISTERED:                                                        │
-    │  • Read, Write, Edit, NotebookEdit                                        │
-    │  • Bash, Glob, Grep                                                       │
-    │  • Task (subagents)                                                       │
-    │  • WebFetch, WebSearch                                                    │
-    │  • AskUserQuestion, Skill                                                 │
-    │  • EnterPlanMode, ExitPlanMode                                            │
-    │  • TaskCreate, TaskUpdate, TaskGet, TaskList                              │
-    │                                                                           │
-    │  USER CONTROL: ❌ None (tools are fixed)                                  │
-    └───────────────────────────────────────────────────────────────────────────┘
-                    │
-    ════════════════════════════════════════════════════════════════════════════
-    PHASE 3: USER CONFIGURATION (~/.claude/)
-    ════════════════════════════════════════════════════════════════════════════
-                    │
-                    ▼
-    ┌───────────────────────────────────────────────────────────────────────────┐
-    │  ORDER 3: Global Settings                                                 │
-    │                                                                           │
-    │  SOURCE: ~/.claude/settings.json                                          │
-    │  CONTROLLED BY: User                                                      │
-    │                                                                           │
-    │  CAN CONTAIN:                                                             │
-    │  • MCP server configurations                                              │
-    │  • Permission settings (allow/deny patterns)                              │
-    │  • Model preferences                                                      │
-    │  • API keys                                                               │
-    │                                                                           │
-    │  USER CONTROL: ✅ Full (user edits file)                                  │
-    └───────────────────────────────────────────────────────────────────────────┘
-                    │
-                    ▼
-    ┌───────────────────────────────────────────────────────────────────────────┐
-    │  ORDER 4: MCP Server Connections                                          │
-    │                                                                           │
-    │  SOURCE: MCP configs in ~/.claude/settings.json                           │
-    │  CONTROLLED BY: User                                                      │
-    │                                                                           │
-    │  CONNECTS TO:                                                             │
-    │  • Configured MCP servers (perplexity, playwright, filesystem, etc.)      │
-    │  • Registers additional tools (mcp__servername__toolname)                 │
-    │                                                                           │
-    │  USER CONTROL: ✅ Full (user configures MCP servers)                      │
-    └───────────────────────────────────────────────────────────────────────────┘
-                    │
-                    ▼
-    ┌───────────────────────────────────────────────────────────────────────────┐
-    │  ORDER 5: Global CLAUDE.md                                                │
-    │                                                                           │
-    │  SOURCE: ~/.claude/CLAUDE.md                                              │
-    │  CONTROLLED BY: User                                                      │
-    │  OFFICIAL FEATURE: ✅ Yes (documented Claude Code feature)                │
+    │  SOURCE: .claude/settings.json or ~/.claude/settings.json (hooks field)   │
     │                                                                           │
     │  PURPOSE:                                                                 │
-    │  • Machine-level instructions that apply to ALL sessions                  │
-    │  • User's personal coding preferences                                     │
-    │  • Global rules and behaviors                                             │
+    │  • Run custom scripts before Claude sees any files                        │
+    │  • Fetch recent issues, check git status, load dynamic context            │
+    │  • Can write to CLAUDE_ENV_FILE to set environment variables              │
     │                                                                           │
-    │  USER CONTROL: ✅ Full (user writes file)                                 │
+    │  RECEIVES: JSON input indicating new session, resumed, or cleared         │
     └───────────────────────────────────────────────────────────────────────────┘
                     │
     ════════════════════════════════════════════════════════════════════════════
-    PHASE 4: PATH-BASED CLAUDE.md LOADING (Official Feature)
+    STEP 2: Memory Files Loaded (CLAUDE.md Chain)
     ════════════════════════════════════════════════════════════════════════════
                     │
                     ▼
     ┌───────────────────────────────────────────────────────────────────────────┐
-    │  ORDER 6+: Path CLAUDE.md Files                                           │
+    │  CLAUDE.md DISCOVERY: Recursive Upward Traversal                          │
     │                                                                           │
-    │  SOURCE: CLAUDE.md files from ~ to working directory                      │
-    │  CONTROLLED BY: User                                                      │
-    │  OFFICIAL FEATURE: ✅ Yes (documented Claude Code feature)                │
+    │  Claude Code traverses from working directory UPWARD to filesystem root,  │
+    │  loading all CLAUDE.md or .claude/CLAUDE.md files found in parent dirs.   │
     │                                                                           │
-    │  BEHAVIOR:                                                                │
-    │  Claude Code traverses from user home (~) to working directory            │
-    │  and loads every CLAUDE.md file found along the path.                     │
+    │  LOADING ORDER (highest precedence to lowest):                            │
     │                                                                           │
-    │  EXAMPLE (cwd = /home/user/projects/myapp):                               │
-    │    1. ~/.claude/CLAUDE.md        (global)                                 │
-    │    2. ~/CLAUDE.md                (if exists)                              │
-    │    3. ~/projects/CLAUDE.md       (if exists)                              │
-    │    4. ~/projects/myapp/CLAUDE.md (if exists)                              │
+    │  1. System CLAUDE.md (deployed by IT to system directories)               │
+    │       └── Cannot be overridden                                            │
     │                                                                           │
-    │  USER CONTROL: ✅ Full (user creates files in path)                       │
+    │  2. User CLAUDE.md                                                        │
+    │       └── ~/.claude/CLAUDE.md                                             │
+    │       └── Applies to all projects                                         │
+    │                                                                           │
+    │  3. Project CLAUDE.md                                                     │
+    │       └── {project}/CLAUDE.md OR {project}/.claude/CLAUDE.md              │
+    │       └── Committed to source control, shared with team                   │
+    │                                                                           │
+    │  4. Local CLAUDE.md                                                       │
+    │       └── {project}/CLAUDE.local.md                                       │
+    │       └── Automatically gitignored, personal preferences                  │
+    │       └── HIGHEST precedence for instructions                             │
+    │                                                                           │
+    │  ALSO LOADED: All .md files in .claude/rules/ directory                   │
+    │       └── Same priority as main CLAUDE.md                                 │
+    │       └── Enables modular rule organization                               │
+    │                                                                           │
+    │  NOTE: CLAUDE.md files in SUBDIRECTORIES are NOT loaded at startup.       │
+    │        They load on-demand when Claude reads files in those directories.  │
     └───────────────────────────────────────────────────────────────────────────┘
                     │
     ════════════════════════════════════════════════════════════════════════════
-    PHASE 5: PROJECT CONFIGURATION
+    STEP 3: System Prompt Initialized
     ════════════════════════════════════════════════════════════════════════════
                     │
                     ▼
     ┌───────────────────────────────────────────────────────────────────────────┐
-    │  ORDER 7: Project Settings                                                │
+    │  SOURCE: Hardcoded in Claude Code + optional overrides                    │
     │                                                                           │
-    │  SOURCE: {working_dir}/.claude/settings.json                              │
-    │  CONTROLLED BY: User/Project                                              │
-    │  OFFICIAL FEATURE: ✅ Yes                                                 │
+    │  CONTAINS:                                                                │
+    │  • Claude Code's core instructions                                        │
+    │  • What tools are available (Read, Write, Edit, Bash, etc.)               │
+    │  • How to behave as an agentic coding assistant                           │
+    │  • Git Safety Protocol                                                    │
+    │  • Security rules                                                         │
     │                                                                           │
-    │  CAN CONTAIN:                                                             │
-    │  • Project-specific permissions                                           │
-    │  • Project-specific MCP servers                                           │
-    │  • Allowed/denied tool patterns                                           │
-    │                                                                           │
-    │  USER CONTROL: ✅ Full (user/team edits file)                             │
+    │  CAN BE CUSTOMIZED:                                                       │
+    │  • --system-prompt "..."      (replaces entire system prompt)             │
+    │  • --append-system-prompt "..." (adds to default prompt)                  │
     └───────────────────────────────────────────────────────────────────────────┘
                     │
     ════════════════════════════════════════════════════════════════════════════
-    PHASE 6: SESSION READY
+    STEP 4: MCP Server Connections Established
     ════════════════════════════════════════════════════════════════════════════
                     │
                     ▼
     ┌───────────────────────────────────────────────────────────────────────────┐
-    │  Agent ready to receive user messages                                     │
+    │  MCP SERVER SOURCES:                                                      │
     │                                                                           │
-    │  TOTAL AUTO-LOADED:                                                       │
-    │  • System prompt (immutable)                                              │
-    │  • Built-in tools                                                         │
-    │  • MCP servers + their tools                                              │
-    │  • Global settings                                                        │
-    │  • All CLAUDE.md files in path                                            │
-    │  • Project settings                                                       │
+    │  1. Managed MCP servers (system-wide, deployed by IT)                     │
+    │       └── /etc/claude-code/ (Linux/WSL)                                   │
+    │       └── /Library/Application Support/ClaudeCode/ (macOS)                │
+    │       └── C:\Program Files\ClaudeCode\ (Windows)                          │
     │                                                                           │
-    │  EVERYTHING ELSE: Agent must read manually using tools                    │
+    │  2. User MCP servers                                                      │
+    │       └── ~/.claude.json (mcpServers field)                               │
+    │       └── Available across all projects                                   │
+    │                                                                           │
+    │  3. Project MCP servers                                                   │
+    │       └── .mcp.json (in project root)                                     │
+    │       └── Committed to source control, shared with team                   │
+    │       └── Requires user approval before connecting                        │
+    │                                                                           │
+    │  IMPORTANT: MCP definitions are in ~/.claude.json and .mcp.json           │
+    │             NOT in settings.json (settings.json only enables/disables)    │
+    │                                                                           │
+    │  LOADED INTO CONTEXT: Tool definitions (metadata about available tools)   │
+    │       └── Typically 500 - 10,000+ tokens depending on server count        │
+    └───────────────────────────────────────────────────────────────────────────┘
+                    │
+    ════════════════════════════════════════════════════════════════════════════
+    STEP 5: Settings Hierarchy Applied
+    ════════════════════════════════════════════════════════════════════════════
+                    │
+                    ▼
+    ┌───────────────────────────────────────────────────────────────────────────┐
+    │  SETTINGS PRECEDENCE (highest to lowest):                                 │
+    │                                                                           │
+    │  1. Managed Settings (CANNOT be overridden)                               │
+    │       └── /etc/claude-code/managed-settings.json (Linux/WSL)              │
+    │       └── /Library/Application Support/ClaudeCode/managed-settings.json   │
+    │       └── C:\Program Files\ClaudeCode\managed-settings.json (Windows)     │
+    │                                                                           │
+    │  2. Command Line Arguments                                                │
+    │       └── --allowedTools, --system-prompt, etc.                           │
+    │       └── Temporary session overrides                                     │
+    │                                                                           │
+    │  3. Local Project Settings                                                │
+    │       └── .claude/settings.local.json                                     │
+    │       └── Personal project-specific, gitignored                           │
+    │                                                                           │
+    │  4. Shared Project Settings                                               │
+    │       └── .claude/settings.json                                           │
+    │       └── Team-shared, committed to source control                        │
+    │                                                                           │
+    │  5. User Settings                                                         │
+    │       └── ~/.claude/settings.json                                         │
+    │       └── Personal global settings                                        │
+    │                                                                           │
+    │  PRINCIPLE: "Deny takes precedence over allow"                            │
+    │       └── If ANY level denies a tool, it's denied                         │
+    └───────────────────────────────────────────────────────────────────────────┘
+                    │
+    ════════════════════════════════════════════════════════════════════════════
+    STEP 6: Skill Descriptions Loaded
+    ════════════════════════════════════════════════════════════════════════════
+                    │
+                    ▼
+    ┌───────────────────────────────────────────────────────────────────────────┐
+    │  SOURCE: .claude/skills/*/SKILL.md (YAML frontmatter only)                │
+    │                                                                           │
+    │  LOADED: Skill name, description, estimated token cost                    │
+    │  NOT LOADED: Full SKILL.md content (loaded on-demand when invoked)        │
+    │                                                                           │
+    │  PURPOSE: Allow Claude to decide which skills to use                      │
+    └───────────────────────────────────────────────────────────────────────────┘
+                    │
+    ════════════════════════════════════════════════════════════════════════════
+    STEP 7: Context Window Initialized
+    ════════════════════════════════════════════════════════════════════════════
+                    │
+                    ▼
+    ┌───────────────────────────────────────────────────────────────────────────┐
+    │  Claude is informed of:                                                   │
+    │  • Context window size (typically 200K tokens)                            │
+    │  • Current token usage (system prompt + tools + memory + MCP)             │
+    │  • Available token budget for conversation                                │
+    │                                                                           │
+    │  ENV VARS that affect this:                                               │
+    │  • CLAUDE_CODE_MAX_OUTPUT_TOKENS (default 32,000, max 64,000)             │
+    │  • CLAUDE_AUTOCOMPACT_PCT_OVERRIDE (auto-compaction threshold)            │
+    └───────────────────────────────────────────────────────────────────────────┘
+                    │
+    ════════════════════════════════════════════════════════════════════════════
+    STEP 8: Conversation History Restored (if resuming)
+    ════════════════════════════════════════════════════════════════════════════
+                    │
+                    ▼
+    ┌───────────────────────────────────────────────────────────────────────────┐
+    │  If using --continue, --resume, or /resume:                               │
+    │                                                                           │
+    │  • Previous messages, tool calls, results appended to context             │
+    │  • Session-scoped permissions are NOT restored (must re-grant)            │
+    └───────────────────────────────────────────────────────────────────────────┘
+                    │
+    ════════════════════════════════════════════════════════════════════════════
+    STEP 9: Session Ready for User Interaction
+    ════════════════════════════════════════════════════════════════════════════
+                    │
+                    ▼
+    ┌───────────────────────────────────────────────────────────────────────────┐
+    │  Claude now has:                                                          │
+    │  • Project knowledge from CLAUDE.md chain                                 │
+    │  • Available tools (built-in + MCP)                                       │
+    │  • Permissions from settings hierarchy                                    │
+    │  • Dynamic context from SessionStart hooks                                │
+    │  • Awareness of context budget                                            │
+    │                                                                           │
+    │  Ready to receive first user message and begin agentic loop.              │
     └───────────────────────────────────────────────────────────────────────────┘
 ```
 
 ---
 
-## Official Claude Code Features Summary
+## File Locations Reference
 
-| Feature | Location | Auto-loaded? | User Control |
-|---------|----------|--------------|--------------|
-| System prompt | Hardcoded | ✅ | ❌ |
-| Built-in tools | Hardcoded | ✅ | ❌ |
-| Global settings | ~/.claude/settings.json | ✅ | ✅ |
-| MCP servers | ~/.claude/settings.json | ✅ | ✅ |
-| Global CLAUDE.md | ~/.claude/CLAUDE.md | ✅ | ✅ |
-| Path CLAUDE.md | Every CLAUDE.md from ~ to cwd | ✅ | ✅ |
-| Project settings | .claude/settings.json | ✅ | ✅ |
-| Skills | .claude/skills/ | ❌ (via Skill tool) | ✅ |
+### Memory Files (CLAUDE.md)
+
+| Scope | Location | Shared? | Precedence |
+|-------|----------|---------|------------|
+| System | System directories (deployed by IT) | Yes | Highest |
+| User | `~/.claude/CLAUDE.md` | No | High |
+| Project | `CLAUDE.md` or `.claude/CLAUDE.md` | Yes (git) | Medium |
+| Local | `CLAUDE.local.md` | No (gitignored) | Lowest (wins) |
+| Rules | `.claude/rules/*.md` | Yes (git) | Same as project |
+
+### Settings Files
+
+| Scope | Location | Shared? | Precedence |
+|-------|----------|---------|------------|
+| Managed | `/etc/claude-code/managed-settings.json` (Linux) | Yes (IT) | Highest |
+| CLI | Command line arguments | No | High |
+| Local Project | `.claude/settings.local.json` | No (gitignored) | Medium |
+| Project | `.claude/settings.json` | Yes (git) | Low |
+| User | `~/.claude/settings.json` | No | Lowest |
+
+### MCP Server Definitions
+
+| Scope | Location | Shared? |
+|-------|----------|---------|
+| Managed | System directories | Yes (IT) |
+| User | `~/.claude.json` (mcpServers field) | No |
+| Project | `.mcp.json` | Yes (git) |
+
+### Other Configuration
+
+| Type | User Location | Project Location |
+|------|---------------|------------------|
+| Commands | `~/.claude/commands/*.md` | `.claude/commands/*.md` |
+| Agents | `~/.claude/agents/*.md` | `.claude/agents/*.md` |
+| Skills | N/A | `.claude/skills/*/SKILL.md` |
+
+---
+
+## Auto-Loaded vs On-Demand
+
+### Automatically Loaded at Session Start
+
+| What | Source | Notes |
+|------|--------|-------|
+| System prompt | Hardcoded | Immutable core instructions |
+| Built-in tools | Hardcoded | Read, Write, Edit, Bash, Glob, Grep, Task, etc. |
+| CLAUDE.md chain | All CLAUDE.md files from ~ to cwd | Upward traversal only |
+| .claude/rules/*.md | Project .claude/rules/ | Same priority as CLAUDE.md |
+| CLAUDE.local.md | Project root | Personal overrides |
+| MCP tool definitions | ~/.claude.json + .mcp.json | Metadata only |
+| Skill descriptions | .claude/skills/*/SKILL.md | YAML frontmatter only |
+| Settings | All settings.json files | Merged by precedence |
+
+### Loaded On-Demand (NOT at startup)
+
+| What | When Loaded | Notes |
+|------|-------------|-------|
+| Subdirectory CLAUDE.md | When Claude reads files in that directory | Lazy loading |
+| Skill full content | When skill is invoked | Conserves context |
+| Subagent definitions | When subagent is spawned | Own context window |
+| @imported files | When parent CLAUDE.md is loaded | Follows import chain |
 
 ---
 
-## What Claude Code Does NOT Auto-Load
+## CLAUDE.md Features
 
-These require agent action (Read tool) or explicit invocation:
+### @import System
 
-| File Type | How to Access |
-|-----------|---------------|
-| `index.jsonld` | Agent must Read |
-| `SKILL.md` | Via Skill tool or Read |
-| `*.jsonld` schemas | Agent must Read |
-| `status.json` | Agent must Read |
-| `AGENTS.md` | Agent must Read |
-| Any other file | Agent must Read |
+CLAUDE.md files can reference other files:
+
+```markdown
+# Project Guidelines
+
+@docs/coding-standards.md
+@docs/api-conventions.md
+@docs/security-rules.md
+```
+
+- Imports evaluated relative to importing file (not cwd)
+- Maximum 5 levels of nesting
+- Imported content loaded with parent CLAUDE.md
+
+### .claude/rules/ Directory
+
+Alternative to @imports for modular organization:
+
+```
+.claude/
+├── CLAUDE.md           (main file)
+└── rules/
+    ├── code-style.md   (auto-loaded)
+    ├── testing.md      (auto-loaded)
+    ├── security.md     (auto-loaded)
+    └── frontend/
+        └── react.md    (auto-loaded)
+```
+
+All .md files in .claude/rules/ (including subdirectories) are auto-loaded.
+
+### Case Sensitivity
+
+**CRITICAL**: Filename must be exactly `CLAUDE.md`:
+- ✅ `CLAUDE.md`
+- ❌ `claude.md`
+- ❌ `Claude.md`
+- ❌ `CLAUDE.MD`
 
 ---
 
-## Key Insight: CLAUDE.md is the Official Extension Point
+## Environment Variables
 
-Claude Code officially supports CLAUDE.md files as the primary way to inject custom instructions:
+### Key Variables for Context/Loading
 
-1. **Global** (~/.claude/CLAUDE.md) - Applies to all sessions
-2. **Path-based** (any CLAUDE.md in path) - Applies based on location
-3. **Project** ({project}/CLAUDE.md) - Applies to project
-
-Everything beyond CLAUDE.md requires agent-driven loading.
+| Variable | Purpose |
+|----------|---------|
+| `CLAUDE_CODE_MAX_OUTPUT_TOKENS` | Max output tokens (default 32K, max 64K) |
+| `CLAUDE_AUTOCOMPACT_PCT_OVERRIDE` | Context auto-compaction threshold (1-100%) |
+| `CLAUDE_CODE_ADDITIONAL_DIRECTORIES_CLAUDE_MD` | Load CLAUDE.md from --add-dir directories |
+| `CLAUDE_CONFIG_DIR` | Custom config storage location |
+| `MAX_THINKING_TOKENS` | Extended thinking budget |
 
 ---
+
+## Summary: What Claude Knows at Session Start
+
+When you run `claude` in a directory, Claude immediately knows:
+
+1. **Identity**: Claude Code agentic coding assistant
+2. **Tools**: All built-in tools + connected MCP server tools
+3. **Permissions**: Merged from all settings.json files
+4. **Project Knowledge**: All CLAUDE.md content from path traversal
+5. **Rules**: All .claude/rules/*.md content
+6. **Skills Available**: Descriptions of .claude/skills/
+7. **Context Budget**: How many tokens available
+
+Claude does NOT automatically know:
+- Contents of subdirectory CLAUDE.md files
+- Full skill content (until invoked)
+- Individual file contents (must Read)
+- Subagent capabilities (until spawned)
+
+---
+
+**Sources**:
+- [Claude Code Memory](https://code.claude.com/docs/en/memory)
+- [Claude Code Settings](https://code.claude.com/docs/en/settings)
+- [Claude Code How It Works](https://code.claude.com/docs/en/how-claude-code-works)
+- [Claude Code MCP](https://code.claude.com/docs/en/mcp)
+- [Claude Code Hooks](https://code.claude.com/docs/en/hooks)
+- [Claude Code CLI Reference](https://code.claude.com/docs/en/cli-reference)
+- [Claude Code Skills](https://code.claude.com/docs/en/skills)
+- [Claude Code Sub-agents](https://code.claude.com/docs/en/sub-agents)
 
 *Last updated: 2026-02-05*
-*Based on Claude Code behavior as of 2026-02*
