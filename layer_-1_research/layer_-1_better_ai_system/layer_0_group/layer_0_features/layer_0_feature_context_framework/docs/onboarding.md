@@ -6,12 +6,23 @@
 
 ## Quick Start: Read These Diagrams
 
+### Core Diagrams
+
 | Question | Diagram | Path |
 |----------|---------|------|
 | What context exists? | Context Architecture | `../layer_1_sub_feature_context_visualization/diagrams/current/context_architecture.md` |
 | When does context load? | Context Flow | `../layer_1_sub_feature_context_visualization/diagrams/current/context_flow.md` |
 | How does context propagate? | Context Propagation | `../layer_1_sub_feature_context_visualization/diagrams/current/context_propagation.md` |
 | What do agents start with? | Agent Instantiation Chain | `../layer_1_sub_feature_context_visualization/diagrams/current/agent_instantiation_chain.md` |
+| What's the exact loading order? | Context Loading Sequence | `../layer_1_sub_feature_context_visualization/diagrams/current/context_loading_sequence.md` |
+
+### Specific Operation Flows
+
+| Operation | Diagram | Path |
+|-----------|---------|------|
+| Creating entities | Entity Creation Flow | `../layer_1_sub_feature_context_visualization/diagrams/current/specific_flows/entity_creation_flow.md` |
+| Git commits | Git Commit Flow | `../layer_1_sub_feature_context_visualization/diagrams/current/specific_flows/git_commit_flow.md` |
+| Entering stages | Stage Workflow Flow | `../layer_1_sub_feature_context_visualization/diagrams/current/specific_flows/stage_workflow_flow.md` |
 
 ---
 

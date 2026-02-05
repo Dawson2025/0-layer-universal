@@ -44,6 +44,31 @@
           "name": "Agent Instantiation Chain",
           "purpose": "What agents start with and how they load more context",
           "answers": "How does an agent's context chain build from instantiation?"
+        },
+        {
+          "@id": "current/context_loading_sequence.md",
+          "name": "Context Loading Sequence",
+          "purpose": "Exact order of context loading from session start to end",
+          "answers": "What order does context load in?"
+        },
+        {
+          "@id": "current/specific_flows/",
+          "name": "Specific Operation Flows",
+          "purpose": "How context loads for specific operations",
+          "children": [
+            {
+              "@id": "current/specific_flows/entity_creation_flow.md",
+              "name": "Entity Creation Flow"
+            },
+            {
+              "@id": "current/specific_flows/git_commit_flow.md",
+              "name": "Git Commit Flow"
+            },
+            {
+              "@id": "current/specific_flows/stage_workflow_flow.md",
+              "name": "Stage Workflow Flow"
+            }
+          ]
         }
       ]
     },
