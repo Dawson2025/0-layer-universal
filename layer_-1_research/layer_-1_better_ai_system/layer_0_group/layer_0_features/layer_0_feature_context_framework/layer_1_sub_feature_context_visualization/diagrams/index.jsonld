@@ -38,6 +38,12 @@
           "name": "Context Propagation",
           "purpose": "How context moves through hierarchy",
           "answers": "How does context propagate?"
+        },
+        {
+          "@id": "current/agent_instantiation_chain.md",
+          "name": "Agent Instantiation Chain",
+          "purpose": "What agents start with and how they load more context",
+          "answers": "How does an agent's context chain build from instantiation?"
         }
       ]
     },

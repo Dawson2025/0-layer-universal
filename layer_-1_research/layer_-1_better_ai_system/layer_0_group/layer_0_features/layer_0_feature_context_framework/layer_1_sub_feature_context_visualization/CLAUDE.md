@@ -17,6 +17,7 @@ Make context flow **visible** and **predictable** through standardized diagrams.
 | Context Architecture | `diagrams/current/context_architecture.md` | What context exists, where it lives |
 | Context Flow | `diagrams/current/context_flow.md` | When context loads, in what order |
 | Context Propagation | `diagrams/current/context_propagation.md` | How context moves through hierarchy |
+| Agent Instantiation Chain | `diagrams/current/agent_instantiation_chain.md` | What agents start with and how they load more |
 | Before/After | `diagrams/proposed/{name}/` | Impact of proposed changes |
 
 ## When to Use
