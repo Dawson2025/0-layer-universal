@@ -344,7 +344,7 @@ Current context diagrams show **what** context exists and **how** it flows, but 
 ### Phase 3: Integration ✅
 - [x] Added to diagrams/index.jsonld registry
 - [x] Reference from context visualization CLAUDE.md
-- [ ] Add to onboarding docs (future)
+- [x] Add to onboarding docs (docs/onboarding.md)
 
 ---
 
