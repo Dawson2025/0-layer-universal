@@ -23,7 +23,7 @@
 | Number | Name | Purpose |
 |--------|------|---------|
 | 00 | sub_layer_registry | Sub_layer definitions and metadata (data only) |
-| 01 | ai_system | AALang AI system (submodule: Dawson2025/AALang-Gab, fork of yenrab/AALang-Gab, **use dawson branch**) |
+| 01 | ai_system | **PRIMARY AI SYSTEM** - AALang (submodule: Dawson2025/AALang-Gab, fork of yenrab/AALang-Gab, **use dawson branch**) |
 | 02 | knowledge_system | Domain knowledge, reference materials |
 | 03 | principles | Guiding principles for decisions |
 | 04 | rules | Universal rules (modification protocol, commit rule, etc.) |

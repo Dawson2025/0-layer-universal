@@ -87,7 +87,7 @@ layer_0/layer_0_03_sub_layers/sub_layer_0_04_rules/
 
 | Sub-Layer | Purpose | When to Read |
 |-----------|---------|--------------|
-| `sub_layer_0_01_ai_system/` | AALang AI system (submodule) | AI language design |
+| `sub_layer_0_01_ai_system/` | **PRIMARY AI SYSTEM** - AALang (submodule) | AI language design - used for most everything |
 | `sub_layer_0_02_knowledge_system/` | Domain knowledge | When context needed |
 | `sub_layer_0_03_principles/` | Guiding principles | Design decisions |
 | `sub_layer_0_04_rules/` | **Universal rules** | **ALWAYS** |

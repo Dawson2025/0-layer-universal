@@ -17,7 +17,7 @@
 
 ## Description
 
-Development of the AALang language and gab compiler. A Python-based project for AI language design.
+**PRIMARY AI SYSTEM** - Development of the AALang language and gab compiler. This is the main AI system we use for most everything. A Python-based project for AI language design.
 
 ## Branching Strategy
 
