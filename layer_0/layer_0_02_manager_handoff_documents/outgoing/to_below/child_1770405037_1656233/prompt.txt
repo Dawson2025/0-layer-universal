@@ -1,0 +1,27 @@
+You are a subagent at depth 2 (max: 5).
+
+TASK FILE: /home/dawson/dawson-workspace/code/0_layer_universal/hand_off_documents/outgoing/to_below/child_1770405037_1656233/task.json
+RESULT FILE: /home/dawson/dawson-workspace/code/0_layer_universal/hand_off_documents/incoming/from_below/child_1770405037_1656233/result.json
+
+Read the task from the task file, execute it, and write your result as JSON to the result file.
+
+IMPORTANT SAFEGUARDS:
+- You are at depth 2. Max depth is 5.
+- If you need to spawn subagents, you can only do so if 2 < 5
+- Do NOT spawn subagents with identical tasks (infinite recursion protection)
+- Write your result to: /home/dawson/dawson-workspace/code/0_layer_universal/hand_off_documents/incoming/from_below/child_1770405037_1656233/result.json
+
+Result format:
+{
+  "taskId": "from task file",
+  "status": "completed|failed",
+  "result": {
+    "summary": "brief summary",
+    "content": "full result",
+    "confidence": 0.0-1.0
+  },
+  "metadata": {
+    "agentType": "claude",
+    "depth": 2
+  }
+}

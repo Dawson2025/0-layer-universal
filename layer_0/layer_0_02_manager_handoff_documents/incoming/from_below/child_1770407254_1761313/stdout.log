@@ -1,0 +1,10 @@
+Task completed. I analyzed the `sub_layer_0_02_context_agents` directory and wrote the result to the specified result file.
+
+**Summary of findings:**
+- **7 files total** in the directory
+- **3 agent definitions** using AALang patterns:
+  1. **Context Loading Agent** (`context_loading_gab.jsonld`) - 4-mode-13-actor pattern for loading CLAUDE.md chain
+  2. **Layer 0 Universal Orchestrator** (`layer_0_orchestrator.gab.jsonld`) - 5-mode-15-actor pattern for managing child agents
+  3. **Orchestrator Runtime** (`runtime/orchestrator_runtime.jsonld`) - Shared runtime behaviors
+
+- **Key purpose**: Implement context loading for the layer-stage system, ensuring AI agents understand their position and applicable rules before starting work

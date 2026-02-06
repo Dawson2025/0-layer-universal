@@ -1,0 +1,115 @@
+{
+  "taskId": "retry_rules_001",
+  "status": "completed",
+  "result": {
+    "summary": "Analyzed sub_layer_0_05_rules: 131 rule files, comprehensive governance framework",
+    "content": {
+      "overview": {
+        "path": "layer_0/layer_0_03_sub_layers/sub_layer_0_05_rules/",
+        "description": "Universal rules that apply across all layers, stages, OS, and tool contexts",
+        "totalRuleFiles": 131,
+        "totalDirectories": 9
+      },
+      "structure": {
+        "rootLevelFiles": [
+          "README.md - Directory documentation",
+          "AI_CONTEXT_PROPOSAL_REQUIREMENTS.md - Diagram requirements for proposals",
+          "context_priority_rules.md - Layer inheritance and override rules",
+          "context_scope_boundaries.md - Scope definitions by layer",
+          "FILE_PATH_LINKING_RULE.md - CRITICAL: Always include clickable paths"
+        ],
+        "directories": {
+          "0_every_api_request": {
+            "count": 3,
+            "purpose": "Rules for EVERY interaction (must be followed always)",
+            "rules": [
+              "AI_CONTEXT_MODIFICATION_PROTOCOL.md - Show diagram, wait for approval before modifying",
+              "AI_CONTEXT_COMMIT_PUSH_RULE.md - Git add/commit/push after approved changes",
+              "CONTEXT_TRAVERSAL_RULE.md - Read CLAUDE.md files and gather context first"
+            ]
+          },
+          "1_scenario_based": {
+            "count": 9,
+            "purpose": "Rules for specific scenarios (reference when applicable)",
+            "rules": [
+              "safety_governance.md - Security decisions, permissions, sensitive operations",
+              "AI_DOCUMENTATION_PROTOCOL.md - Creating/organizing documentation",
+              "LAYER_CONTEXT_HEADER_PROTOCOL.md - Creating new files with headers",
+              "sequential_development_methodology.md - Multi-step development tasks",
+              "CROSS_OS_COMPATIBILITY_RULES.md - Cross-platform code/scripts",
+              "CONTEXT_FILE_PATTERN.md - Context file patterns",
+              "LOCATION_RULE_APPLICATION_PROTOCOL.md - Rule application by location",
+              "OUTPUT_FIRST_PROTOCOL.md - Output-first methodology"
+            ]
+          },
+          "0_instruction_docs": {
+            "count": 48,
+            "purpose": "Additional instruction documents for agents",
+            "notable": [
+              "git_commit_rule.md",
+              "MASTER_TERMINAL_EXECUTION_REFERENCE.md",
+              "AGENT_DISCOVERY_GUIDE.md",
+              "subagent_usage_decision_matrix.md",
+              "canvas_submission_protocol.md"
+            ]
+          },
+          "naming_conventions": {
+            "count": 1,
+            "files": ["FOLDER_SUFFIX_RULES.md"]
+          },
+          "1_status_progress_docs": {
+            "count": 1,
+            "purpose": "Session summaries and progress"
+          },
+          "3_archive_docs": {
+            "count": 10,
+            "purpose": "Historical/archived rules"
+          },
+          "sub_layer_0_04_99_stages": {
+            "count": 59,
+            "purpose": "Stage-specific context including tree_of_needs framework"
+          }
+        }
+      },
+      "governanceSummary": {
+        "corePrinciples": [
+          "1. Least Privilege - Operate with minimum permissions needed",
+          "2. Defense in Depth - Multiple layers of protection",
+          "3. Audit Everything - Log all actions for review",
+          "4. Human Oversight - Critical decisions require approval",
+          "5. Fail Secure - When in doubt, deny and escalate"
+        ],
+        "criticalRules": [
+          "AI Context Modification Protocol - MUST show diagram and get approval before changes",
+          "AI Context Commit/Push Rule - MUST commit and push after approved changes",
+          "Context Traversal Rule - MUST read CLAUDE.md files before starting work",
+          "File Path Linking Rule - MUST include clickable file paths"
+        ],
+        "layerPermissions": {
+          "layer_0": "System Manager - Full filesystem access, can execute commands with approval gates",
+          "layer_1": "Project Manager - Project scope access, approval needed for dependencies",
+          "layer_2+": "Standard Agent - Feature scope access, more restricted"
+        },
+        "inheritance": {
+          "model": "Higher-numbered layers inherit from lower layers",
+          "override": "Higher-numbered layers CAN override lower layers with @override marker",
+          "scope": "Overrides only apply within their scope (no sibling inheritance)"
+        }
+      },
+      "ruleCategories": {
+        "alwaysApply": "0_every_api_request/ - 3 rules applied to EVERY interaction",
+        "scenarioBased": "1_scenario_based/ - 9 rules applied when specific scenarios arise",
+        "instructional": "0_instruction_docs/ - 48 detailed instruction documents",
+        "naming": "naming_conventions/ - 1 naming rule file",
+        "stageSpecific": "sub_layer_0_04_99_stages/ - 59 stage-specific context files"
+      }
+    },
+    "confidence": 0.95
+  },
+  "metadata": {
+    "agentType": "claude",
+    "depth": 1,
+    "filesAnalyzed": 10,
+    "directoriesScanned": 9
+  }
+}

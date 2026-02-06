@@ -1,0 +1,12 @@
+Task completed successfully.
+
+**Summary**: I executed the task to list files in the `context_agents` directory and count JSON-LD files.
+
+**Results**:
+- **Total files in directory**: 6
+- **JSON-LD files found**: 3
+  1. `context_loading_gab.jsonld`
+  2. `layer_0_orchestrator.gab.jsonld`
+  3. `runtime/orchestrator_runtime.jsonld`
+
+**File**: `/home/dawson/dawson-workspace/code/0_layer_universal/hand_off_documents/incoming/from_below/child_1770404580_1633101/result.json`

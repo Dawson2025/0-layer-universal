@@ -1,0 +1,5 @@
+{
+    "taskId": "test_copy_001",
+    "description": "Task copy test",
+    "extra": "data"
+}

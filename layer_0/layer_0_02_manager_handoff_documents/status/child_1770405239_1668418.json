@@ -1,0 +1,10 @@
+{
+  "childId": "child_1770405239_1668418",
+  "agentType": "claude",
+  "status": "timeout",
+  "depth": 1,
+  "startedAt": "2026-02-06T12:13:59-07:00",
+  "lastUpdate": "2026-02-06T12:15:30-07:00",
+  "progress": 50,
+  "pid": null
+}

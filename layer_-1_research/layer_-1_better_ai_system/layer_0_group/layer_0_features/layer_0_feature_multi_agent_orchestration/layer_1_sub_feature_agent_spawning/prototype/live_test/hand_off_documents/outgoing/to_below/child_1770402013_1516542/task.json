@@ -1,0 +1,16 @@
+{
+    "taskId": "example_001",
+    "description": "Count the number of files in the current directory and report the result",
+    "agentType": "claude",
+    "context": {
+        "paths": ["."],
+        "constraints": {
+            "maxRecursionDepth": 3,
+            "timeout": "60s"
+        }
+    },
+    "expectedOutput": {
+        "format": "json",
+        "sections": ["count", "summary"]
+    }
+}

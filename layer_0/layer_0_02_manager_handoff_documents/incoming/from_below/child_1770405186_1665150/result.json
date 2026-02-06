@@ -1,0 +1,81 @@
+{
+  "taskId": "orchestrated_001_b",
+  "status": "completed",
+  "result": {
+    "summary": "sub_layer_0_02_context_agents contains 7 files implementing 2 main agents (Context Loading Agent and Layer 0 Orchestrator) using AALang/GAB patterns for context management and multi-agent orchestration",
+    "content": {
+      "fileCount": 7,
+      "files": [
+        {
+          "name": "README.md",
+          "purpose": "Overview documentation for context agents",
+          "lines": 265
+        },
+        {
+          "name": "ARCHITECTURE.md",
+          "purpose": "Design decisions and comparison with base AALang",
+          "lines": 291
+        },
+        {
+          "name": "context_loading_gab.jsonld",
+          "purpose": "Context Loading Agent (4-mode-13-actor pattern) - loads and validates CLAUDE.md chain",
+          "lines": 1066
+        },
+        {
+          "name": "layer_0_orchestrator.gab.jsonld",
+          "purpose": "Layer 0 Universal Orchestrator (5-mode-15-actor pattern) - manages child agents across all layers",
+          "lines": 702
+        },
+        {
+          "name": "runtime/orchestrator_runtime.jsonld",
+          "purpose": "Shared runtime behaviors for orchestrator agents",
+          "lines": 322
+        },
+        {
+          "name": "tests/integration_test.sh",
+          "purpose": "Integration test script for context agents"
+        },
+        {
+          "name": "tests/orchestrator_runner.sh",
+          "purpose": "Test runner for orchestrator functionality"
+        }
+      ],
+      "agents": [
+        {
+          "name": "Context Loading Agent",
+          "file": "context_loading_gab.jsonld",
+          "pattern": "4-mode-13-actor",
+          "modes": ["LoadingMode", "ValidationMode", "PropagationMode", "DeliveryMode"],
+          "actorCount": 13,
+          "stateActors": ["ContextLoadingStateActor", "ContextConfidenceStateActor", "NavigationStateActor", "DebugContextStateActor", "LayerInheritanceStateActor"],
+          "purpose": "Load, validate, propagate, and deliver context for AI agents operating in the layer-stage system. Implements cross-session persistence and layer inheritance model."
+        },
+        {
+          "name": "Layer 0 Orchestrator",
+          "file": "layer_0_orchestrator.gab.jsonld",
+          "pattern": "5-mode-15-actor",
+          "modes": ["ReceiveMode", "DelegationMode", "MonitoringMode", "AggregationMode", "ReportMode"],
+          "actorCount": 15,
+          "stateActors": ["LayerStateActor", "ChildRegistryStateActor", "TaskStateActor", "ResourceBudgetStateActor", "StageStateActor"],
+          "purpose": "Universal orchestrator that receives tasks, delegates to child agents across layers, monitors progress, aggregates results, and reports to user/parent. Implements depth limits and circuit breakers for safety."
+        }
+      ],
+      "keyFeatures": [
+        "AALang/GAB 4-mode and 5-mode patterns with Senior/Junior persona pairs",
+        "Cross-session state persistence via .claude/context_state.json",
+        "Layer inheritance model with override support and safety rule protection",
+        "Confidence-based mode transitions (thresholds: 0.6 for loading, 0.8 for work)",
+        "Multi-agent orchestration with depth limits (max 5) and concurrent limits (max 3)",
+        "Circuit breaker pattern for agent spawning",
+        "Hand-off documents protocol for inter-layer communication"
+      ],
+      "purpose": "These agents provide the foundational AI orchestration capabilities for the layer-stage system. The Context Loading Agent ensures AI agents understand their position and applicable rules before starting work. The Layer 0 Orchestrator enables hierarchical delegation and coordination of work across multiple AI agents."
+    },
+    "confidence": 0.95
+  },
+  "metadata": {
+    "agentType": "claude",
+    "depth": 2,
+    "analyzedPath": "layer_0/layer_0_03_sub_layers/sub_layer_0_02_context_agents/"
+  }
+}

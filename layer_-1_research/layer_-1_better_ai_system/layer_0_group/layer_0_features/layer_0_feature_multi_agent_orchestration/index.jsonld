@@ -1,0 +1,59 @@
+{
+  "@context": {
+    "@vocab": "https://layer-stage.dev/",
+    "layer": "https://layer-stage.dev/layer/",
+    "feature": "https://layer-stage.dev/feature/"
+  },
+  "@id": "feature:multi_agent_orchestration",
+  "@type": "Feature",
+  "name": "Multi-Agent Orchestration",
+  "description": "Framework for recursive multi-agent systems where CLI AI tools can spawn and coordinate unlimited subagents",
+  "layer": -1,
+  "status": "research",
+  "createdAt": "2026-02-06",
+  "subFeatures": [
+    {
+      "@id": "feature:agent_spawning",
+      "name": "Agent Spawning",
+      "description": "Mechanisms for spawning subagents via CLI",
+      "path": "layer_1_sub_feature_agent_spawning/"
+    },
+    {
+      "@id": "feature:inter_agent_communication",
+      "name": "Inter-Agent Communication",
+      "description": "Protocols for agents to communicate via hand_off_documents",
+      "path": "layer_1_sub_feature_inter_agent_communication/"
+    },
+    {
+      "@id": "feature:recursive_coordination",
+      "name": "Recursive Coordination",
+      "description": "Patterns for hierarchical multi-level agent coordination",
+      "path": "layer_1_sub_feature_recursive_coordination/"
+    }
+  ],
+  "relatedFeatures": [
+    "feature:context_framework",
+    "feature:tooling_framework"
+  ],
+  "documents": [
+    {
+      "name": "Research: Recursive Multi-Agent Systems",
+      "path": "docs/01_research_recursive_multi_agent_systems.md",
+      "type": "research"
+    }
+  ],
+  "keyQuestions": [
+    "How do we efficiently pass context to subagents?",
+    "What are the safeguards against infinite recursion?",
+    "How do we aggregate results from heterogeneous agents?",
+    "How do we manage costs across recursive spawning?"
+  ],
+  "technologies": [
+    "AALang/GAB",
+    "Claude Code CLI",
+    "Codex CLI",
+    "Gemini CLI",
+    "Bash",
+    "File-based IPC"
+  ]
+}

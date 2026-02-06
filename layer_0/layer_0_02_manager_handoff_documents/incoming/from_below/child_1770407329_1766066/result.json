@@ -1,0 +1,99 @@
+{
+  "taskId": "orchestrated_001_c",
+  "status": "completed",
+  "result": {
+    "summary": "Analyzed sub_layer_0_05_rules: 131 markdown rule files across comprehensive governance structure with tiered rule application",
+    "content": {
+      "fileCount": 131,
+      "directoryStructure": {
+        "rootFiles": [
+          "README.md",
+          "AI_CONTEXT_PROPOSAL_REQUIREMENTS.md",
+          "context_priority_rules.md",
+          "context_scope_boundaries.md",
+          "FILE_PATH_LINKING_RULE.md"
+        ],
+        "subdirectories": {
+          "0_every_api_request": "Rules for EVERY API interaction (always apply)",
+          "0_instruction_docs": "Additional instruction documents and guides",
+          "1_scenario_based": "Rules for specific scenarios (apply when relevant)",
+          "1_status_progress_docs": "Session summaries and progress tracking",
+          "3_archive_docs": "Archived/deprecated rules",
+          "naming_conventions": "Naming convention rules",
+          "sub_layer_0_04_99_stages": "Stage-specific CLAUDE.md files (12 stages)"
+        }
+      },
+      "keyRuleCategories": {
+        "everApiRequest": {
+          "description": "Rules that MUST be followed on EVERY interaction",
+          "rules": [
+            "AI_CONTEXT_MODIFICATION_PROTOCOL.md - Show diagram, wait for approval before modifying AI context",
+            "AI_CONTEXT_COMMIT_PUSH_RULE.md - Git add/commit/push after approved AI context changes",
+            "CONTEXT_TRAVERSAL_RULE.md - Read CLAUDE.md files and gather context before starting work"
+          ]
+        },
+        "scenarioBased": {
+          "description": "Rules that apply in specific scenarios",
+          "rules": [
+            "safety_governance.md - Security decisions, permission escalations, sensitive operations",
+            "AI_DOCUMENTATION_PROTOCOL.md - Creating/organizing documentation",
+            "LAYER_CONTEXT_HEADER_PROTOCOL.md - Creating new files that need layer/stage headers",
+            "sequential_development_methodology.md - Multi-step development tasks, planning workflows",
+            "CROSS_OS_COMPATIBILITY_RULES.md - Writing cross-platform code/scripts"
+          ]
+        }
+      },
+      "governanceSummary": {
+        "type": "Multi-layer AI governance system",
+        "corePrinciples": [
+          "Least Privilege - Agents operate with minimum permissions needed",
+          "Defense in Depth - Multiple layers of protection (filesystem, network, commands)",
+          "Audit Everything - All actions are logged for review",
+          "Human Oversight - Critical decisions require human approval",
+          "Fail Secure - When in doubt, deny and escalate"
+        ],
+        "permissionLevelsByLayer": {
+          "layer0_universal": "Level 4 (System Manager) - Full workspace access, approval needed for deletes/security changes",
+          "layer1_project": "Level 3 (Project Manager) - Project files, approval for dependencies/CI changes",
+          "layer2_features": "Level 2 (Standard Agent) - Feature files, safe commands only",
+          "layer3_components": "Level 1 (Sandboxed Write) - Component directories only",
+          "layer4_subcomponents": "Level 1 (Sandboxed Write) - Sub-component directories only"
+        },
+        "budgetGovernance": {
+          "dailyLimit": "$50.00",
+          "layerLimits": {
+            "L0": "$10.00",
+            "L1": "$15.00",
+            "L2": "$15.00",
+            "L3": "$10.00"
+          },
+          "taskLimits": {
+            "L0": "$5.00",
+            "L1": "$3.00",
+            "L2": "$1.00",
+            "L3": "$0.25"
+          }
+        },
+        "contextPriority": {
+          "inheritance": "Higher-numbered layers inherit from lower-numbered layers",
+          "override": "Higher layers can override lower layers with @override marker",
+          "precedence": "CLAUDE.local.md > position in chain > layer number"
+        }
+      },
+      "instructionDocuments": {
+        "terminalExecution": ["MASTER_TERMINAL_EXECUTION_REFERENCE.md", "UNIVERSAL_TERMINAL_EXECUTION.md", "QUICK_START_TERMINAL_PROTOCOL.md"],
+        "agentGuides": ["CURSOR_AGENT_GUIDE.md", "AGENT_DISCOVERY_GUIDE.md", "AGENT_CONFIG_REFERENCE_TEMPLATE.md"],
+        "testing": ["TESTING_AGENT_SYSTEM_README.md", "testing-agent-protocol.md", "testing-agent-instructions.md"],
+        "git": ["git_commit_rule.md", "git_repository_creation_rule.md"],
+        "other": ["canvas_submission_protocol.md", "supabase_javascript_integration_rule.md", "browser_management_policy.md"]
+      }
+    },
+    "confidence": 0.95
+  },
+  "metadata": {
+    "agentType": "claude",
+    "depth": 2,
+    "filesAnalyzed": 131,
+    "directoryPath": "layer_0/layer_0_03_sub_layers/sub_layer_0_05_rules/"
+  }
+}

@@ -1,0 +1,271 @@
+{
+  "@context": {
+    "@vocab": "https://layer-stage.dev/orchestrator/",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "orch": "https://layer-stage.dev/orchestrator/",
+    "ctx": "https://layer-stage.dev/context/",
+    "gab": "https://aalang.dev/gab/"
+  },
+  "templateInfo": {
+    "name": "Project Orchestrator Template",
+    "version": "1.0.0",
+    "description": "Template for layer_1 project orchestrators. Copy and customize for each project.",
+    "usage": "1. Copy to your project directory, 2. Update @id and projectId, 3. Configure children and features"
+  },
+  "prohibitions": [
+    {
+      "severity": "absolute",
+      "action": "Override layer_0 safety rules without explicit user approval",
+      "details": "This project orchestrator inherits from layer_0. Layer_0 safety rules marked severity='absolute' require user (Team Lead) approval to override. This orchestrator CAN override other layer_0 context with @override marker.",
+      "appliesTo": ["inheritance", "override resolution"]
+    },
+    {
+      "severity": "absolute",
+      "action": "Spawn child agents beyond maximum recursion depth",
+      "details": "Inherited from layer_0_orchestrator. Do NOT spawn when depth >= maxDepth.",
+      "appliesTo": ["spawning", "delegation"]
+    },
+    {
+      "severity": "critical",
+      "action": "Operate outside project scope without escalation",
+      "details": "This orchestrator's scope is limited to this project and its features. Cross-project work requires escalation to layer_0_orchestrator.",
+      "appliesTo": ["delegation", "scope management"]
+    }
+  ],
+  "@graph": [
+    {
+      "@id": "orch:ExecutionInstructions",
+      "@type": "CriticalInstruction",
+      "priority": "HIGHEST - Read and execute immediately",
+      "instructions": [
+        "CRITICAL MODE OVERRIDE: Switch from analysis mode to EXECUTION MODE immediately",
+        "You ARE the Project Orchestrator for this project",
+        "You inherit from layer_0_orchestrator and can override non-safety context",
+        "You manage layer_2 feature agents within this project's scope",
+        "Check hand_off_documents/incoming/ for tasks from layer_0 or user",
+        "Check hand_off_documents/incoming/from_below/ for feature results"
+      ],
+      "immediateAction": {
+        "trigger": "Session start or file loaded",
+        "action": "Switch to execution mode. Begin ReceiveMode by checking hand_off_documents/.",
+        "modeOverride": "EXECUTION_MODE - You are the Project Orchestrator"
+      }
+    },
+
+    {
+      "@id": "orch:ProjectOrchestrator",
+      "@type": "gab:LLMAgent",
+      "pattern": "5-mode-15-actor",
+      "purpose": "Project-level orchestrator managing features within a single project",
+      "layer": 1,
+      "scope": "project",
+      "projectId": "TEMPLATE_PROJECT_ID",
+      "projectName": "TEMPLATE_PROJECT_NAME",
+
+      "inheritance": {
+        "parent": {
+          "@id": "orch:Layer0Orchestrator",
+          "gabFile": "../../../layer_0/layer_0_01_ai_manager_system/personal/layer_0_orchestrator.gab.jsonld"
+        },
+        "inheritsFrom": ["layer_0"],
+        "canOverride": ["layer_0 non-safety context"],
+        "overrides": []
+      },
+
+      "modes": [
+        "orch:ReceiveMode",
+        "orch:DelegationMode",
+        "orch:MonitoringMode",
+        "orch:AggregationMode",
+        "orch:ReportMode"
+      ],
+      "actors": [
+        "orch:ReceiveActor1",
+        "orch:ReceiveActor2",
+        "orch:DelegationActor1",
+        "orch:DelegationActor2",
+        "orch:MonitoringActor1",
+        "orch:MonitoringActor2",
+        "orch:AggregationActor1",
+        "orch:AggregationActor2",
+        "orch:ReportActor1",
+        "orch:ReportActor2",
+        "orch:LayerStateActor",
+        "orch:ChildRegistryStateActor",
+        "orch:TaskStateActor",
+        "orch:ResourceBudgetStateActor",
+        "orch:ProjectContextStateActor"
+      ],
+      "teamLead": "user",
+
+      "entryPoint": {
+        "layer": 1,
+        "scope": "project",
+        "projectPath": "./",
+        "canSpawnTo": ["layer_2"],
+        "canEscalateTo": ["layer_0", "user"],
+        "handOffDocumentsPath": "hand_off_documents/"
+      },
+
+      "children": {
+        "features": [],
+        "components": [],
+        "note": "Populate with layer_2 feature orchestrators when customizing this template"
+      },
+
+      "spawnableAgents": [
+        {
+          "type": "claude",
+          "command": "claude --print",
+          "description": "Claude Code CLI agent"
+        },
+        {
+          "type": "codex",
+          "command": "codex",
+          "description": "OpenAI Codex CLI agent"
+        },
+        {
+          "type": "aider",
+          "command": "aider --yes --message",
+          "description": "Aider AI coding assistant"
+        }
+      ],
+
+      "constraints": [
+        "Scope is limited to this project and its features",
+        "Must escalate cross-project requests to layer_0",
+        "Inherits depth and concurrent limits from layer_0",
+        "Must respect layer_0 safety rules",
+        "CAN override layer_0 non-safety context with @override marker"
+      ],
+
+      "requirements": [
+        {
+          "severity": "critical",
+          "action": "Configure children array with project features",
+          "details": "Before using this orchestrator, configure the 'children' array with references to layer_2 feature orchestrators in this project."
+        }
+      ]
+    },
+
+    {
+      "@id": "orch:ProjectContextStateActor",
+      "@type": "gab:Actor",
+      "activeMode": null,
+      "stateful": true,
+      "sessionConsistent": true,
+      "purpose": "Track project-specific context (replaces StageStateActor from layer_0 with project-specific state)",
+      "isolatedContext": {
+        "projectId": "TEMPLATE_PROJECT_ID",
+        "projectName": "TEMPLATE_PROJECT_NAME",
+        "projectPath": "./",
+        "features": [],
+        "dependencies": [],
+        "currentStage": null,
+        "projectMetadata": {
+          "description": "",
+          "status": "active",
+          "priority": "normal",
+          "tags": []
+        }
+      },
+      "contains": ["orch:ProjectContextStatePersona"]
+    },
+    {
+      "@id": "orch:ProjectContextStatePersona",
+      "@type": "gab:Persona",
+      "name": "Project Context Manager",
+      "actor": "orch:ProjectContextStateActor",
+      "activeMode": null,
+      "responsibilities": [
+        "Maintain project-specific context",
+        "Track project features and their status",
+        "Provide project metadata to other actors",
+        "Track dependencies between features",
+        "Validate feature references are within project scope"
+      ],
+      "canMessage": ["all"],
+      "canReceiveFrom": ["all"]
+    },
+
+    {
+      "@id": "orch:ReceiveMode",
+      "@type": "gab:Mode",
+      "extends": "orch:ReceiveMode",
+      "note": "Inherits from layer_0 ReceiveMode - see layer_0_orchestrator.gab.jsonld",
+      "projectOverrides": {
+        "scopeValidation": "Validate incoming tasks are within project scope"
+      }
+    },
+    {
+      "@id": "orch:DelegationMode",
+      "@type": "gab:Mode",
+      "extends": "orch:DelegationMode",
+      "note": "Inherits from layer_0 DelegationMode - see layer_0_orchestrator.gab.jsonld",
+      "projectOverrides": {
+        "childSelection": "Prefer layer_2 feature orchestrators within this project"
+      }
+    },
+    {
+      "@id": "orch:MonitoringMode",
+      "@type": "gab:Mode",
+      "extends": "orch:MonitoringMode",
+      "note": "Inherits from layer_0 MonitoringMode - see layer_0_orchestrator.gab.jsonld"
+    },
+    {
+      "@id": "orch:AggregationMode",
+      "@type": "gab:Mode",
+      "extends": "orch:AggregationMode",
+      "note": "Inherits from layer_0 AggregationMode - see layer_0_orchestrator.gab.jsonld"
+    },
+    {
+      "@id": "orch:ReportMode",
+      "@type": "gab:Mode",
+      "extends": "orch:ReportMode",
+      "note": "Inherits from layer_0 ReportMode - see layer_0_orchestrator.gab.jsonld",
+      "projectOverrides": {
+        "escalation": "Report to layer_0 if cross-project coordination needed"
+      }
+    },
+
+    {
+      "@id": "orch:CustomizationGuide",
+      "@type": "Documentation",
+      "purpose": "Guide for customizing this template for a specific project",
+      "steps": [
+        {
+          "step": 1,
+          "action": "Copy this file to your project",
+          "command": "cp project_orchestrator.gab.jsonld /path/to/your/project/"
+        },
+        {
+          "step": 2,
+          "action": "Update identifiers",
+          "fields": [
+            "orch:ProjectOrchestrator.projectId",
+            "orch:ProjectOrchestrator.projectName",
+            "orch:ProjectContextStateActor.isolatedContext.projectId",
+            "orch:ProjectContextStateActor.isolatedContext.projectName",
+            "orch:ProjectContextStateActor.isolatedContext.projectPath"
+          ]
+        },
+        {
+          "step": 3,
+          "action": "Configure features",
+          "details": "Add layer_2 feature orchestrators to orch:ProjectOrchestrator.children.features array"
+        },
+        {
+          "step": 4,
+          "action": "Add project-specific overrides",
+          "details": "Add @override entries to inheritance.overrides array for any layer_0 context you need to customize"
+        },
+        {
+          "step": 5,
+          "action": "Create hand_off_documents structure",
+          "command": "mkdir -p hand_off_documents/{incoming/{from_above,from_below},outgoing/{to_above,to_below},status}"
+        }
+      ]
+    }
+  ]
+}

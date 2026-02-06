@@ -1,0 +1,321 @@
+{
+  "@context": {
+    "@vocab": "https://layer-stage.dev/orchestrator/runtime/",
+    "orch": "https://layer-stage.dev/orchestrator/",
+    "gab": "https://aalang.dev/gab/"
+  },
+  "@graph": [
+    {
+      "@id": "orch:RuntimeBehaviors",
+      "@type": "RuntimeDefinition",
+      "purpose": "Shared runtime behaviors for orchestrator agents across all layers",
+      "version": "1.0.0"
+    },
+
+    {
+      "@id": "orch:SpawnProtocol",
+      "@type": "RuntimeBehavior",
+      "purpose": "Standard protocol for spawning child agents",
+      "steps": [
+        {
+          "step": 1,
+          "action": "Check resource budget",
+          "details": "Send state request to orch:ResourceBudgetStateActor. Verify currentDepth < maxDepth AND currentConcurrent < maxConcurrent AND NOT circuitBreaker[agentType].tripped",
+          "onFail": "HALT spawning, return error to requester"
+        },
+        {
+          "step": 2,
+          "action": "Check task similarity",
+          "details": "Compare proposed child task description to current task description. If similarity > 0.9 (semantic match), REJECT spawn to prevent infinite loops.",
+          "onFail": "HALT spawning, suggest task decomposition"
+        },
+        {
+          "step": 3,
+          "action": "Create task file",
+          "details": "Write task JSON to layer_0/layer_0_02_manager_handoff_documents/outgoing/to_below/{child_id}/task.json following orch:TaskFormat schema"
+        },
+        {
+          "step": 4,
+          "action": "Generate child ID",
+          "details": "Create unique child_id: child_{timestamp}_{pid}"
+        },
+        {
+          "step": 5,
+          "action": "Execute spawn command",
+          "details": "Run: CURRENT_DEPTH=$((depth+1)) MAX_DEPTH=$maxDepth AGENT_TIMEOUT=$timeout spawn_agent.sh $agentType $taskFile"
+        },
+        {
+          "step": 6,
+          "action": "Register child",
+          "details": "Send message to orch:ChildRegistryStateActor to register new child with status='pending'"
+        },
+        {
+          "step": 7,
+          "action": "Update resource budget",
+          "details": "Send message to orch:ResourceBudgetStateActor to increment currentConcurrent"
+        }
+      ],
+      "appliesTo": ["orch:DelegationMode", "orch:DelegationPersona2"]
+    },
+
+    {
+      "@id": "orch:HandoffDocumentProtocol",
+      "@type": "RuntimeBehavior",
+      "purpose": "Standard protocol for reading and writing hand_off_documents",
+      "directories": {
+        "incoming": {
+          "fromAbove": {
+            "path": "layer_0/layer_0_02_manager_handoff_documents/incoming/from_above/",
+            "purpose": "Tasks from parent orchestrator or user",
+            "format": "orch:TaskFormat"
+          },
+          "fromBelow": {
+            "path": "layer_0/layer_0_02_manager_handoff_documents/incoming/from_below/{child_id}/",
+            "purpose": "Results from child agents",
+            "format": "orch:ResultFormat"
+          }
+        },
+        "outgoing": {
+          "toAbove": {
+            "path": "layer_0/layer_0_02_manager_handoff_documents/outgoing/to_above/",
+            "purpose": "Results to parent orchestrator or user",
+            "format": "orch:ResultFormat"
+          },
+          "toBelow": {
+            "path": "layer_0/layer_0_02_manager_handoff_documents/outgoing/to_below/{child_id}/",
+            "purpose": "Tasks to child agents",
+            "format": "orch:TaskFormat"
+          }
+        },
+        "status": {
+          "path": "layer_0/layer_0_02_manager_handoff_documents/status/{child_id}.json",
+          "purpose": "Child agent status tracking",
+          "format": "orch:StatusFormat"
+        }
+      },
+      "readProtocol": {
+        "steps": [
+          "1. List files in directory",
+          "2. Filter for .json files",
+          "3. Read and parse each file",
+          "4. Validate against expected schema",
+          "5. Move processed files to .processed/ subdirectory (optional)"
+        ]
+      },
+      "writeProtocol": {
+        "steps": [
+          "1. Create directory if not exists",
+          "2. Generate filename: {taskId}_{timestamp}.json",
+          "3. Validate content against schema",
+          "4. Write atomic (write to .tmp, then rename)",
+          "5. Log write operation"
+        ]
+      },
+      "appliesTo": ["all modes"]
+    },
+
+    {
+      "@id": "orch:StatusFormat",
+      "@type": "DataFormat",
+      "purpose": "Standard format for child agent status files",
+      "schema": {
+        "childId": { "type": "string", "required": true },
+        "agentType": { "type": "string", "required": true },
+        "status": {
+          "type": "string",
+          "enum": ["pending", "running", "completed", "failed", "timeout"],
+          "required": true
+        },
+        "depth": { "type": "number" },
+        "startedAt": { "type": "string", "format": "ISO8601" },
+        "lastUpdate": { "type": "string", "format": "ISO8601" },
+        "progress": { "type": "number", "minimum": 0, "maximum": 100 },
+        "pid": { "type": "number" }
+      }
+    },
+
+    {
+      "@id": "orch:ErrorHandlingProtocol",
+      "@type": "RuntimeBehavior",
+      "purpose": "Standard protocol for handling errors and failures",
+      "errorTypes": {
+        "spawn_failure": {
+          "description": "Child agent failed to spawn",
+          "actions": [
+            "Log error with context",
+            "Increment circuit breaker counter for agent type",
+            "Check if circuit breaker threshold reached",
+            "If not tripped: retry with backoff or try alternative agent type",
+            "If tripped: escalate to parent or report failure"
+          ]
+        },
+        "timeout": {
+          "description": "Child agent timed out",
+          "actions": [
+            "Log timeout with context",
+            "Check if partial result exists",
+            "If partial: proceed with partial result (confidence reduced)",
+            "If no result: mark child as failed, consider retry"
+          ]
+        },
+        "invalid_result": {
+          "description": "Child returned invalid or malformed result",
+          "actions": [
+            "Log validation error",
+            "Attempt to extract usable content",
+            "If extractable: use with reduced confidence",
+            "If not extractable: mark as failed"
+          ]
+        },
+        "depth_limit": {
+          "description": "Cannot spawn due to depth limit",
+          "actions": [
+            "Do NOT spawn",
+            "Either execute task locally (if possible)",
+            "Or escalate to parent with explanation"
+          ]
+        },
+        "concurrent_limit": {
+          "description": "Cannot spawn due to concurrent limit",
+          "actions": [
+            "Wait for existing children to complete",
+            "Queue spawn request",
+            "Process queue as children complete"
+          ]
+        }
+      },
+      "appliesTo": ["all modes"]
+    },
+
+    {
+      "@id": "orch:CircuitBreakerProtocol",
+      "@type": "RuntimeBehavior",
+      "purpose": "Circuit breaker pattern for agent spawning",
+      "configuration": {
+        "threshold": 3,
+        "resetAfterSuccess": true,
+        "perAgentType": true
+      },
+      "states": {
+        "closed": {
+          "description": "Normal operation, spawning allowed",
+          "onFailure": "Increment failure counter"
+        },
+        "open": {
+          "description": "Spawning blocked for this agent type",
+          "trigger": "failures >= threshold",
+          "action": "Reject spawn requests, try alternative agent type"
+        },
+        "halfOpen": {
+          "description": "Testing if agent type is working again",
+          "trigger": "After cooldown period or user override",
+          "onSuccess": "Reset to closed",
+          "onFailure": "Return to open"
+        }
+      },
+      "appliesTo": ["orch:DelegationMode", "orch:ResourceBudgetStateActor"]
+    },
+
+    {
+      "@id": "orch:ModeTransitionProtocol",
+      "@type": "RuntimeBehavior",
+      "purpose": "Standard protocol for validating mode transitions",
+      "transitions": {
+        "ReceiveMode_to_DelegationMode": {
+          "preconditions": [
+            "At least one task received and parsed",
+            "Task validated against schema",
+            "Routing decision made (delegate vs execute locally)"
+          ]
+        },
+        "DelegationMode_to_MonitoringMode": {
+          "preconditions": [
+            "At least one child spawned",
+            "All spawn operations complete (success or failure)",
+            "Children registered in ChildRegistryStateActor"
+          ]
+        },
+        "MonitoringMode_to_AggregationMode": {
+          "preconditions": [
+            "All children have terminal status (completed, failed, or timeout)",
+            "OR monitoring timeout reached",
+            "All status files read and processed"
+          ]
+        },
+        "AggregationMode_to_ReportMode": {
+          "preconditions": [
+            "All child results collected",
+            "Aggregation strategy applied",
+            "Unified result created with confidence score"
+          ]
+        },
+        "ReportMode_to_ReceiveMode": {
+          "preconditions": [
+            "Result written to layer_0/layer_0_02_manager_handoff_documents/outgoing/to_above/",
+            "Task marked complete in TaskStateActor",
+            "Ready to receive next task"
+          ],
+          "note": "This is a cyclical transition"
+        }
+      },
+      "appliesTo": ["all personas"]
+    },
+
+    {
+      "@id": "orch:AuditTrailProtocol",
+      "@type": "RuntimeBehavior",
+      "purpose": "Maintain audit trail for all orchestration actions",
+      "logFormat": {
+        "timestamp": "ISO8601 format",
+        "action": "Action type (spawn, receive, delegate, aggregate, report)",
+        "actor": "Persona or Actor @id that performed action",
+        "taskId": "Related task identifier",
+        "childId": "Related child identifier (if applicable)",
+        "details": "Additional context",
+        "outcome": "success|failure|partial"
+      },
+      "loggableActions": [
+        "task_received",
+        "task_validated",
+        "spawn_requested",
+        "spawn_succeeded",
+        "spawn_failed",
+        "status_updated",
+        "result_received",
+        "result_aggregated",
+        "report_generated",
+        "mode_transition",
+        "error_occurred",
+        "circuit_breaker_tripped"
+      ],
+      "appliesTo": ["all modes", "all personas"]
+    },
+
+    {
+      "@id": "orch:ConfidenceCalculationProtocol",
+      "@type": "RuntimeBehavior",
+      "purpose": "Standard protocol for calculating result confidence",
+      "factors": {
+        "childConfidences": {
+          "weight": 0.5,
+          "description": "Average confidence from child results"
+        },
+        "completionRate": {
+          "weight": 0.3,
+          "description": "Ratio of completed children to total children"
+        },
+        "agreementRate": {
+          "weight": 0.2,
+          "description": "Consistency between child results (if applicable)"
+        }
+      },
+      "formula": "confidence = (childConfidenceAvg * 0.5) + (completedChildren / totalChildren * 0.3) + (agreementScore * 0.2)",
+      "thresholds": {
+        "high": { "min": 0.8, "description": "High confidence result" },
+        "medium": { "min": 0.5, "description": "Medium confidence, may need review" },
+        "low": { "min": 0.0, "description": "Low confidence, likely needs human review" }
+      },
+      "appliesTo": ["orch:AggregationMode", "orch:AggregationPersona1"]
+    }
+  ]
+}

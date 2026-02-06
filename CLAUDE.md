@@ -56,7 +56,7 @@ After approved AI context changes:
 4. **Fail Secure**: When in doubt, deny and escalate
 5. **Audit Everything**: Log actions for review
 
-**Full rules**: `layer_0/layer_0_03_sub_layers/sub_layer_0_04_rules/`
+**Full rules**: `layer_0/layer_0_03_sub_layers/sub_layer_0_05_rules/`
 
 ### [CRITICAL] File Path Linking Rule
 
@@ -64,7 +64,7 @@ When creating or updating files, ALWAYS include the full clickable file path in 
 
 **Format**: `**File**: /full/path/to/file.md`
 
-**Full rules**: `layer_0/layer_0_03_sub_layers/sub_layer_0_04_rules/FILE_PATH_LINKING_RULE.md`
+**Full rules**: `layer_0/layer_0_03_sub_layers/sub_layer_0_05_rules/FILE_PATH_LINKING_RULE.md`
 
 ---
 
@@ -73,7 +73,7 @@ When creating or updating files, ALWAYS include the full clickable file path in 
 For complete rule documentation, read from:
 
 ```
-layer_0/layer_0_03_sub_layers/sub_layer_0_04_rules/
+layer_0/layer_0_03_sub_layers/sub_layer_0_05_rules/
 ├── AI_CONTEXT_MODIFICATION_PROTOCOL.md   ← Full modification protocol
 ├── AI_CONTEXT_COMMIT_PUSH_RULE.md        ← Full commit/push rule
 ├── safety_governance.md                   ← Full security governance
@@ -105,11 +105,12 @@ When working anywhere in this system—no matter how deeply nested—AALang prov
 | Sub-Layer | Purpose | When to Read |
 |-----------|---------|--------------|
 | `sub_layer_0_01_ai_system/` | **PRIMARY AI SYSTEM** - AALang (submodule) | AI language design - used for most everything |
-| `sub_layer_0_02_knowledge_system/` | Domain knowledge | When context needed |
-| `sub_layer_0_03_principles/` | Guiding principles | Design decisions |
-| `sub_layer_0_04_rules/` | **Universal rules** | **ALWAYS** |
-| `sub_layer_0_05_protocols/` | Init protocols, session start | Start of session |
-| `sub_layer_0_06+_setup_dependant_hierarchy/` | OS/tool setup | Environment issues |
+| `sub_layer_0_02_context_agents/` | **CONTEXT LOADING AGENT** - 4-mode-13-actor pattern | Context loading |
+| `sub_layer_0_03_knowledge_system/` | Domain knowledge | When context needed |
+| `sub_layer_0_04_principles/` | Guiding principles | Design decisions |
+| `sub_layer_0_05_rules/` | **Universal rules** | **ALWAYS** |
+| `sub_layer_0_06_protocols/` | Init protocols, session start | Start of session |
+| `sub_layer_0_07+_setup_dependant_hierarchy/` | OS/tool setup | Environment issues |
 
 ### Stages (layer_N/layer_N_99_stages/)
 
@@ -132,10 +133,11 @@ When working anywhere in this system—no matter how deeply nested—AALang prov
 | Need | Location |
 |------|----------|
 | AALang AI System | `layer_0/layer_0_03_sub_layers/sub_layer_0_01_ai_system/` |
-| Universal init protocol | `layer_0/layer_0_03_sub_layers/sub_layer_0_05_protocols/universal_init_prompt.md` |
-| All rules | `layer_0/layer_0_03_sub_layers/sub_layer_0_04_rules/` |
-| Git rules | `sub_layer_0_04_rules/0_instruction_docs/git_commit_rule.md` |
-| Terminal protocol | `sub_layer_0_04_rules/0_instruction_docs/MASTER_TERMINAL_EXECUTION_REFERENCE.md` |
+| Context Loading Agent | `layer_0/layer_0_03_sub_layers/sub_layer_0_02_context_agents/` |
+| Universal init protocol | `layer_0/layer_0_03_sub_layers/sub_layer_0_06_protocols/universal_init_prompt.md` |
+| All rules | `layer_0/layer_0_03_sub_layers/sub_layer_0_05_rules/` |
+| Git rules | `sub_layer_0_05_rules/0_instruction_docs/git_commit_rule.md` |
+| Terminal protocol | `sub_layer_0_05_rules/0_instruction_docs/MASTER_TERMINAL_EXECUTION_REFERENCE.md` |
 | Layer-Stage Framework | `layer_1/layer_1_features/layer_1_feature_layer_stage_system/` |
 | Research projects | `layer_-1_research/` |
 
@@ -152,12 +154,13 @@ When working anywhere in this system—no matter how deeply nested—AALang prov
 │   └── outgoing/to_below/    ← Tasks to layers
 ├── layer_0/                  ← Universal (applies to ALL)
 │   ├── layer_0_03_sub_layers/
-│   │   ├── sub_layer_0_01_ai_system/    ← AALang (submodule)
-│   │   ├── sub_layer_0_02_knowledge/    ← Domain knowledge
-│   │   ├── sub_layer_0_03_principles/   ← Principles
-│   │   ├── sub_layer_0_04_rules/        ← RULES (read first!)
-│   │   ├── sub_layer_0_05_protocols/    ← Session init protocols
-│   │   └── sub_layer_0_06+_setup/       ← OS/tool config
+│   │   ├── sub_layer_0_01_ai_system/       ← AALang (submodule)
+│   │   ├── sub_layer_0_02_context_agents/  ← Context Loading Agent
+│   │   ├── sub_layer_0_03_knowledge/       ← Domain knowledge
+│   │   ├── sub_layer_0_04_principles/      ← Principles
+│   │   ├── sub_layer_0_05_rules/           ← RULES (read first!)
+│   │   ├── sub_layer_0_06_protocols/       ← Session init protocols
+│   │   └── sub_layer_0_07+_setup/          ← OS/tool config
 │   └── layer_0_99_stages/    ← Universal stages
 ├── layer_1/                  ← Projects, features
 └── layer_-1_research/        ← Research projects
@@ -166,8 +169,8 @@ When working anywhere in this system—no matter how deeply nested—AALang prov
 ## Session Workflow
 
 1. **Sync**: `git pull && git status`
-2. **Read rules**: `sub_layer_0_04_rules/` (especially modification protocol)
-3. **Read init protocol**: `sub_layer_0_05_protocols/universal_init_prompt.md`
+2. **Read rules**: `sub_layer_0_05_rules/` (especially modification protocol)
+3. **Read init protocol**: `sub_layer_0_06_protocols/universal_init_prompt.md`
 4. **Identify context**: What layer? What stage?
 5. **Do work**: Follow stage guidelines
 6. **Commit/push**: Per AI_CONTEXT_COMMIT_PUSH_RULE.md
@@ -177,7 +180,7 @@ When working anywhere in this system—no matter how deeply nested—AALang prov
 - **Naming**: Use underscores: `layer_0_01_name`, `stage_0_02_name`
 - **Layers**: Lower numbers = more universal (Layer 0 applies to all)
 - **Stages**: 01-11, workflow phases
-- **Sub-layers**: 01-06+, content types (ai_system, knowledge, principles, rules, protocols, setup)
+- **Sub-layers**: 01-07+, content types (ai_system, context_agents, knowledge, principles, rules, protocols, setup)
 
 ---
 
@@ -202,12 +205,12 @@ When this file is loaded, update state actors:
 
 ### Required Reads (CRITICAL)
 Before proceeding with any work, agent MUST load:
-- `layer_0/layer_0_03_sub_layers/sub_layer_0_04_rules/` (universal rules)
-- `layer_0/layer_0_03_sub_layers/sub_layer_0_05_protocols/` (session protocols)
+- `layer_0/layer_0_03_sub_layers/sub_layer_0_05_rules/` (universal rules)
+- `layer_0/layer_0_03_sub_layers/sub_layer_0_06_protocols/` (session protocols)
 
 ### Context Agents Location
 AALang context agents for managing context loading:
-`layer_0/layer_0_03_sub_layers/sub_layer_0_01_context_agents/`
+`layer_0/layer_0_03_sub_layers/sub_layer_0_02_context_agents/`
 
 ### Layer Inheritance Model
 ```
@@ -217,6 +220,6 @@ layer_0 (universal base) → layer_1 (projects, can override) → layer_2+ (feat
 **Key Principle**: Higher-numbered layers inherit from lower layers but CAN override when needed.
 
 See full documentation:
-- `sub_layer_0_04_rules/context_priority_rules.md` - Override rules
-- `sub_layer_0_04_rules/context_scope_boundaries.md` - Scope definitions
-- `sub_layer_0_05_protocols/context_loading_protocol.md` - 4-phase loading sequence
+- `sub_layer_0_05_rules/context_priority_rules.md` - Override rules
+- `sub_layer_0_05_rules/context_scope_boundaries.md` - Scope definitions
+- `sub_layer_0_06_protocols/context_loading_protocol.md` - 4-phase loading sequence

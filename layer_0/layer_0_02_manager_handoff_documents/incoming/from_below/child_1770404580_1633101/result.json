@@ -1,0 +1,31 @@
+{
+  "taskId": "live_test_001",
+  "status": "completed",
+  "result": {
+    "summary": "Found 3 JSON-LD files in the context_agents directory",
+    "content": {
+      "totalFiles": 6,
+      "jsonldFiles": 3,
+      "jsonldFileList": [
+        "context_loading_gab.jsonld",
+        "layer_0_orchestrator.gab.jsonld",
+        "runtime/orchestrator_runtime.jsonld"
+      ],
+      "allFiles": [
+        "ARCHITECTURE.md",
+        "README.md",
+        "context_loading_gab.jsonld",
+        "layer_0_orchestrator.gab.jsonld",
+        "runtime/orchestrator_runtime.jsonld",
+        "tests/integration_test.sh"
+      ]
+    },
+    "confidence": 1.0
+  },
+  "metadata": {
+    "agentType": "claude",
+    "depth": 1,
+    "executionTime": "immediate",
+    "directoryScanned": "layer_0/layer_0_03_sub_layers/sub_layer_0_02_context_agents/"
+  }
+}

@@ -1,0 +1,40 @@
+{
+    "orchestration": {
+        "taskId": "hierarchical_001",
+        "description": "Refactor a large module by analyzing each component",
+        "strategy": "hierarchical",
+        "aggregation": "merge",
+        "notes": "Root spawns module analyzers, which may spawn function analyzers"
+    },
+    "task": {
+        "description": "Analyze and refactor the authentication module",
+        "agentType": "claude",
+        "context": {
+            "module": "src/auth/",
+            "depth": 0,
+            "maxDepth": 3
+        }
+    },
+    "decompositionHints": {
+        "level1": {
+            "strategy": "Split by file",
+            "agents": ["claude", "codex"],
+            "example": "Each large file gets its own agent"
+        },
+        "level2": {
+            "strategy": "Split by function/class",
+            "agents": ["codex"],
+            "example": "Complex functions analyzed separately"
+        },
+        "level3": {
+            "strategy": "Atomic operations only",
+            "note": "No further decomposition - execute directly"
+        }
+    },
+    "safeguards": {
+        "maxRecursionDepth": 3,
+        "maxConcurrentAgents": 3,
+        "similarityThreshold": 0.8,
+        "note": "If child task is >80% similar to parent, HALT and escalate"
+    }
+}
