@@ -9,7 +9,7 @@ Sub-layers containing organized universal content: AI system, knowledge, princip
 
 | Name | Type | Keywords | Description |
 |------|------|----------|-------------|
-| sub_layer_0_01_ai_system | dir (submodule) | aalang, ai, language, compiler | AALang AI system (git submodule) |
+| sub_layer_0_01_ai_system | dir (submodule) | aalang, ai, language, compiler | AALang AI system (fork of yenrab/AALang-Gab, **use dawson branch**) |
 | sub_layer_0_02_knowledge_system | dir | knowledge, domain, reference | Domain knowledge base |
 | sub_layer_0_03_principles | dir | principles, guidelines, philosophy | Guiding principles and philosophy |
 | sub_layer_0_04_rules | dir | rules, constraints, protocol, **CRITICAL** | Universal rules - READ FIRST |
