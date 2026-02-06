@@ -89,8 +89,10 @@ layer_0/layer_0_03_sub_layers/sub_layer_0_04_rules/
 - It applies to **all layers** (0, 1, -1, etc.)
 - It applies to **all stages** (01-11)
 - It applies to **all sub_layers and sub_stages**
+- It applies to **all subxn layers** (sub-sub layers at any nesting depth)
+- It applies to **all subxn stages** (sub-sub stages at any nesting depth)
 
-When working anywhere in this system, AALang provides the underlying AI capabilities and patterns.
+When working anywhere in this system—no matter how deeply nested—AALang provides the underlying AI capabilities and patterns.
 
 **Location**: `layer_0/layer_0_03_sub_layers/sub_layer_0_01_ai_system/`
 
