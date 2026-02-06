@@ -1,0 +1,115 @@
+{
+  "@context": {
+    "@vocab": "https://aalang.org/",
+    "gab": "https://aalang.org/gab/",
+    "ctx": "https://layer-stage.dev/context/",
+    "ls": "https://layer-stage.dev/"
+  },
+  "@id": "ctx:ContextLoadingAgent",
+  "@type": "gab:Agent",
+
+  "name": "Context Loading Agent",
+  "version": "1.0.0",
+  "description": "Manages the 4-phase context loading sequence for layer-stage system sessions. Ensures agents understand their position and applicable rules before starting work.",
+
+  "inheritsFrom": "gab:BaseAgent",
+
+  "stateActors": [
+    { "@ref": "ctx:ContextLoadingStateActor" },
+    { "@ref": "ctx:ContextConfidenceStateActor" },
+    { "@ref": "ctx:NavigationStateActor" },
+    { "@ref": "ctx:DebugContextStateActor" }
+  ],
+
+  "modes": [
+    { "@ref": "ctx:ContextLoadingMode" },
+    { "@ref": "ctx:ContextValidationMode" },
+    { "@ref": "ctx:ContextPropagationMode" },
+    { "@ref": "ctx:ContextDeliveryMode" }
+  ],
+
+  "workflow": {
+    "@type": "gab:Workflow",
+    "initialMode": { "@ref": "ctx:ContextLoadingMode" },
+    "transitions": [
+      {
+        "@id": "ctx:LoadingToValidation",
+        "from": { "@ref": "ctx:ContextLoadingMode" },
+        "to": { "@ref": "ctx:ContextValidationMode" },
+        "condition": "ctx:ContextConfidenceStateActor.initialConfidence >= 0.6",
+        "description": "Proceed to validation once basic context loaded"
+      },
+      {
+        "@id": "ctx:ValidationToPropagation",
+        "from": { "@ref": "ctx:ContextValidationMode" },
+        "to": { "@ref": "ctx:ContextPropagationMode" },
+        "condition": "ctx:ContextConfidenceStateActor.validationConfidence >= 0.8",
+        "description": "Proceed to propagation once position validated"
+      },
+      {
+        "@id": "ctx:PropagationToDelivery",
+        "from": { "@ref": "ctx:ContextPropagationMode" },
+        "to": { "@ref": "ctx:ContextDeliveryMode" },
+        "condition": "ctx:ContextConfidenceStateActor.propagationComplete == true",
+        "description": "Proceed to delivery once inheritance resolved"
+      }
+    ]
+  },
+
+  "invocationTriggers": [
+    "Session start",
+    "Directory change into layer-stage system",
+    "Explicit /context-load command",
+    "Agent spawn requiring context"
+  ],
+
+  "inheritanceModel": {
+    "@id": "ctx:LayerInheritanceModel",
+    "@type": "ls:InheritanceModel",
+    "description": "Higher-numbered layers inherit from lower layers but can override when necessary",
+
+    "rules": [
+      {
+        "name": "Base Inheritance",
+        "description": "Layer N inherits all context from layers 0 through N-1",
+        "example": "Layer 2 inherits from Layer 1, which inherits from Layer 0"
+      },
+      {
+        "name": "Override Capability",
+        "description": "Higher layers CAN override rules/context from lower layers when necessary",
+        "example": "Layer 1 project can override Layer 0 default if project needs differ"
+      },
+      {
+        "name": "Chain Override",
+        "description": "Within same layer, later files in chain override earlier files",
+        "example": "CLAUDE.local.md overrides CLAUDE.md for personal preferences"
+      },
+      {
+        "name": "Explicit Override",
+        "description": "Overrides should be explicit and documented, not silent",
+        "marker": "@override"
+      }
+    ],
+
+    "layerPrecedence": {
+      "description": "Higher layer numbers have higher precedence (can override lower)",
+      "order": ["layer_-1", "layer_0", "layer_1", "layer_2", "..."],
+      "note": "layer_-1 (research) is lowest, layer_0 is universal base, layer_1+ are projects"
+    }
+  },
+
+  "patterns": {
+    "modeTransition": {
+      "@ref": "gab:ModeTransitionPattern",
+      "description": "Confidence-gated transitions between phases"
+    },
+    "stateIsolation": {
+      "@ref": "gab:StateIsolationPattern",
+      "description": "Each mode has private state, shared via actors"
+    },
+    "qualityChecklist": {
+      "@ref": "gab:QualityChecklistPattern",
+      "description": "Systematic verification before completion"
+    }
+  }
+}

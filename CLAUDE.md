@@ -178,3 +178,45 @@ When working anywhere in this system—no matter how deeply nested—AALang prov
 - **Layers**: Lower numbers = more universal (Layer 0 applies to all)
 - **Stages**: 01-11, workflow phases
 - **Sub-layers**: 01-06+, content types (ai_system, knowledge, principles, rules, protocols, setup)
+
+---
+
+## AALang Integration
+
+@agent ctx:ContextLoadingAgent
+
+### Context Chain Position
+- **Position**: 5 of 5 (Layer-Stage Root)
+- **Parent**: ../CLAUDE.md (code)
+- **Children**: layer_0/, layer_1/, layer_-1_research/
+- **Priority**: absolute (layer-stage system root)
+- **Inherits**: all parent CLAUDE.md files
+- **Can Override**: parent context (this is where layer-stage rules take over)
+
+### On Load
+When this file is loaded, update state actors:
+- `ctx:ContextLoadingStateActor.loadedFiles` += .../0_layer_universal/CLAUDE.md
+- `ctx:NavigationStateActor.depth` = 4
+- `ctx:NavigationStateActor.currentLayer` = 0 (entering layer-stage system)
+- `ctx:ContextConfidenceStateActor.layerIdentified` = 1.0
+
+### Required Reads (CRITICAL)
+Before proceeding with any work, agent MUST load:
+- `layer_0/layer_0_03_sub_layers/sub_layer_0_04_rules/` (universal rules)
+- `layer_0/layer_0_03_sub_layers/sub_layer_0_05_protocols/` (session protocols)
+
+### Context Agents Location
+AALang context agents for managing context loading:
+`layer_0/layer_0_03_sub_layers/sub_layer_0_01_context_agents/`
+
+### Layer Inheritance Model
+```
+layer_0 (universal base) → layer_1 (projects, can override) → layer_2+ (features, can override)
+```
+
+**Key Principle**: Higher-numbered layers inherit from lower layers but CAN override when needed.
+
+See full documentation:
+- `sub_layer_0_04_rules/context_priority_rules.md` - Override rules
+- `sub_layer_0_04_rules/context_scope_boundaries.md` - Scope definitions
+- `sub_layer_0_05_protocols/context_loading_protocol.md` - 4-phase loading sequence
