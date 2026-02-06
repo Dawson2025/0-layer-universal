@@ -68,13 +68,23 @@ git add . && git commit -m "message"
 git push origin dawson
 ```
 
-## Relationship to Better AI System
+## Relationship to Layer-Stage System
 
-This external AI system serves as a reference implementation and research resource for the better_ai_system project. It provides:
+**AALang is the primary way agents work within our entire layer-stage system.** It is not just a reference - it is the foundational AI system used at:
+
+- **Every layer** (layer_0, layer_1, layer_-1, etc.)
+- **Every stage** (01-11: request_gathering through archives)
+- **Every sub_layer** (knowledge, principles, rules, protocols, setup)
+- **Every sub_stage** and nested structure
+
+When operating anywhere in the layer-stage hierarchy, agents use AALang as the underlying AI system.
+
+## What AALang Provides
 
 - AI language design patterns
-- Compiler architecture insights
+- Compiler architecture (gab compiler)
 - Language specification approaches (JSON-LD based)
+- The foundational capabilities for how agents work
 
 ## Key Files in AALang
 

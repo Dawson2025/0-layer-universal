@@ -81,6 +81,21 @@ layer_0/layer_0_03_sub_layers/sub_layer_0_04_rules/
 └── FILE_PATH_LINKING_RULE.md             ← [CRITICAL] Always include file paths
 ```
 
+## Primary AI System
+
+**AALang** (`sub_layer_0_01_ai_system/`) is the primary AI system used throughout the entire layer-stage framework:
+
+- It is **how agents work** at every level
+- It applies to **all layers** (0, 1, -1, etc.)
+- It applies to **all stages** (01-11)
+- It applies to **all sub_layers and sub_stages**
+
+When working anywhere in this system, AALang provides the underlying AI capabilities and patterns.
+
+**Location**: `layer_0/layer_0_03_sub_layers/sub_layer_0_01_ai_system/`
+
+---
+
 ## Navigation: How to Find Things
 
 ### Sub-Layers (layer_0/layer_0_03_sub_layers/)

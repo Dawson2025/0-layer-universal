@@ -18,12 +18,16 @@
 2. Check `hand_off_documents/incoming/from_below/` for results/escalations from sub_layers
 3. Process pending work or delegate to appropriate sub_layer
 
+## Primary AI System
+
+**sub_layer_0_01_ai_system** contains AALang - the primary way agents work within our layer-stage system. It is used at every layer, stage, sub_layer, and sub_stage throughout the entire framework.
+
 ## Children (Universal Sub_layers)
 
 | Number | Name | Purpose |
 |--------|------|---------|
 | 00 | sub_layer_registry | Sub_layer definitions and metadata (data only) |
-| 01 | ai_system | **PRIMARY AI SYSTEM** - AALang (submodule: Dawson2025/AALang-Gab, fork of yenrab/AALang-Gab, **use dawson branch**) |
+| 01 | ai_system | **PRIMARY AI SYSTEM** - AALang: how agents work at all levels (submodule: Dawson2025/AALang-Gab, fork of yenrab/AALang-Gab, **use dawson branch**) |
 | 02 | knowledge_system | Domain knowledge, reference materials |
 | 03 | principles | Guiding principles for decisions |
 | 04 | rules | Universal rules (modification protocol, commit rule, etc.) |
