@@ -1,0 +1,46 @@
+{
+  "$schema": "https://layer-stage.dev/context/state-schema.json",
+  "version": "1.0.0",
+  "description": "Persistent state for context loading across sessions",
+
+  "lastUpdated": null,
+  "sessionId": null,
+
+  "contextLoadingState": {
+    "loadedFiles": [],
+    "claudeMdChain": [],
+    "rulesLoaded": false,
+    "protocolsLoaded": false,
+    "knowledgeLoaded": false,
+    "overrides": []
+  },
+
+  "contextConfidenceState": {
+    "layerIdentified": 0.0,
+    "stageIdentified": 0.0,
+    "rulesAwareness": 0.0,
+    "inheritanceResolved": 0.0,
+    "requiredContextLoaded": 0.0,
+    "overallConfidence": 0.0
+  },
+
+  "navigationState": {
+    "currentLayer": null,
+    "currentStage": null,
+    "currentSubLayer": null,
+    "depth": 0,
+    "layerStageDepth": 0,
+    "path": null,
+    "parent": null,
+    "children": [],
+    "inheritanceChain": []
+  },
+
+  "debugContextState": {
+    "debugMode": false,
+    "verboseLoading": false,
+    "showConfidenceScores": false,
+    "showInheritance": false,
+    "logDecisions": true
+  }
+}

@@ -515,6 +515,163 @@ sub_layer_{L}_{NN}_{name}
 
 ---
 
+## AALang Context Agents (NEW - 2026-02-05)
+
+Our system now includes **AALang context agents** that formalize the context loading process.
+
+### Agent-Based Context Loading
+
+```
+┌─────────────────────────────────────────────────────────────────────────────────┐
+│         AALANG CONTEXT LOADING AGENT                                             │
+│         (ctx:ContextLoadingAgent)                                                │
+└─────────────────────────────────────────────────────────────────────────────────┘
+
+    ╔═══════════════════════════════════════════════════════════════════════════╗
+    ║  PHASE 1: CONTEXT LOADING MODE                                             ║
+    ║  ═══════════════════════════════                                           ║
+    ║                                                                            ║
+    ║  • Load ~/.claude/CLAUDE.md chain                                          ║
+    ║  • Track each file in ContextLoadingStateActor                             ║
+    ║  • Calculate initial confidence                                            ║
+    ║                                                                            ║
+    ║  EXIT: overallConfidence >= 0.6                                            ║
+    ╚═══════════════════════════════════════════════════════════════════════════╝
+                    │
+                    ▼
+    ╔═══════════════════════════════════════════════════════════════════════════╗
+    ║  PHASE 2: CONTEXT VALIDATION MODE                                          ║
+    ║  ═══════════════════════════════                                           ║
+    ║                                                                            ║
+    ║  • Identify current layer (-1, 0, 1, 2, ...)                               ║
+    ║  • Identify current stage (01-11, if applicable)                           ║
+    ║  • Check required context loaded (rules, protocols)                        ║
+    ║  • Update NavigationStateActor                                             ║
+    ║                                                                            ║
+    ║  EXIT: overallConfidence >= 0.8                                            ║
+    ╚═══════════════════════════════════════════════════════════════════════════╝
+                    │
+                    ▼
+    ╔═══════════════════════════════════════════════════════════════════════════╗
+    ║  PHASE 3: CONTEXT PROPAGATION MODE                                         ║
+    ║  ═══════════════════════════════                                           ║
+    ║                                                                            ║
+    ║  • Build inheritance chain (layer_0 → layer_1 → layer_2 → ...)             ║
+    ║  • Detect @override markers                                                ║
+    ║  • Resolve priority conflicts                                              ║
+    ║  • Higher layer CAN override lower layer                                   ║
+    ║                                                                            ║
+    ║  EXIT: All conflicts resolved                                              ║
+    ╚═══════════════════════════════════════════════════════════════════════════╝
+                    │
+                    ▼
+    ╔═══════════════════════════════════════════════════════════════════════════╗
+    ║  PHASE 4: CONTEXT DELIVERY MODE                                            ║
+    ║  ═══════════════════════════════                                           ║
+    ║                                                                            ║
+    ║  • If debugMode: show summary                                              ║
+    ║  • Confirm ready for work                                                  ║
+    ║  • Update context_state.json for cross-session persistence                 ║
+    ║                                                                            ║
+    ║  EXIT: User provides task                                                  ║
+    ╚═══════════════════════════════════════════════════════════════════════════╝
+```
+
+### State Actors
+
+| Actor | Purpose | Persisted |
+|-------|---------|-----------|
+| `ContextLoadingStateActor` | Track loaded files, chain position | Yes |
+| `ContextConfidenceStateActor` | Track confidence scores (0.0-1.0) | Yes |
+| `NavigationStateActor` | Track layer/stage/sub_layer position | Yes |
+| `DebugContextStateActor` | Control debug output | Yes |
+
+### Layer Inheritance Model
+
+```
+┌─────────────────────────────────────────────────────────────────────────────────┐
+│         LAYER INHERITANCE (Higher can override lower)                            │
+└─────────────────────────────────────────────────────────────────────────────────┘
+
+    layer_0 (universal base)
+        │
+        ├── Provides default rules, protocols, knowledge
+        │
+        ▼
+    layer_1 (project)
+        │
+        ├── INHERITS all of layer_0
+        ├── CAN OVERRIDE layer_0 with @override marker
+        │
+        ▼
+    layer_2+ (sub-projects)
+        │
+        ├── INHERITS all of layer_0 + layer_1
+        └── CAN OVERRIDE any inherited context
+
+    PRECEDENCE:
+    1. Higher layer number wins (layer_1 > layer_0)
+    2. Later in chain wins (within same layer)
+    3. CLAUDE.local.md wins (personal overrides)
+    4. Explicit @override wins over implicit
+```
+
+### Cross-Session Persistence
+
+State is persisted to: `.claude/context_state.json`
+
+```json
+{
+  "contextLoadingState": { "loadedFiles": [...], "overrides": [...] },
+  "contextConfidenceState": { "overallConfidence": 0.85 },
+  "navigationState": { "currentLayer": 1, "currentStage": "06" },
+  "debugContextState": { "debugMode": false }
+}
+```
+
+### AALang Agent Files
+
+Location: `layer_0/layer_0_03_sub_layers/sub_layer_0_01_context_agents/`
+
+| File | Purpose |
+|------|---------|
+| `context_loading_agent.jsonld` | Main agent with 4-phase workflow |
+| `context_state_actors.jsonld` | State actor definitions |
+| `context_modes.jsonld` | Mode definitions |
+| `README.md` | Documentation |
+
+### CLAUDE.md Integration
+
+Each CLAUDE.md in the chain includes:
+
+```markdown
+## AALang Integration
+
+@agent ctx:ContextLoadingAgent
+
+### Context Chain Position
+- **Position**: N of M
+- **Parent**: path/to/parent/CLAUDE.md
+- **Children**: [child paths]
+- **Inherits**: layer_0
+- **Can Override**: layer_0
+
+### On Load
+- ctx:ContextLoadingStateActor.loadedFiles += this file
+- ctx:NavigationStateActor.currentLayer = N
+```
+
+### Related Documentation
+
+| Document | Location |
+|----------|----------|
+| Context Loading Protocol | `sub_layer_0_05_protocols/context_loading_protocol.md` |
+| Priority Rules | `sub_layer_0_04_rules/context_priority_rules.md` |
+| Scope Boundaries | `sub_layer_0_04_rules/context_scope_boundaries.md` |
+| Quality Checklist | `sub_layer_0_05_protocols/context_quality_checklist.md` |
+
+---
+
 *Last updated: 2026-02-05*
 
 **Related Documentation**:
