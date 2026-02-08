@@ -12,31 +12,49 @@
       "severity": "absolute",
       "action": "Spawn child agents beyond maximum recursion depth",
       "details": "Do NOT spawn child agents when currentDepth >= maxDepth (default: 5). This prevents infinite recursion and resource exhaustion. When depth limit is reached, the orchestrator MUST either execute the task directly or escalate to parent.",
-      "appliesTo": ["spawning", "delegation", "all modes"]
+      "appliesTo": [
+        "spawning",
+        "delegation",
+        "all modes"
+      ]
     },
     {
       "severity": "absolute",
       "action": "Spawn child agent with identical task to parent",
       "details": "Do NOT spawn a child agent with a task that is semantically identical to the parent's task. This creates infinite delegation loops. Tasks MUST be decomposed or transformed before delegation. Use orch:TaskSimilarityStateActor to track and compare task signatures.",
-      "appliesTo": ["spawning", "delegation", "DelegationMode"]
+      "appliesTo": [
+        "spawning",
+        "delegation",
+        "DelegationMode"
+      ]
     },
     {
       "severity": "critical",
       "action": "Spawn more concurrent agents than allowed limit",
       "details": "Do NOT spawn more than maxConcurrent (default: 3) child agents simultaneously. Wait for existing children to complete before spawning new ones. Use orch:ResourceBudgetStateActor to track concurrent count.",
-      "appliesTo": ["spawning", "resource management"]
+      "appliesTo": [
+        "spawning",
+        "resource management"
+      ]
     },
     {
       "severity": "critical",
       "action": "Skip hand_off_documents protocol for inter-layer communication",
       "details": "ALL inter-layer communication MUST go through hand_off_documents. Do NOT use direct invocation, shared memory, or other IPC mechanisms. This ensures auditability and enables asynchronous orchestration.",
-      "appliesTo": ["communication", "delegation", "reporting"]
+      "appliesTo": [
+        "communication",
+        "delegation",
+        "reporting"
+      ]
     },
     {
       "severity": "standard",
       "action": "Continue spawning after circuit breaker threshold",
       "details": "After 3 consecutive failures for a specific agent type, stop spawning that agent type and either try alternative agent or escalate. Circuit breaker resets after successful spawn.",
-      "appliesTo": ["spawning", "error handling"]
+      "appliesTo": [
+        "spawning",
+        "error handling"
+      ]
     }
   ],
   "@graph": [
@@ -98,8 +116,14 @@
       "entryPoint": {
         "layer": 0,
         "scope": "universal",
-        "canSpawnTo": ["layer_1", "layer_2", "layer_-1"],
-        "canEscalateTo": ["user"],
+        "canSpawnTo": [
+          "layer_1",
+          "layer_2",
+          "layer_-1"
+        ],
+        "canEscalateTo": [
+          "user"
+        ],
         "handOffDocumentsPath": "layer_0/layer_0_02_manager_handoff_documents/"
       },
       "spawnableAgents": [
@@ -137,11 +161,15 @@
           "severity": "critical",
           "action": "Use spawn_agent.sh for spawning child agents",
           "details": "Use the spawn_agent.sh prototype at layer_-1_research/layer_-1_better_ai_system/layer_0_group/layer_0_features/layer_0_feature_multi_agent_orchestration/layer_1_sub_feature_agent_spawning/prototype/spawn_agent.sh for all child agent spawning. This ensures proper safeguards and hand_off_documents integration.",
-          "appliesTo": ["spawning", "DelegationMode"]
+          "appliesTo": [
+            "spawning",
+            "DelegationMode"
+          ]
         }
-      ]
+      ],
+      "actorNameConsistency": "Actor names (orch:ReceiveActor1, etc.) must be conserved between different sessions",
+      "personaNameConsistency": "Persona human names must be conserved between different sessions (detect user language and use appropriate names)"
     },
-
     {
       "@id": "orch:ReceiveMode",
       "@type": "gab:Mode",
@@ -154,9 +182,14 @@
         "Do NOT proceed to DelegationMode until task is parsed and understood"
       ],
       "isolatedState": "orch:ReceiveModeState",
-      "contains": ["orch:ReceivePersona1", "orch:ReceivePersona2"],
+      "contains": [
+        "orch:ReceivePersona1",
+        "orch:ReceivePersona2"
+      ],
       "initialMode": true,
-      "precedes": ["orch:DelegationMode"],
+      "precedes": [
+        "orch:DelegationMode"
+      ],
       "handOffDocuments": {
         "incoming": {
           "fromAbove": "layer_0/layer_0_02_manager_handoff_documents/incoming/from_above/",
@@ -178,8 +211,17 @@
         "Check orch:LayerStateActor for current position context",
         "Decide: execute locally vs delegate vs escalate"
       ],
-      "canMessage": ["orch:ReceivePersona2", "orch:DelegationPersona1", "user"],
-      "canReceiveFrom": ["user", "orch:ReceivePersona2", "orch:ReportPersona1"]
+      "canMessage": [
+        "orch:ReceivePersona2",
+        "orch:DelegationPersona1",
+        "user"
+      ],
+      "canReceiveFrom": [
+        "user",
+        "orch:ReceivePersona2",
+        "orch:ReportPersona1"
+      ],
+      "personality": "Thorough, analytical, ensures completeness before proceeding"
     },
     {
       "@id": "orch:ReceivePersona2",
@@ -195,10 +237,14 @@
         "Log received tasks to orch:TaskStateActor",
         "Flag any malformed or suspicious task files"
       ],
-      "canMessage": ["orch:ReceivePersona1"],
-      "canReceiveFrom": ["orch:ReceivePersona1"]
+      "canMessage": [
+        "orch:ReceivePersona1"
+      ],
+      "canReceiveFrom": [
+        "orch:ReceivePersona1"
+      ],
+      "personality": "Efficient, detail-oriented, handles routine execution"
     },
-
     {
       "@id": "orch:DelegationMode",
       "@type": "gab:Mode",
@@ -213,8 +259,13 @@
         "Do NOT spawn beyond depth limit"
       ],
       "isolatedState": "orch:DelegationModeState",
-      "contains": ["orch:DelegationPersona1", "orch:DelegationPersona2"],
-      "precedes": ["orch:MonitoringMode"],
+      "contains": [
+        "orch:DelegationPersona1",
+        "orch:DelegationPersona2"
+      ],
+      "precedes": [
+        "orch:MonitoringMode"
+      ],
       "handOffDocuments": {
         "outgoing": {
           "toBelow": "layer_0/layer_0_02_manager_handoff_documents/outgoing/to_below/"
@@ -242,8 +293,16 @@
         "Determine which layer child agent should operate in (layer_1, layer_2, etc.)",
         "Create subtask JSON files with proper context inheritance"
       ],
-      "canMessage": ["orch:DelegationPersona2", "orch:MonitoringPersona1", "user"],
-      "canReceiveFrom": ["orch:ReceivePersona1", "orch:DelegationPersona2"]
+      "canMessage": [
+        "orch:DelegationPersona2",
+        "orch:MonitoringPersona1",
+        "user"
+      ],
+      "canReceiveFrom": [
+        "orch:ReceivePersona1",
+        "orch:DelegationPersona2"
+      ],
+      "personality": "Thorough, analytical, ensures completeness before proceeding"
     },
     {
       "@id": "orch:DelegationPersona2",
@@ -259,10 +318,14 @@
         "Update orch:ResourceBudgetStateActor with new spawn counts",
         "Handle spawn failures and report to Senior Strategist"
       ],
-      "canMessage": ["orch:DelegationPersona1"],
-      "canReceiveFrom": ["orch:DelegationPersona1"]
+      "canMessage": [
+        "orch:DelegationPersona1"
+      ],
+      "canReceiveFrom": [
+        "orch:DelegationPersona1"
+      ],
+      "personality": "Efficient, detail-oriented, handles routine execution"
     },
-
     {
       "@id": "orch:MonitoringMode",
       "@type": "gab:Mode",
@@ -275,8 +338,13 @@
         "Do NOT proceed to AggregationMode until all children complete or timeout"
       ],
       "isolatedState": "orch:MonitoringModeState",
-      "contains": ["orch:MonitoringPersona1", "orch:MonitoringPersona2"],
-      "precedes": ["orch:AggregationMode"],
+      "contains": [
+        "orch:MonitoringPersona1",
+        "orch:MonitoringPersona2"
+      ],
+      "precedes": [
+        "orch:AggregationMode"
+      ],
       "statusDirectory": "layer_0/layer_0_02_manager_handoff_documents/status/"
     },
     {
@@ -293,8 +361,17 @@
         "Track progress toward task completion",
         "Determine when to transition to AggregationMode"
       ],
-      "canMessage": ["orch:MonitoringPersona2", "orch:DelegationPersona1", "orch:AggregationPersona1", "user"],
-      "canReceiveFrom": ["orch:DelegationPersona1", "orch:MonitoringPersona2"]
+      "canMessage": [
+        "orch:MonitoringPersona2",
+        "orch:DelegationPersona1",
+        "orch:AggregationPersona1",
+        "user"
+      ],
+      "canReceiveFrom": [
+        "orch:DelegationPersona1",
+        "orch:MonitoringPersona2"
+      ],
+      "personality": "Thorough, analytical, ensures completeness before proceeding"
     },
     {
       "@id": "orch:MonitoringPersona2",
@@ -310,10 +387,14 @@
         "Detect and report timeouts to Senior Monitor",
         "Log status changes for audit trail"
       ],
-      "canMessage": ["orch:MonitoringPersona1"],
-      "canReceiveFrom": ["orch:MonitoringPersona1"]
+      "canMessage": [
+        "orch:MonitoringPersona1"
+      ],
+      "canReceiveFrom": [
+        "orch:MonitoringPersona1"
+      ],
+      "personality": "Efficient, detail-oriented, handles routine execution"
     },
-
     {
       "@id": "orch:AggregationMode",
       "@type": "gab:Mode",
@@ -326,8 +407,13 @@
         "Build unified result for reporting"
       ],
       "isolatedState": "orch:AggregationModeState",
-      "contains": ["orch:AggregationPersona1", "orch:AggregationPersona2"],
-      "precedes": ["orch:ReportMode"],
+      "contains": [
+        "orch:AggregationPersona1",
+        "orch:AggregationPersona2"
+      ],
+      "precedes": [
+        "orch:ReportMode"
+      ],
       "aggregationStrategies": {
         "merge": "Combine all results into single output",
         "vote": "Select result with highest confidence",
@@ -349,8 +435,16 @@
         "Synthesize final result with appropriate confidence",
         "Identify gaps that may require additional work"
       ],
-      "canMessage": ["orch:AggregationPersona2", "orch:ReportPersona1", "user"],
-      "canReceiveFrom": ["orch:MonitoringPersona1", "orch:AggregationPersona2"]
+      "canMessage": [
+        "orch:AggregationPersona2",
+        "orch:ReportPersona1",
+        "user"
+      ],
+      "canReceiveFrom": [
+        "orch:MonitoringPersona1",
+        "orch:AggregationPersona2"
+      ],
+      "personality": "Thorough, analytical, ensures completeness before proceeding"
     },
     {
       "@id": "orch:AggregationPersona2",
@@ -366,10 +460,14 @@
         "Organize results by child_id and task_id",
         "Flag missing or invalid results"
       ],
-      "canMessage": ["orch:AggregationPersona1"],
-      "canReceiveFrom": ["orch:AggregationPersona1"]
+      "canMessage": [
+        "orch:AggregationPersona1"
+      ],
+      "canReceiveFrom": [
+        "orch:AggregationPersona1"
+      ],
+      "personality": "Efficient, detail-oriented, handles routine execution"
     },
-
     {
       "@id": "orch:ReportMode",
       "@type": "gab:Mode",
@@ -382,8 +480,13 @@
         "Transition back to ReceiveMode for next task"
       ],
       "isolatedState": "orch:ReportModeState",
-      "contains": ["orch:ReportPersona1", "orch:ReportPersona2"],
-      "precedes": ["orch:ReceiveMode"],
+      "contains": [
+        "orch:ReportPersona1",
+        "orch:ReportPersona2"
+      ],
+      "precedes": [
+        "orch:ReceiveMode"
+      ],
       "cyclical": true,
       "handOffDocuments": {
         "outgoing": {
@@ -405,8 +508,16 @@
         "Determine if task is complete or needs follow-up",
         "Signal transition back to ReceiveMode"
       ],
-      "canMessage": ["orch:ReportPersona2", "orch:ReceivePersona1", "user"],
-      "canReceiveFrom": ["orch:AggregationPersona1", "orch:ReportPersona2"]
+      "canMessage": [
+        "orch:ReportPersona2",
+        "orch:ReceivePersona1",
+        "user"
+      ],
+      "canReceiveFrom": [
+        "orch:AggregationPersona1",
+        "orch:ReportPersona2"
+      ],
+      "personality": "Thorough, analytical, ensures completeness before proceeding"
     },
     {
       "@id": "orch:ReportPersona2",
@@ -422,10 +533,14 @@
         "Archive completed task files if configured",
         "Notify Senior Generator of write completion"
       ],
-      "canMessage": ["orch:ReportPersona1"],
-      "canReceiveFrom": ["orch:ReportPersona1"]
+      "canMessage": [
+        "orch:ReportPersona1"
+      ],
+      "canReceiveFrom": [
+        "orch:ReportPersona1"
+      ],
+      "personality": "Efficient, detail-oriented, handles routine execution"
     },
-
     {
       "@id": "orch:LayerStateActor",
       "@type": "gab:Actor",
@@ -436,8 +551,13 @@
       "isolatedContext": {
         "currentLayer": 0,
         "currentScope": "universal",
-        "inheritanceChain": ["layer_0"],
-        "childLayers": ["layer_1", "layer_-1"],
+        "inheritanceChain": [
+          "layer_0"
+        ],
+        "childLayers": [
+          "layer_1",
+          "layer_-1"
+        ],
         "parentLayer": null,
         "layerCapabilities": {
           "canOverride": false,
@@ -446,7 +566,9 @@
           "canEscalate": true
         }
       },
-      "contains": ["orch:LayerStatePersona"]
+      "contains": [
+        "orch:LayerStatePersona"
+      ]
     },
     {
       "@id": "orch:LayerStatePersona",
@@ -461,10 +583,14 @@
         "Validate layer transitions are allowed",
         "Respond to state queries from other personas"
       ],
-      "canMessage": ["all"],
-      "canReceiveFrom": ["all"]
+      "canMessage": [
+        "all"
+      ],
+      "canReceiveFrom": [
+        "all"
+      ],
+      "personality": "Systematic, tracks layer position and inheritance with precision"
     },
-
     {
       "@id": "orch:ChildRegistryStateActor",
       "@type": "gab:Actor",
@@ -490,7 +616,9 @@
           }
         }
       },
-      "contains": ["orch:ChildRegistryStatePersona"]
+      "contains": [
+        "orch:ChildRegistryStatePersona"
+      ]
     },
     {
       "@id": "orch:ChildRegistryStatePersona",
@@ -505,10 +633,14 @@
         "Provide child lookup by childId or taskId",
         "Clean up completed children when requested"
       ],
-      "canMessage": ["all"],
-      "canReceiveFrom": ["all"]
+      "canMessage": [
+        "all"
+      ],
+      "canReceiveFrom": [
+        "all"
+      ],
+      "personality": "Meticulous, maintains accurate registry of all spawned agents"
     },
-
     {
       "@id": "orch:TaskStateActor",
       "@type": "gab:Actor",
@@ -526,13 +658,17 @@
             "parentTaskId": "parent task or null",
             "description": "task description",
             "status": "received|delegating|monitoring|aggregating|reporting|completed",
-            "subtasks": ["array of child taskIds"],
+            "subtasks": [
+              "array of child taskIds"
+            ],
             "receivedAt": "ISO timestamp",
             "completedAt": "ISO timestamp or null"
           }
         }
       },
-      "contains": ["orch:TaskStatePersona"]
+      "contains": [
+        "orch:TaskStatePersona"
+      ]
     },
     {
       "@id": "orch:TaskStatePersona",
@@ -547,10 +683,14 @@
         "Maintain parent-child task relationships",
         "Provide task history for reporting"
       ],
-      "canMessage": ["all"],
-      "canReceiveFrom": ["all"]
+      "canMessage": [
+        "all"
+      ],
+      "canReceiveFrom": [
+        "all"
+      ],
+      "personality": "Organized, tracks task decomposition and progress accurately"
     },
-
     {
       "@id": "orch:ResourceBudgetStateActor",
       "@type": "gab:Actor",
@@ -565,14 +705,28 @@
         "maxConcurrent": 3,
         "defaultTimeout": 300,
         "circuitBreaker": {
-          "claude": { "failures": 0, "tripped": false },
-          "codex": { "failures": 0, "tripped": false },
-          "gemini": { "failures": 0, "tripped": false },
-          "aider": { "failures": 0, "tripped": false }
+          "claude": {
+            "failures": 0,
+            "tripped": false
+          },
+          "codex": {
+            "failures": 0,
+            "tripped": false
+          },
+          "gemini": {
+            "failures": 0,
+            "tripped": false
+          },
+          "aider": {
+            "failures": 0,
+            "tripped": false
+          }
         },
         "circuitBreakerThreshold": 3
       },
-      "contains": ["orch:ResourceBudgetStatePersona"]
+      "contains": [
+        "orch:ResourceBudgetStatePersona"
+      ]
     },
     {
       "@id": "orch:ResourceBudgetStatePersona",
@@ -587,16 +741,20 @@
         "Reset circuit breaker after successful spawn",
         "Report resource availability to DelegationPersona1"
       ],
-      "canMessage": ["all"],
-      "canReceiveFrom": ["all"],
+      "canMessage": [
+        "all"
+      ],
+      "canReceiveFrom": [
+        "all"
+      ],
       "safeguardChecks": {
         "canSpawn": {
           "condition": "currentDepth < maxDepth AND currentConcurrent < maxConcurrent AND NOT circuitBreaker[agentType].tripped",
           "onFail": "REJECT spawn request and report reason"
         }
-      }
+      },
+      "personality": "Conservative, enforces resource limits and prevents overallocation"
     },
-
     {
       "@id": "orch:StageStateActor",
       "@type": "gab:Actor",
@@ -608,20 +766,55 @@
         "currentStage": null,
         "stageHistory": [],
         "stages": {
-          "01": { "name": "request_gathering", "specialist": null },
-          "02": { "name": "research", "specialist": null },
-          "03": { "name": "instructions", "specialist": null },
-          "04": { "name": "planning", "specialist": null },
-          "05": { "name": "design", "specialist": null },
-          "06": { "name": "development", "specialist": null },
-          "07": { "name": "testing", "specialist": null },
-          "08": { "name": "criticism", "specialist": null },
-          "09": { "name": "fixing", "specialist": null },
-          "10": { "name": "current_product", "specialist": null },
-          "11": { "name": "archives", "specialist": null }
+          "01": {
+            "name": "request_gathering",
+            "specialist": null
+          },
+          "02": {
+            "name": "research",
+            "specialist": null
+          },
+          "03": {
+            "name": "instructions",
+            "specialist": null
+          },
+          "04": {
+            "name": "planning",
+            "specialist": null
+          },
+          "05": {
+            "name": "design",
+            "specialist": null
+          },
+          "06": {
+            "name": "development",
+            "specialist": null
+          },
+          "07": {
+            "name": "testing",
+            "specialist": null
+          },
+          "08": {
+            "name": "criticism",
+            "specialist": null
+          },
+          "09": {
+            "name": "fixing",
+            "specialist": null
+          },
+          "10": {
+            "name": "current_product",
+            "specialist": null
+          },
+          "11": {
+            "name": "archives",
+            "specialist": null
+          }
         }
       },
-      "contains": ["orch:StageStatePersona"]
+      "contains": [
+        "orch:StageStatePersona"
+      ]
     },
     {
       "@id": "orch:StageStatePersona",
@@ -636,30 +829,70 @@
         "Identify stage-specific specialists if defined",
         "Validate stage transitions are logical"
       ],
-      "canMessage": ["all"],
-      "canReceiveFrom": ["all"]
+      "canMessage": [
+        "all"
+      ],
+      "canReceiveFrom": [
+        "all"
+      ],
+      "personality": "Aware, tracks workflow stage transitions and stage-specific context"
     },
-
     {
       "@id": "orch:TaskFormat",
       "@type": "DataFormat",
       "purpose": "Standard format for task files in hand_off_documents",
       "schema": {
-        "taskId": { "type": "string", "required": true },
-        "description": { "type": "string", "required": true },
-        "agentType": { "type": "string", "enum": ["claude", "codex", "gemini", "aider"], "required": false },
+        "taskId": {
+          "type": "string",
+          "required": true
+        },
+        "description": {
+          "type": "string",
+          "required": true
+        },
+        "agentType": {
+          "type": "string",
+          "enum": [
+            "claude",
+            "codex",
+            "gemini",
+            "aider"
+          ],
+          "required": false
+        },
         "context": {
           "type": "object",
           "properties": {
-            "layer": { "type": "number" },
-            "stage": { "type": "string" },
-            "paths": { "type": "array" },
-            "constraints": { "type": "object" }
+            "layer": {
+              "type": "number"
+            },
+            "stage": {
+              "type": "string"
+            },
+            "paths": {
+              "type": "array"
+            },
+            "constraints": {
+              "type": "object"
+            }
           }
         },
-        "priority": { "type": "string", "enum": ["low", "normal", "high", "critical"] },
-        "deadline": { "type": "string", "format": "ISO8601" },
-        "parentTaskId": { "type": "string" }
+        "priority": {
+          "type": "string",
+          "enum": [
+            "low",
+            "normal",
+            "high",
+            "critical"
+          ]
+        },
+        "deadline": {
+          "type": "string",
+          "format": "ISO8601"
+        },
+        "parentTaskId": {
+          "type": "string"
+        }
       }
     },
     {
@@ -667,35 +900,319 @@
       "@type": "DataFormat",
       "purpose": "Standard format for result files in hand_off_documents",
       "schema": {
-        "taskId": { "type": "string", "required": true },
-        "status": { "type": "string", "enum": ["completed", "failed", "partial"], "required": true },
+        "taskId": {
+          "type": "string",
+          "required": true
+        },
+        "status": {
+          "type": "string",
+          "enum": [
+            "completed",
+            "failed",
+            "partial"
+          ],
+          "required": true
+        },
         "result": {
           "type": "object",
           "required": true,
           "properties": {
-            "summary": { "type": "string", "required": true },
-            "content": { "type": "string" },
-            "confidence": { "type": "number", "minimum": 0, "maximum": 1 }
+            "summary": {
+              "type": "string",
+              "required": true
+            },
+            "content": {
+              "type": "string"
+            },
+            "confidence": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            }
           }
         },
         "metadata": {
           "type": "object",
           "properties": {
-            "agentType": { "type": "string" },
-            "depth": { "type": "number" },
-            "executionTime": { "type": "number" },
-            "childCount": { "type": "number" }
+            "agentType": {
+              "type": "string"
+            },
+            "depth": {
+              "type": "number"
+            },
+            "executionTime": {
+              "type": "number"
+            },
+            "childCount": {
+              "type": "number"
+            }
           }
         },
         "auditTrail": {
           "type": "array",
           "items": {
-            "timestamp": { "type": "string" },
-            "action": { "type": "string" },
-            "actor": { "type": "string" }
+            "timestamp": {
+              "type": "string"
+            },
+            "action": {
+              "type": "string"
+            },
+            "actor": {
+              "type": "string"
+            }
           }
         }
       }
+    },
+    {
+      "@id": "orch:ReceiveActor1",
+      "@type": "gab:Actor",
+      "id": "ReceiveActor1",
+      "operatesIn": [
+        "orch:ReceiveMode"
+      ],
+      "activeMode": "orch:ReceiveMode",
+      "persona": "orch:ReceivePersona1",
+      "role": "Senior",
+      "sessionConsistent": true
+    },
+    {
+      "@id": "orch:ReceiveActor2",
+      "@type": "gab:Actor",
+      "id": "ReceiveActor2",
+      "operatesIn": [
+        "orch:ReceiveMode"
+      ],
+      "activeMode": "orch:ReceiveMode",
+      "persona": "orch:ReceivePersona2",
+      "role": "Junior",
+      "sessionConsistent": true
+    },
+    {
+      "@id": "orch:DelegationActor1",
+      "@type": "gab:Actor",
+      "id": "DelegationActor1",
+      "operatesIn": [
+        "orch:DelegationMode"
+      ],
+      "activeMode": "orch:DelegationMode",
+      "persona": "orch:DelegationPersona1",
+      "role": "Senior",
+      "sessionConsistent": true
+    },
+    {
+      "@id": "orch:DelegationActor2",
+      "@type": "gab:Actor",
+      "id": "DelegationActor2",
+      "operatesIn": [
+        "orch:DelegationMode"
+      ],
+      "activeMode": "orch:DelegationMode",
+      "persona": "orch:DelegationPersona2",
+      "role": "Junior",
+      "sessionConsistent": true
+    },
+    {
+      "@id": "orch:MonitoringActor1",
+      "@type": "gab:Actor",
+      "id": "MonitoringActor1",
+      "operatesIn": [
+        "orch:MonitoringMode"
+      ],
+      "activeMode": "orch:MonitoringMode",
+      "persona": "orch:MonitoringPersona1",
+      "role": "Senior",
+      "sessionConsistent": true
+    },
+    {
+      "@id": "orch:MonitoringActor2",
+      "@type": "gab:Actor",
+      "id": "MonitoringActor2",
+      "operatesIn": [
+        "orch:MonitoringMode"
+      ],
+      "activeMode": "orch:MonitoringMode",
+      "persona": "orch:MonitoringPersona2",
+      "role": "Junior",
+      "sessionConsistent": true
+    },
+    {
+      "@id": "orch:AggregationActor1",
+      "@type": "gab:Actor",
+      "id": "AggregationActor1",
+      "operatesIn": [
+        "orch:AggregationMode"
+      ],
+      "activeMode": "orch:AggregationMode",
+      "persona": "orch:AggregationPersona1",
+      "role": "Senior",
+      "sessionConsistent": true
+    },
+    {
+      "@id": "orch:AggregationActor2",
+      "@type": "gab:Actor",
+      "id": "AggregationActor2",
+      "operatesIn": [
+        "orch:AggregationMode"
+      ],
+      "activeMode": "orch:AggregationMode",
+      "persona": "orch:AggregationPersona2",
+      "role": "Junior",
+      "sessionConsistent": true
+    },
+    {
+      "@id": "orch:ReportActor1",
+      "@type": "gab:Actor",
+      "id": "ReportActor1",
+      "operatesIn": [
+        "orch:ReportMode"
+      ],
+      "activeMode": "orch:ReportMode",
+      "persona": "orch:ReportPersona1",
+      "role": "Senior",
+      "sessionConsistent": true
+    },
+    {
+      "@id": "orch:ReportActor2",
+      "@type": "gab:Actor",
+      "id": "ReportActor2",
+      "operatesIn": [
+        "orch:ReportMode"
+      ],
+      "activeMode": "orch:ReportMode",
+      "persona": "orch:ReportPersona2",
+      "role": "Junior",
+      "sessionConsistent": true
+    },
+    {
+      "@id": "orch:ReceiveModeState",
+      "@type": "gab:IsolatedState",
+      "mode": "orch:ReceiveMode",
+      "scope": "private to Receive Mode",
+      "includes": [
+        "Incoming task files parsed",
+        "Task type classification",
+        "Source identification (from_above vs from_below)",
+        "Validation results"
+      ],
+      "readableBy": [
+        "orch:ReceivePersona1",
+        "orch:ReceivePersona2"
+      ],
+      "unreadableBy": [
+        "orch:DelegationPersona1",
+        "orch:DelegationPersona2",
+        "orch:MonitoringPersona1",
+        "orch:MonitoringPersona2",
+        "orch:AggregationPersona1",
+        "orch:AggregationPersona2",
+        "orch:ReportPersona1",
+        "orch:ReportPersona2"
+      ]
+    },
+    {
+      "@id": "orch:DelegationModeState",
+      "@type": "gab:IsolatedState",
+      "mode": "orch:DelegationMode",
+      "scope": "private to Delegation Mode",
+      "includes": [
+        "Task decomposition plan",
+        "Agent type selection rationale",
+        "Spawn commands prepared",
+        "Resource budget checks"
+      ],
+      "readableBy": [
+        "orch:DelegationPersona1",
+        "orch:DelegationPersona2"
+      ],
+      "unreadableBy": [
+        "orch:ReceivePersona1",
+        "orch:ReceivePersona2",
+        "orch:MonitoringPersona1",
+        "orch:MonitoringPersona2",
+        "orch:AggregationPersona1",
+        "orch:AggregationPersona2",
+        "orch:ReportPersona1",
+        "orch:ReportPersona2"
+      ]
+    },
+    {
+      "@id": "orch:MonitoringModeState",
+      "@type": "gab:IsolatedState",
+      "mode": "orch:MonitoringMode",
+      "scope": "private to Monitoring Mode",
+      "includes": [
+        "Child agent status polls",
+        "Timeout tracking",
+        "Failure detection results",
+        "Retry decisions"
+      ],
+      "readableBy": [
+        "orch:MonitoringPersona1",
+        "orch:MonitoringPersona2"
+      ],
+      "unreadableBy": [
+        "orch:ReceivePersona1",
+        "orch:ReceivePersona2",
+        "orch:DelegationPersona1",
+        "orch:DelegationPersona2",
+        "orch:AggregationPersona1",
+        "orch:AggregationPersona2",
+        "orch:ReportPersona1",
+        "orch:ReportPersona2"
+      ]
+    },
+    {
+      "@id": "orch:AggregationModeState",
+      "@type": "gab:IsolatedState",
+      "mode": "orch:AggregationMode",
+      "scope": "private to Aggregation Mode",
+      "includes": [
+        "Child result files collected",
+        "Merge strategy selection",
+        "Partial result handling",
+        "Confidence score calculations"
+      ],
+      "readableBy": [
+        "orch:AggregationPersona1",
+        "orch:AggregationPersona2"
+      ],
+      "unreadableBy": [
+        "orch:ReceivePersona1",
+        "orch:ReceivePersona2",
+        "orch:DelegationPersona1",
+        "orch:DelegationPersona2",
+        "orch:MonitoringPersona1",
+        "orch:MonitoringPersona2",
+        "orch:ReportPersona1",
+        "orch:ReportPersona2"
+      ]
+    },
+    {
+      "@id": "orch:ReportModeState",
+      "@type": "gab:IsolatedState",
+      "mode": "orch:ReportMode",
+      "scope": "private to Report Mode",
+      "includes": [
+        "Aggregated result formatting",
+        "Audit trail compilation",
+        "Confidence score summary",
+        "Output file writing"
+      ],
+      "readableBy": [
+        "orch:ReportPersona1",
+        "orch:ReportPersona2"
+      ],
+      "unreadableBy": [
+        "orch:ReceivePersona1",
+        "orch:ReceivePersona2",
+        "orch:DelegationPersona1",
+        "orch:DelegationPersona2",
+        "orch:MonitoringPersona1",
+        "orch:MonitoringPersona2",
+        "orch:AggregationPersona1",
+        "orch:AggregationPersona2"
+      ]
     }
   ]
 }

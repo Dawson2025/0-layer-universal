@@ -156,7 +156,8 @@
             "significant state changes"
           ]
         }
-      ]
+      ],
+      "personaNameConsistency": "Persona human names must be conserved between different sessions (detect user language and use appropriate names)"
     },
     {
       "@id": "ctx:LoadingMode",

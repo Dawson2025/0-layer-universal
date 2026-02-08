@@ -1,6 +1,6 @@
 # layer_0_orchestrator — Integration Reference
 <!-- AUTO-GENERATED from layer_0_orchestrator.gab.jsonld — do not edit directly -->
-<!-- Last transpiled: 2026-02-08T03:04:51Z -->
+<!-- Last transpiled: 2026-02-08T03:29:31Z -->
 <!-- Source: /home/dawson/dawson-workspace/code/0_layer_universal/layer_0/layer_0_01_ai_manager_system/personal/layer_0_orchestrator.gab.jsonld -->
 
 ## Modes
@@ -42,6 +42,16 @@
 | orch:TaskStatePersona | — |
 | orch:ResourceBudgetStatePersona | — |
 | orch:StageStatePersona | — |
+
+## Isolated States
+
+| State | Mode | Scope | Includes |
+|-------|------|-------|----------|
+| orch:ReceiveModeState | orch:ReceiveMode | private to Receive Mode | Incoming task files parsed; Task type classification; Source identification (from_above vs from_below); Validation results |
+| orch:DelegationModeState | orch:DelegationMode | private to Delegation Mode | Task decomposition plan; Agent type selection rationale; Spawn commands prepared; Resource budget checks |
+| orch:MonitoringModeState | orch:MonitoringMode | private to Monitoring Mode | Child agent status polls; Timeout tracking; Failure detection results; Retry decisions |
+| orch:AggregationModeState | orch:AggregationMode | private to Aggregation Mode | Child result files collected; Merge strategy selection; Partial result handling; Confidence score calculations |
+| orch:ReportModeState | orch:ReportMode | private to Report Mode | Aggregated result formatting; Audit trail compilation; Confidence score summary; Output file writing |
 
 ## Constraints (Prohibitions)
 

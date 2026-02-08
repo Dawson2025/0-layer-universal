@@ -96,6 +96,22 @@ TIMESTAMP=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
         echo ""
     fi
 
+    # --- Isolated States ---
+    ISOLATED_STATES=$(jq -r '
+        ."@graph"[] |
+        select(."@type" == "gab:IsolatedState" or ."@type" == "IsolatedState") |
+        "| \(."@id") | \(.mode // "—") | \(.scope // "—") | \(.includes | if type == "array" then join("; ") else . // "—" end) |"
+    ' "$INPUT" 2>/dev/null || true)
+
+    if [ -n "$ISOLATED_STATES" ]; then
+        echo "## Isolated States"
+        echo ""
+        echo "| State | Mode | Scope | Includes |"
+        echo "|-------|------|-------|----------|"
+        echo "$ISOLATED_STATES"
+        echo ""
+    fi
+
     # --- Prohibitions/Constraints ---
     PROHIBITIONS=$(jq -r '
         .prohibitions[]? |

@@ -1,6 +1,6 @@
 # context_loading — Integration Reference
 <!-- AUTO-GENERATED from context_loading.gab.jsonld — do not edit directly -->
-<!-- Last transpiled: 2026-02-08T03:04:51Z -->
+<!-- Last transpiled: 2026-02-08T03:29:31Z -->
 <!-- Source: /home/dawson/dawson-workspace/code/0_layer_universal/layer_0/layer_0_03_context_agents/context_loading.gab.jsonld -->
 
 ## Modes
@@ -39,6 +39,15 @@
 | ctx:NavigationStatePersona | State Manager |
 | ctx:DebugContextStatePersona | State Manager |
 | ctx:LayerInheritanceStatePersona | State Manager |
+
+## Isolated States
+
+| State | Mode | Scope | Includes |
+|-------|------|-------|----------|
+| ctx:LoadingModeState | ctx:LoadingMode | private to Loading Mode | Files being loaded; Loading order tracking; Initial confidence calculations; Loading errors encountered |
+| ctx:ValidationModeState | ctx:ValidationMode | private to Validation Mode | Position identification analysis; Inheritance chain construction; Required context verification; Validation confidence calculations |
+| ctx:PropagationModeState | ctx:PropagationMode | private to Propagation Mode | Conflict detection results; Precedence rule applications; Override processing notes; Safety rule protection events |
+| ctx:DeliveryModeState | ctx:DeliveryMode | private to Delivery Mode | Readiness verification results; Debug output generation; State persistence status; Final delivery confirmation |
 
 ## Constraints (Prohibitions)
 
