@@ -30,7 +30,8 @@ layer_0_01_ai_manager_system/
 │   └── ...
 ├── personal/              ← Your orchestrator
 │   ├── CLAUDE.md          ← Orchestrator context
-│   ├── layer_0_orchestrator.gab.jsonld
+│   ├── layer_0_orchestrator.gab.jsonld      ← Agent definition
+│   ├── layer_0_orchestrator.integration.md  ← Readable summary (auto-generated)
 │   ├── runtime/
 │   │   └── orchestrator_runtime.jsonld
 │   └── tests/
@@ -49,7 +50,8 @@ layer_0_01_ai_manager_system/
 | Understanding AALang patterns | `professor/CLAUDE.md` |
 | Creating new agents | `professor/gab-formats.jsonld` |
 | Multi-agent orchestration | `personal/CLAUDE.md` |
-| Spawning child agents | `personal/layer_0_orchestrator.gab.jsonld` |
+| Quick orchestrator reference | `personal/layer_0_orchestrator.integration.md` |
+| Precise orchestrator constraints | `personal/layer_0_orchestrator.gab.jsonld` (via jq) |
 | Task decomposition | `personal/runtime/orchestrator_runtime.jsonld` |
 
 ---

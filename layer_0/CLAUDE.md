@@ -28,7 +28,8 @@ layer_0/
 │   │   └── gab-formats.jsonld             ← Format definitions
 │   └── personal/                          ← Your orchestrator
 │       ├── CLAUDE.md
-│       ├── layer_0_orchestrator.gab.jsonld
+│       ├── layer_0_orchestrator.gab.jsonld      ← Agent definition
+│       ├── layer_0_orchestrator.integration.md  ← Readable summary (auto-generated)
 │       └── runtime/orchestrator_runtime.jsonld
 │
 ├── layer_0_02_manager_handoff_documents/  ← AGENT IPC
@@ -39,7 +40,8 @@ layer_0/
 │
 ├── layer_0_03_context_agents/             ← CONTEXT LOADING
 │   ├── CLAUDE.md
-│   └── context_loading.gab.jsonld
+│   ├── context_loading.gab.jsonld              ← Agent definition
+│   └── context_loading.integration.md          ← Readable summary (auto-generated)
 │
 ├── layer_0_04_sub_layers/                 ← FOUNDATIONAL CONTENT
 │   ├── sub_layer_0_01_knowledge_system/
@@ -90,6 +92,7 @@ Context loading and traversal:
 - Uses 4-mode-13-actor pattern
 - Traverses CLAUDE.md chain
 - Manages state actors for context tracking
+- **Summary**: Read `context_loading.integration.md` (same base name as the `.gab.jsonld`)
 
 **Load when**: Understanding context loading, debugging context issues
 
@@ -104,6 +107,16 @@ Foundational content organized by type:
 | `sub_layer_0_03_rules/` | Mandatory rules |
 | `sub_layer_0_04_protocols/` | Standard protocols |
 | `sub_layer_0_05+_setup_*` | Setup-dependent content |
+
+---
+
+## Agent Context Convention
+
+Each `.gab.jsonld` has a matching `.integration.md` (same base name, auto-generated):
+- `layer_0_orchestrator.gab.jsonld` → `layer_0_orchestrator.integration.md`
+- `context_loading.gab.jsonld` → `context_loading.integration.md`
+
+Read the `.integration.md` for a quick summary; query the `.gab.jsonld` via jq for precise mode constraints.
 
 ---
 

@@ -28,11 +28,11 @@ echo "Processing 0AGNOSTIC.md in $DIR..."
 # Read 0AGNOSTIC.md content
 AGNOSTIC_CONTENT=$(cat "$DIR/0AGNOSTIC.md")
 
-# Extract key sections
-IDENTITY=$(echo "$AGNOSTIC_CONTENT" | sed -n '/## Identity/,/## /p' | head -n -1)
-NAVIGATION=$(echo "$AGNOSTIC_CONTENT" | sed -n '/## Navigation/,/## /p' | head -n -1)
-BEHAVIORS=$(echo "$AGNOSTIC_CONTENT" | sed -n '/## Key Behaviors/,/## /p' | head -n -1)
-TRIGGERS=$(echo "$AGNOSTIC_CONTENT" | sed -n '/## Triggers/,/## /p' | head -n -1)
+# Extract key sections (use ^## [^#] to match only h2 headings, not h3/h4)
+IDENTITY=$(echo "$AGNOSTIC_CONTENT" | sed -n '/^## Identity/,/^## [^#]/p' | head -n -1)
+NAVIGATION=$(echo "$AGNOSTIC_CONTENT" | sed -n '/^## Navigation/,/^## [^#]/p' | head -n -1)
+BEHAVIORS=$(echo "$AGNOSTIC_CONTENT" | sed -n '/^## Key Behaviors/,/^## [^#]/p' | head -n -1)
+TRIGGERS=$(echo "$AGNOSTIC_CONTENT" | sed -n '/^## Triggers/,/^## [^#]/p' | head -n -1)
 
 # Validation: Check if critical sections were extracted
 WARNINGS=0
