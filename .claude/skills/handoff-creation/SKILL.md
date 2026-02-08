@@ -37,6 +37,14 @@ description: "Create structured handoff documents to preserve session context ac
    - Results to parent: `hand_off_documents/outgoing/to_above/`
    - Tasks to children: `hand_off_documents/outgoing/to_below/`
 
+## Agnostic System
+
+When creating handoff documents:
+- If `0AGNOSTIC.md` exists in the working directory, note it as the source of truth in the handoff
+- If `.0agnostic/` exists, mention available on-demand resources
+- If context was modified during the session, note whether `agnostic-sync.sh` was run
+- If `.1merge/` exists, note any tool-specific override state
+
 ## AALang Reference
 
 The orchestrator's ReportMode handles structured handoff creation.

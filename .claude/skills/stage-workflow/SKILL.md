@@ -99,6 +99,14 @@ Before starting stage work:
 2. Read the matching `.integration.md` (same base name) for mode constraints and allowed transitions
 3. Query via jq for precise stage-specific constraints if needed
 
+## Agnostic System
+
+When working in a stage directory:
+- If `0AGNOSTIC.md` exists, it is the **source of truth** — edit it, not `CLAUDE.md`
+- If `.0agnostic/` exists, check for stage-specific resources
+- After modifying `0AGNOSTIC.md`, run `agnostic-sync.sh` to regenerate tool-specific files
+- If `.1merge/` exists, it provides tool-specific overrides
+
 ## AALang Reference
 
 Stage workflows are managed by the orchestrator's StageStateActor:

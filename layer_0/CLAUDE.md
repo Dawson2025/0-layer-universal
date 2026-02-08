@@ -201,6 +201,7 @@ This directory uses the agnostic system for tool-independent context:
 | `0AGNOSTIC.md` | Source of truth — edit this for context changes |
 | `.0agnostic/` | On-demand resources (rules, skills, agents, knowledge, scripts) |
 | `agnostic-sync.sh` | Regenerates CLAUDE.md, AGENTS.md, GEMINI.md, OPENAI.md |
+| `.1merge/` | Tool-specific overrides (not yet set up for layer_0) |
 
 **Note**: This `CLAUDE.md` contains hand-crafted Claude-specific content (directory structure, integration flows). Until a `.1merge/` is set up, do NOT regenerate via `agnostic-sync.sh` — edit manually instead.
 

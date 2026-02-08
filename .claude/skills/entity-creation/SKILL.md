@@ -53,9 +53,9 @@ entity/
 └── entity_99_stages/      ← If using stages (see step 3)
 ```
 
-**Agnostic system**: Create `0AGNOSTIC.md` as the source file, then run `agnostic-sync.sh` to generate `CLAUDE.md`, `AGENTS.md`, `GEMINI.md`, `OPENAI.md`. If the entity needs on-demand resources, create a `.0agnostic/` directory.
+**Agnostic system**: Create `0AGNOSTIC.md` as the source file, then run `agnostic-sync.sh` to generate `CLAUDE.md`, `AGENTS.md`, `GEMINI.md`, `OPENAI.md`. If the entity needs on-demand resources, create a `.0agnostic/` directory. If tool-specific overrides are needed, create a `.1merge/` directory with the 3-tier structure (0_synced, 1_overrides, 2_additions).
 
-**Agent definitions**: If the entity needs a `.gab.jsonld` agent definition, create it following GAB format, then run `tools/jsonld-to-md.sh` to generate the matching `.integration.md` summary.
+**Agent definitions**: If the entity needs a `.gab.jsonld` agent definition, create it following GAB format, then run `tools/jsonld-to-md.sh` to generate the matching `.integration.md` summary. Always read the `.integration.md` for a quick overview of modes and constraints.
 
 ### 3. [CRITICAL] Create ALL 11 Stages
 
