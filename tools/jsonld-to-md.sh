@@ -68,7 +68,7 @@ TIMESTAMP=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
     STATE_ACTORS=$(jq -r '
         ."@graph"[] |
         select(."@id" | test("StateActor")) |
-        "| \(."@id") | \(.purpose // "—") |"
+        "| \(."@id") | \(.purpose // .description // "—") |"
     ' "$INPUT" 2>/dev/null || true)
 
     if [ -n "$STATE_ACTORS" ]; then
@@ -99,7 +99,7 @@ TIMESTAMP=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
     # --- Prohibitions/Constraints ---
     PROHIBITIONS=$(jq -r '
         .prohibitions[]? |
-        "| \(.description // .rule // "—") | \(.severity // "—") |"
+        "| \(.action // .description // .rule // "—") | \(.severity // "—") |"
     ' "$INPUT" 2>/dev/null || true)
 
     if [ -n "$PROHIBITIONS" ]; then
@@ -119,7 +119,7 @@ TIMESTAMP=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
             (if .MUST then "**MUST**: " + (.MUST | if type == "array" then join(", ") else tostring end) + "\n" else "" end) +
             (if .MUST_NOT then "**MUST NOT**: " + (.MUST_NOT | if type == "array" then join(", ") else tostring end) + "\n" else "" end)
         elif type == "array" then
-            (.[] | "- " + tostring) + "\n"
+            ([.[] | "- " + tostring] | join("\n")) + "\n"
         else tostring + "\n" end)"
     ' "$INPUT" 2>/dev/null || true)
 

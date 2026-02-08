@@ -1,6 +1,6 @@
 # context_loading_gab.jsonld — Integration Reference
 <!-- AUTO-GENERATED from context_loading_gab.jsonld — do not edit directly -->
-<!-- Last transpiled: 2026-02-08T02:30:19Z -->
+<!-- Last transpiled: 2026-02-08T02:39:56Z -->
 <!-- Source: /home/dawson/dawson-workspace/code/0_layer_universal/layer_0/layer_0_03_context_agents/context_loading_gab.jsonld -->
 
 ## Modes
@@ -44,76 +44,40 @@
 
 | Rule | Severity |
 |------|----------|
-| — | absolute |
-| — | absolute |
-| — | critical |
+| Start work before context confidence threshold is met | absolute |
+| Override layer_0 safety rules from higher layers without explicit user approval | absolute |
+| Skip any of the 4 context loading phases | critical |
 
 ## Mode-Specific Constraints
 
 ### ctx:LoadingMode
 - Activate immediately when session starts
-
-### ctx:LoadingMode
 - Load files in order: ~/.claude/CLAUDE.md → ~/CLAUDE.md → ... → cwd/CLAUDE.md
-
-### ctx:LoadingMode
 - Also load .claude/rules/*.md files at each project root
-
-### ctx:LoadingMode
 - Track each file loaded (path, layer, lines, timestamp)
-
-### ctx:LoadingMode
 - Do NOT proceed to Validation Mode until initial confidence >= 0.6
 
 ### ctx:ValidationMode
 - Identify current layer: -1 (research), 0 (universal), 1+ (projects)
-
-### ctx:ValidationMode
 - Identify current stage: 01-11 (if working in a stage)
-
-### ctx:ValidationMode
 - Identify current sub_layer if nested
-
-### ctx:ValidationMode
 - Build inheritance chain
-
-### ctx:ValidationMode
 - Verify required context is loaded (rules, protocols)
-
-### ctx:ValidationMode
 - Do NOT proceed to Propagation Mode until confidence >= 0.8
 
 ### ctx:PropagationMode
 - Apply inheritance model: higher layers inherit from lower
-
-### ctx:PropagationMode
 - Detect same rule defined differently in multiple layers
-
-### ctx:PropagationMode
 - Apply precedence: higher layer wins, later in chain wins
-
-### ctx:PropagationMode
 - Record all overrides for transparency
-
-### ctx:PropagationMode
 - Escalate unresolvable conflicts to user (Team Lead)
-
-### ctx:PropagationMode
 - Do NOT proceed to Delivery Mode until all inheritance resolved
 
 ### ctx:DeliveryMode
 - Verify all ready indicators are met
-
-### ctx:DeliveryMode
 - If debug mode ON, show full context summary
-
-### ctx:DeliveryMode
 - If debug mode OFF, confirm ready silently
-
-### ctx:DeliveryMode
 - Persist final state to .claude/context_state.json
-
-### ctx:DeliveryMode
 - Agent is now ready for user tasks
 
 ## Execution Instructions

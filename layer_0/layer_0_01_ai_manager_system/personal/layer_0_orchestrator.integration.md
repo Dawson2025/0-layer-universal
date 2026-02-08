@@ -1,6 +1,6 @@
 # layer_0_orchestrator — Integration Reference
 <!-- AUTO-GENERATED from layer_0_orchestrator.gab.jsonld — do not edit directly -->
-<!-- Last transpiled: 2026-02-08T02:27:13Z -->
+<!-- Last transpiled: 2026-02-08T02:39:56Z -->
 <!-- Source: /home/dawson/dawson-workspace/code/0_layer_universal/layer_0/layer_0_01_ai_manager_system/personal/layer_0_orchestrator.gab.jsonld -->
 
 ## Modes
@@ -47,93 +47,49 @@
 
 | Rule | Severity |
 |------|----------|
-| — | absolute |
-| — | absolute |
-| — | critical |
-| — | critical |
-| — | standard |
+| Spawn child agents beyond maximum recursion depth | absolute |
+| Spawn child agent with identical task to parent | absolute |
+| Spawn more concurrent agents than allowed limit | critical |
+| Skip hand_off_documents protocol for inter-layer communication | critical |
+| Continue spawning after circuit breaker threshold | standard |
 
 ## Mode-Specific Constraints
 
 ### orch:ReceiveMode
 - Check hand_off_documents/incoming/from_above/ for user tasks
-
-### orch:ReceiveMode
 - Check hand_off_documents/incoming/from_below/ for child agent results
-
-### orch:ReceiveMode
 - Parse and validate incoming JSON task/result files
-
-### orch:ReceiveMode
 - Determine if task should be executed locally or delegated
-
-### orch:ReceiveMode
 - Do NOT proceed to DelegationMode until task is parsed and understood
 
 ### orch:DelegationMode
 - Check orch:ResourceBudgetStateActor before spawning (depth, concurrent limits)
-
-### orch:DelegationMode
 - Decompose complex tasks into delegatable subtasks
-
-### orch:DelegationMode
 - Select appropriate agent type for each subtask
-
-### orch:DelegationMode
 - Use spawn_agent.sh to spawn children
-
-### orch:DelegationMode
 - Write task files to hand_off_documents/outgoing/to_below/
-
-### orch:DelegationMode
 - Do NOT spawn identical tasks (check similarity)
-
-### orch:DelegationMode
 - Do NOT spawn beyond depth limit
 
 ### orch:MonitoringMode
 - Poll hand_off_documents/status/{child_id}.json for status updates
-
-### orch:MonitoringMode
 - Detect timeouts, failures, and completion
-
-### orch:MonitoringMode
 - Handle failed children: retry, reassign, or escalate
-
-### orch:MonitoringMode
 - Track progress metrics for each child
-
-### orch:MonitoringMode
 - Do NOT proceed to AggregationMode until all children complete or timeout
 
 ### orch:AggregationMode
 - Collect result files from hand_off_documents/incoming/from_below/{child_id}/
-
-### orch:AggregationMode
 - Parse and validate result JSON files
-
-### orch:AggregationMode
 - Handle partial results from failed/timeout children
-
-### orch:AggregationMode
 - Synthesize results based on aggregation strategy (merge, vote, summarize)
-
-### orch:AggregationMode
 - Build unified result for reporting
 
 ### orch:ReportMode
 - Write result file to hand_off_documents/outgoing/to_above/
-
-### orch:ReportMode
 - Include task metadata, aggregated result, confidence score
-
-### orch:ReportMode
 - Include audit trail of child executions
-
-### orch:ReportMode
 - Clean up completed task artifacts (optional)
-
-### orch:ReportMode
 - Transition back to ReceiveMode for next task
 
 ## Execution Instructions
