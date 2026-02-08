@@ -47,10 +47,15 @@ Load these knowledge docs before creating entities:
 Every entity needs:
 ```
 entity/
-├── CLAUDE.md              ← Agent entry point
+├── 0AGNOSTIC.md           ← Source of truth (tool-agnostic context)
+├── CLAUDE.md              ← Auto-generated via agnostic-sync.sh
 ├── 0INDEX.md              ← Navigation index
 └── entity_99_stages/      ← If using stages (see step 3)
 ```
+
+**Agnostic system**: Create `0AGNOSTIC.md` as the source file, then run `agnostic-sync.sh` to generate `CLAUDE.md`, `AGENTS.md`, `GEMINI.md`, `OPENAI.md`. If the entity needs on-demand resources, create a `.0agnostic/` directory.
+
+**Agent definitions**: If the entity needs a `.gab.jsonld` agent definition, create it following GAB format, then run `tools/jsonld-to-md.sh` to generate the matching `.integration.md` summary.
 
 ### 3. [CRITICAL] Create ALL 11 Stages
 

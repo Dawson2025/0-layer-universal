@@ -33,8 +33,13 @@ description: "Gather context about current position in the layer-stage hierarchy
    ```bash
    jq '."@graph"[] | select(."@type" == "gab:Mode") | {id: ."@id", purpose: .purpose}' [matching .gab.jsonld]
    ```
-7. **Check status.json** for current state
-8. **Check applicable rules** in `.claude/rules/`
+7. **Check for agnostic system** in the working directory:
+   - If `0AGNOSTIC.md` exists, it is the **source of truth** — edit it, not `CLAUDE.md`
+   - If `.0agnostic/` exists, it contains on-demand resources (rules, skills, agents, knowledge)
+   - If `.1merge/` exists, it provides tool-specific overrides (3-tier: synced → overrides → additions)
+   - After modifying `0AGNOSTIC.md`, run `agnostic-sync.sh` to regenerate tool-specific files
+8. **Check status.json** for current state
+9. **Check applicable rules** in `.claude/rules/`
 
 ## Output Format
 

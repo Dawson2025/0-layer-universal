@@ -41,6 +41,15 @@ When modifying shared outputs:
 | Starting new session | Read `outputs/episodic/index.md` |
 | Modifying outputs | Check `.locks/` first |
 
+## Agnostic System
+
+This directory uses the agnostic system for tool-independent context:
+
+- **Source of truth**: This `0AGNOSTIC.md` file — edit this, NOT `CLAUDE.md` (which is auto-generated)
+- **On-demand resources**: `.0agnostic/` contains rules, skills, agents, knowledge, scripts
+- **After changes**: Run `agnostic-sync.sh` to regenerate tool-specific files (CLAUDE.md, AGENTS.md, GEMINI.md, OPENAI.md)
+- **Tool overrides**: `.1merge/` (if present) provides tool-specific overrides via 3-tier merge (synced → overrides → additions)
+
 ## Quick Reference
 
 - **Layer**: 0 (universal - applies everywhere)

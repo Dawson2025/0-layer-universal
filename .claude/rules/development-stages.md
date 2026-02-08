@@ -24,6 +24,13 @@ When working in development stages:
 | Creating components | `/entity-creation` | When new code modules/features needed |
 | Session end | `/handoff-creation` | Preserve implementation progress |
 
+## Agnostic System
+
+- **Source of truth**: `0AGNOSTIC.md` is the source — edit this, NOT `CLAUDE.md` (which is auto-generated)
+- **On-demand resources**: `.0agnostic/` contains rules, skills, agents, knowledge, scripts
+- **After changes**: Run `agnostic-sync.sh` to regenerate tool-specific files (CLAUDE.md, AGENTS.md, GEMINI.md, OPENAI.md)
+- **Tool overrides**: `.1merge/` (if present) provides tool-specific overrides via 3-tier merge (synced → overrides → additions)
+
 ## Development Rules
 
 - All output goes in `outputs/` within the stage directory

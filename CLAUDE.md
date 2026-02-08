@@ -62,6 +62,36 @@ All [CRITICAL] rules from `~/.claude/CLAUDE.md` apply here. Key rules for this d
 
 ---
 
+## Agnostic System
+
+`0AGNOSTIC.md` is the **source of truth** for context at every level. `CLAUDE.md` files are auto-generated — do not edit them directly.
+
+| Component | Purpose |
+|-----------|---------|
+| `0AGNOSTIC.md` | Source of truth — edit this for context changes |
+| `.0agnostic/` | On-demand resources (rules, skills, agents, knowledge, scripts) |
+| `.1merge/` | Tool-specific overrides (3-tier: synced → overrides → additions) |
+| `agnostic-sync.sh` | Regenerates CLAUDE.md, AGENTS.md, GEMINI.md, OPENAI.md from 0AGNOSTIC.md |
+
+**Workflow**: Edit `0AGNOSTIC.md` → run `agnostic-sync.sh` → commit generated files
+
+**Script location**: `layer_0/.0agnostic/agnostic-sync.sh`
+
+---
+
+## Skills
+
+Match your task to available skills (check WHEN/WHEN NOT in each SKILL.md):
+
+| Skill | When to Use |
+|-------|-------------|
+| `/context-gathering` | First action when entering any directory |
+| `/stage-workflow` | Working through stages 01-11 |
+| `/entity-creation` | Creating new projects, features, components |
+| `/handoff-creation` | End of session, preserving context |
+
+---
+
 ## Navigation: How to Find Things
 
 ### Sub-Layers (layer_0/layer_0_03_sub_layers/)

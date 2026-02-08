@@ -29,6 +29,13 @@ When working in research directories:
 - **Session start**: Check `memory/episodic.md` (auto-memory topic file) for recent research session history
 - **Session end**: Update `outputs/episodic/index.md` in the working research directory, then run `tools/episodic-sync.sh`
 
+## Agnostic System
+
+- **Source of truth**: `0AGNOSTIC.md` is the source — edit this, NOT `CLAUDE.md` (which is auto-generated)
+- **On-demand resources**: `.0agnostic/` contains rules, skills, agents, knowledge, scripts
+- **After changes**: Run `agnostic-sync.sh` to regenerate tool-specific files (CLAUDE.md, AGENTS.md, GEMINI.md, OPENAI.md)
+- **Tool overrides**: `.1merge/` (if present) provides tool-specific overrides via 3-tier merge (synced → overrides → additions)
+
 ## Research-Specific Rules
 
 - Always include a **Sources:** section with any research output

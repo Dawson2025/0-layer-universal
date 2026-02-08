@@ -29,10 +29,11 @@ description: "Create structured handoff documents to preserve session context ac
 ## Steps
 
 1. Review session activity (what was done)
-2. Identify key accomplishments and remaining work
-3. Note any blockers or issues
-4. Create structured handoff document following the format above
-5. Save to appropriate hand_off_documents/ location:
+2. **Check agent context**: Read the `.integration.md` for your role (matching the `.gab.jsonld`) to understand handoff expectations
+3. Identify key accomplishments and remaining work
+4. Note any blockers or issues
+5. Create structured handoff document following the format above
+6. Save to appropriate hand_off_documents/ location:
    - Results to parent: `hand_off_documents/outgoing/to_above/`
    - Tasks to children: `hand_off_documents/outgoing/to_below/`
 

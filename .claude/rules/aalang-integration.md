@@ -33,6 +33,13 @@ When working in the AI manager system:
 | Creating new agents | `/entity-creation` | Follow GAB format from professor/ |
 | Stage-based AI work | `/stage-workflow` | When working through AI system stages |
 
+## Agnostic System
+
+- **Source of truth**: `0AGNOSTIC.md` is the source — edit this, NOT `CLAUDE.md` (which is auto-generated)
+- **On-demand resources**: `.0agnostic/` contains rules, skills, agents, knowledge, scripts
+- **After changes**: Run `agnostic-sync.sh` to regenerate tool-specific files (CLAUDE.md, AGENTS.md, GEMINI.md, OPENAI.md)
+- **Tool overrides**: `.1merge/` (if present) provides tool-specific overrides via 3-tier merge (synced → overrides → additions)
+
 ## AALang Conventions
 
 - JSON-LD files are the **source of truth** for agent definitions

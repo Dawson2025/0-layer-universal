@@ -92,6 +92,13 @@ If a stage isn't needed for this work:
 | 10 | final content (ready for use) |
 | 11 | previous_versions/, archive/ |
 
+## Agent Context
+
+Before starting stage work:
+1. Find the `.gab.jsonld` for your role in the stage directory
+2. Read the matching `.integration.md` (same base name) for mode constraints and allowed transitions
+3. Query via jq for precise stage-specific constraints if needed
+
 ## AALang Reference
 
 Stage workflows are managed by the orchestrator's StageStateActor:
