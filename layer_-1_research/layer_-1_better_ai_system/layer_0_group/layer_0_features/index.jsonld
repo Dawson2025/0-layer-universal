@@ -39,55 +39,12 @@
 
   "features": [
     {
-      "@id": "layer_0_feature_context_framework/",
-      "@type": "Feature",
-      "name": "Context Framework",
-      "description": "Context delivery, memory, and navigation systems",
-      "rel:treeOfNeedsBranch": ["06_context_flow", "01_capable"],
-      "children": [
-        "layer_1_sub_feature_context_system",
-        "layer_1_sub_feature_dynamic_memory",
-        "layer_1_sub_feature_navigation_system"
-      ]
-    },
-    {
-      "@id": "layer_0_feature_structure_framework/",
-      "@type": "Feature",
-      "name": "Structure Framework",
-      "description": "Layer-stage organization and setup systems",
-      "children": [
-        "layer_1_sub_feature_layer_stage_system",
-        "layer_1_sub_feature_setup_system"
-      ]
-    },
-    {
-      "@id": "layer_0_feature_governance_framework/",
-      "@type": "Feature",
-      "name": "Governance Framework",
-      "description": "Rules and manager hierarchy systems",
-      "rel:treeOfNeedsBranch": ["03_trustworthy"],
-      "children": [
-        "layer_1_sub_feature_rules_system",
-        "layer_1_sub_feature_manager_hierarchy"
-      ]
-    },
-    {
-      "@id": "layer_0_feature_tooling_framework/",
-      "@type": "Feature",
-      "name": "Tooling Framework",
-      "description": "Automation and documentation systems",
-      "rel:treeOfNeedsBranch": ["02_continuous", "04_observable"],
-      "children": [
-        "layer_1_sub_feature_automation_system",
-        "layer_1_sub_feature_documentation_system"
-      ]
-    },
-    {
       "@id": "layer_0_feature_agent_performance/",
       "@type": "Feature",
       "name": "Agent Performance",
       "description": "Unified research into all aspects of AI agent performance — consolidates knowledge/memory, scaling, AALang, organization, and tooling",
-      "note": "Phase 1: hierarchy created with migration notes. Phase 2: migrate content from existing features.",
+      "note": "Phase 2 complete: content migrated from 6 former features (context_framework, structure_framework, governance_framework, tooling_framework, multi_agent_orchestration, aalang_integration)",
+      "rel:treeOfNeedsBranch": ["01_capable", "02_continuous", "03_trustworthy", "04_observable", "06_context_flow"],
       "children": [
         "layer_1_sub_feature_knowledge_and_memory",
         "layer_1_sub_feature_performance_at_scale",
