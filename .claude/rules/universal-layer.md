@@ -24,6 +24,11 @@ When working in layer_0 (universal) directories:
 | Creating new sub-layers | `/entity-creation` | When extending layer_0 structure |
 | Session transitions | `/handoff-creation` | Preserve context for next session |
 
+## Episodic Memory
+
+- **Session start**: Check `memory/episodic.md` (auto-memory topic file) for recent session history across all layers
+- **Session end**: After significant work, update `outputs/episodic/index.md` in the working layer, then run `tools/episodic-sync.sh` to sync to auto-memory
+
 ## Universal Layer Rules
 
 - Layer 0 content applies to ALL projects — changes here affect everything

@@ -24,6 +24,11 @@ When working in school project directories:
 | Creating new assignments | `/entity-creation` | Set up proper layer/stage structure |
 | Ending session | `/handoff-creation` | Preserve progress for next session |
 
+## Episodic Memory
+
+- **Session start**: Check `memory/episodic.md` (auto-memory topic file) for recent school session history
+- **Session end**: Update `outputs/episodic/index.md` in the working assignment/module directory, then run `tools/episodic-sync.sh`
+
 ## School-Specific Rules
 
 - Canvas integration is available via MCP tools (`mcp__canvas__*`)

@@ -24,6 +24,11 @@ When working in research directories:
 | Creating research entities | `/entity-creation` | When new features/sub-features needed |
 | Ending session | `/handoff-creation` | Before closing, to preserve research state |
 
+## Episodic Memory
+
+- **Session start**: Check `memory/episodic.md` (auto-memory topic file) for recent research session history
+- **Session end**: Update `outputs/episodic/index.md` in the working research directory, then run `tools/episodic-sync.sh`
+
 ## Research-Specific Rules
 
 - Always include a **Sources:** section with any research output
