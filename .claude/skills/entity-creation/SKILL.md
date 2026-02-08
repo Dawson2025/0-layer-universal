@@ -1,15 +1,22 @@
-# Skill: Entity Creation
+---
+name: entity-creation
+description: "Create new layers, sub-layers, stages, features, projects, or components with proper structure. Use when the user needs a new project, feature, or structural entity in the layer-stage system. Enforces the Stage Completeness Rule (all 11 stages)."
+---
 
-## Purpose
+# Entity Creation Skill
 
-Create new layers, sub-layers, stages, features, projects, or components with proper structure.
-
-## When to Use
-
-- Creating a new project
-- Creating a new feature
-- Creating a new component
+## WHEN to Use
+- Creating a new project (`layer_1_project_*`)
+- Creating a new feature (`layer_2_feature_*`)
+- Creating a new component (`layer_3_component_*`)
 - Creating stages for an entity
+- Creating sub-layers for an entity
+- When the user says "create a new project/feature/component"
+
+## WHEN NOT to Use
+- Modifying an existing entity (use normal file editing)
+- Creating individual files within an existing entity
+- Renaming or reorganizing existing structure
 
 ## References (MUST READ BEFORE EXECUTING)
 
@@ -79,6 +86,11 @@ Before completing:
 - [ ] CLAUDE.md created with proper identity
 - [ ] 0INDEX.md created for navigation
 - [ ] Parent registry updated
+
+## AALang Reference
+
+Entity creation follows the GAB format defined in:
+`layer_0/layer_0_01_ai_manager_system/professor/gab-formats.jsonld`
 
 ---
 

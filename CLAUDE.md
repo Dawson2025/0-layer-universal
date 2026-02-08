@@ -2,7 +2,7 @@
 
 ## Role
 
-**Root Manager** - Coordinates all layers in the system.
+**Root Manager** — Coordinates all layers in the system.
 
 ## Responsibilities
 
@@ -10,7 +10,6 @@
 - Delegate tasks to appropriate layers (layer_0, layer_1, layer_-1_research)
 - Aggregate results from layers via `hand_off_documents/incoming/from_below/`
 - Report final results to user via `hand_off_documents/outgoing/to_above/`
-- Handle escalations from any descendant
 
 ## On Session Start
 
@@ -28,73 +27,33 @@
 
 ---
 
-## Universal Rules (ALWAYS FOLLOW)
+## Universal Rules
 
-### AI Context Modification Protocol
+All [CRITICAL] rules from `~/.claude/CLAUDE.md` apply here. Key rules for this directory:
 
-Before modifying AI context files (CLAUDE.md, .claude/, rules, prompts, knowledge):
-
-1. **Show diagram** of proposed changes (full paths, before/after)
-2. **Wait for user approval** - do not proceed until confirmed
-3. **Execute approved changes** - follow diagram exactly
-
-**Scope**: `CLAUDE.md`, `.claude/`, `*_rules/`, `*_prompts/`, `*_knowledge/`, `status.json`
-
-### AI Context Commit/Push Rule
-
-After approved AI context changes:
-
-1. `git add [specific files]` - stage changed files
-2. `git commit -m "[AI Context] description"` - descriptive message
-3. `git push` - sync to remote
-
-### Safety Governance (Key Principles)
-
-1. **Least Privilege**: Operate with minimum permissions needed
-2. **Defense in Depth**: Multiple protection layers
-3. **Human Oversight**: Critical decisions require approval
-4. **Fail Secure**: When in doubt, deny and escalate
-5. **Audit Everything**: Log actions for review
+- **AI Context Modification Protocol**: Show diagram, wait for approval, execute exactly
+- **Commit/Push Rule**: `git add` specific files, `git commit -m "[AI Context] ..."`, `git push`
+- **File Path Linking**: Always include full clickable file paths after Write/Edit
 
 **Full rules**: `layer_0/layer_0_03_sub_layers/sub_layer_0_05_rules/`
 
-### [CRITICAL] File Path Linking Rule
-
-When creating or updating files, ALWAYS include the full clickable file path in the response.
-
-**Format**: `**File**: /full/path/to/file.md`
-
-**Full rules**: `layer_0/layer_0_03_sub_layers/sub_layer_0_05_rules/FILE_PATH_LINKING_RULE.md`
-
 ---
 
-## Detailed Rules Reference
+## AALang Context Loading
 
-For complete rule documentation, read from:
+**AALang** is the primary AI system. Agent definitions live as `.gab.jsonld` files throughout the hierarchy.
 
+- **Orchestrator**: `layer_0/layer_0_01_ai_manager_system/personal/layer_0_orchestrator.gab.jsonld`
+- **Orchestrator summary**: `layer_0/layer_0_01_ai_manager_system/personal/layer_0_orchestrator.integration.md`
+- **Context loader**: `layer_0/layer_0_03_context_agents/context_loading_gab.jsonld`
+- **Context loader summary**: `layer_0/layer_0_03_context_agents/context_loading.integration.md`
+- **Skills**: `/context-gathering` (task start), `/stage-workflow` (stage work), `/entity-creation` (new entities), `/handoff-creation` (session end)
+- **Rules**: Check `.claude/rules/` for path-specific context
+
+To discover modes in any agent:
+```bash
+jq '."@graph"[] | select(."@type" == "gab:Mode") | {id: ."@id", purpose: .purpose}' [file.gab.jsonld]
 ```
-layer_0/layer_0_03_sub_layers/sub_layer_0_05_rules/
-├── AI_CONTEXT_MODIFICATION_PROTOCOL.md   ← Full modification protocol
-├── AI_CONTEXT_COMMIT_PUSH_RULE.md        ← Full commit/push rule
-├── safety_governance.md                   ← Full security governance
-├── LAYER_CONTEXT_HEADER_PROTOCOL.md      ← File header requirements
-└── FILE_PATH_LINKING_RULE.md             ← [CRITICAL] Always include file paths
-```
-
-## Primary AI System
-
-**AALang** (`sub_layer_0_01_ai_system/`) is the primary AI system used throughout the entire layer-stage framework:
-
-- It is **how agents work** at every level
-- It applies to **all layers** (0, 1, -1, etc.)
-- It applies to **all stages** (01-11)
-- It applies to **all sub_layers and sub_stages**
-- It applies to **all subxn layers** (sub-sub layers at any nesting depth)
-- It applies to **all subxn stages** (sub-sub stages at any nesting depth)
-
-When working anywhere in this system—no matter how deeply nested—AALang provides the underlying AI capabilities and patterns.
-
-**Location**: `layer_0/layer_0_03_sub_layers/sub_layer_0_01_ai_system/`
 
 ---
 
@@ -104,8 +63,8 @@ When working anywhere in this system—no matter how deeply nested—AALang prov
 
 | Sub-Layer | Purpose | When to Read |
 |-----------|---------|--------------|
-| `sub_layer_0_01_ai_system/` | **PRIMARY AI SYSTEM** - AALang (submodule) | AI language design - used for most everything |
-| `sub_layer_0_02_context_agents/` | **CONTEXT LOADING AGENT** - 4-mode-13-actor pattern | Context loading |
+| `sub_layer_0_01_ai_system/` | **PRIMARY AI SYSTEM** — AALang | AI language design |
+| `sub_layer_0_02_context_agents/` | **CONTEXT LOADING AGENT** | Context loading |
 | `sub_layer_0_03_knowledge_system/` | Domain knowledge | When context needed |
 | `sub_layer_0_04_principles/` | Guiding principles | Design decisions |
 | `sub_layer_0_05_rules/` | **Universal rules** | **ALWAYS** |
@@ -133,47 +92,20 @@ When working anywhere in this system—no matter how deeply nested—AALang prov
 | Need | Location |
 |------|----------|
 | AALang AI System | `layer_0/layer_0_03_sub_layers/sub_layer_0_01_ai_system/` |
-| Context Loading Agent | `layer_0/layer_0_03_sub_layers/sub_layer_0_02_context_agents/` |
+| Context Loading Agent | `layer_0/layer_0_03_context_agents/` |
 | Universal init protocol | `layer_0/layer_0_03_sub_layers/sub_layer_0_06_protocols/universal_init_prompt.md` |
 | All rules | `layer_0/layer_0_03_sub_layers/sub_layer_0_05_rules/` |
 | Git rules | `sub_layer_0_05_rules/0_instruction_docs/git_commit_rule.md` |
-| Terminal protocol | `sub_layer_0_05_rules/0_instruction_docs/MASTER_TERMINAL_EXECUTION_REFERENCE.md` |
 | Layer-Stage Framework | `layer_1/layer_1_features/layer_1_feature_layer_stage_system/` |
 | Research projects | `layer_-1_research/` |
 
 ## Structure Overview
 
-```
-0_layer_universal/
-├── CLAUDE.md                 ← You are here (Root Manager)
-├── .claude/                  ← Tool permissions, settings
-├── hand_off_documents/       ← Four-directional communication
-│   ├── incoming/from_above/  ← User requests
-│   ├── incoming/from_below/  ← Layer results
-│   ├── outgoing/to_above/    ← Results to user
-│   └── outgoing/to_below/    ← Tasks to layers
-├── layer_0/                  ← Universal (applies to ALL)
-│   ├── layer_0_03_sub_layers/
-│   │   ├── sub_layer_0_01_ai_system/       ← AALang (submodule)
-│   │   ├── sub_layer_0_02_context_agents/  ← Context Loading Agent
-│   │   ├── sub_layer_0_03_knowledge/       ← Domain knowledge
-│   │   ├── sub_layer_0_04_principles/      ← Principles
-│   │   ├── sub_layer_0_05_rules/           ← RULES (read first!)
-│   │   ├── sub_layer_0_06_protocols/       ← Session init protocols
-│   │   └── sub_layer_0_07+_setup/          ← OS/tool config
-│   └── layer_0_99_stages/    ← Universal stages
-├── layer_1/                  ← Projects, features
-└── layer_-1_research/        ← Research projects
-```
+See `@imports/structure_overview.md` for the full directory tree.
 
 ## Session Workflow
 
-1. **Sync**: `git pull && git status`
-2. **Read rules**: `sub_layer_0_05_rules/` (especially modification protocol)
-3. **Read init protocol**: `sub_layer_0_06_protocols/universal_init_prompt.md`
-4. **Identify context**: What layer? What stage?
-5. **Do work**: Follow stage guidelines
-6. **Commit/push**: Per AI_CONTEXT_COMMIT_PUSH_RULE.md
+See `@imports/session_workflow.md` for the session start protocol.
 
 ## Conventions
 
@@ -181,45 +113,3 @@ When working anywhere in this system—no matter how deeply nested—AALang prov
 - **Layers**: Lower numbers = more universal (Layer 0 applies to all)
 - **Stages**: 01-11, workflow phases
 - **Sub-layers**: 01-07+, content types (ai_system, context_agents, knowledge, principles, rules, protocols, setup)
-
----
-
-## AALang Integration
-
-@agent ctx:ContextLoadingAgent
-
-### Context Chain Position
-- **Position**: 5 of 5 (Layer-Stage Root)
-- **Parent**: ../CLAUDE.md (code)
-- **Children**: layer_0/, layer_1/, layer_-1_research/
-- **Priority**: absolute (layer-stage system root)
-- **Inherits**: all parent CLAUDE.md files
-- **Can Override**: parent context (this is where layer-stage rules take over)
-
-### On Load
-When this file is loaded, update state actors:
-- `ctx:ContextLoadingStateActor.loadedFiles` += .../0_layer_universal/CLAUDE.md
-- `ctx:NavigationStateActor.depth` = 4
-- `ctx:NavigationStateActor.currentLayer` = 0 (entering layer-stage system)
-- `ctx:ContextConfidenceStateActor.layerIdentified` = 1.0
-
-### Required Reads (CRITICAL)
-Before proceeding with any work, agent MUST load:
-- `layer_0/layer_0_03_sub_layers/sub_layer_0_05_rules/` (universal rules)
-- `layer_0/layer_0_03_sub_layers/sub_layer_0_06_protocols/` (session protocols)
-
-### Context Agents Location
-AALang context agents for managing context loading:
-`layer_0/layer_0_03_sub_layers/sub_layer_0_02_context_agents/`
-
-### Layer Inheritance Model
-```
-layer_0 (universal base) → layer_1 (projects, can override) → layer_2+ (features, can override)
-```
-
-**Key Principle**: Higher-numbered layers inherit from lower layers but CAN override when needed.
-
-See full documentation:
-- `sub_layer_0_05_rules/context_priority_rules.md` - Override rules
-- `sub_layer_0_05_rules/context_scope_boundaries.md` - Scope definitions
-- `sub_layer_0_06_protocols/context_loading_protocol.md` - 4-phase loading sequence

@@ -1,15 +1,21 @@
-# Skill: Stage Workflow
+---
+name: stage-workflow
+description: "Work through stages (01-11) properly, understanding what content belongs in each stage. Use when starting feature work, determining which stage to work in, moving between stages, or creating stage outputs."
+---
 
-## Purpose
+# Stage Workflow Skill
 
-Work through stages properly, understanding what content belongs in each stage.
-
-## When to Use
-
-- Starting work on a new feature/project
+## WHEN to Use
+- Starting work on a new feature or project (need to identify which stage)
 - Moving content between stages
-- Determining which stage to work in
-- Creating stage outputs
+- The user asks "which stage should this go in?"
+- Creating stage outputs (research docs, plans, designs, code)
+- When stage transitions are needed (e.g., done with research, moving to planning)
+
+## WHEN NOT to Use
+- Working entirely within a single known stage on a known task
+- Simple file edits where the stage is obvious
+- Non-stage-related work (e.g., updating global rules)
 
 ## References (MUST READ)
 
@@ -57,7 +63,7 @@ stage_X_05_design/
 
 When moving to next stage:
 1. Ensure current stage outputs are complete
-2. Create handoff document (optional)
+2. Create handoff document (optional — use `/handoff-creation`)
 3. Move to next stage folder
 4. Reference previous stage outputs as needed
 
@@ -85,6 +91,13 @@ If a stage isn't needed for this work:
 | 09 | fixes.md, revisions/, changelog.md |
 | 10 | final content (ready for use) |
 | 11 | previous_versions/, archive/ |
+
+## AALang Reference
+
+Stage workflows are managed by the orchestrator's StageStateActor:
+`layer_0/layer_0_01_ai_manager_system/personal/layer_0_orchestrator.gab.jsonld`
+
+The StageStateActor tracks current stage (01-11) and stage-specific specialists.
 
 ---
 

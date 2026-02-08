@@ -1,0 +1,27 @@
+# Structure Overview
+
+```
+0_layer_universal/
+├── CLAUDE.md                 ← Root Manager
+├── .claude/                  ← Tool permissions, settings, skills, rules
+├── hand_off_documents/       ← Four-directional communication
+│   ├── incoming/from_above/  ← User requests
+│   ├── incoming/from_below/  ← Layer results
+│   ├── outgoing/to_above/    ← Results to user
+│   └── outgoing/to_below/    ← Tasks to layers
+├── layer_0/                  ← Universal (applies to ALL)
+│   ├── layer_0_01_ai_manager_system/
+│   │   ├── professor/        ← AALang/GAB (submodule)
+│   │   └── personal/         ← Orchestrator
+│   ├── layer_0_02_manager_handoff_documents/
+│   ├── layer_0_03_context_agents/
+│   ├── layer_0_04_sub_layers/
+│   │   ├── sub_layer_0_01_knowledge_system/
+│   │   ├── sub_layer_0_02_principles/
+│   │   ├── sub_layer_0_03_rules/           ← READ FIRST
+│   │   ├── sub_layer_0_04_protocols/
+│   │   └── sub_layer_0_05+_setup/
+│   └── layer_0_99_stages/
+├── layer_1/                  ← Projects, features
+└── layer_-1_research/        ← Research projects
+```

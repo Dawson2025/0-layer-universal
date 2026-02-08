@@ -1,0 +1,37 @@
+---
+paths: layer_0/**
+---
+
+# Universal Layer Context
+
+## Required Reading
+
+When working in layer_0 (universal) directories:
+1. Read the nearest `.integration.md` file for agent behavior context
+2. Read the nearest `.gab.jsonld` via jq for precise mode constraints:
+   ```
+   jq '."@graph"[] | select(."@type" == "gab:Mode") | {id: ."@id", purpose: .purpose}' [nearest .gab.jsonld]
+   ```
+3. Read `.claude/skills/*/SKILL.md` — check WHEN/WHEN NOT conditions
+
+## Skill Usage
+
+| Situation | Skill | When |
+|-----------|-------|------|
+| Understanding location | `/context-gathering` | First action — identify sub-layer, purpose |
+| Working through stages | `/stage-workflow` | When following stage_0_* directories |
+| Creating new sub-layers | `/entity-creation` | When extending layer_0 structure |
+| Session transitions | `/handoff-creation` | Preserve context for next session |
+
+## Universal Layer Rules
+
+- Layer 0 content applies to ALL projects — changes here affect everything
+- Sub-layers are organized by type:
+  - `sub_layer_0_01_ai_system/` — AALang/GAB (primary AI system)
+  - `sub_layer_0_02_context_agents/` — Context loading agent
+  - `sub_layer_0_03_knowledge_system/` — Domain knowledge
+  - `sub_layer_0_04_principles/` — Guiding principles
+  - `sub_layer_0_05_rules/` — Mandatory rules (READ FIRST)
+  - `sub_layer_0_06_protocols/` — Standard protocols
+- Always check `sub_layer_0_05_rules/` before making changes
+- Universal rules cannot be overridden without explicit approval
