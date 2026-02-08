@@ -23,12 +23,19 @@ AALang is integrated in three main areas:
 3. **layer_6_orchestrator.gab.jsonld** — Project-level orchestrator inheriting from layer_0 template
 4. **GAB compiler** (professor submodule) — Tool for creating new AALang agents
 
-### What's Unclear
+### CLAUDE.md Audit (2026-02-07)
 
-- How much of the AALang spec is actually executed vs aspirational
-- Whether the context loading agent's confidence calculations are actually computed
-- Whether the orchestrator's circuit breaker and safeguards are enforced at runtime
-- How project orchestrators are actually invoked (manual vs automatic)
+- **298 CLAUDE.md files** across the system, **15,363 total lines**
+- **717 lines** in the static chain (5 files always loaded) — target is <400
+- Every CLAUDE.md has 15-25 lines of **ceremonial AALang pseudo-code** that doesn't connect to real artifacts
+- **6 CRITICAL rules duplicated** across `~/.claude/CLAUDE.md` and `~/CLAUDE.md`
+- **No `.claude/rules/` directory** — path-specific rules not being used
+- **4 root skills** exist but descriptions are vague — agents don't invoke them
+
+### Approved Approach: Hybrid
+
+JSON-LD as source-of-truth (design-time) + markdown as runtime interface + skills as bridge.
+See [implementation_plan.md](implementation_plan.md) for the full plan.
 
 ### Core Problems Being Addressed
 
@@ -52,7 +59,10 @@ See [problems_and_vision.md](problems_and_vision.md) for full analysis.
 | [orchestrator_integration.md](orchestrator_integration.md) | How orchestrators work within our layer hierarchy |
 | [skills_integration.md](skills_integration.md) | How to improve skill discovery and invocation (REVISED) |
 | [agent_teams_convergence.md](agent_teams_convergence.md) | Merging Agent Teams interactivity with layer-stage persistence |
-| [adoption_roadmap.md](adoption_roadmap.md) | Phased plan for deeper AALang adoption |
+| [adoption_roadmap.md](adoption_roadmap.md) | Phased plan for deeper AALang adoption (REVISED 2026-02-07) |
+| [implementation_plan.md](implementation_plan.md) | **Concrete implementation plan** — 6 phases, specific file changes, success criteria |
+| [claude_md_audit.md](claude_md_audit.md) | CLAUDE.md chain audit — 717 lines in static chain, duplication analysis, recommendations |
+| [selective_jsonld_navigation.md](selective_jsonld_navigation.md) | **PROVEN** — Agents can navigate JSON-LD graphs via jq, loading only 2-5% of files |
 
 ---
 

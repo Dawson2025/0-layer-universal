@@ -1,0 +1,294 @@
+# Implementation Plan — AALang/GAB + Claude Code Integration
+
+## Context
+
+This plan addresses the 5 core problems identified in `problems_and_vision.md` and verified in `verification_results.md` (including professor's documentation review on 2026-02-07). It implements the **hybrid approach**: JSON-LD as source of truth (design-time), skills and markdown as runtime interface, compact CLAUDE.md references connecting them.
+
+**Research location**: `layer_-1_research/layer_-1_better_ai_system/layer_0_group/layer_0_features/layer_0_feature_aalang_integration/`
+
+---
+
+## Problems Being Solved
+
+| # | Problem | Root Cause | Solution Approach |
+|---|---------|-----------|-------------------|
+| 1 | Instructions lost across sessions | CLAUDE.md bloat (717 lines in static chain), duplication, verbose ceremonial content | Slim CLAUDE.md chain, @imports, path-specific rules |
+| 2 | Agent Teams ephemeral | No persistence layer for team state | Hand-off documents + spawn prompts backed by AALang orchestrator definitions |
+| 3 | Skills not being used | Vague descriptions, no explicit trigger conditions | JSON-LD defines precise triggers → translated to SKILL.md with WHEN/WHEN NOT patterns |
+| 4 | Context chain efficiency | Entire context loaded every session regardless of task | Selective loading via path-specific rules, @imports, skills that load on-demand |
+| 5 | Markdown vs JSON-LD tension | Research shows JSON-LD worst for LLM accuracy, but best for definition precision | Hybrid: JSON-LD for design-time precision, markdown for runtime communication |
+
+---
+
+## Key Research Finding: JSON-LD Precision vs Runtime Comprehension
+
+**Question**: Is AALang/GAB's JSON-LD format better at getting agents to understand WHEN to use skills?
+
+**Answer**: JSON-LD is better at *defining* precision, not at *communicating* it to the LLM.
+
+- **JSON-LD mode transitions** force exact specification: conditions, confidence thresholds, satisfaction indicators
+- **Markdown skill descriptions** are what Claude Code actually reads when deciding to invoke skills
+- **The bridge**: JSON-LD precision disciplines the markdown descriptions. You can't write a vague SKILL.md if the JSON-LD forces you to specify exact trigger conditions.
+
+**Mechanism**:
+```
+JSON-LD definition          →  Translation  →  SKILL.md description
+(precise, structured)          (manual or       (readable, effective)
+                                automated)
+```
+
+This means:
+1. JSON-LD **indirectly** solves the skill invocation problem by forcing precision at design-time
+2. The precision must be **translated** into markdown SKILL.md for Claude Code to use it
+3. Future work: an automated transpiler could do this translation
+
+---
+
+## Structural Requirement: JSON-LD at Every Level
+
+Every layer, stage, sub-layer, sub-stage, and subxn layer/stage should have:
+
+```
+any_directory/
+├── CLAUDE.md                    ← Lean, references the JSON-LD
+├── orchestrator.gab.jsonld      ← For layers (coordinates children)
+├── agent.gab.jsonld             ← For stages (executes work)
+└── .claude/skills/              ← Skills backed by the JSON-LD
+    └── workflow/SKILL.md        ← Markdown translation of JSON-LD precision
+```
+
+### Scale Analysis
+
+| Level | Count | JSON-LD Exists | Strategy |
+|-------|-------|----------------|----------|
+| Root + layer_0 + layer_1 + layer_-1 | ~5 | 2 orchestrators | Manual creation |
+| Key stages (01-11 per active layer) | ~30 | 67 agent stubs (17 lines each) | Expand stubs with real content |
+| Sub-layers | ~20 | 0 | Template-based creation |
+| Project-level (school, better_ai_system, etc.) | ~10 | 6 orchestrators (286 lines each) | Already exist, enhance |
+| Deeply nested (subxn layers/stages) | ~21,500 | Some stubs | Auto-generate via entity-creation skill |
+
+**Practical approach**: Manual for ~35 key definitions, templates for ~50 more, auto-generate the rest.
+
+---
+
+## Phase 1: CLAUDE.md Chain Optimization (Immediate)
+
+### 1.1 Slim the Static Chain
+
+**Current**: 717 lines across 5 files. **Target**: ~350 lines.
+
+| File | Current | Target | Changes |
+|------|---------|--------|---------|
+| `~/.claude/CLAUDE.md` | 268 | ~120 | Condense CRITICAL rules (3-5 lines each), remove AALang pseudo-code, move compliance check + scenario table to @imports |
+| `~/CLAUDE.md` | 115 | ~30 | Remove ALL duplicate CRITICAL rules, keep only key locations + session start |
+| `~/dawson-workspace/CLAUDE.md` | 54 | ~30 | Remove AALang pseudo-code |
+| `~/dawson-workspace/code/CLAUDE.md` | 55 | ~30 | Remove AALang pseudo-code |
+| `0_layer_universal/CLAUDE.md` | 225 | ~130 | Remove duplicate universal rules, move ASCII structure to @import, replace AALang pseudo-code with references |
+
+### 1.2 Replace Ceremonial AALang with Real References
+
+**Before** (15-25 lines per file):
+```markdown
+## AALang Integration
+@agent ctx:ContextLoadingAgent
+### Context Chain Position
+- Position: 1 of 5 (User Global)
+...
+### On Load
+ctx:ContextLoadingStateActor.loadedFiles += ~/.claude/CLAUDE.md
+ctx:ContextConfidenceStateActor.rulesAwareness += 0.3
+```
+
+**After** (3-5 lines per file):
+```markdown
+## AALang
+- **Orchestrator**: `layer_0/layer_0_01_ai_manager_system/personal/layer_0_orchestrator.gab.jsonld`
+- **Context loader**: `layer_0/layer_0_03_context_agents/context_loading_gab.jsonld`
+- **Skills**: `/context-gathering`, `/stage-workflow`
+```
+
+### 1.3 Create @import Targets
+
+```
+0_layer_universal/@imports/
+├── structure_overview.md       ← Full ASCII directory tree (from 0_layer_universal/CLAUDE.md)
+├── session_workflow.md         ← Session start protocol (from layer_0/CLAUDE.md)
+├── compliance_checklist.md     ← Self-compliance check (from ~/.claude/CLAUDE.md)
+└── scenario_rules_index.md    ← Scenario-based rules with paths (from ~/.claude/CLAUDE.md)
+```
+
+---
+
+## Phase 2: Path-Specific Rules (Short-term)
+
+Create `.claude/rules/` directory (currently missing):
+
+```
+.claude/rules/
+├── research-context.md
+│   paths: layer_-1_research/**
+│   Content: research stage workflow, output-first protocol, Perplexity/WebSearch habits
+│
+├── school-context.md
+│   paths: layer_1/layer_1_projects/layer_1_project_school/**
+│   Content: writing style rules, assignment structure, Canvas integration hints
+│
+├── universal-layer.md
+│   paths: layer_0/**
+│   Content: universal rules enforcement, sub-layer awareness, knowledge system references
+│
+├── aalang-context.md
+│   paths: layer_0/layer_0_01_ai_manager_system/**
+│   Content: AALang conventions, GAB development workflow, JSON-LD formatting standards
+│
+└── development-stages.md
+    paths: **/stage_*_06_development/**
+    Content: implementation standards, testing requirements, commit conventions
+```
+
+**Impact**: Rules load automatically when in matching directories. Removes need for every CLAUDE.md to carry stage/project-specific context.
+
+---
+
+## Phase 3: Integration Markdown Companions (Short-term)
+
+For key JSON-LD files, create readable `.integration.md` companions:
+
+```
+layer_0/layer_0_01_ai_manager_system/personal/
+├── layer_0_orchestrator.gab.jsonld           ← Source of truth (701 lines)
+└── layer_0_orchestrator.integration.md        ← NEW: ~50 lines, readable summary
+
+layer_0/layer_0_03_context_agents/
+├── context_loading_gab.jsonld                ← Source of truth (1065 lines)
+└── context_loading.integration.md             ← NEW: ~40 lines, readable summary
+```
+
+The `.integration.md` contains:
+- Modes and their purposes (from the JSON-LD)
+- Key actors and their responsibilities
+- Mode transition conditions (translated from JSON-LD gates to plain English)
+- State actors and what they track
+
+Skills read these `.integration.md` files at runtime instead of parsing the JSON-LD directly.
+
+---
+
+## Phase 4: Enhance Existing Skills (Medium-term)
+
+### 4.1 Improve Root Skills with WHEN/WHEN NOT Patterns
+
+| Skill | Current Lines | Enhancement |
+|-------|--------------|-------------|
+| `context-gathering` | 24 | Add: references `context_loading_gab.jsonld`, WHEN/WHEN NOT triggers, mode transition conditions |
+| `handoff-creation` | 26 | Add: references orchestrator handoff patterns, standardized format template, validation checklist |
+| `entity-creation` | 85 | Add: references `gab.jsonld` for proper actor creation, auto-generate JSON-LD stubs for new entities |
+| `stage-workflow` | 91 | Add: references stage agent definitions, mode-specific instructions per stage |
+
+### 4.2 Create New Skills
+
+| Skill | Purpose | Backed By |
+|-------|---------|-----------|
+| `aalang-load` | Reads a `.jsonld` file, extracts key patterns, presents as markdown | `gab.jsonld`, `gab-runtime.jsonld` |
+| `aalang-navigate` | Selective navigation of JSON-LD graphs — reads top-level, drills into specific nodes | `index.jsonld` |
+| `team-create` | Creates Agent Team from layer structure — generates spawn prompts with context | orchestrator definitions |
+
+### 4.3 Improve Skill Descriptions for Better Invocation
+
+Current problem: skills exist but Claude Code doesn't invoke them because descriptions are vague.
+
+JSON-LD-informed improvement pattern:
+```markdown
+# Before (vague)
+description: "Use this skill when you need to understand the current location"
+
+# After (precise, from JSON-LD mode conditions)
+description: "Use when starting a new task AND current layer/stage is unknown.
+DO NOT use when layer/stage already identified in this session.
+TRIGGERS: user says 'where am I', session start, task requires knowing project context."
+```
+
+---
+
+## Phase 5: Fill JSON-LD Definitions (Medium-term)
+
+### 5.1 Manual Creation (~35 key definitions)
+
+| Location | Type | Priority |
+|----------|------|----------|
+| `0_layer_universal/` | Root orchestrator | HIGH |
+| `layer_0/` | Layer 0 orchestrator | HIGH |
+| `layer_1/` | Layer 1 orchestrator | HIGH |
+| `layer_-1_research/` | Research layer orchestrator | HIGH |
+| `stage_*_01` through `stage_*_11` (layer 0) | Stage agents | HIGH |
+| Key sub-layers (`sub_layer_0_01` through `sub_layer_0_05`) | Sub-layer agents | MEDIUM |
+
+### 5.2 Template-Based Creation (~50 definitions)
+
+Create GAB templates that can be parameterized:
+- `orchestrator_template.gab.jsonld` — for new layers
+- `stage_agent_template.gab.jsonld` — for new stages
+- `sub_layer_agent_template.gab.jsonld` — for new sub-layers
+
+### 5.3 Auto-Generation (ongoing)
+
+Update `entity-creation` skill to:
+1. Create the directory structure
+2. Generate JSON-LD from template with layer/stage parameters
+3. Generate CLAUDE.md with references to the JSON-LD
+4. Generate `.integration.md` companion
+5. Generate SKILL.md if it's a stage (workflow skill)
+
+---
+
+## Phase 6: Agent Teams Persistence (Longer-term)
+
+Bridge AALang orchestrator definitions with Claude Code Agent Teams:
+
+1. Orchestrator JSON-LD defines team structure (who spawns, who coordinates, what state to track)
+2. `/team-create` skill reads the orchestrator, generates spawn prompts with proper context
+3. Hand-off documents persist team state between sessions
+4. State actors defined in JSON-LD map to `context_state.json` or similar persistence
+
+---
+
+## Implementation Priority
+
+| Phase | Impact | Effort | Do When |
+|-------|--------|--------|---------|
+| 1: CLAUDE.md optimization | HIGH | LOW | **Immediate** |
+| 2: Path-specific rules | HIGH | LOW | **Immediate** |
+| 3: Integration companions | MEDIUM | LOW | Short-term |
+| 4: Skill enhancement | HIGH | MEDIUM | Short-term |
+| 5: JSON-LD definitions | MEDIUM | HIGH | Medium-term |
+| 6: Agent Teams persistence | HIGH | HIGH | Longer-term |
+
+---
+
+## Success Criteria
+
+| Problem | Metric | Target |
+|---------|--------|--------|
+| 1. Instructions lost | Static chain line count | <400 lines (from 717) |
+| 2. Agent Teams ephemeral | Teams can resume from hand-off docs | Manual test: spawn team, close session, resume |
+| 3. Skills not being used | Skill invocation rate | Claude Code invokes skills when conditions match (manual testing) |
+| 4. Context efficiency | On-demand vs static ratio | >60% of context loaded dynamically (via skills/rules) |
+| 5. Markdown vs JSON-LD | Both formats coexist | JSON-LD definitions exist alongside markdown runtime docs |
+
+---
+
+## Dependencies
+
+| Depends On | For |
+|-----------|-----|
+| Professor's upstream AALang (synced) | Latest language spec for JSON-LD definitions |
+| Claude Code @import feature | CLAUDE.md @imports to work |
+| Claude Code path-specific rules | `.claude/rules/*.md` with `paths:` frontmatter |
+| Research verification (completed 2026-02-07) | Understanding what works and what doesn't |
+
+---
+
+*Implementation plan for: layer_0_feature_aalang_integration*
+*Created: 2026-02-07*
+*Status: APPROVED — ready for phased execution*
+*Approach: Hybrid (JSON-LD source-of-truth + markdown runtime + skills bridge)*
