@@ -1,4 +1,4 @@
-# AutoGen Agent Context
+# OpenAI Context
 
 ## Identity
 
@@ -14,25 +14,18 @@ You are an agent at **Layer -1** (Research), **Project**: better_ai_system.
 
 
 
+## OpenAI-Specific Notes
 
-## AutoGen-Specific Configuration
+### Function Calling
+When using OpenAI function calling:
+- Read .0agnostic/ resources for detailed instructions
+- Check episodic memory for context
+- Follow multi-agent sync rules for shared files
 
-### Agent Registration
-Register this context in your AutoGen agent configuration:
-
-```python
-agent_config = {
-    "context_file": "AGENTS.md",
-    "resources_dir": ".0agnostic/",
-    "episodic_dir": "outputs/episodic/"
-}
-```
-
-### Multi-Agent Coordination
-- Check .locks/ before modifying shared files
-- Use atomic writes (temp file → rename)
-- Log changes to divergence.log
-- Read session files to understand previous work
+### Context Window Management
+- 0AGNOSTIC.md is lean (<400 tokens)
+- Load .0agnostic/ resources on-demand
+- Avoid loading everything upfront
 
 ---
 *Auto-generated from 0AGNOSTIC.md via agnostic-sync.sh*

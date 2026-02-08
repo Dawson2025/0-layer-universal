@@ -81,6 +81,20 @@
         "layer_1_sub_feature_automation_system",
         "layer_1_sub_feature_documentation_system"
       ]
+    },
+    {
+      "@id": "layer_0_feature_agent_performance/",
+      "@type": "Feature",
+      "name": "Agent Performance",
+      "description": "Unified research into all aspects of AI agent performance — consolidates knowledge/memory, scaling, AALang, organization, and tooling",
+      "note": "Phase 1: hierarchy created with migration notes. Phase 2: migrate content from existing features.",
+      "children": [
+        "layer_1_sub_feature_knowledge_and_memory",
+        "layer_1_sub_feature_performance_at_scale",
+        "layer_1_sub_feature_aalang",
+        "layer_1_sub_feature_organization",
+        "layer_1_sub_feature_tooling"
+      ]
     }
   ]
 }
