@@ -102,37 +102,74 @@ any_directory/
 | `~/dawson-workspace/code/CLAUDE.md` | 55 | ~30 | Remove AALang pseudo-code |
 | `0_layer_universal/CLAUDE.md` | 225 | ~130 | Remove duplicate universal rules, move ASCII structure to @import, replace AALang pseudo-code with references |
 
-### 1.2 Add jq-First Instructions (Layer 1 of Redundancy Model)
+### 1.2 Add Context Loading Instructions for ALL Three Layers
 
-Add ~20-25 lines to the primary CLAUDE.md (`~/.claude/CLAUDE.md` or `0_layer_universal/CLAUDE.md`) with explicit jq instructions for AALang context loading:
+Add ~35-45 lines to the primary CLAUDE.md with instructions that tell the agent to read from ALL three layers AND rules. **Critical**: every layer needs its own explicit "read this" trigger — the agent won't discover skills, `.integration.md` files, or rules on its own.
+
+**Root CLAUDE.md draft** (`~/.claude/CLAUDE.md` or `0_layer_universal/CLAUDE.md`, ~35-45 lines):
 
 ```markdown
 ## AALang Context Loading
 
-Before starting any task, determine your current context:
+Before starting any task, load your context through these steps:
 
-### Step 1: Find the nearest JSON-LD definition
-```bash
-find [working-directory] -maxdepth 2 -name "*.gab.jsonld" -type f | head -5
+### Step 1: Read JSON-LD graph (primary)
+Find and read the nearest AALang agent definition:
+  find [working-directory] -maxdepth 2 -name "*.gab.jsonld" -type f | head -5
+
+Read its graph index:
+  jq '."@graph"[] | {id: ."@id", type: ."@type", purpose: .purpose} | select(.purpose != null)' [file.jsonld]
+
+Load the mode matching your task:
+  jq '."@graph"[] | select(."@id" == "[matched-mode-id]")' [file.jsonld]
+
+Output contains: constraints (MUST/MUST NOT), skills to invoke, transitions.
+
+### Step 2: Review available skills (fallback)
+- Read .claude/skills/*/SKILL.md files — each has WHEN/WHEN NOT conditions
+- Match conditions to your current task. If a match, invoke with /skill-name
+- Key skills: /context-gathering, /stage-workflow, /entity-creation, /handoff-creation
+
+### Step 3: Read integration summaries (second fallback)
+- Look for .integration.md files next to any .gab.jsonld files
+- These are markdown summaries: modes, constraints, skill mappings, state actors
+- Read with the Read tool — no jq needed
+
+### Step 4: Check path-specific rules
+- Read applicable rules in .claude/rules/
+- Rules contain: directory-specific context, skill references, workflow hints
+
+### Step 5: Follow what you found
+- Mode constraints from Step 1 are primary instructions
+- Skills matched in Step 2 should be invoked
+- Integration summaries (Step 3) provide additional context
+- Rules (Step 4) provide directory-specific overrides
 ```
 
-### Step 2: Read the graph index
-```bash
-jq '."@graph"[] | {id: ."@id", type: ."@type", purpose: .purpose} | select(.purpose != null)' [file.jsonld]
-```
-Identify which mode matches your current task.
+**Layer-level CLAUDE.md draft** (e.g., `layer_0/CLAUDE.md`, ~20-25 lines):
 
-### Step 3: Load the relevant mode
-```bash
-jq '."@graph"[] | select(."@id" == "[mode-id]")' [file.jsonld]
-```
-The output contains constraints (MUST/MUST NOT), skills to invoke, and transitions.
+```markdown
+## AALang
+- **Agent definition**: ./orchestrator.gab.jsonld
+- **Integration summary**: ./orchestrator.integration.md — read for modes, constraints, skill mappings
+- **Skills**: /context-gathering (task start), /stage-workflow (stage work), /entity-creation (new entities)
+- **Rules**: Check .claude/rules/ for path-specific context
 
-### Step 4: Follow the constraints as your instructions
-If the mode references a skill, invoke it. If it references child agents, delegate.
+To discover modes: jq '."@graph"[] | select(."@type" == "gab:Mode") | {id: ."@id", purpose: .purpose}' ./orchestrator.gab.jsonld
 ```
 
-This is the **primary** mechanism for getting agents to use the right skills at the right time. "Run this command" is more actionable than "decide if this skill matches."
+**Stage-level CLAUDE.md draft** (e.g., `stage_0_02_research/CLAUDE.md`, ~10-15 lines):
+
+```markdown
+## AALang
+- **Agent**: ./stage_agent.gab.jsonld
+- **Summary**: ./stage_agent.integration.md — read for constraints and skill mappings
+- **Skills**: /stage-workflow (primary for this stage)
+
+Run to see this stage's modes: jq '."@graph"[] | select(."@type" == "gab:Mode") | {id: ."@id", purpose: .purpose, skills: .skills}' ./stage_agent.gab.jsonld
+```
+
+See `architecture_decision_reference_chain.md` for the complete analysis of why all layers need explicit triggers.
 
 ### 1.3 Replace Ceremonial AALang with Real References
 
@@ -148,15 +185,9 @@ ctx:ContextLoadingStateActor.loadedFiles += ~/.claude/CLAUDE.md
 ctx:ContextConfidenceStateActor.rulesAwareness += 0.3
 ```
 
-**After** (3-5 lines per file):
-```markdown
-## AALang
-- **Orchestrator**: `layer_0/layer_0_01_ai_manager_system/personal/layer_0_orchestrator.gab.jsonld`
-- **Context loader**: `layer_0/layer_0_03_context_agents/context_loading_gab.jsonld`
-- **Skills**: `/context-gathering`, `/stage-workflow`
-```
+**After**: Replaced by the layer-appropriate variant from 1.2 above (root, layer, or stage level).
 
-### 1.3 Create @import Targets
+### 1.4 Create @import Targets
 
 ```
 0_layer_universal/@imports/
@@ -170,32 +201,58 @@ ctx:ContextConfidenceStateActor.rulesAwareness += 0.3
 
 ## Phase 2: Path-Specific Rules (Short-term)
 
-Create `.claude/rules/` directory (currently missing):
+Create `.claude/rules/` directory (currently missing). **Critical**: each rules file must contain explicit "read this" instructions that re-trigger all three layers — not just directory-specific hints.
 
 ```
 .claude/rules/
 ├── research-context.md
 │   paths: layer_-1_research/**
-│   Content: research stage workflow, output-first protocol, Perplexity/WebSearch habits
 │
 ├── school-context.md
 │   paths: layer_1/layer_1_projects/layer_1_project_school/**
-│   Content: writing style rules, assignment structure, Canvas integration hints
 │
 ├── universal-layer.md
 │   paths: layer_0/**
-│   Content: universal rules enforcement, sub-layer awareness, knowledge system references
 │
 ├── aalang-context.md
 │   paths: layer_0/layer_0_01_ai_manager_system/**
-│   Content: AALang conventions, GAB development workflow, JSON-LD formatting standards
 │
 └── development-stages.md
     paths: **/stage_*_06_development/**
-    Content: implementation standards, testing requirements, commit conventions
 ```
 
-**Impact**: Rules load automatically when in matching directories. Removes need for every CLAUDE.md to carry stage/project-specific context.
+### What Rules Files Must Contain
+
+Each rules file includes THREE sections, not just context hints:
+
+**Section 1: Required Reading** (re-triggers all layers)
+```markdown
+## Required Reading
+When working in this directory:
+1. Read the nearest .integration.md file for agent behavior context (Layer 3)
+2. Read the nearest .gab.jsonld via jq for precise mode constraints (Layer 1)
+3. Read .claude/skills/*/SKILL.md — check WHEN/WHEN NOT conditions (Layer 2)
+```
+
+**Section 2: Skill Usage Table** (explicit skill-to-situation mapping)
+```markdown
+## Skill Usage
+| Situation | Skill | When |
+|-----------|-------|------|
+| Starting work | /context-gathering | First action in any task |
+| Stage transitions | /stage-workflow | When moving between stages |
+| Creating entities | /entity-creation | When new features/directories needed |
+| Ending session | /handoff-creation | Before closing, to preserve state |
+```
+
+**Section 3: Directory-Specific Context** (varies per rules file)
+- `research-context.md`: research stage workflow, output-first protocol, source citation rules
+- `school-context.md`: writing style rules, assignment structure, Canvas integration hints
+- `universal-layer.md`: universal rules enforcement, sub-layer awareness
+- `aalang-context.md`: AALang conventions, GAB development workflow, JSON-LD formatting
+- `development-stages.md`: implementation standards, testing requirements, commit conventions
+
+**Impact**: Rules load automatically when in matching directories AND they re-trigger all three layers. Even if the agent didn't follow CLAUDE.md's Steps 1-4, entering a matching directory re-injects the same instructions via the rules file.
 
 ---
 

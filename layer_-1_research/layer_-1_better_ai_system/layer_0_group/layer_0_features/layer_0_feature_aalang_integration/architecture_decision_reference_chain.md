@@ -7,37 +7,46 @@
 The reference chain architecture uses **three redundant layers** to maximize the probability that an agent correctly identifies and invokes the right skills at the right time. No single mechanism is sufficient — the solution is redundancy.
 
 ```
-┌─────────────────────────────────────────────────────────────────────────┐
-│                    THREE-LAYER REDUNDANCY MODEL                         │
-│                                                                         │
-│  Layer 1: jq-first (PRIMARY)                                           │
-│  ┌───────────────────────────────────────────────────────────────────┐  │
-│  │ CLAUDE.md contains jq instructions                               │  │
-│  │   → Agent runs jq on JSON-LD graph                               │  │
-│  │     → JSON-LD output says: "use /skill-X, constraints: [...]"    │  │
-│  │       → Agent invokes skill with full precision                  │  │
-│  └───────────────────────────────────────────────────────────────────┘  │
-│                                                                         │
-│  Layer 2: Skill descriptions (FALLBACK)                                │
-│  ┌───────────────────────────────────────────────────────────────────┐  │
-│  │ SKILL.md has WHEN/WHEN NOT patterns                              │  │
-│  │   → Claude Code's native skill matcher reads descriptions        │  │
-│  │     → If match, skill is invoked                                 │  │
-│  │       → Skill internally uses jq for precision                   │  │
-│  └───────────────────────────────────────────────────────────────────┘  │
-│                                                                         │
-│  Layer 3: Transpiled markdown (SECOND FALLBACK)                        │
-│  ┌───────────────────────────────────────────────────────────────────┐  │
-│  │ .integration.md is auto-generated from JSON-LD via transpiler    │  │
-│  │   → Human-readable markdown version of the same precision        │  │
-│  │     → Agent reads this if jq doesn't run AND skill not invoked   │  │
-│  │       → Still gets precise instructions, in native format        │  │
-│  └───────────────────────────────────────────────────────────────────┘  │
-│                                                                         │
-│  + CLAUDE.md compact mapping table as additional safety net            │
-│  + Path-specific rules (.claude/rules/) as directory-level hints       │
-│                                                                         │
-└─────────────────────────────────────────────────────────────────────────┘
+┌──────────────────────────────────────────────────────────────────────────────┐
+│                    THREE-LAYER REDUNDANCY MODEL                               │
+│                                                                              │
+│  CLAUDE.md tells the agent to read ALL of these (Steps 1-4):                │
+│                                                                              │
+│  Step 1 → Layer 1: jq-first (PRIMARY)                                       │
+│  ┌────────────────────────────────────────────────────────────────────────┐  │
+│  │ CLAUDE.md says: "Run jq on the nearest .gab.jsonld"                   │  │
+│  │   → Agent runs jq on JSON-LD graph                                    │  │
+│  │     → JSON-LD output says: "use /skill-X, constraints: [...]"         │  │
+│  │       → Agent invokes skill with full precision                       │  │
+│  └────────────────────────────────────────────────────────────────────────┘  │
+│                                                                              │
+│  Step 2 → Layer 2: Skill descriptions (FALLBACK)                            │
+│  ┌────────────────────────────────────────────────────────────────────────┐  │
+│  │ CLAUDE.md says: "Read .claude/skills/*/SKILL.md — check WHEN/WHEN NOT"│  │
+│  │   → Agent reads SKILL.md files, evaluates trigger conditions          │  │
+│  │     → If conditions match, agent invokes the skill                    │  │
+│  │   + Claude Code's native matcher also runs in parallel (passive)      │  │
+│  └────────────────────────────────────────────────────────────────────────┘  │
+│                                                                              │
+│  Step 3 → Layer 3: Transpiled markdown (SECOND FALLBACK)                    │
+│  ┌────────────────────────────────────────────────────────────────────────┐  │
+│  │ CLAUDE.md says: "Read .integration.md files next to any .gab.jsonld"  │  │
+│  │   → Agent reads auto-generated markdown summary                       │  │
+│  │     → Summary contains modes, constraints, AND skill mappings         │  │
+│  │       → Agent follows instructions in native markdown format          │  │
+│  └────────────────────────────────────────────────────────────────────────┘  │
+│                                                                              │
+│  Step 4 → Path-specific rules (REINFORCEMENT)                               │
+│  ┌────────────────────────────────────────────────────────────────────────┐  │
+│  │ CLAUDE.md says: "Check .claude/rules/ for path-specific context"      │  │
+│  │ Rules auto-load by directory AND contain:                             │  │
+│  │   → "Read the nearest .integration.md"  (re-triggers Layer 3)        │  │
+│  │   → "Check skills: /skill-X, /skill-Y"  (re-triggers Layer 2)       │  │
+│  │   → "Run jq on [file]"                  (re-triggers Layer 1)        │  │
+│  │   → Directory-specific constraints and workflow hints                 │  │
+│  └────────────────────────────────────────────────────────────────────────┘  │
+│                                                                              │
+└──────────────────────────────────────────────────────────────────────────────┘
 ```
 
 ---
@@ -94,52 +103,133 @@ CLAUDE.md contains explicit jq instructions. The agent runs jq against the relev
 | **Failure mode** | Agent doesn't recognize situation → skill never fires | Agent skips jq instruction → falls through to Layer 2 |
 | **Agent decision** | "Does this situation match this description?" (vague) | "Run this command and follow its output" (concrete) |
 
-### What jq Instructions Look Like in CLAUDE.md
+### What CLAUDE.md Instructions Look Like — ALL Layers
 
-**Draft — approximately 20-25 lines of static context:**
+**Critical insight**: Every layer needs explicit "read this" instructions in the CLAUDE.md. The agent won't discover skills, `.integration.md` files, or rules on its own unless told to look. The CLAUDE.md must contain triggers for ALL three layers plus rules.
+
+**Complete draft — approximately 35-45 lines of static context:**
 
 ```markdown
 ## AALang Context Loading
 
-Before starting any task, determine your current context by running:
+Before starting any task, load your context through these steps:
 
-### Step 1: Identify the nearest JSON-LD definition
-Find the closest `.gab.jsonld` file to your working directory:
+### Step 1: Read JSON-LD graph (Layer 1 — primary)
+Find and read the nearest AALang agent definition:
 ```bash
 find [working-directory] -maxdepth 2 -name "*.gab.jsonld" -type f | head -5
 ```
 
-### Step 2: Read the graph index
+Read its graph index to discover available modes:
 ```bash
 jq '."@graph"[] | {id: ."@id", type: ."@type", purpose: .purpose} | select(.purpose != null)' [file.jsonld]
 ```
 
-This returns all nodes with their purposes (~20-30 lines). Identify which mode matches your current task.
-
-### Step 3: Load the relevant mode's constraints
+Identify which mode matches your task, then load that mode's constraints:
 ```bash
 jq '."@graph"[] | select(."@id" == "[matched-mode-id]")' [file.jsonld]
 ```
 
-This returns the mode's full definition including:
-- **constraints**: What you MUST do and MUST NOT do
-- **actors**: Who handles what
-- **skills**: Which skills to invoke (`/skill-name`)
-- **transitions**: When to move to the next mode
+The output contains: constraints (MUST/MUST NOT), skills to invoke, and transitions.
 
-### Step 4: Follow the constraints as your instructions
-The mode constraints are your operating instructions. If they reference a skill, invoke it.
+### Step 2: Review available skills (Layer 2 — fallback)
+List and read the available skills for this context:
+- Read `.claude/skills/*/SKILL.md` files to understand what skills exist
+- Each SKILL.md contains WHEN/WHEN NOT conditions — match these to your current task
+- If a skill's trigger conditions match, invoke it with `/skill-name`
+- Key skills: `/context-gathering`, `/stage-workflow`, `/entity-creation`, `/handoff-creation`
+
+### Step 3: Read integration summaries (Layer 3 — second fallback)
+If `.integration.md` files exist alongside JSON-LD files, read them:
+- These are markdown summaries of the JSON-LD agent definitions
+- They contain: modes, constraints, skill mappings, state actors
+- Read with the Read tool — no jq needed
+- Look for: `[name].integration.md` next to any `[name].gab.jsonld`
+
+### Step 4: Check path-specific rules
+Read any applicable rules in `.claude/rules/`:
+- Rules auto-load by directory path, but also read them explicitly
+- They contain: directory-specific context, skill references, workflow hints
+- Key rules files: `research-context.md`, `universal-rules.md`, `aalang-integration.md`
+
+### Step 5: Follow what you found
+- Mode constraints from JSON-LD (Step 1) are your primary instructions
+- Skills matched in Step 2 should be invoked
+- Integration summaries (Step 3) provide additional context
+- Rules (Step 4) provide directory-specific overrides
 ```
+
+### Per-Layer CLAUDE.md Variants
+
+Not every CLAUDE.md needs all 45 lines. Use the appropriate variant based on depth:
+
+**Root-level CLAUDE.md** (~35-45 lines): All 5 steps, full jq instructions, all skill references, all rules references. Used in `~/.claude/CLAUDE.md` or `0_layer_universal/CLAUDE.md`.
+
+**Layer-level CLAUDE.md** (~20-25 lines): Steps 1, 2, 3 only. Points to the specific JSON-LD, lists relevant skills, references the specific `.integration.md`. Used in `layer_0/CLAUDE.md`, `layer_1/CLAUDE.md`, etc.
+
+```markdown
+## AALang
+- **Agent definition**: `./orchestrator.gab.jsonld`
+- **Integration summary**: `./orchestrator.integration.md` — read this for modes, constraints, skill mappings
+- **Skills**: `/context-gathering` (on task start), `/stage-workflow` (stage work), `/entity-creation` (new entities)
+- **Rules**: Check `.claude/rules/` for path-specific context
+
+To discover modes: `jq '."@graph"[] | select(."@type" == "gab:Mode") | {id: ."@id", purpose: .purpose}' ./orchestrator.gab.jsonld`
+```
+
+**Stage-level CLAUDE.md** (~10-15 lines): Steps 1 and 2 only. Points to the stage agent JSON-LD, lists stage-relevant skills, references the `.integration.md`.
+
+```markdown
+## AALang
+- **Agent**: `./stage_agent.gab.jsonld`
+- **Summary**: `./stage_agent.integration.md` — read for constraints and skill mappings
+- **Skills**: `/stage-workflow` (primary for this stage)
+
+Run to see this stage's modes: `jq '."@graph"[] | select(."@type" == "gab:Mode") | {id: ."@id", purpose: .purpose, skills: .skills}' ./stage_agent.gab.jsonld`
+```
+
+### What Goes in `.claude/rules/` Files
+
+The `.claude/rules/` files are NOT just hints — they contain explicit instructions to read and use specific resources:
+
+```markdown
+---
+paths: layer_-1_research/**
+---
+# Research Context Rules
+
+## Required Reading
+When working in research directories:
+1. Read the nearest `.integration.md` file for agent behavior context
+2. Read the nearest `.gab.jsonld` via jq for precise mode constraints
+3. Check available skills: `/context-gathering`, `/stage-workflow`
+
+## Skill Usage
+| Situation | Skill | When |
+|-----------|-------|------|
+| Starting research | /context-gathering | First action in any research task |
+| Following research stages | /stage-workflow | When stage transitions needed |
+| Creating research entities | /entity-creation | When new features/sub-features needed |
+| Ending session | /handoff-creation | Before closing, to preserve state |
+
+## Research-Specific Constraints
+- Always include Sources: section with research output
+- Use Perplexity/WebSearch for facts, not assumptions
+- Document findings in the correct stage directory (stage_02_research)
+```
+
+Each rules file serves as BOTH a context injector AND a trigger for the other layers. When the agent enters a matching directory, the rules file tells it: "read the JSON-LD," "check these skills," "read the .integration.md."
 
 ### Cost-Benefit Analysis
 
 | Metric | Value |
 |--------|-------|
-| **Static context cost** | ~20-25 lines in CLAUDE.md |
+| **Static context cost** | ~35-45 lines in root CLAUDE.md, ~10-25 in descendants |
 | **Dynamic context cost** | ~50 lines per jq output (2-5% of JSON-LD) |
-| **Tool calls added** | 1-3 Bash calls (find + jq) at task start |
-| **Precision gained** | Full JSON-LD mode/constraint/skill precision |
-| **Budget impact** | After removing ~350 lines of bloat, adding 25 lines still nets ~325 line reduction |
+| **Tool calls added** | 1-3 Bash calls (find + jq) + 1-2 Read calls (.integration.md, rules) |
+| **Precision gained** | Full JSON-LD mode/constraint/skill precision across all 3 layers |
+| **Budget impact** | After removing ~350 lines of bloat, adding 45 lines still nets ~300 line reduction |
+| **Reliability** | 3 independent layers + rules, vs 0 layers currently |
 
 ---
 
@@ -147,7 +237,11 @@ The mode constraints are your operating instructions. If they reference a skill,
 
 ### How It Works
 
-If the agent doesn't run the jq instructions (skips them, doesn't notice, or is in a context where CLAUDE.md jq instructions aren't loaded), Claude Code's native skill matching still operates. Well-written SKILL.md descriptions with explicit WHEN/WHEN NOT patterns serve as the fallback.
+Layer 2 is NOT just passive probabilistic matching. The CLAUDE.md instructions (Step 2) **explicitly tell the agent to read through SKILL.md files** and match their WHEN/WHEN NOT conditions to the current task. This makes skill discovery active, not passive.
+
+Two sub-mechanisms:
+1. **Active discovery** (from CLAUDE.md Step 2): Agent reads SKILL.md files, evaluates WHEN/WHEN NOT conditions
+2. **Passive matching** (Claude Code native): Skill descriptions in system prompt, matcher runs automatically
 
 ### What Good Skill Descriptions Look Like
 
@@ -165,10 +259,11 @@ description: |
 
 ### Why This Is a Fallback, Not Primary
 
-- Skill matching is probabilistic — the LLM decides based on description similarity
+- Passive skill matching is probabilistic — the LLM decides based on description similarity
 - Descriptions have a character budget (~16K default, configurable)
-- Even perfect descriptions don't guarantee invocation
-- But it's STILL valuable as a second chance when jq doesn't run
+- Even perfect descriptions don't guarantee invocation via the passive matcher
+- But ACTIVE discovery (agent reads SKILL.md files per CLAUDE.md instructions) is much more reliable
+- Combined, active + passive gives Layer 2 reasonable reliability as a fallback
 
 ---
 
@@ -314,44 +409,61 @@ On entity-creation (creating new layer/stage/sub-layer):
 
 ## How the Three Layers Work Together
 
-### Best case: All three fire
+**Key design**: CLAUDE.md contains explicit "read this" instructions for ALL layers, not just Layer 1. The agent is told to: run jq (Layer 1), read SKILL.md files (Layer 2), read .integration.md (Layer 3), AND check .claude/rules/. Every layer has its own trigger.
+
+### Best case: Agent follows all steps
 
 ```
-1. Agent reads CLAUDE.md → finds jq instructions
-2. Agent runs jq → gets precise mode/skill mapping from JSON-LD
-3. Agent invokes correct skill with full constraints
-   (Layers 2 and 3 exist but weren't needed)
+1. Agent reads CLAUDE.md → follows Step 1 (jq)
+   → Gets precise mode/skill mapping from JSON-LD
+2. Agent reads CLAUDE.md → follows Step 2 (skills)
+   → Reads SKILL.md files, confirms which skills match
+3. Agent reads CLAUDE.md → follows Step 3 (.integration.md)
+   → Gets readable summary confirming the same instructions
+4. Agent reads CLAUDE.md → follows Step 4 (rules)
+   → Gets directory-specific context reinforcing the same skills
+5. Agent has FOUR reinforcing sources all pointing to the same behavior
+   → Maximum confidence in correct action
 ```
 
-### Partial failure: jq doesn't run
+### Partial failure: Agent skips some steps
 
 ```
-1. Agent reads CLAUDE.md → skips jq instructions (didn't notice, didn't prioritize)
-2. Claude Code's skill matcher reads SKILL.md descriptions
-3. Description matches situation → skill invoked
-   (Layer 1 failed, Layer 2 caught it)
+1. Agent reads CLAUDE.md → runs jq (Step 1) but skips Steps 2-4
+   → Still gets precise instructions from JSON-LD alone
+   → Correct behavior (Layer 1 sufficient)
+
+OR:
+
+1. Agent reads CLAUDE.md → skips Step 1 (jq) but reads SKILL.md files (Step 2)
+   → Finds matching WHEN/WHEN NOT conditions
+   → Correct behavior (Layer 2 sufficient)
+
+OR:
+
+1. Agent reads CLAUDE.md → skips Steps 1-2 but reads .integration.md (Step 3)
+   → Gets full mode/skill/constraint summary in markdown
+   → Correct behavior (Layer 3 sufficient)
 ```
 
-### Double failure: jq skipped AND skill not matched
+### Path-specific rules as catch-all
 
 ```
-1. Agent reads CLAUDE.md → skips jq instructions
-2. Skill descriptions don't match well enough → no skill invoked
-3. Agent reads .integration.md (referenced in CLAUDE.md or path-specific rule)
-4. Markdown clearly states: "In this situation, use /skill-X"
-5. Agent follows the markdown instruction → invokes skill
-   (Layers 1 and 2 failed, Layer 3 caught it)
+1. Agent enters a directory matching a .claude/rules/ path pattern
+   → Rules auto-load AND contain explicit "read these files" instructions
+   → Rules say: "Read the nearest .integration.md, check these skills, run jq on [file]"
+   → Even if the agent didn't follow CLAUDE.md steps, the rules re-trigger them
 ```
 
 ### Complete failure: None fire
 
 ```
-1. All three layers miss
+1. Agent ignores all CLAUDE.md steps AND rules don't load
 2. Agent operates without AALang precision — falls back to default Claude Code behavior
 3. This is the CURRENT state (what we have today) — so no regression
 ```
 
-The three-layer model means we have three chances to get it right, versus zero chances today.
+The model provides **multiple independent triggers** for each layer. Even if the agent doesn't follow the CLAUDE.md steps, the rules files re-inject the same instructions when the agent enters a matching directory.
 
 ---
 
