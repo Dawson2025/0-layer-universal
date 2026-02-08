@@ -40,3 +40,8 @@ When working in the AI manager system:
 - Use jq to navigate JSON-LD graphs selectively (2-5% of file)
 - The professor submodule is upstream — work on the `dawson` branch
 - Mode-Actor pattern: modes define WHAT to do, actors define WHO does it
+
+## Episodic Memory
+
+- **Session start**: Check `memory/episodic.md` (auto-memory topic file) for recent session history across all layers
+- **Session end**: Update `outputs/episodic/index.md` in the working directory, then run `tools/episodic-sync.sh`

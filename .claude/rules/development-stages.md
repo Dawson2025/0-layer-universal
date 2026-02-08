@@ -32,3 +32,8 @@ When working in development stages:
 - Follow commit conventions: `[AI Context]` prefix for AI context changes
 - Test before marking development complete — next stage is `stage_*_07_testing`
 - Do not skip stages — if development reveals design issues, go back to stage 05
+
+## Episodic Memory
+
+- **Session start**: Check `memory/episodic.md` (auto-memory topic file) for recent development session history
+- **Session end**: Update `outputs/episodic/index.md` in the working stage directory, then run `tools/episodic-sync.sh`

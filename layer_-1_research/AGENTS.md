@@ -32,6 +32,8 @@ Record your work in `outputs/episodic/`:
 - Create session files for significant work
 - Update divergence.log when changing outputs
 - Enable next session to continue seamlessly
+- **Quick review**: Check `memory/episodic.md` (auto-memory topic file) for recent session history across all layers
+- **After updating**: Run `tools/episodic-sync.sh` to sync episodic memory to auto-memory
 
 ### Research Protocol
 Research projects follow stages 01-11 (see Stage Navigation below).
