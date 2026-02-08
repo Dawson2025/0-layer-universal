@@ -14,6 +14,7 @@ This knowledge base documents how the AI system and layer-stage framework works.
 | [Navigation Patterns](navigation_patterns/) | How to traverse the system | Finding or loading content |
 | [Context Loading](context_loading/) | CLAUDE.md, 0AGNOSTIC.md, triggers | Setting up agent context |
 | [Agent Coordination](agent_coordination/) | Scope vs delegation, multi-agent patterns | Working across layers/stages |
+| [AALang & GAB System](aalang_gab_system/) | Mode-Actor pattern, GAB compiler, agent patterns | Understanding or creating AALang agents |
 
 ---
 
@@ -72,10 +73,16 @@ sub_layer_0_02_knowledge_system/
 │   ├── HOW_CONTEXT_WORKS.md
 │   ├── AGNOSTIC_SYSTEM.md
 │   └── TRIGGER_PATTERNS.md
-└── agent_coordination/                ← Multi-agent work
-    ├── SCOPE_VS_DELEGATION.md         ← When to expand vs delegate
-    ├── HANDOFF_PROTOCOLS.md           ← Agent-to-agent communication
-    └── MULTI_AGENT_PATTERNS.md        ← Coordination patterns
+├── agent_coordination/                ← Multi-agent work
+│   ├── SCOPE_VS_DELEGATION.md         ← When to expand vs delegate
+│   ├── HANDOFF_PROTOCOLS.md           ← Agent-to-agent communication
+│   └── MULTI_AGENT_PATTERNS.md        ← Coordination patterns
+└── aalang_gab_system/                 ← AALang & GAB reference
+    ├── README.md                      ← Overview & key concepts
+    ├── mode_actor_pattern.md          ← Core execution pattern
+    ├── gab_compiler.md                ← How GAB creates agents
+    ├── runtime_and_formats.md         ← Runtime behaviors & output formats
+    └── agent_patterns.md              ← 4-mode, 5-mode pattern reference
 ```
 
 ---

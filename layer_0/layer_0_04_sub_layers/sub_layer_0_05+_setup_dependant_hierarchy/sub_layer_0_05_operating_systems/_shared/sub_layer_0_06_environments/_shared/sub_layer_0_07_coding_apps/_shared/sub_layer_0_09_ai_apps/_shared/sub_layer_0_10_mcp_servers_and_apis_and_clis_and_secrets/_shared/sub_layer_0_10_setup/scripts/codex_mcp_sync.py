@@ -139,6 +139,14 @@ def env_presets() -> Dict[str, Dict]:
     tavily_key = pick_secret("TAVILY_API_KEY", env_file)
     context7_key = pick_secret("CONTEXT7_API_KEY", env_file)
     context7_url = pick_secret("CONTEXT7_API_URL", env_file)
+    canvas_base_url = pick_secret("CANVAS_BASE_URL", env_file) or "https://byui.instructure.com"
+    canvas_token = pick_secret("CANVAS_API_TOKEN", env_file)
+
+    canvas_env = {}
+    if canvas_base_url:
+        canvas_env["CANVAS_BASE_URL"] = canvas_base_url
+    if canvas_token:
+        canvas_env["CANVAS_API_TOKEN"] = canvas_token
 
     return {
         "development": {
@@ -176,6 +184,11 @@ def env_presets() -> Dict[str, Dict]:
                 "args": ["-y", "mcp-filesystem-server"],
                 "env": {},
             },
+            "canvas": {
+                "command": "node",
+                "args": ["/home/dawson/mcp-servers/canvas-mcp-developer/dist/index.js"],
+                "env": canvas_env,
+            },
         },
         "testing": {
             "playwright": {
@@ -192,6 +205,11 @@ def env_presets() -> Dict[str, Dict]:
                 "command": "npx",
                 "args": ["-y", "mcp-filesystem-server"],
                 "env": {},
+            },
+            "canvas": {
+                "command": "node",
+                "args": ["/home/dawson/mcp-servers/canvas-mcp-developer/dist/index.js"],
+                "env": canvas_env,
             },
         },
         "production-lite": {
@@ -212,6 +230,11 @@ def env_presets() -> Dict[str, Dict]:
                 "command": "npx",
                 "args": ["-y", "mcp-filesystem-server"],
                 "env": {},
+            },
+            "canvas": {
+                "command": "node",
+                "args": ["/home/dawson/mcp-servers/canvas-mcp-developer/dist/index.js"],
+                "env": canvas_env,
             },
         },
     }

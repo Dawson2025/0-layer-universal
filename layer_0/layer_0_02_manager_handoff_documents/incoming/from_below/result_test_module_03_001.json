@@ -1,0 +1,53 @@
+{
+  "taskId": "test_module_03_001",
+  "parentTaskId": "user_request_001",
+  "status": "completed",
+  "executionPath": [
+    "layer_0_orchestrator (ReceiveMode → DelegationMode)",
+    "layer_6_sub_feature_module_03/layer_6_orchestrator (delegation)",
+    "layer_7_subx2_feature_04_executive_summary/layer_7_orchestrator (execution)"
+  ],
+  "result": {
+    "summary": "Module 03 - Executive Summary Assignment",
+    "assignment": {
+      "id": 16475469,
+      "title": "Module 03 - Executive Summary",
+      "points_possible": 100,
+      "due_date": "2026-02-12T23:59:00Z",
+      "submission_types": ["online_upload"]
+    },
+    "requirements": [
+      "Complete the Case Study Project with your team",
+      "Use the provided template (summary.docx)",
+      "Write professionally with proper grammar and spelling",
+      "Include summary of research",
+      "Include details and visualizations supporting conclusions",
+      "Include conclusion with caveats or concerns about data",
+      "One team member uploads the completed document (Word or PDF)"
+    ],
+    "rubric": {
+      "total_points": 100,
+      "criteria": [
+        {"name": "Quality of Implementation and Approach", "points": 40, "focus": "Model tuning, preprocessing, feature engineering"},
+        {"name": "Quality of Insights and Inferences", "points": 20, "focus": "Clear, actionable insights with awareness of limitations"},
+        {"name": "Quality of Visuals", "points": 15, "focus": "Presentational visuals conveying key points"},
+        {"name": "Quality of Writing, Clarity, and Presentation", "points": 10, "focus": "Professional writing, logical order, no grammar errors"},
+        {"name": "Quality of Evaluation", "points": 10, "focus": "Appropriate evaluation metrics for model performance"},
+        {"name": "Discussion Questions Responses", "points": 5, "focus": "Well-reasoned responses with rationale"}
+      ]
+    },
+    "key_links": {
+      "case_study_project": "https://byui-cse.github.io/cse450-course/module-03/project.html",
+      "template": "https://byui-cse.github.io/cse450-course/module-03/summary.docx",
+      "canvas_assignment": "https://byui.instructure.com/courses/396736/assignments/16475469"
+    }
+  },
+  "metrics": {
+    "tokensUsed": 2500,
+    "executionTime": "15s",
+    "layersTraversed": 7,
+    "filesRead": 4
+  },
+  "confidence": 0.95,
+  "completedAt": "2026-02-06T15:30:00Z"
+}

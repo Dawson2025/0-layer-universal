@@ -1,0 +1,28 @@
+{
+  "taskId": "test_module_03_001",
+  "parentTaskId": "user_request_001",
+  "description": "Research and summarize the Executive Summary assignment requirements for Module 03",
+  "context": {
+    "layer": 0,
+    "targetLayer": 7,
+    "targetPath": "layer_1/layer_1_projects/layer_1_project_school/.../layer_6_sub_feature_module_03/layer_7/layer_7_subx2_features/layer_7_subx2_feature_04_executive_summary/",
+    "delegationChain": [
+      "layer_0 → layer_1 (projects)",
+      "layer_1 → layer_2 (school)",
+      "layer_2 → layer_3 (computer science)",
+      "layer_3 → layer_4 (machine learning)",
+      "layer_4 → layer_5 (assignments)",
+      "layer_5 → layer_6 (module 03)",
+      "layer_6 → layer_7 (executive summary)"
+    ]
+  },
+  "requirements": [
+    "Read the assignment README.md",
+    "Extract key requirements, rubric criteria, and due dates",
+    "Return a summary of what needs to be done"
+  ],
+  "priority": "normal",
+  "timeout": 300,
+  "createdAt": "2026-02-06T15:25:00Z",
+  "status": "pending"
+}
