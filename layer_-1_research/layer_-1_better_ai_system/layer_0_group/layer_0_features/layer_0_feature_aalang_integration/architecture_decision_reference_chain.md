@@ -14,7 +14,7 @@ The reference chain architecture uses **three redundant layers** to maximize the
 │                                                                              │
 │  Step 1 → Layer 1: jq-first (PRIMARY)                                       │
 │  ┌────────────────────────────────────────────────────────────────────────┐  │
-│  │ CLAUDE.md says: "Run jq on the nearest .gab.jsonld"                   │  │
+│  │ CLAUDE.md says: "Find your .gab.jsonld, read matching .integration.md" │  │
 │  │   → Agent runs jq on JSON-LD graph                                    │  │
 │  │     → JSON-LD output says: "use /skill-X, constraints: [...]"         │  │
 │  │       → Agent invokes skill with full precision                       │  │
@@ -40,7 +40,7 @@ The reference chain architecture uses **three redundant layers** to maximize the
 │  ┌────────────────────────────────────────────────────────────────────────┐  │
 │  │ CLAUDE.md says: "Check .claude/rules/ for path-specific context"      │  │
 │  │ Rules auto-load by directory AND contain:                             │  │
-│  │   → "Read the nearest .integration.md"  (re-triggers Layer 3)        │  │
+│  │   → "Read the matching .integration.md"  (re-triggers Layer 3)        │  │
 │  │   → "Check skills: /skill-X, /skill-Y"  (re-triggers Layer 2)       │  │
 │  │   → "Run jq on [file]"                  (re-triggers Layer 1)        │  │
 │  │   → Directory-specific constraints and workflow hints                 │  │
@@ -200,9 +200,10 @@ paths: layer_-1_research/**
 
 ## Required Reading
 When working in research directories:
-1. Read the nearest `.integration.md` file for agent behavior context
-2. Read the nearest `.gab.jsonld` via jq for precise mode constraints
-3. Check available skills: `/context-gathering`, `/stage-workflow`
+1. Find the `.gab.jsonld` for your role (e.g., `agent_orchestrator.gab.jsonld`)
+2. Read the matching `.integration.md` (same base name) for agent behavior context
+3. For precise mode constraints, query the `.gab.jsonld` via jq
+4. Check available skills: `/context-gathering`, `/stage-workflow`
 
 ## Skill Usage
 | Situation | Skill | When |
@@ -451,7 +452,7 @@ OR:
 ```
 1. Agent enters a directory matching a .claude/rules/ path pattern
    → Rules auto-load AND contain explicit "read these files" instructions
-   → Rules say: "Read the nearest .integration.md, check these skills, run jq on [file]"
+   → Rules say: "Read the matching .integration.md (same base name), check these skills, run jq on [file]"
    → Even if the agent didn't follow CLAUDE.md steps, the rules re-trigger them
 ```
 

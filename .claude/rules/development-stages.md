@@ -7,12 +7,13 @@ paths: "**/stage_*_06_development/**"
 ## Required Reading
 
 When working in development stages:
-1. Read the nearest `.integration.md` file for agent behavior context
-2. Read the nearest `.gab.jsonld` via jq for mode constraints:
+1. Find the `.gab.jsonld` for your role (e.g., `layer_N_orchestrator.gab.jsonld`)
+2. Read the matching `.integration.md` (same base name, e.g., `layer_N_orchestrator.integration.md`)
+3. For precise mode constraints, query the `.gab.jsonld` via jq:
    ```
-   jq '."@graph"[] | select(."@type" == "gab:Mode") | {id: ."@id", purpose: .purpose}' [nearest .gab.jsonld]
+   jq '."@graph"[] | select(."@type" == "gab:Mode") | {id: ."@id", purpose: .purpose}' [matching .gab.jsonld]
    ```
-3. Read `.claude/skills/*/SKILL.md` — check WHEN/WHEN NOT conditions
+4. Read `.claude/skills/*/SKILL.md` — check WHEN/WHEN NOT conditions
 
 ## Skill Usage
 

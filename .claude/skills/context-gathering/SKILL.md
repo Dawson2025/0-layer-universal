@@ -21,15 +21,17 @@ description: "Gather context about current position in the layer-stage hierarchy
 
 1. **Read CLAUDE.md chain**: Starting from the working directory, read each CLAUDE.md up to root
 2. **Identify layer and stage**: Determine current layer (0, 1, -1) and stage (01-11)
-3. **Check for AALang agent definitions**: Look for nearest `.gab.jsonld` file
+3. **Find the `.gab.jsonld` for your role** in the current directory:
    ```bash
    find [working-directory] -maxdepth 2 -name "*.gab.jsonld" -type f | head -5
    ```
-4. **Read agent graph index** (if found):
+4. **Read the matching `.integration.md`** (same base name as the `.gab.jsonld`):
+   - e.g., `layer_5_orchestrator.gab.jsonld` → `layer_5_orchestrator.integration.md`
+   - `.integration.md` files are auto-generated summaries — do not edit directly
+5. **For precise mode constraints**, query the `.gab.jsonld` via jq:
    ```bash
-   jq '."@graph"[] | {id: ."@id", type: ."@type", purpose: .purpose} | select(.purpose != null)' [file.jsonld]
+   jq '."@graph"[] | select(."@type" == "gab:Mode") | {id: ."@id", purpose: .purpose}' [matching .gab.jsonld]
    ```
-5. **Read .integration.md** (if it exists next to the .gab.jsonld)
 6. **Check status.json** for current state
 7. **Check applicable rules** in `.claude/rules/`
 

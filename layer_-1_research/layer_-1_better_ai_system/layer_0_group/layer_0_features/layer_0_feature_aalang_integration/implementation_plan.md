@@ -229,8 +229,8 @@ Each rules file includes THREE sections, not just context hints:
 ```markdown
 ## Required Reading
 When working in this directory:
-1. Read the nearest .integration.md file for agent behavior context (Layer 3)
-2. Read the nearest .gab.jsonld via jq for precise mode constraints (Layer 1)
+1. Find the `.gab.jsonld` for your role — read the matching `.integration.md` (same base name) for agent behavior context (Layer 3)
+2. For precise mode constraints, query the `.gab.jsonld` via jq (Layer 1)
 3. Read .claude/skills/*/SKILL.md — check WHEN/WHEN NOT conditions (Layer 2)
 ```
 

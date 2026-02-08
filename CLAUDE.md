@@ -41,19 +41,24 @@ All [CRITICAL] rules from `~/.claude/CLAUDE.md` apply here. Key rules for this d
 
 ## AALang Context Loading
 
-**AALang** is the primary AI system. Agent definitions live as `.gab.jsonld` files throughout the hierarchy.
+**AALang** is the primary AI system. Agent definitions live as `.gab.jsonld` files throughout the hierarchy. Each `.gab.jsonld` has a matching `.integration.md` with the same base name (auto-generated summary — do not edit directly).
 
+**Naming convention**: `[name].gab.jsonld` → `[name].integration.md`
+- e.g., `layer_0_orchestrator.gab.jsonld` → `layer_0_orchestrator.integration.md`
+
+**To load agent context:**
+1. Find the `.gab.jsonld` for your role in the current directory
+2. Read the matching `.integration.md` (same base name) for a readable summary
+3. For precise mode constraints, query the `.gab.jsonld` via jq:
+   ```bash
+   jq '."@graph"[] | select(."@type" == "gab:Mode") | {id: ."@id", purpose: .purpose}' [matching .gab.jsonld]
+   ```
+
+**Key agents:**
 - **Orchestrator**: `layer_0/layer_0_01_ai_manager_system/personal/layer_0_orchestrator.gab.jsonld`
-- **Orchestrator summary**: `layer_0/layer_0_01_ai_manager_system/personal/layer_0_orchestrator.integration.md`
 - **Context loader**: `layer_0/layer_0_03_context_agents/context_loading.gab.jsonld`
-- **Context loader summary**: `layer_0/layer_0_03_context_agents/context_loading.integration.md`
 - **Skills**: `/context-gathering` (task start), `/stage-workflow` (stage work), `/entity-creation` (new entities), `/handoff-creation` (session end)
 - **Rules**: Check `.claude/rules/` for path-specific context
-
-To discover modes in any agent:
-```bash
-jq '."@graph"[] | select(."@type" == "gab:Mode") | {id: ."@id", purpose: .purpose}' [file.gab.jsonld]
-```
 
 ---
 
