@@ -159,28 +159,28 @@ JSON-LD is more precise than markdown for machine consumption because it's struc
 └─────────────────────────────────────────────────────────────┘
 ```
 
-### Key Design Principles (Revised)
+### Key Design Principles (Revised — includes three-layer redundancy)
 
-1. **Everything the LLM reads is markdown** — CLAUDE.md, skills, rules, @imported docs
-2. **AALang is a design system AND a navigable graph** — JSON-LD defines agent architecture; the AI navigates it selectively (reading 10-25% of the file), NOT loading it wholesale into context
-3. **Use Claude Code's native mechanisms** — @import (5 hops), skills (on-demand), path-specific rules, child CLAUDE.md (dynamic)
-4. **Skills remain shareable** — community format preserved (markdown + YAML frontmatter)
-5. **Improve skill discovery** — better descriptions using WHEN/WHEN NOT patterns, increase char budget via `SLASH_COMMAND_TOOL_CHAR_BUDGET`
-6. **Layer-stage system provides persistence** — context survives across sessions via files
-7. **Agent Teams provides interactivity** — live orchestration; spawn prompts inject layer context
-8. **Build toward a transpiler** — AALang .jsonld → optimized .md for LLM consumption
+1. **Three-layer redundancy for skill invocation** — no single mechanism is sufficient; use jq-first (primary) + skill descriptions (fallback) + transpiled markdown (second fallback). See `architecture_decision_reference_chain.md`.
+2. **AALang is a navigable graph** — JSON-LD defines agent architecture; the AI navigates it selectively via jq (2-5% of file), NOT loading it wholesale. See `selective_jsonld_navigation.md`.
+3. **Transpiler keeps everything in sync** — auto-generated `.integration.md` files provide the same precision as JSON-LD, in the format LLMs read best (markdown). Never hand-edited, always regenerated.
+4. **Use Claude Code's native mechanisms** — @import (5 hops), skills (on-demand), path-specific rules, child CLAUDE.md (dynamic)
+5. **Skills remain shareable** — community format preserved (markdown + YAML frontmatter)
+6. **jq instructions in CLAUDE.md** — explicit "run this command" is more reliable than implicit skill matching
+7. **Layer-stage system provides persistence** — context survives across sessions via files
+8. **Agent Teams provides interactivity** — live orchestration; spawn prompts inject layer context
+9. **JSON-LD is the single source of truth** — all precision flows from JSON-LD into skills, markdown, and instructions
 
-### Skills Integration Approach (Revised)
+### Skills Integration Approach (Revised — three-layer redundancy)
 
-> **CORRECTION**: Approach A (skills → JSON-LD pipeline) abandoned. JSON-LD is worse for LLMs.
+> **CORRECTION**: Both "skills-first" (Pattern B) and "skills → JSON-LD pipeline" were rejected. Skills-first is circular (if skills don't fire, putting them first doesn't help). JSON-LD is worse for LLM direct comprehension.
 
-**Approach: Better Markdown Skills + Routing Rules**
+**Approach: Three-Layer Redundancy**
 
-1. **Improve skill descriptions** — Use explicit WHEN/WHEN NOT patterns in YAML frontmatter
-2. **Increase skill char budget** — Set `SLASH_COMMAND_TOOL_CHAR_BUDGET=30000` (or higher)
-3. **List critical skills in CLAUDE.md** — "When X happens, use /skill-name" (acknowledged hack but works)
-4. **Use path-specific rules** — `.claude/rules/*.md` with `paths:` frontmatter to inject skill hints when working in relevant areas
-5. **Build a skill routing skill** — A meta-skill that, when invoked, reads the current context and recommends which other skills to use
+1. **Layer 1 (PRIMARY): jq instructions in CLAUDE.md** — Agent runs jq against JSON-LD graph, gets precise mode/skill mappings. "Run this command" is more actionable than "decide if this skill matches."
+2. **Layer 2 (FALLBACK): Improved skill descriptions** — WHEN/WHEN NOT patterns in YAML frontmatter, derived from JSON-LD mode constraints. Claude Code's native skill matcher uses these as fallback.
+3. **Layer 3 (SECOND FALLBACK): Transpiled `.integration.md`** — Auto-generated markdown from JSON-LD. Agent reads this if jq doesn't run AND skills don't match. Same precision, native format, no tool calls needed.
+4. **Supporting mechanisms** — CLAUDE.md compact mapping table, path-specific rules (`.claude/rules/*.md`), increase skill char budget via `SLASH_COMMAND_TOOL_CHAR_BUDGET`
 
 ### Agent Teams + Layer-Stage Convergence (Revised)
 
@@ -200,17 +200,26 @@ JSON-LD is more precise than markdown for machine consumption because it's struc
 
 ---
 
-## Next Steps (Revised)
+## Next Steps (Revised — 2026-02-07)
 
+### Completed
 1. ~~Research JSON-LD references in CLAUDE.md~~ → **Done. Not supported. Use @import instead.**
 2. ~~Prototype skill router in JSON-LD~~ → **Abandoned. Use markdown skills with better descriptions.**
 3. ~~Test AALang definitions in context~~ → **Deprioritized. Too token-expensive. Build transpiler first.**
-4. **Test JSON-LD selective navigation** — can the AI read a .jsonld top-level index, then navigate to specific nodes efficiently? Compare to markdown index navigation.
-5. **Prototype @import-based context loading** — test whether @importing detailed docs improves instruction following
-6. **Improve skill descriptions** — rewrite existing skills with WHEN/WHEN NOT patterns
-7. **Prototype team-creation skill** — automate layer-structure → Agent Teams mapping
-8. **Design AALang-to-Markdown transpiler** — bridge from formal definitions to LLM-optimized instructions
-9. **Test path-specific rules** — verify `.claude/rules/*.md` with `paths:` frontmatter works for targeted injection
+4. ~~Test JSON-LD selective navigation~~ → **PROVEN. jq loads 2-5% of file. See `selective_jsonld_navigation.md`.**
+5. ~~Decide reference chain architecture~~ → **DECIDED. Three-layer redundancy. See `architecture_decision_reference_chain.md`.**
+
+### Ready to Execute
+6. **Write jq instructions for CLAUDE.md** — draft the 20-25 lines, test in a real session
+7. **Build transpiler v1** (shell script) — generate `.integration.md` from existing JSON-LD
+8. **Improve skill descriptions** — use JSON-LD mode constraints to write WHEN/WHEN NOT patterns
+9. **Slim CLAUDE.md chain** — remove bloat (717 → ~350 lines), add jq instructions
+10. **Create `.claude/rules/`** — path-specific rules for research, school, universal, aalang
+
+### Planned
+11. **Prototype @import-based context loading** — test whether @importing detailed docs improves instruction following
+12. **Prototype team-creation skill** — automate layer-structure → Agent Teams mapping
+13. **Test all three redundancy layers** — verify each layer independently, then test failover
 
 ---
 

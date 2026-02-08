@@ -99,20 +99,31 @@ Tasks:
 
 ---
 
-## Key Decision: Hybrid Approach
+## Key Decisions
+
+### Decision 1: Hybrid Approach
 
 **Approved (2026-02-07)**: JSON-LD as source-of-truth + skills as runtime interface + compact CLAUDE.md references.
 
+**Why hybrid**: JSON-LD forces precision (the professor's "Explicit Over Implicit"). Markdown communicates that precision effectively to the LLM. Skills make it actionable at runtime. CLAUDE.md files just point to where things are.
+
+### Decision 2: Three-Layer Redundancy Model
+
+**Approved (2026-02-07)**: No single mechanism reliably solves skill invocation. Use three redundant layers.
+
 ```
-Design-Time                    Translation                Runtime
-─────────────                  ──────────                 ───────
-orchestrator.gab.jsonld  ──→  .integration.md      ──→  SKILL.md (Claude reads)
-agent.gab.jsonld         ──→  .integration.md      ──→  SKILL.md (Claude reads)
-gab.jsonld (spec)        ──→  knowledge docs       ──→  skills + rules
-                                                         CLAUDE.md (references only)
+Layer 1 (PRIMARY):       CLAUDE.md jq instructions → agent reads JSON-LD → gets skill mappings
+Layer 2 (FALLBACK):      SKILL.md WHEN/WHEN NOT patterns → Claude Code's native matcher
+Layer 3 (2ND FALLBACK):  Transpiled .integration.md → auto-generated markdown from JSON-LD
 ```
 
-**Why hybrid**: JSON-LD forces precision (the professor's "Explicit Over Implicit"). Markdown communicates that precision effectively to the LLM. Skills make it actionable at runtime. CLAUDE.md files just point to where things are.
+**Why three layers**: Skill invocation is probabilistic. Each layer is an independent chance to get it right. Three chances > one chance. Current state (zero layers) is the worst case — no regression possible.
+
+**Why jq-first**: "Run this command" is a concrete instruction the LLM reliably follows. Probabilistic skill matching ("does this situation match this description?") is the mechanism that's currently failing.
+
+**Why transpiler**: Auto-generated markdown from JSON-LD provides the same precision in the format LLMs read best. Never drifts from source of truth. No tool calls needed — just Read.
+
+See: `architecture_decision_reference_chain.md` for the full analysis.
 
 ---
 

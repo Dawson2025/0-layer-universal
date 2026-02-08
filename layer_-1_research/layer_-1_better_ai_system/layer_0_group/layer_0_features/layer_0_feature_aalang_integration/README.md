@@ -32,10 +32,17 @@ AALang is integrated in three main areas:
 - **No `.claude/rules/` directory** — path-specific rules not being used
 - **4 root skills** exist but descriptions are vague — agents don't invoke them
 
-### Approved Approach: Hybrid
+### Approved Approach: Hybrid with Three-Layer Redundancy
 
 JSON-LD as source-of-truth (design-time) + markdown as runtime interface + skills as bridge.
-See [implementation_plan.md](implementation_plan.md) for the full plan.
+
+**Reference chain architecture** (decided 2026-02-07):
+- **Layer 1 (primary)**: jq instructions in CLAUDE.md → agent reads JSON-LD graph → gets precise skill mappings
+- **Layer 2 (fallback)**: SKILL.md descriptions with WHEN/WHEN NOT patterns → Claude Code's native skill matcher
+- **Layer 3 (second fallback)**: Transpiled `.integration.md` files → auto-generated markdown from JSON-LD
+
+See [architecture_decision_reference_chain.md](architecture_decision_reference_chain.md) for full analysis.
+See [implementation_plan.md](implementation_plan.md) for the phased execution plan.
 
 ### Core Problems Being Addressed
 
@@ -63,6 +70,7 @@ See [problems_and_vision.md](problems_and_vision.md) for full analysis.
 | [implementation_plan.md](implementation_plan.md) | **Concrete implementation plan** — 6 phases, specific file changes, success criteria |
 | [claude_md_audit.md](claude_md_audit.md) | CLAUDE.md chain audit — 717 lines in static chain, duplication analysis, recommendations |
 | [selective_jsonld_navigation.md](selective_jsonld_navigation.md) | **PROVEN** — Agents can navigate JSON-LD graphs via jq, loading only 2-5% of files |
+| [architecture_decision_reference_chain.md](architecture_decision_reference_chain.md) | **KEY DECISION** — Three-layer redundancy model: jq-first + skill descriptions + transpiled markdown |
 
 ---
 

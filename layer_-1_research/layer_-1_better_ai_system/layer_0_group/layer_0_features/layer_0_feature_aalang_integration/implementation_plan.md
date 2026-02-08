@@ -2,7 +2,9 @@
 
 ## Context
 
-This plan addresses the 5 core problems identified in `problems_and_vision.md` and verified in `verification_results.md` (including professor's documentation review on 2026-02-07). It implements the **hybrid approach**: JSON-LD as source of truth (design-time), skills and markdown as runtime interface, compact CLAUDE.md references connecting them.
+This plan addresses the 5 core problems identified in `problems_and_vision.md` and verified in `verification_results.md` (including professor's documentation review on 2026-02-07). It implements the **hybrid approach with three-layer redundancy**: JSON-LD as source of truth (design-time), skills and markdown as runtime interface, compact CLAUDE.md references connecting them, and a transpiler keeping everything in sync.
+
+**Architecture decision**: See `architecture_decision_reference_chain.md` for the full analysis of the three-layer redundancy model (jq-first + skill descriptions + transpiled markdown).
 
 **Research location**: `layer_-1_research/layer_-1_better_ai_system/layer_0_group/layer_0_features/layer_0_feature_aalang_integration/`
 
@@ -20,27 +22,42 @@ This plan addresses the 5 core problems identified in `problems_and_vision.md` a
 
 ---
 
-## Key Research Finding: JSON-LD Precision vs Runtime Comprehension
+## Key Research Findings
+
+### Finding 1: JSON-LD Precision vs Runtime Comprehension
 
 **Question**: Is AALang/GAB's JSON-LD format better at getting agents to understand WHEN to use skills?
 
-**Answer**: JSON-LD is better at *defining* precision, not at *communicating* it to the LLM.
+**Answer**: JSON-LD is better at *defining* precision, not at *communicating* it to the LLM directly. But agents CAN navigate JSON-LD selectively via jq (proven — see `selective_jsonld_navigation.md`), loading only 2-5% of the file.
 
-- **JSON-LD mode transitions** force exact specification: conditions, confidence thresholds, satisfaction indicators
-- **Markdown skill descriptions** are what Claude Code actually reads when deciding to invoke skills
-- **The bridge**: JSON-LD precision disciplines the markdown descriptions. You can't write a vague SKILL.md if the JSON-LD forces you to specify exact trigger conditions.
+### Finding 2: Selective JSON-LD Graph Navigation (PROVEN)
 
-**Mechanism**:
+Agents can use `jq` to navigate JSON-LD as a graph, extracting only what they need:
+- **Index**: `jq '."@graph"[]."@id"'` → all node IDs (2.5% of file)
+- **Specific node**: `jq '... | select(."@id" == "mode:X")'` → one mode's full definition (2.8%)
+- **Filter by type**: `jq '... | select(."@type" == "gab:Mode")'` → all modes with purposes (1.8%)
+
+This directly enables the jq-first approach (Layer 1 of the redundancy model).
+
+### Finding 3: Three-Layer Redundancy Model (DECIDED)
+
+No single mechanism reliably solves skill invocation. The solution is redundancy:
+
 ```
-JSON-LD definition          →  Translation  →  SKILL.md description
-(precise, structured)          (manual or       (readable, effective)
-                                automated)
+Layer 1 (PRIMARY):   CLAUDE.md jq instructions → agent reads JSON-LD → gets skill mappings
+Layer 2 (FALLBACK):  SKILL.md WHEN/WHEN NOT patterns → Claude Code's native matcher
+Layer 3 (FALLBACK):  Transpiled .integration.md → auto-generated markdown from JSON-LD
 ```
 
-This means:
-1. JSON-LD **indirectly** solves the skill invocation problem by forcing precision at design-time
-2. The precision must be **translated** into markdown SKILL.md for Claude Code to use it
-3. Future work: an automated transpiler could do this translation
+See `architecture_decision_reference_chain.md` for the full decision analysis.
+
+### Finding 4: Transpiler Concept
+
+A transpiler converts JSON-LD → optimized markdown (`.integration.md`). This provides:
+- Same precision as JSON-LD, in the format LLMs read best (markdown)
+- Auto-generated, so it can't drift from the source of truth
+- No tool calls needed — agent uses Read tool directly
+- Third redundancy layer for when jq doesn't run AND skills don't match
 
 ---
 
@@ -85,7 +102,39 @@ any_directory/
 | `~/dawson-workspace/code/CLAUDE.md` | 55 | ~30 | Remove AALang pseudo-code |
 | `0_layer_universal/CLAUDE.md` | 225 | ~130 | Remove duplicate universal rules, move ASCII structure to @import, replace AALang pseudo-code with references |
 
-### 1.2 Replace Ceremonial AALang with Real References
+### 1.2 Add jq-First Instructions (Layer 1 of Redundancy Model)
+
+Add ~20-25 lines to the primary CLAUDE.md (`~/.claude/CLAUDE.md` or `0_layer_universal/CLAUDE.md`) with explicit jq instructions for AALang context loading:
+
+```markdown
+## AALang Context Loading
+
+Before starting any task, determine your current context:
+
+### Step 1: Find the nearest JSON-LD definition
+```bash
+find [working-directory] -maxdepth 2 -name "*.gab.jsonld" -type f | head -5
+```
+
+### Step 2: Read the graph index
+```bash
+jq '."@graph"[] | {id: ."@id", type: ."@type", purpose: .purpose} | select(.purpose != null)' [file.jsonld]
+```
+Identify which mode matches your current task.
+
+### Step 3: Load the relevant mode
+```bash
+jq '."@graph"[] | select(."@id" == "[mode-id]")' [file.jsonld]
+```
+The output contains constraints (MUST/MUST NOT), skills to invoke, and transitions.
+
+### Step 4: Follow the constraints as your instructions
+If the mode references a skill, invoke it. If it references child agents, delegate.
+```
+
+This is the **primary** mechanism for getting agents to use the right skills at the right time. "Run this command" is more actionable than "decide if this skill matches."
+
+### 1.3 Replace Ceremonial AALang with Real References
 
 **Before** (15-25 lines per file):
 ```markdown
@@ -150,27 +199,62 @@ Create `.claude/rules/` directory (currently missing):
 
 ---
 
-## Phase 3: Integration Markdown Companions (Short-term)
+## Phase 3: Transpiler + Integration Markdown Companions (Short-term)
 
-For key JSON-LD files, create readable `.integration.md` companions:
+**This is Layer 3 of the three-layer redundancy model.**
+
+### 3.1 Build the Transpiler
+
+Create a tool that converts JSON-LD → optimized markdown (`.integration.md`):
+
+```
+tools/
+└── jsonld-to-md.sh     ← Shell script using jq to extract and format
+```
+
+The transpiler extracts from any `.gab.jsonld` file:
+- All modes with purposes and trigger conditions
+- Mode transition conditions (gates) in plain English
+- State actors and what they track
+- Skill references (which skills to invoke in which modes)
+- Constraints (MUST/MUST NOT) per mode
+
+**Implementation options** (in order of priority):
+1. **Shell script using jq** — works today, produces clean markdown tables
+2. **Claude Code skill** (`/transpile-jsonld`) — invokable on demand, uses jq internally
+3. **Node.js/Python script** — richer handling of edge cases, for later
+
+### 3.2 Generate Integration Companions
+
+Run the transpiler on key JSON-LD files:
 
 ```
 layer_0/layer_0_01_ai_manager_system/personal/
 ├── layer_0_orchestrator.gab.jsonld           ← Source of truth (701 lines)
-└── layer_0_orchestrator.integration.md        ← NEW: ~50 lines, readable summary
+└── layer_0_orchestrator.integration.md        ← AUTO-GENERATED: ~50-80 lines
 
 layer_0/layer_0_03_context_agents/
 ├── context_loading_gab.jsonld                ← Source of truth (1065 lines)
-└── context_loading.integration.md             ← NEW: ~40 lines, readable summary
+└── context_loading.integration.md             ← AUTO-GENERATED: ~40-60 lines
 ```
 
-The `.integration.md` contains:
-- Modes and their purposes (from the JSON-LD)
-- Key actors and their responsibilities
-- Mode transition conditions (translated from JSON-LD gates to plain English)
-- State actors and what they track
+The `.integration.md` contains (auto-generated, not hand-written):
+- Header noting it's auto-generated with timestamp and source file
+- Modes table: mode ID, purpose, trigger conditions
+- Mode transitions: from → to with gate conditions in plain English
+- State actors table: actor ID, what it tracks, persistence scope
+- **Skill mapping table**: situation → skill → when to use (critical for Layer 3 fallback)
+- Constraints per mode: MUST/MUST NOT lists
+- Source reference back to the JSON-LD file
 
-Skills read these `.integration.md` files at runtime instead of parsing the JSON-LD directly.
+### 3.3 Keep in Sync
+
+The transpiler runs:
+- On entity-creation (new layer/stage → generate JSON-LD → immediately transpile)
+- On JSON-LD modification (pre-commit hook or manual step)
+- Both files are committed together — JSON-LD + .integration.md in same commit
+
+**Key principle**: `.integration.md` is NEVER hand-edited. It's always regenerated from JSON-LD. This prevents sync drift — the markdown always matches the source of truth.
 
 ---
 
