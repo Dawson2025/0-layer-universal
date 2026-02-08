@@ -12,25 +12,37 @@
       "severity": "absolute",
       "action": "Spawn subagents beyond maximum recursion depth",
       "details": "Do NOT spawn subagents when current depth >= maxDepth. Instead, the current agent must complete the task itself or escalate to parent/user.",
-      "appliesTo": ["spawning", "task delegation"]
+      "appliesTo": [
+        "spawning",
+        "task delegation"
+      ]
     },
     {
       "severity": "absolute",
       "action": "Spawn subagents with identical or nearly identical instructions",
       "details": "If an agent attempts to spawn a child with the same task description it received, this indicates infinite recursion. HALT and escalate to parent.",
-      "appliesTo": ["spawning", "task decomposition"]
+      "appliesTo": [
+        "spawning",
+        "task decomposition"
+      ]
     },
     {
       "severity": "critical",
       "action": "Exceed maximum concurrent subagents",
       "details": "Do NOT spawn more than maxConcurrentAgents at once. Wait for some to complete before spawning more.",
-      "appliesTo": ["resource management", "spawning"]
+      "appliesTo": [
+        "resource management",
+        "spawning"
+      ]
     },
     {
       "severity": "critical",
       "action": "Pass full parent context to children",
       "details": "Children should receive MINIMAL context: task description, essential files/paths, constraints. Do NOT pass full conversation history or irrelevant context.",
-      "appliesTo": ["context passing", "efficiency"]
+      "appliesTo": [
+        "context passing",
+        "efficiency"
+      ]
     }
   ],
   "@graph": [
@@ -113,24 +125,42 @@
         "claude": {
           "command": "claude --print \"{task}\"",
           "description": "Claude Code - strong coding, complex reasoning",
-          "bestFor": ["code analysis", "complex reasoning", "multi-file changes"]
+          "bestFor": [
+            "code analysis",
+            "complex reasoning",
+            "multi-file changes"
+          ]
         },
         "codex": {
           "command": "codex \"{task}\"",
           "description": "Codex CLI - fast, focused code edits",
-          "bestFor": ["quick fixes", "single-file edits", "simple tasks"]
+          "bestFor": [
+            "quick fixes",
+            "single-file edits",
+            "simple tasks"
+          ]
         },
         "gemini": {
           "command": "gemini \"{task}\"",
           "description": "Gemini CLI - web-connected, research",
-          "bestFor": ["research", "web search", "documentation lookup"]
+          "bestFor": [
+            "research",
+            "web search",
+            "documentation lookup"
+          ]
         },
         "aider": {
           "command": "aider --message \"{task}\"",
           "description": "Aider - Git-native development",
-          "bestFor": ["git operations", "commit workflows", "repo-wide changes"]
+          "bestFor": [
+            "git operations",
+            "commit workflows",
+            "repo-wide changes"
+          ]
         }
-      }
+      },
+      "actorNameConsistency": "prefix:ModeName + Actor + Number (e.g., orch:EvaluationActor1)",
+      "personaNameConsistency": "prefix:ModeName + Persona + Number (e.g., orch:EvaluationPersona1)"
     },
     {
       "@id": "orch:EvaluationMode",
@@ -143,8 +173,14 @@
         "Decide: execute directly OR enter DecompositionMode"
       ],
       "initialMode": true,
-      "precedes": ["orch:DecompositionMode", "orch:AggregationMode"],
-      "contains": ["orch:EvaluationPersona1", "orch:EvaluationPersona2"],
+      "precedes": [
+        "orch:DecompositionMode",
+        "orch:AggregationMode"
+      ],
+      "contains": [
+        "orch:EvaluationPersona1",
+        "orch:EvaluationPersona2"
+      ],
       "evaluationCriteria": {
         "spawnIndicators": [
           "Task has multiple independent subtasks",
@@ -164,7 +200,8 @@
       "decision": {
         "ifSpawn": "Transition to DecompositionMode",
         "ifDirect": "Execute task, then transition to AggregationMode with self-result"
-      }
+      },
+      "isolatedState": "orch:EvaluationModeState"
     },
     {
       "@id": "orch:DecompositionMode",
@@ -177,8 +214,13 @@
         "Ensure subtasks are smaller than parent task (prevent infinite recursion)",
         "Create task specifications with minimal necessary context"
       ],
-      "precedes": ["orch:SpawningMode"],
-      "contains": ["orch:DecompositionPersona1", "orch:DecompositionPersona2"],
+      "precedes": [
+        "orch:SpawningMode"
+      ],
+      "contains": [
+        "orch:DecompositionPersona1",
+        "orch:DecompositionPersona2"
+      ],
       "decompositionStrategies": {
         "parallel": {
           "description": "Independent subtasks that can run simultaneously",
@@ -214,7 +256,8 @@
           "format": "markdown | json | code",
           "sections": "Expected sections in result"
         }
-      }
+      },
+      "isolatedState": "orch:DecompositionModeState"
     },
     {
       "@id": "orch:SpawningMode",
@@ -227,8 +270,13 @@
         "Initialize status tracking for each child",
         "Execute spawn commands via bash"
       ],
-      "precedes": ["orch:MonitoringMode"],
-      "contains": ["orch:SpawningPersona1", "orch:SpawningPersona2"],
+      "precedes": [
+        "orch:MonitoringMode"
+      ],
+      "contains": [
+        "orch:SpawningPersona1",
+        "orch:SpawningPersona2"
+      ],
       "spawnProcess": {
         "steps": [
           "1. Check current concurrent count vs limit",
@@ -260,7 +308,8 @@
             "status/{child_id}.json": "Status tracking"
           }
         }
-      }
+      },
+      "isolatedState": "orch:SpawningModeState"
     },
     {
       "@id": "orch:MonitoringMode",
@@ -273,8 +322,14 @@
         "Escalate persistent failures to parent/user",
         "Respect timeout limits"
       ],
-      "precedes": ["orch:AggregationMode", "orch:SpawningMode"],
-      "contains": ["orch:MonitoringPersona1", "orch:MonitoringPersona2"],
+      "precedes": [
+        "orch:AggregationMode",
+        "orch:SpawningMode"
+      ],
+      "contains": [
+        "orch:MonitoringPersona1",
+        "orch:MonitoringPersona2"
+      ],
       "statusValues": {
         "pending": "Task assigned but not started",
         "running": "Agent is executing",
@@ -299,7 +354,8 @@
         "failureThreshold": 3,
         "action": "Stop spawning to this agent type, escalate to user",
         "resetAfter": "Manual reset or session end"
-      }
+      },
+      "isolatedState": "orch:MonitoringModeState"
     },
     {
       "@id": "orch:AggregationMode",
@@ -313,7 +369,10 @@
         "Write result to outgoing/to_above/"
       ],
       "precedes": [],
-      "contains": ["orch:AggregationPersona1", "orch:AggregationPersona2"],
+      "contains": [
+        "orch:AggregationPersona1",
+        "orch:AggregationPersona2"
+      ],
       "aggregationStrategies": {
         "concatenate": {
           "description": "Combine independent results sequentially",
@@ -362,7 +421,8 @@
           "totalDuration": "Time elapsed",
           "tokensUsed": "If tracked"
         }
-      }
+      },
+      "isolatedState": "orch:AggregationModeState"
     },
     {
       "@id": "orch:EvaluationPersona1",
@@ -378,8 +438,16 @@
         "Make spawn/direct decision with clear reasoning",
         "CRITICAL: Never recommend spawning if depth >= maxRecursionDepth"
       ],
-      "canMessage": ["orch:EvaluationPersona2", "orch:DecompositionPersona1", "user"],
-      "canReceiveFrom": ["user", "orch:EvaluationPersona2", "orch:MonitoringPersona1"]
+      "canMessage": [
+        "orch:EvaluationPersona2",
+        "orch:DecompositionPersona1",
+        "user"
+      ],
+      "canReceiveFrom": [
+        "user",
+        "orch:EvaluationPersona2",
+        "orch:MonitoringPersona1"
+      ]
     },
     {
       "@id": "orch:EvaluationPersona2",
@@ -394,8 +462,14 @@
         "Verify resource constraint calculations",
         "Ensure decision aligns with safeguards"
       ],
-      "canMessage": ["orch:EvaluationPersona1", "user"],
-      "canReceiveFrom": ["user", "orch:EvaluationPersona1"]
+      "canMessage": [
+        "orch:EvaluationPersona1",
+        "user"
+      ],
+      "canReceiveFrom": [
+        "user",
+        "orch:EvaluationPersona1"
+      ]
     },
     {
       "@id": "orch:DecompositionPersona1",
@@ -412,8 +486,16 @@
         "Create minimal context specifications",
         "CRITICAL: Subtasks must not be identical to parent task"
       ],
-      "canMessage": ["orch:DecompositionPersona2", "orch:SpawningPersona1", "user"],
-      "canReceiveFrom": ["user", "orch:DecompositionPersona2", "orch:EvaluationPersona1"]
+      "canMessage": [
+        "orch:DecompositionPersona2",
+        "orch:SpawningPersona1",
+        "user"
+      ],
+      "canReceiveFrom": [
+        "user",
+        "orch:DecompositionPersona2",
+        "orch:EvaluationPersona1"
+      ]
     },
     {
       "@id": "orch:DecompositionPersona2",
@@ -429,8 +511,14 @@
         "Ensure context is minimal but sufficient",
         "Detect potential infinite recursion patterns"
       ],
-      "canMessage": ["orch:DecompositionPersona1", "user"],
-      "canReceiveFrom": ["user", "orch:DecompositionPersona1"]
+      "canMessage": [
+        "orch:DecompositionPersona1",
+        "user"
+      ],
+      "canReceiveFrom": [
+        "user",
+        "orch:DecompositionPersona1"
+      ]
     },
     {
       "@id": "orch:SpawningPersona1",
@@ -447,8 +535,16 @@
         "Register children in SubagentRegistryActor",
         "Handle spawn failures gracefully"
       ],
-      "canMessage": ["orch:SpawningPersona2", "orch:MonitoringPersona1", "user"],
-      "canReceiveFrom": ["user", "orch:SpawningPersona2", "orch:DecompositionPersona1"]
+      "canMessage": [
+        "orch:SpawningPersona2",
+        "orch:MonitoringPersona1",
+        "user"
+      ],
+      "canReceiveFrom": [
+        "user",
+        "orch:SpawningPersona2",
+        "orch:DecompositionPersona1"
+      ]
     },
     {
       "@id": "orch:SpawningPersona2",
@@ -464,8 +560,14 @@
         "Ensure status tracking is initialized",
         "Detect and report spawn failures"
       ],
-      "canMessage": ["orch:SpawningPersona1", "user"],
-      "canReceiveFrom": ["user", "orch:SpawningPersona1"]
+      "canMessage": [
+        "orch:SpawningPersona1",
+        "user"
+      ],
+      "canReceiveFrom": [
+        "user",
+        "orch:SpawningPersona1"
+      ]
     },
     {
       "@id": "orch:MonitoringPersona1",
@@ -482,8 +584,17 @@
         "Escalate persistent issues to parent/user",
         "Track overall progress across all children"
       ],
-      "canMessage": ["orch:MonitoringPersona2", "orch:AggregationPersona1", "orch:SpawningPersona1", "user"],
-      "canReceiveFrom": ["user", "orch:MonitoringPersona2", "orch:SpawningPersona1"]
+      "canMessage": [
+        "orch:MonitoringPersona2",
+        "orch:AggregationPersona1",
+        "orch:SpawningPersona1",
+        "user"
+      ],
+      "canReceiveFrom": [
+        "user",
+        "orch:MonitoringPersona2",
+        "orch:SpawningPersona1"
+      ]
     },
     {
       "@id": "orch:MonitoringPersona2",
@@ -498,8 +609,14 @@
         "Detect partial results worth preserving",
         "Identify patterns suggesting systemic issues"
       ],
-      "canMessage": ["orch:MonitoringPersona1", "user"],
-      "canReceiveFrom": ["user", "orch:MonitoringPersona1"]
+      "canMessage": [
+        "orch:MonitoringPersona1",
+        "user"
+      ],
+      "canReceiveFrom": [
+        "user",
+        "orch:MonitoringPersona1"
+      ]
     },
     {
       "@id": "orch:AggregationPersona1",
@@ -516,8 +633,15 @@
         "Calculate confidence based on child results",
         "Write result to outgoing/to_above/"
       ],
-      "canMessage": ["orch:AggregationPersona2", "user"],
-      "canReceiveFrom": ["user", "orch:AggregationPersona2", "orch:MonitoringPersona1"]
+      "canMessage": [
+        "orch:AggregationPersona2",
+        "user"
+      ],
+      "canReceiveFrom": [
+        "user",
+        "orch:AggregationPersona2",
+        "orch:MonitoringPersona1"
+      ]
     },
     {
       "@id": "orch:AggregationPersona2",
@@ -532,8 +656,14 @@
         "Ensure final result answers original task",
         "Validate metadata accuracy"
       ],
-      "canMessage": ["orch:AggregationPersona1", "user"],
-      "canReceiveFrom": ["user", "orch:AggregationPersona1"]
+      "canMessage": [
+        "orch:AggregationPersona1",
+        "user"
+      ],
+      "canReceiveFrom": [
+        "user",
+        "orch:AggregationPersona1"
+      ]
     },
     {
       "@id": "orch:SpawningStatePersona",
@@ -672,20 +802,256 @@
         "parentToChild": {
           "location": "hand_off_documents/outgoing/to_below/{child_id}/task.json",
           "format": "JSON task specification",
-          "includes": ["taskId", "description", "context", "constraints", "expectedOutput"]
+          "includes": [
+            "taskId",
+            "description",
+            "context",
+            "constraints",
+            "expectedOutput"
+          ]
         },
         "childToParent": {
           "location": "hand_off_documents/incoming/from_below/{child_id}/result.json",
           "format": "JSON result",
-          "includes": ["taskId", "status", "result", "metadata"]
+          "includes": [
+            "taskId",
+            "status",
+            "result",
+            "metadata"
+          ]
         },
         "statusTracking": {
           "location": "hand_off_documents/status/{child_id}.json",
           "format": "JSON status",
-          "includes": ["status", "startedAt", "lastUpdate", "progress"]
+          "includes": [
+            "status",
+            "startedAt",
+            "lastUpdate",
+            "progress"
+          ]
         }
       },
       "rationale": "File-based communication is simple, persistent, cross-process compatible, and already established in layer-stage system"
+    },
+    {
+      "@id": "orch:EvaluationActor1",
+      "@type": "gab:Actor",
+      "operatesIn": "orch:EvaluationMode",
+      "persona": "orch:EvaluationPersona1",
+      "role": "senior",
+      "sessionConsistent": true
+    },
+    {
+      "@id": "orch:EvaluationActor2",
+      "@type": "gab:Actor",
+      "operatesIn": "orch:EvaluationMode",
+      "persona": "orch:EvaluationPersona2",
+      "role": "junior",
+      "sessionConsistent": true
+    },
+    {
+      "@id": "orch:DecompositionActor1",
+      "@type": "gab:Actor",
+      "operatesIn": "orch:DecompositionMode",
+      "persona": "orch:DecompositionPersona1",
+      "role": "senior",
+      "sessionConsistent": true
+    },
+    {
+      "@id": "orch:DecompositionActor2",
+      "@type": "gab:Actor",
+      "operatesIn": "orch:DecompositionMode",
+      "persona": "orch:DecompositionPersona2",
+      "role": "junior",
+      "sessionConsistent": true
+    },
+    {
+      "@id": "orch:SpawningActor1",
+      "@type": "gab:Actor",
+      "operatesIn": "orch:SpawningMode",
+      "persona": "orch:SpawningPersona1",
+      "role": "senior",
+      "sessionConsistent": true
+    },
+    {
+      "@id": "orch:SpawningActor2",
+      "@type": "gab:Actor",
+      "operatesIn": "orch:SpawningMode",
+      "persona": "orch:SpawningPersona2",
+      "role": "junior",
+      "sessionConsistent": true
+    },
+    {
+      "@id": "orch:MonitoringActor1",
+      "@type": "gab:Actor",
+      "operatesIn": "orch:MonitoringMode",
+      "persona": "orch:MonitoringPersona1",
+      "role": "senior",
+      "sessionConsistent": true
+    },
+    {
+      "@id": "orch:MonitoringActor2",
+      "@type": "gab:Actor",
+      "operatesIn": "orch:MonitoringMode",
+      "persona": "orch:MonitoringPersona2",
+      "role": "junior",
+      "sessionConsistent": true
+    },
+    {
+      "@id": "orch:AggregationActor1",
+      "@type": "gab:Actor",
+      "operatesIn": "orch:AggregationMode",
+      "persona": "orch:AggregationPersona1",
+      "role": "senior",
+      "sessionConsistent": true
+    },
+    {
+      "@id": "orch:AggregationActor2",
+      "@type": "gab:Actor",
+      "operatesIn": "orch:AggregationMode",
+      "persona": "orch:AggregationPersona2",
+      "role": "junior",
+      "sessionConsistent": true
+    },
+    {
+      "@id": "orch:SpawningStateActor",
+      "@type": "gab:StateActor",
+      "purpose": "Track active spawning operations, pending spawns, and spawn queue state",
+      "persona": "orch:SpawningStatePersona",
+      "sessionConsistent": true
+    },
+    {
+      "@id": "orch:SubagentRegistryActor",
+      "@type": "gab:StateActor",
+      "purpose": "Maintain registry of all spawned subagents, their types, tasks, and status",
+      "persona": "orch:SubagentRegistryPersona",
+      "sessionConsistent": true
+    },
+    {
+      "@id": "orch:ResultsStateActor",
+      "@type": "gab:StateActor",
+      "purpose": "Track collected results from subagents, partial results, and aggregation state",
+      "persona": "orch:ResultsStatePersona",
+      "sessionConsistent": true
+    },
+    {
+      "@id": "orch:ResourceBudgetActor",
+      "@type": "gab:StateActor",
+      "purpose": "Track token budget consumption, time elapsed, and resource limits across all agents",
+      "persona": "orch:ResourceBudgetPersona",
+      "sessionConsistent": true
+    },
+    {
+      "@id": "orch:DepthTrackingActor",
+      "@type": "gab:StateActor",
+      "purpose": "Track current recursion depth, max depth, and hierarchy path from root to current agent",
+      "persona": "orch:DepthTrackingPersona",
+      "sessionConsistent": true
+    },
+    {
+      "@id": "orch:EvaluationModeState",
+      "@type": "gab:IsolatedState",
+      "mode": "orch:EvaluationMode",
+      "scope": "mode-private",
+      "includes": [
+        "taskComplexityAssessment",
+        "spawnDecision",
+        "dimensionScores"
+      ],
+      "readableBy": [
+        "orch:EvaluationActor1",
+        "orch:EvaluationActor2"
+      ],
+      "unreadableBy": [
+        "orch:DecompositionActor1",
+        "orch:SpawningActor1",
+        "orch:MonitoringActor1",
+        "orch:AggregationActor1"
+      ]
+    },
+    {
+      "@id": "orch:DecompositionModeState",
+      "@type": "gab:IsolatedState",
+      "mode": "orch:DecompositionMode",
+      "scope": "mode-private",
+      "includes": [
+        "subtaskList",
+        "dependencyGraph",
+        "agentAssignments"
+      ],
+      "readableBy": [
+        "orch:DecompositionActor1",
+        "orch:DecompositionActor2"
+      ],
+      "unreadableBy": [
+        "orch:EvaluationActor1",
+        "orch:SpawningActor1",
+        "orch:MonitoringActor1",
+        "orch:AggregationActor1"
+      ]
+    },
+    {
+      "@id": "orch:SpawningModeState",
+      "@type": "gab:IsolatedState",
+      "mode": "orch:SpawningMode",
+      "scope": "mode-private",
+      "includes": [
+        "spawnQueue",
+        "activeProcesses",
+        "handoffPaths"
+      ],
+      "readableBy": [
+        "orch:SpawningActor1",
+        "orch:SpawningActor2"
+      ],
+      "unreadableBy": [
+        "orch:EvaluationActor1",
+        "orch:DecompositionActor1",
+        "orch:MonitoringActor1",
+        "orch:AggregationActor1"
+      ]
+    },
+    {
+      "@id": "orch:MonitoringModeState",
+      "@type": "gab:IsolatedState",
+      "mode": "orch:MonitoringMode",
+      "scope": "mode-private",
+      "includes": [
+        "pollResults",
+        "failureLog",
+        "retryQueue"
+      ],
+      "readableBy": [
+        "orch:MonitoringActor1",
+        "orch:MonitoringActor2"
+      ],
+      "unreadableBy": [
+        "orch:EvaluationActor1",
+        "orch:DecompositionActor1",
+        "orch:SpawningActor1",
+        "orch:AggregationActor1"
+      ]
+    },
+    {
+      "@id": "orch:AggregationModeState",
+      "@type": "gab:IsolatedState",
+      "mode": "orch:AggregationMode",
+      "scope": "mode-private",
+      "includes": [
+        "collectedResults",
+        "aggregationStrategy",
+        "synthesizedOutput"
+      ],
+      "readableBy": [
+        "orch:AggregationActor1",
+        "orch:AggregationActor2"
+      ],
+      "unreadableBy": [
+        "orch:EvaluationActor1",
+        "orch:DecompositionActor1",
+        "orch:SpawningActor1",
+        "orch:MonitoringActor1"
+      ]
     }
   ]
 }
