@@ -66,7 +66,7 @@ Tasks:
 
 Tasks:
 - [ ] Create `.integration.md` for `layer_0_orchestrator.gab.jsonld` (701 lines → ~50 line summary)
-- [ ] Create `.integration.md` for `context_loading_gab.jsonld` (1065 lines → ~40 line summary)
+- [ ] Create `.integration.md` for `context_loading.gab.jsonld` (1065 lines → ~40 line summary)
 - [ ] Enhance 4 root skills with WHEN/WHEN NOT patterns and JSON-LD references
 - [ ] Create `/aalang-load` skill (reads JSON-LD, presents as markdown)
 - [ ] Create `/team-create` skill (generates spawn prompts from orchestrator definitions)

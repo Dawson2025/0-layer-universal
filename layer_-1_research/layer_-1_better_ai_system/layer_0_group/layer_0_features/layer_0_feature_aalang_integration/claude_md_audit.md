@@ -56,7 +56,7 @@ This occupies 15-25 lines per file across 298 files. Claude Code's parser doesn'
 ```markdown
 ## AALang
 - **Orchestrator**: `layer_0_01_ai_manager_system/personal/layer_0_orchestrator.gab.jsonld`
-- **Context loader**: `layer_0_03_context_agents/context_loading_gab.jsonld`
+- **Context loader**: `layer_0_03_context_agents/context_loading.gab.jsonld`
 - **Skills**: `/context-gathering`, `/stage-workflow`
 ```
 

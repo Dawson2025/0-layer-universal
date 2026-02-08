@@ -18,7 +18,7 @@ This directory contains agents that handle context loading across the layer-stag
 
 | File | Purpose | Load When |
 |------|---------|-----------|
-| [`context_loading_gab.jsonld`](./context_loading_gab.jsonld) | **Context loading agent** - 4-mode-13-actor pattern | Understanding context traversal |
+| [`context_loading.gab.jsonld`](./context_loading.gab.jsonld) | **Context loading agent** - 4-mode-13-actor pattern | Understanding context traversal |
 | [`ARCHITECTURE.md`](./ARCHITECTURE.md) | **Architecture overview** - Design decisions and patterns | Understanding the system |
 
 ---

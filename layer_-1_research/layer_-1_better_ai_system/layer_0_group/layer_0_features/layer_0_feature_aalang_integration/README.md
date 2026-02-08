@@ -18,7 +18,7 @@ AALang is integrated in three main areas:
 
 ### What Exists
 
-1. **context_loading_gab.jsonld** — Full AALang agent definition for CLAUDE.md chain traversal
+1. **context_loading.gab.jsonld** — Full AALang agent definition for CLAUDE.md chain traversal
 2. **layer_0_orchestrator.gab.jsonld** — Full AALang agent definition for multi-agent coordination
 3. **layer_6_orchestrator.gab.jsonld** — Project-level orchestrator inheriting from layer_0 template
 4. **GAB compiler** (professor submodule) — Tool for creating new AALang agents

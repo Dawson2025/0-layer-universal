@@ -291,7 +291,7 @@ layer_0/layer_0_01_ai_manager_system/personal/
 └── layer_0_orchestrator.integration.md        ← AUTO-GENERATED: ~50-80 lines
 
 layer_0/layer_0_03_context_agents/
-├── context_loading_gab.jsonld                ← Source of truth (1065 lines)
+├── context_loading.gab.jsonld                ← Source of truth (1065 lines)
 └── context_loading.integration.md             ← AUTO-GENERATED: ~40-60 lines
 ```
 
@@ -321,7 +321,7 @@ The transpiler runs:
 
 | Skill | Current Lines | Enhancement |
 |-------|--------------|-------------|
-| `context-gathering` | 24 | Add: references `context_loading_gab.jsonld`, WHEN/WHEN NOT triggers, mode transition conditions |
+| `context-gathering` | 24 | Add: references `context_loading.gab.jsonld`, WHEN/WHEN NOT triggers, mode transition conditions |
 | `handoff-creation` | 26 | Add: references orchestrator handoff patterns, standardized format template, validation checklist |
 | `entity-creation` | 85 | Add: references `gab.jsonld` for proper actor creation, auto-generate JSON-LD stubs for new entities |
 | `stage-workflow` | 91 | Add: references stage agent definitions, mode-specific instructions per stage |

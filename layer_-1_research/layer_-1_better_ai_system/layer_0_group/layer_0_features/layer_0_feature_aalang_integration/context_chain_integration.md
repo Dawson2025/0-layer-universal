@@ -8,7 +8,7 @@ The context chain is the sequence of CLAUDE.md files from `~/.claude/CLAUDE.md` 
 
 ## The Context Loading Agent
 
-**Source**: `layer_0/layer_0_03_context_agents/context_loading_gab.jsonld`
+**Source**: `layer_0/layer_0_03_context_agents/context_loading.gab.jsonld`
 **Pattern**: 4-mode-13-actor
 
 ### What It Does
@@ -144,7 +144,7 @@ The agent persists state to `.claude/context_state.json` so that:
 
 ### What Doesn't Work As Assumed
 
-1. **The context loading agent is NOT executed.** The `context_loading_gab.jsonld` is a complete AALang agent definition, but Claude Code does NOT load or execute it. Claude Code has its own built-in CLAUDE.md loading mechanism. The AALang agent definition serves as a formal specification of what SHOULD happen, not what DOES happen.
+1. **The context loading agent is NOT executed.** The `context_loading.gab.jsonld` is a complete AALang agent definition, but Claude Code does NOT load or execute it. Claude Code has its own built-in CLAUDE.md loading mechanism. The AALang agent definition serves as a formal specification of what SHOULD happen, not what DOES happen.
 
 2. **AALang annotations are plain text.** The `@agent ctx:ContextLoadingAgent` and `ctx:ContextLoadingStateActor.loadedFiles` annotations in our CLAUDE.md files are read as natural language by the LLM. Claude Code has no concept of state actors, confidence thresholds, or chain position numbering. These may still influence LLM behavior through natural language comprehension, but they are not mechanically enforced.
 
@@ -166,7 +166,7 @@ The agent persists state to `.claude/context_state.json` so that:
 
 ### The AALang Context Loading Agent's Real Value
 
-The `context_loading_gab.jsonld` is valuable as:
+The `context_loading.gab.jsonld` is valuable as:
 - **Design documentation**: Formally describes what the context loading process SHOULD do
 - **Pattern reference**: The 4-mode pattern (Loading → Validation → Propagation → Delivery) is a good conceptual framework
 - **Inheritance model**: The layer inheritance rules and @override semantics are useful concepts

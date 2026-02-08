@@ -248,7 +248,7 @@ How do parent agents combine results from children?
                     ┌────────────────────────────────────────────┐
                     │           ROOT AGENT (Claude Code)         │
                     │  ┌──────────────────────────────────────┐  │
-                    │  │    agent_orchestrator_gab.jsonld     │  │
+                    │  │    agent_orchestrator.gab.jsonld     │  │
                     │  │  ────────────────────────────────────│  │
                     │  │  • Reads task                        │  │
                     │  │  • Evaluates: Need subagents?        │  │
@@ -365,7 +365,7 @@ COMMUNICATION:
 ## 7. Implementation Roadmap
 
 ### Phase 1: Foundation (Week 1-2)
-- [ ] Create `agent_orchestrator_gab.jsonld` with SpawningMode
+- [ ] Create `agent_orchestrator.gab.jsonld` with SpawningMode
 - [ ] Define hand_off_documents protocol for multi-agent
 - [ ] Implement basic spawn/result patterns
 - [ ] Test single-level spawning (parent → children)
@@ -410,7 +410,7 @@ COMMUNICATION:
 
 1. **Research existing implementations**: Check if any multi-agent frameworks have tackled recursive CLI spawning
 2. **Prototype basic spawning**: Test Claude Code spawning Codex via bash
-3. **Design agent_orchestrator_gab.jsonld**: Full AALang specification
+3. **Design agent_orchestrator.gab.jsonld**: Full AALang specification
 4. **Test communication patterns**: Validate hand_off_documents approach
 
 ---

@@ -46,6 +46,6 @@ Provide a summary including:
 ## AALang Reference
 
 This skill maps to the context loading agent defined at:
-`layer_0/layer_0_03_context_agents/context_loading_gab.jsonld`
+`layer_0/layer_0_03_context_agents/context_loading.gab.jsonld`
 
 The context loading agent uses a 4-mode-13-actor pattern for systematic context traversal.

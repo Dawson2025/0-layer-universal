@@ -45,7 +45,7 @@ All [CRITICAL] rules from `~/.claude/CLAUDE.md` apply here. Key rules for this d
 
 - **Orchestrator**: `layer_0/layer_0_01_ai_manager_system/personal/layer_0_orchestrator.gab.jsonld`
 - **Orchestrator summary**: `layer_0/layer_0_01_ai_manager_system/personal/layer_0_orchestrator.integration.md`
-- **Context loader**: `layer_0/layer_0_03_context_agents/context_loading_gab.jsonld`
+- **Context loader**: `layer_0/layer_0_03_context_agents/context_loading.gab.jsonld`
 - **Context loader summary**: `layer_0/layer_0_03_context_agents/context_loading.integration.md`
 - **Skills**: `/context-gathering` (task start), `/stage-workflow` (stage work), `/entity-creation` (new entities), `/handoff-creation` (session end)
 - **Rules**: Check `.claude/rules/` for path-specific context

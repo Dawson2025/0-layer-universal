@@ -32,7 +32,7 @@ chmod +x spawn_agent.sh test_harness.sh
 
 ## Spawning Safeguards
 
-The prototype implements the following safeguards from `agent_orchestrator_gab.jsonld`:
+The prototype implements the following safeguards from `agent_orchestrator.gab.jsonld`:
 
 | Safeguard | Implementation |
 |-----------|----------------|
@@ -119,7 +119,7 @@ hand_off_documents/
 
 ## Related Files
 
-- Design: `../agent_orchestrator_gab.jsonld`
+- Design: `../agent_orchestrator.gab.jsonld`
 - Research: `../../docs/01_research_recursive_multi_agent_systems.md`
 - Findings: `../../docs/02_research_findings_existing_frameworks.md`
 

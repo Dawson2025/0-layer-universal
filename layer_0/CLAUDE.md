@@ -39,7 +39,7 @@ layer_0/
 │
 ├── layer_0_03_context_agents/             ← CONTEXT LOADING
 │   ├── CLAUDE.md
-│   └── context_loading_gab.jsonld
+│   └── context_loading.gab.jsonld
 │
 ├── layer_0_04_sub_layers/                 ← FOUNDATIONAL CONTENT
 │   ├── sub_layer_0_01_knowledge_system/

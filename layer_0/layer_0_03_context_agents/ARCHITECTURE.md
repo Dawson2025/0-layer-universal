@@ -8,11 +8,11 @@
 
 ## Executive Summary
 
-Our context agents use the **full AALang/GAB 4-mode-13-actor pattern** in a single comprehensive JSON-LD file (`context_loading_gab.jsonld`). We extend AALang's session-only state with **cross-session persistence** via `context_state.json`.
+Our context agents use the **full AALang/GAB 4-mode-13-actor pattern** in a single comprehensive JSON-LD file (`context_loading.gab.jsonld`). We extend AALang's session-only state with **cross-session persistence** via `context_state.json`.
 
 | Aspect | AALang Base | Our Implementation |
 |--------|-------------|-------------------|
-| File Organization | Single comprehensive file | ✓ Same (`context_loading_gab.jsonld`) |
+| File Organization | Single comprehensive file | ✓ Same (`context_loading.gab.jsonld`) |
 | Execution Model | Hybrid (LLM interprets JSON-LD) | ✓ Same |
 | Actor Pattern | 4-mode-13-actor | ✓ Same (4 modes, 8 personas, 5 state actors) |
 | Persona Deliberation | Senior/Junior pairs per mode | ✓ Same |
@@ -39,12 +39,12 @@ AALang is designed for **LLM agent consumption**. After analyzing `gab.jsonld` (
 
 ```
 sub_layer_0_01_context_agents/
-├── context_loading_gab.jsonld    ← ONE comprehensive file (57KB)
+├── context_loading.gab.jsonld    ← ONE comprehensive file (57KB)
 ├── ARCHITECTURE.md               ← This document
 └── README.md                     ← Overview and usage
 ```
 
-The single `context_loading_gab.jsonld` contains:
+The single `context_loading.gab.jsonld` contains:
 - **@context**: Namespace definitions
 - **prohibitions**: Top-level prohibitions with severity levels
 - **@graph**: Array containing ALL nodes:
@@ -121,7 +121,7 @@ LoadingMode ──(confidence >= 0.6)──▶ ValidationMode ──(confidence 
 │  HYBRID EXECUTION MODEL                                                          │
 └─────────────────────────────────────────────────────────────────────────────────┘
 
-    context_loading_gab.jsonld                AI Runtime (Claude)
+    context_loading.gab.jsonld                AI Runtime (Claude)
     ═══════════════════════════               ════════════════════
 
     ┌─────────────────────────┐
@@ -142,7 +142,7 @@ LoadingMode ──(confidence >= 0.6)──▶ ValidationMode ──(confidence 
 
 1. **Session starts** → Claude Code loads CLAUDE.md chain
 2. **CLAUDE.md contains** → `@agent ctx:ContextLoadingAgent` reference
-3. **AI reads** → `context_loading_gab.jsonld` (one read, complete definition)
+3. **AI reads** → `context_loading.gab.jsonld` (one read, complete definition)
 4. **AI switches mode** → From assistant to execution mode (per ExecutionInstructions)
 5. **AI executes** → Runs 4 phases with Senior/Junior persona deliberation
 6. **AI persists state** → Saves to `context_state.json` for cross-session continuity
@@ -194,7 +194,7 @@ However, this state is **conversation-scoped**. AALang does NOT specify cross-se
 
 | AALang/GAB Feature | Our Implementation |
 |--------------------|-------------------|
-| **Single JSON-LD file** | ✓ `context_loading_gab.jsonld` |
+| **Single JSON-LD file** | ✓ `context_loading.gab.jsonld` |
 | **4-mode-N-actor pattern** | ✓ 4 modes, 13 actors |
 | **Senior/Junior persona pairs** | ✓ Per mode deliberation |
 | **State actors** | ✓ 5 state actors with personas |
