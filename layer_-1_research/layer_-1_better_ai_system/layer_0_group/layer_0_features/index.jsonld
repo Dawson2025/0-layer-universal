@@ -11,30 +11,26 @@
   "layer": 0,
 
   "name": "Layer 0 Features",
-  "description": "High-level features for the better_ai_system research project",
+  "description": "Research features for the better_ai_system project",
 
   "nav:parent": {
     "@id": "../",
     "name": "layer_0_group"
   },
 
-  "nav:siblings": [
-    {"@id": "../layer_0_components/", "name": "Components"},
-    {"@id": "../layer_0_subprojects/", "name": "Subprojects"}
-  ],
-
   "conventions": {
     "childNaming": {
       "pattern": "layer_{N}_{type}_{name}",
       "currentLayer": 0,
-      "example": "layer_0_feature_context_framework",
+      "example": "layer_0_feature_agent_performance",
       "note": "Features are at same layer as registry; sub_features inside are layer+1"
     }
   },
 
   "trigger:onEntityCreation": {
     "skill": "../.claude/skills/entity-creation/",
-    "loads": ["conventions.childNaming"]
+    "loads": ["conventions.childNaming"],
+    "reference": "@imports/entity_structure.md"
   },
 
   "features": [
