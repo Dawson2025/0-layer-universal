@@ -10,7 +10,7 @@
   "layer": 0,
 
   "name": "Layer 0 Group",
-  "description": "Further layering for the better_ai_system research project - features, components, and subprojects",
+  "description": "Children group for the better_ai_system research project",
 
   "nav:parent": {
     "@id": "../",
@@ -23,47 +23,35 @@
       "currentLayer": 0,
       "types": {
         "feature": "layer_0_feature_{name}",
-        "component": "layer_0_component_{name}",
-        "subproject": "layer_0_subproject_{name}"
+        "component": "layer_0_component_{name}"
       },
       "examples": [
-        "layer_0_feature_context_framework",
-        "layer_0_component_shared_utils",
-        "layer_0_subproject_prototype"
+        "layer_0_feature_agent_performance"
       ]
-    },
-    "underscoreTypes": ["sub_feature", "sub_layer"],
-    "singleWordTypes": ["feature", "component", "subproject"]
+    }
   },
 
   "trigger:onEntityCreation": {
     "skill": ".claude/skills/entity-creation/",
     "loads": ["conventions.childNaming"],
     "validates": {
-      "namePattern": "^layer_\\d+_(feature|sub_feature|component|subproject)_.+$"
-    }
+      "namePattern": "^layer_\\d+_(feature|sub_feature|component)_.+$"
+    },
+    "reference": "@imports/entity_structure.md"
   },
 
   "nav:children": [
     {
+      "@id": "layer_0_00_layer_registry/",
+      "@type": "LayerRegistry",
+      "name": "Layer Registry",
+      "description": "Proposals and registry for layer_0 children"
+    },
+    {
       "@id": "layer_0_features/",
       "@type": "FeaturesRegistry",
       "name": "Features",
-      "description": "High-level features (context, structure, governance, tooling)"
-    },
-    {
-      "@id": "layer_0_components/",
-      "@type": "ComponentsRegistry",
-      "name": "Components",
-      "description": "Shared components (empty for now)"
-    },
-    {
-      "@id": "layer_0_subprojects/",
-      "@type": "SubprojectsRegistry",
-      "name": "Subprojects",
-      "description": "Subprojects (empty for now)"
+      "description": "Research features (1 consolidated: agent_performance)"
     }
-  ],
-
-  "note": "Infrastructure (registry, managers, handoffs, sub_layers, stages) is in layer_-1_group, not here"
+  ]
 }
