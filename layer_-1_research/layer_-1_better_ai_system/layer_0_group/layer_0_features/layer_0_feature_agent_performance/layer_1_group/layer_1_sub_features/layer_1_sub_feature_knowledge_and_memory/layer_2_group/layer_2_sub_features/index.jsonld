@@ -1,0 +1,47 @@
+{
+  "@context": {
+    "@vocab": "https://layer-stage.dev/schema#",
+    "nav": "https://layer-stage.dev/nav#",
+    "trigger": "https://layer-stage.dev/trigger#"
+  },
+
+  "@id": "layer_2_sub_features",
+  "@type": "",
+  "layer": 2,
+
+  "name": "Layer 2 Sub Features",
+
+  "nav:parent": {
+    "@id": "../",
+    "name": "layer_1_sub_feature_knowledge_and_memory"
+  },
+
+  "conventions": {
+    "childNaming": {
+      "pattern": "layer_2_{type}_{name}",
+      "currentLayer": 2
+    }
+  },
+
+  "trigger:onEntityCreation": {
+    "reference": "@imports/entity_structure.md"
+  },
+
+  "children": [
+    {
+      "@id": "layer_2_sub_feature_context_chains/",
+      "@type": "Subfeature",
+      "name": "context chains"
+    },
+    {
+      "@id": "layer_2_sub_feature_memory/",
+      "@type": "Subfeature",
+      "name": "memory"
+    },
+    {
+      "@id": "layer_2_sub_feature_navigation/",
+      "@type": "Subfeature",
+      "name": "navigation"
+    }
+  ]
+}

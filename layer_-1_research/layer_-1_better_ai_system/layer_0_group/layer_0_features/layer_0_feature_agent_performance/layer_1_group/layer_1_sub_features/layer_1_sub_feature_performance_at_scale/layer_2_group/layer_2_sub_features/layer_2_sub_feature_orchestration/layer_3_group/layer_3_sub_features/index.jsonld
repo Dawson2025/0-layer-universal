@@ -1,0 +1,47 @@
+{
+  "@context": {
+    "@vocab": "https://layer-stage.dev/schema#",
+    "nav": "https://layer-stage.dev/nav#",
+    "trigger": "https://layer-stage.dev/trigger#"
+  },
+
+  "@id": "layer_3_sub_features",
+  "@type": "",
+  "layer": 3,
+
+  "name": "Layer 3 Sub Features",
+
+  "nav:parent": {
+    "@id": "../",
+    "name": "layer_2_sub_feature_orchestration"
+  },
+
+  "conventions": {
+    "childNaming": {
+      "pattern": "layer_3_{type}_{name}",
+      "currentLayer": 3
+    }
+  },
+
+  "trigger:onEntityCreation": {
+    "reference": "@imports/entity_structure.md"
+  },
+
+  "children": [
+    {
+      "@id": "layer_3_sub_feature_agent_spawning/",
+      "@type": "Subfeature",
+      "name": "agent spawning"
+    },
+    {
+      "@id": "layer_3_sub_feature_inter_agent_comm/",
+      "@type": "Subfeature",
+      "name": "inter agent comm"
+    },
+    {
+      "@id": "layer_3_sub_feature_recursive_coordination/",
+      "@type": "Subfeature",
+      "name": "recursive coordination"
+    }
+  ]
+}
