@@ -2,11 +2,11 @@
 
 ## Identity
 
-You are an agent at **Layer 3** (Features), **SubFeature**: Dynamic Memory.
+You are an agent at **Layer 3** (Features), **SubFeature**: Chain Visualization.
 
-- **Role**: Research into dynamic (runtime) memory for agents
-- **Scope**: Auto-memory, episodic memory, session-to-session continuity
-- **Parent**: `../0AGNOSTIC.md` (memory)
+- **Role**: Research into visualizing and documenting context chain flows
+- **Scope**: Diagrams, views, and tooling for understanding context chains
+- **Parent**: `../0AGNOSTIC.md` (context_chains)
 - **Children**: None (leaf node)
 
 

@@ -1,4 +1,4 @@
-# Gemini Context
+# OpenAI Context
 
 ## Identity
 
@@ -14,20 +14,18 @@ You are an agent at **Layer 3** (Features), **SubFeature**: Context Loading.
 
 
 
-## Gemini-Specific Notes
+## OpenAI-Specific Notes
 
-### Context Loading
-Load detailed resources from .0agnostic/ when needed:
-- rules/ - Behavioral constraints
-- prompts/ - Task-specific prompts
-- knowledge/ - Reference information
-- agents/ - Agent definitions
+### Function Calling
+When using OpenAI function calling:
+- Read .0agnostic/ resources for detailed instructions
+- Check episodic memory for context
+- Follow multi-agent sync rules for shared files
 
-### Session Continuity
-Maintain episodic memory in outputs/episodic/:
-- sessions/ - Timestamped session records
-- changes/ - Divergence and conflict logs
-- index.md - Searchable session index
+### Context Window Management
+- 0AGNOSTIC.md is lean (<400 tokens)
+- Load .0agnostic/ resources on-demand
+- Avoid loading everything upfront
 
 ---
 *Auto-generated from 0AGNOSTIC.md via agnostic-sync.sh*
