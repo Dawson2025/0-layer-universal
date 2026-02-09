@@ -1,7 +1,7 @@
 # layer_0_orchestrator — Integration Reference
 <!-- AUTO-GENERATED from layer_0_orchestrator.gab.jsonld — do not edit directly -->
-<!-- Last transpiled: 2026-02-08T03:29:31Z -->
-<!-- Source: /home/dawson/dawson-workspace/code/0_layer_universal/layer_0/layer_0_01_ai_manager_system/personal/layer_0_orchestrator.gab.jsonld -->
+<!-- Last transpiled: 2026-02-09T00:00:43Z -->
+<!-- Source: layer_0/layer_0_01_ai_manager_system/personal/layer_0_orchestrator.gab.jsonld -->
 
 ## Modes
 
@@ -80,6 +80,7 @@
 - Write task files to hand_off_documents/outgoing/to_below/
 - Do NOT spawn identical tasks (check similarity)
 - Do NOT spawn beyond depth limit
+- When delegating entity creation tasks, MUST include reference to @imports/entity_structure.md in the task context so child agents create correct canonical structure
 
 ### orch:MonitoringMode
 - Poll hand_off_documents/status/{child_id}.json for status updates

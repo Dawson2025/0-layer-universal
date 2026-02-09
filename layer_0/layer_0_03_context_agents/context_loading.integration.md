@@ -1,7 +1,7 @@
 # context_loading — Integration Reference
 <!-- AUTO-GENERATED from context_loading.gab.jsonld — do not edit directly -->
-<!-- Last transpiled: 2026-02-08T03:29:31Z -->
-<!-- Source: /home/dawson/dawson-workspace/code/0_layer_universal/layer_0/layer_0_03_context_agents/context_loading.gab.jsonld -->
+<!-- Last transpiled: 2026-02-09T00:00:43Z -->
+<!-- Source: layer_0/layer_0_03_context_agents/context_loading.gab.jsonld -->
 
 ## Modes
 
@@ -72,6 +72,7 @@
 - Identify current sub_layer if nested
 - Build inheritance chain
 - Verify required context is loaded (rules, protocols)
+- When validating entity context, verify entity has canonical structure per @imports/entity_structure.md (0AGNOSTIC.md, .0agnostic/, .1merge/, layer_N_group/, synthesis/)
 - Do NOT proceed to Propagation Mode until confidence >= 0.8
 
 ### ctx:PropagationMode
