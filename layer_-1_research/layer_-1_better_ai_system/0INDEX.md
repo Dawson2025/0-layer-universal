@@ -11,17 +11,33 @@ Research project for improving AI agent systems. Implements concepts for multi-a
 layer_-1_better_ai_system/
 ├── 0AGNOSTIC.md              ← Project identity (source of truth)
 ├── 0INDEX.md                 ← This index
+├── CLAUDE.md                 ← Auto-generated (do not edit)
 ├── .0agnostic/               ← AI tool configuration
-│   ├── hooks/scripts/        ← agnostic-sync.sh
-│   └── episodic/             ← Session tracking
+│   ├── agents/
+│   ├── episodic/{sessions,changes}
+│   ├── hooks/scripts/
+│   ├── knowledge/
+│   ├── rules/
+│   └── skills/
+├── .1merge/                  ← Tool-specific overrides (6 tools x 3 tiers)
+├── .claude/rules/            ← Claude Code config
+├── .cursor/rules/            ← Cursor config
+├── .github/instructions/     ← GitHub config
 ├── layer_-1_group/           ← Internals (this layer's content)
-│   ├── layer_-1_00_layer_registry/
+│   ├── layer_-1_00_layer_registry/proposals/
+│   ├── layer_-1_01_ai_manager_system/
+│   ├── layer_-1_02_manager_handoff_documents/
+│   │   ├── incoming/{from_above,from_below}
+│   │   └── outgoing/{to_above,to_below}
 │   ├── layer_-1_03_sub_layers/
-│   └── layer_-1_99_stages/   ← Research workflow stages
-└── layer_0_group/            ← Children (features)
-    ├── layer_0_00_layer_registry/
-    ├── layer_0_03_sub_layers/
-    └── layer_0_features/     ← 8 research features
+│   │   ├── sub_layer_-1_02_knowledge_system/{overview,things_learned}
+│   │   └── ... (prompts, principles, rules, setup)
+│   └── layer_-1_99_stages/   ← Research workflow stages (01-11)
+├── layer_0_group/            ← Children (features)
+│   ├── layer_0_00_layer_registry/proposals/
+│   └── layer_0_features/
+│       └── layer_0_feature_agent_performance/  ← Consolidated research feature
+└── synthesis/
 ```
 
 ---
@@ -30,14 +46,7 @@ layer_-1_better_ai_system/
 
 | Feature | Description | Key Files |
 |---------|-------------|-----------|
-| ai_automation_system | Research into AI automation patterns | `layer_0_group/layer_0_features/layer_0_feature_ai_automation_system/` |
-| ai_context_system | Context loading and management | `layer_0_group/layer_0_features/layer_0_feature_ai_context_system/` |
-| ai_documentation_system | AI-friendly documentation patterns | `layer_0_group/layer_0_features/layer_0_feature_ai_documentation_system/` |
-| ai_dynamic_memory_system | Memory and session continuity | `layer_0_group/layer_0_features/layer_0_feature_ai_dynamic_memory_system/` |
-| ai_manager_hierarchy_system | Agent hierarchy and delegation | `layer_0_group/layer_0_features/layer_0_feature_ai_manager_hierarchy_system/` |
-| ai_rules_system | Rule discovery and application | `layer_0_group/layer_0_features/layer_0_feature_ai_rules_system/` |
-| better_layer_stage_system | Layer-stage framework improvements | `layer_0_group/layer_0_features/layer_0_feature_better_layer_stage_system/` |
-| better_setup_system | Setup and configuration patterns | `layer_0_group/layer_0_features/layer_0_feature_better_setup_system/` |
+| agent_performance | Consolidated research into AI agent architecture, context systems, memory, orchestration, tooling, and organization | `layer_0_group/layer_0_features/layer_0_feature_agent_performance/` |
 
 ---
 
@@ -48,9 +57,14 @@ layer_-1_better_ai_system/
 | 01 | Request Gathering | `layer_-1_group/layer_-1_99_stages/stage_-1_01_request_gathering/` |
 | 02 | Research | `layer_-1_group/layer_-1_99_stages/stage_-1_02_research/` |
 | 03 | Instructions | `layer_-1_group/layer_-1_99_stages/stage_-1_03_instructions/` |
-| 04 | Design | `layer_-1_group/layer_-1_99_stages/stage_-1_04_design/` |
-| 05 | Planning | `layer_-1_group/layer_-1_99_stages/stage_-1_05_planning/` |
+| 04 | Planning | `layer_-1_group/layer_-1_99_stages/stage_-1_04_planning/` |
+| 05 | Design | `layer_-1_group/layer_-1_99_stages/stage_-1_05_design/` |
 | 06 | Development | `layer_-1_group/layer_-1_99_stages/stage_-1_06_development/` |
+| 07 | Testing | `layer_-1_group/layer_-1_99_stages/stage_-1_07_testing/` |
+| 08 | Criticism | `layer_-1_group/layer_-1_99_stages/stage_-1_08_criticism/` |
+| 09 | Fixing | `layer_-1_group/layer_-1_99_stages/stage_-1_09_fixing/` |
+| 10 | Current Product | `layer_-1_group/layer_-1_99_stages/stage_-1_10_current_product/` |
+| 11 | Archives | `layer_-1_group/layer_-1_99_stages/stage_-1_11_archives/` |
 
 ---
 
@@ -70,7 +84,7 @@ layer_-1_better_ai_system/
 |----------------|----------|
 | Proposals | `layer_-1_group/layer_-1_00_layer_registry/proposals/` |
 | Research | `layer_-1_group/layer_-1_99_stages/stage_-1_02_research/outputs/` |
-| Designs | `layer_-1_group/layer_-1_99_stages/stage_-1_04_design/outputs/` |
+| Designs | `layer_-1_group/layer_-1_99_stages/stage_-1_05_design/outputs/` |
 | Features | `layer_0_group/layer_0_features/` |
 | Session logs | `.0agnostic/episodic/` |
 
