@@ -1,0 +1,60 @@
+{
+  "feature": "layer_2_feature_stage_definitions",
+  "layer": 2,
+  "status": "active",
+  "version": "1.0.0",
+  "created": "2026-01-15",
+  "stages_defined": [
+    {
+      "id": "00",
+      "name": "request_gathering",
+      "description": "Gather initial requirements"
+    },
+    {
+      "id": "01",
+      "name": "instructions",
+      "description": "Define what needs to be done"
+    },
+    {
+      "id": "02",
+      "name": "planning",
+      "description": "Plan how to do it"
+    },
+    {
+      "id": "03",
+      "name": "design",
+      "description": "Design the solution"
+    },
+    {
+      "id": "04",
+      "name": "development",
+      "description": "Implement the solution"
+    },
+    {
+      "id": "05",
+      "name": "testing",
+      "description": "Test the implementation"
+    },
+    {
+      "id": "06",
+      "name": "criticism",
+      "description": "Review and critique"
+    },
+    {
+      "id": "07",
+      "name": "fixing",
+      "description": "Fix identified issues"
+    },
+    {
+      "id": "08",
+      "name": "current_product",
+      "description": "Current working version"
+    },
+    {
+      "id": "09",
+      "name": "archives",
+      "description": "Historical records"
+    }
+  ],
+  "documentation_path": "layer_2/layer_2_02_sub_layers/sub_layer_2_05+_setup_dependant/sub_layer_2_05_stage_docs/"
+}

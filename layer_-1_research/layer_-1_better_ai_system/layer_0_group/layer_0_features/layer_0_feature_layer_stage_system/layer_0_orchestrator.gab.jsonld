@@ -1,0 +1,11 @@
+{
+  "@context": {
+    "@vocab": "https://layer-stage.dev/schema#",
+    "gab": "https://gab-lang.org/schema#"
+  },
+  "@id": "layer_stage_system_orchestrator",
+  "@type": "gab:LLMAgent",
+  "name": "layer_stage_system Orchestrator",
+  "purpose": "Orchestrate work within layer_stage_system",
+  "layer": 0
+}

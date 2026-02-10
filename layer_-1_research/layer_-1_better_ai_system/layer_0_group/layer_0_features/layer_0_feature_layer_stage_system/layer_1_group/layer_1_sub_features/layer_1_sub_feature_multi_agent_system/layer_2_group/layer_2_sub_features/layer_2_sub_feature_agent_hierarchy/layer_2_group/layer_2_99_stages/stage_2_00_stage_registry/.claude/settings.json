@@ -1,0 +1,14 @@
+{
+  "context": {
+    "stage": "stage_0_00_stage_registry",
+    "layer": 0,
+    "purpose": "Stage metadata and registration"
+  },
+  "permissions": {
+    "allow": [],
+    "deny": [],
+    "ask": []
+  },
+  "env": {},
+  "hooks": {}
+}

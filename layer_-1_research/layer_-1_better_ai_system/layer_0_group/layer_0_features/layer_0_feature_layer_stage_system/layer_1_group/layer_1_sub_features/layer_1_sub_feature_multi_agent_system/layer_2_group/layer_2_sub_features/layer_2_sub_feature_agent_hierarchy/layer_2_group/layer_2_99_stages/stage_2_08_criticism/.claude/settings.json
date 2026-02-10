@@ -1,0 +1,14 @@
+{
+  "context": {
+    "stage": "stage_0_08_criticism",
+    "layer": 0,
+    "purpose": "Review and identify improvements"
+  },
+  "permissions": {
+    "allow": [],
+    "deny": [],
+    "ask": []
+  },
+  "env": {},
+  "hooks": {}
+}

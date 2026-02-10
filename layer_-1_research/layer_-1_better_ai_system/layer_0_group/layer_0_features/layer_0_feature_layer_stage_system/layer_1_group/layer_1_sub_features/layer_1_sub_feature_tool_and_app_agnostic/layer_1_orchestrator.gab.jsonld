@@ -1,0 +1,11 @@
+{
+  "@context": {
+    "@vocab": "https://layer-stage.dev/schema#",
+    "gab": "https://gab-lang.org/schema#"
+  },
+  "@id": "tool_and_app_agnostic_orchestrator",
+  "@type": "gab:LLMAgent",
+  "name": "tool_and_app_agnostic Orchestrator",
+  "purpose": "Orchestrate work within tool_and_app_agnostic",
+  "layer": 1
+}

@@ -1,0 +1,94 @@
+{
+  "@context": {
+    "@vocab": "https://layer-stage.dev/schema#",
+    "nav": "https://layer-stage.dev/nav#"
+  },
+
+  "@id": "diagrams",
+  "@type": "DiagramsRegistry",
+
+  "name": "Context Visualization Diagrams",
+  "description": "Visual diagrams of context architecture, flow, and propagation",
+
+  "nav:parent": {
+    "@id": "../",
+    "name": "layer_1_sub_feature_context_visualization"
+  },
+
+  "diagramCategories": [
+    {
+      "@id": "current/",
+      "name": "Current State Diagrams",
+      "description": "Diagrams showing how context works today",
+      "diagrams": [
+        {
+          "@id": "current/context_architecture.md",
+          "name": "Context Architecture",
+          "purpose": "What context exists and where it lives",
+          "answers": "What context is available?"
+        },
+        {
+          "@id": "current/context_flow.md",
+          "name": "Context Flow",
+          "purpose": "When context loads and in what order",
+          "answers": "When does context load?"
+        },
+        {
+          "@id": "current/context_propagation.md",
+          "name": "Context Propagation",
+          "purpose": "How context moves through hierarchy",
+          "answers": "How does context propagate?"
+        },
+        {
+          "@id": "current/agent_instantiation_chain.md",
+          "name": "Agent Instantiation Chain",
+          "purpose": "What agents start with and how they load more context",
+          "answers": "How does an agent's context chain build from instantiation?"
+        },
+        {
+          "@id": "current/context_loading_sequence.md",
+          "name": "Context Loading Sequence",
+          "purpose": "Exact order of context loading from session start to end",
+          "answers": "What order does context load in?"
+        },
+        {
+          "@id": "current/official_claude_code_loading.md",
+          "name": "Official Claude Code Loading",
+          "purpose": "How Claude Code (the tool) officially loads context",
+          "answers": "What does Claude Code auto-load?"
+        },
+        {
+          "@id": "current/custom_layer_stage_loading.md",
+          "name": "Custom Layer-Stage Loading",
+          "purpose": "How our system extends Claude Code with custom conventions",
+          "answers": "What have we added on top of official behavior?"
+        },
+        {
+          "@id": "current/specific_flows/",
+          "name": "Specific Operation Flows",
+          "purpose": "How context loads for specific operations",
+          "children": [
+            {
+              "@id": "current/specific_flows/entity_creation_flow.md",
+              "name": "Entity Creation Flow"
+            },
+            {
+              "@id": "current/specific_flows/git_commit_flow.md",
+              "name": "Git Commit Flow"
+            },
+            {
+              "@id": "current/specific_flows/stage_workflow_flow.md",
+              "name": "Stage Workflow Flow"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "@id": "proposed/",
+      "name": "Proposed State Diagrams",
+      "description": "Before/after diagrams for proposals",
+      "note": "Each proposal gets its own subdirectory with before.md and after.md"
+    }
+  ]
+}

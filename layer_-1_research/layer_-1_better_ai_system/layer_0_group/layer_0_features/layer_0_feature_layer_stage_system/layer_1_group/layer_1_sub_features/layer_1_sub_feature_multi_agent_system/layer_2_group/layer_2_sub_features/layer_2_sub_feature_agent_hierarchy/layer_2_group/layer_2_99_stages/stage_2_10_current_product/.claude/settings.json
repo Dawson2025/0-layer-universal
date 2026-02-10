@@ -1,0 +1,14 @@
+{
+  "context": {
+    "stage": "stage_0_10_current_product",
+    "layer": 0,
+    "purpose": "Production-ready artifacts"
+  },
+  "permissions": {
+    "allow": [],
+    "deny": [],
+    "ask": []
+  },
+  "env": {},
+  "hooks": {}
+}
