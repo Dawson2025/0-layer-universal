@@ -15,7 +15,7 @@ Universal rules defined in the Layer-Stage system are NOT automatically applied 
 
 Rules are properly organized in:
 ```
-layer_0_group/layer_0_03_sub_layers/sub_layer_0_04_rules/
+layer_0_group/layer_0_04_sub_layers/sub_layer_0_02_rules/
 ├── AI_CONTEXT_MODIFICATION_PROTOCOL.md   ← Show diagram before modifying
 ├── AI_CONTEXT_COMMIT_PUSH_RULE.md        ← Commit/push after changes
 ├── AI_DOCUMENTATION_PROTOCOL.md
@@ -182,7 +182,7 @@ Need to research if this supports custom instructions or just permissions.
 ### Updated CLAUDE.md
 
 The root CLAUDE.md now:
-1. **Tells AI to read rules FIRST** from `sub_layer_0_04_rules/`
+1. **Tells AI to read rules FIRST** from `sub_layer_0_02_rules/`
 2. **Provides navigation table** for sub-layers and stages
 3. **Stays lean** - navigation guide, not content container
 4. **References .claude/** for tool permissions
@@ -193,13 +193,13 @@ The root CLAUDE.md now:
 ## FIRST: Read Universal Rules
 
 **BEFORE doing any work**, read and follow rules from:
-layer_0_group/layer_0_03_sub_layers/sub_layer_0_04_rules/
+layer_0_group/layer_0_04_sub_layers/sub_layer_0_02_rules/
 
 ## Navigation: How to Find Things
 
 | Sub-Layer | Purpose | When to Read |
 |-----------|---------|--------------|
-| sub_layer_0_04_rules/ | Universal rules | ALWAYS |
+| sub_layer_0_02_rules/ | Universal rules | ALWAYS |
 ...
 ```
 
@@ -249,7 +249,7 @@ Could add to root `.claude/settings.json`:
 {
   "permissions": { ... },
   "rules": {
-    "universal": "layer_0_group/layer_0_03_sub_layers/sub_layer_0_04_rules/",
+    "universal": "layer_0_group/layer_0_04_sub_layers/sub_layer_0_02_rules/",
     "always_read": [
       "AI_CONTEXT_MODIFICATION_PROTOCOL.md",
       "AI_CONTEXT_COMMIT_PUSH_RULE.md"
@@ -284,7 +284,7 @@ CLAUDE.md says "read rules first" but doesn't enforce it.
 
 ---
 
-## Actual Rules (From sub_layer_0_04_rules/)
+## Actual Rules (From sub_layer_0_02_rules/)
 
 ### AI_CONTEXT_MODIFICATION_PROTOCOL.md
 - **Show diagram** before modifying AI context files
