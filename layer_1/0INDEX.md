@@ -22,7 +22,7 @@ Project-specific content. Contains features, components, and project implementat
 **Looking for features?** → `layer_1_features/`
 **Looking for components?** → `layer_1_components/`
 **Looking for universal rules?** → `../layer_0/.0agnostic/rules/`
-**Looking for session memory?** → `outputs/episodic/`
+**Looking for session memory?** → `.0agnostic/episodic_memory/`
 
 ---
 

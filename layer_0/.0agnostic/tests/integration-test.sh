@@ -96,35 +96,35 @@ echo ""
 echo "--- Test 2: Episodic Memory System ---"
 
 # Test 2.1: Episodic folder structure
-if [ -d "$LAYER_0/outputs/episodic/sessions" ] && [ -d "$LAYER_0/outputs/episodic/changes" ]; then
+if [ -d "$LAYER_0/.0agnostic/episodic_memory/sessions" ] && [ -d "$LAYER_0/.0agnostic/episodic_memory/changes" ]; then
     pass "Episodic folder structure exists"
 else
     fail "Episodic folder structure incomplete"
 fi
 
 # Test 2.2: index.md exists
-if [ -f "$LAYER_0/outputs/episodic/index.md" ]; then
+if [ -f "$LAYER_0/.0agnostic/episodic_memory/index.md" ]; then
     pass "Episodic index.md exists"
 else
     fail "Episodic index.md not found"
 fi
 
 # Test 2.3: divergence.log exists
-if [ -f "$LAYER_0/outputs/episodic/changes/divergence.log" ]; then
+if [ -f "$LAYER_0/.0agnostic/episodic_memory/changes/divergence.log" ]; then
     pass "divergence.log exists"
 else
     fail "divergence.log not found"
 fi
 
 # Test 2.4: conflicts.log exists
-if [ -f "$LAYER_0/outputs/episodic/changes/conflicts.log" ]; then
+if [ -f "$LAYER_0/.0agnostic/episodic_memory/changes/conflicts.log" ]; then
     pass "conflicts.log exists"
 else
     fail "conflicts.log not found"
 fi
 
 # Test 2.5: At least one session file exists
-if ls "$LAYER_0/outputs/episodic/sessions/"*.md >/dev/null 2>&1; then
+if ls "$LAYER_0/.0agnostic/episodic_memory/sessions/"*.md >/dev/null 2>&1; then
     pass "Session files exist"
 else
     fail "No session files found"
@@ -239,7 +239,7 @@ else
 fi
 
 # Test 5.2: Episodic index references session files
-if grep -q "sessions/" "$LAYER_0/outputs/episodic/index.md" 2>/dev/null; then
+if grep -q "sessions/" "$LAYER_0/.0agnostic/episodic_memory/index.md" 2>/dev/null; then
     pass "Episodic index references session files"
 else
     fail "Episodic index doesn't reference sessions"

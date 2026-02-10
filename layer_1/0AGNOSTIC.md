@@ -26,7 +26,7 @@ Before starting any task:
 5. Read episodic memory if resuming work
 
 ### Episodic Memory
-Record your work in `outputs/episodic/`:
+Record your work in `.0agnostic/episodic_memory/`:
 - Create session files for significant work
 - Update divergence.log when changing outputs
 - Enable next session to continue seamlessly
@@ -45,7 +45,7 @@ When modifying shared outputs:
 |-----------|--------|
 | Need universal rules | Load `../layer_0/.0agnostic/rules/` |
 | Need project-specific rules | Load `.0agnostic/rules/` |
-| Starting new session | Read `outputs/episodic/index.md` |
+| Starting new session | Read `.0agnostic/episodic_memory/index.md` |
 | Modifying outputs | Check `.locks/` first |
 | Working on feature | Navigate to `layer_1_features/` |
 

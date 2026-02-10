@@ -28,7 +28,7 @@ Before starting any task:
 5. Read episodic memory if resuming work
 
 ### Episodic Memory
-Record your work in `outputs/episodic/`:
+Record your work in `.0agnostic/episodic_memory/`:
 - Create session files for significant work
 - Update divergence.log when changing outputs
 - Enable next session to continue seamlessly
@@ -46,7 +46,7 @@ Research projects follow stages 01-11 (see Stage Navigation below).
 | Need universal rules | Load `../layer_0/.0agnostic/rules/` |
 | Starting research | Navigate to project's stage_-1_02_research |
 | Designing solutions | Navigate to project's stage_-1_04_design |
-| Starting new session | Read `outputs/episodic/index.md` |
+| Starting new session | Read `.0agnostic/episodic_memory/index.md` |
 
 
 
@@ -62,7 +62,7 @@ This file is auto-generated from 0AGNOSTIC.md. Edit 0AGNOSTIC.md to make changes
 - Use Task tool for complex multi-step work
 
 ### Session Continuity
-- Read outputs/episodic/index.md when resuming work
+- Read .0agnostic/episodic_memory/index.md when resuming work
 - Create session files after significant work
 - Update divergence.log when modifying outputs
 

@@ -90,7 +90,7 @@ This file is auto-generated from 0AGNOSTIC.md. Edit 0AGNOSTIC.md to make changes
 - Use Task tool for complex multi-step work
 
 ### Session Continuity
-- Read outputs/episodic/index.md when resuming work
+- Read .0agnostic/episodic_memory/index.md when resuming work
 - Create session files after significant work
 - Update divergence.log when modifying outputs
 
@@ -125,7 +125,7 @@ Register this context in your AutoGen agent configuration:
 agent_config = {
     "context_file": "AGENTS.md",
     "resources_dir": ".0agnostic/",
-    "episodic_dir": "outputs/episodic/"
+    "episodic_dir": ".0agnostic/episodic_memory/"
 }
 ```
 
@@ -166,7 +166,7 @@ Load detailed resources from .0agnostic/ when needed:
 - agents/ - Agent definitions
 
 ### Session Continuity
-Maintain episodic memory in outputs/episodic/:
+Maintain episodic memory in .0agnostic/episodic_memory/:
 - sessions/ - Timestamped session records
 - changes/ - Divergence and conflict logs
 - index.md - Searchable session index

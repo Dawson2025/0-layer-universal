@@ -115,14 +115,14 @@ echo ""
 echo "--- Edge Case 4: Episodic Memory Integrity ---"
 
 # Test: divergence.log is append-only format
-if head -1 "$LAYER_0/outputs/episodic/changes/divergence.log" | grep -q "^#"; then
+if head -1 "$LAYER_0/.0agnostic/episodic_memory/changes/divergence.log" | grep -q "^#"; then
     pass "divergence.log has header comment"
 else
     warn "divergence.log missing header"
 fi
 
 # Test: Session files follow naming convention
-INVALID_SESSIONS=$(find "$LAYER_0/outputs/episodic/sessions" -name "*.md" ! -name "[0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]_session_*.md" 2>/dev/null | wc -l)
+INVALID_SESSIONS=$(find "$LAYER_0/.0agnostic/episodic_memory/sessions" -name "*.md" ! -name "[0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]_session_*.md" 2>/dev/null | wc -l)
 if [ "$INVALID_SESSIONS" -eq 0 ]; then
     pass "All session files follow naming convention"
 else
@@ -130,7 +130,7 @@ else
 fi
 
 # Test: index.md references existing sessions
-if [ -f "$LAYER_0/outputs/episodic/index.md" ]; then
+if [ -f "$LAYER_0/.0agnostic/episodic_memory/index.md" ]; then
     pass "Episodic index exists and is readable"
 else
     fail "Episodic index missing"
@@ -162,7 +162,7 @@ done
 
 # Test: All layers have episodic structure
 for layer in layer_0 layer_1 layer_-1_research; do
-    if [ -d "$ROOT_DIR/$layer/outputs/episodic" ]; then
+    if [ -d "$ROOT_DIR/$layer/.0agnostic/episodic_memory" ]; then
         pass "$layer has episodic memory structure"
     else
         fail "$layer missing episodic structure"

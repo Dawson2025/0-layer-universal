@@ -21,7 +21,7 @@ description: "Gather context about current position in the layer-stage hierarchy
 
 1. **Read CLAUDE.md chain**: Starting from the working directory, read each CLAUDE.md up to root
 2. **Identify layer and stage**: Determine current layer (0, 1, -1) and stage (01-11)
-3. **Check episodic memory**: Read `memory/episodic.md` (auto-memory topic file) for recent session history across all layers. If resuming multi-session work, also read the source `outputs/episodic/index.md` in the working directory for full detail.
+3. **Check episodic memory**: Read `memory/episodic.md` (auto-memory topic file) for recent session history across all layers. If resuming multi-session work, also read the source `.0agnostic/episodic_memory/index.md` in the working directory for full detail.
 4. **Find the `.gab.jsonld` for your role** in the current directory:
    ```bash
    find [working-directory] -maxdepth 2 -name "*.gab.jsonld" -type f | head -5

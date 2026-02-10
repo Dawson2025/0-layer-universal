@@ -51,4 +51,4 @@ When working in the AI manager system:
 ## Episodic Memory
 
 - **Session start**: Check `memory/episodic.md` (auto-memory topic file) for recent session history across all layers
-- **Session end**: Update `outputs/episodic/index.md` in the working directory, then run `tools/episodic-sync.sh`
+- **Session end**: Update `.0agnostic/episodic_memory/index.md` in the working directory, then run `tools/episodic-sync.sh`

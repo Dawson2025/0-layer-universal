@@ -19,7 +19,7 @@ Before starting any task, traverse the context hierarchy:
 3. Follow layer-stage framework conventions
 
 ### Episodic Memory
-Record your work in `outputs/episodic/`:
+Record your work in `.0agnostic/episodic_memory/`:
 - Create session files for significant work
 - Update divergence.log when changing outputs
 - Enable next session to continue seamlessly
@@ -38,7 +38,7 @@ When modifying shared outputs:
 | Need implementation prompts | Load `.0agnostic/prompts/` |
 | Need reference knowledge | Load `.0agnostic/knowledge/` |
 | Need agent definitions | Load `.0agnostic/agents/` |
-| Starting new session | Read `outputs/episodic/index.md` |
+| Starting new session | Read `.0agnostic/episodic_memory/index.md` |
 | Modifying outputs | Check `.locks/` first |
 
 ## Agnostic System

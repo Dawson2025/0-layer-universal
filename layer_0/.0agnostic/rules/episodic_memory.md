@@ -5,7 +5,7 @@
 After completing significant work, create a session record:
 
 ```
-outputs/episodic/sessions/YYYY-MM-DD_session_NNN.md
+.0agnostic/episodic_memory/sessions/YYYY-MM-DD_session_NNN.md
 ```
 
 ## Session File Structure

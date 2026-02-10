@@ -23,7 +23,7 @@ This file is auto-generated from 0AGNOSTIC.md. Edit 0AGNOSTIC.md to make changes
 - Use Task tool for complex multi-step work
 
 ### Session Continuity
-- Read outputs/episodic/index.md when resuming work
+- Read .0agnostic/episodic_memory/index.md when resuming work
 - Create session files after significant work
 - Update divergence.log when modifying outputs
 

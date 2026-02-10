@@ -35,7 +35,7 @@ Universal content that applies to ALL projects. Rules, prompts, knowledge, and p
 
 **Looking for rules?** → `layer_0_03_sub_layers/sub_layer_0_04_rules/`
 **Looking for prompts?** → `layer_0_03_sub_layers/sub_layer_0_01_prompts/`
-**Looking for session memory?** → `outputs/episodic/`
+**Looking for session memory?** → `.0agnostic/episodic_memory/`
 **Looking for sync scripts?** → `.0agnostic/scripts/`
 
 ---

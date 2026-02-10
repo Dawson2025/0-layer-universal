@@ -9,14 +9,14 @@
 #   ./create-session.sh "claude_opus" "Implemented AGNOSTIC system" "COMPLETED"
 #
 # Creates:
-#   - Session file: outputs/episodic/sessions/YYYY-MM-DD_session_NNN.md
-#   - Updates: outputs/episodic/index.md
+#   - Session file: .0agnostic/episodic_memory/sessions/YYYY-MM-DD_session_NNN.md
+#   - Updates: .0agnostic/episodic_memory/index.md
 #
 
 set -e
 
 # Configuration
-EPISODIC_DIR="${EPISODIC_DIR:-outputs/episodic}"
+EPISODIC_DIR="${EPISODIC_DIR:-.0agnostic/episodic_memory}"
 SESSIONS_DIR="$EPISODIC_DIR/sessions"
 INDEX_FILE="$EPISODIC_DIR/index.md"
 

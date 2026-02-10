@@ -28,7 +28,7 @@ Before starting any task:
 5. Read episodic memory if resuming work
 
 ### Episodic Memory
-Record your work in `outputs/episodic/`:
+Record your work in `.0agnostic/episodic_memory/`:
 - Create session files for significant work
 - Update divergence.log when changing outputs
 - Enable next session to continue seamlessly

@@ -27,7 +27,7 @@ When working in school project directories:
 ## Episodic Memory
 
 - **Session start**: Check `memory/episodic.md` (auto-memory topic file) for recent school session history
-- **Session end**: Update `outputs/episodic/index.md` in the working assignment/module directory, then run `tools/episodic-sync.sh`
+- **Session end**: Update `.0agnostic/episodic_memory/index.md` in the working assignment/module directory, then run `tools/episodic-sync.sh`
 
 ## Agnostic System
 

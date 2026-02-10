@@ -27,7 +27,7 @@ When working in layer_0 (universal) directories:
 ## Episodic Memory
 
 - **Session start**: Check `memory/episodic.md` (auto-memory topic file) for recent session history across all layers
-- **Session end**: After significant work, update `outputs/episodic/index.md` in the working layer, then run `tools/episodic-sync.sh` to sync to auto-memory
+- **Session end**: After significant work, update `.0agnostic/episodic_memory/index.md` in the working layer, then run `tools/episodic-sync.sh` to sync to auto-memory
 
 ## Agnostic System
 

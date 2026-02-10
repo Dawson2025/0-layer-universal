@@ -14,6 +14,24 @@ You are an AI agent working within the layer_0 (universal) context. This layer c
 
 ## Key Behaviors
 
+### Context Discovery
+Before starting any task, traverse the context hierarchy:
+1. Read this file (0AGNOSTIC.md)
+2. Check `.0agnostic/` for detailed resources if needed
+3. Follow layer-stage framework conventions
+
+### Episodic Memory
+Record your work in `.0agnostic/episodic_memory/`:
+- Create session files for significant work
+- Update divergence.log when changing outputs
+- Enable next session to continue seamlessly
+
+### Multi-Agent Safety
+When modifying shared outputs:
+- Check for locks before writing
+- Use atomic writes (temp file → rename)
+- Log changes to divergence.log
+
 
 
 ## AutoGen-Specific Configuration
@@ -25,7 +43,7 @@ Register this context in your AutoGen agent configuration:
 agent_config = {
     "context_file": "AGENTS.md",
     "resources_dir": ".0agnostic/",
-    "episodic_dir": "outputs/episodic/"
+    "episodic_dir": ".0agnostic/episodic_memory/"
 }
 ```
 

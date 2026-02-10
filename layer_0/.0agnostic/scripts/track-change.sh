@@ -15,7 +15,7 @@
 set -e
 
 # Configuration
-DIVERGENCE_LOG="${DIVERGENCE_LOG:-outputs/episodic/changes/divergence.log}"
+DIVERGENCE_LOG="${DIVERGENCE_LOG:-.0agnostic/episodic_memory/changes/divergence.log}"
 
 # Parameters
 FILE_PATH="$1"

@@ -23,7 +23,7 @@ set -e
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 
 # Configuration
-DIVERGENCE_LOG="${DIVERGENCE_LOG:-outputs/episodic/changes/divergence.log}"
+DIVERGENCE_LOG="${DIVERGENCE_LOG:-.0agnostic/episodic_memory/changes/divergence.log}"
 
 # Parse arguments
 TARGET_FILE="$1"

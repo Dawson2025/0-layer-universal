@@ -18,7 +18,7 @@ Register this context in your AutoGen agent configuration:
 agent_config = {
     "context_file": "AGENTS.md",
     "resources_dir": ".0agnostic/",
-    "episodic_dir": "outputs/episodic/"
+    "episodic_dir": ".0agnostic/episodic_memory/"
 }
 ```
 

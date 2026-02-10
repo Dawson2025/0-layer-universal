@@ -86,7 +86,7 @@ These belong in **skills** (loaded on-demand), not in the always-loaded context 
 | Templates | Rarely needed every request | `skills/[name]/references/` |
 | Full coding standards | Only needed when coding | `skills/standards/SKILL.md` |
 | Detailed examples | Context-heavy | `skills/[name]/references/` |
-| Historical context | Rarely relevant | `outputs/episodic/` |
+| Historical context | Rarely relevant | `.0agnostic/episodic_memory/` |
 
 ---
 

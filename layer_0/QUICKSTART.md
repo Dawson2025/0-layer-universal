@@ -16,10 +16,10 @@ cat CLAUDE.md  # For Claude Code
 
 ```bash
 # See what happened before
-cat outputs/episodic/index.md
+cat .0agnostic/episodic_memory/index.md
 
 # Read specific session
-cat outputs/episodic/sessions/2026-01-30_session_001.md
+cat .0agnostic/episodic_memory/sessions/2026-01-30_session_001.md
 ```
 
 ### 3. Start Working
@@ -86,7 +86,7 @@ layer_0/
 │   ├── scripts/          # Helper scripts
 │   └── skills/           # Skill documentation (/find, etc.)
 ├── .locks/               # File locks (don't edit manually)
-└── outputs/episodic/
+└── .0agnostic/episodic_memory/
     ├── sessions/         # Session records
     ├── changes/          # divergence.log, conflicts.log
     └── index.md          # Session index
@@ -99,7 +99,7 @@ layer_0/
 ### Starting a New Session
 
 1. `cat 0AGNOSTIC.md` - Read context
-2. `cat outputs/episodic/index.md` - Check history
+2. `cat .0agnostic/episodic_memory/index.md` - Check history
 3. Work on your task
 4. Create session file when done
 

@@ -15,7 +15,7 @@
 ## Quick Links
 - **Sessions**: `sessions/`
 - **Changes**: `changes/`
-- **Stage Episodic**: `layer_-1_group/layer_-1_99_stages/stage_-1_02_research/outputs/episodic/`
+- **Stage Episodic**: `layer_-1_group/layer_-1_99_stages/stage_-1_02_research/outputs/episodic_memory/`
 
 ## Notes
 - Project-level episodic memory tracks cross-stage work

@@ -21,7 +21,7 @@ Ensure session continuity by writing outputs to files BEFORE responding to user.
 **Before ANY response to user:**
 
 1. **Write output** to appropriate file in `outputs/`
-2. **Update episodic memory** in `outputs/episodic/`
+2. **Update episodic memory** in `.0agnostic/episodic_memory/`
 3. **Then respond** to user
 
 ---
@@ -31,7 +31,7 @@ Ensure session continuity by writing outputs to files BEFORE responding to user.
 When enabled at a location, create:
 
 ```
-outputs/episodic/
+.0agnostic/episodic_memory/
 ├── index.md              # Quick reference to recent sessions
 ├── sessions/             # Session logs
 │   └── session_YYYY-MM-DD_topic.md
@@ -90,13 +90,13 @@ Add to the location's CLAUDE.md:
 **Before ANY response to user, you MUST:**
 
 1. Write your output to a file in `outputs/` first
-2. Update `outputs/episodic/` with session/change info
+2. Update `.0agnostic/episodic_memory/` with session/change info
 3. THEN respond to user
 
 **File Locations**:
 - Research findings: `outputs/[appropriate_folder]/`
-- Session logs: `outputs/episodic/sessions/`
-- Change logs: `outputs/episodic/changes/`
+- Session logs: `.0agnostic/episodic_memory/sessions/`
+- Change logs: `.0agnostic/episodic_memory/changes/`
 ```
 
 ---
