@@ -22,7 +22,7 @@
     "childNaming": {
       "pattern": "layer_{N}_{type}_{name}",
       "currentLayer": 0,
-      "example": "layer_0_feature_agent_performance",
+      "example": "layer_0_feature_layer_stage_system",
       "note": "Features are at same layer as registry; sub_features inside are layer+1"
     }
   },
@@ -35,19 +35,36 @@
 
   "features": [
     {
-      "@id": "layer_0_feature_agent_performance/",
+      "@id": "layer_0_feature_layer_stage_system/",
       "@type": "Feature",
-      "name": "Agent Performance",
-      "description": "Unified research into all aspects of AI agent performance — consolidates knowledge/memory, scaling, AALang, organization, and tooling",
-      "note": "Phase 2 complete: content migrated from 6 former features (context_framework, structure_framework, governance_framework, tooling_framework, multi_agent_orchestration, aalang_integration)",
+      "name": "Layer-Stage System",
+      "description": "Central pillar: the layer-stage framework itself — memory/context chains, organization/entities, multi-agent orchestration, and tool-agnostic systems",
+      "note": "Phase 3: restructured from agent_performance into 3-pillar architecture",
       "rel:treeOfNeedsBranch": ["01_capable", "02_continuous", "03_trustworthy", "04_observable", "06_context_flow"],
       "children": [
-        "layer_1_sub_feature_knowledge_and_memory",
-        "layer_1_sub_feature_performance_at_scale",
-        "layer_1_sub_feature_aalang",
+        "layer_1_sub_feature_memory_system",
         "layer_1_sub_feature_organization",
-        "layer_1_sub_feature_tooling"
+        "layer_1_sub_feature_multi_agent_system",
+        "layer_1_sub_feature_tool_and_app_agnostic"
       ]
+    },
+    {
+      "@id": "layer_0_feature_multi_os_multi_machine_system/",
+      "@type": "Feature",
+      "name": "Multi-OS Multi-Machine System",
+      "description": "Cross-platform setup, configuration, and synchronization across operating systems and machines",
+      "note": "Phase 3: extracted from agent_performance/organization/setup OS-specific content",
+      "rel:treeOfNeedsBranch": ["02_continuous", "04_observable"],
+      "children": []
+    },
+    {
+      "@id": "layer_0_feature_multimodal_system/",
+      "@type": "Feature",
+      "name": "Multimodal System",
+      "description": "Future multimodal capabilities — video, audio, TTS/STT, 3D, and other non-text modalities",
+      "note": "Phase 3: empty skeleton for future research",
+      "rel:treeOfNeedsBranch": ["01_capable"],
+      "children": []
     }
   ]
 }

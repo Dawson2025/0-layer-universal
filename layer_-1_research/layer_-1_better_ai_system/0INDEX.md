@@ -36,7 +36,9 @@ layer_-1_better_ai_system/
 ├── layer_0_group/            ← Children (features)
 │   ├── layer_0_00_layer_registry/proposals/
 │   └── layer_0_features/
-│       └── layer_0_feature_agent_performance/  ← Consolidated research feature
+│       ├── layer_0_feature_layer_stage_system/        ← Central pillar: framework, memory, agents, organization
+│       ├── layer_0_feature_multi_os_multi_machine_system/  ← Cross-platform setup
+│       └── layer_0_feature_multimodal_system/         ← Future: video, audio, TTS/STT, 3D
 └── synthesis/
 ```
 
@@ -46,7 +48,9 @@ layer_-1_better_ai_system/
 
 | Feature | Description | Key Files |
 |---------|-------------|-----------|
-| agent_performance | Consolidated research into AI agent architecture, context systems, memory, orchestration, tooling, and organization | `layer_0_group/layer_0_features/layer_0_feature_agent_performance/` |
+| layer_stage_system | Central pillar: layer-stage framework, memory/context chains, organization, multi-agent, tool-agnostic | `layer_0_group/layer_0_features/layer_0_feature_layer_stage_system/` |
+| multi_os_multi_machine_system | Cross-platform setup, configuration, and synchronization | `layer_0_group/layer_0_features/layer_0_feature_multi_os_multi_machine_system/` |
+| multimodal_system | Future multimodal capabilities (video, audio, TTS/STT, 3D) | `layer_0_group/layer_0_features/layer_0_feature_multimodal_system/` |
 
 ---
 
