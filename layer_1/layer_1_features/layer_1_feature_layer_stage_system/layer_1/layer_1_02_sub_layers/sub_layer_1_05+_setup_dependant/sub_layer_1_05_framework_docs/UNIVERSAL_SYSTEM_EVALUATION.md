@@ -3,7 +3,7 @@
 **Purpose:** Evaluate how well the universal init prompt supports creating custom feature organizations like workflow features.
 
 **Evaluation Date:** 2026-01-09
-**Universal Init Prompt:** `layer_0/layer_0_03_sub_layers/sub_layer_0_01_prompts/universal_init_prompt.md`
+**Universal Init Prompt:** `layer_0/layer_0_04_sub_layers/sub_layer_0_01_knowledge_system/universal_init_prompt.md`
 
 ---
 

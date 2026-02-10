@@ -171,10 +171,10 @@ Each stage:
 
 For comprehensive understanding of the manager/worker model, handoff protocol, and orchestration patterns, see:
 
-- **Architecture**: [ideal_ai_manager_hierarchy_system/architecture.md](../../layer_-1_research/layer_-1_better_ai_system/layer_0/layer_0_features/layer_0_feature_ai_manager_hierarchy_system/layer_0/layer_0_03_sub_layers/sub_layer_0_02_knowledge_system/things_learned/ideal_ai_manager_hierarchy_system/architecture.md)
-- **Tools and Context**: [ideal_ai_manager_hierarchy_system/tools_and_context_systems.md](../../layer_-1_research/layer_-1_better_ai_system/layer_0/layer_0_features/layer_0_feature_ai_manager_hierarchy_system/layer_0/layer_0_03_sub_layers/sub_layer_0_02_knowledge_system/things_learned/ideal_ai_manager_hierarchy_system/tools_and_context_systems.md)
-- **Parallel Execution**: [ideal_ai_manager_hierarchy_system/parallel_execution.md](../../layer_-1_research/layer_-1_better_ai_system/layer_0/layer_0_features/layer_0_feature_ai_manager_hierarchy_system/layer_0/layer_0_03_sub_layers/sub_layer_0_02_knowledge_system/things_learned/ideal_ai_manager_hierarchy_system/parallel_execution.md)
-- **Supervisor Patterns**: [ideal_ai_manager_hierarchy_system/supervisor_patterns.md](../../layer_-1_research/layer_-1_better_ai_system/layer_0/layer_0_features/layer_0_feature_ai_manager_hierarchy_system/layer_0/layer_0_03_sub_layers/sub_layer_0_02_knowledge_system/things_learned/ideal_ai_manager_hierarchy_system/supervisor_patterns.md)
+- **Architecture**: [ideal_ai_manager_hierarchy_system/architecture.md](../../layer_-1_research/layer_-1_better_ai_system/layer_0/layer_0_features/layer_0_feature_ai_manager_hierarchy_system/layer_0/layer_0_04_sub_layers/sub_layer_0_01_knowledge_system/things_learned/ideal_ai_manager_hierarchy_system/architecture.md)
+- **Tools and Context**: [ideal_ai_manager_hierarchy_system/tools_and_context_systems.md](../../layer_-1_research/layer_-1_better_ai_system/layer_0/layer_0_features/layer_0_feature_ai_manager_hierarchy_system/layer_0/layer_0_04_sub_layers/sub_layer_0_01_knowledge_system/things_learned/ideal_ai_manager_hierarchy_system/tools_and_context_systems.md)
+- **Parallel Execution**: [ideal_ai_manager_hierarchy_system/parallel_execution.md](../../layer_-1_research/layer_-1_better_ai_system/layer_0/layer_0_features/layer_0_feature_ai_manager_hierarchy_system/layer_0/layer_0_04_sub_layers/sub_layer_0_01_knowledge_system/things_learned/ideal_ai_manager_hierarchy_system/parallel_execution.md)
+- **Supervisor Patterns**: [ideal_ai_manager_hierarchy_system/supervisor_patterns.md](../../layer_-1_research/layer_-1_better_ai_system/layer_0/layer_0_features/layer_0_feature_ai_manager_hierarchy_system/layer_0/layer_0_04_sub_layers/sub_layer_0_01_knowledge_system/things_learned/ideal_ai_manager_hierarchy_system/supervisor_patterns.md)
 - **Handoff Schema**: [../layer_0_02_manager_handoff_documents/layer_0_00_to_universal/handoff_schema.md](../layer_0_02_manager_handoff_documents/layer_0_00_to_universal/handoff_schema.md)
 
 ## Directory Structure
@@ -191,7 +191,7 @@ layer_0/
 │   └── layer_0_01_to_specific/
 │       ├── incoming.json       # Results from Layer 1
 │       └── outgoing.json       # Tasks to Layer 1
-├── layer_0_03_sub_layers/
+├── layer_0_04_sub_layers/
 │   └── (Universal sub-systems: rules, tools, protocols, etc.)
 └── layer_0_99_stages/
     ├── stage_0_01_request_gathering/
@@ -218,5 +218,5 @@ layer_0/
 ## Related Documentation
 
 - Layer 0 Context Files: See `CLAUDE.md`, `AGENTS.md`, `GEMINI.md` in this directory and sub-layers
-- Universal Rules: `layer_0/layer_0_03_sub_layers/sub_layer_0_04_rules/`
-- Universal Protocols: `layer_0/layer_0_03_sub_layers/sub_layer_0_05+_setup_dependant/sub_layer_0_05_operating_systems/_shared/sub_layer_0_06_environments/_shared/sub_layer_0_07_coding_apps/_shared/sub_layer_0_09_ai_apps/_shared/sub_layer_0_13_protocols/`
+- Universal Rules: `layer_0/layer_0_04_sub_layers/sub_layer_0_02_rules/`
+- Universal Protocols: `layer_0/layer_0_04_sub_layers/sub_layer_0_05+_setup_dependant/sub_layer_0_05_operating_systems/_shared/sub_layer_0_06_environments/_shared/sub_layer_0_07_coding_apps/_shared/sub_layer_0_09_ai_apps/_shared/sub_layer_0_13_protocols/`

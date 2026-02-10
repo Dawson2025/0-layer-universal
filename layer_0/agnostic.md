@@ -22,12 +22,11 @@ layer_0/
 │   ├── agnostic/                 Tool-agnostic prompts
 │   └── specific/                 Tool-specific configs
 ├── layer_0_02_manager_handoff_documents/
-├── layer_0_03_sub_layers/        Universal content types
-│   ├── sub_layer_0_01_prompts/
-│   ├── sub_layer_0_02_knowledge_system/
-│   ├── sub_layer_0_03_principles/
-│   ├── sub_layer_0_04_rules/
-│   └── sub_layer_0_05+_setup_dependant/
+├── layer_0_04_sub_layers/        Universal content types
+│   ├── sub_layer_0_01_knowledge_system/  (incl. principles/)
+│   ├── sub_layer_0_02_rules/             (static/ + dynamic/)
+│   ├── sub_layer_0_03_protocols/
+│   └── sub_layer_0_04+_setup_dependant/
 └── layer_0_99_stages/            Universal stage templates
 ```
 
@@ -35,9 +34,9 @@ layer_0/
 
 | Location | Content |
 |----------|---------|
-| `sub_layer_0_01_prompts/` | Session initialization |
-| `sub_layer_0_04_rules/` | Universal rules (modification protocol, commit rule, safety) |
-| `sub_layer_0_03_principles/` | Guiding principles |
+| `sub_layer_0_01_knowledge_system/` | Domain knowledge (incl. principles/) |
+| `sub_layer_0_02_rules/` | Universal rules (static/ always-on, dynamic/ trigger-based) |
+| `sub_layer_0_03_protocols/` | Session init, context protocols |
 | `layer_0_99_stages/` | Stage workflow templates |
 
 ## Inheritance

@@ -20,11 +20,10 @@ This directory contains universal content that applies across all projects, orga
 layer_0_04_sub_layers/
 ├── CLAUDE.md                              ← You are here
 ├── layer_0_00_sub_layer_registry/         ← Registry and metadata
-├── sub_layer_0_01_knowledge_system/       ← Domain knowledge
-├── sub_layer_0_02_principles/             ← Guiding principles
-├── sub_layer_0_03_rules/                  ← Mandatory rules
-├── sub_layer_0_04_protocols/              ← Standard protocols
-└── sub_layer_0_05+_setup_dependant_hierarchy/  ← Setup-specific content
+├── sub_layer_0_01_knowledge_system/       ← Domain knowledge (incl. principles/)
+├── sub_layer_0_02_rules/                  ← Mandatory rules (static/ + dynamic/)
+├── sub_layer_0_03_protocols/              ← Standard protocols
+└── sub_layer_0_04+_setup_dependant/       ← Setup-specific content
 ```
 
 ---
@@ -34,11 +33,10 @@ layer_0_04_sub_layers/
 | Number | Name | Purpose |
 |--------|------|---------|
 | 00 | `sub_layer_registry` | Sub-layer definitions and metadata |
-| 01 | `knowledge_system` | Domain knowledge, reference materials |
-| 02 | `principles` | Guiding principles for decisions |
-| 03 | `rules` | Mandatory rules (modification protocol, commit rule, etc.) |
-| 04 | `protocols` | Session init protocols, context protocols |
-| 05+ | `setup_dependant_hierarchy` | OS/tool specific configuration |
+| 01 | `knowledge_system` | Domain knowledge, reference materials (incl. `principles/`) |
+| 02 | `rules` | Mandatory rules (`static/` always-on, `dynamic/` trigger-based) |
+| 03 | `protocols` | Session init protocols, context protocols |
+| 04+ | `setup_dependant` | OS/tool specific configuration |
 
 ---
 
@@ -58,11 +56,10 @@ The AI system and context agents have been moved to their own directories:
 
 | Sub-layer | Key Files |
 |-----------|-----------|
-| `knowledge_system` | Reference documentation, domain knowledge |
-| `principles` | `guiding_principles.md` |
-| `rules` | `AI_CONTEXT_MODIFICATION_PROTOCOL.md`, `safety_governance.md` |
+| `knowledge_system` | Reference documentation, domain knowledge, `principles/` |
+| `rules` | `static/` (always-on), `dynamic/` (trigger-based with protocol pointers) |
 | `protocols` | `context_loading_protocol.md`, `universal_init_prompt.md` |
-| `setup_dependant_hierarchy` | OS-specific, tool-specific configuration |
+| `setup_dependant` | OS-specific, tool-specific configuration |
 
 ---
 
@@ -89,7 +86,6 @@ When this file is loaded, update state actors:
 ### Available Resources
 
 After loading sub-layers context:
-1. Knowledge at `sub_layer_0_01_knowledge_system/`
-2. Principles at `sub_layer_0_02_principles/`
-3. Rules at `sub_layer_0_03_rules/`
-4. Protocols at `sub_layer_0_04_protocols/`
+1. Knowledge at `sub_layer_0_01_knowledge_system/` (incl. `principles/`)
+2. Rules at `sub_layer_0_02_rules/` (`static/` + `dynamic/`)
+3. Protocols at `sub_layer_0_03_protocols/`

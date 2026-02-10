@@ -329,10 +329,10 @@ layer_0/
 │       └── outgoing.json
 │
 ├── layer_0_02_sub_layers/
-│   ├── sub_layer_0_01_prompts/
-│   ├── sub_layer_0_02_knowledge_system/
+│   ├── sub_layer_0_01_knowledge_system/
+│   ├── sub_layer_0_01_knowledge_system/
 │   ├── sub_layer_0_03_principles/
-│   ├── sub_layer_0_04_rules/
+│   ├── sub_layer_0_02_rules/
 │   └── sub_layer_0_05+_setup_dependant/
 │
 └── layer_0_99_stages/

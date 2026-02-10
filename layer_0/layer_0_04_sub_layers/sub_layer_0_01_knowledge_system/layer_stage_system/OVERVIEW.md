@@ -36,12 +36,12 @@ Work progresses through stages:
 ```
 0_layer_universal/                           # Root
 ├── layer_0/                                 # Universal (applies to ALL)
-│   ├── layer_0_03_sub_layers/              # Sub-layers (content types)
-│   │   ├── sub_layer_0_01_prompts/
-│   │   ├── sub_layer_0_02_knowledge_system/  ← You are here
-│   │   ├── sub_layer_0_03_principles/
-│   │   ├── sub_layer_0_04_rules/
-│   │   └── sub_layer_0_05+_setup_dependant_hierarchy/
+│   ├── layer_0_04_sub_layers/              # Sub-layers (content types)
+│   │   ├── sub_layer_0_01_knowledge_system/
+│   │   ├── sub_layer_0_01_knowledge_system/  ← You are here
+│   │   ├── sub_layer_0_01_knowledge_system/principles/
+│   │   ├── sub_layer_0_02_rules/
+│   │   └── sub_layer_0_04+_setup_dependant/
 │   └── layer_0_99_stages/                  # Workflow stages
 │       ├── stage_0_01_request_gathering/
 │       ├── stage_0_02_research/

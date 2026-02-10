@@ -23,11 +23,9 @@ layer_N/
   |     +-- layer_N_00_to_universal/
   |     +-- layer_N_01_to_specific/
   +-- layer_N_02_sub_layers/
-  |     +-- sub_layer_N_01_prompts/
-  |     +-- sub_layer_N_02_knowledge_system/
-  |     +-- sub_layer_N_03_principles/
-  |     +-- sub_layer_N_04_rules/
-  |     +-- sub_layer_N_05+_setup_dependant/
+  |     +-- sub_layer_N_01_knowledge_system/
+  |     +-- sub_layer_N_02_rules/
+  |     +-- sub_layer_N_04+_setup_dependant/
   +-- layer_N_99_stages/
         +-- status_N.json
 ```

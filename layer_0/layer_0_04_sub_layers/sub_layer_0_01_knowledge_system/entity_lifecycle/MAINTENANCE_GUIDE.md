@@ -134,8 +134,8 @@ bash .0agnostic/hooks/scripts/agnostic-sync.sh all
 
 ### Updating Prompts
 
-1. Edit files in `sub_layer_N_01_prompts/`
-2. Regenerate tool files if prompts are included in 0AGNOSTIC.md
+1. Edit files in `sub_layer_N_01_knowledge_system/`
+2. Regenerate tool files if knowledge is included in 0AGNOSTIC.md
 
 ---
 

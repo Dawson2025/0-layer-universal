@@ -27,7 +27,7 @@ Replace `N` with the entity's layer number and `N1` with N+1:
 mkdir -p <entity_name>/{.0agnostic/{agents,episodic_memory/{sessions,changes},hooks/scripts,knowledge,rules,skills},.1merge/{.1claude_merge/{0_synced,1_overrides,2_additions},.1cursor_merge/{0_synced,1_overrides,2_additions},.1gemini_merge/{0_synced,1_overrides,2_additions},.1aider_merge/{0_synced,1_overrides,2_additions},.1codex_merge/{0_synced,1_overrides,2_additions},.1copilot_merge/{0_synced,1_overrides,2_additions}},.claude/{rules,episodic_memory/{sessions,changes}},.cursor/{rules,episodic_memory/{sessions,changes}},.gemini/episodic_memory/{sessions,changes},.codex/episodic_memory/{sessions,changes},.github/instructions}
 
 # Internal layer_N_group structure
-mkdir -p <entity_name>/layer_N_group/{layer_N_00_layer_registry/proposals,layer_N_01_ai_manager_system,layer_N_02_manager_handoff_documents/{incoming/{from_above,from_below},outgoing/{to_above,to_below}},layer_N_03_sub_layers/{sub_layer_N_00_sub_layer_registry,sub_layer_N_01_prompts,sub_layer_N_02_knowledge_system/{overview,things_learned},sub_layer_N_03_principles,sub_layer_N_04_rules,sub_layer_N_05+_setup_dependant},layer_N_99_stages}
+mkdir -p <entity_name>/layer_N_group/{layer_N_00_layer_registry/proposals,layer_N_01_ai_manager_system,layer_N_02_manager_handoff_documents/{incoming/{from_above,from_below},outgoing/{to_above,to_below}},layer_N_03_sub_layers/{sub_layer_N_00_sub_layer_registry,sub_layer_N_01_knowledge_system/{overview,things_learned,principles},sub_layer_N_02_rules/{static,dynamic},sub_layer_N_03_protocols,sub_layer_N_04+_setup_dependant},layer_N_99_stages}
 
 # Children (if entity has children)
 mkdir -p <entity_name>/layer_N1_group/{layer_N1_00_layer_registry/proposals}
@@ -66,8 +66,8 @@ Load this context when:
 ### Resources (load on-demand)
 | Resource | Location |
 |----------|----------|
-| Rules | `layer_N_group/layer_N_03_sub_layers/sub_layer_N_04_rules/` |
-| Knowledge | `layer_N_group/layer_N_03_sub_layers/sub_layer_N_02_knowledge_system/` |
+| Rules | `layer_N_group/layer_N_03_sub_layers/sub_layer_N_02_rules/` |
+| Knowledge | `layer_N_group/layer_N_03_sub_layers/sub_layer_N_01_knowledge_system/` |
 ```
 
 #### 0INDEX.md (Contents)
@@ -195,11 +195,10 @@ layer_1_project_<name>/
 │   │   ├── incoming/{from_above,from_below}
 │   │   └── outgoing/{to_above,to_below}
 │   ├── layer_1_03_sub_layers/
-│   │   ├── sub_layer_1_01_prompts/
-│   │   ├── sub_layer_1_02_knowledge_system/{overview,things_learned}
-│   │   ├── sub_layer_1_03_principles/
-│   │   ├── sub_layer_1_04_rules/
-│   │   └── sub_layer_1_05+_setup_dependant/
+│   │   ├── sub_layer_1_01_knowledge_system/{overview,things_learned,principles}
+│   │   ├── sub_layer_1_02_rules/{static,dynamic}
+│   │   ├── sub_layer_1_03_protocols/
+│   │   └── sub_layer_1_04+_setup_dependant/
 │   └── layer_1_99_stages/        # All 12 stages (00-11)
 └── layer_2_group/
     ├── layer_2_00_layer_registry/proposals/

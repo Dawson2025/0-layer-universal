@@ -274,8 +274,8 @@ However, this state is **conversation-scoped**. AALang does NOT specify cross-se
 
 - **AALang-Gab Upstream**: https://github.com/yenrab/AALang-Gab
 - **Our Fork**: https://github.com/Dawson2025/AALang-Gab (branch: dawson)
-- **Context Loading Protocol**: `../sub_layer_0_05_protocols/context_loading_protocol.md`
-- **Priority Rules**: `../sub_layer_0_04_rules/context_priority_rules.md`
+- **Context Loading Protocol**: `../layer_0_04_sub_layers/sub_layer_0_03_protocols/context_loading_protocol.md`
+- **Priority Rules**: `../layer_0_04_sub_layers/sub_layer_0_02_rules/context_priority_rules.md`
 - **State File**: `../../.claude/context_state.json`
 - **GAB Specification**: `../sub_layer_0_01_ai_system/gab.jsonld` (pattern source)
 

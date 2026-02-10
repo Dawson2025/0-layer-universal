@@ -129,6 +129,24 @@ if [ -n "$group_dir" ]; then
   check_dir "$group_name/layer_${layer_num}_02_manager_handoff_documents/outgoing/to_below"
   check_dir "$group_name/layer_${layer_num}_03_sub_layers"
 
+  # Sub-layer structure checks
+  sub_layers_dir="$group_name/layer_${layer_num}_03_sub_layers"
+  echo ""
+  echo "--- Sub-Layers ---"
+  check_dir "$sub_layers_dir/sub_layer_${layer_num}_01_knowledge_system"
+  check_dir "$sub_layers_dir/sub_layer_${layer_num}_01_knowledge_system/overview"
+  check_dir "$sub_layers_dir/sub_layer_${layer_num}_01_knowledge_system/things_learned"
+  check_dir "$sub_layers_dir/sub_layer_${layer_num}_01_knowledge_system/principles"
+  check_dir "$sub_layers_dir/sub_layer_${layer_num}_02_rules"
+  check_dir "$sub_layers_dir/sub_layer_${layer_num}_02_rules/static"
+  check_dir "$sub_layers_dir/sub_layer_${layer_num}_02_rules/dynamic"
+  check_dir "$sub_layers_dir/sub_layer_${layer_num}_03_protocols"
+
+  # Warn about old sub-layer patterns
+  [ -d "$ENTITY/$sub_layers_dir/sub_layer_${layer_num}_01_prompts" ] && fail "Old sub_layer_${layer_num}_01_prompts/ still exists (should be removed)"
+  [ -d "$ENTITY/$sub_layers_dir/sub_layer_${layer_num}_03_principles" ] && fail "Old sub_layer_${layer_num}_03_principles/ still exists (merge into knowledge_system/principles/)"
+  [ -d "$ENTITY/$sub_layers_dir/sub_layer_${layer_num}_04_rules" ] && warn "Old sub_layer_${layer_num}_04_rules/ exists (should be renumbered to 02)"
+
   # Stages
   stages_dir="$group_name/layer_${layer_num}_99_stages"
   check_dir "$stages_dir"

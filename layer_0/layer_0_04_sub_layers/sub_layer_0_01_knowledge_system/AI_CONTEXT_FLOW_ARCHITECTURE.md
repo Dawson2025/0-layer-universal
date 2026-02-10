@@ -162,7 +162,7 @@ Failure to follow these rules is a violation. Always verify compliance.
 │  │   - Always traverse context before starting tasks                    │   │
 │  │   - Document work in correct layer and stage                        │   │
 │  │   - Show diagram before AI context modifications                    │   │
-│  │ Points to: .claude/, layer_0_03_sub_layers/                         │   │
+│  │ Points to: .claude/, layer_0_04_sub_layers/                         │   │
 │  └─────────────────────────────────────────────────────────────────────┘   │
 │         │                                                                   │
 │         │ inherits + adds                                                   │
@@ -258,11 +258,9 @@ CLAUDE.md
 │
 ├──▶ layer_N_group/                   This layer's content
 │    ├── layer_N_03_sub_layers/
-│    │   ├── sub_layer_N_01_prompts/       Session init, task prompts
-│    │   ├── sub_layer_N_02_knowledge/     Domain knowledge
-│    │   ├── sub_layer_N_03_principles/    Guiding principles
-│    │   ├── sub_layer_N_04_rules/         Mandatory rules (beyond critical)
-│    │   └── sub_layer_N_05+_hierarchy/    Setup-dependent config
+│    │   ├── sub_layer_N_01_knowledge_system/  Domain knowledge (incl. principles)
+│    │   ├── sub_layer_N_02_rules/             Mandatory rules (beyond critical)
+│    │   └── sub_layer_N_04+_setup_dependant/  Setup-dependent config
 │    │
 │    └── layer_N_99_stages/
 │        ├── stage_01-11/             Workflow stages
@@ -391,10 +389,10 @@ Sub-layers can also be agent entry points with their own context cascade:
 │  layer_0/CLAUDE.md                           (Universal)                    │
 │       │                                                                     │
 │       ▼                                                                     │
-│  layer_0_03_sub_layers/CLAUDE.md             (Sub-layers root)             │
+│  layer_0_04_sub_layers/CLAUDE.md             (Sub-layers root)             │
 │       │                                                                     │
 │       ▼                                                                     │
-│  sub_layer_0_02_knowledge_system/CLAUDE.md   (Specific sub-layer)          │
+│  sub_layer_0_01_knowledge_system/CLAUDE.md   (Specific sub-layer)          │
 │       │                                                                     │
 │       │ points to                                                           │
 │       ▼                                                                     │
@@ -498,8 +496,8 @@ Changes to AI context flow through multiple layers:
 ├─────────────────────────────────────────────────────────────────────────────┤
 │                                                                             │
 │  1. KNOWLEDGE (Source of truth for CONTENT)                                │
-│     sub_layer_0_02_knowledge_system/                                       │
-│     sub_layer_0_04_rules/                                                  │
+│     sub_layer_0_01_knowledge_system/                                       │
+│     sub_layer_0_02_rules/                                                  │
 │          │                                                                  │
 │          │ referenced by                                                   │
 │          ▼                                                                  │
@@ -634,7 +632,7 @@ Skills are the bridge between CLAUDE.md and knowledge:
 3. **After Diagram** - Proposed state with changes highlighted
 4. **Agent Workflow Diagram** - How agents will work with the change
 
-**See**: `sub_layer_0_04_rules/AI_CONTEXT_PROPOSAL_REQUIREMENTS.md` for full template.
+**See**: `sub_layer_0_02_rules/AI_CONTEXT_PROPOSAL_REQUIREMENTS.md` for full template.
 
 ---
 
@@ -672,7 +670,7 @@ entity_99_stages/
 | Nested depth naming (subxN) | `layer_stage_system/NESTED_DEPTH_NAMING.md` |
 | Sub-stages explained | `layer_stage_system/SUB_STAGES_EXPLAINED.md` |
 | Layers explained | `layer_stage_system/LAYERS_EXPLAINED.md` |
-| Proposal requirements | `../sub_layer_0_04_rules/AI_CONTEXT_PROPOSAL_REQUIREMENTS.md` |
+| Proposal requirements | `../sub_layer_0_02_rules/AI_CONTEXT_PROPOSAL_REQUIREMENTS.md` |
 | Hierarchy naming | `naming_conventions/HIERARCHY_NAMING_CONVENTION.md` |
 | Skills index | `.claude/skills/SKILLS.md` |
 

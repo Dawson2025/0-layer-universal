@@ -94,7 +94,7 @@ layer_0_02_manager_handoff_documents/
   "context": {
     "layer": 0,
     "stage": "02_research",
-    "targetPath": "layer_0/layer_0_04_sub_layers/sub_layer_0_03_rules/"
+    "targetPath": "layer_0/layer_0_04_sub_layers/sub_layer_0_02_rules/"
   },
   "priority": "normal",
   "timeout": 300

@@ -56,12 +56,12 @@ Direct children of a layer's `layer_N_03_sub_layers/` folder.
 ```
 layer_0/
 └── layer_0_group/
-    └── layer_0_03_sub_layers/
-        ├── sub_layer_0_01_prompts/              # Depth 1
-        ├── sub_layer_0_02_knowledge_system/     # Depth 1
-        ├── sub_layer_0_03_principles/           # Depth 1
-        ├── sub_layer_0_04_rules/                # Depth 1
-        └── sub_layer_0_05+_setup_dependant_hierarchy/  # Depth 1
+    └── layer_0_04_sub_layers/
+        ├── sub_layer_0_01_knowledge_system/              # Depth 1
+        ├── sub_layer_0_01_knowledge_system/     # Depth 1
+        ├── sub_layer_0_01_knowledge_system/principles/           # Depth 1
+        ├── sub_layer_0_02_rules/                # Depth 1
+        └── sub_layer_0_04+_setup_dependant/  # Depth 1
 ```
 
 ### Depth 2: `subx2_layer_`
@@ -69,7 +69,7 @@ layer_0/
 Children nested within a depth-1 sub-layer.
 
 ```
-sub_layer_0_05+_setup_dependant_hierarchy/
+sub_layer_0_04+_setup_dependant/
 └── sub_layer_0_05_operating_systems/
     ├── subx2_layer_0_05_linux_ubuntu/          # Depth 2
     ├── subx2_layer_0_05_macos/                 # Depth 2
@@ -107,8 +107,8 @@ subx3_layer_0_06_local/
 ```
 layer_0/
 └── layer_0_group/
-    └── layer_0_03_sub_layers/
-        └── sub_layer_0_05+_setup_dependant_hierarchy/       # Depth 1
+    └── layer_0_04_sub_layers/
+        └── sub_layer_0_04+_setup_dependant/       # Depth 1
             └── sub_layer_0_05_operating_systems/
                 ├── subx2_layer_0_05_linux_ubuntu/           # Depth 2
                 │   └── subx2_layer_0_06_environments/
@@ -137,7 +137,7 @@ Each depth level can be an entry point with its own context:
 │  layer_0/CLAUDE.md                     (Universal)                          │
 │       │                                                                     │
 │       ▼                                                                     │
-│  sub_layer_0_05+_setup_dependant_hierarchy/CLAUDE.md    (Depth 1)          │
+│  sub_layer_0_04+_setup_dependant/CLAUDE.md    (Depth 1)          │
 │       │                                                                     │
 │       ▼                                                                     │
 │  subx2_layer_0_05_linux_ubuntu/CLAUDE.md               (Depth 2)           │
@@ -201,7 +201,7 @@ Each depth level can add its own critical rules:
 layer_0/CLAUDE.md
 ├── CRITICAL: "Always cite sources"
 │
-└── sub_layer_0_05+_setup_dependant_hierarchy/CLAUDE.md
+└── sub_layer_0_04+_setup_dependant/CLAUDE.md
     ├── INHERITS: layer_0 rules
     ├── ADDS: "Navigate only your relevant branch"
     │
@@ -258,7 +258,7 @@ Agent is in: subx4_layer_0_07_cursor/
 
 Context loaded:
 1. layer_0/CLAUDE.md                              ← Universal
-2. sub_layer_0_05+_setup_dependant_hierarchy/CLAUDE.md  ← Depth 1
+2. sub_layer_0_04+_setup_dependant/CLAUDE.md  ← Depth 1
 3. subx2_layer_0_05_linux_ubuntu/CLAUDE.md        ← Depth 2
 4. subx3_layer_0_06_local/CLAUDE.md               ← Depth 3
 5. subx4_layer_0_07_cursor/CLAUDE.md              ← Depth 4 (current)

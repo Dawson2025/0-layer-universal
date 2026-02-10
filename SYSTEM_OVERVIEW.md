@@ -1,7 +1,7 @@
 # System Overview (Layer + Stage)
 
 ## Big picture
-- **Layer System (specificity):** universal (0) → project (1) → feature (2) → component (3). Lower numbers are prerequisites. Each layer has `layer_<N>_01_ai_manager_system/`, `layer_<N>_02_manager_handoff_documents/layer_<N>_00_to_universal|layer_<N>_01_to_specific/`, and sub-layers in `layer_<N>_0X_sub_layers/` (layer 0 uses `layer_0_03_sub_layers/`).
+- **Layer System (specificity):** universal (0) → project (1) → feature (2) → component (3). Lower numbers are prerequisites. Each layer has `layer_<N>_01_ai_manager_system/`, `layer_<N>_02_manager_handoff_documents/layer_<N>_00_to_universal|layer_<N>_01_to_specific/`, and sub-layers in `layer_<N>_0X_sub_layers/` (layer 0 uses `layer_0_04_sub_layers/`).
 - **Stage System (chronology):** request_gathering → research → instructions → planning → design → development → testing → criticism → fixing → current_product → archives. Stages mirror the layer prefix (e.g., `stage_2_05_design`) inside `layer_<N>_99_stages/`, each with `hand_off_documents/` and `ai_agent_system/`.
 - **Status:** per-layer status JSON inside `layer_<N>_99_stages/` tracks `current_stage` and each stage state (`not_started | in_progress | blocked | done`).
 
@@ -55,7 +55,7 @@ This Agent OS design is the **canonical architecture** for all AI agent coordina
 Legacy `trickle_down_*` content is preserved under `legacy_import/` within the closest matching sub_layer; do not add new work there.
 
 ## How to work in this system
-1. **Start in universal:** `layer_0/layer_0_03_sub_layers/sub_layer_0_01_prompts/universal_init_prompt.md` then `MASTER_DOCUMENTATION_INDEX.md`.
+1. **Start in universal:** `layer_0/layer_0_04_sub_layers/sub_layer_0_01_knowledge_system/universal_init_prompt.md` then `MASTER_DOCUMENTATION_INDEX.md`.
 2. **Load needed layers:** project (`layer_1_*`), feature (`layer_2_*`), component (`layer_3_*`).
 3. **Enter a stage:** use the layer’s `*.99_stages/` directory; read/update `status*.json`; use `hand_off_documents/` and `ai_agent_system/` inside the current stage.
 4. **Sync habit:** `git pull` at session start for all repos you will touch; `git commit` + `git push` and update docs/status before ending a response.

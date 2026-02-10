@@ -29,7 +29,7 @@ Root of the layer-stage system. Contains universal rules (layer_0), projects (la
 
 | Need | Path |
 |------|------|
-| Universal rules | `layer_0/layer_0_03_sub_layers/sub_layer_0_04_rules/` |
+| Universal rules | `layer_0/layer_0_04_sub_layers/sub_layer_0_02_rules/` |
 | Project features | `layer_1/layer_1_features/` |
 | Research projects | `layer_-1_research/` |
 | Better AI System research | `layer_-1_research/layer_-1_better_ai_system/` |

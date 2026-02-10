@@ -35,7 +35,7 @@ All [CRITICAL] rules from `~/.claude/CLAUDE.md` apply here. Key rules for this d
 - **Commit/Push Rule**: `git add` specific files, `git commit -m "[AI Context] ..."`, `git push`
 - **File Path Linking**: Always include full clickable file paths after Write/Edit
 
-**Full rules**: `layer_0/layer_0_03_sub_layers/sub_layer_0_05_rules/`
+**Full rules**: `layer_0/layer_0_04_sub_layers/sub_layer_0_02_rules/`
 
 ---
 
@@ -94,17 +94,14 @@ Match your task to available skills (check WHEN/WHEN NOT in each SKILL.md):
 
 ## Navigation: How to Find Things
 
-### Sub-Layers (layer_0/layer_0_03_sub_layers/)
+### Sub-Layers (layer_0/layer_0_04_sub_layers/)
 
 | Sub-Layer | Purpose | When to Read |
 |-----------|---------|--------------|
-| `sub_layer_0_01_ai_system/` | **PRIMARY AI SYSTEM** — AALang | AI language design |
-| `sub_layer_0_02_context_agents/` | **CONTEXT LOADING AGENT** | Context loading |
-| `sub_layer_0_03_knowledge_system/` | Domain knowledge | When context needed |
-| `sub_layer_0_04_principles/` | Guiding principles | Design decisions |
-| `sub_layer_0_05_rules/` | **Universal rules** | **ALWAYS** |
-| `sub_layer_0_06_protocols/` | Init protocols, session start | Start of session |
-| `sub_layer_0_07+_setup_dependant_hierarchy/` | OS/tool setup | Environment issues |
+| `sub_layer_0_01_knowledge_system/` | Domain knowledge (incl. `principles/`) | When context needed |
+| `sub_layer_0_02_rules/` | **Universal rules** (`static/` + `dynamic/`) | **ALWAYS** |
+| `sub_layer_0_03_protocols/` | Init protocols, session start | Start of session |
+| `sub_layer_0_04+_setup_dependant/` | OS/tool setup | Environment issues |
 
 ### Stages (layer_N/layer_N_99_stages/)
 
@@ -126,11 +123,11 @@ Match your task to available skills (check WHEN/WHEN NOT in each SKILL.md):
 
 | Need | Location |
 |------|----------|
-| AALang AI System | `layer_0/layer_0_03_sub_layers/sub_layer_0_01_ai_system/` |
+| AALang AI System | `layer_0/layer_0_01_ai_manager_system/professor/` |
 | Context Loading Agent | `layer_0/layer_0_03_context_agents/` |
-| Universal init protocol | `layer_0/layer_0_03_sub_layers/sub_layer_0_06_protocols/universal_init_prompt.md` |
-| All rules | `layer_0/layer_0_03_sub_layers/sub_layer_0_05_rules/` |
-| Git rules | `sub_layer_0_05_rules/0_instruction_docs/git_commit_rule.md` |
+| Universal init protocol | `layer_0/layer_0_04_sub_layers/sub_layer_0_03_protocols/universal_init_prompt.md` |
+| All rules | `layer_0/layer_0_04_sub_layers/sub_layer_0_02_rules/` |
+| Git rules | `sub_layer_0_02_rules/0_instruction_docs/git_commit_rule.md` |
 | Layer-Stage Framework | `layer_1/layer_1_features/layer_1_feature_layer_stage_system/` |
 | Research projects | `layer_-1_research/` |
 

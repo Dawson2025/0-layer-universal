@@ -330,7 +330,7 @@ Need: Check a universal rule in layer_0
 
 Decision: EXPAND SCOPE
 - Reason: Quick lookup, minimal context addition
-- Action: Read layer_0/.../sub_layer_0_04_rules/rule.md
+- Action: Read layer_0/.../sub_layer_0_02_rules/rule.md
 - Continue with expanded knowledge
 ```
 

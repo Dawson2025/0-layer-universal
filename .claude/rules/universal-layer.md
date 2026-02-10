@@ -40,11 +40,9 @@ When working in layer_0 (universal) directories:
 
 - Layer 0 content applies to ALL projects — changes here affect everything
 - Sub-layers are organized by type:
-  - `sub_layer_0_01_ai_system/` — AALang/GAB (primary AI system)
-  - `sub_layer_0_02_context_agents/` — Context loading agent
-  - `sub_layer_0_03_knowledge_system/` — Domain knowledge
-  - `sub_layer_0_04_principles/` — Guiding principles
-  - `sub_layer_0_05_rules/` — Mandatory rules (READ FIRST)
-  - `sub_layer_0_06_protocols/` — Standard protocols
-- Always check `sub_layer_0_05_rules/` before making changes
+  - `sub_layer_0_01_knowledge_system/` — Domain knowledge (includes `principles/`)
+  - `sub_layer_0_02_rules/` — Mandatory rules (`static/` + `dynamic/`) — READ FIRST
+  - `sub_layer_0_03_protocols/` — Standard protocols
+  - `sub_layer_0_04+_setup_dependant/` — OS/tool/environment-specific content
+- Always check `sub_layer_0_02_rules/` before making changes
 - Universal rules cannot be overridden without explicit approval

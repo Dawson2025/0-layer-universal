@@ -24,8 +24,8 @@ Two related changes:
 │   │   └── proposals/
 │   │       └── 2026-02-01_proposal_storage_and_formatting/
 │   │           └── SUMMARY.md                              ◄── THIS FILE
-│   └── layer_0_03_sub_layers/
-│       └── sub_layer_0_04_rules/
+│   └── layer_0_04_sub_layers/
+│       └── sub_layer_0_02_rules/
 │           └── 0_every_api_request/
 │               └── AI_CONTEXT_MODIFICATION_PROTOCOL.md     ◄── UPDATE
 │
@@ -49,7 +49,7 @@ Two related changes:
 
 ## Change 1: AI Context Modification Protocol (Layer 0)
 
-**File**: `/home/dawson/dawson-workspace/code/0_layer_universal/layer_0/layer_0_03_sub_layers/sub_layer_0_04_rules/0_every_api_request/AI_CONTEXT_MODIFICATION_PROTOCOL.md`
+**File**: `/home/dawson/dawson-workspace/code/0_layer_universal/layer_0/layer_0_04_sub_layers/sub_layer_0_02_rules/0_every_api_request/AI_CONTEXT_MODIFICATION_PROTOCOL.md`
 
 **Action**: UPDATE
 

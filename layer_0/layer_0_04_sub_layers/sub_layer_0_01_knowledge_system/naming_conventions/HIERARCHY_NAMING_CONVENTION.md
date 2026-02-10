@@ -21,7 +21,7 @@ Use `_hierarchy` when:
 ## Canonical Example: Setup-Dependent Hierarchy
 
 ```
-sub_layer_0_05+_setup_dependant_hierarchy/
+sub_layer_0_04+_setup_dependant/
 ├── sub_layer_0_05_operating_systems/
 │   ├── sub_layer_0_05_linux_ubuntu/
 │   │   ├── sub_layer_0_06_environments/        ← Different for Linux
@@ -76,7 +76,7 @@ folder_group/                        folder_hierarchy/
 Context: Running on Linux Ubuntu, local environment, using Cursor
 
 Path through hierarchy:
-sub_layer_0_05+_setup_dependant_hierarchy/
+sub_layer_0_04+_setup_dependant/
   → sub_layer_0_05_operating_systems/
     → sub_layer_0_05_linux_ubuntu/        ← Selected by OS
       → sub_layer_0_06_environments/
@@ -109,12 +109,12 @@ Hierarchies exist **within** sub-layers, not as a replacement:
 
 ```
 layer_0/
-├── layer_0_03_sub_layers/           ← Standard sub-layer container
-│   ├── sub_layer_0_01_prompts/      ← Regular sub-layer
+├── layer_0_04_sub_layers/           ← Standard sub-layer container
+│   ├── sub_layer_0_01_knowledge_system/      ← Regular sub-layer
 │   ├── sub_layer_0_02_knowledge/    ← Regular sub-layer
-│   ├── sub_layer_0_03_principles/   ← Regular sub-layer
-│   ├── sub_layer_0_04_rules/        ← Regular sub-layer
-│   └── sub_layer_0_05+_setup_dependant_hierarchy/  ← HIERARCHY
+│   ├── sub_layer_0_01_knowledge_system/principles/   ← Regular sub-layer
+│   ├── sub_layer_0_02_rules/        ← Regular sub-layer
+│   └── sub_layer_0_04+_setup_dependant/  ← HIERARCHY
 │       └── (branching tree inside)
 ```
 

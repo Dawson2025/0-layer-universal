@@ -80,11 +80,9 @@ layer_N_group/
 │   └── outgoing/{to_above,to_below}/
 ├── layer_N_03_sub_layers/
 │   ├── sub_layer_N_00_sub_layer_registry/
-│   ├── sub_layer_N_01_prompts/
-│   ├── sub_layer_N_02_knowledge_system/{overview,things_learned}/
-│   ├── sub_layer_N_03_principles/
-│   ├── sub_layer_N_04_rules/
-│   └── sub_layer_N_05+_setup_dependant/
+│   ├── sub_layer_N_01_knowledge_system/{overview,things_learned,principles}/
+│   ├── sub_layer_N_02_rules/
+│   └── sub_layer_N_04+_setup_dependant/
 └── layer_N_99_stages/
 ```
 

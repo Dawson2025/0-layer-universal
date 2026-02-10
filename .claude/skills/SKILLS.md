@@ -40,8 +40,8 @@ skill-name/
 ## Knowledge Locations
 
 Skills reference knowledge in:
-- `layer_0/layer_0_03_sub_layers/sub_layer_0_02_knowledge_system/` - Domain knowledge
-- `layer_0/layer_0_03_sub_layers/sub_layer_0_04_rules/` - Universal rules
+- `layer_0/layer_0_04_sub_layers/sub_layer_0_01_knowledge_system/` - Domain knowledge
+- `layer_0/layer_0_04_sub_layers/sub_layer_0_02_rules/` - Universal rules
 
 ---
 

@@ -37,14 +37,14 @@ This knowledge base documents how the AI system and layer-stage framework works.
 
 ### Need to update something?
 1. Read `entity_lifecycle/MAINTENANCE_GUIDE.md`
-2. Follow modification protocols in `sub_layer_0_04_rules/`
+2. Follow modification protocols in `sub_layer_0_02_rules/`
 
 ---
 
 ## Knowledge Map
 
 ```
-sub_layer_0_02_knowledge_system/
+sub_layer_0_01_knowledge_system/
 ├── 0INDEX.md                          ← You are here
 ├── AI_CONTEXT_FLOW_ARCHITECTURE.md    ← Master architecture doc
 ├── layer_stage_system/                ← Core framework

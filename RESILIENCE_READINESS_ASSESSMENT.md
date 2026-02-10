@@ -22,10 +22,10 @@ Once resolved, this system can be made accessible and usable by AI apps from ANY
 ```
 0_layer_universal/
 ├── layer_0/              ← Universal (applies to ALL)
-│   ├── sub_layer_0_01_prompts/     ✓ AI initialization prompts
-│   ├── sub_layer_0_02_knowledge_system/  ✓ Domain knowledge
+│   ├── sub_layer_0_01_knowledge_system/     ✓ AI initialization prompts
+│   ├── sub_layer_0_01_knowledge_system/  ✓ Domain knowledge
 │   ├── sub_layer_0_03_principles/  ✓ Guiding principles
-│   ├── sub_layer_0_04_rules/       ✓ Universal rules (critical!)
+│   ├── sub_layer_0_02_rules/       ✓ Universal rules (critical!)
 │   ├── sub_layer_0_05+_setup/      ✓ OS/tool configuration
 │   └── layer_0_99_stages/          ✓ 11 workflow stages
 ├── layer_1/              ← Projects (19 projects identified)

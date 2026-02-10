@@ -51,7 +51,7 @@ Current location → layer_N_group → layer_N_03_sub_layers → sub_layer_N_04_
 /project/feature_a/
   → /project/feature_a/layer_2_group/layer_2_03_sub_layers/sub_layer_2_04_rules/
   → /project/layer_1_group/layer_1_03_sub_layers/sub_layer_1_04_rules/
-  → /layer_0/layer_0_03_sub_layers/sub_layer_0_04_rules/  ← Universal rules
+  → /layer_0/layer_0_04_sub_layers/sub_layer_0_02_rules/  ← Universal rules
 ```
 
 ### Finding Knowledge
@@ -88,7 +88,7 @@ Current location → layer_N_group → layer_N_03_sub_layers
 
 **Example path for Linux + Local + Cursor**:
 ```
-sub_layer_0_05+_setup_dependant_hierarchy/
+sub_layer_0_04+_setup_dependant/
   → sub_layer_0_05_operating_systems/
     → sub_layer_0_05_linux_ubuntu/
       → sub_layer_0_06_environments/
@@ -111,7 +111,7 @@ sub_layer_0_05+_setup_dependant_hierarchy/
 ### "I need to find a specific rule"
 
 1. Start at current entity's rules: `sub_layer_N_04_rules/`
-2. Check universal rules: `layer_0/.../sub_layer_0_04_rules/`
+2. Check universal rules: `layer_0/.../sub_layer_0_02_rules/`
 3. Use grep if needed: `grep -r "rule_keyword" --include="*.md"`
 
 ### "I need to create something new"
@@ -144,7 +144,7 @@ When encountering a `_hierarchy` folder:
 ### Step 1: Identify the Branching Factor
 
 ```
-sub_layer_0_05+_setup_dependant_hierarchy/
+sub_layer_0_04+_setup_dependant/
   └── sub_layer_0_05_operating_systems/   ← Branch by OS
 ```
 
@@ -170,10 +170,10 @@ sub_layer_0_05_linux_ubuntu/
 
 | Looking for... | Location Pattern |
 |----------------|------------------|
-| Universal rules | `layer_0/layer_0_03_sub_layers/sub_layer_0_04_rules/` |
+| Universal rules | `layer_0/layer_0_04_sub_layers/sub_layer_0_02_rules/` |
 | Project rules | `<project>/layer_1_group/layer_1_03_sub_layers/sub_layer_1_04_rules/` |
 | Knowledge | `<entity>/layer_N_group/layer_N_03_sub_layers/sub_layer_N_02_knowledge_system/` |
-| Prompts | `<entity>/layer_N_group/layer_N_03_sub_layers/sub_layer_N_01_prompts/` |
+| Knowledge | `<entity>/layer_N_group/layer_N_03_sub_layers/sub_layer_N_01_knowledge_system/` |
 | Current work | `<entity>/layer_N_group/layer_N_99_stages/stage_N_06_development/` |
 | Proposals | `<entity>/layer_N_group/layer_N_00_layer_registry/proposals/` |
 | Features | `<project>/layer_2_group/layer_2_features/` |

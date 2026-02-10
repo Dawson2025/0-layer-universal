@@ -44,7 +44,7 @@ Each layer moves work through stages:
 ### Which Docs to Read First
 
 **For AI Agents Starting Work:**
-1. **Start**: `layer_0/layer_0_03_sub_layers/sub_layer_0_01_prompts/universal_init_prompt.md` - Core initialization
+1. **Start**: `layer_0/layer_0_04_sub_layers/sub_layer_0_01_knowledge_system/universal_init_prompt.md` - Core initialization
 2. **Overview**: `SYSTEM_OVERVIEW.md` - Understand layer + stage structure
 3. **Hierarchy**: [`-1_research/.../overview/IDEAL_AI_MANAGER_HIERARCHY_SYSTEM.md`](-1_research/-1.01_things_researched/ai_manager_hierarchy_system/overview/IDEAL_AI_MANAGER_HIERARCHY_SYSTEM.md) - Agent OS architecture
 4. **Layer Context**: Load appropriate L0 → L1 → L2 → L3 context for your task

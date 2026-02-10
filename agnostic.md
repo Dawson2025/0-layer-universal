@@ -49,7 +49,7 @@ This is the **Layer-Stage Framework** - a hierarchical system for organizing AI-
 ```
 0_layer_universal/
 ├── layer_0/                 Universal layer
-│   ├── layer_0_03_sub_layers/
+│   ├── layer_0_04_sub_layers/
 │   └── layer_0_99_stages/
 ├── layer_1/                 Projects layer
 │   ├── layer_1_projects/

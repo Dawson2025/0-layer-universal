@@ -176,7 +176,7 @@ layer_0/CLAUDE.md
 ## Example: Knowledge System as Entry Point
 
 ```
-sub_layer_0_02_knowledge_system/
+sub_layer_0_01_knowledge_system/
 ├── 0AGNOSTIC.md
 │   └── Identity: Knowledge System Manager
 │   └── Triggers: "knowledge", "documentation", "how does X work"
@@ -214,9 +214,9 @@ sub_layer_0_02_knowledge_system/
 Agent enters: /layer_0/
 
 1. Loads: layer_0/CLAUDE.md (automatic)
-2. Sees pointer: "Knowledge in layer_0_03_sub_layers/sub_layer_0_02_knowledge_system/"
-3. Navigates to: sub_layer_0_02_knowledge_system/
-4. Loads: sub_layer_0_02_knowledge_system/CLAUDE.md
+2. Sees pointer: "Knowledge in layer_0_04_sub_layers/sub_layer_0_01_knowledge_system/"
+3. Navigates to: sub_layer_0_01_knowledge_system/
+4. Loads: sub_layer_0_01_knowledge_system/CLAUDE.md
 5. Now has: Parent context + sub-layer specialized context
 ```
 

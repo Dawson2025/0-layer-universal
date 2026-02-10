@@ -42,15 +42,15 @@ After approved changes:
 | Creating entities with stages | Load skill: entity-creation |
 | Modifying AI context | Show propagation chain diagram first |
 | Working with layers/stages | Load skill: context-gathering |
-| Need rules | Load `.claude/skills/` or reference `sub_layer_0_04_rules/` |
+| Need rules | Load `.claude/skills/` or reference `sub_layer_0_02_rules/` |
 
 ## Resources
 
 | Resource | Location | Purpose |
 |----------|----------|---------|
 | Skills | `.claude/skills/SKILLS.md` | Task-specific instructions |
-| Rules | `layer_0/.../sub_layer_0_04_rules/` | Universal rules |
-| Knowledge | `layer_0/.../sub_layer_0_02_knowledge_system/` | Reference docs |
+| Rules | `layer_0/.../sub_layer_0_02_rules/` | Universal rules |
+| Knowledge | `layer_0/.../sub_layer_0_01_knowledge_system/` | Reference docs |
 
 ## Children
 

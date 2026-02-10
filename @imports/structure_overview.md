@@ -16,11 +16,10 @@
 │   ├── layer_0_02_manager_handoff_documents/
 │   ├── layer_0_03_context_agents/
 │   ├── layer_0_04_sub_layers/
-│   │   ├── sub_layer_0_01_knowledge_system/
-│   │   ├── sub_layer_0_02_principles/
-│   │   ├── sub_layer_0_03_rules/           ← READ FIRST
-│   │   ├── sub_layer_0_04_protocols/
-│   │   └── sub_layer_0_05+_setup/
+│   │   ├── sub_layer_0_01_knowledge_system/ (incl. principles/)
+│   │   ├── sub_layer_0_02_rules/           ← READ FIRST (static/ + dynamic/)
+│   │   ├── sub_layer_0_03_protocols/
+│   │   └── sub_layer_0_04+_setup_dependant/
 │   └── layer_0_99_stages/
 ├── layer_1/                  ← Projects, features
 └── layer_-1_research/        ← Research projects

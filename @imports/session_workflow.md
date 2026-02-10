@@ -26,7 +26,7 @@ professor/ personal/  context_agents/ sub_layers/
 ## Steps
 
 1. **Sync**: `git pull && git status`
-2. **Read rules**: `sub_layer_0_05_rules/` (especially modification protocol)
+2. **Read rules**: `sub_layer_0_02_rules/` (especially modification protocol)
 3. **Identify context**: What layer? What stage?
 4. **Check episodic memory**: Read `memory/episodic.md` for recent session history; if resuming work, also read `.0agnostic/episodic_memory/index.md` in the working directory
 5. **AALang context**: Find the `.gab.jsonld` for your role, read its matching `.integration.md` (same base name), and query via jq for mode constraints

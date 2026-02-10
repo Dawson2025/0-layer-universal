@@ -25,7 +25,7 @@ description: "Work through stages (01-11) properly, understanding what content b
 | Sub-stages | `layer_0/.../layer_stage_system/SUB_STAGES_EXPLAINED.md` | When to use sub-stages |
 | Overview | `layer_0/.../layer_stage_system/OVERVIEW.md` | System overview |
 
-**Full path**: `layer_0/layer_0_03_sub_layers/sub_layer_0_02_knowledge_system/layer_stage_system/`
+**Full path**: `layer_0/layer_0_04_sub_layers/sub_layer_0_01_knowledge_system/layer_stage_system/`
 
 ## Protocol
 

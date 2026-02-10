@@ -6,12 +6,11 @@ This overlay maps existing universal content into the Layer/Stage system without
 - layer_0_01_ai_manager_system → `./layer_0_01_ai_manager_system/` (manager docs/configs)
 - layer_0_02_manager_handoff_documents → `./layer_0_02_manager_handoff_documents/` with `layer_0_00_to_universal/` and `layer_0_01_to_specific/`
 
-## Slots (inside `layer_0_03_sub_layers/`)
-- sub_layer_0_01_prompts → `./layer_0_03_sub_layers/sub_layer_0_01_prompts/`
-- sub_layer_0_02_knowledge_system → `./layer_0_03_sub_layers/sub_layer_0_02_knowledge_system/`
-- sub_layer_0_03_principles → `./layer_0_03_sub_layers/sub_layer_0_03_principles/`
-- sub_layer_0_04_rules → `./layer_0_03_sub_layers/sub_layer_0_04_rules/`
-- sub_layer_0_05+_setup_dependant → `./layer_0_03_sub_layers/sub_layer_0_05+_setup_dependant/` (OS, environments, apps, tools, protocols)
+## Slots (inside `layer_0_04_sub_layers/`)
+- sub_layer_0_01_knowledge_system → `./layer_0_04_sub_layers/sub_layer_0_01_knowledge_system/` (incl. principles/)
+- sub_layer_0_02_rules → `./layer_0_04_sub_layers/sub_layer_0_02_rules/` (static/ + dynamic/)
+- sub_layer_0_03_protocols → `./layer_0_04_sub_layers/sub_layer_0_03_protocols/`
+- sub_layer_0_04+_setup_dependant → `./layer_0_04_sub_layers/sub_layer_0_04+_setup_dependant/` (OS, environments, apps, tools)
 - layer_0_99_stages → stage folders + status for this layer
 
 ## How to use

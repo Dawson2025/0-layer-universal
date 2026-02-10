@@ -7,7 +7,7 @@
 ## Quick Reference for AI Agents
 
 ### Before Creating ANY File
-1. Read `CROSS_OS_COMPATIBILITY_RULES.md` (in `../layer_0_03_sub_layers/sub_layer_0_04_rules/`)
+1. Read `CROSS_OS_COMPATIBILITY_RULES.md` (in `../layer_0_04_sub_layers/sub_layer_0_02_rules/`)
 2. **NEVER** use: `* ? < > : " | \ /` in filenames
 3. Use lowercase with underscores: `my_file_name.md`
 
@@ -24,7 +24,7 @@
 |----------|----------|---------|
 | `STAGING_SYSTEM.md` | This folder | How to use stages and handoffs |
 | `WORKFLOW.md` | `../layer_0_01_ai_manager_system/` | AI agent coordination system |
-| `CROSS_OS_COMPATIBILITY_RULES.md` | `../layer_0_03_sub_layers/sub_layer_0_04_rules/` | File naming rules for Windows/Linux/macOS |
+| `CROSS_OS_COMPATIBILITY_RULES.md` | `../layer_0_04_sub_layers/sub_layer_0_02_rules/` | File naming rules for Windows/Linux/macOS |
 | `_templates/` | This folder | Templates for handoffs, requests, etc. |
 
 ---
