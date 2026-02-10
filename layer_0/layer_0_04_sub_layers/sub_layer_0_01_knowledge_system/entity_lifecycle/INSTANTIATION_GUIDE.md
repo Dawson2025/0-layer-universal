@@ -23,8 +23,8 @@ Read `@imports/entity_structure.md` for the full canonical tree and mkdir templa
 Replace `N` with the entity's layer number and `N1` with N+1:
 
 ```bash
-# Entity root config directories
-mkdir -p <entity_name>/{.0agnostic/{agents,episodic_memory/{sessions,changes},hooks/scripts,knowledge,rules,skills},.1merge/{.1claude_merge/{0_synced,1_overrides,2_additions},.1cursor_merge/{0_synced,1_overrides,2_additions},.1gemini_merge/{0_synced,1_overrides,2_additions},.1aider_merge/{0_synced,1_overrides,2_additions},.1codex_merge/{0_synced,1_overrides,2_additions},.1copilot_merge/{0_synced,1_overrides,2_additions}},.claude/{rules,episodic_memory/{sessions,changes}},.cursor/{rules,episodic_memory/{sessions,changes}},.gemini/episodic_memory/{sessions,changes},.codex/episodic_memory/{sessions,changes},.github/instructions,outputs/episodic_memory/{sessions,changes},synthesis}
+# Entity root config directories (outputs/ and synthesis/ live inside stages, NOT here)
+mkdir -p <entity_name>/{.0agnostic/{agents,episodic_memory/{sessions,changes},hooks/scripts,knowledge,rules,skills},.1merge/{.1claude_merge/{0_synced,1_overrides,2_additions},.1cursor_merge/{0_synced,1_overrides,2_additions},.1gemini_merge/{0_synced,1_overrides,2_additions},.1aider_merge/{0_synced,1_overrides,2_additions},.1codex_merge/{0_synced,1_overrides,2_additions},.1copilot_merge/{0_synced,1_overrides,2_additions}},.claude/{rules,episodic_memory/{sessions,changes}},.cursor/{rules,episodic_memory/{sessions,changes}},.gemini/episodic_memory/{sessions,changes},.codex/episodic_memory/{sessions,changes},.github/instructions}
 
 # Internal layer_N_group structure
 mkdir -p <entity_name>/layer_N_group/{layer_N_00_layer_registry/proposals,layer_N_01_ai_manager_system,layer_N_02_manager_handoff_documents/{incoming/{from_above,from_below},outgoing/{to_above,to_below}},layer_N_03_sub_layers/{sub_layer_N_00_sub_layer_registry,sub_layer_N_01_prompts,sub_layer_N_02_knowledge_system/{overview,things_learned},sub_layer_N_03_principles,sub_layer_N_04_rules,sub_layer_N_05+_setup_dependant},layer_N_99_stages}
@@ -107,9 +107,9 @@ Create ALL 12 stages (00-11). **Empty stages are valid. Missing stages are NOT.*
 
 ```bash
 # Create all stage directories
-mkdir -p "layer_N_group/layer_N_99_stages/stage_N_00_stage_registry/outputs"
+mkdir -p "layer_N_group/layer_N_99_stages/stage_N_00_stage_registry/{outputs,synthesis}"
 for i in 01_request_gathering 02_research 03_instructions 04_planning 05_design 06_development 07_testing 08_criticism 09_fixing 10_current_product 11_archives; do
-  mkdir -p "layer_N_group/layer_N_99_stages/stage_N_$i/outputs"
+  mkdir -p "layer_N_group/layer_N_99_stages/stage_N_$i/{outputs,synthesis}"
 done
 
 # Add config directories to EACH stage
@@ -201,11 +201,9 @@ layer_1_project_<name>/
 │   │   ├── sub_layer_1_04_rules/
 │   │   └── sub_layer_1_05+_setup_dependant/
 │   └── layer_1_99_stages/        # All 12 stages (00-11)
-├── layer_2_group/
-│   ├── layer_2_00_layer_registry/proposals/
-│   └── layer_2_features/
-├── outputs/episodic_memory/
-└── synthesis/
+└── layer_2_group/
+    ├── layer_2_00_layer_registry/proposals/
+    └── layer_2_features/
 ```
 
 3. **0AGNOSTIC.md template**:
@@ -318,8 +316,6 @@ stage_N_XX_<name>/
 - [ ] `.gemini/` with `episodic_memory/{sessions,changes}/`
 - [ ] `.codex/` with `episodic_memory/{sessions,changes}/`
 - [ ] `.github/instructions/`
-- [ ] `outputs/episodic_memory/{sessions,changes}/`
-- [ ] `synthesis/`
 
 ### Internal Structure
 - [ ] `layer_N_group/` with `_group` suffix (NOT bare `layer_N/`)
@@ -329,7 +325,8 @@ stage_N_XX_<name>/
 
 ### Stages
 - [ ] ALL 12 stages created (00-11)
-- [ ] Each stage has config dirs (.0agnostic, .1merge, .claude, .cursor, .gemini, .codex, .github, synthesis)
+- [ ] Each stage has config dirs (.0agnostic, .1merge, .claude, .cursor, .gemini, .codex, .github)
+- [ ] Each stage has `outputs/` and `synthesis/` directories
 - [ ] Each stage has `0AGNOSTIC.md` + auto-generated tool files
 - [ ] Each stage has `stage_N_XX_name_agent.jsonld` + matching `.integration.md`
 - [ ] `layer_N_99_stages_orchestrator.gab.jsonld` + matching `.integration.md`

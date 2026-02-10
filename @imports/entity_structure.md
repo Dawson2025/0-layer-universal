@@ -81,17 +81,10 @@ Every entity (project, feature, component, research project) follows this canoni
 │       ├── layer_N_99_stages_orchestrator.integration.md   # Auto-generated (DO NOT EDIT)
 │       └── stage_N_XX_name/               # Each stage (00-11, see Stage Structure below)
 │
-├── layer_N+1_group/                       # Children (if entity has children)
-│   ├── layer_N+1_components/              # Or layer_N+1_features/ or layer_N+1_sub_features/
-│   └── layer_N+1_00_layer_registry/
-│       └── proposals/
-│
-├── outputs/                               # Entity-level outputs
-│   └── episodic_memory/
-│       ├── sessions/
-│       └── changes/
-│
-└── synthesis/                             # Cross-cutting summaries
+└── layer_N+1_group/                       # Children (if entity has children)
+    ├── layer_N+1_components/              # Or layer_N+1_features/ or layer_N+1_sub_features/
+    └── layer_N+1_00_layer_registry/
+        └── proposals/
 ```
 
 ## Stage Structure
@@ -164,8 +157,8 @@ Run `agnostic-sync.sh` on each `0AGNOSTIC.md` to generate CLAUDE.md, AGENTS.md, 
 Replace `N` with the entity's layer number and `N1` with N+1:
 
 ```bash
-# Entity root directories
-mkdir -p <entity>/{.0agnostic/{agents,episodic_memory/{sessions,changes},hooks/scripts,knowledge,rules,skills},.1merge/{.1claude_merge/{0_synced,1_overrides,2_additions},.1cursor_merge/{0_synced,1_overrides,2_additions},.1gemini_merge/{0_synced,1_overrides,2_additions},.1aider_merge/{0_synced,1_overrides,2_additions},.1codex_merge/{0_synced,1_overrides,2_additions},.1copilot_merge/{0_synced,1_overrides,2_additions}},.claude/{rules,episodic_memory/{sessions,changes}},.cursor/{rules,episodic_memory/{sessions,changes}},.gemini/episodic_memory/{sessions,changes},.codex/episodic_memory/{sessions,changes},.github/instructions,outputs/episodic_memory/{sessions,changes},synthesis}
+# Entity root directories (outputs/ and synthesis/ live inside stages, NOT here)
+mkdir -p <entity>/{.0agnostic/{agents,episodic_memory/{sessions,changes},hooks/scripts,knowledge,rules,skills},.1merge/{.1claude_merge/{0_synced,1_overrides,2_additions},.1cursor_merge/{0_synced,1_overrides,2_additions},.1gemini_merge/{0_synced,1_overrides,2_additions},.1aider_merge/{0_synced,1_overrides,2_additions},.1codex_merge/{0_synced,1_overrides,2_additions},.1copilot_merge/{0_synced,1_overrides,2_additions}},.claude/{rules,episodic_memory/{sessions,changes}},.cursor/{rules,episodic_memory/{sessions,changes}},.gemini/episodic_memory/{sessions,changes},.codex/episodic_memory/{sessions,changes},.github/instructions}
 
 # Internal layer_N_group structure
 mkdir -p <entity>/layer_N_group/{layer_N_00_layer_registry/proposals,layer_N_01_ai_manager_system,layer_N_02_manager_handoff_documents/{incoming/{from_above,from_below},outgoing/{to_above,to_below}},layer_N_03_sub_layers/{sub_layer_N_00_sub_layer_registry,sub_layer_N_01_prompts,sub_layer_N_02_knowledge_system/{overview,things_learned},sub_layer_N_03_principles,sub_layer_N_04_rules,sub_layer_N_05+_setup_dependant},layer_N_99_stages}
@@ -180,11 +173,11 @@ Create ALL 12 stages (00-11). **Empty stages are valid. Missing stages are NOT.*
 
 ```bash
 # Create stage 00 (registry)
-mkdir -p "layer_N_group/layer_N_99_stages/stage_N_00_stage_registry/outputs"
+mkdir -p "layer_N_group/layer_N_99_stages/stage_N_00_stage_registry/{outputs,synthesis}"
 
-# Create stages 01-11
+# Create stages 01-11 (each gets outputs/ and synthesis/)
 for i in 01_request_gathering 02_research 03_instructions 04_planning 05_design 06_development 07_testing 08_criticism 09_fixing 10_current_product 11_archives; do
-  mkdir -p "layer_N_group/layer_N_99_stages/stage_N_$i/outputs"
+  mkdir -p "layer_N_group/layer_N_99_stages/stage_N_$i/{outputs,synthesis}"
 done
 
 # Add config directories to EACH stage
@@ -222,6 +215,8 @@ After creating the directory structure, create these files:
 - Knowledge system always has `overview/` and `things_learned/` subdirectories
 - Episodic memory is always named `episodic_memory/` (NOT `episodic/`)
 - `.0agnostic/episodic_memory/` is the source of truth — tool dirs receive synced copies
+- `outputs/` and `synthesis/` live inside each **stage**, NOT at entity root
+- Every tool dir (`.claude/`, `.cursor/`, `.gemini/`, `.codex/`) gets its own `episodic_memory/`
 
 ## Validation
 
