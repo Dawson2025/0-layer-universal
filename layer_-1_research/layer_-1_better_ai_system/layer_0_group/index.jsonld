@@ -26,7 +26,9 @@
         "component": "layer_0_component_{name}"
       },
       "examples": [
-        "layer_0_feature_agent_performance"
+        "layer_0_feature_layer_stage_system",
+        "layer_0_feature_multi_os_multi_machine_system",
+        "layer_0_feature_multimodal_system"
       ]
     }
   },
@@ -51,7 +53,7 @@
       "@id": "layer_0_features/",
       "@type": "FeaturesRegistry",
       "name": "Features",
-      "description": "Research features (1 consolidated: agent_performance)"
+      "description": "Research features (3 pillars: layer_stage_system, multi_os_multi_machine_system, multimodal_system)"
     }
   ]
 }
