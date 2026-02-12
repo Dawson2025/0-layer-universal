@@ -35,6 +35,22 @@ After approved changes:
 2. `git commit -m "[AI Context] description"`
 3. `git push`
 
+### 4. Submodule Integrity Protocol
+
+When any nested repository exists in a child path:
+1. The parent repository MUST track it as a real submodule (mode `160000` gitlink) and MUST have a matching entry in `.gitmodules`.
+2. Never leave a gitlink without `.gitmodules` mapping. This breaks recursive submodule operations.
+3. Commit/push order is always bottom-up:
+   - deepest child repo first
+   - then each parent repo submodule pointer
+   - root repo last
+4. Before ending a session, run:
+   - `git submodule status --recursive`
+   - `find . -name .git | sed 's#/.git$##'` (sanity check for unexpected nested repos)
+5. Any nested repo discovered without mapping must be either:
+   - properly registered as a submodule, or
+   - de-initialized as a standalone repo and converted to regular tracked files.
+
 ## Triggers
 
 | Situation | Action |
@@ -64,3 +80,9 @@ After approved changes:
 
 *This is the source of truth for 0_layer_universal identity.*
 *Tool-specific files (CLAUDE.md, GEMINI.md, AGENTS.md) are generated from this.*
+
+## Mandatory Checkpoint Cadence
+
+1. Commit and push for each new item.
+2. Commit and push for each update.
+3. In submodule chains, push deepest children first, then parent pointers to root.

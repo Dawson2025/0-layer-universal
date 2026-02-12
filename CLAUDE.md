@@ -1,147 +1,43 @@
-# 0_layer_universal
+# Claude Code Context
 
-## Role
+## Identity
 
-**Root Manager** — Coordinates all layers in the system.
+**Role**: Root Manager
+**Scope**: Coordinates all layers in the AI context system
+**Layer**: Root (contains layer_0, layer_1, layer_-1_research)
 
-## Responsibilities
 
-- Receive user requests via `hand_off_documents/incoming/from_above/`
-- Delegate tasks to appropriate layers (layer_0, layer_1, layer_-1_research)
-- Aggregate results from layers via `hand_off_documents/incoming/from_below/`
-- Report final results to user via `hand_off_documents/outgoing/to_above/`
 
-## On Session Start
 
-1. Check `hand_off_documents/incoming/from_above/` for user requests
-2. Check `hand_off_documents/incoming/from_below/` for layer results/escalations
-3. Process pending work or await user input
 
-## Children
 
-| Layer | Purpose | Scope |
-|-------|---------|-------|
-| `layer_0/` | Universal | Rules, prompts, knowledge, principles (applies to ALL) |
-| `layer_1/` | Projects | Projects, features, components |
-| `layer_-1_research/` | Research | Research projects, experiments |
+## Triggers
 
----
+| Situation | Action |
+|-----------|--------|
+| Creating entities with stages | Load skill: entity-creation |
+| Modifying AI context | Show propagation chain diagram first |
+| Working with layers/stages | Load skill: context-gathering |
+| Need rules | Load `.claude/skills/` or reference `sub_layer_0_02_rules/` |
 
-## Universal Rules
 
-All [CRITICAL] rules from `~/.claude/CLAUDE.md` apply here. Key rules for this directory:
 
-- **AI Context Modification Protocol**: Show diagram, wait for approval, execute exactly
-- **Commit/Push Rule**: `git add` specific files, `git commit -m "[AI Context] ..."`, `git push`
-- **File Path Linking**: Always include full clickable file paths after Write/Edit
+## Claude-Specific Rules
 
-**Full rules**: `layer_0/layer_0_04_sub_layers/sub_layer_0_02_rules/`
+### CLAUDE.md Integration
+This file is auto-generated from 0AGNOSTIC.md. Edit 0AGNOSTIC.md to make changes.
 
----
+### Tool Usage
+- Use Read tool to load .0agnostic/ resources on-demand
+- Use Bash for git operations and commands
+- Use Write/Edit for file modifications
+- Use Task tool for complex multi-step work
 
-## AALang Context Loading
-
-**AALang** is the primary AI system. Agent definitions live as `.gab.jsonld` files throughout the hierarchy. Each `.gab.jsonld` has a matching `.integration.md` with the same base name (auto-generated summary — do not edit directly).
-
-**Naming convention**: `[name].gab.jsonld` → `[name].integration.md`
-- e.g., `layer_0_orchestrator.gab.jsonld` → `layer_0_orchestrator.integration.md`
-
-**To load agent context:**
-1. Find the `.gab.jsonld` for your role in the current directory
-2. Read the matching `.integration.md` (same base name) for a readable summary
-3. For precise mode constraints, query the `.gab.jsonld` via jq:
-   ```bash
-   jq '."@graph"[] | select(."@type" == "gab:Mode") | {id: ."@id", purpose: .purpose}' [matching .gab.jsonld]
-   ```
-
-**Key agents:**
-- **Orchestrator**: `layer_0/layer_0_01_ai_manager_system/personal/layer_0_orchestrator.gab.jsonld`
-- **Context loader**: `layer_0/layer_0_03_context_agents/context_loading.gab.jsonld`
-- **Skills**: `/context-gathering` (task start), `/stage-workflow` (stage work), `/entity-creation` (new entities), `/handoff-creation` (session end)
-- **Rules**: Check `.claude/rules/` for path-specific context
+### Session Continuity
+- Read .0agnostic/episodic_memory/index.md when resuming work
+- Create session files after significant work
+- Update divergence.log when modifying outputs
 
 ---
-
-## Agnostic System
-
-`0AGNOSTIC.md` is the **source of truth** for context at every level. `CLAUDE.md` files are auto-generated — do not edit them directly.
-
-| Component | Purpose |
-|-----------|---------|
-| `0AGNOSTIC.md` | Source of truth — edit this for context changes |
-| `.0agnostic/` | On-demand resources (rules, skills, agents, knowledge, scripts) |
-| `.1merge/` | Tool-specific overrides (3-tier: synced → overrides → additions) |
-| `agnostic-sync.sh` | Regenerates CLAUDE.md, AGENTS.md, GEMINI.md, OPENAI.md from 0AGNOSTIC.md |
-
-**Workflow**: Edit `0AGNOSTIC.md` → run `agnostic-sync.sh` → commit generated files
-
-**Script location**: `layer_0/.0agnostic/agnostic-sync.sh`
-
----
-
-## Skills
-
-Match your task to available skills (check WHEN/WHEN NOT in each SKILL.md):
-
-| Skill | When to Use |
-|-------|-------------|
-| `/context-gathering` | First action when entering any directory |
-| `/stage-workflow` | Working through stages 01-11 |
-| `/entity-creation` | Creating new projects, features, components |
-| `/handoff-creation` | End of session, preserving context |
-
----
-
-## Navigation: How to Find Things
-
-### Sub-Layers (layer_0/layer_0_04_sub_layers/)
-
-| Sub-Layer | Purpose | When to Read |
-|-----------|---------|--------------|
-| `sub_layer_0_01_knowledge_system/` | Domain knowledge (incl. `principles/`) | When context needed |
-| `sub_layer_0_02_rules/` | **Universal rules** (`static/` + `dynamic/`) | **ALWAYS** |
-| `sub_layer_0_03_protocols/` | Init protocols, session start | Start of session |
-| `sub_layer_0_04+_setup_dependant/` | OS/tool setup | Environment issues |
-
-### Stages (layer_N/layer_N_99_stages/)
-
-| Stage | Purpose |
-|-------|---------|
-| 01_request_gathering | Clarify requirements |
-| 02_research | Explore, gather info |
-| 03_instructions | Define constraints |
-| 04_planning | Break into subtasks |
-| 05_design | Architecture |
-| 06_development | Implementation |
-| 07_testing | Verification |
-| 08_criticism | Review |
-| 09_fixing | Corrections |
-| 10_current_product | Deliverable |
-| 11_archives | History |
-
-### Quick Lookup
-
-| Need | Location |
-|------|----------|
-| AALang AI System | `layer_0/layer_0_01_ai_manager_system/professor/` |
-| Context Loading Agent | `layer_0/layer_0_03_context_agents/` |
-| Universal init protocol | `layer_0/layer_0_04_sub_layers/sub_layer_0_03_protocols/universal_init_prompt.md` |
-| All rules | `layer_0/layer_0_04_sub_layers/sub_layer_0_02_rules/` |
-| Git rules | `sub_layer_0_02_rules/0_instruction_docs/git_commit_rule.md` |
-| Layer-Stage Framework | `layer_1/layer_1_features/layer_1_feature_layer_stage_system/` |
-| Research projects | `layer_-1_research/` |
-
-## Structure Overview
-
-See `@imports/structure_overview.md` for the full directory tree.
-
-## Session Workflow
-
-See `@imports/session_workflow.md` for the session start protocol.
-
-## Conventions
-
-- **Naming**: Use underscores: `layer_0_01_name`, `stage_0_02_name`
-- **Layers**: Lower numbers = more universal (Layer 0 applies to all)
-- **Stages**: 01-11, workflow phases
-- **Sub-layers**: 01-07+, content types (ai_system, context_agents, knowledge, principles, rules, protocols, setup)
+*Auto-generated from 0AGNOSTIC.md via agnostic-sync.sh*
+*Do not edit directly - edit 0AGNOSTIC.md instead*
