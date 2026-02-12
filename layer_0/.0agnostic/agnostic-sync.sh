@@ -31,6 +31,7 @@ AGNOSTIC_CONTENT=$(cat "$DIR/0AGNOSTIC.md")
 # Extract key sections (use ^## [^#] to match only h2 headings, not h3/h4)
 IDENTITY=$(echo "$AGNOSTIC_CONTENT" | sed -n '/^## Identity/,/^## [^#]/p' | head -n -1)
 NAVIGATION=$(echo "$AGNOSTIC_CONTENT" | sed -n '/^## Navigation/,/^## [^#]/p' | head -n -1)
+CRITICAL_RULES=$(echo "$AGNOSTIC_CONTENT" | sed -n '/^## Critical Rules/,/^## [^#]/p' | head -n -1)
 BEHAVIORS=$(echo "$AGNOSTIC_CONTENT" | sed -n '/^## Key Behaviors/,/^## [^#]/p' | head -n -1)
 TRIGGERS=$(echo "$AGNOSTIC_CONTENT" | sed -n '/^## Triggers/,/^## [^#]/p' | head -n -1)
 
@@ -45,6 +46,10 @@ fi
 if [ -z "$NAVIGATION" ] || [ ${#NAVIGATION} -lt 10 ]; then
     echo "WARNING: ## Navigation section not found or too short"
     WARNINGS=$((WARNINGS + 1))
+fi
+
+if [ -z "$CRITICAL_RULES" ]; then
+    echo "INFO: ## Critical Rules section not found (optional)"
 fi
 
 if [ -z "$BEHAVIORS" ]; then
@@ -70,6 +75,8 @@ CLAUDE_EOF
 echo "$IDENTITY" >> "$DIR/CLAUDE.md"
 echo "" >> "$DIR/CLAUDE.md"
 echo "$NAVIGATION" >> "$DIR/CLAUDE.md"
+echo "" >> "$DIR/CLAUDE.md"
+echo "$CRITICAL_RULES" >> "$DIR/CLAUDE.md"
 echo "" >> "$DIR/CLAUDE.md"
 echo "$BEHAVIORS" >> "$DIR/CLAUDE.md"
 echo "" >> "$DIR/CLAUDE.md"
@@ -110,6 +117,8 @@ AGENTS_EOF
 echo "$IDENTITY" >> "$DIR/AGENTS.md"
 echo "" >> "$DIR/AGENTS.md"
 echo "$NAVIGATION" >> "$DIR/AGENTS.md"
+echo "" >> "$DIR/AGENTS.md"
+echo "$CRITICAL_RULES" >> "$DIR/AGENTS.md"
 echo "" >> "$DIR/AGENTS.md"
 echo "$BEHAVIORS" >> "$DIR/AGENTS.md"
 echo "" >> "$DIR/AGENTS.md"
@@ -152,6 +161,8 @@ echo "$IDENTITY" >> "$DIR/GEMINI.md"
 echo "" >> "$DIR/GEMINI.md"
 echo "$NAVIGATION" >> "$DIR/GEMINI.md"
 echo "" >> "$DIR/GEMINI.md"
+echo "$CRITICAL_RULES" >> "$DIR/GEMINI.md"
+echo "" >> "$DIR/GEMINI.md"
 echo "$BEHAVIORS" >> "$DIR/GEMINI.md"
 
 cat >> "$DIR/GEMINI.md" << 'GEMINI_RULES'
@@ -188,6 +199,8 @@ echo "$IDENTITY" >> "$DIR/OPENAI.md"
 echo "" >> "$DIR/OPENAI.md"
 echo "$NAVIGATION" >> "$DIR/OPENAI.md"
 echo "" >> "$DIR/OPENAI.md"
+echo "$CRITICAL_RULES" >> "$DIR/OPENAI.md"
+echo "" >> "$DIR/OPENAI.md"
 echo "$BEHAVIORS" >> "$DIR/OPENAI.md"
 
 cat >> "$DIR/OPENAI.md" << 'OPENAI_RULES'
@@ -219,4 +232,3 @@ echo "  - CLAUDE.md"
 echo "  - AGENTS.md"
 echo "  - GEMINI.md"
 echo "  - OPENAI.md"
-
