@@ -41,8 +41,8 @@ JSON-LD as source-of-truth (design-time) + markdown as runtime interface + skill
 - **Layer 2 (fallback)**: SKILL.md descriptions with WHEN/WHEN NOT patterns → Claude Code's native skill matcher
 - **Layer 3 (second fallback)**: Transpiled `.integration.md` files → auto-generated markdown from JSON-LD
 
-See [architecture_decision_reference_chain.md](architecture_decision_reference_chain.md) for full analysis.
-See [implementation_plan.md](implementation_plan.md) for the phased execution plan.
+See [architecture_decision_reference_chain.md](architecture/architecture_decision_reference_chain.md) for full analysis.
+See [implementation_plan.md](planning/implementation_plan.md) for the phased execution plan.
 
 ### Core Problems Being Addressed
 
@@ -52,25 +52,58 @@ See [implementation_plan.md](implementation_plan.md) for the phased execution pl
 4. **Context chain inefficiency** — static context wastes space on non-critical content
 5. **Markdown vs JSON-LD tension** — need both human readability and machine precision
 
-See [problems_and_vision.md](problems_and_vision.md) for full analysis.
+See [problems_and_vision.md](02_problem_analysis/problems_and_vision.md) for full analysis.
 
 ---
 
 ## Research Files
 
+### 01_vision/ — What's possible
 | File | Topic |
 |------|-------|
-| [verification_results.md](verification_results.md) | **READ FIRST** — What was verified true/false on 2026-02-07 |
-| [problems_and_vision.md](problems_and_vision.md) | 5 core problems and the architectural vision (REVISED post-verification) |
-| [context_chain_integration.md](context_chain_integration.md) | How AALang fits into the CLAUDE.md context chain (VERIFIED) |
-| [orchestrator_integration.md](orchestrator_integration.md) | How orchestrators work within our layer hierarchy |
-| [skills_integration.md](skills_integration.md) | How to improve skill discovery and invocation (REVISED) |
-| [agent_teams_convergence.md](agent_teams_convergence.md) | Merging Agent Teams interactivity with layer-stage persistence |
-| [adoption_roadmap.md](adoption_roadmap.md) | Phased plan for deeper AALang adoption (REVISED 2026-02-07) |
-| [implementation_plan.md](implementation_plan.md) | **Concrete implementation plan** — 6 phases, specific file changes, success criteria |
-| [claude_md_audit.md](claude_md_audit.md) | CLAUDE.md chain audit — 717 lines in static chain, duplication analysis, recommendations |
-| [selective_jsonld_navigation.md](selective_jsonld_navigation.md) | **PROVEN** — Agents can navigate JSON-LD graphs via jq, loading only 2-5% of files |
-| [architecture_decision_reference_chain.md](architecture_decision_reference_chain.md) | **KEY DECISION** — Three-layer redundancy model: jq-first + skill descriptions + transpiled markdown |
+| [context_system_vision.md](01_vision/context_system_vision.md) | Vision for a complete AI context system — static/dynamic separation, reference chains, AI traversal, tool agnosticism |
+
+### 02_problem_analysis/ — Problem identification and analysis
+| File | Topic |
+|------|-------|
+| [problems_and_vision.md](02_problem_analysis/problems_and_vision.md) | 5 core problems and the architectural vision (REVISED post-verification) |
+| [rule_propagation_problem.md](02_problem_analysis/rule_propagation_problem.md) | Universal rules not automatically applied to all sessions |
+
+### 03_obstacles/ — What stands in the way
+| File | Topic |
+|------|-------|
+| [obstacles.md](03_obstacles/obstacles.md) | 8 key obstacles: skill invocation, context budget, JSON-LD mismatch, session loss, tool fragmentation, and more |
+
+### 04_design/ — Possible designs and approaches
+| File | Topic |
+|------|-------|
+| [referencing_methods_and_skill_invocation.md](04_design/referencing_methods_and_skill_invocation.md) | All 11 referencing methods surveyed + 5 design approaches for skill invocation |
+
+### architecture/ — Architecture decisions and technical approaches
+| File | Topic |
+|------|-------|
+| [architecture_decision_reference_chain.md](architecture/architecture_decision_reference_chain.md) | **KEY DECISION** — Three-layer redundancy model: jq-first + skill descriptions + transpiled markdown |
+| [selective_jsonld_navigation.md](architecture/selective_jsonld_navigation.md) | **PROVEN** — Agents can navigate JSON-LD graphs via jq, loading only 2-5% of files |
+
+### integration/ — How components integrate with each other
+| File | Topic |
+|------|-------|
+| [context_chain_integration.md](integration/context_chain_integration.md) | How AALang fits into the CLAUDE.md context chain (VERIFIED) |
+| [orchestrator_integration.md](integration/orchestrator_integration.md) | How orchestrators work within our layer hierarchy |
+| [skills_integration.md](integration/skills_integration.md) | How to improve skill discovery and invocation (REVISED) |
+| [agent_teams_convergence.md](integration/agent_teams_convergence.md) | Merging Agent Teams interactivity with layer-stage persistence |
+
+### verification/ — Audits and verification of assumptions
+| File | Topic |
+|------|-------|
+| [verification_results.md](verification/verification_results.md) | **READ FIRST** — What was verified true/false on 2026-02-07 |
+| [claude_md_audit.md](verification/claude_md_audit.md) | CLAUDE.md chain audit — 717 lines in static chain, duplication analysis, recommendations |
+
+### planning/ — Roadmaps and execution plans
+| File | Topic |
+|------|-------|
+| [implementation_plan.md](planning/implementation_plan.md) | **Concrete implementation plan** — 6 phases, specific file changes, success criteria |
+| [adoption_roadmap.md](planning/adoption_roadmap.md) | Phased plan for deeper AALang adoption (REVISED 2026-02-07) |
 
 ---
 
@@ -85,4 +118,4 @@ See [problems_and_vision.md](problems_and_vision.md) for full analysis.
 ---
 
 *Research feature: layer_0_feature_aalang_integration*
-*Last updated: 2026-02-07*
+*Last updated: 2026-02-16*
