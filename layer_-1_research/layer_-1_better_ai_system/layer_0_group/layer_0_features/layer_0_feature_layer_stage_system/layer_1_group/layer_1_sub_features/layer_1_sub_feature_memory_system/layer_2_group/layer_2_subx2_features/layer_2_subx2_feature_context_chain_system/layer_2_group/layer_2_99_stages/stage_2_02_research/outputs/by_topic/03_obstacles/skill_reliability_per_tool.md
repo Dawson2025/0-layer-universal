@@ -26,22 +26,68 @@ Evaluate how much of a problem instruction/skill adherence is across each major 
 
 **Instruction system:** CLAUDE.md chain (parent walk-up, child on-demand), .claude/skills/, .claude/rules/ with paths: frontmatter, auto-memory (MEMORY.md).
 
-**Reliability findings:**
-- Generally regarded as most reliable for instruction following across multi-file, multi-step tasks
-- Reported to reliably follow ~150-200 instructions (system prompt already consumes ~50)
-- Skills have a ~16K character budget — skills silently dropped when exceeded
-- Configurable via `SLASH_COMMAND_TOOL_CHAR_BUDGET` environment variable
-- Skill invocation is non-deterministic (LLM semantic matching, no algorithmic triggers)
-- CLAUDE.md survives context compaction (re-loaded as foundational context)
-- Hooks (PreToolUse, PermissionRequest) provide deterministic enforcement layer
-- Instruction adherence degrades as context window fills
+**Skill activation — quantitative data (650-trial experiment, Ivan Seleznov, Feb 2026):**
+
+| Description Style | Activation Rate |
+|-------------------|----------------|
+| Standard descriptions (current default) | **37%** with hooks |
+| Improved descriptions | ~70-80% |
+| Directive descriptions ("ALWAYS invoke... Do not X directly") | **100%** |
+
+**Skill activation — forced-eval hook testing (Scott Spence, 50 prompts x 10 iterations):**
+
+| Approach | Activation Rate |
+|----------|----------------|
+| No hook (baseline) | **~20%** |
+| Simple instruction hook | **~50%** |
+| LLM-eval approach | **80%** (high variability) |
+| Forced-eval hook (3-step commitment) | **84%** |
+
+**The "may or may not be relevant" problem:**
+CLAUDE.md content is injected inside a `<system-reminder>` block with the disclaimer: *"IMPORTANT: this context may or may not be relevant to your tasks."* This causes Claude to treat mandatory user instructions as optional background context. Documented across dozens of GitHub issues ([#22309](https://github.com/anthropics/claude-code/issues/22309), [#18560](https://github.com/anthropics/claude-code/issues/18560), [#7571](https://github.com/anthropics/claude-code/issues/7571)).
+
+**CLAUDE.md non-compliance pattern (documented):**
+- [#15443](https://github.com/anthropics/claude-code/issues/15443): Rule stated 3 times, Claude used prohibited commands anyway, admitted "taking shortcuts"
+- [#6120](https://github.com/anthropics/claude-code/issues/6120): Claude used prohibited phrases despite explicit "NEVER" rules, then apologized using the same prohibited phrases
+- [#18454](https://github.com/anthropics/claude-code/issues/18454): Claude ignored CLAUDE.md AND skills during multi-step tasks, modified 23 files in 6 commits instead of required 1 file per commit
+- [#18660](https://github.com/anthropics/claude-code/issues/18660): User described the cycle as "I read your rules, I understand your rules, I don't follow your rules"
+
+**Character budget — silent skill truncation:**
+
+| Scenario | Skills Installed | Skills Visible | % Hidden |
+|----------|-----------------|----------------|----------|
+| Issue [#13099](https://github.com/anthropics/claude-code/issues/13099) | 63 | 42 | **33%** |
+| Issue [#13044](https://github.com/anthropics/claude-code/issues/13044) | 92 | 36 | **60%** |
+| Issue [#13343](https://github.com/anthropics/claude-code/issues/13343) | 39 | 30 | **23%** |
+
+Budget scales at 2% of context window (~16K chars). Skills silently dropped with no proactive user notification. Configurable via `SLASH_COMMAND_TOOL_CHAR_BUDGET`.
+
+**Context consumption before first user message:**
+- System prompt: 7.7K tokens (3.8%)
+- System tools: 17.7K tokens (8.8%)
+- Skills/commands: 26K+ tokens (13%+)
+- ~38% of context consumed before any conversation starts
+
+**Reliability hierarchy within Claude Code:**
+
+| Mechanism | Reliability |
+|-----------|-------------|
+| Hooks (pre-commit, pre-tool-use) | **Deterministic (100%)** |
+| User-invoked /slash-commands | **100%** (by definition) |
+| .claude/rules/ (path-scoped) | **High** — same priority as CLAUDE.md but reduced noise through scoping |
+| CLAUDE.md (short, <150 lines) | **Moderate** — subject to "may or may not be relevant" disclaimer |
+| CLAUDE.md (long, >200 lines) | **Low** — critical rules get lost in noise |
+| Skills (auto-invocation) | **Low-Variable (20-100%)** — description quality is critical |
+| CLAUDE.md hints to invoke skills | **Lowest** — compounds two unreliable mechanisms |
 
 **Known workarounds:**
-- WHEN/WHEN NOT patterns in skill descriptions
-- Trigger tables in CLAUDE.md
-- Path-specific rules for automatic context injection
+- Directive-style descriptions ("ALWAYS invoke... Do NOT run X directly") — 100% in controlled tests
+- Forced-eval hooks (UserPromptSubmit) — 84% activation, $0.0067/invocation
+- Keep CLAUDE.md under 150 lines
+- Use .claude/rules/ for scoped instructions (reduces priority saturation)
 - Hooks for hard enforcement of critical behaviors
 - Explicit `/skill-name` invocation always works
+- Set `SLASH_COMMAND_TOOL_CHAR_BUDGET` for many skills
 
 ---
 
@@ -251,6 +297,27 @@ Gemini CLI has the most feature-rich instruction system (imports, system prompt 
 ---
 
 ## Sources
+
+### Claude Code
+- [How to Make Claude Code Skills Actually Activate (650 Trials)](https://medium.com/@ivan.seleznov1/why-claude-code-skills-dont-activate-and-how-to-fix-it-86f679409af1) — Ivan Seleznov
+- [How to Make Claude Code Skills Activate Reliably](https://scottspence.com/posts/how-to-make-claude-code-skills-activate-reliably) — Scott Spence
+- [Inside Claude Code Skills: Structure, prompts, invocation](https://mikhail.io/2025/10/claude-code-skills/) — Mikhail Shilkov
+- [Claude Agent Skills: A First Principles Deep Dive](https://leehanchung.github.io/blogs/2025/10/26/claude-skills-deep-dive/) — Lee Han Chung
+- [Official Skills Documentation](https://code.claude.com/docs/en/skills)
+- [Best Practices for Claude Code](https://code.claude.com/docs/en/best-practices)
+- [Writing a good CLAUDE.md](https://www.humanlayer.dev/blog/writing-a-good-claude-md) — HumanLayer
+- [Issue #22309: CLAUDE.md wrapped in "may or may not be relevant"](https://github.com/anthropics/claude-code/issues/22309)
+- [Issue #18560: system-reminder instructing to not follow CLAUDE.md](https://github.com/anthropics/claude-code/issues/18560)
+- [Issue #15443: Claude ignores explicit CLAUDE.md instructions](https://github.com/anthropics/claude-code/issues/15443)
+- [Issue #6120: Claude ignores most CLAUDE.md instructions](https://github.com/anthropics/claude-code/issues/6120)
+- [Issue #18454: Claude ignores CLAUDE.md and skills during multi-step tasks](https://github.com/anthropics/claude-code/issues/18454)
+- [Issue #18660: CLAUDE.md instructions not reliably followed](https://github.com/anthropics/claude-code/issues/18660)
+- [Issue #13099: Document available_skills character budget](https://github.com/anthropics/claude-code/issues/13099)
+- [Issue #13044: Skill list truncation too aggressive](https://github.com/anthropics/claude-code/issues/13044)
+- [Issue #13343: Skills truncated makes remaining undiscoverable](https://github.com/anthropics/claude-code/issues/13343)
+- [Issue #14851: Commands loaded as skills consuming context](https://github.com/anthropics/claude-code/issues/14851)
+- [Claude Code Skill Activation Hook](https://claudefa.st/blog/tools/hooks/skill-activation-hook)
+- [Claude Code Rules Directory](https://claudefa.st/blog/guide/mechanics/rules-directory)
 
 ### Codex CLI
 - [Custom instructions with AGENTS.md](https://developers.openai.com/codex/guides/agents-md/)
