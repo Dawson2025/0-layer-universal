@@ -73,6 +73,7 @@ See [problems_and_vision.md](02_problem_analysis/problems_and_vision.md) for ful
 | File | Topic |
 |------|-------|
 | [obstacles.md](03_obstacles/obstacles.md) | 8 key obstacles: skill invocation, context budget, JSON-LD mismatch, session loss, tool fragmentation, and more |
+| [skill_reliability_per_tool.md](03_obstacles/skill_reliability_per_tool.md) | **PRIMARY RESEARCH** — Instruction/skill adherence evaluated across 8 tools (Claude Code, Codex, Gemini CLI, OpenCode, Cursor, Windsurf, Aider, Junie) with real GitHub issues and benchmarks |
 
 ### 04_design/ — Possible designs and approaches
 | File | Topic |
