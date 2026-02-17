@@ -104,7 +104,7 @@ layer_N_<type>_<name>/              # THE ENTITY
 
 | Depth | Prefix Pattern | Example |
 |-------|----------------|---------|
-| 1 | `sub_` | `layer_2_sub_feature_<name>` |
+| 1 | `sub_` | `layer_2_subx2_feature_<name>` |
 | 2 | `subx2_` | `layer_3_subx2_feature_<name>` |
 | 3 | `subx3_` | `layer_4_subx3_feature_<name>` |
 | 4 | `subx4_` | `layer_5_subx4_feature_<name>` |

@@ -16,14 +16,14 @@ Load this context when:
 ## Pointers
 ### On Entry
 1. Read `0INDEX.md` for current state
-2. Check `layer_2_group/layer_2_sub_features/` for sub-features
+2. Check `layer_2_group/layer_2_subx2_features/` for sub-features
 
 ### Navigation
 | Direction | Path |
 |-----------|------|
 | Parent | `../../../0AGNOSTIC.md` |
 | Stages | `layer_1_group/layer_1_99_stages/` |
-| Children | `layer_2_group/layer_2_sub_features/` |
+| Children | `layer_2_group/layer_2_subx2_features/` |
 
 ## Where to Contribute
 | Work Type | Location |

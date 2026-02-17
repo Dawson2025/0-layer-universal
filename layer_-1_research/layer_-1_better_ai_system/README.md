@@ -13,19 +13,19 @@ Three pillar features:
 layer_0_group/layer_0_features/
 ├── layer_0_feature_layer_stage_system/        ← Central pillar (18 entities across 4 layers)
 │   ├── layer_1_sub_feature_memory_system/
-│   │   ├── layer_2_sub_feature_context_chain_system/
-│   │   │   ├── layer_3_sub_feature_chain_visualization/
-│   │   │   └── layer_3_sub_feature_context_loading/
-│   │   ├── layer_2_sub_feature_navigation/
-│   │   └── layer_2_sub_feature_dynamic_memory/
+│   │   ├── layer_2_subx2_feature_context_chain_system/
+│   │   │   ├── layer_3_subx3_feature_chain_visualization/
+│   │   │   └── layer_3_subx3_feature_context_loading/
+│   │   ├── layer_2_subx2_feature_navigation/
+│   │   └── layer_2_subx2_feature_dynamic_memory/
 │   ├── layer_1_sub_feature_organization/
-│   │   └── layer_2_sub_feature_entities/
+│   │   └── layer_2_subx2_feature_entities/
 │   ├── layer_1_sub_feature_multi_agent_system/
-│   │   ├── layer_2_sub_feature_agent_hierarchy/
-│   │   └── layer_2_sub_feature_orchestration/
-│   │       ├── layer_3_sub_feature_agent_spawning/
-│   │       ├── layer_3_sub_feature_inter_agent_comm/
-│   │       └── layer_3_sub_feature_recursive_coordination/
+│   │   ├── layer_2_subx2_feature_agent_hierarchy/
+│   │   └── layer_2_subx2_feature_orchestration/
+│   │       ├── layer_3_subx3_feature_agent_spawning/
+│   │       ├── layer_3_subx3_feature_inter_agent_comm/
+│   │       └── layer_3_subx3_feature_recursive_coordination/
 │   └── layer_1_sub_feature_tool_and_app_agnostic/
 ├── layer_0_feature_multi_os_multi_machine_system/  ← Cross-platform setup
 └── layer_0_feature_multimodal_system/              ← Future: video, audio, TTS/STT, 3D

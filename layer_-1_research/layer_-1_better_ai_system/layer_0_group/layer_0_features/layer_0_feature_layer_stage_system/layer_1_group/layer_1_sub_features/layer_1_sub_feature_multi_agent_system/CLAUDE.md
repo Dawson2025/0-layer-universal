@@ -12,6 +12,8 @@ You are an agent at **Layer 1** (Sub-Feature), **Sub-Feature**: Multi-Agent Syst
 
 
 
+
+
 ## Triggers
 Load this context when:
 - User mentions: multi-agent, agent coordination, orchestration, agent hierarchy, spawning

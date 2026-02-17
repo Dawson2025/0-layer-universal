@@ -12,6 +12,8 @@ You are an agent at **Layer 0** (Feature), **Feature**: Layer-Stage System.
 
 
 
+
+
 ## Triggers
 Load this context when:
 - User mentions: layer-stage, entity structure, framework architecture, hierarchical organization

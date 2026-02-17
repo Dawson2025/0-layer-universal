@@ -12,6 +12,8 @@ You are an agent at **Layer 1** (Sub-Feature), **Sub-Feature**: Tool and App Agn
 
 
 
+
+
 ## Triggers
 Load this context when:
 - User mentions: tool-agnostic, agnostic sync, merge system, cross-tool, app-agnostic

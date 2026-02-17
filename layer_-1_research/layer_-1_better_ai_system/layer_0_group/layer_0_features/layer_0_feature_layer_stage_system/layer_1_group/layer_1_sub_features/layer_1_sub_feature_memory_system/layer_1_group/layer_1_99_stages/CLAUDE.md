@@ -11,6 +11,8 @@ Stages container for memory_system.
 
 
 
+
+
 ## Claude-Specific Rules
 
 ### CLAUDE.md Integration

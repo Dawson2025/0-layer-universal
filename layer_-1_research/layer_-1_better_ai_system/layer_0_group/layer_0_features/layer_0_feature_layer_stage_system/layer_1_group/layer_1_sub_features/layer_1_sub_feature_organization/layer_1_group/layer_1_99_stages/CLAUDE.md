@@ -11,6 +11,8 @@ Stages container for organization.
 
 
 
+
+
 ## Claude-Specific Rules
 
 ### CLAUDE.md Integration

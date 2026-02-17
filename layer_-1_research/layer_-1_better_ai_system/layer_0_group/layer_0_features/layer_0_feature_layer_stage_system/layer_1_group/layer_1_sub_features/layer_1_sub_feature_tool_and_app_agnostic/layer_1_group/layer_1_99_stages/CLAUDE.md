@@ -11,6 +11,8 @@ Stages container for tool_and_app_agnostic.
 
 
 
+
+
 ## Claude-Specific Rules
 
 ### CLAUDE.md Integration

@@ -12,6 +12,8 @@ You are an agent at **Layer 1** (Sub-Feature), **Sub-Feature**: Organization.
 
 
 
+
+
 ## Gemini-Specific Notes
 
 ### Context Loading

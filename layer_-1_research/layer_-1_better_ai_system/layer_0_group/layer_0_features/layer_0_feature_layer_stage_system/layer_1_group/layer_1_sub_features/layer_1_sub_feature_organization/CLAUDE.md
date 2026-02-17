@@ -12,6 +12,8 @@ You are an agent at **Layer 1** (Sub-Feature), **Sub-Feature**: Organization.
 
 
 
+
+
 ## Triggers
 Load this context when:
 - User mentions: organization, entity structure, directory structure, naming conventions

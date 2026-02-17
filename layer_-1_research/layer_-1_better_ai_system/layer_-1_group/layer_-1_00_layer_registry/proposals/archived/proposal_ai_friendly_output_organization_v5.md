@@ -80,7 +80,7 @@ layer_N_<type>_<name>/              # THE ENTITY
 | Project | `layer_N_project_<name>` | `layer_1_project_my_app` |
 | Feature | `layer_N_feature_<name>` | `layer_0_feature_ai_context_system` |
 | Component | `layer_N_component_<name>` | `layer_1_component_auth` |
-| Sub-* | `layer_N_sub_<type>_<name>` | `layer_2_sub_feature_login` |
+| Sub-* | `layer_N_sub_<type>_<name>` | `layer_2_subx2_feature_login` |
 
 **Layer numbers are ALWAYS in the name** to indicate specificity level.
 

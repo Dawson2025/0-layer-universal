@@ -12,6 +12,8 @@ You are an agent at **Layer 1** (Sub-Feature), **Sub-Feature**: Memory System.
 
 
 
+
+
 ## Triggers
 Load this context when:
 - User mentions: memory system, context chain, context loading, navigation, dynamic memory
