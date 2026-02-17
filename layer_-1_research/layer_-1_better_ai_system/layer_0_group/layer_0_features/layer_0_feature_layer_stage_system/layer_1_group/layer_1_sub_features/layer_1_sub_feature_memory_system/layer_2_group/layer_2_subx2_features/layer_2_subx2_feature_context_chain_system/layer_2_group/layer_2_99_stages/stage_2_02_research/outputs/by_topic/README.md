@@ -79,6 +79,7 @@ See [problems_and_vision.md](02_problem_analysis/problems_and_vision.md) for ful
 | File | Topic |
 |------|-------|
 | [referencing_methods_and_skill_invocation.md](04_design/referencing_methods_and_skill_invocation.md) | All 11 referencing methods surveyed + 5 design approaches for skill invocation |
+| [sublayers_vs_dot_folders.md](04_design/sublayers_vs_dot_folders.md) | **PRIMARY RESEARCH** — Should sub-layers (knowledge, rules, protocols) live in separate directories or inside dot folders (.claude/, .0agnostic/)? Auto-discovery analysis, tool comparison, migration mapping |
 
 ### architecture/ — Architecture decisions and technical approaches
 | File | Topic |
