@@ -20,7 +20,7 @@ A catalog of known obstacles to building the context system described in the vis
 - Explicit `/skill-name` invocation by the user always works (not probabilistic)
 - WHEN/WHEN NOT patterns in descriptions improve match quality
 - CLAUDE.md trigger tables and path-specific rules can supplement the matcher
-- Multi-layer redundancy increases overall probability
+- Multi-avenue redundancy increases overall probability
 
 **Paths forward:**
 - Strong descriptions + trigger tables + rules as triggers (defense in depth)
@@ -204,7 +204,7 @@ A catalog of known obstacles to building the context system described in the vis
 
 | Obstacle | Severity | Solvable? | Approach |
 |----------|----------|-----------|----------|
-| Skill invocation non-deterministic | High | Partially | Multi-layer redundancy, strong descriptions |
+| Skill invocation non-deterministic | High | Partially | Multi-avenue redundancy, strong descriptions |
 | Static context budget | High | Yes | Remove bloat, move detail to dynamic |
 | JSON-LD format mismatch | Medium | Yes | Transpiler, selective navigation |
 | Cross-session context loss | Medium | Partially | Hand-offs, episodic memory, status files |

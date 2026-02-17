@@ -80,8 +80,16 @@ See [problems_and_vision.md](02_problem_analysis/problems_and_vision.md) for ful
 |------|-------|
 | [referencing_methods_and_skill_invocation.md](04_design/referencing_methods_and_skill_invocation.md) | All 11 referencing methods surveyed + 5 design approaches for skill invocation |
 | [sublayers_vs_dot_folders.md](04_design/sublayers_vs_dot_folders.md) | **PRIMARY RESEARCH** — Should sub-layers (knowledge, rules, protocols) live in separate directories or inside dot folders (.claude/, .0agnostic/)? Auto-discovery analysis, tool comparison, migration mapping |
-| [agnostic_internal_structure.md](04_design/agnostic_internal_structure.md) | **KEY DESIGN** — Canonical .0agnostic/ internal structure with knowledge/principles, rules/static+dynamic, protocols. Sync flow, inheritance model, comparison with sub-layers |
 | [sub_layer_migration_map.md](04_design/sub_layer_migration_map.md) | Detailed file-by-file migration map from sub-layer hierarchy into .0agnostic/ internal structure. 7-phase execution plan |
+
+### 04_design/0agnostic_system/ — The 0Agnostic System design
+| File | Topic |
+|------|-------|
+| [README.md](04_design/0agnostic_system/README.md) | **SYSTEM OVERVIEW** — How the 0Agnostic System works: single source of truth, sync to all tools, multi-avenue redundancy, component connections |
+| [internal_structure.md](04_design/0agnostic_system/internal_structure.md) | **KEY DESIGN** — Canonical .0agnostic/ internal structure with knowledge/principles/resources, rules/static+dynamic, protocols. Rules-inform-protocols relationship, inheritance model |
+| [sync_system.md](04_design/0agnostic_system/sync_system.md) | How agnostic-sync.sh transforms .0agnostic/ content into tool-specific formats (.claude/, .cursor/, .codex/, .gemini/). Sync workflow, format transformations, validation |
+| [merge_system.md](04_design/0agnostic_system/merge_system.md) | The .1merge three-tier override system: agnostic source → tool-specific overrides → generated output. When to use overrides vs agnostic content |
+| [multi_avenue_redundancy.md](04_design/0agnostic_system/multi_avenue_redundancy.md) | **KEY DESIGN** — How all 8 context avenues link together per tool. AALang/GAB integration, effectiveness matrix, "any-one-fires" resilience model reducing failure from ~40% to ~1% |
 
 ### architecture/ — Architecture decisions and technical approaches
 | File | Topic |

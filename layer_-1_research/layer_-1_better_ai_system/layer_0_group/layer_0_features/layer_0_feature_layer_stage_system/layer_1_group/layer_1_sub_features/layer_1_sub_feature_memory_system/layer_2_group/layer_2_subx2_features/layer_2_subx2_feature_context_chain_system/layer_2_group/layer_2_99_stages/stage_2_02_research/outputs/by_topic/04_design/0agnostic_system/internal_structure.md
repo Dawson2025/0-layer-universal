@@ -64,13 +64,14 @@ Only `layer_0/.0agnostic/` has a fuller structure with rules, scripts, templates
 ```
 .0agnostic/
 ├── knowledge/                  # Reference docs — NOT auto-loaded
-│   └── principles/             # Core principles (subset may sync to rules/)
+│   ├── principles/             # Core principles (subset may sync to rules/)
+│   └── resources/              # Templates, databases, reference material used by knowledge files
 │
 ├── rules/                      # Behavioral constraints — synced to tool dot folders
-│   ├── static/                 # Always-loaded rules (sync to .claude/rules/)
-│   └── dynamic/                # Path-scoped rules (sync with YAML frontmatter)
+│   ├── static/                 # Always-loaded rules WITH full protocol inline
+│   └── dynamic/                # Triggers only — reference protocols/ for procedures
 │
-├── protocols/                  # Step-by-step procedures — synced as skills
+├── protocols/                  # Full step-by-step procedures — referenced by dynamic rules
 │
 ├── skills/                     # Callable skills (existing, unchanged)
 │   └── */SKILL.md
@@ -90,6 +91,68 @@ Only `layer_0/.0agnostic/` has a fuller structure with rules, scripts, templates
 └── tests/                      # Validation tests (existing, unchanged)
 ```
 
+### Core Relationship: Rules Inform Protocols
+
+Rules and protocols are not independent — **protocols are informed by rules**. The relationship differs between static and dynamic:
+
+```
+STATIC RULES (always loaded):
+┌─────────────────────────────────────────┐
+│ rules/static/context_modification.md    │
+│                                         │
+│ ## Rule                                 │
+│ Always show a diagram before modifying  │
+│ AI context files.                       │
+│                                         │
+│ ## Protocol (inline)                    │
+│ 1. Identify all files to change         │
+│ 2. Draw diagram with full paths         │
+│ 3. Wait for user approval               │
+│ 4. Execute changes exactly as approved  │
+│ 5. Commit and push                      │
+└─────────────────────────────────────────┘
+  ↑ Full protocol included — always in context anyway
+
+DYNAMIC RULES (loaded by path match):
+┌─────────────────────────────────────────┐
+│ rules/dynamic/research_workflow.md      │
+│                                         │
+│ ---                                     │
+│ paths: layer_-1_research/**             │
+│ ---                                     │
+│                                         │
+│ ## When                                 │
+│ Working in research directories.        │
+│                                         │
+│ ## Why                                  │
+│ Research follows stage progression.     │
+│                                         │
+│ ## What To Do                           │
+│ Follow: protocols/research_workflow.md  │
+│ Use skill: /stage-workflow              │
+└─────────────────────────────────────────┘
+  ↑ Trigger only — references protocol for the full procedure
+
+┌─────────────────────────────────────────┐
+│ protocols/research_workflow.md          │
+│                                         │
+│ ## Research Workflow Protocol            │
+│ 1. Identify current stage (01-11)       │
+│ 2. Read stage outputs directory         │
+│ 3. Check status.json for progress       │
+│ 4. Produce deliverables for the stage   │
+│ 5. Update status.json                   │
+│ 6. Create handoff if ending session     │
+└─────────────────────────────────────────┘
+  ↑ Full procedure — loaded on-demand when referenced
+```
+
+**Why this split matters:**
+- Static rules are always in context, so including the protocol inline costs nothing extra
+- Dynamic rules are loaded conditionally — keeping them lightweight (triggers only) minimizes context when the rule loads
+- The full procedure lives in protocols/ and is loaded only when the agent needs to execute it
+- This gives two levels of progressive disclosure: the rule triggers awareness, the protocol provides instruction
+
 ### What Changed
 
 | Component | Before | After |
@@ -100,6 +163,7 @@ Only `layer_0/.0agnostic/` has a fuller structure with rules, scripts, templates
 | Dynamic rules | `sub_layer_0_02_rules/dynamic/` | `.0agnostic/rules/dynamic/` |
 | Protocols | `sub_layer_0_03_protocols/` | `.0agnostic/protocols/` |
 | Setup-dependent | `sub_layer_0_04+_setup_dependant/` | `.0agnostic/knowledge/setup/` or tool-specific in `.1merge/` |
+| Resources | Scattered (templates in various locations) | `.0agnostic/knowledge/resources/` |
 | Skills | `.0agnostic/skills/` | `.0agnostic/skills/` (unchanged) |
 | Agents | `.0agnostic/agents/` | `.0agnostic/agents/` (unchanged) |
 
@@ -122,6 +186,7 @@ Only `layer_0/.0agnostic/` has a fuller structure with rules, scripts, templates
 - Via @import references from CLAUDE.md or rules
 - Via skill references ("read knowledge/X before proceeding")
 - Via explicit agent search when working in related areas
+- Via protocol references (protocols point to knowledge for background)
 - NOT auto-loaded — too large for static context
 
 **Why NOT auto-loaded:** Knowledge files are reference material. Loading 38+ files into every API message wastes context budget. Agents should pull knowledge on-demand when the task requires it.
@@ -140,63 +205,154 @@ Only `layer_0/.0agnostic/` has a fuller structure with rules, scripts, templates
 - Detailed principle documents: stay in `knowledge/principles/` and are accessed on-demand
 - This is a "promote the summary, reference the detail" pattern
 
-### rules/static/
+### knowledge/resources/
 
-**Purpose:** Rules that must be followed in every session, regardless of context. These are the highest-priority behavioral constraints.
+**Purpose:** Supporting material that knowledge files reference — templates, databases, data tables, examples, and other reference artifacts.
 
 **Contents:**
-- AI context modification protocol
-- Commit/push rules
-- Context traversal requirements
-- File path linking rule
-- Documentation protocol
+- Templates (entity templates, document templates, boilerplate)
+- Data tables and lookup references
+- Example files and sample configurations
+- Databases or structured data that knowledge files point to
+- Diagrams, schemas, and visual references
+
+**How agents access it:**
+- Referenced from within knowledge files ("see resources/entity_template.md")
+- Referenced from protocols ("use the template at knowledge/resources/...")
+- Never accessed directly by rules — rules reference protocols or knowledge, which in turn reference resources
+- NOT auto-loaded — pulled only when a knowledge file or protocol needs it
+
+**Relationship:** Resources are the leaf nodes of the reference chain. Knowledge files explain concepts and point to resources for concrete artifacts. Protocols use resources when executing procedures (e.g., "create entity from template at knowledge/resources/...").
+
+### rules/static/
+
+**Purpose:** Rules that must be followed in every session, regardless of context. These are the highest-priority behavioral constraints. **Static rules include their full protocol inline** — since they're always loaded anyway, there's no context cost to including the complete procedure.
+
+**Contents:**
+- AI context modification protocol (rule + full procedure)
+- Commit/push rules (rule + full procedure)
+- Context traversal requirements (rule + full procedure)
+- File path linking rule (rule + full procedure)
+- Documentation protocol (rule + full procedure)
+
+**Structure of a static rule file:**
+```markdown
+# Rule: AI Context Modification Protocol
+
+## Constraint
+ALWAYS show a diagram before modifying AI context files.
+NEVER proceed without explicit user approval.
+
+## Protocol
+1. Identify all files that will change
+2. Draw a complete diagram with full paths
+3. Present to user and wait for approval
+4. Execute changes exactly as approved
+5. Stage, commit with [AI Context] prefix, push
+```
 
 **Sync behavior:**
 - `agnostic-sync.sh` copies these to `.claude/rules/` (and equivalent for other tools)
 - Claude Code auto-loads all `.md` files in `.claude/rules/` at session start with high priority
 - No agent decision needed — the tool handles auto-loading
 
-**Key property:** Files here are loaded into EVERY API message. Keep them concise. If a rule needs detailed explanation, put the summary in `rules/static/` and the full document in `knowledge/`.
+**Key property:** Files here are loaded into EVERY API message. They include both the constraint AND the procedure because both are always needed. The agent sees the rule and knows exactly what to do — no second lookup required.
 
 ### rules/dynamic/
 
-**Purpose:** Rules that apply only in specific contexts — certain directories, file types, or project areas.
+**Purpose:** Rules that apply only in specific contexts — certain directories, file types, or project areas. **Dynamic rules contain only triggers** — when, where, why, and a description of what to do. The full procedure lives in `protocols/` and is referenced by the dynamic rule.
 
 **Contents:**
-- Path-scoped rules (e.g., "when in research directories, do X")
-- File-type-scoped rules (e.g., "when editing .gab.jsonld files, do Y")
-- Project-specific rules
+- Path-scoped triggers (e.g., "when in research directories, follow protocol X")
+- File-type-scoped triggers (e.g., "when editing .gab.jsonld files, follow protocol Y")
+- Project-specific triggers
+
+**Structure of a dynamic rule file:**
+```yaml
+---
+paths: layer_-1_research/**
+---
+```
+```markdown
+# Trigger: Research Stage Workflow
+
+## When
+Working in any research directory (`layer_-1_research/`).
+
+## Where
+All research layers, features, sub-features, and their stage directories.
+
+## Why
+Research follows a structured stage progression (01-11). Skipping stages
+or working in the wrong stage produces disorganized output.
+
+## What To Do
+Follow the research workflow protocol:
+→ `protocols/research_workflow.md`
+→ Or invoke skill: `/stage-workflow`
+
+## Description
+Ensures research work proceeds through stages systematically,
+producing deliverables at each stage before advancing.
+```
 
 **Sync behavior:**
-- `agnostic-sync.sh` copies these to `.claude/rules/` with YAML frontmatter:
-  ```yaml
-  ---
-  paths: layer_-1_research/**
-  ---
-  ```
+- `agnostic-sync.sh` copies these to `.claude/rules/` with YAML `paths:` frontmatter
 - Claude Code auto-loads these only when the agent works with matching file paths
 - Other tools use their equivalent path-scoping mechanism
 
-**Key property:** Files here are loaded only when relevant. This is the primary mechanism for reducing context waste while keeping rules available.
+**Key property:** Dynamic rules are lightweight triggers. They tell the agent WHEN something applies and WHERE to find the full procedure — but they don't include the procedure itself. This keeps them small so path-matching loads minimal context.
+
+**Why triggers only:** Dynamic rules load conditionally based on path. If the agent is working in a research directory, the trigger loads and says "follow this protocol." The full protocol loads only if the agent actually needs to execute it. Two levels of progressive disclosure: trigger → protocol.
 
 ### protocols/
 
-**Purpose:** Step-by-step procedures for recurring workflows. These are action sequences, not behavioral constraints.
+**Purpose:** Full step-by-step procedures for recurring workflows. Protocols are the "how to do it" — the complete instruction set. **Protocols are informed by rules** — rules define the constraints and triggers, protocols define the execution.
 
 **Contents:**
-- Context loading protocol
-- Entity creation workflow
-- Session handoff procedure
-- Stage transition workflow
-- Hierarchy adoption checklist
+- Context loading protocol (full procedure)
+- Entity creation workflow (full procedure)
+- Session handoff procedure (full procedure)
+- Stage transition workflow (full procedure)
+- Hierarchy adoption checklist (full procedure)
+- Research workflow protocol (full procedure)
+
+**Structure of a protocol file:**
+```markdown
+# Protocol: Entity Creation
+
+## Prerequisites
+- Current layer and stage identified
+- Entity type determined (project, feature, sub-feature)
+
+## Steps
+1. Read entity structure template from `knowledge/resources/entity_template/`
+2. Create directory structure per template
+3. Create `0AGNOSTIC.md` using template from `knowledge/resources/templates/`
+4. Create `.0agnostic/` with appropriate subdirectories
+5. Create `.1merge/` with tool-specific override directories
+6. Run `agnostic-sync.sh` to generate tool files
+7. Create `0INDEX.md`
+8. Commit and push
+
+## References
+- Template: `knowledge/resources/templates/0AGNOSTIC.md.template`
+- Entity types: `knowledge/entity_lifecycle/ENTITY_TYPES.md`
+- Naming: `knowledge/naming_conventions/HIERARCHY_NAMING_CONVENTION.md`
+```
+
+**Relationship to rules:**
+- **Static rules** include protocols inline (always loaded, no extra cost)
+- **Dynamic rules** reference protocols by path (loaded on-demand when needed)
+- Protocols may reference `knowledge/` files for background and `knowledge/resources/` for templates and artifacts
 
 **Sync behavior:**
-- `agnostic-sync.sh` transforms these into `.claude/skills/*/SKILL.md` format
+- `agnostic-sync.sh` transforms protocols into `.claude/skills/*/SKILL.md` format
 - Each protocol becomes a skill with WHEN/WHEN NOT conditions
 - Skill descriptions load at session start (~16K char budget)
 - Full protocol content loads only when the skill is invoked
 
-**Key distinction from rules:** Rules say "always do X" or "never do Y." Protocols say "when doing Z, follow these steps." Rules are constraints; protocols are procedures.
+**Key distinction from rules:** Rules define constraints ("always/never") and triggers ("when X, do Y"). Protocols define procedures ("step 1, step 2, step 3"). A rule without a protocol tells you what to do but not how. A protocol without a rule has no trigger — the agent won't know when to use it. Together they form a complete instruction.
 
 ---
 
@@ -324,20 +480,14 @@ The `layer_0/layer_0_04_sub_layers/` directory is dissolved. Its contents migrat
 
 ---
 
-## agnostic-sync.sh Changes Required
+## Related: Multi-Avenue Redundancy, Sync, and .1merge
 
-The existing `agnostic-sync.sh` generates CLAUDE.md, AGENTS.md, GEMINI.md, OPENAI.md from `0AGNOSTIC.md`. It needs to be extended to also sync:
+The internal structure described above is one component of the larger 0Agnostic System. The other components are documented in dedicated files:
 
-1. **rules/static/** → `.claude/rules/` (copy .md files)
-2. **rules/dynamic/** → `.claude/rules/` (copy .md files, add YAML frontmatter if not present)
-3. **protocols/** → `.claude/skills/` (transform to SKILL.md format or copy if already in that format)
-4. **skills/** → `.claude/skills/` (already handled, verify)
-5. **Apply .1merge/ overrides** after syncing (existing pattern)
-
-The script should also handle format transformation for non-Claude tools:
-- Cursor: `.md` → `.mdc` with appropriate metadata
-- Codex: copy to `.agents/skills/`
-- Gemini: copy to `.gemini/extensions/`
+- **[Multi-Avenue Redundancy](multi_avenue_redundancy.md)** — How all 8 context avenues link together, effectiveness per tool, AALang/GAB integration, and the "any-one-fires" resilience model
+- **[Sync System](sync_system.md)** — How `agnostic-sync.sh` transforms `.0agnostic/` content into tool-specific formats (`.claude/`, `.cursor/`, `.codex/`, etc.)
+- **[.1merge Override System](merge_system.md)** — The three-tier merge system for tool-specific customizations
+- **[System Overview](README.md)** — How all components connect
 
 ---
 

@@ -251,29 +251,29 @@ Skill invocation in Claude Code is non-deterministic. The LLM reads skill descri
 
 ### Design Approaches
 
-#### Approach A: Multi-Layer Redundancy
+#### Approach A: Multi-Avenue Redundancy
 
-Don't rely on a single mechanism. Use multiple independent triggers so that if one fails, another catches it.
+Don't rely on a single mechanism. Use multiple independent avenues so that if one fails, another catches it.
 
 ```
-Layer 1: Explicit jq instructions in CLAUDE.md
+Avenue 1: Explicit jq instructions in CLAUDE.md
   → Agent runs jq on JSON-LD → output says "use /skill-X"
   → Most reliable: "run this command" is concrete and actionable
 
-Layer 2: Improved skill descriptions with WHEN/WHEN NOT
+Avenue 2: Improved skill descriptions with WHEN/WHEN NOT
   → YAML frontmatter with explicit trigger conditions
   → Fallback: if jq didn't run, descriptions catch the case
 
-Layer 3: Integration summaries (.integration.md)
+Avenue 3: Integration summaries (.integration.md)
   → Markdown tables mapping situations to skills
   → Second fallback: readable reference with no tool calls needed
 
-Layer 4: Path-specific rules (.claude/rules/)
+Avenue 4: Path-specific rules (.claude/rules/)
   → Auto-load when entering matching directories
   → Reinforcement: rules say "use /skill-X when in this context"
 ```
 
-Each layer independently points to the same skill. The more layers that fire, the higher the probability of correct invocation.
+Each avenue independently points to the same skill. The more avenues that fire, the higher the probability of correct invocation.
 
 #### Approach B: Strong Skill Descriptions
 
@@ -351,7 +351,7 @@ This prevents skills from being silently dropped when there are many skills. How
 
 No single approach is sufficient. The recommended design combines all four:
 
-1. **Multi-layer redundancy (A)** — structural insurance against any single mechanism failing
+1. **Multi-avenue redundancy (A)** — structural insurance against any single mechanism failing
 2. **Strong descriptions (B)** — each skill's own defense against being missed
 3. **Trigger tables (C)** — compact static lookup for common situations
 4. **Rules as triggers (D)** — automatic, path-based skill activation

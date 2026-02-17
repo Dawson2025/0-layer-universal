@@ -245,7 +245,7 @@ The agent can navigate the system — up to parent context, down to child contex
 |-----|--------------|--------------|
 | Static context budget | 717 lines (bloated) | <400 lines (lean) |
 | Dynamic loading | Ad-hoc, inconsistent | Systematic via triggers, reference chains |
-| Skill invocation | Probabilistic, unreliable | Multi-layer redundancy (jq + descriptions + integration summaries) |
+| Skill invocation | Probabilistic, unreliable | Multi-avenue redundancy (jq + descriptions + integration summaries) |
 | Agnostic sync | Exists, basic | Full coverage with .1merge/ overrides |
 | AI self-maintenance | Manual episodic memory | Automated session records, status updates |
 | Reference chains | Implicit (agent discovers) | Explicit (trigger tables, 5-hop maximum) |
