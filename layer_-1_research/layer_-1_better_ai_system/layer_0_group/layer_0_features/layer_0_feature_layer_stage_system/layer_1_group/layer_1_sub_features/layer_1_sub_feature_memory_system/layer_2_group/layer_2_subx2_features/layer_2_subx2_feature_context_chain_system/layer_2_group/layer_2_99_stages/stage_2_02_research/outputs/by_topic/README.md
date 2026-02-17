@@ -80,6 +80,8 @@ See [problems_and_vision.md](02_problem_analysis/problems_and_vision.md) for ful
 |------|-------|
 | [referencing_methods_and_skill_invocation.md](04_design/referencing_methods_and_skill_invocation.md) | All 11 referencing methods surveyed + 5 design approaches for skill invocation |
 | [sublayers_vs_dot_folders.md](04_design/sublayers_vs_dot_folders.md) | **PRIMARY RESEARCH** — Should sub-layers (knowledge, rules, protocols) live in separate directories or inside dot folders (.claude/, .0agnostic/)? Auto-discovery analysis, tool comparison, migration mapping |
+| [agnostic_internal_structure.md](04_design/agnostic_internal_structure.md) | **KEY DESIGN** — Canonical .0agnostic/ internal structure with knowledge/principles, rules/static+dynamic, protocols. Sync flow, inheritance model, comparison with sub-layers |
+| [sub_layer_migration_map.md](04_design/sub_layer_migration_map.md) | Detailed file-by-file migration map from sub-layer hierarchy into .0agnostic/ internal structure. 7-phase execution plan |
 
 ### architecture/ — Architecture decisions and technical approaches
 | File | Topic |

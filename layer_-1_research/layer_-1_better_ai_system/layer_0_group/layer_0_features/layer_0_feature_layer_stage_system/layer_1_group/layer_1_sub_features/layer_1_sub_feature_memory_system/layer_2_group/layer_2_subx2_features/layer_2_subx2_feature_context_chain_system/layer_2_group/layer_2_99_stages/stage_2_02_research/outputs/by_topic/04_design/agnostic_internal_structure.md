@@ -1,0 +1,345 @@
+# Design — .0agnostic/ Internal Structure
+
+## Purpose
+
+Design document defining the canonical internal structure of `.0agnostic/` directories. Sub-layers (knowledge, rules, protocols) are dissolved as standalone directories and absorbed into `.0agnostic/` as internal subdirectories, preserving the taxonomy while gaining native tool integration through sync.
+
+---
+
+## Decision
+
+**Sub-layers become subdirectories inside `.0agnostic/`.**
+
+The organizational taxonomy (knowledge, rules, protocols) is preserved — it moves from being a parallel directory structure (`layer_0_04_sub_layers/sub_layer_0_XX_*`) into the `.0agnostic/` directory that every entity already has. From there, `agnostic-sync.sh` syncs content to each tool's native dot folder (`.claude/`, `.cursor/`, `.codex/`, `.gemini/`).
+
+---
+
+## Current State
+
+### Sub-Layer Hierarchy (Being Dissolved)
+
+```
+layer_0/layer_0_04_sub_layers/
+├── sub_layer_0_01_knowledge_system/    (~38 files)
+│   ├── aalang_gab_system/
+│   ├── agent_coordination/
+│   ├── context_loading/
+│   ├── entity_lifecycle/
+│   ├── layer_stage_system/
+│   ├── naming_conventions/
+│   ├── navigation_patterns/
+│   ├── principles/
+│   └── software_engineering_knowledge_system/
+├── sub_layer_0_02_rules/               (~200+ files)
+│   ├── 0_every_api_request/
+│   ├── 0_instruction_docs/
+│   ├── 1_scenario_based/
+│   ├── 3_archive_docs/
+│   ├── dynamic/
+│   ├── static/
+│   └── sub_layer_0_04_99_stages/
+├── sub_layer_0_03_protocols/           (~20 files)
+└── sub_layer_0_04+_setup_dependant/    (~100+ files)
+    └── sub_layer_0_05_operating_systems/
+```
+
+### Current .0agnostic/ (Being Extended)
+
+255 `.0agnostic/` directories exist across the hierarchy. Most are minimal:
+
+```
+.0agnostic/                    # Typical minimal structure
+├── agents/
+├── episodic/
+├── hooks/scripts/
+└── skills/
+```
+
+Only `layer_0/.0agnostic/` has a fuller structure with rules, scripts, templates, and tests.
+
+---
+
+## New .0agnostic/ Canonical Structure
+
+```
+.0agnostic/
+├── knowledge/                  # Reference docs — NOT auto-loaded
+│   └── principles/             # Core principles (subset may sync to rules/)
+│
+├── rules/                      # Behavioral constraints — synced to tool dot folders
+│   ├── static/                 # Always-loaded rules (sync to .claude/rules/)
+│   └── dynamic/                # Path-scoped rules (sync with YAML frontmatter)
+│
+├── protocols/                  # Step-by-step procedures — synced as skills
+│
+├── skills/                     # Callable skills (existing, unchanged)
+│   └── */SKILL.md
+│
+├── agents/                     # Agent definitions (existing, unchanged)
+│
+├── episodic_memory/            # Session records (existing, unchanged)
+│   └── index.md
+│
+├── hooks/                      # Pre/post hooks (existing, unchanged)
+│   └── scripts/
+│
+├── scripts/                    # Utility scripts (existing, unchanged)
+│
+├── templates/                  # Templates for entity creation (existing, unchanged)
+│
+└── tests/                      # Validation tests (existing, unchanged)
+```
+
+### What Changed
+
+| Component | Before | After |
+|-----------|--------|-------|
+| Knowledge | `sub_layer_0_01_knowledge_system/` | `.0agnostic/knowledge/` |
+| Principles | `sub_layer_0_01_knowledge_system/principles/` | `.0agnostic/knowledge/principles/` |
+| Static rules | `sub_layer_0_02_rules/static/` | `.0agnostic/rules/static/` |
+| Dynamic rules | `sub_layer_0_02_rules/dynamic/` | `.0agnostic/rules/dynamic/` |
+| Protocols | `sub_layer_0_03_protocols/` | `.0agnostic/protocols/` |
+| Setup-dependent | `sub_layer_0_04+_setup_dependant/` | `.0agnostic/knowledge/setup/` or tool-specific in `.1merge/` |
+| Skills | `.0agnostic/skills/` | `.0agnostic/skills/` (unchanged) |
+| Agents | `.0agnostic/agents/` | `.0agnostic/agents/` (unchanged) |
+
+---
+
+## How Each Subdirectory Works
+
+### knowledge/
+
+**Purpose:** Reference documentation that provides context but should NOT be auto-loaded into every session.
+
+**Contents:**
+- Domain knowledge (aalang_gab_system/, layer_stage_system/, entity_lifecycle/)
+- Agent coordination patterns
+- Navigation guides
+- Naming conventions
+- Software engineering knowledge
+
+**How agents access it:**
+- Via @import references from CLAUDE.md or rules
+- Via skill references ("read knowledge/X before proceeding")
+- Via explicit agent search when working in related areas
+- NOT auto-loaded — too large for static context
+
+**Why NOT auto-loaded:** Knowledge files are reference material. Loading 38+ files into every API message wastes context budget. Agents should pull knowledge on-demand when the task requires it.
+
+### knowledge/principles/
+
+**Purpose:** Core principles that guide all work. A subset of knowledge that is foundational enough to warrant special treatment.
+
+**Contents:**
+- Universal principles that apply to all layers
+- Design principles for the framework
+- Decision-making guidelines
+
+**How agents access it:**
+- Short, critical principles: extracted into `.0agnostic/rules/static/` so they auto-load
+- Detailed principle documents: stay in `knowledge/principles/` and are accessed on-demand
+- This is a "promote the summary, reference the detail" pattern
+
+### rules/static/
+
+**Purpose:** Rules that must be followed in every session, regardless of context. These are the highest-priority behavioral constraints.
+
+**Contents:**
+- AI context modification protocol
+- Commit/push rules
+- Context traversal requirements
+- File path linking rule
+- Documentation protocol
+
+**Sync behavior:**
+- `agnostic-sync.sh` copies these to `.claude/rules/` (and equivalent for other tools)
+- Claude Code auto-loads all `.md` files in `.claude/rules/` at session start with high priority
+- No agent decision needed — the tool handles auto-loading
+
+**Key property:** Files here are loaded into EVERY API message. Keep them concise. If a rule needs detailed explanation, put the summary in `rules/static/` and the full document in `knowledge/`.
+
+### rules/dynamic/
+
+**Purpose:** Rules that apply only in specific contexts — certain directories, file types, or project areas.
+
+**Contents:**
+- Path-scoped rules (e.g., "when in research directories, do X")
+- File-type-scoped rules (e.g., "when editing .gab.jsonld files, do Y")
+- Project-specific rules
+
+**Sync behavior:**
+- `agnostic-sync.sh` copies these to `.claude/rules/` with YAML frontmatter:
+  ```yaml
+  ---
+  paths: layer_-1_research/**
+  ---
+  ```
+- Claude Code auto-loads these only when the agent works with matching file paths
+- Other tools use their equivalent path-scoping mechanism
+
+**Key property:** Files here are loaded only when relevant. This is the primary mechanism for reducing context waste while keeping rules available.
+
+### protocols/
+
+**Purpose:** Step-by-step procedures for recurring workflows. These are action sequences, not behavioral constraints.
+
+**Contents:**
+- Context loading protocol
+- Entity creation workflow
+- Session handoff procedure
+- Stage transition workflow
+- Hierarchy adoption checklist
+
+**Sync behavior:**
+- `agnostic-sync.sh` transforms these into `.claude/skills/*/SKILL.md` format
+- Each protocol becomes a skill with WHEN/WHEN NOT conditions
+- Skill descriptions load at session start (~16K char budget)
+- Full protocol content loads only when the skill is invoked
+
+**Key distinction from rules:** Rules say "always do X" or "never do Y." Protocols say "when doing Z, follow these steps." Rules are constraints; protocols are procedures.
+
+---
+
+## Sync Flow
+
+```
+.0agnostic/                         Tool Dot Folders
+─────────────────────────           ─────────────────────────
+rules/static/*.md          ──sync──→ .claude/rules/*.md          (auto-loaded, high priority)
+                           ──sync──→ .cursor/rules/*.mdc         (transformed to .mdc format)
+                           ──sync──→ .codex/ (in AGENTS.md)
+
+rules/dynamic/*.md         ──sync──→ .claude/rules/*.md          (with paths: frontmatter)
+                           ──sync──→ .cursor/rules/*.mdc         (with auto-attach globs)
+
+protocols/*.md             ──sync──→ .claude/skills/*/SKILL.md   (progressive disclosure)
+                           ──sync──→ .codex/.agents/skills/      (Codex skill format)
+
+knowledge/                 ──stay──→ .0agnostic/knowledge/       (accessed via @import/skills)
+
+skills/                    ──sync──→ .claude/skills/             (already synced)
+                           ──sync──→ .codex/.agents/skills/
+
+.1merge/.1claude_merge/    ──merge─→ .claude/                    (tool-specific overrides)
+.1merge/.1cursor_merge/    ──merge─→ .cursor/                    (tool-specific overrides)
+.1merge/.1codex_merge/     ──merge─→ .codex/                     (tool-specific overrides)
+```
+
+### Three-Tier Merge (Existing Pattern, Unchanged)
+
+```
+Tier 1: .0agnostic/           ← Source of truth (tool-agnostic)
+Tier 2: .1merge/.1X_merge/    ← Tool-specific overrides
+Tier 3: .claude/ (generated)  ← Final output (what the tool reads)
+```
+
+---
+
+## Inheritance Across the Hierarchy
+
+Not every `.0agnostic/` needs all subdirectories. The structure is additive:
+
+### Root Level (.0agnostic/)
+```
+.0agnostic/
+├── knowledge/principles/     # Universal principles
+├── rules/static/             # Universal rules (apply everywhere)
+├── protocols/                # Universal protocols
+└── skills/                   # Universal skills
+```
+
+### Layer 0 (layer_0/.0agnostic/)
+```
+.0agnostic/
+├── knowledge/                # Framework knowledge (aalang, entity lifecycle, etc.)
+│   └── principles/           # Layer-0 principles
+├── rules/
+│   ├── static/               # Framework rules
+│   └── dynamic/              # Path-scoped framework rules
+├── protocols/                # Framework protocols
+├── skills/                   # Framework skills
+├── scripts/                  # Utility scripts
+└── templates/                # Entity creation templates
+```
+
+### Project Level (layer_1_project_X/.0agnostic/)
+```
+.0agnostic/
+├── knowledge/                # Project-specific knowledge (if any)
+├── rules/
+│   ├── static/               # Project rules (if any)
+│   └── dynamic/              # Project-specific path rules (if any)
+├── skills/                   # Project skills
+└── episodic_memory/          # Project session history
+```
+
+### Feature/Sub-Feature Level
+```
+.0agnostic/
+├── skills/                   # Feature-specific skills (if any)
+└── episodic_memory/          # Feature session history
+```
+
+**Principle:** The deeper in the hierarchy, the leaner the `.0agnostic/`. Most features only need skills and episodic memory. Knowledge and rules are primarily at root and layer_0 levels.
+
+---
+
+## What Happens to layer_0_04_sub_layers/
+
+The `layer_0/layer_0_04_sub_layers/` directory is dissolved. Its contents migrate:
+
+| Current Location | New Location | Notes |
+|------------------|-------------|-------|
+| `sub_layer_0_01_knowledge_system/aalang_gab_system/` | `layer_0/.0agnostic/knowledge/aalang_gab_system/` | Reference docs |
+| `sub_layer_0_01_knowledge_system/agent_coordination/` | `layer_0/.0agnostic/knowledge/agent_coordination/` | Reference docs |
+| `sub_layer_0_01_knowledge_system/context_loading/` | `layer_0/.0agnostic/knowledge/context_loading/` | Reference docs |
+| `sub_layer_0_01_knowledge_system/entity_lifecycle/` | `layer_0/.0agnostic/knowledge/entity_lifecycle/` | Reference docs |
+| `sub_layer_0_01_knowledge_system/layer_stage_system/` | `layer_0/.0agnostic/knowledge/layer_stage_system/` | Reference docs |
+| `sub_layer_0_01_knowledge_system/naming_conventions/` | `layer_0/.0agnostic/knowledge/naming_conventions/` | Reference docs |
+| `sub_layer_0_01_knowledge_system/navigation_patterns/` | `layer_0/.0agnostic/knowledge/navigation_patterns/` | Reference docs |
+| `sub_layer_0_01_knowledge_system/principles/` | `layer_0/.0agnostic/knowledge/principles/` | Detailed principles |
+| `sub_layer_0_01_knowledge_system/software_engineering_knowledge_system/` | `layer_0/.0agnostic/knowledge/software_engineering/` | Reference docs |
+| `sub_layer_0_02_rules/0_every_api_request/` | `layer_0/.0agnostic/rules/static/` | Auto-loaded rules |
+| `sub_layer_0_02_rules/1_scenario_based/` | `layer_0/.0agnostic/rules/dynamic/` | Path-scoped rules |
+| `sub_layer_0_02_rules/0_instruction_docs/` | `layer_0/.0agnostic/knowledge/instruction_docs/` | Reference (not rules) |
+| `sub_layer_0_02_rules/3_archive_docs/` | Archive or delete | Historical, not active |
+| `sub_layer_0_02_rules/sub_layer_0_04_99_stages/` | Evaluate per stage | Some may be rules, some knowledge |
+| `sub_layer_0_03_protocols/` | `layer_0/.0agnostic/protocols/` | Become skills via sync |
+| `sub_layer_0_04+_setup_dependant/` | `layer_0/.0agnostic/knowledge/setup/` + `.1merge/` | OS-specific → .1merge/ |
+
+---
+
+## Benefits Over Sub-Layer Hierarchy
+
+| Aspect | Sub-Layer Hierarchy | .0agnostic/ Internal |
+|--------|--------------------|--------------------|
+| Auto-discovery | No tool finds them | Tools auto-load from synced dot folders |
+| Priority | Standard (file content) | High (same as CLAUDE.md) for rules |
+| Path scoping | Manual, requires agent awareness | Native YAML frontmatter |
+| Progressive disclosure | None | Skills provide on-demand loading |
+| Context cost | Agent must remember hierarchy structure | No extra context needed |
+| Sync to tools | N/A | agnostic-sync.sh handles it |
+| Industry alignment | Custom pattern | Matches every major tool's convention |
+| Maintenance | Manual cross-referencing | Automated sync scripts |
+
+---
+
+## agnostic-sync.sh Changes Required
+
+The existing `agnostic-sync.sh` generates CLAUDE.md, AGENTS.md, GEMINI.md, OPENAI.md from `0AGNOSTIC.md`. It needs to be extended to also sync:
+
+1. **rules/static/** → `.claude/rules/` (copy .md files)
+2. **rules/dynamic/** → `.claude/rules/` (copy .md files, add YAML frontmatter if not present)
+3. **protocols/** → `.claude/skills/` (transform to SKILL.md format or copy if already in that format)
+4. **skills/** → `.claude/skills/` (already handled, verify)
+5. **Apply .1merge/ overrides** after syncing (existing pattern)
+
+The script should also handle format transformation for non-Claude tools:
+- Cursor: `.md` → `.mdc` with appropriate metadata
+- Codex: copy to `.agents/skills/`
+- Gemini: copy to `.gemini/extensions/`
+
+---
+
+*Design document for .0agnostic/ internal structure*
+*Created: 2026-02-16*
