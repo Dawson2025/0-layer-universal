@@ -68,7 +68,7 @@ MVP required before planning can start: implement all current 8 core avenues of 
 2. Path-specific rules
 3. Skills (progressive disclosure)
 4. `@import` reference chaining
-5. JSON-LD agent definitions (`.gab.jsonld` via jq/native parsing)
+5. JSON-LD graph family (`.gab.jsonld` and related `.jsonld` via jq/native parsing)
 6. Integration summaries (`.integration.md`)
 7. Episodic memory
 8. Direct source fallback (`0AGNOSTIC.md`)
@@ -94,6 +94,14 @@ Post-MVP expansion (after the 8 are validated end-to-end):
 4. Separate design from planning artifacts.
 - Design defines architecture and constraints.
 - Planning consumes design and produces sequencing/execution plan.
+
+5. Treat JSON-LD as a graph family, not a single file type.
+- Include all relevant classes in Avenue 5:
+  - layer orchestrators (`layer_*_orchestrator.gab.jsonld`)
+  - stage orchestrators (`layer_*_99_stages_orchestrator.gab.jsonld`)
+  - stage agents (`stage_*_agent.jsonld`)
+  - layer/feature indexes (`index.jsonld`)
+  - GAB runtime/spec files used by orchestrators (`gab.jsonld`, `gab-runtime.jsonld`, `gab-formats.jsonld`, equivalent project variants)
 
 ## Handoff Contract to Planning Stage
 Planning inputs required from this design stage:

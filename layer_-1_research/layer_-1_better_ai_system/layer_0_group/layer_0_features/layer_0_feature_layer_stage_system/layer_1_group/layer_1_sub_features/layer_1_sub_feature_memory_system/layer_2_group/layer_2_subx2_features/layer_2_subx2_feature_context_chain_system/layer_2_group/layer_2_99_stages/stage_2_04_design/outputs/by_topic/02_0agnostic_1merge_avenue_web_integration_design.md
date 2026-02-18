@@ -28,6 +28,13 @@ Define how `0AGNOSTIC` (source of truth), `.1merge` (tool projections), the cont
 - Loads static and dynamic context via the 8 MVP avenues.
 - Uses references to traverse from coarse context to precise context.
 
+5. JSON-LD Graph Family (Avenue 5 data plane)
+- Layer orchestrators: `layer_*_orchestrator.gab.jsonld`
+- Stage orchestrators: `layer_*_99_stages_orchestrator.gab.jsonld`
+- Stage agents: `stage_*_agent.jsonld`
+- Layer/feature indexes: `index.jsonld`
+- GAB runtime/spec graph files used by orchestrators and agents
+
 ## How They Connect
 1. Author once in `0AGNOSTIC`.
 2. Merge per tool via `.1merge` (`synced -> overrides -> additions`).
@@ -63,9 +70,9 @@ Define how `0AGNOSTIC` (source of truth), `.1merge` (tool projections), the cont
 - Source: generated context files
 - Role: progressive detail resolution
 
-5. JSON-LD definitions
-- Source: stage agent definitions
-- Role: structured mode/state constraints
+5. JSON-LD graph family
+- Source: orchestrator JSON-LDs, stage-agent JSON-LDs, layer/index JSON-LDs, GAB runtime/spec JSON-LDs
+- Role: structured orchestration, layer/stage routing, mode/state constraints, and graph-level references
 
 6. `.integration.md` summaries
 - Source: JSON-LD transpilation
@@ -92,3 +99,4 @@ Define how `0AGNOSTIC` (source of truth), `.1merge` (tool projections), the cont
 2. Generation map from source artifacts to emitted files per tool.
 3. Validation checks for 8 MVP avenues.
 4. Rollback strategy when generated files diverge from source.
+5. JSON-LD inventory and traversal contract covering orchestrator, stage, layer, and index graph classes.

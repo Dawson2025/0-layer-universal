@@ -17,6 +17,12 @@ Out of scope:
 1. Source Modeling
 - Normalize canonical content in `0AGNOSTIC` for rules, skills, knowledge, memory, and references.
 - Ensure each critical rule has both context-chain and reference-chain routes.
+- Build a JSON-LD inventory by class:
+  - layer orchestrators
+  - stage orchestrators
+  - stage agents
+  - layer/feature indexes
+  - GAB runtime/spec graph files
 
 2. Merge Pipeline
 - Define merge precedence: `0_synced -> 1_overrides -> 2_additions`.
@@ -39,6 +45,7 @@ Out of scope:
 
 5. Verification and QA
 - Build an avenue validation matrix by tool and by stage trigger.
+- Build a JSON-LD validation matrix by graph class and query type (discovery, lookup by id, mode extraction, transition extraction).
 - Run scenario tests:
   - fresh task bootstrap
   - path-triggered work
@@ -52,7 +59,7 @@ Out of scope:
 
 ## Milestones
 1. M1 - Canonical + Merge Spec Complete
-- Deliverables: source map, merge policy, emission map.
+- Deliverables: source map, merge policy, emission map, JSON-LD class inventory.
 
 2. M2 - 8 Avenue Wiring Complete
 - Deliverables: all 8 avenues connected and traceable.
@@ -69,6 +76,7 @@ Out of scope:
 3. Generated tool files are traceable back to source and merge tier.
 4. Failure in any single avenue does not block context loading.
 5. Documented fallback to `0AGNOSTIC` verified in test.
+6. Avenue 5 passes for all required JSON-LD classes (orchestrator, stage, layer/index, GAB runtime/spec).
 
 ## Risks and Mitigations
 1. Merge drift across tools
