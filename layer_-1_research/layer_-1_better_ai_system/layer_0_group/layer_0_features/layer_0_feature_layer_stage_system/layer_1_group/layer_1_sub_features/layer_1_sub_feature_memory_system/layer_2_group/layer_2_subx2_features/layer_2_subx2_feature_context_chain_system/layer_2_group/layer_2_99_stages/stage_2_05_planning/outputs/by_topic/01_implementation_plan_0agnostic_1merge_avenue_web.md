@@ -28,10 +28,12 @@ Out of scope:
 - Define merge precedence: `0_synced -> 1_overrides -> 2_additions`.
 - Document conflict policy and deterministic merge behavior.
 - Define expected emitted artifacts per tool.
+- Map canonical classes (`knowledge`, `principles`, `rules`, `protocols`) to emitted artifact targets per tool.
 
 3. Emission and Sync
 - Generate/update tool files from merge outputs.
 - Validate deterministic regeneration (same input -> same output).
+- Add traceability metadata or mapping table: runtime artifact -> merge tier -> canonical source.
 
 4. MVP Avenue Enablement
 - Avenue 1: system prompt chain present and points to next routes.
@@ -42,10 +44,16 @@ Out of scope:
 - Avenue 6: `.integration.md` exists and matches JSON-LD semantics.
 - Avenue 7: episodic memory read/write path works.
 - Avenue 8: direct `0AGNOSTIC` fallback works when projections are absent.
+- Verify static-to-dynamic bridge behavior:
+  - static principles/rules/protocols route to dynamic retrieval where needed
+  - dynamic retrieval does not bypass canonical constraints
 
 5. Verification and QA
 - Build an avenue validation matrix by tool and by stage trigger.
 - Build a JSON-LD validation matrix by graph class and query type (discovery, lookup by id, mode extraction, transition extraction).
+- Build a propagation validation matrix:
+  - canonical class -> synced artifact -> merged output -> runtime load path
+  - include both context chain and reference chain validation cases
 - Run scenario tests:
   - fresh task bootstrap
   - path-triggered work
@@ -56,10 +64,14 @@ Out of scope:
 6. Adoption and Rollout
 - Start with primary tools (Claude/Codex/Cursor/Gemini).
 - Expand to remaining tool projections after baseline passes.
+- For each tool/app, define a best-fit route profile:
+  - primary static surfaces
+  - primary dynamic surfaces
+  - required fallback routes
 
 ## Milestones
 1. M1 - Canonical + Merge Spec Complete
-- Deliverables: source map, merge policy, emission map, JSON-LD class inventory.
+- Deliverables: source map, merge policy, emission map, JSON-LD class inventory, canonical-class propagation map.
 
 2. M2 - 8 Avenue Wiring Complete
 - Deliverables: all 8 avenues connected and traceable.
@@ -70,6 +82,9 @@ Out of scope:
 4. M4 - Rollout + Monitoring
 - Deliverables: adoption checklist, divergence/rollback process.
 
+5. M5 - Cross-Tool Best-Fit Profiles
+- Deliverables: per-tool avenue routing profiles and pass/fail validation evidence.
+
 ## Acceptance Criteria
 1. All 8 MVP avenues pass at least one end-to-end scenario each.
 2. Merge outputs are deterministic and reproducible.
@@ -77,6 +92,9 @@ Out of scope:
 4. Failure in any single avenue does not block context loading.
 5. Documented fallback to `0AGNOSTIC` verified in test.
 6. Avenue 5 passes for all required JSON-LD classes (orchestrator, stage, layer/index, GAB runtime/spec).
+7. Knowledge/principles/rules/protocols propagation is verified end-to-end (source -> sync -> merge -> runtime).
+8. Static-to-dynamic bridging is verified for both context chaining and reference chaining.
+9. Each supported tool/app has a documented best-fit Avenue Web route profile and validated fallback behavior.
 
 ## Risks and Mitigations
 1. Merge drift across tools

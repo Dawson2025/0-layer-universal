@@ -61,6 +61,18 @@ Two mandatory chain types:
 - Provenance metadata for context sources
 - Agent identity assertions for controlled environments
 
+## Canonical Propagation Contract
+`0AGNOSTIC` canonical classes (knowledge, principles, rules, protocols) must propagate into runtime context through sync + merge:
+
+1. Canonical authoring in `0AGNOSTIC`.
+2. Sync into `.1merge/*/0_synced`.
+3. Tool adaptation in `.1merge/*/1_overrides` and `.1merge/*/2_additions`.
+4. Emission to tool-facing context files.
+5. Runtime loading via Avenue Web (context chaining + reference chaining).
+
+Design requirement:
+- Every critical principle/rule/protocol must be traceable from runtime artifact back to canonical source path and merge tier.
+
 ## Minimum Viable Avenue Set (MVP)
 MVP required before planning can start: implement all current 8 core avenues of the Avenue Web.
 

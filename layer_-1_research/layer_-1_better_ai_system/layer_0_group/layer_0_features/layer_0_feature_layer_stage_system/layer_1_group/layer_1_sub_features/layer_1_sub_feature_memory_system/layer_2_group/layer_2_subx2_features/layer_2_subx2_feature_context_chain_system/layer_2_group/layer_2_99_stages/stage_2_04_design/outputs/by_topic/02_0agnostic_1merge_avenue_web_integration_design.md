@@ -42,6 +42,57 @@ Define how `0AGNOSTIC` (source of truth), `.1merge` (tool projections), the cont
 4. Runtime agent follows Avenue Web routes to load only needed context.
 5. Episodic memory and updates feed back into next sessions.
 
+## Propagation Model: 0AGNOSTIC -> Sync -> .1merge -> Avenue Web
+Canonical content classes in `0AGNOSTIC`:
+- knowledge
+- principles
+- rules
+- protocols
+
+Propagation pipeline:
+1. Author/update canonical content in `0AGNOSTIC` trees.
+2. Run sync (`agnostic-sync.sh`) to copy canonical artifacts into `.1merge/*/0_synced`.
+3. Apply tool-specific adjustments in `.1merge/*/1_overrides`.
+4. Add tool-only capabilities in `.1merge/*/2_additions`.
+5. Emit final tool files (system prompt docs, rules, skills, imports, memory surfaces).
+6. Runtime agent consumes emitted files through Avenue Web routes.
+
+This keeps one source of truth while allowing controlled tool specialization.
+
+## Static -> Dynamic Bridging in the Avenue Web
+Context chaining bridge:
+- Static: generated prompts/rules/skills/indexes from `0AGNOSTIC` + `.1merge`.
+- Dynamic: runtime retrieval (skills, JSON-LD traversal, memory, docs/search, feedback).
+- Bridge mechanism: static artifacts contain pointers, triggers, and constraints that invoke dynamic loads only when needed.
+
+Reference chaining bridge:
+- Static references: path rules, trigger tables, imports, index pointers.
+- Dynamic references: tool outputs, query handles, memory links, follow-up selectors.
+- Bridge mechanism: static references route to dynamic resolution endpoints (JSON-LD node queries, skill invocations, memory lookups).
+
+Result:
+- principles/rules from canonical static sources remain authoritative,
+- while dynamic context retrieval provides relevance and efficiency at execution time.
+
+## Cross-Tool Application Model (Best-Fit by Tool)
+The Avenue Web is common architecture; application is tool-specific through `.1merge` outputs and runtime routing.
+
+| Tool/App | Best Static Surfaces | Best Dynamic Surfaces | Best-Fit Strategy |
+|---|---|---|---|
+| Claude Code | `CLAUDE.md`, path rules, skills | tools, hooks, memory, JSON-LD queries | Use strong rule + skill routing; pair with compaction-safe memory hooks. |
+| Codex CLI | `AGENTS.md`/`OPENAI.md`, local files | shell tools, JSON-LD queries, retrieval | Keep static prompts concise; drive dynamic via scripted query paths. |
+| Gemini CLI | `GEMINI.md`, imports | extensions/tools, JSON-LD and retrieval | Lean on imported modular context and extension-driven dynamic lookups. |
+| Cursor IDE/CLI | `.cursor/rules`, AGENTS-style docs | built-in indexing, MCP, terminal tools | Maximize path-attached rules + semantic retrieval from index surfaces. |
+| Windsurf | workspace rules/workflows | memories, runtime retrieval | Route via workflow docs first, then selective memory + JSON-LD lookup. |
+| GitHub Copilot | `.github` instructions/skills | limited dynamic runtime | Bias toward stronger static propagation and short reference chains. |
+| Aider | repo files/instructions | command execution + repo mapping | Use canonical static files + command-driven JSON-LD extraction. |
+| Cline / Roo | mode rule files | memory bank, tools | Mode-scoped static context with explicit dynamic handoffs. |
+| OpenCode / Junie / Amazon Q | platform-native instruction files | varying tool/runtime depth | Keep portable static baseline; dynamically enable only proven runtime routes. |
+
+Design rule:
+- Core Avenue Web semantics remain identical across tools.
+- `.1merge` encodes the per-tool adaptation without forking canonical `0AGNOSTIC` content.
+
 ## Context Chain Mapping
 - Stage-level static context: generated agent files + path rules.
 - Task-level dynamic context: skills, JSON-LD summaries, memory, retrieval.
