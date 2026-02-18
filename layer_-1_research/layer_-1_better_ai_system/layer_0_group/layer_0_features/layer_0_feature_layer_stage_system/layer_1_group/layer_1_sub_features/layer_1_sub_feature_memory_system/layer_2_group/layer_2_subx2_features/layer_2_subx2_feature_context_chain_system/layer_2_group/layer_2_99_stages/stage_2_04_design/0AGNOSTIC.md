@@ -1,4 +1,4 @@
-# context_chain_system — Stage 05: design
+# context_chain_system — Stage 04: design
 
 ## Identity
 Stage 04 (design) for the context_chain_system research sub-feature.

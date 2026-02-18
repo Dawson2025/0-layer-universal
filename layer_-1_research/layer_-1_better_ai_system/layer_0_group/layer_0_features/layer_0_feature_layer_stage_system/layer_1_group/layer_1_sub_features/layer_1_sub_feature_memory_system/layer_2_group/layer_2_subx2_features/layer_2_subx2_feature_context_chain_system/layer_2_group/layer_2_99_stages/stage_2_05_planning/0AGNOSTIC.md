@@ -1,4 +1,4 @@
-# context_chain_system — Stage 04: planning
+# context_chain_system — Stage 05: planning
 
 ## Identity
 Stage 05 (planning) for the context_chain_system research sub-feature.

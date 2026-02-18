@@ -61,19 +61,22 @@ Two mandatory chain types:
 - Provenance metadata for context sources
 - Agent identity assertions for controlled environments
 
-## Minimum Viable Avenue Set (Design Baseline)
-Baseline required before planning can start:
-1. System prompt + generated agent docs
-2. Path rules
-3. Skills
-4. Direct source fallback (`0AGNOSTIC.md`)
-5. Integration summaries (`.integration.md`)
-6. Compaction-safe context bundle
+## Minimum Viable Avenue Set (MVP)
+MVP required before planning can start: implement all current 8 core avenues of the Avenue Web.
 
-Recommended in same wave:
-1. MCP resources/prompts/tools
-2. Semantic search path
-3. Session persistence conventions
+1. System prompt chain (`CLAUDE.md` / `AGENTS.md` / `GEMINI.md`)
+2. Path-specific rules
+3. Skills (progressive disclosure)
+4. `@import` reference chaining
+5. JSON-LD agent definitions (`.gab.jsonld` via jq/native parsing)
+6. Integration summaries (`.integration.md`)
+7. Episodic memory
+8. Direct source fallback (`0AGNOSTIC.md`)
+
+Post-MVP expansion (after the 8 are validated end-to-end):
+1. MCP resources/prompts/tools and advanced MCP primitives
+2. Semantic search and indexing
+3. Policy/telemetry/provenance extensions
 
 ## Design Decisions
 1. Canonical term: `multi_avenue_redundancy_web`.
@@ -101,10 +104,10 @@ Planning inputs required from this design stage:
 
 Planning must not redefine architecture unless new constraints are documented.
 
-## Acceptance Criteria for Stage 2.05
+## Acceptance Criteria for Stage 2.04
 1. Architecture layers and interfaces are explicitly documented.
 2. Context chaining and reference chaining are explicitly distinguished.
-3. Baseline avenue set is defined and testable.
+3. All 8 MVP avenues are defined and testable.
 4. Design-to-planning handoff contract is defined.
 5. Stage order rule is explicit: design before planning.
 
