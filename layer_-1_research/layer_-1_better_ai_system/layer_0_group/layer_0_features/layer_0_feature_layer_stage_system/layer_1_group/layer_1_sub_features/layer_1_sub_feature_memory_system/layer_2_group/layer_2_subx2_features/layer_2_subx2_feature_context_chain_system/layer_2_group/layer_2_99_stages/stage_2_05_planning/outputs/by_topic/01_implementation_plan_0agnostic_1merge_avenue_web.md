@@ -17,12 +17,16 @@ Out of scope:
 1. Source Modeling
 - Normalize canonical content in `0AGNOSTIC` for rules, skills, knowledge, memory, and references.
 - Ensure each critical rule has both context-chain and reference-chain routes.
+- Establish canonical class filesystem structure under `.0agnostic`:
+  - `knowledge/`, `principles/`, `rules/`, `protocols/`
+  - with explicit source ownership and traceability requirements
 - Build a JSON-LD inventory by class:
   - layer orchestrators
   - stage orchestrators
   - stage agents
   - layer/feature indexes
   - GAB runtime/spec graph files
+  - orchestrator project variants (including gabwork/orchestrator-specific variants where present)
 
 2. Merge Pipeline
 - Define merge precedence: `0_synced -> 1_overrides -> 2_additions`.
@@ -34,6 +38,8 @@ Out of scope:
 - Generate/update tool files from merge outputs.
 - Validate deterministic regeneration (same input -> same output).
 - Add traceability metadata or mapping table: runtime artifact -> merge tier -> canonical source.
+- Add transpilation validation: each JSON-LD in active hierarchy has matching `.integration.md`.
+- Add static-chain budget validation for always-loaded context files.
 
 4. MVP Avenue Enablement
 - Avenue 1: system prompt chain present and points to next routes.
@@ -60,6 +66,16 @@ Out of scope:
   - skill-triggered deep dive
   - compaction/restart recovery
   - fallback path activation
+  - compaction-safe context rehydration
+
+7. Research Gap Closure
+- Translate research constraints into executable checks:
+  - no canonical-class omissions in `.0agnostic`
+  - no JSON-LD/integration summary drift
+  - no unbounded static-chain growth
+- Add per-tool best-fit validation profile:
+  - static-first tools (Copilot/Amazon Q-class) must pass with minimal dynamic dependency
+  - dynamic-capable tools (Claude/Codex/Cursor/Gemini-class) must pass both static and dynamic routes
 
 6. Adoption and Rollout
 - Start with primary tools (Claude/Codex/Cursor/Gemini).
@@ -85,6 +101,9 @@ Out of scope:
 5. M5 - Cross-Tool Best-Fit Profiles
 - Deliverables: per-tool avenue routing profiles and pass/fail validation evidence.
 
+6. M6 - Research Alignment Closure
+- Deliverables: checklist showing each major research requirement is either implemented, deferred with rationale, or explicitly out of scope.
+
 ## Acceptance Criteria
 1. All 8 MVP avenues pass at least one end-to-end scenario each.
 2. Merge outputs are deterministic and reproducible.
@@ -95,6 +114,8 @@ Out of scope:
 7. Knowledge/principles/rules/protocols propagation is verified end-to-end (source -> sync -> merge -> runtime).
 8. Static-to-dynamic bridging is verified for both context chaining and reference chaining.
 9. Each supported tool/app has a documented best-fit Avenue Web route profile and validated fallback behavior.
+10. JSON-LD coverage includes orchestrator variants (layer/stage/runtime/spec/gabwork variants where present), and each has a matching integration summary.
+11. Static-chain budget and compaction-safe subset checks pass.
 
 ## Risks and Mitigations
 1. Merge drift across tools

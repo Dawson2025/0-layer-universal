@@ -73,6 +73,25 @@ Two mandatory chain types:
 Design requirement:
 - Every critical principle/rule/protocol must be traceable from runtime artifact back to canonical source path and merge tier.
 
+## Canonical Filesystem Contract (.0agnostic)
+The design must include an explicit canonical filesystem model for source classes and routing metadata.
+
+Required canonical class surfaces:
+- `.0agnostic/knowledge/`
+- `.0agnostic/principles/`
+- `.0agnostic/rules/`
+- `.0agnostic/protocols/`
+
+Required system surfaces:
+- `.0agnostic/hooks/` (sync/validation/compaction hooks)
+- `.0agnostic/episodic_memory/` (cross-session memory)
+- `.0agnostic/sync-config.yaml` (projection rules)
+
+Required design behavior:
+- Canonical class paths are tool-agnostic sources only.
+- Tool-specific behavior is encoded in `.1merge`.
+- Emitted tool files must include source traceability to canonical class and merge tier.
+
 ## Minimum Viable Avenue Set (MVP)
 MVP required before planning can start: implement all current 8 core avenues of the Avenue Web.
 
@@ -115,6 +134,27 @@ Post-MVP expansion (after the 8 are validated end-to-end):
   - layer/feature indexes (`index.jsonld`)
   - GAB runtime/spec files used by orchestrators (`gab.jsonld`, `gab-runtime.jsonld`, `gab-formats.jsonld`, equivalent project variants)
 
+6. Treat JSON-LD + integration summaries as one enforced pair.
+- Every JSON-LD graph artifact in active hierarchy must have a matching `.integration.md`.
+- Integration summaries are generated artifacts and must not drift from JSON-LD semantics.
+
+7. Enforce static-chain budget and compaction-safe subset.
+- Keep always-loaded static chain compact; move deep detail behind reference chains.
+- Define and preserve a compaction-safe subset (identity, critical rules, active stage pointers, fallback routes).
+
+## JSON-LD Coverage Contract (Avenue 5)
+Design-time coverage must include all runtime-relevant graph classes, including orchestrator families identified in research:
+- layer orchestrators: `layer_*_orchestrator.gab.jsonld`
+- stage orchestrators: `layer_*_99_stages_orchestrator.gab.jsonld`
+- stage agents: `stage_*_agent.jsonld`
+- layer/feature/stage indexes: `index.jsonld`
+- runtime/spec graphs: `gab.jsonld`, `gab-runtime.jsonld`, `gab-formats.jsonld`
+- orchestrator project variants (including gabwork/orchestrator-specific variants where present)
+
+Validation rule:
+- Avenue 5 passes only when required graph classes are discoverable.
+- Avenue 6 passes only when all discovered graph files have matching integration summaries.
+
 ## Handoff Contract to Planning Stage
 Planning inputs required from this design stage:
 1. Canonical architecture and layer model
@@ -143,6 +183,30 @@ Planning must not redefine architecture unless new constraints are documented.
 
 4. Inconsistent team behavior.
 - Mitigation: generated team docs and sync process from `0AGNOSTIC.md`.
+
+5. Static chain inflation reduces reliability.
+- Mitigation: enforce static-chain budget and push detail to reference-chained dynamic routes.
+
+6. JSON-LD coverage blind spots (missing orchestrator variants).
+- Mitigation: class-based JSON-LD inventory and validation, not hardcoded single-file assumptions.
+
+## Ranked Avenue Expansion (Post-MVP)
+After the 8-avenued MVP is stable, use this ranked expansion order:
+
+Tier 1 (next):
+1. MCP resources/prompts/tools
+2. Team context distribution automation
+3. Compaction hooks and recovery surfaces
+
+Tier 2:
+1. Semantic search/indexing
+2. Documentation APIs
+3. Plugin/extension packaging
+
+Tier 3:
+1. CI/CD feedback loops
+2. LSP-backed context assist
+3. Multi-agent isolation patterns
 
 ## Next Artifact (Planning Stage)
 Planning should produce:
