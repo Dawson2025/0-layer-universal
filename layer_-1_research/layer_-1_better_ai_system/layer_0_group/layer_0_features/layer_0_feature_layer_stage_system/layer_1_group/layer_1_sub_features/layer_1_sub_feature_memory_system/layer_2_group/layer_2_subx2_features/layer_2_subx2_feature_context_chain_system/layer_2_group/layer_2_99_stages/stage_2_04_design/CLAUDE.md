@@ -1,9 +1,9 @@
 # Claude Code Context
 
 ## Identity
-Stage 04 (planning) for the context_chain_system research sub-feature.
+Stage 04 (design) for the context_chain_system research sub-feature.
 - **Parent**: `../../0AGNOSTIC.md`
-- **Purpose**: Create implementation plan
+- **Purpose**: Technical design and architecture
 
 
 
