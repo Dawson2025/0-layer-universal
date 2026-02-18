@@ -2,7 +2,7 @@
 
 ## Purpose
 
-How all context chaining avenues link together to ensure context is reliably loaded — even when individual avenues fail. Covers effectiveness per tool, how AALang/GAB and JSON-LD integrate, how the system prompt ties everything together, and the "any-one-fires" resilience model.
+How all context chaining avenues link together to ensure context is reliably loaded — even when individual avenues fail. This network is the **Avenue Web** (also called the **Web of Avenues** and `multi_avenue_redundancy_web`): a graph of context paths and reference paths that reinforce each other. Covers effectiveness per tool, how AALang/GAB and JSON-LD integrate, how the system prompt ties everything together, and the "any-one-fires" resilience model.
 
 ---
 
@@ -133,7 +133,7 @@ Avenue 5 (JSON-LD) ── generates ──→ Avenue 6 (.integration.md)
     jsonld-to-md.sh transpiles          Same info, markdown format
 ```
 
-**Every avenue points to at least one other avenue.** The system is a web, not a chain.
+**Every avenue points to at least one other avenue.** The system is an **Avenue Web**, not a single chain.
 
 ---
 
@@ -1156,7 +1156,7 @@ Avenues that **cannot** be leveraged: vector search indexing, IDE inspections, L
 
 ## Unexplored and Novel Context Avenues
 
-Research (February 2026) identified 21 context delivery avenues beyond the original 8. These range from MCP server primitives to multi-agent isolation patterns. Each is assessed for mechanism, current tool support, reliability, and agnostic system integration potential.
+Research (February 2026) identified 27 context delivery avenues beyond the original 8. These range from MCP server primitives to multi-agent isolation patterns. Each is assessed for mechanism, current tool support, reliability, and agnostic system integration potential.
 
 ---
 
@@ -1185,6 +1185,47 @@ Research (February 2026) identified 21 context delivery avenues beyond the origi
 | 19 | Agent Client Protocol (ACP) | Standardized editor-agent communication | Emerging | Future target | 4 |
 | 20 | Context Compaction Hooks | Re-inject critical context after compaction | High | Strong | 1 |
 | 21 | Multi-Agent Isolation | Subagents with task-specific context windows | High | Strong | 2 |
+| 22 | Agent-to-Agent Protocol (A2A) | Standardized cross-agent handoff and delegation | Emerging | Strong (orchestration) | 2 |
+| 23 | MCP Advanced Primitives | Roots, Elicitation, Sampling, list_changed notifications | High | Strong | 1 |
+| 24 | Telemetry-as-Context | OpenTelemetry traces/spans as runtime context | High | Strong (ops + debugging) | 2 |
+| 25 | Policy-as-Context | Runtime policy decision engines (OPA/OPAL) gating context/tool use | Medium-High | Strong (governance) | 2 |
+| 26 | Provenance/Attestation | SLSA/in-toto/Sigstore trust metadata for context/toolchain integrity | Medium | Strong (trust/compliance) | 3 |
+| 27 | Credentialed Agent Identity | Verifiable credentials for agent identity/authorization context | Emerging | Moderate-Strong | 3 |
+
+---
+
+### Context Chaining vs Reference Chaining
+
+This system uses both context chaining (what content is loaded) and reference chaining (what pointer is followed next).
+
+Both chaining types together form the **Avenue Web** (the **Web of Avenues**, `multi_avenue_redundancy_web`).
+
+| Chain Type | Goal | Static Examples | Dynamic Examples |
+|-----------|------|-----------------|-----------------|
+| Context chaining | Load sufficient working context at each step | AGENTS.md, rules files, repo maps, MCP Resources | Session memory, semantic retrieval, CI feedback, telemetry |
+| Reference chaining | Route the agent to the next context artifact/tool/query | @imports, file pointers, index manifests, path rules | MCP Prompts/templates, elicitation flows, tool outputs with follow-up handles |
+
+Practical rule: every critical instruction should be reachable through both a context path and a reference path, with at least one static and one dynamic route.
+
+---
+
+### Ranked Avenues to Use (Context + Reference Chaining)
+
+Ranking emphasizes reliability, cross-tool portability, and immediate implementation value for the 0Agnostic system.
+
+| Rank | Avenue(s) | Why Use First |
+|------|-----------|---------------|
+| 1 | 1 + 13 + 23 (MCP Resources/Prompts + Custom Tools + Advanced MCP Primitives) | Highest portability and control; covers static context, dynamic references, and runtime refresh. |
+| 2 | 15 + 20 (Team Distribution + Compaction Hooks) | Makes behavior consistent across users and prevents context loss after compaction. |
+| 3 | 9 + 7 + 12 (Session Persistence + Embeddings + Semantic Search) | Best path to token-efficient dynamic loading with high recall. |
+| 4 | 24 (Telemetry-as-Context) | Converts failures and runtime behavior into actionable context for fast iteration. |
+| 5 | 8 + 11 (Repo Maps + Documentation APIs) | Strong retrieval quality for code structure and dependency docs. |
+| 6 | 2 + 25 (Hooks + Policy-as-Context) | Enforces lifecycle and governance constraints at runtime. |
+| 7 | 22 + 21 (A2A + Multi-Agent Isolation) | Scales context handling across specialist agents without full-context sharing. |
+| 8 | 18 + 4 (Plugins + IDE Workspace Settings) | Good distribution and native UX, weaker portability. |
+| 9 | 26 + 27 (Provenance + Credentialed Identity) | Important for trust/compliance and enterprise governance; less immediate for core loading. |
+| 10 | 3 + 10 + 14 + 16 + 17 | Valuable supplemental sources, but secondary for core chaining architecture. |
+| 11 | 19 + 5 + 6 | Monitor or avoid as primary context channels for now. |
 
 ---
 
@@ -1361,15 +1402,21 @@ New open standard by Zed Editor (Aug 2025) -- standardizes editor-agent communic
 | Priority | Action | Avenue(s) |
 |----------|--------|-----------|
 | **Now** | Build MCP server for layer-stage knowledge | 1 (Resources/Prompts), 13 (Custom Tools) |
+| **Now** | Implement advanced MCP primitives in server/client contracts | 23 (Roots, Elicitation, Sampling, list_changed) |
 | **Now** | Add AGENTS.md generation to agnostic-sync.sh | 15 (Team Distribution) |
 | **Now** | Define compaction-safe context | 20 (Compaction Hooks) |
 | **Next** | Evaluate semantic search MCP server | 7 (Embeddings), 12 (Semantic Search) |
+| **Next** | Add telemetry pipeline into agent feedback loops | 24 (Telemetry-as-Context) |
 | **Next** | Add documentation source mapping | 11 (Documentation APIs) |
+| **Next** | Add policy enforcement checks for tool/context admission | 25 (Policy-as-Context), 2 (Hooks) |
 | **Next** | Evaluate ai-rulez / AIS compatibility | 15 (Team Distribution) |
+| **Later** | Add A2A handoff contracts for subagent orchestration | 22 (A2A), 21 (Multi-Agent Isolation) |
 | **Later** | Leverage Claude Code LSP + MCP-LSP bridge | 3 (LSP) |
 | **Later** | Include agnostic context in DevContainer specs | 16 (DevContainers) |
 | **Later** | Define session output format standards | 9 (Session Persistence) |
 | **Later** | Standardize CI/CD feedback presentation | 10 (CI/CD) |
+| **Later** | Add provenance + attestation metadata for context/toolchain trust | 26 (Provenance/Attestation) |
+| **Watch** | Track verifiable credential adoption for agent identity | 27 (Credentialed Agent Identity) |
 | **Watch** | Agent Client Protocol (ACP) development | 19 (ACP) |
 
 ### Novel Avenues Sources
@@ -1515,6 +1562,7 @@ Probability of failure: 20-63%
 7. **Leverage .1merge/ for tool-specific unique features** — glob rules, mode definitions, priority levels, Memory Bank files
 8. **MCP is the universal bridge** — invest in MCP servers for cross-tool capability gaps (embeddings, documentation, GAB traversal)
 9. **Compaction-safe context must be defined** — critical rules survive context window compression
+10. **Use both context chaining and reference chaining** — critical rules need a static+dynamic load path and a static+dynamic pointer path
 
 ---
 
