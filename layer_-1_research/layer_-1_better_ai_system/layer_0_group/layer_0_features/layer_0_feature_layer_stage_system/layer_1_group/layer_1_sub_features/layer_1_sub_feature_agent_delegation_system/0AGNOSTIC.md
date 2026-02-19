@@ -51,7 +51,7 @@ These two domains are deeply coupled: delegation decisions depend on what contex
 | Entity source of truth | `0AGNOSTIC.md` (this file) |
 | Dashboard | `0INDEX.md` |
 | Stages | `layer_1_group/layer_1_99_stages/` |
-| Sub-layers | `layer_1_group/layer_1_03_sub_layers/` |
+| On-demand resources | `.0agnostic/` (01_knowledge, 02_rules, 03_protocols, etc.) |
 | Children | `layer_2_group/layer_2_subx2_features/` |
 
 ## Success Criteria

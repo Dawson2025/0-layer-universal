@@ -62,15 +62,26 @@ echo ""
 # --- Config Directories ---
 echo "--- Config Directories (Entity Root) ---"
 
-# .0agnostic
+# .0agnostic (numbered subdirectories)
 check_dir ".0agnostic"
-check_dir ".0agnostic/agents"
-check_dir ".0agnostic/episodic_memory/sessions"
-check_dir ".0agnostic/episodic_memory/changes"
-check_dir ".0agnostic/hooks/scripts"
-check_dir ".0agnostic/knowledge"
-check_dir ".0agnostic/rules"
-check_dir ".0agnostic/skills"
+check_dir ".0agnostic/01_knowledge"
+check_dir ".0agnostic/02_rules"
+check_dir ".0agnostic/02_rules/static"
+check_dir ".0agnostic/02_rules/dynamic"
+check_dir ".0agnostic/03_protocols"
+check_dir ".0agnostic/04_agents"
+check_dir ".0agnostic/05_skills"
+check_dir ".0agnostic/06_hooks/scripts"
+check_dir ".0agnostic/07_episodic_memory/sessions"
+check_dir ".0agnostic/07_episodic_memory/changes"
+check_dir ".0agnostic/08+_setup_dependant"
+
+# Warn about unnumbered .0agnostic/ dirs (old pattern)
+for old_dir in knowledge rules agents skills hooks episodic_memory protocols; do
+  if [ -d "$ENTITY/.0agnostic/$old_dir" ]; then
+    warn ".0agnostic/$old_dir/ still uses unnumbered name (run migrate-sub-layers-to-0agnostic.sh)"
+  fi
+done
 
 # .1merge (6 tools × 3 tiers)
 TOOLS=(.1claude_merge .1cursor_merge .1gemini_merge .1aider_merge .1codex_merge .1copilot_merge)
@@ -119,7 +130,7 @@ if [ -n "$group_dir" ]; then
   # Extract layer number from group dir name
   layer_num=$(echo "$group_name" | grep -oP 'layer_\K[0-9]+')
 
-  # Check internal directories
+  # Check internal directories (no more sub_layers)
   check_dir "$group_name/layer_${layer_num}_00_layer_registry"
   check_dir "$group_name/layer_${layer_num}_01_ai_manager_system"
   check_dir "$group_name/layer_${layer_num}_02_manager_handoff_documents"
@@ -127,25 +138,13 @@ if [ -n "$group_dir" ]; then
   check_dir "$group_name/layer_${layer_num}_02_manager_handoff_documents/incoming/from_below"
   check_dir "$group_name/layer_${layer_num}_02_manager_handoff_documents/outgoing/to_above"
   check_dir "$group_name/layer_${layer_num}_02_manager_handoff_documents/outgoing/to_below"
-  check_dir "$group_name/layer_${layer_num}_03_sub_layers"
 
-  # Sub-layer structure checks
-  sub_layers_dir="$group_name/layer_${layer_num}_03_sub_layers"
-  echo ""
-  echo "--- Sub-Layers ---"
-  check_dir "$sub_layers_dir/sub_layer_${layer_num}_01_knowledge_system"
-  check_dir "$sub_layers_dir/sub_layer_${layer_num}_01_knowledge_system/overview"
-  check_dir "$sub_layers_dir/sub_layer_${layer_num}_01_knowledge_system/things_learned"
-  check_dir "$sub_layers_dir/sub_layer_${layer_num}_01_knowledge_system/principles"
-  check_dir "$sub_layers_dir/sub_layer_${layer_num}_02_rules"
-  check_dir "$sub_layers_dir/sub_layer_${layer_num}_02_rules/static"
-  check_dir "$sub_layers_dir/sub_layer_${layer_num}_02_rules/dynamic"
-  check_dir "$sub_layers_dir/sub_layer_${layer_num}_03_protocols"
-
-  # Warn about old sub-layer patterns
-  [ -d "$ENTITY/$sub_layers_dir/sub_layer_${layer_num}_01_prompts" ] && fail "Old sub_layer_${layer_num}_01_prompts/ still exists (should be removed)"
-  [ -d "$ENTITY/$sub_layers_dir/sub_layer_${layer_num}_03_principles" ] && fail "Old sub_layer_${layer_num}_03_principles/ still exists (merge into knowledge_system/principles/)"
-  [ -d "$ENTITY/$sub_layers_dir/sub_layer_${layer_num}_04_rules" ] && warn "Old sub_layer_${layer_num}_04_rules/ exists (should be renumbered to 02)"
+  # Warn about stale sub_layers directory
+  for sl_dir in "$ENTITY/$group_name"/layer_*_sub_layers; do
+    if [ -d "$sl_dir" ]; then
+      warn "Stale sub_layers directory: $(basename "$sl_dir") (run migrate-sub-layers-to-0agnostic.sh)"
+    fi
+  done
 
   # Stages
   stages_dir="$group_name/layer_${layer_num}_99_stages"
@@ -195,8 +194,12 @@ if [ -n "$group_dir" ]; then
     done
 
     # Episodic memory in stage tool dirs
-    for tool in .0agnostic .claude .cursor .gemini .codex; do
-      [ -d "$stage_dir/$tool/episodic_memory/sessions" ] || fail "$rel/$tool/episodic_memory/sessions (missing)"
+    for tool in .0agnostic/07_episodic_memory .claude .cursor .gemini .codex; do
+      if [ "$tool" = ".0agnostic/07_episodic_memory" ]; then
+        [ -d "$stage_dir/$tool/sessions" ] || fail "$rel/$tool/sessions (missing)"
+      else
+        [ -d "$stage_dir/$tool/episodic_memory/sessions" ] || fail "$rel/$tool/episodic_memory/sessions (missing)"
+      fi
     done
   done
 

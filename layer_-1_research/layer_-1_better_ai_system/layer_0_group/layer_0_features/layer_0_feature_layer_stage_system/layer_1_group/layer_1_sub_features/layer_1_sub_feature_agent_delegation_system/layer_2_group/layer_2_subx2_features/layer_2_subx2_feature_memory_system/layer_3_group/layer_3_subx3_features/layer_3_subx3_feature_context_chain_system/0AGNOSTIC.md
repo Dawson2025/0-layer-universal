@@ -107,7 +107,7 @@ Agents at this layer and below communicate via:
 | Grandparent | `../../../../../../0AGNOSTIC.md` | layer_stage_system context |
 | Root | Follow parent chain 7 levels | full hierarchy context |
 | Stages | `layer_3_group/layer_3_99_stages/` | All 12 stage directories |
-| Sub-layers | `layer_3_group/layer_3_03_sub_layers/` | knowledge, rules, protocols |
+| On-demand resources | `.0agnostic/` | 01_knowledge, 02_rules, 03_protocols, etc. |
 | Children | `layer_4_group/layer_4_subx4_features/` | chain_visualization, context_loading |
 | Orchestrator | `layer_3_orchestrator.gab.jsonld` | 5-mode GAB definition |
 | Integration | `layer_3_orchestrator.integration.md` | Readable summary |
@@ -182,7 +182,6 @@ layer_N_subxN_feature_[name]/
 │   ├── layer_N_00_layer_registry/
 │   ├── layer_N_01_ai_manager_system/
 │   ├── layer_N_02_manager_handoff_documents/
-│   ├── layer_N_03_sub_layers/
 │   └── layer_N_99_stages/
 └── layer_N+1_group/          ← Children (if needed)
 ```
@@ -458,7 +457,7 @@ Before invoking `/entity-creation`, read these (the skill will reference them to
 | Nested depth naming | `layer_0/.../layer_stage_system/NESTED_DEPTH_NAMING.md` | subxN naming (layer_4_subx3, etc.) |
 | Stages explained | `layer_0/.../layer_stage_system/STAGES_EXPLAINED.md` | Stage Completeness Rule |
 
-**Full path prefix**: `layer_0/layer_0_04_sub_layers/sub_layer_0_01_knowledge_system/`
+**Full path prefix**: `layer_0/.0agnostic/01_knowledge/`
 
 ### Instantiating Agents for Sub-Entities
 

@@ -39,10 +39,10 @@ When working in layer_0 (universal) directories:
 ## Universal Layer Rules
 
 - Layer 0 content applies to ALL projects — changes here affect everything
-- Sub-layers are organized by type:
-  - `sub_layer_0_01_knowledge_system/` — Domain knowledge (includes `principles/`)
-  - `sub_layer_0_02_rules/` — Mandatory rules (`static/` + `dynamic/`) — READ FIRST
-  - `sub_layer_0_03_protocols/` — Standard protocols
-  - `sub_layer_0_04+_setup_dependant/` — OS/tool/environment-specific content
-- Always check `sub_layer_0_02_rules/` before making changes
+- Entity resources live in `.0agnostic/` with numbered directories:
+  - `.0agnostic/01_knowledge/` — Domain knowledge (per-topic with `principles/`, `docs/`, `resources/`)
+  - `.0agnostic/02_rules/` — Mandatory rules (`static/` + `dynamic/`) — READ FIRST
+  - `.0agnostic/03_protocols/` — Standard protocols
+  - `.0agnostic/08+_setup_dependant/` — OS/tool/environment-specific content
+- Always check `.0agnostic/02_rules/` before making changes
 - Universal rules cannot be overridden without explicit approval

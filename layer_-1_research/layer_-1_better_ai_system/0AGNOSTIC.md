@@ -25,8 +25,8 @@ Load this context when:
 ### Resources (load on-demand)
 | Resource | Location |
 |----------|----------|
-| Rules | `layer_-1_group/layer_-1_03_sub_layers/sub_layer_-1_04_rules/` |
-| Knowledge | `layer_-1_group/layer_-1_03_sub_layers/sub_layer_-1_02_knowledge_system/` |
+| Rules | `.0agnostic/02_rules/` |
+| Knowledge | `.0agnostic/01_knowledge/` |
 | Agents | `.0agnostic/agents/` |
 | Skills | `.0agnostic/skills/` |
 | Proposals | `layer_-1_group/layer_-1_00_layer_registry/proposals/` |

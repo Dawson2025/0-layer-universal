@@ -1,0 +1,13 @@
+{
+  "name": "sub_layer_0_14_agent_setup_stages",
+  "stage_history": [
+    {
+      "stage": "stage_0_02_research",
+      "status": "completed",
+      "completed_date": "2026-01-28",
+      "items": ["OnlyOffice 9.2.1 installed", "Python venv created at ~/.local/venvs/docx-tools"]
+    }
+  ],
+  "current_stage": "stage_0_02_research",
+  "last_updated": "2026-01-28"
+}

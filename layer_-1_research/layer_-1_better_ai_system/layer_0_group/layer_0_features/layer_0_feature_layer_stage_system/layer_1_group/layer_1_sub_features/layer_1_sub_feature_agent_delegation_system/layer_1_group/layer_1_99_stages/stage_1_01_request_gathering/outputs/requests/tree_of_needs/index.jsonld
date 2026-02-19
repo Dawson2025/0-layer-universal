@@ -1,0 +1,137 @@
+{
+  "@context": {
+    "@vocab": "https://layer-stage.dev/schema#",
+    "nav": "https://layer-stage.dev/nav#",
+    "rel": "https://layer-stage.dev/rel#",
+    "need": "https://layer-stage.dev/need#",
+    "meta": "https://layer-stage.dev/meta#"
+  },
+
+  "@id": "tree_of_needs",
+  "@type": "TreeOfNeeds",
+
+  "name": "Tree of Needs - Agent Delegation System",
+  "version": "1.0.0",
+
+  "nav:parent": {
+    "@id": "../../../",
+    "name": "stage_1_01_request_gathering"
+  },
+
+  "rootNeed": {
+    "@id": "00_agents_delegate_effectively/",
+    "@type": "RootNeed",
+    "name": "Agents Delegate Effectively",
+    "description": "Managers delegate work to specialized stage agents and sub-feature agents without carrying operational knowledge. Memory and multi-agent systems work together coherently.",
+
+    "branches": [
+      {
+        "@id": "00_agents_delegate_effectively/01_delegation_model/",
+        "@type": "Branch",
+        "name": "Delegation Model",
+        "description": "How managers delegate without carrying operational knowledge",
+        "rel:mapsTo": {
+          "relativeDepth": "+1",
+          "entityType": "Feature",
+          "targetPath": "../../../../layer_2_group/layer_2_subx2_features/"
+        },
+        "needs": [
+          {
+            "@id": "00_agents_delegate_effectively/01_delegation_model/need_01_stage_delegation/",
+            "@type": "Need",
+            "name": "Stage Delegation",
+            "description": "How a manager hands off work to a stage agent"
+          },
+          {
+            "@id": "00_agents_delegate_effectively/01_delegation_model/need_02_stage_reports/",
+            "@type": "Need",
+            "name": "Stage Reports",
+            "description": "How a manager knows what happened in a stage without loading all stage details"
+          },
+          {
+            "@id": "00_agents_delegate_effectively/01_delegation_model/need_03_agent_context_model/",
+            "@type": "Need",
+            "name": "Agent Context Model",
+            "description": "What each agent type knows in its static vs dynamic context"
+          }
+        ]
+      },
+      {
+        "@id": "00_agents_delegate_effectively/02_memory_integration/",
+        "@type": "Branch",
+        "name": "Memory Integration",
+        "description": "How what agents remember supports delegation",
+        "rel:mapsTo": {
+          "relativeDepth": "+1",
+          "entityType": "Feature",
+          "targetPath": "../../../../layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_memory_system/"
+        },
+        "needs": [
+          {
+            "@id": "00_agents_delegate_effectively/02_memory_integration/need_01_context_chain_support/",
+            "@type": "Need",
+            "name": "Context Chain Support",
+            "description": "How context chains enable delegation decisions"
+          },
+          {
+            "@id": "00_agents_delegate_effectively/02_memory_integration/need_02_handoff_protocols/",
+            "@type": "Need",
+            "name": "Handoff Protocols",
+            "description": "How context is preserved when transitioning between agents"
+          },
+          {
+            "@id": "00_agents_delegate_effectively/02_memory_integration/need_03_three_tier_delegation/",
+            "@type": "Need",
+            "name": "Three-Tier Delegation",
+            "description": "How the three-tier pattern (pointers, distilled, full) applies to delegation context"
+          }
+        ]
+      },
+      {
+        "@id": "00_agents_delegate_effectively/03_coordination_patterns/",
+        "@type": "Branch",
+        "name": "Coordination Patterns",
+        "description": "How agents coordinate in practice",
+        "rel:mapsTo": {
+          "relativeDepth": "+1",
+          "entityType": "Feature",
+          "targetPath": "../../../../layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_multi_agent_system/"
+        },
+        "needs": [
+          {
+            "@id": "00_agents_delegate_effectively/03_coordination_patterns/need_01_agent_hierarchy/",
+            "@type": "Need",
+            "name": "Agent Hierarchy",
+            "description": "Clear parent-child management relationships, who manages whom"
+          },
+          {
+            "@id": "00_agents_delegate_effectively/03_coordination_patterns/need_02_spawning_patterns/",
+            "@type": "Need",
+            "name": "Spawning Patterns",
+            "description": "When and how to spawn specialized agents"
+          },
+          {
+            "@id": "00_agents_delegate_effectively/03_coordination_patterns/need_03_communication_channels/",
+            "@type": "Need",
+            "name": "Communication Channels",
+            "description": "Stage reports, handoff docs, team tools, episodic memory as communication"
+          }
+        ]
+      }
+    ]
+  },
+
+  "rel:informsFurtherLayering": {
+    "description": "This tree hierarchy maps to child entity organization",
+    "pattern": {
+      "rootNeed": "This entity (agent_delegation_system)",
+      "branch": "Child feature (layer +1: memory_system, multi_agent_system)",
+      "need": "Component or sub-feature (layer +2)"
+    }
+  },
+
+  "meta:sessions": {
+    "@id": "_meta/sessions/",
+    "description": "Session logs that contributed to this tree"
+  }
+}

@@ -11,7 +11,6 @@ description: "Create new layers, sub-layers, stages, features, projects, or comp
 - Creating a new component (`layer_3_component_*`)
 - Creating a new research project (`layer_-1_*`)
 - Creating stages for an entity
-- Creating sub-layers for an entity
 - When the user says "create a new project/feature/component"
 
 ## WHEN NOT to Use
@@ -33,8 +32,8 @@ description: "Create new layers, sub-layers, stages, features, projects, or comp
 
 **Full paths**:
 - `@imports/` = `0_layer_universal/@imports/`
-- `layer_stage_system/` = `layer_0/layer_0_04_sub_layers/sub_layer_0_01_knowledge_system/layer_stage_system/`
-- `entity_lifecycle/` = `layer_0/layer_0_04_sub_layers/sub_layer_0_01_knowledge_system/entity_lifecycle/`
+- `layer_stage_system/` = `layer_0/.0agnostic/01_knowledge/layer_stage_system/`
+- `entity_lifecycle/` = `layer_0/.0agnostic/01_knowledge/entity_lifecycle/`
 
 ## Protocol
 
@@ -54,7 +53,7 @@ Use the mkdir templates from `@imports/entity_structure.md`. Every entity needs 
 
 | Directory | Contents | Purpose |
 |---|---|---|
-| `.0agnostic/` | `agents/`, `episodic_memory/{sessions,changes}`, `hooks/scripts/`, `knowledge/`, `rules/`, `skills/` | On-demand AI resources (episodic_memory source of truth) |
+| `.0agnostic/` | `01_knowledge/`, `02_rules/{static,dynamic}`, `03_protocols/`, `04_agents/`, `05_skills/`, `06_hooks/scripts/`, `07_episodic_memory/{sessions,changes}`, `08+_setup_dependant/` | On-demand AI resources (numbered subdirs) |
 | `.1merge/` | 6 tools × 3 tiers each (18 subdirectories total) | Tool-specific overrides |
 | `.claude/` | `rules/`, `episodic_memory/{sessions,changes}/` | Claude Code config |
 | `.cursor/` | `rules/`, `episodic_memory/{sessions,changes}/` | Cursor config |
@@ -78,13 +77,10 @@ layer_N_group/
 ├── layer_N_02_manager_handoff_documents/
 │   ├── incoming/{from_above,from_below}/
 │   └── outgoing/{to_above,to_below}/
-├── layer_N_03_sub_layers/
-│   ├── sub_layer_N_00_sub_layer_registry/
-│   ├── sub_layer_N_01_knowledge_system/{overview,things_learned,principles}/
-│   ├── sub_layer_N_02_rules/
-│   └── sub_layer_N_04+_setup_dependant/
 └── layer_N_99_stages/
 ```
+
+Note: Entity-scoped resources (knowledge, rules, protocols, etc.) live in `.0agnostic/` with numbered subdirectories, NOT in a separate sub_layers directory.
 
 ### Step 4: [CRITICAL] Create ALL 12 Stages (00-11)
 
@@ -106,7 +102,7 @@ Every stage gets the same config structure as the entity root:
 
 ```bash
 for stage_dir in layer_N_group/layer_N_99_stages/stage_N_*/; do
-  mkdir -p "$stage_dir"/{.0agnostic/{agents,episodic_memory/{sessions,changes},hooks/scripts,knowledge,rules,skills},.1merge/{.1claude_merge/{0_synced,1_overrides,2_additions},.1cursor_merge/{0_synced,1_overrides,2_additions},.1gemini_merge/{0_synced,1_overrides,2_additions},.1aider_merge/{0_synced,1_overrides,2_additions},.1codex_merge/{0_synced,1_overrides,2_additions},.1copilot_merge/{0_synced,1_overrides,2_additions}},.claude/{rules,episodic_memory/{sessions,changes}},.cursor/{rules,episodic_memory/{sessions,changes}},.gemini/episodic_memory/{sessions,changes},.codex/episodic_memory/{sessions,changes},.github/instructions,synthesis}
+  mkdir -p "$stage_dir"/{.0agnostic/{01_knowledge,02_rules,03_protocols,04_agents,05_skills,06_hooks/scripts,07_episodic_memory/{sessions,changes}},.1merge/{.1claude_merge/{0_synced,1_overrides,2_additions},.1cursor_merge/{0_synced,1_overrides,2_additions},.1gemini_merge/{0_synced,1_overrides,2_additions},.1aider_merge/{0_synced,1_overrides,2_additions},.1codex_merge/{0_synced,1_overrides,2_additions},.1copilot_merge/{0_synced,1_overrides,2_additions}},.claude/{rules,episodic_memory/{sessions,changes}},.cursor/{rules,episodic_memory/{sessions,changes}},.gemini/episodic_memory/{sessions,changes},.codex/episodic_memory/{sessions,changes},.github/instructions,synthesis}
 done
 ```
 
@@ -191,7 +187,7 @@ Children are always layer N+1 of their parent.
 Before completing, verify ALL of these:
 
 ### Structure
-- [ ] `.0agnostic/` with all 7 subdirs (agents, episodic_memory/{sessions,changes}, hooks/scripts, knowledge, rules, skills)
+- [ ] `.0agnostic/` with numbered subdirs (01_knowledge, 02_rules/{static,dynamic}, 03_protocols, 04_agents, 05_skills, 06_hooks/scripts, 07_episodic_memory/{sessions,changes}, 08+_setup_dependant)
 - [ ] `.1merge/` with all 6 tools × 3 tiers = 18 subdirectories
 - [ ] `.claude/` with `rules/` AND `episodic_memory/{sessions,changes}/`
 - [ ] `.cursor/` with `rules/` AND `episodic_memory/{sessions,changes}/`
