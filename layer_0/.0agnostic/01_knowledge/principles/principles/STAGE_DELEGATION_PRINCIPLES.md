@@ -1,14 +1,19 @@
 # Stage Delegation Principles
 
-These principles govern how agents delegate and operate across the stage hierarchy.
+These principles govern how agents delegate and operate across the layer-stage hierarchy.
 
 ## 1. Managers Delegate, Agents Operate
 
 Entity managers maintain the big picture. Stage agents do the work. A manager reads stage reports and decides what to delegate next — it does not carry operational methodology for any stage.
 
-## 2. Explicit Scope Boundaries
+## 2. Explicit Scope Boundaries (Layer AND Stage)
 
-Every stage agent knows what it IS and what it IS NOT. The "NOT" list is as important as the "IS" description. When work falls outside scope, the agent stops, documents it, and hands off to the correct stage.
+Every agent knows what it IS and what it IS NOT. Scope boundaries exist at **two levels**:
+
+- **Layer boundaries**: Each entity (feature, sub-feature, etc.) has a scope defined in its 0AGNOSTIC.md. Work belonging to a sibling or parent entity is out of scope.
+- **Stage boundaries**: Each stage (01-11) within an entity has a scope. Work belonging to another stage is out of scope.
+
+The "NOT" list is as important as the "IS" description. When work falls outside either boundary, the agent must make a **scope decision** (see Principle 8).
 
 ## 3. Three-Tier Knowledge
 
@@ -34,3 +39,58 @@ Stage agents produce deliverables, not process logs. The value is in the outputs
 ## 7. Selective Context Loading
 
 Never load all parent knowledge at once. Read the specific file relevant to the task at hand. Context windows are finite — every byte loaded must earn its place.
+
+## 8. Scope Boundary Decisions
+
+When an agent reaches the boundary of its layer or stage scope, it must make a **delegation decision**:
+
+### The Decision
+
+| Question | If Yes | If No |
+|----------|--------|-------|
+| Is the out-of-scope work small and tightly coupled to my current work? | Do it yourself across stages/layers, but document what you touched outside your scope | Delegate to the responsible agent |
+| Does an agent already exist for the target layer/stage? | Delegate to it (send message, create task, or write handoff) | Consider instantiating one |
+| Would handling this myself overflow my context window? | Always delegate — context window preservation is paramount | You may handle it if it's small |
+
+### Instantiation Decision
+
+When no agent exists for the target scope:
+1. **If the work is significant** (multiple files, complex reasoning): Instantiate a new agent for that layer/stage by spawning it with a pointer to the target 0AGNOSTIC.md
+2. **If the work is trivial** (one note, one flag): Document it in your stage report for the manager to route later
+3. **If you're unsure**: Ask the manager (or user) — instantiating agents has overhead, so it should be justified
+
+### Why This Matters
+
+Context windows are the fundamental constraint. An agent that tries to work across too many layers/stages will:
+- Lose track of its own scope and methodology
+- Overflow its context window with knowledge from multiple domains
+- Produce lower-quality work in each area than a specialized agent would
+- Make outputs harder to find (work done in the wrong stage is unfindable)
+
+The default should be **delegate**, not **do it yourself**. The cost of spawning an agent is low; the cost of a bloated, confused context is high.
+
+## 9. Two-Halves Context Pattern
+
+Every 0AGNOSTIC.md (whether for an entity or a stage) needs **two halves**:
+
+### Half 1: Operational Guidance (written once, rarely changes)
+- **Identity**: Role, scope, parent reference, domain
+- **Scope boundaries**: What this IS and IS NOT (the NOT list is critical)
+- **Methodology**: How the agent works
+- **Domain context pointers**: Where to find parent knowledge (point, don't load)
+- **Success criteria**: When is this done?
+- **Exit protocol**: What to do before leaving
+
+### Half 2: Current State Summary (updated as work progresses)
+- **Status**: pending / active / complete / scaffolded
+- **Summary**: 2-3 sentences on what's been accomplished
+- **Key outputs**: Named files/structures with brief descriptions
+- **Key findings**: Distilled insights (conclusions, not process)
+- **Open items**: What's unresolved — specific and actionable
+- **Handoff**: Ready for next stage? What should next stage prioritize?
+
+### Why Both Halves Are Needed
+
+Without the current state half, an agent landing in a stage must explore outputs/ manually to understand what exists — wasting context window tokens on orientation instead of productive work.
+
+The operational half tells the agent **how to work**. The current state half tells the agent **what's already here**. Together, they make the pointer tier functional: 0AGNOSTIC.md is the single file an agent reads to be immediately oriented and productive.

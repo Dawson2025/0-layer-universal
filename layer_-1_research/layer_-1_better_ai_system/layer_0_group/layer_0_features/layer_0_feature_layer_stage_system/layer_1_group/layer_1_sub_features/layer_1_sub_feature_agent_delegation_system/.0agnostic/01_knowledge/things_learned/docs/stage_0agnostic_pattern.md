@@ -49,3 +49,42 @@ The current state section in 0AGNOSTIC.md and the stage_report.md are complement
 - **stage_report.md**: More detailed, follows a strict protocol format, written specifically for the entity manager
 
 The current state section can be derived from the stage report but is more concise and embedded in the context file that agents read first.
+
+## Formalized As
+
+- **Principle 9** ("Two-Halves Context Pattern") in `layer_0/.0agnostic/01_knowledge/principles/principles/STAGE_DELEGATION_PRINCIPLES.md`
+
+---
+
+# What We Learned: Scope Boundary Decisions
+
+## Discovery Date
+2026-02-19
+
+## The Pattern
+
+Scope boundaries are not just "stop and hand off" — they require an **active decision** about how to handle out-of-scope work. The decision has three options:
+
+### Option 1: Do It Yourself (small, tightly coupled)
+When the out-of-scope work is trivial and tightly coupled to what you're doing. Example: a stage 06 agent notices a typo in a stage 04 design doc while implementing — fixing it in-place is faster than a full handoff cycle.
+
+### Option 2: Delegate to Existing Agent (significant, agent exists)
+When the work is significant and an agent already exists for the target scope. Send a message, create a task, or write a handoff document.
+
+### Option 3: Instantiate a New Agent (significant, no agent exists)
+When the work is significant but no agent has been instantiated for the target layer/stage yet. Spawn a new agent with a Task tool call, pointing it to the target 0AGNOSTIC.md.
+
+## The Key Factor: Context Window Preservation
+
+The decision is ultimately about context window management. An agent that tries to work across too many layers/stages will:
+- Overflow its context window
+- Lose track of its own methodology
+- Produce lower-quality work
+- Make outputs unfindable (wrong stage/entity)
+
+**Default to delegate.** The cost of spawning an agent is low; the cost of a bloated, confused context is high.
+
+## Where This Is Codified
+
+- **Principle 8** ("Scope Boundary Decisions") in `layer_0/.0agnostic/01_knowledge/principles/principles/STAGE_DELEGATION_PRINCIPLES.md`
+- **Scope Boundary Rule** (expanded from Stage Boundary Rule) in `layer_0/.0agnostic/02_rules/static/STAGE_BOUNDARY_RULE.md`
