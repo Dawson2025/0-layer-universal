@@ -1,88 +1,77 @@
-# sub_layer_0_02_rules
+# Universal Rules
 
-Universal rules that apply across all layers, stages, OS, and tool contexts.
+Rules that apply across all layers, stages, OS, and tool contexts.
 
 ---
 
 ## Directory Structure
 
 ```
-sub_layer_0_02_rules/
-├── README.md                    # This file
-├── 0_every_api_request/         # Rules for EVERY interaction (include in prompts)
-│   ├── AI_CONTEXT_MODIFICATION_PROTOCOL.md
-│   ├── AI_CONTEXT_COMMIT_PUSH_RULE.md
-│   └── CONTEXT_TRAVERSAL_RULE.md
-├── 1_scenario_based/            # Rules for specific scenarios (reference, don't include)
-│   ├── safety_governance.md
-│   ├── AI_DOCUMENTATION_PROTOCOL.md
-│   ├── LAYER_CONTEXT_HEADER_PROTOCOL.md
-│   ├── sequential_development_methodology.md
-│   └── CROSS_OS_COMPATIBILITY_RULES.md
-└── 0_instruction_docs/          # Additional instruction documents
+02_rules/
+├── README.md                           # This file
+├── static/                             # Rules that apply on EVERY API turn
+│   ├── I0_FILE_CHANGE_REPORTING.md     # [I0] Report all file changes every turn
+│   ├── MANAGER_DELEGATION_RULE.md      # Managers delegate, don't operate
+│   ├── STAGE_BOUNDARY_RULE.md          # Stage agents stay in scope
+│   └── STAGE_REPORT_RULE.md            # Stage agents write reports before exiting
+└── dynamic/                            # Rules loaded when triggered by scenario
+    ├── I0_source_of_truth_rule.md      # [I0] Source of truth protocol — MUST execute when asked
+    ├── PARALLEL_STAGES_RULE.md         # When stages can run in parallel
+    └── STAGE_LOOP_RULE.md              # When stages loop back (07→08→09→07)
 ```
 
 ---
 
-## 0_every_api_request (Always Apply)
+## Importance Ranking
+
+Rules have an importance ranking prefix (`I0_`, `I1_`, etc.) where **0 is most important** and importance increases numerically as priority decreases. Rules without a prefix are standard importance (equivalent to I2).
+
+| Importance | Prefix | Meaning | Behavior |
+|------------|--------|---------|----------|
+| 0 | `I0_` | Critical | Static: always enforced. Dynamic: MUST load when triggered — no exceptions |
+| 1 | `I1_` | High | Should be loaded/enforced — can defer only if severely context-constrained |
+| 2 | (none) | Standard | Normal rule behavior — load when relevant |
+| 3+ | `I3_` | Advisory | Guidance that can be skipped under tight context budgets |
+
+---
+
+## Static Rules (Every API Turn)
 
 These rules MUST be followed on EVERY interaction. They should be **summarized in CLAUDE.md files**.
 
-| Rule | Summary |
-|------|---------|
-| **AI_CONTEXT_MODIFICATION_PROTOCOL** | Show diagram, wait for approval before modifying AI context |
-| **AI_CONTEXT_COMMIT_PUSH_RULE** | Git add/commit/push after approved AI context changes |
-| **CONTEXT_TRAVERSAL_RULE** | Read CLAUDE.md files and gather context before starting work |
+| Rule | Importance | Summary |
+|------|------------|---------|
+| **I0_FILE_CHANGE_REPORTING** | 0 | Report all files changed/added/updated/removed with full paths every turn |
+| **MANAGER_DELEGATION_RULE** | 2 | Managers delegate to stage agents; they don't carry operational knowledge |
+| **STAGE_BOUNDARY_RULE** | 2 | Stage agents stay within their stage scope |
+| **STAGE_REPORT_RULE** | 2 | Every stage agent writes stage_report.md before exiting |
 
 ---
 
-## 1_scenario_based (Apply When Relevant)
+## Dynamic Rules (Scenario-Triggered)
 
-These rules are important but only apply in specific scenarios. **Reference them in CLAUDE.md** but don't include full content.
+These rules apply when specific conditions are met.
 
-| Rule | When to Apply |
-|------|---------------|
-| **safety_governance** | Security decisions, permission escalations, sensitive operations |
-| **AI_DOCUMENTATION_PROTOCOL** | Creating/organizing documentation |
-| **LAYER_CONTEXT_HEADER_PROTOCOL** | Creating new files that need layer/stage headers |
-| **sequential_development_methodology** | Multi-step development tasks |
-| **CROSS_OS_COMPATIBILITY_RULES** | Cross-platform code/scripts |
+| Rule | Importance | Trigger |
+|------|------------|---------|
+| **I0_source_of_truth_rule** | 0 | User asks about source of truth, context chain, or where something is defined |
+| **PARALLEL_STAGES_RULE** | 2 | When determining if stages can execute concurrently |
+| **STAGE_LOOP_RULE** | 2 | When stages need to loop (testing → criticism → fixing → re-testing) |
 
 ---
 
-## How to Use in CLAUDE.md Files
+## How to Reference in CLAUDE.md
 
-### Include summaries of 0_every_api_request rules:
+Static rules are summarized inline. Dynamic rules are referenced by trigger.
 
 ```markdown
-## Universal Rules (ALWAYS FOLLOW)
+## Critical Rules
+### File Change Reporting
+On every turn with file operations, report full paths of added/updated/moved/removed files.
+**Full rule**: `layer_0/.0agnostic/02_rules/static/I0_FILE_CHANGE_REPORTING.md`
 
-### 1. AI Context Modification Protocol
-Before modifying AI context files: show diagram, wait for approval, then execute.
-
-### 2. AI Context Commit/Push Rule
-After approved changes: git add, commit, push.
-
-### 3. Context Traversal Rule
-Before starting: read CLAUDE.md files in path, identify layer/stage, check sub_layers.
+## Scenario-Based Rules (Read When Triggered)
+| Trigger | Rule |
+|---------|------|
+| "Where is the source of truth for X?" | `layer_0/.0agnostic/02_rules/dynamic/I0_source_of_truth_rule.md` |
 ```
-
-### Reference 1_scenario_based rules:
-
-```markdown
-## Scenario-Based Rules (Read When Needed)
-
-| Scenario | Rule Location |
-|----------|---------------|
-| Security decisions | `sub_layer_0_02_rules/1_scenario_based/safety_governance.md` |
-| Documentation | `sub_layer_0_02_rules/1_scenario_based/AI_DOCUMENTATION_PROTOCOL.md` |
-| File headers | `sub_layer_0_02_rules/1_scenario_based/LAYER_CONTEXT_HEADER_PROTOCOL.md` |
-```
-
----
-
-## Notes
-
-- All rules are **mandatory** unless explicitly marked optional
-- Safety rules take precedence over other rules in case of conflict
-- Rules in `0_every_api_request/` save context by being summarized rather than fully included

@@ -11,6 +11,8 @@ You are an AI agent working within the layer_1 (projects) context. This layer co
 - **Project components**: `layer_1_components/`
 
 
+
+
 ## Key Behaviors
 
 ### Agent Context Loading
@@ -33,7 +35,7 @@ Record your work in `.0agnostic/episodic_memory/`:
 - Update divergence.log when changing outputs
 - Enable next session to continue seamlessly
 - **Quick review**: Check `memory/episodic.md` (auto-memory topic file) for recent session history across all layers
-- **After updating**: Run `tools/episodic-sync.sh` to sync episodic memory to auto-memory
+- **After updating**: Run `.0agnostic/01_knowledge/layer_stage_system/resources/tools/episodic-sync.sh` to sync episodic memory to auto-memory
 
 ### Multi-Agent Safety
 When modifying shared outputs:

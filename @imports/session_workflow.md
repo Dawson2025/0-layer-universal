@@ -33,6 +33,6 @@ professor/ personal/  context_agents/ sub_layers/
 6. **Check agnostic system**: If `0AGNOSTIC.md` exists in the working directory, it is the source of truth — edit it, not `CLAUDE.md`. Check `.0agnostic/` for on-demand resources. Check `.1merge/` for tool-specific overrides.
 7. **Check skills**: Read `.claude/skills/*/SKILL.md` — match WHEN/WHEN NOT conditions to your task. Key skills: `/context-gathering`, `/stage-workflow`, `/entity-creation`, `/handoff-creation`
 8. **Do work**: Follow stage guidelines, mode constraints, and agnostic system conventions
-9. **Update episodic memory**: After significant work, update `.0agnostic/episodic_memory/index.md` in the working layer, then run `tools/episodic-sync.sh`
+9. **Update episodic memory**: After significant work, update `.0agnostic/episodic_memory/index.md` in the working layer, then run `.0agnostic/01_knowledge/layer_stage_system/resources/tools/episodic-sync.sh`
 10. **If context was modified**: Edit `0AGNOSTIC.md` (not CLAUDE.md), then run `agnostic-sync.sh` to regenerate tool-specific files
 11. **Commit/push**: Per AI_CONTEXT_COMMIT_PUSH_RULE.md

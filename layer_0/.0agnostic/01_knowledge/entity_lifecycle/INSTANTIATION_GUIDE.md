@@ -144,7 +144,7 @@ Copy orchestrators from a sibling entity and adapt all names/references.
 
 ```bash
 for f in $(find <entity> -name "*.jsonld" -type f); do
-  bash tools/jsonld-to-md.sh "$f"
+  bash .0agnostic/01_knowledge/layer_stage_system/resources/tools/jsonld-to-md.sh "$f"
   # Fix naming: rename *.jsonld.integration.md → *.integration.md
   base="${f%.jsonld}"
   [ -f "${f}.integration.md" ] && mv "${f}.integration.md" "${base}.integration.md"
@@ -163,7 +163,7 @@ done
 ### Step 10: Validate
 
 ```bash
-bash tools/validate-entity.sh <entity-path>
+bash .0agnostic/01_knowledge/layer_stage_system/resources/tools/validate-entity.sh <entity-path>
 ```
 
 ---
@@ -332,7 +332,7 @@ stage_N_XX_<name>/
 - [ ] Parent's registry updated (if applicable)
 
 ### Validation
-- [ ] `tools/validate-entity.sh <entity-path>` passes all checks
+- [ ] `.0agnostic/01_knowledge/layer_stage_system/resources/tools/validate-entity.sh <entity-path>` passes all checks
 
 ---
 

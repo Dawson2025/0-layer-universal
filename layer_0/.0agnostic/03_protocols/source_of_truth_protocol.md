@@ -53,32 +53,44 @@ If the source IS the 0AGNOSTIC.md itself (i.e., the 0AGNOSTIC.md is the canonica
 
 ### Tier 3: Propagation Chain (how it reaches agents)
 
-The **avenue web** showing how this knowledge gets into static and dynamic context for each AI tool. List only the avenues that actually carry this specific knowledge.
+Show how the knowledge propagates from the 0AGNOSTIC.md reference (Tier 2) outward through the avenue web into static and dynamic context for each AI tool.
+
+**Structure the chain in this order:**
+
+1. **0AGNOSTIC.md → agnostic-sync.sh → tool files** (the primary propagation path)
+2. **Additional static avenues** that carry this knowledge
+3. **Dynamic avenues** that can load this knowledge on-demand
 
 ```markdown
 ### Propagation Chain
 
-| Avenue | Mechanism | Timing | Tool |
-|--------|-----------|--------|------|
-| CLAUDE.md cascade | {0AGNOSTIC.md → agnostic-sync.sh → CLAUDE.md} | Static | Claude Code |
-| AGENTS.md | {0AGNOSTIC.md → agnostic-sync.sh → AGENTS.md} | Static | AutoGen |
-| GEMINI.md | {0AGNOSTIC.md → agnostic-sync.sh → GEMINI.md} | Static | Gemini |
-| OPENAI.md | {0AGNOSTIC.md → agnostic-sync.sh → OPENAI.md} | Static | OpenAI |
-| Path rules | {.claude/rules/*.md} | Static | Claude Code |
-| Skills listing | {.claude/skills/*/SKILL.md — WHEN section} | Static | Claude Code |
-| Skill content | {Read SKILL.md on invocation} | Dynamic | Claude Code |
-| .0agnostic/ | {Read on-demand: 01_knowledge/, 02_rules/, etc.} | Dynamic | Any |
-| Parent chain | {0AGNOSTIC.md Parent: refs, traversed on-demand} | Dynamic | Any |
-| JSON-LD agent | {.gab.jsonld mode constraints} | Dynamic | AALang |
-| Integration summary | {.integration.md} | Dynamic | Any |
-| Episodic memory | {.0agnostic/07_episodic_memory/} | Dynamic | Any |
-| Auto memory | {~/.claude/projects/*/memory/MEMORY.md} | Static | Claude Code |
+**Primary path** (0AGNOSTIC.md → agnostic-sync.sh):
+| Generated File | Timing | Tool |
+|----------------|--------|------|
+| CLAUDE.md | Static | Claude Code |
+| AGENTS.md | Static | AutoGen |
+| GEMINI.md | Static | Gemini |
+| OPENAI.md | Static | OpenAI |
 
-**Static avenues** = loaded every API call (costs tokens always)
-**Dynamic avenues** = loaded on-demand (costs tokens only when used)
+**Additional static avenues**:
+| Avenue | Mechanism | Tool |
+|--------|-----------|------|
+| Path rules | {.claude/rules/*.md} | Claude Code |
+| Skills listing | {.claude/skills/*/SKILL.md — WHEN section} | Claude Code |
+| Auto memory | {~/.claude/projects/*/memory/MEMORY.md} | Claude Code |
+
+**Dynamic avenues** (loaded on-demand):
+| Avenue | Mechanism | Tool |
+|--------|-----------|------|
+| .0agnostic/ resources | {01_knowledge/, 02_rules/, 03_protocols/} | Any |
+| Parent chain | {0AGNOSTIC.md Parent: refs, traversed upward} | Any |
+| JSON-LD agent | {.gab.jsonld mode constraints} | AALang |
+| Integration summary | {.integration.md} | Any |
+| Skill content | {Full SKILL.md on invocation} | Claude Code |
+| Episodic memory | {.0agnostic/07_episodic_memory/} | Any |
 ```
 
-Only include rows that actually apply to this specific piece of knowledge. Most items will only use 3-5 avenues.
+Only include rows that actually apply to this specific piece of knowledge. Most items will use the primary path plus 2-3 additional avenues.
 
 ## Example
 
@@ -115,6 +127,7 @@ Only include rows that actually apply to this specific piece of knowledge. Most 
 
 ## Related
 
+- **Mandatory Rule**: `../02_rules/dynamic/I0_source_of_truth_rule.md` — importance-0 rule mandating this protocol
 - **Context Loading Protocol**: `context_loading_protocol.md` — how agents load context on session start
 - **Avenue Web Architecture**: `layer_-1_research/.../context_chain_system/.0agnostic/01_knowledge/avenue_web_architecture.md` — the 8-avenue model
 - **Static/Dynamic Context**: `layer_-1_research/.../context_chain_system/.0agnostic/01_knowledge/static_dynamic_context.md` — the 2x2 matrix

@@ -140,7 +140,7 @@ Create `status_N.json` in `layer_N_99_stages/`.
 ```bash
 # Generate for all .jsonld files
 for f in $(find <entity> -name "*.jsonld" -type f); do
-  bash tools/jsonld-to-md.sh "$f"
+  bash .0agnostic/01_knowledge/layer_stage_system/resources/tools/jsonld-to-md.sh "$f"
   # Fix naming: tool outputs *.jsonld.integration.md, rename to *.integration.md
   base="${f%.jsonld}"
   if [ -f "${f}.integration.md" ]; then
@@ -168,7 +168,7 @@ done
 
 ### Step 10: Validate
 
-Run `tools/validate-entity.sh <entity-path>` to verify completeness.
+Run `.0agnostic/01_knowledge/layer_stage_system/resources/tools/validate-entity.sh <entity-path>` to verify completeness.
 
 ## Naming Conventions
 
@@ -220,7 +220,7 @@ Before completing, verify ALL of these:
 - [ ] Parent's registry updated (if applicable)
 
 ### Validation
-- [ ] Run `tools/validate-entity.sh <entity-path>` — all checks pass
+- [ ] Run `.0agnostic/01_knowledge/layer_stage_system/resources/tools/validate-entity.sh <entity-path>` — all checks pass
 
 ## AALang Reference
 

@@ -43,4 +43,4 @@ When working in development stages:
 ## Episodic Memory
 
 - **Session start**: Check `memory/episodic.md` (auto-memory topic file) for recent development session history
-- **Session end**: Update `.0agnostic/episodic_memory/index.md` in the working stage directory, then run `tools/episodic-sync.sh`
+- **Session end**: Update `.0agnostic/episodic_memory/index.md` in the working stage directory, then run `.0agnostic/01_knowledge/layer_stage_system/resources/tools/episodic-sync.sh`

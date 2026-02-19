@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # create-tree-of-needs.sh — Create tree_of_needs scaffold in a stage_01 outputs directory
-# Usage: bash tools/create-tree-of-needs.sh <stage_01_outputs_dir> <root_need_name>
+# Usage: bash .0agnostic/01_knowledge/layer_stage_system/resources/tools/create-tree-of-needs.sh <stage_01_outputs_dir> <root_need_name>
 #
 # Creates:
 #   outputs/requests/tree_of_needs/

@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # validate-entity.sh — Check entity completeness against canonical structure
-# Usage: bash tools/validate-entity.sh <entity-path>
+# Usage: bash .0agnostic/01_knowledge/layer_stage_system/resources/tools/validate-entity.sh <entity-path>
 # Reference: @imports/entity_structure.md
 
 set -uo pipefail
