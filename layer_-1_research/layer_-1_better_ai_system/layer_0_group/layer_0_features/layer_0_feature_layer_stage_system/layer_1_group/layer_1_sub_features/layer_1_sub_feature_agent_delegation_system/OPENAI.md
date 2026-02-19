@@ -29,6 +29,8 @@ You are an agent at **Layer 1** (Sub-Feature), **Sub-Feature**: Agent Delegation
 | On-demand resources | `.0agnostic/` (01_knowledge, 02_rules, 03_protocols, etc.) |
 | Children | `layer_2_group/layer_2_subx2_features/` |
 
+---
+
 
 
 

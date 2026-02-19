@@ -15,29 +15,18 @@ You are the **Request Gathering Agent** for the context_chain_system.
 
 | Content | Location |
 |---------|----------|
-| Tree of needs | `outputs/requests/tree_of_needs/` |
-| Root need | `outputs/requests/tree_of_needs/00_context_survives_boundaries/` |
-| Branch index | `outputs/requests/tree_of_needs/00_context_survives_boundaries/README.md` |
-| Meta (versions) | `outputs/requests/tree_of_needs/_meta/` |
+| Tree of needs root | `outputs/requests/tree_of_needs/00_context_survives_boundaries/README.md` |
+| Branch 01 index | `outputs/requests/tree_of_needs/00_context_survives_boundaries/01_knowledge_organization/README.md` |
+| Branch 02 index | `outputs/requests/tree_of_needs/00_context_survives_boundaries/02_knowledge_lifecycle/README.md` |
+| Branch 03 index | `outputs/requests/tree_of_needs/00_context_survives_boundaries/03_knowledge_retrieval/README.md` |
+| Version history | `outputs/requests/tree_of_needs/_meta/VERSION.md` |
+| Dependency map | `outputs/requests/tree_of_needs/_meta/DEPENDENCIES.md` |
+| Changelog | `outputs/requests/tree_of_needs/_meta/CHANGELOG.md` |
 | Stage report | `outputs/stage_report.md` |
 | Stage agent definition | `stage_3_01_request_gathering_agent.jsonld` |
 | Integration summary | `stage_3_01_request_gathering_agent.integration.md` |
 
-### Current Tree Structure
-
-```
-00_context_survives_boundaries/           (root need)
-├── 01_knowledge_organization/            3 needs
-│   ├── need_01_three_tier_architecture
-│   ├── need_02_knowledge_graph
-│   └── need_03_reference_format
-├── 02_knowledge_lifecycle/               2 needs
-│   ├── need_01_consolidation_process
-│   └── need_02_staleness_detection
-└── 03_knowledge_retrieval/               2 needs
-    ├── need_01_scored_retrieval
-    └── need_02_chain_validation
-```
+---
 
 
 

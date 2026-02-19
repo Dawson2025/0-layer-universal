@@ -68,9 +68,47 @@ Before exiting, update `outputs/stage_report.md` following the stage report prot
 | Content | Location |
 |---------|----------|
 | {Primary output} | `outputs/{path}` |
+| {Secondary output} | `outputs/{path}` |
 | Stage report | `outputs/stage_report.md` |
 | Stage agent definition | `stage_{LL}_{NN}_{name}_agent.jsonld` |
 | Integration summary | `stage_{LL}_{NN}_{name}_agent.integration.md` |
+
+---
+
+## Current State
+
+**Status**: {pending | active | complete | scaffolded} | **Last Updated**: {YYYY-MM-DD}
+
+### Summary
+
+{2-3 sentences: what has been accomplished in this stage, what exists in outputs/}
+
+### Key Outputs
+
+{Named files/structures with brief descriptions — enough for an agent to know what's here without exploring}
+
+| Output | Description |
+|--------|-------------|
+| `outputs/{path}` | {one-line description} |
+| `outputs/{path}` | {one-line description} |
+
+### Key Findings
+
+- {Distilled insight from the work — not process, but conclusions}
+- {What patterns or decisions emerged}
+
+### Open Items
+
+- {What's unresolved — specific and actionable}
+- {What needs attention}
+
+### Handoff
+
+- **Ready for next stage**: {yes | partially | no}
+- **Next stage**: {NN}_{stage_name}
+- **Start with**: {what the next stage should prioritize}
+
+---
 
 ## Success Criteria
 

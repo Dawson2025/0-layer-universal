@@ -65,29 +65,64 @@ Before exiting, update `outputs/stage_report.md` following the protocol in `../.
 
 | Content | Location |
 |---------|----------|
-| Tree of needs | `outputs/requests/tree_of_needs/` |
-| Root need | `outputs/requests/tree_of_needs/00_context_survives_boundaries/` |
-| Branch index | `outputs/requests/tree_of_needs/00_context_survives_boundaries/README.md` |
-| Meta (versions) | `outputs/requests/tree_of_needs/_meta/` |
+| Tree of needs root | `outputs/requests/tree_of_needs/00_context_survives_boundaries/README.md` |
+| Branch 01 index | `outputs/requests/tree_of_needs/00_context_survives_boundaries/01_knowledge_organization/README.md` |
+| Branch 02 index | `outputs/requests/tree_of_needs/00_context_survives_boundaries/02_knowledge_lifecycle/README.md` |
+| Branch 03 index | `outputs/requests/tree_of_needs/00_context_survives_boundaries/03_knowledge_retrieval/README.md` |
+| Version history | `outputs/requests/tree_of_needs/_meta/VERSION.md` |
+| Dependency map | `outputs/requests/tree_of_needs/_meta/DEPENDENCIES.md` |
+| Changelog | `outputs/requests/tree_of_needs/_meta/CHANGELOG.md` |
 | Stage report | `outputs/stage_report.md` |
 | Stage agent definition | `stage_3_01_request_gathering_agent.jsonld` |
 | Integration summary | `stage_3_01_request_gathering_agent.integration.md` |
 
-### Current Tree Structure
+---
 
-```
-00_context_survives_boundaries/           (root need)
-├── 01_knowledge_organization/            3 needs
-│   ├── need_01_three_tier_architecture
-│   ├── need_02_knowledge_graph
-│   └── need_03_reference_format
-├── 02_knowledge_lifecycle/               2 needs
-│   ├── need_01_consolidation_process
-│   └── need_02_staleness_detection
-└── 03_knowledge_retrieval/               2 needs
-    ├── need_01_scored_retrieval
-    └── need_02_chain_validation
-```
+## Current State
+
+**Status**: active | **Last Updated**: 2026-02-18 | **Version**: 1.0.0
+
+### Summary
+
+Requirements are structured as a tree of needs rooted in "Context Survives Boundaries" — the goal that agents never lose competence across session, compaction, or tool-switch boundaries. 7 leaf needs are defined across 3 branches, each with `requirements.md` and `user_stories.md`. All requirements trace to memory_system research (files 00-20).
+
+### Tree of Needs
+
+**Root**: `00_context_survives_boundaries` — agents recover competence without re-reading everything
+
+| Branch | Question | Needs | Key Need |
+|--------|----------|-------|----------|
+| `01_knowledge_organization` | "Where does each kind of content live?" | 3: three_tier_architecture, knowledge_graph, reference_format | three_tier_architecture (foundation for all other needs) |
+| `02_knowledge_lifecycle` | "How does knowledge move and stay current?" | 2: consolidation_process, staleness_detection | consolidation_process (distill stage outputs → knowledge files) |
+| `03_knowledge_retrieval` | "How do agents find the right context?" | 2: scored_retrieval, chain_validation | scored_retrieval (rank context by recency × relevance × importance) |
+
+### Implementation Priority (from _meta/DEPENDENCIES.md)
+
+Dependencies form a DAG, not a strict tree:
+- **Phase 1** (foundation): three_tier_architecture → reference_format → knowledge_graph
+- **Phase 2** (lifecycle): consolidation_process → staleness_detection
+- **Phase 3** (retrieval): chain_validation → scored_retrieval
+
+### Key Findings
+
+- The **three-tier pattern** (pointers → distilled → full) is the organizing principle — most other needs build on it
+- **Knowledge graph** and **scored retrieval** are the two highest-priority gaps (not yet implemented)
+- All requirements trace back to memory_system research, especially file 19 (prototype spec) and file 20 (three-tier knowledge architecture)
+- Branch READMEs use neuroscience analogies: lifecycle mirrors sleep replay (raw episodes → long-term storage), retrieval mirrors spreading activation (connection strength → activation)
+
+### Open Items
+
+- Priority ordering across all 7 needs not yet formalized (dependency map exists but no explicit rank)
+- User validation of the complete tree not yet done
+- Emerging need: agent context model for stage delegation (mentioned in stage report, not yet structured as a leaf need)
+
+### Handoff
+
+- **Ready for next stage**: partially — core needs defined, but new needs may emerge
+- **Next stage**: 02_research
+- **Start with**: need_01_three_tier_architecture and need_02_knowledge_graph — highest priority with the most research grounding
+
+---
 
 ## Success Criteria
 
