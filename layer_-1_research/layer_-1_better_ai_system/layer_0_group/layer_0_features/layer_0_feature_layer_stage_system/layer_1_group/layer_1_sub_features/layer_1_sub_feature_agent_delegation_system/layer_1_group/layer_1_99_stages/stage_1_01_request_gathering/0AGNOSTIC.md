@@ -130,6 +130,21 @@ How each need connects to research, design, and development:
 
 **Stage paths**: `../stage_1_02_research/`, `../stage_1_04_design/`, `../stage_1_06_development/`
 
+### Child Layer Detail (Principle 10)
+
+Branches that became child entities with their own stages:
+
+| Branch/Need | Child Entity (Layer 2) | Their Active Stages | What They Detail |
+|-------------|----------------------|---------------------|------------------|
+| Branch 02 (memory_integration) | **memory_system** | 01 (needs), 02 (21 research files on memory architectures) | Context chains, navigation, dynamic memory, episodic memory |
+| Branch 02 / need_01 (context_chain_support) | **context_chain_system** (Layer 3, via memory_system) | 01 (7 needs), 02 (56+ research files), 04, 05, 06, 07 (76 PASS tests) | How context flows through the hierarchy — the primary working example |
+| Branch 03 (coordination_patterns) | **multi_agent_system** | 01, 02 (scaffolded) | Agent hierarchy, orchestration, spawning patterns |
+
+**Child paths**:
+- memory_system: `../../layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_memory_system/`
+- multi_agent_system: `../../layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_multi_agent_system/`
+- context_chain_system: `.../memory_system/layer_3_group/layer_3_subx3_features/layer_3_subx3_feature_context_chain_system/`
+
 ### Open Items
 
 - Several needs are partially fulfilled by universal artifacts (stage guides, rules, protocols) — acceptance criteria need checking against what exists

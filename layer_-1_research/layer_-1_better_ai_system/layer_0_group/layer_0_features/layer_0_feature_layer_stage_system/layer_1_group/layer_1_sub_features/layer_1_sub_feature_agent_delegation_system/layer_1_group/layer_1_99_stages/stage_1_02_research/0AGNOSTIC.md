@@ -93,6 +93,18 @@ How each finding connects to requirements (stage 01) and design decisions (stage
 
 **Stage paths**: `../stage_1_01_request_gathering/`, `../stage_1_04_design/`
 
+### Child Layer Detail (Principle 10)
+
+Research was primarily conducted through child entities rather than standalone documents:
+
+| Child Entity | Research Contribution | Their Research Stage |
+|-------------|----------------------|---------------------|
+| **context_chain_system** (Layer 3) | Primary working example — validated stage delegation, 0AGNOSTIC.md identity, stage reports, two-halves pattern | Stage 02: 56+ files across 9 topic directories |
+| **memory_system** (Layer 2) | Memory architecture research informing context model | Stage 02: 21 files on cognitive science, memory types, implementations |
+| **multi_agent_system** (Layer 2) | Not yet explored as research vehicle | Stages scaffolded |
+
+**Child paths**: see stage 01 Child Layer Detail for full paths
+
 ### Open Items
 
 - No formal research documents exist in outputs/ — findings are embedded in the context_chain_system implementation

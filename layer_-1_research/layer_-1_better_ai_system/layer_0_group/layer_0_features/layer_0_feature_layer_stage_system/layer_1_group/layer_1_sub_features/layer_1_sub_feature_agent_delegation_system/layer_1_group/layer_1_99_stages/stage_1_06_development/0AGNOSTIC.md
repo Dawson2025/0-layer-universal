@@ -51,7 +51,7 @@ Development produced **universal artifacts** that now live at `layer_0/.0agnosti
 |----------|-------|----------|
 | Universal stage guides | 11 | `layer_0/.0agnostic/01_knowledge/layer_stage_system/stage_guides/STAGE_NN_NAME.md` |
 | Stage agent template | 1 | `layer_0/.0agnostic/01_knowledge/layer_stage_system/stage_guides/STAGE_AGENT_TEMPLATE.md` (includes Current State section) |
-| Delegation principles | 9 | `layer_0/.0agnostic/01_knowledge/principles/principles/STAGE_DELEGATION_PRINCIPLES.md` |
+| Delegation principles | 10 | `layer_0/.0agnostic/01_knowledge/principles/principles/STAGE_DELEGATION_PRINCIPLES.md` |
 | Static rules | 3 | `layer_0/.0agnostic/02_rules/static/` (scope boundary, report, delegation) |
 | Dynamic rules | 2 | `layer_0/.0agnostic/02_rules/dynamic/` (loops, parallel) |
 | Stage report protocol | 1 | `layer_0/.0agnostic/03_protocols/stage_report_protocol.md` |
@@ -85,6 +85,18 @@ How key artifacts connect to design decisions (stage 04) and requirements (stage
 | Tree of knowledge (13 files) | Three-tier knowledge applied to entity knowledge | 02/need_03: three_tier_delegation |
 
 **Stage paths**: `../stage_1_04_design/`, `../stage_1_01_request_gathering/`
+
+### Child Layer Detail (Principle 10)
+
+Universal artifacts are used across all child entities:
+
+| Child Entity | Artifacts Applied | Their Development Stage |
+|-------------|-------------------|------------------------|
+| **context_chain_system** (Layer 3) | All 11 stage 0AGNOSTIC.md files populated, .0agnostic/ fully built (50+ files), 76 PASS tests | Stage 06: active, Stage 07: 76 PASS |
+| **memory_system** (Layer 2) | Stage guides used, .0agnostic/ populated with knowledge/rules/protocols | Stage 06: scaffolded (uses universal artifacts) |
+| **multi_agent_system** (Layer 2) | Stage guides used, .0agnostic/ populated | Stage 06: scaffolded |
+
+**Child paths**: see stage 01 Child Layer Detail for full paths
 
 ### Key Findings During Development
 

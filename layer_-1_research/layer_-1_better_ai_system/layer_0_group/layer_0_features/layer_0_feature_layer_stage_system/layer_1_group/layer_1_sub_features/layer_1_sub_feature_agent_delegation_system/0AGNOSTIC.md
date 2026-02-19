@@ -80,7 +80,7 @@ This entity has progressed through multiple stages, producing universal artifact
 |----------|-------|----------|
 | Stage guides | 11 | `01_knowledge/layer_stage_system/stage_guides/STAGE_NN_NAME.md` |
 | Stage agent template | 1 | `01_knowledge/layer_stage_system/stage_guides/STAGE_AGENT_TEMPLATE.md` |
-| Delegation principles | 9 | `01_knowledge/principles/principles/STAGE_DELEGATION_PRINCIPLES.md` |
+| Delegation principles | 10 | `01_knowledge/principles/principles/STAGE_DELEGATION_PRINCIPLES.md` |
 | Static rules | 3 | `02_rules/static/` (scope boundary, report, delegation) |
 | Dynamic rules | 2 | `02_rules/dynamic/` (loops, parallel) |
 | Stage report protocol | 1 | `03_protocols/stage_report_protocol.md` |
@@ -101,6 +101,7 @@ The context_chain_system (grandchild entity via memory_system) serves as the **p
 |-----------|-----------|---------------|
 | **Two-Halves Context Pattern**: Every 0AGNOSTIC.md needs operational guidance (static) + current state summary (updated) — together they make the pointer tier functional | Principle 9 | Universal template includes Current State section |
 | **Scope Boundary Decisions**: When agents hit layer or stage boundaries, they decide: do it yourself (small/coupled), delegate (significant, agent exists), or instantiate (significant, no agent). Default: delegate. | Principle 8 | Scope Boundary Rule at `layer_0/.0agnostic/02_rules/static/STAGE_BOUNDARY_RULE.md` |
+| **Cross-Layer Stage References**: When content at one layer warrants a child entity, both layers maintain bidirectional stage references — parent points down (overview → detail), child points up (detail → context) | Principle 10 | Applied to all stages and child entities in this hierarchy |
 
 Full details: `.0agnostic/01_knowledge/tree_of_knowledge/00_agent_delegation_knowledge/02_patterns_and_principles/`
 

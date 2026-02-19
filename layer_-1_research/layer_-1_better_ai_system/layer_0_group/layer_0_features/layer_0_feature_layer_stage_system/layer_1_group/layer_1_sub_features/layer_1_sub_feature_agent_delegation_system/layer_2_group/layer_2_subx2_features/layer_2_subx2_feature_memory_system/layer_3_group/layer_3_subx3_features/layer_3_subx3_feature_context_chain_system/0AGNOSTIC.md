@@ -264,6 +264,20 @@ Read these from `.0agnostic/knowledge/` for deep context:
 
 ---
 
+## Parent Layer Context (Principle 10)
+
+This entity details **context_chain_support** (Branch 02/need_01) from the grandparent agent_delegation_system. It also serves as the **primary working example** for all agent delegation patterns.
+
+| Ancestor | Stage | What It Provides | Path |
+|----------|-------|-----------------|------|
+| agent_delegation_system (Layer 1) | Stage 01 | Original need: context_chain_support + three_tier_delegation | `../../../../../../layer_1_group/layer_1_99_stages/stage_1_01_request_gathering/` |
+| agent_delegation_system (Layer 1) | Stage 04 | Design decisions governing this entity (0AGNOSTIC.md pattern, two-halves, stage reports) | `../../../../../../layer_1_group/layer_1_99_stages/stage_1_04_design/` |
+| agent_delegation_system (Layer 1) | Stage 06 | Universal artifacts this entity uses (stage guides, principles, rules) | `../../../../../../layer_1_group/layer_1_99_stages/stage_1_06_development/` |
+| agent_delegation_system (Layer 1) | Tree of knowledge | Organized summaries of all delegation knowledge | `../../../../../../.0agnostic/01_knowledge/tree_of_knowledge/` |
+| memory_system (Layer 2) | Parent entity | Memory architecture context | `../../../0AGNOSTIC.md` |
+
+---
+
 ## Where to Contribute
 
 | Work Type | Location |

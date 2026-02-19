@@ -89,6 +89,18 @@ How each decision connects to requirements (stage 01), research (stage 02), and 
 
 **Stage paths**: `../stage_1_01_request_gathering/`, `../stage_1_02_research/`, `../stage_1_06_development/`
 
+### Child Layer Detail (Principle 10)
+
+Design decisions are implemented differently at each child layer:
+
+| Child Entity | Design Decisions Applied | Their Design Stage |
+|-------------|------------------------|-------------------|
+| **context_chain_system** (Layer 3) | All 7 decisions — full implementation as working example. Additionally has its own design decisions (avenue web, 8 avenues, progressive disclosure) | Stage 04: 2 design docs (chain system design, .0agnostic integration) |
+| **memory_system** (Layer 2) | Three-tier knowledge, stage reports, two-halves pattern | Stage 04: scaffolded |
+| **multi_agent_system** (Layer 2) | Scope boundary decisions, spawning patterns, agent hierarchy | Stage 04: scaffolded |
+
+**Child paths**: see stage 01 Child Layer Detail for full paths
+
 ### Open Items
 
 - No formal design documents in outputs/ — decisions are embedded in the artifacts themselves

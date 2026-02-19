@@ -11,6 +11,7 @@ This branch covers the discovered patterns and formalized principles that emerge
 | `two_halves_pattern.md` | Every 0AGNOSTIC.md needs operational guidance + current state | Principle 9 |
 | `scope_boundary_decisions.md` | How agents handle out-of-scope work at layer/stage boundaries | Principle 8 + Scope Boundary Rule |
 | `three_tier_knowledge.md` | Pointers → distilled → full knowledge flow | Principle 3 |
+| `cross_layer_stage_references.md` | Bidirectional references between parent and child layer stages | Principle 10 |
 
 ## Key Insight
 

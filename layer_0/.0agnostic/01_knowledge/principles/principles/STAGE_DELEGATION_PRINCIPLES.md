@@ -94,3 +94,44 @@ Every 0AGNOSTIC.md (whether for an entity or a stage) needs **two halves**:
 Without the current state half, an agent landing in a stage must explore outputs/ manually to understand what exists — wasting context window tokens on orientation instead of productive work.
 
 The operational half tells the agent **how to work**. The current state half tells the agent **what's already here**. Together, they make the pointer tier functional: 0AGNOSTIC.md is the single file an agent reads to be immediately oriented and productive.
+
+## 10. Cross-Layer Stage References
+
+When content at one layer becomes detailed enough to warrant its own entity (child layer), both layers must maintain **bidirectional references** between their stages.
+
+### The Pattern
+
+- **Parent layer stages → child**: Overviews and summaries pointing to child entity stages where the detailed work lives. The parent stage is the "pointer tier" for its child's stages.
+- **Child layer → parent stages**: References back to the parent layer stages that provide broader context, the original requirement, or the design decision being implemented.
+
+### When to Push to a Child Layer
+
+| Factor | Stay at current layer | Push to child layer |
+|--------|----------------------|---------------------|
+| Depth of detail | A few files, shallow | Multiple files, deep investigation |
+| Scope independence | Tightly coupled to parent | Can be worked on independently |
+| Stage breadth | Needs 1-2 stages | Needs its own full stage progression (01-11) |
+| Agent specialization | Same agent handles it | Needs a specialized agent with domain knowledge |
+
+### Bidirectional References
+
+**Parent pointing down** (in parent stage 0AGNOSTIC.md):
+
+| Branch/Need | Child Entity | Child Stages with Detail | Path |
+|-------------|-------------|-------------------------|------|
+| Branch 02 | memory_system | Stages 01-07 active | `child_entity/layer_N_group/layer_N_99_stages/` |
+
+**Child pointing up** (in child entity 0AGNOSTIC.md):
+
+| Parent Stage | What It Provides | Path |
+|-------------|-----------------|------|
+| Stage 01 (needs) | Original requirements this entity details | `parent_entity/.../stage_NN/` |
+| Stage 04 (design) | Design decisions governing this entity | `parent_entity/.../stage_NN/` |
+
+### Why Both Directions
+
+- **Parent → child**: Managers reading the parent layer can find where detailed work lives without discovering child entities by exploration
+- **Child → parent**: Agents in child entities can navigate up to understand the broader context and the original need they're addressing
+- **Cross-stage traceability extends across layers**: A need at the parent layer connects to research/design/development at the child layer
+
+Without bidirectional references, agents either don't know child layers exist (lost detail) or don't know where their work fits (lost context).
