@@ -58,15 +58,19 @@ The key design decisions for agent delegation were made through iterative develo
 | Decision | Rationale | Alternative Rejected |
 |----------|-----------|---------------------|
 | **0AGNOSTIC.md as stage identity** | Loads as static context, tool-agnostic (works with Claude, Gemini, etc.), single source of truth | JSON-LD only (too rigid), README.md (no tooling support) |
-| **Two-halves pattern** (operational + state) | Agents need both "how to work" and "what's here" from a single file | Separate files for guidance vs state (more files to manage, less likely to stay in sync) |
+| **Two-halves pattern** (operational + state) → Principle 9 | Agents need both "how to work" and "what's here" from a single file | Separate files for guidance vs state (more files to manage, less likely to stay in sync) |
 | **Stage reports for async communication** | Managers shouldn't load stage outputs; reports provide summary | Real-time messaging only (doesn't survive sessions), shared state files (coordination complexity) |
 | **Scope boundary enforcement via IS/IS NOT** | Explicit NOT list prevents scope creep better than just defining what IS | Implicit boundaries (agents guess what's out of scope) |
 | **Universal stage guides + entity templates** | Universal guides define what ANY stage 01/02/etc. does; entity templates are instantiated per-entity | Per-entity everything (no reuse), purely universal (no customization) |
+| **Scope boundary decisions** → Principle 8 | When agents reach scope boundaries, they decide: do it yourself (small/coupled), delegate (significant, agent exists), or instantiate (significant, no agent exists). Default: delegate. | No framework (agents guess), always delegate (misses trivial cases), always self-handle (context overflow) |
+| **Scope boundaries span layers AND stages** | A single Scope Boundary Rule covers both dimensions — layer boundaries (sibling/parent/child entities) and stage boundaries (different stages within an entity) | Separate rules for layers vs stages (artificial split, same decision framework applies) |
 
 ### Codified In
 
 - Universal template: `layer_0/.0agnostic/01_knowledge/layer_stage_system/stage_guides/STAGE_AGENT_TEMPLATE.md`
 - 11 stage guides: `layer_0/.0agnostic/01_knowledge/layer_stage_system/stage_guides/STAGE_NN_NAME.md`
+- 9 delegation principles: `layer_0/.0agnostic/01_knowledge/principles/principles/STAGE_DELEGATION_PRINCIPLES.md` (includes Principle 8: Scope Boundary Decisions, Principle 9: Two-Halves Context Pattern)
+- Scope Boundary Rule: `layer_0/.0agnostic/02_rules/static/STAGE_BOUNDARY_RULE.md`
 - Working example: context_chain_system stages 01-11
 
 ### Open Items

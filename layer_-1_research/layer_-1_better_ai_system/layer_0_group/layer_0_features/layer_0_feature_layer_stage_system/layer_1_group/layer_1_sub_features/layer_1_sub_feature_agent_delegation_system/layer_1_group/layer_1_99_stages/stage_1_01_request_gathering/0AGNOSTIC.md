@@ -109,6 +109,8 @@ Requirements directly inform two child entities:
 - **Three failure modes** without delegation model: (1) manager carries everything (context overflow), (2) stage agents lack identity (no 0AGNOSTIC.md), (3) no async status (manager loads all stage details)
 - **Overlap with context_chain_system**: Branch 02 (memory_integration) overlaps with the context_chain_system's own tree of needs (`00_context_survives_boundaries`), particularly around three-tier knowledge and context chains
 - **Many needs already implemented**: Stage delegation, stage reports, and agent context models have been partially implemented through universal stage guides and rules at `layer_0/.0agnostic/`
+- **Scope boundary decisions emerged as a need**: Agents must decide what to do when they encounter out-of-scope work — do it themselves, delegate to an existing agent, or instantiate a new one. Formalized as **Principle 8** in `layer_0/.0agnostic/01_knowledge/principles/principles/STAGE_DELEGATION_PRINCIPLES.md`
+- **Two-halves context pattern emerged**: Every stage 0AGNOSTIC.md needs both operational guidance AND current state summary. Formalized as **Principle 9** in the same file
 
 ### Open Items
 

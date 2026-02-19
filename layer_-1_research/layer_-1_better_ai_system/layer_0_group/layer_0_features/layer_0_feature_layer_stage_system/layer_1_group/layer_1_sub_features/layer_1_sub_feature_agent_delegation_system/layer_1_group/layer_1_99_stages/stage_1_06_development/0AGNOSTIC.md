@@ -50,9 +50,9 @@ Development produced **universal artifacts** that now live at `layer_0/.0agnosti
 | Artifact | Count | Location |
 |----------|-------|----------|
 | Universal stage guides | 11 | `layer_0/.0agnostic/01_knowledge/layer_stage_system/stage_guides/STAGE_NN_NAME.md` |
-| Stage agent template | 1 | `layer_0/.0agnostic/01_knowledge/layer_stage_system/stage_guides/STAGE_AGENT_TEMPLATE.md` |
-| Delegation principles | 7 | `layer_0/.0agnostic/01_knowledge/principles/principles/STAGE_DELEGATION_PRINCIPLES.md` |
-| Static rules | 3 | `layer_0/.0agnostic/02_rules/static/` (boundary, report, delegation) |
+| Stage agent template | 1 | `layer_0/.0agnostic/01_knowledge/layer_stage_system/stage_guides/STAGE_AGENT_TEMPLATE.md` (includes Current State section) |
+| Delegation principles | 9 | `layer_0/.0agnostic/01_knowledge/principles/principles/STAGE_DELEGATION_PRINCIPLES.md` |
+| Static rules | 3 | `layer_0/.0agnostic/02_rules/static/` (scope boundary, report, delegation) |
 | Dynamic rules | 2 | `layer_0/.0agnostic/02_rules/dynamic/` (loops, parallel) |
 | Stage report protocol | 1 | `layer_0/.0agnostic/03_protocols/stage_report_protocol.md` |
 | Context chain system stage 0AGNOSTIC.md | 11 | `.../context_chain_system/.../stage_3_NN_*/0AGNOSTIC.md` |
@@ -61,11 +61,22 @@ Development produced **universal artifacts** that now live at `layer_0/.0agnosti
 | Updated stage-workflow skill | 1 | `.claude/skills/stage-workflow/SKILL.md` |
 | Updated STAGES_EXPLAINED.md | 1 | `layer_0/.0agnostic/01_knowledge/layer_stage_system/STAGES_EXPLAINED.md` |
 
+### Key Principles Formalized
+
+| Principle | # | What It Captures |
+|-----------|---|------------------|
+| Scope Boundary Decisions | 8 | When agents hit layer/stage boundaries: do it yourself (small/coupled), delegate (significant, agent exists), or instantiate (significant, no agent). Default: delegate. Context window preservation is the key factor. |
+| Two-Halves Context Pattern | 9 | Every 0AGNOSTIC.md needs operational guidance (static) + current state summary (updated). Together they make the pointer tier functional. |
+
+These are codified in `layer_0/.0agnostic/01_knowledge/principles/principles/STAGE_DELEGATION_PRINCIPLES.md`. The Scope Boundary Rule at `layer_0/.0agnostic/02_rules/static/STAGE_BOUNDARY_RULE.md` was expanded from "Stage Boundary Rule" to cover both layer and stage boundaries with a decision framework.
+
 ### Key Findings During Development
 
 - Writing all 11 stage guides revealed that stages 01-07 are "active" stages with clear methodology, while 08-11 are "reactive/maintenance" stages with simpler patterns
 - The context_chain_system's stage 01 (gold standard) directly informed the universal template
 - agnostic-sync.sh successfully generates tool-specific files from all new 0AGNOSTIC.md files
+- Scope boundaries are not just "stop and hand off" — they require an active decision with three options, driven by context window preservation
+- The two-halves pattern was discovered when enriching stage 01's 0AGNOSTIC.md — without the current state half, agents waste context window tokens on exploration
 
 ### Open Items
 

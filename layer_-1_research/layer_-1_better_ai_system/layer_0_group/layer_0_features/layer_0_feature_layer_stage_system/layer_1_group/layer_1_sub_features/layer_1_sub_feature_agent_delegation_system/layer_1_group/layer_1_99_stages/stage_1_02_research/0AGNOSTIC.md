@@ -73,8 +73,10 @@ The context_chain_system at `../../layer_2_group/.../layer_3_subx3_feature_conte
 
 - **Managers don't need stage methodology**: The entity manager can coordinate effectively by reading stage reports alone — no need to carry stage-level detail
 - **0AGNOSTIC.md is the right vehicle for stage identity**: It provides static context that loads automatically, so the agent knows what it is immediately
-- **Two halves pattern discovered**: Stage 0AGNOSTIC.md needs operational guidance (static) AND current state summary (updated) — see `../../.0agnostic/01_knowledge/things_learned/docs/stage_0agnostic_pattern.md`
+- **Two-halves context pattern discovered → Principle 9**: Stage 0AGNOSTIC.md needs operational guidance (static) AND current state summary (updated). Formalized as Principle 9 in `layer_0/.0agnostic/01_knowledge/principles/principles/STAGE_DELEGATION_PRINCIPLES.md`. See also `../../.0agnostic/01_knowledge/things_learned/docs/stage_0agnostic_pattern.md`
 - **Stage reports enable async coordination**: The manager never needs to load stage outputs — the stage report provides sufficient status
+- **Scope boundary decisions discovered → Principle 8**: When agents reach the edge of their layer or stage scope, they must decide: (1) do it yourself if small and coupled, (2) delegate to an existing agent, or (3) instantiate a new agent if none exists. The key factor is context window preservation. Formalized as Principle 8 in the same file, and as the expanded **Scope Boundary Rule** at `layer_0/.0agnostic/02_rules/static/STAGE_BOUNDARY_RULE.md`
+- **Scope boundaries span both layers AND stages**: The original "stage boundary" concept was too narrow — scope decisions happen at layer boundaries too (e.g., a child entity doing parent entity work). The Scope Boundary Rule now covers both dimensions
 
 ### Open Items
 

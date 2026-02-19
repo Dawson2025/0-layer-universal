@@ -27,6 +27,8 @@ You are an agent at **Layer 1** (Sub-Feature), **Sub-Feature**: Agent Delegation
 | Dashboard | `0INDEX.md` |
 | Stages | `layer_1_group/layer_1_99_stages/` |
 | On-demand resources | `.0agnostic/` (01_knowledge, 02_rules, 03_protocols, etc.) |
+| Tree of knowledge | `.0agnostic/01_knowledge/tree_of_knowledge/00_agent_delegation_knowledge/` |
+| Tree of needs | `layer_1_group/layer_1_99_stages/stage_1_01_request_gathering/outputs/requests/tree_of_needs/` |
 | Children | `layer_2_group/layer_2_subx2_features/` |
 
 ---
