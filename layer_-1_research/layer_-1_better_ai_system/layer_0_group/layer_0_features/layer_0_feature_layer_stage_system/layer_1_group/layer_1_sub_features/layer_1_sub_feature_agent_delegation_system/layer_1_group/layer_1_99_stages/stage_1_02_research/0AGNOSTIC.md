@@ -78,6 +78,21 @@ The context_chain_system at `../../layer_2_group/.../layer_3_subx3_feature_conte
 - **Scope boundary decisions discovered → Principle 8**: When agents reach the edge of their layer or stage scope, they must decide: (1) do it yourself if small and coupled, (2) delegate to an existing agent, or (3) instantiate a new agent if none exists. The key factor is context window preservation. Formalized as Principle 8 in the same file, and as the expanded **Scope Boundary Rule** at `layer_0/.0agnostic/02_rules/static/STAGE_BOUNDARY_RULE.md`
 - **Scope boundaries span both layers AND stages**: The original "stage boundary" concept was too narrow — scope decisions happen at layer boundaries too (e.g., a child entity doing parent entity work). The Scope Boundary Rule now covers both dimensions
 
+### Cross-Stage Traceability
+
+How each finding connects to requirements (stage 01) and design decisions (stage 04):
+
+| Finding | Stage 01 (Requirement) | Stage 04 (Design Decision) |
+|---------|----------------------|-----------------------------|
+| Managers don't need stage methodology | 01/need_01: stage_delegation | "0AGNOSTIC.md as stage identity" — managers read pointers only |
+| 0AGNOSTIC.md is the right vehicle | 01/need_01: stage_delegation, 01/need_03: agent_context_model | "0AGNOSTIC.md as stage identity" — tool-agnostic, static context |
+| Two-halves pattern (→ Principle 9) | 02/need_03: three_tier_delegation | "Two-halves pattern" — operational + current state in one file |
+| Stage reports enable async coordination | 01/need_02: stage_reports, 02/need_02: handoff_protocols | "Stage reports for async communication" |
+| Scope boundary decisions (→ Principle 8) | 03/need_02: spawning_patterns | "Scope boundary decisions" — three-option framework |
+| Scope boundaries span layers AND stages | 03/need_01: agent_hierarchy | "Scope boundaries span layers AND stages" — single rule |
+
+**Stage paths**: `../stage_1_01_request_gathering/`, `../stage_1_04_design/`
+
 ### Open Items
 
 - No formal research documents exist in outputs/ — findings are embedded in the context_chain_system implementation

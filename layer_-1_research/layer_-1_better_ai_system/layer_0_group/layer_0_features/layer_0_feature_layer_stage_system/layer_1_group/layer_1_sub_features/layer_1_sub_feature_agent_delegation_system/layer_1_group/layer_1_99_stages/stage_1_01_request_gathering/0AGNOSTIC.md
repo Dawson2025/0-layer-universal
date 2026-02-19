@@ -112,6 +112,24 @@ Requirements directly inform two child entities:
 - **Scope boundary decisions emerged as a need**: Agents must decide what to do when they encounter out-of-scope work — do it themselves, delegate to an existing agent, or instantiate a new one. Formalized as **Principle 8** in `layer_0/.0agnostic/01_knowledge/principles/principles/STAGE_DELEGATION_PRINCIPLES.md`
 - **Two-halves context pattern emerged**: Every stage 0AGNOSTIC.md needs both operational guidance AND current state summary. Formalized as **Principle 9** in the same file
 
+### Cross-Stage Traceability
+
+How each need connects to research, design, and development:
+
+| Need | Stage 02 (Research) | Stage 04 (Design Decision) | Stage 06 (Artifact) |
+|------|--------------------|-----------------------------|---------------------|
+| **01/need_01**: stage_delegation | Validated via context_chain_system (stage agent pattern tested) | "0AGNOSTIC.md as stage identity", "Scope boundary enforcement via IS/IS NOT" | 11 stage guides, stage agent template, Principle 1 |
+| **01/need_02**: stage_reports | Stage reports tested in context_chain_system stages | "Stage reports for async communication" | Stage report protocol, STAGE_REPORT_RULE, Principle 4 |
+| **01/need_03**: agent_context_model | Three-tier knowledge observed in context_chain_system | "Two-halves pattern" (Principle 9) | STAGE_AGENT_TEMPLATE with Current State, Principles 3, 7 |
+| **02/need_01**: context_chain_support | context_chain_system itself is the primary research vehicle | Three-tier knowledge design | Principle 3 (Three-Tier Knowledge) |
+| **02/need_02**: handoff_protocols | Stage report handoff tested across stages | "Stage reports for async communication" | Stage report protocol |
+| **02/need_03**: three_tier_delegation | Pointer → distilled → full tiers validated | "Two-halves pattern" (makes pointer tier functional) | Principle 9, tree of knowledge |
+| **03/need_01**: agent_hierarchy | Manager → stage agent hierarchy observed | "Universal stage guides + entity templates" | 11 stage guides |
+| **03/need_02**: spawning_patterns | Observed need for instantiation decisions | "Scope boundary decisions" (Principle 8) | Principle 8, Scope Boundary Rule |
+| **03/need_03**: communication_channels | Stage reports as primary async channel validated | "Stage reports for async communication" | Stage report protocol, Principle 4 |
+
+**Stage paths**: `../stage_1_02_research/`, `../stage_1_04_design/`, `../stage_1_06_development/`
+
 ### Open Items
 
 - Several needs are partially fulfilled by universal artifacts (stage guides, rules, protocols) — acceptance criteria need checking against what exists

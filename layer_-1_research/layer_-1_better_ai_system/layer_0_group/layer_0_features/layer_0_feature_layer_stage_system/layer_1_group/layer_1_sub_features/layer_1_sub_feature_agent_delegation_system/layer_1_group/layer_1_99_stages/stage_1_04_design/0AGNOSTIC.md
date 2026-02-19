@@ -73,6 +73,22 @@ The key design decisions for agent delegation were made through iterative develo
 - Scope Boundary Rule: `layer_0/.0agnostic/02_rules/static/STAGE_BOUNDARY_RULE.md`
 - Working example: context_chain_system stages 01-11
 
+### Cross-Stage Traceability
+
+How each decision connects to requirements (stage 01), research (stage 02), and artifacts (stage 06):
+
+| Decision | Stage 01 (Requirement) | Stage 02 (Finding) | Stage 06 (Artifact) |
+|----------|----------------------|---------------------|---------------------|
+| 0AGNOSTIC.md as stage identity | 01/need_01: stage_delegation | Validated via context_chain_system | 11 stage guides, stage agent template |
+| Two-halves pattern (P9) | 01/need_03: agent_context_model, 02/need_03: three_tier_delegation | Discovered: agents need "what's here" + "how to work" | STAGE_AGENT_TEMPLATE with Current State, Principle 9 |
+| Stage reports for async | 01/need_02: stage_reports, 02/need_02: handoff_protocols | Stage reports tested in working example | Stage report protocol, STAGE_REPORT_RULE, Principle 4 |
+| Scope boundary IS/IS NOT | 01/need_01: stage_delegation | Agents without NOT lists drift into other stages | Every stage guide has IS/IS NOT sections |
+| Universal guides + entity templates | 03/need_01: agent_hierarchy | 11 stages tested in context_chain_system | 11 STAGE_NN_NAME.md guides + template |
+| Scope boundary decisions (P8) | 03/need_02: spawning_patterns | Agents need framework for out-of-scope work | Principle 8, Scope Boundary Rule |
+| Scope spans layers AND stages | 03/need_01: agent_hierarchy | "Stage boundary" concept too narrow | Expanded Scope Boundary Rule |
+
+**Stage paths**: `../stage_1_01_request_gathering/`, `../stage_1_02_research/`, `../stage_1_06_development/`
+
 ### Open Items
 
 - No formal design documents in outputs/ — decisions are embedded in the artifacts themselves

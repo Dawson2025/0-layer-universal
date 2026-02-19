@@ -70,6 +70,22 @@ Development produced **universal artifacts** that now live at `layer_0/.0agnosti
 
 These are codified in `layer_0/.0agnostic/01_knowledge/principles/principles/STAGE_DELEGATION_PRINCIPLES.md`. The Scope Boundary Rule at `layer_0/.0agnostic/02_rules/static/STAGE_BOUNDARY_RULE.md` was expanded from "Stage Boundary Rule" to cover both layer and stage boundaries with a decision framework.
 
+### Cross-Stage Traceability
+
+How key artifacts connect to design decisions (stage 04) and requirements (stage 01):
+
+| Artifact Group | Stage 04 (Design Decision) | Stage 01 (Requirement) |
+|----------------|---------------------------|------------------------|
+| 11 stage guides | "0AGNOSTIC.md as stage identity", "Universal guides + entity templates" | 01/need_01: stage_delegation, 03/need_01: agent_hierarchy |
+| Stage agent template (with Current State) | "Two-halves pattern" (P9) | 01/need_03: agent_context_model, 02/need_03: three_tier_delegation |
+| 9 delegation principles | All design decisions formalized | All 9 needs — principles capture the full model |
+| Stage report protocol + rule | "Stage reports for async communication" | 01/need_02: stage_reports, 02/need_02: handoff_protocols |
+| Scope Boundary Rule | "Scope boundary decisions" (P8), "Scope spans layers AND stages" | 03/need_02: spawning_patterns, 03/need_01: agent_hierarchy |
+| Stage-workflow skill | "Universal guides + entity templates" | 03/need_03: communication_channels |
+| Tree of knowledge (13 files) | Three-tier knowledge applied to entity knowledge | 02/need_03: three_tier_delegation |
+
+**Stage paths**: `../stage_1_04_design/`, `../stage_1_01_request_gathering/`
+
 ### Key Findings During Development
 
 - Writing all 11 stage guides revealed that stages 01-07 are "active" stages with clear methodology, while 08-11 are "reactive/maintenance" stages with simpler patterns
