@@ -21,11 +21,14 @@ description: "Work through stages (01-11) properly, understanding what content b
 
 | Reference | Path | Why |
 |-----------|------|-----|
-| Stages | `layer_0/.../layer_stage_system/STAGES_EXPLAINED.md` | Stage purposes, completeness rule |
-| Sub-stages | `layer_0/.../layer_stage_system/SUB_STAGES_EXPLAINED.md` | When to use sub-stages |
-| Overview | `layer_0/.../layer_stage_system/OVERVIEW.md` | System overview |
+| Stages | `layer_0/.0agnostic/01_knowledge/layer_stage_system/STAGES_EXPLAINED.md` | Stage purposes, completeness rule |
+| Sub-stages | `layer_0/.0agnostic/01_knowledge/layer_stage_system/SUB_STAGES_EXPLAINED.md` | When to use sub-stages |
+| Overview | `layer_0/.0agnostic/01_knowledge/layer_stage_system/OVERVIEW.md` | System overview |
+| Stage guides | `layer_0/.0agnostic/01_knowledge/layer_stage_system/stage_guides/STAGE_NN_NAME.md` | What each stage agent does — identity, methodology, inputs/outputs, boundaries |
+| Agent template | `layer_0/.0agnostic/01_knowledge/layer_stage_system/stage_guides/STAGE_AGENT_TEMPLATE.md` | Template for writing stage 0AGNOSTIC.md files |
+| Delegation principles | `layer_0/.0agnostic/01_knowledge/principles/principles/STAGE_DELEGATION_PRINCIPLES.md` | 7 core principles governing stage delegation |
 
-**Full path**: `layer_0/layer_0_04_sub_layers/sub_layer_0_01_knowledge_system/layer_stage_system/`
+**Knowledge path**: `layer_0/.0agnostic/01_knowledge/layer_stage_system/`
 
 ## Protocol
 
@@ -59,15 +62,35 @@ stage_X_05_design/
     └── decisions.md
 ```
 
-### 3. Stage Transitions
+### 3. Stage Agent Delegation
+
+Each stage has a dedicated agent role. Before operating in a stage:
+
+1. **Read the stage guide**: `stage_guides/STAGE_NN_NAME.md` — defines what the agent IS and IS NOT
+2. **Respect scope boundaries**: Do NOT perform work belonging to another stage (see `02_rules/static/STAGE_BOUNDARY_RULE.md`)
+3. **Write a stage report**: Before leaving, update `outputs/stage_report.md` (see `03_protocols/stage_report_protocol.md`)
+4. **Managers delegate, agents operate**: The entity manager reads stage reports and decides what to delegate — it does not carry operational methodology
+
+**Key rules** (in `layer_0/.0agnostic/02_rules/`):
+
+| Rule | Type | What It Says |
+|------|------|-------------|
+| Stage Boundary Rule | Static | Never do work belonging to another stage |
+| Stage Report Rule | Static | Always write stage_report.md before exiting |
+| Manager Delegation Rule | Static | Managers delegate; agents operate within scope |
+| Stage Loop Rule | Dynamic | How to loop back (07→08→09→07 quality loop) |
+| Parallel Stages Rule | Dynamic | How to run stages concurrently (01+02) |
+
+### 4. Stage Transitions
 
 When moving to next stage:
 1. Ensure current stage outputs are complete
-2. Create handoff document (optional — use `/handoff-creation`)
-3. Move to next stage folder
-4. Reference previous stage outputs as needed
+2. Write/update `outputs/stage_report.md` with status and handoff notes
+3. Create handoff document (optional — use `/handoff-creation`)
+4. Move to next stage folder
+5. Reference previous stage outputs as needed
 
-### 4. [CRITICAL] Never Skip Stages
+### 5. [CRITICAL] Never Skip Stages
 
 All 11 stages must exist, even if empty.
 
@@ -78,19 +101,19 @@ If a stage isn't needed for this work:
 
 ## Stage Content Guide
 
-| Stage | Typical Outputs |
-|-------|-----------------|
-| 01 | requirements.md, questions.md |
-| 02 | findings.md, prior_art.md, research_notes.md |
-| 03 | constraints.md, guidelines.md |
-| 04 | plan.md, tasks.md, breakdown.md |
-| 05 | design.md, architecture.md, diagrams/ |
-| 06 | code/, drafts/, implementations/ |
-| 07 | test_results.md, validation.md |
-| 08 | review.md, alternatives.md, trade_offs.md |
-| 09 | fixes.md, revisions/, changelog.md |
-| 10 | final content (ready for use) |
-| 11 | previous_versions/, archive/ |
+| Stage | Key Outputs | Guide |
+|-------|-------------|-------|
+| 01 | requirements.md (tree of needs), user_stories.md | `STAGE_01_REQUEST_GATHERING.md` |
+| 02 | topic-based research dirs with README.md index | `STAGE_02_RESEARCH.md` |
+| 03 | constraints.md (MUST/MUST NOT), guidelines.md | `STAGE_03_INSTRUCTIONS.md` |
+| 04 | design.md (architecture + rationale + alternatives) | `STAGE_04_DESIGN.md` |
+| 05 | plan.md (ordered tasks, dependencies, MVP-first) | `STAGE_05_PLANNING.md` |
+| 06 | artifacts in entity root (not outputs/) + status tracking | `STAGE_06_DEVELOPMENT.md` |
+| 07 | test scripts (run_all_tests.sh), test_results.md | `STAGE_07_TESTING.md` |
+| 08 | critique.md (critical/major/minor/suggestion severity) | `STAGE_08_CRITICISM.md` |
+| 09 | fixes_log.md (what, why, where, verification) | `STAGE_09_FIXING.md` |
+| 10 | promoted deliverables (from earlier stages) | `STAGE_10_CURRENT_PRODUCT.md` |
+| 11 | versioned snapshots, CHANGELOG.md | `STAGE_11_ARCHIVES.md` |
 
 ## Agent Context
 
@@ -116,4 +139,4 @@ The StageStateActor tracks current stage (01-11) and stage-specific specialists.
 
 ---
 
-*This skill ensures proper stage workflow following STAGES_EXPLAINED.md*
+*This skill ensures proper stage workflow following STAGES_EXPLAINED.md and stage guides*

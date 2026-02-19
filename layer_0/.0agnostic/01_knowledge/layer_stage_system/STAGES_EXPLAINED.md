@@ -8,19 +8,19 @@ Stages represent the **workflow phases** that work passes through. Every entity 
 
 ## The 11 Stages
 
-| # | Stage | Purpose | Typical Outputs |
-|---|-------|---------|-----------------|
-| 01 | request_gathering | Collect and clarify requirements | requirements.md, questions.md |
-| 02 | research | Explore problem space, gather information | findings.md, prior_art.md |
-| 03 | instructions | Define constraints and guidelines | constraints.md, guidelines.md |
-| 04 | planning | Break work into subtasks | plan.md, tasks.md |
-| 05 | design | Architecture and design decisions | design.md, diagrams/ |
-| 06 | development | Implementation | code, drafts, content |
-| 07 | testing | Verification and validation | test_results.md, validation.md |
-| 08 | criticism | Review and critique | review.md, alternatives.md |
-| 09 | fixing | Address issues found | fixes.md, revisions |
-| 10 | current_product | Final deliverable | final content ready for use |
-| 11 | archives | Historical versions | previous versions, changelog |
+| # | Stage | Purpose | Guide |
+|---|-------|---------|-------|
+| 01 | request_gathering | Transform vague needs into structured, testable requirements (tree of needs) | [Guide](stage_guides/STAGE_01_REQUEST_GATHERING.md) |
+| 02 | research | Investigate problem space, produce topic-based findings with evidence | [Guide](stage_guides/STAGE_02_RESEARCH.md) |
+| 03 | instructions | Define constraints, guidelines, and non-negotiable rules | [Guide](stage_guides/STAGE_03_INSTRUCTIONS.md) |
+| 04 | design | Make architecture decisions, write design specs with rationale | [Guide](stage_guides/STAGE_04_DESIGN.md) |
+| 05 | planning | Break design into ordered, actionable tasks with MVP approach | [Guide](stage_guides/STAGE_05_PLANNING.md) |
+| 06 | development | Build artifacts following the plan — track status, follow design | [Guide](stage_guides/STAGE_06_DEVELOPMENT.md) |
+| 07 | testing | Write and run test scripts, document PASS/FAIL results | [Guide](stage_guides/STAGE_07_TESTING.md) |
+| 08 | criticism | Review quality, identify gaps and issues by severity | [Guide](stage_guides/STAGE_08_CRITICISM.md) |
+| 09 | fixing | Resolve issues from testing/criticism, document fixes | [Guide](stage_guides/STAGE_09_FIXING.md) |
+| 10 | current_product | Hold final validated deliverables ready for use | [Guide](stage_guides/STAGE_10_CURRENT_PRODUCT.md) |
+| 11 | archives | Store historical versions and deprecated content | [Guide](stage_guides/STAGE_11_ARCHIVES.md) |
 
 ---
 

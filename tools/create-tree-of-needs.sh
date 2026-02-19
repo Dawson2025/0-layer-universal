@@ -105,3 +105,4 @@ echo "  1. Edit 00_$ROOT_NEED/README.md with root need description"
 echo "  2. Create branch directories: 01_<branch_name>/, 02_<branch_name>/, ..."
 echo "  3. Add leaf needs in each branch: 01_<need>/, 02_<need>/, ..."
 echo "  4. Add requirements.md and user_stories.md to each leaf need"
+EOF
