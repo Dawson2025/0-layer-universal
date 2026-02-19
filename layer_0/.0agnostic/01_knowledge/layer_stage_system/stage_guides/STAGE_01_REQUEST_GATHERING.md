@@ -9,7 +9,7 @@ Transform vague user needs into structured, testable requirements. This is the *
 The request gathering agent:
 - Asks questions to clarify what the user actually needs
 - Decomposes large needs into smaller, specific, testable needs
-- Writes requirements in a standard format (requirements.md + user_stories.md)
+- Writes requirements in a standard format (requirements/ and user_stories/ subdirectories per need)
 - Organizes requirements as a **tree of needs** (hierarchical decomposition)
 - Validates requirements with the user before handing off
 
@@ -31,35 +31,54 @@ Requirements are organized as a hierarchical tree:
 
 ```
 outputs/requests/tree_of_needs/
-├── _meta/                        <- Versioning, changelog, dependencies
+├── _meta/                            <- Versioning, changelog, dependencies
 │   ├── VERSION.md
 │   ├── CHANGELOG.md
 │   └── DEPENDENCIES.md
-└── 00_root_need/                 <- The fundamental goal
-    ├── README.md                 <- Branch index with overview
-    ├── 01_branch/                <- A major aspect of the goal
-    │   ├── need_01/              <- A specific, testable need
-    │   │   ├── requirements.md   <- Functional requirements + success criteria
-    │   │   └── user_stories.md   <- "As a [role], I need [X] so that [Y]"
+└── 00_root_need/                     <- The fundamental goal
+    ├── README.md                     <- Branch index with overview
+    ├── 01_branch/                    <- A major aspect of the goal
+    │   ├── README.md                 <- Branch overview with needs index
+    │   ├── need_01/                  <- A specific, testable need
+    │   │   ├── README.md             <- Need overview: definition, why, acceptance criteria, references
+    │   │   ├── requirements/         <- Individual requirement files
+    │   │   │   ├── README.md         <- Index table of all requirements
+    │   │   │   ├── REQ-01_name.md    <- One file per requirement group (MUST/SHOULD statements)
+    │   │   │   └── REQ-02_name.md
+    │   │   └── user_stories/         <- Individual user story files
+    │   │       ├── README.md         <- Index table + actors section
+    │   │       ├── US-01_name.md     <- One file per user story
+    │   │       └── US-02_name.md
     │   └── need_02/
     └── 02_branch/
 ```
 
-### Requirements.md Format
+### Need README.md Format
 
-Each `requirements.md` contains:
-- **Functional requirements**: What the system must do (numbered, testable)
-- **Success criteria**: How to verify the requirement is met
-- **Constraints**: Boundaries or limitations
-- **Priority**: High / Medium / Low
-- **Dependencies**: Other needs this depends on
+Each need's `README.md` contains the overview:
+- **Definition**: What this need is about
+- **Why This Matters**: Impact and motivation
+- **Acceptance Criteria**: How to verify the need is met
+- **Research References**: Links to related research
+- Links to `requirements/` and `user_stories/` subdirectories
+
+### Requirements Format
+
+Each `requirements/REQ-NN_name.md` contains:
+- **Functional requirements**: MUST/SHOULD/MUST NOT statements for one requirement group
+- **Back-reference**: Link to the parent need README.md
+
+The `requirements/README.md` provides an index table of all requirements in the need.
 
 ### User Stories Format
 
-Each `user_stories.md` contains stories in standard format:
+Each `user_stories/US-NN_name.md` contains one story in standard format:
 ```
 As a [agent/manager/user/system], I need [specific capability] so that [benefit/outcome].
 ```
+Plus an acceptance line and back-reference to the need README.md.
+
+The `user_stories/README.md` provides an index table and the actors section.
 
 ## Inputs
 
@@ -74,7 +93,7 @@ What the request gathering agent reads:
 
 | Output | Location | Format |
 |--------|----------|--------|
-| Tree of needs | `outputs/requests/tree_of_needs/` | Directory tree with requirements.md + user_stories.md per leaf need |
+| Tree of needs | `outputs/requests/tree_of_needs/` | Directory tree with requirements/ + user_stories/ subdirs per leaf need |
 | Root need | `outputs/requests/tree_of_needs/00_{root_name}/` | README.md with branch overview |
 | Meta | `outputs/requests/tree_of_needs/_meta/` | VERSION.md, CHANGELOG.md, DEPENDENCIES.md |
 | Stage report | `outputs/stage_report.md` | Standard stage report format |
@@ -82,7 +101,7 @@ What the request gathering agent reads:
 ## Success Criteria
 
 This stage is complete when:
-1. All identified needs have `requirements.md` and `user_stories.md`
+1. All identified needs have `requirements/` and `user_stories/` subdirectories with individual files
 2. Requirements are testable (can be validated in stage 07)
 3. User has validated the tree of needs (explicit sign-off)
 4. Priority ordering exists across needs

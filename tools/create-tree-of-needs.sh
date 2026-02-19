@@ -12,6 +12,7 @@
 #       └── README.md
 #
 # After running, manually add branches (01_*, 02_*, ...) with leaf needs.
+# Each leaf need gets: README.md, requirements/ (with REQ-NN files), user_stories/ (with US-NN files)
 # Reference: @imports/entity_structure.md
 
 set -euo pipefail
@@ -104,5 +105,6 @@ echo "Next steps:"
 echo "  1. Edit 00_$ROOT_NEED/README.md with root need description"
 echo "  2. Create branch directories: 01_<branch_name>/, 02_<branch_name>/, ..."
 echo "  3. Add leaf needs in each branch: 01_<need>/, 02_<need>/, ..."
-echo "  4. Add requirements.md and user_stories.md to each leaf need"
+echo "  4. Add README.md, requirements/, and user_stories/ to each leaf need"
+echo "     (requirements/ gets REQ-NN_name.md files; user_stories/ gets US-NN_name.md files)"
 EOF

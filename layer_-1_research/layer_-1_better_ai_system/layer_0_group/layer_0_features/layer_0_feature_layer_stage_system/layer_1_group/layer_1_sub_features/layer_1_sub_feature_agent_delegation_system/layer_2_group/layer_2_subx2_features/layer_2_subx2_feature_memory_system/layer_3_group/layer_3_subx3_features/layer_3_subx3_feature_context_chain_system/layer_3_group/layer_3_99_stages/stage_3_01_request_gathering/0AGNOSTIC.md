@@ -33,18 +33,25 @@ You do NOT:
 Requirements are organized as a **tree of needs**:
 
 ```
-root_need/                    <- The fundamental goal
-├── branch_01/               <- A major aspect of the goal
-│   ├── need_01/            <- A specific, testable need
-│   │   ├── requirements.md <- Functional requirements + success criteria
-│   │   └── user_stories.md <- "As a [role], I need [X] so that [Y]"
+root_need/                        <- The fundamental goal
+├── branch_01/                   <- A major aspect of the goal
+│   ├── README.md                <- Branch overview with needs index
+│   ├── need_01/                 <- A specific, testable need
+│   │   ├── README.md            <- Need overview: definition, why, acceptance criteria, references
+│   │   ├── requirements/        <- Individual requirement files
+│   │   │   ├── README.md        <- Index table of all requirements
+│   │   │   └── REQ-01_name.md   <- One file per requirement group
+│   │   └── user_stories/        <- Individual user story files
+│   │       ├── README.md        <- Index table + actors section
+│   │       └── US-01_name.md    <- One file per user story
 │   └── need_02/
 └── branch_02/
 ```
 
 Each leaf need must have:
-- `requirements.md` — functional requirements, success criteria, constraints
-- `user_stories.md` — user stories in standard format: "As a [agent/manager/user], I need [X] so that [Y]"
+- `README.md` — need overview (definition, why this matters, acceptance criteria, research references)
+- `requirements/` — subdirectory with individual `REQ-NN_name.md` files (one per requirement group) + index README.md
+- `user_stories/` — subdirectory with individual `US-NN_name.md` files (one per user story) + index README.md
 
 ### Domain Context
 
@@ -84,7 +91,7 @@ Before exiting, update `outputs/stage_report.md` following the protocol in `../.
 
 ### Summary
 
-Requirements are structured as a tree of needs rooted in "Context Survives Boundaries" — the goal that agents never lose competence across session, compaction, or tool-switch boundaries. 7 leaf needs are defined across 3 branches, each with `requirements.md` and `user_stories.md`. All requirements trace to memory_system research (files 00-20).
+Requirements are structured as a tree of needs rooted in "Context Survives Boundaries" — the goal that agents never lose competence across session, compaction, or tool-switch boundaries. 7 leaf needs are defined across 3 branches, each with `requirements/` and `user_stories/` subdirectories. All requirements trace to memory_system research (files 00-20).
 
 ### Tree of Needs
 
@@ -127,7 +134,7 @@ Dependencies form a DAG, not a strict tree:
 ## Success Criteria
 
 This stage is complete when:
-- All identified needs have requirements.md and user_stories.md
+- All identified needs have README.md, requirements/, and user_stories/ subdirectories
 - Requirements are testable (can be validated in stage 07)
 - User has validated the tree of needs
 - Priority ordering exists across needs
