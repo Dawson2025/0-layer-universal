@@ -88,3 +88,49 @@ The decision is ultimately about context window management. An agent that tries 
 
 - **Principle 8** ("Scope Boundary Decisions") in `layer_0/.0agnostic/01_knowledge/principles/principles/STAGE_DELEGATION_PRINCIPLES.md`
 - **Scope Boundary Rule** (expanded from Stage Boundary Rule) in `layer_0/.0agnostic/02_rules/static/STAGE_BOUNDARY_RULE.md`
+
+---
+
+# What We Learned: Cross-Layer Stage References
+
+## Discovery Date
+2026-02-19
+
+## The Pattern
+
+When content at one layer becomes detailed enough to warrant its own entity (child layer), both layers must maintain **bidirectional references** between their stages.
+
+### Parent → Child (downward)
+Parent layer stages have "Child Layer Detail" sections that map their content to child entity stages where the detailed work lives. Example: stage 01 branch "delegation_model" maps to memory_system stage 02 research topics and multi_agent_system stage 04 design decisions.
+
+### Child → Parent (upward)
+Child entities have "Parent Layer Context" sections in their 0AGNOSTIC.md that point back to parent stages providing broader context. A memory_system agent can find the original requirement (parent stage 01), the research context (parent stage 02), and the design rationale (parent stage 04).
+
+## When to Push to a Child Layer
+
+Not every topic warrants its own entity. Decision factors:
+
+| Stay at current layer | Push to child layer |
+|----------------------|---------------------|
+| Few files, shallow depth | Multiple files, deep investigation |
+| Tightly coupled to parent | Can be worked on independently |
+| Needs 1-2 stages | Needs its own full stage progression |
+| Same agent handles it | Needs a specialized agent |
+
+## Why This Matters
+
+Without bidirectional references:
+- Parent agents don't know where detailed work lives (they explore blindly)
+- Child agents lack context on WHY their entity exists (they miss the bigger picture)
+- Cross-layer navigation requires traversing the entire hierarchy
+
+With bidirectional references:
+- Parent agents can orient immediately ("branch X is detailed at child entity Y, stages Z")
+- Child agents can look up original requirements and design rationale at the parent level
+- Navigation is direct — one hop instead of a full traversal
+
+## Where This Is Codified
+
+- **Principle 10** ("Cross-Layer Stage References") in `layer_0/.0agnostic/01_knowledge/principles/principles/STAGE_DELEGATION_PRINCIPLES.md`
+- **Tree of knowledge topic**: `.0agnostic/01_knowledge/tree_of_knowledge/00_agent_delegation_knowledge/02_patterns_and_principles/cross_layer_stage_references.md`
+- Applied at: agent_delegation_system stages 01-06 (downward), memory_system, multi_agent_system, context_chain_system (upward)
