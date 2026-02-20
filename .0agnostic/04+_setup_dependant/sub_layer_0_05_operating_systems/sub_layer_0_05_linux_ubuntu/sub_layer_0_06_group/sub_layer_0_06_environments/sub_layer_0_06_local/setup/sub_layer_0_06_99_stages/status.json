@@ -1,0 +1,195 @@
+{
+  "current_stage": "stage_0_00_request_gathering",
+  "last_updated": "2026-01-29",
+  "system_status": "degraded_portal_broken",
+  "issues": [
+    {
+      "id": "inotify_exhaustion",
+      "title": "Inotify Limits Exhaustion",
+      "status": "resolved",
+      "stage": "stage_0_09_current_product",
+      "date_reported": "2026-01-25",
+      "date_resolved": "2026-01-25",
+      "output": "stage_0_09_current_product/outputs/inotify_fix.md"
+    },
+    {
+      "id": "sync_health_service",
+      "title": "Sync Health Service Path Outdated",
+      "status": "resolved",
+      "stage": "stage_0_09_current_product",
+      "date_reported": "2026-01-25",
+      "date_resolved": "2026-01-25",
+      "output": "stage_0_09_current_product/outputs/sync_health_service_fix.md"
+    },
+    {
+      "id": "gsd_daemon_failures",
+      "title": "GNOME Settings Daemons Repeatedly Failing",
+      "status": "resolved",
+      "stage": "stage_0_09_current_product",
+      "date_reported": "2026-01-26",
+      "date_resolved": "2026-01-26",
+      "output": "stage_0_09_current_product/outputs/gsd_keepalive_fix.md",
+      "notes": "Created keepalive timer to auto-restart gsd-media-keys and gsd-power"
+    },
+    {
+      "id": "audio_quality_degraded",
+      "title": "Laptop Speaker Audio Quality Worse Than Windows",
+      "status": "implemented",
+      "stage": "stage_0_09_current_product",
+      "date_reported": "2026-01-26",
+      "date_resolved": "2026-01-26",
+      "notes": "Captured Windows Dolby impulse response and applied via convolution. Should closely match Windows.",
+      "documentation": {
+        "request": "stage_0_00_request_gathering/requests/REQ_001_improve_laptop_speaker_audio.md",
+        "research": "stage_0_01_research/outputs/REQ_001_audio_improvement_research.md",
+        "advanced_research": "stage_0_01_research/outputs/REQ_001_advanced_audio_research.md",
+        "implementation": "stage_0_05_development/outputs/REQ_001_audio_implementation.md",
+        "windows_instructions": "stage_0_05_development/outputs/WINDOWS_INSTRUCTIONS_capture_dolby_impulse.md",
+        "testing": "stage_0_06_testing/outputs/REQ_001_audio_testing.md",
+        "fixes": "stage_0_08_fixing/outputs/REQ_001_audio_fixes.md",
+        "final_config": "stage_0_09_current_product/outputs/REQ_001_audio_final_config.md"
+      }
+    },
+    {
+      "id": "wireplumber_crash",
+      "title": "WirePlumber Crashes Due to Broken Lua Script",
+      "status": "resolved",
+      "stage": "stage_0_09_current_product",
+      "date_reported": "2026-01-26",
+      "date_resolved": "2026-01-26",
+      "output": "stage_0_09_current_product/outputs/wireplumber_crash_fix.md",
+      "notes": "51-easyeffects-volume.lua referenced non-existent default_nodes_rules variable"
+    },
+    {
+      "id": "subwoofer_i2c_bypass",
+      "title": "Yoga Pro 9 Subwoofer Disabled by Default",
+      "status": "resolved",
+      "stage": "stage_0_09_current_product",
+      "date_reported": "2026-01-26",
+      "date_resolved": "2026-01-26",
+      "output": "stage_0_09_current_product/outputs/REQ_002_yoga_speaker_final_config.md",
+      "notes": "Subwoofer disabled due to kernel bug. Enabled via I2C bypass script from GitHub repo.",
+      "documentation": {
+        "research": "stage_0_01_research/outputs/REQ_002_yoga_speaker_i2c_research.md",
+        "implementation": "stage_0_05_development/outputs/REQ_002_yoga_speaker_implementation.md",
+        "testing": "stage_0_06_testing/outputs/REQ_002_yoga_speaker_testing.md",
+        "fixes": "stage_0_08_fixing/outputs/REQ_002_yoga_speaker_fixes.md",
+        "final_config": "stage_0_09_current_product/outputs/REQ_002_yoga_speaker_final_config.md"
+      }
+    },
+    {
+      "id": "tas2781_driver_conflict",
+      "title": "TAS2781 Kernel Driver Resets I2C Configuration",
+      "status": "resolved",
+      "stage": "stage_0_09_current_product",
+      "date_reported": "2026-01-26",
+      "date_resolved": "2026-01-26",
+      "notes": "Driver snd_hda_scodec_tas2781_i2c was resetting I2C config. Blacklisted in /etc/modprobe.d/"
+    },
+    {
+      "id": "gsd_display_variable",
+      "title": "GSD Daemons Fail After Reboot Due to Missing DISPLAY",
+      "status": "resolved",
+      "stage": "stage_0_09_current_product",
+      "date_reported": "2026-01-26",
+      "date_resolved": "2026-01-26",
+      "notes": "Systemd service lacked DISPLAY=:0 environment variable. Added Environment=DISPLAY=:0 to gsd-keepalive.service",
+      "documentation": {
+        "testing": "stage_0_06_testing/outputs/ISSUE_004_gsd_display_testing.md",
+        "criticism": "stage_0_07_criticism/outputs/ISSUE_004_gsd_display_criticism.md",
+        "fixing": "stage_0_08_fixing/outputs/ISSUE_004_gsd_display_fix.md",
+        "final_config": "stage_0_09_current_product/outputs/gsd_keepalive_fix.md"
+      }
+    },
+    {
+      "id": "portal_apps_not_opening",
+      "title": "Files and Terminal Apps Not Opening",
+      "status": "resolved",
+      "stage": "stage_0_09_current_product",
+      "date_reported": "2026-01-28",
+      "date_resolved": "2026-01-28",
+      "notes": "xdg-desktop-portal-gnome crashes with SEGFAULT. Fixed by using GTK portal, D-Bus service overrides, and autostart script.",
+      "documentation": {
+        "testing": "stage_0_06_testing/outputs/ISSUE_005_portal_apps_testing.md",
+        "criticism": "stage_0_07_criticism/outputs/ISSUE_005_portal_apps_criticism.md",
+        "fixing": "stage_0_08_fixing/outputs/ISSUE_005_portal_apps_fix.md",
+        "final_config": "stage_0_09_current_product/outputs/ISSUE_005_portal_apps_final_config.md"
+      }
+    },
+    {
+      "id": "vibe_typer_audio_renderer_timeout",
+      "title": "Vibe-Typer & LibreOffice: Audio Renderer Timeout + Portal Service Crash",
+      "status": "investigating",
+      "stage": "stage_0_00_request_gathering",
+      "date_reported": "2026-01-29",
+      "date_resolved": null,
+      "notes": "Two related issues: (1) vibe-typer times out waiting for audio renderer (PipeWire ALSA error 'Invalid argument'), (2) LibreOffice won't open (xdg-desktop-portal service crashed and not recovering). Both may be related to audio system changes or 3+ day uptime without reboot.",
+      "documentation": {
+        "request": "stage_0_00_request_gathering/requests/REQ_003_vibe_typer_and_libreoffice_failures.md",
+        "research": "stage_0_01_research/outputs/REQ_003_diagnostic_findings.md"
+      }
+    }
+  ],
+  "active_services": [
+    {
+      "name": "gsd-keepalive.timer",
+      "purpose": "Auto-restart GNOME settings daemons",
+      "status": "enabled"
+    },
+    {
+      "name": "fix-portal-services.desktop",
+      "purpose": "Autostart portal and terminal services with DISPLAY",
+      "status": "autostart",
+      "script": "~/.local/bin/fix-portal-services.sh"
+    },
+    {
+      "name": "yoga-16imh9-speakers.service",
+      "purpose": "Enable subwoofer via I2C bypass script",
+      "status": "enabled",
+      "script": "/usr/local/bin/2pa-byps.sh"
+    },
+    {
+      "name": "easyeffects",
+      "purpose": "Audio enhancement for Yoga Pro 9 speakers",
+      "status": "autostart",
+      "preset": "Yoga Pro 9i Official"
+    }
+  ],
+  "blacklisted_drivers": [
+    {
+      "driver": "snd_hda_scodec_tas2781_i2c",
+      "reason": "Resets I2C configuration set by bypass script",
+      "config_file": "/etc/modprobe.d/disable-tas2781-driver.conf"
+    }
+  ],
+  "active_requests": [
+    {
+      "id": "REQ_001",
+      "title": "Improve Laptop Speaker Audio Quality",
+      "status": "superseded",
+      "satisfaction": "partial",
+      "notes": "Initial attempt with EasyEffects presets and Dolby IR capture. Superseded by REQ_002."
+    },
+    {
+      "id": "REQ_002",
+      "title": "Fix Yoga Pro 9 Subwoofer/Speaker Quality",
+      "status": "completed",
+      "satisfaction": "high",
+      "notes": "Subwoofer was disabled by default. Enabled via I2C bypass script + driver blacklist. Sound much fuller."
+    },
+    {
+      "id": "REQ_003",
+      "title": "Vibe-Typer Audio & LibreOffice Portal Issues",
+      "status": "partial",
+      "satisfaction": "audio_fixed_portal_broken",
+      "notes": "Vibe-typer FIXED by reboot (audio renderer timeout resolved). LibreOffice and portal still broken - regex caused by autostart script not running early enough at boot. Manual fix script execution restores functionality."
+    },
+    {
+      "id": "REQ_004",
+      "title": "Portal Service Regression After Reboot",
+      "status": "active",
+      "satisfaction": "blocking",
+      "notes": "xdg-desktop-portal crashes at boot before autostart fix script runs. Autostart delay=5s is too late (portal crashes at +6s). Manual fix script workaround works. Need systemd service to run earlier."
+    }
+  ]
+}

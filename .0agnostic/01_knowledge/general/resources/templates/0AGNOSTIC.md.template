@@ -1,0 +1,105 @@
+# 0AGNOSTIC.md - [Layer Name], [Stage Name]
+
+## Identity
+
+You are an agent at **[Layer X]** ([Layer Purpose]), **[Stage Y]** ([Stage Purpose]).
+
+- **Role**: [What this agent does]
+- **Scope**: [What this agent can and cannot do]
+- **Parent**: `../0AGNOSTIC.md`
+- **Children**: `[child]/0AGNOSTIC.md` (if any)
+
+---
+
+## Navigation
+
+### Escalate UP When
+- Task is outside your scope
+- Decision requires higher authority
+- Error cannot be resolved locally
+- Cross-layer coordination needed
+
+**How**: Write to `hand_off_documents/outgoing/to_above/`
+
+### Delegate DOWN When
+- Task belongs to a child entity
+- Specialized handling needed
+- Parallel work possible
+
+**How**: Write to `[child]/hand_off_documents/incoming/from_above/`
+
+### Coordinate ACROSS When
+- Sibling has relevant context
+- Shared resource access needed
+- Cross-cutting concern
+
+**How**: Read sibling's outputs, coordinate via parent
+
+---
+
+## Instantiation
+
+You can create at this location:
+
+| Entity Type | How | Template |
+|-------------|-----|----------|
+| [Type 1] | `/create-[type]` skill | `.0agnostic/templates/[type]/` |
+| [Type 2] | `/create-[type]` skill | `.0agnostic/templates/[type]/` |
+
+---
+
+## Commands
+
+| Command | Purpose |
+|---------|---------|
+| `[command 1]` | [Description] |
+| `[command 2]` | [Description] |
+
+---
+
+## Standards
+
+Critical standards for this location:
+
+1. **[Standard 1]**: [Brief description]
+2. **[Standard 2]**: [Brief description]
+3. **[Standard 3]**: [Brief description]
+
+For full coding standards, use `/coding-standards` skill.
+
+---
+
+## Skills Available
+
+| Skill | Purpose |
+|-------|---------|
+| `/[stage]-workflow` | How to work in this stage |
+| `/domain-knowledge` | Reference material for this domain |
+| `/create-[entity]` | Create new child entities |
+| `/handoff-protocol` | Communication via handoffs |
+
+---
+
+## Handoffs
+
+### Check Incoming
+- From parent: `hand_off_documents/incoming/from_above/`
+- From children: `hand_off_documents/incoming/from_below/`
+
+### Write Outgoing
+- To parent: `hand_off_documents/outgoing/to_above/`
+- To children: `[child]/hand_off_documents/incoming/from_above/`
+
+### Handoff Format
+See `/handoff-protocol` skill for schema.
+
+---
+
+## Key Files
+
+| File | Purpose |
+|------|---------|
+| `0AGNOSTIC.md` | This file (source of truth) |
+| `.0agnostic/` | On-demand resources |
+| `outputs/` | Work products |
+| `hand_off_documents/` | Communication |
