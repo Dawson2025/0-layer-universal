@@ -91,39 +91,41 @@ Load when:
 
 ## AALang Agent Context
 
-No entity-level `.gab.jsonld` exists for the agent_delegation_system. The nearest orchestrator is the parent feature's:
+### Local Agent Files
 
-### Nearest Orchestrator
+**Directory**: `AALang_jsonld_agents/`
 
-**File**: `../../../../layer_0_orchestrator.gab.jsonld`
+| File | Type | Purpose |
+|------|------|---------|
+| `orchestrator.gab.jsonld` | Orchestrator | 3-mode-7-actor pattern for request gathering |
+| `request_gathering.gab.jsonld` | GAB Agent | Stage identity — Tree of Needs methodology |
+| `agent_needs_decomposer.agent.jsonld` | Agent Stub | Lightweight purpose agent for needs decomposition |
 
 ```json
 {
-  "@id": "orch:LayerStageSystemOrchestrator",
+  "@id": "rg:RequestGatheringOrchestrator",
   "@type": "gab:LLMAgent",
-  "pattern": "5-mode-13-actor",
-  "purpose": "Research orchestrator for the layer-stage framework",
-  "modes": ["orch:ReceiveMode", "orch:ResearchMode", "orch:DesignMode", "orch:ImplementMode", "orch:ReviewMode"]
+  "pattern": "3-mode-7-actor",
+  "purpose": "Orchestrate requirement gathering — needs decomposition, user stories, traceability",
+  "modes": ["rg:ReceiveMode", "rg:ExecuteMode", "rg:ReportMode"]
 }
 ```
 
 ### How to Load Full Graph
 
 ```bash
-# List all modes and their purposes from parent orchestrator
-jq '."@graph"[] | select(."@type" == "gab:Mode") | {id: ."@id", purpose: .purpose}' ../../../../layer_0_orchestrator.gab.jsonld
+# List all modes and their purposes
+jq '."@graph"[] | select(."@type" == "gab:Mode") | {id: ."@id", purpose: .purpose}' AALang_jsonld_agents/orchestrator.gab.jsonld
 
-# Load a specific mode's constraints
-jq '."@graph"[] | select(."@id" == "orch:ResearchMode")' ../../../../layer_0_orchestrator.gab.jsonld
+# Load execute mode constraints
+jq '."@graph"[] | select(."@id" == "rg:ExecuteMode")' AALang_jsonld_agents/orchestrator.gab.jsonld
 ```
 
-### Integration Summary
+### Parent Orchestrator
 
-From `../../../../layer_0_orchestrator.integration.md`:
-- **Modes**: ReceiveMode (intake), ResearchMode (investigation), DesignMode (architecture), ImplementMode (artifacts), ReviewMode (validation)
-- **State Actors**: LayerStateActor, ChildRegistryStateActor, TaskStateActor
-- **Mode Flow**: Receive → Research → Design → Implement → Review → Receive
-- **Scope**: Limited to layer-stage framework research and its sub-features
+**File**: `../../AALang_jsonld_agents/orchestrator.gab.jsonld` (agent_delegation_system entity)
+
+Stage orchestrators inherit from the entity-level orchestrator.
 
 # ── Current Status ──
 
