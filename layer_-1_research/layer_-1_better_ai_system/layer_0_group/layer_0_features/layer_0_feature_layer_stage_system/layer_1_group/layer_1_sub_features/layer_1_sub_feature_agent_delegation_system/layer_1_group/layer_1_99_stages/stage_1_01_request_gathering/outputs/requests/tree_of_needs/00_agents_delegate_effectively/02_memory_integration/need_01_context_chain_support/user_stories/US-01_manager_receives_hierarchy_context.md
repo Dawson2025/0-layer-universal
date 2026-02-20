@@ -4,8 +4,20 @@
 
 ---
 
-**As a** manager entering an entity directory,
-**I want** the context chain to automatically load my identity, my children, and my parent's scope,
-**So that** I know where I am in the hierarchy and can make delegation decisions immediately.
+**As a** user who opens a project and expects the AI to know where it is in the hierarchy,
+**I want** the manager to automatically receive its identity, children, and parent scope through the context chain,
+**So that** the AI can make delegation decisions immediately without me explaining the project structure.
 
-**Acceptance**: Manager's static context includes self identity, children list, and parent scope without manual file reads.
+### What Happens
+
+1. User opens a project and says "manage this entity"
+2. Context chain automatically loads the manager's 0AGNOSTIC.md
+3. Manager receives: its own identity, its children list, and its parent's scope
+4. Manager knows where it is in the hierarchy and what it can delegate to
+5. User can immediately ask "what needs work?" and get an informed answer
+
+### Acceptance Criteria
+
+- Manager's static context includes self identity, children list, and parent scope
+- No manual file reads are needed for the manager to know its hierarchy position
+- User does not need to explain the project structure to the AI

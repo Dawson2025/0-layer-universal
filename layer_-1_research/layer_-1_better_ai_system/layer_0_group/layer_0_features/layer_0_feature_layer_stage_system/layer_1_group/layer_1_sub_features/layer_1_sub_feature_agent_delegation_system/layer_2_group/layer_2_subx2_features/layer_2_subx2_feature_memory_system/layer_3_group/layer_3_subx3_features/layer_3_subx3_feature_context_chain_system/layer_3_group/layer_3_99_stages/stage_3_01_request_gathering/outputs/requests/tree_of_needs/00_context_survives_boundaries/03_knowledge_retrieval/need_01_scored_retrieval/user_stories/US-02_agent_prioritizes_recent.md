@@ -4,8 +4,19 @@
 
 ---
 
-**As an** agent working on an active design task,
-**I want** recently updated files to score higher than old ones,
-**So that** I work with current information, not outdated research.
+**As a** user working on an active design task with the AI,
+**I want** the system to prioritize recently updated files over old ones,
+**So that** the AI works with current information instead of outdated research from months ago.
 
-**Acceptance**: Recency factor in scoring visibly affects ranking.
+### What Happens
+
+1. User tells the AI to work on an active task (e.g., design iteration)
+2. Scoring function weights recently updated files higher than old ones
+3. Agent loads current design files before older research files
+4. User gets work based on the latest decisions, not superseded earlier thinking
+
+### Acceptance Criteria
+
+- Recency factor visibly affects file ranking (recently updated files score higher)
+- A file updated today scores higher than an equivalent file last updated 3 months ago
+- Agent's loaded context reflects current state, not historical state

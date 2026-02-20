@@ -4,8 +4,20 @@
 
 ---
 
-**As a** stage agent finishing a work session,
-**I want to** write a stage report and update episodic memory with my progress,
-**So that** the next agent working on this stage can continue without re-discovering my work.
+**As a** user who ends a session and expects to resume later without losing progress,
+**I want** the stage agent to write a stage report and update episodic memory before exiting,
+**So that** the next session can continue where I left off without re-doing previous work.
 
-**Acceptance**: Next agent reads stage report + episodic memory and starts where the previous agent left off.
+### What Happens
+
+1. User finishes a work session (or the session ends due to context limits)
+2. Stage agent writes a `stage_report.md` summarizing: status, outputs, next steps
+3. Stage agent updates episodic memory with session details
+4. User returns later and says "continue working on this"
+5. New agent reads stage report + episodic memory and resumes from the right place
+
+### Acceptance Criteria
+
+- Next agent reads stage report + episodic memory and starts where the previous agent left off
+- No re-discovery or duplicate work occurs in the new session
+- User does not need to re-explain what was done in the previous session

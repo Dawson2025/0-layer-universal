@@ -4,8 +4,20 @@
 
 ---
 
-**As a** stage agent finishing a work session,
-**I want to** write a `stage_report.md` summarizing what I did, what I produced, and what comes next,
-**So that** the manager (or a future agent) can understand my stage's status without loading my detailed outputs.
+**As a** user who wants to check on a stage's progress without reading all its output files,
+**I want** the stage agent to write a concise report summarizing what it did and what comes next,
+**So that** I can understand stage status at a glance.
 
-**Acceptance**: Report exists at `outputs/stage_report.md` and is under 30 lines.
+### What Happens
+
+1. User asks the AI to work on a stage (e.g., "do the research")
+2. Stage agent performs the work and produces outputs
+3. Before exiting, stage agent writes a `stage_report.md` in `outputs/`
+4. Report summarizes: status, what was produced, blockers, and next steps
+5. User (or manager) can read the report without loading detailed output files
+
+### Acceptance Criteria
+
+- Report exists at `outputs/stage_report.md` and is under 30 lines
+- Report includes status, summary, outputs list, blockers, and next steps
+- User can understand the stage's state by reading only the report

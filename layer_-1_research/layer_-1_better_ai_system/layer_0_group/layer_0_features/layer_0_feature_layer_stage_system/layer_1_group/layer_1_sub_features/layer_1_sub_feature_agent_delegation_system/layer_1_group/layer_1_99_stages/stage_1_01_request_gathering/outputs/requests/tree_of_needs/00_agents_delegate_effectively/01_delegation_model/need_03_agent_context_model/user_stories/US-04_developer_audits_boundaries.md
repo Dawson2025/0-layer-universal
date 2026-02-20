@@ -4,8 +4,20 @@
 
 ---
 
-**As the** developer reviewing the system,
-**I want** a documented context model for each agent type showing exactly what goes in static, dynamic, and never-loaded,
-**So that** I can verify agents are operating within their intended scope.
+**As a** user who wants to verify agents are loading the right amount of context,
+**I want** a documented context model for each agent type showing what goes in static, dynamic, and never-loaded,
+**So that** I can audit whether agents are operating within their intended scope.
 
-**Acceptance**: Context model document exists with three columns (static / dynamic / never) for each agent type.
+### What Happens
+
+1. User wants to verify the system's context architecture is sound
+2. User reads the context model document for each agent type (manager, stage agent, sub-feature agent)
+3. Document shows three columns: static (always loaded), dynamic (on-demand), never-loaded
+4. User can verify that managers don't carry stage methodology and stage agents don't carry peer details
+5. User confirms the boundaries match the intended design
+
+### Acceptance Criteria
+
+- Context model document exists with three columns (static / dynamic / never) for each agent type
+- Document covers all three agent types: manager, stage agent, sub-feature agent
+- Boundaries are specific enough to be auditable (not vague descriptions)

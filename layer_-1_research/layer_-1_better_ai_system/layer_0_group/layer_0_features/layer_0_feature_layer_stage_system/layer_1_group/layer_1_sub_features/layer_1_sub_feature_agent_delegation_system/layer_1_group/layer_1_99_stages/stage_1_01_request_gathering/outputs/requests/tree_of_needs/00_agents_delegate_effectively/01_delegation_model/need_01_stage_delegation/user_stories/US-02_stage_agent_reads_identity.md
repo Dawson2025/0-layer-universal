@@ -4,8 +4,20 @@
 
 ---
 
-**As a** stage agent entering a stage directory for the first time,
-**I want to** read `0AGNOSTIC.md` in my stage directory and immediately know my role, methodology, output format, and success criteria,
-**So that** I can begin work without asking the manager for instructions.
+**As a** user who delegates a task and expects the AI to just start working,
+**I want** the stage agent to read its own identity file and immediately know its role, methodology, and output format,
+**So that** the AI never comes back asking me how it should do the work.
 
-**Acceptance**: Stage agent reads one file and has everything needed to start working.
+### What Happens
+
+1. User delegates a task (e.g., "do the research for this feature")
+2. Manager spawns a stage agent and points it to the stage directory
+3. Stage agent reads `0AGNOSTIC.md` in its stage directory
+4. Stage agent discovers its role, methodology, output format, and success criteria
+5. Stage agent begins producing outputs without asking clarifying questions about process
+
+### Acceptance Criteria
+
+- Stage agent reads one file and has everything needed to start working
+- User is not asked about methodology, output format, or success criteria
+- The 0AGNOSTIC.md contains role, methodology, output format, and success criteria sections

@@ -1,6 +1,18 @@
-# Chain Validation Enhancement — Requirements Index
+# Chain Validation Enhancement -- Requirements Index
 
 **Need**: [Chain Validation Enhancement](../README.md)
+
+## Overview
+
+These requirements define how the existing chain-validate skill is upgraded from simple file-existence checks to full graph-based and reference-aware validation. By validating against the knowledge graph, the system can detect orphaned nodes, broken edges, type mismatches, and moved or renamed targets -- not just missing files. The requirements also integrate staleness detection into the validation report, producing a unified health report that covers chain integrity, reference validity, and knowledge freshness in a single pass.
+
+## Key Themes
+
+- **Graph-Based Validation**: Every node and edge in the knowledge graph is validated against the file system, reporting orphaned nodes, missing nodes, broken edges, and type mismatches
+- **Cross-Tier Reference Checking**: References between knowledge files and stage outputs are validated for existence, correctness, and section-level accuracy, detecting moves, renames, and deletions
+- **Unified Health Report**: Staleness detection is integrated into the validation output, producing a single report that covers chain integrity, reference validity, and knowledge freshness together
+
+---
 
 | REQ # | Name | Description | File |
 |-------|------|-------------|------|

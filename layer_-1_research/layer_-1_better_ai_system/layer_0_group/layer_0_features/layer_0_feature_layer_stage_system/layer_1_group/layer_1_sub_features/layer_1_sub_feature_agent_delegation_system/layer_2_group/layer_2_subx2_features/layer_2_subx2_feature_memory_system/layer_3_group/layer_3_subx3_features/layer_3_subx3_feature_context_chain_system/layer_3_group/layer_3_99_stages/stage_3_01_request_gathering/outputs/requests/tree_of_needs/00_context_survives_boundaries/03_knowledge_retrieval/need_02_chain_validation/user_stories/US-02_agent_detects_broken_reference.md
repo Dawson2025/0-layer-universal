@@ -4,8 +4,19 @@
 
 ---
 
-**As an** agent following a reference from a knowledge file to a stage output,
-**I want** the reference to be pre-validated (known good),
-**So that** I don't waste context loading a file that doesn't exist.
+**As a** user whose AI is following references between knowledge files and stage outputs,
+**I want** references to be pre-validated (known good) so the AI never wastes context on a dead link,
+**So that** the AI doesn't hit a dead end mid-task and lose time on a file that doesn't exist.
 
-**Acceptance**: Validation catches broken references before agents encounter them.
+### What Happens
+
+1. User runs validation as part of regular maintenance (or it runs automatically)
+2. Validation catches broken references (moved files, renamed sections) before any AI session
+3. During a session, the AI follows only pre-validated references
+4. User never sees the AI fail on a dead link -- all references resolve correctly
+
+### Acceptance Criteria
+
+- Validation catches broken references before agents encounter them at runtime
+- No agent session wastes context loading a file that doesn't exist
+- Broken references found by validation are reported with enough detail to fix

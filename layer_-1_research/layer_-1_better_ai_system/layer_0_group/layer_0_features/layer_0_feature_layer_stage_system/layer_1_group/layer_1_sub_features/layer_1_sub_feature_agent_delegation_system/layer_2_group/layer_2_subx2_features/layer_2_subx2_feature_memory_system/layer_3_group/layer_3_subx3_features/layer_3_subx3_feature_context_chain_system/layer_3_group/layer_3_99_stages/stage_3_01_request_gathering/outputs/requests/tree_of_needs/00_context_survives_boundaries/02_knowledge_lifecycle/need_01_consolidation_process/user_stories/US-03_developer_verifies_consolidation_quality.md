@@ -4,8 +4,19 @@
 
 ---
 
-**As the** developer reviewing a consolidation,
-**I want** to check that knowledge files reference their sources and are genuinely distilled (not copied),
-**So that** the three-tier pattern is maintained.
+**As a** user reviewing a consolidation the AI just performed,
+**I want** a checklist to verify that knowledge files are genuinely distilled (not just copied) and reference their sources,
+**So that** the three-tier pattern is maintained and agents get real summaries, not bloated duplicates.
 
-**Acceptance**: Checklist exists. Every knowledge file passes it.
+### What Happens
+
+1. User or AI completes a consolidation (distilling stage outputs into knowledge files)
+2. User runs through the quality checklist on each new knowledge file
+3. Checklist verifies: sources are referenced, content is distilled not copied, file size is within bounds
+4. Any failing items are fixed before the knowledge files are considered ready
+
+### Acceptance Criteria
+
+- Quality checklist exists with specific, verifiable items
+- Every knowledge file passes the checklist
+- Checklist catches common problems: missing references, verbatim copying, oversized files

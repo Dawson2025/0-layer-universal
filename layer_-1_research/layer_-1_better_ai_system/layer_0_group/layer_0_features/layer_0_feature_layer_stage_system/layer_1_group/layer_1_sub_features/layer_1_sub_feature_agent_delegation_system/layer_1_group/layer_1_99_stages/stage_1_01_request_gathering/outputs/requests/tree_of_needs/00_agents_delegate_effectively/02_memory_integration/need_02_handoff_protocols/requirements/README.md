@@ -2,6 +2,19 @@
 
 **Need**: [Handoff Protocols](../README.md)
 
+## Overview
+
+These requirements define how context is preserved across four types of agent transitions: session-to-session (same stage, different sessions), agent-to-agent (manager delegates to stage agent and back), cross-entity (parent hands off to child entity), and the minimum viable handoff content for any transition. Stage reports are the primary mechanism for session handoffs; handoff documents serve cross-entity transitions. The receiving agent must never need to read the sending agent's full context.
+
+## Key Themes
+
+- **Session Continuity**: Stage reports + episodic memory preserve state between sessions; the next agent reads these first and knows exactly what to do
+- **Delegation Handoffs**: Managers provide task + context pointers when delegating; stage agents return stage reports when done — no full-context transfer in either direction
+- **Cross-Entity Transfers**: Parent-to-child handoffs use `hand_off_documents/incoming/` with clear scope and expectations; child-to-parent uses `outgoing/`
+- **Minimum Viable Handoff**: Every transition must preserve status, key decisions, open questions, and next steps — never full operational history
+
+---
+
 | REQ# | Name | Description | File |
 |------|------|-------------|------|
 | REQ-01 | Session-to-Session Handoffs | How agents preserve state between sessions | [REQ-01_session_to_session_handoffs.md](./REQ-01_session_to_session_handoffs.md) |

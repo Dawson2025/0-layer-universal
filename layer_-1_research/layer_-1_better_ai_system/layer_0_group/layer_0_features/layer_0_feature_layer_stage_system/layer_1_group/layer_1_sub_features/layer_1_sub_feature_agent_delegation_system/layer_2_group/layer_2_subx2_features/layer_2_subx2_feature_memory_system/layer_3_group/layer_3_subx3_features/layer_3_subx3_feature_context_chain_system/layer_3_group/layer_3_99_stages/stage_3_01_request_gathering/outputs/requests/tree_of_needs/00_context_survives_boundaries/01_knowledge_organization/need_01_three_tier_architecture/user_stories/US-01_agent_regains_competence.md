@@ -4,8 +4,18 @@
 
 ---
 
-**As an** agent whose context was just compacted,
-**I want to** read Tier 1 (pointers) then Tier 2 (distilled knowledge) and be competent,
-**So that** I don't need to re-read all stage outputs to continue working.
+**As a** user whose AI session just ran out of context,
+**I want** the AI to recover competence quickly by reading structured knowledge,
+**So that** I don't lose 30 minutes to the AI re-exploring files it already knew.
 
-**Acceptance**: Agent reads ~260 lines (not ~5,000) and can answer domain questions correctly.
+### What Happens
+
+1. User's conversation hits context limit, system compacts prior messages
+2. Agent reads Tier 1 pointers (0AGNOSTIC.md) -- knows identity and where to look
+3. Agent reads Tier 2 knowledge files (~260 lines of distilled summaries)
+4. Agent is competent: can answer domain questions, make decisions, continue work
+
+### Acceptance Criteria
+
+- Agent reads ~260 lines (not ~5,000) and can answer domain questions correctly
+- Recovery takes under 5 minutes, not 30

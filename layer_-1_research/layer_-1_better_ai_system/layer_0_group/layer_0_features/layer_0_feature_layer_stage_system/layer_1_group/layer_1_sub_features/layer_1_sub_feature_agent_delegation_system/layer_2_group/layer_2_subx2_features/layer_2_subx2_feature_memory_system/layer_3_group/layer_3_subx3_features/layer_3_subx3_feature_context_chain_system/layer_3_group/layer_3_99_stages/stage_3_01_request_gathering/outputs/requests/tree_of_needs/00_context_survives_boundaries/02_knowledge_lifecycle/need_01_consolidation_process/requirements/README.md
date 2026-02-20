@@ -1,6 +1,18 @@
-# Consolidation Process — Requirements Index
+# Consolidation Process -- Requirements Index
 
 **Need**: [Consolidation Process](../README.md)
+
+## Overview
+
+These requirements define when and how raw stage outputs (Tier 3) are distilled into actionable knowledge files (Tier 2). Without a defined consolidation process, knowledge files never get created and agents are forced to read raw outputs every time. The requirements cover event-driven triggers (stage completion, major milestones), a step-by-step distillation protocol that enforces compression over duplication, and supporting tooling that measures compression ratios and generates consolidation reports.
+
+## Key Themes
+
+- **Event-Driven Triggers**: Consolidation happens at natural stage boundaries (stage completion, major milestones), not continuously -- matching the brain's sleep consolidation pattern
+- **Distillation Protocol**: A step-by-step process ensures knowledge files are shorter than their sources, include source references, and pass a quality checklist
+- **Tooling Support**: Scripts and skills assist the distillation process, generating reports that track what was consolidated and the resulting compression ratio
+
+---
 
 | REQ # | Name | Description | File |
 |-------|------|-------------|------|

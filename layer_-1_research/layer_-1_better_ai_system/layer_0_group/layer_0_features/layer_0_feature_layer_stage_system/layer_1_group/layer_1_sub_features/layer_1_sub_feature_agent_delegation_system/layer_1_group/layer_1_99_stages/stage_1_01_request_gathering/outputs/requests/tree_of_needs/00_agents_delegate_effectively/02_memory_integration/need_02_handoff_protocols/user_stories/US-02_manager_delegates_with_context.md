@@ -4,8 +4,20 @@
 
 ---
 
-**As a** manager delegating research work to a stage agent,
-**I want to** provide a task description and point to the stage directory,
-**So that** the stage agent has everything it needs to begin work.
+**As a** user who tells the AI to work on a stage and expects it to just start,
+**I want** the manager to provide sufficient context when delegating so the stage agent can begin immediately,
+**So that** the AI never comes back asking me for clarification about what it should do.
 
-**Acceptance**: Stage agent's first action is reading its 0AGNOSTIC.md, not asking the manager for clarification.
+### What Happens
+
+1. User says "do the design for this feature"
+2. Manager reads its stage overview and identifies the design stage
+3. Manager spawns a stage agent with: task description + stage directory path
+4. Stage agent's first action is reading its own 0AGNOSTIC.md (not asking the manager for clarification)
+5. Stage agent begins productive work immediately
+
+### Acceptance Criteria
+
+- Stage agent's first action is reading its 0AGNOSTIC.md, not asking the manager for clarification
+- Manager provides task description and directory pointer, nothing more
+- User is not asked to provide additional context or instructions

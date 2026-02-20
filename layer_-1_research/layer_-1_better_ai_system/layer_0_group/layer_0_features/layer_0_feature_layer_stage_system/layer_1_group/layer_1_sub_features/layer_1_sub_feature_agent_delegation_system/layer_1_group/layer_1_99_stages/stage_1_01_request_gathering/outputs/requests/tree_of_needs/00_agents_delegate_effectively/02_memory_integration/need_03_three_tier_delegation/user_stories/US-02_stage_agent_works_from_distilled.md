@@ -4,8 +4,20 @@
 
 ---
 
-**As a** stage agent working on design,
-**I want to** read Tier 2 knowledge files (.0agnostic/knowledge/) for domain understanding,
-**So that** I have actionable summaries rather than raw research from prior stages.
+**As a** user who expects the AI to build on prior research without re-reading all raw research files,
+**I want** stage agents to work from distilled knowledge summaries (Tier 2), not raw stage outputs,
+**So that** the AI uses actionable summaries rather than wading through unprocessed research.
 
-**Acceptance**: Stage agent reads distilled knowledge files, not raw stage_02 research outputs.
+### What Happens
+
+1. User tells the AI to design a feature (stage 04)
+2. Manager spawns a design stage agent
+3. Design stage agent reads Tier 2 knowledge files from `.0agnostic/knowledge/` (distilled summaries)
+4. Agent does NOT read raw stage_02 research outputs (Tier 3 of another stage)
+5. Agent has actionable domain understanding and begins design work efficiently
+
+### Acceptance Criteria
+
+- Stage agent reads distilled knowledge files, not raw stage_02 research outputs
+- Distilled knowledge is sufficient for the agent to do its work
+- Tier 2 content is a curated summary, not a copy of Tier 3

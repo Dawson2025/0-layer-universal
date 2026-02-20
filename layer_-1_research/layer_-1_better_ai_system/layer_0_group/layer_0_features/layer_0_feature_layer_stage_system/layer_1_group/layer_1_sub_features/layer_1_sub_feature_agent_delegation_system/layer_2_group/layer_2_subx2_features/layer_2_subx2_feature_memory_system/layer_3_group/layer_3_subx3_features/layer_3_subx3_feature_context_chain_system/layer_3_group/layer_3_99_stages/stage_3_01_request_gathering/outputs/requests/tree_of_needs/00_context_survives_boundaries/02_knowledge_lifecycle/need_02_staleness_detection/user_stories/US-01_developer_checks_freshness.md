@@ -4,8 +4,19 @@
 
 ---
 
-**As the** developer starting a new work session,
-**I want to** run a staleness check and see which knowledge files need updating,
-**So that** I don't send agents into sessions with outdated knowledge.
+**As a** user about to start a new AI work session,
+**I want** to run a staleness check and see which knowledge files need updating,
+**So that** I don't send the AI into a session with outdated knowledge that leads to wrong decisions.
 
-**Acceptance**: Command produces a report listing stale files with time deltas.
+### What Happens
+
+1. User runs the staleness check command before starting a work session
+2. Script compares each knowledge file's last-modified date against its source files' dates
+3. Script produces a report listing stale files, their sources, and the time delta
+4. User updates the stale knowledge files (or flags them) before starting the AI session
+
+### Acceptance Criteria
+
+- Command produces a report listing stale files with time deltas
+- Report shows which source files changed and when
+- User can act on the report (knows exactly what to update)

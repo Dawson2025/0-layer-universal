@@ -2,17 +2,21 @@
 
 **Need**: [Context Chain Support](../README.md)
 
+## Overview
+
+These stories cover how automatic context chain traversal provides agents with the hierarchy-level awareness they need for delegation. They validate that managers receive parent identity and scope automatically, that stage agents inherit domain context from their entity, that chain depth is bounded per agent type, and that chains deliver identity pointers rather than full operational detail.
+
 ## Actors
 
-- **Manager**: Entity-level AI agent that coordinates stages
-- **Stage Agent**: AI agent working within a specific stage
-- **Context Chain**: The automatic loading mechanism that traverses the hierarchy
+- **User (Developer)**: Human developer (Dawson) who gives instructions to the AI system, reviews outputs, and validates behavior
+- **Manager**: Entity-level AI agent that coordinates stages (internal system behavior)
+- **Stage Agent**: AI agent spawned for specific stage work (internal system behavior)
 
 ---
 
-| US# | Title | Actor | File |
-|-----|-------|-------|------|
-| US-01 | Manager receives hierarchy context automatically | Manager | [US-01_manager_receives_hierarchy_context.md](./US-01_manager_receives_hierarchy_context.md) |
-| US-02 | Stage agent receives parent domain context | Stage Agent | [US-02_stage_agent_receives_parent_context.md](./US-02_stage_agent_receives_parent_context.md) |
-| US-03 | Chain stops at the right depth | Stage Agent | [US-03_chain_stops_at_right_depth.md](./US-03_chain_stops_at_right_depth.md) |
-| US-04 | Chain loads identity, not detail | Manager | [US-04_chain_loads_identity_not_detail.md](./US-04_chain_loads_identity_not_detail.md) |
+| US# | Title | Scenario | File |
+|-----|-------|----------|------|
+| US-01 | Manager receives hierarchy context automatically | Chain loads parent identity and scope into manager on entry | [US-01_manager_receives_hierarchy_context.md](./US-01_manager_receives_hierarchy_context.md) |
+| US-02 | Stage agent receives parent domain context | Chain provides entity-level domain knowledge to the stage agent | [US-02_stage_agent_receives_parent_context.md](./US-02_stage_agent_receives_parent_context.md) |
+| US-03 | Chain stops at the right depth | Chain traversal terminates at the configured depth limit | [US-03_chain_stops_at_right_depth.md](./US-03_chain_stops_at_right_depth.md) |
+| US-04 | Chain loads identity, not detail | Chain delivers pointers and identity, not full stage outputs | [US-04_chain_loads_identity_not_detail.md](./US-04_chain_loads_identity_not_detail.md) |

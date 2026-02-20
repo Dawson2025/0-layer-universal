@@ -1,6 +1,18 @@
-# Three-Tier Architecture — Requirements Index
+# Three-Tier Architecture -- Requirements Index
 
 **Need**: [Three-Tier Architecture](../README.md)
+
+## Overview
+
+These requirements define the three-tier knowledge architecture that prevents agents from either overloading on raw outputs or operating without sufficient context. They establish exactly what content belongs in each tier -- pointers (Tier 1), distilled knowledge (Tier 2), and full stage outputs (Tier 3) -- with strict boundary rules, size budgets, and anti-patterns. The goal is to ensure an agent reading only Tier 1 and Tier 2 can work competently without ever touching Tier 3.
+
+## Key Themes
+
+- **Tier Boundary Enforcement**: Each tier has explicit inclusion/exclusion rules, size budgets, and a defined directional flow from stages up through knowledge to pointers -- never the reverse
+- **Knowledge File Discipline**: Tier 2 knowledge files must follow a standard template, distill rather than duplicate their sources, and always reference the stage outputs they derive from
+- **Pointer Minimalism**: 0AGNOSTIC.md (Tier 1) is strictly limited to identity, pointers, and triggers -- substantive content is forbidden at this level
+
+---
 
 | REQ # | Name | Description | File |
 |-------|------|-------------|------|

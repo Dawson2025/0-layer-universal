@@ -4,8 +4,20 @@
 
 ---
 
-**As a** stage agent deep in the hierarchy,
-**I want** the context chain to load only my stage and my parent entity (not every ancestor up to root),
-**So that** my context window is not consumed by irrelevant ancestor context.
+**As a** user who works in a deeply nested project and wants the AI to stay performant,
+**I want** the context chain to load only the stage and its parent entity, not every ancestor up to root,
+**So that** the AI's context window is not consumed by irrelevant ancestor context.
 
-**Acceptance**: Stage agent's chain is limited to 2 levels (self + parent entity).
+### What Happens
+
+1. User tells the AI to work on a stage deep in the hierarchy (e.g., layer -1 > project > feature > sub-feature > stage)
+2. Stage agent's context chain loads: its own 0AGNOSTIC.md + parent entity's 0AGNOSTIC.md
+3. Chain does NOT load grandparent, great-grandparent, or root-level context
+4. Stage agent has maximum context window available for its actual work
+5. User gets fast, focused responses because the agent is not bloated with ancestor context
+
+### Acceptance Criteria
+
+- Stage agent's chain is limited to 2 levels (self + parent entity)
+- Ancestors beyond the parent are not loaded into the stage agent's context
+- Context window usage is predictable and bounded

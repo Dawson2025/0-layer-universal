@@ -1,6 +1,18 @@
-# Scored Context Retrieval — Requirements Index
+# Scored Context Retrieval -- Requirements Index
 
 **Need**: [Scored Context Retrieval](../README.md)
+
+## Overview
+
+These requirements define how agents move from manual file selection ("read this file") to scored retrieval that automatically ranks available context by a composite of recency, relevance, and importance. They cover the scoring function definition with tunable weights, the metadata enrichment that files need to be scoreable, and how scored retrieval integrates into context loading decisions so agents read the top-K most relevant files instead of guessing.
+
+## Key Themes
+
+- **Composite Scoring**: A tunable scoring function combines recency, relevance, and importance to rank files across all tiers -- knowledge files, stage outputs, and episodic notes alike
+- **Metadata Enrichment**: Files require structured metadata (creation date, last modified, importance, tags) via YAML frontmatter, with backward compatibility so un-enriched files still work at lower scores
+- **Context Loading Integration**: Scored retrieval feeds directly into agent context loading, making it queryable ("what's most relevant for task X?") and actionable (agent reads top-K results)
+
+---
 
 | REQ # | Name | Description | File |
 |-------|------|-------------|------|

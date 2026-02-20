@@ -4,8 +4,20 @@
 
 ---
 
-**As a** manager that needs request gathering done,
-**I want to** spawn a stage agent with just a task description and a pointer to the stage directory,
-**So that** I don't need to carry the request gathering methodology in my own context.
+**As a** user who tells the AI to gather requirements for a new feature,
+**I want** the system to automatically delegate to a specialized requirements agent,
+**So that** I don't need to manually explain the requirements gathering methodology.
 
-**Acceptance**: Manager's prompt to the stage agent contains only the task and directory path, not methodology.
+### What Happens
+
+1. User says "gather requirements for [feature]"
+2. Manager reads stage overview, identifies stage 01 as the target
+3. Manager spawns a stage agent with task description + directory pointer
+4. Stage agent reads its 0AGNOSTIC.md and knows role, methodology, output format
+5. Stage agent begins work without needing further instructions
+
+### Acceptance Criteria
+
+- Manager's prompt contains only the task and directory path, not methodology
+- Stage agent starts working after reading one file
+- User does not need to provide methodology or procedure details

@@ -4,8 +4,20 @@
 
 ---
 
-**As a** manager delegating to a stage agent,
-**I want** a standard prompt template for the Task tool that includes task description and directory pointer,
-**So that** spawned agents receive consistent, sufficient context to begin work.
+**As a** user who expects delegated agents to start working immediately with consistent context,
+**I want** the manager to use a standard prompt template when spawning agents via the Task tool,
+**So that** every spawned agent receives the same reliable starting point regardless of which stage it targets.
 
-**Acceptance**: Template exists and spawned agent can start work from the template alone.
+### What Happens
+
+1. User tells the AI to work on a specific stage
+2. Manager selects the appropriate stage and prepares a Task tool invocation
+3. Manager uses a standard prompt template: task description + stage directory path
+4. Task tool spawns a stage agent with the template context
+5. Stage agent reads its 0AGNOSTIC.md and begins work -- no ad-hoc instructions needed
+
+### Acceptance Criteria
+
+- Standard prompt template exists for Task tool agent spawning
+- Template includes task description and directory pointer (nothing more)
+- Spawned agent can start work from the template alone without additional manager input

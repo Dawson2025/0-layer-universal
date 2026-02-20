@@ -2,18 +2,21 @@
 
 **Need**: [Handoff Protocols](../README.md)
 
+## Overview
+
+These stories cover how context is preserved across agent transitions -- session-to-session, agent-to-agent, and parent-to-child entity. They validate that stage agents leave sufficient state for the next session to continue without re-discovery, that managers delegate with enough context for the receiving agent, that child entities receive proper handoff from parent entities, and that agents recover gracefully after context compaction.
+
 ## Actors
 
-- **Manager**: Entity-level AI agent that coordinates stages
-- **Stage Agent**: AI agent working within a specific stage
-- **Next Agent**: The agent that picks up work after a transition (could be same role, new session)
-- **Child Agent**: Agent managing a child entity
+- **User (Developer)**: Human developer (Dawson) who gives instructions to the AI system, reviews outputs, and validates behavior
+- **Manager**: Entity-level AI agent that coordinates stages (internal system behavior)
+- **Stage Agent**: AI agent spawned for specific stage work (internal system behavior)
 
 ---
 
-| US# | Title | Actor | File |
-|-----|-------|-------|------|
-| US-01 | Stage agent hands off to next session | Stage Agent | [US-01_stage_agent_hands_off.md](./US-01_stage_agent_hands_off.md) |
-| US-02 | Manager delegates with sufficient context | Manager | [US-02_manager_delegates_with_context.md](./US-02_manager_delegates_with_context.md) |
-| US-03 | Child entity receives handoff from parent | Child Agent | [US-03_child_receives_handoff.md](./US-03_child_receives_handoff.md) |
-| US-04 | Agent recovers after compaction | Next Agent | [US-04_agent_recovers_after_compaction.md](./US-04_agent_recovers_after_compaction.md) |
+| US# | Title | Scenario | File |
+|-----|-------|----------|------|
+| US-01 | Stage agent hands off to next session | Agent writes handoff state before session ends | [US-01_stage_agent_hands_off.md](./US-01_stage_agent_hands_off.md) |
+| US-02 | Manager delegates with sufficient context | Manager provides enough background for receiving agent to start | [US-02_manager_delegates_with_context.md](./US-02_manager_delegates_with_context.md) |
+| US-03 | Child entity receives handoff from parent | Child agent bootstraps from parent-provided handoff document | [US-03_child_receives_handoff.md](./US-03_child_receives_handoff.md) |
+| US-04 | Agent recovers after compaction | Agent rebuilds working state from persisted handoff after context loss | [US-04_agent_recovers_after_compaction.md](./US-04_agent_recovers_after_compaction.md) |

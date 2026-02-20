@@ -4,8 +4,20 @@
 
 ---
 
-**As a** stage agent actively producing outputs in stage 06 (development),
-**I want** access to my own Tier 3 content (my stage's outputs and work-in-progress files),
-**So that** I can build on my previous work within this stage.
+**As a** user who tells the AI to continue working on a stage that already has prior outputs,
+**I want** the stage agent to have full access to its own stage outputs (Tier 3) so it can build on previous work,
+**So that** the AI does not re-create work that already exists in the stage.
 
-**Acceptance**: Stage agent reads its own stage outputs, not other stages' outputs.
+### What Happens
+
+1. User says "continue the development work" on a stage that already has outputs
+2. Manager spawns a stage agent for the development stage
+3. Stage agent reads its own Tier 3 content: its stage's outputs and work-in-progress files
+4. Stage agent does NOT read other stages' Tier 3 outputs
+5. Stage agent builds on existing work rather than starting from scratch
+
+### Acceptance Criteria
+
+- Stage agent reads its own stage outputs, not other stages' outputs
+- Agent can identify and build on prior work within its stage
+- Tier 3 access is scoped to the active agent's own stage only
