@@ -47,9 +47,9 @@ Load this context when:
 
 | File | Type | Purpose |
 |------|------|---------|
-| `orchestrator.gab.jsonld` | Orchestrator | 5-mode-13-actor pattern for entity delegation management |
+| `layer_1.orchestrator.gab.jsonld` | Orchestrator | 5-mode-13-actor pattern for entity delegation management |
 | `agent_delegation_system.gab.jsonld` | GAB Agent | Main entity identity — capabilities, constraints, context model |
-| `agent_stage_delegator.agent.jsonld` | Agent Stub | Lightweight purpose agent for delegation decisions |
+| `stage_delegator.agent.jsonld` | Agent Stub | Lightweight purpose agent for delegation decisions |
 
 ```json
 {
@@ -65,10 +65,10 @@ Load this context when:
 
 ```bash
 # List all modes and their purposes
-jq '."@graph"[] | select(."@type" == "gab:Mode") | {id: ."@id", purpose: .purpose}' .0agnostic/06_context_avenue_web/01_aalang/orchestrator.gab.jsonld
+jq '."@graph"[] | select(."@type" == "gab:Mode") | {id: ."@id", purpose: .purpose}' .0agnostic/06_context_avenue_web/01_aalang/layer_1.orchestrator.gab.jsonld
 
 # Load a specific mode's constraints
-jq '."@graph"[] | select(."@id" == "ads:ImplementMode")' .0agnostic/06_context_avenue_web/01_aalang/orchestrator.gab.jsonld
+jq '."@graph"[] | select(."@id" == "ads:ImplementMode")' .0agnostic/06_context_avenue_web/01_aalang/layer_1.orchestrator.gab.jsonld
 ```
 
 ### Parent Orchestrator

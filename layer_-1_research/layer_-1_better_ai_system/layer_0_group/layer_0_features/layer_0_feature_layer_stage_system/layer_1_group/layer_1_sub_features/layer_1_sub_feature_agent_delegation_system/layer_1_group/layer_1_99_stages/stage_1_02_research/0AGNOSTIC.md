@@ -95,9 +95,9 @@ Load when:
 
 | File | Type | Purpose |
 |------|------|---------|
-| `orchestrator.gab.jsonld` | Orchestrator | 3-mode-7-actor pattern for research investigation |
+| `stage_02.orchestrator.gab.jsonld` | Orchestrator | 3-mode-7-actor pattern for research investigation |
 | `research.gab.jsonld` | GAB Agent | Stage identity — topic-based investigation methodology |
-| `agent_pattern_investigator.agent.jsonld` | Agent Stub | Lightweight purpose agent for pattern investigation |
+| `pattern_investigator.agent.jsonld` | Agent Stub | Lightweight purpose agent for pattern investigation |
 
 ```json
 {
@@ -113,15 +113,15 @@ Load when:
 
 ```bash
 # List all modes and their purposes
-jq '."@graph"[] | select(."@type" == "gab:Mode") | {id: ."@id", purpose: .purpose}' .0agnostic/06_context_avenue_web/01_aalang/orchestrator.gab.jsonld
+jq '."@graph"[] | select(."@type" == "gab:Mode") | {id: ."@id", purpose: .purpose}' .0agnostic/06_context_avenue_web/01_aalang/stage_02.orchestrator.gab.jsonld
 
 # Load execute mode constraints
-jq '."@graph"[] | select(."@id" == "rs:ExecuteMode")' .0agnostic/06_context_avenue_web/01_aalang/orchestrator.gab.jsonld
+jq '."@graph"[] | select(."@id" == "rs:ExecuteMode")' .0agnostic/06_context_avenue_web/01_aalang/stage_02.orchestrator.gab.jsonld
 ```
 
 ### Parent Orchestrator
 
-**File**: `../../.0agnostic/06_context_avenue_web/01_aalang/orchestrator.gab.jsonld` (agent_delegation_system entity)
+**File**: `../../.0agnostic/06_context_avenue_web/01_aalang/layer_1.orchestrator.gab.jsonld` (agent_delegation_system entity)
 
 Stage orchestrators inherit from the entity-level orchestrator.
 
