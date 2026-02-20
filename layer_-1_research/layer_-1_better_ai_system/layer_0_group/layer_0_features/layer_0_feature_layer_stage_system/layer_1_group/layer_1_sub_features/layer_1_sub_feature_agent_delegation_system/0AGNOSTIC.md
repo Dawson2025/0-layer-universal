@@ -43,7 +43,7 @@ Load this context when:
 
 ### Local Agent Files
 
-**Directory**: `AALang_jsonld_agents/`
+**Directory**: `.0agnostic/06_context_avenue_web/01_aalang/`
 
 | File | Type | Purpose |
 |------|------|---------|
@@ -65,10 +65,10 @@ Load this context when:
 
 ```bash
 # List all modes and their purposes
-jq '."@graph"[] | select(."@type" == "gab:Mode") | {id: ."@id", purpose: .purpose}' AALang_jsonld_agents/orchestrator.gab.jsonld
+jq '."@graph"[] | select(."@type" == "gab:Mode") | {id: ."@id", purpose: .purpose}' .0agnostic/06_context_avenue_web/01_aalang/orchestrator.gab.jsonld
 
 # Load a specific mode's constraints
-jq '."@graph"[] | select(."@id" == "ads:ImplementMode")' AALang_jsonld_agents/orchestrator.gab.jsonld
+jq '."@graph"[] | select(."@id" == "ads:ImplementMode")' .0agnostic/06_context_avenue_web/01_aalang/orchestrator.gab.jsonld
 ```
 
 ### Parent Orchestrator
@@ -164,7 +164,7 @@ Entity knowledge is organized as a **tree of knowledge** (mirroring the tree of 
 | Tree of knowledge | `.0agnostic/01_knowledge/tree_of_knowledge/00_agent_delegation_knowledge/` |
 | Tree of needs | `layer_1_group/layer_1_99_stages/stage_1_01_request_gathering/outputs/requests/tree_of_needs/` |
 | Handoff documents | `.0agnostic/05_handoff_documents/` (stage overview, 01_incoming/{from_above,from_below}, 02_outgoing/{to_above,to_below}) |
-| Context avenue web | `.0agnostic/06_context_avenue_web/` (aalang, integration MDs, @imports, skills, agents, rules, hooks) |
+| Context avenue web | `.0agnostic/06_context_avenue_web/` (aalang, integration MDs, auto-memory, @imports, skills, agents, rules, hooks) |
 | Children | `layer_2_group/layer_2_subx2_features/` |
 
 ## Success Criteria

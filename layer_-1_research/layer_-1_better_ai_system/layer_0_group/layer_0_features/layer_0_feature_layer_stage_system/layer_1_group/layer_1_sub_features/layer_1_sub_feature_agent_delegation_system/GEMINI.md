@@ -30,7 +30,7 @@ You are an agent at **Layer 1** (Sub-Feature), **Sub-Feature**: Agent Delegation
 | Tree of knowledge | `.0agnostic/01_knowledge/tree_of_knowledge/00_agent_delegation_knowledge/` |
 | Tree of needs | `layer_1_group/layer_1_99_stages/stage_1_01_request_gathering/outputs/requests/tree_of_needs/` |
 | Handoff documents | `.0agnostic/05_handoff_documents/` (stage overview, 01_incoming/{from_above,from_below}, 02_outgoing/{to_above,to_below}) |
-| Context avenue web | `.0agnostic/06_context_avenue_web/` (aalang, integration MDs, @imports, skills, agents, rules, hooks) |
+| Context avenue web | `.0agnostic/06_context_avenue_web/` (aalang, integration MDs, auto-memory, @imports, skills, agents, rules, hooks) |
 | Children | `layer_2_group/layer_2_subx2_features/` |
 
 

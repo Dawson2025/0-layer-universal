@@ -92,7 +92,7 @@ Load when:
 
 ### Local Agent Files
 
-**Directory**: `AALang_jsonld_agents/`
+**Directory**: `.0agnostic/06_context_avenue_web/01_aalang/`
 
 | File | Type | Purpose |
 |------|------|---------|
@@ -114,15 +114,15 @@ Load when:
 
 ```bash
 # List all modes and their purposes
-jq '."@graph"[] | select(."@type" == "gab:Mode") | {id: ."@id", purpose: .purpose}' AALang_jsonld_agents/orchestrator.gab.jsonld
+jq '."@graph"[] | select(."@type" == "gab:Mode") | {id: ."@id", purpose: .purpose}' .0agnostic/06_context_avenue_web/01_aalang/orchestrator.gab.jsonld
 
 # Load execute mode constraints
-jq '."@graph"[] | select(."@id" == "ds:ExecuteMode")' AALang_jsonld_agents/orchestrator.gab.jsonld
+jq '."@graph"[] | select(."@id" == "ds:ExecuteMode")' .0agnostic/06_context_avenue_web/01_aalang/orchestrator.gab.jsonld
 ```
 
 ### Parent Orchestrator
 
-**File**: `../../AALang_jsonld_agents/orchestrator.gab.jsonld` (agent_delegation_system entity)
+**File**: `../../.0agnostic/06_context_avenue_web/01_aalang/orchestrator.gab.jsonld` (agent_delegation_system entity)
 
 Stage orchestrators inherit from the entity-level orchestrator.
 
