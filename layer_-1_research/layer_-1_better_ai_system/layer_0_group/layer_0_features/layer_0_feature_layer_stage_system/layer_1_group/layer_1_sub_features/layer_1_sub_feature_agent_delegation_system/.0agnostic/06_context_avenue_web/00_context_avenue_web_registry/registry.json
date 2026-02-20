@@ -1,0 +1,77 @@
+{
+  "ordering_principle": "Most comprehensive (full agent graphs) → most fragmented (event-triggered scripts)",
+  "avenues": [
+    {
+      "number": "01",
+      "name": "aalang",
+      "dir": "01_aalang",
+      "scope": "Full agent graphs",
+      "description": "Complete .gab.jsonld orchestrators and agents — modes, actors, personas, constraints, transitions",
+      "populated": true,
+      "file_count": 3
+    },
+    {
+      "number": "02",
+      "name": "aalang_markdown_integration",
+      "dir": "02_aalang_markdown_integration",
+      "scope": "Markdown summaries",
+      "description": ".integration.md files — human-readable summaries of AALang graphs",
+      "populated": false,
+      "file_count": 0
+    },
+    {
+      "number": "03",
+      "name": "auto_memory",
+      "dir": "03_auto_memory",
+      "scope": "Persistent memory",
+      "description": "Auto-memory files — operational learnings, patterns, gotchas that persist across sessions",
+      "populated": false,
+      "file_count": 0
+    },
+    {
+      "number": "04",
+      "name": "@import_references",
+      "dir": "04_@import_references",
+      "scope": "Reference collections",
+      "description": "@imports/ reference files — curated content collections for context loading",
+      "populated": false,
+      "file_count": 0
+    },
+    {
+      "number": "05",
+      "name": "skills",
+      "dir": "05_skills",
+      "scope": "Action-oriented",
+      "description": "SKILL.md files — specific capabilities with WHEN/WHEN NOT conditions",
+      "populated": false,
+      "file_count": 0
+    },
+    {
+      "number": "06",
+      "name": "agents",
+      "dir": "06_agents",
+      "scope": "Lightweight stubs",
+      "description": ".agent.jsonld files — purpose-specific agent definitions",
+      "populated": false,
+      "file_count": 0
+    },
+    {
+      "number": "07",
+      "name": "path_specific_rules",
+      "dir": "07_path_specific_rules",
+      "scope": "Directory-scoped",
+      "description": "Rules that apply to specific paths/directories",
+      "populated": false,
+      "file_count": 0
+    },
+    {
+      "number": "08",
+      "name": "hooks",
+      "dir": "08_hooks",
+      "scope": "Event-triggered",
+      "description": "Hook scripts triggered by tool events (pre/post commit, file changes, etc.)",
+      "populated": false,
+      "file_count": 0
+    }
+  ]
+}
