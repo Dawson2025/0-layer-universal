@@ -146,11 +146,12 @@ for dir in \
   "01_knowledge" \
   "02_rules" "02_rules/static" "02_rules/dynamic" \
   "03_protocols" \
-  "04_agents" \
-  "05_skills" \
-  "06_hooks" "06_hooks/scripts" \
-  "07_episodic_memory" "07_episodic_memory/sessions" "07_episodic_memory/changes" \
-  "04+_setup_dependant"; do
+  "04_episodic_memory" "04_episodic_memory/sessions" "04_episodic_memory/changes" \
+  "05_handoff_documents" \
+  "06_context_avenue_web/05_skills" \
+  "06_context_avenue_web/06_agents" \
+  "06_context_avenue_web/08_hooks" "06_context_avenue_web/08_hooks/scripts" \
+  "07+_setup_dependant"; do
   if [ ! -d "$AGNOSTIC/$dir" ]; then
     if dry "Would create: .0agnostic/$dir"; then true; else
       mkdir -p "$AGNOSTIC/$dir"
@@ -164,10 +165,18 @@ echo "--- Step 2: Rename unnumbered dirs to numbered ---"
 rename_dir "knowledge"        "01_knowledge"
 rename_dir "rules"            "02_rules"
 rename_dir "protocols"        "03_protocols"
-rename_dir "agents"           "04_agents"
-rename_dir "skills"           "05_skills"
-rename_dir "hooks"            "06_hooks"
-rename_dir "episodic_memory"  "07_episodic_memory"
+rename_dir "episodic_memory"  "04_episodic_memory"
+rename_dir "agents"           "06_context_avenue_web/06_agents"
+rename_dir "skills"           "06_context_avenue_web/05_skills"
+rename_dir "hooks"            "06_context_avenue_web/08_hooks"
+
+# Migrate old numbered dirs to new convention
+rename_dir "04_agents"        "06_context_avenue_web/06_agents"
+rename_dir "05_skills"        "06_context_avenue_web/05_skills"
+rename_dir "06_hooks"         "06_context_avenue_web/08_hooks"
+rename_dir "07_episodic_memory" "04_episodic_memory"
+rename_dir "08_episodic_memory" "04_episodic_memory"
+rename_dir "04+_setup_dependant" "07+_setup_dependant"
 
 # Handle layer_0 extras — fold into numbered structure
 rename_dir "prompts"          "01_knowledge/prompts"
@@ -231,7 +240,7 @@ if [ -n "$SUB_LAYERS" ]; then
   for sd in "$SUB_LAYERS"/sub_layer_*_setup_dependant "$SUB_LAYERS"/*_setup_dependant; do
     if [ -d "$sd" ]; then
       log "Moving setup_dependant: $(basename "$sd")"
-      move_contents "$sd" "$AGNOSTIC/04+_setup_dependant"
+      move_contents "$sd" "$AGNOSTIC/07+_setup_dependant"
       break
     fi
   done

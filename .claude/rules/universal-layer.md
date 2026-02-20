@@ -43,6 +43,9 @@ When working in layer_0 (universal) directories:
   - `.0agnostic/01_knowledge/` — Domain knowledge (per-topic with `principles/`, `docs/`, `resources/`)
   - `.0agnostic/02_rules/` — Mandatory rules (`static/` + `dynamic/`) — READ FIRST
   - `.0agnostic/03_protocols/` — Standard protocols
-  - `.0agnostic/04+_setup_dependant/` — OS/tool/environment-specific content
+  - `.0agnostic/04_episodic_memory/` — Session records (`sessions/`, `changes/`)
+  - `.0agnostic/05_handoff_documents/` — Cross-entity communication
+  - `.0agnostic/06_context_avenue_web/` — All context avenues (aalang, skills, agents, hooks, etc.)
+  - `.0agnostic/07+_setup_dependant/` — OS/tool/environment-specific content
 - Always check `.0agnostic/02_rules/` before making changes
 - Universal rules cannot be overridden without explicit approval

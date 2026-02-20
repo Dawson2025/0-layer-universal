@@ -69,17 +69,25 @@ check_dir ".0agnostic/02_rules"
 check_dir ".0agnostic/02_rules/static"
 check_dir ".0agnostic/02_rules/dynamic"
 check_dir ".0agnostic/03_protocols"
-check_dir ".0agnostic/04_agents"
-check_dir ".0agnostic/05_skills"
-check_dir ".0agnostic/06_hooks/scripts"
-check_dir ".0agnostic/07_episodic_memory/sessions"
-check_dir ".0agnostic/07_episodic_memory/changes"
-check_dir ".0agnostic/04+_setup_dependant"
+check_dir ".0agnostic/04_episodic_memory/sessions"
+check_dir ".0agnostic/04_episodic_memory/changes"
+check_dir ".0agnostic/05_handoff_documents"
+check_dir ".0agnostic/06_context_avenue_web/05_skills"
+check_dir ".0agnostic/06_context_avenue_web/06_agents"
+check_dir ".0agnostic/06_context_avenue_web/08_hooks/scripts"
+check_dir ".0agnostic/07+_setup_dependant"
 
 # Warn about unnumbered .0agnostic/ dirs (old pattern)
 for old_dir in knowledge rules agents skills hooks episodic_memory protocols; do
   if [ -d "$ENTITY/.0agnostic/$old_dir" ]; then
     warn ".0agnostic/$old_dir/ still uses unnumbered name (run migrate-sub-layers-to-0agnostic.sh)"
+  fi
+done
+
+# Warn about old numbering convention dirs
+for old_dir in 04_agents 05_skills "06_hooks" "07_episodic_memory" "08_episodic_memory" "04+_setup_dependant"; do
+  if [ -d "$ENTITY/.0agnostic/$old_dir" ]; then
+    warn ".0agnostic/$old_dir/ uses old numbering convention (run migrate-sub-layers-to-0agnostic.sh)"
   fi
 done
 
@@ -194,8 +202,8 @@ if [ -n "$group_dir" ]; then
     done
 
     # Episodic memory in stage tool dirs
-    for tool in .0agnostic/07_episodic_memory .claude .cursor .gemini .codex; do
-      if [ "$tool" = ".0agnostic/07_episodic_memory" ]; then
+    for tool in .0agnostic/04_episodic_memory .claude .cursor .gemini .codex; do
+      if [ "$tool" = ".0agnostic/04_episodic_memory" ]; then
         [ -d "$stage_dir/$tool/sessions" ] || fail "$rel/$tool/sessions (missing)"
       else
         [ -d "$stage_dir/$tool/episodic_memory/sessions" ] || fail "$rel/$tool/episodic_memory/sessions (missing)"
