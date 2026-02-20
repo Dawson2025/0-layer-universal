@@ -4,11 +4,11 @@
 # This log tracks all changes to enable multi-agent awareness
 
 2026-01-30T15:00:00Z | claude_opus | layer_0/0AGNOSTIC.md | CREATED | - → initial
-2026-01-30T15:05:00Z | claude_opus | layer_0/.0agnostic/ | CREATED | - → initial
-2026-01-30T15:10:00Z | claude_opus | layer_0/.0agnostic/rules/context_traversal.md | CREATED | - → initial
-2026-01-30T15:11:00Z | claude_opus | layer_0/.0agnostic/rules/episodic_memory.md | CREATED | - → initial
-2026-01-30T15:12:00Z | claude_opus | layer_0/.0agnostic/rules/multi_agent_sync.md | CREATED | - → initial
-2026-01-30T15:15:00Z | claude_opus | layer_0/.0agnostic/agnostic-sync.sh | CREATED | - → initial
+2026-01-30T15:05:00Z | claude_opus | .0agnostic/ | CREATED | - → initial
+2026-01-30T15:10:00Z | claude_opus | .0agnostic/rules/context_traversal.md | CREATED | - → initial
+2026-01-30T15:11:00Z | claude_opus | .0agnostic/rules/episodic_memory.md | CREATED | - → initial
+2026-01-30T15:12:00Z | claude_opus | .0agnostic/rules/multi_agent_sync.md | CREATED | - → initial
+2026-01-30T15:15:00Z | claude_opus | .0agnostic/agnostic-sync.sh | CREATED | - → initial
 2026-01-30T15:20:00Z | claude_opus | layer_0/CLAUDE.md | CREATED | - → generated
 2026-01-30T15:20:00Z | claude_opus | layer_0/AGENTS.md | CREATED | - → generated
 2026-01-30T15:20:00Z | claude_opus | layer_0/GEMINI.md | CREATED | - → generated

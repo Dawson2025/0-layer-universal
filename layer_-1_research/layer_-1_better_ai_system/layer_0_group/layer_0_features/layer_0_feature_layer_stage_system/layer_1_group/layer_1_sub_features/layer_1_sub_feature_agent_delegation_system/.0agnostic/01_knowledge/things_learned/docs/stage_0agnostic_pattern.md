@@ -38,7 +38,7 @@ With the current state half in 0AGNOSTIC.md, the agent gets immediate orientatio
 
 ## Where This Is Codified
 
-- Universal template: `layer_0/.0agnostic/01_knowledge/layer_stage_system/stage_guides/STAGE_AGENT_TEMPLATE.md`
+- Universal template: `.0agnostic/01_knowledge/layer_stage_system/stage_guides/STAGE_AGENT_TEMPLATE.md`
 - Example (context_chain_system stage 01): `.../stage_3_01_request_gathering/0AGNOSTIC.md`
 - Example (agent_delegation_system stage 01): `.../stage_1_01_request_gathering/0AGNOSTIC.md`
 
@@ -52,7 +52,7 @@ The current state section can be derived from the stage report but is more conci
 
 ## Formalized As
 
-- **Principle 9** ("Two-Halves Context Pattern") in `layer_0/.0agnostic/01_knowledge/principles/principles/STAGE_DELEGATION_PRINCIPLES.md`
+- **Principle 9** ("Two-Halves Context Pattern") in `.0agnostic/01_knowledge/principles/principles/STAGE_DELEGATION_PRINCIPLES.md`
 
 ---
 
@@ -86,8 +86,8 @@ The decision is ultimately about context window management. An agent that tries 
 
 ## Where This Is Codified
 
-- **Principle 8** ("Scope Boundary Decisions") in `layer_0/.0agnostic/01_knowledge/principles/principles/STAGE_DELEGATION_PRINCIPLES.md`
-- **Scope Boundary Rule** (expanded from Stage Boundary Rule) in `layer_0/.0agnostic/02_rules/static/STAGE_BOUNDARY_RULE.md`
+- **Principle 8** ("Scope Boundary Decisions") in `.0agnostic/01_knowledge/principles/principles/STAGE_DELEGATION_PRINCIPLES.md`
+- **Scope Boundary Rule** (expanded from Stage Boundary Rule) in `.0agnostic/02_rules/static/STAGE_BOUNDARY_RULE.md`
 
 ---
 
@@ -131,6 +131,6 @@ With bidirectional references:
 
 ## Where This Is Codified
 
-- **Principle 10** ("Cross-Layer Stage References") in `layer_0/.0agnostic/01_knowledge/principles/principles/STAGE_DELEGATION_PRINCIPLES.md`
+- **Principle 10** ("Cross-Layer Stage References") in `.0agnostic/01_knowledge/principles/principles/STAGE_DELEGATION_PRINCIPLES.md`
 - **Tree of knowledge topic**: `.0agnostic/01_knowledge/tree_of_knowledge/00_agent_delegation_knowledge/02_patterns_and_principles/cross_layer_stage_references.md`
 - Applied at: agent_delegation_system stages 01-06 (downward), memory_system, multi_agent_system, context_chain_system (upward)

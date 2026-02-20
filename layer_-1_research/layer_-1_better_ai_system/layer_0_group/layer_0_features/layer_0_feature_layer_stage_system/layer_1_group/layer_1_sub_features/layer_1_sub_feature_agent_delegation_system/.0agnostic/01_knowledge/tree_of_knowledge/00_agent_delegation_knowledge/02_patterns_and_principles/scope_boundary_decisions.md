@@ -27,8 +27,8 @@ Discovered through practice: agents working in one stage would naturally encount
 
 | What | Where |
 |------|-------|
-| Principle 8 (Scope Boundary Decisions) | `layer_0/.0agnostic/01_knowledge/principles/principles/STAGE_DELEGATION_PRINCIPLES.md` |
-| Scope Boundary Rule | `layer_0/.0agnostic/02_rules/static/STAGE_BOUNDARY_RULE.md` |
+| Principle 8 (Scope Boundary Decisions) | `.0agnostic/01_knowledge/principles/principles/STAGE_DELEGATION_PRINCIPLES.md` |
+| Scope Boundary Rule | `.0agnostic/02_rules/static/STAGE_BOUNDARY_RULE.md` |
 | Design decision | Stage 04: `../../../../../../layer_1_group/layer_1_99_stages/stage_1_04_design/0AGNOSTIC.md` → Key Design Decisions table |
 | Things learned doc | `../../things_learned/docs/stage_0agnostic_pattern.md` (second section) |
 | Stage 01 requirements (coordination) | `../../../../../../layer_1_group/layer_1_99_stages/stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_agents_delegate_effectively/03_coordination_patterns/` |

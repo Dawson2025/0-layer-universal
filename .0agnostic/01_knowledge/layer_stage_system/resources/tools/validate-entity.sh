@@ -74,7 +74,7 @@ check_dir ".0agnostic/05_skills"
 check_dir ".0agnostic/06_hooks/scripts"
 check_dir ".0agnostic/07_episodic_memory/sessions"
 check_dir ".0agnostic/07_episodic_memory/changes"
-check_dir ".0agnostic/08+_setup_dependant"
+check_dir ".0agnostic/04+_setup_dependant"
 
 # Warn about unnumbered .0agnostic/ dirs (old pattern)
 for old_dir in knowledge rules agents skills hooks episodic_memory protocols; do

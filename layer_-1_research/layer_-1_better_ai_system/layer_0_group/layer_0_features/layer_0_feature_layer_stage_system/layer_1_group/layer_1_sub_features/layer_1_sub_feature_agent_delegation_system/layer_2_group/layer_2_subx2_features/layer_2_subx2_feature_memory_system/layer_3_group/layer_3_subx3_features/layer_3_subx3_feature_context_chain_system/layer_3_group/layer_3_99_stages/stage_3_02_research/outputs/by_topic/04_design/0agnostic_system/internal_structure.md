@@ -55,7 +55,7 @@ layer_0/layer_0_04_sub_layers/
 └── skills/
 ```
 
-Only `layer_0/.0agnostic/` has a fuller structure with rules, scripts, templates, and tests.
+Only `.0agnostic/` has a fuller structure with rules, scripts, templates, and tests.
 
 ---
 
@@ -404,7 +404,7 @@ Not every `.0agnostic/` needs all subdirectories. The structure is additive:
 └── skills/                   # Universal skills
 ```
 
-### Layer 0 (layer_0/.0agnostic/)
+### Layer 0 (.0agnostic/)
 ```
 .0agnostic/
 ├── knowledge/                # Framework knowledge (aalang, entity lifecycle, etc.)
@@ -446,22 +446,22 @@ The `layer_0/layer_0_04_sub_layers/` directory is dissolved. Its contents migrat
 
 | Current Location | New Location | Notes |
 |------------------|-------------|-------|
-| `sub_layer_0_01_knowledge_system/aalang_gab_system/` | `layer_0/.0agnostic/knowledge/aalang_gab_system/` | Reference docs |
-| `sub_layer_0_01_knowledge_system/agent_coordination/` | `layer_0/.0agnostic/knowledge/agent_coordination/` | Reference docs |
-| `sub_layer_0_01_knowledge_system/context_loading/` | `layer_0/.0agnostic/knowledge/context_loading/` | Reference docs |
-| `sub_layer_0_01_knowledge_system/entity_lifecycle/` | `layer_0/.0agnostic/knowledge/entity_lifecycle/` | Reference docs |
-| `sub_layer_0_01_knowledge_system/layer_stage_system/` | `layer_0/.0agnostic/knowledge/layer_stage_system/` | Reference docs |
-| `sub_layer_0_01_knowledge_system/naming_conventions/` | `layer_0/.0agnostic/knowledge/naming_conventions/` | Reference docs |
-| `sub_layer_0_01_knowledge_system/navigation_patterns/` | `layer_0/.0agnostic/knowledge/navigation_patterns/` | Reference docs |
-| `sub_layer_0_01_knowledge_system/principles/` | `layer_0/.0agnostic/knowledge/principles/` | Detailed principles |
-| `sub_layer_0_01_knowledge_system/software_engineering_knowledge_system/` | `layer_0/.0agnostic/knowledge/software_engineering/` | Reference docs |
-| `sub_layer_0_02_rules/0_every_api_request/` | `layer_0/.0agnostic/rules/static/` | Auto-loaded rules |
-| `sub_layer_0_02_rules/1_scenario_based/` | `layer_0/.0agnostic/rules/dynamic/` | Path-scoped rules |
-| `sub_layer_0_02_rules/0_instruction_docs/` | `layer_0/.0agnostic/knowledge/instruction_docs/` | Reference (not rules) |
+| `sub_layer_0_01_knowledge_system/aalang_gab_system/` | `.0agnostic/knowledge/aalang_gab_system/` | Reference docs |
+| `sub_layer_0_01_knowledge_system/agent_coordination/` | `.0agnostic/knowledge/agent_coordination/` | Reference docs |
+| `sub_layer_0_01_knowledge_system/context_loading/` | `.0agnostic/knowledge/context_loading/` | Reference docs |
+| `sub_layer_0_01_knowledge_system/entity_lifecycle/` | `.0agnostic/knowledge/entity_lifecycle/` | Reference docs |
+| `sub_layer_0_01_knowledge_system/layer_stage_system/` | `.0agnostic/knowledge/layer_stage_system/` | Reference docs |
+| `sub_layer_0_01_knowledge_system/naming_conventions/` | `.0agnostic/knowledge/naming_conventions/` | Reference docs |
+| `sub_layer_0_01_knowledge_system/navigation_patterns/` | `.0agnostic/knowledge/navigation_patterns/` | Reference docs |
+| `sub_layer_0_01_knowledge_system/principles/` | `.0agnostic/knowledge/principles/` | Detailed principles |
+| `sub_layer_0_01_knowledge_system/software_engineering_knowledge_system/` | `.0agnostic/knowledge/software_engineering/` | Reference docs |
+| `sub_layer_0_02_rules/0_every_api_request/` | `.0agnostic/rules/static/` | Auto-loaded rules |
+| `sub_layer_0_02_rules/1_scenario_based/` | `.0agnostic/rules/dynamic/` | Path-scoped rules |
+| `sub_layer_0_02_rules/0_instruction_docs/` | `.0agnostic/knowledge/instruction_docs/` | Reference (not rules) |
 | `sub_layer_0_02_rules/3_archive_docs/` | Archive or delete | Historical, not active |
 | `sub_layer_0_02_rules/sub_layer_0_04_99_stages/` | Evaluate per stage | Some may be rules, some knowledge |
-| `sub_layer_0_03_protocols/` | `layer_0/.0agnostic/protocols/` | Become skills via sync |
-| `sub_layer_0_04+_setup_dependant/` | `layer_0/.0agnostic/knowledge/setup/` + `.1merge/` | OS-specific → .1merge/ |
+| `sub_layer_0_03_protocols/` | `.0agnostic/protocols/` | Become skills via sync |
+| `sub_layer_0_04+_setup_dependant/` | `.0agnostic/knowledge/setup/` + `.1merge/` | OS-specific → .1merge/ |
 
 ---
 

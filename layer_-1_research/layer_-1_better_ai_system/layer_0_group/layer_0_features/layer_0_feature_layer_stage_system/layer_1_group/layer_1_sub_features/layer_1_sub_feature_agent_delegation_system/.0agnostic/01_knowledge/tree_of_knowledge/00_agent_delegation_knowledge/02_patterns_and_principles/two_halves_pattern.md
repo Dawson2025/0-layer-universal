@@ -24,8 +24,8 @@ Discovered during Stage 02 research (via the context_chain_system working exampl
 
 | What | Where |
 |------|-------|
-| Principle 9 (Two-Halves Context Pattern) | `layer_0/.0agnostic/01_knowledge/principles/principles/STAGE_DELEGATION_PRINCIPLES.md` |
-| Universal stage agent template | `layer_0/.0agnostic/01_knowledge/layer_stage_system/stage_guides/STAGE_AGENT_TEMPLATE.md` |
+| Principle 9 (Two-Halves Context Pattern) | `.0agnostic/01_knowledge/principles/principles/STAGE_DELEGATION_PRINCIPLES.md` |
+| Universal stage agent template | `.0agnostic/01_knowledge/layer_stage_system/stage_guides/STAGE_AGENT_TEMPLATE.md` |
 | Discovery context (research) | Stage 02: `../../../../../../layer_1_group/layer_1_99_stages/stage_1_02_research/0AGNOSTIC.md` → Key Findings |
 | Design decision | Stage 04: `../../../../../../layer_1_group/layer_1_99_stages/stage_1_04_design/0AGNOSTIC.md` → Key Design Decisions table |
 | Things learned doc | `../../things_learned/docs/stage_0agnostic_pattern.md` |

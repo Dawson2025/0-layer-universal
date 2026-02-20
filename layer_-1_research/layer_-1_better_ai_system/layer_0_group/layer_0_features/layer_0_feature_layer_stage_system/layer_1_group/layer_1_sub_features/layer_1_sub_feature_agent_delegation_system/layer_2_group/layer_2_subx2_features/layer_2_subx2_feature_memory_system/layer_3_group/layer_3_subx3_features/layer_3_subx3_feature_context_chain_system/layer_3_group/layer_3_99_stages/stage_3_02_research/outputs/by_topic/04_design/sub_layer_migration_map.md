@@ -11,7 +11,7 @@ Detailed mapping of every directory and file category in the current sub-layer h
 ```
 BEFORE                                          AFTER
 ──────                                          ─────
-layer_0/layer_0_04_sub_layers/                  layer_0/.0agnostic/
+layer_0/layer_0_04_sub_layers/                  .0agnostic/
 ├── sub_layer_0_01_knowledge_system/    ──→     ├── knowledge/
 │   └── principles/                     ──→     │   └── principles/
 ├── sub_layer_0_02_rules/               ──→     ├── rules/
@@ -234,7 +234,7 @@ Multiple `.sync-conflict-*` files exist in the sub-layers (from Syncthing). Duri
 ## Migration Sequence
 
 ### Phase 1: Create Target Structure
-1. Create subdirectories inside `layer_0/.0agnostic/`: `knowledge/`, `knowledge/principles/`, `rules/static/`, `rules/dynamic/`, `protocols/`
+1. Create subdirectories inside `.0agnostic/`: `knowledge/`, `knowledge/principles/`, `rules/static/`, `rules/dynamic/`, `protocols/`
 2. The rest of the `.0agnostic/` structure already exists
 
 ### Phase 2: Move Knowledge Files

@@ -78,7 +78,7 @@ Move templates to `.0agnostic/templates/` (the canonical location):
 
 ```
 FROM: layer_0/sub_layer_0_05+_setup_dependant/templates/
-TO:   layer_0/.0agnostic/templates/
+TO:   .0agnostic/templates/
 
 Contents:
 ├── 0AGNOSTIC.md.template
@@ -112,7 +112,7 @@ The `scripts/agnostic-sync.sh` should be in `.0agnostic/hooks/scripts/`:
 
 ```
 FROM: layer_0/sub_layer_0_05+_setup_dependant/scripts/agnostic-sync.sh
-TO:   layer_0/.0agnostic/hooks/scripts/agnostic-sync.sh  (if not exists)
+TO:   .0agnostic/hooks/scripts/agnostic-sync.sh  (if not exists)
       OR verify it's a duplicate and delete
 ```
 

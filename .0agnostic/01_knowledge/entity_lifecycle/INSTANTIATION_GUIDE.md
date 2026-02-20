@@ -24,7 +24,7 @@ Replace `N` with the entity's layer number and `N1` with N+1:
 
 ```bash
 # Entity root config directories (outputs/ and synthesis/ live inside stages, NOT here)
-mkdir -p <entity_name>/{.0agnostic/{01_knowledge,02_rules/{static,dynamic},03_protocols,04_agents,05_skills,06_hooks/scripts,07_episodic_memory/{sessions,changes},08+_setup_dependant},.1merge/{.1claude_merge/{0_synced,1_overrides,2_additions},.1cursor_merge/{0_synced,1_overrides,2_additions},.1gemini_merge/{0_synced,1_overrides,2_additions},.1aider_merge/{0_synced,1_overrides,2_additions},.1codex_merge/{0_synced,1_overrides,2_additions},.1copilot_merge/{0_synced,1_overrides,2_additions}},.claude/{rules,episodic_memory/{sessions,changes}},.cursor/{rules,episodic_memory/{sessions,changes}},.gemini/episodic_memory/{sessions,changes},.codex/episodic_memory/{sessions,changes},.github/instructions}
+mkdir -p <entity_name>/{.0agnostic/{01_knowledge,02_rules/{static,dynamic},03_protocols,04_agents,05_skills,06_hooks/scripts,07_episodic_memory/{sessions,changes},04+_setup_dependant},.1merge/{.1claude_merge/{0_synced,1_overrides,2_additions},.1cursor_merge/{0_synced,1_overrides,2_additions},.1gemini_merge/{0_synced,1_overrides,2_additions},.1aider_merge/{0_synced,1_overrides,2_additions},.1codex_merge/{0_synced,1_overrides,2_additions},.1copilot_merge/{0_synced,1_overrides,2_additions}},.claude/{rules,episodic_memory/{sessions,changes}},.cursor/{rules,episodic_memory/{sessions,changes}},.gemini/episodic_memory/{sessions,changes},.codex/episodic_memory/{sessions,changes},.github/instructions}
 
 # Internal layer_N_group structure (no sub_layers — content lives in .0agnostic/)
 mkdir -p <entity_name>/layer_N_group/{layer_N_00_layer_registry/proposals,layer_N_01_ai_manager_system,layer_N_02_manager_handoff_documents/{incoming/{from_above,from_below},outgoing/{to_above,to_below}},layer_N_99_stages}
@@ -97,7 +97,7 @@ Load this context when:
 
 Run the agnostic-sync script on the entity root:
 ```bash
-bash layer_0/.0agnostic/agnostic-sync.sh <entity_dir>
+bash .0agnostic/agnostic-sync.sh <entity_dir>
 ```
 
 This generates CLAUDE.md, AGENTS.md, GEMINI.md, OPENAI.md, .cursorrules from 0AGNOSTIC.md.
@@ -154,7 +154,7 @@ done
 ### Step 9: Run agnostic-sync on ALL directories
 
 ```bash
-SYNC="layer_0/.0agnostic/agnostic-sync.sh"
+SYNC=".0agnostic/agnostic-sync.sh"
 for f in $(find <entity> -name "0AGNOSTIC.md" -type f); do
   bash "$SYNC" "$(dirname "$f")"
 done
@@ -304,7 +304,7 @@ stage_N_XX_<name>/
 - [ ] `layer_N_orchestrator.integration.md` generated via `jsonld-to-md.sh`
 
 ### Config Directories (Entity Root)
-- [ ] `.0agnostic/` with numbered subdirs (01_knowledge, 02_rules/{static,dynamic}, 03_protocols, 04_agents, 05_skills, 06_hooks/scripts, 07_episodic_memory/{sessions,changes}, 08+_setup_dependant)
+- [ ] `.0agnostic/` with numbered subdirs (01_knowledge, 02_rules/{static,dynamic}, 03_protocols, 04_agents, 05_skills, 06_hooks/scripts, 07_episodic_memory/{sessions,changes}, 04+_setup_dependant)
 - [ ] `.1merge/` with 6 tools × 3 tiers = 18 subdirectories
 - [ ] `.claude/` with `rules/` AND `episodic_memory/{sessions,changes}/`
 - [ ] `.cursor/` with `rules/` AND `episodic_memory/{sessions,changes}/`

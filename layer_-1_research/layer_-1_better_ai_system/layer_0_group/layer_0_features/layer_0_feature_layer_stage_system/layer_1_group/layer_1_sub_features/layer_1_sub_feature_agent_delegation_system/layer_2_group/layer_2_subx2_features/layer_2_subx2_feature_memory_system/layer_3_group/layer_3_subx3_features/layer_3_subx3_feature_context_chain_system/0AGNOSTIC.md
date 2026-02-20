@@ -471,7 +471,7 @@ Before invoking `/entity-creation`, read these (the skill will reference them to
 | Nested depth naming | `layer_0/.../layer_stage_system/NESTED_DEPTH_NAMING.md` | subxN naming (layer_4_subx3, etc.) |
 | Stages explained | `layer_0/.../layer_stage_system/STAGES_EXPLAINED.md` | Stage Completeness Rule |
 
-**Full path prefix**: `layer_0/.0agnostic/01_knowledge/`
+**Full path prefix**: `.0agnostic/01_knowledge/`
 
 ### Instantiating Agents for Sub-Entities
 

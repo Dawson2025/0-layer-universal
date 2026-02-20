@@ -78,7 +78,7 @@ Do NOT load all parent knowledge at once — read the specific file relevant to 
 
 ### Stage Report
 
-Before exiting, update `outputs/stage_report.md` following the universal protocol at `layer_0/.0agnostic/03_protocols/stage_report_protocol.md`. The entity manager reads this to understand your stage's status.
+Before exiting, update `outputs/stage_report.md` following the universal protocol at `.0agnostic/03_protocols/stage_report_protocol.md`. The entity manager reads this to understand your stage's status.
 
 
 ## Triggers

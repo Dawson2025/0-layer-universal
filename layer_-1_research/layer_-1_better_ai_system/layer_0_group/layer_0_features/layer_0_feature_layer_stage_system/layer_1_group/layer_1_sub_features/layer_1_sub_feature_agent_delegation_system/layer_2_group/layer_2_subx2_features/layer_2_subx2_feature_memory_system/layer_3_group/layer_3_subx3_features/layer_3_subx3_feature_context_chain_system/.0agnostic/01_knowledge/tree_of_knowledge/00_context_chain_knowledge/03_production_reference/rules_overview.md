@@ -2,7 +2,7 @@
 
 ## Summary
 
-The production rules system lives in `layer_0/.0agnostic/02_rules/` and is organized into static rules (always-apply, loaded on every relevant API request) and scenario-based rules (loaded when specific conditions are met). Rules cascade downward through the hierarchy -- all layer_0 rules apply to every entity below.
+The production rules system lives in `.0agnostic/02_rules/` and is organized into static rules (always-apply, loaded on every relevant API request) and scenario-based rules (loaded when specific conditions are met). Rules cascade downward through the hierarchy -- all layer_0 rules apply to every entity below.
 
 Static (always-apply) rules include: AI Context Modification Protocol, AI Context Commit/Push Rule, Context Traversal Rule, File Path Linking Rule, context priority rules, and context scope boundaries. Scenario-based rules include: safety governance, Layer Context Header Protocol, sequential development methodology, Cross-OS Compatibility Rules, AI Documentation Protocol, Context File Pattern, Location Rule Application Protocol, and Output-First Protocol.
 
@@ -20,9 +20,9 @@ A known issue identified in early research (2026-01-25) was the lack of a rule p
 
 | What | Where | Notes |
 |------|-------|-------|
-| Production rules root | `layer_0/.0agnostic/02_rules/` | Authoritative rule location |
-| Static rules | `layer_0/.0agnostic/02_rules/0_every_api_request/` | Always-apply rules |
-| Scenario rules | `layer_0/.0agnostic/02_rules/1_scenario_based/` | Condition-triggered rules |
+| Production rules root | `.0agnostic/02_rules/` | Authoritative rule location |
+| Static rules | `.0agnostic/02_rules/0_every_api_request/` | Always-apply rules |
+| Scenario rules | `.0agnostic/02_rules/1_scenario_based/` | Condition-triggered rules |
 | Rules problems research | `.0agnostic/01_knowledge/things_learned/01_rules_problems.md` | Early audit of rule system issues |
-| Context priority rules | `layer_0/.0agnostic/02_rules/context_priority_rules.md` | How conflicts between context sources are resolved |
-| Context scope boundaries | `layer_0/.0agnostic/02_rules/context_scope_boundaries.md` | What is in/out of scope per entity |
+| Context priority rules | `.0agnostic/02_rules/context_priority_rules.md` | How conflicts between context sources are resolved |
+| Context scope boundaries | `.0agnostic/02_rules/context_scope_boundaries.md` | What is in/out of scope per entity |

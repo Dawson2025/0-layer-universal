@@ -68,10 +68,10 @@ Static rules are summarized inline. Dynamic rules are referenced by trigger.
 ## Critical Rules
 ### File Change Reporting
 On every turn with file operations, report full paths of added/updated/moved/removed files.
-**Full rule**: `layer_0/.0agnostic/02_rules/static/I0_FILE_CHANGE_REPORTING.md`
+**Full rule**: `.0agnostic/02_rules/static/I0_FILE_CHANGE_REPORTING.md`
 
 ## Scenario-Based Rules (Read When Triggered)
 | Trigger | Rule |
 |---------|------|
-| "Where is the source of truth for X?" | `layer_0/.0agnostic/02_rules/dynamic/I0_source_of_truth_rule.md` |
+| "Where is the source of truth for X?" | `.0agnostic/02_rules/dynamic/I0_source_of_truth_rule.md` |
 ```

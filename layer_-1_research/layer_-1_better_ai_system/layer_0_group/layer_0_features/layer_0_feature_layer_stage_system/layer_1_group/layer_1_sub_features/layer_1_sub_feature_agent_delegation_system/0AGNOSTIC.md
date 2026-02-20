@@ -64,17 +64,17 @@ These two domains are deeply coupled: delegation decisions depend on what contex
 
 ### What's Been Done
 
-This entity has progressed through multiple stages, producing universal artifacts that now live at `layer_0/.0agnostic/`:
+This entity has progressed through multiple stages, producing universal artifacts that now live at `.0agnostic/`:
 
 | Stage Work | What Was Produced | Where It Lives |
 |-----------|-------------------|----------------|
 | **01 Request Gathering** | Tree of needs: 9 requirements across 3 branches (delegation_model, memory_integration, coordination_patterns) | `layer_1_group/layer_1_99_stages/stage_1_01_request_gathering/outputs/requests/tree_of_needs/` |
 | **02 Research** | Investigation of how stage agents should operate — explored context_chain_system as working example (stages 01-07 active, 76 PASS tests) | Context_chain_system entity: `layer_2_group/.../layer_3_subx3_feature_context_chain_system/` |
-| **04 Design** | Designed the stage agent 0AGNOSTIC.md pattern: identity + methodology + scope boundaries + current state summary | Universal template: `layer_0/.0agnostic/01_knowledge/layer_stage_system/stage_guides/STAGE_AGENT_TEMPLATE.md` |
+| **04 Design** | Designed the stage agent 0AGNOSTIC.md pattern: identity + methodology + scope boundaries + current state summary | Universal template: `.0agnostic/01_knowledge/layer_stage_system/stage_guides/STAGE_AGENT_TEMPLATE.md` |
 | **05 Planning** | Planned stage-by-stage guide creation for all 11 stages | Plan executed across all 11 stages |
 | **06 Development** | Created 11 universal stage guides, 3 static rules, 2 dynamic rules, 7 delegation principles, stage report protocol | See "Universal Artifacts" below |
 
-### Universal Artifacts (at `layer_0/.0agnostic/`)
+### Universal Artifacts (at `.0agnostic/`)
 
 | Artifact | Count | Location |
 |----------|-------|----------|
@@ -100,7 +100,7 @@ The context_chain_system (grandchild entity via memory_system) serves as the **p
 | Discovery | Principle | Rule/Artifact |
 |-----------|-----------|---------------|
 | **Two-Halves Context Pattern**: Every 0AGNOSTIC.md needs operational guidance (static) + current state summary (updated) — together they make the pointer tier functional | Principle 9 | Universal template includes Current State section |
-| **Scope Boundary Decisions**: When agents hit layer or stage boundaries, they decide: do it yourself (small/coupled), delegate (significant, agent exists), or instantiate (significant, no agent). Default: delegate. | Principle 8 | Scope Boundary Rule at `layer_0/.0agnostic/02_rules/static/STAGE_BOUNDARY_RULE.md` |
+| **Scope Boundary Decisions**: When agents hit layer or stage boundaries, they decide: do it yourself (small/coupled), delegate (significant, agent exists), or instantiate (significant, no agent). Default: delegate. | Principle 8 | Scope Boundary Rule at `.0agnostic/02_rules/static/STAGE_BOUNDARY_RULE.md` |
 | **Cross-Layer Stage References**: When content at one layer warrants a child entity, both layers maintain bidirectional stage references — parent points down (overview → detail), child points up (detail → context) | Principle 10 | Applied to all stages and child entities in this hierarchy |
 
 Full details: `.0agnostic/01_knowledge/tree_of_knowledge/00_agent_delegation_knowledge/02_patterns_and_principles/`

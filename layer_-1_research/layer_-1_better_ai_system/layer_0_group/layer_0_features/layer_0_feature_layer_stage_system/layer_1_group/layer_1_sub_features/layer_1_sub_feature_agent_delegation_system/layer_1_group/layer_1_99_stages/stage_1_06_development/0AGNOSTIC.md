@@ -43,23 +43,23 @@ You do NOT:
 
 ### Summary
 
-Development produced **universal artifacts** that now live at `layer_0/.0agnostic/` (promoted from research to universal). Also populated all 11 stage 0AGNOSTIC.md files in the context_chain_system working example, and created the stage_1_01 0AGNOSTIC.md for this entity.
+Development produced **universal artifacts** that now live at `.0agnostic/` (promoted from research to universal). Also populated all 11 stage 0AGNOSTIC.md files in the context_chain_system working example, and created the stage_1_01 0AGNOSTIC.md for this entity.
 
 ### What Was Built
 
 | Artifact | Count | Location |
 |----------|-------|----------|
-| Universal stage guides | 11 | `layer_0/.0agnostic/01_knowledge/layer_stage_system/stage_guides/STAGE_NN_NAME.md` |
-| Stage agent template | 1 | `layer_0/.0agnostic/01_knowledge/layer_stage_system/stage_guides/STAGE_AGENT_TEMPLATE.md` (includes Current State section) |
-| Delegation principles | 10 | `layer_0/.0agnostic/01_knowledge/principles/principles/STAGE_DELEGATION_PRINCIPLES.md` |
-| Static rules | 3 | `layer_0/.0agnostic/02_rules/static/` (scope boundary, report, delegation) |
-| Dynamic rules | 2 | `layer_0/.0agnostic/02_rules/dynamic/` (loops, parallel) |
-| Stage report protocol | 1 | `layer_0/.0agnostic/03_protocols/stage_report_protocol.md` |
+| Universal stage guides | 11 | `.0agnostic/01_knowledge/layer_stage_system/stage_guides/STAGE_NN_NAME.md` |
+| Stage agent template | 1 | `.0agnostic/01_knowledge/layer_stage_system/stage_guides/STAGE_AGENT_TEMPLATE.md` (includes Current State section) |
+| Delegation principles | 10 | `.0agnostic/01_knowledge/principles/principles/STAGE_DELEGATION_PRINCIPLES.md` |
+| Static rules | 3 | `.0agnostic/02_rules/static/` (scope boundary, report, delegation) |
+| Dynamic rules | 2 | `.0agnostic/02_rules/dynamic/` (loops, parallel) |
+| Stage report protocol | 1 | `.0agnostic/03_protocols/stage_report_protocol.md` |
 | Context chain system stage 0AGNOSTIC.md | 11 | `.../context_chain_system/.../stage_3_NN_*/0AGNOSTIC.md` |
 | Agent delegation stage 0AGNOSTIC.md | 4 | `../stage_1_01_*/0AGNOSTIC.md`, `../stage_1_02_*/0AGNOSTIC.md`, `../stage_1_04_*/0AGNOSTIC.md`, this file |
 | Entity .0agnostic/ files | 5 | `../../.0agnostic/` (knowledge, rules, protocols) |
 | Updated stage-workflow skill | 1 | `.claude/skills/stage-workflow/SKILL.md` |
-| Updated STAGES_EXPLAINED.md | 1 | `layer_0/.0agnostic/01_knowledge/layer_stage_system/STAGES_EXPLAINED.md` |
+| Updated STAGES_EXPLAINED.md | 1 | `.0agnostic/01_knowledge/layer_stage_system/STAGES_EXPLAINED.md` |
 
 ### Key Principles Formalized
 
@@ -68,7 +68,7 @@ Development produced **universal artifacts** that now live at `layer_0/.0agnosti
 | Scope Boundary Decisions | 8 | When agents hit layer/stage boundaries: do it yourself (small/coupled), delegate (significant, agent exists), or instantiate (significant, no agent). Default: delegate. Context window preservation is the key factor. |
 | Two-Halves Context Pattern | 9 | Every 0AGNOSTIC.md needs operational guidance (static) + current state summary (updated). Together they make the pointer tier functional. |
 
-These are codified in `layer_0/.0agnostic/01_knowledge/principles/principles/STAGE_DELEGATION_PRINCIPLES.md`. The Scope Boundary Rule at `layer_0/.0agnostic/02_rules/static/STAGE_BOUNDARY_RULE.md` was expanded from "Stage Boundary Rule" to cover both layer and stage boundaries with a decision framework.
+These are codified in `.0agnostic/01_knowledge/principles/principles/STAGE_DELEGATION_PRINCIPLES.md`. The Scope Boundary Rule at `.0agnostic/02_rules/static/STAGE_BOUNDARY_RULE.md` was expanded from "Stage Boundary Rule" to cover both layer and stage boundaries with a decision framework.
 
 ### Cross-Stage Traceability
 

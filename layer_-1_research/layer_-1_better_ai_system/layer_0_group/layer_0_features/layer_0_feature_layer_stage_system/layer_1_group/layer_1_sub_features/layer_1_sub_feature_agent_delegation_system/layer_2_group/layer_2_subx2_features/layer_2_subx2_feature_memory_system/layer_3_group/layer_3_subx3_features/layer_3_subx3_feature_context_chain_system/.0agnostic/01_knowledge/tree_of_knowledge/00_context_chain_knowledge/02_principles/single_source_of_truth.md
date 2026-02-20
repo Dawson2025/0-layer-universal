@@ -21,5 +21,5 @@ The `.1merge/` system handles the exception of tool-specific content not in 0AGN
 | What | Where | Notes |
 |------|-------|-------|
 | Full principle doc | `.0agnostic/01_knowledge/principles/single_source_of_truth.md` | Source chain diagram, requirements, .1merge/ details |
-| agnostic-sync.sh | `layer_0/.0agnostic/agnostic-sync.sh` | The sync script itself |
-| Production agnostic system | `layer_0/.0agnostic/` | Live implementation |
+| agnostic-sync.sh | `.0agnostic/agnostic-sync.sh` | The sync script itself |
+| Production agnostic system | `.0agnostic/` | Live implementation |

@@ -21,14 +21,14 @@ description: "Work through stages (01-11) properly, understanding what content b
 
 | Reference | Path | Why |
 |-----------|------|-----|
-| Stages | `layer_0/.0agnostic/01_knowledge/layer_stage_system/STAGES_EXPLAINED.md` | Stage purposes, completeness rule |
-| Sub-stages | `layer_0/.0agnostic/01_knowledge/layer_stage_system/SUB_STAGES_EXPLAINED.md` | When to use sub-stages |
-| Overview | `layer_0/.0agnostic/01_knowledge/layer_stage_system/OVERVIEW.md` | System overview |
-| Stage guides | `layer_0/.0agnostic/01_knowledge/layer_stage_system/stage_guides/STAGE_NN_NAME.md` | What each stage agent does — identity, methodology, inputs/outputs, boundaries |
-| Agent template | `layer_0/.0agnostic/01_knowledge/layer_stage_system/stage_guides/STAGE_AGENT_TEMPLATE.md` | Template for writing stage 0AGNOSTIC.md files |
-| Delegation principles | `layer_0/.0agnostic/01_knowledge/principles/principles/STAGE_DELEGATION_PRINCIPLES.md` | 7 core principles governing stage delegation |
+| Stages | `.0agnostic/01_knowledge/layer_stage_system/STAGES_EXPLAINED.md` | Stage purposes, completeness rule |
+| Sub-stages | `.0agnostic/01_knowledge/layer_stage_system/SUB_STAGES_EXPLAINED.md` | When to use sub-stages |
+| Overview | `.0agnostic/01_knowledge/layer_stage_system/OVERVIEW.md` | System overview |
+| Stage guides | `.0agnostic/01_knowledge/layer_stage_system/stage_guides/STAGE_NN_NAME.md` | What each stage agent does — identity, methodology, inputs/outputs, boundaries |
+| Agent template | `.0agnostic/01_knowledge/layer_stage_system/stage_guides/STAGE_AGENT_TEMPLATE.md` | Template for writing stage 0AGNOSTIC.md files |
+| Delegation principles | `.0agnostic/01_knowledge/principles/principles/STAGE_DELEGATION_PRINCIPLES.md` | 7 core principles governing stage delegation |
 
-**Knowledge path**: `layer_0/.0agnostic/01_knowledge/layer_stage_system/`
+**Knowledge path**: `.0agnostic/01_knowledge/layer_stage_system/`
 
 ## Protocol
 
@@ -71,7 +71,7 @@ Each stage has a dedicated agent role. Before operating in a stage:
 3. **Write a stage report**: Before leaving, update `outputs/stage_report.md` (see `03_protocols/stage_report_protocol.md`)
 4. **Managers delegate, agents operate**: The entity manager reads stage reports and decides what to delegate — it does not carry operational methodology
 
-**Key rules** (in `layer_0/.0agnostic/02_rules/`):
+**Key rules** (in `.0agnostic/02_rules/`):
 
 | Rule | Type | What It Says |
 |------|------|-------------|

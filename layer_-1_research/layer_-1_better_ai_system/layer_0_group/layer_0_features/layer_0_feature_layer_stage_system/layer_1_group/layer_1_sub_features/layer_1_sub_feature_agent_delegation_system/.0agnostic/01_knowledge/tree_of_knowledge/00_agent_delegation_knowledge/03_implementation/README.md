@@ -8,7 +8,7 @@ This branch covers the concrete artifacts that were created — the universal to
 
 | Topic | Summary | Location |
 |-------|---------|----------|
-| `universal_artifacts.md` | Stage guides, rules, protocols, principles at layer_0 | `layer_0/.0agnostic/` |
+| `universal_artifacts.md` | Stage guides, rules, protocols, principles at layer_0 | `.0agnostic/` |
 | `working_examples.md` | context_chain_system as the primary test case | Research entity grandchild |
 
 ## Key Insight

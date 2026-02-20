@@ -6,7 +6,7 @@ You are an AI agent working within the layer_-1 (research) context. This layer c
 
 ## Navigation
 - **Detailed resources**: `.0agnostic/` folder
-- **Universal rules**: Inherit from `../layer_0/.0agnostic/rules/`
+- **Universal rules**: Inherit from `../.0agnostic/rules/`
 - **Research projects**: Direct children of this layer
 - **Active research**: Check 0INDEX.md for current projects
 
@@ -24,7 +24,7 @@ Each directory may have a `.gab.jsonld` agent definition with a matching `.integ
 ### Context Discovery
 Before starting any task:
 1. Read this file (0AGNOSTIC.md)
-2. Check `../layer_0/` for universal rules
+2. Check `../.0agnostic/02_rules/` for universal rules
 3. Read project-specific context in research directories
 4. Find the `.gab.jsonld` for your role and read its matching `.integration.md`
 5. Read episodic memory if resuming work
@@ -45,7 +45,7 @@ Research projects follow stages 01-11 (see Stage Navigation below).
 
 | Situation | Action |
 |-----------|--------|
-| Need universal rules | Load `../layer_0/.0agnostic/rules/` |
+| Need universal rules | Load `../.0agnostic/rules/` |
 | Starting research | Navigate to project's stage_-1_02_research |
 | Designing solutions | Navigate to project's stage_-1_04_design |
 | Starting new session | Read `.0agnostic/episodic_memory/index.md` |

@@ -150,7 +150,7 @@ for dir in \
   "05_skills" \
   "06_hooks" "06_hooks/scripts" \
   "07_episodic_memory" "07_episodic_memory/sessions" "07_episodic_memory/changes" \
-  "08+_setup_dependant"; do
+  "04+_setup_dependant"; do
   if [ ! -d "$AGNOSTIC/$dir" ]; then
     if dry "Would create: .0agnostic/$dir"; then true; else
       mkdir -p "$AGNOSTIC/$dir"
@@ -231,7 +231,7 @@ if [ -n "$SUB_LAYERS" ]; then
   for sd in "$SUB_LAYERS"/sub_layer_*_setup_dependant "$SUB_LAYERS"/*_setup_dependant; do
     if [ -d "$sd" ]; then
       log "Moving setup_dependant: $(basename "$sd")"
-      move_contents "$sd" "$AGNOSTIC/08+_setup_dependant"
+      move_contents "$sd" "$AGNOSTIC/04+_setup_dependant"
       break
     fi
   done

@@ -17,7 +17,7 @@ The critical insight is that managers work at the pointer tier — they read 0AG
 | What | Where |
 |------|-------|
 | Design decision: agent context model | Stage 04: `../../../../../../layer_1_group/layer_1_99_stages/stage_1_04_design/0AGNOSTIC.md` → Key Design Decisions table |
-| Principle 3 (Three-Tier Knowledge) | `layer_0/.0agnostic/01_knowledge/principles/principles/STAGE_DELEGATION_PRINCIPLES.md` |
+| Principle 3 (Three-Tier Knowledge) | `.0agnostic/01_knowledge/principles/principles/STAGE_DELEGATION_PRINCIPLES.md` |
 | Principle 7 (Selective Context Loading) | Same file |
 | Stage 01 requirements (need_03) | `../../../../../../layer_1_group/layer_1_99_stages/stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_agents_delegate_effectively/01_delegation_model/need_03_agent_context_model/` |
 | Research findings on context model | Stage 02: `../../../../../../layer_1_group/layer_1_99_stages/stage_1_02_research/0AGNOSTIC.md` → Key Findings |

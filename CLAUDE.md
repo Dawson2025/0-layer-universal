@@ -64,7 +64,7 @@ When any nested repository exists in a child path:
 | Creating entities with stages | Load skill: entity-creation |
 | Modifying AI context | Show propagation chain diagram first |
 | Working with layers/stages | Load skill: context-gathering |
-| Need rules | Load `.claude/skills/` or reference `layer_0/.0agnostic/02_rules/` |
+| Need rules | Load `.claude/skills/` or reference `.0agnostic/02_rules/` |
 
 
 

@@ -32,8 +32,8 @@ description: "Create new layers, sub-layers, stages, features, projects, or comp
 
 **Full paths**:
 - `@imports/` = `0_layer_universal/@imports/`
-- `layer_stage_system/` = `layer_0/.0agnostic/01_knowledge/layer_stage_system/`
-- `entity_lifecycle/` = `layer_0/.0agnostic/01_knowledge/entity_lifecycle/`
+- `layer_stage_system/` = `.0agnostic/01_knowledge/layer_stage_system/`
+- `entity_lifecycle/` = `.0agnostic/01_knowledge/entity_lifecycle/`
 
 ## Protocol
 
@@ -53,7 +53,7 @@ Use the mkdir templates from `@imports/entity_structure.md`. Every entity needs 
 
 | Directory | Contents | Purpose |
 |---|---|---|
-| `.0agnostic/` | `01_knowledge/`, `02_rules/{static,dynamic}`, `03_protocols/`, `04_agents/`, `05_skills/`, `06_hooks/scripts/`, `07_episodic_memory/{sessions,changes}`, `08+_setup_dependant/` | On-demand AI resources (numbered subdirs) |
+| `.0agnostic/` | `01_knowledge/`, `02_rules/{static,dynamic}`, `03_protocols/`, `04_agents/`, `05_skills/`, `06_hooks/scripts/`, `07_episodic_memory/{sessions,changes}`, `04+_setup_dependant/` | On-demand AI resources (numbered subdirs) |
 | `.1merge/` | 6 tools × 3 tiers each (18 subdirectories total) | Tool-specific overrides |
 | `.claude/` | `rules/`, `episodic_memory/{sessions,changes}/` | Claude Code config |
 | `.cursor/` | `rules/`, `episodic_memory/{sessions,changes}/` | Cursor config |
@@ -154,7 +154,7 @@ done
 Generate tool files for ALL 0AGNOSTIC.md files:
 
 ```bash
-SYNC="layer_0/.0agnostic/agnostic-sync.sh"
+SYNC=".0agnostic/agnostic-sync.sh"
 for f in $(find <entity> -name "0AGNOSTIC.md" -type f); do
   dir=$(dirname "$f")
   bash "$SYNC" "$dir"
@@ -187,7 +187,7 @@ Children are always layer N+1 of their parent.
 Before completing, verify ALL of these:
 
 ### Structure
-- [ ] `.0agnostic/` with numbered subdirs (01_knowledge, 02_rules/{static,dynamic}, 03_protocols, 04_agents, 05_skills, 06_hooks/scripts, 07_episodic_memory/{sessions,changes}, 08+_setup_dependant)
+- [ ] `.0agnostic/` with numbered subdirs (01_knowledge, 02_rules/{static,dynamic}, 03_protocols, 04_agents, 05_skills, 06_hooks/scripts, 07_episodic_memory/{sessions,changes}, 04+_setup_dependant)
 - [ ] `.1merge/` with all 6 tools × 3 tiers = 18 subdirectories
 - [ ] `.claude/` with `rules/` AND `episodic_memory/{sessions,changes}/`
 - [ ] `.cursor/` with `rules/` AND `episodic_memory/{sessions,changes}/`

@@ -34,7 +34,7 @@ This is the three-tier knowledge principle applied recursively across the layer 
 
 | What | Where |
 |------|-------|
-| Principle 10 (Cross-Layer Stage References) | `layer_0/.0agnostic/01_knowledge/principles/principles/STAGE_DELEGATION_PRINCIPLES.md` |
+| Principle 10 (Cross-Layer Stage References) | `.0agnostic/01_knowledge/principles/principles/STAGE_DELEGATION_PRINCIPLES.md` |
 | Stage 01 child layer detail | `../../../../../../layer_1_group/layer_1_99_stages/stage_1_01_request_gathering/0AGNOSTIC.md` → Child Layer Detail section |
 | memory_system parent context | `../../../../../../layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_memory_system/0AGNOSTIC.md` → Parent Layer Context section |
 | multi_agent_system parent context | `../../../../../../layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_multi_agent_system/0AGNOSTIC.md` → Parent Layer Context section |

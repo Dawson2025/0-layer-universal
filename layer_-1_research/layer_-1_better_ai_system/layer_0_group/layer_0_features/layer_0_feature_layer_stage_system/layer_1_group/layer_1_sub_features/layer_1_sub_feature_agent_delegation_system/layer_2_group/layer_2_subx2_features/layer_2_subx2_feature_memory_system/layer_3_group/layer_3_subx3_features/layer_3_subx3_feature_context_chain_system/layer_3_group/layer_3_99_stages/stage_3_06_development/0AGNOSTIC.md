@@ -31,7 +31,7 @@ You do NOT:
 
 ### Development Objectives
 
-1. Enforce canonical `.0agnostic` structure: numbered dirs (01_knowledge through 08+_setup_dependant)
+1. Enforce canonical `.0agnostic` structure: numbered dirs (01_knowledge through 04+_setup_dependant)
 2. Enforce `.1merge` 3-tier structure: `0_synced/`, `1_overrides/`, `2_additions/`
 3. Keep Avenue Web MVP (8 avenues) testable end-to-end
 4. Track implementation status in development status document

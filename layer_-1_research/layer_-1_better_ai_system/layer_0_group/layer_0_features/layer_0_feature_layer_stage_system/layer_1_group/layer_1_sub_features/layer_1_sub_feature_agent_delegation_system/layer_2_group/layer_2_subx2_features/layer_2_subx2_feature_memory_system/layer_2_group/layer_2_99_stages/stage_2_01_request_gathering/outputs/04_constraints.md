@@ -82,7 +82,7 @@ Where does memory live in the file system?
 |--------|----------|-----|-----|
 | In-entity | `<entity>/.0agnostic/memory/` | Hierarchical, scoped | Scattered |
 | In-stage | `<stage>/outputs/memory/` | Stage-aligned | Deep paths |
-| Centralized | `layer_0/.0agnostic/memory/` | One place to look | Loses hierarchy |
+| Centralized | `.0agnostic/memory/` | One place to look | Loses hierarchy |
 | **Hybrid** | Entity-level + universal rollup | Both scoped and discoverable | Sync needed |
 
 ### SC4: Sync Frequency

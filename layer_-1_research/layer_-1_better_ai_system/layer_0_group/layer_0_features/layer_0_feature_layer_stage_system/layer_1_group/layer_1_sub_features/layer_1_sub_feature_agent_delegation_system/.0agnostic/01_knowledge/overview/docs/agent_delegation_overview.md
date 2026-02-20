@@ -59,7 +59,7 @@ The **context_chain_system** (at `layer_2_group/.../layer_3_subx3_feature_contex
 
 ## Universal Artifacts
 
-The work on agent delegation produced universal artifacts now at `layer_0/.0agnostic/`:
+The work on agent delegation produced universal artifacts now at `.0agnostic/`:
 
 | Artifact | Location | Count |
 |----------|----------|-------|

@@ -1,7 +1,7 @@
 # Delegate, Not Operate Rule
 
 **Type**: Static (always applies)
-**Inherits from**: `layer_0/.0agnostic/02_rules/static/MANAGER_DELEGATION_RULE.md`
+**Inherits from**: `.0agnostic/02_rules/static/MANAGER_DELEGATION_RULE.md`
 
 ## Rule
 

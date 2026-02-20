@@ -98,7 +98,7 @@ Only include rows that actually apply to this specific piece of knowledge. Most 
 
 ### Source of Truth
 
-**Canonical location**: `layer_0/.0agnostic/03_protocols/stage_report_protocol.md`
+**Canonical location**: `.0agnostic/03_protocols/stage_report_protocol.md`
 **Type**: protocol
 **Description**: Defines the exact markdown format for stage reports, including required sections (Status, Summary, Key Outputs, Findings, Open Items, Handoff) and the 6 rules governing their creation.
 
@@ -113,8 +113,8 @@ Only include rows that actually apply to this specific piece of knowledge. Most 
 | Avenue | Mechanism | Timing | Tool |
 |--------|-----------|--------|------|
 | CLAUDE.md cascade | context_chain_system/CLAUDE.md includes "stage reports" in Key Behaviors | Static | Claude Code |
-| .0agnostic/ protocol | `layer_0/.0agnostic/03_protocols/stage_report_protocol.md` — read on-demand | Dynamic | Any |
-| .0agnostic/ rule | `layer_0/.0agnostic/02_rules/static/STAGE_REPORT_RULE.md` — mandates writing reports | Dynamic | Any |
+| .0agnostic/ protocol | `.0agnostic/03_protocols/stage_report_protocol.md` — read on-demand | Dynamic | Any |
+| .0agnostic/ rule | `.0agnostic/02_rules/static/STAGE_REPORT_RULE.md` — mandates writing reports | Dynamic | Any |
 | Parent chain | Entity 0AGNOSTIC.md → parent 0AGNOSTIC.md (inherited behavior) | Dynamic | Any |
 
 ## Rules
@@ -131,4 +131,4 @@ Only include rows that actually apply to this specific piece of knowledge. Most 
 - **Context Loading Protocol**: `context_loading_protocol.md` — how agents load context on session start
 - **Avenue Web Architecture**: `layer_-1_research/.../context_chain_system/.0agnostic/01_knowledge/avenue_web_architecture.md` — the 8-avenue model
 - **Static/Dynamic Context**: `layer_-1_research/.../context_chain_system/.0agnostic/01_knowledge/static_dynamic_context.md` — the 2x2 matrix
-- **Agnostic Sync**: `layer_0/.0agnostic/agnostic-sync.sh` — the propagation mechanism
+- **Agnostic Sync**: `.0agnostic/agnostic-sync.sh` — the propagation mechanism

@@ -18,7 +18,7 @@ The pattern prevents context overflow: instead of one agent trying to hold requi
 | What | Where |
 |------|-------|
 | Design decision: stage delegation model | Stage 04: `../../../../../../layer_1_group/layer_1_99_stages/stage_1_04_design/0AGNOSTIC.md` → Key Design Decisions table |
-| Universal stage guides (11) | `layer_0/.0agnostic/01_knowledge/layer_stage_system/stage_guides/STAGE_NN_NAME.md` |
-| Stage agent template | `layer_0/.0agnostic/01_knowledge/layer_stage_system/stage_guides/STAGE_AGENT_TEMPLATE.md` |
-| Principle 1 (Managers Delegate) | `layer_0/.0agnostic/01_knowledge/principles/principles/STAGE_DELEGATION_PRINCIPLES.md` |
+| Universal stage guides (11) | `.0agnostic/01_knowledge/layer_stage_system/stage_guides/STAGE_NN_NAME.md` |
+| Stage agent template | `.0agnostic/01_knowledge/layer_stage_system/stage_guides/STAGE_AGENT_TEMPLATE.md` |
+| Principle 1 (Managers Delegate) | `.0agnostic/01_knowledge/principles/principles/STAGE_DELEGATION_PRINCIPLES.md` |
 | Stage 01 requirements (need_01) | `../../../../../../layer_1_group/layer_1_99_stages/stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_agents_delegate_effectively/01_delegation_model/need_01_stage_delegation/` |

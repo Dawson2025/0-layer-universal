@@ -8,7 +8,7 @@
 
 When the user asks where the source of truth for something is, or asks to see the context chain for a given thing, the agent MUST:
 
-1. **Load** the Source of Truth Protocol at `layer_0/.0agnostic/03_protocols/source_of_truth_protocol.md`
+1. **Load** the Source of Truth Protocol at `.0agnostic/03_protocols/source_of_truth_protocol.md`
 2. **Execute** the protocol completely — all 3 tiers
 3. **Show** the full response to the user
 

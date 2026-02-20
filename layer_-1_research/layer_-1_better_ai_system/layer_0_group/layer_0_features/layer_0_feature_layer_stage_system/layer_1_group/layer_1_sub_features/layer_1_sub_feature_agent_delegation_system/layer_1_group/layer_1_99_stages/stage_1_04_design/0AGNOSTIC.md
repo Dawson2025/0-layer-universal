@@ -67,10 +67,10 @@ The key design decisions for agent delegation were made through iterative develo
 
 ### Codified In
 
-- Universal template: `layer_0/.0agnostic/01_knowledge/layer_stage_system/stage_guides/STAGE_AGENT_TEMPLATE.md`
-- 11 stage guides: `layer_0/.0agnostic/01_knowledge/layer_stage_system/stage_guides/STAGE_NN_NAME.md`
-- 9 delegation principles: `layer_0/.0agnostic/01_knowledge/principles/principles/STAGE_DELEGATION_PRINCIPLES.md` (includes Principle 8: Scope Boundary Decisions, Principle 9: Two-Halves Context Pattern)
-- Scope Boundary Rule: `layer_0/.0agnostic/02_rules/static/STAGE_BOUNDARY_RULE.md`
+- Universal template: `.0agnostic/01_knowledge/layer_stage_system/stage_guides/STAGE_AGENT_TEMPLATE.md`
+- 11 stage guides: `.0agnostic/01_knowledge/layer_stage_system/stage_guides/STAGE_NN_NAME.md`
+- 9 delegation principles: `.0agnostic/01_knowledge/principles/principles/STAGE_DELEGATION_PRINCIPLES.md` (includes Principle 8: Scope Boundary Decisions, Principle 9: Two-Halves Context Pattern)
+- Scope Boundary Rule: `.0agnostic/02_rules/static/STAGE_BOUNDARY_RULE.md`
 - Working example: context_chain_system stages 01-11
 
 ### Cross-Stage Traceability

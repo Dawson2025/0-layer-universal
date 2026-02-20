@@ -23,6 +23,6 @@ This tree of knowledge itself is a distilled-tier artifact — it provides organ
 
 | What | Where |
 |------|-------|
-| Principle 3 (Three-Tier Knowledge) | `layer_0/.0agnostic/01_knowledge/principles/principles/STAGE_DELEGATION_PRINCIPLES.md` |
+| Principle 3 (Three-Tier Knowledge) | `.0agnostic/01_knowledge/principles/principles/STAGE_DELEGATION_PRINCIPLES.md` |
 | Principle 7 (Selective Context Loading) | Same file |
 | Research findings | Stage 02: `../../../../../../layer_1_group/layer_1_99_stages/stage_1_02_research/0AGNOSTIC.md` → Key Findings |

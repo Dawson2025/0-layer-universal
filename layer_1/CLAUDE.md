@@ -6,7 +6,7 @@ You are an AI agent working within the layer_1 (projects) context. This layer co
 
 ## Navigation
 - **Detailed resources**: `.0agnostic/` folder
-- **Universal rules**: Inherit from `../layer_0/.0agnostic/rules/`
+- **Universal rules**: Inherit from `../.0agnostic/rules/`
 - **Project features**: `layer_1_features/`
 - **Project components**: `layer_1_components/`
 
@@ -24,7 +24,7 @@ Each directory may have a `.gab.jsonld` agent definition with a matching `.integ
 ### Context Discovery
 Before starting any task:
 1. Read this file (0AGNOSTIC.md)
-2. Check `../layer_0/` for universal rules
+2. Check `../.0agnostic/02_rules/` for universal rules
 3. Check `.0agnostic/` for project-specific resources
 4. Find the `.gab.jsonld` for your role and read its matching `.integration.md`
 5. Read episodic memory if resuming work
@@ -48,7 +48,7 @@ When modifying shared outputs:
 
 | Situation | Action |
 |-----------|--------|
-| Need universal rules | Load `../layer_0/.0agnostic/rules/` |
+| Need universal rules | Load `../.0agnostic/rules/` |
 | Need project-specific rules | Load `.0agnostic/rules/` |
 | Starting new session | Read `.0agnostic/episodic_memory/index.md` |
 | Modifying outputs | Check `.locks/` first |
