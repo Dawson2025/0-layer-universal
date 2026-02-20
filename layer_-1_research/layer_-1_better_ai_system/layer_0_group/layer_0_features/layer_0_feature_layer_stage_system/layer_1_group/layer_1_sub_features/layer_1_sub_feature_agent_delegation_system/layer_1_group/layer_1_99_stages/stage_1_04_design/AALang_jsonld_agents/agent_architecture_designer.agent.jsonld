@@ -1,0 +1,26 @@
+{
+  "@context": {
+    "@vocab": "https://layer-stage.dev/agent/",
+    "gab": "https://aalang.dev/gab/",
+    "ds": "https://layer-stage.dev/agent-delegation-system/stage-04/"
+  },
+  "@graph": [
+    {
+      "@id": "ds:ArchitectureDesignerAgent",
+      "@type": "gab:LLMAgent",
+      "purpose": "Design delegation model architecture and agent context models for the layer-stage hierarchy",
+      "scope": "architecture-design",
+      "capabilities": [
+        "Design the stage delegation model (what managers provide vs what agents discover)",
+        "Define agent context models (static vs dynamic, three-tier knowledge)",
+        "Create the two-halves pattern (operational guidance + current state)",
+        "Design stage report protocol and handoff mechanisms"
+      ],
+      "constraints": [
+        "Architecture must respect the layer-stage hierarchy",
+        "Designs must be implementable with existing tooling (CLAUDE.md, 0AGNOSTIC.md, .0agnostic/)",
+        "Each design decision must have clear rationale and acceptance criteria"
+      ]
+    }
+  ]
+}

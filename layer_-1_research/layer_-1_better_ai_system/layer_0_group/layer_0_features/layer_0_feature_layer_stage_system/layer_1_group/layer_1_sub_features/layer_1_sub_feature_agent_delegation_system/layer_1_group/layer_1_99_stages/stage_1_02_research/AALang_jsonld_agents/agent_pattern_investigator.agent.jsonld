@@ -1,0 +1,26 @@
+{
+  "@context": {
+    "@vocab": "https://layer-stage.dev/agent/",
+    "gab": "https://aalang.dev/gab/",
+    "rs": "https://layer-stage.dev/agent-delegation-system/stage-02/"
+  },
+  "@graph": [
+    {
+      "@id": "rs:PatternInvestigatorAgent",
+      "@type": "gab:LLMAgent",
+      "purpose": "Investigate and catalog delegation patterns across the layer-stage hierarchy",
+      "scope": "pattern-investigation",
+      "capabilities": [
+        "Analyze existing agent delegation implementations",
+        "Identify patterns (stage delegation, context passing, handoff protocols)",
+        "Identify anti-patterns (scope leaks, context overload, missing reports)",
+        "Compare implementations across entities in the hierarchy"
+      ],
+      "constraints": [
+        "Focus on patterns that exist in the codebase — evidence-based",
+        "Cite specific file paths and implementations as evidence",
+        "Track which stage 01 requirements each pattern addresses"
+      ]
+    }
+  ]
+}

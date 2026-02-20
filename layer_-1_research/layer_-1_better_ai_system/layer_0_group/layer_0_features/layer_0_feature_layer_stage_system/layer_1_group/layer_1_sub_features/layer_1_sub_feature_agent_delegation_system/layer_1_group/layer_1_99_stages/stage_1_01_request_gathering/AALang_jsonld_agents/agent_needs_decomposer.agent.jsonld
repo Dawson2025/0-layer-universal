@@ -1,0 +1,35 @@
+{
+  "@context": {
+    "@vocab": "https://layer-stage.dev/agent/",
+    "gab": "https://aalang.dev/gab/",
+    "rg": "https://layer-stage.dev/agent-delegation-system/stage-01/"
+  },
+  "@graph": [
+    {
+      "@id": "rg:NeedsDecomposerAgent",
+      "@type": "gab:LLMAgent",
+      "purpose": "Decompose complex user needs into structured, testable requirement trees",
+      "scope": "needs-decomposition",
+      "capabilities": [
+        "Break root needs into logical branches",
+        "Identify leaf needs with clear acceptance criteria",
+        "Write requirement groups (REQ-NN) with detailed specifications",
+        "Write user stories (US-NN) with actor, goal, benefit structure"
+      ],
+      "constraints": [
+        "Follow tree structure: root → branches → needs → requirements + user_stories",
+        "Each requirement must be testable",
+        "Each user story must have: As a [actor], I want [goal], so that [benefit]"
+      ],
+      "methodology": {
+        "treeOfNeeds": {
+          "rootNeed": "00_agents_delegate_effectively/README.md",
+          "branches": "NN_branch_name/README.md",
+          "needs": "NN_branch_name/need_NN/README.md",
+          "requirements": "NN_branch_name/need_NN/requirements/REQ-NN_name.md",
+          "userStories": "NN_branch_name/need_NN/user_stories/US-NN_name.md"
+        }
+      }
+    }
+  ]
+}

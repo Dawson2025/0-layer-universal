@@ -1,0 +1,33 @@
+{
+  "@context": {
+    "@vocab": "https://layer-stage.dev/agent/",
+    "gab": "https://aalang.dev/gab/",
+    "ads": "https://layer-stage.dev/agent-delegation-system/"
+  },
+  "@graph": [
+    {
+      "@id": "ads:StageDelegatorAgent",
+      "@type": "gab:LLMAgent",
+      "purpose": "Delegate work to appropriate stage agents based on task classification",
+      "scope": "delegation-only",
+      "capabilities": [
+        "Classify incoming tasks by stage (01-11)",
+        "Create delegation instructions for target stage agents",
+        "Read stage reports to check readiness",
+        "Track delegation chain (which stages were delegated to)",
+        "Escalate blocked stages to entity manager"
+      ],
+      "constraints": [
+        "Never execute stage work — only delegate",
+        "Must provide: task description + directory pointer to stage agent",
+        "Stage agent discovers methodology from its own 0AGNOSTIC.md",
+        "Read stage report before re-delegating to check status"
+      ],
+      "delegationModel": {
+        "whatManagerProvides": ["Task description (what to do)", "Directory pointer (where to work)"],
+        "whatAgentDiscovers": ["Methodology (from own 0AGNOSTIC.md)", "Domain context (from parent .0agnostic/01_knowledge/)", "Success criteria (from own 0AGNOSTIC.md)"],
+        "whatAgentReports": ["Stage report (outputs/reports/stage_report.md)", "Updated Current Status in 0AGNOSTIC.md"]
+      }
+    }
+  ]
+}

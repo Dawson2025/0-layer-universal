@@ -14,10 +14,12 @@ You are the **Design Agent** for the agent_delegation_system.
 
 | Content | Location |
 |---------|----------|
-| Stage report | `outputs/stage_report.md` |
-| Design documents | `outputs/` (when created) |
-
----
+| Design decisions | `outputs/design_decisions/` (when created) |
+| Stage reports | `outputs/reports/` |
+| Stage 01 tree of needs | `../stage_1_01_request_gathering/outputs/requests/tree_of_needs/` |
+| Stage 02 research | `../stage_1_02_research/outputs/by_topic/` |
+| Universal template | `.0agnostic/01_knowledge/layer_stage_system/stage_guides/STAGE_AGENT_TEMPLATE.md` |
+| Delegation principles | `.0agnostic/01_knowledge/principles/principles/STAGE_DELEGATION_PRINCIPLES.md` |
 
 
 
@@ -33,6 +35,21 @@ You do NOT:
 - Research the problem space (that's stage 02)
 - Implement the design (that's stage 06)
 - Review quality (that's stage 08)
+
+### Delegation Contract
+
+When the manager delegates to this stage:
+
+- **Manager provides**: Task description + directory pointer
+- **Manager does NOT provide**: Methodology, output format, success criteria
+- **Agent discovers**: Identity and methodology from this 0AGNOSTIC.md; domain context from parent entity on-demand
+
+Example Task tool prompt the manager uses:
+```
+"Work on stage_1_04_design for the agent_delegation_system.
+ Read 0AGNOSTIC.md in that stage directory for your instructions.
+ Task: Design the architecture and patterns for how AI agents delegate work."
+```
 
 ### Methodology
 

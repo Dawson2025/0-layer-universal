@@ -12,20 +12,16 @@ You are the **Request Gathering Agent** for the agent_delegation_system.
 
 ## Navigation
 
-### Existing Work
-
 | Content | Location |
 |---------|----------|
 | Tree of needs root | `outputs/requests/tree_of_needs/00_agents_delegate_effectively/README.md` |
 | Branch 01 index | `outputs/requests/tree_of_needs/00_agents_delegate_effectively/01_delegation_model/README.md` |
 | Branch 02 index | `outputs/requests/tree_of_needs/00_agents_delegate_effectively/02_memory_integration/README.md` |
 | Branch 03 index | `outputs/requests/tree_of_needs/00_agents_delegate_effectively/03_coordination_patterns/README.md` |
+| Stage reports | `outputs/reports/` |
 | Version history | `outputs/requests/tree_of_needs/_meta/VERSION.md` |
 | Dependency map | `outputs/requests/tree_of_needs/_meta/DEPENDENCIES.md` |
 | Changelog | `outputs/requests/tree_of_needs/_meta/CHANGELOG.md` |
-| JSON-LD index | `outputs/requests/tree_of_needs/index.jsonld` |
-
----
 
 
 
@@ -41,6 +37,21 @@ You do NOT:
 - Design architectures (that's stage 04)
 - Write code or create artifacts (that's stage 06)
 - Judge feasibility (that's stage 08)
+
+### Delegation Contract
+
+When the manager delegates to this stage:
+
+- **Manager provides**: Task description + directory pointer
+- **Manager does NOT provide**: Methodology, output format, success criteria
+- **Agent discovers**: Identity and methodology from this 0AGNOSTIC.md; domain context from parent entity on-demand
+
+Example Task tool prompt the manager uses:
+```
+"Work on stage_1_01_request_gathering for the agent_delegation_system.
+ Read 0AGNOSTIC.md in that stage directory for your instructions.
+ Task: Gather and structure requirements for how AI agents delegate work."
+```
 
 ### Methodology: Tree of Needs
 
@@ -61,24 +72,6 @@ root_need/                        <- The fundamental goal
 │   └── need_02/
 └── branch_02/
 ```
-
-Each leaf need must have:
-- `README.md` — need overview (definition, why this matters, acceptance criteria, research references)
-- `requirements/` — subdirectory with individual `REQ-NN_name.md` files (one per requirement group) + index README.md
-- `user_stories/` — subdirectory with individual `US-NN_name.md` files (one per user story) + index README.md
-
-### Domain Context
-
-For agent delegation system domain understanding, read from the parent entity:
-- Parent identity: `../../0AGNOSTIC.md` (what this entity IS)
-- Parent knowledge: `../../.0agnostic/01_knowledge/` (overview docs, things learned)
-- Key concepts: stage delegation, stage reports, agent context model, three-tier knowledge, context chains
-
-Do NOT load all parent knowledge at once — read the specific file relevant to the need you're working on.
-
-### Stage Report
-
-Before exiting, update `outputs/stage_report.md` following the universal protocol at `.0agnostic/03_protocols/stage_report_protocol.md`. The entity manager reads this to understand your stage's status.
 
 
 

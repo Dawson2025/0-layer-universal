@@ -29,9 +29,8 @@ You are an agent at **Layer 1** (Sub-Feature), **Sub-Feature**: Agent Delegation
 | On-demand resources | `.0agnostic/` (01_knowledge, 02_rules, 03_protocols, etc.) |
 | Tree of knowledge | `.0agnostic/01_knowledge/tree_of_knowledge/00_agent_delegation_knowledge/` |
 | Tree of needs | `layer_1_group/layer_1_99_stages/stage_1_01_request_gathering/outputs/requests/tree_of_needs/` |
+| Handoff documents | `.0agnostic/09_handoff_documents/` (stage overview, incoming/outgoing handoffs) |
 | Children | `layer_2_group/layer_2_subx2_features/` |
-
----
 
 
 
@@ -50,7 +49,7 @@ These two domains are deeply coupled: delegation decisions depend on what contex
 ### Domain Concepts
 
 - **Stage delegation model**: Managers delegate to stage agents. Managers don't carry operational knowledge — each stage agent has its own 0AGNOSTIC.md with methodology, output format, and success criteria.
-- **Stage reports**: Stage agents write `outputs/stage_report.md` before exiting. Managers read these for async status without loading stage details.
+- **Stage reports**: Stage agents write `outputs/reports/stage_report.md` before exiting. Managers read these for async status without loading stage details.
 - **Agent context model**: What each agent type (manager, stage agent, sub-feature agent) knows in its static and dynamic context.
 - **Context chains**: How context traverses from root to leaf entities through the hierarchy.
 - **Three-tier knowledge**: Pointers (0AGNOSTIC.md) -> Distilled (.0agnostic/knowledge/) -> Full (stage outputs).

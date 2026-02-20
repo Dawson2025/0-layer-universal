@@ -1,5 +1,9 @@
 # agent_delegation_system — Stage 04: Design
 
+# ═══ STATIC CONTEXT (always loaded) ═══
+
+# ── Stage Definition ──
+
 ## Identity
 
 You are the **Design Agent** for the agent_delegation_system.
@@ -8,13 +12,6 @@ You are the **Design Agent** for the agent_delegation_system.
 - **Scope**: Design and architecture only — do NOT gather requirements (stage 01), research (stage 02), or implement (stage 06)
 - **Parent**: `../../0AGNOSTIC.md` (agent_delegation_system entity)
 - **Domain**: Stage delegation architecture, agent context models, communication patterns
-
-## Triggers
-
-Load when:
-- Manager delegates design work
-- Entering `stage_1_04_design/`
-- Architecture decisions needed for agent delegation
 
 ## Key Behaviors
 
@@ -28,6 +25,21 @@ You do NOT:
 - Implement the design (that's stage 06)
 - Review quality (that's stage 08)
 
+### Delegation Contract
+
+When the manager delegates to this stage:
+
+- **Manager provides**: Task description + directory pointer
+- **Manager does NOT provide**: Methodology, output format, success criteria
+- **Agent discovers**: Identity and methodology from this 0AGNOSTIC.md; domain context from parent entity on-demand
+
+Example Task tool prompt the manager uses:
+```
+"Work on stage_1_04_design for the agent_delegation_system.
+ Read 0AGNOSTIC.md in that stage directory for your instructions.
+ Task: Design the architecture and patterns for how AI agents delegate work."
+```
+
 ### Methodology
 
 Design decision records with rationale and alternatives:
@@ -36,22 +48,95 @@ Design decision records with rationale and alternatives:
 3. Document alternatives considered and trade-offs
 4. Get design approval before handing off to planning/development
 
-## Navigation
+## Inputs
 
-| Content | Location |
-|---------|----------|
-| Stage report | `outputs/stage_report.md` |
-| Design documents | `outputs/` (when created) |
+What this agent reads:
 
----
+| Source | Location | When |
+|--------|----------|------|
+| Own identity & methodology | `0AGNOSTIC.md` (this file) | Always — first read on entry |
+| Parent entity identity | `../../0AGNOSTIC.md` | On-demand — when domain context needed |
+| Parent domain knowledge | `../../.0agnostic/01_knowledge/` | On-demand — read specific file relevant to current task |
+| Parent rules | `../../.0agnostic/02_rules/static/` | On-demand — when rule applies |
+| Stage 01 requirements (tree of needs) | `../stage_1_01_request_gathering/outputs/requests/tree_of_needs/` | On entry — understand what to design for |
+| Stage 01 stage report | `../stage_1_01_request_gathering/outputs/reports/stage_report.md` | On entry — understand requirements status |
+| Stage 02 research findings | `../stage_1_02_research/outputs/by_topic/` | On entry — understand what was investigated |
+| Stage 02 stage report | `../stage_1_02_research/outputs/reports/stage_report.md` | On entry — understand research status |
+| Existing design outputs | `outputs/design_decisions/` | When continuing prior work |
 
-## Current State
+**Context loading order**: Read own 0AGNOSTIC.md first (mandatory). Then load stage 01 requirements and stage 02 findings to understand what to design. Load parent context on-demand — only the specific file needed, never all knowledge at once.
+
+## Outputs
+
+What this agent produces:
+
+| Output | Location | Purpose |
+|--------|----------|---------|
+| Design decisions | `outputs/design_decisions/` | Primary deliverable — architecture decisions with rationale |
+| Stage report | `outputs/reports/stage_report.md` | Async status for the manager |
+| Overview report | `outputs/reports/overview_report.md` | Summary of all reports, links to each |
+| Current State update | This file, "Current State" section | Pointer-tier summary of what exists |
+
+### Stage Report
+
+Before exiting, update `outputs/reports/stage_report.md` following the universal protocol at `.0agnostic/03_protocols/stage_report_protocol.md`. The entity manager reads this to understand your stage's status without loading stage details.
+
+## Triggers
+
+Load when:
+- Manager delegates design work
+- Entering `stage_1_04_design/`
+- Architecture decisions needed for agent delegation
+
+## AALang Agent Context
+
+No entity-level `.gab.jsonld` exists for the agent_delegation_system. The nearest orchestrator is the parent feature's:
+
+### Nearest Orchestrator
+
+**File**: `../../../../layer_0_orchestrator.gab.jsonld`
+
+```json
+{
+  "@id": "orch:LayerStageSystemOrchestrator",
+  "@type": "gab:LLMAgent",
+  "pattern": "5-mode-13-actor",
+  "purpose": "Research orchestrator for the layer-stage framework",
+  "modes": ["orch:ReceiveMode", "orch:ResearchMode", "orch:DesignMode", "orch:ImplementMode", "orch:ReviewMode"]
+}
+```
+
+### How to Load Full Graph
+
+```bash
+# List all modes and their purposes from parent orchestrator
+jq '."@graph"[] | select(."@type" == "gab:Mode") | {id: ."@id", purpose: .purpose}' ../../../../layer_0_orchestrator.gab.jsonld
+
+# Load a specific mode's constraints
+jq '."@graph"[] | select(."@id" == "orch:ResearchMode")' ../../../../layer_0_orchestrator.gab.jsonld
+```
+
+### Integration Summary
+
+From `../../../../layer_0_orchestrator.integration.md`:
+- **Modes**: ReceiveMode (intake), ResearchMode (investigation), DesignMode (architecture), ImplementMode (artifacts), ReviewMode (validation)
+- **State Actors**: LayerStateActor, ChildRegistryStateActor, TaskStateActor
+- **Mode Flow**: Receive → Research → Design → Implement → Review → Receive
+- **Scope**: Limited to layer-stage framework research and its sub-features
+
+# ── Current Status ──
+
+## Current Status
 
 **Status**: implicit | **Last Updated**: 2026-02-19
 
-### Summary
-
 The key design decisions for agent delegation were made through iterative development, resulting in the **stage agent 0AGNOSTIC.md pattern** — a two-part template (operational guidance + current state summary) that defines what a stage agent is, what it does, and what exists in its stage.
+
+# ═══ DYNAMIC CONTEXT (loaded on-demand) ═══
+
+# ── Current State ──
+
+## Current State Detail
 
 ### Key Design Decisions
 
@@ -73,7 +158,7 @@ The key design decisions for agent delegation were made through iterative develo
 - Scope Boundary Rule: `.0agnostic/02_rules/static/STAGE_BOUNDARY_RULE.md`
 - Working example: context_chain_system stages 01-11
 
-### Cross-Stage Traceability
+## Cross-Stage Traceability
 
 How each decision connects to requirements (stage 01), research (stage 02), and artifacts (stage 06):
 
@@ -89,7 +174,7 @@ How each decision connects to requirements (stage 01), research (stage 02), and 
 
 **Stage paths**: `../stage_1_01_request_gathering/`, `../stage_1_02_research/`, `../stage_1_06_development/`
 
-### Child Layer Detail (Principle 10)
+## Child Layer Detail (Principle 10)
 
 Design decisions are implemented differently at each child layer:
 
@@ -101,18 +186,39 @@ Design decisions are implemented differently at each child layer:
 
 **Child paths**: see stage 01 Child Layer Detail for full paths
 
-### Open Items
+## Open Items
 
 - No formal design documents in outputs/ — decisions are embedded in the artifacts themselves
 - Agent context model (what each agent type knows in static vs dynamic context) needs a dedicated design doc
 - Multi-agent spawning patterns not yet designed
 
-### Handoff
+## Handoff
 
 - **Ready for next stage**: yes (design was implemented through development)
 - **Next stage**: 05_planning / 06_development (already completed)
 
----
+# ── References ──
+
+## Navigation
+
+| Content | Location |
+|---------|----------|
+| Design decisions | `outputs/design_decisions/` (when created) |
+| Stage reports | `outputs/reports/` |
+| Stage 01 tree of needs | `../stage_1_01_request_gathering/outputs/requests/tree_of_needs/` |
+| Stage 02 research | `../stage_1_02_research/outputs/by_topic/` |
+| Universal template | `.0agnostic/01_knowledge/layer_stage_system/stage_guides/STAGE_AGENT_TEMPLATE.md` |
+| Delegation principles | `.0agnostic/01_knowledge/principles/principles/STAGE_DELEGATION_PRINCIPLES.md` |
+
+## Domain Context
+
+For agent delegation system domain understanding, read from the parent entity:
+- Parent identity: `../../0AGNOSTIC.md` (what this entity IS)
+- Parent knowledge: `../../.0agnostic/01_knowledge/` (overview docs, things learned)
+- Stage 01 requirements: `../stage_1_01_request_gathering/outputs/`
+- Stage 02 findings: `../stage_1_02_research/outputs/`
+
+Do NOT load all parent knowledge at once — read the specific file relevant to the decision you're making.
 
 ## Success Criteria
 
@@ -123,5 +229,6 @@ This stage is complete when:
 
 ## On Exit
 
-1. Update `outputs/stage_report.md`
+1. Update `outputs/reports/stage_report.md` with current status
 2. If handing off to stage 05: note the implementation order
+3. If handing off to stage 06: note which designs are ready for implementation

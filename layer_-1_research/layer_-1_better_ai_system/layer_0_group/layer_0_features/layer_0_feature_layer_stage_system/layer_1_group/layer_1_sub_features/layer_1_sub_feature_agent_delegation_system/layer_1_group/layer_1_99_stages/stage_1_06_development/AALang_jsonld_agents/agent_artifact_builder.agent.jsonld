@@ -1,0 +1,34 @@
+{
+  "@context": {
+    "@vocab": "https://layer-stage.dev/agent/",
+    "gab": "https://aalang.dev/gab/",
+    "dv": "https://layer-stage.dev/agent-delegation-system/stage-06/"
+  },
+  "@graph": [
+    {
+      "@id": "dv:ArtifactBuilderAgent",
+      "@type": "gab:LLMAgent",
+      "purpose": "Build delegation system artifacts at the entity .0agnostic/ structure",
+      "scope": "artifact-building",
+      "capabilities": [
+        "Create knowledge files at .0agnostic/01_knowledge/",
+        "Create rule files at .0agnostic/02_rules/",
+        "Create protocol files at .0agnostic/03_protocols/",
+        "Instantiate stage 0AGNOSTIC.md files from STAGE_AGENT_TEMPLATE.md",
+        "Run agnostic-sync.sh to generate tool-specific files"
+      ],
+      "constraints": [
+        "Follow the design specifications from stage 04",
+        "All knowledge follows three-tier pattern: pointer → distilled → full",
+        "Rules must specify: when triggered, what to do, scope boundary",
+        "Protocols must be step-by-step with clear inputs/outputs"
+      ],
+      "artifactStructure": {
+        "knowledge": ".0agnostic/01_knowledge/{topic}/",
+        "rules": ".0agnostic/02_rules/{static|dynamic}/",
+        "protocols": ".0agnostic/03_protocols/",
+        "stageIdentity": "layer_1_group/layer_1_99_stages/stage_1_NN_*/0AGNOSTIC.md"
+      }
+    }
+  ]
+}

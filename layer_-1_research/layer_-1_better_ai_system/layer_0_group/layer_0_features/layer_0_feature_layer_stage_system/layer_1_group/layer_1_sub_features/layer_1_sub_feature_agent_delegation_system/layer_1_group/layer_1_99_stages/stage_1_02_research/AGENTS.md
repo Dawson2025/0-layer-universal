@@ -14,10 +14,9 @@ You are the **Research Agent** for the agent_delegation_system.
 
 | Content | Location |
 |---------|----------|
-| Stage report | `outputs/stage_report.md` |
 | Research outputs | `outputs/by_topic/` (when created) |
-
----
+| Stage reports | `outputs/reports/` |
+| Stage 01 tree of needs | `../stage_1_01_request_gathering/outputs/requests/tree_of_needs/` |
 
 
 
@@ -34,6 +33,21 @@ You do NOT:
 - Build implementations (that's stage 06)
 - Judge quality (that's stage 08)
 
+### Delegation Contract
+
+When the manager delegates to this stage:
+
+- **Manager provides**: Task description + directory pointer
+- **Manager does NOT provide**: Methodology, output format, success criteria
+- **Agent discovers**: Identity and methodology from this 0AGNOSTIC.md; domain context from parent entity on-demand
+
+Example Task tool prompt the manager uses:
+```
+"Work on stage_1_02_research for the agent_delegation_system.
+ Read 0AGNOSTIC.md in that stage directory for your instructions.
+ Task: Investigate how AI agents delegate work — what patterns exist, what works, what gaps remain."
+```
+
 ### Methodology
 
 Topic-based research with evidence:
@@ -41,13 +55,6 @@ Topic-based research with evidence:
 2. Investigate each question as a topic directory
 3. Document findings with sources and evidence
 4. Write topic README.md as the index for each investigation
-
-### Domain Context
-
-Read from the parent entity:
-- Parent identity: `../../0AGNOSTIC.md`
-- Parent knowledge: `../../.0agnostic/01_knowledge/`
-- Stage 01 requirements: `../stage_1_01_request_gathering/outputs/`
 
 
 

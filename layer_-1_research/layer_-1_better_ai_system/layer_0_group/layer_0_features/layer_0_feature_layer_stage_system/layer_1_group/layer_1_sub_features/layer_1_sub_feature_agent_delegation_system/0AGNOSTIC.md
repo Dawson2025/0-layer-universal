@@ -1,5 +1,9 @@
 # agent_delegation_system — Layer 1 Sub-Feature
 
+# ═══ STATIC CONTEXT (always loaded) ═══
+
+# ── Entity Definition ──
+
 ## Identity
 
 You are an agent at **Layer 1** (Sub-Feature), **Sub-Feature**: Agent Delegation System.
@@ -8,13 +12,6 @@ You are an agent at **Layer 1** (Sub-Feature), **Sub-Feature**: Agent Delegation
 - **Scope**: Stage delegation, agent context models, manager-agent communication, stage reports, context chains, agent hierarchies
 - **Parent**: `../../../0AGNOSTIC.md` (layer_0_feature_layer_stage_system)
 - **Children**: memory_system, multi_agent_system (in `layer_2_group/layer_2_subx2_features/`)
-
-## Triggers
-
-Load this context when:
-- User mentions: agent delegation, stage delegation, manager delegation, agent context, stage reports
-- Working on: How managers delegate to stage agents, what agents know, how agents coordinate
-- Entering: `layer_1_sub_feature_agent_delegation_system/`
 
 ## Key Behaviors
 
@@ -30,41 +27,69 @@ These two domains are deeply coupled: delegation decisions depend on what contex
 ### Domain Concepts
 
 - **Stage delegation model**: Managers delegate to stage agents. Managers don't carry operational knowledge — each stage agent has its own 0AGNOSTIC.md with methodology, output format, and success criteria.
-- **Stage reports**: Stage agents write `outputs/stage_report.md` before exiting. Managers read these for async status without loading stage details.
+- **Stage reports**: Stage agents write `outputs/reports/stage_report.md` before exiting. Managers read these for async status without loading stage details.
 - **Agent context model**: What each agent type (manager, stage agent, sub-feature agent) knows in its static and dynamic context.
 - **Context chains**: How context traverses from root to leaf entities through the hierarchy.
 - **Three-tier knowledge**: Pointers (0AGNOSTIC.md) -> Distilled (.0agnostic/knowledge/) -> Full (stage outputs).
 
-## Navigation
+## Triggers
 
-### Children
+Load this context when:
+- User mentions: agent delegation, stage delegation, manager delegation, agent context, stage reports
+- Working on: How managers delegate to stage agents, what agents know, how agents coordinate
+- Entering: `layer_1_sub_feature_agent_delegation_system/`
 
-| Child | Purpose | Location |
-|-------|---------|----------|
-| memory_system | Context chains, navigation, dynamic memory | `layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_memory_system/` |
-| multi_agent_system | Agent hierarchies, orchestration, delegation patterns | `layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_multi_agent_system/` |
+## AALang Agent Context
 
-### Key Locations
+No entity-level `.gab.jsonld` exists for the agent_delegation_system. The nearest orchestrator is the parent feature's:
 
-| Content | Location |
-|---------|----------|
-| Entity source of truth | `0AGNOSTIC.md` (this file) |
-| Dashboard | `0INDEX.md` |
-| Stages | `layer_1_group/layer_1_99_stages/` |
-| On-demand resources | `.0agnostic/` (01_knowledge, 02_rules, 03_protocols, etc.) |
-| Tree of knowledge | `.0agnostic/01_knowledge/tree_of_knowledge/00_agent_delegation_knowledge/` |
-| Tree of needs | `layer_1_group/layer_1_99_stages/stage_1_01_request_gathering/outputs/requests/tree_of_needs/` |
-| Children | `layer_2_group/layer_2_subx2_features/` |
+### Nearest Orchestrator
 
----
+**File**: `../../../../layer_0_orchestrator.gab.jsonld`
 
-## Current State
+```json
+{
+  "@id": "orch:LayerStageSystemOrchestrator",
+  "@type": "gab:LLMAgent",
+  "pattern": "5-mode-13-actor",
+  "purpose": "Research orchestrator for the layer-stage framework",
+  "modes": ["orch:ReceiveMode", "orch:ResearchMode", "orch:DesignMode", "orch:ImplementMode", "orch:ReviewMode"]
+}
+```
 
-**Phase**: active (stage 01 populated, universal artifacts produced, working example established) | **Last Updated**: 2026-02-19
+### How to Load Full Graph
 
-### What's Been Done
+```bash
+# List all modes and their purposes from parent orchestrator
+jq '."@graph"[] | select(."@type" == "gab:Mode") | {id: ."@id", purpose: .purpose}' ../../../../layer_0_orchestrator.gab.jsonld
 
-This entity has progressed through multiple stages, producing universal artifacts that now live at `.0agnostic/`:
+# Load a specific mode's constraints
+jq '."@graph"[] | select(."@id" == "orch:ResearchMode")' ../../../../layer_0_orchestrator.gab.jsonld
+```
+
+### Integration Summary
+
+From `../../../../layer_0_orchestrator.integration.md`:
+- **Modes**: ReceiveMode (intake), ResearchMode (investigation), DesignMode (architecture), ImplementMode (artifacts), ReviewMode (validation)
+- **State Actors**: LayerStateActor, ChildRegistryStateActor, TaskStateActor
+- **Mode Flow**: Receive → Research → Design → Implement → Review → Receive
+- **Scope**: Limited to layer-stage framework research and its sub-features
+
+# ── Current Status ──
+
+## Current Status
+
+**Phase**: active (stage 01 populated, universal artifacts produced, working example established) | **Last Updated**: 2026-02-20
+
+This entity has progressed through stages 01, 02, 04, and 06, producing universal artifacts at `.0agnostic/` (11 stage guides, 10 principles, 3 static rules, 2 dynamic rules, stage report protocol). Working example: context_chain_system (76 PASS tests).
+
+# ═══ DYNAMIC CONTEXT (loaded on-demand) ═══
+
+# ── Current State ──
+
+## Current State Detail
+
+### Stage Work Summary
 
 | Stage Work | What Was Produced | Where It Lives |
 |-----------|-------------------|----------------|
@@ -115,7 +140,29 @@ Entity knowledge is organized as a **tree of knowledge** (mirroring the tree of 
 | `02_patterns_and_principles/` | two_halves_pattern, scope_boundary_decisions, three_tier_knowledge | What patterns govern delegation? |
 | `03_implementation/` | universal_artifacts, working_examples | What was built and where? |
 
----
+# ── References ──
+
+## Navigation
+
+### Children
+
+| Child | Purpose | Location |
+|-------|---------|----------|
+| memory_system | Context chains, navigation, dynamic memory | `layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_memory_system/` |
+| multi_agent_system | Agent hierarchies, orchestration, delegation patterns | `layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_multi_agent_system/` |
+
+### Key Locations
+
+| Content | Location |
+|---------|----------|
+| Entity source of truth | `0AGNOSTIC.md` (this file) |
+| Dashboard | `0INDEX.md` |
+| Stages | `layer_1_group/layer_1_99_stages/` |
+| On-demand resources | `.0agnostic/` (01_knowledge, 02_rules, 03_protocols, etc.) |
+| Tree of knowledge | `.0agnostic/01_knowledge/tree_of_knowledge/00_agent_delegation_knowledge/` |
+| Tree of needs | `layer_1_group/layer_1_99_stages/stage_1_01_request_gathering/outputs/requests/tree_of_needs/` |
+| Handoff documents | `.0agnostic/09_handoff_documents/` (stage overview, incoming/outgoing handoffs) |
+| Children | `layer_2_group/layer_2_subx2_features/` |
 
 ## Success Criteria
 
