@@ -56,8 +56,8 @@ When the manager delegates to this stage:
 |--------|----------|---------|
 | {Primary output} | `outputs/{path}` | {one-line description} |
 | {Secondary output} | `outputs/{path}` | {one-line description} |
-| Stage report | `outputs/reports/stage_report.md` | Async status for the manager |
-| Overview report | `outputs/reports/overview_report.md` | Summary of all reports |
+| Stage report | `.0agnostic/05_handoff_documents/02_outgoing/01_to_above/stage_report.md` | Async status for the manager |
+| Overview report | `.0agnostic/05_handoff_documents/02_outgoing/01_to_above/overview_report.md` | Summary of all reports |
 | Current State update | This file, "Current Status" section | Pointer-tier summary of what exists |
 
 ## Triggers
@@ -145,8 +145,8 @@ jq '."@graph"[] | select(."@id" == "{mode-id}")' {path_to.gab.jsonld}
 |---------|----------|
 | {Primary output} | `outputs/{path}` |
 | {Secondary output} | `outputs/{path}` |
-| Stage report | `outputs/reports/stage_report.md` |
-| Overview report | `outputs/reports/overview_report.md` |
+| Stage report | `.0agnostic/05_handoff_documents/02_outgoing/01_to_above/stage_report.md` |
+| Overview report | `.0agnostic/05_handoff_documents/02_outgoing/01_to_above/overview_report.md` |
 | Stage agent definition | `stage_{LL}_{NN}_{name}_agent.jsonld` |
 | Integration summary | `stage_{LL}_{NN}_{name}_agent.integration.md` |
 
@@ -168,6 +168,6 @@ This stage is complete when:
 
 ## On Exit
 
-1. Update `outputs/reports/stage_report.md` with current status
+1. Update `.0agnostic/05_handoff_documents/02_outgoing/01_to_above/stage_report.md` with current status
 2. If handing off to stage {NN}: {what the next stage needs to know}
 3. If handing off to stage {NN}: {alternative handoff path}

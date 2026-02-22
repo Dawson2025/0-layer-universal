@@ -57,7 +57,7 @@ When the manager delegates to this stage:
 | Enriched Skill Model | `outputs/by_topic/03_enriched_skill_model.md` | Skills as mini-entities with trajectory stores |
 | Source of Truth to Avenue Flow | `outputs/by_topic/04_source_of_truth_to_avenue_flow.md` | Holistic context ordering design |
 | Design Index | `outputs/by_topic/05_design_index.md` | Index of all design documents |
-| Stage report | `outputs/reports/stage_report.md` | Async status for the manager |
+| Stage report | `.0agnostic/05_handoff_documents/02_outgoing/01_to_above/stage_report.md` | Async status for the manager |
 
 ## Triggers
 
@@ -69,7 +69,7 @@ Load when:
 
 ## Current Status
 
-**active** — 4 architecture documents produced covering sync architecture, data-based avenue expansion (09-13), enriched skill model, and source-of-truth flow. Avenue web restructured with file_based/ and data_based/ subdirectories. Scaffolding complete for avenues 09-13. | Last Updated: 2026-02-22
+**active** — 4 architecture documents produced covering sync architecture, data-based avenue expansion (09-13), enriched skill model, and source-of-truth flow. Avenue web restructured with 01_file_based/ and 02_data_based/ subdirectories. Scaffolding complete for avenues 09-13. | Last Updated: 2026-02-22
 
 ## Claude-Specific Rules
 

@@ -61,7 +61,7 @@ When the manager delegates to this stage:
 | Enriched Skill Model | `outputs/by_topic/03_enriched_skill_model.md` | Skills as mini-entities with trajectory stores |
 | Source of Truth to Avenue Flow | `outputs/by_topic/04_source_of_truth_to_avenue_flow.md` | Holistic context ordering design |
 | Design Index | `outputs/by_topic/05_design_index.md` | Index of all design documents |
-| Stage report | `outputs/reports/stage_report.md` | Async status for the manager |
+| Stage report | `.0agnostic/05_handoff_documents/02_outgoing/01_to_above/stage_report.md` | Async status for the manager |
 
 ## Triggers
 
@@ -74,7 +74,7 @@ Load when:
 
 ## Current Status
 
-**active** — 4 architecture documents produced covering sync architecture, data-based avenue expansion (09-13), enriched skill model, and source-of-truth flow. Avenue web restructured with file_based/ and data_based/ subdirectories. Scaffolding complete for avenues 09-13. | Last Updated: 2026-02-22
+**active** — 4 architecture documents produced covering sync architecture, data-based avenue expansion (09-13), enriched skill model, and source-of-truth flow. Avenue web restructured with 01_file_based/ and 02_data_based/ subdirectories. Scaffolding complete for avenues 09-13. | Last Updated: 2026-02-22
 
 # ═══ DYNAMIC CONTEXT (loaded on-demand) ═══
 
@@ -86,7 +86,7 @@ Load when:
 
 Stage 05 has produced 4 design documents translating the 38 research documents from stage 02 into concrete system architecture. The designs cover: (1) unified sync orchestration via sync-main.sh, (2) 5 new data-based avenues extending the avenue web, (3) enriched skill model with trajectory stores and temporal data, (4) holistic source-of-truth-to-avenue flow specification.
 
-Additionally, the avenue web at the root level has been physically restructured into `file_based/` (01-08) and `data_based/` (09-13) subdirectories. Scaffolding (directories + READMEs) for avenues 09-13 is complete. REGISTRY.md and sync-registry.json have been created.
+Additionally, the avenue web at the root level has been physically restructured into `01_file_based/` (01-08) and `02_data_based/` (09-13) subdirectories. Scaffolding (directories + READMEs) for avenues 09-13 is complete. REGISTRY.md and sync-registry.json have been created.
 
 ### Key Outputs
 
@@ -103,7 +103,7 @@ Additionally, the avenue web at the root level has been physically restructured 
 1. **Files remain source of truth** — databases are derived indexes, always regenerable
 2. **Zero-dependency operation preserved** — data-based avenues are optional accelerators
 3. **Avenue web extends, not replaces** — avenues 09-13 add to 01-08, same ordering convention
-4. **Physical separation** — `file_based/` and `data_based/` subdirs within `06_context_avenue_web/`
+4. **Physical separation** — `01_file_based/` and `02_data_based/` subdirs within `06_context_avenue_web/`
 5. **Skills enrich, not promote** — skills gain trajectory/temporal data but do NOT become full entities
 6. **Single orchestrator** — sync-main.sh coordinates all sync scripts with dependency ordering
 7. **Phased rollout** — scaffold now, build scripts in stage 06, integrate in stage 06, production after stage 07
@@ -139,7 +139,7 @@ Additionally, the avenue web at the root level has been physically restructured 
 |---------|----------|
 | Design documents | `outputs/by_topic/` |
 | Design index | `outputs/by_topic/05_design_index.md` |
-| Stage report | `outputs/reports/stage_report.md` |
+| Stage report | `.0agnostic/05_handoff_documents/02_outgoing/01_to_above/stage_report.md` |
 | Research inputs | `../stage_2_02_research/outputs/by_topic/` |
 
 ## Domain Context
@@ -161,6 +161,6 @@ This stage is complete when:
 
 ## On Exit
 
-1. Update `outputs/reports/stage_report.md` with current status
+1. Update `.0agnostic/05_handoff_documents/02_outgoing/01_to_above/stage_report.md` with current status
 2. If handing off to stage 06: Prioritize sync-main.sh, then data-based avenue scripts
 3. If handing off to stage 03: Use design docs to inform requirements and constraints

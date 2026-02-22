@@ -148,9 +148,17 @@ for dir in \
   "03_protocols" \
   "04_episodic_memory" "04_episodic_memory/sessions" "04_episodic_memory/changes" \
   "05_handoff_documents" \
-  "06_context_avenue_web/file_based/05_skills" \
-  "06_context_avenue_web/file_based/06_agents" \
-  "06_context_avenue_web/file_based/08_hooks" "06_context_avenue_web/file_based/08_hooks/scripts" \
+  "05_handoff_documents/01_incoming/01_from_above" \
+  "05_handoff_documents/01_incoming/02_from_sides/01_from_left" \
+  "05_handoff_documents/01_incoming/02_from_sides/02_from_right" \
+  "05_handoff_documents/01_incoming/03_from_below" \
+  "05_handoff_documents/02_outgoing/01_to_above" \
+  "05_handoff_documents/02_outgoing/02_to_sides/01_to_left" \
+  "05_handoff_documents/02_outgoing/02_to_sides/02_to_right" \
+  "05_handoff_documents/02_outgoing/03_to_below" \
+  "06_context_avenue_web/01_file_based/05_skills" \
+  "06_context_avenue_web/01_file_based/06_agents" \
+  "06_context_avenue_web/01_file_based/08_hooks" "06_context_avenue_web/01_file_based/08_hooks/scripts" \
   "07+_setup_dependant"; do
   if [ ! -d "$AGNOSTIC/$dir" ]; then
     if dry "Would create: .0agnostic/$dir"; then true; else
@@ -166,14 +174,14 @@ rename_dir "knowledge"        "01_knowledge"
 rename_dir "rules"            "02_rules"
 rename_dir "protocols"        "03_protocols"
 rename_dir "episodic_memory"  "04_episodic_memory"
-rename_dir "agents"           "06_context_avenue_web/file_based/06_agents"
-rename_dir "skills"           "06_context_avenue_web/file_based/05_skills"
-rename_dir "hooks"            "06_context_avenue_web/file_based/08_hooks"
+rename_dir "agents"           "06_context_avenue_web/01_file_based/06_agents"
+rename_dir "skills"           "06_context_avenue_web/01_file_based/05_skills"
+rename_dir "hooks"            "06_context_avenue_web/01_file_based/08_hooks"
 
 # Migrate old numbered dirs to new convention
-rename_dir "04_agents"        "06_context_avenue_web/file_based/06_agents"
-rename_dir "05_skills"        "06_context_avenue_web/file_based/05_skills"
-rename_dir "06_hooks"         "06_context_avenue_web/file_based/08_hooks"
+rename_dir "04_agents"        "06_context_avenue_web/01_file_based/06_agents"
+rename_dir "05_skills"        "06_context_avenue_web/01_file_based/05_skills"
+rename_dir "06_hooks"         "06_context_avenue_web/01_file_based/08_hooks"
 rename_dir "07_episodic_memory" "04_episodic_memory"
 rename_dir "08_episodic_memory" "04_episodic_memory"
 rename_dir "04+_setup_dependant" "07+_setup_dependant"

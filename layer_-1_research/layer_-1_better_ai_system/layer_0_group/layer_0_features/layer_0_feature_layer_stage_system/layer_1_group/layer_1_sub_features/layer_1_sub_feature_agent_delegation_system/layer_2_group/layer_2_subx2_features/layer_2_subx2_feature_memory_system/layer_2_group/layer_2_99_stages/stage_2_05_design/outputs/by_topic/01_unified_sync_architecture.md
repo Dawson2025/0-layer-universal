@@ -19,8 +19,8 @@ The layer-stage system uses a **source of truth → delivery** pattern. Content 
 │
 ├── 06_context_avenue_web/ ─── DELIVERY (how agents receive it)
 │   ├── 00_registry/           management hub
-│   ├── file_based/ (01-08)    deterministic transforms
-│   └── data_based/ (09-13)    derived indexes
+│   ├── 01_file_based/ (01-08)    deterministic transforms
+│   └── 02_data_based/ (09-13)    derived indexes
 │
 └── 07+_setup_dependant/   ─── ENVIRONMENT (OS/tool-specific)
 ```

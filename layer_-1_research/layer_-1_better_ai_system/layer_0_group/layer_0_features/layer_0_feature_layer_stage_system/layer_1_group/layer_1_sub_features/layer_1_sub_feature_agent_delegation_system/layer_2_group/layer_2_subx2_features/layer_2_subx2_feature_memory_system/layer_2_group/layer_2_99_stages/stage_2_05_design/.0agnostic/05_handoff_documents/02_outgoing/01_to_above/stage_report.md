@@ -8,7 +8,7 @@
 
 ## Summary
 
-Architecture and design for memory system integration into the layer-stage framework. 4 design documents translate 38 research documents into concrete specifications: unified sync orchestration, data-based avenue expansion (avenues 09-13), enriched skill model with trajectory stores, and holistic source-of-truth-to-avenue flow. Avenue web physically restructured with file_based/ and data_based/ subdirectories.
+Architecture and design for memory system integration into the layer-stage framework. 4 design documents translate 38 research documents into concrete specifications: unified sync orchestration, data-based avenue expansion (avenues 09-13), enriched skill model with trajectory stores, and holistic source-of-truth-to-avenue flow. Avenue web physically restructured with 01_file_based/ and 02_data_based/ subdirectories.
 
 ## Key Outputs
 
@@ -17,7 +17,7 @@ Architecture and design for memory system integration into the layer-stage frame
 - `outputs/by_topic/03_enriched_skill_model.md` — Skills as mini-entities with trajectory, temporal, knowledge, rules subdirs
 - `outputs/by_topic/04_source_of_truth_to_avenue_flow.md` — Holistic context ordering: 0AGNOSTIC.md → source dirs → avenue web
 - `outputs/by_topic/05_design_index.md` — Index of all design documents with research traceability
-- Root `.0agnostic/06_context_avenue_web/` restructured: file_based/ (01-08) + data_based/ (09-13)
+- Root `.0agnostic/06_context_avenue_web/` restructured: 01_file_based/ (01-08) + 02_data_based/ (09-13)
 - Avenue registry: REGISTRY.md + sync-registry.json at 00_context_avenue_web_registry/
 - 5 data-based avenue directories scaffolded with READMEs
 

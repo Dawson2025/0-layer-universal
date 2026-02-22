@@ -34,7 +34,7 @@ This document defines the holistic context ordering in the layer-stage system: h
 │          (Delivery / Consumption)                 │
 │                                                   │
 │  00_registry/          Management hub             │
-│  file_based/ (01-08)   data_based/ (09-13)        │
+│  01_file_based/ (01-08)   02_data_based/ (09-13)        │
 │  Deterministic         Derived indexes            │
 │  Human-readable        Queryable                  │
 │  Zero-dependency       Optional infrastructure    │
@@ -96,10 +96,10 @@ Ordered by comprehensiveness — how complete a data model each avenue maintains
 ```
 MOST COMPREHENSIVE ◀─────────────────────────────────▶ MOST FRAGMENTED
 
-file_based/
+01_file_based/
 01_aalang ─ 02_integration ─ 03_memory ─ 04_imports ─ 05_skills ─ 06_agents ─ 07_rules ─ 08_hooks
 
-data_based/
+02_data_based/
 09_kg ─── 10_relational ─── 11_vectors ─── 12_temporal ─── 13_shimi
 ```
 

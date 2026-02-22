@@ -13,7 +13,7 @@ The web is divided into two categories:
 ```
 06_context_avenue_web/
 ├── 00_context_avenue_web_registry/   # This registry + sync-registry.json
-├── file_based/                        # Deterministic, zero-dependency
+├── 01_file_based/                        # Deterministic, zero-dependency
 │   ├── 01_aalang/
 │   ├── 02_aalang_markdown_integration/
 │   ├── 03_auto_memory/
@@ -22,7 +22,7 @@ The web is divided into two categories:
 │   ├── 06_agents/
 │   ├── 07_path_specific_rules/
 │   └── 08_hooks/
-└── data_based/                        # Derived, queryable, optional
+└── 02_data_based/                        # Derived, queryable, optional
     ├── 09_knowledge_graph/
     ├── 10_relational_index/
     ├── 11_vector_embeddings/
