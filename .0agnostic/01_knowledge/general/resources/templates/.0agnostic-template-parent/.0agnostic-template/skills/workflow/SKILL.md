@@ -45,8 +45,8 @@ This skill provides guidance for how to work effectively at this location in the
 | 01_request_gathering | Clarify requirements | requirements.md |
 | 02_research | Explore options | options_analysis.md |
 | 03_instructions | Define constraints | constraints.md |
-| 04_planning | Break into tasks | task_breakdown.md |
-| 05_design | Architecture | design.md |
+| 04_design | Architecture | design.md |
+| 05_planning | Break into tasks | task_breakdown.md |
 | 06_development | Implementation | code |
 | 07_testing | Verification | test_results.md |
 | 08_criticism | Review | review.md |

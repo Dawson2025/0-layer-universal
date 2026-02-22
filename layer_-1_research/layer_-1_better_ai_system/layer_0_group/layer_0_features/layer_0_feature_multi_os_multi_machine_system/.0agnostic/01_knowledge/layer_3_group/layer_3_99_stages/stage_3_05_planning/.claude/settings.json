@@ -1,0 +1,14 @@
+{
+  "context": {
+    "stage": "stage_3_05_planning",
+    "layer": 3,
+    "purpose": "Create implementation plan"
+  },
+  "permissions": {
+    "allow": [],
+    "deny": [],
+    "ask": []
+  },
+  "env": {},
+  "hooks": {}
+}

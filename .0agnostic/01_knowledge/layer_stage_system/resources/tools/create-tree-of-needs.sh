@@ -76,8 +76,8 @@ cat > "$TON/_meta/DEPENDENCIES.md" << 'DEOF'
 | Consumer | How They Use This |
 |----------|-------------------|
 | stage_02_research | Research each need |
-| stage_04_planning | Plan implementation |
-| stage_05_design | Design solutions |
+| stage_04_design | Design solutions |
+| stage_05_planning | Plan implementation |
 DEOF
 
 # Root need README.md

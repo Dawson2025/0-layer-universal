@@ -44,7 +44,7 @@
 ## Key Outcomes (Expected)
 
 - [ ] Research documentation completed (stage_0_02_research/outputs/)
-- [ ] Implementation architecture designed (stage_0_05_design/)
+- [ ] Implementation architecture designed (stage_0_04_design/)
 - [ ] Injection system built (stage_0_06_development/)
 - [ ] System tested and verified (stage_0_07_testing/)
 - [ ] Deployable solution ready (stage_0_10_current_product/)

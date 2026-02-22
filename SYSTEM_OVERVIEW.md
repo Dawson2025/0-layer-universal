@@ -2,7 +2,7 @@
 
 ## Big picture
 - **Layer System (specificity):** universal (0) → project (1) → feature (2) → component (3). Lower numbers are prerequisites. Each layer has `layer_<N>_01_ai_manager_system/`, `layer_<N>_02_manager_handoff_documents/layer_<N>_00_to_universal|layer_<N>_01_to_specific/`, and sub-layers in `layer_<N>_0X_sub_layers/` (layer 0 uses `layer_0_04_sub_layers/`).
-- **Stage System (chronology):** request_gathering → research → instructions → planning → design → development → testing → criticism → fixing → current_product → archives. Stages mirror the layer prefix (e.g., `stage_2_05_design`) inside `layer_<N>_99_stages/`, each with `hand_off_documents/` and `ai_agent_system/`.
+- **Stage System (chronology):** request_gathering → research → instructions → design → planning → development → testing → criticism → fixing → current_product → archives. Stages mirror the layer prefix (e.g., `stage_2_04_design`) inside `layer_<N>_99_stages/`, each with `hand_off_documents/` and `ai_agent_system/`.
 - **Status:** per-layer status JSON inside `layer_<N>_99_stages/` tracks `current_stage` and each stage state (`not_started | in_progress | blocked | done`).
 
 ## Agent OS Architecture
@@ -66,7 +66,7 @@ Legacy `trickle_down_*` content is preserved under `legacy_import/` within the c
 - Feature 2.xx and Component 3.xx mirror the same pattern at finer scope.
 
 ## Stage numbers (per layer)
-- For layer N: stages are `stage_N_01_request_gathering`, `stage_N_02_research`, `stage_N_03_instructions`, `stage_N_04_planning`, `stage_N_05_design`, `stage_N_06_development`, `stage_N_07_testing`, `stage_N_08_criticism`, `stage_N_09_fixing`, `stage_N_10_current_product`, `stage_N_11_archives` under `layer_N_99_stages/`.
+- For layer N: stages are `stage_N_01_request_gathering`, `stage_N_02_research`, `stage_N_03_instructions`, `stage_N_04_design`, `stage_N_05_planning`, `stage_N_06_development`, `stage_N_07_testing`, `stage_N_08_criticism`, `stage_N_09_fixing`, `stage_N_10_current_product`, `stage_N_11_archives` under `layer_N_99_stages/`.
 
 ## Why this structure
 - Deterministic, git-friendly navigation; no reliance on fuzzy search.

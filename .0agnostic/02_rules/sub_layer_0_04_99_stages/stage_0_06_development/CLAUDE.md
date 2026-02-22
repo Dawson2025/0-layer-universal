@@ -22,5 +22,5 @@ Build the actual system components:
 ## Navigation
 
 - **Parent**: `../CLAUDE.md` (Stages Manager)
-- **Previous stage**: `../stage_0_05_design/`
+- **Previous stage**: `../stage_0_05_planning/`
 - **Next stage**: `../stage_0_07_testing/`

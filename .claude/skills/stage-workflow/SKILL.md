@@ -41,8 +41,8 @@ Ask: "What phase of work am I in?"
 | Gathering requirements | 01_request_gathering |
 | Researching solutions | 02_research |
 | Defining constraints | 03_instructions |
-| Breaking down tasks | 04_planning |
-| Designing architecture | 05_design |
+| Designing architecture | 04_design |
+| Breaking down tasks | 05_planning |
 | Implementing | 06_development |
 | Testing/validating | 07_testing |
 | Reviewing/critiquing | 08_criticism |
@@ -55,7 +55,7 @@ Ask: "What phase of work am I in?"
 All stage content goes in `outputs/`:
 
 ```
-stage_X_05_design/
+stage_X_04_design/
 └── outputs/
     ├── architecture.md
     ├── diagrams/

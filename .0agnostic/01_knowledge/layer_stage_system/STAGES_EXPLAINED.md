@@ -47,9 +47,9 @@ entity_99_stages/
 │   └── outputs/
 ├── stage_XX_03_instructions/
 │   └── outputs/
-├── stage_XX_04_planning/
+├── stage_XX_04_design/
 │   └── outputs/
-├── stage_XX_05_design/
+├── stage_XX_05_planning/
 │   └── outputs/
 ├── stage_XX_06_development/
 │   └── outputs/
@@ -71,7 +71,7 @@ Where `XX` is the layer number (e.g., `stage_0_01_...` for layer_0, `stage_1_01_
 
 | State | Valid? | Example |
 |-------|--------|---------|
-| Stage exists with content | ✅ Yes | `stage_0_05_design/outputs/design.md` |
+| Stage exists with content | ✅ Yes | `stage_0_04_design/outputs/design.md` |
 | Stage exists but empty | ✅ Yes | `stage_0_03_instructions/outputs/` (empty folder) |
 | Stage missing entirely | ❌ NO | Only stages 01, 05, 10 exist |
 
@@ -104,13 +104,13 @@ When creating entities with stages:
 │       │                                                                     │
 │       │ "What are the constraints?"                                        │
 │       ▼                                                                     │
-│  04_planning                                                                │
-│       │                                                                     │
-│       │ "How do we break this down?"                                       │
-│       ▼                                                                     │
-│  05_design                                                                  │
+│  04_design                                                                  │
 │       │                                                                     │
 │       │ "What's the architecture?"                                         │
+│       ▼                                                                     │
+│  05_planning                                                                │
+│       │                                                                     │
+│       │ "How do we break this down?"                                       │
 │       ▼                                                                     │
 │  06_development                                                             │
 │       │                                                                     │
@@ -149,7 +149,7 @@ stage_{layer}_{number}_{name}/
 
 Examples:
 - `stage_0_01_request_gathering/` - Layer 0, stage 01
-- `stage_1_05_design/` - Layer 1, stage 05
+- `stage_1_04_design/` - Layer 1, stage 04
 - `stage_-1_02_research/` - Layer -1 (research), stage 02
 
 ---

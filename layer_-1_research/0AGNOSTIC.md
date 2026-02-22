@@ -65,8 +65,8 @@ Stages are numbered 01-11 and represent workflow phases:
 | 01 | Request Gathering | Clarify requirements |
 | 02 | Research | Explore, gather info |
 | 03 | Instructions | Define constraints |
-| 04 | Planning | Break into subtasks |
-| 05 | Design | Architecture |
+| 04 | Design | Architecture |
+| 05 | Planning | Break into subtasks |
 | 06 | Development | Implementation |
 | 07 | Testing | Verification |
 | 08 | Criticism | Review |

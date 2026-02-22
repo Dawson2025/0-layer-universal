@@ -1,0 +1,14 @@
+{
+  "context": {
+    "stage": "stage_3_04_design",
+    "layer": 3,
+    "purpose": "Technical design and architecture"
+  },
+  "permissions": {
+    "allow": [],
+    "deny": [],
+    "ask": []
+  },
+  "env": {},
+  "hooks": {}
+}

@@ -26,8 +26,8 @@ Each layer only contains what's specific to that scope:
 ### 3. Stage-Based Workflow
 Work progresses through stages:
 ```
-01_request_gathering → 02_research → 03_instructions → 04_planning →
-05_design → 06_development → 07_testing → 08_criticism → 09_fixing →
+01_request_gathering → 02_research → 03_instructions → 04_design →
+05_planning → 06_development → 07_testing → 08_criticism → 09_fixing →
 10_current_product → 11_archives
 ```
 
@@ -76,8 +76,8 @@ Work progresses through stages:
 | 01_request_gathering | Collect and clarify requirements |
 | 02_research | Explore problem space, gather information |
 | 03_instructions | Define constraints and guidelines |
-| 04_planning | Break work into subtasks |
-| 05_design | Architecture and design decisions |
+| 04_design | Architecture and design decisions |
+| 05_planning | Break work into subtasks |
 | 06_development | Implementation |
 | 07_testing | Verification and validation |
 | 08_criticism | Review and critique |

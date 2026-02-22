@@ -40,10 +40,10 @@ Each stage directory contains:
     ↓ (Research findings documented)
 03_instructions
     ↓ (Implementation constraints defined)
-04_planning
-    ↓ (Tasks broken into subtasks)
-05_design
+04_design
     ↓ (Architecture finalized)
+05_planning
+    ↓ (Tasks broken into subtasks)
 06_development
     ↓ (Code written and integrated)
 07_testing

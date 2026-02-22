@@ -34,11 +34,11 @@ When working in development stages:
 ## Development Rules
 
 - All output goes in `outputs/` within the stage directory
-- Reference design decisions from `stage_*_05_design/outputs/`
+- Reference design decisions from `stage_*_04_design/outputs/`
 - Reference requirements from `stage_*_01_request_gathering/outputs/`
 - Follow commit conventions: `[AI Context]` prefix for AI context changes
 - Test before marking development complete — next stage is `stage_*_07_testing`
-- Do not skip stages — if development reveals design issues, go back to stage 05
+- Do not skip stages — if development reveals design issues, go back to stage 04
 
 ## Episodic Memory
 

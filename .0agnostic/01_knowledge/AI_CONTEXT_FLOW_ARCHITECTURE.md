@@ -645,8 +645,8 @@ entity_99_stages/
 ├── stage_XX_01_request_gathering/outputs/    ← REQUIRED
 ├── stage_XX_02_research/outputs/             ← REQUIRED
 ├── stage_XX_03_instructions/outputs/         ← REQUIRED
-├── stage_XX_04_planning/outputs/             ← REQUIRED
-├── stage_XX_05_design/outputs/               ← REQUIRED
+├── stage_XX_04_design/outputs/               ← REQUIRED
+├── stage_XX_05_planning/outputs/             ← REQUIRED
 ├── stage_XX_06_development/outputs/          ← REQUIRED
 ├── stage_XX_07_testing/outputs/              ← REQUIRED
 ├── stage_XX_08_criticism/outputs/            ← REQUIRED

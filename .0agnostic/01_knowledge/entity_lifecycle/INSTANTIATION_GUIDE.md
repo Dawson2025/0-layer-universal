@@ -109,7 +109,7 @@ Create ALL 12 stages (00-11). **Empty stages are valid. Missing stages are NOT.*
 ```bash
 # Create all stage directories
 mkdir -p "layer_N_group/layer_N_99_stages/stage_N_00_stage_registry/{outputs,synthesis}"
-for i in 01_request_gathering 02_research 03_instructions 04_planning 05_design 06_development 07_testing 08_criticism 09_fixing 10_current_product 11_archives; do
+for i in 01_request_gathering 02_research 03_instructions 04_design 05_planning 06_development 07_testing 08_criticism 09_fixing 10_current_product 11_archives; do
   mkdir -p "layer_N_group/layer_N_99_stages/stage_N_$i/{outputs,synthesis}"
 done
 
