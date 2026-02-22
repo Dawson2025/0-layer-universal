@@ -36,9 +36,18 @@ When working in school project directories:
 - **After changes**: Run `agnostic-sync.sh` to regenerate tool-specific files (CLAUDE.md, AGENTS.md, GEMINI.md, OPENAI.md)
 - **Tool overrides**: `.1merge/` (if present) provides tool-specific overrides via 3-tier merge (synced → overrides → additions)
 
+## Canvas MCP Integration
+
+- Canvas tools are available as `mcp__canvas__*` (course list, assignments, modules, grades, etc.)
+- **Config file**: `~/.claude.json` → `mcpServers.canvas` block
+- **API token location**: `~/.claude.json` line containing `CANVAS_API_TOKEN`
+- **Setup & troubleshooting docs**: `.0agnostic/07+_setup_dependant/sub_layer_0_05_operating_systems/sub_layer_0_05_linux_ubuntu/sub_layer_0_06_group/sub_layer_0_06_environments/sub_layer_0_06_local/sub_layer_0_07_coding_apps/sub_layer_0_07_cursor/sub_layer_0_09_ai_apps/sub_layer_0_09_claude_code_cli/sub_layer_0_10_mcp_servers_and_apis_and_clis_and_secrets/sub_layer_0_10_canvas-mcp/setup/canvas-mcp-setup.md`
+- **Server source**: `/home/dawson/mcp-servers/canvas-mcp-developer/`
+- **Token refresh**: Canvas → Account → Settings → Approved Integrations → New Access Token
+- **If 401 errors**: Token likely expired — regenerate and update `~/.claude.json`
+
 ## School-Specific Rules
 
-- Canvas integration is available via MCP tools (`mcp__canvas__*`)
 - Check assignment requirements before starting work
 - Follow academic writing standards — cite sources properly
 - Each class is a nested layer (layer_2 sub-project → layer_3 class → layer_4+ assignments)
