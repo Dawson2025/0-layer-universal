@@ -33,7 +33,7 @@
       "name": "@import_references",
       "dir": "04_@import_references",
       "scope": "Reference collections",
-      "description": "@imports/ reference files — curated content collections for context loading",
+      "description": ".0agnostic/06_context_avenue_web/01_file_based/04_@import_references/ reference files — curated content collections for context loading",
       "populated": false,
       "file_count": 0
     },

@@ -69,7 +69,7 @@ This occupies 15-25 lines per file across 298 files. Claude Code's parser doesn'
 
 These are informative but don't need to be in static context. They should be @imported.
 
-**Fix**: Move to `@imports/` and reference with @import directive.
+**Fix**: Move to `.0agnostic/06_context_avenue_web/01_file_based/04_@import_references/` and reference with @import directive.
 
 ### 4. Duplicate Navigation Tables
 

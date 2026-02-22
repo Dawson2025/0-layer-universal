@@ -213,7 +213,7 @@
         "Identify current sub_layer if nested",
         "Build inheritance chain",
         "Verify required context is loaded (rules, protocols)",
-        "When validating entity context, verify entity has canonical structure per @imports/entity_structure.md (0AGNOSTIC.md, .0agnostic/, .1merge/, layer_N_group/, synthesis/)",
+        "When validating entity context, verify entity has canonical structure per .0agnostic/06_context_avenue_web/01_file_based/04_@import_references/entity_structure.md (0AGNOSTIC.md, .0agnostic/, .1merge/, layer_N_group/, synthesis/)",
         "Do NOT proceed to Propagation Mode until confidence >= 0.8"
       ],
       "isolatedState": "ctx:ValidationModeState",

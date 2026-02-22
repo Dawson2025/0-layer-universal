@@ -39,7 +39,7 @@
     "validates": {
       "namePattern": "^layer_\\d+_(feature|sub_feature|component)_.+$"
     },
-    "reference": "@imports/entity_structure.md"
+    "reference": ".0agnostic/06_context_avenue_web/01_file_based/04_@import_references/entity_structure.md"
   },
 
   "nav:children": [

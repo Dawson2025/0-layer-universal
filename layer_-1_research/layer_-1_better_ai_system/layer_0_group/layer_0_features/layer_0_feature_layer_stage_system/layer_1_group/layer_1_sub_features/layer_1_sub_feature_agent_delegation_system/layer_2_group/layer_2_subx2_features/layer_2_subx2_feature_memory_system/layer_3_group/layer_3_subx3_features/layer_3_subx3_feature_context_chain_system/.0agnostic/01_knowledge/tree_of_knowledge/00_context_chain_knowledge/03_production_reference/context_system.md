@@ -23,5 +23,5 @@ The `.0agnostic/` directory contains numbered subdirectories: `01_knowledge/` (p
 | Production agnostic system | `.0agnostic/` | Live .0agnostic/ implementation |
 | Root 0AGNOSTIC.md | `0AGNOSTIC.md` (repo root) | Top of the parent chain |
 | agnostic-sync.sh | `.0agnostic/agnostic-sync.sh` | The sync script |
-| Entity structure template | `@imports/entity_structure.md` | Canonical directory structure |
+| Entity structure template | `.0agnostic/06_context_avenue_web/01_file_based/04_@import_references/entity_structure.md` | Canonical directory structure |
 | HOW_CONTEXT_WORKS (full doc) | `.0agnostic/01_knowledge/overview/production_context_system/HOW_CONTEXT_WORKS.md` | Detailed walkthrough (copy, not canonical) |

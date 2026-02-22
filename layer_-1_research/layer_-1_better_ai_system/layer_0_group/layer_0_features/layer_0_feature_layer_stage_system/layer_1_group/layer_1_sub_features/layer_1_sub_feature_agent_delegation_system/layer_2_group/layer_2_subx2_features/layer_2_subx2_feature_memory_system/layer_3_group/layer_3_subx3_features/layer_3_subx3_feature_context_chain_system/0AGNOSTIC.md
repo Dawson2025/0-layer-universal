@@ -451,7 +451,7 @@ These skills are available for instantiating and managing the context chain syst
 
 To instantiate the context chain system pattern for a new entity:
 
-1. **Invoke `/entity-creation`** — reads `@imports/entity_structure.md` for canonical structure and creates all directories
+1. **Invoke `/entity-creation`** — reads `.0agnostic/06_context_avenue_web/01_file_based/04_@import_references/entity_structure.md` for canonical structure and creates all directories
 2. **Write `0AGNOSTIC.md`** — use Identity + Parent + Triggers + Pointers pattern from this file as reference
 3. **Run `agnostic-sync.sh`** — generates CLAUDE.md, AGENTS.md, GEMINI.md, OPENAI.md
 4. **Invoke `/chain-validate`** — confirms parent chain is intact from new entity to root
@@ -465,7 +465,7 @@ Before invoking `/entity-creation`, read these (the skill will reference them to
 
 | Reference | Path | Content |
 |-----------|------|---------|
-| Canonical structure | `@imports/entity_structure.md` | Full directory tree, mkdir templates |
+| Canonical structure | `.0agnostic/06_context_avenue_web/01_file_based/04_@import_references/entity_structure.md` | Full directory tree, mkdir templates |
 | Instantiation guide | `layer_0/.../entity_lifecycle/INSTANTIATION_GUIDE.md` | 0AGNOSTIC.md and 0INDEX.md templates |
 | Entity types | `layer_0/.../entity_lifecycle/ENTITY_TYPES.md` | Type-specific details |
 | Nested depth naming | `layer_0/.../layer_stage_system/NESTED_DEPTH_NAMING.md` | subxN naming (layer_4_subx3, etc.) |

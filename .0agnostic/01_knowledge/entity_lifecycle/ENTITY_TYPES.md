@@ -2,7 +2,7 @@
 
 ## What is an Entity?
 
-An entity is any managed unit in the layer-stage system: projects, features, components, stages, sub-layers, etc. All entities follow the canonical structure defined in `@imports/entity_structure.md`.
+An entity is any managed unit in the layer-stage system: projects, features, components, stages, sub-layers, etc. All entities follow the canonical structure defined in `.0agnostic/06_context_avenue_web/01_file_based/04_@import_references/entity_structure.md`.
 
 ## Entity Types
 
@@ -10,7 +10,7 @@ An entity is any managed unit in the layer-stage system: projects, features, com
 
 **Purpose**: A complete application, system, or body of work
 
-**Structure** (see `@imports/entity_structure.md` for full canonical tree):
+**Structure** (see `.0agnostic/06_context_avenue_web/01_file_based/04_@import_references/entity_structure.md` for full canonical tree):
 ```
 layer_1_project_<name>/
 ├── 0AGNOSTIC.md              # Identity
@@ -160,5 +160,5 @@ proposals/
 
 ---
 
-*See `@imports/entity_structure.md` for the canonical directory structure.*
+*See `.0agnostic/06_context_avenue_web/01_file_based/04_@import_references/entity_structure.md` for the canonical directory structure.*
 *See INSTANTIATION_GUIDE.md for how to create entities.*

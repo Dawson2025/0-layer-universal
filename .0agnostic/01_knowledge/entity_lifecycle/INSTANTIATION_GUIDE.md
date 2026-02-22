@@ -2,7 +2,7 @@
 
 ## Overview
 
-This guide explains how to create new entities in the layer-stage system. For the canonical directory structure, see `@imports/entity_structure.md`.
+This guide explains how to create new entities in the layer-stage system. For the canonical directory structure, see `.0agnostic/06_context_avenue_web/01_file_based/04_@import_references/entity_structure.md`.
 
 ## General Instantiation Process
 
@@ -18,7 +18,7 @@ This guide explains how to create new entities in the layer-stage system. For th
 
 ### Step 2: Create Directory Structure
 
-Read `@imports/entity_structure.md` for the full canonical tree and mkdir template.
+Read `.0agnostic/06_context_avenue_web/01_file_based/04_@import_references/entity_structure.md` for the full canonical tree and mkdir template.
 
 Replace `N` with the entity's layer number and `N1` with N+1:
 
@@ -174,7 +174,7 @@ bash .0agnostic/01_knowledge/layer_stage_system/resources/tools/validate-entity.
 
 1. **Location**: `layer_1/layer_1_projects/layer_1_project_<name>/`
 
-2. **Required structure** (see `@imports/entity_structure.md` for full tree):
+2. **Required structure** (see `.0agnostic/06_context_avenue_web/01_file_based/04_@import_references/entity_structure.md` for full tree):
 ```
 layer_1_project_<name>/
 ├── 0AGNOSTIC.md
@@ -213,7 +213,7 @@ You are an agent at **Layer 1** (Project), **Project**: <name>.
 
 1. **Location**: `<project>/layer_2_group/layer_2_features/layer_2_feature_<name>/`
 
-2. **Required structure**: Same as project but with layer_2/layer_3 (see `@imports/entity_structure.md`)
+2. **Required structure**: Same as project but with layer_2/layer_3 (see `.0agnostic/06_context_avenue_web/01_file_based/04_@import_references/entity_structure.md`)
 
 3. **0AGNOSTIC.md template**:
 ```markdown
@@ -331,5 +331,5 @@ stage_N_XX_<name>/
 
 ---
 
-*See `@imports/entity_structure.md` for the canonical directory structure.*
+*See `.0agnostic/06_context_avenue_web/01_file_based/04_@import_references/entity_structure.md` for the canonical directory structure.*
 *See MAINTENANCE_GUIDE.md for ongoing entity management.*

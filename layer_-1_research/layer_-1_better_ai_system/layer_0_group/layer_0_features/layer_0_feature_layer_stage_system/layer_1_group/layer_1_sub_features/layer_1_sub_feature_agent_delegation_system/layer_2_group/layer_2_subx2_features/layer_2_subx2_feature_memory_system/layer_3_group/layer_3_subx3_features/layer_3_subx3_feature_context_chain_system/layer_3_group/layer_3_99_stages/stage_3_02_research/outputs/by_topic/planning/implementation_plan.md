@@ -190,7 +190,7 @@ ctx:ContextConfidenceStateActor.rulesAwareness += 0.3
 ### 1.4 Create @import Targets
 
 ```
-0_layer_universal/@imports/
+0_layer_universal/.0agnostic/06_context_avenue_web/01_file_based/04_@import_references/
 ├── structure_overview.md       ← Full ASCII directory tree (from 0_layer_universal/CLAUDE.md)
 ├── session_workflow.md         ← Session start protocol (from layer_0/CLAUDE.md)
 ├── compliance_checklist.md     ← Self-compliance check (from ~/.claude/CLAUDE.md)

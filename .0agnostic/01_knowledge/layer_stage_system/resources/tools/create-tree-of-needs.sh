@@ -13,7 +13,7 @@
 #
 # After running, manually add branches (01_*, 02_*, ...) with leaf needs.
 # Each leaf need gets: README.md, requirements/ (with REQ-NN files), user_stories/ (with US-NN files)
-# Reference: @imports/entity_structure.md
+# Reference: .0agnostic/06_context_avenue_web/01_file_based/04_@import_references/entity_structure.md
 
 set -euo pipefail
 

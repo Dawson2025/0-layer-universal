@@ -6,10 +6,10 @@ Arguments:
 - parent: Parent layer path (optional, defaults to current)
 
 Steps:
-1. Read `@imports/entity_structure.md` for canonical directory structure
+1. Read `.0agnostic/06_context_avenue_web/01_file_based/04_@import_references/entity_structure.md` for canonical directory structure
 2. Determine entity type and layer level (children are parent layer + 1)
 3. Generate next available XX number
-4. Create full directory structure per `@imports/entity_structure.md`
+4. Create full directory structure per `.0agnostic/06_context_avenue_web/01_file_based/04_@import_references/entity_structure.md`
 5. Create `0AGNOSTIC.md` and `0INDEX.md` (see INSTANTIATION_GUIDE.md for templates)
 6. Run `agnostic-sync.sh` to generate CLAUDE.md and other tool files
 7. Update parent's 0INDEX.md to include new entity

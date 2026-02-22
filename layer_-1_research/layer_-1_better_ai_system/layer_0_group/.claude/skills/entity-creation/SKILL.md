@@ -12,7 +12,7 @@ This skill is triggered when:
 
 ## Canonical Structure
 
-Read `@imports/entity_structure.md` for the complete directory tree every entity needs. This is the single source of truth for entity structure.
+Read `.0agnostic/06_context_avenue_web/01_file_based/04_@import_references/entity_structure.md` for the complete directory tree every entity needs. This is the single source of truth for entity structure.
 
 ## Naming Pattern
 
@@ -49,12 +49,12 @@ layer_0_group/
 
 ## Before Creating an Entity
 
-1. **Read `@imports/entity_structure.md`** for canonical directory structure
+1. **Read `.0agnostic/06_context_avenue_web/01_file_based/04_@import_references/entity_structure.md`** for canonical directory structure
 2. **Read parent's index.jsonld** (if it exists)
    - Find `conventions.childNaming`
    - Note `currentLayer` and `childLayer`
 3. **Determine correct name**: parent layer + 1 = child layer
-4. **Create full canonical structure** using mkdir template from `@imports/entity_structure.md`
+4. **Create full canonical structure** using mkdir template from `.0agnostic/06_context_avenue_web/01_file_based/04_@import_references/entity_structure.md`
 5. **Create `0AGNOSTIC.md` and `0INDEX.md`** (see INSTANTIATION_GUIDE.md for templates)
 6. **Run `agnostic-sync.sh`** to generate tool files
 
@@ -62,7 +62,7 @@ layer_0_group/
 
 Before creating any entity:
 
-- [ ] Read `@imports/entity_structure.md`
+- [ ] Read `.0agnostic/06_context_avenue_web/01_file_based/04_@import_references/entity_structure.md`
 - [ ] Calculate child layer: parent layer + 1
 - [ ] Use `sub_feature` (not `subfeature`) for sub-features
 - [ ] Include layer prefix: `layer_{N}_`
@@ -83,10 +83,10 @@ Before creating any entity:
 
 ## Key References
 
-- Canonical structure: `@imports/entity_structure.md`
+- Canonical structure: `.0agnostic/06_context_avenue_web/01_file_based/04_@import_references/entity_structure.md`
 - Instantiation guide: `layer_0/.../entity_lifecycle/INSTANTIATION_GUIDE.md`
 - Entity types: `layer_0/.../entity_lifecycle/ENTITY_TYPES.md`
 
 ---
 
-*This skill enforces naming conventions and canonical entity structure from `@imports/entity_structure.md`*
+*This skill enforces naming conventions and canonical entity structure from `.0agnostic/06_context_avenue_web/01_file_based/04_@import_references/entity_structure.md`*

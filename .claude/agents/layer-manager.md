@@ -14,7 +14,7 @@ You are the Layer Manager agent. You help navigate the layer hierarchy and creat
 
 ## Entity Structure
 
-Read `@imports/entity_structure.md` for the canonical directory structure every entity needs. Key components:
+Read `.0agnostic/06_context_avenue_web/01_file_based/04_@import_references/entity_structure.md` for the canonical directory structure every entity needs. Key components:
 - `0AGNOSTIC.md` — Source of truth (tool-agnostic context)
 - `.0agnostic/` — On-demand AI resources (agents, skills, knowledge, rules)
 - `.1merge/` — Tool-specific overrides (6 tools, 3-tier each)
@@ -23,7 +23,7 @@ Read `@imports/entity_structure.md` for the canonical directory structure every 
 - `synthesis/` — Cross-cutting summaries
 
 ## Key References
-- Canonical structure: `@imports/entity_structure.md`
+- Canonical structure: `.0agnostic/06_context_avenue_web/01_file_based/04_@import_references/entity_structure.md`
 - Instantiation guide: `layer_0/.../entity_lifecycle/INSTANTIATION_GUIDE.md`
 - Entity types: `layer_0/.../entity_lifecycle/ENTITY_TYPES.md`
 - Skill: `/entity-creation`

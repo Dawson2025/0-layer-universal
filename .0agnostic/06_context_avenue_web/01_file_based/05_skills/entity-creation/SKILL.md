@@ -14,7 +14,7 @@ Create new layers, sub-layers, stages, features, projects, or components with pr
 
 | Reference | Path | Why |
 |-----------|------|-----|
-| **Canonical structure** | `@imports/entity_structure.md` | **Full directory tree and mkdir template** |
+| **Canonical structure** | `.0agnostic/06_context_avenue_web/01_file_based/04_@import_references/entity_structure.md` | **Full directory tree and mkdir template** |
 | Instantiation guide | `layer_0/.../entity_lifecycle/INSTANTIATION_GUIDE.md` | Templates for 0AGNOSTIC.md, 0INDEX.md |
 | Entity types | `layer_0/.../entity_lifecycle/ENTITY_TYPES.md` | Type-specific details |
 | Stages | `layer_0/.../layer_stage_system/STAGES_EXPLAINED.md` | **Stage Completeness Rule** |
@@ -34,7 +34,7 @@ Create new layers, sub-layers, stages, features, projects, or components with pr
 
 ### 2. Create Full Canonical Structure
 
-Read `@imports/entity_structure.md` for the complete directory tree and mkdir template. Every entity needs:
+Read `.0agnostic/06_context_avenue_web/01_file_based/04_@import_references/entity_structure.md` for the complete directory tree and mkdir template. Every entity needs:
 - `.0agnostic/`, `.1merge/`, `.claude/`, `.cursor/`, `.github/`
 - `layer_N_group/` (registry, manager system, handoff docs, sub-layers, stages)
 - `layer_N+1_group/` (if entity has children)
@@ -64,7 +64,7 @@ Children are always layer N+1 of their parent. Use `sub_feature` (not `subfeatur
 ## Checklist
 
 Before completing:
-- [ ] Read `@imports/entity_structure.md`
+- [ ] Read `.0agnostic/06_context_avenue_web/01_file_based/04_@import_references/entity_structure.md`
 - [ ] Full canonical directory structure created
 - [ ] All 11 stages created (if entity has stages)
 - [ ] `0AGNOSTIC.md` and `0INDEX.md` created
@@ -73,4 +73,4 @@ Before completing:
 
 ---
 
-*This skill enforces the Stage Completeness Rule and canonical entity structure from `@imports/entity_structure.md`*
+*This skill enforces the Stage Completeness Rule and canonical entity structure from `.0agnostic/06_context_avenue_web/01_file_based/04_@import_references/entity_structure.md`*

@@ -80,7 +80,7 @@
 - Write task files to hand_off_documents/outgoing/to_below/
 - Do NOT spawn identical tasks (check similarity)
 - Do NOT spawn beyond depth limit
-- When delegating entity creation tasks, MUST include reference to @imports/entity_structure.md in the task context so child agents create correct canonical structure
+- When delegating entity creation tasks, MUST include reference to .0agnostic/06_context_avenue_web/01_file_based/04_@import_references/entity_structure.md in the task context so child agents create correct canonical structure
 
 ### orch:MonitoringMode
 - Poll hand_off_documents/status/{child_id}.json for status updates

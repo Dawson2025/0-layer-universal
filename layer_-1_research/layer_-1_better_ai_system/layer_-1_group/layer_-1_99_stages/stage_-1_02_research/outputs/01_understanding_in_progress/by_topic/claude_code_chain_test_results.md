@@ -55,7 +55,7 @@ Files in the Claude Code context chain that mention `.gab.jsonld`:
 | `.claude/skills/stage-workflow/SKILL.md` | PASS |
 | `.claude/skills/entity-creation/SKILL.md` | **FAIL** — does not mention .gab.jsonld |
 | `.claude/skills/handoff-creation/SKILL.md` | PASS |
-| `@imports/session_workflow.md` | PASS |
+| `.0agnostic/06_context_avenue_web/01_file_based/04_@import_references/session_workflow.md` | PASS |
 | `CLAUDE.md` (root) | PASS |
 
 ### TEST 2: Context Chain → Avenue 2 (.integration.md references)
@@ -68,7 +68,7 @@ Files in the Claude Code context chain that mention `.gab.jsonld`:
 | `.claude/rules/school-context.md` | PASS |
 | `.claude/rules/development-stages.md` | PASS |
 | `.claude/skills/context-gathering/SKILL.md` | PASS |
-| `@imports/session_workflow.md` | PASS |
+| `.0agnostic/06_context_avenue_web/01_file_based/04_@import_references/session_workflow.md` | PASS |
 | `CLAUDE.md` (root) | PASS |
 
 ### TEST 3: Context Chain → Avenue 3 (Skills references)
@@ -80,7 +80,7 @@ Files in the Claude Code context chain that mention `.gab.jsonld`:
 | `.claude/rules/research-context.md` | PASS |
 | `.claude/rules/school-context.md` | PASS |
 | `.claude/rules/development-stages.md` | PASS |
-| `@imports/session_workflow.md` | **FAIL** — does not mention skills |
+| `.0agnostic/06_context_avenue_web/01_file_based/04_@import_references/session_workflow.md` | **FAIL** — does not mention skills |
 | `CLAUDE.md` (root) | **FAIL** — does not mention skills |
 
 ### TEST 4: Context Chain → Agnostic System
@@ -93,7 +93,7 @@ No file in the Claude Code context chain mentions `0AGNOSTIC`:
 - `0_layer_universal/CLAUDE.md` — FAIL
 - All 5 `.claude/rules/*.md` — FAIL
 - `.claude/skills/context-gathering/SKILL.md` — FAIL
-- `@imports/session_workflow.md` — FAIL
+- `.0agnostic/06_context_avenue_web/01_file_based/04_@import_references/session_workflow.md` — FAIL
 
 **4b: .0agnostic/ directory references** — 0/10 PASS (complete failure)
 
@@ -151,7 +151,7 @@ All 160 `0AGNOSTIC.md` files have matching `CLAUDE.md`. **160/160 PASS.**
 
 ### Critical Gaps
 1. **Agnostic system is invisible to Claude Code** — 40/40 failures. The entire agnostic infrastructure (0AGNOSTIC.md, .0agnostic/, .1merge/, agnostic-sync.sh) is not mentioned in any Claude Code context chain file.
-2. **Skills avenue partially covered** — `@imports/session_workflow.md` and root `CLAUDE.md` don't mention skills.
+2. **Skills avenue partially covered** — `.0agnostic/06_context_avenue_web/01_file_based/04_@import_references/session_workflow.md` and root `CLAUDE.md` don't mention skills.
 3. **entity-creation skill** missing references to .gab.jsonld and .integration.md.
 4. **layer_0/CLAUDE.md** doesn't reference .0agnostic/ (but layer_1 and layer_-1 do).
 
@@ -169,13 +169,13 @@ All 160 `0AGNOSTIC.md` files have matching `CLAUDE.md`. **160/160 PASS.**
 Add agnostic system references to:
 - All 5 `.claude/rules/*.md` files
 - `.claude/skills/context-gathering/SKILL.md`
-- `@imports/session_workflow.md`
+- `.0agnostic/06_context_avenue_web/01_file_based/04_@import_references/session_workflow.md`
 - Root `CLAUDE.md`
 - `~/.claude/CLAUDE.md` (global)
 
 ### Priority 2: Skills Gap (2 failures)
 Add skills references to:
-- `@imports/session_workflow.md`
+- `.0agnostic/06_context_avenue_web/01_file_based/04_@import_references/session_workflow.md`
 - Root `CLAUDE.md`
 
 ### Priority 3: Skill Avenue Completeness (4 warnings)

@@ -22,7 +22,7 @@ description: "Create new layers, sub-layers, stages, features, projects, or comp
 
 | Reference | Path | Why |
 |-----------|------|-----|
-| **Canonical structure** | `@imports/entity_structure.md` | **Full directory tree, stage structure, naming conventions, mkdir templates** |
+| **Canonical structure** | `.0agnostic/06_context_avenue_web/01_file_based/04_@import_references/entity_structure.md` | **Full directory tree, stage structure, naming conventions, mkdir templates** |
 | Instantiation guide | `layer_0/.../entity_lifecycle/INSTANTIATION_GUIDE.md` | Templates for 0AGNOSTIC.md, 0INDEX.md |
 | Entity types | `layer_0/.../entity_lifecycle/ENTITY_TYPES.md` | Type-specific details |
 | Stages | `layer_0/.../layer_stage_system/STAGES_EXPLAINED.md` | **Stage Completeness Rule** |
@@ -31,7 +31,7 @@ description: "Create new layers, sub-layers, stages, features, projects, or comp
 | Nested depth | `layer_0/.../layer_stage_system/NESTED_DEPTH_NAMING.md` | subxN naming |
 
 **Full paths**:
-- `@imports/` = `0_layer_universal/@imports/`
+- `.0agnostic/06_context_avenue_web/01_file_based/04_@import_references/` = `0_layer_universal/.0agnostic/06_context_avenue_web/01_file_based/04_@import_references/`
 - `layer_stage_system/` = `.0agnostic/01_knowledge/layer_stage_system/`
 - `entity_lifecycle/` = `.0agnostic/01_knowledge/entity_lifecycle/`
 
@@ -49,7 +49,7 @@ description: "Create new layers, sub-layers, stages, features, projects, or comp
 
 ### Step 2: Create Entity Root Directories
 
-Use the mkdir templates from `@imports/entity_structure.md`. Every entity needs ALL of these at root:
+Use the mkdir templates from `.0agnostic/06_context_avenue_web/01_file_based/04_@import_references/entity_structure.md`. Every entity needs ALL of these at root:
 
 | Directory | Contents | Purpose |
 |---|---|---|
@@ -229,4 +229,4 @@ Entity creation follows the GAB format defined in:
 
 ---
 
-*This skill enforces both the Stage Completeness Rule and the canonical entity structure from `@imports/entity_structure.md`*
+*This skill enforces both the Stage Completeness Rule and the canonical entity structure from `.0agnostic/06_context_avenue_web/01_file_based/04_@import_references/entity_structure.md`*

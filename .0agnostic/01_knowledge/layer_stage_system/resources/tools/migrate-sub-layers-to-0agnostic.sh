@@ -9,7 +9,7 @@
 # 4. Creates per-topic knowledge subdirs (principles/, docs/, resources/)
 # 5. Removes the now-empty sub_layers directory
 #
-# Reference: @imports/entity_structure.md
+# Reference: .0agnostic/06_context_avenue_web/01_file_based/04_@import_references/entity_structure.md
 
 set -uo pipefail
 

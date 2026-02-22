@@ -30,7 +30,7 @@
   "trigger:onEntityCreation": {
     "skill": "../.claude/skills/entity-creation/",
     "loads": ["conventions.childNaming"],
-    "reference": "@imports/entity_structure.md"
+    "reference": ".0agnostic/06_context_avenue_web/01_file_based/04_@import_references/entity_structure.md"
   },
 
   "features": [
