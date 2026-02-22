@@ -58,7 +58,7 @@ Load this context when:
 # ── Current Status ──
 
 ## Current Status
-**active** — Stage 02 (research) substantially complete with 24 research documents covering the full AI agent memory landscape. Ready for stage 03 (instructions). | Last Updated: 2026-02-21
+**active** — Stage 02 (research) complete with 38 research documents. Stage 05 (design) active with 4 architecture documents: unified sync, data-based avenues 09-13, enriched skill model, source-of-truth flow. Avenue web restructured with file_based/ and data_based/ subdirs. | Last Updated: 2026-02-22
 
 # ═══ DYNAMIC CONTEXT (loaded on-demand) ═══
 
@@ -66,7 +66,7 @@ Load this context when:
 
 ## Current State Detail
 
-Stage 02 produced comprehensive research into AI agent memory systems. Key findings:
+Stage 02 produced 38 research documents on AI agent memory systems. Stage 05 produced 4 design documents translating research into architecture. Key research findings:
 
 - **Biological hierarchy**: Memory types form a 6-level dependency chain (sensory through autobiographical). Build L4 (semantic + time-based) first, then L5 (episodic + procedural), then L6.
 - **AI memory tiers**: 9-tier ranking of AI memory systems. Minimal core = Vectors (T1) + SQL (T2) + Working Memory (T5).
@@ -80,7 +80,8 @@ Stage 02 produced comprehensive research into AI agent memory systems. Key findi
 | Output | Location |
 |--------|----------|
 | Layer research summary | `.0agnostic/01_knowledge/memory_systems/docs/layer_research_summary.md` |
-| 24 research documents | `layer_2_group/layer_2_99_stages/stage_2_02_research/outputs/by_topic/` (00-23) |
+| 38 research documents | `layer_2_group/layer_2_99_stages/stage_2_02_research/outputs/by_topic/` (00-37) |
+| 4 design documents | `layer_2_group/layer_2_99_stages/stage_2_05_design/outputs/by_topic/` (01-05) |
 | Stage knowledge summary | `layer_2_group/layer_2_99_stages/stage_2_02_research/.0agnostic/01_knowledge/memory_systems/docs/core_ai_memory_architecture.md` |
 | Stage report | `layer_2_group/layer_2_99_stages/stage_2_02_research/.0agnostic/05_handoff_documents/02_outgoing/01_to_above/stage_report.md` |
 | Layer report | `.0agnostic/05_handoff_documents/02_outgoing/01_to_above/layer_report.md` |

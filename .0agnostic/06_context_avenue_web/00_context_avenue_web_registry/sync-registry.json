@@ -1,0 +1,105 @@
+{
+  "$schema": "sync-registry-v1",
+  "description": "Machine-readable mapping of sync scripts to avenues, inputs, outputs, and dependencies",
+  "last_updated": "2026-02-22",
+  "scripts": [
+    {
+      "name": "agnostic-sync",
+      "script": ".0agnostic/agnostic-sync.sh",
+      "scope": "entity",
+      "phase": 1,
+      "required": true,
+      "inputs": ["0AGNOSTIC.md", ".1merge/"],
+      "outputs": ["CLAUDE.md", "AGENTS.md", "GEMINI.md", "OPENAI.md", ".cursorrules", ".github/copilot-instructions.md"],
+      "avenues": [],
+      "description": "Extracts STATIC content from 0AGNOSTIC.md, generates tool-specific context files"
+    },
+    {
+      "name": "jsonld-to-md",
+      "script": ".0agnostic/01_knowledge/layer_stage_system/resources/tools/jsonld-to-md.sh",
+      "scope": "file",
+      "phase": 2,
+      "required": true,
+      "inputs": ["*.gab.jsonld"],
+      "outputs": ["*.integration.md"],
+      "avenues": ["01_aalang", "02_aalang_markdown_integration"],
+      "description": "Converts JSON-LD agent definitions into human-readable markdown integration summaries"
+    },
+    {
+      "name": "episodic-sync",
+      "script": ".0agnostic/01_knowledge/layer_stage_system/resources/tools/episodic-sync.sh",
+      "scope": "global",
+      "phase": 3,
+      "required": true,
+      "inputs": [".0agnostic/04_episodic_memory/index.md"],
+      "outputs": ["~/.claude/projects/.../memory/episodic.md"],
+      "avenues": ["03_auto_memory"],
+      "description": "Aggregates all episodic memory index.md files into Claude Code auto-memory topic file"
+    },
+    {
+      "name": "build-graph",
+      "script": ".0agnostic/01_knowledge/layer_stage_system/resources/tools/build-graph.sh",
+      "scope": "global",
+      "phase": 4,
+      "required": false,
+      "inputs": ["0AGNOSTIC.md", "*.gab.jsonld", "SKILL.md"],
+      "outputs": ["data_based/09_knowledge_graph/"],
+      "avenues": ["09_knowledge_graph"],
+      "dependencies": ["sqlite3 or psql", "jq"],
+      "description": "Extracts entity relationships into a queryable knowledge graph",
+      "status": "not_implemented"
+    },
+    {
+      "name": "build-index",
+      "script": ".0agnostic/01_knowledge/layer_stage_system/resources/tools/build-index.sh",
+      "scope": "global",
+      "phase": 4,
+      "required": false,
+      "inputs": ["0AGNOSTIC.md", "stage_report.md", "usage_stats.json"],
+      "outputs": ["data_based/10_relational_index/"],
+      "avenues": ["10_relational_index"],
+      "dependencies": ["sqlite3 or psql"],
+      "description": "Parses markdown files into structured SQL tables for metadata queries",
+      "status": "not_implemented"
+    },
+    {
+      "name": "build-embeddings",
+      "script": ".0agnostic/01_knowledge/layer_stage_system/resources/tools/build-embeddings.sh",
+      "scope": "global",
+      "phase": 4,
+      "required": false,
+      "inputs": ["*.md"],
+      "outputs": ["data_based/11_vector_embeddings/"],
+      "avenues": ["11_vector_embeddings"],
+      "dependencies": ["psql with pgvector", "embedding API"],
+      "description": "Chunks documents and generates vector embeddings for semantic search",
+      "status": "not_implemented"
+    },
+    {
+      "name": "build-temporal",
+      "script": ".0agnostic/01_knowledge/layer_stage_system/resources/tools/build-temporal.sh",
+      "scope": "global",
+      "phase": 4,
+      "required": false,
+      "inputs": [".0agnostic/04_episodic_memory/", "git log", "trajectory_store.json"],
+      "outputs": ["data_based/12_temporal_index/"],
+      "avenues": ["12_temporal_index"],
+      "dependencies": ["psql with timescaledb or sqlite3", "git"],
+      "description": "Parses episodic files and git history into time-series events table",
+      "status": "not_implemented"
+    },
+    {
+      "name": "build-shimi",
+      "script": ".0agnostic/01_knowledge/layer_stage_system/resources/tools/build-shimi.sh",
+      "scope": "global",
+      "phase": 4,
+      "required": false,
+      "inputs": ["0AGNOSTIC.md", "entity content"],
+      "outputs": ["data_based/13_shimi_structures/"],
+      "avenues": ["13_shimi_structures"],
+      "dependencies": ["sha256sum", "python3 (optional, for Bloom filters)"],
+      "description": "Generates per-node optimization primitives (Bloom filters, Merkle hashes, CRDTs)",
+      "status": "not_implemented"
+    }
+  ]
+}

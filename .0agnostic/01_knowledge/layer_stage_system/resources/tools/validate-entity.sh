@@ -72,9 +72,9 @@ check_dir ".0agnostic/03_protocols"
 check_dir ".0agnostic/04_episodic_memory/sessions"
 check_dir ".0agnostic/04_episodic_memory/changes"
 check_dir ".0agnostic/05_handoff_documents"
-check_dir ".0agnostic/06_context_avenue_web/05_skills"
-check_dir ".0agnostic/06_context_avenue_web/06_agents"
-check_dir ".0agnostic/06_context_avenue_web/08_hooks/scripts"
+check_dir ".0agnostic/06_context_avenue_web/file_based/05_skills"
+check_dir ".0agnostic/06_context_avenue_web/file_based/06_agents"
+check_dir ".0agnostic/06_context_avenue_web/file_based/08_hooks/scripts"
 check_dir ".0agnostic/07+_setup_dependant"
 
 # Warn about unnumbered .0agnostic/ dirs (old pattern)

@@ -24,7 +24,7 @@ Replace `N` with the entity's layer number and `N1` with N+1:
 
 ```bash
 # Entity root config directories (outputs/ and synthesis/ live inside stages, NOT here)
-mkdir -p <entity_name>/{.0agnostic/{01_knowledge,02_rules/{static,dynamic},03_protocols,04_episodic_memory/{sessions,changes},05_handoff_documents/{01_incoming/{01_from_above,02_from_below},02_outgoing/{01_to_above,02_to_below}},06_context_avenue_web/{00_context_avenue_web_registry,01_aalang,02_aalang_markdown_integration,03_auto_memory,"04_@import_references",05_skills,06_agents,07_path_specific_rules,08_hooks},07+_setup_dependant},.1merge/{.1claude_merge/{0_synced,1_overrides,2_additions},.1cursor_merge/{0_synced,1_overrides,2_additions},.1gemini_merge/{0_synced,1_overrides,2_additions},.1aider_merge/{0_synced,1_overrides,2_additions},.1codex_merge/{0_synced,1_overrides,2_additions},.1copilot_merge/{0_synced,1_overrides,2_additions}},.claude/{rules,episodic_memory/{sessions,changes}},.cursor/{rules,episodic_memory/{sessions,changes}},.gemini/episodic_memory/{sessions,changes},.codex/episodic_memory/{sessions,changes},.github/instructions}
+mkdir -p <entity_name>/{.0agnostic/{01_knowledge,02_rules/{static,dynamic},03_protocols,04_episodic_memory/{sessions,changes},05_handoff_documents/{01_incoming/{01_from_above,02_from_below},02_outgoing/{01_to_above,02_to_below}},06_context_avenue_web/{00_context_avenue_web_registry,file_based/{01_aalang,02_aalang_markdown_integration,03_auto_memory,"04_@import_references",05_skills,06_agents,07_path_specific_rules,08_hooks},data_based/{09_knowledge_graph,10_relational_index,11_vector_embeddings,12_temporal_index,13_shimi_structures}},07+_setup_dependant},.1merge/{.1claude_merge/{0_synced,1_overrides,2_additions},.1cursor_merge/{0_synced,1_overrides,2_additions},.1gemini_merge/{0_synced,1_overrides,2_additions},.1aider_merge/{0_synced,1_overrides,2_additions},.1codex_merge/{0_synced,1_overrides,2_additions},.1copilot_merge/{0_synced,1_overrides,2_additions}},.claude/{rules,episodic_memory/{sessions,changes}},.cursor/{rules,episodic_memory/{sessions,changes}},.gemini/episodic_memory/{sessions,changes},.codex/episodic_memory/{sessions,changes},.github/instructions}
 
 # Internal layer_N_group structure (manager identity in 0AGNOSTIC.md, handoffs in .0agnostic/)
 mkdir -p <entity_name>/layer_N_group/{layer_N_00_layer_registry/proposals,layer_N_99_stages}
@@ -115,7 +115,7 @@ done
 
 # Add config directories to EACH stage (numbered .0agnostic/ — same as entity root)
 for stage_dir in layer_N_group/layer_N_99_stages/stage_N_*/; do
-  mkdir -p "$stage_dir"/{.0agnostic/{01_knowledge,02_rules/{static,dynamic},03_protocols,04_episodic_memory/{sessions,changes},05_handoff_documents/{01_incoming/{01_from_above,02_from_below},02_outgoing/{01_to_above,02_to_below}},06_context_avenue_web/{00_context_avenue_web_registry,01_aalang,02_aalang_markdown_integration,03_auto_memory,"04_@import_references",05_skills,06_agents,07_path_specific_rules,08_hooks},07+_setup_dependant},.1merge/{.1claude_merge/{0_synced,1_overrides,2_additions},.1cursor_merge/{0_synced,1_overrides,2_additions},.1gemini_merge/{0_synced,1_overrides,2_additions},.1aider_merge/{0_synced,1_overrides,2_additions},.1codex_merge/{0_synced,1_overrides,2_additions},.1copilot_merge/{0_synced,1_overrides,2_additions}},.claude/{rules,episodic_memory/{sessions,changes}},.cursor/{rules,episodic_memory/{sessions,changes}},.gemini/episodic_memory/{sessions,changes},.codex/episodic_memory/{sessions,changes},.github/instructions,synthesis}
+  mkdir -p "$stage_dir"/{.0agnostic/{01_knowledge,02_rules/{static,dynamic},03_protocols,04_episodic_memory/{sessions,changes},05_handoff_documents/{01_incoming/{01_from_above,02_from_below},02_outgoing/{01_to_above,02_to_below}},06_context_avenue_web/{00_context_avenue_web_registry,file_based/{01_aalang,02_aalang_markdown_integration,03_auto_memory,"04_@import_references",05_skills,06_agents,07_path_specific_rules,08_hooks},data_based/{09_knowledge_graph,10_relational_index,11_vector_embeddings,12_temporal_index,13_shimi_structures}},07+_setup_dependant},.1merge/{.1claude_merge/{0_synced,1_overrides,2_additions},.1cursor_merge/{0_synced,1_overrides,2_additions},.1gemini_merge/{0_synced,1_overrides,2_additions},.1aider_merge/{0_synced,1_overrides,2_additions},.1codex_merge/{0_synced,1_overrides,2_additions},.1copilot_merge/{0_synced,1_overrides,2_additions}},.claude/{rules,episodic_memory/{sessions,changes}},.cursor/{rules,episodic_memory/{sessions,changes}},.gemini/episodic_memory/{sessions,changes},.codex/episodic_memory/{sessions,changes},.github/instructions,synthesis}
 done
 ```
 
@@ -131,9 +131,9 @@ Then run `agnostic-sync.sh` on each stage directory to generate tool files.
 
 | File | Location | Purpose |
 |---|---|---|
-| `layer_N.orchestrator.gab.jsonld` | `.0agnostic/06_context_avenue_web/01_aalang/` | Entity-level orchestrator |
+| `layer_N.orchestrator.gab.jsonld` | `.0agnostic/06_context_avenue_web/file_based/01_aalang/` | Entity-level orchestrator |
 | `layer_N_99_stages.orchestrator.gab.jsonld` | `layer_N_99_stages/` | Stages orchestrator |
-| `stage_XX.orchestrator.gab.jsonld` | Each stage's `.0agnostic/06_context_avenue_web/01_aalang/` | Stage orchestrator |
+| `stage_XX.orchestrator.gab.jsonld` | Each stage's `.0agnostic/06_context_avenue_web/file_based/01_aalang/` | Stage orchestrator |
 | `status_N.json` | `layer_N_99_stages/` | Stage workflow tracker |
 
 Copy orchestrators from a sibling entity and adapt all names/references.
@@ -296,7 +296,7 @@ stage_N_XX_<name>/
 - [ ] `0INDEX.md` created with contents
 - [ ] `README.md` created with overview
 - [ ] `agnostic-sync.sh` run (generates CLAUDE.md, AGENTS.md, GEMINI.md, OPENAI.md, .cursorrules)
-- [ ] `layer_N.orchestrator.gab.jsonld` created in `.0agnostic/06_context_avenue_web/01_aalang/`
+- [ ] `layer_N.orchestrator.gab.jsonld` created in `.0agnostic/06_context_avenue_web/file_based/01_aalang/`
 
 ### Config Directories (Entity Root)
 - [ ] `.0agnostic/` with numbered subdirs (01_knowledge, 02_rules/{static,dynamic}, 03_protocols, 04_episodic_memory/{sessions,changes}, 05_handoff_documents, 06_context_avenue_web/{01_aalang,...,08_hooks}, 07+_setup_dependant)
@@ -318,7 +318,7 @@ stage_N_XX_<name>/
 - [ ] Each stage has config dirs (.0agnostic, .1merge, .claude, .cursor, .gemini, .codex, .github)
 - [ ] Each stage has `outputs/` and `synthesis/` directories
 - [ ] Each stage has `0AGNOSTIC.md` + auto-generated tool files
-- [ ] Each stage has `stage_XX.orchestrator.gab.jsonld` in `.0agnostic/06_context_avenue_web/01_aalang/`
+- [ ] Each stage has `stage_XX.orchestrator.gab.jsonld` in `.0agnostic/06_context_avenue_web/file_based/01_aalang/`
 - [ ] `layer_N_99_stages.orchestrator.gab.jsonld` created
 - [ ] `status_N.json` created
 

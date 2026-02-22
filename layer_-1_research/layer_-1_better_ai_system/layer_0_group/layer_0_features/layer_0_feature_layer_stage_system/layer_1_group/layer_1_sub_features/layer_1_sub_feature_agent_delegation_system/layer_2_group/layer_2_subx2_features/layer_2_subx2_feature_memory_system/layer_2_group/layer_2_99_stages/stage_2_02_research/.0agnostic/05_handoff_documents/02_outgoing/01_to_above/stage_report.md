@@ -8,11 +8,16 @@
 
 ## Summary
 
-Comprehensive research into AI agent memory systems covering biological foundations, cognitive science mappings, implementation architectures, data structures, commercial platforms, and performance benchmarks. 24 research documents produced spanning ~350KB of distilled knowledge.
+Comprehensive research into AI agent memory systems covering biological foundations, cognitive science mappings, implementation architectures, data structures, commercial platforms, performance benchmarks, and layer-stage system comparisons. 38 research documents produced spanning ~600KB of distilled knowledge.
 
 ## Key Outputs
 
-- `outputs/by_topic/` — 24 research documents (00-23) covering the full landscape of AI agent memory
+- `outputs/by_topic/` — 38 research documents (00-37) covering the full landscape of AI agent memory
+  - Docs 00-20: Foundation (taxonomy, cognitive science, frameworks)
+  - Docs 21-23: Hierarchies (biological, data structure, AI systems)
+  - Docs 24-28: Deep dives (per-type implementations, SQL schemas)
+  - Docs 29-31: Real-world systems (Mem0, CrewAI, OASIS, AI tutors)
+  - Docs 32-37: Comparisons (layer-stage vs commercial systems)
 - `.0agnostic/01_knowledge/memory_systems/docs/core_ai_memory_architecture.md` — Distilled knowledge summary
 
 ## Key Findings
