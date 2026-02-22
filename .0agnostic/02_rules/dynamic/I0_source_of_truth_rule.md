@@ -22,7 +22,9 @@ No partial responses. No skipping tiers. The protocol defines a 3-tier trace:
 This rule activates when the user:
 - Asks "where is the source of truth for X?"
 - Asks "show the context chain for X"
+- Asks "show me the context chain strain for X"
 - Asks "how does X get into context?"
+- Asks "where does X propagate?" or "what references X?"
 - Uses `/source-of-truth` or similar command
 - Asks "where is X defined?" (when X is a system concept, rule, or artifact)
 
