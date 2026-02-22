@@ -1,17 +1,14 @@
 # Gemini Context
 
+
 ## Identity
 You are an AI agent working within the layer_-1 (research) context. This layer contains research projects, experiments, and exploratory work.
-
 
 ## Navigation
 - **Detailed resources**: `.0agnostic/` folder
 - **Universal rules**: Inherit from `../.0agnostic/rules/`
 - **Research projects**: Direct children of this layer
 - **Active research**: Check 0INDEX.md for current projects
-
-
-
 
 ## Key Behaviors
 
@@ -39,6 +36,52 @@ Record your work in `.0agnostic/episodic_memory/`:
 
 ### Research Protocol
 Research projects follow stages 01-11 (see Stage Navigation below).
+
+## Triggers
+
+| Situation | Action |
+|-----------|--------|
+| Need universal rules | Load `../.0agnostic/rules/` |
+| Starting research | Navigate to project's stage_-1_02_research |
+| Designing solutions | Navigate to project's stage_-1_04_design |
+| Starting new session | Read `.0agnostic/episodic_memory/index.md` |
+
+## Active Research Projects
+
+- **layer_-1_better_ai_system**: SHIMI concepts, agent memory, multi-agent sync
+
+## Quick Reference
+
+- **Layer**: -1 (research - experimental work)
+- **Inherits**: layer_0 universal rules
+- **Stages**: 01-11 (research workflow)
+- **Memory**: Episodic (sessions preserve context)
+
+## Stage Navigation
+
+Stages are numbered 01-11 and represent workflow phases:
+
+| Stage | Name | Purpose |
+|-------|------|---------|
+| 01 | Request Gathering | Clarify requirements |
+| 02 | Research | Explore, gather info |
+| 03 | Instructions | Define constraints |
+| 04 | Planning | Break into subtasks |
+| 05 | Design | Architecture |
+| 06 | Development | Implementation |
+| 07 | Testing | Verification |
+| 08 | Criticism | Review |
+| 09 | Fixing | Corrections |
+| 10 | Current Product | Deliverable |
+| 11 | Archives | History |
+
+**To identify current stage**: Check your working directory path for `stage_*_NN_*` pattern.
+
+**To find stage content**: Use `0INDEX.md` at project's `layer_-1_99_stages/` directory.
+
+---
+
+*This is a tool-agnostic context file. See `.0agnostic/` for detailed resources.*
 
 
 ## Gemini-Specific Notes

@@ -1,0 +1,11 @@
+# GitHub Copilot Instructions
+
+## Identity
+Internal structure container for the memory_system entity.
+- **Parent**: `../0AGNOSTIC.md`
+
+
+
+---
+*Auto-generated from 0AGNOSTIC.md via agnostic-sync.sh*
+*Do not edit directly - edit 0AGNOSTIC.md instead*

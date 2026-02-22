@@ -1,5 +1,7 @@
 # AutoGen Agent Context
 
+
+
 ## Identity
 
 You are an agent at **Layer 1** (Sub-Feature), **Sub-Feature**: Agent Delegation System.
@@ -8,33 +10,6 @@ You are an agent at **Layer 1** (Sub-Feature), **Sub-Feature**: Agent Delegation
 - **Scope**: Stage delegation, agent context models, manager-agent communication, stage reports, context chains, agent hierarchies
 - **Parent**: `../../../0AGNOSTIC.md` (layer_0_feature_layer_stage_system)
 - **Children**: memory_system, multi_agent_system (in `layer_2_group/layer_2_subx2_features/`)
-
-
-## Navigation
-
-### Children
-
-| Child | Purpose | Location |
-|-------|---------|----------|
-| memory_system | Context chains, navigation, dynamic memory | `layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_memory_system/` |
-| multi_agent_system | Agent hierarchies, orchestration, delegation patterns | `layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_multi_agent_system/` |
-
-### Key Locations
-
-| Content | Location |
-|---------|----------|
-| Entity source of truth | `0AGNOSTIC.md` (this file) |
-| Dashboard | `0INDEX.md` |
-| Stages | `layer_1_group/layer_1_99_stages/` |
-| On-demand resources | `.0agnostic/` (01_knowledge, 02_rules, 03_protocols, 04_episodic_memory, 05_handoff_documents, 06_context_avenue_web, 07+_setup_dependant) |
-| Tree of knowledge | `.0agnostic/01_knowledge/tree_of_knowledge/00_agent_delegation_knowledge/` |
-| Tree of needs | `layer_1_group/layer_1_99_stages/stage_1_01_request_gathering/outputs/requests/tree_of_needs/` |
-| Handoff documents | `.0agnostic/05_handoff_documents/` (stage overview, 01_incoming/{from_above,from_below}, 02_outgoing/{to_above,to_below}) |
-| Context avenue web | `.0agnostic/06_context_avenue_web/` (aalang, integration MDs, auto-memory, @imports, skills, agents, rules, hooks) |
-| Children | `layer_2_group/layer_2_subx2_features/` |
-
-
-
 
 ## Key Behaviors
 
@@ -55,6 +30,57 @@ These two domains are deeply coupled: delegation decisions depend on what contex
 - **Context chains**: How context traverses from root to leaf entities through the hierarchy.
 - **Three-tier knowledge**: Pointers (0AGNOSTIC.md) -> Distilled (.0agnostic/knowledge/) -> Full (stage outputs).
 
+## Triggers
+
+Load this context when:
+- User mentions: agent delegation, stage delegation, manager delegation, agent context, stage reports
+- Working on: How managers delegate to stage agents, what agents know, how agents coordinate
+- Entering: `layer_1_sub_feature_agent_delegation_system/`
+
+## AALang Agent Context
+
+### Local Agent Files
+
+**Directory**: `.0agnostic/06_context_avenue_web/01_aalang/`
+
+| File | Type | Purpose |
+|------|------|---------|
+| `layer_1.orchestrator.gab.jsonld` | Orchestrator | 5-mode-13-actor pattern for entity delegation management |
+| `agent_delegation_system.gab.jsonld` | GAB Agent | Main entity identity — capabilities, constraints, context model |
+| `stage_delegator.agent.jsonld` | Agent Stub | Lightweight purpose agent for delegation decisions |
+
+```json
+{
+  "@id": "ads:AgentDelegationOrchestrator",
+  "@type": "gab:LLMAgent",
+  "pattern": "5-mode-13-actor",
+  "purpose": "Orchestrate agent delegation system — manage stage agents, track delegation patterns",
+  "modes": ["ads:ReceiveMode", "ads:ResearchMode", "ads:DesignMode", "ads:ImplementMode", "ads:ReviewMode"]
+}
+```
+
+### How to Load Full Graph
+
+```bash
+# List all modes and their purposes
+jq '."@graph"[] | select(."@type" == "gab:Mode") | {id: ."@id", purpose: .purpose}' .0agnostic/06_context_avenue_web/01_aalang/layer_1.orchestrator.gab.jsonld
+
+# Load a specific mode's constraints
+jq '."@graph"[] | select(."@id" == "ads:ImplementMode")' .0agnostic/06_context_avenue_web/01_aalang/layer_1.orchestrator.gab.jsonld
+```
+
+### Parent Orchestrator
+
+**File**: `../../../../layer_0_orchestrator.gab.jsonld` (layer_0_feature_layer_stage_system)
+
+The entity-level orchestrator inherits from and is scoped by the parent feature's orchestrator.
+
+
+## Current Status
+
+**Phase**: active (stage 01 populated, universal artifacts produced, working example established) | **Last Updated**: 2026-02-20
+
+This entity has progressed through stages 01, 02, 04, and 06, producing universal artifacts at `.0agnostic/` (11 stage guides, 10 principles, 3 static rules, 2 dynamic rules, stage report protocol). Working example: context_chain_system (76 PASS tests).
 
 
 ## AutoGen-Specific Configuration

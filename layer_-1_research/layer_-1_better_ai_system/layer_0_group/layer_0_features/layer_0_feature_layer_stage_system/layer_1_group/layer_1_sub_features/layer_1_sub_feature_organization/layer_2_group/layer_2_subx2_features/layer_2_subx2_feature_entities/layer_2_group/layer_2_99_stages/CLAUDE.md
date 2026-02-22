@@ -3,15 +3,7 @@
 ## Identity
 Stages container for entities.
 - **Parent**: `../../0AGNOSTIC.md`
-
-
-
-
-
-
-
-
-
+- **Layer**: 2
 
 ## Claude-Specific Rules
 

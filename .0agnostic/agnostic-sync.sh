@@ -1,23 +1,32 @@
 #!/bin/bash
 #
-# agnostic-sync.sh - Transform 0AGNOSTIC.md into tool-specific context files
+# agnostic-sync.sh v2 — Transform 0AGNOSTIC.md into tool-specific context files
 #
 # Usage: ./agnostic-sync.sh [directory]
 #        If no directory specified, uses current directory
 #
 # Generates:
-#   - CLAUDE.md (Claude Code format)
-#   - AGENTS.md (AutoGen format)
-#   - GEMINI.md (Google Gemini format)
-#   - OPENAI.md (OpenAI format)
+#   - CLAUDE.md      (Claude Code — full STATIC content)
+#   - AGENTS.md      (AutoGen / Codex — full STATIC content)
+#   - GEMINI.md      (Google Gemini — full STATIC content)
+#   - OPENAI.md      (OpenAI — full STATIC content)
+#   - .cursorrules   (Cursor IDE — lean: Identity + Navigation)
+#   - .github/copilot-instructions.md (GitHub Copilot — medium)
+#
+# Supports three 0AGNOSTIC.md formats:
+#   - New: Has # ═══ STATIC CONTEXT / # ═══ DYNAMIC CONTEXT markers
+#   - Old: Has ## sections but no markers
+#   - Minimal: Short container files
+#
+# Integrates .1merge/ for tool-specific overrides:
+#   - .1merge/.1{tool}_merge/1_overrides/tool_boilerplate.md → replaces default
+#   - .1merge/.1{tool}_merge/2_additions/tool_additions.md → appended
 #
 
 set -e
 
-# Directory to process
 DIR="${1:-.}"
 
-# Check if 0AGNOSTIC.md exists
 if [ ! -f "$DIR/0AGNOSTIC.md" ]; then
     echo "Error: 0AGNOSTIC.md not found in $DIR"
     exit 1
@@ -25,65 +34,176 @@ fi
 
 echo "Processing 0AGNOSTIC.md in $DIR..."
 
-# Read 0AGNOSTIC.md content
-AGNOSTIC_CONTENT=$(cat "$DIR/0AGNOSTIC.md")
+# ═══════════════════════════════════════════════
+# Format Detection
+# ═══════════════════════════════════════════════
 
-# Extract key sections (use ^## [^#] to match only h2 headings, not h3/h4)
-IDENTITY=$(echo "$AGNOSTIC_CONTENT" | sed -n '/^## Identity/,/^## [^#]/p' | head -n -1)
-NAVIGATION=$(echo "$AGNOSTIC_CONTENT" | sed -n '/^## Navigation/,/^## [^#]/p' | head -n -1)
-CRITICAL_RULES=$(echo "$AGNOSTIC_CONTENT" | sed -n '/^## Critical Rules/,/^## [^#]/p' | head -n -1)
-BEHAVIORS=$(echo "$AGNOSTIC_CONTENT" | sed -n '/^## Key Behaviors/,/^## [^#]/p' | head -n -1)
-TRIGGERS=$(echo "$AGNOSTIC_CONTENT" | sed -n '/^## Triggers/,/^## [^#]/p' | head -n -1)
+FORMAT="minimal"
+if grep -q '^# ═══ STATIC CONTEXT' "$DIR/0AGNOSTIC.md"; then
+    FORMAT="new"
+elif grep -q '^## ' "$DIR/0AGNOSTIC.md"; then
+    FORMAT="old"
+fi
+echo "Detected format: $FORMAT"
 
-# Validation: Check if critical sections were extracted
-WARNINGS=0
+# ═══════════════════════════════════════════════
+# Content Extraction
+# ═══════════════════════════════════════════════
 
-if [ -z "$IDENTITY" ] || [ ${#IDENTITY} -lt 10 ]; then
-    echo "WARNING: ## Identity section not found or too short"
-    WARNINGS=$((WARNINGS + 1))
+# Extract ALL STATIC content from 0AGNOSTIC.md
+# - New format: everything between STATIC and DYNAMIC markers
+#   Strips: title line, marker lines, sub-group markers (# ── ... ──)
+#   Keeps: ALL ## sections (Identity, Key Behaviors, Inputs, Outputs, Triggers, Current Status, etc.)
+# - Old format: everything except title line
+# - Minimal: entire file
+case "$FORMAT" in
+    new)
+        STATIC_CONTENT=$(awk '
+            /^# ═══ STATIC CONTEXT/ { in_static=1; next }
+            /^# ═══ DYNAMIC CONTEXT/ { exit }
+            in_static && /^# ── .* ──/ { next }
+            in_static { print }
+        ' "$DIR/0AGNOSTIC.md")
+        ;;
+    old)
+        STATIC_CONTENT=$(awk 'NR==1 && /^# / { next } { print }' "$DIR/0AGNOSTIC.md")
+        ;;
+    minimal)
+        STATIC_CONTENT=$(cat "$DIR/0AGNOSTIC.md")
+        ;;
+esac
+
+# Trim leading blank lines from STATIC_CONTENT
+STATIC_CONTENT=$(echo "$STATIC_CONTENT" | sed '/./,$!d')
+
+# ═══════════════════════════════════════════════
+# Validation
+# ═══════════════════════════════════════════════
+
+STATIC_LEN=${#STATIC_CONTENT}
+if [ "$STATIC_LEN" -lt 20 ]; then
+    echo "WARNING: STATIC content is very short ($STATIC_LEN chars). Check 0AGNOSTIC.md format."
 fi
 
-if [ -z "$NAVIGATION" ] || [ ${#NAVIGATION} -lt 10 ]; then
-    echo "WARNING: ## Navigation section not found or too short"
-    WARNINGS=$((WARNINGS + 1))
+if [ "$FORMAT" != "minimal" ] && ! echo "$STATIC_CONTENT" | grep -q '^## Identity'; then
+    echo "WARNING: ## Identity section not found in STATIC content"
 fi
 
-if [ -z "$CRITICAL_RULES" ]; then
-    echo "INFO: ## Critical Rules section not found (optional)"
-fi
+# ═══════════════════════════════════════════════
+# Section Extraction (for lean/medium formats)
+# ═══════════════════════════════════════════════
 
-if [ -z "$BEHAVIORS" ]; then
-    echo "INFO: ## Key Behaviors section not found (optional)"
-fi
+# Extract specific named ## sections from content
+# Usage: extract_named_sections "$content" "Identity|Navigation|Triggers"
+# Section names are pipe-separated to support multi-word names like "Key Behaviors"
+extract_named_sections() {
+    local content="$1"
+    local names="$2"
 
-if [ -z "$TRIGGERS" ]; then
-    echo "INFO: ## Triggers section not found (optional)"
-fi
+    echo "$content" | awk -v names="$names" '
+        BEGIN { n = split(names, arr, "|") }
+        /^## [^#]/ {
+            printing = 0
+            section = substr($0, 4)
+            for (i = 1; i <= n; i++) {
+                if (section == arr[i]) { printing = 1; break }
+            }
+        }
+        printing { print }
+    '
+}
 
-if [ $WARNINGS -gt 1 ]; then
-    echo "ERROR: Multiple critical sections missing. Check 0AGNOSTIC.md format."
-    echo "Required sections: ## Identity, ## Navigation"
-    exit 1
-fi
+# ═══════════════════════════════════════════════
+# .1merge Integration
+# ═══════════════════════════════════════════════
 
-# Generate CLAUDE.md
-cat > "$DIR/CLAUDE.md" << 'CLAUDE_EOF'
-# Claude Code Context
+# Check for tool-specific boilerplate override
+# Returns 0 and prints content if override exists, returns 1 otherwise
+get_tool_boilerplate() {
+    local tool="$1"
+    local merge_dir="$DIR/.1merge/.1${tool}_merge"
 
-CLAUDE_EOF
+    if [ -f "$merge_dir/1_overrides/tool_boilerplate.md" ]; then
+        cat "$merge_dir/1_overrides/tool_boilerplate.md"
+        return 0
+    fi
+    return 1
+}
 
-echo "$IDENTITY" >> "$DIR/CLAUDE.md"
-echo "" >> "$DIR/CLAUDE.md"
-echo "$NAVIGATION" >> "$DIR/CLAUDE.md"
-echo "" >> "$DIR/CLAUDE.md"
-echo "$CRITICAL_RULES" >> "$DIR/CLAUDE.md"
-echo "" >> "$DIR/CLAUDE.md"
-echo "$BEHAVIORS" >> "$DIR/CLAUDE.md"
-echo "" >> "$DIR/CLAUDE.md"
-echo "$TRIGGERS" >> "$DIR/CLAUDE.md"
-echo "" >> "$DIR/CLAUDE.md"
+# Check for tool-specific additions (always appended)
+get_tool_additions() {
+    local tool="$1"
+    local merge_dir="$DIR/.1merge/.1${tool}_merge"
 
-cat >> "$DIR/CLAUDE.md" << 'CLAUDE_RULES'
+    if [ -f "$merge_dir/2_additions/tool_additions.md" ]; then
+        echo ""
+        cat "$merge_dir/2_additions/tool_additions.md"
+    fi
+}
+
+# ═══════════════════════════════════════════════
+# Generation Functions
+# ═══════════════════════════════════════════════
+
+# Generate a full context file (all STATIC content + tool boilerplate)
+# Used for: CLAUDE.md, AGENTS.md, GEMINI.md, OPENAI.md
+generate_full() {
+    local file="$1"
+    local title="$2"
+    local tool="$3"
+    local default_bp="$4"
+
+    {
+        echo "# $title"
+        echo ""
+        echo "$STATIC_CONTENT"
+        echo ""
+        # Tool-specific boilerplate (from .1merge override or default)
+        if ! get_tool_boilerplate "$tool" 2>/dev/null; then
+            echo "$default_bp"
+        fi
+        # Tool-specific additions (from .1merge, if any)
+        get_tool_additions "$tool" 2>/dev/null
+        echo ""
+        echo "---"
+        echo "*Auto-generated from 0AGNOSTIC.md via agnostic-sync.sh*"
+        echo "*Do not edit directly - edit 0AGNOSTIC.md instead*"
+    } > "$file"
+
+    echo "Generated: $file"
+}
+
+# Generate a lean context file (selected sections only + tool boilerplate)
+# Used for: .cursorrules, .github/copilot-instructions.md
+generate_lean() {
+    local file="$1"
+    local title="$2"
+    local tool="$3"
+    local sections="$4"  # pipe-separated, e.g. "Identity|Navigation"
+
+    {
+        echo "# $title"
+        echo ""
+        extract_named_sections "$STATIC_CONTENT" "$sections"
+        echo ""
+        # Tool-specific boilerplate
+        get_tool_boilerplate "$tool" 2>/dev/null || true
+        # Tool-specific additions
+        get_tool_additions "$tool" 2>/dev/null
+        echo ""
+        echo "---"
+        echo "*Auto-generated from 0AGNOSTIC.md via agnostic-sync.sh*"
+        echo "*Do not edit directly - edit 0AGNOSTIC.md instead*"
+    } > "$file"
+
+    echo "Generated: $file"
+}
+
+# ═══════════════════════════════════════════════
+# Default Boilerplates (used when no .1merge override exists)
+# ═══════════════════════════════════════════════
+
+read -r -d '' CLAUDE_BP << 'BPEOF' || true
 
 ## Claude-Specific Rules
 
@@ -100,30 +220,9 @@ This file is auto-generated from 0AGNOSTIC.md. Edit 0AGNOSTIC.md to make changes
 - Read .0agnostic/episodic_memory/index.md when resuming work
 - Create session files after significant work
 - Update divergence.log when modifying outputs
+BPEOF
 
----
-*Auto-generated from 0AGNOSTIC.md via agnostic-sync.sh*
-*Do not edit directly - edit 0AGNOSTIC.md instead*
-CLAUDE_RULES
-
-echo "Generated: $DIR/CLAUDE.md"
-
-# Generate AGENTS.md (AutoGen format)
-cat > "$DIR/AGENTS.md" << 'AGENTS_EOF'
-# AutoGen Agent Context
-
-AGENTS_EOF
-
-echo "$IDENTITY" >> "$DIR/AGENTS.md"
-echo "" >> "$DIR/AGENTS.md"
-echo "$NAVIGATION" >> "$DIR/AGENTS.md"
-echo "" >> "$DIR/AGENTS.md"
-echo "$CRITICAL_RULES" >> "$DIR/AGENTS.md"
-echo "" >> "$DIR/AGENTS.md"
-echo "$BEHAVIORS" >> "$DIR/AGENTS.md"
-echo "" >> "$DIR/AGENTS.md"
-
-cat >> "$DIR/AGENTS.md" << 'AGENTS_RULES'
+read -r -d '' AGENTS_BP << 'BPEOF' || true
 
 ## AutoGen-Specific Configuration
 
@@ -143,29 +242,9 @@ agent_config = {
 - Use atomic writes (temp file → rename)
 - Log changes to divergence.log
 - Read session files to understand previous work
+BPEOF
 
----
-*Auto-generated from 0AGNOSTIC.md via agnostic-sync.sh*
-*Do not edit directly - edit 0AGNOSTIC.md instead*
-AGENTS_RULES
-
-echo "Generated: $DIR/AGENTS.md"
-
-# Generate GEMINI.md
-cat > "$DIR/GEMINI.md" << 'GEMINI_EOF'
-# Gemini Context
-
-GEMINI_EOF
-
-echo "$IDENTITY" >> "$DIR/GEMINI.md"
-echo "" >> "$DIR/GEMINI.md"
-echo "$NAVIGATION" >> "$DIR/GEMINI.md"
-echo "" >> "$DIR/GEMINI.md"
-echo "$CRITICAL_RULES" >> "$DIR/GEMINI.md"
-echo "" >> "$DIR/GEMINI.md"
-echo "$BEHAVIORS" >> "$DIR/GEMINI.md"
-
-cat >> "$DIR/GEMINI.md" << 'GEMINI_RULES'
+read -r -d '' GEMINI_BP << 'BPEOF' || true
 
 ## Gemini-Specific Notes
 
@@ -181,29 +260,9 @@ Maintain episodic memory in .0agnostic/episodic_memory/:
 - sessions/ - Timestamped session records
 - changes/ - Divergence and conflict logs
 - index.md - Searchable session index
+BPEOF
 
----
-*Auto-generated from 0AGNOSTIC.md via agnostic-sync.sh*
-*Do not edit directly - edit 0AGNOSTIC.md instead*
-GEMINI_RULES
-
-echo "Generated: $DIR/GEMINI.md"
-
-# Generate OPENAI.md
-cat > "$DIR/OPENAI.md" << 'OPENAI_EOF'
-# OpenAI Context
-
-OPENAI_EOF
-
-echo "$IDENTITY" >> "$DIR/OPENAI.md"
-echo "" >> "$DIR/OPENAI.md"
-echo "$NAVIGATION" >> "$DIR/OPENAI.md"
-echo "" >> "$DIR/OPENAI.md"
-echo "$CRITICAL_RULES" >> "$DIR/OPENAI.md"
-echo "" >> "$DIR/OPENAI.md"
-echo "$BEHAVIORS" >> "$DIR/OPENAI.md"
-
-cat >> "$DIR/OPENAI.md" << 'OPENAI_RULES'
+read -r -d '' OPENAI_BP << 'BPEOF' || true
 
 ## OpenAI-Specific Notes
 
@@ -217,18 +276,33 @@ When using OpenAI function calling:
 - 0AGNOSTIC.md is lean (<400 tokens)
 - Load .0agnostic/ resources on-demand
 - Avoid loading everything upfront
+BPEOF
 
----
-*Auto-generated from 0AGNOSTIC.md via agnostic-sync.sh*
-*Do not edit directly - edit 0AGNOSTIC.md instead*
-OPENAI_RULES
+# ═══════════════════════════════════════════════
+# Generate All Files
+# ═══════════════════════════════════════════════
 
-echo "Generated: $DIR/OPENAI.md"
+# Full context files (all STATIC content + tool boilerplate)
+generate_full "$DIR/CLAUDE.md" "Claude Code Context" "claude" "$CLAUDE_BP"
+generate_full "$DIR/AGENTS.md" "AutoGen Agent Context" "agents" "$AGENTS_BP"
+generate_full "$DIR/GEMINI.md" "Gemini Context" "gemini" "$GEMINI_BP"
+generate_full "$DIR/OPENAI.md" "OpenAI Context" "openai" "$OPENAI_BP"
+
+# Lean context files (selected sections only)
+generate_lean "$DIR/.cursorrules" "Cursor Rules" "cursor" "Identity|Navigation"
+
+# Copilot needs .github/ directory
+mkdir -p "$DIR/.github"
+generate_lean "$DIR/.github/copilot-instructions.md" "GitHub Copilot Instructions" "copilot" "Identity|Triggers|Navigation"
 
 echo ""
 echo "Sync complete! Generated tool-specific files from 0AGNOSTIC.md"
+echo "Format detected: $FORMAT"
+echo "STATIC content: $STATIC_LEN chars"
 echo "Files created:"
 echo "  - CLAUDE.md"
 echo "  - AGENTS.md"
 echo "  - GEMINI.md"
 echo "  - OPENAI.md"
+echo "  - .cursorrules"
+echo "  - .github/copilot-instructions.md"

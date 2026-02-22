@@ -3,12 +3,7 @@
 ## Identity
 Stages container for layer_stage_system.
 - **Parent**: `../../0AGNOSTIC.md`
-
-
-
-
-
-
+- **Layer**: 0
 
 ## Gemini-Specific Notes
 

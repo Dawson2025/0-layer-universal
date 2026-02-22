@@ -1,13 +1,11 @@
 # Gemini Context
 
+
 ## Identity
 
 **Role**: Root Manager
 **Scope**: Coordinates all layers in the AI context system
 **Layer**: Root (contains layer_0, layer_1, layer_-1_research)
-
-
-
 
 ## Critical Rules
 
@@ -54,8 +52,47 @@ When any nested repository exists in a child path:
    - properly registered as a submodule, or
    - de-initialized as a standalone repo and converted to regular tracked files.
 
+## Triggers
+
+| Situation | Action |
+|-----------|--------|
+| Creating entities with stages | Load skill: entity-creation |
+| Modifying AI context | Show propagation chain diagram first |
+| Working with layers/stages | Load skill: context-gathering |
+| Need rules | Load `.claude/skills/` or reference `.0agnostic/02_rules/` |
+
+## Resources
+
+| Resource | Location | Purpose |
+|----------|----------|---------|
+| Skills | `.claude/skills/SKILLS.md` | Task-specific instructions |
+| Rules | `.0agnostic/02_rules/` | Universal rules |
+| Knowledge | `.0agnostic/01_knowledge/` | Reference docs |
+
+## Children
+
+| Layer | Purpose |
+|-------|---------|
+| `layer_0/` | Universal (applies to ALL) |
+| `layer_1/` | Projects |
+| `layer_-1_research/` | Research projects |
+
+---
+
+*This is the source of truth for 0_layer_universal identity.*
+*Tool-specific files (CLAUDE.md, GEMINI.md, AGENTS.md) are generated from this.*
+
+## Mandatory Checkpoint Cadence
+
+1. Commit and push for each new item.
+2. Commit and push for each update.
+3. In submodule chains, push deepest children first, then parent pointers to root.
 
 
+Active chain map (school -> module_03):
+- `0_layer_universal` tracks `layer_1/layer_1_projects/layer_1_project_school` as submodule.
+- `layer_1_project_school` currently contains one active nested gitlink at `.../school-machine-learning-module03-teamwork`.
+- If any additional nested repos appear, they must be declared in `.gitmodules` at the same repository level before commit/push.
 
 ## Gemini-Specific Notes
 

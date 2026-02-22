@@ -3,12 +3,7 @@
 ## Identity
 Stages container for tool_and_app_agnostic.
 - **Parent**: `../../0AGNOSTIC.md`
-
-
-
-
-
-
+- **Layer**: 1
 
 ## Gemini-Specific Notes
 
