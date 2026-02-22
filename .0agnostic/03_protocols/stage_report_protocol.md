@@ -54,7 +54,26 @@ Every stage agent writes a `stage_report.md` in its `outputs/` directory before 
 5. Update the report, don't append — each write replaces the previous version
 6. The manager may update `0INDEX.md` after reading your report
 
+## Distribution via sync-handoffs.sh
+
+Stage reports are automatically distributed to sibling stages and the entity manager by running:
+
+```bash
+bash .0agnostic/01_knowledge/layer_stage_system/resources/tools/sync-handoffs.sh [entity_dir]
+bash .0agnostic/01_knowledge/layer_stage_system/resources/tools/sync-handoffs.sh --recursive [root_dir]
+```
+
+**What it does**:
+1. Finds each stage's report (checks 3 locations: `.0agnostic/05_handoff_documents/02_outgoing/01_to_above/stage_report.md`, `outputs/reports/stage_report.md`, `outputs/stage_report.md`)
+2. Copies to entity manager's `01_incoming/03_from_below/stage_reports/` with naming: `layer_N.stage_NN_name.stage_report.md`
+3. Copies to sibling stages' `01_incoming/02_from_sides/01_from_left/` or `02_from_right/` (relative to the sibling)
+4. Distributes entity layer reports to each stage's `01_incoming/01_from_above/`
+5. Creates manager instruction templates in stages that don't have one
+
+**Run after**: Updating any stage report, completing a stage, or creating new entities.
+
 ## Related
 
 - **Stage Report Rule**: `../02_rules/static/STAGE_REPORT_RULE.md` — mandates that all agents write stage reports
 - **Stage Guides**: `../01_knowledge/layer_stage_system/stage_guides/` — what each stage agent does
+- **Sync Script**: `../01_knowledge/layer_stage_system/resources/tools/sync-handoffs.sh` — distributes reports across the hierarchy
