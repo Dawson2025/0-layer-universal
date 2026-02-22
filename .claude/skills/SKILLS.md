@@ -14,6 +14,7 @@ Skills provide task-specific instructions with references to knowledge. Load the
 | context-gathering | Understanding current location in hierarchy | `context-gathering/` |
 | handoff-creation | Creating handoff documents | `handoff-creation/` |
 | stage-workflow | Working through stages | `stage-workflow/` |
+| perplexity-extract | Extracting content + citations from Perplexity search pages | `perplexity-extract/` |
 
 ---
 
