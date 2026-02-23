@@ -44,6 +44,38 @@
 | Form automation requested | Follow interactive browsing workflow in `.0agnostic/03_protocols/` |
 | Content extraction needed | Follow content extraction workflow in `.0agnostic/03_protocols/` |
 | Setup/troubleshooting | Read `.0agnostic/01_knowledge/setup/` |
+| Entering this directory | Read `.0agnostic/06_context_avenue_web/00_context_avenue_web_registry/REGISTRY.md` |
+
+## Resources Available
+
+On-demand resources in `.0agnostic/` — read as needed:
+
+### Skills
+| Skill | Trigger | Definition |
+|-------|---------|------------|
+| `/perplexity-extract` | Perplexity URL provided | `.claude/skills/perplexity-extract/SKILL.md` |
+
+### Rules (`.0agnostic/02_rules/static/`)
+| Rule | Importance | Description |
+|------|------------|-------------|
+| `browser_automation_rules.md` | I1 (High) | 10 rules: tab context first, fresh tabs, no JS dialogs, wait after nav, ref over coords, scroll before extract, etc. |
+
+### Knowledge (`.0agnostic/01_knowledge/`)
+| Topic | Description |
+|-------|-------------|
+| `perplexity_extraction/` | React fiber method — the ONLY way to extract citation URLs from Perplexity |
+| `browser_automation/` | Tool reference for all Claude in Chrome MCP tools and computer actions |
+| `setup/` | MCP server setup, troubleshooting, concurrent browser config, 3 Python scripts |
+
+### Protocols (`.0agnostic/03_protocols/`)
+| Protocol | Description |
+|----------|-------------|
+| `content_extraction_workflow.md` | Extract content from articles, products, search results, docs |
+| `page_analysis_workflow.md` | Analyze page structure, accessibility, forms, navigation |
+| `interactive_browsing_workflow.md` | Form filling, multi-step nav, clicking, keyboard, GIF recording |
+
+### Context Registry
+Full avenue manifest: `.0agnostic/06_context_avenue_web/00_context_avenue_web_registry/REGISTRY.md`
 
 # ── Current Status ──
 

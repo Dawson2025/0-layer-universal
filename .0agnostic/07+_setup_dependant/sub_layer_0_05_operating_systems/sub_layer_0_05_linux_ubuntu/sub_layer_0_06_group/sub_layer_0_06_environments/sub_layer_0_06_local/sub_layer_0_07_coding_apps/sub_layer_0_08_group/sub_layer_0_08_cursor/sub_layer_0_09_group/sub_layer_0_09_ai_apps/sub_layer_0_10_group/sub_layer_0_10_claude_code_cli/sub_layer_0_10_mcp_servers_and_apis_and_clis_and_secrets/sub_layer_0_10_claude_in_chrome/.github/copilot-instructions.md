@@ -18,7 +18,7 @@
 | Form automation requested | Follow interactive browsing workflow in `.0agnostic/03_protocols/` |
 | Content extraction needed | Follow content extraction workflow in `.0agnostic/03_protocols/` |
 | Setup/troubleshooting | Read `.0agnostic/01_knowledge/setup/` |
-
+| Entering this directory | Read `.0agnostic/06_context_avenue_web/00_context_avenue_web_registry/REGISTRY.md` |
 
 
 
