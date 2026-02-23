@@ -295,6 +295,92 @@ generate_lean "$DIR/.cursorrules" "Cursor Rules" "cursor" "Identity|Navigation"
 mkdir -p "$DIR/.github"
 generate_lean "$DIR/.github/copilot-instructions.md" "GitHub Copilot Instructions" "copilot" "Identity|Triggers|Navigation"
 
+# ═══════════════════════════════════════════════
+# .0agnostic/ Content Validation
+# ═══════════════════════════════════════════════
+# Warns about .0agnostic/ content not referenced in 0AGNOSTIC.md
+# Per: .0agnostic/02_rules/static/agnostic_update_protocol.md
+
+WARN_COUNT=0
+
+if [ -d "$DIR/.0agnostic" ]; then
+    echo ""
+    echo "Validating .0agnostic/ references in 0AGNOSTIC.md..."
+
+    AGNOSTIC_TEXT=$(cat "$DIR/0AGNOSTIC.md")
+
+    # Check knowledge topics (directories in 01_knowledge/)
+    if [ -d "$DIR/.0agnostic/01_knowledge" ]; then
+        for topic_dir in "$DIR"/.0agnostic/01_knowledge/*/; do
+            [ -d "$topic_dir" ] || continue
+            topic=$(basename "$topic_dir")
+            # Skip if topic dir only has .gitkeep
+            real_files=$(find "$topic_dir" -type f ! -name '.gitkeep' 2>/dev/null | head -1)
+            [ -z "$real_files" ] && continue
+            if ! echo "$AGNOSTIC_TEXT" | grep -qi "$topic"; then
+                echo "  WARNING: Knowledge topic '$topic' has content but is not referenced in 0AGNOSTIC.md"
+                WARN_COUNT=$((WARN_COUNT + 1))
+            fi
+        done
+    fi
+
+    # Check rules (files in 02_rules/static/ and 02_rules/dynamic/)
+    for rules_subdir in static dynamic; do
+        if [ -d "$DIR/.0agnostic/02_rules/$rules_subdir" ]; then
+            for rule_file in "$DIR"/.0agnostic/02_rules/$rules_subdir/*.md; do
+                [ -f "$rule_file" ] || continue
+                rule_name=$(basename "$rule_file")
+                if ! echo "$AGNOSTIC_TEXT" | grep -qi "$rule_name"; then
+                    # Also check without .md extension and with underscores as spaces
+                    rule_stem="${rule_name%.md}"
+                    rule_words=$(echo "$rule_stem" | tr '_' ' ')
+                    if ! echo "$AGNOSTIC_TEXT" | grep -qi "$rule_stem" && ! echo "$AGNOSTIC_TEXT" | grep -qi "$rule_words"; then
+                        echo "  WARNING: Rule '$rules_subdir/$rule_name' is not referenced in 0AGNOSTIC.md"
+                        WARN_COUNT=$((WARN_COUNT + 1))
+                    fi
+                fi
+            done
+        fi
+    done
+
+    # Check protocols (files in 03_protocols/)
+    if [ -d "$DIR/.0agnostic/03_protocols" ]; then
+        for proto_file in "$DIR"/.0agnostic/03_protocols/*.md; do
+            [ -f "$proto_file" ] || continue
+            proto_name=$(basename "$proto_file")
+            if ! echo "$AGNOSTIC_TEXT" | grep -qi "$proto_name"; then
+                proto_stem="${proto_name%.md}"
+                proto_words=$(echo "$proto_stem" | tr '_' ' ')
+                if ! echo "$AGNOSTIC_TEXT" | grep -qi "$proto_stem" && ! echo "$AGNOSTIC_TEXT" | grep -qi "$proto_words"; then
+                    echo "  WARNING: Protocol '$proto_name' is not referenced in 0AGNOSTIC.md"
+                    WARN_COUNT=$((WARN_COUNT + 1))
+                fi
+            fi
+        done
+    fi
+
+    # Check skills (in 06_context_avenue_web/01_file_based/05_skills/)
+    SKILLS_DIR="$DIR/.0agnostic/06_context_avenue_web/01_file_based/05_skills"
+    if [ -d "$SKILLS_DIR" ]; then
+        for skill_file in "$SKILLS_DIR"/*.md; do
+            [ -f "$skill_file" ] || continue
+            skill_name=$(basename "$skill_file" .md)
+            if ! echo "$AGNOSTIC_TEXT" | grep -qi "$skill_name"; then
+                echo "  WARNING: Skill '$skill_name' is not referenced in 0AGNOSTIC.md"
+                WARN_COUNT=$((WARN_COUNT + 1))
+            fi
+        done
+    fi
+
+    if [ "$WARN_COUNT" -gt 0 ]; then
+        echo ""
+        echo "⚠ Found $WARN_COUNT unreferenced .0agnostic/ item(s)."
+        echo "  Update 0AGNOSTIC.md to reference them (see: .0agnostic/02_rules/static/agnostic_update_protocol.md)"
+    else
+        echo "  All .0agnostic/ content is referenced in 0AGNOSTIC.md ✓"
+    fi
+fi
+
 echo ""
 echo "Sync complete! Generated tool-specific files from 0AGNOSTIC.md"
 echo "Format detected: $FORMAT"
@@ -306,3 +392,7 @@ echo "  - GEMINI.md"
 echo "  - OPENAI.md"
 echo "  - .cursorrules"
 echo "  - .github/copilot-instructions.md"
+if [ "$WARN_COUNT" -gt 0 ]; then
+    echo ""
+    echo "Warnings: $WARN_COUNT (see above)"
+fi
