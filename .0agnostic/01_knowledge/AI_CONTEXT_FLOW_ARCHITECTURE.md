@@ -676,6 +676,12 @@ entity_99_stages/
 
 ---
 
+## See Also
+
+- **Bottom-up context propagation**: `CONTEXT_PROPAGATION_DESIGN.md` — how work products consolidate within stages and propagate upward through the hierarchy (stage outputs → reports → entity → parent)
+
+---
+
 *This architecture ensures AI agents always have context loaded through
 the layer cascade, with CRITICAL RULES enforced on every API call,
 and .0agnostic/ serving as the sync source for all tool-specific files.*
