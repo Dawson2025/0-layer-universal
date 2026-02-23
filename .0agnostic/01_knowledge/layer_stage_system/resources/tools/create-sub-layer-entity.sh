@@ -8,7 +8,8 @@ set -e
 
 ENTITY="$1"
 N="$2"
-N1=$((N+1))
+N1=$((10#$N+1))
+N1=$(printf "%02d" "$N1")
 
 if [ -z "$ENTITY" ] || [ -z "$N" ]; then
   echo "Usage: $0 <entity_dir> <layer_num>"
