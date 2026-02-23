@@ -1,0 +1,16 @@
+# Cursor Rules
+
+## Identity
+
+**Entity**: Coding Apps
+**Sub-Layer**: 0.07
+**Type**: Increased Specificity (narrows from Local Environment → Coding applications)
+**Scope**: All coding applications and their AI integrations on the local environment
+
+**Specificity Chain**: OS (05) → Linux Ubuntu (05) → Environments (06) → Local (06) → **Coding Apps (07)**
+
+
+
+---
+*Auto-generated from 0AGNOSTIC.md via agnostic-sync.sh*
+*Do not edit directly - edit 0AGNOSTIC.md instead*

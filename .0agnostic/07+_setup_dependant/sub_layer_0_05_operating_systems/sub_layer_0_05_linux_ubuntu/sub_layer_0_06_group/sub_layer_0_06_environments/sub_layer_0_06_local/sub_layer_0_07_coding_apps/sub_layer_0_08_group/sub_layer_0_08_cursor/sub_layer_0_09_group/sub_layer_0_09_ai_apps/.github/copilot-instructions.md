@@ -1,0 +1,16 @@
+# GitHub Copilot Instructions
+
+## Identity
+
+**Entity**: AI Apps Category
+**Sub-Layer**: 0.09
+**Type**: Increased Specificity (narrows from Coding Apps → AI-powered coding tools)
+**Scope**: All AI-powered coding assistants and their shared infrastructure
+
+**Specificity Chain**: OS (05) → Linux Ubuntu (05) → Environments (06) → Local (06) → Coding Apps (07) → Cursor (08) → **AI Apps (09)**
+
+
+
+---
+*Auto-generated from 0AGNOSTIC.md via agnostic-sync.sh*
+*Do not edit directly - edit 0AGNOSTIC.md instead*
