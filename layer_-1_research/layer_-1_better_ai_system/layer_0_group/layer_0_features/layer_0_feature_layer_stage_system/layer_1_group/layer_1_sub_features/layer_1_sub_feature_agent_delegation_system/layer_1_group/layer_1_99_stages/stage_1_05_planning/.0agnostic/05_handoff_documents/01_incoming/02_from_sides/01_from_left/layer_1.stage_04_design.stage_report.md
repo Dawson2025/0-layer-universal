@@ -1,33 +1,30 @@
 # Stage Report: 04_design
 
 ## Status
-implicit
+active
 
 ## Last Updated
-2026-02-20
+2026-02-21
 
 ## Summary
-7 key design decisions for agent delegation made through iterative development, resulting in the stage agent 0AGNOSTIC.md pattern — a two-part template (operational guidance + current state summary) that defines what a stage agent is, what it does, and what exists in its stage.
+8 architecture decisions for agent delegation — 7 made implicitly through development (0AGNOSTIC.md pattern, two-halves, stage reports, scope boundaries, universal guides), plus 1 formal design: context propagation (consolidation funnel + cross-level connection map). All codified as universal artifacts.
 
 ## Key Outputs
-- No formal design documents in `outputs/` — decisions documented in 0AGNOSTIC.md Current State section
-- Design decisions codified in universal artifacts: 11 stage guides, stage agent template, 9 delegation principles, Scope Boundary Rule
-- Working example: context_chain_system stages 01-11
+- `outputs/design_decisions/context_propagation_design.md`: Context propagation design decision (references universal artifact at root `.0agnostic/01_knowledge/CONTEXT_PROPAGATION_DESIGN.md`)
+- 7 implicit decisions documented in 0AGNOSTIC.md Current State Detail
 
 ## Findings
-- **0AGNOSTIC.md as stage identity**: Loads as static context, tool-agnostic, single source of truth (rejected: JSON-LD only, README.md)
-- **Two-halves pattern** (Principle 9): Agents need both "how to work" and "what's here" from a single file (rejected: separate files for guidance vs state)
-- **Stage reports for async communication**: Managers read reports, not stage outputs (rejected: real-time messaging only, shared state files)
-- **Scope boundary enforcement via IS/IS NOT**: Explicit NOT list prevents scope creep (rejected: implicit boundaries)
-- **Universal stage guides + entity templates**: Universal guides define what ANY stage does; templates instantiated per-entity (rejected: per-entity everything, purely universal)
-- **Scope boundary decisions** (Principle 8): Three-option framework — do it yourself, delegate, or instantiate (rejected: no framework, always delegate, always self-handle)
-- **Scope boundaries span layers AND stages**: Single rule covers both dimensions (rejected: separate rules for layers vs stages)
+- **Context propagation design**: Stages and entities follow the same consolidation funnel — outputs → output_report → .0agnostic → stage_report → 0AGNOSTIC.md
+- **Entity consolidation**: Entities need stages_report.md + child_layers_report.md to consolidate incoming reports before producing their own layer_report.md
+- **0AGNOSTIC.md as entry point**: The most consolidated document at any level — comes LAST in the funnel, not first
+- **Stage reports in handoff docs**: Canonical location is `.0agnostic/05_handoff_documents/02_outgoing/01_to_above/`, not `outputs/reports/`
 
 ## Open Items
-- No formal design documents in outputs/ — decisions embedded in artifacts
-- Agent context model needs a dedicated design doc (what each agent type knows in static vs dynamic context)
+- Agent context model needs dedicated design doc
 - Multi-agent spawning patterns not yet designed
+- Propagation design applied to ADS entity but not yet to other entities
 
 ## Handoff
-- **Ready for next stage**: yes (design implemented through development)
-- **Next stage**: 06_development (already completed)
+- **Ready for next stage**: yes
+- **Next stage**: 05_planning / 06_development
+- **What next stage needs to know**: Context propagation design is universal — apply the funnel pattern when implementing new entities

@@ -27,7 +27,7 @@ These two domains are deeply coupled: delegation decisions depend on what contex
 ### Domain Concepts
 
 - **Stage delegation model**: Managers delegate to stage agents. Managers don't carry operational knowledge — each stage agent has its own 0AGNOSTIC.md with methodology, output format, and success criteria.
-- **Stage reports**: Stage agents write `outputs/reports/stage_report.md` before exiting. Managers read these for async status without loading stage details.
+- **Stage reports**: Stage agents write `.0agnostic/05_handoff_documents/02_outgoing/01_to_above/stage_report.md` before exiting. Managers read these for async status without loading stage details.
 - **Agent context model**: What each agent type (manager, stage agent, sub-feature agent) knows in its static and dynamic context.
 - **Context chains**: How context traverses from root to leaf entities through the hierarchy.
 - **Three-tier knowledge**: Pointers (0AGNOSTIC.md) -> Distilled (.0agnostic/knowledge/) -> Full (stage outputs).
@@ -81,9 +81,9 @@ The entity-level orchestrator inherits from and is scoped by the parent feature'
 
 ## Current Status
 
-**Phase**: active (stage 01 populated, universal artifacts produced, working example established) | **Last Updated**: 2026-02-20
+**Phase**: active — 4 stages with content, universal artifacts in use, context propagation applied | **Last Updated**: 2026-02-21
 
-This entity has progressed through stages 01, 02, 04, and 06, producing universal artifacts at `.0agnostic/` (11 stage guides, 10 principles, 3 static rules, 2 dynamic rules, stage report protocol). Working example: context_chain_system (76 PASS tests).
+Stages 01, 02, 04, and 06 have produced universal artifacts at root `.0agnostic/` (11 stage guides, 10 principles, 5 rules, stage report protocol, context propagation design). Stage reports in canonical handoff locations. Entity consolidation reports (stages_report, child_layers_report, layer_report) created. Memory_system child has 24 research docs, ready for stage 03. Working example: context_chain_system (76 PASS tests).
 
 # ═══ DYNAMIC CONTEXT (loaded on-demand) ═══
 
@@ -163,7 +163,10 @@ Entity knowledge is organized as a **tree of knowledge** (mirroring the tree of 
 | On-demand resources | `.0agnostic/` (01_knowledge, 02_rules, 03_protocols, 04_episodic_memory, 05_handoff_documents, 06_context_avenue_web, 07+_setup_dependant) |
 | Tree of knowledge | `.0agnostic/01_knowledge/tree_of_knowledge/00_agent_delegation_knowledge/` |
 | Tree of needs | `layer_1_group/layer_1_99_stages/stage_1_01_request_gathering/outputs/requests/tree_of_needs/` |
-| Handoff documents | `.0agnostic/05_handoff_documents/` (stage overview, 01_incoming/{from_above,from_below}, 02_outgoing/{to_above,to_below}) |
+| Handoff documents | `.0agnostic/05_handoff_documents/` (01_incoming/{from_above,from_below}, 02_outgoing/{to_above,to_below}) |
+| Layer report | `.0agnostic/05_handoff_documents/02_outgoing/01_to_above/layer_report.md` |
+| Stages report | `.0agnostic/05_handoff_documents/02_outgoing/01_to_above/stages_report.md` |
+| Child layers report | `.0agnostic/05_handoff_documents/02_outgoing/01_to_above/child_layers_report.md` |
 | Context avenue web | `.0agnostic/06_context_avenue_web/` (aalang, integration MDs, auto-memory, @imports, skills, agents, rules, hooks) |
 | Children | `layer_2_group/layer_2_subx2_features/` |
 

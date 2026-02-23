@@ -73,13 +73,13 @@ What this agent produces:
 | Output | Location | Purpose |
 |--------|----------|---------|
 | Design decisions | `outputs/design_decisions/` | Primary deliverable — architecture decisions with rationale |
-| Stage report | `outputs/reports/stage_report.md` | Async status for the manager |
-| Overview report | `outputs/reports/overview_report.md` | Summary of all reports, links to each |
+| Stage report | `.0agnostic/05_handoff_documents/02_outgoing/01_to_above/stage_report.md` | Async status for the manager |
+| Output report | `outputs/reports/output_report.md` | Summary of all outputs, links to each |
 | Current State update | This file, "Current State" section | Pointer-tier summary of what exists |
 
 ### Stage Report
 
-Before exiting, update `outputs/reports/stage_report.md` following the universal protocol at `.0agnostic/03_protocols/stage_report_protocol.md`. The entity manager reads this to understand your stage's status without loading stage details.
+Before exiting, update `.0agnostic/05_handoff_documents/02_outgoing/01_to_above/stage_report.md` following the universal protocol at `.0agnostic/03_protocols/stage_report_protocol.md`. The entity manager reads this to understand your stage's status without loading stage details.
 
 ## Triggers
 
@@ -130,9 +130,9 @@ Stage orchestrators inherit from the entity-level orchestrator.
 
 ## Current Status
 
-**Status**: implicit | **Last Updated**: 2026-02-19
+**Status**: active | **Last Updated**: 2026-02-21
 
-The key design decisions for agent delegation were made through iterative development, resulting in the **stage agent 0AGNOSTIC.md pattern** — a two-part template (operational guidance + current state summary) that defines what a stage agent is, what it does, and what exists in its stage.
+8 architecture decisions: 7 implicit (0AGNOSTIC.md pattern, two-halves, stage reports, scope boundaries, universal guides, scope decisions, scope spans layers+stages) + 1 formal — **context propagation design** (consolidation funnel + cross-level connection map). Universal artifact at root `.0agnostic/01_knowledge/CONTEXT_PROPAGATION_DESIGN.md`. Design output at `outputs/design_decisions/context_propagation_design.md`.
 
 # ═══ DYNAMIC CONTEXT (loaded on-demand) ═══
 
@@ -205,8 +205,9 @@ Design decisions are implemented differently at each child layer:
 
 | Content | Location |
 |---------|----------|
-| Design decisions | `outputs/design_decisions/` (when created) |
-| Stage reports | `outputs/reports/` |
+| Design decisions | `outputs/design_decisions/` |
+| Output report | `outputs/reports/output_report.md` |
+| Stage report | `.0agnostic/05_handoff_documents/02_outgoing/01_to_above/stage_report.md` |
 | Stage 01 tree of needs | `../stage_1_01_request_gathering/outputs/requests/tree_of_needs/` |
 | Stage 02 research | `../stage_1_02_research/outputs/by_topic/` |
 | Universal template | `.0agnostic/01_knowledge/layer_stage_system/stage_guides/STAGE_AGENT_TEMPLATE.md` |

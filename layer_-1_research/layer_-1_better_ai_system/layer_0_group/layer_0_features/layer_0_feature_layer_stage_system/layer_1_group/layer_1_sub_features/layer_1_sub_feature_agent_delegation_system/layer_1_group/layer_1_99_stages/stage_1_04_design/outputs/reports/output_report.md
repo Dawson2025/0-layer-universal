@@ -1,24 +1,33 @@
-# Reports Overview — Stage 04: Design
+# Output Report — Stage 04: Design
 
 **Entity**: agent_delegation_system
 **Stage**: 04_design
-**Last Updated**: 2026-02-20
+**Last Updated**: 2026-02-21
 
 ## Summary
 
-Stage 04 produced 7 architecture decisions for agent delegation, made iteratively through development rather than as formal design documents. Key decisions include 0AGNOSTIC.md as stage identity, the two-halves context pattern (Principle 9), stage reports for async communication, and the scope boundary decision framework (Principle 8). All decisions are codified in universal artifacts at `.0agnostic/`.
+Stage 04 produced 8 architecture decisions for agent delegation. 7 were made through iterative development (implicit design), and 1 — the context propagation design — was created as a formal design document. All decisions are codified in universal artifacts at root `.0agnostic/`.
 
-## Reports Index
+## Outputs Index
 
-| Report | Description | Last Updated |
-|--------|-------------|--------------|
-| [stage_report.md](./stage_report.md) | Canonical stage status — status, outputs, findings, handoff | 2026-02-20 |
+| Output | Description | Location |
+|--------|-------------|----------|
+| Context propagation design decision | Formal: consolidation funnel + cross-level connection map | [`outputs/design_decisions/context_propagation_design.md`](../design_decisions/context_propagation_design.md) |
+| 7 implicit design decisions | Architecture decisions with rationale and alternatives | (embedded in 0AGNOSTIC.md § Key Design Decisions) |
+
+## Universal Artifacts Produced
+
+| Artifact | Location (root `.0agnostic/`) |
+|----------|-------------------------------|
+| Context propagation design doc | `01_knowledge/CONTEXT_PROPAGATION_DESIGN.md` |
+| 11 stage guides | `01_knowledge/layer_stage_system/stage_guides/STAGE_NN_NAME.md` |
+| Stage agent template | `01_knowledge/layer_stage_system/stage_guides/STAGE_AGENT_TEMPLATE.md` |
+| 10 delegation principles | `01_knowledge/principles/principles/STAGE_DELEGATION_PRINCIPLES.md` |
+| Scope Boundary Rule | `02_rules/static/STAGE_BOUNDARY_RULE.md` |
+| Stage report protocol | `03_protocols/stage_report_protocol.md` |
 
 ## Key Metrics
 
-- **Design decisions**: 7 (each with rationale and rejected alternatives)
+- **Design decisions**: 8 total (7 implicit + 1 formal)
 - **Principles formalized**: 2 (Principle 8: Scope Boundary Decisions, Principle 9: Two-Halves Context Pattern)
-- **Artifacts codified**: 11 stage guides, 1 stage agent template, 9 delegation principles, 1 Scope Boundary Rule
-- **Formal design docs**: 0 in outputs/ (implicit status — decisions embedded in artifacts)
-- **Child implementations**: context_chain_system (all 7 decisions applied), memory_system (3 decisions applied), multi_agent_system (3 decisions scaffolded)
-- **Status**: implicit — design decisions made through iterative development, not formal design phase
+- **Child implementations**: context_chain_system (all decisions applied), memory_system (partial), multi_agent_system (scaffolded)
