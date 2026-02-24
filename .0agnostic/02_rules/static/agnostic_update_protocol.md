@@ -1,3 +1,9 @@
+---
+promote: hot
+hot_summary: "When modifying .0agnostic/ files, also update 0AGNOSTIC.md and run agnostic-sync.sh. Full protocol: .0agnostic/02_rules/static/agnostic_update_protocol.md"
+hot_trigger: "Modifying any file in .0agnostic/"
+---
+
 # Agnostic Update Protocol
 
 **Type**: Static (always loaded)

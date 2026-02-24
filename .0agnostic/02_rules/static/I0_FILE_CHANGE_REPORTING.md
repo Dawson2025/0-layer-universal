@@ -1,3 +1,9 @@
+---
+promote: hot
+hot_summary: "On every turn with file changes, report all Added/Updated/Moved/Removed files with full absolute paths at end of response. Full rule: .0agnostic/02_rules/static/I0_FILE_CHANGE_REPORTING.md"
+hot_trigger: "Any turn that modifies files"
+---
+
 # File Change Reporting Rule
 
 **Type**: Static (every API turn)

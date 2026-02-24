@@ -77,6 +77,37 @@ esac
 STATIC_CONTENT=$(echo "$STATIC_CONTENT" | sed '/./,$!d')
 
 # ═══════════════════════════════════════════════
+# Hot Rule Promotion
+# ═══════════════════════════════════════════════
+# Rules with `promote: hot` frontmatter get a summary pointer injected
+# into ALL generated tool files. Full rule stays in cold storage.
+# See: .0agnostic/02_rules/static/agnostic_update_protocol.md
+
+PROMOTED_RULES=""
+if [ -d "$DIR/.0agnostic/02_rules" ]; then
+    RULE_ENTRIES=""
+    for rule_file in "$DIR"/.0agnostic/02_rules/static/*.md "$DIR"/.0agnostic/02_rules/dynamic/*.md; do
+        [ -f "$rule_file" ] || continue
+        if head -10 "$rule_file" | grep -q 'promote: hot'; then
+            HOT_SUMMARY=$(head -10 "$rule_file" | sed -n 's/^hot_summary: *"\(.*\)"/\1/p')
+            HOT_TRIGGER=$(head -10 "$rule_file" | sed -n 's/^hot_trigger: *"\(.*\)"/\1/p')
+            if [ -n "$HOT_SUMMARY" ] && [ -n "$HOT_TRIGGER" ]; then
+                RULE_ENTRIES="${RULE_ENTRIES}| ${HOT_TRIGGER} | ${HOT_SUMMARY} |
+"
+            fi
+        fi
+    done
+    if [ -n "$RULE_ENTRIES" ]; then
+        PROMOTED_RULES="
+## Promoted Rules
+
+| When | Rule |
+|------|------|
+${RULE_ENTRIES}"
+    fi
+fi
+
+# ═══════════════════════════════════════════════
 # Validation
 # ═══════════════════════════════════════════════
 
@@ -157,6 +188,10 @@ generate_full() {
         echo "# $title"
         echo ""
         echo "$STATIC_CONTENT"
+        # Promoted rules (from hot frontmatter)
+        if [ -n "$PROMOTED_RULES" ]; then
+            echo "$PROMOTED_RULES"
+        fi
         echo ""
         # Tool-specific boilerplate (from .1merge override or default)
         if ! get_tool_boilerplate "$tool" 2>/dev/null; then
@@ -185,6 +220,10 @@ generate_lean() {
         echo "# $title"
         echo ""
         extract_named_sections "$STATIC_CONTENT" "$sections"
+        # Promoted rules (from hot frontmatter)
+        if [ -n "$PROMOTED_RULES" ]; then
+            echo "$PROMOTED_RULES"
+        fi
         echo ""
         # Tool-specific boilerplate
         get_tool_boilerplate "$tool" 2>/dev/null || true

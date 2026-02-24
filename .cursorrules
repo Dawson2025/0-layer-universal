@@ -1,6 +1,14 @@
 # Cursor Rules
 
 
+## Promoted Rules
+
+| When | Rule |
+|------|------|
+| Modifying any file in .0agnostic/ | When modifying .0agnostic/ files, also update 0AGNOSTIC.md and run agnostic-sync.sh. Full protocol: .0agnostic/02_rules/static/agnostic_update_protocol.md |
+| Any turn that modifies files | On every turn with file changes, report all Added/Updated/Moved/Removed files with full absolute paths at end of response. Full rule: .0agnostic/02_rules/static/I0_FILE_CHANGE_REPORTING.md |
+
+
 
 ---
 *Auto-generated from 0AGNOSTIC.md via agnostic-sync.sh*

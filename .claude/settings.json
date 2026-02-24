@@ -1,5 +1,19 @@
 {
   "permissions": {
     "allowedTools": ["Read", "Write", "Edit", "Bash", "Glob", "Grep", "Task"]
+  },
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \"$CLAUDE_PROJECT_DIR/.0agnostic/06_context_avenue_web/01_file_based/08_hooks/scripts/agnostic-edit-guard.sh\"",
+            "timeout": 10000
+          }
+        ]
+      }
+    ]
   }
 }

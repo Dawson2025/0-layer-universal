@@ -58,6 +58,7 @@ When any nested repository exists in a child path:
 |-----------|--------|
 | Creating entities with stages | Load skill: entity-creation |
 | Modifying AI context | Show propagation chain diagram first |
+| Modifying `.0agnostic/` files | Follow agnostic update protocol: `.0agnostic/02_rules/static/agnostic_update_protocol.md` |
 | Working with layers/stages | Load skill: context-gathering |
 | Need rules | Load `.claude/skills/` or reference `.0agnostic/02_rules/` |
 
@@ -67,6 +68,7 @@ When any nested repository exists in a child path:
 |----------|----------|---------|
 | Skills | `.claude/skills/SKILLS.md` | Task-specific instructions |
 | Rules | `.0agnostic/02_rules/` | Universal rules |
+| Update Protocol | `.0agnostic/02_rules/static/agnostic_update_protocol.md` | Sync chain for .0agnostic/ changes |
 | Knowledge | `.0agnostic/01_knowledge/` | Reference docs |
 
 ## Children
@@ -93,6 +95,14 @@ Active chain map (school -> module_03):
 - `0_layer_universal` tracks `layer_1/layer_1_projects/layer_1_project_school` as submodule.
 - `layer_1_project_school` currently contains one active nested gitlink at `.../school-machine-learning-module03-teamwork`.
 - If any additional nested repos appear, they must be declared in `.gitmodules` at the same repository level before commit/push.
+
+## Promoted Rules
+
+| When | Rule |
+|------|------|
+| Modifying any file in .0agnostic/ | When modifying .0agnostic/ files, also update 0AGNOSTIC.md and run agnostic-sync.sh. Full protocol: .0agnostic/02_rules/static/agnostic_update_protocol.md |
+| Any turn that modifies files | On every turn with file changes, report all Added/Updated/Moved/Removed files with full absolute paths at end of response. Full rule: .0agnostic/02_rules/static/I0_FILE_CHANGE_REPORTING.md |
+
 
 ## Gemini-Specific Notes
 
