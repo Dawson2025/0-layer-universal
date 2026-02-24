@@ -18,6 +18,25 @@
 - Rules and protocols here cascade to all AI apps running within Cursor
 - Setup knowledge migrated from legacy `setup/` directory
 
+### Cursor AI Capabilities (2026)
+
+- **Agent Mode**: Autonomous coding with subagents, auto-context pulling, file editing, terminal execution
+- **Plan Mode**: Structured planning before implementation with user approval
+- **Rules System**: `.cursor/rules/*.mdc` with YAML frontmatter (replaces deprecated `.cursorrules`)
+- **Rule Types**: Team Rules > Project Rules > User Rules > AGENTS.md (priority order)
+- **MCP Support**: Model Context Protocol servers for extended tool access
+- **Background Agents**: Long-running agents that work asynchronously
+- **Hooks**: Pre/post execution hooks for agent actions
+- **Onboard Testing**: Visual demo verification (screenshots, video recordings, logs)
+
+### Layer-Stage Integration
+
+`agnostic-sync.sh` generates `.cursorrules` (lean format). Migration to `.cursor/rules/*.mdc` documented in `cursor_context_mapping.md`.
+
+**Reference docs** (in this directory):
+- `cursor_capabilities.md` — Full AI capabilities reference
+- `cursor_context_mapping.md` — How agnostic system maps to Cursor rules
+
 ## Delegation Contract
 
 **Children** (level 09): AI Apps category (sub_layer_0_09_ai_apps)
@@ -27,10 +46,11 @@
 
 ## Current Status
 
-**State**: Restructuring complete
+**State**: Knowledge populated
 **Scope**: Cursor IDE entity with 1 child category (AI Apps) containing 4 AI app entities
-**Content**: Entity structure created, legacy content preserved, children moved to `sub_layer_0_09_group/`
-**Readiness**: Structure ready, awaiting knowledge population
+**Content**: Entity structure created, AI capabilities documented, context mapping defined, .cursorrules deprecation noted
+**Readiness**: Active — capabilities reference and migration guide ready
+**Last Updated**: 2026-02-24
 
 # ═══ DYNAMIC CONTEXT (loaded on-demand) ═══
 
@@ -44,3 +64,5 @@
 | `sub_layer_0_09_group/sub_layer_0_09_ai_apps/` | Child: AI Apps category entity |
 | `.0agnostic/01_knowledge/` | Cursor-specific knowledge |
 | `.0agnostic/03_protocols/` | Cursor-specific protocols |
+| `cursor_capabilities.md` | Full AI capabilities reference (Agent mode, rules, Plan mode) |
+| `cursor_context_mapping.md` | How agnostic system maps to Cursor's rule types |
