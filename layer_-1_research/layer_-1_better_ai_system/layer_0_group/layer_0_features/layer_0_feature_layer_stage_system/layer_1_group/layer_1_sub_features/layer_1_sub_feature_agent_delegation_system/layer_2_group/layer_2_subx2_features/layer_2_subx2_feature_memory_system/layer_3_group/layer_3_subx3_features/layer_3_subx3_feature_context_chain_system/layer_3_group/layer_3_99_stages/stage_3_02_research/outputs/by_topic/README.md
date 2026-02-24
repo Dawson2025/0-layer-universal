@@ -111,6 +111,11 @@ See [problems_and_vision.md](02_problem_analysis/problems_and_vision.md) for ful
 | [verification_results.md](verification/verification_results.md) | **READ FIRST** — What was verified true/false on 2026-02-07 |
 | [claude_md_audit.md](verification/claude_md_audit.md) | CLAUDE.md chain audit — 717 lines in static chain, duplication analysis, recommendations |
 
+### 05_discovery/ — Context discovery and auto-discoverability
+| File | Topic |
+|------|-------|
+| [discovery_gap_audit.md](05_discovery/discovery_gap_audit.md) | **KEY FINDING** — Systematic audit of hot vs cold context: agnostic_update_protocol and propagation chain are invisible to fresh agents. Discovery temperature model (Hot/Warm/Cold) validated |
+
 ### planning/ — Roadmaps and execution plans
 | File | Topic |
 |------|-------|

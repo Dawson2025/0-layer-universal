@@ -8,8 +8,8 @@
 
 | # | Stage | Status | Key Output | Files | Updated |
 |---|-------|--------|-----------|-------|---------|
-| 01 | request_gathering | active | Tree of needs: 1 root, 3 branches, 8 leaf needs | 21 | 2026-02-18 |
-| 02 | research | active | 25+ research files + discovery temperature model, .1merge injection findings | 25+ | 2026-02-22 |
+| 01 | request_gathering | active | Tree of needs: 1 root, 3 branches, 9 leaf needs (added need_03_auto_discovery) | 22+ | 2026-02-22 |
+| 02 | research | active | 25+ research files + discovery gap audit, temperature model, .1merge injection | 26+ | 2026-02-22 |
 | 03 | instructions | scaffolded | — | 0 | — |
 | 04 | design | active | 2 design docs: chain system design, avenue web integration | 3 | 2026-02-18 |
 | 05 | planning | active | Implementation plan for .0agnostic/avenue web MVP | 2 | 2026-02-18 |

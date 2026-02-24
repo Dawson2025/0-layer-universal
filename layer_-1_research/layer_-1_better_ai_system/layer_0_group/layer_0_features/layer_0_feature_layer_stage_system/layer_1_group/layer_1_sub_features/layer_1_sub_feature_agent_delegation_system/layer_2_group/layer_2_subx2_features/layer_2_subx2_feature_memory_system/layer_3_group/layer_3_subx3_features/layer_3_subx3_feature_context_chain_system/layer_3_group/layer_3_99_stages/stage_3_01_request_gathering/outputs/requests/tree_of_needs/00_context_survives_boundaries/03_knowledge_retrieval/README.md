@@ -26,6 +26,7 @@ The two failure modes:
 |------|----------|-------------|
 | [need_01_scored_retrieval](./need_01_scored_retrieval/) | "Which context is most relevant right now?" | Rank context by recency × relevance × importance |
 | [need_02_chain_validation](./need_02_chain_validation/) | "Is the context chain intact?" | Validate references against knowledge graph |
+| [need_03_auto_discovery](./need_03_auto_discovery/) | "Will agents find critical protocols without being told?" | Auto-discovery of update protocols and propagation chain |
 
 ---
 

@@ -11,7 +11,7 @@ Extensive research into context chain architecture, avenue web design, and AALan
 
 ## Key Outputs
 - `outputs/by_topic/README.md`: Full research index (the master table of contents)
-- 5 topic areas: vision, problem analysis, obstacles, design, architecture decisions
+- 6 topic areas: vision, problem analysis, obstacles, design, architecture decisions, **discovery**
 - Key decisions: three-layer redundancy model, .0agnostic/ as canonical filesystem, 8-avenue web
 - `outputs/by_topic/architecture/selective_jsonld_navigation.md`: Proven jq-based JSON-LD navigation (2-5% file loads)
 - `outputs/by_topic/verification/verification_results.md`: What was verified true/false

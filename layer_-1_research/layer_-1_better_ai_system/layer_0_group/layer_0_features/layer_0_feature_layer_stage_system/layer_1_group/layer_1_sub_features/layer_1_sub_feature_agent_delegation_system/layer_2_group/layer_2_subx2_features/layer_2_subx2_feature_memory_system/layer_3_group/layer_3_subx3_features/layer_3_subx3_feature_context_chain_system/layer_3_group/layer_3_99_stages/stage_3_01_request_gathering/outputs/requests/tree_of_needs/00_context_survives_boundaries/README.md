@@ -60,7 +60,8 @@ A system where:
 │
 └── 03_knowledge_retrieval/               How agents find the right context
     ├── need_01_scored_retrieval          Rank context by recency × relevance × importance
-    └── need_02_chain_validation          Validate chain integrity against the KG
+    ├── need_02_chain_validation          Validate chain integrity against the KG
+    └── need_03_auto_discovery            Auto-discover update protocols and propagation chain
 ```
 
 ---
