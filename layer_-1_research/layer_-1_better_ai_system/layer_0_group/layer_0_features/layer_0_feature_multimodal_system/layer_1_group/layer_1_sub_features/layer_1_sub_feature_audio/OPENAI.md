@@ -44,6 +44,19 @@ Load this context when:
 - System-wide TTS: Orca (GNOME), Piper, eSpeak NG
 - Claude Code TTS: Kokoro hook, MCP TTS plugin, pyttsx3 DIY
 
+### Platform Dependencies (Local Ubuntu/GNOME)
+Audio and TTS features depend on the local desktop environment. When troubleshooting keyboard shortcuts, audio output, or GNOME settings daemon issues:
+
+| Resource | Location (from repo root) |
+|----------|--------------------------|
+| GNOME Architecture | `.0agnostic/07+_setup_dependant/.../sub_layer_0_06_local/setup/.../stage_0_09_current_product/outputs/gnome_architecture.md` |
+| GSD Keepalive Fix | `.0agnostic/07+_setup_dependant/.../sub_layer_0_06_local/setup/.../stage_0_09_current_product/outputs/gsd_keepalive_fix.md` |
+| Local setup root | `.0agnostic/07+_setup_dependant/sub_layer_0_05_operating_systems/sub_layer_0_05_linux_ubuntu/sub_layer_0_06_group/sub_layer_0_06_environments/sub_layer_0_06_local/` |
+
+Full paths expand from: `.0agnostic/07+_setup_dependant/sub_layer_0_05_operating_systems/sub_layer_0_05_linux_ubuntu/sub_layer_0_06_group/sub_layer_0_06_environments/sub_layer_0_06_local/setup/sub_layer_0_06_99_stages/stage_0_09_current_product/outputs/`
+
+**Key facts**: Desktop is Unity (not GNOME Shell). `gsd-media-keys` must run for custom shortcuts. `gsd-keepalive.timer` auto-restarts dead daemons.
+
 ## OpenAI-Specific Notes
 
 ### Function Calling

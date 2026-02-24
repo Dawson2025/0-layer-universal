@@ -46,6 +46,22 @@ Load this context when:
 - **Speech Dispatcher**: Middleware routing text to TTS engines
 - **Highlight-and-speak**: Custom script: `xsel | piper | aplay`, bound to GNOME shortcut
 
+### Platform Dependencies (Local Ubuntu/GNOME)
+System TTS depends on the local desktop environment. When troubleshooting keyboard shortcuts, audio output, or gsd-* daemon issues, consult:
+
+| Resource | Location (from repo root) | Content |
+|----------|--------------------------|---------|
+| GNOME Architecture | `.0agnostic/07+_setup_dependant/sub_layer_0_05_operating_systems/sub_layer_0_05_linux_ubuntu/sub_layer_0_06_group/sub_layer_0_06_environments/sub_layer_0_06_local/setup/sub_layer_0_06_99_stages/stage_0_09_current_product/outputs/gnome_architecture.md` | gsd-* daemon roles, failure modes, restart procedures |
+| GSD Keepalive Fix | `.0agnostic/07+_setup_dependant/sub_layer_0_05_operating_systems/sub_layer_0_05_linux_ubuntu/sub_layer_0_06_group/sub_layer_0_06_environments/sub_layer_0_06_local/setup/sub_layer_0_06_99_stages/stage_0_09_current_product/outputs/gsd_keepalive_fix.md` | Keepalive timer for dead gsd-media-keys/gsd-power |
+| Local setup root | `.0agnostic/07+_setup_dependant/sub_layer_0_05_operating_systems/sub_layer_0_05_linux_ubuntu/sub_layer_0_06_group/sub_layer_0_06_environments/sub_layer_0_06_local/` | Full local Ubuntu environment documentation |
+
+**Key facts**:
+- Desktop is Unity (`XDG_CURRENT_DESKTOP=Unity`), not GNOME Shell
+- Custom keybindings use `com.canonical.unity.settings-daemon.plugins.media-keys` (NOT `org.gnome.settings-daemon.plugins.media-keys`)
+- `gsd-media-keys` must be running for custom keyboard shortcuts to work
+- `gsd-power` must be running for brightness buttons to work
+- A systemd user timer (`gsd-keepalive.timer`) auto-restarts dead daemons every 60s
+
 ## Claude-Specific Rules
 
 ### CLAUDE.md Integration
