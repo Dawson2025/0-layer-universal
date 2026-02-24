@@ -16,6 +16,7 @@ Claude Code CLI has browser extraction capabilities via the **Claude in Chrome**
 - User needs citation URLs from a Perplexity page (standard copy/paste loses them)
 - Content extraction from React-rendered pages where `querySelectorAll('a[href]')` fails
 - Any page where URLs are stored in React component props, not DOM attributes
+- User asks to open Claude in Chrome and navigate to or work in Perplexity (e.g., "open Perplexity in the browser", "search Perplexity for X")
 
 ### Prerequisites
 

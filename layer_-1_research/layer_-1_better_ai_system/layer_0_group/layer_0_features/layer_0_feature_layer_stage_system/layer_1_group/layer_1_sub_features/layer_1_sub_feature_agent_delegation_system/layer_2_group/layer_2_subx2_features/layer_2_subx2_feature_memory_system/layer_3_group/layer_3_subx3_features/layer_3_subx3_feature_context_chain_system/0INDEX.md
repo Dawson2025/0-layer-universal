@@ -2,19 +2,19 @@
 
 ## Entity Status
 **Phase**: active research and development
-**Last Updated**: 2026-02-18
+**Last Updated**: 2026-02-22
 
 ## Stage Summary
 
 | # | Stage | Status | Key Output | Files | Updated |
 |---|-------|--------|-----------|-------|---------|
 | 01 | request_gathering | active | Tree of needs: 1 root, 3 branches, 8 leaf needs | 21 | 2026-02-18 |
-| 02 | research | active | 25+ research files: vision, problems, design, architecture | 25 | 2026-02-18 |
+| 02 | research | active | 25+ research files + discovery temperature model, .1merge injection findings | 25+ | 2026-02-22 |
 | 03 | instructions | scaffolded | — | 0 | — |
 | 04 | design | active | 2 design docs: chain system design, avenue web integration | 3 | 2026-02-18 |
 | 05 | planning | active | Implementation plan for .0agnostic/avenue web MVP | 2 | 2026-02-18 |
-| 06 | development | active | MVP implemented: .0agnostic/ with rules, knowledge, protocols, skills | 3 | 2026-02-18 |
-| 07 | testing | active | 76 PASS, 0 FAIL, 7 SKIP, 2 SCAFFOLDED | 8 | 2026-02-18 |
+| 06 | development | active | MVP + agnostic-sync validation + user-level-sync + .1merge injection + skill discovery chain | 10+ | 2026-02-22 |
+| 07 | testing | active | 76 PASS core + skill discovery chain (6 checkpoints all PASS) | 9+ | 2026-02-22 |
 | 08-11 | criticism-archives | scaffolded | — | 0 | — |
 
 **Stage reports**: each active stage has `outputs/stage_report.md` — read for details.
@@ -39,9 +39,10 @@ Stages 01 and 02 ran in parallel (research informed requirements and vice versa)
 
 ## Current Focus
 
-- **Agent context model**: designing how the manager delegates to stage agents, what each stage agent knows in its static/dynamic context
-- **Stage report system**: implemented this session — each stage now has `outputs/stage_report.md`
-- **Three-tier knowledge architecture**: applying the pointer → distilled → full pattern
+- **Skill discovery chain**: End-to-end propagation from .0agnostic/ content → 0AGNOSTIC.md → agnostic-sync → .1merge → CLAUDE.md → agent discovery — proven working with /perplexity-extract skill
+- **Context chain extension**: user-level-sync.sh extends chain beyond repo to ~/.0agnostic/ for system-wide context
+- **Discovery temperature model**: Hot (CLAUDE.md) → Warm (path rules) → Cold (dynamic rules, skills) — validated empirically
+- **agnostic-sync validation**: New quality gate warns when .0agnostic/ content isn't referenced in 0AGNOSTIC.md
 
 ## Children
 

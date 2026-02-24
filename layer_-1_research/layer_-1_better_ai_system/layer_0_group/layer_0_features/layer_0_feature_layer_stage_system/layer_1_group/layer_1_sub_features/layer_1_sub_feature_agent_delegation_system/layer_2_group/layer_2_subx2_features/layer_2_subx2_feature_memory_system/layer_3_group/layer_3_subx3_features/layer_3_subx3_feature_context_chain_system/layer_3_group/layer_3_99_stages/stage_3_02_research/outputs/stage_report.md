@@ -4,10 +4,10 @@
 active
 
 ## Last Updated
-2026-02-18
+2026-02-22
 
 ## Summary
-Extensive research into context chain architecture, avenue web design, and AALang integration. 25+ research files organized by topic covering vision, problems, obstacles, design approaches, architecture decisions, integration patterns, and verification results.
+Extensive research into context chain architecture, avenue web design, and AALang integration. 25+ research files organized by topic. New findings (2026-02-22): context chain discovery temperatures, .1merge hot injection mechanism, user-level chain extension, and real-world validation via skill discovery chain testing.
 
 ## Key Outputs
 - `outputs/by_topic/README.md`: Full research index (the master table of contents)
@@ -23,13 +23,18 @@ Extensive research into context chain architecture, avenue web design, and AALan
 - Static chain was 717 lines (target <400) — lean static context is critical
 - Selective JSON-LD loading proven effective (load 2-5% per query)
 - .0agnostic/ internal structure designed and validated
+- **New (2026-02-22)**: Discovery temperature model — Hot (CLAUDE.md, always loaded), Warm (path-specific rules, on directory entry), Cold (dynamic rules/skills, on trigger/demand)
+- **New (2026-02-22)**: .1merge `2_additions/` tier serves as the mechanism for tool-specific hot context injection — content in `tool_additions.md` appears in the generated CLAUDE.md but NOT in AGENTS.md/GEMINI.md/OPENAI.md
+- **New (2026-02-22)**: Context chain extends beyond the repo to user-level via `~/.0agnostic/` and `user-level-sync.sh`
+- **New (2026-02-22)**: React-rendered pages (Perplexity) require React fiber traversal for link extraction — standard DOM queries return ~0 external URLs. This validated the need for tool-specific dynamic rules
 
 ## Open Items
 - Agent context model for stage delegation (design phase needed)
 - Knowledge graph formalization not yet implemented
 - Scored retrieval system not yet designed
+- Discovery temperature model needs formal documentation as a research finding
 
 ## Handoff
 - **Ready for next stage**: yes for current scope
 - **Next stage**: 04_design (architecture decisions for next features)
-- **What next stage needs to know**: all major architecture decisions are made; new work should build on the .0agnostic/ system and avenue web, not redesign them
+- **What next stage needs to know**: all major architecture decisions are made; discovery temperature model and .1merge injection are new patterns to formalize in design; user-level chain extension is a new architectural element

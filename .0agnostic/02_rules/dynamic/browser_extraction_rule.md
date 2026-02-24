@@ -19,6 +19,7 @@ This rule activates when:
 - User asks to "extract citations" or "get source URLs" from a Perplexity page
 - User asks to extract content from a page and mentions that links/citations are important
 - User mentions React-rendered content where standard link extraction fails
+- User asks to open Claude in Chrome and navigate to or work in Perplexity (e.g., "open Perplexity in the browser", "search Perplexity for X", "use Perplexity to research Y")
 
 ## Why This Exists
 

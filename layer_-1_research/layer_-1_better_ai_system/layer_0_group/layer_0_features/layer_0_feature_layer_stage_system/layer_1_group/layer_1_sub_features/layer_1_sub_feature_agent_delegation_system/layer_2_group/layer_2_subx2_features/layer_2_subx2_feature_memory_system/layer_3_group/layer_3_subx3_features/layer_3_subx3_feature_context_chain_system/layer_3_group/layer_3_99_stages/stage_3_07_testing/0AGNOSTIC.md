@@ -50,14 +50,17 @@ Before exiting, update `outputs/stage_report.md` following the protocol in `../.
 | Test scripts | `outputs/test_*.sh` (5 scripts) |
 | Results summary | `outputs/test_results_summary.md` |
 | Avenue web validation | `outputs/by_topic/avenue_web_validation_report.md` |
+| Skill discovery chain test | `outputs/test_skill_discovery_chain.md` |
 | Stage report | `outputs/stage_report.md` |
 
 ### Current Results
 
-- 76 PASS, 0 FAIL, 7 SKIP, 2 SCAFFOLDED
+- 76 PASS, 0 FAIL, 7 SKIP, 2 SCAFFOLDED (core tests)
+- Skill discovery chain: 6 checkpoints, all PASS
 - All 8 avenues functional
-- Agnostic-sync correctly generates all 4 tool files
+- Agnostic-sync correctly generates all 4 tool files + validates .0agnostic/ references
 - Chain integrity validated across 7 levels
+- .1merge injection verified in generated CLAUDE.md
 
 ## Success Criteria
 
