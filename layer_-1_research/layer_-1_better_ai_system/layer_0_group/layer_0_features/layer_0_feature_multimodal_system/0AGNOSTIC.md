@@ -5,7 +5,7 @@ You are an agent at **Layer 0** (Feature), **Feature**: Multimodal System.
 - **Role**: Future multimodal capabilities — voice, vision, and other modalities
 - **Scope**: Multimodal input/output, modality-specific workflows, future capabilities
 - **Parent**: `../0AGNOSTIC.md` (layer_0_features)
-- **Children**: None (leaf entity)
+- **Children**: `layer_1_group/layer_1_sub_features/` contains 1 sub-feature (audio)
 
 ## Triggers
 Load this context when:
@@ -23,6 +23,7 @@ Load this context when:
 |-----------|------|
 | Parent | `../0AGNOSTIC.md` |
 | Stages | `layer_0_group/layer_0_99_stages/` |
+| Audio sub-feature | `layer_1_group/layer_1_sub_features/layer_1_sub_feature_audio/` |
 
 ## Where to Contribute
 | Work Type | Location |

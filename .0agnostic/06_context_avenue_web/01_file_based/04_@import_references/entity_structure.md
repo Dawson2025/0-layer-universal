@@ -193,7 +193,7 @@ mkdir -p <entity>/{.0agnostic/{01_knowledge,02_rules/{static,dynamic},03_protoco
 mkdir -p <entity>/layer_N_group/{layer_N_00_layer_registry/proposals,layer_N_99_stages}
 
 # Children (if applicable)
-mkdir -p <entity>/layer_N1_group/{layer_N1_00_layer_registry/proposals}
+mkdir -p <entity>/layer_N1_group/layer_N1_00_layer_registry/proposals
 ```
 
 ## Stage Creation Template
@@ -202,11 +202,11 @@ Create ALL 12 stages (00-11). **Empty stages are valid. Missing stages are NOT.*
 
 ```bash
 # Create stage 00 (registry)
-mkdir -p "layer_N_group/layer_N_99_stages/stage_N_00_stage_registry/{outputs,synthesis}"
+mkdir -p "layer_N_group/layer_N_99_stages/stage_N_00_stage_registry/"{outputs,synthesis}
 
 # Create stages 01-11 (each gets outputs/ and synthesis/)
 for i in 01_request_gathering 02_research 03_instructions 04_design 05_planning 06_development 07_testing 08_criticism 09_fixing 10_current_product 11_archives; do
-  mkdir -p "layer_N_group/layer_N_99_stages/stage_N_$i/{outputs,synthesis}"
+  mkdir -p "layer_N_group/layer_N_99_stages/stage_N_$i/"{outputs,synthesis}
 done
 
 # Add config directories to EACH stage (numbered .0agnostic/ — same as entity root)

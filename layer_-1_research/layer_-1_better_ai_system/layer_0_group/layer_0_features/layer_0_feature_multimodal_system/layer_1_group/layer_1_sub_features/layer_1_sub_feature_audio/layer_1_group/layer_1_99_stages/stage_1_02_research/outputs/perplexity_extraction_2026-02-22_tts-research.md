@@ -1,0 +1,226 @@
+# Perplexity Extraction: System-Wide TTS + Claude Code TTS
+
+**Source**: https://www.perplexity.ai/search/hey-how-s-it-going-doing-prett-VVzJDBQ9Tkq2MIwXHhxo6w
+**Extracted**: 2026-02-22 (initial), 2026-02-23 (expanded)
+**Method**: Claude in Chrome (React fiber citation extraction + full page text extraction)
+
+---
+
+## Thread Summary
+
+A multi-turn Perplexity conversation about:
+1. System-wide text-to-speech (TTS) options for Ubuntu Linux
+2. Claude Code CLI text-to-speech integration via community hooks/plugins
+
+### Key Conclusions
+- **System-wide TTS**: Start with **Orca** (built into GNOME/Ubuntu) — covers GUI apps, browser, and terminal
+- **Claude Code TTS**: Use community TTS hooks/plugins (Kokoro-based hook or MCP TTS plugin)
+
+---
+
+## Answer 1: System-Wide TTS Recommendations
+
+Initial recommendations for system-wide TTS on Ubuntu:
+- **Resemble AI** — ultra-realistic, human-like voices, extensive customization
+- **Piper** — open-source, fully offline, neural TTS models with natural speech
+- **Murf** — premium cloud-based voices with media integration
+- **eSpeak NG** — longstanding, lightweight classic option
+
+For simplicity and system-wide functionality, Speech Note or Piper are great choices. For premium human-like voices, Murf or Resemble AI could be ideal.
+
+## Answer 2: Highlight-and-Speak (like Whisperflow/Vibetyper)
+
+- **Speech Note** — flexible, works across different applications, lets you highlight text anywhere and read it aloud
+
+## Answer 3: Hybrid AI TTS System (Agentic Approach)
+
+User asked about setting up a system where AI (like Claude) can do things and give certain outputs — not necessarily reading the full output aloud, but providing a shorter spoken summary alongside visual output (ASCII diagrams, code, text).
+
+### The Two-Layer Architecture
+1. **System-wide TTS on Ubuntu** — handles general desktop/browser/terminal reading
+2. **"Agentic" AI TTS** — AI decides what to say vs what to show
+
+### Ubuntu TTS Stack Components
+On Ubuntu, TTS is usually built from these pieces:
+- A **screen reader** (Orca) that reads UI elements, focused text, etc.
+- A **speech layer** (Speech Dispatcher) that any app can send text to
+- One or more **engines/voices** (eSpeak NG, Festival, Mimic, Piper, etc.)
+
+### Common Free Engines
+| Engine | Characteristics |
+|--------|----------------|
+| **eSpeak / eSpeak NG** | Very lightweight, works everywhere, but robotic |
+| **Festival** | More configurable, different voices, better quality than default eSpeak |
+| **Mimic / Mimic 3 (Mycroft)** | Newer, more natural voices, still local and free |
+| **Piper** | Neural TTS, very natural, runs offline, multiple voice models |
+
+### A. Highlight-and-Speak Pattern
+The simplest approach — no special app support needed:
+1. Use `xsel` (or `xclip`) to grab the current X selection
+2. Pipe that into a TTS engine like Festival, Mimic, or eSpeak
+3. Bind that script to a global keyboard shortcut in GNOME/KDE
+
+Example approaches:
+- Ubuntu wiki example with **Gespeaker** + xsel and a shortcut to read the clipboard selection
+- Blog examples: "Read Selected Text" shortcut runs `xsel` then Festival or Mimic to speak, plus a second shortcut to stop speech
+- Forum tip: highlight with mouse, then `xsel | festival --tts` to speak it
+
+### B. Continuous / Focus-Based Reading (No Manual Highlighting)
+Other system-wide patterns that don't require highlighting:
+
+- **Orca screen reader** (comes with GNOME):
+  - Reads the focused control, window, menus, notifications, etc.
+  - Has commands to read current line, paragraph, entire window
+  - Uses Speech Dispatcher, so you can change the underlying voice (Festival, Mimic, Piper)
+
+- **Terminal-only speech**:
+  - **Speakup**: in-kernel screen reader for the Linux text console, typically wired to eSpeak via `espeakup`
+  - **Fenrir** and **Emacspeak**: user-land screen readers aimed at command-line environments
+
+### Agentic AI TTS: What You Want vs What Exists
+
+| Use Case | How It Works | What You Need |
+|----------|-------------|---------------|
+| "Read the screen / focused UI elements/messages" | Orca screen reader with a better voice | Festival, Mimic, Piper (YouTube, ubuntu-mate) |
+| "Only read summaries, not all text" | AI returns both full text and a `spoken_summary`; only feed the summary to TTS | Claude (or other model), local TTS via pyttsx3 or CLI engines |
+| "Agent that talks and shows diagrams/code" | Build a small client where the model outputs separate fields for voice vs display | Same as above, plus your preferred terminal/editor for visuals |
+| "Talk about terminal output selectively" | Have scripts parse command output, extract key lines, send only those to TTS | Shell or Python glue, any TTS engine |
+
+## Answer 4: Orca for Desktop + Terminal Users
+
+Recommended for users who mix normal desktop apps with terminal work.
+
+### 1. What Orca Will Cover For You
+
+On a standard Ubuntu GNOME desktop:
+
+**GUI apps and browser**
+- Orca can read windows, menus, buttons, dialogs, and web pages in Firefox/Chromium using caret navigation (arrow keys, etc.)
+- You can move through text by character, word, line, and it will speak your position as you go
+
+**Terminal windows**
+- In GNOME Terminal (and similar terminals), Orca reads the output of commands and what you type
+- With "screen review" / flat-review commands, you can move back up through previous lines in the terminal and have them read again, not just the latest output
+
+**Whole-window / screen review**
+- Orca has "Say All" and flat-review commands to read the active window or dialog without manually selecting text
+- You can toggle flat review and then move line-by-line or object-by-object across whatever's visible in that window
+
+You control it with keyboard shortcuts to:
+- Read the current object, line, paragraph, or entire window
+- Move focus around the screen and have it announce what's under the cursor/focus
+
+### 2. Basic Setup on Ubuntu GNOME
+- **Turn Orca on**: press `Super + Alt + S` (toggles the screen reader)
+- **Browser**: press `F7` to enable caret navigation if needed, then use arrow keys to move and listen
+- **Terminal**: run commands and use Orca's review commands to move back over previous output
+
+### 3. Console-Only Screen Readers (Non-Graphical TTY)
+If you drop to a pure text console (`Ctrl+Alt+F3`, no GNOME):
+- **Speakup**: in-kernel screen reader for the Linux text console, typically wired to eSpeak via `espeakup`
+- **Fenrir** and **Emacspeak**: user-land screen readers aimed at command-line environments
+
+These don't interact with the graphical desktop; they are for the raw TTY.
+
+### 4. Where Highlight-and-Speak Scripts Fit In
+Even with Orca running, you might still want:
+- A hotkey to read only the current selection (e.g., a particular paragraph in a web page, or a chunk of terminal output)
+- A different voice than Orca's default for those ad-hoc reads (Festival, Mimic, etc.)
+
+That's where the `xsel + TTS engine` idea complements Orca:
+- Orca gives you broad coverage and navigation
+- The custom script gives you a fast "speak exactly this highlighted text" tool when you need precision
+
+## Answer 5: Claude Code CLI — Agentic TTS Options
+
+### Option 1: Existing Claude Code TTS Hooks (Recommended)
+People have already built TTS integrations specifically for Claude Code:
+- **Kokoro-based hook** (sourcehut) — plugs into Claude Code's hook system and automatically speaks responses using a local Kokoro TTS model
+- **MCP TTS plugin** (GitHub) — exposes TTS as an MCP tool, so Claude Code can call it when it wants to speak while still printing the full text to the terminal/editor
+
+Key benefit: Claude can output full text (ASCII diagrams, code) to CLI while using a shorter "voice line" (summary) for TTS — what you hear is not forced to be identical to what you see.
+
+### Option 2: DIY Agentic TTS with Local Python Helper
+A small Python script + local TTS library:
+
+**Use pyttsx3 as TTS layer:**
+- Runs fully offline on Linux, wraps native engines like eSpeak/Festival
+- Lets you set voice, rate, and volume from Python
+
+**Have Claude output structured text:**
+```json
+{
+  "spoken_summary": "Short explanation to read aloud.",
+  "visual_output": "<ASCII diagram or detailed text here>"
+}
+```
+
+**Your helper script:**
+- Writes `visual_output` to the screen
+- Runs `espeak` or `festival --tts` on `spoken_summary` only
+
+**Libraries:**
+- **pyttsx3**: Python TTS wrapper that talks to eSpeak/eSpeak-NG under the hood, fully offline, lets you choose voice, speed, and save audio if you want
+
+### Option 3: Simple CLI Approach (No Hooks)
+- Run Claude Code CLI as usual
+- For certain answers, pipe only the part you want spoken: `echo "Short spoken line" | espeak`
+- Upgrade later with a script that reads a "speech:" line from Claude's output and automatically speaks it
+
+### Recommendation
+1. **Try a Claude-specific TTS hook first** (Kokoro-based or MCP TTS), because they're designed to integrate directly with Claude Code's events
+2. **For more control**: add small Python TTS helper using pyttsx3 and configure a Claude Code hook to call it with a short "speech" string while leaving full content in the CLI
+
+## Answer 6: Summary/Confirmation
+
+- System-wide TTS → start with **Orca** (integrated into GNOME, reads browsers, GUI apps, terminal windows)
+- Claude Code TTS → start with community **TTS hooks/plugins** built specifically for Claude Code, which connect it to a local TTS engine
+
+---
+
+## All Citation Sources (20 unique URLs)
+
+### Ubuntu Documentation
+1. [Read documents and web pages using the screen reader](https://documentation.ubuntu.com/desktop/en/latest/how-to/accessibility/orca/read-documents-and-web-pages-using-the-screen-reader/)
+2. [Navigate the screen using the screen reader](https://documentation.ubuntu.com/desktop/en/latest/how-to/accessibility/orca/navigate-the-screen-using-the-screen-reader/)
+3. [Read the screen aloud (24.04)](https://documentation.ubuntu.com/desktop/en/24.04/how-to/accessibility/orca/read-screen-aloud/)
+4. [Navigate the interface using the keyboard](https://documentation.ubuntu.com/desktop/en/latest/how-to/accessibility/navigate-the-interface-using-the-keyboard/)
+5. [Get started with the screen reader](https://documentation.ubuntu.com/desktop/en/latest/tutorial/get-started-with-the-screen-reader/)
+6. [Orca manpage (Jammy)](https://manpages.ubuntu.com/manpages/jammy/man1/orca.1.html)
+
+### GNOME Documentation
+7. [Orca: Reading documents](https://help.gnome.org/orca/howto_documents.html)
+8. [Orca: Reading commands](https://help.gnome.org/orca/commands_reading.html)
+9. [Welcome to Orca](https://help.gnome.org/orca/introduction.html)
+
+### YouTube
+10. [Orca Terminal Demo](https://www.youtube.com/watch?v=i40dJu0ovgE)
+
+### Claude Code TTS
+11. [claude-code-tts (sourcehut) — Hook-based TTS for Claude Code](https://git.sr.ht/~cg/claude-code-tts)
+12. [claude-code-tts (GitHub) — MCP TTS plugin](https://github.com/ybouhjira/claude-code-tts)
+13. [Running a Fully Local Voice Pipeline for Claude Code on RHEL 10](https://crunchtools.com/local-voice-pipeline-claude-code-rhel10-intel-gpu/)
+
+### Python TTS / General Linux TTS
+14. [pyttsx3: Offline TTS Engine for Python (dev.to)](https://dev.to/imrrobot/pyttsx3-offline-text-to-speech-tts-engine-for-python-949)
+15. [pyttsx3 official site](https://pyttsx3.com)
+16. [How to use espeak with Python (StackOverflow)](https://stackoverflow.com/questions/17547531/how-to-use-espeak-with-python)
+17. [Introduction to pyttsx3 (Plain English)](https://python.plainenglish.io/an-introduction-to-pyttsx3-a-text-to-speech-conversion-library-in-python-5a11c0c68ad3)
+18. [Text-to-Speech on Linux (Substack)](https://ebenfarnworth.substack.com/p/text-to-speech-tts-on-linux)
+19. [5 Simple Ways to Enable Speech Output from Your Linux Terminal](https://www.chicagovps.net/blog/5-simple-ways-to-enable-speech-output-from-your-linux-terminal/)
+20. [Python Text to Speech using pyttsx3 (GeeksforGeeks)](https://www.geeksforgeeks.org/python/python-text-to-speech-by-using-pyttsx3/)
+
+---
+
+## Extraction Method Notes
+
+### 2026-02-22 (Initial)
+- React fiber tree traversal: `span.citation.inline-flex` → `__reactFiber` → `memoizedProps.children.props.url`
+- 18 URLs captured; YouTube URL was virtualized out of DOM
+
+### 2026-02-23 (Expanded)
+- Full page text via `get_page_text` tool after scrolling through all answers
+- React fiber extraction captured 20 URLs including the previously missing YouTube URL
+- Scrolling through all answers before extraction forced React to render citation DOM nodes
+
+**Key learning**: Combine `get_page_text` (for content) with React fiber extraction (for citation URLs) for most complete results. Scroll through entire thread first to defeat virtualization.

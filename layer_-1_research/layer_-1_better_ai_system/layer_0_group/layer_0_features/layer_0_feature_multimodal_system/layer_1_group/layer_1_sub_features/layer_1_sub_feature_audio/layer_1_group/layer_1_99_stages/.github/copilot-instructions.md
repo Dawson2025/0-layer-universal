@@ -1,0 +1,11 @@
+# GitHub Copilot Instructions
+
+## Identity
+Stages container for the audio sub-feature.
+- **Parent**: `../../0AGNOSTIC.md` (layer_1_sub_feature_audio)
+
+
+
+---
+*Auto-generated from 0AGNOSTIC.md via agnostic-sync.sh*
+*Do not edit directly - edit 0AGNOSTIC.md instead*
