@@ -1,77 +1,51 @@
-# Universal Rules
+# Rules — Universal Rule System
 
-Rules that apply across all layers, stages, OS, and tool contexts.
+## Structure
 
----
+Rules are organized by **activation category**, and each rule lives in its own directory with co-located tests.
 
-## Directory Structure
+| Category | Path | When Rules Apply |
+|----------|------|-----------------|
+| Every API Request | `0_every_api_request/` | Loaded on every AI agent turn, unconditionally |
+| Static | `static/` | Always active once loaded — behavioral constraints |
+| Dynamic | `dynamic/` | Triggered by specific conditions or scenarios |
+| Scenario-Based | `1_scenario_based/` | Read on-demand when a matching scenario is detected |
+
+## Per-Rule Directory Structure
+
+Every rule follows this structure:
 
 ```
-02_rules/
-├── README.md                           # This file
-├── static/                             # Rules that apply on EVERY API turn
-│   ├── I0_FILE_CHANGE_REPORTING.md     # [I0] Report all file changes every turn
-│   ├── MANAGER_DELEGATION_RULE.md      # Managers delegate, don't operate
-│   ├── STAGE_BOUNDARY_RULE.md          # Stage agents stay in scope
-│   └── STAGE_REPORT_RULE.md            # Stage agents write reports before exiting
-└── dynamic/                            # Rules loaded when triggered by scenario
-    ├── I0_source_of_truth_rule.md      # [I0] Source of truth protocol — MUST execute when asked
-    ├── PARALLEL_STAGES_RULE.md         # When stages can run in parallel
-    └── STAGE_LOOP_RULE.md              # When stages loop back (07→08→09→07)
+rule_name/
+├── rule_name.md          <- The rule itself
+└── tests/
+    ├── test_design.md    <- Test case definitions (what to verify)
+    ├── test_structural.sh <- Automated structural verification
+    └── results/          <- Test run outputs (timestamped)
 ```
 
----
+## Testing
 
-## Importance Ranking
+- **Run all tests**: `bash run_all_rule_tests.sh`
+- **Run one category**: `bash {category}/tests/run_category_tests.sh`
+- **Performance history**: `test_results_history.md`
+- **Testing protocol**: `../03_protocols/rule_testing_protocol.md`
 
-Rules have an importance ranking prefix (`I0_`, `I1_`, etc.) where **0 is most important** and importance increases numerically as priority decreases. Rules without a prefix are standard importance (equivalent to I2).
+## Rules Index
 
-| Importance | Prefix | Meaning | Behavior |
-|------------|--------|---------|----------|
-| 0 | `I0_` | Critical | Static: always enforced. Dynamic: MUST load when triggered — no exceptions |
-| 1 | `I1_` | High | Should be loaded/enforced — can defer only if severely context-constrained |
-| 2 | (none) | Standard | Normal rule behavior — load when relevant |
-| 3+ | `I3_` | Advisory | Guidance that can be skipped under tight context budgets |
-
----
-
-## Static Rules (Every API Turn)
-
-These rules MUST be followed on EVERY interaction. They should be **summarized in CLAUDE.md files**.
-
-| Rule | Importance | Summary |
-|------|------------|---------|
-| **I0_FILE_CHANGE_REPORTING** | 0 | Report all files changed/added/updated/removed with full paths every turn |
-| **MANAGER_DELEGATION_RULE** | 2 | Managers delegate to stage agents; they don't carry operational knowledge |
-| **STAGE_BOUNDARY_RULE** | 2 | Stage agents stay within their stage scope |
-| **STAGE_REPORT_RULE** | 2 | Every stage agent writes stage_report.md before exiting |
-
----
-
-## Dynamic Rules (Scenario-Triggered)
-
-These rules apply when specific conditions are met.
-
-| Rule | Importance | Trigger |
-|------|------------|---------|
-| **I0_source_of_truth_rule** | 0 | User asks about source of truth, context chain, or where something is defined |
-| **PARALLEL_STAGES_RULE** | 2 | When determining if stages can execute concurrently |
-| **STAGE_LOOP_RULE** | 2 | When stages need to loop (testing → criticism → fixing → re-testing) |
-
----
-
-## How to Reference in CLAUDE.md
-
-Static rules are summarized inline. Dynamic rules are referenced by trigger.
-
-```markdown
-## Critical Rules
-### File Change Reporting
-On every turn with file operations, report full paths of added/updated/moved/removed files.
-**Full rule**: `.0agnostic/02_rules/static/I0_FILE_CHANGE_REPORTING.md`
-
-## Scenario-Based Rules (Read When Triggered)
-| Trigger | Rule |
-|---------|------|
-| "Where is the source of truth for X?" | `.0agnostic/02_rules/dynamic/I0_source_of_truth_rule.md` |
-```
+| Rule | Category | Hot? | Purpose |
+|------|----------|------|---------|
+| AI_CONTEXT_MODIFICATION_PROTOCOL | every_api_request | No | Two-tier filesystem change visualization |
+| I0_FILE_CHANGE_REPORTING | static | Yes | Report file changes with full absolute paths |
+| agnostic_update_protocol | static | No | Sync chain for .0agnostic/ modifications |
+| MANAGER_DELEGATION_RULE | static | No | Managers delegate, don't operate |
+| STAGE_BOUNDARY_RULE | static | No | Stage agents stay within stage scope |
+| STAGE_REPORT_RULE | static | No | All stage agents write stage reports |
+| browser_extraction_rule | dynamic | No | Use Chrome for React-rendered pages |
+| I0_source_of_truth_rule | dynamic | No | 0AGNOSTIC.md is the source of truth |
+| PARALLEL_STAGES_RULE | dynamic | No | Rules for parallel stages |
+| STAGE_LOOP_RULE | dynamic | No | Stage looping (test-fix-retest) |
+| safety_governance | scenario | No | Security decision framework |
+| LAYER_CONTEXT_HEADER_PROTOCOL | scenario | No | File header conventions |
+| sequential_development_methodology | scenario | No | Multi-step development workflow |
+| CROSS_OS_COMPATIBILITY_RULES | scenario | No | Cross-platform requirements |

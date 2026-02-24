@@ -27,15 +27,60 @@ The agent determines **whether things work**, not **how to fix them**.
 
 ## Methodology
 
+### Output Structure
+
 ```
-outputs/
-├── run_all_tests.sh                  <- Master test runner
-├── test_*.sh                         <- Individual test scripts
-├── test_results_summary.md           <- Aggregated results with PASS/FAIL counts
-├── by_topic/
-│   └── validation_report.md          <- Detailed validation analysis
-└── stage_report.md
+stage_N_07_testing/
+│
+├── .0agnostic/
+│   └── 05_handoff_documents/
+│       └── 02_outgoing/
+│           ├── 01_to_above/                     ← For manager / stages manager consumption
+│           │   ├── stage_report.md              ← Status summary (handoff document, <30 lines)
+│           │   ├── test_results_summary.md      ← Rolled-up results across all suites
+│           │   └── testing_overview.md          ← Navigation hub — links to all suites, designs, results
+│           │
+│           └── 03_to_below/                     ← For test suites / sub-work to reference
+│               ├── stage_report.md              ← Same report — provides stage-level context downward
+│               ├── test_results_summary.md      ← Same summary — suites can see cross-suite status
+│               └── testing_overview.md          ← Same overview — suites can navigate to siblings
+│
+└── outputs/
+    ├── run_all_tests.sh                         ← Master runner (invokes all per-suite runners)
+    │
+    └── by_suite/
+        ├── README.md                            ← Index of all test suites, status, coverage map
+        │
+        ├── {suite_name}/                        ← One directory per test suite (topic-organized)
+        │   ├── design/                          ← Test design documents (what to test, why, test cases)
+        │   │   └── test_design.md
+        │   ├── tests/                           ← Actual test scripts (executable)
+        │   │   ├── test_{name}.sh
+        │   │   └── run_suite.sh                 ← Suite-level runner
+        │   ├── results/                         ← Test run outputs, logs, timestamps
+        │   │   └── run_YYYY-MM-DD.md
+        │   └── insights/                        ← Coverage gaps, analysis, findings from runs
+        │       └── coverage_analysis.md
+        │
+        ├── {another_suite}/
+        │   ├── design/
+        │   ├── tests/
+        │   ├── results/
+        │   └── insights/
+        └── ...
 ```
+
+**Key separation**: `outputs/` contains only work products (test suites). Handoff documents (stage report, results summary) live in `.0agnostic/05_handoff_documents/02_outgoing/01_to_above/` because they exist to communicate upward to the manager, not as deliverables of the testing work itself.
+
+### Suite Organization
+
+Each test suite groups everything about one testing topic:
+- **design/**: The test design — what to test, why, test case definitions (TC-XX-XX)
+- **tests/**: The actual executable test scripts
+- **results/**: Output from running the tests — timestamped run reports
+- **insights/**: Analysis that emerges from testing — coverage gaps, patterns, findings
+
+Suite names should reflect the topic being tested (e.g., `context_chain_validation`, `agnostic_sync`, `1merge_structure`, `hierarchy_inheritance`).
 
 ### Test Script Format
 
@@ -46,19 +91,22 @@ Each test script:
 - Is idempotent (can be run repeatedly)
 - Documents what it tests in comments
 
-### Test Results Summary
+### Test Results Summary (Handoff)
 
-The summary includes:
-- Total counts: PASS, FAIL, SKIP, SCAFFOLDED
-- Per-test breakdown with status
+The test results summary (`.0agnostic/05_handoff_documents/02_outgoing/01_to_above/test_results_summary.md`) includes:
+- Total counts: PASS, FAIL, SKIP, SCAFFOLDED across all suites
+- Per-suite breakdown with status
 - Coverage analysis: what requirements are tested vs untested
 - Gaps identified: what still needs testing
+
+This is a companion to the stage report — the stage report gives the high-level summary (under 30 lines), the test results summary gives the detailed breakdown.
 
 ### Test Categories
 
 - **Structural tests**: Does the expected directory/file structure exist?
 - **Functional tests**: Do scripts/tools produce correct output?
 - **Integration tests**: Do components work together?
+- **Behavioral tests**: Do agents discover and follow rules/protocols correctly?
 - **Constraint tests**: Are stage 03 constraints respected?
 - **Regression tests**: Do previously working things still work?
 
@@ -72,13 +120,31 @@ The summary includes:
 
 ## Outputs
 
+### Work Products (in `outputs/`)
+
 | Output | Location | Format |
 |--------|----------|--------|
-| Test scripts | `outputs/test_*.sh` | Executable test scripts |
-| Test runner | `outputs/run_all_tests.sh` | Master runner that invokes all tests |
-| Results summary | `outputs/test_results_summary.md` | PASS/FAIL/SKIP counts + details |
-| Validation report | `outputs/by_topic/` | Detailed analysis |
-| Stage report | `outputs/stage_report.md` | Standard stage report format |
+| Master test runner | `outputs/run_all_tests.sh` | Invokes all per-suite runners |
+| Suite index | `outputs/by_suite/README.md` | Index of all suites, status, coverage map |
+| Test designs | `outputs/by_suite/{suite}/design/` | Test case definitions per suite |
+| Test scripts | `outputs/by_suite/{suite}/tests/` | Executable test scripts per suite |
+| Test results | `outputs/by_suite/{suite}/results/` | Timestamped run reports per suite |
+| Test insights | `outputs/by_suite/{suite}/insights/` | Coverage analysis, findings per suite |
+| Suite runner | `outputs/by_suite/{suite}/tests/run_suite.sh` | Per-suite runner |
+
+### Handoff Documents (in `.0agnostic/05_handoff_documents/02_outgoing/`)
+
+Same content goes to both `01_to_above/` (for the manager) and `03_to_below/` (for test suites to reference).
+
+| Output | Filename | Format |
+|--------|----------|--------|
+| Stage report | `stage_report.md` | Standard stage report format (under 30 lines) |
+| Test results summary | `test_results_summary.md` | Cross-suite PASS/FAIL/SKIP counts + details |
+| Overview document | `testing_overview.md` | Navigation hub — references all suites, designs, results, insights |
+
+The **testing overview** (`testing_overview.md`) is the master reference document. It links to all test suites, their designs, their results, and their insights. Both the stage report and test results summary reference this overview for detailed navigation. The overview is the document you read to understand the full picture of testing for this entity.
+
+The **to_below** copy lets individual test suites see the broader context — overall test status, what other suites exist, and where the stage stands. A suite agent working on `agnostic_sync/` can read the downward-facing overview to understand what `1merge_structure/` found.
 
 ## Success Criteria
 
@@ -91,7 +157,10 @@ This stage is complete when:
 
 ## Exit Protocol
 
-1. Update `outputs/stage_report.md` with current status
+1. Write/update handoff documents in both outgoing directions (`01_to_above/` and `03_to_below/`):
+   - `stage_report.md` — current status (under 30 lines)
+   - `test_results_summary.md` — cross-suite PASS/FAIL/SKIP counts
+   - `testing_overview.md` — navigation hub linking to all suites
 2. If handing off to **stage 08** (criticism): include test results for the critic to review
 3. If handing off to **stage 09** (fixing): list specific failures that need fixing
 4. If handing off to **stage 06** (development): note implementation gaps discovered during testing

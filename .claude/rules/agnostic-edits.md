@@ -6,7 +6,7 @@ When editing files inside `.0agnostic/`, you MUST follow the agnostic update pro
 
 ## Before Editing
 
-Read the full protocol: `.0agnostic/02_rules/static/agnostic_update_protocol.md`
+Read the full protocol: `.0agnostic/02_rules/static/agnostic_update_protocol/agnostic_update_protocol.md`
 
 ## After Every `.0agnostic/` Edit
 

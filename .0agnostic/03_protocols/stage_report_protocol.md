@@ -4,7 +4,9 @@
 
 ## Purpose
 
-Every stage agent writes a `stage_report.md` in its `outputs/` directory before exiting. The entity manager reads these reports to maintain a rolled-up view of all stages without loading stage-level details.
+Every stage agent writes a `stage_report.md` as a handoff document before exiting. The entity manager (or stages manager) reads these reports to maintain a rolled-up view of all stages without loading stage-level details.
+
+Stage reports are **handoff documents** — they communicate status upward to the manager. They are NOT work products (which belong in `outputs/`).
 
 ## When to Write
 
@@ -14,7 +16,18 @@ Every stage agent writes a `stage_report.md` in its `outputs/` directory before 
 
 ## Location
 
-`outputs/stage_report.md` within the stage directory.
+**Canonical — two outgoing directions**:
+
+| Direction | Path | Purpose |
+|-----------|------|---------|
+| To above | `.0agnostic/05_handoff_documents/02_outgoing/01_to_above/stage_report.md` | For the entity manager or stages manager to read status |
+| To below | `.0agnostic/05_handoff_documents/02_outgoing/03_to_below/stage_report.md` | For anything below the stage (test suites, sub-work items) to reference the stage's overall status |
+
+The same report goes to both locations. The "to above" copy is consumed by the manager. The "to below" copy provides context to child-level work — e.g., test suites within a testing stage can reference the stage-level report, or sub-tasks within a development stage can see the overall development status.
+
+**Legacy fallback** (still supported by sync-handoffs.sh): `outputs/stage_report.md`. New stages should use the canonical handoff locations.
+
+**Why handoff documents?** Stage reports communicate status in both directions. They are NOT work products (which belong in `outputs/`). Placing them in the handoff system makes their purpose explicit and keeps `outputs/` clean for actual deliverables.
 
 ## Format
 
@@ -53,6 +66,19 @@ Every stage agent writes a `stage_report.md` in its `outputs/` directory before 
 4. Open items should be actionable — what specifically needs to happen
 5. Update the report, don't append — each write replaces the previous version
 6. The manager may update `0INDEX.md` after reading your report
+
+## Companion Overview Document
+
+Stages with substantial output may also produce a **stage overview document** alongside the stage report in both outgoing handoff locations (`01_to_above/` and `03_to_below/`).
+
+The overview document:
+- Serves as a **navigation hub** — links to all work products in `outputs/`
+- Is referenced by the stage report (the stage report says "see overview for details")
+- Provides the full picture that the 30-line stage report can only summarize
+- Is stage-type-specific: testing has `testing_overview.md`, design might have `design_overview.md`, etc.
+- Goes to both directions: upward (manager reads it) and downward (sub-work references it)
+
+The stage report stays brief (under 30 lines). The overview document has no line limit — it's the detailed reference that the manager, next-stage agent, or child-level work can read when they need the full context.
 
 ## Distribution via sync-handoffs.sh
 

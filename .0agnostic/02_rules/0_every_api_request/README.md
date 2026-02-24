@@ -1,29 +1,14 @@
-# 0_every_api_request
+# Every API Request Rules
 
-## Purpose
+Loaded unconditionally on every AI agent turn. These rules apply to EVERY interaction.
 
-Rules in this folder apply to **EVERY API request** universally. These rules should be included (or summarized) in system prompts like CLAUDE.md files.
+## Rules in This Category
 
-## Rules
+- [`AI_CONTEXT_MODIFICATION_PROTOCOL`](AI_CONTEXT_MODIFICATION_PROTOCOL/AI_CONTEXT_MODIFICATION_PROTOCOL.md)
 
-| File | Purpose |
-|------|---------|
-| `AI_CONTEXT_MODIFICATION_PROTOCOL.md` | Show diagram, wait for approval before modifying AI context |
-| `AI_CONTEXT_COMMIT_PUSH_RULE.md` | Git add/commit/push after approved AI context changes |
-| `CONTEXT_TRAVERSAL_RULE.md` | Read CLAUDE.md files and gather context before starting work |
+## Testing
 
-## Usage
-
-These rules are summarized in:
-- `/home/dawson/CLAUDE.md`
-- `/home/dawson/.claude/CLAUDE.md`
-- `0_layer_universal/CLAUDE.md`
-
-The full rule documents here provide complete details when needed.
-
-## Why "Every API Request"
-
-These rules ensure:
-1. **Context awareness** - AI understands where it's working
-2. **Change safety** - No unauthorized modifications to AI context
-3. **Audit trail** - Changes are committed and pushed
+Run all tests in this category:
+```bash
+bash tests/run_category_tests.sh
+```

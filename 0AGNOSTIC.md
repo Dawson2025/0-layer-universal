@@ -10,15 +10,17 @@
 
 These rules apply to EVERY AI agent at this level and below:
 
-### 1. AI Context Modification Protocol
+### 1. Filesystem Change Visualization Protocol
 
-Before modifying AI context files:
-1. **Show propagation chain diagram** - source → sync → tool-specific
-2. **Show before/after diagrams** - current state vs proposed
-3. **Wait for user approval**
-4. **Execute approved changes**
+**Two tiers** — show proposed changes before executing:
 
-**Scope**: `CLAUDE.md`, `GEMINI.md`, `AGENTS.md`, `.claude/`, `.0agnostic/`, `*_rules/`, `*_prompts/`, `*_knowledge/`
+**Tier 1 (AI Context — strict)**: Before modifying AI context files, show propagation chain diagram, store proposal in registry, wait for approval.
+**Scope**: `0AGNOSTIC.md`, `.0agnostic/`, `.1merge/`, `CLAUDE.md`, `AGENTS.md`, `GEMINI.md`, `OPENAI.md`, `.claude/`, `.cursor/`, `*_rules/`, `*_prompts/`, `*_knowledge/`, `status.json`, `*.gab.jsonld`, `*.integration.md`
+
+**Tier 2 (General Filesystem — standard)**: Before structural filesystem changes (2+ dirs, 3+ files, reorganization), show before/after diagram, wait for approval.
+**Exemptions**: Single file edits, single file creation, appends.
+
+**Full rule**: `.0agnostic/02_rules/0_every_api_request/AI_CONTEXT_MODIFICATION_PROTOCOL/AI_CONTEXT_MODIFICATION_PROTOCOL.md`
 
 ### 2. Stage Completeness Rule
 
@@ -57,7 +59,7 @@ When any nested repository exists in a child path:
 |-----------|--------|
 | Creating entities with stages | Load skill: entity-creation |
 | Modifying AI context | Show propagation chain diagram first |
-| Modifying `.0agnostic/` files | Follow agnostic update protocol: `.0agnostic/02_rules/static/agnostic_update_protocol.md` |
+| Modifying `.0agnostic/` files | Follow agnostic update protocol: `.0agnostic/02_rules/static/agnostic_update_protocol/agnostic_update_protocol.md` |
 | Working with layers/stages | Load skill: context-gathering |
 | Need rules | Load `.claude/skills/` or reference `.0agnostic/02_rules/` |
 
@@ -67,7 +69,7 @@ When any nested repository exists in a child path:
 |----------|----------|---------|
 | Skills | `.claude/skills/SKILLS.md` | Task-specific instructions |
 | Rules | `.0agnostic/02_rules/` | Universal rules |
-| Update Protocol | `.0agnostic/02_rules/static/agnostic_update_protocol.md` | Sync chain for .0agnostic/ changes |
+| Update Protocol | `.0agnostic/02_rules/static/agnostic_update_protocol/agnostic_update_protocol.md` | Sync chain for .0agnostic/ changes |
 | Knowledge | `.0agnostic/01_knowledge/` | Reference docs |
 
 ## Children

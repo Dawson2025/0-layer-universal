@@ -86,7 +86,7 @@ STATIC_CONTENT=$(echo "$STATIC_CONTENT" | sed '/./,$!d')
 PROMOTED_RULES=""
 if [ -d "$DIR/.0agnostic/02_rules" ]; then
     RULE_ENTRIES=""
-    for rule_file in "$DIR"/.0agnostic/02_rules/static/*.md "$DIR"/.0agnostic/02_rules/dynamic/*.md; do
+    for rule_file in "$DIR"/.0agnostic/02_rules/static/*/*.md "$DIR"/.0agnostic/02_rules/dynamic/*/*.md "$DIR"/.0agnostic/02_rules/0_every_api_request/*/*.md; do
         [ -f "$rule_file" ] || continue
         if head -10 "$rule_file" | grep -q 'promote: hot'; then
             HOT_SUMMARY=$(head -10 "$rule_file" | sed -n 's/^hot_summary: *"\(.*\)"/\1/p')
@@ -363,12 +363,14 @@ if [ -d "$DIR/.0agnostic" ]; then
         done
     fi
 
-    # Check rules (files in 02_rules/static/ and 02_rules/dynamic/)
-    for rules_subdir in static dynamic; do
+    # Check rules (files in 02_rules/{category}/{rule}/ subdirectories)
+    for rules_subdir in static dynamic 0_every_api_request 1_scenario_based; do
         if [ -d "$DIR/.0agnostic/02_rules/$rules_subdir" ]; then
-            for rule_file in "$DIR"/.0agnostic/02_rules/$rules_subdir/*.md; do
+            for rule_file in "$DIR"/.0agnostic/02_rules/$rules_subdir/*/*.md; do
                 [ -f "$rule_file" ] || continue
                 rule_name=$(basename "$rule_file")
+                # Skip test files and READMEs
+                case "$rule_name" in test_*|README*) continue ;; esac
                 if ! echo "$AGNOSTIC_TEXT" | grep -qi "$rule_name"; then
                     # Also check without .md extension and with underscores as spaces
                     rule_stem="${rule_name%.md}"
