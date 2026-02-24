@@ -52,6 +52,18 @@ Both system-wide and agentic TTS share the same engine stack:
 - If both speak simultaneously, agentic TTS takes priority (Orca can be paused)
 - Speech interruption: pressing hotkey again or Orca's stop key cancels current speech
 
-## Children
-- System TTS implementation: `../../../../../../layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_system_tts/`
-- Agentic TTS implementation: `../../../../../../layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_agentic_tts/`
+## Children — Detailed Design
+
+This document covers the **overall audio system design** at the parent level. Each child has its own design outputs:
+
+### System TTS Design (Summary)
+- Architecture: User hotkey/CLI → speak scripts → PID check → Piper → aplay → PulseAudio
+- Two scripts: `speak` (general TTS) and `speak-selection` (X11 highlight-and-speak)
+- Toggle behavior via PID files, voice model at `~/.local/share/piper-voices/`
+- **Full details**: `../../../../../../layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_system_tts/layer_2_group/layer_2_99_stages/stage_2_04_design/outputs/system_tts_design.md`
+
+### Agentic TTS Design (Summary)
+- Architecture: Claude Stop event → Hook 1 (sound) → Hook 2 (tts-response.sh) → jq extract → sed strip → Piper background
+- Text pipeline: strip code blocks, markdown, URLs, paths, tables → truncate to 600 chars → Piper → aplay
+- Future: split-output pattern where Claude provides `spoken_summary` field
+- **Full details**: `../../../../../../layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_agentic_tts/layer_2_group/layer_2_99_stages/stage_2_04_design/outputs/agentic_tts_design.md`

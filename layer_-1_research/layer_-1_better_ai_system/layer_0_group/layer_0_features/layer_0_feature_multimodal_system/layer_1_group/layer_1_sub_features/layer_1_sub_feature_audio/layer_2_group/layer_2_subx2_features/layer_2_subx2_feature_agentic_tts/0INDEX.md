@@ -1,21 +1,25 @@
 # 0INDEX.md - Agentic TTS
 
 ## Current Status
-- **Phase**: Newly instantiated
-- **Active Stage**: None yet (stage 02 research ready)
+- **Phase**: MVP working — all stages populated
+- **Active Stage**: 10 (Current Product)
 - **Last Updated**: 2026-02-23
 
+## Parent Reference
+Overview and cross-cutting context at parent audio sub-feature:
+- Parent stages: `../../../layer_1_group/layer_1_99_stages/` — each stage has summary + reference back here
+
 ## Stage Progress
-| Stage | Status | Notes |
-|-------|--------|-------|
-| 01 Request Gathering | Not started | Parent has overall audio requirements |
-| 02 Research | Not started | Evaluate Kokoro hook vs MCP plugin |
-| 03 Instructions | Not started | |
-| 04 Design | Not started | Parent has high-level design |
-| 05 Planning | Not started | |
-| 06 Development | Not started | Hook implementation |
-| 07 Testing | Not started | |
-| 08 Criticism | Not started | |
-| 09 Fixing | Not started | |
-| 10 Current Product | Not started | |
+| Stage | Status | Key Output |
+|-------|--------|------------|
+| 01 Request Gathering | Has content | `outputs/agentic_tts_requirements.md` |
+| 02 Research | Has content | `outputs/agentic_tts_research.md` |
+| 03 Instructions | Has content | `outputs/agentic_tts_instructions.md` |
+| 04 Design | Has content | `outputs/agentic_tts_design.md` |
+| 05 Planning | Has content | `outputs/agentic_tts_plan.md` |
+| 06 Development | Has content | `outputs/agentic_tts_setup.md` |
+| 07 Testing | Has content | `outputs/agentic_tts_test_results.md` |
+| 08 Criticism | Has content | `outputs/agentic_tts_criticism.md` |
+| 09 Fixing | Has content | `outputs/agentic_tts_fixes.md` |
+| 10 Current Product | Has content | `outputs/agentic_tts_current_product.md` |
 | 11 Archives | Not started | |

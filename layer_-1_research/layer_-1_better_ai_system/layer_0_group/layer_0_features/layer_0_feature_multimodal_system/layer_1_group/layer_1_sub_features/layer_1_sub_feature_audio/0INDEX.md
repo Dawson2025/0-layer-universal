@@ -1,8 +1,8 @@
 # 0INDEX.md - Audio Sub-Feature
 
 ## Current Status
-- **Phase**: Research + Design + Development — system TTS and agentic TTS both working
-- **Active Stage**: 06 (Development) active in children
+- **Phase**: All stages populated — MVP working, children stages cross-referenced
+- **Active Stage**: All stages 01-10 have content with references to child stages
 - **Last Updated**: 2026-02-23
 
 ## Children
@@ -16,12 +16,12 @@
 |-------|--------|-------------|
 | 01 Request Gathering | Has content | `outputs/audio_requirements.md` |
 | 02 Research | Has content | `outputs/perplexity_extraction_2026-02-22_tts-research.md`, `outputs/audio_architecture_overview.md` |
-| 03 Instructions | Not started | |
-| 04 Design | Has content | `outputs/audio_system_design.md` |
-| 05 Planning | Not started | |
-| 06 Development | Active (children) | System TTS: Piper + speak scripts. Agentic TTS: Stop hook with TTS |
-| 07 Testing | Not started | |
-| 08 Criticism | Not started | |
-| 09 Fixing | Not started | |
-| 10 Current Product | Not started | |
+| 03 Instructions | Has content | `outputs/audio_instructions.md` — constraints + child refs |
+| 04 Design | Has content | `outputs/audio_system_design.md` — architecture + child refs |
+| 05 Planning | Has content | `outputs/audio_plan.md` — phases + child refs |
+| 06 Development | Has content | `outputs/audio_development.md` — summary + child refs |
+| 07 Testing | Has content | `outputs/audio_testing.md` — test summary + child refs |
+| 08 Criticism | Has content | `outputs/audio_criticism.md` — review + child refs |
+| 09 Fixing | Has content | `outputs/audio_fixes.md` — fix log + child refs |
+| 10 Current Product | Has content | `outputs/audio_current_product.md` — MVP summary + child refs |
 | 11 Archives | Not started | |

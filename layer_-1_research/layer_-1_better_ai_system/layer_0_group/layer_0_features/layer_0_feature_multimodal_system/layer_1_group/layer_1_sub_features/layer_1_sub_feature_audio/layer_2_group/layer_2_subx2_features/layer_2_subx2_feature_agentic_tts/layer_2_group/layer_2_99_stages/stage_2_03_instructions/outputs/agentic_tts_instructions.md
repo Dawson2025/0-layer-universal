@@ -1,0 +1,32 @@
+# Agentic TTS Instructions / Constraints
+
+**Date**: 2026-02-23
+
+## Technical Constraints
+
+1. **Hook script must exit 0**: Non-zero exit codes may be reported as hook failures
+2. **PID file isolation**: Agentic TTS uses `/tmp/claude-tts.pid`, separate from system TTS
+3. **Background execution**: Speech MUST run in background subshell `( ... ) &` — blocking the hook blocks Claude
+4. **Timeout**: Hook has 60s timeout configured in settings.json
+5. **jq required**: Hook parses JSON stdin with jq to extract `last_assistant_message`
+6. **Truncation**: Max 600 chars spoken to keep summaries brief
+
+## Dependencies
+
+- `jq` (JSON parsing from hook stdin)
+- `piper` (via pipx — shared with system TTS)
+- `aplay` (audio playback)
+- Voice model at `~/.local/share/piper-voices/en_US-amy-medium.onnx`
+
+## Hook Configuration Rules
+
+- Hooks are defined in `~/.claude/settings.json` under `hooks.Stop`
+- Multiple hooks in same event array run sequentially
+- Completion sound hook runs first, TTS hook runs second
+- `timeout: 60` prevents runaway speech from blocking session
+
+## Do NOT
+
+- Do not use synchronous speech in the hook (will block Claude)
+- Do not parse the transcript JSONL file (use `last_assistant_message` field instead)
+- Do not use `async: true` in settings — the background subshell handles async
