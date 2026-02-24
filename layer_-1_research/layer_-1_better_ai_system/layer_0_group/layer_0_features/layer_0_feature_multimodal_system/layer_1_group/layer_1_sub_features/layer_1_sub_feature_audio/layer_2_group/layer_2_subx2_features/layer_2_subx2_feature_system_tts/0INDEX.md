@@ -1,9 +1,9 @@
 # 0INDEX.md - System TTS
 
 ## Current Status
-- **Phase**: MVP working — all stages populated
+- **Phase**: Phase 2 complete — Speech Dispatcher + Piper + Orca integrated
 - **Active Stage**: 10 (Current Product)
-- **Last Updated**: 2026-02-23
+- **Last Updated**: 2026-02-24
 
 ## Parent Reference
 Overview and cross-cutting context at parent audio sub-feature:
@@ -18,7 +18,7 @@ Overview and cross-cutting context at parent audio sub-feature:
 | 04 Design | Has content | `outputs/system_tts_design.md` |
 | 05 Planning | Has content | `outputs/system_tts_plan.md` |
 | 06 Development | Has content | `outputs/system_tts_setup.md` |
-| 07 Testing | Has content | `outputs/system_tts_test_results.md` |
+| 07 Testing | Has content | `outputs/system_tts_test_results.md`, `outputs/test-system-tts.sh` (29 tests) |
 | 08 Criticism | Has content | `outputs/system_tts_criticism.md` |
 | 09 Fixing | Has content | `outputs/system_tts_fixes.md` |
 | 10 Current Product | Has content | `outputs/system_tts_current_product.md` |

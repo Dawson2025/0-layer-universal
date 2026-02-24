@@ -1,28 +1,51 @@
 # System TTS Test Results
 
-**Date**: 2026-02-23
+**Date**: 2026-02-24 (Phase 2 update)
 
-## Test Matrix
+## Automated Test Suite
+
+Test script: `outputs/test-system-tts.sh` — 29 tests across 8 categories.
+
+**Result**: 29/29 PASS
+
+| Category | Tests | Result |
+|----------|-------|--------|
+| Component Availability | 5 | All pass (Piper, Amy voice, paplay, spd-say, sd_generic) |
+| Configuration | 5 | All pass (user speechd.conf, module config, DefaultModule, AddModule x2) |
+| Module Loading | 2 | All pass (piper-generic and espeak-ng both loaded) |
+| Module Config Validation | 3 | All pass (no errors in log, GenericExecuteSynth, DefaultVoice) |
+| Audio Pipeline | 3 | All pass (Piper raw, spd-say default, spd-say espeak-ng) |
+| Script Tests | 5 | All pass (speak/speak-selection executable, all use paplay) |
+| Orca Readiness | 2 | All pass (Orca binary available, version 46.1) |
+| GSD Keepalive | 3 | All pass (timer active, gsd-media-keys running, gsd-power running) |
+
+## Manual Test Matrix
 
 | # | Test | Command | Expected | Result |
 |---|------|---------|----------|--------|
-| 1 | Speech Dispatcher | `spd-say "test"` | Audio (robotic) | PASS |
-| 2 | eSpeak NG direct | `espeak-ng "test"` | Audio (robotic) | PASS |
-| 3 | Piper raw pipeline | `echo "test" \| piper --model amy ... \| aplay ...` | Audio (natural) | PASS |
-| 4 | speak (args) | `speak "Hello world"` | Audio (natural) | PASS |
-| 5 | speak (pipe) | `echo "test" \| speak` | Audio (natural) | PASS |
-| 6 | speak (stop) | `speak -s` | Kills running speech | PASS |
-| 7 | speak-selection | `speak-selection` (with text selected) | Audio of selection | Not yet tested with hotkey |
+| 1 | spd-say Piper (default) | `spd-say "test"` | Natural voice | PASS |
+| 2 | spd-say eSpeak fallback | `spd-say -o espeak-ng "test"` | Robotic voice | PASS |
+| 3 | speak (args) | `speak "Hello world"` | Natural voice via paplay | PASS |
+| 4 | speak (pipe) | `echo "test" \| speak` | Natural voice | PASS |
+| 5 | speak (stop) | `speak -s` | Kills running speech | PASS |
+| 6 | speak-selection hotkey | Ctrl+Alt+S with text selected | Reads selection | PASS |
+| 7 | speak-selection toggle | Ctrl+Alt+S while speaking | Stops speech | PASS |
+| 8 | Module listing | `spd-say -O` | Shows espeak-ng, piper-generic | PASS |
+| 9 | Voice listing | `spd-say -L` | Shows Amy voice entries | PASS |
+| 10 | Orca start | `orca` | Starts, announces focus | PASS |
 
 ## Environment
 
 | Component | Value |
 |-----------|-------|
 | OS | Ubuntu (Linux 6.17.0-14-generic) |
+| Desktop | Unity (XDG_CURRENT_DESKTOP=Unity) |
 | Session | X11 |
-| Audio | PulseAudio (protocol v35) |
+| Audio | PulseAudio (protocol v35) via paplay |
 | Piper | 1.4.1 |
-| Voice | en_US-amy-medium (22050 Hz, S16_LE) |
+| Voice | en_US-amy-medium (22050 Hz, S16_LE, mono) |
+| Speech Dispatcher | 0.12.0-rc2 |
+| Orca | 46.1 |
 
 ## Performance
 
@@ -30,10 +53,12 @@
 - Short sentence (~10 words): ~1.5s total (load + synth + play)
 - Long paragraph (~100 words): ~4s total
 
-## Known Issues
+## Resolved Issues
 
-| Issue | Severity | Status |
-|-------|----------|--------|
-| GNOME hotkey not yet configured | Low | Pending manual setup |
-| No Wayland clipboard support | Low | X11 session currently |
-| pathvalidate missing from piper-tts pip package | Medium | Fixed via pipx inject |
+| Issue | Fix |
+|-------|-----|
+| pathvalidate missing from piper-tts | `pipx inject piper-tts pathvalidate` |
+| GNOME keybinding wrong schema | Use Unity schema: `com.canonical.unity.settings-daemon.plugins.media-keys` |
+| gsd-media-keys dead | gsd-keepalive.timer auto-restarts every 60s |
+| Empty punctuation args in module config | Removed GenericPunctNone/Some/Most/All lines |
+| Audio device contention (aplay vs PulseAudio) | All paths now use paplay |

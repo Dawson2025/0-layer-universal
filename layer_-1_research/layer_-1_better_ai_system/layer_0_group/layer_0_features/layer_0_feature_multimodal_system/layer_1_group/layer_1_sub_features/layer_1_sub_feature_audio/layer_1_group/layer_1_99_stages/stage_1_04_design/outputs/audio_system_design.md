@@ -15,9 +15,10 @@ Both system-wide and agentic TTS share the same engine stack:
 ### Layer 2: System-Wide TTS
 | Component | Purpose |
 |-----------|---------|
-| **Orca** | GNOME screen reader — reads focused UI, navigation, terminal |
-| **Highlight-and-speak script** | Custom hotkey: `xsel` → Piper → `aplay` |
-| **GNOME shortcut** | Binds script to keyboard shortcut (e.g., `Super+S`) |
+| **Orca** | GNOME screen reader — reads focused UI, navigation, terminal (via Speech Dispatcher → Piper) |
+| **Speech Dispatcher** | TTS routing daemon — piper-generic module as default, espeak-ng as fallback |
+| **Highlight-and-speak script** | Custom hotkey: `xclip` → Piper → `paplay` (Ctrl+Alt+S) |
+| **spd-say** | CLI for any app needing Speech Dispatcher TTS |
 
 ### Layer 3: Agentic TTS (Claude Code)
 | Component | Purpose |
@@ -33,11 +34,11 @@ Both system-wide and agentic TTS share the same engine stack:
 2. Verify `echo "test" | piper --model en_US-lessac-medium --output-raw | aplay -r 22050 -f S16_LE`
 3. Install eSpeak NG as fallback
 
-### Phase 2: System-Wide TTS
-1. Enable Orca (`Super+Alt+S`)
-2. Configure Speech Dispatcher to use Piper as default voice
-3. Create highlight-and-speak script
-4. Bind to GNOME keyboard shortcut
+### Phase 2: System-Wide TTS (**COMPLETE**)
+1. ~~Enable Orca (`Super+Alt+S`)~~ Done — gsettings + manual start
+2. ~~Configure Speech Dispatcher to use Piper as default voice~~ Done — user-local piper-generic module
+3. ~~Create highlight-and-speak script~~ Done — speak-selection with Ctrl+Alt+S
+4. ~~Bind to keyboard shortcut~~ Done — Unity keybinding schema
 5. Test across: browser, terminal, GUI apps
 
 ### Phase 3: Agentic TTS
@@ -57,9 +58,11 @@ Both system-wide and agentic TTS share the same engine stack:
 This document covers the **overall audio system design** at the parent level. Each child has its own design outputs:
 
 ### System TTS Design (Summary)
-- Architecture: User hotkey/CLI → speak scripts → PID check → Piper → aplay → PulseAudio
-- Two scripts: `speak` (general TTS) and `speak-selection` (X11 highlight-and-speak)
-- Toggle behavior via PID files, voice model at `~/.local/share/piper-voices/`
+- Two audio paths: direct (speak scripts → Piper → paplay) and Speech Dispatcher (Orca/spd-say → speechd → sd_generic → Piper → paplay)
+- Scripts: `speak` (general TTS) and `speak-selection` (X11 highlight-and-speak, Ctrl+Alt+S)
+- Speech Dispatcher: piper-generic module (default), espeak-ng (fallback)
+- Orca: GNOME screen reader using Piper via Speech Dispatcher
+- All audio through paplay (PulseAudio) — no ALSA conflicts
 - **Full details**: `../../../../../../layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_system_tts/layer_2_group/layer_2_99_stages/stage_2_04_design/outputs/system_tts_design.md`
 
 ### Agentic TTS Design (Summary)
