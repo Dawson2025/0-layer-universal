@@ -8,10 +8,10 @@ This stage produces architecture and design documents that translate research fi
 
 | # | Document | Summary | Research Basis |
 |---|----------|---------|----------------|
-| 01 | [Unified Sync Architecture](01_unified_sync_architecture.md) | Source-of-truth → avenue web sync flow, sync-main.sh orchestrator spec, sync registry | Docs 32, 36, 37 |
+| 01 | [Unified Sync Architecture](01_unified_sync_architecture.md) | **Pointer** → canonical at context_chain_system stage_3_04 doc 07 | Docs 32, 36, 37 |
 | 02 | [Data Avenue Web Expansion](02_data_avenue_web_expansion.md) | Avenues 09-13 design: knowledge graph, relational index, vectors, temporal, SHIMI | Docs 23, 24, 25, 29, 32-37 |
 | 03 | [Enriched Skill Model](03_enriched_skill_model.md) | Skills as mini-entities with knowledge, rules, trajectory stores, temporal data | Docs 25, 30, 34, 36 |
-| 04 | [Source of Truth to Avenue Flow](04_source_of_truth_to_avenue_flow.md) | Holistic context ordering: 0AGNOSTIC.md → 01-05 source → 06 avenue web (file + data) | Docs 32-37 |
+| 04 | [Source of Truth to Avenue Flow](04_source_of_truth_to_avenue_flow.md) | **Pointer** → canonical at context_chain_system stage_3_04 doc 06 | Docs 32-37 |
 | 05 | [Design Index](05_design_index.md) | This file — index of all design documents |
 
 ## Scope Boundaries

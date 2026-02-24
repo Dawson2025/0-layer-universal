@@ -11,7 +11,7 @@
 | 01 | request_gathering | active | Tree of needs: 1 root, 3 branches, 9 leaf needs (added need_03_auto_discovery) | 22+ | 2026-02-22 |
 | 02 | research | active | 25+ research files + discovery gap audit, temperature model, .1merge injection | 26+ | 2026-02-22 |
 | 03 | instructions | scaffolded | — | 0 | — |
-| 04 | design | active | 2 design docs: chain system design, avenue web integration | 3 | 2026-02-18 |
+| 04 | design | active | 8 design docs: chain system, avenue web, propagation chain, funnel, inheritance, source-to-avenue, sync, discovery temps | 9 | 2026-02-23 |
 | 05 | planning | active | Implementation plan for .0agnostic/avenue web MVP | 2 | 2026-02-18 |
 | 06 | development | active | MVP + agnostic-sync validation + user-level-sync + .1merge injection + skill discovery chain | 10+ | 2026-02-22 |
 | 07 | testing | active | 76 PASS core + skill discovery chain (6 checkpoints all PASS) | 9+ | 2026-02-22 |
@@ -26,7 +26,7 @@
         │
 02 research ───────────→ Investigated context chain patterns, 25+ files
         │
-04 design ─────────────→ Architecture: 4-layer system, avenue web integration
+04 design ─────────────→ Architecture: 8 design docs (chain, funnel, inheritance, sync, temps)
         │
 05 planning ───────────→ MVP-first implementation plan
         │

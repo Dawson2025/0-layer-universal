@@ -1,51 +1,24 @@
 # Design Decision: Context Propagation
 
 **Date**: 2026-02-21
-**Status**: Approved and implemented
+**Status**: Approved — canonical source moved to context chain system (Layer 3)
 
-## Decision
+> **This document is a pointer.** The canonical source of truth for context propagation design lives in the context chain system, which owns this domain.
 
-Define how work products consolidate within stages and propagate across the layer-stage hierarchy via a **consolidation funnel** pattern.
+## Canonical Source
 
-## Universal Artifact
+**Bottom-up consolidation funnel**: `layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_memory_system/layer_3_group/layer_3_subx3_features/layer_3_subx3_feature_context_chain_system/layer_3_group/layer_3_99_stages/stage_3_04_design/outputs/by_topic/04_context_propagation_funnel.md`
 
-The full design document is a universal artifact at:
-`(root)/.0agnostic/01_knowledge/CONTEXT_PROPAGATION_DESIGN.md`
+**Full design index**: `...stage_3_04_design/outputs/by_topic/README.md`
 
-It is universal because the propagation pattern applies to ALL entities, not just the agent_delegation_system.
+## Decision Summary
 
-## Summary
-
-Two core diagrams:
-
-1. **Stage-Internal Consolidation Funnel**: outputs → output_report → .0agnostic/ → stage_report → 0AGNOSTIC.md (most detail → most consolidated)
-2. **Cross-Level Connection Map**: stages → entity (via stage_reports), child entities → parent entity (via layer_reports), with consolidation reports (stages_report.md, child_layers_report.md) at the entity level
-
-Key insight: stages and entities follow the **same pattern** — many inputs → consolidation overview → structured system → summary report → entry point.
+Define how work products consolidate within stages and propagate across the layer-stage hierarchy via a **consolidation funnel** pattern. The funnel is recursive: stages, entities, and root all follow the same pattern of many inputs → consolidation → structured system → summary report → entry point.
 
 ## Rationale
 
-- Existing docs covered top-down loading (how agents receive context) but not bottom-up propagation (how outputs flow upward)
-- Without this design, the consolidation funnel was implicit — agents didn't know the expected flow
-- The handoff document system had structure (incoming/outgoing × above/sides/below) but no documented lifecycle
+The context chain system (Layer 3 child of memory_system) is the dedicated sub-feature for context flow architecture. Moving the detailed design there follows the principle that the entity owning the domain should own the source of truth.
 
-## Alternatives Considered
+---
 
-| Alternative | Why Rejected |
-|-------------|-------------|
-| Merge into AI_CONTEXT_FLOW_ARCHITECTURE.md | That doc is already 680+ lines; different concern (loading vs propagation) |
-| Per-entity propagation docs | The pattern is universal — one doc covers all |
-| No formal doc (keep implicit) | Agents need explicit guidance on the consolidation order |
-
-## Artifacts Produced
-
-- `(root)/.0agnostic/01_knowledge/CONTEXT_PROPAGATION_DESIGN.md` — the design doc
-- Cross-reference added to `AI_CONTEXT_FLOW_ARCHITECTURE.md`
-- This entity (ADS) serves as the first implementation example
-
-## Related Decisions
-
-- 0AGNOSTIC.md as stage identity (prior decision)
-- Stage reports for async communication (prior decision)
-- Two-halves context pattern — Principle 9 (prior decision)
-- Handoff document population — sync-handoffs.sh (prior implementation)
+*Converted to pointer on 2026-02-23 — previously referenced (root)/.0agnostic/01_knowledge/CONTEXT_PROPAGATION_DESIGN.md as the universal artifact.*
