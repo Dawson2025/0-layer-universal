@@ -249,6 +249,44 @@ After creating the directory structure, create these files:
 - `outputs/` and `synthesis/` live inside each **stage**, NOT at entity root
 - Every tool dir (`.claude/`, `.cursor/`, `.gemini/`, `.codex/`) gets its own `episodic_memory/`
 
+## Entities within 07+_setup_dependant
+
+Entities nested inside `.0agnostic/07+_setup_dependant/` follow the same canonical structure with these exceptions:
+
+1. **No `07+_setup_dependant/` in their `.0agnostic/`** — they're already inside one; no circular nesting
+2. **Knowledge topics replace old-style sub-layers** — domain knowledge goes in `.0agnostic/01_knowledge/[topic]/` with `{principles,docs,resources}` subdirs, NOT as separate `sub_layer_XX_*` directories
+3. **AI manager absorbed into entity root** — identity lives in `0AGNOSTIC.md`, NOT in a separate `_01_ai_manager_system/` dir
+4. **Handoff documents in .0agnostic/** — at `.0agnostic/05_handoff_documents/`, NOT as a separate `_02_manager_handoff_documents/` dir
+
+Example: A local Ubuntu environment entity at `.../sub_layer_0_06_local/`:
+```
+sub_layer_0_06_local/
+├── 0AGNOSTIC.md, 0INDEX.md, README.md, CLAUDE.md (etc.)
+├── .0agnostic/               # NO 07+_setup_dependant inside
+│   ├── 01_knowledge/         # Topics: linux_fundamentals/, ubuntu_desktop/, etc.
+│   ├── 02_rules/
+│   ├── 03_protocols/
+│   ├── 04_episodic_memory/
+│   ├── 05_handoff_documents/
+│   └── 06_context_avenue_web/
+├── .1merge/, .claude/, .cursor/ (etc.)
+├── sub_layer_0_06_group/     # Internal group (stages, setup docs)
+└── sub_layer_0_07_group/     # Children group (coding_apps, etc.)
+```
+
+## Deprecated Patterns
+
+These old patterns are **no longer used** and should be migrated if found:
+
+| Old Pattern | Replacement |
+|-------------|-------------|
+| `layer_N_01_ai_manager_system/` | Entity root `0AGNOSTIC.md` |
+| `layer_N_02_manager_handoff_documents/` | `.0agnostic/05_handoff_documents/` |
+| `layer_N_03_sub_layers/` | `.0agnostic/01_knowledge/`, `02_rules/`, `03_protocols/` |
+| Topic sub-layer directories | `.0agnostic/01_knowledge/[topic]/` |
+
+**Migration tool**: `.0agnostic/01_knowledge/layer_stage_system/resources/tools/migrate-sub-layers-to-0agnostic.sh`
+
 ## Validation
 
 Run `.0agnostic/01_knowledge/layer_stage_system/resources/tools/validate-entity.sh <entity-path>` to check completeness against this canonical structure.

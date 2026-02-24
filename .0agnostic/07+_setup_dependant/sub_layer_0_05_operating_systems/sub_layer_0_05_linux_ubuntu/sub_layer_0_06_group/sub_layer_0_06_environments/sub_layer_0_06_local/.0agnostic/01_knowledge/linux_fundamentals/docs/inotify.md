@@ -59,5 +59,5 @@ systemctl --user --failed
 ```
 
 ## Related Documentation
-- [Ubuntu Desktop](../sub_layer_02_ubuntu_desktop/)
-- [System Services](../sub_layer_03_system_services/)
+- [Ubuntu Desktop](../../ubuntu_desktop/docs/)
+- [System Services](../../system_services/docs/)

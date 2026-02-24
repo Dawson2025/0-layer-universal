@@ -32,7 +32,15 @@ Load this context when:
 | Session notes | `.0agnostic/episodic_memory/` |
 
 ## Platform Dependencies
-Multimodal features (especially audio/TTS) depend on the local desktop environment. For GNOME/Unity troubleshooting, gsd-* daemon issues, and audio stack documentation:
-- **Local Ubuntu setup**: `.0agnostic/07+_setup_dependant/sub_layer_0_05_operating_systems/sub_layer_0_05_linux_ubuntu/sub_layer_0_06_group/sub_layer_0_06_environments/sub_layer_0_06_local/`
-- **GNOME architecture**: `...sub_layer_0_06_local/setup/sub_layer_0_06_99_stages/stage_0_09_current_product/outputs/gnome_architecture.md`
-- **GSD keepalive fix**: `...sub_layer_0_06_local/setup/sub_layer_0_06_99_stages/stage_0_09_current_product/outputs/gsd_keepalive_fix.md`
+Multimodal features (especially audio/TTS) depend on the local desktop environment. The local Ubuntu entity has been restructured as a proper entity with knowledge topics:
+
+**Local entity root** (from repo root): `.0agnostic/07+_setup_dependant/sub_layer_0_05_operating_systems/sub_layer_0_05_linux_ubuntu/sub_layer_0_06_group/sub_layer_0_06_environments/sub_layer_0_06_local/`
+
+Key resources within the local entity:
+- **Entity context**: `0AGNOSTIC.md` — start here for all local Ubuntu issues
+- **GNOME architecture**: `.0agnostic/01_knowledge/ubuntu_desktop/docs/gnome_architecture.md`
+- **Audio stack**: `.0agnostic/01_knowledge/audio/docs/linux_audio_stack.md`
+- **System services**: `.0agnostic/01_knowledge/system_services/docs/systemd_user_services.md`
+- **GSD keepalive fix**: `sub_layer_0_06_group/sub_layer_0_06_99_stages/stage_0_09_current_product/outputs/gsd_keepalive_fix.md`
+
+**Dynamic rule**: Universal rule at `.0agnostic/02_rules/dynamic/local_ubuntu_desktop_troubleshooting/` triggers for desktop/audio issues.

@@ -97,5 +97,5 @@ systemctl --user restart <service>
 - Verify display access
 
 ## Related Documentation
-- [Linux Fundamentals](../sub_layer_01_linux_fundamentals/)
-- [Ubuntu Desktop](../sub_layer_02_ubuntu_desktop/)
+- [Linux Fundamentals](../../linux_fundamentals/docs/)
+- [Ubuntu Desktop](../../ubuntu_desktop/docs/)

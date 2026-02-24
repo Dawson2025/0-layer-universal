@@ -45,17 +45,31 @@ Load this context when:
 - Claude Code TTS: Kokoro hook, MCP TTS plugin, pyttsx3 DIY
 
 ### Platform Dependencies (Local Ubuntu/GNOME)
-Audio and TTS features depend on the local desktop environment. When troubleshooting keyboard shortcuts, audio output, or GNOME settings daemon issues:
+Audio and TTS features depend on the local desktop environment. When troubleshooting keyboard shortcuts, audio output, or GNOME settings daemon issues, load the local Ubuntu entity:
 
-| Resource | Location (from repo root) |
-|----------|--------------------------|
-| GNOME Architecture | `.0agnostic/07+_setup_dependant/.../sub_layer_0_06_local/setup/.../stage_0_09_current_product/outputs/gnome_architecture.md` |
-| GSD Keepalive Fix | `.0agnostic/07+_setup_dependant/.../sub_layer_0_06_local/setup/.../stage_0_09_current_product/outputs/gsd_keepalive_fix.md` |
-| Local setup root | `.0agnostic/07+_setup_dependant/sub_layer_0_05_operating_systems/sub_layer_0_05_linux_ubuntu/sub_layer_0_06_group/sub_layer_0_06_environments/sub_layer_0_06_local/` |
+**Local entity root** (from repo root): `.0agnostic/07+_setup_dependant/sub_layer_0_05_operating_systems/sub_layer_0_05_linux_ubuntu/sub_layer_0_06_group/sub_layer_0_06_environments/sub_layer_0_06_local/`
 
-Full paths expand from: `.0agnostic/07+_setup_dependant/sub_layer_0_05_operating_systems/sub_layer_0_05_linux_ubuntu/sub_layer_0_06_group/sub_layer_0_06_environments/sub_layer_0_06_local/setup/sub_layer_0_06_99_stages/stage_0_09_current_product/outputs/`
+| Resource | Location (within local entity) |
+|----------|-------------------------------|
+| Entity context | `0AGNOSTIC.md` — start here for all local Ubuntu issues |
+| GNOME Architecture | `.0agnostic/01_knowledge/ubuntu_desktop/docs/gnome_architecture.md` |
+| Linux Audio Stack | `.0agnostic/01_knowledge/audio/docs/linux_audio_stack.md` |
+| Systemd User Services | `.0agnostic/01_knowledge/system_services/docs/systemd_user_services.md` |
+| Inotify | `.0agnostic/01_knowledge/linux_fundamentals/docs/inotify.md` |
+| GSD Keepalive Fix | `sub_layer_0_06_group/sub_layer_0_06_99_stages/stage_0_09_current_product/outputs/gsd_keepalive_fix.md` |
+| EasyEffects Config | `sub_layer_0_06_group/sub_layer_0_06_99_stages/stage_0_09_current_product/outputs/easyeffects_audio_enhancement.md` |
+| WirePlumber Fix | `sub_layer_0_06_group/sub_layer_0_06_99_stages/stage_0_09_current_product/outputs/wireplumber_crash_fix.md` |
 
-**Key facts**: Desktop is Unity (not GNOME Shell). `gsd-media-keys` must run for custom shortcuts. `gsd-keepalive.timer` auto-restarts dead daemons.
+**Key facts**:
+- Desktop is **Unity** (XDG_CURRENT_DESKTOP=Unity), NOT GNOME Shell — but uses GNOME components
+- **GNOME Shell 46** handles standard media keys (volume, brightness) natively; gsd-media-keys "Failed to grab accelerator" is harmless for standard keys
+- `gsd-media-keys` IS needed for **custom keybindings** (Ctrl+Alt+S for speak-selection)
+- `gsd-keepalive.timer` auto-restarts dead daemons but CANNOT fix stale gnome-shell grabs after sleep
+- Post-sleep recovery: `gnome-shell --replace` on X11 (WARNING: kills Cursor/Electron apps)
+- Audio stack: PipeWire → ALSA/SOF → hardware; EasyEffects for speaker enhancement
+- TTS pipeline: `xclip` → Piper (`~/.local/bin/piper`, `en_US-amy-medium` voice) → `paplay`
+
+**Dynamic rule**: When troubleshooting these issues, the universal dynamic rule at `.0agnostic/02_rules/dynamic/local_ubuntu_desktop_troubleshooting/` triggers automatically.
 
 ## Gemini-Specific Notes
 

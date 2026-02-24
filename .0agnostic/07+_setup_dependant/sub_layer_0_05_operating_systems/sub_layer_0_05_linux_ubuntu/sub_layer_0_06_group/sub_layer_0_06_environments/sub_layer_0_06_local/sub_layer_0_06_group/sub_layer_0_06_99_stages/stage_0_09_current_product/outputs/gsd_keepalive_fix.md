@@ -86,6 +86,16 @@ pgrep -a gsd-power
 # Test volume/brightness buttons
 ```
 
+## Known Limitation: Stale GNOME Shell Grabs
+
+The keepalive timer successfully restarts gsd-media-keys and gsd-power processes. However, if gnome-shell's internal accelerator grab table is stale (common after suspend/resume), the restarted daemons still get "Failed to grab accelerator" for standard media keys.
+
+**Why**: GNOME Shell 46 handles standard media keys (volume, brightness) natively. The "Failed to grab accelerator" messages are actually harmless for standard keys — gnome-shell already owns them. gsd-media-keys IS still needed for custom keybindings (e.g., Ctrl+Alt+S for speak-selection).
+
+**When keepalive is NOT enough**: If gnome-shell itself has stale state (post-sleep), even custom keybindings may not work. In this case:
+1. `gnome-shell --replace` on X11 (WARNING: kills Cursor/Electron apps)
+2. Or log out and back in
+
 ## Long-term Fix
 
 Log out and log back in after the underlying issues (inotify, portals) are resolved. This allows GNOME session to properly start all services. After a fresh login, the keepalive timer becomes a safety net rather than a necessity.
@@ -94,3 +104,4 @@ Log out and log back in after the underlying issues (inotify, portals) are resol
 
 - inotify_exhaustion (resolved)
 - Portal service failures (resolved via mask + relogin)
+- gnome-shell stale grabs after sleep (see ubuntu_desktop knowledge: gnome_architecture.md)

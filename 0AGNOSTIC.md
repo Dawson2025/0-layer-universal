@@ -62,6 +62,7 @@ When any nested repository exists in a child path:
 | Modifying `.0agnostic/` files | Follow agnostic update protocol: `.0agnostic/02_rules/static/agnostic_update_protocol/agnostic_update_protocol.md` |
 | Working with layers/stages | Load skill: context-gathering |
 | Need rules | Load `.claude/skills/` or reference `.0agnostic/02_rules/` |
+| Local Ubuntu desktop issues (volume, brightness, keybindings, audio, GNOME, post-sleep) | Load `.0agnostic/02_rules/dynamic/local_ubuntu_desktop_troubleshooting/` |
 
 ## Resources
 
@@ -71,6 +72,7 @@ When any nested repository exists in a child path:
 | Rules | `.0agnostic/02_rules/` | Universal rules |
 | Update Protocol | `.0agnostic/02_rules/static/agnostic_update_protocol/agnostic_update_protocol.md` | Sync chain for .0agnostic/ changes |
 | Knowledge | `.0agnostic/01_knowledge/` | Reference docs |
+| Setup-Dependant | `.0agnostic/07+_setup_dependant/` | Machine/OS-specific context (Ubuntu, coding apps, etc.) |
 
 ## Children
 
