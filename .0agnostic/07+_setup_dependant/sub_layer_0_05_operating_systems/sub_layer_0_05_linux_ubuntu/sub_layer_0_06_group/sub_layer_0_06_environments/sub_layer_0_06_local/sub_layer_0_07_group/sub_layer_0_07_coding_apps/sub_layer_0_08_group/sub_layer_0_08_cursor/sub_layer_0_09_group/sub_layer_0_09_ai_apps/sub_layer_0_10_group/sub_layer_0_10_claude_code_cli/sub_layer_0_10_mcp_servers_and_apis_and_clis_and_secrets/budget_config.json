@@ -1,0 +1,23 @@
+{
+  "version": "1.0",
+  "updated": "2026-02-24",
+  "budget": {
+    "monthly_limit_usd": 20.00,
+    "warn_threshold_pct": 80,
+    "hard_limit_pct": 100,
+    "comparison_baseline": "Perplexity Pro subscription ($20/mo)",
+    "billing_page": "https://www.perplexity.ai/account/api/billing"
+  },
+  "services": {
+    "perplexity": {
+      "enabled": true,
+      "pricing_file": "sub_layer_0_10_perplexity-mcp/pricing.md",
+      "tools": ["perplexity_ask", "perplexity_search", "perplexity_reason", "perplexity_research"]
+    },
+    "tavily": {
+      "enabled": true,
+      "pricing_file": "sub_layer_0_10_tavily-mcp/pricing.md",
+      "tools": ["tavily_search", "tavily_extract"]
+    }
+  }
+}
