@@ -173,6 +173,29 @@ bash .0agnostic/01_knowledge/layer_stage_system/resources/tools/renumber-layers.
 
 **Note**: `subxN_` prefixes track nesting depth, not layer number -- they are intentionally preserved during renumbering. See `NESTED_DEPTH_NAMING.md`.
 
+## Research vs Production (Context Chain Modes)
+
+Any system can have two parallel versions of its context chain:
+
+| Version | Purpose | Location Pattern |
+|---------|---------|-----------------|
+| **Research** | Experimental — for trying new patterns, features, designs | `layer_-1_research/layer_-1_better_<system>/` |
+| **Production (Default)** | Tried-and-true — stable, validated, what agents use by default | `layer_0/` + `.0agnostic/` (for AI system), or `layer_1_project_<system>/` (for specific systems) |
+
+### How It Works
+
+1. **Research version**: Lives in `layer_-1_research/`. Features are developed through stages (01-11). Each feature has its own layers and stages for research, design, development, testing.
+2. **Production version**: Lives in the production tree. Contains only proven, validated patterns.
+3. **Promotion**: When research features pass testing, they're promoted to production via the research promotion protocol.
+4. **Mode switching**: Agents default to production context. Users can say "use research context chain" to additionally load research knowledge. See `.0agnostic/02_rules/dynamic/CONTEXT_CHAIN_MODE/`.
+
+### Current Example: AI System
+
+- **Research**: `layer_-1_research/layer_-1_better_ai_system/` (agent delegation, memory, context chains)
+- **Production**: `layer_0/` + `.0agnostic/` (entity structure, tools, protocols, rules)
+- **Promotion protocol**: `.0agnostic/03_protocols/research_promotion_protocol.md`
+- **Knowledge index**: `.0agnostic/01_knowledge/layer_stage_system/docs/RESEARCH_KNOWLEDGE_INDEX.md`
+
 ---
 
 *See STAGES_EXPLAINED.md for workflow stages*

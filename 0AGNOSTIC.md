@@ -63,6 +63,8 @@ When any nested repository exists in a child path:
 | Working with layers/stages | Load skill: context-gathering |
 | Need rules | Load `.claude/skills/` or reference `.0agnostic/02_rules/` |
 | Local Ubuntu desktop issues (volume, brightness, keybindings, audio, GNOME, post-sleep) | Load `.0agnostic/02_rules/dynamic/local_ubuntu_desktop_troubleshooting/` |
+| User says "use research context chain" | Load `.0agnostic/02_rules/dynamic/CONTEXT_CHAIN_MODE/context_chain_mode.md` and switch to research mode |
+| Promoting research to production | Load `.0agnostic/03_protocols/research_promotion_protocol.md` |
 
 ## Resources
 
@@ -72,7 +74,10 @@ When any nested repository exists in a child path:
 | Rules | `.0agnostic/02_rules/` | Universal rules |
 | Update Protocol | `.0agnostic/02_rules/static/agnostic_update_protocol/agnostic_update_protocol.md` | Sync chain for .0agnostic/ changes |
 | Knowledge | `.0agnostic/01_knowledge/` | Reference docs |
+| Research Knowledge Index | `.0agnostic/01_knowledge/layer_stage_system/docs/RESEARCH_KNOWLEDGE_INDEX.md` | Index of all research outputs with paths and promotion status |
 | Setup-Dependant | `.0agnostic/07+_setup_dependant/` | Machine/OS-specific context (Ubuntu, coding apps, etc.) |
+| Research Promotion Protocol | `.0agnostic/03_protocols/research_promotion_protocol.md` | How to promote validated research to production |
+| Context Chain Mode | `.0agnostic/02_rules/dynamic/CONTEXT_CHAIN_MODE/context_chain_mode.md` | Default vs Research mode switching |
 
 ## Children
 

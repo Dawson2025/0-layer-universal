@@ -312,6 +312,18 @@ When performing structural operations (entity creation, renumbering, restructuri
 | Memory System | `.../layer_2_subx2_feature_memory_system/` | Memory architecture, context flow, AI memory tiers |
 | Context Chain System | `.../layer_3_subx3_feature_context_chain_system/` | 8-avenue architecture, chain optimization, static/dynamic split |
 
+**Full research index**: `.0agnostic/01_knowledge/layer_stage_system/docs/RESEARCH_KNOWLEDGE_INDEX.md` — comprehensive index of all research outputs with paths and promotion status.
+
+## Research vs Production Context Chain
+
+Every system can have a **research** version (experimental) and a **production** version (stable default). Agents use the production context chain by default. Users can opt into the research context chain for experimental work.
+
+| Resource | Purpose |
+|----------|---------|
+| `.0agnostic/02_rules/dynamic/CONTEXT_CHAIN_MODE/context_chain_mode.md` | Rule for switching between default and research modes |
+| `.0agnostic/03_protocols/research_promotion_protocol.md` | Protocol for promoting validated research to production |
+| `.0agnostic/01_knowledge/layer_stage_system/docs/RESEARCH_KNOWLEDGE_INDEX.md` | Index of all research outputs |
+
 ---
 
 *This file is referenced by all entity creation avenues. If the structure changes, update this file and all cross-references will stay current.*
