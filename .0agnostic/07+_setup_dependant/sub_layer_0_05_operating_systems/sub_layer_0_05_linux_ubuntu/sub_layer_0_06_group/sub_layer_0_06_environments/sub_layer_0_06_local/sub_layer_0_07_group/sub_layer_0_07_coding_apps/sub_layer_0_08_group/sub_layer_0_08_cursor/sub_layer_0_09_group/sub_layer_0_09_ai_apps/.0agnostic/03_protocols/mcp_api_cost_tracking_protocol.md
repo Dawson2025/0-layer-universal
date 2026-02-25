@@ -30,15 +30,18 @@ After EVERY call to a paid MCP API tool (Perplexity, Tavily, etc.).
 2. Calculate: total spend, query breakdown, comparison vs Pro subscription
 3. Start a fresh month table
 
-## Estimated Costs (Quick Reference)
+## Estimated Costs (Quick Reference — verified from real billing 2026-02-25)
 
-| Tool | Est. cost |
-|------|----------|
-| `perplexity_ask` | $0.007 |
-| `perplexity_search` | $0.015 |
-| `perplexity_reason` | $0.015 |
-| `perplexity_research` | $0.15 |
-| `tavily_search` | $0.008 (free tier: $0) |
+| Tool | Est. cost | Budget impact |
+|------|----------|--------------|
+| `perplexity_ask` | ~$0.01 | Minimal |
+| `perplexity_search` | ~$0.05 | Low |
+| `perplexity_reason` | ~$0.05 | Low |
+| `perplexity_research` | ~$3-5+ | **HIGH — 15-25% of monthly budget per call** |
+| `tavily_search` | ~$0.008 | Minimal (free tier: $0) |
+
+**CRITICAL**: Always prefer `perplexity_ask` or `perplexity_search` over `perplexity_research`.
+Only use deep research when the user explicitly requests it or the task genuinely requires it.
 
 ## Configuration
 
