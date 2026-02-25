@@ -1,11 +1,22 @@
 # Agent Defaults to Production
 
-**As an** AI agent,
-**I want to** automatically use production context when starting work,
-**So that** I operate with stable, proven patterns unless directed otherwise.
+**As an** AI agent beginning a new session,
+**I want** the context chain to automatically load production content without any manual configuration,
+**So that** I start every task with stable, proven patterns and only access research content when explicitly directed.
 
 ## Acceptance Criteria
 
-- [ ] Context chain loads production content by default
-- [ ] No manual setup required to be in production mode
-- [ ] Research content is not visible unless research mode is activated
+**Scenario 1: Fresh session loads production only**
+- **Given** a user opens a new Claude Code session in `0_layer_universal/`,
+- **When** the agent reads CLAUDE.md files along the context chain,
+- **Then** all loaded context references production entities (`layer_0/`, `layer_1/`) and none reference `layer_-1_research/` — the agent is in production mode by default.
+
+**Scenario 2: No setup required for production mode**
+- **Given** the user has not issued any mode-switching commands,
+- **When** the agent checks its operating mode,
+- **Then** production mode is active implicitly — there is no "activate production" command because it is the default state.
+
+**Scenario 3: Research content is not accidentally loaded**
+- **Given** both production and research entities exist for the same topic (e.g., `layer_0_feature_X/` and `layer_-1_research/layer_-1_feature_X/`),
+- **When** the agent loads context for that topic,
+- **Then** only the production entity's context is loaded — the research entity is not discovered or loaded unless the user activates research mode.
