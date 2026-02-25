@@ -18,6 +18,8 @@
 - Manages Claude Code CLI configuration and setup for this specific environment path
 - MCP servers, models, and tools within this AI app are **features** (children at level 11)
 - Knowledge cascades from parent levels (coding apps > AI apps category) — only store Claude Code CLI-specific content here
+- **MCP API cost tracking**: Budget config at `sub_layer_0_10_mcp_servers.../budget_config.json`, per-service pricing at each MCP server directory. Budget enforcement rule inherited from parent (AI Apps level)
+- **CRITICAL**: `perplexity_research` (deep research) costs $3-5+ per call. Always prefer `perplexity_ask` (~$0.01) or `perplexity_search` (~$0.05)
 
 ## Inputs
 
@@ -35,10 +37,11 @@
 
 ## Current Status
 
-- **Stage**: Initial entity creation (2026-02-22)
+- **Stage**: Active (entity created 2026-02-22, cost tracking added 2026-02-25)
 - **Structure**: Canonical entity structure applied — full .0agnostic/, .1merge/, 12 stages
 - **Migration**: Legacy content from old sub_layer_0_09_claude_code_cli/ directory structure preserved; setup/, MCP servers, models, tools, protocols, and agent setup content available for migration into .0agnostic/ subdirectories
-- **Children**: MCP servers and tools to be organized as level 11 features
+- **Children**: MCP servers parent dir contains budget_config.json and per-service pricing
+- **Cost tracking**: Active — $20/mo budget, $19.46 remaining (as of 2026-02-25). Deep research = 97% of historical costs
 
 # ═══ DYNAMIC CONTEXT (loaded on-demand) ═══
 
@@ -70,6 +73,9 @@ Entity structure created. Legacy content exists alongside new canonical structur
 | Knowledge | `.0agnostic/01_knowledge/` |
 | Rules | `.0agnostic/02_rules/` |
 | Protocols | `.0agnostic/03_protocols/` |
+| Budget Config | `sub_layer_0_10_mcp_servers.../budget_config.json` |
+| Perplexity Pricing | `sub_layer_0_10_mcp_servers.../sub_layer_0_10_perplexity-mcp/pricing.md` |
+| Tavily Pricing | `sub_layer_0_10_mcp_servers.../sub_layer_0_10_tavily-mcp/pricing.md` |
 | Handoff Documents | `.0agnostic/05_handoff_documents/` |
 | Skills | `.0agnostic/06_context_avenue_web/01_file_based/05_skills/` |
 | Internal (stages) | `sub_layer_0_10_group/sub_layer_0_10_99_stages/` |
