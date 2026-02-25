@@ -34,9 +34,9 @@ This document covers the **overall audio requirements** at the parent level. Eac
 ### System TTS Requirements (Summary)
 - Highlight-and-speak via hotkey, CLI `speak` command, offline Piper TTS, toggle/stop control
 - Acceptance criteria: `speak "text"`, pipe input, hotkey selection, natural Amy voice
-- **Full details**: `../../../../../../layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_system_tts/layer_2_group/layer_2_99_stages/stage_2_01_request_gathering/outputs/system_tts_requirements.md`
+- **Full details**: `../../../../../../layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_laptop_linux_ubuntu/layer_3_group/layer_3_subx3_features/layer_3_subx3_feature_system_tts/layer_3_group/layer_3_99_stages/stage_3_01_request_gathering/outputs/system_tts_requirements.md`
 
 ### Agentic TTS Requirements (Summary)
 - Auto-speak Claude responses via Stop hook, markdown cleanup, length truncation, background execution
 - Acceptance criteria: Hook triggers TTS, code blocks stripped, long responses truncated, coexists with sound
-- **Full details**: `../../../../../../layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_agentic_tts/layer_2_group/layer_2_99_stages/stage_2_01_request_gathering/outputs/agentic_tts_requirements.md`
+- **Full details**: `../../../../../../layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_laptop_linux_ubuntu/layer_3_group/layer_3_subx3_features/layer_3_subx3_feature_agentic_tts/layer_3_group/layer_3_99_stages/stage_3_01_request_gathering/outputs/agentic_tts_requirements.md`

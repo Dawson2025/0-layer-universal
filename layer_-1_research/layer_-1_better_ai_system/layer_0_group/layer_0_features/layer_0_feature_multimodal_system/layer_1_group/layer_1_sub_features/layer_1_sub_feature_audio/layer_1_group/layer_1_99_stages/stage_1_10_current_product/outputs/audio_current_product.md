@@ -31,11 +31,11 @@ speak -s                               # stop speech
 - Scripts: `~/.local/bin/speak` (args/stdin/stop) + `~/.local/bin/speak-selection` (X11 hotkey)
 - Components: Piper 1.4.1 (pipx), Amy medium voice, eSpeak NG fallback
 - Limitations: Amy only, no speed control, X11 only, no visual feedback, no queue
-- **Full details**: `../../../../../../layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_system_tts/layer_2_group/layer_2_99_stages/stage_2_10_current_product/outputs/system_tts_current_product.md`
+- **Full details**: `../../../../../../layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_laptop_linux_ubuntu/layer_3_group/layer_3_subx3_features/layer_3_subx3_feature_system_tts/layer_3_group/layer_3_99_stages/stage_3_10_current_product/outputs/system_tts_current_product.md`
 
 ### Agentic TTS Current Product (Summary)
 - Hook: `~/.claude/hooks/tts-response.sh` — speaks Claude response summaries
 - Config: `~/.claude/settings.json` Stop hook with 60s timeout
 - Behavior: strips markdown, truncates to 600 chars, speaks via Piper in background
 - Limitations: Stop event only, no split-output pattern, crude markdown stripping, fixed truncation
-- **Full details**: `../../../../../../layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_agentic_tts/layer_2_group/layer_2_99_stages/stage_2_10_current_product/outputs/agentic_tts_current_product.md`
+- **Full details**: `../../../../../../layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_laptop_linux_ubuntu/layer_3_group/layer_3_subx3_features/layer_3_subx3_feature_agentic_tts/layer_3_group/layer_3_99_stages/stage_3_10_current_product/outputs/agentic_tts_current_product.md`

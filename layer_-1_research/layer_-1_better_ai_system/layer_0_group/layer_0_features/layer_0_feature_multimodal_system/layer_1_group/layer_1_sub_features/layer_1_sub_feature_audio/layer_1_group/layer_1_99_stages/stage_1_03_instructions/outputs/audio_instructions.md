@@ -16,11 +16,11 @@
 - PID files: `/tmp/speak-selection.pid`, `/tmp/speak.pid`
 - Dependencies: piper (pipx), pathvalidate (injected), xclip, aplay
 - Install order: pipx → inject → voice model → scripts → hotkey
-- **Full details**: `../../../../../../layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_system_tts/layer_2_group/layer_2_99_stages/stage_2_03_instructions/outputs/system_tts_instructions.md`
+- **Full details**: `../../../../../../layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_laptop_linux_ubuntu/layer_3_group/layer_3_subx3_features/layer_3_subx3_feature_system_tts/layer_3_group/layer_3_99_stages/stage_3_03_instructions/outputs/system_tts_instructions.md`
 
 ### Agentic TTS Instructions (Summary)
 - Hook must exit 0 and run speech in background subshell
 - PID file: `/tmp/claude-tts.pid`
 - Dependencies: jq (JSON parsing), piper, aplay
 - 60s timeout in settings.json, max 600 chars spoken
-- **Full details**: `../../../../../../layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_agentic_tts/layer_2_group/layer_2_99_stages/stage_2_03_instructions/outputs/agentic_tts_instructions.md`
+- **Full details**: `../../../../../../layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_laptop_linux_ubuntu/layer_3_group/layer_3_subx3_features/layer_3_subx3_feature_agentic_tts/layer_3_group/layer_3_99_stages/stage_3_03_instructions/outputs/agentic_tts_instructions.md`

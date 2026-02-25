@@ -63,10 +63,10 @@ This document covers the **overall audio system design** at the parent level. Ea
 - Speech Dispatcher: piper-generic module (default), espeak-ng (fallback)
 - Orca: GNOME screen reader using Piper via Speech Dispatcher
 - All audio through paplay (PulseAudio) — no ALSA conflicts
-- **Full details**: `../../../../../../layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_system_tts/layer_2_group/layer_2_99_stages/stage_2_04_design/outputs/system_tts_design.md`
+- **Full details**: `../../../../../../layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_laptop_linux_ubuntu/layer_3_group/layer_3_subx3_features/layer_3_subx3_feature_system_tts/layer_3_group/layer_3_99_stages/stage_3_04_design/outputs/system_tts_design.md`
 
 ### Agentic TTS Design (Summary)
 - Architecture: Claude Stop event → Hook 1 (sound) → Hook 2 (tts-response.sh) → jq extract → sed strip → Piper background
 - Text pipeline: strip code blocks, markdown, URLs, paths, tables → truncate to 600 chars → Piper → aplay
 - Future: split-output pattern where Claude provides `spoken_summary` field
-- **Full details**: `../../../../../../layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_agentic_tts/layer_2_group/layer_2_99_stages/stage_2_04_design/outputs/agentic_tts_design.md`
+- **Full details**: `../../../../../../layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_laptop_linux_ubuntu/layer_3_group/layer_3_subx3_features/layer_3_subx3_feature_agentic_tts/layer_3_group/layer_3_99_stages/stage_3_04_design/outputs/agentic_tts_design.md`

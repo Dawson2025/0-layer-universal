@@ -58,13 +58,13 @@ This document covers the **overall audio architecture** at the parent level. Eac
 - Compared TTS engines: Piper (neural, best quality), eSpeak (robotic, lightweight), Festival (medium), Mimic 3 (neural, heavy)
 - Evaluated voice models: Amy medium (chosen), Lessac medium, Alan medium
 - Chose xclip for X11 clipboard, aplay for audio output
-- **Full details**: `../../../../../../layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_system_tts/layer_2_group/layer_2_99_stages/stage_2_02_research/outputs/system_tts_research.md`
+- **Full details**: `../../../../../../layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_laptop_linux_ubuntu/layer_3_group/layer_3_subx3_features/layer_3_subx3_feature_system_tts/layer_3_group/layer_3_99_stages/stage_3_02_research/outputs/system_tts_research.md`
 
 ### Agentic TTS Research (Summary)
 - Mapped Claude Code hooks API: 18 events, Stop hook provides `last_assistant_message` directly
 - Evaluated community projects: Kokoro hook, MCP TTS plugin — chose custom Stop hook for simplicity
 - Defined text cleanup requirements: code blocks, markdown, URLs, paths must be stripped
-- **Full details**: `../../../../../../layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_agentic_tts/layer_2_group/layer_2_99_stages/stage_2_02_research/outputs/agentic_tts_research.md`
+- **Full details**: `../../../../../../layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_laptop_linux_ubuntu/layer_3_group/layer_3_subx3_features/layer_3_subx3_feature_agentic_tts/layer_3_group/layer_3_99_stages/stage_3_02_research/outputs/agentic_tts_research.md`
 
 ## Sources
 - Perplexity extraction: `perplexity_extraction_2026-02-22_tts-research.md` (same directory)
