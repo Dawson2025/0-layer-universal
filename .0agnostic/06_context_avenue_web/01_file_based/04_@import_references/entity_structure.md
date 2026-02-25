@@ -300,6 +300,17 @@ Run `.0agnostic/01_knowledge/layer_stage_system/resources/tools/validate-entity.
 - **Command**: `.claude/commands/create-entity.md`
 - **Validation**: `.0agnostic/01_knowledge/layer_stage_system/resources/tools/validate-entity.sh`
 - **Migration**: `.0agnostic/01_knowledge/layer_stage_system/resources/tools/migrate-sub-layers-to-0agnostic.sh` (migrates old sub_layers into .0agnostic/)
+- **Renumbering**: `.0agnostic/01_knowledge/layer_stage_system/resources/tools/renumber-layers.sh` (shifts layer numbers when re-parenting or restructuring entities; see `.0agnostic/01_knowledge/layer_stage_system/docs/RENUMBERING_GUIDE.md`)
+
+## Research Context for Structural Decisions
+
+When performing structural operations (entity creation, renumbering, restructuring), these research areas explain the rationale behind the system's design:
+
+| Area | Location | Relevance |
+|------|----------|-----------|
+| Agent Delegation System | `layer_-1_research/.../layer_1_sub_feature_agent_delegation_system/` | Delegation patterns, stage agents, 0AGNOSTIC.md structure |
+| Memory System | `.../layer_2_subx2_feature_memory_system/` | Memory architecture, context flow, AI memory tiers |
+| Context Chain System | `.../layer_3_subx3_feature_context_chain_system/` | 8-avenue architecture, chain optimization, static/dynamic split |
 
 ---
 

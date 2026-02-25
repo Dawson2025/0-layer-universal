@@ -96,5 +96,5 @@ When any nested repository exists in a child path:
 
 Active chain map (school -> module_03):
 - `0_layer_universal` tracks `layer_1/layer_1_projects/layer_1_project_school` as submodule.
-- `layer_1_project_school` currently contains one active nested gitlink at `.../school-machine-learning-module03-teamwork`.
+- `layer_1_project_school` currently contains one active nested gitlink at `.../layer_6_sub_feature_team_work/school-machine-learning-teamwork`.
 - If any additional nested repos appear, they must be declared in `.gitmodules` at the same repository level before commit/push.

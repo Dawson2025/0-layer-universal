@@ -158,6 +158,21 @@ layer_N_<type>_<name>/
 - `layer_3_component_password_validator/`
 - `layer_-1_research_new_framework/`
 
+## Renumbering
+
+When entities move to a different depth in the hierarchy, their layer numbers must be updated. Common triggers: re-parenting entities, promoting features to projects, or merging entity trees.
+
+Use the renumbering tool to shift layer numbers across directories, filenames, and file contents in a single pass:
+
+```bash
+bash .0agnostic/01_knowledge/layer_stage_system/resources/tools/renumber-layers.sh \
+  ./path/to/entity --shift 1 --dry-run
+```
+
+**Full guide**: `.0agnostic/01_knowledge/layer_stage_system/docs/RENUMBERING_GUIDE.md`
+
+**Note**: `subxN_` prefixes track nesting depth, not layer number -- they are intentionally preserved during renumbering. See `NESTED_DEPTH_NAMING.md`.
+
 ---
 
 *See STAGES_EXPLAINED.md for workflow stages*

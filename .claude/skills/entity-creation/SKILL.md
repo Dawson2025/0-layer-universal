@@ -29,6 +29,8 @@ description: "Create new layers, sub-layers, stages, features, projects, or comp
 | Layers | `layer_0/.../layer_stage_system/LAYERS_EXPLAINED.md` | Layer structure |
 | Sub-layers | `layer_0/.../layer_stage_system/SUB_LAYERS_EXPLAINED.md` | Sub-layer types |
 | Nested depth | `layer_0/.../layer_stage_system/NESTED_DEPTH_NAMING.md` | subxN naming |
+| Renumbering | `.0agnostic/01_knowledge/layer_stage_system/docs/RENUMBERING_GUIDE.md` | Layer number shifting |
+| Renumber tool | `.0agnostic/01_knowledge/layer_stage_system/resources/tools/renumber-layers.sh` | Shift layer_N references |
 
 **Full paths**:
 - `.0agnostic/06_context_avenue_web/01_file_based/04_@import_references/` = `0_layer_universal/.0agnostic/06_context_avenue_web/01_file_based/04_@import_references/`
