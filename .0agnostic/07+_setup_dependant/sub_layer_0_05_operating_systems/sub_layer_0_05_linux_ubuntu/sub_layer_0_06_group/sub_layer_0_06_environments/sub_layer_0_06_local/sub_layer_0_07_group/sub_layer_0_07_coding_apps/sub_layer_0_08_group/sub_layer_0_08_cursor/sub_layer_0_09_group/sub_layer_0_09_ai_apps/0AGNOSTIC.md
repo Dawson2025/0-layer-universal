@@ -17,7 +17,7 @@
 - MCP server knowledge shared across AI apps lives in `.0agnostic/01_knowledge/mcp_servers/`
 - **MCP API cost tracking** — protocol and budget enforcement rule at this level apply to ALL paid MCP API calls across all child AI apps
 - Browser automation protocol applies to all AI apps that use browser-based tools
-- Each child AI app (Claude Code CLI, Codex CLI, Cursor Agent, Gemini CLI) is a full entity at level 10
+- **Two entity types at level 10**: *Features* (numbered, shared infrastructure) and *Further Specificity* (unnumbered, app-specific config). Features provide shared tools, models, protocols, and agent setup; app-specific entities inherit from and can override shared features.
 
 ## Triggers
 
@@ -30,7 +30,9 @@
 
 ## Delegation Contract
 
-**Children** (level 10): claude_code_cli, codex_cli, cursor_agent, gemini_cli
+**Children** (level 10):
+- *Features* (numbered, shared): 01_tools_and_services, 02_ai_models, 03_universal_tools, 04_protocols, 05_agent_setup
+- *Further Specificity* (app-specific): claude_code_cli, codex_cli, cursor_agent, gemini_cli
 **Parent** (level 08): Cursor
 
 # ── Current Status ──
@@ -38,9 +40,9 @@
 ## Current Status
 
 **State**: Active
-**Scope**: 4 AI app entities at level 10, shared MCP server knowledge, browser automation protocol, MCP API cost tracking
-**Content**: Shared protocols in `.0agnostic/03_protocols/` (browser automation, MCP cost tracking), shared knowledge in `.0agnostic/01_knowledge/` (MCP servers, cost tracking), budget enforcement rule in `.0agnostic/02_rules/dynamic/`
-**Readiness**: Entity structure created, children in `sub_layer_0_10_group/`, cost tracking system active
+**Scope**: 5 shared feature entities + 4 AI app entities at level 10
+**Content**: Shared features contain MCP servers, AI models, universal tools, protocols, agent setup. App-specific entities contain per-app config and overrides.
+**Readiness**: Restructured 2026-02-25: features extracted from Claude Code CLI to shared level
 
 # ═══ DYNAMIC CONTEXT (loaded on-demand) ═══
 
@@ -65,6 +67,12 @@
 | `.0agnostic/03_protocols/browser_automation_protocol.md` | Browser automation protocol (migrated from `_shared/`) |
 | `sub_layer_0_09_group/sub_layer_0_09_99_stages/` | Internal stages (12 stages) |
 | `sub_layer_0_10_group/` | Children: AI app entities |
+| `sub_layer_0_10_group/sub_layer_0_10_00_layer_registry/` | Layer Registry |
+| `sub_layer_0_10_group/sub_layer_0_10_01_tools_and_services/` | Tools & Services |
+| `sub_layer_0_10_group/sub_layer_0_10_02_ai_models/` | AI Models |
+| `sub_layer_0_10_group/sub_layer_0_10_03_universal_tools/` | Universal Tools |
+| `sub_layer_0_10_group/sub_layer_0_10_04_protocols/` | Protocols |
+| `sub_layer_0_10_group/sub_layer_0_10_05_agent_setup/` | Agent Setup |
 | `sub_layer_0_10_group/sub_layer_0_10_claude_code_cli/` | Claude Code CLI entity |
 | `sub_layer_0_10_group/sub_layer_0_10_codex_cli/` | Codex CLI entity |
 | `sub_layer_0_10_group/sub_layer_0_10_cursor_agent/` | Cursor Agent entity |

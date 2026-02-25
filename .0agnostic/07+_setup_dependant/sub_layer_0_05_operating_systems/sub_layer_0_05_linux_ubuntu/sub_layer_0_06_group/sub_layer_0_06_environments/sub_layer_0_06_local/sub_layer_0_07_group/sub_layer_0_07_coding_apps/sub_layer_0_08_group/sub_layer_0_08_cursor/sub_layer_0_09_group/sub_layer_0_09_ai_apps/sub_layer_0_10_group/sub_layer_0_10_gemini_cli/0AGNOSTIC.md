@@ -9,36 +9,38 @@
 **Role**: AI App Configuration Manager — Gemini CLI
 **Type**: Sub-Layer (Increased Specificity)
 **Level**: 0.10 (Specific AI App)
-**Scope**: Gemini CLI setup, configuration, MCP servers, AI model settings, and operational knowledge for Linux Ubuntu > Local Environment > Cursor IDE > AI Apps > Gemini CLI
+**Scope**: Gemini CLI setup, configuration, and app-specific operational knowledge for Linux Ubuntu > Local Environment > Cursor IDE > AI Apps > Gemini CLI
 
 **Specificity Chain**: OS (Linux Ubuntu) > Environment (Local) > Coding App (Cursor) > AI Apps > **Gemini CLI**
 
 ## Key Behaviors
 
 - Manages Gemini CLI configuration and setup for this specific environment path
-- MCP servers, models, and tools within this AI app are **features** (children at level 11)
+- App-specific children live in `sub_layer_0_11_group/`
+- Shared infrastructure (MCP servers, AI models, tools, protocols, agent setup) lives in sibling feature entities at level 10 — see parent delegation contract
 - Knowledge cascades from parent levels (coding apps > AI apps category) — only store Gemini CLI-specific content here
+- Legacy setup docs migrated to `.0agnostic/01_knowledge/legacy_setup/`
 
 ## Inputs
 
 - Parent context from sub_layer_0_09_ai_apps (shared AI app knowledge)
-- Gemini CLI-specific setup docs, protocols, and configuration
-- MCP server configurations and integration docs
+- Sibling feature entities (shared tools, models, protocols)
+- Gemini CLI-specific setup docs and configuration
 
 ## Outputs
 
 - Gemini CLI setup and configuration documentation
-- MCP server feature entities (level 11 children)
+- App-specific children at level 11
 - Operational rules and protocols specific to Gemini CLI
 
 # ── Current Status ──
 
 ## Current Status
 
-- **Stage**: Initial entity creation (2026-02-22)
-- **Structure**: Canonical entity structure applied — full .0agnostic/, .1merge/, 12 stages
-- **Migration**: Legacy content from old sub_layer_0_09_gemini_cli/ directory structure preserved; setup/, MCP servers, models, tools, protocols, and agent setup content available for migration into .0agnostic/ subdirectories
-- **Children**: MCP servers and tools to be organized as level 11 features
+- **Stage**: Active (entity created 2026-02-22, restructured 2026-02-25)
+- **Structure**: Canonical entity structure, shared content migrated to sibling features
+- **Children**: App-specific children in sub_layer_0_11_group/
+- **Migration**: Legacy setup docs in `.0agnostic/01_knowledge/legacy_setup/`. Shared MCP servers, AI models, tools, protocols moved to sibling feature entities.
 
 # ═══ DYNAMIC CONTEXT (loaded on-demand) ═══
 
@@ -46,20 +48,18 @@
 
 ## Current State Detail
 
-Entity structure created. Legacy content exists alongside new canonical structure:
-- `setup/` — Original setup docs (to migrate to `.0agnostic/01_knowledge/setup/`)
-- `sub_layer_0_10_mcp_servers_and_apis_and_clis_and_secrets/` — MCP server content (to become level 11 features)
-- `sub_layer_0_11_ai_models/` — AI model content (to become level 11 feature)
-- `sub_layer_0_12_universal_tools/` — Tools (to become level 11 feature or migrate to .0agnostic/)
-- `sub_layer_0_13_protocols/` — Protocols (to migrate to `.0agnostic/03_protocols/`)
-- `sub_layer_0_14_agent_setup/` — Agent setup (to migrate to `.0agnostic/01_knowledge/agent_setup/`)
+Entity restructured. Shared infrastructure migrated to sibling feature entities at level 10:
+- MCP servers/APIs/CLIs/secrets → `../sub_layer_0_10_01_tools_and_services/`
+- AI models → `../sub_layer_0_10_02_ai_models/`
+- Universal tools → `../sub_layer_0_10_03_universal_tools/`
+- Protocols → `../sub_layer_0_10_04_protocols/`
+- Agent setup → `../sub_layer_0_10_05_agent_setup/`
+- Legacy setup docs → `.0agnostic/01_knowledge/legacy_setup/`
 
 ## Open Items
 
-- [ ] Migrate legacy content into .0agnostic/ subdirectories
-- [ ] Convert MCP servers to level 11 feature entities
+- [ ] Populate Gemini CLI-specific rules and knowledge
 - [ ] Run agnostic-sync.sh to generate CLAUDE.md etc.
-- [ ] Write stage 0AGNOSTIC.md files
 
 # ── References ──
 
@@ -68,10 +68,13 @@ Entity structure created. Legacy content exists alongside new canonical structur
 | Resource | Location |
 |----------|----------|
 | Knowledge | `.0agnostic/01_knowledge/` |
+| Legacy Setup | `.0agnostic/01_knowledge/legacy_setup/` |
 | Rules | `.0agnostic/02_rules/` |
 | Protocols | `.0agnostic/03_protocols/` |
 | Handoff Documents | `.0agnostic/05_handoff_documents/` |
-| Skills | `.0agnostic/06_context_avenue_web/01_file_based/05_skills/` |
+| Children | `sub_layer_0_11_group/` |
 | Internal (stages) | `sub_layer_0_10_group/sub_layer_0_10_99_stages/` |
-| Children (features) | `sub_layer_0_11_group/` |
 | Parent | `../0AGNOSTIC.md` |
+| Shared Tools & Services | `../sub_layer_0_10_01_tools_and_services/` |
+| Shared AI Models | `../sub_layer_0_10_02_ai_models/` |
+| Shared Protocols | `../sub_layer_0_10_04_protocols/` |

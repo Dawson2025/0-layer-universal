@@ -45,8 +45,8 @@ Only use deep research when the user explicitly requests it or the task genuinel
 
 ## Configuration
 
-Budget config: `.../sub_layer_0_10_mcp_servers_and_apis_and_clis_and_secrets/budget_config.json`
-Per-service pricing: Each MCP server's `pricing.md`
+Budget config: `sub_layer_0_10_group/sub_layer_0_10_01_tools_and_services/budget_config.json`
+Per-service pricing: `sub_layer_0_10_group/sub_layer_0_10_01_tools_and_services/sub_layer_0_11_group/[service]/pricing.md`
 
 ## Related
 
