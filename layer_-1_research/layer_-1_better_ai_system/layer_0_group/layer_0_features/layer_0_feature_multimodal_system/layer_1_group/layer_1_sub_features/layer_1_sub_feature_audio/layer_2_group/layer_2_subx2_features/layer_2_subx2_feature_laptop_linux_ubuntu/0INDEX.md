@@ -11,9 +11,9 @@ Lenovo Yoga Pro 9 16IMH9 | RTX 4060 Laptop GPU (8GB VRAM) | Ubuntu Linux / Unity
 ## TTS Engine Status
 | Engine | Status | Notes |
 |--------|--------|-------|
-| Piper (current) | Working | Amy voice, CPU-only, `~/.local/bin/piper` |
-| Kokoro (target) | Not installed | GPU-accelerated, superior quality, 40+ voices |
-| VoiceMode MCP | Not installed | Manages Kokoro as systemd service, Claude Code plugin |
+| **Kokoro (primary)** | **Working** | **0.9.4, GPU (RTX 4060), systemd service on port 8880, 0.17s/6s audio** |
+| Piper (fallback) | Working | Amy voice, CPU-only, auto-activates if Kokoro down |
+| VoiceMode MCP | Not installed | Manages Kokoro lifecycle, Claude Code plugin |
 
 ## Children
 | Sub-Feature | Path | Purpose |

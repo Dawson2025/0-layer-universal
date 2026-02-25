@@ -1,7 +1,7 @@
 # System TTS — Current Product
 
-**Date**: 2026-02-24
-**Status**: Working (Phase 2 complete)
+**Date**: 2026-02-25
+**Status**: Working (Kokoro GPU upgrade complete)
 
 ## Design Philosophy
 
@@ -14,7 +14,8 @@
 The main interaction: highlight any text in any app, press **Ctrl+Alt+S** to hear it.
 - Toggle: press again while speaking to stop
 - Falls back to clipboard if no selection
-- Uses Piper neural voice (natural-sounding)
+- Uses **Kokoro** GPU-accelerated neural voice (0.17s generation for 6s audio)
+- Falls back to Piper if Kokoro server is down
 
 ### CLI: `speak` Command
 
@@ -38,9 +39,11 @@ spd-say -o espeak-ng "Hello from eSpeak"       # eSpeak fallback (robotic)
 
 | Component | Version | Location |
 |-----------|---------|----------|
-| Piper TTS | 1.4.1 | `~/.local/bin/piper` (pipx venv) |
+| **Kokoro TTS** | **0.9.4 (82M)** | **`~/.local/share/kokoro-tts/venv/` (GPU, primary)** |
+| **Kokoro server** | **custom** | **`~/.local/share/kokoro-tts/server.py` (systemd: kokoro-tts.service, port 8880)** |
+| Piper TTS | 1.4.1 | `~/.local/bin/piper` (CPU, fallback) |
 | Amy voice | medium | `~/.local/share/piper-voices/en_US-amy-medium.onnx` |
-| eSpeak NG | 1.51 | `/usr/bin/espeak-ng` (fallback) |
+| eSpeak NG | 1.51 | `/usr/bin/espeak-ng` (phonemizer for Kokoro) |
 | Speech Dispatcher | 0.12.0 | User config at `~/.config/speech-dispatcher/` |
 | paplay | system | PulseAudio playback |
 
@@ -63,27 +66,28 @@ bash .../stage_2_07_testing/outputs/test-system-tts.sh
 - **Orca screen reader is NOT enabled** — Orca reads every UI element, keystroke, and focus change. That's designed for visually impaired users, not selective TTS. Orca is installed (v46.1) and configured to use Piper via Speech Dispatcher, but is disabled by default.
 - No automatic speech on any event — all TTS is user-initiated
 
-## Planned Upgrade: Kokoro TTS
+## Kokoro Upgrade (Completed 2026-02-25)
 
-The next step is replacing Piper with **Kokoro** for GPU-accelerated, higher-quality speech:
+Piper replaced by **Kokoro** as primary TTS engine:
 
-| Aspect | Current | After Upgrade |
-|--------|---------|---------------|
-| Engine | Piper (CPU, VITS) | Kokoro (GPU, 82M params) |
+| Aspect | Before (Piper) | After (Kokoro) |
+|--------|----------------|----------------|
+| Engine | Piper 1.4.1 (CPU, VITS) | Kokoro 0.9.4 (GPU, 82M params) |
 | Quality | High | Highest (#1 HF TTS Arena) |
-| Latency | ~1s | Sub-0.1s (RTX 4060) |
-| Voices | 1 (Amy) | 40+ |
+| Generation | ~1s | 0.17s for 6s audio (35x realtime) |
+| Voices | 1 (Amy) | 40+ (af_heart default) |
+| Architecture | Process per invocation | Persistent server (systemd, port 8880) |
+| VRAM | None | ~1.1GB on RTX 4060 |
 
-**Install**: `uvx kokoro-fastapi[gpu] serve` — runs as FastAPI on port 8880.
-**Migration**: Update `speak`/`speak-selection` to `curl` Kokoro API instead of piping to Piper.
-
-See parent entity knowledge: `../../../.0agnostic/01_knowledge/gpu_tts/` for full Kokoro docs.
+**Server**: `~/.local/share/kokoro-tts/server.py` — custom HTTP server, model warm in GPU memory
+**Service**: `systemctl --user status kokoro-tts.service`
+**Fallback**: Piper auto-activates if Kokoro server is unreachable
 
 ## Limitations
 
-- No runtime rate/pitch control via Speech Dispatcher (Piper CLI limitation — resolved by Kokoro upgrade)
-- Single voice model (Amy medium) — Kokoro upgrade provides 40+ voices
+- Speech Dispatcher module not yet updated (still uses Piper via piper-generic)
 - X11 only for speak-selection (no Wayland yet)
+- Single Kokoro voice configured (af_heart) — 40+ available
 
 ## Architecture
 
