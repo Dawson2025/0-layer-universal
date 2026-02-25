@@ -5,38 +5,37 @@
 **Role**: AI App Configuration Manager — Claude Code CLI
 **Type**: Sub-Layer (Increased Specificity)
 **Level**: 0.10 (Specific AI App)
-**Scope**: Claude Code CLI setup, configuration, MCP servers, AI model settings, and operational knowledge for Linux Ubuntu > Local Environment > Cursor IDE > AI Apps > Claude Code CLI
+**Scope**: Claude Code CLI setup, configuration, and app-specific operational knowledge for Linux Ubuntu > Local Environment > Cursor IDE > AI Apps > Claude Code CLI
 
 **Specificity Chain**: OS (Linux Ubuntu) > Environment (Local) > Coding App (Cursor) > AI Apps > **Claude Code CLI**
 
 ## Key Behaviors
 
 - Manages Claude Code CLI configuration and setup for this specific environment path
-- MCP servers, models, and tools within this AI app are **features** (children at level 11)
+- App-specific children (e.g., Claude in Chrome) live in `sub_layer_0_11_group/`
+- Shared infrastructure (MCP servers, AI models, tools, protocols, agent setup) lives in sibling feature entities at level 10 — see parent delegation contract
 - Knowledge cascades from parent levels (coding apps > AI apps category) — only store Claude Code CLI-specific content here
-- **MCP API cost tracking**: Budget config at `sub_layer_0_10_mcp_servers.../budget_config.json`, per-service pricing at each MCP server directory. Budget enforcement rule inherited from parent (AI Apps level)
-- **CRITICAL**: `perplexity_research` (deep research) costs $3-5+ per call. Always prefer `perplexity_ask` (~$0.01) or `perplexity_search` (~$0.05)
+- Legacy setup docs migrated to `.0agnostic/01_knowledge/legacy_setup/`
 
 ## Inputs
 
 - Parent context from sub_layer_0_09_ai_apps (shared AI app knowledge)
-- Claude Code CLI-specific setup docs, protocols, and configuration
-- MCP server configurations and integration docs
+- Sibling feature entities (shared tools, models, protocols)
+- Claude Code CLI-specific setup docs and configuration
 
 ## Outputs
 
 - Claude Code CLI setup and configuration documentation
-- MCP server feature entities (level 11 children)
+- App-specific children (Claude in Chrome) at level 11
 - Operational rules and protocols specific to Claude Code CLI
 
 
 ## Current Status
 
-- **Stage**: Active (entity created 2026-02-22, cost tracking added 2026-02-25)
-- **Structure**: Canonical entity structure applied — full .0agnostic/, .1merge/, 12 stages
-- **Migration**: Legacy content from old sub_layer_0_09_claude_code_cli/ directory structure preserved; setup/, MCP servers, models, tools, protocols, and agent setup content available for migration into .0agnostic/ subdirectories
-- **Children**: MCP servers parent dir contains budget_config.json and per-service pricing
-- **Cost tracking**: Active — $20/mo budget, $19.46 remaining (as of 2026-02-25). Deep research = 97% of historical costs
+- **Stage**: Active (entity created 2026-02-22, restructured 2026-02-25)
+- **Structure**: Canonical entity structure, shared content migrated to sibling features
+- **Children**: Claude in Chrome (app-specific) in sub_layer_0_11_group/
+- **Migration**: Legacy setup docs in `.0agnostic/01_knowledge/legacy_setup/`. Shared MCP servers, AI models, tools, protocols moved to sibling feature entities.
 
 ## AutoGen-Specific Configuration
 

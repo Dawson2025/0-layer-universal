@@ -1,8 +1,6 @@
-# 0AGNOSTIC.md — sub_layer_0_10_01_tools_and_services
+# OpenAI Context
 
-# ═══ STATIC CONTEXT (always loaded) ═══
 
-# ── Entity Definition ──
 
 ## Identity
 
@@ -41,7 +39,6 @@
 - Budget tracking and cost analysis
 - Shared tool knowledge for all AI apps
 
-# ── Current Status ──
 
 ## Current Status
 
@@ -50,32 +47,20 @@
 - **Content**: MCP servers migrated from Claude Code CLI, budget_config.json, pricing docs. Knowledge topics: `api_keys` (setup guide + config template), `mcp_system` (7 docs — system guide, config, server setup, matrix, routing, codex sync), `mcp_setup` (setup docs + scripts: mcp_manager.py, mcp_concurrent_browser.py, codex_mcp_sync.py), `mcp_core` (core reference)
 - **Children**: 10+ shared MCP server entities, CLI tools, secrets in sub_layer_0_11_group/
 
-# ═══ DYNAMIC CONTEXT (loaded on-demand) ═══
 
-# ── Current State ──
+## OpenAI-Specific Notes
 
-## Current State Detail
+### Function Calling
+When using OpenAI function calling:
+- Read .0agnostic/ resources for detailed instructions
+- Check episodic memory for context
+- Follow multi-agent sync rules for shared files
 
-Content migrated from `sub_layer_0_10_claude_code_cli/sub_layer_0_10_mcp_servers_and_apis_and_clis_and_secrets/`. MCP servers that are app-specific (Claude in Chrome) remain in their respective AI app entity.
+### Context Window Management
+- 0AGNOSTIC.md is lean (<400 tokens)
+- Load .0agnostic/ resources on-demand
+- Avoid loading everything upfront
 
-## Open Items
-
-- [ ] Renumber MCP server children from sub_layer_0_10_* to sub_layer_0_11_*
-- [ ] Create 0AGNOSTIC.md for each MCP server child entity
-
-# ── References ──
-
-## Navigation
-
-| Resource | Location |
-|----------|----------|
-| Budget Config | `budget_config.json` |
-| Knowledge: API Keys | `.0agnostic/01_knowledge/api_keys/` |
-| Knowledge: MCP System | `.0agnostic/01_knowledge/mcp_system/` |
-| Knowledge: MCP Setup | `.0agnostic/01_knowledge/mcp_setup/` |
-| Knowledge: MCP Core | `.0agnostic/01_knowledge/mcp_core/` |
-| Rules | `.0agnostic/02_rules/` |
-| Protocols | `.0agnostic/03_protocols/` |
-| Children (MCP servers) | `sub_layer_0_11_group/` |
-| Stages | `sub_layer_0_10_group/sub_layer_0_10_99_stages/` |
-| Parent | `../../0AGNOSTIC.md` |
+---
+*Auto-generated from 0AGNOSTIC.md via agnostic-sync.sh*
+*Do not edit directly - edit 0AGNOSTIC.md instead*

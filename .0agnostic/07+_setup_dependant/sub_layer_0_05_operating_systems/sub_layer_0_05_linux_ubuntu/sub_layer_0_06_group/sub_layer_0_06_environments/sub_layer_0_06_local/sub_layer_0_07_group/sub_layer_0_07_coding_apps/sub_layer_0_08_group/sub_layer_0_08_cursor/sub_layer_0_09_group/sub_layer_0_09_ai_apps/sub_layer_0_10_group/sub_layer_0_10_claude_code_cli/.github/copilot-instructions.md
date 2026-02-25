@@ -5,7 +5,7 @@
 **Role**: AI App Configuration Manager — Claude Code CLI
 **Type**: Sub-Layer (Increased Specificity)
 **Level**: 0.10 (Specific AI App)
-**Scope**: Claude Code CLI setup, configuration, MCP servers, AI model settings, and operational knowledge for Linux Ubuntu > Local Environment > Cursor IDE > AI Apps > Claude Code CLI
+**Scope**: Claude Code CLI setup, configuration, and app-specific operational knowledge for Linux Ubuntu > Local Environment > Cursor IDE > AI Apps > Claude Code CLI
 
 **Specificity Chain**: OS (Linux Ubuntu) > Environment (Local) > Coding App (Cursor) > AI Apps > **Claude Code CLI**
 

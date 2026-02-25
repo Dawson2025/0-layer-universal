@@ -5,15 +5,17 @@
 **Role**: AI App Configuration Manager — Cursor Agent
 **Type**: Sub-Layer (Increased Specificity)
 **Level**: 0.10 (Specific AI App)
-**Scope**: Cursor Agent setup, configuration, MCP servers, AI model settings, and operational knowledge for Linux Ubuntu > Local Environment > Cursor IDE > AI Apps > Cursor Agent
+**Scope**: Cursor Agent setup, configuration, and app-specific operational knowledge for Linux Ubuntu > Local Environment > Cursor IDE > AI Apps > Cursor Agent
 
 **Specificity Chain**: OS (Linux Ubuntu) > Environment (Local) > Coding App (Cursor) > AI Apps > **Cursor Agent**
 
 ## Key Behaviors
 
 - Manages Cursor Agent configuration and setup for this specific environment path
-- MCP servers, models, and tools within this AI app are **features** (children at level 11)
+- App-specific children live in `sub_layer_0_11_group/`
+- Shared infrastructure (MCP servers, AI models, tools, protocols, agent setup) lives in sibling feature entities at level 10 — see parent delegation contract
 - Knowledge cascades from parent levels (coding apps > AI apps category) — only store Cursor Agent-specific content here
+- Legacy setup docs migrated to `.0agnostic/01_knowledge/legacy_setup/`
 
 ### Cursor Agent Context Delivery
 
@@ -36,22 +38,22 @@ See `../../cursor_context_mapping.md` for agnostic system → Cursor mapping.
 ## Inputs
 
 - Parent context from sub_layer_0_09_ai_apps (shared AI app knowledge)
-- Cursor Agent-specific setup docs, protocols, and configuration
-- MCP server configurations and integration docs
+- Sibling feature entities (shared tools, models, protocols)
+- Cursor Agent-specific setup docs and configuration
 
 ## Outputs
 
 - Cursor Agent setup and configuration documentation
-- MCP server feature entities (level 11 children)
+- App-specific children at level 11
 - Operational rules and protocols specific to Cursor Agent
 
 
 ## Current Status
 
-- **Stage**: Initial entity creation (2026-02-22)
-- **Structure**: Canonical entity structure applied — full .0agnostic/, .1merge/, 12 stages
-- **Migration**: Legacy content from old sub_layer_0_09_cursor_agent/ directory structure preserved; setup/, MCP servers, models, tools, protocols, and agent setup content available for migration into .0agnostic/ subdirectories
-- **Children**: MCP servers and tools to be organized as level 11 features
+- **Stage**: Active (entity created 2026-02-22, restructured 2026-02-25)
+- **Structure**: Canonical entity structure, shared content migrated to sibling features
+- **Children**: App-specific children in sub_layer_0_11_group/
+- **Migration**: Legacy setup docs in `.0agnostic/01_knowledge/legacy_setup/`. Shared MCP servers, AI models, tools, protocols moved to sibling feature entities.
 
 ## AutoGen-Specific Configuration
 

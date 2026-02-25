@@ -5,7 +5,7 @@
 **Role**: AI App Configuration Manager — Codex CLI
 **Type**: Sub-Layer (Increased Specificity)
 **Level**: 0.10 (Specific AI App)
-**Scope**: Codex CLI setup, configuration, MCP servers, AI model settings, and operational knowledge for Linux Ubuntu > Local Environment > Cursor IDE > AI Apps > Codex CLI
+**Scope**: Codex CLI setup, configuration, and app-specific operational knowledge for Linux Ubuntu > Local Environment > Cursor IDE > AI Apps > Codex CLI
 
 **Specificity Chain**: OS (Linux Ubuntu) > Environment (Local) > Coding App (Cursor) > AI Apps > **Codex CLI**
 
