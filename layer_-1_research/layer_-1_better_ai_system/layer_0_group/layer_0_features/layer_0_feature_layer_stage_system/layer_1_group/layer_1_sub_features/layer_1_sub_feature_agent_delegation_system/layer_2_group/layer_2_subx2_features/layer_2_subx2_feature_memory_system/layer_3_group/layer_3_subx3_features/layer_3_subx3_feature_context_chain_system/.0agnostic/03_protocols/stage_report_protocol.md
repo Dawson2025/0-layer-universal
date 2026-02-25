@@ -2,7 +2,7 @@
 
 ## Purpose
 
-Every stage agent writes a `stage_report.md` in its `outputs/` directory before exiting. The entity manager reads these reports to maintain a rolled-up view of all stages without loading stage-level details.
+Every stage agent writes a `stage_report.md` in `outputs/reports/` before exiting, and mirrors it into `.0agnostic/05_handoff_documents/02_outgoing/` for propagation. The entity manager reads these reports to maintain a rolled-up view of all stages without loading stage-level details.
 
 ## When to Write
 
@@ -12,7 +12,10 @@ Every stage agent writes a `stage_report.md` in its `outputs/` directory before 
 
 ## Location
 
-`outputs/stage_report.md` within the stage directory.
+- Canonical: `outputs/reports/stage_report.md`
+- Handoff copy (to manager): `.0agnostic/05_handoff_documents/02_outgoing/01_to_above/stage_report.md`
+- Handoff copy (to below): `.0agnostic/05_handoff_documents/02_outgoing/03_to_below/stage_report.md`
+- Legacy fallback (read-only compatibility): `outputs/stage_report.md`
 
 ## Format
 
@@ -51,3 +54,4 @@ Every stage agent writes a `stage_report.md` in its `outputs/` directory before 
 4. Open items should be actionable — what specifically needs to happen
 5. Update the report, don't append — each write replaces the previous version
 6. The manager may update `0INDEX.md` after reading your report
+7. Keep `outputs/reports/stage_report.md` and both outgoing handoff copies synchronized

@@ -26,7 +26,7 @@ You manage the entire context chain system sub-feature. You do NOT carry operati
 
 **Your job**:
 1. Read `0INDEX.md` for the rolled-up view of all stages
-2. Read stage reports (`stage_3_XX/outputs/stage_report.md`) for status
+2. Read stage reports (`stage_3_XX/outputs/reports/stage_report.md`) for status
 3. Decide what needs to happen next
 4. Delegate to the appropriate stage agent
 5. Maintain the entity-level view of how stages connect
@@ -87,7 +87,7 @@ Before starting any task:
 ### Agent Communication
 
 Agents at this layer and below communicate via:
-- **Stage reports**: `stage_3_XX/outputs/stage_report.md` — async status updates from stage agents to manager
+- **Stage reports**: `stage_3_XX/outputs/reports/stage_report.md` — async status updates from stage agents to manager
 - **Handoff documents**: `layer_3_group/.../hand_off_documents/` (incoming/outgoing)
 - **Team tools**: `SendMessage`, `TeamCreate` for real-time coordination
 - **Task tools**: `TaskCreate`, `TaskUpdate` for work tracking
@@ -516,24 +516,37 @@ For detailed step-by-step procedures, read `.0agnostic/protocols/`:
 | Entity Chain Setup | `entity_chain_setup_protocol.md` | Integrating new entities into the chain |
 | Chain Repair | `chain_repair_protocol.md` | Fixing broken chain links |
 
-## AutoGen-Specific Configuration
+## Codex CLI Configuration
 
-### Agent Registration
-Register this context in your AutoGen agent configuration:
+### Context Source
+- Use `AGENTS.md` as the hot context source for this entity.
+- Treat `0AGNOSTIC.md` as source-of-truth; never hand-edit generated context files.
 
-```python
-agent_config = {
-    "context_file": "AGENTS.md",
-    "resources_dir": ".0agnostic/",
-    "episodic_dir": ".0agnostic/episodic_memory/"
-}
-```
+### Codex Operational Rules
+- For structural edits, read `.0agnostic/03_protocols/` first.
+- For behavior constraints, read `.0agnostic/02_rules/static/` first, then dynamic rules.
+- For deep domain detail, load only the needed file from `.0agnostic/01_knowledge/`.
 
-### Multi-Agent Coordination
-- Check .locks/ before modifying shared files
-- Use atomic writes (temp file → rename)
-- Log changes to divergence.log
-- Read session files to understand previous work
+### Session Continuity
+- On resume, check `.0agnostic/04_episodic_memory/sessions/` and `changes/`.
+- Keep edits scoped to the active entity unless explicitly asked to broaden scope.
+
+## Codex Discovery Triggers
+
+When requests mention context-chain operations, load these next:
+
+1. Contract: `.0agnostic/01_knowledge/codex_cli_context_contract.md`
+2. Rules: `.0agnostic/02_rules/static/` then `.0agnostic/02_rules/dynamic/`
+3. Protocols: `.0agnostic/03_protocols/chain_validation_protocol.md`
+4. Skills: `.0agnostic/05_skills/chain-validate/SKILL.md` and `.0agnostic/05_skills/avenue-check/SKILL.md`
+
+## Codex Merge Diagnostics
+
+If projection looks wrong:
+- Verify `.1merge/.1codex_merge/1_overrides/tool_boilerplate.md` is non-empty.
+- Verify `.1merge/.1codex_merge/2_additions/tool_additions.md` is non-empty.
+- Re-run `.0agnostic/agnostic-sync.sh` for this entity.
+- Re-run `stage_3_07_testing/outputs/test_codex_projection.sh`.
 
 ---
 *Auto-generated from 0AGNOSTIC.md via agnostic-sync.sh*

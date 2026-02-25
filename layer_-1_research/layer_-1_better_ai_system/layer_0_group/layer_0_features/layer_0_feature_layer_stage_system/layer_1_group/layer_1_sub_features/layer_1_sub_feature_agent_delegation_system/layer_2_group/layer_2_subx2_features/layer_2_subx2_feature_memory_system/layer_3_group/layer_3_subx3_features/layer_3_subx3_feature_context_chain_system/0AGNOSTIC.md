@@ -25,7 +25,7 @@ You manage the entire context chain system sub-feature. You do NOT carry operati
 
 **Your job**:
 1. Read `0INDEX.md` for the rolled-up view of all stages
-2. Read stage reports (`stage_3_XX/outputs/stage_report.md`) for status
+2. Read stage reports (`stage_3_XX/outputs/reports/stage_report.md`) for status
 3. Decide what needs to happen next
 4. Delegate to the appropriate stage agent
 5. Maintain the entity-level view of how stages connect
@@ -86,7 +86,7 @@ Before starting any task:
 ### Agent Communication
 
 Agents at this layer and below communicate via:
-- **Stage reports**: `stage_3_XX/outputs/stage_report.md` — async status updates from stage agents to manager
+- **Stage reports**: `stage_3_XX/outputs/reports/stage_report.md` — async status updates from stage agents to manager
 - **Handoff documents**: `layer_3_group/.../hand_off_documents/` (incoming/outgoing)
 - **Team tools**: `SendMessage`, `TeamCreate` for real-time coordination
 - **Task tools**: `TaskCreate`, `TaskUpdate` for work tracking

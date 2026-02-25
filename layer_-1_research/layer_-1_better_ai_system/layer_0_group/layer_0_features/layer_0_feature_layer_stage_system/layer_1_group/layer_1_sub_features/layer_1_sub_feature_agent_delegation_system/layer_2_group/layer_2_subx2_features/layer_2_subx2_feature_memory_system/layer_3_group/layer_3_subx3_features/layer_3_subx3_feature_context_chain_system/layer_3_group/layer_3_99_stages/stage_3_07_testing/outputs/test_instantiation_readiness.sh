@@ -32,6 +32,18 @@ ready()     { ((READY++))     || true; printf "  \033[32mREADY\033[0m      %s\n"
 not_ready() { ((NOT_READY++)) || true; printf "  \033[31mNOT READY\033[0m  %s\n" "$1"; }
 warn_()     { ((WARN++))      || true; printf "  \033[33mWARN\033[0m       %s\n" "$1"; }
 
+# Return first existing directory from a set of candidates.
+resolve_dir() {
+    local candidate
+    for candidate in "$@"; do
+        if [ -d "$candidate" ]; then
+            echo "$candidate"
+            return 0
+        fi
+    done
+    return 1
+}
+
 echo "=== Test: Instantiation Readiness ==="
 echo "Entity: $(basename "$ENTITY_ROOT")"
 echo "Path: $ENTITY_ROOT"
@@ -94,37 +106,75 @@ echo ""
 echo "--- Check 3: .0agnostic/ structure ---"
 
 AGNOSTIC_DIR="$ENTITY_ROOT/.0agnostic"
-REQUIRED_SUBDIRS=(agents episodic_memory hooks knowledge rules skills)
 
 if [ -d "$AGNOSTIC_DIR" ]; then
     ready ".0agnostic/ directory exists"
+    # Numbered-first with legacy fallback.
+    KNOWLEDGE_DIR="$(resolve_dir "$AGNOSTIC_DIR/01_knowledge" "$AGNOSTIC_DIR/knowledge" || true)"
+    RULES_DIR="$(resolve_dir "$AGNOSTIC_DIR/02_rules" "$AGNOSTIC_DIR/rules" || true)"
+    PROTOCOLS_DIR="$(resolve_dir "$AGNOSTIC_DIR/03_protocols" "$AGNOSTIC_DIR/protocols" || true)"
+    AGENTS_DIR="$(resolve_dir "$AGNOSTIC_DIR/04_agents" "$AGNOSTIC_DIR/agents" || true)"
+    SKILLS_DIR="$(resolve_dir "$AGNOSTIC_DIR/05_skills" "$AGNOSTIC_DIR/skills" || true)"
+    HOOKS_DIR="$(resolve_dir "$AGNOSTIC_DIR/06_hooks" "$AGNOSTIC_DIR/hooks" || true)"
+    EPISODIC_DIR="$(resolve_dir "$AGNOSTIC_DIR/07_episodic_memory" "$AGNOSTIC_DIR/episodic_memory" || true)"
 
-    for subdir in "${REQUIRED_SUBDIRS[@]}"; do
-        if [ -d "$AGNOSTIC_DIR/$subdir" ]; then
-            ready ".0agnostic/$subdir/"
+    if [ -n "$KNOWLEDGE_DIR" ]; then
+        ready ".0agnostic/$(basename "$KNOWLEDGE_DIR")/"
+    else
+        not_ready ".0agnostic/01_knowledge (or legacy knowledge/) missing"
+    fi
+
+    if [ -n "$RULES_DIR" ]; then
+        ready ".0agnostic/$(basename "$RULES_DIR")/"
+    else
+        not_ready ".0agnostic/02_rules (or legacy rules/) missing"
+    fi
+
+    if [ -n "$PROTOCOLS_DIR" ]; then
+        ready ".0agnostic/$(basename "$PROTOCOLS_DIR")/"
+    else
+        warn_ ".0agnostic/03_protocols (or legacy protocols/) missing"
+    fi
+
+    if [ -n "$AGENTS_DIR" ]; then
+        ready ".0agnostic/$(basename "$AGENTS_DIR")/"
+    else
+        not_ready ".0agnostic/04_agents (or legacy agents/) missing"
+    fi
+
+    if [ -n "$SKILLS_DIR" ]; then
+        ready ".0agnostic/$(basename "$SKILLS_DIR")/"
+    else
+        not_ready ".0agnostic/05_skills (or legacy skills/) missing"
+    fi
+
+    if [ -n "$HOOKS_DIR" ]; then
+        ready ".0agnostic/$(basename "$HOOKS_DIR")/"
+    else
+        not_ready ".0agnostic/06_hooks (or legacy hooks/) missing"
+    fi
+
+    if [ -n "$EPISODIC_DIR" ]; then
+        ready ".0agnostic/$(basename "$EPISODIC_DIR")/"
+        if [ -d "$EPISODIC_DIR/sessions" ]; then
+            ready ".0agnostic/$(basename "$EPISODIC_DIR")/sessions/"
         else
-            not_ready ".0agnostic/$subdir/ missing"
+            not_ready ".0agnostic/$(basename "$EPISODIC_DIR")/sessions/ missing"
         fi
-    done
 
-    # Check episodic_memory sub-structure
-    if [ -d "$AGNOSTIC_DIR/episodic_memory/sessions" ]; then
-        ready ".0agnostic/episodic_memory/sessions/"
+        if [ -d "$EPISODIC_DIR/changes" ]; then
+            ready ".0agnostic/$(basename "$EPISODIC_DIR")/changes/"
+        else
+            not_ready ".0agnostic/$(basename "$EPISODIC_DIR")/changes/ missing"
+        fi
     else
-        not_ready ".0agnostic/episodic_memory/sessions/ missing"
+        not_ready ".0agnostic/07_episodic_memory (or legacy episodic_memory/) missing"
     fi
 
-    if [ -d "$AGNOSTIC_DIR/episodic_memory/changes" ]; then
-        ready ".0agnostic/episodic_memory/changes/"
+    if [ -n "$HOOKS_DIR" ] && [ -d "$HOOKS_DIR/scripts" ]; then
+        ready ".0agnostic/$(basename "$HOOKS_DIR")/scripts/"
     else
-        not_ready ".0agnostic/episodic_memory/changes/ missing"
-    fi
-
-    # Check hooks/scripts
-    if [ -d "$AGNOSTIC_DIR/hooks/scripts" ]; then
-        ready ".0agnostic/hooks/scripts/"
-    else
-        not_ready ".0agnostic/hooks/scripts/ missing"
+        not_ready ".0agnostic/06_hooks/scripts (or legacy hooks/scripts) missing"
     fi
 else
     not_ready ".0agnostic/ directory does not exist"

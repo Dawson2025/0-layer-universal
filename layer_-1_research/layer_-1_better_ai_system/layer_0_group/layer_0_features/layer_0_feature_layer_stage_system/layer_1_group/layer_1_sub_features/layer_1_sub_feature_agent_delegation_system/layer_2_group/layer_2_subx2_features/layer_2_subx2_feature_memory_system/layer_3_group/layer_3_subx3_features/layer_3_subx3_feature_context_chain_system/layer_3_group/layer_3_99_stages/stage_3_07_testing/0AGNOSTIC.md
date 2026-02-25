@@ -38,7 +38,7 @@ You do NOT:
 
 ### Stage Report
 
-Before exiting, update `outputs/stage_report.md` following the protocol in `../../.0agnostic/03_protocols/stage_report_protocol.md`.
+Before exiting, update `outputs/reports/stage_report.md` and mirror it to `.0agnostic/05_handoff_documents/02_outgoing/{01_to_above,03_to_below}/stage_report.md` following the protocol in `../../.0agnostic/03_protocols/stage_report_protocol.md`.
 
 ## Navigation
 
@@ -47,11 +47,13 @@ Before exiting, update `outputs/stage_report.md` following the protocol in `../.
 | Content | Location |
 |---------|----------|
 | Test runner | `outputs/run_all_tests.sh` |
-| Test scripts | `outputs/test_*.sh` (5 scripts) |
-| Results summary | `outputs/test_results_summary.md` |
-| Avenue web validation | `outputs/by_topic/avenue_web_validation_report.md` |
+| Test scripts | `outputs/test_*.sh` (canonical executable scripts) |
+| Purpose suites | `outputs/by_purpose/<purpose>/{design,implementation,runs,results,insights}/` |
+| Results summary | `outputs/reports/test_results_summary.md` |
+| Avenue web validation | `outputs/by_purpose/avenue_web_validation/results/avenue_web_validation_report.md` |
 | Skill discovery chain test | `outputs/test_skill_discovery_chain.md` |
-| Stage report | `outputs/stage_report.md` |
+| Stage report | `outputs/reports/stage_report.md` |
+| Output report | `outputs/reports/output_report.md` |
 
 ### Current Results
 
@@ -73,7 +75,10 @@ This stage is complete when:
 
 ## On Exit
 
-1. Update `outputs/stage_report.md` with current status
-2. If handing off to stage 08: include test results for review
-3. If handing off to stage 09: list specific failures needing fixes
-4. If handing off to stage 06: note implementation gaps discovered
+1. Update `outputs/reports/stage_report.md` with current status
+2. Mirror stage report into `.0agnostic/05_handoff_documents/02_outgoing/01_to_above/` and `03_to_below/`
+3. Ensure new artifacts are filed under `outputs/by_purpose/<purpose>/{design,implementation,runs,results,insights}/`
+4. Keep `outputs/by_topic/` as compatibility only; new artifacts go to `outputs/by_purpose/`
+5. If handing off to stage 08: include test results for review
+6. If handing off to stage 09: list specific failures needing fixes
+7. If handing off to stage 06: note implementation gaps discovered

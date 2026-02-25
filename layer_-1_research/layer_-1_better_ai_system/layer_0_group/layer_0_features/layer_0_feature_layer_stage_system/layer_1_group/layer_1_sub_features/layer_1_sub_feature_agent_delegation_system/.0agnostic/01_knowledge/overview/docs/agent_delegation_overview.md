@@ -27,7 +27,7 @@ These are coupled: delegation decisions depend on available context, and context
 ### What Stage Agents Know (loaded on entry)
 - Their own identity and methodology (from their 0AGNOSTIC.md)
 - Parent entity domain context (from parent's `.0agnostic/01_knowledge/`)
-- Current state of their stage (from outputs/ and stage_report.md)
+- Current state of their stage (from `outputs/reports/stage_report.md` and mirrored handoff copies in `.0agnostic/05_handoff_documents/`)
 
 ## Three-Tier Knowledge
 

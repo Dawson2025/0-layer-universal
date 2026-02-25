@@ -20,7 +20,7 @@ Stage agents MUST NOT perform work that belongs to another stage. When work fall
 ## Escalation
 
 When a stage agent encounters work outside its scope:
-1. Document it in `outputs/stage_report.md` under "Open Items"
+1. Document it in `outputs/reports/stage_report.md` under "Open Items"
 2. Note which stage should handle it
 3. Continue with in-scope work
 4. The manager reads the stage report and routes the work appropriately

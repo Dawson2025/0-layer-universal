@@ -11,6 +11,8 @@
 
 **Full design index**: `...stage_3_04_design/outputs/by_topic/README.md`
 
+**Local stage contract**: `outputs/design_decisions/propagation_funnel_stage_contract.md`
+
 ## Decision Summary
 
 Define how work products consolidate within stages and propagate across the layer-stage hierarchy via a **consolidation funnel** pattern. The funnel is recursive: stages, entities, and root all follow the same pattern of many inputs → consolidation → structured system → summary report → entry point.

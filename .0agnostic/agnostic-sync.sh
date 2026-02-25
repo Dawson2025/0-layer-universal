@@ -148,28 +148,46 @@ extract_named_sections() {
 # .1merge Integration
 # ═══════════════════════════════════════════════
 
-# Check for tool-specific boilerplate override
-# Returns 0 and prints content if override exists, returns 1 otherwise
+# Return candidate merge directories for a tool.
+# AGENTS.md is consumed by Codex and AutoGen, so it supports both
+# .1agents_merge and .1codex_merge (in that precedence order).
+get_tool_merge_dirs() {
+    local tool="$1"
+    if [ "$tool" = "agents" ]; then
+        echo "$DIR/.1merge/.1agents_merge"
+        echo "$DIR/.1merge/.1codex_merge"
+    else
+        echo "$DIR/.1merge/.1${tool}_merge"
+    fi
+}
+
+# Check for tool-specific boilerplate override.
+# Returns 0 and prints content if override exists, returns 1 otherwise.
 get_tool_boilerplate() {
     local tool="$1"
-    local merge_dir="$DIR/.1merge/.1${tool}_merge"
-
-    if [ -f "$merge_dir/1_overrides/tool_boilerplate.md" ]; then
-        cat "$merge_dir/1_overrides/tool_boilerplate.md"
-        return 0
-    fi
+    local merge_dir=""
+    while IFS= read -r merge_dir; do
+        [ -z "$merge_dir" ] && continue
+        if [ -f "$merge_dir/1_overrides/tool_boilerplate.md" ]; then
+            cat "$merge_dir/1_overrides/tool_boilerplate.md"
+            return 0
+        fi
+    done < <(get_tool_merge_dirs "$tool")
     return 1
 }
 
-# Check for tool-specific additions (always appended)
+# Check for tool-specific additions (always appended).
 get_tool_additions() {
     local tool="$1"
-    local merge_dir="$DIR/.1merge/.1${tool}_merge"
-
-    if [ -f "$merge_dir/2_additions/tool_additions.md" ]; then
-        echo ""
-        cat "$merge_dir/2_additions/tool_additions.md"
-    fi
+    local merge_dir=""
+    while IFS= read -r merge_dir; do
+        [ -z "$merge_dir" ] && continue
+        if [ -f "$merge_dir/2_additions/tool_additions.md" ]; then
+            echo ""
+            cat "$merge_dir/2_additions/tool_additions.md"
+            return 0
+        fi
+    done < <(get_tool_merge_dirs "$tool")
 }
 
 # ═══════════════════════════════════════════════

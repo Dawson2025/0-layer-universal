@@ -10,11 +10,11 @@
 # Avenues tested:
 #   A1: System Prompt (CLAUDE.md)
 #   A2: Path Rules (.claude/rules/)
-#   A3: Skills (.0agnostic/skills/)
+#   A3: Skills (.0agnostic/05_skills/ or legacy .0agnostic/skills/)
 #   A4: References (parent ref in 0AGNOSTIC.md)
 #   A5: JSON-LD (.gab.jsonld)
 #   A6: Integration (.integration.md)
-#   A7: Episodic Memory (.0agnostic/episodic_memory/)
+#   A7: Episodic Memory (.0agnostic/07_episodic_memory/ or legacy .0agnostic/episodic_memory/)
 #   A8: 0AGNOSTIC (0AGNOSTIC.md)
 
 set -uo pipefail
@@ -48,6 +48,18 @@ real_files() {
     else
         echo "0"
     fi
+}
+
+# Utility: resolve first existing directory from candidates
+resolve_dir() {
+    local candidate
+    for candidate in "$@"; do
+        if [ -d "$candidate" ]; then
+            echo "$candidate"
+            return 0
+        fi
+    done
+    return 1
 }
 
 echo "=== Test: Avenue Coverage (Functional) ==="
@@ -101,25 +113,26 @@ else
     fail "A2: .claude/rules/ directory missing"
 fi
 
-# --- A3: Skills (.0agnostic/skills/) ---
+# --- A3: Skills (.0agnostic/05_skills/) ---
 echo ""
-echo "--- A3: Skills (.0agnostic/skills/) ---"
+echo "--- A3: Skills (.0agnostic/05_skills/) ---"
 
-if [ -d "$ENTITY_ROOT/.0agnostic/skills" ]; then
-    skill_files=$(find "$ENTITY_ROOT/.0agnostic/skills" -name "SKILL.md" -type f 2>/dev/null | wc -l)
+SKILLS_DIR="$(resolve_dir "$ENTITY_ROOT/.0agnostic/05_skills" "$ENTITY_ROOT/.0agnostic/skills" || true)"
+if [ -n "$SKILLS_DIR" ]; then
+    skill_files=$(find "$SKILLS_DIR" -name "SKILL.md" -type f 2>/dev/null | wc -l)
     if [ "$skill_files" -gt 0 ]; then
-        pass "A3: .0agnostic/skills/ has $skill_files SKILL.md files"
+        pass "A3: $(basename "$SKILLS_DIR") has $skill_files SKILL.md files"
     else
         # Check for any files at all
-        any_files=$(real_files "$ENTITY_ROOT/.0agnostic/skills")
+        any_files=$(real_files "$SKILLS_DIR")
         if [ "$any_files" -gt 0 ]; then
-            scaffolded "A3: .0agnostic/skills/ has files but no SKILL.md"
+            scaffolded "A3: $(basename "$SKILLS_DIR") has files but no SKILL.md"
         else
-            scaffolded "A3: .0agnostic/skills/ exists but is empty"
+            scaffolded "A3: $(basename "$SKILLS_DIR") exists but is empty"
         fi
     fi
 else
-    fail "A3: .0agnostic/skills/ directory missing"
+    fail "A3: skills directory missing (.0agnostic/05_skills or .0agnostic/skills)"
 fi
 
 # --- A4: References (parent ref in 0AGNOSTIC.md) ---
@@ -221,16 +234,17 @@ else
     fi
 fi
 
-# --- A7: Episodic Memory (.0agnostic/episodic_memory/) ---
+# --- A7: Episodic Memory (.0agnostic/07_episodic_memory/) ---
 echo ""
 echo "--- A7: Episodic Memory ---"
 
-if [ -d "$ENTITY_ROOT/.0agnostic/episodic_memory" ]; then
-    pass "A7: .0agnostic/episodic_memory/ exists"
+EPISODIC_DIR="$(resolve_dir "$ENTITY_ROOT/.0agnostic/07_episodic_memory" "$ENTITY_ROOT/.0agnostic/episodic_memory" || true)"
+if [ -n "$EPISODIC_DIR" ]; then
+    pass "A7: $(basename "$EPISODIC_DIR") exists"
 
     # Check sessions subdirectory
-    if [ -d "$ENTITY_ROOT/.0agnostic/episodic_memory/sessions" ]; then
-        session_files=$(real_files "$ENTITY_ROOT/.0agnostic/episodic_memory/sessions")
+    if [ -d "$EPISODIC_DIR/sessions" ]; then
+        session_files=$(real_files "$EPISODIC_DIR/sessions")
         if [ "$session_files" -gt 0 ]; then
             pass "A7: sessions/ has $session_files files"
         else
@@ -241,8 +255,8 @@ if [ -d "$ENTITY_ROOT/.0agnostic/episodic_memory" ]; then
     fi
 
     # Check changes subdirectory
-    if [ -d "$ENTITY_ROOT/.0agnostic/episodic_memory/changes" ]; then
-        change_files=$(real_files "$ENTITY_ROOT/.0agnostic/episodic_memory/changes")
+    if [ -d "$EPISODIC_DIR/changes" ]; then
+        change_files=$(real_files "$EPISODIC_DIR/changes")
         if [ "$change_files" -gt 0 ]; then
             pass "A7: changes/ has $change_files files"
         else
@@ -252,7 +266,7 @@ if [ -d "$ENTITY_ROOT/.0agnostic/episodic_memory" ]; then
         fail "A7: changes/ subdirectory missing"
     fi
 else
-    fail "A7: .0agnostic/episodic_memory/ missing"
+    fail "A7: episodic memory directory missing (.0agnostic/07_episodic_memory or .0agnostic/episodic_memory)"
 fi
 
 # --- A8: 0AGNOSTIC (0AGNOSTIC.md) ---

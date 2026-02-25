@@ -25,7 +25,7 @@ These two domains are deeply coupled: delegation decisions depend on what contex
 ### Domain Concepts
 
 - **Stage delegation model**: Managers delegate to stage agents. Managers don't carry operational knowledge — each stage agent has its own 0AGNOSTIC.md with methodology, output format, and success criteria.
-- **Stage reports**: Stage agents write `.0agnostic/05_handoff_documents/02_outgoing/01_to_above/stage_report.md` before exiting. Managers read these for async status without loading stage details.
+- **Stage reports**: Canonical stage report is `outputs/reports/stage_report.md`, mirrored to `.0agnostic/05_handoff_documents/02_outgoing/{01_to_above,03_to_below}/stage_report.md`.
 - **Agent context model**: What each agent type (manager, stage agent, sub-feature agent) knows in its static and dynamic context.
 - **Context chains**: How context traverses from root to leaf entities through the hierarchy.
 - **Three-tier knowledge**: Pointers (0AGNOSTIC.md) -> Distilled (.0agnostic/knowledge/) -> Full (stage outputs).

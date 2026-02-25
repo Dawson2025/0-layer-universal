@@ -17,7 +17,7 @@
 | 07 | testing | active | 76 PASS core + skill discovery chain (6 checkpoints all PASS) | 9+ | 2026-02-22 |
 | 08-11 | criticism-archives | scaffolded | — | 0 | — |
 
-**Stage reports**: each active stage has `outputs/stage_report.md` — read for details.
+**Stage reports**: each active stage has `outputs/reports/stage_report.md` — read for details.
 
 ## How Stages Connect
 
@@ -74,4 +74,4 @@ prompt: "Work on stage_3_XX_[name] for the context chain system.
          Read 0AGNOSTIC.md in that stage directory first."
 ```
 The stage agent has its own 0AGNOSTIC.md with operational knowledge for that stage.
-Read the stage's `outputs/stage_report.md` for current status before delegating.
+Read the stage's `outputs/reports/stage_report.md` for current status before delegating.

@@ -12,7 +12,7 @@ Stage 0AGNOSTIC.md files need **two halves**:
 - **Scope boundaries**: What this stage IS and IS NOT (the NOT list is critical)
 - **Methodology**: How the agent works (e.g., tree of needs for stage 01)
 - **Domain context pointers**: Where to find parent knowledge (don't load it, just point)
-- **Stage report requirement**: Update `outputs/stage_report.md` before exiting
+- **Stage report requirement**: Update `outputs/reports/stage_report.md` before exiting
 - **Success criteria**: When is this stage done?
 - **Exit protocol**: What to do before leaving
 
@@ -46,7 +46,7 @@ With the current state half in 0AGNOSTIC.md, the agent gets immediate orientatio
 
 The current state section in 0AGNOSTIC.md and the stage_report.md are complementary:
 - **0AGNOSTIC.md current state**: Pointer-tier summary — loaded automatically as static context
-- **stage_report.md**: More detailed, follows a strict protocol format, written specifically for the entity manager
+- **stage_report.md**: More detailed, follows a strict protocol format, written specifically for the entity manager (canonical: `outputs/reports/stage_report.md`)
 
 The current state section can be derived from the stage report but is more concise and embedded in the context file that agents read first.
 

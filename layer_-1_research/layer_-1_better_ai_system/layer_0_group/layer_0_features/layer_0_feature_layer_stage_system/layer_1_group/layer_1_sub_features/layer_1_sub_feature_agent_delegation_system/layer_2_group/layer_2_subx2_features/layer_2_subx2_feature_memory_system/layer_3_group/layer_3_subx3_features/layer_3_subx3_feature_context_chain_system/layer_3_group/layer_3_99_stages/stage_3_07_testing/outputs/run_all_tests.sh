@@ -1,19 +1,28 @@
 #!/usr/bin/env bash
-# run_all_tests.sh — Run all 5 test scripts and generate summary report
+# run_all_tests.sh — Run testing suites and generate summary report
 #
 # Runs each test, captures output, and produces test_results_summary.md
 
 set -uo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-REPORT="$SCRIPT_DIR/test_results_summary.md"
+REPORT_DIR="$SCRIPT_DIR/reports"
+REPORT="$REPORT_DIR/test_results_summary.md"
+LEGACY_REPORT="$SCRIPT_DIR/test_results_summary.md"
 
 TESTS=(
+    "test_outputs_purpose_taxonomy.sh"
+    "test_reports_funnel_structure.sh"
     "test_agnostic_sync.sh"
     "test_context_chain_traversal.sh"
     "test_avenue_coverage_functional.sh"
     "test_1merge_structure.sh"
     "test_instantiation_readiness.sh"
+    "test_codex_projection.sh"
+    "test_codex_discovery_chain.sh"
+    "test_codex_context_conditions.sh"
+    "test_codex_runtime_behavior.sh"
+    "test_codex_ci_gate.sh"
 )
 
 TOTAL_PASS=0
@@ -22,6 +31,7 @@ TOTAL_SKIP=0
 TOTAL_SCAFFOLDED=0
 
 # Start report
+mkdir -p "$REPORT_DIR"
 cat > "$REPORT" << EOF
 # Test Results Summary
 
@@ -142,6 +152,9 @@ else
 fi)
 EOF
 
+# Keep legacy location for backward compatibility.
+cp "$REPORT" "$LEGACY_REPORT"
+
 echo "================================"
 echo "  TOTAL PASS:       $TOTAL_PASS"
 echo "  TOTAL FAIL:       $TOTAL_FAIL"
@@ -151,3 +164,4 @@ echo "  Readiness:        ${READINESS}%"
 echo "================================"
 echo ""
 echo "Report written to: $REPORT"
+echo "Legacy copy written to: $LEGACY_REPORT"

@@ -14,7 +14,7 @@
 | 04 | design | implicit | Stage agent 0AGNOSTIC.md pattern designed (template + 11 guides) | 2026-02-19 |
 | 05 | planning | implicit | Stage-by-stage plan executed for all 11 stages | 2026-02-19 |
 | 06 | development | active | Universal artifacts: 11 guides, 3 static rules, 2 dynamic rules, 7 principles, stage report protocol | 2026-02-19 |
-| 07 | testing | partial | Context_chain_system has 76 PASS tests; agent_delegation_system level not yet tested | 2026-02-19 |
+| 07 | testing | active | report+porting contract test added (`test_report_porting_contract.sh`), active stages 01/02/04/06 now canonicalized to `outputs/reports/` + handoff mirrors | 2026-02-25 |
 | 08-09 | criticism-fixing | scaffolded | — | — |
 | 10 | current_product | implicit | Universal artifacts promoted to `.0agnostic/` | 2026-02-19 |
 | 11 | archives | scaffolded | — | — |
@@ -63,5 +63,6 @@ The **context_chain_system** (grandchild via memory_system) is the primary worki
 | Entity source of truth | `0AGNOSTIC.md` |
 | Stages | `layer_1_group/layer_1_99_stages/stage_1_*` |
 | On-demand resources | `.0agnostic/` |
+| Report + Porting contract | `.0agnostic/01_knowledge/overview/docs/report_and_porting_contract.md` |
 | Children | `layer_2_group/layer_2_subx2_features/` |
 | Universal artifacts | `.0agnostic/` (stage guides, rules, protocols, principles) |
