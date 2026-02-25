@@ -1,0 +1,59 @@
+{
+  "@context": {
+    "ton": "https://example.org/tree-of-needs#",
+    "rel": "https://example.org/relations#",
+    "schema": "https://schema.org/"
+  },
+  "@id": "ton:SystemsOrganizeEffectively",
+  "@type": "TreeOfNeeds",
+  "schema:name": "Systems Organize Effectively",
+  "schema:description": "Every system has a structured home for research, production, and instantiations",
+  "rootNeed": {
+    "@id": "ton:00_systems_organize_effectively",
+    "@type": "RootNeed",
+    "name": "systems_organize_effectively",
+    "branches": [
+      {
+        "@id": "ton:01_research_production_lifecycle",
+        "@type": "Branch",
+        "name": "research_production_lifecycle",
+        "description": "How systems move from experimental to stable",
+        "needs": [
+          {"@id": "ton:need_01_research_version", "name": "research_version"},
+          {"@id": "ton:need_02_production_version", "name": "production_version"},
+          {"@id": "ton:need_03_promotion_workflow", "name": "promotion_workflow"},
+          {"@id": "ton:need_04_version_coexistence", "name": "version_coexistence"}
+        ]
+      },
+      {
+        "@id": "ton:02_instantiation_pattern",
+        "@type": "Branch",
+        "name": "instantiation_pattern",
+        "description": "How systems create per-user or per-context instances",
+        "needs": [
+          {"@id": "ton:need_01_system_features", "name": "system_features"},
+          {"@id": "ton:need_02_system_instantiations", "name": "system_instantiations"},
+          {"@id": "ton:need_03_instance_context", "name": "instance_context"},
+          {"@id": "ton:need_04_feature_to_instance_flow", "name": "feature_to_instance_flow"}
+        ]
+      },
+      {
+        "@id": "ton:03_universal_pattern",
+        "@type": "Branch",
+        "name": "universal_pattern",
+        "description": "The pattern applies to any system, not just AI",
+        "needs": [
+          {"@id": "ton:need_01_general_pattern", "name": "general_pattern"},
+          {"@id": "ton:need_02_school_system_example", "name": "school_system_example"},
+          {"@id": "ton:need_03_nested_systems", "name": "nested_systems"}
+        ]
+      }
+    ],
+    "rel:informsFurtherLayering": [
+      {
+        "branch": "ton:02_instantiation_pattern",
+        "informsChild": "entities (layer_2_subx2_feature_entities)"
+      }
+    ]
+  }
+}
