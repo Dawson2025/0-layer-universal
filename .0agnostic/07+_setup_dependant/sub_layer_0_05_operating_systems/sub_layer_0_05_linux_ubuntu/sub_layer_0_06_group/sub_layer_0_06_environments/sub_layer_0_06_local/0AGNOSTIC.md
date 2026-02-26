@@ -7,7 +7,7 @@
 **Entity**: Local Ubuntu Environment
 **Sub-Layer**: 0.06
 **Type**: Increased Specificity (narrows from Environments → Local machine setup)
-**Scope**: Local Ubuntu desktop environment — GNOME/Unity desktop, system services, audio stack, TTS
+**Scope**: Comprehensive knowledge base and operational hub for this specific Ubuntu machine — everything needed to understand, configure, troubleshoot, optimize, and maintain the system. Includes: GNOME/Unity desktop, system services, audio stack, TTS, hardware-specific setup, daemon persistence, performance tuning, and all related troubleshooting procedures.
 
 **Specificity Chain**: OS (05) → Linux Ubuntu (05) → Environments (06) → **Local (06)**
 
@@ -70,8 +70,7 @@ Before starting any task:
 | `.0agnostic/01_knowledge/` | 4 knowledge topics (linux_fundamentals, ubuntu_desktop, system_services, audio) |
 | `.0agnostic/02_rules/` | Entity-level rules (static + dynamic) |
 | `.0agnostic/03_protocols/` | Protocols |
-| `sub_layer_0_06_group/sub_layer_0_06_99_stages/` | Internal stages (setup work) |
-| `sub_layer_0_06_group/setup/` | Setup instructions and docs |
+| `sub_layer_0_06_group/sub_layer_0_06_99_stages/` | Stages 01-10: request gathering, research, instructions, planning, design, development, testing, criticism, fixing, current product, archives |
 | `sub_layer_0_07_group/sub_layer_0_07_coding_apps/` | Child: Coding Apps entity |
 
 ## Resources Available
