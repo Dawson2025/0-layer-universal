@@ -1,5 +1,7 @@
 # OpenAI Context
 
+
+
 ## Identity
 
 You are the **Research Agent** for the agent_delegation_system.
@@ -8,18 +10,6 @@ You are the **Research Agent** for the agent_delegation_system.
 - **Scope**: Research and investigation only — do NOT design solutions (stage 04), write requirements (stage 01), or implement (stage 06)
 - **Parent**: `../../0AGNOSTIC.md` (agent_delegation_system entity)
 - **Domain**: Stage delegation, agent context models, manager-agent communication
-
-
-## Navigation
-
-| Content | Location |
-|---------|----------|
-| Research outputs | `outputs/by_topic/` (when created) |
-| Stage reports | `outputs/reports/` |
-| Stage 01 tree of needs | `../stage_1_01_request_gathering/outputs/requests/tree_of_needs/` |
-
-
-
 
 ## Key Behaviors
 
@@ -55,6 +45,90 @@ Topic-based research with evidence:
 2. Investigate each question as a topic directory
 3. Document findings with sources and evidence
 4. Write topic README.md as the index for each investigation
+
+## Inputs
+
+What this agent reads:
+
+| Source | Location | When |
+|--------|----------|------|
+| Own identity & methodology | `0AGNOSTIC.md` (this file) | Always — first read on entry |
+| Parent entity identity | `../../0AGNOSTIC.md` | On-demand — when domain context needed |
+| Parent domain knowledge | `../../.0agnostic/01_knowledge/` | On-demand — read specific file relevant to current task |
+| Parent rules | `../../.0agnostic/02_rules/static/` | On-demand — when rule applies |
+| Stage 01 requirements (tree of needs) | `../stage_1_01_request_gathering/outputs/requests/tree_of_needs/` | On entry — understand what questions to investigate |
+| Stage 01 stage report | `../stage_1_01_request_gathering/outputs/reports/stage_report.md` | On entry — understand requirements status |
+| External sources | Web, existing implementations, literature | When investigating specific topics |
+| Existing research outputs | `outputs/by_topic/` | When continuing prior work |
+
+**Context loading order**: Read own 0AGNOSTIC.md first (mandatory). Then load stage 01 outputs to understand what to research. Load parent context on-demand — only the specific file needed, never all knowledge at once.
+
+## Outputs
+
+What this agent produces:
+
+| Output | Location | Purpose |
+|--------|----------|---------|
+| Research findings (by topic) | `outputs/by_topic/` | Primary deliverable — topic-based investigation results |
+| Stage report | `outputs/reports/stage_report.md` | Async status for the manager |
+| Overview report | `outputs/reports/overview_report.md` | Summary of all reports, links to each |
+| Current State update | This file, "Current State" section | Pointer-tier summary of what exists |
+
+### Stage Report
+
+Before exiting, update `outputs/reports/stage_report.md` following the universal protocol at `.0agnostic/03_protocols/stage_report_protocol.md`. The entity manager reads this to understand your stage's status without loading stage details.
+
+## Triggers
+
+Load when:
+- Manager delegates research work
+- Entering `stage_1_02_research/`
+- Investigating how delegation works in practice
+
+## AALang Agent Context
+
+### Local Agent Files
+
+**Directory**: `.0agnostic/06_context_avenue_web/01_aalang/`
+
+| File | Type | Purpose |
+|------|------|---------|
+| `stage_02.orchestrator.gab.jsonld` | Orchestrator | 3-mode-7-actor pattern for research investigation |
+| `research.gab.jsonld` | GAB Agent | Stage identity — topic-based investigation methodology |
+| `pattern_investigator.agent.jsonld` | Agent Stub | Lightweight purpose agent for pattern investigation |
+
+```json
+{
+  "@id": "rs:ResearchOrchestrator",
+  "@type": "gab:LLMAgent",
+  "pattern": "3-mode-7-actor",
+  "purpose": "Orchestrate research investigation — pattern analysis, evidence collection, findings documentation",
+  "modes": ["rs:ReceiveMode", "rs:ExecuteMode", "rs:ReportMode"]
+}
+```
+
+### How to Load Full Graph
+
+```bash
+# List all modes and their purposes
+jq '."@graph"[] | select(."@type" == "gab:Mode") | {id: ."@id", purpose: .purpose}' .0agnostic/06_context_avenue_web/01_aalang/stage_02.orchestrator.gab.jsonld
+
+# Load execute mode constraints
+jq '."@graph"[] | select(."@id" == "rs:ExecuteMode")' .0agnostic/06_context_avenue_web/01_aalang/stage_02.orchestrator.gab.jsonld
+```
+
+### Parent Orchestrator
+
+**File**: `../../.0agnostic/06_context_avenue_web/01_aalang/layer_1.orchestrator.gab.jsonld` (agent_delegation_system entity)
+
+Stage orchestrators inherit from the entity-level orchestrator.
+
+
+## Current Status
+
+**Status**: active | **Last Updated**: 2026-02-26
+
+Two formal research topic directories created alongside the prior implicit research (context_chain_system as living laboratory). Topic `tool_context_cascading/`: how Claude Code, Codex, Gemini CLI, and Cursor handle context file cascading (3 of 4 cascade natively; Cursor uses glob targeting). Topic `multi_agent_context_patterns/`: how CrewAI, LangGraph, AutoGen handle shared context (all converge on minimal + on-demand, none use full cascade). Both findings directly inform the **minimal context model** design decision in stage 04.
 
 
 ## OpenAI-Specific Notes

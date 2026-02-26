@@ -129,9 +129,9 @@ Stage orchestrators inherit from the entity-level orchestrator.
 
 ## Current Status
 
-**Status**: implicit | **Last Updated**: 2026-02-19
+**Status**: active | **Last Updated**: 2026-02-26
 
-Research was conducted primarily through the **context_chain_system** (grandchild entity), which served as a living laboratory for agent delegation. Rather than standalone research documents, the investigation happened by building and testing the delegation model in a real entity with 11 stages, 50+ knowledge files, and 76 PASS tests.
+Two formal research topic directories created alongside the prior implicit research (context_chain_system as living laboratory). Topic `tool_context_cascading/`: how Claude Code, Codex, Gemini CLI, and Cursor handle context file cascading (3 of 4 cascade natively; Cursor uses glob targeting). Topic `multi_agent_context_patterns/`: how CrewAI, LangGraph, AutoGen handle shared context (all converge on minimal + on-demand, none use full cascade). Both findings directly inform the **minimal context model** design decision in stage 04.
 
 # ═══ DYNAMIC CONTEXT (loaded on-demand) ═══
 
@@ -156,6 +156,8 @@ The context_chain_system at `../../layer_2_group/.../layer_3_subx3_feature_conte
 - **Stage reports enable async coordination**: The manager never needs to load stage outputs — the stage report provides sufficient status
 - **Scope boundary decisions discovered → Principle 8**: When agents reach the edge of their layer or stage scope, they must decide: (1) do it yourself if small and coupled, (2) delegate to an existing agent, or (3) instantiate a new agent if none exists. The key factor is context window preservation. Formalized as Principle 8 in the same file, and as the expanded **Scope Boundary Rule** at `.0agnostic/02_rules/static/STAGE_BOUNDARY_RULE.md`
 - **Scope boundaries span both layers AND stages**: The original "stage boundary" concept was too narrow — scope decisions happen at layer boundaries too (e.g., a child entity doing parent entity work). The Scope Boundary Rule now covers both dimensions
+- **Tool context cascading varies by tool** (2026-02-26): Claude Code walks CWD→root (upward), Codex walks root→CWD (downward), Gemini CLI does bidirectional BFS (up to 200 dirs), Cursor uses glob-based rule targeting (no automatic cascade). 3 of 4 cascade natively — this means CLAUDE.md/AGENTS.md/GEMINI.md content MUST be lean to avoid context bloat at depth. See `outputs/by_topic/tool_context_cascading/`
+- **Multi-agent frameworks converge on minimal context** (2026-02-26): CrewAI (selective sharing + RAG), LangGraph (graph-based state flow along edges), AutoGen (conversational message passing) — all use minimal agent context + on-demand access. None use full parent cascade. Hybrid minimal + shared state outperforms both full cascade and full isolation. See `outputs/by_topic/multi_agent_context_patterns/`
 
 ## Cross-Stage Traceability
 
@@ -169,6 +171,8 @@ How each finding connects to requirements (stage 01) and design decisions (stage
 | Stage reports enable async coordination | 01/need_02: stage_reports, 02/need_02: handoff_protocols | "Stage reports for async communication" |
 | Scope boundary decisions (→ Principle 8) | 03/need_02: spawning_patterns | "Scope boundary decisions" — three-option framework |
 | Scope boundaries span layers AND stages | 03/need_01: agent_hierarchy | "Scope boundaries span layers AND stages" — single rule |
+| Tool context cascading (3/4 cascade natively) | 01/need_03: agent_context_model | "Minimal context model" — lean CLAUDE.md files because cascading compounds |
+| Multi-agent frameworks: minimal + on-demand | 01/need_03: agent_context_model | "Minimal context model" — validated by CrewAI, LangGraph, AutoGen patterns |
 
 **Stage paths**: `../stage_1_01_request_gathering/`, `../stage_1_04_design/`
 
@@ -186,8 +190,7 @@ Research was primarily conducted through child entities rather than standalone d
 
 ## Open Items
 
-- No formal research documents exist in outputs/ — findings are embedded in the context_chain_system implementation
-- Should document lessons learned from context_chain_system as formal research outputs
+- Context chain system lessons should still be documented as a formal research topic (implicit findings formalized)
 - multi_agent_system child entity not yet explored as a research vehicle
 
 ## Handoff

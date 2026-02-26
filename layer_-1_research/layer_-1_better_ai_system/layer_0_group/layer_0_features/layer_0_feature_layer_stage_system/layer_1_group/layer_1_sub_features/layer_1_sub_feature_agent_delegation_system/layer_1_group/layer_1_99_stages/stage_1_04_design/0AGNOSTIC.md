@@ -130,9 +130,9 @@ Stage orchestrators inherit from the entity-level orchestrator.
 
 ## Current Status
 
-**Status**: active | **Last Updated**: 2026-02-21
+**Status**: active | **Last Updated**: 2026-02-26
 
-8 architecture decisions: 7 implicit (0AGNOSTIC.md pattern, two-halves, stage reports, scope boundaries, universal guides, scope decisions, scope spans layers+stages) + 1 formal — **context propagation design** (consolidation funnel + cross-level connection map). Universal artifact at root `.0agnostic/01_knowledge/CONTEXT_PROPAGATION_DESIGN.md`. Design output at `outputs/design_decisions/context_propagation_design.md`.
+9 architecture decisions: 7 implicit (0AGNOSTIC.md pattern, two-halves, stage reports, scope boundaries, universal guides, scope decisions, scope spans layers+stages) + 2 formal — **context propagation design** (consolidation funnel + cross-level connection map) and **minimal context model** (agents get own STATIC + neighbor interfaces + on-demand access, not full ancestor cascade). Minimal context model validated by both tool cascading research (3/4 tools cascade natively, making lean content critical) and multi-agent framework research (CrewAI, LangGraph, AutoGen all converge on minimal + on-demand). Design outputs at `outputs/design_decisions/`.
 
 # ═══ DYNAMIC CONTEXT (loaded on-demand) ═══
 
@@ -151,6 +151,7 @@ Stage orchestrators inherit from the entity-level orchestrator.
 | **Universal stage guides + entity templates** | Universal guides define what ANY stage 01/02/etc. does; entity templates are instantiated per-entity | Per-entity everything (no reuse), purely universal (no customization) |
 | **Scope boundary decisions** → Principle 8 | When agents reach scope boundaries, they decide: do it yourself (small/coupled), delegate (significant, agent exists), or instantiate (significant, no agent exists). Default: delegate. | No framework (agents guess), always delegate (misses trivial cases), always self-handle (context overflow) |
 | **Scope boundaries span layers AND stages** | A single Scope Boundary Rule covers both dimensions — layer boundaries (sibling/parent/child entities) and stage boundaries (different stages within an entity) | Separate rules for layers vs stages (artificial split, same decision framework applies) |
+| **Minimal context model** (2026-02-26) | Agents get own STATIC + compact neighbor interface summaries + on-demand DYNAMIC. No full ancestor cascade. Validated by tool cascading research (3/4 tools cascade natively — lean content prevents bloat) and multi-agent frameworks (CrewAI, LangGraph, AutoGen all use minimal + on-demand). Relay pattern for cross-hierarchy communication. | Full STATIC cascade (context waste at depth), full isolation (agents lack neighbor awareness), selective cascade (complex sync tooling) |
 
 ### Codified In
 
@@ -173,6 +174,7 @@ How each decision connects to requirements (stage 01), research (stage 02), and 
 | Universal guides + entity templates | 03/need_01: agent_hierarchy | 11 stages tested in context_chain_system | 11 STAGE_NN_NAME.md guides + template |
 | Scope boundary decisions (P8) | 03/need_02: spawning_patterns | Agents need framework for out-of-scope work | Principle 8, Scope Boundary Rule |
 | Scope spans layers AND stages | 03/need_01: agent_hierarchy | "Stage boundary" concept too narrow | Expanded Scope Boundary Rule |
+| Minimal context model | 01/need_03: agent_context_model | Tool cascading + multi-agent frameworks both validate minimal + on-demand | `minimal_context_model.md`, STAGE_AGENT_TEMPLATE (already implements pattern) |
 
 **Stage paths**: `../stage_1_01_request_gathering/`, `../stage_1_02_research/`, `../stage_1_06_development/`
 
@@ -190,9 +192,8 @@ Design decisions are implemented differently at each child layer:
 
 ## Open Items
 
-- No formal design documents in outputs/ — decisions are embedded in the artifacts themselves
-- Agent context model (what each agent type knows in static vs dynamic context) needs a dedicated design doc
 - Multi-agent spawning patterns not yet designed
+- Cursor-specific context strategy (glob targeting vs self-contained rules) needs design doc
 
 ## Handoff
 
