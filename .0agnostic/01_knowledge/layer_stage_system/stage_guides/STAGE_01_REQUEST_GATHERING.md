@@ -96,7 +96,7 @@ What the request gathering agent reads:
 | Tree of needs | `outputs/requests/tree_of_needs/` | Directory tree with requirements/ + user_stories/ subdirs per leaf need |
 | Root need | `outputs/requests/tree_of_needs/00_{root_name}/` | README.md with branch overview |
 | Meta | `outputs/requests/tree_of_needs/_meta/` | VERSION.md, CHANGELOG.md, DEPENDENCIES.md |
-| Stage report | `outputs/stage_report.md` | Standard stage report format |
+| Stage report | `.0agnostic/05_handoff_documents/02_outgoing/01_to_above/stage_report.md` | Standard stage report format |
 
 ## Success Criteria
 
@@ -110,7 +110,7 @@ This stage is complete when:
 
 ## Exit Protocol
 
-1. Update `outputs/stage_report.md` with current status
+1. Update `.0agnostic/05_handoff_documents/02_outgoing/01_to_above/stage_report.md` with current status
 2. If handing off to **stage 02** (research): note which needs require investigation of the problem space
 3. If handing off to **stage 04** (design): note which needs are well-understood and ready for architecture decisions
 4. If returning from **stage 08** (criticism): note which requirements need revision based on critique feedback

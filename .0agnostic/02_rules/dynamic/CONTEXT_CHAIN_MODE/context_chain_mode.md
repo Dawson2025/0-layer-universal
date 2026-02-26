@@ -55,6 +55,61 @@ Switch back to **Default Mode** when the user:
 | Rules | Production `.0agnostic/02_rules/` | Production + research-validated rules |
 | Context depth | Standard (lean, optimized) | Extended (includes rationale docs from research) |
 | Agent behavior | Follow proven patterns | May suggest experimental alternatives |
+| Stage instantiation | Empty stage directories | Pre-scaffolded with stage templates (see below) |
+
+## Stage Instantiation Templates (Research Mode Only)
+
+In Research Mode, when creating new entities with stages, agents should pre-scaffold stage directories with experimental organizational patterns instead of leaving them empty.
+
+### Stage 01: Request Gathering
+
+Instantiate with directory-based tree of needs:
+
+```
+outputs/requests/tree_of_needs/
+├── _meta/
+│   ├── VERSION.md
+│   ├── CHANGELOG.md
+│   └── DEPENDENCIES.md
+└── 00_{root_need}/
+    ├── README.md
+    ├── NN_{branch}/
+    │   ├── README.md
+    │   └── need_NN_{name}/
+    │       ├── README.md
+    │       ├── requirements/
+    │       │   ├── README.md
+    │       │   └── REQ-NN_{name}.md
+    │       └── user_stories/
+    │           ├── README.md
+    │           └── US-NN_{name}.md
+    └── ...
+```
+
+**Reference implementation**: `layer_1/layer_1_projects/layer_1_project_internship_prep/layer_1_group/layer_1_99_stages/stage_1_01_request_gathering/outputs/requests/tree_of_needs/`
+
+### Stage 07: Testing
+
+Instantiate with by-purpose organization:
+
+```
+outputs/by_purpose/
+├── README.md            <- Testing taxonomy with purpose index
+└── {purpose_name}/
+    ├── design/          <- Test design docs
+    ├── implementation/  <- Test scripts/code
+    ├── runs/            <- Execution logs
+    ├── results/         <- Parsed results
+    └── insights/        <- Analysis and learnings
+```
+
+**Reference implementation**: `layer_1/layer_1_projects/layer_1_project_internship_prep/layer_1_group/layer_1_99_stages/stage_1_07_testing/outputs/by_purpose/`
+
+### Other Stages
+
+No experimental templates yet. In research mode, agents may propose new templates when patterns emerge from real usage.
+
+**Status**: Experimental — these templates have been validated in one entity (internship_prep). They need broader testing before promotion to default mode.
 
 ## Agent Behavior in Research Mode
 

@@ -103,6 +103,29 @@ these references as additional knowledge sources.
 
 ---
 
+## Reference Implementation: Internship Prep (Stage Instantiation)
+
+**Path**: `layer_1/layer_1_projects/layer_1_project_internship_prep/`
+
+**Status**: Active — stages 01, 02, 04, 07 have content
+
+**Covers**: Directory-based tree of needs pattern, by-purpose testing organization, stage report in handoff docs
+
+### Key Outputs
+
+| Output | Stage | Path (relative to entity) | Promotion Status |
+|--------|-------|---------------------------|-----------------|
+| Directory-based tree of needs | 01 | `layer_1_group/layer_1_99_stages/stage_1_01_request_gathering/outputs/requests/tree_of_needs/` | Referenced — experimental stage template |
+| By-purpose testing taxonomy | 07 | `layer_1_group/layer_1_99_stages/stage_1_07_testing/outputs/by_purpose/` | Referenced — experimental stage template |
+| Stage report in handoff docs | entity | `.0agnostic/05_handoff_documents/02_outgoing/01_to_above/stage_report.md` | Referenced |
+
+### Key Concepts Demonstrated
+- **Stage Instantiation Templates**: Pre-scaffolding stage directories with organizational patterns instead of empty dirs
+- **Tree of Needs as Directory Structure**: Each need gets `requirements/` and `user_stories/` subdirectories with individual files (not flat markdown)
+- **Testing by Purpose**: Organizing tests by what they validate rather than by type, with `{design,implementation,runs,results,insights}/` per purpose
+
+---
+
 ## How to Use This Index
 
 1. **Finding WHY a pattern exists**: Locate the topic → follow the path to the research entity → read the referenced output
