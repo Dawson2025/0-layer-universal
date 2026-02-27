@@ -22,6 +22,19 @@ The agent delegation system spans two domains:
 
 These two domains are deeply coupled: delegation decisions depend on what context is available, and context loading depends on delegation structure.
 
+### Canonical Workspace for Delegation
+
+This entity is the **canonical workspace** for all agent delegation patterns. When any agent (working anywhere in the system) encounters work related to delegation, they should:
+
+1. Recognize it as out-of-scope (unless they're already in ADS)
+2. Use scope boundary decisions (Principle 8) to traverse here
+3. Work in the appropriate stage (research for investigation, design for architecture, development for implementation)
+4. Propagate outputs to universal artifacts via the consolidation funnel
+
+Delegation-related work includes: manager-agent contracts, scope boundaries, stage reports, agent context models, stage guides, delegation principles, any rules governing how agents work together.
+
+**Update protocol**: `.0agnostic/03_protocols/agent_delegation_update_protocol.md`
+
 ### Domain Concepts
 
 - **Stage delegation model**: Managers delegate to stage agents. Managers don't carry operational knowledge — each stage agent has its own 0AGNOSTIC.md with methodology, output format, and success criteria.
@@ -35,6 +48,8 @@ These two domains are deeply coupled: delegation decisions depend on what contex
 Load this context when:
 - User mentions: agent delegation, stage delegation, manager delegation, agent context, stage reports
 - Working on: How managers delegate to stage agents, what agents know, how agents coordinate
+- Changing: delegation patterns, scope boundary decisions, agent communication protocols, stage methodology, stage guides
+- Keywords: Principle 8, Scope Boundary Rule, manager-agent contracts, delegation principles, context chains, consolidation funnel, agent context model, stage report protocol
 - Entering: `layer_1_sub_feature_agent_delegation_system/`
 
 ## AALang Agent Context

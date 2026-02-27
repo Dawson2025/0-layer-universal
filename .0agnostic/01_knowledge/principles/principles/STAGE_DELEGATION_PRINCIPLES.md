@@ -177,3 +177,11 @@ When content at one layer becomes detailed enough to warrant its own entity (chi
 - **Cross-stage traceability extends across layers**: A need at the parent layer connects to research/design/development at the child layer
 
 Without bidirectional references, agents either don't know child layers exist (lost detail) or don't know where their work fits (lost context).
+
+## Canonical Workspace
+
+These principles are maintained at the **agent_delegation_system** entity:
+
+`layer_-1_research/layer_-1_better_ai_system/layer_0_group/layer_0_features/layer_0_feature_layer_stage_system/layer_1_group/layer_1_sub_features/layer_1_sub_feature_agent_delegation_system/`
+
+Changes to agent delegation principles should be researched (stage 02), designed (stage 04), and developed (stage 06) there, then propagated to this universal artifact via the entity's consolidation funnel. See the update protocol at that entity's `.0agnostic/03_protocols/agent_delegation_update_protocol.md`.
