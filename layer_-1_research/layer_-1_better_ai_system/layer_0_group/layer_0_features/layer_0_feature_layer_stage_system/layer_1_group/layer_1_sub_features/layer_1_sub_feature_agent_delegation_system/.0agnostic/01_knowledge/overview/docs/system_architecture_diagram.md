@@ -10,18 +10,18 @@ Where ADS sits in the layer-stage hierarchy, its children, and the universal art
 
 ```mermaid
 graph TB
-    ROOT["0_layer_universal\nRoot Manager"]
-    ROOT_AG["Root .0agnostic/\n11 Guides, 10 Principles\n5 Rules, 1 Protocol"]
-    LSS["layer_stage_system\nLayer 0 Feature"]
-    ADS["agent_delegation_system\nLayer 1 - CANONICAL WORKSPACE"]
-    S01["Stage 01\nRequest Gathering\n9 requirements"]
-    S02["Stage 02\nResearch\n4 formal topics"]
-    S04["Stage 04\nDesign\n10 decisions"]
-    S06["Stage 06\nDevelopment\nUniversal artifacts"]
-    MEM["memory_system\nLayer 2\n24 research docs"]
-    MULTI["multi_agent_system\nLayer 2\nScaffolded"]
-    CCS["context_chain_system\nLayer 3\n76 PASS tests\nWORKING EXAMPLE"]
-    WS_RULE["Workspace Rule\nDynamic rule at root"]
+    ROOT["0_layer_universal<br/>Root Manager"]
+    ROOT_AG["Root .0agnostic/<br/>11 Guides, 10 Principles<br/>5 Rules, 1 Protocol"]
+    LSS["layer_stage_system<br/>Layer 0 Feature"]
+    ADS["agent_delegation_system<br/>Layer 1 - CANONICAL WORKSPACE"]
+    S01["Stage 01<br/>Request Gathering<br/>9 requirements"]
+    S02["Stage 02<br/>Research<br/>4 formal topics"]
+    S04["Stage 04<br/>Design<br/>10 decisions"]
+    S06["Stage 06<br/>Development<br/>Universal artifacts"]
+    MEM["memory_system<br/>Layer 2<br/>24 research docs"]
+    MULTI["multi_agent_system<br/>Layer 2<br/>Scaffolded"]
+    CCS["context_chain_system<br/>Layer 3<br/>76 PASS tests<br/>WORKING EXAMPLE"]
+    WS_RULE["Workspace Rule<br/>Dynamic rule at root"]
 
     ROOT --> LSS
     LSS --> ADS
@@ -52,21 +52,21 @@ How research findings flow through design decisions into universal artifacts.
 
 ```mermaid
 graph LR
-    R1["Research:\nTool Context Cascading\n3/4 cascade natively"]
-    R2["Research:\nMulti-Agent Patterns\nCrewAI, LangGraph, AutoGen"]
-    R3["Research:\nScope Boundary Traversal\nDirectional patterns"]
-    R4["Research:\nClass/Object Patterns\nSOLID validated"]
+    R1["Research:<br/>Tool Context Cascading<br/>3/4 cascade natively"]
+    R2["Research:<br/>Multi-Agent Patterns<br/>CrewAI, LangGraph, AutoGen"]
+    R3["Research:<br/>Scope Boundary Traversal<br/>Directional patterns"]
+    R4["Research:<br/>Class/Object Patterns<br/>SOLID validated"]
 
-    D1["Design:\nMinimal Context Model\nOwn STATIC + neighbors\n+ on-demand"]
-    D2["Design:\nDirectional Scope\nBoundaries\n3-step process"]
-    D3["Design:\nContext Propagation\nFunnel"]
-    D4["Design:\nTwo-Halves Pattern\nSTATIC + Current State"]
+    D1["Design:<br/>Minimal Context Model<br/>Own STATIC + neighbors<br/>+ on-demand"]
+    D2["Design:<br/>Directional Scope<br/>Boundaries<br/>3-step process"]
+    D3["Design:<br/>Context Propagation<br/>Funnel"]
+    D4["Design:<br/>Two-Halves Pattern<br/>STATIC + Current State"]
 
-    A1["Artifact:\n11 Stage Guides"]
-    A2["Artifact:\n10 Principles"]
-    A3["Artifact:\nScope Boundary Rule"]
-    A4["Artifact:\nStage Report Protocol"]
-    A5["Artifact:\nAgent Template"]
+    A1["Artifact:<br/>11 Stage Guides"]
+    A2["Artifact:<br/>10 Principles"]
+    A3["Artifact:<br/>Scope Boundary Rule"]
+    A4["Artifact:<br/>Stage Report Protocol"]
+    A5["Artifact:<br/>Agent Template"]
 
     R1 -->|validates| D1
     R2 -->|validates| D1
@@ -105,11 +105,11 @@ How information propagates from stage outputs up to the entity source of truth, 
 ```mermaid
 graph TB
     subgraph BOTTOM_UP["Bottom-Up Consolidation"]
-        OUT["Stage Outputs\noutputs/by_topic/\noutputs/design_decisions/"]
-        ORPT["Output Report\noutputs/reports/output_report.md"]
-        DOT_AG["Stage .0agnostic/\nStructured knowledge and rules"]
-        SRPT["Stage Report\n.0agnostic/.../stage_report.md\nManager-readable summary"]
-        S0AG["Stage 0AGNOSTIC.md\nEntry point with status"]
+        OUT["Stage Outputs<br/>outputs/by_topic/<br/>outputs/design_decisions/"]
+        ORPT["Output Report<br/>outputs/reports/output_report.md"]
+        DOT_AG["Stage .0agnostic/<br/>Structured knowledge and rules"]
+        SRPT["Stage Report<br/>.0agnostic/.../stage_report.md<br/>Manager-readable summary"]
+        S0AG["Stage 0AGNOSTIC.md<br/>Entry point with status"]
 
         OUT --> ORPT
         ORPT --> DOT_AG
@@ -118,10 +118,10 @@ graph TB
     end
 
     subgraph ENTITY_LEVEL["Entity Consolidation"]
-        STAGES_RPT["stages_report.md\nAll stage reports combined"]
-        CHILD_RPT["child_layers_report.md\nAll child reports combined"]
-        LAYER_RPT["layer_report.md\nEntity summary for parent"]
-        E0AG["Entity 0AGNOSTIC.md\nMOST consolidated\nComes LAST not first"]
+        STAGES_RPT["stages_report.md<br/>All stage reports combined"]
+        CHILD_RPT["child_layers_report.md<br/>All child reports combined"]
+        LAYER_RPT["layer_report.md<br/>Entity summary for parent"]
+        E0AG["Entity 0AGNOSTIC.md<br/>MOST consolidated<br/>Comes LAST not first"]
 
         STAGES_RPT --> LAYER_RPT
         CHILD_RPT --> LAYER_RPT
@@ -129,9 +129,9 @@ graph TB
     end
 
     subgraph TOP_DOWN["Top-Down Cascade"]
-        ROOT_AG["Root .0agnostic/\nUniversal artifacts"]
+        ROOT_AG["Root .0agnostic/<br/>Universal artifacts"]
         SYNC["agnostic-sync.sh"]
-        TOOLS["CLAUDE.md, AGENTS.md\nGEMINI.md, OPENAI.md\nAll agents read these"]
+        TOOLS["CLAUDE.md, AGENTS.md<br/>GEMINI.md, OPENAI.md<br/>All agents read these"]
 
         ROOT_AG --> SYNC
         SYNC --> TOOLS
@@ -154,21 +154,21 @@ How agents anywhere in the system recognize delegation work and traverse to ADS.
 
 ```mermaid
 graph TB
-    AGENT["Any Agent\nEncounters delegation work"]
-    RECOGNIZE["Recognize out-of-scope\nDelegation keywords detected"]
+    AGENT["Any Agent<br/>Encounters delegation work"]
+    RECOGNIZE["Recognize out-of-scope<br/>Delegation keywords detected"]
 
-    TRIGGER_ROOT["Root 0AGNOSTIC.md\nTrigger: Modifying\nagent delegation"]
-    TRIGGER_RULE["Workspace Rule\n.0agnostic/02_rules/dynamic/\nKeywords and actions"]
-    TRIGGER_BACK["Backward Pointers\nIn Principles and Rules\nCanonical Workspace section"]
+    TRIGGER_ROOT["Root 0AGNOSTIC.md<br/>Trigger: Modifying<br/>agent delegation"]
+    TRIGGER_RULE["Workspace Rule<br/>.0agnostic/02_rules/dynamic/<br/>Keywords and actions"]
+    TRIGGER_BACK["Backward Pointers<br/>In Principles and Rules<br/>Canonical Workspace section"]
 
-    PROTOCOL["Update Protocol\n7-step workflow\n.0agnostic/03_protocols/"]
+    PROTOCOL["Update Protocol<br/>7-step workflow<br/>.0agnostic/03_protocols/"]
     SELECT{"Select Stage"}
     S01W["01 Requirements"]
     S02W["02 Research"]
     S04W["04 Design"]
     S06W["06 Development"]
-    PROPAGATE["Propagate through\nconsolidation funnel"]
-    RESULT["Updated Universal Artifacts\nRoot .0agnostic/"]
+    PROPAGATE["Propagate through<br/>consolidation funnel"]
+    RESULT["Updated Universal Artifacts<br/>Root .0agnostic/"]
 
     AGENT --> RECOGNIZE
     RECOGNIZE -->|Principle 8| TRIGGER_ROOT
@@ -185,7 +185,7 @@ graph TB
     S04W --> PROPAGATE
     S06W --> PROPAGATE
     PROPAGATE --> RESULT
-    RESULT -.->|cascade via\nagnostic-sync| AGENT
+    RESULT -.->|cascade via<br/>agnostic-sync| AGENT
 
     style AGENT fill:#718096,color:#fff
     style TRIGGER_RULE fill:#c53030,color:#fff
@@ -215,16 +215,16 @@ graph LR
     end
 
     subgraph AGENTS["Agent Architecture"]
-        UNIV["Universal Infrastructure\nRoot .0agnostic/"]
-        TEMPLATE["Stage Agent Template\nSTAGE_AGENT_TEMPLATE.md"]
-        STAGE_AG["Stage 0AGNOSTIC.md\nSpecific methodology"]
-        STATIC["STATIC Section\nIdentity, Triggers, I/O"]
-        DYNAMIC["DYNAMIC + Outputs\nOn-demand only"]
-        RULES_P["Rules + Protocols\nReusable across agents"]
-        ON_DEMAND["On-Demand Loading\nCompose from sources"]
-        STAGE_F["Stage Agents\nResearch / Design / Dev"]
-        P8_INST["Principle 8\nSpawn agent for scope"]
-        MGR_DEL["Manager Delegation\nTask + pointer provided"]
+        UNIV["Universal Infrastructure<br/>Root .0agnostic/"]
+        TEMPLATE["Stage Agent Template<br/>STAGE_AGENT_TEMPLATE.md"]
+        STAGE_AG["Stage 0AGNOSTIC.md<br/>Specific methodology"]
+        STATIC["STATIC Section<br/>Identity, Triggers, I/O"]
+        DYNAMIC["DYNAMIC + Outputs<br/>On-demand only"]
+        RULES_P["Rules + Protocols<br/>Reusable across agents"]
+        ON_DEMAND["On-Demand Loading<br/>Compose from sources"]
+        STAGE_F["Stage Agents<br/>Research / Design / Dev"]
+        P8_INST["Principle 8<br/>Spawn agent for scope"]
+        MGR_DEL["Manager Delegation<br/>Task + pointer provided"]
     end
 
     BC --> UNIV
@@ -250,25 +250,25 @@ The full picture: how research, design, artifacts, validation, and the canonical
 
 ```mermaid
 graph TB
-    NEEDS["Tree of Needs\n9 requirements, 3 branches"]
-    EXTERNAL["External Research\nFrameworks, tools, OOP"]
+    NEEDS["Tree of Needs<br/>9 requirements, 3 branches"]
+    EXTERNAL["External Research<br/>Frameworks, tools, OOP"]
 
-    RESEARCH["Stage 02: Research\n4 Topics"]
-    DESIGN["Stage 04: Design\n10 Decisions"]
-    DEV["Stage 06: Development\nProduces artifacts"]
+    RESEARCH["Stage 02: Research<br/>4 Topics"]
+    DESIGN["Stage 04: Design<br/>10 Decisions"]
+    DEV["Stage 06: Development<br/>Produces artifacts"]
 
-    FUNNEL["Consolidation Funnel\nstage outputs to\nstage reports to\nentity 0AGNOSTIC.md"]
-    SYNC["agnostic-sync.sh\nGenerates tool files"]
+    FUNNEL["Consolidation Funnel<br/>stage outputs to<br/>stage reports to<br/>entity 0AGNOSTIC.md"]
+    SYNC["agnostic-sync.sh<br/>Generates tool files"]
 
-    UA["Universal Artifacts\nRoot .0agnostic/\n11 Guides, 10 Principles\n5 Rules, 1 Protocol"]
+    UA["Universal Artifacts<br/>Root .0agnostic/<br/>11 Guides, 10 Principles<br/>5 Rules, 1 Protocol"]
 
-    CCS["context_chain_system\n76 PASS tests\nAll 11 stages populated"]
+    CCS["context_chain_system<br/>76 PASS tests<br/>All 11 stages populated"]
 
-    WS_RULE["Workspace Rule\nTriggers on keywords"]
-    WS_PROTO["Update Protocol\n7-step workflow"]
-    WS_BACK["Backward Pointers\nIn Principles + Rules"]
+    WS_RULE["Workspace Rule<br/>Triggers on keywords"]
+    WS_PROTO["Update Protocol<br/>7-step workflow"]
+    WS_BACK["Backward Pointers<br/>In Principles + Rules"]
 
-    ANY["Any Agent\nencounters delegation work"]
+    ANY["Any Agent<br/>encounters delegation work"]
 
     NEEDS --> RESEARCH
     EXTERNAL --> RESEARCH
@@ -329,9 +329,9 @@ graph LR
     TIER1 -->|points to| TIER2
     TIER2 -->|summarizes| TIER3
 
-    MGR["Manager\nReads Tier 1"]
-    STG["Stage Agent\nLoads Tier 2"]
-    WKR["In-Stage Worker\nReads Tier 3"]
+    MGR["Manager<br/>Reads Tier 1"]
+    STG["Stage Agent<br/>Loads Tier 2"]
+    WKR["In-Stage Worker<br/>Reads Tier 3"]
 
     MGR -.-> TIER1
     STG -.-> TIER2
@@ -351,27 +351,27 @@ What each agent loads: always, compact neighbors, on-demand, and never.
 ```mermaid
 graph TB
     subgraph ALWAYS["Always Loaded - STATIC"]
-        OWN["Own 0AGNOSTIC.md\nIdentity, methodology\ntriggers, current status"]
-        TOOL_F["Tool file - CLAUDE.md\nAuto-generated from\n0AGNOSTIC.md STATIC"]
+        OWN["Own 0AGNOSTIC.md<br/>Identity, methodology<br/>triggers, current status"]
+        TOOL_F["Tool file - CLAUDE.md<br/>Auto-generated from<br/>0AGNOSTIC.md STATIC"]
     end
 
     subgraph COMPACT["Compact Neighbor Interfaces"]
-        PAR["Parent STATIC section\nIdentity + triggers only"]
-        SIB["Sibling stage reports\nUnder 30 lines each"]
-        CHD["Child layer reports\nConsolidated summaries"]
+        PAR["Parent STATIC section<br/>Identity + triggers only"]
+        SIB["Sibling stage reports<br/>Under 30 lines each"]
+        CHD["Child layer reports<br/>Consolidated summaries"]
     end
 
     subgraph ONDEMAND["On-Demand - DYNAMIC"]
-        PAR_K["Parent knowledge/\nSpecific file only"]
-        RULES["Applicable rules\nLoaded when triggered"]
-        PROTO["Relevant protocols\nLoaded when needed"]
-        FULL["Full stage outputs\nOnly when in-stage"]
+        PAR_K["Parent knowledge/<br/>Specific file only"]
+        RULES["Applicable rules<br/>Loaded when triggered"]
+        PROTO["Relevant protocols<br/>Loaded when needed"]
+        FULL["Full stage outputs<br/>Only when in-stage"]
     end
 
     subgraph REJECTED["Never Loaded - Rejected"]
-        NO1["Full ancestor cascade\nContext waste at depth"]
-        NO2["All parent knowledge\nOverflows context window"]
-        NO3["Sibling full outputs\nIrrelevant to work"]
+        NO1["Full ancestor cascade<br/>Context waste at depth"]
+        NO2["All parent knowledge<br/>Overflows context window"]
+        NO3["Sibling full outputs<br/>Irrelevant to work"]
     end
 
     style ALWAYS fill:#2f855a,color:#fff
