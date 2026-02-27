@@ -96,9 +96,9 @@ The entity-level orchestrator inherits from and is scoped by the parent feature'
 
 ## Current Status
 
-**Phase**: active — 4 stages with content, universal artifacts in use, 3 formal research topics + 10 design decisions | **Last Updated**: 2026-02-26
+**Phase**: active — 4 stages with content, universal artifacts in use, 4 formal research topics + 10 design decisions | **Last Updated**: 2026-02-26
 
-Stages 01, 02, 04, and 06 have produced universal artifacts at root `.0agnostic/` (11 stage guides, 10 principles, 5 rules, stage report protocol, context propagation design). Stage 02 now has 3 formal research topics: tool context cascading (3/4 tools cascade natively), multi-agent context patterns (all converge on minimal + on-demand), scope boundary traversal (directional patterns). Stage 04 has 10 architecture decisions including minimal context model (own STATIC + neighbor interfaces + on-demand, no full cascade) and directional scope boundaries (3-step: direction → handling → communication). Entity consolidation reports updated. Memory_system child has 24 research docs. Working example: context_chain_system (76 PASS tests).
+Stages 01, 02, 04, and 06 have produced universal artifacts at root `.0agnostic/` (11 stage guides, 10 principles, 5 rules, stage report protocol, context propagation design). Stage 02 now has 4 formal research topics: tool context cascading (3/4 tools cascade natively), multi-agent context patterns (all converge on minimal + on-demand), scope boundary traversal (directional patterns), agent class/object patterns (OOP-to-agent mapping validates existing architecture via SOLID principles). Stage 04 has 10 architecture decisions including minimal context model (own STATIC + neighbor interfaces + on-demand, no full cascade) and directional scope boundaries (3-step: direction → handling → communication). Entity consolidation reports updated. Memory_system child has 24 research docs. Working example: context_chain_system (76 PASS tests).
 
 # ═══ DYNAMIC CONTEXT (loaded on-demand) ═══
 
@@ -111,7 +111,7 @@ Stages 01, 02, 04, and 06 have produced universal artifacts at root `.0agnostic/
 | Stage Work | What Was Produced | Where It Lives |
 |-----------|-------------------|----------------|
 | **01 Request Gathering** | Tree of needs: 9 requirements across 3 branches (delegation_model, memory_integration, coordination_patterns) | `layer_1_group/layer_1_99_stages/stage_1_01_request_gathering/outputs/requests/tree_of_needs/` |
-| **02 Research** | 3 formal topics (tool cascading, multi-agent patterns, scope traversal) + implicit via context_chain_system living laboratory | `layer_1_group/layer_1_99_stages/stage_1_02_research/outputs/by_topic/` |
+| **02 Research** | 4 formal topics (tool cascading, multi-agent patterns, scope traversal, agent class/object patterns) + implicit via context_chain_system living laboratory | `layer_1_group/layer_1_99_stages/stage_1_02_research/outputs/by_topic/` |
 | **04 Design** | 10 architecture decisions: 0AGNOSTIC.md pattern, two-halves, stage reports, scope boundaries, universal guides, context propagation, minimal context model, directional scope boundaries | `layer_1_group/layer_1_99_stages/stage_1_04_design/outputs/design_decisions/` |
 | **05 Planning** | Planned stage-by-stage guide creation for all 11 stages | Plan executed across all 11 stages |
 | **06 Development** | Created 11 universal stage guides, 3 static rules, 2 dynamic rules, 7 delegation principles, stage report protocol | See "Universal Artifacts" below |

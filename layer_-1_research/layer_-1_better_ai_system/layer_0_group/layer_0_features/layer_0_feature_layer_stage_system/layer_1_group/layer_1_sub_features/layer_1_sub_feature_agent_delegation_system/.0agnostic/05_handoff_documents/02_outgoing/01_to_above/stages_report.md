@@ -13,7 +13,7 @@
 | Stage | Status | Key Output | Report Location |
 |-------|--------|------------|-----------------|
 | 01 request_gathering | active | Tree of needs: 102 files, 9 leaf needs across 3 branches | `layer_1_group/layer_1_99_stages/stage_1_01_request_gathering/.0agnostic/05_handoff_documents/02_outgoing/01_to_above/stage_report.md` |
-| 02 research | active | 3 formal topics (tool cascading, multi-agent patterns, scope traversal) + implicit via context_chain_system | `layer_1_group/layer_1_99_stages/stage_1_02_research/.0agnostic/05_handoff_documents/02_outgoing/01_to_above/stage_report.md` |
+| 02 research | active | 4 formal topics (tool cascading, multi-agent patterns, scope traversal, agent class/object patterns) + implicit via context_chain_system | `layer_1_group/layer_1_99_stages/stage_1_02_research/.0agnostic/05_handoff_documents/02_outgoing/01_to_above/stage_report.md` |
 | 04 design | active | 10 architecture decisions (7 implicit + 3 formal: context propagation, minimal context model, directional scope boundaries) | `layer_1_group/layer_1_99_stages/stage_1_04_design/.0agnostic/05_handoff_documents/02_outgoing/01_to_above/stage_report.md` |
 | 06 development | active | 11 stage guides, 10 principles, 5 rules, 1 protocol, 15 stage 0AGNOSTIC.md files | `layer_1_group/layer_1_99_stages/stage_1_06_development/.0agnostic/05_handoff_documents/02_outgoing/01_to_above/stage_report.md` |
 | 03, 05, 07-11 | scaffolded | No content yet | — |
@@ -44,6 +44,7 @@
 - Tool context cascading: 3/4 AI coding tools cascade natively (Claude Code, Codex, Gemini CLI), Cursor uses glob targeting — native cascading makes lean content per level critical
 - Multi-agent frameworks converge on minimal context + on-demand access (CrewAI, LangGraph, AutoGen) — none use full parent cascade
 - Scope boundary traversal is directional: direction (up/down/left/right/sideways/multi-location) determines communication method
+- Agent class/object patterns: OOP concepts (SOLID principles, composition-over-inheritance, interfaces) validate existing agent architecture patterns — minimal context = composition, stage agents = SRP, STATIC sections = interfaces
 
 ### From Design (Stage 04)
 - Context propagation follows a consolidation funnel: outputs → output_report → .0agnostic → stage_report → 0AGNOSTIC.md

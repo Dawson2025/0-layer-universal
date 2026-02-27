@@ -21,7 +21,7 @@ The agent delegation system defines how AI agents delegate work across the layer
 | Stage | Key Contribution |
 |-------|-----------------|
 | 01 request_gathering | 9 requirements across 3 branches: delegation_model, memory_integration, coordination_patterns |
-| 02 research | 3 formal topics (tool cascading, multi-agent patterns, scope traversal) + implicit via context_chain_system |
+| 02 research | 4 formal topics (tool cascading, multi-agent patterns, scope traversal, agent class/object patterns) + implicit via context_chain_system |
 | 04 design | 10 architecture decisions (7 implicit + 3 formal: context propagation, minimal context, directional scope) |
 | 06 development | Universal artifacts: stage guides, principles, rules, protocol |
 
@@ -60,6 +60,7 @@ The agent delegation system defines how AI agents delegate work across the layer
 - **Entity Consolidation**: stages_report + child_layers_report → layer_report → 0AGNOSTIC.md
 - **Minimal Context Model**: Agents get own STATIC + compact neighbor interfaces + on-demand DYNAMIC. No full ancestor cascade. Validated by tool cascading research (3/4 tools cascade natively) and multi-agent framework research (CrewAI, LangGraph, AutoGen)
 - **Tool Context Cascading**: Claude Code (up), Codex (down), Gemini CLI (both directions), Cursor (glob targeting) — native cascading makes lean CLAUDE.md content critical
+- **Agent Class/Object Patterns**: OOP concepts map cleanly — composition-over-inheritance validates minimal context, SRP validates stage agents, all SOLID principles verified against existing architecture
 
 ---
 
