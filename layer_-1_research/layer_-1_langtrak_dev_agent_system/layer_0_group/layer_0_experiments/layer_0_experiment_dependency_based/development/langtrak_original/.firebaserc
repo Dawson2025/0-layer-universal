@@ -1,0 +1,8 @@
+{
+  "projects": {
+    "default": "lang-trak-dev",
+    "development": "lang-trak-dev",
+    "staging": "lang-trak-staging",
+    "production": "lang-trak-prod"
+  }
+}

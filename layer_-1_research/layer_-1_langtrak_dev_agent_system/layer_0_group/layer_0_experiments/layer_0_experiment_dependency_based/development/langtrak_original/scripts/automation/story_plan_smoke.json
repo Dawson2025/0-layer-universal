@@ -1,0 +1,46 @@
+[
+  {
+    "id": "US-001-005-auth-basics",
+    "description": "Critical: Authentication and session management",
+    "navigation": {
+      "direct": ["node", "scripts/mcp-playwright-demo.mjs"],
+      "realistic": ["node", "scripts/mcp-playwright-demo-realistic.mjs"]
+    },
+    "env": {
+      "RUN_LABEL": "auth_basics"
+    }
+  },
+  {
+    "id": "US-012-015-projects",
+    "description": "Critical: Core project creation and navigation",
+    "navigation": {
+      "direct": ["node", "scripts/mcp-projects-flow.mjs"],
+      "realistic": ["node", "scripts/mcp-projects-flow-realistic.mjs"]
+    }
+  },
+  {
+    "id": "US-016-017-024-project-variants",
+    "description": "Critical: Project variants and merging",
+    "navigation": {
+      "direct": ["node", "scripts/mcp-project-variants.mjs"],
+      "realistic": ["node", "scripts/mcp-project-variants-realistic.mjs"]
+    }
+  },
+  {
+    "id": "US-029-037-words-media",
+    "description": "Critical: Word creation and management",
+    "navigation": {
+      "direct": ["node", "scripts/mcp-words-flow.mjs"],
+      "realistic": ["node", "scripts/mcp-words-flow-realistic.mjs"]
+    }
+  },
+  {
+    "id": "US-064-journey-onboarding",
+    "description": "Critical: New user onboarding journey",
+    "navigation": {
+      "direct": ["node", "scripts/mcp-journey-onboarding.mjs"],
+      "realistic": ["node", "scripts/mcp-journey-onboarding-realistic.mjs"]
+    }
+  }
+]
+

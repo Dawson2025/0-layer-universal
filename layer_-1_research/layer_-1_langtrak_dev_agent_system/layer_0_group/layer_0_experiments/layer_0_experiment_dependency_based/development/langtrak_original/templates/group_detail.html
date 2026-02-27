@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Group Detail - Lang Trak</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            overflow: hidden;
+        }
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            font-weight: 300;
+        }
+        .header p {
+            margin: 10px 0 0 0;
+            opacity: 0.9;
+            font-size: 1.1em;
+        }
+        .content {
+            padding: 40px;
+        }
+        .back-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background: rgba(255,255,255,0.2);
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            margin-bottom: 20px;
+            transition: background 0.3s ease;
+        }
+        .back-button:hover {
+            background: rgba(255,255,255,0.3);
+        }
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        .info-card {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 8px;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+        .info-card:hover {
+            border-color: #667eea;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .info-card h3 {
+            margin: 0 0 15px 0;
+            color: #667eea;
+            font-size: 1.3em;
+        }
+        .info-card p {
+            margin: 0;
+            color: #666;
+            line-height: 1.5;
+        }
+        .member-list, .project-list {
+            list-style: none;
+            padding: 0;
+            margin: 15px 0 0 0;
+        }
+        .member-list li, .project-list li {
+            background: white;
+            padding: 12px;
+            margin-bottom: 8px;
+            border-radius: 6px;
+            border: 1px solid #ddd;
+        }
+        .invite-section {
+            background: #e8f4fd;
+            padding: 25px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            border-left: 4px solid #667eea;
+        }
+        .invite-section h3 {
+            margin: 0 0 15px 0;
+            color: #333;
+        }
+        .invite-link {
+            background: white;
+            padding: 15px;
+            border-radius: 6px;
+            border: 1px solid #ddd;
+            font-family: monospace;
+            word-break: break-all;
+            margin-bottom: 15px;
+        }
+        .btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 6px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            margin-right: 10px;
+        }
+        .btn-primary {
+            background: #667eea;
+            color: white;
+        }
+        .btn-primary:hover {
+            background: #5a6fd8;
+        }
+        .btn-secondary {
+            background: #6c757d;
+            color: white;
+        }
+        .btn-secondary:hover {
+            background: #5a6268;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <a href="{{ url_for('groups_menu') }}" class="back-button">← Back to Groups</a>
+            <h1>👥 {{ group.name }}</h1>
+            <p>Group details and management</p>
+        </div>
+        
+        <div class="content">
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>📊 Group Information</h3>
+                    <p><strong>Name:</strong> {{ group.name }}</p>
+                    <p><strong>Description:</strong> {{ group.description or 'No description provided' }}</p>
+                    <p><strong>Created:</strong> {{ group.created_at or 'Unknown' }}</p>
+                </div>
+                
+                <div class="info-card">
+                    <h3>👥 Members ({{ members|length }})</h3>
+                    {% if members %}
+                        <ul class="member-list">
+                            {% for member in members %}
+                            <li>User ID: {{ member.user_id }}</li>
+                            {% endfor %}
+                        </ul>
+                    {% else %}
+                        <p>No members found</p>
+                    {% endif %}
+                </div>
+                
+                <div class="info-card">
+                    <h3>📁 Projects ({{ projects|length }})</h3>
+                    {% if projects %}
+                        <ul class="project-list">
+                            {% for project in projects %}
+                            <li>{{ project.name }}</li>
+                            {% endfor %}
+                        </ul>
+                    {% else %}
+                        <p>No projects found</p>
+                    {% endif %}
+                </div>
+            </div>
+            
+            {% if invite_link %}
+            <div class="invite-section">
+                <h3>🔗 Invite Link</h3>
+                <p>Share this link to invite others to join this group:</p>
+                <div class="invite-link">{{ invite_link.url }}</div>
+
+                <div class="admin-buttons" style="margin-top: 12px;">
+                    <button class="btn btn-primary" id="shareInviteBtn" onclick="openInviteModal()">Share Invite Link</button>
+                    <button class="btn btn-secondary" id="regenerateInviteBtn" onclick="regenerateInviteLink()">Generate New Link</button>
+                </div>
+            </div>
+
+            <div id="inviteLinkModal" class="modal" style="display:none; position: fixed; inset: 0; background: rgba(0,0,0,0.55);">
+                <div style="max-width: 720px; margin: 12vh auto 0; background: white; border-radius: 12px; padding: 18px;">
+                    <h3 style="margin-top: 0;">Invite Link</h3>
+                    <p style="margin-top: 6px; color: #555;">Copy and share this link. Generating a new link will invalidate the old one.</p>
+                    <input id="inviteLinkInput" type="text" readonly value="{{ invite_link.url }}" style="width: 100%; padding: 12px; border-radius: 8px; border: 1px solid #ddd; font-family: monospace;">
+                    <div style="margin-top: 12px; display: flex; gap: 10px; flex-wrap: wrap; justify-content: flex-end;">
+                        <button class="btn btn-secondary" onclick="copyInviteFromModal()">Copy</button>
+                        <button class="btn btn-primary" onclick="regenerateInviteLink()">Generate New Link</button>
+                        <button class="btn btn-secondary" onclick="closeInviteModal()">Close</button>
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+            
+            <div style="text-align: center; margin-top: 30px;">
+                <a href="{{ url_for('groups_menu') }}" class="btn btn-secondary">Back to Groups</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openInviteModal() {
+            const modal = document.getElementById('inviteLinkModal');
+            if (modal) modal.style.display = 'block';
+        }
+
+        function closeInviteModal() {
+            const modal = document.getElementById('inviteLinkModal');
+            if (modal) modal.style.display = 'none';
+        }
+
+        function copyInviteFromModal() {
+            const input = document.getElementById('inviteLinkInput');
+            if (!input) return;
+            input.select();
+            input.setSelectionRange(0, 99999);
+            navigator.clipboard.writeText(input.value).then(function() {
+                alert('Invite link copied to clipboard!');
+            }, function(err) {
+                console.error('Could not copy invite link: ', err);
+                alert('Failed to copy invite link.');
+            });
+        }
+
+        async function regenerateInviteLink() {
+            if (!confirm('Generate a new invite link? This will invalidate the old link.')) return;
+            const resp = await fetch('/api/groups/{{ group.id }}/regenerate-invite', { method: 'POST' });
+            const data = await resp.json().catch(() => null);
+            if (!data || !data.success) {
+                alert(data?.error || 'Failed to generate new invite link.');
+                return;
+            }
+            const input = document.getElementById('inviteLinkInput');
+            if (input) input.value = data.invite_link?.url || input.value;
+            alert(data.message || 'New invite link generated!');
+        }
+    </script>
+</body>
+</html>

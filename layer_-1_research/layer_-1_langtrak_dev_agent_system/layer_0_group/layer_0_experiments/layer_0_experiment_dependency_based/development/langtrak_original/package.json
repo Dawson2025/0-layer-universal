@@ -1,0 +1,42 @@
+{
+  "type": "module",
+  "scripts": {
+    "stories": "node scripts/run-user-stories.mjs",
+    "stories:headed": "RUN_NAVIGATION_MODE=realistic node scripts/run-user-stories.mjs",
+    "mcp:playwright": "PLAYWRIGHT_BROWSERS_PATH=0 npx -y @playwright/mcp@latest --port 9234 --host 127.0.0.1 --headless",
+    "mcp:playwright:headed": "npx -y @playwright/mcp@latest --port 9234 --host 127.0.0.1",
+    "mcp:smoke": "bash scripts/mcp-smoke-test.sh",
+    "mcp:smoke:node": "node scripts/mcp-smoke-node.cjs",
+    "mcp:smoke:py": "python3 scripts/mcp-smoke-py.py"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.20.1",
+    "@playwright/test": "^1.56.1",
+    "firebase": "^12.2.1",
+    "firebase-admin": "^12.5.0",
+    "playwright": "^1.56.1",
+    "ws": "^8.18.3"
+  },
+  "devDependencies": {
+    "@playwright/mcp": "^0.0.43"
+  },
+  "name": "lang-trak-in-progress",
+  "version": "1.0.0",
+  "description": "To preview the web interface locally:",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs",
+    "test": "tests"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Dawson2025/lang-trak-in-progress.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Dawson2025/lang-trak-in-progress/issues"
+  },
+  "homepage": "https://github.com/Dawson2025/lang-trak-in-progress#readme"
+}

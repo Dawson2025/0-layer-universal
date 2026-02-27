@@ -1,0 +1,132 @@
+{
+  "environment": "development",
+  "servers": [
+    {
+      "name": "chrome-devtools",
+      "command": "npx",
+      "args": ["-y", "chrome-devtools-mcp@latest"],
+      "env": {},
+      "enabled": true,
+      "priority": 1,
+      "category": "browser_automation",
+      "description": "Chrome DevTools MCP server for debugging and performance analysis",
+      "dependencies": ["chrome", "node"],
+      "health_check_url": null,
+      "timeout": 30,
+      "retry_count": 3
+    },
+    {
+      "name": "playwright",
+      "command": "npx",
+      "args": ["-y", "@playwright/mcp@latest", "--browser", "chromium"],
+      "env": {},
+      "enabled": true,
+      "priority": 2,
+      "category": "browser_automation",
+      "description": "Playwright MCP server for cross-browser testing and automation",
+      "dependencies": ["node", "browsers"],
+      "health_check_url": null,
+      "timeout": 30,
+      "retry_count": 3
+    },
+    {
+      "name": "browser",
+      "command": "npx",
+      "args": ["@agent-infra/mcp-server-browser"],
+      "env": {},
+      "enabled": true,
+      "priority": 3,
+      "category": "browser_automation",
+      "description": "Simple browser automation MCP server",
+      "dependencies": ["browser"],
+      "health_check_url": null,
+      "timeout": 30,
+      "retry_count": 3
+    },
+    {
+      "name": "web-search",
+      "command": "npx",
+      "args": ["tavily-mcp"],
+      "env": {
+        "TAVILY_API_KEY": "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"
+      },
+      "enabled": true,
+      "priority": 1,
+      "category": "search",
+      "description": "Tavily web search MCP server",
+      "dependencies": ["node"],
+      "health_check_url": null,
+      "timeout": 30,
+      "retry_count": 3
+    },
+    {
+      "name": "github-search",
+      "command": "npx",
+      "args": ["github-mcp-server"],
+      "env": {
+        "GITHUB_TOKEN": "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"
+      },
+      "enabled": true,
+      "priority": 2,
+      "category": "search",
+      "description": "GitHub search MCP server",
+      "dependencies": ["node"],
+      "health_check_url": null,
+      "timeout": 30,
+      "retry_count": 3
+    },
+    {
+      "name": "filesystem",
+      "command": "npx",
+      "args": ["@modelcontextprotocol/server-filesystem", "/home/dawson/code/lang-trak-in-progress"],
+      "env": {},
+      "enabled": true,
+      "priority": 1,
+      "category": "filesystem",
+      "description": "Filesystem access MCP server",
+      "dependencies": ["node"],
+      "health_check_url": null,
+      "timeout": 30,
+      "retry_count": 3
+    },
+    {
+      "name": "context7-local",
+      "command": "npx",
+      "args": ["-y", "@upstash/context7-mcp", "--api-key", "ctx7sk-d20b6dec-5980-4ee1-9beb-0e635d626f46"],
+      "env": {},
+      "enabled": true,
+      "priority": 2,
+      "category": "documentation",
+      "description": "Context7 local MCP server with API access",
+      "dependencies": ["node"],
+      "health_check_url": null,
+      "timeout": 30,
+      "retry_count": 3
+    },
+    {
+      "name": "context7-remote",
+      "command": "curl",
+      "args": ["-X", "POST", "https://mcp.context7.com/mcp"],
+      "env": {},
+      "enabled": false,
+      "priority": 3,
+      "category": "documentation",
+      "description": "Context7 remote MCP server (HTTP-based)",
+      "dependencies": ["curl"],
+      "health_check_url": "https://mcp.context7.com/mcp",
+      "timeout": 30,
+      "retry_count": 3,
+      "mcp_type": "remote",
+      "mcp_url": "https://mcp.context7.com/mcp",
+      "mcp_headers": {
+        "CONTEXT7_API_KEY": "ctx7sk-d20b6dec-5980-4ee1-9beb-0e635d626f46"
+      }
+    }
+  ],
+  "global_env": {
+    "NODE_ENV": "development",
+    "LOG_LEVEL": "debug"
+  },
+  "timeout": 30,
+  "max_concurrent_servers": 10
+}

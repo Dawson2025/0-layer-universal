@@ -1,0 +1,3938 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Word - Table Based</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+            background: linear-gradient(135deg, #1c1c1e 0%, #2c2c2e 100%);
+            color: #ffffff;
+            min-height: 100vh;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 16px;
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            margin: 40px 0 40px 0;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .back-button {
+            background: rgba(58, 58, 60, 0.6);
+            border: none;
+            border-radius: 12px;
+            padding: 12px 16px;
+            color: #007AFF;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 600;
+            transition: all 0.2s ease;
+        }
+
+        .back-button:hover {
+            background: rgba(78, 78, 80, 0.8);
+        }
+
+        .header h1 {
+            font-size: 32px;
+            font-weight: 700;
+            background: linear-gradient(90deg, #30D158, #5AC8FA);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .creation-container {
+            display: grid;
+            grid-template-columns: 1fr 350px;
+            gap: 24px;
+            margin-bottom: 40px;
+        }
+
+        .main-content {
+            background: rgba(58, 58, 60, 0.6);
+            border: 1px solid rgba(84, 84, 88, 0.4);
+            border-radius: 16px;
+            padding: 24px;
+            backdrop-filter: blur(20px);
+        }
+
+        .sidebar {
+            background: rgba(58, 58, 60, 0.6);
+            border: 1px solid rgba(84, 84, 88, 0.4);
+            border-radius: 16px;
+            padding: 24px;
+            backdrop-filter: blur(20px);
+            height: fit-content;
+            position: sticky;
+            top: 20px;
+        }
+
+        .controls-section {
+            margin-bottom: 24px;
+        }
+
+        .controls-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: #5AC8FA;
+        }
+
+        .control-group {
+            margin-bottom: 16px;
+        }
+
+        .control-label {
+            font-size: 14px;
+            font-weight: 500;
+            margin-bottom: 6px;
+            color: #ffffff;
+            display: block;
+        }
+
+        .control-input {
+            width: 100%;
+            padding: 10px 12px;
+            background: rgba(44, 44, 46, 0.8);
+            border: 1px solid rgba(84, 84, 88, 0.4);
+            border-radius: 8px;
+            color: #ffffff;
+            font-size: 14px;
+        }
+
+        .control-input:focus {
+            outline: none;
+            border-color: #007AFF;
+            box-shadow: 0 0 0 3px rgba(0, 122, 255, 0.2);
+        }
+
+        .control-select {
+            width: 100%;
+            padding: 10px 12px;
+            background: rgba(44, 44, 46, 0.8);
+            border: 1px solid rgba(84, 84, 88, 0.4);
+            border-radius: 8px;
+            color: #ffffff;
+            font-size: 14px;
+        }
+
+        .filters-grid {
+            display: grid;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        .filter-control {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .filter-label {
+            font-size: 14px;
+            font-weight: 500;
+            color: #ffffff;
+            min-width: 80px;
+            text-transform: capitalize;
+        }
+
+        .filter-select {
+            flex: 1;
+            padding: 8px 10px;
+            background: rgba(44, 44, 46, 0.8);
+            border: 1px solid rgba(84, 84, 88, 0.4);
+            border-radius: 6px;
+            color: #ffffff;
+            font-size: 13px;
+        }
+
+        .load-tables-btn {
+            width: 100%;
+            padding: 12px;
+            background: #007AFF;
+            border: none;
+            border-radius: 8px;
+            color: #ffffff;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .load-tables-btn:hover {
+            background: #0056CC;
+            transform: translateY(-1px);
+        }
+
+        .load-tables-btn:disabled {
+            background: rgba(84, 84, 88, 0.6);
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .phoneme-tables {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 24px;
+        }
+
+        .table-container {
+            background: rgba(44, 44, 46, 0.8);
+            border: 1px solid rgba(84, 84, 88, 0.3);
+            border-radius: 12px;
+            padding: 12px;
+            min-height: 400px;
+            max-height: 600px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            box-sizing: border-box;
+            width: 100%;
+            max-width: 100%;
+        }
+
+        .table-search {
+            width: 100%;
+            padding: 8px 12px;
+            background: rgba(28, 28, 30, 0.8);
+            border: 1px solid rgba(84, 84, 88, 0.4);
+            border-radius: 6px;
+            color: #ffffff;
+            font-size: 14px;
+            margin-bottom: 12px;
+        }
+
+        .table-search:focus {
+            outline: none;
+            border-color: #007AFF;
+            box-shadow: 0 0 0 2px rgba(0, 122, 255, 0.2);
+        }
+
+        .table-search::placeholder {
+            color: #8E8E93;
+        }
+
+        .table-title {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: #30D158;
+            text-transform: capitalize;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .table-filter {
+            font-size: 12px;
+            color: #8E8E93;
+            background: rgba(84, 84, 88, 0.4);
+            padding: 4px 8px;
+            border-radius: 4px;
+        }
+
+        .phoneme-table {
+            width: 100%;
+            border-collapse: collapse;
+            flex-shrink: 0;
+            table-layout: fixed;
+            max-width: 100%;
+        }
+
+        .table-wrapper {
+            flex: 1;
+            overflow-y: auto;
+            overflow-x: hidden;
+            border: 1px solid rgba(84, 84, 88, 0.2);
+            border-radius: 8px;
+            background: rgba(28, 28, 30, 0.5);
+        }
+
+        /* Custom scrollbar styling for webkit browsers */
+        .table-wrapper::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .table-wrapper::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        .table-wrapper::-webkit-scrollbar-thumb {
+            background: rgba(142, 142, 147, 0.3);
+            border-radius: 3px;
+        }
+
+        .table-wrapper::-webkit-scrollbar-thumb:hover {
+            background: rgba(142, 142, 147, 0.5);
+        }
+
+        .phoneme-table th {
+            background: rgba(28, 28, 30, 0.8);
+            padding: 6px 8px;
+            text-align: center;
+            font-size: 12px;
+            font-weight: 600;
+            color: #8E8E93;
+            border-bottom: 1px solid rgba(84, 84, 88, 0.3);
+            width: 100%;
+        }
+
+        .phoneme-table td {
+            padding: 6px 4px;
+            border-bottom: 1px solid rgba(84, 84, 88, 0.2);
+            font-size: 14px;
+            text-align: center;
+            width: 100%;
+            max-width: 0;
+            word-wrap: break-word;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            box-sizing: border-box;
+        }
+
+        .phoneme-table tr:hover {
+            background: rgba(78, 78, 80, 0.4);
+        }
+
+        .phoneme-table tr.selected {
+            background: rgba(0, 122, 255, 0.3);
+            border: 2px solid #007AFF;
+        }
+
+        .phoneme-cell {
+            font-family: 'Courier New', monospace;
+            font-size: 16px;
+            font-weight: bold;
+            color: #5AC8FA;
+        }
+
+        .frequency-cell {
+            color: #30D158;
+            font-weight: 600;
+        }
+
+        .group-cell {
+            color: #FF9F0A;
+            font-size: 12px;
+        }
+
+        .number-cell {
+            color: #8E8E93;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .selected-phonemes {
+            background: rgba(44, 44, 46, 0.8);
+            border-radius: 12px;
+            padding: 16px;
+            margin-bottom: 20px;
+        }
+
+        .selected-title {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: #30D158;
+        }
+
+        .selected-list {
+            display: grid;
+            gap: 8px;
+        }
+
+        .selected-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 12px;
+            background: rgba(84, 84, 88, 0.4);
+            border-radius: 6px;
+        }
+
+        .selected-position {
+            font-weight: 600;
+            color: #ffffff;
+            text-transform: capitalize;
+        }
+
+        .selected-phoneme {
+            font-family: 'Courier New', monospace;
+            font-size: 16px;
+            font-weight: bold;
+            color: #5AC8FA;
+        }
+
+        .selected-details {
+            font-size: 12px;
+            color: #8E8E93;
+        }
+
+        .word-form {
+            background: rgba(44, 44, 46, 0.8);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .form-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: #5AC8FA;
+        }
+
+        .form-grid {
+            display: grid;
+            gap: 16px;
+        }
+
+        .form-group {
+            display: grid;
+            gap: 6px;
+        }
+
+        .form-label {
+            font-size: 14px;
+            font-weight: 500;
+            color: #ffffff;
+        }
+
+        .form-input {
+            padding: 12px;
+            background: rgba(28, 28, 30, 0.8);
+            border: 1px solid rgba(84, 84, 88, 0.4);
+            border-radius: 8px;
+            color: #ffffff;
+            font-size: 16px;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: #007AFF;
+            box-shadow: 0 0 0 3px rgba(0, 122, 255, 0.2);
+        }
+
+        .ipa-display {
+            font-family: 'Courier New', monospace;
+            font-size: 20px;
+            font-weight: bold;
+            color: #5AC8FA;
+            background: rgba(90, 200, 250, 0.1);
+            border: 2px solid rgba(90, 200, 250, 0.3);
+            border-radius: 8px;
+            padding: 16px;
+            text-align: center;
+            margin: 16px 0;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            position: relative;
+            user-select: none;
+        }
+        
+        .audio-playing {
+            background: rgba(90, 200, 250, 0.3) !important;
+            border-color: rgba(90, 200, 250, 0.6) !important;
+            transform: scale(1.05);
+            transition: all 0.2s ease;
+            box-shadow: 0 0 10px rgba(90, 200, 250, 0.4);
+        }
+        
+        .ipa-display:hover {
+            background: rgba(90, 200, 250, 0.15) !important;
+            border-color: rgba(90, 200, 250, 0.4) !important;
+        }
+        
+        .ipa-display:active {
+            transform: scale(0.98);
+        }
+
+        .ipa-display:hover::after {
+            content: "🔊 Click to hear pronunciation";
+            position: absolute;
+            bottom: -25px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 12px;
+            color: #8E8E93;
+            white-space: nowrap;
+        }
+
+        .create-word-btn {
+            width: 100%;
+            padding: 16px;
+            background: #30D158;
+            border: none;
+            border-radius: 8px;
+            color: #ffffff;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .create-word-btn:hover {
+            background: #28CD4C;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(48, 209, 88, 0.3);
+        }
+
+        .create-word-btn:disabled {
+            background: rgba(84, 84, 88, 0.6);
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+
+        .loading {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top-color: #ffffff;
+            animation: spin 1s ease-in-out infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .success-message {
+            background: rgba(48, 209, 88, 0.2);
+            border: 1px solid rgba(48, 209, 88, 0.4);
+            color: #30D158;
+            padding: 12px 16px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+
+        .error-message {
+            background: rgba(255, 69, 58, 0.2);
+            border: 1px solid rgba(255, 69, 58, 0.4);
+            color: #FF453A;
+            padding: 12px 16px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+
+        /* New styles for form sections and video upload */
+        .form-section {
+            margin-bottom: 20px;
+            padding: 16px;
+            background: rgba(28, 28, 30, 0.8);
+            border-radius: 12px;
+            border: 1px solid rgba(84, 84, 88, 0.4);
+        }
+
+        .section-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: #5AC8FA;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .section-icon {
+            font-size: 18px;
+        }
+
+        .video-preview {
+            width: 100%;
+            max-width: 300px; /* Adjust as needed */
+            margin-top: 10px;
+            border-radius: 8px;
+            display: block; /* Make sure it's block to have margin-top work */
+        }
+
+        /* Styles for Suggestions */
+        .suggestions-section {
+            margin-top: 20px;
+        }
+
+        .suggestions-header {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: #5AC8FA;
+        }
+
+        .suggestions-info {
+            margin-bottom: 15px;
+            font-size: 14px;
+            color: #8E8E93;
+        }
+
+        .suggestions-container,
+        .filtered-suggestions-container,
+        #suggestions-container,
+        #filtered-suggestions-container {
+            display: block;
+            max-height: 400px;
+            overflow-y: auto;
+            overflow-x: hidden;
+            padding-right: 8px;
+            border: 1px solid rgba(84, 84, 88, 0.2);
+            border-radius: 8px;
+            background: rgba(28, 28, 30, 0.3);
+            padding: 12px;
+            box-sizing: border-box;
+        }
+
+        /* Custom scrollbar styling for suggestions containers */
+        .suggestions-container::-webkit-scrollbar,
+        .filtered-suggestions-container::-webkit-scrollbar,
+        #suggestions-container::-webkit-scrollbar,
+        #filtered-suggestions-container::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .suggestions-container::-webkit-scrollbar-track,
+        .filtered-suggestions-container::-webkit-scrollbar-track,
+        #suggestions-container::-webkit-scrollbar-track,
+        #filtered-suggestions-container::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        .suggestions-container::-webkit-scrollbar-thumb,
+        .filtered-suggestions-container::-webkit-scrollbar-thumb,
+        #suggestions-container::-webkit-scrollbar-thumb,
+        #filtered-suggestions-container::-webkit-scrollbar-thumb {
+            background: rgba(142, 142, 147, 0.3);
+            border-radius: 3px;
+        }
+
+        .suggestions-container::-webkit-scrollbar-thumb:hover,
+        .filtered-suggestions-container::-webkit-scrollbar-thumb:hover,
+        #suggestions-container::-webkit-scrollbar-thumb:hover,
+        #filtered-suggestions-container::-webkit-scrollbar-thumb:hover {
+            background: rgba(142, 142, 147, 0.5);
+        }
+
+        .suggestion-item {
+            background: rgba(48,209,88,0.1);
+            border: 1px solid rgba(48,209,88,0.3);
+            border-radius: 8px;
+            padding: 12px;
+            margin-bottom: 10px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .suggestion-item:hover {
+            background: rgba(48,209,88,0.2);
+            border-color: #30D158;
+        }
+
+        .suggestion-item.filtered {
+            background: rgba(255,159,10,0.1);
+            border: 1px solid rgba(255,159,10,0.3);
+        }
+
+        .suggestion-item.filtered:hover {
+            background: rgba(255,159,10,0.2);
+            border-color: #FF9F0A;
+        }
+
+        .conflict-warning {
+            color: #FF453A;
+            font-size: 12px;
+            margin-top: 5px;
+            font-weight: 500;
+        }
+
+        /* Updated table styles for side-by-side display */
+        .phoneme-table tbody tr {
+            transition: all 0.2s ease;
+        }
+
+        .phoneme-table tbody tr:hover {
+            background: rgba(78, 78, 80, 0.6);
+            transform: scale(1.02);
+        }
+
+        .phoneme-table tbody tr.selected {
+            background: rgba(0, 122, 255, 0.4);
+            border: 2px solid #007AFF;
+            box-shadow: 0 0 8px rgba(0, 122, 255, 0.3);
+        }
+
+        .phoneme-cell {
+            position: relative;
+            cursor: pointer;
+        }
+
+        .phoneme-cell:hover::after {
+            content: "🔊";
+            position: absolute;
+            right: 8px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 14px;
+            opacity: 0.7;
+        }
+
+        .audio-playing {
+            background: rgba(48, 209, 88, 0.3) !important;
+            border: 2px solid #30D158 !important;
+        }
+
+        .audio-error {
+            background: rgba(255, 69, 58, 0.2) !important;
+            border: 1px solid #FF453A !important;
+        }
+
+        /* Phonotactic compatibility styles */
+        .phonotactic-incompatible {
+            background: rgba(255, 69, 58, 0.2) !important;
+            border: 1px solid #FF453A !important;
+            opacity: 0.5;
+            cursor: not-allowed !important;
+        }
+
+        .phonotactic-incompatible .phoneme-cell {
+            color: #FF453A !important;
+        }
+
+        .phonotactic-incompatible:hover {
+            background: rgba(255, 69, 58, 0.3) !important;
+            transform: none !important;
+        }
+
+        .phonotactic-problematic {
+            background: rgba(255, 159, 10, 0.15) !important;
+            border: 1px solid rgba(255, 159, 10, 0.4) !important;
+        }
+
+        .phonotactic-problematic .phoneme-cell {
+            color: #FF9F0A !important;
+        }
+
+        .phonotactic-problematic:hover {
+            background: rgba(255, 159, 10, 0.25) !important;
+        }
+
+        .phonotactic-preferred {
+            background: rgba(48, 209, 88, 0.15) !important;
+            border: 1px solid rgba(48, 209, 88, 0.4) !important;
+        }
+
+        .phonotactic-preferred .phoneme-cell {
+            color: #30D158 !important;
+        }
+
+        .phonotactic-preferred:hover {
+            background: rgba(48, 209, 88, 0.25) !important;
+        }
+
+        /* Styles for conflicts section */
+        .conflicts-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid rgba(255, 69, 58, 0.3);
+        }
+
+        .conflicts-header h3 {
+            color: #FF453A;
+            font-size: 18px;
+            margin: 0;
+        }
+
+        .conflicts-actions {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .conflicts-info {
+            font-size: 12px;
+            color: #8E8E93;
+            font-style: italic;
+        }
+
+        .hide-conflicts-btn {
+            background: rgba(255, 69, 58, 0.2);
+            border: 1px solid rgba(255, 69, 58, 0.4);
+            color: #FF453A;
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .hide-conflicts-btn:hover {
+            background: rgba(255, 69, 58, 0.3);
+            border-color: rgba(255, 69, 58, 0.6);
+            transform: translateY(-1px);
+        }
+
+        @media (max-width: 1200px) {
+            .creation-container {
+                grid-template-columns: 1fr;
+            }
+
+            .sidebar {
+                position: static;
+                order: -1;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .phoneme-tables {
+                grid-template-columns: 1fr 1fr 1fr;
+                gap: 10px;
+            }
+
+            .table-container {
+                min-height: 300px;
+                padding: 12px;
+            }
+
+            .phoneme-table th,
+            .phoneme-table td {
+                padding: 6px 8px;
+                font-size: 12px;
+            }
+
+            .header h1 {
+                font-size: 24px;
+            }
+
+            .main-content, .sidebar {
+                padding: 16px;
+            }
+        }
+        
+        /* Language selector styles */
+        .language-selector {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        
+        .form-select {
+            padding: 12px;
+            border: 2px solid #e1e5e9;
+            border-radius: 8px;
+            font-size: 14px;
+            background-color: white;
+            transition: border-color 0.2s ease;
+        }
+        
+        .form-select:focus {
+            outline: none;
+            border-color: #4a90e2;
+        }
+        
+        .language-input-container {
+            margin-top: 4px;
+        }
+        
+        .btn-secondary {
+            padding: 8px 16px;
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 6px;
+            color: #495057;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            align-self: flex-start;
+        }
+        
+        .btn-secondary:hover {
+            background-color: #e9ecef;
+            border-color: #adb5bd;
+        }
+        
+        .btn-secondary:active {
+            background-color: #dee2e6;
+        }
+
+        /* Multi-Syllable Management Styles */
+        .syllable-tabs-container {
+            margin-bottom: 20px;
+            padding: 16px;
+            background: rgba(28, 28, 30, 0.6);
+            border-radius: 8px;
+            border: 1px solid rgba(84, 84, 88, 0.4);
+        }
+
+        .syllable-tabs-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 12px;
+        }
+
+        .syllable-tabs-title {
+            font-size: 14px;
+            font-weight: 600;
+            color: #5AC8FA;
+        }
+
+        .syllable-tabs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            align-items: center;
+        }
+
+        .syllable-tab {
+            padding: 8px 16px;
+            background: rgba(58, 58, 60, 0.6);
+            border: 2px solid transparent;
+            border-radius: 8px;
+            color: #ffffff;
+            font-size: 13px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2px;
+            min-width: 80px;
+        }
+
+        .syllable-tab:hover {
+            background: rgba(78, 78, 80, 0.8);
+            border-color: rgba(90, 200, 250, 0.3);
+        }
+
+        .syllable-tab.active {
+            background: rgba(0, 122, 255, 0.3);
+            border-color: #007AFF;
+            color: #5AC8FA;
+        }
+
+        .syllable-tab-label {
+            font-size: 11px;
+            opacity: 0.7;
+        }
+
+        .syllable-tab-phonemes {
+            font-size: 15px;
+            font-weight: 600;
+        }
+
+        .syllable-tab-empty {
+            font-size: 13px;
+            opacity: 0.5;
+        }
+
+        .add-syllable-btn {
+            padding: 8px 16px;
+            background: rgba(48, 209, 88, 0.3);
+            border: 2px solid rgba(48, 209, 88, 0.5);
+            border-radius: 8px;
+            color: #30D158;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .add-syllable-btn:hover {
+            background: rgba(48, 209, 88, 0.5);
+            border-color: #30D158;
+        }
+
+        .delete-syllable-btn {
+            margin-left: 8px;
+            padding: 4px 8px;
+            background: rgba(255, 69, 58, 0.3);
+            border: 1px solid rgba(255, 69, 58, 0.5);
+            border-radius: 4px;
+            color: #FF453A;
+            font-size: 11px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .delete-syllable-btn:hover {
+            background: rgba(255, 69, 58, 0.5);
+            border-color: #FF453A;
+        }
+
+        .syllable-separator {
+            font-size: 18px;
+            color: #5AC8FA;
+            opacity: 0.5;
+            margin: 0 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <a href="{{ url_for('main_menu') }}" class="back-button">← Back</a>
+            <h1>➕ Create Word - Table Based</h1>
+            {% if user and user.is_authenticated %}
+            <div style="color: #30D158; font-size: 14px;">
+                👤 {{ user.name }}
+            </div>
+            {% endif %}
+        </div>
+
+        <div class="creation-container">
+            <div class="main-content">
+                <div id="messageContainer"></div>
+
+                <div class="controls-section">
+                    <div class="controls-title">🎯 Syllable Configuration</div>
+
+                    <!-- Multi-Syllable Management Section -->
+                    <div class="syllable-tabs-container">
+                        <div class="syllable-tabs-header">
+                            <div class="syllable-tabs-title">📊 Word Syllables</div>
+                            <button class="add-syllable-btn" onclick="addSyllable()">
+                                <span>+</span>
+                                <span>Add Syllable</span>
+                            </button>
+                        </div>
+                        <div id="syllableTabsContainer" class="syllable-tabs">
+                            <!-- Syllable tabs will be dynamically inserted here -->
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <label class="control-label">Syllable Type <span style="font-size: 11px; opacity: 0.7;">(for current syllable)</span></label>
+                        <select class="control-select" id="syllableType">
+                            <option value="CVC">CVC (Consonant-Vowel-Consonant)</option>
+                            <option value="CV">CV (Consonant-Vowel)</option>
+                            <option value="VC">VC (Vowel-Consonant)</option>
+                        </select>
+                    </div>
+
+                    <div class="control-group">
+                        <label class="control-label">Phonotactic Mode</label>
+                        <select class="control-select" id="phonotacticMode">
+                            <option value="assisted">🎯 Assisted (Follows English rules)</option>
+                            <option value="free">🔓 Free (All combinations)</option>
+                        </select>
+                        <div style="font-size: 12px; color: #8E8E93; margin-top: 4px;">
+                            Assisted mode filters phonemes for natural-sounding combinations
+                        </div>
+                        
+                        <!-- Phonotactic Legend -->
+                        <div id="phonotactic-legend" style="margin-top: 12px; padding: 8px; background: rgba(28, 28, 30, 0.6); border-radius: 6px; font-size: 11px;">
+                            <div style="margin-bottom: 4px; font-weight: 600; color: #5AC8FA;">Phonetic Guide:</div>
+                            <div style="display: flex; align-items: center; margin: 2px 0;">
+                                <div style="width: 12px; height: 12px; background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 2px; margin-right: 6px;"></div>
+                                <span style="color: #ffffff;">Articulatorily natural</span>
+                            </div>
+                            <div style="display: flex; align-items: center; margin: 2px 0;">
+                                <div style="width: 12px; height: 12px; background: rgba(255, 159, 10, 0.4); border: 1px solid #FF9F0A; border-radius: 2px; margin-right: 6px;"></div>
+                                <span style="color: #FF9F0A;">Difficult to produce/perceive</span>
+                            </div>
+                            <div style="display: flex; align-items: center; margin: 2px 0;">
+                                <div style="width: 12px; height: 12px; background: rgba(255, 69, 58, 0.4); border: 1px solid #FF453A; border-radius: 2px; margin-right: 6px;"></div>
+                                <span style="color: #FF453A;">Articulatorily impossible</span>
+                            </div>
+                            <div style="font-size: 10px; color: #8E8E93; margin-top: 6px; font-style: italic;">
+                                Based on universal phonetic principles
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="filters-grid">
+                        <div class="filter-control">
+                            <label class="filter-label">Onset:</label>
+                            <select class="filter-select" id="onsetFilter">
+                                <option value="single_consonants">Single Consonants</option>
+                                <option value="cluster2">2-Consonant Clusters</option>
+                                <option value="cluster3">3-Consonant Clusters</option>
+                                <option value="all">All Types</option>
+                            </select>
+                        </div>
+
+                        <div class="filter-control">
+                            <label class="filter-label">Nucleus:</label>
+                            <select class="filter-select" id="nucleusFilter">
+                                <option value="monophthongs">Monophthongs</option>
+                                <option value="diphthongs">Diphthongs</option>
+                                <option value="all">All Types</option>
+                            </select>
+                        </div>
+
+                        <div class="filter-control">
+                            <label class="filter-label">Coda:</label>
+                            <select class="filter-select" id="codaFilter">
+                                <option value="single_consonants">Single Consonants</option>
+                                <option value="cluster2">2-Consonant Clusters</option>
+                                <option value="cluster3">3-Consonant Clusters</option>
+                                <option value="all">All Types</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <button class="load-tables-btn" onclick="loadPhonemeTable()">
+                        <span id="loadButtonText">🔄 Load Phoneme Tables</span>
+                    </button>
+                </div>
+
+                <div id="phonemeTablesContainer">
+                    <div style="text-align: center; color: #8E8E93; padding: 40px;">
+                        Configure syllable settings and click "Load Phoneme Tables" to begin
+                    </div>
+                </div>
+
+                <!-- Syllable Suggestions -->
+                <div class="form-section suggestions-section" id="suggestions-section" style="display: none;">
+                    <div class="suggestions-header" id="suggestions-header">💡 Optimized Syllable Suggestions</div>
+                    <div class="suggestions-info" id="suggestions-info" style="margin-bottom: 15px; font-size: 14px; color: #8E8E93;">
+                        Suggestions are automatically generated using least frequent phonemes for the current syllable. Click any suggestion to auto-select its phonemes.
+                    </div>
+                    <div id="suggestions-container"></div>
+                    
+                    <!-- Extend suggestions button -->
+                    <div id="extend-suggestions-section" style="margin-top: 15px; display: none; text-align: center;">
+                        <button id="extend-suggestions-btn" class="load-tables-btn" onclick="extendSuggestions()" style="background: #5AC8FA; width: auto; padding: 10px 20px;">
+                            📖 Show More Suggestions
+                        </button>
+                        <div id="remaining-count" style="color: #8E8E93; font-size: 12px; margin-top: 8px;"></div>
+                    </div>
+
+                    <!-- Filtered suggestions section -->
+                    <div id="filtered-suggestions-section" style="margin-top: 20px; display: none;">
+                        <div class="conflicts-header">
+                            <h3>⚠️ Filtered Suggestions (Conflicts Found)</h3>
+                            <div class="conflicts-actions">
+                                <span class="conflicts-info">These suggestions conflict with existing English words</span>
+                                <button class="hide-conflicts-btn" onclick="hideConflictingSuggestions()">✕ Close</button>
+                            </div>
+                        </div>
+                        <div id="filtered-suggestions-container"></div>
+                    </div>
+
+                    <!-- Reopen filtered suggestions button -->
+                    <div id="reopen-filtered-section" style="margin-top: 15px; display: none; text-align: center;">
+                        <button id="show-filtered-btn" class="load-tables-btn" onclick="showConflictingSuggestions()" style="background: #FF9F0A; width: auto; padding: 10px 20px;">
+                            ⚠️ Show Filtered Suggestions
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sidebar">
+                <div class="selected-phonemes">
+                    <div class="selected-title">🎵 Selected Word</div>
+                    <div id="unifiedPhonemeDisplay" class="suggestion-item" style="background: rgba(90, 200, 250, 0.1); border: 1px solid rgba(90, 200, 250, 0.3); display: none;">
+                        <!-- Unified display content will be inserted here -->
+                    </div>
+                    <div id="noSelectionMessage" style="color: #8E8E93; text-align: center; padding: 20px; font-size: 14px;">
+                        No phonemes selected yet
+                    </div>
+                </div>
+
+                <div class="word-form">
+                    <div class="form-title">📝 Word Details</div>
+
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label class="form-label">Language</label>
+                            <div class="language-selector">
+                                <select class="form-select" id="languageSelect" onchange="handleLanguageChange()">
+                                    <option value="">Select existing language...</option>
+                                </select>
+                                <div class="language-input-container" id="languageInputContainer" style="display: none;">
+                                    <input type="text" class="form-input" id="languageInput" placeholder="Enter new language name">
+                                </div>
+                                <button type="button" class="btn-secondary" id="newLanguageBtn" onclick="toggleLanguageInput()">+ New Language</button>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">English Words</label>
+                            <input type="text" class="form-input" id="englishWords" placeholder="English translation">
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">New Language Word</label>
+                            <input type="text" class="form-input" id="newLanguageWord" placeholder="Word in your language">
+                        </div>
+
+                        <!-- IPA display moved to unified display in sidebar -->
+
+                        <div class="form-group">
+                            <label class="form-label">X-SAMPA Input (ASCII Alternative)</label>
+                            <div style="display: flex; align-items: center; gap: 8px;">
+                                <input type="text" id="xsampaInput" placeholder="pUt (becomes pʊt)" 
+                                       class="form-input" style="flex: 1; font-family: 'SF Mono', monospace;">
+                                <button type="button" onclick="convertAndPlayXSAMPA()" 
+                                        style="padding: 8px 16px; background: rgba(0, 122, 255, 0.8); border: none; border-radius: 6px; color: white; cursor: pointer; font-size: 14px;">
+                                    🔊 Play
+                                </button>
+                            </div>
+                            <div style="font-size: 12px; color: #8E8E93; margin-top: 4px;">
+                                Examples: pUt→pʊt, hE'loU→həˈloʊ, S{t→ʃæt, test→test
+                            </div>
+                        </div>
+
+                        <!-- Dictionary phonetics will automatically sync with IPA -->
+
+                        <!-- Video Upload Section -->
+                        <div class="form-section">
+                            <div class="section-title">
+                                <span class="section-icon">🎥</span>
+                                Video (Optional)
+                            </div>
+                            <div class="form-group">
+                                <label for="video-upload">Upload Video:</label>
+                                <input type="file" id="video-upload" accept="video/*" style="
+                                    width: 100%;
+                                    padding: 12px;
+                                    background: rgba(28,28,30,0.8);
+                                    border: 1px solid rgba(99,99,102,0.5);
+                                    border-radius: 8px;
+                                    color: white;
+                                    font-size: 16px;
+                                    box-sizing: border-box;
+                                ">
+                                <div style="font-size: 12px; color: #8E8E93; margin-top: 5px;">
+                                    Supported formats: MP4, AVI, MOV, MKV, WEBM
+                                </div>
+                            </div>
+                        </div>
+
+                        <button class="create-word-btn" id="createWordBtn" onclick="createWord()" disabled>
+                            ✨ Create Word
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Azure TTS only - removed meSpeak.js dependency -->
+    <script>
+        let currentTables = {};
+
+        // MULTI-SYLLABLE SUPPORT: Changed from single syllable to array of syllables
+        let syllables = [
+            {
+                syllableType: 'CVC',
+                phonemes: {}  // {onset: {...}, nucleus: {...}, coda: {...}}
+            }
+        ];
+        let currentSyllableIndex = 0; // Currently selected syllable for editing
+
+        // Legacy support - will be removed
+        let selectedPhonemes = {};
+        let currentSyllableType = 'CVC'; // Initialize with a default value
+
+        let maxFrequencies = {};
+        let allEnglishWords = new Set(); // To store all English words for conflict checking
+        let conflictingSuggestionsData = []; // To store conflict data for display and interaction
+        let audioContext = null;
+        let currentAudio = null;
+        let currentFilters = {}; // Initialize currentFilters
+        let phonotacticMode = 'assisted'; // 'assisted' or 'free'
+        
+        // Variables for suggestion extension feature - configurable limits
+        let maxSuggestionsToGenerate = 500; // Maximum suggestions to generate (matching terminal interface)
+        let suggestionsPerPage = 15; // How many to show initially and per extension (matching terminal behavior)
+        let initialSuggestionsToShow = 15; // How many to show on first load
+        
+        let allCurrentSuggestions = []; // Store all generated suggestions
+        let allCurrentFilteredSuggestions = []; // Store all filtered suggestions
+        let displayedSuggestionCount = 0; // Track how many are currently displayed
+        // Simplified - using Azure TTS only
+
+        // Universal phonotactic rules based on articulatory and acoustic constraints
+        const phonotacticRules = {
+            // ARTICULATORY CONSTRAINTS - physically difficult to produce
+            
+            // Nasal constraints
+            'ŋ': {
+                cannotPrecede: ['all'], // ŋ physically cannot be released into another consonant
+                position: 'coda_only',
+                description: 'ŋ requires vowel co-articulation, cannot initiate syllables'
+            },
+            'm': {
+                difficultBefore: ['p', 'b', 'f', 'v'], // Same/similar place of articulation
+                description: 'Labial nasal + labial consonant creates articulatory redundancy'
+            },
+            'n': {
+                difficultBefore: ['t', 'd', 'θ', 'ð', 'l'], // Same place of articulation  
+                description: 'Alveolar nasal + alveolar consonant creates articulatory redundancy'
+            },
+
+            // Fricative constraints
+            'h': {
+                cannotFollow: ['consonants'], // h requires vowel-like airflow
+                position: 'onset_only',
+                difficultBefore: ['ʃ', 'ʒ', 's', 'z'], // Fricative + fricative creates turbulence
+                description: 'h requires clear airflow, incompatible with consonant clusters'
+            },
+            's': {
+                difficultBefore: ['ʃ', 'ʒ', 'θ', 'ð'], // Sibilant conflicts
+                difficultAfter: ['ʃ', 'ʒ'],
+                description: 'Sibilant friction conflicts create acoustic masking'
+            },
+            'ʃ': {
+                difficultBefore: ['s', 'z', 'θ', 'ð'],
+                difficultAfter: ['s', 'z'],
+                description: 'Sibilant friction conflicts create acoustic masking'
+            },
+
+            // ACOUSTIC CONSTRAINTS - perceptually difficult
+
+            // Vowel formant conflicts  
+            'i': {
+                difficultBefore: ['j'], // Same F2 frequency region
+                description: 'High front vowel + palatal creates F2 formant masking'
+            },
+            'u': {
+                difficultBefore: ['w'], // Same F2 frequency region  
+                description: 'High back vowel + labio-velar creates F2 formant masking'
+            },
+
+            // SONORITY CONSTRAINTS - violate sonority sequencing principle
+            
+            // Liquids in problematic positions
+            'l': {
+                difficultAfter: ['r'], // Sonority plateau
+                difficultBefore: ['r'], 
+                description: 'Liquid clusters create sonority sequencing violations'
+            },
+            'r': {
+                difficultAfter: ['l'], // Sonority plateau
+                difficultBefore: ['l'],
+                description: 'Liquid clusters create sonority sequencing violations'
+            },
+
+            // Voicing constraints
+            'voicing_conflicts': {
+                'incompatible_pairs': [
+                    ['p', 'b'], ['t', 'd'], ['k', 'g'], // Same place, different voicing
+                    ['f', 'v'], ['θ', 'ð'], ['s', 'z'], ['ʃ', 'ʒ']
+                ],
+                description: 'Rapid voicing changes are articulatorily difficult'
+            },
+
+            // PERCEPTUAL CONSTRAINTS
+            
+            // Vowels that are hard to distinguish in context
+            'perceptual_difficulty': {
+                'similar_vowels': [
+                    ['ɪ', 'i'], ['ʊ', 'u'], ['ɛ', 'æ'], // Close formant values
+                ],
+                description: 'Acoustically similar vowels may be hard to distinguish'
+            },
+
+            // UNIVERSAL POSITION CONSTRAINTS
+            
+            'universal_constraints': {
+                'coda_only': ['ŋ'], // Cross-linguistically restricted
+                'onset_preferred': ['h', 'j', 'w'], // Rarely appear in coda cross-linguistically
+                description: 'Universal phonotactic tendencies across languages'
+            }
+        };
+
+        // Phonotactic rule engine functions
+        function getPhonemeCompatibility(targetPhoneme, targetPosition, currentSelections) {
+            if (phonotacticMode === 'free') {
+                return 'compatible'; // Allow everything in free mode
+            }
+
+            // Check universal position constraints first
+            const universalConstraints = phonotacticRules.universal_constraints;
+            if (universalConstraints.coda_only.includes(targetPhoneme) && targetPosition !== 'coda') {
+                return 'incompatible';
+            }
+            if (universalConstraints.onset_preferred.includes(targetPhoneme) && targetPosition === 'coda') {
+                return 'problematic';
+            }
+
+            const rules = phonotacticRules[targetPhoneme];
+            if (!rules) {
+                return 'compatible'; // No specific rules, assume compatible
+            }
+
+            // Check absolute position constraints
+            if (rules.position === 'onset_only' && targetPosition !== 'onset') {
+                return 'incompatible';
+            }
+            if (rules.position === 'coda_only' && targetPosition !== 'coda') {
+                return 'incompatible';
+            }
+            if (rules.cannotPrecede?.includes('all') && targetPosition === 'onset') {
+                return 'incompatible';
+            }
+
+            // Check sequence constraints based on current selections
+            const onset = currentSelections.onset?.phoneme;
+            const nucleus = currentSelections.nucleus?.phoneme;
+            const coda = currentSelections.coda?.phoneme;
+
+            // Check if this phoneme has conflicts with adjacent sounds
+            if (targetPosition === 'coda' && nucleus) {
+                if (rules.difficultAfter?.includes(nucleus)) {
+                    return 'problematic';
+                }
+            }
+
+            if (targetPosition === 'nucleus') {
+                if (onset && rules.difficultAfter?.includes(onset)) {
+                    return 'problematic';
+                }
+                if (coda && rules.difficultBefore?.includes(coda)) {
+                    return 'problematic';
+                }
+            }
+
+            if (targetPosition === 'onset' && nucleus) {
+                if (rules.difficultBefore?.includes(nucleus)) {
+                    return 'problematic';
+                }
+            }
+
+            // Check voicing conflicts (from complex rules)
+            const voicingConflicts = phonotacticRules.voicing_conflicts;
+            if (voicingConflicts && voicingConflicts.incompatible_pairs) {
+                const adjacentPhonemes = [onset, nucleus, coda].filter(p => p && p !== targetPhoneme);
+                
+                for (const [sound1, sound2] of voicingConflicts.incompatible_pairs) {
+                    if (targetPhoneme === sound1 && adjacentPhonemes.includes(sound2)) {
+                        return 'problematic';
+                    }
+                    if (targetPhoneme === sound2 && adjacentPhonemes.includes(sound1)) {
+                        return 'problematic';
+                    }
+                }
+            }
+
+            // Note: Removed geminate avoidance - many languages (including English) have plenty of geminates
+
+            return 'compatible';
+        }
+
+        function updatePhonotacticFiltering() {
+            if (!currentTables || Object.keys(currentTables).length === 0) return;
+
+            const positions = ['onset', 'nucleus', 'coda'];
+            
+            positions.forEach(position => {
+                const tbody = document.querySelector(`#${position}-tbody`);
+                if (!tbody) return;
+
+                const rows = tbody.querySelectorAll('tr[data-position]');
+                rows.forEach(row => {
+                    const phonemeNumber = parseInt(row.getAttribute('data-number'));
+                    const phonemeData = currentTables[position]?.find(p => p.number === phonemeNumber);
+                    
+                    if (phonemeData) {
+                        const compatibility = getPhonemeCompatibility(
+                            phonemeData.phoneme, 
+                            position, 
+                            selectedPhonemes
+                        );
+                        
+                        // Remove previous compatibility classes
+                        row.classList.remove('phonotactic-incompatible', 'phonotactic-problematic', 'phonotactic-preferred');
+                        
+                        // Add appropriate class
+                        if (compatibility === 'incompatible') {
+                            row.classList.add('phonotactic-incompatible');
+                        } else if (compatibility === 'problematic') {
+                            row.classList.add('phonotactic-problematic');
+                        } else if (compatibility === 'preferred') {
+                            row.classList.add('phonotactic-preferred');
+                        }
+                    }
+                });
+            });
+        }
+
+        // ==================== MULTI-SYLLABLE MANAGEMENT FUNCTIONS ====================
+
+        /**
+         * Initialize syllable tabs on page load
+         */
+        function initializeSyllableTabs() {
+            renderSyllableTabs();
+        }
+
+        /**
+         * Render the syllable tabs UI
+         */
+        function renderSyllableTabs() {
+            const container = document.getElementById('syllableTabsContainer');
+            if (!container) return;
+
+            container.innerHTML = '';
+
+            syllables.forEach((syllable, index) => {
+                // Create syllable tab
+                const tab = document.createElement('div');
+                tab.className = 'syllable-tab' + (index === currentSyllableIndex ? ' active' : '');
+                tab.onclick = () => switchToSyllable(index);
+
+                // Add label
+                const label = document.createElement('div');
+                label.className = 'syllable-tab-label';
+                label.textContent = `Syllable ${index + 1}`;
+                tab.appendChild(label);
+
+                // Add phonemes display or empty state
+                const phonemesDisplay = document.createElement('div');
+                const phonemeText = getSyllablePhonemeText(syllable);
+
+                if (phonemeText) {
+                    phonemesDisplay.className = 'syllable-tab-phonemes';
+                    phonemesDisplay.textContent = phonemeText;
+                } else {
+                    phonemesDisplay.className = 'syllable-tab-empty';
+                    phonemesDisplay.textContent = '---';
+                }
+                tab.appendChild(phonemesDisplay);
+
+                container.appendChild(tab);
+
+                // Add delete button if more than one syllable
+                if (syllables.length > 1) {
+                    const deleteBtn = document.createElement('button');
+                    deleteBtn.className = 'delete-syllable-btn';
+                    deleteBtn.textContent = '×';
+                    deleteBtn.onclick = (e) => {
+                        e.stopPropagation();
+                        deleteSyllable(index);
+                    };
+                    tab.appendChild(deleteBtn);
+                }
+
+                // Add separator if not last syllable
+                if (index < syllables.length - 1) {
+                    const separator = document.createElement('div');
+                    separator.className = 'syllable-separator';
+                    separator.textContent = '·';
+                    container.appendChild(separator);
+                }
+            });
+        }
+
+        /**
+         * Get phoneme text for a syllable
+         */
+        function getSyllablePhonemeText(syllable) {
+            const phonemes = syllable.phonemes;
+            if (!phonemes || Object.keys(phonemes).length === 0) {
+                return '';
+            }
+
+            let text = '';
+            const positions = ['onset', 'nucleus', 'coda'];
+            positions.forEach(pos => {
+                if (phonemes[pos] && phonemes[pos].phoneme) {
+                    text += phonemes[pos].phoneme;
+                }
+            });
+            return text;
+        }
+
+        /**
+         * Add a new syllable
+         */
+        function addSyllable() {
+            const newSyllable = {
+                syllableType: 'CVC',
+                phonemes: {}
+            };
+            syllables.push(newSyllable);
+
+            // Switch to the new syllable (don't update currentSyllableIndex here - let switchToSyllable do it)
+            const newIndex = syllables.length - 1;
+            switchToSyllable(newIndex);
+        }
+
+        /**
+         * Switch to a different syllable for editing
+         */
+        function switchToSyllable(index) {
+            // Save current syllable's phonemes
+            saveCurrentSyllableState();
+
+            // Switch to new syllable
+            currentSyllableIndex = index;
+            const syllable = syllables[index];
+
+            // Update UI to reflect the new syllable
+            document.getElementById('syllableType').value = syllable.syllableType;
+            currentSyllableType = syllable.syllableType;
+
+            // Load phonemes for this syllable
+            selectedPhonemes = { ...syllable.phonemes };
+
+            // Re-render tabs and update display
+            renderSyllableTabs();
+            updateUnifiedDisplay();
+
+            // Reload phoneme tables to show selections
+            if (Object.keys(currentTables).length > 0) {
+                highlightSelectedPhonemes();
+                // Regenerate suggestions for the new syllable
+                generateSuggestionsFromTables();
+            }
+        }
+
+        /**
+         * Save current syllable state before switching
+         */
+        function saveCurrentSyllableState() {
+            if (syllables[currentSyllableIndex]) {
+                syllables[currentSyllableIndex].syllableType = currentSyllableType;
+                syllables[currentSyllableIndex].phonemes = { ...selectedPhonemes };
+            }
+        }
+
+        /**
+         * Delete a syllable
+         */
+        function deleteSyllable(index) {
+            if (syllables.length <= 1) {
+                showMessage('Cannot delete the only syllable. Words must have at least one syllable.', 'warning');
+                return;
+            }
+
+            syllables.splice(index, 1);
+
+            // Adjust current index if needed
+            if (currentSyllableIndex >= syllables.length) {
+                currentSyllableIndex = syllables.length - 1;
+            }
+
+            // Switch to the adjusted current syllable
+            switchToSyllable(currentSyllableIndex);
+        }
+
+        /**
+         * Highlight selected phonemes in tables after switching syllables
+         */
+        function highlightSelectedPhonemes() {
+            // Clear all highlights
+            document.querySelectorAll('.phoneme-row').forEach(row => {
+                row.classList.remove('selected');
+            });
+
+            // Highlight current selections
+            ['onset', 'nucleus', 'coda'].forEach(position => {
+                if (selectedPhonemes[position]) {
+                    const phonemeNumber = selectedPhonemes[position].phoneme_number;
+                    const row = document.querySelector(`[data-position="${position}"][data-phoneme-number="${phonemeNumber}"]`);
+                    if (row) {
+                        row.classList.add('selected');
+                    }
+                }
+            });
+        }
+
+        async function loadPhonemeTable() {
+            const syllableType = document.getElementById('syllableType').value;
+            const onsetFilter = document.getElementById('onsetFilter').value;
+            const nucleusFilter = document.getElementById('nucleusFilter').value;
+            const codaFilter = document.getElementById('codaFilter').value;
+
+            const loadBtn = document.querySelector('.load-tables-btn');
+            const loadText = document.getElementById('loadButtonText');
+
+            loadBtn.disabled = true;
+            loadText.innerHTML = '<span class="loading"></span> Loading Tables...';
+
+            try {
+                const params = new URLSearchParams({
+                    syllable_type: syllableType,
+                    positions: 'onset,nucleus,coda',
+                    onset_filter: onsetFilter,
+                    nucleus_filter: nucleusFilter,
+                    coda_filter: codaFilter
+                });
+
+                const response = await fetch(`/api/phoneme-tables?${params}`);
+                const data = await response.json();
+
+                if (data.success && data.tables) {
+                    // Validate the data structure
+                    let validData = true;
+                    const positions = ['onset', 'nucleus', 'coda'];
+
+                    console.log('Received data:', data); // Debug logging
+
+                    for (const position of positions) {
+                        if (data.tables && data.tables[position]) {
+                            if (!Array.isArray(data.tables[position])) {
+                                console.error(`Position ${position} data is not an array:`, typeof data.tables[position], data.tables[position]);
+                                validData = false;
+                                break;
+                            }
+
+                            // Validate each phoneme entry
+                            for (const phoneme of data.tables[position]) {
+                                if (!phoneme || typeof phoneme !== 'object') {
+                                    console.error(`Invalid phoneme entry in ${position}:`, phoneme);
+                                    validData = false;
+                                    break;
+                                }
+
+                                // Check required fields
+                                if (!phoneme.hasOwnProperty('phoneme') || 
+                                    !phoneme.hasOwnProperty('number') || 
+                                    !phoneme.hasOwnProperty('frequency')) {
+                                    console.error(`Missing required fields in phoneme entry for ${position}:`, phoneme);
+                                    validData = false;
+                                    break;
+                                }
+                            }
+
+                            if (!validData) break;
+                        } else {
+                            console.warn(`No data found for position: ${position}`);
+                        }
+                    }
+
+                    if (validData) {
+                        currentTables = data.tables;
+                        currentSyllableType = syllableType;
+                        displayPhonemeTable(data.tables, data.filters);
+                        allEnglishWords = new Set(data.english_words || []); // Load English words for conflict checking
+
+                        // Calculate max frequencies for each position
+                        for (const [position, phonemes] of Object.entries(data.tables)) {
+                            if (Array.isArray(phonemes) && phonemes.length > 0) {
+                                maxFrequencies[position] = Math.max(...phonemes.map(p => p.frequency || 0));
+                            }
+                        }
+
+                        // Store current filters
+                        currentFilters = {
+                            onset: onsetFilter,
+                            nucleus: nucleusFilter,
+                            coda: codaFilter
+                        };
+
+                        // Generate and display suggestions based on the actual tables loaded
+                        await generateSuggestionsFromTables();
+                    } else {
+                        showMessage('Error: Invalid phoneme table data structure received. Check console for details.', 'error');
+                    }
+                } else {
+                    showMessage('Error loading phoneme tables: ' + (data.error || 'Unknown error'), 'error');
+                }
+            } catch (error) {
+                showMessage('Network error: ' + error.message, 'error');
+            } finally {
+                loadBtn.disabled = false;
+                loadText.innerHTML = '🔄 Reload Phoneme Tables';
+            }
+        }
+
+        function displayPhonemeTable(tables, filters) {
+            const container = document.getElementById('phonemeTablesContainer');
+            container.innerHTML = ''; // Clear previous content
+
+            // Validate that tables is an object with expected structure
+            if (!tables || typeof tables !== 'object') {
+                container.innerHTML = '<div style="text-align: center; color: #FF453A; padding: 40px;">Invalid table data received. Please try again.</div>';
+                return;
+            }
+
+            // Create a side-by-side layout container
+            const sideBySideContainer = document.createElement('div');
+            sideBySideContainer.className = 'phoneme-tables';
+            sideBySideContainer.style.display = 'grid';
+            sideBySideContainer.style.gridTemplateColumns = '1fr 1fr 1fr';
+            sideBySideContainer.style.gap = '20px';
+            sideBySideContainer.style.marginBottom = '24px';
+
+            // Ensure tables are displayed in the correct order: onset, nucleus, coda
+            const orderedPositions = ['onset', 'nucleus', 'coda'];
+
+            for (const position of orderedPositions) {
+                if (!tables[position] || !Array.isArray(tables[position])) {
+                    console.log(`Skipping position ${position}: not an array or doesn't exist`);
+                    continue; // Skip if position doesn't exist or is not an array
+                }
+                const phonemes = tables[position];
+                const tableContainer = document.createElement('div');
+                tableContainer.className = 'table-container';
+
+                const tableTitle = document.createElement('div');
+                tableTitle.className = 'table-title';
+                tableTitle.innerHTML = `
+                    <div style="text-align: center;">
+                        <div style="font-size: 16px; font-weight: 600; color: #30D158; margin-bottom: 4px;">
+                            ${position.charAt(0).toUpperCase() + position.slice(1)} Position
+                        </div>
+                        <div style="font-size: 12px; color: #8E8E93; background: rgba(84, 84, 88, 0.4); padding: 4px 8px; border-radius: 4px; display: inline-block;">
+                            ${filters[position].replace('_', ' ')}
+                        </div>
+                    </div>
+                `;
+                tableContainer.appendChild(tableTitle);
+
+                // Add search input
+                const searchInput = document.createElement('input');
+                searchInput.type = 'text';
+                searchInput.className = 'table-search';
+                searchInput.placeholder = `Search ${position} phonemes...`;
+                searchInput.id = `search-${position}`;
+                tableContainer.appendChild(searchInput);
+
+                const table = document.createElement('table');
+                table.className = 'phoneme-table';
+                table.innerHTML = `
+                    <thead>
+                        <tr>
+                            <th>Phoneme</th>
+                        </tr>
+                    </thead>
+                    <tbody id="${position}-tbody">
+                    </tbody>
+                `;
+
+                // Group phonemes by length_type first, then by group_type, subgroup_type, sub_subgroup_type, and sub_sub_subgroup_type with frequency tracking
+                const groupedPhonemes = {};
+                const groupFrequencies = {};
+                const subgroupFrequencies = {};
+                const subSubgroupFrequencies = {};
+                const subSubSubgroupFrequencies = {};
+
+                phonemes.forEach(phoneme => {
+                    // Create a composite key that includes length_type to ensure proper grouping
+                    const compositeGroupKey = `${phoneme.length_type}|${phoneme.group_type}`;
+                    const subgroupKey = phoneme.subgroup_type || 'default';
+                    const subSubgroupKey = phoneme.sub_subgroup_type || 'none';
+                    const subSubSubgroupKey = phoneme.sub_sub_subgroup_type || 'none';
+
+                    if (!groupedPhonemes[compositeGroupKey]) {
+                        groupedPhonemes[compositeGroupKey] = {};
+                        groupFrequencies[compositeGroupKey] = 0;
+                    }
+                    if (!groupedPhonemes[compositeGroupKey][subgroupKey]) {
+                        groupedPhonemes[compositeGroupKey][subgroupKey] = {};
+                        subgroupFrequencies[`${compositeGroupKey}_${subgroupKey}`] = 0;
+                    }
+                    if (!groupedPhonemes[compositeGroupKey][subgroupKey][subSubgroupKey]) {
+                        groupedPhonemes[compositeGroupKey][subgroupKey][subSubgroupKey] = {};
+                        subSubgroupFrequencies[`${compositeGroupKey}_${subgroupKey}_${subSubgroupKey}`] = 0;
+                    }
+                    if (!groupedPhonemes[compositeGroupKey][subgroupKey][subSubgroupKey][subSubSubgroupKey]) {
+                        groupedPhonemes[compositeGroupKey][subgroupKey][subSubgroupKey][subSubSubgroupKey] = [];
+                        subSubSubgroupFrequencies[`${compositeGroupKey}_${subgroupKey}_${subSubgroupKey}_${subSubSubgroupKey}`] = 0;
+                    }
+
+                    groupedPhonemes[compositeGroupKey][subgroupKey][subSubgroupKey][subSubSubgroupKey].push(phoneme);
+                    groupFrequencies[compositeGroupKey] += phoneme.frequency;
+                    subgroupFrequencies[`${compositeGroupKey}_${subgroupKey}`] += phoneme.frequency;
+                    subSubgroupFrequencies[`${compositeGroupKey}_${subgroupKey}_${subSubgroupKey}`] += phoneme.frequency;
+                    subSubSubgroupFrequencies[`${compositeGroupKey}_${subgroupKey}_${subSubgroupKey}_${subSubSubgroupKey}`] += phoneme.frequency;
+                });
+
+                const tbody = table.querySelector(`#${position}-tbody`);
+
+                // Helper function to get length type priority for tie-breaking
+                function getLengthTypePriority(compositeGroupKey) {
+                    // Extract length_type from the composite key (first part before |)
+                    const lengthType = compositeGroupKey.split('|')[0];
+
+                    // Define priority mapping (lower number = higher priority for shorter types)
+                    if (position === 'onset' || position === 'coda') {
+                        const priorityMap = {
+                            'single_consonants': 0,  // Highest priority (shortest)
+                            'cluster2': 1,
+                            'cluster3': 2            // Lowest priority (longest)
+                        };
+                        return priorityMap[lengthType] !== undefined ? priorityMap[lengthType] : 999;
+                    } else if (position === 'nucleus') {
+                        const priorityMap = {
+                            'monophthongs': 0,  // Highest priority (shortest)
+                            'diphthongs': 1     // Lower priority (longer)
+                        };
+                        return priorityMap[lengthType] !== undefined ? priorityMap[lengthType] : 999;
+                    }
+                    return 999;
+                }
+
+                // Sort groups by their aggregate frequency (ascending), then by length type priority for ties
+                const sortedGroups = Object.keys(groupedPhonemes).sort((a, b) => {
+                    const freqA = groupFrequencies[a];
+                    const freqB = groupFrequencies[b];
+
+                    // First, sort by frequency (ascending - lower frequency first)
+                    if (freqA !== freqB) {
+                        return freqA - freqB;
+                    }
+
+                    // If frequencies are equal, apply tie-breaking:
+                    // Groups with shorter length types should come first
+                    const priorityA = getLengthTypePriority(a);
+                    const priorityB = getLengthTypePriority(b);
+
+                    // Debug logging for tie-breaking
+                    if (freqA === freqB) {
+                        console.log(`Tie-breaking: ${a} (freq=${freqA}, priority=${priorityA}) vs ${b} (freq=${freqB}, priority=${priorityB})`);
+                    }
+
+                    return priorityA - priorityB;
+                });
+
+                sortedGroups.forEach(compositeGroupKey => {
+                    // Extract the actual group name from the composite key
+                    const actualGroupType = compositeGroupKey.split('|')[1];
+
+                    // Add group header with frequency number only
+                    const groupRow = document.createElement('tr');
+                    groupRow.innerHTML = `
+                        <td style="background: rgba(78, 78, 80, 0.6); padding: 6px 4px; font-weight: 600; color: #FF9F0A; text-transform: capitalize; border-bottom: 2px solid rgba(84, 84, 88, 0.4); text-align: center; font-size: 12px;">
+                            ${actualGroupType.replace('_', ' ')} (${groupFrequencies[compositeGroupKey]})
+                        </td>
+                    `;
+                    tbody.appendChild(groupRow);
+
+                    // Sort subgroups by their aggregate frequency (ascending)
+                    const sortedSubgroups = Object.keys(groupedPhonemes[compositeGroupKey]).sort((a, b) => {
+                        const freqA = subgroupFrequencies[`${compositeGroupKey}_${a}`];
+                        const freqB = subgroupFrequencies[`${compositeGroupKey}_${b}`];
+                        return freqA - freqB;
+                    });
+
+                    sortedSubgroups.forEach(subgroupType => {
+                        const subgroupData = groupedPhonemes[compositeGroupKey][subgroupType];
+
+                        // Add subgroup header if it's not 'default' or 'none'
+                        if (subgroupType !== 'default' && subgroupType !== 'none') {
+                            const subgroupFreq = subgroupFrequencies[`${compositeGroupKey}_${subgroupType}`];
+                            const subgroupRow = document.createElement('tr');
+                            subgroupRow.innerHTML = `
+                                <td style="background: rgba(58, 58, 60, 0.4); padding: 4px 4px; font-weight: 500; color: #8E8E93; font-size: 11px; text-transform: capitalize; border-bottom: 1px solid rgba(84, 84, 88, 0.2); text-align: center;">
+                                    ${subgroupType.replace('_', ' ')} (${subgroupFreq})
+                                </td>
+                            `;
+                            tbody.appendChild(subgroupRow);
+                        }
+
+                        // Sort sub-subgroups by their aggregate frequency (ascending)
+                        const sortedSubSubgroups = Object.keys(subgroupData).sort((a, b) => {
+                            const freqA = subSubgroupFrequencies[`${compositeGroupKey}_${subgroupType}_${a}`];
+                            const freqB = subSubgroupFrequencies[`${compositeGroupKey}_${subgroupType}_${b}`];
+                            return freqA - freqB;
+                        });
+
+                        sortedSubSubgroups.forEach(subSubgroupType => {
+                            const subSubgroupData = subgroupData[subSubgroupType];
+
+                            // Add sub-subgroup header if it's not 'none'
+                            if (subSubgroupType !== 'none') {
+                                const subSubgroupFreq = subSubgroupFrequencies[`${compositeGroupKey}_${subgroupType}_${subSubgroupType}`];
+                                const subSubgroupRow = document.createElement('tr');
+                                subSubgroupRow.innerHTML = `
+                                    <td style="background: rgba(48, 48, 50, 0.3); padding: 3px 4px; font-weight: 400; color: #AEAEB2; font-size: 10px; text-transform: capitalize; border-bottom: 1px solid rgba(84, 84, 88, 0.1); text-align: center;">
+                                        ${subSubgroupType.replace('_', ' ')} (${subSubgroupFreq})
+                                    </td>
+                                `;
+                                tbody.appendChild(subSubgroupRow);
+                            }
+
+                            // Sort sub-sub-subgroups by their aggregate frequency (ascending)
+                            const sortedSubSubSubgroups = Object.keys(subSubgroupData).sort((a, b) => {
+                                const freqA = subSubSubgroupFrequencies[`${compositeGroupKey}_${subgroupType}_${subSubgroupType}_${a}`];
+                                const freqB = subSubSubgroupFrequencies[`${compositeGroupKey}_${subgroupType}_${subSubgroupType}_${b}`];
+                                return freqA - freqB;
+                            });
+
+                            sortedSubSubSubgroups.forEach(subSubSubgroupType => {
+                                const subSubSubgroupPhonemes = subSubgroupData[subSubSubgroupType];
+
+                                // Add sub-sub-subgroup header if it's not 'none'
+                                if (subSubSubgroupType !== 'none') {
+                                    const subSubSubgroupFreq = subSubSubgroupFrequencies[`${compositeGroupKey}_${subgroupType}_${subSubgroupType}_${subSubSubgroupType}`];
+                                    const subSubSubgroupRow = document.createElement('tr');
+                                    subSubSubgroupRow.innerHTML = `
+                                        <td style="background: rgba(38, 38, 40, 0.2); padding: 3px 6px; font-weight: 400; color: #C7C7CC; font-size: 10px; text-transform: capitalize; border-bottom: 1px solid rgba(84, 84, 88, 0.1); text-align: center;">
+                                            ${subSubSubgroupType.replace('_', ' ')} (${subSubSubgroupFreq})
+                                        </td>
+                                    `;
+                                    tbody.appendChild(subSubSubgroupRow);
+                                }
+
+                                // Sort phonemes by frequency (ascending) for optimal selection
+                                subSubSubgroupPhonemes.sort((a, b) => a.frequency - b.frequency).forEach(phoneme => {
+                                    // Validate phoneme object structure
+                                    if (!phoneme || typeof phoneme !== 'object' || !phoneme.phoneme) {
+                                        console.warn('Invalid phoneme data:', phoneme);
+                                        return;
+                                    }
+
+                                    const row = document.createElement('tr');
+                                    row.setAttribute('data-position', position);
+                                    row.setAttribute('data-number', phoneme.number);
+                                    row.style.cursor = 'pointer';
+                                    const indentStyle = subSubSubgroupType !== 'none' ? 'padding-left: 16px;' : (subSubgroupType !== 'none' ? 'padding-left: 8px;' : 'padding-left: 4px;');
+                                    row.innerHTML = `
+                                        <td class="phoneme-cell" style="text-align: center; font-family: 'Courier New', monospace; font-size: 16px; font-weight: bold; color: #5AC8FA; ${indentStyle}">${phoneme.phoneme} <span style="color: #30D158; font-weight: 600; font-size: 12px;">(${phoneme.frequency || 0})</span></td>
+                                    `;
+
+                                    row.addEventListener('click', (event) => {
+                                    // Handle audio playback first
+                                    event.stopPropagation();
+                                    playPhonemeAudio(phoneme.phoneme, row);
+
+                                    // Then handle selection
+                                    selectPhoneme(position, phoneme.number);
+                                    updateTableSelection(position, phoneme.number);
+                                });
+
+                                tbody.appendChild(row);
+                                });
+                            });
+                        });
+                    });
+
+                    // Add spacing between groups
+                    const spacerRow = document.createElement('tr');
+                    spacerRow.innerHTML = `<td style="height: 8px; background: transparent; border: none;"></td>`;
+                    tbody.appendChild(spacerRow);
+                });
+
+                // Create table wrapper for scrolling
+                const tableWrapper = document.createElement('div');
+                tableWrapper.className = 'table-wrapper';
+                tableWrapper.appendChild(table);
+                
+                tableContainer.appendChild(tableWrapper);
+                sideBySideContainer.appendChild(tableContainer);
+            }
+
+            container.appendChild(sideBySideContainer);
+
+            // Add search functionality after table is populated
+            setTimeout(() => {
+                document.querySelectorAll('.table-search').forEach(searchInput => {
+                    searchInput.addEventListener('input', function() {
+                        const position = this.id.replace('search-', '');
+                        const searchTerm = this.value.toLowerCase();
+                        const tbody = document.querySelector(`#${position}-tbody`);
+
+                        if (tbody) {
+                            const rows = tbody.querySelectorAll('tr');
+                            rows.forEach(row => {
+                                const phonemeCell = row.querySelector('.phoneme-cell');
+                                if (phonemeCell) {
+                                    const phonemeText = phonemeCell.textContent.toLowerCase();
+                                    if (phonemeText.includes(searchTerm)) {
+                                        row.style.display = '';
+                                    } else {
+                                        row.style.display = 'none';
+                                    }
+                                } else {
+                                    // This is a header row or spacer, always show
+                                    row.style.display = '';
+                                }
+                            });
+                        }
+                    });
+                });
+            }, 100);
+
+            // Apply initial phonotactic filtering
+            setTimeout(() => {
+                updatePhonotacticFiltering();
+            }, 100);
+        }
+
+        // Azure TTS only - removed meSpeak initialization
+
+        // X-SAMPA to IPA conversion mapping
+        const xsampaToIPAMap = {
+            // Vowels
+            'i': 'i', 'I': 'ɪ', 'e': 'e', 'E': 'ɛ', '{': 'æ',
+            'A': 'ɑ', 'Q': 'ɒ', 'O': 'ɔ', 'o': 'o', 'U': 'ʊ',
+            'u': 'u', 'V': 'ʌ', '@': 'ə', '3': 'ɜ',
+            // Consonants
+            'p': 'p', 'b': 'b', 't': 't', 'd': 'd', 'k': 'k', 'g': 'g',
+            'f': 'f', 'v': 'v', 'T': 'θ', 'D': 'ð', 's': 's', 'z': 'z',
+            'S': 'ʃ', 'Z': 'ʒ', 'h': 'h', 'm': 'm', 'n': 'n', 'N': 'ŋ',
+            'l': 'l', 'r': 'r', 'w': 'w', 'j': 'j'
+        };
+
+        function convertXSAMPAtoIPA(xsampaText) {
+            let ipaText = '';
+            for (let char of xsampaText) {
+                if (xsampaToIPAMap[char]) {
+                    ipaText += xsampaToIPAMap[char];
+                } else {
+                    ipaText += char; // Keep unmapped characters as-is
+                }
+            }
+            return ipaText;
+        }
+
+        // Azure TTS with SSML phonemes - removed eSpeak mapping
+
+        // Azure TTS handles IPA directly via SSML phonemes - no conversion needed
+
+        // Azure TTS only - removed browser TTS fallback
+
+        function convertAndPlayXSAMPA() {
+            const xsampaInput = document.getElementById('xsampaInput');
+            const ipaDisplay = document.getElementById('ipaDisplay');
+            
+            if (!xsampaInput.value.trim()) {
+                showMessage('Please enter X-SAMPA text', 'error');
+                return;
+            }
+
+            // Convert X-SAMPA to IPA
+            const ipaText = convertXSAMPAtoIPA(xsampaInput.value.trim());
+            
+            // Update the IPA display
+            ipaDisplay.textContent = ipaText;
+            ipaDisplay.style.background = 'rgba(90, 200, 250, 0.1)';
+            ipaDisplay.style.borderColor = 'rgba(90, 200, 250, 0.3)';
+            
+            // Show conversion in console for debugging
+            console.log(`X-SAMPA: ${xsampaInput.value} → IPA: ${ipaText}`);
+            
+            // Play the converted IPA
+            playPhonemeAudio(ipaText, ipaDisplay);
+            
+            // Show success message
+            showMessage(`Converted: ${xsampaInput.value} → ${ipaText}`, 'success');
+        }
+
+        function selectPhoneme(position, number, fromSuggestion = false) {
+            const phonemeData = currentTables[position].find(p => p.number === number);
+            if (!phonemeData) return;
+
+            // Check phonotactic compatibility in assisted mode
+            if (phonotacticMode === 'assisted') {
+                const compatibility = getPhonemeCompatibility(phonemeData.phoneme, position, selectedPhonemes);
+                if (compatibility === 'incompatible') {
+                    showMessage(`⚠️ ${phonemeData.phoneme} cannot appear in ${position} position in English. Switch to Free mode to allow this combination.`, 'error');
+                    return;
+                } else if (compatibility === 'problematic') {
+                    const confirmMsg = `⚠️ ${phonemeData.phoneme} in ${position} position creates an unusual English sound pattern.\n\nProceed anyway?`;
+                    if (!confirm(confirmMsg)) {
+                        return;
+                    }
+                }
+            }
+
+            selectedPhonemes[position] = phonemeData;
+
+            // Update current syllable in the syllables array
+            if (syllables[currentSyllableIndex]) {
+                syllables[currentSyllableIndex].phonemes[position] = phonemeData;
+            }
+
+            updateSelectedPhonemes();
+            updateIPA();
+            updateTableSelection(position, number);
+            updateCreateButton();
+            updatePhonotacticFiltering(); // Update filtering based on new selection
+
+            // Update syllable tabs to show the new phoneme
+            renderSyllableTabs();
+
+            // Only regenerate suggestions if this selection was NOT from a suggestion click
+            // If user clicked a suggestion, we want to keep the same suggestions displayed
+            if (!fromSuggestion) {
+                // Regenerate suggestions when a phoneme is manually selected to reflect new state
+                generateSuggestionsFromTables(true); // Preserve current display state
+            }
+        }
+
+        function updateTableSelection(position, number) {
+            // Remove previous selections from all rows for this position
+            document.querySelectorAll(`tr[data-position="${position}"]`).forEach(row => {
+                row.classList.remove('selected');
+            });
+
+            // Add selection to the current row
+            const selectedRow = document.querySelector(`tr[data-position="${position}"][data-number="${number}"]`);
+            if (selectedRow) {
+                selectedRow.classList.add('selected');
+            }
+        }
+
+
+        function updateSelectedPhonemes() {
+            updateUnifiedDisplay();
+        }
+
+        function updateUnifiedDisplay() {
+            const unifiedDisplay = document.getElementById('unifiedPhonemeDisplay');
+            const noSelectionMessage = document.getElementById('noSelectionMessage');
+
+            // Check if ANY syllable has phonemes
+            const hasAnyPhonemes = syllables.some(syl => Object.keys(syl.phonemes).length > 0);
+
+            if (!hasAnyPhonemes) {
+                unifiedDisplay.style.display = 'none';
+                noSelectionMessage.style.display = 'block';
+                return;
+            }
+
+            // Build display for ALL syllables
+            let fullIpa = '';
+            let syllablesHtml = '';
+
+            syllables.forEach((syllable, syllableIndex) => {
+                const positions = ['onset', 'nucleus', 'coda'];
+                let syllableIpa = '';
+                let syllablePhonemes = '';
+                let syllableNumbers = [];
+
+                // Build display for this syllable
+                positions.forEach((position) => {
+                    if (syllable.phonemes[position]) {
+                        const phoneme = syllable.phonemes[position];
+                        syllableIpa += phoneme.phoneme;
+                        syllablePhonemes += `<span class="ipa-phoneme" style="color: #5AC8FA; font-family: 'Courier New', monospace; padding: 2px 4px;">${phoneme.phoneme}</span> `;
+                        syllableNumbers.push(phoneme.number || 'N/A');
+                    }
+                });
+
+                if (syllableIpa) {
+                    fullIpa += syllableIpa;
+
+                    // Add syllable section with click handler for individual syllable playback
+                    syllablesHtml += `
+                        <div class="syllable-block" data-syllable-ipa="${syllableIpa}" data-syllable-index="${syllableIndex}" style="margin-bottom: 12px; padding: 8px; background: rgba(28, 28, 30, 0.4); border-radius: 6px; border-left: 3px solid ${syllableIndex === currentSyllableIndex ? '#007AFF' : '#5AC8FA'}; cursor: pointer; transition: background 0.2s;" onmouseover="this.style.background='rgba(28, 28, 30, 0.6)'" onmouseout="this.style.background='rgba(28, 28, 30, 0.4)'">
+                            <div style="font-size: 10px; color: #8E8E93; margin-bottom: 4px;">Syllable ${syllableIndex + 1}</div>
+                            <div style="font-weight: bold; color: #5AC8FA; font-family: 'Courier New', monospace; font-size: 16px; margin-bottom: 4px;">${syllableIpa}</div>
+                            <div style="font-size: 11px; color: #8E8E93;">
+                                Phonemes: ${syllablePhonemes}
+                            </div>
+                            <div style="font-size: 10px; color: #666; margin-top: 4px;">
+                                Numbers: ${syllableNumbers.join(', ')}
+                            </div>
+                        </div>
+                    `;
+                }
+            });
+
+            // Create unified display content showing all syllables
+            unifiedDisplay.innerHTML = `
+                <div style="margin-bottom: 8px;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; padding-bottom: 8px; border-bottom: 1px solid rgba(90, 200, 250, 0.3);">
+                        <span style="font-weight: bold; color: #30D158; font-family: 'Courier New', monospace; font-size: 20px;">${fullIpa}</span>
+                        <span style="font-size: 11px; color: #8E8E93; line-height: 1.3;">
+                            Click word: Play full word<br>
+                            Click syllable: Play that syllable<br>
+                            Double-click: Individual phonemes
+                        </span>
+                    </div>
+                    ${syllablesHtml}
+                </div>
+            `;
+
+            // Show unified display, hide no selection message
+            unifiedDisplay.style.display = 'block';
+            noSelectionMessage.style.display = 'none';
+
+            // Add enhanced click handling
+            addUnifiedDisplayClickHandling(unifiedDisplay, fullIpa);
+        }
+
+        function addUnifiedDisplayClickHandling(element, ipa) {
+            // Clear existing event listeners
+            const newElement = element.cloneNode(true);
+            element.parentNode.replaceChild(newElement, element);
+            element = newElement;
+            
+            let clickTimeout;
+            let isHolding = false;
+            let holdTimeout;
+            let lastClickTime = 0;
+
+            // Single click - play entire word OR individual syllable
+            element.onclick = (event) => {
+                if (isHolding) return; // Ignore if holding
+
+                // Check if click is on a syllable block
+                const syllableBlock = event.target.closest('.syllable-block');
+                if (syllableBlock) {
+                    // Play only this syllable
+                    const syllableIpa = syllableBlock.getAttribute('data-syllable-ipa');
+                    const syllableIndex = syllableBlock.getAttribute('data-syllable-index');
+                    if (syllableIpa) {
+                        console.log(`Playing syllable ${parseInt(syllableIndex) + 1}: ${syllableIpa}`);
+                        playPhonemeAudio(syllableIpa, syllableBlock);
+                        event.stopPropagation(); // Don't trigger parent click
+                    }
+                    return;
+                }
+
+                const currentTime = Date.now();
+                if (currentTime - lastClickTime < 300) {
+                    // This is a double click
+                    if (clickTimeout) {
+                        clearTimeout(clickTimeout);
+                        clickTimeout = null;
+                    }
+                    lastClickTime = 0;
+                } else {
+                    // Wait to see if this becomes a double click
+                    clickTimeout = setTimeout(() => {
+                        // Single click on full word - play entire word
+                        lastClickTime = currentTime;
+                        console.log(`Playing full word: ${ipa}`);
+                        playPhonemeAudio(ipa, element);
+                        clickTimeout = null;
+                    }, 300);
+                }
+            };
+
+            // Double click - play individual phoneme blocks
+            element.ondblclick = (event) => {
+                event.preventDefault();
+                playIndividualPhonemes();
+            };
+
+            // Hold/press - play individual phoneme blocks
+            element.onmousedown = (event) => {
+                isHolding = true;
+                holdTimeout = setTimeout(() => {
+                    if (isHolding) {
+                        playIndividualPhonemes();
+                    }
+                }, 500); // 500ms hold time
+            };
+
+            element.onmouseup = (event) => {
+                isHolding = false;
+                clearTimeout(holdTimeout);
+            };
+
+            element.onmouseleave = (event) => {
+                isHolding = false;
+                clearTimeout(holdTimeout);
+            };
+
+            // Right click - play individual phoneme blocks
+            element.oncontextmenu = (event) => {
+                event.preventDefault();
+                playIndividualPhonemes();
+            };
+
+            // Ctrl+Click and Shift+Click - play individual phoneme blocks
+            element.addEventListener('click', (event) => {
+                if (event.ctrlKey || event.shiftKey) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                    playIndividualPhonemes();
+                }
+            }, true);
+
+            // Touch events for mobile
+            let touchStartTime;
+            element.ontouchstart = (event) => {
+                touchStartTime = Date.now();
+                isHolding = true;
+                holdTimeout = setTimeout(() => {
+                    if (isHolding) {
+                        playIndividualPhonemes(); // Long press
+                    }
+                }, 500);
+            };
+
+            element.ontouchend = (event) => {
+                const touchDuration = Date.now() - touchStartTime;
+                isHolding = false;
+                clearTimeout(holdTimeout);
+                
+                if (touchDuration < 500) {
+                    if (clickTimeout) {
+                        clearTimeout(clickTimeout);
+                        playIndividualPhonemes(); // Double tap
+                        clickTimeout = null;
+                    } else {
+                        clickTimeout = setTimeout(() => {
+                            playPhonemeAudio(ipa, element); // Single tap
+                            clickTimeout = null;
+                        }, 300);
+                    }
+                }
+            };
+
+            // Make focusable for keyboard events
+            element.setAttribute('tabindex', '0');
+        }
+
+        function updateIPA() {
+            // IPA display is now handled by updateUnifiedDisplay
+            updateUnifiedDisplay();
+            return;
+            
+            const ipaDisplay = document.getElementById('ipaDisplay');
+            const positions = ['onset', 'nucleus', 'coda'];
+            let ipa = '';
+            positions.forEach(position => {
+                if (selectedPhonemes[position]) {
+                    ipa += selectedPhonemes[position].phoneme;
+                }
+            });
+
+            if (ipa) {
+                // Create individual spans for each phoneme for sequential highlighting
+                ipaDisplay.innerHTML = '';
+                positions.forEach((position, index) => {
+                    if (selectedPhonemes[position]) {
+                        const span = document.createElement('span');
+                        span.id = `ipa-phoneme-${index}`;
+                        span.className = 'ipa-phoneme';
+                        span.textContent = selectedPhonemes[position].phoneme;
+                        ipaDisplay.appendChild(span);
+                    }
+                });
+                
+                ipaDisplay.style.background = 'rgba(90, 200, 250, 0.1)';
+                ipaDisplay.style.borderColor = 'rgba(90, 200, 250, 0.3)';
+
+                // Add enhanced click event listeners for audio playback
+                let clickTimeout;
+                let isHolding = false;
+                let holdTimeout;
+                let lastClickTime = 0;
+
+                // Click - play full word or individual phonemes based on click type
+                ipaDisplay.onclick = (event) => {
+                    if (isHolding) return; // Ignore if holding
+                    
+                    if (event.ctrlKey) {
+                        event.preventDefault();
+                        playIndividualPhonemes();
+                        return;
+                    }
+                    
+                    if (event.shiftKey) {
+                        event.preventDefault();
+                        playIndividualPhonemes();
+                        return;
+                    }
+                    
+                    const currentTime = Date.now();
+                    const timeDiff = currentTime - lastClickTime;
+                    
+                    if (timeDiff < 300) {
+                        // Double click detected
+                        event.preventDefault();
+                        playIndividualPhonemes();
+                        lastClickTime = 0; // Reset to prevent triple click
+                    } else {
+                        // Single click
+                        lastClickTime = currentTime;
+                        playPhonemeAudio(ipa, ipaDisplay);
+                    }
+                };
+
+                // Double tap - play individual phoneme blocks
+                ipaDisplay.ondblclick = (event) => {
+                    event.preventDefault();
+                    playIndividualPhonemes();
+                };
+
+                // Hold/press - play individual phoneme blocks
+                ipaDisplay.onmousedown = (event) => {
+                    isHolding = true;
+                    holdTimeout = setTimeout(() => {
+                        if (isHolding) {
+                            playIndividualPhonemes();
+                        }
+                    }, 500); // 500ms hold time
+                };
+
+                ipaDisplay.onmouseup = (event) => {
+                    isHolding = false;
+                    clearTimeout(holdTimeout);
+                };
+
+                ipaDisplay.onmouseleave = (event) => {
+                    isHolding = false;
+                    clearTimeout(holdTimeout);
+                };
+
+                // Right click - play individual phoneme blocks
+                ipaDisplay.oncontextmenu = (event) => {
+                    event.preventDefault();
+                    playIndividualPhonemes();
+                };
+
+                // Touch events for mobile
+                let touchStartTime;
+                ipaDisplay.ontouchstart = (event) => {
+                    touchStartTime = Date.now();
+                    isHolding = true;
+                    holdTimeout = setTimeout(() => {
+                        if (isHolding) {
+                            playIndividualPhonemes();
+                        }
+                    }, 500);
+                };
+
+                ipaDisplay.ontouchend = (event) => {
+                    const touchDuration = Date.now() - touchStartTime;
+                    isHolding = false;
+                    clearTimeout(holdTimeout);
+                    
+                    // Double tap detection
+                    if (touchDuration < 200) {
+                        if (clickTimeout) {
+                            clearTimeout(clickTimeout);
+                            playIndividualPhonemes(); // Double tap
+                        } else {
+                            clickTimeout = setTimeout(() => {
+                                playPhonemeAudio(ipa, ipaDisplay); // Single tap
+                                clickTimeout = null;
+                            }, 300);
+                        }
+                    }
+                };
+
+                // Make focusable for keyboard events
+                ipaDisplay.setAttribute('tabindex', '0');
+            } else {
+                ipaDisplay.textContent = 'Select phonemes to build IPA';
+                ipaDisplay.style.background = 'rgba(84, 84, 88, 0.2)';
+                ipaDisplay.style.borderColor = 'rgba(84, 84, 88, 0.3)';
+                ipaDisplay.onclick = null;
+            }
+        }
+
+        function updateCreateButton() {
+            const syllableType = document.getElementById('syllableType').value;
+            currentSyllableType = syllableType; 
+
+            const requiredPositions = syllableType.split('').map(char => {
+                if (char === 'C') return ['onset', 'coda'];
+                if (char === 'V') return 'nucleus';
+                return null;
+            }).flat().filter(Boolean);
+
+            const hasAllRequired = requiredPositions.every(pos => selectedPhonemes[pos]);
+            document.getElementById('createWordBtn').disabled = !hasAllRequired;
+        }
+
+        async function generateSuggestionsFromTables(preserveDisplayState = false) {
+            const suggestionsSection = document.getElementById('suggestions-section');
+            const suggestionsContainer = document.getElementById('suggestions-container');
+            const filteredSuggestionsSection = document.getElementById('filtered-suggestions-section');
+            const filteredSuggestionsContainer = document.getElementById('filtered-suggestions-container');
+            const suggestionsHeader = document.getElementById('suggestions-header');
+            const suggestionsInfo = document.getElementById('suggestions-info');
+
+            suggestionsContainer.innerHTML = '<div style="text-align: center; color: #8E8E93; padding: 20px;">Generating suggestions...</div>';
+            filteredSuggestionsContainer.innerHTML = '';
+            filteredSuggestionsSection.style.display = 'none';
+
+            // Show suggestions if we have loaded tables
+            if (!currentTables || Object.keys(currentTables).length === 0) {
+                suggestionsSection.style.display = 'none';
+                return;
+            }
+
+            // Update header to show current syllable number
+            const syllableNumber = currentSyllableIndex + 1;
+            const totalSyllables = syllables.length;
+            suggestionsHeader.textContent = `💡 Optimized Syllable Suggestions (Syllable ${syllableNumber}/${totalSyllables})`;
+            suggestionsInfo.textContent = `Suggestions for Syllable ${syllableNumber} are generated using least frequent phonemes. Click any suggestion to auto-select its phonemes.`;
+
+            // Determine positions based on syllable type
+            let positions = [];
+            if (currentSyllableType === 'CVC') {
+                positions = ['onset', 'nucleus', 'coda'];
+            } else if (currentSyllableType === 'CV') {
+                positions = ['onset', 'nucleus'];
+            } else if (currentSyllableType === 'VC') {
+                positions = ['nucleus', 'coda'];
+            }
+
+            // Generate suggestions from the current table data
+            const suggestions = generateSuggestionsFromCurrentTables(positions, maxSuggestionsToGenerate);
+            console.log(`Generated ${suggestions.length} initial suggestions for syllable ${syllableNumber}`);
+
+            const filteredSuggestions = filterSuggestionsForConflicts(suggestions, positions);
+            console.log(`After filtering: ${filteredSuggestions.clean.length} clean, ${filteredSuggestions.conflicts.length} conflicts`);
+
+            displaySuggestions(filteredSuggestions.clean, filteredSuggestions.conflicts, !preserveDisplayState);
+            suggestionsSection.style.display = 'block';
+        }
+
+        function generateSuggestionsFromCurrentTables(positions, maxSuggestions) {
+            if (!positions || positions.length === 0) {
+                return [];
+            }
+
+            // Pull the actual phoneme entries for each position instead of assuming sequential numbering
+            const phonemeLists = positions.map(position => {
+                const tableEntries = currentTables[position];
+                return Array.isArray(tableEntries) ? tableEntries.filter(entry => entry && typeof entry === 'object') : [];
+            });
+
+            // If any position lacks data, no suggestions can be generated
+            if (phonemeLists.some(list => list.length === 0)) {
+                return [];
+            }
+
+            // Limit how many phonemes we consider per position so the Cartesian product stays manageable
+            const perPositionLimit = Math.max(1, Math.ceil(Math.pow(maxSuggestions, 1 / positions.length)));
+            const trimmedLists = phonemeLists.map(list => list.slice(0, perPositionLimit));
+
+            const combinations = [];
+            const currentCombination = [];
+
+            function buildCombinations(depth, totalFrequency) {
+                if (depth === trimmedLists.length) {
+                    combinations.push({
+                        numbers: [...currentCombination],
+                        score: totalFrequency
+                    });
+                    return;
+                }
+
+                const entries = trimmedLists[depth];
+                for (let i = 0; i < entries.length; i++) {
+                    const entry = entries[i];
+                    const frequencyValue = Number(entry.frequency) || 0;
+                    currentCombination.push(entry.number);
+                    buildCombinations(depth + 1, totalFrequency + frequencyValue);
+                    currentCombination.pop();
+                }
+            }
+
+            buildCombinations(0, 0);
+
+            combinations.sort((a, b) => a.score - b.score);
+
+            return combinations.slice(0, maxSuggestions).map(item => item.numbers);
+        }
+
+        function filterSuggestionsForConflicts(suggestions, positions) {
+            const cleanSuggestions = [];
+            const conflictingSuggestions = [];
+
+            // Get existing IPA pronunciations from database to avoid conflicts
+            const existingIPA = new Set(); // This would normally be loaded from backend
+
+            // Create comprehensive English word mapping
+            const englishWordMap = {
+                // Function words
+                "ðə": "the", "ʌv": "of", "ænd": "and", "tu": "to", "ə": "a", "ɪn": "in", "ɪt": "it", "ɪz": "is",
+                "wɪð": "with", "hɪz": "his", "ɔn": "on", "bi": "be", "æt": "at", "baɪ": "by", "ðɪs": "this",
+                "aɪ": "I", "nɑt": "not", "ɔr": "or", "wʌt": "what", "wi": "we", "kæn": "can", "aʊt": "out",
+                "wɝ": "were", "wɪtʃ": "which", "du": "do", "ðɛr": "their", "taɪm": "time", "ɪf": "if", "wɪl": "will",
+                "haʊ": "how", "sɛd": "said", "æn": "an", "itʃ": "each", "ʃi": "she", "meɪ": "may", "juz": "use",
+
+                // Short vowel CVC patterns
+                "pæt": "pat", "bæt": "bat", "kæt": "cat", "hæt": "hat", "mæt": "mat", "ræt": "rat", "fæt": "fat", "sæt": "sat",
+                "pɪt": "pit", "bɪt": "bit", "kɪt": "kit", "hɪt": "hit", "fɪt": "fit", "sɪt": "sit", "wɪt": "wit", "lɪt": "lit",
+                "bʌt": "but", "kʌt": "cut", "gʌt": "gut", "hʌt": "hut", "nʌt": "nut", "rʌt": "rut", "ʃʌt": "shut",
+                "bɛt": "bet", "gɛt": "get", "sɛt": "set", "lɛt": "let", "mɛt": "met", "nɛt": "net", "pɛt": "pet", "wɛt": "wet",
+
+                // Animals
+                "kæt": "cat", "dɔg": "dog", "bɝrd": "bird", "fɪʃ": "fish", "kaʊ": "cow", "pɪg": "pig",
+
+                // Colors  
+                "rɛd": "red", "blu": "blue", "grin": "green", "jɛloʊ": "yellow", "blæk": "black", "waɪt": "white",
+
+                // Numbers
+                "wʌn": "one", "tu": "two", "θri": "three", "fɔr": "four", "faɪv": "five", "sɪks": "six",
+
+                // Common verbs
+                "rʌn": "run", "wɔk": "walk", "sɪt": "sit", "lʊk": "look", "si": "see", "pleɪ": "play",
+
+                // Common adjectives
+                "bɪg": "big", "smɔl": "small", "gud": "good", "bæd": "bad", "hɑt": "hot", "koʊld": "cold",
+
+                // Body parts
+                "hɛd": "head", "aɪ": "eye", "hænd": "hand", "fʊt": "foot", "hɑrt": "heart"
+            };
+
+            const commonEnglishIPA = new Set(Object.keys(englishWordMap));
+
+            suggestions.forEach(suggestion => {
+                const ipa = buildIPAFromSuggestion(suggestion, positions);
+                if (ipa && !commonEnglishIPA.has(ipa) && !existingIPA.has(ipa)) {
+                    cleanSuggestions.push(suggestion);
+                } else if (ipa) {
+                    let conflictWord = 'unknown conflict';
+                    if (commonEnglishIPA.has(ipa)) {
+                        conflictWord = `English word '${englishWordMap[ipa]}'`;
+                    } else if (existingIPA.has(ipa)) {
+                        conflictWord = 'existing word in database';
+                    }
+
+                    console.log(`Found conflict: ${ipa} conflicts with ${conflictWord}`);
+
+                    conflictingSuggestions.push({
+                        suggestion: suggestion,
+                        ipa: ipa,
+                        conflict_info: conflictWord,
+                        conflict_word: conflictWord
+                    });
+                }
+            });
+
+            return {
+                clean: cleanSuggestions,
+                conflicts: conflictingSuggestions
+            };
+        }
+
+        function buildIPAFromSuggestion(suggestion, positions) {
+            let ipa = '';
+            for (let i = 0; i < positions.length; i++) {
+                const position = positions[i];
+                const number = suggestion[i];
+                const phoneme = currentTables[position]?.find(p => p.number === number);
+                if (phoneme) {
+                    ipa += phoneme.phoneme;
+                } else {
+                    return null; // Invalid suggestion
+                }
+            }
+            return ipa;
+        }
+
+        function displaySuggestions(suggestions, filteredSuggestions, resetDisplay = true) {
+            const suggestionsContainer = document.getElementById('suggestions-container');
+            const filteredSuggestionsContainer = document.getElementById('filtered-suggestions-container');
+            const filteredSuggestionsSection = document.getElementById('filtered-suggestions-section');
+            const extendSuggestionsSection = document.getElementById('extend-suggestions-section');
+            const remainingCountDiv = document.getElementById('remaining-count');
+
+            // Store all suggestions for extending
+            if (resetDisplay) {
+                allCurrentSuggestions = suggestions || [];
+                allCurrentFilteredSuggestions = filteredSuggestions || [];
+                displayedSuggestionCount = 0;
+                suggestionsContainer.innerHTML = '';
+            }
+
+            if (allCurrentSuggestions && allCurrentSuggestions.length > 0) {
+                const positions = currentSyllableType === 'CVC' ? ['onset', 'nucleus', 'coda'] : 
+                                 currentSyllableType === 'CV' ? ['onset', 'nucleus'] : ['nucleus', 'coda'];
+
+                // Calculate how many to display this time
+                const startIndex = displayedSuggestionCount;
+                const endIndex = Math.min(displayedSuggestionCount + suggestionsPerPage, allCurrentSuggestions.length);
+                
+                // Add new suggestions to the container
+                allCurrentSuggestions.slice(startIndex, endIndex).forEach((suggestion, index) => {
+                    const globalIndex = startIndex + index; // Calculate global suggestion index
+                    const item = createSuggestionItemFromNumbers(suggestion, positions, false, globalIndex);
+                    suggestionsContainer.appendChild(item);
+                });
+                
+                displayedSuggestionCount = endIndex;
+                
+                // Show/hide extend button based on remaining suggestions
+                const remaining = allCurrentSuggestions.length - displayedSuggestionCount;
+                if (remaining > 0) {
+                    extendSuggestionsSection.style.display = 'block';
+                    remainingCountDiv.textContent = `(${remaining} more suggestions available)`;
+                } else {
+                    extendSuggestionsSection.style.display = 'none';
+                }
+            } else {
+                if (resetDisplay) {
+                    suggestionsContainer.innerHTML = '<div style="text-align: center; color: #8E8E93; padding: 20px;">No suggestions available for current settings.</div>';
+                    extendSuggestionsSection.style.display = 'none';
+                }
+            }
+
+            // Handle filtered suggestions (only reset on full refresh)
+            if (resetDisplay) {
+                filteredSuggestionsContainer.innerHTML = '';
+                if (allCurrentFilteredSuggestions && allCurrentFilteredSuggestions.length > 0) {
+                    // Store the raw conflict data for later use
+                    conflictingSuggestionsData = allCurrentFilteredSuggestions; 
+
+                    allCurrentFilteredSuggestions.slice(0, 10).forEach((conflictData, index) => {
+                        const item = createSuggestionItemFromConflict(conflictData, index); // Pass index for event listener
+                        filteredSuggestionsContainer.appendChild(item);
+                    });
+
+                    // Ensure the section is visible and reopen button is hidden
+                    filteredSuggestionsSection.style.display = 'block';
+                    filteredSuggestionsContainer.style.display = 'block';
+                    document.getElementById('reopen-filtered-section').style.display = 'none';
+
+                    console.log(`Displaying ${allCurrentFilteredSuggestions.length} filtered suggestions`);
+                } else {
+                    filteredSuggestionsSection.style.display = 'none';
+                    document.getElementById('reopen-filtered-section').style.display = 'none';
+                    console.log('No filtered suggestions to display');
+                }
+            }
+        }
+
+        function extendSuggestions() {
+            console.log('Extending suggestions display...');
+            // Call displaySuggestions with resetDisplay=false to add more suggestions
+            displaySuggestions(null, null, false);
+            
+            // Log the action for debugging
+            const remaining = allCurrentSuggestions.length - displayedSuggestionCount;
+            console.log(`Extended to show ${displayedSuggestionCount} suggestions. ${remaining} remaining.`);
+        }
+
+        function createSuggestionItemFromNumbers(suggestion, positions, isFiltered, suggestionIndex = 0) {
+            const item = document.createElement('div');
+            item.className = `suggestion-item ${isFiltered ? 'filtered' : ''}`;
+
+            // Build phoneme display and IPA from current tables
+            let phonemeDisplay = '';
+            let ipa = '';
+            const phonemeData = [];
+
+            for (let i = 0; i < positions.length; i++) {
+                const position = positions[i];
+                const number = suggestion[i];
+                const phoneme = currentTables[position]?.find(p => p.number === number);
+
+                if (phoneme) {
+                    phonemeData.push({
+                        position: position,
+                        number: number,
+                        phoneme: phoneme.phoneme,
+                        length_type: phoneme.length_type,
+                        group_type: phoneme.group_type,
+                        subgroup_type: phoneme.subgroup_type,
+                        frequency: phoneme.frequency
+                    });
+                    ipa += phoneme.phoneme;
+                    phonemeDisplay += `<span id="phoneme-${suggestionIndex}-${i}" class="suggestion-phoneme" style="color: #5AC8FA; font-family: 'Courier New', monospace;">${phoneme.phoneme}</span> (${position}) `;
+                }
+            }
+
+            item.innerHTML = `
+                <div style="margin-bottom: 8px;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
+                        <span style="font-weight: bold; color: #30D158; font-family: 'Courier New', monospace; font-size: 18px;">${ipa}</span>
+                        <span style="font-size: 11px; color: #8E8E93; line-height: 1.3;">
+                                Click: Play word<br>
+                                Double-click: Individual phonemes<br>
+                                Hold/Right-click/Ctrl+Click/Shift+Click: Individual phonemes
+                        </span>
+                    </div>
+                    <div style="font-size: 12px; color: #8E8E93; margin-bottom: 4px;">
+                        ${phonemeDisplay}
+                    </div>
+                    <div style="font-size: 11px; color: #666;">
+                        Numbers: ${suggestion.join(', ')}
+                    </div>
+                </div>
+            `;
+
+            // Add enhanced click handling with all interaction methods
+            // Transform data structure to match what playIndividualPhonemesFromSuggestion expects
+            const transformedPhonemeData = phonemeData.map(p => ({
+                position: p.position,
+                phoneme: p.phoneme,
+                data: {
+                    frequency: p.frequency,
+                    group: p.group_type,
+                    subgroup: p.subgroup_type,
+                    length_type: p.length_type
+                }
+            }));
+            addEnhancedClickHandling(item, transformedPhonemeData, ipa, suggestionIndex, () => {
+                // Auto-select the phonemes from the suggestion
+                phonemeData.forEach(data => {
+                    selectPhoneme(data.position, data.number, true); // fromSuggestion = true
+                });
+
+                // Update the IPA display to show this suggestion
+                const unifiedDisplay = document.getElementById('unifiedPhonemeDisplay');
+                if (unifiedDisplay) {
+                    unifiedDisplay.innerHTML = `
+                        <div style="margin-bottom: 8px;">
+                            <span style="font-weight: bold; color: #5AC8FA; font-family: 'Courier New', monospace; font-size: 18px;">${ipa}</span>
+                        </div>
+                    `;
+                    unifiedDisplay.style.display = 'block';
+                    document.getElementById('noSelectionMessage').style.display = 'none';
+                }
+
+                // Show success message
+                showMessage(`Selected suggestion: ${ipa}`, 'success');
+            });
+
+            return item;
+        }
+
+        function createSuggestionItemFromConflict(conflictData, index) {
+            const item = document.createElement('div');
+            item.className = 'suggestion-item filtered';
+
+            const positions = currentSyllableType === 'CVC' ? ['onset', 'nucleus', 'coda'] : 
+                             currentSyllableType === 'CV' ? ['onset', 'nucleus'] : ['nucleus', 'coda'];
+
+            // Build phoneme display from current tables
+            let phonemeDisplay = '';
+            const phonemeDataArray = [];
+
+            for (let i = 0; i < positions.length; i++) {
+                const position = positions[i];
+                const number = conflictData.suggestion[i];
+                const phoneme = currentTables[position]?.find(p => p.number === number);
+
+                if (phoneme) {
+                    phonemeDataArray.push({
+                        position: position,
+                        number: number,
+                        phoneme: phoneme.phoneme,
+                        length_type: phoneme.length_type,
+                        group_type: phoneme.group_type,
+                        subgroup_type: phoneme.subgroup_type,
+                        frequency: phoneme.frequency
+                    });
+                    phonemeDisplay += `<span id="phoneme-filtered-${index}-${i}" class="suggestion-phoneme" style="color: #5AC8FA; font-family: 'Courier New', monospace;">${phoneme.phoneme}</span> (${position}) `;
+                }
+            }
+
+            // Get the specific conflict word - try multiple fields for compatibility
+            let conflictText = 'unknown conflict';
+            if (conflictData.conflict_word && conflictData.conflict_word !== 'unknown conflict') {
+                conflictText = conflictData.conflict_word;
+            } else if (conflictData.conflict_info && conflictData.conflict_info !== 'unknown conflict') {
+                conflictText = conflictData.conflict_info;
+            }
+
+            item.innerHTML = `
+                <div style="margin-bottom: 8px;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
+                        <span style="font-weight: bold; color: #FF9F0A; font-family: 'Courier New', monospace; font-size: 18px;">${conflictData.ipa}</span>
+                        <span style="font-size: 11px; color: #8E8E93; line-height: 1.3;">
+                                Click: Play word<br>
+                                Double-click: Individual phonemes<br>
+                                Hold/Right-click/Ctrl+Click/Shift+Click: Individual phonemes
+                        </span>
+                    </div>
+                    <div style="font-size: 12px; color: #8E8E93; margin-bottom: 4px;">
+                        ${phonemeDisplay}
+                    </div>
+                    <div style="color: #FF453A; font-size: 12px; margin-top: 4px;">
+                        ⚠️ Conflicts with: ${conflictText}
+                    </div>
+                    <div style="font-size: 11px; color: #666;">
+                        Numbers: ${conflictData.suggestion.join(', ')}
+                    </div>
+                </div>
+            `;
+
+            // Add enhanced click handling for filtered suggestions
+            // Use 'filtered-' prefix to distinguish from regular suggestions
+            addEnhancedClickHandling(item, phonemeDataArray.map(p => ({
+                position: p.position,
+                phoneme: p.phoneme,
+                data: p
+            })), conflictData.ipa, `filtered-${index}`, () => {
+                selectFilteredSuggestion(index); // Use the function that handles confirmation
+            });
+
+            return item;
+        }
+
+        function selectFilteredSuggestion(index) {
+            const conflict = conflictingSuggestionsData[index]; // Use the stored data
+            if (!conflict) return;
+
+            const confirmMsg = `⚠️  This will create '${conflict.ipa}' which conflicts with ${conflict.conflict_info}.\n\nDo you want to use this suggestion anyway?`;
+
+            if (confirm(confirmMsg)) {
+                // Auto-select the phonemes from the suggestion
+                const positions = currentSyllableType === 'CVC' ? ['onset', 'nucleus', 'coda'] : 
+                                 currentSyllableType === 'CV' ? ['onset', 'nucleus'] : ['nucleus', 'coda'];
+
+                conflict.suggestion.forEach((number, i) => {
+                    selectPhoneme(positions[i], number, true); // fromSuggestion = true
+                });
+
+                // Update the IPA display to show this suggestion
+                const unifiedDisplay = document.getElementById('unifiedPhonemeDisplay');
+                if (unifiedDisplay) {
+                    unifiedDisplay.innerHTML = `
+                        <div style="margin-bottom: 8px;">
+                            <span style="font-weight: bold; color: #5AC8FA; font-family: 'Courier New', monospace; font-size: 18px;">${conflict.ipa}</span>
+                        </div>
+                    `;
+                    unifiedDisplay.style.display = 'block';
+                    document.getElementById('noSelectionMessage').style.display = 'none';
+                }
+
+                // Show success message with specific conflict info
+                showMessage(`Selected filtered suggestion: ${conflict.ipa} (conflicts with ${conflict.conflict_info})`, 'success');
+            }
+        }
+
+        function hideConflictingSuggestions() {
+            const filteredSection = document.getElementById('filtered-suggestions-section');
+            const reopenSection = document.getElementById('reopen-filtered-section');
+
+            filteredSection.style.display = 'none';
+            reopenSection.style.display = 'block';
+        }
+
+        function showConflictingSuggestions() {
+            const filteredSection = document.getElementById('filtered-suggestions-section');
+            const reopenSection = document.getElementById('reopen-filtered-section');
+
+            filteredSection.style.display = 'block';
+            reopenSection.style.display = 'none';
+        }
+
+        // Language selection functions
+        function handleLanguageChange() {
+            const select = document.getElementById('languageSelect');
+            const inputContainer = document.getElementById('languageInputContainer');
+            const input = document.getElementById('languageInput');
+            const btn = document.getElementById('newLanguageBtn');
+            
+            if (select.value === '') {
+                inputContainer.style.display = 'none';
+                input.value = '';
+                btn.textContent = '+ New Language';
+            } else {
+                inputContainer.style.display = 'block';
+                input.value = select.value;
+                btn.textContent = 'Cancel';
+            }
+        }
+        
+        function toggleLanguageInput() {
+            const select = document.getElementById('languageSelect');
+            const inputContainer = document.getElementById('languageInputContainer');
+            const input = document.getElementById('languageInput');
+            const btn = document.getElementById('newLanguageBtn');
+            
+            // Check if input container is currently hidden
+            const isHidden = inputContainer.style.display === 'none' || 
+                           getComputedStyle(inputContainer).display === 'none' ||
+                           inputContainer.style.display === '';
+            
+            if (isHidden) {
+                // Show input container for new language
+                inputContainer.style.display = 'block';
+                select.value = '';
+                input.value = '';
+                input.focus();
+                btn.textContent = 'Cancel';
+            } else {
+                // Hide input container and reset
+                inputContainer.style.display = 'none';
+                input.value = '';
+                btn.textContent = '+ New Language';
+            }
+        }
+        
+        function getSelectedLanguage() {
+            const select = document.getElementById('languageSelect');
+            const input = document.getElementById('languageInput');
+            
+            if (select.value !== '') {
+                return select.value;
+            } else if (input.value.trim() !== '') {
+                return input.value.trim();
+            }
+            return 'Constructed Language';
+        }
+        
+        // Load languages on page load
+        async function loadLanguages() {
+            try {
+                const [languagesResponse, lastLanguageResponse] = await Promise.all([
+                    fetch('/api/languages'),
+                    fetch('/api/last-language')
+                ]);
+                
+                const languagesData = await languagesResponse.json();
+                const lastLanguageData = await lastLanguageResponse.json();
+                
+                const select = document.getElementById('languageSelect');
+                const input = document.getElementById('languageInput');
+                
+                // Clear existing options except the first one
+                select.innerHTML = '<option value="">Select existing language...</option>';
+                
+                // Add existing languages
+                if (languagesData.success && languagesData.languages.length > 0) {
+                    languagesData.languages.forEach(lang => {
+                        const option = document.createElement('option');
+                        option.value = lang;
+                        option.textContent = lang;
+                        select.appendChild(option);
+                    });
+                }
+                
+                // Set default to last used language
+                if (lastLanguageData.success && lastLanguageData.last_language) {
+                    const lastLang = lastLanguageData.last_language;
+                    const existingOption = select.querySelector(`option[value="${lastLang}"]`);
+                    if (existingOption) {
+                        select.value = lastLang;
+                        input.value = lastLang;
+                    } else {
+                        input.value = lastLang;
+                        inputContainer.style.display = 'block';
+                    }
+                }
+            } catch (error) {
+                console.error('Error loading languages:', error);
+            }
+        }
+        
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', loadLanguages);
+
+        async function createWord() {
+            const language = getSelectedLanguage();
+            const englishWords = document.getElementById('englishWords').value;
+            const newLanguageWord = document.getElementById('newLanguageWord').value;
+
+            if (!newLanguageWord.trim()) {
+                showMessage('Please enter a word in your constructed language', 'error');
+                return;
+            }
+
+            // Save current syllable state before submitting
+            saveCurrentSyllableState();
+
+            const createBtn = document.getElementById('createWordBtn');
+            const originalText = createBtn.innerHTML;
+
+            createBtn.disabled = true;
+            createBtn.innerHTML = '<span class="loading"></span> Creating Word...';
+
+            try {
+                const formData = new FormData();
+                formData.append('language', language);
+                formData.append('english_words', englishWords);
+                formData.append('new_language_word', newLanguageWord);
+
+                // Send syllables array as JSON
+                formData.append('syllables', JSON.stringify(syllables));
+
+                // For backward compatibility, send first syllable's data in old format
+                if (syllables.length > 0 && Object.keys(syllables[0].phonemes).length > 0) {
+                    formData.append('syllable_type', syllables[0].syllableType);
+                    for (const [position, phonemeData] of Object.entries(syllables[0].phonemes)) {
+                        formData.append(`${position}_phoneme`, phonemeData.phoneme);
+                        formData.append(`${position}_length_type`, phonemeData.length_type);
+                    }
+                }
+
+                const videoFile = document.getElementById('video-upload').files[0];
+                if (videoFile) {
+                    formData.append('video', videoFile);
+                }
+
+                const response = await fetch('/api/create-word', {
+                    method: 'POST',
+                    body: formData
+                });
+
+                const data = await response.json();
+
+                if (data.success) {
+                    // Show success message with word details
+                    const wordDetails = data.word ?
+                        `Created: ${data.word.new_language_word} (${data.word.ipa_phonetics}) - English: ${Array.isArray(data.word.english_words) ? data.word.english_words.join(', ') : data.word.english_words}` :
+                        '';
+                    showMessage(data.message + (wordDetails ? '\n' + wordDetails : ''), 'success');
+
+                    // Clear the form
+                    clearForm();
+
+                    // Reload phoneme tables to show updated frequencies
+                    await loadPhonemeTable();
+                } else {
+                    showMessage(`Error creating word: ${data.error}`, 'error');
+                }
+            } catch (error) {
+                showMessage('Network error: ' + error.message, 'error');
+            } finally {
+                createBtn.disabled = false;
+                createBtn.innerHTML = originalText;
+            }
+        }
+
+        function showMessage(message, type) {
+            const container = document.getElementById('messageContainer');
+            const messageClass = type === 'success' ? 'success-message' : 'error-message';
+            container.innerHTML = `<div class="${messageClass}">${message}</div>`;
+            setTimeout(() => { container.innerHTML = ''; }, 5000);
+        }
+
+        function clearAllSelections() {
+            selectedPhonemes = {};
+            updateSelectedPhonemes();
+            updateIPA();
+            updateCreateButton();
+            document.querySelectorAll('.phoneme-table tr.selected').forEach(row => {
+                row.classList.remove('selected');
+            });
+        }
+
+        function clearForm() {
+            // Clear input fields
+            document.getElementById('englishWords').value = '';
+            document.getElementById('newLanguageWord').value = '';
+
+            // Clear video upload
+            const videoInput = document.getElementById('video-upload');
+            if (videoInput) videoInput.value = '';
+
+            // Clear selections
+            clearAllSelections();
+
+            // Reset syllables to single syllable
+            syllables = [
+                {
+                    syllableType: 'CVC',
+                    phonemes: {}
+                }
+            ];
+            currentSyllableIndex = 0;
+            currentSyllableType = 'CVC';
+
+            // Re-render syllable tabs
+            renderSyllableTabs();
+
+            // Reset to single phonemes view
+            currentFilters = {
+                onset: 'single_consonants',
+                nucleus: 'monophthongs',
+                coda: 'single_consonants'
+            };
+
+            // Clear any preview displays
+            const unifiedDisplay = document.getElementById('unifiedPhonemeDisplay');
+            if (unifiedDisplay) {
+                unifiedDisplay.innerHTML = '';
+                unifiedDisplay.style.display = 'none';
+            }
+            const noSelectionMessage = document.getElementById('noSelectionMessage');
+            if (noSelectionMessage) {
+                noSelectionMessage.style.display = 'block';
+            }
+        }
+
+        document.getElementById('syllableType').addEventListener('change', function() {
+            updateCreateButton();
+            // Regenerate suggestions when syllable type changes
+            if (currentTables && Object.keys(currentTables).length > 0) {
+                currentSyllableType = this.value;
+
+                // Update current syllable's type
+                if (syllables[currentSyllableIndex]) {
+                    syllables[currentSyllableIndex].syllableType = currentSyllableType;
+                }
+
+                // Update syllable tabs to reflect the change
+                renderSyllableTabs();
+
+                generateSuggestionsFromTables();
+            }
+        });
+
+        document.getElementById('video-upload').addEventListener('change', function(event) {
+            const videoPreview = document.getElementById('video-preview');
+            if (videoPreview) {
+                videoPreview.remove(); 
+            }
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const previewContainer = document.createElement('div');
+                    previewContainer.innerHTML = `
+                        <video id="video-preview" controls class="video-preview">
+                            Your browser does not support the video tag.
+                        </video>
+                    `;
+                    // Find the correct parent to append the preview
+                    const uploadLabel = document.querySelector('label[for="video-upload"]');
+                    if (uploadLabel) {
+                        uploadLabel.parentNode.insertBefore(previewContainer.firstChild, uploadLabel.nextSibling);
+                    } else {
+                        // Fallback if label not found
+                        document.getElementById('video-upload').parentNode.appendChild(previewContainer.firstChild);
+                    }
+                }
+                reader.readAsDataURL(file);
+            }
+        });
+
+        // Audio functions for phoneme pronunciation
+        (function setupAudioInstrumentation() {
+            if (window.__ttsAudioPatched) {
+                return;
+            }
+            const OriginalAudio = window.Audio;
+            if (!OriginalAudio) {
+                console.warn('Audio API unavailable; skipping instrumentation');
+                return;
+            }
+            window.__ttsAudioPatched = true;
+            window.__ttsPlaybackLog = [];
+
+            window.Audio = function(...args) {
+                const audioInstance = new OriginalAudio(...args);
+                const source = args && args.length > 0 ? args[0] : undefined;
+
+                const entry = {
+                    source,
+                    createdAt: Date.now(),
+                    events: [],
+                };
+                window.__ttsPlaybackLog.push(entry);
+
+                const originalPlay = audioInstance.play ? audioInstance.play.bind(audioInstance) : null;
+                if (originalPlay) {
+                    audioInstance.play = async () => {
+                        entry.events.push({ type: 'play', timestamp: Date.now() });
+                        try {
+                            const result = await originalPlay();
+                            entry.events.push({ type: 'play-resolved', timestamp: Date.now() });
+                            return result;
+                        } catch (err) {
+                            entry.events.push({ type: 'play-error', timestamp: Date.now(), message: err?.message || String(err) });
+                            throw err;
+                        }
+                    };
+                }
+
+                audioInstance.addEventListener('ended', () => {
+                    entry.events.push({ type: 'ended', timestamp: Date.now() });
+                });
+                audioInstance.addEventListener('error', (event) => {
+                    entry.events.push({ type: 'html5-error', timestamp: Date.now(), detail: event?.message || '' });
+                });
+
+                return audioInstance;
+            };
+            window.Audio.prototype = OriginalAudio.prototype;
+        })();
+
+        function initializeAudio() {
+            try {
+                if ('speechSynthesis' in window) {
+                    console.log('Speech Synthesis API available');
+                    return true;
+                }
+                console.warn('Speech Synthesis API not available');
+                return false;
+            } catch (error) {
+console.error('Error initializing audio:', error);
+                return false;
+            }
+        }
+
+        // Check if a string represents a single phoneme block by querying the database
+        async function isSinglePhonemeBlock(phoneme) {
+            try {
+                const response = await fetch('/api/phonemes/check-single', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ phoneme: phoneme })
+                });
+
+                const data = await response.json();
+                return data.is_single_phoneme || false;
+            } catch (error) {
+                console.error('Error checking if phoneme is single block:', error);
+                // Fallback: assume it's a single phoneme if it's 3 characters or less
+                return phoneme.length <= 3;
+            }
+        }
+
+
+
+
+        async function playPhonemeAudio(phoneme, rowElement) {
+            if (!phoneme || phoneme.trim() === '') return;
+
+            // Stop any currently playing audio
+            stopCurrentAudio();
+
+            // Add visual feedback
+            if (rowElement) {
+                rowElement.classList.add('audio-playing');
+            }
+
+            try {
+                // Determine position context for single phonemes
+                let position = 'standalone';
+                if (rowElement && rowElement.closest && phoneme.length <= 2) {
+                    const tableContainer = rowElement.closest('.table-container');
+                    if (tableContainer) {
+                        const titleElement = tableContainer.querySelector('.table-title');
+                        if (titleElement && titleElement.textContent) {
+                            const titleText = titleElement.textContent.toLowerCase();
+                            if (titleText.includes('nucleus')) {
+                                position = 'nucleus';
+                            } else if (titleText.includes('coda')) {
+                                position = 'coda';
+                            } else if (titleText.includes('onset')) {
+                                position = 'onset';
+                            }
+                        }
+                    }
+                }
+
+                console.log('Playing phoneme audio:', phoneme, '→ position:', position);
+
+                // Using Azure TTS for accurate IPA pronunciation
+                let audioPlayed = false;
+
+                // Check if this is a single phoneme block by checking if it exists in the database
+                const isSinglePhoneme = await isSinglePhonemeBlock(phoneme);
+                
+                if (!isSinglePhoneme || position === 'standalone') {
+                    // For complete words, multi-phoneme sequences, or standalone phonemes, use IPA endpoint
+                    audioPlayed = await playIPAAudio(phoneme, rowElement);
+                } else {
+                    // For individual phoneme blocks with position context, use phoneme endpoint
+                    audioPlayed = await playPhonemeIPAAudio(phoneme, position, rowElement);
+                }
+
+                // Use Azure TTS directly
+                if (!audioPlayed) {
+                    console.log('Using Azure TTS');
+                    await playAzureTTS(phoneme, position, rowElement);
+                }
+
+            } catch (error) {
+                console.error('Error playing phoneme audio:', error);
+                if (rowElement) {
+                    rowElement.classList.remove('audio-playing');
+                    rowElement.classList.add('audio-error');
+                    setTimeout(() => {
+                        rowElement.classList.remove('audio-error');
+                    }, 1000);
+                }
+                showMessage('Audio playback failed', 'error');
+            }
+        }
+
+        async function playIPAAudio(ipaText, rowElement) {
+            try {
+                const response = await fetch('/api/tts/ipa', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ ipa: ipaText })
+                });
+
+                const data = await response.json();
+
+                if (data.success && data.audio_data) {
+                    // Use the format returned by the API (mp3 for Azure TTS)
+                    const audioFormat = data.format || 'wav';
+                    const audio = new Audio(`data:audio/${audioFormat};base64,${data.audio_data}`);
+
+                    audio.onended = () => {
+                        if (rowElement) {
+                            rowElement.classList.remove('audio-playing');
+                        }
+                        currentAudio = null;
+                    };
+
+                    audio.onerror = () => {
+                        console.error('Audio playback error');
+                        return false;
+                    };
+
+                    currentAudio = audio;
+                    await audio.play();
+                    return true;
+                } else {
+                    const reason = data.message || data.error || 'Unknown reason';
+                    console.log('Azure TTS not available:', reason);
+                    showMessage(`Azure Speech TTS unavailable — ${reason}`, 'warning');
+                    return false;
+                }
+            } catch (error) {
+                console.error('Error with Azure TTS TTS:', error);
+                showMessage(`Azure Speech TTS request failed: ${error.message}`, 'error');
+                return false;
+            }
+        }
+
+        async function playPhonemeIPAAudio(phoneme, position, rowElement) {
+            try {
+                console.log(`🔊 Calling phoneme API for: ${phoneme} in position: ${position}`);
+                const response = await fetch('/api/tts/phoneme', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ 
+                        phoneme: phoneme, 
+                        position: position 
+                    })
+                });
+
+                const data = await response.json();
+                console.log(`🔊 Phoneme API response:`, data);
+
+                if (data.success && data.audio_data) {
+                    // Use the format returned by the API (mp3 for Azure TTS)
+                    const audioFormat = data.format || 'wav';
+                    const audio = new Audio(`data:audio/${audioFormat};base64,${data.audio_data}`);
+
+                    audio.onended = () => {
+                        if (rowElement) {
+                            rowElement.classList.remove('audio-playing');
+                        }
+                        currentAudio = null;
+                    };
+
+                    audio.onerror = () => {
+                        console.error('Audio playback error');
+                        return false;
+                    };
+
+                    currentAudio = audio;
+                    await audio.play();
+                    return true;
+                } else {
+                    const reason = data.message || data.error || 'Unknown reason';
+                    console.log('Azure phoneme TTS not available:', reason);
+                    showMessage(`Azure Speech phoneme playback unavailable — ${reason}`, 'warning');
+                    return false;
+                }
+            } catch (error) {
+                console.error('Error with Azure TTS phoneme TTS:', error);
+                showMessage(`Azure Speech phoneme request failed: ${error.message}`, 'error');
+                return false;
+            }
+        }
+
+        async function playAzureTTS(phoneme, position, rowElement) {
+            try {
+                // Use raw IPA directly without any mapping
+                console.log('Playing Azure TTS for raw IPA:', phoneme);
+                
+                if (rowElement) {
+                    rowElement.classList.add('audio-playing');
+                }
+
+                // Call Azure TTS API with raw IPA
+                const response = await fetch('/api/tts/ipa', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        ipa: phoneme
+                    })
+                });
+
+                const result = await response.json();
+
+                if (result.success) {
+                    // Use the format returned by the API (mp3 for Azure TTS)
+                    const audioFormat = result.format || 'mp3';
+                    const audioData = `data:audio/${audioFormat};base64,${result.audio_data}`;
+                    const audio = new Audio(audioData);
+                    
+                    currentAudio = audio;
+                    
+                    audio.onended = () => {
+                        if (rowElement) {
+                            rowElement.classList.remove('audio-playing');
+                        }
+                        currentAudio = null;
+                    };
+
+                    audio.onerror = (error) => {
+                        console.error('Audio playback error:', error);
+                        if (rowElement) {
+                            rowElement.classList.remove('audio-playing');
+                            rowElement.classList.add('audio-error');
+                            setTimeout(() => {
+                                rowElement.classList.remove('audio-error');
+                            }, 1000);
+                        }
+                        currentAudio = null;
+                        showMessage(`Audio playback failed for "${phoneme}"`, 'error');
+                    };
+
+                    await audio.play();
+                    return true;
+                } else {
+                    console.error('Azure TTS failed:', result.error);
+                    if (rowElement) {
+                        rowElement.classList.remove('audio-playing');
+                        rowElement.classList.add('audio-error');
+                        setTimeout(() => {
+                            rowElement.classList.remove('audio-error');
+                        }, 1000);
+                    }
+                    showMessage(`TTS failed: ${result.error}`, 'error');
+                    return false;
+                }
+
+            } catch (error) {
+                console.error('Error with Azure TTS:', error);
+                if (rowElement) {
+                    rowElement.classList.remove('audio-playing');
+                    rowElement.classList.add('audio-error');
+                    setTimeout(() => {
+                        rowElement.classList.remove('audio-error');
+                    }, 1000);
+                }
+                showMessage(`Azure Speech fallback failed: ${error.message}`, 'error');
+                showMessage(`TTS error: ${error.message}`, 'error');
+                return false;
+            }
+        }
+
+        function stopCurrentAudio() {
+            if (currentAudio || speechSynthesis.speaking) {
+                speechSynthesis.cancel();
+                currentAudio = null;
+
+                // Remove visual indicators
+                document.querySelectorAll('.audio-playing').forEach(element => {
+                    element.classList.remove('audio-playing');
+                });
+            }
+        }
+
+        // Expose helpers globally for automation tooling (Playwright, MCP runners, etc.)
+        window.playPhonemeAudio = playPhonemeAudio;
+        window.playPhonemeIPAAudio = playPhonemeIPAAudio;
+        window.playIPAAudio = playIPAAudio;
+        window.playAzureTTS = playAzureTTS;
+        window.initializeAudio = initializeAudio;
+
+        // Function to play individual phoneme blocks
+        async function playIndividualPhonemes() {
+            const positions = ['onset', 'nucleus', 'coda'];
+            const phonemes = [];
+            
+            // Collect all selected phonemes
+            positions.forEach(position => {
+                if (selectedPhonemes[position]) {
+                    phonemes.push({
+                        position: position,
+                        phoneme: selectedPhonemes[position].phoneme,
+                        data: selectedPhonemes[position]
+                    });
+                }
+            });
+            
+            if (phonemes.length === 0) {
+                showMessage('No phonemes selected to play', 'error');
+                return;
+            }
+            
+            // Show message about playing individual phonemes
+            showMessage('Playing individual phoneme blocks...', 'info');
+            
+            // Play each phoneme with context and delay
+            for (let i = 0; i < phonemes.length; i++) {
+                const { position, phoneme, data } = phonemes[i];
+                
+                // Add visual feedback to the unified phoneme display
+                const unifiedPhonemeElement = document.getElementById(`unified-phoneme-${i}`);
+                if (unifiedPhonemeElement) {
+                    unifiedPhonemeElement.classList.add('audio-playing');
+                }
+                
+                // Create context string for the phoneme
+                let contextParts = [];
+                if (data.group_type && data.group_type !== 'none') {
+                    contextParts.push(data.group_type);
+                }
+                if (data.subgroup_type && data.subgroup_type !== 'none') {
+                    contextParts.push(data.subgroup_type);
+                }
+                if (data.sub_subgroup_type && data.sub_subgroup_type !== 'none') {
+                    contextParts.push(data.sub_subgroup_type);
+                }
+                if (data.sub_sub_subgroup_type && data.sub_sub_subgroup_type !== 'none') {
+                    contextParts.push(data.sub_sub_subgroup_type);
+                }
+                
+                const contextString = contextParts.length > 0 ? ` (${contextParts.join(' - ')})` : '';
+                const fullPhonemeWithContext = `${phoneme}${contextString}`;
+                
+                // Show context in message
+                showMessage(`Playing ${position}: ${fullPhonemeWithContext}`, 'info');
+                
+                // Play the phoneme using the same logic as the tables
+                // Call the phoneme API directly with position context for proper context vowels
+                await playPhonemeIPAAudio(phoneme, position, unifiedPhonemeElement);
+                
+                // Wait a bit before playing the next phoneme
+                if (i < phonemes.length - 1) {
+                    await new Promise(resolve => setTimeout(resolve, 800));
+                }
+                
+                // Remove visual feedback from unified display
+                if (unifiedPhonemeElement) {
+                    unifiedPhonemeElement.classList.remove('audio-playing');
+                }
+            }
+        }
+
+        // Function to play individual phoneme blocks from suggestion data
+        async function playIndividualPhonemesFromSuggestion(phonemeData, ipa, suggestionIndex) {
+            if (!phonemeData || phonemeData.length === 0) {
+                showMessage('No phonemes available to play', 'error');
+                return;
+            }
+            
+            // Show message about playing individual phonemes
+            showMessage(`Playing individual phoneme blocks for: ${ipa}`, 'info');
+            
+            // Play each phoneme with context and delay
+            for (let i = 0; i < phonemeData.length; i++) {
+                const { position, phoneme, data } = phonemeData[i];
+                
+                // Build contextual information similar to playIndividualPhonemes
+                const contextParts = [];
+                
+                // Add frequency information
+                const freq = data.frequency || 0;
+                contextParts.push(`freq: ${freq}`);
+                
+                // Add group/subgroup information
+                if (data.group) {
+                    contextParts.push(`group: ${data.group}`);
+                    if (data.subgroup && data.subgroup !== 'null') {
+                        contextParts.push(`subgroup: ${data.subgroup}`);
+                    }
+                }
+                
+                // Build full context string
+                const contextString = contextParts.length > 0 ? ` (${contextParts.join(' - ')})` : '';
+                const fullPhonemeWithContext = `${phoneme}${contextString}`;
+                
+                // Add visual feedback to the suggestion phoneme span
+                const phonemeElement = document.getElementById(`phoneme-${suggestionIndex}-${i}`);
+                if (phonemeElement) {
+                    phonemeElement.classList.add('audio-playing');
+                }
+                
+                // Show context in message
+                showMessage(`Playing ${position}: ${fullPhonemeWithContext}`, 'info');
+                
+                // Play the phoneme using the same logic as the original function
+                await playPhonemeIPAAudio(phoneme, position, null);
+                
+                // Remove visual feedback after playback
+                if (phonemeElement) {
+                    phonemeElement.classList.remove('audio-playing');
+                }
+                
+                // Wait a bit before playing the next phoneme
+                if (i < phonemeData.length - 1) {
+                    await new Promise(resolve => setTimeout(resolve, 800));
+                }
+            }
+        }
+
+        // Enhanced click handling for suggestions (mirrors IPA display behavior)
+        function addEnhancedClickHandling(item, phonemeData, ipa, suggestionIndex, onSelect) {
+            let clickTimeout;
+            let isHolding = false;
+            let holdTimeout;
+            let lastClickTime = 0;
+
+            // Single click with modifier detection
+            item.onclick = (event) => {
+                if (isHolding) return; // Ignore if holding
+                
+                if (event.ctrlKey) {
+                    event.preventDefault();
+                    playIndividualPhonemesFromSuggestion(phonemeData, ipa, suggestionIndex);
+                    return;
+                }
+                
+                if (event.shiftKey) {
+                    event.preventDefault();
+                    playIndividualPhonemesFromSuggestion(phonemeData, ipa, suggestionIndex);
+                    return;
+                }
+                
+                const currentTime = Date.now();
+                const timeDiff = currentTime - lastClickTime;
+                
+                if (timeDiff < 300) {
+                    // Double click detected
+                    event.preventDefault();
+                    playIndividualPhonemesFromSuggestion(phonemeData, ipa, suggestionIndex);
+                    lastClickTime = 0; // Reset to prevent triple click
+                } else {
+                    // Single click - normal behavior
+                    lastClickTime = currentTime;
+                    // Play audio and select suggestion
+                    playPhonemeAudio(ipa, item);
+                    onSelect(); // Execute the original selection logic
+                }
+            };
+
+            // Double click - play individual phoneme blocks
+            item.ondblclick = (event) => {
+                event.preventDefault();
+                playIndividualPhonemesFromSuggestion(phonemeData, ipa);
+            };
+
+            // Hold/press - play individual phoneme blocks
+            item.onmousedown = (event) => {
+                isHolding = true;
+                holdTimeout = setTimeout(() => {
+                    if (isHolding) {
+                        playIndividualPhonemesFromSuggestion(phonemeData, ipa, suggestionIndex);
+                    }
+                }, 500); // 500ms hold time
+            };
+
+            item.onmouseup = (event) => {
+                isHolding = false;
+                clearTimeout(holdTimeout);
+            };
+
+            item.onmouseleave = (event) => {
+                isHolding = false;
+                clearTimeout(holdTimeout);
+            };
+
+            // Right click - play individual phoneme blocks
+            item.oncontextmenu = (event) => {
+                event.preventDefault();
+                playIndividualPhonemesFromSuggestion(phonemeData, ipa);
+            };
+
+            // Touch events for mobile
+            let touchStartTime;
+            item.ontouchstart = (event) => {
+                touchStartTime = Date.now();
+                isHolding = true;
+                holdTimeout = setTimeout(() => {
+                    if (isHolding) {
+                        playIndividualPhonemesFromSuggestion(phonemeData, ipa, suggestionIndex);
+                    }
+                }, 500);
+            };
+
+            item.ontouchend = (event) => {
+                const touchDuration = Date.now() - touchStartTime;
+                isHolding = false;
+                clearTimeout(holdTimeout);
+                
+                // Double tap detection
+                if (touchDuration < 200) {
+                    if (clickTimeout) {
+                        clearTimeout(clickTimeout);
+                        playIndividualPhonemesFromSuggestion(phonemeData, ipa, suggestionIndex); // Double tap
+                    } else {
+                        clickTimeout = setTimeout(() => {
+                            playPhonemeAudio(ipa, item); // Single tap
+                            onSelect(); // Execute selection logic
+                            clickTimeout = null;
+                        }, 300);
+                    }
+                }
+            };
+        }
+
+        // Initialize audio when page loads and voices are loaded
+        function initializeVoices() {
+            return new Promise((resolve) => {
+                let voices = speechSynthesis.getVoices();
+
+                if (voices.length > 0) {
+                    resolve(voices);
+                } else {
+                    speechSynthesis.onvoiceschanged = () => {
+                        voices = speechSynthesis.getVoices();
+                        resolve(voices);
+                    };
+                }
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', async () => {
+            // Initialize audio system
+            if (initializeAudio()) {
+                await initializeVoices();
+                console.log('Audio system initialized');
+            }
+
+            // Initialize multi-syllable tabs
+            initializeSyllableTabs();
+
+            loadPhonemeTable();
+            updateCreateButton();
+
+            // Azure TTS only - removed browser TTS initialization
+
+            // Add phonotactic mode toggle event listener
+            document.getElementById('phonotacticMode').addEventListener('change', function() {
+                phonotacticMode = this.value;
+                updatePhonotacticFiltering();
+                
+                // Show/hide legend based on mode
+                const legend = document.getElementById('phonotactic-legend');
+                if (legend) {
+                    legend.style.display = (phonotacticMode === 'assisted') ? 'block' : 'none';
+                }
+                
+                console.log('Phonotactic mode changed to:', phonotacticMode);
+            });
+
+            // Initialize legend visibility
+            const legend = document.getElementById('phonotactic-legend');
+            if (legend) {
+                legend.style.display = (phonotacticMode === 'assisted') ? 'block' : 'none';
+            }
+        });
+
+        // Stop audio when page is being unloaded
+        window.addEventListener('beforeunload', stopCurrentAudio);
+    </script>
+</body>
+</html>

@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Phoneme Frequency Tracker</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+            background: linear-gradient(135deg, #1c1c1e 0%, #2c2c2e 100%);
+            color: #ffffff;
+            min-height: 100vh;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 16px;
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .header h1 {
+            font-size: 42px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            background: linear-gradient(90deg, #007AFF, #5AC8FA, #30D158);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .user-info {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            background: rgba(58, 58, 60, 0.6);
+            padding: 12px 20px;
+            border-radius: 12px;
+            border: 1px solid rgba(84, 84, 88, 0.4);
+        }
+
+        .user-avatar {
+            width: 32px;
+            height: 32px;
+            background: linear-gradient(45deg, #007AFF, #5AC8FA);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: white;
+        }
+
+        .logout-link {
+            color: #FF453A;
+            text-decoration: none;
+            font-weight: 600;
+            margin-left: 16px;
+        }
+
+        .logout-link:hover {
+            text-decoration: underline;
+        }
+
+        .welcome-section {
+            background: rgba(58, 58, 60, 0.6);
+            border: 1px solid rgba(84, 84, 88, 0.4);
+            border-radius: 20px;
+            padding: 24px;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .welcome-title {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .welcome-subtitle {
+            font-size: 16px;
+            color: #8E8E93;
+            margin-bottom: 20px;
+        }
+
+        .sections-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 30px;
+        }
+
+        .section {
+            background: rgba(58, 58, 60, 0.6);
+            border: 1px solid rgba(84, 84, 88, 0.4);
+            border-radius: 20px;
+            padding: 24px;
+            backdrop-filter: blur(20px);
+        }
+
+        .section-title {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+        }
+
+        .section-icon {
+            font-size: 28px;
+            margin-right: 12px;
+            width: 40px;
+        }
+
+        .create-button {
+            background: #007AFF;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 12px 24px;
+            border-radius: 12px;
+            font-weight: 600;
+            transition: all 0.2s ease;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+
+        .create-button:hover {
+            background: #0056CC;
+            transform: translateY(-2px);
+        }
+
+        .create-button.group {
+            background: #30D158;
+        }
+
+        .create-button.group:hover {
+            background: #28CD4C;
+        }
+
+        .items-grid {
+            display: grid;
+            gap: 16px;
+        }
+
+        .item-card {
+            background: rgba(44, 44, 46, 0.6);
+            border: 1px solid rgba(84, 84, 88, 0.3);
+            border-radius: 12px;
+            padding: 20px;
+            transition: all 0.2s ease;
+            cursor: pointer;
+        }
+
+        .item-card:hover {
+            background: rgba(84, 84, 88, 0.8);
+            transform: translateY(-2px);
+        }
+
+        .item-name {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .storage-tag {
+            font-size: 11px;
+            padding: 2px 8px;
+            border-radius: 999px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            border: 1px solid rgba(99, 99, 102, 0.4);
+            background: rgba(84, 84, 88, 0.35);
+            color: #8E8E93;
+        }
+
+        .storage-tag.cloud {
+            background: rgba(10, 132, 255, 0.15);
+            border-color: rgba(10, 132, 255, 0.35);
+            color: #0A84FF;
+        }
+
+        .storage-tag.local {
+            background: rgba(50, 215, 75, 0.15);
+            border-color: rgba(50, 215, 75, 0.35);
+            color: #30D158;
+        }
+
+        .storage-tag.hybrid {
+            background: rgba(175, 82, 222, 0.18);
+            border-color: rgba(175, 82, 222, 0.4);
+            color: #AF52DE;
+        }
+
+        .item-meta {
+            font-size: 14px;
+            color: #8E8E93;
+            margin-bottom: 12px;
+        }
+
+        .item-actions {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .action-button {
+            background: rgba(84, 84, 88, 0.6);
+            border: none;
+            border-radius: 8px;
+            padding: 6px 12px;
+            color: #ffffff;
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-decoration: none;
+        }
+
+        .action-button:hover {
+            background: rgba(84, 84, 88, 0.8);
+        }
+
+        .action-button.enter {
+            background: rgba(0, 122, 255, 0.2);
+            color: #007AFF;
+        }
+
+        .action-button.enter:hover {
+            background: rgba(0, 122, 255, 0.3);
+        }
+
+        .admin-badge {
+            background: #30D158;
+            color: white;
+            padding: 4px 8px;
+            border-radius: 6px;
+            font-size: 10px;
+            font-weight: 600;
+            margin-left: 8px;
+        }
+
+        .no-items {
+            text-align: center;
+            color: #8E8E93;
+            padding: 40px 20px;
+            font-size: 16px;
+        }
+
+        .flash-messages {
+            margin-bottom: 20px;
+        }
+
+        .flash-message {
+            padding: 12px 16px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+
+        .flash-message.error {
+            background: rgba(255, 69, 58, 0.2);
+            border: 1px solid rgba(255, 69, 58, 0.4);
+            color: #FF453A;
+        }
+
+        .flash-message.success {
+            background: rgba(48, 209, 88, 0.2);
+            border: 1px solid rgba(48, 209, 88, 0.4);
+            color: #30D158;
+        }
+
+        @media (max-width: 768px) {
+            .sections-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .header h1 {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div>
+                <h1>🏠 Dashboard</h1>
+            </div>
+            <div class="user-info">
+                <div class="user-avatar">{{ user.name[0].upper() }}</div>
+                <div class="user-details">
+                    <div class="user-name">{{ user.name }}</div>
+                    <div class="user-status">✅ Authenticated</div>
+                </div>
+                <a href="{{ url_for('logout') }}" class="logout-link">Sign Out</a>
+            </div>
+        </div>
+
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                <div class="flash-messages">
+                    {% for category, message in messages %}
+                        <div class="flash-message {{ category }}">{{ message }}</div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        {% endwith %}
+
+        <div class="welcome-section">
+            <div class="welcome-title">Welcome back, {{ user.name }}!</div>
+            <div class="welcome-subtitle">Manage your language projects and collaborate with groups</div>
+        </div>
+
+        <div class="sections-grid">
+            <!-- Projects Section -->
+            <div class="section">
+                <div class="section-title">
+                    <span class="section-icon">🚀</span>
+                    My Projects
+                </div>
+                <div class="actions" style="display:flex; gap:12px; flex-wrap:wrap; margin-bottom:20px;">
+                    <a href="/projects/create" class="create-button">➕ Create New Project</a>
+                    <a href="/projects" class="create-button" style="background:#5e5ce6;">📂 Open My Projects</a>
+                </div>
+
+                <div class="no-items">
+                    Use the button above to create a project or open the full projects view.
+                </div>
+            </div>
+
+            <!-- Shared Projects Section -->
+            <div class="section">
+                <div class="section-title">
+                    <span class="section-icon">👥</span>
+                    Shared Projects
+                </div>
+
+                {% if shared_projects %}
+                    <div class="items-grid">
+                        {% for project in shared_projects %}
+                        <div class="item-card">
+                            <div class="item-name">
+                                {{ project.name }}
+                                <span style="font-size: 12px; color: #FF9F0A; margin-left: 8px;">👥 Shared</span>
+                            </div>
+                            <div class="item-meta">
+                                📚 {{ project.word_count }} words<br>
+                                👤 Created by {{ project.owner_name }}<br>
+                                🤝 Via {{ project.group_name }}<br>
+                                Updated: {{ project.updated_at[:10] }}
+                            </div>
+                            <div class="item-actions">
+                                <a href="/projects/{{ project.id }}/enter" class="action-button enter">🎯 Enter</a>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    <div class="no-items">
+                        No shared projects yet. Join groups to access shared language projects!
+                    </div>
+                {% endif %}
+            </div>
+
+            <!-- Groups Section -->
+            <div class="section">
+                <div class="section-title">
+                    <span class="section-icon">🤝</span>
+                    My Groups
+                </div>
+                <a href="/groups/create" class="create-button group">➕ Create New Group</a>
+
+                {% if groups %}
+                    <div class="items-grid">
+                        {% for group in groups %}
+                        <div class="item-card" onclick="location.href='/groups/{{ group.id }}'">
+                            <div class="item-name">
+                                {{ group.name }}
+                                {% if group.is_admin %}
+                                <span class="admin-badge">ADMIN</span>
+                                {% endif %}
+                            </div>
+                            <div class="item-meta">
+                                {{ group.description or 'No description' }}<br>
+                                Joined: {{ group.created_at[:10] }}
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    <div class="no-items">
+                        No groups yet. Create a group or ask to be invited to collaborate!
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</body>
+</html>

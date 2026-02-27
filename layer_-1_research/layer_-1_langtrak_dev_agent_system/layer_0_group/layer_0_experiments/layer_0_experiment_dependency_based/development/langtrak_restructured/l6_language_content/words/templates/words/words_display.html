@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Words</title>
+    <link rel="stylesheet" href="{{ url_for('words.static', filename='css/words_display.css') }}">
+
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <a href="{{ url_for('main_menu') }}" class="back-button">← Back</a>
+            <h1>📖 My Words</h1>
+        </div>
+
+        <div id="messageContainer"></div>
+
+        <div class="stats-bar">
+            <div class="stat-card">
+                <div class="stat-number">{{ words|length if words else 0 }}</div>
+                <div class="stat-label">Total Words</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">{{ words|unique_count('language') }}</div>
+                <div class="stat-label">Languages</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">{{ words|selectattr('video_path')|list|length if words else 0 }}</div>
+                <div class="stat-label">With Videos</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">{{ words|selectattr('syllable_type')|list|length if words else 0 }}</div>
+                <div class="stat-label">Structured</div>
+            </div>
+        </div>
+
+        <div class="controls-bar">
+            <div class="search-controls">
+                <div class="search-type-selector" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 8px; margin-bottom: 12px;">
+                    <div class="search-type-option active" data-type="all" style="background: rgba(44, 44, 46, 0.8); border: 2px solid rgba(84, 84, 88, 0.4); border-radius: 8px; padding: 8px 12px; text-align: center; cursor: pointer; transition: all 0.2s ease; font-size: 12px;">
+                        <span style="color: #ffffff;">All Fields</span>
+                    </div>
+                    <div class="search-type-option" data-type="english" style="background: rgba(44, 44, 46, 0.8); border: 2px solid rgba(84, 84, 88, 0.4); border-radius: 8px; padding: 8px 12px; text-align: center; cursor: pointer; transition: all 0.2s ease; font-size: 12px;">
+                        <span style="color: #ffffff;">English</span>
+                    </div>
+                    <div class="search-type-option" data-type="new_language" style="background: rgba(44, 44, 46, 0.8); border: 2px solid rgba(84, 84, 88, 0.4); border-radius: 8px; padding: 8px 12px; text-align: center; cursor: pointer; transition: all 0.2s ease; font-size: 12px;">
+                        <span style="color: #ffffff;">Word</span>
+                    </div>
+                    <div class="search-type-option" data-type="ipa" style="background: rgba(44, 44, 46, 0.8); border: 2px solid rgba(84, 84, 88, 0.4); border-radius: 8px; padding: 8px 12px; text-align: center; cursor: pointer; transition: all 0.2s ease; font-size: 12px;">
+                        <span style="color: #ffffff;">IPA</span>
+                    </div>
+                    <div class="search-type-option" data-type="dictionary" style="background: rgba(44, 44, 46, 0.8); border: 2px solid rgba(84, 84, 88, 0.4); border-radius: 8px; padding: 8px 12px; text-align: center; cursor: pointer; transition: all 0.2s ease; font-size: 12px;">
+                        <span style="color: #ffffff;">Dict</span>
+                    </div>
+                </div>
+                <div style="display: flex; gap: 12px;">
+                    <input type="text" class="search-input" id="searchInput" placeholder="Search words..." onkeypress="handleSearchKeyPress(event)" style="flex: 1;">
+                    <button class="search-button" id="searchButton" onclick="performSearch()" style="background: #007AFF; border: none; border-radius: 8px; padding: 12px 16px; color: #ffffff; font-size: 14px; font-weight: 600; cursor: pointer; transition: all 0.2s ease;">
+                        <span id="searchButtonText">Search</span>
+                    </button>
+                </div>
+            </div>
+            <div class="sort-controls">
+                <button class="sort-button active" onclick="sortWords('newest')">Newest</button>
+                <button class="sort-button" onclick="sortWords('oldest')">Oldest</button>
+                <button class="sort-button" onclick="sortWords('alphabetical')">A-Z</button>
+                <button class="clear-button" onclick="clearSearch()" style="background: rgba(255, 69, 58, 0.2); border: 1px solid rgba(255, 69, 58, 0.4); border-radius: 8px; padding: 8px 16px; color: #FF453A; font-size: 14px; cursor: pointer; transition: all 0.2s ease;">Clear</button>
+            </div>
+        </div>
+
+        <div class="words-container">
+            {% if words %}
+                <div class="words-grid" id="wordsGrid">
+                    {% for word in words %}
+                    <div class="word-card" data-word-id="{{ word.id }}">
+                        <div class="word-header">
+                            <div class="word-main">
+                                <div class="word-id">ID: {{ word.id }}</div>
+                                <div class="word-language">{{ word.language or 'Constructed Language' }}</div>
+                                <div class="word-title">{{ word.new_language_word or 'Unnamed Word' }}</div>
+                                <div class="word-english">{{ word.english_words or 'No English translation' }}</div>
+                            </div>
+                            <div class="word-actions">
+                                <button class="action-button edit" onclick="editWord({{ word.id }})">✏️ Edit</button>
+                                <button class="action-button delete" onclick="deleteWord({{ word.id }}, '{{ word.new_language_word }}')">🗑️ Delete</button>
+                            </div>
+                        </div>
+
+                        <div class="word-phonetics">
+                            <div class="phonetic-item">
+                                <div class="phonetic-label">IPA Phonetics</div>
+                                <div class="phonetic-value">{{ word.ipa_phonetics or 'Not specified' }}</div>
+                            </div>
+                            <div class="phonetic-item">
+                                <div class="phonetic-label">Dictionary Phonetics</div>
+                                <div class="phonetic-value">{{ word.dictionary_phonetics or 'Not specified' }}</div>
+                            </div>
+                        </div>
+
+                        {% if word.syllable_type and (word.onset_phoneme or word.nucleus_phoneme or word.coda_phoneme) %}
+                        <div class="word-structure">
+                            {% if word.onset_phoneme %}
+                            <div class="structure-item">
+                                <div class="structure-label">Onset</div>
+                                <div class="structure-phoneme">{{ word.onset_phoneme }}</div>
+                            </div>
+                            {% endif %}
+                            {% if word.nucleus_phoneme %}
+                            <div class="structure-item">
+                                <div class="structure-label">Nucleus</div>
+                                <div class="structure-phoneme">{{ word.nucleus_phoneme }}</div>
+                            </div>
+                            {% endif %}
+                            {% if word.coda_phoneme %}
+                            <div class="structure-item">
+                                <div class="structure-label">Coda</div>
+                                <div class="structure-phoneme">{{ word.coda_phoneme }}</div>
+                            </div>
+                            {% endif %}
+                        </div>
+                        {% endif %}
+
+                        {% if word.video_path %}
+                        <div style="margin-bottom: 16px;">
+                            <video controls style="width: 100%; max-width: 300px; border-radius: 8px;">
+                                <source src="{{ url_for('serve_video', filename=word.video_path.split('/')[-1]) }}" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                        {% endif %}
+
+                        <div class="word-meta">
+                            {% if word.syllable_type %}
+                            <div class="meta-item">
+                                <span>🎯</span>
+                                <span>{{ word.syllable_type }}</span>
+                            </div>
+                            {% endif %}
+                            {% if word.video_path %}
+                            <div class="meta-item">
+                                <span>🎥</span>
+                                <span>Has Video</span>
+                            </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            {% else %}
+                <div class="no-words">
+                    <span class="no-words-icon">📚</span>
+                    <div>No words in your vocabulary yet</div>
+                    <div style="margin-top: 8px; font-size: 16px; color: #8E8E93;">Start building your constructed language!</div>
+                    <a href="{{ url_for('words.create_word_table_based') }}" class="create-word-link">➕ Create Your First Word</a>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+
+    <script src="{{ url_for('words.static', filename='js/words_display.js') }}"></script>
+
+</body>
+</html>

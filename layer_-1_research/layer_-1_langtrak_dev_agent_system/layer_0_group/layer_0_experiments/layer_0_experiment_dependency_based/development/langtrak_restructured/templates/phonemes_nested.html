@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phonemes - Nested View</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+            background: linear-gradient(135deg, #1c1c1e 0%, #2c2c2e 100%);
+            color: #ffffff;
+            min-height: 100vh;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 16px;
+        }
+        
+        .header {
+            display: flex;
+            align-items: center;
+            margin: 40px 0 40px 0;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        
+        .back-button {
+            background: rgba(58, 58, 60, 0.6);
+            border: none;
+            border-radius: 12px;
+            padding: 12px 16px;
+            color: #007AFF;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 600;
+            transition: all 0.2s ease;
+        }
+        
+        .back-button:hover {
+            background: rgba(78, 78, 80, 0.8);
+        }
+        
+        .header h1 {
+            font-size: 32px;
+            font-weight: 700;
+            background: linear-gradient(90deg, #007AFF, #5AC8FA);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .syllable-section {
+            background: rgba(58, 58, 60, 0.6);
+            border: 1px solid rgba(84, 84, 88, 0.4);
+            border-radius: 16px;
+            padding: 24px;
+            margin-bottom: 24px;
+            backdrop-filter: blur(20px);
+        }
+        
+        .syllable-title {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #5AC8FA;
+            display: flex;
+            align-items: center;
+        }
+        
+        .syllable-icon {
+            margin-right: 12px;
+            font-size: 28px;
+        }
+        
+        .positions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 20px;
+        }
+        
+        .position-card {
+            background: rgba(44, 44, 46, 0.8);
+            border: 1px solid rgba(84, 84, 88, 0.3);
+            border-radius: 12px;
+            padding: 20px;
+        }
+        
+        .position-title {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: #ffffff;
+            text-transform: capitalize;
+        }
+        
+        .length-type-section {
+            margin-bottom: 20px;
+        }
+        
+        .length-type-title {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: #30D158;
+            text-transform: capitalize;
+        }
+        
+        .group-section {
+            margin-bottom: 16px;
+        }
+        
+        .group-title {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #FF9F0A;
+            text-transform: capitalize;
+        }
+        
+        .subgroup-section {
+            margin-bottom: 12px;
+            margin-left: 16px;
+        }
+        
+        .subgroup-title {
+            font-size: 12px;
+            font-weight: 500;
+            margin-bottom: 6px;
+            color: #8E8E93;
+            text-transform: capitalize;
+        }
+        
+        .phonemes-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-left: 32px;
+        }
+        
+        .phoneme-item {
+            background: rgba(84, 84, 88, 0.6);
+            border-radius: 8px;
+            padding: 6px 12px;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            font-weight: bold;
+            color: #5AC8FA;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        
+        .phoneme-frequency {
+            background: rgba(48, 209, 88, 0.3);
+            border-radius: 4px;
+            padding: 2px 6px;
+            font-size: 11px;
+            color: #30D158;
+        }
+        
+        .expand-toggle {
+            background: none;
+            border: none;
+            color: #8E8E93;
+            cursor: pointer;
+            font-size: 14px;
+            margin-left: 8px;
+            transition: transform 0.2s ease;
+        }
+        
+        .expand-toggle:hover {
+            color: #ffffff;
+        }
+        
+        .expand-toggle.expanded {
+            transform: rotate(90deg);
+        }
+        
+        .collapsible-content {
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        
+        .collapsible-content.collapsed {
+            max-height: 0;
+        }
+        
+        .collapsible-content.expanded {
+            max-height: 1000px;
+        }
+        
+        @media (max-width: 768px) {
+            .positions-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .header h1 {
+                font-size: 24px;
+            }
+            
+            .syllable-section {
+                padding: 16px;
+            }
+            
+            .position-card {
+                padding: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <a href="{{ url_for('main_menu') }}" class="back-button">← Back</a>
+            <h1>🗂️ Phonemes - Nested View</h1>
+        </div>
+        
+        {% for syllable_type, positions in nested_data.items() %}
+        <div class="syllable-section">
+            <div class="syllable-title">
+                <span class="syllable-icon">🎯</span>
+                {{ syllable_type }} Syllables
+            </div>
+            
+            <div class="positions-grid">
+                {% for position, length_types in positions.items() %}
+                <div class="position-card">
+                    <div class="position-title">{{ position|title }} Position</div>
+                    
+                    {% for length_type, groups in length_types.items() %}
+                    <div class="length-type-section">
+                        <div class="length-type-title">
+                            {{ length_type.replace('_', ' ')|title }}
+                            <button class="expand-toggle" onclick="toggleSection(this)">▶</button>
+                        </div>
+                        
+                        <div class="collapsible-content collapsed">
+                            {% for group_type, subgroups in groups.items() %}
+                            <div class="group-section">
+                                <div class="group-title">{{ group_type.replace('_', ' ')|title }}</div>
+                                
+                                {% for subgroup_type, phonemes in subgroups.items() %}
+                                <div class="subgroup-section">
+                                    {% if subgroup_type != 'none' %}
+                                    <div class="subgroup-title">{{ subgroup_type.replace('_', ' ')|title }}</div>
+                                    {% endif %}
+                                    
+                                    <div class="phonemes-list">
+                                        {% for phoneme in phonemes %}
+                                        <div class="phoneme-item">
+                                            {{ phoneme.phoneme }}
+                                            <span class="phoneme-frequency">{{ phoneme.frequency }}</span>
+                                        </div>
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                                {% endfor %}
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    
+    <script>
+        function toggleSection(button) {
+            const content = button.parentElement.nextElementSibling;
+            const isExpanded = content.classList.contains('expanded');
+            
+            if (isExpanded) {
+                content.classList.remove('expanded');
+                content.classList.add('collapsed');
+                button.classList.remove('expanded');
+            } else {
+                content.classList.remove('collapsed');
+                content.classList.add('expanded');
+                button.classList.add('expanded');
+            }
+        }
+    </script>
+</body>
+</html>

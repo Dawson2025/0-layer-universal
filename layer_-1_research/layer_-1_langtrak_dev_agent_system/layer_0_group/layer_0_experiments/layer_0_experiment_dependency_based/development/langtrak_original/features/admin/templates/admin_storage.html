@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cloud & Local Storage - {{ project.name }}</title>
+    <link rel="stylesheet" href="{{ url_for('admin.static', filename='css/admin_storage.css') }}">
+
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>☁️ Cloud & Local Storage</h1>
+            <a href="{{ url_for('main_menu') }}" class="back-link">← Back to Project Menu</a>
+        </div>
+
+        <div class="panel">
+            <h2>Project Overview</h2>
+            <p><strong>Project:</strong> {{ project.name }}</p>
+            <p>Use this panel to migrate data between local SQLite storage and the Firebase cloud, create forks, and sync changes.</p>
+        </div>
+
+        <div class="panel">
+            <h2>Storage Variants</h2>
+            <div class="variant-grid">
+                {% if project.local %}
+                <div class="variant-card">
+                    <span class="storage-pill local">💾 Local</span>
+                    <div class="stat-line">📚 {{ project.local.word_count }} words</div>
+                    <div class="stat-line">Created: {{ project.local.created_at[:10] if project.local.created_at else '—' }}</div>
+                    <div class="stat-line">Updated: {{ project.local.updated_at[:10] if project.local.updated_at else '—' }}</div>
+                    {% if project.local.cloud_project_id %}
+                        <div class="stat-line">Linked Cloud ID: {{ project.local.cloud_project_id }}</div>
+                        {% if project.local.cloud_last_sync %}
+                        <div class="stat-line">Last Sync: {{ project.local.cloud_last_sync[:19] }}</div>
+                        {% endif %}
+                    {% endif %}
+                    <div class="actions">
+                        <a href="/projects/{{ project.local.id }}/enter" class="action-link">🎯 Enter Local</a>
+                        <a href="/projects/{{ project.local.id }}/edit" class="action-link">✏️ Edit</a>
+                        <button class="danger" onclick="deleteLocalProject('{{ project.local.id }}', '{{ project.name }}')">🗑️ Delete Local</button>
+                        <button class="primary" onclick="pushLocal('{{ project.local.id }}', '{{ project.name }}', {{ 'true' if project.local.cloud_project_id else 'false' }})">
+                            {% if project.local.cloud_project_id %}⬆️ Push Updates to Cloud{% else %}☁️ Migrate to Cloud{% endif %}
+                        </button>
+                        {% if project.local.cloud_project_id %}
+                        <button onclick="pullLocal('{{ project.local.id }}', '{{ project.name }}')">⬇️ Pull Latest from Cloud</button>
+                        {% endif %}
+                    </div>
+                </div>
+                {% endif %}
+
+                {% if project.cloud %}
+                <div class="variant-card">
+                    <span class="storage-pill cloud">☁️ Cloud</span>
+                    <div class="stat-line">📚 {{ project.cloud.word_count }} words</div>
+                    <div class="stat-line">Created: {{ project.cloud.created_at[:10] if project.cloud.created_at else '—' }}</div>
+                    <div class="stat-line">Updated: {{ project.cloud.updated_at[:10] if project.cloud.updated_at else '—' }}</div>
+                    {% if project.cloud.original_sqlite_id %}
+                    <div class="stat-line">Linked Local ID: {{ project.cloud.original_sqlite_id }}</div>
+                    {% endif %}
+                    <div class="actions">
+                        <a href="/projects/{{ project.cloud.id }}/enter" class="action-link">🎯 Enter Cloud</a>
+                        <button class="primary" onclick="forkCloud('{{ project.cloud.id }}', '{{ project.name }}')">📦 Fork to Local</button>
+                    </div>
+                </div>
+                {% endif %}
+            </div>
+
+            {% if not project.local and not project.cloud %}
+            <div class="empty-state">
+                No storage variants available for this project yet.
+            </div>
+            {% endif %}
+        </div>
+    </div>
+
+    <script src="{{ url_for('admin.static', filename='js/admin_storage.js') }}"></script>
+
+</body>
+</html>

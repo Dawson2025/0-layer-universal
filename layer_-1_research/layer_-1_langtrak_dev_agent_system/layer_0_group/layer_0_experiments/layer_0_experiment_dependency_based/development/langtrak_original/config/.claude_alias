@@ -1,0 +1,25 @@
+# Claude Code CLI aliases and environment setup
+# Source this file to set up Claude Code CLI in your current shell session
+# Usage: source .claude_alias
+
+# Load nvm and Node.js
+export NVM_DIR="$HOME/workspace/.config/nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+
+# Create convenient alias
+alias setup-claude='source /home/runner/workspace/.claude_alias && echo "Claude Code CLI environment loaded! Use: claude --help"'
+
+# Function to run Claude with proper environment
+claude() {
+    # Ensure Node.js environment is loaded
+    export NVM_DIR="$HOME/workspace/.config/nvm"
+    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+    
+    # Run the actual claude command
+    command claude "$@"
+}
+
+echo "✅ Claude Code CLI environment loaded!"
+echo "Node.js: $(node --version)"
+echo "Claude Code: $(command claude --version)"

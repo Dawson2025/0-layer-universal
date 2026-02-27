@@ -1,0 +1,79 @@
+{
+  "context7_configurations": {
+    "local_server": {
+      "description": "Local Context7 MCP server using @upstash/context7-mcp package",
+      "mcp_config": {
+        "mcpServers": {
+          "context7": {
+            "command": "npx",
+            "args": ["-y", "@upstash/context7-mcp", "--api-key", "ctx7sk-d20b6dec-5980-4ee1-9beb-0e635d626f46"]
+          }
+        }
+      },
+      "pros": [
+        "Runs locally for better performance",
+        "No external dependencies on Context7 servers",
+        "Full control over the MCP server process",
+        "Better for development and testing"
+      ],
+      "cons": [
+        "Requires Node.js and npm",
+        "Uses local resources",
+        "Need to manage the server process"
+      ],
+      "use_case": "Development, testing, and when you want local control"
+    },
+    "remote_server": {
+      "description": "Remote Context7 MCP server using HTTP connection",
+      "mcp_config": {
+        "mcpServers": {
+          "context7": {
+            "url": "https://mcp.context7.com/mcp",
+            "headers": {
+              "CONTEXT7_API_KEY": "ctx7sk-d20b6dec-5980-4ee1-9beb-0e635d626f46"
+            }
+          }
+        }
+      },
+      "pros": [
+        "No local installation required",
+        "Always up-to-date with latest features",
+        "No local resource usage",
+        "Simpler setup for production"
+      ],
+      "cons": [
+        "Requires internet connection",
+        "Dependent on Context7 server availability",
+        "Potential latency issues",
+        "Less control over the server"
+      ],
+      "use_case": "Production environments and when you want simplicity"
+    }
+  },
+  "recommendations": {
+    "development": "Use local_server for better debugging and control",
+    "testing": "Use local_server for consistent testing environment",
+    "production": "Use remote_server for simplicity and reliability",
+    "hybrid": "Enable both and switch based on needs"
+  },
+  "setup_instructions": {
+    "local_setup": [
+      "1. Ensure Node.js is installed",
+      "2. The @upstash/context7-mcp package will be installed automatically via npx",
+      "3. Use the local_server configuration in your mcp.json",
+      "4. Start your MCP client with the local configuration"
+    ],
+    "remote_setup": [
+      "1. No local installation required",
+      "2. Use the remote_server configuration in your mcp.json",
+      "3. Ensure your API key is correct",
+      "4. Start your MCP client with the remote configuration"
+    ]
+  },
+  "api_credentials": {
+    "api_key": "ctx7sk-d20b6dec-5980-4ee1-9beb-0e635d626f46",
+    "api_url": "https://context7.com/api/v1",
+    "mcp_url": "https://mcp.context7.com/mcp",
+    "note": "API key is already configured in all environment configurations"
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "environment": "testing",
+  "servers": [
+    {
+      "name": "playwright",
+      "command": "npx",
+      "args": ["-y", "@playwright/mcp@latest", "--browser", "chromium"],
+      "env": {},
+      "enabled": true,
+      "priority": 1,
+      "category": "browser_automation",
+      "description": "Playwright MCP server for cross-browser testing and automation",
+      "dependencies": ["node", "browsers"],
+      "health_check_url": null,
+      "timeout": 30,
+      "retry_count": 3
+    },
+    {
+      "name": "browser",
+      "command": "npx",
+      "args": ["@agent-infra/mcp-server-browser"],
+      "env": {},
+      "enabled": true,
+      "priority": 2,
+      "category": "browser_automation",
+      "description": "Simple browser automation MCP server",
+      "dependencies": ["browser"],
+      "health_check_url": null,
+      "timeout": 30,
+      "retry_count": 3
+    },
+    {
+      "name": "filesystem",
+      "command": "npx",
+      "args": ["@modelcontextprotocol/server-filesystem", "/home/dawson/code/lang-trak-in-progress"],
+      "env": {},
+      "enabled": true,
+      "priority": 1,
+      "category": "filesystem",
+      "description": "Filesystem access MCP server",
+      "dependencies": ["node"],
+      "health_check_url": null,
+      "timeout": 30,
+      "retry_count": 3
+    },
+    {
+      "name": "context7-local",
+      "command": "npx",
+      "args": ["-y", "@upstash/context7-mcp", "--api-key", "ctx7sk-d20b6dec-5980-4ee1-9beb-0e635d626f46"],
+      "env": {},
+      "enabled": true,
+      "priority": 2,
+      "category": "documentation",
+      "description": "Context7 local MCP server with API access",
+      "dependencies": ["node"],
+      "health_check_url": null,
+      "timeout": 30,
+      "retry_count": 3
+    }
+  ],
+  "global_env": {
+    "NODE_ENV": "test",
+    "LOG_LEVEL": "warn"
+  },
+  "timeout": 15,
+  "max_concurrent_servers": 3
+}

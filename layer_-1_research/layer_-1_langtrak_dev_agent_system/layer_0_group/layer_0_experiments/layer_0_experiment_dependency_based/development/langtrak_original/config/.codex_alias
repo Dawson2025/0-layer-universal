@@ -1,0 +1,32 @@
+# Codex CLI aliases and environment setup
+# Source this file to set up Codex CLI in your current shell session
+# Usage: source .codex_alias
+
+# Load nvm and Node.js
+export NVM_DIR="$HOME/workspace/.config/nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+
+# Create convenient alias
+alias setup-codex='source /home/runner/workspace/.codex_alias && echo "Codex CLI environment loaded! Use: codex --help"'
+
+# Function to run Codex with proper environment
+codex() {
+    # Ensure Node.js environment is loaded
+    export NVM_DIR="$HOME/workspace/.config/nvm"
+    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+    
+    # Check if API key is set
+    if [ -z "$OPENAI_API_KEY" ]; then
+        echo "⚠️  OPENAI_API_KEY is not set!"
+        echo "Set it with: export OPENAI_API_KEY='your-api-key-here'"
+        return 1
+    fi
+    
+    # Run the actual codex command
+    command codex "$@"
+}
+
+echo "✅ Codex CLI environment loaded!"
+echo "Node.js: $(node --version)"
+echo "Codex CLI: $(command codex --version)"

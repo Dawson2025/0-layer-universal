@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Words Display - Lang Trak</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            overflow: hidden;
+        }
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            font-weight: 300;
+        }
+        .header p {
+            margin: 10px 0 0 0;
+            opacity: 0.9;
+            font-size: 1.1em;
+        }
+        .content {
+            padding: 40px;
+        }
+        .back-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background: rgba(255,255,255,0.2);
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            margin-bottom: 20px;
+            transition: background 0.3s ease;
+        }
+        .back-button:hover {
+            background: rgba(255,255,255,0.3);
+        }
+        .words-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .word-card {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 20px;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+        .word-card:hover {
+            border-color: #667eea;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .word-title {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .word-phonemes {
+            color: #666;
+            margin-bottom: 10px;
+        }
+        .word-syllables {
+            color: #888;
+            font-size: 0.9em;
+        }
+        .no-words {
+            text-align: center;
+            padding: 60px 20px;
+            color: #666;
+            font-size: 1.2em;
+        }
+        .no-words a {
+            color: #667eea;
+            text-decoration: none;
+        }
+        .no-words a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <a href="{{ url_for('words_menu') }}" class="back-button">← Back to Words Menu</a>
+            <h1>📖 All Words</h1>
+            <p>Your complete vocabulary collection</p>
+        </div>
+        
+        <div class="content">
+            <div class="controls" style="margin-bottom: 20px; display: flex; gap: 10px; flex-wrap: wrap;">
+                <input id="searchInput" type="text" placeholder="Search words..." style="flex: 1; min-width: 220px; padding: 10px 12px; border-radius: 8px; border: 1px solid #ddd;">
+                <button id="searchBtn" type="button" style="padding: 10px 14px; border-radius: 8px; border: 1px solid #667eea; background: #667eea; color: #fff; cursor: pointer;">Search</button>
+                <button id="clearBtn" type="button" style="padding: 10px 14px; border-radius: 8px; border: 1px solid #bbb; background: #fff; color: #333; cursor: pointer;">Clear</button>
+            </div>
+
+            {% if words %}
+                <div class="words-grid words-container">
+                    {% for word in words %}
+                    <div class="word-card" data-word-id="{{ word.id }}" data-search="{{ (word.new_language_word ~ ' ' ~ word.english_words ~ ' ' ~ word.language)|lower }}">
+                        <div class="word-title">{{ word.new_language_word }}</div>
+                        <div class="word-phonemes">English: {{ word.english_words }}</div>
+                        {% if word.ipa_phonetics %}
+                        <div class="word-syllables">IPA: {{ word.ipa_phonetics }}</div>
+                        {% endif %}
+                        {% if word.syllable_type %}
+                        <div class="word-syllables">Syllable Type: {{ word.syllable_type }}</div>
+                        {% endif %}
+                    </div>
+                    {% endfor %}
+                </div>
+            {% else %}
+                <div class="no-words">
+                    <h3>No words found</h3>
+                    <p>Start building your vocabulary by <a href="{{ url_for('create_word_table_based') }}">creating your first word</a>.</p>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+
+    <script>
+        function applyFilter() {
+            const query = (document.getElementById('searchInput')?.value || '').trim().toLowerCase();
+            const cards = Array.from(document.querySelectorAll('.word-card'));
+            for (const card of cards) {
+                const hay = (card.dataset.search || '').toLowerCase();
+                const show = !query || hay.includes(query);
+                card.style.display = show ? '' : 'none';
+            }
+        }
+
+        document.getElementById('searchBtn')?.addEventListener('click', applyFilter);
+        document.getElementById('clearBtn')?.addEventListener('click', () => {
+            const input = document.getElementById('searchInput');
+            if (input) input.value = '';
+            applyFilter();
+        });
+        document.getElementById('searchInput')?.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') applyFilter();
+        });
+    </script>
+</body>
+</html>

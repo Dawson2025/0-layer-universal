@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Lookup</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+            background: linear-gradient(135deg, #1c1c1e 0%, #2c2c2e 100%);
+            color: #ffffff;
+            min-height: 100vh;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 16px;
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            margin: 40px 0 40px 0;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .back-button {
+            background: rgba(58, 58, 60, 0.6);
+            border: none;
+            border-radius: 12px;
+            padding: 12px 16px;
+            color: #007AFF;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 600;
+            transition: all 0.2s ease;
+        }
+
+        .back-button:hover {
+            background: rgba(78, 78, 80, 0.8);
+        }
+
+        .header h1 {
+            font-size: 32px;
+            font-weight: 700;
+            background: linear-gradient(90deg, #FF9F0A, #5AC8FA);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .search-container {
+            background: rgba(58, 58, 60, 0.6);
+            border: 1px solid rgba(84, 84, 88, 0.4);
+            border-radius: 16px;
+            padding: 24px;
+            margin-bottom: 24px;
+            backdrop-filter: blur(20px);
+        }
+
+        .search-form {
+            display: grid;
+            gap: 20px;
+        }
+
+        .search-type-selector {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+
+        .search-type-option {
+            background: rgba(44, 44, 46, 0.8);
+            border: 2px solid rgba(84, 84, 88, 0.4);
+            border-radius: 12px;
+            padding: 16px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            position: relative;
+        }
+
+        .search-type-option:hover {
+            background: rgba(78, 78, 80, 0.8);
+            transform: translateY(-2px);
+        }
+
+        .search-type-option.selected {
+            background: rgba(0, 122, 255, 0.3);
+            border-color: #007AFF;
+            box-shadow: 0 0 0 3px rgba(0, 122, 255, 0.2);
+        }
+
+        .search-type-icon {
+            font-size: 24px;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .search-type-title {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 4px;
+            color: #ffffff;
+        }
+
+        .search-type-subtitle {
+            font-size: 13px;
+            color: #8E8E93;
+        }
+
+        .search-input-container {
+            position: relative;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 16px 20px 16px 50px;
+            background: rgba(44, 44, 46, 0.8);
+            border: 2px solid rgba(84, 84, 88, 0.4);
+            border-radius: 12px;
+            color: #ffffff;
+            font-size: 18px;
+            transition: all 0.2s ease;
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: #007AFF;
+            box-shadow: 0 0 0 3px rgba(0, 122, 255, 0.2);
+            background: rgba(44, 44, 46, 0.9);
+        }
+
+        .search-input::placeholder {
+            color: #8E8E93;
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 20px;
+            color: #8E8E93;
+        }
+
+        .search-button {
+            padding: 16px 24px;
+            background: #007AFF;
+            border: none;
+            border-radius: 12px;
+            color: #ffffff;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .search-button:hover {
+            background: #0056CC;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 122, 255, 0.3);
+        }
+
+        .search-button:disabled {
+            background: rgba(84, 84, 88, 0.6);
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+
+        .results-container {
+            background: rgba(58, 58, 60, 0.6);
+            border: 1px solid rgba(84, 84, 88, 0.4);
+            border-radius: 16px;
+            padding: 24px;
+            backdrop-filter: blur(20px);
+        }
+
+        .results-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .results-title {
+            font-size: 20px;
+            font-weight: 600;
+            color: #5AC8FA;
+        }
+
+        .results-count {
+            background: rgba(90, 200, 250, 0.2);
+            border-radius: 8px;
+            padding: 6px 12px;
+            font-size: 14px;
+            color: #5AC8FA;
+            font-weight: 600;
+        }
+
+        .no-results {
+            text-align: center;
+            color: #8E8E93;
+            padding: 40px 20px;
+            font-size: 16px;
+        }
+
+        .no-results-icon {
+            font-size: 48px;
+            margin-bottom: 16px;
+            display: block;
+        }
+
+        .results-grid {
+            display: grid;
+            gap: 16px;
+        }
+
+        .result-card {
+            background: rgba(44, 44, 46, 0.8);
+            border: 1px solid rgba(84, 84, 88, 0.3);
+            border-radius: 12px;
+            padding: 20px;
+            transition: all 0.2s ease;
+        }
+
+        .result-card:hover {
+            background: rgba(78, 78, 80, 0.8);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .result-header {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            margin-bottom: 12px;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .result-main {
+            flex: 1;
+        }
+
+        .result-actions {
+            display: flex;
+            gap: 8px;
+        }
+
+        .result-language {
+            font-size: 12px;
+            color: #8E8E93;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 4px;
+        }
+
+        .result-word {
+            font-size: 24px;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 8px;
+        }
+
+        .result-english {
+            font-size: 16px;
+            color: #30D158;
+            margin-bottom: 12px;
+        }
+
+        .result-phonetics {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+
+        .phonetic-item {
+            background: rgba(84, 84, 88, 0.4);
+            border-radius: 8px;
+            padding: 12px;
+        }
+
+        .phonetic-label {
+            font-size: 12px;
+            color: #8E8E93;
+            margin-bottom: 4px;
+        }
+
+        .phonetic-value {
+            font-family: 'Courier New', monospace;
+            font-size: 16px;
+            font-weight: bold;
+            color: #5AC8FA;
+        }
+
+        .result-meta {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+            font-size: 13px;
+            color: #8E8E93;
+        }
+
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .action-button {
+            background: rgba(84, 84, 88, 0.6);
+            border: none;
+            border-radius: 8px;
+            padding: 8px 12px;
+            color: #ffffff;
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .action-button:hover {
+            background: rgba(84, 84, 88, 0.8);
+        }
+
+        .action-button.edit {
+            background: rgba(255, 159, 10, 0.2);
+            color: #FF9F0A;
+        }
+
+        .action-button.edit:hover {
+            background: rgba(255, 159, 10, 0.3);
+        }
+
+        .action-button.delete {
+            background: rgba(255, 69, 58, 0.2);
+            color: #FF453A;
+        }
+
+        .action-button.delete:hover {
+            background: rgba(255, 69, 58, 0.3);
+        }
+
+        .loading {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top-color: #ffffff;
+            animation: spin 1s ease-in-out infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .success-message {
+            background: rgba(48, 209, 88, 0.2);
+            border: 1px solid rgba(48, 209, 88, 0.4);
+            color: #30D158;
+            padding: 12px 16px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+
+        .error-message {
+            background: rgba(255, 69, 58, 0.2);
+            border: 1px solid rgba(255, 69, 58, 0.4);
+            color: #FF453A;
+            padding: 12px 16px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+
+        @media (max-width: 768px) {
+            .search-type-selector {
+                grid-template-columns: 1fr;
+            }
+
+            .header h1 {
+                font-size: 24px;
+            }
+
+            .search-container, .results-container {
+                padding: 16px;
+            }
+
+            .result-phonetics {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <a href="{{ url_for('main_menu') }}" class="back-button">← Back</a>
+            <h1>🔍 Word Lookup</h1>
+            {% if user and user.is_authenticated %}
+                <small>Searching in: {{ user.name }}'s words</small>
+                <a href="{{ url_for('auth.logout') }}" class="back-button">Sign Out</a>
+            {% endif %}
+        </div>
+
+        <div class="search-container">
+            <div id="messageContainer"></div>
+
+            <div class="search-form">
+                <div class="search-type-selector">
+                    <div class="search-type-option selected" data-type="english">
+                        <span class="search-type-icon">🇬🇧</span>
+                        <div class="search-type-title">English Words</div>
+                        <div class="search-type-subtitle">Search by English meaning</div>
+                    </div>
+
+                    <div class="search-type-option" data-type="new_language">
+                        <span class="search-type-icon">🏗️</span>
+                        <div class="search-type-title">Constructed Language</div>
+                        <div class="search-type-subtitle">Search by your language</div>
+                    </div>
+
+                    <div class="search-type-option" data-type="ipa">
+                        <span class="search-type-icon">🎵</span>
+                        <div class="search-type-title">IPA Phonetics</div>
+                        <div class="search-type-subtitle">Search by IPA notation</div>
+                    </div>
+
+                    <div class="search-type-option" data-type="dictionary">
+                        <span class="search-type-icon">📚</span>
+                        <div class="search-type-title">Dictionary</div>
+                        <div class="search-type-subtitle">Dictionary phonetics</div>
+                    </div>
+                </div>
+
+                <div class="search-input-container">
+                    <span class="search-icon">🔍</span>
+                    <input type="text" class="search-input" id="searchInput" placeholder="Enter search term..." onkeypress="handleKeyPress(event)">
+                </div>
+
+                <button class="search-button" id="searchButton" onclick="performSearch()">
+                    <span id="searchButtonText">Search Words</span>
+                </button>
+            </div>
+        </div>
+
+        <div class="results-container" id="resultsContainer" style="display: none;">
+            <div class="results-header">
+                <div class="results-title" id="resultsTitle">Search Results</div>
+                <div class="results-count" id="resultsCount">0 words found</div>
+            </div>
+
+            <div class="results-grid" id="resultsGrid">
+                <!-- Results will be populated here -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let currentSearchType = 'english';
+
+        // Initialize search type selection
+        document.querySelectorAll('.search-type-option').forEach(option => {
+            option.addEventListener('click', function() {
+                // Remove selected class from all options
+                document.querySelectorAll('.search-type-option').forEach(opt => opt.classList.remove('selected'));
+
+                // Add selected class to clicked option
+                this.classList.add('selected');
+
+                // Update current search type
+                currentSearchType = this.dataset.type;
+
+                // Update placeholder text
+                updatePlaceholder();
+            });
+        });
+
+        function updatePlaceholder() {
+            const input = document.getElementById('searchInput');
+            const placeholders = {
+                'english': 'Enter English word (e.g., "hello", "water")',
+                'new_language': 'Enter word in your constructed language',
+                'ipa': 'Enter IPA phonetics (e.g., "həˈloʊ")',
+                'dictionary': 'Enter dictionary phonetics'
+            };
+
+            input.placeholder = placeholders[currentSearchType] || 'Enter search term...';
+        }
+
+        function handleKeyPress(event) {
+            if (event.key === 'Enter') {
+                performSearch();
+            }
+        }
+
+        async function performSearch() {
+            const searchTerm = document.getElementById('searchInput').value.trim();
+
+            if (!searchTerm) {
+                showMessage('Please enter a search term', 'error');
+                return;
+            }
+
+            const searchBtn = document.getElementById('searchButton');
+            const searchText = document.getElementById('searchButtonText');
+            const resultsContainer = document.getElementById('resultsContainer');
+
+            searchBtn.disabled = true;
+            searchText.innerHTML = '<span class="loading"></span> Searching...';
+
+            try {
+                const params = new URLSearchParams({
+                    type: currentSearchType,
+                    term: searchTerm
+                });
+
+                const response = await fetch(`/api/lookup-word?${params}`);
+                const data = await response.json();
+
+                if (data.success) {
+                    displayResults(data.results, data.search_type, data.search_term, data.count);
+                    resultsContainer.style.display = 'block';
+                } else {
+                    showMessage('Search error: ' + data.error, 'error');
+                }
+            } catch (error) {
+                showMessage('Network error: ' + error.message, 'error');
+            } finally {
+                searchBtn.disabled = false;
+                searchText.innerHTML = 'Search Words';
+            }
+        }
+
+        function displayResults(results, searchType, searchTerm, count) {
+            const resultsTitle = document.getElementById('resultsTitle');
+            const resultsCount = document.getElementById('resultsCount');
+            const resultsGrid = document.getElementById('resultsGrid');
+
+            resultsTitle.textContent = `Results for "${searchTerm}"`;
+            resultsCount.textContent = `${count} word${count !== 1 ? 's' : ''} found`;
+
+            if (results.length === 0) {
+                resultsGrid.innerHTML = `
+                    <div class="no-results">
+                        <span class="no-results-icon">😔</span>
+                        <div>No words found matching "${searchTerm}"</div>
+                        <div style="margin-top: 8px; font-size: 14px;">Try a different search term or search type</div>
+                    </div>
+                `;
+                return;
+            }
+
+            let html = '';
+            results.forEach(word => {
+                html += `
+                    <div class="result-card">
+                        <div class="result-header">
+                            <div class="result-main">
+                                <div class="result-language">${word.language || 'Constructed Language'}</div>
+                                <div class="result-word">${word.new_language_word || 'Unnamed'}</div>
+                                <div class="result-english">${word.english_words || 'No English translation'}</div>
+                            </div>
+                            <div class="result-actions">
+                                <button class="action-button edit" onclick="editWord(${word.id})">✏️ Edit</button>
+                                <button class="action-button delete" onclick="deleteWord(${word.id}, '${word.new_language_word}')">🗑️ Delete</button>
+                            </div>
+                        </div>
+
+                        <div class="result-phonetics">
+                            <div class="phonetic-item">
+                                <div class="phonetic-label">IPA Phonetics</div>
+                                <div class="phonetic-value">${word.ipa_phonetics || 'Not specified'}</div>
+                            </div>
+                            <div class="phonetic-item">
+                                <div class="phonetic-label">Dictionary Phonetics</div>
+                                <div class="phonetic-value">${word.dictionary_phonetics || 'Not specified'}</div>
+                            </div>
+                        </div>
+
+                        <div class="result-meta">
+                            <div class="meta-item">
+                                <span>🎯</span>
+                                <span>ID: ${word.id}</span>
+                            </div>
+                            ${word.syllable_type ? `
+                                <div class="meta-item">
+                                    <span>📝</span>
+                                    <span>Type: ${word.syllable_type}</span>
+                                </div>
+                            ` : ''}
+                            ${word.video_path ? `
+                                <div class="meta-item">
+                                    <span>🎥</span>
+                                    <span>Has Video</span>
+                                </div>
+                            ` : ''}
+                        </div>
+                    </div>
+                `;
+            });
+
+            resultsGrid.innerHTML = html;
+        }
+
+        function editWord(wordId) {
+            window.location.href = `/words/edit/${wordId}`;
+        }
+
+        async function deleteWord(wordId, wordName) {
+            if (!confirm(`Are you sure you want to delete the word "${wordName}"? This action cannot be undone.`)) {
+                return;
+            }
+
+            try {
+                const response = await fetch(`/api/delete-word/${wordId}`, {
+                    method: 'DELETE'
+                });
+
+                const data = await response.json();
+
+                if (data.success) {
+                    showMessage(`Word "${wordName}" deleted successfully!`, 'success');
+
+                    // Remove the word card from the display
+                    const wordCards = document.querySelectorAll('.result-card');
+                    wordCards.forEach(card => {
+                        const editBtn = card.querySelector('.action-button.edit');
+                        if (editBtn && editBtn.onclick.toString().includes(wordId)) {
+                            card.remove();
+                        }
+                    });
+
+                    // Update results count
+                    const resultsCount = document.getElementById('resultsCount');
+                    const currentCount = parseInt(resultsCount.textContent.match(/\d+/)[0]);
+                    const newCount = currentCount - 1;
+                    resultsCount.textContent = `${newCount} word${newCount !== 1 ? 's' : ''} found`;
+
+                    // If no results left, show no results message
+                    if (newCount === 0) {
+                        const resultsGrid = document.getElementById('resultsGrid');
+                        resultsGrid.innerHTML = `
+                            <div class="no-results">
+                                <span class="no-results-icon">😔</span>
+                                <div>No words found</div>
+                            </div>
+                        `;
+                    }
+                } else {
+                    showMessage('Error deleting word: ' + data.error, 'error');
+                }
+            } catch (error) {
+                showMessage('Network error: ' + error.message, 'error');
+            }
+        }
+
+        function showMessage(message, type) {
+            const container = document.getElementById('messageContainer');
+            const messageClass = type === 'success' ? 'success-message' : 'error-message';
+
+            container.innerHTML = `<div class="${messageClass}">${message}</div>`;
+
+            // Auto-hide after 5 seconds
+            setTimeout(() => {
+                container.innerHTML = '';
+            }, 5000);
+        }
+
+        // Initialize placeholder
+        updatePlaceholder();
+    </script>
+</body>
+</html>

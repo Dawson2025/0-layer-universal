@@ -1,0 +1,15 @@
+# Production Requirements for Language Tracker
+# Includes all base requirements plus production WSGI server
+
+# Base requirements
+-r requirements.txt
+
+# Production WSGI Server
+gunicorn==21.2.0
+
+# Process management
+supervisor==4.2.5
+
+# Environment management
+python-dotenv==1.0.0
+

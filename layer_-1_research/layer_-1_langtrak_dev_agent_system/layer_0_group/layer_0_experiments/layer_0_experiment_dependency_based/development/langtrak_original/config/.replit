@@ -1,0 +1,76 @@
+modules = ["bash", "nodejs-20", "python-3.11", "web"]
+[agent]
+expertMode = true
+integrations = ["firebase_barebones_javascript:1.0.0"]
+
+[nix]
+channel = "stable-25_05"
+packages = ["codex", "espeak-ng", "imagemagickBig"]
+
+[workflows]
+runButton = "Project"
+
+[[workflows.workflow]]
+name = "Project"
+mode = "parallel"
+author = "agent"
+
+[[workflows.workflow.tasks]]
+task = "workflow.run"
+args = "Web Application"
+
+[[workflows.workflow]]
+name = "Web Application"
+author = "agent"
+
+[workflows.workflow.metadata]
+outputType = "webview"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "python3 app.py"
+waitForPort = 5000
+
+[[ports]]
+localPort = 5000
+externalPort = 80
+
+[[ports]]
+localPort = 5001
+externalPort = 3000
+
+[[ports]]
+localPort = 5002
+externalPort = 3001
+
+[[ports]]
+localPort = 8000
+externalPort = 8000
+
+[[ports]]
+localPort = 8080
+externalPort = 8080
+
+[[ports]]
+localPort = 27237
+externalPort = 3003
+exposeLocalhost = true
+
+[[ports]]
+localPort = 35222
+externalPort = 5000
+exposeLocalhost = true
+
+[[ports]]
+localPort = 39789
+externalPort = 3002
+exposeLocalhost = true
+
+[[ports]]
+localPort = 62634
+externalPort = 4200
+exposeLocalhost = true
+
+[deployment]
+deploymentTarget = "autoscale"
+run = ["python3", "app.py"]

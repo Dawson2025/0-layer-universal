@@ -1,0 +1,2132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Phoneme Management</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+            background: linear-gradient(135deg, #1c1c1e 0%, #2c2c2e 100%);
+            color: #ffffff;
+            min-height: 100vh;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 16px;
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            margin: 40px 0 40px 0;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .back-button {
+            background: rgba(58, 58, 60, 0.6);
+            border: none;
+            border-radius: 12px;
+            padding: 12px 16px;
+            color: #007AFF;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 600;
+            transition: all 0.2s ease;
+        }
+
+        .back-button:hover {
+            background: rgba(78, 78, 80, 0.8);
+        }
+
+        .header h1 {
+            font-size: 32px;
+            font-weight: 700;
+            background: linear-gradient(90deg, #FF453A, #FF9F0A);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .admin-warning {
+            background: rgba(255, 69, 58, 0.2);
+            border: 1px solid rgba(255, 69, 58, 0.4);
+            border-radius: 12px;
+            padding: 16px 20px;
+            margin-bottom: 24px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .warning-icon {
+            font-size: 24px;
+            color: #FF453A;
+        }
+
+        .warning-text {
+            color: #FF453A;
+            font-weight: 500;
+        }
+
+        .controls-section {
+            background: rgba(58, 58, 60, 0.6);
+            border: 1px solid rgba(84, 84, 88, 0.4);
+            border-radius: 16px;
+            padding: 24px;
+            margin-bottom: 24px;
+            backdrop-filter: blur(20px);
+        }
+
+        .controls-title {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: #5AC8FA;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .controls-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .control-card {
+            background: rgba(44, 44, 46, 0.8);
+            border-radius: 12px;
+            padding: 20px;
+        }
+
+        .control-card-title {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: #ffffff;
+        }
+
+        .add-phoneme-form {
+            display: grid;
+            gap: 12px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+
+        .form-group {
+            display: grid;
+            gap: 4px;
+        }
+
+        .form-label {
+            font-size: 12px;
+            color: #8E8E93;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .form-input {
+            padding: 8px 12px;
+            background: rgba(28, 28, 30, 0.8);
+            border: 1px solid rgba(84, 84, 88, 0.4);
+            border-radius: 6px;
+            color: #ffffff;
+            font-size: 14px;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: #007AFF;
+            box-shadow: 0 0 0 2px rgba(0, 122, 255, 0.2);
+        }
+
+        .form-select {
+            padding: 8px 12px;
+            background: rgba(28, 28, 30, 0.8);
+            border: 1px solid rgba(84, 84, 88, 0.4);
+            border-radius: 6px;
+            color: #ffffff;
+            font-size: 14px;
+        }
+
+        .phoneme-input {
+            font-family: 'Courier New', monospace;
+            font-size: 16px;
+            font-weight: bold;
+            color: #5AC8FA;
+        }
+
+        .add-button {
+            padding: 10px 16px;
+            background: #30D158;
+            border: none;
+            border-radius: 6px;
+            color: #ffffff;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .add-button:hover {
+            background: #28CD4C;
+        }
+
+        .add-button:disabled {
+            background: rgba(84, 84, 88, 0.6);
+            cursor: not-allowed;
+        }
+
+        .bulk-actions {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .bulk-button {
+            padding: 10px 16px;
+            border: none;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .bulk-button.danger {
+            background: rgba(255, 69, 58, 0.2);
+            color: #FF453A;
+            border: 1px solid rgba(255, 69, 58, 0.4);
+        }
+
+        .bulk-button.danger:hover {
+            background: rgba(255, 69, 58, 0.3);
+        }
+
+        .bulk-button.warning {
+            background: rgba(255, 159, 10, 0.2);
+            color: #FF9F0A;
+            border: 1px solid rgba(255, 159, 10, 0.4);
+        }
+
+        .bulk-button.warning:hover {
+            background: rgba(255, 159, 10, 0.3);
+        }
+
+        .phonemes-table-container {
+            background: rgba(58, 58, 60, 0.6);
+            border: 1px solid rgba(84, 84, 88, 0.4);
+            border-radius: 16px;
+            padding: 24px;
+            backdrop-filter: blur(20px);
+        }
+
+        .table-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .table-title {
+            font-size: 20px;
+            font-weight: 600;
+            color: #5AC8FA;
+        }
+
+        .table-controls {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+        }
+
+        .search-input {
+            padding: 8px 12px;
+            background: rgba(44, 44, 46, 0.8);
+            border: 1px solid rgba(84, 84, 88, 0.4);
+            border-radius: 6px;
+            color: #ffffff;
+            font-size: 14px;
+            width: 200px;
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: #007AFF;
+            box-shadow: 0 0 0 2px rgba(0, 122, 255, 0.2);
+        }
+
+        .phonemes-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 14px;
+        }
+
+        .phonemes-table th {
+            background: rgba(44, 44, 46, 0.8);
+            padding: 12px 16px;
+            text-align: left;
+            font-weight: 600;
+            border-bottom: 2px solid rgba(84, 84, 88, 0.4);
+            color: #ffffff;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .phonemes-table td {
+            padding: 12px 16px;
+            border-bottom: 1px solid rgba(84, 84, 88, 0.2);
+            vertical-align: middle;
+        }
+
+        .phonemes-table tr:hover {
+            background: rgba(78, 78, 80, 0.4);
+        }
+
+        .phoneme-cell {
+            font-family: 'Courier New', monospace;
+            font-size: 18px;
+            font-weight: bold;
+            color: #5AC8FA;
+        }
+
+        .frequency-cell {
+            font-weight: 600;
+            color: #30D158;
+            text-align: center;
+        }
+
+        .frequency-controls {
+            display: flex;
+            gap: 4px;
+            align-items: center;
+        }
+
+        .freq-button {
+            background: rgba(84, 84, 88, 0.6);
+            border: none;
+            border-radius: 4px;
+            padding: 4px 8px;
+            color: #ffffff;
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .freq-button:hover {
+            background: rgba(84, 84, 88, 0.8);
+        }
+
+        .freq-button.increase {
+            background: rgba(48, 209, 88, 0.2);
+            color: #30D158;
+        }
+
+        .freq-button.increase:hover {
+            background: rgba(48, 209, 88, 0.3);
+        }
+
+        .freq-button.decrease {
+            background: rgba(255, 69, 58, 0.2);
+            color: #FF453A;
+        }
+
+        .freq-button.decrease:hover {
+            background: rgba(255, 69, 58, 0.3);
+        }
+
+        .actions-cell {
+            text-align: center;
+        }
+
+        .delete-button {
+            background: rgba(255, 69, 58, 0.2);
+            border: 1px solid rgba(255, 69, 58, 0.4);
+            border-radius: 4px;
+            padding: 4px 8px;
+            color: #FF453A;
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .delete-button:hover {
+            background: rgba(255, 69, 58, 0.3);
+        }
+
+        .loading {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top-color: #ffffff;
+            animation: spin 1s ease-in-out infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .success-message {
+            background: rgba(48, 209, 88, 0.2);
+            border: 1px solid rgba(48, 209, 88, 0.4);
+            color: #30D158;
+            padding: 12px 16px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+
+        .error-message {
+            background: rgba(255, 69, 58, 0.2);
+            border: 1px solid rgba(255, 69, 58, 0.4);
+            color: #FF453A;
+            padding: 12px 16px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
+
+        .modal-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(44, 44, 46, 0.95);
+            border: 1px solid rgba(84, 84, 88, 0.6);
+            border-radius: 16px;
+            padding: 24px;
+            max-width: 600px;
+            width: 90%;
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+
+        .modal-content.large-modal {
+            max-width: 1200px;
+            width: 95%;
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            border-bottom: 1px solid rgba(84, 84, 88, 0.4);
+            padding-bottom: 16px;
+        }
+
+        .modal-header h2 {
+            font-size: 20px;
+            font-weight: 600;
+            color: #5AC8FA;
+            margin: 0;
+        }
+
+        .modal-close {
+            background: none;
+            border: none;
+            color: #8E8E93;
+            font-size: 24px;
+            cursor: pointer;
+            padding: 0;
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: all 0.2s ease;
+        }
+
+        .modal-close:hover {
+            background: rgba(84, 84, 88, 0.4);
+            color: #ffffff;
+        }
+
+        .phoneme-info {
+            text-align: center;
+            margin-bottom: 20px;
+            padding: 16px;
+            background: rgba(84, 84, 88, 0.4);
+            border-radius: 12px;
+        }
+
+        .phoneme-symbol {
+            font-family: 'Courier New', monospace;
+            font-size: 36px;
+            font-weight: bold;
+            color: #5AC8FA;
+            margin-bottom: 8px;
+        }
+
+        .phoneme-details {
+            font-size: 14px;
+            color: #8E8E93;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .button {
+            padding: 10px 16px;
+            border: none;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .button-primary {
+            background: #007AFF;
+            color: #ffffff;
+        }
+
+        .button-primary:hover {
+            background: #0056CC;
+        }
+
+        .button-secondary {
+            background: rgba(84, 84, 88, 0.6);
+            color: #ffffff;
+        }
+
+        .button-secondary:hover {
+            background: rgba(84, 84, 88, 0.8);
+        }
+
+        .button-danger {
+            background: rgba(255, 69, 58, 0.2);
+            color: #FF453A;
+            border: 1px solid rgba(255, 69, 58, 0.4);
+        }
+
+        .button-danger:hover {
+            background: rgba(255, 69, 58, 0.3);
+        }
+
+        .words-actions {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .words-table-container {
+            max-height: 400px;
+            overflow-y: auto;
+            border: 1px solid rgba(84, 84, 88, 0.4);
+            border-radius: 8px;
+        }
+
+        .words-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 14px;
+        }
+
+        .words-table th {
+            background: rgba(28, 28, 30, 0.8);
+            padding: 12px 8px;
+            text-align: left;
+            font-weight: 600;
+            border-bottom: 1px solid rgba(84, 84, 88, 0.4);
+            color: #ffffff;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .words-table td {
+            padding: 10px 8px;
+            border-bottom: 1px solid rgba(84, 84, 88, 0.2);
+            vertical-align: middle;
+        }
+
+        .words-table tr:hover {
+            background: rgba(78, 78, 80, 0.4);
+        }
+
+        .word-name {
+            font-weight: 600;
+            color: #5AC8FA;
+        }
+
+        .ipa-text {
+            font-family: 'Courier New', monospace;
+            color: #30D158;
+        }
+
+        .positions-used {
+            font-size: 12px;
+            color: #FF9F0A;
+            text-transform: capitalize;
+        }
+
+        .button-small {
+            padding: 4px 8px;
+            font-size: 12px;
+            margin: 0 2px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .button-small.button-primary {
+            background: rgba(0, 122, 255, 0.2);
+            color: #007AFF;
+            border: 1px solid rgba(0, 122, 255, 0.4);
+        }
+
+        .button-small.button-primary:hover {
+            background: rgba(0, 122, 255, 0.3);
+        }
+
+        .button-small.button-danger {
+            background: rgba(255, 69, 58, 0.2);
+            color: #FF453A;
+            border: 1px solid rgba(255, 69, 58, 0.4);
+        }
+
+        .button-small.button-danger:hover {
+            background: rgba(255, 69, 58, 0.3);
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 24px;
+            }
+
+            .controls-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .table-header {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .table-controls {
+                justify-content: space-between;
+            }
+
+            .search-input {
+                width: 100%;
+            }
+
+            .phonemes-table {
+                font-size: 12px;
+            }
+
+            .phonemes-table th,
+            .phonemes-table td {
+                padding: 8px 12px;
+            }
+
+            .modal-content {
+                width: 95%;
+                max-height: 90vh;
+                padding: 16px;
+            }
+
+            .modal-content.large-modal {
+                width: 98%;
+            }
+
+            .action-buttons {
+                flex-direction: column;
+            }
+
+            .words-actions {
+                flex-direction: column;
+            }
+
+            .words-table-container {
+                max-height: 300px;
+            }
+
+            .words-table {
+                font-size: 12px;
+            }
+
+            .words-table th,
+            .words-table td {
+                padding: 8px 4px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <a href="{{ url_for('admin_menu') }}" class="back-button">← Back</a>
+            <h1>⚙️ Admin - Phoneme Management</h1>
+        </div>
+
+        <div class="admin-warning">
+            <span class="warning-icon">⚠️</span>
+            <div class="warning-text">
+                <strong>Administrator Panel:</strong> Changes made here will affect the entire phoneme database and word creation system. Use with caution.
+            </div>
+        </div>
+
+        <div id="messageContainer"></div>
+
+        <div class="controls-section">
+            <div class="controls-title">
+                🛠️ Management Tools
+            </div>
+
+            <div class="controls-grid">
+                <div class="control-card">
+                    <div class="control-card-title">Add New Phoneme</div>
+                    <form class="add-phoneme-form" id="addPhonemeForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label">Syllable Type</label>
+                                <select class="form-select" id="syllableType" required>
+                                    <option value="CVC">CVC</option>
+                                    <option value="CV">CV</option>
+                                    <option value="VC">VC</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Position</label>
+                                <select class="form-select" id="position" required>
+                                    <option value="onset">Onset</option>
+                                    <option value="nucleus">Nucleus</option>
+                                    <option value="coda">Coda</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label">Length Type</label>
+                                <select class="form-select" id="lengthTypeSelect" onchange="handleLengthTypeSelect()">
+                                    <option value="">Select existing or choose "Custom"...</option>
+                                </select>
+                                <input type="text" class="form-input" id="lengthType" placeholder="Enter new length type" style="display: none; margin-top: 8px;">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Group Type</label>
+                                <select class="form-select" id="groupTypeSelect" onchange="handleGroupTypeSelect()">
+                                    <option value="">Select existing or choose "Custom"...</option>
+                                </select>
+                                <input type="text" class="form-input" id="groupType" placeholder="Enter new group type" style="display: none; margin-top: 8px;">
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label">Subgroup Type</label>
+                                <select class="form-select" id="subgroupTypeSelect" onchange="handleSubgroupTypeSelect()">
+                                    <option value="">Select existing or choose "Custom"...</option>
+                                </select>
+                                <input type="text" class="form-input" id="subgroupType" placeholder="Enter new subgroup type or 'none'" style="display: none; margin-top: 8px;">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Phoneme</label>
+                                <input type="text" class="form-input phoneme-input" id="phoneme" placeholder="e.g., p" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Initial Frequency</label>
+                            <input type="number" class="form-input" id="frequency" value="0" min="0">
+                        </div>
+
+                        <button type="submit" class="add-button" id="addButton">
+                            <span id="addButtonText">➕ Add Phoneme</span>
+                        </button>
+                    </form>
+                </div>
+
+                <div class="control-card">
+                    <div class="control-card-title">Bulk Actions</div>
+                    <div class="bulk-actions">
+                        <button class="bulk-button warning" onclick="resetAllFrequencies()">
+                            🔄 Reset All Frequencies
+                        </button>
+                        <button class="bulk-button danger" onclick="deleteUnusedPhonemes()">
+                            🗑️ Delete Unused Phonemes
+                        </button>
+                        <button class="bulk-button danger" onclick="resetDatabase()">
+                            💥 Reset Entire Database
+                        </button>
+                    </div>
+                    <div style="margin-top: 12px; font-size: 12px; color: #8E8E93;">
+                        <strong>Warning:</strong> Bulk actions cannot be undone. Use with extreme caution.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="phonemes-table-container">
+            <div class="table-header">
+                <div class="table-title" id="tableTitle">📊 All Phonemes (Loading...)</div>
+                <div class="table-controls">
+                    <input type="text" class="search-input" id="searchInput" placeholder="Search phonemes..." oninput="filterTable()">
+                    <button class="bulk-button" onclick="loadPhonemes()" id="refreshButton">🔄 Refresh</button>
+                    <button class="bulk-button" onclick="testSearch()" id="testSearchButton">🔍 Test Search</button>
+                </div>
+            </div>
+
+            <div style="overflow-x: auto; max-height: 600px; overflow-y: auto;">
+                <table class="phonemes-table" id="phonemesTable">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Phoneme</th>
+                            <th>Syllable</th>
+                            <th>Position</th>
+                            <th>Length Type</th>
+                            <th>Group</th>
+                            <th>Subgroup</th>
+                            <th>Frequency</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="phonemesTableBody">
+                        <tr>
+                            <td colspan="9" style="text-align: center; padding: 40px; color: #8E8E93;">
+                                Loading phonemes...
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let phonemes = [];
+
+        // Load phonemes on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            loadPhonemes();
+            populateDropdownOptions();
+            
+            // Add search event listener with a small delay to ensure DOM is ready
+            setTimeout(() => {
+                const searchInput = document.getElementById('searchInput');
+                console.log('Setting up search input:', searchInput);
+                if (searchInput) {
+                    searchInput.addEventListener('input', filterTable);
+                    searchInput.addEventListener('keyup', filterTable);
+                    console.log('Search event listeners added');
+                } else {
+                    console.log('Search input not found during setup');
+                }
+            }, 100);
+        });
+
+        async function loadPhonemes() {
+            const refreshButton = document.getElementById('refreshButton');
+            const tableTitle = document.getElementById('tableTitle');
+
+            refreshButton.disabled = true;
+            refreshButton.innerHTML = '<span class="loading"></span> Loading...';
+
+            try {
+                const response = await fetch('/api/admin/phonemes');
+                const data = await response.json();
+
+                if (data.success) {
+                    phonemes = data.phonemes;
+                    displayPhonemes(phonemes);
+                    tableTitle.textContent = `📊 All Phonemes (${phonemes.length})`;
+                } else {
+                    showMessage('Error loading phonemes: ' + data.error, 'error');
+                }
+            } catch (error) {
+                showMessage('Network error: ' + error.message, 'error');
+            } finally {
+                refreshButton.disabled = false;
+                refreshButton.innerHTML = '🔄 Refresh';
+            }
+        }
+
+        function displayPhonemes(phonemesList) {
+            const tbody = document.getElementById('phonemesTableBody');
+
+            if (phonemesList.length === 0) {
+                tbody.innerHTML = `
+                    <tr>
+                        <td colspan="9" style="text-align: center; padding: 40px; color: #8E8E93;">
+                            No phonemes found
+                        </td>
+                    </tr>
+                `;
+                return;
+            }
+
+            let html = '';
+            phonemesList.forEach(phoneme => {
+                html += `
+                    <tr data-phoneme-id="${phoneme.id}">
+                        <td>${phoneme.id}</td>
+                        <td class="phoneme-cell">${phoneme.phoneme}</td>
+                        <td>${phoneme.syllable_type}</td>
+                        <td>${phoneme.position}</td>
+                        <td>${phoneme.length_type.replace('_', ' ')}</td>
+                        <td>${phoneme.group_type.replace('_', ' ')}</td>
+                        <td>${phoneme.subgroup_type.replace('_', ' ')}</td>
+                        <td class="frequency-cell">
+                            <div class="frequency-controls">
+                                <button class="freq-button decrease" onclick="updateFrequency(${phoneme.id}, -1)">-</button>
+                                <span style="min-width: 30px; text-align: center; display: inline-block;">${phoneme.frequency}</span>
+                                <button class="freq-button increase" onclick="updateFrequency(${phoneme.id}, 1)">+</button>
+                            </div>
+                        </td>
+                        <td class="actions-cell">
+                            <button class="delete-button" onclick="deletePhoneme(${phoneme.id}, '${phoneme.phoneme}')">🗑️</button>
+                        </td>
+                    </tr>
+                `;
+            });
+
+            tbody.innerHTML = html;
+        }
+
+        function filterTable() {
+            console.log('filterTable() called!'); // Debug log
+            
+            const input = document.getElementById('searchInput');
+            if (!input) {
+                console.log('Search input not found!');
+                return;
+            }
+            
+            const filter = input.value.toLowerCase().trim();
+            console.log('Filtering with:', filter);
+            console.log('Total phonemes available:', phonemes.length);
+            
+            if (!filter) {
+                // If no filter, show all phonemes
+                displayPhonemes(phonemes);
+                const tableTitle = document.getElementById('tableTitle');
+                tableTitle.textContent = `📊 All Phonemes (${phonemes.length})`;
+                return;
+            }
+            
+            const filteredPhonemes = phonemes.filter(phoneme => {
+                // Simple search: just check if phoneme symbol contains the filter
+                return phoneme.phoneme && phoneme.phoneme.toLowerCase().includes(filter);
+            });
+
+            console.log('Filtered phonemes found:', filteredPhonemes.length);
+            displayPhonemes(filteredPhonemes);
+
+            const tableTitle = document.getElementById('tableTitle');
+            tableTitle.textContent = `📊 Filtered Phonemes (${filteredPhonemes.length}/${phonemes.length})`;
+        }
+
+        // Add phoneme form submission
+        document.getElementById('addPhonemeForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+
+            const addButton = document.getElementById('addButton');
+            const addText = document.getElementById('addButtonText');
+
+            addButton.disabled = true;
+            addText.innerHTML = '<span class="loading"></span> Adding...';
+
+            try {
+                // Get values from dropdowns or custom inputs
+                const lengthTypeValue = document.getElementById('lengthTypeSelect').value === 'custom' ? 
+                    document.getElementById('lengthType').value : document.getElementById('lengthTypeSelect').value;
+                const groupTypeValue = document.getElementById('groupTypeSelect').value === 'custom' ? 
+                    document.getElementById('groupType').value : document.getElementById('groupTypeSelect').value;
+                const subgroupTypeValue = document.getElementById('subgroupTypeSelect').value === 'custom' ? 
+                    document.getElementById('subgroupType').value : document.getElementById('subgroupTypeSelect').value;
+
+                // Validate required fields
+                if (!lengthTypeValue) {
+                    showMessage('Please select or enter a length type', 'error');
+                    addButton.disabled = false;
+                    addText.innerHTML = '➕ Add Phoneme';
+                    return;
+                }
+                if (!groupTypeValue) {
+                    showMessage('Please select or enter a group type', 'error');
+                    addButton.disabled = false;
+                    addText.innerHTML = '➕ Add Phoneme';
+                    return;
+                }
+
+                const formData = {
+                    syllable_type: document.getElementById('syllableType').value,
+                    position: document.getElementById('position').value,
+                    length_type: lengthTypeValue,
+                    group_type: groupTypeValue,
+                    subgroup_type: subgroupTypeValue || 'none',
+                    phoneme: document.getElementById('phoneme').value,
+                    frequency: parseInt(document.getElementById('frequency').value) || 0
+                };
+
+                const response = await fetch('/api/admin/add-phoneme', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(formData)
+                });
+
+                const data = await response.json();
+
+                if (data.success) {
+                    showMessage('Phoneme added successfully!', 'success');
+
+                    // Reset form
+                    document.getElementById('addPhonemeForm').reset();
+                    
+                    // Reset dropdown selections and hide custom inputs
+                    document.getElementById('lengthTypeSelect').value = '';
+                    document.getElementById('groupTypeSelect').value = '';
+                    document.getElementById('subgroupTypeSelect').value = '';
+                    document.getElementById('lengthType').style.display = 'none';
+                    document.getElementById('groupType').style.display = 'none';
+                    document.getElementById('subgroupType').style.display = 'none';
+
+                    // Reload phonemes and dropdown options
+                    loadPhonemes();
+                    populateDropdownOptions();
+                } else {
+                    showMessage('Error adding phoneme: ' + data.error, 'error');
+                }
+            } catch (error) {
+                showMessage('Network error: ' + error.message, 'error');
+            } finally {
+                addButton.disabled = false;
+                addText.innerHTML = '➕ Add Phoneme';
+            }
+        });
+
+        async function updateFrequency(phonemeId, increment) {
+            try {
+                const response = await fetch('/api/admin/update-phoneme-frequency', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        id: phonemeId,
+                        increment: increment
+                    })
+                });
+
+                const data = await response.json();
+
+                if (data.success) {
+                    // Update the frequency in the table
+                    const row = document.querySelector(`tr[data-phoneme-id="${phonemeId}"]`);
+                    const frequencySpan = row.querySelector('.frequency-controls span');
+                    const currentFreq = parseInt(frequencySpan.textContent);
+                    const newFreq = Math.max(0, currentFreq + increment);
+                    frequencySpan.textContent = newFreq;
+
+                    // Update the phonemes array
+                    const phoneme = phonemes.find(p => p.id === phonemeId);
+                    if (phoneme) {
+                        phoneme.frequency = newFreq;
+                    }
+                } else {
+                    showMessage('Error updating frequency: ' + data.error, 'error');
+                }
+            } catch (error) {
+                showMessage('Network error: ' + error.message, 'error');
+            }
+        }
+
+        async function deletePhoneme(phonemeId, phonemeName) {
+            // First get phoneme details for the confirmation
+            const phoneme = phonemes.find(p => p.id === phonemeId);
+            if (!phoneme) {
+                showMessage('Phoneme not found', 'error');
+                return;
+            }
+
+            // Show confirmation modal
+            showPhonemeDeleteConfirmation(phoneme);
+        }
+
+        function showPhonemeDeleteConfirmation(phoneme) {
+            const modal = document.createElement('div');
+            modal.className = 'modal-overlay';
+            modal.innerHTML = `
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h2>⚠️ Confirm Phoneme Deletion</h2>
+                        <button class="modal-close" onclick="closeModal(this)">&times;</button>
+                    </div>
+                    
+                    <div class="modal-body">
+                        <div class="phoneme-info">
+                            <div class="phoneme-symbol">${phoneme.phoneme}</div>
+                            <div class="phoneme-details">
+                                ${phoneme.syllable_type} > ${phoneme.position} > ${phoneme.length_type.replace('_', ' ')} > ${phoneme.group_type.replace('_', ' ')}
+                                ${phoneme.subgroup_type && phoneme.subgroup_type !== 'none' ? ' > ' + phoneme.subgroup_type.replace('_', ' ') : ''}
+                            </div>
+                            <div style="margin-top: 12px; color: #FF9F0A;">
+                                <strong>Frequency:</strong> ${phoneme.frequency}
+                            </div>
+                        </div>
+
+                        <div style="background: rgba(255, 69, 58, 0.1); border: 1px solid rgba(255, 69, 58, 0.3); border-radius: 8px; padding: 16px; margin: 16px 0;">
+                            <p style="margin: 0; color: #FF453A; font-weight: 500;">
+                                <strong>Warning:</strong> This action cannot be undone. The phoneme will be permanently removed from the database.
+                            </p>
+                            ${phoneme.frequency > 0 ? `
+                                <p style="margin: 8px 0 0 0; color: #FF9F0A; font-size: 14px;">
+                                    <strong>Note:</strong> This phoneme has been used ${phoneme.frequency} time(s). If it's currently in use by any words, you'll be given options to handle conflicts.
+                                </p>
+                            ` : ''}
+                        </div>
+
+                        <p style="margin: 16px 0; text-align: center; font-weight: 500;">
+                            Are you sure you want to delete this phoneme?
+                        </p>
+                        
+                        <div class="action-buttons">
+                            <button class="button button-secondary" onclick="closeModal(this)">
+                                Cancel
+                            </button>
+                            <button class="button button-danger" onclick="confirmDeletePhoneme(${phoneme.id}, '${phoneme.phoneme}')">
+                                🗑️ Delete Phoneme
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            `;
+
+            document.body.appendChild(modal);
+            modal.style.display = 'block';
+        }
+
+        async function confirmDeletePhoneme(phonemeId, phonemeName) {
+            // Close the confirmation modal
+            const modals = document.querySelectorAll('.modal-overlay');
+            modals.forEach(modal => modal.remove());
+
+            try {
+                const response = await fetch(`/api/admin/delete-phoneme/${phonemeId}`, {
+                    method: 'DELETE',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({})
+                });
+
+                const data = await response.json();
+
+                if (data.success) {
+                    showMessage(data.message, 'success');
+
+                    // Remove from phonemes array
+                    phonemes = phonemes.filter(p => p.id !== phonemeId);
+
+                    // Remove from table
+                    const row = document.querySelector(`tr[data-phoneme-id="${phonemeId}"]`);
+                    if (row) {
+                        row.remove();
+                    }
+
+                    // Update title
+                    const tableTitle = document.getElementById('tableTitle');
+                    tableTitle.textContent = `📊 All Phonemes (${phonemes.length})`;
+                } else if (data.error === 'phoneme_in_use') {
+                    // Show phoneme conflict resolution modal
+                    showPhonemeConflictModal(data);
+                } else {
+                    showMessage('Error deleting phoneme: ' + data.error, 'error');
+                }
+            } catch (error) {
+                showMessage('Network error: ' + error.message, 'error');
+            }
+        }
+
+        function showPhonemeConflictModal(conflictData) {
+            const phoneme = conflictData.phoneme_info;
+            const words = conflictData.words_using_phoneme;
+            const replacementOptions = conflictData.replacement_options;
+
+            const modal = document.createElement('div');
+            modal.className = 'modal-overlay';
+            modal.innerHTML = `
+                <div class="modal-content large-modal">
+                    <div class="modal-header">
+                        <h2>⚠️ Phoneme Deletion Conflicts</h2>
+                        <button class="modal-close" onclick="closeModal(this)">&times;</button>
+                    </div>
+                    
+                    <div class="modal-body">
+                        <div class="phoneme-info">
+                            <div class="phoneme-symbol">${phoneme.phoneme}</div>
+                            <div class="phoneme-details">
+                                ${phoneme.syllable_type} > ${phoneme.position} > ${phoneme.length_type.replace('_', ' ')} > ${phoneme.group_type.replace('_', ' ')}
+                            </div>
+                        </div>
+
+                        <p style="margin: 16px 0; color: #FF9F0A; font-weight: 500;">
+                            This phoneme is used in ${words.length} word(s). Choose how to handle the conflicts:
+                        </p>
+
+                        <div style="background: rgba(44, 44, 46, 0.8); border-radius: 12px; padding: 20px; margin: 16px 0;">
+                            <h3 style="margin: 0 0 16px 0; color: #5AC8FA;">Conflict Resolution Options</h3>
+                            
+                            <div style="display: grid; gap: 12px;">
+                                <label style="display: flex; align-items: center; gap: 8px; cursor: pointer;">
+                                    <input type="radio" name="phoneieConflictAction" value="delete" style="margin: 0;">
+                                    <span><strong>Delete from all words:</strong> Remove this phoneme from all words (leaves empty positions)</span>
+                                </label>
+                                
+                                <label style="display: flex; align-items: center; gap: 8px; cursor: pointer;">
+                                    <input type="radio" name="phoneieConflictAction" value="replace" style="margin: 0;">
+                                    <span><strong>Replace in all words:</strong> Replace with another phoneme in all words</span>
+                                </label>
+                                
+                                <label style="display: flex; align-items: center; gap: 8px; cursor: pointer;">
+                                    <input type="radio" name="phoneieConflictAction" value="leave" style="margin: 0;">
+                                    <span><strong>Leave in words:</strong> Delete phoneme but keep it in existing words (orphaned)</span>
+                                </label>
+                                
+                                <label style="display: flex; align-items: center; gap: 8px; cursor: pointer;">
+                                    <input type="radio" name="phoneieConflictAction" value="case_by_case" style="margin: 0;">
+                                    <span><strong>Handle individually:</strong> Choose action for each word separately</span>
+                                </label>
+                            </div>
+
+                            <div id="phonemeReplacementOptions" style="margin-top: 16px; display: none;">
+                                <div style="margin-bottom: 8px;">
+                                    <label style="display: block; margin-bottom: 4px; font-weight: 500;">Step 1: Choose length type:</label>
+                                    <select id="phonemeReplacementLengthSelect" onchange="updateReplacementPhonemes()" style="width: 100%; padding: 8px; background: rgba(28, 28, 30, 0.8); border: 1px solid rgba(84, 84, 88, 0.4); border-radius: 6px; color: #ffffff;">
+                                        <option value="">Select length type...</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label style="display: block; margin-bottom: 4px; font-weight: 500;">Step 2: Choose replacement phoneme:</label>
+                                    <select id="phonemeReplacementSelect" disabled style="width: 100%; padding: 8px; background: rgba(28, 28, 30, 0.8); border: 1px solid rgba(84, 84, 88, 0.4); border-radius: 6px; color: #ffffff;">
+                                        <option value="">First select length type above</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="wordsDetailsList" style="margin-top: 20px;">
+                            <h3 style="margin-bottom: 12px; color: #5AC8FA;">Words using this phoneme:</h3>
+                            <div style="max-height: 200px; overflow-y: auto; border: 1px solid rgba(84, 84, 88, 0.4); border-radius: 8px;">
+                                <table style="width: 100%; border-collapse: collapse; font-size: 14px;">
+                                    <thead>
+                                        <tr style="background: rgba(28, 28, 30, 0.8);">
+                                            <th style="padding: 8px; text-align: left; border-bottom: 1px solid rgba(84, 84, 88, 0.4);">Word</th>
+                                            <th style="padding: 8px; text-align: left; border-bottom: 1px solid rgba(84, 84, 88, 0.4);">English</th>
+                                            <th style="padding: 8px; text-align: left; border-bottom: 1px solid rgba(84, 84, 88, 0.4);">IPA</th>
+                                            <th id="individualActionHeader" style="padding: 8px; text-align: left; border-bottom: 1px solid rgba(84, 84, 88, 0.4); display: none;">Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        ${words.map(word => `
+                                            <tr>
+                                                <td style="padding: 8px; border-bottom: 1px solid rgba(84, 84, 88, 0.2); color: #5AC8FA; font-weight: 600;">${word.new_language_word}</td>
+                                                <td style="padding: 8px; border-bottom: 1px solid rgba(84, 84, 88, 0.2);">${word.english_words}</td>
+                                                <td style="padding: 8px; border-bottom: 1px solid rgba(84, 84, 88, 0.2); font-family: 'Courier New', monospace; color: #30D158;">${word.ipa_phonetics}</td>
+                                                <td class="individual-action-cell" data-word-id="${word.id}" style="padding: 8px; border-bottom: 1px solid rgba(84, 84, 88, 0.2); display: none;">
+                                                    <select class="individual-action-select" style="width: 100%; padding: 4px; background: rgba(28, 28, 30, 0.8); border: 1px solid rgba(84, 84, 88, 0.4); border-radius: 4px; color: #ffffff; font-size: 12px;">
+                                                        <option value="delete">Delete phoneme</option>
+                                                        <option value="replace">Replace phoneme</option>
+                                                        <option value="leave">Leave as is</option>
+                                                    </select>
+                                                    <select class="individual-length-select" data-word-id="${word.id}" style="width: 100%; padding: 4px; background: rgba(28, 28, 30, 0.8); border: 1px solid rgba(84, 84, 88, 0.4); border-radius: 4px; color: #ffffff; font-size: 12px; margin-top: 4px; display: none;">
+                                                        <option value="">Select length type...</option>
+                                                    </select>
+                                                    <select class="individual-replacement-select" data-word-id="${word.id}" style="width: 100%; padding: 4px; background: rgba(28, 28, 30, 0.8); border: 1px solid rgba(84, 84, 88, 0.4); border-radius: 4px; color: #ffffff; font-size: 12px; margin-top: 4px; display: none;">
+                                                        <option value="">Select replacement...</option>
+                                                    </select>
+                                                </td>
+                                            </tr>
+                                        `).join('')}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <div class="action-buttons" style="margin-top: 24px;">
+                            <button class="button button-secondary" onclick="closeModal(this)">
+                                Cancel
+                            </button>
+                            <button class="button button-danger" onclick="proceedWithPhonemeDetion(${phoneme.id}, '${phoneme.phoneme}')">
+                                🗑️ Proceed with Deletion
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            `;
+
+            document.body.appendChild(modal);
+            modal.style.display = 'block';
+
+            // Store replacement options globally for JavaScript access
+            window.currentPhonemeReplacementData = replacementOptions;
+
+            // Add event listeners for dynamic form behavior
+            setupPhonemeConflictListeners();
+        }
+
+        function setupPhonemeConflictListeners() {
+            const actionRadios = document.querySelectorAll('input[name="phoneieConflictAction"]');
+            const replacementOptions = document.getElementById('phonemeReplacementOptions');
+            const individualActionCells = document.querySelectorAll('.individual-action-cell');
+            const individualActionHeader = document.getElementById('individualActionHeader');
+
+            actionRadios.forEach(radio => {
+                radio.addEventListener('change', function() {
+                    if (this.value === 'replace') {
+                        replacementOptions.style.display = 'block';
+                        populateGlobalLengthTypes();
+                    } else {
+                        replacementOptions.style.display = 'none';
+                    }
+
+                    if (this.value === 'case_by_case') {
+                        individualActionCells.forEach(cell => cell.style.display = 'table-cell');
+                        individualActionHeader.style.display = 'table-cell';
+                        populateIndividualLengthTypes();
+                    } else {
+                        individualActionCells.forEach(cell => cell.style.display = 'none');
+                        individualActionHeader.style.display = 'none';
+                    }
+                });
+            });
+
+            // Handle individual action changes
+            const individualSelects = document.querySelectorAll('.individual-action-select');
+            individualSelects.forEach(select => {
+                select.addEventListener('change', function() {
+                    const lengthSelect = this.parentNode.querySelector('.individual-length-select');
+                    const replacementSelect = this.parentNode.querySelector('.individual-replacement-select');
+                    
+                    if (this.value === 'replace') {
+                        lengthSelect.style.display = 'block';
+                        replacementSelect.style.display = 'block';
+                        populateIndividualLengthTypes();
+                    } else {
+                        lengthSelect.style.display = 'none';
+                        replacementSelect.style.display = 'none';
+                    }
+                });
+            });
+
+            // Handle individual length type changes
+            const individualLengthSelects = document.querySelectorAll('.individual-length-select');
+            individualLengthSelects.forEach(select => {
+                select.addEventListener('change', function() {
+                    const wordId = this.dataset.wordId;
+                    const lengthType = this.value;
+                    updateIndividualReplacementPhonemes(wordId, lengthType);
+                });
+            });
+        }
+
+        function populateGlobalLengthTypes() {
+            const lengthSelect = document.getElementById('phonemeReplacementLengthSelect');
+            if (!lengthSelect || !window.currentPhonemeReplacementData) return;
+
+            lengthSelect.innerHTML = '<option value="">Select length type...</option>';
+            
+            // Get unique length types from all replacement options and sort them
+            const lengthTypes = [...new Set(window.currentPhonemeReplacementData.map(option => option.length_type))].filter(lt => lt).sort();
+            
+            if (lengthTypes.length === 0) {
+                lengthSelect.innerHTML = '<option value="">No length types available</option>';
+                return;
+            }
+            
+            lengthTypes.forEach(lt => {
+                const option = document.createElement('option');
+                option.value = lt;
+                option.textContent = lt.replace(/_/g, ' '); // Replace all underscores
+                lengthSelect.appendChild(option);
+            });
+        }
+
+        function populateIndividualLengthTypes() {
+            const lengthSelects = document.querySelectorAll('.individual-length-select');
+            
+            lengthSelects.forEach(select => {
+                if (!window.currentPhonemeReplacementData) return;
+
+                select.innerHTML = '<option value="">Select length type...</option>';
+                
+                // Get unique length types from all replacement options and sort them
+                const lengthTypes = [...new Set(window.currentPhonemeReplacementData.map(option => option.length_type))].filter(lt => lt).sort();
+                
+                if (lengthTypes.length === 0) {
+                    select.innerHTML = '<option value="">No length types available</option>';
+                    return;
+                }
+                
+                lengthTypes.forEach(lt => {
+                    const option = document.createElement('option');
+                    option.value = lt;
+                    option.textContent = lt.replace(/_/g, ' '); // Replace all underscores
+                    select.appendChild(option);
+                });
+            });
+        }
+
+        function updateReplacementPhonemes() {
+            const lengthSelect = document.getElementById('phonemeReplacementLengthSelect');
+            const phonemeSelect = document.getElementById('phonemeReplacementSelect');
+            const selectedLengthType = lengthSelect.value;
+
+            if (!selectedLengthType || !window.currentPhonemeReplacementData) {
+                phonemeSelect.innerHTML = '<option value="">First select length type above</option>';
+                phonemeSelect.disabled = true;
+                return;
+            }
+
+            phonemeSelect.disabled = false;
+            phonemeSelect.innerHTML = '<option value="">Select phoneme...</option>';
+
+            // Filter phonemes by the selected length type and group by group_type and subgroup_type
+            const phonemes = window.currentPhonemeReplacementData.filter(option => option.length_type === selectedLengthType);
+            
+            if (phonemes.length === 0) {
+                phonemeSelect.innerHTML = '<option value="">No phonemes available for this length type</option>';
+                phonemeSelect.disabled = true;
+                return;
+            }
+
+            const groupedPhonemes = {};
+            
+            phonemes.forEach(phoneme => {
+                const groupKey = phoneme.group_type || 'Other';
+                if (!groupedPhonemes[groupKey]) {
+                    groupedPhonemes[groupKey] = {};
+                }
+                const subgroupKey = phoneme.subgroup_type || 'none';
+                if (!groupedPhonemes[groupKey][subgroupKey]) {
+                    groupedPhonemes[groupKey][subgroupKey] = [];
+                }
+                groupedPhonemes[groupKey][subgroupKey].push(phoneme);
+            });
+
+            // Create optgroups for better organization
+            Object.keys(groupedPhonemes).sort().forEach(groupType => {
+                const optgroup = document.createElement('optgroup');
+                optgroup.label = groupType.replace(/_/g, ' ').toUpperCase();
+                
+                Object.keys(groupedPhonemes[groupType]).sort().forEach(subgroupType => {
+                    groupedPhonemes[groupType][subgroupType].forEach(phoneme => {
+                        const option = document.createElement('option');
+                        option.value = phoneme.phoneme;
+                        option.setAttribute('data-length-type', selectedLengthType);
+                        
+                        let displayText = phoneme.phoneme;
+                        if (subgroupType !== 'none' && subgroupType !== 'default') {
+                            displayText += ` (${subgroupType.replace(/_/g, ' ')})`;
+                        }
+                        
+                        option.textContent = displayText;
+                        optgroup.appendChild(option);
+                    });
+                });
+                
+                phonemeSelect.appendChild(optgroup);
+            });
+        }
+
+        function updateIndividualReplacementPhonemes(wordId, lengthType) {
+            const replacementSelect = document.querySelector(`.individual-replacement-select[data-word-id="${wordId}"]`);
+            
+            if (!lengthType || !window.currentPhonemeReplacementData) {
+                replacementSelect.innerHTML = '<option value="">First select length type above</option>';
+                replacementSelect.disabled = true;
+                return;
+            }
+
+            replacementSelect.disabled = false;
+            replacementSelect.innerHTML = '<option value="">Select phoneme...</option>';
+
+            // Filter phonemes by the selected length type and group them
+            const phonemes = window.currentPhonemeReplacementData.filter(option => option.length_type === lengthType);
+            
+            if (phonemes.length === 0) {
+                replacementSelect.innerHTML = '<option value="">No phonemes available for this length type</option>';
+                replacementSelect.disabled = true;
+                return;
+            }
+
+            const groupedPhonemes = {};
+            
+            phonemes.forEach(phoneme => {
+                const groupKey = phoneme.group_type || 'Other';
+                if (!groupedPhonemes[groupKey]) {
+                    groupedPhonemes[groupKey] = {};
+                }
+                const subgroupKey = phoneme.subgroup_type || 'none';
+                if (!groupedPhonemes[groupKey][subgroupKey]) {
+                    groupedPhonemes[groupKey][subgroupKey] = [];
+                }
+                groupedPhonemes[groupKey][subgroupKey].push(phoneme);
+            });
+
+            // Create optgroups for better organization
+            Object.keys(groupedPhonemes).sort().forEach(groupType => {
+                const optgroup = document.createElement('optgroup');
+                optgroup.label = groupType.replace(/_/g, ' ').toUpperCase();
+                
+                Object.keys(groupedPhonemes[groupType]).sort().forEach(subgroupType => {
+                    groupedPhonemes[groupType][subgroupType].forEach(phoneme => {
+                        const option = document.createElement('option');
+                        option.value = phoneme.phoneme;
+                        option.setAttribute('data-length-type', lengthType);
+                        
+                        let displayText = phoneme.phoneme;
+                        if (subgroupType !== 'none' && subgroupType !== 'default') {
+                            displayText += ` (${subgroupType.replace(/_/g, ' ')})`;
+                        }
+                        
+                        option.textContent = displayText;
+                        optgroup.appendChild(option);
+                    });
+                });
+                
+                replacementSelect.appendChild(optgroup);
+            });
+        }
+
+        async function proceedWithPhonemeDetion(phonemeId, phonemeName) {
+            const selectedAction = document.querySelector('input[name="phoneieConflictAction"]:checked');
+            
+            if (!selectedAction) {
+                showMessage('Please select how to handle the conflicts', 'error');
+                return;
+            }
+
+            const action = selectedAction.value;
+            let phonemeHandling = { action: action };
+
+            if (action === 'replace') {
+                const replacementLengthType = document.getElementById('phonemeReplacementLengthSelect').value;
+                const replacementPhoneme = document.getElementById('phonemeReplacementSelect').value;
+                
+                if (!replacementLengthType) {
+                    showMessage('Please select a replacement length type', 'error');
+                    return;
+                }
+                if (!replacementPhoneme) {
+                    showMessage('Please select a replacement phoneme', 'error');
+                    return;
+                }
+                
+                phonemeHandling.replacement_phoneme = replacementPhoneme;
+                phonemeHandling.replacement_length_type = replacementLengthType;
+            }
+
+            if (action === 'case_by_case') {
+                const caseByCase = {};
+                const individualSelects = document.querySelectorAll('.individual-action-select');
+                
+                individualSelects.forEach(select => {
+                    const wordId = select.closest('.individual-action-cell').dataset.wordId;
+                    const wordAction = select.value;
+                    
+                    caseByCase[wordId] = { action: wordAction };
+                    
+                    if (wordAction === 'replace') {
+                        const lengthSelect = select.parentNode.querySelector('.individual-length-select');
+                        const replacementSelect = select.parentNode.querySelector('.individual-replacement-select');
+                        const lengthType = lengthSelect.value;
+                        const replacement = replacementSelect.value;
+                        
+                        if (!lengthType) {
+                            showMessage(`Please select a replacement length type for word ID ${wordId}`, 'error');
+                            return;
+                        }
+                        if (!replacement) {
+                            showMessage(`Please select a replacement phoneme for word ID ${wordId}`, 'error');
+                            return;
+                        }
+                        
+                        caseByCase[wordId].replacement_phoneme = replacement;
+                        caseByCase[wordId].replacement_length_type = lengthType;
+                    }
+                });
+                
+                phonemeHandling.case_by_case_actions = caseByCase;
+            }
+
+            try {
+                // Close the modal
+                const modals = document.querySelectorAll('.modal-overlay');
+                modals.forEach(modal => modal.remove());
+
+                const response = await fetch(`/api/admin/delete-phoneme/${phonemeId}`, {
+                    method: 'DELETE',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        force_delete: true,
+                        phoneme_handling: phonemeHandling
+                    })
+                });
+
+                const data = await response.json();
+
+                if (data.success) {
+                    showMessage(data.message, 'success');
+
+                    // Remove from phonemes array
+                    phonemes = phonemes.filter(p => p.id !== phonemeId);
+
+                    // Remove from table
+                    const row = document.querySelector(`tr[data-phoneme-id="${phonemeId}"]`);
+                    if (row) {
+                        row.remove();
+                    }
+
+                    // Update title
+                    const tableTitle = document.getElementById('tableTitle');
+                    tableTitle.textContent = `📊 All Phonemes (${phonemes.length})`;
+
+                    // Reload phonemes to update frequencies if words were modified
+                    if (data.statistics && data.statistics.words_updated > 0) {
+                        setTimeout(() => {
+                            loadPhonemes();
+                        }, 1000);
+                    }
+                } else {
+                    showMessage('Error deleting phoneme: ' + data.error, 'error');
+                }
+            } catch (error) {
+                showMessage('Network error: ' + error.message, 'error');
+            }
+        }
+
+        async function showPhonemeUsageModal(phonemeId, phonemeName, wordsCount) {
+            try {
+                const response = await fetch(`/api/admin/phoneme-usage/${phonemeId}`);
+                const data = await response.json();
+
+                if (data.success) {
+                    createPhonemeUsageModal(data.phoneme, data.words);
+                } else {
+                    showMessage('Error loading phoneme usage: ' + data.error, 'error');
+                }
+            } catch (error) {
+                showMessage('Network error: ' + error.message, 'error');
+            }
+        }
+
+        function createPhonemeUsageModal(phoneme, words) {
+            const modal = document.createElement('div');
+            modal.className = 'modal-overlay';
+            modal.innerHTML = `
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h2>⚠️ Phoneme in Use</h2>
+                        <button class="modal-close" onclick="closeModal(this)">&times;</button>
+                    </div>
+                    
+                    <div class="modal-body">
+                        <div class="phoneme-info">
+                            <div class="phoneme-symbol">${phoneme.phoneme}</div>
+                            <div class="phoneme-details">
+                                ${phoneme.syllable_type} > ${phoneme.position} > ${phoneme.length_type.replace('_', ' ')} > ${phoneme.group_type.replace('_', ' ')}
+                            </div>
+                        </div>
+
+                        <p>This phoneme is currently used in <strong>${words.length}</strong> word(s). Choose an action:</p>
+                        
+                        <div class="action-buttons">
+                            <button class="button button-primary" onclick="showWordsTable(${phoneme.id}, '${phoneme.phoneme}')">
+                                📋 View Words & Manage
+                            </button>
+                            <button class="button button-danger" onclick="bulkDeleteWords(${phoneme.id}, '${phoneme.phoneme}')">
+                                🗑️ Delete All Words
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            `;
+
+            document.body.appendChild(modal);
+            modal.style.display = 'block';
+        }
+
+        async function showWordsTable(phonemeId, phonemeName) {
+            try {
+                const response = await fetch(`/api/admin/phoneme-usage/${phonemeId}`);
+                const data = await response.json();
+
+                if (data.success) {
+                    createWordsManagementModal(data.phoneme, data.words);
+                } else {
+                    showMessage('Error loading words: ' + data.error, 'error');
+                }
+            } catch (error) {
+                showMessage('Network error: ' + error.message, 'error');
+            }
+        }
+
+        function createWordsManagementModal(phoneme, words) {
+            // Close existing modals
+            const existingModals = document.querySelectorAll('.modal-overlay');
+            existingModals.forEach(modal => modal.remove());
+
+            const modal = document.createElement('div');
+            modal.className = 'modal-overlay';
+            modal.innerHTML = `
+                <div class="modal-content large-modal">
+                    <div class="modal-header">
+                        <h2>📋 Words Using Phoneme "${phoneme.phoneme}"</h2>
+                        <button class="modal-close" onclick="closeModal(this)">&times;</button>
+                    </div>
+                    
+                    <div class="modal-body">
+                        <div class="words-actions">
+                            <button class="button button-danger" onclick="selectAllWords(true)">
+                                ✓ Select All
+                            </button>
+                            <button class="button button-secondary" onclick="selectAllWords(false)">
+                                ✗ Deselect All
+                            </button>
+                            <button class="button button-danger" onclick="deleteSelectedWords()" id="deleteSelectedBtn" disabled>
+                                🗑️ Delete Selected
+                            </button>
+                        </div>
+
+                        <div class="words-table-container">
+                            <table class="words-table">
+                                <thead>
+                                    <tr>
+                                        <th><input type="checkbox" id="selectAllCheckbox" onchange="selectAllWords(this.checked)"></th>
+                                        <th>Word</th>
+                                        <th>English</th>
+                                        <th>IPA</th>
+                                        <th>Position(s)</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="wordsTableBody">
+                                    ${words.map(word => `
+                                        <tr data-word-id="${word.id}">
+                                            <td><input type="checkbox" class="word-checkbox" value="${word.id}" onchange="updateDeleteButton()"></td>
+                                            <td class="word-name">${word.new_language_word}</td>
+                                            <td>${word.english_words}</td>
+                                            <td class="ipa-text">${word.ipa_phonetics}</td>
+                                            <td class="positions-used">${word.positions_used.join(', ')}</td>
+                                            <td>
+                                                <button class="button-small button-primary" onclick="editWord(${word.id})">✏️</button>
+                                                <button class="button-small button-danger" onclick="deleteWord(${word.id}, '${word.new_language_word}')">🗑️</button>
+                                            </td>
+                                        </tr>
+                                    `).join('')}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            `;
+
+            document.body.appendChild(modal);
+            modal.style.display = 'block';
+        }
+
+        function selectAllWords(select) {
+            const checkboxes = document.querySelectorAll('.word-checkbox');
+            const selectAllCheckbox = document.getElementById('selectAllCheckbox');
+            
+            checkboxes.forEach(checkbox => {
+                checkbox.checked = select;
+            });
+            
+            if (selectAllCheckbox) {
+                selectAllCheckbox.checked = select;
+            }
+            
+            updateDeleteButton();
+        }
+
+        function updateDeleteButton() {
+            const selectedCheckboxes = document.querySelectorAll('.word-checkbox:checked');
+            const deleteButton = document.getElementById('deleteSelectedBtn');
+            
+            if (deleteButton) {
+                deleteButton.disabled = selectedCheckboxes.length === 0;
+                deleteButton.textContent = selectedCheckboxes.length > 0 
+                    ? `🗑️ Delete Selected (${selectedCheckboxes.length})` 
+                    : '🗑️ Delete Selected';
+            }
+        }
+
+        async function deleteSelectedWords() {
+            const selectedCheckboxes = document.querySelectorAll('.word-checkbox:checked');
+            const wordIds = Array.from(selectedCheckboxes).map(cb => parseInt(cb.value));
+            
+            if (wordIds.length === 0) {
+                showMessage('No words selected', 'error');
+                return;
+            }
+
+            if (!confirm(`Are you sure you want to delete ${wordIds.length} selected word(s)? This action cannot be undone.`)) {
+                return;
+            }
+
+            try {
+                const response = await fetch('/api/admin/bulk-delete-words', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ word_ids: wordIds })
+                });
+
+                const data = await response.json();
+
+                if (data.success) {
+                    showMessage(`Successfully deleted ${data.deleted_count} words!`, 'success');
+                    
+                    // Remove rows from table
+                    wordIds.forEach(wordId => {
+                        const row = document.querySelector(`tr[data-word-id="${wordId}"]`);
+                        if (row) {
+                            row.remove();
+                        }
+                    });
+
+                    // Update delete button
+                    updateDeleteButton();
+                    
+                    // Reload phonemes to update frequencies
+                    setTimeout(() => {
+                        loadPhonemes();
+                    }, 1000);
+                } else {
+                    showMessage('Error deleting words: ' + data.error, 'error');
+                }
+            } catch (error) {
+                showMessage('Network error: ' + error.message, 'error');
+            }
+        }
+
+        async function deleteWord(wordId, wordName) {
+            if (!confirm(`Are you sure you want to delete "${wordName}"? This action cannot be undone.`)) {
+                return;
+            }
+
+            try {
+                const response = await fetch(`/api/delete-word/${wordId}`, {
+                    method: 'DELETE'
+                });
+
+                const data = await response.json();
+
+                if (data.success) {
+                    showMessage(`Word "${wordName}" deleted successfully!`, 'success');
+                    
+                    // Remove row from table
+                    const row = document.querySelector(`tr[data-word-id="${wordId}"]`);
+                    if (row) {
+                        row.remove();
+                    }
+                    
+                    // Reload phonemes to update frequencies
+                    setTimeout(() => {
+                        loadPhonemes();
+                    }, 1000);
+                } else {
+                    showMessage('Error deleting word: ' + data.error, 'error');
+                }
+            } catch (error) {
+                showMessage('Network error: ' + error.message, 'error');
+            }
+        }
+
+        function editWord(wordId) {
+            window.open(`/words/edit/${wordId}`, '_blank');
+        }
+
+        async function bulkDeleteWords(phonemeId, phonemeName) {
+            if (!confirm(`Are you sure you want to delete ALL words using the phoneme "${phonemeName}"? This action cannot be undone.`)) {
+                return;
+            }
+
+            try {
+                // First get the words
+                const response = await fetch(`/api/admin/phoneme-usage/${phonemeId}`);
+                const data = await response.json();
+
+                if (data.success && data.words.length > 0) {
+                    const wordIds = data.words.map(word => word.id);
+                    
+                    const deleteResponse = await fetch('/api/admin/bulk-delete-words', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({ word_ids: wordIds })
+                    });
+
+                    const deleteData = await deleteResponse.json();
+
+                    if (deleteData.success) {
+                        showMessage(`Successfully deleted ${deleteData.deleted_count} words! You can now delete the phoneme.`, 'success');
+                        
+                        // Close modals
+                        const modals = document.querySelectorAll('.modal-overlay');
+                        modals.forEach(modal => modal.remove());
+                        
+                        // Reload phonemes
+                        setTimeout(() => {
+                            loadPhonemes();
+                        }, 1000);
+                    } else {
+                        showMessage('Error deleting words: ' + deleteData.error, 'error');
+                    }
+                } else {
+                    showMessage('Error loading words to delete', 'error');
+                }
+            } catch (error) {
+                showMessage('Network error: ' + error.message, 'error');
+            }
+        }
+
+        function closeModal(button) {
+            const modal = button.closest('.modal-overlay');
+            if (modal) {
+                modal.remove();
+            }
+        }
+
+        async function resetAllFrequencies() {
+            if (!confirm('Are you sure you want to reset all phoneme frequencies to 0? This action cannot be undone.')) {
+                return;
+            }
+
+            // This would need to be implemented in the backend
+            showMessage('Reset all frequencies feature would be implemented here', 'error');
+        }
+
+        async function deleteUnusedPhonemes() {
+            if (!confirm('Are you sure you want to delete all phonemes with frequency 0? This will remove phonemes that have never been used in words. This action cannot be undone.')) {
+                return;
+            }
+
+            try {
+                const response = await fetch('/api/admin/delete-unused-phonemes', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    }
+                });
+
+                const data = await response.json();
+
+                if (data.success) {
+                    showMessage(`Successfully deleted ${data.deleted_count} unused phonemes!`, 'success');
+                    loadPhonemes();
+                } else {
+                    showMessage('Error deleting unused phonemes: ' + data.error, 'error');
+                }
+            } catch (error) {
+                showMessage('Network error: ' + error.message, 'error');
+            }
+        }
+
+        async function resetDatabase() {
+            if (!confirm('Are you sure you want to reset the entire database? This will delete ALL words and reset ALL phonemes. This action cannot be undone.')) {
+                return;
+            }
+
+            try {
+                const response = await fetch('/api/admin/reset-database', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    }
+                });
+
+                const data = await response.json();
+
+                if (data.success) {
+                    showMessage('Database reset successfully!', 'success');
+                    loadPhonemes();
+                } else {
+                    showMessage('Error resetting database: ' + data.error, 'error');
+                }
+            } catch (error) {
+                showMessage('Network error: ' + error.message, 'error');
+            }
+        }
+
+        async function populateDropdownOptions() {
+            try {
+                const response = await fetch('/api/admin/phonemes');
+                const data = await response.json();
+
+                if (data.success) {
+                    const lengthTypes = new Set();
+                    const groupTypes = new Set();
+                    const subgroupTypes = new Set();
+
+                    data.phonemes.forEach(phoneme => {
+                        if (phoneme.length_type) lengthTypes.add(phoneme.length_type);
+                        if (phoneme.group_type) groupTypes.add(phoneme.group_type);
+                        if (phoneme.subgroup_type) subgroupTypes.add(phoneme.subgroup_type);
+                    });
+
+                    // Populate length type dropdown
+                    const lengthTypeSelect = document.getElementById('lengthTypeSelect');
+                    lengthTypeSelect.innerHTML = '<option value="">Select existing or choose "Custom"...</option>';
+                    Array.from(lengthTypes).sort().forEach(type => {
+                        lengthTypeSelect.innerHTML += `<option value="${type}">${type.replace(/_/g, ' ')}</option>`;
+                    });
+                    lengthTypeSelect.innerHTML += '<option value="custom">📝 Custom (Enter New)</option>';
+
+                    // Populate group type dropdown
+                    const groupTypeSelect = document.getElementById('groupTypeSelect');
+                    groupTypeSelect.innerHTML = '<option value="">Select existing or choose "Custom"...</option>';
+                    Array.from(groupTypes).sort().forEach(type => {
+                        groupTypeSelect.innerHTML += `<option value="${type}">${type.replace(/_/g, ' ')}</option>`;
+                    });
+                    groupTypeSelect.innerHTML += '<option value="custom">📝 Custom (Enter New)</option>';
+
+                    // Populate subgroup type dropdown
+                    const subgroupTypeSelect = document.getElementById('subgroupTypeSelect');
+                    subgroupTypeSelect.innerHTML = '<option value="">Select existing or choose "Custom"...</option>';
+                    Array.from(subgroupTypes).sort().forEach(type => {
+                        subgroupTypeSelect.innerHTML += `<option value="${type}">${type.replace(/_/g, ' ')}</option>`;
+                    });
+                    subgroupTypeSelect.innerHTML += '<option value="custom">📝 Custom (Enter New)</option>';
+                }
+            } catch (error) {
+                console.error('Error loading dropdown options:', error);
+            }
+        }
+
+        function handleLengthTypeSelect() {
+            const select = document.getElementById('lengthTypeSelect');
+            const input = document.getElementById('lengthType');
+            
+            if (select.value === 'custom') {
+                input.style.display = 'block';
+                input.value = '';
+                input.required = true;
+                input.focus();
+            } else {
+                input.style.display = 'none';
+                input.required = false;
+                input.value = '';
+            }
+        }
+
+        function handleGroupTypeSelect() {
+            const select = document.getElementById('groupTypeSelect');
+            const input = document.getElementById('groupType');
+            
+            if (select.value === 'custom') {
+                input.style.display = 'block';
+                input.value = '';
+                input.required = true;
+                input.focus();
+            } else {
+                input.style.display = 'none';
+                input.required = false;
+                input.value = '';
+            }
+        }
+
+        function handleSubgroupTypeSelect() {
+            const select = document.getElementById('subgroupTypeSelect');
+            const input = document.getElementById('subgroupType');
+            
+            if (select.value === 'custom') {
+                input.style.display = 'block';
+                input.value = '';
+                input.required = false; // subgroup is optional
+                input.focus();
+            } else {
+                input.style.display = 'none';
+                input.required = false;
+                input.value = '';
+            }
+        }
+
+        function testSearch() {
+            console.log('=== TESTING SEARCH ===');
+            console.log('Phonemes array length:', phonemes.length);
+            console.log('First few phonemes:', phonemes.slice(0, 3));
+            
+            // Test with 'o'
+            const testFilter = 'o';
+            const filtered = phonemes.filter(phoneme => {
+                return phoneme.phoneme && phoneme.phoneme.toLowerCase().includes(testFilter);
+            });
+            console.log(`Filtering for '${testFilter}':`, filtered.length, 'results');
+            console.log('Results:', filtered.map(p => p.phoneme));
+            
+            // Call the actual filter function
+            filterTable();
+        }
+
+        function showMessage(message, type) {
+            const container = document.getElementById('messageContainer');
+            const messageClass = type === 'success' ? 'success-message' : 'error-message';
+
+            container.innerHTML = `<div class="${messageClass}">${message}</div>`;
+
+            // Auto-hide after 5 seconds
+            setTimeout(() => {
+                container.innerHTML = '';
+            }, 5000);
+        }
+    </script>
+</body>
+</html>

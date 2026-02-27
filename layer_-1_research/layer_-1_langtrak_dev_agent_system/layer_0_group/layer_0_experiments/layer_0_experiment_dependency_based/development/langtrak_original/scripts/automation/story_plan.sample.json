@@ -1,0 +1,140 @@
+[
+  {
+    "id": "US-001-005-auth-basics",
+    "navigation": {
+      "direct": ["node", "scripts/mcp-playwright-demo.mjs"],
+      "realistic": ["node", "scripts/mcp-playwright-demo-realistic.mjs"]
+    },
+    "env": {
+      "RUN_LABEL": "auth_basics"
+    }
+  },
+  {
+    "id": "US-006-011-groups",
+    "navigation": {
+      "direct": ["node", "scripts/mcp-user-stories-006-009.mjs"],
+      "realistic": ["node", "scripts/mcp-user-stories-006-009-realistic.mjs"]
+    }
+  },
+  {
+    "id": "US-012-015-projects",
+    "navigation": {
+      "direct": ["node", "scripts/mcp-projects-flow.mjs"],
+      "realistic": ["node", "scripts/mcp-projects-flow-realistic.mjs"]
+    }
+  },
+  {
+    "id": "US-016-017-024-project-variants",
+    "navigation": {
+      "direct": ["node", "scripts/mcp-project-variants.mjs"],
+      "realistic": ["node", "scripts/mcp-project-variants-realistic.mjs"]
+    }
+  },
+  {
+    "id": "US-018-023-project-share-delete",
+    "navigation": {
+      "direct": ["node", "scripts/mcp-project-share-delete.mjs"],
+      "realistic": ["node", "scripts/mcp-project-share-delete-realistic.mjs"]
+    }
+  },
+  {
+    "id": "US-025-028-phoneme-views",
+    "navigation": {
+      "direct": ["node", "scripts/mcp-phonemes-flat.mjs"],
+      "realistic": ["node", "scripts/mcp-phonemes-flat-realistic.mjs"]
+    }
+  },
+  {
+    "id": "US-029-037-words-media",
+    "navigation": {
+      "direct": ["node", "scripts/mcp-words-flow.mjs"],
+      "realistic": ["node", "scripts/mcp-words-flow-realistic.mjs"]
+    }
+  },
+  {
+    "id": "US-038-049-phoneme-admin",
+    "navigation": {
+      "direct": ["node", "scripts/mcp-phoneme-admin.mjs"],
+      "realistic": ["node", "scripts/mcp-phoneme-admin-realistic.mjs"]
+    }
+  },
+  {
+    "id": "US-050-053-admin-database-tools",
+    "navigation": {
+      "direct": ["node", "scripts/mcp-admin-database-tools.mjs"],
+      "realistic": ["node", "scripts/mcp-admin-database-tools-realistic.mjs"]
+    }
+  },
+  {
+    "id": "US-054-056-tts-experience",
+    "navigation": {
+      "direct": ["node", "scripts/mcp-tts-experience.mjs"],
+      "realistic": ["node", "scripts/mcp-tts-experience-realistic.mjs"]
+    }
+  },
+  {
+    "id": "US-057-059-storage-resilience",
+    "navigation": {
+      "direct": ["node", "scripts/mcp-storage-resilience.mjs"],
+      "realistic": ["node", "scripts/mcp-storage-resilience-realistic.mjs"]
+    }
+  },
+  {
+    "id": "US-064-journey-onboarding",
+    "navigation": {
+      "direct": ["node", "scripts/mcp-journey-onboarding.mjs"],
+      "realistic": ["node", "scripts/mcp-journey-onboarding-realistic.mjs"]
+    }
+  },
+  {
+    "id": "US-065-journey-collaboration",
+    "navigation": {
+      "direct": ["node", "scripts/mcp-journey-collaboration.mjs"],
+      "realistic": ["node", "scripts/mcp-journey-collaboration-realistic.mjs"]
+    }
+  },
+  {
+    "id": "US-066-journey-branching",
+    "navigation": {
+      "direct": ["node", "scripts/mcp-journey-branching.mjs"],
+      "realistic": ["node", "scripts/mcp-journey-branching-realistic.mjs"]
+    }
+  },
+  {
+    "id": "US-067-journey-mobile",
+    "navigation": {
+      "direct": ["node", "scripts/mcp-journey-mobile.mjs"],
+      "realistic": ["node", "scripts/mcp-journey-mobile-realistic.mjs"]
+    }
+  },
+  {
+    "id": "CLOUD-001-google-oauth",
+    "navigation": {
+      "direct": ["node", "scripts/mcp-google-auth.mjs"],
+      "realistic": ["node", "scripts/mcp-google-auth.mjs"]
+    },
+    "env": {
+      "RUN_LABEL": "google_oauth"
+    }
+  },
+  {
+    "id": "CLOUD-002-cloud-projects",
+    "navigation": {
+      "direct": ["node", "scripts/mcp-cloud-projects.mjs"],
+      "realistic": ["node", "scripts/mcp-cloud-projects.mjs"]
+    },
+    "env": {
+      "RUN_LABEL": "cloud_projects"
+    }
+  },
+  {
+    "id": "CLOUD-003-cloud-migration",
+    "navigation": {
+      "direct": ["node", "scripts/mcp-cloud-migration.mjs"],
+      "realistic": ["node", "scripts/mcp-cloud-migration.mjs"]
+    },
+    "env": {
+      "RUN_LABEL": "cloud_migration"
+    }
+  }
+]

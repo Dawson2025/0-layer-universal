@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Word - Lang Trak</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            overflow: hidden;
+        }
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            font-weight: 300;
+        }
+        .header p {
+            margin: 10px 0 0 0;
+            opacity: 0.9;
+            font-size: 1.1em;
+        }
+        .content {
+            padding: 40px;
+        }
+        .back-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background: rgba(255,255,255,0.2);
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            margin-bottom: 20px;
+            transition: background 0.3s ease;
+        }
+        .back-button:hover {
+            background: rgba(255,255,255,0.3);
+        }
+        .form-section {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #333;
+        }
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 6px;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+        }
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+        .button-group {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+        .btn {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+        }
+        .btn-primary {
+            background: #667eea;
+            color: white;
+        }
+        .btn-primary:hover {
+            background: #5a6fd8;
+        }
+        .btn-secondary {
+            background: #6c757d;
+            color: white;
+        }
+        .btn-secondary:hover {
+            background: #5a6268;
+        }
+        .btn-danger {
+            background: #dc3545;
+            color: white;
+        }
+        .btn-danger:hover {
+            background: #c82333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <a href="{{ url_for('display_words') }}" class="back-button">← Back to Words</a>
+            <h1>✏️ Edit Word</h1>
+            <p>Modify word details and phonemes</p>
+        </div>
+        
+        <div class="content">
+            {% if word %}
+            <div class="form-section">
+                <form method="POST" action="{{ url_for('api_update_word', word_id=word.id) }}">
+                    <div class="form-group">
+                        <label for="word">Word:</label>
+                        <input type="text" id="word" name="word" value="{{ word.word }}" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phonemes">Phonemes:</label>
+                        <input type="text" id="phonemes" name="phonemes" value="{{ word.phonemes }}" placeholder="e.g., /p/, /a/, /t/">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="syllables">Syllables:</label>
+                        <textarea id="syllables" name="syllables" placeholder="Enter syllable information...">{{ word.syllables or '' }}</textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="notes">Notes:</label>
+                        <textarea id="notes" name="notes" placeholder="Add any additional notes...">{{ word.notes or '' }}</textarea>
+                    </div>
+                    
+                    <div class="button-group">
+                        <button type="submit" class="btn btn-primary">Update Word</button>
+                        <a href="{{ url_for('display_words') }}" class="btn btn-secondary">Cancel</a>
+                    </div>
+                </form>
+                
+                <div style="margin-top: 30px; padding-top: 30px; border-top: 1px solid #ddd;">
+                    <h3 style="color: #dc3545; margin-bottom: 15px;">Danger Zone</h3>
+                    <p style="color: #666; margin-bottom: 15px;">Once you delete a word, there is no going back. Please be certain.</p>
+                    <form method="POST" action="{{ url_for('api_delete_word', word_id=word.id) }}" style="display: inline;" onsubmit="return confirm('Are you sure you want to delete this word? This action cannot be undone.');">
+                        <button type="submit" class="btn btn-danger">Delete Word</button>
+                    </form>
+                </div>
+            </div>
+            {% else %}
+            <div class="form-section">
+                <div style="text-align: center; padding: 40px; color: #666;">
+                    <h3>Word not found</h3>
+                    <p>The word you're looking for doesn't exist or has been deleted.</p>
+                    <a href="{{ url_for('display_words') }}" class="btn btn-primary">Back to Words</a>
+                </div>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>

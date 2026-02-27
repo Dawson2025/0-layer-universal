@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Projects - Phoneme Frequency Tracker</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+            background: linear-gradient(135deg, #1c1c1e 0%, #2c2c2e 100%);
+            color: #ffffff;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 30px;
+            padding: 20px 0;
+            border-bottom: 1px solid rgba(84, 84, 88, 0.4);
+        }
+        
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            padding: 10px 20px;
+            background: rgba(58, 58, 60, 0.6);
+            border: 1px solid rgba(84, 84, 88, 0.4);
+            border-radius: 12px;
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 16px;
+            transition: all 0.2s ease;
+        }
+        
+        .back-button:hover {
+            background: rgba(58, 58, 60, 0.8);
+            transform: translateY(-1px);
+        }
+        
+        h1 {
+            font-size: 32px;
+            font-weight: 700;
+            background: linear-gradient(135deg, #007AFF 0%, #5AC8FA 50%, #30D158 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .user-info {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 15px 20px;
+            background: rgba(58, 58, 60, 0.6);
+            border: 1px solid rgba(84, 84, 88, 0.4);
+            border-radius: 12px;
+            margin-bottom: 30px;
+        }
+        
+        .user-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #007AFF 0%, #5AC8FA 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 18px;
+        }
+        
+        .user-details h3 {
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+        
+        .user-status {
+            font-size: 14px;
+            color: #30D158;
+            font-weight: 500;
+        }
+        
+        .sign-out {
+            margin-left: auto;
+            padding: 8px 16px;
+            background: rgba(255, 59, 48, 0.1);
+            border: 1px solid rgba(255, 59, 48, 0.3);
+            border-radius: 8px;
+            color: #FF3B30;
+            text-decoration: none;
+            font-size: 14px;
+            transition: all 0.2s ease;
+        }
+        
+        .sign-out:hover {
+            background: rgba(255, 59, 48, 0.2);
+        }
+        
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .project-card {
+            background: rgba(58, 58, 60, 0.6);
+            border: 1px solid rgba(84, 84, 88, 0.4);
+            border-radius: 16px;
+            padding: 20px;
+            transition: all 0.2s ease;
+            position: relative;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-2px);
+            border-color: rgba(0, 122, 255, 0.5);
+            box-shadow: 0 8px 25px rgba(0, 122, 255, 0.1);
+        }
+        
+        .project-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 15px;
+        }
+        
+        .project-name {
+            font-size: 20px;
+            font-weight: 600;
+            color: #ffffff;
+        }
+        
+        .storage-badge {
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+        
+        .storage-cloud {
+            background: rgba(0, 122, 255, 0.1);
+            color: #007AFF;
+            border: 1px solid rgba(0, 122, 255, 0.3);
+        }
+        
+        .storage-local {
+            background: rgba(255, 149, 0, 0.1);
+            color: #FF9500;
+            border: 1px solid rgba(255, 149, 0, 0.3);
+        }
+        
+        .project-stats {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 15px;
+        }
+        
+        .stat {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            color: #8E8E93;
+        }
+        
+        .stat-icon {
+            font-size: 16px;
+        }
+        
+        .project-actions {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .action-button {
+            padding: 8px 16px;
+            border: none;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+        
+        .action-primary {
+            background: #007AFF;
+            color: white;
+        }
+        
+        .action-primary:hover {
+            background: #0056CC;
+        }
+        
+        .action-secondary {
+            background: rgba(58, 58, 60, 0.8);
+            color: #ffffff;
+            border: 1px solid rgba(84, 84, 88, 0.4);
+        }
+        
+        .action-secondary:hover {
+            background: rgba(58, 58, 60, 1);
+        }
+        
+        .action-danger {
+            background: rgba(255, 59, 48, 0.1);
+            color: #FF3B30;
+            border: 1px solid rgba(255, 59, 48, 0.3);
+        }
+        
+        .action-danger:hover {
+            background: rgba(255, 59, 48, 0.2);
+        }
+        
+        .empty-state {
+            text-align: center;
+            padding: 60px 20px;
+            color: #8E8E93;
+        }
+        
+        .empty-state h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: #ffffff;
+        }
+        
+        .empty-state p {
+            font-size: 16px;
+            margin-bottom: 30px;
+        }
+        
+        .create-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 24px;
+            background: #007AFF;
+            color: white;
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: 600;
+            transition: all 0.2s ease;
+        }
+        
+        .create-button:hover {
+            background: #0056CC;
+            transform: translateY(-1px);
+        }
+        
+        .flash-messages {
+            margin-bottom: 20px;
+        }
+        
+        .flash-message {
+            padding: 12px 20px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+        
+        .flash-success {
+            background: rgba(48, 209, 88, 0.1);
+            color: #30D158;
+            border: 1px solid rgba(48, 209, 88, 0.3);
+        }
+        
+        .flash-error {
+            background: rgba(255, 59, 48, 0.1);
+            color: #FF3B30;
+            border: 1px solid rgba(255, 59, 48, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <a href="{{ url_for('dashboard') }}" class="back-button">← Dashboard</a>
+            <h1>📂 My Projects</h1>
+        </div>
+
+        <div class="user-info">
+            <div class="user-avatar">{{ user.username[0].upper() if user.username else 'U' }}</div>
+            <div class="user-details">
+                <h3>{{ user.username or 'User' }}</h3>
+                <div class="user-status">✅ Authenticated</div>
+            </div>
+            <a href="{{ url_for('logout') }}" class="sign-out">Sign Out</a>
+        </div>
+
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                <div class="flash-messages">
+                    {% for category, message in messages %}
+                        <div class="flash-message flash-{{ category }}">{{ message }}</div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        {% endwith %}
+
+        {% if projects %}
+            <div class="projects-grid">
+                {% for project in projects %}
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div class="project-name">{{ project.name }}</div>
+                            <div class="storage-badge storage-{{ 'cloud' if project.get('storage_type') == 'cloud' else 'local' }}">
+                                {{ project.get('storage_icon', '💾') }} {{ project.get('storage_label', 'Local') }}
+                            </div>
+                        </div>
+                        
+                        <div class="project-stats">
+                            <div class="stat">
+                                <span class="stat-icon">📝</span>
+                                <span>{{ project.get('word_count', 0) }} words</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-icon">📅</span>
+                                <span>{{ project.get('created_at', 'Unknown') }}</span>
+                            </div>
+                        </div>
+                        
+                        <div class="project-actions">
+                            {% if project.get('preferred_variant_id') %}
+                                <a href="{{ url_for('enter_project', project_id=project.get('preferred_variant_id')) }}" class="action-button action-primary">
+                                    🚀 Open
+                                </a>
+                                <a href="{{ url_for('edit_project', project_id=project.get('preferred_variant_id')) }}" class="action-button action-secondary">
+                                    ✏️ Edit
+                                </a>
+                                <a href="#" class="action-button action-secondary" onclick='branchProject({{ project.get('preferred_variant_id') | tojson }}, {{ project.name | tojson }}); return false;'>
+                                    🌿 Branch Project
+                                </a>
+                                <a href="#" class="action-button action-secondary" onclick='renameProject({{ project.get('preferred_variant_id') | tojson }}, {{ project.name | tojson }}); return false;'>
+                                    ✏️ Rename Project
+                                </a>
+                                {% if project.get('has_local') and project.get('local_variants') and project.get('local_variants')[0].get('id') %}
+                                    <a href="{{ url_for('api_migrate_project', project_id=project.get('local_variants')[0].get('id')) }}" class="action-button action-secondary">
+                                        🌐 Migrate
+                                    </a>
+                                {% endif %}
+                            {% else %}
+                                <span class="action-button action-secondary" style="opacity: 0.5; cursor: not-allowed;">
+                                    ⚠️ No ID
+                                </span>
+                            {% endif %}
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        {% else %}
+            <div class="empty-state">
+                <h3>No projects yet</h3>
+                <p>Create your first language project to get started!</p>
+                <a href="{{ url_for('create_project') }}" class="create-button">
+                    ➕ Create New Project
+                </a>
+            </div>
+        {% endif %}
+    </div>
+    <script>
+        async function renameProject(projectId, currentName) {
+            const name = window.prompt('Rename project:', currentName);
+            if (!name || !name.trim()) return;
+
+            const response = await fetch(`/api/projects/${projectId}/rename`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ name: name.trim() })
+            });
+            const data = await response.json();
+            window.alert(data.message || (data.success ? 'Project renamed.' : 'Rename failed.'));
+            if (data.success) window.location.reload();
+        }
+
+        async function branchProject(projectId, currentName) {
+            const name = window.prompt('Branch project name:', `${currentName} Branch`);
+            if (!name || !name.trim()) return;
+
+            const response = await fetch(`/api/projects/${projectId}/branch`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ name: name.trim() })
+            });
+            const data = await response.json();
+            window.alert(data.message || (data.success ? 'Project branched.' : 'Branch failed.'));
+            if (data.success) window.location.reload();
+        }
+    </script>
+</body>
+</html>

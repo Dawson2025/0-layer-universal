@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Audio Test</title>
+</head>
+<body>
+    <h1>Audio Test Page</h1>
+    <p>Click the buttons to test audio playback:</p>
+    
+    <button onclick="testPhoneme('skr', 'onset')">Test skr (should sound like skrɑm)</button>
+    <button onclick="testPhoneme('spl', 'onset')">Test spl (should sound like splɑm)</button>
+    <button onclick="testPhoneme('str', 'onset')">Test str (should sound like strɑm)</button>
+    <button onclick="testPhoneme('p', 'onset')">Test p (should sound like pɑm)</button>
+    
+    <div id="status"></div>
+    
+    <script>
+        let currentAudio = null;
+        
+        function stopCurrentAudio() {
+            if (currentAudio) {
+                currentAudio.pause();
+                currentAudio = null;
+            }
+        }
+        
+        async function testPhoneme(phoneme, position) {
+            const statusDiv = document.getElementById('status');
+            statusDiv.innerHTML = `Testing ${phoneme}...`;
+            
+            try {
+                stopCurrentAudio();
+                
+                console.log(`Testing ${phoneme} in ${position}`);
+                
+                // Call the phoneme API
+                const response = await fetch('/api/tts/phoneme', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ 
+                        phoneme: phoneme, 
+                        position: position 
+                    })
+                });
+
+                const data = await response.json();
+                console.log(`API Response for ${phoneme}:`, data);
+
+                if (data.success && data.audio_data) {
+                    const audioFormat = data.format || 'wav';
+                    console.log(`Playing audio for ${phoneme}: format=${audioFormat}, data_length=${data.audio_data.length}`);
+                    
+                    const audio = new Audio(`data:audio/${audioFormat};base64,${data.audio_data}`);
+                    
+                    audio.onended = () => {
+                        console.log(`Audio playback ended for ${phoneme}`);
+                        statusDiv.innerHTML = `Finished playing ${phoneme}`;
+                    };
+                    
+                    audio.onerror = (e) => {
+                        console.error(`Audio error for ${phoneme}:`, e);
+                        statusDiv.innerHTML = `Error playing ${phoneme}`;
+                    };
+                    
+                    currentAudio = audio;
+                    await audio.play();
+                    statusDiv.innerHTML = `Playing ${phoneme}...`;
+                    
+                } else {
+                    console.error(`No audio data for ${phoneme}:`, data);
+                    statusDiv.innerHTML = `No audio data for ${phoneme}`;
+                }
+                
+            } catch (error) {
+                console.error(`Error testing ${phoneme}:`, error);
+                statusDiv.innerHTML = `Error: ${error.message}`;
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,1 @@
+"""Application scaffolding helpers."""

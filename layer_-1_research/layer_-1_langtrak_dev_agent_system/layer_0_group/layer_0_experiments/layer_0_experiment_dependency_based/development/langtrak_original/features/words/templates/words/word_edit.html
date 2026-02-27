@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Word - {{ word.new_language_word }}</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+            background: linear-gradient(135deg, #1c1c1e 0%, #2c2c2e 100%);
+            color: #ffffff;
+            min-height: 100vh;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 16px;
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            margin: 40px 0 40px 0;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .back-button {
+            background: rgba(58, 58, 60, 0.6);
+            border: none;
+            border-radius: 12px;
+            padding: 12px 16px;
+            color: #007AFF;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 600;
+            transition: all 0.2s ease;
+        }
+
+        .back-button:hover {
+            background: rgba(78, 78, 80, 0.8);
+        }
+
+        .header h1 {
+            font-size: 32px;
+            font-weight: 700;
+            background: linear-gradient(90deg, #FF9F0A, #5AC8FA);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .edit-container {
+            background: rgba(58, 58, 60, 0.6);
+            border: 1px solid rgba(84, 84, 88, 0.4);
+            border-radius: 16px;
+            padding: 24px;
+            backdrop-filter: blur(20px);
+        }
+
+        .word-info {
+            background: rgba(44, 44, 46, 0.8);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 24px;
+        }
+
+        .word-id {
+            font-size: 14px;
+            color: #8E8E93;
+            margin-bottom: 8px;
+        }
+
+        .word-preview {
+            font-size: 24px;
+            font-weight: 700;
+            color: #5AC8FA;
+            margin-bottom: 4px;
+        }
+
+        .word-english-preview {
+            font-size: 16px;
+            color: #30D158;
+        }
+
+        .form-section {
+            margin-bottom: 32px;
+        }
+
+        .section-title {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+        }
+
+        .section-icon {
+            margin-right: 8px;
+            font-size: 24px;
+        }
+
+        .form-grid {
+            display: grid;
+            gap: 20px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .form-group {
+            display: grid;
+            gap: 8px;
+        }
+
+        .form-label {
+            font-size: 14px;
+            font-weight: 500;
+            color: #ffffff;
+        }
+
+        .form-input {
+            padding: 12px 16px;
+            background: rgba(44, 44, 46, 0.8);
+            border: 1px solid rgba(84, 84, 88, 0.4);
+            border-radius: 8px;
+            color: #ffffff;
+            font-size: 16px;
+            transition: all 0.2s ease;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: #007AFF;
+            box-shadow: 0 0 0 3px rgba(0, 122, 255, 0.2);
+            background: rgba(44, 44, 46, 0.9);
+        }
+
+        .form-input::placeholder {
+            color: #8E8E93;
+        }
+
+        .form-select {
+            padding: 12px 16px;
+            background: rgba(44, 44, 46, 0.8);
+            border: 1px solid rgba(84, 84, 88, 0.4);
+            border-radius: 8px;
+            color: #ffffff;
+            font-size: 16px;
+        }
+
+        .phonetic-input {
+            font-family: 'Courier New', monospace;
+            font-size: 18px;
+            font-weight: bold;
+            color: #5AC8FA;
+        }
+
+        .structure-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+        }
+
+        .structure-group {
+            background: rgba(84, 84, 88, 0.4);
+            border-radius: 8px;
+            padding: 16px;
+        }
+
+        .structure-title {
+            font-size: 14px;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 12px;
+            text-transform: capitalize;
+        }
+
+        .structure-inputs {
+            display: grid;
+            gap: 8px;
+        }
+
+        .structure-input {
+            padding: 8px 12px;
+            background: rgba(28, 28, 30, 0.8);
+            border: 1px solid rgba(84, 84, 88, 0.4);
+            border-radius: 6px;
+            color: #ffffff;
+            font-size: 14px;
+        }
+
+        .structure-input.phoneme {
+            font-family: 'Courier New', monospace;
+            font-weight: bold;
+            color: #5AC8FA;
+        }
+
+        .help-text {
+            font-size: 12px;
+            color: #8E8E93;
+            margin-top: 4px;
+        }
+
+        .buttons-container {
+            display: flex;
+            gap: 16px;
+            justify-content: flex-end;
+            margin-top: 32px;
+            flex-wrap: wrap;
+        }
+
+        .button {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-decoration: none;
+            text-align: center;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .button-secondary {
+            background: rgba(84, 84, 88, 0.6);
+            color: #ffffff;
+        }
+
+        .button-secondary:hover {
+            background: rgba(84, 84, 88, 0.8);
+        }
+
+        .button-primary {
+            background: #30D158;
+            color: #ffffff;
+        }
+
+        .button-primary:hover {
+            background: #28CD4C;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(48, 209, 88, 0.3);
+        }
+
+        .button-primary:disabled {
+            background: rgba(84, 84, 88, 0.6);
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+
+        .button-danger {
+            background: rgba(255, 69, 58, 0.2);
+            color: #FF453A;
+            border: 1px solid rgba(255, 69, 58, 0.4);
+        }
+
+        .button-danger:hover {
+            background: rgba(255, 69, 58, 0.3);
+        }
+
+        .loading {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top-color: #ffffff;
+            animation: spin 1s ease-in-out infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .success-message {
+            background: rgba(48, 209, 88, 0.2);
+            border: 1px solid rgba(48, 209, 88, 0.4);
+            color: #30D158;
+            padding: 12px 16px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+
+        .error-message {
+            background: rgba(255, 69, 58, 0.2);
+            border: 1px solid rgba(255, 69, 58, 0.4);
+            color: #FF453A;
+            padding: 12px 16px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 24px;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .structure-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .buttons-container {
+                flex-direction: column;
+            }
+
+            .edit-container {
+                padding: 16px;
+            }
+        }
+        
+        /* Language selector styles */
+        .language-selector {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        
+        .form-select {
+            padding: 12px;
+            border: 2px solid #e1e5e9;
+            border-radius: 8px;
+            font-size: 14px;
+            background-color: white;
+            transition: border-color 0.2s ease;
+        }
+        
+        .form-select:focus {
+            outline: none;
+            border-color: #4a90e2;
+        }
+        
+        .language-input-container {
+            margin-top: 4px;
+        }
+        
+        .btn-secondary {
+            padding: 8px 16px;
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 6px;
+            color: #495057;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            align-self: flex-start;
+        }
+        
+        .btn-secondary:hover {
+            background-color: #e9ecef;
+            border-color: #adb5bd;
+        }
+        
+        .btn-secondary:active {
+            background-color: #dee2e6;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <a href="{{ url_for('words.display_words') }}" class="back-button">← Back to Words</a>
+            <h1>✏️ Edit Word</h1>
+        </div>
+
+        <div class="edit-container">
+            <div id="messageContainer"></div>
+
+            <div class="word-info">
+                <div class="word-id">Word ID: {{ word.id }}</div>
+                <div class="word-preview" id="wordPreview">{{ word.new_language_word or 'Unnamed Word' }}</div>
+                <div class="word-english-preview" id="englishPreview">{{ word.english_words or 'No English translation' }}</div>
+            </div>
+
+            <form id="editForm">
+                <div class="form-section">
+                    <div class="section-title">
+                        <span class="section-icon">📝</span>
+                        Basic Information
+                    </div>
+
+                    <div class="form-grid">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label">Language</label>
+                                <div class="language-selector">
+                                    <select class="form-select" id="languageSelect" onchange="handleLanguageChange()">
+                                        <option value="">Select existing language...</option>
+                                    </select>
+                                    <div class="language-input-container" id="languageInputContainer" style="display: none;">
+                                        <input type="text" class="form-input" id="languageInput" placeholder="Enter new language name" onchange="updatePreview()">
+                                    </div>
+                                    <button type="button" class="btn-secondary" id="newLanguageBtn" onclick="toggleLanguageInput()">+ New Language</button>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label">Syllable Type</label>
+                                <select class="form-select" id="syllableType">
+                                    <option value="CVC" {{ 'selected' if word.syllable_type == 'CVC' }}>CVC (Consonant-Vowel-Consonant)</option>
+                                    <option value="CV" {{ 'selected' if word.syllable_type == 'CV' }}>CV (Consonant-Vowel)</option>
+                                    <option value="VC" {{ 'selected' if word.syllable_type == 'VC' }}>VC (Vowel-Consonant)</option>
+                                    <option value="" {{ 'selected' if not word.syllable_type }}>Not specified</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">English Words</label>
+                            <input type="text" class="form-input" id="englishWords" value="{{ word.english_words or '' }}" placeholder="English translation" onchange="updatePreview()">
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">New Language Word</label>
+                            <input type="text" class="form-input" id="newLanguageWord" value="{{ word.new_language_word or '' }}" placeholder="Word in your constructed language" onchange="updatePreview()" required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <div class="section-title">
+                        <span class="section-icon">🎵</span>
+                        Phonetics
+                    </div>
+
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label class="form-label">IPA Phonetics</label>
+                            <input type="text" class="form-input phonetic-input" id="ipaPhonetics" value="{{ word.ipa_phonetics or '' }}" placeholder="IPA notation" oninput="syncDictionaryPhonetics()">
+                            <div class="help-text">International Phonetic Alphabet notation</div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="dictionaryPhonetics">Dictionary Phonetics (Auto-synced with IPA)</label>
+                            <input type="text" id="dictionaryPhonetics" name="dictionary_phonetics" 
+                                   value="{{ word.ipa_phonetics or '' }}" 
+                                   placeholder="Automatically matches IPA phonetics" readonly
+                                   style="background: rgba(84, 84, 88, 0.3); cursor: not-allowed;">
+                            <div class="help-text">Automatically synced with IPA phonetics</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <div class="section-title">
+                        <span class="section-icon">🎥</span>
+                        Video
+                    </div>
+
+                    <div class="form-grid">
+                        {% if word.video_path %}
+                        <div class="form-group">
+                            <label class="form-label">Current Video</label>
+                            <div style="margin-bottom: 12px;">
+                                <video controls style="width: 100%; max-width: 400px; border-radius: 8px;">
+                                    <source src="{{ url_for('serve_video', filename=word.video_path.split('/')[-1]) }}" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                            </div>
+                            <div style="font-size: 12px; color: #8E8E93;">{{ word.video_path }}</div>
+                        </div>
+                        {% endif %}
+
+                        <div class="form-group">
+                            <label class="form-label">{% if word.video_path %}Replace Video{% else %}Upload Video{% endif %}</label>
+                            <input type="file" class="form-input" id="videoUpload" accept="video/*">
+                            <div class="help-text">Supported formats: MP4, AVI, MOV, MKV, WEBM</div>
+                        </div>
+
+                        {% if word.video_path %}
+                        <div class="form-group">
+                            <button type="button" class="button button-danger" onclick="removeVideo()" style="width: auto;">
+                                🗑️ Remove Current Video
+                            </button>
+                        </div>
+                        {% endif %}
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <div class="section-title">
+                        <span class="section-icon">🏗️</span>
+                        Phoneme Structure
+                    </div>
+
+                    <div class="structure-grid">
+                        <div class="structure-group">
+                            <div class="structure-title">Onset</div>
+                            <div class="structure-inputs">
+                                <input type="text" class="structure-input phoneme" id="onsetPhoneme" value="{{ word.onset_phoneme or '' }}" placeholder="Onset phoneme">
+                                <input type="text" class="structure-input" id="onsetLengthType" value="{{ word.onset_length_type or '' }}" placeholder="Length type">
+                            </div>
+                        </div>
+
+                        <div class="structure-group">
+                            <div class="structure-title">Nucleus</div>
+                            <div class="structure-inputs">
+                                <input type="text" class="structure-input phoneme" id="nucleusPhoneme" value="{{ word.nucleus_phoneme or '' }}" placeholder="Nucleus phoneme">
+                                <input type="text" class="structure-input" id="nucleusLengthType" value="{{ word.nucleus_length_type or '' }}" placeholder="Length type">
+                            </div>
+                        </div>
+
+                        <div class="structure-group">
+                            <div class="structure-title">Coda</div>
+                            <div class="structure-inputs">
+                                <input type="text" class="structure-input phoneme" id="codaPhoneme" value="{{ word.coda_phoneme or '' }}" placeholder="Coda phoneme">
+                                <input type="text" class="structure-input" id="codaLengthType" value="{{ word.coda_length_type or '' }}" placeholder="Length type">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="help-text" style="margin-top: 12px;">
+                        These fields are automatically populated when creating words using the table-based method, but can be manually edited here.
+                    </div>
+                </div>
+
+                <div class="buttons-container">
+                    <button type="button" class="button button-danger" onclick="deleteWord()">
+                        🗑️ Delete Word
+                    </button>
+
+                    <a href="{{ url_for('words.display_words') }}" class="button button-secondary">
+                        ↩️ Cancel
+                    </a>
+
+                    <button type="submit" class="button button-primary" id="saveButton">
+                        <span id="saveButtonText">💾 Save Changes</span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function updatePreview() {
+            const wordPreview = document.getElementById('wordPreview');
+            const englishPreview = document.getElementById('englishPreview');
+
+            const newWord = document.getElementById('newLanguageWord').value || 'Unnamed Word';
+            const englishWords = document.getElementById('englishWords').value || 'No English translation';
+
+            wordPreview.textContent = newWord;
+            englishPreview.textContent = englishWords;
+        }
+
+        function syncDictionaryPhonetics() {
+            const ipaPhoneticsInput = document.getElementById('ipaPhonetics');
+            const dictionaryPhoneticsInput = document.getElementById('dictionaryPhonetics');
+            dictionaryPhoneticsInput.value = ipaPhoneticsInput.value;
+        }
+
+        document.getElementById('editForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+
+            const saveButton = document.getElementById('saveButton');
+            const saveText = document.getElementById('saveButtonText');
+
+            saveButton.disabled = true;
+            saveText.innerHTML = '<span class="loading"></span> Saving...';
+
+            try {
+                // Create FormData to handle file upload
+                const formData = new FormData();
+                formData.append('language', getSelectedLanguage());
+                formData.append('english_words', document.getElementById('englishWords').value);
+                formData.append('new_language_word', document.getElementById('newLanguageWord').value);
+                formData.append('ipa_phonetics', document.getElementById('ipaPhonetics').value);
+                // The dictionary_phonetics will be synced with ipa_phonetics on the backend
+                formData.append('syllable_type', document.getElementById('syllableType').value);
+                formData.append('onset_phoneme', document.getElementById('onsetPhoneme').value);
+                formData.append('onset_length_type', document.getElementById('onsetLengthType').value);
+                formData.append('nucleus_phoneme', document.getElementById('nucleusPhoneme').value);
+                formData.append('nucleus_length_type', document.getElementById('nucleusLengthType').value);
+                formData.append('coda_phoneme', document.getElementById('codaPhoneme').value);
+                formData.append('coda_length_type', document.getElementById('codaLengthType').value);
+
+                // Add video file if selected
+                const videoFile = document.getElementById('videoUpload').files[0];
+                if (videoFile) {
+                    formData.append('video', videoFile);
+                }
+
+                const response = await fetch(`/api/update-word/{{ word.id }}`, {
+                    method: 'POST',
+                    body: formData
+                });
+
+                const data = await response.json();
+
+                if (data.success) {
+                    showMessage('Word updated successfully!', 'success');
+
+                    // Update the preview
+                    updatePreview();
+                    // Sync dictionary phonetics after successful save in case the backend also updates it
+                    syncDictionaryPhonetics();
+                } else {
+                    showMessage('Error updating word: ' + data.error, 'error');
+                }
+            } catch (error) {
+                showMessage('Network error: ' + error.message, 'error');
+            } finally {
+                saveButton.disabled = false;
+                saveText.innerHTML = '💾 Save Changes';
+            }
+        });
+
+        async function deleteWord() {
+            const wordName = document.getElementById('newLanguageWord').value || 'this word';
+
+            if (!confirm(`Are you sure you want to delete "${wordName}"? This action cannot be undone.`)) {
+                return;
+            }
+
+            try {
+                const response = await fetch(`/api/delete-word/{{ word.id }}`, {
+                    method: 'DELETE'
+                });
+
+                const data = await response.json();
+
+                if (data.success) {
+                    showMessage('Word deleted successfully! Redirecting...', 'success');
+
+                    // Redirect after a short delay
+                    setTimeout(() => {
+                        window.location.href = '/words/display';
+                    }, 2000);
+                } else {
+                    showMessage('Error deleting word: ' + data.error, 'error');
+                }
+            } catch (error) {
+                showMessage('Network error: ' + error.message, 'error');
+            }
+        }
+
+        async function removeVideo() {
+            if (!confirm('Are you sure you want to remove the video for this word?')) {
+                return;
+            }
+
+            try {
+                const response = await fetch(`/api/remove-video/{{ word.id }}`, {
+                    method: 'POST'
+                });
+
+                const data = await response.json();
+
+                if (data.success) {
+                    showMessage('Video removed successfully!', 'success');
+                    location.reload(); // Reload to update the display
+                } else {
+                    showMessage('Error removing video: ' + data.error, 'error');
+                }
+            } catch (error) {
+                showMessage('Network error: ' + error.message, 'error');
+            }
+        }
+
+        function showMessage(message, type) {
+            const container = document.getElementById('messageContainer');
+            const messageClass = type === 'success' ? 'success-message' : 'error-message';
+
+            container.innerHTML = `<div class="${messageClass}">${message}</div>`;
+
+            // Auto-hide after 5 seconds (unless it's a success message before redirect)
+            if (!(type === 'success' && message.includes('Redirecting'))) {
+                setTimeout(() => {
+                    container.innerHTML = '';
+                }, 5000);
+            }
+        }
+
+        // Language selection functions
+        function handleLanguageChange() {
+            const select = document.getElementById('languageSelect');
+            const inputContainer = document.getElementById('languageInputContainer');
+            const input = document.getElementById('languageInput');
+            const btn = document.getElementById('newLanguageBtn');
+            
+            if (select.value === '') {
+                inputContainer.style.display = 'none';
+                input.value = '';
+                btn.textContent = '+ New Language';
+            } else {
+                inputContainer.style.display = 'block';
+                input.value = select.value;
+                btn.textContent = 'Cancel';
+            }
+            updatePreview();
+        }
+        
+        function toggleLanguageInput() {
+            const select = document.getElementById('languageSelect');
+            const inputContainer = document.getElementById('languageInputContainer');
+            const input = document.getElementById('languageInput');
+            const btn = document.getElementById('newLanguageBtn');
+            
+            // Check if input container is currently hidden
+            const isHidden = inputContainer.style.display === 'none' || 
+                           getComputedStyle(inputContainer).display === 'none' ||
+                           inputContainer.style.display === '';
+            
+            if (isHidden) {
+                // Show input container for new language
+                inputContainer.style.display = 'block';
+                select.value = '';
+                input.value = '';
+                input.focus();
+                btn.textContent = 'Cancel';
+            } else {
+                // Hide input container and reset
+                inputContainer.style.display = 'none';
+                input.value = '';
+                btn.textContent = '+ New Language';
+            }
+            updatePreview();
+        }
+        
+        function getSelectedLanguage() {
+            const select = document.getElementById('languageSelect');
+            const input = document.getElementById('languageInput');
+            
+            if (select.value !== '') {
+                return select.value;
+            } else if (input.value.trim() !== '') {
+                return input.value.trim();
+            }
+            return 'Constructed Language';
+        }
+        
+        // Load languages on page load
+        async function loadLanguages() {
+            try {
+                const [languagesResponse, lastLanguageResponse] = await Promise.all([
+                    fetch('/api/languages'),
+                    fetch('/api/last-language')
+                ]);
+                
+                const languagesData = await languagesResponse.json();
+                const lastLanguageData = await lastLanguageResponse.json();
+                
+                const select = document.getElementById('languageSelect');
+                const input = document.getElementById('languageInput');
+                const inputContainer = document.getElementById('languageInputContainer');
+                
+                // Clear existing options except the first one
+                select.innerHTML = '<option value="">Select existing language...</option>';
+                
+                // Add existing languages
+                if (languagesData.success && languagesData.languages.length > 0) {
+                    languagesData.languages.forEach(lang => {
+                        const option = document.createElement('option');
+                        option.value = lang;
+                        option.textContent = lang;
+                        select.appendChild(option);
+                    });
+                }
+                
+                // Set current word's language as default
+                const currentLanguage = '{{ word.language or "" }}';
+                if (currentLanguage) {
+                    const existingOption = select.querySelector(`option[value="${currentLanguage}"]`);
+                    if (existingOption) {
+                        select.value = currentLanguage;
+                        input.value = currentLanguage;
+                    } else {
+                        input.value = currentLanguage;
+                        inputContainer.style.display = 'block';
+                    }
+                } else if (lastLanguageData.success && lastLanguageData.last_language) {
+                    // Fallback to last used language if no current language
+                    const lastLang = lastLanguageData.last_language;
+                    const existingOption = select.querySelector(`option[value="${lastLang}"]`);
+                    if (existingOption) {
+                        select.value = lastLang;
+                        input.value = lastLang;
+                    } else {
+                        input.value = lastLang;
+                        inputContainer.style.display = 'block';
+                    }
+                }
+            } catch (error) {
+                console.error('Error loading languages:', error);
+            }
+        }
+        
+        // Override the updatePreview function to use the new language selection
+        const originalUpdatePreview = updatePreview;
+        function updatePreview() {
+            const language = getSelectedLanguage();
+            const wordPreview = document.getElementById('wordPreview');
+            const englishPreview = document.getElementById('englishPreview');
+            
+            const newLanguageWord = document.getElementById('newLanguageWord').value;
+            const englishWords = document.getElementById('englishWords').value;
+            
+            wordPreview.textContent = newLanguageWord || 'Unnamed Word';
+            englishPreview.textContent = englishWords || 'No English translation';
+            
+            // Update the language display if needed
+            const languageDisplay = document.querySelector('.word-language');
+            if (languageDisplay) {
+                languageDisplay.textContent = language;
+            }
+        }
+
+        // Initialize preview and sync phonetics on page load
+        loadLanguages().then(() => {
+            updatePreview();
+            syncDictionaryPhonetics();
+        });
+    </script>
+</body>
+</html>

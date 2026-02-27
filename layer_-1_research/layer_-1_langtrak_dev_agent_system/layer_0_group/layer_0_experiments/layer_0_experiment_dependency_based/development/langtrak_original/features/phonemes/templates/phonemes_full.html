@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phonemes - Full Hierarchy</title>
+    <link rel="stylesheet" href="{{ url_for('phonemes.static', filename='css/phonemes_full.css') }}">
+
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <a href="{{ url_for('main_menu') }}" class="back-button">← Back</a>
+            <h1>🏗️ Phonemes - Full Hierarchy</h1>
+        </div>
+        
+        <div class="sort-controls">
+            <button class="sort-button active" onclick="sortBy('frequency')">Sort by Frequency</button>
+            <button class="sort-button" onclick="sortBy('alphabetical')">Sort Alphabetically</button>
+            <button class="sort-button" onclick="toggleAll()">Expand/Collapse All</button>
+        </div>
+        
+        {% for syllable_type, positions in full_data.items() %}
+        <div class="syllable-section">
+            <div class="syllable-title">
+                <span class="syllable-icon">🎯</span>
+                {{ syllable_type }} Syllables - Full Hierarchy
+            </div>
+            
+            <div class="positions-container">
+                {% for position, length_types in positions.items() %}
+                <div class="position-card">
+                    <div class="position-header">
+                        <div class="position-title">{{ position|title }}</div>
+                        <div class="position-stats">
+                            {{ length_types.values()|sum(attribute='groups')|length }} groups
+                        </div>
+                    </div>
+                    
+                    {% for length_type, type_data in length_types.items() %}
+                    <div class="length-type-section">
+                        <div class="length-type-header" onclick="toggleLengthType(this)">
+                            <div class="length-type-title">{{ length_type.replace('_', ' ')|title }}</div>
+                            <button class="expand-toggle">▶</button>
+                        </div>
+                        
+                        <div class="groups-container collapsed">
+                            {% for group_type, group_data in type_data.groups.items() %}
+                            <div class="group-card">
+                                <div class="group-header">
+                                    <div class="group-title">{{ group_type.replace('_', ' ')|title }}</div>
+                                    <div class="group-frequency">{{ group_data.frequency }}</div>
+                                </div>
+                                
+                                <div class="subgroups-container">
+                                    {% for subgroup_type, phonemes in group_data.subgroups.items() %}
+                                    <div class="subgroup-section">
+                                        {% if subgroup_type != 'none' %}
+                                        <div class="subgroup-title">{{ subgroup_type.replace('_', ' ')|title }}</div>
+                                        {% endif %}
+                                        
+                                        <div class="phonemes-grid">
+                                            {% for phoneme in phonemes %}
+                                            <div class="phoneme-item" data-frequency="{{ phoneme.frequency }}">
+                                                <span class="phoneme-symbol">{{ phoneme.phoneme }}</span>
+                                                <span class="phoneme-frequency">{{ phoneme.frequency }}</span>
+                                                <div class="frequency-indicator" style="width: {{ (phoneme.frequency / 10 * 100)|min(100) }}%"></div>
+                                            </div>
+                                            {% endfor %}
+                                        </div>
+                                    </div>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    
+    <script src="{{ url_for('phonemes.static', filename='js/phonemes_full.js') }}"></script>
+
+</body>
+</html>

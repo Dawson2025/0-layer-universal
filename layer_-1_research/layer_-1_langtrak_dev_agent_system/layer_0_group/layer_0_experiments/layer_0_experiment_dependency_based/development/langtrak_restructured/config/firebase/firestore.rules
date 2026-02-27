@@ -1,0 +1,68 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function projectDoc(projectId) {
+      return get(/databases/$(database)/documents/projects/$(projectId));
+    }
+
+    function ownsProject(projectId) {
+      return isSignedIn() &&
+        (
+          (resource != null && resource.data.user_id == request.auth.uid) ||
+          (resource != null && resource.data.user_id_str == request.auth.uid) ||
+          (resource != null && resource.data.firebase_uid == request.auth.uid) ||
+          (
+            exists(/databases/$(database)/documents/projects/$(projectId)) &&
+            (
+              projectDoc(projectId).data.user_id == request.auth.uid ||
+              projectDoc(projectId).data.user_id_str == request.auth.uid ||
+              projectDoc(projectId).data.firebase_uid == request.auth.uid
+            )
+          )
+        );
+    }
+
+    match /projects/{projectId} {
+      allow read: if ownsProject(projectId);
+      allow write: if isSignedIn() && (
+        (request.resource.data.user_id == request.auth.uid) ||
+        (request.resource.data.user_id_str == request.auth.uid) ||
+        (request.resource.data.firebase_uid == request.auth.uid)
+      );
+    }
+
+    match /words/{documentId} {
+      allow read:
+        if isSignedIn() &&
+           resource.data.project_id is string &&
+           ownsProject(resource.data.project_id);
+      allow write:
+        if isSignedIn() &&
+           request.resource.data.project_id is string &&
+           ownsProject(request.resource.data.project_id);
+    }
+
+    match /phonemes/{documentId} {
+      allow read:
+        if isSignedIn() &&
+           resource.data.project_id is string &&
+           ownsProject(resource.data.project_id);
+      allow write:
+        if isSignedIn() &&
+           request.resource.data.project_id is string &&
+           ownsProject(request.resource.data.project_id);
+    }
+
+    match /data/phoneme_templates/{templateId} {
+      allow read: if isSignedIn();
+      allow write:
+        if request.resource.data.project_id is string &&
+           ownsProject(request.resource.data.project_id);
+    }
+  }
+}

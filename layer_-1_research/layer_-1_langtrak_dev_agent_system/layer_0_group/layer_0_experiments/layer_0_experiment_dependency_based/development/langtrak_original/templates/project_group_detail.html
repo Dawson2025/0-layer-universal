@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Group Detail</title>
+</head>
+<body>
+    <h1>Project Group Detail</h1>
+    <h2>Variant Menu</h2>
+    <p>Group Name: {{ group.name }}</p>
+    <h2>Projects in this Group:</h2>
+    <ul>
+        {% for project in projects %}
+            <li>{{ project.name }} (ID: {{ project.id }})</li>
+        {% endfor %}
+    </ul>
+    <p>User: {{ user.name }}</p>
+    <p>Is Group Admin: {{ is_group_admin }}</p>
+</body>
+</html>

@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Projects - Phoneme Frequency Tracker</title>
+    <link rel="stylesheet" href="{{ url_for('projects.static', filename='css/projects_menu.css') }}">
+
+</head>
+<body data-firebase-available="{{ 'true' if firebase_available else 'false' }}">
+    <div class="container">
+        <div class="header">
+            {% if focused_group %}
+            <a href="{{ url_for('projects.projects_menu') }}" class="back-button">← My Projects</a>
+            <h1>🌿 {{ focused_group.name }} Variant Menu</h1>
+            {% if focused_group.parent_group_id %}
+            <a href="/projects/create" class="create-button">➕ New Project</a>
+            {% else %}
+            <a href="/projects/create" class="create-button">➕ New Project</a>
+            {% endif %}
+            {% else %}
+            <a href="{{ url_for('dashboard.dashboard') }}" class="back-button">← Dashboard</a>
+            <h1>🚀 My Projects</h1>
+            <a href="/projects/create" class="create-button">➕ New Project</a>
+            {% endif %}
+        </div>
+
+        {% if focused_group and focused_group.parent_group_id %}
+        <div class="group-breadcrumb">
+            Branch of <a href="{{ url_for('projects.project_group_menu', group_id=focused_group.parent_group_id) }}">{{ parent_group.name if parent_group else 'Parent Project' }}</a>
+        </div>
+        {% endif %}
+
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                <div class="flash-messages">
+                    {% for category, message in messages %}
+                        <div class="flash-message {{ category }}">{{ message }}</div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        {% endwith %}
+
+        {% if user.current_project %}
+        <div class="current-project">
+            <div class="project-info">
+                <span class="project-icon">🎯</span>
+                <div>
+                    <strong>Current Project:</strong> {{ user.current_project.name }}
+                    <div style="font-size: 12px; color: #8E8E93;">All data operations are isolated to this project</div>
+                </div>
+            </div>
+            <a href="/projects/exit" class="exit-button">Exit Project</a>
+        </div>
+        {% endif %}
+
+        {% if projects %}
+            {% if not focused_group %}
+            <div class="project-search">
+                <input type="search" id="projectSearchInput" placeholder="Search projects..." aria-label="Search projects" autocomplete="off">
+            </div>
+            <div id="projectSearchEmpty" class="search-empty-state" style="display: none;">No projects match your search.</div>
+            {% endif %}
+            <div class="projects-grid">
+                {% for project in projects %}
+                {% set variants = project.variants %}
+                <div class="project-card"
+                     data-project-name="{{ project.name }}"
+                     data-group-id="{{ project.group_id }}">
+                    <div class="project-name">
+                        {{ project.name }}
+                    </div>
+                    <div class="project-stats">
+                        {% if project.recent_display %}
+                        🔄 Last activity: {{ project.recent_display }}<br>
+                        {% endif %}
+                        Variants: {{ project.variant_summary }}
+                    </div>
+                    {% if project.owner_variant and project.owner_variant.is_owner %}
+                    <div class="project-actions">
+                        <button class="action-button enter" onclick="viewProject('{{ project.group_id }}')">🌿 Variant Menu</button>
+                        <button class="action-button edit" onclick="renameProjectGroup('{{ project.group_id }}', '{{ project.name }}')">✏️ Rename Project</button>
+                        {% if project.preferred_variant_identifier and not project.preferred_variant_placeholder %}
+                        <button class="action-button" onclick="branchProjectVariant('{{ project.preferred_variant_identifier }}', '{{ project.preferred_variant_name or project.name }}')">🌿 Branch Project</button>
+                        {% endif %}
+                        <button class="action-button delete" onclick="deleteProjectGroup('{{ project.group_id }}', '{{ project.name }}')">🗑️ Delete Project</button>
+                        {% if project.preferred_variant_identifier %}
+                        <button class="action-button" onclick="shareProjectGroup('{{ project.group_id }}', '{{ project.preferred_variant_identifier }}', '{{ project.name }}')">🤝 Share Project</button>
+                        {% endif %}
+                    </div>
+                    {% endif %}
+
+                    {% if project.subprojects %}
+                    <div class="subproject-section">
+                        <div class="subproject-title">Sub-Projects</div>
+                        {% for sub in project.subprojects %}
+                        <div class="subproject-card">
+                            <div class="subproject-info">
+                                <div class="subproject-name">{{ sub.name }}</div>
+                                {% if sub.parent_group_id %}
+                                <div class="subproject-meta">Derived from {{ project.name }}</div>
+                                {% endif %}
+                            </div>
+                            <div class="subproject-actions">
+                                <button class="action-button enter" onclick="viewProject('{{ sub.group_id }}')">👁️ Variant Menu</button>
+                                <button class="action-button edit" onclick="renameProjectGroup('{{ sub.group_id }}', '{{ sub.name }}')">✏️ Rename</button>
+                                <button class="action-button delete" onclick="deleteProjectGroup('{{ sub.group_id }}', '{{ sub.name }}')">🗑️ Delete</button>
+                                {% if sub.preferred_variant_identifier %}
+                                <button class="action-button" onclick="showShareModal('{{ sub.preferred_variant_identifier }}', '{{ sub.name }}')">🤝 Share</button>
+                                <button class="action-button" onclick="branchProjectVariant('{{ sub.preferred_variant_identifier }}', '{{ sub.name }}')">🌿 Branch</button>
+                                {% endif %}
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+
+                    <div class="variant-groups">
+                        {% for variant in variants %}
+                        <div class="variant-group{% if variant.placeholder %} placeholder{% endif %}"
+                             data-storage="{{ variant.type }}"
+                             data-icon="{{ variant.icon }}"
+                             data-name="{{ variant.name }}"
+                             data-variant-id="{{ variant.variant_identifier }}"
+                             data-has-cloud-id="{{ 'true' if variant.cloud_project_id else 'false' }}"
+                             data-is-owner="{{ 'true' if variant.is_owner else 'false' }}"
+                             data-placeholder="{{ 'true' if variant.placeholder else 'false' }}">
+                            <div class="variant-heading">{{ variant.icon }} {{ variant.display_label }} Variant — {{ variant.name }}{% if variant.branch_name %}<span class="branch-label">({{ variant.branch_name }})</span>{% endif %}</div>
+                            <div class="storage-meta">
+                                📚 {{ variant.word_count }} words
+                                {% if variant.updated_display %}
+                                <br>Updated: {{ variant.updated_display }}
+                                {% endif %}
+                                {% if variant.type == 'local' and variant.cloud_project_id %}
+                                <br>Linked Cloud: {{ variant.cloud_project_id }}
+                                {% if variant.cloud_last_sync_display %}
+                                <br>Last Sync: {{ variant.cloud_last_sync_display }}
+                                {% endif %}
+                                {% endif %}
+                                {% if variant.placeholder %}
+                                <br><em>This variant is currently unavailable locally.</em>
+                                {% endif %}
+                            </div>
+                            <div class="variant-actions">
+                                {% if not variant.placeholder %}
+                                <a href="/projects/{{ variant.id }}/enter" class="action-button enter">🎯 Enter</a>
+                                {% endif %}
+                                {% if variant.type == 'local' and variant.is_owner and not variant.placeholder %}
+                                <a href="/projects/{{ variant.id }}/edit" class="action-button edit">✏️ Edit</a>
+                                <button class="action-button delete" onclick="deleteProject('{{ variant.variant_identifier }}', '{{ variant.name }}', 'local')">🗑️ Delete</button>
+                                <button class="action-button" onclick="showShareModal('{{ variant.variant_identifier }}', '{{ variant.name }}')">🤝 Share</button>
+                                <button class="action-button" onclick="branchProjectVariant('{{ variant.variant_identifier }}', '{{ variant.name }}')">🌿 Branch</button>
+                                {% if variant.parent_variant_identifier %}
+                                <button class="action-button" onclick="mergeVariant('{{ variant.variant_identifier }}', '{{ variant.parent_variant_identifier }}', '{{ variant.name }}')">🔀 Merge</button>
+                                {% endif %}
+                                {% if firebase_available %}
+                                <button class="action-button" onclick="pushToCloud('{{ variant.id }}', '{{ variant.name }}')">
+                                    {% if variant.cloud_project_id %}⬆️ Push Updates{% else %}☁️ Migrate to Cloud{% endif %}
+                                </button>
+                                {% if variant.cloud_project_id %}
+                                <button class="action-button" onclick="pullFromCloud('{{ variant.id }}', '{{ variant.name }}')">⬇️ Pull from Cloud</button>
+                                {% endif %}
+                                {% endif %}
+                                {% endif %}
+                                {% if variant.type == 'cloud' and firebase_available and not variant.placeholder %}
+                                {% if variant.is_owner %}
+                                <a href="/projects/{{ variant.id }}/edit" class="action-button edit">✏️ Edit</a>
+                                <button class="action-button delete" onclick="deleteProject('{{ variant.variant_identifier }}', '{{ variant.name }}', 'cloud')">🗑️ Delete</button>
+                                <button class="action-button" onclick="showShareModal('{{ variant.variant_identifier }}', '{{ variant.name }}')">🤝 Share</button>
+                                <button class="action-button" onclick="branchProjectVariant('{{ variant.variant_identifier }}', '{{ variant.name }}')">🌿 Branch</button>
+                                {% endif %}
+                                <button class="action-button" onclick="forkToLocal('{{ variant.id }}', '{{ variant.name }}')">📦 Fork to Local</button>
+                                {% endif %}
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        {% else %}
+            <div class="no-projects">
+                <span class="no-projects-icon">🚀</span>
+                <div>No projects yet</div>
+                <div style="margin-top: 8px; font-size: 16px; color: #8E8E93;">Create your first language project to get started!</div>
+                <a href="/projects/create" class="create-button" style="margin-top: 16px; display: inline-block;">➕ Create Your First Project</a>
+            </div>
+        {% endif %}
+    </div>
+
+    <!-- The Share Modal -->
+    <div id="shareModal" class="share-modal">
+        <div class="share-modal-content">
+            <div class="share-modal-header">
+                <h2>Share Project</h2>
+                <span class="share-modal-close" onclick="closeShareModal()">&times;</span>
+            </div>
+            <div class="share-modal-body">
+                <label for="shareWithGroup">Share with Group:</label>
+                <select id="shareWithGroup">
+                    <option value="">Select a group...</option>
+                    {% for group in user_groups %}
+                        <option value="{{ group.id }}">{{ group.name }}</option>
+                    {% endfor %}
+                </select>
+                <button onclick="shareProject()">Share with Group</button>
+
+                <div class="sharing-options">
+                    <h3>Currently Shared With:</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('projects.static', filename='js/projects_menu.js') }}"></script>
+
+</body>
+</html>

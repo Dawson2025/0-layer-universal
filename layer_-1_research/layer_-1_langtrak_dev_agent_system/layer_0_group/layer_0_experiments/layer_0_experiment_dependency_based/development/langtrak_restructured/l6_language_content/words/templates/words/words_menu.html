@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Words Menu - Phoneme Frequency Tracker</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+            background: linear-gradient(135deg, #1c1c1e 0%, #2c2c2e 100%);
+            color: #ffffff;
+            min-height: 100vh;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 16px;
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            margin: 40px 0 40px 0;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .back-button {
+            background: rgba(58, 58, 60, 0.6);
+            border: none;
+            border-radius: 12px;
+            padding: 12px 16px;
+            color: #007AFF;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 600;
+            transition: all 0.2s ease;
+        }
+
+        .back-button:hover {
+            background: rgba(78, 78, 80, 0.8);
+        }
+
+        .header h1 {
+            font-size: 32px;
+            font-weight: 700;
+            background: linear-gradient(90deg, #30D158, #5AC8FA);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .menu-item {
+            background: rgba(58, 58, 60, 0.6);
+            border: 1px solid rgba(84, 84, 88, 0.4);
+            border-radius: 16px;
+            padding: 24px;
+            text-decoration: none;
+            color: #ffffff;
+            transition: all 0.2s ease;
+            backdrop-filter: blur(20px);
+        }
+
+        .menu-item:hover {
+            background: rgba(78, 78, 80, 0.8);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .menu-icon {
+            font-size: 32px;
+            margin-bottom: 16px;
+            display: block;
+        }
+
+        .menu-title {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #ffffff;
+        }
+
+        .menu-description {
+            font-size: 14px;
+            color: #8E8E93;
+            line-height: 1.4;
+        }
+
+        @media (max-width: 768px) {
+            .header {
+                margin: 20px 0 30px 0;
+            }
+
+            .header h1 {
+                font-size: 24px;
+            }
+
+            .menu-grid {
+                grid-template-columns: 1fr;
+                gap: 16px;
+                margin-top: 20px;
+            }
+
+            .menu-item {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="page-title">📚 Words Management</h1>
+        <p class="page-description">Manage your phonetic vocabulary and word database
+        {% if user and user.is_authenticated %}
+            <br><small>Viewing words for: {{ user.name }}</small>
+        {% endif %}
+        </p>
+        <div class="header">
+            <a href="{{ url_for('main_menu') }}" class="back-button">← Back</a>
+            <h1>Words Management</h1>
+        </div>
+
+        <div class="menu-grid">
+            <a href="{{ url_for('words.display_words') }}" class="menu-item">
+                <span class="menu-icon">📚</span>
+                <div class="menu-title">Browse All Words</div>
+                <div class="menu-description">View and manage all words in your database with search and filtering options</div>
+            </a>
+
+            <a href="{{ url_for('words.create_word_menu') }}" class="menu-item">
+                <span class="menu-icon">➕</span>
+                <div class="menu-title">Create New Word</div>
+                <div class="menu-description">Add new words using different creation methods including table-based selection</div>
+            </a>
+
+            <a href="{{ url_for('words.lookup_word') }}" class="menu-item">
+                <span class="menu-icon">🔍</span>
+                <div class="menu-title">Search Words</div>
+                <div class="menu-description">Find words by English, new language, IPA phonetics, or dictionary phonetics</div>
+            </a>
+        </div>
+    </div>
+</body>
+</html>

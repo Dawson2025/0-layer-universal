@@ -1,0 +1,881 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add New Word</title>
+    <style>
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, sans-serif; 
+            background: linear-gradient(135deg, #1c1c1e, #2c2c2e); 
+            color: white; 
+            padding: 20px; 
+            max-width: 100vw; 
+            margin: 0 auto;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        
+        .back-btn { 
+            color: #007AFF; 
+            text-decoration: none; 
+            font-size: 18px; 
+            margin-bottom: 20px; 
+            display: block; 
+        }
+        
+        h1 { 
+            text-align: center; 
+            color: #007AFF; 
+            margin-bottom: 30px;
+        }
+        
+        .form-section {
+            background: rgba(58,58,60,0.8);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+            border: 1px solid rgba(99,99,102,0.3);
+        }
+        
+        .form-group {
+            margin-bottom: 15px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #8E8E93;
+            font-weight: 500;
+        }
+        
+        input, select, textarea {
+            width: 100%;
+            padding: 12px;
+            background: rgba(28,28,30,0.8);
+            border: 1px solid rgba(99,99,102,0.5);
+            border-radius: 8px;
+            color: white;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+        
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: #007AFF;
+            box-shadow: 0 0 0 2px rgba(0,122,255,0.2);
+        }
+        
+        .syllable-controls {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .syllable-controls select {
+            flex: 1;
+        }
+        
+        .phoneme-display {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+            overflow-x: auto;
+            padding-bottom: 10px;
+        }
+        
+        .position-column {
+            flex: 1;
+            min-width: 250px;
+            background: rgba(44,44,46,0.8);
+            border-radius: 8px;
+            padding: 15px;
+        }
+        
+        .position-header {
+            text-align: center;
+            font-weight: bold;
+            color: #007AFF;
+            margin-bottom: 15px;
+            font-size: 18px;
+            text-transform: uppercase;
+        }
+        
+        .group-section {
+            margin-bottom: 20px;
+        }
+        
+        .group-header {
+            font-weight: bold;
+            color: #FFD60A;
+            margin-bottom: 10px;
+            font-size: 14px;
+            padding: 5px 0;
+            border-bottom: 1px solid rgba(255,214,10,0.3);
+        }
+        
+        .subgroup-section {
+            margin-bottom: 15px;
+            padding-left: 10px;
+        }
+        
+        .subgroup-header {
+            font-weight: 600;
+            color: #FF9F0A;
+            margin-bottom: 8px;
+            font-size: 13px;
+        }
+        
+        .phoneme-item {
+            padding: 6px 10px;
+            margin: 2px 0;
+            background: rgba(58,58,60,0.6);
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-size: 14px;
+            border: 2px solid transparent;
+        }
+        
+        .phoneme-item:hover {
+            background: rgba(78,78,80,0.8);
+            transform: translateX(2px);
+        }
+        
+        .phoneme-item.selected {
+            background: rgba(0,122,255,0.3);
+            border-color: #007AFF;
+            color: #007AFF;
+            font-weight: bold;
+        }
+        
+        .frequency-badge {
+            float: right;
+            background: rgba(142,142,147,0.8);
+            color: white;
+            padding: 2px 6px;
+            border-radius: 10px;
+            font-size: 11px;
+        }
+        
+        .suggestions-section {
+            margin-top: 30px;
+        }
+        
+        .suggestions-header {
+            color: #30D158;
+            font-weight: bold;
+            margin-bottom: 15px;
+            font-size: 18px;
+            text-align: center;
+        }
+        
+        .suggestion-item {
+            background: rgba(48,209,88,0.1);
+            border: 1px solid rgba(48,209,88,0.3);
+            border-radius: 8px;
+            padding: 12px;
+            margin-bottom: 10px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        .suggestion-item:hover {
+            background: rgba(48,209,88,0.2);
+            border-color: #30D158;
+        }
+        
+        .suggestion-ipa {
+            font-weight: bold;
+            color: #30D158;
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+        
+        .suggestion-details {
+            font-size: 12px;
+            color: #8E8E93;
+        }
+        
+        .selected-phonemes {
+            background: rgba(0,122,255,0.1);
+            border: 1px solid rgba(0,122,255,0.3);
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .selected-phonemes h3 {
+            color: #007AFF;
+            margin: 0 0 10px 0;
+        }
+        
+        .phoneme-preview {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        
+        .phoneme-preview-item {
+            background: rgba(0,122,255,0.2);
+            padding: 8px 12px;
+            border-radius: 6px;
+            font-size: 14px;
+        }
+        
+        .submit-btn {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(45deg, #007AFF, #5856D6);
+            border: none;
+            border-radius: 8px;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        .submit-btn:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(0,122,255,0.3);
+        }
+        
+        .submit-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+        
+        .loading {
+            text-align: center;
+            color: #8E8E93;
+            padding: 20px;
+        }
+        
+        .error {
+            background: rgba(255,69,58,0.1);
+            border: 1px solid rgba(255,69,58,0.3);
+            color: #FF453A;
+            padding: 10px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+        
+        .success {
+            background: rgba(48,209,88,0.1);
+            border: 1px solid rgba(48,209,88,0.3);
+            color: #30D158;
+            padding: 10px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+        
+        @media (max-width: 768px) {
+            .phoneme-display {
+                flex-direction: column;
+            }
+            
+            .position-column {
+                min-width: unset;
+            }
+            
+            .syllable-controls {
+                flex-direction: column;
+            }
+        }
+        
+        /* Language selector styles */
+        .language-selector {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        
+        .form-select {
+            padding: 12px;
+            border: 2px solid #e1e5e9;
+            border-radius: 8px;
+            font-size: 14px;
+            background-color: white;
+            transition: border-color 0.2s ease;
+        }
+        
+        .form-select:focus {
+            outline: none;
+            border-color: #4a90e2;
+        }
+        
+        .language-input-container {
+            margin-top: 4px;
+        }
+        
+        .btn-secondary {
+            padding: 8px 16px;
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 6px;
+            color: #495057;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            align-self: flex-start;
+        }
+        
+        .btn-secondary:hover {
+            background-color: #e9ecef;
+            border-color: #adb5bd;
+        }
+        
+        .btn-secondary:active {
+            background-color: #dee2e6;
+        }
+    </style>
+</head>
+<body>
+    <a href="/" class="back-btn">← Back to Menu</a>
+    <h1>➕ Add New Word</h1>
+    
+    <div id="message-area"></div>
+    
+    <!-- Basic Word Information -->
+    <div class="form-section">
+        <div class="form-group">
+            <label for="language">Language Name:</label>
+            <div class="language-selector">
+                <select class="form-select" id="languageSelect" onchange="handleLanguageChange()">
+                    <option value="">Select existing language...</option>
+                </select>
+                <div class="language-input-container" id="languageInputContainer" style="display: none;">
+                    <input type="text" class="form-input" id="languageInput" placeholder="Enter new language name">
+                </div>
+                <button type="button" class="btn-secondary" id="newLanguageBtn" onclick="toggleLanguageInput()">+ New Language</button>
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <label for="english-words">English Meanings (comma-separated):</label>
+            <input type="text" id="english-words" placeholder="e.g., hello, greeting, hi">
+        </div>
+        
+        <div class="form-group">
+            <label for="new-language-word">Word in Your Language:</label>
+            <input type="text" id="new-language-word" placeholder="Enter the word">
+        </div>
+        
+        <div class="form-group">
+            <label for="dictionary-phonetics">Dictionary Phonetics (optional):</label>
+            <input type="text" id="dictionary-phonetics" placeholder="e.g., HAH-loh">
+        </div>
+    </div>
+    
+    <!-- Syllable Configuration -->
+    <div class="form-section">
+        <div class="syllable-controls">
+            <div class="form-group" style="margin-bottom: 0;">
+                <label for="syllable-type">Syllable Type:</label>
+                <select id="syllable-type">
+                    <option value="CVC">CVC (Consonant-Vowel-Consonant)</option>
+                    <option value="CV">CV (Consonant-Vowel)</option>
+                </select>
+            </div>
+            
+            <div class="form-group" style="margin-bottom: 0;">
+                <label for="length-type">Length Type:</label>
+                <select id="length-type">
+                    <option value="solo">Solo phonemes (single consonants, monophthongs)</option>
+                    <option value="multiple">Multiple types (clusters, diphthongs)</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Selected Phonemes Preview -->
+    <div class="selected-phonemes" id="selected-phonemes" style="display: none;">
+        <h3>Selected Phonemes</h3>
+        <div class="phoneme-preview" id="phoneme-preview"></div>
+        <div style="margin-top: 10px;">
+            <strong>IPA: </strong><span id="ipa-preview"></span>
+        </div>
+    </div>
+    
+    <!-- Phoneme Selection Display -->
+    <div class="form-section">
+        <div class="phoneme-display" id="phoneme-display">
+            <div class="loading">Select syllable type and length type to load phonemes...</div>
+        </div>
+    </div>
+    
+    <!-- Word Suggestions -->
+    <div class="form-section suggestions-section" id="suggestions-section" style="display: none;">
+        <div class="suggestions-header">💡 Word Suggestions</div>
+        <div id="suggestions-container"></div>
+    </div>
+    
+    <!-- Submit Button -->
+    <button class="submit-btn" id="submit-btn" disabled>Add Word</button>
+    
+    <script>
+        let selectedPhonemes = {};
+        let currentSyllableType = 'CVC';
+        let currentLengthType = 'solo';
+        let phonemeMappings = {};
+        
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            loadPhonemes();
+            
+            document.getElementById('syllable-type').addEventListener('change', function() {
+                currentSyllableType = this.value;
+                selectedPhonemes = {};
+                updateSelectedPhonemesDisplay();
+                loadPhonemes();
+            });
+            
+            document.getElementById('length-type').addEventListener('change', function() {
+                currentLengthType = this.value;
+                selectedPhonemes = {};
+                updateSelectedPhonemesDisplay();
+                loadPhonemes();
+            });
+            
+            document.getElementById('submit-btn').addEventListener('click', submitWord);
+        });
+        
+        function loadPhonemes() {
+            const positions = currentSyllableType === 'CVC' ? ['onset', 'nucleus', 'coda'] : ['onset', 'nucleus'];
+            const phonemeDisplay = document.getElementById('phoneme-display');
+            phonemeDisplay.innerHTML = '<div class="loading">Loading phonemes...</div>';
+            
+            phonemeMappings = {};
+            let loadedPositions = 0;
+            
+            positions.forEach(position => {
+                const lengthTypeParam = currentLengthType === 'solo' ? 
+                    (position === 'nucleus' ? 'monophthongs' : 'single_consonants') :
+                    'all';
+                
+                fetch(`/api/phonemes/${currentSyllableType}/${position}?length_type=${lengthTypeParam}`)
+                    .then(response => response.json())
+                    .then(data => {
+                        phonemeMappings[position] = data.phoneme_mapping;
+                        loadedPositions++;
+                        
+                        if (loadedPositions === positions.length) {
+                            displayPhonemes(positions);
+                            loadSuggestions();
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error loading phonemes:', error);
+                        showMessage('Error loading phonemes', 'error');
+                    });
+            });
+        }
+        
+        function displayPhonemes(positions) {
+            const phonemeDisplay = document.getElementById('phoneme-display');
+            phonemeDisplay.innerHTML = '';
+            
+            positions.forEach(position => {
+                const columnDiv = document.createElement('div');
+                columnDiv.className = 'position-column';
+                
+                const header = document.createElement('div');
+                header.className = 'position-header';
+                header.textContent = position.toUpperCase();
+                columnDiv.appendChild(header);
+                
+                // Get and display phonemes for this position
+                fetch(`/api/phonemes/${currentSyllableType}/${position}?length_type=${getLengthTypeParam(position)}`)
+                    .then(response => response.json())
+                    .then(data => {
+                        displayPositionPhonemes(columnDiv, data.grouped_data, position);
+                    });
+                
+                phonemeDisplay.appendChild(columnDiv);
+            });
+        }
+        
+        function getLengthTypeParam(position) {
+            if (currentLengthType === 'solo') {
+                return position === 'nucleus' ? 'monophthongs' : 'single_consonants';
+            }
+            return 'all';
+        }
+        
+        function displayPositionPhonemes(container, groupedData, position) {
+            // Sort groups by frequency (ascending)
+            const sortedGroups = Object.keys(groupedData).sort((a, b) => 
+                groupedData[a].group_frequency - groupedData[b].group_frequency
+            );
+            
+            sortedGroups.forEach(groupType => {
+                const groupSection = document.createElement('div');
+                groupSection.className = 'group-section';
+                
+                const groupHeader = document.createElement('div');
+                groupHeader.className = 'group-header';
+                groupHeader.textContent = `${groupType} (${groupedData[groupType].group_frequency})`;
+                groupSection.appendChild(groupHeader);
+                
+                // Sort subgroups by frequency (ascending)
+                const subgroups = groupedData[groupType].subgroups;
+                const sortedSubgroups = Object.keys(subgroups).sort((a, b) => 
+                    (subgroups[a].subgroup_frequency || 0) - (subgroups[b].subgroup_frequency || 0)
+                );
+                
+                sortedSubgroups.forEach(subgroupType => {
+                    const subgroupSection = document.createElement('div');
+                    subgroupSection.className = 'subgroup-section';
+                    
+                    const subgroupHeader = document.createElement('div');
+                    subgroupHeader.className = 'subgroup-header';
+                    subgroupHeader.textContent = `${subgroupType} (${subgroups[subgroupType].subgroup_frequency || 0})`;
+                    subgroupSection.appendChild(subgroupHeader);
+                    
+                    // Phonemes are already sorted by frequency in the API
+                    subgroups[subgroupType].phonemes.forEach(phonemeInfo => {
+                        const phonemeItem = document.createElement('div');
+                        phonemeItem.className = 'phoneme-item';
+                        phonemeItem.innerHTML = `
+                            ${phonemeInfo.number}: ${phonemeInfo.phoneme}
+                            <span class="frequency-badge">${phonemeInfo.frequency}</span>
+                        `;
+                        
+                        phonemeItem.addEventListener('click', () => {
+                            selectPhoneme(position, phonemeInfo);
+                            updatePhonemeSelection(position, phonemeInfo.number);
+                        });
+                        
+                        subgroupSection.appendChild(phonemeItem);
+                    });
+                    
+                    groupSection.appendChild(subgroupSection);
+                });
+                
+                container.appendChild(groupSection);
+            });
+        }
+        
+        function selectPhoneme(position, phonemeInfo) {
+            selectedPhonemes[position] = phonemeInfo;
+            updateSelectedPhonemesDisplay();
+            loadSuggestions();
+            updateSubmitButton();
+        }
+        
+        function updatePhonemeSelection(position, selectedNumber) {
+            // Update visual selection
+            const positionColumns = document.querySelectorAll('.position-column');
+            positionColumns.forEach(column => {
+                if (column.querySelector('.position-header').textContent.toLowerCase() === position) {
+                    column.querySelectorAll('.phoneme-item').forEach(item => {
+                        item.classList.remove('selected');
+                        if (item.textContent.trim().startsWith(selectedNumber + ':')) {
+                            item.classList.add('selected');
+                        }
+                    });
+                }
+            });
+        }
+        
+        function updateSelectedPhonemesDisplay() {
+            const positions = currentSyllableType === 'CVC' ? ['onset', 'nucleus', 'coda'] : ['onset', 'nucleus'];
+            const selectedPhonemesDiv = document.getElementById('selected-phonemes');
+            const phonemePreview = document.getElementById('phoneme-preview');
+            const ipaPreview = document.getElementById('ipa-preview');
+            
+            if (Object.keys(selectedPhonemes).length === 0) {
+                selectedPhonemesDiv.style.display = 'none';
+                return;
+            }
+            
+            selectedPhonemesDiv.style.display = 'block';
+            phonemePreview.innerHTML = '';
+            
+            let ipa = '';
+            positions.forEach(position => {
+                if (selectedPhonemes[position]) {
+                    const item = document.createElement('div');
+                    item.className = 'phoneme-preview-item';
+                    item.textContent = `${position}: ${selectedPhonemes[position].phoneme}`;
+                    phonemePreview.appendChild(item);
+                    
+                    ipa += selectedPhonemes[position].phoneme;
+                }
+            });
+            
+            ipaPreview.textContent = ipa;
+        }
+        
+        function loadSuggestions() {
+            const positions = currentSyllableType === 'CVC' ? ['onset', 'nucleus', 'coda'] : ['onset', 'nucleus'];
+            const allSelected = positions.every(pos => selectedPhonemes[pos]);
+            
+            if (!allSelected) {
+                document.getElementById('suggestions-section').style.display = 'none';
+                return;
+            }
+            
+            const params = new URLSearchParams({
+                syllable_type: currentSyllableType,
+                onset: selectedPhonemes.onset?.phoneme || '',
+                nucleus: selectedPhonemes.nucleus?.phoneme || ''
+            });
+            
+            if (currentSyllableType === 'CVC' && selectedPhonemes.coda) {
+                params.set('coda', selectedPhonemes.coda.phoneme);
+            }
+            
+            fetch(`/api/suggestions?${params}`)
+                .then(response => response.json())
+                .then(data => {
+                    displaySuggestions(data.suggestions);
+                })
+                .catch(error => {
+                    console.error('Error loading suggestions:', error);
+                });
+        }
+        
+        function displaySuggestions(suggestions) {
+            const suggestionsSection = document.getElementById('suggestions-section');
+            const suggestionsContainer = document.getElementById('suggestions-container');
+            
+            if (suggestions.length === 0) {
+                suggestionsSection.style.display = 'none';
+                return;
+            }
+            
+            suggestionsSection.style.display = 'block';
+            suggestionsContainer.innerHTML = '';
+            
+            suggestions.forEach(suggestion => {
+                const suggestionItem = document.createElement('div');
+                suggestionItem.className = 'suggestion-item';
+                
+                const phonemeDetails = suggestion.phonemes.map(p => 
+                    `${p.position}: ${p.phoneme} (${p.frequency})`
+                ).join(' | ');
+                
+                suggestionItem.innerHTML = `
+                    <div class="suggestion-ipa">${suggestion.ipa}</div>
+                    <div class="suggestion-details">${phonemeDetails}</div>
+                `;
+                
+                suggestionItem.addEventListener('click', () => {
+                    applySuggestion(suggestion);
+                });
+                
+                suggestionsContainer.appendChild(suggestionItem);
+            });
+        }
+        
+        function applySuggestion(suggestion) {
+            // Clear current selections
+            selectedPhonemes = {};
+            
+            // Apply suggestion phonemes
+            suggestion.phonemes.forEach((phonemeInfo, index) => {
+                const position = phonemeInfo.position;
+                const phonemeNumber = suggestion.numbers[index];
+                
+                if (phonemeMappings[position] && phonemeMappings[position][phonemeNumber]) {
+                    selectedPhonemes[position] = phonemeMappings[position][phonemeNumber];
+                    updatePhonemeSelection(position, phonemeNumber);
+                }
+            });
+            
+            updateSelectedPhonemesDisplay();
+            updateSubmitButton();
+        }
+        
+        function updateSubmitButton() {
+            const positions = currentSyllableType === 'CVC' ? ['onset', 'nucleus', 'coda'] : ['onset', 'nucleus'];
+            const allSelected = positions.every(pos => selectedPhonemes[pos]);
+            const hasBasicInfo = document.getElementById('english-words').value.trim() && 
+                                document.getElementById('new-language-word').value.trim();
+            
+            document.getElementById('submit-btn').disabled = !(allSelected && hasBasicInfo);
+        }
+        
+        function submitWord() {
+            const positions = currentSyllableType === 'CVC' ? ['onset', 'nucleus', 'coda'] : ['onset', 'nucleus'];
+            
+            const wordData = {
+                language: getSelectedLanguage(),
+                english_words: document.getElementById('english-words').value.split(',').map(w => w.trim()).filter(w => w),
+                new_language_word: document.getElementById('new-language-word').value.trim(),
+                dictionary_phonetics: document.getElementById('dictionary-phonetics').value.trim(),
+                syllable_type: currentSyllableType,
+                ipa_phonetics: document.getElementById('ipa-preview').textContent
+            };
+            
+            // Add phoneme data
+            positions.forEach(position => {
+                if (selectedPhonemes[position]) {
+                    wordData[`${position}_phoneme`] = selectedPhonemes[position].phoneme;
+                    wordData[`${position}_length_type`] = selectedPhonemes[position].length_type;
+                }
+            });
+            
+            document.getElementById('submit-btn').disabled = true;
+            document.getElementById('submit-btn').textContent = 'Adding Word...';
+            
+            fetch('/api/add-word', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(wordData)
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    showMessage(data.message, 'success');
+                    // Reset form
+                    document.getElementById('english-words').value = '';
+                    document.getElementById('new-language-word').value = '';
+                    document.getElementById('dictionary-phonetics').value = '';
+                    selectedPhonemes = {};
+                    updateSelectedPhonemesDisplay();
+                    clearPhonemeSelections();
+                } else {
+                    showMessage(data.message, 'error');
+                }
+            })
+            .catch(error => {
+                console.error('Error adding word:', error);
+                showMessage('Error adding word. Please try again.', 'error');
+            })
+            .finally(() => {
+                document.getElementById('submit-btn').disabled = false;
+                document.getElementById('submit-btn').textContent = 'Add Word';
+                updateSubmitButton();
+            });
+        }
+        
+        function clearPhonemeSelections() {
+            document.querySelectorAll('.phoneme-item').forEach(item => {
+                item.classList.remove('selected');
+            });
+        }
+        
+        function showMessage(message, type) {
+            const messageArea = document.getElementById('message-area');
+            messageArea.innerHTML = `<div class="${type}">${message}</div>`;
+            setTimeout(() => {
+                messageArea.innerHTML = '';
+            }, 5000);
+        }
+        
+        // Update submit button when basic info changes
+        document.getElementById('english-words').addEventListener('input', updateSubmitButton);
+        document.getElementById('new-language-word').addEventListener('input', updateSubmitButton);
+        
+        // Language selection functions
+        function handleLanguageChange() {
+            const select = document.getElementById('languageSelect');
+            const inputContainer = document.getElementById('languageInputContainer');
+            const input = document.getElementById('languageInput');
+            const btn = document.getElementById('newLanguageBtn');
+            
+            if (select.value === '') {
+                inputContainer.style.display = 'none';
+                input.value = '';
+                btn.textContent = '+ New Language';
+            } else {
+                inputContainer.style.display = 'block';
+                input.value = select.value;
+                btn.textContent = 'Cancel';
+            }
+        }
+        
+        function toggleLanguageInput() {
+            const select = document.getElementById('languageSelect');
+            const inputContainer = document.getElementById('languageInputContainer');
+            const input = document.getElementById('languageInput');
+            const btn = document.getElementById('newLanguageBtn');
+            
+            // Check if input container is currently hidden
+            const isHidden = inputContainer.style.display === 'none' || 
+                           getComputedStyle(inputContainer).display === 'none' ||
+                           inputContainer.style.display === '';
+            
+            if (isHidden) {
+                // Show input container for new language
+                inputContainer.style.display = 'block';
+                select.value = '';
+                input.value = '';
+                input.focus();
+                btn.textContent = 'Cancel';
+            } else {
+                // Hide input container and reset
+                inputContainer.style.display = 'none';
+                input.value = '';
+                btn.textContent = '+ New Language';
+            }
+        }
+        
+        function getSelectedLanguage() {
+            const select = document.getElementById('languageSelect');
+            const input = document.getElementById('languageInput');
+            
+            if (select.value !== '') {
+                return select.value;
+            } else if (input.value.trim() !== '') {
+                return input.value.trim();
+            }
+            return 'MyLanguage';
+        }
+        
+        // Load languages on page load
+        async function loadLanguages() {
+            try {
+                const [languagesResponse, lastLanguageResponse] = await Promise.all([
+                    fetch('/api/languages'),
+                    fetch('/api/last-language')
+                ]);
+                
+                const languagesData = await languagesResponse.json();
+                const lastLanguageData = await lastLanguageResponse.json();
+                
+                const select = document.getElementById('languageSelect');
+                const input = document.getElementById('languageInput');
+                const inputContainer = document.getElementById('languageInputContainer');
+                
+                // Clear existing options except the first one
+                select.innerHTML = '<option value="">Select existing language...</option>';
+                
+                // Add existing languages
+                if (languagesData.success && languagesData.languages.length > 0) {
+                    languagesData.languages.forEach(lang => {
+                        const option = document.createElement('option');
+                        option.value = lang;
+                        option.textContent = lang;
+                        select.appendChild(option);
+                    });
+                }
+                
+                // Set default to last used language
+                if (lastLanguageData.success && lastLanguageData.last_language) {
+                    const lastLang = lastLanguageData.last_language;
+                    const existingOption = select.querySelector(`option[value="${lastLang}"]`);
+                    if (existingOption) {
+                        select.value = lastLang;
+                        input.value = lastLang;
+                    } else {
+                        input.value = lastLang;
+                        inputContainer.style.display = 'block';
+                    }
+                }
+            } catch (error) {
+                console.error('Error loading languages:', error);
+            }
+        }
+        
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', loadLanguages);
+    </script>
+</body>
+</html>

@@ -1,0 +1,468 @@
+#!/usr/bin/env node
+/**
+ * US-065: Team Collaboration Journey
+ *
+ * Simulates a complete team collaboration workflow:
+ * 1. Lead creates account, project, group
+ * 2. Lead generates invitation link
+ * 3. Team member joins via invitation
+ * 4. Lead shares project to group
+ * 5. Team member accesses shared project
+ * 6. Both users collaborate on words
+ *
+ * Requires: Flask + MCP server running
+ * Environment: MCP_URL, APP_BASE_URL
+ */
+
+import { Client } from '@modelcontextprotocol/sdk/client/index.js';
+import { StreamableHTTPClientTransport } from '@modelcontextprotocol/sdk/client/streamableHttp.js';
+import fs from 'fs/promises';
+import path from 'path';
+
+// ─────────────────────────────────────────────────────────────────
+// Config & Setup
+// ─────────────────────────────────────────────────────────────────
+const MCP_URL = process.env.MCP_URL || 'http://localhost:3334/mcp';
+const APP_BASE_URL = process.env.APP_BASE_URL || 'http://127.0.0.1:5002';
+const TIMESTAMP = Date.now();
+const ARTIFACT_DIR = `artifacts/journeys/US-065-${TIMESTAMP}`;
+
+// Lead user credentials
+const LEAD_USERNAME = `collab_lead_${TIMESTAMP}`;
+const LEAD_EMAIL = `lead_${TIMESTAMP}@example.com`;
+const LEAD_PASSWORD = 'testpass123';
+
+// Team member credentials
+const MEMBER_USERNAME = `collab_member_${TIMESTAMP}`;
+const MEMBER_EMAIL = `member_${TIMESTAMP}@example.com`;
+const MEMBER_PASSWORD = 'testpass123';
+
+// Project & group names
+const PROJECT_NAME = `Team Project ${TIMESTAMP}`;
+const GROUP_NAME = `Team Group ${TIMESTAMP}`;
+
+const summary = {
+  timestamp: TIMESTAMP,
+  story: 'US-065',
+  description: 'Team Collaboration Journey',
+  steps: [],
+  artifacts: [],
+  outcome: 'pending'
+};
+
+// ─────────────────────────────────────────────────────────────────
+// Helpers
+// ─────────────────────────────────────────────────────────────────
+async function initializeMCP() {
+  const res = await fetch(MCP_URL, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'Accept': 'application/json, text/event-stream'
+    },
+    body: JSON.stringify({
+      jsonrpc: '2.0',
+      id: Date.now(),
+      method: 'initialize',
+      params: {
+        protocolVersion: '2024-11-05',
+        capabilities: {},
+        clientInfo: {
+          name: 'us-065-journey',
+          version: '1.0.0'
+        }
+      }
+    })
+  });
+  const data = await res.json();
+  if (data.error) throw new Error(`MCP init error: ${JSON.stringify(data.error)}`);
+  return data.result;
+}
+
+async function mcpRequest(method, params = {}) {
+  const res = await fetch(MCP_URL, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'Accept': 'application/json, text/event-stream'
+    },
+    body: JSON.stringify({
+      jsonrpc: '2.0',
+      id: Date.now(),
+      method,
+      params
+    })
+  });
+  const data = await res.json();
+  if (data.error) throw new Error(`MCP error: ${JSON.stringify(data.error)}`);
+  return data.result;
+}
+
+async function browserSnapshot() {
+  return await mcpRequest('tools/call', {
+    name: 'browser_snapshot',
+    arguments: {}
+  });
+}
+
+async function browserNavigate(url) {
+  return await mcpRequest('tools/call', {
+    name: 'browser_navigate',
+    arguments: { url }
+  });
+}
+
+async function browserClick(element, ref) {
+  return await mcpRequest('tools/call', {
+    name: 'browser_click',
+    arguments: { element, ref }
+  });
+}
+
+async function browserType(element, ref, text, submit = false) {
+  return await mcpRequest('tools/call', {
+    name: 'browser_type',
+    arguments: { element, ref, text, submit }
+  });
+}
+
+async function browserFillForm(fields) {
+  return await mcpRequest('tools/call', {
+    name: 'browser_fill_form',
+    arguments: { fields }
+  });
+}
+
+async function browserEvaluate(func, element = null, ref = null) {
+  const args = { function: func };
+  if (element && ref) {
+    args.element = element;
+    args.ref = ref;
+  }
+  return await mcpRequest('tools/call', {
+    name: 'browser_evaluate',
+    arguments: args
+  });
+}
+
+async function browserTabs(action, index = null) {
+  const args = { action };
+  if (index !== null) args.index = index;
+  return await mcpRequest('tools/call', {
+    name: 'browser_tabs',
+    arguments: args
+  });
+}
+
+async function takeScreenshot(filename) {
+  const result = await mcpRequest('tools/call', {
+    name: 'browser_take_screenshot',
+    arguments: { filename: `${ARTIFACT_DIR}/${filename}` }
+  });
+  summary.artifacts.push(filename);
+  return result;
+}
+
+function logStep(action, details = {}) {
+  console.log(`✓ ${action}`);
+  summary.steps.push({ action, ...details, timestamp: Date.now() });
+}
+
+// ─────────────────────────────────────────────────────────────────
+// Workflow Steps
+// ─────────────────────────────────────────────────────────────────
+
+async function setupArtifactDirectory() {
+  await fs.mkdir(ARTIFACT_DIR, { recursive: true });
+  logStep('Created artifact directory', { path: ARTIFACT_DIR });
+}
+
+async function leadRegisterAndLogin() {
+  // Register lead user
+  await browserNavigate(`${APP_BASE_URL}/register`);
+  await browserSnapshot();
+
+  const page = await browserSnapshot();
+  const usernameInput = page.content.find(n => n.name?.includes('username') || n.name?.includes('Username'));
+  const emailInput = page.content.find(n => n.name?.includes('email') || n.name?.includes('Email'));
+  const passwordInput = page.content.find(n => n.name?.includes('password') && !n.name?.includes('confirm'));
+  const confirmInput = page.content.find(n => n.name?.includes('confirm'));
+  const submitButton = page.content.find(n => n.name?.toLowerCase().includes('register') || n.name?.toLowerCase().includes('create account'));
+
+  await browserFillForm([
+    { name: 'username', ref: usernameInput.ref, type: 'textbox', value: LEAD_USERNAME },
+    { name: 'email', ref: emailInput.ref, type: 'textbox', value: LEAD_EMAIL },
+    { name: 'password', ref: passwordInput.ref, type: 'textbox', value: LEAD_PASSWORD },
+    { name: 'confirm password', ref: confirmInput.ref, type: 'textbox', value: LEAD_PASSWORD }
+  ]);
+
+  await browserClick('submit button', submitButton.ref);
+  await takeScreenshot('01-lead-registered.png');
+
+  logStep('Lead user registered', { username: LEAD_USERNAME, email: LEAD_EMAIL });
+}
+
+async function leadCreateProject() {
+  await browserNavigate(`${APP_BASE_URL}/projects/create`);
+  await browserSnapshot();
+
+  const page = await browserSnapshot();
+  const nameInput = page.content.find(n => n.name?.toLowerCase().includes('project name'));
+  const localRadio = page.content.find(n => n.name?.toLowerCase().includes('local') && n.role === 'radio');
+  const createButton = page.content.find(n => n.name?.toLowerCase().includes('create project'));
+
+  await browserType('project name', nameInput.ref, PROJECT_NAME);
+  await browserClick('local storage', localRadio.ref);
+  await browserClick('create project', createButton.ref);
+
+  await takeScreenshot('02-lead-project-created.png');
+  logStep('Lead created project', { projectName: PROJECT_NAME });
+
+  // Extract project ID from URL or page
+  const currentUrl = await browserEvaluate('() => window.location.href');
+  return currentUrl;
+}
+
+async function leadCreateGroup() {
+  await browserNavigate(`${APP_BASE_URL}/groups/create`);
+  await browserSnapshot();
+
+  const page = await browserSnapshot();
+  const nameInput = page.content.find(n => n.name?.toLowerCase().includes('group name') || n.name?.toLowerCase().includes('name'));
+  const descInput = page.content.find(n => n.name?.toLowerCase().includes('description'));
+  const createButton = page.content.find(n => n.name?.toLowerCase().includes('create group'));
+
+  await browserType('group name', nameInput.ref, GROUP_NAME);
+  if (descInput) {
+    await browserType('description', descInput.ref, 'Team collaboration test group');
+  }
+  await browserClick('create group', createButton.ref);
+
+  await takeScreenshot('03-lead-group-created.png');
+  logStep('Lead created group', { groupName: GROUP_NAME });
+}
+
+async function leadGetInvitationLink() {
+  // Should be on group detail page after creation
+  await browserSnapshot();
+
+  // Extract invitation link from page
+  const inviteLink = await browserEvaluate(`() => {
+    const linkElement = document.querySelector('[href*="/groups/join/"]')
+      || Array.from(document.querySelectorAll('a, input, span'))
+          .find(el => el.href?.includes('/groups/join/') || el.value?.includes('/groups/join/') || el.textContent?.includes('/groups/join/'));
+
+    if (linkElement) {
+      return linkElement.href || linkElement.value || linkElement.textContent;
+    }
+
+    // Try to find in any text node
+    const bodyText = document.body.innerText;
+    const match = bodyText.match(/http[s]?:\/\/[^\s]+\/groups\/join\/[a-zA-Z0-9]+/);
+    return match ? match[0] : null;
+  }`);
+
+  await takeScreenshot('04-lead-invitation-link.png');
+  logStep('Lead obtained invitation link', { inviteLink });
+
+  return inviteLink;
+}
+
+async function memberRegisterAndJoin(inviteLink) {
+  // Open new tab for member
+  await browserTabs('new');
+  const tabs = await browserTabs('list');
+  const memberTabIndex = tabs.content.tabs.length - 1;
+  await browserTabs('select', memberTabIndex);
+
+  // Register member user
+  await browserNavigate(`${APP_BASE_URL}/register`);
+  await browserSnapshot();
+
+  const page = await browserSnapshot();
+  const usernameInput = page.content.find(n => n.name?.includes('username') || n.name?.includes('Username'));
+  const emailInput = page.content.find(n => n.name?.includes('email') || n.name?.includes('Email'));
+  const passwordInput = page.content.find(n => n.name?.includes('password') && !n.name?.includes('confirm'));
+  const confirmInput = page.content.find(n => n.name?.includes('confirm'));
+  const submitButton = page.content.find(n => n.name?.toLowerCase().includes('register') || n.name?.toLowerCase().includes('create account'));
+
+  await browserFillForm([
+    { name: 'username', ref: usernameInput.ref, type: 'textbox', value: MEMBER_USERNAME },
+    { name: 'email', ref: emailInput.ref, type: 'textbox', value: MEMBER_EMAIL },
+    { name: 'password', ref: passwordInput.ref, type: 'textbox', value: MEMBER_PASSWORD },
+    { name: 'confirm password', ref: confirmInput.ref, type: 'textbox', value: MEMBER_PASSWORD }
+  ]);
+
+  await browserClick('submit button', submitButton.ref);
+  await takeScreenshot('05-member-registered.png');
+
+  logStep('Member user registered', { username: MEMBER_USERNAME, email: MEMBER_EMAIL });
+
+  // Navigate to invitation link
+  await browserNavigate(inviteLink);
+  await browserSnapshot();
+  await takeScreenshot('06-member-joined-group.png');
+
+  logStep('Member joined group via invitation', { inviteLink });
+}
+
+async function leadShareProjectToGroup() {
+  // Switch back to lead tab
+  await browserTabs('select', 0);
+
+  // Navigate to My Projects
+  await browserNavigate(`${APP_BASE_URL}/projects`);
+  await browserSnapshot();
+
+  // Find and click share button
+  const page = await browserSnapshot();
+  const shareButton = page.content.find(n =>
+    n.name?.toLowerCase().includes('share') &&
+    !n.name?.toLowerCase().includes('shared projects')
+  );
+
+  if (shareButton) {
+    await browserClick('share project button', shareButton.ref);
+    await browserSnapshot();
+
+    // Find group checkbox and share button in modal
+    const modalPage = await browserSnapshot();
+    const groupCheckbox = modalPage.content.find(n =>
+      n.name?.includes(GROUP_NAME) && n.role === 'checkbox'
+    );
+    const confirmShareButton = modalPage.content.find(n =>
+      n.name?.toLowerCase() === 'share' && n.role === 'button'
+    );
+
+    if (groupCheckbox) {
+      await browserClick('group checkbox', groupCheckbox.ref);
+    }
+    if (confirmShareButton) {
+      await browserClick('confirm share', confirmShareButton.ref);
+    }
+
+    await takeScreenshot('07-lead-shared-project.png');
+    logStep('Lead shared project to group', { groupName: GROUP_NAME });
+  }
+}
+
+async function memberAccessSharedProject() {
+  // Switch to member tab
+  const tabs = await browserTabs('list');
+  const memberTabIndex = tabs.content.tabs.length - 1;
+  await browserTabs('select', memberTabIndex);
+
+  // Navigate to dashboard to see shared projects
+  await browserNavigate(`${APP_BASE_URL}/dashboard`);
+  await browserSnapshot();
+  await takeScreenshot('08-member-dashboard-shared-projects.png');
+
+  // Check if shared project is visible
+  const sharedProjectVisible = await browserEvaluate(`() => {
+    const bodyText = document.body.innerText;
+    return bodyText.includes('${PROJECT_NAME}') || bodyText.includes('Shared Projects');
+  }`);
+
+  logStep('Member views shared projects', {
+    projectName: PROJECT_NAME,
+    visible: sharedProjectVisible
+  });
+
+  // Try to enter the shared project
+  const page = await browserSnapshot();
+  const enterButton = page.content.find(n =>
+    n.name?.toLowerCase().includes('enter') &&
+    n.role === 'button'
+  );
+
+  if (enterButton) {
+    await browserClick('enter project', enterButton.ref);
+    await browserSnapshot();
+    await takeScreenshot('09-member-entered-shared-project.png');
+    logStep('Member entered shared project');
+  }
+}
+
+async function memberCreateWord() {
+  // Navigate to words section
+  await browserNavigate(`${APP_BASE_URL}/words/create`);
+  await browserSnapshot();
+
+  const page = await browserSnapshot();
+  const englishInput = page.content.find(n => n.name?.toLowerCase().includes('english'));
+
+  if (englishInput) {
+    await browserType('english word', englishInput.ref, 'collaboration');
+    await takeScreenshot('10-member-creating-word.png');
+    logStep('Member started creating word', { word: 'collaboration' });
+  }
+}
+
+async function verifyCollaboration() {
+  // Switch back to lead tab
+  await browserTabs('select', 0);
+
+  // Navigate to project to see member's contributions
+  await browserNavigate(`${APP_BASE_URL}/main-menu`);
+  await browserSnapshot();
+  await takeScreenshot('11-lead-views-collaboration.png');
+
+  // Get project stats
+  const stats = await browserEvaluate(`() => {
+    const statsText = document.body.innerText;
+    const wordCountMatch = statsText.match(/(\\d+)\\s*words?/i);
+    return {
+      wordCount: wordCountMatch ? parseInt(wordCountMatch[1]) : 0,
+      pageText: statsText
+    };
+  }`);
+
+  logStep('Lead verified collaboration', { stats });
+}
+
+// ─────────────────────────────────────────────────────────────────
+// Main Flow
+// ─────────────────────────────────────────────────────────────────
+async function main() {
+  try {
+    console.log('Starting US-065: Team Collaboration Journey\n');
+
+    await initializeMCP();
+    await setupArtifactDirectory();
+
+    // Lead workflow
+    await leadRegisterAndLogin();
+    await leadCreateProject();
+    await leadCreateGroup();
+    const inviteLink = await leadGetInvitationLink();
+
+    // Member workflow
+    await memberRegisterAndJoin(inviteLink);
+
+    // Collaboration workflow
+    await leadShareProjectToGroup();
+    await memberAccessSharedProject();
+    await memberCreateWord();
+    await verifyCollaboration();
+
+    summary.outcome = 'success';
+    console.log('\n✅ Collaboration journey completed successfully');
+
+  } catch (error) {
+    summary.outcome = 'failed';
+    summary.error = {
+      message: error.message,
+      stack: error.stack
+    };
+    console.error('\n❌ Collaboration journey failed:', error);
+  } finally {
+    // Write summary
+    await fs.writeFile(
+      `${ARTIFACT_DIR}/summary.json`,
+      JSON.stringify(summary, null, 2)
+    );
+    console.log(`\n📁 Artifacts saved to: ${ARTIFACT_DIR}/`);
+  }
+}
+
+main().catch(console.error);
