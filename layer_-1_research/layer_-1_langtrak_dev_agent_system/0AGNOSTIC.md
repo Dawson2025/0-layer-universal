@@ -76,8 +76,11 @@ Load this context when:
 
 ## Current Status
 
-**Phase**: New — project created, no research started yet
-**Active stages**: None (scaffolding only)
+**Phase**: Active — Agent Hierarchy Structure Experiment designed, ready for trial execution
+**Active stages**: Stage 02 (research) — experiment framework created
+**Active experiment**: `stage_-1_02_research/outputs/experiments/agent_hierarchy_structure_experiment.md`
+**Trials defined**: A (per-layer), B (domain clusters), C (per-stage), D (hybrid), E (flat team)
+**Test tasks**: 7 real LangTrak issues (debug, feature, architecture) across 8 evaluation metrics
 **Key questions to investigate**:
 1. What agent roles map to LangTrak's 10-layer hierarchy (L2 Infrastructure through L11 Orchestration)?
 2. How do cross-cutting layers (L9 Enhancements, L10 Admin, L11 Orchestration) affect agent delegation?
