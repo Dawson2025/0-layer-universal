@@ -80,12 +80,33 @@ This stage is complete when:
 2. If handing off to **stage 05** (planning): highlight the major components that need implementation tasks
 3. If handing off to **stage 02** (research): note design questions that need more investigation
 
+## Available Tools
+
+### Diagram Creation (Mermaid.js)
+
+Design stages use Mermaid.js for architecture diagrams. Available tooling:
+
+| Tool | Type | Purpose |
+|------|------|---------|
+| `claude-mermaid` MCP server | MCP | Live preview + export (SVG/PNG/PDF) via `mermaid_preview` and `mermaid_save` tools |
+| `mermaid-diagrams` skill | Skill | Best practices and expert guidance for diagram creation |
+
+**Full documentation**: `.0agnostic/01_knowledge/visualization_tools/docs/mermaid_tools_guide.md`
+
+**Key syntax rules**:
+- Use `flowchart` (not `graph`) for better renderer compatibility
+- Use `<br/>` for line breaks in labels (not `\n`)
+- Avoid HTML tags (`<i>`, `<b>`, `<code>`) in labels
+
+**Diagram output location**: `outputs/design_decisions/{topic}/diagrams/` or `outputs/by_topic/diagrams/`
+
 ## Common Patterns
 
 - **Design follows research**: Design decisions should trace back to research findings — don't design in a vacuum
 - **Multiple design docs**: Complex entities may have multiple design documents for different aspects
 - **Decision records**: Each major decision should have alternatives + rationale documented
 - **Iterative refinement**: Design may loop back to research (02) when questions arise
+- **Diagrams complement text**: Use Mermaid diagrams alongside design documents to visualize dependencies, data flows, and communication patterns
 
 ## Anti-Patterns
 
@@ -93,3 +114,4 @@ This stage is complete when:
 - Making decisions without documenting rationale
 - Over-designing before validating core assumptions
 - Confusing design with planning (design = what, planning = how/when)
+- Creating diagrams without a companion design document
