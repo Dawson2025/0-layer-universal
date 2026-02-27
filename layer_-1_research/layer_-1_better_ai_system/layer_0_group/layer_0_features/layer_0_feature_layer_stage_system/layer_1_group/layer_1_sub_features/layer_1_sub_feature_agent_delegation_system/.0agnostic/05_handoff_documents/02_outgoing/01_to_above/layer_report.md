@@ -4,13 +4,13 @@
 **active**
 
 ## Last Updated
-2026-02-21
+2026-02-26
 
 ---
 
 ## Summary
 
-The agent delegation system defines how AI agents delegate work across the layer-stage hierarchy. It spans two domains: memory (what agents know) and multi-agent coordination (how agents work together). Four of eleven stages have produced content, yielding universal artifacts now in active use: 11 stage guides, 10 delegation principles, 5 rules, 1 stage report protocol, and a context propagation design. One child entity (memory_system) has completed substantial research; the other (multi_agent_system) is scaffolded.
+The agent delegation system defines how AI agents delegate work across the layer-stage hierarchy. It spans two domains: memory (what agents know) and multi-agent coordination (how agents work together). Four of eleven stages have produced content, yielding universal artifacts now in active use: 11 stage guides, 10 delegation principles, 5 rules, 1 stage report protocol, a context propagation design, a minimal context model, and a directional scope boundary framework. Stage 02 now has 3 formal research topics alongside the implicit context_chain_system research. Stage 04 has 10 architecture decisions (7 implicit + 3 formal). One child entity (memory_system) has completed substantial research; the other (multi_agent_system) is scaffolded.
 
 ---
 
@@ -21,8 +21,8 @@ The agent delegation system defines how AI agents delegate work across the layer
 | Stage | Key Contribution |
 |-------|-----------------|
 | 01 request_gathering | 9 requirements across 3 branches: delegation_model, memory_integration, coordination_patterns |
-| 02 research | Investigation via context_chain_system as living laboratory |
-| 04 design | 8 architecture decisions including context propagation design |
+| 02 research | 3 formal topics (tool cascading, multi-agent patterns, scope traversal) + implicit via context_chain_system |
+| 04 design | 10 architecture decisions (7 implicit + 3 formal: context propagation, minimal context, directional scope) |
 | 06 development | Universal artifacts: stage guides, principles, rules, protocol |
 
 ---
@@ -55,18 +55,20 @@ The agent delegation system defines how AI agents delegate work across the layer
 ## Key Discoveries
 
 - **Two-Halves Pattern** (P9): Every 0AGNOSTIC.md needs operational guidance + current state summary
-- **Scope Boundary Decisions** (P8): Three options when hitting boundaries — do it yourself, delegate, or instantiate
+- **Scope Boundary Decisions** (P8): Three-step directional process — identify direction (up/down/left/right/sideways/multi-location), decide handling, communicate per direction. Multi-location escalates to nearest common ancestor
 - **Context Propagation Funnel**: outputs → output_report → .0agnostic → stage_report → 0AGNOSTIC.md
 - **Entity Consolidation**: stages_report + child_layers_report → layer_report → 0AGNOSTIC.md
+- **Minimal Context Model**: Agents get own STATIC + compact neighbor interfaces + on-demand DYNAMIC. No full ancestor cascade. Validated by tool cascading research (3/4 tools cascade natively) and multi-agent framework research (CrewAI, LangGraph, AutoGen)
+- **Tool Context Cascading**: Claude Code (up), Codex (down), Gemini CLI (both directions), Cursor (glob targeting) — native cascading makes lean CLAUDE.md content critical
 
 ---
 
 ## Open Items
 
-- Agent context model needs dedicated design doc
 - Multi-agent spawning patterns not yet designed
+- Cursor-specific context strategy (glob targeting vs self-contained rules) needs design doc
 - multi_agent_system child entity not yet developed
-- Stage 02 has no formal research documents (findings embedded in context_chain_system)
+- Context chain system lessons should be documented as a formal research topic
 - Testing (stage 07) not yet started, though artifacts are validated via context_chain_system (76 PASS tests)
 
 ---

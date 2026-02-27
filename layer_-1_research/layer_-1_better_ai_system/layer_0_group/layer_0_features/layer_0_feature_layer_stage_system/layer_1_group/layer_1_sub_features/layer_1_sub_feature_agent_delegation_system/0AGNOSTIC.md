@@ -81,9 +81,9 @@ The entity-level orchestrator inherits from and is scoped by the parent feature'
 
 ## Current Status
 
-**Phase**: active — 4 stages with content, universal artifacts in use, context propagation applied | **Last Updated**: 2026-02-21
+**Phase**: active — 4 stages with content, universal artifacts in use, 3 formal research topics + 10 design decisions | **Last Updated**: 2026-02-26
 
-Stages 01, 02, 04, and 06 have produced universal artifacts at root `.0agnostic/` (11 stage guides, 10 principles, 5 rules, stage report protocol, context propagation design). Stage reports in canonical handoff locations. Entity consolidation reports (stages_report, child_layers_report, layer_report) created. Memory_system child has 24 research docs, ready for stage 03. Working example: context_chain_system (76 PASS tests).
+Stages 01, 02, 04, and 06 have produced universal artifacts at root `.0agnostic/` (11 stage guides, 10 principles, 5 rules, stage report protocol, context propagation design). Stage 02 now has 3 formal research topics: tool context cascading (3/4 tools cascade natively), multi-agent context patterns (all converge on minimal + on-demand), scope boundary traversal (directional patterns). Stage 04 has 10 architecture decisions including minimal context model (own STATIC + neighbor interfaces + on-demand, no full cascade) and directional scope boundaries (3-step: direction → handling → communication). Entity consolidation reports updated. Memory_system child has 24 research docs. Working example: context_chain_system (76 PASS tests).
 
 # ═══ DYNAMIC CONTEXT (loaded on-demand) ═══
 
@@ -96,8 +96,8 @@ Stages 01, 02, 04, and 06 have produced universal artifacts at root `.0agnostic/
 | Stage Work | What Was Produced | Where It Lives |
 |-----------|-------------------|----------------|
 | **01 Request Gathering** | Tree of needs: 9 requirements across 3 branches (delegation_model, memory_integration, coordination_patterns) | `layer_1_group/layer_1_99_stages/stage_1_01_request_gathering/outputs/requests/tree_of_needs/` |
-| **02 Research** | Investigation of how stage agents should operate — explored context_chain_system as working example (stages 01-07 active, 76 PASS tests) | Context_chain_system entity: `layer_2_group/.../layer_3_subx3_feature_context_chain_system/` |
-| **04 Design** | Designed the stage agent 0AGNOSTIC.md pattern: identity + methodology + scope boundaries + current state summary | Universal template: `.0agnostic/01_knowledge/layer_stage_system/stage_guides/STAGE_AGENT_TEMPLATE.md` |
+| **02 Research** | 3 formal topics (tool cascading, multi-agent patterns, scope traversal) + implicit via context_chain_system living laboratory | `layer_1_group/layer_1_99_stages/stage_1_02_research/outputs/by_topic/` |
+| **04 Design** | 10 architecture decisions: 0AGNOSTIC.md pattern, two-halves, stage reports, scope boundaries, universal guides, context propagation, minimal context model, directional scope boundaries | `layer_1_group/layer_1_99_stages/stage_1_04_design/outputs/design_decisions/` |
 | **05 Planning** | Planned stage-by-stage guide creation for all 11 stages | Plan executed across all 11 stages |
 | **06 Development** | Created 11 universal stage guides, 3 static rules, 2 dynamic rules, 7 delegation principles, stage report protocol | See "Universal Artifacts" below |
 
@@ -127,7 +127,8 @@ The context_chain_system (grandchild entity via memory_system) serves as the **p
 | Discovery | Principle | Rule/Artifact |
 |-----------|-----------|---------------|
 | **Two-Halves Context Pattern**: Every 0AGNOSTIC.md needs operational guidance (static) + current state summary (updated) — together they make the pointer tier functional | Principle 9 | Universal template includes Current State section |
-| **Scope Boundary Decisions**: When agents hit layer or stage boundaries, they decide: do it yourself (small/coupled), delegate (significant, agent exists), or instantiate (significant, no agent). Default: delegate. | Principle 8 | Scope Boundary Rule at `.0agnostic/02_rules/static/STAGE_BOUNDARY_RULE.md` |
+| **Scope Boundary Decisions**: 3-step directional process — identify direction (up/down/left/right/sideways/multi-location), decide handling (do yourself/delegate/instantiate), communicate per direction. Multi-location escalates to nearest common ancestor. Default: delegate. | Principle 8 | Scope Boundary Rule at `.0agnostic/02_rules/static/STAGE_BOUNDARY_RULE.md` |
+| **Minimal Context Model**: Agents get own STATIC + compact neighbor interfaces + on-demand DYNAMIC. No full ancestor cascade. Validated by tool cascading (3/4 cascade natively) and multi-agent frameworks (CrewAI, LangGraph, AutoGen all use minimal + on-demand). | — | Design decision at `stage_1_04_design/outputs/design_decisions/minimal_context_model.md` |
 | **Cross-Layer Stage References**: When content at one layer warrants a child entity, both layers maintain bidirectional stage references — parent points down (overview → detail), child points up (detail → context) | Principle 10 | Applied to all stages and child entities in this hierarchy |
 
 Full details: `.0agnostic/01_knowledge/tree_of_knowledge/00_agent_delegation_knowledge/02_patterns_and_principles/`
