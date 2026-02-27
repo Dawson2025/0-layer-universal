@@ -128,7 +128,7 @@ Stage orchestrators inherit from the entity-level orchestrator.
 
 **Status**: active | **Last Updated**: 2026-02-26
 
-Two formal research topic directories created alongside the prior implicit research (context_chain_system as living laboratory). Topic `tool_context_cascading/`: how Claude Code, Codex, Gemini CLI, and Cursor handle context file cascading (3 of 4 cascade natively; Cursor uses glob targeting). Topic `multi_agent_context_patterns/`: how CrewAI, LangGraph, AutoGen handle shared context (all converge on minimal + on-demand, none use full cascade). Both findings directly inform the **minimal context model** design decision in stage 04.
+Three formal research topic directories created alongside the prior implicit research (context_chain_system as living laboratory). Topic `tool_context_cascading/`: how Claude Code, Codex, Gemini CLI, and Cursor handle context file cascading (3 of 4 cascade natively; Cursor uses glob targeting). Topic `multi_agent_context_patterns/`: how CrewAI, LangGraph, AutoGen handle shared context (all converge on minimal + on-demand, none use full cascade). Topic `scope_boundary_traversal/`: directional traversal patterns (up/down/left/right/sideways/multi-location), communication protocols per direction, infrastructure vs. content distinction. Findings promoted to universal Principle 8 and Scope Boundary Rule.
 
 
 ## OpenAI-Specific Notes

@@ -131,7 +131,7 @@ Stage orchestrators inherit from the entity-level orchestrator.
 
 **Status**: active | **Last Updated**: 2026-02-26
 
-Two formal research topic directories created alongside the prior implicit research (context_chain_system as living laboratory). Topic `tool_context_cascading/`: how Claude Code, Codex, Gemini CLI, and Cursor handle context file cascading (3 of 4 cascade natively; Cursor uses glob targeting). Topic `multi_agent_context_patterns/`: how CrewAI, LangGraph, AutoGen handle shared context (all converge on minimal + on-demand, none use full cascade). Both findings directly inform the **minimal context model** design decision in stage 04.
+Three formal research topic directories created alongside the prior implicit research (context_chain_system as living laboratory). Topic `tool_context_cascading/`: how Claude Code, Codex, Gemini CLI, and Cursor handle context file cascading (3 of 4 cascade natively; Cursor uses glob targeting). Topic `multi_agent_context_patterns/`: how CrewAI, LangGraph, AutoGen handle shared context (all converge on minimal + on-demand, none use full cascade). Topic `scope_boundary_traversal/`: directional traversal patterns (up/down/left/right/sideways/multi-location), communication protocols per direction, infrastructure vs. content distinction. Findings promoted to universal Principle 8 and Scope Boundary Rule.
 
 # ═══ DYNAMIC CONTEXT (loaded on-demand) ═══
 
@@ -158,6 +158,7 @@ The context_chain_system at `../../layer_2_group/.../layer_3_subx3_feature_conte
 - **Scope boundaries span both layers AND stages**: The original "stage boundary" concept was too narrow — scope decisions happen at layer boundaries too (e.g., a child entity doing parent entity work). The Scope Boundary Rule now covers both dimensions
 - **Tool context cascading varies by tool** (2026-02-26): Claude Code walks CWD→root (upward), Codex walks root→CWD (downward), Gemini CLI does bidirectional BFS (up to 200 dirs), Cursor uses glob-based rule targeting (no automatic cascade). 3 of 4 cascade natively — this means CLAUDE.md/AGENTS.md/GEMINI.md content MUST be lean to avoid context bloat at depth. See `outputs/by_topic/tool_context_cascading/`
 - **Multi-agent frameworks converge on minimal context** (2026-02-26): CrewAI (selective sharing + RAG), LangGraph (graph-based state flow along edges), AutoGen (conversational message passing) — all use minimal agent context + on-demand access. None use full parent cascade. Hybrid minimal + shared state outperforms both full cascade and full isolation. See `outputs/by_topic/multi_agent_context_patterns/`
+- **Scope boundary traversal is directional** (2026-02-26): When agents hit scope boundaries, they must identify direction (up/down/left/right/sideways/multi-location) before deciding what to do. Communication protocol differs per direction. Universal traversal infrastructure is loaded on-demand (not STATIC), while per-agent positional awareness (parent/children/neighbors) is compact STATIC. Multi-location work escalates to nearest common ancestor with scope over all affected locations. See `outputs/by_topic/scope_boundary_traversal/`
 
 ## Cross-Stage Traceability
 
@@ -173,6 +174,7 @@ How each finding connects to requirements (stage 01) and design decisions (stage
 | Scope boundaries span layers AND stages | 03/need_01: agent_hierarchy | "Scope boundaries span layers AND stages" — single rule |
 | Tool context cascading (3/4 cascade natively) | 01/need_03: agent_context_model | "Minimal context model" — lean CLAUDE.md files because cascading compounds |
 | Multi-agent frameworks: minimal + on-demand | 01/need_03: agent_context_model | "Minimal context model" — validated by CrewAI, LangGraph, AutoGen patterns |
+| Scope boundary traversal is directional | 01/need_01: stage_delegation, 03/need_02: spawning_patterns | "Directional scope boundaries" — 3-step process, communication per direction |
 
 **Stage paths**: `../stage_1_01_request_gathering/`, `../stage_1_04_design/`
 

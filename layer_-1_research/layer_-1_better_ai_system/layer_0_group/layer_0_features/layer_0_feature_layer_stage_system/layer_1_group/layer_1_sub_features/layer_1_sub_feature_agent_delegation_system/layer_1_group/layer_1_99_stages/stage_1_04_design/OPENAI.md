@@ -129,7 +129,7 @@ Stage orchestrators inherit from the entity-level orchestrator.
 
 **Status**: active | **Last Updated**: 2026-02-26
 
-9 architecture decisions: 7 implicit (0AGNOSTIC.md pattern, two-halves, stage reports, scope boundaries, universal guides, scope decisions, scope spans layers+stages) + 2 formal — **context propagation design** (consolidation funnel + cross-level connection map) and **minimal context model** (agents get own STATIC + neighbor interfaces + on-demand access, not full ancestor cascade). Minimal context model validated by both tool cascading research (3/4 tools cascade natively, making lean content critical) and multi-agent framework research (CrewAI, LangGraph, AutoGen all converge on minimal + on-demand). Design outputs at `outputs/design_decisions/`.
+10 architecture decisions: 7 implicit (0AGNOSTIC.md pattern, two-halves, stage reports, scope boundaries, universal guides, scope decisions, scope spans layers+stages) + 3 formal — **context propagation design** (consolidation funnel + cross-level connection map), **minimal context model** (agents get own STATIC + neighbor interfaces + on-demand access, not full ancestor cascade), and **directional scope boundaries** (3-step scope decision: identify direction → decide handling → communicate per direction, with multi-location escalation to nearest common ancestor). Design outputs at `outputs/design_decisions/`.
 
 
 ## OpenAI-Specific Notes
