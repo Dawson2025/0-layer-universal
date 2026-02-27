@@ -485,23 +485,633 @@ Agents in the stable core have fewer updates. Active zone agents do most of the 
 
 ---
 
+## Two Fundamental Design Axes
+
+Before adding more principles, we need to name the two meta-dimensions that ALL structural choices are optimizing for. Every hierarchy design makes tradeoffs between these two:
+
+### Axis 1: Cascading Context (Top-Down Flow)
+
+**The question**: What universal knowledge should flow downward from parent to child, so that every agent below a certain point in the tree has the right foundational context?
+
+In the layer-stage system, lower-numbered layers (closer to root) provide context that cascades to ALL higher-numbered layers. This means:
+- L2 Infrastructure context reaches every agent in the system
+- L3 Users context reaches everything from L4 onward
+- The ROOT of the tree is the most universal, the LEAVES are the most specific
+
+**Optimization target**: Minimize what each agent needs to load while ensuring it still has enough context to work correctly. The ideal cascading structure means an agent at L6 automatically inherits L2-L5 context and only needs to load L6-specific details.
+
+**When this axis dominates**: Architecture design, context efficiency, reducing token budgets, ensuring consistency across the system.
+
+### Axis 2: Delegation/Traversal (Manager-Worker Trees)
+
+**The question**: How should manager agents delegate to sub-managers and eventually to leaf worker agents, so that:
+- Leaf agents truly inform the parent's decisions (bottom-up information flow)
+- Scope boundaries are clear (agent knows what's in-scope vs. out-of-scope)
+- Traversal works (when work is out-of-scope, the agent can route it correctly)
+
+In this axis, the hierarchy isn't about what context flows down — it's about what WORK flows down and what REPORTS flow up:
+- Manager says "fix the word creation bug" → delegates to Content Domain sub-manager → delegates to Words worker agent
+- Words worker agent finds the root cause involves phonemes → recognizes it's out-of-scope → reports back up → manager re-routes to Phoneme Domain sub-manager
+
+**Optimization target**: Minimize delegation hops, ensure scope boundaries are accurate, make traversal reliable (agents correctly identify when work is out-of-scope and route to the right sibling).
+
+**When this axis dominates**: Task execution, debugging, feature implementation, coordination between teams.
+
+### The Tension
+
+These axes can CONFLICT:
+- **Best for cascading context**: Deep, narrow hierarchies (many layers, each very focused) — context cascades precisely
+- **Best for delegation**: Shallow, wide hierarchies (few layers, each covering a broad domain) — fewer delegation hops
+
+The ideal structure balances both. The principles below are organized by which axis they primarily serve.
+
+---
+
+## Additional Structural Principles
+
+### Principle 7: Skill/Capability Clustering
+
+**Rule**: Group agents by what TOOLS and CAPABILITIES they need, not by what domain they work on.
+
+**Question it answers**: "What tools does this agent need to do its job?"
+
+**Primary axis**: Delegation (agents with the right skills get the right work)
+
+#### Structure
+
+```
+Manager Agent
+├── Database Agents (need SQL, migration tools, schema knowledge)
+│   ├── Schema Agent
+│   ├── Query Agent
+│   └── Migration Agent
+├── API/Route Agents (need Flask, HTTP, endpoint patterns)
+│   ├── Auth Routes Agent
+│   ├── Content Routes Agent
+│   └── Admin Routes Agent
+├── Frontend/Template Agents (need Jinja2, HTML, CSS, JS)
+│   ├── Dashboard Agent
+│   ├── Forms Agent
+│   └── Component Agent
+├── Computation Agents (need NetworkX, TTS, algorithms)
+│   ├── TTS Agent
+│   ├── Graph Analysis Agent
+│   └── Frequency Agent
+└── Testing Agents (need pytest, fixtures, mocking)
+    ├── Unit Test Agent
+    ├── Integration Test Agent
+    └── E2E Test Agent
+```
+
+#### Context Model
+
+Each capability cluster shares tool-specific context: Database agents all know the schema, ORM patterns, and migration tools. API agents all know Flask routing patterns and middleware. This avoids loading irrelevant tool context (a database agent doesn't need Jinja2 knowledge).
+
+#### Strengths
+
+- Agents are TOOL EXPERTS — they know their stack deeply
+- Natural MCP tool assignment (database agents get SQLite tools, frontend agents get Playwright)
+- Good for parallelism (database work and frontend work can happen concurrently)
+- Matches how human teams often organize (backend team, frontend team, QA team)
+
+#### Weaknesses
+
+- A single FEATURE touches multiple capability clusters (adding a phoneme group needs DB + API + frontend + test work)
+- No agent has full domain knowledge (the database agent knows phoneme tables but not phoneme linguistics)
+- Heavy coordination needed for any feature work
+- Cross-cutting features require ALL clusters
+
+---
+
+### Principle 8: Knowledge Depth vs. Breadth (Specialist Tree)
+
+**Rule**: Root agents are GENERALISTS who know a little about everything. Deeper agents are SPECIALISTS who know one thing deeply. The tree mirrors expertise depth.
+
+**Question it answers**: "How specialized should this agent's knowledge be?"
+
+**Primary axis**: Both (context cascades as general → specific; delegation routes to the right specialist)
+
+#### Structure
+
+```
+Root: System Generalist (knows all 10 layers at overview level)
+├── Phoneme Specialist (deep phoneme knowledge)
+│   ├── IPA Expert (knows International Phonetic Alphabet deeply)
+│   ├── Phonotactic Rules Expert (syllable structure rules)
+│   └── Frequency Analyst (phoneme usage patterns)
+├── Content Specialist (deep content structure knowledge)
+│   ├── Word Builder Expert (word creation, syllable assignment)
+│   ├── Template Designer Expert (subset selection, filtering)
+│   └── Position Manager Expert (phoneme-to-position mapping)
+├── Project Specialist (deep project management knowledge)
+│   ├── Storage Expert (SQLite vs Firestore, dual DB)
+│   ├── Variant Expert (project duplication, forking)
+│   └── Collaboration Expert (teams, sharing, invites)
+├── Infrastructure Specialist (deep backend knowledge)
+│   ├── Database Expert (schema, migrations, queries)
+│   ├── Auth Expert (login, sessions, permissions)
+│   └── Firebase Expert (sync, real-time, cloud storage)
+└── Enhancement Specialist (deep enhancement knowledge)
+    ├── TTS Expert (text-to-speech generation)
+    ├── Suggestion Expert (recommendation engine)
+    └── Admin Expert (management tools, dashboards)
+```
+
+#### Context Model
+
+- Root agent: 2-3 sentence summary of each layer (50-100 tokens total). Enough to ROUTE work, not enough to DO work.
+- Specialist agents: Full context for their domain (500-1000 tokens). Enough to DO work within their domain.
+- Expert agents (leaves): Complete context for their narrow area (1000-2000 tokens). Deep expertise, narrow scope.
+
+#### What Cascades
+
+General system knowledge (how layers relate, what dependencies exist, what the architecture looks like) cascades from root to all specialists. Each specialist adds domain context that cascades to its experts. An IPA Expert inherits both system overview AND phoneme domain knowledge.
+
+#### Delegation Pattern
+
+1. Task arrives at root generalist
+2. Root identifies domain → delegates to specialist
+3. Specialist identifies specific area → delegates to expert
+4. If expert discovers work is out-of-scope → reports back to specialist → specialist routes to sibling expert or escalates to root
+
+#### Strengths
+
+- **Clean traversal**: Scope boundaries are natural (IPA Expert knows phonemes, not projects)
+- **Efficient context loading**: Root is lightweight, experts are focused
+- **Good for both axes**: Context cascades general → specific; delegation routes to right specialist
+- **Matches how human organizations work**: VP → Director → Engineer
+
+#### Weaknesses
+
+- 3 levels deep means more delegation hops (root → specialist → expert = 2 hops minimum)
+- Root agent can become a bottleneck (every cross-domain task goes through it)
+- Leaf experts may be too narrow (the IPA Expert can't help with word creation)
+- Specialist level must be well-defined (too broad = no benefit over flat; too narrow = too many specialists)
+
+---
+
+### Principle 9: Communication Topology
+
+**Rule**: Structure the hierarchy based on what agents need to TALK TO each other about, not what they OWN or depend on. Minimize communication distance between frequently-communicating agents.
+
+**Question it answers**: "Which agents need to coordinate most frequently?"
+
+**Primary axis**: Delegation (optimize for coordination, not context)
+
+#### Analysis: What Communicates in LangTrak?
+
+Looking at the 7 test tasks from the experiment:
+
+| Task | Agents That Must Coordinate |
+|------|----------------------------|
+| T1: Multisyllable word failures | Content ↔ Phoneme ↔ Project |
+| T2: New phoneme group type | Phoneme ↔ Template ↔ Admin |
+| T3: Project variant duplication | Project ↔ Infrastructure ↔ Orchestration |
+| T4: Admin auth routing | Admin ↔ Auth ↔ Users |
+| T5: Team invitation flow | Teams ↔ Users ↔ Project ↔ Auth |
+| T6: TTS syllable preview | TTS ↔ Content ↔ Phoneme |
+| T7: Dual DB path design | Infrastructure (ALL modules) |
+
+**High-frequency communication pairs**:
+- Phoneme ↔ Content (T1, T6)
+- Auth ↔ Users (T4, T5)
+- Project ↔ Infrastructure (T3, T7)
+- Content ↔ Project (T1)
+- Phoneme ↔ Template (T2)
+
+#### Structure (Optimized for Communication)
+
+```
+Manager Agent
+├── Phoneme-Content Hub (most frequent communication pair)
+│   ├── Phoneme System Agent
+│   ├── Template Agent
+│   ├── Content Agent (Words, Syllables, Positions)
+│   └── TTS Agent (needs phoneme + content)
+├── Identity Hub (auth/user communication pair)
+│   ├── Auth Agent
+│   ├── Users Agent
+│   └── Sessions Agent
+├── Project-Infrastructure Hub
+│   ├── Project Agent
+│   ├── Infrastructure Agent
+│   ├── Storage Agent
+│   └── Orchestration Agent
+└── Collaboration-Admin Hub (lowest-frequency communication)
+    ├── Teams Agent
+    ├── Admin Agent
+    └── Dashboard Agent
+```
+
+#### Strengths
+
+- Minimizes inter-hub communication for common tasks
+- High-frequency pairs are co-located (phoneme + content in same hub)
+- Communication within a hub is "free" (shared context)
+- Naturally creates efficient sub-teams
+
+#### Weaknesses
+
+- Communication patterns can change as the app evolves
+- Some tasks STILL cross hubs (T5 needs Identity + Project + Collaboration)
+- Hub assignment is based on historical patterns, not architectural principles
+- Doesn't help with NEW features (no historical communication data)
+
+---
+
+### Principle 10: Risk/Criticality-Based Hierarchy
+
+**Rule**: The most critical, highest-risk components sit closest to root with the most oversight. Lower-risk, more isolated components are deeper leaves. Root manager has direct visibility into high-risk areas.
+
+**Question it answers**: "What happens if this breaks? How much of the system goes down?"
+
+**Primary axis**: Both (critical context cascades broadly; delegation keeps risky work close to manager oversight)
+
+#### Criticality Analysis for LangTrak
+
+| Component | Risk Level | Why |
+|-----------|-----------|-----|
+| Database/Storage | CRITICAL | If DB goes down, everything goes down |
+| Auth | CRITICAL | Auth failure = locked out of app |
+| Firebase Sync | HIGH | Sync failure = data loss across devices |
+| User Data | HIGH | User data corruption is catastrophic |
+| Phoneme System | MEDIUM | Core but self-contained, doesn't cascade failures |
+| Projects | MEDIUM | Container corruption loses content |
+| Content (Words) | LOW | Individual word failures are isolated |
+| Templates | LOW | Template failure only affects filtering |
+| TTS | LOW | TTS failure = degraded but usable app |
+| Teams | LOW | Collaboration failure doesn't break solo use |
+| Dashboard | LOW | Display failure is visible but non-destructive |
+
+#### Structure
+
+```
+Root Manager (has full critical visibility)
+├── [CRITICAL] Infrastructure Guardian
+│   ├── Database Agent (schema, queries, integrity)
+│   ├── Auth Agent (login, permissions, sessions)
+│   └── Firebase Sync Agent (real-time, cloud)
+├── [HIGH] Data Integrity Agents
+│   ├── User Data Agent (profiles, preferences)
+│   └── Project Container Agent (projects, variants)
+├── [MEDIUM] Core Domain Agents
+│   ├── Phoneme System Agent (inventory, groups, types)
+│   └── Content Structure Agent (words, syllables, positions)
+└── [LOW] Feature Agents
+    ├── Template Agent
+    ├── TTS Agent
+    ├── Teams Agent
+    ├── Admin Agent
+    └── Dashboard Agent
+```
+
+#### Context Model
+
+Root manager has detailed STATIC context for CRITICAL components (always loaded — can intervene quickly). HIGH components have summary STATIC + detailed DYNAMIC. MEDIUM and LOW components are DYNAMIC-only at the manager level.
+
+#### Strengths
+
+- **Risk-aware delegation**: Manager can closely supervise database changes, loosely supervise dashboard tweaks
+- **Failure response**: When critical components break, the manager has immediate context to triage
+- **Testing priority**: Test critical components exhaustively, feature agents can have lighter testing
+- **Matches operational reality**: You monitor your database more closely than your dashboard
+
+#### Weaknesses
+
+- Risk assessment is subjective and changes over time
+- Low-risk components may get insufficient attention (Teams bugs can still frustrate users)
+- Doesn't help with feature DEVELOPMENT (risk is about operations, not building)
+- Can slow down development of critical components (too much oversight)
+
+---
+
+### Principle 11: Lifecycle/Temporal Hierarchy
+
+**Rule**: Organize by WHEN things happen in the application lifecycle. Boot-time components at the root, session-time at the middle, interaction-time at the leaves.
+
+**Question it answers**: "When in the app lifecycle does this component activate?"
+
+**Primary axis**: Cascading Context (boot context is universal; session context builds on it; interaction context is transient)
+
+#### Structure
+
+```
+Boot-Time (runs once at startup — universal context):
+  L2: App Initialization (Flask app factory, config loading)
+  L3: Database Setup (connection pool, schema verification)
+  L4: Auth System Bootstrap (session management, OAuth init)
+
+Session-Time (runs per user session):
+  L5: User Login + Profile Load
+  L6: Project Selection + Content Load
+  L7: Template Application (filter phoneme system for active project)
+
+Interaction-Time (runs per user action):
+  L8: Content Creation (word/syllable CRUD)
+  L9: TTS Generation (on-demand)
+  L10: Team Actions (invite, share — event-driven)
+  L11: Dashboard Refresh (re-render on every navigation)
+```
+
+#### What Cascades
+
+Boot-time context (app config, DB connection info, auth setup) is available to ALL subsequent phases — it's truly universal. Session-time context (who's logged in, which project is active) cascades to all interaction-time agents. Interaction-time context is ephemeral and doesn't cascade.
+
+#### Strengths
+
+- Perfect match for cascading context axis (boot context → session context → interaction context)
+- Agents know exactly when they're relevant (boot agents don't need to handle interaction events)
+- Natural caching strategy (boot context cached once, session context cached per session, interaction context computed fresh)
+- Clean initialization ordering
+
+#### Weaknesses
+
+- Many components span multiple lifecycle phases (auth is boot-time setup + interaction-time checking)
+- Doesn't help with delegation (knowing when something runs doesn't tell you who should fix it)
+- Phoneme system is awkward (loaded at boot but used at interaction time)
+- Not intuitive for developers thinking about features
+
+---
+
+### Principle 12: API Surface Hierarchy
+
+**Rule**: Organize by what INTERFACES components expose to other components. Components with the most consumers (widest API surface) sit at lower layers.
+
+**Question it answers**: "How many other components depend on this component's interface?"
+
+**Primary axis**: Cascading Context (interfaces cascade; implementations don't)
+
+#### Interface Analysis for LangTrak
+
+| Component | # of Consumers | Interface Surface |
+|-----------|---------------|-------------------|
+| Database (SQLite + Firestore) | ALL (16 modules) | `db.session`, query patterns, model classes |
+| Auth | 14 modules | `@login_required`, `current_user`, permission checks |
+| Users/Profiles | 10 modules | `User` model, user preferences, session data |
+| Phoneme System | 6 modules | `Phoneme` model, IPA lookup, group membership |
+| Templates | 4 modules | `Template` model, active phoneme filter |
+| Projects | 5 modules | `Project` model, project-scoped queries |
+| Content (Words) | 3 modules | `Word` model, syllable structure |
+| Teams | 2 modules | `Team` model, membership check |
+| TTS | 1 module | TTS API endpoint |
+| Admin | 0 (standalone) | No outward API |
+
+#### Structure
+
+```
+L2: Database Interface (consumed by everything — widest API)
+L3: Auth Interface (consumed by 14/16 modules)
+L4: User Interface (consumed by 10 modules)
+L5: Phoneme System Interface (consumed by 6 modules)
+L6: Project Interface (consumed by 5 modules)
+L7: Template Interface (consumed by 4 modules)
+L8: Content Interface (consumed by 3 modules)
+L9: Teams Interface (consumed by 2 modules)
+L10: TTS Interface (consumed by 1 module)
+L11: Admin + Dashboard (standalone — no consumers)
+```
+
+#### What Cascades
+
+The DATABASE INTERFACE cascades to everything — every agent knows how to query the DB. Auth interface cascades to everything that needs login. The cascading is purely about INTERFACES, not implementations. An agent at L8 knows the DB query patterns, auth decorators, user model, phoneme API, project API, and template API — but only the INTERFACES, not the internal implementations.
+
+#### Context Model
+
+Each agent's STATIC context contains:
+- All interface definitions from lower layers (just function signatures, not implementations)
+- Its OWN full implementation + interface
+
+This is extremely efficient for cascading context — interfaces are small (a few function signatures), implementations are large. The cascade is lightweight.
+
+#### Strengths
+
+- **Minimizes interface discovery**: Every agent already knows what's available below it
+- **Clean dependency inversion**: Agents depend on interfaces, not implementations
+- **Efficient context**: Interface definitions are small; cascade overhead is minimal
+- **Matches software engineering principles**: ISP, DIP from SOLID
+
+#### Weaknesses
+
+- Consumer count changes as app evolves (a new feature might give TTS 5 consumers)
+- Pure interface ordering may conflict with domain logic (phonemes before projects?)
+- Admin at L11 gets maximum cascade but needs nothing — wasteful
+- Some interfaces are bidirectional (Projects query Content; Content references Projects)
+
+---
+
+### Principle 13: Concurrency/Isolation (Parallel Execution Tree)
+
+**Rule**: Things that can be developed, tested, and modified INDEPENDENTLY sit as siblings. Things that require coordination sit in parent-child relationships.
+
+**Question it answers**: "Can I work on these two things at the same time without conflicts?"
+
+**Primary axis**: Delegation (maximize parallel work)
+
+#### Independence Analysis
+
+| Feature Pair | Independent? | Why |
+|--------------|-------------|-----|
+| Phonemes ↔ Teams | YES | Completely separate domains, no shared state |
+| Phonemes ↔ Templates | NO | Templates filter phonemes — shared data model |
+| Projects ↔ TTS | YES | TTS doesn't need project context |
+| Content ↔ Phonemes | NO | Content references phonemes |
+| Dashboard ↔ Admin | YES | Different UIs, different routes |
+| Auth ↔ Database | NO | Auth depends on DB |
+
+#### Structure
+
+```
+Root (coordinates all work)
+├── BRANCH A: Sound Domain (must be sequential internally)
+│   L4: Phoneme System → L5: Templates → (feeds into Branch B)
+├── BRANCH B: Content Domain (sequential internally, parallel with C, D)
+│   L6: Words → Syllables → Positions
+├── BRANCH C: Organization Domain (parallel with B, D)
+│   L7: Projects → L8: Teams
+├── BRANCH D: Enhancement Domain (parallel with B, C)
+│   L9: TTS, L10: Admin, L11: Dashboard (all independent leaves)
+└── FOUNDATION (must complete before branches start)
+    L2: Infrastructure → L3: Users
+```
+
+#### Agent Implications
+
+- Foundation agents work first (sequential)
+- Branch A works next (sequential within, but Branch B can START once A reaches Templates)
+- Branches B, C, D work CONCURRENTLY after their dependencies are met
+- Leaf nodes in Branch D are all independent — maximum parallelism
+
+#### Strengths
+
+- **Maximum parallelism**: Independent branches work simultaneously
+- **Clear sequencing**: Dependencies are explicit (Foundation before Branches)
+- **Efficient resource use**: More agents can work at the same time
+- **Good for CI/CD**: Independent branches can be tested independently
+
+#### Weaknesses
+
+- Branch boundaries are static (if a new cross-branch dependency appears, the structure breaks)
+- Branch assignment is complex (is Templates part of Sound Domain or Content Domain?)
+- Doesn't help with context cascading (siblings don't cascade to each other)
+- Some tasks inherently span branches (T5 team invitation needs Auth + Projects + Teams)
+
+---
+
+## Meta-Analysis: Which Axis Does Each Principle Serve?
+
+| Principle | Cascading Context (top-down) | Delegation/Traversal (manager-worker) | Both? |
+|-----------|:---:|:---:|:---:|
+| 1. Dependency | Strong | Moderate | |
+| 2. Containment | Moderate | Strong | |
+| 3. User Interaction | Weak | Moderate | |
+| 4. Change Frequency | Moderate | Weak | |
+| 5. Data Flow | Strong | Moderate | |
+| 6. Feature Coupling | Moderate | Strong | |
+| 7. Skill/Capability | Weak | Strong | |
+| 8. Knowledge Depth vs Breadth | | | Both |
+| 9. Communication Topology | Weak | Strong | |
+| 10. Risk/Criticality | | | Both |
+| 11. Lifecycle/Temporal | Strong | Weak | |
+| 12. API Surface | Strong | Moderate | |
+| 13. Concurrency/Isolation | Weak | Strong | |
+
+### Key Insight
+
+**No single principle optimizes both axes equally.** This is why hybrid approaches are necessary:
+
+- **For cascading context**, the strongest principles are: Dependency (1), Data Flow (5), Lifecycle (11), API Surface (12)
+- **For delegation/traversal**, the strongest are: Containment (2), Feature Coupling (6), Skill/Capability (7), Communication Topology (9), Concurrency (13)
+- **Principles that serve BOTH axes** (Knowledge Depth, Risk/Criticality) tend to produce the most balanced hierarchies but may not excel at either
+
+### The Design Space
+
+The ideal LangTrak agent hierarchy likely combines:
+1. **A cascading-context principle** for the LAYER ORDERING (what context is universal)
+2. **A delegation principle** for the AGENT TREE STRUCTURE (how managers delegate to workers)
+
+These can be DIFFERENT principles applied at different levels:
+- **Between layers**: Use dependency or API surface (cascading context)
+- **Within layers**: Use feature coupling or skill clustering (delegation efficiency)
+- **For the agent tree**: Use knowledge depth (generalist managers, specialist workers)
+
+---
+
+## Updated Hybrid Ideas
+
+### Hybrid 4: API Surface Ordering + Feature Coupling Clusters
+
+Layers are ordered by interface consumer count (API surface). Within each layer, features are grouped by coupling (bounded contexts).
+
+```
+L2: Infrastructure Cluster (DB + Firebase + Storage — widest API)
+L3: Identity Cluster (Auth + Users + Sessions — 14 consumers)
+L4: Phoneme Domain Cluster (System + Templates + Types — 6 consumers)
+L5: Content Cluster (Words + Syllables + Positions — 3 consumers)
+L6: Project Cluster (Projects + Variants — 5 consumers)
+L7: Collaboration Cluster (Teams + Sharing — 2 consumers)
+L8: Enhancement Cluster (TTS + Suggestions — 1 consumer)
+L9: Management Cluster (Admin + Dashboard — 0 consumers)
+```
+
+**Agent tree**: Root generalist → cluster specialists → feature experts (Principle 8)
+
+**Why this works**: API surface gives clean cascading (interfaces are small, cascade is cheap). Feature coupling gives clean delegation (domain experts handle domain work). Knowledge depth gives clean agent tree.
+
+### Hybrid 5: Risk-Aware Dependency with Communication-Optimized Hubs
+
+Use dependency for layer ordering. Add risk-awareness to the manager's context model (critical components get more attention). Organize the agent TREE by communication topology (frequently-communicating agents are co-located).
+
+```
+Layer ordering (dependency): L2 Infra → L3 Users → L4 Phonemes → L5 Templates → L6 Content → L7 Projects → L8 Teams
+
+Agent tree (communication hubs):
+Root Manager [CRITICAL awareness: L2, Auth]
+├── Phoneme-Content Hub (high-frequency pair)
+│   ├── Phoneme Agent
+│   ├── Template Agent
+│   ├── Content Agent
+│   └── TTS Agent
+├── Identity Hub
+│   ├── Auth Agent [CRITICAL]
+│   ├── Users Agent
+│   └── Infrastructure Agent [CRITICAL]
+├── Project-Collaboration Hub
+│   ├── Project Agent
+│   ├── Teams Agent
+│   └── Orchestration Agent
+└── Management Hub
+    ├── Admin Agent
+    └── Dashboard Agent
+```
+
+**Why this works**: Dependency ordering ensures context cascades correctly. Communication hubs ensure agents that need to talk are co-located. Risk awareness ensures the manager closely supervises critical components.
+
+### Hybrid 6: Concurrency-First with Specialist Depth
+
+Use independence analysis to create parallel branches. Within each branch, use knowledge depth (generalist branch manager → specialist leaf agents).
+
+```
+Foundation (sequential): Infrastructure → Auth → Users
+                              ↓
+              ┌───────────────┼───────────────┐
+         Branch A         Branch B         Branch C
+     Sound Domain      Content+Projects  Enhancements
+      Specialist          Specialist       Specialist
+      ├── Phoneme         ├── Word          ├── TTS
+      │   Expert          │   Expert        │   Expert
+      ├── Template        ├── Project       ├── Suggest
+      │   Expert          │   Expert        │   Expert
+      └── Frequency       ├── Team          └── Admin
+          Expert          │   Expert            Expert
+                          └── Variant
+                              Expert
+```
+
+**Why this works**: Foundation runs first (unavoidable dependency). Then three branches work in parallel. Each branch has a domain specialist who routes to leaf experts. Maximizes both parallelism AND specialization.
+
+---
+
 ## Recommendation for Experiment
 
-Add these as new trials to the Agent Hierarchy Structure Experiment:
+### Original Trials (A-E): From experiment document
 
-| Trial | Principle | Why Test It |
+| Trial | Structure | Tests What |
+|-------|-----------|-----------|
+| A | One Agent Per Layer | Clean layer separation |
+| B | Domain Clusters | Feature grouping |
+| C | Stage-First | Workflow phases |
+| D | Hybrid Layer+Stage | Both dimensions |
+| E | Flat Team | No hierarchy at all |
+
+### New Trials from Structural Ideas
+
+| Trial | Principle(s) | Why Test It |
 |-------|-----------|-------------|
-| F | Containment | Tests ownership-based hierarchy — opposite direction from dependency |
-| G | Feature Coupling + Dependency (Hybrid 2) | Tests clustered domain experts with dependency ordering between clusters |
-| H | Stable Core + Volatile Shell (Hybrid 3) | Tests whether stability-based layering improves agent efficiency |
+| F | Containment (Principle 2) | Opposite ordering from dependency — tests ownership-based context cascade |
+| G | Feature Coupling + Dependency hybrid (Hybrid 2) | Domain experts with dependency ordering between clusters |
+| H | Stable Core + Volatile Shell (Hybrid 3) | Stability-based zones — tests change-frequency impact |
+| I | Knowledge Depth + Feature Coupling (Hybrid 4/6) | Generalist managers → specialist → expert tree — tests whether 3-level depth helps |
+| J | Communication-Optimized Hubs (Principle 9 + Hybrid 5) | Tests whether co-locating high-frequency communication pairs improves coordination |
+| K | Concurrency-First Branches (Principle 13 + Hybrid 6) | Tests whether maximizing parallel execution improves throughput |
 
-These three, combined with the existing 5 trials (A-E), cover a wide range of structural philosophies.
+### Recommended First Trials (Maximum Variation)
+
+Run these 4 first for maximum structural diversity:
+
+1. **Trial B** (Domain Clusters) — baseline clustered approach
+2. **Trial G** (Feature Coupling + Dependency) — strongest hybrid from Axis 1+2
+3. **Trial I** (Knowledge Depth tree) — tests 3-level specialist depth
+4. **Trial K** (Concurrency-First) — tests parallel execution optimization
+
+These four test fundamentally different organizational philosophies: domain grouping, hybrid cascading+delegation, expertise depth, and parallel execution.
 
 ---
 
 ## Next Steps
 
-1. Add Trials F, G, H to the experiment document
-2. For each trial, define the specific agent 0AGNOSTIC.md content
-3. Choose 3-4 trials with maximum structural variation to run first
-4. Execute test tasks and score results
+1. Add Trials F-K to the experiment document with concrete agent definitions
+2. For Trials B, G, I, K (recommended first batch): define specific agent 0AGNOSTIC.md content
+3. Create context model specifications for each trial (what's STATIC vs. DYNAMIC per agent)
+4. Execute calibration tasks (T1, T2) for the first batch
+5. Run full task suite and score results
+6. Analyze which axis tradeoffs produced the best outcomes
