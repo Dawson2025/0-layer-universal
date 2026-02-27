@@ -10,6 +10,8 @@ Research projects and experiments. Contains exploratory work, studies, and resea
 | Name | Type | Keywords | Description |
 |------|------|----------|-------------|
 | layer_-1_better_ai_system | dir | better-ai, shimi, agents, memory, amnesia | Research for improved AI agent systems |
+| layer_-1_langtrak_dev_agent_system | dir | langtrak, dev-agents, layer-agents, context-chains | Design agent system for LangTrak development |
+| layer_-1_learning_simulation_system | dir | learning, simulation | Learning simulation research |
 | layer_-1_99_stages | dir | stages, 01-11, workflow | Stage-based workflow for research |
 
 ---
@@ -19,6 +21,7 @@ Research projects and experiments. Contains exploratory work, studies, and resea
 | Project | Keywords | Status | Description |
 |---------|----------|--------|-------------|
 | layer_-1_better_ai_system | SHIMI, agents, memory, traversal, sync | IN PROGRESS | Better AI agent memory, multi-agent sync, automated traversal |
+| layer_-1_langtrak_dev_agent_system | langtrak, dev-agents, layer-agents, MCP tools | NEW | Design agent roles, context chains, and dev workflows for LangTrak |
 
 ---
 
@@ -27,6 +30,8 @@ Research projects and experiments. Contains exploratory work, studies, and resea
 **Looking for Better AI System research?** → `layer_-1_better_ai_system/`
 **Looking for SHIMI implementation?** → `layer_-1_better_ai_system/layer_-1/layer_-1_99_stages/`
 **Looking for design documents?** → `layer_-1_better_ai_system/layer_-1/layer_-1_99_stages/stage_-1_04_design/`
+**Looking for LangTrak dev agent system?** → `layer_-1_langtrak_dev_agent_system/`
+**Looking for LangTrak agent roles/context chains?** → `layer_-1_langtrak_dev_agent_system/layer_-1_group/layer_-1_99_stages/`
 
 ---
 

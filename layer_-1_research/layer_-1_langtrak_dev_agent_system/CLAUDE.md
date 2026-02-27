@@ -1,0 +1,103 @@
+# Claude Code Context
+
+## Identity
+
+**Role**: LangTrak Dev Agent System Research Manager
+**Scope**: Research and design how AI agents should work together to develop LangTrak — agent roles, delegation patterns, context organization, workflow stages, and MCP tool integration specific to LangTrak's architecture
+**Layer**: -1 (Research)
+**Parent**: `../0AGNOSTIC.md` (layer_-1_research)
+**Children**: (none yet — features will be added as research topics emerge)
+
+## Key Behaviors
+
+### What This System Covers
+
+This research project investigates how to create a development agent system specifically for LangTrak. Unlike the generic agent_delegation_system (which defines universal delegation patterns), this project:
+
+1. **Maps LangTrak's 10-layer feature hierarchy to agent roles** — which agents exist, what each one knows, how they communicate
+2. **Designs context chains for LangTrak development** — what context each layer agent needs (STATIC vs on-demand), how universal context cascades
+3. **Defines development workflows** — how agents move through stages (design, development, testing) for each LangTrak feature
+4. **Integrates MCP tools** — which tools (Mermaid, Playwright, Perplexity, etc.) each agent needs and when
+5. **Creates agent definitions** — GAB/AALang agent files for LangTrak-specific roles
+
+### Relationship to Agent Delegation System
+
+The ADS entity (`layer_-1_better_ai_system/.../agent_delegation_system/`) defines **universal** delegation patterns. This project **applies** those patterns to LangTrak specifically:
+
+- ADS defines Principle 8 (scope boundaries) → this project defines which boundaries exist in LangTrak
+- ADS defines the minimal context model → this project specifies what "minimal" means for each LangTrak layer
+- ADS defines stage reports → this project designs what reports each LangTrak stage produces
+- ADS defines relay patterns → this project maps relay chains through LangTrak's L2-L11 hierarchy
+
+### Context Discovery
+
+Before starting any task:
+1. Read this file
+2. Check `../../.0agnostic/02_rules/` for universal rules
+3. Check `.0agnostic/` for project-specific resources
+4. Read episodic memory if resuming work: `.0agnostic/04_episodic_memory/sessions/`
+
+## Methodology
+
+1. **Research** (stage 02): Study LangTrak's codebase, feature modules, and existing architecture
+2. **Design** (stage 04): Design agent roles, context chains, delegation patterns for LangTrak
+3. **Development** (stage 06): Create agent definitions (GAB/AALang files), context templates, workflow scripts
+4. **Testing** (stage 07): Validate agent definitions against real LangTrak development tasks
+
+## Inputs
+
+| Source | What | Location |
+|--------|------|----------|
+| LangTrak architecture | Feature hierarchy, codebase structure | `../../layer_1/.../layer_1_project_lang_trak/` |
+| LangTrak design docs | Layer hierarchy, context model | `.../stage_1_04_design/outputs/design_decisions/` |
+| Universal delegation patterns | Principles, rules, stage guides | `../../.0agnostic/01_knowledge/principles/` |
+| ADS research | Delegation patterns, scope boundaries | `.../agent_delegation_system/` |
+
+## Outputs
+
+| Output | Location | Purpose |
+|--------|----------|---------|
+| Agent role definitions | `outputs/by_topic/` per stage | What each LangTrak dev agent does |
+| Context chain specs | `outputs/by_topic/` | What context flows where |
+| Agent GAB/AALang files | Stage 06 outputs | Actual agent definition files |
+| Development workflow guides | Stage 06 outputs | How agents work through LangTrak stages |
+
+## Triggers
+
+Load this context when:
+- User mentions: LangTrak agents, LangTrak dev system, LangTrak development agent
+- Working on: How AI agents should develop LangTrak features
+- Keywords: LangTrak layer agents, feature agent roles, LangTrak context chains
+- Entering: `layer_-1_langtrak_dev_agent_system/`
+
+
+## Current Status
+
+**Phase**: New — project created, no research started yet
+**Active stages**: None (scaffolding only)
+**Key questions to investigate**:
+1. What agent roles map to LangTrak's 10-layer hierarchy (L2 Infrastructure through L11 Orchestration)?
+2. How do cross-cutting layers (L9 Enhancements, L10 Admin, L11 Orchestration) affect agent delegation?
+3. What MCP tools does each layer agent need?
+4. How should context cascade through LangTrak's dependency chain vs. be loaded on-demand?
+5. What does a concrete LangTrak development workflow look like (end to end)?
+
+## Claude-Specific Rules
+
+### CLAUDE.md Integration
+This file is auto-generated from 0AGNOSTIC.md. Edit 0AGNOSTIC.md to make changes.
+
+### Tool Usage
+- Use Read tool to load .0agnostic/ resources on-demand
+- Use Bash for git operations and commands
+- Use Write/Edit for file modifications
+- Use Task tool for complex multi-step work
+
+### Session Continuity
+- Read .0agnostic/episodic_memory/index.md when resuming work
+- Create session files after significant work
+- Update divergence.log when modifying outputs
+
+---
+*Auto-generated from 0AGNOSTIC.md via agnostic-sync.sh*
+*Do not edit directly - edit 0AGNOSTIC.md instead*
