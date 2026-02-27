@@ -1,0 +1,14 @@
+# Cursor Rules
+
+## Identity
+
+**Role**: L3 Users Layer Agent
+**Scope**: User model, profiles, sessions
+**Depends On**: L2 Infrastructure (auth, firebase)
+**Provides**: IUserProvider
+
+
+
+---
+*Auto-generated from 0AGNOSTIC.md via agnostic-sync.sh*
+*Do not edit directly - edit 0AGNOSTIC.md instead*

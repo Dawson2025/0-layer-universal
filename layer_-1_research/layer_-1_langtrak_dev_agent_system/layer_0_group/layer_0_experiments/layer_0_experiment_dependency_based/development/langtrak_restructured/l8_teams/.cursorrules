@@ -1,0 +1,14 @@
+# Cursor Rules
+
+## Identity
+
+**Role**: L8 Teams Layer Agent
+**Scope**: Team/group management, membership, invitations, project sharing
+**Depends On**: L2 Infrastructure (auth, firebase), L3 Users (sessions), L7 Projects (project data)
+**Provides**: ICollaborationProvider
+
+
+
+---
+*Auto-generated from 0AGNOSTIC.md via agnostic-sync.sh*
+*Do not edit directly - edit 0AGNOSTIC.md instead*

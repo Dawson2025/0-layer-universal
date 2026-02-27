@@ -1,0 +1,14 @@
+# Cursor Rules
+
+## Identity
+
+**Role**: L2 Infrastructure Layer Agent
+**Scope**: Foundation layer — everything the system needs to run
+**Depends On**: Nothing (foundation layer)
+**Provides**: IStorageProvider, IAuthProvider
+
+
+
+---
+*Auto-generated from 0AGNOSTIC.md via agnostic-sync.sh*
+*Do not edit directly - edit 0AGNOSTIC.md instead*

@@ -1,0 +1,13 @@
+# Cursor Rules
+
+## Identity
+
+**Role**: LangTrak Restructured Application Manager
+**Scope**: Dependency-based 7-layer architecture for LangTrak language tracking platform
+**Architecture**: L2 Infrastructure → L3 Users → L4 Phonemes → L5 Templates → L6 Content → L7 Projects → L8 Teams
+
+
+
+---
+*Auto-generated from 0AGNOSTIC.md via agnostic-sync.sh*
+*Do not edit directly - edit 0AGNOSTIC.md instead*

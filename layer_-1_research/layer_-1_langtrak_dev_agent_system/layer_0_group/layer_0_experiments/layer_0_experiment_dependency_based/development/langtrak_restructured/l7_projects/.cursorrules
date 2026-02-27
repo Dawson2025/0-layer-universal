@@ -1,0 +1,14 @@
+# Cursor Rules
+
+## Identity
+
+**Role**: L7 Projects Layer Agent
+**Scope**: Project management, dashboard, navigation, variants, storage type switching
+**Depends On**: L2 Infrastructure (auth, firebase, storage), L3 Users (sessions), L5 Templates (template application), L6 Content (word data)
+**Provides**: IProjectProvider
+
+
+
+---
+*Auto-generated from 0AGNOSTIC.md via agnostic-sync.sh*
+*Do not edit directly - edit 0AGNOSTIC.md instead*
