@@ -25,6 +25,7 @@ Load this context when:
 ### Resources (load on-demand)
 | Resource | Location |
 |----------|----------|
+| Orchestrator Agent | `better_ai_system_orchestrator.gab.jsonld` (+ `.integration.md`) |
 | Rules | `.0agnostic/02_rules/` |
 | Knowledge | `.0agnostic/01_knowledge/` |
 | Agents | `.0agnostic/agents/` |
