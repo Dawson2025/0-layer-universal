@@ -42,9 +42,22 @@ Never load all parent knowledge at once. Read the specific file relevant to the 
 
 ## 8. Scope Boundary Decisions
 
-When an agent reaches the boundary of its layer or stage scope, it must make a **delegation decision**:
+When an agent reaches the boundary of its layer or stage scope, it must make a **delegation decision** that includes both WHAT to do and WHERE to go.
 
-### The Decision
+### Step 1: Determine Direction
+
+Every scope boundary has a direction. The agent must identify which way the out-of-scope work points:
+
+| Direction | Meaning | Example |
+|-----------|---------|---------|
+| **Up** | Work belongs to a parent or ancestor entity | Stage agent finds entity-level policy issue |
+| **Down** | Work belongs to a child or descendant entity | Entity agent finds work that needs a specialized sub-feature |
+| **Left** | Work belongs to an earlier stage (lower number) | Design agent discovers missing requirements → stage 01 |
+| **Right** | Work belongs to a later stage (higher number) | Research agent makes an architecture decision → stage 04 |
+| **Sideways (layer)** | Work belongs to a sibling entity at the same layer | memory_system agent finds multi_agent_system concern |
+| **Multi-location** | Work spans multiple layers, stages, or entities | Refactoring that requires research + design + development |
+
+### Step 2: Decide How to Handle
 
 | Question | If Yes | If No |
 |----------|--------|-------|
@@ -52,12 +65,41 @@ When an agent reaches the boundary of its layer or stage scope, it must make a *
 | Does an agent already exist for the target layer/stage? | Delegate to it (send message, create task, or write handoff) | Consider instantiating one |
 | Would handling this myself overflow my context window? | Always delegate — context window preservation is paramount | You may handle it if it's small |
 
+### Step 3: Communicate
+
+How the agent communicates depends on the direction and the handling decision:
+
+| Situation | Communication Method |
+|-----------|---------------------|
+| Delegating **up** (to parent/ancestor) | Write finding in stage report; if urgent, escalate to entity manager directly |
+| Delegating **down** (to child/descendant) | Spawn agent with Task tool pointing to child's 0AGNOSTIC.md + task description |
+| Delegating **left/right** (to sibling stage) | Document in stage report with cross-reference; manager routes in next delegation cycle |
+| Delegating **sideways** (to sibling entity) | Document in stage report; entity manager coordinates with sibling entity's manager |
+| **Multi-location** work | Escalate to the nearest common ancestor manager who can coordinate across all locations |
+| Doing it **yourself** across boundaries | Document ALL out-of-scope changes in your stage report with exact paths and rationale |
+
 ### Instantiation Decision
 
 When no agent exists for the target scope:
 1. **If the work is significant** (multiple files, complex reasoning): Instantiate a new agent for that layer/stage by spawning it with a pointer to the target 0AGNOSTIC.md
 2. **If the work is trivial** (one note, one flag): Document it in your stage report for the manager to route later
 3. **If you're unsure**: Ask the manager (or user) — instantiating agents has overhead, so it should be justified
+
+When instantiating:
+- The new agent reads its own 0AGNOSTIC.md to self-orient (not YOUR context)
+- Provide a clear task description + any findings that prompted the instantiation
+- The new agent may itself hit scope boundaries and make its own delegation decisions
+
+### Multi-Location Work
+
+When work genuinely spans multiple locations (not just a clean handoff to one place):
+
+1. **Can one agent orchestrate it?** If you're the entity manager and the work spans your stages, coordinate it yourself — spawn stage agents as needed
+2. **Does it span sibling entities?** Escalate to the parent entity manager who has scope over both siblings
+3. **Does it span layers?** Escalate to the nearest ancestor with scope over all affected layers
+4. **Should you work across multiple stages yourself?** Only if ALL are small, tightly coupled, AND you have context window headroom. Otherwise, delegate to each stage's agent and let the manager coordinate
+
+The key question for multi-location: **who has the scope to see all affected locations?** That's the agent who should coordinate.
 
 ### Why This Matters
 
