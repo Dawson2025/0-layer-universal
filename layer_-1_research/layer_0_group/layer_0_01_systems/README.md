@@ -1,4 +1,4 @@
-# layer_0_systems — Layer 0 System Research
+# layer_0_01_systems — Layer 0 System Research
 
 This directory contains all layer_0 level systems being researched and validated before promotion to production.
 
@@ -25,7 +25,7 @@ New layer_0 system research should be created by:
 
 - **Parent Group**: `../README.md` (layer_0_group)
 - **Parent Research**: `../../0AGNOSTIC.md` (layer_-1_research)
-- **Sibling Projects**: `../layer_0_projects/`
+- **Sibling Projects**: `../layer_0_02_projects/`
 - **Registry**: `../layer_0_00_layer_registry/`
 - **Stages**: `../layer_0_99_stages/`
 

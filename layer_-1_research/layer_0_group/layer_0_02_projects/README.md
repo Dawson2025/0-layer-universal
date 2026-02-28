@@ -1,4 +1,4 @@
-# layer_0_projects — Layer 0 Project Research
+# layer_0_02_projects — Layer 0 Project Research
 
 This directory contains all layer_0 level projects being researched and validated before promotion to production.
 
@@ -15,6 +15,7 @@ Each research project is a complete entity with its own `.0agnostic/` system, st
 | Project | Status | Purpose |
 |---------|--------|---------|
 | `layer_-1_langtrak_dev_agent_system` | Active | Development of language tracking agent system (applies layer_0 AI system patterns) |
+| `layer_-1_school_agent_system_development` | Active | Development of AI agent system for school-related tasks (integrates layer_0 AI patterns with educational domain) |
 
 ## Adding New Projects
 
@@ -36,7 +37,7 @@ Layer_0 projects typically:
 ## Navigation
 
 - **Parent Group**: `../README.md` (layer_0_group)
-- **Sibling Systems**: `../layer_0_systems/`
+- **Sibling Systems**: `../layer_0_01_systems/`
 - **Parent Research**: `../../0AGNOSTIC.md` (layer_-1_research)
 - **Registry**: `../layer_0_00_layer_registry/`
 - **Stages**: `../layer_0_99_stages/`
