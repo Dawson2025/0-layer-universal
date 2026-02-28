@@ -6,8 +6,10 @@ You are an AI agent working within the layer_-1 (research) context. This layer c
 ## Navigation
 - **Detailed resources**: `.0agnostic/` folder
 - **Universal rules**: Inherit from `../.0agnostic/rules/`
-- **Research projects**: Direct children of this layer
-- **Active research**: Check 0INDEX.md for current projects
+- **Research projects**: In `layer_-1_features/` directory (organized as layer_-1 features)
+- **Layer metadata**: In `layer_-1_group/layer_-1_00_layer_registry/`
+- **Workflow stages**: In `layer_-1_group/layer_-1_99_stages/`
+- **Active research**: See Active Research Projects section below
 
 ## Key Behaviors
 
@@ -47,7 +49,13 @@ Research projects follow stages 01-11 (see Stage Navigation below).
 
 ## Active Research Projects
 
+All research projects are organized in `layer_-1_features/`:
+
 - **layer_-1_better_ai_system**: SHIMI concepts, agent memory, multi-agent sync
+- **layer_-1_langtrak_dev_agent_system**: Development of language tracking agent system
+- **layer_-1_learning_simulation_system**: Research on learning simulation frameworks
+
+Location: `layer_-1_features/[project-name]/`
 
 ## Quick Reference
 
@@ -76,7 +84,7 @@ Stages are numbered 01-11 and represent workflow phases:
 
 **To identify current stage**: Check your working directory path for `stage_*_NN_*` pattern.
 
-**To find stage content**: Use `0INDEX.md` at project's `layer_-1_99_stages/` directory.
+**To find stage content**: Use `0INDEX.md` at `layer_-1_group/layer_-1_99_stages/` directory, or within each project's own stages directory.
 
 ---
 
