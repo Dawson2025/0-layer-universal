@@ -385,6 +385,115 @@ Run `.0agnostic/01_knowledge/layer_stage_system/resources/tools/validate-entity.
 - **Migration**: `.0agnostic/01_knowledge/layer_stage_system/resources/tools/migrate-sub-layers-to-0agnostic.sh` (migrates old sub_layers into .0agnostic/)
 - **Renumbering**: `.0agnostic/01_knowledge/layer_stage_system/resources/tools/renumber-layers.sh` (shifts layer numbers when re-parenting or restructuring entities; see `.0agnostic/01_knowledge/layer_stage_system/docs/RENUMBERING_GUIDE.md`)
 
+## Research Entity Structure
+
+Research entities operate within `layer_-1_research/` but follow distinct patterns based on what they research:
+
+### Pattern 1: Research INTO Layer N (Entity Layer ≠ Parent Layer)
+
+When researching what layer_N structures should look like, entities inside `layer_-1_research/layer_N_group/` are themselves layer_N entities, not layer_-1 entities.
+
+**Example: Better AI System (layer_0 entity researched in layer_-1)**
+
+```
+layer_-1_research/                     # Research context (layer_-1)
+├── layer_-1_99_stages/               # ✅ Correct: layer_-1_research has its own stages
+│   ├── stage_-1_01_request_gathering/
+│   └── ... (stages 02-11)
+└── layer_0_group/                    # Container for layer_0 research structures
+    ├── layer_0_00_layer_registry/
+    ├── layer_0_01_systems/           # Container for layer_0 systems
+    │   ├── layer_0_better_ai_system/   # ✅ Entity layer = 0 (not -1)
+    │   │   ├── layer_0_group/        # ✅ Entity's internal group
+    │   │   │   └── layer_0_99_stages/   # ✅ Correct: stages numbered for layer_0
+    │   │   │       ├── stage_0_01_request_gathering/
+    │   │   │       └── ... (stages 02-11)
+    │   │   └── 0AGNOSTIC.md         # ✅ Says "Layer 0", parent "../../0AGNOSTIC.md" (layer_-1_research)
+    │   └── layer_0_learning_simulation_system/  # ✅ Another layer_0 entity
+    └── layer_0_02_projects/          # Container for layer_0 projects
+        ├── layer_0_langtrak_dev_agent_system/   # ✅ Layer_0 entity
+        └── layer_0_school_agent_system_development/  # ✅ Layer_0 entity
+```
+
+**Key Rules for Research INTO Layer N**:
+- Entity inside `layer_N_group/` IS a layer_N entity
+- Entity's `0AGNOSTIC.md` says `**Layer**: N` (the layer being researched)
+- Entity's `0AGNOSTIC.md` says `**Parent**: ../../0AGNOSTIC.md` (layer_-1_research, the research context)
+- Entity has `layer_N_group/layer_N_99_stages/` (stages numbered for its own layer, not -1)
+- Stages contain `stage_N_XX_*` directories (not `stage_-1_*`)
+- **Distinction**: Research CONTEXT is layer_-1, but research CONTENT/ENTITIES are layer_N
+
+### Pattern 2: Research OF Layer -1 (Both Entity and Context are Layer -1)
+
+When the research project itself is a layer_-1 entity (not researching something else):
+
+```
+layer_-1_research/                     # This IS a layer_-1 entity
+├── 0AGNOSTIC.md                       # Says "Layer -1 (Research)"
+├── layer_-1_group/
+│   └── layer_-1_99_stages/           # ✅ Correct: own stages for layer_-1
+│       ├── stage_-1_01_request_gathering/
+│       └── ... (stages 02-11)
+└── layer_N_group/                     # Organizing research INTO other layers
+```
+
+### Pattern 3: Research Within Better AI System
+
+Inside `layer_0_better_ai_system/`, research into layer_1 features:
+
+```
+layer_0_better_ai_system/              # layer_0 entity
+├── layer_0_group/                     # Entity's internal group
+│   ├── layer_0_00_layer_registry/
+│   └── layer_0_99_stages/
+│       ├── stage_0_02_research/outputs/   # Research findings go here
+│       └── stage_0_04_design/outputs/     # Design decisions documented here
+├── layer_0_group/layer_0_features/    # layer_0 features (layer 0 entities)
+│   ├── layer_0_feature_layer_stage_system/    # Feature IS layer_0
+│   ├── layer_0_feature_multimodal_system/     # Feature IS layer_0
+│   └── layer_1_group/                         # Children ARE layer_1
+│       └── layer_1_subx1_features/            # Nested layer_1 features
+│           └── layer_1_subx1_feature_*/       # Each IS layer_1
+│               ├── layer_1_group/
+│               │   └── layer_1_99_stages/     # ✅ Correct: stages for layer_1
+│               └── layer_2_group/             # Their children are layer_2
+```
+
+**Research Layer State Structure**:
+
+Research entities maintain state through these mechanisms:
+
+1. **Stage Output Artifacts** (episodic records):
+   - Each stage (`stage_N_XX_*/outputs/`) contains research findings
+   - `stage_-1_02_research/outputs/` holds exploration, prototypes, learning
+   - `stage_-1_04_design/outputs/` holds design decisions, architecture docs
+   - `stage_-1_05_planning/outputs/` holds detailed plans before implementation
+
+2. **Episodic Memory** (session persistence):
+   - `.0agnostic/04_episodic_memory/sessions/` records progress per session
+   - `.0agnostic/04_episodic_memory/changes/` records what changed between sessions
+   - Auto-synced to tool-specific episodic directories (`.claude/episodic_memory/`, etc.)
+
+3. **Layer State JSON** (workflow tracker):
+   - `layer_N_group/layer_N_99_stages/status_N.json` tracks:
+     - Which stages are complete/in-progress/pending
+     - Current active stage
+     - Blockers and dependencies
+     - Promotion readiness (for research → production transition)
+
+4. **Handoff Documents** (cross-stage communication):
+   - `.0agnostic/05_handoff_documents/01_incoming/03_from_below/stage_reports/` = results from child stages
+   - `.0agnostic/05_handoff_documents/02_outgoing/01_to_above/stage_report.md` = results for parent
+   - These propagate status, findings, and decisions up the hierarchy
+
+**Research Layer State Tracking Best Practices**:
+
+- Update `status_N.json` when stage transitions
+- Write session notes in `.0agnostic/04_episodic_memory/sessions/` after significant work
+- Create stage reports in `stage_N_XX_*/outputs/` with findings and recommendations
+- Use handoff documents to communicate results to parent (layer_-1_research) and siblings (other layer_0 entities)
+- Mark promotion blockers in `layer_N_group/layer_N_00_layer_registry/proposals/` for tracking research obstacles
+
 ## Research Context for Structural Decisions
 
 When performing structural operations (entity creation, renumbering, restructuring), these research areas explain the rationale behind the system's design:
