@@ -88,6 +88,16 @@ else
   fail "Codex chain-validate mapping mismatch (got: ${msg:-<empty>})"
 fi
 
+# Check 5: Codex governance behavior probe (non-nested runtime call).
+msg="$(run_codex_last_message "$ENTITY_ROOT" "Read .0agnostic and return only the path to the stage report protocol file." || true)"
+msg="$(normalize_line "$msg")"
+msg="$(echo "$msg" | sed -E 's#^(\./)+##; s#^(\.\./)+##')"
+if [ "$msg" = ".0agnostic/03_protocols/stage_report_protocol.md" ]; then
+  pass "Codex governance behavior probe: protocol discovery"
+else
+  fail "Codex governance behavior probe failed (got: ${msg:-<empty>})"
+fi
+
 echo ""
 echo "================================"
 printf "  \033[32mPASS\033[0m: %d\n" "$PASS"

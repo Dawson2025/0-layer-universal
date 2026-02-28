@@ -12,6 +12,7 @@ LEGACY_REPORT="$SCRIPT_DIR/test_results_summary.md"
 
 TESTS=(
     "test_outputs_purpose_taxonomy.sh"
+    "test_cross_entity_porting_bridge.sh"
     "test_reports_funnel_structure.sh"
     "test_agnostic_sync.sh"
     "test_context_chain_traversal.sh"

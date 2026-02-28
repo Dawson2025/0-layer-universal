@@ -1,6 +1,6 @@
 # Test Results Summary
 
-**Date**: 2026-02-25 15:23:10
+**Date**: 2026-02-25 16:34:13
 **Entity**: layer_3_subx3_feature_context_chain_system
 **Runner**: run_all_tests.sh
 
@@ -11,7 +11,7 @@
 **Status**: PASS | **Exit code**: 0
 | Metric | Count |
 |--------|-------|
-| PASS | 57 |
+| PASS | 68 |
 | FAIL | 0 |
 | SKIP | 0 |
 | SCAFFOLDED | 0 |
@@ -66,6 +66,17 @@
   [32mPASS[0m  Suite has artifacts: avenue_web_validation/results
   [32mPASS[0m  Suite dir exists: avenue_web_validation/insights
   [32mPASS[0m  Suite has artifacts: avenue_web_validation/insights
+  [32mPASS[0m  Purpose exists: cross_entity_porting_bridge_validation
+  [32mPASS[0m  Suite dir exists: cross_entity_porting_bridge_validation/design
+  [32mPASS[0m  Suite has artifacts: cross_entity_porting_bridge_validation/design
+  [32mPASS[0m  Suite dir exists: cross_entity_porting_bridge_validation/implementation
+  [32mPASS[0m  Suite has artifacts: cross_entity_porting_bridge_validation/implementation
+  [32mPASS[0m  Suite dir exists: cross_entity_porting_bridge_validation/runs
+  [32mPASS[0m  Suite has artifacts: cross_entity_porting_bridge_validation/runs
+  [32mPASS[0m  Suite dir exists: cross_entity_porting_bridge_validation/results
+  [32mPASS[0m  Suite has artifacts: cross_entity_porting_bridge_validation/results
+  [32mPASS[0m  Suite dir exists: cross_entity_porting_bridge_validation/insights
+  [32mPASS[0m  Suite has artifacts: cross_entity_porting_bridge_validation/insights
   [32mPASS[0m  Purpose exists: full_suite_validation
   [32mPASS[0m  Suite dir exists: full_suite_validation/design
   [32mPASS[0m  Suite has artifacts: full_suite_validation/design
@@ -80,7 +91,41 @@
   [32mPASS[0m  Compatibility note exists: outputs/by_topic/README.md
 
 ================================
-  [32mPASS[0m: 57
+  [32mPASS[0m: 68
+  [31mFAIL[0m: 0
+  [33mSKIP[0m: 0
+================================
+```
+
+</details>
+
+---
+
+## test_cross_entity_porting_bridge
+
+**Status**: PASS | **Exit code**: 0
+| Metric | Count |
+|--------|-------|
+| PASS | 7 |
+| FAIL | 0 |
+| SKIP | 0 |
+| SCAFFOLDED | 0 |
+
+<details>
+<summary>Full output</summary>
+
+```
+=== Test: Cross-Entity Porting Bridge ===
+  [32mPASS[0m  Upstream bridge contract exists
+  [32mPASS[0m  Downstream bridge contract exists
+  [32mPASS[0m  Upstream agnostic sync design exists
+  [32mPASS[0m  Downstream codex contract exists
+  [32mPASS[0m  Downstream bridge references upstream tool_and_app_agnostic
+  [32mPASS[0m  Upstream bridge references downstream context_chain_system
+  [32mPASS[0m  Downstream bridge includes codex max-permission runtime policy
+
+================================
+  [32mPASS[0m: 7
   [31mFAIL[0m: 0
   [33mSKIP[0m: 0
 ================================
@@ -288,7 +333,7 @@ Entity: layer_3_subx3_feature_context_chain_system
 Entity: layer_3_subx3_feature_context_chain_system
 
 --- A1: System Prompt (CLAUDE.md) ---
-  [32mPASS[0m       A1: CLAUDE.md has 397 lines of content
+  [32mPASS[0m       A1: CLAUDE.md has 399 lines of content
   [32mPASS[0m       A1: CLAUDE.md has Identity section
 
 --- A2: Path Rules (.claude/rules/) ---
@@ -317,7 +362,7 @@ Entity: layer_3_subx3_feature_context_chain_system
   [33mSCAFFOLDED[0m A7: changes/ exists but is empty
 
 --- A8: 0AGNOSTIC Source ---
-  [32mPASS[0m       A8: 0AGNOSTIC.md has 382 lines of content
+  [32mPASS[0m       A8: 0AGNOSTIC.md has 384 lines of content
   [32mPASS[0m       A8: 0AGNOSTIC.md has Identity section
   [32mPASS[0m       A8: 0AGNOSTIC.md has Navigation/Pointers section
 
@@ -688,7 +733,7 @@ Entity: layer_3_subx3_feature_context_chain_system
 
 | Metric | Count |
 |--------|-------|
-| **Total PASS** | 200 |
+| **Total PASS** | 218 |
 | **Total FAIL** | 0 |
 | **Total SKIP** | 6 |
 | **Total SCAFFOLDED** | 2 |

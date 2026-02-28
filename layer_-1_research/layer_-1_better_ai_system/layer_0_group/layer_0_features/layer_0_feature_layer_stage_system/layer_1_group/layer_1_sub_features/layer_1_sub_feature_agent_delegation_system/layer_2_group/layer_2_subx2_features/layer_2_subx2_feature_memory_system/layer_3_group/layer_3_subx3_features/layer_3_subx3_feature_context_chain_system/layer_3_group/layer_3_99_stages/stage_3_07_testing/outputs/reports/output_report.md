@@ -20,10 +20,12 @@ Testing outputs are organized by test purpose, then by suite phase:
 - `outputs/by_purpose/codex_runtime_validation/`: Codex runtime behavior and policy artifacts
 - `outputs/by_purpose/reports_funnel_validation/`: Canonical-report + handoff-mirror propagation artifacts
 - `outputs/by_purpose/avenue_web_validation/`: Avenue coverage and functional validation artifacts
+- `outputs/by_purpose/cross_entity_porting_bridge_validation/`: Upstream agnostic -> downstream context-chain bridge contract validation
 - `outputs/by_purpose/full_suite_validation/`: Aggregate test runner design/run/result/insight artifacts
 
 ## Quality Gate
 - `outputs/test_outputs_purpose_taxonomy.sh`: Enforces purpose/suite folder structure and artifact presence
+- `outputs/test_cross_entity_porting_bridge.sh`: Enforces cross-entity bridge contract integrity
 - `outputs/run_all_tests.sh`: Includes taxonomy check in full-suite run
 
 ## Primary Work Products

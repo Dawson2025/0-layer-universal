@@ -83,6 +83,8 @@ Before starting any task:
 4. Load `.0agnostic/knowledge/` only for the specific topic you need
 5. Check `.0agnostic/episodic_memory/` for session history if resuming work
 6. Traverse parent chain only when you need broader scope (most tasks don't need this)
+7. For agnostic->tool projection assumptions, load bridge contract:
+   `.0agnostic/01_knowledge/overview/docs/context_chain_porting_bridge_contract.md`
 
 ### Agent Communication
 

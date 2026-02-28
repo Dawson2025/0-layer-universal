@@ -21,6 +21,7 @@ required_purposes=(
   "codex_runtime_validation"
   "reports_funnel_validation"
   "avenue_web_validation"
+  "cross_entity_porting_bridge_validation"
   "full_suite_validation"
 )
 

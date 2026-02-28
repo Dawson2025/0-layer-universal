@@ -12,7 +12,7 @@ Test suite now uses purpose-based output taxonomy (`outputs/by_purpose/<purpose>
 ## Key Outputs
 - `outputs/reports/stage_report.md`: Canonical stage handoff status report
 - `outputs/reports/output_report.md`: Stage output navigation hub for propagation funnel
-- `outputs/reports/test_results_summary.md`: Latest full suite results (200 PASS, 0 FAIL, 6 SKIP, 2 SCAFFOLDED)
+- `outputs/reports/test_results_summary.md`: Latest full suite results (218 PASS, 0 FAIL, 6 SKIP, 2 SCAFFOLDED)
 - `outputs/by_purpose/README.md`: Canonical testing output taxonomy and purpose list
 - `outputs/by_purpose/codex_runtime_validation/results/codex_runtime_behavior_test_report.md`: Codex runtime behavior report
 - `outputs/by_purpose/reports_funnel_validation/results/latest_results.md`: Reports-funnel suite result pointer
@@ -25,6 +25,7 @@ Test suite now uses purpose-based output taxonomy (`outputs/by_purpose/<purpose>
 - `outputs/test_codex_ci_gate.sh`: CI-style gate (fails when Codex merge is scaffold-only or Codex tests fail)
 - `outputs/test_reports_funnel_structure.sh`: Validates canonical report locations and handoff mirror copies
 - `outputs/test_outputs_purpose_taxonomy.sh`: Validates purpose/suite output structure and artifact presence
+- `outputs/test_cross_entity_porting_bridge.sh`: Validates upstream agnostic -> downstream context-chain bridge contract
 - Test scripts in `outputs/` for repeatable execution
 
 ## Findings
@@ -35,6 +36,7 @@ Test suite now uses purpose-based output taxonomy (`outputs/by_purpose/<purpose>
 - CI-style Codex gate passes and is integrated into `run_all_tests.sh`
 - Codex runtime execution requirement is now explicit: run agent tests with `codex --dangerously-bypass-approvals-and-sandbox` to avoid sandbox-induced false negatives
 - Stage testing outputs are now canonicalized by purpose and suite phase; `by_topic` is retained as compatibility only
+- Cross-entity bridge contract is now explicitly validated against `tool_and_app_agnostic` as upstream contract owner
 - Stage reporting now follows canonical `outputs/reports/` + `.0agnostic/05_handoff_documents/02_outgoing/` mirror pattern for funnel propagation
 - agnostic-sync.sh correctly generates all 4 tool files + validates .0agnostic/ references
 - Chain integrity validated across 7 levels
