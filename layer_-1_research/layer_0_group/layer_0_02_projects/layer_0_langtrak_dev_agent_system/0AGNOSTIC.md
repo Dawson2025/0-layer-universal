@@ -6,8 +6,8 @@
 
 **Role**: LangTrak Dev Agent System Research Manager
 **Scope**: Research and design how AI agents should work together to develop LangTrak — agent roles, delegation patterns, context organization, workflow stages, and MCP tool integration specific to LangTrak's architecture
-**Layer**: -1 (Research)
-**Parent**: `../0AGNOSTIC.md` (layer_-1_research)
+**Layer**: 0 (Dev Agent System), researched at Layer -1 (Research)
+**Parent**: `../../0AGNOSTIC.md` (layer_-1_research)
 **Children**: (none yet — features will be added as research topics emerge)
 
 ## Key Behaviors
@@ -50,10 +50,10 @@ Before starting any task:
 
 | Source | What | Location |
 |--------|------|----------|
-| LangTrak architecture | Feature hierarchy, codebase structure | `../../layer_1/.../layer_1_project_lang_trak/` |
+| LangTrak architecture | Feature hierarchy, codebase structure | `../../../layer_1/layer_1_projects/layer_1_project_lang_trak/` |
 | LangTrak design docs | Layer hierarchy, context model | `.../stage_1_04_design/outputs/design_decisions/` |
-| Universal delegation patterns | Principles, rules, stage guides | `../../.0agnostic/01_knowledge/principles/` |
-| ADS research | Delegation patterns, scope boundaries | `.../agent_delegation_system/` |
+| Universal delegation patterns | Principles, rules, stage guides | `../../../.0agnostic/01_knowledge/principles/` |
+| ADS research | Delegation patterns, scope boundaries | `../layer_0_01_systems/layer_0_better_ai_system/layer_0_group/layer_0_features/layer_0_feature_agent_delegation_system/` |
 
 ## Outputs
 
@@ -70,7 +70,7 @@ Load this context when:
 - User mentions: LangTrak agents, LangTrak dev system, LangTrak development agent
 - Working on: How AI agents should develop LangTrak features
 - Keywords: LangTrak layer agents, feature agent roles, LangTrak context chains
-- Entering: `layer_-1_langtrak_dev_agent_system/`
+- Entering: `/layer_-1_research/layer_0_group/layer_0_02_projects/layer_0_langtrak_dev_agent_system/`
 
 # ── Current Status ──
 

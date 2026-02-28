@@ -27,7 +27,7 @@ Workflow stages (01-11) for layer_0 level work:
 
 ### `layer_0_01_systems/`
 Research systems at the layer_0 level (foundational, reusable architectural constructs):
-- `layer_-1_better_ai_system` — SHIMI concepts, agent memory, multi-agent sync
+- `layer_0_better_ai_system` — SHIMI concepts, agent memory, multi-agent sync
 - `layer_-1_learning_simulation_system` — Learning simulation frameworks
 
 ### `layer_0_02_projects/`

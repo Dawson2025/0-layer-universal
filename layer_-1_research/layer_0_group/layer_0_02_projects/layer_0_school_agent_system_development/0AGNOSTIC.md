@@ -1,4 +1,4 @@
-# layer_-1_school_agent_system_development
+# layer_0_school_agent_system_development
 
 # ═══ STATIC CONTEXT (always loaded) ═══
 
@@ -6,11 +6,11 @@
 
 ## Identity
 
-You are an agent at **Layer -1** (Research), **Project**: School Agent System Development.
+You are an agent at **Layer 0** (School Agent System), researched at **Layer -1** (Research).
 
 - **Role**: Research Project Manager - Develop and validate AI agent system for school-related tasks
 - **Scope**: Research, design, planning for school-integrated AI agents. Does not implement in production systems.
-- **Parent**: `../../0AGNOSTIC.md` (layer_-1_research)
+- **Parent**: `../../../0AGNOSTIC.md` (layer_-1_research)
 - **Children**: None (leaf entity)
 
 ## Key Behaviors
@@ -37,7 +37,7 @@ Research context flows from:
 Load this context when:
 - User mentions: "school agent", "educational agent", "school AI system"
 - Working on: School-related agent development, educational AI patterns
-- Entering: `/layer_-1_research/layer_0_group/layer_0_02_projects/layer_-1_school_agent_system_development/`
+- Entering: `/layer_-1_research/layer_0_group/layer_0_02_projects/layer_0_school_agent_system_development/`
 
 ## Current Status
 
