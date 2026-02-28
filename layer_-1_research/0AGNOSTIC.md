@@ -9,7 +9,8 @@ You are an AI agent working within the layer_-1 (research) context. This layer c
 - **Layer_-1 metadata**: In `layer_-1_group/layer_-1_00_layer_registry/`
 - **Layer_-1 workflow stages**: In `layer_-1_group/layer_-1_99_stages/`
 - **Layer_0 research group**: In `layer_0_group/` (researching layer_0 structures)
-- **Layer_0 projects**: In `layer_0_group/layer_0_projects/` (research projects)
+- **Layer_0 systems**: In `layer_0_group/layer_0_systems/` (foundational architectural systems)
+- **Layer_0 projects**: In `layer_0_group/layer_0_projects/` (specific applications/initiatives)
 - **Layer_0 registry**: In `layer_0_group/layer_0_00_layer_registry/`
 - **Layer_0 workflow stages**: In `layer_0_group/layer_0_99_stages/`
 - **Active research**: See Active Research Projects section below
@@ -52,13 +53,18 @@ Research projects follow stages 01-11 (see Stage Navigation below).
 
 ## Active Research Projects
 
-All layer_0 research projects are organized in `layer_0_group/layer_0_projects/`:
+Layer_0 research is organized into two categories:
+
+### Layer_0 Systems
+Foundational, reusable architectural constructs in `layer_0_group/layer_0_systems/`:
 
 - **layer_-1_better_ai_system**: SHIMI concepts, agent memory, multi-agent sync
-- **layer_-1_langtrak_dev_agent_system**: Development of language tracking agent system
-- **layer_-1_learning_simulation_system**: Research on learning simulation frameworks
+- **layer_-1_learning_simulation_system**: Learning simulation frameworks and patterns
 
-Location: `layer_0_group/layer_0_projects/[project-name]/`
+### Layer_0 Projects
+Specific applications/initiatives in `layer_0_group/layer_0_projects/`:
+
+- **layer_-1_langtrak_dev_agent_system**: Development of language tracking agent system
 
 ## Quick Reference
 

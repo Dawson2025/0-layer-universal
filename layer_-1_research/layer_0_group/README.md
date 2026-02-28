@@ -25,11 +25,14 @@ Workflow stages (01-11) for layer_0 level work:
 - **10_current_product** — Validated layer_0 structure
 - **11_archives** — Completed research
 
-### `layer_0_projects/`
-Research projects at the layer_0 level:
+### `layer_0_systems/`
+Research systems at the layer_0 level (foundational, reusable architectural constructs):
 - `layer_-1_better_ai_system` — SHIMI concepts, agent memory, multi-agent sync
+- `layer_-1_learning_simulation_system` — Learning simulation frameworks
+
+### `layer_0_projects/`
+Research projects at the layer_0 level (specific applications/initiatives implementing systems):
 - `layer_-1_langtrak_dev_agent_system` — Language tracking agent system
-- `layer_-1_learning_simulation_system` — Learning simulation research
 
 ### `layer_0_features/` (optional)
 Reserved for future layer_0 features research.
