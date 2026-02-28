@@ -269,10 +269,57 @@ After creating the directory structure, create these files:
 | `stage_XX.orchestrator.gab.jsonld` | Each stage's `.0agnostic/06_context_avenue_web/01_file_based/01_aalang/` | Stage orchestrator | Create per stage |
 | `status_N.json` | `layer_N_99_stages/` | Stage workflow tracker | Create with stage status |
 
+## Groups vs Layers: Critical Distinction
+
+**CRITICAL ARCHITECTURAL RULE**: Only **actual layers** can have stages. **Groups are organizational containers and should NOT have stages.**
+
+### Actual Layer (Has Stages)
+An entity with its own layer number (e.g., layer_-1, layer_0, layer_1) is an actual layer:
+```
+layer_-1_better_ai_system/           # Entity with layer = -1
+├── layer_-1_group/                  # Entity internals
+│   └── layer_-1_99_stages/          # ✅ CORRECT: actual layer -1 has stages
+│       ├── stage_-1_01_request_gathering/
+│       ├── stage_-1_02_research/
+│       └── ... (stages 03-11)
+```
+
+### Group (NO Stages)
+A grouping container that organizes child entities is NOT a layer:
+```
+layer_0_group/                       # Organizational container for layer_0 research
+├── layer_0_00_layer_registry/       # Registry (metadata only, no stages)
+├── layer_0_01_systems/              # Container for system entities
+│   ├── layer_-1_better_ai_system/   # This IS a layer (-1), has its own stages
+│   └── layer_-1_learning_simulation_system/  # This IS a layer (-1), has its own stages
+└── layer_0_02_projects/             # Container for project entities
+    ├── layer_-1_langtrak_dev_agent_system/   # This IS a layer (-1), has its own stages
+    └── layer_-1_school_agent_system_development/  # This IS a layer (-1), has its own stages
+```
+
+**Key rules**:
+- `layer_0_group/` ❌ should NOT have `layer_0_99_stages/` (it's a group, not a layer)
+- `layer_-1_research/` ✅ SHOULD have `layer_-1_99_stages/` if layer_-1_research IS a layer entity
+- `layer_-1_better_ai_system/` (inside layer_0_group) ✅ SHOULD have `layer_-1_99_stages/` because it IS a layer_-1 entity
+- Groups exist to organize similar entities; stages belong to the entities themselves, NOT to the group
+
+### When Groups Appear
+Groups (`_group` suffix) organize content and appear in these contexts:
+1. **Entity internals**: `layer_N_group/` holds an entity's own organization (stages, registry)
+2. **Child containers**: `layer_N+1_group/` holds an entity's children
+3. **Research organization**: `layer_0_group/` organizes research into layer_0 (but is not itself a layer; child entities are the layers)
+
+### Naming Pattern
+- `layer_N/` — **Prohibited** (bare layer directory is wrong)
+- `layer_N_group/` — **Correct** (entity internal organization directory)
+- `layer_N_group/layer_N_99_stages/` — **Correct** (stages belong to the layer N entity)
+- `layer_X_group/layer_X_99_stages/` when layer_X_group is organizational only — **Prohibited** (groups don't have stages, their child entities do)
+
 ## Key Conventions
 
 - Internal content uses `layer_N_group/` with the **_group suffix** — NOT bare `layer_N/`
-- Stages go inside `layer_N_group/layer_N_99_stages/`, NOT at entity root
+- **ONLY ACTUAL LAYERS have stages**: Stages go inside `layer_N_group/layer_N_99_stages/` when N is the entity's own layer number
+- **GROUPS do NOT have stages** — groups are containers; their child entities have stages
 - **Entity-scoped resources live in `.0agnostic/`** with numbered subdirectories (01-07+)
 - Children go in `layer_N+1_group/`, with the child's own layer number = N+1
 - `N` always matches the entity's own layer: project=1, feature=2, research feature=0, etc.

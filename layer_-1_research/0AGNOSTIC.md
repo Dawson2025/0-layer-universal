@@ -9,8 +9,8 @@ You are an AI agent working within the layer_-1 (research) context. This layer c
 - **Layer_-1 metadata**: In `layer_-1_group/layer_-1_00_layer_registry/`
 - **Layer_-1 workflow stages**: In `layer_-1_group/layer_-1_99_stages/`
 - **Layer_0 research group**: In `layer_0_group/` (researching layer_0 structures)
-- **Layer_0 systems**: In `layer_0_group/layer_0_systems/` (foundational architectural systems)
-- **Layer_0 projects**: In `layer_0_group/layer_0_projects/` (specific applications/initiatives)
+- **Layer_0 systems**: In `layer_0_group/layer_0_01_systems/` (foundational architectural systems)
+- **Layer_0 projects**: In `layer_0_group/layer_0_02_projects/` (specific applications/initiatives)
 - **Layer_0 registry**: In `layer_0_group/layer_0_00_layer_registry/`
 - **Layer_0 workflow stages**: In `layer_0_group/layer_0_99_stages/`
 - **Active research**: See Active Research Projects section below
