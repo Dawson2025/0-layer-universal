@@ -1,40 +1,41 @@
 # Claude Code CLI — Complete Architecture
 
-**Date**: 2026-02-27
-**Focus**: How native mechanisms + application-implemented strategy work together
+**Date**: 2026-02-28
+**Focus**: How native mechanisms + application-implemented strategy work together in Claude Code CLI
 
 ---
 
 ## System Overview
 
-Claude Code combines **native mechanisms** (what it provides) with **application-implemented strategy** (what you provide):
+Claude Code CLI combines **native mechanisms** (what it provides) with **application-implemented strategy** (what you provide):
 
 ```
-┌─────────────────────────────────────────────────────────┐
-│  Claude Code CLI Native Mechanisms                       │
-├─────────────────────────────────────────────────────────┤
-│  • Hierarchical CLAUDE.md cascade                        │
-│  • MEMORY.md auto-injection (first 200 lines)           │
-│  • Context window tracking (200K default, 1M max)        │
-│  • Auto-compaction (transparent, automatic)             │
-│  • Subagents (parallel execution, isolated context)     │
-│  • MCP server connections (tool integration)            │
-│  • File @references (load on-demand)                    │
-│  • Skills system (reusable workflows)                   │
-│  • Commands (/context, /memory, /skill, etc.)          │
-└─────────────────────────────────────────────────────────┘
+┌─────────────────────────────────────────────────────┐
+│  Claude Code CLI Native Mechanisms                  │
+├─────────────────────────────────────────────────────┤
+│  • Hierarchical CLAUDE.md cascade                   │
+│  • MEMORY.md auto-injection (first 200 lines)      │
+│  • Context window tracking (200K default)           │
+│  • Auto-compaction (transparent, automatic)        │
+│  • Project identification via directory hash        │
+│  • MCP server connections (tool integration)       │
+│  • File @references (load on-demand)               │
+│  • Skills system (reusable workflows)              │
+│  • Commands (/context, /memory, /skill, etc.)     │
+│  • Conversation history (JSONL persistence)        │
+└─────────────────────────────────────────────────────┘
                            ↓
-┌─────────────────────────────────────────────────────────┐
-│  Your Application Strategy (What You Provide)           │
-├─────────────────────────────────────────────────────────┤
-│  • CLAUDE.md content (rules, triggers, resources)       │
-│  • MEMORY.md organization (what's essential?)           │
-│  • Skills design (reusable workflows)                   │
-│  • MCP server selection (which external tools?)         │
-│  • Subagent strategy (when to parallelize?)             │
-│  • Context management (static vs. dynamic)              │
-│  • File organization (structuring for @refs)            │
-└─────────────────────────────────────────────────────────┘
+┌─────────────────────────────────────────────────────┐
+│  Your Application Strategy (What You Provide)      │
+├─────────────────────────────────────────────────────┤
+│  • CLAUDE.md content (rules, triggers, resources)  │
+│  • MEMORY.md organization (what's essential?)      │
+│  • Skills design (reusable workflows)              │
+│  • MCP server selection (which external tools?)    │
+│  • Project organization (layers, stages, entities) │
+│  • Context management (static vs. dynamic)         │
+│  • File organization (structuring for @refs)       │
+└─────────────────────────────────────────────────────┘
                            ↓
                     Working System
 ```
@@ -46,14 +47,14 @@ Claude Code combines **native mechanisms** (what it provides) with **application
 ### Step 1: Session Initialization
 
 **Claude Code Does**:
-1. Recognize project (hashed from working directory)
+1. Recognize project via working directory hash
 2. Discover project ID: `[hash]`
 3. Look for: `~/.claude/projects/[hash]/`
 
 **You Must Have Done**:
-- Created project-specific directories
+- Created project-specific directories (or let Claude Code auto-create them)
 - Organized memory/config files
-- Set up initial state
+- Set up initial state (or use defaults)
 
 ### Step 2: Load Global Configuration
 
@@ -63,36 +64,46 @@ Claude Code combines **native mechanisms** (what it provides) with **application
 3. Parse rules, triggers, resources
 
 **You Must Have Done**:
-- Written ~/.claude/CLAUDE.md with universal rules
+- Written `~/.claude/CLAUDE.md` with universal rules
 - Defined triggers (when to load context)
 - Listed skills, resources, behaviors
 
 ### Step 3: Load Project CLAUDE.md
 
 **Claude Code Does**:
-1. Find `/project/CLAUDE.md` (if exists)
+1. Find `~/.claude/projects/[hash]/CLAUDE.md` (if exists)
 2. Merge with global CLAUDE.md
 3. Project-level rules override global rules
 
 **You Must Have Done**:
-- Written /project/CLAUDE.md with project-specific rules
-- Defined layer/stage context
+- Written `/project/CLAUDE.md` with project-specific rules (or omit if using global only)
+- Defined layer/stage context (if layered project)
 - Listed project-specific skills
 
-### Step 4: Load MEMORY.md
+### Step 4: Load Directory Chain CLAUDE.md
+
+**Claude Code Does**:
+1. Find `[CURRENT_DIR]/CLAUDE.md` (if exists)
+2. Walk up directory tree: parent, grandparent, ..., git root
+3. Merge all found files (higher priority = later in chain)
+
+**You Must Have Done**:
+- Created CLAUDE.md at layer/stage/entity levels (for hierarchical projects)
+- Documented layer-specific identity and context
+
+### Step 5: Load MEMORY.md (First 200 Lines)
 
 **Claude Code Does**:
 1. Find `~/.claude/projects/[hash]/memory/MEMORY.md`
 2. Read first 200 lines exactly
 3. Inject into system prompt
-4. Store full file for on-demand access
 
 **You Must Have Done**:
-- Created MEMORY.md with most important 200 lines first
+- Created MEMORY.md with most essential info in first 200 lines
 - Organized supplementary content after 200-line boundary
 - Updated MEMORY.md as you work
 
-### Step 5: Prepare for User Interaction
+### Step 6: Prepare for User Interaction
 
 **Claude Code Does**:
 1. Open context window
@@ -120,7 +131,7 @@ Claude Code combines **native mechanisms** (what it provides) with **application
 4. **Monitor** token usage
 5. **Generate** response
 6. **Update** state (if /remember used, /skill invoked, etc.)
-7. **Log** turn to history.jsonl
+7. **Log** turn to `~/.claude/projects/[hash]/history.jsonl`
 
 ### What You Do
 
@@ -140,7 +151,8 @@ At any point, your context window contains:
 ```
 ┌─ System Prompt (Claude Code's instructions)
 ├─ CLAUDE.md (global rules)
-├─ /project/CLAUDE.md (project rules, if exists)
+├─ ~/.claude/projects/[hash]/CLAUDE.md (project rules, if exists)
+├─ [CURRENT_DIR]/CLAUDE.md chain (directory hierarchy, if exists)
 ├─ MEMORY.md (first 200 lines)
 ├─ Conversation history (previous turns in session)
 ├─ Loaded files (@file, @folder references)
@@ -154,6 +166,7 @@ At any point, your context window contains:
 - ~5K: System prompt + instructions
 - ~3K: CLAUDE.md (global)
 - ~2K: CLAUDE.md (project)
+- ~2K: CLAUDE.md (directory chain, if deep)
 - ~2K: MEMORY.md (first 200 lines)
 - ~X: Conversation history (grows as you talk)
 - ~Y: Loaded files (depends on what you @reference)
@@ -187,6 +200,43 @@ Conversation resumes with freed tokens
 ```
 
 **Result**: Context shrinks but continues seamlessly.
+
+---
+
+## Project Structure and Storage
+
+### Local Storage Locations
+
+```
+~/.claude/
+├── CLAUDE.md                          (Global context, always loaded)
+├── keybindings.json                   (Global keybindings)
+├── settings.json                      (Global settings)
+│
+└── projects/
+    └── [PROJECT_HASH]/
+        ├── CLAUDE.md                  (Project context, if exists)
+        ├── 0INDEX.md                  (Current state tracking)
+        ├── status.json                (Project metadata)
+        ├── memory/
+        │   └── MEMORY.md              (Project memory, first 200 lines auto-loaded)
+        └── history.jsonl              (Conversation history, all turns)
+```
+
+### Project Hash
+
+Claude Code computes a **deterministic hash** from the working directory:
+
+```
+Working Directory: /home/dawson/dawson-workspace/code/0_layer_universal
+  ↓ (hash function)
+Project Hash: a1b2c3d4e5f6 (stable, same path = same hash)
+  ↓
+Project Directory: ~/.claude/projects/a1b2c3d4e5f6/
+```
+
+**Same directory = same hash** (allows resuming work across sessions)
+**Different directory = different hash** (separate project context)
 
 ---
 
@@ -312,7 +362,34 @@ Claude Code searches:
 **Your Responsibility**:
 - Install/configure MCP server
 - Provide credentials (API keys)
-- Claude handles the rest
+- Claude Code handles the rest
+
+---
+
+## Conversation History
+
+Claude Code automatically persists all conversations:
+
+```
+Location: ~/.claude/projects/[HASH]/history.jsonl
+
+Format: JSON Lines (one JSON object per line)
+
+Each turn contains:
+  • User message
+  • Claude response
+  • Timestamp
+  • Model used
+  • Token usage
+  • Any state changes
+
+On Resumption:
+  • Load previous turns from history
+  • Resume conversation at last turn
+  • Full history available for reference
+```
+
+**Note**: History is stored locally, never uploaded to Anthropic servers (stays on your machine).
 
 ---
 
@@ -332,7 +409,8 @@ Claude Code searches:
 - Use subagents for large parallel work
 
 **Cost Awareness**:
-- Every token costs money (even small projects)
+- Claude Code with 200K context is free tier (capped usage)
+- Pro subscription enables higher usage
 - Auto-compaction reduces waste
 - Lean context = more room for conversation
 - Parallelization (subagents) = token efficiency
