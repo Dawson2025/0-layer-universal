@@ -6,9 +6,12 @@ You are an AI agent working within the layer_-1 (research) context. This layer c
 ## Navigation
 - **Detailed resources**: `.0agnostic/` folder
 - **Universal rules**: Inherit from `../.0agnostic/rules/`
-- **Research projects**: In `layer_-1_features/` directory (organized as layer_-1 features)
-- **Layer metadata**: In `layer_-1_group/layer_-1_00_layer_registry/`
-- **Workflow stages**: In `layer_-1_group/layer_-1_99_stages/`
+- **Layer_-1 metadata**: In `layer_-1_group/layer_-1_00_layer_registry/`
+- **Layer_-1 workflow stages**: In `layer_-1_group/layer_-1_99_stages/`
+- **Layer_0 research group**: In `layer_0_group/` (researching layer_0 structures)
+- **Layer_0 projects**: In `layer_0_group/layer_0_projects/` (research projects)
+- **Layer_0 registry**: In `layer_0_group/layer_0_00_layer_registry/`
+- **Layer_0 workflow stages**: In `layer_0_group/layer_0_99_stages/`
 - **Active research**: See Active Research Projects section below
 
 ## Key Behaviors
@@ -49,13 +52,13 @@ Research projects follow stages 01-11 (see Stage Navigation below).
 
 ## Active Research Projects
 
-All research projects are organized in `layer_-1_features/`:
+All layer_0 research projects are organized in `layer_0_group/layer_0_projects/`:
 
 - **layer_-1_better_ai_system**: SHIMI concepts, agent memory, multi-agent sync
 - **layer_-1_langtrak_dev_agent_system**: Development of language tracking agent system
 - **layer_-1_learning_simulation_system**: Research on learning simulation frameworks
 
-Location: `layer_-1_features/[project-name]/`
+Location: `layer_0_group/layer_0_projects/[project-name]/`
 
 ## Quick Reference
 
