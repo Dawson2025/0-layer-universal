@@ -1,97 +1,98 @@
-# Setup-Dependent (02) Overview
+# Setup-Dependent Hierarchy Overview
 
-## What Is Setup-Dependent?
+## Overview
 
-Setup-Dependent context covers all aspects of the specific environment and configuration where the system runs. It's organized hierarchically from foundational (OS) to specific (plugins and tools).
+Setup-dependent context captures what's specific to YOUR environment and configuration, layered on top of the core system (01-05). This hierarchical structure moves from foundational (operating system) to specific (individual tools and plugins).
 
-## Why It's Needed
+## Hierarchy Ordering
 
-The core system contains **universal** context. But every system runs in a **specific environment**:
-- Different operating systems (Linux, macOS, Windows)
-- Different shells and configurations
-- Different coding apps and IDEs
-- Different AI services and APIs
-- Different local tools and MCP servers
-- Different plugins and extensions
+The numbering follows a progression from foundational to specific:
 
-Setup-Dependent context adapts the universal core system for these specific circumstances.
+```
+01_os/                    ← Foundation: Operating system (Linux, macOS, Windows)
+  ↓
+02_environment/           ← Shell configuration, PATH, env vars, system settings
+  ↓
+03_coding_apps/           ← IDEs and code editors (Cursor, Antigravity, NeoVim, VS Code)
+  ↓
+04_ai_apps/               ← AI service CLI tools (Claude Code, Codex, Gemini, Cursor Agent)
+  ↓
+05_plugins/               ← Extensions for both coding apps AND AI apps
+  ↓
+06_mcp_servers/           ← Model Context Protocol server configs and connections
+  ↓
+07_tools_and_apis/        ← External tools, utilities, API integrations
+  ↓
+08_other_setup_specifics/ ← Additional environment-dependent context
+```
 
-## Hierarchical Organization
-
-Setup-Dependent is organized from broadest to most specific:
+## What Each Layer Contains
 
 ### 01_os/
-Operating system specifics (Linux, macOS, Windows)
-- File paths and separators
-- Shell differences
-- System-level configuration
-- OS-specific tools and behaviors
+Operating system specifics:
+- Linux, macOS, Windows path conventions
+- OS-specific command syntax
+- System utilities and built-in tools
+- Desktop environment settings (GNOME, KDE, etc.)
+- Package managers and installation procedures
 
 ### 02_environment/
-Shell and environment configuration
-- PATH variables
-- Environment variables
-- Shell configuration files (.bashrc, .zshrc, etc.)
-- Shell-specific behaviors and aliases
+Shell and system environment:
+- Shell type and version (.bashrc, .zshrc, .config/fish, etc.)
+- PATH configuration
+- Environment variables (HOME, USER, SHELL, etc.)
+- System PATH additions and precedence
+- Shell aliases and functions
+- Terminal emulator settings
 
 ### 03_coding_apps/
-IDE and coding editor configuration
-- Cursor IDE
-- Antigravity IDE
-- NeoVim
-- VS Code
-- Other code editors and terminals
-- Editor-specific keybindings, themes, settings
+IDE and code editor configurations:
+- Cursor IDE settings and extensions
+- Antigravity IDE configuration
+- NeoVim keybindings and plugins
+- VS Code settings and extensions
+- Other code editor setups
+- Editor-specific file associations
 
 ### 04_ai_apps/
-AI service and application configuration (CLI and services)
-- Claude Code CLI
-- Codex CLI
-- Gemini CLI
-- Cursor Agent CLI
-- Claude.ai (web interface)
-- Perplexity
-- Other AI services
-- API keys, authentication, preferences
+AI service CLI tool configurations:
+- Claude Code CLI setup and authentication
+- Codex CLI configuration
+- Gemini CLI setup
+- Cursor Agent CLI configuration
+- Other AI app CLI tools
+- API key management and authentication
 
 ### 05_plugins/
-Plugins and extensions for both coding apps and AI apps
-- **Coding app plugins**: VS Code extensions, Cursor extensions, NeoVim plugins, IDE-specific add-ons
-- **AI app plugins**: Claude plugins, Perplexity plugins, ChatGPT plugins, AI service extensions
-- Third-party integrations for either type
+Extensions and plugins for both coding apps and AI apps:
+- **Coding app plugins**: VS Code extensions, Cursor extensions, NeoVim plugins
+- **AI app plugins**: Claude plugins, Perplexity plugins, custom integrations
+- Plugin configuration and activation
+- Plugin compatibility matrix
 
 ### 06_mcp_servers/
-Model Context Protocol server configuration
-- Which servers are enabled
-- Server-specific configuration
-- Tool availability per server
-- Authentication and API keys
+Model Context Protocol server configurations:
+- MCP server configurations (Canvas, Perplexity, Browser, etc.)
+- Server authentication and connection details
+- Server availability and health checks
+- Custom MCP server integrations
 
 ### 07_tools_and_apis/
-External tools, utilities, and API integrations
-- Development tools (git, npm, etc.)
-- External APIs (GitHub, Slack, etc.)
-- Utilities and command-line tools
-- API keys and authentication
+External tools and API integrations:
+- External CLI tools and utilities
+- API keys and credential management
+- Service integrations (GitHub, GitLab, etc.)
+- Tool-specific configuration files
+- Custom scripts and wrapper utilities
 
 ### 08_other_setup_specifics/
-Additional setup-specific context
-- Hardware specifications (if relevant)
-- Custom configurations
-- Local overrides
-- Environment-specific rules and behaviors
+Additional environment-dependent context:
+- Machine-specific quirks and workarounds
+- Network and proxy configuration
+- Custom aliases and convenience scripts
+- Hardware-specific settings (display, keyboard, etc.)
+- Anything else setup-dependent that doesn't fit elsewhere
 
-## How It Relates to Core System
+## Next Step
 
-**Core System** defines WHAT should happen universally.
-**Setup-Dependent** defines HOW it happens in this specific environment.
-
-Example:
-- **Core**: "Use git for version control" (core protocol)
-- **Setup-Dependent**: "Git is installed at /usr/bin/git on Linux" (os-specific)
-
-## Integration
-
-Setup-Dependent context feeds into the Context Avenue Web, which then uses both core system and setup-dependent information to create avenue-specific versions.
-
-The .1merge system then uses both to create AI app-specific final versions.
+After understanding the hierarchy, read individual subdirectory READMEs for specific details about what each section contains.
