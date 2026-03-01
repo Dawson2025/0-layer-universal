@@ -33,9 +33,9 @@ Environment and configuration-specific context organized hierarchically:
 - **02_environment/**: Shell environment, PATH, system settings
 - **03_coding_apps/**: Claude Code, Cursor, Gemini IDE, etc.
 - **04_ai_apps/**: Claude, Perplexity, etc.
-- **05_mcp_servers/**: Model Context Protocol server configurations
-- **06_tools_and_apis/**: External tools, utilities, APIs
-- **07_plugins/**: IDE plugins, extensions, add-ons
+- **05_plugins/**: IDE plugins, extensions, add-ons
+- **06_mcp_servers/**: Model Context Protocol server configurations
+- **07_tools_and_apis/**: External tools, utilities, APIs
 - **08_other_setup_specifics/**: Additional setup context
 
 ### 3. Context Avenue Web (03_context_avenue_web/)

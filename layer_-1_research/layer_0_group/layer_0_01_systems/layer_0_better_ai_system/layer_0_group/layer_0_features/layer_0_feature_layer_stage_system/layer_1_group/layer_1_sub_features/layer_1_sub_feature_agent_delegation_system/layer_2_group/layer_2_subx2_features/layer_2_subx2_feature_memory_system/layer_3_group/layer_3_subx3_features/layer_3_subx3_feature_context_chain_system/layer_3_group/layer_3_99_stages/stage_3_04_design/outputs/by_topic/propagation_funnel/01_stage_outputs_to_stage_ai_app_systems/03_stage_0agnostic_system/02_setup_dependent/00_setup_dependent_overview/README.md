@@ -51,26 +51,26 @@ AI service and application configuration
 - Other AI services
 - API keys, authentication, preferences
 
-### 05_mcp_servers/
+### 05_plugins/
+IDE plugins, extensions, and add-ons
+- VS Code extensions
+- Cursor extensions
+- IDE-specific plugins
+- Third-party integrations
+
+### 06_mcp_servers/
 Model Context Protocol server configuration
 - Which servers are enabled
 - Server-specific configuration
 - Tool availability per server
 - Authentication and API keys
 
-### 06_tools_and_apis/
+### 07_tools_and_apis/
 External tools, utilities, and API integrations
 - Development tools (git, npm, etc.)
 - External APIs (GitHub, Slack, etc.)
 - Utilities and command-line tools
 - API keys and authentication
-
-### 07_plugins/
-IDE plugins, extensions, and add-ons
-- VS Code extensions
-- Cursor extensions
-- IDE-specific plugins
-- Third-party integrations
 
 ### 08_other_setup_specifics/
 Additional setup-specific context
