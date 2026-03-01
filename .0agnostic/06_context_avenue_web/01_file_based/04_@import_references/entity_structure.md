@@ -105,10 +105,16 @@ Every entity (project, feature, component, research project) follows this canoni
 │       ├── layer_N_99_stages.orchestrator.gab.jsonld       # Stages orchestrator
 │       └── stage_N_XX_name/               # Each stage (00-11, see Stage Structure below)
 │
-└── layer_N+1_group/                       # Children (if entity has children)
-    ├── layer_N+1_components/              # Or layer_N+1_features/ or layer_N+1_sub_features/
-    └── layer_N+1_00_layer_registry/
-        └── proposals/
+└── layer_N+1_group/                       # Children & Further Layering (if entity has children)
+    ├── layer_N+1_00_layer_registry/       # Registry of layer_N+1 organization
+    │   └── proposals/
+    ├── layer_N+1_01_features/             # ✅ Grouping container for features (or projects, components, etc.)
+    │   ├── layer_N+2_feature_one/         # Each feature IS a layer_N+2 entity
+    │   ├── layer_N+2_feature_two/
+    │   └── ...
+    ├── layer_N+1_02_projects/             # ✅ Optional: grouping container for projects
+    │   └── [similar structure]
+    └── [other grouping containers as needed]  # ✅ Multiple organizational groupings allowed
 ```
 
 ## Stage Structure
@@ -269,9 +275,44 @@ After creating the directory structure, create these files:
 | `stage_XX.orchestrator.gab.jsonld` | Each stage's `.0agnostic/06_context_avenue_web/01_file_based/01_aalang/` | Stage orchestrator | Create per stage |
 | `status_N.json` | `layer_N_99_stages/` | Stage workflow tracker | Create with stage status |
 
+## Further Layering: Multiple Organizational Groupings
+
+**KEY PATTERN**: An entity's `layer_N+1_group/` can contain **multiple numbered grouping containers** (features, projects, components) alongside the registry. Each grouping container organizes child entities of type layer_N+2.
+
+### Multiple Grouping Containers Example
+
+```
+layer_0_entity/                            # layer_0 entity
+├── layer_0_group/                         # Entity's internal structure
+│   ├── layer_0_00_layer_registry/         # Registry (metadata only)
+│   └── layer_0_99_stages/                 # ✅ Stages for layer_0
+│       ├── stage_0_01_request_gathering/
+│       └── ... (stages 02-11)
+│
+└── layer_1_group/                         # Further layering container
+    ├── layer_1_00_layer_registry/         # Registry of layer_1 organization
+    ├── layer_1_01_features/               # ✅ Grouping container for features
+    │   ├── layer_2_feature_auth/          # Feature IS layer_2 entity
+    │   │   ├── layer_2_group/
+    │   │   │   └── layer_2_99_stages/     # ✅ Stages for this layer_2 feature
+    │   │   └── layer_3_group/             # Its children are layer_3
+    │   └── layer_2_feature_database/      # Another layer_2 feature
+    ├── layer_1_02_projects/               # ✅ Grouping container for projects
+    │   ├── layer_2_project_one/           # Project IS layer_2 entity
+    │   └── layer_2_project_two/
+    └── [other groupings as needed]        # ✅ layer_1_03_*, layer_1_04_*, etc.
+```
+
+**Key Rules**:
+- `layer_N_group/` (entity's own internal structure) = contains ONLY `layer_N_00_layer_registry/` and `layer_N_99_stages/`
+- `layer_N+1_group/` (further layering container) = contains `layer_N+1_00_layer_registry/` and **multiple numbered grouping containers** (01_features, 02_projects, 03_components, etc.)
+- Each numbered grouping container holds layer_N+2 child entities
+- A grouping container (e.g., `layer_1_01_features/`) is NOT a layer — it's an organizational directory
+- Each child entity (e.g., `layer_2_feature_auth/`) IS a layer and has its own `layer_2_99_stages/`
+
 ## Groups vs Layers: Critical Distinction
 
-**CRITICAL ARCHITECTURAL RULE**: Only **actual layers** can have stages. **Groups are organizational containers and should NOT have stages.**
+**CRITICAL ARCHITECTURAL RULE**: Only **actual layers** can have stages. **Groups and grouping containers are organizational containers and should NOT have stages.**
 
 ### Actual Layer (Has Stages)
 An entity with its own layer number (e.g., layer_-1, layer_0, layer_1) is an actual layer:
@@ -338,17 +379,41 @@ Groups (`_group` suffix) organize content and appear in these contexts:
 - `layer_N_group/layer_N_99_stages/` — **Correct** (stages belong to the layer N entity)
 - `layer_X_group/layer_X_99_stages/` when layer_X_group is organizational only — **Prohibited** (groups don't have stages, their child entities do)
 
+### The Critical Distinction: Groups vs Layers
+
+**This is the most common mistake in the system.** Always ask: **Is this a GROUP or a LAYER?**
+
+| Feature | Layer | Group |
+|---------|-------|-------|
+| **Definition** | An actual entity with its own layer number | An organizational container for entities |
+| **Has stages?** | ✅ YES — `layer_N_99_stages/` | ❌ NO — never have stages |
+| **Has 0AGNOSTIC.md?** | ✅ YES — defines entity identity | ✅ YES (optional) — defines organizational purpose |
+| **Example** | `layer_0_better_ai_system/` (layer = 0) | `layer_1_group/` (NOT a layer, just container) |
+| **Directory suffix** | Any name | MUST end with `_group` |
+| **Child relationship** | Has parent `0AGNOSTIC.md` | Organizes child entities of type layer_N+2 |
+
+**Examples**:
+- ✅ `layer_0_entity/layer_0_group/layer_0_99_stages/` = Layer 0 entity with its stages
+- ❌ `layer_1_group/layer_1_99_stages/` = **WRONG** — group should NOT have stages
+- ✅ `layer_1_group/layer_1_01_features/layer_2_feature_one/layer_2_group/layer_2_99_stages/` = Layer 1 grouping container organizing layer 2 feature entities, each with their own stages
+- ❌ `layer_1_01_features/layer_1_99_stages/` = **WRONG** — grouping container should NOT have stages
+
+**To remember**: If you're creating `layer_N_99_stages/`, you MUST be inside a `layer_N_group/` that belongs to a **layer_N entity**. If it's just a grouping container (like `layer_1_01_features/`), it has NO stages.
+
 ## Key Conventions
 
 - Internal content uses `layer_N_group/` with the **_group suffix** — NOT bare `layer_N/`
 - **ONLY ACTUAL LAYERS have stages**: Stages go inside `layer_N_group/layer_N_99_stages/` when N is the entity's own layer number
 - **GROUPS do NOT have stages** — groups are containers; their child entities have stages
-- **Further layering exists in `layer_N+1_group`**: Features, projects, components organized under `layer_N+1_group/` (not under `layer_N_group/`)
-- **Entity internals stay minimal**: `layer_N_group/` contains ONLY `layer_N_00_layer_registry/` and `layer_N_99_stages/`
+- **Grouping containers are organizational only**: `layer_N_01_features/`, `layer_N_02_projects/` organize child entities but have NO stages themselves
+- **Further layering exists in `layer_N+1_group`**: Multiple numbered grouping containers (01_features, 02_projects, 03_components) organize child layer_N+2 entities
+- **Entity internals stay minimal**: `layer_N_group/` contains ONLY `layer_N_00_layer_registry/` and `layer_N_99_stages/` (NO child entities)
+- **Child entities are separate from further layering**: Each child entity is a complete layer_N+1 entity with its own `.0agnostic/`, `.1merge/`, stages, etc.
 - **Entity-scoped resources live in `.0agnostic/`** with numbered subdirectories (01-07+)
-- Children go in `layer_N+1_group/`, with the child's own layer number = N+1
+- Children go in `layer_N+1_group/`, organized by type in numbered grouping containers (01_features, 02_projects, etc.)
 - `N` always matches the entity's own layer: project=1, feature=2, research feature=0, etc.
 - **Stages only at entity layer**: If a `layer_N` entity has children, stages stay at `layer_N_group/layer_N_99_stages/`, not in `layer_N+1_group/`
+- **Multiple grouping containers allowed**: An entity can have `layer_N_01_features/`, `layer_N_02_projects/`, `layer_N_03_components/` all at the same level inside `layer_N+1_group/`
 - Knowledge is organized per-topic: each topic in `01_knowledge/` has `principles/`, `docs/`, `resources/{templates,tools/scripts}`
 - Rules always has `static/` (always-on constraints) and `dynamic/` (trigger-based with protocol pointers) subdirectories
 - Episodic memory is always named `episodic_memory/` (NOT `episodic/`)

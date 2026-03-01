@@ -11,7 +11,7 @@ You are an agent at **Layer 0** (School Agent System), researched at **Layer -1*
 - **Role**: Research Project Manager - Develop and validate AI agent system for school-related tasks
 - **Scope**: Research, design, planning for school-integrated AI agents. Does not implement in production systems.
 - **Parent**: `../../../0AGNOSTIC.md` (layer_-1_research)
-- **Children**: None (leaf entity)
+- **Children**: Layer_1 organizational group (layer_1_group/) for layer_2 feature entities
 
 ## Key Behaviors
 
@@ -41,9 +41,9 @@ Load this context when:
 
 ## Current Status
 
-**Phase**: Active - Entity infrastructure created, directory structure established | **Last Updated**: 2026-02-28
+**Phase**: Active - Layer_1 project structure initialized | **Last Updated**: 2026-02-28
 
-Structure created with full `.0agnostic/` system (01_knowledge through 07+_setup_dependant), layer_-1_group with registry and 11 workflow stages. Ready to begin research and development phases. Integration with parent layer_0 systems and layer_-1_research planned.
+Entity infrastructure complete with full `.0agnostic/` system (01_knowledge through 07+_setup_dependant), layer_-1_group with registry and 11 workflow stages, and newly created layer_1_group with registry and feature organization container. Ready for layer_2 feature entity creation and research phases.
 
 # ═══ DYNAMIC CONTEXT (loaded on-demand) ═══
 
@@ -55,9 +55,11 @@ Structure created with full `.0agnostic/` system (01_knowledge through 07+_setup
 
 - ✅ Directory structure created
 - ✅ .0agnostic/ scaffold in place
-- ✅ layer_-1_group with registry and stages created
-- ⏳ 0AGNOSTIC.md initialization in progress
+- ✅ layer_-1_group with registry and stages created (research layer)
+- ✅ layer_1_group with registry and feature container created (projects layer)
+- ✅ 0AGNOSTIC.md initialization complete
 - ⏳ CLAUDE.md auto-generation pending
+- ⏳ Layer_2 feature entity creation pending
 - ⏳ Initial research phase documentation pending
 
 ### Planned Workflow
@@ -96,7 +98,10 @@ Structure created with full `.0agnostic/` system (01_knowledge through 07+_setup
 | Research layer organization | `../../0AGNOSTIC.md` |
 | Layer_0 group resources | `../../README.md` |
 | Projects directory | `../README.md` |
-| Workflow stages | `layer_-1_group/layer_-1_99_stages/` |
+| Research workflow stages | `layer_-1_group/layer_-1_99_stages/` |
+| Project organization (Layer 1) | `layer_1_group/0AGNOSTIC.md` |
+| Layer 1 registry | `layer_1_group/layer_1_00_layer_registry/0REGISTRY.md` |
+| Feature container (for Layer 2 entities) | `layer_1_group/layer_1_01_features/` |
 
 ## On Exit
 
