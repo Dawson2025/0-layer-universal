@@ -420,6 +420,27 @@ Groups (`_group` suffix) organize content and appear in these contexts:
 | **Directory suffix** | Any name | MUST end with `_group` |
 | **Child relationship** | Has parent `0AGNOSTIC.md` | Organizes child entities of type layer_N+2 |
 
+#### Stages Placement Rule (CRITICAL)
+
+**This rule eliminates confusion about where stages belong:**
+
+- **`layer_N_group/` (entity's internal structure) CAN and SHOULD have `layer_N_99_stages/`**
+  - Example: `layer_0_better_ai_system/layer_0_group/layer_0_99_stages/` ✅
+  - This is the entity's own workflow
+  - Stages are numbered `stage_N_01`, `stage_N_02`, etc.
+
+- **`layer_N+1_group/` (further layering container) MUST NOT have `layer_N+1_99_stages/`**
+  - Example: ❌ `layer_0_better_ai_system/layer_1_group/layer_1_99_stages/` (WRONG)
+  - `layer_N+1_group/` is just an organizational container, NOT a layer
+  - This violates the structure and confuses the hierarchy
+
+- **Individual child entities INSIDE `layer_N+1_group/` SHOULD have their own stages**
+  - Example: `layer_0_better_ai_system/layer_1_group/layer_1_01_features/layer_1_feature_auth/layer_1_group/layer_1_99_stages/` ✅
+  - Each `layer_1_feature_*` is a layer_1 entity with its own internal structure
+  - Each has its own `layer_1_group/layer_1_99_stages/` for its workflow
+
+**Quick test**: If you're about to create `layer_X_99_stages/`, ask yourself: "Is the parent directory itself a layer_X entity, or is it just a container?" If it's just a container (like `layer_1_group/` in a layer_0 entity), DO NOT add stages there.
+
 **Examples**:
 - ✅ `layer_0_entity/layer_0_group/layer_0_99_stages/` = Layer 0 entity with its stages
 - ❌ `layer_1_group/layer_1_99_stages/` = **WRONG** — group should NOT have stages
