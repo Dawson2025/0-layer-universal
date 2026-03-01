@@ -297,17 +297,41 @@ layer_0_group/                       # Organizational container for layer_0 rese
     └── layer_-1_school_agent_system_development/  # This IS a layer (-1), has its own stages
 ```
 
+**Entity with both internal and child containers:**
+```
+layer_0_better_ai_system/            # layer_0 entity
+├── layer_0_group/                   # ✅ Entity's internal group (has stages)
+│   ├── layer_0_00_layer_registry/
+│   ├── layer_0_99_stages/           # ✅ Stages for layer_0 entity
+│   │   ├── stage_0_01_request_gathering/
+│   │   └── ... (stages 02-11)
+│   └── layer_0_features/            # (optional) Further layering into layer_0
+│
+└── layer_1_group/                   # ✅ Container for layer_1 children (NO stages)
+    ├── layer_1_00_layer_registry/   # Registry of layer_1 organization
+    ├── layer_1_features/            # ✅ Further layering: features belong here (container for layer_1)
+    ├── layer_1_projects/            # ✅ Further layering: projects belong here (container for layer_1)
+    └── [NO layer_1_99_stages]       # ❌ Groups do NOT have stages
+```
+
 **Key rules**:
 - `layer_0_group/` ❌ should NOT have `layer_0_99_stages/` (it's a group, not a layer)
 - `layer_-1_research/` ✅ SHOULD have `layer_-1_99_stages/` if layer_-1_research IS a layer entity
 - `layer_-1_better_ai_system/` (inside layer_0_group) ✅ SHOULD have `layer_-1_99_stages/` because it IS a layer_-1 entity
+- `layer_1_group/` ❌ should NOT have `layer_1_99_stages/` (it's a container group, not a layer)
+- `layer_1_features/`, `layer_1_projects/` ✅ SHOULD be inside `layer_1_group/` (further layering into layer_1)
 - Groups exist to organize similar entities; stages belong to the entities themselves, NOT to the group
+- **Further layering** (features, projects, components) belongs in the `layer_N+1_group/` of an entity, providing organizational structure for layer_N+1 children
 
 ### When Groups Appear
 Groups (`_group` suffix) organize content and appear in these contexts:
-1. **Entity internals**: `layer_N_group/` holds an entity's own organization (stages, registry)
-2. **Child containers**: `layer_N+1_group/` holds an entity's children
+1. **Entity internals**: `layer_N_group/` holds an entity's own organization (stages, registry, optional further layering like features/projects)
+2. **Child containers**: `layer_N+1_group/` holds an entity's children and their organizational structure (features, projects, components, but NO stages)
 3. **Research organization**: `layer_0_group/` organizes research into layer_0 (but is not itself a layer; child entities are the layers)
+
+**Important distinction:**
+- `layer_N_group/` = entity's own infrastructure — INCLUDES `layer_N_99_stages/`
+- `layer_N+1_group/` = container for layer_N+1 children — includes `layer_N+1_features/`, `layer_N+1_projects/`, etc. but NOT `layer_N+1_99_stages/` (stages belong to individual layer_N+1 entities, not the container)
 
 ### Naming Pattern
 - `layer_N/` — **Prohibited** (bare layer directory is wrong)
@@ -320,9 +344,11 @@ Groups (`_group` suffix) organize content and appear in these contexts:
 - Internal content uses `layer_N_group/` with the **_group suffix** — NOT bare `layer_N/`
 - **ONLY ACTUAL LAYERS have stages**: Stages go inside `layer_N_group/layer_N_99_stages/` when N is the entity's own layer number
 - **GROUPS do NOT have stages** — groups are containers; their child entities have stages
+- **Further layering goes IN groups**: `layer_N+1_group/` contains `layer_N+1_features/`, `layer_N+1_projects/`, etc. (organizational structure for layer_N+1 children, but NOT stages)
 - **Entity-scoped resources live in `.0agnostic/`** with numbered subdirectories (01-07+)
 - Children go in `layer_N+1_group/`, with the child's own layer number = N+1
 - `N` always matches the entity's own layer: project=1, feature=2, research feature=0, etc.
+- **Stages at entity level only**: If a `layer_N` entity has children, stages stay at `layer_N_group/layer_N_99_stages/`, not in `layer_N+1_group/`
 - Knowledge is organized per-topic: each topic in `01_knowledge/` has `principles/`, `docs/`, `resources/{templates,tools/scripts}`
 - Rules always has `static/` (always-on constraints) and `dynamic/` (trigger-based with protocol pointers) subdirectories
 - Episodic memory is always named `episodic_memory/` (NOT `episodic/`)
