@@ -1,4 +1,14 @@
-# Layers Explained
+# Layers Explained — CANONICAL SOURCE POINTER
+
+This file has been replaced with a pointer to the canonical source.
+
+**[READ CANONICAL LAYERS_EXPLAINED.md](../../../../../../../../../../../../../../../.0agnostic/01_knowledge/layer_stage_system/LAYERS_EXPLAINED.md)**
+
+---
+
+All layer definitions, numbering, hierarchy rules, and naming conventions are maintained in a single location to prevent inconsistency.
+
+This pointer file directs you to the current production definition.
 
 ## What is a Layer?
 

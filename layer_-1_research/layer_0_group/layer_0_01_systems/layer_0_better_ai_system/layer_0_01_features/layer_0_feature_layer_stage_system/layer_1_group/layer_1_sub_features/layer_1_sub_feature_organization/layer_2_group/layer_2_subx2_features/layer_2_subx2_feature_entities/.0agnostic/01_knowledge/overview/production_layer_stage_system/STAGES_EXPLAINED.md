@@ -1,4 +1,14 @@
-# Stages Explained
+# Stages Explained — CANONICAL SOURCE POINTER
+
+This file has been replaced with a pointer to the canonical source.
+
+**[READ CANONICAL STAGES_EXPLAINED.md](../../../../../../../../../../../../../../../.0agnostic/01_knowledge/layer_stage_system/STAGES_EXPLAINED.md)**
+
+---
+
+All stage definitions, workflows, numbering, and best practices are maintained in a single location to prevent drift and inconsistency.
+
+This pointer file directs you to the current production definition.
 
 ## Overview
 
