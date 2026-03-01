@@ -58,23 +58,10 @@ layer_-1_research/
 
 ## Layer Structure
 
-Every layer entity has the same basic structure:
+**For the complete canonical entity structure**, see:
+`.0agnostic/06_context_avenue_web/01_file_based/04_@import_references/entity_structure.md`
 
-```
-layer_N_<type>_<name>/
-├── 0AGNOSTIC.md              # Identity
-├── 0INDEX.md                 # Contents
-├── CLAUDE.md                 # Tool context
-├── .0agnostic/               # AI config (01_knowledge, 02_rules, 03_protocols, etc.)
-├── layer_N_group/            # THIS layer's internal structure (MINIMAL)
-│   ├── layer_N_00_layer_registry/     # Registry only
-│   └── layer_N_99_stages/             # Workflow stages only
-└── layer_N+1_group/          # Further layering (CHILDREN container)
-    ├── layer_N+1_00_layer_registry/
-    ├── layer_N+1_01_features/         # Grouping container for features
-    ├── layer_N+1_02_projects/         # (optional)
-    └── layer_N+1_03_components/       # (optional)
-```
+That document is the **single source of truth** and includes full directory trees, mkdir templates, and complete file examples. This section provides the conceptual framework; the canonical reference provides the implementation details.
 
 ## The Two Group Folders
 

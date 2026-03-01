@@ -2,6 +2,20 @@
 
 This is the **single source of truth** for entity directory structure in the layer-stage system. All entity creation tools, skills, guides, and constraints reference this file.
 
+## Where This Is Referenced
+
+This document is the **single source of truth**. Other guidance documents reference it:
+
+| Document | Purpose | Reference |
+|----------|---------|-----------|
+| INSTANTIATION_GUIDE.md | How to create new entities | "See entity_structure.md for full structure, mkdir template" |
+| LAYERS_EXPLAINED.md | Conceptual layer model | "See entity_structure.md for complete structure" |
+| ENTITY_TYPES.md | Type-specific variations | "Built on top of entity_structure.md canonical base" |
+
+**Key Principle**: When you change entity_structure.md, the referenced docs automatically point to the updated version. No duplication = no drift.
+
+---
+
 ## Full Entity Structure
 
 Every entity (project, feature, component, research project) follows this canonical structure. `N` is the entity's own layer number; `N+1` is the child layer.
