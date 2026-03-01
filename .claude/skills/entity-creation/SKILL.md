@@ -49,128 +49,39 @@ description: "Create new layers, sub-layers, stages, features, projects, or comp
 | Research project | `layer_-1_research/` | -1 |
 | Research feature | `<research>/layer_0_group/layer_0_features/` | 0 |
 
-### Step 2: Create Entity Root Directories
+### Step 2: Create Full Directory Structure
 
-Use the mkdir templates from `.0agnostic/06_context_avenue_web/01_file_based/04_@import_references/entity_structure.md`. Every entity needs ALL of these at root:
+**⚠️ CRITICAL**: All directory structure details, mkdir templates, and configuration come from the CANONICAL SOURCE:
 
-| Directory | Contents | Purpose |
-|---|---|---|
-| `.0agnostic/` | `01_knowledge/`, `02_rules/{static,dynamic}`, `03_protocols/`, `04_agents/`, `05_skills/`, `06_hooks/scripts/`, `07_episodic_memory/{sessions,changes}`, `04+_setup_dependant/` | On-demand AI resources (numbered subdirs) |
-| `.1merge/` | 6 tools × 3 tiers each (18 subdirectories total) | Tool-specific overrides |
-| `.claude/` | `rules/`, `episodic_memory/{sessions,changes}/` | Claude Code config |
-| `.cursor/` | `rules/`, `episodic_memory/{sessions,changes}/` | Cursor config |
-| `.gemini/` | `episodic_memory/{sessions,changes}/` | Gemini config |
-| `.codex/` | `episodic_memory/{sessions,changes}/` | Codex config |
-| `.github/` | `instructions/` | GitHub config |
-| `layer_N_group/` | Full internal structure (see Step 3) | Entity internals (**MUST use _group suffix**) |
-| `layer_N+1_group/` | Children container (if applicable) | Child entities (**MUST use _group suffix**) |
-| `outputs/` | `episodic_memory/{sessions,changes}/` | Entity-level outputs |
-| `synthesis/` | (empty initially) | Cross-cutting summaries |
+**[Read this FIRST](../../0agnostic/06_context_avenue_web/01_file_based/04_@import_references/entity_structure.md)**
 
-**The 6 .1merge tools**: `.1claude_merge`, `.1cursor_merge`, `.1gemini_merge`, `.1aider_merge`, `.1codex_merge`, `.1copilot_merge`
-**Each tool has 3 tiers**: `0_synced/`, `1_overrides/`, `2_additions/`
+That document provides:
+- Complete directory tree with all subdirectories
+- Full mkdir template with nested paths
+- Stage structure details
+- Naming conventions
+- File requirements
 
-### Step 3: Create Internal Structure (layer_N_group/)
+Use those templates exactly.
 
-```
-layer_N_group/
-├── layer_N_00_layer_registry/proposals/
-├── layer_N_01_ai_manager_system/
-├── layer_N_02_manager_handoff_documents/
-│   ├── incoming/{from_above,from_below}/
-│   └── outgoing/{to_above,to_below}/
-└── layer_N_99_stages/
-```
-
-Note: Entity-scoped resources (knowledge, rules, protocols, etc.) live in `.0agnostic/` with numbered subdirectories, NOT in a separate sub_layers directory.
-
-### Step 4: [CRITICAL] Create ALL 12 Stages (00-11)
+### Step 3: [CRITICAL] Create ALL 12 Stages (00-11)
 
 **Stage Completeness Rule**: Create ALL 12 stages. **Empty stages are valid. Missing stages are NOT.**
 
-```bash
-# Stage 00 (registry)
-mkdir -p "layer_N_group/layer_N_99_stages/stage_N_00_stage_registry/outputs"
+Refer to `entity_structure.md` (link above) for the stage creation bash commands and directory structure.
 
-# Stages 01-11
-for i in 01_request_gathering 02_research 03_instructions 04_design 05_planning 06_development 07_testing 08_criticism 09_fixing 10_current_product 11_archives; do
-  mkdir -p "layer_N_group/layer_N_99_stages/stage_N_$i/outputs"
-done
-```
+### Step 4-10: Complete Setup Steps
 
-### Step 5: Add Config Directories to EACH Stage
+**All remaining detailed steps** (config directories, required files, orchestrators, integration files, agnostic-sync, validation) are in the **CANONICAL SOURCE**:
 
-Every stage gets the same config structure as the entity root:
+**[See entity_structure.md section "Required Files"](../../0agnostic/06_context_avenue_web/01_file_based/04_@import_references/entity_structure.md#required-files)**
 
-```bash
-for stage_dir in layer_N_group/layer_N_99_stages/stage_N_*/; do
-  mkdir -p "$stage_dir"/{.0agnostic/{01_knowledge,02_rules,03_protocols,04_agents,05_skills,06_hooks/scripts,07_episodic_memory/{sessions,changes}},.1merge/{.1claude_merge/{0_synced,1_overrides,2_additions},.1cursor_merge/{0_synced,1_overrides,2_additions},.1gemini_merge/{0_synced,1_overrides,2_additions},.1aider_merge/{0_synced,1_overrides,2_additions},.1codex_merge/{0_synced,1_overrides,2_additions},.1copilot_merge/{0_synced,1_overrides,2_additions}},.claude/{rules,episodic_memory/{sessions,changes}},.cursor/{rules,episodic_memory/{sessions,changes}},.gemini/episodic_memory/{sessions,changes},.codex/episodic_memory/{sessions,changes},.github/instructions,synthesis}
-done
-```
-
-### Step 6: Create Required Files
-
-#### 6a. Entity root files
-- `0AGNOSTIC.md` — See INSTANTIATION_GUIDE.md for template
-- `0INDEX.md` — See INSTANTIATION_GUIDE.md for template
-- `README.md` — Human-readable overview
-
-#### 6b. Internal directory 0AGNOSTIC.md files
-Create `0AGNOSTIC.md` in EVERY directory inside `layer_N_group/`:
-- Each internal dir (00-03, sub-layers, stages root)
-- Each stage directory
-- Run `agnostic-sync.sh` on each to generate CLAUDE.md, AGENTS.md, GEMINI.md, OPENAI.md
-
-#### 6c. Orchestrator files
-| File | Location | Purpose |
-|---|---|---|
-| `layer_N_orchestrator.gab.jsonld` | Entity root | Entity-level orchestrator |
-| `layer_N_99_stages_orchestrator.gab.jsonld` | `layer_N_99_stages/` | Stages orchestrator |
-
-Copy from a sibling entity and adapt names/references.
-
-#### 6d. Stage agent stubs
-Create `stage_N_XX_name_agent.jsonld` in each stage directory.
-
-#### 6e. Status tracker
-Create `status_N.json` in `layer_N_99_stages/`.
-
-### Step 7: Generate Integration Files
-
-**Every `.jsonld` file MUST have a matching `.integration.md`.**
-
-```bash
-# Generate for all .jsonld files
-for f in $(find <entity> -name "*.jsonld" -type f); do
-  bash .0agnostic/01_knowledge/layer_stage_system/resources/tools/jsonld-to-md.sh "$f"
-  # Fix naming: tool outputs *.jsonld.integration.md, rename to *.integration.md
-  base="${f%.jsonld}"
-  if [ -f "${f}.integration.md" ]; then
-    mv "${f}.integration.md" "${base}.integration.md"
-  fi
-done
-```
-
-### Step 8: Run agnostic-sync.sh
-
-Generate tool files for ALL 0AGNOSTIC.md files:
-
-```bash
-SYNC=".0agnostic/agnostic-sync.sh"
-for f in $(find <entity> -name "0AGNOSTIC.md" -type f); do
-  dir=$(dirname "$f")
-  bash "$SYNC" "$dir"
-done
-```
-
-### Step 9: Update Parent
-
-- Update parent's `0INDEX.md` to include new entity
-- Update parent's registry if applicable
-
-### Step 10: Validate
-
-Run `.0agnostic/01_knowledge/layer_stage_system/resources/tools/validate-entity.sh <entity-path>` to verify completeness.
+Quick summary:
+1. Create `0AGNOSTIC.md` (templates in INSTANTIATION_GUIDE.md), `0INDEX.md`, `README.md`
+2. Create orchestrator and agent .jsonld files (copy from sibling entity)
+3. Generate `.integration.md` for each `.jsonld` file
+4. Run `agnostic-sync.sh` on ALL `0AGNOSTIC.md` files
+5. Run `validate-entity.sh` to verify
 
 ## Naming Conventions
 
@@ -184,45 +95,16 @@ Run `.0agnostic/01_knowledge/layer_stage_system/resources/tools/validate-entity.
 
 Children are always layer N+1 of their parent.
 
-## Checklist
+## Completion Checklist
 
-Before completing, verify ALL of these:
+**For detailed checklist with complete directory structure**, see:
+**[entity_structure.md → Post-Instantiation Checklist](../../0agnostic/06_context_avenue_web/01_file_based/04_@import_references/entity_structure.md#post-instantiation-checklist)**
 
-### Structure
-- [ ] `.0agnostic/` with numbered subdirs (01_knowledge, 02_rules/{static,dynamic}, 03_protocols, 04_agents, 05_skills, 06_hooks/scripts, 07_episodic_memory/{sessions,changes}, 04+_setup_dependant)
-- [ ] `.1merge/` with all 6 tools × 3 tiers = 18 subdirectories
-- [ ] `.claude/` with `rules/` AND `episodic_memory/{sessions,changes}/`
-- [ ] `.cursor/` with `rules/` AND `episodic_memory/{sessions,changes}/`
-- [ ] `.gemini/` with `episodic_memory/{sessions,changes}/`
-- [ ] `.codex/` with `episodic_memory/{sessions,changes}/`
-- [ ] `.github/instructions/`
-- [ ] `layer_N_group/` with _group suffix (NOT bare `layer_N/`)
-- [ ] `layer_N+1_group/` with _group suffix (if entity has children)
-- [ ] `outputs/episodic_memory/{sessions,changes}/`
-- [ ] `synthesis/`
-
-### Stages
-- [ ] ALL 12 stages created (00-11) inside `layer_N_group/layer_N_99_stages/`
-- [ ] Each stage has config directories (.0agnostic, .1merge, .claude, .cursor, .gemini, .codex, .github, synthesis)
-- [ ] Each stage has `0AGNOSTIC.md` + auto-generated tool files
-- [ ] Each stage has `stage_N_XX_name_agent.jsonld`
-- [ ] Each stage has `stage_N_XX_name_agent.integration.md`
-
-### Files
-- [ ] `0AGNOSTIC.md` at entity root with correct identity
-- [ ] `0INDEX.md` at entity root
-- [ ] `README.md` at entity root
-- [ ] `agnostic-sync.sh` run on ALL 0AGNOSTIC.md files (generates CLAUDE.md, AGENTS.md, GEMINI.md, OPENAI.md)
-- [ ] `layer_N_orchestrator.gab.jsonld` at entity root
-- [ ] `layer_N_orchestrator.integration.md` at entity root (auto-generated)
-- [ ] `layer_N_99_stages_orchestrator.gab.jsonld` in stages dir
-- [ ] `layer_N_99_stages_orchestrator.integration.md` in stages dir (auto-generated)
-- [ ] `status_N.json` in stages dir
-- [ ] Parent's 0INDEX.md updated
-- [ ] Parent's registry updated (if applicable)
-
-### Validation
-- [ ] Run `.0agnostic/01_knowledge/layer_stage_system/resources/tools/validate-entity.sh <entity-path>` — all checks pass
+**Quick validation**:
+- [ ] ALL 12 stages created (00-11)
+- [ ] `0AGNOSTIC.md`, `0INDEX.md`, `README.md` exist at entity root
+- [ ] `agnostic-sync.sh` run on all 0AGNOSTIC.md files
+- [ ] `validate-entity.sh <entity-path>` passes all checks
 
 ## AALang Reference
 
