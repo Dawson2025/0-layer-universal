@@ -8,13 +8,19 @@ This guide explains how to create new entities in the layer-stage system. For th
 
 ### Step 1: Determine Entity Type and Location
 
+**⚠️ CRITICAL**: Child-organizing containers (features, projects, components) go INSIDE `layer_N+1_group/`, NEVER inside `layer_N_group/`.
+
 | Creating a... | Goes in... | Layer Number |
 |---------------|------------|--------------|
 | New project | `layer_1/layer_1_projects/` | layer_1 |
-| New feature | `<project>/layer_2_group/layer_2_features/` | layer_2 |
-| New component | `<feature>/layer_3_group/layer_3_components/` | layer_3 |
+| New feature (inside project) | `<project>/layer_2_group/layer_2_01_features/` | layer_2 |
+| New component (inside feature) | `<feature>/layer_3_group/layer_3_01_components/` | layer_3 |
 | New research project | `layer_-1_research/` | layer_-1 |
-| New research feature | `<research>/layer_0_group/layer_0_features/` | layer_0 |
+| New research feature (inside research) | `<research>/layer_0_group/layer_0_01_features/` | layer_0 |
+
+**Key Pattern**:
+- `layer_N_group/` contains: `layer_N_00_layer_registry/` + `layer_N_99_stages/` (ONLY)
+- `layer_N+1_group/` contains: `layer_N+1_00_layer_registry/` + `layer_N+1_01_features/` + other containers
 
 ### Step 2: Create Directory Structure
 
@@ -26,11 +32,13 @@ Replace `N` with the entity's layer number and `N1` with N+1:
 # Entity root config directories (outputs/ and synthesis/ live inside stages, NOT here)
 mkdir -p <entity_name>/{.0agnostic/{01_knowledge,02_rules/{static,dynamic},03_protocols,04_episodic_memory/{sessions,changes},05_handoff_documents/{01_incoming/{01_from_above,02_from_sides/{01_from_left,02_from_right},03_from_below},02_outgoing/{01_to_above,02_to_sides/{01_to_left,02_to_right},03_to_below}},06_context_avenue_web/{00_context_avenue_web_registry,01_file_based/{01_aalang,02_aalang_markdown_integration,03_auto_memory,"04_@import_references",05_skills,06_agents,07_path_specific_rules,08_hooks},02_data_based/{09_knowledge_graph,10_relational_index,11_vector_embeddings,12_temporal_index,13_shimi_structures}},07+_setup_dependant},.1merge/{.1claude_merge/{0_synced,1_overrides,2_additions},.1cursor_merge/{0_synced,1_overrides,2_additions},.1gemini_merge/{0_synced,1_overrides,2_additions},.1aider_merge/{0_synced,1_overrides,2_additions},.1codex_merge/{0_synced,1_overrides,2_additions},.1copilot_merge/{0_synced,1_overrides,2_additions}},.claude/{rules,episodic_memory/{sessions,changes}},.cursor/{rules,episodic_memory/{sessions,changes}},.gemini/episodic_memory/{sessions,changes},.codex/episodic_memory/{sessions,changes},.github/instructions}
 
-# Internal layer_N_group structure (manager identity in 0AGNOSTIC.md, handoffs in .0agnostic/)
+# Internal layer_N_group structure — ONLY registry and stages
+# ⚠️ CRITICAL: Do NOT put features or other child containers here
 mkdir -p <entity_name>/layer_N_group/{layer_N_00_layer_registry/proposals,layer_N_99_stages}
 
-# Children (if entity has children)
-mkdir -p <entity_name>/layer_N1_group/{layer_N1_00_layer_registry/proposals}
+# Further Layering — layer_N+1_group with numbered organizing containers
+# ✅ Features, projects, components go INSIDE layer_N+1_group, NEVER inside layer_N_group
+mkdir -p <entity_name>/layer_N+1_group/{layer_N+1_00_layer_registry/proposals,layer_N+1_01_features,layer_N+1_02_projects}
 ```
 
 **IMPORTANT**: Internal layer directories MUST use the `_group` suffix: `layer_N_group/` NOT `layer_N/`.
@@ -49,7 +57,7 @@ You are an agent at **Layer N** (Type), **Entity**: <name>.
 - **Role**: <role description>
 - **Scope**: <what this entity covers>
 - **Parent**: `../0AGNOSTIC.md`
-- **Children**: `layer_N+1_group/layer_N+1_<type>/`
+- **Children**: `layer_N+1_group/` (contains `layer_N+1_00_layer_registry/` and `layer_N+1_01_features/`, `layer_N+1_02_projects/`, etc.)
 
 ## Triggers
 
