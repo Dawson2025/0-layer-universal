@@ -231,11 +231,12 @@ Replace `N` with the entity's layer number and `N1` with N+1:
 # Entity root directories (outputs/ and synthesis/ live inside stages, NOT here)
 mkdir -p <entity>/{.0agnostic/{01_knowledge,02_rules/{static,dynamic},03_protocols,04_episodic_memory/{sessions,changes},05_handoff_documents/{01_incoming/{01_from_above,02_from_sides/{01_from_left,02_from_right},03_from_below/{stage_reports,layer_reports}},02_outgoing/{01_to_above,02_to_sides/{01_to_left,02_to_right},03_to_below}},06_context_avenue_web/{00_context_avenue_web_registry,01_file_based/{01_aalang,02_aalang_markdown_integration,03_auto_memory,"04_@import_references",05_skills,06_agents,07_path_specific_rules,08_hooks},02_data_based/{09_knowledge_graph,10_relational_index,11_vector_embeddings,12_temporal_index,13_shimi_structures}},07+_setup_dependant},.1merge/{.1claude_merge/{0_synced,1_overrides,2_additions},.1cursor_merge/{0_synced,1_overrides,2_additions},.1gemini_merge/{0_synced,1_overrides,2_additions},.1aider_merge/{0_synced,1_overrides,2_additions},.1codex_merge/{0_synced,1_overrides,2_additions},.1copilot_merge/{0_synced,1_overrides,2_additions}},.claude/{rules,episodic_memory/{sessions,changes}},.cursor/{rules,episodic_memory/{sessions,changes}},.gemini/episodic_memory/{sessions,changes},.codex/episodic_memory/{sessions,changes},.github/instructions}
 
-# Internal layer_N_group structure (manager identity in 0AGNOSTIC.md, handoffs in .0agnostic/)
+# Internal layer_N_group structure — ONLY registry and stages
 mkdir -p <entity>/layer_N_group/{layer_N_00_layer_registry/proposals,layer_N_99_stages}
 
-# Children (if applicable)
-mkdir -p <entity>/layer_N1_group/layer_N1_00_layer_registry/proposals
+# Children & Further Layering — layer_N+1_group with organizing containers (01_features, 02_projects, etc.)
+# ⚠️ CRITICAL: All child-organizing containers (features, projects, components) go INSIDE layer_N+1_group, NEVER inside layer_N_group
+mkdir -p <entity>/layer_N+1_group/{layer_N+1_00_layer_registry/proposals,layer_N+1_01_features,layer_N+1_02_projects}
 ```
 
 ## Stage Creation Template
@@ -277,7 +278,20 @@ After creating the directory structure, create these files:
 
 ## Further Layering: Multiple Organizational Groupings
 
-**KEY PATTERN**: An entity's `layer_N+1_group/` can contain **multiple numbered grouping containers** (features, projects, components) alongside the registry. Each grouping container organizes child entities of type layer_N+2.
+**CRITICAL RULE**: All child-organizing containers (features, projects, components, etc.) MUST go INSIDE `layer_N+1_group/`, NEVER inside `layer_N_group/`.
+
+- ❌ **WRONG**: `layer_0_group/layer_0_features/` — features inside entity's own internal structure
+- ✅ **CORRECT**: `layer_1_group/layer_1_01_features/` — features inside the further layering container
+
+`layer_N_group/` is ONLY for:
+- `layer_N_00_layer_registry/` — registry of THIS entity
+- `layer_N_99_stages/` — workflow stages for THIS entity
+
+`layer_N+1_group/` is for:
+- `layer_N+1_00_layer_registry/` — registry of child layer organization
+- `layer_N+1_01_features/` — grouping container for features
+- `layer_N+1_02_projects/` — grouping container for projects
+- etc.
 
 ### Multiple Grouping Containers Example
 
@@ -400,20 +414,51 @@ Groups (`_group` suffix) organize content and appear in these contexts:
 
 **To remember**: If you're creating `layer_N_99_stages/`, you MUST be inside a `layer_N_group/` that belongs to a **layer_N entity**. If it's just a grouping container (like `layer_1_01_features/`), it has NO stages.
 
+### The Most Common Mistake: Features in the Wrong Place
+
+**WRONG** (often done):
+```
+layer_0_entity/
+└── layer_0_group/              ← Entity's internal structure
+    ├── layer_0_00_layer_registry/
+    ├── layer_0_99_stages/
+    └── layer_0_features/       ❌ FEATURES SHOULD NOT BE HERE
+        ├── layer_0_feature_one/
+        └── layer_0_feature_two/
+```
+
+**CORRECT** (per this standard):
+```
+layer_0_entity/
+├── layer_0_group/              ← Entity's ONLY internal structure
+│   ├── layer_0_00_layer_registry/
+│   └── layer_0_99_stages/
+│
+└── layer_1_group/              ← Further layering container
+    ├── layer_1_00_layer_registry/
+    └── layer_1_01_features/    ✅ FEATURES GO HERE
+        ├── layer_1_feature_one/  (or layer_2 if those are the child entities)
+        └── layer_1_feature_two/
+```
+
+**Why**: Features are child-organizing containers, which are part of FURTHER LAYERING. Further layering lives in `layer_N+1_group/`, not in `layer_N_group/`.
+
 ## Key Conventions
 
 - Internal content uses `layer_N_group/` with the **_group suffix** — NOT bare `layer_N/`
 - **ONLY ACTUAL LAYERS have stages**: Stages go inside `layer_N_group/layer_N_99_stages/` when N is the entity's own layer number
 - **GROUPS do NOT have stages** — groups are containers; their child entities have stages
-- **Grouping containers are organizational only**: `layer_N_01_features/`, `layer_N_02_projects/` organize child entities but have NO stages themselves
-- **Further layering exists in `layer_N+1_group`**: Multiple numbered grouping containers (01_features, 02_projects, 03_components) organize child layer_N+2 entities
-- **Entity internals stay minimal**: `layer_N_group/` contains ONLY `layer_N_00_layer_registry/` and `layer_N_99_stages/` (NO child entities)
-- **Child entities are separate from further layering**: Each child entity is a complete layer_N+1 entity with its own `.0agnostic/`, `.1merge/`, stages, etc.
+- **⚠️ CRITICAL: Grouping containers MUST be in `layer_N+1_group`**: Features, projects, components belong INSIDE `layer_N+1_group/` (e.g., `layer_1_01_features/`), NEVER inside `layer_N_group/`
+- **`layer_N_group/` is minimal**: Contains ONLY `layer_N_00_layer_registry/` and `layer_N_99_stages/` — NO features, NO children containers, NO further layering
+- **`layer_N+1_group/` is the further layering container**: Contains `layer_N+1_00_layer_registry/` and multiple numbered grouping containers (01_features, 02_projects, 03_components)
+- **Entity internals stay minimal**: `layer_N_group/` is a small, focused directory
+- **Child entities are separate from their container**: Each child entity is a complete layer with its own `.0agnostic/`, `.1merge/`, stages, etc.
 - **Entity-scoped resources live in `.0agnostic/`** with numbered subdirectories (01-07+)
 - Children go in `layer_N+1_group/`, organized by type in numbered grouping containers (01_features, 02_projects, etc.)
 - `N` always matches the entity's own layer: project=1, feature=2, research feature=0, etc.
 - **Stages only at entity layer**: If a `layer_N` entity has children, stages stay at `layer_N_group/layer_N_99_stages/`, not in `layer_N+1_group/`
-- **Multiple grouping containers allowed**: An entity can have `layer_N_01_features/`, `layer_N_02_projects/`, `layer_N_03_components/` all at the same level inside `layer_N+1_group/`
+- **Multiple grouping containers allowed in `layer_N+1_group`**: An entity can have `layer_N+1_01_features/`, `layer_N+1_02_projects/`, `layer_N+1_03_components/` all at the same level
+- **The most common mistake**: Putting `layer_0_features/` inside `layer_0_group/` — this is WRONG, should be in `layer_1_group/layer_1_01_features/`
 - Knowledge is organized per-topic: each topic in `01_knowledge/` has `principles/`, `docs/`, `resources/{templates,tools/scripts}`
 - Rules always has `static/` (always-on constraints) and `dynamic/` (trigger-based with protocol pointers) subdirectories
 - Episodic memory is always named `episodic_memory/` (NOT `episodic/`)
