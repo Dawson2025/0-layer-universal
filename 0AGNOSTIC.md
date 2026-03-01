@@ -57,6 +57,7 @@ When any nested repository exists in a child path:
 
 | Situation | Action |
 |-----------|--------|
+| Creating, updating, or finding duplicate documentation | Load rule: `.0agnostic/02_rules/documentation_deduplication_rule.md` |
 | Creating entities with stages | Load skill: entity-creation |
 | Modifying AI context | Show propagation chain diagram first |
 | Modifying `.0agnostic/` files | Follow agnostic update protocol: `.0agnostic/02_rules/static/agnostic_update_protocol/agnostic_update_protocol.md` |
@@ -73,6 +74,10 @@ When any nested repository exists in a child path:
 |----------|----------|---------|
 | Skills | `.claude/skills/SKILLS.md` | Task-specific instructions |
 | Rules | `.0agnostic/02_rules/` | Universal rules |
+| Deduplication Rule | `.0agnostic/02_rules/documentation_deduplication_rule.md` | MANDATORY: Single-source-of-truth for all documentation |
+| Deduplication Pattern | `.0agnostic/01_knowledge/deduplication_pattern.md` | Complete guide to naming conventions and pointer format |
+| Deduplication Onboarding | `.0agnostic/01_knowledge/deduplication_onboarding.md` | Team guide for following the deduplication pattern |
+| Deduplication Summary | `.0agnostic/01_knowledge/deduplication_project_summary.md` | Project overview: what was accomplished and why |
 | Update Protocol | `.0agnostic/02_rules/static/agnostic_update_protocol/agnostic_update_protocol.md` | Sync chain for .0agnostic/ changes |
 | Knowledge | `.0agnostic/01_knowledge/` | Reference docs |
 | Research Knowledge Index | `.0agnostic/01_knowledge/layer_stage_system/docs/RESEARCH_KNOWLEDGE_INDEX.md` | Index of all research outputs with paths and promotion status |
