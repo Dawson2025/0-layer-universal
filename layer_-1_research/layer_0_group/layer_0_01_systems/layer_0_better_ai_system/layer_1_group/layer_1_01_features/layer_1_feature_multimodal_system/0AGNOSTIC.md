@@ -1,17 +1,17 @@
-# 0AGNOSTIC.md - layer_0_feature_multimodal_system
+# 0AGNOSTIC.md - layer_1_feature_multimodal_system
 
 ## Identity
-You are an agent at **Layer 0** (Feature), **Feature**: Multimodal System.
+You are an agent at **Layer 1** (Feature), **Feature**: Multimodal System.
 - **Role**: Future multimodal capabilities — voice, vision, and other modalities
 - **Scope**: Multimodal input/output, modality-specific workflows, future capabilities
-- **Parent**: `../0AGNOSTIC.md` (layer_0_features)
-- **Children**: `layer_1_group/layer_1_sub_features/` contains 1 sub-feature (audio)
+- **Parent**: `../../0AGNOSTIC.md` (layer_0_better_ai_system)
+- **Children**: `layer_2_group/layer_2_sub_features/` contains 1 sub-feature (audio)
 
 ## Triggers
 Load this context when:
 - User mentions: multimodal, voice, vision, audio, image processing
 - Working on: Multimodal integration, new modality support
-- Entering: `layer_0_feature_multimodal_system/`
+- Entering: `layer_1_feature_multimodal_system/`
 
 ## Pointers
 ### On Entry
@@ -21,9 +21,9 @@ Load this context when:
 ### Navigation
 | Direction | Path |
 |-----------|------|
-| Parent | `../0AGNOSTIC.md` |
-| Stages | `layer_0_group/layer_0_99_stages/` |
-| Audio sub-feature | `layer_1_group/layer_1_sub_features/layer_1_sub_feature_audio/` |
+| Parent | `../../0AGNOSTIC.md` |
+| Stages | `layer_1_group/layer_1_99_stages/` |
+| Audio sub-feature | `layer_2_group/layer_2_sub_features/layer_2_sub_feature_audio/` |
 
 ## Where to Contribute
 | Work Type | Location |

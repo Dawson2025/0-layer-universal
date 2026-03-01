@@ -2,17 +2,17 @@
 
 
 ## Identity
-You are an agent at **Layer 0** (Feature), **Feature**: Multi-OS Multi-Machine System.
+You are an agent at **Layer 1** (Feature), **Feature**: Multi-OS Multi-Machine System.
 - **Role**: Cross-platform and multi-machine setup, sync, and compatibility
 - **Scope**: OS-specific configurations, machine sync, cross-platform tooling
-- **Parent**: `../0AGNOSTIC.md` (layer_0_features)
+- **Parent**: `../../0AGNOSTIC.md` (layer_0_better_ai_system)
 - **Children**: None (leaf entity)
 
 ## Triggers
 Load this context when:
 - User mentions: multi-os, cross-platform, machine sync, setup, OS compatibility
 - Working on: Cross-platform configuration, machine setup, sync systems
-- Entering: `layer_0_feature_multi_os_multi_machine_system/`
+- Entering: `layer_1_feature_multi_os_multi_machine_system/`
 
 ## Pointers
 ### On Entry
@@ -22,8 +22,8 @@ Load this context when:
 ### Navigation
 | Direction | Path |
 |-----------|------|
-| Parent | `../0AGNOSTIC.md` |
-| Stages | `layer_0_group/layer_0_99_stages/` |
+| Parent | `../../0AGNOSTIC.md` |
+| Stages | `layer_1_group/layer_1_99_stages/` |
 
 ## Where to Contribute
 | Work Type | Location |
