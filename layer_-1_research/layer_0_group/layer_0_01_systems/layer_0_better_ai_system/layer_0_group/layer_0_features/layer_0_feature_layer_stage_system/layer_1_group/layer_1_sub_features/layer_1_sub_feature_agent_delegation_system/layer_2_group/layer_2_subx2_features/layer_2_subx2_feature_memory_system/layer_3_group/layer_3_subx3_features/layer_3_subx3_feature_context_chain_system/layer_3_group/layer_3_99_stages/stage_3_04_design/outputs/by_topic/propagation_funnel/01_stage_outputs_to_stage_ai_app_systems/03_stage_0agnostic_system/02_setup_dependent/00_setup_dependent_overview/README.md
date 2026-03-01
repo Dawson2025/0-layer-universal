@@ -36,27 +36,29 @@ Shell and environment configuration
 
 ### 03_coding_apps/
 IDE and coding editor configuration
-- Claude Code
-- Cursor
-- Gemini IDE (Google)
-- VS Code and extensions
-- Other code editors
-- Editor-specific keybindings, themes, extensions
+- Cursor IDE
+- Antigravity IDE
+- NeoVim
+- VS Code
+- Other code editors and terminals
+- Editor-specific keybindings, themes, settings
 
 ### 04_ai_apps/
-AI service and application configuration
-- Claude (Claude.ai, Claude API)
+AI service and application configuration (CLI and services)
+- Claude Code CLI
+- Codex CLI
+- Gemini CLI
+- Cursor Agent CLI
+- Claude.ai (web interface)
 - Perplexity
-- ChatGPT
 - Other AI services
 - API keys, authentication, preferences
 
 ### 05_plugins/
-IDE plugins, extensions, and add-ons
-- VS Code extensions
-- Cursor extensions
-- IDE-specific plugins
-- Third-party integrations
+Plugins and extensions for both coding apps and AI apps
+- **Coding app plugins**: VS Code extensions, Cursor extensions, NeoVim plugins, IDE-specific add-ons
+- **AI app plugins**: Claude plugins, Perplexity plugins, ChatGPT plugins, AI service extensions
+- Third-party integrations for either type
 
 ### 06_mcp_servers/
 Model Context Protocol server configuration

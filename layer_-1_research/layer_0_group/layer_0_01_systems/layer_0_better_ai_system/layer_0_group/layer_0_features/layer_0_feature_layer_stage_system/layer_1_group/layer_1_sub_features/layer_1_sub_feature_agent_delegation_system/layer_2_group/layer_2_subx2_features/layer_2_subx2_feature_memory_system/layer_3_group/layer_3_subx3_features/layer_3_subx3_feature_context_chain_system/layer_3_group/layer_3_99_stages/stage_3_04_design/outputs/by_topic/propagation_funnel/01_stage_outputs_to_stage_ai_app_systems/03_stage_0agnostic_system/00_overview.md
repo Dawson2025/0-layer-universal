@@ -31,9 +31,9 @@ The canonical source of truth at every level. All context originates here:
 Environment and configuration-specific context organized hierarchically:
 - **01_os/**: Operating system specifics (Linux, macOS, Windows)
 - **02_environment/**: Shell environment, PATH, system settings
-- **03_coding_apps/**: Claude Code, Cursor, Gemini IDE, etc.
-- **04_ai_apps/**: Claude, Perplexity, etc.
-- **05_plugins/**: IDE plugins, extensions, add-ons
+- **03_coding_apps/**: IDEs and code editors (Cursor, Antigravity, NeoVim, VS Code, etc.)
+- **04_ai_apps/**: AI services and CLI tools (Claude Code CLI, Codex CLI, Gemini CLI, Cursor Agent CLI, etc.)
+- **05_plugins/**: Extensions for coding apps and AI apps (VS Code extensions, Cursor extensions, Claude plugins, etc.)
 - **06_mcp_servers/**: Model Context Protocol server configurations
 - **07_tools_and_apis/**: External tools, utilities, APIs
 - **08_other_setup_specifics/**: Additional setup context
