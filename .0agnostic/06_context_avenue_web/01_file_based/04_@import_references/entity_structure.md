@@ -422,24 +422,30 @@ Groups (`_group` suffix) organize content and appear in these contexts:
 
 #### Stages Placement Rule (CRITICAL)
 
-**This rule eliminates confusion about where stages belong:**
+**Key distinction: layer_N_group vs layer_N+1_group**
 
-- **`layer_N_group/` (entity's internal structure) CAN and SHOULD have `layer_N_99_stages/`**
+- **`layer_N_group/` (entity's internal group) CAN and SHOULD have `layer_N_99_stages/`**
+  - This is the grouping container for the entity's internal organization (registry + stages)
   - Example: `layer_0_better_ai_system/layer_0_group/layer_0_99_stages/` ✅
-  - This is the entity's own workflow
-  - Stages are numbered `stage_N_01`, `stage_N_02`, etc.
+  - Stages are numbered `stage_N_01`, `stage_N_02`, etc. for the entity's workflow
+  - This container holds the entity's own organizational infrastructure
 
 - **`layer_N+1_group/` (further layering container) MUST NOT have `layer_N+1_99_stages/`**
+  - This container is ONLY for organizing child entities into grouping categories (01_features, 02_projects, etc.)
   - Example: ❌ `layer_0_better_ai_system/layer_1_group/layer_1_99_stages/` (WRONG)
-  - `layer_N+1_group/` is just an organizational container, NOT a layer
-  - This violates the structure and confuses the hierarchy
+  - `layer_N+1_group/` is purely a structural organization device for further layering
+  - It has NO workflow stages of its own
+  - The only child of `layer_N+1_group` is `layer_N+1_00_layer_registry/` and numbered grouping containers
 
 - **Individual child entities INSIDE `layer_N+1_group/` SHOULD have their own stages**
+  - Each child entity (like `layer_1_feature_auth/`) is itself a complete layer entity
   - Example: `layer_0_better_ai_system/layer_1_group/layer_1_01_features/layer_1_feature_auth/layer_1_group/layer_1_99_stages/` ✅
-  - Each `layer_1_feature_*` is a layer_1 entity with its own internal structure
-  - Each has its own `layer_1_group/layer_1_99_stages/` for its workflow
+  - Each has its own internal `layer_N+1_group/` with its own `layer_N+1_99_stages/`
+  - This follows the same pattern recursively
 
-**Quick test**: If you're about to create `layer_X_99_stages/`, ask yourself: "Is the parent directory itself a layer_X entity, or is it just a container?" If it's just a container (like `layer_1_group/` in a layer_0 entity), DO NOT add stages there.
+**Quick test**: Before creating `layer_X_99_stages/`, check: What is the parent directory's purpose?
+- If it's **entity-internal** (like `layer_N_group/` of a layer_N entity) → stages belong there ✅
+- If it's **just a container for child entities** (like `layer_N+1_group/`) → NO stages there ❌ (stages go in each child entity instead)
 
 **Examples**:
 - ✅ `layer_0_entity/layer_0_group/layer_0_99_stages/` = Layer 0 entity with its stages
@@ -481,18 +487,19 @@ layer_0_entity/
 ## Key Conventions
 
 - Internal content uses `layer_N_group/` with the **_group suffix** — NOT bare `layer_N/`
-- **ONLY ACTUAL LAYERS have stages**: Stages go inside `layer_N_group/layer_N_99_stages/` when N is the entity's own layer number
-- **GROUPS do NOT have stages** — groups are containers; their child entities have stages
+- **`layer_N_group/` (entity-internal) CAN have stages**: `layer_N_group/layer_N_99_stages/` exists and contains the entity's own workflow stages
+- **`layer_N+1_group/` (further layering) MUST NOT have stages**: This is purely a container for organizing child entities, NOT a workflow layer
+- **Child entities have their own stages**: Each child entity inside `layer_N+1_group/layer_N+1_01_features/` has its own `layer_N+1_group/layer_N+1_99_stages/` (inside the child entity itself)
 - **⚠️ CRITICAL: Grouping containers MUST be in `layer_N+1_group`**: Features, projects, components belong INSIDE `layer_N+1_group/` (e.g., `layer_1_01_features/`), NEVER inside `layer_N_group/`
-- **`layer_N_group/` is minimal**: Contains ONLY `layer_N_00_layer_registry/` and `layer_N_99_stages/` — NO features, NO children containers, NO further layering
-- **`layer_N+1_group/` is the further layering container**: Contains `layer_N+1_00_layer_registry/` and multiple numbered grouping containers (01_features, 02_projects, 03_components)
+- **`layer_N_group/` is entity-internal**: Contains `layer_N_00_layer_registry/` and `layer_N_99_stages/` — NO features, NO children containers, NO further layering
+- **`layer_N+1_group/` is the further layering container**: Contains ONLY `layer_N+1_00_layer_registry/` and numbered grouping containers (01_features, 02_projects, 03_components) — NO stages at this level
 - **Entity internals stay minimal**: `layer_N_group/` is a small, focused directory
 - **Child entities are separate from their container**: Each child entity is a complete layer with its own `.0agnostic/`, `.1merge/`, stages, etc.
 - **Entity-scoped resources live in `.0agnostic/`** with numbered subdirectories (01-07+)
 - Children go in `layer_N+1_group/`, organized by type in numbered grouping containers (01_features, 02_projects, etc.)
 - `N` always matches the entity's own layer: project=1, feature=2, research feature=0, etc.
-- **Stages only at entity layer**: If a `layer_N` entity has children, stages stay at `layer_N_group/layer_N_99_stages/`, not in `layer_N+1_group/`
-- **Multiple grouping containers allowed in `layer_N+1_group`**: An entity can have `layer_N+1_01_features/`, `layer_N+1_02_projects/`, `layer_N+1_03_components/` all at the same level
+- **Stages in entity-internal groups only**: `layer_N_group/layer_N_99_stages/` contains the entity's workflow. `layer_N+1_group/` is purely organizational and has NO stages — stages belong in child entities instead
+- **Multiple grouping containers allowed in `layer_N+1_group`**: An entity can have `layer_N+1_01_features/`, `layer_N+1_02_projects/`, `layer_N+1_03_components/` all at the same level, but none of them have their own stages
 - **The most common mistake**: Putting `layer_0_features/` inside `layer_0_group/` — this is WRONG, should be in `layer_1_group/layer_1_01_features/`
 - Knowledge is organized per-topic: each topic in `01_knowledge/` has `principles/`, `docs/`, `resources/{templates,tools/scripts}`
 - Rules always has `static/` (always-on constraints) and `dynamic/` (trigger-based with protocol pointers) subdirectories
