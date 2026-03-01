@@ -1,57 +1,11 @@
 # Stage Report Protocol
 
-## Purpose
+This file has been replaced with a pointer to the canonical source.
 
-Every stage agent writes a `stage_report.md` in `outputs/reports/` before exiting, and mirrors it into `.0agnostic/05_handoff_documents/02_outgoing/` for propagation. The entity manager reads these reports to maintain a rolled-up view of all stages without loading stage-level details.
+**[READ CANONICAL STAGE_REPORT_PROTOCOL.md](../../../../../../../../../../../../../../../.0agnostic/03_protocols/stage_report_protocol.md)**
 
-## When to Write
+---
 
-- After completing any significant work in a stage
-- Before handing off to another stage
-- When the manager requests a status update
+All stage report format, rules, and requirements are maintained in a single location to prevent inconsistency.
 
-## Location
-
-- Canonical: `outputs/reports/stage_report.md`
-- Handoff copy (to manager): `.0agnostic/05_handoff_documents/02_outgoing/01_to_above/stage_report.md`
-- Handoff copy (to below): `.0agnostic/05_handoff_documents/02_outgoing/03_to_below/stage_report.md`
-- Legacy fallback (read-only compatibility): `outputs/stage_report.md`
-
-## Format
-
-```markdown
-# Stage Report: [stage_number]_[stage_name]
-
-## Status
-[pending | active | blocked | complete]
-
-## Last Updated
-[YYYY-MM-DD]
-
-## Summary
-[2-3 sentences: what this stage does and where it stands]
-
-## Key Outputs
-- [output_name]: [one-line description]
-
-## Findings
-- [Key insight or decision, 1 line each]
-
-## Open Items
-- [What's unresolved or needs attention]
-
-## Handoff
-- **Ready for next stage**: [yes | no]
-- **Next stage**: [stage_number]_[stage_name]
-- **What next stage needs to know**: [1-2 sentences]
-```
-
-## Rules
-
-1. Keep it under 30 lines — this is a summary, not a detailed report
-2. Use the exact format above so the manager can parse consistently
-3. Findings should be conclusions, not process descriptions
-4. Open items should be actionable — what specifically needs to happen
-5. Update the report, don't append — each write replaces the previous version
-6. The manager may update `0INDEX.md` after reading your report
-7. Keep `outputs/reports/stage_report.md` and both outgoing handoff copies synchronized
+This pointer file directs you to the current production definition.
