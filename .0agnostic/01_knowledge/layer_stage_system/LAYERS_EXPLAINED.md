@@ -47,10 +47,13 @@ Research projects use negative layer numbers:
 
 ```
 layer_-1_research/
-└── layer_-1_better_ai_system/
-    ├── layer_-1_group/        # Research internals
-    └── layer_0_group/         # Research features (not layer_2!)
-        └── layer_0_features/
+└── layer_-1_better_ai_system/     # Research entity
+    ├── layer_-1_group/         # Entity's internal (stages for research)
+    │   └── layer_-1_99_stages/
+    └── layer_0_group/          # Further layering container (for layer_0 child entities)
+        ├── layer_0_00_layer_registry/
+        ├── layer_0_01_features/    # Grouping container for layer_0 feature research
+        │   └── layer_0_feature_one/
 ```
 
 ## Layer Structure
@@ -62,30 +65,38 @@ layer_N_<type>_<name>/
 ├── 0AGNOSTIC.md              # Identity
 ├── 0INDEX.md                 # Contents
 ├── CLAUDE.md                 # Tool context
-├── .0agnostic/               # AI config
-├── layer_N_group/            # THIS layer's internal content
-│   ├── layer_N_00_layer_registry/
-│   ├── layer_N_03_sub_layers/
-│   └── layer_N_99_stages/
-└── layer_N+1_group/          # CHILDREN (next layer down)
-    └── layer_N+1_<type>s/
+├── .0agnostic/               # AI config (01_knowledge, 02_rules, 03_protocols, etc.)
+├── layer_N_group/            # THIS layer's internal structure (MINIMAL)
+│   ├── layer_N_00_layer_registry/     # Registry only
+│   └── layer_N_99_stages/             # Workflow stages only
+└── layer_N+1_group/          # Further layering (CHILDREN container)
+    ├── layer_N+1_00_layer_registry/
+    ├── layer_N+1_01_features/         # Grouping container for features
+    ├── layer_N+1_02_projects/         # (optional)
+    └── layer_N+1_03_components/       # (optional)
 ```
 
 ## The Two Group Folders
 
-### `layer_N_group/` - Internal Content
+### `layer_N_group/` - Entity's Internal Structure (MINIMAL)
 
-Contains this entity's own stuff:
-- **00_layer_registry**: Proposals, registrations
-- **03_sub_layers**: Knowledge, rules, prompts, setup-dependent
-- **99_stages**: Workflow stages (01-11)
+Contains ONLY this entity's own workflow:
+- **layer_N_00_layer_registry/**: Proposals, registrations (metadata only)
+- **layer_N_99_stages/**: Workflow stages (01-11)
 
-### `layer_N+1_group/` - Children
+**⚠️ CRITICAL**: Does NOT contain features, projects, or child-organizing containers. Those go in layer_N+1_group.
 
-Contains the next layer down:
-- **layer_N+1_features/**: For projects holding features
-- **layer_N+1_components/**: For features holding components
-- **layer_N+1_<type>s/**: Whatever the children are
+**Why minimal?** Entity-scoped AI resources (knowledge, rules, protocols) go in `.0agnostic/`, not in layer_N_group. This keeps layer_N_group focused and prevents confusion about where child entities belong.
+
+### `layer_N+1_group/` - Further Layering (CHILDREN CONTAINER)
+
+Contains the next layer down and organizing containers for them:
+- **layer_N+1_00_layer_registry/**: Registry of layer_N+1 organization
+- **layer_N+1_01_features/**: Grouping container for feature entities
+- **layer_N+1_02_projects/**: (optional) Grouping container for project entities
+- **layer_N+1_03_components/**: (optional) Grouping container for component entities
+
+**Key distinction**: `layer_N+1_group/` is not a layer itself — it's a container for organizing child layer entities. Child entities inside these containers are actual layers with their own `layer_N+1_group/` and stages.
 
 ## Layer Inheritance Rules
 
