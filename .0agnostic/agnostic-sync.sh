@@ -440,6 +440,20 @@ if [ -d "$DIR/.0agnostic" ]; then
     fi
 fi
 
+# --- Pointer Sync Validation ---
+# Find pointer-sync.sh relative to this script's location
+_SYNC_SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+POINTER_SYNC="$_SYNC_SCRIPT_DIR/pointer-sync.sh"
+if [ -x "$POINTER_SYNC" ]; then
+    echo ""
+    echo "--- Pointer Validation ---"
+    if "$POINTER_SYNC" --validate 2>/dev/null; then
+        echo "  All pointers valid ✓"
+    else
+        echo "  ⚠ Some pointers are broken or stale. Run: pointer-sync.sh --verbose"
+    fi
+fi
+
 echo ""
 echo "Sync complete! Generated tool-specific files from 0AGNOSTIC.md"
 echo "Format detected: $FORMAT"

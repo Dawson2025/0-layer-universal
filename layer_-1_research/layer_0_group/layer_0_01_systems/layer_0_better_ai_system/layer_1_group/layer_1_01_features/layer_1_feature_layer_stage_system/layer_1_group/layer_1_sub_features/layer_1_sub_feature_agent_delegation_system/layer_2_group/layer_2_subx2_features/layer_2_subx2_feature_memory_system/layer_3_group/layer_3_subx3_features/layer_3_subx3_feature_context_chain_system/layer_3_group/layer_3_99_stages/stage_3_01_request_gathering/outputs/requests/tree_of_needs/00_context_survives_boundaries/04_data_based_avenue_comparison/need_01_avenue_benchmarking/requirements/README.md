@@ -1,0 +1,21 @@
+# Avenue Benchmarking -- Requirements Index
+
+**Need**: [Avenue Benchmarking](../README.md)
+
+## Overview
+
+These requirements define the measurement framework for comparing data-based avenues (Knowledge Graph, SHIMI, Relational Tables, Vector Databases). They ensure every capability has actual units, every benchmark uses raw measured values, and rankings are computed from data rather than assigned arbitrarily.
+
+## Key Themes
+
+- **Measurement Integrity**: Every metric has units, methodology, and reproducible benchmarks
+- **Raw + Normalized**: Store both raw values (traceable) and normalized scores (comparable)
+- **Cross-Category Coverage**: Same metrics apply to both data-based and file-based avenues
+
+---
+
+| REQ # | Name | Description | File |
+|-------|------|-------------|------|
+| REQ-01 | Capability Measurement Framework | Define units, methodology, and scale for all 16 capabilities | [REQ-01_capability_measurement.md](./REQ-01_capability_measurement.md) |
+| REQ-02 | Benchmark Data Model | Store raw values + normalized scores with source tracking | [REQ-02_benchmark_data_model.md](./REQ-02_benchmark_data_model.md) |
+| REQ-03 | Ranking Derivation | Compute rankings from benchmark data, not arbitrary assignment | [REQ-03_ranking_derivation.md](./REQ-03_ranking_derivation.md) |

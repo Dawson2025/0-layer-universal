@@ -67,6 +67,7 @@ When any nested repository exists in a child path:
 | Local Ubuntu desktop issues (volume, brightness, keybindings, audio, GNOME, post-sleep) | Load `.0agnostic/02_rules/dynamic/local_ubuntu_desktop_troubleshooting/` |
 | User says "use research context chain" | Load `.0agnostic/02_rules/dynamic/CONTEXT_CHAIN_MODE/context_chain_mode.md` and switch to research mode |
 | Promoting research to production | Load `.0agnostic/03_protocols/research_promotion_protocol.md` |
+| Creating or modifying pointer files | Follow `.0agnostic/03_protocols/pointer_sync_protocol.md` and run `pointer-sync.sh --validate` |
 | Modifying agent delegation patterns | Load `.0agnostic/02_rules/dynamic/agent_delegation_workspace_rule/agent_delegation_workspace_rule.md` |
 
 ## Resources
@@ -84,6 +85,9 @@ When any nested repository exists in a child path:
 | Research Knowledge Index | `.0agnostic/01_knowledge/layer_stage_system/docs/RESEARCH_KNOWLEDGE_INDEX.md` | Index of all research outputs with paths and promotion status |
 | Setup-Dependant | `.0agnostic/07+_setup_dependant/` | Machine/OS-specific context (Ubuntu, coding apps, etc.) |
 | Research Promotion Protocol | `.0agnostic/03_protocols/research_promotion_protocol.md` | How to promote validated research to production |
+| Pointer Sync Protocol | `.0agnostic/03_protocols/pointer_sync_protocol.md` | Auto-updating pointer files when canonical paths change |
+| Pointer Sync Knowledge | `.0agnostic/01_knowledge/pointer_sync/pointer_sync_knowledge.md` | How the pointer sync system works |
+| Pointer Sync Rule | `.0agnostic/02_rules/static/pointer_sync_rule/pointer_sync_rule.md` | Always-apply rule for pointer file format |
 | Context Chain Mode | `.0agnostic/02_rules/dynamic/CONTEXT_CHAIN_MODE/context_chain_mode.md` | Default vs Research mode switching |
 
 ## Children

@@ -34,13 +34,14 @@ A system where:
 
 ---
 
-## Three Branches
+## Four Branches
 
 | Branch | Question | Description |
 |--------|----------|-------------|
 | [**01_knowledge_organization**](./01_knowledge_organization/) | "Where does each kind of content live?" | Three-tier architecture, knowledge graphs, reference standards |
 | [**02_knowledge_lifecycle**](./02_knowledge_lifecycle/) | "How does knowledge move and stay current?" | Consolidation at stage boundaries, staleness detection |
 | [**03_knowledge_retrieval**](./03_knowledge_retrieval/) | "How do agents find the right context?" | Scored retrieval, graph-based chain validation |
+| [**04_data_based_avenue_comparison**](./04_data_based_avenue_comparison/) | "Which avenue delivers context best?" | Measurable benchmarks, operation taxonomy, project-specific weighting |
 
 ---
 
@@ -58,10 +59,15 @@ A system where:
 │   ├── need_01_consolidation_process     Distill stage outputs → knowledge files
 │   └── need_02_staleness_detection       Detect when knowledge drifts from source
 │
-└── 03_knowledge_retrieval/               How agents find the right context
-    ├── need_01_scored_retrieval          Rank context by recency × relevance × importance
-    ├── need_02_chain_validation          Validate chain integrity against the KG
-    └── need_03_auto_discovery            Auto-discover update protocols and propagation chain
+├── 03_knowledge_retrieval/               How agents find the right context
+│   ├── need_01_scored_retrieval          Rank context by recency × relevance × importance
+│   ├── need_02_chain_validation          Validate chain integrity against the KG
+│   └── need_03_auto_discovery            Auto-discover update protocols and propagation chain
+│
+└── 04_data_based_avenue_comparison/      Which avenue delivers context best
+    ├── need_01_avenue_benchmarking       Measurable capabilities with real units
+    ├── need_02_operation_measurement     Comprehensive operation taxonomy with benchmarks
+    └── need_03_customizable_importance   Project-specific importance weighting + decision matrix
 ```
 
 ---
