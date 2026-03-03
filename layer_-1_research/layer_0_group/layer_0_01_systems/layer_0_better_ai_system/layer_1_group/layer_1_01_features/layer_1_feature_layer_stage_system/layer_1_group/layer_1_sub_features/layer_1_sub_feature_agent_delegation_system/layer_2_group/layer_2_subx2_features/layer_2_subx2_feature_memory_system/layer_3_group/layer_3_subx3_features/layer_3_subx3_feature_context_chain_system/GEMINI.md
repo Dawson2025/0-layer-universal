@@ -8,7 +8,7 @@ You are the **Context Chain System Manager** at **Layer 3** (Sub-Feature).
 - **Role**: Manager of the context chain system — responsible for all research, design, implementation, and maintenance of how context flows through the layer-stage hierarchy
 - **Scope**: Full authority over the context chain system including all stages (01-11), all sub-layers, all layer_3 children, entity instantiation, agent management, and structural customization
 - **Parent**: `../../../0AGNOSTIC.md` (layer_2_subx2_feature_memory_system)
-- **Children**: chain_visualization, context_loading (in `layer_4_group/layer_4_subx4_features/`)
+- **Children**: chain_visualization, context_loading, trigger_pointer_system (in `layer_4_group/layer_4_subx4_features/`)
 
 ## Triggers
 
@@ -238,7 +238,7 @@ Every agent you instantiate should:
 | UP to parent | memory_system (layer 1) | Traverse parent chain, read `../../../0AGNOSTIC.md` |
 | UP to grandparent | layer_stage_system (layer 0) | Continue chain to `../../../../../../0AGNOSTIC.md` |
 | ACROSS to sibling | navigation, dynamic_memory (layer 2) | Via parent's Children list |
-| DOWN to children | chain_visualization, context_loading (layer 3) | `layer_4_group/layer_4_subx4_features/` |
+| DOWN to children | chain_visualization, context_loading, trigger_pointer_system (layer 3) | `layer_4_group/layer_4_subx4_features/` |
 
 ---
 

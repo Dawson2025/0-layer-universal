@@ -1,0 +1,26 @@
+# Trigger Pointer System
+
+A sub-feature of the context chain system that automates pointer file synchronization.
+
+## What It Does
+
+Pointer files reference canonical content locations using relative paths. When directories are moved or renamed, these paths break silently. This system:
+
+1. **Detects** pointer files via YAML frontmatter (`pointer_to:` field)
+2. **Resolves** canonical locations by searching for entity directories
+3. **Updates** relative paths automatically
+4. **Triggers** validation via Claude Code hooks after edits
+5. **Integrates** with agnostic-sync.sh for routine validation
+
+## Production Artifacts
+
+All promoted to root `.0agnostic/`:
+- `pointer-sync.sh` — main sync script
+- `03_protocols/pointer_sync_protocol.md` — usage protocol
+- `01_knowledge/pointer_sync/pointer_sync_knowledge.md` — system knowledge
+- `02_rules/static/pointer_sync_rule/` — format rule
+- `06_.../08_hooks/scripts/pointer-edit-guard.sh` — edit-time hook
+
+## Parent
+
+Part of `layer_3_subx3_feature_context_chain_system` — the pointer system automates the first tier (Pointers) of the three-tier knowledge architecture.
