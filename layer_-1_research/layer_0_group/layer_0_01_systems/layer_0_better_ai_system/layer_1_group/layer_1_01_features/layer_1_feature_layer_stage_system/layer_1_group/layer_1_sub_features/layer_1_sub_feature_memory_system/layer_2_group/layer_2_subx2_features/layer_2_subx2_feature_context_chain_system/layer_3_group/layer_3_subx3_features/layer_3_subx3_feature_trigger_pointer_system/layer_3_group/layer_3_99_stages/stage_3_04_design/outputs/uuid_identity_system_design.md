@@ -508,6 +508,124 @@ You are the **Stage 04 (Design)** agent for the Context Chain System.
 
 ---
 
+---
+
+## 11. Addendum: Universal Resource IDs (Expanded Scope)
+
+### Rationale
+
+The original design covers entities and stages. However, **anything that can be pointed to or referenced** should have a stable ID. This includes `.0agnostic/` resources that participate in the deduplication pattern (pointer files redirect to canonical locations). When a knowledge doc, rule, or protocol is renamed, pointers to it break — the same problem as entity renames.
+
+### Resource Types That Get IDs
+
+| Resource Type | ID Field | Where It Lives | Example |
+|---------------|----------|----------------|---------|
+| **Entity** | `entity_id` | `0AGNOSTIC.md` Identity section | `entity_id: "a1b2c3d4-..."` |
+| **Stage** | `stage_id` | Stage's `0AGNOSTIC.md` + `registry.json` | `stage_id: "e5f6a7b8-..."` |
+| **Knowledge doc** | `resource_id` | YAML frontmatter at top of `.md` file | `resource_id: "k1k2k3k4-..."` |
+| **Rule** | `resource_id` | YAML frontmatter at top of rule `.md` | `resource_id: "r1r2r3r4-..."` |
+| **Protocol** | `resource_id` | YAML frontmatter at top of protocol `.md` | `resource_id: "p1p2p3p4-..."` |
+| **Skill** | `resource_id` | YAML frontmatter in `SKILL.md` | `resource_id: "s1s2s3s4-..."` |
+
+### Resource ID Format
+
+All resources use the same `resource_id` field name (unified, not type-specific) with UUID v4:
+
+```yaml
+---
+resource_id: "f47ac10b-58cc-4372-a567-0e02b2c3d479"
+resource_type: "knowledge"
+resource_name: "pointer_sync_knowledge"
+---
+# Pointer Sync Knowledge
+...
+```
+
+### Updated Pointer Format (Full)
+
+Pointers can now reference any resource by ID:
+
+```yaml
+---
+pointer_to: "Pointer Sync Knowledge"
+canonical_entity_id: "a1b2c3d4-e5f6-4a7b-8c9d-0e1f2a3b4c5d"
+canonical_entity_name: "layer_3_subx3_feature_trigger_pointer_system"
+canonical_stage_id: "33333333-aaaa-4bbb-cccc-dddddddddddd"
+canonical_stage_name: "stage_3_02_research"
+canonical_subpath: "outputs/by_topic/architecture.md"
+canonical_resource_id: "f47ac10b-58cc-4372-a567-0e02b2c3d479"
+canonical_resource_name: "pointer_sync_knowledge"
+---
+```
+
+**Resolution order**: `canonical_resource_id` (if present, resolves directly to the file) → `canonical_entity_id` + `canonical_stage_id` + `canonical_subpath` (composed path) → name-based fallback.
+
+### Where Resources Get IDs
+
+```
+.0agnostic/
+├── 01_knowledge/
+│   ├── pointer_sync/
+│   │   └── pointer_sync_knowledge.md    ← resource_id in frontmatter
+│   ├── deduplication_pattern.md          ← resource_id in frontmatter
+│   └── layer_stage_system/
+│       └── LAYERS_EXPLAINED.md           ← resource_id in frontmatter
+├── 02_rules/
+│   ├── static/
+│   │   └── pointer_sync_rule/
+│   │       └── pointer_sync_rule.md      ← resource_id in frontmatter
+│   └── dynamic/
+│       └── auto_trigger_rule/
+│           └── auto_trigger_rule.md      ← resource_id in frontmatter
+├── 03_protocols/
+│   └── pointer_sync_protocol.md          ← resource_id in frontmatter
+└── pointer-sync.sh                       ← NO ID (scripts are invoked, not referenced by pointers)
+```
+
+### Resource Registry
+
+Each entity's `.0agnostic/` gets a `resource_registry.json`:
+
+```json
+{
+  "entity_id": "a1b2c3d4-...",
+  "resources": [
+    {
+      "resource_id": "f47ac10b-...",
+      "resource_type": "knowledge",
+      "resource_name": "pointer_sync_knowledge",
+      "path": "01_knowledge/pointer_sync/pointer_sync_knowledge.md"
+    },
+    {
+      "resource_id": "b2c3d4e5-...",
+      "resource_type": "rule",
+      "resource_name": "pointer_sync_rule",
+      "path": "02_rules/static/pointer_sync_rule/pointer_sync_rule.md"
+    }
+  ]
+}
+```
+
+### What Does NOT Get an ID
+
+| Thing | Why Not |
+|-------|---------|
+| Scripts (`.sh`) | Invoked by path/name, not referenced by pointers |
+| Auto-generated files (`CLAUDE.md`, `.integration.md`) | Derivative — identity comes from source |
+| Episodic memory files | Temporal — referenced by timestamp, not stable ID |
+| `.1merge/` files | Override mechanism — identity comes from target |
+| `0INDEX.md` | Dashboard — not a referenceable resource |
+| Handoff documents | Communication artifacts — transient by nature |
+
+### Migration Impact
+
+The Phase 1-6 migration plan expands to include:
+- **Phase 1b**: Assign `resource_id` to all knowledge docs, rules, protocols at root `.0agnostic/`
+- **Phase 2b**: Assign `resource_id` to resources in entity-level `.0agnostic/` dirs
+- **Phase 5b**: Migrate pointer files that reference resources (add `canonical_resource_id`)
+
+---
+
 ## Sources
 
 - Research: `../../../stage_3_02_research/outputs/rename_propagation_research.md` — evaluation of 7 rename propagation approaches
