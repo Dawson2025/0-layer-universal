@@ -3,7 +3,7 @@
 # test_pointer_sync.sh — Comprehensive test suite for pointer-sync.sh
 #
 # Creates a temporary mock layer-stage hierarchy, runs pointer-sync.sh
-# against it, and validates behavior across 7 test categories.
+# against it, and validates behavior across 13 test categories.
 #
 # Usage:
 #   bash test_pointer_sync.sh                    # Run all tests
@@ -639,6 +639,272 @@ EOFILE
 }
 
 # ============================================================
+# Category 8: Idempotency
+# ============================================================
+
+test_idempotency() {
+    echo -e "\n${BLUE}=== Category 8: Idempotency ===${NC}"
+
+    local ROOT
+
+    # Test 8.1: Sync twice — second run should report all unchanged
+    ROOT=$(setup_mock_repo)
+    create_pointer "$ROOT/layer_1_group/layer_1_features/layer_1_feature_gamma/ptr_idem.md" \
+        "alpha entity" "layer_1_feature_alpha" "" "" "old/stale/path"
+    # First run: should update
+    run_sync "$ROOT"
+    assert_contains "8.1a First sync updates stale pointer" "$SYNC_OUTPUT" "UPDATED"
+
+    # Second run: should report unchanged
+    run_sync "$ROOT"
+    assert_contains "8.1b Second sync reports unchanged" "$SYNC_OUTPUT" "unchanged"
+    assert_not_contains "8.1c Second sync does NOT update" "$SYNC_OUTPUT" "UPDATED"
+
+    cleanup
+
+    # Test 8.2: Sync twice with multiple pointers — all unchanged on second run
+    ROOT=$(setup_mock_repo)
+    create_pointer "$ROOT/layer_1_group/layer_1_features/layer_1_feature_gamma/ptr_a.md" \
+        "alpha" "layer_1_feature_alpha" "" "" "wrong/a"
+    create_pointer "$ROOT/layer_1_group/layer_1_features/layer_1_feature_gamma/ptr_b.md" \
+        "alpha design" "layer_1_feature_alpha" "stage_1_04_design" "" "wrong/b"
+    # First run
+    "$ROOT/.0agnostic/pointer-sync.sh" > /dev/null 2>&1
+    # Second run with validate — all should be valid
+    run_sync "$ROOT" --validate
+    assert_exit_code "8.2 Multiple pointers synced then validated → exit 0" "0" "$SYNC_EXIT"
+
+    cleanup
+}
+
+# ============================================================
+# Category 9: Spaces in Paths
+# ============================================================
+
+test_spaces_in_paths() {
+    echo -e "\n${BLUE}=== Category 9: Spaces in Paths ===${NC}"
+
+    local ROOT content
+
+    # Test 9.1: Entity directory with spaces in name
+    ROOT=$(setup_mock_repo)
+    mkdir -p "$ROOT/layer_1_group/layer_1_features/layer_1_feature_has spaces"
+    echo "# Spaced" > "$ROOT/layer_1_group/layer_1_features/layer_1_feature_has spaces/README.md"
+    create_pointer "$ROOT/layer_1_group/layer_1_features/layer_1_feature_gamma/ptr_spaces.md" \
+        "spaced entity" "layer_1_feature_has spaces" "" "" "old/path"
+    run_sync "$ROOT" --verbose
+    # Should resolve the entity despite spaces
+    assert_contains "9.1 Entity with spaces in name → resolves" "$SYNC_OUTPUT" "Entity found:"
+
+    cleanup
+
+    # Test 9.2: Subpath with spaces
+    ROOT=$(setup_mock_repo)
+    mkdir -p "$ROOT/layer_1_group/layer_1_features/layer_1_feature_alpha/my docs"
+    echo "# Docs" > "$ROOT/layer_1_group/layer_1_features/layer_1_feature_alpha/my docs/notes.md"
+    create_pointer "$ROOT/layer_1_group/layer_1_features/layer_1_feature_gamma/ptr_spaced_sub.md" \
+        "alpha docs" "layer_1_feature_alpha" "" "my docs" "old/path"
+    run_sync "$ROOT" --verbose
+    assert_contains "9.2 Subpath with spaces → resolves" "$SYNC_OUTPUT" "Full path:"
+    assert_not_contains "9.2b No BROKEN error" "$SYNC_OUTPUT" "BROKEN"
+
+    cleanup
+
+    # Test 9.3: Pointer file itself in directory with spaces
+    ROOT=$(setup_mock_repo)
+    mkdir -p "$ROOT/layer_1_group/layer_1_features/layer_1_feature_gamma/my notes"
+    create_pointer "$ROOT/layer_1_group/layer_1_features/layer_1_feature_gamma/my notes/ptr_in_spaced_dir.md" \
+        "alpha" "layer_1_feature_alpha" "" "" "old/path"
+    run_sync "$ROOT"
+    assert_contains "9.3 Pointer file in spaced directory → processed" "$SYNC_OUTPUT" "ptr_in_spaced_dir.md"
+    assert_not_contains "9.3b No errors" "$SYNC_OUTPUT" "BROKEN"
+
+    cleanup
+
+    # Test 9.4: Relative path computed correctly with spaces
+    ROOT=$(setup_mock_repo)
+    mkdir -p "$ROOT/layer_1_group/layer_1_features/layer_1_feature_has spaces"
+    echo "# Spaced" > "$ROOT/layer_1_group/layer_1_features/layer_1_feature_has spaces/README.md"
+    create_pointer "$ROOT/layer_1_group/layer_1_features/layer_1_feature_gamma/ptr_relpath_spaces.md" \
+        "spaced" "layer_1_feature_has spaces" "" "" "old/path"
+    "$ROOT/.0agnostic/pointer-sync.sh" > /dev/null 2>&1
+    content=$(cat "$ROOT/layer_1_group/layer_1_features/layer_1_feature_gamma/ptr_relpath_spaces.md")
+    assert_contains "9.4 Relative path with spaces → correct" "$content" "layer_1_feature_has spaces"
+
+    cleanup
+}
+
+# ============================================================
+# Category 10: Duplicate Entity Names
+# ============================================================
+
+test_duplicate_entities() {
+    echo -e "\n${BLUE}=== Category 10: Duplicate Entity Names ===${NC}"
+
+    local ROOT
+
+    # Test 10.1: Two directories with the same entity name — first match wins, no error
+    ROOT=$(setup_mock_repo)
+    # Create a second directory with the same name at a different path
+    mkdir -p "$ROOT/layer_1_group/layer_1_features/layer_1_feature_alpha/layer_2_group/layer_2_features/layer_1_feature_gamma"
+    echo "# Nested Gamma" > "$ROOT/layer_1_group/layer_1_features/layer_1_feature_alpha/layer_2_group/layer_2_features/layer_1_feature_gamma/README.md"
+    # The original layer_1_feature_gamma still exists at layer_1_group/layer_1_features/
+    create_pointer "$ROOT/layer_1_group/layer_1_features/layer_1_feature_alpha/ptr_ambiguous.md" \
+        "gamma" "layer_1_feature_gamma"
+    run_sync "$ROOT" --verbose
+    # Should NOT error — should resolve to one of them
+    assert_not_contains "10.1 Duplicate entity names → no BROKEN" "$SYNC_OUTPUT" "BROKEN"
+    assert_contains "10.1b Resolves to some entity" "$SYNC_OUTPUT" "Entity found:"
+
+    cleanup
+
+    # Test 10.2: Validate still passes with duplicates (resolved is valid)
+    ROOT=$(setup_mock_repo)
+    mkdir -p "$ROOT/layer_1_group/layer_1_features/layer_1_feature_alpha/layer_2_group/layer_2_features/layer_1_feature_gamma"
+    create_pointer "$ROOT/layer_1_group/layer_1_features/layer_1_feature_alpha/ptr_ambig_val.md" \
+        "gamma" "layer_1_feature_gamma"
+    # Sync first to update canonical location
+    "$ROOT/.0agnostic/pointer-sync.sh" > /dev/null 2>&1
+    # Then validate
+    run_sync "$ROOT" --validate
+    assert_exit_code "10.2 Validate with duplicate entities → exit 0" "0" "$SYNC_EXIT"
+
+    cleanup
+}
+
+# ============================================================
+# Category 11: File Subpath (not directory)
+# ============================================================
+
+test_file_subpath() {
+    echo -e "\n${BLUE}=== Category 11: File Subpath ===${NC}"
+
+    local ROOT content
+
+    # Test 11.1: Subpath pointing to a file → resolves
+    ROOT=$(setup_mock_repo)
+    create_pointer "$ROOT/layer_1_group/layer_1_features/layer_1_feature_gamma/ptr_file_target.md" \
+        "alpha design doc" "layer_1_feature_alpha" "stage_1_04_design" "outputs/design.md" "old/path"
+    run_sync "$ROOT" --verbose
+    assert_contains "11.1 File subpath → resolves" "$SYNC_OUTPUT" "Full path:"
+    assert_not_contains "11.1b No BROKEN" "$SYNC_OUTPUT" "BROKEN"
+
+    cleanup
+
+    # Test 11.2: Relative path to a file (not dir) is correct
+    ROOT=$(setup_mock_repo)
+    create_pointer "$ROOT/layer_1_group/layer_1_features/layer_1_feature_gamma/ptr_file_rel.md" \
+        "alpha design doc" "layer_1_feature_alpha" "stage_1_04_design" "outputs/design.md" "old/path"
+    "$ROOT/.0agnostic/pointer-sync.sh" > /dev/null 2>&1
+    content=$(cat "$ROOT/layer_1_group/layer_1_features/layer_1_feature_gamma/ptr_file_rel.md")
+    assert_contains "11.2 Relative path to file contains filename" "$content" "design.md"
+
+    cleanup
+
+    # Test 11.3: Sync then validate with file subpath
+    ROOT=$(setup_mock_repo)
+    create_pointer "$ROOT/layer_1_group/layer_1_features/layer_1_feature_gamma/ptr_file_val.md" \
+        "alpha design doc" "layer_1_feature_alpha" "stage_1_04_design" "outputs/design.md" "old/path"
+    "$ROOT/.0agnostic/pointer-sync.sh" > /dev/null 2>&1
+    run_sync "$ROOT" --validate
+    assert_exit_code "11.3 File subpath synced then validated → exit 0" "0" "$SYNC_EXIT"
+
+    cleanup
+}
+
+# ============================================================
+# Category 12: Combination Flags
+# ============================================================
+
+test_combination_flags() {
+    echo -e "\n${BLUE}=== Category 12: Combination Flags ===${NC}"
+
+    local ROOT content
+
+    # Test 12.1: --dry-run --validate — dry-run takes precedence (if/elif order)
+    ROOT=$(setup_mock_repo)
+    create_pointer "$ROOT/layer_1_group/layer_1_features/layer_1_feature_gamma/ptr_combo.md" \
+        "alpha" "layer_1_feature_alpha" "" "" "old/stale/path"
+    run_sync "$ROOT" --dry-run --validate
+    assert_contains "12.1 --dry-run --validate → shows WOULD UPDATE (dry-run wins)" "$SYNC_OUTPUT" "WOULD UPDATE"
+    assert_not_contains "12.1b Does not show STALE" "$SYNC_OUTPUT" "STALE"
+
+    cleanup
+
+    # Test 12.2: --verbose --dry-run — both active simultaneously
+    ROOT=$(setup_mock_repo)
+    create_pointer "$ROOT/layer_1_group/layer_1_features/layer_1_feature_gamma/ptr_vdry.md" \
+        "alpha" "layer_1_feature_alpha" "" "" "old/path"
+    run_sync "$ROOT" --verbose --dry-run
+    assert_contains "12.2a Verbose + dry-run → shows [verbose]" "$SYNC_OUTPUT" "[verbose]"
+    assert_contains "12.2b Verbose + dry-run → shows WOULD UPDATE" "$SYNC_OUTPUT" "WOULD UPDATE"
+
+    cleanup
+
+    # Test 12.3: --dry-run does not modify file even with --validate
+    ROOT=$(setup_mock_repo)
+    create_pointer "$ROOT/layer_1_group/layer_1_features/layer_1_feature_gamma/ptr_no_mod.md" \
+        "alpha" "layer_1_feature_alpha" "" "" "old/stale/path"
+    run_sync "$ROOT" --dry-run --validate
+    content=$(cat "$ROOT/layer_1_group/layer_1_features/layer_1_feature_gamma/ptr_no_mod.md")
+    assert_contains "12.3 File unchanged after --dry-run --validate" "$content" "old/stale/path"
+
+    cleanup
+
+    # Test 12.4: --verbose --validate — shows resolution steps for valid pointers
+    ROOT=$(setup_mock_repo)
+    create_pointer "$ROOT/layer_1_group/layer_1_features/layer_1_feature_gamma/ptr_vval.md" \
+        "alpha" "layer_1_feature_alpha"
+    "$ROOT/.0agnostic/pointer-sync.sh" > /dev/null 2>&1
+    run_sync "$ROOT" --verbose --validate
+    assert_contains "12.4 Verbose + validate → shows Processing:" "$SYNC_OUTPUT" "Processing:"
+    assert_exit_code "12.4b Exits 0 for valid pointer" "0" "$SYNC_EXIT"
+
+    cleanup
+}
+
+# ============================================================
+# Category 13: Python3 Dependency
+# ============================================================
+
+test_python3_dependency() {
+    echo -e "\n${BLUE}=== Category 13: Python3 Dependency ===${NC}"
+
+    local ROOT
+
+    # Test 13.1: relpath computation produces correct result for known paths
+    # (Validates that python3 -c os.path.relpath is invoked correctly)
+    ROOT=$(setup_mock_repo)
+    create_pointer "$ROOT/layer_1_group/layer_1_features/layer_1_feature_alpha/layer_2_group/layer_2_features/layer_2_feature_beta/ptr_deep.md" \
+        "gamma" "layer_1_feature_gamma" "" "" "old/path"
+    "$ROOT/.0agnostic/pointer-sync.sh" > /dev/null 2>&1
+    local content
+    content=$(cat "$ROOT/layer_1_group/layer_1_features/layer_1_feature_alpha/layer_2_group/layer_2_features/layer_2_feature_beta/ptr_deep.md")
+    # Count the number of ../ in the path — should be exactly 4
+    # beta -> layer_2_features -> layer_2_group -> alpha -> layer_1_features -> gamma
+    # from beta dir: ../../../../layer_1_feature_gamma
+    # Actually: ptr is in layer_2_feature_beta/, target is layer_1_feature_gamma/
+    # relpath from layer_2_feature_beta/ to layer_1_feature_gamma/
+    # = ../../../../layer_1_feature_gamma (up: beta -> features -> group -> alpha -> features level -> gamma)
+    local expected_relpath
+    expected_relpath=$(python3 -c "import os.path; print(os.path.relpath('$ROOT/layer_1_group/layer_1_features/layer_1_feature_gamma', '$ROOT/layer_1_group/layer_1_features/layer_1_feature_alpha/layer_2_group/layer_2_features/layer_2_feature_beta'))")
+    assert_contains "13.1 Deep relpath matches python3 computation" "$content" "$expected_relpath"
+
+    cleanup
+
+    # Test 13.2: Verify python3 is available (precondition for the script)
+    if command -v python3 > /dev/null 2>&1; then
+        TOTAL=$((TOTAL + 1))
+        echo -e "  ${GREEN}PASS${NC}: 13.2 python3 is available on this system"
+        PASS=$((PASS + 1))
+    else
+        TOTAL=$((TOTAL + 1))
+        echo -e "  ${RED}FAIL${NC}: 13.2 python3 is NOT available — pointer-sync.sh will fail"
+        FAIL=$((FAIL + 1))
+    fi
+}
+
+# ============================================================
 # Main
 # ============================================================
 
@@ -680,6 +946,30 @@ fi
 
 if [ -z "$CATEGORY_FILTER" ] || [ "$CATEGORY_FILTER" = "edge" ]; then
     test_edge_cases
+fi
+
+if [ -z "$CATEGORY_FILTER" ] || [ "$CATEGORY_FILTER" = "idempotency" ]; then
+    test_idempotency
+fi
+
+if [ -z "$CATEGORY_FILTER" ] || [ "$CATEGORY_FILTER" = "spaces" ]; then
+    test_spaces_in_paths
+fi
+
+if [ -z "$CATEGORY_FILTER" ] || [ "$CATEGORY_FILTER" = "duplicates" ]; then
+    test_duplicate_entities
+fi
+
+if [ -z "$CATEGORY_FILTER" ] || [ "$CATEGORY_FILTER" = "filesubpath" ]; then
+    test_file_subpath
+fi
+
+if [ -z "$CATEGORY_FILTER" ] || [ "$CATEGORY_FILTER" = "comboflags" ]; then
+    test_combination_flags
+fi
+
+if [ -z "$CATEGORY_FILTER" ] || [ "$CATEGORY_FILTER" = "python3" ]; then
+    test_python3_dependency
 fi
 
 # Summary

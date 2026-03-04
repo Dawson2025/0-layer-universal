@@ -18,6 +18,13 @@
 
 set -euo pipefail
 
+# --- Dependency check ---
+if ! command -v python3 > /dev/null 2>&1; then
+    echo "ERROR: python3 is required for relative path computation but was not found."
+    echo "Install python3 or ensure it is on your PATH."
+    exit 1
+fi
+
 # --- Configuration ---
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"  # 0_layer_universal root
