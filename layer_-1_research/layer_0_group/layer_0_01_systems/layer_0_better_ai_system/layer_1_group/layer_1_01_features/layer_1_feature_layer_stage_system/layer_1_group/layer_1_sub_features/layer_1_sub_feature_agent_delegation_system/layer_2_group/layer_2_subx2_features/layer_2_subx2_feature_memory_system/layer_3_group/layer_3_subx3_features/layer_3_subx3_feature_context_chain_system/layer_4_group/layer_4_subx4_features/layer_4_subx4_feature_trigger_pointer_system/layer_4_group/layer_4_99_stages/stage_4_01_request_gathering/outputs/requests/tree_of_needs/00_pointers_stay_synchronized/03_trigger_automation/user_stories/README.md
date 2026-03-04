@@ -12,3 +12,4 @@
 |-----|-------|------|
 | US-01 | Auto-sync after directory move | [US-01_auto_sync_on_move.md](./US-01_auto_sync_on_move.md) |
 | US-02 | Agent edits trigger validation reminder | [US-02_agent_edit_reminder.md](./US-02_agent_edit_reminder.md) |
+| US-03 | Git hook triggers pointer sync | [US-03_git_hook_triggers.md](./US-03_git_hook_triggers.md) |

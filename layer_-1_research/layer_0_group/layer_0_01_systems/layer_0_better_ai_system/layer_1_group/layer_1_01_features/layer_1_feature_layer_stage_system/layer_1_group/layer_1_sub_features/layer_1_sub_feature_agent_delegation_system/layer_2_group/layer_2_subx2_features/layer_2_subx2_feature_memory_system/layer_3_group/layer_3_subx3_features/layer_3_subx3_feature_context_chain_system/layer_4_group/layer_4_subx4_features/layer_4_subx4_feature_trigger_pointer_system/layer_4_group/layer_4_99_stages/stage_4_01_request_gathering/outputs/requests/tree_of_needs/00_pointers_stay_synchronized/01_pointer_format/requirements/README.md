@@ -6,3 +6,4 @@
 |------|-------|------|
 | REQ-01 | Frontmatter schema | [REQ-01_frontmatter_schema.md](./REQ-01_frontmatter_schema.md) |
 | REQ-02 | Body convention | [REQ-02_body_convention.md](./REQ-02_body_convention.md) |
+| REQ-03 | Windows line ending compatibility | [REQ-03_windows_line_endings.md](./REQ-03_windows_line_endings.md) |

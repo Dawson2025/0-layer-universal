@@ -75,7 +75,9 @@ extract_fm() {
     local field="$1"
     local file="$2"
     # Read between --- markers, strip \r, find field, strip quotes
-    sed -n '/^---/,/^---/p' "$file" | tr -d '\r' | grep "^${field}:" | head -1 | sed "s/^${field}:[[:space:]]*//" | sed 's/^["'"'"']//;s/["'"'"']$//'
+    # Note: || true ensures missing fields return empty string instead of
+    # crashing with pipefail (grep returns 1 when no match)
+    sed -n '/^---/,/^---/p' "$file" | tr -d '\r' | grep "^${field}:" | head -1 | sed "s/^${field}:[[:space:]]*//" | sed 's/^["'"'"']//;s/["'"'"']$//' || true
 }
 
 # --- Helper: check if file has pointer frontmatter ---
