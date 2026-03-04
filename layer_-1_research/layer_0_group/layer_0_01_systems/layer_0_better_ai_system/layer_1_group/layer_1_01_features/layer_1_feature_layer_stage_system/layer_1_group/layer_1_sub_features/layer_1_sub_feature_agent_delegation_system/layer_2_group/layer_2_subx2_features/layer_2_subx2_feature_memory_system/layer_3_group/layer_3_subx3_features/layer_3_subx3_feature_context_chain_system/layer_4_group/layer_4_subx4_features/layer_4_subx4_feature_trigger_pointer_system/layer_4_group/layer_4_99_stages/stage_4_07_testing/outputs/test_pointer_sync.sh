@@ -3,7 +3,7 @@
 # test_pointer_sync.sh — Comprehensive test suite for pointer-sync.sh
 #
 # Creates a temporary mock layer-stage hierarchy, runs pointer-sync.sh
-# against it, and validates behavior across 13 test categories.
+# against it, and validates behavior across 19 test categories.
 #
 # Usage:
 #   bash test_pointer_sync.sh                    # Run all tests
@@ -905,6 +905,464 @@ test_python3_dependency() {
 }
 
 # ============================================================
+# Category 14: Symlinks
+# ============================================================
+
+test_symlinks() {
+    echo -e "\n${BLUE}=== Category 14: Symlinks ===${NC}"
+
+    local ROOT content
+
+    # Test 14.1: Entity directory is a symlink — find -type d doesn't follow symlinks by default
+    ROOT=$(setup_mock_repo)
+    mkdir -p "$ROOT/layer_1_group/layer_1_features/layer_1_feature_real_target"
+    echo "# Real" > "$ROOT/layer_1_group/layer_1_features/layer_1_feature_real_target/README.md"
+    ln -s "$ROOT/layer_1_group/layer_1_features/layer_1_feature_real_target" \
+          "$ROOT/layer_1_group/layer_1_features/layer_1_feature_symlinked"
+    create_pointer "$ROOT/layer_1_group/layer_1_features/layer_1_feature_gamma/ptr_symlink.md" \
+        "symlinked entity" "layer_1_feature_symlinked" "" "" "old/path"
+    run_sync "$ROOT" --verbose
+    # find -type d won't match symlinks — this should be BROKEN
+    # (unless the script uses -type d -o -type l or similar)
+    if echo "$SYNC_OUTPUT" | grep -qF "Entity found:"; then
+        TOTAL=$((TOTAL + 1))
+        echo -e "  ${GREEN}PASS${NC}: 14.1 Symlinked entity → resolves (find follows symlinks)"
+        PASS=$((PASS + 1))
+    elif echo "$SYNC_OUTPUT" | grep -qF "BROKEN"; then
+        TOTAL=$((TOTAL + 1))
+        echo -e "  ${GREEN}PASS${NC}: 14.1 Symlinked entity → BROKEN (find -type d skips symlinks — known limitation)"
+        PASS=$((PASS + 1))
+    else
+        TOTAL=$((TOTAL + 1))
+        echo -e "  ${RED}FAIL${NC}: 14.1 Symlinked entity → unexpected output"
+        echo -e "    Output: $(echo "$SYNC_OUTPUT" | head -5)"
+        FAIL=$((FAIL + 1))
+    fi
+
+    cleanup
+
+    # Test 14.2: Target subpath is a symlink to a real file
+    ROOT=$(setup_mock_repo)
+    mkdir -p "$ROOT/layer_1_group/layer_1_features/layer_1_feature_alpha/stage_1_04_design/outputs/real_dir"
+    echo "# Real file" > "$ROOT/layer_1_group/layer_1_features/layer_1_feature_alpha/stage_1_04_design/outputs/real_dir/doc.md"
+    ln -s "$ROOT/layer_1_group/layer_1_features/layer_1_feature_alpha/stage_1_04_design/outputs/real_dir" \
+          "$ROOT/layer_1_group/layer_1_features/layer_1_feature_alpha/stage_1_04_design/outputs/linked_dir"
+    create_pointer "$ROOT/layer_1_group/layer_1_features/layer_1_feature_gamma/ptr_symlink_sub.md" \
+        "linked subpath" "layer_1_feature_alpha" "stage_1_04_design" "outputs/linked_dir" "old/path"
+    run_sync "$ROOT" --verbose
+    # [ ! -e "$path" ] follows symlinks, so this should resolve
+    assert_not_contains "14.2 Symlinked subpath → no BROKEN" "$SYNC_OUTPUT" "BROKEN"
+    assert_contains "14.2b Full path resolved" "$SYNC_OUTPUT" "Full path:"
+
+    cleanup
+
+    # Test 14.3: Pointer file itself is a symlink
+    ROOT=$(setup_mock_repo)
+    create_pointer "$ROOT/layer_1_group/layer_1_features/layer_1_feature_gamma/ptr_real.md" \
+        "alpha" "layer_1_feature_alpha" "" "" "old/path"
+    ln -s "$ROOT/layer_1_group/layer_1_features/layer_1_feature_gamma/ptr_real.md" \
+          "$ROOT/layer_1_group/layer_1_features/layer_1_feature_gamma/ptr_link.md"
+    run_sync "$ROOT" --verbose
+    # grep -rl follows symlinks, so it may find both the real file and the link
+    assert_contains "14.3 Pointer file symlink → at least one found" "$SYNC_OUTPUT" "ptr_"
+
+    cleanup
+}
+
+# ============================================================
+# Category 15: Very Long Paths
+# ============================================================
+
+test_long_paths() {
+    echo -e "\n${BLUE}=== Category 15: Very Long Paths ===${NC}"
+
+    local ROOT
+
+    # Test 15.1: Deeply nested entity path (mimics real repo depth)
+    ROOT=$(setup_mock_repo)
+    local DEEP_PATH="$ROOT/layer_1_group/layer_1_features/layer_1_feature_alpha/layer_2_group/layer_2_features/layer_2_feature_beta/layer_3_group/layer_3_features/layer_3_feature_delta/layer_4_group/layer_4_features/layer_4_feature_epsilon"
+    mkdir -p "$DEEP_PATH"
+    echo "# Deep" > "$DEEP_PATH/README.md"
+
+    create_pointer "$ROOT/layer_1_group/layer_1_features/layer_1_feature_gamma/ptr_deep_target.md" \
+        "deep entity" "layer_4_feature_epsilon" "" "" "old/path"
+    run_sync "$ROOT" --verbose
+    assert_contains "15.1 Deeply nested entity → resolves" "$SYNC_OUTPUT" "Entity found:"
+    assert_not_contains "15.1b No errors" "$SYNC_OUTPUT" "BROKEN"
+
+    cleanup
+
+    # Test 15.2: Pointer file at a deeply nested location pointing up
+    ROOT=$(setup_mock_repo)
+    DEEP_PATH="$ROOT/layer_1_group/layer_1_features/layer_1_feature_alpha/layer_2_group/layer_2_features/layer_2_feature_beta/layer_3_group/layer_3_features/layer_3_feature_delta/layer_4_group/layer_4_features/layer_4_feature_epsilon"
+    mkdir -p "$DEEP_PATH"
+    create_pointer "$DEEP_PATH/ptr_up_from_deep.md" \
+        "gamma from deep" "layer_1_feature_gamma" "" "" "old/path"
+    "$ROOT/.0agnostic/pointer-sync.sh" > /dev/null 2>&1
+    local content
+    content=$(cat "$DEEP_PATH/ptr_up_from_deep.md")
+    # Should contain many ../ segments
+    assert_contains "15.2 Deep pointer to shallow → relative path computed" "$content" "layer_1_feature_gamma"
+    # Verify correctness with python
+    local expected
+    expected=$(python3 -c "import os.path; print(os.path.relpath('$ROOT/layer_1_group/layer_1_features/layer_1_feature_gamma', '$DEEP_PATH'))")
+    assert_contains "15.2b Relative path matches python3" "$content" "$expected"
+
+    cleanup
+
+    # Test 15.3: Sync then validate on deep paths
+    ROOT=$(setup_mock_repo)
+    DEEP_PATH="$ROOT/layer_1_group/layer_1_features/layer_1_feature_alpha/layer_2_group/layer_2_features/layer_2_feature_beta/layer_3_group/layer_3_features/layer_3_feature_delta/layer_4_group/layer_4_features/layer_4_feature_epsilon"
+    mkdir -p "$DEEP_PATH"
+    create_pointer "$DEEP_PATH/ptr_val_deep.md" \
+        "gamma" "layer_1_feature_gamma" "" "" "old/path"
+    "$ROOT/.0agnostic/pointer-sync.sh" > /dev/null 2>&1
+    run_sync "$ROOT" --validate
+    assert_exit_code "15.3 Deep path synced then validated → exit 0" "0" "$SYNC_EXIT"
+
+    cleanup
+}
+
+# ============================================================
+# Category 16: Non-Markdown Files
+# ============================================================
+
+test_non_markdown_files() {
+    echo -e "\n${BLUE}=== Category 16: Non-Markdown Files ===${NC}"
+
+    local ROOT
+
+    # Test 16.1: .yaml file with pointer_to: → ignored (--include="*.md")
+    ROOT=$(setup_mock_repo)
+    mkdir -p "$ROOT/layer_1_group/layer_1_features/layer_1_feature_gamma"
+    cat > "$ROOT/layer_1_group/layer_1_features/layer_1_feature_gamma/config.yaml" <<'EOFILE'
+---
+pointer_to: alpha
+canonical_entity: layer_1_feature_alpha
+---
+EOFILE
+    run_sync "$ROOT" --verbose
+    assert_not_contains "16.1 .yaml file with pointer_to → not processed" "$SYNC_OUTPUT" "config.yaml"
+
+    cleanup
+
+    # Test 16.2: .txt file with pointer frontmatter → ignored
+    ROOT=$(setup_mock_repo)
+    mkdir -p "$ROOT/layer_1_group/layer_1_features/layer_1_feature_gamma"
+    cat > "$ROOT/layer_1_group/layer_1_features/layer_1_feature_gamma/notes.txt" <<'EOFILE'
+---
+pointer_to: alpha
+canonical_entity: layer_1_feature_alpha
+---
+
+# Notes
+
+> **Canonical location**: `old/path`
+EOFILE
+    run_sync "$ROOT" --verbose
+    assert_not_contains "16.2 .txt file with pointer_to → not processed" "$SYNC_OUTPUT" "notes.txt"
+
+    cleanup
+
+    # Test 16.3: .json file → ignored
+    ROOT=$(setup_mock_repo)
+    mkdir -p "$ROOT/layer_1_group/layer_1_features/layer_1_feature_gamma"
+    cat > "$ROOT/layer_1_group/layer_1_features/layer_1_feature_gamma/data.json" <<'EOFILE'
+{
+  "pointer_to": "alpha",
+  "canonical_entity": "layer_1_feature_alpha"
+}
+EOFILE
+    run_sync "$ROOT" --verbose
+    assert_not_contains "16.3 .json file → not processed" "$SYNC_OUTPUT" "data.json"
+
+    cleanup
+
+    # Test 16.4: Only .md files counted in total
+    ROOT=$(setup_mock_repo)
+    mkdir -p "$ROOT/layer_1_group/layer_1_features/layer_1_feature_gamma"
+    # Create one valid .md pointer and one .yaml with pointer_to
+    create_pointer "$ROOT/layer_1_group/layer_1_features/layer_1_feature_gamma/real_ptr.md" \
+        "alpha" "layer_1_feature_alpha"
+    cat > "$ROOT/layer_1_group/layer_1_features/layer_1_feature_gamma/fake_ptr.yaml" <<'EOFILE'
+---
+pointer_to: alpha
+canonical_entity: layer_1_feature_alpha
+---
+EOFILE
+    run_sync "$ROOT"
+    assert_contains "16.4 Only .md counted → Total pointer files: 1" "$SYNC_OUTPUT" "Total pointer files: 1"
+
+    cleanup
+}
+
+# ============================================================
+# Category 17: Multiple Pointers to Same Target
+# ============================================================
+
+test_multiple_pointers_same_target() {
+    echo -e "\n${BLUE}=== Category 17: Multiple Pointers to Same Target ===${NC}"
+
+    local ROOT content_a content_b
+
+    # Test 17.1: Two pointers in different dirs pointing to same entity → both get correct relative paths
+    ROOT=$(setup_mock_repo)
+    # Pointer A: in gamma (sibling of alpha)
+    create_pointer "$ROOT/layer_1_group/layer_1_features/layer_1_feature_gamma/ptr_to_alpha_a.md" \
+        "alpha from gamma" "layer_1_feature_alpha" "" "" "old/a"
+    # Pointer B: in beta (child of alpha)
+    create_pointer "$ROOT/layer_1_group/layer_1_features/layer_1_feature_alpha/layer_2_group/layer_2_features/layer_2_feature_beta/ptr_to_alpha_b.md" \
+        "alpha from beta" "layer_1_feature_alpha" "" "" "old/b"
+    "$ROOT/.0agnostic/pointer-sync.sh" > /dev/null 2>&1
+
+    content_a=$(cat "$ROOT/layer_1_group/layer_1_features/layer_1_feature_gamma/ptr_to_alpha_a.md")
+    content_b=$(cat "$ROOT/layer_1_group/layer_1_features/layer_1_feature_alpha/layer_2_group/layer_2_features/layer_2_feature_beta/ptr_to_alpha_b.md")
+
+    # Pointer A (gamma → alpha): should be ../layer_1_feature_alpha
+    assert_contains "17.1a Pointer A (gamma→alpha) → ../layer_1_feature_alpha" "$content_a" "../layer_1_feature_alpha"
+    # Pointer B (beta → alpha): should be ../../.. (up from beta to alpha)
+    local expected_b
+    expected_b=$(python3 -c "import os.path; print(os.path.relpath('$ROOT/layer_1_group/layer_1_features/layer_1_feature_alpha', '$ROOT/layer_1_group/layer_1_features/layer_1_feature_alpha/layer_2_group/layer_2_features/layer_2_feature_beta'))")
+    assert_contains "17.1b Pointer B (beta→alpha) → correct relative path" "$content_b" "$expected_b"
+    # The two paths should be DIFFERENT
+    local path_a path_b
+    path_a=$(grep 'Canonical location' "$ROOT/layer_1_group/layer_1_features/layer_1_feature_gamma/ptr_to_alpha_a.md")
+    path_b=$(grep 'Canonical location' "$ROOT/layer_1_group/layer_1_features/layer_1_feature_alpha/layer_2_group/layer_2_features/layer_2_feature_beta/ptr_to_alpha_b.md")
+    TOTAL=$((TOTAL + 1))
+    if [ "$path_a" != "$path_b" ]; then
+        echo -e "  ${GREEN}PASS${NC}: 17.1c Two pointers to same target → different relative paths"
+        PASS=$((PASS + 1))
+    else
+        echo -e "  ${RED}FAIL${NC}: 17.1c Two pointers to same target should have different relative paths"
+        echo -e "    Path A: $path_a"
+        echo -e "    Path B: $path_b"
+        FAIL=$((FAIL + 1))
+    fi
+
+    cleanup
+
+    # Test 17.2: Validate passes when multiple pointers to same target are all synced
+    ROOT=$(setup_mock_repo)
+    create_pointer "$ROOT/layer_1_group/layer_1_features/layer_1_feature_gamma/ptr_multi_a.md" \
+        "alpha" "layer_1_feature_alpha" "" "" "old/a"
+    create_pointer "$ROOT/layer_1_group/layer_1_features/layer_1_feature_alpha/layer_2_group/layer_2_features/layer_2_feature_beta/ptr_multi_b.md" \
+        "alpha" "layer_1_feature_alpha" "" "" "old/b"
+    "$ROOT/.0agnostic/pointer-sync.sh" > /dev/null 2>&1
+    run_sync "$ROOT" --validate
+    assert_exit_code "17.2 Multiple pointers to same target → validate exit 0" "0" "$SYNC_EXIT"
+
+    cleanup
+}
+
+# ============================================================
+# Category 18: Extra Frontmatter Fields
+# ============================================================
+
+test_extra_frontmatter() {
+    echo -e "\n${BLUE}=== Category 18: Extra Frontmatter Fields ===${NC}"
+
+    local ROOT
+
+    # Test 18.1: Pointer with extra unrelated YAML fields → still resolves
+    ROOT=$(setup_mock_repo)
+    mkdir -p "$ROOT/layer_1_group/layer_1_features/layer_1_feature_gamma"
+    cat > "$ROOT/layer_1_group/layer_1_features/layer_1_feature_gamma/ptr_extra_fields.md" <<'EOFILE'
+---
+title: "Some document title"
+date: 2026-03-01
+tags: [pointer, test, extra]
+pointer_to: alpha design
+canonical_entity: layer_1_feature_alpha
+canonical_stage: stage_1_04_design
+author: test-suite
+version: 1.0
+---
+
+# Pointer with Extra Fields
+
+> **Canonical location**: `old/path`
+EOFILE
+    run_sync "$ROOT" --verbose
+    assert_contains "18.1a Extra fields → entity resolves" "$SYNC_OUTPUT" "Entity found:"
+    assert_contains "18.1b Extra fields → stage resolves" "$SYNC_OUTPUT" "Stage found:"
+    assert_not_contains "18.1c No BROKEN" "$SYNC_OUTPUT" "BROKEN"
+
+    cleanup
+
+    # Test 18.2: pointer_to not on the first field line → still extracted
+    ROOT=$(setup_mock_repo)
+    mkdir -p "$ROOT/layer_1_group/layer_1_features/layer_1_feature_gamma"
+    cat > "$ROOT/layer_1_group/layer_1_features/layer_1_feature_gamma/ptr_late_pointer.md" <<'EOFILE'
+---
+title: "Document"
+author: someone
+canonical_entity: layer_1_feature_alpha
+pointer_to: alpha entity
+description: "This pointer_to is not the first field"
+---
+
+# Pointer with Late pointer_to
+
+> **Canonical location**: `old/path`
+EOFILE
+    run_sync "$ROOT" --verbose
+    assert_contains "18.2 pointer_to after other fields → still detected" "$SYNC_OUTPUT" "Entity found:"
+
+    cleanup
+
+    # Test 18.3: Field with colon in value (e.g., "pointer_to: alpha: design docs")
+    ROOT=$(setup_mock_repo)
+    mkdir -p "$ROOT/layer_1_group/layer_1_features/layer_1_feature_gamma"
+    cat > "$ROOT/layer_1_group/layer_1_features/layer_1_feature_gamma/ptr_colon_value.md" <<'EOFILE'
+---
+pointer_to: alpha: design docs
+canonical_entity: layer_1_feature_alpha
+---
+
+# Colon in Value
+
+> **Canonical location**: `old/path`
+EOFILE
+    run_sync "$ROOT" --verbose
+    # pointer_to extracts "alpha: design docs" — the script should still resolve via canonical_entity
+    assert_contains "18.3 Colon in pointer_to value → entity still resolves" "$SYNC_OUTPUT" "Entity found:"
+
+    cleanup
+
+    # Test 18.4: YAML comment lines in frontmatter → ignored
+    ROOT=$(setup_mock_repo)
+    mkdir -p "$ROOT/layer_1_group/layer_1_features/layer_1_feature_gamma"
+    cat > "$ROOT/layer_1_group/layer_1_features/layer_1_feature_gamma/ptr_yaml_comments.md" <<'EOFILE'
+---
+# This is a YAML comment
+pointer_to: alpha entity
+# Another comment
+canonical_entity: layer_1_feature_alpha
+# canonical_stage: stage_1_04_design  (commented out)
+---
+
+# YAML Comments
+
+> **Canonical location**: `old/path`
+EOFILE
+    run_sync "$ROOT" --verbose
+    assert_contains "18.4a YAML comments → entity resolves" "$SYNC_OUTPUT" "Entity found:"
+    # The commented-out canonical_stage should NOT be extracted
+    assert_not_contains "18.4b Commented canonical_stage → not extracted" "$SYNC_OUTPUT" "Stage found:"
+
+    cleanup
+}
+
+# ============================================================
+# Category 19: Awk Replacement Edge Cases
+# ============================================================
+
+test_awk_replacement() {
+    echo -e "\n${BLUE}=== Category 19: Awk Replacement Edge Cases ===${NC}"
+
+    local ROOT content
+
+    # Test 19.1: Pointer file with content below the Canonical location line → preserved
+    ROOT=$(setup_mock_repo)
+    mkdir -p "$ROOT/layer_1_group/layer_1_features/layer_1_feature_gamma"
+    cat > "$ROOT/layer_1_group/layer_1_features/layer_1_feature_gamma/ptr_content_below.md" <<'EOFILE'
+---
+pointer_to: alpha entity
+canonical_entity: layer_1_feature_alpha
+---
+
+# Pointer
+
+> **Canonical location**: `old/wrong/path`
+
+## Additional Content
+
+This paragraph should survive the update.
+
+- Bullet 1
+- Bullet 2
+- Bullet 3
+
+```bash
+echo "code block should survive too"
+```
+EOFILE
+    "$ROOT/.0agnostic/pointer-sync.sh" > /dev/null 2>&1
+    content=$(cat "$ROOT/layer_1_group/layer_1_features/layer_1_feature_gamma/ptr_content_below.md")
+    assert_contains "19.1a Content below canonical line → paragraph preserved" "$content" "This paragraph should survive the update."
+    assert_contains "19.1b Bullets preserved" "$content" "Bullet 2"
+    assert_contains "19.1c Code block preserved" "$content" "code block should survive too"
+    assert_not_contains "19.1d Old path replaced" "$content" "old/wrong/path"
+
+    cleanup
+
+    # Test 19.2: Multiple Canonical location lines → only first updated
+    ROOT=$(setup_mock_repo)
+    mkdir -p "$ROOT/layer_1_group/layer_1_features/layer_1_feature_gamma"
+    cat > "$ROOT/layer_1_group/layer_1_features/layer_1_feature_gamma/ptr_multi_loc.md" <<'EOFILE'
+---
+pointer_to: alpha entity
+canonical_entity: layer_1_feature_alpha
+---
+
+# Pointer
+
+> **Canonical location**: `old/wrong/path`
+
+## Notes
+
+Mentioned again: > **Canonical location**: `some/other/reference`
+EOFILE
+    "$ROOT/.0agnostic/pointer-sync.sh" > /dev/null 2>&1
+    content=$(cat "$ROOT/layer_1_group/layer_1_features/layer_1_feature_gamma/ptr_multi_loc.md")
+    # First line should be updated, second mention preserved as-is
+    assert_contains "19.2a First canonical line updated" "$content" "../layer_1_feature_alpha"
+    assert_contains "19.2b Second mention preserved" "$content" "some/other/reference"
+
+    cleanup
+
+    # Test 19.3: Canonical location line with special characters in old path → replaced cleanly
+    ROOT=$(setup_mock_repo)
+    mkdir -p "$ROOT/layer_1_group/layer_1_features/layer_1_feature_gamma"
+    cat > "$ROOT/layer_1_group/layer_1_features/layer_1_feature_gamma/ptr_special_old.md" <<'EOFILE'
+---
+pointer_to: alpha entity
+canonical_entity: layer_1_feature_alpha
+---
+
+# Pointer
+
+> **Canonical location**: `../../../some/path with spaces & special (chars)/target`
+EOFILE
+    "$ROOT/.0agnostic/pointer-sync.sh" > /dev/null 2>&1
+    content=$(cat "$ROOT/layer_1_group/layer_1_features/layer_1_feature_gamma/ptr_special_old.md")
+    assert_contains "19.3 Special chars in old path → replaced with correct path" "$content" "../layer_1_feature_alpha"
+    assert_not_contains "19.3b Old special path gone" "$content" "special (chars)"
+
+    cleanup
+
+    # Test 19.4: Frontmatter preserved exactly after awk replacement
+    ROOT=$(setup_mock_repo)
+    mkdir -p "$ROOT/layer_1_group/layer_1_features/layer_1_feature_gamma"
+    cat > "$ROOT/layer_1_group/layer_1_features/layer_1_feature_gamma/ptr_fm_preserve.md" <<'EOFILE'
+---
+pointer_to: alpha entity
+canonical_entity: layer_1_feature_alpha
+custom_field: preserve_me
+---
+
+# Pointer
+
+> **Canonical location**: `old/path`
+EOFILE
+    "$ROOT/.0agnostic/pointer-sync.sh" > /dev/null 2>&1
+    content=$(cat "$ROOT/layer_1_group/layer_1_features/layer_1_feature_gamma/ptr_fm_preserve.md")
+    assert_contains "19.4 Frontmatter preserved after update" "$content" "custom_field: preserve_me"
+
+    cleanup
+}
+
+# ============================================================
 # Main
 # ============================================================
 
@@ -970,6 +1428,30 @@ fi
 
 if [ -z "$CATEGORY_FILTER" ] || [ "$CATEGORY_FILTER" = "python3" ]; then
     test_python3_dependency
+fi
+
+if [ -z "$CATEGORY_FILTER" ] || [ "$CATEGORY_FILTER" = "symlinks" ]; then
+    test_symlinks
+fi
+
+if [ -z "$CATEGORY_FILTER" ] || [ "$CATEGORY_FILTER" = "longpaths" ]; then
+    test_long_paths
+fi
+
+if [ -z "$CATEGORY_FILTER" ] || [ "$CATEGORY_FILTER" = "nonmarkdown" ]; then
+    test_non_markdown_files
+fi
+
+if [ -z "$CATEGORY_FILTER" ] || [ "$CATEGORY_FILTER" = "multitarget" ]; then
+    test_multiple_pointers_same_target
+fi
+
+if [ -z "$CATEGORY_FILTER" ] || [ "$CATEGORY_FILTER" = "extrafm" ]; then
+    test_extra_frontmatter
+fi
+
+if [ -z "$CATEGORY_FILTER" ] || [ "$CATEGORY_FILTER" = "awkreplace" ]; then
+    test_awk_replacement
 fi
 
 # Summary
