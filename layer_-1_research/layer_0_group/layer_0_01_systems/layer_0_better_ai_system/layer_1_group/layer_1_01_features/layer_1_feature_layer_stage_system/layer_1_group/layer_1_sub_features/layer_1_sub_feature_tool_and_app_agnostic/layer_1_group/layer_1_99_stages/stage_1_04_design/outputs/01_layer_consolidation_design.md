@@ -11,6 +11,7 @@ resource_name: "01_layer_consolidation_design"
 
 ---
 
+<!-- section_id: "72eea3f3-af4f-417a-a3d5-e8656b3f0c8b" -->
 ## Executive Summary
 
 The layer-stage system underwent consolidation to fix naming conventions and directory structure inconsistencies. Historically, some layers (layer_3, layer_4) used old naming conventions (`layer_N/`) while new code attempted to use `layer_N_group/` convention. This created duplicate, partially-populated directory structures where new work went to one location while old work remained in the other.
@@ -19,8 +20,10 @@ The layer-stage system underwent consolidation to fix naming conventions and dir
 
 ---
 
+<!-- section_id: "8ebcbaf3-e337-4035-8720-055d5e3727f1" -->
 ## Problem Pattern
 
+<!-- section_id: "a75463f2-68df-4885-b616-7c6901158982" -->
 ### Symptoms Observed
 
 1. **Duplicate directory structures** at same level:
@@ -38,6 +41,7 @@ The layer-stage system underwent consolidation to fix naming conventions and dir
 
 4. **Git submodule path conflicts** — `.gitmodules` referenced old layer paths that no longer existed after renaming
 
+<!-- section_id: "92c07009-944b-4c21-b1a9-fc873af8a1a9" -->
 ### Root Cause
 
 Historical migration from old architecture to new layer-stage system wasn't fully completed at all layers. Some layers got partially updated (new naming convention introduced) while keeping old structure in place. This resulted in:
@@ -47,8 +51,10 @@ Historical migration from old architecture to new layer-stage system wasn't full
 
 ---
 
+<!-- section_id: "3075d797-ad5f-4218-815a-9433efaa0714" -->
 ## Consolidation Workflow
 
+<!-- section_id: "07445a19-3cd2-4c75-89bc-54708099b7a8" -->
 ### Phase 1: Verify Content Distribution
 
 Before consolidating, verify which directory has which content:
@@ -63,6 +69,7 @@ ls -la layer_N_group/layer_N_subx3_projects/ 2>/dev/null
 
 **Outcome**: Know which projects are in each location, what's in old architecture directories.
 
+<!-- section_id: "d422e3e6-8e07-4f29-9578-0e5e4ce806d8" -->
 ### Phase 2: Copy Missing Content
 
 Move all content from fragmented locations to unified location:
@@ -79,6 +86,7 @@ cp -r layer_N/layer_N_99_stages/* layer_N_group/layer_N_99_stages/
 
 **Outcome**: All content now in unified location (source of truth).
 
+<!-- section_id: "9ba10bbf-78a4-4827-b984-c2677f8e1356" -->
 ### Phase 3: Rename Layer (Handle mv Behavior)
 
 ```bash
@@ -96,6 +104,7 @@ layer_N_group/
 
 **Prevention**: Check if `layer_N_group` exists first. If yes, flatten manually (see Phase 4).
 
+<!-- section_id: "d02d7cc9-8bd3-4d20-aec7-c49cabdbfe8f" -->
 ### Phase 4: Flatten Nested Structure (If Needed)
 
 If `mv` created nesting, flatten it:
@@ -113,6 +122,7 @@ find . -maxdepth 1 -type d -name "layer_N" -exec rm -rf {} +
 
 **Outcome**: Single `layer_N_subx3_projects/` directory at top level, no nesting.
 
+<!-- section_id: "028c3854-af6c-46fe-acdf-d2329d1e50f7" -->
 ### Phase 5: Verify Final Structure
 
 ```bash
@@ -125,6 +135,7 @@ find layer_N_group -maxdepth 1 -type d -name "layer_N*" -name "*_00_*" -o -name 
 
 **Expected**: All projects visible, no duplicate directories, old architecture directories removed.
 
+<!-- section_id: "d7f8a100-cf97-448f-be0f-5be28c52e28e" -->
 ### Phase 6: Update 0AGNOSTIC.md and Create .0agnostic/
 
 After consolidation, create source-of-truth context:
@@ -135,8 +146,10 @@ After consolidation, create source-of-truth context:
 
 ---
 
+<!-- section_id: "766e088f-2046-4202-998c-5f09467a08ec" -->
 ## Example: layer_4 Consolidation (2026-02-27)
 
+<!-- section_id: "5ec1e997-7aa5-40ee-aba5-0fdc376bd2ec" -->
 ### Initial State
 
 - **`layer_4/`** (old structure):
@@ -150,6 +163,7 @@ After consolidation, create source-of-truth context:
   - `layer_4_subx3_projects/` with only 1 project: professional_readiness (CSE 300)
   - No stages, no .0agnostic/, no 0AGNOSTIC.md
 
+<!-- section_id: "956134ab-b300-4552-8580-225b1ec7e8fd" -->
 ### Consolidation Steps
 
 1. **Copy missing project**:
@@ -177,6 +191,7 @@ After consolidation, create source-of-truth context:
    ls -1 layer_4_group/layer_4_subx3_projects/ | wc -l  # Expected: 8
    ```
 
+<!-- section_id: "b16b464e-0551-4870-9c30-a8d461ad59d3" -->
 ### Final State
 
 ✅ **`layer_4_group/`** now unified:
@@ -187,6 +202,7 @@ After consolidation, create source-of-truth context:
 
 ---
 
+<!-- section_id: "75a52b28-7c1c-4b8e-b224-c3aeed94696d" -->
 ## Common Pitfalls & Prevention
 
 | Pitfall | Why It Happens | Prevention |
@@ -199,6 +215,7 @@ After consolidation, create source-of-truth context:
 
 ---
 
+<!-- section_id: "c5736dee-1324-48fd-928e-25ea82f804c6" -->
 ## Validation Checklist
 
 After consolidation, verify:
@@ -216,6 +233,7 @@ After consolidation, verify:
 
 ---
 
+<!-- section_id: "8cca479a-e6e4-4335-ae1f-f7a73c6c6fee" -->
 ## Integration with .0agnostic/ System
 
 After consolidation, `layer_N_group/` should have:
@@ -248,20 +266,24 @@ layer_N_group/
 
 ---
 
+<!-- section_id: "8a346d6c-1d21-45a3-b58a-2ca1ee72413f" -->
 ## Session Notes: layer_3 and layer_4 Consolidation (2026-02-27)
 
+<!-- section_id: "049ed245-0a56-4422-9a79-4f75111cdd50" -->
 ### layer_3_group Consolidation
 
 - **Before**: `layer_3/` with old architecture directories, `layer_3_group/` didn't exist
 - **Action**: Renamed `layer_3/` → `layer_3_group`, created 0AGNOSTIC.md, created .0agnostic/ structure
 - **Result**: ✅ Unified layer_3_group with proper structure, all 7 child projects accessible
 
+<!-- section_id: "41cdc5a5-7120-4558-82f0-f87305749563" -->
 ### layer_4_group Consolidation
 
 - **Before**: Both `layer_4/` and `layer_4_group/` with split content
 - **Action**: Merged projects, flattened nesting, created 0AGNOSTIC.md, created .0agnostic/ structure
 - **Result**: ✅ Unified layer_4_group with all 8 projects (7 old + 1 new professional_readiness)
 
+<!-- section_id: "8c0a4b75-f876-4dfd-9be3-c0a0524c779e" -->
 ### Systematic Propagation to All Projects
 
 - **Scope**: All 6 course projects in `layer_4_subx3_projects/`
@@ -274,6 +296,7 @@ layer_N_group/
 
 ---
 
+<!-- section_id: "37a99fdb-d675-43b1-906b-8994adbf3bd0" -->
 ## Key Learnings
 
 1. **Naming convention consistency is critical** — mixed conventions create ambiguity about which is canonical
@@ -285,6 +308,7 @@ layer_N_group/
 
 ---
 
+<!-- section_id: "94e18256-3afe-4058-a766-e996f8dd706a" -->
 ## References
 
 - **Protocol Document**: `.0agnostic/03_protocols/layer_consolidation_and_naming_protocol.md` (stored in universal layer)
@@ -294,6 +318,7 @@ layer_N_group/
 
 ---
 
+<!-- section_id: "d77c4512-4f04-4c89-b317-bee6efd49d8d" -->
 ## Next Steps
 
 - Monitor for future inconsistencies (periodic `find . -name "layer_N$" -o -name "layer_N_group"` checks)

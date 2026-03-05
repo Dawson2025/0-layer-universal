@@ -9,6 +9,7 @@ resource_name: "US-01_ai_maps_class_knowledge"
 **I want to** access a knowledge graph for each of the student's courses,
 **So that** I understand the full landscape of concepts, their prerequisites, and their relationships — enabling me to teach in the right order and identify gaps.
 
+<!-- section_id: "17f18a54-75ef-45ab-9fe3-2d68757dd6e9" -->
 ## Acceptance Criteria
 
 **Scenario 1: Knowledge graph exists per course**

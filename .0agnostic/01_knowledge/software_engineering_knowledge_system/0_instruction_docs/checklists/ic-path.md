@@ -6,10 +6,12 @@ resource_name: "ic-path"
 # Individual Contributor Learning Path
 *From Novice to Senior IC*
 
+<!-- section_id: "8b94e74c-530f-4d88-bc70-2132e31924b0" -->
 ## Purpose
 
 This checklist tracks your progression through the essential knowledge areas for individual contributors in software engineering, from entry-level through senior IC roles.
 
+<!-- section_id: "2f8d03e7-8699-43b3-97b4-40fd024af122" -->
 ## How to Use This Checklist
 
 For each topic, mark your current mastery level:
@@ -28,8 +30,10 @@ Also track your experience:
 
 ---
 
+<!-- section_id: "2b5cac6e-b962-416a-987e-43f6caca35e9" -->
 ## Phase 1: Pre-Creation Fundamentals
 
+<!-- section_id: "589b892e-83b9-4029-b6a0-dca52463afbf" -->
 ### Computer Science Fundamentals (Required for all ICs)
 
 #### Data Structures
@@ -68,6 +72,7 @@ Also track your experience:
 - [ ] Functional Programming Basics `📚 💻 👨‍🏫`
 - [ ] Second Language: _____________ `📚 💻 👨‍🏫`
 
+<!-- section_id: "4fe7d886-00f6-4723-bca7-5e7d0b0284d0" -->
 ### Systems & Tools
 
 #### Operating Systems
@@ -97,8 +102,10 @@ Also track your experience:
 
 ---
 
+<!-- section_id: "5bc3f67e-85f3-4b1a-9597-71b9b294be1c" -->
 ## Phase 2: Implementation Skills
 
+<!-- section_id: "be9ffeae-6132-4cba-96b7-e46fa4fc1c29" -->
 ### Frontend (if Frontend/Full-Stack IC)
 
 #### Core Web Technologies
@@ -134,6 +141,7 @@ Also track your experience:
 - [ ] ARIA Basics `📚 💻 👨‍🏫`
 - [ ] Keyboard Navigation `📚 💻 👨‍🏫`
 
+<!-- section_id: "e9d83f63-16e1-4b60-bb34-a580ab5157dd" -->
 ### Backend (if Backend/Full-Stack IC)
 
 #### Backend Framework (choose one to master)
@@ -169,8 +177,10 @@ Also track your experience:
 
 ---
 
+<!-- section_id: "4a9417a2-12a0-4f1e-a31e-754efd578786" -->
 ## Phase 3: Professional Development
 
+<!-- section_id: "9ecfaefc-5343-4a70-840b-e7da303846f8" -->
 ### Testing & Quality
 
 #### Unit Testing
@@ -190,6 +200,7 @@ Also track your experience:
 - [ ] Code Style & Formatting `📚 💻 👨‍🏫`
 - [ ] Refactoring Techniques `📚 💻 👨‍🏫`
 
+<!-- section_id: "763609f1-6ce0-4ade-9d03-c15e3b42b5e6" -->
 ### DevOps & Deployment
 
 #### Containerization
@@ -211,6 +222,7 @@ Also track your experience:
   - [ ] Database Services
 - [ ] Infrastructure as Code Basics (Terraform) `📚 💻 👨‍🏫`
 
+<!-- section_id: "1f6a193e-ecd4-4b26-a343-bb17b9765094" -->
 ### Security
 
 #### Application Security
@@ -224,8 +236,10 @@ Also track your experience:
 
 ---
 
+<!-- section_id: "9764fbc8-0eec-4a16-b906-288dbb42c143" -->
 ## Phase 4: Senior IC Skills
 
+<!-- section_id: "20593e2d-db46-4a91-aeda-6e378e438249" -->
 ### System Design
 - [ ] Design Patterns (Factory, Singleton, Observer, Strategy) `📚 💻 👨‍🏫`
 - [ ] SOLID Principles `📚 💻 👨‍🏫`
@@ -239,18 +253,21 @@ Also track your experience:
 - [ ] Microservices Basics `📚 💻 👨‍🏫`
 - [ ] Event-Driven Architecture `📚 💻 👨‍🏫`
 
+<!-- section_id: "03cf6d74-133c-4743-bb1a-951617516d68" -->
 ### Monitoring & Observability
 - [ ] Logging Best Practices `📚 💻 👨‍🏫`
 - [ ] Metrics Collection `📚 💻 👨‍🏫`
 - [ ] Distributed Tracing `📚 💻 👨‍🏫`
 - [ ] Alerting & On-Call `📚 💻 👨‍🏫`
 
+<!-- section_id: "1f99a366-2bb1-4bad-8141-c3f7935db863" -->
 ### Performance
 - [ ] Performance Profiling `📚 💻 👨‍🏫`
 - [ ] Query Optimization `📚 💻 👨‍🏫`
 - [ ] Frontend Performance (Lazy Loading, Code Splitting) `📚 💻 👨‍🏫`
 - [ ] Backend Performance (Caching, Connection Pooling) `📚 💻 👨‍🏫`
 
+<!-- section_id: "1b3c5562-420e-414a-b9a5-b7fc36ca7c26" -->
 ### Soft Skills
 - [ ] Code Review (Giving & Receiving Feedback) `📚 💻 👨‍🏫`
 - [ ] Technical Writing & Documentation `📚 💻 👨‍🏫`
@@ -260,8 +277,10 @@ Also track your experience:
 
 ---
 
+<!-- section_id: "22126362-2150-4b9c-a13a-37a273df8cda" -->
 ## Progress Tracking
 
+<!-- section_id: "3f9598ba-811c-422e-a56e-9bdfebf07ffb" -->
 ### Junior IC (0-2 years)
 **Target**: Complete Phase 1 (Fundamentals) and Phase 2 (Implementation)
 - [ ] Can write functional code in at least one language
@@ -270,6 +289,7 @@ Also track your experience:
 - [ ] Familiar with one frontend OR backend framework
 - [ ] Understands basic data structures & algorithms
 
+<!-- section_id: "bac83adb-5ba3-4a71-878e-2c940622354e" -->
 ### Mid-Level IC (2-5 years)
 **Target**: Master Phase 2, Complete Phase 3 (Professional Development)
 - [ ] Proficient in at least one full stack or specialized area
@@ -279,6 +299,7 @@ Also track your experience:
 - [ ] Can design and implement features independently
 - [ ] Comfortable with databases and APIs
 
+<!-- section_id: "578488d4-6139-4e8f-9965-54dc906e9fd4" -->
 ### Senior IC (5+ years)
 **Target**: Complete Phase 4 (Senior IC Skills)
 - [ ] Designs scalable systems
@@ -291,22 +312,26 @@ Also track your experience:
 
 ---
 
+<!-- section_id: "3e440a32-ed17-49f9-9183-e4bbfbf0c5ac" -->
 ## Projects to Build
 
 Build these projects to solidify knowledge:
 
+<!-- section_id: "dd3916c2-abf4-4e6b-ab86-149a10963baa" -->
 ### Beginner
 - [ ] Personal portfolio website
 - [ ] Todo app with CRUD operations
 - [ ] Simple blog with database
 - [ ] Weather app using external API
 
+<!-- section_id: "b79c5437-5ca4-406f-b377-cfec3d8d2846" -->
 ### Intermediate
 - [ ] Full-stack e-commerce app
 - [ ] Real-time chat application
 - [ ] URL shortener with analytics
 - [ ] Content management system
 
+<!-- section_id: "1ca5f5eb-4a96-4fe4-bef6-770bfe86832c" -->
 ### Advanced
 - [ ] Distributed system (e.g., distributed cache)
 - [ ] Real-time collaboration tool
@@ -315,14 +340,17 @@ Build these projects to solidify knowledge:
 
 ---
 
+<!-- section_id: "4c255134-cf3d-45f7-b62c-a15d8370e646" -->
 ## Resources
 
+<!-- section_id: "d43fd40b-2e99-4c7c-bec7-928971b9b3f3" -->
 ### Books
 - "Clean Code" by Robert C. Martin
 - "The Pragmatic Programmer" by Hunt & Thomas
 - "Designing Data-Intensive Applications" by Martin Kleppmann
 - "You Don't Know JS" (series) by Kyle Simpson
 
+<!-- section_id: "0e64bbaa-d695-4235-9177-2e94908ec94f" -->
 ### Online Platforms
 - LeetCode / HackerRank (algorithms practice)
 - Frontend Mentor / Backend Challenges (project ideas)

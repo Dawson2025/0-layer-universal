@@ -14,6 +14,7 @@ resource_name: "README"
 
 ---
 
+<!-- section_id: "4c007b1a-9827-4961-982f-c46e89aebe2f" -->
 ## 🚀 Session Initialization
 
 **Before working with AI apps and tools, follow the universal initialization protocol:**
@@ -35,14 +36,17 @@ resource_name: "README"
 
 ---
 
+<!-- section_id: "b1857fe9-2593-44b1-bf85-ede34777edb6" -->
 ## 📚 Related Documentation
 
+<!-- section_id: "338ba6e9-95c8-4da4-bdf7-d81009d7d38d" -->
 ### Universal Context Entry Points
 - **Universal Init Prompt:** `layer_0/0.02_sub_layers/sub_layer_0_01_basic_prompts_throughout/0_basic_prompts_throughout/universal_init_prompt.md`
 - **System Overview:** `0_context/SYSTEM_OVERVIEW.md`
 - **Usage Guide:** `0_context/USAGE_GUIDE.md`
 - **Master Index:** `0_context/MASTER_DOCUMENTATION_INDEX.md`
 
+<!-- section_id: "d7298f0a-307e-480d-9298-1ed13924f542" -->
 ### Related Sub-Layers
 - **Sub Layer 0.05:** OS Setup
   - Path: `layer_0/0.02_sub_layers/sub_layer_0_05_os_setup/`
@@ -64,6 +68,7 @@ resource_name: "README"
   - Path: `layer_0/0.02_sub_layers/sub_layer_0_12_universal_tools/`
   - Contains Claude Code configuration documentation
 
+<!-- section_id: "77728779-a463-4ab1-bcb1-a6020e45a7c0" -->
 ### Universal Rules & Protocols
 - **Terminal Protocol:** `layer_0/0.04_universal_rules/trickle_down_0_universal/0_instruction_docs/UNIVERSAL_AGENT_TERMINAL_PROTOCOL.md`
 - **Git Commit Rules:** `layer_0/0.04_universal_rules/trickle_down_0_universal/0_instruction_docs/git_commit_rule.md`
@@ -71,6 +76,7 @@ resource_name: "README"
 
 ---
 
+<!-- section_id: "d4bccef3-d512-4112-8105-6641d4e812f2" -->
 ## 🔧 AI Apps & Tools Covered
 
 This sub-layer documents:
@@ -80,6 +86,7 @@ This sub-layer documents:
 - Tool-specific setup instructions
 - Integration patterns and best practices
 
+<!-- section_id: "309853ec-a5ac-4403-a647-f6d9f702455c" -->
 ### OpenAI Codex CLI
 
 **Status**: ✅ Installed (v0.64.0)
@@ -121,6 +128,7 @@ npm install -g @openai/codex@latest
 - ✅ macOS and Linux (officially supported)
 - ⚠️ Windows (experimental; recommended to use WSL)
 
+<!-- section_id: "70ae47d3-861b-430b-94c5-e9c6fdaa3d89" -->
 ### Claude Code CLI
 
 **Documentation Location**:
@@ -130,6 +138,7 @@ npm install -g @openai/codex@latest
 
 **Important Note**: Claude Code uses CLI-based MCP configuration (not config files). See MCP setup in `sub_layer_0_10_mcp_servers_and_tools_setup` for details.
 
+<!-- section_id: "eb7054ca-2a7f-4a92-8b27-68b25878964e" -->
 ### Google Gemini CLI
 
 **Example Installation**:
@@ -139,6 +148,7 @@ gemini login
 gemini  # Start interactive CLI
 ```
 
+<!-- section_id: "eacc6fd6-3129-4d39-9e3a-647555747980" -->
 ### Installation Checklist
 
 When setting up a new development environment:
@@ -149,6 +159,7 @@ When setting up a new development environment:
 - [ ] API keys configured for respective tools
 - [ ] MCP servers configured (see `sub_layer_0_10_mcp_servers_and_tools_setup`)
 
+<!-- section_id: "a6c125fd-0afd-4fce-99b3-6ac0d36e987f" -->
 ### Quick Verification Commands
 
 ```bash
@@ -165,6 +176,7 @@ which claude && claude --version
 which gemini && gemini --version
 ```
 
+<!-- section_id: "f3f22dbb-7c48-4e48-bb3a-a6af71b6a8a5" -->
 ### Environment Variables
 
 Common environment variables for AI tools:
@@ -180,13 +192,16 @@ source ~/.bashrc
 
 ---
 
+<!-- section_id: "35fe33ec-c4d3-4018-a8f1-51fe896f9bd7" -->
 ## 📝 Documentation Structure
 
+<!-- section_id: "68daf5be-20dd-47d7-bf42-251366aac1ce" -->
 ### Current Status
 - This README provides the entry point and navigation
 - Additional documentation should be added as needed
 - Keep mappings up to date if paths change
 
+<!-- section_id: "97ef6aa1-d683-440d-ae85-a0ac2b95c7f1" -->
 ### Adding New Documentation
 When adding new AI app or tool documentation:
 1. Create appropriate subdirectories if needed (following trickle-down pattern)
@@ -196,6 +211,7 @@ When adding new AI app or tool documentation:
 5. Update the Master Documentation Index if needed
 6. Follow the context update rule: `layer_0/0.04_universal_rules/trickle_down_0_universal/0_instruction_docs/context_update_rule.md`
 
+<!-- section_id: "87e1cf47-3d1a-48a3-97d1-def460cee231" -->
 ## ⚠️ Linux/Ubuntu-Specific MCP Issues
 
 **CRITICAL**: AI apps and tools on Linux have platform-specific MCP limitations. Read:
@@ -213,6 +229,7 @@ When adding new AI app or tool documentation:
 - **Cursor IDE Issues**: `../sub_layer_0_07_coding_app_setup/trickle_down_0.5_setup/0_instruction_docs/CURSOR_IDE_LINUX_MCP_ISSUES.md`
 - **MCP Setup**: `../sub_layer_0_10_mcp_servers_and_tools_setup/`
 
+<!-- section_id: "5fbf82d2-34bd-4895-afa5-4452b1c57aca" -->
 ### Troubleshooting
 
 #### Codex CLI Issues
@@ -238,6 +255,7 @@ When adding new AI app or tool documentation:
 
 ---
 
+<!-- section_id: "cf1c12b2-2a1a-49cc-8fbb-fdf79e4dadbd" -->
 ## 🔄 Mandatory Sync & Context Update Policy
 
 **At start of every chat/session (before work):**
@@ -265,6 +283,7 @@ git status
 
 ---
 
+<!-- section_id: "de353dc7-c528-49de-8a1e-24422d5587ab" -->
 ## 🎯 Path Resolution
 
 **All paths in this documentation are relative to:**

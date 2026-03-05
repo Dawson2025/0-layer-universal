@@ -6,12 +6,15 @@ resource_name: "integration-guide"
 # Integration Guide
 *Integrating Spec Kit and BMAD with Your Existing AI Tools*
 
+<!-- section_id: "a487ab84-333d-4206-a02c-7846f698fa50" -->
 ## Overview
 
 This guide shows you how to integrate GitHub Spec Kit and BMAD Method with your existing AI coding assistants like Cursor, Codex, and Claude Code. These frameworks enhance your existing tools rather than replacing them.
 
+<!-- section_id: "056f7eba-763b-4291-8cdb-85910a2b600d" -->
 ## Tool Integration Matrix
 
+<!-- section_id: "519ce088-85c9-44c4-ae76-b6601c52b663" -->
 ### Cursor IDE
 
 #### Spec Kit Integration
@@ -65,6 +68,7 @@ npx bmad-method install
 3. Use specialized agent outputs as context
 4. Code in Cursor with rich context
 
+<!-- section_id: "808d6a7c-5ef1-460f-925f-762a2d7bc140" -->
 ### GitHub Copilot
 
 #### Spec Kit Integration
@@ -110,6 +114,7 @@ npx bmad-method install
 - ✅ Clear development stories
 - ✅ Complete requirements context
 
+<!-- section_id: "51097475-86e8-42a0-b904-27c131c948f7" -->
 ### Claude Code
 
 #### Spec Kit Integration
@@ -167,6 +172,7 @@ specify init my-project --ai claude-code
 # 3. Claude Code implements following Spec Kit workflow
 ```
 
+<!-- section_id: "533f044a-26aa-495f-a0b0-e07d86de4f28" -->
 ### Codex (GitHub)
 
 #### Spec Kit Integration
@@ -199,8 +205,10 @@ npx bmad-method install
 # Codex uses these as context
 ```
 
+<!-- section_id: "6ea581d5-5f55-4215-a5b1-99d858488e22" -->
 ## Implementation Strategies
 
+<!-- section_id: "6590ec3c-568a-4502-8e92-8c988054256c" -->
 ### Strategy 1: Spec-Driven with Cursor
 
 **Best For**: Solo developers or small teams wanting structure
@@ -223,6 +231,7 @@ specify init task-app --ai cursor
 # Type code as normal, Cursor references spec
 ```
 
+<!-- section_id: "2110d6c6-785e-4d0e-8749-6dd91fab5c32" -->
 ### Strategy 2: Agentic Development with BMAD
 
 **Best For**: Teams wanting team-like collaboration
@@ -247,6 +256,7 @@ npx bmad-method install
 # Use outputs in your IDE
 ```
 
+<!-- section_id: "49e0e993-ad6c-4998-beb9-5dc0398a761d" -->
 ### Strategy 3: Combined Approach
 
 **Best For**: Complex projects needing both structure and collaboration
@@ -273,8 +283,10 @@ npx bmad-method install
 *qa: Test implemented features
 ```
 
+<!-- section_id: "a182de07-361c-4f97-83ce-2a431ec727ae" -->
 ## Context Management
 
+<!-- section_id: "5d90b0ba-33c1-4ab8-8a13-fe9a8bbda7bc" -->
 ### Spec Kit Context Files
 
 Spec Kit creates context files that AI tools can reference:
@@ -289,6 +301,7 @@ specs/
 
 AI tools should reference these files for context.
 
+<!-- section_id: "2a99f300-c27b-4d4f-99ed-7ab15906ed1c" -->
 ### BMAD Context Artifacts
 
 BMAD generates rich context artifacts:
@@ -303,6 +316,7 @@ BMAD generates rich context artifacts:
 
 Import these into your IDE for AI to reference.
 
+<!-- section_id: "8b33f433-e4b2-4981-9b37-c2cb95fe4d06" -->
 ### Best Practices
 
 1. **Keep Context Updated**: Update specs/artifacts as code evolves
@@ -310,8 +324,10 @@ Import these into your IDE for AI to reference.
 3. **Reference Explicitly**: Tell AI to reference specific context files
 4. **Maintain Sync**: Keep specs and code in sync
 
+<!-- section_id: "0b922d72-67bb-430a-a135-2d3541b77a2e" -->
 ## Specific Tool Configurations
 
+<!-- section_id: "65dcc61a-c4b9-44ab-8362-72a0c7bd9a1d" -->
 ### Cursor Configuration
 
 #### With Spec Kit
@@ -342,6 +358,7 @@ Import these into your IDE for AI to reference.
 }
 ```
 
+<!-- section_id: "21e2681a-5849-4e1f-93dc-f131350e68c2" -->
 ### VS Code Configuration
 
 Add to `.vscode/settings.json`:
@@ -355,6 +372,7 @@ Add to `.vscode/settings.json`:
 }
 ```
 
+<!-- section_id: "dc07ac2e-2f44-4b09-ba34-3c58e6b62420" -->
 ### JetBrains IDEs
 
 Install plugins:
@@ -363,8 +381,10 @@ Install plugins:
 
 Or add settings to project configuration.
 
+<!-- section_id: "86e247fc-76fa-43eb-86a1-bde47309b4d7" -->
 ## Troubleshooting Integration
 
+<!-- section_id: "20e32c4b-1a97-4560-9469-9f18fa4aa046" -->
 ### Issue: AI Not Following Specs
 
 **Solution**: Ensure specs are up-to-date and AI can access them.
@@ -377,6 +397,7 @@ specify update
 ls -la specs/
 ```
 
+<!-- section_id: "ed60291a-589a-400e-a040-dabff652026e" -->
 ### Issue: Context Too Large
 
 **Solution**: Use sharding or filtering.
@@ -389,6 +410,7 @@ bmad shard:create [large-doc] --max-size 5000
 specify filter --keep-only "requirements,architecture"
 ```
 
+<!-- section_id: "215ef886-dfa0-4a95-9d42-7cb35af37535" -->
 ### Issue: Conflicting Guidance
 
 **Solution**: Prioritize source of truth.
@@ -399,6 +421,7 @@ specify primary-context specs/
 bmad primary-context .bmad/artifacts/
 ```
 
+<!-- section_id: "3a9c8f3f-57d0-4d25-8b1f-7d09af8a29da" -->
 ### Issue: Performance Degradation
 
 **Solution**: Optimize context loading.
@@ -409,8 +432,10 @@ specify lazy-load
 bmad optimize-context
 ```
 
+<!-- section_id: "6f319c5d-60ec-4b55-b99e-8cbb90b4bcb9" -->
 ## Advanced Patterns
 
+<!-- section_id: "30342081-f9c5-4093-a5b5-320c7df09e80" -->
 ### Pattern 1: Spec-First Development
 
 1. Always write specs before code
@@ -418,6 +443,7 @@ bmad optimize-context
 3. Validate implementation against specs
 4. Update specs if requirements change
 
+<!-- section_id: "d5d02e29-3f42-4f2e-a995-db32ec4dda52" -->
 ### Pattern 2: Agent-Driven Development
 
 1. Analyst defines requirements
@@ -426,6 +452,7 @@ bmad optimize-context
 4. QA validates
 5. Human reviews and approves
 
+<!-- section_id: "f6211b5a-a621-4d8c-9058-ab019bd47b33" -->
 ### Pattern 3: Hybrid Approach
 
 1. BMAD agents for planning (Analyst, Architect)
@@ -433,28 +460,33 @@ bmad optimize-context
 3. BMAD for QA and review
 4. Both for complete traceability
 
+<!-- section_id: "3a294aa0-b893-48c0-9818-1549b512c355" -->
 ## Success Metrics
 
 Track these metrics to measure success:
 
+<!-- section_id: "b603b363-da5e-48bc-bbaa-f33846828856" -->
 ### Spec Kit Metrics
 - Spec completion rate
 - Validation checkpoint pass rate
 - Time from spec to implementation
 - Deviation rate from specs
 
+<!-- section_id: "94295e96-d136-4ddd-9923-a55fc924e660" -->
 ### BMAD Metrics
 - Agent utilization rate
 - Artifact completeness
 - Time from artifact to implementation
 - Audit trail usage
 
+<!-- section_id: "6720ab38-8606-473d-83c9-99ceb0419575" -->
 ### Combined Metrics
 - Total time from ideation to deployment
 - Quality improvements
 - Context retention rate
 - Developer satisfaction
 
+<!-- section_id: "a1b00651-ac3d-4561-81ef-e6ec0c8db972" -->
 ## Next Steps
 
 1. **Choose Your Tools**: Decide which AI tools you're using

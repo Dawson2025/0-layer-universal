@@ -12,6 +12,7 @@ argument-hint: [--notes "completion notes"]
 
 Complete the 03_instructions stage and prepare for next stage.
 
+<!-- section_id: "4879f183-998a-426b-b247-36a78e16fea3" -->
 ## Steps
 1. Verify all deliverables in outputs/
 2. Create handoff document

@@ -6,10 +6,12 @@ resource_name: "README"
 ---
 # MCP Server Automation System
 
+<!-- section_id: "32a8d554-cbf1-4b0a-a0ea-956685b54e8e" -->
 ## Overview
 
 This directory contains the automation system for setting up Model Context Protocol (MCP) servers across various operating systems, AI applications, and installation scopes. The core of this system is the `mcp_manager.py` script, which serves as the single source of truth for MCP server configurations.
 
+<!-- section_id: "dda97afc-5ab9-4ed4-93dd-1bea58397ba3" -->
 ## 🚀 Purpose
 
 The primary goals of this automation system are:
@@ -20,6 +22,7 @@ The primary goals of this automation system are:
 4.  **Scope Flexibility**: Support installation at user, project, system, and local levels.
 5.  **Idempotency**: The setup process can be run multiple times, always resulting in the desired state without unintended side effects.
 
+<!-- section_id: "bab26cb4-22fe-435f-866f-e14aba72cfa7" -->
 ## 📁 Directory Structure
 
 ```
@@ -32,6 +35,7 @@ The primary goals of this automation system are:
 └── README.md                        # This documentation
 ```
 
+<!-- section_id: "cf05c170-c358-48b5-95d6-0b1cf090cf0d" -->
 ## 🛠️ How it Works (`mcp_manager.py`)
 
 The `mcp_manager.py` script performs the following key steps:
@@ -63,6 +67,7 @@ The `mcp_manager.py` script performs the following key steps:
     *   The script accepts a `--scope` argument (`user`, `project`, `system`, `local`) to determine where the configuration files and wrappers should be installed.
     *   It handles permissions, attempting system-level installation first and falling back to user-level if permission errors occur.
 
+<!-- section_id: "15da3d0d-c28d-44da-9743-427b701ca861" -->
 ## 🚀 How to Use
 
 To set up MCP servers using this automation system, simply run the `mcp_manager.py` script with the desired scope:
@@ -85,6 +90,7 @@ python3 /path/to/automation/scripts/mcp_manager.py --scope local
 
 **After running the script, you MUST restart your AI Agent/IDE for the changes to take effect.**
 
+<!-- section_id: "bb8b3c09-a9d1-46ad-959b-556e3e51cfb5" -->
 ## ✨ Benefits
 
 *   **Consistency**: Ensures all MCP servers are configured uniformly across different environments.
@@ -93,6 +99,7 @@ python3 /path/to/automation/scripts/mcp_manager.py --scope local
 *   **Maintainability**: Centralized server definitions make it easy to add or modify MCP servers.
 *   **Tool-Agnostic**: Generates wrappers that work seamlessly with various AI clients (Gemini, Claude, etc.).
 
+<!-- section_id: "d62667d7-2307-49a4-9293-841901270baf" -->
 ## 📝 Gemini CLI Integration Notes
 
 Getting the MCP servers to function correctly within the Gemini CLI in a WSL environment.
@@ -105,10 +112,12 @@ Getting the MCP servers to function correctly within the Gemini CLI in a WSL env
 
 **To ensure Gemini CLI recognizes these changes, a restart of the Gemini CLI is mandatory after updating `~/.gemini/settings.json`.**
 
+<!-- section_id: "e045bba0-37c2-4a33-8ab5-fd100e5bc521" -->
 ## 🔧 Concurrent Browser Setup (`mcp_concurrent_browser.py`)
 
 When multiple AI tools (Codex CLI, Claude Code CLI, Gemini CLI) need to use Playwright MCP browsers simultaneously, they encounter "Browser is already in use" errors due to MCP server process locking. The `mcp_concurrent_browser.py` script solves this by creating **OS-specific and tool-specific** isolated browser configurations.
 
+<!-- section_id: "f576e5a2-bbaa-459d-a1c9-ede97399c133" -->
 ### Quick Start
 
 ```bash
@@ -122,6 +131,7 @@ python3 scripts/mcp_concurrent_browser.py apply-codex
 python3 scripts/mcp_concurrent_browser.py status --os wsl
 ```
 
+<!-- section_id: "eba78315-6e06-4629-bdcb-0ceca6e3fa81" -->
 ### What It Does
 
 1. **Auto-detects operating system** (WSL, Linux, macOS, Windows)
@@ -131,11 +141,13 @@ python3 scripts/mcp_concurrent_browser.py status --os wsl
 5. **Adds OS-specific launch args** (e.g., Wayland/Ozone for WSLg)
 6. **Updates Codex CLI config** to reference OS+tool-specific Playwright config
 
+<!-- section_id: "6ab1a80a-7c06-4548-a008-32a94dc53e64" -->
 ### Documentation
 
 For complete setup instructions, troubleshooting, and architecture details, see:
 - **[CONCURRENT_BROWSER_SETUP.md](./CONCURRENT_BROWSER_SETUP.md)** - Full guide for concurrent browser setup
 
+<!-- section_id: "a458f9b4-f679-413f-8229-ddcbce77f03f" -->
 ### Use Cases
 
 - Run Playwright MCP browsers in Codex CLI and Claude Code CLI at the same time

@@ -8,10 +8,12 @@ resource_name: "README"
 
 **Last Updated**: January 12, 2026
 
+<!-- section_id: "6288827f-3d4b-449e-a15f-b98f3f5204c6" -->
 ## Overview
 
 This directory helps you choose the right speech-to-text tool for your specific needs on Linux.
 
+<!-- section_id: "c191c184-3098-48fe-ae63-70f8fe1f4cdf" -->
 ## Contents
 
 | Guide | Purpose |
@@ -20,6 +22,7 @@ This directory helps you choose the right speech-to-text tool for your specific 
 | [Comparison Matrix](comparison_matrix.md) | Full feature comparison table |
 | [Use Cases](use_cases.md) | Recommendations by specific scenario |
 
+<!-- section_id: "e150171c-1705-4a0a-9d88-e9876874eca0" -->
 ## Start Here
 
 **Don't know where to start?** → [Quick Decision](quick_decision.md)
@@ -28,6 +31,7 @@ This directory helps you choose the right speech-to-text tool for your specific 
 
 **Have a specific use case?** → [Use Cases](use_cases.md)
 
+<!-- section_id: "60bad0e5-664e-4a8a-9585-2e0037588a5e" -->
 ## TL;DR
 
 | You Want | Use This |

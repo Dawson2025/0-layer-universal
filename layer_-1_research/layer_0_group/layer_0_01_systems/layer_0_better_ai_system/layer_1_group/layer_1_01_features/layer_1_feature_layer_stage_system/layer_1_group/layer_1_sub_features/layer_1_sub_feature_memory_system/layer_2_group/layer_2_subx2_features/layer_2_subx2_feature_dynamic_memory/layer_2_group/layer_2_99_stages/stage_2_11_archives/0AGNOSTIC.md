@@ -6,6 +6,7 @@ resource_name: "0AGNOSTIC"
 ---
 # dynamic_memory — Stage 11: archives
 
+<!-- section_id: "d39be52b-b573-4c7e-b62d-241b3c65fe1c" -->
 ## Identity
 
 stage_id: "c254a083-76e5-4881-b494-32a0e4e253ad"
@@ -16,5 +17,6 @@ Stage 11 (archives) for the dynamic_memory research sub-feature.
 - **Parent**: `../../0AGNOSTIC.md`
 - **Purpose**: Archived versions and history
 
+<!-- section_id: "a9cdb097-bedc-4cdf-b44e-b09e2b576cac" -->
 ## Triggers
 Load when working in this stage directory.

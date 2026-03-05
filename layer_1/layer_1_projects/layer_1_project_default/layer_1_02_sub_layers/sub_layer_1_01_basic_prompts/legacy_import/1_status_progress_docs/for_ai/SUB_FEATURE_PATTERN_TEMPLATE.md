@@ -5,12 +5,14 @@ resource_name: "SUB_FEATURE_PATTERN_TEMPLATE"
 ---
 # Sub-Feature Pattern Implementation Template
 
+<!-- section_id: "ff7e8be5-83d1-4ff3-b774-cb05f3cd7441" -->
 ## How to Apply the Pattern to Any Feature
 
 This template shows you exactly how to reorganize a feature for maximum parallel development.
 
 ---
 
+<!-- section_id: "c5142ea5-a1d9-4907-b60a-794b73fb3846" -->
 ## Step 1: Analyze Routes
 
 List all routes for the feature from app.py:
@@ -30,6 +32,7 @@ Example for projects:
 
 ---
 
+<!-- section_id: "a3e54cc2-2e40-4ec0-bcef-588fa6e34346" -->
 ## Step 2: Group by Concern
 
 Organize routes into logical concerns:
@@ -43,8 +46,10 @@ Organize routes into logical concerns:
 
 ---
 
+<!-- section_id: "91c3c2e9-5cf4-4bc9-81ae-9105bfad1bf8" -->
 ## Step 3: Create Sub-Module Files
 
+<!-- section_id: "394e6f60-d71c-47c9-976d-ef0277837eff" -->
 ### Template: display.py
 
 ```python
@@ -108,6 +113,7 @@ def _get_items(user: dict) -> list:
 __all__ = ['[feature]_list']
 ```
 
+<!-- section_id: "761ef7d7-74ff-4679-8841-f4fae74d1d42" -->
 ### Template: creation.py
 
 ```python
@@ -194,6 +200,7 @@ def _create_[feature]_item(data: dict, user_id: int) -> int:
 __all__ = ['create_[feature]']
 ```
 
+<!-- section_id: "8b8a5a45-1329-4379-962f-42cdd64f64dd" -->
 ### Template: editing.py
 
 ```python
@@ -283,6 +290,7 @@ def _update_[feature]_item(item_id: int, data: dict, user_id: int) -> bool:
 __all__ = ['edit_[feature]']
 ```
 
+<!-- section_id: "2cbc6b17-50fb-4aa4-8c31-bfcddcd6b2ff" -->
 ### Template: api.py
 
 ```python
@@ -398,6 +406,7 @@ __all__ = [
 
 ---
 
+<!-- section_id: "b6f1368f-9a3c-419d-809c-9ec617b56bcb" -->
 ## Step 4: Update __init__.py
 
 ```python
@@ -435,6 +444,7 @@ __all__ = ("[feature]_bp",)
 
 ---
 
+<!-- section_id: "fa3407e1-29cf-46fa-8eef-5e75e05c7754" -->
 ## Step 5: Organize Templates
 
 Move templates to feature-specific directory:
@@ -454,6 +464,7 @@ render_template('[feature]/[feature]_list.html', ...)
 
 ---
 
+<!-- section_id: "c9a2ad4a-9680-4f50-afa9-8079491d3efa" -->
 ## Step 6: Create Tests
 
 One test file per sub-module:
@@ -468,6 +479,7 @@ features/[feature]/tests/
 
 ---
 
+<!-- section_id: "778010fd-2b64-4b52-a62b-644c6d95a6d1" -->
 ## Quick Reference Checklist
 
 When applying the pattern to a feature:
@@ -483,6 +495,7 @@ When applying the pattern to a feature:
 
 ---
 
+<!-- section_id: "3ebf6832-e1bf-4939-ba34-5c786fad4692" -->
 ## Benefits Achieved
 
 After applying the pattern:
@@ -495,6 +508,7 @@ After applying the pattern:
 
 ---
 
+<!-- section_id: "f9c5771a-9d31-4695-824e-e68a6bae1cf2" -->
 ## Example: Already Implemented
 
 See **features/words/** for a complete example:

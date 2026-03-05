@@ -5,6 +5,7 @@ resource_name: "CONCURRENT_BROWSER_SETUP"
 ---
 # Concurrent Browser Setup for Multiple AI Tools
 
+<!-- section_id: "9857fd74-e1f5-49ea-8913-db979e66ce77" -->
 ## Problem Statement
 
 When multiple AI CLI tools (Codex CLI, Claude Code CLI, Gemini CLI, etc.) attempt to use Playwright MCP on the same machine, they encounter a "Browser is already in use" error. This happens because:
@@ -13,6 +14,7 @@ When multiple AI CLI tools (Codex CLI, Claude Code CLI, Gemini CLI, etc.) attemp
 2. **Browser profile conflicts**: Even with `isolated: true`, different AI tools were attempting to use the same browser profile directory
 3. **Shared configuration**: Tools were referencing the same Playwright MCP config file
 
+<!-- section_id: "84a9b6a8-167c-4bda-abc2-68714449285f" -->
 ## Solution Architecture
 
 The `mcp_concurrent_browser.py` script solves this by creating **OS-specific and tool-specific isolated browser configurations** using the naming pattern `{os}_{tool}` (e.g., `wsl_codex`, `wsl_claude`, `linux_gemini`, `windows_cursor`):
@@ -26,6 +28,7 @@ linux_gemini         ~/.gemini/playwright.linux_gemini.json ~/.cache/ms-playwrig
 macos_cursor         ~/.config/mcp/playwright.macos_cursor.json ~/.cache/ms-playwright/mcp-chromium-macos-cursor
 ```
 
+<!-- section_id: "724a19f3-146c-43bd-8865-2977f6322554" -->
 ### Key Design Principles
 
 1. **OS-aware configuration**: Auto-detects operating system (WSL, Linux, macOS, Windows)
@@ -34,14 +37,17 @@ macos_cursor         ~/.config/mcp/playwright.macos_cursor.json ~/.cache/ms-play
 4. **OS-specific optimizations**: Automatically adds OS-specific launch args (e.g., Wayland/Ozone for WSLg)
 5. **Concurrent execution**: All tools can now run headed browsers simultaneously on any OS
 
+<!-- section_id: "d5c120b4-7116-462a-bbbd-11d2bc5f8687" -->
 ## Installation and Setup
 
+<!-- section_id: "fd2051c5-332a-4c03-8147-df22d57e2973" -->
 ### Prerequisites
 
 - Python 3.7+
 - Playwright browsers installed (`npx playwright install chromium`)
 - Multiple AI CLI tools installed (Codex, Claude Code, etc.)
 
+<!-- section_id: "0d1a2381-f393-4d29-846e-2394455697b8" -->
 ### Quick Start
 
 ```bash
@@ -63,6 +69,7 @@ python3 mcp_concurrent_browser.py status --os wsl
 
 **Note**: The script auto-detects your OS (WSL, Linux, macOS, Windows) and creates configurations accordingly.
 
+<!-- section_id: "67db7753-6400-480d-bd5d-a7298df7d817" -->
 ### Step-by-Step Setup
 
 #### Step 1: Set Up Concurrent Configs
@@ -196,8 +203,10 @@ Configuration for WSL:
               ✅ Exists
 ```
 
+<!-- section_id: "c102cf64-c19f-4b6e-a88a-c6b09293b3d4" -->
 ## Testing Concurrent Browser Use
 
+<!-- section_id: "e29eb405-cbfc-4b5a-b427-414a1937ebd1" -->
 ### Test 1: Open Browser in Codex CLI
 
 ```bash
@@ -210,6 +219,7 @@ codex
 
 Expected: Browser opens in WSLg window (if headed mode), Playwright MCP tools work.
 
+<!-- section_id: "237c7c19-6f77-4fae-be48-cfce5b51a1a1" -->
 ### Test 2: Open Browser in Claude Code CLI (While Codex is Running)
 
 ```bash
@@ -224,8 +234,10 @@ claude
 
 **Current status:** May still encounter conflicts due to Claude Code CLI's internal MCP management. See workarounds above.
 
+<!-- section_id: "6188de38-ab13-41aa-a870-0dd135801318" -->
 ## Configuration Files Reference
 
+<!-- section_id: "a0c81c01-17ae-48a4-871d-48c28a68e2d1" -->
 ### Playwright MCP Config Structure
 
 Each `playwright.{os}_{tool}.json` file has this structure:
@@ -259,8 +271,10 @@ Each `playwright.{os}_{tool}.json` file has this structure:
 - `args` - OS-specific launch args (e.g., Wayland/Ozone for WSLg, only added when appropriate)
 - `_metadata` - Tracking information (OS, tool, config name)
 
+<!-- section_id: "f14decef-925b-4b5f-9cf8-85a4710173e2" -->
 ## Troubleshooting
 
+<!-- section_id: "3e272652-3cc4-4aa1-a50f-d166e9d575b3" -->
 ### Error: "Browser is already in use"
 
 **Cause:** Another AI tool has an active MCP server connection.
@@ -282,6 +296,7 @@ Each `playwright.{os}_{tool}.json` file has this structure:
 
 4. **Restart all AI CLI tools** after config changes
 
+<!-- section_id: "9be79f53-2eaa-4070-b04a-b78d7e7d429e" -->
 ### Config File Not Found
 
 **Cause:** Setup script hasn't been run or config was deleted.
@@ -291,6 +306,7 @@ Each `playwright.{os}_{tool}.json` file has this structure:
 python3 mcp_concurrent_browser.py setup
 ```
 
+<!-- section_id: "0a9b2b66-f048-47be-8b00-39b325c7af82" -->
 ### Chromium Executable Not Found
 
 **Cause:** Playwright browsers not installed.
@@ -300,6 +316,7 @@ python3 mcp_concurrent_browser.py setup
 npx playwright install chromium
 ```
 
+<!-- section_id: "13134d00-375c-42e4-b60a-72b5d761a2bc" -->
 ### WSLg Browser Crashes Immediately
 
 **Cause:** Chromium not using Wayland/Ozone on WSLg.
@@ -318,6 +335,7 @@ Config should show:
 ]
 ```
 
+<!-- section_id: "4d33449c-bd4e-4318-9fc8-9c2cefa25414" -->
 ### Claude Code CLI Still Conflicts
 
 **Cause:** Claude Code CLI doesn't currently support custom Playwright MCP config paths.
@@ -331,8 +349,10 @@ Config should show:
    python3 mcp_concurrent_browser.py setup --tools claude --headless
    ```
 
+<!-- section_id: "e39b76cc-3158-4457-b61a-e458906c72b1" -->
 ## Advanced Usage
 
+<!-- section_id: "2b074ef5-4073-4e7c-b7eb-ec2be39e60cc" -->
 ### Switching Between Headed and Headless
 
 To reconfigure all tools for headless mode:
@@ -349,6 +369,7 @@ python3 mcp_concurrent_browser.py setup
 python3 mcp_concurrent_browser.py apply-codex
 ```
 
+<!-- section_id: "369731c9-03ee-4665-b7da-451cfb226ed5" -->
 ### Adding a New AI Tool
 
 Edit `mcp_concurrent_browser.py` and add to the `AI_TOOLS` dict:
@@ -371,8 +392,10 @@ Then run:
 python3 mcp_concurrent_browser.py setup --tools newtool
 ```
 
+<!-- section_id: "31c0f7fe-f5d7-4156-bff3-55578bfc6098" -->
 ## Architecture Notes
 
+<!-- section_id: "92ccfffe-a89d-441f-ad7e-c22f56ca7631" -->
 ### Why This Approach Works
 
 1. **Separate MCP server instances**: Each AI tool spawns its own `npx @playwright/mcp@latest` process
@@ -380,12 +403,14 @@ python3 mcp_concurrent_browser.py setup --tools newtool
 3. **Isolated profiles**: `isolated: true` + unique profile dirs = no browser lock conflicts
 4. **Process isolation**: OS handles process separation, no manual orchestration needed
 
+<!-- section_id: "527a6bc1-db3d-44b7-8909-1998379c3c83" -->
 ### What Doesn't Work
 
 1. **Sharing browser state between tools**: Each tool has its own browser instance (by design)
 2. **Accessing a browser opened in Tool A from Tool B**: Browser sessions are tool-specific
 3. **Real-time config switching**: Requires restarting the AI tool to reload MCP config
 
+<!-- section_id: "446cd1b8-8927-471b-8bf5-db2f53015f54" -->
 ### Future Improvements
 
 1. **Claude Code CLI integration**: Wait for support for custom MCP config paths
@@ -393,6 +418,7 @@ python3 mcp_concurrent_browser.py setup --tools newtool
 3. **Session sharing**: Potential feature to share browser state via remote debugging protocol
 4. **Config validation**: Pre-flight checks to ensure configs are valid before restarting tools
 
+<!-- section_id: "4ae164c8-1ff7-49d2-b5e0-f5ff505c109a" -->
 ## Related Documentation
 
 - Codex Playwright MCP: `/home/dawson/code/0_layer_universal/0_context/layer_0/0.02_sub_layers/sub_layer_0_10_mcp_servers_and_tools_setup/0.02_mcp_config_options_0_file_tree_0/0.03_operating_systems/wsl/0.04_ai_apps/codex_cli/0.05_mcp_servers/playwright-mcp/README.md`

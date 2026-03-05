@@ -4,6 +4,7 @@ resource_type: "readme
 document"
 resource_name: "README"
 ---
+<!-- section_id: "a7778e38-2196-4d06-a5a8-8cc84a3fbb65" -->
 ## Memory Handling – Workflows
 
 This folder is for **concrete workflows** that apply the Memory Handling Protocol, such as:

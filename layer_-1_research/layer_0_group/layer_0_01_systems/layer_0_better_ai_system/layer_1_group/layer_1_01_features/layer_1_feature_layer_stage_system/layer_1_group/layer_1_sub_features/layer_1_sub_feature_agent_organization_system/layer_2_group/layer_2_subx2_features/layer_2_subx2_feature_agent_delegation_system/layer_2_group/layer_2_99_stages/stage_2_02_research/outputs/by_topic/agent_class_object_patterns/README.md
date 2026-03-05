@@ -6,16 +6,20 @@ resource_name: "README"
 ---
 # Research Topic: Agent Class/Object Patterns
 
+<!-- section_id: "80550f9a-6c54-4f8d-9880-3879d078a2d0" -->
 ## Question
 
 How do object-oriented programming patterns (classes, inheritance, composition, interfaces, helper functions) map to agent delegation architecture? What OOP best practices should inform how we structure agents?
 
+<!-- section_id: "c14c5b06-71e0-4c36-89b2-10bf4280b2b0" -->
 ## Background
 
 The layer-stage system organizes agents hierarchically — entity managers, stage agents, sub-feature agents. This mirrors class hierarchies in OOP: base classes, derived classes, helper utilities. The question is whether formalizing this analogy yields better architectural patterns for agent delegation.
 
+<!-- section_id: "e8438e06-3ca6-4b0a-ac5d-ac71d81129f8" -->
 ## Findings
 
+<!-- section_id: "b46ca060-7837-4e70-bb54-72fe9a03eaed" -->
 ### 1. The Mapping: OOP Concepts → Agent Architecture
 
 | OOP Concept | Agent Equivalent | Example |
@@ -34,6 +38,7 @@ The layer-stage system organizes agents hierarchically — entity managers, stag
 | **Observer pattern** | Stage reports | Agents publish status to stage reports; managers observe asynchronously |
 | **Template Method pattern** | Stage guide + 0AGNOSTIC.md template | Universal template defines the structure; each stage fills in the specifics |
 
+<!-- section_id: "3ad6e255-cbae-4af4-9b49-99599853b34d" -->
 ### 2. OOP Best Practices That Apply
 
 #### a. Small Classes with Clear Interfaces
@@ -88,6 +93,7 @@ The layer-stage system organizes agents hierarchically — entity managers, stag
 
 **Agent equivalent**: Managers don't depend on stage implementation details. Stages don't depend on manager internals. Both depend on the abstract contract: stage reports (upward communication) and task descriptions (downward delegation). The stage report protocol is the shared abstraction.
 
+<!-- section_id: "46b9fd44-377b-4f9c-abb9-2b9b16a0f1f9" -->
 ### 3. Helper Functions / Utility Classes → Universal Infrastructure
 
 The most direct mapping is **helper functions and utility classes** → **universal rules, protocols, and principles**.
@@ -104,6 +110,7 @@ In agent architecture:
 
 **Key insight**: Just as good OOP organizes helpers into coherent utility packages (not scattered everywhere), the layer-stage system organizes universal infrastructure into `.0agnostic/` with clear categories (01_knowledge, 02_rules, 03_protocols). This is the equivalent of a well-organized utility library.
 
+<!-- section_id: "eca186ee-e4c2-469c-9a5f-f50f72c36f24" -->
 ### 4. Where the Analogy Breaks Down
 
 | OOP Pattern | Why It Doesn't Map Cleanly |
@@ -114,6 +121,7 @@ In agent architecture:
 | **Garbage collection** | Agents don't automatically clean up. Session state persists in episodic memory and stage outputs. There's no automatic "destructor" |
 | **Static typing** | Agent contracts (0AGNOSTIC.md templates) are conventions, not enforced types. A stage agent COULD violate its contract — validation happens through stage reports and manager review |
 
+<!-- section_id: "e187e92c-5e36-4910-9a46-34cb4713044e" -->
 ### 5. Recommendations
 
 Based on the mapping, these OOP-inspired improvements could strengthen agent architecture:
@@ -126,6 +134,7 @@ Based on the mapping, these OOP-inspired improvements could strengthen agent arc
 
 4. **Consider "abstract base agent" pattern**: Define a minimal abstract agent contract that every agent must implement. This would be the equivalent of an abstract base class — universal properties that any agent type (manager, stage, sub-feature) must have.
 
+<!-- section_id: "595e0dec-7de2-4a2e-aaed-1c9bdb8d15c3" -->
 ## Cross-Stage Traceability
 
 | Finding | Stage 01 Requirement | Stage 04 Design Decision |
@@ -137,10 +146,12 @@ Based on the mapping, these OOP-inspired improvements could strengthen agent arc
 | Factory → agent instantiation | 03/need_02: spawning_patterns | Directional scope boundaries (instantiation decision) |
 | Open/closed → canonical workspace | 01/need_01: stage_delegation | ADS canonical workspace pattern |
 
+<!-- section_id: "ccd09c58-4407-49f8-b885-2d07ab12c121" -->
 ## Status
 
 **Complete** — Analogy documented with mappings, validated against existing patterns, breakdowns identified, recommendations provided.
 
+<!-- section_id: "e70e2086-9f17-44ce-8466-1870547d1028" -->
 ## Sources
 
 - SOLID principles (Robert C. Martin) — foundational OOP design principles

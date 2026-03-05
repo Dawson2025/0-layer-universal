@@ -3,10 +3,12 @@ resource_id: "a44ef307-d6df-49fe-b298-b40557fcea3e"
 resource_type: "document"
 resource_name: "codex-notifications"
 ---
+<!-- section_id: "f4a24a03-2255-458f-b9ac-b616a77a725e" -->
 ## Codex Desktop & Audio Alerts (WSL)
 
 This guide wires Codex (or any CLI tool) into Windows toast notifications and loud audible alerts while running inside WSL.
 
+<!-- section_id: "4888d364-f2da-4ec1-b1c1-244c538dfd8e" -->
 ### 1. Install the helpers
 
 - **Windows notification bridge:** download [`wsl-notify-send.exe`](https://github.com/stuartleeks/wsl-notify-send/releases) to a Windows directory such as `C:\Tools\wsl-notify-send.exe`, then add that directory to your Windows `PATH`.
@@ -22,6 +24,7 @@ This guide wires Codex (or any CLI tool) into Windows toast notifications and lo
 
 Optionally pick `.wav` files under Windows (for example `C:\Windows\Media\notify.wav`) for distinctive success/failure sounds.
 
+<!-- section_id: "b12a273b-f90a-4d81-8262-789e3d2ff190" -->
 ### 2. Wrapper script
 
 `scripts/dev/codex-notify.sh` wraps any command, watches its exit status, then triggers the notification stack:
@@ -60,6 +63,7 @@ Then run Codex as:
 codex-notify <args>
 ```
 
+<!-- section_id: "041a0cba-09a4-4c35-a71a-df2aec9374d4" -->
 ### 3. Interactive turn notifications
 
 Codex' built-in `notify` hook runs an external program after each turn. Point it to `scripts/dev/codex-turn-notify.py` so you get alerts whenever the agent pauses for your input:
@@ -79,6 +83,7 @@ The hook reuses the same `CODEX_NOTIFY_*` environment variables shown above. Add
 
 When running inside WSL, if no Linux speech engine is available the hook automatically calls `powershell.exe` to speak the notification text and plays a short console beep—no extra setup needed.
 
+<!-- section_id: "6ff9ea49-3b24-4d45-92bf-37cf299b5851" -->
 ### 4. Windows Terminal / VS Code integration
 
 Use the alias in your WSL shell sessions (including VS Code's integrated terminal). Whenever Codex exits—success, error, or pause—you'll get:

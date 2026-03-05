@@ -7,6 +7,7 @@ resource_name: "agentic_tts_design"
 
 **Date**: 2026-02-23
 
+<!-- section_id: "24021c8a-e063-49f3-a684-0c294851398e" -->
 ## Architecture
 
 ```
@@ -36,6 +37,7 @@ Claude Code finishes responding
     Speech continues in background
 ```
 
+<!-- section_id: "e6b75cea-686b-4ed3-b18c-afe6f4c13883" -->
 ## Text Processing Pipeline
 
 ```
@@ -55,6 +57,7 @@ last_assistant_message
     Clean text → Piper → aplay
 ```
 
+<!-- section_id: "e84cc9d7-f02d-4201-b1ed-691365522989" -->
 ## Configuration (settings.json)
 
 ```json
@@ -71,6 +74,7 @@ last_assistant_message
 }
 ```
 
+<!-- section_id: "c3393009-c12b-4466-b80d-7cf3bc19448f" -->
 ## Future: Split-Output Pattern
 
 Claude could emit structured output:

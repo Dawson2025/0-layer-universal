@@ -8,8 +8,10 @@ resource_name: "README"
 
 Utility scripts for the 07_testing stage.
 
+<!-- section_id: "e7008d26-29ef-4d80-a39a-057b806dc527" -->
 ## Available Scripts
 (Add scripts as needed)
 
+<!-- section_id: "c4a91ad7-ea29-4bed-b2b8-a74636816f91" -->
 ## Usage
 Scripts can be called from hooks or directly via Bash tool.

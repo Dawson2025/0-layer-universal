@@ -11,6 +11,7 @@ resource_name: "agent_hierarchy_structure_experiment"
 
 ---
 
+<!-- section_id: "f2a0eeff-8086-43a8-aa07-0ffb920ca6f1" -->
 ## Hypothesis
 
 Different agent hierarchy structures will produce significantly different outcomes when applied to LangTrak development tasks. The optimal structure will enable agents to:
@@ -22,6 +23,7 @@ Different agent hierarchy structures will produce significantly different outcom
 
 ---
 
+<!-- section_id: "29803f70-0ce3-465b-b966-33db2f05bd88" -->
 ## LangTrak Architecture (Constant Across All Trials)
 
 All trials work with the same LangTrak codebase and feature set:
@@ -44,8 +46,10 @@ All trials work with the same LangTrak codebase and feature set:
 
 ---
 
+<!-- section_id: "42a3a97c-c8c0-44a9-bd86-e8f71f85403e" -->
 ## Trial Structures
 
+<!-- section_id: "8d33aca6-7dbb-432c-801a-a2788ed38040" -->
 ### Trial A: One Agent Per Layer (10 Specialists)
 
 **Structure**: Each of the 10 layers gets its own dedicated agent. Agents communicate only with direct neighbors (up/down in the dependency chain). Cross-cutting layers (L9-L11) communicate with specific layers they affect.
@@ -71,6 +75,7 @@ Manager Agent
 **Predicted strengths**: Clear ownership, minimal context per agent, good for isolated feature work
 **Predicted weaknesses**: Slow for cross-layer tasks, relay overhead, manager must know which layer handles what
 
+<!-- section_id: "b27e425a-186f-4967-9a83-6b8ba1d238d4" -->
 ### Trial B: Domain Cluster Agents (3 Clusters + Manager)
 
 **Structure**: Group related layers into domain clusters. Each cluster agent handles multiple related layers.
@@ -90,6 +95,7 @@ Manager Agent
 **Predicted strengths**: Fewer agents to coordinate, domain experts understand related layers together, faster cross-layer work within clusters
 **Predicted weaknesses**: More context per agent (cluster-wide), boundary between clusters is still a handoff point, one agent doing too many things
 
+<!-- section_id: "038bd739-2bb1-4897-aaa3-5c57de3bd379" -->
 ### Trial C: Stage-First Agents (Per-Stage, Layer-Agnostic)
 
 **Structure**: Instead of one agent per layer, one agent per development stage. Each stage agent works across ALL layers but only does its specific phase of work.
@@ -113,6 +119,7 @@ Manager Agent
 **Predicted strengths**: Mirrors the existing stage-based workflow, natural for sequential development, each agent is a phase expert
 **Predicted weaknesses**: Each agent needs broad context (all layers), hard to parallelize across features, no layer-specific deep expertise
 
+<!-- section_id: "ca9f83d9-6abe-42f3-8f5f-8b496bb1b518" -->
 ### Trial D: Hybrid (Layer Specialists + Stage Coordinators)
 
 **Structure**: Combine layer specialists (for domain knowledge) with stage coordinators (for workflow). Layer agents HAVE the knowledge; stage coordinators MANAGE the workflow.
@@ -138,6 +145,7 @@ Layer Agents (have domain knowledge):
 **Predicted strengths**: Best of both worlds (domain expertise + workflow management), supports parallelism (multiple layer agents work concurrently), clear separation of concerns
 **Predicted weaknesses**: Most complex structure, coordination overhead between two levels, potential confusion about who decides what
 
+<!-- section_id: "9f2a8622-a4fc-4723-b95a-916b66820e80" -->
 ### Trial E: Flat Team (No Hierarchy)
 
 **Structure**: All agents are peers. No manager, no hierarchy. Shared task board. Any agent can pick up any task.
@@ -159,8 +167,10 @@ Shared Task Board
 
 ---
 
+<!-- section_id: "3c296c97-fad9-48db-a823-aa0c23b50a5a" -->
 ## Evaluation Criteria
 
+<!-- section_id: "e3e48748-d207-4849-9122-2a5ac3ea45cc" -->
 ### Metrics (Scored 1-5 Per Trial)
 
 | Metric | What It Measures | How To Evaluate |
@@ -174,6 +184,7 @@ Shared Task Board
 | **Parallelism** | Can multiple things happen simultaneously? | Can agents work on independent features concurrently? |
 | **Error Recovery** | How well does the system handle mistakes? | Introduce an error. How does the system detect and fix it? |
 
+<!-- section_id: "61c79366-ae84-4b35-9659-e6b957c9fd36" -->
 ### Scoring
 
 Each trial gets scores on all 8 metrics. Final score is weighted:
@@ -186,6 +197,7 @@ Each trial gets scores on all 8 metrics. Final score is weighted:
 - Parallelism: 5%
 - Error Recovery: 5%
 
+<!-- section_id: "4ed6e920-ebc7-402f-a891-3da90d65f865" -->
 ### Test Tasks
 
 Each trial must attempt the SAME set of test tasks:
@@ -202,8 +214,10 @@ Each trial must attempt the SAME set of test tasks:
 
 ---
 
+<!-- section_id: "dfa1c2eb-9a32-468a-b4c2-382d4d4ae4d9" -->
 ## Trial Execution Protocol
 
+<!-- section_id: "8d7d709f-fb4d-44a8-ba52-73cb02d188aa" -->
 ### For Each Trial
 
 1. **Setup**: Define agents per the trial structure. Create 0AGNOSTIC.md for each agent with appropriate context model.
@@ -211,6 +225,7 @@ Each trial must attempt the SAME set of test tasks:
 3. **Full run**: Execute all 7 test tasks. Record metrics for each.
 4. **Post-mortem**: Analyze where the structure helped and where it hindered. Document failure modes.
 
+<!-- section_id: "7b00b7dc-0243-4075-a434-3487701f5f39" -->
 ### Recording Format
 
 For each trial + task combination:
@@ -237,6 +252,7 @@ For each trial + task combination:
 
 ---
 
+<!-- section_id: "026295b6-75db-4c6e-bfc6-0967b7e1487e" -->
 ## Expected Outcomes
 
 Based on LangTrak's specific architecture:
@@ -251,6 +267,7 @@ The experiment should validate or invalidate these predictions and reveal which 
 
 ---
 
+<!-- section_id: "87a3681c-8e2c-47bb-8c93-49f96dc4486f" -->
 ## Results
 
 *(To be filled after trials are executed)*
@@ -265,6 +282,7 @@ The experiment should validate or invalidate these predictions and reveal which 
 
 ---
 
+<!-- section_id: "57cf761a-a8de-4b09-8425-174075f7fa76" -->
 ## Next Steps
 
 1. Choose 2-3 trials to run first (recommend B, D, E for maximum variation)

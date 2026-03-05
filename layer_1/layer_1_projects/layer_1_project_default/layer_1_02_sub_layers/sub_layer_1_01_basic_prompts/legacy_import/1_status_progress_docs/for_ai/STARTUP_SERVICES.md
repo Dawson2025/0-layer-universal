@@ -3,6 +3,7 @@ resource_id: "f73e8192-4427-4be8-bbfc-54e45d56a0e8"
 resource_type: "document"
 resource_name: "STARTUP_SERVICES"
 ---
+<!-- section_id: "1406851d-102c-4ac0-b205-b5652d0a3474" -->
 ## Local Service Bootstrap
 
 To avoid retyping the Flask + Playwright startup commands in every terminal, use the helper script:
@@ -32,6 +33,7 @@ alias codex-start='cd /home/dawson/code/lang-trak-in-progress && bash scripts/de
 Then run `codex-start` after launching Codex in a fresh terminal.
 
 
+<!-- section_id: "99e94943-ccdf-45ce-94a7-48da657fe244" -->
 ### Automatic startup
 
 #### For Codex

@@ -6,10 +6,12 @@ resource_name: "README"
 ---
 # Environment (02_environment)
 
+<!-- section_id: "41ad48ee-9f7c-4b0f-b539-aeefecfd7dd5" -->
 ## What This Contains
 
 Shell and system environment configuration for your machine. This layer defines shell type, PATH settings, environment variables, and shell customizations.
 
+<!-- section_id: "a0863add-3eb0-40ad-97b8-5a67fd0c8fb0" -->
 ## Categories
 
 | Category | Content |
@@ -24,6 +26,7 @@ Shell and system environment configuration for your machine. This layer defines 
 | SSH Keys | SSH key locations and configurations |
 | Locale & Encoding | LANG, LC_*, timezone settings |
 
+<!-- section_id: "81967449-8880-479d-b386-c8d5c76158a8" -->
 ## Example Structure
 
 ```
@@ -37,6 +40,7 @@ Shell and system environment configuration for your machine. This layer defines 
 └── ssh_configuration.md   # SSH keys and remote access setup
 ```
 
+<!-- section_id: "315b4aa7-1af4-41c3-a4d4-0f2c3ae980a6" -->
 ## Next Layer
 
 After environment settings, the next layer is **03_coding_apps/** (IDE and code editor configurations).

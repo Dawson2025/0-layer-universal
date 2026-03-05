@@ -10,12 +10,14 @@ This folder contains sub-projects (Layer 2) within this project.
 
 Each sub-project follows the standard sub-project template structure (`2_sub_project_template`).
 
+<!-- section_id: "6a5dc835-e052-49ab-868e-f7dcbf3f4987" -->
 ## Naming Convention
 
 ```
 layer_2_sub_project_<name>/
 ```
 
+<!-- section_id: "8bd895af-bb1b-49ac-924b-9cf37dd3cfb9" -->
 ## When to Create a Sub-Project
 
 Create a sub-project when you have:
@@ -23,6 +25,7 @@ Create a sub-project when you have:
 - Content that may become its own Git repository (submodule)
 - Multiple features/components that logically belong together
 
+<!-- section_id: "2b60d76f-d508-470f-b8aa-698cc207304b" -->
 ## Note on "Sub" Prefix
 
 The "sub" prefix indicates nesting within the **same type**:

@@ -6,6 +6,7 @@ resource_name: "0AGNOSTIC"
 ---
 # 0AGNOSTIC.md - layer_3_99_stages (Agentic TTS)
 
+<!-- section_id: "7e31ff85-e9bd-414d-ba7d-f0fda970c039" -->
 ## Identity
 
 entity_id: "67aa0921-77ff-459d-8254-c22481f57040"

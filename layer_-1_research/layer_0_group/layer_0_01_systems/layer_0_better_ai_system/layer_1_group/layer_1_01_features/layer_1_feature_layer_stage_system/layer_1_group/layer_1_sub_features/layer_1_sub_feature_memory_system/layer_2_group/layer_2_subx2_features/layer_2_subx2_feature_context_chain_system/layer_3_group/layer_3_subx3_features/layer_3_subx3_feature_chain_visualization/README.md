@@ -8,6 +8,7 @@ resource_name: "README"
 
 Visual diagrams of context chain architecture and flows.
 
+<!-- section_id: "a57a1295-665c-449c-b0ca-26fc5717548b" -->
 ## Scope
 
 - Context chain diagram generation
@@ -15,6 +16,7 @@ Visual diagrams of context chain architecture and flows.
 - Static/dynamic and fixed/configurable dimension visualization
 - Specific flow diagrams (entity creation, git commit, stage workflow)
 
+<!-- section_id: "41c1ae06-318e-407c-aed5-e5602ed4d83a" -->
 ## Parent
 
 Part of the **Context Chain System** sub-feature.

@@ -5,24 +5,29 @@ resource_name: "multi_tab_workflow"
 ---
 # Multi-Tab Workflow (Browser MCP)
 
+<!-- section_id: "0ed572fc-deb5-4878-a000-cb9f8eabfb5a" -->
 ## Overview
 
 This protocol defines standard procedures for managing multiple browser tabs using Browser MCP tools. Multi-tab workflows are useful for comparing content, performing parallel research, or maintaining separate contexts.
 
+<!-- section_id: "9519aa46-f96f-428d-b884-08cb3f798d23" -->
 ## Prerequisites
 
 1. Browser MCP server running and accessible
 2. Sufficient system memory for multiple tabs (each tab uses ~100-300MB)
 3. Understanding of tab ID system (tabs are referenced by numeric ID)
 
+<!-- section_id: "c783b986-bdab-4bf4-b7f6-35010db8a456" -->
 ## Tab Management Fundamentals
 
+<!-- section_id: "e5a04187-06ae-4c5a-ae80-0deb577dbfa1" -->
 ### Tab Identification
 - Each tab has a unique numeric ID
 - Tab IDs are assigned when tabs are created
 - IDs persist until the tab is closed
 - Use `browser_tabs` with action "list" to get current tab IDs
 
+<!-- section_id: "755c5834-bf99-45f3-8c20-e5de92dfe0ca" -->
 ### Tab States
 - **Active**: Currently focused tab
 - **Background**: Open but not focused
@@ -30,11 +35,14 @@ This protocol defines standard procedures for managing multiple browser tabs usi
 
 ---
 
+<!-- section_id: "3b685009-b96d-49c9-8e85-17ebf7db5f35" -->
 ## Protocol 1: Create and Switch Between Tabs
 
+<!-- section_id: "b033395b-997b-4619-8795-8831ccd25192" -->
 ### Purpose
 Open multiple tabs and switch between them for different tasks.
 
+<!-- section_id: "8b53a06e-7882-4197-8bf9-a834abae72b2" -->
 ### Steps
 
 1. **List current tabs**
@@ -74,6 +82,7 @@ Open multiple tabs and switch between them for different tasks.
    Tool: browser_snapshot
    ```
 
+<!-- section_id: "2b854e55-e237-4407-979a-35bf7ae2293b" -->
 ### Tab Switching Notes
 - Switching tabs changes which tab receives subsequent commands
 - Always verify active tab with snapshot before important operations
@@ -81,11 +90,14 @@ Open multiple tabs and switch between them for different tasks.
 
 ---
 
+<!-- section_id: "706e0e55-1739-4ff8-9d03-ad32b0dc6b2c" -->
 ## Protocol 2: Parallel Research Workflow
 
+<!-- section_id: "70b94a4c-7ac1-4fd2-8cd1-45306b017fbf" -->
 ### Purpose
 Research multiple sources simultaneously by opening each in a separate tab.
 
+<!-- section_id: "956d7e38-c55d-4e23-a15a-fc02eaa93ab0" -->
 ### Steps
 
 1. **Create tabs for each source**
@@ -118,6 +130,7 @@ Research multiple sources simultaneously by opening each in a separate tab.
    - Note which tab/source provided each piece of information
    - Resolve conflicts between sources
 
+<!-- section_id: "47401b58-773c-4933-80d9-d15ba13a278c" -->
 ### Research Workflow Best Practices
 - Open all tabs before starting extraction
 - Maintain consistent tab order for easy reference
@@ -126,11 +139,14 @@ Research multiple sources simultaneously by opening each in a separate tab.
 
 ---
 
+<!-- section_id: "4417afc2-7d4a-4bfd-ab27-28224ae379cb" -->
 ## Protocol 3: Comparison Workflow
 
+<!-- section_id: "f3be5918-60fc-474f-8cfd-a1ec78d07fb3" -->
 ### Purpose
 Compare content between two or more pages side by side.
 
+<!-- section_id: "98b84831-fb3d-472c-ac5e-efe02a6020e4" -->
 ### Steps
 
 1. **Open comparison targets**
@@ -176,6 +192,7 @@ Compare content between two or more pages side by side.
    - Compare element presence/absence
    - Check for visual differences (if using screenshots)
 
+<!-- section_id: "f82c7f83-bf5f-4961-9fd9-5b86505249f0" -->
 ### Comparison Use Cases
 - A/B testing analysis
 - Before/after documentation
@@ -185,11 +202,14 @@ Compare content between two or more pages side by side.
 
 ---
 
+<!-- section_id: "446d7aca-6c30-44be-82a8-0f1d9948b926" -->
 ## Protocol 4: Session Isolation Workflow
 
+<!-- section_id: "ee50dd68-4844-4a8e-9a85-06dafd0203e5" -->
 ### Purpose
 Maintain separate browsing contexts (e.g., logged in as different users).
 
+<!-- section_id: "dde8df29-4976-488b-b8ba-c0d8191b9dca" -->
 ### Steps
 
 1. **First session (Tab 0)**
@@ -211,6 +231,7 @@ Maintain separate browsing contexts (e.g., logged in as different users).
    # Log in as User B (may need incognito/profile separation)
    ```
 
+<!-- section_id: "e47f357d-8d5b-4b1d-bdd9-8e8166542116" -->
 ### Session Isolation Notes
 - Standard tabs share cookies and session storage
 - True session isolation requires separate browser profiles
@@ -219,11 +240,14 @@ Maintain separate browsing contexts (e.g., logged in as different users).
 
 ---
 
+<!-- section_id: "c5759337-8f55-462d-9852-6f6a6cdc3fe9" -->
 ## Protocol 5: Tab Cleanup Workflow
 
+<!-- section_id: "4ad97ce8-c04d-4161-ad00-1613b6bf5c4c" -->
 ### Purpose
 Clean up tabs after completing a multi-tab workflow.
 
+<!-- section_id: "7819d71a-337a-4a1a-a91e-25aa93ffd07e" -->
 ### Steps
 
 1. **List all open tabs**
@@ -260,6 +284,7 @@ Clean up tabs after completing a multi-tab workflow.
      action: "list"
    ```
 
+<!-- section_id: "4ef5fa70-71bc-4141-b453-1aac9f44ac70" -->
 ### Tab Cleanup Best Practices
 - Close tabs in reverse order (highest index first)
 - Always list tabs before closing to verify indices
@@ -268,11 +293,14 @@ Clean up tabs after completing a multi-tab workflow.
 
 ---
 
+<!-- section_id: "b26c524a-afb9-483c-8bca-774c4419be60" -->
 ## Protocol 6: Form Continuation Across Tabs
 
+<!-- section_id: "75653a87-5360-44db-818e-fd435bc4976f" -->
 ### Purpose
 Complete a form that spans multiple pages using tabs to preserve state.
 
+<!-- section_id: "d5042c68-d543-42d1-b406-b2793276ce7e" -->
 ### Steps
 
 1. **Open form in main tab**
@@ -314,8 +342,10 @@ Complete a form that spans multiple pages using tabs to preserve state.
 
 ---
 
+<!-- section_id: "163826e1-e515-4977-9e07-67914e2a66e5" -->
 ## Error Handling
 
+<!-- section_id: "36a39918-bc28-402a-b362-42df508abc9e" -->
 ### "Tab not found" Error
 
 **Cause**: Tab was closed or index is out of range
@@ -327,6 +357,7 @@ Complete a form that spans multiple pages using tabs to preserve state.
 3. Use correct index from fresh list
 ```
 
+<!-- section_id: "51583550-26cd-4ccd-91f5-13233f389f6c" -->
 ### "Multiple tabs have same content"
 
 **Cause**: Navigation happened in wrong tab
@@ -338,6 +369,7 @@ Complete a form that spans multiple pages using tabs to preserve state.
 3. Take snapshot to confirm correct tab
 ```
 
+<!-- section_id: "01c48a07-055d-4d2c-8185-93cb3b863555" -->
 ### Memory issues with many tabs
 
 **Symptoms**: Slow performance, browser crashes
@@ -352,8 +384,10 @@ Complete a form that spans multiple pages using tabs to preserve state.
 
 ---
 
+<!-- section_id: "7662d1d7-4df7-4435-aa88-ef2f7495cb8c" -->
 ## Tab Management Reference
 
+<!-- section_id: "83b57be1-0ec4-4d44-bcf2-eb9f2e728bc3" -->
 ### Quick Commands
 
 | Action | Tool Call |
@@ -364,12 +398,14 @@ Complete a form that spans multiple pages using tabs to preserve state.
 | Close current tab | `browser_tabs action: "close"` |
 | Close tab N | `browser_tabs action: "close" index: N` |
 
+<!-- section_id: "96c4186c-f5d2-4832-9f3d-14d71f00209a" -->
 ### Tab Index Rules
 - Indices are 0-based (first tab is 0)
 - Indices update when tabs are closed
 - Newly created tab becomes active
 - Closing active tab selects adjacent tab
 
+<!-- section_id: "b836d4d4-e714-4251-b0b5-e29891f1a264" -->
 ### Memory Guidelines
 
 | Number of Tabs | Expected Memory | Performance |

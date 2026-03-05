@@ -4,6 +4,7 @@ resource_type: "readme
 document"
 resource_name: "README"
 ---
+<!-- section_id: "7573a024-d471-4d94-91bc-c6d13397fcc8" -->
 ## Small Batch Verification Protocol – Instruction Docs
 
 The canonical definition of the **Small Batch Verification Protocol** lives in:

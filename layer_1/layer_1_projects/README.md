@@ -8,6 +8,7 @@ resource_name: "README"
 
 This directory contains project repositories nested under the universal root.
 
+<!-- section_id: "8c8e11cf-2a26-431b-8cd5-50336336ef65" -->
 ## Structure
 Each project follows the entity pattern:
 ```
@@ -24,5 +25,6 @@ layer_1_project_<name>/
     └── layer_2_components/
 ```
 
+<!-- section_id: "bfbbeb5c-4d44-4475-b747-5ad89199ab05" -->
 ## Projects
 - (Projects will be added here)

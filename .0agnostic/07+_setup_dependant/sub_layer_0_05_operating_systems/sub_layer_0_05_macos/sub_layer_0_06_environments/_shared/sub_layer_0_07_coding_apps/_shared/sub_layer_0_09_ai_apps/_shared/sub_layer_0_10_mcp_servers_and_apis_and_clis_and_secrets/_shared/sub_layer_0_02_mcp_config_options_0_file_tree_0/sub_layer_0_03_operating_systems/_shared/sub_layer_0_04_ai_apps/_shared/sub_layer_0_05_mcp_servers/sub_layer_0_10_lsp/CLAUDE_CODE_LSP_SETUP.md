@@ -7,16 +7,19 @@ resource_name: "CLAUDE_CODE_LSP_SETUP"
 
 Source: https://www.youtube.com/watch?v=lffYEu5MhSQ
 
+<!-- section_id: "97ab9035-3ef8-456b-9372-62496fee443b" -->
 ## Overview
 
 Claude Code now has built-in Language Server Protocol (LSP) support. LSP lets Claude Code use language-aware features (find references, go to definition, rich symbol info) instead of relying on plain text search or grep. This makes code navigation and AI edits more accurate, especially in large repositories.
 
+<!-- section_id: "f0f5c2b7-7569-410c-bb83-5d8e5990735c" -->
 ## Why LSP Matters
 
 - Better reference discovery than grep for questions like "find all references of this function".
 - Faster, more precise symbol navigation across files.
 - More reliable parameter and type information for non-strict languages like Python.
 
+<!-- section_id: "6925a5ab-1472-423b-9175-72c0adbce14e" -->
 ## Quick Setup (Claude Code)
 
 1. In Claude Code, run `/plugin`.
@@ -26,23 +29,27 @@ Claude Code now has built-in Language Server Protocol (LSP) support. LSP lets Cl
 
 If your language is not listed, use the linked documentation in the video description to add a custom LSP server.
 
+<!-- section_id: "51825d08-bc6a-411f-b036-4b14d5c6ccce" -->
 ## Common Issue Shown in the Video
 
 - Error: "No LSP server is available for Python" and Claude Code falls back to grep.
 - Fix: Install the language plugin (Pyright for Python) via `/plugin` and restart.
 
+<!-- section_id: "6c5d3166-437e-4e8f-82d7-536fab0d3457" -->
 ## Example Workflows (from the Video)
 
 - Ask Claude Code: "Find all references in the codebase where this function is used" with LSP enabled.
 - Use LSP to locate a function definition and navigate directly to it (like Ctrl+Click in an IDE).
 - Ask: "What parameters does chat completions create accept?" and let LSP surface accurate parameter lists and descriptions.
 
+<!-- section_id: "8d5a404b-fc36-4fa0-b9df-0e3b57907092" -->
 ## Notes
 
 - The presenter mentions a temporary issue in the latest Claude Code release and uses a specific version; by the time you watch, it may be fixed.
 - Before built-in LSP support, the Serena MCP server was commonly used to expose language servers to AI editors. The video notes it is popular (17k+ GitHub stars) and works well for larger projects.
 - Built-in LSP reduces the need to set up a separate MCP server for this capability.
 
+<!-- section_id: "c7f1768b-5480-4dea-8b94-5647c78754d8" -->
 ## Serena MCP Server (from the Video)
 
 - Serena MCP is an MCP server that exposes LSP features to AI code editors (including Claude Code).
@@ -51,6 +58,7 @@ If your language is not listed, use the linked documentation in the video descri
 - With Claude Code's built-in LSP support, Serena MCP becomes optional rather than required.
 - Repo: https://github.com/oraios/serena
 
+<!-- section_id: "232e1713-62af-4716-aa9c-78cc6a0b063d" -->
 ## Key Takeaway
 
 Enable a language server for your primary language so Cloud Code can use accurate symbol and type information. This improves navigation, reduces incorrect edits, and helps the AI generate more reliable code.

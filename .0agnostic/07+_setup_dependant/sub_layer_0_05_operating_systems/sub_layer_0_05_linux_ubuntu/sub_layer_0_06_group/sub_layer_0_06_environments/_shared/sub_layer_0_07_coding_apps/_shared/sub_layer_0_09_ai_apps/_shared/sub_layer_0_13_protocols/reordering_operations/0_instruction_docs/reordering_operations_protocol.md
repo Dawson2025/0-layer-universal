@@ -5,6 +5,7 @@ resource_name: "reordering_operations_protocol"
 ---
 # Reordering Operations Protocol
 
+<!-- section_id: "e9e1f49c-c52b-4920-9cb5-2bc3e0ef6f71" -->
 ## Applicability
 **Context:** Use this protocol whenever you need to reorder numbered items in the context system (sub-layers, stages, protocol folders, etc.).  
 **Scope:** OS: universal; Tools: universal – applies to any reordering operation within the layered context system, regardless of OS or AI coding tool.  
@@ -16,10 +17,12 @@ resource_name: "reordering_operations_protocol"
 
 ---
 
+<!-- section_id: "426cb358-8025-496c-90e9-75a3cd30148c" -->
 ## 1. Pre-Operation: Load Required Context
 
 **Before performing any reordering operation, you MUST load the following context:**
 
+<!-- section_id: "7ad5c5bb-826e-4d4a-b7a5-80078bbc9a97" -->
 ### 1.1 For Sub-Layer Reordering
 
 1. **Read the Sub-Layer Registry System:**
@@ -38,6 +41,7 @@ resource_name: "reordering_operations_protocol"
    - `layer_0/0.02_sub_layers/sub_layer_0_01_basic_prompts_throughout/universal_init_prompt.md`
    - Section 1.2 "Context Change Protocol (Ordering / Naming)" contains detailed reordering steps.
 
+<!-- section_id: "96b1af50-0a5a-434e-9bd3-b6ebc164b731" -->
 ### 1.2 For Stage Reordering
 
 1. **Read the Layer/Stage Framework:**
@@ -47,6 +51,7 @@ resource_name: "reordering_operations_protocol"
 2. **Check Current Stage Structure:**
    - Review the `0.99_stages/` folder in the relevant layer to see current stage numbering.
 
+<!-- section_id: "1f409da1-0bfa-491e-99b6-c474dea1ec18" -->
 ### 1.3 For Other Numbered Item Reordering
 
 1. **Identify the registry/index system** (if any) for the items being reordered.
@@ -54,8 +59,10 @@ resource_name: "reordering_operations_protocol"
 
 ---
 
+<!-- section_id: "6e32c75e-1d84-4392-be28-37ce50cfbd7b" -->
 ## 2. Reordering Steps
 
+<!-- section_id: "39da0917-dd92-4ba5-852c-baf0916d9296" -->
 ### 2.1 Sub-Layer Reordering
 
 **Step 1: Understand the Request**
@@ -91,6 +98,7 @@ resource_name: "reordering_operations_protocol"
   ```
 - Update any critical hard-linked references to use alias paths instead.
 
+<!-- section_id: "fbc90fdb-5807-439b-91d1-96ed71131bd2" -->
 ### 2.2 Stage Reordering
 
 **Step 1: Understand the Request**
@@ -114,6 +122,7 @@ resource_name: "reordering_operations_protocol"
 - Check that stage folders are in the correct order.
 - Verify that any stage-dependent logic still works.
 
+<!-- section_id: "3a9fc5e6-cc3f-4f97-83bb-95b8960fe513" -->
 ### 2.3 Protocol Folder Reordering
 
 **Step 1: Understand the Request**
@@ -130,8 +139,10 @@ resource_name: "reordering_operations_protocol"
 
 ---
 
+<!-- section_id: "252cbf1b-190e-492d-a16c-8172d73cc9ba" -->
 ## 3. Post-Operation: Verification and Documentation
 
+<!-- section_id: "20885f79-feae-4f12-856d-5519b43fe776" -->
 ### 3.1 Verification Checklist
 
 After any reordering operation:
@@ -142,12 +153,14 @@ After any reordering operation:
 - [ ] Status files (if applicable) have been updated.
 - [ ] No broken references exist (check with appropriate tools).
 
+<!-- section_id: "419f5d17-20ca-4e06-935b-07fb1e9031bc" -->
 ### 3.2 Documentation Updates
 
 - Update any README files that list the order of items.
 - Update any master indices or documentation maps.
 - Note any breaking changes in commit messages.
 
+<!-- section_id: "5e8c9e11-732e-4f77-9c94-60559b29c19d" -->
 ### 3.3 Git Operations
 
 After successful reordering:
@@ -169,8 +182,10 @@ After successful reordering:
 
 ---
 
+<!-- section_id: "c8652ad5-262f-4c7e-9e79-2dd7450ae818" -->
 ## 4. Common Patterns and Examples
 
+<!-- section_id: "0405ee20-02a3-4781-89a5-50d49c114101" -->
 ### 4.1 Moving One Item After Another
 
 **Request:** "Make X come after Y"
@@ -189,6 +204,7 @@ After successful reordering:
   3. Move universal_protocols from 0.99 to 0.13
   4. Regenerate registry
 
+<!-- section_id: "8e4b56f7-8949-4b19-8898-8c64a67a0bbb" -->
 ### 4.2 Swapping Two Adjacent Items
 
 **Request:** "Swap X and Y"
@@ -208,20 +224,24 @@ After successful reordering:
 
 ---
 
+<!-- section_id: "c4f9e10a-bb1b-44ff-bf10-1af50ac78a2c" -->
 ## 5. Error Prevention
 
+<!-- section_id: "381c874d-dadf-4f04-8bad-e9e4031f2411" -->
 ### 5.1 Before Starting
 
 - **Always check current state** by reading the registry/index files.
 - **Always use temporary numbers** (0.99, 0.98, etc.) to avoid conflicts.
 - **Never skip the registry regeneration step** after reordering.
 
+<!-- section_id: "859e2f17-32ff-4af7-a7b4-0629a9304d00" -->
 ### 5.2 During Operation
 
 - **Work in small steps** - rename one folder at a time and verify.
 - **Keep track of what you've moved** - note the old and new numbers.
 - **Test as you go** - verify the structure is correct before moving to the next item.
 
+<!-- section_id: "c810527f-039d-4484-b981-4b68c82a4d88" -->
 ### 5.3 After Operation
 
 - **Always regenerate registries/indices** - this is critical for system integrity.
@@ -230,6 +250,7 @@ After successful reordering:
 
 ---
 
+<!-- section_id: "98af44a3-06ed-4143-a9e6-7c35481c350b" -->
 ## 6. Integration with Other Protocols
 
 This protocol works in conjunction with:
@@ -240,19 +261,24 @@ This protocol works in conjunction with:
 
 ---
 
+<!-- section_id: "6323cea1-dc4c-4d0d-8233-9a613f51f5d7" -->
 ## 7. Troubleshooting
 
+<!-- section_id: "faf04c63-a49d-4275-9751-d5822b6fc7e5" -->
 ### Problem: Registry generation fails
 - **Solution:** Check that all folder names follow the expected pattern (e.g., `sub_layer_0_XX_slug`).
 - Verify that the registry script can find all sub-layer folders.
 
+<!-- section_id: "672008a9-634a-4823-bee6-0d9374d617c8" -->
 ### Problem: Alias files point to wrong locations
 - **Solution:** Regenerate the registry - alias files are auto-generated from the registry.
 
+<!-- section_id: "cc8b6b9a-2748-44eb-a8c2-7c06bd577a64" -->
 ### Problem: Hard-linked references break
 - **Solution:** Update references to use alias paths instead of numeric paths.
 - Use the `check-hardlinks` script to find all hard-linked references.
 
+<!-- section_id: "e922ff73-e7a5-4abe-b007-b47556f66c57" -->
 ### Problem: Status files show incorrect current stage
 - **Solution:** Manually update status JSON files after stage reordering.
 - Verify that the stage numbering in status files matches the actual folder names.

@@ -5,10 +5,12 @@ resource_name: "pointer_sync_knowledge"
 ---
 # Pointer Sync System — Knowledge
 
+<!-- section_id: "0621d085-14c4-46e2-8c0b-fd7939fa10d4" -->
 ## What It Is
 
 The pointer sync system keeps pointer files synchronized with their canonical content locations. When directories are moved or renamed, the system detects stale paths and updates them automatically.
 
+<!-- section_id: "6d85de7a-53ee-41d2-9c5b-75ca9da4056d" -->
 ## Components
 
 | Component | Location | Purpose |
@@ -24,6 +26,7 @@ The pointer sync system keeps pointer files synchronized with their canonical co
 | Hook (pointer) | `.0agnostic/06_.../08_hooks/scripts/pointer-edit-guard.sh` | Reminds agents to validate after editing pointers |
 | Hook (config) | `.claude/settings.json` | Registers the hook with Claude Code |
 
+<!-- section_id: "30cd54a1-2e7c-49d8-bd56-23f9a1750b3a" -->
 ## How Pointers Work
 
 Pointer files use **YAML frontmatter** to declare what they point to:
@@ -46,12 +49,14 @@ The script uses these fields to:
 
 UUID-first resolution means pointers survive entity/stage renames without breaking.
 
+<!-- section_id: "63329b5f-af20-439f-9f0a-adc45beb3fac" -->
 ## Relationship to Existing Systems
 
 - **Deduplication pattern**: Pointer files ARE the deduplication mechanism. This system automates their maintenance.
 - **agnostic-sync.sh**: Pointer validation runs at the end of agnostic-sync. Broken pointers produce warnings.
 - **Claude Code hooks**: The `pointer-edit-guard.sh` hook fires after any Edit/Write on a pointer file, reminding the agent to validate.
 
+<!-- section_id: "2f1f6f32-4753-4902-978d-c4547557f110" -->
 ## UUID Identity System
 
 Every entity, stage, and file has a UUID v4 identifier:
@@ -64,6 +69,7 @@ Every entity, stage, and file has a UUID v4 identifier:
 
 UUIDs are immutable — they never change regardless of renames. This is the foundation that makes pointer resolution rename-safe.
 
+<!-- section_id: "3b076837-1372-4423-9d0e-d95482338b79" -->
 ## Key Design Decisions
 
 1. **Frontmatter-based identification**: Pointers self-declare via `pointer_to:` field. No external registry needed.

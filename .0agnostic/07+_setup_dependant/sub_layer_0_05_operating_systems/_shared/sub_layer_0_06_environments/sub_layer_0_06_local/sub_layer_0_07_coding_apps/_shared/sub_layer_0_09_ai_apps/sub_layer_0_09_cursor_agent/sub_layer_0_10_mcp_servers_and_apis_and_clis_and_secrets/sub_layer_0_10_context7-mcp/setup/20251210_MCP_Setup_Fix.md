@@ -10,14 +10,17 @@ resource_name: "20251210_MCP_Setup_Fix"
 **Affected MCP Servers**: `playwright`, `browser`  
 **Related Document**: `BROWSER_MCP_SETUP_EXPERIENCE.md`
 
+<!-- section_id: "611fd0f3-f67a-43d9-b7d4-2dd30a5555a8" -->
 ## Problem
 
 When attempting to use browser automation tools (e.g., `browser_navigate`, `browser_click`) on a Linux/Ubuntu system, the following error was consistently encountered: "Browser specified in your config is not installed". This occurred even when the browser (Chromium) was confirmed to be installed and executable manually. Additionally, general accessibility to Playwright MCP tools was inconsistent.
 
+<!-- section_id: "677bcf28-0a8f-4b8b-b4cf-57d39d9ec097" -->
 ## Root Cause
 
 As documented in `BROWSER_MCP_SETUP_EXPERIENCE.md` (Lesson 2), MCP servers executed via `npx` run in isolated environments and do not inherit shell environment variables. Specifically, the `PLAYWRIGHT_BROWSERS_PATH` and `HOME` environment variables were not being passed to the MCP server processes, preventing them from locating the installed browsers in `~/.cache/ms-playwright`.
 
+<!-- section_id: "e69bc070-d851-4fe0-b186-ce2ecc3a570b" -->
 ## Solution
 
 The `~/.gemini/mcp.json` configuration file was updated to explicitly include the `PLAYWRIGHT_BROWSERS_PATH` and `HOME` environment variables for both the `playwright` and `browser` MCP servers.
@@ -78,10 +81,12 @@ The `~/.gemini/mcp.json` configuration file was updated to explicitly include th
 2.  Modified the JSON content programmatically to include the `args` and `env` blocks as specified in the `BROWSER_MCP_SETUP_EXPERIENCE.md` document.
 3.  Wrote the updated JSON content back to `~/.gemini/mcp.json`.
 
+<!-- section_id: "5adbd6fc-54e7-4c1d-9f26-d8437b48d40e" -->
 ## Post-Solution Actions
 
 After updating the `mcp.json` file, a **restart of the Cursor IDE is mandatory** for the changes to take effect and for the MCP servers to reload with the new environment variables. Once restarted, browser automation tools are expected to function correctly, with a preference for `mcp_browser_*` tools as they were noted to be more accessible on Linux environments in the related documentation.
 
+<!-- section_id: "631a51e0-eb7b-49be-9048-d377e29769e8" -->
 ## Next Steps
 
 *   Verify MCP tools functionality after Cursor IDE restart.

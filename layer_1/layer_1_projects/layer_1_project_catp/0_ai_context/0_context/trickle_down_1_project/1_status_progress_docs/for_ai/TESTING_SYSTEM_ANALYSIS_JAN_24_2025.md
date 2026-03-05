@@ -8,14 +8,17 @@ resource_name: "TESTING_SYSTEM_ANALYSIS_JAN_24_2025"
 
 ---
 
+<!-- section_id: "6a57cdee-2eb3-4a0f-8451-fd6757a2c77d" -->
 ## 🚨 **CRITICAL PROBLEMS IDENTIFIED**
 
+<!-- section_id: "876a2d32-4e82-449c-8090-10493e438863" -->
 ### 1. **False Positive Test Results**
 - **Claimed**: 99% completion, 61% test pass rate
 - **Reality**: 102 passed, 4 failed, 13 skipped, 55 warnings
 - **Problem**: Tests pass but don't catch real user-facing bugs
 - **Example**: Project ID system was completely broken but tests didn't catch it
 
+<!-- section_id: "1ee381e0-6fb6-4a7a-9380-22ea4c99f3b6" -->
 ### 2. **Poor Test Quality**
 - **55 warnings** including serious issues:
   - Deprecated `datetime.utcnow()` usage (security risk)
@@ -23,6 +26,7 @@ resource_name: "TESTING_SYSTEM_ANALYSIS_JAN_24_2025"
   - Pytest warnings about test function returns
 - **Problem**: Low-quality tests give false confidence
 
+<!-- section_id: "23329b13-23ac-44ae-b666-fa22f7e6f66a" -->
 ### 3. **Inadequate Coverage**
 - **Missing critical user flows**:
   - Project access and navigation
@@ -31,6 +35,7 @@ resource_name: "TESTING_SYSTEM_ANALYSIS_JAN_24_2025"
   - Authentication edge cases
 - **Problem**: Tests don't cover real user scenarios
 
+<!-- section_id: "e08535a1-a5d7-46f8-99d6-1eee64fdb7af" -->
 ### 4. **Misleading Documentation**
 - **Claims vs Reality**:
   - "Production deployed" → Only dev server running
@@ -40,8 +45,10 @@ resource_name: "TESTING_SYSTEM_ANALYSIS_JAN_24_2025"
 
 ---
 
+<!-- section_id: "b988516b-f69f-4302-add0-ba15d87f04d4" -->
 ## 📊 **CURRENT TEST RESULTS ANALYSIS**
 
+<!-- section_id: "8652c01a-919d-4a6e-9ac1-b592e37d7795" -->
 ### Test Execution Results
 ```
 Total Tests: 119
@@ -51,12 +58,14 @@ Total Tests: 119
 └── Warnings: 55 (46.2%)
 ```
 
+<!-- section_id: "99b2ed98-729a-45a5-be9d-6e6c1d674728" -->
 ### Failed Tests Analysis
 1. **`test_import_template_restores_phonemes`** - Template import functionality broken
 2. **`test_create_custom_template`** - Template creation API issues
 3. **`test_api_create_word_multi_syllable_persists_structure`** - JSON parsing error
 4. **`test_remove_video_endpoint_clears_video_path`** - HTTP status code mismatch
 
+<!-- section_id: "59717a00-41fa-4736-947b-aabb1d9f59fa" -->
 ### Warning Analysis
 - **46.2% of tests have warnings** - This is unacceptable
 - **Deprecated datetime usage** - Security and compatibility risk
@@ -65,8 +74,10 @@ Total Tests: 119
 
 ---
 
+<!-- section_id: "16b50712-70f8-4c43-a162-4178e96dd8dc" -->
 ## 🎯 **ROOT CAUSE ANALYSIS**
 
+<!-- section_id: "4dfa5dfa-abaa-479a-a273-6385f3a94f68" -->
 ### Why Tests Give False Hope
 
 1. **Unit Tests Don't Test Integration**
@@ -91,8 +102,10 @@ Total Tests: 119
 
 ---
 
+<!-- section_id: "9daa13b4-fbc9-4202-a453-065a128b24d1" -->
 ## 🏗️ **COMPREHENSIVE TESTING STRATEGY**
 
+<!-- section_id: "588bca4a-25ea-4786-b4c6-aa88d0900625" -->
 ### 1. **Testing Pyramid Implementation**
 
 ```
@@ -105,6 +118,7 @@ Total Tests: 119
      /--------------\ - Pure functions, utilities, calculations
 ```
 
+<!-- section_id: "7cfeb1d7-e405-4379-afc2-fda7f2c4ee0a" -->
 ### 2. **Test Categories and Responsibilities**
 
 #### **Unit Tests (70% - ~200 tests)**
@@ -152,6 +166,7 @@ Total Tests: 119
 - Validate complete workflows
 - Test on real devices/browsers
 
+<!-- section_id: "bc754422-0e2a-4405-bf29-b93967109676" -->
 ### 3. **Test Quality Standards**
 
 #### **Test Design Principles**
@@ -182,6 +197,7 @@ def test_create_project_with_invalid_data_raises_error():
 def test_create_project_with_duplicate_name_returns_conflict():
 ```
 
+<!-- section_id: "549d6421-809d-4052-b453-761f296e1aa5" -->
 ### 4. **Coverage Requirements**
 
 #### **Code Coverage Targets**
@@ -197,8 +213,10 @@ def test_create_project_with_duplicate_name_returns_conflict():
 
 ---
 
+<!-- section_id: "1f414ca0-45a6-4eb5-b836-2ee5fd397bf7" -->
 ## 🔧 **IMPLEMENTATION PLAN**
 
+<!-- section_id: "811dc2d7-f96f-4831-a11a-eae63f655839" -->
 ### Phase 1: Fix Current Issues (Week 1)
 
 #### **1.1 Fix Test Quality Issues**
@@ -219,6 +237,7 @@ def test_create_project_with_duplicate_name_returns_conflict():
 - [ ] Add tests for template rendering
 - [ ] Add tests for authentication edge cases
 
+<!-- section_id: "4e0a8c07-7f08-4b51-852b-91b8b4ef4d72" -->
 ### Phase 2: Implement Testing Pyramid (Week 2)
 
 #### **2.1 Unit Test Expansion**
@@ -239,6 +258,7 @@ def test_create_project_with_duplicate_name_returns_conflict():
 - [ ] Test error scenarios
 - [ ] Test cross-browser compatibility
 
+<!-- section_id: "0c5d0ed0-1e95-46c3-85bc-7b030f3c9f36" -->
 ### Phase 3: Quality Assurance (Week 3)
 
 #### **3.1 Test Automation**
@@ -255,8 +275,10 @@ def test_create_project_with_duplicate_name_returns_conflict():
 
 ---
 
+<!-- section_id: "c6356b90-fc1a-497a-8868-3527b849e025" -->
 ## 📋 **TESTING GUIDELINES**
 
+<!-- section_id: "d64f1d6d-4bdc-49bf-bb7f-60fac292ad6d" -->
 ### **Test Writing Standards**
 
 #### **1. Test Structure**
@@ -298,6 +320,7 @@ def test_function_with_invalid_input_raises_error():
         function_under_test(invalid_input)
 ```
 
+<!-- section_id: "882ee284-8147-45ea-a357-ea79ef18085e" -->
 ### **Test Execution Standards**
 
 #### **1. Test Categories**
@@ -336,20 +359,24 @@ pytest --cov=src --cov-report=html
 
 ---
 
+<!-- section_id: "a956f555-6665-487e-b1a0-b23f3218c139" -->
 ## 🎯 **SUCCESS METRICS**
 
+<!-- section_id: "f07b304b-ff86-49aa-b3a7-e87c49f01a1f" -->
 ### **Quality Metrics**
 - **Test Pass Rate**: 100% (no failures allowed)
 - **Warning Count**: 0 (zero warnings)
 - **Code Coverage**: 95%+ for unit tests
 - **Test Execution Time**: < 30 seconds total
 
+<!-- section_id: "878cf6f8-857d-4774-94c3-b6773a367bed" -->
 ### **Coverage Metrics**
 - **User Stories**: 100% critical stories tested
 - **API Endpoints**: 100% endpoints tested
 - **Error Scenarios**: 90% error paths tested
 - **Edge Cases**: 80% edge cases tested
 
+<!-- section_id: "39af7c18-cd65-4c30-9f0f-7e2255ac43c7" -->
 ### **Reliability Metrics**
 - **False Positive Rate**: 0% (tests catch real bugs)
 - **False Negative Rate**: 0% (tests don't miss bugs)
@@ -358,20 +385,24 @@ pytest --cov=src --cov-report=html
 
 ---
 
+<!-- section_id: "6a17ca48-f74f-413e-82fa-b5305ac6a6e2" -->
 ## 🚀 **IMMEDIATE NEXT ACTIONS**
 
+<!-- section_id: "e7a79be3-0d47-4a01-a5c2-98052b5573e3" -->
 ### **Priority 1: Fix Critical Issues (Today)**
 1. Fix deprecated datetime usage (security risk)
 2. Fix failed tests (4 failing tests)
 3. Convert return statements to assertions
 4. Add tests for project ID system
 
+<!-- section_id: "57e9ee8b-cd37-4a36-9099-5fd7d1922428" -->
 ### **Priority 2: Implement Quality Standards (This Week)**
 1. Create test writing guidelines
 2. Implement proper test structure
 3. Add comprehensive test coverage
 4. Fix all warnings
 
+<!-- section_id: "02c26355-154e-492b-b8fe-406a1edec097" -->
 ### **Priority 3: Expand Test Coverage (Next Week)**
 1. Add 100+ unit tests
 2. Add 30+ integration tests

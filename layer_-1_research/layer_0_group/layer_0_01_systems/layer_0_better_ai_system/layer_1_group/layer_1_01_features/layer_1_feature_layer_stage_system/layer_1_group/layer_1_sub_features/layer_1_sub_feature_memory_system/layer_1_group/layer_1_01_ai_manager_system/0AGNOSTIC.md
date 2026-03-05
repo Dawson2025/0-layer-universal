@@ -6,6 +6,7 @@ resource_name: "0AGNOSTIC"
 ---
 # memory_system — AI Manager System
 
+<!-- section_id: "e70667ca-f5d8-43b3-871f-946d65b356aa" -->
 ## Identity
 
 entity_id: "bcb2f751-046d-44ea-8c0f-3cf48541c739"

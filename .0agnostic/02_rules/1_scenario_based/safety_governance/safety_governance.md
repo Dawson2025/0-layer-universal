@@ -12,10 +12,12 @@ resource_name: "safety_governance"
 
 ---
 
+<!-- section_id: "6d6e3359-bc25-4893-bb21-96004005c758" -->
 ## Purpose
 
 This document defines security boundaries, permission models, and governance policies for the AI Manager Hierarchy System. It extends existing universal rules with hierarchy-specific guardrails and approval workflows.
 
+<!-- section_id: "b5118bba-a982-482d-90ef-c8dfbd67dda4" -->
 ## Normative Specification
 
 This document is a **derived implementation guide** from the canonical specification:
@@ -25,6 +27,7 @@ This document is a **derived implementation guide** from the canonical specifica
 
 ---
 
+<!-- section_id: "6087db31-7efc-4251-9a1c-0b2cc741abfb" -->
 ## Core Safety Principles
 
 1. **Least Privilege**: Agents operate with minimum permissions needed for their layer
@@ -35,8 +38,10 @@ This document is a **derived implementation guide** from the canonical specifica
 
 ---
 
+<!-- section_id: "920453e8-464e-415c-b5d0-7ea1bc657383" -->
 ## Permission Levels by Layer
 
+<!-- section_id: "a80a2e4b-9143-428c-ac15-a6f6a83868d0" -->
 ### Layer 0 (Universal) - System Manager
 
 **Permission Level**: 4 (System Manager)
@@ -62,6 +67,7 @@ This document is a **derived implementation guide** from the canonical specifica
 - Bypass approval gates
 - Access credentials/secrets
 
+<!-- section_id: "323eb20a-e8c9-4578-9d48-23267f5c52ee" -->
 ### Layer 1 (Project) - Project Manager
 
 **Permission Level**: 3 (Project Manager)
@@ -87,6 +93,7 @@ This document is a **derived implementation guide** from the canonical specifica
 - Modify Layer 0 universal rules
 - Bypass safety checks
 
+<!-- section_id: "c9c6fc41-87bf-4b1d-9798-d77084a0b48d" -->
 ### Layer 2 (Features) - Standard Agent
 
 **Permission Level**: 2 (Standard Agent)
@@ -110,6 +117,7 @@ This document is a **derived implementation guide** from the canonical specifica
 - Access network without approval
 - Modify files outside feature scope
 
+<!-- section_id: "a952e212-fcec-4f2e-9a94-f96899ac30ab" -->
 ### Layer 3 (Components) - Sandboxed Write
 
 **Permission Level**: 1 (Sandboxed Write)
@@ -136,6 +144,7 @@ This document is a **derived implementation guide** from the canonical specifica
 - Modify configuration files
 - Git push operations (delegates to L2/L1)
 
+<!-- section_id: "03933fa3-a050-4469-a44e-7894a72ccc06" -->
 ### Layer 4+ (Sub-components) - Sandboxed Write
 
 **Permission Level**: 1 (Sandboxed Write)
@@ -155,8 +164,10 @@ This document is a **derived implementation guide** from the canonical specifica
 
 ---
 
+<!-- section_id: "ed58222d-c174-4513-9d34-e33991ab1d81" -->
 ## Security Boundaries
 
+<!-- section_id: "f0335e7c-bea1-439a-825e-64ce080c84d2" -->
 ### Filesystem Isolation
 
 **Workspace Boundary**:
@@ -200,6 +211,7 @@ Layer 3:
     - Any files outside component directories
 ```
 
+<!-- section_id: "666a2dee-ed36-4de9-bce1-f0e12846ee4d" -->
 ### Command Execution Sandboxing
 
 **Safe Commands by Permission Level**:
@@ -252,6 +264,7 @@ prohibited:
   - dd if=* of=/dev/sd*
 ```
 
+<!-- section_id: "8011f2c5-5bb7-4b75-85b9-77cb0458721f" -->
 ### Network Access Control
 
 **Whitelist by Layer**:
@@ -283,8 +296,10 @@ blacklist:
 
 ---
 
+<!-- section_id: "5e17bc13-7926-42b6-9656-51f271f1b09c" -->
 ## Human-in-the-Loop Approval Gates
 
+<!-- section_id: "1756ca5b-e38a-4b74-bb8c-3d6895ee25a9" -->
 ### Actions Requiring Approval
 
 **Critical Operations**:
@@ -313,6 +328,7 @@ require_approval_if:
     condition: amount > 100.00
 ```
 
+<!-- section_id: "f877ce54-67f7-4294-a792-59d5ee805121" -->
 ### Approval Workflow
 
 ```mermaid
@@ -353,8 +369,10 @@ graph TD
 
 ---
 
+<!-- section_id: "5b774274-4116-45bb-9a10-3a925c62fa1a" -->
 ## Budget Governance
 
+<!-- section_id: "a7abdd7d-f19a-4ea7-b8c5-e2f634c1a62b" -->
 ### Budget Limits
 
 **Daily Limits**:
@@ -381,6 +399,7 @@ task_limits:
 4. **Refund on failure**: Return reserved budget if task fails
 5. **Approval on exceed**: Require approval to exceed limits
 
+<!-- section_id: "7f5f92ac-b1bd-4ad2-b1c4-af5f1336db86" -->
 ### Budget Tracking
 
 Every task MUST log estimated and actual costs:
@@ -401,6 +420,7 @@ Every task MUST log estimated and actual costs:
 }
 ```
 
+<!-- section_id: "8319a0cf-101e-4f90-81fc-32f7007e0c58" -->
 ### Budget Alerts
 
 **Warning Thresholds**:
@@ -415,8 +435,10 @@ Every task MUST log estimated and actual costs:
 
 ---
 
+<!-- section_id: "775f7f5a-17a7-4b12-919c-9ed1187507bf" -->
 ## Resource Quotas
 
+<!-- section_id: "73a7fad5-8ccc-4860-8c36-2d31d94cc61a" -->
 ### Per-Agent Quotas
 
 ```yaml
@@ -437,6 +459,7 @@ layer_quotas:
     max_task_duration_seconds: 300  # 5 minutes
 ```
 
+<!-- section_id: "3b5e5fc8-ab11-490f-a3b7-6abc0df73585" -->
 ### Quota Enforcement
 
 - **Parallel Tasks**: Block spawning new workers if quota exceeded
@@ -447,8 +470,10 @@ layer_quotas:
 
 ---
 
+<!-- section_id: "8563e882-911a-4607-b736-30a195e82a1f" -->
 ## Integration with Existing Rules
 
+<!-- section_id: "f42b1efb-4a33-4ab1-bb4b-4d25ce938242" -->
 ### Git Commit Rule
 
 **Extension for Hierarchy**:
@@ -471,6 +496,7 @@ Cost: $<cost>
 
 **Reference**: `layer_0/0.02_sub_layers/sub_layer_0_04_universal_rules/trickle_down_0_universal/0_instruction_docs/git_commit_rule.md`
 
+<!-- section_id: "088da36b-d58c-4de9-989a-6fe516cd1e51" -->
 ### Layer Context Header Protocol
 
 **Extension for Governance**:
@@ -494,8 +520,10 @@ permissions:
 
 ---
 
+<!-- section_id: "fc303db8-b5c0-4a6c-8cd2-1cfeb0be933c" -->
 ## Audit and Compliance
 
+<!-- section_id: "8562f3a7-e031-4061-beff-c1dbbd5e627b" -->
 ### Audit Trail Requirements
 
 All actions MUST be logged with:
@@ -517,6 +545,7 @@ All actions MUST be logged with:
   └── L3_components_audit.jsonl
 ```
 
+<!-- section_id: "f5925626-162e-43b8-988c-b82ba7f5a91a" -->
 ### Compliance Standards
 
 **Internal Policies**:
@@ -532,8 +561,10 @@ All actions MUST be logged with:
 
 ---
 
+<!-- section_id: "29219564-b4ff-4360-a492-843adb146c98" -->
 ## Escalation Patterns
 
+<!-- section_id: "62797cef-3760-4441-852f-884854dc1af0" -->
 ### When to Escalate
 
 **Automatic Escalation**:
@@ -551,6 +582,7 @@ L3 Worker (failed) → L2 Manager (retry/replan)
                   → Human (if L0 can't resolve)
 ```
 
+<!-- section_id: "0eb5c419-f462-4ba6-b801-484e1af4518c" -->
 ### Escalation Record
 
 ```json
@@ -573,6 +605,7 @@ L3 Worker (failed) → L2 Manager (retry/replan)
 
 ---
 
+<!-- section_id: "48afb25f-e839-4247-ab0b-8f33be485bd0" -->
 ## Safety Checklist
 
 Before executing any high-risk operation:
@@ -590,8 +623,10 @@ Before executing any high-risk operation:
 
 ---
 
+<!-- section_id: "2642f670-9e1d-4a52-807a-0bb3f3f76701" -->
 ## Emergency Procedures
 
+<!-- section_id: "db0bfee9-9270-4356-aef9-b7a677b490e7" -->
 ### Emergency Stop
 
 **Trigger**: Budget exceeded by >50%, security breach detected, critical system failure
@@ -612,6 +647,7 @@ export EMERGENCY_STOP=true
 # Preserve all logs and state
 ```
 
+<!-- section_id: "d8a2e89f-7879-4d89-a199-4cc86c427a5e" -->
 ### Incident Response
 
 **Severity Levels**:
@@ -628,6 +664,7 @@ export EMERGENCY_STOP=true
 
 ---
 
+<!-- section_id: "ac7c1f24-acc9-4e08-a8c1-bb4ce09a8675" -->
 ## References
 
 - **Normative Spec**: `.../-1_research/.../ideal_ai_manager_hierarchy_system/safety_and_governance.md`

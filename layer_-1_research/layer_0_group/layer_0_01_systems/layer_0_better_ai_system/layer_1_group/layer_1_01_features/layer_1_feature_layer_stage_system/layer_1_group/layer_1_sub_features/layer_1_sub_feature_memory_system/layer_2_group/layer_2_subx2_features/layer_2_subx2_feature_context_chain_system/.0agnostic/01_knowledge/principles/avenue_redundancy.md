@@ -11,12 +11,14 @@ resource_name: "avenue_redundancy"
 
 ---
 
+<!-- section_id: "10d6984b-5342-449d-889c-d2a5d8fa0b36" -->
 ## Statement
 
 **Critical context must be reachable through at least 3 independent avenues. No single point of failure should prevent an agent from accessing essential information.**
 
 ---
 
+<!-- section_id: "99394e30-f515-4854-90e8-d48e2c25bd82" -->
 ## Rationale
 
 AI agents operate in unpredictable conditions:
@@ -29,6 +31,7 @@ Avenue redundancy ensures that even when some delivery mechanisms fail, the agen
 
 ---
 
+<!-- section_id: "34f44358-6781-413e-95ee-8ae995a74621" -->
 ## The 8 Avenues
 
 1. **System Prompt** (CLAUDE.md cascade) — static, automatic
@@ -42,6 +45,7 @@ Avenue redundancy ensures that even when some delivery mechanisms fail, the agen
 
 ---
 
+<!-- section_id: "44f86e83-c977-449a-8a5e-a1534db91407" -->
 ## Minimum Coverage Target
 
 | Context Category | Minimum Avenues | Why |
@@ -54,6 +58,7 @@ Avenue redundancy ensures that even when some delivery mechanisms fail, the agen
 
 ---
 
+<!-- section_id: "2ffaf4c1-fe5e-4eb6-92a7-a04133d9f154" -->
 ## How to Add Redundancy
 
 If a context item has fewer than 3 avenues:
@@ -70,6 +75,7 @@ If a context item has fewer than 3 avenues:
 
 ---
 
+<!-- section_id: "aa018877-321b-41cd-823f-7428d09fc641" -->
 ## Measurement
 
 Avenue coverage is tested by `test_avenue_coverage_functional.sh`:
@@ -81,6 +87,7 @@ Avenue coverage is tested by `test_avenue_coverage_functional.sh`:
 
 ---
 
+<!-- section_id: "76b388e3-77f6-4f70-8c7c-93a1df0bc540" -->
 ## Related Principles
 
 - Chain Continuity — avenue A4 depends on unbroken parent chains

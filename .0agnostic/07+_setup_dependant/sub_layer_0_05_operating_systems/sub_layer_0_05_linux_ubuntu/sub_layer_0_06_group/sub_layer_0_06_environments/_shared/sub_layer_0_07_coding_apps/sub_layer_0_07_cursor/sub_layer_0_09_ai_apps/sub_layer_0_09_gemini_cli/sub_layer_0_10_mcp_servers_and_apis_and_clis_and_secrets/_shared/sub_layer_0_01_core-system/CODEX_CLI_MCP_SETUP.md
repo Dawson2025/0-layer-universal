@@ -5,15 +5,18 @@ resource_name: "CODEX_CLI_MCP_SETUP"
 ---
 # Codex CLI MCP Setup (Universal Pattern)
 
+<!-- section_id: "3dd3533a-cd60-4247-bde5-934ec9582592" -->
 ## Goal
 Use the existing universal MCP management pattern to keep Codex CLI (`~/.codex/config.toml`) in sync with environment-specific server sets (dev/test/prod) while avoiding scattered manual edits.
 
+<!-- section_id: "fe14de32-3678-4411-89af-4d277e970f34" -->
 ## Source of Truth
 - Universal MCP docs: `core-system/MCP_SYSTEM_GUIDE.md`, `MCP_CONFIGURATION_GUIDE.md`
 - Environment definitions: `config/mcp/development.json`, `production.json`, `testing.json` (pattern from MCP guides)
 - Codex CLI config: `~/.codex/config.toml`
 - Reference pattern: Gemini CLI consolidation uses a single settings file (`~/.gemini/settings.json`) with all mcpServers; mirror that by keeping Codex MCP in one canonical `config.toml` (and using generated snippets per env if you switch).
 
+<!-- section_id: "cf8d0e79-7cf2-4bfc-83f0-4ae183fdb674" -->
 ## Recommended Approach
 1) **Define servers per environment** (mirroring the universal pattern):
    - **dev**: chrome-devtools, playwright, browser (optional), web-search, context7, filesystem
@@ -30,6 +33,7 @@ Use the existing universal MCP management pattern to keep Codex CLI (`~/.codex/c
    - Replace `[mcp_servers.*]` entries with the block for your target env
    - Keep API keys out of the file when possible; prefer env vars exported in your shell or an `.env` loaded by your MCP servers
 
+<!-- section_id: "1fd484cd-e40b-4a53-9778-9c620188845a" -->
 ## Example Codex MCP blocks (Dev)
 Add under `~/.codex/config.toml` (replace existing `[mcp_servers.*]`):
 ```toml
@@ -69,6 +73,7 @@ command = "npx"
 args = ["mcp-filesystem-server"]  # swap to your preferred fs server
 ```
 
+<!-- section_id: "a6faf172-bd3e-400c-bc5d-65e4b9ffc4c2" -->
 ## Example Codex MCP blocks (Test)
 ```toml
 [mcp_servers.playwright]
@@ -93,6 +98,7 @@ command = "npx"
 args = ["mcp-filesystem-server"]
 ```
 
+<!-- section_id: "0274bd58-95da-4b00-a3c0-c8781fabebbb" -->
 ## Example Codex MCP blocks (Prod-lite)
 ```toml
 [mcp_servers.web-search]
@@ -108,6 +114,7 @@ command = "npx"
 args = ["mcp-filesystem-server"]
 ```
 
+<!-- section_id: "381eaac5-8c0b-4f22-b3c9-829c9064c67d" -->
 ## Next Steps (automation)
 - Use the generator `automation/scripts/codex_mcp_sync.py`:
   ```bash
@@ -125,12 +132,14 @@ args = ["mcp-filesystem-server"]
   - Rewrites `[mcp_servers.*]` in `~/.codex/config.toml`
 - Optional: add a make target `make codex-mcp ENV=development|testing|production-lite`.
 
+<!-- section_id: "d2869852-42da-4f92-a4c9-6373666d4b3e" -->
 ## Usage Checklist (manual mode)
 1. Choose env: dev | test | prod.
 2. Paste the matching block into `~/.codex/config.toml`, replacing existing `[mcp_servers.*]` tables.
 3. Ensure `PLAYWRIGHT_BROWSERS_PATH` is set; on WSLg also set `DISPLAY`, `WAYLAND_DISPLAY`, and `XDG_RUNTIME_DIR=/mnt/wslg/runtime-dir`.
 4. Restart Codex CLI session.
 
+<!-- section_id: "35006b21-2522-4236-b6c5-7bbb4906e017" -->
 ## Secrets (recommended)
 To keep API keys out of `~/.codex/config.toml`, place them in `~/.codex/mcp.env`:
 ```bash

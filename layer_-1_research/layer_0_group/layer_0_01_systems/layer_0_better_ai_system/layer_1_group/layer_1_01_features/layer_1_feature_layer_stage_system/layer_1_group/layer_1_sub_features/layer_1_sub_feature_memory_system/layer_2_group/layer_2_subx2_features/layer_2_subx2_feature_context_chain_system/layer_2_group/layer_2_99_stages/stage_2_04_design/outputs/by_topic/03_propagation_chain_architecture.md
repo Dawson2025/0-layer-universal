@@ -11,6 +11,7 @@ resource_name: "03_propagation_chain_architecture"
 
 ---
 
+<!-- section_id: "16a45eeb-fc81-4972-a513-adbd39b680ef" -->
 ## Overview
 
 AI context flows through a **propagation chain** — a directed pipeline from canonical source material to the moment an agent acts on it. Every piece of context an agent uses has traversed this chain, whether explicitly or implicitly.
@@ -35,6 +36,7 @@ Layer 4: AGENT ACTION (runtime execution)
 
 ---
 
+<!-- section_id: "9a0d86ef-9f13-41bb-9e13-5834186689a4" -->
 ## Layer 1: Knowledge (Content Source of Truth)
 
 The deepest layer. Content lives in `.0agnostic/` numbered directories:
@@ -60,6 +62,7 @@ The deepest layer. Content lives in `.0agnostic/` numbered directories:
 
 ---
 
+<!-- section_id: "9ec10749-5d65-41c6-8e4f-192fc579bd0d" -->
 ## Layer 2: Agnostic Source (Identity + Skills)
 
 The hub layer. `0AGNOSTIC.md` is the single entry point for any entity:
@@ -102,6 +105,7 @@ The hub layer. `0AGNOSTIC.md` is the single entry point for any entity:
 
 ---
 
+<!-- section_id: "83bcce98-faf4-4125-893e-423683cf464a" -->
 ## Layer 3: Tool-Specific Files (Generated)
 
 Generated files that tool runtimes auto-load:
@@ -142,6 +146,7 @@ The 3-tier merge ensures:
 
 ---
 
+<!-- section_id: "fbf0ed40-3cd3-4595-ab00-ad87494d1c9c" -->
 ## Layer 4: Agent Action (Runtime)
 
 The agent loads context and acts:
@@ -175,6 +180,7 @@ Agent enters entity
 
 ---
 
+<!-- section_id: "c88de305-d63f-472f-a58d-a7024fa177fe" -->
 ## Chain Integrity Rules
 
 1. **Single direction of authority**: Layer 1 → Layer 2 → Layer 3 → Layer 4. Never reverse.
@@ -185,6 +191,7 @@ Agent enters entity
 
 ---
 
+<!-- section_id: "9e913190-764b-4737-abd1-5e9127e748c4" -->
 ## Implementation Status
 
 | Layer | Component | Status |
@@ -203,6 +210,7 @@ Agent enters entity
 
 ---
 
+<!-- section_id: "2c8e6156-be1b-416f-b914-4d4c612b82eb" -->
 ## Related Documents
 
 - **Bottom-up propagation**: `04_context_propagation_funnel.md` (how work products consolidate upward)

@@ -7,6 +7,7 @@ resource_name: "agentic_tts_criticism"
 
 **Date**: 2026-02-23
 
+<!-- section_id: "ca9ef13a-08b7-4293-b8ff-aa41a694af96" -->
 ## What Works Well
 
 - Simple hook architecture — single bash script, no daemon
@@ -15,6 +16,7 @@ resource_name: "agentic_tts_criticism"
 - JSON extraction via jq is clean and reliable
 - Coexists with completion sound hook
 
+<!-- section_id: "30e3979b-545e-4f53-8641-7dc9fa9e25f3" -->
 ## Issues and Gaps
 
 1. **No spoken_summary field**: Claude doesn't emit TTS-optimized text. The hook must guess what's important by truncating to 600 chars. A split-output pattern where Claude provides a `spoken_summary` would be much better.
@@ -29,6 +31,7 @@ resource_name: "agentic_tts_criticism"
 
 6. **No user control**: No way to disable TTS for specific responses without editing settings.json. A `--quiet` flag or environment variable would help.
 
+<!-- section_id: "a08b3adf-5df8-40e3-b7a8-b0ffaa702a6b" -->
 ## Recommendations
 
 - **Priority 1**: Live test and tune truncation length

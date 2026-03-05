@@ -6,6 +6,7 @@ resource_name: "README"
 ---
 # User Stories — Production Version
 
+<!-- section_id: "fa3d6a84-6e5e-43e2-bf7e-55ce4448f2f7" -->
 ## Actors
 
 | Actor | Description |
@@ -13,6 +14,7 @@ resource_name: "README"
 | Agent | AI agent that uses production patterns by default |
 | User | Person who trusts production stability |
 
+<!-- section_id: "64d7d8db-064f-45fc-aff9-c4a56861bb08" -->
 ## Stories
 
 | ID | Story | Actor |

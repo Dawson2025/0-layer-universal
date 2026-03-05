@@ -9,6 +9,7 @@ resource_name: "git_commit_flow"
 
 ---
 
+<!-- section_id: "415a72f7-09a9-4d69-ae68-1654f806c579" -->
 ## Current Flow: Git Commit
 
 ```
@@ -77,6 +78,7 @@ resource_name: "git_commit_flow"
 
 ---
 
+<!-- section_id: "225524eb-62f7-4411-a413-db17377f4a8f" -->
 ## Context Chain for Git Commit
 
 ```
@@ -126,6 +128,7 @@ resource_name: "git_commit_flow"
 
 ---
 
+<!-- section_id: "5bcf608c-dac3-45d9-a09b-b2d09522717a" -->
 ## Key Insight: Git Rules Come from Multiple Sources
 
 ```

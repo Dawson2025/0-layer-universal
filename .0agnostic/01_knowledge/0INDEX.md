@@ -6,10 +6,12 @@ resource_name: "0INDEX"
 ---
 # AI System Knowledge Base
 
+<!-- section_id: "551721d4-7b1e-4873-982a-80a88dba5446" -->
 ## Purpose
 
 This knowledge base documents how the AI system and layer-stage framework works. AI agents should load relevant sections on-demand when they need to understand, create, or maintain system components.
 
+<!-- section_id: "7a76b868-564e-471f-bf13-89cbad007776" -->
 ## Knowledge Areas
 
 | Area | Purpose | When to Load |
@@ -24,29 +26,35 @@ This knowledge base documents how the AI system and layer-stage framework works.
 
 ---
 
+<!-- section_id: "cd8eb3cd-6f3d-48d9-b982-c559fdbc0370" -->
 ## Quick Start for AI Agents
 
+<!-- section_id: "f2a3814e-b27a-4b9d-8a04-7a9e92d1c65f" -->
 ### New to this system?
 1. Read `layer_stage_system/OVERVIEW.md` first
 2. Then `entity_lifecycle/ENTITY_TYPES.md`
 3. Then `context_loading/HOW_CONTEXT_WORKS.md`
 
+<!-- section_id: "9ff45486-bfde-4bdc-8658-63b7153b7759" -->
 ### Need to create something?
 1. Read `entity_lifecycle/INSTANTIATION_GUIDE.md`
 2. Check `naming_conventions/` for correct names
 3. Follow templates in `.0agnostic/templates/`
 
+<!-- section_id: "d0676594-3c5a-4f50-b799-691fa3f16a64" -->
 ### Need to find something?
 1. Read `navigation_patterns/TRAVERSAL_GUIDE.md`
 2. Use 0INDEX.md files at each level
 3. Check triggers in 0AGNOSTIC.md files
 
+<!-- section_id: "aef4192a-532a-4adc-853c-ee058c6ab073" -->
 ### Need to update something?
 1. Read `entity_lifecycle/MAINTENANCE_GUIDE.md`
 2. Follow modification protocols in `sub_layer_0_02_rules/`
 
 ---
 
+<!-- section_id: "f877ef46-51a5-4d02-963d-49f02f5c459b" -->
 ## Knowledge Map
 
 ```

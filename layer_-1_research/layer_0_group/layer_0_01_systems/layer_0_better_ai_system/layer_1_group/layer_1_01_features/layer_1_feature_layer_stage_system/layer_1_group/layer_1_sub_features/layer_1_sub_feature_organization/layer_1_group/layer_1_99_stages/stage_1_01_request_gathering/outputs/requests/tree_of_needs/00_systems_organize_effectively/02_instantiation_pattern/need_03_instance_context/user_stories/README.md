@@ -6,6 +6,7 @@ resource_name: "README"
 ---
 # User Stories — Instance Context
 
+<!-- section_id: "905a623d-c079-4c62-b6c1-5345743427f8" -->
 ## Actors
 
 | Actor | Description |
@@ -13,6 +14,7 @@ resource_name: "README"
 | AI Agent | Uses instance context to personalize responses |
 | Student | Benefits from personalized AI interactions |
 
+<!-- section_id: "f348ea23-c83f-4e49-b9cd-5984b9fb4d4c" -->
 ## Stories
 
 | ID | Story | Actor |

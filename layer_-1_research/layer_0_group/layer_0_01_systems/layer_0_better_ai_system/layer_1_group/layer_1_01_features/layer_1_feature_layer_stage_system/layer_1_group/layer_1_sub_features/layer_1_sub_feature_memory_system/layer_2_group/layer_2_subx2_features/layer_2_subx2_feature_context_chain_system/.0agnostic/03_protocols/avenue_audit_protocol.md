@@ -9,6 +9,7 @@ resource_name: "avenue_audit_protocol"
 
 ---
 
+<!-- section_id: "ab40d684-3fcc-475c-9aa9-8405fb7348ff" -->
 ## When to Use
 
 - After creating a new entity
@@ -16,8 +17,10 @@ resource_name: "avenue_audit_protocol"
 - When avenue coverage seems incomplete
 - Periodic health check on established entities
 
+<!-- section_id: "35acd29b-cf0b-4c0b-9d00-e57b7cc04249" -->
 ## Steps
 
+<!-- section_id: "b69444fd-ebb5-4c29-87f6-5fede45a7855" -->
 ### Step 1: Check Avenue 1 — System Prompt (CLAUDE.md)
 
 ```bash
@@ -26,6 +29,7 @@ test -f CLAUDE.md && grep -q "## Identity" CLAUDE.md && echo "A1: PASS" || echo 
 
 Verify it was generated (has auto-generated footer), not hand-edited.
 
+<!-- section_id: "680ef3e2-494d-47fd-b559-bdef148a2de2" -->
 ### Step 2: Check Avenue 2 — Path Rules
 
 ```bash
@@ -33,6 +37,7 @@ count=$(find .claude/rules/ -name "*.md" -not -name ".gitkeep" | wc -l)
 [ "$count" -gt 0 ] && echo "A2: PASS ($count rules)" || echo "A2: SCAFFOLDED"
 ```
 
+<!-- section_id: "0be88b8c-16cc-4014-b815-5639e9b17db1" -->
 ### Step 3: Check Avenue 3 — Skills
 
 ```bash
@@ -41,6 +46,7 @@ count=$(find .0agnostic/skills/ -name "SKILL.md" | wc -l)
 [ "$count" -gt 0 ] && echo "A3: PASS ($count skills)" || echo "A3: SCAFFOLDED"
 ```
 
+<!-- section_id: "0cf393f9-1450-4675-89e3-93b1d5e79e90" -->
 ### Step 4: Check Avenue 4 — Parent References
 
 ```bash
@@ -49,6 +55,7 @@ grep -q "Parent" 0AGNOSTIC.md && echo "A4: PASS" || echo "A4: FAIL"
 
 Then validate the parent path resolves (see Chain Validation Protocol).
 
+<!-- section_id: "932dad04-c261-40de-afb7-d6e885c435eb" -->
 ### Step 5: Check Avenue 5 — JSON-LD Agent Definitions
 
 ```bash
@@ -60,6 +67,7 @@ else
 fi
 ```
 
+<!-- section_id: "ac3656f0-f766-4b75-8913-ccea6627bdfb" -->
 ### Step 6: Check Avenue 6 — Integration Summaries
 
 ```bash
@@ -67,6 +75,7 @@ integ=$(find . -maxdepth 1 -name "*.integration.md" | head -1)
 [ -n "$integ" ] && [ "$(wc -l < "$integ")" -gt 5 ] && echo "A6: PASS" || echo "A6: SCAFFOLDED"
 ```
 
+<!-- section_id: "c0c87b33-d7ab-418a-b4e6-9e51da4e6014" -->
 ### Step 7: Check Avenue 7 — Episodic Memory
 
 ```bash
@@ -74,6 +83,7 @@ sessions=$(find .0agnostic/episodic_memory/sessions/ -name "*.md" -not -name ".g
 [ "$sessions" -gt 0 ] && echo "A7: PASS ($sessions sessions)" || echo "A7: SCAFFOLDED (expected for new entities)"
 ```
 
+<!-- section_id: "7e485447-fe12-4c8a-b459-d02708261c2a" -->
 ### Step 8: Check Avenue 8 — Agnostic System
 
 ```bash
@@ -82,6 +92,7 @@ knowledge=$(find .0agnostic/knowledge/ -name "*.md" -not -name ".gitkeep" | wc -
 [ "$rules" -gt 0 ] && [ "$knowledge" -gt 0 ] && echo "A8: PASS ($rules rules, $knowledge knowledge)" || echo "A8: SCAFFOLDED"
 ```
 
+<!-- section_id: "ad2de3fa-8836-459e-be62-ad67583e9814" -->
 ### Step 9: Report Summary
 
 ```
@@ -99,6 +110,7 @@ A8 Agnostic System:   PASS (7 rules, 9 knowledge)
 Result: 7/8 PASS, 1 SCAFFOLDED, 0 FAIL
 ```
 
+<!-- section_id: "36b1a621-f276-4467-ae00-18331851fe0d" -->
 ## Success Criteria
 
 - 6+ avenues PASS for an established entity

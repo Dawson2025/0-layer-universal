@@ -5,8 +5,10 @@ resource_name: "CHANGELOG"
 ---
 # Changelog
 
+<!-- section_id: "ef30462a-4778-4e7c-b1d3-974f5fea8c56" -->
 ## [1.0.0] - 2026-02-18
 
+<!-- section_id: "d89b4115-1adc-415d-b615-192eac1a0b33" -->
 ### Added
 - Root need: `00_context_survives_boundaries`
 - Branch `01_knowledge_organization` with 3 needs: three_tier_architecture, knowledge_graph, reference_format
@@ -17,6 +19,7 @@ resource_name: "CHANGELOG"
 - All needs have `requirements.md` and `user_stories.md`
 - All branches have `README.md` with core question, child needs table, key insight
 
+<!-- section_id: "2287e292-dcb2-4a62-965d-00020423c273" -->
 ### Source
 - Derived from memory system research (files 00-20 in `memory_system/stage_1_02_research/outputs/by_topic/`)
 - Key inputs: file 19 (prototype specification), file 20 (three-tier knowledge architecture)

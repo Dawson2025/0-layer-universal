@@ -13,6 +13,7 @@ resource_name: "US-01_developer_checks_freshness"
 **I want** to run a staleness check and see which knowledge files need updating,
 **So that** I don't send the AI into a session with outdated knowledge that leads to wrong decisions.
 
+<!-- section_id: "f54b8506-2d7e-4f3b-acbc-b730c97fd802" -->
 ### What Happens
 
 1. User runs the staleness check command before starting a work session
@@ -20,6 +21,7 @@ resource_name: "US-01_developer_checks_freshness"
 3. Script produces a report listing stale files, their sources, and the time delta
 4. User updates the stale knowledge files (or flags them) before starting the AI session
 
+<!-- section_id: "dcf111c1-ac48-418e-a059-3ee364c65a2f" -->
 ### Acceptance Criteria
 
 - Command produces a report listing stale files with time deltas

@@ -8,10 +8,12 @@ resource_name: "stage_boundary_rule"
 **Type**: Static (always applies)
 **Inherits from**: `.0agnostic/02_rules/static/STAGE_BOUNDARY_RULE.md`
 
+<!-- section_id: "cbcc21f0-7679-44b0-ba7a-6fe5affb5591" -->
 ## Rule
 
 Stage agents MUST NOT perform work that belongs to another stage. When work falls outside scope, the agent stops, documents the out-of-scope work in its stage report, and hands off to the correct stage.
 
+<!-- section_id: "6b68138c-3354-418c-b90f-89f49aa35d81" -->
 ## Common Boundary Violations
 
 | If in... | Do NOT... | Instead... |
@@ -22,6 +24,7 @@ Stage agents MUST NOT perform work that belongs to another stage. When work fall
 | 06 (development) | Redesign architecture | Flag the design issue, hand off to 04 |
 | 07 (testing) | Fix bugs | Document failures, hand off to 09 |
 
+<!-- section_id: "f2abd84f-1cae-43ef-b0a6-c940096e81f8" -->
 ## Escalation
 
 When a stage agent encounters work outside its scope:

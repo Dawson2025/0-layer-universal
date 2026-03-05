@@ -8,6 +8,7 @@ resource_name: "pointer_file_convention"
 **Scope**: All files within `layer_3_subx3_feature_trigger_pointer_system`
 **Type**: Static (always applies)
 
+<!-- section_id: "0dd5f144-79d7-425a-93be-4bcf01d838b5" -->
 ## Rule
 
 When creating or editing pointer files within this entity:
@@ -19,11 +20,13 @@ When creating or editing pointer files within this entity:
 5. **MUST** run `pointer-sync.sh --validate` after creating or editing pointer files
 6. **MUST NOT** duplicate canonical content — pointer files reference, they don't copy
 
+<!-- section_id: "32723588-d22a-4fcf-9e81-a5c3c51072be" -->
 ## Applies To
 
 - Stage output pointer files (stage_3_04, stage_3_06, stage_3_10)
 - Any new pointer files created within this entity's directories
 
+<!-- section_id: "92fdcee2-c38f-40e7-96e9-a0717b3f4274" -->
 ## References
 
 - Root pointer sync rule: `../../../../../../../../../../../../../../.0agnostic/02_rules/static/pointer_sync_rule/pointer_sync_rule.md`

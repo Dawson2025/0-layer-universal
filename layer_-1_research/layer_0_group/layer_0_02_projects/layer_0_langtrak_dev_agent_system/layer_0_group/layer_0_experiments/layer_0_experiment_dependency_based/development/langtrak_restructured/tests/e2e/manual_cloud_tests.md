@@ -13,6 +13,7 @@ This document contains manual tests for cloud features that require browser inte
 
 ---
 
+<!-- section_id: "2ddf17a6-0b80-4a95-a409-95feaad06170" -->
 ## Prerequisites
 - [ ] App is running (`python3 app.py` or production server)
 - [ ] Google account: 2025computer2025@gmail.com
@@ -20,6 +21,7 @@ This document contains manual tests for cloud features that require browser inte
 
 ---
 
+<!-- section_id: "fe9ffb37-a8e1-43ac-85ce-f1d39a532328" -->
 ## Test 1: Google OAuth Sign-In
 
 **Steps:**
@@ -40,6 +42,7 @@ This document contains manual tests for cloud features that require browser inte
 
 ---
 
+<!-- section_id: "782d49fc-2935-48e9-95da-b51682127710" -->
 ## Test 2: Create Cloud Project
 
 **Steps:**
@@ -65,6 +68,7 @@ This document contains manual tests for cloud features that require browser inte
 
 ---
 
+<!-- section_id: "86d92984-f4a7-4e28-83f0-086c211551c0" -->
 ## Test 3: Add Words & Phonemes to Cloud Project
 
 **Steps:**
@@ -99,6 +103,7 @@ This document contains manual tests for cloud features that require browser inte
 
 ---
 
+<!-- section_id: "899b7d6b-a054-40c5-8b70-a89ee3aa019e" -->
 ## Test 4: Upload Video to Cloud Storage
 
 **Steps:**
@@ -127,6 +132,7 @@ This document contains manual tests for cloud features that require browser inte
 
 ---
 
+<!-- section_id: "b2758114-acb2-42c3-9917-48f8b1b737da" -->
 ## Test 5: Create Custom Phoneme Template
 
 **Steps:**
@@ -152,6 +158,7 @@ This document contains manual tests for cloud features that require browser inte
 
 ---
 
+<!-- section_id: "df568559-2ac2-4986-9882-18f981414913" -->
 ## Test 6: Upload Template to Cloud
 
 **Steps:**
@@ -180,6 +187,7 @@ This document contains manual tests for cloud features that require browser inte
 
 ---
 
+<!-- section_id: "1aa831be-5864-451b-a9df-b946383376a8" -->
 ## Test 7: Download & Use Cloud Template
 
 **Steps:**
@@ -202,6 +210,7 @@ This document contains manual tests for cloud features that require browser inte
 
 ---
 
+<!-- section_id: "d95cadf4-7d0a-487a-b2e8-ea64788a0056" -->
 ## Test 8: Local → Cloud Migration
 
 **Steps:**
@@ -232,6 +241,7 @@ This document contains manual tests for cloud features that require browser inte
 
 ---
 
+<!-- section_id: "4a16bb99-4c4a-4c8c-a266-2170a01dc1ef" -->
 ## Test 9: Cloud → Local Fork/Download
 
 **Steps:**
@@ -256,6 +266,7 @@ This document contains manual tests for cloud features that require browser inte
 
 ---
 
+<!-- section_id: "b54c1cc8-e214-400d-a00c-e349858c2547" -->
 ## Test 10: Delete Cloud Resources
 
 **Steps:**
@@ -284,6 +295,7 @@ This document contains manual tests for cloud features that require browser inte
 
 ---
 
+<!-- section_id: "3d8f1c4d-8005-47df-a8a5-9ce38f928d1a" -->
 ## Test 11: View & Verify Phoneme Frequencies in Cloud
 
 **Steps:**
@@ -306,6 +318,7 @@ This document contains manual tests for cloud features that require browser inte
 
 ---
 
+<!-- section_id: "41f65bd5-fa4c-4733-93e4-e9c0ce858b31" -->
 ## Test 12: TTS with Cloud Projects
 
 **Steps:**
@@ -327,6 +340,7 @@ This document contains manual tests for cloud features that require browser inte
 
 ---
 
+<!-- section_id: "a2711813-41d8-4bae-87d7-c1a5980df152" -->
 ## Final Verification: Firebase Data Inspection
 
 **Steps:**
@@ -358,6 +372,7 @@ Videos: _____________
 
 ---
 
+<!-- section_id: "e5f3ea91-cd06-4bc7-ba35-be93d388d727" -->
 ## Summary
 
 | Test | Status | Notes |
@@ -383,6 +398,7 @@ Videos: _____________
 
 ---
 
+<!-- section_id: "0b26d1b1-64d8-433e-9bf8-6ee5f17c8f2c" -->
 ## Cleanup
 
 After completing all tests, clean up test data:

@@ -8,10 +8,12 @@ resource_name: "README"
 
 **Need**: [Handoff Protocols](../README.md)
 
+<!-- section_id: "91d8e58a-9f1e-47b8-9268-a6ac0310e682" -->
 ## Overview
 
 These stories cover how context is preserved across agent transitions -- session-to-session, agent-to-agent, and parent-to-child entity. They validate that stage agents leave sufficient state for the next session to continue without re-discovery, that managers delegate with enough context for the receiving agent, that child entities receive proper handoff from parent entities, and that agents recover gracefully after context compaction.
 
+<!-- section_id: "37f67e60-f025-476b-a334-85d53433d100" -->
 ## Actors
 
 - **User (Developer)**: Human developer (Dawson) who gives instructions to the AI system, reviews outputs, and validates behavior

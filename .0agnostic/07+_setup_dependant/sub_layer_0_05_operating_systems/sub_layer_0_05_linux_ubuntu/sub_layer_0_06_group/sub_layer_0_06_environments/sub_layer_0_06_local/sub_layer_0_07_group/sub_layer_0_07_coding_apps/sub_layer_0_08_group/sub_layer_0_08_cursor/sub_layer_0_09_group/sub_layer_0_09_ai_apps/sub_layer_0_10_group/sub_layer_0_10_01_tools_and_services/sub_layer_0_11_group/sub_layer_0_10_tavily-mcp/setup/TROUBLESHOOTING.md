@@ -9,8 +9,10 @@ This guide covers common issues when using the Tavily MCP server with Claude Cod
 
 ---
 
+<!-- section_id: "79abc39b-2dd7-42bf-b22c-9e1f4a68a52f" -->
 ## API Key Issues
 
+<!-- section_id: "c47527a6-45ba-40b7-9ef2-d84154ed44ed" -->
 ### Problem: "Invalid API Key" or "Unauthorized" Error
 
 **Symptoms:**
@@ -51,6 +53,7 @@ This guide covers common issues when using the Tavily MCP server with Claude Cod
 
 ---
 
+<!-- section_id: "f3026859-ef2b-49c3-a1b6-c41150962da0" -->
 ### Problem: API Key Not Found by MCP Server
 
 **Symptoms:**
@@ -97,8 +100,10 @@ This guide covers common issues when using the Tavily MCP server with Claude Cod
 
 ---
 
+<!-- section_id: "1e062f61-f7c3-4864-8cbf-3071617c8ece" -->
 ## Rate Limiting
 
+<!-- section_id: "4925cd01-4f66-4dd3-b81a-541c8285b89b" -->
 ### Problem: "Rate Limit Exceeded" Error
 
 **Symptoms:**
@@ -129,6 +134,7 @@ This guide covers common issues when using the Tavily MCP server with Claude Cod
 
 ---
 
+<!-- section_id: "1ed39ce2-6e21-4b15-8eee-e01f4a2fa0a6" -->
 ### Problem: Monthly Quota Exhausted
 
 **Symptoms:**
@@ -151,8 +157,10 @@ This guide covers common issues when using the Tavily MCP server with Claude Cod
 
 ---
 
+<!-- section_id: "b50039d7-89b4-4ca6-8cb4-f2190d48169d" -->
 ## Search Result Problems
 
+<!-- section_id: "03c8665a-04f7-41f4-b4e4-321797d23360" -->
 ### Problem: Empty or No Results
 
 **Symptoms:**
@@ -180,6 +188,7 @@ This guide covers common issues when using the Tavily MCP server with Claude Cod
 
 ---
 
+<!-- section_id: "4e806137-69eb-41a6-8b67-0c98eaa5ebc4" -->
 ### Problem: Irrelevant Results
 
 **Symptoms:**
@@ -208,6 +217,7 @@ This guide covers common issues when using the Tavily MCP server with Claude Cod
 
 ---
 
+<!-- section_id: "54769638-c9bc-428a-bd03-b30f5d0b3c44" -->
 ### Problem: Outdated Results
 
 **Symptoms:**
@@ -231,8 +241,10 @@ This guide covers common issues when using the Tavily MCP server with Claude Cod
 
 ---
 
+<!-- section_id: "7455a5dd-deda-4141-9a7e-7499195ff977" -->
 ## Connection Issues
 
+<!-- section_id: "610df168-eb99-4c3e-8903-779ad3aaade4" -->
 ### Problem: Server Fails to Start
 
 **Symptoms:**
@@ -265,6 +277,7 @@ This guide covers common issues when using the Tavily MCP server with Claude Cod
 
 ---
 
+<!-- section_id: "979f72a9-774e-4907-beeb-d48ed87bee66" -->
 ### Problem: Intermittent Failures
 
 **Symptoms:**
@@ -294,8 +307,10 @@ This guide covers common issues when using the Tavily MCP server with Claude Cod
 
 ---
 
+<!-- section_id: "09960b2f-a1ee-4888-a7e6-b73c8734d8ef" -->
 ## MCP Configuration Issues
 
+<!-- section_id: "9a4bea61-3178-4fa0-8fa2-d072c53ba8f5" -->
 ### Problem: Tavily Tool Not Available
 
 **Symptoms:**
@@ -324,6 +339,7 @@ This guide covers common issues when using the Tavily MCP server with Claude Cod
 
 ---
 
+<!-- section_id: "06e76b41-e47a-40b7-a46f-fbcd28bea2c2" -->
 ### Problem: Multiple MCP Server Conflicts
 
 **Symptoms:**
@@ -342,8 +358,10 @@ This guide covers common issues when using the Tavily MCP server with Claude Cod
 
 ---
 
+<!-- section_id: "291ca26f-2f20-4c55-a0db-425c0ac10016" -->
 ## Debugging Commands
 
+<!-- section_id: "f15300a2-3cd1-40eb-b9b2-defd627d01c6" -->
 ### Check Environment
 
 ```bash
@@ -356,6 +374,7 @@ curl -X POST https://api.tavily.com/search \
   -d '{"api_key": "'$TAVILY_API_KEY'", "query": "test"}'
 ```
 
+<!-- section_id: "a758a3f4-2f82-4c23-8b5f-cab2d5d62668" -->
 ### Check MCP Server Logs
 
 ```bash
@@ -363,6 +382,7 @@ curl -X POST https://api.tavily.com/search \
 DEBUG=* npx -y @tavily/mcp
 ```
 
+<!-- section_id: "84be6f53-3bff-4d68-9463-aac2276ed4b7" -->
 ### Verify Package Installation
 
 ```bash
@@ -372,6 +392,7 @@ npm view @tavily/mcp version
 
 ---
 
+<!-- section_id: "e699ed3a-602a-4b65-9f72-58d243e091f2" -->
 ## Getting Help
 
 If issues persist:
@@ -382,6 +403,7 @@ If issues persist:
 
 ---
 
+<!-- section_id: "a09d8895-28bf-4182-8c22-9bb16d2b1b3b" -->
 ## Quick Reference
 
 | Issue | First Thing to Check |

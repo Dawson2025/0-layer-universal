@@ -12,12 +12,14 @@ argument-hint: [--verbose]
 
 Check the current status of the 04_planning stage.
 
+<!-- section_id: "34f9d3d4-cada-487c-92bd-3b40e6bf8601" -->
 ## Steps
 1. Read the stage's outputs/ folder
 2. Check hand_off_documents/ for context
 3. Review any in-progress work
 4. Report status summary
 
+<!-- section_id: "4f1400d3-a590-41be-8340-efb23adcb0d8" -->
 ## Output
 - Current progress
 - Pending items

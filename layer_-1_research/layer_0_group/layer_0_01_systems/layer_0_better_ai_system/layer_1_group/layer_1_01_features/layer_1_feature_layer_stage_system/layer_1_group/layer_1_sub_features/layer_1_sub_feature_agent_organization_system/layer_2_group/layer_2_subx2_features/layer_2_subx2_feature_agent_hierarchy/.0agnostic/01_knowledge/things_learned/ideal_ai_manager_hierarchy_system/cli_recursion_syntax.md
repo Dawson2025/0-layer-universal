@@ -3,6 +3,7 @@ resource_id: "a925638a-d113-415a-94eb-eddfc2985c83"
 resource_type: "knowledge"
 resource_name: "cli_recursion_syntax"
 ---
+<!-- section_id: "9f077586-ef4a-4958-b091-12852a76c5b8" -->
 ## CLI Recursion Syntax and Patterns
 
 This document provides concrete examples of using CLI recursion to create deep agent hierarchies.
@@ -15,6 +16,7 @@ It covers:
 
 ---
 
+<!-- section_id: "beb84526-0178-4b50-b3f1-b6c7f73d3528" -->
 ## 1. Core Concept
 
 **CLI Recursion** allows agents to spawn other agents by invoking CLI commands, creating arbitrary depth hierarchies without framework-specific APIs.
@@ -36,8 +38,10 @@ Each invocation:
 
 ---
 
+<!-- section_id: "e2248660-031d-4a54-aa5b-c86060a8da39" -->
 ## 2. Claude Code Recursion Syntax
 
+<!-- section_id: "1f988e80-53e0-4592-b767-a30091401945" -->
 ### 2.1 Basic Recursive Call
 
 ```bash
@@ -54,6 +58,7 @@ claude-code \
 - `--working-dir`: Sets working directory (loads CLAUDE.md from there)
 - `--allowed "B(cla:*)`: Allows subprocess to call "claude" binary (recursive permission)
 
+<!-- section_id: "b28a092e-0905-4ed0-a4aa-a4c1b9f6c13f" -->
 ### 2.2 Permission Patterns
 
 **Allow Specific Tools:**
@@ -74,6 +79,7 @@ claude-code --allowed "B(*)" process-handoff handoff.json
 claude-code process-handoff handoff.json
 ```
 
+<!-- section_id: "e4408964-95f7-4457-8780-50b39f974673" -->
 ### 2.3 Handoff-Based Recursion
 
 ```bash
@@ -122,8 +128,10 @@ echo "All L2 managers completed"
 
 ---
 
+<!-- section_id: "9a852bc4-a1ae-495e-bdbe-6a97d8481950" -->
 ## 3. Multi-Layer Example: Full Hierarchy
 
+<!-- section_id: "3eba0983-917a-4855-9e8f-3bf811ce3157" -->
 ### 3.1 L0 → L1 Delegation
 
 ```python
@@ -174,6 +182,7 @@ for project_name, project_task in projects.items():
     spawn_l1_project_manager(project_name, project_task)
 ```
 
+<!-- section_id: "72695533-de15-4076-95f2-15da6b45be19" -->
 ### 3.2 L1 → L2 Delegation
 
 ```python
@@ -228,6 +237,7 @@ with ProcessPoolExecutor() as executor:
     results = [f.result() for f in futures]
 ```
 
+<!-- section_id: "3a628f54-4f2d-46da-8152-b10e364e31ec" -->
 ### 3.3 L2 → L3 Delegation (Workers)
 
 ```python
@@ -294,8 +304,10 @@ with ThreadPoolExecutor(max_workers=10) as executor:
 
 ---
 
+<!-- section_id: "f9dd2cf8-114a-4425-94f5-294960365169" -->
 ## 4. Advanced Patterns
 
+<!-- section_id: "0741050e-174d-4815-bbd6-8a753eb42dc7" -->
 ### 4.1 Dynamic Tool Selection
 
 ```python
@@ -343,6 +355,7 @@ def spawn_agent_smart(layer, stage, task, handoff):
     return subprocess.run(cmd, capture_output=True)
 ```
 
+<!-- section_id: "7e4964c8-bb81-47ca-8e50-21078986ce42" -->
 ### 4.2 Retry with Escalation
 
 ```python
@@ -376,6 +389,7 @@ def execute_with_retry_escalation(layer, stage, task, handoff, max_retries=3):
     raise RuntimeError(f"Task failed after {max_retries} attempts")
 ```
 
+<!-- section_id: "37e4fbb4-fc60-41cb-8fbc-47c28b7b45d4" -->
 ### 4.3 Conditional Recursion
 
 ```python
@@ -406,8 +420,10 @@ def spawn_if_needed(layer, stage, task, handoff):
 
 ---
 
+<!-- section_id: "ed6f9f9f-03bf-4813-8c1a-58cb56867c0f" -->
 ## 5. Wrapper Scripts
 
+<!-- section_id: "50e0437c-c83d-4542-b703-cadf915d89f7" -->
 ### 5.1 Generic Launcher
 
 ```bash
@@ -464,6 +480,7 @@ esac
 ./launch_agent.sh 2 implementation handoff.json claude
 ```
 
+<!-- section_id: "a3a19347-3f8d-4222-bb2d-be7522130e0d" -->
 ### 5.2 Parallel Launcher
 
 ```bash
@@ -498,6 +515,7 @@ echo "All agents completed"
 
 ---
 
+<!-- section_id: "5a10d17a-5e45-4e9d-a4c6-30e3eb99c53d" -->
 ## 6. Summary
 
 CLI recursion enables deep hierarchies:

@@ -22,8 +22,10 @@ Multiple Stage Reports
    (Ready for Level 03: Layer → Entity customization)
 ```
 
+<!-- section_id: "925624c8-3c5f-46f5-a168-3f0a76740a76" -->
 ## Subdirectories
 
+<!-- section_id: "9999cf76-090a-4b6b-85f6-eeb8db022b61" -->
 ### `01_stage_reports/`
 **Content**: Collected stage reports from all 11 stages
 - `stage_01_request_gathering/`
@@ -39,6 +41,7 @@ Multiple Stage Reports
 - `0AGNOSTIC.md` — Stage context
 - Links to AI app outputs if generated at stage level
 
+<!-- section_id: "ab4550a0-3ed0-4779-ad61-deeb05ef2705" -->
 ### `02_aggregated_layer_report/`
 **Content**: Synthesized layer-level report
 - `layer_report.md` — Comprehensive synthesis
@@ -54,6 +57,7 @@ Multiple Stage Reports
   - Cross-layer dependencies
   - Feedback loops
 
+<!-- section_id: "8c62c280-e19e-4ce0-b902-ced001393197" -->
 ### `03_0agnostic_system/`
 **Content**: Context system for this layer
 - `0AGNOSTIC.md` — Layer source of truth
@@ -66,6 +70,7 @@ Multiple Stage Reports
   - Layer-level rules
   - Layer-level protocols
 
+<!-- section_id: "eee90320-f803-4a37-a955-d5068c5e430d" -->
 ## Output Files
 
 - `layer_report.md` — Main deliverable
@@ -73,6 +78,7 @@ Multiple Stage Reports
 - `layer_summary.md` — 1-page executive summary
 - `cross_stage_analysis.md` — Patterns and connections
 
+<!-- section_id: "e09bfaef-9856-40ec-a091-d148cda83b3e" -->
 ## Workflow
 
 1. **Collect** — Gather stage_report.md from all 11 stages
@@ -84,24 +90,29 @@ Multiple Stage Reports
 7. **Validate** — Check completeness and coherence
 8. **Output** — Place in `02_aggregated_layer_report/`
 
+<!-- section_id: "e413cf22-86fe-406a-abc5-fd3ba29bbd20" -->
 ## Integration
 
 **Input From**: Level 01 (each stage's `02_output_reports/stage_report.md`)
 **Output To**: Level 03 (layer_reports → entity_reports customization)
 **Cross-ref**: All 11 stages, parent layer (if nested), sibling layers
 
+<!-- section_id: "ce858072-fbc6-4e8a-8b6e-95b749f4893e" -->
 ## Aggregation Rules
 
+<!-- section_id: "eff654dd-9fe4-4fdd-a4be-184248957361" -->
 ### Stage → Layer Synthesis
 - Each stage contributes one `stage_report.md`
 - Layer report must connect all 11 into coherent narrative
 - Show flow: stage_01 → 02 → ... → 11 → outputs
 
+<!-- section_id: "b3a21a35-414a-4761-98c2-77d32f2bdb6a" -->
 ### Information Hierarchy
 - **Stage level**: Detailed work done in this stage
 - **Layer level**: How stages work together
 - **Explicit connections**: What feeds into what
 
+<!-- section_id: "3fe4303a-c35e-4de8-8f0b-e14013b7e027" -->
 ### Cross-Stage Dependencies
 - Sequential: Stage N output feeds into Stage N+1
 - Parallel: Some stages can run simultaneously

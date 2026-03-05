@@ -5,12 +5,15 @@ resource_name: "README.sync-conflict-20260126-035813-IF2WOGZ"
 ---
 # Layer 0 (Universal) AI Manager System
 
+<!-- section_id: "75f01c59-4eaa-4fd4-8ecc-2685e2648c3b" -->
 ## Overview
 
 This directory contains the AI manager system for **Layer 0 - Universal**, the highest level of abstraction in the AI Manager Hierarchy System. Layer 0 defines global rules, constraints, and workflows that apply to all work across all projects, features, and components.
 
+<!-- section_id: "eed715fa-eab7-4075-82fc-6c9e3f08a19b" -->
 ## Manager/Worker Roles at Layer 0
 
+<!-- section_id: "5329b65e-629b-4663-a04e-e02a817a91aa" -->
 ### Manager Responsibilities
 
 The **Layer 0 Manager** is responsible for:
@@ -25,6 +28,7 @@ The **Layer 0 Manager** is responsible for:
 4. **Cross-Project Orchestration**: Coordinates work that spans multiple projects or impacts universal infrastructure
 5. **Aggregation and Reporting**: Collects results from lower layers and synthesizes final outcomes
 
+<!-- section_id: "a7e4e205-988d-4435-8685-ae25a603a1e5" -->
 ### Worker Characteristics
 
 At Layer 0, workers are typically:
@@ -34,6 +38,7 @@ At Layer 0, workers are typically:
 
 Layer 0 workers are less common than Layer 0 managers, as most execution happens at lower layers.
 
+<!-- section_id: "e5a3f67f-2a22-42f2-9715-bb14fb3d1387" -->
 ### Tool Recommendations
 
 Based on the ideal hierarchy system:
@@ -44,8 +49,10 @@ Based on the ideal hierarchy system:
 - **Workers**: **Claude Code** for complex analysis tasks
   - **Codex CLI** for simple universal documentation updates
 
+<!-- section_id: "55bf4a38-1133-496f-9617-50f914ec4853" -->
 ## Handoff Consumption and Production
 
+<!-- section_id: "c1092011-767e-4325-bb8f-a0352a9ee20f" -->
 ### Incoming Handoffs (Upstream)
 
 Layer 0 receives handoffs from:
@@ -59,6 +66,7 @@ Layer 0 receives handoffs from:
 - Converted to structured handoffs during request gathering stage
 - Contain high-level goals without implementation details
 
+<!-- section_id: "f0c4fe3a-47b7-4e8c-becb-d4d61c4679f8" -->
 ### Outgoing Handoffs (Downstream)
 
 Layer 0 produces handoffs for:
@@ -77,6 +85,7 @@ Layer 0 produces handoffs for:
 - **Location**: Each stage's `hand_off_documents/outgoing.json` → next stage's `incoming.json`
 - **Content**: Progressively refined understanding of the work as it moves through the pipeline
 
+<!-- section_id: "99a195a1-3cfa-4133-a792-f8b57b3950e3" -->
 ### Upward Handoffs (From Layer 1)
 
 Layer 0 receives result handoffs from Layer 1:
@@ -87,6 +96,7 @@ Layer 0 receives result handoffs from Layer 1:
   - Discovered issues or improvements to universal rules
   - Recommendations for universal documentation updates
 
+<!-- section_id: "dad2122f-c614-4fed-b191-5988855cb2cb" -->
 ## Stage Pipeline
 
 Layer 0 operates through a chronological pipeline of stages:
@@ -109,8 +119,10 @@ Each stage:
 - Writes results to its `outgoing` handoff
 - May spawn workers for parallel subtasks
 
+<!-- section_id: "7b5f7fda-ca39-4907-856d-1406d8c0f1bb" -->
 ## Handoff Flow Example
 
+<!-- section_id: "b49e0adb-437b-40b5-9924-fd75c974aa34" -->
 ### Scenario: User wants to add a new web application project
 
 1. **Request Stage** receives user input:
@@ -172,6 +184,7 @@ Each stage:
    }
    ```
 
+<!-- section_id: "63939f48-6719-4c7d-8696-e496dcc412dc" -->
 ## Deeper References
 
 For comprehensive understanding of the manager/worker model, handoff protocol, and orchestration patterns, see:
@@ -182,6 +195,7 @@ For comprehensive understanding of the manager/worker model, handoff protocol, a
 - **Supervisor Patterns**: [ideal_ai_manager_hierarchy_system/supervisor_patterns.md](../../layer_-1_research/layer_-1_better_ai_system/layer_0/layer_0_features/layer_0_feature_ai_manager_hierarchy_system/layer_0/layer_0_03_sub_layers/sub_layer_0_02_knowledge_system/things_learned/ideal_ai_manager_hierarchy_system/supervisor_patterns.md)
 - **Handoff Schema**: [../layer_0_02_manager_handoff_documents/layer_0_00_to_universal/handoff_schema.md](../layer_0_02_manager_handoff_documents/layer_0_00_to_universal/handoff_schema.md)
 
+<!-- section_id: "7250ab25-4925-4bde-a8e2-d89cb3b128d3" -->
 ## Directory Structure
 
 ```
@@ -212,6 +226,7 @@ layer_0/
     └── stage_0_11_archives/
 ```
 
+<!-- section_id: "52134357-1cff-49d7-b7e3-40eac36e3928" -->
 ## Best Practices
 
 1. **Keep Universal Rules Minimal**: Only include constraints that truly apply everywhere
@@ -220,6 +235,7 @@ layer_0/
 4. **Aggregate Learnings**: Capture patterns from lower layers that should become universal rules
 5. **Version Universal Standards**: Track changes to universal rules and communicate updates
 
+<!-- section_id: "607c1f4c-922c-4d97-abcb-f9416de17554" -->
 ## Related Documentation
 
 - Layer 0 Context Files: See `CLAUDE.md`, `AGENTS.md`, `GEMINI.md` in this directory and sub-layers

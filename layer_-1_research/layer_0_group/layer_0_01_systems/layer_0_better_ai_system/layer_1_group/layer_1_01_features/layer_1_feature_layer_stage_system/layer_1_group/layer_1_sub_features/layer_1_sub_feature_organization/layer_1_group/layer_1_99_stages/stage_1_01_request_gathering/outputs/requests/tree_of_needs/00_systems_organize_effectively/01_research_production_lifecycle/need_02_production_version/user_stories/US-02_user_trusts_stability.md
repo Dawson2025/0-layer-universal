@@ -9,6 +9,7 @@ resource_name: "US-02_user_trusts_stability"
 **I want** production content to be clearly distinguished from research content and to change only through a controlled promotion process,
 **So that** I can trust that the system's behavior is predictable and that outputs won't suddenly change due to unvalidated experiments.
 
+<!-- section_id: "9279c6b9-7fe3-42c3-8c0e-6cdf6c3eda99" -->
 ## Acceptance Criteria
 
 **Scenario 1: Production and research are visually distinguishable**

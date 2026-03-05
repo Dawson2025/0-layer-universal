@@ -11,6 +11,7 @@ resource_name: "INSTRUCTIONS_LAYER_STAGE_RESTRUCTURE"
 
 ---
 
+<!-- section_id: "57bb98a1-38ec-42f5-8a67-dee985cbcc5e" -->
 ## 1. Objective
 
 Restructure the entire layer-stage system to:
@@ -21,8 +22,10 @@ Restructure the entire layer-stage system to:
 
 ---
 
+<!-- section_id: "2c6bc1c0-2837-4b49-925d-738d53dfd5f9" -->
 ## 2. Requirements
 
+<!-- section_id: "4bb027ac-0d72-43e4-8dce-731d7d4dee83" -->
 ### 2.1 Root Structure Requirements
 
 - **R1**: Rename `0_layer_universal` to `0_layer_universal`
@@ -30,12 +33,14 @@ Restructure the entire layer-stage system to:
 - **R3**: All projects, features, components must be nested under layer 0
 - **R4**: Root must have tool-specific files (CLAUDE.md, .claude/, .cursorrules, etc.)
 
+<!-- section_id: "94fdfd2f-8c3e-4384-9e3f-ebc539296188" -->
 ### 2.2 Layer Grouping Requirements
 
 - **R5**: Each entity must have `layer_N/` for its own internals
 - **R6**: Each entity must have `layer_N+1/` for its children
 - **R7**: Children grouped into `layer_N+1_projects/`, `layer_N+1_features/`, `layer_N+1_components/`
 
+<!-- section_id: "7cf1dadc-bfb4-49c6-a267-f64644ec9f84" -->
 ### 2.3 Naming Convention Requirements
 
 - **R8**: Change from `0.00_name` to `layer_0_00_name` pattern
@@ -43,6 +48,7 @@ Restructure the entire layer-stage system to:
 - **R10**: Change from `stage_0_01_name` to `stage_0_01_name` pattern
 - **R11**: Status files renamed to `status_N.json` where N = layer number
 
+<!-- section_id: "a16a5999-de4c-42e5-9f5a-4097a38ccc67" -->
 ### 2.4 AI Manager System Requirements
 
 - **R12**: Every entity must have `layer_N_00_ai_manager_system/`
@@ -50,6 +56,7 @@ Restructure the entire layer-stage system to:
 - **R14**: AI manager system must have `specific/` folder (tool-specific implementations)
 - **R15**: Specific folder must nest: `os/ → environment/ → coding_app/ → ai_app/`
 
+<!-- section_id: "1adaced9-92f7-4c43-868e-91804beba4ba" -->
 ### 2.5 Tool-Specific Requirements
 
 - **R16**: Every entity must have `CLAUDE.md` at its root
@@ -59,6 +66,7 @@ Restructure the entire layer-stage system to:
 - **R20**: Every entity must have `GEMINI.md` for Gemini CLI
 - **R21**: Tool-specific files are generated from/reference agnostic source
 
+<!-- section_id: "79cf543c-a5b1-4ea1-9043-7d5484f42251" -->
 ### 2.6 Layer-Stage System as Feature Requirements
 
 - **R22**: The layer-stage system must be a feature under `layer_1/layer_1_features/`
@@ -70,16 +78,19 @@ Restructure the entire layer-stage system to:
   - Handoff system
   - AI manager hierarchy
 
+<!-- section_id: "52fb855e-b0dd-4295-baf4-e82597da27a7" -->
 ### 2.7 Sub-Layer Requirements
 
 - **R25**: Sub-layers must follow pattern: 01_prompts, 02_knowledge_system, 03_principles, 04_rules, 05+_setup_dependant
 - **R26**: 05+ indicates expandable sub-layers (05, 06, 07, etc.)
 
+<!-- section_id: "0e610f4f-7332-4a88-a0eb-9de0f676af09" -->
 ### 2.8 Stage Requirements
 
 - **R27**: Each stage must have its own `CLAUDE.md` and `.claude/` folder
 - **R28**: Stages: 00_request_gathering, 01_instructions, 02_planning, 03_design, 04_development, 05_testing, 06_criticism, 07_fixing, 08_current_product, 09_archives
 
+<!-- section_id: "007b4831-e4ca-4b6b-9162-48b33cc6446d" -->
 ### 2.9 Inheritance Requirements
 
 - **R29**: Claude Code must discover and merge CLAUDE.md files from parent to child
@@ -88,6 +99,7 @@ Restructure the entire layer-stage system to:
 
 ---
 
+<!-- section_id: "23c353fc-1901-460a-aa36-4c9b1ea990be" -->
 ## 3. Specific/ Nested Structure
 
 The `specific/` folder uses nested specificity:
@@ -120,6 +132,7 @@ specific/
 
 ---
 
+<!-- section_id: "cdf0e9f2-259c-4b07-84c0-c51a75c45b74" -->
 ## 4. Entity Pattern
 
 Every entity (project, feature, component) follows this pattern:
@@ -159,6 +172,7 @@ layer_N_<type>_<name>/
 
 ---
 
+<!-- section_id: "16bcdf2d-e13e-42e2-a7bf-1302ed564d5d" -->
 ## 5. Target Root Structure
 
 ```
@@ -214,8 +228,10 @@ layer_N_<type>_<name>/
 
 ---
 
+<!-- section_id: "efd2bb56-af82-4473-ad94-a411f25da224" -->
 ## 6. Key Concepts
 
+<!-- section_id: "f995daca-6356-4a7b-b960-175772d6e90b" -->
 ### 6.1 Agnostic vs Specific
 
 | Agnostic | Specific |
@@ -225,6 +241,7 @@ layer_N_<type>_<name>/
 | Universal rules | Tool-specific implementations |
 | Source of truth | Generated from agnostic |
 
+<!-- section_id: "9c8aaa63-9e4a-4c68-bedd-332eaa0ef577" -->
 ### 6.2 Vertical vs Horizontal Context
 
 | Vertical Chain | Horizontal Siblings |
@@ -233,6 +250,7 @@ layer_N_<type>_<name>/
 | Ancestors + descendants | Same-level entities |
 | Inherited automatically | Checked conditionally |
 
+<!-- section_id: "6f747cfb-bd7e-45de-b58b-4d72790d741b" -->
 ### 6.3 Layer-Stage System Features
 
 | Feature | Defines |
@@ -245,6 +263,7 @@ layer_N_<type>_<name>/
 
 ---
 
+<!-- section_id: "74f54ff2-f90f-43e2-a106-0a3293cb286e" -->
 ## 7. Constraints
 
 - **C1**: Must maintain git history where possible
@@ -255,6 +274,7 @@ layer_N_<type>_<name>/
 
 ---
 
+<!-- section_id: "983d51a4-e497-490e-913e-82317a8832bd" -->
 ## 8. Success Criteria
 
 - [ ] All entities follow the entity pattern
@@ -269,6 +289,7 @@ layer_N_<type>_<name>/
 
 ---
 
+<!-- section_id: "62649a15-873d-4d5c-9dd4-58fd9befed8c" -->
 ## 9. Handoff to Planning
 
 This document defines WHAT needs to be done.
@@ -278,17 +299,21 @@ The planning stage (`stage_0_04_planning`) defines HOW to do it.
 
 ---
 
+<!-- section_id: "117a4cee-4a39-4549-8bdb-7969f9fae9e2" -->
 ## 10. References
 
+<!-- section_id: "1eae90e4-4935-4252-a7e4-4b877d816f92" -->
 ### Current Locations (Before Restructure)
 - `0_layer_universal/0_context/layer_1/layer_1_features/layer_1_feature_layer_stage_system/`
 - `0_layer_universal/0_context/layer_1/layer_1_features/layer_1_feature_layer_stage_system/layer_1/layer_1_02_sub_layers/`
 - `0_layer_universal/0_context/layer_0/`
 - `0_layer_universal/0_context/-1_research/`
 
+<!-- section_id: "8d757379-5645-42bf-abaa-4fb9f759ac05" -->
 ### Research Reference
 - `-1_research/-1.01_things_researched/ai_manager_hierarchy_system/`
 
+<!-- section_id: "0631af4d-511b-4525-a351-b59de9d835e1" -->
 ### Claude Code Documentation
 - Skills: `~/.claude/skills/` and `.claude/skills/`
 - Commands: `.claude/commands/`

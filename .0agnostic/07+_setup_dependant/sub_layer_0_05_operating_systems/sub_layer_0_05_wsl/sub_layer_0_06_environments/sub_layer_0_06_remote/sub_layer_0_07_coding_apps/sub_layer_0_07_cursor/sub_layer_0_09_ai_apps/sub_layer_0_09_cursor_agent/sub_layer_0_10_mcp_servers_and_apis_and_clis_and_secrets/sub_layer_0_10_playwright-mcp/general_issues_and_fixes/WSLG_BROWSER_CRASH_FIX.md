@@ -9,6 +9,7 @@ resource_name: "WSLG_BROWSER_CRASH_FIX"
 **Environment**: WSL2 (Ubuntu 24.04) on Windows 11, Cursor IDE  
 **Status**: ✅ Fixed and Verified
 
+<!-- section_id: "b284968a-0eb1-4ab7-b08e-417f9dccc785" -->
 ## Problem
 
 Playwright MCP browser was crashing on WSLg when attempting to:
@@ -22,16 +23,19 @@ Playwright MCP browser was crashing on WSLg when attempting to:
 - Browser would crash when attempting screenshots or certain operations
 - Error messages: "Target crashed" in Playwright operations
 
+<!-- section_id: "b1bda06b-e360-4501-8f4a-3f20f6deb04b" -->
 ## Root Cause
 
 Headed Chromium on WSLg requires specific Wayland/Ozone platform flags to function properly. Without these flags, the browser process crashes due to display system incompatibilities.
 
 **Key Issue**: WSLg uses Wayland for display, and Chromium needs explicit configuration to use the Wayland platform instead of defaulting to X11.
 
+<!-- section_id: "a7a31e43-443e-48f9-8f69-9c81076144cd" -->
 ## Solution
 
 Create a Playwright configuration file with Wayland/Ozone flags and reference it in the MCP server configuration.
 
+<!-- section_id: "e9b1e9dd-0077-41dd-bb3f-49b2d1b75918" -->
 ### Step 1: Create Playwright Config File
 
 Create `~/.config/mcp/configs/playwright.json`:
@@ -63,6 +67,7 @@ Create `~/.config/mcp/configs/playwright.json`:
 ls -la ~/.cache/ms-playwright/chromium-*/chrome-linux64/chrome
 ```
 
+<!-- section_id: "ac81a277-f691-464d-b3ed-6977342b27c3" -->
 ### Step 2: Update MCP Configuration
 
 Update `~/.config/mcp/mcp.json` (or `~/.cursor/mcp.json` which symlinks to it):
@@ -93,6 +98,7 @@ Update `~/.config/mcp/mcp.json` (or `~/.cursor/mcp.json` which symlinks to it):
 - Ensures NVM is loaded via bash wrapper
 - Sets WSLg environment variables
 
+<!-- section_id: "fc1de1ab-87bb-4473-a7aa-f5e4d8a7c6f7" -->
 ### Step 3: Restart Cursor IDE
 
 1. **Completely close Cursor IDE** (ensure all processes are terminated)
@@ -101,6 +107,7 @@ Update `~/.config/mcp/mcp.json` (or `~/.cursor/mcp.json` which symlinks to it):
    - Playwright should show as "connected" (green circle)
    - Should list 22 tools available
 
+<!-- section_id: "f761905d-f93f-42c1-9702-20eb10fae8b3" -->
 ## Verification
 
 After applying the fix, test the browser:
@@ -123,8 +130,10 @@ After applying the fix, test the browser:
 - ✅ Page interactions work without crashes
 - ✅ Browser remains stable during extended use
 
+<!-- section_id: "8bd8c97e-6459-47f9-8d41-853193d565c0" -->
 ## Configuration Details
 
+<!-- section_id: "f841ed37-33b4-4067-a965-b01be36f5010" -->
 ### Environment Variables
 
 The MCP configuration includes these WSLg-specific environment variables:
@@ -133,6 +142,7 @@ The MCP configuration includes these WSLg-specific environment variables:
 - `WAYLAND_DISPLAY=wayland-0` - Wayland display (WSLg provides this)
 - `XDG_RUNTIME_DIR=/mnt/wslg/runtime-dir` - Runtime directory for Wayland
 
+<!-- section_id: "12a90186-b2bf-4143-9934-e4c57c1fc25f" -->
 ### Why These Flags Work
 
 1. **`--ozone-platform=wayland`**: 
@@ -151,6 +161,7 @@ The MCP configuration includes these WSLg-specific environment variables:
    - Disables Chromium sandbox (helps with WSL permissions)
    - **Security Note**: Only use in trusted environments
 
+<!-- section_id: "1916154a-6fa4-41f1-b6f5-ef415b205a3a" -->
 ## Related Documentation
 
 - **WSL MCP Notes**: `../../README.md` (WSL general documentation)
@@ -158,6 +169,7 @@ The MCP configuration includes these WSLg-specific environment variables:
 - **Browser MCP Routing Table**: `../../../../../../0.01_core-system/BROWSER_MCP_ROUTING_TABLE.md`
 - **MCP Configuration Guide**: `../../../../../../0.01_core-system/MCP_CONFIGURATION_GUIDE.md`
 
+<!-- section_id: "29525100-090b-4483-b320-c04eb9331668" -->
 ## Testing Performed
 
 **Date**: 2025-01-26  
@@ -180,8 +192,10 @@ The MCP configuration includes these WSLg-specific environment variables:
 - ✅ Browser remains stable
 - ✅ Ready for production use
 
+<!-- section_id: "7535afce-f91e-4b64-950a-385e6c1bec47" -->
 ## Troubleshooting
 
+<!-- section_id: "3aefc20f-fc93-4cd5-b70b-b718e6426578" -->
 ### Browser Still Crashes
 
 1. **Verify config file exists**:
@@ -206,6 +220,7 @@ The MCP configuration includes these WSLg-specific environment variables:
    - Verify `--config` flag is in MCP server args
    - Check Cursor Settings → Tools & MCP → Playwright command
 
+<!-- section_id: "f5fb9801-7e17-4c9d-9fb6-50c658127419" -->
 ### Browser Won't Launch
 
 1. **Check Node.js/NVM**:
@@ -222,6 +237,7 @@ The MCP configuration includes these WSLg-specific environment variables:
 
 3. **Check MCP server logs** in Cursor Settings
 
+<!-- section_id: "4b9749c1-3e5d-4982-a0f3-26ee8e8a0779" -->
 ## Alternative Solutions
 
 If Wayland flags don't work:

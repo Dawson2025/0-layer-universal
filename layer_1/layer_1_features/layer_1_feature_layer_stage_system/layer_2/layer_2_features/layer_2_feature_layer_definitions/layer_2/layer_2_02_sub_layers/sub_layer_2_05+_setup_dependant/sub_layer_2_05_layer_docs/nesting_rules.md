@@ -5,11 +5,13 @@ resource_name: "nesting_rules"
 ---
 # Nesting Rules
 
+<!-- section_id: "d790129d-e90f-431f-acf7-d4e893d0179b" -->
 ## Core Principle
 Every entity has two key directories:
 - `layer_N/` - Its own internals (same layer number as entity)
 - `layer_N+1/` - Its children (next layer number)
 
+<!-- section_id: "c51251ff-3c18-4767-bb38-66c24695cf69" -->
 ## Visual Pattern
 ```
 layer_N_entity_name/           # Entity at Layer N
@@ -24,12 +26,14 @@ layer_N_entity_name/           # Entity at Layer N
     └── layer_N+1_components/  # Child components
 ```
 
+<!-- section_id: "48cf8056-cee5-4857-9b4e-a2548ebec470" -->
 ## Rules
 1. Internal directories match entity's layer number
 2. Child directories are exactly N+1
 3. Grouping directories hold same-type entities
 4. CLAUDE.md exists at entity root
 
+<!-- section_id: "42ba4695-42b8-477f-acc3-ec559eafe469" -->
 ## Example Chain
 ```
 0_layer_universal/             # Layer 0
@@ -43,6 +47,7 @@ layer_N_entity_name/           # Entity at Layer N
                             └── layer_3_components/  # Layer 3
 ```
 
+<!-- section_id: "8e58b2ce-4065-4b8f-97d8-b0002c3202cc" -->
 ## Why Nesting Matters
 - Clear ownership hierarchy
 - Predictable navigation

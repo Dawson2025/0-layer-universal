@@ -7,6 +7,7 @@ resource_name: "CLAUDE_AND_CODEX_PERMISSIONS"
 
 This document records the changes made to Codex and Claude CLI configurations, the commands run, verification steps, risks, and recommended next steps.
 
+<!-- section_id: "8f92afc5-4f9a-42ba-a181-febac56a9c2b" -->
 ## Summary of actions performed
 
 1. Codex CLI
@@ -36,6 +37,7 @@ This document records the changes made to Codex and Claude CLI configurations, t
      - For `--help` and `--version`, it forwards directly to the real binary without modifying arguments.
    - Verification: Sourced `~/.bashrc` and tested `claude -p "echo hello"` which returned `hello` without any permission prompt.
 
+<!-- section_id: "3cfa0965-577d-4280-b431-a6df5efeb589" -->
 ## Exact commands run (chronological)
 
 - Inspect Codex config
@@ -60,6 +62,7 @@ This document records the changes made to Codex and Claude CLI configurations, t
   - Confirm wrapper exists: `typeset -f claude`
   - Test non-interactive run: `claude -p "echo hello"`
 
+<!-- section_id: "a7a38ca7-c9df-43ff-8d1b-58436feeb199" -->
 ### Exact wrapper code appended to `~/.bashrc`
 
 ```bash
@@ -89,6 +92,7 @@ fi
 # <<< CLAUDE_WRAPPER_CONDITIONAL_END
 ```
 
+<!-- section_id: "3d9a12fb-30a9-4a7e-a278-809fb26c6769" -->
 ### Verification outputs produced during edits
 
 - `codex --version` -> (example output) `codex-cli 0.47.0`
@@ -99,6 +103,7 @@ fi
   - `claude -p "echo in-project"` (inside project) printed: `in-project` (no prompt)
   - `claude -p "echo outside-project"` (outside project) printed: `outside-project` (wrapper does not bypass unless `CLAUDE_UNSAFE=1` is set)
 
+<!-- section_id: "8844840b-d3ca-4230-8360-4cdb931e3697" -->
 ## Changelog
 
 - 2025-10-17: Created `docs/for_ai/OPERATIONS/CLAUDE_AND_CODEX_PERMISSIONS.md` with initial notes.
@@ -106,6 +111,7 @@ fi
 - 2025-10-17: Confirmed `./.claude/settings.local.json` contains a permissive allow list and empty ask array.
 - 2025-10-17: Added conditional claude wrapper to `~/.bashrc` and documented the wrapper and how to enable it.
 
+<!-- section_id: "5c032734-1515-4185-bb0a-75384f3a3886" -->
 ## Files changed
 
 - `/home/dawson/.codex/config.toml`
@@ -113,17 +119,20 @@ fi
 - `~/.bashrc` (appended)
   - Purpose: make the `claude` shell command include `--dangerously-skip-permissions` by default in interactive shells
 
+<!-- section_id: "e69a054f-45cc-459f-aa00-fdea92d911c0" -->
 ## Validation
 
 - `codex --version` returned a version string after `~/.codex/config.toml` was fixed.
 - `claude -p "echo hello"` returned `hello` after sourcing `~/.bashrc` and verifying the wrapper.
 
+<!-- section_id: "d1a0e8f4-3326-40ab-9863-eada6cda3f9c" -->
 ## Risks and security notes
 
 - `--dangerously-skip-permissions` bypasses the CLI's permission checks and can allow agents to execute any allowed tools, access files, and run commands. Only use in a fully-trusted, offline, or isolated environment.
 - Setting Codex `sandbox_mode = "danger-full-access"` likewise greatly increases risk. Do not use on production systems or where secrets are present.
 - Project-level permission entries in `./.claude/settings.local.json` are safer than a global bypass because they allow fine-grained control.
 
+<!-- section_id: "cbb4c314-f150-4d2a-b417-962f625e1f18" -->
 ## Revert steps
 
 To revert the global bypass:
@@ -142,6 +151,7 @@ To tighten project permissions (recommended):
 - Edit `./.claude/settings.local.json` and adjust the `permissions.allow` array or add deny rules. Restart Claude Code after changes.
 
 
+<!-- section_id: "4fcd1c7b-674c-45b8-99c6-115b4bd1ce43" -->
 ## Recommended next steps (choose one)
 
 - Option A (Safer): Remove the global wrapper and expand `permissions.allow` entries in `./.claude/settings.local.json` only for the specific commands/tools you need. This reduces risk and preserves auditability.
@@ -159,6 +169,7 @@ To tighten project permissions (recommended):
 
 - Option D (Audit & logging): Configure or enable additional logging in `/home/dawson/.claude/debug` or use the `claude` CLI `--debug` flags during sensitive runs for audit records.
 
+<!-- section_id: "95766c8d-923b-4183-af87-7dea483e10db" -->
 ## Questions I still have
 
 - Do you want the global bypass kept permanently, or would you prefer a conditional wrapper (Option B above)?

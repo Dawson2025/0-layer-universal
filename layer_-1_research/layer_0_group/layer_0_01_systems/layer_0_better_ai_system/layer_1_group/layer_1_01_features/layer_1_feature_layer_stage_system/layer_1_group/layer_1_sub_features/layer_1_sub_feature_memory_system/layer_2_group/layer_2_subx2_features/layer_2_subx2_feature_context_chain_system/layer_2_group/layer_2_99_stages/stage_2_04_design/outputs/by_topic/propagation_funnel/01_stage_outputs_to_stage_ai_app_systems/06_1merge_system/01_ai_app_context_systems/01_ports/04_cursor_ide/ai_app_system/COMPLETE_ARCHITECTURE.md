@@ -10,6 +10,7 @@ resource_name: "COMPLETE_ARCHITECTURE"
 
 ---
 
+<!-- section_id: "0950d03b-6b0d-4b3c-af84-aa57c858c852" -->
 ## System Overview
 
 Cursor IDE combines **native mechanisms** (what it provides) with **application-implemented strategy** (what you provide):
@@ -47,8 +48,10 @@ Cursor IDE combines **native mechanisms** (what it provides) with **application-
 
 ---
 
+<!-- section_id: "ce9f70ba-9848-43cf-bca1-75370664409f" -->
 ## Request-Response Flow
 
+<!-- section_id: "4d3c6ae1-7d82-431c-a2f2-16fa8bf5f517" -->
 ### When You Ask Cursor IDE
 
 ```
@@ -88,8 +91,10 @@ Cursor IDE combines **native mechanisms** (what it provides) with **application-
 
 ---
 
+<!-- section_id: "3aaf9104-b517-4565-baeb-36d66dc97944" -->
 ## Context Loading Pipeline
 
+<!-- section_id: "0af9134b-c440-46b5-a57e-73132b52b488" -->
 ### Step 1: File Context
 
 **Cursor Does**:
@@ -102,6 +107,7 @@ Cursor IDE combines **native mechanisms** (what it provides) with **application-
 - Which files are open (visibility)
 - Whether context is used (always on)
 
+<!-- section_id: "cd921142-7ce9-4d9a-af55-2c66f2cff410" -->
 ### Step 2: Load .cursor/rules
 
 **Cursor Does**:
@@ -115,6 +121,7 @@ Cursor IDE combines **native mechanisms** (what it provides) with **application-
 - Rule organization (global vs. project)
 - Rule application mode (Always Apply, Intelligently, etc.)
 
+<!-- section_id: "a68bf6b6-07e7-415b-89d6-2da8607573a5" -->
 ### Step 3: Load Memory Bank
 
 **Cursor Does**:
@@ -127,6 +134,7 @@ Cursor IDE combines **native mechanisms** (what it provides) with **application-
 - When to create/update memories
 - Which memories to reference
 
+<!-- section_id: "6483a10b-d1ad-4c09-9f59-9c68405afe52" -->
 ### Step 4: Prepare MCP Tools
 
 **Cursor Does**:
@@ -140,6 +148,7 @@ Cursor IDE combines **native mechanisms** (what it provides) with **application-
 - Server credentials
 - When to use specific tools
 
+<!-- section_id: "38782d3a-8a25-4728-841e-451989a2dc51" -->
 ### Step 5: Route to AI Model
 
 **Cursor Does**:
@@ -151,6 +160,7 @@ Cursor IDE combines **native mechanisms** (what it provides) with **application-
 - Model selection (via config)
 - Generation parameters (temperature, max_tokens)
 
+<!-- section_id: "7c6cbbeb-9ffd-4e5a-9ddd-73b9d3e5ae6c" -->
 ### Step 6: Execute (Optional)
 
 **If Agent CLI**:
@@ -165,6 +175,7 @@ Cursor IDE combines **native mechanisms** (what it provides) with **application-
 
 ---
 
+<!-- section_id: "7936a619-163b-44bc-b9c8-dc24221165ce" -->
 ## Context Composition
 
 At any point, Cursor IDE includes:
@@ -190,8 +201,10 @@ At any point, Cursor IDE includes:
 
 ---
 
+<!-- section_id: "47267910-cd06-4047-a668-f518fde63181" -->
 ## Rule Application Examples
 
+<!-- section_id: "a3bae4c9-16c0-4ff9-bc83-e728e11fd809" -->
 ### Example 1: Code Style
 
 **Rule File** (`~/.cursor/rules/javascript-style.md`):
@@ -209,6 +222,7 @@ mode: "Always Apply"
 - Cursor suggests code following these patterns
 - Code completion respects these conventions
 
+<!-- section_id: "fc153d9b-4027-4c64-8b48-8e4726dd40cf" -->
 ### Example 2: Project-Specific Rules
 
 **Rule File** (`project/.cursor/rules/project-patterns.md`):
@@ -226,6 +240,7 @@ glob: "src/**/*.tsx"
 - Cursor applies these rules when editing React components
 - Suggests patterns specific to your project
 
+<!-- section_id: "c40117a0-2151-4736-b155-0e6f99412c43" -->
 ### Example 3: Security Rules
 
 **Rule File** (`~/.cursor/rules/security.md`):
@@ -245,8 +260,10 @@ mode: "Always Apply"
 
 ---
 
+<!-- section_id: "bfec3ffb-34c5-44f1-b254-a5bd833ffeb6" -->
 ## Memory Bank Integration
 
+<!-- section_id: "4cbe3939-ef5c-4bf0-8d2e-1cb3c8b97f2f" -->
 ### When Memory Matters
 
 ```
@@ -265,6 +282,7 @@ Later (different session):
 
 ---
 
+<!-- section_id: "356eb557-c7cd-4225-a0d3-e403c1283dc0" -->
 ## Agent CLI Execution Flow
 
 ```
@@ -289,8 +307,10 @@ Output:
 
 ---
 
+<!-- section_id: "28664480-4e94-485c-87df-0fa47322c52c" -->
 ## Hooks Execution
 
+<!-- section_id: "c1639046-702b-46cb-9326-1b2de374b579" -->
 ### File Save Trigger
 
 ```
@@ -310,8 +330,10 @@ Result: Code auto-formatted, user didn't need to run eslint manually
 
 ---
 
+<!-- section_id: "2cbcf37e-2c0e-49c1-a9c2-221ea872bdf4" -->
 ## Semantic Search Example
 
+<!-- section_id: "7d558630-2a77-477d-bb7f-83b0f9817c9f" -->
 ### Query: "How do we handle authentication?"
 
 ```
@@ -329,6 +351,7 @@ Result: Code auto-formatted, user didn't need to run eslint manually
 
 ---
 
+<!-- section_id: "49a85f0b-e183-4bf7-acff-56e252bf6108" -->
 ## The System Works When
 
 ✅ **.cursor/rules are accurate** (reflect your actual conventions)
@@ -344,20 +367,24 @@ The system fails when any of these are missing or outdated.
 
 ---
 
+<!-- section_id: "c63583d1-fd47-4b45-bd07-9716c77701d7" -->
 ## Workflow Patterns
 
+<!-- section_id: "7e3e6545-5567-4907-90d1-b41d2ef440cf" -->
 ### Chat-First Pattern
 - Start with chat sidebar discussion
 - Clarify requirements with AI
 - Get outline before implementation
 - Use inline suggestions for filling details
 
+<!-- section_id: "48798063-4c07-4ab3-9cb0-8e4fe0743fcb" -->
 ### Code-First Pattern
 - Write code normally
 - Use inline suggestions for auto-completion
 - Ask chat for explanations/refactoring
 - Let Agent CLI handle bulk changes
 
+<!-- section_id: "9039c302-804f-4b8e-b3f8-7a7bf461f6e5" -->
 ### Memory-Driven Pattern
 - Create comprehensive project memory
 - Reference memory in chat
@@ -366,14 +393,17 @@ The system fails when any of these are missing or outdated.
 
 ---
 
+<!-- section_id: "8dc6f6cc-057a-49af-8e55-f2f89d50493e" -->
 ## Performance Optimization
 
+<!-- section_id: "20c6f547-8ac9-4dcd-8e39-6c20c3aa7564" -->
 ### Keep IDE Responsive
 - Minimize rule file count (merge related rules)
 - Keep Memory Bank lean (archive old memories)
 - Disable unused MCP servers
 - Test hooks don't create bottlenecks
 
+<!-- section_id: "d5ded2c5-b09e-4354-955b-e3697ed7e47b" -->
 ### Optimize Token Usage
 - Use inline suggestions (cheaper than chat)
 - Keep rules concise (no unnecessary details)

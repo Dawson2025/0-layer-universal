@@ -5,12 +5,14 @@ resource_name: "v7_additional_improvements"
 ---
 # Context Avenue Database Schema — Proposal v7
 
+<!-- section_id: "8decddb9-cec5-496f-8d95-2124eba1f201" -->
 ## Additional Improvements (5 New Tables)
 
 This proposal extends v6 with 5 additional tables that strengthen decision-making without restructuring the existing schema. These can be added incrementally after v6 is implemented.
 
 ---
 
+<!-- section_id: "552b7d1b-14a9-4158-b4d2-c66c78864139" -->
 ## New Table Index
 
 | # | Table | Purpose | Priority |
@@ -23,6 +25,7 @@ This proposal extends v6 with 5 additional tables that strengthen decision-makin
 
 ---
 
+<!-- section_id: "1b0a6f59-40a1-4685-883c-b770cc606d09" -->
 ## 18. CAPABILITY_TRADEOFFS (Capability Dependencies/Conflicts)
 
 Some capabilities have natural tension. Optimizing for one may degrade another.
@@ -74,6 +77,7 @@ ORDER BY ct.strength ASC;
 
 ---
 
+<!-- section_id: "9f23a87a-7fc0-4ef7-a145-4249b5b3d368" -->
 ## 19. AVENUE_MATURITY (Readiness Levels)
 
 Tracks how mature/production-ready each avenue type is, beyond just industry usage frequency.
@@ -113,6 +117,7 @@ emerging → growing → mature → legacy
 
 ---
 
+<!-- section_id: "09ccb87b-906b-47c6-b60b-b88838c0da6e" -->
 ## 20. DATA_TYPE_COMPATIBILITY (Data Type Matrix)
 
 Not all avenues handle all data types equally well.
@@ -157,6 +162,7 @@ ORDER BY dtc.data_type, rank_for_type;
 
 ---
 
+<!-- section_id: "4d410de3-a953-4c3a-8ebc-78c17104647d" -->
 ## 21. MIGRATION_PATHS (Migration Difficulty Between Avenues)
 
 If a project starts with one avenue and needs to migrate to another, how hard is that?
@@ -210,6 +216,7 @@ ORDER BY mp.difficulty_score ASC;
 
 ---
 
+<!-- section_id: "4543951f-83e5-4fc5-a9ea-f819456744ec" -->
 ## 22. IMPLEMENTATION_EXAMPLES (Real-World Tools)
 
 Ground abstract avenue types in concrete implementations.
@@ -249,6 +256,7 @@ CREATE TABLE implementation_examples (
 
 ---
 
+<!-- section_id: "31c46cc0-3bbf-4e0e-bd7d-b968d96614ad" -->
 ## Updated Entity Relationship Diagram (v6 + v7)
 
 ```
@@ -274,6 +282,7 @@ avenue_combinations (1) ──< combination_benchmarks (M) >── capabilities 
 
 ---
 
+<!-- section_id: "7d080521-8068-4ae4-95ac-be994d26a7f4" -->
 ## Updated Implementation Order (v7 additions)
 
 After completing v6 steps 1-12:
@@ -292,6 +301,7 @@ After completing v6 steps 1-12:
 
 ---
 
+<!-- section_id: "3a2bc07f-3b8c-4cc0-a5fe-0734822d245a" -->
 ## Summary
 
 v7 adds **5 new tables** and **3 new views** to the v6 schema:

@@ -24,6 +24,7 @@ This checklist captures the remaining automation bundles that still rely on dire
 | US-066 | `scripts/mcp-journey-branching.mjs` | Advanced branching UX | Projects list → Variant actions via UI cards, no direct API |
 | US-067 | `scripts/mcp-journey-mobile.mjs` | Mobile experience validation | Reuse mobile viewport helpers but navigate through hamburger/menu buttons instead of direct URLs |
 
+<!-- section_id: "4fbe6eec-d267-4842-8bc6-7f638214cc7a" -->
 ## Implementation Notes
 
 - **Shared helpers**: Extend `scripts/lib/navigation-helpers.mjs` as new UI patterns surface (modals, dropdowns, table actions).

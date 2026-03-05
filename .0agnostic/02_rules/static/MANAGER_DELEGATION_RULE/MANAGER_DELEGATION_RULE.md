@@ -8,10 +8,12 @@ resource_name: "MANAGER_DELEGATION_RULE"
 **Type**: Static (always applies)
 **Scope**: All entity managers across all layers
 
+<!-- section_id: "c909f9e3-68f6-4273-b7c7-0b52b22924ea" -->
 ## Rule
 
 Entity managers MUST delegate operational work to stage agents. Managers do NOT carry operational knowledge — each stage agent has its own 0AGNOSTIC.md with the methodology, output format, and success criteria for that stage.
 
+<!-- section_id: "4f77c949-bced-4197-8a73-30c0df073f6b" -->
 ## Manager's Job
 
 1. Read `0INDEX.md` for the rolled-up view of all stages
@@ -20,6 +22,7 @@ Entity managers MUST delegate operational work to stage agents. Managers do NOT 
 4. Delegate to the appropriate stage agent
 5. Maintain the entity-level view of how stages connect
 
+<!-- section_id: "8d704563-639d-4c4c-879d-b3c72883e5a2" -->
 ## Manager Does NOT
 
 - Carry the methodology for request gathering (the stage 01 agent knows that)
@@ -27,6 +30,7 @@ Entity managers MUST delegate operational work to stage agents. Managers do NOT 
 - Carry the design standards (the stage 04 agent knows that)
 - Do stage-level work directly — spawn a stage agent instead
 
+<!-- section_id: "48d42249-b9fa-4e90-b937-5b6b37ac0218" -->
 ## Delegation Pattern
 
 ```
@@ -38,6 +42,7 @@ Task tool:
            {specific task description}"
 ```
 
+<!-- section_id: "befddde4-f376-4c18-80ab-2b99b01e22ef" -->
 ## Three-Tier Knowledge
 
 - **Pointers** (0AGNOSTIC.md) — what this entity IS, where things are
@@ -46,6 +51,7 @@ Task tool:
 
 Managers operate at the pointer tier. Stage agents load the distilled tier on demand. Full tier is consumed within stages.
 
+<!-- section_id: "35af61fc-aa68-4fcb-be10-ea5d0bd265e7" -->
 ## Rationale
 
 Managers that carry operational detail:

@@ -8,10 +8,12 @@ resource_name: "README"
 
 **Need**: [Agent Context Model](../README.md)
 
+<!-- section_id: "465c424f-684c-4995-8ed2-cb22c7f3f18b" -->
 ## Overview
 
 These requirements define what each agent type (manager, stage agent, sub-feature agent) knows at any given time — split into static context (always loaded), dynamic context (loaded on demand), and never-loaded (out of scope). This prevents context window overflow by ensuring agents only carry what they need for their role. Each of the three agent types gets its own context model specification with explicit rules about what goes where.
 
+<!-- section_id: "ef4cca44-6900-4e06-b56a-b059c9e6697a" -->
 ## Key Themes
 
 - **Three-Category Model**: Every agent type must have a documented split of static (always in context), dynamic (loaded when needed), and never-loaded (out of scope) content

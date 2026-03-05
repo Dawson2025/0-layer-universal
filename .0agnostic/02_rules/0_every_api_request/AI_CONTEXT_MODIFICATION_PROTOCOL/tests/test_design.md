@@ -11,8 +11,10 @@ resource_name: "test_design"
 
 ---
 
+<!-- section_id: "ff6af3fb-be30-4001-a23e-49c8b80d8683" -->
 ## Structural Tests
 
+<!-- section_id: "5c5d87c7-7a26-45a6-a748-97a5b60bf83a" -->
 ### TC-ACMP-01: Rule file exists with two-tier structure
 
 **Steps**:
@@ -24,6 +26,7 @@ resource_name: "test_design"
 **Expected**: Rule file has both tiers with complete scope definitions
 **Type**: Structural
 
+<!-- section_id: "d5bcf219-54ea-4757-824f-fe7867cf59c6" -->
 ### TC-ACMP-02: Rule loaded on every API request
 
 **Steps**:
@@ -34,6 +37,7 @@ resource_name: "test_design"
 **Expected**: Rule is discoverable at every level via CLAUDE.md chain
 **Type**: Structural
 
+<!-- section_id: "1c306ab1-f790-42dc-aebe-20932670173a" -->
 ### TC-ACMP-03: Tier 1 scope covers all AI context patterns
 
 **Steps**:
@@ -43,6 +47,7 @@ resource_name: "test_design"
 **Expected**: All AI context file patterns are listed
 **Type**: Structural
 
+<!-- section_id: "b3889ccb-20ee-4fb8-aee3-708b7c4cec8a" -->
 ### TC-ACMP-04: Tier 2 triggers defined
 
 **Steps**:
@@ -53,6 +58,7 @@ resource_name: "test_design"
 **Expected**: Trigger conditions and exemptions are clearly defined
 **Type**: Structural
 
+<!-- section_id: "4a4d51e0-7b81-4340-bbfb-b11b6a6dc39f" -->
 ### TC-ACMP-05: Diagram requirements specified
 
 **Steps**:
@@ -64,26 +70,31 @@ resource_name: "test_design"
 
 ---
 
+<!-- section_id: "64b05441-e24a-414b-99d4-689d2ce87836" -->
 ## Behavioral Tests
 
+<!-- section_id: "33c419de-75fe-4ae1-bdfc-c7ef2aea5a7e" -->
 ### TC-ACMP-06: Agent shows Tier 1 diagram before AI context changes
 
 **Setup**: Ask an agent to modify a .0agnostic/ file
 **Check**: Agent presents a diagram with propagation chain BEFORE making changes
 **Type**: Behavioral
 
+<!-- section_id: "6a723fd8-4bfc-4084-a185-3f3c75745d07" -->
 ### TC-ACMP-07: Agent shows Tier 2 diagram before structural filesystem changes
 
 **Setup**: Ask an agent to create a new directory structure with 3+ files
 **Check**: Agent presents a before/after diagram BEFORE creating directories/files
 **Type**: Behavioral
 
+<!-- section_id: "85be8d06-118b-4bf1-9874-d36834c7a1a4" -->
 ### TC-ACMP-08: Agent does NOT show diagram for single file edits
 
 **Setup**: Ask an agent to edit content within one existing file
 **Check**: Agent proceeds without a diagram (Tier 2 exemption)
 **Type**: Behavioral
 
+<!-- section_id: "12b97a77-3fca-43f7-8299-3b650663d870" -->
 ### TC-ACMP-09: Agent waits for approval before proceeding
 
 **Setup**: Trigger either Tier 1 or Tier 2
@@ -92,6 +103,7 @@ resource_name: "test_design"
 
 ---
 
+<!-- section_id: "825eabc3-4ad7-4fd5-8796-a6c4536b9d38" -->
 ## Test Case Summary
 
 | Category | Count | Type |

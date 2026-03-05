@@ -5,6 +5,7 @@ resource_name: "VERSION"
 ---
 # Tree of Knowledge: Version History
 
+<!-- section_id: "9d0c22f0-0413-4117-86cc-2410ac66fe57" -->
 ## v1.0.0 — 2026-02-19
 
 **Initial creation**
@@ -13,6 +14,7 @@ resource_name: "VERSION"
 - 8 topic files across branches
 - Created from knowledge accumulated across stages 01-06
 
+<!-- section_id: "fea991a0-ae81-4303-8309-329a6f4279af" -->
 ## Structure
 
 ```

@@ -5,12 +5,14 @@ resource_name: "MULTI_AGENT_PATTERNS"
 ---
 # Multi-Agent Coordination Patterns
 
+<!-- section_id: "1e94ffc0-8f90-4410-9167-868aa91de5a1" -->
 ## Overview
 
 This document describes patterns for coordinating multiple AI agents working across layers, stages, and sub-layers. Choose the right pattern based on task structure, dependencies, and efficiency requirements.
 
 ---
 
+<!-- section_id: "1f178e5c-48f2-4253-bd52-6ca8a85196f0" -->
 ## Pattern Selection Guide
 
 ```
@@ -37,6 +39,7 @@ This document describes patterns for coordinating multiple AI agents working acr
 
 ---
 
+<!-- section_id: "f2d335b3-d65a-4b9b-9e82-748b8067e760" -->
 ## Pattern 1: Parallel Workers
 
 **When to use**: Multiple independent tasks that can run simultaneously.
@@ -80,6 +83,7 @@ This document describes patterns for coordinating multiple AI agents working acr
 └─────────────────────────────────────────────────────────────────────────────┘
 ```
 
+<!-- section_id: "f5566e47-81db-4d80-b1ff-39c6b18c3025" -->
 ### Implementation
 
 ```bash
@@ -93,6 +97,7 @@ cd /layer_1/feature_c/ && claude --task "Build feature C" &
 
 ---
 
+<!-- section_id: "f030796e-c3e6-47b4-a66e-d6a423c96c3e" -->
 ## Pattern 2: Pipeline
 
 **When to use**: Sequential tasks where each depends on the previous.
@@ -132,6 +137,7 @@ cd /layer_1/feature_c/ && claude --task "Build feature C" &
 
 ---
 
+<!-- section_id: "c3ba15e8-e257-49e1-8a1f-54aeb8836c47" -->
 ## Pattern 3: Hub and Spoke
 
 **When to use**: Central coordinator needs results from multiple specialized agents.
@@ -187,6 +193,7 @@ cd /layer_1/feature_c/ && claude --task "Build feature C" &
 
 ---
 
+<!-- section_id: "cdac624a-72a5-4651-b3ad-fc81e90c82ab" -->
 ## Pattern 4: Hierarchical
 
 **When to use**: Complex tasks with nested sub-tasks at multiple levels.
@@ -241,6 +248,7 @@ cd /layer_1/feature_c/ && claude --task "Build feature C" &
 
 ---
 
+<!-- section_id: "e6c93d36-bd78-417e-98f4-ac1981a53bbe" -->
 ## Pattern 5: Feedback Loop
 
 **When to use**: Iterative tasks requiring review and revision.
@@ -293,6 +301,7 @@ cd /layer_1/feature_c/ && claude --task "Build feature C" &
 
 ---
 
+<!-- section_id: "fce53c52-591c-49bf-85d9-70f496a889de" -->
 ## Pattern 6: Map-Reduce
 
 **When to use**: Same task on many items, then aggregate results.
@@ -345,6 +354,7 @@ cd /layer_1/feature_c/ && claude --task "Build feature C" &
 
 ---
 
+<!-- section_id: "633bd1c6-10d3-46f5-b60b-81f562d18e33" -->
 ## Choosing the Right Pattern
 
 | Task Characteristics | Recommended Pattern |
@@ -358,6 +368,7 @@ cd /layer_1/feature_c/ && claude --task "Build feature C" &
 
 ---
 
+<!-- section_id: "706f340f-c8ca-478e-bc5e-40f7052329d9" -->
 ## Combining Patterns
 
 Patterns can be combined for complex scenarios:
@@ -397,32 +408,38 @@ Patterns can be combined for complex scenarios:
 
 ---
 
+<!-- section_id: "398cbcab-9788-4162-b2fb-4f8f53f5e4b7" -->
 ## Anti-Patterns to Avoid
 
+<!-- section_id: "02ab9027-d1c7-4dc2-8592-8b2bc86af8f4" -->
 ### 1. Over-Delegation
 ```
 BAD: Delegating tiny tasks that are faster to do yourself
      Context switching overhead > task effort
 ```
 
+<!-- section_id: "4d57571c-f147-4396-851f-4fc813e57175" -->
 ### 2. Under-Delegation
 ```
 BAD: Doing everything yourself until context window explodes
      Should have delegated earlier
 ```
 
+<!-- section_id: "1ba83630-a70c-4242-9b36-19b1508008cc" -->
 ### 3. Circular Delegation
 ```
 BAD: Agent A delegates to B, B delegates to C, C delegates to A
      No one does the actual work
 ```
 
+<!-- section_id: "5a89fca4-762f-4a87-9d4f-10fd4324ffcf" -->
 ### 4. Lost Handoffs
 ```
 BAD: Results go to wrong location, coordinator never receives them
      Always verify handoff paths
 ```
 
+<!-- section_id: "e411c3e1-3f8e-41f8-b70a-46979143a22b" -->
 ### 5. Infinite Feedback
 ```
 BAD: Feedback loop with no clear acceptance criteria

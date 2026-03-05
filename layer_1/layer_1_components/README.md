@@ -8,5 +8,6 @@ resource_name: "README"
 
 This directory contains shared components used across features and projects.
 
+<!-- section_id: "33fbb85a-934d-4afc-90da-8b0096660417" -->
 ## Structure
 Each component follows the entity pattern.

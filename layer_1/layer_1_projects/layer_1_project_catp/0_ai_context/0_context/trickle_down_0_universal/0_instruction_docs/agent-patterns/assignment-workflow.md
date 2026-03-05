@@ -7,6 +7,7 @@ resource_name: "assignment-workflow"
 
 **Pattern**: Separate planning and execution into specialized agents for reliable, automated assignment setup.
 
+<!-- section_id: "7ae65c27-d9f3-4e54-9389-6e7dc6cc7eaa" -->
 ## Overview
 
 This workflow uses **two specialized agents** that work together to set up new unit assignments:
@@ -21,6 +22,7 @@ This separation ensures:
 - ✅ Security boundaries are maintained (Canvas auth)
 - ✅ All 0_context rules are followed
 
+<!-- section_id: "87e3060b-4e43-4b0c-9fb0-d88229d6064c" -->
 ## Architecture
 
 ```
@@ -44,6 +46,7 @@ assignment-executor (Execution Agent)
 Completed Assignment
 ```
 
+<!-- section_id: "8110b1cf-ea92-4179-9960-4053efd1274a" -->
 ## When to Use This Pattern
 
 **Use the assignment workflow when:**
@@ -57,8 +60,10 @@ Completed Assignment
 - Quick questions (use main agent)
 - Debugging issues (use main agent)
 
+<!-- section_id: "6e4d1192-3c62-4a2c-9f0f-91f7823382b1" -->
 ## Workflow Steps
 
+<!-- section_id: "e736a3a1-1fb3-4321-94ae-5d9eb978b90a" -->
 ### Step 1: Invoke Planning Agent
 
 **User action**: Request assignment setup
@@ -85,6 +90,7 @@ Task(
 )
 ```
 
+<!-- section_id: "f92fd3cf-3d80-406e-83fa-aec60e37746b" -->
 ### Step 2: Review Plan
 
 **Planning agent outputs**:
@@ -99,6 +105,7 @@ Task(
 - Checks Canvas assignment details
 - Approves or requests modifications
 
+<!-- section_id: "3674866f-aaf7-4e78-a3c8-635e763691fe" -->
 ### Step 3: Invoke Execution Agent
 
 **User action**: Approve plan and request execution
@@ -127,6 +134,7 @@ Task(
 )
 ```
 
+<!-- section_id: "aaaad541-1e8d-48ad-ba78-2ac0fdc2077f" -->
 ### Step 4: Monitor Execution
 
 **Execution agent**:
@@ -140,6 +148,7 @@ Task(
 - See real-time updates
 - Intervene if needed
 
+<!-- section_id: "9a7b3e5b-9d19-499a-b137-bd0cbbf11351" -->
 ### Step 5: Verification
 
 **Execution agent automatically**:
@@ -150,6 +159,7 @@ Task(
 - Creates archive entry
 - Updates PROJECT_CHANGELOG.md
 
+<!-- section_id: "5a4de1aa-f838-4e2e-ae79-905a97d49195" -->
 ### Step 6: Completion Report
 
 **Execution agent outputs**:
@@ -171,6 +181,7 @@ Task(
 - Changelog: PROJECT_CHANGELOG.md updated
 ```
 
+<!-- section_id: "80c06be8-ccd3-4de7-8c9c-c0d0beb2a362" -->
 ## Benefits
 
 | Traditional Single-Agent | Two-Agent Architecture |
@@ -182,8 +193,10 @@ Task(
 | Manual todo tracking | Automated progress tracking |
 | Inconsistent verification | MCP verification required |
 
+<!-- section_id: "73944427-315e-45c4-bf33-57301488d302" -->
 ## Security Considerations
 
+<!-- section_id: "8cab84dd-e915-4ff5-ac9f-b1b72d6a189f" -->
 ### Canvas Authentication
 
 **Both agents enforce**:
@@ -203,6 +216,7 @@ Task(
 - If needed, uses same authentication pattern
 - Focus is on local file operations
 
+<!-- section_id: "06b124a9-dddb-4cc5-b509-547bab2585cc" -->
 ### Tool Access
 
 **Planning agent** (limited tools):
@@ -218,6 +232,7 @@ Task(
 - MCP browser tools (for verification)
 - TodoWrite for progress tracking
 
+<!-- section_id: "82a016ce-fc9b-4737-9877-5b3478bc4b17" -->
 ## Example: Unit 3 Assignment 1
 
 **User request**:
@@ -248,12 +263,14 @@ Set up Unit 3 Assignment 1 and include both absolute and relative path options f
 
 **Result**: Fully functional Unit 3 Assignment 1 in ~70 minutes, hands-off after approval
 
+<!-- section_id: "48228680-6f9c-4bd0-a662-fe7e77ffe964" -->
 ## Reference Example
 
 See the completed Unit 3 Assignment 1 for a working example:
 - Archive: `0_context/0_context/trickle-down-2-features/templates/unit-3-changes/2025-10-30-143500-unit3-assignment-1-reorganization-and-completion.md`
 - Agents: `.claude/agents/agent-assignment-planner.md` and `.claude/agents/agent-assignment-executor.md`
 
+<!-- section_id: "6ec413d9-fb7d-4c4b-80b3-8019aea176dd" -->
 ## Related Documentation
 
 - **Planning Agent Details**: `agent-patterns/assignment-planner-agent.md`

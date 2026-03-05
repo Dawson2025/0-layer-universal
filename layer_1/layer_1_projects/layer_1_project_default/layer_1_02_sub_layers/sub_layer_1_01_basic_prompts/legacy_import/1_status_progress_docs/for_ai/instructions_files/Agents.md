@@ -7,6 +7,7 @@ resource_name: "Agents"
 
 This file provides configuration guidance for all AI agents working with the Language Tracker project.
 
+<!-- section_id: "415f3994-d071-4ccc-9de6-8919b77ddf64" -->
 ## 🚨 Terminal Execution Protocol
 
 **MANDATORY**: See `0_context/trickle_down_0_universal/0_instruction_docs/MASTER_DOCUMENTATION.md` for complete documentation.
@@ -27,10 +28,12 @@ This file provides configuration guidance for all AI agents working with the Lan
 
 **Note**: Python wrapper solutions are Cursor-specific. Other agents can use their terminal tools directly for Python scripts.
 
+<!-- section_id: "3d765ff5-a71d-4aa3-887f-491d3ae66134" -->
 ## Trickle-Down Documentation System
 
 **MANDATORY:** All AI agents must use the hierarchical trickle-down documentation system.
 
+<!-- section_id: "949ee8e3-dbe4-42c4-b5dc-f095e5207d6f" -->
 ### Context Loading Protocol
 
 **Required Loading Order: TD0 ? TD0.5 ? TD1 ? TD2 ? TD3**
@@ -59,6 +62,7 @@ This file provides configuration guidance for all AI agents working with the Lan
 - Location: /docs/1_trickle_down/trickle-down-3-components/
 - Load: Relevant implementation summaries and feature details
 
+<!-- section_id: "45728af2-b653-446a-b753-8d10d2a62402" -->
 ### AI Agent Specific Instructions
 
 **For Claude Code:**
@@ -77,6 +81,7 @@ This file provides configuration guidance for all AI agents working with the Lan
 - Always start with TD0 ? TD0.5 ? TD1 context loading
 - Reference appropriate TD2/TD3 levels based on task scope
 
+<!-- section_id: "acc9ca16-6a43-4c00-a88d-607b20c71b35" -->
 ### WSL Ubuntu Environment Compliance
 
 **CRITICAL:** All AI agents must comply with TD0.5 environment standards:
@@ -85,6 +90,7 @@ This file provides configuration guidance for all AI agents working with the Lan
 - Use WSL Ubuntu paths exclusively
 - Respect environment tool configurations
 
+<!-- section_id: "e2f7aa82-0eb0-4651-8199-b6ff09448044" -->
 ### Error Prevention
 
 **Common AI Agent Mistakes to Avoid:**

@@ -10,12 +10,14 @@ This folder contains features (Layer 2) within this project.
 
 Each feature follows the standard feature template structure (`2_feature_template`).
 
+<!-- section_id: "fe55c987-f0c3-4ef1-85dd-11c964a4585e" -->
 ## Naming Convention
 
 ```
 layer_2_feature_<name>/
 ```
 
+<!-- section_id: "688e3b3a-09c4-4d8c-9cff-5a87aafeca57" -->
 ## When to Create a Feature
 
 Create a feature when you have:
@@ -23,6 +25,7 @@ Create a feature when you have:
 - Content that benefits from organized study/development stages
 - Topics that need further breakdown into sub-features or components
 
+<!-- section_id: "0a25bb01-3ebf-4b62-8a14-7bce1aa066fd" -->
 ## Note on "Sub" Prefix
 
 The "sub" prefix indicates nesting within the **same type**:

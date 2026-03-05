@@ -6,8 +6,10 @@ resource_name: "README"
 ---
 # tavily-mcp (codex_cli on macos)
 
+<!-- section_id: "41519d60-ab29-46a0-b986-b6aef4603ce0" -->
 ## Canonical docs
 - ../../../../../_shared/0.04_ai_apps/_shared/0.05_mcp_servers/tavily-mcp/
 
+<!-- section_id: "75861bed-ff78-4bac-9d55-634160a420d0" -->
 ## Notes
 Add macos + codex_cli specific setup notes here.

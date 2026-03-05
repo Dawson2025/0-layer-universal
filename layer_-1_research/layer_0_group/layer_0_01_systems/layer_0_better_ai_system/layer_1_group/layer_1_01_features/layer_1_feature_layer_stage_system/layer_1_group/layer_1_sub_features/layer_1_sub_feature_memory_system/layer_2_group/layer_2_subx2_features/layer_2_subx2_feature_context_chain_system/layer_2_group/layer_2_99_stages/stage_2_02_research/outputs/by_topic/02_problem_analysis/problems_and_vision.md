@@ -5,8 +5,10 @@ resource_name: "problems_and_vision"
 ---
 # Problems & Vision — AALang Integration
 
+<!-- section_id: "981c5c84-7984-4619-aa39-dca9dd05b186" -->
 ## The Core Problems
 
+<!-- section_id: "970d1c28-e03f-488e-b336-3d1b8550433f" -->
 ### Problem 1: Instructions Lost Across Sessions
 
 **Symptom**: Instructions to the AI are not clear enough and get lost between chat sessions. Each new session starts without the nuance built up in previous sessions.
@@ -25,6 +27,7 @@ JSON-LD is more precise than markdown for machine consumption because it's struc
 
 ---
 
+<!-- section_id: "698b3265-6d9d-440f-89a3-9ac7afd9067f" -->
 ### Problem 2: Agent Teams — Created Then Destroyed
 
 **Symptom**: Claude Code's Agent Teams feature spawns a team of agents for a task, but when the task completes, the agents are terminated. Their context, learned patterns, and work state are lost. The agents aren't reusable.
@@ -46,6 +49,7 @@ JSON-LD is more precise than markdown for machine consumption because it's struc
 
 ---
 
+<!-- section_id: "24ad770d-85a8-4c78-bc80-12e69b9fc3f9" -->
 ### Problem 3: Skills Not Being Used When They Should Be
 
 **Symptom**: Skills files and folders exist but AI agents don't use them in situations where they should. The agent either doesn't know the skill exists, doesn't recognize when it applies, or doesn't know how to invoke it correctly.
@@ -62,6 +66,7 @@ JSON-LD is more precise than markdown for machine consumption because it's struc
 
 ---
 
+<!-- section_id: "c46c7220-efa0-4300-b172-7f1f2ba47de9" -->
 ### Problem 4: Context Chain Efficiency
 
 **Symptom**: The context chain (CLAUDE.md files from root to working directory) takes up space in the static context. Some of it is essential, some is wasted. There's no efficient way to keep critical instructions in static context while making detailed instructions available on-demand.
@@ -79,6 +84,7 @@ JSON-LD is more precise than markdown for machine consumption because it's struc
 
 ---
 
+<!-- section_id: "c9eceee3-2c02-4511-9b7d-0c6a2404a4e7" -->
 ### Problem 5: Markdown vs JSON-LD for Agent Instructions
 
 **Symptom**: Markdown is the standard format for CLAUDE.md, skills, and other agent configuration files across Claude Code, Codex, Gemini CLI, etc. But markdown is imprecise for machine execution.
@@ -101,10 +107,12 @@ JSON-LD is more precise than markdown for machine consumption because it's struc
 
 ---
 
+<!-- section_id: "182556eb-5337-45db-a8a1-c2d239b3ad67" -->
 ## The Vision (REVISED after verification — 2026-02-07)
 
 > **CORRECTION**: Original vision proposed "markdown as surface, JSON-LD as depth." Research shows JSON-LD is the WORST format for LLM instruction (0.34 accuracy, 3-5x token cost). Vision revised below. See `verification_results.md` for full evidence.
 
+<!-- section_id: "3f047b70-af2e-40aa-ab10-ff0fc8f74fb6" -->
 ### Architecture: Markdown All the Way Down, AALang as Design Vocabulary
 
 ```
@@ -164,6 +172,7 @@ JSON-LD is more precise than markdown for machine consumption because it's struc
 └─────────────────────────────────────────────────────────────┘
 ```
 
+<!-- section_id: "296c407e-e83d-4a95-8560-4ec0ab434ebd" -->
 ### Key Design Principles (Revised — includes three-layer redundancy)
 
 1. **Three-layer redundancy for skill invocation** — no single mechanism is sufficient; use jq-first (primary) + skill descriptions (fallback) + transpiled markdown (second fallback). See `architecture_decision_reference_chain.md`.
@@ -176,6 +185,7 @@ JSON-LD is more precise than markdown for machine consumption because it's struc
 8. **Agent Teams provides interactivity** — live orchestration; spawn prompts inject layer context
 9. **JSON-LD is the single source of truth** — all precision flows from JSON-LD into skills, markdown, and instructions
 
+<!-- section_id: "503d92dd-0c49-446d-8218-3dd52f0a74d9" -->
 ### Skills Integration Approach (Revised — three-layer redundancy)
 
 > **CORRECTION**: Both "skills-first" (Pattern B) and "skills → JSON-LD pipeline" were rejected. Skills-first is circular (if skills don't fire, putting them first doesn't help). JSON-LD is worse for LLM direct comprehension.
@@ -187,6 +197,7 @@ JSON-LD is more precise than markdown for machine consumption because it's struc
 3. **Layer 3 (SECOND FALLBACK): Transpiled `.integration.md`** — Auto-generated markdown from JSON-LD. Agent reads this if jq doesn't run AND skills don't match. Same precision, native format, no tool calls needed.
 4. **Supporting mechanisms** — CLAUDE.md compact mapping table, path-specific rules (`.claude/rules/*.md`), increase skill char budget via `SLASH_COMMAND_TOOL_CHAR_BUDGET`
 
+<!-- section_id: "823b23ec-cd8e-4c8b-b30a-6199405a0f3b" -->
 ### Agent Teams + Layer-Stage Convergence (Revised)
 
 **Confirmed findings**:
@@ -205,8 +216,10 @@ JSON-LD is more precise than markdown for machine consumption because it's struc
 
 ---
 
+<!-- section_id: "112842af-f0b4-46a0-b20d-90aff2f26b67" -->
 ## Next Steps (Revised — 2026-02-07)
 
+<!-- section_id: "df8df672-c8fb-48ba-85c9-19675a37d291" -->
 ### Completed
 1. ~~Research JSON-LD references in CLAUDE.md~~ → **Done. Not supported. Use @import instead.**
 2. ~~Prototype skill router in JSON-LD~~ → **Abandoned. Use markdown skills with better descriptions.**
@@ -214,6 +227,7 @@ JSON-LD is more precise than markdown for machine consumption because it's struc
 4. ~~Test JSON-LD selective navigation~~ → **PROVEN. jq loads 2-5% of file. See `selective_jsonld_navigation.md`.**
 5. ~~Decide reference chain architecture~~ → **DECIDED. Three-layer redundancy. See `architecture_decision_reference_chain.md`.**
 
+<!-- section_id: "c3141da5-9490-447f-94d5-5aaaf5391ba6" -->
 ### Ready to Execute
 6. **Write jq instructions for CLAUDE.md** — draft the 20-25 lines, test in a real session
 7. **Build transpiler v1** (shell script) — generate `.integration.md` from existing JSON-LD
@@ -221,6 +235,7 @@ JSON-LD is more precise than markdown for machine consumption because it's struc
 9. **Slim CLAUDE.md chain** — remove bloat (717 → ~350 lines), add jq instructions
 10. **Create `.claude/rules/`** — path-specific rules for research, school, universal, aalang
 
+<!-- section_id: "67f698c6-f16f-4078-bd9d-d8ab93215f1d" -->
 ### Planned
 11. **Prototype @import-based context loading** — test whether @importing detailed docs improves instruction following
 12. **Prototype team-creation skill** — automate layer-structure → Agent Teams mapping

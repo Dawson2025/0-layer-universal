@@ -36,8 +36,10 @@ Entity Context
     AI Apps Load Context
 ```
 
+<!-- section_id: "734435c4-7a80-4dbd-848f-0bf801b17b0a" -->
 ## Subdirectories
 
+<!-- section_id: "ba9f574d-e327-4f1a-9751-10f43cfbd27b" -->
 ### `01_entity_context/`
 **Content**: Input context from Level 03
 - Entity `0AGNOSTIC.md` — Source of truth
@@ -50,6 +52,7 @@ Entity Context
   - `06_context_avenue_web/`
   - `07+_setup_dependant/`
 
+<!-- section_id: "393ee417-3889-437f-972e-1dcd9be860a9" -->
 ### `02_merge_system/`
 **Content**: .1merge rules for three-tier merge
 - `.1claude_merge/`
@@ -91,6 +94,7 @@ AGENTS_DEST: .claude/AGENTS.md
 MERGE_PRECEDENCE: Tier2 > Tier1 > Tier0
 ```
 
+<!-- section_id: "16cda5ed-31e3-472d-8e1f-cdf0ab2ac3c3" -->
 ### `03_ai_app_ports/`
 **Content**: Processed outputs before final deployment
 - `claude_port/` — Claude Code port (pre-deployment)
@@ -104,6 +108,7 @@ Each port contains:
 - All supporting files (skills, rules, knowledge)
 - Validation report
 
+<!-- section_id: "3932196c-1c3c-4110-bff3-c42e277ef324" -->
 ### AI App Directories (`.claude/`, `.cursor/`, `.codex/`, `.gemini/`, `.github/`)
 **Content**: Final context ready for AI app loading
 
@@ -135,8 +140,10 @@ Each port contains:
 - `instructions/` — Supporting instruction files
 - Settings configuration
 
+<!-- section_id: "48a75d61-7b02-4dc9-ae44-07e1e39c94f5" -->
 ## Three-Tier Merge Process
 
+<!-- section_id: "628e88d6-749e-437b-9a36-3ff148a25d55" -->
 ### Tier 0: Synced Content
 **Source**: Entity `0AGNOSTIC.md` processed by agnostic-sync.sh
 **Creates**:
@@ -151,6 +158,7 @@ Each port contains:
 **Frequency**: Every session if context changes
 **Precedence**: Lowest (can be overridden by Tier 1+2)
 
+<!-- section_id: "c8fe06d7-8690-4620-bc4c-27685b4284b7" -->
 ### Tier 1: App-Specific Boilerplate
 **Source**: `.1merge/[app]/1_overrides/tool_boilerplate.md`
 **Defines**:
@@ -168,6 +176,7 @@ RULES_DEST: .claude/rules/           # Deploy rules directory here
 
 **Precedence**: Medium (can override Tier 0, can be overridden by Tier 2)
 
+<!-- section_id: "2dba60ae-77ed-4215-85df-c43c206c5ccc" -->
 ### Tier 2: Custom Additions
 **Source**: `.1merge/[app]/2_additions/[custom_files].md`
 **Adds**:
@@ -193,6 +202,7 @@ Custom trigger for school assignments:
 
 **Precedence**: Highest (can override Tier 0+1)
 
+<!-- section_id: "4d919a81-6d93-4c5e-be48-16e60e7573de" -->
 ## Merge Execution Workflow
 
 1. **Generate Tier 0**
@@ -239,6 +249,7 @@ Custom trigger for school assignments:
    Confirm knowledge accessible
    ```
 
+<!-- section_id: "c1c0385e-f65f-4455-94f7-714724843e23" -->
 ## Integration with agnostic-sync.sh
 
 The `agnostic-sync.sh` script handles Tier 0 generation:
@@ -260,6 +271,7 @@ Generate .github/copilot-instructions.md (medium: Identity + Triggers + Navigati
 
 After agnostic-sync.sh, apply .1merge tiers for app-specific customization.
 
+<!-- section_id: "9307cce4-64b5-4e07-956f-762816c356e5" -->
 ## Validation Checklist
 
 Before deploying to AI apps:
@@ -277,6 +289,7 @@ Before deploying to AI apps:
 - [ ] Knowledge files are accessible
 - [ ] Rules are enforced
 
+<!-- section_id: "03491a03-9eb5-482f-bcfc-ae1de79175e2" -->
 ## Status
 
 **Tier 0**: ✅ agnostic-sync.sh implemented (generates CLAUDE.md, .cursorrules, etc.)

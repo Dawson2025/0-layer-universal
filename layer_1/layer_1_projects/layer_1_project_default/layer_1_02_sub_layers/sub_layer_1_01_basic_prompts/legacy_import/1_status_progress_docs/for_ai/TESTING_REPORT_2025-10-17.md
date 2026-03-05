@@ -12,10 +12,12 @@ resource_name: "TESTING_REPORT_2025-10-17"
 
 ---
 
+<!-- section_id: "610da378-1036-4ac5-bf07-f4877d73b446" -->
 ## Executive Summary
 
 Tested the Language Tracker application against the comprehensive user stories documented in `USER_STORIES.md`. Successfully validated **Level 0-3 features** (Authentication through Variant Menu) with multiple critical bugs identified and fixed during testing. The application demonstrates strong core functionality with excellent UI/UX, but requires fixes to Flask blueprint endpoint references and missing template files.
 
+<!-- section_id: "6d4a3c36-a66b-4935-a918-4df161f046af" -->
 ### Overall Results
 - ✅ **Passed**: 8 user stories tested successfully
 - ❌ **Failed**: 2 user stories blocked by bugs
@@ -24,8 +26,10 @@ Tested the Language Tracker application against the comprehensive user stories d
 
 ---
 
+<!-- section_id: "0f4e1373-655c-47e7-8e56-191d3a8d6faa" -->
 ## Test Coverage
 
+<!-- section_id: "f5778991-e7f3-4a02-84e0-ba1af6b3c2c8" -->
 ### ✅ Level 0: Authentication & Access (US-001 to US-005)
 
 **Status**: Pre-authenticated session active
@@ -37,6 +41,7 @@ Tested the Language Tracker application against the comprehensive user stories d
 
 ---
 
+<!-- section_id: "e54ce244-07e7-4b52-b1f5-31c9c94d0843" -->
 ### ✅ Level 1: Dashboard (US-006)
 
 **Test**: US-006 - View Dashboard After Login
@@ -57,6 +62,7 @@ Tested the Language Tracker application against the comprehensive user stories d
 
 ---
 
+<!-- section_id: "97b3a4fa-ca6c-4e01-b53d-ef974d2ed94a" -->
 ### ✅ Level 2: My Projects (US-012, US-013, US-015)
 
 #### US-012: View All Projects
@@ -127,6 +133,7 @@ Tested the Language Tracker application against the comprehensive user stories d
 
 ---
 
+<!-- section_id: "1e2c6714-fe99-492a-a1a1-fb56e060cd51" -->
 ### ✅ Level 3: Variant Menu (US-024)
 
 **Test**: US-024 - View Variant Menu After Entering Project
@@ -180,6 +187,7 @@ Tested the Language Tracker application against the comprehensive user stories d
 
 ---
 
+<!-- section_id: "2af0214c-ef1f-4af3-a138-8ef6109449c5" -->
 ### **🐛 Bugs Found and Fixed During Testing**
 
 #### Bug #1: Incorrect Flask Blueprint Endpoint - projects_menu
@@ -266,6 +274,7 @@ Tested the Language Tracker application against the comprehensive user stories d
 
 ---
 
+<!-- section_id: "bac5cf11-4e25-40ff-b2fb-545748ac16f6" -->
 ### ❌ Level 4a: Phonemes Section (US-026 to US-028)
 
 **Test**: Attempted to test phoneme viewing modes
@@ -296,6 +305,7 @@ Expected template: templates/phonemes_menu.html
 
 ---
 
+<!-- section_id: "7d764714-6033-4498-a315-54474413e18f" -->
 ### ⏸️ Level 4b: Words Section (US-029 to US-037)
 
 **Status**: NOT TESTED
@@ -305,6 +315,7 @@ Expected template: templates/phonemes_menu.html
 
 ---
 
+<!-- section_id: "75a2a62f-3417-4ff3-a222-b505f24ec573" -->
 ### ⏸️ Level 4c: Administration Section (US-038 to US-053)
 
 **Status**: NOT TESTED
@@ -314,8 +325,10 @@ Expected template: templates/phonemes_menu.html
 
 ---
 
+<!-- section_id: "5126431e-fa27-4e8f-9f19-7c4ca68e27fd" -->
 ## System Architecture Observations
 
+<!-- section_id: "f3973019-67e5-4744-a3d3-30f8732fa1c1" -->
 ### Flask Blueprint Structure
 The application uses Flask blueprints for modularization:
 - `auth` - Authentication routes
@@ -330,6 +343,7 @@ The application uses Flask blueprints for modularization:
 2. Templates not updated systematically
 3. Need for testing all url_for() calls
 
+<!-- section_id: "bd10efc0-fd2a-44b1-b292-ed859aa5ec64" -->
 ### Template Organization
 - Templates located in `/templates` directory
 - Feature-specific templates follow naming convention: `{feature}_menu.html`, `{feature}_display.html`
@@ -337,17 +351,21 @@ The application uses Flask blueprints for modularization:
 
 ---
 
+<!-- section_id: "a420c9bd-6cc1-4aa0-8b6e-45c2829c03e5" -->
 ## Performance Observations
 
+<!-- section_id: "fa416500-695b-4f6b-842f-afac2a4d06fd" -->
 ### Page Load Times
 - Dashboard: Fast (<500ms)
 - My Projects: Fast with 30+ projects displayed (<1s)
 - Variant Menu: Fast (<500ms)
 
+<!-- section_id: "e6e5b75d-666d-4e14-bfb0-aa16dce32958" -->
 ### Search Performance
 - Real-time filtering: Instant (<100ms perceived)
 - Client-side implementation works well even with 30+ projects
 
+<!-- section_id: "56e8aa91-bfe5-4980-afa1-51d303c14afe" -->
 ### UI Responsiveness
 - All buttons and links respond immediately
 - Hover effects smooth and professional
@@ -355,8 +373,10 @@ The application uses Flask blueprints for modularization:
 
 ---
 
+<!-- section_id: "8d67a34b-a7f5-4c2d-a2a7-6053fe876cc8" -->
 ## User Experience Assessment
 
+<!-- section_id: "72ed2f57-231b-41f1-a208-498da2ac3476" -->
 ### Strengths
 1. **Excellent Visual Design**: Modern, professional glassmorphism UI with gradients and hover effects
 2. **Clear Information Hierarchy**: Project cards show all relevant information without clutter
@@ -366,6 +386,7 @@ The application uses Flask blueprints for modularization:
 6. **Real-time Search**: Instant filtering enhances user experience
 7. **Clear Status Indicators**: Flash messages, badges (ADMIN), icons (☁️, 💾)
 
+<!-- section_id: "2b8893d4-29a6-475d-9d74-021ee3c107e9" -->
 ### Areas for Improvement
 1. **Broken Links**: Multiple endpoint reference bugs blocked functionality
 2. **Missing Templates**: phonemes_menu.html prevents access to key features
@@ -374,8 +395,10 @@ The application uses Flask blueprints for modularization:
 
 ---
 
+<!-- section_id: "fcae63ed-34a5-47a6-b79e-1b9bd2b1beda" -->
 ## Recommendations
 
+<!-- section_id: "62e99c1c-9871-4dff-ba92-e42613ff9252" -->
 ### Immediate Actions Required
 
 1. **Fix Missing Phonemes Template** (Priority: HIGH)
@@ -393,6 +416,7 @@ The application uses Flask blueprints for modularization:
    - Verify all templates render successfully
    - Check all url_for() references resolve correctly
 
+<!-- section_id: "4487eea5-79ad-4ef2-b903-169019d3d603" -->
 ### Testing Strategy for Next Session
 
 1. **Complete Level 4b Testing** (Words Section)
@@ -417,6 +441,7 @@ The application uses Flask blueprints for modularization:
 
 ---
 
+<!-- section_id: "b60f949c-21b5-429f-9a9c-c1bf728b7197" -->
 ## Conclusion
 
 The Language Tracker application demonstrates **strong foundational architecture** with excellent UI/UX design and comprehensive feature coverage. Testing revealed a systemic issue with Flask blueprint endpoint references that has been largely resolved through fixes applied to `main_menu.html`.
@@ -429,6 +454,7 @@ The Language Tracker application demonstrates **strong foundational architecture
 
 ---
 
+<!-- section_id: "87f96535-7b48-452f-ba38-7e4f26aa0630" -->
 ## Appendix: Testing Environment
 
 - **Browser**: Chromium (via Playwright MCP)
@@ -440,13 +466,16 @@ The Language Tracker application demonstrates **strong foundational architecture
 
 ---
 
+<!-- section_id: "62f9e56d-7f93-4bcd-910f-29e1a1bb232a" -->
 ## Test Artifacts
 
+<!-- section_id: "26c080e5-ec1c-4ff6-b422-2b58c9ea7aa4" -->
 ### Files Modified During Testing
 1. `/home/dawson/code/lang-trak-in-progress/templates/main_menu.html`
    - Fixed 9 incorrect Flask blueprint endpoint references
    - All url_for() calls now include proper blueprint prefixes
 
+<!-- section_id: "01677cdd-bc8b-43bf-a965-215a9b688d76" -->
 ### Screenshots Captured
 - Dashboard with all sections visible
 - My Projects page with 30+ projects

@@ -4,6 +4,7 @@ resource_type: "readme
 document"
 resource_name: "README"
 ---
+<!-- section_id: "4eb7c64f-20d7-4429-b96d-68904e5280d6" -->
 ## File Documentation and Organization – Workflows
 
 This folder is for **concrete workflows** that apply the File Documentation and Organization Protocol, for example:

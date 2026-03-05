@@ -12,6 +12,7 @@ argument-hint: [--notes "completion notes"]
 
 Complete the 01_request_gathering stage and prepare for next stage.
 
+<!-- section_id: "91cae2f6-c196-4121-a8a4-dd18bcf5f733" -->
 ## Steps
 1. Verify all deliverables in outputs/
 2. Create handoff document

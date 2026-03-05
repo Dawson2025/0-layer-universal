@@ -10,8 +10,10 @@ resource_name: "PORTING_STRATEGY"
 
 ---
 
+<!-- section_id: "5baf583a-8295-47b8-8a44-94037137f624" -->
 ## Part 1: Porting 0AGNOSTIC.md (The File)
 
+<!-- section_id: "c057477e-8120-45f8-80d8-795c352a1064" -->
 ### Understanding 0AGNOSTIC.md
 
 Your 0AGNOSTIC.md follows a two-level structure:
@@ -38,6 +40,7 @@ Your 0AGNOSTIC.md follows a two-level structure:
   ## Resources
 ```
 
+<!-- section_id: "4879a64b-99b1-40cd-bb16-30ff0910defa" -->
 ### Port 0AGNOSTIC.md → AGENTS.md (Three-Level Structure)
 
 Codex uses a simpler three-level structure. Here's how to map your content:
@@ -160,6 +163,7 @@ For important subdirectories, create `/project/src/AGENTS.md` with context speci
 [Important files to remember]
 ```
 
+<!-- section_id: "66abe894-2e44-42e5-ab01-ebaa86605e03" -->
 ### Port 0AGNOSTIC.md DYNAMIC Sections → External Files
 
 Your DYNAMIC context (everything after the marker) should be stored as separate files that you reference from AGENTS.md:
@@ -181,8 +185,10 @@ Then create `/docs/` files as-needed. Codex will read them when you reference th
 
 ---
 
+<!-- section_id: "3849b214-146d-476e-a24d-e2df7fd3ff8b" -->
 ## Part 2: Porting .0agnostic/ Directory Structure
 
+<!-- section_id: "0b14fe42-58a1-479e-aeb8-495e7a6f5aea" -->
 ### Understanding .0agnostic/
 
 Your .0agnostic/ has 9 numbered subdirectories:
@@ -199,6 +205,7 @@ Your .0agnostic/ has 9 numbered subdirectories:
 └── [everything maps to Codex somehow]
 ```
 
+<!-- section_id: "e1caac5b-b37b-4dad-9941-55b9b07942fa" -->
 ### Port .0agnostic/ → Codex
 
 #### 01_knowledge → config.toml + Documentation Files
@@ -412,8 +419,10 @@ EOF
 
 ---
 
+<!-- section_id: "d2b8a87e-3b7f-4051-9dee-67d3b8a2f75b" -->
 ## Part 3: Detailed Porting Examples
 
+<!-- section_id: "fb16cfee-7a1d-4353-8d1e-4303821d9aa7" -->
 ### Example 1: Knowledge Porting
 
 **Original** (Claude Code):
@@ -460,6 +469,7 @@ Canvas MCP Integration
 ...
 ```
 
+<!-- section_id: "57ce1a68-360a-4dc2-b79b-1051b81aca26" -->
 ### Example 2: Rules Porting
 
 **Original** (Claude Code):
@@ -505,6 +515,7 @@ Canvas MCP Integration
 See /docs/rules/ for detailed rule explanations
 ```
 
+<!-- section_id: "0c41b823-3bd2-427e-ac60-9be13192da0e" -->
 ### Example 3: Protocol Porting
 
 **Original** (Claude Code):
@@ -542,6 +553,7 @@ When user asks about grades:
 See /docs/procedures/ for detailed procedures.
 ```
 
+<!-- section_id: "8f4055e0-bbfa-43d1-b511-6142442d9daa" -->
 ### Example 4: Skills Porting
 
 **Original** (Claude Code):
@@ -607,8 +619,10 @@ See Canvas MCP reference: [link]
 
 ---
 
+<!-- section_id: "20c60896-8faa-4892-adf2-4471c8099158" -->
 ## Part 4: Practical Porting Workflow
 
+<!-- section_id: "c33b1587-f986-4092-aa2a-6ef0427aef45" -->
 ### Step 1: Read Source Files
 
 ```bash
@@ -619,6 +633,7 @@ head -100 0AGNOSTIC.md
 find .0agnostic/ -name "*.md" | head -20
 ```
 
+<!-- section_id: "f8f4fb35-4ef6-4e8d-b399-8013d7799b6b" -->
 ### Step 2: Create Directory Structure
 
 ```bash
@@ -630,6 +645,7 @@ mkdir -p [project]/knowledge/
 mkdir -p [project]/templates/
 ```
 
+<!-- section_id: "918c1d3e-d038-4d5d-9f73-5373f87b881a" -->
 ### Step 3: Port 0AGNOSTIC.md
 
 ```bash
@@ -649,6 +665,7 @@ cat > [project]/AGENTS.md << 'EOF'
 EOF
 ```
 
+<!-- section_id: "1c54ff26-cc27-44ab-805d-6f359de9cf46" -->
 ### Step 4: Port Knowledge (.0agnostic/01_knowledge/)
 
 ```bash
@@ -663,6 +680,7 @@ cat > [project]/docs/INDEX.md << 'EOF'
 EOF
 ```
 
+<!-- section_id: "940b5c40-360a-422a-bd74-9cb445fd7fab" -->
 ### Step 5: Port Rules (.0agnostic/02_rules/)
 
 ```bash
@@ -674,6 +692,7 @@ mkdir -p [project]/docs/rules/
 cp .0agnostic/02_rules/dynamic/*/*.md [project]/docs/rules/
 ```
 
+<!-- section_id: "651e81e4-c8f3-4043-9721-f02b2f540961" -->
 ### Step 6: Port Protocols (.0agnostic/03_protocols/)
 
 ```bash
@@ -689,6 +708,7 @@ cat > [project]/docs/procedures/INDEX.md << 'EOF'
 EOF
 ```
 
+<!-- section_id: "56f61869-96fa-4a62-9a87-307ee3493c91" -->
 ### Step 7: Create config.toml
 
 ```bash
@@ -703,6 +723,7 @@ session_persistence = true
 EOF
 ```
 
+<!-- section_id: "4b6ea0a7-2793-4cf8-a6fc-947bf6f3ba44" -->
 ### Step 8: Update AGENTS.md with Resources Table
 
 ```bash
@@ -719,6 +740,7 @@ cat >> [project]/AGENTS.md << 'EOF'
 EOF
 ```
 
+<!-- section_id: "cbef3b2e-95cf-4765-b0b2-911aecf59ac3" -->
 ### Step 9: Verify Structure
 
 ```bash
@@ -730,6 +752,7 @@ ls [project]/docs/
 ls [project]/docs/procedures/
 ```
 
+<!-- section_id: "c7401b4f-1c7a-467d-9357-51e75d59704c" -->
 ### Step 10: Test Codex
 
 ```bash
@@ -740,6 +763,7 @@ codex
 
 ---
 
+<!-- section_id: "e4b2a3a3-9f88-469f-ad6c-0503d1db1320" -->
 ## Part 5: Migration Checklist
 
 Complete each item to ensure proper porting:
@@ -759,8 +783,10 @@ Complete each item to ensure proper porting:
 
 ---
 
+<!-- section_id: "7ed0ad02-65d3-4076-b2d6-a5090ea53982" -->
 ## Part 6: Trade-offs & Limitations
 
+<!-- section_id: "8aff1d3d-ac23-44b2-9930-3bcbfca2cd4d" -->
 ### What Ports Cleanly ✅
 
 These things port from our 0AGNOSTIC.md system to Codex without issue:
@@ -772,6 +798,7 @@ These things port from our 0AGNOSTIC.md system to Codex without issue:
 - **Model settings** → config.toml (direct mapping)
 - **Current status** → AGENTS.md Current Status (one-liner)
 
+<!-- section_id: "7fffe5ec-b7bb-4854-a2f6-6783965bf2b6" -->
 ### What Requires Adaptation ⚠️
 
 These things need modification when porting:
@@ -796,6 +823,7 @@ These things need modification when porting:
   - Tool integration → MCP servers (Canvas, GitHub, etc.)
   - Tool-specific skills → Inline in AGENTS.md (brief summaries)
 
+<!-- section_id: "5bba6f6f-267a-44f2-80eb-4b41f7ea2a02" -->
 ### What Stays as Reference 📚
 
 These don't directly port — keep as reference documentation:
@@ -812,6 +840,7 @@ These don't directly port — keep as reference documentation:
   - Port to: Session management strategy in AGENTS.md
   - Codex has built-in session history, no need to migrate
 
+<!-- section_id: "e083e898-1e5d-44c3-ac81-2e7449599b63" -->
 ### What's NOT Supported 🚫
 
 These things don't have equivalents in Codex:
@@ -830,8 +859,10 @@ These things don't have equivalents in Codex:
 
 ---
 
+<!-- section_id: "bc8af9b4-9407-4548-8b58-14f2bb9433f5" -->
 ## Part 7: Validation
 
+<!-- section_id: "6127f9dc-8550-44a9-bc2b-c2685346b518" -->
 ### After Porting, Verify
 
 #### Test 1: AGENTS.md Loads Correctly
@@ -873,6 +904,7 @@ grep -r "7-step workflow" docs/procedures/  # Should find procedure
 grep -r "\[CRITICAL\]" [project]/AGENTS.md  # Should find rules
 ```
 
+<!-- section_id: "d7b37461-9056-4fd4-885e-ec10af207961" -->
 ### Checklist for Successful Port
 
 - [ ] AGENTS.md includes all [CRITICAL] rules
@@ -886,6 +918,7 @@ grep -r "\[CRITICAL\]" [project]/AGENTS.md  # Should find rules
 
 ---
 
+<!-- section_id: "540cb023-3dc3-40f6-9a3d-016f44159fa9" -->
 ## Summary
 
 **Porting our 0AGNOSTIC.md system to Codex** requires mapping three things:

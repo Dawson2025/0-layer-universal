@@ -4,6 +4,7 @@ resource_type: "readme
 document"
 resource_name: "README"
 ---
+<!-- section_id: "0d7871b9-6295-43f1-9d1b-e3e8e251972e" -->
 ## Protocol Writing Standard – Instruction Docs
 
 The canonical definition of the **Protocol Writing Standard** lives in:

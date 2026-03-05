@@ -8,10 +8,12 @@ resource_name: "README"
 
 **Need**: [Agent Hierarchy](../README.md)
 
+<!-- section_id: "45ff00b2-fa89-466e-b935-a277c62ce947" -->
 ## Overview
 
 These requirements define the management structure of the agent tree — who manages whom, what decisions each level can make, and how agents discover their position in the hierarchy. The entity tree maps 1:1 to the agent management tree: each entity has one manager, each stage has one active agent, and parent-child relationships are explicit. Authority flows downward (managers direct their agents), escalation flows upward (stage agents escalate to managers), and sibling agents never direct each other.
 
+<!-- section_id: "73d2d5d8-c10a-46af-96ac-408b464e193c" -->
 ## Key Themes
 
 - **1:1 Entity-Agent Mapping**: Every entity has exactly one manager; every stage has exactly one active agent; parent entities manage child entities through their managers

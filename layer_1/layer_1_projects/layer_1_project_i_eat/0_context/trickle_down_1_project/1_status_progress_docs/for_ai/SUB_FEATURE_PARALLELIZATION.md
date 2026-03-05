@@ -5,14 +5,17 @@ resource_name: "SUB_FEATURE_PARALLELIZATION"
 ---
 # Sub-Feature Parallelization Guide
 
+<!-- section_id: "be6811ad-33ce-47ff-85cb-1bfb9ffd2eb3" -->
 ## The Next Level: Parallel Work Within a Feature
 
 While the current architecture enables **8 agents to work on different features simultaneously**, we can go deeper: **multiple agents can work on different sub-concerns within the same feature**.
 
+<!-- section_id: "542250e6-7e39-4da3-9bb9-b90d89acedd8" -->
 ## Example: Words Feature
 
 The "words" feature has multiple distinct sub-concerns that can be developed in parallel:
 
+<!-- section_id: "66867843-842d-4729-ad69-35030e3a0665" -->
 ### Current State (app.py - Not Yet Migrated)
 
 ```
@@ -32,6 +35,7 @@ Words Feature Routes (Still in app.py):
     └── /api/remove-video/<id>      - Remove video
 ```
 
+<!-- section_id: "18a795a5-c283-45a4-8ac6-7752a1270287" -->
 ### Proposed Sub-Feature Organization
 
 Break the words feature into **logical sub-modules** that can be worked on in parallel:
@@ -100,8 +104,10 @@ features/words/
     └── test_api.py
 ```
 
+<!-- section_id: "6794054b-a7f1-46d0-af02-3dd120b1c31a" -->
 ## Parallel Work Scenarios
 
+<!-- section_id: "a63621d5-f24e-4c1f-a6f1-c96d8be41b12" -->
 ### Scenario 1: Three Agents in Words Feature
 
 **Agent A** - Working on "All Fields Search"
@@ -145,6 +151,7 @@ Files touched:
 2. Follow clear ordering convention (CRUD order: Create, Read, Update, Delete)
 3. Or split api.py further: `api_creation.py`, `api_search.py`, `api_editing.py`
 
+<!-- section_id: "ca1921f8-7319-4b4d-833f-bdfd49ff71d0" -->
 ### Scenario 2: Split api.py Further
 
 ```
@@ -159,11 +166,14 @@ features/words/
 
 Now **all three agents can work without ANY conflicts!**
 
+<!-- section_id: "9f272c0f-169f-4f09-9af1-2f3bdf3b4d29" -->
 ## Pattern: File-Per-Concern
 
+<!-- section_id: "6027a775-f329-4c29-bcf9-6e06f989cee4" -->
 ### Rule of Thumb:
 **If two developers could reasonably work on the same concern at the same time, they should have separate files.**
 
+<!-- section_id: "da6b56da-29d0-49d6-ad59-0d3c0be7536d" -->
 ### Apply to Other Features:
 
 #### Projects Feature
@@ -208,8 +218,10 @@ features/admin/
 └── models.py                # 🟡 Shared DB operations
 ```
 
+<!-- section_id: "81b2c120-402c-4acb-a40c-8d97c9c62ffd" -->
 ## Coordination Strategy
 
+<!-- section_id: "56fe3c8c-d873-4e57-8c27-fca2927a9495" -->
 ### Shared Files (Need Coordination)
 
 **models.py** - Database operations shared across sub-features
@@ -227,6 +239,7 @@ features/admin/
 - **Pattern**: Follow CRUD ordering
 - **Rule**: Add endpoints in designated sections
 
+<!-- section_id: "8841ed31-3880-4509-ac11-67d94e37291a" -->
 ### Example: models.py Coordination
 
 ```python
@@ -293,11 +306,14 @@ def delete_word(word_id: int):
 
 **Result**: Three agents can add new functions to models.py without conflicts!
 
+<!-- section_id: "e3142e0f-78e1-4150-aa88-1b3594d2e0db" -->
 ## Migration Strategy
 
+<!-- section_id: "eeaa0b84-96a8-4fb2-a619-c47222ca2d38" -->
 ### Phase 1: Extract Routes from app.py ✅ (Partially Done)
 Move routes from app.py to feature blueprints
 
+<!-- section_id: "cb4cac69-a77d-455d-a260-a75bbf8de34b" -->
 ### Phase 2: Organize by Sub-Concern (Next Step)
 Split large route files into logical sub-modules:
 
@@ -328,29 +344,36 @@ from . import api          # API endpoints
 __all__ = ['words_bp']
 ```
 
+<!-- section_id: "933d04b2-7f6e-4ff1-948f-e1c3a9129597" -->
 ## Benefits of Sub-Feature Organization
 
+<!-- section_id: "b065f365-7c0a-42a4-ab2c-1d47c0f7ed58" -->
 ### 1. **Increased Parallel Capacity**
 - Before: 8 agents (one per feature)
 - After: 20+ agents (multiple per feature)
 
+<!-- section_id: "456b8cfe-b039-4c1d-bd38-17d3e7dacc4a" -->
 ### 2. **Clearer Ownership**
 - Agent knows exactly which file to modify
 - "I'm working on word creation" → `creation.py`
 - "I'm working on search" → `search.py`
 
+<!-- section_id: "4226976e-ae47-433f-a61a-0b4bf7cecf00" -->
 ### 3. **Easier Code Review**
 - PRs are smaller and focused
 - Reviewer can focus on one concern at a time
 
+<!-- section_id: "3b7eecde-1b3e-41cf-b6cb-ffb0eb7d1d87" -->
 ### 4. **Better Testing**
 - Tests map directly to implementation files
 - `test_creation.py` tests `creation.py`
 
+<!-- section_id: "325ff841-b359-4e20-becc-79db2987a7c1" -->
 ### 5. **Reduced Cognitive Load**
 - Each file handles one concern
 - Easier to understand and modify
 
+<!-- section_id: "c7f17b5a-7657-421f-a502-20f3ea0a72a7" -->
 ## Implementation Checklist
 
 For each feature with multiple sub-concerns:
@@ -365,6 +388,7 @@ For each feature with multiple sub-concerns:
 - [ ] Create corresponding test files for each sub-concern
 - [ ] Update documentation with file organization
 
+<!-- section_id: "3c449494-d6ae-44e1-91ce-b9b6d6472341" -->
 ## Quick Reference: When to Split Files
 
 | Scenario | Action |
@@ -375,6 +399,7 @@ For each feature with multiple sub-concerns:
 | Functions are related but independent | ✅ Keep together but use clear sections |
 | Functions share significant state | ⚠️ Keep together, add coordination rules |
 
+<!-- section_id: "30a564d9-8a9b-4656-9d3a-7ec236e2a5bc" -->
 ## Summary
 
 **Current Architecture:**

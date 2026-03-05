@@ -5,14 +5,17 @@ resource_name: "sudo_password_management"
 ---
 # Sudo Password Management - CRITICAL
 
+<!-- section_id: "170ee7eb-c8d7-47a0-b3f9-2c390ee41aec" -->
 ## 🚨 **MANDATORY: Sudo Password Access for AI Agents**
 
+<!-- section_id: "c7d32927-b7c3-4e6c-9697-e68e541903a9" -->
 ### **Why This Matters:**
 - Enables installation of system packages (sqlite3, etc.)
 - Allows system-level configuration changes
 - Prevents terminal hanging on sudo prompts
 - Essential for proper development environment setup
 
+<!-- section_id: "370b192f-6903-4c95-bfd9-3db82be51ab0" -->
 ### **🔐 Password Storage Options:**
 
 #### **Option 1: Environment Variable (Recommended)**
@@ -41,6 +44,7 @@ cat ~/.ai_sudo_password | sudo -S command
 echo "your_password_here" | sudo -S command
 ```
 
+<!-- section_id: "5ed01d3c-3744-42b0-bc84-8aefc393616a" -->
 ### **🔧 Implementation for AI Agents:**
 
 #### **Method 1: Environment Variable**
@@ -69,6 +73,7 @@ fi
 echo "Please enter sudo password:" && read -s password && echo "$password" | sudo -S command
 ```
 
+<!-- section_id: "d1e0046c-20ee-4601-aefa-05e978c4f7ab" -->
 ### **📋 Quick Setup Commands:**
 
 #### **Automated Setup (Recommended):**
@@ -105,12 +110,14 @@ cat ~/.ai_sudo_password | sudo -S whoami
 ./scripts/ai_sudo_helper.sh run "systemctl restart nginx"
 ```
 
+<!-- section_id: "4c9e435d-924f-4e8f-86e1-2e18c82bdf6b" -->
 ### **🎯 Benefits:**
 - ✅ No terminal hanging on sudo prompts
 - ✅ Automated system package installation
 - ✅ Seamless development environment setup
 - ✅ Consistent behavior across AI agents
 
+<!-- section_id: "2175b0da-c0da-400d-9109-c8b041faa9c5" -->
 ### **⚠️ Security Notes:**
 - Store password securely (600 permissions)
 - Use environment variables in development only

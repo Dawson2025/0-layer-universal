@@ -5,6 +5,7 @@ resource_name: "static_dynamic_context"
 ---
 # Static vs Dynamic Context
 
+<!-- section_id: "2deac383-8b94-4958-9b62-8b8fbcaef16a" -->
 ## Summary
 
 Context is classified along two independent dimensions: timing (when it enters the model's working memory) and ownership (who controls it). These dimensions are orthogonal, producing a 2x2 matrix.
@@ -13,6 +14,7 @@ Static context (CLAUDE.md chain, MCP schemas, skill listings, auto memory) is lo
 
 The ownership dimension separates fixed context (controlled by Claude Code runtime -- system prompt preamble, loading order, tool formats) from configurable context (controlled by the project author -- CLAUDE.md content, .0agnostic/ resources, MCP servers). The biggest optimization lever is the static+configurable quadrant: keep CLAUDE.md lean (identity + triggers + pointers) and push detail into .0agnostic/ for on-demand loading. Target a dynamic-to-static ratio of 5:1 or higher.
 
+<!-- section_id: "1d74fd8c-a2a7-4b06-99c2-7c490c52bb20" -->
 ## Key Concepts
 
 - **Static**: Loaded every API call automatically; constant token cost per call
@@ -22,6 +24,7 @@ The ownership dimension separates fixed context (controlled by Claude Code runti
 - **Target ratio**: Dynamic content should be 5-10x the size of static content
 - **Budget**: ~7,500 tokens per API call for all static context combined
 
+<!-- section_id: "1aa18d4a-3ea0-4d39-9c90-e3d217fe24b0" -->
 ## Reference Table
 
 | What | Where | Notes |

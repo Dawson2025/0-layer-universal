@@ -8,10 +8,12 @@ resource_name: "README"
 
 **Need**: [Operation Measurement](../README.md)
 
+<!-- section_id: "b6418d56-ff14-4364-9135-981c25a06c1e" -->
 ## Overview
 
 These requirements define the comprehensive operation taxonomy and measurement framework. They ensure all database operations (read, write, maintenance, consistency, analytics) are categorized, measured with real units, and support hierarchical aggregation.
 
+<!-- section_id: "bfe0e989-7868-4406-af42-bfc2ccd6ead0" -->
 ## Key Themes
 
 - **Comprehensive Coverage**: 20+ operations across 5 categories

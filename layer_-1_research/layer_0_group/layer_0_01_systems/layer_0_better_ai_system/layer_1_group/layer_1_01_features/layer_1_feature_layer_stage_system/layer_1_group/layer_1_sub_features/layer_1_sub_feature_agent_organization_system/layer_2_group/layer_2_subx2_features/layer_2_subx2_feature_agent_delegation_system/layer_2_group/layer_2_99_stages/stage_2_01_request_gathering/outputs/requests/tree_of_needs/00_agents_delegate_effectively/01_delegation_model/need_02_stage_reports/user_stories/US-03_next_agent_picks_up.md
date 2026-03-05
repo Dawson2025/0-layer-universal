@@ -13,6 +13,7 @@ resource_name: "US-03_next_agent_picks_up"
 **I want** the new agent to read the previous report and know exactly what to do first,
 **So that** I don't waste time re-explaining what was already done.
 
+<!-- section_id: "2a9b5477-5a48-4a02-b978-1a65af2be6f3" -->
 ### What Happens
 
 1. User returns to a project and says "continue the research" or "pick up where we left off"
@@ -21,6 +22,7 @@ resource_name: "US-03_next_agent_picks_up"
 4. Stage agent reads the "next steps" section and knows its immediate first task
 5. Stage agent resumes work without re-discovering what has already been done
 
+<!-- section_id: "fbf3580f-5c66-4dbc-8d73-639db24623a1" -->
 ### Acceptance Criteria
 
 - Stage report's "next steps" section gives an actionable first task

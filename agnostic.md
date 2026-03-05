@@ -5,14 +5,17 @@ resource_name: "agnostic"
 ---
 # 0_layer_universal - Agnostic Context
 
+<!-- section_id: "77563331-9353-44be-b028-e64c8e11f226" -->
 ## Purpose
 
 Tool-agnostic context for any AI assistant working in the layer-stage system.
 
+<!-- section_id: "0165e998-6b08-481c-a3e0-8d2bd0cb5728" -->
 ## Framework Overview
 
 This is the **Layer-Stage Framework** - a hierarchical system for organizing AI-assisted work.
 
+<!-- section_id: "02d0c07b-b44c-40a1-a2a0-fb6ba28d90b5" -->
 ### Layers
 
 | Layer | Purpose | Scope |
@@ -21,6 +24,7 @@ This is the **Layer-Stage Framework** - a hierarchical system for organizing AI-
 | 1 | Projects | Specific projects, features, components |
 | -1 | Research | Experimental projects, research |
 
+<!-- section_id: "f5f1bb06-b6fe-48df-906e-1dddce0d2d05" -->
 ### Stages (Workflow)
 
 | # | Stage | Purpose |
@@ -38,6 +42,7 @@ This is the **Layer-Stage Framework** - a hierarchical system for organizing AI-
 | 10 | current_product | Deliverable |
 | 11 | archives | History |
 
+<!-- section_id: "86e6a632-4680-4983-88dc-3df4d4c0f060" -->
 ### Sub-layers (Content Types)
 
 | # | Sub-layer | Purpose |
@@ -49,6 +54,7 @@ This is the **Layer-Stage Framework** - a hierarchical system for organizing AI-
 | 04 | rules | Constraints |
 | 05+ | setup | OS/tool config |
 
+<!-- section_id: "ccf2aa17-d0cd-4893-a2a5-460b94fa0f4c" -->
 ## Structure
 
 ```
@@ -64,11 +70,14 @@ This is the **Layer-Stage Framework** - a hierarchical system for organizing AI-
     └── layer_-1_*/          Research projects
 ```
 
+<!-- section_id: "da404ec8-5390-4791-ab6d-713ad52758ce" -->
 ## Key Patterns
 
+<!-- section_id: "1ec4f509-aa9d-4fb8-b8b9-069ffe1f6a01" -->
 ### Container-as-Manager
 Every folder with a context file (CLAUDE.md, agnostic.md) is a "manager" of its contents.
 
+<!-- section_id: "42f95acb-1f4b-464d-ae3e-5f81c26f19bd" -->
 ### Four-Directional Handoffs
 ```
 hand_off_documents/
@@ -78,9 +87,11 @@ hand_off_documents/
 └── outgoing/to_below/      Tasks to children
 ```
 
+<!-- section_id: "71794b00-9993-4139-b07f-76060557b946" -->
 ### Position 00 = Registry
 Position 00 in any container holds only data (no manager behavior).
 
+<!-- section_id: "0b68969f-7f61-411c-81a1-6e96bd0b88dd" -->
 ## On Session Start
 
 1. Identify target layer and stage

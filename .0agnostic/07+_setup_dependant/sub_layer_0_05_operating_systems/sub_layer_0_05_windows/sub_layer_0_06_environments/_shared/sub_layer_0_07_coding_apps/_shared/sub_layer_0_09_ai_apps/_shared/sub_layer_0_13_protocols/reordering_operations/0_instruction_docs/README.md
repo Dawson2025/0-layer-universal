@@ -4,6 +4,7 @@ resource_type: "readme
 document"
 resource_name: "README"
 ---
+<!-- section_id: "798b2d79-19b9-4814-8e27-cb0ce0fdd59c" -->
 ## Reordering Operations Protocol – Instruction Docs
 
 The canonical definition of the **Reordering Operations Protocol** lives in:

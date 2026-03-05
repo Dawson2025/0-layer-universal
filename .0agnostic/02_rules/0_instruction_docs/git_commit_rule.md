@@ -5,6 +5,7 @@ resource_name: "git_commit_rule"
 ---
 # GIT COMMIT AND SYNC RULE
 
+<!-- section_id: "603de373-4666-469d-bc30-9e6536147fa3" -->
 ## **MANDATORY REQUIREMENTS**
 
 **ALL AI agents MUST:**
@@ -16,6 +17,7 @@ resource_name: "git_commit_rule"
 
 **NO EXCEPTIONS. NO AI TURN OR SESSION IS EXEMPT FROM THESE REQUIREMENTS.**
 
+<!-- section_id: "396d317c-3343-4429-a2fb-3a00e4e599a5" -->
 ## **RULE SCOPE**
 
 This rule applies to:
@@ -35,8 +37,10 @@ This rule applies to:
 
 **NO AI TURN OR SESSION IS EXEMPT FROM THESE REQUIREMENTS.**
 
+<!-- section_id: "ab8d9924-bae8-4d81-9e96-32140dbb404a" -->
 ## **GIT SYNC AND COMMIT REQUIREMENTS**
 
+<!-- section_id: "67d25493-8365-4ecc-84c4-a2c121f130e5" -->
 ### **1. MANDATORY PULL ACTIONS (START OF SESSION/TURN)**
 
 **At the START of EVERY SESSION, agents MUST:**
@@ -56,6 +60,7 @@ This rule applies to:
 
 **CRITICAL**: Never start work without pulling first. Always ensure local repository matches remote before making any changes.
 
+<!-- section_id: "6ff33b70-d5d2-47ec-920f-9cf78e114c21" -->
 ### **2. MANDATORY COMMIT AND SYNC ACTIONS (END OF TURN)**
 
 For EVERY AI turn, agents MUST:
@@ -69,6 +74,7 @@ For EVERY AI turn, agents MUST:
 7. **Sync to Cloud (MANDATORY)**: `git push origin <branch>` to push all commits to remote repository
 8. **Verify Sync**: `git status` to confirm branch is up to date with remote
 
+<!-- section_id: "013d77e3-e143-4a2c-a0d7-1812ce484995" -->
 ### **3. COMMIT MESSAGE FORMAT**
 
 **Required Format:**
@@ -98,6 +104,7 @@ Date: YYYY-MM-DD
 - `[DEBUG]` - Debugging and troubleshooting
 - `[INTEGRATION]` - Integration and system changes
 
+<!-- section_id: "b56af142-41b2-4798-a099-ebbb7a4d9b68" -->
 ### **4. COMMIT MESSAGE EXAMPLES**
 
 #### **Bug Fix Example:**
@@ -158,6 +165,7 @@ Turn: 005
 Date: 2025-01-27
 ```
 
+<!-- section_id: "39493b47-84aa-4c7f-a80c-35abfb83f22b" -->
 ### **5. PULL VALIDATION CHECKLIST (START OF SESSION/TURN)**
 
 Before starting any work, agents MUST verify:
@@ -171,6 +179,7 @@ Before starting any work, agents MUST verify:
 
 **CRITICAL**: Do not proceed with any work until all pull requirements are met.
 
+<!-- section_id: "33147464-8c42-414b-b0be-864c1ac9160b" -->
 ### **6. COMMIT AND SYNC VALIDATION CHECKLIST (END OF TURN)**
 
 Before completing any AI turn, agents MUST verify:
@@ -187,6 +196,7 @@ Before completing any AI turn, agents MUST verify:
 - [ ] **Git status confirms branch is up to date with remote**
 - [ ] **No local commits ahead of remote** (all changes synced to cloud)
 
+<!-- section_id: "06aebff4-2648-4d4a-af63-15170bd59920" -->
 ### **7. PULL COMMANDS (START OF SESSION/TURN)**
 
 **Standard Pull Sequence (MANDATORY AT START OF EVERY SESSION AND TURN):**
@@ -218,6 +228,7 @@ git status
 
 **CRITICAL**: The `git pull` step is **MANDATORY** at the start of every session and every turn. Never start work without pulling first.
 
+<!-- section_id: "a024fc63-77ee-49d4-9dca-b4a0377672cd" -->
 ### **8. COMMIT AND SYNC COMMANDS (END OF TURN)**
 
 **Standard Commit and Sync Sequence (MANDATORY FOR EVERY TURN):**
@@ -259,6 +270,7 @@ git status
 
 **CRITICAL**: The `git push` step is **MANDATORY** and **NON-NEGOTIABLE**. Every turn must end with all changes synced to the cloud repository. No turn is complete until changes are pushed.
 
+<!-- section_id: "c4dd7c80-0316-4ddd-af69-8633d61e8c81" -->
 ### **9. SPECIAL CASES**
 
 #### **No Changes Made**
@@ -296,6 +308,7 @@ Turn: 007
 Date: 2025-01-27
 ```
 
+<!-- section_id: "2940ced5-ce55-4c9c-862d-4f0272625540" -->
 ### **10. SYNC AND COMMIT FREQUENCY**
 
 **Every AI Turn Must Result in a Commit:**
@@ -322,6 +335,7 @@ Date: 2025-01-27
 2. **START OF EACH TURN**: Pull from cloud → Make changes
 3. **END OF EACH TURN**: Commit changes → Push to cloud → Turn complete
 
+<!-- section_id: "26c61601-0f34-4d9c-939f-f818937c330a" -->
 ### **11. COMMIT QUALITY STANDARDS**
 
 **Commit Messages Must Be:**
@@ -339,6 +353,7 @@ Date: 2025-01-27
 - All test results and validation
 - All analysis and research findings
 
+<!-- section_id: "daa54e8c-9437-4d9a-9aba-b7ca781b200a" -->
 ## **BENEFITS OF THIS RULE**
 
 - **Complete Version History**: Every change tracked in git
@@ -353,6 +368,7 @@ Date: 2025-01-27
 - **No Data Loss**: Changes are never lost due to local-only commits
 - **Cross-Device Access**: Changes available from any machine via cloud repository
 
+<!-- section_id: "4e4b2f26-666d-4479-b4ef-746996322c45" -->
 ## **ENFORCEMENT**
 
 This rule is **MANDATORY** and **NON-NEGOTIABLE**.

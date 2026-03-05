@@ -9,11 +9,14 @@ resource_name: "propagation_funnel_stage_contract"
 **Status**: Approved
 **Scope**: agent_delegation_system stages and child entities
 
+<!-- section_id: "a0f58240-7b1d-4e16-be2a-0c41dacf310a" -->
 ## Purpose
 Define required stage/entity structure for propagation funnel behavior so reports are discoverable, syncable, and stable across tool projections.
 
+<!-- section_id: "5f9b833d-a625-48f8-b308-9d99732a2db4" -->
 ## Contract
 
+<!-- section_id: "ab34ba02-85d6-4fb2-aa2b-92af6b6766ab" -->
 ### Stage-level required structure
 
 Each active stage must have:
@@ -27,6 +30,7 @@ Each active stage must have:
 Compatibility:
 - `outputs/stage_report.md` is legacy compatibility only.
 
+<!-- section_id: "2c133bd1-916c-440b-953e-626502713955" -->
 ### Entity-level required structure
 
 Each entity must have:
@@ -34,8 +38,10 @@ Each entity must have:
 - `.0agnostic/05_handoff_documents/02_outgoing/01_to_above/layer_report.md` (entity roll-up)
 - `.0agnostic/05_handoff_documents/02_outgoing/01_to_above/stages_report.md` (stage roll-up)
 
+<!-- section_id: "c09104fd-1d89-4405-b043-cf965646c3ff" -->
 ## Funnel sequence
 
+<!-- section_id: "eeaad196-032d-470b-86d5-a8b00fbb4005" -->
 ### Stage funnel
 1. Produce work in `outputs/`
 2. Consolidate into `outputs/reports/output_report.md`
@@ -43,12 +49,14 @@ Each entity must have:
 4. Mirror into `.0agnostic/05_handoff_documents/02_outgoing/`
 5. Run sync (`sync-handoffs.sh`) for parent/sibling distribution
 
+<!-- section_id: "f00fc692-aac8-45ae-aed1-5497bc904a3a" -->
 ### Entity funnel
 1. Ingest stage reports into incoming `stage_reports/`
 2. Consolidate into `stages_report.md`
 3. Merge child-layer signals
 4. Publish `layer_report.md` upward
 
+<!-- section_id: "f51e65c7-f57a-4751-8717-fa8f48eee73f" -->
 ## Relationship to canonical propagation architecture
 
 Detailed architecture and hierarchy-wide propagation rationale are owned by context_chain_system:
@@ -56,6 +64,7 @@ Detailed architecture and hierarchy-wide propagation rationale are owned by cont
 
 This document defines the **local implementation contract** for agent_delegation_system.
 
+<!-- section_id: "7717c42c-8018-4ce3-9352-274ba9a9f2c3" -->
 ## Enforcement
 
 Required checks:

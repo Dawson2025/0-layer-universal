@@ -10,6 +10,7 @@ resource_name: "DUAL_BOOT_TEST_INSTRUCTIONS"
 
 ---
 
+<!-- section_id: "69204118-974f-4995-8635-3689ac063a0b" -->
 ## Current Verification Status
 
 | Test | Direction | Status |
@@ -19,6 +20,7 @@ resource_name: "DUAL_BOOT_TEST_INSTRUCTIONS"
 
 ---
 
+<!-- section_id: "14979c60-0665-42b1-afc4-662f86a0a7ad" -->
 ## Test Files
 
 | File | Created | Location | Purpose |
@@ -28,10 +30,12 @@ resource_name: "DUAL_BOOT_TEST_INSTRUCTIONS"
 
 ---
 
+<!-- section_id: "c49e83b1-c72d-4c2d-9c92-3990efe0632d" -->
 ## FOR UBUNTU AGENTS: Complete Verification
 
 When the user boots into Ubuntu, follow these steps:
 
+<!-- section_id: "baae0194-7f2a-494e-a3f3-ab90d379e656" -->
 ### Quick Check (Run This First)
 
 ```bash
@@ -39,6 +43,7 @@ When the user boots into Ubuntu, follow these steps:
 [ -f ~/dawson-workspace/SYNC_TEST_WINDOWS_TO_UBUNTU.md ] && echo "✅ SYNC VERIFIED!" || echo "❌ File not found"
 ```
 
+<!-- section_id: "c132d34e-1610-4fc6-aff0-077054569cf5" -->
 ### Step-by-Step Verification
 
 #### 1. Ensure Syncthing is Running
@@ -95,6 +100,7 @@ git push
 
 ---
 
+<!-- section_id: "04730883-5aa9-4183-802e-500ddea98e34" -->
 ## Sync Flow Diagram
 
 ```
@@ -115,8 +121,10 @@ Test 2 (PENDING):
 
 ---
 
+<!-- section_id: "ada850f2-77db-40c5-91a1-56e5fbc3f423" -->
 ## Troubleshooting
 
+<!-- section_id: "e3c1f13d-5c44-4d9e-8991-e327cb51e04c" -->
 ### File doesn't appear after booting Ubuntu
 
 1. **Check Syncthing is running:**
@@ -144,6 +152,7 @@ Test 2 (PENDING):
    cat ~/dawson-workspace/.stignore | grep -i sync
    ```
 
+<!-- section_id: "e884b4f6-766d-482a-9e68-a6655c44e838" -->
 ### Syncthing won't connect to VPS
 
 1. Check internet connectivity
@@ -153,6 +162,7 @@ Test 2 (PENDING):
 
 ---
 
+<!-- section_id: "75e1cc15-1186-4f39-a6c1-c158daa307ee" -->
 ## Success Criteria
 
 When both tests pass:
@@ -164,6 +174,7 @@ When both tests pass:
 
 ---
 
+<!-- section_id: "c735565e-4e07-4e1d-b848-790bd3a9c069" -->
 ## What Happens Next
 
 Once both directions are verified:

@@ -10,6 +10,7 @@ resource_name: "context_flow"
 
 ---
 
+<!-- section_id: "4a302ac6-1a31-4963-8108-2754d2344007" -->
 ## Overview
 
 ```
@@ -121,8 +122,10 @@ resource_name: "context_flow"
 
 ---
 
+<!-- section_id: "b48a8402-f62f-4ec0-8c85-b82b2c002c4e" -->
 ## Flow by Action Type
 
+<!-- section_id: "28641d06-bec4-4002-b45c-4c12f45c9490" -->
 ### Starting Work in a Directory
 
 ```
@@ -156,6 +159,7 @@ resource_name: "context_flow"
 └─────────────────────────┘                    └─────────────────────────┘
 ```
 
+<!-- section_id: "45214b8f-25b3-4c3b-ae2d-7da3321dd9d4" -->
 ### Creating a New Entity
 
 ```
@@ -188,6 +192,7 @@ resource_name: "context_flow"
 └─────────────────────────┘                    └─────────────────────────┘
 ```
 
+<!-- section_id: "1f05304f-2660-468b-820c-34fec7c34ffa" -->
 ### Entering a Stage
 
 ```
@@ -219,6 +224,7 @@ resource_name: "context_flow"
 
 ---
 
+<!-- section_id: "b36b87c6-0b58-4b8c-8c73-4a4e5475a72f" -->
 ## Loading Sequence Summary
 
 | Phase | What | When | Status |
@@ -228,6 +234,7 @@ resource_name: "context_flow"
 | 3 | Trigger-based context | Specific actions | ⚠️ Not enforced |
 | 4 | On-demand via nav: | Agent discretion | ⚠️ Optional |
 
+<!-- section_id: "3a779990-4999-4a77-92d4-5f0955c4e2f1" -->
 ## Gaps to Address
 
 1. **No index.jsonld auto-loading** - Agent must explicitly read it

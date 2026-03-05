@@ -10,12 +10,14 @@ resource_name: "README"
 
 ---
 
+<!-- section_id: "e7002541-b6ba-49e4-9437-6e1c5188ddaf" -->
 ## Core Question
 
 > "How do agents coordinate in practice?"
 
 ---
 
+<!-- section_id: "8c4e1a8a-919e-40f5-b0b5-747fa09bb3df" -->
 ## Description
 
 Beyond the delegation model (who does what) and memory integration (what each agent knows), agents need practical coordination mechanisms. This branch defines the hierarchy of agents, the rules for when and how to spawn new agents, and the communication channels agents use to share information.
@@ -27,6 +29,7 @@ The three failure modes without coordination patterns:
 
 ---
 
+<!-- section_id: "c0b88de7-00c2-4657-be65-581aa85460d5" -->
 ## Child Needs
 
 | Need | Question | Description |
@@ -37,6 +40,7 @@ The three failure modes without coordination patterns:
 
 ---
 
+<!-- section_id: "be660327-e947-49fb-bdec-f90029b6fc8e" -->
 ## Key Insight
 
 Coordination patterns mirror the layer-stage hierarchy itself. The entity tree defines the management tree. Stages define work boundaries. The existing layer-stage structure is not just an organizational pattern -- it is the coordination pattern. The challenge is making this implicit structure explicit in agent behavior.

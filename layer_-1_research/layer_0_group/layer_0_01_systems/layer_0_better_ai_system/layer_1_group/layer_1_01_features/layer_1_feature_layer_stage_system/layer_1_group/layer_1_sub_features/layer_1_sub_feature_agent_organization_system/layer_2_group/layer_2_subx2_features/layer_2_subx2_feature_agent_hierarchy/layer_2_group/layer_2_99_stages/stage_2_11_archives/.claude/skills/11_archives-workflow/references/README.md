@@ -8,6 +8,7 @@ resource_name: "README"
 
 Place reference documents, templates, and examples here.
 
+<!-- section_id: "c116d9e2-4865-4139-9ac9-851bff665e1c" -->
 ## Suggested Contents
 - Templates for 11_archives outputs
 - Examples of good 11_archives work

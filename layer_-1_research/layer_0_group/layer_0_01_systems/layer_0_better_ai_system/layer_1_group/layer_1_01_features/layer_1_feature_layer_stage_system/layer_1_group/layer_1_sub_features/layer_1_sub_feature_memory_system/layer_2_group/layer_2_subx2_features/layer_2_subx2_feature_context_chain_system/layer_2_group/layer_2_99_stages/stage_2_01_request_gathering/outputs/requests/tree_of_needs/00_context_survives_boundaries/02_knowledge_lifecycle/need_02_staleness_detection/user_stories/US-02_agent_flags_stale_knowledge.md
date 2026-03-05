@@ -13,6 +13,7 @@ resource_name: "US-02_agent_flags_stale_knowledge"
 **I want** the AI to detect when a knowledge file's sources have been updated since the knowledge was written,
 **So that** the AI warns me instead of silently acting on outdated information.
 
+<!-- section_id: "fff37233-97b2-41de-bb9a-1727002e7145" -->
 ### What Happens
 
 1. AI reads a knowledge file as part of normal context loading
@@ -20,6 +21,7 @@ resource_name: "US-02_agent_flags_stale_knowledge"
 3. If sources are newer than the knowledge file, AI flags it as potentially stale
 4. AI warns the user: "This knowledge file may be outdated -- source was updated on [date]. Should I re-read the source directly?"
 
+<!-- section_id: "0a405ddf-c065-4710-a8b4-335ce3164e2a" -->
 ### Acceptance Criteria
 
 - Agent can compare knowledge file date against source file dates

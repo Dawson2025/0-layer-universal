@@ -5,6 +5,7 @@ resource_name: "01_problem_statement"
 ---
 # Problem Statement: Memory System for the Layer-Stage Framework
 
+<!-- section_id: "0d3d1f0e-b093-4e98-922e-599bd79c7cc8" -->
 ## The Core Problem
 
 The layer-stage framework currently has memory mechanisms that evolved organically — CLAUDE.md context chains, auto-memory files, episodic memory stubs, status.json tracking — but lacks a **deliberate, unified memory architecture**. Each mechanism was added to solve an immediate need without a holistic design. The result:
@@ -15,6 +16,7 @@ The layer-stage framework currently has memory mechanisms that evolved organical
 - **No runtime memory management** — no mechanism for the agent to decide what to load, when to forget, or how to consolidate
 - **AALang specifies ideal behavior that doesn't execute** — the GAB agent defines a 4-mode context loading process (Loading → Validation → Propagation → Delivery) but it's design documentation, not runtime code
 
+<!-- section_id: "591788d0-4426-4954-b974-4fb455f5a09f" -->
 ## What This Means in Practice
 
 1. **Every session starts cold** — The agent must re-read files to rebuild context, even for work it did yesterday
@@ -24,6 +26,7 @@ The layer-stage framework currently has memory mechanisms that evolved organical
 5. **No temporal awareness** — The system can't answer "what were we working on last week?" without manual file reading
 6. **Multi-agent memory doesn't exist** — When multiple agents collaborate (e.g., team workflows), there's no shared memory protocol
 
+<!-- section_id: "e5174d96-0ff1-49b2-b98b-c2e090212c03" -->
 ## The Opportunity
 
 The research in `stage_1_02_research/` has surveyed the full landscape of AI agent memory systems — from cognitive science foundations to production platforms. We now know what's possible. The question is: **what should OUR memory system look like, given our specific constraints and goals?**
@@ -36,6 +39,7 @@ This isn't about building another Mem0 or MemGPT. This is about designing a memo
 
 ---
 
+<!-- section_id: "5c88c6dd-d35c-4309-a9d9-cd6489e24e7d" -->
 ## Sources
 
 - Current system analysis from context chain integration research

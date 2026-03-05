@@ -11,6 +11,7 @@ resource_name: "INSTRUCTIONS_AI_MANAGER_HIERARCHY_SYSTEM"
 
 ---
 
+<!-- section_id: "f5ababce-e9c6-4c40-9e82-5c7541049dc1" -->
 ## 1. Overview
 
 The AI Manager Hierarchy System defines:
@@ -20,6 +21,7 @@ The AI Manager Hierarchy System defines:
 
 ---
 
+<!-- section_id: "bdc6960f-3413-452f-8474-ed84b734d20d" -->
 ## 2. Core Architecture
 
 ```
@@ -65,10 +67,12 @@ The AI Manager Hierarchy System defines:
 
 ---
 
+<!-- section_id: "3d4a93dd-29a4-496d-b140-61e774e6d88b" -->
 ## 3. Agnostic Source
 
 The agnostic source is the **tool-independent** source of truth.
 
+<!-- section_id: "2e36bd7a-58f5-4d95-bd4d-0f64f01bc719" -->
 ### 3.1 Directory Structure
 
 ```
@@ -81,6 +85,7 @@ layer_N_00_ai_manager_system/
     └── conventions.md                # Entity conventions
 ```
 
+<!-- section_id: "32f6a312-9c62-4b8a-bfc4-c14848760f34" -->
 ### 3.2 init_prompt.md Template
 
 ```markdown
@@ -115,10 +120,12 @@ layer_N_00_ai_manager_system/
 
 ---
 
+<!-- section_id: "25548b80-ad31-4909-adcf-d4774331c97e" -->
 ## 4. Tool-Specific Implementations
 
 Each AI tool has its own configuration file(s) at the entity root.
 
+<!-- section_id: "5a3c0ca2-3503-44cc-85bf-82f2df07555d" -->
 ### 4.1 Claude Code
 
 ```
@@ -155,6 +162,7 @@ entity_root/
 [Inherited from parent CLAUDE.md + entity-specific]
 ```
 
+<!-- section_id: "73b354a5-ce89-479e-bb39-2842dacab219" -->
 ### 4.2 Cursor IDE
 
 ```
@@ -179,6 +187,7 @@ entity_root/
 - [Convention 2]
 ```
 
+<!-- section_id: "2597f764-f0ca-4562-b3fa-24e09582c824" -->
 ### 4.3 OpenAI Codex
 
 ```
@@ -186,6 +195,7 @@ entity_root/
 └── AGENTS.md                         # Codex agents configuration
 ```
 
+<!-- section_id: "70a74262-a1ac-4f22-a29d-0b5ccfbdf558" -->
 ### 4.4 Gemini CLI
 
 ```
@@ -195,10 +205,12 @@ entity_root/
 
 ---
 
+<!-- section_id: "87cec1e5-e273-4014-b6e3-e3bcf5ca24dc" -->
 ## 5. Nested Specificity Structure
 
 The `specific/` folder allows for nested, increasingly specific configurations.
 
+<!-- section_id: "2f9543c0-e8f4-464e-a109-ab5b5d433068" -->
 ### 5.1 Full Structure
 
 ```
@@ -253,6 +265,7 @@ specific/
             └── ...
 ```
 
+<!-- section_id: "721d4e38-17b9-4d9c-8c1a-6719c3115f3d" -->
 ### 5.2 Levels Explained
 
 | Level | Folder | Options | Purpose |
@@ -262,6 +275,7 @@ specific/
 | 3 | `coding_app/` | cursor_ide, vscode, jetbrains, rstudio, terminal | IDE-specific |
 | 4 | `ai_app/` | claude_code_cli, codex_cli, gemini_cli, cursor_agent | AI tool-specific |
 
+<!-- section_id: "05d1b4fe-9047-4bcc-ac5c-adf9e328d3d3" -->
 ### 5.3 Configuration Resolution
 
 Navigate down through the levels to find the most specific configuration:
@@ -281,8 +295,10 @@ Configuration is built by:
 
 ---
 
+<!-- section_id: "ba514d83-1dad-4614-a390-51d3da5a9a46" -->
 ## 6. Inheritance Model
 
+<!-- section_id: "a0c92d57-cd87-41b8-848f-c74ebec99424" -->
 ### 6.1 Agnostic → Tool-Specific
 
 ```
@@ -298,6 +314,7 @@ agnostic/init_prompt.md
 - **@import references**: Tool files reference agnostic source
 - **Build script**: Generate tool files from agnostic source
 
+<!-- section_id: "2a49c479-c768-4c6b-afdf-a5178a9a5af5" -->
 ### 6.2 Entity Inheritance
 
 ```
@@ -322,8 +339,10 @@ Child Entity
 
 ---
 
+<!-- section_id: "6d7e695f-da66-431b-b006-42d17670a162" -->
 ## 7. Tool Configuration Templates
 
+<!-- section_id: "54b6d9df-b779-44c1-a1e6-0248de57a813" -->
 ### 7.1 Claude Code Settings Template
 
 `.claude/settings.json`:
@@ -339,6 +358,7 @@ Child Entity
 }
 ```
 
+<!-- section_id: "c43b20d9-09d9-4701-ab92-74d243d0d576" -->
 ### 7.2 Claude Code Command Template
 
 `.claude/commands/command-name.md`:
@@ -359,6 +379,7 @@ description: What this command does
 3. [Step 3]
 ```
 
+<!-- section_id: "ff9b9b97-22f4-4ce2-9f9c-797271568f1a" -->
 ### 7.3 Claude Code Agent Template
 
 `.claude/agents/agent-name.md`:
@@ -383,6 +404,7 @@ model: sonnet
 [How this agent should behave]
 ```
 
+<!-- section_id: "b2ab8097-8941-4376-aa28-daedbb167696" -->
 ### 7.4 Claude Code Skill Template
 
 `.claude/skills/skill-name/SKILL.md`:
@@ -410,10 +432,12 @@ description: When to use this skill (Claude uses this to decide)
 
 ---
 
+<!-- section_id: "f47bfeec-01f3-4ad6-8c52-d62d6892d653" -->
 ## 8. Implementation at Each Entity
 
 Every entity must have:
 
+<!-- section_id: "62b40a6c-37ce-4850-a08e-fe0aaed812e4" -->
 ### 8.1 At Entity Root
 ```
 entity_root/
@@ -429,6 +453,7 @@ entity_root/
 └── .mcp.json              # Optional
 ```
 
+<!-- section_id: "5ca4d347-f814-42d6-a19e-dacc2a5a0fc0" -->
 ### 8.2 In layer_N/layer_N_00_ai_manager_system/
 ```
 layer_N_00_ai_manager_system/
@@ -442,6 +467,7 @@ layer_N_00_ai_manager_system/
 
 ---
 
+<!-- section_id: "2f29d35c-2c4a-41fb-b6c4-158d2ae70981" -->
 ## 9. Feature: layer_2_feature_ai_manager_hierarchy
 
 This feature (within the layer-stage system) **defines** all of the above patterns.
@@ -469,6 +495,7 @@ layer_2_feature_ai_manager_hierarchy/
 
 ---
 
+<!-- section_id: "767ba0a2-df9c-4b62-a95d-39f5299cbdda" -->
 ## 10. Success Criteria
 
 - [ ] Every entity has `layer_N_00_ai_manager_system/`

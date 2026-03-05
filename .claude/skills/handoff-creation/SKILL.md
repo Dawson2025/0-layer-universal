@@ -11,6 +11,7 @@ description: "Create structured handoff documents to preserve session context ac
 
 # Handoff Creation Skill
 
+<!-- section_id: "6598aa23-9eee-44ff-b989-588a06ca1fbf" -->
 ## WHEN to Use
 - **End of any non-trivial work session** — the agent is about to stop and context will be lost
 - When transitioning work to a different agent (orchestrator spawning children, etc.)
@@ -18,11 +19,13 @@ description: "Create structured handoff documents to preserve session context ac
 - When a complex task is partially complete and will continue in the next session
 - When spawned as a child agent completing a subtask — report results to parent
 
+<!-- section_id: "0c24f425-b92d-42e9-bd17-6c6a96809b07" -->
 ## WHEN NOT to Use
 - Quick tasks that are fully completed (nothing to hand off)
 - The user explicitly says not to create a handoff
 - You're in the middle of active work (handoffs are for session boundaries)
 
+<!-- section_id: "c9df8063-2bc4-4bd6-b8ae-cf51784ee73c" -->
 ## Handoff Document Contents
 
 1. **Current status summary** — what state is the work in?
@@ -32,6 +35,7 @@ description: "Create structured handoff documents to preserve session context ac
 5. **Open questions** — what needs clarification?
 6. **Next steps** — what should the next agent do first?
 
+<!-- section_id: "8ad23638-42b4-4f2a-b190-d2f9d82d9fe9" -->
 ## Steps
 
 1. Review session activity (what was done)
@@ -43,6 +47,7 @@ description: "Create structured handoff documents to preserve session context ac
    - Results to parent: `hand_off_documents/outgoing/to_above/`
    - Tasks to children: `hand_off_documents/outgoing/to_below/`
 
+<!-- section_id: "fdbb931d-421c-4328-a54f-a7fa94bc2ba0" -->
 ## Agnostic System
 
 When creating handoff documents:
@@ -51,6 +56,7 @@ When creating handoff documents:
 - If context was modified during the session, note whether `agnostic-sync.sh` was run
 - If `.1merge/` exists, note any tool-specific override state
 
+<!-- section_id: "54c079c9-636a-4cf3-97f1-1ca086933b29" -->
 ## AALang Reference
 
 The orchestrator's ReportMode handles structured handoff creation.

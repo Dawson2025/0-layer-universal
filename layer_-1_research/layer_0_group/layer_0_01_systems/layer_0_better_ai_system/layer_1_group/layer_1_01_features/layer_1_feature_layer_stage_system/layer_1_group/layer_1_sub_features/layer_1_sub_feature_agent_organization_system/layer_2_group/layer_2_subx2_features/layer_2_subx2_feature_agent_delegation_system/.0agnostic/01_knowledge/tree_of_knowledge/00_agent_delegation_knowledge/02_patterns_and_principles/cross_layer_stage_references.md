@@ -5,12 +5,14 @@ resource_name: "cross_layer_stage_references"
 ---
 # Topic: Cross-Layer Stage References
 
+<!-- section_id: "23a3b3a5-e422-4675-a112-11097c1c2b27" -->
 ## Summary
 
 When content at one layer becomes detailed enough to warrant its own entity (child layer), both layers must maintain **bidirectional references** between their stages. The parent layer's stages contain overviews and summaries pointing down to the child entity's stages where the detailed work lives. The child entity's 0AGNOSTIC.md points up to the parent layer's stages that provide broader context and the original requirements.
 
 This is the three-tier knowledge principle applied recursively across the layer hierarchy: the parent stage is the "pointer tier" for its child's detailed work.
 
+<!-- section_id: "15c8bfe9-7dec-4ad4-8a7e-a3e59f11c2e2" -->
 ## When to Push to a Child Layer
 
 - **Depth of detail**: Multiple files needed, deep investigation required
@@ -18,6 +20,7 @@ This is the three-tier knowledge principle applied recursively across the layer 
 - **Stage breadth**: Needs its own full stage progression (01-11)
 - **Agent specialization**: Needs a specialized agent with domain knowledge
 
+<!-- section_id: "68dc7cbb-8104-4224-a3cb-7aa4b2c59228" -->
 ## Key Points
 
 - Formalized as **Principle 10** in the Stage Delegation Principles
@@ -26,6 +29,7 @@ This is the three-tier knowledge principle applied recursively across the layer 
 - Cross-stage traceability extends across layers: a need at parent → research/design/development at child
 - Without bidirectional references, agents either don't know child layers exist (lost detail) or don't know where their work fits (lost context)
 
+<!-- section_id: "01b9d2f0-bc39-45a5-9406-4886140fcbac" -->
 ## Applied In This Entity
 
 | Parent Stage | Points Down To |
@@ -35,6 +39,7 @@ This is the three-tier knowledge principle applied recursively across the layer 
 | Stage 04 (design) | context_chain_system (all design decisions applied), memory_system & multi_agent_system (design decisions applied) |
 | Stage 06 (development) | context_chain_system (working example, 76 PASS), memory_system & multi_agent_system (use universal artifacts) |
 
+<!-- section_id: "198dc3cf-b84f-477e-8b4a-972752552ee3" -->
 ## References
 
 | What | Where |

@@ -4,6 +4,7 @@ resource_type: "readme
 knowledge"
 resource_name: "README"
 ---
+<!-- section_id: "2c47afb5-59be-4e84-9c45-b9177ff95a04" -->
 ## AI Manager Hierarchy System – Overview
 
 This folder holds short, context-window-friendly overviews of your **AI manager hierarchy system** research.

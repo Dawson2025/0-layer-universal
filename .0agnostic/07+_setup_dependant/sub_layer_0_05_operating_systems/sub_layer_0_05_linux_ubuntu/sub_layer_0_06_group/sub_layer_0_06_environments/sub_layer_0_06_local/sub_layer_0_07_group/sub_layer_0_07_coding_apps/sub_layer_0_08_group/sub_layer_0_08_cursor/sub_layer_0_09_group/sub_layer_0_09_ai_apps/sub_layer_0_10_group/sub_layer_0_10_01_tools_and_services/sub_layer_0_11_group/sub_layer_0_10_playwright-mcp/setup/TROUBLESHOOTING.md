@@ -9,8 +9,10 @@ This guide covers common issues encountered when using Playwright MCP with Claud
 
 ---
 
+<!-- section_id: "3526fa29-640e-4151-b7e0-5ebb96aff787" -->
 ## Browser Not Launching
 
+<!-- section_id: "e9689338-75cd-4636-bf6b-f5445f121c48" -->
 ### Issue: "Browser specified in your config is not installed"
 
 **Symptoms:**
@@ -48,6 +50,7 @@ MCP servers run in isolated environments and do not inherit shell environment va
    python3 scripts/mcp_manager.py --scope user
    ```
 
+<!-- section_id: "4263a01b-c201-4ca8-a512-5301b058087e" -->
 ### Issue: "Could not find expected browser"
 
 **Symptoms:**
@@ -80,8 +83,10 @@ MCP servers run in isolated environments and do not inherit shell environment va
 
 ---
 
+<!-- section_id: "505cfc12-ff0d-4977-9798-8810c82222e5" -->
 ## Browser Already In Use
 
+<!-- section_id: "af3be23d-ca8f-4b59-a9e1-1b0262f71377" -->
 ### Issue: "Browser is already in use"
 
 **Symptoms:**
@@ -122,8 +127,10 @@ See [CONCURRENT_BROWSER_SETUP.md](./CONCURRENT_BROWSER_SETUP.md) for detailed mu
 
 ---
 
+<!-- section_id: "b9ade99d-7da0-4643-9f9c-e9cbcbecddbd" -->
 ## Permission Errors
 
+<!-- section_id: "017b5f52-22e0-4feb-b658-07acc22defcc" -->
 ### Issue: "Permission denied" when launching browser
 
 **Symptoms:**
@@ -155,6 +162,7 @@ See [CONCURRENT_BROWSER_SETUP.md](./CONCURRENT_BROWSER_SETUP.md) for detailed mu
 3. **Run with appropriate user:**
    Ensure you are running as the same user who installed Playwright browsers.
 
+<!-- section_id: "7171ac3a-17a5-403a-adba-2136f29b3481" -->
 ### Issue: "Cannot write to browser profile directory"
 
 **Solutions:**
@@ -172,8 +180,10 @@ See [CONCURRENT_BROWSER_SETUP.md](./CONCURRENT_BROWSER_SETUP.md) for detailed mu
 
 ---
 
+<!-- section_id: "9fc36903-0bde-48cf-b707-24a4fbf31422" -->
 ## Headless vs Headed Mode Issues
 
+<!-- section_id: "6d311618-1a67-4908-8bb9-1ee26d18ff2b" -->
 ### Issue: Browser window does not appear (headed mode)
 
 **Symptoms:**
@@ -220,6 +230,7 @@ Display environment variable not set or X11/Wayland not configured.
    echo $WAYLAND_DISPLAY
    ```
 
+<!-- section_id: "7ff1f459-5e8c-4bc5-8c84-af7ae4963519" -->
 ### Issue: Browser crashes immediately in headed mode (WSLg)
 
 **Cause:**
@@ -231,6 +242,7 @@ Add Ozone platform flags (see above) or use headless mode:
 npx -y @playwright/mcp@latest --headless
 ```
 
+<!-- section_id: "e4e56269-ab10-4058-858c-1b06159d1d85" -->
 ### Issue: Screenshots are blank or incorrect in headless mode
 
 **Solutions:**
@@ -254,8 +266,10 @@ npx -y @playwright/mcp@latest --headless
 
 ---
 
+<!-- section_id: "55625da1-9d70-4181-823d-67efc1458e1d" -->
 ## Path Configuration Problems
 
+<!-- section_id: "72ec48d7-36cc-40bf-8dce-c469b004103c" -->
 ### Issue: "npx: command not found"
 
 **Symptoms:**
@@ -289,6 +303,7 @@ Node.js/npm not in PATH for MCP server process.
    }
    ```
 
+<!-- section_id: "0b3fd6de-22eb-46b7-b48b-f5b64f631b8e" -->
 ### Issue: "PLAYWRIGHT_BROWSERS_PATH not set"
 
 **Solutions:**
@@ -310,8 +325,10 @@ Node.js/npm not in PATH for MCP server process.
 
 ---
 
+<!-- section_id: "86c9a37e-d699-4aaa-8526-0298594ff467" -->
 ## MCP Server Connection Issues
 
+<!-- section_id: "227a5347-4228-4fcf-8fb1-fbe67c45e981" -->
 ### Issue: "MCP server not responding"
 
 **Symptoms:**
@@ -342,6 +359,7 @@ Node.js/npm not in PATH for MCP server process.
    ps aux | grep -E "(npx|playwright|mcp)" | grep -v grep
    ```
 
+<!-- section_id: "4c0f6592-4613-4d37-b985-55085584ad18" -->
 ### Issue: "Cannot connect to browser" after timeout
 
 **Solutions:**
@@ -365,6 +383,7 @@ Node.js/npm not in PATH for MCP server process.
 
 ---
 
+<!-- section_id: "c03dd215-f01a-442e-8617-1f73fe583200" -->
 ## Common Error Messages Reference
 
 | Error Message | Likely Cause | Quick Fix |
@@ -379,6 +398,7 @@ Node.js/npm not in PATH for MCP server process.
 
 ---
 
+<!-- section_id: "0dd12191-29b7-4614-b635-15fe2dca2471" -->
 ## Getting Help
 
 1. **Check Playwright logs:**

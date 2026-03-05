@@ -5,8 +5,10 @@ resource_name: "architecture_decision_reference_chain"
 ---
 # Architecture Decision — Reference Chain & Three-Layer Redundancy Model
 
+<!-- section_id: "07e669e2-7551-4afa-8a1e-fb530ab62c63" -->
 ## Date: 2026-02-07
 
+<!-- section_id: "abe1ddbe-f6cf-4b7a-8ff5-0de10933838b" -->
 ## Decision Summary
 
 The reference chain architecture uses **three redundant layers** to maximize the probability that an agent correctly identifies and invokes the right skills at the right time. No single mechanism is sufficient — the solution is redundancy.
@@ -56,6 +58,7 @@ The reference chain architecture uses **three redundant layers** to maximize the
 
 ---
 
+<!-- section_id: "88a5ed32-0d9f-419c-a103-f820725c299e" -->
 ## Problem Being Solved
 
 **Problem 3: Skills not being used when they should be.**
@@ -66,8 +69,10 @@ No single mechanism fixes this. The question is: what combination of mechanisms 
 
 ---
 
+<!-- section_id: "9ca21b2c-9fc5-429c-80cd-f53ae05ddae8" -->
 ## How We Got Here — Decision Evolution
 
+<!-- section_id: "30e02a37-10d8-4ed4-a20d-785ecad19386" -->
 ### Initial proposal: Pattern B (Skills first)
 
 ```
@@ -76,6 +81,7 @@ CLAUDE.md → references skills → skills reference JSON-LD
 
 **Rejected because**: If skills don't fire (the very problem we're solving), putting them first is circular logic.
 
+<!-- section_id: "d33a0e74-2404-4f25-b441-3aa8ed5a225f" -->
 ### Counter-proposal: Pattern A with jq (JSON-LD first)
 
 ```
@@ -86,18 +92,22 @@ CLAUDE.md contains jq instructions → agent reads JSON-LD → JSON-LD says whic
 
 **Concern**: What if the agent doesn't run the jq command? What if it skips the instruction?
 
+<!-- section_id: "aa6dda2c-66b6-4907-9220-1edf3158cb42" -->
 ### Final architecture: Three-layer redundancy
 
 Use ALL mechanisms. Each layer increases probability of correct behavior. If one fails, the next catches it.
 
 ---
 
+<!-- section_id: "c1f0aaf7-3c5c-411d-a572-3c8304a74284" -->
 ## Layer 1: jq-First (PRIMARY Mechanism)
 
+<!-- section_id: "cb5529f7-c3f9-45d6-9646-a0849bbcc7b1" -->
 ### How It Works
 
 CLAUDE.md contains explicit jq instructions. The agent runs jq against the relevant JSON-LD file, gets back a small, precise output (~50 lines, 2-5% of the full file), and that output tells the agent exactly what mode it's in, what constraints apply, and which skills to use.
 
+<!-- section_id: "edab2743-4171-42de-9f13-c969245e8334" -->
 ### Why This Is More Reliable
 
 | Factor | Skill Description Matching | jq-First Approach |
@@ -108,6 +118,7 @@ CLAUDE.md contains explicit jq instructions. The agent runs jq against the relev
 | **Failure mode** | Agent doesn't recognize situation → skill never fires | Agent skips jq instruction → falls through to Layer 2 |
 | **Agent decision** | "Does this situation match this description?" (vague) | "Run this command and follow its output" (concrete) |
 
+<!-- section_id: "614b4afd-ca96-46ec-8778-6136831fd34e" -->
 ### What CLAUDE.md Instructions Look Like — ALL Layers
 
 **Critical insight**: Every layer needs explicit "read this" instructions in the CLAUDE.md. The agent won't discover skills, `.integration.md` files, or rules on its own unless told to look. The CLAUDE.md must contain triggers for ALL three layers plus rules.
@@ -164,6 +175,7 @@ Read any applicable rules in `.claude/rules/`:
 - Rules (Step 4) provide directory-specific overrides
 ```
 
+<!-- section_id: "bfe73ffd-501a-43ad-a726-b4d4dec88ce3" -->
 ### Per-Layer CLAUDE.md Variants
 
 Not every CLAUDE.md needs all 45 lines. Use the appropriate variant based on depth:
@@ -193,6 +205,7 @@ To discover modes: `jq '."@graph"[] | select(."@type" == "gab:Mode") | {id: ."@i
 Run to see this stage's modes: `jq '."@graph"[] | select(."@type" == "gab:Mode") | {id: ."@id", purpose: .purpose, skills: .skills}' ./stage_agent.gab.jsonld`
 ```
 
+<!-- section_id: "99eaef93-83f3-479d-b131-a9f95f7edd32" -->
 ### What Goes in `.claude/rules/` Files
 
 The `.claude/rules/` files are NOT just hints — they contain explicit instructions to read and use specific resources:
@@ -226,6 +239,7 @@ When working in research directories:
 
 Each rules file serves as BOTH a context injector AND a trigger for the other layers. When the agent enters a matching directory, the rules file tells it: "read the JSON-LD," "check these skills," "read the .integration.md."
 
+<!-- section_id: "b9d2eff4-c17b-4612-b3d8-e1ab0249463d" -->
 ### Cost-Benefit Analysis
 
 | Metric | Value |
@@ -239,8 +253,10 @@ Each rules file serves as BOTH a context injector AND a trigger for the other la
 
 ---
 
+<!-- section_id: "9c9cc63f-3d47-43fe-848c-bc1295bdae44" -->
 ## Layer 2: Skill Descriptions (FALLBACK Mechanism)
 
+<!-- section_id: "bf8a9fce-4b3e-45b3-be7d-3d6c9348d3e3" -->
 ### How It Works
 
 Layer 2 is NOT just passive probabilistic matching. The CLAUDE.md instructions (Step 2) **explicitly tell the agent to read through SKILL.md files** and match their WHEN/WHEN NOT conditions to the current task. This makes skill discovery active, not passive.
@@ -249,6 +265,7 @@ Two sub-mechanisms:
 1. **Active discovery** (from CLAUDE.md Step 2): Agent reads SKILL.md files, evaluates WHEN/WHEN NOT conditions
 2. **Passive matching** (Claude Code native): Skill descriptions in system prompt, matcher runs automatically
 
+<!-- section_id: "0389ced8-949a-496c-8548-bc65ff05d876" -->
 ### What Good Skill Descriptions Look Like
 
 The precision from JSON-LD mode transitions informs these descriptions at design-time:
@@ -263,6 +280,7 @@ description: |
 ---
 ```
 
+<!-- section_id: "38b2ec53-af12-47f0-9971-de95e6e7b4ef" -->
 ### Why This Is a Fallback, Not Primary
 
 - Passive skill matching is probabilistic — the LLM decides based on description similarity
@@ -273,8 +291,10 @@ description: |
 
 ---
 
+<!-- section_id: "1c1bec6e-69ad-4475-8a43-03374e0efe42" -->
 ## Layer 3: Transpiled Markdown (SECOND FALLBACK Mechanism)
 
+<!-- section_id: "6639fb2e-be02-49bd-bc29-da447ab9ffe0" -->
 ### The Transpiler Concept
 
 A **transpiler** converts JSON-LD definitions into optimized markdown — the `.integration.md` files. But instead of writing these manually (which causes sync drift), they are **auto-generated from the JSON-LD source of truth**.
@@ -288,6 +308,7 @@ A **transpiler** converts JSON-LD definitions into optimized markdown — the `.
 └─────────────────────────┘      └──────────────────────┘      └─────────────────────┘
 ```
 
+<!-- section_id: "fdefbb56-44b0-4826-b2d9-6616f4c838f7" -->
 ### What the Transpiler Produces
 
 Given `layer_0_orchestrator.gab.jsonld` (701 lines), the transpiler would produce something like:
@@ -338,6 +359,7 @@ AggregationMode → ReportMode: when merge complete AND confidence > 0.8
 - **Transpiler**: `tools/jsonld-to-md.sh`
 ```
 
+<!-- section_id: "af9cc242-2f24-462c-a7bc-14ab564ad5bc" -->
 ### Why This Is Valuable as a Third Layer
 
 1. **Format the LLM reads best**: Markdown with tables scores highest for LLM accuracy (per KG-LLM-Bench research)
@@ -346,6 +368,7 @@ AggregationMode → ReportMode: when merge complete AND confidence > 0.8
 4. **No tool calls needed**: The agent can Read the file directly — no jq, no Bash, just the Read tool
 5. **Catches the case where jq doesn't run AND skills don't match**: The agent can still find the `.integration.md` companion file and get precise instructions
 
+<!-- section_id: "2a785277-2bcf-414a-8b56-fe91186a4c9e" -->
 ### When Layer 3 Activates
 
 - Agent is exploring the system (not yet in a task-specific workflow)
@@ -353,6 +376,7 @@ AggregationMode → ReportMode: when merge complete AND confidence > 0.8
 - Agent explicitly reads a CLAUDE.md that says "See: orchestrator.integration.md"
 - A path-specific rule references the .integration.md file
 
+<!-- section_id: "d0d2f4c6-5246-429f-9f28-cdc0db53b3a1" -->
 ### Transpiler Design
 
 The transpiler could be:
@@ -393,6 +417,7 @@ jq -r '."@graph"[] | select(."@id" | test("StateActor")) | "| \(."@id") | \(.pur
 
 **Recommended**: Start with Option A (shell script), evolve to Option C (skill) when the pattern is proven.
 
+<!-- section_id: "0998f07f-8e90-47b4-9f2b-e4316c4be178" -->
 ### Transpiler Integration with Build/Commit Workflow
 
 To keep `.integration.md` files always in sync:
@@ -413,10 +438,12 @@ On entity-creation (creating new layer/stage/sub-layer):
 
 ---
 
+<!-- section_id: "4b1fff0c-1c12-4107-b48b-09cd7ad0b5c9" -->
 ## How the Three Layers Work Together
 
 **Key design**: CLAUDE.md contains explicit "read this" instructions for ALL layers, not just Layer 1. The agent is told to: run jq (Layer 1), read SKILL.md files (Layer 2), read .integration.md (Layer 3), AND check .claude/rules/. Every layer has its own trigger.
 
+<!-- section_id: "1767ae18-df1f-455a-850e-9deeddafd744" -->
 ### Best case: Agent follows all steps
 
 ```
@@ -432,6 +459,7 @@ On entity-creation (creating new layer/stage/sub-layer):
    → Maximum confidence in correct action
 ```
 
+<!-- section_id: "90054b2b-4fdd-4465-8138-f11d83a8d120" -->
 ### Partial failure: Agent skips some steps
 
 ```
@@ -452,6 +480,7 @@ OR:
    → Correct behavior (Layer 3 sufficient)
 ```
 
+<!-- section_id: "ffa3343d-67d4-46bf-a6aa-47fe54735656" -->
 ### Path-specific rules as catch-all
 
 ```
@@ -461,6 +490,7 @@ OR:
    → Even if the agent didn't follow CLAUDE.md steps, the rules re-trigger them
 ```
 
+<!-- section_id: "37df5c8e-2cf5-4ed7-9881-933431ab1628" -->
 ### Complete failure: None fire
 
 ```
@@ -473,6 +503,7 @@ The model provides **multiple independent triggers** for each layer. Even if the
 
 ---
 
+<!-- section_id: "4a2a426a-6483-4c68-b374-6e78fb1e936b" -->
 ## Comparison to Current State
 
 | Metric | Current (no redundancy) | Three-Layer Model |
@@ -487,6 +518,7 @@ The model provides **multiple independent triggers** for each layer. Even if the
 
 ---
 
+<!-- section_id: "6fa37307-bdac-4407-88ce-14dc2a7eb88c" -->
 ## Implementation Sequence
 
 1. **Write jq instructions for CLAUDE.md** — draft the 20-25 lines, test in a real session
@@ -498,6 +530,7 @@ The model provides **multiple independent triggers** for each layer. Even if the
 
 ---
 
+<!-- section_id: "0258f610-1987-4ef4-ade3-ce4a5e218814" -->
 ## Open Questions
 
 1. **How often will agents actually run jq?** — Needs real-world testing. If agents reliably follow "run this command" instructions in CLAUDE.md, Layer 1 may be sufficient alone.

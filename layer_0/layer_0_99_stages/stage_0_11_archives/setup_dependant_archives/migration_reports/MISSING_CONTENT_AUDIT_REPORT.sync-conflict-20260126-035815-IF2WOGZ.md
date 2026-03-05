@@ -8,6 +8,7 @@ resource_name: "MISSING_CONTENT_AUDIT_REPORT.sync-conflict-20260126-035815-IF2WO
 Date: 2026-01-09
 Scope: sublayers 0.06–0.14 vs unified hierarchy in `0.01_universal_setup_file_tree_0/`
 
+<!-- section_id: "bfa4b823-f4ee-4a72-9e8b-4abab5cb0cac" -->
 ## Baseline Snapshot
 
 Original sublayer file counts (commit `d64c065`):
@@ -27,6 +28,7 @@ Current hierarchy file count (HEAD filesystem): 292
 
 Git history validated: `3c687b8`, `d64c065`, `3dda597`, `e505fbc` are present in the repo at `/home/dawson/dawson-workspace/code/0_ai_context`.
 
+<!-- section_id: "98737bb0-27c3-4ba4-9e3b-ed4a6817aa2f" -->
 ## Missing Files (Git-based Diff)
 
 Baseline basename diff against the current hierarchy shows missing `README.md`/`README.md.backup` variants from the old sublayer roots.
@@ -42,11 +44,13 @@ Original paths include:
 - `0_context/layer_0/0.02_sub_layers/sub_layer_0_14_agent_setup/README.md.backup`
 Additional legacy README variants in the old sublayers (AI models, universal tools) were also outside the hierarchy.
 
+<!-- section_id: "769d4599-cd1b-47f1-8615-fea74ceb8e07" -->
 ## Root Cause Analysis
 
 - Several root-level README/README.md.backup files were intentionally excluded from the hierarchy during consolidation to avoid duplicate legacy overviews.
 - Some backup files were renamed into canonical README files during integration (see `e505fbc` rename entries), but the raw legacy variants were not preserved in the hierarchy.
 
+<!-- section_id: "c400ae5e-be2b-42db-9dae-2b038fb2a7b8" -->
 ## Recovery Plan and Execution
 
 1) Restored previously missing MCP docs in the hierarchy:
@@ -69,12 +73,14 @@ Artifacts used:
 - Source: git history (commit `d64c065`) for legacy sublayer READMEs
 - Source: filesystem copy for the two MCP docs
 
+<!-- section_id: "0c19898b-eb30-4822-af6a-585e5592ed9a" -->
 ## Verification
 
 - Every file from `d64c065` in sublayers 0.06–0.14 is either mapped into the hierarchy or preserved in `legacy_sublayer_readmes/`.
 - Restored MCP docs exist in the hierarchy at:
   `0.01_universal_setup_file_tree_0/0.05_operating_systems/_shared/0.06_environments/_shared/0.07_coding_apps/_shared/0.09_ai_apps/_shared/0.10_mcp_servers_and_apis_and_secrets/_shared/0.02_mcp_config_options_0_file_tree_0/0.03_operating_systems/wsl/0.04_ai_apps/claude_code_cli/0.05_mcp_servers/claude_in_chrome/`
 
+<!-- section_id: "06e9169d-48a4-4f41-8f2c-ceb636eebf7d" -->
 ## Follow-ups
 
 - Decide whether the legacy README archive should stay or be merged into the hierarchy over time.

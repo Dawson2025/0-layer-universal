@@ -5,6 +5,7 @@ resource_name: "STRUCTURE_VISUALIZATION.sync-conflict-20260126-035816-IF2WOGZ"
 ---
 # Universal Setup File Tree Structure Visualization
 
+<!-- section_id: "48a332d9-48a5-4767-b338-06b75693dbd7" -->
 ## Complete Hierarchy
 
 ```
@@ -70,8 +71,10 @@ resource_name: "STRUCTURE_VISUALIZATION.sync-conflict-20260126-035816-IF2WOGZ"
             └── (mirrors _shared structure with WSL-specific content)
 ```
 
+<!-- section_id: "66703c92-3618-4eed-be2c-d823954aa7a3" -->
 ## Navigation Examples
 
+<!-- section_id: "477b4794-3863-4a62-b111-0255aefedd3c" -->
 ### Example 1: Universal Git Setup (All Platforms, All Environments)
 
 **Path**:
@@ -86,6 +89,7 @@ resource_name: "STRUCTURE_VISUALIZATION.sync-conflict-20260126-035816-IF2WOGZ"
 
 **Use case**: Setup instructions that work for Git on any OS, any environment, any coding app
 
+<!-- section_id: "17a13f4b-0c4c-4f69-985c-1ec822bbaaa9" -->
 ### Example 2: Linux + Cursor + Cursor Agent + Playwright MCP
 
 **Path**:
@@ -100,6 +104,7 @@ resource_name: "STRUCTURE_VISUALIZATION.sync-conflict-20260126-035816-IF2WOGZ"
 
 **Use case**: Specific setup for Playwright MCP on Linux with Cursor IDE and Cursor Agent
 
+<!-- section_id: "640feb94-3570-4445-82e4-7d12ac8e7820" -->
 ### Example 3: macOS + VS Code + Claude Code CLI + Browser MCP
 
 **Path**:
@@ -114,6 +119,7 @@ resource_name: "STRUCTURE_VISUALIZATION.sync-conflict-20260126-035816-IF2WOGZ"
 
 **Use case**: Specific setup for Browser MCP on macOS with VS Code and Claude Code CLI
 
+<!-- section_id: "ebac4704-5b6f-4a53-8b3a-99de3422c029" -->
 ### Example 4: Core MCP Issues (Any Configuration)
 
 **Path**:
@@ -128,28 +134,34 @@ resource_name: "STRUCTURE_VISUALIZATION.sync-conflict-20260126-035816-IF2WOGZ"
 
 **Use case**: MCP server issues that affect multiple servers (tool exposure, env vars, etc.)
 
+<!-- section_id: "b9bebd65-6793-49bb-9ba1-34a5ad99f5f1" -->
 ## Key Design Principles
 
+<!-- section_id: "65b2d39d-5801-4cd0-a25f-6311f8f38662" -->
 ### 1. Hierarchical Navigation
 - Start at the most general level (OS)
 - Navigate down through increasingly specific choices
 - Each level represents a configuration dimension
 
+<!-- section_id: "e8d4814b-7d82-47d7-ae2a-fd29af233faa" -->
 ### 2. Shared Folders at Every Level
 - `_shared/` folders contain documentation that applies to all options at that level
 - Example: `0.06_environments/_shared/` = works in dev, prod, and testing environments
 - Allows for maximum reuse while supporting specific overrides
 
+<!-- section_id: "a3aad17c-895c-4131-8962-f8374394b404" -->
 ### 3. Symmetric Structure
 - Each OS can have the complete hierarchy underneath it
 - Maintains consistent navigation regardless of starting point
 - Easy to add new options at any level
 
+<!-- section_id: "9cd5aae4-04ee-4b52-9643-12096548715a" -->
 ### 4. Terminal Nodes
 - `general_setup_and_config/` folders are the "leaves" of the tree
 - Contain actual setup instructions, configuration examples, and issue documentation
 - Each path combination has its own setup documentation
 
+<!-- section_id: "3ede16a9-b3fc-4d98-876a-2b2c2ad40957" -->
 ### 5. Cross-References
 - README files at each level link to related sublayers
 - Avoids duplication by referencing detailed docs in:
@@ -164,8 +176,10 @@ resource_name: "STRUCTURE_VISUALIZATION.sync-conflict-20260126-035816-IF2WOGZ"
   - sub_layer_0_13_universal_protocols
   - sub_layer_0_14_agent_setup
 
+<!-- section_id: "fcea8190-e01a-489e-a9c0-3bbf640ff976" -->
 ## Adding New Options
 
+<!-- section_id: "d209ddb2-cc40-42a5-91dc-28cb44cb0ef2" -->
 ### To add a new OS:
 ```bash
 mkdir -p 0.05_operating_systems/<new_os>/0.06_environments/
@@ -173,6 +187,7 @@ mkdir -p 0.05_operating_systems/<new_os>/0.06_environments/
 # Customize for the new OS
 ```
 
+<!-- section_id: "c8ea008a-5978-4314-a5c2-acc328ef2c54" -->
 ### To add a new coding app:
 ```bash
 mkdir -p 0.05_operating_systems/_shared/0.06_environments/_shared/0.07_coding_apps/<new_app>/0.09_ai_apps/
@@ -180,12 +195,14 @@ mkdir -p 0.05_operating_systems/_shared/0.06_environments/_shared/0.07_coding_ap
 # Customize for the new coding app
 ```
 
+<!-- section_id: "73b0576b-e649-486d-896b-a77c5b6e35f3" -->
 ### To add a new MCP server:
 ```bash
 mkdir -p 0.05_operating_systems/_shared/0.06_environments/_shared/0.07_coding_apps/_shared/0.09_ai_apps/_shared/0.10_mcp_servers_and_apis_and_secrets/<new_server>/general_setup_and_config/
 # Add setup documentation for the new server
 ```
 
+<!-- section_id: "8fbe343b-adc2-415b-a343-a77229842e57" -->
 ## Relationship to Other Sublayers
 
 This file tree acts as a **navigational index and quick reference** that complements the detailed documentation in individual sublayers:

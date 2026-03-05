@@ -14,6 +14,7 @@ The Feature layer inherits Universal (L0) and Project (L1) constraints and adds 
 - [`architecture.md`](../../-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/architecture.md) – Feature-level responsibilities and decomposition
 - [`parallel_execution.md`](../../-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/parallel_execution.md) – Parallelizing feature work across components
 
+<!-- section_id: "cec8ef45-3143-4dcd-87f8-0b11d2c81fa8" -->
 ## Directory Structure
 
 ```
@@ -31,10 +32,12 @@ The Feature layer inherits Universal (L0) and Project (L1) constraints and adds 
 └── README.md
 ```
 
+<!-- section_id: "2b38970c-2107-4865-bd0a-d21c74245288" -->
 ## Manager + Handoff (layer_2/)
 - layer_2_00_ai_manager_system: feature manager docs/configs.
 - layer_2_01_manager_handoff_documents: `2.00_to_universal/` and `2.01_to_specific/` for up/downstream handoffs.
 
+<!-- section_id: "76b228b1-e046-4f00-9d45-98a1c339ebd3" -->
 ## Slots (stored under `layer_2/layer_2_02_sub_layers/` as `sub_layer_2.xx_*`)
 - sub_layer_2.01_basic_prompts: feature init + what-to-do-next.
 - sub_layer_2.02_feature_knowledge: domain/UX/business knowledge specific to this feature.
@@ -49,6 +52,7 @@ The Feature layer inherits Universal (L0) and Project (L1) constraints and adds 
 - sub_layer_2.11_feature_tools: scripts/migrations/backfills specific to this feature.
 - sub_layer_2.12_feature_agent_setup: feature-specific agent configuration with model fallbacks (depends on 2.08, 2.09, 2.10, 2.11).
 
+<!-- section_id: "3d3642c3-9643-42d3-bded-288e5e784b6e" -->
 ## Feature AI Setup Dependency Chain (2.08–2.12)
 
 The slots 2.08–2.12 form a dependency chain for feature-level AI agent setup:
@@ -60,6 +64,7 @@ The slots 2.08–2.12 form a dependency chain for feature-level AI agent setup:
 
 Configure these in order when setting up feature-specific AI environments.
 
+<!-- section_id: "a8a7ce9e-deac-463f-ae21-cefd05766144" -->
 ## Nested Content Directories (layer_3/)
 
 **Same-Type Nesting Rule:** The "sub" prefix applies when nesting the same type. Since a feature inside a feature is same-type nesting, sub-features and sub-components here DO use the "sub" prefix.
@@ -67,6 +72,7 @@ Configure these in order when setting up feature-specific AI environments.
 - layer_3/layer_3_subx3_features/: Sub-features within this feature (feature→feature = same-type, uses "sub")
 - layer_3/layer_3_sub_components/: Sub-components within this feature (in feature context, uses "sub")
 
+<!-- section_id: "f8050760-220c-43c8-9b10-9e7c1311fdec" -->
 ## Stages (layer_2/layer_2_99_stages/, folders named `stage_2.xx_*`)
 - stage_2.00_request_gathering
 - stage_2.01_instructions

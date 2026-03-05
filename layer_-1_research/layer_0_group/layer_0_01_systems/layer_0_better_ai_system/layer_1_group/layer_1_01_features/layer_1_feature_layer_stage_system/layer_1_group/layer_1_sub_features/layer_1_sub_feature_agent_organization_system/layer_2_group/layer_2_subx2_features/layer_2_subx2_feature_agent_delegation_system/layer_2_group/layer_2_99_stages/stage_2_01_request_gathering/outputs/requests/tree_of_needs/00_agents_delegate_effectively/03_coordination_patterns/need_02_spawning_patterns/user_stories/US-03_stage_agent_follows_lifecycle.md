@@ -13,6 +13,7 @@ resource_name: "US-03_stage_agent_follows_lifecycle"
 **I want** stage agents to follow a defined lifecycle (read identity, do work, write report, exit),
 **So that** the stage is ready for the next agent or the next session without cleanup.
 
+<!-- section_id: "83832f29-0a6a-4668-8ca6-1e194bda6184" -->
 ### What Happens
 
 1. User tells the AI to work on a stage
@@ -21,6 +22,7 @@ resource_name: "US-03_stage_agent_follows_lifecycle"
 4. Stage agent writes a `stage_report.md` before exiting
 5. Stage is left in a clean, documented state for the next agent
 
+<!-- section_id: "b4cd73dc-99d7-4253-9b9b-505eb2cedbfb" -->
 ### Acceptance Criteria
 
 - Stage agent follows the lifecycle steps in order: read -> work -> report -> exit

@@ -5,8 +5,10 @@ resource_name: "agent_teams_convergence"
 ---
 # Agent Teams + Layer-Stage Convergence
 
+<!-- section_id: "7ef4df85-d851-4f03-b658-6baa77f44493" -->
 ## The Two Systems
 
+<!-- section_id: "20ad263d-70a8-452d-9dfe-53b086fff36c" -->
 ### Claude Code Agent Teams
 
 **What it provides**:
@@ -22,6 +24,7 @@ resource_name: "agent_teams_convergence"
 - Pre-configured roles — agents start fresh each time with no pre-built context
 - Cross-session continuity — no hand-off mechanism between team sessions
 
+<!-- section_id: "5933b934-e845-4cc5-a7de-f56723571e83" -->
 ### Layer-Stage System
 
 **What it provides**:
@@ -40,6 +43,7 @@ resource_name: "agent_teams_convergence"
 
 ---
 
+<!-- section_id: "0a49fce6-472d-4930-9469-f918ae434a44" -->
 ## The Convergence Goal
 
 Combine both systems so that:
@@ -64,8 +68,10 @@ Combine both systems so that:
 
 ---
 
+<!-- section_id: "3e5c246e-5ce9-4d26-a84f-a5692732cf04" -->
 ## How It Could Work
 
+<!-- section_id: "43cb5e3d-e590-4c35-b567-d65afdc88df2" -->
 ### Team Creation from Layer Structure
 
 ```
@@ -86,6 +92,7 @@ Team is created with:
 Each agent starts with full context from its layer.
 ```
 
+<!-- section_id: "7b79eeef-b67d-4166-a047-b98e91e05865" -->
 ### Session Persistence via Hand-Off Documents
 
 ```
@@ -105,6 +112,7 @@ Next team session starts:
 └── Module 03 agent reads status_6.json → resumes from where it stopped
 ```
 
+<!-- section_id: "876f4306-7bfd-4f0c-8db1-c39d7ab2d315" -->
 ### AALang Orchestrator as Team Coordinator
 
 Instead of Agent Teams' default coordination, the team lead uses the AALang orchestrator pattern:
@@ -120,8 +128,10 @@ Team Lead (loads layer_0_orchestrator.gab.jsonld):
 
 ---
 
+<!-- section_id: "1e489aee-d5e1-4825-a36b-80b50493cbfd" -->
 ## Implementation Considerations
 
+<!-- section_id: "9c7085fd-df06-4c64-b849-294800b51153" -->
 ### What Claude Code Agent Teams Supports Today
 
 Based on the current Agent Teams API:
@@ -131,6 +141,7 @@ Based on the current Agent Teams API:
 - `SendMessage` — inter-agent messaging (DM, broadcast, shutdown)
 - Teammates go idle between turns and can be re-activated
 
+<!-- section_id: "ff78f528-f452-485e-8ab4-3720e1fbc3a6" -->
 ### What We'd Need to Build
 
 1. **Layer-aware team creation**: A script or skill that reads the layer structure and creates a team with agents pre-loaded with their layer context
@@ -143,6 +154,7 @@ Based on the current Agent Teams API:
 
 5. **Orchestrator integration**: A way to make the team lead follow the AALang orchestrator pattern instead of ad-hoc coordination
 
+<!-- section_id: "c6ea6edd-634c-4df4-8c45-c1cb9dcc467b" -->
 ### What Might Not Be Possible (Yet)
 
 - **Persistent agent instances**: Agent Teams terminates agents when the team is deleted. We can persist context via files, but we can't keep the actual agent process alive.
@@ -153,20 +165,24 @@ Based on the current Agent Teams API:
 
 ---
 
+<!-- section_id: "0b984b13-345f-4a8b-8d6e-7ab638ebfd33" -->
 ## Phased Implementation
 
+<!-- section_id: "7f59aa3a-9590-47bf-b5e8-f152d01cc04c" -->
 ### Phase 1: Manual Bridge
 - Manually create teams that correspond to layer structure
 - Include layer CLAUDE.md paths in agent prompts
 - After team session, manually write hand-off documents
 - Test whether layer context actually improves agent behavior
 
+<!-- section_id: "b78a77ae-16c9-41b0-9a5f-5f4dea13e322" -->
 ### Phase 2: Automated Scripts
 - Build scripts that create teams from layer structure
 - Build scripts that sync task results to hand-off documents
 - Build scripts that sync status between Agent Teams and status.json
 - Create skills that automate the bridge
 
+<!-- section_id: "98d88179-7da1-4414-9678-d9feb3e21c07" -->
 ### Phase 3: AALang-Driven Teams
 - Team lead loads and follows the AALang orchestrator pattern
 - Skill router determines which agents to spawn and when
@@ -174,6 +190,7 @@ Based on the current Agent Teams API:
 
 ---
 
+<!-- section_id: "95458c0c-f9e0-4f09-b8fe-5c7f16d934ba" -->
 ## Open Questions
 
 1. **Can Agent Teams agents read arbitrary files on startup?** If we include a CLAUDE.md path in the agent prompt, does Claude Code's CLAUDE.md chain traversal kick in for that agent?

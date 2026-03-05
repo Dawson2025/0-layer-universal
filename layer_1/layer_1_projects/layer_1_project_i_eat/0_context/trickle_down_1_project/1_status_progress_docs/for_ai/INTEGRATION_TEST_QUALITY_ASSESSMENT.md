@@ -9,6 +9,7 @@ resource_name: "INTEGRATION_TEST_QUALITY_ASSESSMENT"
 
 ---
 
+<!-- section_id: "a360250d-bd16-47fb-a294-cf5680bf2ee5" -->
 ## 🎯 Direct Answer: YES - Quality is GOOD, Needs Minor Refinements
 
 **Current State:**
@@ -22,8 +23,10 @@ resource_name: "INTEGRATION_TEST_QUALITY_ASSESSMENT"
 
 ---
 
+<!-- section_id: "3be24594-ea4a-4d78-bd1f-4ae98b3fd816" -->
 ## 📊 Integration Test Inventory
 
+<!-- section_id: "f0a50a46-2eea-478e-a106-73336521b1bd" -->
 ### What We Have (76 tests)
 
 **By Feature:**
@@ -43,6 +46,7 @@ Existing Legacy:            8 tests (8 passing - 100%) ⭐ EXCELLENT
 TOTAL: 76 tests, ~60% pass rate
 ```
 
+<!-- section_id: "336922f6-5671-446d-b7e1-1c6c9830ef4d" -->
 ### Quality Indicators
 
 #### ✅ STRENGTHS
@@ -100,6 +104,7 @@ TOTAL: 76 tests, ~60% pass rate
 
 ---
 
+<!-- section_id: "4179023a-a70a-41e0-9729-02e22be704ae" -->
 ## 📈 Integration Test Quality Score
 
 | Criterion | Score | Notes |
@@ -116,8 +121,10 @@ TOTAL: 76 tests, ~60% pass rate
 
 ---
 
+<!-- section_id: "3ccd5efb-a9b3-4977-91d2-fa5289da72bb" -->
 ## 🎯 Comparison to Industry Standards
 
+<!-- section_id: "f16548c6-2ea5-4be3-9bfa-b8c260137abf" -->
 ### Good Integration Tests Should:
 
 | Criterion | Industry Standard | Our Tests | Status |
@@ -137,8 +144,10 @@ TOTAL: 76 tests, ~60% pass rate
 
 ---
 
+<!-- section_id: "d060637f-f003-42c4-9ed0-4e41c8fb65d8" -->
 ## 💡 What Makes Our Integration Tests Good
 
+<!-- section_id: "5b319100-aceb-495a-a356-89752b98ede7" -->
 ### 1. They Test Real Behavior
 
 **Example: TTS Integration Test**
@@ -160,6 +169,7 @@ def test_us055_play_full_word_pronunciation(tts_client):
 
 **This is EXACTLY what integration tests should do!**
 
+<!-- section_id: "1acb09a9-4f31-4699-b1e7-1cca095e6d40" -->
 ### 2. They Use Fixtures Correctly
 
 **Example: Multi-Syllable Fixture**
@@ -179,6 +189,7 @@ def multisyllable_client(tmp_path, monkeypatch):
 - ✅ Automatic cleanup
 - ✅ Reusable fixture
 
+<!-- section_id: "7c11bb93-5111-458e-9639-435fc69e9e65" -->
 ### 3. They Test User Workflows
 
 **Example: Multi-Syllable Creation**
@@ -198,8 +209,10 @@ def test_tts_during_multi_syllable_creation(multisyllable_client):
 
 ---
 
+<!-- section_id: "530e3355-c555-4530-85f2-022f7c7066a0" -->
 ## 🔧 How to Make Them EXCELLENT
 
+<!-- section_id: "f980d8e6-64ce-4b29-8f21-d3300e639bef" -->
 ### Fix #1: Centralize Fixtures (PRIORITY 1)
 
 Create `/tests/conftest.py`:
@@ -213,6 +226,7 @@ def authenticated_client(tmp_path, monkeypatch):
 
 **Benefit:** Eliminate ~400 lines of duplicated code
 
+<!-- section_id: "67e4da02-6403-4487-a872-03e2687ad72c" -->
 ### Fix #2: Consistent Mocking (PRIORITY 2)
 
 Mock all modules consistently:
@@ -225,6 +239,7 @@ with patch.object(flask_app, 'clean_firebase_service', mock_firebase):
 
 **Benefit:** Fix remaining auth failures
 
+<!-- section_id: "ae7c4fa6-024e-4245-abff-10839c02faae" -->
 ### Fix #3: Parametrize Similar Tests (PRIORITY 3)
 
 ```python
@@ -237,8 +252,10 @@ def test_create_n_syllable_word(client, syllable_count):
 
 ---
 
+<!-- section_id: "0c2722eb-c73f-47a8-9fd4-3d26e09d284c" -->
 ## 📋 Specific Assessment of Each Test Suite
 
+<!-- section_id: "d0ed4c98-a2ff-4c67-8f6e-7df61706d0a1" -->
 ### ⭐ EXCELLENT Quality (90%+ passing)
 
 **test_tts_comprehensive.py (15/16 passing)**
@@ -261,6 +278,7 @@ def test_create_n_syllable_word(client, syllable_count):
 - ✅ Simulates real usage
 - **Rating: 9/10**
 
+<!-- section_id: "76672608-1060-4aa1-b440-8005ba2ae0ee" -->
 ### 🟢 GOOD Quality (70-89% passing)
 
 **test_integration.py (3/3 passing)**
@@ -272,6 +290,7 @@ def test_create_n_syllable_word(client, syllable_count):
 - 🟡 Auth mocking needs work
 - **Rating: 7/10**
 
+<!-- section_id: "270928d9-0fa0-49da-afaa-4b270df1af8f" -->
 ### 🟡 NEEDS IMPROVEMENT (50-69% passing)
 
 **test_admin_tools.py (3/6 passing)**
@@ -284,6 +303,7 @@ def test_create_n_syllable_word(client, syllable_count):
 - 🟡 One test has auth issue
 - **Rating: 7/10**
 
+<!-- section_id: "2aa6b90c-fb01-48a8-8790-845057146e91" -->
 ### 🔴 NEEDS WORK (<50% passing)
 
 **test_cloud_templates.py (4/9 passing)**
@@ -298,6 +318,7 @@ def test_create_n_syllable_word(client, syllable_count):
 
 ---
 
+<!-- section_id: "4c764604-1ab7-4aae-b2a5-88b56704ceb4" -->
 ## 🎯 Overall Integration Test Quality: GOOD (7.3/10)
 
 **Strengths:**

@@ -8,6 +8,7 @@ resource_name: "README"
 
 Tests designed for all 8 context chain system design documents (docs 01-08 in `stage_2_04_design/outputs/by_topic/`).
 
+<!-- section_id: "192886d1-90bd-4966-a3f0-e72ed4edfa3e" -->
 ## Coverage Map
 
 | Design Doc | Test Design | Existing Coverage | New Tests |
@@ -21,12 +22,14 @@ Tests designed for all 8 context chain system design documents (docs 01-08 in `s
 | 07 Sync Architecture | `test_design_07_sync_architecture.md` | Partial (agnostic-sync only) | All 5 sync scripts, dependency order, registry |
 | 08 Discovery Temperatures | `test_design_08_discovery_temperatures.md` | Partial (skill discovery chain) | Hot/Warm/Cold structural, promotion system, hook, token budget |
 
+<!-- section_id: "a76181e3-82fe-4962-a841-6845dcfbd082" -->
 ## Test Types
 
 - **Structural (bash scripts)**: File existence, content patterns, directory structure — automatable, repeatable
 - **Behavioral (manual/agent)**: Agent discovery simulation, correct loading order — requires agent execution
 - **Integration (bash scripts)**: End-to-end sync pipelines, cross-entity propagation — automatable
 
+<!-- section_id: "8bd07aa8-8ddd-4f6a-8d8e-5c860fa330ba" -->
 ## Codex Runtime Mode Requirement
 
 - For Codex agent runtime validation in this stage, always run with:
@@ -34,6 +37,7 @@ Tests designed for all 8 context chain system design documents (docs 01-08 in `s
 - Rationale: sandboxed mode can block sync/write operations and produce false negatives unrelated to context-chain correctness.
 - See `outputs/by_topic/codex_runtime_validation_report.md` for command patterns and evidence.
 
+<!-- section_id: "0d9cfd0d-86dc-4d0b-911c-f9bfb18fbbff" -->
 ## Test Case Summary
 
 | Design Doc | Test Cases | Structural | Integration | Behavioral |
@@ -48,6 +52,7 @@ Tests designed for all 8 context chain system design documents (docs 01-08 in `s
 | 08 | 10 (TC-08-01 to TC-08-10) | 7 | 2 | 0 |
 | **Total** | **75** | **48** | **25** | **0** |
 
+<!-- section_id: "d79b2da4-9b6c-41c3-a236-a737e54638a7" -->
 ## Relationship to Existing Tests
 
 These complement the existing 76-PASS suite. Existing tests focus on entity scaffolding. These new tests focus on **propagation mechanics** — how context actually moves through the hierarchy.
@@ -61,6 +66,7 @@ These complement the existing 76-PASS suite. Existing tests focus on entity scaf
 | test_instantiation_readiness | Entity scaffolding | Operational readiness post-instantiation |
 | test_skill_discovery_chain | Hot/Warm/Cold for one skill | Systematic temperature validation |
 
+<!-- section_id: "22a49217-4541-4003-a5ea-20bab072d8bc" -->
 ## Cross-References Between Test Designs
 
 Several test cases across different designs validate overlapping concepts:

@@ -5,17 +5,22 @@ resource_name: "REQ_001_audio_final_config"
 ---
 # Final Configuration: Laptop Speaker Audio Enhancement
 
+<!-- section_id: "72270ac2-e097-4966-bfd2-42fc7f5db075" -->
 ## Request Reference
 REQ_001 - Improve Laptop Speaker Audio Quality
 
+<!-- section_id: "672f1ab9-8691-45c6-ad70-1204a28bd973" -->
 ## Date
 2026-01-26
 
+<!-- section_id: "2dc9ab20-c271-43cb-ac37-5a887b42bec6" -->
 ## Status
 **IMPLEMENTED** - Using captured Windows Dolby impulse response via convolution
 
+<!-- section_id: "cc4b21fe-2036-48d7-ac3e-c45506f8473d" -->
 ## Current Configuration
 
+<!-- section_id: "121d31ca-720d-49b0-b948-c07ae625c5db" -->
 ### Audio Processing Chain
 ```
 ┌─────────────┐     ┌─────────────────┐     ┌──────────────────┐
@@ -25,6 +30,7 @@ REQ_001 - Improve Laptop Speaker Audio Quality
 └─────────────┘     └─────────────────┘     └──────────────────┘
 ```
 
+<!-- section_id: "33413b33-7bb5-45e9-9183-9c772dbfca62" -->
 ### Active Preset: "Dolby Atmos (Captured)"
 
 **Processing Chain:**
@@ -37,6 +43,7 @@ REQ_001 - Improve Laptop Speaker Audio Quality
 - Format: WAV 32-bit float, stereo, 44100Hz, 0.33 seconds
 - Method: VLC + Audacity WASAPI loopback recording
 
+<!-- section_id: "5a3c9418-9b39-480d-b72d-e0932df7d0e0" -->
 ### Volume Control
 - **Default Sink:** Hardware speakers (for GNOME volume control)
 - **App Routing:** EasyEffects sink (for audio processing)
@@ -44,13 +51,16 @@ REQ_001 - Improve Laptop Speaker Audio Quality
 
 ---
 
+<!-- section_id: "51cc6a22-37ae-44f5-b8f6-e09638d72b8b" -->
 ## Installed Components
 
+<!-- section_id: "26c52d42-2246-4f05-b06a-bd3a86e128d8" -->
 ### Packages
 ```bash
 sudo apt install easyeffects calf-plugins lsp-plugins
 ```
 
+<!-- section_id: "6ffd56b7-2286-4d37-8b29-56fe5ac4be98" -->
 ### Presets Available
 | Preset | Description | Use Case |
 |--------|-------------|----------|
@@ -61,6 +71,7 @@ sudo apt install easyeffects calf-plugins lsp-plugins
 | Bass Boosted | Heavy bass emphasis | Bass-heavy content |
 | LaptopSpeakers | Basic custom preset | Fallback |
 
+<!-- section_id: "bc0e4e10-ba44-4620-ada5-adf8d72ec539" -->
 ### Services
 | Service | Status | Purpose |
 |---------|--------|---------|
@@ -69,8 +80,10 @@ sudo apt install easyeffects calf-plugins lsp-plugins
 
 ---
 
+<!-- section_id: "56d5db3f-527d-469d-b45a-d7c7f2c8de59" -->
 ## How to Use
 
+<!-- section_id: "322813f4-370f-4f01-ae6e-7e16debf102c" -->
 ### Switch Presets
 ```bash
 easyeffects --load-preset "Dolby Atmos (Captured)"
@@ -79,12 +92,14 @@ easyeffects --load-preset "Advanced Auto Gain"
 easyeffects --load-preset "Bass Boosted"
 ```
 
+<!-- section_id: "e4bd8a3e-5976-4ec7-9d90-4dececc8582e" -->
 ### Open GUI
 Launch "Easy Effects" from application menu to:
 - Adjust individual effect parameters
 - Monitor audio levels
 - Create custom presets
 
+<!-- section_id: "59a817c3-ebcb-481c-bb83-db80c26a126c" -->
 ### If Audio Processing Stops
 ```bash
 # Restart EasyEffects
@@ -99,6 +114,7 @@ sleep 2
 pactl set-default-sink alsa_output.pci-0000_00_1f.3-platform-skl_hda_dsp_generic.HiFi__hw_sofhdadsp__sink
 ```
 
+<!-- section_id: "6f5425fe-ef65-4e44-a571-8538b91204c5" -->
 ### If No Audio Sinks Available (auto_null only)
 ```bash
 # Check WirePlumber status
@@ -109,6 +125,7 @@ systemctl --user reset-failed wireplumber
 systemctl --user restart pipewire pipewire-pulse wireplumber
 ```
 
+<!-- section_id: "f3a6d9b0-1623-4120-8542-38b4a891d99b" -->
 ### If Volume Buttons Stop
 ```bash
 # Restart GNOME settings daemons
@@ -118,8 +135,10 @@ DISPLAY=:0 /usr/libexec/gsd-power &
 
 ---
 
+<!-- section_id: "b4ed97f7-c1d8-4ad8-9b69-1ea590648b55" -->
 ## Limitations
 
+<!-- section_id: "906e1377-9a8f-43bd-a2c5-43cf829e12d5" -->
 ### What Works
 - ✅ Captured Dolby Atmos processing via convolution
 - ✅ Same frequency response as Windows (via impulse response)
@@ -127,11 +146,13 @@ DISPLAY=:0 /usr/libexec/gsd-power &
 - ✅ EasyEffects processes all audio
 - ✅ Distortion prevention via limiter
 
+<!-- section_id: "57e28a0a-7402-4446-b00b-6ee7b1947d49" -->
 ### Remaining Differences
 - ⚠️ Convolution is a linear approximation of Dolby processing
 - ⚠️ Dolby's dynamic/adaptive processing isn't captured in IR
 - ⚠️ No real-time spatial audio adaptation
 
+<!-- section_id: "4b050298-3a94-4c41-a75f-889480eb21e5" -->
 ### Known Issues
 1. **New apps may bypass EasyEffects** - Enable "Process all output streams" in EasyEffects settings
 2. **Volume OSD shows wrong device** - Cosmetic issue, volume still works
@@ -139,6 +160,7 @@ DISPLAY=:0 /usr/libexec/gsd-power &
 
 ---
 
+<!-- section_id: "bce7c622-141b-478f-81c0-976a84a88d04" -->
 ## Future Improvements
 
 1. **JamesDSP** - Lower latency alternative with ViPER-DDC
@@ -148,6 +170,7 @@ DISPLAY=:0 /usr/libexec/gsd-power &
 
 ---
 
+<!-- section_id: "d3a59185-f6f4-4a39-8964-f917a9c02f9d" -->
 ## Files
 
 | File | Purpose |
@@ -157,6 +180,7 @@ DISPLAY=:0 /usr/libexec/gsd-power &
 | `~/.config/autostart/com.github.wwmm.easyeffects.desktop` | Auto-start on login |
 | `~/.config/systemd/user/gsd-keepalive.timer` | Restart crashed daemons |
 
+<!-- section_id: "0d0aed7f-c3cb-4163-90f7-1fa8aebf818d" -->
 ## Related Documentation
 - Research: `stage_0_01_research/outputs/REQ_001_audio_improvement_research.md`
 - Advanced Research: `stage_0_01_research/outputs/REQ_001_advanced_audio_research.md`

@@ -6,35 +6,43 @@ resource_name: "ai-coding-assistants-guide"
 # AI Coding Assistants - Comprehensive Guide
 *Complete Guide to AI-Powered Development Tools*
 
+<!-- section_id: "990c0e76-4b69-4125-84bb-7b983e7ccd7c" -->
 ## Overview
 
 AI coding assistants are tools that use artificial intelligence to help developers write code more efficiently. They provide intelligent code completion, debugging assistance, refactoring suggestions, and documentation generation. This guide covers the major AI coding assistants available today.
 
+<!-- section_id: "9030b35a-9070-4b29-a42d-5fccf5f4de1a" -->
 ## Tool Categories
 
+<!-- section_id: "f961c7f1-1c68-4942-b35d-a0392b95ee32" -->
 ### 1. IDE-Integrated Assistants
 Tools that work directly within your development environment:
 - **Cursor**: AI-first code editor based on VSCode
 - **Windsurf**: Deep codebase context and real-time collaboration
 - **GitHub Copilot**: Industry-standard AI pair programmer
 
+<!-- section_id: "014aa4a3-6a70-4525-9b82-38ac213ff008" -->
 ### 2. Terminal-Based Assistants
 Tools that work from the command line:
 - **Aider**: Terminal-based pair programmer with git awareness
 - **Claude Code**: Command-line AI assistant
 
+<!-- section_id: "1bc45cba-720b-40d6-80ff-41c64d019c53" -->
 ### 3. Design-to-Code Tools
 Tools that generate code from designs:
 - **V0**: AI-powered design-to-code tool
 - **Bolt**: Rapid prototyping with AI
 - **Lovable**: Instant web app generation
 
+<!-- section_id: "299e35dc-5091-46b0-9a88-fc2d774a2ab1" -->
 ### 4. Privacy-Focused Local Tools
 Tools that run locally for privacy and security:
 - **Qwen3-Coder**: Alibaba's local coding model
 
+<!-- section_id: "1afdb9a4-14ec-4313-920a-ce801853c27f" -->
 ## Detailed Tool Profiles
 
+<!-- section_id: "cb417ad4-c9d3-40d6-b826-fd2ff19c3a69" -->
 ### Cursor
 
 **Description**: AI-first code editor built on VSCode with advanced context-aware completions and chat-driven development.
@@ -72,6 +80,7 @@ Tools that run locally for privacy and security:
 
 **Integration**: Works with Spec Kit and BMAD workflows by providing structured context.
 
+<!-- section_id: "59b81f6a-0da9-4fc7-9d84-077847cc7046" -->
 ### Windsurf
 
 **Description**: Emphasizes deep codebase context, real-time AI collaboration, and predictive coding features.
@@ -109,6 +118,7 @@ Tools that run locally for privacy and security:
 
 **Integration**: Complements BMAD Method for team-based development.
 
+<!-- section_id: "1ca7bbef-1bfb-4245-9334-4f7a93cd1d99" -->
 ### GitHub Copilot
 
 **Description**: Industry-standard AI pair programmer integrated into major IDEs.
@@ -152,6 +162,7 @@ Tools that run locally for privacy and security:
 
 **Integration**: Works seamlessly with Spec Kit for structured development.
 
+<!-- section_id: "bb4c4fe7-b2f6-4f05-86fa-20fde9b01f0f" -->
 ### Aider
 
 **Description**: Terminal-based pair programmer with full git awareness and natural language commands.
@@ -206,6 +217,7 @@ git diff
 
 **Integration**: Excellent for Spec Kit's terminal-based workflow execution.
 
+<!-- section_id: "abd2206e-20e6-420b-907a-e800300be581" -->
 ### Claude Code (by Anthropic)
 
 **Description**: Command-line AI assistant from Anthropic with deep reasoning capabilities.
@@ -248,6 +260,7 @@ npm install -g @anthropic-ai/claude-code
 
 **Integration**: Ideal for BMAD Method's architect and analyst agents.
 
+<!-- section_id: "8b753047-8b4c-423c-b8c5-c2df9d2faf26" -->
 ### Qwen3-Coder
 
 **Description**: Alibaba's open-source agentic coding model with local-first architecture.
@@ -292,6 +305,7 @@ docker pull qwen3-coder:latest
 
 **Integration**: Useful for private projects with Spec Kit or BMAD.
 
+<!-- section_id: "2f8ad7f9-513a-41d5-b7d7-bdcd3ce15f7a" -->
 ### V0, Bolt, Lovable
 
 **Description**: Design-to-code tools that generate frontend code from designs.
@@ -315,6 +329,7 @@ docker pull qwen3-coder:latest
 - Rapid prototyping
 - UI/UX validation
 
+<!-- section_id: "579aa0fe-fbb9-404e-b38d-a13cfd73977c" -->
 ## Comparison Matrix
 
 | Feature | Cursor | Windsurf | Copilot | Aider | Claude Code | Qwen3 |
@@ -330,46 +345,55 @@ docker pull qwen3-coder:latest
 | **Debugging** | Excellent | Good | Limited | Limited | Excellent | Good |
 | **Best Phase** | All | All | Core Coding | Core Coding | Design | Core Coding |
 
+<!-- section_id: "bc30566e-26c7-4200-b067-3f54f169e702" -->
 ## Selection Guidelines
 
+<!-- section_id: "608e3cbb-54a8-4859-aff6-a9507f23840c" -->
 ### Choose Cursor If:
 - You want AI-first development
 - You need excellent codebase context
 - You prefer chat-driven workflow
 - You're working solo or small team
 
+<!-- section_id: "d82f970e-31a1-4602-bdb2-04f67f9b0c52" -->
 ### Choose Windsurf If:
 - You have very large codebases
 - You need team collaboration features
 - You want architectural guidance
 - You need real-time collaboration
 
+<!-- section_id: "10c6691c-57b1-48cd-b0d8-8bae9129021b" -->
 ### Choose Copilot If:
 - You want quick code completions
 - You use popular languages
 - You need IDE integration
 - You want industry standard
 
+<!-- section_id: "9176d31f-cdb9-41f8-bd9d-9603711f69e0" -->
 ### Choose Aider If:
 - You prefer terminal workflow
 - You want git-aware changes
 - You need quick iterations
 - You're comfortable with CLI
 
+<!-- section_id: "dca327df-dfd9-4c6b-8f3d-8132a930bfda" -->
 ### Choose Claude Code If:
 - You need deep code analysis
 - You want excellent explanations
 - You're solving complex problems
 - You need architectural insights
 
+<!-- section_id: "2bbf0eff-1236-491c-8e07-bfe02556cbe0" -->
 ### Choose Qwen3 If:
 - Privacy is critical
 - You work offline
 - You can't use cloud services
 - You have powerful GPU
 
+<!-- section_id: "85151d8d-1e1d-40aa-8836-fc5c37ef747f" -->
 ## Integration with Workflow Frameworks
 
+<!-- section_id: "ee6cbd7c-26eb-479d-8492-f140c3f5ccf7" -->
 ### Spec Kit Integration
 
 All assistants can work with Spec Kit:
@@ -390,6 +414,7 @@ All assistants can work with Spec Kit:
 - Windsurf: Great for larger projects
 - Claude Code: Helpful for architectural decisions
 
+<!-- section_id: "311193fa-f96e-4d2f-83db-a7a64c53d5bc" -->
 ### BMAD Integration
 
 Assistants complement BMAD agents:
@@ -406,8 +431,10 @@ BMAD QA → Tests → Cursor helps with debugging
 - Claude Code: Architect agent decision support
 - Cursor: General development support
 
+<!-- section_id: "2b128e10-9670-4b61-b600-80dfcb77a87d" -->
 ## Best Practices
 
+<!-- section_id: "469c06e1-a8ac-437c-a700-6989c7b5bdc4" -->
 ### General Usage
 1. **Start with Simple Prompts**: Let the assistant understand the task
 2. **Provide Context**: Share relevant files and documentation
@@ -415,20 +442,24 @@ BMAD QA → Tests → Cursor helps with debugging
 4. **Review**: Always review AI-generated code
 5. **Test**: Validate all AI suggestions
 
+<!-- section_id: "b60f6dcf-7ad6-4d8c-b99d-efc49dea6780" -->
 ### Privacy Considerations
 1. **Local Tools**: Use Qwen3 or Aider for sensitive code
 2. **Configuration**: Check privacy settings in cloud tools
 3. **Git**: Be careful with private repos
 4. **Compliance**: Ensure tools meet compliance requirements
 
+<!-- section_id: "a5d01747-cea4-4e10-b2be-116ede5085e6" -->
 ### Performance Tips
 1. **Context Management**: Keep context focused and relevant
 2. **Batch Operations**: Group related changes
 3. **Cache**: Use local caches when available
 4. **Offline Mode**: Learn offline capabilities of tools
 
+<!-- section_id: "1053586d-d3e4-4c4f-8cd9-740df0cd55aa" -->
 ## Troubleshooting
 
+<!-- section_id: "7ae2d001-9df8-416a-9e55-8b9798351753" -->
 ### Common Issues
 
 **Issue**: Assistant not understanding context
@@ -451,8 +482,10 @@ BMAD QA → Tests → Cursor helps with debugging
 - Use local tools for sensitive code
 - Configure privacy settings
 
+<!-- section_id: "63ef817d-2b09-436c-9e1a-8e93bba980a0" -->
 ## Resources
 
+<!-- section_id: "6f6d7701-dbed-411d-89bb-50a65721328d" -->
 ### Official Documentation
 - Cursor: https://cursor.sh/docs
 - Windsurf: https://windsurf.ai/docs
@@ -461,18 +494,21 @@ BMAD QA → Tests → Cursor helps with debugging
 - Claude Code: https://anthropic.com/api
 - Qwen3: https://github.com/QwenLM/Qwen3-Coder
 
+<!-- section_id: "a98cd66e-651c-42a3-9b3c-9a4a1dbd3300" -->
 ### Community
 - Cursor: https://discord.gg/cursor
 - Windsurf: https://discord.gg/windsurf
 - Copilot: https://github.com/github/copilot
 - Aider: https://github.com/paul-gauthier/aider/discussions
 
+<!-- section_id: "e335e999-e770-4f58-9eb1-c7f262811817" -->
 ### Learning Resources
 - AI Coding Assistant tutorials
 - Prompt engineering guides
 - Code review best practices
 - AI ethics in coding
 
+<!-- section_id: "80648392-3913-4bdd-a68b-b61f49d3c2fc" -->
 ## Conclusion
 
 AI coding assistants are powerful tools that can significantly enhance development productivity. The key is choosing the right tool for your workflow, team, and project requirements.

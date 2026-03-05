@@ -8,6 +8,7 @@ resource_name: "README"
 
 Place reference documents, templates, and examples here.
 
+<!-- section_id: "7a416708-0354-4881-8827-24e41e1a5e80" -->
 ## Suggested Contents
 - Templates for 07_testing outputs
 - Examples of good 07_testing work

@@ -9,16 +9,19 @@ resource_name: "overview_report"
 **Stage**: 06_development
 **Last Updated**: 2026-02-20
 
+<!-- section_id: "c7da93f6-c212-41b7-bf9c-53d7de040b37" -->
 ## Summary
 
 Stage 06 built the universal artifacts that define how agents delegate across the layer-stage hierarchy. The primary deliverables are 11 stage guides, a stage agent template with the two-halves pattern, 10 delegation principles (including Principles 8 and 9), 5 rules, and a stage report protocol. All artifacts live at `.0agnostic/` and are applied in the context_chain_system working example with 76 PASS tests.
 
+<!-- section_id: "fc5eaa54-4c9d-4efb-ace9-cada5b0dd7d0" -->
 ## Reports Index
 
 | Report | Description | Last Updated |
 |--------|-------------|--------------|
 | [stage_report.md](./stage_report.md) | Canonical stage status — status, outputs, findings, handoff | 2026-02-20 |
 
+<!-- section_id: "22c1e019-76d4-4e63-ac92-27f45de34ede" -->
 ## Key Metrics
 
 - **Stage guides**: 11 (one per stage)

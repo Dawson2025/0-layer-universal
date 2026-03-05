@@ -5,6 +5,7 @@ resource_name: "SETUP_GUIDE"
 ---
 # Lang-Trak Setup Guide
 
+<!-- section_id: "3327522f-eb7e-49e6-801e-7b1375a0e3ee" -->
 ## Prerequisites
 
 - Python 3.8+
@@ -12,6 +13,7 @@ resource_name: "SETUP_GUIDE"
 - SQLite3
 - Git
 
+<!-- section_id: "b0467762-15ad-4b3c-806f-40015010e6f1" -->
 ## Quick Start
 
 ```bash
@@ -37,8 +39,10 @@ The app will be available at http://localhost:5002
 
 ---
 
+<!-- section_id: "79f588dc-dbae-4b9d-abe4-6efc8d5e6163" -->
 ## Common Issues & Solutions
 
+<!-- section_id: "f9bdffce-8efd-44de-9239-5d311c3e1544" -->
 ### Issue 1: Flask App Returns 404 on All Routes
 
 **Symptoms:**
@@ -65,6 +69,7 @@ if __name__ == '__main__':
 
 ---
 
+<!-- section_id: "493fc2bb-c571-4d75-a12d-75a5ad41afda" -->
 ### Issue 2: SQLite Migration Error - "Cannot add a UNIQUE column"
 
 **Symptoms:**
@@ -87,6 +92,7 @@ cursor.execute("ALTER TABLE groups ADD COLUMN invite_code TEXT")  # No UNIQUE
 
 ---
 
+<!-- section_id: "4fdd2602-8a39-444b-ac64-c6d252884263" -->
 ### Issue 3: NameError - get_firebase_config not defined
 
 **Symptoms:**
@@ -117,6 +123,7 @@ def get_firebase_config():
 
 ---
 
+<!-- section_id: "cd7e0b77-5ea1-4bfd-9d88-c83e79ac6d99" -->
 ### Issue 4: BuildError - Could not build url for endpoint 'index'
 
 **Symptoms:**
@@ -144,6 +151,7 @@ def index():
 
 ---
 
+<!-- section_id: "df7cadbd-d06a-44c9-b983-9a8181fdedb7" -->
 ### Issue 5: Firebase MCP Server - "npx: executable file not found"
 
 **Symptoms:**
@@ -182,6 +190,7 @@ Then configure Firebase MCP in `~/.gemini/antigravity/mcp_config.json`:
 
 ---
 
+<!-- section_id: "c76d014e-0a1f-4282-b85a-83672e3df181" -->
 ### Issue 6: Port Already in Use
 
 **Symptoms:**
@@ -200,6 +209,7 @@ PORT=5003 python app.py
 
 ---
 
+<!-- section_id: "b5787623-624a-4edc-9354-a44077c148e2" -->
 ### Issue 7: Firebase Emulator Connection Issues
 
 **Symptoms:**
@@ -218,8 +228,10 @@ export FIREBASE_STORAGE_EMULATOR_HOST="127.0.0.1:9199"
 
 ---
 
+<!-- section_id: "7f001504-8713-48f9-8c48-caced382de85" -->
 ## Development Workflow
 
+<!-- section_id: "8c971286-ef10-4a0a-b4d0-7469cfbdac91" -->
 ### Starting the Server
 
 **Recommended:** Use the start script
@@ -233,6 +245,7 @@ source .venv/bin/activate
 PORT=5002 python app.py
 ```
 
+<!-- section_id: "91372b59-f796-4566-9d3a-f08388ee9186" -->
 ### Running Tests
 
 ```bash
@@ -243,6 +256,7 @@ python scripts/automation/run_user_stories.py
 pytest tests/integration/test_authentication.py
 ```
 
+<!-- section_id: "3abb7366-acd2-411d-ae2a-7eb27e8fd4be" -->
 ### Database Management
 
 ```bash
@@ -256,6 +270,7 @@ python app.py  # Will recreate with init_users_table()
 
 ---
 
+<!-- section_id: "239e78f6-c43a-45d7-bbfb-99b3499101b3" -->
 ## Project Structure
 
 ```
@@ -279,6 +294,7 @@ lang-trak-in-progress/
 
 ---
 
+<!-- section_id: "70a16601-9e8c-418a-adeb-c3ce0932e652" -->
 ## Environment Variables
 
 | Variable | Default | Description |
@@ -291,6 +307,7 @@ lang-trak-in-progress/
 
 ---
 
+<!-- section_id: "aff2c6e5-cdec-4aa3-a436-660c3f248a84" -->
 ## Troubleshooting Checklist
 
 - [ ] Virtual environment activated?
@@ -302,6 +319,7 @@ lang-trak-in-progress/
 
 ---
 
+<!-- section_id: "d9fb6dce-87e2-4613-84ae-82f60a7a1e1e" -->
 ## Getting Help
 
 1. Check this guide for common issues

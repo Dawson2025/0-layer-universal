@@ -5,14 +5,17 @@ resource_name: "CLAUDE.sync-conflict-20260126-102106-IF2WOGZ"
 ---
 # Stage 04: Development
 
+<!-- section_id: "485a897a-7da2-4697-b383-2215c5091b0b" -->
 ## Purpose
 Implement the design. This stage produces the actual code, configurations, and artifacts that deliver the required functionality.
 
+<!-- section_id: "56dd32f5-8a8e-4b96-8fd7-411a3063b7b4" -->
 ## Entry Criteria
 - Design document received
 - Technical specifications clear
 - Development environment ready
 
+<!-- section_id: "603c15aa-b105-4a11-889a-2282dde62e23" -->
 ## Exit Criteria
 - Code implemented per specifications
 - Unit tests written and passing
@@ -20,6 +23,7 @@ Implement the design. This stage produces the actual code, configurations, and a
 - Documentation updated
 - Handoff prepared for Testing
 
+<!-- section_id: "04c1b862-db26-4fd2-8dcb-396e6c4c9ce9" -->
 ## Typical Tasks
 - Write production code
 - Implement unit tests
@@ -28,10 +32,12 @@ Implement the design. This stage produces the actual code, configurations, and a
 - Perform code reviews
 - Integrate with existing systems
 
+<!-- section_id: "84af0625-372c-459d-a17b-6f0f15527d9b" -->
 ## Handoffs
 - **From Previous (03_design)**: DESIGN document
 - **To Next (05_testing)**: IMPLEMENTATION with code and tests
 
+<!-- section_id: "2a9e76c7-d68a-4398-89d4-abdf147284d1" -->
 ## Directory Structure
 ```
 stage_0_06_development/
@@ -40,6 +46,7 @@ stage_0_06_development/
 └── hand_off_documents/   # Stage handoffs
 ```
 
+<!-- section_id: "00da36de-baf8-43f8-8d37-5b0c20bdd747" -->
 ## AI Agent Guidelines
 When working in this stage:
 - Follow the design specifications

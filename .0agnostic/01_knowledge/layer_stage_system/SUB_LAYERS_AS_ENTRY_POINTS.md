@@ -5,12 +5,14 @@ resource_name: "SUB_LAYERS_AS_ENTRY_POINTS"
 ---
 # Sub-Layers as Agent Entry Points
 
+<!-- section_id: "bb399924-b6df-4032-8016-363c4b143265" -->
 ## Overview
 
 Every sub-layer can serve as an **entry point** for AI agents. Just like layers (layer_0, layer_1, layer_2), sub-layers can have their own CLAUDE.md, 0AGNOSTIC.md, and context flow architecture.
 
 ---
 
+<!-- section_id: "93f0b321-d2d4-4819-a14c-8342eafd7ae9" -->
 ## Why Sub-Layers Can Be Entry Points
 
 Sub-layers represent **specialized domains** within a layer:
@@ -28,6 +30,7 @@ Each domain may need its own:
 
 ---
 
+<!-- section_id: "8aa44ad9-2c78-4572-ad65-b47807b53f6b" -->
 ## Sub-Layer Context Flow Architecture
 
 ```
@@ -59,6 +62,7 @@ Each domain may need its own:
 
 ---
 
+<!-- section_id: "160455b0-1273-4b3b-ad85-e60a5391d173" -->
 ## Sub-Layer Structure (When Used as Entry Point)
 
 ```
@@ -77,8 +81,10 @@ sub_layer_N_XX_<domain>/
 
 ---
 
+<!-- section_id: "d0dc902a-d003-4576-a115-6c0645dd6434" -->
 ## When to Make a Sub-Layer an Entry Point
 
+<!-- section_id: "eaaf7dc9-7478-4f77-8680-e1bfe67114f9" -->
 ### Make It an Entry Point When:
 
 1. **Specialized Agent Needed**
@@ -97,6 +103,7 @@ sub_layer_N_XX_<domain>/
    - Agents often enter directly into this sub-layer
    - Example: Direct questions about knowledge base
 
+<!-- section_id: "e22a4040-b553-474c-b5b4-eb0b48c26340" -->
 ### Keep It Simple When:
 
 1. **Content Only**
@@ -109,6 +116,7 @@ sub_layer_N_XX_<domain>/
 
 ---
 
+<!-- section_id: "9e3d30b8-76f3-4e3d-b463-590a28f91775" -->
 ## Sub-Layer CLAUDE.md Template
 
 ```markdown
@@ -155,6 +163,7 @@ Load this context when:
 
 ---
 
+<!-- section_id: "6acb3bb6-a502-44cd-bf5e-90d1f18f121d" -->
 ## Sub-Layer Critical Rules Cascade
 
 ```
@@ -178,6 +187,7 @@ layer_0/CLAUDE.md
 
 ---
 
+<!-- section_id: "99bc8d28-c045-4a36-a57f-51d1174853cb" -->
 ## Example: Knowledge System as Entry Point
 
 ```
@@ -213,6 +223,7 @@ sub_layer_0_01_knowledge_system/
 
 ---
 
+<!-- section_id: "879161e7-b50a-46da-9d58-3aec0a3636b9" -->
 ## Navigation: Parent to Sub-Layer
 
 ```
@@ -227,6 +238,7 @@ Agent enters: /layer_0/
 
 ---
 
+<!-- section_id: "e126e165-79d1-40fc-96e5-5f0b6783120a" -->
 ## Self-Check for Sub-Layer Entry Points
 
 Before working in a sub-layer entry point:

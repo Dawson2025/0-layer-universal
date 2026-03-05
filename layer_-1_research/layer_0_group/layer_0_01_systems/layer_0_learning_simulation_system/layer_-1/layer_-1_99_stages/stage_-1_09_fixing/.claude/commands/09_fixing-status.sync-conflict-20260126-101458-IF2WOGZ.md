@@ -10,12 +10,14 @@ argument-hint: [--verbose]
 
 Check the current status of the 09_fixing stage.
 
+<!-- section_id: "ae806fb4-7d6d-47b3-892b-b7b8b53afda6" -->
 ## Steps
 1. Read the stage's outputs/ folder
 2. Check hand_off_documents/ for context
 3. Review any in-progress work
 4. Report status summary
 
+<!-- section_id: "e51766c1-ced1-43e0-898a-f2f7b66507e8" -->
 ## Output
 - Current progress
 - Pending items

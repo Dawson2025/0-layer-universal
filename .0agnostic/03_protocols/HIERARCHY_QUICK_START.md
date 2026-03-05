@@ -11,12 +11,15 @@ resource_name: "HIERARCHY_QUICK_START"
 
 ---
 
+<!-- section_id: "6876738f-2ff2-4cd6-8817-348a032b6cc8" -->
 ## The 3-Minute Version
 
+<!-- section_id: "18d74544-9c38-4f05-ae2a-cb5f4b06ab20" -->
 ### What Is It?
 
 The **AI Manager Hierarchy System** is a coordination framework for multi-agent work. It organizes agents into **layers** (project → feature → component) and **stages** (request → plan → develop → test → deliver), with **managers** delegating to **workers** via **handoff documents**.
 
+<!-- section_id: "6b07427b-9b8f-4481-8b35-759e250aadc4" -->
 ### Why Use It?
 
 - **Coordination**: Managers and workers have clear roles and boundaries
@@ -24,6 +27,7 @@ The **AI Manager Hierarchy System** is a coordination framework for multi-agent 
 - **Safety**: Permission levels prevent accidents, budget limits prevent overspend
 - **Scalability**: Works for solo agents or teams of 100+
 
+<!-- section_id: "7f4c7030-2051-436b-98bc-b77a0277d7cd" -->
 ### How It Works (Visual)
 
 ```
@@ -36,6 +40,7 @@ L0 (Universal) → L1 (Project) → L2 (Feature) → L3 (Component)
                 Handoff Documents
 ```
 
+<!-- section_id: "91f556d1-3e47-47cd-9eb2-d3e5d40b8c00" -->
 ### Core Concepts (30 seconds each)
 
 1. **Layers**: Nested work levels (L0: cross-project, L1: project, L2: feature, L3: component)
@@ -46,8 +51,10 @@ L0 (Universal) → L1 (Project) → L2 (Feature) → L3 (Component)
 
 ---
 
+<!-- section_id: "b0a54978-2530-4975-8949-1bd94c84b6e9" -->
 ## Essential Links (Bookmark These)
 
+<!-- section_id: "bb9d98bb-2b44-4de8-b48f-44523b6bcc21" -->
 ### Start Here
 
 1. **MASTER_DOCUMENTATION_INDEX.md**
@@ -62,6 +69,7 @@ L0 (Universal) → L1 (Project) → L2 (Feature) → L3 (Component)
    - `/home/dawson/code/0_layer_universal/0_context/USAGE_GUIDE.md`
    - How to work with the hierarchy
 
+<!-- section_id: "3bb077cb-63fe-4f4c-bacc-6e971fb66ec0" -->
 ### When You Need Details
 
 4. **Layer/Stage Framework**
@@ -78,6 +86,7 @@ L0 (Universal) → L1 (Project) → L2 (Feature) → L3 (Component)
    - L2: `/home/dawson/code/0_layer_universal/0_context/layer_2_features/2.00_ai_manager_system/README.md`
    - L3: `/home/dawson/code/0_layer_universal/0_context/layer_3_components/3.00_ai_manager_system/README.md`
 
+<!-- section_id: "5f2fae48-284d-4cdf-92d6-c181d658c598" -->
 ### When You're Ready to Adopt
 
 7. **Adoption Checklist**
@@ -90,12 +99,15 @@ L0 (Universal) → L1 (Project) → L2 (Feature) → L3 (Component)
 
 ---
 
+<!-- section_id: "f51bfd80-8c9a-450f-ba00-d3423c500649" -->
 ## Your First Handoff (10-Minute Walkthrough)
 
+<!-- section_id: "85fb01a7-d7ef-4207-bc72-19a94435740f" -->
 ### Scenario: You're a Project Manager (L1)
 
 You receive a request to implement a new feature. Here's how to use the hierarchy:
 
+<!-- section_id: "3c5c5eef-dbf0-4831-b110-c823740fc6fd" -->
 ### Step 1: Receive Handoff from L0 Supervisor
 
 **Example Handoff** (from human or L0 supervisor to you):
@@ -127,6 +139,7 @@ You receive a request to implement a new feature. Here's how to use the hierarch
 
 **Action**: Read the handoff, understand the task, accept it (change status to "in_progress")
 
+<!-- section_id: "1b0c7b5b-2a22-4aa2-bfb3-a4c559325668" -->
 ### Step 2: Create L2 Handoff for Feature Manager
 
 You break the feature into L2 tasks:
@@ -162,6 +175,7 @@ You break the feature into L2 tasks:
 
 **Action**: Save handoff to `.ai_context/handoffs/outgoing/`, spawn L2 manager
 
+<!-- section_id: "ac6b515d-bfd9-4537-ba7e-b70434102cbd" -->
 ### Step 3: L2 Manager Spawns L3 Workers
 
 L2 manager reads your handoff and spawns L3 workers for each component:
@@ -182,6 +196,7 @@ claude-code --allowed=Read,Write,Bash \
   < handoff_L2_to_L3_session-mgr.json
 ```
 
+<!-- section_id: "b984880a-4a9a-4230-8817-9e00f4fc0a16" -->
 ### Step 4: L3 Workers Complete and Report Back
 
 Each worker:
@@ -204,6 +219,7 @@ Each worker:
 }
 ```
 
+<!-- section_id: "8ad52fa3-31e9-46c4-b8f8-dc617073d784" -->
 ### Step 5: L2 Manager Aggregates and Reports to L1
 
 L2 manager collects all L3 results, aggregates, and reports back to you:
@@ -226,6 +242,7 @@ L2 manager collects all L3 results, aggregates, and reports back to you:
 }
 ```
 
+<!-- section_id: "17ad6bb1-4cc0-41d3-bd4b-afe0b4a19e3b" -->
 ### Step 6: You Report Back to L0
 
 You aggregate L2 results and report completion to L0 supervisor:
@@ -247,8 +264,10 @@ You aggregate L2 results and report completion to L0 supervisor:
 
 ---
 
+<!-- section_id: "662dd68f-8fa6-4680-ae37-a285c437926b" -->
 ## Common Patterns by Use Case
 
+<!-- section_id: "48d2fd62-5b8a-4940-89cb-79aa209deaf3" -->
 ### Use Case 1: Solo Agent on Simple Project
 
 **Pattern**: Use L1 only, skip L2/L3
@@ -262,6 +281,7 @@ You aggregate L2 results and report completion to L0 supervisor:
 
 ---
 
+<!-- section_id: "9670e2bd-cd11-4ba2-aa3a-aca23d4a929b" -->
 ### Use Case 2: Small Team on Medium Project (3-5 features)
 
 **Pattern**: Use L0 → L1 → L2, skip L3
@@ -276,6 +296,7 @@ You aggregate L2 results and report completion to L0 supervisor:
 
 ---
 
+<!-- section_id: "e434e293-474b-4db0-ad03-f6367bb838bf" -->
 ### Use Case 3: Large Team on Complex Project (10+ features)
 
 **Pattern**: Use full hierarchy L0 → L1 → L2 → L3
@@ -291,6 +312,7 @@ You aggregate L2 results and report completion to L0 supervisor:
 
 ---
 
+<!-- section_id: "e3fe7cf2-11af-4aa3-b20f-933337d51313" -->
 ## Quick Reference: Roles and Responsibilities
 
 | Layer | Role | Reads | Writes | Spawns | Example |
@@ -302,6 +324,7 @@ You aggregate L2 results and report completion to L0 supervisor:
 
 ---
 
+<!-- section_id: "3b03009b-0c91-4d8b-acb7-aecca9220eb1" -->
 ## Quick Reference: Tools and When to Use Them
 
 | Tool | Best For | Cost | Speed | Spawned By |
@@ -313,8 +336,10 @@ You aggregate L2 results and report completion to L0 supervisor:
 
 ---
 
+<!-- section_id: "b1377221-8b2f-4999-8baa-a01d497f5199" -->
 ## Quick Reference: Observability and Safety
 
+<!-- section_id: "8ba65aa8-887c-42f5-a3ba-e54c3d90b57c" -->
 ### Where Do Logs Live?
 
 ```
@@ -324,6 +349,7 @@ You aggregate L2 results and report completion to L0 supervisor:
 └── handoffs/          (Handoff creation, acceptance, completion)
 ```
 
+<!-- section_id: "43ee353e-f08c-47ae-b3ae-5799d50a1de1" -->
 ### What Gets Logged?
 
 - Manager spawning workers
@@ -332,6 +358,7 @@ You aggregate L2 results and report completion to L0 supervisor:
 - Errors and warnings
 - Cost and duration
 
+<!-- section_id: "f0f7a5d5-cb0f-4a89-8588-25a02cf11236" -->
 ### What Are the Budget Limits?
 
 | Layer | Daily Limit | Task Limit | Permission Level |
@@ -343,8 +370,10 @@ You aggregate L2 results and report completion to L0 supervisor:
 
 ---
 
+<!-- section_id: "f3d2e5b7-9dd5-4539-b6b4-cdb5377bafcb" -->
 ## Next Steps
 
+<!-- section_id: "39bb243b-e0c8-4bed-9918-27f9ba2b1948" -->
 ### If You're a Manager Starting a New Project
 
 1. Read HIERARCHY_ADOPTION_CHECKLIST.md (30 min)
@@ -355,6 +384,7 @@ You aggregate L2 results and report completion to L0 supervisor:
 
 **Total**: ~2.5 hours to full adoption
 
+<!-- section_id: "bac2faea-cef1-48c9-a250-52358a7b59e1" -->
 ### If You're a Worker Joining an Existing Project
 
 1. Find the project's L1 context (5 min)
@@ -365,6 +395,7 @@ You aggregate L2 results and report completion to L0 supervisor:
 
 **Total**: ~30 min overhead + task execution time
 
+<!-- section_id: "995c9278-5e18-4f3c-b6db-e5d725806c99" -->
 ### If You're Retrofitting an Existing Project
 
 1. Read MIGRATION_GUIDE.md (30 min)
@@ -377,6 +408,7 @@ You aggregate L2 results and report completion to L0 supervisor:
 
 ---
 
+<!-- section_id: "c07fde0d-1614-4732-a5c1-b4bccd85b00d" -->
 ## Troubleshooting (1-Minute Fixes)
 
 **"I can't find the right doc"**
@@ -396,6 +428,7 @@ You aggregate L2 results and report completion to L0 supervisor:
 
 ---
 
+<!-- section_id: "236304ab-3cd3-43ac-b133-294b17b26ffc" -->
 ## Related Documentation
 
 **Essential**:

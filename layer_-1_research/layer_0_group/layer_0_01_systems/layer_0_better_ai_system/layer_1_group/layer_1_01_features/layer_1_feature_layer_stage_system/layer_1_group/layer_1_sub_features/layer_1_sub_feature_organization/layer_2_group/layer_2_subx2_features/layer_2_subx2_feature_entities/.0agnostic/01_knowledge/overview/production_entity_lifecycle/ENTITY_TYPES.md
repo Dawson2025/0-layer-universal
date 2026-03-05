@@ -5,12 +5,15 @@ resource_name: "ENTITY_TYPES"
 ---
 # Entity Types
 
+<!-- section_id: "d335d711-dac8-4f36-af62-9beaa2dfca28" -->
 ## What is an Entity?
 
 An entity is any managed unit in the layer-stage system: projects, features, components, stages, sub-layers, etc.
 
+<!-- section_id: "68ca19c6-e500-4b27-b419-fcf1dd65ed7c" -->
 ## Entity Types
 
+<!-- section_id: "e3dbe976-a569-4bff-b6b0-9168585f96c6" -->
 ### 1. Projects (layer_1)
 
 **Purpose**: A complete application, system, or body of work
@@ -31,6 +34,7 @@ layer_1_project_<name>/
     └── layer_2_features/
 ```
 
+<!-- section_id: "b3ead950-e5c0-4f07-a060-4dca76ed9c83" -->
 ### 2. Features (layer_2+)
 
 **Purpose**: A distinct capability within a project
@@ -49,6 +53,7 @@ layer_2_feature_<name>/
     └── layer_3_components/
 ```
 
+<!-- section_id: "d9428bab-dd96-43d4-ae08-0fb00a500ee5" -->
 ### 3. Research Projects (layer_-1)
 
 **Purpose**: Experimental, exploratory work
@@ -69,6 +74,7 @@ layer_-1_<name>/
     └── layer_0_features/
 ```
 
+<!-- section_id: "37d561bc-6fac-49b3-8224-bbbfebc8c593" -->
 ### 4. Stages
 
 **Purpose**: Workflow phase container
@@ -87,6 +93,7 @@ stage_N_XX_<name>/
     └── outgoing/
 ```
 
+<!-- section_id: "8a607e0a-c90a-45f0-93fd-f652fbab6a58" -->
 ### 5. Sub-Layers
 
 **Purpose**: Content type container
@@ -98,6 +105,7 @@ sub_layer_N_XX_<name>/
 └── <content>/                # Type-specific content
 ```
 
+<!-- section_id: "17a3a2a4-e1fa-4ef7-9f5c-440934a0a7e1" -->
 ### 6. Proposals
 
 **Purpose**: Formal change proposals with staging
@@ -114,8 +122,10 @@ proposals/
 └── archived/                 # Historical
 ```
 
+<!-- section_id: "5f3f54d6-59c6-4ea2-979a-540eb351aaa2" -->
 ## Entity File Requirements
 
+<!-- section_id: "f1f5025d-8c50-48ac-a881-ee59a5ecb935" -->
 ### Required Files
 
 | File | Purpose | Required For |
@@ -124,6 +134,7 @@ proposals/
 | `0INDEX.md` | Contents listing | Containers |
 | `CLAUDE.md` | Claude Code context | Projects, features |
 
+<!-- section_id: "9799efab-5719-48e3-8ec1-c321f57a61ba" -->
 ### Optional Files
 
 | File | Purpose | When to Include |
@@ -132,6 +143,7 @@ proposals/
 | `GEMINI.md` | Gemini context | When using Gemini |
 | `AGENTS.md` | Codex/agents context | When using Codex |
 
+<!-- section_id: "122358ac-1ba1-48fc-9e10-bc0909ecf948" -->
 ## Entity Nesting Rules
 
 1. **Projects contain features**: `layer_1` → `layer_2`

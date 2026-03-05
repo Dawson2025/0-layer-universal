@@ -11,12 +11,14 @@ resource_name: "index"
 
 ---
 
+<!-- section_id: "bffecb80-c227-4cd9-a6ad-13fcbfe9f241" -->
 ## Purpose
 
 This index provides quick access to session history for research projects.
 
 ---
 
+<!-- section_id: "66ab07f3-601d-4a10-af4c-541ee33ab4fc" -->
 ## Recent Sessions
 
 | Date | Session | Summary | Status |
@@ -25,6 +27,7 @@ This index provides quick access to session history for research projects.
 
 ---
 
+<!-- section_id: "385349d5-33cc-4cd2-9182-70a82b3a035c" -->
 ## Key Decisions
 
 | Date | Decision | Rationale | Session |
@@ -35,6 +38,7 @@ This index provides quick access to session history for research projects.
 
 ---
 
+<!-- section_id: "d6182a21-02fd-4df5-b670-9fe2b0d54f22" -->
 ## Active Work
 
 | Topic | Last Session | Status | Next Steps |

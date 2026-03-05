@@ -11,8 +11,10 @@ This guide covers how Gemini is actually used and configured in real application
 
 ---
 
+<!-- section_id: "b7d52f5d-03b0-444b-9a65-3b5081b46119" -->
 ## 1. SDK Configuration & Initialization
 
+<!-- section_id: "6cc3f5e8-fa76-458b-b5c2-32b2d745fb75" -->
 ### 1.1 Python SDK Setup
 
 **Installation**:
@@ -39,6 +41,7 @@ from google.genai.types import GenerateContentConfig, HttpOptions
 client = genai.Client(http_options=HttpOptions(api_version="v1"))
 ```
 
+<!-- section_id: "bfb046db-3e88-4174-8484-b878e49004cd" -->
 ### 1.2 JavaScript/TypeScript SDK Setup
 
 **Installation**:
@@ -74,6 +77,7 @@ const ai = new GoogleGenAI({
 });
 ```
 
+<!-- section_id: "52bdb116-4a4b-4156-9e2c-2b52af3fcdae" -->
 ### 1.3 Java/Go SDK Setup
 
 **Java**:
@@ -99,10 +103,12 @@ defer client.Close()
 
 ---
 
+<!-- section_id: "5065b228-57ad-4270-8f3b-0d14be121b35" -->
 ## 2. System Instructions Implementation
 
 System instructions are processed before any user message, setting the behavior, persona, and constraints for the model.
 
+<!-- section_id: "c2c71c65-4f87-4c4d-bdf8-d0067cb59e13" -->
 ### 2.1 Python Implementation
 
 ```python
@@ -134,6 +140,7 @@ response = client.models.generate_content(
 )
 ```
 
+<!-- section_id: "1f7958f2-d1ca-4e4c-97c7-a5c7e255c03e" -->
 ### 2.2 JavaScript/TypeScript Implementation
 
 ```javascript
@@ -153,6 +160,7 @@ const response = await ai.models.generateContent({
 });
 ```
 
+<!-- section_id: "69cd2155-1d81-4310-b20f-01c3f156e8fe" -->
 ### 2.3 Role-Based System Instructions (Front-End Developer Example)
 
 ```typescript
@@ -172,16 +180,19 @@ const response = await ai.models.generateContent({
 });
 ```
 
+<!-- section_id: "f3d70fcf-e78c-44d7-a758-cb17182303d6" -->
 ### 2.4 Important Security Note
 
 **System instructions cannot fully prevent jailbreaks or leaks**. Never include sensitive information (API keys, credentials, private data) in system instructions.
 
 ---
 
+<!-- section_id: "cdbd23c3-6a8f-4302-be81-6fdad8760739" -->
 ## 3. Session Management & Conversation History
 
 Gemini SDKs provide two approaches to conversation management: stateful sessions via the Chat API and stateless request-by-request generation.
 
+<!-- section_id: "99ab10bd-c4d3-42a8-91cf-4d6a738a305b" -->
 ### 3.1 Python Chat Sessions
 
 ```python
@@ -205,6 +216,7 @@ for message in chat.history:
     print(f"{message.role}: {message.parts}")
 ```
 
+<!-- section_id: "9c8cc72a-9252-4877-9f0b-b37875ff507f" -->
 ### 3.2 JavaScript Chat Sessions
 
 ```javascript
@@ -227,6 +239,7 @@ console.log(response2.text);
 console.log(chat.history);
 ```
 
+<!-- section_id: "78a39dea-8cbf-4ca0-9b29-34ab3066c6a1" -->
 ### 3.3 Persisting Conversation History
 
 To resume sessions across application restarts:
@@ -270,6 +283,7 @@ response = chat.send_message("Continue from where we left off")
 save_chat(chat, "session.json")
 ```
 
+<!-- section_id: "df777d2c-a7b5-4b59-a6cd-cdaec0b56112" -->
 ### 3.4 Multi-User Session Management
 
 ```python
@@ -330,10 +344,12 @@ manager._save_session("user123", user_chat)
 
 ---
 
+<!-- section_id: "d30d759d-e765-4973-b758-fcff755858a8" -->
 ## 4. File Upload & Management
 
 The Files API allows uploading media for use in requests, with automatic storage management.
 
+<!-- section_id: "d1c526d5-19cd-4639-aae2-0a3628750045" -->
 ### 4.1 File Upload (Python)
 
 ```python
@@ -353,6 +369,7 @@ response = client.models.generate_content(
 print(response.text)
 ```
 
+<!-- section_id: "8f3931a5-aac0-42fd-89a5-c8a6f4af0412" -->
 ### 4.2 File Upload (JavaScript)
 
 ```javascript
@@ -381,6 +398,7 @@ const response = await ai.models.generateContent({
 });
 ```
 
+<!-- section_id: "6352d13f-1e21-4909-8c76-b79498adbe4a" -->
 ### 4.3 File Management
 
 **Python - List, Get, Delete**:
@@ -404,6 +422,7 @@ client.files.delete(name=my_file.name)
 print("File deleted")
 ```
 
+<!-- section_id: "afb1a75d-ec50-4699-aebe-b60577810d6b" -->
 ### 4.4 File Storage Limits & Considerations
 
 - **Maximum storage**: 20 GB per project
@@ -415,10 +434,12 @@ print("File deleted")
 
 ---
 
+<!-- section_id: "d3f81b91-4af3-4d86-bd1e-4a86c3874ef8" -->
 ## 5. Prompt Caching Configuration
 
 Prompt caching reduces costs for repeated requests by storing large context on Google's servers.
 
+<!-- section_id: "1877d65c-07b4-475f-8771-3fcf5e4569a0" -->
 ### 5.1 Two Caching Approaches
 
 **Implicit Caching** (default, automatic):
@@ -431,6 +452,7 @@ Prompt caching reduces costs for repeated requests by storing large context on G
 - Guaranteed cost reduction on cache hits
 - Set custom TTL (time-to-live)
 
+<!-- section_id: "11db14fe-f77e-4dbd-b06d-2ba538c9ffaf" -->
 ### 5.2 Explicit Caching (Python)
 
 ```python
@@ -469,6 +491,7 @@ print(f"Response: {response.text}")
 print(f"Cached tokens used: {response.usage_metadata.cached_content_input_token_count}")
 ```
 
+<!-- section_id: "27efe729-2c36-4d27-b608-f4b1958270dc" -->
 ### 5.3 Explicit Caching (JavaScript)
 
 ```javascript
@@ -497,6 +520,7 @@ const response = await ai.models.generateContent({
 console.log(`Cached tokens: ${response.usageMetadata.cachedContentInputTokenCount}`);
 ```
 
+<!-- section_id: "c973fcbf-e177-46ce-aae3-8b3105876486" -->
 ### 5.4 Cache Management
 
 **Python - Update TTL, Delete Cache**:
@@ -521,6 +545,7 @@ for cache in client.caches.list():
     print(f"{cache.name}: expires at {cache.expiration_time}")
 ```
 
+<!-- section_id: "f39f560e-ff79-495f-843c-1523888bc5a3" -->
 ### 5.5 Caching Best Practices
 
 1. **Keep static content at the beginning** of the request (system instructions, large documents)
@@ -531,8 +556,10 @@ for cache in client.caches.list():
 
 ---
 
+<!-- section_id: "b84fa461-afde-4931-b1cf-5d385b231469" -->
 ## 6. Model Selection & Generation Parameters
 
+<!-- section_id: "3d27d641-2290-4b21-a7ad-d0ba135ded03" -->
 ### 6.1 Available Models (2026)
 
 **Latest Models**:
@@ -543,6 +570,7 @@ for cache in client.caches.list():
 - `gemini-1.5-pro` - Legacy (retiring June 1, 2026)
 - `gemini-1.5-flash` - Legacy (retiring June 1, 2026)
 
+<!-- section_id: "0966d5f7-6790-4421-86d1-c06478aaf267" -->
 ### 6.2 Generation Parameters
 
 ```python
@@ -579,6 +607,7 @@ response = client.models.generate_content(
 )
 ```
 
+<!-- section_id: "3b87fd79-94ce-453e-829b-24f08fdd097b" -->
 ### 6.3 Parameter Recommendations by Use Case
 
 ```python
@@ -608,8 +637,10 @@ gemini3_config = GenerateContentConfig(
 
 ---
 
+<!-- section_id: "76cb4105-402d-4749-9ddd-9b283185d606" -->
 ## 7. Cost Management & Token Usage
 
+<!-- section_id: "04807fdf-b910-4a95-b8ad-bbe57ec02225" -->
 ### 7.1 Token Counting (Before Making Requests)
 
 **Python**:
@@ -645,6 +676,7 @@ const tokenCount = await ai.models.countTokens({
 console.log(`Input tokens: ${tokenCount.totalTokens}`);
 ```
 
+<!-- section_id: "90c8b2ef-03d2-490b-8421-d1e3c0fce7a1" -->
 ### 7.2 Monitoring Token Usage in Responses
 
 ```python
@@ -675,6 +707,7 @@ print(f"Cached cost: ${cached_cost:.6f}")
 print(f"Total cost: ${total_cost:.6f}")
 ```
 
+<!-- section_id: "00131895-fed2-4e0e-b6c1-e8751897a968" -->
 ### 7.3 Cost Optimization Strategies
 
 ```python
@@ -748,6 +781,7 @@ PRICING = {
 }
 ```
 
+<!-- section_id: "f680ac85-eb33-4bb0-9bdb-2789055abecc" -->
 ### 7.4 Cost Tracking Dashboard
 
 ```python
@@ -866,8 +900,10 @@ tracker.print_summary()
 
 ---
 
+<!-- section_id: "0d0e9ca7-7b23-4d6c-a8f8-27f48e1f6573" -->
 ## 8. Error Handling & Retry Logic
 
+<!-- section_id: "484d65fe-17d4-4b47-954c-44de4007133a" -->
 ### 8.1 Common Error Codes
 
 | Code | Meaning | Solution |
@@ -879,6 +915,7 @@ tracker.print_summary()
 | 503 | Service Unavailable | Retry with exponential backoff |
 | 504 | Deadline Exceeded (timeout) | Increase timeout or reduce prompt |
 
+<!-- section_id: "09c7996d-2240-4383-bcf7-0eca85ac1b0f" -->
 ### 8.2 Basic Error Handling (Python)
 
 ```python
@@ -929,6 +966,7 @@ except Exception as e:
     print(f"Failed after retries: {e}")
 ```
 
+<!-- section_id: "8c963718-5db9-420d-93c3-9724e94a4993" -->
 ### 8.3 Advanced Retry with Circuit Breaker (Python)
 
 ```python
@@ -997,6 +1035,7 @@ for i in range(10):
     time.sleep(1)
 ```
 
+<!-- section_id: "4814c82b-220a-4c81-9aae-e1a630627dc1" -->
 ### 8.4 Timeout Configuration
 
 ```python
@@ -1014,6 +1053,7 @@ client = genai.Client(
 )
 ```
 
+<!-- section_id: "1c4bbf86-b9b8-4df0-92a0-386231908c3e" -->
 ### 8.5 JavaScript Error Handling
 
 ```javascript
@@ -1062,6 +1102,7 @@ try {
 
 ---
 
+<!-- section_id: "de57dcf6-eb50-4e75-8399-b9f796f8f5ce" -->
 ## 9. Complete Application Example
 
 Here's a complete example combining all concepts:
@@ -1232,6 +1273,7 @@ if __name__ == "__main__":
 
 ---
 
+<!-- section_id: "52fcbbbc-0412-487d-a7bb-d04d2af05988" -->
 ## 10. References
 
 - [Gemini API Quickstart](https://ai.google.dev/gemini-api/docs/quickstart)

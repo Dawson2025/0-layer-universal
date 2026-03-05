@@ -5,8 +5,10 @@ resource_name: "QUICK_START"
 ---
 # Claude Code Bypass Permissions - Quick Start Guide
 
+<!-- section_id: "8bf30a4e-c005-43ae-babd-cf21477aa9e8" -->
 ## 5-Minute Setup
 
+<!-- section_id: "7172c4be-5da8-472c-ba63-e2c70b58517b" -->
 ### For Personal Projects (Recommended)
 
 1. **Create settings directory:**
@@ -48,6 +50,7 @@ resource_name: "QUICK_START"
 
    **You should now see the Shift+Tab bypass mode toggle indicator.**
 
+<!-- section_id: "ce3dd2f9-4f2d-4731-8473-787f290cc7a4" -->
 ### For Shared Repositories (Local Override)
 
 1. **Create local settings:**
@@ -85,12 +88,14 @@ resource_name: "QUICK_START"
 
 3. **Done!** Your team won't have bypass mode, but you will.
 
+<!-- section_id: "655a86c0-3777-44da-8190-d90a55b3dab8" -->
 ### One-Time Use (No Configuration)
 
 ```bash
 claude --dangerously-skip-permissions
 ```
 
+<!-- section_id: "26aeb1c0-409c-4d48-a7c9-b73dfffc8f6d" -->
 ## Verification
 
 In Claude Code, run:
@@ -100,8 +105,10 @@ In Claude Code, run:
 
 Look for: "Bypass permissions mode: enabled"
 
+<!-- section_id: "36944a42-09d8-4276-bed4-17208819cc0d" -->
 ## Common Configurations
 
+<!-- section_id: "cf972c3d-174f-4a79-bc81-013cee777ed5" -->
 ### What Actually Works
 
 **⚠️ IMPORTANT**: The `disableBypassPermissionsMode: false` approach shown in older documentation **does NOT work**. The correct configuration is:
@@ -134,10 +141,12 @@ Look for: "Bypass permissions mode: enabled"
 - Add `deny` rules for dangerous operations
 - The `disableBypassPermissionsMode` field only accepts `"disable"` as a value (to disable bypass mode)
 
+<!-- section_id: "bddb9aaf-4a22-45be-a4b6-d54c574025e7" -->
 ### Full Documentation
 
 See [bypass-permissions-setup.md](./bypass-permissions-setup.md) for complete details.
 
+<!-- section_id: "a43c8382-aa7b-44b1-804f-db9fd5fec5d2" -->
 ## Need Help?
 
 - **Security concerns?** Read [Security Best Practices](./bypass-permissions-setup.md#security-best-practices)

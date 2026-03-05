@@ -9,6 +9,7 @@ resource_name: "cli_coding_agent_persistent_context_comparison"
 
 ---
 
+<!-- section_id: "c6dfb684-1aef-4fad-87a1-b9789146e2c4" -->
 ## Quick Comparison Table
 
 | Feature | Claude Code | OpenAI Codex CLI | Gemini CLI | Aider | Cursor |
@@ -27,8 +28,10 @@ resource_name: "cli_coding_agent_persistent_context_comparison"
 
 ---
 
+<!-- section_id: "3b811190-4756-4c83-be8c-12c68f22528d" -->
 ## Detailed Analysis
 
+<!-- section_id: "eaa0fe9b-501c-4905-af31-ba062cfd538e" -->
 ### 1. Claude Code
 
 **Context File**: `CLAUDE.md`
@@ -69,6 +72,7 @@ resource_name: "cli_coding_agent_persistent_context_comparison"
 
 ---
 
+<!-- section_id: "55234dff-694b-4b38-b949-d31a067e6b04" -->
 ### 2. OpenAI Codex CLI
 
 **Context File**: `AGENTS.md`
@@ -107,6 +111,7 @@ resource_name: "cli_coding_agent_persistent_context_comparison"
 
 ---
 
+<!-- section_id: "51235da8-21f6-46c4-af44-e312c91d2474" -->
 ### 3. Gemini CLI
 
 **Context File**: `GEMINI.md`
@@ -158,6 +163,7 @@ resource_name: "cli_coding_agent_persistent_context_comparison"
 
 ---
 
+<!-- section_id: "4f4f8318-dac2-4746-a9c2-644b2d70a47c" -->
 ### 4. Aider
 
 **Context File**: `CONVENTIONS.md` (loaded via `--read` or `.aider.conf.yml`)
@@ -191,6 +197,7 @@ resource_name: "cli_coding_agent_persistent_context_comparison"
 
 ---
 
+<!-- section_id: "5c51d62b-f3f4-4d77-a383-4d13d14a7f17" -->
 ### 5. Cursor
 
 **Context File**: `.cursor/rules/` directory (`.mdc` or `.md` files) or `AGENTS.md`
@@ -224,14 +231,18 @@ resource_name: "cli_coding_agent_persistent_context_comparison"
 
 ---
 
+<!-- section_id: "1509e24f-9994-47e9-bf3e-9881e85918fd" -->
 ## Key Insights
 
+<!-- section_id: "df3233c0-11df-4219-b407-b3c67b6a197f" -->
 ### Context File Naming Convention
 All major tools have converged on a `TOOLNAME.md` pattern: `CLAUDE.md`, `AGENTS.md`, `GEMINI.md`. Cursor adopted `AGENTS.md` as an alternative alongside its own `.cursor/rules/` system. Aider is the outlier, requiring explicit loading of `CONVENTIONS.md`.
 
+<!-- section_id: "ae2afe03-217d-4c0d-a6a1-5528ae8e1e04" -->
 ### Enterprise Control
 Claude Code and Gemini CLI have the most mature enterprise lockdown features with system-level managed settings that cannot be overridden. Codex CLI, Aider, and Cursor lack equivalent system-level lockdown.
 
+<!-- section_id: "81f51d5d-a14b-43a7-a4a1-0fdb71744136" -->
 ### Structured vs. Freeform
 All tools accept freeform markdown for instructions. For structured configuration:
 - Claude Code uses JSON (`settings.json`)
@@ -240,6 +251,7 @@ All tools accept freeform markdown for instructions. For structured configuratio
 - Aider uses YAML (`.aider.conf.yml`) -- most traditional config approach
 - Cursor uses MDC frontmatter -- unique glob-pattern-based rule targeting
 
+<!-- section_id: "9c3bbd08-0595-4d05-8292-beded76a818a" -->
 ### Multi-Agent Maturity
 | Tool | Level | Approach |
 |------|-------|----------|
@@ -249,11 +261,13 @@ All tools accept freeform markdown for instructions. For structured configuratio
 | Cursor | Moderate | Parallel agents (up to 8), background agents, subagents |
 | Aider | Basic | Architect mode only (2-model pattern), no native multi-agent |
 
+<!-- section_id: "f8a92d55-c7af-4db2-9ab6-4d1b3efb6764" -->
 ### Skills / Extensibility
 Codex CLI has the most structured skill system (SKILL.md with YAML frontmatter, progressive disclosure, hierarchical discovery). Claude Code has custom commands and skills injected into subagents. Gemini CLI has a rich extension ecosystem (70+). Aider and Cursor have no native skill systems.
 
 ---
 
+<!-- section_id: "cf367f62-d580-4f23-81b3-3a403138f0a9" -->
 ## Sources
 
 - [Claude Code Settings Documentation](https://code.claude.com/docs/en/settings)

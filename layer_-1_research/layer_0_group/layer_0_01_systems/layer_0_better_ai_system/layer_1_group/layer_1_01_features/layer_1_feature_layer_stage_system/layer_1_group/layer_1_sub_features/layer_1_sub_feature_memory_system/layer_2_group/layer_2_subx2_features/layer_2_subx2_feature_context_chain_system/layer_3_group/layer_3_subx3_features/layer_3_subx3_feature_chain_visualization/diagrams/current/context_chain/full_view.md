@@ -10,6 +10,7 @@ resource_name: "full_view"
 
 > **Note**: No official unified context chain diagram exists from Anthropic. The official documentation covers each piece individually (settings, MCP, memory, skills, CLAUDE.md) but does not provide a single chronological visualization of everything loaded into context. This diagram was assembled from multiple official sources. See [Sources](#sources) below.
 
+<!-- section_id: "a75c4a63-31d5-46f7-8be9-e933ef00f56f" -->
 ## Dimensions
 
 | Tag | Meaning |
@@ -19,6 +20,7 @@ resource_name: "full_view"
 | `STATIC` | Automatically in every message sent to the AI model |
 | `DYNAMIC` | Only enters context when invoked on-demand |
 
+<!-- section_id: "56d6d906-5cff-42fd-9377-6ebe46a15348" -->
 ## Scope Levels (Official Claude Code Scopes)
 
 | Scope | Meaning | Shared? |
@@ -37,6 +39,7 @@ For only the configurable items, see [default_view.md](default_view.md).
 
 ---
 
+<!-- section_id: "bea6cfa8-3ae7-44c6-aad9-f00d6e2a131e" -->
 ## Loading Order
 
 ```
@@ -378,10 +381,12 @@ Everything the AI model sees, in order.
 
 ---
 
+<!-- section_id: "73089069-e2a6-4c2b-b3af-7eef66cd0fb8" -->
 ## Filesystem Reference
 
 > Triple-click a path to select it, then Ctrl+C → Ctrl+P → Ctrl+V → Enter to open.
 
+<!-- section_id: "d5432d01-507b-420b-bbee-256046a01ce0" -->
 ### Managed Scope
 
 Managed settings:
@@ -392,6 +397,7 @@ Managed MCP:
 
 /etc/claude-code/managed-mcp.json
 
+<!-- section_id: "27864072-d003-44ff-aa2e-9acb21e72bae" -->
 ### User Scope
 
 User MCP servers (top-level mcpServers key):
@@ -418,6 +424,7 @@ User plugins/skills:
 
 /home/dawson/.claude/plugins/marketplaces/claude-plugins-official/
 
+<!-- section_id: "5efee8ce-59bc-4ed7-b77e-72b5e0635ceb" -->
 ### Project Scope
 
 Auto memory:
@@ -448,6 +455,7 @@ Project skills:
 
 /home/dawson/dawson-workspace/code/0_layer_universal/.claude/skills/
 
+<!-- section_id: "3f6be415-1b82-4a17-97b5-c840719389e1" -->
 ### Local Scope
 
 Local MCP servers (projects["cwd"].mcpServers key):
@@ -462,6 +470,7 @@ Local CLAUDE.md (path varies by repo):
 
 \<repo\>/.claude.local.md
 
+<!-- section_id: "a5a4da8c-8198-4def-9fc9-819a123f1a5c" -->
 ### Invocation Scope (examples)
 
 Deeper skills (layer_0_group):
@@ -474,6 +483,7 @@ Deeper skills (layer_-1_99_stages):
 
 ---
 
+<!-- section_id: "b111f287-185e-49be-b8e2-9cdef7707510" -->
 ## Summary
 
 ```
@@ -505,6 +515,7 @@ Deeper skills (layer_-1_99_stages):
 
 ---
 
+<!-- section_id: "65bc5456-4c86-4079-84b9-5703400e8582" -->
 ## Key Insight
 
 The static chain (items 1-9) is the baseline cost of every API call. Within that, items 1-3 and 9 are fixed overhead you can't reduce. Items 4-8 are where optimization matters most — every token there is sent on every single message. Items 10-14 are efficient by design, only entering context when needed.
@@ -513,6 +524,7 @@ The most impactful optimization: keep items 4-8 lean and push detail into items 
 
 ---
 
+<!-- section_id: "f11749c2-92ff-4d4c-a7dd-350dc6161f4c" -->
 ## Traversal Behavior: CLAUDE.md vs Auto Memory
 
 A critical difference between two configurable static items:
@@ -528,8 +540,10 @@ A critical difference between two configurable static items:
 
 ---
 
+<!-- section_id: "5ef46a46-ee5c-4ab8-964b-f6a2d65c2140" -->
 ## Sources
 
+<!-- section_id: "e6a88ac6-42b0-4cf1-810e-fe573ccb8b05" -->
 ### Per-Item Sources
 
 | # | Item | Sources |
@@ -557,6 +571,7 @@ A critical difference between two configurable static items:
 | 14 | Deeper CLAUDE.md files | [Memory: CLAUDE.md](https://code.claude.com/docs/en/memory#claudemd) (traversal behavior) |
 | 15 | Web content | [Claude Code Overview](https://code.claude.com/docs/en/overview) (WebFetch/WebSearch tools) |
 
+<!-- section_id: "97848bfd-f089-43e4-9991-66c73cec142b" -->
 ### General Sources
 
 These sources informed the overall structure and multiple items:
@@ -570,6 +585,7 @@ These sources informed the overall structure and multiple items:
 - [Claude Code Session Memory](https://claudefa.st/blog/guide/mechanics/session-memory) — session memory rollout timeline
 - [The Complete Guide to Building Skills for Claude](https://resources.anthropic.com/hubfs/The-Complete-Guide-to-Building-Skill-for-Claude.pdf) — Anthropic's official skill-building guide
 
+<!-- section_id: "2512ddf4-3488-4711-8452-a827e60b4ed0" -->
 ### No Official Unified Diagram
 
 As of February 2026, Anthropic does not publish a single unified context chain diagram. Each documentation page covers its own piece:

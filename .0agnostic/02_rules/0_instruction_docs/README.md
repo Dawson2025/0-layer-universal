@@ -13,6 +13,7 @@ resource_name: "README"
 
 ---
 
+<!-- section_id: "686672d7-c35f-4555-8382-97f3180d4ac6" -->
 ## 🎯 **Purpose**
 
 This directory contains **universal instructions** for AI agents that apply to ANY software project, regardless of technology stack, domain, or size.
@@ -21,8 +22,10 @@ This directory contains **universal instructions** for AI agents that apply to A
 
 ---
 
+<!-- section_id: "30d493a3-18ca-4982-861c-006757a9bbce" -->
 ## 📚 **Core Universal Systems**
 
+<!-- section_id: "933a2da7-785c-45c9-9d27-d5b991fe0884" -->
 ### **1. Universal Documentation System** 📘
 
 **File**: `UNIVERSAL_DOCUMENTATION_SYSTEM.md`
@@ -39,6 +42,7 @@ This directory contains **universal instructions** for AI agents that apply to A
 
 ---
 
+<!-- section_id: "b108ced7-8d5f-4aaa-8ce0-4f455f52a6f7" -->
 ### **2. Testing Agent System** 🧪
 
 **Universal Components**:
@@ -60,6 +64,7 @@ This directory contains **universal instructions** for AI agents that apply to A
 
 ---
 
+<!-- section_id: "028ebcb3-8b2f-49fe-ad49-464a324a066d" -->
 ### **3. Terminal Execution System** 💻
 
 **Master Reference**: See `MASTER_DOCUMENTATION.md` for complete overview
@@ -93,6 +98,7 @@ This directory contains **universal instructions** for AI agents that apply to A
 
 ---
 
+<!-- section_id: "914e7eee-1904-4c3b-b4c4-3b631a622e8a" -->
 ### **4. Manual Steps Automation** 🤖
 
 **Universal Components**:
@@ -108,6 +114,7 @@ This directory contains **universal instructions** for AI agents that apply to A
 
 ---
 
+<!-- section_id: "37ace953-f10c-4ad4-93be-7c57f7c18d36" -->
 ### **5. OAuth Production Setup** 🔐
 
 **Universal Components**:
@@ -123,6 +130,7 @@ This directory contains **universal instructions** for AI agents that apply to A
 
 ---
 
+<!-- section_id: "fa14e97d-4de7-4a64-bce0-99b03b737fff" -->
 ### **6. Security Protocols** 🔒
 
 **Universal Components**:
@@ -138,6 +146,7 @@ This directory contains **universal instructions** for AI agents that apply to A
 
 ---
 
+<!-- section_id: "c8436c7b-0d72-4a98-83e1-7211de42659e" -->
 ### **7. Documentation Completion Protocol** 📝
 
 **Universal Components**:
@@ -153,10 +162,12 @@ This directory contains **universal instructions** for AI agents that apply to A
 
 ---
 
+<!-- section_id: "763e5b82-8aae-417c-b5a0-3b4f05c64fd2" -->
 ## 🔄 **Universal → Project Pattern**
 
 Every universal system follows this pattern:
 
+<!-- section_id: "26722434-bad8-47ad-bfd4-6a1f29927b6d" -->
 ### **Step 1: Universal (Level 0)**
 Define the universal protocol that works for ANY project:
 ```
@@ -164,6 +175,7 @@ trickle_down_0_universal/0_instruction_docs/
 └── [SYSTEM_NAME].md  ← Universal protocol
 ```
 
+<!-- section_id: "9bf80efb-42da-466a-8cac-848293ca1975" -->
 ### **Step 2: Project Implementation (Level 1)**
 Create project-specific implementation:
 ```
@@ -171,6 +183,7 @@ trickle_down_1_project/0_instruction_docs/
 └── [SYSTEM_NAME]_INTEGRATION.md  ← How to use for THIS project
 ```
 
+<!-- section_id: "34d9b999-a809-41a7-8832-44b9980aab85" -->
 ### **Step 3: Integration**
 The integration guide explains:
 - How to apply universal protocol to this project
@@ -180,6 +193,7 @@ The integration guide explains:
 
 ---
 
+<!-- section_id: "e3aa7145-c75a-4341-a384-523f5bd316d9" -->
 ## 📊 **Directory Structure**
 
 ```
@@ -213,8 +227,10 @@ trickle_down_0_universal/
 
 ---
 
+<!-- section_id: "80681606-1d86-44ce-8d08-4b9fe4428685" -->
 ## 🎯 **For AI Agents**
 
+<!-- section_id: "680c8704-a4e2-4420-8d23-3ca25c3404ea" -->
 ### **When Starting Work**
 
 1. **Read**: `../../../0_basic_prompts_throughout/what_to_do_next.md`
@@ -222,6 +238,7 @@ trickle_down_0_universal/
 3. **Follow**: Relevant universal protocols from this directory
 4. **Apply**: Project-specific integrations from Level 1
 
+<!-- section_id: "126b4df1-21af-4f7e-ad44-3cf08717e23d" -->
 ### **Which System to Use?**
 
 | Task | Universal System | Project Integration |
@@ -233,6 +250,7 @@ trickle_down_0_universal/
 | Managing passwords | `sudo_password_management.md` | (none needed) |
 | Documenting work | `post-completion-documentation-protocol.md` | Project standards |
 
+<!-- section_id: "4346e7b2-c543-42a1-a1c2-ae92abd44d4e" -->
 ### **Creating New Systems**
 
 If you need a new system:
@@ -244,8 +262,10 @@ If you need a new system:
 
 ---
 
+<!-- section_id: "a404356e-e368-45ce-aca8-0ee952aa1049" -->
 ## 📝 **Quick Reference**
 
+<!-- section_id: "230cf9fe-00d7-4b03-b30c-4d8d6d365d25" -->
 ### **Finding Documentation**
 
 ```bash
@@ -259,6 +279,7 @@ ls docs/0_context/trickle_down_1_project/0_instruction_docs/
 ls docs/0_context/trickle_down_1_project/0_instruction_docs/*INTEGRATION.md
 ```
 
+<!-- section_id: "aa3d435d-3c46-475d-a917-40d3f270f34c" -->
 ### **Key Principles**
 
 1. ✅ **Universal protocols** go in Level 0
@@ -269,24 +290,29 @@ ls docs/0_context/trickle_down_1_project/0_instruction_docs/*INTEGRATION.md
 
 ---
 
+<!-- section_id: "03cb0ad1-f8b7-401e-a5f4-be82b167f45e" -->
 ## 🔗 **Related Documentation**
 
+<!-- section_id: "f3b3e19e-271c-4322-a3a9-94d87a6ff942" -->
 ### **Meta-Level**
 - Core Instructions: `../../0_basic_prompts_throughout/what_to_do_next.md`
 - Documentation System: `UNIVERSAL_DOCUMENTATION_SYSTEM.md`
 - Master Index: `../../MASTER_DOCUMENTATION_INDEX.md`
 
+<!-- section_id: "2309151c-f94c-499a-a703-53321f8831e5" -->
 ### **Project-Level**
 - Project Instructions: `../../trickle_down_1_project/0_instruction_docs/project_instructions.md`
 - Project Constitution: `../../trickle_down_1_project/0_instruction_docs/constitution.md`
 - Testing Integration: `../../trickle_down_1_project/0_instruction_docs/TESTING_AGENT_INTEGRATION.md`
 
+<!-- section_id: "9f96ea60-9f8c-4a41-b932-db9335f349eb" -->
 ### **Tools**
 - Universal Tools: `../../trickle_down_0.75_universal_tools/0_instruction_docs/README.md`
 - Project Tools: `../../trickle_down_1.5_project_tools/0_instruction_docs/README.md`
 
 ---
 
+<!-- section_id: "ec0a5259-d93f-43ba-98fd-7c007994faa3" -->
 ## ✅ **Summary**
 
 This directory contains **universal protocols** that:

@@ -11,14 +11,17 @@ resource_name: "test_design_02_0agnostic_1merge_integration"
 
 ---
 
+<!-- section_id: "c8cc7c59-32a3-499d-8c5b-9adba4ecad7e" -->
 ## What We're Testing
 
 The end-to-end propagation pipeline: 0AGNOSTIC → agnostic-sync → .1merge → tool files → avenue web. The 3-tier merge model (synced → overrides → additions). Static-to-dynamic bridging. Reproducibility of generated files. Cross-tool application through .1merge scoping.
 
 ---
 
+<!-- section_id: "f1e0989d-8960-4c56-b16b-4f23da176364" -->
 ## Test Cases
 
+<!-- section_id: "81980a58-bcd5-42b5-89c5-d1650b62ee87" -->
 ### TC-02-01: Propagation pipeline — content flows from 0AGNOSTIC to tool files
 
 **Steps**:
@@ -32,6 +35,7 @@ The end-to-end propagation pipeline: 0AGNOSTIC → agnostic-sync → .1merge →
 **Expected**: Content authored in 0AGNOSTIC.md propagates to all 4 generated tool files
 **Type**: Integration
 
+<!-- section_id: "a406944d-db03-4851-8408-d53095b3c047" -->
 ### TC-02-02: .1merge 3-tier structure — dirs exist with correct naming
 
 **Steps**:
@@ -46,6 +50,7 @@ The end-to-end propagation pipeline: 0AGNOSTIC → agnostic-sync → .1merge →
 **Note**: Extends existing test_1merge_structure with tier naming validation
 **Type**: Structural
 
+<!-- section_id: "ed46860a-e523-4078-b55d-eb16d425a0c0" -->
 ### TC-02-03: .1merge scoping — additions appear only in target tool file
 
 **Steps**:
@@ -59,6 +64,7 @@ The end-to-end propagation pipeline: 0AGNOSTIC → agnostic-sync → .1merge →
 **Expected**: Each tool's additions stay scoped to that tool's generated file only
 **Type**: Integration
 
+<!-- section_id: "3a776f02-1aad-4202-8ee5-961c4d9e6edf" -->
 ### TC-02-04: .1merge overrides — tier 1 takes precedence over tier 0
 
 **Steps**:
@@ -72,6 +78,7 @@ The end-to-end propagation pipeline: 0AGNOSTIC → agnostic-sync → .1merge →
 **Note**: May need to create test fixtures if no overrides currently exist
 **Type**: Integration
 
+<!-- section_id: "597f7ed1-1810-4d68-b860-c41a8d967b2d" -->
 ### TC-02-05: Generated file reproducibility — re-running sync produces identical output
 
 **Steps**:
@@ -83,6 +90,7 @@ The end-to-end propagation pipeline: 0AGNOSTIC → agnostic-sync → .1merge →
 **Expected**: Running sync twice produces identical output (deterministic generation)
 **Type**: Integration
 
+<!-- section_id: "9a483978-3602-4850-b2e4-876b726b8744" -->
 ### TC-02-06: Static-to-dynamic bridge — CLAUDE.md contains pointers to dynamic resources
 
 **Steps**:
@@ -97,6 +105,7 @@ The end-to-end propagation pipeline: 0AGNOSTIC → agnostic-sync → .1merge →
 **Expected**: Static context (CLAUDE.md) bridges to dynamic context via at least 3 types of pointers
 **Type**: Structural
 
+<!-- section_id: "ad73e19c-67a4-46b5-aaf0-f8752b8589ef" -->
 ### TC-02-07: Canonical source traceability — generated files point back to source
 
 **Steps**:
@@ -110,6 +119,7 @@ The end-to-end propagation pipeline: 0AGNOSTIC → agnostic-sync → .1merge →
 **Expected**: Every generated file is traceable back to its canonical source
 **Type**: Structural
 
+<!-- section_id: "f89e6e47-7ff0-47e6-b60d-089ea4c8da11" -->
 ### TC-02-08: Design constraint — no tool-specific logic in 0AGNOSTIC.md
 
 **Steps**:
@@ -125,6 +135,7 @@ The end-to-end propagation pipeline: 0AGNOSTIC → agnostic-sync → .1merge →
 **Note**: Heuristic test — some references are acceptable, explicit tool instructions are not
 **Type**: Structural (heuristic)
 
+<!-- section_id: "fd81afbb-568b-49c2-9349-cc8b5b9a75b8" -->
 ### TC-02-09: Cross-tool application — each tool has a merge directory
 
 **Steps**:
@@ -138,6 +149,7 @@ The end-to-end propagation pipeline: 0AGNOSTIC → agnostic-sync → .1merge →
 **Expected**: .1merge covers the primary tools with individual merge directories
 **Type**: Structural
 
+<!-- section_id: "71ec2afb-15a9-423d-acb5-08577dd1b99c" -->
 ### TC-02-10: 8-avenue integration matrix — sources match design
 
 **Steps**:
@@ -157,6 +169,7 @@ The end-to-end propagation pipeline: 0AGNOSTIC → agnostic-sync → .1merge →
 
 ---
 
+<!-- section_id: "e391313e-d780-48c5-8aff-e4f562b45732" -->
 ## Coverage Gap Analysis
 
 | Design Concept | Test Case | Status |

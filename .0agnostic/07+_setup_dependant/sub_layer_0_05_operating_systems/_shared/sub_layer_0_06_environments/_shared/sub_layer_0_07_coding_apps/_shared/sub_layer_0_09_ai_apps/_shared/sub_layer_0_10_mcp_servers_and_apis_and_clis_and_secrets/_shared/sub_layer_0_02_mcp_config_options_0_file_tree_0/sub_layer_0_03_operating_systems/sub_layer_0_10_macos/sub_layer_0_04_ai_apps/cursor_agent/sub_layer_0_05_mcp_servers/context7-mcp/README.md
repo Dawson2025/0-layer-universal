@@ -6,8 +6,10 @@ resource_name: "README"
 ---
 # context7-mcp (cursor_agent on macos)
 
+<!-- section_id: "66e0052f-da04-46ce-8e69-308dd0022f99" -->
 ## Canonical docs
 - ../../../../../_shared/0.04_ai_apps/_shared/0.05_mcp_servers/context7-mcp/
 
+<!-- section_id: "51af8c0d-c399-4355-bbaa-fe38f0ee467d" -->
 ## Notes
 Add macos + cursor_agent specific setup notes here.

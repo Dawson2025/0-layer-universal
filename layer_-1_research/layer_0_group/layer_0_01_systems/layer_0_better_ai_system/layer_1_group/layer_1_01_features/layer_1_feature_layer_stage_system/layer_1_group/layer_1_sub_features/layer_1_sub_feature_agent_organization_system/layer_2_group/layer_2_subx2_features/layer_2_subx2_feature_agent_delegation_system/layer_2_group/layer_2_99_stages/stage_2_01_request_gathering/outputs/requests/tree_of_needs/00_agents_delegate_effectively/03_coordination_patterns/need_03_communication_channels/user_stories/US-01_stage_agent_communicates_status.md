@@ -13,6 +13,7 @@ resource_name: "US-01_stage_agent_communicates_status"
 **I want** the stage agent to communicate its status through a written stage report,
 **So that** I (or the manager) can check status asynchronously without needing a real-time conversation.
 
+<!-- section_id: "27c5f188-8711-409b-9dff-0e50e44d86b3" -->
 ### What Happens
 
 1. User asks "what's the status of the research stage?"
@@ -21,6 +22,7 @@ resource_name: "US-01_stage_agent_communicates_status"
 4. Manager presents the status to the user based on the report
 5. No real-time conversation with the stage agent is needed
 
+<!-- section_id: "9765308e-eeae-4072-bbdd-563a2a90aed8" -->
 ### Acceptance Criteria
 
 - Manager reads stage report and understands status without direct agent communication

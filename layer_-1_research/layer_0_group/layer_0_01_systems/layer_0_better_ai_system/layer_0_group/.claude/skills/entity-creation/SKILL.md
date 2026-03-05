@@ -6,20 +6,24 @@ resource_name: "SKILL"
 ---
 # Entity Creation Skill (Research Context)
 
+<!-- section_id: "f416c3c1-18fd-4f54-89e7-ec0535f4a6ac" -->
 ## Purpose
 
 Ensure correct naming conventions and canonical structure when creating layer-stage entities within research projects.
 
+<!-- section_id: "0dece152-4da0-43a9-87d8-aa9a71fb1c22" -->
 ## When to Use
 
 This skill is triggered when:
 - Creating a new feature, sub_feature, component, or subproject directory
 - Creating a new entity within the research hierarchy
 
+<!-- section_id: "a000b035-cd5e-41d7-b4e6-ff01c47e6ada" -->
 ## Canonical Structure
 
 Read `.0agnostic/06_context_avenue_web/01_file_based/04_@import_references/entity_structure.md` for the complete directory tree every entity needs. This is the single source of truth for entity structure.
 
+<!-- section_id: "7169b95f-abf0-486d-8fcb-352fe80976df" -->
 ## Naming Pattern
 
 ```
@@ -31,6 +35,7 @@ Where:
 - `{type}` = entity type (feature, sub_feature, component, subproject)
 - `{name}` = descriptive name with underscores
 
+<!-- section_id: "c157dcd9-03d0-4730-abae-6c36717c7aa5" -->
 ## Entity Types
 
 | Type | Pattern | Example |
@@ -42,6 +47,7 @@ Where:
 
 **Note**: `sub_feature` uses underscore (like `sub_layer`). Other types are single words.
 
+<!-- section_id: "b7b23087-8a54-4538-b4e4-e45417a89931" -->
 ## Layer Hierarchy
 
 Children are always layer N+1 of their parent:
@@ -53,6 +59,7 @@ layer_0_group/
               └── layer_2_component_*/ (layer 2)
 ```
 
+<!-- section_id: "48b3f0ff-ec6c-424f-ae2b-1836de9895e9" -->
 ## Before Creating an Entity
 
 1. **Read `.0agnostic/06_context_avenue_web/01_file_based/04_@import_references/entity_structure.md`** for canonical directory structure
@@ -64,6 +71,7 @@ layer_0_group/
 5. **Create `0AGNOSTIC.md` and `0INDEX.md`** (see INSTANTIATION_GUIDE.md for templates)
 6. **Run `agnostic-sync.sh`** to generate tool files
 
+<!-- section_id: "88cf837a-f0d0-48cd-acec-2555f867c65e" -->
 ## Checklist
 
 Before creating any entity:
@@ -76,6 +84,7 @@ Before creating any entity:
 - [ ] `0AGNOSTIC.md` and `0INDEX.md` created
 - [ ] Parent updated
 
+<!-- section_id: "2aee8367-cc5b-412c-abac-acd605bafcbb" -->
 ## Common Mistakes
 
 | Wrong | Right | Issue |
@@ -87,6 +96,7 @@ Before creating any entity:
 | `entity_99_stages/` | `layer_N_group/layer_N_99_stages/` | Stages go inside layer_N_group |
 | Missing `.1merge/` | Include `.1merge/` | All entities need tool-specific overrides dir |
 
+<!-- section_id: "1ecb92cd-7782-42a8-bd15-2336b12cd557" -->
 ## Key References
 
 - Canonical structure: `.0agnostic/06_context_avenue_web/01_file_based/04_@import_references/entity_structure.md`

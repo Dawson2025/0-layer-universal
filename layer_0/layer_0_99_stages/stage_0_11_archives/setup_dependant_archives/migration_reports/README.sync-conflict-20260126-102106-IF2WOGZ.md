@@ -11,6 +11,7 @@ This folder is the **traversable universal setup documentation file tree**. It i
 
 `Operating System → Environment → Coding App → AI App → {MCP Servers, AI Models, Universal Tools, Protocols, Agent Setup}`
 
+<!-- section_id: "51721d68-c5e9-4734-a165-c6c00ad16681" -->
 ## Canonical Tree
 
 ```text
@@ -57,8 +58,10 @@ This folder is the **traversable universal setup documentation file tree**. It i
             └── (same structure)
 ```
 
+<!-- section_id: "fc2bcfde-eeed-4a6d-ab32-024153e3e95f" -->
 ## How To Use This Tree
 
+<!-- section_id: "75a58c4b-d86a-462a-ae98-d1c607dcedcc" -->
 ### Quick Navigation
 
 1. **Start at your OS**: `0.05_operating_systems/<os>/README.md`
@@ -108,6 +111,7 @@ This folder is the **traversable universal setup documentation file tree**. It i
    - Stage agents
    - Testing agents
 
+<!-- section_id: "f0062c19-b4e1-40c1-ac3c-7c0a96b3e185" -->
 ### Using _shared Folders
 
 Use `_shared/` folders when guidance applies across multiple options at that level:
@@ -121,6 +125,7 @@ Use `_shared/` folders when guidance applies across multiple options at that lev
 - `0.12_universal_tools/_shared/` - Setup that works with all tools
 - `0.13_protocols/_shared/` - Setup that works with all protocols
 
+<!-- section_id: "0f75234d-2ef5-4706-b1df-403f17ff8f4d" -->
 ### Finding Setup Documentation
 
 **Scenario 1**: Setting up Claude Code CLI on Linux Ubuntu with Playwright MCP
@@ -155,35 +160,46 @@ Path: 0.05_operating_systems/macos/
       → general_setup_and_config/
 ```
 
+<!-- section_id: "1ec07373-db6f-4bbb-a973-95801155e0c0" -->
 ## Documentation Placement Guidelines
 
+<!-- section_id: "1db671b1-62e6-45fa-99ac-264358c94ab2" -->
 ### Where to place OS-specific setup docs:
 - `0.05_operating_systems/<os>/README.md` - OS installation, system requirements
 
+<!-- section_id: "22c647f4-b27c-4f90-ba75-ed7e1c802a51" -->
 ### Where to place environment-specific setup docs:
 - `0.06_environments/<environment>/README.md` - Environment variables, configuration
 
+<!-- section_id: "973d8601-29de-4e93-87bd-c7717f514abf" -->
 ### Where to place coding app setup docs:
 - `0.07_coding_apps/<coding_app>/README.md` - IDE installation, extensions, settings
 
+<!-- section_id: "c3e2da76-78d1-4a7e-b317-5bd7d54bd221" -->
 ### Where to place AI app setup docs:
 - `0.09_ai_apps/<ai_app>/README.md` - AI tool installation, authentication, configuration
 
+<!-- section_id: "4656e4c5-93d4-46f5-8015-e82e5cd2d2bb" -->
 ### Where to place MCP server setup docs:
 - `0.10_mcp_servers_and_apis_and_secrets/<mcp_server>/general_setup_and_config/` - MCP server installation, configuration, issues
 
+<!-- section_id: "9215e5aa-e011-47de-8d99-280a79064c04" -->
 ### Where to place AI model setup docs:
 - `0.11_ai_models/<ai_model>/general_setup_and_config/` - Model access, API keys, rate limits
 
+<!-- section_id: "1d43a80a-677b-4e06-b396-c5789650ec7a" -->
 ### Where to place universal tool setup docs:
 - `0.12_universal_tools/<tool>/general_setup_and_config/` - Tool installation, usage, issues
 
+<!-- section_id: "033fc8c8-ad4a-43c9-8b4a-8837ce3540ca" -->
 ### Where to place protocol setup docs:
 - `0.13_protocols/<protocol>/general_setup_and_config/` - Protocol rules, conventions, best practices
 
+<!-- section_id: "a64caec6-36ea-4202-8306-d8790f39883d" -->
 ### Where to place agent setup docs:
 - `0.14_agent_setup/general_setup_and_config/` - Agent configuration, registration, deployment
 
+<!-- section_id: "31efbf88-b2af-4c30-88c3-98ea5ba2a7bb" -->
 ## Relationship to Other Sublayers
 
 This file tree serves as a **navigational index** that points to detailed documentation in the individual setup sublayers:
@@ -199,6 +215,7 @@ This file tree serves as a **navigational index** that points to detailed docume
 - **sub_layer_0_13_universal_protocols** - Detailed protocol documentation
 - **sub_layer_0_14_agent_setup** - Detailed agent setup documentation
 
+<!-- section_id: "40f7e517-5e19-4c72-bfe9-70bc3596ef04" -->
 ## Notes
 
 - Use symlinks or references to avoid duplicating content from the detailed sublayers
@@ -212,12 +229,14 @@ This file tree serves as a **navigational index** that points to detailed docume
 
 ---
 
+<!-- section_id: "b913ab9c-7866-42c7-aae1-b9c45fd464bd" -->
 ## Legacy sub_layer_0_06_coding_app_setup Source
 
 # Sub Layer 0.07: Coding App Setup
 
 **Purpose**: IDE and editor setup, including Cursor IDE configuration.
 
+<!-- section_id: "8d3664ea-53b4-41bc-aa11-4f8ea2d9f02b" -->
 ## ⚠️ Cursor IDE Linux/Ubuntu MCP Issues
 
 **CRITICAL**: Cursor IDE on Linux has specific MCP limitations. Read:
@@ -230,41 +249,48 @@ This file tree serves as a **navigational index** that points to detailed docume
 - MCP configuration requires bash wrappers for NVM
 - Use `mcp_browser_*` tools instead of `mcp_playwright_*` on Linux
 
+<!-- section_id: "10cd54df-35fe-4fff-8824-d45c72f06ca9" -->
 ## Related Documentation
 
 - **OS-Level Issues**: `../sub_layer_0_05_os_setup/trickle_down_0.5_setup/0_instruction_docs/LINUX_UBUNTU_MCP_ISSUES.md`
 - **AI Apps Issues**: `../sub_layer_0_09_ai_apps_tools_setup/trickle_down_0.5_setup/0_instruction_docs/LINUX_UBUNTU_AI_APPS_MCP_ISSUES.md`
 - **MCP Setup**: `../sub_layer_0_10_mcp_servers_and_tools_setup/`
 
+<!-- section_id: "f5240c54-1830-4fb8-bef5-253b1e4e4f7d" -->
 ## Notes
 - Add slot-specific docs here over time.
 - Keep mappings up to date if paths change.
 
 ---
 
+<!-- section_id: "65af4683-ce8e-4f21-8783-82984cbd38b0" -->
 ## Legacy sub_layer_0_07_environment_setup Source
 
 # Sub Layer 0.06: Environment Setup
 
 **Purpose**: Environment-level setup that is not OS-specific and not tied to a single coding/AI application (e.g., Git/GitHub auth patterns, credentials, cross-app environment rules).
 
+<!-- section_id: "351f04d6-aaa3-43e5-a495-ecc6276ab08c" -->
 ## Included Topics
 
 - Git and GitHub authentication (PATs, SSO/SAML, credential storage patterns)
 - Cross-tool environment conventions (paths, permissions, shells)
 
+<!-- section_id: "674e8985-3f77-4f8f-90b2-fbbfcc865b99" -->
 ## Documentation
 
 - **GitHub SSO (PAT) Setup**: `trickle_down_0.5_setup/0_instruction_docs/github/github_sso_token_setup.md`
 
 ---
 
+<!-- section_id: "5a3e3f2a-5a95-4a75-a756-78730e92d34c" -->
 ## Legacy sub_layer_0_08_apps_browsers_extensions_setup Source
 
 # Sub Layer 0.08: Apps, Browsers, and Extensions Setup
 
 **Purpose**: Setup for general apps (non-AI), browsers, and browser extensions used across projects.
 
+<!-- section_id: "2b60829c-a577-4970-908f-8bae6d07b2a8" -->
 ## Notes
 - Keep OS-specific details in `sub_layer_0_05_os_setup/`.
 - Keep AI app install/config in `sub_layer_0_09_ai_apps_tools_setup/`.
@@ -274,6 +300,7 @@ Add slot-specific docs here over time.
 
 ---
 
+<!-- section_id: "bc26fae8-4d62-4387-933c-b49a072a9b3c" -->
 ## Legacy sub_layer_0_09_ai_apps_tools_setup Source
 
 # Sub Layer 0.09: AI Apps & Tools Setup
@@ -286,6 +313,7 @@ Add slot-specific docs here over time.
 
 ---
 
+<!-- section_id: "a8b85c5f-0154-4a1d-921f-999d6e5590bc" -->
 ## 🚀 Session Initialization
 
 **Before working with AI apps and tools, follow the universal initialization protocol:**
@@ -307,14 +335,17 @@ Add slot-specific docs here over time.
 
 ---
 
+<!-- section_id: "34545efe-c18d-4023-8ec3-884dba975676" -->
 ## 📚 Related Documentation
 
+<!-- section_id: "2a2ab409-a7fd-464b-a2c6-a13a3bf61b64" -->
 ### Universal Context Entry Points
 - **Universal Init Prompt:** `layer_0/0.02_sub_layers/sub_layer_0_01_basic_prompts_throughout/0_basic_prompts_throughout/universal_init_prompt.md`
 - **System Overview:** `0_context/SYSTEM_OVERVIEW.md`
 - **Usage Guide:** `0_context/USAGE_GUIDE.md`
 - **Master Index:** `0_context/MASTER_DOCUMENTATION_INDEX.md`
 
+<!-- section_id: "7b6af581-f625-4671-af8a-f5f5b3ac3ded" -->
 ### Related Sub-Layers
 - **Sub Layer 0.05:** OS Setup
   - Path: `layer_0/0.02_sub_layers/sub_layer_0_05_os_setup/`
@@ -336,6 +367,7 @@ Add slot-specific docs here over time.
   - Path: `layer_0/0.02_sub_layers/sub_layer_0_12_universal_tools/`
   - Contains Claude Code configuration documentation
 
+<!-- section_id: "5f0720cb-a40b-41c0-8257-8fac22a15c22" -->
 ### Universal Rules & Protocols
 - **Terminal Protocol:** `layer_0/0.04_universal_rules/trickle_down_0_universal/0_instruction_docs/UNIVERSAL_AGENT_TERMINAL_PROTOCOL.md`
 - **Git Commit Rules:** `layer_0/0.04_universal_rules/trickle_down_0_universal/0_instruction_docs/git_commit_rule.md`
@@ -343,6 +375,7 @@ Add slot-specific docs here over time.
 
 ---
 
+<!-- section_id: "62d0e478-f18b-41b2-b492-ce266cb69a0b" -->
 ## 🔧 AI Apps & Tools Covered
 
 This sub-layer documents:
@@ -352,6 +385,7 @@ This sub-layer documents:
 - Tool-specific setup instructions
 - Integration patterns and best practices
 
+<!-- section_id: "a5d80f33-2e9d-4e89-832b-1a8e807c5243" -->
 ### OpenAI Codex CLI
 
 **Status**: ✅ Installed (v0.64.0)
@@ -393,6 +427,7 @@ npm install -g @openai/codex@latest
 - ✅ macOS and Linux (officially supported)
 - ⚠️ Windows (experimental; recommended to use WSL)
 
+<!-- section_id: "adb564c1-1b30-412e-8136-18ef18c81052" -->
 ### Claude Code CLI
 
 **Documentation Location**:
@@ -402,6 +437,7 @@ npm install -g @openai/codex@latest
 
 **Important Note**: Claude Code uses CLI-based MCP configuration (not config files). See MCP setup in `sub_layer_0_10_mcp_servers_and_tools_setup` for details.
 
+<!-- section_id: "97f48540-d25c-4aa2-8f97-fb1d8e036cd4" -->
 ### Google Gemini CLI
 
 **Example Installation**:
@@ -411,6 +447,7 @@ gemini login
 gemini  # Start interactive CLI
 ```
 
+<!-- section_id: "9fc8b95d-460a-4a33-b04f-95f8cbee5ed4" -->
 ### Installation Checklist
 
 When setting up a new development environment:
@@ -421,6 +458,7 @@ When setting up a new development environment:
 - [ ] API keys configured for respective tools
 - [ ] MCP servers configured (see `sub_layer_0_10_mcp_servers_and_tools_setup`)
 
+<!-- section_id: "1225d49a-5b3d-420e-9805-114fb69c25d2" -->
 ### Quick Verification Commands
 
 ```bash
@@ -437,6 +475,7 @@ which claude && claude --version
 which gemini && gemini --version
 ```
 
+<!-- section_id: "e9b7da20-3458-4fa4-952b-5f5559fca9e9" -->
 ### Environment Variables
 
 Common environment variables for AI tools:
@@ -452,13 +491,16 @@ source ~/.bashrc
 
 ---
 
+<!-- section_id: "79ce5817-981a-4c46-84fb-ded8dd717b72" -->
 ## 📝 Documentation Structure
 
+<!-- section_id: "6760ed60-d176-4087-a180-35a1cdb6e2a0" -->
 ### Current Status
 - This README provides the entry point and navigation
 - Additional documentation should be added as needed
 - Keep mappings up to date if paths change
 
+<!-- section_id: "10964930-7346-4a5f-a655-cd932505404e" -->
 ### Adding New Documentation
 When adding new AI app or tool documentation:
 1. Create appropriate subdirectories if needed (following trickle-down pattern)
@@ -468,6 +510,7 @@ When adding new AI app or tool documentation:
 5. Update the Master Documentation Index if needed
 6. Follow the context update rule: `layer_0/0.04_universal_rules/trickle_down_0_universal/0_instruction_docs/context_update_rule.md`
 
+<!-- section_id: "40a2d840-0a4b-4c0a-b2d0-129ba4b7e9fd" -->
 ## ⚠️ Linux/Ubuntu-Specific MCP Issues
 
 **CRITICAL**: AI apps and tools on Linux have platform-specific MCP limitations. Read:
@@ -485,6 +528,7 @@ When adding new AI app or tool documentation:
 - **Cursor IDE Issues**: `../sub_layer_0_07_coding_app_setup/trickle_down_0.5_setup/0_instruction_docs/CURSOR_IDE_LINUX_MCP_ISSUES.md`
 - **MCP Setup**: `../sub_layer_0_10_mcp_servers_and_tools_setup/`
 
+<!-- section_id: "9f6217e1-bd15-4ed5-acab-b96cd5dae92c" -->
 ### Troubleshooting
 
 #### Codex CLI Issues
@@ -510,6 +554,7 @@ When adding new AI app or tool documentation:
 
 ---
 
+<!-- section_id: "152b334b-ec90-4d36-a35b-4e5b32286c16" -->
 ## 🔄 Mandatory Sync & Context Update Policy
 
 **At start of every chat/session (before work):**
@@ -537,6 +582,7 @@ git status
 
 ---
 
+<!-- section_id: "0eb46c4a-fb04-4e10-9c06-9eca01c83607" -->
 ## 🎯 Path Resolution
 
 **All paths in this documentation are relative to:**
@@ -554,16 +600,19 @@ git status
 
 ---
 
+<!-- section_id: "76f1438a-96c6-4bf6-86ed-1b1a876afd50" -->
 ## Legacy sub_layer_0_11_ai_models Source
 
 # sub_layer_0_11_ai_models
 
 **Purpose**: Approved AI models and usage guidance.
 
+<!-- section_id: "7ecea540-e942-4263-8fec-a66cb809f0b7" -->
 ## Overview
 
 This sublayer contains documentation about approved AI models, their usage guidelines, and best practices for selecting and using models across different contexts.
 
+<!-- section_id: "78958ff3-6d4c-40ba-b41a-8c7d16a2af0f" -->
 ## Structure
 
 ```
@@ -571,6 +620,7 @@ sub_layer_0_11_ai_models/
 └── (content to be added)
 ```
 
+<!-- section_id: "757abb7d-0efa-4cb4-bda6-4cd299f5271e" -->
 ## Relationship to Other Sublayers
 
 - **Depends on**: 
@@ -578,6 +628,7 @@ sub_layer_0_11_ai_models/
   - `sub_layer_0_10_mcp_servers_and_tools_setup` - Some models may be accessed via MCP
 - **Provides to**: All layers that need model selection and usage guidance
 
+<!-- section_id: "2f5efa1e-03e5-4f7c-bf63-6f8e000d887a" -->
 ## ⚠️ Linux/Ubuntu-Specific Model Access Issues
 
 **CRITICAL**: AI model access to MCP tools is limited on Linux. Read:
@@ -595,6 +646,7 @@ sub_layer_0_11_ai_models/
 - **Cursor IDE Issues**: `../sub_layer_0_07_coding_app_setup/trickle_down_0.5_setup/0_instruction_docs/CURSOR_IDE_LINUX_MCP_ISSUES.md`
 - **MCP Setup**: `../sub_layer_0_10_mcp_servers_and_tools_setup/`
 
+<!-- section_id: "3260a0b8-3107-49b8-969a-86681b111ede" -->
 ## Notes
 
 - Document approved models and usage guidance here
@@ -608,16 +660,19 @@ sub_layer_0_11_ai_models/
 
 ---
 
+<!-- section_id: "e894ee5f-222d-4d10-be44-6eefdf7f1540" -->
 ## Legacy sub_layer_0_12_universal_tools Source
 
 # sub_layer_0_12_universal_tools
 
 **Purpose**: Cross-project scripts, utilities, and universal tools.
 
+<!-- section_id: "4c029d17-209f-4735-ab9c-fc100ca6eb67" -->
 ## Overview
 
 This sublayer contains universal tools, scripts, and utilities that can be used across multiple projects. This includes browser automation tools, Claude Code configuration, AI development frameworks, and other cross-cutting utilities.
 
+<!-- section_id: "81ecc737-ee08-426b-8650-40ff0afdcf47" -->
 ## Structure
 
 ```
@@ -631,6 +686,7 @@ sub_layer_0_12_universal_tools/
         └── ...
 ```
 
+<!-- section_id: "396782d8-f2ad-4122-8b58-83a2c227a877" -->
 ## Relationship to Other Sublayers
 
 - **Depends on**:
@@ -638,12 +694,14 @@ sub_layer_0_12_universal_tools/
   - `sub_layer_0_10_mcp_servers_and_tools_setup` - Some tools may use MCP servers
 - **Provides to**: All layers that need universal utilities and scripts
 
+<!-- section_id: "9e7050de-cbd8-438b-bb64-095d26d41a39" -->
 ## Tool Context Files and OS Variants
 
 Universal tools integrate with the **OS Variant and Quartet Pattern** defined in the Ideal AI Manager Hierarchy System:
 
 - **Normative Specification**: `/home/dawson/code/0_layer_universal/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/os_and_quartets.md`
 
+<!-- section_id: "6558c3a6-7955-4e3f-aa4d-343f93ab98f7" -->
 ### Quartet Pattern Overview
 
 Each layer/stage location can have OS-specific context files organized as **quartets** (or N-tuples):
@@ -660,6 +718,7 @@ These files are organized under `os/<os-id>/` directories where `<os-id>` can be
 - `macos` - macOS
 - Custom variants as needed
 
+<!-- section_id: "582432b5-47ec-47bd-ad81-681c678eb114" -->
 ### Implementation Locations
 
 OS variant context files have been implemented at:
@@ -668,6 +727,7 @@ OS variant context files have been implemented at:
 - `layer_2_features/2.99_stages/stage_2.01_instructions/ai_agent_system/os/`
 - `layer_3_components/3.99_stages/stage_3.01_instructions/ai_agent_system/os/`
 
+<!-- section_id: "a7470a85-92ad-403b-8b11-c3fac769d173" -->
 ### Tool-Specific Context
 
 Universal tools should be aware of:
@@ -676,27 +736,32 @@ Universal tools should be aware of:
 - **Tool specialization**: Each tool reads its specific context file
 - **Extensibility**: New tools add their own context file pattern to the quartet/N-tuple
 
+<!-- section_id: "b4e3baed-5d0b-427d-885c-3071f51e29e0" -->
 ## Key Documentation
 
 - **[Browser Automation](trickle_down_0.75_universal_tools/0_instruction_docs/browser-automation/README.md)**: Browser automation tools and guides
 - **[Claude Code Config](trickle_down_0.75_universal_tools/0_instruction_docs/claude-code-config/README.md)**: Claude Code CLI configuration
 - **[AI Development Frameworks](trickle_down_0.75_universal_tools/0_instruction_docs/ai-development-frameworks/README.md)**: AI coding assistant frameworks
 
+<!-- section_id: "3f89d5d7-4e4e-44ff-8b17-70580112da48" -->
 ## AI Manager Hierarchy Integration
 
 This sub-layer integrates with the AI Manager Hierarchy System for orchestration and CLI patterns:
 
+<!-- section_id: "53d88ccb-6015-4e28-b618-1fd544634a7f" -->
 ### Framework Orchestration
 For guidance on integrating multi-agent frameworks (LangGraph, AutoGen, CrewAI, MetaGPT) with the hierarchy, see:
 - **[Framework Orchestration Overview](../sub_layer_0_13_universal_protocols/framework_orchestration/0_instruction_docs/framework_orchestration_overview.md)**: When to use framework-based orchestration vs. simple handoff coordination
 - **Existing Framework Docs**: `trickle_down_0.75_universal_tools/0_instruction_docs/ai-development-frameworks/` (complementary guidance on Spec Kit, BMAD Method, and AI coding assistants)
 
+<!-- section_id: "612e61f2-bcc0-43d0-8b89-53c6718e067f" -->
 ### CLI Recursion Patterns
 For patterns on using CLI recursion to spawn deep agent hierarchies, see:
 - **[CLI Recursion Syntax](../sub_layer_0_13_universal_protocols/cli_recursion/0_instruction_docs/cli_recursion_syntax.md)**: Concrete examples of managers spawning workers via Claude Code, Codex CLI, and Gemini CLI
 - OS-adapted examples for WSL/Ubuntu
 - Tool selection, parallel execution, and error handling patterns
 
+<!-- section_id: "a37233f3-aecc-4e2c-b475-0d01e8304d88" -->
 ## ⚠️ Linux/Ubuntu-Specific Tool Access Issues
 
 **CRITICAL**: Universal tools that depend on MCP have Linux-specific limitations. Read:
@@ -714,6 +779,7 @@ For patterns on using CLI recursion to spawn deep agent hierarchies, see:
 - **Cursor IDE Issues**: `../sub_layer_0_07_coding_app_setup/trickle_down_0.5_setup/0_instruction_docs/CURSOR_IDE_LINUX_MCP_ISSUES.md`
 - **MCP Setup**: `../sub_layer_0_10_mcp_servers_and_tools_setup/`
 
+<!-- section_id: "4fe3b35b-f9fa-4800-b034-a6d12763ed36" -->
 ## Notes
 
 - MCP-related tools have been moved to `sub_layer_0_10_mcp_servers_and_tools_setup`
@@ -728,6 +794,7 @@ For patterns on using CLI recursion to spawn deep agent hierarchies, see:
 
 ---
 
+<!-- section_id: "b0418d0c-8631-41d3-8344-3e3cadac2165" -->
 ## Legacy sub_layer_0_13_universal_protocols Source
 
 # Universal Protocols
@@ -741,29 +808,38 @@ It is organized as a **workflow feature**, following the same pattern described 
 - `0.04_workflows/` – concrete protocol workflows (how the protocols are applied step-by-step).
 - `0.05_results/` – aggregated results, metrics, and retrospectives from running those workflows.
 
+<!-- section_id: "560305b2-aed8-4cdc-9911-344261cba998" -->
 ## Protocols
 
+<!-- section_id: "eb0c5b8b-8faa-424b-991b-e2862510875d" -->
 ### 1. Verification
 - **Small Batch Protocol**: `small_batch_verification/0_instruction_docs/small_batch_verification_protocol.md` - Guidelines for iterative testing and verification.
 
+<!-- section_id: "b7a09f0b-cba9-4a34-8bae-01f73df03dc3" -->
 ### 2. Research File Documentation & Organization
 - **File Documentation Protocol**: `file_documentation_and_organization/0_instruction_docs/file_documentation_and_organization_protocol.md` - Steps for turning large raw files (e.g., chat transcripts, research logs) into structured `chat_history`, `things_learned`, and `overview` docs that are easy for agents to use.
 
+<!-- section_id: "ac86fe76-9ba4-4d2b-b0a1-767110ae03c9" -->
 ### 3. Protocol Writing Standard
 - **Protocol Writing Standard**: `protocol_writing_standard/0_instruction_docs/protocol_writing_standard.md` - Standard format and conventions for writing protocol documents, including OS/tool specificity conventions.
 
+<!-- section_id: "22d5bde5-43f4-4cca-8e0f-2b0d38e5305e" -->
 ### 4. Memory Handling
 - **Memory Handling Protocol**: `memory_handling/0_instruction_docs/memory_handling_protocol.md` - Guidelines for handling "remember this" requests and long-term memory storage.
 
+<!-- section_id: "c766667a-b2db-4f85-af49-ccb85d9068f8" -->
 ### 5. Reordering Operations
 - **Reordering Operations Protocol**: `reordering_operations/0_instruction_docs/reordering_operations_protocol.md` - Step-by-step guide for reordering numbered items (sub-layers, stages, etc.) in the context system, including required context loading and registry regeneration steps.
 
+<!-- section_id: "0aae19a6-6550-4d4d-b8de-ba8453c51a09" -->
 ### 6. Framework Orchestration
 - **Framework Orchestration Overview**: `framework_orchestration/0_instruction_docs/framework_orchestration_overview.md` - Guidance on integrating multi-agent frameworks (LangGraph, AutoGen, CrewAI, MetaGPT) with the AI Manager Hierarchy System. Explains when to use framework-based orchestration vs. simple handoff-based coordination, with minimal integration examples.
 
+<!-- section_id: "3b3a58b1-90d8-4bda-b389-9a0a4d1878ec" -->
 ### 7. CLI Recursion
 - **CLI Recursion Syntax**: `cli_recursion/0_instruction_docs/cli_recursion_syntax.md` - Concrete CLI recursion patterns for creating deep agent hierarchies where managers spawn workers via CLI commands. Includes OS-adapted examples for WSL/Ubuntu with Claude Code, Codex CLI, and Gemini CLI.
 
+<!-- section_id: "71f4e732-add0-4e35-81c1-503b3120cb01" -->
 ### 8. Observability and Logging
 - **Observability Protocol**: `observability/README.md` - Structured logging, monitoring, and observability patterns for the AI Manager Hierarchy System. Defines log levels, structured formats, layer-specific requirements, handoff logging, manager/worker observability, metrics collection, distributed tracing, and audit trail requirements.
 
@@ -776,12 +852,14 @@ This lets universal protocols evolve as first-class workflows, not just static d
 
 ---
 
+<!-- section_id: "b45196a1-38bf-4d13-a06d-1d59fe8cfbb7" -->
 ## Legacy sub_layer_0_14_agent_setup Source
 
 # sub_layer_0_13_agent_setup
 
 **Purpose**: Agent configuration and setup for AI applications and tools.
 
+<!-- section_id: "63facd05-393c-4cf0-bf1c-441f0cfd5ec0" -->
 ## Overview
 
 This sublayer contains documentation and configuration for setting up AI agents across different AI applications and tools. Agent setup is dependent on:
@@ -789,24 +867,29 @@ This sublayer contains documentation and configuration for setting up AI agents 
 - **MCP Servers** (sub_layer_0_10): Which MCP servers are configured and available
 - **AI Models** (sub_layer_0_11): Which AI models are available and approved for use
 
+<!-- section_id: "3634e29f-1e51-4ec3-bcc7-aa3c4cc97ced" -->
 ## Agent Configuration Features
 
+<!-- section_id: "d557dd79-c382-4344-b326-27a1c222a727" -->
 ### Model Selection and Fallbacks
 - Instructions for configuring agents with specific AI models
 - Fallback model ordering when primary models are unavailable
 - Model-specific agent instructions and capabilities
 
+<!-- section_id: "160616b0-b572-4678-b075-cc1137e4bd4a" -->
 ### App-Specific Agent Setup
 - **Cursor IDE**: Agent configurations for Cursor-specific workflows
 - **Claude Code**: Agent configurations for Claude Code CLI
 - **Other AI Tools**: Configurations for other AI applications
 
+<!-- section_id: "74b6f59e-0822-425f-b404-76849a432db8" -->
 ### MCP Integration
 - Agent instructions for using specific MCP servers
 - MCP tool availability and agent capabilities
 - Browser automation agent setup
 - Documentation agent setup (Context7, etc.)
 
+<!-- section_id: "46b52e7e-00c0-41be-9703-a28d4e4e483e" -->
 ## Structure
 
 ```
@@ -819,6 +902,7 @@ sub_layer_0_13_agent_setup/
         └── mcp-agent-integration/  # MCP server agent integration
 ```
 
+<!-- section_id: "79e31e8d-391b-4313-8b29-c2c8c08cf0bb" -->
 ## Dependency Chain
 
 Agent setup follows this dependency order:
@@ -835,6 +919,7 @@ Agent setup follows this dependency order:
 0.13_agent_setup (depends on 0.09, 0.10, 0.11, 0.12) ← You are here
 ```
 
+<!-- section_id: "1c15c0a0-0f72-4d64-802a-d1aac2ecb88d" -->
 ## Relationship to Other Sublayers
 
 - **Depends on**: 
@@ -844,20 +929,24 @@ Agent setup follows this dependency order:
   - `sub_layer_0_12_universal_tools` - Agents use universal tools for capabilities
 - **Provides to**: All layers that need configured agents for work
 
+<!-- section_id: "4a319a90-1f74-46bf-af8f-238be67f5033" -->
 ## Key Concepts
 
+<!-- section_id: "534e91de-14b5-48a4-b328-78ca04175180" -->
 ### Model Fallback Strategy
 Agents should be configured with:
 1. **Primary model(s)**: Preferred models for the agent's tasks
 2. **Fallback order**: Sequence of models to try if primary is unavailable
 3. **Model-specific instructions**: Instructions that vary by model capabilities
 
+<!-- section_id: "a09dcde6-d7b4-4e8f-8ef9-9f9f78830427" -->
 ### Agent Capabilities Matrix
 - **Browser Automation Agents**: Require browser MCP servers (0.09)
 - **Documentation Agents**: Require documentation MCP servers (Context7, etc.)
 - **Development Agents**: Require development tools and MCP servers
 - **Testing Agents**: Require testing frameworks and MCP servers
 
+<!-- section_id: "27748af1-6335-45dd-b8e9-c7d4368fb933" -->
 ## Notes
 
 - Agent configurations are app-specific and model-specific

@@ -5,6 +5,7 @@ resource_name: "registry"
 ---
 # Context Avenue Web Registry — Stage 02 Research
 
+<!-- section_id: "6fcfd924-3f88-46a0-b604-2b687ec183e8" -->
 ## Available Avenues
 
 | # | Avenue | Status | Content |
@@ -18,6 +19,7 @@ resource_name: "registry"
 | 07 | path_specific_rules | empty | No path-specific rules |
 | 08 | hooks | empty | No hooks configured |
 
+<!-- section_id: "c950280e-3d7e-4f52-af33-72cbeedd8b71" -->
 ## Active Context Sources
 
 This stage's context is delivered primarily through:
@@ -27,6 +29,7 @@ This stage's context is delivered primarily through:
 4. `.0agnostic/03_protocols/` — research methodology protocol
 5. `.0agnostic/05_handoff_documents/` — stage report for manager
 
+<!-- section_id: "7bafc84d-2ca5-4db3-82c8-190a115a792a" -->
 ## Notes
 
 Context avenues 01-08 are scaffolded but empty. This research stage operates primarily through its 0AGNOSTIC.md and .0agnostic/ knowledge/rules/protocols rather than through agent definitions or skills.

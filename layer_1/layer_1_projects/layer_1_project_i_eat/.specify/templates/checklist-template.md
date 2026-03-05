@@ -25,18 +25,21 @@ resource_name: "checklist-template"
   ============================================================================
 -->
 
+<!-- section_id: "21d755fb-639c-400a-890c-b768db5aaeec" -->
 ## [Category 1]
 
 - [ ] CHK001 First checklist item with clear action
 - [ ] CHK002 Second checklist item
 - [ ] CHK003 Third checklist item
 
+<!-- section_id: "29ce1b5f-5712-4942-93e1-f34bddd329cb" -->
 ## [Category 2]
 
 - [ ] CHK004 Another category item
 - [ ] CHK005 Item with specific criteria
 - [ ] CHK006 Final item in this category
 
+<!-- section_id: "28a06059-3ab2-4427-9cac-6003259558f1" -->
 ## Notes
 
 - Check items off as completed: `[x]`

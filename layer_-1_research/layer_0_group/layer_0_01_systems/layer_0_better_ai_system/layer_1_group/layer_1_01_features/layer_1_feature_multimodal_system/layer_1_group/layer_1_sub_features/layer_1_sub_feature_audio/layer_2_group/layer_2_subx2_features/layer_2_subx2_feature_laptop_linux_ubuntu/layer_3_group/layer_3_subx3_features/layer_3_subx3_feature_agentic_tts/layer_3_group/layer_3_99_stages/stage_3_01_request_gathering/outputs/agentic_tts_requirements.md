@@ -7,6 +7,7 @@ resource_name: "agentic_tts_requirements"
 
 **Date**: 2026-02-23
 
+<!-- section_id: "db933a0f-4803-4c0e-8d4c-134bd3a60542" -->
 ## Core Requirements
 
 1. **Auto-speak Claude responses**: When Claude finishes responding, automatically speak a summary
@@ -16,12 +17,14 @@ resource_name: "agentic_tts_requirements"
 5. **Kill switch**: New speech replaces old (no overlapping speech)
 6. **Offline**: Uses local Piper TTS, no cloud APIs
 
+<!-- section_id: "98a4f30c-7068-4218-bdd3-039bc1496420" -->
 ## User Stories
 
 - As a developer, I want Claude to speak its response summary so I can look away from the screen while it works
 - As a user, I want long responses truncated to a brief spoken overview
 - As a developer, I want to hear a completion sound AND a spoken summary when Claude finishes
 
+<!-- section_id: "7d0f24d3-80e1-4271-a80e-5b2bb4ffcc86" -->
 ## Constraints
 
 - Must use Claude Code hooks system (Stop event)
@@ -30,6 +33,7 @@ resource_name: "agentic_tts_requirements"
 - Must not conflict with system TTS (separate PID file: `/tmp/claude-tts.pid`)
 - Timeout: 60 seconds max for speech
 
+<!-- section_id: "6989218b-ae02-4cc1-9abb-c547c7ca3d03" -->
 ## Acceptance Criteria
 
 - [ ] Claude's Stop hook triggers TTS of response summary

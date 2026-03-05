@@ -12,10 +12,12 @@ resource_name: "UNIVERSAL_SYSTEM_EVALUATION"
 
 ---
 
+<!-- section_id: "a8ef50c8-b45d-434e-bb32-00357aa1e2d8" -->
 ## 🔍 Case Study: PAC School Workflow Feature
 
 **Example Found:** `school-pac20026_fall2025/0_context/0_context/layer_2_features/layer_2_feature_2.01_2_workflow_feature_2_assignments/`
 
+<!-- section_id: "41695650-706f-4265-8bd2-bfc3ea066a02" -->
 ### Structure
 
 ```
@@ -39,8 +41,10 @@ layer_2_feature_2.01_2_workflow_feature_2_assignments/
 
 ---
 
+<!-- section_id: "86245eaf-35e5-4cf4-8288-550ee3b13295" -->
 ## ✅ What the Universal System DOES Support Well
 
+<!-- section_id: "d7ba60a5-df23-4e33-b14a-4cb7a10a8f5e" -->
 ### 1. **Core Structure (Excellent)**
 
 The universal init prompt defines the standard layer structure clearly:
@@ -55,6 +59,7 @@ layer_<N>_<name>/
 
 **Score: 10/10** - Crystal clear standard structure
 
+<!-- section_id: "b8baffc4-63f2-49e5-99b6-1010fc115152" -->
 ### 2. **Flexible Nesting (Excellent)**
 
 Added in the recent update:
@@ -68,6 +73,7 @@ Added in the recent update:
 
 **Score: 10/10** - Arbitrary depth nesting fully supported
 
+<!-- section_id: "84dfd6a4-7e62-4cc5-9828-0950de9b7faa" -->
 ### 3. **Layer Numbers = Depth (Excellent)**
 
 Clearly states:
@@ -76,6 +82,7 @@ Clearly states:
 
 **Score: 10/10** - Clear and unambiguous
 
+<!-- section_id: "1c0384bc-8c93-4ed8-ab2c-8f7ee6719f11" -->
 ### 4. **Recursive Pattern (Excellent)**
 
 Shows that each nested layer follows the same structure.
@@ -84,8 +91,10 @@ Shows that each nested layer follows the same structure.
 
 ---
 
+<!-- section_id: "2975671d-b758-4a59-a5ab-833b3a5ecd0f" -->
 ## ❌ What the Universal System DOESN'T Support (Yet)
 
+<!-- section_id: "e4ae1541-d5d3-4208-a6aa-197b88afcc1c" -->
 ### 1. **Custom Numbered Directories (Not Supported)**
 
 **The Gap:**
@@ -111,6 +120,7 @@ These are **custom numbered directories** alongside the standard `2.02_sub_layer
 - How custom directories relate to stages
 - Examples of custom organizational patterns
 
+<!-- section_id: "25e9a1df-3537-4468-b638-40559294d578" -->
 ### 2. **Workflow-Specific Patterns (Not Supported)**
 
 **The Gap:**
@@ -133,6 +143,7 @@ This is a **three-phase workflow lifecycle** that doesn't fit the standard 8-sta
 - When to use custom directories vs stages
 - How to organize cyclical/repeated work
 
+<!-- section_id: "00c38323-ae06-452c-bbb7-40ed67a607cf" -->
 ### 3. **Slots vs Stages Distinction (Partially Supported)**
 
 **The Gap:**
@@ -152,6 +163,7 @@ Each slot then has its own `2.99_stages/` for execution tracking.
 - When to use slots vs features/components
 - How slots relate to nesting
 
+<!-- section_id: "305c2108-ca3a-4274-b083-47cdc9f50c32" -->
 ### 4. **Multiple Stages Directories (Not Supported)**
 
 **The Gap:**
@@ -172,8 +184,10 @@ PAC project has **multiple `2.99_stages/` directories** at different levels:
 
 ---
 
+<!-- section_id: "ca4727db-c0d8-43aa-9016-bcd8d50f5f4a" -->
 ## 📊 Overall Evaluation
 
+<!-- section_id: "7803a23c-9703-40e7-9f1b-38bc4ce2e2d8" -->
 ### By Category
 
 | Category | Score | Rating |
@@ -187,14 +201,17 @@ PAC project has **multiple `2.99_stages/` directories** at different levels:
 | **Slot vs Stage Distinction** | 5/10 | ⭐⭐ Fair |
 | **Nested Stages** | 4/10 | ⭐⭐ Fair |
 
+<!-- section_id: "f439d190-4b00-478e-b273-5df12a444b3d" -->
 ### Overall Score: **54/80 (68%)**
 
 **Grade: C+** - Good foundation, but missing advanced patterns
 
 ---
 
+<!-- section_id: "b259a688-1a7f-4b9f-8e92-342ea5a03319" -->
 ## 💡 What This Means
 
+<!-- section_id: "73f3f2ce-5ff8-49ef-851f-8eaab60bc959" -->
 ### ✅ The Universal System is EXCELLENT for:
 
 1. **Standard hierarchical organization** - Features and components at any depth
@@ -202,6 +219,7 @@ PAC project has **multiple `2.99_stages/` directories** at different levels:
 3. **Simple to moderate complexity** - Most school projects with 2-5 layers
 4. **Following existing patterns** - When you can copy template structure
 
+<!-- section_id: "5d0a4578-a385-4a5b-a980-d83d1b70d171" -->
 ### ⚠️ The Universal System STRUGGLES with:
 
 1. **Custom organizational needs** - When stages don't fit your workflow
@@ -209,6 +227,7 @@ PAC project has **multiple `2.99_stages/` directories** at different levels:
 3. **Output organization** - Separating process from results
 4. **Non-chronological patterns** - When work isn't linear (creation → production → results)
 
+<!-- section_id: "413ac7b5-b2d0-49d4-b4ce-f02a01003cce" -->
 ### 🔨 For Applied Calculus Setup:
 
 **Good News:** Applied Calculus workflow **fits perfectly** with current system!
@@ -239,8 +258,10 @@ layer_2_feature_derivatives/              # ✅ Standard feature
 
 ---
 
+<!-- section_id: "40b283b0-8c7f-447d-b37b-07108b47bf27" -->
 ## 🎯 Recommendations
 
+<!-- section_id: "8cbb9daf-5f4c-4f6d-b0d8-775a4e2d59ef" -->
 ### For Applied Calculus (Your Current Need)
 
 **Recommendation: USE THE STANDARD SYSTEM AS-IS** ✅
@@ -255,6 +276,7 @@ layer_2_feature_derivatives/              # ✅ Standard feature
 
 **You don't need custom directories** - the standard pattern is optimal!
 
+<!-- section_id: "c7bb1be4-2dbc-4584-ae0c-1e4e6fc6eceb" -->
 ### For Advanced Workflow Management (Like PAC School)
 
 **Recommendation: EXTEND WITH CUSTOM PATTERNS**
@@ -280,6 +302,7 @@ layer_2_feature_assignments/
 
 Both work, but **Option A** follows the universal pattern better.
 
+<!-- section_id: "526903fc-e8cb-4416-931e-a60ad9bf5ae0" -->
 ### For the Universal System Itself
 
 **Recommendations for improvement:**
@@ -301,6 +324,7 @@ Both work, but **Option A** follows the universal pattern better.
 
 ---
 
+<!-- section_id: "51326d57-e06c-45a3-8173-2cad70bbccc5" -->
 ## 📝 Summary
 
 **The Universal System:**

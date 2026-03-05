@@ -11,6 +11,7 @@ resource_name: "PLAYWRIGHT_MCP_CURSOR_SETUP"
 
 Complete guide for setting up the Playwright MCP (Model Context Protocol) server in Cursor IDE on Ubuntu Linux systems, including WSL environments.
 
+<!-- section_id: "3f2227de-c52f-48bc-817b-5d91a9042448" -->
 ## Prerequisites
 
 - Ubuntu 24.04 (Noble) or later (native or WSL2)
@@ -18,6 +19,7 @@ Complete guide for setting up the Playwright MCP (Model Context Protocol) server
 - Internet connection
 - Cursor IDE installed
 
+<!-- section_id: "e8f53ba0-f668-4140-a644-b644eb5623df" -->
 ## Overview
 
 This guide documents the setup process for Playwright MCP server in Cursor IDE on Ubuntu Linux (native and WSL). The MCP server enables browser automation capabilities directly within Cursor, allowing AI agents to interact with web browsers for testing, automation, and web scraping tasks.
@@ -26,8 +28,10 @@ This guide documents the setup process for Playwright MCP server in Cursor IDE o
 - ✅ Native Linux/Ubuntu
 - ✅ WSL2 (Ubuntu 24.04) on Windows 11
 
+<!-- section_id: "65e6ece4-44bf-4bcc-8ea9-ae1c09c0113d" -->
 ## Setup Steps
 
+<!-- section_id: "f7ec5c85-105a-458b-aa9a-3d5cf6489677" -->
 ### Step 1: Install Node.js via NVM
 
 Playwright MCP requires Node.js (v16+). We'll install it using nvm (Node Version Manager) for better version management.
@@ -51,6 +55,7 @@ npx --version
 
 **Note**: NVM automatically adds itself to `~/.bashrc`, so Node.js will be available in future terminal sessions.
 
+<!-- section_id: "1887c0dc-c8ce-4126-b6d5-a447a16c7a48" -->
 ### Step 2: Install Playwright System Dependencies
 
 Playwright requires various system libraries to run browsers. Install them with:
@@ -72,6 +77,7 @@ sudo apt-get install -y --no-install-recommends \
 
 **WSL Note**: These dependencies work the same in WSL as in native Linux. X11 forwarding may be required for GUI applications.
 
+<!-- section_id: "f918dffd-1891-42d5-bd22-b847e56448d5" -->
 ### Step 3: Install Playwright Chromium Browser
 
 **⚠️ CRITICAL: Use Node.js Playwright, NOT Python Playwright**
@@ -108,6 +114,7 @@ python3 -m playwright install chromium  # Don't use this!
 
 **Installation takes 5-10 minutes** depending on your internet connection.
 
+<!-- section_id: "102a0121-2f77-4b55-bf52-1cf18d426547" -->
 ### Step 4: Configure Cursor MCP Settings
 
 Cursor uses a global MCP configuration file located at `~/.cursor/mcp.json` (which is symlinked from `~/.config/mcp/mcp.json`).
@@ -146,6 +153,7 @@ Create or update this file with the following configuration:
 
 **WSL Note**: The configuration is the same for WSL and native Linux. Playwright MCP works well in WSL environments.
 
+<!-- section_id: "5b6e6006-0cef-4953-8d2e-f0fb3dce3bae" -->
 ### Step 5: Restart Cursor
 
 After completing the setup:
@@ -154,8 +162,10 @@ After completing the setup:
 2. **Restart Cursor IDE**
 3. The Playwright MCP server should now be available
 
+<!-- section_id: "641bb0b9-3ea6-4278-a8b4-ce22f203c680" -->
 ## Verification
 
+<!-- section_id: "694078a6-db00-45f1-ab57-779882b33cbd" -->
 ### Check 1: Verify Browser Installation
 
 ```bash
@@ -167,6 +177,7 @@ You should see directories like:
 - `chromium_headless_shell-1200`
 - `ffmpeg-1011`
 
+<!-- section_id: "d2eb8bca-eef2-497c-ac24-d796f63f7994" -->
 ### Check 2: Verify MCP Configuration
 
 ```bash
@@ -177,6 +188,7 @@ cat ~/.cursor/mcp.json
 
 Should show the Playwright MCP configuration.
 
+<!-- section_id: "49cdb565-27a5-4ed1-99a5-b096b0d95a34" -->
 ### Check 3: Test MCP Server Command
 
 ```bash
@@ -190,6 +202,7 @@ npx -y @playwright/mcp@latest --browser chromium --help
 
 Should display help text without errors.
 
+<!-- section_id: "e44671a2-a3ef-4a48-9c4f-537f17f80592" -->
 ### Check 4: Verify in Cursor
 
 After restarting Cursor:
@@ -198,12 +211,14 @@ After restarting Cursor:
 - Should show "playwright" with "22 tools enabled"
 - You can ask Cursor to navigate to websites and it should work
 
+<!-- section_id: "2185d3ef-4d61-4cf8-ba1b-235688a929c2" -->
 ## WSL (Windows Subsystem for Linux) Setup
 
 **Last Updated**: 2025-12-05  
 **Environment**: WSL2 (Ubuntu 24.04) on Windows 11, Lenovo Yoga 9 Pro  
 **Status**: ✅ Working
 
+<!-- section_id: "fe24eaea-0981-465d-94ef-2c5106459a7c" -->
 ### WSL-Specific Configuration
 
 Playwright MCP works well in WSL environments. The setup process is identical to native Linux, with a few considerations:
@@ -214,6 +229,7 @@ Playwright MCP works well in WSL environments. The setup process is identical to
 - No need to use Windows Chrome paths (unlike cursor-browser-extension)
 - X11 forwarding may be required for GUI applications (headless mode works without it)
 
+<!-- section_id: "68b72235-f5f1-44db-8551-910d9ae1b20f" -->
 ### WSL Setup Process
 
 The setup steps are the same as native Linux:
@@ -224,6 +240,7 @@ The setup steps are the same as native Linux:
 4. ✅ Configure MCP settings (same configuration)
 5. ✅ Restart Cursor
 
+<!-- section_id: "5a2e95dd-1b8e-4663-82a1-5a1fd0487a58" -->
 ### WSL Verification
 
 **Check Display Configuration** (for GUI mode):
@@ -238,6 +255,7 @@ which xeyes || echo "X11 apps not available"
 
 **Note**: Playwright can run in headless mode without X11, so GUI forwarding is optional.
 
+<!-- section_id: "a512bc2b-27ac-477f-aaa9-5e2f8579ea83" -->
 ### WSL Advantages
 
 - **Isolated Environment**: Playwright runs entirely in WSL, separate from Windows
@@ -245,6 +263,7 @@ which xeyes || echo "X11 apps not available"
 - **No Path Issues**: Unlike cursor-browser-extension, Playwright MCP doesn't need Windows paths
 - **Easy Setup**: Same configuration as native Linux
 
+<!-- section_id: "9fb02bb1-2d51-4117-9c2e-b8f1421fa879" -->
 ### WSL Troubleshooting
 
 If Playwright MCP doesn't work in WSL:
@@ -269,8 +288,10 @@ If Playwright MCP doesn't work in WSL:
 
 4. **Check Cursor logs** for MCP server errors
 
+<!-- section_id: "f34423ab-a53f-4ced-809a-7bb587de4179" -->
 ## Troubleshooting
 
+<!-- section_id: "b7701eb4-b570-481d-905e-5869a278fc17" -->
 ### Issue: "Browser specified in your config is not installed"
 
 **Error message:**
@@ -306,6 +327,7 @@ Error: Browser specified in your config is not installed. Either install it (lik
 
 **Prevention:** Always use `npx -y playwright@latest install chromium` for MCP servers, never `python3 -m playwright install chromium`.
 
+<!-- section_id: "7b92fae3-6913-46bc-95ff-55b1e4d0d411" -->
 ### Issue: "npx: command not found" or Node.js not found
 
 **Cause:** Cursor can't find Node.js/npx in its environment.
@@ -329,6 +351,7 @@ Error: Browser specified in your config is not installed. Either install it (lik
 
 **WSL Note**: Same solution applies in WSL. Node.js must be accessible from within WSL.
 
+<!-- section_id: "f799c519-b0fc-49cb-a425-58977f0ab46f" -->
 ### Issue: MCP tools not available in Cursor
 
 **Possible causes:**
@@ -355,6 +378,7 @@ Error: Browser specified in your config is not installed. Either install it (lik
    which npx
    ```
 
+<!-- section_id: "e0ea8706-c9fa-4187-903b-1ca04ed3e6c7" -->
 ### Issue: "Active lockfile found"
 
 **Error message:**
@@ -370,6 +394,7 @@ export NVM_DIR="$HOME/.nvm"
 npx -y playwright@latest install chromium
 ```
 
+<!-- section_id: "1fe7bbbf-ba98-4faa-9d06-557871d32e39" -->
 ### Issue: Browser installation command hangs
 
 **Solution:** The installation may be downloading in the background. Wait 5-10 minutes for it to complete. If it truly hangs:
@@ -377,6 +402,7 @@ npx -y playwright@latest install chromium
 2. Remove the lockfile (see above)
 3. Try again
 
+<!-- section_id: "62637902-d4a1-4f01-adc5-95e9fdc11cc7" -->
 ## Browser Options
 
 While this guide uses Chromium (recommended), Playwright supports other browsers:
@@ -392,8 +418,10 @@ To use a different browser:
 2. Update `~/.config/mcp/mcp.json` args to specify: `"--browser", "<browser-name>"`
 3. Restart Cursor
 
+<!-- section_id: "9cfc657a-8ef4-4f6f-83a8-97ef0e4c79bd" -->
 ## What Gets Installed
 
+<!-- section_id: "66ab1b0a-712b-44a9-8ed2-f21977ddcda2" -->
 ### System Dependencies (via apt-get)
 - Audio libraries (libasound2t64)
 - Accessibility libraries (libatk, libatspi)
@@ -402,17 +430,20 @@ To use a different browser:
 - X11 display libraries
 - Virtual framebuffer (xvfb) for headless mode
 
+<!-- section_id: "af44bd5b-26cc-41f1-9850-d84dedf5874f" -->
 ### Browser Binaries (via Playwright)
 - Installed to: `~/.cache/ms-playwright/`
 - Chromium: ~164.7 MB
 - FFMPEG: ~2.3 MB
 - Chromium Headless Shell: ~109.7 MB
 
+<!-- section_id: "12ff1828-d6ad-4ab8-973c-b661ce65f4d8" -->
 ### Total Download Size
 - System dependencies: ~50-100 MB (varies)
 - Browser binaries: ~280 MB
 - **Total: ~330-380 MB**
 
+<!-- section_id: "3dcd2c68-1aca-424d-b1f6-60d2d75140a6" -->
 ## Files Modified
 
 - `~/.config/mcp/mcp.json` - Cursor MCP server configuration (primary location)
@@ -421,6 +452,7 @@ To use a different browser:
 - `~/.bashrc` - NVM configuration added (if not already present)
 - `~/.nvm/` - Node.js installation via nvm
 
+<!-- section_id: "858f97dc-4a63-41fe-bd6a-fb6bfc3eb79a" -->
 ## Usage in Cursor
 
 Once configured, you can ask Cursor to:
@@ -437,6 +469,7 @@ Once configured, you can ask Cursor to:
 
 Cursor will use the Playwright MCP tools automatically to interact with browsers.
 
+<!-- section_id: "fba61237-0858-48c2-8f13-75bfcd468d71" -->
 ## Key Differences: Cursor vs Claude Code
 
 - **Cursor**: Uses global config at `~/.config/mcp/mcp.json` (symlinked to `~/.cursor/mcp.json`)
@@ -444,14 +477,17 @@ Cursor will use the Playwright MCP tools automatically to interact with browsers
 - **Both**: Use the same MCP server command format
 - **Both**: Require Node.js Playwright (not Python Playwright)
 
+<!-- section_id: "45fd84bd-428c-4faf-aaee-0289811f2725" -->
 ## Environment-Specific Notes
 
+<!-- section_id: "134e4a92-8897-492e-a609-77e61590ccc1" -->
 ### Ubuntu 24.04 (Noble) - Native Linux
 - Tested and verified on Ubuntu 24.04.3 LTS
 - All system dependencies available in default repositories
 - NVM installation works without issues
 - Playwright browsers install successfully
 
+<!-- section_id: "b25f992e-f7ec-49af-8710-e6089ed14acc" -->
 ### WSL2 (Ubuntu 24.04) on Windows 11
 - Tested on WSL2 (Ubuntu 24.04) on Windows 11, Lenovo Yoga 9 Pro
 - Same setup process as native Linux
@@ -459,11 +495,13 @@ Cursor will use the Playwright MCP tools automatically to interact with browsers
 - No Windows path configuration needed
 - X11 forwarding optional (headless mode works without it)
 
+<!-- section_id: "c54f3408-e1ef-4aa5-8bb6-203c630ca7f3" -->
 ### Lenovo Yoga Pro 9
 - Tested on Lenovo Yoga Pro 9 running Ubuntu 24.04 (native and WSL)
 - No hardware-specific issues encountered
 - All dependencies install correctly
 
+<!-- section_id: "a0ed3267-0c46-42f1-b413-acad24242a31" -->
 ## Related Documentation
 
 - [Cursor Browser MCP Setup](./CURSOR_BROWSER_MCP_SETUP.md) - Browser automation setup (includes WSL notes)

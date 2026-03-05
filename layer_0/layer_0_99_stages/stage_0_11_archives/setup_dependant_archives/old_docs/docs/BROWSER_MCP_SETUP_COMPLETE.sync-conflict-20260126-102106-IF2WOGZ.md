@@ -5,25 +5,30 @@ resource_name: "BROWSER_MCP_SETUP_COMPLETE.sync-conflict-20260126-102106-IF2WOGZ
 ---
 # Browser MCP Setup - Complete
 
+<!-- section_id: "ffd1050c-59d7-40d2-85ee-8d9e703abeeb" -->
 ## ✅ What's Been Configured
 
+<!-- section_id: "ae2bf927-bd3e-412b-84b9-6f65b9af9497" -->
 ### 1. Playwright MCP Server
 - **Status**: ✅ Configured and running
 - **Location**: `~/.cursor/mcp.json`
 - **Browser**: Chromium (installed at `~/.cache/ms-playwright/chromium-1200/chrome-linux64/chrome`)
 - **Processes**: 3+ Playwright MCP processes running
 
+<!-- section_id: "31449bfc-887b-4176-b5b6-43ad56b0bbe7" -->
 ### 2. Alternative Browser MCP Server
 - **Status**: ✅ Configured
 - **Server**: `@agent-infra/mcp-server-browser`
 - **Browser Path**: Explicitly set to Chromium executable
 - **Note**: Will be available after Cursor restart
 
+<!-- section_id: "47f27eaf-62ce-4fd7-8b04-2345c8bf3ac0" -->
 ### 3. Cursor Browser Extension
 - **Status**: ⚠️ Requires manual installation
 - **Issue**: "No server info found" - needs Chrome extension installed
 - **Solution**: Install Cursor browser extension in Chrome (see below)
 
+<!-- section_id: "b1eab3b4-5372-4bf6-b5d1-4682491e8f9c" -->
 ## 🔧 Current Configuration
 
 ```json
@@ -51,13 +56,16 @@ resource_name: "BROWSER_MCP_SETUP_COMPLETE.sync-conflict-20260126-102106-IF2WOGZ
 }
 ```
 
+<!-- section_id: "613e2b97-5018-4c66-8ca2-050377477829" -->
 ## 📋 Next Steps
 
+<!-- section_id: "8d5b610c-9e6f-4950-ba0a-8fdd392d9331" -->
 ### Option 1: Use Playwright/Browser MCP (Recommended - No Extension Needed)
 1. **Restart Cursor completely** (close all windows)
 2. After restart, Playwright MCP tools should be available
 3. Tools may be named differently (check available tools)
 
+<!-- section_id: "382250bf-3447-4aca-9fed-83dd90672d6e" -->
 ### Option 2: Install Cursor Browser Extension (For cursor-browser-extension)
 1. Open Google Chrome
 2. Go to `chrome://extensions/`
@@ -67,6 +75,7 @@ resource_name: "BROWSER_MCP_SETUP_COMPLETE.sync-conflict-20260126-102106-IF2WOGZ
 6. Restart Cursor IDE
 7. The `cursor-browser-extension` tools should then work
 
+<!-- section_id: "c9e2a6f3-dcdd-45ac-993f-8acc060e1bc0" -->
 ## 🧪 Testing
 
 After restarting Cursor, test with:
@@ -75,6 +84,7 @@ After restarting Cursor, test with:
 - Click elements
 - Fill forms
 
+<!-- section_id: "6146b15d-1a02-48e5-84c7-dec497e3363a" -->
 ## 📝 Available Tools (18 total)
 
 All browser automation tools are available:
@@ -86,6 +96,7 @@ All browser automation tools are available:
 - Code execution (evaluate, run_code)
 - Browser management (resize, close, install)
 
+<!-- section_id: "0f4045a4-e261-47d2-9e3b-344c430ba33e" -->
 ## ⚠️ Important Notes
 
 - **Playwright MCP** is configured and should work after restart
@@ -93,6 +104,7 @@ All browser automation tools are available:
 - **@agent-infra/mcp-server-browser** is configured as an alternative
 - All browsers are properly installed and accessible
 
+<!-- section_id: "4bbeb034-f97d-42c1-a90e-a640ddb6b87d" -->
 ## 🔍 Troubleshooting
 
 If tools still don't work after restart:

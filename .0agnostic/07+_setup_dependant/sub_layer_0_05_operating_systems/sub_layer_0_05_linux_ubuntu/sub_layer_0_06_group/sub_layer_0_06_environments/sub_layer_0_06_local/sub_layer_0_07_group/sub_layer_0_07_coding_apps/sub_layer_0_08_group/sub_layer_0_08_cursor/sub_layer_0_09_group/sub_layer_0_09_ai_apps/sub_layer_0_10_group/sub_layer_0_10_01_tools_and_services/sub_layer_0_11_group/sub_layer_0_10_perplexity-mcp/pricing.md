@@ -8,6 +8,7 @@ resource_name: "pricing"
 Last verified: 2026-02-24
 Source: https://docs.perplexity.ai/docs/getting-started/pricing
 
+<!-- section_id: "ec5d3449-5cb2-48eb-abc9-2e92a2c92efb" -->
 ## Token Pricing (per 1M tokens)
 
 | Model | Input | Output | Citation | Search Queries | Reasoning |
@@ -17,6 +18,7 @@ Source: https://docs.perplexity.ai/docs/getting-started/pricing
 | Sonar Reasoning Pro | $2 | $8 | -- | -- | -- |
 | Sonar Deep Research | $2 | $8 | $2 | $5/1K queries | $3 |
 
+<!-- section_id: "bff8fbda-dc2d-4b3d-8468-15c3ee89d4bb" -->
 ## Request Fees (per 1,000 requests)
 
 | Model | Low context | Medium | High |
@@ -25,6 +27,7 @@ Source: https://docs.perplexity.ai/docs/getting-started/pricing
 | Sonar Pro | $6 | $10 | $14 |
 | Sonar Reasoning Pro | $6 | $10 | $14 |
 
+<!-- section_id: "45123022-834c-48d2-837f-873575bc5841" -->
 ## Estimated Cost Per Query (for tracking)
 
 Based on actual billing data from 2026-02-25 (real usage, not theoretical):
@@ -41,6 +44,7 @@ of reasoning tokens. The $0.15 initial estimate was 20-30x too low.
 
 Formula: Total cost = token costs + request fee (by search context size)
 
+<!-- section_id: "217a7bf1-1d81-4207-b2f1-d79d90786d42" -->
 ## Actual Cost Breakdown (from billing page 2026-02-25)
 
 Total spent: $16.12 over ~30 days
@@ -57,6 +61,7 @@ Total spent: $16.12 over ~30 days
 
 **Key insight**: Deep research = 97% of costs. Regular sonar-pro searches are cheap (~$0.05/call).
 
+<!-- section_id: "80e121b7-61ef-4924-80e7-0a4886e8e423" -->
 ## Subscription Comparison
 
 | Factor | API | Pro ($20/mo) |

@@ -7,10 +7,12 @@ resource_name: "README_root_previous"
 
 **Purpose**: MCP (Model Context Protocol) server setup and configuration for AI apps and tools.
 
+<!-- section_id: "fad0b514-dafd-4a92-ad25-41ce623e0988" -->
 ## Overview
 
 This sublayer contains documentation and configuration for setting up MCP servers across different AI applications and tools. MCP setup is dependent on which AI app/tool it's being configured for (Cursor IDE, Claude Code, etc.).
 
+<!-- section_id: "06b0cf3d-907a-4491-9905-48dec5ab4e4a" -->
 ## Structure
 
 ```
@@ -32,19 +34,23 @@ sub_layer_0_10_mcp_servers_and_tools_setup/
 └── 0.05_mcp_servers ->                    # Compatibility link (contents live in file tree)
 ```
 
+<!-- section_id: "f59dbbb6-aa18-47d0-8b1c-e8b82dffb36f" -->
 ## Relationship to Other Sublayers
 
 - **Depends on**: `sub_layer_0_09_ai_apps_tools_setup` - MCP setup requires the AI app/tool to be installed first
 - **Provides to**: All layers that need browser automation, documentation tools, or other MCP capabilities
 
+<!-- section_id: "ef054142-6d8a-48b1-bb11-fac39e6c34a8" -->
 ## Key Documentation
 
+<!-- section_id: "fb4f1801-3d1e-4813-a3a2-690bb4d349b6" -->
 ### Core Setup Guides
 - **[MCP System Guide](trickle_down_0.75_universal_tools/0_instruction_docs/mcp-tools/MCP_SYSTEM_GUIDE.md)**: Complete MCP management system
 - **[MCP Configuration Guide](trickle_down_0.75_universal_tools/0_instruction_docs/mcp-tools/MCP_CONFIGURATION_GUIDE.md)**: How to configure MCP servers
 - **[Cursor Browser MCP Setup](trickle_down_0.75_universal_tools/0_instruction_docs/mcp-tools/CURSOR_BROWSER_MCP_SETUP.md)**: Cursor IDE-specific browser MCP setup
 - **[Browser MCP Setup Experience](trickle_down_0.75_universal_tools/0_instruction_docs/mcp-tools/BROWSER_MCP_SETUP_EXPERIENCE.md)**: Linux/Ubuntu-specific issues and lessons learned
 
+<!-- section_id: "f8d4109f-66f1-455c-85a9-eea5c4690077" -->
 ### Critical Issue Documentation (2025-12-05)
 - **[Playwright MCP Working Solution](trickle_down_0.75_universal_tools/0_instruction_docs/mcp-tools/PLAYWRIGHT_MCP_WORKING_SOLUTION.md)**: ✅ **CONFIRMED WORKING** - Complete solution for getting Playwright MCP tools working
 - **[MCP Tool Limits Research](trickle_down_0.75_universal_tools/0_instruction_docs/mcp-tools/MCP_TOOL_LIMITS_RESEARCH.md)**: ✅ **RESEARCHED** - Comprehensive findings on Cursor's 40-tool hard limit
@@ -53,6 +59,7 @@ sub_layer_0_10_mcp_servers_and_tools_setup/
 - **[Browser Environment Variable Fix](trickle_down_0.75_universal_tools/0_instruction_docs/mcp-tools/BROWSER_ENV_VAR_FIX.md)**: Fix for recurring browser installation issues
 - **[Cursor IDE Linux MCP Issues](trickle_down_0.75_universal_tools/0_instruction_docs/mcp-tools/CURSOR_IDE_LINUX_MCP_ISSUES.md)**: Linux/WSL-specific MCP issues and workarounds
 
+<!-- section_id: "a8f5099f-7d7e-404c-a100-69fc0a494719" -->
 ## ⚠️ Linux/Ubuntu-Specific Issues
 
 **CRITICAL**: Linux/Ubuntu has platform-specific MCP limitations. See related documentation:
@@ -69,6 +76,7 @@ sub_layer_0_10_mcp_servers_and_tools_setup/
 - **WSL**: Only `mcp_cursor-browser-extension_*` tools are available for browser automation
 - **Native Linux**: May be able to use `mcp_browser_*` tools (needs verification)
 
+<!-- section_id: "0d7d2beb-5f6b-46d6-ba58-90e0e5412497" -->
 ## App-Specific MCP Setup
 
 MCP servers are configured per AI application:
@@ -79,6 +87,7 @@ MCP servers are configured per AI application:
 
 See `0.02_ai_apps/` for per-app runbooks.
 
+<!-- section_id: "a852febc-2fac-4707-9d25-fabe8ca6afa3" -->
 ## OS-Specific MCP Setup
 When a setup depends on the OS/runtime (especially browser automation), start here:
 - `0.02_mcp_config_options_0_file_tree_0/0.03_operating_systems/wsl/` (WSLg headed browser notes)
@@ -86,6 +95,7 @@ When a setup depends on the OS/runtime (especially browser automation), start he
 - `0.02_mcp_config_options_0_file_tree_0/0.03_operating_systems/macos/`
 - `0.02_mcp_config_options_0_file_tree_0/0.03_operating_systems/linux_ubuntu/`
 
+<!-- section_id: "d4614513-fb61-4a0c-8234-78883bdee7ef" -->
 ## Common MCP Servers
 
 - **Browser Automation**: Playwright, Chrome DevTools, Browser MCP
@@ -95,6 +105,7 @@ When a setup depends on the OS/runtime (especially browser automation), start he
 
 ---
 
+<!-- section_id: "c0dbfce8-435d-46fd-97af-6f38004584e8" -->
 ## Recent Updates (2025-12-05)
 
 **Major Findings**:

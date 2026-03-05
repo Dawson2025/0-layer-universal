@@ -5,9 +5,11 @@ resource_name: "testing"
 ---
 # Testing Guide
 
+<!-- section_id: "00dcbeea-ece2-427a-b7cf-7121eff7dfc4" -->
 ## Overview
 This repository includes multiple test scripts verifying menu structure, admin features, phoneme management, reset flow, and end-to-end workflows.
 
+<!-- section_id: "1cbb4c10-93a7-4b0d-9cb5-c73fa9b5bda0" -->
 ## How to Run
 - These tests are simple Python scripts using assertions; run directly:
 ```bash
@@ -27,6 +29,7 @@ python3 workflow_test.py | cat
 
 - Use `| cat` to avoid pagers and ensure all output is printed.
 
+<!-- section_id: "8c26aca5-bf41-48ca-b819-fc185ff16b88" -->
 ## Coverage Highlights
 - Admin login and submenu flows
 - Menu structure and numbering

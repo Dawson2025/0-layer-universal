@@ -12,12 +12,14 @@ resource_name: "chain_optimization_strategies"
 
 ---
 
+<!-- section_id: "c33a5746-d3a1-4458-9038-f1202b403577" -->
 ## Overview
 
 Context chains have a direct cost: every static token is sent on every API call. A 7-level deep chain with verbose CLAUDE.md files at each level could consume thousands of tokens per call. This document captures strategies for keeping chains efficient while maintaining full functionality.
 
 ---
 
+<!-- section_id: "f2148871-d935-402e-818f-4b3fd5fb1b18" -->
 ## Strategy 1: Lean CLAUDE.md, Rich .0agnostic/
 
 The most impactful optimization. CLAUDE.md is static (always loaded). .0agnostic/ is dynamic (loaded on-demand).
@@ -37,6 +39,7 @@ The most impactful optimization. CLAUDE.md is static (always loaded). .0agnostic
 
 ---
 
+<!-- section_id: "3b72a40e-47c9-4aa2-ab32-8bfa2a376838" -->
 ## Strategy 2: Pointer-Based Navigation
 
 Instead of embedding content, embed **pointers** to content:
@@ -59,6 +62,7 @@ This costs ~10 tokens in CLAUDE.md vs ~500+ tokens for inline content.
 
 ---
 
+<!-- section_id: "f18680f8-047b-46af-b12e-6cbfa755e885" -->
 ## Strategy 3: Agnostic-Sync Section Extraction
 
 `agnostic-sync.sh` extracts only specific h2 sections from 0AGNOSTIC.md into CLAUDE.md:
@@ -72,6 +76,7 @@ Sections NOT in this list are **not** copied to CLAUDE.md. Use this to keep rese
 
 ---
 
+<!-- section_id: "949efd7f-0233-45f7-8464-0076b0b2bd31" -->
 ## Strategy 4: Container Node Minimalism
 
 Container nodes (layer_N_group/, layer_N_features/) should have the absolute minimum context:
@@ -93,6 +98,7 @@ Load this context when:
 
 ---
 
+<!-- section_id: "0386e777-0556-4192-817a-002293f4d6df" -->
 ## Strategy 5: Dynamic Chain Walking
 
 Rather than pre-loading the full chain, walk it on-demand:
@@ -108,6 +114,7 @@ Most work only needs the current entity + its immediate parent. Deep chain walks
 
 ---
 
+<!-- section_id: "444016e0-1a71-4ea5-82e4-1625760b49b8" -->
 ## Strategy 6: Integration Summaries as Cache
 
 `.integration.md` files serve as a **cached summary** of `.gab.jsonld`:
@@ -118,6 +125,7 @@ For most tasks, reading the integration summary is sufficient. Only query the fu
 
 ---
 
+<!-- section_id: "e6a865a6-d458-4579-9997-ba091d6cbadd" -->
 ## Anti-Patterns to Avoid
 
 | Anti-Pattern | Why It's Bad | Alternative |
@@ -130,6 +138,7 @@ For most tasks, reading the integration summary is sufficient. Only query the fu
 
 ---
 
+<!-- section_id: "5787327b-baaa-4bc0-bbd9-3a37ec2a0bf7" -->
 ## Measurement
 
 Track optimization effectiveness with:
@@ -151,6 +160,7 @@ echo "Static: $static, Dynamic: $dynamic, Ratio: $(echo "scale=1; $dynamic/$stat
 
 ---
 
+<!-- section_id: "ac274265-188f-465d-9c00-4e86d576e3fa" -->
 ## Related Documents
 
 - Static vs dynamic context: `./static_dynamic_context.md`

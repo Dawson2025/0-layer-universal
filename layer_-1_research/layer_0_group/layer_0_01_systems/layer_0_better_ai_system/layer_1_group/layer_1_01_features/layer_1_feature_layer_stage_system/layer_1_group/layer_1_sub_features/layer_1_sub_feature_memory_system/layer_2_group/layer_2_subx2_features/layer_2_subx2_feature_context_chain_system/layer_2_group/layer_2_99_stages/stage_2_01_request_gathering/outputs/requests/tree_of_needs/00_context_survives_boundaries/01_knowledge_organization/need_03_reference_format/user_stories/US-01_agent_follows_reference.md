@@ -13,6 +13,7 @@ resource_name: "US-01_agent_follows_reference"
 **I want** the AI to follow a standardized reference to the exact source file and section,
 **So that** it finds the full explanation in one read instead of searching across all stage outputs.
 
+<!-- section_id: "df5e30b2-9af3-49fc-b276-165cc2d1c618" -->
 ### What Happens
 
 1. User asks the AI to verify or elaborate on a specific claim (e.g., "vectors can't capture typed relationships")
@@ -20,6 +21,7 @@ resource_name: "US-01_agent_follows_reference"
 3. Agent loads the referenced file and reads the specific section
 4. User gets the full explanation with a clear provenance trail
 
+<!-- section_id: "3ac21a50-9d87-4f27-aef8-fe3bd6888ab1" -->
 ### Acceptance Criteria
 
 - Reference format is parseable by both agents and scripts

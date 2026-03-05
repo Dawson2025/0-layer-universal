@@ -5,6 +5,7 @@ resource_name: "instructions"
 ---
 # AutoGen Agent Context
 
+<!-- section_id: "14278c18-0ccb-4b3f-95fc-641159bcf528" -->
 ## Identity
 
 **Role**: L4 Phoneme System Layer Agent
@@ -12,8 +13,10 @@ resource_name: "instructions"
 **Depends On**: L2 Infrastructure (auth, firebase, storage, TTS), L3 Users (sessions)
 **Provides**: IPhonemeProvider, IPhonemeAudio, IFrequencyProvider, IPhonemeAdmin
 
+<!-- section_id: "57168853-1fdb-4e50-a66c-2261560803e7" -->
 ## Key Behaviors
 
+<!-- section_id: "7751e82d-d7f4-4dc5-8920-2895031bb98a" -->
 ### Sub-layers
 - L4.1 Core: Phoneme CRUD, group/type management, display logic
 - L4.2 Phonotactics: Phonotactic rules engine, constraint validation
@@ -23,9 +26,11 @@ resource_name: "instructions"
 - L4.6 Display: Phoneme display views (nested, flat, full)
 - L4.7 Frequency: Phoneme usage frequency calculation and tracking
 
+<!-- section_id: "023f0291-5a55-4693-9df0-77a48928f707" -->
 ### Dependency Shape
 DAG — Core is shared foundation; Admin, Display, Frequency depend on Core; TTS and Phonotactics are independent
 
+<!-- section_id: "bafaf6f2-e379-4a90-8ea5-a32d2f565448" -->
 ## Triggers
 
 | Situation | Action |
@@ -36,14 +41,17 @@ DAG — Core is shared foundation; Admin, Display, Frequency depend on Core; TTS
 | Admin operations | Check admin/ sub-layer |
 
 
+<!-- section_id: "96c3a0aa-8f16-48dc-840d-40b0c8a5aca7" -->
 ## Current Status
 
 **Phase**: Routes extracted — all phoneme display, admin, and API routes
 **Routes file**: routes.py (phoneme display, admin, frequency, single-check routes)
 **Key modules**: core/ (phonemes_bp), admin/, phonotactics/, seed/
 
+<!-- section_id: "a92260d7-53b8-4d13-bf24-2555be39e645" -->
 ## AutoGen-Specific Configuration
 
+<!-- section_id: "f120c67d-5d2e-4ed5-878a-dc49f004d907" -->
 ### Agent Registration
 Register this context in your AutoGen agent configuration:
 
@@ -55,6 +63,7 @@ agent_config = {
 }
 ```
 
+<!-- section_id: "bd5cd65b-a0e3-428f-be55-ab1944886900" -->
 ### Multi-Agent Coordination
 - Check .locks/ before modifying shared files
 - Use atomic writes (temp file → rename)

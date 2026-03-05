@@ -9,6 +9,7 @@ resource_name: "deduplication_quick_reference"
 
 ---
 
+<!-- section_id: "34c14ed2-29f4-4db9-99b8-1518b8c387ca" -->
 ## TL;DR (30 seconds)
 
 1. **Check first**: Does documentation already exist at `.0agnostic/`?
@@ -19,6 +20,7 @@ resource_name: "deduplication_quick_reference"
 
 ---
 
+<!-- section_id: "1b989ea6-ed67-4ccb-aaf3-41ad9ff07c21" -->
 ## The Pattern
 
 ```
@@ -37,6 +39,7 @@ Pointer (research)
 
 ---
 
+<!-- section_id: "ada3fbfa-8b7f-423e-af1e-ab136203ee5a" -->
 ## Decision Tree
 
 ```
@@ -49,6 +52,7 @@ Creating documentation?
 
 ---
 
+<!-- section_id: "591b6573-b296-4218-9f3f-2b11234b38ae" -->
 ## Pointer Template (Copy & Paste)
 
 ```markdown
@@ -67,6 +71,7 @@ This pointer file directs you to the current production definition.
 
 ---
 
+<!-- section_id: "c507d50a-c1a1-409d-b10d-2a43d2715b63" -->
 ## Red Flags 🚩
 
 | Red Flag | What to Do |
@@ -78,6 +83,7 @@ This pointer file directs you to the current production definition.
 
 ---
 
+<!-- section_id: "0b48cbe9-4b34-4cfa-bf5f-7404cf81ec03" -->
 ## Canonical Locations
 
 ```
@@ -88,6 +94,7 @@ This pointer file directs you to the current production definition.
 
 ---
 
+<!-- section_id: "e6ca3fae-2454-43f9-b7d0-8a9cddb3a40f" -->
 ## Key Rules
 
 ✅ **DO:**
@@ -104,6 +111,7 @@ This pointer file directs you to the current production definition.
 
 ---
 
+<!-- section_id: "9339c56e-660a-444c-acbf-7dde7adcefac" -->
 ## Commit Message
 
 ```
@@ -112,6 +120,7 @@ This pointer file directs you to the current production definition.
 
 ---
 
+<!-- section_id: "9503bd45-7ae8-419d-8e0b-8570b78682a3" -->
 ## When in Doubt
 
 Load full resources:

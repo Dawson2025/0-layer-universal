@@ -9,12 +9,15 @@ resource_name: "MCP_TOOL_EXPOSURE_OS_ANALYSIS"
 **Location**: Universal Layer → MCP Servers and Tools Setup  
 **Status**: Comprehensive analysis of MCP tool exposure across platforms
 
+<!-- section_id: "c68ccf9a-9a4f-4f24-8a7f-71cddc1f3273" -->
 ## Overview
 
 This document analyzes MCP (Model Context Protocol) tool exposure issues across different operating systems and investigates whether problems are OS-specific or configuration-related.
 
+<!-- section_id: "b4411498-31e6-4e45-b116-5ec3b5bc0d60" -->
 ## Executive Summary
 
+<!-- section_id: "48dbe681-3970-4eb3-9709-cc1e331d964a" -->
 ### Confirmed Issues by Platform
 
 | Platform | Playwright MCP Tools | Browser MCP Tools | Cursor Extension Tools | Status |
@@ -24,6 +27,7 @@ This document analyzes MCP (Model Context Protocol) tool exposure issues across 
 | **Windows (Native)** | ⚠️ **Also Affected** | ⚠️ **Also Affected** | ⚠️ **Also Affected** | **CRITICAL FINDING** |
 | **macOS** | ⚠️ **Likely Affected** | ⚠️ **Likely Affected** | ⚠️ **Likely Affected** | **Based on Reports** |
 
+<!-- section_id: "522a43ab-8596-4e5a-8054-e77a07a7dde4" -->
 ### Critical Discovery (2025-12-05)
 
 **This is NOT just a Linux/WSL issue!** Internet research reveals:
@@ -33,6 +37,7 @@ This document analyzes MCP (Model Context Protocol) tool exposure issues across 
 3. **Cross-Platform Issue**: Reports of MCP tool exposure problems across Linux, Windows, and potentially macOS
 4. **Cursor IDE Bug**: This appears to be a Cursor IDE bug, not OS-specific
 
+<!-- section_id: "31c7d5b6-5a89-4dad-9a4e-eb2c2e351772" -->
 ### Key Findings
 
 1. **Linux/WSL Issue Confirmed**: Playwright MCP tools are NOT exposed to AI agents on Linux and WSL, even when servers connect successfully
@@ -40,8 +45,10 @@ This document analyzes MCP (Model Context Protocol) tool exposure issues across 
 3. **Configuration vs. OS**: Environment variable configuration fixes browser detection, but does NOT fix tool exposure issues
 4. **Windows/macOS Status**: Unknown - documentation assumes they work, but no confirmed testing
 
+<!-- section_id: "d7218e21-a790-41b3-a784-78cbbba6a655" -->
 ## Detailed Platform Analysis
 
+<!-- section_id: "eef6e2dd-f92b-4fde-8198-1729e77aaca2" -->
 ### Linux (Native Ubuntu)
 
 **Tested**: ✅ Yes  
@@ -75,6 +82,7 @@ This document analyzes MCP (Model Context Protocol) tool exposure issues across 
 - Multiple test sessions showing tools registered but not exposed
 - Documentation explicitly states "Linux/Ubuntu-specific issue"
 
+<!-- section_id: "17d2ac5a-f964-4bcf-8dd6-f22dd2d9410c" -->
 ### WSL2 (Windows Subsystem for Linux)
 
 **Tested**: ✅ Yes  
@@ -108,6 +116,7 @@ This document analyzes MCP (Model Context Protocol) tool exposure issues across 
 - Path resolution complexity (Windows paths vs. Linux paths)
 - May affect how Cursor exposes tools to agents
 
+<!-- section_id: "48125fed-a2dd-4319-8486-1302e37d5856" -->
 ### Windows (Native)
 
 **Tested**: ⚠️ **Internet Research**  
@@ -140,6 +149,7 @@ This document analyzes MCP (Model Context Protocol) tool exposure issues across 
 
 **Conclusion**: This is **NOT a Linux/WSL-specific issue** - it's a broader Cursor IDE bug affecting multiple platforms.
 
+<!-- section_id: "7dd52b11-5b55-4c82-a52b-3381433340c2" -->
 ### macOS
 
 **Tested**: ⚠️ **Internet Research**  
@@ -166,8 +176,10 @@ This document analyzes MCP (Model Context Protocol) tool exposure issues across 
 - [ ] Any macOS-specific issues
 - [ ] Cursor version being used (2.0.77 vs. newer versions)
 
+<!-- section_id: "602d02c1-9122-470f-908b-4d22e1e65191" -->
 ## Critical Finding: This is NOT OS-Specific!
 
+<!-- section_id: "30ddd0a7-7d2f-41f7-be4b-d520a7a29223" -->
 ### Internet Research Results (2025-12-05)
 
 **Major Discovery**: After searching the internet, we found that MCP tool exposure issues are **NOT limited to Linux/WSL**:
@@ -187,6 +199,7 @@ This document analyzes MCP (Model Context Protocol) tool exposure issues across 
    - Pattern suggests Cursor IDE bug rather than OS-specific issue
    - Different platforms may have different severity, but all are affected
 
+<!-- section_id: "2811c4e1-ffbc-49bc-9b1f-6c7c2bbc40aa" -->
 ### Revised Understanding
 
 **Previous Assumption** (Incorrect):
@@ -198,8 +211,10 @@ This document analyzes MCP (Model Context Protocol) tool exposure issues across 
 - But the core tool exposure problem affects Windows and likely macOS too
 - Cursor version 2.0.77 specifically has this known bug
 
+<!-- section_id: "3ca58650-1c57-40f0-a5c8-84991055064b" -->
 ## Configuration vs. OS Analysis
 
+<!-- section_id: "8976d7a6-18a0-48cb-8e4d-c85a987577b5" -->
 ### Could This Be Configuration-Related?
 
 #### Environment Variables (Browser Detection)
@@ -245,8 +260,10 @@ This document analyzes MCP (Model Context Protocol) tool exposure issues across 
    - Settings might affect tool exposure
    - **Question**: Are there Cursor settings that control MCP tool exposure?
 
+<!-- section_id: "89bd058a-3167-412f-b1f6-27dd97c9691d" -->
 ## Recommendations
 
+<!-- section_id: "1b4a48d8-8f5a-41b7-96d4-32f63768f19e" -->
 ### For All Users (All Platforms)
 
 1. **Check Cursor Version**:
@@ -264,6 +281,7 @@ This document analyzes MCP (Model Context Protocol) tool exposure issues across 
    - Try restarting Cursor completely
    - Check Cursor Settings → Tools & MCP for tool availability
 
+<!-- section_id: "136a542a-b7db-4622-9ee6-467b69424b97" -->
 ### For Linux/WSL Users
 
 1. **Use Cursor Browser Extension Tools**:
@@ -281,6 +299,7 @@ This document analyzes MCP (Model Context Protocol) tool exposure issues across 
    - Add `PLAYWRIGHT_BROWSERS_PATH` and `HOME` to MCP config
    - This fixes browser detection, not tool exposure
 
+<!-- section_id: "c06feef2-6d29-4d5f-af3d-f9d220360ccd" -->
 ### For Windows/macOS Users
 
 1. **You're Also Affected**:
@@ -294,6 +313,7 @@ This document analyzes MCP (Model Context Protocol) tool exposure issues across 
    - Document findings and Cursor version
    - Report to Cursor forum if tools aren't exposed
 
+<!-- section_id: "74739d57-27ee-47bd-9eec-c20c70a7e071" -->
 ### For All Users
 
 1. **Check Cursor Settings**:
@@ -306,8 +326,10 @@ This document analyzes MCP (Model Context Protocol) tool exposure issues across 
    - Verify tool availability
    - Document what works and what doesn't
 
+<!-- section_id: "274d738e-e252-4785-b7b0-c9de74bea69b" -->
 ## Testing Checklist
 
+<!-- section_id: "07ecb365-f452-4365-b008-83e2101f4abd" -->
 ### Linux/WSL Testing
 - [x] Playwright MCP server connects
 - [x] Playwright MCP tools registered
@@ -318,6 +340,7 @@ This document analyzes MCP (Model Context Protocol) tool exposure issues across 
 - [x] Cursor browser extension tools available
 - [x] Environment variables fix browser detection
 
+<!-- section_id: "2c8203d2-37a0-4ae1-b942-e4bb6d461576" -->
 ### Windows Testing Needed
 - [ ] Playwright MCP server connects
 - [ ] Playwright MCP tools registered
@@ -328,6 +351,7 @@ This document analyzes MCP (Model Context Protocol) tool exposure issues across 
 - [ ] Cursor browser extension tools available
 - [ ] Configuration requirements
 
+<!-- section_id: "aa5541dd-2d43-485a-929d-8197ffd2745f" -->
 ### macOS Testing Needed
 - [ ] Playwright MCP server connects
 - [ ] Playwright MCP tools registered
@@ -338,6 +362,7 @@ This document analyzes MCP (Model Context Protocol) tool exposure issues across 
 - [ ] Cursor browser extension tools available
 - [ ] Configuration requirements
 
+<!-- section_id: "acc27c8b-b4f3-4aa6-a178-14a31538787a" -->
 ## Related Documentation
 
 - [Cursor IDE Linux MCP Issues](./CURSOR_IDE_LINUX_MCP_ISSUES.md) - Linux-specific issues
@@ -345,8 +370,10 @@ This document analyzes MCP (Model Context Protocol) tool exposure issues across 
 - [Cursor Browser MCP Setup](./CURSOR_BROWSER_MCP_SETUP.md) - WSL setup notes
 - [MCP Configuration Guide](./MCP_CONFIGURATION_GUIDE.md) - Configuration details
 
+<!-- section_id: "521d7142-e496-4bd6-be19-8519228020d5" -->
 ## References
 
+<!-- section_id: "aa521de3-0994-45c9-9c33-31057b82e636" -->
 ### Internet Research Sources (2025-12-05)
 
 1. **Cursor Forum Posts**:
@@ -364,8 +391,10 @@ This document analyzes MCP (Model Context Protocol) tool exposure issues across 
    - Reddit discussions about MCP setup failures on Windows
    - Forum discussions about cross-platform MCP issues
 
+<!-- section_id: "6999ab1d-b5fb-453c-be51-709dfa68f190" -->
 ## Changelog
 
+<!-- section_id: "00067733-b13a-4619-9783-110b9d4e923f" -->
 ### 2025-12-05 (Updated)
 - **CRITICAL UPDATE**: Internet research reveals this is NOT OS-specific
 - Cursor version 2.0.77 has known bug affecting all platforms
@@ -374,6 +403,7 @@ This document analyzes MCP (Model Context Protocol) tool exposure issues across 
 - Updated recommendations for all platforms
 - Added internet research sources and references
 
+<!-- section_id: "6ab7a8e4-7dce-43f7-b21d-86e803b691ff" -->
 ### 2025-12-05 (Initial)
 - Created comprehensive OS analysis document
 - Documented WSL finding: Browser MCP tools also not exposed

@@ -12,10 +12,12 @@ resource_name: "CLAUDE_CODE_CONTEXT_ARCHITECTURE"
 
 ---
 
+<!-- section_id: "79787ea1-a200-4695-944d-c9ded52a657b" -->
 ## Context Model
 
 Claude Code CLI loads context through a **hierarchical chain**:
 
+<!-- section_id: "a61a6a4a-b0d8-4aff-91e4-6348db1e2da4" -->
 ### Static Context (Loaded Every Session)
 
 **Tier 0 - Synced (auto-generated from 0AGNOSTIC.md)**:
@@ -41,6 +43,7 @@ Each CLAUDE.md contains:
 **Tier 2 - Additions (.1merge/.1claude_merge/2_additions/)**:
 - `tool_additions.md` — Custom context specific to this entity only
 
+<!-- section_id: "5aeda826-51c8-4a76-8512-0daa8fe98bf7" -->
 ### Dynamic Context (Loaded On-Demand)
 
 Loaded via triggers in CLAUDE.md:
@@ -63,8 +66,10 @@ Dynamic context lives in:
 
 ---
 
+<!-- section_id: "ab52bfe7-4613-46b2-af5e-410868db8b3b" -->
 ## Porting Architecture: 0AGNOSTIC → Claude Code
 
+<!-- section_id: "3bae6202-4d18-4704-a575-1e352b76d23f" -->
 ### Step 1: Extract from 0AGNOSTIC.md
 
 **Source**: `0AGNOSTIC.md` (universal source of truth)
@@ -85,6 +90,7 @@ Dynamic context lives in:
 [SKIP: Don't include in CLAUDE.md - reference instead]
 ```
 
+<!-- section_id: "14536035-c036-4fbf-aba8-7c4c5324f2de" -->
 ### Step 2: Transform to Claude.md Format
 
 **Transformation Rules**:
@@ -116,6 +122,7 @@ You are the **Research Project Manager**.
 - **Scope**: Research, design, planning (NOT production implementation)
 ```
 
+<!-- section_id: "7451f493-c37a-41a3-87fc-e2082b1583d8" -->
 ### Step 3: Apply Tier 1 (Overrides)
 
 **Location**: `.1merge/.1claude_merge/1_overrides/tool_boilerplate.md`
@@ -137,6 +144,7 @@ For each section in CLAUDE.md:
     KEEP section as-is
 ```
 
+<!-- section_id: "6d148ecb-27f5-419f-8449-74fbc194184a" -->
 ### Step 4: Apply Tier 2 (Additions)
 
 **Location**: `.1merge/.1claude_merge/2_additions/tool_additions.md`
@@ -157,6 +165,7 @@ At the end of CLAUDE.md:
   (After "---" separator if present)
 ```
 
+<!-- section_id: "d51e278d-a94c-48ac-a508-9c51924bd6a5" -->
 ### Step 5: Generate agnostic-sync.sh Integration
 
 **Tool**: `agnostic-sync.sh` (at `.0agnostic/agnostic-sync.sh`)
@@ -176,8 +185,10 @@ At the end of CLAUDE.md:
 
 ---
 
+<!-- section_id: "7fe27091-5df0-4fcb-90ef-979f3c8b64af" -->
 ## File Locations
 
+<!-- section_id: "b34ca012-057d-44ab-8229-aecb5b2d62b6" -->
 ### Input Files (What We're Porting From)
 
 ```
@@ -193,6 +204,7 @@ At the end of CLAUDE.md:
     └── 2_additions/tool_additions.md     ← Tier 2 (additions)
 ```
 
+<!-- section_id: "a662785a-7ba4-4a61-97bd-44b65e0d8ee8" -->
 ### Output Files (What Claude Code Loads)
 
 ```
@@ -210,6 +222,7 @@ At the end of CLAUDE.md:
 
 ---
 
+<!-- section_id: "788985ae-68f7-43d8-97de-702e80951d08" -->
 ## Context Loading Sequence
 
 When Claude Code starts in an entity directory:
@@ -241,8 +254,10 @@ When Claude Code starts in an entity directory:
 
 ---
 
+<!-- section_id: "63307678-3392-4aac-ac5e-67461915d64a" -->
 ## Three-Tier Merge in Detail
 
+<!-- section_id: "1a1bc3f6-2a7a-41b2-97f6-18433569042a" -->
 ### Tier 0: Synced (agnostic-sync.sh)
 
 **What**: Automatically generated from 0AGNOSTIC.md
@@ -260,6 +275,7 @@ When Claude Code starts in an entity directory:
 
 **Why separate**: Agnostic system is universal; entity-specific overrides come in Tier 1+2.
 
+<!-- section_id: "977f6444-0abb-4757-a7c8-786c93c788fc" -->
 ### Tier 1: Overrides (.1merge/.1claude_merge/1_overrides/tool_boilerplate.md)
 
 **What**: Claude Code-specific boilerplate that replaces or adjusts Tier 0
@@ -298,6 +314,7 @@ For section "## Claude-Specific Tools":
     USE section from Tier 0 (synced)
 ```
 
+<!-- section_id: "8cb6bba8-03c3-455e-b3bf-f0d9d6995df3" -->
 ### Tier 2: Additions (.1merge/.1claude_merge/2_additions/tool_additions.md)
 
 **What**: Claude Code-only context that doesn't exist in universal system
@@ -338,6 +355,7 @@ Check ~/.claude.json for server configuration and API tokens.
 
 **Why separate**: These are Claude Code-specific and shouldn't be in universal agnostic system.
 
+<!-- section_id: "e6136688-16b7-4fe3-8c80-e673a25c1454" -->
 ### Merge Order
 
 ```
@@ -358,8 +376,10 @@ Example:
 
 ---
 
+<!-- section_id: "9e85a990-416e-4589-8fe5-4dadde9b80a4" -->
 ## Entity-Level vs. User-Level Context
 
+<!-- section_id: "22804f68-f0a7-4b23-ab4c-45626a756b1b" -->
 ### Entity Level (In Code Repository)
 
 ```
@@ -372,6 +392,7 @@ Example:
 **Updated**: When agnostic-sync.sh runs (after editing 0AGNOSTIC.md)
 **Scope**: This entity and children only
 
+<!-- section_id: "372b19db-3e22-4a1f-b49c-828df7faa097" -->
 ### User Level (In Home Directory)
 
 ```
@@ -398,6 +419,7 @@ The entity CLAUDE.md **overrides** the user CLAUDE.md for that project.
 
 ---
 
+<!-- section_id: "731fc488-0646-4b52-9720-9a6f4deef678" -->
 ## When to Run agnostic-sync.sh
 
 **Run agnostic-sync.sh when**:
@@ -429,8 +451,10 @@ Generated [entity]/.github/copilot-instructions.md (GitHub Copilot)
 
 ---
 
+<!-- section_id: "03fb83ac-d69a-4b47-8a2b-b2feceed401a" -->
 ## Integration with Other Tools
 
+<!-- section_id: "66522c31-6a88-4030-9b7f-9a4d8b8555f0" -->
 ### agnostic-sync.sh Generates All Tool Files
 
 `.1merge/` contains Tier 1+2 for **all 6 tools**, not just Claude Code:
@@ -461,6 +485,7 @@ Each tool has its own Tier 1+2 customization. The `.1merge` system is extensible
 
 ---
 
+<!-- section_id: "b7efa5c0-1443-455d-91aa-5f5bd1937513" -->
 ## Validation Checklist
 
 After porting to Claude Code context:
@@ -478,6 +503,7 @@ After porting to Claude Code context:
 
 ---
 
+<!-- section_id: "2a45759f-5c4b-44ab-8cfb-865413d4fee3" -->
 ## Success Criteria
 
 Claude Code context is successful when:
@@ -500,6 +526,7 @@ Claude Code context is successful when:
 
 ---
 
+<!-- section_id: "d67ce6da-c164-4851-9b5c-008b5312a780" -->
 ## References
 
 - **agnostic-sync.sh**: `.0agnostic/agnostic-sync.sh`

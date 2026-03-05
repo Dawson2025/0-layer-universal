@@ -5,10 +5,12 @@ resource_name: "universal_instructions"
 ---
 # Universal Development Instructions - Language Tracker App
 
+<!-- section_id: "2f6b565f-9759-4ba5-96ff-37aee87507bc" -->
 ## Project Overview
 
 This is a **Language Tracker App** - a sophisticated phoneme frequency tracking and constructed language word creation system. It combines a terminal-based CLI interface (`main.py`) with a Flask web application (`app.py`) for managing phonemes, words, and language projects.
 
+<!-- section_id: "df77e169-f965-431e-b1fc-551970e5fd20" -->
 ### Core Purpose
 - Track phoneme frequencies across different syllable positions (onset, nucleus, coda)
 - Create words using structured phoneme selection methods
@@ -17,14 +19,17 @@ This is a **Language Tracker App** - a sophisticated phoneme frequency tracking 
 - Enable collaborative language development with user groups and project sharing
 - Provide IPA text-to-speech integration and phonotactic validation
 
+<!-- section_id: "c3907939-756a-4fb2-b6ba-dfafcdeffc93" -->
 ## Development Environment Setup
 
+<!-- section_id: "055c1f0f-e55a-47f1-8b94-1f5efffc90c6" -->
 ### Prerequisites
 - Python 3.9+
 - Node.js 16+ (for Firebase functions and AI tools)
 - Firebase CLI (for cloud features)
 - Azure Speech Services subscription (optional, for TTS features)
 
+<!-- section_id: "5609699e-697f-4b27-9aee-b1047471a4c2" -->
 ### Quick Start Commands
 
 ```powershell
@@ -38,6 +43,7 @@ python app.py
 python start_webapp.py
 ```
 
+<!-- section_id: "56c7894d-da93-4e9e-b4d4-5f4155d56830" -->
 ### Environment Configuration
 
 **Local Development**
@@ -64,18 +70,22 @@ AZURE_SPEECH_REGION_EAST=eastus
 GOOGLE_APPLICATION_CREDENTIALS=path/to/service-account.json
 ```
 
+<!-- section_id: "f11472dc-6b42-462c-ba8d-ac8086285b98" -->
 ## Architecture Overview
 
+<!-- section_id: "284c3327-12b3-4862-8df9-9f249d9f17f0" -->
 ### Dual Interface System
 - **Terminal Interface** (`main.py`): Command-line menu system for direct database operations
 - **Web Interface** (`app.py`): Flask web application with user authentication and project management
 
+<!-- section_id: "a04f0240-870d-450f-96fc-801448c3b530" -->
 ### Hybrid Storage System
 - **Local Storage**: SQLite for offline/development projects
 - **Cloud Storage**: Firestore for collaborative projects with real-time sync
 - **File Storage**: Firebase Storage with automatic CDN and public URLs
 - **Migration Capabilities**: Seamless project migration between storage types
 
+<!-- section_id: "8cacf14c-c3dd-4616-86db-5f4b9f62069c" -->
 ### Core Components
 
 #### Flask Web Application (app.py)
@@ -105,8 +115,10 @@ GOOGLE_APPLICATION_CREDENTIALS=path/to/service-account.json
 - Syllable Scoring: Naturalness scoring system (0-150 points)
 - Improvement Suggestions: AI-driven phoneme replacement recommendations
 
+<!-- section_id: "8bc2c8ec-f8ae-4962-b96b-54d8b328e687" -->
 ## Database Architecture
 
+<!-- section_id: "8f36ad26-5da5-4ff4-8540-d2614f228a27" -->
 ### Core Tables
 
 **Phonemes Table**
@@ -142,6 +154,7 @@ CREATE TABLE words (
 );
 ```
 
+<!-- section_id: "af031991-7009-4a88-845a-892489507fb7" -->
 ### Hierarchical Classification System
 ```
 Syllable Type (CVC/CV)
@@ -152,8 +165,10 @@ Syllable Type (CVC/CV)
           → Phoneme (IPA symbol)
 ```
 
+<!-- section_id: "ddf1a649-4feb-4140-81f3-2090620c2ac4" -->
 ## AI Development Tools Integration
 
+<!-- section_id: "3bb7fb1b-161a-43f2-8b7b-8ac2fca0d1dd" -->
 ### OpenAI Codex CLI Setup
 
 **Installation & Configuration**
@@ -180,6 +195,7 @@ codex analyze main.py
 codex interactive
 ```
 
+<!-- section_id: "6c1a6156-a539-4436-9cdc-2ff097b39e86" -->
 ### Claude Code CLI Integration
 
 **Quick Start**
@@ -196,12 +212,15 @@ claude
 - `claude "task"` - Run one-time tasks with specific requests
 - `claude commit` - Auto-generate git commit messages
 
+<!-- section_id: "bd006c4b-e74b-4dc9-aff1-be955008ccc5" -->
 ## Specification-Driven Development with GitHub Spec Kit
 
+<!-- section_id: "9699e5d4-eaaa-4b93-9188-75de83b9dd43" -->
 ### Integration Overview
 
 The Language Tracker project leverages GitHub's Spec Kit for implementing Specification-Driven Development (SDD) - a methodology that inverts the traditional development workflow by making specifications executable and the primary source of truth.
 
+<!-- section_id: "45d85233-5bd6-47ef-be13-f259d8c93f9c" -->
 ### What is Spec-Driven Development?
 
 Spec-Driven Development **flips the script** on traditional software development. Instead of code being king with specifications as scaffolding, SDD makes **specifications executable** - directly generating working implementations rather than just guiding them.
@@ -211,6 +230,7 @@ Spec-Driven Development **flips the script** on traditional software development
 - **SDD**: Code serves specifications (specifications generate implementation)
 - **Result**: Eliminates the gap between intent and implementation
 
+<!-- section_id: "4878fa70-b82b-4869-9c93-429d7a896514" -->
 ### Spec Kit Installation & Setup
 
 **Install Specify CLI:**
@@ -234,6 +254,7 @@ specify init lang-trak-features --ai copilot --here
 specify check
 ```
 
+<!-- section_id: "47b60a8c-30fb-4b4a-b1fe-af1cf9ab993a" -->
 ### Core Spec Kit Workflow for Language Tracker
 
 **1. Establish Project Constitution**
@@ -261,6 +282,7 @@ specify check
 /speckit.implement
 ```
 
+<!-- section_id: "f0f535d4-6d16-4e5c-8ef3-de65200e5eed" -->
 ### Language Tracker Specific Templates
 
 #### Feature Specification Template for Phoneme Features
@@ -309,6 +331,7 @@ As a constructed language developer, I need to [specific phoneme-related task] s
 - **SC-004**: Terminal and web interfaces maintain 100% feature parity
 ```
 
+<!-- section_id: "21e5a8ce-d3c3-4c2b-aa38-85b160190f01" -->
 ### Enhanced Development Process
 
 **Traditional Language Tracker Development:**
@@ -325,18 +348,22 @@ As a constructed language developer, I need to [specific phoneme-related task] s
 5. `/speckit.implement` - Execute implementation with AI assistance
 6. Validate against specification before merging
 
+<!-- section_id: "a8d8c6a3-8c68-48bf-aa6b-e878e8e37d2f" -->
 ## Development Workflow & Best Practices
 
+<!-- section_id: "5e7b0ea8-f83c-4959-be42-dcc588b2a1d2" -->
 ### Letter-Based Filtering System
 - **Position Mapping**: `a=onset`, `b=nucleus`, `c=coda`
 - **Length Type Mapping**: `a=single phonemes`, `b=cluster/diphthong types`, `c=complex clusters`, `d=all types`
 - **Command Examples**: `aa`=onset single consonants, `bb`=nucleus diphthongs, `cc`=coda cluster3
 
+<!-- section_id: "975bc0f6-e062-4945-8e88-f05f5146daf7" -->
 ### Frequency Optimization
 - **Ascending Sort**: Least frequent phonemes appear first to encourage balanced usage
 - **Real-time Updates**: Automatic frequency recalculation during word operations
 - **Group Aggregation**: Hierarchical frequency summation across classification levels
 
+<!-- section_id: "4be3266f-3069-4d89-9fa1-fe92fe36ca1c" -->
 ### Testing & Quality Assurance
 
 **Test Suite Coverage**
@@ -352,34 +379,42 @@ python3 test_enhanced_phonemes.py | cat      # Enhanced phoneme features
 python3 comprehensive_test.py | cat          # End-to-end workflow validation
 ```
 
+<!-- section_id: "065a0828-7d5a-4996-adf6-8b63e268fa7c" -->
 ## Security & Administrative Features
 
+<!-- section_id: "7d505423-351a-4b8c-87aa-75e619e0182d" -->
 ### Access Control
 - **Password Protection**: Admin functions secured with `20251010` password
 - **Firebase Rules**: Document-level security with user isolation
 - **Input Validation**: Comprehensive sanitization across all inputs
 - **Session Security**: Secure Flask sessions with CSRF protection
 
+<!-- section_id: "76e125ec-8109-49da-afa5-4550064c381b" -->
 ### Database Management
 - **Automatic Migration**: `migrate_schema()` handles table creation and updates
 - **Reset Safety**: Multi-step confirmation with `DELETE EVERYTHING` requirement
 - **Backup Strategy**: Regular exports and Firebase automatic backups
 
+<!-- section_id: "4fb63091-f5d6-435f-afa6-717886561165" -->
 ## Performance Optimizations
 
+<!-- section_id: "5180d77f-96e3-4bbc-9351-327dcfd5d6d3" -->
 ### Query Optimization
 - **Indexed Queries**: Optimized Firestore queries with pagination support
 - **Lazy Loading**: On-demand phoneme template initialization
 - **Caching Strategy**: Session-based project context caching
 - **Batch Operations**: Bulk word creation with frequency updates
 
+<!-- section_id: "93ebd76b-4036-4823-81d3-6289eb61057b" -->
 ### Storage Efficiency
 - **Hybrid Storage**: Automatic routing between SQLite and Firestore
 - **CDN Integration**: Firebase Storage automatic global distribution
 - **Migration Pipeline**: Seamless local-to-cloud project migration
 
+<!-- section_id: "0662a01f-5c0f-4ecd-9305-e73d97b53ca9" -->
 ## API Design & Integration
 
+<!-- section_id: "9b635735-c5ef-47da-ba04-c27147b27835" -->
 ### RESTful API Endpoints
 ```python
 # Phoneme Display Endpoints
@@ -398,19 +433,23 @@ POST   /api/admin/add-phoneme   # Phoneme creation
 PUT    /api/admin/frequency     # Frequency management
 ```
 
+<!-- section_id: "2122016d-97d5-4f7a-866c-42c1edfbf726" -->
 ### External Integrations
 - **Azure Cognitive Services**: IPA pronunciation with SSML support
 - **Firebase Services**: Full Firebase ecosystem integration
 - **SQLite**: High-performance local storage with full-text search
 
+<!-- section_id: "f90ec0e0-6e9c-4a18-ae09-5819cf8f1953" -->
 ## Implementation Statistics & Metrics
 
+<!-- section_id: "4c148a47-eb16-456e-b2b8-9bf4135121fe" -->
 ### Code Metrics
 - **Total Web Application Code**: 3,000+ lines
 - **Flask Backend**: 500+ lines (app.py)
 - **Template System**: 2,500+ lines across 8 HTML templates
 - **Terminal Compatibility**: 100% maintained with existing main.py (3,700+ lines)
 
+<!-- section_id: "8efd3545-e053-4a71-946a-ec87cd5b7569" -->
 ### Feature Coverage
 | Category | Terminal Functions | Web Endpoints | Templates | Status |
 |----------|-------------------|---------------|-----------|--------|
@@ -419,22 +458,27 @@ PUT    /api/admin/frequency     # Frequency management
 | Admin Functions | 5 | 8 | 1 | ✅ 100% Complete |
 | **Totals** | **14** | **26** | **8** | **✅ 100% Complete** |
 
+<!-- section_id: "aaf95601-2e2a-480a-a026-848ae1d18ee0" -->
 ## Future Enhancement Roadmap
 
+<!-- section_id: "bac78946-abf7-4fa8-9782-1304c1eb94da" -->
 ### Immediate Opportunities
 - **Advanced Analytics**: Usage statistics and trend visualization
 - **Export/Import**: Database backup and restoration features
 - **Multi-user Support**: Enhanced collaboration with real-time editing
 - **API Documentation**: Swagger/OpenAPI integration for third-party developers
 
+<!-- section_id: "21a3d914-6fa3-4a37-9993-470d8abddd52" -->
 ### Long-term Enhancements
 - **Performance Optimization**: Redis caching and advanced database indexing
 - **Mobile Applications**: React Native or Progressive Web App implementation
 - **Machine Learning**: AI-powered phoneme pattern recognition and suggestions
 - **Collaboration Features**: Real-time collaborative editing and sharing
 
+<!-- section_id: "132e49b1-108e-463a-8842-8371c4b22f5b" -->
 ## Troubleshooting & Support
 
+<!-- section_id: "a301f94a-99b8-4d92-9f30-0ed51c22a5eb" -->
 ### Common Issues & Solutions
 
 1. **Firebase Connection Issues**
@@ -452,6 +496,7 @@ PUT    /api/admin/frequency     # Frequency management
    - Check regional API availability (West US primary, East US fallback)
    - Validate IPA phoneme format compliance
 
+<!-- section_id: "e30407a7-4ef0-4f80-9d1b-d8fd72a8235d" -->
 ### Debug Configuration
 ```python
 # Enable comprehensive debugging
@@ -465,26 +510,31 @@ os.environ['GOOGLE_CLOUD_LOG_LEVEL'] = 'DEBUG'
 SQLITE_DEBUG = True
 ```
 
+<!-- section_id: "be4461c2-97b1-40da-844e-3384e56f4088" -->
 ## Development Principles
 
+<!-- section_id: "ca510c70-b6e0-4355-8a00-a4f63a186d48" -->
 ### Linguistic Accuracy
 - All phoneme operations must preserve IPA standards
 - Frequency calculations must be mathematically accurate
 - Phonotactic rules must reflect natural language patterns
 - Audio generation must maintain phonetic precision
 
+<!-- section_id: "0d2262ad-191d-46e5-9d62-a87c0026b6e2" -->
 ### Code Quality
 - Maintain backward compatibility with existing terminal interface
 - Follow Flask best practices for web development
 - Implement comprehensive error handling and validation
 - Document all linguistic concepts and technical decisions
 
+<!-- section_id: "ebf27e0e-e0b7-4f0f-8267-0495893371f3" -->
 ### User Experience
 - Ensure feature parity between terminal and web interfaces
 - Provide clear feedback for all user actions
 - Maintain responsive design across all device types
 - Support both novice and expert constructed language developers
 
+<!-- section_id: "06bc6e2b-38be-43cd-bab2-51806bd79aca" -->
 ### Performance Standards
 - Database queries must complete in under 100ms for real-time operations
 - Phoneme frequency updates must be instantaneous during word creation

@@ -7,8 +7,10 @@ resource_name: "README.sync-conflict-20260126-101457-IF2WOGZ"
 
 Utility scripts for the 09_fixing stage.
 
+<!-- section_id: "593c7219-9851-49dd-ac3c-bbca0210cb53" -->
 ## Available Scripts
 (Add scripts as needed)
 
+<!-- section_id: "e8439bbd-2217-469a-b1d4-d7e221faba6c" -->
 ## Usage
 Scripts can be called from hooks or directly via Bash tool.

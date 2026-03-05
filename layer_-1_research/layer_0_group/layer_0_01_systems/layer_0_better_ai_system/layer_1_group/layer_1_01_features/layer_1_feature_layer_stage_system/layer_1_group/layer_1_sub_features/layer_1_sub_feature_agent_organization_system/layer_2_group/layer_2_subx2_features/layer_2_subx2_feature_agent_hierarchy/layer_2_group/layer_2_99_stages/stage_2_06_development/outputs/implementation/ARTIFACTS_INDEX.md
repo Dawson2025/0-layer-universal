@@ -11,8 +11,10 @@ resource_name: "ARTIFACTS_INDEX"
 
 ---
 
+<!-- section_id: "a80e6f89-0e9a-44b6-b03e-72294a817836" -->
 ## Navigation & Top-Level Documentation
 
+<!-- section_id: "201076c0-77ea-40c2-9008-8bcb327a683c" -->
 ### Updated Files (Phases 1-2)
 | File | Location | Size | Purpose |
 |------|----------|------|---------|
@@ -23,8 +25,10 @@ resource_name: "ARTIFACTS_INDEX"
 
 ---
 
+<!-- section_id: "6091018a-ec8b-4de3-999a-6d68235f0788" -->
 ## Manager/Worker System Documentation (Phase 3)
 
+<!-- section_id: "d5ad7a84-2567-4677-84bf-5d861a093b38" -->
 ### Manager System READMEs
 | File | Location | Size | Created |
 |------|----------|------|---------|
@@ -33,6 +37,7 @@ resource_name: "ARTIFACTS_INDEX"
 | layer_2_features/2.00_ai_manager_system/README.md | Layer 2 | 13KB | 2025-12-24 00:04 |
 | layer_4_components/3.00_ai_manager_system/README.md | Layer 3 | 15KB | 2025-12-24 00:06 |
 
+<!-- section_id: "9fbb774a-4907-4f29-8b00-296cb80e4c57" -->
 ### Handoff Schema
 | File | Location | Size | Purpose |
 |------|----------|------|---------|
@@ -40,8 +45,10 @@ resource_name: "ARTIFACTS_INDEX"
 
 ---
 
+<!-- section_id: "fdbe62aa-3299-42b2-933e-1b2ddbf034f3" -->
 ## OS/Tool Variant Context Files (Phase 4)
 
+<!-- section_id: "fd096972-d039-4be0-9a9d-c74b088c1bd2" -->
 ### Directory Structure (16 directories created)
 ```
 layer_0_group/0.99_stages/stage_0_01_instructions/ai_agent_system/os/
@@ -69,6 +76,7 @@ layer_4_components/3.99_stages/stage_3.01_instructions/ai_agent_system/os/
 └── macos/
 ```
 
+<!-- section_id: "38fae012-dc46-4c92-bfc9-d79663d97c0d" -->
 ### Context Files by Layer and OS (24 files)
 
 #### Layer 0 (Universal)
@@ -106,6 +114,7 @@ layer_4_components/3.99_stages/stage_3.01_instructions/ai_agent_system/os/
 **Total OS Context Files**: 24 (12 per OS × 2 OS with content)
 **Total Directories**: 16 (4 per OS × 4 OS)
 
+<!-- section_id: "82e0ad85-9584-46ee-b177-7859c13e2c3f" -->
 ### Updated Documentation (Phase 4)
 | File | Location | Update |
 |------|----------|--------|
@@ -114,14 +123,17 @@ layer_4_components/3.99_stages/stage_3.01_instructions/ai_agent_system/os/
 
 ---
 
+<!-- section_id: "d7697bbe-8cd0-4081-9f65-0d8a34484d6b" -->
 ## Orchestration & CLI Recursion (Phase 5)
 
+<!-- section_id: "90f67767-3a20-412d-a745-c450de6e0ce0" -->
 ### New Protocols Created
 | File | Location | Size | Purpose |
 |------|----------|------|---------|
 | framework_orchestration_overview.md | `sub_layer_0_13_universal_protocols/framework_orchestration/0_instruction_docs/` | ~15KB | LangGraph, AutoGen, CrewAI, MetaGPT integration |
 | cli_recursion_syntax.md | `sub_layer_0_13_universal_protocols/cli_recursion/0_instruction_docs/` | ~18KB | CLI patterns for spawning workers (OS-adapted) |
 
+<!-- section_id: "cd86625f-399e-4b80-a8c4-34107e53c741" -->
 ### Updated Documentation (Phase 5)
 | File | Location | Update |
 |------|----------|--------|
@@ -130,8 +142,10 @@ layer_4_components/3.99_stages/stage_3.01_instructions/ai_agent_system/os/
 
 ---
 
+<!-- section_id: "37748455-80c1-406d-9d77-69018720cb03" -->
 ## Ops, Safety, and Deployment (Phase 6)
 
+<!-- section_id: "c2ed6547-83bb-4984-8e2e-c810dc3d5e0a" -->
 ### New Protocols and Rules
 | File | Location | Size | Purpose |
 |------|----------|------|---------|
@@ -140,6 +154,7 @@ layer_4_components/3.99_stages/stage_3.01_instructions/ai_agent_system/os/
 | AI_MANAGER_HIERARCHY_DEPLOYMENT.md | `sub_layer_0_05_os_setup/.../deployment/` | 28KB | Production deployment patterns |
 | PHASE_6_QUICK_REFERENCE.md | `sub_layer_0_02_sub_layers/` | 5KB | Quick reference for Phase 6 content |
 
+<!-- section_id: "8f37fae9-6e60-4f7a-bf5d-ee1648c50ccd" -->
 ### Updated Documentation (Phase 6)
 | File | Location | Update |
 |------|----------|--------|
@@ -148,13 +163,16 @@ layer_4_components/3.99_stages/stage_3.01_instructions/ai_agent_system/os/
 
 ---
 
+<!-- section_id: "0c00fbdb-832d-43c9-80a8-725b87fbc49c" -->
 ## Rollout & Migration (Phase 7)
 
+<!-- section_id: "2d57cb53-2c83-4c0b-8ca1-67d28d042842" -->
 ### Strategic Planning
 | File | Location | Size | Purpose |
 |------|----------|------|---------|
 | ai_manager_hierarchy_rollout_plan.md | `/home/dawson/.cursor/plans/` | 31KB | 6-phase rollout strategy with pilot recommendation |
 
+<!-- section_id: "3af8ab45-3a80-4b05-ae4d-c03f6969362e" -->
 ### Adoption Guides
 | File | Location | Size | Purpose |
 |------|----------|------|---------|
@@ -162,6 +180,7 @@ layer_4_components/3.99_stages/stage_3.01_instructions/ai_agent_system/os/
 | MIGRATION_GUIDE.md | `sub_layer_0_01_basic_prompts_throughout/` | 26KB | Multi-strategy migration for existing projects |
 | HIERARCHY_QUICK_START.md | `sub_layer_0_01_basic_prompts_throughout/` | 14KB | 5-10 minute rapid onboarding guide |
 
+<!-- section_id: "5903eeaf-3dc9-496c-bad0-7bdb30a8c0de" -->
 ### Continuous Improvement
 | File | Location | Size | Purpose |
 |------|----------|------|---------|
@@ -169,8 +188,10 @@ layer_4_components/3.99_stages/stage_3.01_instructions/ai_agent_system/os/
 
 ---
 
+<!-- section_id: "f7cd811d-2975-45e9-82c2-0ae5a4ba64eb" -->
 ## Implementation Documentation (This Directory)
 
+<!-- section_id: "ee6a4cb9-bdfd-4b35-8669-bb54cb14a2e3" -->
 ### Main Documentation
 | File | Purpose |
 |------|---------|
@@ -181,6 +202,7 @@ layer_4_components/3.99_stages/stage_3.01_instructions/ai_agent_system/os/
 | ARTIFACTS_INDEX.md | This file - complete artifact catalog |
 | LOCATION_MAP.md | Where to find specific documentation types |
 
+<!-- section_id: "454551c1-c69c-4324-8a13-dd8763cd2a12" -->
 ### Phase Summaries (phase_summaries/)
 | File | Source | Size |
 |------|--------|------|
@@ -192,6 +214,7 @@ layer_4_components/3.99_stages/stage_3.01_instructions/ai_agent_system/os/
 | phase_6_summary.md | Copied from .cursor/plans | ~14KB |
 | phase_7_summary.md | Copied from .cursor/plans | ~16KB |
 
+<!-- section_id: "c4d2acb5-f466-4774-9510-d71ef31d9b72" -->
 ### Guides (guides/)
 | File | Purpose |
 |------|---------|
@@ -199,6 +222,7 @@ layer_4_components/3.99_stages/stage_3.01_instructions/ai_agent_system/os/
 | QUICK_REFERENCE.md | Quick lookup for common tasks |
 | TROUBLESHOOTING.md | Common issues and solutions |
 
+<!-- section_id: "bc70df93-4280-4a62-a2ff-9ea61038a2fb" -->
 ### Artifacts (artifacts/)
 | File | Source | Purpose |
 |------|--------|---------|
@@ -208,8 +232,10 @@ layer_4_components/3.99_stages/stage_3.01_instructions/ai_agent_system/os/
 
 ---
 
+<!-- section_id: "7dd44e32-7f3b-4764-bad9-ec49eddab780" -->
 ## External Planning Documents
 
+<!-- section_id: "a051f2b6-a91c-40a4-b3fb-898188388abf" -->
 ### In ~/.cursor/plans/
 | File | Size | Purpose |
 |------|------|---------|
@@ -224,8 +250,10 @@ layer_4_components/3.99_stages/stage_3.01_instructions/ai_agent_system/os/
 
 ---
 
+<!-- section_id: "00108804-ea46-4cb8-8988-fbf096d5015b" -->
 ## Summary Statistics
 
+<!-- section_id: "a92a8f10-6798-4395-9e00-2f5c40044c52" -->
 ### By Phase
 | Phase | Directories | Files Created | Files Updated | Total Size |
 |-------|-------------|---------------|---------------|------------|
@@ -238,6 +266,7 @@ layer_4_components/3.99_stages/stage_3.01_instructions/ai_agent_system/os/
 | Impl Docs | 3 | ~15+ | 0 | ~150KB |
 | **Total** | **23** | **~55+** | **10** | **~570KB** |
 
+<!-- section_id: "1a9fd35e-93c7-4bd5-a30f-e11580b2f60e" -->
 ### By Category
 | Category | Count | Total Size |
 |----------|-------|------------|
@@ -252,8 +281,10 @@ layer_4_components/3.99_stages/stage_3.01_instructions/ai_agent_system/os/
 
 ---
 
+<!-- section_id: "5ec9429d-4858-46bf-a053-576fd6a31deb" -->
 ## File Locations Quick Reference
 
+<!-- section_id: "394d6b8e-831e-4e1d-847d-d516ac3b00a1" -->
 ### By Function
 
 **For Navigation**:

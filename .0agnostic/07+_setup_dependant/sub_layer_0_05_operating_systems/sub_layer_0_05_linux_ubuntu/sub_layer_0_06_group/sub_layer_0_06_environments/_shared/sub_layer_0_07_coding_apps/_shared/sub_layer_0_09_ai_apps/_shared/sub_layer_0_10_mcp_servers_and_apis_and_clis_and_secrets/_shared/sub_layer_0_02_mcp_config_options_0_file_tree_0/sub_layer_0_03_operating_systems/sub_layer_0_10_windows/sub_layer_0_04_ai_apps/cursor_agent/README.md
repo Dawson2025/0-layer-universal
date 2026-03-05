@@ -6,9 +6,11 @@ resource_name: "README"
 ---
 # Cursor MCP Setup (Windows)
 
+<!-- section_id: "11f77dba-6268-4ebd-ada9-dc04159d4260" -->
 ## Config location
 - Cursor MCP config (Windows user profile; typically `~/.cursor/mcp.json` equivalent).
 
+<!-- section_id: "d39c9338-6008-4866-ae70-36f61391f251" -->
 ## Notes
 - Tool exposure can vary by Cursor version; keep a minimal MCP set enabled to avoid tool limits.
 

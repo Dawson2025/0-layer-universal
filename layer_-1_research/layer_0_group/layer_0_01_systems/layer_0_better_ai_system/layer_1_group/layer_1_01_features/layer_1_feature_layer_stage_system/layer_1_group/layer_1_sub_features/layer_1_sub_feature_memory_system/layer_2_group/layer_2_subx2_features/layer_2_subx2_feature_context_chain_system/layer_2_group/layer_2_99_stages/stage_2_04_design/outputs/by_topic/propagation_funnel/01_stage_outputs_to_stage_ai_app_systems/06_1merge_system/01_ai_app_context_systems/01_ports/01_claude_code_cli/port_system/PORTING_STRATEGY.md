@@ -10,10 +10,12 @@ resource_name: "PORTING_STRATEGY"
 
 ---
 
+<!-- section_id: "c845277a-6218-4d87-b166-94822c1afbb5" -->
 ## Overview
 
 We use a custom **0AGNOSTIC.md + .0agnostic/ system** (user-designed context architecture). Claude Code CLI has **native CLAUDE.md + .claude/ system** (native mechanism). This document explains the mapping.
 
+<!-- section_id: "92760bc3-621a-4677-b051-b38a15905349" -->
 ### Key Insight
 
 Our system is **APPLICATION-IMPLEMENTED** in Claude Code CLI's terminology:
@@ -22,8 +24,10 @@ Our system is **APPLICATION-IMPLEMENTED** in Claude Code CLI's terminology:
 
 ---
 
+<!-- section_id: "3411ab1e-e686-440b-bba8-a96e6b377c40" -->
 ## Part 1: Porting 0AGNOSTIC.md (The File)
 
+<!-- section_id: "8ef8f091-a4f5-4df6-a3c5-27dc2f6644b1" -->
 ### Our Structure: 0AGNOSTIC.md
 
 Our 0AGNOSTIC.md has two sections:
@@ -41,6 +45,7 @@ Our 0AGNOSTIC.md has two sections:
   └─ [Other dynamic info]
 ```
 
+<!-- section_id: "1aac3b90-dc57-481a-8db8-7a3eebcd4f5c" -->
 ### Claude Code's Native Structure: CLAUDE.md
 
 Claude Code's CLAUDE.md is just Markdown — no rigid sections. But we can organize it similarly:
@@ -69,6 +74,7 @@ Claude Code's CLAUDE.md is just Markdown — no rigid sections. But we can organ
 [Anything you want loaded every session]
 ```
 
+<!-- section_id: "8b52d2e7-ba2f-4c22-8f15-06790747b0c3" -->
 ### Mapping: 0AGNOSTIC STATIC → CLAUDE.md
 
 | Our 0AGNOSTIC.md STATIC | Maps To Claude Code CLAUDE.md |
@@ -109,6 +115,7 @@ You are an agent at Layer 1 (Project).
 5 courses active (CSE 300, MATH 119, etc.). 2 courses redesigned with new grading systems. Focus on grade strategy dashboards and student support.
 ```
 
+<!-- section_id: "542c24a6-fee2-4ef1-a816-8f6211ee76af" -->
 ### Mapping: 0AGNOSTIC DYNAMIC → MEMORY.md (First 200 Lines)
 
 | Our 0AGNOSTIC.md DYNAMIC | Maps To Claude Code MEMORY.md |
@@ -150,8 +157,10 @@ Stage 06 (Development): Implementing grade dashboards for CSE 300 and MATH 119. 
 
 ---
 
+<!-- section_id: "cf4d1cb8-2ed9-4cde-be87-3d2593bb199c" -->
 ## Part 2: Porting .0agnostic/ Directory System
 
+<!-- section_id: "9b15e00f-e986-4da5-9ffe-c86514a341aa" -->
 ### Our Structure: .0agnostic/ (Numbered Directories)
 
 ```
@@ -182,6 +191,7 @@ Stage 06 (Development): Implementing grade dashboards for CSE 300 and MATH 119. 
 └── 07+_setup_dependant/
 ```
 
+<!-- section_id: "520cffc7-344a-48b2-9255-44b4cb55c410" -->
 ### Claude Code's Native Structure: ~/.claude/
 
 ```
@@ -202,6 +212,7 @@ Stage 06 (Development): Implementing grade dashboards for CSE 300 and MATH 119. 
 └── [other state dirs]
 ```
 
+<!-- section_id: "f793e95c-4c70-42cc-bd95-5c7d5f00ed39" -->
 ### Mapping: .0agnostic/ → ~/.claude/
 
 | Our .0agnostic/ | Maps To ~/.claude/ |
@@ -218,8 +229,10 @@ Stage 06 (Development): Implementing grade dashboards for CSE 300 and MATH 119. 
 
 ---
 
+<!-- section_id: "92957491-e7b9-4a38-96f3-279c04f24f31" -->
 ## Part 3: Detailed Porting Examples
 
+<!-- section_id: "329adeb7-b123-4bc5-b564-f15c58588530" -->
 ### Example 1: Porting Knowledge (01_knowledge/)
 
 **Our Structure**:
@@ -251,6 +264,7 @@ Stage 06 (Development): Implementing grade dashboards for CSE 300 and MATH 119. 
 4. Write `~/.claude/projects/[hash]/memory/canvas_integration.md` combining both
 5. Reference in MEMORY.md first 200 lines: "See `/memory` for Canvas integration patterns"
 
+<!-- section_id: "323cdd9a-46d0-43fc-8127-0e710ccd5f84" -->
 ### Example 2: Porting Rules (02_rules/)
 
 **Our Structure**:
@@ -280,6 +294,7 @@ CLAUDE.md (both static + dynamic)
 3. Read our dynamic triggers: "If user asks about grade status, load grade_strategy_trajectory.md"
 4. Write into CLAUDE.md: `## Triggers` table
 
+<!-- section_id: "039db4b4-89d5-463c-823d-95c889686b67" -->
 ### Example 3: Porting Protocols (03_protocols/)
 
 **Our Structure**:
@@ -305,6 +320,7 @@ CLAUDE.md (both static + dynamic)
 3. Include key steps: fetch → classify → count → score → deadline → priority → output
 4. Reference in MEMORY.md: "See `/memory` for grade dashboard workflow"
 
+<!-- section_id: "b2c9fda0-2c4e-4293-87bf-4ef0fcaf13a1" -->
 ### Example 4: Porting Skills (06_context_avenue_web/05_skills/)
 
 **Our Structure**:
@@ -333,8 +349,10 @@ CLAUDE.md (both static + dynamic)
 
 ---
 
+<!-- section_id: "e95141a4-648d-47b0-a17e-d657cbe10ae1" -->
 ## Part 4: Practical Porting Workflow
 
+<!-- section_id: "6f2100e0-3c11-400c-80fc-b1b1048dffb5" -->
 ### Step 1: Create Project CLAUDE.md
 
 ```bash
@@ -356,6 +374,7 @@ cat > ~/.claude/projects/school-project/0AGNOSTIC_MAPPED.md << 'EOF'
 EOF
 ```
 
+<!-- section_id: "eb7ae46c-9cd3-46a1-a2b5-9fc7e0fb9751" -->
 ### Step 2: Write CLAUDE.md
 
 ```bash
@@ -382,6 +401,7 @@ cat > ~/.claude/CLAUDE.md << 'EOF'
 EOF
 ```
 
+<!-- section_id: "76f324c9-64b4-43bc-8bf1-a6e7abe28b9e" -->
 ### Step 3: Write MEMORY.md
 
 ```bash
@@ -412,6 +432,7 @@ cat > ~/.claude/projects/school-project/memory/MEMORY.md << 'EOF'
 EOF
 ```
 
+<!-- section_id: "7d403fce-745d-4e8e-a150-237434b0e75e" -->
 ### Step 4: Copy Skills
 
 ```bash
@@ -423,6 +444,7 @@ ls ~/.claude/skills/
 # Should show: canvas-fetch/, grade-calculator/, calc-dashboard/, cse300-dashboard/
 ```
 
+<!-- section_id: "10aa1d62-8e90-440f-b7b7-69c50a3f4e73" -->
 ### Step 5: Create Topic Files (Optional)
 
 ```bash
@@ -443,6 +465,7 @@ EOF
 
 ---
 
+<!-- section_id: "67a16a87-416e-42a1-8386-765d46774698" -->
 ## Part 5: Migration Checklist
 
 - [ ] Create ~/.claude/projects/[project-id]/ structure
@@ -460,8 +483,10 @@ EOF
 
 ---
 
+<!-- section_id: "4c5fae77-732d-4ee1-827a-acc0ddd8c5fb" -->
 ## Part 6: Key Trade-Offs & Limitations
 
+<!-- section_id: "2dc9de12-6e8d-4162-a3a6-08ab5c9ce14f" -->
 ### What Works Well in Claude Code
 
 ✅ CLAUDE.md cascade (matches our 0AGNOSTIC.md approach)
@@ -471,6 +496,7 @@ EOF
 ✅ Auto-compaction (matches our context management philosophy)
 ✅ MCP integration (Canvas, GitHub, Tavily, custom)
 
+<!-- section_id: "5c1e95fb-19a0-4d4c-94d7-e9a5951e40ff" -->
 ### What Requires Adaptation
 
 ⚠️ **No native agent delegation** — 0AGNOSTIC.md covers agent context, but Claude Code has limited multi-agent support (subagents are isolated, not coordinated)
@@ -485,6 +511,7 @@ EOF
 ⚠️ **No native data-based avenues** — .0agnostic/06_context_avenue_web/02_data_based/ (knowledge graphs, embeddings) not supported
   - **Solution**: Simulate via well-organized memory files + semantic file references
 
+<!-- section_id: "4107cf72-b27a-4033-b9df-e0f70bade02a" -->
 ### What To Keep in .0agnostic/
 
 - ✅ `.0agnostic/01_knowledge/` — Port to MEMORY.md topic files
@@ -498,8 +525,10 @@ EOF
 
 ---
 
+<!-- section_id: "43f82d98-064f-4c54-83a4-a684e31d1800" -->
 ## Part 7: Validation
 
+<!-- section_id: "a44f5460-ed85-4c0d-9e79-a0c2aff8146f" -->
 ### How to Know Porting Worked
 
 1. **Session Start**: Run `claude`
@@ -524,6 +553,7 @@ EOF
 
 ---
 
+<!-- section_id: "83c69506-d70f-478b-955b-4ed06baedc25" -->
 ## Summary: Porting Strategy
 
 | What | From 0AGNOSTIC.md | To Claude Code CLI | Notes |

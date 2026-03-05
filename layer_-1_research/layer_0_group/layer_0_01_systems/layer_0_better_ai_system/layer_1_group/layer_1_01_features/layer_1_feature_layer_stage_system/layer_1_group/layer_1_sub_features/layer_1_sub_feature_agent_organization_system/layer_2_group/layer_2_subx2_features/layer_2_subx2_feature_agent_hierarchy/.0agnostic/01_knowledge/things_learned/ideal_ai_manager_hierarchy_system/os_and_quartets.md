@@ -3,6 +3,7 @@ resource_id: "f08d72cd-3547-407f-9f58-e128f3457269"
 resource_type: "knowledge"
 resource_name: "os_and_quartets"
 ---
+<!-- section_id: "bf53191a-f42d-47ae-aeac-705f96902a08" -->
 ## OS Variants and Quartets
 
 This document expands on how **operating system differences** and **tool-specific context files** are handled in the ideal AI manager hierarchy system.
@@ -15,6 +16,7 @@ It builds on the OS/variant ideas in:
 
 ---
 
+<!-- section_id: "8a975982-2519-4f34-a3b8-a6d85cb91a49" -->
 ## 1. OS as an Independent Dimension
 
 The OS is treated as a **separate dimension** from:
@@ -40,6 +42,7 @@ Where `<os-id>` is arbitrary, for example:
 
 ---
 
+<!-- section_id: "b035b178-50c1-4367-84f8-17b784f5c1e0" -->
 ## 2. OS-Specific Context Layout
 
 Within any layer/stage directory, you may have:
@@ -88,6 +91,7 @@ Examples:
 
 ---
 
+<!-- section_id: "56721f56-9249-43a0-a799-a4494d7d99ad" -->
 ## 3. Auto-Detection and Selection
 
 Supervisors or wrapper scripts:
@@ -112,6 +116,7 @@ This logic is under your control; the spec just defines the pattern.
 
 ---
 
+<!-- section_id: "68c862ed-7cf5-4400-b003-615768ceac31" -->
 ## 4. Quartets (and Beyond)
 
 In the research and top-level spec, a **quartet** per OS appears as:
@@ -133,8 +138,10 @@ The rule:
 
 ---
 
+<!-- section_id: "a2e75687-df41-4652-a630-cee971ae74c4" -->
 ## 5. Using OS Variants in Practice
 
+<!-- section_id: "65e67aa1-8135-4527-9b6c-1f5e594e5777" -->
 ### 5.1 Example: L3 Implementation Stage
 
 Directory snippet:
@@ -161,6 +168,7 @@ When launching:
 - On native Ubuntu:
   - Use `os/ubuntu/` variants, fall back to generic elsewhere.
 
+<!-- section_id: "4eddeece-e574-42e6-8a65-6251b6ea0739" -->
 ### 5.2 Example: Cross-Platform Project
 
 You may use:
@@ -172,6 +180,7 @@ You may use:
 
 ---
 
+<!-- section_id: "3a155b88-34a7-4a44-a09b-a3d0be2baaa1" -->
 ## 6. Extending to New Tools
 
 When adding a new tool:
@@ -190,6 +199,7 @@ New tools do not require rewriting the architecture; they just plug into:
 
 ---
 
+<!-- section_id: "2232ca88-b28e-420a-8744-29143f2e5da9" -->
 ## 7. Benefits of This Pattern
 
 - **Separation of concerns**:

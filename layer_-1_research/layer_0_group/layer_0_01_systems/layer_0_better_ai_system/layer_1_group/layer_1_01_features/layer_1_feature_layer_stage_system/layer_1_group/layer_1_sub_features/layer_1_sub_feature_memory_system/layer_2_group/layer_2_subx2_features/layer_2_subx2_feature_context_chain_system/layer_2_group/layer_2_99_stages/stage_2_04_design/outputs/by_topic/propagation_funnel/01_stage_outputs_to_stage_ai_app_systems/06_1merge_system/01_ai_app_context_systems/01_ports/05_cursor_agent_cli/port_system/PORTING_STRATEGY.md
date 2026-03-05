@@ -10,6 +10,7 @@ resource_name: "PORTING_STRATEGY"
 
 ---
 
+<!-- section_id: "7f544281-a0f9-4328-9b1b-986995b95412" -->
 ## Overview
 
 Porting to Cursor Agent CLI is different from other tools because **Agent CLI doesn't have native 0AGNOSTIC.md support**. Instead, you implement the system through:
@@ -21,8 +22,10 @@ Unlike Claude Code or Cursor IDE, Agent CLI has **no built-in context loading** 
 
 ---
 
+<!-- section_id: "505e168e-11af-4968-80be-a278aaac7390" -->
 ## Part 1: Porting 0AGNOSTIC.md → Task Definitions
 
+<!-- section_id: "3eb2d0e0-978e-40f8-897e-68557c098663" -->
 ### Step 1: Extract Identity & Scope
 
 **From 0AGNOSTIC.md**:
@@ -53,6 +56,7 @@ cursor agent "Optimize pandas operations in src/pipelines/load.py. \
 
 **Key Principle**: Agent tasks must be **specific, bounded, and verifiable**. Vague tasks fail.
 
+<!-- section_id: "7d3e3524-851c-4826-a29f-ebbadea11366" -->
 ### Step 2: Map Triggers to Task Types
 
 **From 0AGNOSTIC.md TRIGGERS**:
@@ -100,6 +104,7 @@ def extract_scope(user_request):
     pass
 ```
 
+<!-- section_id: "acbb6873-7f9a-48b1-b7f6-03fb1cb3936e" -->
 ### Step 3: Create Task Context from 0AGNOSTIC.md
 
 Every agent task needs context. Extract from 0AGNOSTIC.md:
@@ -178,10 +183,12 @@ DON'T:
 
 ---
 
+<!-- section_id: "23cda26f-10c9-489c-8f61-2855465dc5cc" -->
 ## Part 2: Porting .0agnostic/ → Application Code + Configuration
 
 The `.0agnostic/` directory becomes **application code** that Agent CLI calls. You write the code; Agent CLI executes it.
 
+<!-- section_id: "68865a36-d3c6-4541-bbb3-c140820a3e36" -->
 ### Mapping .0agnostic/ Directories
 
 | .0agnostic/ Directory | Agent CLI Port | Implementation |
@@ -195,6 +202,7 @@ The `.0agnostic/` directory becomes **application code** that Agent CLI calls. Y
 | `06_context_avenue_web/skills/` | Reusable Python functions | Skills as importable modules |
 | `07+_setup_dependant/` | config.json + environment | Agent configuration |
 
+<!-- section_id: "ccdcd5e3-427b-43f3-acba-8d15d68037d2" -->
 ### Detailed Implementation
 
 #### 01_knowledge/ → Python Docstrings + Code Comments
@@ -573,6 +581,7 @@ class AgentConfig:
 
 ---
 
+<!-- section_id: "dac7a9d9-935a-4b2f-a67d-c4f2f53f518a" -->
 ## Part 3: Complete Agent CLI Integration Example
 
 ```python
@@ -672,6 +681,7 @@ class CursorAgentIntegration:
 
 ---
 
+<!-- section_id: "c9d921b6-f898-42dd-be3b-5d3bfd4cb14c" -->
 ## Part 4: Configuration File Template
 
 Create `.0agnostic/07+_setup_dependant/agent_config.json`:
@@ -699,6 +709,7 @@ Create `.0agnostic/07+_setup_dependant/agent_config.json`:
 
 ---
 
+<!-- section_id: "7d667f48-5baa-41d0-b57e-72ddc96ddbdb" -->
 ## Part 5: Migration Checklist
 
 - [ ] Extract identity from 0AGNOSTIC.md
@@ -723,6 +734,7 @@ Create `.0agnostic/07+_setup_dependant/agent_config.json`:
 
 ---
 
+<!-- section_id: "3e0aef12-cde0-430b-8b3a-3960999eedfb" -->
 ## Summary
 
 Porting to Cursor Agent CLI requires you to:

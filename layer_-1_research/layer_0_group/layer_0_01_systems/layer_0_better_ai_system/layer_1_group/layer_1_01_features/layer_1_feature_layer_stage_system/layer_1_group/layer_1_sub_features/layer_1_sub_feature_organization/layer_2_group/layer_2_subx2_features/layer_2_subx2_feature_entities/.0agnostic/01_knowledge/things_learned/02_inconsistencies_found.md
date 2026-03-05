@@ -5,13 +5,17 @@ resource_name: "02_inconsistencies_found"
 ---
 # Inconsistencies Found in Layer-Stage System
 
+<!-- section_id: "67bbac42-32a9-4ac9-9385-9637116bc413" -->
 ## Date: 2026-01-25
+<!-- section_id: "e1798d14-c1cd-47f8-80c3-6be09fa31f23" -->
 ## Source: Reference Implementation Analysis
 
 ---
 
+<!-- section_id: "e2690b1a-c624-4ff8-b502-938c7b3ed18f" -->
 ## 1. Naming Convention Inconsistencies
 
+<!-- section_id: "37769c29-202f-4dee-9dee-e4770d5756dd" -->
 ### Issue: Mixed Dot and Underscore Notation
 
 **Old Convention (Dot Notation)**:
@@ -37,8 +41,10 @@ sub_layer_1_05+_setup_dependant
 
 ---
 
+<!-- section_id: "1d2e788a-a753-445a-a097-fdcbeba0aeb0" -->
 ## 2. Stage Numbering Discrepancy
 
+<!-- section_id: "91ac3220-f49c-42ec-aede-5a3c1663f7bc" -->
 ### Issue: Multiple Stage Numbering Schemes
 
 **Scheme A (Reference Implementation - 11 stages, 00-10)**:
@@ -70,8 +76,10 @@ sub_layer_1_05+_setup_dependant
 
 ---
 
+<!-- section_id: "c0383083-e511-4e6b-a214-d48a63882c6d" -->
 ## 3. Layer Component Numbering
 
+<!-- section_id: "4f6109d4-d90a-4e22-bde5-b4936c0dcdcc" -->
 ### Issue: Inconsistent Component Positions
 
 **Pattern A (Reference)**:
@@ -97,8 +105,10 @@ sub_layer_1_05+_setup_dependant
 
 ---
 
+<!-- section_id: "eb90120e-5765-478e-b3e3-ed838dccf272" -->
 ## 4. Relative vs Absolute Layer Numbers
 
+<!-- section_id: "2f78c066-e4f2-4526-a4f5-9112e06cf966" -->
 ### Issue: L-1 Context Ambiguity
 
 **Problem**: Research projects use "L-1" as a relative layer number, but the system was designed with absolute numbering.
@@ -124,8 +134,10 @@ sub_layer_1_05+_setup_dependant
 
 ---
 
+<!-- section_id: "7bf7d6b0-7000-4278-aefb-87a04a0d4802" -->
 ## 5. Documentation vs Implementation Drift
 
+<!-- section_id: "6896a279-c1b0-4e6b-b266-0db5db7478f9" -->
 ### Issue: Outdated References
 
 **Examples Found**:
@@ -146,8 +158,10 @@ sub_layer_1_05+_setup_dependant
 
 ---
 
+<!-- section_id: "57ddad39-c54f-4902-9303-c7f2d9c538b6" -->
 ## 6. Sub-Layer Naming Pattern
 
+<!-- section_id: "b57a33b7-229f-4dff-9fdb-90fed72c65c7" -->
 ### Issue: Plus Sign Ambiguity
 
 **Pattern**: `sub_layer_N_05+_setup_dependant`
@@ -164,8 +178,10 @@ sub_layer_1_05+_setup_dependant
 
 ---
 
+<!-- section_id: "83d4406b-4536-42bc-83e0-949e0b49d59f" -->
 ## 7. Handoff Document Location
 
+<!-- section_id: "fab7fc1b-86a8-4183-a78e-e1e0372a6a55" -->
 ### Issue: Two Different Patterns
 
 **Pattern A (Stages)**:
@@ -188,8 +204,10 @@ layer_N/
 
 ---
 
+<!-- section_id: "93f178b4-f77d-42cf-aac0-d4b2373b0255" -->
 ## 8. Registry Implementation Gaps
 
+<!-- section_id: "e87706f8-0ae6-4ee9-a15e-5e180ab37941" -->
 ### Issue: Inconsistent Registry Usage
 
 **Expected**:
@@ -203,8 +221,10 @@ layer_N/
 
 ---
 
+<!-- section_id: "c58d5889-5403-4736-bc0a-135df469a3cd" -->
 ## 9. Status File Variations
 
+<!-- section_id: "2684eab4-f407-4b18-87c1-88d47c912da5" -->
 ### Issue: Inconsistent Status Schema
 
 **Observed Variations**:
@@ -223,8 +243,10 @@ layer_N/
 
 ---
 
+<!-- section_id: "83e8d057-c4e5-4b56-bd44-2f3e32a62c86" -->
 ## 10. .claude Folder Integration
 
+<!-- section_id: "5bc38348-d160-4aba-b9c0-7deb62402df1" -->
 ### Issue: Varying Completeness
 
 **Expected Structure**:
@@ -245,6 +267,7 @@ layer_N/
 
 ---
 
+<!-- section_id: "7b71ed78-cbe6-4d1f-9e39-8830ab7a9f54" -->
 ## Summary Matrix
 
 | Issue | Severity | Scope | Fix Complexity |
@@ -262,6 +285,7 @@ layer_N/
 
 ---
 
+<!-- section_id: "c8633e06-37a4-4970-bc28-807188a73097" -->
 ## Next Steps
 
 See `03_improvement_proposals.md` for proposed solutions.

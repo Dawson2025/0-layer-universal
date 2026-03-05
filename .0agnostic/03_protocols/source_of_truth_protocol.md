@@ -7,10 +7,12 @@ resource_name: "source_of_truth_protocol"
 
 **Scope**: Universal — applies to all agents when asked to trace or show the source of truth for any concept, artifact, or system component
 
+<!-- section_id: "d9454bdf-cd73-4e35-a786-758c98c74489" -->
 ## Purpose
 
 When asked "where is the source of truth for X?" or "show me the context chain for X", agents follow a structured 3-tier response that traces from the canonical detail location, through the 0AGNOSTIC pointer layer, to the full propagation chain showing how that knowledge reaches each AI tool.
 
+<!-- section_id: "a736c7b1-e5f1-46d0-8b89-e895aab34839" -->
 ## When to Use
 
 - User asks: "where is the source of truth for X?"
@@ -19,8 +21,10 @@ When asked "where is the source of truth for X?" or "show me the context chain f
 - User says: `/source-of-truth X` or similar command
 - Agent needs to verify where authoritative content lives before making changes
 
+<!-- section_id: "f3ad36be-35d4-495c-a9f0-d2c094048413" -->
 ## Response Format
 
+<!-- section_id: "4b1935f0-faee-4996-9788-b9256f7ec13c" -->
 ### Tier 1: Canonical Source (the detailed location)
 
 The **specific file or directory** where the full, authoritative content lives. This is the place you edit to change the truth.
@@ -34,6 +38,7 @@ The **specific file or directory** where the full, authoritative content lives. 
 **Description**: {1-2 sentences: what this contains and why it's authoritative}
 ```
 
+<!-- section_id: "3d258b99-19a4-4843-8908-8a73d6bcc3d7" -->
 ### Tier 2: 0AGNOSTIC Reference (the pointer)
 
 The **0AGNOSTIC.md** that references, summarizes, or points to the canonical source. This is where agents first learn about the source.
@@ -56,6 +61,7 @@ If the source IS the 0AGNOSTIC.md itself (i.e., the 0AGNOSTIC.md is the canonica
 **Section**: {which section is authoritative}
 ```
 
+<!-- section_id: "13b5e227-9e0d-4961-b681-3b58375aa0ea" -->
 ### Tier 3: Propagation Chain (how it reaches agents)
 
 Show how the knowledge propagates from the 0AGNOSTIC.md reference (Tier 2) outward through the avenue web into static and dynamic context for each AI tool.
@@ -97,22 +103,26 @@ Show how the knowledge propagates from the 0AGNOSTIC.md reference (Tier 2) outwa
 
 Only include rows that actually apply to this specific piece of knowledge. Most items will use the primary path plus 2-3 additional avenues.
 
+<!-- section_id: "766ee8d5-e004-4f8d-b991-f6db1d507304" -->
 ## Example
 
 **Query**: "Where is the source of truth for the stage report format?"
 
+<!-- section_id: "d7c3b22c-6a5c-4651-bc66-033584881c4c" -->
 ### Source of Truth
 
 **Canonical location**: `.0agnostic/03_protocols/stage_report_protocol.md`
 **Type**: protocol
 **Description**: Defines the exact markdown format for stage reports, including required sections (Status, Summary, Key Outputs, Findings, Open Items, Handoff) and the 6 rules governing their creation.
 
+<!-- section_id: "03a48c1a-92e9-4cea-8ec5-b16b54dad7ff" -->
 ### 0AGNOSTIC Reference
 
 **Referencing 0AGNOSTIC.md**: `layer_0/0AGNOSTIC.md` (root entity) — does not currently reference this protocol directly.
 **Nearest reference**: Each entity's 0AGNOSTIC.md that uses stage delegation mentions stage reports in "Key Behaviors > Stage Delegation" (e.g., context_chain_system/0AGNOSTIC.md line ~85).
 **Relationship**: pointer (0AGNOSTIC mentions "writes a stage_report.md" and links to the protocol)
 
+<!-- section_id: "258ed135-aa9a-44d8-8e73-9d087f63c61b" -->
 ### Propagation Chain
 
 | Avenue | Mechanism | Timing | Tool |
@@ -122,6 +132,7 @@ Only include rows that actually apply to this specific piece of knowledge. Most 
 | .0agnostic/ rule | `.0agnostic/02_rules/static/STAGE_REPORT_RULE.md` — mandates writing reports | Dynamic | Any |
 | Parent chain | Entity 0AGNOSTIC.md → parent 0AGNOSTIC.md (inherited behavior) | Dynamic | Any |
 
+<!-- section_id: "1fb7210d-2a04-4449-81a0-ba175a6eb65a" -->
 ## Rules
 
 1. Always start with Tier 1 (the canonical file) — agents need to know where to look and where to edit
@@ -130,6 +141,7 @@ Only include rows that actually apply to this specific piece of knowledge. Most 
 4. When the user asks to "change" the source of truth, the edit goes to Tier 1, then agnostic-sync.sh propagates to Tier 3
 5. If the source of truth is duplicated (appears authoritatively in multiple places), flag this as a problem — there should be one source
 
+<!-- section_id: "a83c61fa-5fd7-4182-8b6b-f16fd98fc0b2" -->
 ## Related
 
 - **Mandatory Rule**: `../02_rules/dynamic/I0_source_of_truth_rule.md` — importance-0 rule mandating this protocol

@@ -8,6 +8,7 @@ resource_name: "README"
 
 Place reference documents, templates, and examples here.
 
+<!-- section_id: "4662f5c3-61b7-4a0a-aca3-07795c0a07a2" -->
 ## Suggested Contents
 - Templates for 08_criticism outputs
 - Examples of good 08_criticism work

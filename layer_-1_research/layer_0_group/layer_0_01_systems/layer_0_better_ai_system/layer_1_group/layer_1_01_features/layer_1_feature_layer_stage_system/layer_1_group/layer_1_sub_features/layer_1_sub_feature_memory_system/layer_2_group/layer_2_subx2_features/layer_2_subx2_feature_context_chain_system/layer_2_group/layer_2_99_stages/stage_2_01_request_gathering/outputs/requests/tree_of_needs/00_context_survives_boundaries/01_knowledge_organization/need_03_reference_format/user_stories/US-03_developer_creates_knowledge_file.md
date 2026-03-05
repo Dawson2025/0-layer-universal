@@ -13,6 +13,7 @@ resource_name: "US-03_developer_creates_knowledge_file"
 **I want** a clear, documented reference format with copy-pasteable examples,
 **So that** every reference in the file is consistent with all other knowledge files and can be validated automatically.
 
+<!-- section_id: "55a9ab0f-5c37-430d-ad2d-153c03ee8fc3" -->
 ### What Happens
 
 1. User creates a new knowledge file (or tells the AI to create one)
@@ -20,6 +21,7 @@ resource_name: "US-03_developer_creates_knowledge_file"
 3. References are written using the standard format with copy-pasteable examples as a guide
 4. The new file's references pass automated validation on the first try
 
+<!-- section_id: "671c33a2-0cb3-4c63-9da9-98fdd805fe8f" -->
 ### Acceptance Criteria
 
 - Reference format is documented with copy-pasteable examples

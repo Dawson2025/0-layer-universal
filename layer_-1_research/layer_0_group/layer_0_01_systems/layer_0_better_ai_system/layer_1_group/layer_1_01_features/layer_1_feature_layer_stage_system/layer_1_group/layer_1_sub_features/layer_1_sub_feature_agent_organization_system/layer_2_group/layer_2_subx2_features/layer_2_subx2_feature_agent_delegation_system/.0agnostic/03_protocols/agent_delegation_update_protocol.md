@@ -7,6 +7,7 @@ resource_name: "agent_delegation_update_protocol"
 
 When you need to change agent delegation patterns (Principle 8, Scope Boundary Rule, stage guides, delegation principles, etc.), follow this protocol.
 
+<!-- section_id: "ef823acf-1b5d-46c2-b6ed-2caa72f8bea7" -->
 ## Step 1: Traverse to ADS
 
 Recognize this is delegation-related work. It is out-of-scope for most entities.
@@ -15,6 +16,7 @@ Recognize this is delegation-related work. It is out-of-scope for most entities.
 
 Read the entity's `0AGNOSTIC.md` to orient yourself.
 
+<!-- section_id: "fbe38c6d-1e33-4bf9-afb6-f3fb262bb449" -->
 ## Step 2: Identify the Appropriate Stage
 
 | Type of Work | Stage | Output Location |
@@ -27,6 +29,7 @@ Read the entity's `0AGNOSTIC.md` to orient yourself.
 
 Navigate to the stage directory and read its `0AGNOSTIC.md` for methodology and current state.
 
+<!-- section_id: "69f39d17-444a-414f-a8e1-7e2a70b547fe" -->
 ## Step 3: Produce Stage Outputs
 
 Work in the stage's `outputs/` directory:
@@ -36,12 +39,14 @@ Work in the stage's `outputs/` directory:
 
 Follow the stage's methodology as defined in its 0AGNOSTIC.md.
 
+<!-- section_id: "28ee213a-a847-4c7f-ab34-cee500306f1f" -->
 ## Step 4: Update Stage Context
 
 Update the stage's:
 1. `0AGNOSTIC.md` Current Status section (the pointer-tier summary)
 2. Stage report at `.0agnostic/05_handoff_documents/02_outgoing/01_to_above/stage_report.md`
 
+<!-- section_id: "d015884e-c78e-4234-a172-22e7e1d1f24c" -->
 ## Step 5: Propagate Through Consolidation Funnel
 
 The consolidation funnel ensures changes flow from stage outputs to the entity's source of truth:
@@ -56,6 +61,7 @@ Stage outputs (in outputs/)
 
 Update each level to reflect the new work. The entity 0AGNOSTIC.md is the MOST consolidated document (comes LAST in the funnel, not first).
 
+<!-- section_id: "fc3e062a-98b6-48b0-a0b5-e9739f650127" -->
 ## Step 6: Update Universal Artifacts (if Development)
 
 If you produced changes in stage 06 (development) that modify universal artifacts, those artifacts live at root `.0agnostic/`:
@@ -70,6 +76,7 @@ If you produced changes in stage 06 (development) that modify universal artifact
 
 After modifying root `.0agnostic/` content, run `agnostic-sync.sh` and commit with `[AI Context]` prefix.
 
+<!-- section_id: "16c63603-7603-4384-9545-d70016cc9233" -->
 ## Step 7: Commit and Push
 
 Commit all changes with the `[AI Context]` prefix:
@@ -79,6 +86,7 @@ git commit -m "[AI Context] description of delegation change"
 git push
 ```
 
+<!-- section_id: "81a6ffef-c7a9-40c8-bde2-e4db6d4fc6ba" -->
 ## When to Skip This Protocol
 
 - **Trivial fixes** (typos, formatting) in universal artifacts can be made directly at root `.0agnostic/` without full stage work

@@ -4,6 +4,7 @@ resource_type: "readme
 document"
 resource_name: "README"
 ---
+<!-- section_id: "18517c87-559b-4f63-b6ab-c972f933e06b" -->
 ## File Documentation and Organization Protocol – Instruction Docs
 
 The canonical definition of the **File Documentation and Organization Protocol** lives in:

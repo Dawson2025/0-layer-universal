@@ -5,10 +5,12 @@ resource_name: "chain_integrity"
 ---
 # Chain Integrity Rule
 
+<!-- section_id: "5c680027-5c63-4cd7-9f1b-0bb72b11c456" -->
 ## Rule: Never Break a Parent Reference in 0AGNOSTIC.md
 
 Parent references in 0AGNOSTIC.md files form the backbone of the context chain. A broken parent reference severs the chain and makes all ancestor context unreachable.
 
+<!-- section_id: "77d0ea19-d428-40bb-8fad-b601930d45eb" -->
 ## What Constitutes a Break
 
 | Action | Result | Severity |
@@ -19,6 +21,7 @@ Parent references in 0AGNOSTIC.md files form the backbone of the context chain. 
 | Renaming a directory without updating child refs | Children point to old path | HIGH |
 | Moving a directory without updating parent refs | Parent path resolves to nothing | HIGH |
 
+<!-- section_id: "ec2ef609-2565-4c55-afb7-41c23ed95bcc" -->
 ## Prevention Protocol
 
 Before modifying, moving, or deleting any entity:
@@ -28,6 +31,7 @@ Before modifying, moving, or deleting any entity:
 3. **Verify after changes**: Run `/chain-validate` to confirm the full chain is intact
 4. **Never delete without checking**: Even "empty" entities may be chain links
 
+<!-- section_id: "e74a6993-168e-4834-bae1-bc1504c82902" -->
 ## Detection
 
 The test suite (`test_context_chain_traversal.sh`) validates the full parent chain. Run it after any structural changes:
@@ -38,6 +42,7 @@ The test suite (`test_context_chain_traversal.sh`) validates the full parent cha
 
 A broken chain produces: `FAIL: Parent path does not exist: [path]`
 
+<!-- section_id: "1952e537-67ef-4f4f-a6ec-79788d302a3d" -->
 ## Recovery
 
 If a parent reference is broken:

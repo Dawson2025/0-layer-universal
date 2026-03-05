@@ -5,6 +5,7 @@ resource_name: "COMPONENTS"
 ---
 # Component Documentation
 
+<!-- section_id: "9e5ca9ed-df08-4248-9e20-5e1890ce8f96" -->
 ## Component Structure
 
 The application currently has a minimal component structure:
@@ -15,20 +16,24 @@ src/
 └── App.jsx      # Main application component
 ```
 
+<!-- section_id: "8d4a4d9e-fdc2-4825-bc39-5af7568c2718" -->
 ## App Component
 
 **File**: `src/App.jsx`
 
+<!-- section_id: "79ab372d-b1f8-49fe-9279-5186dc7e80b7" -->
 ### Overview
 
 The App component is the root component of the application. It implements a dual-mode authentication interface that toggles between login and signup forms.
 
+<!-- section_id: "ef6b53bf-cd75-42eb-a692-9d7ac06a57cf" -->
 ### Component Type
 
 - **Type**: Functional component with hooks
 - **State Management**: Local state using `useState`
 - **Props**: None (root component)
 
+<!-- section_id: "1cfe9113-3efa-4aab-be51-ccbada643fb9" -->
 ### State Variables
 
 #### `isLogin` (lines 5)
@@ -56,6 +61,7 @@ const [formData, setFormData] = useState({
 - **Purpose**: Stores form input values
 - **Updates**: Via `handleInputChange` function (lines 12-17)
 
+<!-- section_id: "25ac84ba-2d1c-4606-b6c3-ea18fd669fd6" -->
 ### Event Handlers
 
 #### `handleInputChange` (lines 12-17)
@@ -99,6 +105,7 @@ const handleSubmit = (e) => {
     - Logs credentials to console if valid (line 28)
 - **Current Limitation**: No actual API calls or authentication
 
+<!-- section_id: "a7eb90de-949f-4daf-b59a-375523155104" -->
 ### UI Structure
 
 ```
@@ -115,6 +122,7 @@ const handleSubmit = (e) => {
           └─ Toggle mode button
 ```
 
+<!-- section_id: "8ecaf16e-dec3-49d4-a86a-815c2d92401c" -->
 ### Conditional Rendering
 
 #### Title and Subtitle (lines 35-38)
@@ -149,6 +157,7 @@ const handleSubmit = (e) => {
 </button>
 ```
 
+<!-- section_id: "b1b261f0-1cd3-4195-a635-bac4f7d2b009" -->
 ### Form Inputs
 
 All inputs follow this pattern:
@@ -186,6 +195,7 @@ All inputs follow this pattern:
   - Must match password (validated on submit)
 - **Visibility**: Signup mode only
 
+<!-- section_id: "e444825e-6f32-4572-983d-aa5ac24b07fc" -->
 ### Styling
 
 The component uses CSS classes defined in `App.css`:
@@ -200,6 +210,7 @@ The component uses CSS classes defined in `App.css`:
 - `.auth-toggle`: Bottom section for mode switching
 - `.toggle-btn`: Text link button for toggling
 
+<!-- section_id: "c6c03fc5-034b-4e82-bfe1-58eb9b559232" -->
 ### Accessibility Features
 
 1. **Labels**: All inputs have associated labels with `htmlFor`
@@ -207,6 +218,7 @@ The component uses CSS classes defined in `App.css`:
 3. **Input Types**: Proper semantic types (`email`, `password`)
 4. **Placeholders**: Helpful placeholder text for all fields
 
+<!-- section_id: "e7a07d82-655f-4af1-aebf-709191668dad" -->
 ### Component Dependencies
 
 ```javascript
@@ -217,6 +229,7 @@ import './App.css'
 - **React Hook**: `useState` for state management
 - **Styles**: Component-specific CSS
 
+<!-- section_id: "ea1dd9d8-6c31-40e4-ac62-8578aabcccd1" -->
 ### Export
 
 ```javascript
@@ -225,14 +238,17 @@ export default App
 
 Default export consumed by `main.jsx`
 
+<!-- section_id: "5f632bc0-d317-436f-9a1f-ac1bd5ec0e65" -->
 ## Main Entry (main.jsx)
 
 **File**: `src/main.jsx`
 
+<!-- section_id: "8410634a-9c11-4ee2-9cc0-51aeab35e569" -->
 ### Overview
 
 React application initialization file that mounts the App component to the DOM.
 
+<!-- section_id: "beaa0f6d-c154-4418-9da9-29d09de4c8dd" -->
 ### Code Breakdown
 
 ```javascript
@@ -248,6 +264,7 @@ createRoot(document.getElementById('root')).render(
 )
 ```
 
+<!-- section_id: "fe062f82-abd4-4f98-a545-7cbbb03e673c" -->
 ### Imports (lines 1-4)
 
 1. **StrictMode**: React development mode helper that:
@@ -262,12 +279,14 @@ createRoot(document.getElementById('root')).render(
 
 4. **App**: Main application component
 
+<!-- section_id: "c6c4711a-610b-457a-9450-db8cbe251bdd" -->
 ### Render (lines 6-10)
 
 - **Target Element**: `document.getElementById('root')` from `index.html:10`
 - **Wrapper**: `<StrictMode>` enables development checks
 - **Root Component**: `<App />` mounted inside StrictMode
 
+<!-- section_id: "b49056c3-9953-4523-97d6-96f70b6793f5" -->
 ### StrictMode Benefits
 
 In development:
@@ -282,8 +301,10 @@ In development:
 
 In production: No effect, purely development tool
 
+<!-- section_id: "604c8825-4568-43dc-84a0-bc18cc6f4239" -->
 ## Component Best Practices
 
+<!-- section_id: "fca86990-68fe-4033-84db-7b5c8caa108b" -->
 ### Current Good Practices
 
 1. **Functional Components**: Using modern functional components with hooks
@@ -292,6 +313,7 @@ In production: No effect, purely development tool
 4. **Single Responsibility**: Each function has a clear purpose
 5. **Required Attributes**: HTML5 validation on inputs
 
+<!-- section_id: "6bf7d6b6-99e2-46b0-8c82-8e240595edfb" -->
 ### Potential Improvements
 
 1. **Component Splitting**: Could extract form inputs into reusable components
@@ -301,6 +323,7 @@ In production: No effect, purely development tool
 5. **Custom Hooks**: Extract form logic into a custom hook
 6. **PropTypes/TypeScript**: Add runtime type checking
 
+<!-- section_id: "a68b9ab4-2df8-4099-9a75-fb89845bdaaf" -->
 ### Example: Component Splitting
 
 The App component could be refactored:

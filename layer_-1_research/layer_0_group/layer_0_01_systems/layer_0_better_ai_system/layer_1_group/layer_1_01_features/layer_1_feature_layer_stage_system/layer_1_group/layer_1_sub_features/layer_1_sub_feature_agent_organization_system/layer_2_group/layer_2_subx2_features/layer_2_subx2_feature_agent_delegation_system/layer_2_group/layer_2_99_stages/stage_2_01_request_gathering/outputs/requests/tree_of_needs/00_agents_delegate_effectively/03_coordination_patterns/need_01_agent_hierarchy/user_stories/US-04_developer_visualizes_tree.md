@@ -13,6 +13,7 @@ resource_name: "US-04_developer_visualizes_tree"
 **I want** to be able to derive the complete agent tree from the 0AGNOSTIC.md parent/children fields,
 **So that** I can verify the structure is correct, identify gaps, and understand who manages whom.
 
+<!-- section_id: "691a5127-5523-4200-935c-b046450e2455" -->
 ### What Happens
 
 1. User wants to review the agent hierarchy structure
@@ -21,6 +22,7 @@ resource_name: "US-04_developer_visualizes_tree"
 4. User verifies every agent has exactly one manager and every manager lists its direct reports
 5. User identifies any structural gaps (orphaned agents, missing managers)
 
+<!-- section_id: "3b0325e6-6a6f-45c3-9c34-a4e7de09d19e" -->
 ### Acceptance Criteria
 
 - Hierarchy can be derived from 0AGNOSTIC.md parent/children fields across all entities

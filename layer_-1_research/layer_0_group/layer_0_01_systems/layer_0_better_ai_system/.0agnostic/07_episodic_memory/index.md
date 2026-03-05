@@ -5,10 +5,12 @@ resource_name: "index"
 ---
 # Episodic Memory Index - better_ai_system
 
+<!-- section_id: "1c0e4afb-6c7c-47b9-85f8-b5d76830c3e8" -->
 ## Current Status
 - **Last Session**: 2026-02-09
 - **Active Work**: 3-pillar restructure complete. All content migrated, old feature deleted.
 
+<!-- section_id: "216786cd-7622-4703-aedb-ddb853adf24a" -->
 ## Recent Sessions
 | Date | Summary | File |
 |------|---------|------|
@@ -17,11 +19,13 @@ resource_name: "index"
 | 2026-02-03 | Implementing v6 organization proposal | `sessions/session_2026-02-03.md` |
 | 2026-02-02 | Created v1-v6 proposals, synthesis | See stage_-1_02_research episodic |
 
+<!-- section_id: "e85485b8-5d9d-41d7-a836-263feee6e056" -->
 ## Quick Links
 - **Sessions**: `sessions/`
 - **Changes**: `changes/`
 - **Stage Episodic**: `layer_-1_group/layer_-1_99_stages/stage_-1_02_research/outputs/episodic_memory/`
 
+<!-- section_id: "55798a3a-0ec8-4211-bf78-730b2d0df26b" -->
 ## Notes
 - Project-level episodic memory tracks cross-stage work
 - Stage-specific sessions remain in stage episodic folders

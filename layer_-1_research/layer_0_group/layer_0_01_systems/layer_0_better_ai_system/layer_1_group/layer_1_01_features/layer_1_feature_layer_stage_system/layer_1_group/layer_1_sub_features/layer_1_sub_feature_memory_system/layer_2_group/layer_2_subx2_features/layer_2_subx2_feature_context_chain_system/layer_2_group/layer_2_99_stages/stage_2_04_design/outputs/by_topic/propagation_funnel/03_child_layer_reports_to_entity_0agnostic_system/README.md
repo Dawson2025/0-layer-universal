@@ -25,8 +25,10 @@ Layer Report (parent layer)
    (Ready for Level 04: Entity → AI Apps porting)
 ```
 
+<!-- section_id: "33bab22a-6d55-408d-a891-9b1ec28ab1a1" -->
 ## Subdirectories
 
+<!-- section_id: "3a889744-e4d4-43e7-a3a3-7f3966046668" -->
 ### `01_layer_reports/`
 **Content**: Input from parent layer
 - `layer_report.md` — Parent layer's synthesis
@@ -36,6 +38,7 @@ Layer Report (parent layer)
   - Knowledge — inherited by all children
   - Protocols — inherited by all children
 
+<!-- section_id: "21eb2e80-9730-4217-a1a2-9902bd740ef6" -->
 ### `02_aggregated_entity_reports/`
 **Content**: Entity-specific reports derived from layer context
 - `[entity_name]_report.md` for each entity
@@ -52,6 +55,7 @@ Layer Report (parent layer)
 - `layer_3_subx2_project_machine_learning_report.md`
 - etc.
 
+<!-- section_id: "b588d3b0-4429-4c73-b82d-e55223f7dc18" -->
 ### `03_entity_0agnostic/`
 **Content**: Entity-specific context definitions
 - For each child entity, create:
@@ -65,8 +69,10 @@ Layer Report (parent layer)
     - `06_context_avenue_web/` — Entity context avenues
     - `07+_setup_dependant/` — Entity setup-specific
 
+<!-- section_id: "0fba8d7a-8587-49b3-b89e-5cc1f4155298" -->
 ## Customization Rules
 
+<!-- section_id: "dac033c0-fb67-4a28-912f-3c43b2661e0d" -->
 ### Inheritance Hierarchy
 ```
 Universal Rules (layer_0)
@@ -84,6 +90,7 @@ Each level can:
 - **Add** new rules not in parent
 - **Disable** parent rules (explicitly exclude)
 
+<!-- section_id: "212c8de1-adc5-454e-af06-fe90003db320" -->
 ### Entity-Specific Customizations
 
 **Scope**: What applies uniquely to this entity?
@@ -105,6 +112,7 @@ Each level can:
 - Different assignment categories
 - Different tool integrations
 
+<!-- section_id: "357b6b6b-c7e4-40fb-901a-642d2617aa04" -->
 ## Entity 0AGNOSTIC.md Structure
 
 ```markdown
@@ -152,6 +160,7 @@ Each level can:
 ## On Exit
 ```
 
+<!-- section_id: "0224688b-19d9-4218-8a2b-2d6963001060" -->
 ## Workflow
 
 1. **Read** — Review `01_layer_reports/layer_report.md`
@@ -165,6 +174,7 @@ Each level can:
 4. **Output** — Place reports in `02_aggregated_entity_reports/`
 5. **Ready** — Entities ready for Level 04 (AI app porting)
 
+<!-- section_id: "09847c88-4dc9-4da3-a312-b6aeb4c26995" -->
 ## Integration
 
 **Input From**: Level 02 (layer_report.md and 0AGNOSTIC.md)

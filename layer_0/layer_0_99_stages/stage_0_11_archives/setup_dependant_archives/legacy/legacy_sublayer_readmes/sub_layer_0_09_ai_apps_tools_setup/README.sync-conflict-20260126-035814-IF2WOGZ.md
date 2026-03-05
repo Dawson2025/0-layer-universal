@@ -10,6 +10,7 @@ resource_name: "README.sync-conflict-20260126-035814-IF2WOGZ"
 
 This sublayer has been consolidated into the unified setup sublayer for better organization and discoverability.
 
+<!-- section_id: "86649b23-ac05-44ee-993b-303d2a81e49d" -->
 ## Migration Path
 
 All setup documentation is now located in:
@@ -23,6 +24,7 @@ Navigate the file tree by your configuration:
 3. Choose your coding app: `0.07_coding_apps/<app>/`
 4. Continue through all levels to find your specific setup documentation
 
+<!-- section_id: "a8662c09-1173-47a9-b97c-69406b9506c8" -->
 ## Why Consolidate?
 
 - **Single entry point** for all setup docs
@@ -30,6 +32,7 @@ Navigate the file tree by your configuration:
 - **Cross-cutting organization** with `_shared/` folders at every level
 - **Easier maintenance** - one structure instead of 10
 
+<!-- section_id: "884dcab3-b88e-4224-8066-43079422e8cf" -->
 ## Legacy Content Below
 
 The original content of this sublayer is preserved below for reference, but should not be updated. All new setup documentation should go into the consolidated sublayer.
@@ -46,6 +49,7 @@ The original content of this sublayer is preserved below for reference, but shou
 
 ---
 
+<!-- section_id: "be60b512-6955-451e-bbf7-2a24cc2ba626" -->
 ## 🚀 Session Initialization
 
 **Before working with AI apps and tools, follow the universal initialization protocol:**
@@ -67,14 +71,17 @@ The original content of this sublayer is preserved below for reference, but shou
 
 ---
 
+<!-- section_id: "0fc76149-8ccd-4c59-b52b-4bc52744dbe5" -->
 ## 📚 Related Documentation
 
+<!-- section_id: "96f500d7-4b66-45b3-818f-5bc013427170" -->
 ### Universal Context Entry Points
 - **Universal Init Prompt:** `layer_0/0.02_sub_layers/sub_layer_0_01_basic_prompts_throughout/0_basic_prompts_throughout/universal_init_prompt.md`
 - **System Overview:** `0_context/SYSTEM_OVERVIEW.md`
 - **Usage Guide:** `0_context/USAGE_GUIDE.md`
 - **Master Index:** `0_context/MASTER_DOCUMENTATION_INDEX.md`
 
+<!-- section_id: "d34344ba-0ec7-45f7-8c42-3f86e4688422" -->
 ### Related Sub-Layers
 - **Sub Layer 0.05:** OS Setup
   - Path: `layer_0/0.02_sub_layers/sub_layer_0_05_os_setup/`
@@ -96,6 +103,7 @@ The original content of this sublayer is preserved below for reference, but shou
   - Path: `layer_0/0.02_sub_layers/sub_layer_0_12_universal_tools/`
   - Contains Claude Code configuration documentation
 
+<!-- section_id: "3b06cf38-e422-4a71-bf03-f39543585649" -->
 ### Universal Rules & Protocols
 - **Terminal Protocol:** `layer_0/0.04_universal_rules/trickle_down_0_universal/0_instruction_docs/UNIVERSAL_AGENT_TERMINAL_PROTOCOL.md`
 - **Git Commit Rules:** `layer_0/0.04_universal_rules/trickle_down_0_universal/0_instruction_docs/git_commit_rule.md`
@@ -103,6 +111,7 @@ The original content of this sublayer is preserved below for reference, but shou
 
 ---
 
+<!-- section_id: "1fc985fc-6ac9-4121-be13-487b7a6a6a2e" -->
 ## 🔧 AI Apps & Tools Covered
 
 This sub-layer documents:
@@ -112,6 +121,7 @@ This sub-layer documents:
 - Tool-specific setup instructions
 - Integration patterns and best practices
 
+<!-- section_id: "2a4c125e-5cd9-4430-8c8c-97fdd5d954c0" -->
 ### OpenAI Codex CLI
 
 **Status**: ✅ Installed (v0.64.0)
@@ -153,6 +163,7 @@ npm install -g @openai/codex@latest
 - ✅ macOS and Linux (officially supported)
 - ⚠️ Windows (experimental; recommended to use WSL)
 
+<!-- section_id: "f260e7ec-eed4-4ccf-bb40-f4099bd09970" -->
 ### Claude Code CLI
 
 **Documentation Location**:
@@ -162,6 +173,7 @@ npm install -g @openai/codex@latest
 
 **Important Note**: Claude Code uses CLI-based MCP configuration (not config files). See MCP setup in `sub_layer_0_10_mcp_servers_and_tools_setup` for details.
 
+<!-- section_id: "f4c44184-71a7-46d7-9b09-98c479fa93e9" -->
 ### Google Gemini CLI
 
 **Example Installation**:
@@ -171,6 +183,7 @@ gemini login
 gemini  # Start interactive CLI
 ```
 
+<!-- section_id: "78482259-45ad-4b6f-a832-801d70a9df22" -->
 ### Installation Checklist
 
 When setting up a new development environment:
@@ -181,6 +194,7 @@ When setting up a new development environment:
 - [ ] API keys configured for respective tools
 - [ ] MCP servers configured (see `sub_layer_0_10_mcp_servers_and_tools_setup`)
 
+<!-- section_id: "222d7dda-6594-479a-b8c8-9742cce98b67" -->
 ### Quick Verification Commands
 
 ```bash
@@ -197,6 +211,7 @@ which claude && claude --version
 which gemini && gemini --version
 ```
 
+<!-- section_id: "a5fb7754-329f-426e-b33e-2c1c0efc2005" -->
 ### Environment Variables
 
 Common environment variables for AI tools:
@@ -212,13 +227,16 @@ source ~/.bashrc
 
 ---
 
+<!-- section_id: "2671494d-9940-4649-a464-a1b06bc08a0a" -->
 ## 📝 Documentation Structure
 
+<!-- section_id: "34a479f9-f936-4f55-be0f-57020cb796d8" -->
 ### Current Status
 - This README provides the entry point and navigation
 - Additional documentation should be added as needed
 - Keep mappings up to date if paths change
 
+<!-- section_id: "6543b0c9-ade8-4444-9aa2-802a11cbf0ea" -->
 ### Adding New Documentation
 When adding new AI app or tool documentation:
 1. Create appropriate subdirectories if needed (following trickle-down pattern)
@@ -228,6 +246,7 @@ When adding new AI app or tool documentation:
 5. Update the Master Documentation Index if needed
 6. Follow the context update rule: `layer_0/0.04_universal_rules/trickle_down_0_universal/0_instruction_docs/context_update_rule.md`
 
+<!-- section_id: "eff1ff6c-6600-496a-9875-08117b6918b9" -->
 ## ⚠️ Linux/Ubuntu-Specific MCP Issues
 
 **CRITICAL**: AI apps and tools on Linux have platform-specific MCP limitations. Read:
@@ -245,6 +264,7 @@ When adding new AI app or tool documentation:
 - **Cursor IDE Issues**: `../sub_layer_0_07_coding_app_setup/trickle_down_0.5_setup/0_instruction_docs/CURSOR_IDE_LINUX_MCP_ISSUES.md`
 - **MCP Setup**: `../sub_layer_0_10_mcp_servers_and_tools_setup/`
 
+<!-- section_id: "5a6ebdb2-ac37-4dc1-9e6b-6889a16593c2" -->
 ### Troubleshooting
 
 #### Codex CLI Issues
@@ -270,6 +290,7 @@ When adding new AI app or tool documentation:
 
 ---
 
+<!-- section_id: "633f077b-7dff-47ba-af87-f52b5a44be77" -->
 ## 🔄 Mandatory Sync & Context Update Policy
 
 **At start of every chat/session (before work):**
@@ -297,6 +318,7 @@ git status
 
 ---
 
+<!-- section_id: "46cebf5c-9f7b-4ad5-a3f5-b3daf17c85b3" -->
 ## 🎯 Path Resolution
 
 **All paths in this documentation are relative to:**

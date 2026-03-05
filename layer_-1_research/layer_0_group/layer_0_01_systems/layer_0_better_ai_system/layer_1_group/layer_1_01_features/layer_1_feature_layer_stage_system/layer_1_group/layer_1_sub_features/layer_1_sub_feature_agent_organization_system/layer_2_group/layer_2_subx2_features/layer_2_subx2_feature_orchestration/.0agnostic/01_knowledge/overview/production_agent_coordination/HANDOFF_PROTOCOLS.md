@@ -5,12 +5,14 @@ resource_name: "HANDOFF_PROTOCOLS"
 ---
 # Handoff Protocols for Agent Communication
 
+<!-- section_id: "7ce49e57-9519-49d7-a944-ea11131c6f6a" -->
 ## Overview
 
 When agents delegate to or receive work from other agents, they communicate via **handoff documents**. This document defines the protocols for effective agent-to-agent communication.
 
 ---
 
+<!-- section_id: "9b0932ad-4c5d-4d86-afce-ce5b7296d471" -->
 ## Handoff Document Locations
 
 Every entry point (layer, stage, sub-layer, sub-stage) has handoff folders:
@@ -28,8 +30,10 @@ Every entry point (layer, stage, sub-layer, sub-stage) has handoff folders:
 
 ---
 
+<!-- section_id: "4e595992-915e-42f1-a0de-8036e1d3c14d" -->
 ## Handoff Document Structure
 
+<!-- section_id: "955b3be0-1a22-4725-993e-ca30fc47c081" -->
 ### Task Handoff (Outgoing)
 
 ```markdown
@@ -92,6 +96,7 @@ Return results to: `[path to incoming/from_below/]`
 *Handoff created by [agent] at [entry_point]*
 ```
 
+<!-- section_id: "c18b9369-c98a-42ad-b5ac-51604b72d07d" -->
 ### Result Handoff (Returning)
 
 ```markdown
@@ -157,8 +162,10 @@ Return results to: `[path to incoming/from_below/]`
 
 ---
 
+<!-- section_id: "62a46728-b401-4955-be91-6b92584d926b" -->
 ## Communication Patterns
 
+<!-- section_id: "e4d122fd-81a8-445c-b95b-32f8f41f46d4" -->
 ### Pattern 1: Simple Delegation
 
 ```
@@ -194,6 +201,7 @@ Return results to: `[path to incoming/from_below/]`
 └─────────────────────────────────────────────────────────────────────────────┘
 ```
 
+<!-- section_id: "b35d27b9-3a59-4320-9863-a1737e0c9fa2" -->
 ### Pattern 2: Parallel Delegation
 
 ```
@@ -228,6 +236,7 @@ Return results to: `[path to incoming/from_below/]`
 └─────────────────────────────────────────────────────────────────────────────┘
 ```
 
+<!-- section_id: "41a19658-a239-443b-912a-528edbda0f1e" -->
 ### Pattern 3: Chain Delegation
 
 ```
@@ -250,6 +259,7 @@ Return results to: `[path to incoming/from_below/]`
 
 ---
 
+<!-- section_id: "4750cc1c-15be-495d-a2bc-e1dc95f98c61" -->
 ## Handoff Naming Convention
 
 ```
@@ -263,8 +273,10 @@ Examples:
 
 ---
 
+<!-- section_id: "1aa824c7-8ce8-427e-8032-eecdeb724778" -->
 ## Special Handoff Types
 
+<!-- section_id: "120eec24-c4b4-47bf-aa58-2a40de0c60b1" -->
 ### Escalation Handoff
 
 When an agent cannot complete a task:
@@ -309,6 +321,7 @@ When an agent cannot complete a task:
 *Escalation from [agent] at [entry_point]*
 ```
 
+<!-- section_id: "fdd6b587-8649-4a0b-971c-bf8466e50697" -->
 ### Progress Update Handoff
 
 For long-running tasks:
@@ -350,8 +363,10 @@ For long-running tasks:
 
 ---
 
+<!-- section_id: "5a11af03-ce72-4d22-a221-ae168039926e" -->
 ## Handoff Best Practices
 
+<!-- section_id: "d2043d68-f386-4fbd-8266-7d8a77ff7290" -->
 ### For Task Senders
 
 1. **Be specific** - Vague tasks lead to wrong results
@@ -360,6 +375,7 @@ For long-running tasks:
 4. **Specify constraints** - What should NOT be done?
 5. **Name files clearly** - Use the naming convention
 
+<!-- section_id: "28afcf31-838a-4abe-a548-c79032f26e4f" -->
 ### For Task Receivers
 
 1. **Read completely** - Don't start until you understand
@@ -368,6 +384,7 @@ For long-running tasks:
 4. **Report issues early** - Don't wait until the end
 5. **Verify before returning** - Check acceptance criteria
 
+<!-- section_id: "807a20ad-accb-44b4-8be1-7e5bea192c92" -->
 ### For Coordinators
 
 1. **Monitor progress** - Check for progress updates
@@ -377,6 +394,7 @@ For long-running tasks:
 
 ---
 
+<!-- section_id: "59daa931-9723-4607-9782-74f81eaf80bf" -->
 ## Self-Check Before Sending Handoff
 
 - [ ] Is the task clearly defined?

@@ -5,10 +5,12 @@ resource_name: "ai_agent_documentation_rule"
 ---
 # AI AGENT DOCUMENTATION RULE
 
+<!-- section_id: "92a5b1fa-003e-497a-8da4-287cbbfa565b" -->
 ## **MANDATORY REQUIREMENT**
 
 **ALL AI agents MUST create, update, and maintain comprehensive documentation in the `/home/dawson/code/I-eat-repo/0_context` directory for EVERY SINGLE AI TURN in EVERY SESSION, regardless of the scope or type of changes made.**
 
+<!-- section_id: "f0d9df41-0c3e-4ac3-beca-98f5446b5686" -->
 ### **TURN-BY-TURN DOCUMENTATION REQUIREMENT**
 
 **EVERY AI TURN MUST RESULT IN DOCUMENTATION UPDATES, INCLUDING:**
@@ -26,6 +28,7 @@ resource_name: "ai_agent_documentation_rule"
 
 **NO AI TURN IS EXEMPT FROM THIS REQUIREMENT.**
 
+<!-- section_id: "fb44095b-9bd1-4ede-b522-742aede39537" -->
 ### **GIT SYNC AND COMMIT REQUIREMENT**
 
 **ALL AI agents MUST:**
@@ -47,6 +50,7 @@ resource_name: "ai_agent_documentation_rule"
 9. **Documentation Included**: All documentation updates must be included in the commit
 10. **Immediate Sync**: Push to cloud immediately after commit, no delays
 
+<!-- section_id: "e3b2c13a-012e-4626-a91b-5ebb94987bda" -->
 ## **RULE SCOPE**
 
 This rule applies to:
@@ -60,8 +64,10 @@ This rule applies to:
 - Database schema modifications
 - API changes and updates
 
+<!-- section_id: "b965c625-0683-46c0-84f9-4d9587d3a682" -->
 ## **REQUIRED DOCUMENTATION ACTIONS**
 
+<!-- section_id: "a53b94a9-8133-4422-8141-06fe15bc26d5" -->
 ### **1. IMMEDIATE DOCUMENTATION (Every AI Turn)**
 
 **At the START of EVERY SESSION, agents MUST:**
@@ -88,6 +94,7 @@ This rule applies to:
 10. **Push to Cloud**: `git push origin <branch>` to sync all commits to remote
 11. **Verify Git Status**: Ensure all changes are committed and pushed
 
+<!-- section_id: "b7dce408-1a33-4fd5-9e63-cb4f2403a8b6" -->
 ### **2. DOCUMENTATION STRUCTURE**
 
 All documentation must follow the established hierarchy in `/home/dawson/code/I-eat-repo/0_context`:
@@ -102,6 +109,7 @@ All documentation must follow the established hierarchy in `/home/dawson/code/I-
 └── MASTER_DOCUMENTATION_INDEX.md                    # Master index
 ```
 
+<!-- section_id: "a1e610a3-629b-4722-8e9b-1952dde8bbb0" -->
 ### **3. REQUIRED DOCUMENTATION TYPES**
 
 #### **A. Turn-by-Turn Change Logs**
@@ -137,6 +145,7 @@ All documentation must follow the established hierarchy in `/home/dawson/code/I-
 - **Format**: Activities performed, tools used, decisions made, outcomes
 - **Example**: `2025-01-27_session_001_turn_003.md`
 
+<!-- section_id: "710f1a52-150c-4a86-8b07-5be370e04c41" -->
 ### **4. DOCUMENTATION STANDARDS**
 
 #### **A. File Naming Convention**
@@ -183,6 +192,7 @@ Detailed explanation of what was done.
 - Monitoring requirements
 ```
 
+<!-- section_id: "84b38698-aca8-473f-a0d1-97c91c9c17dd" -->
 ### **5. MANDATORY DOCUMENTATION CHECKLIST**
 
 For EVERY AI turn, agents MUST verify:
@@ -200,6 +210,7 @@ For EVERY AI turn, agents MUST verify:
 - [ ] Git status shows no uncommitted changes
 - [ ] Commit includes all documentation updates
 
+<!-- section_id: "9ee349fa-f3fc-4aaf-a44f-54d3526413a0" -->
 ### **6. DOCUMENTATION VALIDATION**
 
 Before completing any AI turn, agents MUST:
@@ -213,6 +224,7 @@ Before completing any AI turn, agents MUST:
 7. **Verify Git Status**: Confirm no uncommitted changes remain
 8. **Validate Commit**: Ensure commit includes all changes and documentation
 
+<!-- section_id: "4ac2c2f9-c501-404d-a3a2-d93fa195d3b0" -->
 ## **BENEFITS OF THIS RULE**
 
 - **Complete Audit Trail**: Every change tracked and documented
@@ -228,6 +240,7 @@ Before completing any AI turn, agents MUST:
 - **Collaborative Development**: Multiple agents can work on same project
 - **Backup and Recovery**: All changes safely stored in git repository
 
+<!-- section_id: "e764b49c-e932-44c3-8836-12321577e4ed" -->
 ## **ENFORCEMENT**
 
 This rule is **MANDATORY** and **NON-NEGOTIABLE**. 
@@ -244,6 +257,7 @@ This rule is **MANDATORY** and **NON-NEGOTIABLE**.
 
 **This rule takes precedence over all other tasks and must be completed before marking any AI turn as complete.**
 
+<!-- section_id: "d968b87c-59cc-4c07-ad75-ef740888bb5c" -->
 ### **GIT COMMIT MESSAGE STANDARDS**
 
 **Every git commit must follow this format:**

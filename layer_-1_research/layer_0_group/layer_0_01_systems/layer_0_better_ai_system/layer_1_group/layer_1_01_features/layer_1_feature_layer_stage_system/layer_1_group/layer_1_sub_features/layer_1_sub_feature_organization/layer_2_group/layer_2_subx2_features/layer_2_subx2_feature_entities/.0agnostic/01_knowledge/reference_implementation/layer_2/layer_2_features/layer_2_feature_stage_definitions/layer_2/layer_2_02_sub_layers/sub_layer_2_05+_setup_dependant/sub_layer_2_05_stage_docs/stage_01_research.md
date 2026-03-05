@@ -5,16 +5,19 @@ resource_name: "stage_01_research"
 ---
 # Stage 01: Research
 
+<!-- section_id: "39e49d0b-11c2-4874-86d7-77017fa1789a" -->
 ## Purpose
 
 Explore the problem space, gather information, and build understanding before defining specific instructions. This stage bridges request gathering and instruction definition by investigating unknowns.
 
+<!-- section_id: "b9f5582e-b6af-4db4-b918-15f5fa717ea6" -->
 ## Entry Criteria
 
 - Stage 00 (Request Gathering) complete
 - Initial requirements documented
 - Unknown areas or questions identified
 
+<!-- section_id: "4b710259-f573-4bbf-a98c-d8b078ebb4f1" -->
 ## Exit Criteria
 
 - Research findings documented in `outputs/`
@@ -22,6 +25,7 @@ Explore the problem space, gather information, and build understanding before de
 - Dependencies and constraints understood
 - Ready to write concrete instructions
 
+<!-- section_id: "5003a9ff-e948-4393-9196-06f9c1728568" -->
 ## Typical Tasks
 
 1. **Codebase Exploration** - Understand existing architecture
@@ -31,6 +35,7 @@ Explore the problem space, gather information, and build understanding before de
 5. **Proof of Concept** - Validate assumptions with quick experiments
 6. **Documentation Review** - Read relevant existing docs
 
+<!-- section_id: "4cb66886-0b09-4eba-94b0-df0267ee882c" -->
 ## Directory Structure
 
 ```
@@ -43,6 +48,7 @@ stage_N_01_research/
     └── decisions/         # Decision records
 ```
 
+<!-- section_id: "55cd36b2-8e8a-426f-a7f9-014f7251a4c2" -->
 ## Handoff Pattern
 
 **Input from 00:**
@@ -55,6 +61,7 @@ stage_N_01_research/
 - Identified constraints
 - Handoff document referencing outputs
 
+<!-- section_id: "429e5c35-505e-4001-94ea-21403495d9cd" -->
 ## Best Practices
 
 1. **Time-box research** - Don't get stuck in analysis paralysis
@@ -63,6 +70,7 @@ stage_N_01_research/
 4. **Validate assumptions** - Test key assumptions with minimal POCs
 5. **Keep handoffs lean** - Reference outputs rather than duplicating content
 
+<!-- section_id: "f1205f58-a467-480b-9879-d84e489c4c39" -->
 ## Common Outputs
 
 | Output Type | Location | Description |

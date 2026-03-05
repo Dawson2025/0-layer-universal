@@ -11,12 +11,14 @@ resource_name: "VPS_RESILIENCE_RECOVERY"
 
 ---
 
+<!-- section_id: "3616d620-921e-4ef7-8eae-e2413605c107" -->
 ## Overview
 
 The VPS is the **critical relay point** for the multi-OS workspace sync. If it fails, Windows and Ubuntu cannot sync with each other. This document ensures the VPS is resilient against failures and can recover automatically.
 
 ---
 
+<!-- section_id: "372e8e88-a05b-4021-9f47-cea96460f60b" -->
 ## Current State Assessment
 
 | Component | Status | Issue |
@@ -30,6 +32,7 @@ The VPS is the **critical relay point** for the multi-OS workspace sync. If it f
 
 ---
 
+<!-- section_id: "8a83a7b4-a0c9-4ce6-a6e5-9dc5eb27dafc" -->
 ## System Configuration
 
 | Setting | Value |
@@ -45,6 +48,7 @@ The VPS is the **critical relay point** for the multi-OS workspace sync. If it f
 
 ---
 
+<!-- section_id: "541bfb8f-d5ef-4e3f-bfe9-c019de37f66d" -->
 ## Critical Services
 
 | Service | Port | Purpose | Priority |
@@ -55,8 +59,10 @@ The VPS is the **critical relay point** for the multi-OS workspace sync. If it f
 
 ---
 
+<!-- section_id: "a823e77b-b870-4650-be4e-a582c28d5e89" -->
 ## Failure Modes & Solutions
 
+<!-- section_id: "d07fcfb1-431a-49e1-b6c2-d68364902f15" -->
 ### Layer 1: Service Failures
 
 | Failure | Solution | Status |
@@ -66,6 +72,7 @@ The VPS is the **critical relay point** for the multi-OS workspace sync. If it f
 | Tailscale crashes | Auto-restart via systemd | [ ] To verify |
 | Memory exhaustion | Syncthing memory limits + swap | [ ] To configure |
 
+<!-- section_id: "8a90e684-3ff6-436a-bd20-5b655657a92a" -->
 ### Layer 2: Security Failures
 
 | Failure | Solution | Status |
@@ -75,6 +82,7 @@ The VPS is the **critical relay point** for the multi-OS workspace sync. If it f
 | SSH key compromise | Password fallback + key rotation | [ ] To configure |
 | Service exploits | Regular updates + unattended-upgrades | [ ] To configure |
 
+<!-- section_id: "bc423010-c0e8-474c-8822-db37339bb23b" -->
 ### Layer 3: System Failures
 
 | Failure | Solution | Status |
@@ -83,6 +91,7 @@ The VPS is the **critical relay point** for the multi-OS workspace sync. If it f
 | Kernel panic | Auto-reboot + multiple kernels | [ ] To configure |
 | Network partition | Tailscale direct + relay fallback | [x] Default |
 
+<!-- section_id: "f7879ddc-3b46-461e-b6ff-e464c999b857" -->
 ### Layer 4: Provider Failures
 
 | Failure | Solution | Status |
@@ -93,8 +102,10 @@ The VPS is the **critical relay point** for the multi-OS workspace sync. If it f
 
 ---
 
+<!-- section_id: "0411d32f-87dc-4ffc-9b37-bd7bed3c09ca" -->
 ## Implementation Plan
 
+<!-- section_id: "cc4b36c9-29ff-4fa5-a746-12f8d9c6cff1" -->
 ### Phase 1: Fix Syncthing Resilience
 
 ```bash
@@ -125,6 +136,7 @@ sudo systemctl daemon-reload
 sudo systemctl restart syncthing@root
 ```
 
+<!-- section_id: "28db3f7e-5b47-464a-bc43-2144efe9211a" -->
 ### Phase 2: Secure SSH Configuration
 
 ```bash
@@ -159,6 +171,7 @@ sudo systemctl daemon-reload
 sudo systemctl restart ssh
 ```
 
+<!-- section_id: "0a94ceca-635c-4103-8a31-b0fd2af1ff9d" -->
 ### Phase 3: Install and Configure fail2ban
 
 ```bash
@@ -185,6 +198,7 @@ EOF
 sudo systemctl enable --now fail2ban
 ```
 
+<!-- section_id: "9dd083c3-1411-44c8-b1a0-30cb30e93904" -->
 ### Phase 4: Enable UFW Firewall
 
 ```bash
@@ -206,6 +220,7 @@ sudo ufw --force enable
 sudo ufw status verbose
 ```
 
+<!-- section_id: "cdd10988-122d-4031-92bc-505f26864942" -->
 ### Phase 5: Configure Tailscale Service Recovery
 
 ```bash
@@ -222,6 +237,7 @@ EOF
 sudo systemctl daemon-reload
 ```
 
+<!-- section_id: "ea649840-61db-4a98-add1-2bfde5ea092d" -->
 ### Phase 6: Configure Log Rotation
 
 ```bash
@@ -239,6 +255,7 @@ sudo tee /etc/logrotate.d/syncthing << 'EOF'
 EOF
 ```
 
+<!-- section_id: "4fd93b06-b47a-4283-8188-47753a6d283b" -->
 ### Phase 7: Configure Automatic Updates
 
 ```bash
@@ -261,6 +278,7 @@ EOF
 sudo dpkg-reconfigure -plow unattended-upgrades
 ```
 
+<!-- section_id: "1c3dbd41-0e60-41fe-9f3b-c2c64975fc27" -->
 ### Phase 8: Health Check Script & Monitoring
 
 ```bash
@@ -321,6 +339,7 @@ sudo chmod +x /usr/local/bin/vps-health-check.sh
 echo "*/5 * * * * root /usr/local/bin/vps-health-check.sh >> /var/log/health-check.log 2>&1" | sudo tee /etc/cron.d/vps-health-check
 ```
 
+<!-- section_id: "89dc68a8-a1d2-4f82-806c-7a2545623826" -->
 ### Phase 9: Backup Strategy
 
 ```bash
@@ -357,14 +376,17 @@ echo "0 3 * * * root /usr/local/bin/vps-backup.sh >> /var/log/backup.log 2>&1" |
 
 ---
 
+<!-- section_id: "e0d2161f-b7ec-4986-9640-c16f8e26d961" -->
 ## Emergency Recovery Procedures
 
+<!-- section_id: "6e818312-d864-45a9-9771-aadcda2c0cca" -->
 ### When SSH Fails
 
 1. **Hetzner Console**: Access via web console at console.hetzner.cloud
 2. **Reset Password**: Use Hetzner rescue system if needed
 3. **Check logs**: `journalctl -u ssh -n 100`
 
+<!-- section_id: "5e99f13b-61ab-4786-b058-a64c3605c713" -->
 ### When Syncthing Won't Start
 
 ```bash
@@ -375,6 +397,7 @@ systemctl reset-failed syncthing@root
 systemctl start syncthing@root
 ```
 
+<!-- section_id: "37a4efd1-ff39-4001-8ab7-32deeffea844" -->
 ### When Disk is Full
 
 ```bash
@@ -388,6 +411,7 @@ rm -rf /root/sync/dawson-workspace/.stversions/*
 journalctl --vacuum-time=3d
 ```
 
+<!-- section_id: "b09b636b-1cbb-44e1-94bb-6211014bc9f2" -->
 ### When VPS is Unresponsive
 
 1. Try Hetzner web console
@@ -396,6 +420,7 @@ journalctl --vacuum-time=3d
 
 ---
 
+<!-- section_id: "0ab494fc-6d4c-4290-8ab5-52b7df12e2d4" -->
 ## Testing Checklist
 
 - [ ] Kill syncthing, verify it auto-restarts
@@ -410,6 +435,7 @@ journalctl --vacuum-time=3d
 
 ---
 
+<!-- section_id: "bb7491ed-290b-4ea7-8330-466b6f7eb355" -->
 ## Monitoring Dashboard
 
 Check service status:
@@ -428,6 +454,7 @@ tailscale status
 
 ---
 
+<!-- section_id: "37589842-216c-484b-a619-1e21cd6febdb" -->
 ## Related Files
 
 - `LINUX_RESILIENCE_RECOVERY.md` - Linux laptop recovery

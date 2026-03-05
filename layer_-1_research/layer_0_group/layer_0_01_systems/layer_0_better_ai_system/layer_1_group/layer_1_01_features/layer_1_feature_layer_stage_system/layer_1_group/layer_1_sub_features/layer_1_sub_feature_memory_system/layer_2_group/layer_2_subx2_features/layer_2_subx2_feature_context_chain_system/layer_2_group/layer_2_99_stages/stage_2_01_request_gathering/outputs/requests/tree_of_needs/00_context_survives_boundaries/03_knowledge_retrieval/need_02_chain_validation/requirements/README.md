@@ -8,10 +8,12 @@ resource_name: "README"
 
 **Need**: [Chain Validation Enhancement](../README.md)
 
+<!-- section_id: "153ac5df-382b-4e8a-9b80-12686038f28f" -->
 ## Overview
 
 These requirements define how the existing chain-validate skill is upgraded from simple file-existence checks to full graph-based and reference-aware validation. By validating against the knowledge graph, the system can detect orphaned nodes, broken edges, type mismatches, and moved or renamed targets -- not just missing files. The requirements also integrate staleness detection into the validation report, producing a unified health report that covers chain integrity, reference validity, and knowledge freshness in a single pass.
 
+<!-- section_id: "a6d7096e-d4a1-446f-aad2-c5eb087b17a7" -->
 ## Key Themes
 
 - **Graph-Based Validation**: Every node and edge in the knowledge graph is validated against the file system, reporting orphaned nodes, missing nodes, broken edges, and type mismatches

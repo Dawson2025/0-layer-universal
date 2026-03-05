@@ -8,10 +8,12 @@ resource_name: "README"
 
 **Need**: [Customizable Importance](../README.md)
 
+<!-- section_id: "263cd0b5-0cd7-46a4-9818-c16f9fb74b70" -->
 ## Overview
 
 These requirements define the two-layer importance weighting system and decision matrix. They ensure importance is measurable (not arbitrary), project-customizable, and that final recommendations combine performance with importance.
 
+<!-- section_id: "4a8b68df-e570-4e83-b324-37b5447e9bc9" -->
 ## Key Themes
 
 - **Measurable Importance**: 8 dimensions with real units and methodology

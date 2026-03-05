@@ -9,6 +9,7 @@ resource_name: "MCP_API_BUDGET_ENFORCEMENT"
 **Importance**: 1 (High)
 **Scope**: All AI agents using paid MCP API tools
 
+<!-- section_id: "65081705-23c0-41fa-90ad-e7c418658af4" -->
 ## Rule
 
 Before calling any paid MCP API tool, check current month's spending in `memory/mcp_api_usage.md`:
@@ -19,11 +20,13 @@ Before calling any paid MCP API tool, check current month's spending in `memory/
 
 After every paid MCP call, update the usage log immediately.
 
+<!-- section_id: "137632dc-e91f-4587-979f-dca521dbfbe9" -->
 ## Trigger Conditions
 
 - About to call any tool matching: `perplexity_*`, `tavily_*`, or any tool listed in `budget_config.json` services
 - User asks about API spending or budget status
 
+<!-- section_id: "72a0e384-da94-4961-926a-46ca46101e23" -->
 ## Paid MCP Tools (Current)
 
 - `mcp__perplexity__perplexity_ask`
@@ -33,10 +36,12 @@ After every paid MCP call, update the usage log immediately.
 - `mcp__tavily__tavily_search` (if exceeding free tier)
 - `mcp__tavily__tavily_extract` (if exceeding free tier)
 
+<!-- section_id: "e7f01f46-d37d-41a5-92d4-dd79a275f8e5" -->
 ## Rationale
 
 API-only approach should stay under $20/month (Pro subscription cost) to remain cost-effective. Tracking and enforcement ensures we know when the API approach stops being the better deal.
 
+<!-- section_id: "fd749c61-61b0-4988-8f95-044243afcb80" -->
 ## Related
 
 - Protocol: `mcp_api_cost_tracking_protocol.md`

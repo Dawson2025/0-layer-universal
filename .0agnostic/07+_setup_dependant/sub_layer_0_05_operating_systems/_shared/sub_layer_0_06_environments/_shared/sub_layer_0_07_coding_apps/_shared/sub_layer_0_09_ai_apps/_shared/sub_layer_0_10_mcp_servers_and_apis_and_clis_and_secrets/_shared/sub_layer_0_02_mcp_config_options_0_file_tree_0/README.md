@@ -10,6 +10,7 @@ This folder is the **traversable MCP documentation file tree**. It is organized 
 
 `Operating System → AI App → MCP Server → general_issues_and_fixes`
 
+<!-- section_id: "7c5b0d98-583b-40ac-9460-48073affcaf8" -->
 ## Canonical Tree
 
 ```text
@@ -34,6 +35,7 @@ This folder is the **traversable MCP documentation file tree**. It is organized 
                         └── general_issues_and_fixes/
 ```
 
+<!-- section_id: "549e3f70-301a-4bb7-8260-216df22c7678" -->
 ## How To Use This Tree
 
 1. Start at `0.03_operating_systems/<os>/README.md`.
@@ -41,6 +43,7 @@ This folder is the **traversable MCP documentation file tree**. It is organized 
 3. Go to `0.05_mcp_servers/<mcp_server>/` for server docs.
 4. Put recurring problems, debugging steps, and known fixes in `general_issues_and_fixes/`.
 
+<!-- section_id: "36720638-30c9-4c7f-835c-6787fbb40424" -->
 ## Notes
 
 - Use `_shared/` when guidance is cross-platform or cross-app.

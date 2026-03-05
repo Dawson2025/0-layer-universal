@@ -5,14 +5,17 @@ resource_name: "16_answer_traceability_log"
 ---
 # Answer Traceability Log
 
+<!-- section_id: "87d628c8-b40e-4f13-9dba-87e4e8752df1" -->
 ## Purpose
 
 This file maps answer content to exact documents/sections so findings are easy to locate later.
 
 ---
 
+<!-- section_id: "6363c6e9-fc7c-426e-87eb-f8a5f38bf5e8" -->
 ## 2026-02-18: Vectors, Knowledge Graphs, and Neural Mechanisms
 
+<!-- section_id: "1fd9955b-945f-4d8b-970d-b29e4f593a47" -->
 ### Mapping of findings to documents
 
 | Finding | Stored in document | Where to look |
@@ -28,8 +31,10 @@ This file maps answer content to exact documents/sections so findings are easy t
 
 ---
 
+<!-- section_id: "8e6c9338-8c1c-4628-a771-4e1fbd8f2e0d" -->
 ## 2026-02-18: Video Resources for Visual Understanding of Neural Mechanisms
 
+<!-- section_id: "b1cf029b-8414-41fa-a683-0a68c3b14132" -->
 ### Mapping of findings to documents
 
 | Finding | Stored in document | Where to look |
@@ -39,8 +44,10 @@ This file maps answer content to exact documents/sections so findings are easy t
 
 ---
 
+<!-- section_id: "b38f92f6-33d6-4cc9-b16c-c1112359491b" -->
 ## 2026-02-18: Ordered Learning Path Document
 
+<!-- section_id: "f283e63d-2794-4ba0-8e75-a1878e1e19e3" -->
 ### Mapping of findings to documents
 
 | Finding | Stored in document | Where to look |
@@ -54,8 +61,10 @@ This file maps answer content to exact documents/sections so findings are easy t
 
 ---
 
+<!-- section_id: "102c1ac8-1cce-400e-a892-99238b137ca2" -->
 ## 2026-02-18: Three-Tier Knowledge Architecture (Stages vs .0agnostic/knowledge)
 
+<!-- section_id: "6667eda8-590b-4d38-8614-d12dfd4b95d2" -->
 ### Mapping of findings to documents
 
 | Finding | Stored in document | Where to look |
@@ -70,8 +79,10 @@ This file maps answer content to exact documents/sections so findings are easy t
 
 ---
 
+<!-- section_id: "b2829764-6563-4bf4-bb84-9ce80f9e8853" -->
 ## 2026-02-18: Prototype Decision and Knowledge Graph Proposal
 
+<!-- section_id: "84f07e39-7ed9-4cc4-8f69-d49e65700139" -->
 ### Mapping of findings to documents
 
 | Finding | Stored in document | Where to look |
@@ -86,8 +97,10 @@ This file maps answer content to exact documents/sections so findings are easy t
 
 ---
 
+<!-- section_id: "2aebb778-b216-4e9a-84cd-198fe4064220" -->
 ## 2026-02-18: Underlying Data Structures for AI Agent Memory Systems
 
+<!-- section_id: "6ae74289-6429-45eb-b540-caf1ef268bdf" -->
 ### Mapping of findings to documents
 
 | Finding | Stored in document | Where to look |
@@ -99,6 +112,7 @@ This file maps answer content to exact documents/sections so findings are easy t
 
 ---
 
+<!-- section_id: "e9e0f3b8-9f72-45b9-9c7f-0da327e6a6c5" -->
 ## Response Protocol (going forward)
 
 For each new answer, include:

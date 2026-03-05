@@ -8,9 +8,11 @@ resource_name: "word_management"
 - **Source Prompt**: Existing implementation analysis (2025-10-15)
 - **Related Implementation**: `app.py` routes 1066-1405, `templates/word_lookup.html`, `templates/word_edit.html`, `templates/words_display.html`
 
+<!-- section_id: "faccf14f-98df-4452-9db8-10fc6d783bf7" -->
 ## Goal
 Provide comprehensive word management capabilities including search, lookup, editing, and deletion to maintain and refine the constructed language vocabulary over time.
 
+<!-- section_id: "7b0d1cfa-b597-44c9-9da5-8032375ece53" -->
 ## Functional Requirements
 - Enable users to search and look up existing words by English translation, new language word, or phoneme content.
 - Display word details including English meaning, constructed word, phonemes, language, and attached media.
@@ -24,6 +26,7 @@ Provide comprehensive word management capabilities including search, lookup, edi
 - Provide word deletion functionality with proper cleanup of associated media files.
 - Track which user created each word for ownership and access control.
 
+<!-- section_id: "0c98601f-791b-4a7b-a17f-1978a203074d" -->
 ## Acceptance Criteria
 - Word lookup page (`/words/lookup`) accepts search queries and returns matching results from the current project.
 - API endpoint `/api/lookup-word` searches across word fields and returns JSON results with word details.
@@ -37,6 +40,7 @@ Provide comprehensive word management capabilities including search, lookup, edi
 - Word display page (`/words/display`) renders all project words with search filtering and pagination.
 - Search operates across multiple fields (English, new language, phonemes) and highlights matches.
 
+<!-- section_id: "f0a5f893-ed0e-4b36-bcf3-32e5a8de79ca" -->
 ## Notes
 - Word edits should validate phoneme selections against the project's available phoneme set.
 - Media deletion must handle both local file system and cloud storage paths.

@@ -8,21 +8,26 @@ resource_name: "README"
 
 This directory consolidates feature requirements sourced from stakeholder prompts and ongoing conversations. Each feature has a dedicated specification document that captures goals, functional expectations, acceptance criteria, and intended outcomes. Use this index to stay aligned on scope before starting implementation or test planning.
 
+<!-- section_id: "426a3bff-1b21-4583-b558-c83153c820a8" -->
 ## App Purpose and Outcomes
 
+<!-- section_id: "249bf8e6-04c3-4742-9f91-62bbe31a4014" -->
 ### Mission
 The Language Tracker provides language teams with a unified workspace for building and managing constructed-language content. The app pairs phoneme frequency tracking with collaborative project management so contributors can analyze sounds, create words, and share artifacts across local and cloud storage without friction.
 
+<!-- section_id: "e5014598-7644-4feb-b358-89d91ad2206d" -->
 ### Product Goals
 - **Empower rapid prototyping**: Enable linguists and educators to iterate on constructed languages quickly by centralizing data entry, phoneme analytics, and multimedia attachments
 - **Reduce coordination overhead**: Give every feature an isolated workflow that minimizes conflicts while still supporting shared branching and cloud syncing across teams
 - **Guarantee data integrity**: Validate both local SQLite data and remote Firebase assets through automated tests and structured deployment flows
 
+<!-- section_id: "bf5ecde1-3796-4fc1-ad70-e0416d84e2b8" -->
 ### How Features Work Together
 Each feature below contributes to the collaborative language-building ecosystem. Cloud integration ensures data portability, project controls enable team workflows, search and mobile UX remove friction from daily use, and isolation conventions keep development scalable. See [App Product Overview](app_product_overview.md) for deeper context on how these pieces fit together.
 
 ---
 
+<!-- section_id: "92d167eb-b5b8-413f-b981-ab61b104ca2f" -->
 ## Feature Requirements
 
 Features are organized by **navigation hierarchy** to match how users experience the application. This structure mirrors the actual page flow from authentication through dashboard, projects, and into project-scoped work areas.
@@ -44,10 +49,12 @@ Level 4: Phonemes | Words | Administration
 
 ---
 
+<!-- section_id: "0dcf2338-c003-4f8c-af09-77cf0cc8a26c" -->
 ## 🔑 Level 0: Authentication & Access
 
 Entry point to the application. All users must authenticate before accessing any features.
 
+<!-- section_id: "d88e8988-353b-4ce2-87c3-dc9303a85aee" -->
 ### User Authentication & Account Management — [`user_authentication.md`](user_authentication.md)
 
 **Purpose**: Provide secure user authentication and account management to enable multi-user collaboration, personalized workspaces, and access control across the language tracking application.
@@ -81,10 +88,12 @@ Entry point to the application. All users must authenticate before accessing any
 
 ---
 
+<!-- section_id: "e08c5852-03ff-4d8f-ba4c-02b4ffa4c4e6" -->
 ## 🏠 Level 1: Dashboard (Top-Level Navigation)
 
 The dashboard (`/dashboard`) is the main landing page after authentication, providing access to Projects and Groups.
 
+<!-- section_id: "a1e84e89-6b45-4954-bcd5-f83b3a35797c" -->
 ### Group Collaboration System — [`group_collaboration.md`](group_collaboration.md)
 
 **Purpose**: Enable teams to collaborate on language projects by organizing users into groups, managing memberships, and sharing projects within those groups using secure invitation tokens.
@@ -114,10 +123,12 @@ The dashboard (`/dashboard`) is the main landing page after authentication, prov
 
 ---
 
+<!-- section_id: "65afbb79-7c2e-43e9-9ea4-0b8e2fb296f2" -->
 ## 🗂️ Level 2: My Projects (Project Management Layer)
 
 Accessed from Dashboard → My Projects (`/projects`). This level manages project creation, organization, searching, and cloud/local storage operations.
 
+<!-- section_id: "e7c300bd-397a-4e18-95be-4157a33272c5" -->
 ### Project-Level Controls and Branching — [`project_branches_and_global_actions.md`](project_branches_and_global_actions.md)
 
 **Purpose**: Support multi-variant collaboration through project grouping, branching, and merging similar to Git workflows, enabling teams to iterate on cloud or local copies in parallel.
@@ -148,6 +159,7 @@ Accessed from Dashboard → My Projects (`/projects`). This level manages projec
 
 ---
 
+<!-- section_id: "59fb294a-a854-47e7-96aa-c1440f57aa80" -->
 ### My Projects Search — [`project_search_filtering.md`](project_search_filtering.md)
 
 **Purpose**: Help users find project groups quickly as their workspace grows by providing instant client-side filtering.
@@ -170,6 +182,7 @@ Accessed from Dashboard → My Projects (`/projects`). This level manages projec
 
 ---
 
+<!-- section_id: "27d9e8aa-bf64-4f7a-9513-35601bc37701" -->
 ### Cloud Variant Controls Parity — [`cloud_variant_actions.md`](cloud_variant_actions.md)
 
 **Purpose**: Give cloud variants the same management capabilities as local variants inside the Projects UI, so owners can administer cloud projects without switching to local copies.
@@ -200,6 +213,7 @@ Accessed from Dashboard → My Projects (`/projects`). This level manages projec
 
 ---
 
+<!-- section_id: "afe46e7d-c0f2-46a1-89d3-d1df1ae515b9" -->
 ## 🔁 Automation & Test Mapping
 
 | Scope | Primary Scripts | Related Story Plan IDs | Notes |
@@ -214,6 +228,7 @@ Refer to `scripts/automation/story_plan.sample.json` to run the new scenarios in
 
 ---
 
+<!-- section_id: "ac87e126-c9b8-4f77-b622-fd5f62fdeb70" -->
 ## ☁️ Production Deployment Checklist
 
 The repository now ships with helpers and artifacts to streamline Firebase configuration. Complete these steps (in order) when promoting builds to staging or production:
@@ -243,6 +258,7 @@ The repository now ships with helpers and artifacts to streamline Firebase confi
 
 After these steps, only console-side changes (rule publishing, provider toggles) remain for operators.
 
+<!-- section_id: "0187dbfe-6659-476a-8317-56205fcbb907" -->
 ## 🎯 Level 3: Variant Menu (Project Context)
 
 Accessed from My Projects → Enter Project (`/main-menu`). This is the main menu within a selected project, showing project statistics and navigation to all project-scoped features.
@@ -253,6 +269,7 @@ Accessed from My Projects → Enter Project (`/main-menu`). This is the main men
 - **Displays**: Project group variants, subprojects, and branching hierarchy
 - **Forward to**: Phonemes | Words | Administration
 
+<!-- section_id: "79069f4d-b0ce-4c91-b14d-721632b00699" -->
 ### Variant Menu Navigation
 
 **Purpose**: Provide clear navigation within a project group, showing all variants (main, cloud, branches) and enabling users to select which variant to work on or navigate to project-scoped features.
@@ -287,12 +304,14 @@ Accessed from My Projects → Enter Project (`/main-menu`). This is the main men
 
 ---
 
+<!-- section_id: "23827cb0-5fd3-4418-98e2-ee27a8c83278" -->
 ## 🔤 Level 4a: Phonemes Section
 
 Accessed from Variant Menu → Phonemes. Multiple views for exploring and analyzing phoneme data within the current project variant.
 
 **Navigation**: Variant Menu → Phonemes → (Overview | Flat View | Nested View | Full Hierarchy)
 
+<!-- section_id: "2fc6ec4a-39c8-4e0c-9ce0-596ac290aca8" -->
 ### Phoneme Viewing & Analysis
 
 **Purpose**: Enable users to explore phoneme frequency data, organization, and relationships through multiple viewing modes tailored to different analysis needs.
@@ -321,10 +340,12 @@ Accessed from Variant Menu → Phonemes. Multiple views for exploring and analyz
 
 ---
 
+<!-- section_id: "40c83ec2-5f05-49f5-897c-9165878f65ef" -->
 ## 📚 Level 4b: Words Section
 
 Accessed from Variant Menu → Words. All word-related operations within the current project.
 
+<!-- section_id: "4ac62d98-8b88-4284-bb6e-35e250cd3413" -->
 ### Word Management & Editing — [`word_management.md`](word_management.md)
 
 **Purpose**: Provide comprehensive word management capabilities including search, lookup, editing, and deletion to maintain and refine the constructed language vocabulary over time.
@@ -361,6 +382,7 @@ Accessed from Variant Menu → Words. All word-related operations within the cur
 
 ---
 
+<!-- section_id: "126d8b2a-a99d-40a3-b643-ae1d7a00d6a8" -->
 ### All Fields Search Reliability — [`search_all_fields_button.md`](search_all_fields_button.md)
 
 **Purpose**: Restore comprehensive "All Fields" search so users can discover words by matching across every searchable attribute in View All Words page.
@@ -383,6 +405,7 @@ Accessed from Variant Menu → Words. All word-related operations within the cur
 
 ---
 
+<!-- section_id: "c4d05d4a-60da-4c99-83ec-52dd87d22025" -->
 ### Mobile Word Creation Flow — [`ui_mobile_word_creation_flow.md`](ui_mobile_word_creation_flow.md)
 
 **Purpose**: Deliver a touch-friendly word creation experience on phones and tablets with clear, top-to-bottom workflow that ensures users know which word is selected and what actions to take next.
@@ -405,6 +428,7 @@ Accessed from Variant Menu → Words. All word-related operations within the cur
 
 ---
 
+<!-- section_id: "4ea0375f-a29e-4770-84e5-5884efd7636b" -->
 ### Selected Word Phoneme Feedback — [`ui_selected_word_phoneme_feedback.md`](ui_selected_word_phoneme_feedback.md)
 
 **Purpose**: Provide immediate phoneme-level insights and playback when exploring words, guaranteeing Selected Word panel always shows interactive phoneme blocks regardless of selection method.
@@ -427,12 +451,14 @@ Accessed from Variant Menu → Words. All word-related operations within the cur
 
 ---
 
+<!-- section_id: "f8babe6c-db6e-4fa0-aa25-6e31db0118d6" -->
 ## 🛠️ Level 4c: Administration Section
 
 Accessed from Variant Menu → Administration. Project-level administrative tools for managing phonemes, templates, database, and storage.
 
 **Navigation**: Variant Menu → Administration → (Overview | Phonemes | Templates | Database Tools)
 
+<!-- section_id: "d4fb81bd-22ec-4754-b317-45071596d33a" -->
 ### Administration Overview
 
 **Purpose**: Central hub for project administration tasks, providing access to phoneme management, template operations, and database maintenance tools.
@@ -447,6 +473,7 @@ Accessed from Variant Menu → Administration. Project-level administrative tool
 
 **Note**: Cloud & Local Storage management previously in Administration has been moved to My Projects page (see Level 2: Project-Level Controls).
 
+<!-- section_id: "8e4bea35-d67d-441e-8bc3-847e05f4009d" -->
 ### Database Administration Tools — [`database_administration.md`](database_administration.md)
 
 **Purpose**: Provide administrative tools for maintaining database health, cleaning up orphaned data, managing phonemes, and recovering from data inconsistencies without requiring direct database access.
@@ -477,6 +504,7 @@ Accessed from Variant Menu → Administration. Project-level administrative tool
 
 ---
 
+<!-- section_id: "8bcb2201-e76e-4e5f-94bb-198a8c3d3a2d" -->
 ### Phoneme Template System — [`phoneme_template_system.md`](phoneme_template_system.md)
 
 **Purpose**: Streamline project setup and enable sharing of phoneme configurations by providing a template system that captures, exports, imports, and applies phoneme sets across projects.
@@ -507,10 +535,12 @@ Accessed from Variant Menu → Administration. Project-level administrative tool
 
 ---
 
+<!-- section_id: "1801c54f-64c5-4761-be73-964940c176e6" -->
 ## 🌐 Cross-Cutting: Cloud & Storage Infrastructure
 
 These features provide the underlying cloud integration and data persistence layer used across all project variants.
 
+<!-- section_id: "e294e440-28a3-4c65-abda-d6f0ab4d1bd2" -->
 ### Firebase & Cloud Integration
 
 **Purpose**: Enable cloud-based project storage, real-time synchronization, and collaborative access through Firebase and Firestore integration.
@@ -544,10 +574,12 @@ These features provide the underlying cloud integration and data persistence lay
 
 ---
 
+<!-- section_id: "20732203-6d50-40a9-870a-ee28c846b33e" -->
 ## 🎵 Cross-Cutting: Audio & Media Services
 
 These features integrate throughout the application wherever phonemes and words are displayed or created.
 
+<!-- section_id: "f4e864a1-f95d-4b0e-b58f-874063fb8107" -->
 ### Text-to-Speech Integration — [`tts_integration.md`](tts_integration.md)
 
 **Purpose**: Provide audible pronunciation feedback for IPA phonemes and constructed words using text-to-speech technology, enabling users to hear how phonemes and words should sound during creation and study.
@@ -576,6 +608,7 @@ These features integrate throughout the application wherever phonemes and words 
 
 ---
 
+<!-- section_id: "6e49a7ca-7860-470f-bde4-c67e4912f3bc" -->
 ### Video & Media Management — [`media_management.md`](media_management.md)
 
 **Purpose**: Enable multimedia enrichment of constructed language words by supporting video uploads, storage, playback, and deletion across both local file systems and Firebase Cloud Storage.
@@ -606,10 +639,12 @@ These features integrate throughout the application wherever phonemes and words 
 
 ---
 
+<!-- section_id: "fa2010c0-4e97-4c2d-98ae-375ab54df965" -->
 ## 🧪 Cross-Cutting: Testing & Infrastructure
 
 These features support development, testing, and maintaining code quality across the entire application.
 
+<!-- section_id: "cd89b6b4-6623-42fb-8168-3776db5fbae1" -->
 ### Cloud Integration Tests — [`cloud_integration_tests.md`](cloud_integration_tests.md)
 
 **Purpose**: Maintain confidence that Firestore and Firebase Storage workflows function end to end by exercising real cloud operations through automated integration tests.
@@ -632,6 +667,7 @@ These features support development, testing, and maintaining code quality across
 
 ---
 
+<!-- section_id: "bfb5fa34-33f2-456e-b5fb-c2a2e767bb3b" -->
 ### Parallel Feature Isolation — [`parallel_feature_isolation.md`](parallel_feature_isolation.md)
 
 **Purpose**: Keep feature work isolated so multiple contributors (human or AI) can build in parallel without conflicts by establishing clear conventions for file and directory structure.
@@ -660,10 +696,12 @@ These features support development, testing, and maintaining code quality across
 
 ---
 
+<!-- section_id: "7045d4c4-aceb-4ed8-a25c-2a084870ad00" -->
 ## Working Rule
 
 Every time a new product prompt describes desired behavior, features, or requirements, capture it in a dedicated Markdown spec inside this directory and add (or update) the relevant entry in this index. Treat the spec and this overview as the single source of truth for requirement documentation.
 
+<!-- section_id: "eb1afb8e-a55a-4e75-85ae-a129a2adbd58" -->
 ## Maintenance Guidelines
 
 - Keep the source prompt reference at the top of each requirement file so we can trace updates back to their originating request.

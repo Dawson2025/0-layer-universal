@@ -7,8 +7,10 @@ resource_name: "universal_instructions"
 
 **Use these instructions for any project, any codebase, any task**
 
+<!-- section_id: "5f949f87-4e11-4eb5-a6ae-338590629903" -->
 ## Core Principles
 
+<!-- section_id: "112ae44c-231a-4cf4-ac9e-732156c4d017" -->
 ### 0. Identify Fundamental Intent First
 **Before executing any request, identify and articulate the fundamental intent, purpose, or need:**
 
@@ -24,6 +26,7 @@ resource_name: "universal_instructions"
 
 **When the fundamental intent differs from the literal request**, briefly explain what you identified and how your approach serves the deeper need.
 
+<!-- section_id: "aeb9661e-e4d1-4466-8e2b-3ed6721312a8" -->
 ### 1. Always Use TODO Lists
 For every prompt, create a TODO list explicitly stating what you will do:
 - Break down complex tasks into specific steps
@@ -32,12 +35,14 @@ For every prompt, create a TODO list explicitly stating what you will do:
 - Only one item should be in_progress at a time
 - Complete tasks immediately after finishing them
 
+<!-- section_id: "941b6126-e338-401f-90d2-4f8dd1a4aaff" -->
 ### 1b. Start With a Depth-First Prototype
 - When taking on a broad or multi-phase request, implement a **small, end-to-end slice first**.
 - This prototype must cover the full lifecycle (planning → implementation → integration → verification) for a representative subset.
 - Use what you learn from the slice to adjust scope, tooling, and quality benchmarks before scaling to larger batches.
 - Do **not** expand to additional surfaces until the initial slice is fully integrated, documented, and validated.
 
+<!-- section_id: "016b0eb8-0bc8-44dd-9181-2ddbd4216ed1" -->
 ### 2. Read Before You Write
 - **NEVER** make assumptions about code you haven't read
 - **ALWAYS** use Read/Glob/Grep tools to understand existing code first
@@ -45,6 +50,7 @@ For every prompt, create a TODO list explicitly stating what you will do:
 - Check imports, dependencies, and related modules
 - Look for existing tests to understand expected behavior
 
+<!-- section_id: "340ca8f2-3297-4f7d-8b5f-4a8519f931a2" -->
 ### 3. Understand the Architecture First
 Before making changes:
 - Identify the project structure (where are features/modules/services?)
@@ -53,6 +59,7 @@ Before making changes:
 - Find configuration files
 - Identify shared infrastructure vs feature-specific code
 
+<!-- section_id: "66661094-4920-47d1-9b49-560e15023b6a" -->
 ### 4. Test Everything
 - Create tests for every feature you implement
 - Run existing tests before making changes
@@ -60,6 +67,7 @@ Before making changes:
 - If tests fail, fix them before marking work complete
 - Never mark a task complete if tests are failing
 
+<!-- section_id: "7178ae2f-b8e2-465d-8ae2-a516999dfe11" -->
 ### 5. Follow Existing Patterns
 - Match the coding style of the existing codebase
 - Use the same naming conventions
@@ -67,6 +75,7 @@ Before making changes:
 - Don't introduce new patterns unless explicitly requested
 - When in doubt, ask before deviating from established patterns
 
+<!-- section_id: "6b76298e-4283-4634-ba5d-ccbdfa81d559" -->
 ### 6. Document As You Go
 - Add clear comments for complex logic
 - Update README files when adding new features
@@ -74,6 +83,7 @@ Before making changes:
 - Keep requirements/specifications up to date
 - Create or update architecture docs for significant changes
 
+<!-- section_id: "45c7675c-7e4c-4e42-bf20-7879dc59a565" -->
 ### 6b. Git Sync Protocol (CRITICAL - MANDATORY)
 **MANDATORY for ALL AI Agents**: Git sync is required at specific points:
 
@@ -83,6 +93,7 @@ Before making changes:
 
 **See `git_commit_rule.md` for complete requirements and procedures.**
 
+<!-- section_id: "a53a4fb7-41f6-4016-84f1-e24253958fe3" -->
 ### 6c. Terminal Execution Protocol (CRITICAL)
 **MANDATORY for ALL AI Agents**: Before executing any terminal commands, read and follow:
 
@@ -95,6 +106,7 @@ Before making changes:
 
 **Agent-Specific**: If you are a Cursor agent, see `CURSOR_TERMINAL_EXECUTION.md` for Cursor-specific Python script handling.
 
+<!-- section_id: "532c34b3-f816-4876-8194-13ede915482a" -->
 ### 7. Update 0_context Documentation Before Ending Turn
 **CRITICAL:** Before completing any task or ending your turn as an AI agent:
 
@@ -133,6 +145,7 @@ Before making changes:
 
 **Do NOT end your turn until `0_context/` documentation reflects your work.**
 
+<!-- section_id: "ae47ec33-2385-4e25-b9f2-9552576b62a6" -->
 ### 8. File Organization Best Practices
 **CRITICAL:** Always organize files following this three-level hierarchy:
 
@@ -225,8 +238,10 @@ If you find poor organization:
 🚩 Tests separated from features
 🚩 Files organized by feature first (should be by best practice first)
 
+<!-- section_id: "b68c6781-0b9b-415e-87c9-3506740b29b8" -->
 ## Workflow
 
+<!-- section_id: "63eb14ed-d274-4a19-b42e-84fd6856d7e5" -->
 ### For Every Task:
 
 1. **Understand the Request**
@@ -292,26 +307,31 @@ If you find poor organization:
    - Verify tests pass
    - Check git diff for unintended changes
 
+<!-- section_id: "a9bc7680-82a1-4592-9188-4aa246f631cc" -->
 ## Code Quality Standards
 
+<!-- section_id: "2ce473dd-0f6d-43ec-a847-f9faec4bd966" -->
 ### Readability
 - Write self-documenting code with clear variable names
 - Keep functions focused on single responsibilities
 - Limit function/method length to ~50 lines when possible
 - Use meaningful comments for "why", not "what"
 
+<!-- section_id: "a4683426-f269-453a-a932-921057075393" -->
 ### Maintainability
 - Avoid code duplication (DRY principle)
 - Keep dependencies minimal and explicit
 - Use consistent error handling patterns
 - Make code easy to test
 
+<!-- section_id: "b7cb1c20-fefd-4e70-be40-ea5128a7a52c" -->
 ### Performance
 - Don't optimize prematurely
 - Profile before making performance changes
 - Consider scalability for data processing
 - Avoid blocking operations in async code
 
+<!-- section_id: "f812e96e-371d-44c3-a1ad-85c1ad071abd" -->
 ### Security
 - **NEVER** commit secrets or credentials
 - Validate all user inputs
@@ -319,6 +339,7 @@ If you find poor organization:
 - Follow principle of least privilege
 - Sanitize outputs to prevent XSS/injection
 
+<!-- section_id: "6ccc056d-3d09-4e2b-9f90-72dea2514d54" -->
 ## Common Mistakes to Avoid
 
 ❌ **Don't:**
@@ -341,8 +362,10 @@ If you find poor organization:
 - Understand patterns before implementing them
 - Ask clarifying questions about requirements
 
+<!-- section_id: "711ecdfe-f0c3-4be1-ab65-658fcb840a80" -->
 ## Communication
 
+<!-- section_id: "0d39ccdd-e9f6-46a0-bf13-07f09c6319ce" -->
 ### When to Ask Questions
 - Requirements are ambiguous or incomplete
 - Multiple implementation approaches are possible
@@ -351,6 +374,7 @@ If you find poor organization:
 - Dependencies need to be added
 - Architecture changes are needed
 
+<!-- section_id: "7ca7311a-034a-4aec-b33f-3b5e25cbf851" -->
 ### How to Communicate Progress
 - Update TODO list as you work
 - Explain what you're doing and why
@@ -359,8 +383,10 @@ If you find poor organization:
 - Highlight areas that need review
 - Document decisions and trade-offs
 
+<!-- section_id: "3801cf70-cdec-4e7e-8b6a-4f1932f9648f" -->
 ## Git & Version Control
 
+<!-- section_id: "84e0b17f-37e7-4153-8182-c26bea4236b9" -->
 ### Commits
 - Commit working code frequently
 - Write clear, descriptive commit messages
@@ -368,14 +394,17 @@ If you find poor organization:
 - Don't commit broken code
 - Don't commit debugging artifacts
 
+<!-- section_id: "0270034f-4adc-4539-8136-bc517534c95c" -->
 ### Branches
 - Follow the project's branching strategy
 - Keep branches focused on single features
 - Merge/rebase from main regularly
 - Clean up branches after merging
 
+<!-- section_id: "9fe936c2-0e6b-4f76-8173-2f1080a935d4" -->
 ## Error Handling
 
+<!-- section_id: "f6ddb3b4-4fde-4a28-bfad-fa166d4f1123" -->
 ### When Things Go Wrong
 1. Read the full error message carefully
 2. Check the stack trace for root cause
@@ -383,6 +412,7 @@ If you find poor organization:
 4. Test your assumptions with minimal examples
 5. Ask for help if stuck after reasonable effort
 
+<!-- section_id: "34d7ce7b-f706-4a8b-bb5a-489abd3f8bd7" -->
 ### Debugging Strategy
 - Add logging strategically
 - Use debugger breakpoints
@@ -390,8 +420,10 @@ If you find poor organization:
 - Check assumptions one at a time
 - Document the bug and fix for future reference
 
+<!-- section_id: "7beaade5-5515-4e89-8737-ec3f1c9249af" -->
 ## Efficiency Tips
 
+<!-- section_id: "7a46424c-158b-4e88-b1b9-51b9a15c0689" -->
 ### Use Tools Effectively
 - Use Grep for code search, not manual scanning
 - Use Glob for finding files by pattern
@@ -399,6 +431,7 @@ If you find poor organization:
 - Run multiple independent operations in parallel
 - Use specialized tools instead of bash commands when available
 
+<!-- section_id: "f70ef5ae-c817-4fe3-ae51-d9036befb94c" -->
 ### Optimize Your Workflow
 - Read documentation before experimenting
 - Check for existing solutions before implementing
@@ -406,6 +439,7 @@ If you find poor organization:
 - Automate repetitive tasks with scripts
 - Keep a mental model of the codebase structure
 
+<!-- section_id: "ea6c5226-cf65-4b4a-ab96-672f4c70539c" -->
 ## When Working on Unfamiliar Codebases
 
 1. **Start with README and docs**
@@ -431,8 +465,10 @@ If you find poor organization:
    - Follow established patterns
    - Learn from existing tests
 
+<!-- section_id: "f512caf7-f325-46fc-9a9e-2b92b0e3f01e" -->
 ## Mindset
 
+<!-- section_id: "2a62530f-a09d-4b5b-bfca-55d2f7854527" -->
 ### Be Professional
 - Take ownership of your work
 - Deliver quality over speed
@@ -440,6 +476,7 @@ If you find poor organization:
 - Learn from mistakes
 - Help improve the codebase
 
+<!-- section_id: "3a1f2c79-255d-4931-bd7b-361b3fda710c" -->
 ### Be Thorough
 - Check edge cases
 - Think about failure scenarios
@@ -447,6 +484,7 @@ If you find poor organization:
 - Test on different environments when relevant
 - Review your own work critically
 
+<!-- section_id: "419228f0-f068-4e7f-a2ff-c0a9a6c0ee4e" -->
 ### Be Collaborative
 - Follow team conventions
 - Write code others can understand
@@ -456,6 +494,7 @@ If you find poor organization:
 
 ---
 
+<!-- section_id: "e70f7126-ce1b-43f6-aa6f-94aa99da8ab0" -->
 ## Summary Checklist
 
 Before marking any task complete or ending your turn, verify:

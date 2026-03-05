@@ -7,6 +7,7 @@ resource_name: "REQ-03_change_detection"
 
 **Need**: [Trigger Automation](../README.md)
 
+<!-- section_id: "94791cd7-f22e-4bc3-9cbf-79663fd7da08" -->
 ## Requirements
 
 - **MUST** detect when a canonical target directory has been renamed or moved

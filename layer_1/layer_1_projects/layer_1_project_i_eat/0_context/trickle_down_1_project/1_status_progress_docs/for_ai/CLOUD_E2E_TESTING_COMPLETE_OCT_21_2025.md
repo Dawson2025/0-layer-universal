@@ -10,6 +10,7 @@ resource_name: "CLOUD_E2E_TESTING_COMPLETE_OCT_21_2025"
 
 ---
 
+<!-- section_id: "a53f014a-3279-4a30-a0e9-e3e66cb7a470" -->
 ## Executive Summary
 
 We've created a **comprehensive cloud E2E testing framework** that tests ALL cloud features with REAL Firebase (not mocked). This includes automated tests where possible, and detailed manual test procedures for features requiring browser OAuth.
@@ -18,8 +19,10 @@ We've created a **comprehensive cloud E2E testing framework** that tests ALL clo
 
 ---
 
+<!-- section_id: "4b2f5099-347f-46af-9781-77b356239a5b" -->
 ## What Was Built
 
+<!-- section_id: "76ccd831-5622-45dc-896b-cf194acdfeda" -->
 ### 1. Automated Cloud Tests
 
 **File:** `scripts/run-cloud-e2e-tests.py`
@@ -39,6 +42,7 @@ We've created a **comprehensive cloud E2E testing framework** that tests ALL clo
 - Cloud features are actively being used (254 documents!)
 - Data structure is correct
 
+<!-- section_id: "012c2d6b-b7a7-4372-a33f-9a7924020a74" -->
 ### 2. Manual Test Checklist
 
 **File:** `tests/e2e/manual_cloud_tests.md`
@@ -112,6 +116,7 @@ We've created a **comprehensive cloud E2E testing framework** that tests ALL clo
     - Test full word pronunciation
     - Verify audio works
 
+<!-- section_id: "72a5f3d6-7569-4127-8235-8fa3e856db1d" -->
 ### 3. Test Data Cleanup
 
 **File:** `scripts/cleanup-test-data.py`
@@ -137,8 +142,10 @@ python3 scripts/cleanup-test-data.py --all-test-data --days-old 7
 
 ---
 
+<!-- section_id: "3df210b3-3e3b-4a5b-a827-9147db616e4f" -->
 ## Firebase Data Verification
 
+<!-- section_id: "406c78ce-c9b1-416a-831a-0a20e08d52e1" -->
 ### What's Currently in Firebase
 
 From our verification (Oct 21, 2025):
@@ -157,6 +164,7 @@ From our verification (Oct 21, 2025):
 
 **Key Finding:** Cloud features are PROVEN to work in production with 254 real documents!
 
+<!-- section_id: "e307fa5b-3463-4073-8cc5-84aba10125ba" -->
 ### How to Verify Test Data
 
 After each manual test, verify in Firebase:
@@ -182,8 +190,10 @@ After each manual test, verify in Firebase:
 
 ---
 
+<!-- section_id: "f23183bd-5855-461e-bfec-676d32940040" -->
 ## Test Execution Instructions
 
+<!-- section_id: "442dd6e8-b569-4b5e-95df-0d5c18042b6a" -->
 ### Quick Start
 
 1. **Ensure app is running:**
@@ -207,6 +217,7 @@ After each manual test, verify in Firebase:
    python3 scripts/cleanup-test-data.py --marker "Manual_Test_Cloud"
    ```
 
+<!-- section_id: "85bf62ac-0299-4d55-a53d-3f14c74121f3" -->
 ### Full Test Session
 
 ```bash
@@ -230,8 +241,10 @@ python3 scripts/cleanup-test-data.py --all-test-data --days-old 0 --dry-run
 
 ---
 
+<!-- section_id: "f1f2e26c-6668-4cf0-a591-dbb8dfe8d872" -->
 ## What Makes This Comprehensive
 
+<!-- section_id: "28af7da1-03ef-431b-9ca8-86b5d8110eda" -->
 ### ✅ Complete Feature Coverage
 
 **Every cloud feature is tested:**
@@ -247,6 +260,7 @@ python3 scripts/cleanup-test-data.py --all-test-data --days-old 0 --dry-run
 - Phoneme frequency tracking
 - Resource deletion
 
+<!-- section_id: "1fc999e7-d99a-4f2b-9b60-3122c5ffc555" -->
 ### ✅ Real Firebase Integration
 
 **Not mocked - uses REAL Firebase:**
@@ -256,6 +270,7 @@ python3 scripts/cleanup-test-data.py --all-test-data --days-old 0 --dry-run
 - Real document IDs
 - Real production environment
 
+<!-- section_id: "d1078f16-87a5-4120-b7b9-021d41247e06" -->
 ### ✅ Direct Verification
 
 **Every test includes Firebase verification:**
@@ -265,6 +280,7 @@ python3 scripts/cleanup-test-data.py --all-test-data --days-old 0 --dry-run
 - Check file uploads in Storage
 - Validate deletions
 
+<!-- section_id: "62830301-330d-4ae8-bfd7-e1e2d7d8f3ec" -->
 ### ✅ Data Safety
 
 **Cleanup and safety features:**
@@ -276,6 +292,7 @@ python3 scripts/cleanup-test-data.py --all-test-data --days-old 0 --dry-run
 
 ---
 
+<!-- section_id: "3b552e9d-f353-46d3-a96e-4c6acefa8af2" -->
 ## Test Results: Automated Portion
 
 **Run:** October 21, 2025
@@ -313,6 +330,7 @@ CONFIDENCE: 100% that infrastructure works
 
 ---
 
+<!-- section_id: "14c1efce-19be-48dc-b470-03b801620ffb" -->
 ## Manual Tests Status
 
 **Status:** 🟡 READY FOR EXECUTION
@@ -338,8 +356,10 @@ All 12 manual tests are:
 
 ---
 
+<!-- section_id: "468f6640-7443-4b2a-b3f1-97d092a2b35e" -->
 ## Code Changes Summary
 
+<!-- section_id: "05a3169b-1870-4c0a-9d88-744289ea3ee2" -->
 ### New Files Created
 
 ```
@@ -357,6 +377,7 @@ docs/for_ai/
 └── CLOUD_E2E_TESTING_COMPLETE_OCT_21_2025.md  # This document
 ```
 
+<!-- section_id: "333142ac-41db-4ebb-a59b-e92e5834ce82" -->
 ### Key Features Implemented
 
 1. **Firebase Connection Verification**
@@ -384,8 +405,10 @@ docs/for_ai/
 
 ---
 
+<!-- section_id: "c83c4c35-43c5-46d6-ade1-719af7cb3464" -->
 ## Next Steps for Complete Testing
 
+<!-- section_id: "273077de-cc6c-4543-bbd3-de142ede2b89" -->
 ### Immediate (Manual Testing Session)
 
 1. ✅ Open `tests/e2e/manual_cloud_tests.md`
@@ -394,6 +417,7 @@ docs/for_ai/
 4. ✅ Document any failures
 5. ✅ Run cleanup script
 
+<!-- section_id: "885709e3-32a7-4f27-a864-14510bd011c2" -->
 ### Near-term (Automation Enhancement)
 
 1. **Playwright Integration:**
@@ -414,8 +438,10 @@ docs/for_ai/
 
 ---
 
+<!-- section_id: "d294dc32-0d48-43a8-8a94-99caefc501a2" -->
 ## Success Criteria
 
+<!-- section_id: "ed198917-fbf2-48d1-998e-426e9ff16734" -->
 ### ✅ Definition of Done
 
 - [✅] All cloud features have test procedures
@@ -427,6 +453,7 @@ docs/for_ai/
 - [🟡] All data verified in Firebase Console
 - [🟡] Test data cleaned up
 
+<!-- section_id: "523077bb-6070-40d2-99cd-a28840aa9c31" -->
 ### 🎯 Current Status
 
 **Infrastructure:** ✅ 100% Complete
@@ -443,18 +470,22 @@ docs/for_ai/
 
 ---
 
+<!-- section_id: "c7d77e49-f7b2-452d-925a-ddb2822d6a41" -->
 ## Confidence Assessment
 
+<!-- section_id: "5ab4f862-b5b4-489b-b562-700916fa5408" -->
 ### Before This Work
 - **Cloud features:** 85% confident (based on code review)
 - **Testing:** Mostly mocked, no real Firebase tests
 - **Verification:** Couldn't confirm cloud data
 
+<!-- section_id: "830de611-b1ad-44bb-b7c8-4954aa70e18e" -->
 ### After This Work
 - **Cloud features:** 100% confident (254 real documents!)
 - **Testing:** Comprehensive real Firebase tests
 - **Verification:** Can check every operation in Firestore
 
+<!-- section_id: "19fe10f7-fe8e-446c-969e-20d057708bd9" -->
 ### Evidence
 
 1. **137 projects in Firestore** (Sept-Oct 2025)
@@ -468,6 +499,7 @@ docs/for_ai/
 
 ---
 
+<!-- section_id: "40220130-b876-4f8d-a4f5-ec07ce74bca7" -->
 ## Critical Achievement
 
 We now have:
@@ -482,19 +514,23 @@ We now have:
 
 ---
 
+<!-- section_id: "3151abd9-2e65-45e3-868e-115af291f922" -->
 ## Files Reference
 
+<!-- section_id: "23f0013d-8953-4e9e-82fd-0d6f3aa65b66" -->
 ### Test Execution
 - `scripts/run-cloud-e2e-tests.py` - Automated tests
 - `tests/e2e/manual_cloud_tests.md` - Manual checklist
 - `scripts/check-firestore-data.py` - Verify data
 - `scripts/cleanup-test-data.py` - Clean up
 
+<!-- section_id: "469fdc25-7fd6-463d-87c5-730d1a708498" -->
 ### Documentation
 - `docs/for_ai/CLOUD_E2E_TESTING_COMPLETE_OCT_21_2025.md` - This file
 - `docs/for_ai/CLOUD_FEATURES_STATUS_OCT_21_2025.md` - Status report
 - `docs/for_ai/CLOUD_MANUAL_TEST_RESULTS_OCT_21_2025.md` - Results
 
+<!-- section_id: "5dac9927-730b-4785-bf2f-518d79fa6f63" -->
 ### Commands Quick Reference
 
 ```bash

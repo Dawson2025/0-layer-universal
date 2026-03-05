@@ -9,10 +9,12 @@ resource_name: "documentation_deduplication_rule"
 
 ---
 
+<!-- section_id: "5de0cd55-3173-4b56-be6b-a1ca2fe1e0f7" -->
 ## Rule: Single-Source-of-Truth for Documentation
 
 When creating, updating, or encountering documentation, AI agents MUST follow the deduplication pattern to prevent duplicate content across the codebase.
 
+<!-- section_id: "04d97644-5dd1-4349-a6ef-c6832a34ae0b" -->
 ### The Rule
 
 **MUST:**
@@ -30,8 +32,10 @@ When creating, updating, or encountering documentation, AI agents MUST follow th
 
 ---
 
+<!-- section_id: "1311e52d-926f-4cfb-8cec-ab89db95da34" -->
 ## Quick Reference
 
+<!-- section_id: "92d399c1-69b9-4a3a-9ce7-9789852df7b3" -->
 ### Canonical Locations (Edit Here)
 
 All authoritative documentation lives in:
@@ -41,6 +45,7 @@ All authoritative documentation lives in:
 .0agnostic/03_protocols/          ← Universal protocols
 ```
 
+<!-- section_id: "75c94766-ed88-4277-9bd6-3aeb9c83eaff" -->
 ### Pointer Format (Use When Duplicates Found)
 
 Replace duplicate content with pointer:
@@ -58,6 +63,7 @@ This file has been replaced with a pointer to the canonical source.
 This pointer file directs you to the current production definition.
 ```
 
+<!-- section_id: "dbd1e701-9e74-41a6-8391-39c41a0378ac" -->
 ### Decision Tree
 
 ```
@@ -72,6 +78,7 @@ Does it already exist at root .0agnostic/?
                 └─ NO → Unclear? Create at root
 ```
 
+<!-- section_id: "cf03da2e-0b3c-41e6-b34e-c6dbcdfc08eb" -->
 ### When You Find a Duplicate
 
 1. Identify canonical (usually at root)
@@ -82,6 +89,7 @@ Does it already exist at root .0agnostic/?
 
 ---
 
+<!-- section_id: "966d8454-66cd-4844-a81e-9c06fe74c59d" -->
 ## Why This Matters
 
 | Problem | Solution | Result |
@@ -93,6 +101,7 @@ Does it already exist at root .0agnostic/?
 
 ---
 
+<!-- section_id: "fcdc657d-a833-4744-aae0-3568b300a9dc" -->
 ## Related Resources
 
 - **Full Pattern Guide:** `.0agnostic/01_knowledge/deduplication_pattern.md`
@@ -102,6 +111,7 @@ Does it already exist at root .0agnostic/?
 
 ---
 
+<!-- section_id: "e4d1a589-9218-4e95-9162-e87e3b7ff7fd" -->
 ## Enforcement
 
 This rule is:
@@ -112,6 +122,7 @@ This rule is:
 
 ---
 
+<!-- section_id: "2f3eb896-b405-4952-a42c-df5db7e6c9cd" -->
 ## For AI Agents: Context Loading
 
 **Load this rule when:**

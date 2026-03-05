@@ -6,10 +6,12 @@ resource_name: "0INDEX"
 ---
 # Agent Delegation System — Manager Dashboard
 
+<!-- section_id: "df3cc6af-8562-4b09-89bc-5826d99bdfd7" -->
 ## Entity Status
 **Phase**: active (universal artifacts produced, working example established)
 **Last Updated**: 2026-02-19
 
+<!-- section_id: "54048b22-2c41-4139-bebe-3ff6ff010209" -->
 ## Stage Summary
 
 | # | Stage | Status | Key Output | Updated |
@@ -27,6 +29,7 @@ resource_name: "0INDEX"
 
 **Note**: "implicit" means work was done but not formally documented in stage outputs. Formal stage reports and outputs should be created to track this properly.
 
+<!-- section_id: "a4766e2d-6aa0-41e8-bf72-12c6540d40ef" -->
 ## How Stages Connect
 
 ```
@@ -45,12 +48,14 @@ resource_name: "0INDEX"
 10_current_product (artifacts promoted to .0agnostic/)
 ```
 
+<!-- section_id: "f6bfd33a-30ce-45b9-aac3-58f9dcd5b01c" -->
 ## Children
 
 No active children. Former children reorganized:
 - **memory_system** → promoted to L1 sibling under layer_stage_system
 - **multi_agent_system** → absorbed into agent_organization_system
 
+<!-- section_id: "25f5a04c-cfb7-456e-ab07-41586149feb4" -->
 ## Working Example
 
 The **context_chain_system** (grandchild via memory_system) is the primary working example:
@@ -59,6 +64,7 @@ The **context_chain_system** (grandchild via memory_system) is the primary worki
 - Stages 01-07 active with real outputs
 - Entity `.0agnostic/` fully populated (50+ files)
 
+<!-- section_id: "0a552831-8411-4a91-8a72-41a806686b12" -->
 ## Quick Access
 
 | Content | Location |

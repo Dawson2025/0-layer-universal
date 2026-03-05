@@ -5,9 +5,11 @@ resource_name: "stage_05_development"
 ---
 # Stage 04: Development
 
+<!-- section_id: "8716ad66-2d9e-4f05-99f6-b31d6a958f0f" -->
 ## Purpose
 Implement the designed solution by writing code, creating content, or building the actual deliverable. This stage transforms designs into working products through iterative development and continuous integration.
 
+<!-- section_id: "6324d9cf-ea28-4aa6-b1d1-2380b5372b54" -->
 ## Entry Criteria
 - Design documents completed from Stage 03
 - Development environment set up
@@ -15,6 +17,7 @@ Implement the designed solution by writing code, creating content, or building t
 - Coding standards and guidelines available
 - Version control initialized
 
+<!-- section_id: "12fca7d8-4b42-4aa5-82e3-2695cc834f7e" -->
 ## Exit Criteria
 - All planned features implemented
 - Code follows established standards
@@ -24,6 +27,7 @@ Implement the designed solution by writing code, creating content, or building t
 - Build successful with no critical errors
 - Ready for testing phase
 
+<!-- section_id: "3b781e27-8081-41cb-a4dc-e3028ce53fce" -->
 ## Typical Tasks
 - Set up development environment
 - Implement features according to design
@@ -35,10 +39,12 @@ Implement the designed solution by writing code, creating content, or building t
 - Handle error cases
 - Optimize performance
 
+<!-- section_id: "40a09158-d3c3-435a-8e71-12cdccaee254" -->
 ## Handoffs
 - **From Previous**: Architecture documents, component designs, interface specs
 - **To Next**: Working implementation, unit tests, updated documentation, build artifacts
 
+<!-- section_id: "4c8fffbc-a533-40f0-a063-1e71db4a13d4" -->
 ## Directory Structure
 Each stage directory contains:
 - `CLAUDE.md` - Stage-specific context
@@ -47,6 +53,7 @@ Each stage directory contains:
 - `docs/` - Stage documentation
 - `work/` - Working files
 
+<!-- section_id: "e0b01e3b-3cec-4266-89dc-7015473e7cc9" -->
 ## Key Artifacts
 - Source code
 - Unit tests
@@ -55,6 +62,7 @@ Each stage directory contains:
 - Code review records
 - Integration logs
 
+<!-- section_id: "c306438f-49fb-4de1-b559-4b165c848a26" -->
 ## Common Pitfalls
 - Deviating from design without approval
 - Skipping unit tests

@@ -6,11 +6,13 @@ resource_name: "0INDEX"
 ---
 # Index: layer_0 (Universal)
 
+<!-- section_id: "867588ca-506f-4f8a-ba78-6ea210a23ec8" -->
 ## Purpose
 Universal content that applies to ALL projects. Rules, prompts, knowledge, and principles defined here are inherited by all layers.
 
 ---
 
+<!-- section_id: "4d0664d6-edbb-4929-917f-bf859e03c9ff" -->
 ## Children
 
 | Name | Type | Keywords | Description |
@@ -25,6 +27,7 @@ Universal content that applies to ALL projects. Rules, prompts, knowledge, and p
 
 ---
 
+<!-- section_id: "768917ec-bec2-42dc-baac-5ccbdf4679b3" -->
 ## Sub-Layer Quick Reference
 
 | Sub-Layer | Purpose | When to Read |
@@ -37,6 +40,7 @@ Universal content that applies to ALL projects. Rules, prompts, knowledge, and p
 
 ---
 
+<!-- section_id: "664528f8-e54c-4a30-b266-19e760e50f7c" -->
 ## Navigation Guide
 
 **Looking for rules?** → `layer_0_04_sub_layers/sub_layer_0_02_rules/`

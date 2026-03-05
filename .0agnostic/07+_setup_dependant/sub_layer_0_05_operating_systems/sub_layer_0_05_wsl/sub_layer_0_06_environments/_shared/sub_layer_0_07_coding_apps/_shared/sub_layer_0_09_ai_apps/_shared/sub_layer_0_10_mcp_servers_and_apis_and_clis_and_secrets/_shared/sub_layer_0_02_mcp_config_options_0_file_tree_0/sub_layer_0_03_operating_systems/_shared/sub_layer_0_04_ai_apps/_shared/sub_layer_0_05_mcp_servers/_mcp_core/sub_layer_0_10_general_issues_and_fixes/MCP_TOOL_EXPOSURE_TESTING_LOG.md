@@ -9,10 +9,12 @@ resource_name: "MCP_TOOL_EXPOSURE_TESTING_LOG"
 **Location**: Universal Layer → MCP Servers and Tools Setup  
 **Status**: Active testing and documentation
 
+<!-- section_id: "8ae7f978-096b-43d0-a1f7-ad0cfc6e56df" -->
 ## Testing Session Summary
 
 This document logs our testing attempts and findings regarding MCP tool exposure in Cursor IDE and CLI.
 
+<!-- section_id: "f658318a-a2cb-4d25-ba15-46c3f0d15ae4" -->
 ## Key Discovery: Playwright MCP Tools ARE Available!
 
 **Critical Finding (2025-12-05)**: After user logged into Cursor IDE, the Playwright MCP tools became available with the `mcp_playwright_*` prefix!
@@ -33,37 +35,45 @@ This document logs our testing attempts and findings regarding MCP tool exposure
 - ✅ `mcp_web-search_*` tools (Tavily)
 - ✅ `mcp_context7_*` tools
 
+<!-- section_id: "a739ccfa-b886-47a4-abfd-a51b004afebc" -->
 ## Testing Timeline
 
+<!-- section_id: "12fa9fb2-b39d-4f3f-aa75-10788e8a029d" -->
 ### Initial State (Before Login)
 - **Playwright MCP Tools**: ❌ Not available
 - **Browser MCP Tools**: ❌ Not available  
 - **Cursor Browser Extension Tools**: ❌ Not available
 - **Error**: "Tool not found" for all MCP browser tools
 
+<!-- section_id: "a84185a0-4c7d-41f2-98b6-07bbaf17428e" -->
 ### After User Logged In
 - **Playwright MCP Tools**: ✅ **NOW AVAILABLE** (`mcp_playwright_*`)
 - **Browser MCP Tools**: ✅ **NOW AVAILABLE** (`mcp_browser_*`)
 - **Cursor Browser Extension Tools**: ⚠️ Not in available tools list (but may still work)
 
+<!-- section_id: "a1cae734-3522-452e-a79a-23c2deb06be4" -->
 ### Current Issue: Browser Detection
 - **Problem**: Playwright tools available but still getting "Browser specified in your config is not installed"
 - **Status**: Environment variables are configured, but browser detection still failing
 - **Next Steps**: May need Cursor restart or additional configuration
 
+<!-- section_id: "3509fccd-bb2e-4acb-87c3-1d9079f0a4bd" -->
 ## What We Tried
 
+<!-- section_id: "fe0fcaa3-a6dd-4a0d-9624-3f5043919341" -->
 ### 1. Environment Variable Configuration ✅
 - **Action**: Added `PLAYWRIGHT_BROWSERS_PATH` and `HOME` to MCP config
 - **Files Updated**: `~/.cursor/mcp.json` and `~/.config/mcp/mcp.json`
 - **Result**: Configuration updated, but browser detection still failing
 
+<!-- section_id: "3606afd4-3c78-4ffc-8c8c-e6db80945fdb" -->
 ### 2. Cursor CLI Installation ✅
 - **Action**: Installed Cursor CLI via `curl https://cursor.com/install -fsS | bash`
 - **Version**: 2025.11.25-d5b3271
 - **Result**: CLI installed successfully
 - **Issue**: CLI requires MCP server approval before use
 
+<!-- section_id: "08d516c8-98bb-4861-8c1e-d9da60688a6b" -->
 ### 3. Cursor CLI MCP Testing ⚠️
 - **Action**: Attempted to list MCP servers and tools via CLI
 - **Commands Tried**:
@@ -72,18 +82,22 @@ This document logs our testing attempts and findings regarding MCP tool exposure
   - `cursor-agent --approve-mcps -p "test"` - No output (may have worked silently)
 - **Result**: CLI needs MCP server approval (separate from IDE approval)
 
+<!-- section_id: "d93fe0e0-da9a-4f74-90e6-9af9cc3996fb" -->
 ### 4. User Login to Cursor IDE ✅
 - **Action**: User logged into Cursor IDE
 - **Result**: **BREAKTHROUGH** - Playwright MCP tools became available!
 - **Finding**: Login/authentication may be required for MCP tool exposure
 
+<!-- section_id: "7cca8399-81c5-44fd-9edc-50ffdeec59b7" -->
 ### 5. Playwright Tool Testing ⚠️
 - **Action**: Attempted to use `mcp_playwright_browser_navigate`
 - **Result**: Tool available but browser detection still failing
 - **Error**: "Browser specified in your config is not installed"
 
+<!-- section_id: "af459ed8-b243-4b6e-b121-ea0b2593158a" -->
 ## Key Learnings
 
+<!-- section_id: "e029fdb3-84a7-4868-8474-9b1548f42fa5" -->
 ### 1. Login/Authentication May Be Required
 **Finding**: After user logged into Cursor IDE, Playwright MCP tools became available.
 
@@ -94,6 +108,7 @@ This document logs our testing attempts and findings regarding MCP tool exposure
 
 **Action**: Document this as a potential requirement for MCP tool exposure.
 
+<!-- section_id: "8d80b468-65ab-49e9-8b93-0aa27772ceba" -->
 ### 2. Playwright Tools Use `mcp_playwright_*` Prefix
 **Finding**: Playwright MCP tools are available with `mcp_playwright_*` prefix, not `mcp_browser_*`.
 
@@ -104,6 +119,7 @@ This document logs our testing attempts and findings regarding MCP tool exposure
 
 **Implication**: Tool naming follows server name in config, not a generic pattern.
 
+<!-- section_id: "b3427049-bc4d-4df1-9216-23a3ae19bfe2" -->
 ### 3. Browser Detection Still Failing Despite Environment Variables
 **Finding**: Even with `PLAYWRIGHT_BROWSERS_PATH` and `HOME` set, browser detection fails.
 
@@ -118,6 +134,7 @@ This document logs our testing attempts and findings regarding MCP tool exposure
 - Restart Cursor to ensure environment variables are loaded
 - Check if browser path needs to be explicit in config
 
+<!-- section_id: "b505941b-e961-478a-a907-4b5c23014b19" -->
 ### 4. Cursor CLI Has Separate Approval System
 **Finding**: CLI requires MCP server approval separate from IDE approval.
 
@@ -126,8 +143,10 @@ This document logs our testing attempts and findings regarding MCP tool exposure
 - `--approve-mcps` flag exists but may need to be used differently
 - CLI may need servers approved through IDE first, or vice versa
 
+<!-- section_id: "0df91175-bbe6-413b-8ad4-342f052fda43" -->
 ## Current Status
 
+<!-- section_id: "324a8245-25af-4616-8e29-39b06dfcd0e7" -->
 ### ✅ Working
 - Playwright MCP tools are **AVAILABLE** (`mcp_playwright_*`)
 - Browser MCP tools are **AVAILABLE** (`mcp_browser_*`) - **✅ CONFIRMED WORKING!**
@@ -135,11 +154,13 @@ This document logs our testing attempts and findings regarding MCP tool exposure
 - Environment variables are configured
 - Cursor CLI is installed
 
+<!-- section_id: "6c867427-885e-48fa-b504-388ca0ffeed9" -->
 ### ⚠️ Issues
 - Playwright MCP tools available but browser detection failing ("Browser not installed" error)
 - Browser MCP tools work but may need headed mode configuration
 - CLI approval system needs investigation
 
+<!-- section_id: "84c48056-3bf5-48bd-a9bd-0139712bfdce" -->
 ### ✅ Success: Browser MCP Tools Working!
 **Test Result (2025-12-05)**:
 - Tool: `mcp_browser_browser_navigate("https://www.google.com")`
@@ -147,11 +168,13 @@ This document logs our testing attempts and findings regarding MCP tool exposure
 - Page loaded with full snapshot available
 - Browser is running and accessible
 
+<!-- section_id: "b2072ca1-5ba9-4fb0-9629-651b17c07f48" -->
 ### ❓ Unknown
 - Do we need to use `mcp_playwright_browser_install` first?
 - Will Cursor restart fix browser detection?
 - Do Cursor browser extension tools still work?
 
+<!-- section_id: "f943f2a9-fd06-4976-ab1a-8f390f835507" -->
 ## Next Steps
 
 1. ✅ **COMPLETED**: Test Browser MCP Tools
@@ -172,8 +195,10 @@ This document logs our testing attempts and findings regarding MCP tool exposure
    - Login requirement confirmed
    - Update all documentation with findings
 
+<!-- section_id: "9ab8f3c1-c308-4d50-b174-7e30badfc06c" -->
 ## Successful Test Results
 
+<!-- section_id: "18008cec-d525-44c6-9c3f-93a9a7b56432" -->
 ### Test 1: Browser MCP Navigation ✅ SUCCESS
 **Command**: `mcp_browser_browser_navigate("https://www.google.com")`
 
@@ -185,6 +210,7 @@ This document logs our testing attempts and findings regarding MCP tool exposure
 
 **Finding**: Browser MCP tools (`mcp_browser_*`) are **WORKING** after user login!
 
+<!-- section_id: "3c24679b-9552-4b4a-80de-df98c856b87e" -->
 ### Test 2: Browser Screenshot
 **Command**: `mcp_browser_browser_screenshot()`
 
@@ -192,6 +218,7 @@ This document logs our testing attempts and findings regarding MCP tool exposure
 - Screenshot functionality works
 - May be showing blank page or different tab
 
+<!-- section_id: "c83b3853-f440-421a-9720-6d9af4b7469a" -->
 ### Test 3: Browser Tab List
 **Command**: `mcp_browser_browser_tab_list()`
 
@@ -201,6 +228,7 @@ This document logs our testing attempts and findings regarding MCP tool exposure
 
 **Note**: There may be multiple browser instances or the navigation opened in a different context.
 
+<!-- section_id: "5c41bcf1-91c0-4f2e-bf6d-eac056933dce" -->
 ## Testing Commands Used
 
 ```bash
@@ -217,6 +245,7 @@ cursor-agent --approve-mcps -p "test"
 ls -la ~/.cache/ms-playwright/chromium-*/chrome-linux64/chrome
 ```
 
+<!-- section_id: "21448f8a-3896-4727-8fe7-d981f15724a2" -->
 ## Tool Availability Comparison
 
 | Tool Set | Before Login | After Login | Status |
@@ -226,20 +255,24 @@ ls -la ~/.cache/ms-playwright/chromium-*/chrome-linux64/chrome
 | `mcp_cursor-browser-extension_*` | ❌ Not available | ⚠️ Not in list | Unknown |
 | Browser Detection | ❌ Failing | ⚠️ Still failing | Needs fix |
 
+<!-- section_id: "b56a2cc3-7926-4762-b08e-a0d9bc75013e" -->
 ## Related Documentation
 
 - [MCP Tool Exposure Solutions](./MCP_TOOL_EXPOSURE_SOLUTIONS.md) - All workarounds
 - [MCP Tool Exposure OS Analysis](./MCP_TOOL_EXPOSURE_OS_ANALYSIS.md) - Platform comparison
 - [Browser Environment Variable Fix](./BROWSER_ENV_VAR_FIX.md) - Environment variable solution
 
+<!-- section_id: "fde54e71-5a1e-47fb-8fca-f225b996fd1c" -->
 ## Cursor CLI Research Findings (2025-12-05)
 
+<!-- section_id: "1a82d4b9-3063-487c-900b-0569cdf1197b" -->
 ### CLI Legitimacy Confirmed
 - ✅ **Official Product**: Cursor CLI is legitimate and officially supported by Cursor team
 - ✅ **Documented**: Official documentation on cursor.com with install/auth/configuration
 - ✅ **Production-Ready**: Used by developers in real-world scenarios
 - ✅ **Security**: Permission system for file operations and shell commands
 
+<!-- section_id: "d2c40bd0-7de8-4e86-952e-1ea705323717" -->
 ### IDE vs CLI Comparison
 **IDE Better For**:
 - Interactive coding and navigation
@@ -258,6 +291,7 @@ ls -la ~/.cache/ms-playwright/chromium-*/chrome-linux64/chrome
 - Use CLI for automation and repeatable workflows
 - Both share same config (rules, MCP servers)
 
+<!-- section_id: "5ee70086-cb97-4afc-ab55-03f187af49e9" -->
 ### TUI vs GUI Bug Comparison
 **TUI (CLI) Bugs**:
 - More frequent UI glitches
@@ -277,14 +311,17 @@ ls -la ~/.cache/ms-playwright/chromium-*/chrome-linux64/chrome
 - Use CLI for automation/headless tasks
 - Expect TUI glitches to compound terminal quirks in WSL
 
+<!-- section_id: "9f6dcc41-3afd-4982-bb59-56158a2cf94c" -->
 ## Changelog
 
+<!-- section_id: "3c7c2eae-856c-4580-998b-97d76424f1aa" -->
 ### 2025-12-05 (Updated)
 - Added Cursor CLI research findings
 - Documented IDE vs CLI tradeoffs
 - Documented TUI vs GUI bug comparison
 - Added recommendation for WSL users
 
+<!-- section_id: "6ff4f818-678c-4089-b3d0-389bf88e3349" -->
 ### 2025-12-05 (Initial)
 - **BREAKTHROUGH**: Playwright MCP tools became available after user login
 - Documented tool naming: `mcp_playwright_*` prefix confirmed

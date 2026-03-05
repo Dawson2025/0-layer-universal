@@ -11,6 +11,7 @@ resource_name: "ubuntu-trackpad-advanced-config"
 
 This document captures the detailed process of configuring trackpad settings for optimal cursor and scroll behavior, including lessons learned from extensive iteration.
 
+<!-- section_id: "35a6b644-4a9f-47b4-9e76-e672a8237553" -->
 ## Goals
 
 1. **Cursor behavior**: Small/slow movements should be slow and smooth; fast movements should move the cursor much further (acceleration)
@@ -18,14 +19,17 @@ This document captures the detailed process of configuring trackpad settings for
 3. **No jerkiness**: Smooth transitions at all speeds
 4. **Persistent settings**: Configuration must survive reboots
 
+<!-- section_id: "0a04ef8a-d7e5-4d7a-a1c9-b9a4adde98f9" -->
 ## Hardware Context
 
 - **Trackpad**: ELAN06FA:00 04F3:32FD Touchpad (device ID 10)
 - **Desktop Environment**: GNOME (ubuntu:GNOME)
 - **Driver**: libinput
 
+<!-- section_id: "99c19e6e-531f-4bb3-86e1-712687b89642" -->
 ## Key Learnings
 
+<!-- section_id: "894fc664-d549-4570-ae2f-0eb2f35e20a9" -->
 ### 1. Two Independent Speed Systems
 
 There are **two separate systems** that control trackpad speed:
@@ -35,12 +39,14 @@ There are **two separate systems** that control trackpad speed:
 
 **Critical lesson**: Both must be set to the same value, or behavior becomes unpredictable.
 
+<!-- section_id: "5a7bfa3d-b430-4891-ac63-0162d00068e4" -->
 ### 2. Cursor Speed vs Scroll Speed
 
 - **Cursor speed**: Controlled by `libinput Accel Speed` and acceleration profiles
 - **Scroll speed**: Controlled by `libinput Scrolling Pixel Distance` (higher = slower scrolling)
 - These are **completely independent** settings
 
+<!-- section_id: "b01a1a9c-875b-4e62-81f6-5b31c80cfe2e" -->
 ### 3. Acceleration Profiles
 
 libinput provides three acceleration profiles:
@@ -51,6 +57,7 @@ libinput provides three acceleration profiles:
 
 **Critical discovery**: Only the **custom profile** supports scroll acceleration.
 
+<!-- section_id: "a5e4a620-94c2-4ed9-8826-3ddd8f12e165" -->
 ### 4. Custom Acceleration Curves
 
 Custom profiles use two key properties:
@@ -67,14 +74,17 @@ Custom profiles use two key properties:
 
 **Critical lesson**: Even with minimum base speed (-1.0), an aggressive acceleration curve can make small movements too fast. The curve starting points matter more than the base speed for small movements.
 
+<!-- section_id: "cbe7d281-6ab0-4ba0-9c99-253a5bef1e17" -->
 ## What Didn't Work
 
+<!-- section_id: "a172ce3b-954e-4429-8767-c56e3b2106c2" -->
 ### Attempt 1: Simple gsettings Speed Increase
 ```bash
 gsettings set org.gnome.desktop.peripherals.touchpad speed 0.5
 ```
 **Problem**: Increased overall speed but no differentiation between slow and fast movements. Scrolling unaffected.
 
+<!-- section_id: "41cd1ed5-a8f1-4a31-a64e-12493d553e1f" -->
 ### Attempt 2: Adaptive Profile with High Base Speed
 ```bash
 gsettings set org.gnome.desktop.peripherals.touchpad speed 0.7
@@ -82,6 +92,7 @@ gsettings set org.gnome.desktop.peripherals.touchpad accel-profile 'adaptive'
 ```
 **Problem**: Adaptive profile works for cursor but doesn't support scroll acceleration. Acceleration was too aggressive.
 
+<!-- section_id: "f19f03d6-4bba-4600-8cea-ce950c5c3aaa" -->
 ### Attempt 3: Custom Profile with Aggressive Curves
 ```bash
 xinput set-prop 10 "libinput Accel Profile Enabled" 0, 0, 1
@@ -90,11 +101,13 @@ xinput set-prop 10 "libinput Accel Custom Scroll Points" 0.0 0.5 1.0 3.0
 ```
 **Problem**: Far too aggressive - small movements were jerky and too fast despite the intention.
 
+<!-- section_id: "9b1217bf-7150-44dd-bf5e-b23852cf6d23" -->
 ### Attempt 4: Reducing Acceleration Multipliers
 Progressive attempts with multipliers: 1.5x → 1.3x → 1.2x → 1.1x → 1.05x → 1.02x → 1.01x
 
 **Problem**: Even minimal acceleration multipliers combined with positive base speeds made small movements too fast.
 
+<!-- section_id: "411b623a-cd76-4e31-ba95-352fd8ec4f62" -->
 ### Attempt 5: Negative Base Speeds with Aggressive Curves
 ```bash
 xinput set-prop 10 "libinput Accel Speed" -0.3
@@ -102,6 +115,7 @@ xinput set-prop 10 "libinput Accel Custom Motion Points" 0.0 0.5 1.0 1.02
 ```
 **Problem**: Base speed alone isn't enough - the acceleration curve's starting point matters more for small movements.
 
+<!-- section_id: "6710d4c4-b86a-4995-b0d6-5f810e94ca51" -->
 ### Attempt 6: Minimum Base Speed with Gentler Curves
 Progressive curve adjustments with base speed at -1.0:
 - 0.0, 0.3, 0.7, 1.0, 1.5 → Still too fast
@@ -111,12 +125,14 @@ Progressive curve adjustments with base speed at -1.0:
 
 **Key insight**: Even tiny starting values like 0.1 can feel too fast. The difference between 0.1 and 0.05 is perceptible and significant.
 
+<!-- section_id: "ad0bb9f0-9245-4136-b282-a4bdcbc5ed6a" -->
 ### Attempt 7: Extreme Reduction (1/10th scale)
 Reduced all values to 1/10th:
 - 0.0, 0.0005, 0.002, 0.008, 0.015, 0.025 → Much better baseline achieved
 
 **Problem**: Still needed even slower small movements while keeping fast movements at the same speed.
 
+<!-- section_id: "8068136e-4e96-4502-9feb-6d930ea3ceff" -->
 ### Attempt 8: Piecewise Function Approach
 Switched from smooth curves to piecewise step functions:
 - 3 zones: 0.0001, 0.01, 0.5 → Good concept but too few zones, jumped to fast zones too easily
@@ -124,6 +140,7 @@ Switched from smooth curves to piecewise step functions:
 
 **Problem**: Small step size (0.002) meant zones transitioned across a very narrow velocity range.
 
+<!-- section_id: "41743c53-79e5-4c3b-a851-b3d746523a00" -->
 ### Attempt 9: Larger Step Size with Piecewise
 Increased step size from 0.002 to 0.05 (25x increase):
 - Required much faster physical movement to reach higher zones
@@ -131,6 +148,7 @@ Increased step size from 0.002 to 0.05 (25x increase):
 
 **Problem**: With 5 zones, medium movements jumped too quickly from 0.001x to 0.01x - too aggressive.
 
+<!-- section_id: "13bcacbd-922d-454d-aa9f-11e4d4907ba6" -->
 ### Attempt 10: 7-Zone Piecewise with Smoother Progression (FINAL CURSOR SOLUTION)
 Added more intermediate zones with ~3x progression between steps:
 - 0.0001, 0.0003, 0.001, 0.003, 0.01, 0.03, 0.1
@@ -138,6 +156,7 @@ Added more intermediate zones with ~3x progression between steps:
 
 **Success**: Slow movements stay slow, medium movements have smoother progression, fast movements are fast. The ~3x multiplier between zones provides natural-feeling acceleration.
 
+<!-- section_id: "a8210de1-06a1-41c2-8a76-80fed09174d9" -->
 ### Attempt 11: Scroll Configuration Evolution
 - Started with simple 2-zone (0.5x to 1.01x) - too simple, slow scrolling didn't move enough
 - Tried 7-zone piecewise (0.01x to 1.0x) - better but transitions felt jumpy
@@ -145,8 +164,10 @@ Added more intermediate zones with ~3x progression between steps:
 
 **Success**: 11 zones provide very smooth scroll transitions. Starting at 0.1x (vs 0.01x) makes slow scrolling more effective while maintaining smooth acceleration to 1.5x for fast scrolling.
 
+<!-- section_id: "3ac0fae1-a620-4d3c-8abf-a5f1ab0a13a4" -->
 ## What Worked: Final Solution
 
+<!-- section_id: "a268b144-396c-49b7-a569-b75317d73e9f" -->
 ### Summary: Complete Configuration
 
 **Cursor Movement**: 7 zones (0.0001x to 0.1x) - Precision-focused with ~3x progression
@@ -154,6 +175,7 @@ Added more intermediate zones with ~3x progression between steps:
 **Step Size**: 0.05 for both (spreads zones across wide velocity range)
 **Base Speed**: -1.0 (minimum) for both cursor and scroll
 
+<!-- section_id: "70e8558b-bdd4-4b1f-b08e-651fad135074" -->
 ### Core Configuration
 
 **Base Speed**: Set to minimum (-1.0)
@@ -223,6 +245,7 @@ xinput set-prop 10 "libinput Accel Custom Scroll Step" 0.05
 - **Maximum 1.5x**: Fast scrolling gets boost without being too aggressive
 - **Same step size (0.05)**: Consistent zone boundaries with cursor movement
 
+<!-- section_id: "48d64a3e-2189-4368-8bc9-22bad06c3bf3" -->
 ### Persistence: Autostart Script
 
 Settings applied via xinput don't persist across reboots. Solution: Create autostart script.
@@ -280,6 +303,7 @@ Make script executable:
 chmod +x ~/.config/trackpad-settings.sh
 ```
 
+<!-- section_id: "5d45745e-b0a7-471a-b7d0-4fc10be046bd" -->
 ## Key Insights
 
 1. **Curve shape matters more than base speed**: For controlling small movements, the acceleration curve's starting points (first few values) are more critical than the base speed setting.
@@ -308,43 +332,52 @@ chmod +x ~/.config/trackpad-settings.sh
 
 8. **Extreme values work**: Don't be afraid of very small multipliers like 0.0001x - they're necessary for precision control when base speed is at minimum (-1.0).
 
+<!-- section_id: "4f4c4eed-19e8-41a8-a96c-719c557b6c85" -->
 ## Troubleshooting
 
+<!-- section_id: "820bf6a7-cab1-4c50-bdfc-12a53e68104d" -->
 ### Small movements still too fast
 - Reduce the first zone values in the custom motion curve (e.g., change 0.0001 to 0.00005)
 - Ensure base speed is at minimum (-1.0)
 - Check that custom profile is enabled, not adaptive
 - Verify step size is large enough (0.05 or higher)
 
+<!-- section_id: "1717ed85-b4e4-43a4-a179-cafd434cc686" -->
 ### Reaching fast zones too easily
 - Increase step size (try 0.1 instead of 0.05)
 - This spreads zones across a wider velocity range
 - Makes it harder to accidentally trigger fast zones with moderate movements
 
+<!-- section_id: "76cea3c6-1303-4317-a087-a679d22f5a14" -->
 ### Medium movements feel jumpy or too fast
 - Add more intermediate zones to smooth the progression
 - Reduce the multiplier difference between adjacent zones
 - Current ~3x progression (0.001 → 0.003 → 0.01) can be reduced to ~2x if needed
 
+<!-- section_id: "0ddc9b3d-4f5d-42a5-9037-0f2bde52e9c3" -->
 ### Scrolling too fast
 - Increase `libinput Scrolling Pixel Distance` (try 50, 60, etc.)
 - Reduce scroll acceleration multipliers (currently 0.1x to 1.5x)
 - Reduce the maximum scroll zone value (currently 1.5x, try 1.2x or 1.0x)
 
+<!-- section_id: "20128327-d663-41c9-bea0-a8b3140bfd5b" -->
 ### Scrolling too slow (especially slow scrolling)
 - Increase the starting scroll zone values (currently 0.1x, try 0.15x or 0.2x)
 - Reduce `libinput Scrolling Pixel Distance` (currently 40, try 30 or 35)
 
+<!-- section_id: "6403a737-37e0-4447-9ae4-6bffbbc1dc61" -->
 ### Settings not persisting after reboot
 - Verify autostart script exists and is executable
 - Check that script is in `~/.config/autostart/` directory
 - Test script manually: `~/.config/trackpad-settings.sh`
 
+<!-- section_id: "9a945e30-a5de-4bf8-b6b1-3353a93208a2" -->
 ### Jerkiness in cursor movement
 - Reduce step size (try 0.001)
 - Add more intermediate points to the curve
 - Ensure no competing settings from other tools
 
+<!-- section_id: "aa4c1f0e-2a1c-48ff-ad4b-378d204ac3fd" -->
 ## Quick Reference Commands
 
 **Check current settings**:
@@ -369,6 +402,7 @@ xinput list-props 10 | grep "Scroll"
 ~/.config/trackpad-settings.sh
 ```
 
+<!-- section_id: "1cbc2501-3a0f-44fa-8f1b-01f931a26f22" -->
 ## Related Documentation
 
 - [Ubuntu Linux Setup Guide](ubuntu-linux-setup.md) - Basic trackpad configuration

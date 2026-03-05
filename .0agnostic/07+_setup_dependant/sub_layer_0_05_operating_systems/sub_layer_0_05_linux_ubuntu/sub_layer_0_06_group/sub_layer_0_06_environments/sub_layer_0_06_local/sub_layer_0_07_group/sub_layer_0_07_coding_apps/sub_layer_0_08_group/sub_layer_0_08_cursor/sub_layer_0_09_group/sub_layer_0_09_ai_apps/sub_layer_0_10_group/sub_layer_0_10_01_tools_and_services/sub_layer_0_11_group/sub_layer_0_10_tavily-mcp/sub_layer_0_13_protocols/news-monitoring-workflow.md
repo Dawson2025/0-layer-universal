@@ -5,10 +5,12 @@ resource_name: "news-monitoring-workflow"
 ---
 # News Monitoring Workflow
 
+<!-- section_id: "1ad33a65-0891-4f9b-95d3-9978fa42d184" -->
 ## Overview
 
 This protocol defines a systematic approach for monitoring news and developments using the Tavily MCP server's news search capabilities. It provides methods for tracking industry news, competitive developments, and emerging trends.
 
+<!-- section_id: "860242ed-1918-4218-8383-181b026d90f3" -->
 ## When to Use
 
 - Tracking industry developments and trends
@@ -17,6 +19,7 @@ This protocol defines a systematic approach for monitoring news and developments
 - Staying informed about regulatory changes
 - Gathering market intelligence
 
+<!-- section_id: "099ff5b1-c41b-4a7b-bf6b-c77b4a1a53dd" -->
 ## Core Tool: tavily_news_search
 
 The dedicated news search tool provides time-filtered results:
@@ -29,8 +32,10 @@ Parameters:
   max_results: [1-10, number of results]
 ```
 
+<!-- section_id: "eb444459-3219-4e61-af37-2963dd22a554" -->
 ## Monitoring Categories
 
+<!-- section_id: "a2b56708-d8d8-418b-9b5e-58aa078e5fb5" -->
 ### Category 1: Technology Updates
 
 Track new releases, updates, and deprecations:
@@ -47,6 +52,7 @@ Queries:
 - days: 7 (weekly check)
 - max_results: 5
 
+<!-- section_id: "8eaf8d64-b17a-4cdb-8a5d-c038308c0f5d" -->
 ### Category 2: Industry News
 
 Monitor broader industry developments:
@@ -63,6 +69,7 @@ Queries:
 - days: 14 (bi-weekly review)
 - max_results: 10
 
+<!-- section_id: "d042aa7d-1f6e-401e-99ba-4adf2cb7511a" -->
 ### Category 3: Competitive Intelligence
 
 Track competitor activities:
@@ -79,6 +86,7 @@ Queries:
 - days: 30 (monthly review)
 - max_results: 5 per competitor
 
+<!-- section_id: "49070b25-9ec8-4731-b3eb-8ba89cd02686" -->
 ### Category 4: Security Alerts
 
 Monitor security-related news:
@@ -95,6 +103,7 @@ Queries:
 - days: 3 (high frequency)
 - max_results: 10
 
+<!-- section_id: "e2c1671a-4803-45da-896e-c7900fb0b164" -->
 ### Category 5: Regulatory Updates
 
 Track policy and compliance news:
@@ -111,8 +120,10 @@ Queries:
 - days: 14 (bi-weekly)
 - max_results: 5
 
+<!-- section_id: "1b8b719f-7982-4252-bb13-e509400e92a2" -->
 ## Workflow Implementation
 
+<!-- section_id: "7b686746-ee82-4b05-85e1-a186a63390e0" -->
 ### Daily Monitoring Routine
 
 ```
@@ -126,6 +137,7 @@ Parameters:
   max_results: 5
 ```
 
+<!-- section_id: "7245a0a1-cb4b-4539-9c8e-0617ff094a77" -->
 ### Weekly Summary Workflow
 
 ```
@@ -140,6 +152,7 @@ Parameters:
   max_results: 10
 ```
 
+<!-- section_id: "60634c91-c3fc-484d-b3d2-54f156e6597e" -->
 ### Monthly Deep-Dive
 
 ```
@@ -154,8 +167,10 @@ Parameters:
   max_results: 10-20
 ```
 
+<!-- section_id: "7f7c9456-d5be-4f2c-a928-763d197b95ff" -->
 ## News Filtering Strategies
 
+<!-- section_id: "4da3d65d-951b-4237-9e34-a29cb76437e6" -->
 ### Source Quality Filtering
 
 Include reputable news sources:
@@ -173,6 +188,7 @@ Include reputable news sources:
 }
 ```
 
+<!-- section_id: "1218c75c-3d17-43d4-bfff-507fcf83bdca" -->
 ### Technology-Specific Sources
 
 ```json
@@ -187,6 +203,7 @@ Include reputable news sources:
 }
 ```
 
+<!-- section_id: "f0c4964f-4882-4572-89b8-a962c3a8c884" -->
 ### Exclude Aggregators and Low-Quality
 
 ```json
@@ -199,8 +216,10 @@ Include reputable news sources:
 }
 ```
 
+<!-- section_id: "fa2bf46d-090a-4cc1-a0ab-69da6ee3dbab" -->
 ## News Alert Templates
 
+<!-- section_id: "5b2bf5a9-c2ec-4d2b-9870-fc9cabba892f" -->
 ### Template: Technology Stack Monitor
 
 ```markdown
@@ -221,6 +240,7 @@ Query 3: "[Tech 3] new features pricing"
 ## Results per Query: 5
 ```
 
+<!-- section_id: "2624794c-9166-443c-86fc-3f212a905ccc" -->
 ### Template: Competitor Watch
 
 ```markdown
@@ -241,6 +261,7 @@ Query 3: "[Competitor C] launch feature"
 ## Results per Query: 5
 ```
 
+<!-- section_id: "7436dd03-9b9b-4110-90ee-7fd965447a29" -->
 ### Template: Security Monitor
 
 ```markdown
@@ -261,8 +282,10 @@ Query 3: "[Dependency 1] security advisory"
 ## Results per Query: 10
 ```
 
+<!-- section_id: "5f1de941-0d0c-4b86-889b-7d0406abcab8" -->
 ## Output Formats
 
+<!-- section_id: "2991f696-fcb3-442e-9b57-ba10d457ebe1" -->
 ### Daily Brief Format
 
 ```markdown
@@ -281,6 +304,7 @@ Query 3: "[Dependency 1] security advisory"
 - [ ] [Required action based on news]
 ```
 
+<!-- section_id: "d23b0814-a7c7-4e52-bcf8-36b10819eac8" -->
 ### Weekly Summary Format
 
 ```markdown
@@ -310,6 +334,7 @@ Query 3: "[Dependency 1] security advisory"
 1. [Recommendation based on findings]
 ```
 
+<!-- section_id: "e5d25d84-bb22-4d03-8bac-5e074acd06a6" -->
 ### Monthly Report Format
 
 ```markdown
@@ -344,8 +369,10 @@ Query 3: "[Dependency 1] security advisory"
 1. [Specific action with deadline]
 ```
 
+<!-- section_id: "741e0bf3-e9ac-4376-9e4c-b8a9b76937b7" -->
 ## Automation Considerations
 
+<!-- section_id: "486aabb6-0cd0-4b27-800d-203a99d6f295" -->
 ### Batch Query Efficiency
 
 Group related queries to minimize API calls:
@@ -364,6 +391,7 @@ Inefficient Approach:
   Query 3: "[Tech3] news update"
 ```
 
+<!-- section_id: "5c21f5e2-b2cb-4ff3-a7e5-7a2e2eeae1c1" -->
 ### Rate Limit Management
 
 For ongoing monitoring:
@@ -371,14 +399,17 @@ For ongoing monitoring:
 - Basic tier: ~30 monitoring sessions/day
 - Plan queries based on tier limits
 
+<!-- section_id: "514a3793-3821-4092-b2fc-d663183d2c9d" -->
 ### Caching Strategy
 
 - Cache results for same-day queries
 - Store important findings for trend analysis
 - Deduplicate across monitoring sessions
 
+<!-- section_id: "c03f1f16-e0ba-4434-b415-9c27ada668db" -->
 ## Common Monitoring Scenarios
 
+<!-- section_id: "411c0bd1-5354-4303-80db-d92d11b14be1" -->
 ### Scenario: New Technology Evaluation
 
 ```
@@ -398,6 +429,7 @@ Phase 3: Problem Monitoring
   max_results: 5
 ```
 
+<!-- section_id: "ccd3c33f-95f5-4789-9d94-61ad970e60f7" -->
 ### Scenario: Crisis Monitoring
 
 ```
@@ -412,6 +444,7 @@ Ongoing Tracking:
   max_results: 10
 ```
 
+<!-- section_id: "8dd56e43-ac46-45b6-8bd4-5bf50d27d87f" -->
 ### Scenario: Product Launch Tracking
 
 ```
@@ -431,8 +464,10 @@ Post-Launch:
   max_results: 10
 ```
 
+<!-- section_id: "3b09279d-62a1-4f8d-bbc1-9dcf69514814" -->
 ## Quality Assurance
 
+<!-- section_id: "54d1d0cb-d76a-466b-b540-2993dcf6ddcc" -->
 ### Validation Checklist
 
 - [ ] News sources are reputable
@@ -442,6 +477,7 @@ Post-Launch:
 - [ ] Bias in reporting is acknowledged
 - [ ] Rumors are distinguished from confirmed news
 
+<!-- section_id: "8479c137-bd84-476b-b65b-604359faa528" -->
 ### False Positive Handling
 
 Common false positives:
@@ -455,6 +491,7 @@ Mitigation:
 - Check publication dates carefully
 - Verify with primary sources when critical
 
+<!-- section_id: "cb314843-55ed-4cf7-9864-d2f36aa8c8e7" -->
 ## Troubleshooting
 
 | Issue | Solution |

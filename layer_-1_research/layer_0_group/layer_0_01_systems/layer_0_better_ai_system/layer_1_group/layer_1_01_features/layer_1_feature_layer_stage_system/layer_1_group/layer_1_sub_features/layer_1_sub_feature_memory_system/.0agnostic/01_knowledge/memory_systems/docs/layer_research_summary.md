@@ -5,6 +5,7 @@ resource_name: "layer_research_summary"
 ---
 # Layer Research Summary: Memory System
 
+<!-- section_id: "0741069e-1239-49eb-ba81-fe7998146ab6" -->
 ## Overview
 
 Stage 02 (research) produced a comprehensive investigation into AI agent memory systems. The research spans 24 documents totaling approximately 350KB of distilled knowledge, covering biological foundations, cognitive science mappings, implementation architectures, data structures, commercial platforms, and performance benchmarks.
@@ -13,8 +14,10 @@ The research is substantially complete and ready to inform downstream stages (03
 
 ---
 
+<!-- section_id: "c6984d40-fccb-4267-bdd7-09c6a92ec491" -->
 ## Research Scope
 
+<!-- section_id: "6b3c883e-d446-4565-9143-29e194360ad2" -->
 ### Documents Produced
 
 24 research documents (`outputs/by_topic/00-23`) organized by topic:
@@ -28,14 +31,17 @@ The research is substantially complete and ready to inform downstream stages (03
 | 18-20 | Architecture: underlying data structures, prototype specification, three-tier knowledge architecture |
 | 21-23 | Core syntheses: memory structure hierarchy, data structure hierarchy, core AI memory systems |
 
+<!-- section_id: "bfe5b312-bb6d-43dc-9cc9-e2e6d1cdb683" -->
 ### Distilled Knowledge
 
 Stage-level knowledge summary: `stage_1_02_research/.0agnostic/01_knowledge/memory_systems/docs/core_ai_memory_architecture.md`
 
 ---
 
+<!-- section_id: "8d3cd832-bf8b-406d-99e8-d9beca5ac2af" -->
 ## Key Architectural Findings
 
+<!-- section_id: "7649b71e-e641-4652-bc54-356dd9a7d768" -->
 ### 1. Biological Memory Hierarchy (6 Levels)
 
 Memory types form a strict dependency chain where each level requires the levels below:
@@ -51,6 +57,7 @@ Memory types form a strict dependency chain where each level requires the levels
 
 **Build order**: L4 (semantic + time-based) first, then L5 (episodic + procedural), then L6.
 
+<!-- section_id: "c2e9e151-4d64-437f-9b88-ccf7dcb2737f" -->
 ### 2. Data Structure Hierarchy (10 Levels)
 
 Every AI memory system is built on layered data structures:
@@ -63,6 +70,7 @@ Every AI memory system is built on layered data structures:
 
 **Key insight**: Vector databases are actually graphs (HNSW). Everything reduces to arrays, trees, graphs, and hash tables.
 
+<!-- section_id: "84036446-4350-441f-9c28-24472a73cf9d" -->
 ### 3. Core AI Memory Systems (9 Tiers)
 
 AI memory structures ranked by foundational importance:
@@ -82,6 +90,7 @@ AI memory structures ranked by foundational importance:
 
 **Minimal core**: Vectors (T1) + SQL (T2) + Working Memory (T5) = absolute minimum for any AI agent.
 
+<!-- section_id: "b5855cdf-d63b-49cb-8eae-b837b86c3a12" -->
 ### 4. SHIMI (Semantic Hierarchical Memory Index)
 
 Positioned at T3.5, SHIMI provides meaning-driven retrieval superior to flat vector search:
@@ -91,6 +100,7 @@ Positioned at T3.5, SHIMI provides meaning-driven retrieval superior to flat vec
 - Explainable paths through the hierarchy
 - Decentralized sync via Merkle-DAG + Bloom filters + CRDTs
 
+<!-- section_id: "e66b80bc-719a-4a51-ae1f-ef600c446b47" -->
 ### 5. Unified PostgreSQL Architecture
 
 Modern production systems consolidate ALL memory types in PostgreSQL:
@@ -101,6 +111,7 @@ Modern production systems consolidate ALL memory types in PostgreSQL:
 - Foreign keys for knowledge graph edges
 - **Result**: 66% cost reduction, single ACID transactions across all memory types
 
+<!-- section_id: "cc35bb84-7198-4611-87a0-32018f2b932f" -->
 ### 6. Memory Consolidation Pipeline (4 Stages)
 
 The standard architecture for memory processing:
@@ -112,6 +123,7 @@ The standard architecture for memory processing:
 
 ---
 
+<!-- section_id: "d8f90995-0017-4924-bed0-809f6df3bd58" -->
 ## Key Performance Benchmarks
 
 | System | Metric | Value |
@@ -124,14 +136,17 @@ The standard architecture for memory processing:
 
 ---
 
+<!-- section_id: "fbf56047-ff8f-4eec-8ec0-d56143266a3d" -->
 ## Phase Recommendations
 
+<!-- section_id: "4fcd166d-999f-4e62-86d2-fe14678f70aa" -->
 ### Phase 1: Minimal Core
 - Vector Embeddings (T1) for semantic similarity
 - SQL/Relational (T2) for structured data
 - Working Memory Buffers (T5) for active context
 - Unified PostgreSQL as the storage backend
 
+<!-- section_id: "5631b8fc-f573-4601-b194-4164af0dccb9" -->
 ### Phase 2: Enhanced Memory
 - SHIMI (T3.5) for meaning-driven hierarchical retrieval
 - Procedural Memory (T6) for learning from task trajectories
@@ -140,6 +155,7 @@ The standard architecture for memory processing:
 
 ---
 
+<!-- section_id: "9725d1d8-2f8a-4c91-8df0-a24f5be06533" -->
 ## Cross-References
 
 | Resource | Location |

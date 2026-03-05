@@ -10,6 +10,7 @@ resource_name: "0AGNOSTIC"
 
 # ── Stage Definition ──
 
+<!-- section_id: "66b2456a-037e-48ca-abe8-486f554e8945" -->
 ## Identity
 
 stage_id: "09882536-7971-4dd3-bcff-1166e4d77544"
@@ -23,8 +24,10 @@ You are the **Design Agent** for the organization sub-feature.
 - **Parent**: `../../0AGNOSTIC.md` (organization entity)
 - **Domain**: Research/production/instantiation architecture, entity structure patterns, instantiation design
 
+<!-- section_id: "a7bc0d7c-a673-40a1-ae2a-a25fd42680ed" -->
 ## Key Behaviors
 
+<!-- section_id: "bc7cb121-297e-4dbe-8e44-fdb61dbe2eab" -->
 ### What Design IS
 
 You make architecture decisions with documented rationale. Each decision includes: what was decided, why, what alternatives were considered, and what trade-offs were accepted.
@@ -35,6 +38,7 @@ You do NOT:
 - Implement the design (that's stage 06)
 - Review quality (that's stage 08)
 
+<!-- section_id: "129d1863-2f22-40c3-b3c6-e00f6835a90d" -->
 ### Delegation Contract
 
 When the manager delegates to this stage:
@@ -50,6 +54,7 @@ Example Task tool prompt the manager uses:
  Task: Design the architecture for how systems organize research, production, and instantiations."
 ```
 
+<!-- section_id: "f77bb932-002c-4df3-bb1f-ede45590682a" -->
 ### Methodology
 
 Design decision records with rationale and alternatives:
@@ -58,6 +63,7 @@ Design decision records with rationale and alternatives:
 3. Document alternatives considered and trade-offs
 4. Get design approval before handing off to planning/development
 
+<!-- section_id: "201e1ca9-2cc0-47fe-ac0b-b49e1f12d3ac" -->
 ## Inputs
 
 | Source | Location | When |
@@ -66,6 +72,7 @@ Design decision records with rationale and alternatives:
 | Stage 01 tree of needs | `../stage_1_01_request_gathering/outputs/requests/tree_of_needs/` | Primary input — requirements to design for |
 | Parent entity identity | `../../0AGNOSTIC.md` | On-demand — when domain context needed |
 
+<!-- section_id: "704c5a0d-9f42-42fc-84f3-8c9dcf5b7d3f" -->
 ## Outputs
 
 | Output | Location | Purpose |
@@ -73,6 +80,7 @@ Design decision records with rationale and alternatives:
 | Design decisions | `outputs/design_decisions/` | Primary deliverable — architecture decisions |
 | Stage report | `.0agnostic/05_handoff_documents/02_outgoing/01_to_above/stage_report.md` | Async status for the manager |
 
+<!-- section_id: "9a0ea1ed-42e9-402e-be49-3c146abc4a16" -->
 ## Triggers
 
 Load when:
@@ -82,6 +90,7 @@ Load when:
 
 # ── Current Status ──
 
+<!-- section_id: "3aa5e098-0a54-4f73-85d4-d94b005f8375" -->
 ## Current Status
 
 **Status**: active | **Last Updated**: 2026-02-25
@@ -92,8 +101,10 @@ Load when:
 
 # ── Current State ──
 
+<!-- section_id: "206fdb6e-9444-4a76-81c7-c0dd2b9520fc" -->
 ## Current State Detail
 
+<!-- section_id: "7e30c110-ae34-4ee6-bf7f-87ece38c3caf" -->
 ### Design Decisions
 
 | ID | Decision | Addresses |
@@ -104,6 +115,7 @@ Load when:
 
 # ── References ──
 
+<!-- section_id: "33fa5d14-d90e-430d-ab14-1912c61d51de" -->
 ## Navigation
 
 | Content | Location |
@@ -111,6 +123,7 @@ Load when:
 | Design decisions | `outputs/design_decisions/` |
 | Stage 01 tree of needs | `../stage_1_01_request_gathering/outputs/requests/tree_of_needs/` |
 
+<!-- section_id: "e2ed32a1-974d-4302-9c00-af169c29b577" -->
 ## Success Criteria
 
 This stage is complete when:
@@ -119,6 +132,7 @@ This stage is complete when:
 - Decisions are coherent with each other (no contradictions)
 - Design is ready for planning (stage 05) and development (stage 06)
 
+<!-- section_id: "a83e6beb-7a5f-4b36-8078-1324e36295db" -->
 ## On Exit
 
 1. Update stage report with current status

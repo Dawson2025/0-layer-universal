@@ -10,8 +10,10 @@ This directory contains documentation for Model Context Protocol (MCP) servers, 
 
 ---
 
+<!-- section_id: "5baaf07f-6e81-4dab-8ab3-db76a3d215a3" -->
 ## Documentation System Overview
 
+<!-- section_id: "56b49d0a-b525-444c-af0c-d4f35fd3672a" -->
 ### Purpose
 
 This system provides:
@@ -20,6 +22,7 @@ This system provides:
 3. **Secrets Template Pattern** - Share the repo safely while keeping secrets local
 4. **Workflow Protocols** - Step-by-step guides for common tasks
 
+<!-- section_id: "8fe47677-832a-4767-8c30-aa9b9ac7989a" -->
 ### Directory Structure
 
 ```
@@ -49,12 +52,15 @@ This system provides:
 
 ---
 
+<!-- section_id: "bc3e219c-0ee5-4962-8a98-51397c24da15" -->
 ## Secrets Template Pattern
 
+<!-- section_id: "9eccbf05-22ef-4625-a406-1d18bf58d54a" -->
 ### Why This Pattern?
 
 Allows sharing the repository without exposing API keys, passwords, or other secrets.
 
+<!-- section_id: "1a68ae12-74e2-4bb7-a7d5-e6f1d7c043f6" -->
 ### How It Works
 
 | File | Committed to Git? | Contains |
@@ -63,6 +69,7 @@ Allows sharing the repository without exposing API keys, passwords, or other sec
 | `config.local.json` | ❌ **No** | Actual API keys (gitignored) |
 | `.env` files | ❌ **No** | Environment variables (gitignored) |
 
+<!-- section_id: "b369d0fc-885b-4977-9f91-736b42868be4" -->
 ### Setup Flow for New Users
 
 1. Navigate to `_shared/`
@@ -70,6 +77,7 @@ Allows sharing the repository without exposing API keys, passwords, or other sec
 3. Replace `${VAR}` placeholders with real API keys
 4. Alternatively, set environment variables that the template references
 
+<!-- section_id: "126a0c4f-2c4e-499c-b8cd-66c4a8239b83" -->
 ### Example Template
 
 ```json
@@ -84,12 +92,14 @@ Allows sharing the repository without exposing API keys, passwords, or other sec
 }
 ```
 
+<!-- section_id: "d15608ad-344f-487a-a03a-c6f30d4998b3" -->
 ### Getting API Keys
 
 See `_shared/API_KEYS_SETUP.md` for instructions on obtaining keys for each service.
 
 ---
 
+<!-- section_id: "1d08339b-3565-442a-aa30-74931399612a" -->
 ## Documentation Standard Per MCP Server
 
 Each MCP server directory should contain:
@@ -100,6 +110,7 @@ Each MCP server directory should contain:
 | `TROUBLESHOOTING.md` | ✅ Yes | Common errors, solutions, diagnostic commands |
 | `workflows/` | Recommended | Step-by-step protocols for specific tasks |
 
+<!-- section_id: "77331254-23b2-4c20-86c5-6c8f76bbf963" -->
 ### README.md Template
 
 ```markdown
@@ -121,6 +132,7 @@ List of tools/features provided.
 Common usage patterns.
 ```
 
+<!-- section_id: "a69b7a63-89c2-4075-927a-330a3896791a" -->
 ### TROUBLESHOOTING.md Template
 
 ```markdown
@@ -139,8 +151,10 @@ Commands to help debug issues.
 
 ---
 
+<!-- section_id: "9949abae-d481-413b-8a1d-6c7260ad80b4" -->
 ## Available MCP Servers
 
+<!-- section_id: "3bbb04c3-a0af-4369-814f-0334dcc78fdb" -->
 ### Browser Automation
 | Server | Description | Best For |
 |--------|-------------|----------|
@@ -149,12 +163,14 @@ Commands to help debug issues.
 | `chrome-devtools-mcp` | Chrome DevTools Protocol | Chrome-specific debugging |
 | `claude_in_chrome` | Claude browser extension | Chrome integration |
 
+<!-- section_id: "d7a890d7-769c-4342-8b99-6746038e5754" -->
 ### Search & Knowledge
 | Server | Description | API Key Required |
 |--------|-------------|------------------|
 | `tavily-mcp` | Web search API | Yes - TAVILY_API_KEY |
 | `context7-mcp` | Library documentation | Yes - CONTEXT7_API_KEY |
 
+<!-- section_id: "1b05c06c-87eb-4709-ba23-d9dda800b447" -->
 ### Core MCP (`_mcp_core/`)
 Cross-server issues:
 - Tool exposure issues (tools not showing in AI apps)
@@ -166,6 +182,7 @@ Cross-server issues:
 
 ---
 
+<!-- section_id: "a844a5ec-41fb-4d6f-8e9e-3298f19dcee4" -->
 ## MCP Setup Checklist
 
 For each MCP server:
@@ -179,17 +196,21 @@ For each MCP server:
 
 ---
 
+<!-- section_id: "87890597-f9ec-4280-8aeb-eef7465f2597" -->
 ## Platform-Specific Notes
 
+<!-- section_id: "0a4ac2fc-17c2-466b-9a82-f64e20c1d740" -->
 ### Linux/Ubuntu
 - Playwright MCP tools may not work in Cursor IDE (known bug)
 - Use browser-mcp instead for Linux environments
 - WSLg may be required for headed browser automation
 
+<!-- section_id: "f9fd2129-ff32-4cfb-9ccb-a559139ac97b" -->
 ### macOS
 - Most MCP servers work out of the box
 - May need to allow browser automation in System Preferences
 
+<!-- section_id: "059f97aa-c359-4360-963c-5d980c63e4dc" -->
 ### Windows/WSL
 - Path translation between Windows and Linux paths
 - NVM requires bash wrapper in MCP config
@@ -197,8 +218,10 @@ For each MCP server:
 
 ---
 
+<!-- section_id: "daba4cd1-3aab-4134-aa04-2cd27d6d439d" -->
 ## Maintenance
 
+<!-- section_id: "43d233c0-b1eb-4d8b-9c54-6f746aea2f28" -->
 ### When Adding a New MCP Server
 
 1. Create directory: `<server-name>/`
@@ -208,6 +231,7 @@ For each MCP server:
 5. Update this README's server list
 6. If server needs API keys, update `_shared/config.template.json`
 
+<!-- section_id: "f3187362-59d8-43ed-8d0c-01e354119980" -->
 ### When Making Structural Changes
 
 See the **Structural Change Checklist** in:
@@ -221,6 +245,7 @@ Key files to update:
 
 ---
 
+<!-- section_id: "bfdd65d6-b3f8-491e-83e1-234e1aa47a0e" -->
 ## Quick Reference
 
 | Need | Go To |

@@ -9,6 +9,7 @@ resource_name: "entity_creation_flow"
 
 ---
 
+<!-- section_id: "bec0d3e5-7ea3-4471-b2ca-9e3c045b16d3" -->
 ## Current Flow: Entity Creation
 
 ```
@@ -105,6 +106,7 @@ resource_name: "entity_creation_flow"
 
 ---
 
+<!-- section_id: "da5ead62-7207-468d-8237-f8a32b6a014c" -->
 ## Context Chain for Entity Creation
 
 ```
@@ -152,6 +154,7 @@ resource_name: "entity_creation_flow"
 
 ---
 
+<!-- section_id: "cd252406-adbc-4030-8135-227eca126a80" -->
 ## What Could Go Wrong (Current State)
 
 | Problem | Cause | Result |
@@ -163,6 +166,7 @@ resource_name: "entity_creation_flow"
 
 ---
 
+<!-- section_id: "d6eed149-85f8-401a-906b-5def2ffe4aab" -->
 ## Files Involved
 
 | Order | File | What Agent Learns |

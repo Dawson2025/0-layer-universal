@@ -11,14 +11,17 @@ resource_name: "test_design_06_source_to_avenue"
 
 ---
 
+<!-- section_id: "518e83ef-9412-4b76-b8f7-6d56f77300cf" -->
 ## What We're Testing
 
 The .0agnostic/ numbering encodes information flow: 01-05 are content producers, 06 is delivery, 07+ is environment. Avenues are ordered by comprehensiveness. Authority flows one direction: source → avenues, never reverse.
 
 ---
 
+<!-- section_id: "110d1eb8-6019-4230-af58-f139f1bb0fcc" -->
 ## Test Cases
 
+<!-- section_id: "55dff62b-955d-4ddf-9c75-a208a6b8284b" -->
 ### TC-06-01: .0agnostic/ numbering consistency
 
 **Steps**:
@@ -32,6 +35,7 @@ The .0agnostic/ numbering encodes information flow: 01-05 are content producers,
 **Expected**: Numbering is consistent across all entities
 **Type**: Structural
 
+<!-- section_id: "1dd1d4bc-f2f8-4a60-a4af-e373bab05ba6" -->
 ### TC-06-02: Source dirs (01-05) contain authored content
 
 **Steps**:
@@ -45,6 +49,7 @@ The .0agnostic/ numbering encodes information flow: 01-05 are content producers,
 **Expected**: At least 3 of 5 source dirs have real content (for an active entity)
 **Type**: Structural
 
+<!-- section_id: "34d5bf75-8a9a-4f0d-8696-6a715e90eb38" -->
 ### TC-06-03: Delivery dir (06) contains generated/organized content
 
 **Steps**:
@@ -57,6 +62,7 @@ The .0agnostic/ numbering encodes information flow: 01-05 are content producers,
 **Expected**: Avenue web follows documented structure and numbering
 **Type**: Structural
 
+<!-- section_id: "8c4502b2-26a3-48a2-8d5c-4f82f86c4b42" -->
 ### TC-06-04: Avenue comprehensiveness ordering
 
 **Steps**:
@@ -75,6 +81,7 @@ The .0agnostic/ numbering encodes information flow: 01-05 are content producers,
 **Expected**: Avenue numbering matches documented comprehensiveness order
 **Type**: Structural
 
+<!-- section_id: "9c748d04-54f2-4dac-81d7-6ae49d70e657" -->
 ### TC-06-05: Authority direction — 06 doesn't contain source content
 
 **Steps**:
@@ -86,6 +93,7 @@ The .0agnostic/ numbering encodes information flow: 01-05 are content producers,
 **Note**: Heuristic test — looks for "auto-generated" markers and absence of original authoring patterns
 **Type**: Structural (heuristic)
 
+<!-- section_id: "1dbb1ea8-9ac4-45db-a46a-93f460ba9ab0" -->
 ### TC-06-06: Context loading order — tool file loaded before .0agnostic/
 
 **Steps**:
@@ -97,6 +105,7 @@ The .0agnostic/ numbering encodes information flow: 01-05 are content producers,
 **Expected**: CLAUDE.md is lean and pointer-based, not a dump of .0agnostic/ content
 **Type**: Structural
 
+<!-- section_id: "5fa94620-45bb-4f74-8564-06dcafd552d6" -->
 ### TC-06-07: Three zones are non-overlapping
 
 **Steps**:
@@ -112,6 +121,7 @@ The .0agnostic/ numbering encodes information flow: 01-05 are content producers,
 
 ---
 
+<!-- section_id: "d3243bde-3fb9-4ea9-8ca8-659458d349ea" -->
 ## Coverage Gap Analysis
 
 | Design Concept | Test Case | Status |

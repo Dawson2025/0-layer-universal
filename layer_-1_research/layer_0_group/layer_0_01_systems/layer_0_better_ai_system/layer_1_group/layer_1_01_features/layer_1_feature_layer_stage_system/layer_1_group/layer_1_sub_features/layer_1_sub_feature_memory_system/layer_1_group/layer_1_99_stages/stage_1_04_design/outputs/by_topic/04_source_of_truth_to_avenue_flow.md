@@ -7,10 +7,12 @@ resource_name: "04_source_of_truth_to_avenue_flow"
 
 > **This document is a pointer.** The canonical source of truth lives in the context chain system (Layer 2).
 
+<!-- section_id: "f4368fd6-2dca-4708-821b-78013c01a4b0" -->
 ## Canonical Source
 
 **Full design**: `layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_context_chain_system/layer_2_group/layer_2_99_stages/stage_2_04_design/outputs/by_topic/06_source_of_truth_to_avenue_flow.md`
 
+<!-- section_id: "79909a62-f7a7-4753-bf57-e9a84a40a021" -->
 ## Quick Summary
 
 The `.0agnostic/` numbering encodes information flow through three zones:

@@ -12,6 +12,7 @@ resource_name: "README"
 
 ---
 
+<!-- section_id: "05251798-e857-4081-90aa-80ab60337b37" -->
 ## Definition
 
 A two-layer importance system:
@@ -22,6 +23,7 @@ Combined with operation benchmarks, this produces project-specific weighted scor
 
 ---
 
+<!-- section_id: "e886c0b5-74a8-43e0-a389-6ea783dcbba7" -->
 ## Why This Matters
 
 - A HighThroughputAPI values speed and scalability; a FinancialLedger values transactions and consistency
@@ -32,6 +34,7 @@ Combined with operation benchmarks, this produces project-specific weighted scor
 
 ---
 
+<!-- section_id: "975a0cf8-54bd-4105-81b2-aaeb3709231e" -->
 ## Acceptance Criteria
 
 - [ ] 8 importance dimensions are defined with units and methodology
@@ -43,16 +46,19 @@ Combined with operation benchmarks, this produces project-specific weighted scor
 
 ---
 
+<!-- section_id: "1cfe41be-7250-4941-a1ed-ca84b9fb39fa" -->
 ## Requirements
 
 See [requirements/](./requirements/) for individual requirements.
 
+<!-- section_id: "0e6aa51a-82f5-4232-a072-1be7feda3c5a" -->
 ## User Stories
 
 See [user_stories/](./user_stories/) for individual stories.
 
 ---
 
+<!-- section_id: "4ce1792c-43e7-46b1-be8b-77095863fc71" -->
 ## Research References
 
 - `proposals/04_design/v5_comprehensive_operations_with_customizable_importance.md` -- importance framework

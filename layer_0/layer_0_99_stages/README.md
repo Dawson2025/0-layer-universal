@@ -10,13 +10,16 @@ resource_name: "README"
 
 ---
 
+<!-- section_id: "5567ada3-a5d8-4ab9-a0aa-d1dada1dabef" -->
 ## Quick Reference for AI Agents
 
+<!-- section_id: "b82e78cb-5cf8-4edd-acb9-19693fb5a76b" -->
 ### Before Creating ANY File
 1. Read `CROSS_OS_COMPATIBILITY_RULES.md` (in `../layer_0_04_sub_layers/sub_layer_0_02_rules/`)
 2. **NEVER** use: `* ? < > : " | \ /` in filenames
 3. Use lowercase with underscores: `my_file_name.md`
 
+<!-- section_id: "980c658e-4fce-46e6-b01b-159a6da2a326" -->
 ### When Working on Tasks
 1. Check `hand_off_documents/incoming.json` in the current stage
 2. Read handoff first (short), then `outputs/` files if needed
@@ -24,6 +27,7 @@ resource_name: "README"
 
 ---
 
+<!-- section_id: "07b8bbb3-091a-4d4e-b09c-89b52518c478" -->
 ## Core Documents
 
 | Document | Location | Purpose |
@@ -35,6 +39,7 @@ resource_name: "README"
 
 ---
 
+<!-- section_id: "53ed2ec4-ef4d-469e-b1c1-1850e3daee8b" -->
 ## Staging System Overview
 
 ```
@@ -60,12 +65,14 @@ layer_0_99_stages/
 └── stage_0_11_archives/
 ```
 
+<!-- section_id: "5ea24816-a836-4e76-bb25-a06a536b8540" -->
 ### AI Agent Entry Protocol
 1. Read `hand_off_documents/incoming.json` (status summary)
 2. Read `ai_agent_system/` (what to do)
 3. Read `outputs/` files only if details needed
 4. Update `hand_off_documents/outgoing.json` before stopping
 
+<!-- section_id: "69df0187-aeeb-4720-b2ac-2e57ffcdbd7c" -->
 ### Token-Efficient Workflow
 1. Read `hand_off_documents/incoming.json` (~500 tokens)
 2. Only read `outputs/` files if details needed
@@ -73,6 +80,7 @@ layer_0_99_stages/
 
 ---
 
+<!-- section_id: "3779de6e-491a-44e3-aa28-b37903c66895" -->
 ## Cross-OS Rules Summary
 
 | Rule | Reason |
@@ -85,6 +93,7 @@ layer_0_99_stages/
 
 ---
 
+<!-- section_id: "0aa0cabe-6bca-4e98-bcb0-bb58c23779b8" -->
 ## For New Projects
 
 1. Create `stages/` folder structure
@@ -94,6 +103,7 @@ layer_0_99_stages/
 
 ---
 
+<!-- section_id: "57ece0bc-0aff-4b4e-88bc-7748871d0936" -->
 ## Current Active Tasks
 
 Check `status.json` for the current stage and active tasks.

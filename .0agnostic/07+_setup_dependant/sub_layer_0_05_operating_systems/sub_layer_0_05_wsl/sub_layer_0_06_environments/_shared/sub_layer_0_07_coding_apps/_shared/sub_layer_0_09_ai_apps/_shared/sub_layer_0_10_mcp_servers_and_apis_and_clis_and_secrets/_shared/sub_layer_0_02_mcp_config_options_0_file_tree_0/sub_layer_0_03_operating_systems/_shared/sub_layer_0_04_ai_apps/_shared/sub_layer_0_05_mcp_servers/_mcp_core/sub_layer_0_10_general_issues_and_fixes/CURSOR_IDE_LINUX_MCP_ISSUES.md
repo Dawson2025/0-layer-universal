@@ -9,12 +9,15 @@ resource_name: "CURSOR_IDE_LINUX_MCP_ISSUES"
 **Location**: Universal Layer → Coding App Setup  
 **Status**: Critical Cursor IDE-specific limitations on Linux
 
+<!-- section_id: "d546730d-3272-4b68-8a45-6869f7fabad1" -->
 ## Overview
 
 This document outlines Linux/Ubuntu-specific issues with Cursor IDE's MCP (Model Context Protocol) integration. These issues affect how MCP servers are exposed to AI agents within Cursor IDE.
 
+<!-- section_id: "0b211647-0694-4113-827e-7ed09154d700" -->
 ## Critical Cursor IDE Issues on Linux
 
+<!-- section_id: "5308134e-2b82-4e04-af01-32e721eb03c3" -->
 ### 1. MCP Tool Exposure Limitation
 
 **Problem**: Cursor IDE on Linux does not expose Playwright MCP tools to AI agents, even when the MCP server successfully connects and reports tools.
@@ -40,6 +43,7 @@ This document outlines Linux/Ubuntu-specific issues with Cursor IDE's MCP (Model
 - **Native Linux**: Use `mcp_browser_*` tools from `@agent-infra/mcp-server-browser` (if available) or `mcp_cursor-browser-extension_*` tools
 - **WSL**: Use `mcp_cursor-browser-extension_*` tools (both Playwright and Browser MCP tools are not exposed in WSL)
 
+<!-- section_id: "da10f030-c34a-4514-a6af-f0c3ef04e0e8" -->
 ### 2. Browser Path Configuration
 
 **Problem**: Cursor IDE's browser automation settings may not work correctly on Linux.
@@ -54,6 +58,7 @@ This document outlines Linux/Ubuntu-specific issues with Cursor IDE's MCP (Model
 2. Set Connection Type to "Custom Executable Path"
 3. Enter explicit browser path: `/usr/bin/google-chrome` or Playwright Chromium path
 
+<!-- section_id: "4c5ebc0c-7090-4e0f-bb4e-047ebb82ab3c" -->
 ### 3. MCP Configuration File Location
 
 **Location**: `~/.cursor/mcp.json`
@@ -88,23 +93,30 @@ This document outlines Linux/Ubuntu-specific issues with Cursor IDE's MCP (Model
 }
 ```
 
+<!-- section_id: "01ae4373-d650-4dca-8028-319839218a23" -->
 ## Available vs. Unavailable Tools
 
+<!-- section_id: "cec75535-6d47-4587-bff0-fccb228c3cb4" -->
 ### ✅ Available on Linux
 - `mcp_cursor-browser-extension_*` (18 tools) - From Cursor's browser extension (may have browser detection issues)
 
+<!-- section_id: "4ca5a4d5-a8a5-4dd7-972e-aa5758377e2a" -->
 ### ⚠️ May Be Available on Linux (Needs Verification)
 - `mcp_browser_*` (21 tools) - From `@agent-infra/mcp-server-browser` (documentation claims should work, but needs testing)
 
+<!-- section_id: "d38cc9c4-99dc-4f99-8086-895a6ef5f92a" -->
 ### ❌ Not Available on Linux
 - `mcp_playwright_*` (22 tools) - Server connects but tools not exposed to agents
 
+<!-- section_id: "dc657c75-55f7-4444-9027-3a4cfe34e84c" -->
 ### ❌ Not Available on WSL (2025-12-05 Update)
 - `mcp_playwright_*` (22 tools) - Server connects but tools not exposed to agents
 - `mcp_browser_*` (21 tools) - **NEW FINDING**: Server runs but tools NOT exposed to agents (more severe than native Linux)
 
+<!-- section_id: "19604de8-19bf-462a-a727-f0f0d71880af" -->
 ## Troubleshooting
 
+<!-- section_id: "f35858c7-50d4-4e28-a87e-857ec3905cb9" -->
 ### Check MCP Server Status
 
 ```bash
@@ -115,6 +127,7 @@ ps aux | grep -E "playwright|mcp" | grep -v grep
 find ~/.config/Cursor/logs -name "*playwright*" -o -name "*mcp*" | head -5
 ```
 
+<!-- section_id: "96004efe-ddb9-4d23-9879-d60654f8a03c" -->
 ### Verify Configuration
 
 ```bash
@@ -125,6 +138,7 @@ cat ~/.cursor/mcp.json | jq '.'
 ls -la ~/.cache/ms-playwright/chromium-*/chrome-linux64/chrome
 ```
 
+<!-- section_id: "7b8b7b04-39a0-43c5-ad50-f9939e41684c" -->
 ### Check Tool Availability
 
 In Cursor IDE:
@@ -133,6 +147,7 @@ In Cursor IDE:
 3. Verify which tools are listed as available
 4. Note: Playwright tools may show as "22 tools" but not be accessible to agents
 
+<!-- section_id: "94e2e06c-8b93-4c37-8539-4fa286e671c2" -->
 ## Recommendations for Linux Users
 
 1. **Use Cursor Browser Extension Tools** (Most Reliable):
@@ -166,12 +181,14 @@ In Cursor IDE:
    - Verify tools are accessible before assuming they work
    - Check MCP logs for connection status
 
+<!-- section_id: "d5addab7-8460-4592-b580-2dfcf1496bfd" -->
 ## Related Documentation
 
 - **OS-Level Issues**: `layer_0/0.02_sub_layers/sub_layer_0_05_os_setup/trickle_down_0.5_setup/0_instruction_docs/LINUX_UBUNTU_MCP_ISSUES.md`
 - **Browser MCP Setup Experience**: `../../browser-mcp/BROWSER_MCP_SETUP_EXPERIENCE.md`
 - **AI Apps Setup**: `layer_0/0.02_sub_layers/sub_layer_0_09_ai_apps_tools_setup/`
 
+<!-- section_id: "dfa91f24-2164-4a1d-b7da-199fc4e18df3" -->
 ## References
 
 - Cursor IDE Documentation: https://cursor.com/docs
@@ -185,8 +202,10 @@ In Cursor IDE:
 
 ---
 
+<!-- section_id: "717a9720-a628-4460-adb5-6322ad82c0a4" -->
 ## WSL-Specific Findings (2025-12-05)
 
+<!-- section_id: "8a23f7d7-e1e6-4f30-bb08-d0e2ea7d7328" -->
 ### Critical WSL Discovery
 
 **Finding**: In WSL2, BOTH Playwright AND Browser MCP tools are NOT exposed to AI agents, even though:

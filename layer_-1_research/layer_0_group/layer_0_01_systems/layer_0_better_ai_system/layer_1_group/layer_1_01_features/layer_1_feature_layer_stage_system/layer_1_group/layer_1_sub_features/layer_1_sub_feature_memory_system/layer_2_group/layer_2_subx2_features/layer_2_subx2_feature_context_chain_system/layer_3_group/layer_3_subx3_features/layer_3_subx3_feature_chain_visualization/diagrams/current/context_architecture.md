@@ -10,6 +10,7 @@ resource_name: "context_architecture"
 
 ---
 
+<!-- section_id: "56e9dc60-cc41-464a-bfc5-5fea83cf47fc" -->
 ## Overview
 
 ```
@@ -58,6 +59,7 @@ resource_name: "context_architecture"
 
 ---
 
+<!-- section_id: "49db55de-7355-4bf7-aaf6-3d0485f4bd3f" -->
 ## Context Sources
 
 ```
@@ -126,6 +128,7 @@ resource_name: "context_architecture"
 
 ---
 
+<!-- section_id: "bb1fbf6e-7b73-4370-b8e6-f17e000621f3" -->
 ## Context by Category
 
 ```
@@ -164,6 +167,7 @@ resource_name: "context_architecture"
 
 ---
 
+<!-- section_id: "1b99a74b-167a-409b-a7e2-1f0df4ecc4f0" -->
 ## File Type Reference
 
 | File | Type | Purpose | When Loaded |

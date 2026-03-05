@@ -8,6 +8,7 @@ resource_name: "README"
 
 Place reference documents, templates, and examples here.
 
+<!-- section_id: "ef734d11-0e87-458c-919f-8629f4f92872" -->
 ## Suggested Contents
 - Templates for 05_design outputs
 - Examples of good 05_design work

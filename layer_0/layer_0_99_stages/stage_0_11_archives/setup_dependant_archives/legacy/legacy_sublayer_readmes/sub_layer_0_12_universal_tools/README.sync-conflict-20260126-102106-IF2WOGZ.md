@@ -10,6 +10,7 @@ resource_name: "README.sync-conflict-20260126-102106-IF2WOGZ"
 
 This sublayer has been consolidated into the unified setup sublayer for better organization and discoverability.
 
+<!-- section_id: "cabd7845-5976-411b-b397-0e53a4a696d4" -->
 ## Migration Path
 
 All setup documentation is now located in:
@@ -23,6 +24,7 @@ Navigate the file tree by your configuration:
 3. Choose your coding app: `0.07_coding_apps/<app>/`
 4. Continue through all levels to find your specific setup documentation
 
+<!-- section_id: "6040d4d0-d651-4510-9928-46787daf6121" -->
 ## Why Consolidate?
 
 - **Single entry point** for all setup docs
@@ -30,6 +32,7 @@ Navigate the file tree by your configuration:
 - **Cross-cutting organization** with `_shared/` folders at every level
 - **Easier maintenance** - one structure instead of 10
 
+<!-- section_id: "ee881283-6a1e-4c3b-927f-604d55cc716d" -->
 ## Legacy Content Below
 
 The original content of this sublayer is preserved below for reference, but should not be updated. All new setup documentation should go into the consolidated sublayer.
@@ -40,10 +43,12 @@ The original content of this sublayer is preserved below for reference, but shou
 
 **Purpose**: Cross-project scripts, utilities, and universal tools.
 
+<!-- section_id: "7d4b5105-2b4b-47f4-9ea3-3229e31e2826" -->
 ## Overview
 
 This sublayer contains universal tools, scripts, and utilities that can be used across multiple projects. This includes browser automation tools, Claude Code configuration, AI development frameworks, and other cross-cutting utilities.
 
+<!-- section_id: "a5a664bb-e80a-4273-b095-b49e191bd0cb" -->
 ## Structure
 
 ```
@@ -57,6 +62,7 @@ sub_layer_0_12_universal_tools/
         └── ...
 ```
 
+<!-- section_id: "e8c3b1e6-53d2-42f5-8393-8e74687a71d5" -->
 ## Relationship to Other Sublayers
 
 - **Depends on**:
@@ -64,12 +70,14 @@ sub_layer_0_12_universal_tools/
   - `sub_layer_0_10_mcp_servers_and_tools_setup` - Some tools may use MCP servers
 - **Provides to**: All layers that need universal utilities and scripts
 
+<!-- section_id: "10bc6330-4c2e-4269-9972-7f1276bc1cfc" -->
 ## Tool Context Files and OS Variants
 
 Universal tools integrate with the **OS Variant and Quartet Pattern** defined in the Ideal AI Manager Hierarchy System:
 
 - **Normative Specification**: `/home/dawson/dawson-workspace/code/0_layer_universal/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/os_and_quartets.md`
 
+<!-- section_id: "88f38c50-326f-4310-8f9e-b1ed0b8cac5b" -->
 ### Quartet Pattern Overview
 
 Each layer/stage location can have OS-specific context files organized as **quartets** (or N-tuples):
@@ -86,6 +94,7 @@ These files are organized under `os/<os-id>/` directories where `<os-id>` can be
 - `macos` - macOS
 - Custom variants as needed
 
+<!-- section_id: "6c2c2456-123c-48c7-b2b1-8493c71203d9" -->
 ### Implementation Locations
 
 OS variant context files have been implemented at:
@@ -94,6 +103,7 @@ OS variant context files have been implemented at:
 - `layer_2_features/2.99_stages/stage_2.01_instructions/ai_agent_system/os/`
 - `layer_3_components/3.99_stages/stage_3.01_instructions/ai_agent_system/os/`
 
+<!-- section_id: "827b3112-9c11-457a-9520-2469b2834311" -->
 ### Tool-Specific Context
 
 Universal tools should be aware of:
@@ -102,27 +112,32 @@ Universal tools should be aware of:
 - **Tool specialization**: Each tool reads its specific context file
 - **Extensibility**: New tools add their own context file pattern to the quartet/N-tuple
 
+<!-- section_id: "7526f3b3-8025-4a33-a52a-ef80bfde40f1" -->
 ## Key Documentation
 
 - **[Browser Automation](trickle_down_0.75_universal_tools/0_instruction_docs/browser-automation/README.md)**: Browser automation tools and guides
 - **[Claude Code Config](trickle_down_0.75_universal_tools/0_instruction_docs/claude-code-config/README.md)**: Claude Code CLI configuration
 - **[AI Development Frameworks](trickle_down_0.75_universal_tools/0_instruction_docs/ai-development-frameworks/README.md)**: AI coding assistant frameworks
 
+<!-- section_id: "7d0267e2-4684-4e1f-9316-94d1087a46f1" -->
 ## AI Manager Hierarchy Integration
 
 This sub-layer integrates with the AI Manager Hierarchy System for orchestration and CLI patterns:
 
+<!-- section_id: "8b1237fd-cb1e-4ca7-8452-2d28c352af2e" -->
 ### Framework Orchestration
 For guidance on integrating multi-agent frameworks (LangGraph, AutoGen, CrewAI, MetaGPT) with the hierarchy, see:
 - **[Framework Orchestration Overview](../sub_layer_0_13_universal_protocols/framework_orchestration/0_instruction_docs/framework_orchestration_overview.md)**: When to use framework-based orchestration vs. simple handoff coordination
 - **Existing Framework Docs**: `trickle_down_0.75_universal_tools/0_instruction_docs/ai-development-frameworks/` (complementary guidance on Spec Kit, BMAD Method, and AI coding assistants)
 
+<!-- section_id: "3f1d44cb-024b-4b87-9a13-779d67cfa6c2" -->
 ### CLI Recursion Patterns
 For patterns on using CLI recursion to spawn deep agent hierarchies, see:
 - **[CLI Recursion Syntax](../sub_layer_0_13_universal_protocols/cli_recursion/0_instruction_docs/cli_recursion_syntax.md)**: Concrete examples of managers spawning workers via Claude Code, Codex CLI, and Gemini CLI
 - OS-adapted examples for WSL/Ubuntu
 - Tool selection, parallel execution, and error handling patterns
 
+<!-- section_id: "ddd7a2b5-7a78-4608-bb38-5ab710c3e36d" -->
 ## ⚠️ Linux/Ubuntu-Specific Tool Access Issues
 
 **CRITICAL**: Universal tools that depend on MCP have Linux-specific limitations. Read:
@@ -140,6 +155,7 @@ For patterns on using CLI recursion to spawn deep agent hierarchies, see:
 - **Cursor IDE Issues**: `../sub_layer_0_07_coding_app_setup/trickle_down_0.5_setup/0_instruction_docs/CURSOR_IDE_LINUX_MCP_ISSUES.md`
 - **MCP Setup**: `../sub_layer_0_10_mcp_servers_and_tools_setup/`
 
+<!-- section_id: "be4a1fc0-07b1-4e95-9441-75493d17a0b4" -->
 ## Notes
 
 - MCP-related tools have been moved to `sub_layer_0_10_mcp_servers_and_tools_setup`

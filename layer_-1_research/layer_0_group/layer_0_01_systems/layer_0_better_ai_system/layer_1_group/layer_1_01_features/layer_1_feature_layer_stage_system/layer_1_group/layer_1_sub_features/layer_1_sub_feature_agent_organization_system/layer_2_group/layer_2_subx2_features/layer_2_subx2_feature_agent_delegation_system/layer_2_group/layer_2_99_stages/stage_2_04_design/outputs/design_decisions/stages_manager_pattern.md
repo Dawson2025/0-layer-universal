@@ -11,6 +11,7 @@ resource_name: "stages_manager_pattern"
 
 ---
 
+<!-- section_id: "534d21ff-c50c-4546-97f4-9f2eede23c20" -->
 ## Problem Statement
 
 Currently, entity managers directly delegate to stage agents and carry all stage coordination knowledge:
@@ -33,10 +34,12 @@ The `layer_N_99_stages/` directory exists at every entity but is a thin containe
 
 ---
 
+<!-- section_id: "7d0d8540-f6a5-4780-a748-ad91a9517062" -->
 ## Proposed Solution: Stages Manager
 
 Upgrade `layer_N_99_stages/` from a thin container to a **proper stages manager** with its own `.0agnostic/`, `.1merge/`, and full `0AGNOSTIC.md` — the standard agnostic system that every managed entity uses.
 
+<!-- section_id: "de721170-ac9e-43d1-9f03-aa32c06c9eca" -->
 ### New architecture
 
 ```
@@ -71,6 +74,7 @@ Entity Manager (entity root 0AGNOSTIC.md)
      └──▶ ...
 ```
 
+<!-- section_id: "18a61b87-7318-48fb-82f6-86bfa5a1919b" -->
 ### What the entity manager loses
 
 These sections move from entity 0AGNOSTIC.md to stages manager 0AGNOSTIC.md:
@@ -82,6 +86,7 @@ These sections move from entity 0AGNOSTIC.md to stages manager 0AGNOSTIC.md:
 | Stage flow diagram | Entity 0AGNOSTIC.md | Stages Manager 0AGNOSTIC.md |
 | "How Stages Connect" | Entity 0INDEX.md | Stages Manager (owns this) |
 
+<!-- section_id: "6bda6af8-fc9b-4794-be15-0683fd342cda" -->
 ### What the entity manager keeps
 
 | Concern | Why |
@@ -92,6 +97,7 @@ These sections move from entity 0AGNOSTIC.md to stages manager 0AGNOSTIC.md:
 | Entity identity, scope, triggers | Entity-level concern |
 | Navigation table pointing to stages manager | Delegation pointer |
 
+<!-- section_id: "139d77fc-25ed-46d3-985c-ce2c67d2e80e" -->
 ### What the stages manager gains
 
 | Content | Purpose |
@@ -105,8 +111,10 @@ These sections move from entity 0AGNOSTIC.md to stages manager 0AGNOSTIC.md:
 
 ---
 
+<!-- section_id: "e619d004-072e-46fc-8f52-421a22a77d61" -->
 ## Design Constraints
 
+<!-- section_id: "2f0655ba-08f7-46c9-b917-3d31cb9fa041" -->
 ### 1. Full agnostic system — proper knowledge management
 
 The stages manager gets the standard agnostic infrastructure because its coordination knowledge is real domain knowledge that deserves structured access:
@@ -184,6 +192,7 @@ Without `.0agnostic/`, this knowledge has nowhere structured to live — it'd be
 - Its own children (the stages ARE what it manages, not children entities)
 - A `layer_N+1_group/` directory
 
+<!-- section_id: "6a30c8b6-144d-479f-9536-5dd6527cacbd" -->
 ### 2. Zero extra delegation hops for simple tasks
 
 For simple cases ("go work on stage 06"), the entity manager can still directly delegate to a stage agent. The stages manager is consulted when:
@@ -192,6 +201,7 @@ For simple cases ("go work on stage 06"), the entity manager can still directly 
 - Consolidating stage reports
 - Resolving inter-stage dependencies
 
+<!-- section_id: "17ea7493-46c0-433c-9c7b-29d03bc7eb8c" -->
 ### 3. Backward compatible
 
 Existing entities continue to work. The upgrade is:
@@ -205,6 +215,7 @@ Existing entities continue to work. The upgrade is:
 8. Run agnostic-sync.sh to regenerate CLAUDE.md, AGENTS.md, GEMINI.md, OPENAI.md
 9. The existing orchestrator `.gab.jsonld` already defines the modes
 
+<!-- section_id: "889df664-b165-4bca-8586-277d63312cf7" -->
 ### 4. Optional per entity
 
 Small entities with 1-2 active stages don't need this. The pattern applies when:
@@ -214,8 +225,10 @@ Small entities with 1-2 active stages don't need this. The pattern applies when:
 
 ---
 
+<!-- section_id: "717185d6-8df6-4d10-b578-eb1f6a64557a" -->
 ## Delegation Flow Examples
 
+<!-- section_id: "54c5063a-6b82-403a-808f-d53fcfb6de85" -->
 ### Example 1: "What should we work on next?"
 
 **Before (current)**:
@@ -230,6 +243,7 @@ User → Entity Manager → asks Stages Manager "what's the next priority?"
 Entity Manager → approves → Stages Manager spawns stage agent
 ```
 
+<!-- section_id: "8a0d89b3-6010-44a8-8f27-007e7f24a7c0" -->
 ### Example 2: "Stage 04 design is done, transition to planning"
 
 **Before (current)**:
@@ -246,6 +260,7 @@ Stages Manager → detects 04 completion → checks dependency graph →
   → notifies Entity Manager via stages_report.md update
 ```
 
+<!-- section_id: "21862b59-12cb-4a07-8e04-81ce89ee0661" -->
 ### Example 3: "Run testing and criticism in parallel"
 
 **Before**: Entity manager must know that 07 and 08 can run concurrently.
@@ -253,6 +268,7 @@ Stages Manager → detects 04 completion → checks dependency graph →
 
 ---
 
+<!-- section_id: "438aa9d5-664c-48ff-be38-25fcb15bb7d2" -->
 ## Relationship to Existing Artifacts
 
 | Artifact | Current Role | New Role |
@@ -270,8 +286,10 @@ Stages Manager → detects 04 completion → checks dependency graph →
 
 ---
 
+<!-- section_id: "40ada57f-2c84-4d65-b0f3-9476f7687d27" -->
 ## Tradeoffs
 
+<!-- section_id: "978e4abe-bd85-43d2-98b0-f5465974f60e" -->
 ### Benefits
 
 1. **Cleaner entity manager** — entity 0AGNOSTIC.md shrinks by ~30-40 lines, focuses on entity-level concerns
@@ -281,6 +299,7 @@ Stages Manager → detects 04 completion → checks dependency graph →
 5. **Recursive consistency** — follows the "managers delegate, operators do work" pattern one level deeper
 6. **Blocking detection** — stages manager can track which stages are stuck and escalate to entity manager
 
+<!-- section_id: "bdf168f9-33e6-4481-9de9-983a260b6a9f" -->
 ### Costs
 
 1. **Extra context load** — stages manager 0AGNOSTIC.md (~50-80 lines) plus `.0agnostic/` resources loaded on demand. Net effect depends on how much entity manager shrinks.
@@ -289,6 +308,7 @@ Stages Manager → detects 04 completion → checks dependency graph →
 4. **Learning curve** — agents need to know about the two-level manager pattern and that stage coordination lives in `.0agnostic/` not in the entity manager
 5. **Optional complexity** — small entities with 2 stages don't benefit, yet the pattern exists
 
+<!-- section_id: "93346d10-0b44-4468-8f60-8381ce32cb90" -->
 ### Mitigations
 
 | Cost | Mitigation |
@@ -301,8 +321,10 @@ Stages Manager → detects 04 completion → checks dependency graph →
 
 ---
 
+<!-- section_id: "a33797f9-0e28-4463-9493-a3979d17d1a7" -->
 ## Implementation Plan (if approved)
 
+<!-- section_id: "3d756ee5-1a4b-462a-9a75-a0b806118ba3" -->
 ### Phase 1: Pilot with context_chain_system
 
 1. Upgrade `layer_3_99_stages/0AGNOSTIC.md` from thin container ("Stages container for...") to stages manager identity with coordination knowledge
@@ -321,12 +343,14 @@ Stages Manager → detects 04 completion → checks dependency graph →
 7. Update entity-level 0INDEX.md to reference stages manager
 8. Test: verify stage agents still get proper context, verify stages manager can read stage reports, verify agnostic-sync produces correct output
 
+<!-- section_id: "b10bc25c-d476-4e9c-9d60-7128d1f64436" -->
 ### Phase 2: Document pattern
 
 1. Add stages_manager_pattern to entity_structure.md
 2. Add to STAGES_EXPLAINED.md (stage lifecycle)
 3. Update .0agnostic/01_knowledge/ at root level
 
+<!-- section_id: "970df119-1496-47ba-b608-b287e48ae807" -->
 ### Phase 3: Gradual rollout
 
 1. Apply to agent_delegation_system (4+ active stages)
@@ -335,6 +359,7 @@ Stages Manager → detects 04 completion → checks dependency graph →
 
 ---
 
+<!-- section_id: "73587793-9c3a-474e-aee1-8c826cbd6704" -->
 ## Resolved Questions
 
 1. ~~**Should the stages manager have its own .0agnostic/?**~~ **YES** — resolved in Design Constraint #1. Stage coordination knowledge is real domain knowledge (dependency graphs, transition rules, lifecycle models) that deserves the full agnostic infrastructure. Without `.0agnostic/`, this knowledge would be crammed into 0AGNOSTIC.md prose.
@@ -343,6 +368,7 @@ Stages Manager → detects 04 completion → checks dependency graph →
 
 4. ~~**Should the stage_00_stage_registry be the stages manager's knowledge base?**~~ **YES** — the registry is managed inventory. The stages manager owns the registry as its canonical list of stages, their metadata, and their current status. This complements `.0agnostic/01_knowledge/` which holds the relational knowledge (dependencies, lifecycle model, parallel rules).
 
+<!-- section_id: "5a6f8a04-9c8d-4e0f-912e-6aedf66d5c69" -->
 ## Open Questions
 
 1. **Can the stages manager escalate to the entity manager?** For example, "stage 07 found critical issues — should we loop to stage 09 or redesign from stage 04?" This is a strategic decision that should flow upward. Proposed: stages manager writes an escalation in its `stages_report.md` with options; entity manager reads it and decides.
@@ -353,6 +379,7 @@ Stages Manager → detects 04 completion → checks dependency graph →
 
 ---
 
+<!-- section_id: "2b8ad12a-ef99-4397-a67c-0729de350cd1" -->
 ## Related
 
 - **Context propagation funnel**: `...context_chain_system/.../04_context_propagation_funnel.md` — bottom-up consolidation pattern that the stages manager would implement
@@ -361,6 +388,7 @@ Stages Manager → detects 04 completion → checks dependency graph →
 
 ---
 
+<!-- section_id: "cb52a6ea-845a-4d61-88bc-9aa2d677835a" -->
 ## Sources
 
 Research informing the app-specific propagation context in the parent design decisions:

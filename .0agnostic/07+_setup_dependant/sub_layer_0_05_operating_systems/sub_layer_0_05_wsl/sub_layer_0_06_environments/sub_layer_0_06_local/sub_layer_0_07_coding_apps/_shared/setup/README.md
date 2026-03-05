@@ -8,6 +8,7 @@ resource_name: "README"
 
 **Purpose**: IDE and editor setup, including Cursor IDE configuration.
 
+<!-- section_id: "57b70bf0-bf3b-48e8-a3c9-f59882e082f4" -->
 ## ⚠️ Cursor IDE Linux/Ubuntu MCP Issues
 
 **CRITICAL**: Cursor IDE on Linux has specific MCP limitations. Read:
@@ -20,12 +21,14 @@ resource_name: "README"
 - MCP configuration requires bash wrappers for NVM
 - Use `mcp_browser_*` tools instead of `mcp_playwright_*` on Linux
 
+<!-- section_id: "a520bf96-49d7-4f90-86d5-4b387e3f9f09" -->
 ## Related Documentation
 
 - **OS-Level Issues**: `../sub_layer_0_05_os_setup/trickle_down_0.5_setup/0_instruction_docs/LINUX_UBUNTU_MCP_ISSUES.md`
 - **AI Apps Issues**: `../sub_layer_0_09_ai_apps_tools_setup/trickle_down_0.5_setup/0_instruction_docs/LINUX_UBUNTU_AI_APPS_MCP_ISSUES.md`
 - **MCP Setup**: `../sub_layer_0_10_mcp_servers_and_tools_setup/`
 
+<!-- section_id: "48856153-7929-4970-8cfa-0b78afac98f8" -->
 ## Notes
 - Add slot-specific docs here over time.
 - Keep mappings up to date if paths change.

@@ -5,10 +5,12 @@ resource_name: "github_sso_token_setup"
 ---
 # GitHub SSO Token Setup Guide
 
+<!-- section_id: "cd6f13e4-185e-4d62-83ac-e19e5064647e" -->
 ## Overview
 
 This guide documents the complete process for setting up GitHub Personal Access Tokens (PAT) with SAML SSO authorization for organizations that require Single Sign-On authentication.
 
+<!-- section_id: "9fc5b21a-7614-4ad9-8003-76aeb6c2a156" -->
 ## Compatibility (OS / Environment)
 
 The **PAT + SSO authorization requirement is GitHub/org-side**, so the concept applies everywhere. What changes by OS/environment is **how you store credentials** and **how you complete the SSO web login**.
@@ -20,10 +22,12 @@ The **PAT + SSO authorization requirement is GitHub/org-side**, so the concept a
 - ⚠️ **CI (GitHub Actions, etc.)**: Prefer short-lived auth (`GITHUB_TOKEN`, GitHub App tokens, or injected secrets). Avoid long-lived PAT files.
 - ⚠️ **Containers**: Similar to CI; treat as ephemeral and inject secrets at runtime, not baked into images.
 
+<!-- section_id: "805a7847-a3f4-415a-bf1a-fdfe756ecdcd" -->
 ## Problem Statement
 
 When accessing repositories in organizations with SAML SSO enabled (like BYU-Idaho's `byui-math-dept`), Personal Access Tokens must be explicitly authorized for SSO before they can be used for Git operations.
 
+<!-- section_id: "56f47169-7978-4272-9572-3f0fc7801556" -->
 ### Error Symptoms
 
 ```bash
@@ -32,8 +36,10 @@ remote: To access this repository, visit https://github.com/orgs/byui-math-dept/
 fatal: unable to access 'https://github.com/...': The requested URL returned error: 403
 ```
 
+<!-- section_id: "cc18c184-f3c2-4440-b4df-6bd07e43db8c" -->
 ## Solution: Complete Setup Process
 
+<!-- section_id: "40d3c7ea-13b9-4d07-be79-5b4e33757b82" -->
 ### Step 1: Create Personal Access Token
 
 1. Go to GitHub Settings → Developer settings → Personal access tokens → Tokens (classic)
@@ -45,6 +51,7 @@ fatal: unable to access 'https://github.com/...': The requested URL returned err
 4. Click "Generate token"
 5. **IMPORTANT**: Copy the token immediately (it won't be shown again)
 
+<!-- section_id: "371eea9f-17b6-4ba7-9133-24b390788360" -->
 ### Step 2: Authorize Token for SSO
 
 **This is the critical step that's often missed!**
@@ -73,6 +80,7 @@ When Git shows an authorization URL:
 5. Confirm authorization success
 ```
 
+<!-- section_id: "f57c36e0-4eb5-4fa3-8aee-12935e96a057" -->
 ### Step 3: Store Token Securely
 
 #### Option A (Legacy): `credential.helper store` + `~/.git-credentials`
@@ -113,6 +121,7 @@ This avoids storing a broad GitHub token in `~/.git-credentials` and prevents ac
 **Note (permissions gotcha on Linux/WSL):**
 - `~/.config` must be traversable (needs execute bit). If you accidentally run `chmod 600 ~/.config`, Git won’t be able to read `~/.config/git/pats/...`.
 
+<!-- section_id: "1706e2d5-b582-4e89-b16f-5e0ece614282" -->
 ### Step 4: Configure Git Remote
 
 Ensure remote URL is clean (no embedded token):
@@ -122,6 +131,7 @@ cd /path/to/repository
 git remote set-url origin https://github.com/ORG/REPO.git
 ```
 
+<!-- section_id: "d34dd626-c9d6-48a5-9c8c-3e1302c190dc" -->
 ### Step 5: Verify Setup
 
 Test that everything works:
@@ -133,8 +143,10 @@ git status
 
 Should complete without errors.
 
+<!-- section_id: "49b9495c-6828-4a16-8188-8556a7b55e60" -->
 ## Common Issues and Solutions
 
+<!-- section_id: "52b02dcf-6b1c-49d7-b28d-d42b2ae87df4" -->
 ### Issue: Git Config Conflicts
 
 **Symptom**: `gh auth git-credential` errors
@@ -152,16 +164,19 @@ git config --global --unset-all credential.helper
 git config --global credential.helper store
 ```
 
+<!-- section_id: "be051fc4-f1cb-454a-9198-9442d346a34e" -->
 ### Issue: Token Not Authorized After Creation
 
 **Symptom**: 403 errors persist even with new token
 
 **Solution**: Creating a token ≠ Authorizing it for SSO. Must complete SSO authorization step separately.
 
+<!-- section_id: "caf14808-4fa8-4566-a179-f09d470e733c" -->
 ### Issue: Need Multiple Tokens for Different Organizations
 
 **Solution**: Each token can be authorized for multiple organizations. Alternatively, use multiple tokens and store them all in credentials file.
 
+<!-- section_id: "67cb42a9-c7ce-4a9e-90cc-a97e48748016" -->
 ## Browser Automation Example
 
 Today's successful setup using cursor-browser-extension MCP:
@@ -175,8 +190,10 @@ Today's successful setup using cursor-browser-extension MCP:
 6. Git operations immediately worked
 ```
 
+<!-- section_id: "7ef6a1d3-55a5-4d8d-8fb9-9d342c35268f" -->
 ## Best Practices
 
+<!-- section_id: "2eb091c2-407c-41d3-9f66-bdf8da24e7e2" -->
 ### Token Management
 
 - ✅ Create tokens with descriptive names
@@ -187,6 +204,7 @@ Today's successful setup using cursor-browser-extension MCP:
 - ❌ Never embed tokens in remote URLs
 - ❌ Never commit tokens to repositories
 
+<!-- section_id: "8c271fcc-7037-4064-b756-b6b5d9c71e70" -->
 ### SSO Authorization
 
 - ✅ Authorize token immediately after creation
@@ -196,6 +214,7 @@ Today's successful setup using cursor-browser-extension MCP:
 - ❌ Don't assume token works without SSO auth
 - ❌ Don't skip the "Configure SSO" step
 
+<!-- section_id: "ffc717a8-3f90-4498-83b3-a4b40a941fc8" -->
 ### Browser Sessions
 
 - ✅ Use MCP browser tools for automation
@@ -204,8 +223,10 @@ Today's successful setup using cursor-browser-extension MCP:
 - ❌ Don't close browser prematurely
 - ❌ Don't paste tokens into places that will be logged/snapshotted
 
+<!-- section_id: "ef800f38-24d4-4914-88d1-903f078643e4" -->
 ## Organization-Specific Notes
 
+<!-- section_id: "09890bc7-3130-48c3-95c0-2ae685b5953d" -->
 ### BYU-Idaho (byui-math-dept)
 
 - **SSO Provider**: Church of Jesus Christ authentication
@@ -213,6 +234,7 @@ Today's successful setup using cursor-browser-extension MCP:
 - **Token Scopes Needed**: `repo` (minimum)
 - **Typical Repositories**: Student course portfolios (e.g., `pac20026_fall2025`)
 
+<!-- section_id: "4606b384-302f-49a3-ac62-819d7a5f750b" -->
 ### Authentication Flow
 
 1. GitHub SSO page
@@ -221,6 +243,7 @@ Today's successful setup using cursor-browser-extension MCP:
 4. Redirect back to GitHub
 5. Authorization complete
 
+<!-- section_id: "7085f2f9-b215-42f2-a7b2-e081ce053791" -->
 ## Reference
 
 - **Date Documented**: November 11, 2025

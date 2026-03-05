@@ -9,6 +9,7 @@ resource_name: "US-02_user_switches_to_research"
 **I want to** tell the agent "use research context chain" and have it switch to loading research content,
 **So that** I can access experimental patterns when I need them while knowing that production mode is always one command away.
 
+<!-- section_id: "0187cd83-a72b-4ba1-8054-ca45f40e9d14" -->
 ## Acceptance Criteria
 
 **Scenario 1: Trigger phrase activates research mode**

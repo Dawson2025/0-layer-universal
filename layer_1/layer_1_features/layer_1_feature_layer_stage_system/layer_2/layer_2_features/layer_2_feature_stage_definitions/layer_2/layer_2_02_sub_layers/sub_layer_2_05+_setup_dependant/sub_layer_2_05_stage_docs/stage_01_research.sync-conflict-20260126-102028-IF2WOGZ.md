@@ -5,16 +5,19 @@ resource_name: "stage_01_research.sync-conflict-20260126-102028-IF2WOGZ"
 ---
 # Stage 01: Research
 
+<!-- section_id: "b7c5dbbf-b8ea-4e99-9f8f-e44bbc7c6b60" -->
 ## Purpose
 
 Explore the problem space, gather information, and build understanding before defining specific instructions. This stage bridges request gathering and instruction definition by investigating unknowns.
 
+<!-- section_id: "39735b8c-cdaa-4bb5-b460-3933534bb01d" -->
 ## Entry Criteria
 
 - Stage 00 (Request Gathering) complete
 - Initial requirements documented
 - Unknown areas or questions identified
 
+<!-- section_id: "77f1b7a3-9252-4c2e-86c6-89c9b006cd14" -->
 ## Exit Criteria
 
 - Research findings documented in `outputs/`
@@ -22,6 +25,7 @@ Explore the problem space, gather information, and build understanding before de
 - Dependencies and constraints understood
 - Ready to write concrete instructions
 
+<!-- section_id: "3d146545-531a-485a-8123-2ee98d4d9d4b" -->
 ## Typical Tasks
 
 1. **Codebase Exploration** - Understand existing architecture
@@ -31,6 +35,7 @@ Explore the problem space, gather information, and build understanding before de
 5. **Proof of Concept** - Validate assumptions with quick experiments
 6. **Documentation Review** - Read relevant existing docs
 
+<!-- section_id: "ea9a382e-0c76-44c9-9a10-c0ec3f56e719" -->
 ## Directory Structure
 
 ```
@@ -43,6 +48,7 @@ stage_N_01_research/
     └── decisions/         # Decision records
 ```
 
+<!-- section_id: "e87ef0b5-2313-4b57-945e-ef05b57dba76" -->
 ## Handoff Pattern
 
 **Input from 00:**
@@ -55,6 +61,7 @@ stage_N_01_research/
 - Identified constraints
 - Handoff document referencing outputs
 
+<!-- section_id: "4aeee02a-b76f-4cb2-8ae2-f4460c8c4e16" -->
 ## Best Practices
 
 1. **Time-box research** - Don't get stuck in analysis paralysis
@@ -63,6 +70,7 @@ stage_N_01_research/
 4. **Validate assumptions** - Test key assumptions with minimal POCs
 5. **Keep handoffs lean** - Reference outputs rather than duplicating content
 
+<!-- section_id: "b87da269-59bf-4243-b0a7-dacfaa31649c" -->
 ## Common Outputs
 
 | Output Type | Location | Description |

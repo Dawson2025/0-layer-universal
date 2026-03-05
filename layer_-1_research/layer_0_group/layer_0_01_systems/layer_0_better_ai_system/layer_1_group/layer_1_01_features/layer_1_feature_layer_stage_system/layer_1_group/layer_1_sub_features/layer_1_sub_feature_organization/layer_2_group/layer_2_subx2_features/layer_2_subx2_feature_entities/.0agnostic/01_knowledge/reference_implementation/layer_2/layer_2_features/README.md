@@ -8,6 +8,7 @@ resource_name: "README"
 
 These features define the core concepts of the Layer-Stage Framework.
 
+<!-- section_id: "fe6c710b-da3e-4a92-827d-1937e11fee8d" -->
 ## Features
 - `layer_2_feature_stage_definitions/` - The 9 stages (00-09)
 - `layer_2_feature_layer_definitions/` - Layer numbering and entity types

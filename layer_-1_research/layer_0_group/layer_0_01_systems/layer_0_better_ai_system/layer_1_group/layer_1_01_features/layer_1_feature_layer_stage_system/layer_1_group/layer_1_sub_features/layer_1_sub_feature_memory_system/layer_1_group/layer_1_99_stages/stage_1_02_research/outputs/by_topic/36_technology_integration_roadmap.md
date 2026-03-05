@@ -5,14 +5,17 @@ resource_name: "36_technology_integration_roadmap"
 ---
 # Technology Integration Roadmap: Where and How Each Technology Fits the Layer-Stage System
 
+<!-- section_id: "77dc5d4f-789e-42c5-bf30-41d3ea010bd6" -->
 ## Purpose
 
 This document maps four key technologies -- relational databases (PostgreSQL), vector embeddings (pgvector), knowledge graphs (Neo4j/SQL), and SHIMI (Semantic Hierarchical Memory Index) -- onto the specific directories, workflows, and data patterns within the user's layer-stage system. For each technology, it identifies concrete integration points across the `.0agnostic/` hierarchy, the 0AGNOSTIC.md chain, CLAUDE.md sync, skills matching, and agent delegation. The goal is a practical roadmap: not "should we use vectors?" but "where exactly would a pgvector column go, and what query would it serve?"
 
 ---
 
+<!-- section_id: "e7051c95-2aa0-4a3d-8740-c04857ac368d" -->
 ## 1. User's System Architecture Summary
 
+<!-- section_id: "372fa605-4284-4812-b289-5f32db1b26fb" -->
 ### The Layer-Stage Hierarchy
 
 The system organizes AI agent context as a tree of entities, each with:
@@ -21,6 +24,7 @@ The system organizes AI agent context as a tree of entities, each with:
 - **layer_N_group/**: Child entities and stages (01-11)
 - **agnostic-sync.sh**: Generates tool-specific files (CLAUDE.md, GEMINI.md, etc.) from 0AGNOSTIC.md
 
+<!-- section_id: "b35a6b86-f60b-4607-a1d3-572052055bbf" -->
 ### Key Data Patterns
 
 | Pattern | Current Implementation | Data Characteristics |
@@ -34,6 +38,7 @@ The system organizes AI agent context as a tree of entities, each with:
 | **Agent definitions** | `.gab.jsonld` files with modes, actors, personas | JSON-LD graphs with 3-13 actors per entity |
 | **Knowledge docs** | `01_knowledge/` per-topic directories | Research documents (35+ in memory_system alone) |
 
+<!-- section_id: "f0c4c976-dd63-4ffa-9d57-76b45a3b0243" -->
 ### Current Retrieval Methods
 
 - **Path-based**: Agent knows the directory, reads the file
@@ -43,8 +48,10 @@ The system organizes AI agent context as a tree of entities, each with:
 
 ---
 
+<!-- section_id: "8e0de384-fe1e-49fc-be0b-a45845c5d0af" -->
 ## 2. Technology A: Relational Tables (PostgreSQL)
 
+<!-- section_id: "ed91eb42-51e1-422a-a946-1b9f937ee9fc" -->
 ### Where It Integrates
 
 #### 2A.1 Stage Reports Index
@@ -142,6 +149,7 @@ CREATE INDEX idx_rules_scope ON rules(scope_entity_id);
 
 **What it enables**: `SELECT * FROM rules WHERE importance_level = 0 AND (scope_entity_id IS NULL OR scope_entity_id = ?)` -- load all critical rules applicable to the current entity, combining universal and scoped rules.
 
+<!-- section_id: "7e40485e-0c9d-46fe-b640-f09e84ffc55a" -->
 ### How PostgreSQL Integrates With Existing Workflows
 
 | Workflow | Current | With PostgreSQL |
@@ -151,6 +159,7 @@ CREATE INDEX idx_rules_scope ON rules(scope_entity_id);
 | "Which rules apply here?" | Read file paths from CLAUDE.md | `SELECT * FROM rules WHERE scope_entity_id = ? OR scope_entity_id IS NULL` |
 | "Show entity tree" | `find` + `ls` commands | Recursive CTE on entities table |
 
+<!-- section_id: "c11c7e28-ab21-4038-a1ca-c06120f3463a" -->
 ### Integration Mechanism
 
 A **sync script** (extending `agnostic-sync.sh`) runs on commit hooks:
@@ -164,8 +173,10 @@ The filesystem remains the source of truth; PostgreSQL is a queryable index.
 
 ---
 
+<!-- section_id: "6b2061ec-24c9-46f8-bb30-351761782fb8" -->
 ## 3. Technology B: Vector Embeddings (pgvector)
 
+<!-- section_id: "780ec782-8eaa-490a-a110-52a9269d0af2" -->
 ### Where It Integrates
 
 #### 3B.1 Knowledge Document Search
@@ -273,6 +284,7 @@ LIMIT 5;
 
 **Concrete example**: An agent in `memory_system/` working on "how should multiple agents share context" discovers `multi_agent_system/` (a sibling entity) has relevant Key Behaviors, even though the agent did not know to look there. This directly addresses the "no cross-entity retrieval" weakness identified in doc 32.
 
+<!-- section_id: "30bfaab0-6f70-4ae9-b6ea-e86ec0434a90" -->
 ### Integration Mechanism
 
 Embeddings are generated:
@@ -283,8 +295,10 @@ Embeddings are generated:
 
 ---
 
+<!-- section_id: "f0ed8f28-6fbd-43fa-beac-3793f8515cba" -->
 ## 4. Technology C: Knowledge Graphs (Neo4j/SQL)
 
+<!-- section_id: "c23616ba-0680-4619-962a-22cde6555167" -->
 ### Where It Integrates
 
 #### 4C.1 Entity Hierarchy as Explicit Graph
@@ -368,6 +382,7 @@ CREATE TABLE rule_applicability (
 
 **What it enables**: "Which rules apply to stage_02_research of memory_system?" -- query returns: 3 universal (I0_FILE_CHANGE_REPORTING, AI_CONTEXT_MODIFICATION_PROTOCOL, CONTEXT_TRAVERSAL_RULE) + 1 local (research_output_standards) + 1 inherited (STAGE_REPORT_RULE).
 
+<!-- section_id: "23a89c82-ec0b-42e2-83cc-99fd740318e3" -->
 ### How Knowledge Graphs Integrate With Existing Workflows
 
 | Workflow | Current | With Knowledge Graph |
@@ -379,8 +394,10 @@ CREATE TABLE rule_applicability (
 
 ---
 
+<!-- section_id: "5b57e557-6cb3-4d4c-9b54-da8a24798152" -->
 ## 5. Technology D: SHIMI (Semantic Hierarchical Memory Index)
 
+<!-- section_id: "f9cfb48a-0e26-4564-9fb8-53e005d3fe09" -->
 ### Where It Integrates
 
 #### 5D.1 Structural Parallel: Layer-Stage Hierarchy vs SHIMI Tree
@@ -504,6 +521,7 @@ hash(memory_system) = SHA256(
 
 ---
 
+<!-- section_id: "4c325dc2-b7b8-41c5-a200-dd44c7d27c01" -->
 ## 6. Integration Matrix: Technology x System Component
 
 | System Component | PostgreSQL (Relational) | pgvector (Semantic) | Knowledge Graph | SHIMI |
@@ -519,8 +537,10 @@ hash(memory_system) = SHA256(
 
 ---
 
+<!-- section_id: "76b3dd80-b6c0-4b68-8751-1f9a1d642537" -->
 ## 7. Phased Integration Recommendations
 
+<!-- section_id: "248c2756-af4b-4ec6-89b1-f6b1b0b9bab2" -->
 ### Phase 1: Relational Foundation (Lowest Risk, Highest Immediate Value)
 
 **Priority**: PostgreSQL entity registry + stage reports index + episodic sessions
@@ -533,6 +553,7 @@ hash(memory_system) = SHA256(
 
 **Implementation**: Extend `agnostic-sync.sh` to also update a local SQLite or PostgreSQL database on each run.
 
+<!-- section_id: "9632a5a9-e0f8-4a96-9bed-1ed058706aff" -->
 ### Phase 2: Vector Search Overlay (Highest Research Impact)
 
 **Priority**: Embed all knowledge documents + 0AGNOSTIC.md sections + skills
@@ -545,6 +566,7 @@ hash(memory_system) = SHA256(
 
 **Implementation**: Post-commit hook that embeds changed files, stores in `knowledge_documents` table.
 
+<!-- section_id: "74e2a496-f9c1-412c-83bf-41ec9250cd0f" -->
 ### Phase 3: Knowledge Graph for Structural Queries (Deepest Understanding)
 
 **Priority**: Entity hierarchy graph + context dependency graph + delegation edges
@@ -557,6 +579,7 @@ hash(memory_system) = SHA256(
 
 **Implementation**: Parse 0AGNOSTIC.md `Parent`/`Children` fields + grep cross-references to build edge list.
 
+<!-- section_id: "fd502ad7-ec6c-4715-a5da-27524ad81a39" -->
 ### Phase 4: SHIMI Concepts for Intelligent Navigation (Most Ambitious)
 
 **Priority**: Bloom filter pre-checks + semantic traversal + Merkle-DAG integrity
@@ -571,8 +594,10 @@ hash(memory_system) = SHA256(
 
 ---
 
+<!-- section_id: "cb41eada-fd63-4516-a9d9-eb684114f91f" -->
 ## 8. Concrete Integration Examples
 
+<!-- section_id: "c01670a4-b145-44ad-8828-1bad4921856a" -->
 ### Example 1: "Find all research about memory decay across the entire system"
 
 **Today**: Agent must know to look in `stage_1_02_research/outputs/by_topic/` and manually scan 35 filenames.
@@ -588,6 +613,7 @@ LIMIT 5;
 --          32_comparison_context_chain_vs_commercial_memory.md (0.81), ...
 ```
 
+<!-- section_id: "b593c3ff-19d7-4e6c-85ab-820b6e35cbad" -->
 ### Example 2: "Which entities have unfinished stage work?"
 
 **Today**: Read every 0AGNOSTIC.md in the tree and check Current Status sections.
@@ -602,6 +628,7 @@ ORDER BY e.layer, sr.stage_number;
 -- Returns: memory_system (layer 2, stage 02 research, active)
 ```
 
+<!-- section_id: "6dc31912-9d91-4c88-84a3-f0256c0aa977" -->
 ### Example 3: "What would break if I restructured .0agnostic/ numbering?"
 
 **Today**: Grep for all references to `.0agnostic/01_knowledge/`, `.0agnostic/02_rules/`, etc. across hundreds of files. Manual and error-prone.
@@ -615,6 +642,7 @@ ORDER BY source_doc;
 -- Returns every file that references 01_knowledge/, with exact line numbers
 ```
 
+<!-- section_id: "e799695c-9872-415f-975c-699130aa6bbd" -->
 ### Example 4: "Should the root entity's DYNAMIC context be loaded for this memory research task?"
 
 **Today**: Always loaded (wastes context window tokens on irrelevant root-level details).
@@ -634,6 +662,7 @@ memory_bloom.might_contain("consolidation") # True
 # Result: load memory_system DYNAMIC context
 ```
 
+<!-- section_id: "0dee8b47-c080-4aed-84a9-c1a04079d84c" -->
 ### Example 5: "Match the right skill for 'create a new entity for dynamic memory'"
 
 **Today**: Agent reads all SKILL.md files, manually checks WHEN conditions.
@@ -650,6 +679,7 @@ LIMIT 3;
 
 ---
 
+<!-- section_id: "9c3b0751-bb29-49d9-8c92-20f59adc3a81" -->
 ## Sources
 
 - [pgvector: Open-source vector similarity search for PostgreSQL](https://github.com/pgvector/pgvector) -- extension providing VECTOR type and similarity operators

@@ -9,6 +9,7 @@ resource_name: "chain_repair_protocol"
 
 ---
 
+<!-- section_id: "c34681e3-d53a-427d-a721-b819683cf788" -->
 ## When to Use
 
 - Chain validation reports a FAIL at any level
@@ -16,8 +17,10 @@ resource_name: "chain_repair_protocol"
 - A directory was renamed or moved without updating references
 - A `0AGNOSTIC.md` was accidentally deleted
 
+<!-- section_id: "51686123-851a-4fb2-a54a-a08b5906df19" -->
 ## Diagnosis
 
+<!-- section_id: "d73fa325-a3eb-4902-9e3e-0c7ec31a0532" -->
 ### Step 1: Run Chain Validation
 
 ```bash
@@ -26,6 +29,7 @@ resource_name: "chain_repair_protocol"
 
 Look for: `FAIL: Parent path does not exist: [path]`
 
+<!-- section_id: "83fe4b1b-40ee-4014-bf6a-9ef0752abd99" -->
 ### Step 2: Identify the Break Type
 
 | Symptom | Break Type | Severity |
@@ -35,12 +39,15 @@ Look for: `FAIL: Parent path does not exist: [path]`
 | "No Parent line found" (non-root) | Missing reference | HIGH |
 | Chain depth unexpectedly short | Premature termination | MEDIUM |
 
+<!-- section_id: "cc3706ec-efca-41e4-ab72-5ee8591dcbf0" -->
 ### Step 3: Locate the Break Point
 
 The test output shows the last successful level and the first failed level. The break is between them.
 
+<!-- section_id: "890196ef-3fb5-4d7c-93a1-99816aceb57d" -->
 ## Repair Procedures
 
+<!-- section_id: "9e739608-b42a-43e2-9e62-14a083bf7cb8" -->
 ### Missing Node (0AGNOSTIC.md doesn't exist)
 
 1. Create the directory if it doesn't exist
@@ -57,6 +64,7 @@ The test output shows the last successful level and the first failed level. The 
 3. Run `agnostic-sync.sh` on the directory
 4. Re-validate the chain
 
+<!-- section_id: "7ab7576c-f893-46bf-ab79-16bda2b52afc" -->
 ### Incomplete Node (exists but missing Identity)
 
 1. Open the `0AGNOSTIC.md`
@@ -64,6 +72,7 @@ The test output shows the last successful level and the first failed level. The 
 3. Run `agnostic-sync.sh`
 4. Re-validate
 
+<!-- section_id: "27a1a760-5a1d-4788-baec-5985bd36351c" -->
 ### Missing Parent Reference
 
 1. Open the `0AGNOSTIC.md` at the break point
@@ -75,6 +84,7 @@ The test output shows the last successful level and the first failed level. The 
 4. Run `agnostic-sync.sh`
 5. Re-validate
 
+<!-- section_id: "cba16a8d-80eb-4f16-830a-6f909f641ca5" -->
 ### Stale Reference (directory was renamed)
 
 1. Find all `0AGNOSTIC.md` files that reference the old path:
@@ -85,6 +95,7 @@ The test output shows the last successful level and the first failed level. The 
 3. Run `agnostic-sync.sh` on each modified directory
 4. Re-validate the full chain
 
+<!-- section_id: "b0592ea8-5aae-49b4-9369-e9ad43978a80" -->
 ## Post-Repair Verification
 
 After any repair:
@@ -93,6 +104,7 @@ After any repair:
 2. **Avenue audit**: Run to ensure other avenues weren't affected
 3. **Commit**: Stage repaired files and commit with `[AI Context] repair chain break at [node]`
 
+<!-- section_id: "049e0f48-dc36-47f9-af58-3768acd6c548" -->
 ## Prevention
 
 - Always run chain validation before and after structural changes

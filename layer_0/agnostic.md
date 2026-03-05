@@ -5,10 +5,12 @@ resource_name: "agnostic"
 ---
 # layer_0 - Agnostic Context
 
+<!-- section_id: "62c72c90-bb40-4626-9a18-af99c5a02301" -->
 ## Purpose
 
 Tool-agnostic context for the universal layer.
 
+<!-- section_id: "0ce806aa-f2d5-49e1-b291-813be312c85e" -->
 ## Scope
 
 Layer 0 contains content that applies to ALL other layers:
@@ -18,6 +20,7 @@ Layer 0 contains content that applies to ALL other layers:
 - Universal principles
 - Universal setup patterns
 
+<!-- section_id: "fabb220b-7d81-4817-9fb8-a909619a55f6" -->
 ## Structure
 
 ```
@@ -35,6 +38,7 @@ layer_0/
 └── layer_0_99_stages/            Universal stage templates
 ```
 
+<!-- section_id: "b812667b-d510-42e2-89c7-422e8d5c93a0" -->
 ## Key Content
 
 | Location | Content |
@@ -44,6 +48,7 @@ layer_0/
 | `sub_layer_0_03_protocols/` | Session init, context protocols |
 | `layer_0_99_stages/` | Stage workflow templates |
 
+<!-- section_id: "2c19a323-bb42-446a-9747-73154dfc6b94" -->
 ## Inheritance
 
 All other layers inherit from layer_0:

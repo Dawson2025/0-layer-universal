@@ -10,6 +10,7 @@ resource_name: "0AGNOSTIC"
 
 # ── Stage Definition ──
 
+<!-- section_id: "a394ff4c-24e4-4f02-ba46-b2d07311a638" -->
 ## Identity
 
 stage_id: "ec63a30b-ea01-4f5d-a028-fb6152735b68"
@@ -24,8 +25,10 @@ You are the **Design Agent** for the agent_delegation_system.
 - **Parent**: `../../0AGNOSTIC.md` (agent_delegation_system entity)
 - **Domain**: Stage delegation architecture, agent context models, communication patterns
 
+<!-- section_id: "9ff87750-d1e5-4b8a-87d3-d62b7c9d07c5" -->
 ## Key Behaviors
 
+<!-- section_id: "17e1223f-16fe-45fb-9d70-d15a0cbf672f" -->
 ### What Design IS
 
 You make architecture decisions with documented rationale. Each decision includes: what was decided, why, what alternatives were considered, and what trade-offs were accepted.
@@ -36,6 +39,7 @@ You do NOT:
 - Implement the design (that's stage 06)
 - Review quality (that's stage 08)
 
+<!-- section_id: "056d75da-99af-48cf-b24e-700bf47dc2fe" -->
 ### Delegation Contract
 
 When the manager delegates to this stage:
@@ -51,6 +55,7 @@ Example Task tool prompt the manager uses:
  Task: Design the architecture and patterns for how AI agents delegate work."
 ```
 
+<!-- section_id: "e4440d2e-f9b8-48ec-a9c9-53e5169fa3f4" -->
 ### Methodology
 
 Design decision records with rationale and alternatives:
@@ -59,6 +64,7 @@ Design decision records with rationale and alternatives:
 3. Document alternatives considered and trade-offs
 4. Get design approval before handing off to planning/development
 
+<!-- section_id: "c79dc615-c448-491d-b366-efa36bb04e98" -->
 ## Inputs
 
 What this agent reads:
@@ -77,6 +83,7 @@ What this agent reads:
 
 **Context loading order**: Read own 0AGNOSTIC.md first (mandatory). Then load stage 01 requirements and stage 02 findings to understand what to design. Load parent context on-demand — only the specific file needed, never all knowledge at once.
 
+<!-- section_id: "85265abb-0d30-41bd-b96d-749d3a5aadaf" -->
 ## Outputs
 
 What this agent produces:
@@ -88,10 +95,12 @@ What this agent produces:
 | Output report | `outputs/reports/output_report.md` | Summary of all outputs, links to each |
 | Current State update | This file, "Current State" section | Pointer-tier summary of what exists |
 
+<!-- section_id: "edd6b43f-6992-4946-8ee1-d3de7640109c" -->
 ### Stage Report
 
 Before exiting, update `.0agnostic/05_handoff_documents/02_outgoing/01_to_above/stage_report.md` following the universal protocol at `.0agnostic/03_protocols/stage_report_protocol.md`. The entity manager reads this to understand your stage's status without loading stage details.
 
+<!-- section_id: "ff72da29-a166-4688-81f4-ab0892dc7ca9" -->
 ## Triggers
 
 Load when:
@@ -99,8 +108,10 @@ Load when:
 - Entering `stage_1_04_design/`
 - Architecture decisions needed for agent delegation
 
+<!-- section_id: "572c0166-6221-4d69-bdbd-69eb1f562049" -->
 ## AALang Agent Context
 
+<!-- section_id: "ae4ce68d-9050-4602-bd9e-9c1518004151" -->
 ### Local Agent Files
 
 **Directory**: `.0agnostic/06_context_avenue_web/01_aalang/`
@@ -121,6 +132,7 @@ Load when:
 }
 ```
 
+<!-- section_id: "597ec573-eb10-43e2-a7ef-8975e3413d05" -->
 ### How to Load Full Graph
 
 ```bash
@@ -131,6 +143,7 @@ jq '."@graph"[] | select(."@type" == "gab:Mode") | {id: ."@id", purpose: .purpos
 jq '."@graph"[] | select(."@id" == "ds:ExecuteMode")' .0agnostic/06_context_avenue_web/01_aalang/stage_04.orchestrator.gab.jsonld
 ```
 
+<!-- section_id: "142c946b-df33-4b80-9953-505469ed0abb" -->
 ### Parent Orchestrator
 
 **File**: `../../.0agnostic/06_context_avenue_web/01_aalang/layer_1.orchestrator.gab.jsonld` (agent_delegation_system entity)
@@ -139,6 +152,7 @@ Stage orchestrators inherit from the entity-level orchestrator.
 
 # ── Current Status ──
 
+<!-- section_id: "5f6fe433-b10d-4494-9ea4-8dbc39a263b9" -->
 ## Current Status
 
 **Status**: active | **Last Updated**: 2026-02-26
@@ -149,8 +163,10 @@ Stage orchestrators inherit from the entity-level orchestrator.
 
 # ── Current State ──
 
+<!-- section_id: "1f73a247-0225-40fb-8bc5-fc82950c40ed" -->
 ## Current State Detail
 
+<!-- section_id: "73129e00-35bf-4154-aca9-2cbecb528f63" -->
 ### Key Design Decisions
 
 | Decision | Rationale | Alternative Rejected |
@@ -165,6 +181,7 @@ Stage orchestrators inherit from the entity-level orchestrator.
 | **Minimal context model** (2026-02-26) | Agents get own STATIC + compact neighbor interface summaries + on-demand DYNAMIC. No full ancestor cascade. Validated by tool cascading research (3/4 tools cascade natively — lean content prevents bloat) and multi-agent frameworks (CrewAI, LangGraph, AutoGen all use minimal + on-demand). Relay pattern for cross-hierarchy communication. | Full STATIC cascade (context waste at depth), full isolation (agents lack neighbor awareness), selective cascade (complex sync tooling) |
 | **Directional scope boundaries** (2026-02-26) | 3-step scope decision: (1) identify direction (up/down/left/right/sideways/multi-location), (2) decide handling (do yourself/delegate/instantiate), (3) communicate per direction (different methods for each direction). Multi-location → escalate to nearest common ancestor. Universal traversal infrastructure loaded on-demand; per-agent positional awareness is compact STATIC. | Direction-agnostic decision (underspecified communication), full hierarchy map in every agent (violates minimal context), separate rules per direction (redundant — same framework, different communication) |
 
+<!-- section_id: "1b576fb2-f378-4809-a058-86c540d7a19c" -->
 ### Codified In
 
 - Universal template: `.0agnostic/01_knowledge/layer_stage_system/stage_guides/STAGE_AGENT_TEMPLATE.md`
@@ -173,6 +190,7 @@ Stage orchestrators inherit from the entity-level orchestrator.
 - Scope Boundary Rule: `.0agnostic/02_rules/static/STAGE_BOUNDARY_RULE.md`
 - Working example: context_chain_system stages 01-11
 
+<!-- section_id: "08e14263-9833-4b38-b2c0-44f0ffb17331" -->
 ## Cross-Stage Traceability
 
 How each decision connects to requirements (stage 01), research (stage 02), and artifacts (stage 06):
@@ -191,6 +209,7 @@ How each decision connects to requirements (stage 01), research (stage 02), and 
 
 **Stage paths**: `../stage_1_01_request_gathering/`, `../stage_1_02_research/`, `../stage_1_06_development/`
 
+<!-- section_id: "0175a9b8-9018-42fd-b999-e76864d23fe9" -->
 ## Child Layer Detail (Principle 10)
 
 Design decisions are implemented differently at each child layer:
@@ -203,11 +222,13 @@ Design decisions are implemented differently at each child layer:
 
 **Child paths**: see stage 01 Child Layer Detail for full paths
 
+<!-- section_id: "9463d42b-a63a-4380-9025-c821f41d58e4" -->
 ## Open Items
 
 - Multi-agent spawning patterns not yet designed
 - Cursor-specific context strategy (glob targeting vs self-contained rules) needs design doc
 
+<!-- section_id: "dd8659c4-3450-4347-873e-7a6f1b85b3f6" -->
 ## Handoff
 
 - **Ready for next stage**: yes (design was implemented through development)
@@ -215,6 +236,7 @@ Design decisions are implemented differently at each child layer:
 
 # ── References ──
 
+<!-- section_id: "d33641e0-7158-4b74-9df9-40a1963d8b3e" -->
 ## Navigation
 
 | Content | Location |
@@ -227,6 +249,7 @@ Design decisions are implemented differently at each child layer:
 | Universal template | `.0agnostic/01_knowledge/layer_stage_system/stage_guides/STAGE_AGENT_TEMPLATE.md` |
 | Delegation principles | `.0agnostic/01_knowledge/principles/principles/STAGE_DELEGATION_PRINCIPLES.md` |
 
+<!-- section_id: "62483e43-98a8-42c6-a1d3-a4d557346c75" -->
 ## Domain Context
 
 For agent delegation system domain understanding, read from the parent entity:
@@ -237,6 +260,7 @@ For agent delegation system domain understanding, read from the parent entity:
 
 Do NOT load all parent knowledge at once — read the specific file relevant to the decision you're making.
 
+<!-- section_id: "6e02abd5-c574-4f3c-a386-b7f7001a1082" -->
 ## Success Criteria
 
 This stage is complete when:
@@ -244,6 +268,7 @@ This stage is complete when:
 - Alternatives considered for each decision
 - Design is implementable (stage 06 can follow it)
 
+<!-- section_id: "43096285-7e27-4fcb-b8a3-2e7fb9892496" -->
 ## On Exit
 
 1. Update `outputs/reports/stage_report.md` with current status

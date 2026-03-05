@@ -5,18 +5,23 @@ resource_name: "uuid_implementation_plan"
 ---
 # UUID Identity System — Implementation Plan
 
+<!-- section_id: "ab79cddc-01a6-4f2f-984b-4201f8569c65" -->
 ## Date: 2026-03-02
+<!-- section_id: "74afa248-ad19-4c98-a6dc-ffaeabeaf692" -->
 ## Design Reference: `../../stage_3_04_design/outputs/uuid_identity_system_design.md`
+<!-- section_id: "9e65ccdf-71ff-45e9-8aa5-d5902d6229ee" -->
 ## Test Design: `../../stage_3_07_testing/outputs/uuid_test_design.md`
 
 ---
 
+<!-- section_id: "b4b9c0b6-1b6b-44d7-87aa-e744ed5d86da" -->
 ## Overview
 
-This plan breaks the UUID identity system implementation into **12 phases** across **6 agent roles**. Each phase produces testable artifacts. Phases are ordered by dependency — later phases depend on earlier ones. Some phases can run in parallel.
+This plan breaks the UUID identity system implementation into **13 phases** across **6 agent roles**. Each phase produces testable artifacts. Phases are ordered by dependency — later phases depend on earlier ones. Some phases can run in parallel.
 
 ---
 
+<!-- section_id: "63ca82ff-3bbd-4bef-8f75-9d1862ebfc5d" -->
 ## Agent Roles
 
 | Agent | Type | Responsibility |
@@ -30,6 +35,7 @@ This plan breaks the UUID identity system implementation into **12 phases** acro
 
 ---
 
+<!-- section_id: "7c0e0c2a-ba8a-4d6d-bb4a-f8fca3fb9163" -->
 ## Phase Dependency Graph
 
 ```
@@ -40,6 +46,8 @@ Phase 2 (stage indexes) ─────┤──> Phase 5 (migrate pointers)
 Phase 1b (all file UUIDs) ───┘
 
 Phase 1c (directory UUIDs) — independent, can run parallel with 1b
+
+Phase 1d (section UUIDs) — after Phase 1b (needs file UUIDs to exist)
 
 Phase 3b (reference integrity) — after Phase 3
 
@@ -58,12 +66,14 @@ Phase 10 (directory UUID index + lazy resolution) — after Phase 1c
 
 ---
 
+<!-- section_id: "2e4c1dae-1700-4adf-98dc-0467082614d1" -->
 ## Phase 1: Assign Entity UUIDs
 
 **Agent**: Script Agent
 **Input**: All `0AGNOSTIC.md` files in the repo
 **Output**: `assign-entity-uuids.sh` script at `.0agnostic/`
 
+<!-- section_id: "0b077d8b-9e46-498f-9425-f593b72745db" -->
 ### Task
 
 Write a script that:
@@ -74,15 +84,18 @@ Write a script that:
 5. Reports: `Added entity_id <uuid> to <path>`
 6. Supports `--dry-run` (show what would change)
 
+<!-- section_id: "61f8b229-4e46-4a71-aac1-e93833b50a65" -->
 ### Acceptance Criteria
 - Every `0AGNOSTIC.md` with an `## Identity` section gets an `entity_id`
 - Idempotent — running twice doesn't duplicate IDs
 - `--dry-run` shows changes without modifying files
 
+<!-- section_id: "a8677c91-9f7c-46c9-aac5-bee97df2fc7e" -->
 ### Estimated Effort: 2-3 hours
 
 ---
 
+<!-- section_id: "e2742f52-abcf-49da-a842-dd2bfb6bcedb" -->
 ## Phase 1b: Assign Universal File UUIDs
 
 **Agent**: Script Agent
@@ -91,6 +104,7 @@ Write a script that:
 
 **Fundamental rule**: Every file that has `0_layer_universal/` as an ancestor in its path MUST have a UUID. No file type exceptions — only binary files and empty `.gitkeep` placeholders are exempt.
 
+<!-- section_id: "a71f92a1-395d-4930-8953-3fb199516e07" -->
 ### Task
 
 Write a script that assigns UUIDs to **every file** in the system, using the appropriate comment syntax per file type:
@@ -107,6 +121,7 @@ Write a script that assigns UUIDs to **every file** in the system, using the app
 10. **Binary files** (`.png`, `.woff`, `.wav`, `.db`, `.pdf`, `.pid`) — EXEMPT (cannot embed text)
 11. **Empty `.gitkeep` files** — EXEMPT (0 bytes)
 
+<!-- section_id: "12f4bfef-b037-4501-8b7e-528384640554" -->
 ### Acceptance Criteria
 - Every non-binary, non-empty file has `resource_id` or `file_id` or `derived_from`
 - Coverage: 17,724/17,724 text files = 100%
@@ -115,12 +130,15 @@ Write a script that assigns UUIDs to **every file** in the system, using the app
 - `--dry-run` shows changes without modifying
 - Firebase service account JSON files are excluded from UUID insertion (GitHub push protection blocks credential file changes)
 
+<!-- section_id: "dde30f06-2b95-4dc5-9d27-2d90b8b49f66" -->
 ### Estimated Effort: 6-8 hours
 
+<!-- section_id: "d556fca0-510e-4a69-9621-65d5a791d912" -->
 ### Can Run Parallel With: Phase 1
 
 ---
 
+<!-- section_id: "54d0d3bc-9c38-44bc-825b-c3559c7cb687" -->
 ## Phase 1c: Assign Directory UUIDs
 
 **Agent**: Script Agent
@@ -129,6 +147,7 @@ Write a script that assigns UUIDs to **every file** in the system, using the app
 
 **Fundamental rule**: Every directory within `0_layer_universal/` MUST have a UUID via a `.dir-id` file. This replaces empty `.gitkeep` files and ensures every directory has stable identity.
 
+<!-- section_id: "e791bbad-0ffc-436f-85e5-8cf0f2be4a3e" -->
 ### Task
 
 Write a script that:
@@ -139,6 +158,7 @@ Write a script that:
 5. Reports: `Added .dir-id <uuid> to <path>`
 6. Supports `--dry-run` (show what would change)
 
+<!-- section_id: "a97e0650-618f-41ef-8c6a-b30a1bce9619" -->
 ### `.dir-id` File Format
 
 ```
@@ -147,6 +167,7 @@ a1b2c3d4-e5f6-4a7b-8c9d-0e1f2a3b4c5d
 
 Single line. No comments, no YAML, no metadata. Maximum simplicity.
 
+<!-- section_id: "d25f9a5d-0a54-422f-a266-2af23d40cb91" -->
 ### `.gitkeep` Replacement Rules
 
 | Scenario | Action |
@@ -156,6 +177,7 @@ Single line. No comments, no YAML, no metadata. Maximum simplicity.
 | Directory has files but no `.dir-id` | Create `.dir-id` |
 | Directory already has `.dir-id` | Skip (idempotent) |
 
+<!-- section_id: "3667abd8-778c-4d0f-a06c-0b42c7ef6740" -->
 ### Acceptance Criteria
 - Every directory under `0_layer_universal/` has a `.dir-id` file
 - All empty `.gitkeep` files are replaced by `.dir-id`
@@ -164,17 +186,80 @@ Single line. No comments, no YAML, no metadata. Maximum simplicity.
 - `--dry-run` shows changes without modifying
 - Coverage target: ~99,275 directories = 100%
 
+<!-- section_id: "48e2c232-b8e9-44cb-8115-b297fca66551" -->
 ### Estimated Effort: 4-6 hours
+<!-- section_id: "534d737f-ab6d-43d5-9d1f-58a4c133379d" -->
 ### Can Run Parallel With: Phase 1, Phase 1b
 
 ---
 
+<!-- section_id: "45cc5b7e-2aa8-46b0-8d0c-5daf4cce2659" -->
+## Phase 1d: Assign Section-Level UUIDs
+
+**Agent**: Script Agent
+**Input**: ALL `.md` files under `0_layer_universal/` (excluding auto-generated files)
+**Output**: `assign-section-uuids.sh` script at `.0agnostic/`
+
+<!-- section_id: "d7dda006-08f0-4a26-b62a-10105407c7a3" -->
+### Task
+
+Write a script that assigns UUIDs to every `##` (h2) and `###` (h3) heading in markdown files:
+
+1. Finds all `.md` files under `0_layer_universal/`
+2. Skips auto-generated files (`CLAUDE.md`, `AGENTS.md`, `GEMINI.md`, `OPENAI.md`, `.integration.md`, `.cursorrules`, `copilot-instructions.md`)
+3. For each file, scans for lines matching `^## ` or `^### `
+4. If the line above is already `<!-- section_id: "..." -->`, skip (idempotent)
+5. If no section_id exists, generates UUID v4 and inserts `<!-- section_id: "uuid" -->` on the line above the heading
+6. Reports per-file counts
+7. Supports `--dry-run`
+
+<!-- section_id: "df820637-7d7d-433a-b9c7-b164b4d8c1e5" -->
+### Section ID Format
+
+```markdown
+## Section Heading
+```
+
+<!-- section_id: "71948a1b-e140-426f-9e6f-7efc99e3554c" -->
+### Heading Levels
+
+| Level | Gets UUID | Rationale |
+|-------|-----------|-----------|
+| `#` (h1) | No | File title — covered by file-level `resource_id` |
+| `##` (h2) | Yes | Primary structural divisions |
+| `###` (h3) | Yes | Sub-sections frequently referenced |
+| `####`+ | No | Too granular |
+
+<!-- section_id: "e0a1fbd6-ec06-48d1-8657-91434d29174b" -->
+### Exclusions
+
+- Auto-generated files (CLAUDE.md, AGENTS.md, GEMINI.md, OPENAI.md, .integration.md, .cursorrules, copilot-instructions.md)
+- Files in `node_modules/`, `venv/`, `.venv/`, `__pycache__/`
+- Binary/non-text files
+
+<!-- section_id: "e6129d95-8fe2-4e1a-8aa2-e5a7c130eeb0" -->
+### Acceptance Criteria
+- Every h2 and h3 heading in non-auto-generated `.md` files has a `<!-- section_id: "uuid" -->` comment above it
+- Auto-generated files are untouched
+- Idempotent — running twice doesn't duplicate IDs
+- `--dry-run` shows changes without modifying
+- Valid markdown after insertion (heading still renders correctly)
+
+<!-- section_id: "20d82775-02fd-4c46-ba73-74cb47068332" -->
+### Estimated Effort: 4-6 hours
+<!-- section_id: "9e3f24a1-f91b-4881-84d2-d75529e85fe2" -->
+### Depends On: Phase 1b (file UUIDs should exist first)
+
+---
+
+<!-- section_id: "159c43a8-82c2-452d-8888-e4dcbd91e1e8" -->
 ## Phase 2: Create Stage Registries
 
 **Agent**: Script Agent
 **Input**: All `stage_N_00_stage_registry/` directories, stage `0AGNOSTIC.md` files
 **Output**: `create-stage-indexes.sh` script at `.0agnostic/`
 
+<!-- section_id: "5d238f69-fc1c-42b0-b3ff-c054a7a74aea" -->
 ### Task
 
 Write a script that:
@@ -188,6 +273,7 @@ Write a script that:
 5. Creates/updates `stage_index.json` in `stage_N_00_stage_registry/` with all stage UUIDs
 6. Supports `--dry-run`
 
+<!-- section_id: "b6297f77-011d-4307-b353-fe61db9c4824" -->
 ### Registry Format
 ```json
 {
@@ -204,23 +290,28 @@ Write a script that:
 }
 ```
 
+<!-- section_id: "1e92d65d-d469-4617-bb5a-bc11c9e464d8" -->
 ### Acceptance Criteria
 - Every entity with stages gets a `stage_index.json`
 - Every stage gets a UUID (in 0AGNOSTIC.md if it exists, always in registry)
 - Entity UUID in registry matches the entity's `0AGNOSTIC.md` entity_id
 - Idempotent
 
+<!-- section_id: "bdb37fd1-d628-4360-9b72-1585ab27a1af" -->
 ### Estimated Effort: 4-5 hours
+<!-- section_id: "87f45142-c9d9-44d0-a028-0d26aa15b46d" -->
 ### Depends On: Phase 1 (needs entity_id to populate registry)
 
 ---
 
+<!-- section_id: "c6963199-bac8-457a-960f-abdfa87aad9e" -->
 ## Phase 3: Update pointer-sync.sh for UUID Resolution
 
 **Agent**: Pointer-Sync Agent
 **Input**: Current `pointer-sync.sh` (253 lines), design doc Section 4
 **Output**: Modified `pointer-sync.sh` at `.0agnostic/pointer-sync.sh`
 
+<!-- section_id: "76279962-632d-4017-a481-52a26e53f0eb" -->
 ### Task
 
 Modify pointer-sync.sh to:
@@ -261,6 +352,7 @@ Modify pointer-sync.sh to:
 
 6. **Index auto-rebuild**: If UUID not found in index, rebuild index once and retry
 
+<!-- section_id: "59d6e1a6-1495-44f4-b5fe-a51ceaff80f7" -->
 ### Acceptance Criteria
 - All 108 existing tests still pass (backward compat)
 - UUID-based pointers resolve correctly
@@ -268,17 +360,21 @@ Modify pointer-sync.sh to:
 - `--rebuild-index` builds valid index
 - Index miss triggers auto-rebuild
 
+<!-- section_id: "909de9fd-584c-4c2d-b279-95ad725ee1fe" -->
 ### Estimated Effort: 6-8 hours
+<!-- section_id: "70b5fdba-bf92-4906-bcc9-04fed97ba721" -->
 ### Depends On: Phase 1, Phase 2 (needs UUIDs to exist for testing)
 
 ---
 
+<!-- section_id: "e57bb209-6753-4f58-a296-3858f3c1bfe7" -->
 ## Phase 4: Update Entity Creation Skill
 
 **Agent**: Skill Agent
 **Input**: Current `/entity-creation` SKILL.md, entity_structure.md
 **Output**: Modified skill files
 
+<!-- section_id: "9283c570-b66b-4749-8b6e-30a1371d1e2f" -->
 ### Task
 
 Update the entity-creation skill to:
@@ -288,22 +384,27 @@ Update the entity-creation skill to:
 3. **Create stage_index.json**: In `stage_N_00_stage_registry/` with all stage UUIDs
 4. **Insert stage_id in stage 0AGNOSTIC.md**: If the skill creates stage-level `0AGNOSTIC.md` files
 
+<!-- section_id: "4e2206f5-8550-40a5-8d93-764f4b536b63" -->
 ### Acceptance Criteria
 - New entities created via skill have `entity_id` in `0AGNOSTIC.md`
 - New entities have `stage_index.json` with all 12 stage UUIDs
 - Stage `0AGNOSTIC.md` files (if created) have `stage_id`
 
+<!-- section_id: "fc129451-2afd-4e40-b187-fa502b8cf203" -->
 ### Estimated Effort: 3-4 hours
+<!-- section_id: "5cc79aa4-e96b-42b8-aa01-c9556fa32d56" -->
 ### Can Run Parallel With: Phase 3
 
 ---
 
+<!-- section_id: "09139850-7d57-4ddd-bc49-52ac9991c36b" -->
 ## Phase 3b: Reference Integrity Tools
 
 **Agent**: Pointer-Sync Agent
 **Input**: Updated `pointer-sync.sh` from Phase 3
 **Output**: New flags added to `pointer-sync.sh`
 
+<!-- section_id: "6ec15571-b6c3-4eda-b501-0a7cff167eb6" -->
 ### Task
 
 Add reference integrity features to pointer-sync.sh:
@@ -316,6 +417,7 @@ Add reference integrity features to pointer-sync.sh:
 6. **Checksum validation**: On index load, compute SHA256 and compare to stored checksum. Mismatch → auto-rebuild
 7. **Duplicate UUID detection**: During `--rebuild-index`, report any duplicate UUIDs
 
+<!-- section_id: "c9d318ab-31f2-485c-a746-191f0682a8e6" -->
 ### Acceptance Criteria
 - `--find-references` returns all pointers referencing a given UUID
 - `--detect-cycles` correctly identifies circular reference chains
@@ -323,17 +425,21 @@ Add reference integrity features to pointer-sync.sh:
 - Concurrent `--rebuild-index` from two processes doesn't corrupt the index
 - Checksum mismatch triggers rebuild, not crash
 
+<!-- section_id: "f785fbf0-da6a-4faf-b905-5b60ac8121f9" -->
 ### Estimated Effort: 4-6 hours
+<!-- section_id: "e999e186-13d2-4d2a-baac-05e0fcb07fb4" -->
 ### Depends On: Phase 3
 
 ---
 
+<!-- section_id: "236a9d7f-a653-4696-8fc7-86a7d0351819" -->
 ## Phase 5: Migrate Existing Pointers
 
 **Agent**: Script Agent
 **Input**: All pointer files, UUID index
 **Output**: `migrate-pointers.sh` script at `.0agnostic/`
 
+<!-- section_id: "74211491-ce1e-4343-9e77-6ba133333ca8" -->
 ### Task
 
 Write a script that:
@@ -348,23 +454,28 @@ Write a script that:
    c. Rename `canonical_stage:` to `canonical_stage_name:` (display only)
 4. Supports `--dry-run`
 
+<!-- section_id: "427a71fe-c7bb-4fb6-8161-5f6d3b512e3e" -->
 ### Acceptance Criteria
 - All existing pointer files get UUID fields added
 - Old name fields are kept as display-only (renamed to `_name` suffix)
 - `pointer-sync.sh --validate` passes after migration
 - `--dry-run` shows changes without modifying
 
+<!-- section_id: "a622d06f-9f9a-4ad3-811b-81ff11695fca" -->
 ### Estimated Effort: 3-4 hours
+<!-- section_id: "bb729cd4-a8dc-456f-ad27-0d3e929b6726" -->
 ### Depends On: Phase 1, 2, 3 (needs UUIDs and updated pointer-sync.sh)
 
 ---
 
+<!-- section_id: "1210e548-8676-4ae1-829c-2999e3806db6" -->
 ## Phase 6: Update Documentation
 
 **Agent**: Docs Agent
 **Input**: entity_structure.md, pointer_sync_protocol.md, pointer_file_convention.md
 **Output**: Updated docs
 
+<!-- section_id: "cb22a04b-212e-438e-817b-d86db324d340" -->
 ### Task
 
 Update these canonical documents:
@@ -374,22 +485,27 @@ Update these canonical documents:
 3. **pointer_file_convention.md** — Add `canonical_entity_id`, `canonical_stage_id`, `canonical_resource_id` fields
 4. **pointer_sync_knowledge.md** — Add UUID identity system to architecture overview
 
+<!-- section_id: "adc3fabb-a42b-44af-a2c4-a458ab65e39c" -->
 ### Acceptance Criteria
 - All docs reflect new UUID fields
 - New pointer format is documented with examples
 - Migration guide included
 
+<!-- section_id: "f67363cf-316f-4884-a765-44a9a9915f67" -->
 ### Estimated Effort: 2-3 hours
+<!-- section_id: "82e04292-c5c3-40c9-ad38-f5b6a86873e0" -->
 ### Depends On: Phase 3 (needs final pointer-sync.sh behavior)
 
 ---
 
+<!-- section_id: "98032b32-ff60-4f74-acf3-906cc63249be" -->
 ## Phase 7: Full Integration Test
 
 **Agent**: Test Agent
 **Input**: Test design from `stage_3_07_testing/outputs/uuid_test_design.md`
 **Output**: Updated `test_pointer_sync.sh` + new `test_uuid_system.sh`
 
+<!-- section_id: "eafc5344-753b-4278-809b-d675d4a2d35a" -->
 ### Task
 
 1. Extend `test_pointer_sync.sh` with UUID-specific test categories (see test design doc)
@@ -397,23 +513,28 @@ Update these canonical documents:
 3. Run full test suite
 4. Iterate: fix failures, re-run until 0 FAIL
 
+<!-- section_id: "b5db3649-3760-4e40-abf3-309bf3f1b1a1" -->
 ### Acceptance Criteria
 - All existing 108 tests still pass
 - All new UUID tests pass
 - Migration scripts tested end-to-end
 - Index rebuild tested
 
+<!-- section_id: "0091e605-68bd-4bc3-87d8-2b28ae649ca8" -->
 ### Estimated Effort: 4-6 hours
+<!-- section_id: "439d16ab-c837-4a2f-b7ea-c30a02a63167" -->
 ### Depends On: Phase 1-5 (needs everything implemented to test)
 
 ---
 
+<!-- section_id: "f90157bd-4ff9-4af4-b7ff-e11c77f3fcb5" -->
 ## Phase 8: Final Sync
 
 **Agent**: Coordinator
 **Input**: All modified files
 **Output**: Regenerated tool files, committed repo
 
+<!-- section_id: "deb707ee-8916-494d-b817-eb572b975a08" -->
 ### Task
 
 1. Run `agnostic-sync.sh` at repo root — regenerates all CLAUDE.md files (now with `entity_id`)
@@ -422,22 +543,26 @@ Update these canonical documents:
 4. Commit all changes with `[AI Context]` prefix
 5. Push to remote
 
+<!-- section_id: "10adec87-d447-444a-9f12-9076ac79ed55" -->
 ### Acceptance Criteria
 - All CLAUDE.md files include `entity_id` from their `0AGNOSTIC.md`
 - `.uuid-index.json` exists and is valid
 - `pointer-sync.sh --validate` exits 0
 - All changes committed and pushed
 
+<!-- section_id: "1ecd0ed1-9bae-4462-b60c-8785e61b7bf1" -->
 ### Estimated Effort: 1-2 hours
 
 ---
 
+<!-- section_id: "069a63ab-ef55-4090-b4bf-74b598b7a930" -->
 ## Phase 9: Git Hooks & Validation Infrastructure
 
 **Agent**: Script Agent
 **Input**: Updated pointer-sync.sh, agnostic-sync.sh
 **Output**: Git hook scripts, validation runner
 
+<!-- section_id: "122c4e54-14d7-449f-808d-50356a62eebf" -->
 ### Task
 
 1. **Post-merge hook** (`.git/hooks/post-merge`):
@@ -453,22 +578,27 @@ Update these canonical documents:
    - Add `<!-- source-hash: sha256:... -->` to generated CLAUDE.md files
    - Validation script compares stored hash vs current source hash
 
+<!-- section_id: "0da36568-f7e5-4cf5-a35e-f1c879b05495" -->
 ### Acceptance Criteria
 - Post-merge hook runs automatically and catches dangling references
 - Pre-commit hook warns about stale materialized views
 - Hooks don't block normal commits (warnings only, not errors)
 
+<!-- section_id: "01ca3d78-c741-4ef4-84fb-16f65997656b" -->
 ### Estimated Effort: 2-3 hours
+<!-- section_id: "7821c9b4-a25c-4d9f-b6c7-8abc260cb56d" -->
 ### Depends On: Phase 8
 
 ---
 
+<!-- section_id: "6bc78a9b-b9d2-46cc-b51a-8c36c6366311" -->
 ## Phase 10: Directory UUID Index & Lazy Resolution
 
 **Agent**: Pointer-Sync Agent
 **Input**: All `.dir-id` files created in Phase 1c
 **Output**: `.dir-uuid-index.json` at repo root, lazy resolution in pointer-sync.sh
 
+<!-- section_id: "e3185755-d623-4d70-839c-64bf09abd574" -->
 ### Task
 
 1. **Build `.dir-uuid-index.json`**: Scan all `.dir-id` files, create a JSON index mapping UUID → path
@@ -479,6 +609,7 @@ Update these canonical documents:
    - Return resolved path
 4. **Integrate with post-merge hook**: Add `.dir-uuid-index.json` rebuild to post-merge
 
+<!-- section_id: "793af979-e2d3-489c-87bc-f21cc06e2d15" -->
 ### Index Format
 
 ```json
@@ -493,6 +624,7 @@ Update these canonical documents:
 }
 ```
 
+<!-- section_id: "5167b821-fd99-4fc0-a5d3-5a6516f7fafa" -->
 ### Acceptance Criteria
 - `.dir-uuid-index.json` is generated with all directory UUIDs
 - `--rebuild-dir-index` rebuilds from `.dir-id` files
@@ -500,11 +632,14 @@ Update these canonical documents:
 - Index is `.gitignored` (build artifact, rebuilt from `.dir-id` source files)
 - Post-merge hook triggers rebuild
 
+<!-- section_id: "08abb438-7e62-4e08-810c-142f0cea30ab" -->
 ### Estimated Effort: 3-4 hours
+<!-- section_id: "bca6d022-92bb-4b76-8f3b-fe1cf0887bc2" -->
 ### Depends On: Phase 1c
 
 ---
 
+<!-- section_id: "3372992c-32c7-4088-bb49-f50ec42afa07" -->
 ## Execution Timeline
 
 ```
@@ -535,6 +670,7 @@ Session 3 (Migration + Polish):
 
 ---
 
+<!-- section_id: "5ffb3d34-fc14-4c17-81f2-0a0307eeb55a" -->
 ## Risk Assessment
 
 | Risk | Impact | Mitigation |
@@ -550,6 +686,7 @@ Session 3 (Migration + Polish):
 
 ---
 
+<!-- section_id: "42f5e43c-be51-422e-b7c5-0072fc30f5ea" -->
 ## Verification Checklist
 
 After all phases complete:

@@ -9,6 +9,7 @@ resource_name: "US-02_feature_has_full_lifecycle"
 **I want** my feature entity to support the full stage lifecycle from requirements (01) through archives (11),
 **So that** I can systematically progress through research, design, development, testing, and delivery without gaps in the workflow.
 
+<!-- section_id: "1dd4ea86-cc3c-4f4b-bcc1-63286ea3871e" -->
 ## Acceptance Criteria
 
 **Scenario 1: Stages follow the dependency chain**

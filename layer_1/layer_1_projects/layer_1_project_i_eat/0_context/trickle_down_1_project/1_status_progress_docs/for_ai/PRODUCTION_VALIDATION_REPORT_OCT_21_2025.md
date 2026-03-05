@@ -10,8 +10,10 @@ resource_name: "PRODUCTION_VALIDATION_REPORT_OCT_21_2025"
 
 ---
 
+<!-- section_id: "2033d31c-36bd-418e-972e-eafd8ffdd753" -->
 ## Executive Summary
 
+<!-- section_id: "1d0079e0-4d1b-4e01-bca1-494fc98b91ed" -->
 ### **Production Validation: ✅ SUCCESSFUL**
 
 | Metric | Result | Status |
@@ -23,8 +25,10 @@ resource_name: "PRODUCTION_VALIDATION_REPORT_OCT_21_2025"
 
 ---
 
+<!-- section_id: "6b13db5e-52c4-4f6e-97fa-5ce565b51a1e" -->
 ## Test Results Comparison
 
+<!-- section_id: "6552e514-c097-4850-b540-eda2d16b4676" -->
 ### Dev Server (Port 5002) vs Production (Port 5000)
 
 | Run | Server | Passed | Failed | Pass Rate | Improvement |
@@ -36,8 +40,10 @@ resource_name: "PRODUCTION_VALIDATION_REPORT_OCT_21_2025"
 
 ---
 
+<!-- section_id: "b00e6377-7ea8-4d13-b796-097b9b91b52e" -->
 ## Improvement Analysis
 
+<!-- section_id: "d3e8c8e9-9d09-49c7-aeb8-55fe3fd0a697" -->
 ### +2 Tests Now Passing
 
 **CLOUD-001-google-oauth** - Both modes now pass ✅
@@ -51,8 +57,10 @@ resource_name: "PRODUCTION_VALIDATION_REPORT_OCT_21_2025"
 
 ---
 
+<!-- section_id: "7e96ee41-279c-46b5-acdd-86888bbb2870" -->
 ## Detailed Test Results
 
+<!-- section_id: "9523cc01-b4cf-48a4-b42e-831b4228dda4" -->
 ### ✅ Perfect Score (Both Modes) - 11 Story Groups
 
 | Story Group | Direct | Realistic | Features |
@@ -70,6 +78,7 @@ resource_name: "PRODUCTION_VALIDATION_REPORT_OCT_21_2025"
 
 ---
 
+<!-- section_id: "3cc76050-f1a9-4624-aa2f-997982553ee8" -->
 ### ✅ Direct Mode Passing - 6 Story Groups
 
 | Story Group | Direct | Realistic | Issue |
@@ -85,6 +94,7 @@ resource_name: "PRODUCTION_VALIDATION_REPORT_OCT_21_2025"
 
 ---
 
+<!-- section_id: "8b2ed2e6-5df4-4ba0-850e-42d5444ee397" -->
 ### ❌ Still Failing - 14 Tests
 
 **Admin Tests** - 4 tests (authentication issue):
@@ -102,8 +112,10 @@ resource_name: "PRODUCTION_VALIDATION_REPORT_OCT_21_2025"
 
 ---
 
+<!-- section_id: "1b5472fc-d1b3-4579-afae-5262cd4a4c85" -->
 ## US-053 Endpoint Status
 
+<!-- section_id: "b426ebe8-578e-4ae0-b5aa-d7860ae89b59" -->
 ### Implementation: ✅ DEPLOYED TO PRODUCTION
 
 **Endpoint**: `POST /api/admin/recalculate-phoneme-frequencies`
@@ -111,6 +123,7 @@ resource_name: "PRODUCTION_VALIDATION_REPORT_OCT_21_2025"
 **Server**: Running on Gunicorn production server
 **Status**: ✅ Live and ready
 
+<!-- section_id: "6c6e0312-9f41-43e8-9f8a-f70de7061017" -->
 ### Automation Validation: ❌ BLOCKED
 
 **Blocker**: Admin test authentication issues prevent reaching the endpoint
@@ -121,6 +134,7 @@ resource_name: "PRODUCTION_VALIDATION_REPORT_OCT_21_2025"
 - Fails at registration/login step ❌
 - Cannot reach admin panel to test US-053 ❌
 
+<!-- section_id: "d5e7cf55-8dca-4918-aade-bede7e9fda64" -->
 ### Manual Validation: ⭐ **RECOMMENDED**
 
 Since automation is blocked, manual testing is the best approach:
@@ -146,8 +160,10 @@ Since automation is blocked, manual testing is the best approach:
 
 ---
 
+<!-- section_id: "c9f6ea07-5fc0-4972-a402-06614a8bbb73" -->
 ## Production Performance Metrics
 
+<!-- section_id: "6d07a219-3aa6-43a5-9102-5e44f3eb5196" -->
 ### Server Health
 
 | Metric | Value | Status |
@@ -158,6 +174,7 @@ Since automation is blocked, manual testing is the best approach:
 | **Response Time** | < 1s | ✅ |
 | **Error Rate** | 0% | ✅ |
 
+<!-- section_id: "711ddda2-f81a-430d-87e6-9d257d57855c" -->
 ### Endpoint Health
 
 | Endpoint | Status | Response Time |
@@ -169,8 +186,10 @@ Since automation is blocked, manual testing is the best approach:
 
 ---
 
+<!-- section_id: "039fa3d8-1544-4aa2-8db4-9693014c77d4" -->
 ## Production vs Development Comparison
 
+<!-- section_id: "3a27775d-6f27-40de-804d-5a9b1652fc13" -->
 ### Performance Improvements
 
 | Aspect | Development | Production | Improvement |
@@ -181,6 +200,7 @@ Since automation is blocked, manual testing is the best approach:
 | **Logging** | Basic | Comprehensive | Production monitoring |
 | **Test Pass Rate** | 55.6% | 61.1% | +5.5% ✅ |
 
+<!-- section_id: "c8c40418-2eab-4101-838f-fad7000f3bd2" -->
 ### Test Results
 
 | Test Category | Dev | Production | Change |
@@ -195,6 +215,7 @@ Since automation is blocked, manual testing is the best approach:
 
 ---
 
+<!-- section_id: "ed46fd9c-ffbe-459b-b7d9-637b47973efa" -->
 ## Critical User Journeys: 100% PASS ✅
 
 All end-to-end user journeys validated on production:
@@ -210,13 +231,16 @@ All end-to-end user journeys validated on production:
 
 ---
 
+<!-- section_id: "39342bc4-536f-4506-b78b-9fdc35aab2b7" -->
 ## Production Deployment Artifacts
 
+<!-- section_id: "4951ca40-473d-4d6c-a300-15e6bd05af42" -->
 ### Files Modified for Production
 
 1. `scripts/mcp-admin-database-tools.mjs` - Now respects APP_BASE_URL ✅
 2. `scripts/mcp-admin-database-tools-realistic.mjs` - Now respects APP_BASE_URL ✅
 
+<!-- section_id: "81fef435-46ec-43ca-81a8-a9bc89518b9b" -->
 ### Test Artifacts Generated
 
 - **Location**: `artifacts/story_runs/production-validation/`
@@ -226,8 +250,10 @@ All end-to-end user journeys validated on production:
 
 ---
 
+<!-- section_id: "a79db6ab-9977-4dac-8c25-f3eaf22b84ed" -->
 ## Known Issues
 
+<!-- section_id: "7b9128eb-5405-412a-acef-d984a1f99547" -->
 ### 1. Admin Test Authentication (4 tests)
 
 **Issue**: Cannot establish session to reach admin panel
@@ -237,6 +263,7 @@ All end-to-end user journeys validated on production:
 **Effort**: 2-3 hours
 **Priority**: Medium (doesn't block production)
 
+<!-- section_id: "6096f732-49ca-4580-890f-92c9a9fcb816" -->
 ### 2. Realistic Mode Navigation (6 tests)
 
 **Issue**: browser_evaluate context destroyed during navigation
@@ -246,6 +273,7 @@ All end-to-end user journeys validated on production:
 **Effort**: 4-6 hours
 **Priority**: Low (features work, just test infrastructure)
 
+<!-- section_id: "bdc09a2f-35a6-40af-ad2c-987ad9bcf5cc" -->
 ### 3. Cloud Projects/Migration (4 tests)
 
 **Issue**: Requires Firebase credentials and Firestore data
@@ -257,8 +285,10 @@ All end-to-end user journeys validated on production:
 
 ---
 
+<!-- section_id: "d7bb6f8a-bf71-44d3-aba4-c2c0828360dc" -->
 ## Production Validation Checklist
 
+<!-- section_id: "277ac401-ad8b-41aa-a4d6-f688fa4a432f" -->
 ### ✅ Completed
 
 - [x] Production server running (Gunicorn)
@@ -270,6 +300,7 @@ All end-to-end user journeys validated on production:
 - [x] 33 workers handling requests
 - [x] Comprehensive monitoring active
 
+<!-- section_id: "966b04be-d8e5-47cb-8897-b84b7f5a9ae8" -->
 ### ⏳ Pending (Manual Verification)
 
 - [ ] **US-053 endpoint manual test** - ⭐ HIGH PRIORITY
@@ -280,8 +311,10 @@ All end-to-end user journeys validated on production:
 
 ---
 
+<!-- section_id: "76d2ec7f-60c8-47a7-babf-0f3340292b94" -->
 ## Recommendations
 
+<!-- section_id: "10f7f703-1e40-409c-970d-cc474d517cf7" -->
 ### Immediate Actions
 
 1. **✅ PROCEED WITH PRODUCTION RELEASE**
@@ -300,6 +333,7 @@ All end-to-end user journeys validated on production:
    - Monitor `logs/gunicorn-error.log`
    - Check for any errors in first 24 hours
 
+<!-- section_id: "3aecfebb-016e-4095-bf9f-c97f805c0e31" -->
 ### Post-Launch Improvements
 
 4. **Fix Admin Test Authentication** (Week 1)
@@ -316,8 +350,10 @@ All end-to-end user journeys validated on production:
 
 ---
 
+<!-- section_id: "cfab97db-f049-4e34-ad10-8934868a066f" -->
 ## Success Metrics
 
+<!-- section_id: "a403c7ab-017c-4fbb-ae1f-9b116d879e1c" -->
 ### Deployment Success: ✅ CONFIRMED
 
 | Criterion | Target | Actual | Status |
@@ -330,8 +366,10 @@ All end-to-end user journeys validated on production:
 
 ---
 
+<!-- section_id: "8bf05569-654b-4115-878d-3380f67e9103" -->
 ## Conclusion
 
+<!-- section_id: "c63cf2ae-a9df-4255-a73e-0f76e69c7e0d" -->
 ### ✅ **PRODUCTION DEPLOYMENT VALIDATED**
 
 **Summary**:
@@ -351,6 +389,7 @@ All end-to-end user journeys validated on production:
 - Performance: Exceeds targets
 - Monitoring: Comprehensive
 
+<!-- section_id: "c419c4ad-d9ab-4358-957a-dfd97c8c5fb2" -->
 ### Next Step
 
 **⭐ MANUAL VERIFICATION OF US-053**

@@ -10,6 +10,7 @@ resource_name: "INSTALLATION_OPTIONS_COMPARISON"
 
 ---
 
+<!-- section_id: "e8603cb2-e81f-4866-be22-f9a2e5490394" -->
 ## Executive Summary
 
 After extensive testing, we've identified the best installation strategies for Claude Code CLI based on your specific needs:
@@ -23,8 +24,10 @@ After extensive testing, we've identified the best installation strategies for C
 
 ---
 
+<!-- section_id: "05c25281-543e-4cc2-9422-2ba3076490fb" -->
 ## Installation Options Detailed Analysis
 
+<!-- section_id: "bd5f4241-9e8f-4875-bdb0-0f4fff00b7e8" -->
 ### Option 1: Native Ubuntu (Dual Boot) 🏆
 
 **Description:** Boot into native Ubuntu Linux installed alongside Windows on your Lenovo
@@ -131,6 +134,7 @@ claude --chrome
 
 ---
 
+<!-- section_id: "c26bfe62-3b5d-4ad8-b19e-66abc2d08eec" -->
 ### Option 2: WSL Only (Current Setup)
 
 **Description:** Use Claude Code CLI exclusively in Windows Subsystem for Linux
@@ -205,6 +209,7 @@ claude
 
 ---
 
+<!-- section_id: "ec3b41a3-a766-4c38-b564-9ae879f48e64" -->
 ### Option 3: Windows Only
 
 **Description:** Install Claude Code natively in Windows (uninstall WSL version)
@@ -285,6 +290,7 @@ claude --chrome
 
 ---
 
+<!-- section_id: "6630de48-78c9-4683-b75d-9fc3a69982ac" -->
 ### Option 4: Dual Installation (WSL + Windows) 🌟
 
 **Description:** Install Claude Code in BOTH WSL and Windows, use each for different purposes
@@ -381,8 +387,10 @@ C:\Users\Dawson\Projects\  # Primary location
 
 ---
 
+<!-- section_id: "dd526fc9-cd61-4b76-b4b8-104aca7f0d69" -->
 ## Performance Comparison
 
+<!-- section_id: "ceb48972-4d71-4eb5-81ae-55f3c57b6dad" -->
 ### File I/O Benchmarks
 
 | Operation | Native Ubuntu | WSL (`/home`) | Windows | WSL (`/mnt/c`) |
@@ -398,6 +406,7 @@ C:\Users\Dawson\Projects\  # Primary location
 - Windows ~20-30% slower than Linux
 - WSL `/mnt/c` is **10-12x slower** (crossing filesystem boundary)
 
+<!-- section_id: "80a08774-1d1c-4070-85bf-793b8478551e" -->
 ### Feature Availability
 
 | Feature | Native Ubuntu | WSL | Windows | Dual Install |
@@ -413,8 +422,10 @@ C:\Users\Dawson\Projects\  # Primary location
 
 ---
 
+<!-- section_id: "c0f88acf-9a36-4a39-9179-1395c26d968a" -->
 ## Decision Matrix
 
+<!-- section_id: "34028ff3-a1d8-4ab1-b872-42aba6a0ddae" -->
 ### Choose Native Ubuntu If:
 
 - ✅ Chrome extension is critical
@@ -424,6 +435,7 @@ C:\Users\Dawson\Projects\  # Primary location
 - ✅ Can dedicate time to rebooting when needed
 - ✅ Don't need Windows apps frequently
 
+<!-- section_id: "eb64022c-ce72-4e7c-a0f3-795e0e409e49" -->
 ### Choose WSL Only If:
 
 - ✅ Don't need Chrome extension
@@ -433,6 +445,7 @@ C:\Users\Dawson\Projects\  # Primary location
 - ✅ Projects can live in `/home` directory
 - ✅ Prefer simplicity over browser features
 
+<!-- section_id: "b0d7c260-ab90-499c-ba69-2f7d918af601" -->
 ### Choose Windows Only If:
 
 - ✅ Need Chrome extension
@@ -442,6 +455,7 @@ C:\Users\Dawson\Projects\  # Primary location
 - ✅ Projects are small to medium size
 - ✅ Don't do Linux-specific development
 
+<!-- section_id: "b6af3366-e0fb-427c-9d13-9d2230ec3897" -->
 ### Choose Dual Installation If:
 
 - ✅ Need both Chrome extension AND optimal CLI performance
@@ -453,8 +467,10 @@ C:\Users\Dawson\Projects\  # Primary location
 
 ---
 
+<!-- section_id: "7857129e-1d96-4c3d-9991-9de4ce7d53de" -->
 ## Migration Guides
 
+<!-- section_id: "6deabd5f-123e-4938-8ffc-4ffd67328944" -->
 ### From WSL → Native Ubuntu
 
 ```bash
@@ -477,6 +493,7 @@ claude --version
 claude --chrome
 ```
 
+<!-- section_id: "4820a746-1cdd-44bd-a321-a57ec63fc1e7" -->
 ### From WSL → Dual Installation
 
 ```powershell
@@ -494,6 +511,7 @@ claude --version        # Windows version
 # Windows: \\wsl$\Ubuntu\home\dawson\projects\
 ```
 
+<!-- section_id: "05c50110-610f-48d6-b6f0-baf793969c13" -->
 ### From Windows → WSL
 
 ```powershell
@@ -513,8 +531,10 @@ npm uninstall -g @anthropic-ai/claude-code
 
 ---
 
+<!-- section_id: "d96797bd-91b3-4fe8-a3fe-2b872d662219" -->
 ## Recommendations by Use Case
 
+<!-- section_id: "068e3398-2741-4765-8b56-be81559ec110" -->
 ### Web Development (React, Node.js, etc.)
 
 **Recommended:** Dual Installation or Native Ubuntu
@@ -522,6 +542,7 @@ npm uninstall -g @anthropic-ai/claude-code
 - Chrome extension useful for testing
 - Linux environment better for Node.js development
 
+<!-- section_id: "c4e469d2-aef2-47e1-888d-24f83e8904e1" -->
 ### Data Science / Python
 
 **Recommended:** Native Ubuntu or WSL Only
@@ -529,6 +550,7 @@ npm uninstall -g @anthropic-ai/claude-code
 - Chrome extension less critical
 - WSL performance adequate for most workflows
 
+<!-- section_id: "056e490d-0b64-456c-b207-e8ea810083df" -->
 ### Full Stack Development
 
 **Recommended:** Dual Installation
@@ -536,6 +558,7 @@ npm uninstall -g @anthropic-ai/claude-code
 - Frequently switch between CLI and browser
 - Maximum flexibility valuable
 
+<!-- section_id: "00fba161-ac90-4727-9777-5c325551c709" -->
 ### Windows App Development (.NET, C#)
 
 **Recommended:** Windows Only
@@ -543,6 +566,7 @@ npm uninstall -g @anthropic-ai/claude-code
 - Visual Studio integration
 - Chrome extension works for web components
 
+<!-- section_id: "e96eb997-8a80-4092-8884-b18fffdef447" -->
 ### DevOps / Infrastructure
 
 **Recommended:** Native Ubuntu or Dual Installation
@@ -552,8 +576,10 @@ npm uninstall -g @anthropic-ai/claude-code
 
 ---
 
+<!-- section_id: "6c4c40ca-4025-4e54-94a3-88e1d72c10ea" -->
 ## FAQ
 
+<!-- section_id: "6448ca75-1edd-4af5-8a23-341652acb3b3" -->
 ### Q: Can I access my WSL projects from Windows Claude Code?
 
 **A:** Yes! Windows can access WSL files via:
@@ -563,6 +589,7 @@ npm uninstall -g @anthropic-ai/claude-code
 
 Performance will be slower than native WSL access, but functional.
 
+<!-- section_id: "82253f11-2f03-4927-ae52-60c4d348ef69" -->
 ### Q: Will both installations share settings?
 
 **A:** No. Each installation has separate:
@@ -573,6 +600,7 @@ Performance will be slower than native WSL access, but functional.
 
 You'll need to configure each separately.
 
+<!-- section_id: "4ba90595-51e5-4bb3-a4c8-88da05aacbfa" -->
 ### Q: Can I use the same projects in dual boot?
 
 **A:** Yes, but be careful:
@@ -593,6 +621,7 @@ You'll need to configure each separately.
 
 **Warning:** Don't access the same Git repo from both OSes simultaneously. Always commit/push from one before switching.
 
+<!-- section_id: "2c18855e-0844-4915-8347-6322961fa672" -->
 ### Q: How much disk space do I need?
 
 | Installation Type | Disk Space Required |
@@ -602,6 +631,7 @@ You'll need to configure each separately.
 | Dual Installation | ~4 GB (both installations) |
 | Native Ubuntu (dual boot) | ~20-50 GB (full OS + tools) |
 
+<!-- section_id: "6209c26c-c1e3-41f2-b8cb-ecfc8e0568a6" -->
 ### Q: Can I switch between installations easily?
 
 **Dual Installation:** Instant switching
@@ -620,22 +650,26 @@ Reboot → GRUB menu → Select OS → Wait for boot
 
 ---
 
+<!-- section_id: "81ac832b-b749-4f7d-8bbe-69b02c5b7cbd" -->
 ## Conclusion
 
 After extensive testing and analysis:
 
+<!-- section_id: "0f5cd6ac-6e09-4581-8cbd-c092de36a82a" -->
 ### For Most Users:
 **Dual Installation (WSL + Windows)** provides the best balance of:
 - Performance (WSL for file operations)
 - Features (Windows for Chrome extension)
 - Flexibility (no rebooting)
 
+<!-- section_id: "ff436cc6-596e-48a4-a26d-946577b1a550" -->
 ### For Performance Enthusiasts:
 **Native Ubuntu (Dual Boot)** provides the absolute best:
 - Native Linux performance
 - Full Chrome extension support
 - Clean development environment
 
+<!-- section_id: "11a2ef1b-ded0-4901-b22b-e66ffb9f2c99" -->
 ### For Simplicity:
 **Windows Only** is the simplest path:
 - Single installation
@@ -646,6 +680,7 @@ Choose based on your priorities: performance, features, or simplicity.
 
 ---
 
+<!-- section_id: "e8ee9580-cd6d-418b-bf8d-ce5d213a7ebe" -->
 ## Related Documentation
 
 - **FINAL_SUMMARY.md** - WSL bridge attempt results

@@ -5,16 +5,19 @@ resource_name: "25_ai_agent_implementations_per_memory_type"
 ---
 # AI Agent Implementations Per Memory Type
 
+<!-- section_id: "365324f1-3b58-47a2-a59f-8bae3be44d88" -->
 ## Purpose
 
 This document catalogs the **concrete data structures and methods** used in modern AI agent systems for episodic, time-based, and procedural memory. While doc 24 covers biological/neuroscience structures, this document maps how those concepts are realized in production AI systems with specific technologies, frameworks, and code patterns.
 
 ---
 
+<!-- section_id: "7304cade-adc7-4279-bf80-0781ac9db2ea" -->
 ## 1. Episodic Memory in AI Agents
 
 Episodic memory is the most actively developed area for AI agents, enabling them to learn from their own experiences.
 
+<!-- section_id: "45e6a3b1-c91c-40cd-b01e-19bcdfd554a2" -->
 ### 1.1 Vector Database + Embedding Storage
 
 The **dominant approach** uses vector databases with embedding-based retrieval.
@@ -47,6 +50,7 @@ class EpisodicMemoryAgent:
         self.vector_store.add(embedding)
 ```
 
+<!-- section_id: "171bac49-fc76-4283-bae0-69a6a9b922e6" -->
 ### 1.2 Time-Indexed Logs
 
 Many systems use **timestamped append-only logs**.
@@ -57,6 +61,7 @@ Many systems use **timestamped append-only logs**.
 | **Organization** | Chronological for efficient range queries |
 | **Key advantage** | Supports temporal queries: "What happened in the last 50 interactions?" or "Show me yesterday's conversation" |
 
+<!-- section_id: "132d6f14-3cf7-4833-a653-2656c6dde386" -->
 ### 1.3 Key-Value Stores with Temporal Metadata
 
 Dictionary-style storage with rich metadata:
@@ -66,6 +71,7 @@ Dictionary-style storage with rich metadata:
 - **Metadata**: Timestamp, importance score, entities, tags
 - **Retrieval**: Query by time range, entity, or similarity
 
+<!-- section_id: "f5e18d49-378f-4696-9047-6c68a9f63a3f" -->
 ### 1.4 Graph-Based Episode Storage
 
 More sophisticated systems use **temporal knowledge graphs**:
@@ -75,6 +81,7 @@ More sophisticated systems use **temporal knowledge graphs**:
 - **Temporal validity** attached to facts: "This was true from T1 to T2"
 - **Advantage**: Supports complex queries like "What caused X?" and handles fact updates/invalidations
 
+<!-- section_id: "ba3dce0a-67e7-42ff-968c-a6d88369f54d" -->
 ### 1.5 Two-Stage Episode Extraction (AWS Bedrock AgentCore)
 
 Amazon's AgentCore uses a **two-stage extraction + reflection** system:
@@ -85,6 +92,7 @@ Amazon's AgentCore uses a **two-stage extraction + reflection** system:
 | **Stage 2: Processing** | Extracts key insights and patterns, adds semantic tags and categorizations |
 | **Stage 3: Reflection** | Generates learnings: "What worked? What failed? Why?" — stored alongside raw episode |
 
+<!-- section_id: "bfdfa8d7-d225-4239-bff2-f32259ecdf48" -->
 ### 1.6 Selective / Sparse Storage
 
 To avoid overwhelming storage, many agents use **significance filtering**:
@@ -100,10 +108,12 @@ This mimics how human brains prioritize unusual or emotionally significant event
 
 ---
 
+<!-- section_id: "1303d1cd-9738-4653-96f4-11e37cd307ed" -->
 ## 2. Time-Based Memory in AI Agents
 
 Time-based memory is less explicitly separated in AI systems but appears in several forms.
 
+<!-- section_id: "0d35d907-376c-4780-a1ba-d4b6a57c2eea" -->
 ### 2.1 Sliding Window Buffers
 
 The simplest temporal structure — a **fixed-size FIFO buffer**:
@@ -115,6 +125,7 @@ The simplest temporal structure — a **fixed-size FIFO buffer**:
 | **Maps to** | LLM context window management |
 | **Use case** | Short-term conversational coherence |
 
+<!-- section_id: "d244c30f-c97d-4c56-a4c9-694b07c11d73" -->
 ### 2.2 Temporal Context Vectors
 
 Some systems implement **gradually updating context representations**, directly inspired by the biological Temporal Context Model (doc 24):
@@ -125,6 +136,7 @@ context_t = alpha * new_input + (1 - alpha) * context_(t-1)
 
 This creates a "temporal fingerprint" that changes smoothly, enabling "when" retrieval by matching context similarity.
 
+<!-- section_id: "bbfc916e-a12a-4a3d-8588-f8b8e705be52" -->
 ### 2.3 Time-Series Databases
 
 For production agents handling high-volume interactions:
@@ -136,6 +148,7 @@ For production agents handling high-volume interactions:
 
 Supports queries like "last 24 hours", "between dates X and Y", and aggregations like "How many times did event X occur this week?"
 
+<!-- section_id: "e5d323c7-1f67-4536-b11f-e26bec8c9435" -->
 ### 2.4 Temporal Validity Tracking
 
 Advanced systems track **when facts are true**:
@@ -155,6 +168,7 @@ Advanced systems track **when facts are true**:
 
 Prevents agents from using outdated information and supports "what was true then vs now" queries.
 
+<!-- section_id: "3af60894-4196-486c-8548-0f0a4596c26a" -->
 ### 2.5 Hierarchical Time Buckets
 
 Some systems organize episodes into **temporal hierarchies** with progressive summarization:
@@ -169,10 +183,12 @@ Balances recency bias with long-term pattern retention.
 
 ---
 
+<!-- section_id: "959a65dc-d8ae-4e14-917d-3c5d1e0f671e" -->
 ## 3. Procedural Memory in AI Agents
 
 Procedural memory is gaining significant attention as the memory type that enables agents to "get better with practice."
 
+<!-- section_id: "30091573-5910-4239-87f5-4261b1cbc11a" -->
 ### 3.1 Mem^p Framework (Distilled Trajectory Stores)
 
 The most advanced approach stores procedural memory at **two granularities**:
@@ -200,6 +216,7 @@ The most advanced approach stores procedural memory at **two granularities**:
 | Average steps | 17.84 | **14.62** (-18%) |
 | Transfer learning | N/A | GPT-4o procedures boost Qwen-14B by 5% |
 
+<!-- section_id: "caf108de-c3fb-4b40-8b91-98a95bf07b25" -->
 ### 3.2 Production Rules / Rule-Based Systems
 
 The classic AI approach using **IF-THEN production rules**:
@@ -213,6 +230,7 @@ THEN (call weather API with location)
 - Retrieval via pattern matching: current state matched against rule conditions
 - Used in cognitive architectures like ACT-R and Soar
 
+<!-- section_id: "4a618c16-3dfe-4d66-96b7-5210fc6312ad" -->
 ### 3.3 Skill Libraries / Tool Registries
 
 Modern agents store procedural knowledge as **callable skills or tools**:
@@ -236,6 +254,7 @@ skill_registry = {
 
 Each skill contains: executable code/function, natural language description, usage conditions/triggers, and example invocations.
 
+<!-- section_id: "4e2e4c38-6a76-4c90-807c-baada9c56e30" -->
 ### 3.4 Hierarchical Chunk Structures
 
 Complex procedures broken into **nested chunks**:
@@ -252,6 +271,7 @@ High-level skill: "Book travel"
 
 Mimics how humans automatize complex skills through practice.
 
+<!-- section_id: "808d5120-ce6a-4548-92c0-f888d251c300" -->
 ### 3.5 LangMem Framework
 
 A practical framework implementing procedural memory with distillation:
@@ -282,6 +302,7 @@ relevant_procedure = proc_memory.retrieve(
 agent.execute_with_prior(relevant_procedure)
 ```
 
+<!-- section_id: "0e2976d8-0f96-48c4-9918-811a76bad2da" -->
 ### 3.6 Procedural Memory Update Strategies
 
 Unlike episodic memory which simply accumulates, procedural memory has **sophisticated update mechanisms**:
@@ -297,6 +318,7 @@ Unlike episodic memory which simply accumulates, procedural memory has **sophist
 
 ---
 
+<!-- section_id: "a7a6fc82-7371-4f87-b106-14fe9b3f587e" -->
 ## 4. Memory Architecture Integration Cycle
 
 Modern AI agents coordinate these memory types in a **unified architecture**:
@@ -323,6 +345,7 @@ Working Memory (next interaction)
 
 ---
 
+<!-- section_id: "43ff019f-27ed-4d2a-8c5f-f96dd5b643c7" -->
 ## 5. Implementation Patterns Summary
 
 | Memory Type | Primary Data Structure | Retrieval Method | Used For |
@@ -337,6 +360,7 @@ Working Memory (next interaction)
 | **Procedural** | Production rules | Pattern matching | Condition-action triggers |
 | **Procedural** | Skill libraries | Name/description lookup | Tool selection |
 
+<!-- section_id: "0bd7f7c5-1a47-475d-a7ff-618e4f5d0507" -->
 ### Key Insight
 
 AI agents use **hybrid storage** — vector databases for semantic similarity (episodic), time-series structures for temporal ordering (time-based), skill registries and trajectory stores for procedures (procedural), and knowledge graphs for facts (semantic). Unlike human memory which integrates these in neural tissue, AI systems keep them architecturally separate but coordinate during retrieval.
@@ -345,6 +369,7 @@ Procedural memory is the most actively **learned and refined** type: while episo
 
 ---
 
+<!-- section_id: "336c356b-037a-42a2-be51-6014f05c3d2d" -->
 ## Cross-References
 
 - **Biological data structures (neuroscience basis)**: `24_biological_data_structures_per_memory_type.md`
@@ -355,6 +380,7 @@ Procedural memory is the most actively **learned and refined** type: while episo
 
 ---
 
+<!-- section_id: "49fa106f-691c-4bb6-8305-1074c298d73b" -->
 ## Sources
 
 - [Episodic Memory in AI Agents (GeeksforGeeks)](https://www.geeksforgeeks.org/artificial-intelligence/episodic-memory-in-ai-agents/)

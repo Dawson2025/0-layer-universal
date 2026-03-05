@@ -6,12 +6,15 @@ resource_name: "bash-wrapper-setup"
 # Claude Code Bash Wrapper Setup Guide
 *Advanced Configuration: Conditional Bypass Permissions via Shell Wrapper*
 
+<!-- section_id: "00fcbcad-fc47-4871-b617-892a40b04a47" -->
 ## Overview
 
 This guide documents how to create a bash wrapper function that conditionally enables bypass permissions based on your current directory or environment variables. This approach provides more flexibility than configuration files alone.
 
+<!-- section_id: "710c118f-f323-40bd-9be9-f8143dbc9541" -->
 ## Why Use a Bash Wrapper?
 
+<!-- section_id: "bbab9894-f3e4-419d-a485-9be59520b893" -->
 ### Advantages
 
 ✅ **Context-Aware Bypass**
@@ -29,6 +32,7 @@ This guide documents how to create a bash wrapper function that conditionally en
 - Per-session control via environment variables
 - Preserves help/version commands
 
+<!-- section_id: "a1c85922-0da8-4bb8-a77f-237402e417d7" -->
 ### Disadvantages
 
 ❌ **Shell-Specific**
@@ -41,8 +45,10 @@ This guide documents how to create a bash wrapper function that conditionally en
 - Team members won't automatically get it
 - Harder to audit than configuration files
 
+<!-- section_id: "7ebecbb4-eb22-4454-b13b-f8c852360441" -->
 ## Implementation
 
+<!-- section_id: "f0d1e1b8-d9ef-47cd-8e8f-7aea08f03a05" -->
 ### Method 1: Project Directory-Based Bypass
 
 This wrapper enables bypass permissions automatically when you're in a specific project directory.
@@ -121,6 +127,7 @@ claude -p "echo 'testing normal'"
 # Should run with normal permission behavior
 ```
 
+<!-- section_id: "aaff2322-7096-4645-8240-4cf347fc245c" -->
 ### Method 2: Environment Variable-Based Bypass
 
 Enable bypass permissions on-demand with an environment variable.
@@ -168,6 +175,7 @@ claude
 unset CLAUDE_UNSAFE  # Back to normal
 ```
 
+<!-- section_id: "3d00256b-db9d-4065-8e95-942f56fd44fc" -->
 ### Method 3: Combined Approach (Recommended)
 
 Combine both methods for maximum flexibility:
@@ -206,6 +214,7 @@ fi
 - Anywhere with `CLAUDE_UNSAFE=1`: Bypass enabled
 - `--help` and `--version`: Always work normally
 
+<!-- section_id: "aae545e2-44c7-463c-bd60-1b455da918ca" -->
 ## Real-World Example
 
 Here's the exact wrapper from the Lang-Trak project:
@@ -255,8 +264,10 @@ $ CLAUDE_UNSAFE=1 claude -p "echo hello"
 hello  # No permission prompt
 ```
 
+<!-- section_id: "cb40e400-3f4b-43b5-88e6-c5977f212f21" -->
 ## Advanced Configurations
 
+<!-- section_id: "2abc6943-2d8c-451c-88d0-34b157235361" -->
 ### Multiple Project Directories
 
 Enable bypass for multiple projects:
@@ -290,6 +301,7 @@ claude() {
 }
 ```
 
+<!-- section_id: "3a6844c0-b820-4e9e-a4eb-1139167ef3ca" -->
 ### Time-Based Bypass
 
 Automatically disable bypass during certain hours (e.g., working hours for client projects):
@@ -316,6 +328,7 @@ claude() {
 }
 ```
 
+<!-- section_id: "f71954ac-ba4b-4a9f-8527-5e1877f7cc99" -->
 ### Git Repository Detection
 
 Enable bypass only in git repositories you own:
@@ -342,8 +355,10 @@ claude() {
 }
 ```
 
+<!-- section_id: "0a359d03-a820-4ce8-bdb0-86153dca28a1" -->
 ## Debugging
 
+<!-- section_id: "5c0cfbaa-77f6-4ac6-af9b-e68e8c0e042a" -->
 ### Check if Wrapper is Active
 
 ```bash
@@ -355,6 +370,7 @@ type claude
 # Should output: claude is a function
 ```
 
+<!-- section_id: "19f231cd-9b65-4cb2-91e7-e7e7bf102c20" -->
 ### Test Without Wrapper
 
 To temporarily bypass the wrapper and use the real binary:
@@ -367,6 +383,7 @@ To temporarily bypass the wrapper and use the real binary:
 command /path/to/real/claude
 ```
 
+<!-- section_id: "36bfafa2-70c9-49de-b250-d2497010dd2a" -->
 ### Enable Debug Output
 
 Add debugging to your wrapper:
@@ -389,14 +406,17 @@ Usage:
 CLAUDE_DEBUG=1 claude -p "echo test"
 ```
 
+<!-- section_id: "e718fa37-adc9-4c25-b013-15e27bd4c6ef" -->
 ## Removing the Wrapper
 
+<!-- section_id: "7f9f3f9b-4bd0-4051-9634-e385b966a82a" -->
 ### Temporary Removal (Current Session)
 
 ```bash
 unset -f claude
 ```
 
+<!-- section_id: "0e8530c0-8cb3-4b60-8012-fd46501f27f2" -->
 ### Permanent Removal
 
 1. Edit `~/.bashrc`:
@@ -417,8 +437,10 @@ unset -f claude
    # Should output the path to the binary, not "claude is a function"
    ```
 
+<!-- section_id: "87ab9d85-fe59-4ff2-8dc8-527870119c06" -->
 ## Security Considerations
 
+<!-- section_id: "1588971c-ee82-431c-86d8-c88eb1dd2450" -->
 ### Risks
 
 ⚠️ **Directory-Based Bypass**
@@ -436,6 +458,7 @@ unset -f claude
 - Errors can break your shell
 - Hard for others to discover the bypass is active
 
+<!-- section_id: "c5afc00f-bb06-4f82-b774-653386289770" -->
 ### Mitigations
 
 ✅ **Add Visual Indicators**
@@ -481,10 +504,12 @@ claude() {
 }
 ```
 
+<!-- section_id: "e9dc561d-e5a7-4e83-b8a1-7864153d8090" -->
 ## Integration with Configuration Files
 
 The bash wrapper approach **works alongside** `.claude/settings.json` configurations:
 
+<!-- section_id: "20ee9ed1-5bba-4a87-b5cd-fc36903edeeb" -->
 ### Precedence
 
 1. **Bash Wrapper** (highest)
@@ -497,6 +522,7 @@ The bash wrapper approach **works alongside** `.claude/settings.json` configurat
    - `.claude/settings.json` and `.claude/settings.local.json`
    - Still respected when wrapper doesn't add bypass flag
 
+<!-- section_id: "b04889aa-34d4-4e29-9d6a-8d9f16607247" -->
 ### Example: Hybrid Approach
 
 ```bash
@@ -529,8 +555,10 @@ claude() {
 - Work projects: Fine-grained permissions via config files
 - Other directories: Default Claude Code behavior
 
+<!-- section_id: "4c415c33-6c3b-4741-aa8e-4b2646561bfc" -->
 ## Frequently Asked Questions
 
+<!-- section_id: "d473b5bb-9146-40a3-8f90-0939cd1f5076" -->
 ### Q: Does this work with VS Code?
 
 **A**: Only if you launch Claude Code from the terminal. If you launch VS Code from a GUI, it won't inherit your shell configuration.
@@ -544,10 +572,12 @@ claude() {
 }
 ```
 
+<!-- section_id: "9cc9d166-b30c-48ac-b99c-402af603cf53" -->
 ### Q: Can I use this with zsh?
 
 **A**: Yes, the syntax is compatible. Just add the wrapper to `~/.zshrc` instead of `~/.bashrc`.
 
+<!-- section_id: "0eb2da7d-cfeb-4951-8cf7-44bee9ee37e0" -->
 ### Q: What about fish shell?
 
 **A**: Fish uses different syntax. Here's the equivalent:
@@ -575,6 +605,7 @@ function claude
 end
 ```
 
+<!-- section_id: "37a3b969-24ac-431c-befb-812791400734" -->
 ### Q: Can I check if bypass is active before running a command?
 
 **A**: Yes, add a helper function:
@@ -595,6 +626,7 @@ $ claude-bypass-check
 ✅ Bypass ACTIVE
 ```
 
+<!-- section_id: "bcb94742-b79f-4f03-8f96-596e85f6d9b7" -->
 ### Q: How do I share this with my team?
 
 **A**: Document it in your project's README and provide a setup script:
@@ -634,12 +666,14 @@ echo "✅ Claude wrapper added to ~/.bashrc"
 echo "Run: source ~/.bashrc"
 ```
 
+<!-- section_id: "7842dfb0-0745-46ac-9c1e-4eb92bc0e134" -->
 ## Related Documentation
 
 - [Bypass Permissions Setup](./bypass-permissions-setup.md) - Configuration file approach
 - [Fine-Grained Permissions](./fine-grained-permissions.md) - Alternative to bypass mode
 - [Settings Hierarchy](./settings-hierarchy.md) - How settings interact
 
+<!-- section_id: "0d11f4d3-b625-4fa3-99e0-069b52046e44" -->
 ## Version History
 
 | Version | Date | Changes |

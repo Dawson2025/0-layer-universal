@@ -13,6 +13,7 @@ resource_name: "l8_teams_agent"
 
 ---
 
+<!-- section_id: "1227bce4-abe1-4410-a9c1-c1646f9868b2" -->
 ## Sub-Layers (4)
 
 | ID | Sub-Layer | Depends On | Purpose |
@@ -22,6 +23,7 @@ resource_name: "l8_teams_agent"
 | L8.3 | Invites | L8.2 | Invite codes, invite flow |
 | L8.4 | Project Sharing | L8.1, L7 | Share projects with team members (cross-layer ref to L7) |
 
+<!-- section_id: "4bcbfaba-b9cc-4731-8f67-eda83a4025a4" -->
 ## Internal Dependency Shape: Short Sequence + Cross-Layer Reference
 
 ```
@@ -30,24 +32,29 @@ L8.1 Team Model → L8.2 Membership → L8.3 Invites
 L8.4 Project Sharing (depends on L8.1 + L7 Project interface)
 ```
 
+<!-- section_id: "8f742ae1-5aff-43a4-8754-ad51903be576" -->
 ## Context Model (~500 tokens)
 
+<!-- section_id: "131b7540-adda-4b7c-a00c-46788ebca0d5" -->
 ### STATIC
 - Layer identity, sub-layer list, dependency shape
 - ICollaborationProvider interface definition (3 methods)
 - Neighbor interfaces: IProjectProvider (3 methods), IUserProvider (3 methods)
 
+<!-- section_id: "35fbe260-3979-4857-aad9-efafa140140a" -->
 ### ON-DEMAND
 - Team model schema
 - Membership roles and permissions
 - Invite flow implementation
 - Project sharing access control
 
+<!-- section_id: "ff1d3d46-456a-4497-b6a8-02dc27a2291e" -->
 ## Scope Boundaries
 
 **In scope**: Teams, membership, invites, project sharing
 **Out of scope**: Project logic (→ L7), user identity (→ L3), auth (→ L2)
 
+<!-- section_id: "a3f0f5df-725b-4612-af36-a94aa9af640c" -->
 ## Cross-Layer References
 
 L8 is unique in that it depends on TWO non-adjacent layers:

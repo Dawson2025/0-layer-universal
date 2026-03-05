@@ -13,6 +13,7 @@ resource_name: "US-01_manager_delegates_from_pointers"
 **I want** the manager to make that decision using only high-level pointers (Tier 1), not by loading detailed stage outputs,
 **So that** the AI responds quickly without needing to read through all the raw work files.
 
+<!-- section_id: "7b86820d-3e48-4568-ae6b-86c9366849a4" -->
 ### What Happens
 
 1. User asks "which stage needs work next?" or "what should we prioritize?"
@@ -21,6 +22,7 @@ resource_name: "US-01_manager_delegates_from_pointers"
 4. Manager delegates to a stage agent without ever loading Tier 3 (full stage outputs)
 5. User gets a fast, informed delegation decision
 
+<!-- section_id: "65be1d1f-9d1a-4ebc-b610-12c3ff676b6a" -->
 ### Acceptance Criteria
 
 - Manager's delegation decision uses only Tier 1 content; no Tier 3 files are read

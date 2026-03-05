@@ -10,14 +10,17 @@ resource_name: "01_context_problems"
 
 ---
 
+<!-- section_id: "96ba47c6-5921-4258-b883-05ab480a21de" -->
 ## Problem Summary
 
 Context gathering and management for AI agents is fragmented, with rules scattered across multiple locations and unclear priority/scope definitions.
 
 ---
 
+<!-- section_id: "5259f4ad-cdc8-4bf5-85d5-763a4f30f4bd" -->
 ## Major Problems
 
+<!-- section_id: "21eb06fc-fc45-4bef-a880-e56ee2f3eb8b" -->
 ### 1. Context Gathering Rules Scattered
 **Severity**: MAJOR
 
@@ -33,6 +36,7 @@ Context gathering rules exist in multiple places:
 
 ---
 
+<!-- section_id: "8cea5a29-7283-439e-9dce-14c127e3139e" -->
 ### 2. Agnostic/Specific Pattern Incomplete
 **Severity**: MAJOR
 
@@ -54,6 +58,7 @@ layer_0_01_ai_manager_system/
 
 ---
 
+<!-- section_id: "64fbf43b-ef70-48a6-b559-ef6fc0fc83bc" -->
 ### 3. Multiple CLAUDE.md Entry Points
 **Severity**: MINOR
 
@@ -70,6 +75,7 @@ layer_0_01_ai_manager_system/
 
 ---
 
+<!-- section_id: "6fac2079-5d70-4074-bdd0-c9815bfc83de" -->
 ### 4. Context Gathering Skill Issues
 **Severity**: MINOR
 
@@ -82,6 +88,7 @@ layer_0_01_ai_manager_system/
 
 ---
 
+<!-- section_id: "277c5c36-9672-4cee-aff9-ea818c668e3c" -->
 ### 5. Layer Navigation Incomplete
 **Severity**: MINOR
 
@@ -94,6 +101,7 @@ layer_0_01_ai_manager_system/
 
 ---
 
+<!-- section_id: "e50c3d02-8cd7-40d6-89e4-aae3801d7399" -->
 ## Missing Context Infrastructure
 
 1. **No context priority system** - which context overrides which?
@@ -103,6 +111,7 @@ layer_0_01_ai_manager_system/
 
 ---
 
+<!-- section_id: "22313573-8138-48b7-896f-790fa5a6046a" -->
 ## Recommendations
 
 1. **Consolidate context rules** - single authoritative location
@@ -113,6 +122,7 @@ layer_0_01_ai_manager_system/
 
 ---
 
+<!-- section_id: "ffe86045-b9c8-41e8-8232-8e01b9332bef" -->
 ## Related
 
 - `ai_documentation_system` - documentation as context

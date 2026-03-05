@@ -11,6 +11,7 @@ resource_name: "test_design_rule_compliance_file_change_reporting"
 
 ---
 
+<!-- section_id: "d0927d90-11ea-4da2-a821-8898ffbd33ba" -->
 ## What We're Testing
 
 The file change reporting rule (`I0_FILE_CHANGE_REPORTING.md`) requires that agents report all filesystem changes at the end of every turn using full absolute paths. This test design validates three aspects:
@@ -23,8 +24,10 @@ These are primarily **behavioral tests** — they require actual agent execution
 
 ---
 
+<!-- section_id: "f5b16272-2274-43ae-990d-2e805ad36b21" -->
 ## Structural Precondition Tests
 
+<!-- section_id: "8f6e9778-5a24-4f40-9ac5-eba7fa8ef0ec" -->
 ### TC-FCR-01: Rule file exists with correct frontmatter
 
 **Steps**:
@@ -38,6 +41,7 @@ These are primarily **behavioral tests** — they require actual agent execution
 **Expected**: Rule file exists with hot promotion frontmatter and complete rule specification
 **Type**: Structural
 
+<!-- section_id: "5157561e-6e2f-459d-9384-eced8067c6df" -->
 ### TC-FCR-02: Hot rule appears in root CLAUDE.md promoted rules
 
 **Steps**:
@@ -51,6 +55,7 @@ These are primarily **behavioral tests** — they require actual agent execution
 **Expected**: The hot_summary from the rule's frontmatter appears in the root CLAUDE.md promoted rules table
 **Type**: Structural
 
+<!-- section_id: "642881c2-0f6a-42da-b87b-73b6099b8ba2" -->
 ### TC-FCR-03: CLAUDE.md cascade delivers rule to all levels
 
 **Steps**:
@@ -71,6 +76,7 @@ These are primarily **behavioral tests** — they require actual agent execution
 **Note**: Claude Code's cascade walk loads all CLAUDE.md from filesystem root to cwd — the rule just needs to be in the root
 **Type**: Structural
 
+<!-- section_id: "5755eaa5-470f-4636-b8eb-1c5193b91964" -->
 ### TC-FCR-04: Rule references in ~/.claude/CLAUDE.md (global)
 
 **Steps**:
@@ -84,6 +90,7 @@ These are primarily **behavioral tests** — they require actual agent execution
 
 ---
 
+<!-- section_id: "21a1ff57-fe24-4cec-be62-c1f4ec4d0055" -->
 ## Behavioral Compliance Tests
 
 These tests require actual agent execution. They can be run by:
@@ -91,6 +98,7 @@ These tests require actual agent execution. They can be run by:
 - Reviewing session transcripts for compliance
 - Creating a compliance checker script that parses agent output
 
+<!-- section_id: "4e754c88-5375-4082-a62a-273d8b2b37f4" -->
 ### TC-FCR-05: Agent reports files when creating new files
 
 **Setup**:
@@ -107,6 +115,7 @@ These tests require actual agent execution. They can be run by:
 **Expected**: Agent produces a file change report with full absolute path for the added file
 **Type**: Behavioral
 
+<!-- section_id: "fa6641d0-b9cf-489a-8d3f-8d792cfb326b" -->
 ### TC-FCR-06: Agent reports files when editing existing files
 
 **Setup**:
@@ -123,6 +132,7 @@ These tests require actual agent execution. They can be run by:
 **Expected**: Agent produces a file change report with full absolute path for the updated file
 **Type**: Behavioral
 
+<!-- section_id: "0b7aed6c-6563-4860-aceb-fe9c27deb469" -->
 ### TC-FCR-07: Agent reports multiple file changes correctly
 
 **Setup**:
@@ -140,6 +150,7 @@ These tests require actual agent execution. They can be run by:
 **Expected**: Agent correctly reports all file changes with proper grouping, ordering, and full absolute paths
 **Type**: Behavioral
 
+<!-- section_id: "4816b5bb-4eda-46aa-b6cd-dfddead514ca" -->
 ### TC-FCR-08: Agent does NOT report when no files changed
 
 **Setup**:
@@ -154,6 +165,7 @@ These tests require actual agent execution. They can be run by:
 **Expected**: Agent omits the report when no files were modified (rule says "no report is needed")
 **Type**: Behavioral
 
+<!-- section_id: "c3b56960-bd7a-470d-9f2b-50082462f9da" -->
 ### TC-FCR-09: Agent uses full absolute paths, never abbreviated
 
 **Setup**:
@@ -176,6 +188,7 @@ These tests require actual agent execution. They can be run by:
 **Expected**: Full absolute path with zero abbreviation, even when paths are very long
 **Type**: Behavioral
 
+<!-- section_id: "d793ad1c-9601-497e-bb29-0da2398d866f" -->
 ### TC-FCR-10: Sub-agent file changes are reported by delegating agent
 
 **Setup**:
@@ -194,8 +207,10 @@ These tests require actual agent execution. They can be run by:
 
 ---
 
+<!-- section_id: "db7a8b43-86f8-48ca-acf8-84bfa6f6db1f" -->
 ## Discovery Chain Test
 
+<!-- section_id: "9f129283-d1d6-4de9-b59b-9cb9de673014" -->
 ### TC-FCR-11: Rule discovery temperature — is the rule Hot, Warm, or Cold?
 
 **Steps**:
@@ -212,6 +227,7 @@ These tests require actual agent execution. They can be run by:
 **Expected**: The rule is at Hot temperature — agents see the summary automatically in every session without needing to search for it. The full rule is discoverable via the reference path in the hot_summary.
 **Type**: Structural + Behavioral
 
+<!-- section_id: "c6d796ea-bf7a-4a25-aff6-0dc1eb171ab8" -->
 ### TC-FCR-12: Agent acknowledges rule existence in its loaded context
 
 **Setup**:
@@ -229,6 +245,7 @@ These tests require actual agent execution. They can be run by:
 
 ---
 
+<!-- section_id: "0607c796-4603-413e-ab8c-a24eb8448287" -->
 ## Compliance Scoring Framework
 
 For systematic evaluation across many sessions, use this scoring rubric:
@@ -248,6 +265,7 @@ For systematic evaluation across many sessions, use this scoring rubric:
 
 ---
 
+<!-- section_id: "cc872104-6948-4da3-aade-9bd8a1046239" -->
 ## Coverage Gap Analysis
 
 | Rule Aspect | Test Case | Status |
@@ -267,6 +285,7 @@ For systematic evaluation across many sessions, use this scoring rubric:
 | 10+ files grouping | Not yet designed | Rule #5 edge case |
 | Cross-tool compliance (Codex, Gemini) | Not yet designed | Different tools, same rule |
 
+<!-- section_id: "80bc6ec7-dec0-4175-86e9-ab6a76ed33a0" -->
 ## Test Case Summary
 
 | Category | Count | Type |

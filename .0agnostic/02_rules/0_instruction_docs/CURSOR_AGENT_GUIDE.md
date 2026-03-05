@@ -6,10 +6,12 @@ resource_name: "CURSOR_AGENT_GUIDE"
 # Cursor Agent Guide
 *All Cursor-Specific Solutions and Workarounds*
 
+<!-- section_id: "66bc52c7-154c-4b71-8594-e5ef46252147" -->
 ## Purpose
 
 This document provides **all Cursor-specific solutions** for issues that don't apply to other AI agents. For universal rules that apply to all agents, see `MASTER_DOCUMENTATION.md`.
 
+<!-- section_id: "b5b9a47f-c638-4add-835d-f080672391af" -->
 ## Location
 
 **Universal Location**: `0_context/trickle_down_0_universal/0_instruction_docs/CURSOR_AGENT_GUIDE.md`
@@ -18,6 +20,7 @@ This document provides **all Cursor-specific solutions** for issues that don't a
 
 ---
 
+<!-- section_id: "a05727dd-db1a-409b-b4bd-91cf68e6d1c6" -->
 ## Master Documentation Reference
 
 **MANDATORY**: See `MASTER_DOCUMENTATION.md` for:
@@ -30,8 +33,10 @@ This document provides **all Cursor-specific solutions** for issues that don't a
 
 ---
 
+<!-- section_id: "9daacfac-74aa-4a12-9440-7f84e52c055e" -->
 ## Cursor-Specific Solutions
 
+<!-- section_id: "f7c5c9ce-fefd-4925-a169-c565cd9f32f7" -->
 ### 1. Terminal Execution Issues
 
 **See**: `CURSOR_TERMINAL_EXECUTION.md` for complete Cursor terminal solutions.
@@ -48,14 +53,17 @@ This document provides **all Cursor-specific solutions** for issues that don't a
 - System commands → Use `run_terminal_cmd("<command> ; exit")` directly
 - Always add `; exit` to prevent hanging on both success and failure
 
+<!-- section_id: "3d067672-433c-4535-bd32-471b41275f8a" -->
 ### 2. Other Cursor-Specific Issues
 
 (Add other Cursor-specific solutions here as they are discovered)
 
 ---
 
+<!-- section_id: "ee8b07f0-8265-4169-9cb0-9050a062dba0" -->
 ## Quick Reference
 
+<!-- section_id: "d05bc217-8c76-4063-9100-2211d3773377" -->
 ### Terminal Execution
 - **Python scripts**: `python3 scripts/terminal_wrapper.py --script <script>`
 - **Node.js commands**: `run_terminal_cmd("npx <command> ; exit")`
@@ -64,6 +72,7 @@ This document provides **all Cursor-specific solutions** for issues that don't a
 
 ---
 
+<!-- section_id: "076436f1-f7e2-4d93-8c9d-00349af87ed3" -->
 ## Related Documentation
 
 - **Master Documentation**: `MASTER_DOCUMENTATION.md` - Universal rules for all agents
@@ -73,6 +82,7 @@ This document provides **all Cursor-specific solutions** for issues that don't a
 
 ---
 
+<!-- section_id: "f94c15f0-a321-4620-bdcf-524976f65e4c" -->
 ## For Cursor User Rules
 
 If you're adding this to Cursor Settings → Rules for AI, reference:

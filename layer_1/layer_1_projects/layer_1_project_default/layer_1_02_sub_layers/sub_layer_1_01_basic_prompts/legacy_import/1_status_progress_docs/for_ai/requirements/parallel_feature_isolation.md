@@ -7,9 +7,11 @@ resource_name: "parallel_feature_isolation"
 
 - **Source Prompt**: Live session request (Codex CLI, parallel work guidance)
 
+<!-- section_id: "0a5812f8-ce11-4a17-a7df-38af903e9613" -->
 ## Goal
 Establish conventions that let multiple contributors (human or AI) work on separate features without stepping on each other’s changes by keeping implementations, assets, and tests scoped to feature-specific files or directories.
 
+<!-- section_id: "bec9e3ba-3811-4e25-a31d-f6c59d400129" -->
 ## Functional Requirements
 - Introduce or reinforce a file and directory structure where every feature has a clearly named home (e.g., `features/<feature_name>/`) for its views, logic, and tests.
 - When implementing or updating a feature, confine edits to that feature’s directory unless platform-wide changes are explicitly required.
@@ -17,12 +19,14 @@ Establish conventions that let multiple contributors (human or AI) work on separ
 - Ensure each feature directory includes colocated automated tests that can be executed independently.
 - Document the naming and organization rules in the Codex instructions so future prompts automatically follow the same isolation pattern.
 
+<!-- section_id: "111c6e24-25ec-43d9-a9ae-6d838a058b4a" -->
 ## Acceptance Criteria
 - Codex instructions explicitly tell contributors to create or reuse feature-scoped directories before starting implementation.
 - The repository structure includes clear examples (existing or newly added) that show how to place feature code, assets, and tests together (e.g., `features/firebase/`, `features/projects/`).
 - When future features are added, their commits touch only the relevant feature directories plus shared infrastructure where justified in the prompt or spec.
 - Running the feature’s tests does not require touching unrelated modules because dependencies live in its directory or shared utility layers.
 
+<!-- section_id: "f5613f63-2825-4e0d-b8e7-8972292dc657" -->
 ## Notes
 - Existing mixed-content directories should be gradually split during the next time they are touched rather than through a disruptive repo-wide refactor.
 - Consider enforcing the conventions with linting or CI checks (e.g., validating directory placement) once the structure stabilizes.

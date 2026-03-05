@@ -5,10 +5,12 @@ resource_name: "avenue_redundancy"
 ---
 # Avenue Redundancy Rule
 
+<!-- section_id: "b45e117c-53ea-4081-8396-6538fd6147fd" -->
 ## Rule: Minimum 3-Avenue Redundancy for All Critical Context
 
 Every piece of critical context MUST be reachable via at least 3 independent avenues. If fewer than 3 avenues reach a context item, add references in the missing avenue types.
 
+<!-- section_id: "66450c58-6d2f-42bb-8ba0-1852cab32b0a" -->
 ## The 8 Avenues
 
 | # | Avenue | Location Pattern | Loaded |
@@ -22,6 +24,7 @@ Every piece of critical context MUST be reachable via at least 3 independent ave
 | 7 | Episodic Memory | `.0agnostic/episodic_memory/` | Dynamic (read) |
 | 8 | Agnostic System | `.0agnostic/rules/`, `.0agnostic/skills/` | Dynamic (read) |
 
+<!-- section_id: "2cad2c01-5e94-493c-bc7b-a8af49b267fa" -->
 ## Verification Procedure
 
 For each critical context item:
@@ -31,6 +34,7 @@ For each critical context item:
 3. Record coverage: `[1,2,4,8]` = 4 avenues = PASS
 4. If coverage < 3, flag for remediation
 
+<!-- section_id: "7ff9436e-9512-48ab-bdaf-fa39c3aac6dc" -->
 ## Remediation
 
 When a context item has fewer than 3 avenues:
@@ -42,6 +46,7 @@ When a context item has fewer than 3 avenues:
 - **Missing JSON-LD**: Add to the agent's `.gab.jsonld` mode constraints
 - **Missing Integration**: Regenerate `.integration.md` via `tools/jsonld-to-md.sh`
 
+<!-- section_id: "fe402258-f32a-46b2-9aef-366125cdeabf" -->
 ## Minimum Viable Coverage
 
 - **3+ avenues**: PASS — context is reliably discoverable

@@ -6,9 +6,11 @@ resource_name: "README"
 ---
 # Codex CLI MCP Setup (Windows)
 
+<!-- section_id: "7a6bdc1f-f74c-4099-9f1d-ce42749496e8" -->
 ## Config location
 - `%USERPROFILE%\\.codex\\config.toml`
 
+<!-- section_id: "93742acd-c759-4621-9045-a5ed50572671" -->
 ## Notes
 - Use Windows-native commands for MCP servers (often `npx.cmd`).
 - Keep secrets out of `config.toml` when possible (env vars or a separate local env file).

@@ -11,12 +11,14 @@ resource_name: "SPEC_full_mesh_ssh_connectivity"
 
 ---
 
+<!-- section_id: "9805669e-f786-4f11-878d-b8afb5ca497b" -->
 ## Overview
 
 Full bidirectional SSH connectivity between all devices using Termius as the unified client.
 
 ---
 
+<!-- section_id: "444d1441-5f0b-4648-9d8f-66b5cff77199" -->
 ## Device Capabilities
 
 | Device | OS | SSH Client | SSH Server | Termius |
@@ -28,6 +30,7 @@ Full bidirectional SSH connectivity between all devices using Termius as the uni
 
 ---
 
+<!-- section_id: "7a3c68d2-525b-4c1c-98d4-fa93d6422455" -->
 ## Connection Matrix
 
 | From \ To | VPS | Windows | Linux | iPhone |
@@ -41,6 +44,7 @@ Full bidirectional SSH connectivity between all devices using Termius as the uni
 
 ---
 
+<!-- section_id: "b56e8551-bda1-446d-90bb-84365f383412" -->
 ## Network Topology
 
 ```
@@ -62,14 +66,17 @@ Full bidirectional SSH connectivity between all devices using Termius as the uni
 
 ---
 
+<!-- section_id: "104a9938-e130-43bc-beee-9a98c1296c04" -->
 ## Technical Requirements
 
+<!-- section_id: "0e666b2a-bb4c-4408-ac03-69535fb0b1c8" -->
 ### VPS (46.224.184.10)
 - SSH server: ✅ Running (port 22)
 - User: root
 - Auth: SSH key (Ed25519)
 - Firewall: Allow SSH
 
+<!-- section_id: "4165bcbc-b744-4eb5-8b91-dfffd28573d2" -->
 ### Windows
 - SSH server: **Must install** OpenSSH Server
 - User: dawson
@@ -77,12 +84,14 @@ Full bidirectional SSH connectivity between all devices using Termius as the uni
 - Firewall: Allow port 22
 - IP: Local network (192.168.x.x or similar)
 
+<!-- section_id: "8b7b8894-e462-4bac-9b90-59fea3f9e28b" -->
 ### Linux
 - SSH server: ✅ Built-in (openssh-server)
 - User: dawson
 - Auth: SSH key
 - IP: Local network (192.168.x.x or similar)
 
+<!-- section_id: "95715d85-1ce5-4fe9-a02e-6751e51176bf" -->
 ### iPhone
 - Termius app from App Store
 - SSH keys imported or synced via account
@@ -90,6 +99,7 @@ Full bidirectional SSH connectivity between all devices using Termius as the uni
 
 ---
 
+<!-- section_id: "742b925b-78b1-4c2e-92f9-35a966943d6e" -->
 ## SSH Key Distribution
 
 **Primary key**: `~/.ssh/id_ed25519` (Ed25519)
@@ -103,6 +113,7 @@ Full bidirectional SSH connectivity between all devices using Termius as the uni
 
 ---
 
+<!-- section_id: "407afe19-f08d-4f95-b95e-86e33a445d37" -->
 ## SSH Config Specification
 
 All machines should have this config in `~/.ssh/config`:
@@ -126,13 +137,16 @@ Host windows
 
 ---
 
+<!-- section_id: "72374d48-2d02-4f76-9b3c-c1fc4e0d21e0" -->
 ## Termius Configuration
 
+<!-- section_id: "627be7e9-fe1e-43e7-89d8-7e9b30966135" -->
 ### Account Sync
 - All devices use same Termius account
 - Hosts automatically sync
 - Keys stored in encrypted vault
 
+<!-- section_id: "391fa336-e876-41bc-87e3-389e97f77744" -->
 ### Hosts to Create
 | Host | Address | Port | User | Key |
 |------|---------|------|------|-----|
@@ -142,19 +156,23 @@ Host windows
 
 ---
 
+<!-- section_id: "6c5dad46-021d-4c28-b8d2-631624cc7e11" -->
 ## Windows OpenSSH Server Spec
 
+<!-- section_id: "295b90c2-9a78-41fb-b886-0a10bd9c1397" -->
 ### Installation
 ```powershell
 Add-WindowsCapability -Online -Name OpenSSH.Server~~~~0.0.1.0
 ```
 
+<!-- section_id: "0a5324ee-f0e4-4394-a997-5f404aaeaf0a" -->
 ### Configuration
 - Service: sshd
 - Port: 22
 - Auth: Public key
 - Shell: PowerShell or cmd
 
+<!-- section_id: "adfa8bc5-d3cd-4c20-bf2e-57e7b2931d52" -->
 ### Firewall Rule
 ```powershell
 New-NetFirewallRule -Name sshd -DisplayName 'OpenSSH Server' -Enabled True -Direction Inbound -Protocol TCP -Action Allow -LocalPort 22
@@ -162,6 +180,7 @@ New-NetFirewallRule -Name sshd -DisplayName 'OpenSSH Server' -Enabled True -Dire
 
 ---
 
+<!-- section_id: "78030da8-eea5-41f8-85ae-fac6c84c1ddf" -->
 ## Verification Tests
 
 After setup, verify each connection:
@@ -185,6 +204,7 @@ ssh windows               # Should work (after OpenSSH)
 
 ---
 
+<!-- section_id: "19735e4a-3693-40c0-8783-479f1b002417" -->
 ## Dependencies
 
 ```

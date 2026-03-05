@@ -6,10 +6,12 @@ resource_name: "README"
 ---
 # Layer 3 Component Manager Handoff Documents
 
+<!-- section_id: "949d22ec-9d19-4672-8b5d-2cd1a3e9bfd5" -->
 ## Overview
 
 This directory contains handoff documents for **Layer 3 (Components)** managers and workers. Layer 3 is where concrete implementation happens, so handoffs here are typically between Layer 2 feature managers and Layer 3 workers executing component tasks.
 
+<!-- section_id: "42eea977-6daa-446a-8a2d-5e9bba7ba182" -->
 ## Purpose
 
 Manager handoff documents at Layer 3 serve:
@@ -17,6 +19,7 @@ Manager handoff documents at Layer 3 serve:
 1. **Upward Communication** (`3.00_to_features/`): Handoffs between Layer 3 and Layer 2 (Features)
 2. **Downward Communication** (`3.01_to_subcomponents/`): Optional handoffs for complex components decomposed to Layer 4
 
+<!-- section_id: "1882538c-ff35-44c9-9ea9-f75db525cd61" -->
 ## Directory Structure
 
 ```
@@ -36,6 +39,7 @@ Manager handoff documents at Layer 3 serve:
         └── subcomp-*.json
 ```
 
+<!-- section_id: "6c895b5c-8350-4480-9842-f7e8cbf88275" -->
 ## Handoff Schema
 
 All handoffs must conform to the **canonical handoff schema** defined in:
@@ -44,8 +48,10 @@ All handoffs must conform to the **canonical handoff schema** defined in:
 
 **Always consult the schema document when creating or reading handoffs.**
 
+<!-- section_id: "e333bbd4-d8d7-4a11-b112-347ad8cc3682" -->
 ## Handoff Flows at Layer 3
 
+<!-- section_id: "5b055c69-07d6-475c-8957-52812b9775c2" -->
 ### Layer 2 → Layer 3 (Incoming from Feature)
 
 **File**: `3.00_to_features/incoming.json`
@@ -88,6 +94,7 @@ All handoffs must conform to the **canonical handoff schema** defined in:
 }
 ```
 
+<!-- section_id: "1e7d6002-bb77-4dc2-be5d-77b088fdd751" -->
 ### Layer 3 → Layer 2 (Outgoing to Feature)
 
 **File**: `3.00_to_features/outgoing.json`
@@ -138,6 +145,7 @@ All handoffs must conform to the **canonical handoff schema** defined in:
 }
 ```
 
+<!-- section_id: "c9e53c02-f5d3-43e7-9934-6082fd759eb2" -->
 ## Simple Component Workflow (Most Common)
 
 For most components, Layer 3 is a **worker layer** with minimal manager overhead:
@@ -148,10 +156,12 @@ For most components, Layer 3 is a **worker layer** with minimal manager overhead
 
 No stage pipeline needed - just direct execution.
 
+<!-- section_id: "68882882-2a73-4b83-8b8b-2d88d9217691" -->
 ## Complex Component Workflow (Layer 4 Decomposition)
 
 For complex components that benefit from decomposition:
 
+<!-- section_id: "e3f2808d-a852-4868-a873-48e9659ff7c3" -->
 ### Layer 3 → Layer 4 (Downward to Sub-Components)
 
 **File**: `3.01_to_subcomponents/outgoing/subcomp-<name>.json`
@@ -184,6 +194,7 @@ For complex components that benefit from decomposition:
 }
 ```
 
+<!-- section_id: "515265c4-3e33-40b9-941a-f785483cac31" -->
 ### Layer 4 → Layer 3 (Upward from Sub-Components)
 
 **File**: `3.01_to_subcomponents/incoming/subcomp-<name>.json`
@@ -212,8 +223,10 @@ For complex components that benefit from decomposition:
 }
 ```
 
+<!-- section_id: "7277867d-f6d1-40fa-a4b6-30c77649422b" -->
 ## Decision: Simple Worker vs. Complex Manager
 
+<!-- section_id: "275b85b8-b0dd-4d26-8d9e-81a827ddca76" -->
 ### Use Simple Worker Pattern When:
 - Component fits in 1-3 files
 - Single responsibility, clear interface
@@ -223,6 +236,7 @@ For complex components that benefit from decomposition:
 
 **Tool**: Codex CLI for speed and cost efficiency
 
+<!-- section_id: "be9d267c-fd1b-4fb4-9442-53142b5fb4fd" -->
 ### Use Complex Manager Pattern When:
 - Component spans 5+ files
 - Multiple concerns (UI, logic, types, tests, integration)
@@ -232,6 +246,7 @@ For complex components that benefit from decomposition:
 
 **Tool**: Claude Code as manager, Codex as workers for sub-components
 
+<!-- section_id: "eec5cd1b-0ab4-42f4-a028-c83ea427bfd6" -->
 ## Best Practices
 
 1. **Default to Simple**: Start with simple worker pattern, only decompose if truly complex
@@ -243,8 +258,10 @@ For complex components that benefit from decomposition:
 7. **Report Accurately**: Only mark complete when tests pass and acceptance criteria met
 8. **Escalate Blockers**: If stuck, report to Layer 2 immediately
 
+<!-- section_id: "605ae3cc-7851-40e6-a226-b2e33d9ffe97" -->
 ## Example: Simple Component (Login Form)
 
+<!-- section_id: "c95e6420-3748-45a7-9864-fca9f4541aba" -->
 ### Worker receives task
 ```json
 // 3.00_to_features/incoming.json
@@ -256,6 +273,7 @@ For complex components that benefit from decomposition:
 }
 ```
 
+<!-- section_id: "c7fef65d-9248-4475-97d3-8c9e01421b4f" -->
 ### Worker implements in single session (Codex)
 ```
 Turn 1: Create LoginForm.tsx with React Hook Form setup
@@ -263,6 +281,7 @@ Turn 2: Add validation logic and error handling
 Turn 3: Write LoginForm.test.tsx with test cases
 ```
 
+<!-- section_id: "0cb77684-2d6f-461b-890d-290b278bb3bf" -->
 ### Worker reports completion
 ```json
 // 3.00_to_features/outgoing.json
@@ -276,8 +295,10 @@ Turn 3: Write LoginForm.test.tsx with test cases
 }
 ```
 
+<!-- section_id: "01137ca3-79bf-4ed3-a4cd-025ff87a5f11" -->
 ## Example: Complex Component (Data Table)
 
+<!-- section_id: "5110f385-6273-4d67-ab59-b3b8a9842078" -->
 ### Manager decomposes to Layer 4
 ```
 // 3.01_to_subcomponents/outgoing/
@@ -288,6 +309,7 @@ subcomp-table-pagination.json (Pagination logic)
 subcomp-table-tests.json      (Test suite)
 ```
 
+<!-- section_id: "c065b2c1-22f5-4293-b7ea-3e0c0d96ec4c" -->
 ### Sub-components execute in parallel
 ```
 Batch 1 (parallel):
@@ -298,6 +320,7 @@ Batch 2 (after Batch 1):
   - integration tests (Claude Code)
 ```
 
+<!-- section_id: "3bc6172e-84fd-4160-b641-a11b06bf8d09" -->
 ### Manager integrates and reports
 ```json
 // 3.00_to_features/outgoing.json
@@ -310,6 +333,7 @@ Batch 2 (after Batch 1):
 }
 ```
 
+<!-- section_id: "91ec09b9-f97d-4da9-9af9-77e626d12e59" -->
 ## Related Documentation
 
 - **Canonical Schema**: [../../layer_0/0.01_manager_handoff_documents/0.00_to_universal/handoff_schema.md](../../layer_0/0.01_manager_handoff_documents/0.00_to_universal/handoff_schema.md) ← **START HERE**

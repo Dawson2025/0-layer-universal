@@ -27,6 +27,7 @@ resource_name: "proposal_ai_friendly_output_organization_v2"
 
 ---
 
+<!-- section_id: "17f37032-2c12-460d-9cca-eb0f9b2ef8d9" -->
 ## Change from v1
 
 | Aspect | v1 | v2 |
@@ -38,8 +39,10 @@ resource_name: "proposal_ai_friendly_output_organization_v2"
 
 ---
 
+<!-- section_id: "b1629056-fdb0-49d4-8900-a026f5346544" -->
 ## Problem Statement
 
+<!-- section_id: "11ab9fc3-51d5-4a1e-a336-439339fb706d" -->
 ### Current Issues
 
 1. **Research is lumped together** - All topics in one `by_topic/` folder
@@ -47,6 +50,7 @@ resource_name: "proposal_ai_friendly_output_organization_v2"
 3. **Not using our own system** - We're designing a layer-stage system but not using it
 4. **AI agents struggle** - No clear entry points, discovery, or contribution guidelines
 
+<!-- section_id: "bac8c91c-1995-44c6-8586-8e4e88dcac34" -->
 ### What AI Agents Need
 
 | Need | Solution |
@@ -61,8 +65,10 @@ resource_name: "proposal_ai_friendly_output_organization_v2"
 
 ---
 
+<!-- section_id: "9a24e92a-9212-496c-8a86-84d3d539a238" -->
 ## Proposed Solution
 
+<!-- section_id: "3e0c502e-d49a-44b9-910a-eb7f4b6bfb84" -->
 ### Core Idea
 
 **Organize research into the layer-stage hierarchy using features**, with AI-agent-friendly enhancements at every level.
@@ -84,8 +90,10 @@ layer_-1_better_ai_system/           # Research project
 
 ---
 
+<!-- section_id: "0d120d53-6369-43f7-b24b-b429b26d526a" -->
 ## AI-Agent-Friendly Enhancements
 
+<!-- section_id: "7cd8fea4-7114-437e-9191-651f2554d2c5" -->
 ### 1. CLAUDE.md at Every Level
 
 Every folder that an agent might enter gets a `CLAUDE.md`:
@@ -120,6 +128,7 @@ You are a [role] agent working on [scope].
 - **Related**: [links to related features]
 ```
 
+<!-- section_id: "2b0a909a-2391-44e3-bc6b-68014dcef771" -->
 ### 2. 0INDEX.md at Every Level
 
 Every folder gets a `0INDEX.md` for discovery:
@@ -160,6 +169,7 @@ Every folder gets a `0INDEX.md` for discovery:
 [Date] by [session/agent]
 ```
 
+<!-- section_id: "b717885a-470c-4017-9889-d1b070735415" -->
 ### 3. synthesis/ Folder at Every Level
 
 Every significant folder gets a `synthesis/` subfolder:
@@ -178,6 +188,7 @@ feature/
 │                   └── outputs_synthesis.md
 ```
 
+<!-- section_id: "59b6ae8f-68d1-4125-96dc-1b475eaad126" -->
 ### 4. Cross-Reference Maps
 
 At project level and feature level:
@@ -204,6 +215,7 @@ At project level and feature level:
 | Multi-agent sync | Manager Hierarchy | Memory System |
 ```
 
+<!-- section_id: "9a132749-ea22-4bfe-963f-0f779cfc6518" -->
 ### 5. Contribution Templates
 
 At project level, templates for new research:
@@ -236,6 +248,7 @@ How this affects the feature design.
 
 ---
 
+<!-- section_id: "8af08e93-25b3-4ae8-aa38-d7d179682916" -->
 ## Full Proposed Structure
 
 ```
@@ -409,8 +422,10 @@ layer_-1_better_ai_system/
 
 ---
 
+<!-- section_id: "dd5ca5c6-b74b-4fd1-b6f1-6c6a359fb009" -->
 ## File Distribution
 
+<!-- section_id: "8bb94166-12b6-457c-aca4-08c66e205b3a" -->
 ### Research Files → Features
 
 | Current File | → Feature | Location in Feature |
@@ -433,6 +448,7 @@ layer_-1_better_ai_system/
 | `rule_propagation_problem.md` | `better_layer_stage_system` | `stage_0_02_research/outputs/` |
 | `automated_traversal_for_your_system.md` | `ai_automation_system` | `stage_0_02_research/outputs/` |
 
+<!-- section_id: "5b9ab32a-7c89-4168-8731-83e69167fa7f" -->
 ### Large File Split
 
 `layer_stage_instantiation_understanding.md` (2300+ lines) splits into:
@@ -444,6 +460,7 @@ layer_-1_better_ai_system/
 | `agnostic_mapping.md` | `ai_context_system` | Mapping (~130 lines) |
 | `layer_stage_instantiation.md` | `better_layer_stage_system` | Core patterns (~1400 lines) |
 
+<!-- section_id: "eb4cb4a6-b149-4c23-a5aa-4e9440f967ae" -->
 ### Cross-Cutting Research (Stays at Project Level)
 
 | File | Location | Reason |
@@ -455,6 +472,7 @@ layer_-1_better_ai_system/
 | `why_not_use_existing_frameworks.md` | `layer_-1_group/.../cross_cutting/external_frameworks/` | Spans all features |
 | `can_custom_system_outperform_frameworks.md` | `layer_-1_group/.../cross_cutting/external_frameworks/` | Spans all features |
 
+<!-- section_id: "281c87b5-89f6-4b82-809f-e36998660d4c" -->
 ### Proposals (New Location)
 
 | File | Location |
@@ -464,8 +482,10 @@ layer_-1_better_ai_system/
 
 ---
 
+<!-- section_id: "c2c89c0e-b440-44e4-b3ea-1b4bfe5ccced" -->
 ## CLAUDE.md Templates
 
+<!-- section_id: "b842ca8b-0d82-4ac2-9aff-5edae7ddcc02" -->
 ### Project-Level CLAUDE.md
 
 ```markdown
@@ -517,6 +537,7 @@ For research spanning multiple features:
 | Session logs | `layer_-1_group/.../episodic/sessions/` |
 ```
 
+<!-- section_id: "67d686c4-6212-4fd8-a096-0f3f26c7f069" -->
 ### Feature-Level CLAUDE.md
 
 ```markdown
@@ -575,8 +596,10 @@ You are a research/development agent working on the **AI Context System** featur
 
 ---
 
+<!-- section_id: "20aa5fc8-0812-4b8e-bf4d-9b85adab7848" -->
 ## 0INDEX.md Templates
 
+<!-- section_id: "84846756-8d3e-47a4-9e32-f5ea113046de" -->
 ### Project-Level 0INDEX.md
 
 ```markdown
@@ -615,8 +638,10 @@ Research project exploring improvements to AI system architecture.
 
 ---
 
+<!-- section_id: "fc4c7c31-20f9-4ec2-b355-98aab645392c" -->
 ## Registry Updates Required
 
+<!-- section_id: "6baf433a-0f39-445d-87bb-343bd37cddf6" -->
 ### 1. Stage Registry Updates
 
 Add to stage patterns for ALL stages:
@@ -635,6 +660,7 @@ stage_patterns:
       - "_crossref.md" # If cross-references needed
 ```
 
+<!-- section_id: "cb137e9b-8034-4b85-b8ff-af2b214f395a" -->
 ### 2. Layer Registry Updates
 
 Add to layer conventions:
@@ -655,6 +681,7 @@ layer_conventions:
       - "synthesis/"   # Feature synthesis
 ```
 
+<!-- section_id: "3186a950-768f-4b31-87c9-0f8a4f52e6c2" -->
 ### 3. Feature Registry Updates
 
 Add to feature patterns:
@@ -678,14 +705,17 @@ feature_patterns:
 
 ---
 
+<!-- section_id: "628aab1d-1edb-4802-ae15-f400065c2c5c" -->
 ## Implementation Steps
 
+<!-- section_id: "15c25315-7496-4bef-8746-8c376e6da314" -->
 ### Phase 1: Structure Setup
 1. Create `0INDEX.md` at project root
 2. Create `_crossref.md` at project root
 3. Create `_templates/` folder with templates
 4. Update project `CLAUDE.md` with triggers/navigation
 
+<!-- section_id: "55850a14-56fe-43da-a231-50ef317063ed" -->
 ### Phase 2: Feature Enhancement
 For each feature:
 1. Create/update `CLAUDE.md` with full template
@@ -693,23 +723,27 @@ For each feature:
 3. Create `synthesis/` folder
 4. Ensure stage structure exists
 
+<!-- section_id: "eb0db715-d429-43b7-896c-83c7b388e258" -->
 ### Phase 3: Research Distribution
 1. Move research files to appropriate features
 2. Split `layer_stage_instantiation_understanding.md`
 3. Move cross-cutting research to project level
 4. Move proposals to `proposals/` folder
 
+<!-- section_id: "d89234e6-3318-4c71-a673-06174937d864" -->
 ### Phase 4: Synthesis Creation
 1. Create feature-level synthesis files
 2. Create stage-level synthesis files
 3. Update project synthesis to point to features
 4. Create cross-cutting synthesis
 
+<!-- section_id: "10f0ea4d-7f44-42c0-a0cc-1ae41a4a9596" -->
 ### Phase 5: Registry Updates
 1. Update `stage_registry.yaml`
 2. Update `layer_registry.yaml`
 3. Create/update `feature_registry.yaml`
 
+<!-- section_id: "bc3681b8-1800-4181-b198-6a5629efdd7b" -->
 ### Phase 6: Validation
 1. Verify all CLAUDE.md files exist
 2. Verify all 0INDEX.md files exist
@@ -718,6 +752,7 @@ For each feature:
 
 ---
 
+<!-- section_id: "bf6e1946-f4cd-4321-a81b-33231f926b88" -->
 ## Benefits Summary
 
 | Benefit | How Achieved |
@@ -733,6 +768,7 @@ For each feature:
 
 ---
 
+<!-- section_id: "f0004864-32a1-4e39-957b-60fb3c32c76e" -->
 ## Metrics
 
 | Metric | Count |
@@ -747,6 +783,7 @@ For each feature:
 
 ---
 
+<!-- section_id: "639012b3-54c6-4e17-9db9-718a02d54f8c" -->
 ## Open Questions
 
 1. Should session-specific files (`session_2026-01-30_*.md`) stay in `episodic/` or move to features?
@@ -756,6 +793,7 @@ For each feature:
 
 ---
 
+<!-- section_id: "53032f34-3797-4d62-98bd-39eb3e5d9652" -->
 ## Decision Needed
 
 - [ ] Approve v2 proposal
@@ -765,6 +803,7 @@ For each feature:
 
 ---
 
+<!-- section_id: "a72c5407-c563-49d3-806c-c21269bcfdcc" -->
 ## Version History
 
 | Version | Date | Changes |

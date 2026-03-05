@@ -5,12 +5,14 @@ resource_name: "multi_avenue_redundancy"
 ---
 # Multi-Avenue Redundancy
 
+<!-- section_id: "b9d5825e-812f-4494-898e-9e7580e6dfa1" -->
 ## Purpose
 
 How all context chaining avenues link together to ensure context is reliably loaded — even when individual avenues fail. This network is the **Avenue Web** (also called the **Web of Avenues** and `multi_avenue_redundancy_web`): a graph of context paths and reference paths that reinforce each other. Covers effectiveness per tool, how AALang/GAB and JSON-LD integrate, how the system prompt ties everything together, and the "any-one-fires" resilience model.
 
 ---
 
+<!-- section_id: "5b05cd2d-94c4-42ca-8c35-04bd86e035c2" -->
 ## The Problem: No Single Avenue Is Reliable
 
 Every context delivery mechanism has failure modes:
@@ -30,8 +32,10 @@ Every context delivery mechanism has failure modes:
 
 ---
 
+<!-- section_id: "ff2d919a-90ba-44b1-b898-b6a5cadebc9a" -->
 ## The 8 Avenues
 
+<!-- section_id: "7e6a6037-5736-43f6-858a-0c5c317f0638" -->
 ### Avenue 1: System Prompt (CLAUDE.md Chain / AGENTS.md / GEMINI.md)
 
 The always-present foundation. Contains compact pointers to all other avenues.
@@ -40,6 +44,7 @@ The always-present foundation. Contains compact pointers to all other avenues.
 - **Generated** from `0AGNOSTIC.md` via `agnostic-sync.sh`
 - **Contains**: trigger tables, @import references, jq instructions, skill pointers
 
+<!-- section_id: "591b2158-7508-4d26-987b-c231298dc8eb" -->
 ### Avenue 2: Path-Specific Rules (.claude/rules/ with paths: frontmatter)
 
 Rules that auto-load when the agent works with matching file paths.
@@ -48,6 +53,7 @@ Rules that auto-load when the agent works with matching file paths.
 - **Synced** from `.0agnostic/rules/static/` (always-loaded) and `.0agnostic/rules/dynamic/` (path-scoped)
 - **Dynamic rules** contain triggers that point to protocols and skills
 
+<!-- section_id: "39bdbd52-ded4-43fa-8992-2ccd24a26bb0" -->
 ### Avenue 3: Skills (.claude/skills/ — progressive disclosure)
 
 On-demand procedures that load full content only when invoked.
@@ -56,6 +62,7 @@ On-demand procedures that load full content only when invoked.
 - **Synced** from `.0agnostic/protocols/` and `.0agnostic/skills/`
 - **Descriptions** load at session start; full content loads on invocation
 
+<!-- section_id: "a5f2fdd9-a65c-4508-9291-e7d653c41786" -->
 ### Avenue 4: @import References
 
 Inline references in CLAUDE.md or rules that load referenced file content.
@@ -64,6 +71,7 @@ Inline references in CLAUDE.md or rules that load referenced file content.
 - **Chain depth**: up to 5 hops
 - **Points to**: knowledge files, detailed guides, reference material in `.0agnostic/knowledge/`
 
+<!-- section_id: "54757eeb-0922-4d2e-8eb9-8269db017b03" -->
 ### Avenue 5: JSON-LD Agent Definitions (.gab.jsonld via jq)
 
 Structured agent definitions navigated via selective jq queries.
@@ -72,6 +80,7 @@ Structured agent definitions navigated via selective jq queries.
 - **Selective navigation**: load 2-5% of file per query
 - **Contains**: mode constraints, skill mappings, state transitions
 
+<!-- section_id: "1f5f2eea-ab10-43d8-8075-62cb46bcd81b" -->
 ### Avenue 6: Integration Summaries (.integration.md)
 
 Auto-generated markdown from JSON-LD — the runtime-readable version.
@@ -80,6 +89,7 @@ Auto-generated markdown from JSON-LD — the runtime-readable version.
 - **Markdown format** — highest LLM comprehension accuracy
 - **Contains**: mode table, constraints, skill mappings (same as JSON-LD, but readable)
 
+<!-- section_id: "616230ee-1048-408d-bdcc-113b2503db48" -->
 ### Avenue 7: Episodic Memory
 
 Session records that provide cross-session continuity.
@@ -88,6 +98,7 @@ Session records that provide cross-session continuity.
 - **Episodic files** (`outputs/episodic/index.md`) load on-demand
 - **Contains**: what was done, decisions made, files changed
 
+<!-- section_id: "e81ce3d1-aab4-428c-a3d6-3e97b028b7f6" -->
 ### Avenue 8: 0AGNOSTIC.md (Direct Read)
 
 The agent can always read the source of truth directly.
@@ -98,6 +109,7 @@ The agent can always read the source of truth directly.
 
 ---
 
+<!-- section_id: "6fcfac87-e6ef-4418-94b7-472caa1a8be3" -->
 ## How Avenues Link Together
 
 The system prompt (Avenue 1) is the root node that connects to all others:
@@ -142,12 +154,14 @@ Avenue 5 (JSON-LD) ── generates ──→ Avenue 6 (.integration.md)
 
 ---
 
+<!-- section_id: "0d57952d-e968-445c-a611-ff9193f380a4" -->
 ## JSON-LD Traversal Methods Beyond jq
 
 The current system uses jq-via-bash as the primary JSON-LD traversal mechanism (Avenue 5). Research reveals 6 additional methods that expand tool compatibility and provide fallbacks when jq is unavailable.
 
 Our `.gab.jsonld` files use a flat `@graph` array with prefixed types (`gab:Mode`, `gab:Actor`, etc.), typically 500-1400 lines. Core operations: extract nodes by `@type`, get nodes by `@id`, follow inter-node references, extract constraints and skill mappings.
 
+<!-- section_id: "cbbb5568-5f7b-47b5-880b-c39997fcd7c1" -->
 ### Method Comparison
 
 | Method | Installation | Universal Compatibility | Precision | Context Window Cost | Best For |
@@ -161,6 +175,7 @@ Our `.gab.jsonld` files use a flat `@graph` array with prefixed types (`gab:Mode
 
 ---
 
+<!-- section_id: "c11a9b6d-ff1a-4dcc-b2f5-8e8796f8f626" -->
 ### Method 1: Native JSON Parsing (No Dependencies)
 
 Since JSON-LD is valid JSON, any scripting language can traverse `@graph` arrays without JSON-LD-specific libraries. This is the most universally accessible method.
@@ -190,6 +205,7 @@ modes = [n for n in doc['@graph'] if n.get('@type') == 'gab:Mode']
 
 ---
 
+<!-- section_id: "5e557e19-693b-495d-b506-23c78098a699" -->
 ### Method 2: LLM Direct Reading
 
 The AI agent reads the `.gab.jsonld` file with a file-read tool and extracts information using its language understanding. This is the universal fallback.
@@ -204,6 +220,7 @@ The `.integration.md` files exist precisely to optimize this method -- they prov
 
 ---
 
+<!-- section_id: "821ab353-13a9-40c5-83a2-5fbdf4d90805" -->
 ### Method 3: JavaScript Libraries (jsonld.js, Comunica)
 
 **jsonld.js** (Digital Bazaar, v9.0.0) -- The W3C reference implementation. The `frame()` method is purpose-built for extracting typed nodes:
@@ -227,6 +244,7 @@ const result = await jsonld.frame(doc, frame);
 
 ---
 
+<!-- section_id: "9dfe1bb7-b20f-4430-a96d-d261f256ee2a" -->
 ### Method 4: Python Libraries (rdflib, PyLD)
 
 **rdflib** (v6.0.1+) -- JSON-LD support built in. Full SPARQL query support:
@@ -251,6 +269,7 @@ for mode in g.query('SELECT ?id ?purpose WHERE { ?id a <https://aalang.dev/gab/M
 
 ---
 
+<!-- section_id: "5e2a69a3-ea3e-40ad-a61e-7a877d67166a" -->
 ### Method 5: Custom MCP Server
 
 No JSON-LD-specific MCP server currently exists. Related servers (mcp-rdf-explorer, GraphDB MCP, SPARQL MCP) work with Turtle or SPARQL endpoints, not `.jsonld` files directly.
@@ -268,6 +287,7 @@ This is the most forward-looking option -- every MCP-compatible tool would gain 
 
 ---
 
+<!-- section_id: "31deddb9-8dd1-42ec-b213-71713b08ba21" -->
 ### Method 6: SPARQL / GraphQL-LD (Lightweight)
 
 **JSON-LD Framing** is the most native query mechanism -- a frame acts as a "query by example":
@@ -298,6 +318,7 @@ const result = await engine.query(`
 
 ---
 
+<!-- section_id: "8436788b-e287-4ba6-9fe5-f0c585529553" -->
 ### Recommended Approach per Tool
 
 | Tool | Primary Method | Fallback |
@@ -315,6 +336,7 @@ const result = await engine.query(`
 
 The three-avenue approach in AALang context loading remains sound: (1) jq for precision, (2) .integration.md for efficient LLM reading, (3) raw file reading as last resort. Native JSON parsing should be documented as the universal portable alternative to jq.
 
+<!-- section_id: "073f55bc-7d96-486f-838b-5cccb9616c95" -->
 ### JSON-LD Traversal Sources
 
 - [jsonld.js -- Digital Bazaar (GitHub)](https://github.com/digitalbazaar/jsonld.js)
@@ -329,8 +351,10 @@ The three-avenue approach in AALang context loading remains sound: (1) jq for pr
 
 ---
 
+<!-- section_id: "c9ae2e9a-a159-4c77-9a83-5b6cd5d9a073" -->
 ## Avenue Effectiveness by Tool
 
+<!-- section_id: "3526cb12-e0e4-4e1d-81f3-d824942ffa58" -->
 ### Claude Code (Best Support — 8/8 Avenues)
 
 | Avenue | Mechanism | Effectiveness | Notes |
@@ -375,6 +399,7 @@ Result: 5 avenues independently point to the same workflow
 
 ---
 
+<!-- section_id: "5e9bbec0-3fbf-4e7e-bd95-5a8ad05b6150" -->
 ### Codex CLI (5/8 Avenues)
 
 | Avenue | Mechanism | Effectiveness | Notes |
@@ -421,6 +446,7 @@ Result: 4 avenues fire — adequate coverage despite missing path rules
 
 ---
 
+<!-- section_id: "627c4a41-f775-480e-b698-89e4dd2d34e4" -->
 ### Gemini CLI (4/8 Avenues)
 
 | Avenue | Mechanism | Effectiveness | Notes |
@@ -468,6 +494,7 @@ Result: 3-4 avenues fire — but Avenue 1 reliability is lower than other tools
 
 ---
 
+<!-- section_id: "3774c54e-d846-4e3d-8956-965d98433d4d" -->
 ### OpenCode (3-4/8 Avenues, Model-Dependent)
 
 | Avenue | Mechanism | Effectiveness | Notes |
@@ -521,6 +548,7 @@ Result: 1-2 avenues fire — unreliable with GPT backend
 
 ---
 
+<!-- section_id: "1731caa2-b2ca-41f8-921b-caca959c99aa" -->
 ### Cursor IDE (3-4/8 Avenues)
 
 | Avenue | Mechanism | Effectiveness | Notes |
@@ -590,6 +618,7 @@ Result: 2-3 avenues fire reliably — Cursor depends heavily on path rules and s
 
 ---
 
+<!-- section_id: "0c2403f8-be82-4f15-8035-a6681fe3b5a6" -->
 ### Cursor CLI (6-7/8 Avenues)
 
 | Avenue | Mechanism | Effectiveness | Notes |
@@ -646,6 +675,7 @@ Result: 5 avenues fire — significantly more coverage than IDE mode
 
 ---
 
+<!-- section_id: "939c1738-5e1b-45f3-b8fa-d1e3bbcfb6df" -->
 ### Aider (3/8 Avenues)
 
 | Avenue | Mechanism | Effectiveness | Notes |
@@ -688,6 +718,7 @@ Result: 3 avenues available — heavily dependent on Avenue 1 quality
 
 ---
 
+<!-- section_id: "150fed62-52a8-4108-acda-cd25495d7978" -->
 ### Windsurf (2-3/8 Avenues)
 
 | Avenue | Mechanism | Effectiveness | Notes |
@@ -709,6 +740,7 @@ Result: 3 avenues available — heavily dependent on Avenue 1 quality
 
 ---
 
+<!-- section_id: "9502262e-9ef4-45bf-8f46-4938a933eb00" -->
 ### Junie / JetBrains AI (2-3/8 Avenues)
 
 | Avenue | Mechanism | Effectiveness | Notes |
@@ -730,6 +762,7 @@ Result: 3 avenues available — heavily dependent on Avenue 1 quality
 
 ---
 
+<!-- section_id: "a40e5c82-e2f0-4018-8726-3ab2cfb7a6b7" -->
 ### Amazon Q Developer (3-4/8 Avenues)
 
 | Avenue | Mechanism | Effectiveness | Notes |
@@ -780,6 +813,7 @@ Result: 2-3 avenues fire — heavily dependent on rule quality and priority orde
 
 ---
 
+<!-- section_id: "bab5e793-cfe7-4711-8d66-8cb4fe491eb1" -->
 ### Cline / Roo Code (4-5/8 Avenues)
 
 | Avenue | Mechanism | Effectiveness | Notes |
@@ -846,6 +880,7 @@ Result: 4 avenues fire — mode-based scoping provides strong task-type awarenes
 
 ---
 
+<!-- section_id: "1b9ebff6-18fd-441c-805c-a0be502f13aa" -->
 ### GitHub Copilot (3-4/8 Avenues)
 
 | Avenue | Mechanism | Effectiveness | Notes |
@@ -901,6 +936,7 @@ Result: 3 avenues fire reliably — semantic indexing compensates for missing pa
 
 ---
 
+<!-- section_id: "1dcec679-1545-44d2-b521-0d9834220966" -->
 ### Summary: Avenue Coverage Across All Tools
 
 | Avenue | Claude Code | Codex CLI | Gemini CLI | Cursor IDE | Cursor CLI | OpenCode | Cline/Roo | Amazon Q | Copilot | Aider | Windsurf | Junie |
@@ -941,16 +977,19 @@ Result: 3 avenues fire reliably — semantic indexing compensates for missing pa
 
 ---
 
+<!-- section_id: "799b8f64-8c08-4362-b386-9866ae58e6fe" -->
 ## Unique Per-Tool Avenues
 
 Each AI coding tool has context delivery avenues that Claude Code CLI lacks. This section identifies those gaps, assesses their impact, and maps which can be leveraged by the agnostic system through `.1merge/` generation.
 
+<!-- section_id: "4cabfaa6-054c-4ef8-950b-f39afed93b34" -->
 ### Claude Code Baseline
 
 For reference, Claude Code CLI provides: CLAUDE.md hierarchy (always loaded), skills (`.claude/skills/`), MCP tools, hooks, auto-memory, agent teams (research preview), and path-scoped rules.
 
 ---
 
+<!-- section_id: "c72e386e-421a-4386-8589-be271b984143" -->
 ### 1. Cursor
 
 | Avenue | Description | Effectiveness | Agnostic Leverage |
@@ -967,6 +1006,7 @@ For reference, Claude Code CLI provides: CLAUDE.md hierarchy (always loaded), sk
 
 ---
 
+<!-- section_id: "27f0db41-01a7-4390-9706-bc819973e845" -->
 ### 2. Windsurf / Cascade
 
 | Avenue | Description | Effectiveness | Agnostic Leverage |
@@ -981,6 +1021,7 @@ For reference, Claude Code CLI provides: CLAUDE.md hierarchy (always loaded), sk
 
 ---
 
+<!-- section_id: "79d50a27-218f-47b6-910e-1e3122265a5f" -->
 ### 3. OpenAI Codex CLI
 
 | Avenue | Description | Effectiveness | Agnostic Leverage |
@@ -995,6 +1036,7 @@ For reference, Claude Code CLI provides: CLAUDE.md hierarchy (always loaded), sk
 
 ---
 
+<!-- section_id: "7f25b139-13ad-465e-bde8-d9522f4bcd2f" -->
 ### 4. Google Gemini CLI
 
 | Avenue | Description | Effectiveness | Agnostic Leverage |
@@ -1010,6 +1052,7 @@ For reference, Claude Code CLI provides: CLAUDE.md hierarchy (always loaded), sk
 
 ---
 
+<!-- section_id: "57e9a89d-424c-4203-ac28-ddd6a27c0bbc" -->
 ### 5. Aider
 
 | Avenue | Description | Effectiveness | Agnostic Leverage |
@@ -1024,6 +1067,7 @@ For reference, Claude Code CLI provides: CLAUDE.md hierarchy (always loaded), sk
 
 ---
 
+<!-- section_id: "a9450f54-027e-42be-8c43-d4bbcdf42f01" -->
 ### 6. OpenCode
 
 | Avenue | Description | Effectiveness | Agnostic Leverage |
@@ -1036,6 +1080,7 @@ For reference, Claude Code CLI provides: CLAUDE.md hierarchy (always loaded), sk
 
 ---
 
+<!-- section_id: "a8fb4e90-a5ed-4cc3-baaa-534a47e0fb52" -->
 ### 7. GitHub Copilot
 
 | Avenue | Description | Effectiveness | Agnostic Leverage |
@@ -1049,6 +1094,7 @@ For reference, Claude Code CLI provides: CLAUDE.md hierarchy (always loaded), sk
 
 ---
 
+<!-- section_id: "03982ad7-046e-46ed-9490-0b0776ba92d7" -->
 ### 8. JetBrains Junie
 
 | Avenue | Description | Effectiveness | Agnostic Leverage |
@@ -1063,6 +1109,7 @@ For reference, Claude Code CLI provides: CLAUDE.md hierarchy (always loaded), sk
 
 ---
 
+<!-- section_id: "a57bdf07-3ae5-41d2-9d24-cc2dd6f48441" -->
 ### 9. Amazon Q Developer
 
 | Avenue | Description | Effectiveness | Agnostic Leverage |
@@ -1077,6 +1124,7 @@ For reference, Claude Code CLI provides: CLAUDE.md hierarchy (always loaded), sk
 
 ---
 
+<!-- section_id: "f88f26ad-4b39-4cc2-8eb1-c6c615d06bb1" -->
 ### 10. Cline / Roo Code
 
 | Avenue | Description | Effectiveness | Agnostic Leverage |
@@ -1091,6 +1139,7 @@ For reference, Claude Code CLI provides: CLAUDE.md hierarchy (always loaded), sk
 
 ---
 
+<!-- section_id: "ef61769f-601d-47db-83f4-db703886b906" -->
 ### Tier Summary
 
 #### Tier 1 -- High Impact, Claude Code Has No Equivalent
@@ -1119,6 +1168,7 @@ For reference, Claude Code CLI provides: CLAUDE.md hierarchy (always loaded), sk
 
 ---
 
+<!-- section_id: "aac4e040-0dd1-4c02-96e2-fe2e35371770" -->
 ### Agnostic System Leverage Mapping
 
 Avenues the `.1merge/` system can generate from `0AGNOSTIC.md`:
@@ -1138,6 +1188,7 @@ Avenues the `.1merge/` system can generate from `0AGNOSTIC.md`:
 
 Avenues that **cannot** be leveraged: vector search indexing, IDE inspections, LSP integration, sandboxed execution, and platform-specific collaborative features (Copilot Spaces). These require native tool support or dedicated MCP servers to approximate.
 
+<!-- section_id: "aaf855cf-23ad-4e99-854a-aba069c7ad1d" -->
 ### Unique Avenues Sources
 
 - [A Deep Dive into Cursor Rules and Background Agents](https://medium.com/@duraidw/title-a-deep-dive-into-cursor-rules-and-background-agents-51d65c6a9619)
@@ -1159,12 +1210,14 @@ Avenues that **cannot** be leveraged: vector search indexing, IDE inspections, L
 
 ---
 
+<!-- section_id: "f1176b14-607b-430e-871c-e5316783c394" -->
 ## Unexplored and Novel Context Avenues
 
 Research (February 2026) identified 27 context delivery avenues beyond the original 8. These range from MCP server primitives to multi-agent isolation patterns. Each is assessed for mechanism, current tool support, reliability, and agnostic system integration potential.
 
 ---
 
+<!-- section_id: "201d269c-91b3-4e06-ae64-0f03945c8c27" -->
 ### Avenue Summary Table
 
 | # | Avenue | Mechanism | Reliability | Agnostic Fit | Tier |
@@ -1199,6 +1252,7 @@ Research (February 2026) identified 27 context delivery avenues beyond the origi
 
 ---
 
+<!-- section_id: "200a2412-6841-4ff3-a248-11c3bcba2fe2" -->
 ### Context Chaining vs Reference Chaining
 
 This system uses both context chaining (what content is loaded) and reference chaining (what pointer is followed next).
@@ -1214,6 +1268,7 @@ Practical rule: every critical instruction should be reachable through both a co
 
 ---
 
+<!-- section_id: "472615be-9b3b-4ccc-8c76-11f9c9c6e30f" -->
 ### Ranked Avenues to Use (Context + Reference Chaining)
 
 Ranking emphasizes reliability, cross-tool portability, and immediate implementation value for the 0Agnostic system.
@@ -1234,6 +1289,7 @@ Ranking emphasizes reliability, cross-tool portability, and immediate implementa
 
 ---
 
+<!-- section_id: "db03c8a8-94a3-41bd-b93c-7f829c7f59b2" -->
 ### Tier 1 -- High Impact, Implement Now
 
 #### 1. MCP Resources and Prompts
@@ -1303,6 +1359,7 @@ When context windows fill, compaction summarizes the conversation. A `SessionSta
 
 ---
 
+<!-- section_id: "231af91b-c6d2-440d-953a-f45e93c3c891" -->
 ### Tier 2 -- High Impact, Investigate
 
 #### 2. Git Hooks / Agent Hooks
@@ -1354,6 +1411,7 @@ Split work across subagents with isolated context windows. Each gets only task-r
 
 ---
 
+<!-- section_id: "1ab43d2e-238a-425e-aaea-bf22125d24a8" -->
 ### Tier 3 -- Supplementary Value
 
 #### 3. LSP Integration
@@ -1386,6 +1444,7 @@ Well-written docstrings serve as implicit instructions to AI agents. No special 
 
 ---
 
+<!-- section_id: "2c857910-4acb-47cc-aee4-30c1fd2e3fa8" -->
 ### Tier 4 -- Monitor for Future
 
 #### 5. Environment Variables
@@ -1402,6 +1461,7 @@ New open standard by Zed Editor (Aug 2025) -- standardizes editor-agent communic
 
 ---
 
+<!-- section_id: "e4956b37-5d16-47e0-b3a6-15d6a974c9a4" -->
 ### Integration Priority Matrix
 
 | Priority | Action | Avenue(s) |
@@ -1424,6 +1484,7 @@ New open standard by Zed Editor (Aug 2025) -- standardizes editor-agent communic
 | **Watch** | Track verifiable credential adoption for agent identity | 27 (Credentialed Agent Identity) |
 | **Watch** | Agent Client Protocol (ACP) development | 19 (ACP) |
 
+<!-- section_id: "91733c2e-f541-4b9d-b319-7c87479cf3d2" -->
 ### Novel Avenues Sources
 
 - [Model Context Protocol Specification (Nov 2025)](https://modelcontextprotocol.io/specification/2025-11-25)
@@ -1449,10 +1510,12 @@ New open standard by Zed Editor (Aug 2025) -- standardizes editor-agent communic
 
 ---
 
+<!-- section_id: "772ffacb-7c4f-42db-8125-f3886432cef0" -->
 ## AALang/GAB Integration
 
 AALang agent definitions (`.gab.jsonld`) are the design-time source of truth for agent behavior. They integrate through four independent avenues:
 
+<!-- section_id: "37566dce-9d2e-4c4e-827a-f2c223776f21" -->
 ### Redundancy Chain for AALang
 
 ```
@@ -1480,6 +1543,7 @@ AALang agent definitions (`.gab.jsonld`) are the design-time source of truth for
 
 **If ANY one of these four fires → agent gets AALang constraints.**
 
+<!-- section_id: "227f20f2-4510-43fe-969c-833740b2f4b0" -->
 ### Per-Tool AALang Access
 
 | Tool | jq Access | .integration.md | Path Rules → AALang | Skills → AALang |
@@ -1499,6 +1563,7 @@ Tools without path rules or skills rely on system prompt jq instructions (Avenue
 
 ---
 
+<!-- section_id: "039b31f4-9f22-4ff4-8d50-ab7131c69ead" -->
 ## How the System Prompt Ties Everything Together
 
 The system prompt is the switchboard — it doesn't contain detailed content, but it connects to all avenues:
@@ -1529,6 +1594,7 @@ The system prompt is the switchboard — it doesn't contain detailed content, bu
 
 ---
 
+<!-- section_id: "692a5603-8f5c-42b2-af3d-aea1c8a80fcc" -->
 ## The "Any-One-Fires" Resilience Model
 
 ```
@@ -1556,6 +1622,7 @@ Probability of failure: 20-63%
 
 ---
 
+<!-- section_id: "83066f03-ff19-4758-90f9-6dc0d3a47493" -->
 ## Design Principles
 
 1. **Every piece of context must be reachable through at least 3 independent avenues**

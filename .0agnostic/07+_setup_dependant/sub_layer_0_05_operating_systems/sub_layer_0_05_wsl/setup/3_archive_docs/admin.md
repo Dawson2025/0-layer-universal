@@ -5,10 +5,12 @@ resource_name: "admin"
 ---
 # Admin Guide
 
+<!-- section_id: "c8567d37-fa89-48d4-a965-24b9148b27c7" -->
 ## Access
 - Select "Admin Commands" from the main menu
 - Enter password: `20251010`
 
+<!-- section_id: "b06c675d-b5dc-445e-8640-c25d1190d727" -->
 ## Admin Features
 1. Add new phoneme
 2. Delete phoneme
@@ -17,15 +19,18 @@ resource_name: "admin"
 5. Reset database
 6. Back to main menu
 
+<!-- section_id: "00fdda3a-e4dd-4ef1-a24e-bd68deaf58cb" -->
 ## Add/Delete Phonemes
 - Add flow shows existing group/subgroup types with numeric selection
 - Delete flow lists phonemes hierarchically with numeric selection
 - Both use the app's fixed ordering and enforce database constraints
 
+<!-- section_id: "b1fb8147-9cb1-43d8-8dde-fbd868e45128" -->
 ## Frequency Adjustments
 - Increase/decrease frequency for selected phonemes
 - Available to admins only
 
+<!-- section_id: "bcea10e8-246b-492c-b679-2c409ef9e111" -->
 ## Reset Database (Safety)
 - Dramatic warning + two-step confirmation
 - Displays current counts of phonemes and words before final confirmation

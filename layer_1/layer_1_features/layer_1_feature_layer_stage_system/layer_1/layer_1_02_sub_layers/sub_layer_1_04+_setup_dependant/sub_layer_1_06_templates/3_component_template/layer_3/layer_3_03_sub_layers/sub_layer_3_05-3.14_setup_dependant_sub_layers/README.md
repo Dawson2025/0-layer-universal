@@ -11,6 +11,7 @@ resource_name: "README"
 
 ---
 
+<!-- section_id: "faa740cd-7e30-46ef-92ab-1e6b31a7bd5e" -->
 ## Overview
 
 This sublayer consolidates all setup documentation for sublayers 3.05 through 3.14:
@@ -30,12 +31,14 @@ All setup documentation is organized in a **hierarchical file tree structure**.
 
 ---
 
+<!-- section_id: "df8ddf62-ce62-42d5-9352-c780daff0d05" -->
 ## Primary Navigation: Component Setup File Tree
 
 **Main entry point**: `3.01_component_setup_file_tree/`
 
 Navigate by your configuration to find component-specific setup documentation.
 
+<!-- section_id: "456c86b7-48f8-4c67-81ac-e6d52273f476" -->
 ## Structure
 
 ```

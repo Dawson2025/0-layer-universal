@@ -6,6 +6,7 @@ resource_name: "0AGNOSTIC"
 ---
 # 0AGNOSTIC.md - layer_1_99_stages (Audio Sub-Feature)
 
+<!-- section_id: "1055501e-532e-4ccb-b891-23e291f7a11d" -->
 ## Identity
 
 entity_id: "f9c8ab58-4500-40ed-872a-f35cef68c09c"
@@ -13,6 +14,7 @@ entity_id: "f9c8ab58-4500-40ed-872a-f35cef68c09c"
 Stages container for the audio sub-feature.
 - **Parent**: `../../0AGNOSTIC.md` (layer_1_sub_feature_audio)
 
+<!-- section_id: "396cfe35-f8ce-4860-9cbe-733b02857f55" -->
 ## Stages
 
 | Stage | Name | Purpose |

@@ -5,12 +5,14 @@ resource_name: "merge_system"
 ---
 # .1merge Override System
 
+<!-- section_id: "8457f808-827c-41e5-8956-498bb8722b61" -->
 ## Purpose
 
 The three-tier merge system that allows tool-specific customizations without polluting the agnostic source. `.1merge/` sits between the agnostic source (`.0agnostic/`) and the generated tool-specific output (`.claude/`, `.cursor/`, etc.), providing a clean separation between universal content and tool-specific additions.
 
 ---
 
+<!-- section_id: "2fbb4538-fa7e-4a7d-b67a-22c3e6b9fca2" -->
 ## The Three Tiers
 
 ```
@@ -28,6 +30,7 @@ Tier 3: .claude/ / .cursor/ etc  ← Final generated output
                                     What the tool actually reads
 ```
 
+<!-- section_id: "a451ddf3-39d0-4437-b874-702a55af9629" -->
 ### Tier 1: .0agnostic/ (Agnostic Source)
 
 Content that applies universally across all AI tools:
@@ -38,6 +41,7 @@ Content that applies universally across all AI tools:
 
 **Edit this tier** when the content is tool-agnostic.
 
+<!-- section_id: "836ce63d-2c03-494b-a4b0-d827ccc2cf88" -->
 ### Tier 2: .1merge/.1{tool}_merge/ (Tool-Specific Overrides)
 
 Content that only applies to a specific tool, or that overrides agnostic content for a particular tool.
@@ -56,14 +60,17 @@ Content that only applies to a specific tool, or that overrides agnostic content
 
 **Edit this tier** when the content is tool-specific — format requirements, tool features, tool settings, or when you need to override an agnostic rule for a particular tool.
 
+<!-- section_id: "a88a2942-778f-41f0-b6f6-112fdd83a189" -->
 ### Tier 3: Generated Output (.claude/, .cursor/, etc.)
 
 The final output that tools actually read. **Never edit this tier directly** — it's overwritten by `agnostic-sync.sh`. Any manual edits are lost on next sync.
 
 ---
 
+<!-- section_id: "40ead249-eb61-4294-9fda-96c1e44acbca" -->
 ## Merge Operations
 
+<!-- section_id: "d93b252e-4776-4137-907c-a5862715fa6a" -->
 ### Sync (Tier 1 → Tier 3)
 
 Agnostic content is copied or transformed to the tool's expected location:
@@ -73,6 +80,7 @@ Agnostic content is copied or transformed to the tool's expected location:
   ──copy──→ .claude/rules/commit_push.md
 ```
 
+<!-- section_id: "e3754805-efef-4d88-b7c1-98360face1a7" -->
 ### Override (Tier 2 replaces Tier 1)
 
 If the same file exists in both `.0agnostic/` and `.1merge/.1claude_merge/`, the merge version replaces the agnostic version:
@@ -84,6 +92,7 @@ If the same file exists in both `.0agnostic/` and `.1merge/.1claude_merge/`, the
 Result: .claude/rules/testing.md           ← Uses the .1merge version
 ```
 
+<!-- section_id: "c72282c0-ef0b-4a4b-8a14-6aee8e6be781" -->
 ### Addition (Tier 2 adds to Tier 3)
 
 If a file exists only in `.1merge/.1claude_merge/`, it's added to the output without replacing anything:
@@ -94,6 +103,7 @@ If a file exists only in `.1merge/.1claude_merge/`, it's added to the output wit
 Result: .claude/settings.json              ← Added to .claude/
 ```
 
+<!-- section_id: "05156803-0836-45fe-942c-869205521d69" -->
 ### Priority Order
 
 ```
@@ -103,6 +113,7 @@ Result: .claude/settings.json              ← Added to .claude/
 
 ---
 
+<!-- section_id: "b4c21252-8a64-4db7-99a7-e7895d7d532e" -->
 ## When to Use .1merge/ vs .0agnostic/
 
 | Content Type | Location | Rationale |
@@ -117,10 +128,12 @@ Result: .claude/settings.json              ← Added to .claude/
 
 ---
 
+<!-- section_id: "dd4ba27b-3013-47c1-a220-62ba7dd29be7" -->
 ## .1merge/ Internal Structure — Mirrors .0agnostic/
 
 Each `.1{tool}_merge/` has three internal tiers (`0_synced/`, `1_overrides/`, `2_additions/`), and **each tier mirrors the `.0agnostic/` directory structure** — same subdirectories for knowledge, rules, protocols, skills, agents, etc.
 
+<!-- section_id: "3af0c71e-1fa0-4020-9005-db92cfa1fde1" -->
 ### Full Structure
 
 ```
@@ -167,6 +180,7 @@ Each `.1{tool}_merge/` has three internal tiers (`0_synced/`, `1_overrides/`, `2
     └── settings.json                   # settings.json → .claude/settings.json
 ```
 
+<!-- section_id: "a8875164-7abd-4054-b76a-f91f837c162e" -->
 ### How the Three Tiers Work
 
 #### 0_synced/ — Inherited from parent
@@ -214,6 +228,7 @@ Result: .claude/rules/claude_hooks.md       ← Added (no agnostic version exist
 - Skills that use Claude-only capabilities (Task tool, progressive disclosure)
 - Knowledge about Claude Code internals (context compaction, skill char budget)
 
+<!-- section_id: "10a4de8c-edf0-46ff-be79-c5fe8a9f5d6a" -->
 ### Merge Priority
 
 When the sync runs, priority order is:
@@ -231,6 +246,7 @@ If the same file exists in multiple tiers:
 3. `0_synced/` wins over `.0agnostic/`
 4. `.0agnostic/` is the default when no override exists
 
+<!-- section_id: "3323cc79-0928-40f2-87c3-dd0b3850aaab" -->
 ### Per-Tool Examples
 
 #### Claude Code (.1claude_merge/)
@@ -298,6 +314,7 @@ If the same file exists in multiple tiers:
     └── conventions.md                    # Aider conventions file (generated)
 ```
 
+<!-- section_id: "540e6a03-7441-48f0-b8b6-f4630997960a" -->
 ### Sparse Structure Is Normal
 
 Not every `.1{tool}_merge/` needs all subdirectories. Most will be sparse:
@@ -313,6 +330,7 @@ Not every `.1{tool}_merge/` needs all subdirectories. Most will be sparse:
 
 ---
 
+<!-- section_id: "c960ff46-a848-42f4-8b51-d7ab97befe06" -->
 ## Current State
 
 - **248 `.1merge/` directories** exist across the hierarchy
@@ -322,6 +340,7 @@ Not every `.1{tool}_merge/` needs all subdirectories. Most will be sparse:
 
 ---
 
+<!-- section_id: "90111ff6-2850-43fe-877c-71099d482dcd" -->
 ## Integration with Multi-Avenue Redundancy
 
 The `.1merge/` system enables per-tool avenue optimization:

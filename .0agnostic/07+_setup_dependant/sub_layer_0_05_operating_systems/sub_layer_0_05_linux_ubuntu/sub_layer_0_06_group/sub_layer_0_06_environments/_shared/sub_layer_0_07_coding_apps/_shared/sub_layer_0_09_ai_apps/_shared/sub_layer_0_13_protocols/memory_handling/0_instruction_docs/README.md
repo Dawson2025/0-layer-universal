@@ -4,6 +4,7 @@ resource_type: "readme
 document"
 resource_name: "README"
 ---
+<!-- section_id: "6f6d0b8b-6e74-4a6b-9e76-e49452ccc2c0" -->
 ## Memory Handling Protocol – Instruction Docs
 
 The canonical definition of the **Memory Handling Protocol** lives in:

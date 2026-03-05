@@ -9,12 +9,14 @@ resource_name: "Make an implementation doc with sources and links"
 
 Implementation documentation outlines steps, best practices, and resources for deploying a system or process effectively. This generic template draws from established standards in technical writing and project management. Use it as a starting point for software, policy, or workflow implementations.
 
+<!-- section_id: "3ab24dfa-6224-4814-acce-e24cee11ceb8" -->
 ## Core Components
 
 Include an overview, objectives, scope, and stakeholders early. Define success metrics like timelines and KPIs to align teams.[^1_1][^1_4]
 Structure content with reusable modules for efficiency, such as LEGO-like blocks for procedures and warnings.[^1_1]
 Tailor to audience: simplify for end-users, add specs for developers.[^1_7]
 
+<!-- section_id: "ba97562a-e741-4cf0-b138-678251aa673d" -->
 ## Key Sections Outline
 
 - **Introduction**: Project background, goals, and assumptions.
@@ -29,12 +31,14 @@ Tailor to audience: simplify for end-users, add specs for developers.[^1_7]
 | Resources | Budget allocation | Templates from Smartsheet [^1_10] |
 | Training | User onboarding | Checklists and sessions [^1_3] |
 
+<!-- section_id: "b925cd45-9a57-40a0-babe-6847d08fc787" -->
 ## Best Practices
 
 Use clear language, headings, bullets, and visuals for navigation.[^1_3][^1_5]
 Integrate into workflows: document as you go, version control, and review quarterly.[^1_9][^1_3]
 Make searchable with tags; test for accuracy.[^1_3]
 
+<!-- section_id: "f52ef51e-2551-4d54-8b3e-58146e23d9c0" -->
 ## Maintenance Tips
 
 Assign owners for updates; track changes digitally.[^1_9]
@@ -107,10 +111,12 @@ Link to templates: [Smartsheet Plans](https://www.smartsheet.com/content/impleme
 
 A well-structured implementation document for a simple Python web API includes code examples, sourced from public best practices. This focuses on a basic Flask-based user authentication service. Sources are cited inline with direct links.
 
+<!-- section_id: "14b0d8c4-10a8-46c5-8137-c78795c51d4a" -->
 ## Project Overview
 
 Deploys a RESTful API for user registration/login using Flask, JWT, and SQLite. Handles /register, /login endpoints securely. Runs on localhost:5000.[^2_1]
 
+<!-- section_id: "9433807e-5fb9-438a-85d4-c48866e2f9d3" -->
 ## Prerequisites
 
 - Python 3.8+
@@ -118,6 +124,7 @@ Deploys a RESTful API for user registration/login using Flask, JWT, and SQLite. 
 Follow setup from Flask quickstarts.[^2_1]
 
 
+<!-- section_id: "eaafda53-dbcb-4614-ad84-e9f3f7af977c" -->
 ## Code Implementation
 
 Main app.py file implements routes with authentication.
@@ -173,6 +180,7 @@ if __name__ == '__main__':
 
 Code adapted from Flask-JWT-Extended tutorial for secure auth patterns. Original at https://flask-jwt-extended.readthedocs.io/en/stable/basic_usage.html.[^2_1]
 
+<!-- section_id: "93781f4c-f817-4501-8cfc-009849daf93a" -->
 ## Deployment Steps
 
 1. Save as app.py, install deps: `pip install -r requirements.txt`.
@@ -180,6 +188,7 @@ Code adapted from Flask-JWT-Extended tutorial for secure auth patterns. Original
 3. Test: POST /register {"username":"test","password":"pass"}; POST /login.
 Use Postman for API testing.[^2_2]
 
+<!-- section_id: "b971371f-7b84-4ed7-be57-63ef66c98f7b" -->
 ## Sources and Links
 
 - Flask best practices: https://www.atlassian.com/blog/loom/software-documentation-best-practices[^2_1]
@@ -203,11 +212,13 @@ Use Postman for API testing.[^2_2]
 
 No, the provided code implements a basic Flask web API for user authentication using JWT tokens and SQLite, not computer vision functionality.[^3_19]
 
+<!-- section_id: "a2c91cea-5cbc-4d8b-b72a-cc138b094a5e" -->
 ## Purpose Clarification
 
 This serves as a secure backend for user management with endpoints like /register, /login, and protected routes. It handles password hashing and token-based access control, common in web apps.[^3_20][^3_19]
 No image processing, object detection, or ML models (e.g., OpenCV, TensorFlow) are included.
 
+<!-- section_id: "7078f1a2-8836-4912-bce4-d39c45a5c675" -->
 ## Vision Alternative
 
 For vision, adapt to Flask + OpenCV: load models via endpoints like /detect, process uploads with cv2.imread(). Example source: OpenCV Flask tutorials at https://www.geeksforgeeks.org/opencv-flask-app/.[^3_19]
@@ -262,10 +273,12 @@ For vision, adapt to Flask + OpenCV: load models via endpoints like /detect, pro
 
 This testing document outlines unit, integration, and end-to-end tests for the Flask vision API implementation, assuming image upload endpoints for object detection (e.g., /detect using OpenCV/YOLO). Tests use pytest and Flask-Testing for comprehensive coverage.[^4_1][^4_19]
 
+<!-- section_id: "16ff6ecf-06ad-4242-a659-04c1a8eda62f" -->
 ## Test Strategy
 
 Prioritize API endpoints: authentication, image upload, vision processing, protected results. Aim for 80%+ code coverage, boundary cases, and error handling. Run via `pytest -v --cov=app`.[^4_19]
 
+<!-- section_id: "f07d554e-a201-4f64-8ded-d3f44bf09cec" -->
 ## Unit Tests
 
 Focus on isolated functions like password hashing and token generation.
@@ -302,6 +315,7 @@ def test_login_fail(client):
 
 Run: Validates auth logic.[^4_19]
 
+<!-- section_id: "d335fa54-e7f3-49f5-b6b6-46f482a1ae87" -->
 ## Integration Tests
 
 Test DB interactions and JWT middleware.
@@ -320,6 +334,7 @@ def test_protected_route(client):
 
 Covers full auth flow with SQLite.[^4_19]
 
+<!-- section_id: "09f12298-91db-43b2-9634-0a534b614b6b" -->
 ## Vision Endpoint Tests
 
 For /vision-detect (hypothetical upload for image analysis).
@@ -338,6 +353,7 @@ def test_vision_detect(client):
 
 Test invalid images, large files, no token.[^4_10]
 
+<!-- section_id: "a3eae9ed-8661-4bfd-a4b4-7d98768141ac" -->
 ## E2E and Load Tests
 
 - Use Postman/Newman for API collections.
@@ -351,6 +367,7 @@ Metrics: Response <200ms, 99% success.[^4_16]
 | E2E | Postman | Full flows |
 | Load | Locust | 1000 req/min |
 
+<!-- section_id: "565664ba-dc70-4dd5-a4fa-2f533188dbd7" -->
 ## CI/CD Integration
 
 Add to GitHub Actions: pytest on push/PR. Report via pytest-cov HTML. Links: [Flask-Testing Docs](https://pythonhosted.org/Flask-Testing/), [Pytest-Flask](https://flask.palletsprojects.com/en/stable/testing/).[^4_19]
@@ -405,10 +422,12 @@ Add to GitHub Actions: pytest on push/PR. Report via pytest-cov HTML. Links: [Fl
 
 This testing document covers comprehensive validation for the remote CLI agents, voice/video agents, and 3D Unreal Engine environment in our vision system implementation. Tests ensure seamless integration across remote CLI commands, real-time voice/video processing, and immersive 3D simulations.
 
+<!-- section_id: "81bdad64-db7a-42e8-8070-730e322bf80f" -->
 ## Test Scope
 
 Targets end-to-end functionality: CLI agent orchestration, voice/video stream handling (e.g., WebRTC/STT/TTS), and Unreal Engine (UE5) rendering/interactions. Includes load, security, and cross-platform checks on remote servers.
 
+<!-- section_id: "e0734c52-b91f-4235-8367-e5414a0fc38d" -->
 ## CLI Agents Tests
 
 Validate remote CLI execution for agent deployment/control.
@@ -428,6 +447,7 @@ def test_remote_cli_agent():
 ```
 
 
+<!-- section_id: "5eac48bc-cb78-49ce-8e65-bf22bf33e503" -->
 ## Voice/Video Agents Tests
 
 Test real-time agents for transcription, synthesis, and video analysis.
@@ -444,6 +464,7 @@ Test real-time agents for transcription, synthesis, and video analysis.
 - Edge: Noise, accents, low bandwidth.
 
 
+<!-- section_id: "f9fd14df-ce3d-4022-b7e4-1cc2ab50d3a3" -->
 ## 3D Unreal Environment Tests
 
 Verify UE5 integration for agent navigation/rendering.
@@ -466,6 +487,7 @@ def test_agent_vision():
 ```
 
 
+<!-- section_id: "3855e4a7-96b2-4f7b-b3c9-3c504965a6fb" -->
 ## Load and Security Tests
 
 - Load: 50 agents simultaneous on remote; monitor CPU/GPU.
@@ -473,6 +495,7 @@ def test_agent_vision():
 - Cross-platform: Linux remote, Windows UE client.
 
 
+<!-- section_id: "efeabaf7-33de-4bd2-8442-f5fbafe0254b" -->
 ## Execution Plan
 
 - CI/CD: GitHub Actions with UE Docker images.

@@ -5,10 +5,12 @@ resource_name: "BATCH_BRIDGE_SETUP"
 ---
 # Claude in Chrome Extension → WSL Claude Code Bridge Setup
 
+<!-- section_id: "61725e56-313d-43d3-8e24-1b70ad8b8956" -->
 ## Overview
 
 This guide sets up a Native Messaging bridge to enable the **Claude in Chrome** extension (running on Windows Chrome) to communicate with **Claude Code CLI** running in WSL (Windows Subsystem for Linux).
 
+<!-- section_id: "287a430d-8917-4087-b04e-0e463d2c23d6" -->
 ### Architecture
 
 ```
@@ -23,6 +25,7 @@ Claude Code Native Host (~/.claude/chrome/chrome-native-host)
 Claude Code CLI (with --chrome-native-host flag)
 ```
 
+<!-- section_id: "dd3c636b-b87d-45d4-9079-598f7813910d" -->
 ### How It Works
 
 1. Chrome extension sends Native Messaging protocol messages (32-bit length prefix + JSON)
@@ -33,6 +36,7 @@ Claude Code CLI (with --chrome-native-host flag)
 
 ---
 
+<!-- section_id: "9d638c16-d879-4246-9005-10cd196abf00" -->
 ## Prerequisites
 
 - Windows 10/11 with WSL2 installed
@@ -42,8 +46,10 @@ Claude Code CLI (with --chrome-native-host flag)
 
 ---
 
+<!-- section_id: "a62c3e66-7be7-4238-83c8-0e6cb654799c" -->
 ## Installation Steps
 
+<!-- section_id: "54c8dbcd-3f2e-42df-aa80-9bc6bdc5e7c3" -->
 ### Step 1: Verify WSL Setup
 
 First, verify that Claude Code is installed and the native host exists:
@@ -64,6 +70,7 @@ claude --chrome
 # Press Ctrl+C to exit after it starts
 ```
 
+<!-- section_id: "5949044a-44b3-4970-b439-2e0bbc2eaf72" -->
 ### Step 2: Create WSL Wrapper Script
 
 The wrapper script at `~/bin/claude-chrome-host.sh` has already been created. Verify it exists:
@@ -103,6 +110,7 @@ EOFSCRIPT
 chmod +x ~/bin/claude-chrome-host.sh
 ```
 
+<!-- section_id: "287ccea9-b1e6-47be-9047-95da191d45f1" -->
 ### Step 3: Create Windows Batch Script
 
 Create the Windows batch script that Chrome will call. This needs to be created on the **Windows filesystem**.
@@ -141,6 +149,7 @@ wsl.exe -e /home/dawson/bin/claude-chrome-host.sh
    "@ | Out-File -FilePath "$env:USERPROFILE\bin\claude-chrome-host.bat" -Encoding ASCII
    ```
 
+<!-- section_id: "9c68ddcd-7200-4a7f-a745-6991d6abd092" -->
 ### Step 4: Find Chrome Extension ID
 
 1. Open Chrome and go to `chrome://extensions/`
@@ -150,6 +159,7 @@ wsl.exe -e /home/dawson/bin/claude-chrome-host.sh
 
 **Alternative:** Check the extension's page source or manifest. The ID is a 32-character string.
 
+<!-- section_id: "58f5655e-0b82-4674-a6a4-18dc8f3dfb62" -->
 ### Step 5: Create Native Messaging Manifest
 
 Create the Native Messaging manifest JSON file that tells Chrome how to communicate with the host.
@@ -226,6 +236,7 @@ $edgeManifestPath = "$edgeDir\com.anthropic.claude.chrome.json"
 Write-Host "Edge manifest created at: $edgeManifestPath"
 ```
 
+<!-- section_id: "c5684115-70da-4169-bdd3-8ae1d35842fd" -->
 ### Step 6: Register in Windows Registry (Alternative Method)
 
 You can also register the native host via Windows Registry instead of placing the manifest directly:
@@ -254,8 +265,10 @@ New-ItemProperty -Path $regPath -Name "(Default)" -Value $manifestPath -Property
 
 ---
 
+<!-- section_id: "df4b8ff6-117a-4fc5-bc94-c4e69957fcf0" -->
 ## Testing the Setup
 
+<!-- section_id: "0c4b4792-7bf1-4a27-885e-a11a3cef9d50" -->
 ### Test 1: Verify WSL Wrapper Script
 
 From WSL, test the wrapper:
@@ -271,6 +284,7 @@ If you enabled logging, check for errors:
 tail -f ~/claude-chrome-host.log
 ```
 
+<!-- section_id: "427a1099-dbf9-44c1-aed8-23b0a1b6c0b9" -->
 ### Test 2: Verify Windows Batch Script
 
 From Windows PowerShell:
@@ -280,6 +294,7 @@ From Windows PowerShell:
 & "$env:USERPROFILE\bin\claude-chrome-host.bat"
 ```
 
+<!-- section_id: "79118d93-3e4d-4cda-bf36-a8e157e9deba" -->
 ### Test 3: Verify Native Messaging Manifest
 
 Check that Chrome can find the manifest:
@@ -289,6 +304,7 @@ Check that Chrome can find the manifest:
 Get-Content "$env:LOCALAPPDATA\Google\Chrome\User Data\NativeMessagingHosts\com.anthropic.claude.chrome.json"
 ```
 
+<!-- section_id: "1ba67e60-a91c-41bd-9ff2-b4b49aeccea9" -->
 ### Test 4: Test Extension Connection
 
 1. Open Chrome
@@ -315,8 +331,10 @@ port.postMessage({type: "ping"});
 
 ---
 
+<!-- section_id: "d96823c7-ce80-4fdd-b996-ec62f88a7f98" -->
 ## Troubleshooting
 
+<!-- section_id: "8405d59c-3763-4086-b5aa-d129e5c44be1" -->
 ### Problem: Chrome says "Specified native messaging host not found"
 
 **Solutions:**
@@ -335,6 +353,7 @@ port.postMessage({type: "ping"});
 
 4. Restart Chrome completely (close all windows)
 
+<!-- section_id: "c81a15aa-60a8-4f39-b44a-cb1d13ed94e3" -->
 ### Problem: "Access denied" or "Cannot open file"
 
 **Solutions:**
@@ -348,6 +367,7 @@ port.postMessage({type: "ping"});
 
 3. Check Windows Defender or antivirus isn't blocking the script
 
+<!-- section_id: "7cbd06b3-61f0-4593-8e0d-2f9bb05fedce" -->
 ### Problem: Native host starts but doesn't respond
 
 **Solutions:**
@@ -377,6 +397,7 @@ port.postMessage({type: "ping"});
    echo '{"type":"ping"}' | wsl.exe -e /home/dawson/bin/claude-chrome-host.sh
    ```
 
+<!-- section_id: "ee59ae66-eac3-40b4-885b-817a1d484477" -->
 ### Problem: "wsl.exe not found" or WSL errors
 
 **Solutions:**
@@ -397,6 +418,7 @@ port.postMessage({type: "ping"});
    wsl.exe -d Ubuntu  # or your distro name
    ```
 
+<!-- section_id: "33ef4b15-dbea-4902-8cf0-5fce471cd4fe" -->
 ### Problem: Extension connects but requests fail
 
 **Solutions:**
@@ -418,6 +440,7 @@ port.postMessage({type: "ping"});
    claude --debug mcp
    ```
 
+<!-- section_id: "d6bed466-89b5-46e0-8705-eae36032a554" -->
 ### Problem: Native Messaging protocol errors
 
 **Symptoms:** "Invalid message format" or binary data issues
@@ -448,16 +471,19 @@ port.postMessage({type: "ping"});
 
 ---
 
+<!-- section_id: "03773e93-c87a-4d3b-879c-6ba48f8c07d0" -->
 ## Understanding Native Messaging Protocol
 
 The Native Messaging protocol used by Chrome extensions is binary-based:
 
+<!-- section_id: "16ecc84a-dfd7-4cf7-839e-854f6033f76a" -->
 ### Message Format
 
 Each message consists of:
 1. **Length prefix:** 4 bytes (32-bit unsigned integer, little-endian)
 2. **JSON message:** UTF-8 encoded JSON string
 
+<!-- section_id: "ba2a96e6-b854-4deb-b0b3-952c023d1c58" -->
 ### Example
 
 To send `{"type":"ping"}`:
@@ -467,6 +493,7 @@ Bytes: 0x0E 0x00 0x00 0x00  { " t " y " p " e " : " p " i " n " g " }
         └─── Length (14) ───┘  └──────── JSON (14 bytes) ────────────┘
 ```
 
+<!-- section_id: "1f42ca86-03cb-4154-b8e1-479157873a11" -->
 ### Important Notes
 
 - Maximum message size: 1 MB (1,048,576 bytes)
@@ -476,8 +503,10 @@ Bytes: 0x0E 0x00 0x00 0x00  { " t " y " p " e " : " p " i " n " g " }
 
 ---
 
+<!-- section_id: "85cede9c-1da0-4cd1-ad85-a0086d9c896d" -->
 ## Advanced Configuration
 
+<!-- section_id: "4e995484-29b5-4859-8ccc-d990884d90dd" -->
 ### Enable Debug Logging
 
 To debug the native host, enable logging:
@@ -506,6 +535,7 @@ To debug the native host, enable logging:
    tail -f ~/claude-chrome-host.log
    ```
 
+<!-- section_id: "6d5461ba-f707-403f-98e8-223c001439bd" -->
 ### Custom WSL Distribution
 
 If you're using a non-default WSL distribution, modify the batch script:
@@ -516,6 +546,7 @@ REM Specify your WSL distribution explicitly
 wsl.exe -d Ubuntu-22.04 -e /home/dawson/bin/claude-chrome-host.sh
 ```
 
+<!-- section_id: "75452fc8-772d-4267-93b6-aa770e8fba8a" -->
 ### Alternative: Direct Node.js Execution
 
 Instead of using the wrapper script, you can call Node.js directly from Windows:
@@ -528,8 +559,10 @@ wsl.exe -e /home/dawson/.nvm/versions/node/v22.20.0/bin/node /home/dawson/.nvm/v
 
 ---
 
+<!-- section_id: "2fdbbdc4-4155-44d2-a6d8-c0939da2136f" -->
 ## File Locations Reference
 
+<!-- section_id: "71d634dd-e8d5-4baf-b0e2-a8c827c1620a" -->
 ### WSL (Linux) Files
 
 | File | Purpose |
@@ -539,6 +572,7 @@ wsl.exe -e /home/dawson/.nvm/versions/node/v22.20.0/bin/node /home/dawson/.nvm/v
 | `~/claude-chrome-host.log` | Optional debug log file |
 | `~/.claude/settings.json` | Claude Code settings |
 
+<!-- section_id: "4539559b-fbeb-4083-878c-e41953c09848" -->
 ### Windows Files
 
 | File | Purpose |
@@ -547,6 +581,7 @@ wsl.exe -e /home/dawson/.nvm/versions/node/v22.20.0/bin/node /home/dawson/.nvm/v
 | `%LOCALAPPDATA%\Google\Chrome\User Data\NativeMessagingHosts\com.anthropic.claude.chrome.json` | Chrome native messaging manifest |
 | `%LOCALAPPDATA%\Microsoft\Edge\User Data\NativeMessagingHosts\com.anthropic.claude.chrome.json` | Edge native messaging manifest (optional) |
 
+<!-- section_id: "5ea56ee1-904e-4ea7-bc42-45babd87a9cb" -->
 ### Registry Keys (Optional)
 
 | Registry Path | Purpose |
@@ -556,6 +591,7 @@ wsl.exe -e /home/dawson/.nvm/versions/node/v22.20.0/bin/node /home/dawson/.nvm/v
 
 ---
 
+<!-- section_id: "305b7c8f-82e7-4192-908e-a17e0f19a7ea" -->
 ## Complete Setup PowerShell Script
 
 Here's a complete PowerShell script to automate the Windows setup:
@@ -679,8 +715,10 @@ $null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
 
 ---
 
+<!-- section_id: "ec242e42-ae73-43a3-8d84-5b35abc5f026" -->
 ## Security Considerations
 
+<!-- section_id: "5cce7abe-97c2-48da-b2a3-08798a1fdd94" -->
 ### Allowed Origins
 
 The manifest specifies which extensions can connect. Only add trusted extension IDs:
@@ -691,6 +729,7 @@ The manifest specifies which extensions can connect. Only add trusted extension 
 ]
 ```
 
+<!-- section_id: "9ba1cc87-c64e-4e0e-8c37-150616b94e3d" -->
 ### File Permissions
 
 Ensure the batch script and WSL wrapper are only writable by you:
@@ -705,6 +744,7 @@ icacls "$env:USERPROFILE\bin\claude-chrome-host.bat" /inheritance:r /grant:r "$e
 chmod 700 ~/bin/claude-chrome-host.sh
 ```
 
+<!-- section_id: "3cdc3e56-30f7-40fa-9c5b-e05186eee596" -->
 ### Logging
 
 Be careful with logging sensitive data. If you enable debug logging, make sure the log file is protected:
@@ -716,8 +756,10 @@ chmod 600 ~/claude-chrome-host.log
 
 ---
 
+<!-- section_id: "4a8852a3-502b-4df3-b009-e99b68203a7c" -->
 ## Maintenance
 
+<!-- section_id: "5a43328a-657b-4a63-ad69-ed4a1b2a40d1" -->
 ### Updating Claude Code
 
 When you update Claude Code, verify the native host still exists:
@@ -733,6 +775,7 @@ claude --chrome
 # Press Ctrl+C to exit
 ```
 
+<!-- section_id: "a909f81b-0861-433b-9144-57529dca2dfb" -->
 ### Uninstalling
 
 To remove the bridge:
@@ -760,6 +803,7 @@ rm ~/claude-chrome-host.log  # if logging was enabled
 
 ---
 
+<!-- section_id: "a997864d-1e1a-4d91-a562-c3e91225b05b" -->
 ## Additional Resources
 
 - [Chrome Native Messaging Documentation](https://developer.chrome.com/docs/extensions/develop/concepts/native-messaging)
@@ -768,16 +812,20 @@ rm ~/claude-chrome-host.log  # if logging was enabled
 
 ---
 
+<!-- section_id: "cdcadbcf-ec7b-43eb-bee8-b5b1832da87b" -->
 ## FAQ
 
+<!-- section_id: "bac0e9ac-200d-4fef-b190-d459a8f55c95" -->
 ### Q: Can I use this with Firefox?
 
 A: Firefox uses a similar but slightly different Native Messaging protocol. You would need to create a separate manifest in a different location. See [Firefox Native Messaging docs](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Native_messaging).
 
+<!-- section_id: "9c05cfeb-a718-46d3-b2b9-5a948ccc4401" -->
 ### Q: Does this work with WSL1?
 
 A: It should work, but WSL2 is recommended for better performance and compatibility.
 
+<!-- section_id: "0d53b4f0-3ac6-44db-94a5-dcefcbfdfc24" -->
 ### Q: Can I use a different WSL distribution?
 
 A: Yes! Just modify the batch script to specify your distribution:
@@ -785,6 +833,7 @@ A: Yes! Just modify the batch script to specify your distribution:
 wsl.exe -d YourDistroName -e /home/dawson/bin/claude-chrome-host.sh
 ```
 
+<!-- section_id: "0b757006-b43f-4f19-b589-8483ea2d4fb4" -->
 ### Q: How do I find my extension ID if I can't see it?
 
 A: 
@@ -795,20 +844,24 @@ A:
 
 Alternatively, right-click the extension icon → "Manage extension" → check the URL bar for the ID.
 
+<!-- section_id: "01a0e38d-019c-4dfc-acc7-b3ae3fc5dbaa" -->
 ### Q: Can multiple Chrome profiles use this?
 
 A: Yes! Each Chrome profile will use the same manifest location. Just make sure the extension is installed in each profile.
 
+<!-- section_id: "adc7ad38-17e1-47d2-941f-f9f24e3c69a9" -->
 ### Q: What if my username is different?
 
 A: Replace `/home/dawson` in all scripts with your actual WSL home directory path. You can find it by running `echo $HOME` in WSL.
 
+<!-- section_id: "b80dbe71-d14f-4e57-b1be-5099f157e14c" -->
 ### Q: Does this work with Brave or other Chromium browsers?
 
 A: Yes! Chromium-based browsers use the same Native Messaging protocol. You'll need to create a manifest in the appropriate location for each browser.
 
 ---
 
+<!-- section_id: "0b1678aa-297f-4350-b47b-b57d760bfff0" -->
 ## Version History
 
 - **v1.0** (2025-12-30): Initial setup guide created
@@ -819,6 +872,7 @@ A: Yes! Chromium-based browsers use the same Native Messaging protocol. You'll n
 
 ---
 
+<!-- section_id: "77e9f755-d762-4034-b7d8-fa5aecc62470" -->
 ## Support
 
 If you encounter issues:

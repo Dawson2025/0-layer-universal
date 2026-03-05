@@ -5,22 +5,27 @@ resource_name: "minimal_context_model"
 ---
 # Design Decision: Minimal Context Model
 
+<!-- section_id: "1c17b6c1-1aa6-4cac-b8c5-191f1652b22a" -->
 ## Decision
 
 Agents in the layer-stage hierarchy receive **minimal context by default**: their own STATIC identity, compact interface summaries of direct neighbors, and on-demand access to any context via delegation or file reads. Full context cascade is NOT used for agent-to-agent context sharing.
 
+<!-- section_id: "d8639c37-fde4-40c9-b776-b9ab2e061e8a" -->
 ## Status
 
 **Decided** — 2026-02-26
 
+<!-- section_id: "3b32e5fe-d240-41e6-8c89-a1be14c450bf" -->
 ## Context
 
 The agent delegation system organizes agents in a hierarchy (layers and stages). The question: how much parent/ancestor context does each agent need?
 
+<!-- section_id: "df36ae67-63b9-4a96-bf0e-eb21a5c5b26d" -->
 ### The Original Assumption
 
 Full STATIC context from every ancestor level cascades down to every descendant. A stage-04 agent in a layer-3 entity would receive STATIC from: root, layer_-1, layer_0, layer_1, layer_2, layer_3, and its own stage.
 
+<!-- section_id: "c146fc68-ea0c-47ea-800b-8b765851339a" -->
 ### Why Full Cascade Was Rejected
 
 1. **Most ancestor STATIC is irrelevant**: Ancestor STATIC context contains triggers, pointers, and identity information that only matters to agents AT that level. A stage-04 design agent doesn't need to know the layer_0 root manager's triggers.
@@ -31,8 +36,10 @@ Full STATIC context from every ancestor level cascades down to every descendant.
 
 4. **Tool cascading amplifies the problem**: Claude Code, Codex, and Gemini CLI automatically cascade CLAUDE.md files up the directory tree. If we put comprehensive content in every level's CLAUDE.md, deep agents get ALL of it automatically — making bloat even worse. See `../stage_1_02_research/outputs/by_topic/tool_context_cascading/README.md`.
 
+<!-- section_id: "10ac4092-7d90-49f0-9886-14e0c6cff852" -->
 ## The Minimal Context Model
 
+<!-- section_id: "a75794dc-4f72-47e2-83a2-ebaf83a9d9f2" -->
 ### Three-Layer Context Model
 
 Each agent always has:
@@ -43,6 +50,7 @@ Each agent always has:
 | **Neighbor interfaces** | Compact summaries of direct parent + direct children: what they provide, what they accept, how to communicate | Always (in 0AGNOSTIC.md navigation/delegation sections) |
 | **On-demand DYNAMIC** | Any context from any level, loaded when needed | On-demand (read specific files via `.0agnostic/01_knowledge/`, delegate up/down) |
 
+<!-- section_id: "6707d64c-f154-4f2d-b7af-c5cea6c7f73a" -->
 ### What Neighbor Interfaces Look Like
 
 A neighbor interface summary is 2-5 lines per neighbor:
@@ -56,6 +64,7 @@ Parent: agent_delegation_system (../../0AGNOSTIC.md)
 
 This is NOT the full parent STATIC context. It's a compact contract describing the interface.
 
+<!-- section_id: "d3ec63e0-4968-45e8-a1d4-6b3d9cfc3489" -->
 ### The Relay Pattern
 
 Agents don't query across the hierarchy directly. Instead, they relay through neighbors:
@@ -67,6 +76,7 @@ Team Agent → Project Agent → Content Agent → Template Agent
 
 If a stage-04 agent needs information from three levels up, it asks its parent, who asks its parent, who asks its parent. Each relay adds context and filtering — the response back is scoped and relevant.
 
+<!-- section_id: "e793cf48-f4bd-4a67-8bd3-ed78521c3c79" -->
 ### What This Means for CLAUDE.md Files
 
 Since AI coding tools cascade CLAUDE.md automatically, the content must be minimal:
@@ -78,26 +88,31 @@ Since AI coding tools cascade CLAUDE.md automatically, the content must be minim
 
 NOT included in CLAUDE.md: full methodology, domain knowledge, current state details, comprehensive rules. These stay in 0AGNOSTIC.md and .0agnostic/ for on-demand loading.
 
+<!-- section_id: "363d32b3-0880-4851-819f-29e9b212ef63" -->
 ## Alternatives Considered
 
+<!-- section_id: "a6a136bb-a293-48d3-8c01-ef5a60b583bb" -->
 ### Full STATIC Cascade
 
 Every ancestor's STATIC context is loaded into every descendant.
 
 **Rejected because**: Context waste compounds at depth. Most ancestor STATIC is irrelevant to descendants. Multi-agent research shows this underperforms minimal approaches.
 
+<!-- section_id: "01cc10ca-f7e2-44df-b29b-b60788ae564d" -->
 ### Full Isolation (No Shared Context)
 
 Each agent has only its own context, with no inherited information.
 
 **Rejected because**: Agents need SOME awareness of their neighbors — at minimum, how to delegate up/down and what interfaces exist. Full isolation forces agents to discover everything from scratch.
 
+<!-- section_id: "4c17abd6-421c-443f-83ab-9adfebf6e78a" -->
 ### Selective Cascade (Cherry-Pick Sections)
 
 Cascade only certain sections of ancestor STATIC (e.g., identity but not triggers).
 
 **Rejected because**: Adds complexity to the sync tooling (agnostic-sync.sh would need section-level filtering). The interface summary approach is simpler — write a compact summary once rather than filtering a long document.
 
+<!-- section_id: "762b293b-47d8-4a24-9689-f9098f3af5b3" -->
 ## Trade-offs Accepted
 
 1. **Agents may need more round-trips**: If an agent needs deep ancestor context, it must relay through neighbors or explicitly read files. This is slower than having it pre-loaded.
@@ -106,12 +121,15 @@ Cascade only certain sections of ancestor STATIC (e.g., identity but not trigger
 
 3. **Cursor needs special handling**: Unlike Claude Code/Codex/Gemini CLI, Cursor doesn't cascade automatically. Cursor rules must be self-contained or use glob targeting to pull in the right context.
 
+<!-- section_id: "1e49d905-a21d-46dd-b19c-f6ca98ce8f17" -->
 ## Implementation Notes
 
+<!-- section_id: "b3a0c5dc-d4a6-4964-a391-1607c90f52c9" -->
 ### For agnostic-sync.sh
 
 The sync tool already generates lean CLAUDE.md files from 0AGNOSTIC.md STATIC content. No changes needed — the key is ensuring 0AGNOSTIC.md STATIC sections are written with the minimal context model in mind (compact, pointer-heavy, not verbose).
 
+<!-- section_id: "b880fad6-2d3b-4390-8be8-52ca17af7d25" -->
 ### For Entity/Stage Templates
 
 The STAGE_AGENT_TEMPLATE.md already follows this pattern:
@@ -120,6 +138,7 @@ The STAGE_AGENT_TEMPLATE.md already follows this pattern:
 - Navigation section has parent/child pointers
 - Current Status is a brief summary with pointers to detail
 
+<!-- section_id: "f60a2f69-0b48-4fce-81f6-de3557efdc58" -->
 ### For the Relay Pattern
 
 No tooling changes needed. The delegation contract already works this way:
@@ -127,6 +146,7 @@ No tooling changes needed. The delegation contract already works this way:
 - Agent discovers: its own methodology from 0AGNOSTIC.md
 - Agent loads: parent context on-demand from `../../.0agnostic/`
 
+<!-- section_id: "5d7162ac-8895-469c-af8a-3f500d8bda4b" -->
 ## Related Decisions
 
 - **0AGNOSTIC.md as stage identity** — the minimal context model defines WHAT goes in 0AGNOSTIC.md
@@ -134,6 +154,7 @@ No tooling changes needed. The delegation contract already works this way:
 - **Stage reports for async communication** — the interface through which agents communicate status up
 - **Scope boundary decisions (Principle 8)** — when agents need context beyond their scope, they delegate rather than pre-loading
 
+<!-- section_id: "55b6717a-ae37-40c8-bee1-e3a4cbe94560" -->
 ## Cross-Stage Traceability
 
 | Stage | Connection |

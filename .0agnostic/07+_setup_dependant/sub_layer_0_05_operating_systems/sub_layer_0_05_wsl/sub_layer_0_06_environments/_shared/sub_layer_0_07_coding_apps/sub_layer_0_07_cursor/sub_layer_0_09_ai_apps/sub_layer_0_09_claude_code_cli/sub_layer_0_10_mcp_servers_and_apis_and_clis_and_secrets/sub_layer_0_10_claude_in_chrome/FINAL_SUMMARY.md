@@ -11,10 +11,12 @@ resource_name: "FINAL_SUMMARY"
 
 ---
 
+<!-- section_id: "cbf90b5d-69a9-4a27-b124-cf76283422d7" -->
 ## The Goal
 
 Get the **Claude in Chrome** browser extension (running in Windows Chrome) to communicate with **Claude Code CLI** (running in WSL).
 
+<!-- section_id: "f9432378-c13f-4429-9f9e-960c97a73fa0" -->
 ## The Challenge
 
 - Chrome runs on **Windows**
@@ -24,8 +26,10 @@ Get the **Claude in Chrome** browser extension (running in Windows Chrome) to co
 
 ---
 
+<!-- section_id: "4e2d0ab2-afea-4e0f-8cee-730abe54bfd8" -->
 ## What We Built
 
+<!-- section_id: "7d41a1a7-eb50-434a-9cc5-52e87f934ce9" -->
 ### 1. Three-Layer Bridge Architecture
 
 We created a custom bridge to allow Chrome (Windows) to communicate with the native host (WSL):
@@ -44,6 +48,7 @@ Claude Native Host (/home/dawson/.claude/chrome/chrome-native-host)
 Claude Code CLI (blocked by platform check)
 ```
 
+<!-- section_id: "be9fd38d-c628-40b9-b2c2-17c0c44bcd4d" -->
 ### 2. Components Created
 
 #### WSL Wrapper Script (`/home/dawson/bin/claude-chrome-host.sh`)
@@ -70,8 +75,10 @@ Claude Code CLI (blocked by platform check)
 
 ---
 
+<!-- section_id: "73570cea-8ea7-43d4-acad-21db81767d60" -->
 ## What We Tested
 
+<!-- section_id: "3210baa7-75ea-4cda-b4a6-270568f4dd62" -->
 ### ✅ Successful Tests
 
 1. **Native Messaging Bridge Works**
@@ -88,6 +95,7 @@ Claude Code CLI (blocked by platform check)
    - All components properly configured
    - Communication path verified working
 
+<!-- section_id: "3d870753-aafe-4fd4-a1ed-b45fb33d145c" -->
 ### ❌ Failed Tests
 
 1. **`claude --chrome` Command**
@@ -107,8 +115,10 @@ Claude Code CLI (blocked by platform check)
 
 ---
 
+<!-- section_id: "ceab224a-636d-42d5-8944-c32ecffb5a12" -->
 ## Key Discoveries
 
+<!-- section_id: "706555db-9ccc-449b-b9f4-983642084fe9" -->
 ### The Architecture We Uncovered
 
 The native host is a **relay/bridge**, not the actual service:
@@ -119,6 +129,7 @@ The native host is a **relay/bridge**, not the actual service:
 4. Claude Code CLI (when run with `--chrome`) connects to socket
 5. Messages flow: Chrome ↔ Native Host ↔ Socket ↔ Claude CLI
 
+<!-- section_id: "5ea6f848-8bcb-48f3-a3fc-3ade6f8fc98b" -->
 ### Why It's Broken
 
 - Claude Code CLI **refuses to run** with `--chrome` flag on WSL
@@ -128,8 +139,10 @@ The native host is a **relay/bridge**, not the actual service:
 
 ---
 
+<!-- section_id: "3e95cce9-a705-40bb-b5fc-20de410edbb7" -->
 ## Current Status
 
+<!-- section_id: "65b1831f-4fd5-4586-8cde-624b5fbab356" -->
 ### What Works ✅
 
 - Windows → WSL native messaging bridge (fully functional)
@@ -137,20 +150,24 @@ The native host is a **relay/bridge**, not the actual service:
 - Socket created and ready
 - All infrastructure correctly configured
 
+<!-- section_id: "40ad6012-5253-47e5-8783-5a88595ad408" -->
 ### What Doesn't Work ❌
 
 - Claude Code CLI won't start with `--chrome` on WSL
 - Extension can't detect CLI (because it's not connected)
 - Full bidirectional communication blocked
 
+<!-- section_id: "bec68383-4931-42c4-a0c9-8cc0199679ff" -->
 ### The Blocker 🚫
 
 **Hardcoded platform check** in Claude Code CLI that rejects WSL before attempting socket connection.
 
 ---
 
+<!-- section_id: "d4589ddb-0541-4f84-85c6-bee3de1e1633" -->
 ## Possible Solutions
 
+<!-- section_id: "9d20ad92-0d43-4698-8828-b1a2e0fc9b1d" -->
 ### Option 1: Install Claude Code on Windows (Most Practical)
 
 - Install `claude` natively in Windows (not WSL)
@@ -170,6 +187,7 @@ claude --chrome
 - ✅ Can coexist with WSL installation
 - ✅ Projects in WSL accessible via `\\wsl$\Ubuntu\home\dawson`
 
+<!-- section_id: "d20d217a-749a-4c97-830a-741459747742" -->
 ### Option 2: Request WSL Support (Long-term)
 
 - Contact Anthropic to support WSL in future versions
@@ -178,6 +196,7 @@ claude --chrome
 - File issue at: https://github.com/anthropics/claude-code/issues
 - Reference: GitHub Issue #14367 (mentions WSL support)
 
+<!-- section_id: "b722b57a-0b54-422e-95c2-8716bceaef10" -->
 ### Option 3: Different Architecture (Complex)
 
 - Use Chrome Remote Debugging Protocol instead
@@ -187,8 +206,10 @@ claude --chrome
 
 ---
 
+<!-- section_id: "6e9cbcbb-bfc4-43c9-8ed0-4fc5b4f22db1" -->
 ## Technical Details
 
+<!-- section_id: "bd0dd619-0cf8-4c9e-9831-1244395e85ff" -->
 ### File Locations
 
 **WSL (Linux) Files:**
@@ -210,6 +231,7 @@ claude --chrome
 |-----|---------|
 | `HKCU:\Software\Google\Chrome\NativeMessagingHosts\com.anthropic.claude.chrome` | Chrome native host registration |
 
+<!-- section_id: "50d2edce-fe3b-49bc-8ea8-eeef8d355436" -->
 ### Native Messaging Protocol
 
 Each message consists of:
@@ -222,6 +244,7 @@ Bytes: 0x0E 0x00 0x00 0x00 {"type":"ping"}
        └─── Length (14) ───┘ └─ JSON (14 bytes) ─┘
 ```
 
+<!-- section_id: "8610a1f0-e730-4d7a-91d2-2761c1f9e660" -->
 ### Test Results
 
 **Working Communication Test:**
@@ -241,8 +264,10 @@ claude --chrome
 
 ---
 
+<!-- section_id: "f226802c-6fc1-4ef4-994c-78e6e7f5cf72" -->
 ## Bottom Line
 
+<!-- section_id: "f6a75296-5239-4352-aeec-265d5f67cef6" -->
 ### Success: Bridge Infrastructure
 
 You successfully built a **working bridge** that proves Windows Chrome can communicate with WSL processes through native messaging. The bridge works perfectly - we confirmed this with the ping/pong test.
@@ -252,10 +277,12 @@ You successfully built a **working bridge** that proves Windows Chrome can commu
 - The architecture is sound and well-designed
 - All components communicate correctly
 
+<!-- section_id: "ae957ef7-4413-4637-abfa-a2dd0e9ed5a0" -->
 ### Blocker: Platform Check
 
 However, Claude Code CLI has a **hardcoded restriction** preventing it from running in `--chrome` mode on WSL, which blocks the final connection. The platform check happens too early in the initialization process to work around with environment variables or patches.
 
+<!-- section_id: "5a2a0843-8aa4-48b4-a1c4-4c7a75cefb10" -->
 ### Recommendation
 
 The **cleanest solution** is to run Claude Code natively on Windows instead of in WSL, which would make all your Chrome extension features work immediately without needing this custom bridge.
@@ -264,6 +291,7 @@ Your projects can remain in WSL and be accessed from Windows Claude Code via `\\
 
 ---
 
+<!-- section_id: "f592ef4a-47e7-4cb4-97f7-c8fef4755d99" -->
 ## Related Documentation
 
 - **Detailed Setup Guide:** `BATCH_BRIDGE_SETUP.md`
@@ -272,6 +300,7 @@ Your projects can remain in WSL and be accessed from Windows Claude Code via `\\
 
 ---
 
+<!-- section_id: "b366cd76-da14-4468-87c7-f3a6dacbff18" -->
 ## Acknowledgments
 
 This investigation successfully proved that:

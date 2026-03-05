@@ -10,6 +10,7 @@ resource_name: "0AGNOSTIC"
 
 # ── Stage Definition ──
 
+<!-- section_id: "b5fff353-e475-46c6-9cf9-f4af13cde1fc" -->
 ## Identity
 
 stage_id: "234b3bdb-f638-4ce0-b9f5-5e3eb0545fce"
@@ -24,8 +25,10 @@ You are the **Development Agent** for the agent_delegation_system.
 - **Parent**: `../../0AGNOSTIC.md` (agent_delegation_system entity)
 - **Domain**: Universal stage delegation artifacts, stage 0AGNOSTIC.md instantiation
 
+<!-- section_id: "4eefdcb0-7475-482c-a3a9-34a5eb49b838" -->
 ## Key Behaviors
 
+<!-- section_id: "82328e52-8666-4c52-b751-b11782f37bcb" -->
 ### What Development IS
 
 You build artifacts following the plan. Artifacts live in the entity root (not in outputs/), except for tracking files (status, runbooks). You follow the design and plan from earlier stages.
@@ -36,6 +39,7 @@ You do NOT:
 - Critique quality (that's stage 08)
 - Fix bugs (that's stage 09)
 
+<!-- section_id: "cafc9420-8350-4dcc-9360-6bb4220389ff" -->
 ### Delegation Contract
 
 When the manager delegates to this stage:
@@ -51,6 +55,7 @@ Example Task tool prompt the manager uses:
  Task: Build the delegation artifacts following the design from stage 04."
 ```
 
+<!-- section_id: "ba811c56-ecc5-40eb-9461-c5ef42f88e07" -->
 ### Methodology
 
 Artifact creation following design decisions:
@@ -59,6 +64,7 @@ Artifact creation following design decisions:
 3. Instantiate stage 0AGNOSTIC.md files using the universal template
 4. Track what was built and what remains
 
+<!-- section_id: "29735842-6863-4514-86fd-68629f30adab" -->
 ## Inputs
 
 What this agent reads:
@@ -77,6 +83,7 @@ What this agent reads:
 
 **Context loading order**: Read own 0AGNOSTIC.md first (mandatory). Then load stage 04 design decisions to understand what to build. Load stage 01 requirements for traceability. Load parent context and entity structure on-demand as needed.
 
+<!-- section_id: "f44e8f94-bbb7-443b-8c93-664c3b10a8fd" -->
 ## Outputs
 
 What this agent produces:
@@ -89,10 +96,12 @@ What this agent produces:
 | Overview report | `outputs/reports/overview_report.md` | Summary of all reports, links to each |
 | Current State update | This file, "Current State" section | Pointer-tier summary of what exists |
 
+<!-- section_id: "2c917f86-cdfe-4f84-b447-de1aab67b307" -->
 ### Stage Report
 
 Before exiting, update `outputs/reports/stage_report.md` following the universal protocol at `.0agnostic/03_protocols/stage_report_protocol.md`. The entity manager reads this to understand your stage's status without loading stage details.
 
+<!-- section_id: "9bfaa8a6-1691-40e4-a887-aaa1259eb1e6" -->
 ## Triggers
 
 Load when:
@@ -100,8 +109,10 @@ Load when:
 - Entering `stage_1_06_development/`
 - Building or updating delegation artifacts
 
+<!-- section_id: "10082af5-78c6-4001-aded-f310be14c5f5" -->
 ## AALang Agent Context
 
+<!-- section_id: "78e02e4a-0f84-4603-b5f3-224b219e2938" -->
 ### Local Agent Files
 
 **Directory**: `.0agnostic/06_context_avenue_web/01_aalang/`
@@ -122,6 +133,7 @@ Load when:
 }
 ```
 
+<!-- section_id: "68757836-1b51-4d6a-8f46-6d15de3bc180" -->
 ### How to Load Full Graph
 
 ```bash
@@ -132,6 +144,7 @@ jq '."@graph"[] | select(."@type" == "gab:Mode") | {id: ."@id", purpose: .purpos
 jq '."@graph"[] | select(."@id" == "dv:ExecuteMode")' .0agnostic/06_context_avenue_web/01_aalang/stage_06.orchestrator.gab.jsonld
 ```
 
+<!-- section_id: "25bcb6e5-d55f-467a-b761-bcdd5b385a46" -->
 ### Parent Orchestrator
 
 **File**: `../../.0agnostic/06_context_avenue_web/01_aalang/layer_1.orchestrator.gab.jsonld` (agent_delegation_system entity)
@@ -140,6 +153,7 @@ Stage orchestrators inherit from the entity-level orchestrator.
 
 # ── Current Status ──
 
+<!-- section_id: "3632251c-b4c9-4f92-974a-850babb69d4b" -->
 ## Current Status
 
 **Status**: active | **Last Updated**: 2026-02-19
@@ -150,8 +164,10 @@ Development produced **universal artifacts** that now live at `.0agnostic/` (pro
 
 # ── Current State ──
 
+<!-- section_id: "37e30567-4bb3-4426-9c14-10324293e2de" -->
 ## Current State Detail
 
+<!-- section_id: "a39af0e3-cab2-443b-921b-ef5d75c53b3b" -->
 ### What Was Built
 
 | Artifact | Count | Location |
@@ -168,6 +184,7 @@ Development produced **universal artifacts** that now live at `.0agnostic/` (pro
 | Updated stage-workflow skill | 1 | `.claude/skills/stage-workflow/SKILL.md` |
 | Updated STAGES_EXPLAINED.md | 1 | `.0agnostic/01_knowledge/layer_stage_system/STAGES_EXPLAINED.md` |
 
+<!-- section_id: "9277b207-fcc8-4cb7-94bb-8d462df4aabf" -->
 ### Key Principles Formalized
 
 | Principle | # | What It Captures |
@@ -177,6 +194,7 @@ Development produced **universal artifacts** that now live at `.0agnostic/` (pro
 
 These are codified in `.0agnostic/01_knowledge/principles/principles/STAGE_DELEGATION_PRINCIPLES.md`. The Scope Boundary Rule at `.0agnostic/02_rules/static/STAGE_BOUNDARY_RULE.md` was expanded from "Stage Boundary Rule" to cover both layer and stage boundaries with a decision framework.
 
+<!-- section_id: "7a90a4dd-6a2a-4a72-b345-d2c7a1a86797" -->
 ## Cross-Stage Traceability
 
 How key artifacts connect to design decisions (stage 04) and requirements (stage 01):
@@ -193,6 +211,7 @@ How key artifacts connect to design decisions (stage 04) and requirements (stage
 
 **Stage paths**: `../stage_1_04_design/`, `../stage_1_01_request_gathering/`
 
+<!-- section_id: "8d8cced1-da7b-4c3c-9770-6fbff428d4d4" -->
 ## Child Layer Detail (Principle 10)
 
 Universal artifacts are used across all child entities:
@@ -205,6 +224,7 @@ Universal artifacts are used across all child entities:
 
 **Child paths**: see stage 01 Child Layer Detail for full paths
 
+<!-- section_id: "72804518-17ae-4f40-b02b-02c64f688805" -->
 ### Key Findings During Development
 
 - Writing all 11 stage guides revealed that stages 01-07 are "active" stages with clear methodology, while 08-11 are "reactive/maintenance" stages with simpler patterns
@@ -213,12 +233,14 @@ Universal artifacts are used across all child entities:
 - Scope boundaries are not just "stop and hand off" — they require an active decision with three options, driven by context window preservation
 - The two-halves pattern was discovered when enriching stage 01's 0AGNOSTIC.md — without the current state half, agents waste context window tokens on exploration
 
+<!-- section_id: "b91d21f3-2a40-40fb-a88b-0114de21f419" -->
 ## Open Items
 
 - Stage reports for this entity's stages not yet written (only 0AGNOSTIC.md files)
 - context_loading child entity stages still have empty 0AGNOSTIC.md files
 - multi_agent_system child entity not yet developed
 
+<!-- section_id: "06c1eab9-2bf6-4254-8061-d7fcd2c91a20" -->
 ## Handoff
 
 - **Ready for next stage**: yes (artifacts exist and are in use)
@@ -226,6 +248,7 @@ Universal artifacts are used across all child entities:
 
 # ── References ──
 
+<!-- section_id: "06cd0e0b-7edd-4365-8950-e0c74be02213" -->
 ## Navigation
 
 | Content | Location |
@@ -238,6 +261,7 @@ Universal artifacts are used across all child entities:
 | Delegation principles | `.0agnostic/01_knowledge/principles/principles/STAGE_DELEGATION_PRINCIPLES.md` |
 | Entity .0agnostic/ | `../../.0agnostic/` |
 
+<!-- section_id: "68f87217-871b-43b3-8b96-ba53c9a3b991" -->
 ## Domain Context
 
 For agent delegation system domain understanding, read from the parent entity:
@@ -248,6 +272,7 @@ For agent delegation system domain understanding, read from the parent entity:
 
 Do NOT load all parent knowledge at once — read the specific file relevant to the artifact you're building.
 
+<!-- section_id: "df302916-63cd-4ffb-8f95-9cd2f8c629b0" -->
 ## Success Criteria
 
 This stage is complete when:
@@ -256,6 +281,7 @@ This stage is complete when:
 - agnostic-sync.sh runs successfully on all new 0AGNOSTIC.md files
 - Working example (context_chain_system) demonstrates the pattern
 
+<!-- section_id: "9c533116-232a-424b-8478-03dde14381cb" -->
 ## On Exit
 
 1. Update `outputs/reports/stage_report.md` with current status

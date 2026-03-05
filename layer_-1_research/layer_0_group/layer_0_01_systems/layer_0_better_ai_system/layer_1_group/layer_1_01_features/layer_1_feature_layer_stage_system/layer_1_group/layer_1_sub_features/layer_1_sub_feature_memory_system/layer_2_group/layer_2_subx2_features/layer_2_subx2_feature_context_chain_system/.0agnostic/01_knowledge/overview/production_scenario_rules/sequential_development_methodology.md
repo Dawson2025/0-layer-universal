@@ -12,6 +12,7 @@ resource_name: "sequential_development_methodology"
 
 ---
 
+<!-- section_id: "48598996-594d-44e1-a86d-79ab3b7bcecb" -->
 ## Purpose
 
 This document establishes a universal methodology for approaching multi-task work to ensure consistency, quality, and efficiency.
@@ -20,8 +21,10 @@ This document establishes a universal methodology for approaching multi-task wor
 
 ---
 
+<!-- section_id: "0dec6e36-9477-43a6-a148-c39090e46767" -->
 ## The Problem: Parallel Development Pitfalls
 
+<!-- section_id: "ede473cf-5150-4f7f-97fe-437db103d8e9" -->
 ### What Happens in Parallel Development
 
 ```
@@ -34,6 +37,7 @@ Start all tasks simultaneously
 Result: Inconsistent approaches, duplicated bugs, wasted effort
 ```
 
+<!-- section_id: "1934472b-6086-46f5-aa09-aca03e1f157e" -->
 ### Real-World Example (DS250 Unit 3)
 
 **Parallel Approach**:
@@ -54,13 +58,16 @@ Result: Inconsistent approaches, duplicated bugs, wasted effort
 
 ---
 
+<!-- section_id: "7ed909f9-e4ee-4949-9e28-16a6f4e86846" -->
 ## The Solution: Sequential Development
 
+<!-- section_id: "b6c4c288-55fc-4a81-94e4-d90c41ecc57f" -->
 ### Core Principle
 
 > **Complete each task fully before starting the next one.**
 > Each task builds on lessons learned from previous tasks.
 
+<!-- section_id: "1c28a7d5-72b7-4cb7-a146-1b21eda96ee8" -->
 ### The Sequential Process
 
 ```
@@ -72,6 +79,7 @@ Task 4 (Apply all learnings + complete)
 Result: Consistent approaches, lessons propagate naturally, less rework
 ```
 
+<!-- section_id: "a9555e08-73b5-4ace-839b-3fd7c59d9c3f" -->
 ### Standard Sequential Workflow
 
 #### Step 1: Complete First Task
@@ -115,8 +123,10 @@ For each subsequent task N:
 
 ---
 
+<!-- section_id: "e8c01d6e-3797-4522-ab6f-3c879400881d" -->
 ## Decision Framework: When to Use Sequential vs Parallel
 
+<!-- section_id: "0357d915-ca26-4395-ae17-4374939e2476" -->
 ### Use Sequential When:
 
 ✅ **Tasks share data sources** (same dataset, same database)
@@ -132,6 +142,7 @@ For each subsequent task N:
 - Iterative analysis (Explore → Model → Validate → Report)
 - Tutorial/learning sequences (Lesson 1 → Lesson 2 → Lesson 3)
 
+<!-- section_id: "a1839215-2270-492c-b870-c817892257f4" -->
 ### Use Parallel When:
 
 ✅ **Tasks are completely independent** (no shared context)
@@ -146,6 +157,7 @@ For each subsequent task N:
 - Independent feature additions to different modules
 - Bug fixes in unrelated subsystems
 
+<!-- section_id: "051847ff-6a36-4b46-85e6-37a660997935" -->
 ### Gray Area: When Parallel is Necessary for Related Tasks
 
 If you **must** work in parallel on related tasks:
@@ -160,8 +172,10 @@ If you **must** work in parallel on related tasks:
 
 ---
 
+<!-- section_id: "2d11c015-960d-491c-adee-b0424dd76c51" -->
 ## Implementation Best Practices
 
+<!-- section_id: "5c5be37d-989c-49c1-a806-f21e28a443ff" -->
 ### 1. Task Tracking
 
 Use explicit task tracking with clear status:
@@ -176,6 +190,7 @@ Use explicit task tracking with clear status:
 ...
 ```
 
+<!-- section_id: "932762ac-3d41-4b0a-af29-8385d03dbdd2" -->
 ### 2. Pattern Documentation
 
 After each task, explicitly document:
@@ -194,6 +209,7 @@ After each task, explicitly document:
 - Code snippets to reuse
 - Verification steps
 
+<!-- section_id: "7ff8490a-d50a-494d-b74a-2ee43e7023fc" -->
 ### 3. AI Agent Instructions
 
 When working with AI assistants on multi-task work:
@@ -213,8 +229,10 @@ When working with AI assistants on multi-task work:
 
 ---
 
+<!-- section_id: "3625ff3c-853b-4162-88d4-4c91764bf8f6" -->
 ## Benefits of Sequential Workflow
 
+<!-- section_id: "d28e9f44-0476-4235-bbe2-eb1135de79e4" -->
 ### Quality Benefits
 
 - **Consistency**: All tasks use same patterns
@@ -222,6 +240,7 @@ When working with AI assistants on multi-task work:
 - **Correctness**: Fewer bugs through accumulated learning
 - **Verification**: Issues caught before propagation
 
+<!-- section_id: "d7262da7-c35b-4b9f-9336-981eb7efdd2c" -->
 ### Efficiency Benefits
 
 - **Less rework**: Fix once in Task 1, apply everywhere
@@ -229,6 +248,7 @@ When working with AI assistants on multi-task work:
 - **Clear progress**: Linear advancement through tasks
 - **Knowledge building**: Each task builds on previous understanding
 
+<!-- section_id: "fab2353d-20e2-4a62-83f2-57e924c13dda" -->
 ### Learning Benefits
 
 - **Progressive understanding**: Build knowledge step by step
@@ -238,12 +258,15 @@ When working with AI assistants on multi-task work:
 
 ---
 
+<!-- section_id: "022b5619-c1aa-4d3c-a942-777fc9425b19" -->
 ## Case Study: DS250 Unit 3
 
+<!-- section_id: "5646d9e3-9f43-4653-a184-c6ba45fe5201" -->
 ### Background
 
 Four related tasks analyzing flight delay data from the same dataset.
 
+<!-- section_id: "b158bb02-84ec-46fa-83fe-17c2f0c76a3d" -->
 ### Parallel Approach (What Happened)
 
 **Timeline**:
@@ -264,6 +287,7 @@ Four related tasks analyzing flight delay data from the same dataset.
 - Updated Task 2 and Task 3 analyses
 - Re-rendered and re-published multiple tasks
 
+<!-- section_id: "fa94ddbc-0965-4b4a-8b39-b63e0d8c5c6f" -->
 ### Sequential Approach (Should Have Done)
 
 **What Would Have Happened**:
@@ -295,8 +319,10 @@ Four related tasks analyzing flight delay data from the same dataset.
 
 ---
 
+<!-- section_id: "ee24b986-669d-4917-ad06-2bae3d71d381" -->
 ## Quick Reference
 
+<!-- section_id: "930ed789-8b60-4d5b-ba88-fe021ca56bbd" -->
 ### Sequential Workflow Checklist
 
 **Before Starting Multi-Task Work**:
@@ -318,6 +344,7 @@ Four related tasks analyzing flight delay data from the same dataset.
 - [ ] Update documentation
 - [ ] ONLY THEN proceed to next task
 
+<!-- section_id: "9e498e8b-b07f-44b6-86bc-84adcbea763f" -->
 ### Red Flags (Parallel Work on Related Tasks)
 
 🚩 Starting multiple related tasks simultaneously
@@ -328,8 +355,10 @@ Four related tasks analyzing flight delay data from the same dataset.
 
 ---
 
+<!-- section_id: "76252f8b-5d9b-487d-9f88-5884ad1db31e" -->
 ## Integration with Other Methodologies
 
+<!-- section_id: "57e65f57-727e-4b0e-8945-c018d495d7fc" -->
 ### Agile/Scrum
 
 Sequential development complements agile:
@@ -338,6 +367,7 @@ Sequential development complements agile:
 - Document learnings in story notes
 - Apply patterns to subsequent stories
 
+<!-- section_id: "cf538a4a-1e23-4c17-b872-1e0ced22e68c" -->
 ### Test-Driven Development (TDD)
 
 Sequential enhances TDD:
@@ -345,6 +375,7 @@ Sequential enhances TDD:
 - Task 2+: Apply Task 1's test patterns
 - Tests become more comprehensive with each task
 
+<!-- section_id: "a5dd1117-cc0c-48a9-81e9-0d4268290d39" -->
 ### Continuous Integration
 
 Sequential supports CI/CD:
@@ -354,22 +385,27 @@ Sequential supports CI/CD:
 
 ---
 
+<!-- section_id: "e8e69ab5-804f-44eb-9c02-81e1e88c9a17" -->
 ## Summary
 
+<!-- section_id: "ebab4916-2220-4311-a1da-06e74d08161c" -->
 ### The Core Rule
 
 **If tasks share data, patterns, or context → always work sequentially.**
 
+<!-- section_id: "44621ae3-4686-48d3-9d5d-b1bc6865e971" -->
 ### The Core Process
 
 ```
 Complete → Document → Review → Apply → Repeat
 ```
 
+<!-- section_id: "6fd155ca-b61a-40c6-905b-1201bd99a7c6" -->
 ### The Core Benefit
 
 **Fix once, apply everywhere** vs **Fix same issue multiple times**
 
+<!-- section_id: "c8e14220-9cb3-4324-9a41-b0b3a8f120fa" -->
 ### The Core Principle
 
 **"Measure twice, cut once" applies to multi-task work.**
@@ -378,6 +414,7 @@ The extra time spent completing tasks sequentially is recovered (and more) by av
 
 ---
 
+<!-- section_id: "2926500a-fb5e-44bf-ac0c-1911c866d632" -->
 ## Related Documentation
 
 - Data Visualization Principles (trickle_down_0.75_universal_tools)

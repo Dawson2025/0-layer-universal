@@ -13,6 +13,7 @@ resource_name: "US-03_developer_tunes_scoring_weights"
 **I want** to adjust the balance between recency, relevance, and importance in the scoring function,
 **So that** research sessions prioritize breadth while active development sessions prioritize recent decisions.
 
+<!-- section_id: "c6e9acea-80b4-4391-8be1-a92278e476b8" -->
 ### What Happens
 
 1. User notices the AI is loading suboptimal context for a particular type of work
@@ -20,6 +21,7 @@ resource_name: "US-03_developer_tunes_scoring_weights"
 3. Scoring function applies the new weights to future context loading
 4. AI loads context that better matches the current work mode
 
+<!-- section_id: "0c540e05-42a2-4eee-b542-3fd57f5d3acb" -->
 ### Acceptance Criteria
 
 - Scoring weights are configurable, not hardcoded

@@ -11,10 +11,12 @@ resource_name: "PLAYWRIGHT_MCP_USAGE"
 
 This guide explains how to start, use, and manage the Playwright MCP server with AI applications (Cursor IDE, Claude Code, etc.).
 
+<!-- section_id: "34393658-744e-4f45-a1ae-579616e41934" -->
 ## How the MCP Server Works
 
 The Playwright MCP server is **automatically started by the AI application** when you launch it. There is no manual startup process required.
 
+<!-- section_id: "46a04e94-a03f-48a3-8969-738ddf6971cd" -->
 ### Automatic Startup Process
 
 1. AI application reads MCP configuration on startup
@@ -24,14 +26,17 @@ The Playwright MCP server is **automatically started by the AI application** whe
 3. The MCP server starts in the background and connects to the AI application
 4. MCP tools become available for use in the conversation
 
+<!-- section_id: "7fa84756-5170-4e9c-ae38-9b9970be128a" -->
 ### Server Lifecycle
 
 - **Starts:** When the AI application launches
 - **Runs:** Continuously in the background during your session
 - **Stops:** When the AI application closes
 
+<!-- section_id: "f5c24c96-1eb6-41db-a1ab-0b8eb4b47969" -->
 ## Starting the MCP Server
 
+<!-- section_id: "6421ad14-0215-4d42-9aa7-354270de965f" -->
 ### First Time Setup
 
 1. Ensure you've completed the setup process (see `PLAYWRIGHT_MCP_CURSOR_SETUP.md` for Cursor IDE)
@@ -40,6 +45,7 @@ The Playwright MCP server is **automatically started by the AI application** whe
 
 The server will start automatically.
 
+<!-- section_id: "92641795-5471-43bc-a322-458949abf085" -->
 ### After Configuration Changes
 
 If you modify the MCP configuration:
@@ -49,8 +55,10 @@ If you modify the MCP configuration:
 3. Restart the AI application
 4. The MCP server will start with the new configuration
 
+<!-- section_id: "3c26cf5c-e93f-4116-a841-0683622d69ae" -->
 ## Verifying the Server is Running
 
+<!-- section_id: "24388cd8-92a8-4abc-8a96-af9edbe9f9c7" -->
 ### Check 1: MCP Tools Available
 
 In an AI application conversation, MCP tools will be available if the server is running. Tool naming varies by application:
@@ -65,6 +73,7 @@ Common tools:
 - `browser_type` - Type text into inputs
 - And many more...
 
+<!-- section_id: "92a5042a-5377-4fa8-a7ff-fbabbff40baa" -->
 ### Check 2: Test Navigation
 
 Ask the AI to navigate to a website:
@@ -75,6 +84,7 @@ Please navigate to https://example.com
 
 If the server is working, the AI will successfully navigate and show you the page snapshot.
 
+<!-- section_id: "b7296bb9-f13f-4a75-b394-a41e528eff8f" -->
 ### Check 3: Manual Server Test
 
 You can manually test if the MCP server starts correctly:
@@ -90,6 +100,7 @@ npx -y @playwright/mcp@latest --browser chromium
 
 This should start the server without errors. Press Ctrl+C to stop.
 
+<!-- section_id: "e4781eb5-01f4-4478-a545-cbd1dcba602b" -->
 ### Check 4: Verify in Application Settings
 
 **Cursor IDE**:
@@ -100,15 +111,18 @@ This should start the server without errors. Press Ctrl+C to stop.
 - Check application logs for MCP server startup messages
 - Verify tools are available in conversation
 
+<!-- section_id: "75ba33b7-5f51-4074-adb6-189e714760d3" -->
 ## Available Playwright Tools
 
 Once the MCP server is running, the AI application has access to these tools:
 
+<!-- section_id: "d541c177-106f-4df7-869f-d261af9ba835" -->
 ### Navigation
 - `browser_navigate` - Navigate to a URL
 - `browser_navigate_back` - Go back to previous page
 - `browser_tabs` - List, create, close, or select tabs
 
+<!-- section_id: "9392333f-4f37-4b19-af3f-411834d7c0a4" -->
 ### Page Interaction
 - `browser_click` - Click on elements
 - `browser_type` - Type text into inputs
@@ -116,11 +130,13 @@ Once the MCP server is running, the AI application has access to these tools:
 - `browser_hover` - Hover over elements
 - `browser_drag` - Drag and drop elements
 
+<!-- section_id: "12f5aeba-b965-4dfe-a9e2-0caa665fefb6" -->
 ### Forms
 - `browser_fill_form` - Fill multiple form fields at once
 - `browser_select_option` - Select dropdown options
 - `browser_file_upload` - Upload files
 
+<!-- section_id: "1ca993fa-7b60-404f-9496-c21ee756fca9" -->
 ### Information Gathering
 - `browser_snapshot` - Get accessibility snapshot of the page
 - `browser_take_screenshot` - Capture screenshots
@@ -128,17 +144,21 @@ Once the MCP server is running, the AI application has access to these tools:
 - `browser_network_requests` - View network requests
 - `browser_evaluate` - Execute JavaScript
 
+<!-- section_id: "11f73c2b-f12d-4863-9dc6-d0212aefd8f8" -->
 ### Waiting & Dialogs
 - `browser_wait_for` - Wait for text to appear/disappear or time to pass
 - `browser_handle_dialog` - Handle alert/confirm/prompt dialogs
 
+<!-- section_id: "905eae4a-3e80-45f4-b923-7f1fe5461c3e" -->
 ### Browser Management
 - `browser_close` - Close the browser
 - `browser_resize` - Resize browser window
 - `browser_install` - Install browser (if not already installed)
 
+<!-- section_id: "15de37ec-b38b-4686-b0e6-453484a00999" -->
 ## Common Usage Patterns
 
+<!-- section_id: "a023a978-c48c-4974-a0fc-24e1d6d1e572" -->
 ### Example 1: Navigate and Extract Information
 
 ```
@@ -150,6 +170,7 @@ The AI will:
 2. Use `browser_snapshot` to get the page structure
 3. Parse the snapshot and extract the information
 
+<!-- section_id: "73fd7a57-aed0-430d-995e-d6b941bb2040" -->
 ### Example 2: Automate Form Filling
 
 ```
@@ -165,6 +186,7 @@ The AI will:
 3. Use `browser_fill_form` to fill all fields
 4. Optionally submit the form
 
+<!-- section_id: "0f874e88-158d-4b97-9d0f-723e3de51687" -->
 ### Example 3: Take Screenshots
 
 ```
@@ -176,6 +198,7 @@ The AI will:
 2. Use `browser_take_screenshot` to capture the page
 3. Save the screenshot to a file
 
+<!-- section_id: "1bb354c5-aeac-4c4e-a3cc-f2741643d37b" -->
 ### Example 4: Testing Workflows
 
 ```
@@ -192,8 +215,10 @@ The AI will:
 3. Use `browser_click` to click the button
 4. Use `browser_snapshot` to verify the result
 
+<!-- section_id: "0502b421-13a9-41bf-9a78-bd9aca5e2f2a" -->
 ## Troubleshooting
 
+<!-- section_id: "49d6003d-a52e-4f3c-b530-f02bc93e6026" -->
 ### Server Not Starting
 
 **Symptom:** MCP tools are not available, error message about tools not being available
@@ -204,6 +229,7 @@ The AI will:
 3. Completely restart the AI application (ensure the process is terminated)
 4. Check application logs for MCP server startup errors
 
+<!-- section_id: "c187e00a-7d5a-4334-9f07-a741adecbbc8" -->
 ### Browser Not Found
 
 **Symptom:** Error: "Chromium distribution 'chrome' is not found" or "Browser specified in your config is not installed"
@@ -219,6 +245,7 @@ The AI will:
 3. Check MCP configuration specifies the correct browser with `"--browser", "chromium"`
 4. Restart the AI application
 
+<!-- section_id: "0e23ad0a-9e9c-4e5c-b936-3f8dd15b8b15" -->
 ### Server Crashes or Disconnects
 
 **Solutions:**
@@ -232,6 +259,7 @@ The AI will:
    ```
 3. Restart the AI application
 
+<!-- section_id: "194e6d52-cdad-40b8-8327-6736106920ba" -->
 ### Performance Issues
 
 If the browser is slow or unresponsive:
@@ -241,6 +269,7 @@ If the browser is slow or unresponsive:
 3. Consider using headless mode (default) for better performance
 4. Check system resources (RAM, CPU)
 
+<!-- section_id: "3f96c3f4-9ebc-48f8-a8f5-eaa99022205a" -->
 ## Manual Server Invocation (Testing Only)
 
 For debugging purposes, you can manually start the MCP server:
@@ -261,6 +290,7 @@ npx -y @playwright/mcp@latest \
 
 **Note:** This is only for testing. The AI application will manage the server automatically during normal use.
 
+<!-- section_id: "00132a6d-1b71-48e9-9e95-3e96dcf256a6" -->
 ### Useful Command Options
 
 ```bash
@@ -277,8 +307,10 @@ npx -y @playwright/mcp@latest --browser chromium --caps vision,pdf
 npx -y @playwright/mcp@latest --browser chromium --blocked-origins "https://ads.example.com"
 ```
 
+<!-- section_id: "0111bcf0-c782-43c8-9a43-da946543fa4b" -->
 ## Configuration Reference
 
+<!-- section_id: "e40bf243-6fb3-40bf-8b13-482965189d7b" -->
 ### Basic Configuration (Cursor IDE)
 
 ```json
@@ -302,6 +334,7 @@ npx -y @playwright/mcp@latest --browser chromium --blocked-origins "https://ads.
 
 **Location**: `~/.config/mcp/mcp.json` (or `~/.cursor/mcp.json`)
 
+<!-- section_id: "4e013e9b-c92f-41df-b0cd-d5467aef0ded" -->
 ### Basic Configuration (Claude Code)
 
 ```json
@@ -322,6 +355,7 @@ npx -y @playwright/mcp@latest --browser chromium --blocked-origins "https://ads.
 
 **Location**: `.mcp.json` in project root
 
+<!-- section_id: "d48061f6-0df0-4447-acaa-e547e8677c64" -->
 ### Advanced Configuration
 
 ```json
@@ -347,6 +381,7 @@ npx -y @playwright/mcp@latest --browser chromium --blocked-origins "https://ads.
 }
 ```
 
+<!-- section_id: "eef6b65a-2a8c-4593-b729-238438df1810" -->
 ## Best Practices
 
 1. **Keep it Simple:** Use the basic configuration unless you have specific needs
@@ -356,8 +391,10 @@ npx -y @playwright/mcp@latest --browser chromium --blocked-origins "https://ads.
 5. **Check Snapshots First:** Use `browser_snapshot` before taking screenshots (it's faster)
 6. **Handle Errors Gracefully:** Be prepared for network issues, timeouts, and page errors
 
+<!-- section_id: "3e73fcb2-a75f-45a3-9b87-3262f86ef4c6" -->
 ## Security Considerations
 
+<!-- section_id: "ab179370-70c8-43b2-9455-315cb5ff4f3e" -->
 ### Origin Restrictions
 
 By default, the MCP server allows all origins. To restrict access:
@@ -373,6 +410,7 @@ By default, the MCP server allows all origins. To restrict access:
 ]
 ```
 
+<!-- section_id: "4e6ac7be-79c5-4a28-af57-23a51a60716d" -->
 ### Blocking Origins
 
 To block specific sites (e.g., ads, trackers):
@@ -388,6 +426,7 @@ To block specific sites (e.g., ads, trackers):
 ]
 ```
 
+<!-- section_id: "55ce173b-a0ed-43b6-b93b-240c2d169767" -->
 ### Service Workers
 
 To block service workers:
@@ -402,18 +441,22 @@ To block service workers:
 ]
 ```
 
+<!-- section_id: "e4216422-c9b1-46e9-8983-904f63260f87" -->
 ## Getting Help
 
+<!-- section_id: "77516156-bc7a-4280-b6cf-9f7150973602" -->
 ### Check Documentation
 - Official Playwright Docs: https://playwright.dev/
 - MCP Protocol Docs: https://modelcontextprotocol.io/
 - [Playwright MCP Cursor Setup](./PLAYWRIGHT_MCP_CURSOR_SETUP.md) - Setup guide for Cursor IDE
 
+<!-- section_id: "be2665d4-4f40-4644-ab33-3130f16919c1" -->
 ### Common Issues
 - See `PLAYWRIGHT_MCP_CURSOR_SETUP.md` for setup troubleshooting
 - Check application logs for error messages
 - Verify browser installation: `ls -la ~/.cache/ms-playwright/`
 
+<!-- section_id: "55c1faac-a54f-4e3d-b9c0-6a87c40dc0a7" -->
 ### Manual Testing
 Test if the MCP server can start manually:
 ```bash
@@ -424,6 +467,7 @@ npx -y @playwright/mcp@latest --browser chromium
 
 If this fails, the issue is with the installation, not the AI application.
 
+<!-- section_id: "763873f8-26ae-451b-ac97-24e4dad228e0" -->
 ## Summary
 
 - **Starting:** Automatic when AI application launches

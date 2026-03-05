@@ -9,6 +9,7 @@ resource_name: "context_priority_rules"
 
 ---
 
+<!-- section_id: "d3cd3b41-43aa-492a-9d49-a86055696dee" -->
 ## Core Principle: Inheritance with Override
 
 ```
@@ -20,6 +21,7 @@ This is standard inheritance - like classes in programming where child classes i
 
 ---
 
+<!-- section_id: "95f47ed2-4ef4-45a2-bfad-99f6b409fc3a" -->
 ## Layer Hierarchy
 
 ```
@@ -38,8 +40,10 @@ layer_2+ (features)     ← Deeper nesting, inherits all above, can override
 
 ---
 
+<!-- section_id: "44a3d8b3-1f0e-49ea-968d-1db03028e8a3" -->
 ## Precedence Rules
 
+<!-- section_id: "126eefd7-5a63-4764-aaba-990e7859bcc3" -->
 ### Rule 1: Higher Layer Can Override Lower
 
 A rule in layer_1 can override a rule in layer_0.
@@ -55,6 +59,7 @@ Use project-specific format: [JIRA-123] message
 
 Result: In project_x, use JIRA format. Everywhere else, use conventional commits.
 
+<!-- section_id: "fcee8987-ead7-4f0b-a3ce-301095ea7a3d" -->
 ### Rule 2: Later in Chain Overrides Earlier
 
 Within the same layer, files loaded later override files loaded earlier.
@@ -65,10 +70,12 @@ Within the same layer, files loaded later override files loaded earlier.
 ~/project/CLAUDE.local.md    ← Loaded last, highest precedence
 ```
 
+<!-- section_id: "979cf630-05d5-4838-b38b-5556575a676a" -->
 ### Rule 3: CLAUDE.local.md Wins
 
 `CLAUDE.local.md` files are for personal preferences and have highest precedence within their scope.
 
+<!-- section_id: "549ac31b-1634-4db6-9450-5696e28c8953" -->
 ### Rule 4: Explicit Override Preferred
 
 Use `@override` marker to make overrides explicit and documented.
@@ -82,6 +89,7 @@ Reason: This project requires different behavior because [reason].
 
 ---
 
+<!-- section_id: "6601e0ae-b3b1-4073-bd4c-ac5253e1f3a9" -->
 ## What CAN Be Overridden
 
 | Category | Can Override? | Notes |
@@ -95,6 +103,7 @@ Reason: This project requires different behavior because [reason].
 
 ---
 
+<!-- section_id: "e08f8546-5da9-460d-985d-02479eb718b1" -->
 ## What SHOULD NOT Be Overridden (Without Good Reason)
 
 | Category | Override? | Notes |
@@ -108,8 +117,10 @@ These CAN technically be overridden, but doing so requires a documented reason.
 
 ---
 
+<!-- section_id: "d9c58d4f-e580-4aee-871d-dbf249adaef5" -->
 ## Override Syntax
 
+<!-- section_id: "e9bedbc9-8015-4902-bd35-5b9cceeb13a1" -->
 ### Explicit Override (Recommended)
 
 ```markdown
@@ -119,12 +130,14 @@ Reason: [Why this override is needed]
 [New content]
 ```
 
+<!-- section_id: "e5cafa49-1f35-4bac-b1c4-7e0db1f3e4d6" -->
 ### Implicit Override (Less Clear)
 
 Simply defining a rule with the same name in a higher layer will override, but this is less clear to future agents and humans.
 
 ---
 
+<!-- section_id: "e31a0dff-5874-418a-bca1-165c3d92d373" -->
 ## Conflict Resolution
 
 When the same thing is defined differently in multiple places:
@@ -134,6 +147,7 @@ When the same thing is defined differently in multiple places:
 3. **Check for @override marker**: Explicit override wins
 4. **If still unclear**: Ask user
 
+<!-- section_id: "4ffc7030-220a-4592-a5d0-8355ae620a7e" -->
 ### Example Conflict
 
 ```
@@ -145,6 +159,7 @@ Resolution: In layer_1/project, use 4-space. In layer_0 contexts, use 2-space.
 
 ---
 
+<!-- section_id: "35bfc1a2-135e-4cc2-a0b8-8336562d9afa" -->
 ## Recording Overrides
 
 When an override is applied, record it:
@@ -162,6 +177,7 @@ This creates transparency about what's been overridden.
 
 ---
 
+<!-- section_id: "060b75ce-4c32-44ca-838c-8a947c1d5aae" -->
 ## Scope of Overrides
 
 Overrides only apply within their scope:
@@ -176,6 +192,7 @@ An override in project_a does NOT affect project_b.
 
 ---
 
+<!-- section_id: "56e10832-8243-4295-898e-8cb3d821d4bd" -->
 ## Related Documentation
 
 - `context_loading_protocol.md` - How context is loaded

@@ -3,6 +3,7 @@ resource_id: "ccb764da-38b8-4b5d-8be9-d283837eb938"
 resource_type: "knowledge"
 resource_name: "token_and_policy_strategy"
 ---
+<!-- section_id: "1c52dd91-23a2-4574-8adf-5d4e26ee44c3" -->
 ## Token and Policy Strategy
 
 This document expands on how **tools are assigned to tasks** in a cost-aware, quality-aware way.
@@ -15,6 +16,7 @@ It explains:
 
 ---
 
+<!-- section_id: "234b4814-3b5d-4a43-ba9c-713c2949ffb3" -->
 ## 1. Policy Mapping (Conceptual)
 
 We describe tool choice as a mapping:
@@ -40,10 +42,12 @@ This mapping is:
 
 ---
 
+<!-- section_id: "2c208106-97e4-410f-a04b-e3d74c964b39" -->
 ## 2. Current Policy (Example)
 
 Based on the research and current tool capabilities, a reasonable initial policy is:
 
+<!-- section_id: "ddb73e2f-7a4d-4b83-9bd8-649d968da4af" -->
 ### 2.1 Claude Code
 
 Use Claude Code for:
@@ -64,6 +68,7 @@ Tradeoffs:
 - Higher per-token cost.
 - Better reasoning and adherence to complex, long-lived instructions.
 
+<!-- section_id: "c23837d8-5a45-4709-a6ae-e72accc53a77" -->
 ### 2.2 Codex CLI
 
 Use Codex CLI for:
@@ -88,6 +93,7 @@ Tradeoffs:
 - Low cost, fast.
 - Vulnerable to instruction dilution in long chats.
 
+<!-- section_id: "2129cfa0-f9c0-4ff4-bf89-515720a03045" -->
 ### 2.3 Gemini CLI
 
 Use Gemini CLI for:
@@ -108,6 +114,7 @@ Tradeoffs:
 - Long context and good general reasoning.
 - Moderate cost compared to Claude.
 
+<!-- section_id: "218ee483-ca7d-4be8-9644-7ad156fea398" -->
 ### 2.4 Cursor IDE
 
 Use Cursor for:
@@ -129,10 +136,12 @@ Tradeoffs:
 
 ---
 
+<!-- section_id: "bb078a1a-f539-44be-8659-2bd6bd7867dc" -->
 ## 3. Stage-Level Guidelines
 
 Here is a coarse mapping between stages and preferred tools (examples, not exhaustive).
 
+<!-- section_id: "4590e170-f541-4e74-aa01-ebfdfdc51f65" -->
 ### 3.1 Request / Instructions
 
 - **Primary**: Gemini CLI or Claude Code.
@@ -142,6 +151,7 @@ Here is a coarse mapping between stages and preferred tools (examples, not exhau
   - Many turns, high context.
   - Output: detailed handoff with requirements and constraints.
 
+<!-- section_id: "7cfcc37f-7c72-4230-8c7a-a2be1c4f7dcb" -->
 ### 3.2 Planning / Design
 
 - **Primary**: Claude Code (planning sub-agents) or Gemini CLI.
@@ -151,6 +161,7 @@ Here is a coarse mapping between stages and preferred tools (examples, not exhau
   - 5–20 turns.
   - Output: structured plan (subtasks, dependencies, success criteria).
 
+<!-- section_id: "123eb7fa-5bcd-4da8-843c-2d21ddd24c7b" -->
 ### 3.3 Implementation / Testing
 
 - **Primary**: Codex CLI (atomic workers), Claude Code where necessary.
@@ -164,6 +175,7 @@ Here is a coarse mapping between stages and preferred tools (examples, not exhau
   - Codex: 1–3 interactions per task.
   - Claude: fewer tasks, but more complex ones.
 
+<!-- section_id: "cb068b85-54cb-4a02-979a-b31a869d866b" -->
 ### 3.4 Criticism / Fixing
 
 - **Primary**: Claude Code.
@@ -171,6 +183,7 @@ Here is a coarse mapping between stages and preferred tools (examples, not exhau
   - Checking against universal + project + feature + component constraints.
   - Coordinating multiple fixes and re-runs.
 
+<!-- section_id: "eb149bb1-f1f7-477f-b1c6-3369cfba8a9a" -->
 ### 3.5 Archiving
 
 - **Primary**: Any reasoning-capable tool (Claude, Gemini).
@@ -179,6 +192,7 @@ Here is a coarse mapping between stages and preferred tools (examples, not exhau
 
 ---
 
+<!-- section_id: "42593cd6-90f1-447c-aad2-b90457c106c7" -->
 ## 4. Turn Limits and Budget Hints
 
 To keep costs reasonable:
@@ -209,6 +223,7 @@ Supervisors can enforce:
 
 ---
 
+<!-- section_id: "a7e37e04-0092-45c4-bb47-07576dc6abb8" -->
 ## 5. Evolving the Policy
 
 The policy mapping is designed to change over time as:
@@ -237,6 +252,7 @@ This separation allows:
 
 ---
 
+<!-- section_id: "e8dcdab5-7780-44b9-a7d5-b1eadd5645b5" -->
 ## 6. Summary
 
 - The architecture does not hard-code a particular model or tool.

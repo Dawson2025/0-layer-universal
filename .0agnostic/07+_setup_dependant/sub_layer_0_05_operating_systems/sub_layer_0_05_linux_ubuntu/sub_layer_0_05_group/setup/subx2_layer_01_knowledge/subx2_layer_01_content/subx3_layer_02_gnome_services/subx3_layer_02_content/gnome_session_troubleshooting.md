@@ -7,6 +7,7 @@ resource_name: "gnome_session_troubleshooting"
 
 This document outlines the steps taken to resolve a broken GNOME desktop session where critical services were not running, leading to issues with media keys, brightness control, and application launching.
 
+<!-- section_id: "65dc3b18-0973-4ab7-a0d2-d5a0de94cfd8" -->
 ## Symptoms
 
 - Volume and brightness keys not working.
@@ -14,10 +15,12 @@ This document outlines the steps taken to resolve a broken GNOME desktop session
 - GNOME settings daemons (gsd-*) not running.
 - `gnome-session` process not running.
 
+<!-- section_id: "03f90192-d242-41e9-854c-b1ea0deec689" -->
 ## Diagnosis
 
 The root cause was a fundamentally broken GNOME session. The `gnome-session` manager was not starting correctly, which prevented all other necessary settings and desktop daemons from initializing. This can happen due to incorrect session selection at login or a corrupted user session state.
 
+<!-- section_id: "153d2b74-0273-47f8-a11e-ce25065d9398" -->
 ## Resolution Steps
 
 1.  **Correct Session Selection**: The primary fix was to ensure the correct session is selected at the login screen.
@@ -45,6 +48,7 @@ The root cause was a fundamentally broken GNOME session. The `gnome-session` man
     DISPLAY=:0 gnome-terminal &
     ```
 
+<!-- section_id: "5ff894e9-5d9c-497d-9a10-a7b2bcc9f81b" -->
 ## Permanent Fix
 
 The permanent solution is to always ensure the correct GNOME session is selected at login. If the session becomes corrupted again, the first step should be to log out and re-select the "Ubuntu" session.

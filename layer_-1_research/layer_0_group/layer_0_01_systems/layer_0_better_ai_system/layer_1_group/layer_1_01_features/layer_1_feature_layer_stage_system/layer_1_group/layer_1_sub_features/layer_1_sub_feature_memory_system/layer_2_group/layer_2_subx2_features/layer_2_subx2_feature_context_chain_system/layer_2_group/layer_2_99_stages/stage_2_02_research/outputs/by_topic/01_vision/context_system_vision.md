@@ -5,12 +5,14 @@ resource_name: "context_system_vision"
 ---
 # Vision — A Complete AI Context System
 
+<!-- section_id: "26aefbba-ef68-4e1a-bac0-aff67b693820" -->
 ## What This Document Is
 
 A vision for what's possible: a context system where AI agents always have the right context at the right time — not too much, not too little — and where the system itself is maintainable, traversable, and works across every AI tool.
 
 ---
 
+<!-- section_id: "dfe862d6-98ce-4c6f-b339-1ccb46b33e01" -->
 ## The End State
 
 An AI agent opens a session. Within seconds, it knows:
@@ -23,8 +25,10 @@ It knows all of this without loading thousands of lines of context. The static f
 
 ---
 
+<!-- section_id: "a4d15a5f-1cf5-49ed-bc44-d9a56c8ecdab" -->
 ## Two Types of Context, Sharply Separated
 
+<!-- section_id: "f8250afe-119b-4d50-9f7c-5a12af18a3e0" -->
 ### Static Context (Always Present)
 
 The foundation. Loaded into every API message, every session, every tool. This is the floor — what the agent can never forget.
@@ -43,6 +47,7 @@ The foundation. Loaded into every API message, every session, every tool. This i
 
 **Target: <400 lines total** across the entire static chain (all parent files combined). Currently at ~717 — nearly half is bloat that can be eliminated.
 
+<!-- section_id: "26a2df9a-dc1d-412d-abad-31f223161c49" -->
 ### Dynamic Context (Loaded When Needed)
 
 The depth. Pulled in on-demand through reference chains. The agent follows pointers from static context to load exactly what it needs for the current task.
@@ -59,6 +64,7 @@ The depth. Pulled in on-demand through reference chains. The agent follows point
 
 ---
 
+<!-- section_id: "90da5fb3-18a9-4b93-89fc-fefeb48140e5" -->
 ## Reference Chains — The Right Detail at the Right Depth
 
 The system uses layered references so context resolves progressively — from overview to detail — and the agent stops at the level it needs.
@@ -87,6 +93,7 @@ The agent doesn't load Level 2 until it's actually doing the work. It doesn't lo
 
 ---
 
+<!-- section_id: "e9d8a801-3ee5-4e22-ac67-03b2f0e348a2" -->
 ## Context Chains — How Context Flows Through the Hierarchy
 
 The layer-stage hierarchy itself is a context chain. Each level inherits from its parent and can override or extend.
@@ -125,6 +132,7 @@ Global context (~/.claude/CLAUDE.md)
 
 ---
 
+<!-- section_id: "26068df1-03c8-47e8-8466-b7ead1fb3d80" -->
 ## AI Traversal — The Agent Navigates Its Own Context
 
 The system isn't just passively loaded — the agent actively navigates it. On session start, the agent:
@@ -145,26 +153,31 @@ This traversal is guided by the static context — the trigger table and navigat
 
 ---
 
+<!-- section_id: "55db11c1-9471-4da0-a222-3dc83ca3f78f" -->
 ## AI Maintenance — The System Updates Itself
 
 A context system that requires constant manual curation is unsustainable. The vision includes mechanisms for the AI to maintain its own context:
 
+<!-- section_id: "25926823-843e-4d00-aecd-42908ee706b7" -->
 ### What the AI Can Update
 - **Episodic memory** — session records, what was done, decisions made
 - **Status tracking** — stage progress, task completion, blockers
 - **Hand-off documents** — context for the next session or agent
 - **Dynamic references** — updating pointers when files move or change
 
+<!-- section_id: "06336518-e688-49fe-93d0-3a31b147eecb" -->
 ### What Requires Human Approval
 - **Critical rules** — the modification protocol requires diagram + approval
 - **Structural changes** — adding/removing layers, stages, entities
 - **Source-of-truth files** — 0AGNOSTIC.md edits trigger regeneration
 
+<!-- section_id: "818fa7cd-a7bc-4975-a7bc-32f9524156ac" -->
 ### Automated Maintenance
 - **Transpiler** — regenerates tool-specific files from source of truth (0AGNOSTIC.md → CLAUDE.md, AGENTS.md, GEMINI.md)
 - **Integration summaries** — auto-generated markdown from structured definitions (.gab.jsonld → .integration.md)
 - **Sync scripts** — episodic memory sync, agnostic sync, keeping derived files current
 
+<!-- section_id: "d3ba66fe-b10d-4870-85b6-90ea0cc9e762" -->
 ### Self-Healing Properties
 - If a reference chain breaks (file moved/deleted), the agent can detect the broken link and flag it
 - If static context exceeds budget, the system can identify candidates for demotion to dynamic context
@@ -172,10 +185,12 @@ A context system that requires constant manual curation is unsustainable. The vi
 
 ---
 
+<!-- section_id: "84bc484c-53d3-4767-a8b9-e2cb41d17f2d" -->
 ## Tool Agnosticism — One System, Every AI Tool
 
 The context system must work across Claude Code, Cursor, Codex CLI, Gemini CLI, Windsurf, and any future tool. This means:
 
+<!-- section_id: "35d304dd-0f52-4c25-b9a9-32733bb8f9f7" -->
 ### The Agnostic Layer
 
 ```
@@ -192,6 +207,7 @@ The context system must work across Claude Code, Cursor, Codex CLI, Gemini CLI, 
 
 **0AGNOSTIC.md** contains the universal context: identity, rules, triggers, navigation. The sync script translates this into each tool's native format. Edit once, deploy everywhere.
 
+<!-- section_id: "7aa8d11a-6f71-459e-9866-c6b2d749d784" -->
 ### What's Shared vs. Tool-Specific
 
 | Shared (in 0AGNOSTIC.md) | Tool-Specific (in .1merge/) |
@@ -202,6 +218,7 @@ The context system must work across Claude Code, Cursor, Codex CLI, Gemini CLI, 
 | Trigger tables | Override format and structure |
 | Layer-stage hierarchy | Integration patterns |
 
+<!-- section_id: "660d620c-ad83-4c02-9e45-87b2db7b80d2" -->
 ### The .1merge/ Override System
 
 Tool-specific needs are handled by a three-tier merge:
@@ -211,6 +228,7 @@ Tool-specific needs are handled by a three-tier merge:
 
 This means each tool gets the full shared context PLUS its own specific features, without polluting the agnostic source.
 
+<!-- section_id: "fc64c81a-cf76-4149-96b6-529ba7f18dc3" -->
 ### Cross-Tool Context Portability
 
 When switching between tools on the same project:
@@ -222,28 +240,36 @@ When switching between tools on the same project:
 
 ---
 
+<!-- section_id: "d53fca47-b3c8-4582-ab18-aa7d3486205f" -->
 ## What Makes This System Good
 
+<!-- section_id: "76478094-5957-481f-a22f-553930e65726" -->
 ### Lean Static, Rich Dynamic
 The agent always has its critical rules and navigation map. Everything else is a reference away. No context budget wasted on information that isn't relevant to the current task.
 
+<!-- section_id: "666a6e5a-8a1e-4e42-9c39-92110d6006f6" -->
 ### Progressive Disclosure
 Context resolves from general to specific. The agent starts with an overview and drills into detail only when the task requires it. Each level of the reference chain adds precision without redundancy.
 
+<!-- section_id: "3013d691-f21c-47df-9eb2-09587f745476" -->
 ### Self-Documenting
 The hierarchy itself documents the system. Where a file lives tells you what it is: which layer, which stage, which feature. Navigation is structural, not dependent on remembering paths.
 
+<!-- section_id: "de8466b1-04b0-4455-91d7-cc99fb5aa000" -->
 ### Maintainable
 Automated sync keeps derived files current. Source-of-truth pattern (0AGNOSTIC.md) prevents drift. The AI maintains its own session records and status. Human intervention is reserved for structural decisions.
 
+<!-- section_id: "b8417391-8aa8-4d1b-8fab-5bae72a23716" -->
 ### Tool-Agnostic
 One source, many outputs. Switch tools without losing context. The system adapts to each tool's format while maintaining a universal core.
 
+<!-- section_id: "b8c26a83-3872-406c-9315-c58c00df13e9" -->
 ### Traversable
 The agent can navigate the system — up to parent context, down to child context, sideways to related features. Navigation is explicit (trigger tables, pointers) not implicit (hoping the agent figures it out).
 
 ---
 
+<!-- section_id: "41049c94-4f0d-4cd5-ac2d-5f1b1270a88e" -->
 ## Current Gaps Between Here and the Vision
 
 | Gap | Current State | Vision State |
@@ -258,6 +284,7 @@ The agent can navigate the system — up to parent context, down to child contex
 
 ---
 
+<!-- section_id: "c1aa8e16-471d-441c-b500-465874e668ab" -->
 ## Guiding Principles
 
 1. **The agent should never have to guess** — if context exists, there's a clear path to it

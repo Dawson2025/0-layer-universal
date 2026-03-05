@@ -8,6 +8,7 @@ resource_name: "README"
 
 Read on-demand when a matching scenario is detected. Not loaded by default.
 
+<!-- section_id: "c999036d-c315-4593-8658-fd14e872485b" -->
 ## Rules in This Category
 
 - [`safety_governance`](safety_governance/safety_governance.md)
@@ -15,6 +16,7 @@ Read on-demand when a matching scenario is detected. Not loaded by default.
 - [`sequential_development_methodology`](sequential_development_methodology/sequential_development_methodology.md)
 - [`CROSS_OS_COMPATIBILITY_RULES`](CROSS_OS_COMPATIBILITY_RULES/CROSS_OS_COMPATIBILITY_RULES.md)
 
+<!-- section_id: "e6a8b365-9c70-4967-a370-12a513d66004" -->
 ## Testing
 
 Run all tests in this category:

@@ -10,6 +10,7 @@ resource_name: "PORTING_STRATEGY"
 
 ---
 
+<!-- section_id: "ea5cb95b-b5e9-4888-a2a2-bb842436216f" -->
 ## Overview
 
 Porting to Cursor IDE means mapping two things:
@@ -21,8 +22,10 @@ Cursor IDE has no direct `.0agnostic/` equivalent — you implement these patter
 
 ---
 
+<!-- section_id: "4465576d-1a74-4503-ace8-35ae6865c428" -->
 ## Part 1: Porting 0AGNOSTIC.md → .cursor/rules Files
 
+<!-- section_id: "8b88602f-c10c-4c4a-b37d-58e4992485bb" -->
 ### Step 1: Extract STATIC Context
 
 Read the STATIC section of your 0AGNOSTIC.md:
@@ -45,6 +48,7 @@ Read the STATIC section of your 0AGNOSTIC.md:
 [Phase, key findings]
 ```
 
+<!-- section_id: "47fbac9f-c237-498c-b69f-70c7720599ee" -->
 ### Step 2: Create .cursor/rules Files
 
 The STATIC section becomes one or more **YAML rule files**:
@@ -59,6 +63,7 @@ project/.cursor/rules/
 └── current-status.md    # Phase, known issues, readiness
 ```
 
+<!-- section_id: "fcc38973-c490-491b-8722-eb8e74178ccf" -->
 ### Step 3: Rule File Format
 
 Each file uses YAML frontmatter + markdown:
@@ -97,6 +102,7 @@ You are an expert [domain] developer.
 - [Behavior 4]
 ```
 
+<!-- section_id: "bb2be243-8ecb-4f20-b7c6-71abceab09a9" -->
 ### Example: Identity Rule File
 
 **From 0AGNOSTIC.md (STATIC)**:
@@ -166,6 +172,7 @@ You do NOT handle business logic outside data processing or manage infrastructur
 - Skip documentation
 ```
 
+<!-- section_id: "8b4d6737-4fb3-4d83-a6a0-3c2af3361412" -->
 ### Step 4: Create Triggers Rules
 
 Map 0AGNOSTIC.md TRIGGERS to rule application:
@@ -208,10 +215,12 @@ description: "Context-specific rule triggers"
 
 ---
 
+<!-- section_id: "11603f43-b602-4bab-a899-808689c112d5" -->
 ## Part 2: Porting .0agnostic/ Directory → Memory Bank + Configuration
 
 The `.0agnostic/` directory doesn't map directly to Cursor. Implement these patterns:
 
+<!-- section_id: "c9ca713c-3a3a-4e12-975f-ef05d580ebf3" -->
 ### Mapping .0agnostic/ Directories
 
 | .0agnostic/ Directory | Cursor Port | Implementation |
@@ -225,6 +234,7 @@ The `.0agnostic/` directory doesn't map directly to Cursor. Implement these patt
 | `06_context_avenue_web/skills/` | Reusable code snippets in Memory Bank | Code templates and patterns |
 | `07+_setup_dependant/` | .cursor/mcp.json + project config | Tool configuration |
 
+<!-- section_id: "2b0cc06b-aa53-4a00-83f8-6a4fe156694c" -->
 ### Detailed Implementation
 
 #### 01_knowledge/ → Memory Bank Entries
@@ -490,8 +500,10 @@ df['result'] = df['a'] + df['b']  # if just arithmetic
 
 ---
 
+<!-- section_id: "f31495b9-1189-40f5-9c54-2178cd6d20fb" -->
 ## Part 3: Complete Integration Example
 
+<!-- section_id: "8f022792-7839-40a9-8e28-e1e67c504379" -->
 ### Directory Structure
 
 ```
@@ -513,6 +525,7 @@ project/
     └── test_pipelines.py
 ```
 
+<!-- section_id: "f96dda6d-8761-432f-9206-5dba07f01308" -->
 ### Memory Bank Organization
 
 ```
@@ -526,6 +539,7 @@ Memory Bank:
 └── Known Issues & Gotchas
 ```
 
+<!-- section_id: "8767496c-6221-40d4-bec4-37677c045937" -->
 ### Cursor IDE Workflow
 
 ```
@@ -562,6 +576,7 @@ Memory Bank:
 
 ---
 
+<!-- section_id: "bddee027-89d4-4a23-b1b0-4c43104a4a5f" -->
 ## Part 4: Migration Checklist
 
 - [ ] Extract STATIC section from 0AGNOSTIC.md
@@ -585,8 +600,10 @@ Memory Bank:
 
 ---
 
+<!-- section_id: "264d7fd9-eaea-426c-9e8b-f97fe6947acd" -->
 ## Part 5: Best Practices
 
+<!-- section_id: "f2b81d38-0fad-4974-b609-0ac3db648d0f" -->
 ### Rule Organization
 
 **Global Rules** (`~/.cursor/rules/`):
@@ -604,6 +621,7 @@ Memory Bank:
 - API contracts
 - Specialized patterns
 
+<!-- section_id: "a749efbb-56a9-4bc5-a817-e88697c24ead" -->
 ### Memory Bank Strategy
 
 **What to Remember**:
@@ -618,6 +636,7 @@ Memory Bank:
 - Code you've already written (reference by file path)
 - General knowledge (keep rule files for that)
 
+<!-- section_id: "dce1d3d3-eaf2-4db1-ba43-e0fa4de4929d" -->
 ### Hook Strategy
 
 Use hooks for automation, not enforcement:
@@ -630,6 +649,7 @@ Don't overload hooks (slow IDE if too many).
 
 ---
 
+<!-- section_id: "7ef615ab-1297-4c5f-b9bd-b8a6802a7bd6" -->
 ## Summary
 
 Porting to Cursor IDE requires:

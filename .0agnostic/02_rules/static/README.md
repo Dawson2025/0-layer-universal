@@ -8,6 +8,7 @@ resource_name: "README"
 
 Always active once loaded. These define behavioral constraints that agents must follow at all times.
 
+<!-- section_id: "afbf5f20-2de1-44aa-a9d7-c777cdb5df32" -->
 ## Rules in This Category
 
 - [`agnostic_update_protocol`](agnostic_update_protocol/agnostic_update_protocol.md)
@@ -16,6 +17,7 @@ Always active once loaded. These define behavioral constraints that agents must 
 - [`STAGE_BOUNDARY_RULE`](STAGE_BOUNDARY_RULE/STAGE_BOUNDARY_RULE.md)
 - [`STAGE_REPORT_RULE`](STAGE_REPORT_RULE/STAGE_REPORT_RULE.md)
 
+<!-- section_id: "089f17b3-e4c3-418b-b4a0-288b35686455" -->
 ## Testing
 
 Run all tests in this category:

@@ -5,10 +5,12 @@ resource_name: "05_design_index"
 ---
 # Design Stage Index — Memory System (Stage 04)
 
+<!-- section_id: "182a50c9-e72b-4fee-b09b-0f4fb7223e6f" -->
 ## Purpose
 
 This stage produces architecture and design documents that translate research findings (stage 02, 38 docs) into concrete system designs for the memory system integration into the layer-stage framework.
 
+<!-- section_id: "b0f1a9c4-6b4a-4304-9735-1e7d18807340" -->
 ## Design Documents
 
 | # | Document | Summary | Research Basis |
@@ -19,6 +21,7 @@ This stage produces architecture and design documents that translate research fi
 | 04 | [Source of Truth to Avenue Flow](04_source_of_truth_to_avenue_flow.md) | **Pointer** → canonical at context_chain_system stage_2_04 doc 06 | Docs 32-37 |
 | 05 | [Design Index](05_design_index.md) | This file — index of all design documents |
 
+<!-- section_id: "d1980d05-deae-4628-9530-95545b317916" -->
 ## Scope Boundaries
 
 **This stage (04 design) covers**:
@@ -34,6 +37,7 @@ This stage produces architecture and design documents that translate research fi
 - Actual code and scripts → stage 06 (development)
 - Testing and validation → stage 07 (testing)
 
+<!-- section_id: "bdc32d1e-941c-417f-82de-21afd0a474ad" -->
 ## Key Architectural Decisions
 
 1. **Files remain source of truth** — databases are derived indexes, always regenerable
@@ -43,6 +47,7 @@ This stage produces architecture and design documents that translate research fi
 5. **Single orchestrator** — sync-main.sh coordinates all sync scripts with dependency ordering
 6. **Phased rollout** — scaffold now, build scripts in stage 06, integrate in stage 06, production after stage 07
 
+<!-- section_id: "733eacbb-ba7d-4c84-b689-b734441daa99" -->
 ## Research → Design Traceability
 
 | Research Category | Docs | Design Impact |

@@ -28,6 +28,7 @@ resource_name: "proposal_ai_friendly_output_organization_v4"
 
 ---
 
+<!-- section_id: "db4287a8-73bf-4c80-a371-6f61079f19d8" -->
 ## What v4 Adds Over v3
 
 | Gap in v3 | v4 Solution |
@@ -40,8 +41,10 @@ resource_name: "proposal_ai_friendly_output_organization_v4"
 
 ---
 
+<!-- section_id: "84b315e3-74db-4618-986b-12a4e1a60f07" -->
 ## Part 1: Current State Inventory
 
+<!-- section_id: "a5ce227e-aacd-419e-a255-a719f5206406" -->
 ### 1.1 Project Structure Overview
 
 ```
@@ -75,6 +78,7 @@ layer_-1_better_ai_system/
         └── layer_0_feature_ai_rules_system/               # 6 files (minimal)
 ```
 
+<!-- section_id: "22de12f4-4fed-4920-a111-e079356d46be" -->
 ### 1.2 Feature Content Status
 
 | Feature | Files | Content Status | Has Stages? |
@@ -88,6 +92,7 @@ layer_-1_better_ai_system/
 | `ai_documentation_system` | 6 | **Minimal** - mostly sync conflicts | No |
 | `ai_rules_system` | 6 | **Minimal** - mostly sync conflicts | No |
 
+<!-- section_id: "3c97fc0d-afe2-477c-9e61-a7ad3fa48434" -->
 ### 1.3 Sync Conflicts (To Delete)
 
 **Total**: ~50+ files across project
@@ -101,6 +106,7 @@ Pattern: `*.sync-conflict-20260126-*-IF2WOGZ.*`
 
 **Action**: Delete all sync conflict files in Phase 0.
 
+<!-- section_id: "5951a53e-6b6c-4bcd-920c-f356afeba327" -->
 ### 1.4 Stage Content Detail
 
 #### stage_-1_01_request_gathering (7,481 lines)
@@ -210,8 +216,10 @@ outputs/
 
 ---
 
+<!-- section_id: "75420dcf-3dc4-452b-a0e3-7f3390e27be3" -->
 ## Part 2: Distribution Plan
 
+<!-- section_id: "3616a5d6-345f-4a96-9cfe-ccb008db2d0b" -->
 ### 2.1 Decision: What Stays vs What Moves
 
 **STAY at Project Level (layer_-1_group/layer_-1_99_stages/)**:
@@ -226,6 +234,7 @@ outputs/
 - Feature-specific instructions
 - Feature-specific designs
 
+<!-- section_id: "70503957-4980-4af0-a6c3-c29411c8e463" -->
 ### 2.2 File Distribution Mapping
 
 #### To `ai_dynamic_memory_system` (Memory-Related)
@@ -289,6 +298,7 @@ outputs/
 | `proposal_*.md` (all versions) | Project-level proposals |
 | `research_synthesis.md` | Project-level synthesis |
 
+<!-- section_id: "a66d79f0-1ee4-402c-9d40-4c4d605e373b" -->
 ### 2.3 Tree of Needs Distribution
 
 The `requests/tree_of_needs/` structure maps to features:
@@ -306,8 +316,10 @@ The `requests/tree_of_needs/` structure maps to features:
 
 ---
 
+<!-- section_id: "91e25f7f-9c74-48ee-8129-cb2b348832f8" -->
 ## Part 3: Architecture (From v3)
 
+<!-- section_id: "6f1a6ea9-d5f9-475b-ab67-fadba65a7286" -->
 ### 3.1 Three-Tier Folder Architecture
 
 Every entity uses this pattern:
@@ -339,6 +351,7 @@ entity/
 └── 0INDEX.md                    # Discovery and status
 ```
 
+<!-- section_id: "0b08c76c-84a9-454e-92a4-06da90ca42de" -->
 ### 3.2 Generation Flow
 
 ```
@@ -351,14 +364,17 @@ entity/
         └──→ .1aider_merge/    ──→ .aider.conf.yml
 ```
 
+<!-- section_id: "0009a1fe-ec18-4323-8f24-a00af858b422" -->
 ### 3.3 Templates
 
 (See v3 for full 0AGNOSTIC.md, 0INDEX.md, and sync-config.yaml templates)
 
 ---
 
+<!-- section_id: "18e1f391-23ec-4b4a-962b-f6a59b74de78" -->
 ## Part 3.5: Visual Architecture Diagrams
 
+<!-- section_id: "a8476d0b-4451-43e6-b40b-ff9c5c401afa" -->
 ### 3.5.1 Current State vs After Reorganization
 
 ```
@@ -408,6 +424,7 @@ layer_-1_better_ai_system/                 layer_-1_better_ai_system/
         └── ... (6 more features)                  └── ... (6 more features, all enhanced)
 ```
 
+<!-- section_id: "6337707a-fc26-4d90-8182-d76f853b0d9e" -->
 ### 3.5.2 Three-Tier Architecture Detail (Per Entity)
 
 ```
@@ -468,6 +485,7 @@ layer_-1_better_ai_system/                 layer_-1_better_ai_system/
 └─────────────────────────────────────────────────────────────────────────────┘
 ```
 
+<!-- section_id: "cc9594fe-d498-4783-8a4f-70932e109a75" -->
 ### 3.5.3 Full Project Structure After v4
 
 ```
@@ -575,6 +593,7 @@ layer_-1_better_ai_system/
             └── ... (enhanced, existing content kept)
 ```
 
+<!-- section_id: "08f07737-04df-46ab-9f5a-829cd50d34a2" -->
 ### 3.5.4 Generation Flow Diagram
 
 ```
@@ -619,6 +638,7 @@ layer_-1_better_ai_system/
 └────────────┘ └────────────┘ └────────────┘ └────────────┘ └────────────┘
 ```
 
+<!-- section_id: "5bda7996-4d2e-4218-be26-a82cbca3eaaf" -->
 ### 3.5.5 File Flow Summary
 
 ```
@@ -673,8 +693,10 @@ layer_-1_better_ai_system/
 
 ---
 
+<!-- section_id: "cee17811-2b2d-48f7-a2b6-e36e6146ab7c" -->
 ## Part 4: Implementation Plan
 
+<!-- section_id: "8a776404-644b-4769-a8b1-45846837670c" -->
 ### Phase 0: Cleanup (NEW)
 
 **Goal**: Clean slate before reorganization
@@ -696,6 +718,7 @@ layer_-1_better_ai_system/
 
 **Estimated files deleted**: ~50+ sync conflicts
 
+<!-- section_id: "ae7ecf03-8caa-46b1-ab60-589b887e19fa" -->
 ### Phase 1: Agnostic Infrastructure
 
 **Goal**: Set up agnostic system at project root
@@ -708,6 +731,7 @@ layer_-1_better_ai_system/
 
 **Files created**: 5-10
 
+<!-- section_id: "8bef045d-1269-45f4-885e-fd23d53287fb" -->
 ### Phase 2: Merge Workspaces
 
 **Goal**: Set up tool-specific merge folders
@@ -719,6 +743,7 @@ layer_-1_better_ai_system/
 
 **Files created**: ~15
 
+<!-- section_id: "d754772b-a561-4904-a0b3-0ff6cb1ac9d5" -->
 ### Phase 3: Move Episodic Memory
 
 **Goal**: Relocate episodic from outputs/ to .0agnostic/
@@ -729,6 +754,7 @@ layer_-1_better_ai_system/
 
 **Files moved**: ~10
 
+<!-- section_id: "75b3f0b5-8d6a-4c7b-8c63-1c35a9a10a40" -->
 ### Phase 4: Feature Enhancement
 
 **Goal**: Add agnostic system to each feature
@@ -741,6 +767,7 @@ For each of 8 features:
 
 **Files created**: ~40 (5 per feature × 8 features)
 
+<!-- section_id: "10f4bce2-5781-4f21-be61-694e73fb7e08" -->
 ### Phase 5: Research Distribution
 
 **Goal**: Move files from project stages to features
@@ -756,6 +783,7 @@ For each of 8 features:
 **Files moved**: ~25
 **Files created** (from splits): ~5
 
+<!-- section_id: "2195f9ce-051c-4cac-a9b3-fe3ccfb67c5b" -->
 ### Phase 6: Sync Testing
 
 **Goal**: Verify agnostic-sync.sh works
@@ -765,6 +793,7 @@ For each of 8 features:
 3. Verify .claude/ generated correctly
 4. Test with other tools if available
 
+<!-- section_id: "32e67e1c-760c-4c4c-9d90-18c97c6365d1" -->
 ### Phase 7: Registry Updates
 
 **Goal**: Update registries to reflect new architecture
@@ -773,6 +802,7 @@ For each of 8 features:
 2. Update `stage_registry.yaml`
 3. Update `layer_registry.yaml`
 
+<!-- section_id: "30a99ec5-91e6-472a-8cfa-8a74cd41c942" -->
 ### Phase 8: Documentation Update (NEW)
 
 **Goal**: Update project CLAUDE.md and related docs
@@ -784,8 +814,10 @@ For each of 8 features:
 
 ---
 
+<!-- section_id: "1b4af5fd-69e9-44b7-a9ed-70224b92af0c" -->
 ## Part 5: Reconciliation Strategy
 
+<!-- section_id: "f134355f-c873-4786-b698-45a4aae959f5" -->
 ### 5.1 Handling Existing Feature Content
 
 For features that already have substantial content (876, 488, 466, 375 files):
@@ -797,6 +829,7 @@ For features that already have substantial content (876, 488, 466, 375 files):
 3. **Create synthesis** - New synthesis combines existing + moved content
 4. **Update 0INDEX.md** - Reflect merged state
 
+<!-- section_id: "56dbd744-3f85-4cb9-aae8-492f32834155" -->
 ### 5.2 Example: ai_dynamic_memory_system
 
 **Before** (375 files):
@@ -835,6 +868,7 @@ layer_0_feature_ai_dynamic_memory_system/
 
 ---
 
+<!-- section_id: "e8d543ee-64b6-491b-a1de-4316185d14e3" -->
 ## Part 6: Open Questions
 
 1. **Split strategy for large files**: How to split `layer_stage_instantiation_understanding.md` (2,300 lines)?
@@ -849,6 +883,7 @@ layer_0_feature_ai_dynamic_memory_system/
 
 ---
 
+<!-- section_id: "cb903f6f-1ce1-4e33-aa30-45fa57e07e8b" -->
 ## Part 7: Metrics
 
 | Metric | Count |
@@ -863,6 +898,7 @@ layer_0_feature_ai_dynamic_memory_system/
 
 ---
 
+<!-- section_id: "26122b1e-32f5-41a1-a49d-5f0a3368e4c4" -->
 ## Part 8: Success Criteria
 
 - [ ] All sync conflicts deleted
@@ -877,6 +913,7 @@ layer_0_feature_ai_dynamic_memory_system/
 
 ---
 
+<!-- section_id: "64efbe17-057d-4523-a7fd-1612074670bb" -->
 ## Decision Needed
 
 **Approve v4 to begin implementation?**

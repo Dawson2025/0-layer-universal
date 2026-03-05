@@ -11,6 +11,7 @@ resource_name: "RESILIENCE_READINESS_ASSESSMENT"
 
 ---
 
+<!-- section_id: "0e99f266-571e-448b-ac12-cd5c3d4cde07" -->
 ## Executive Summary
 
 Your `/home/dawson/dawson-workspace/code/0_layer_universal` system is **architecturally ready** for full resilience implementation (recovery partitions, A/B redundancy, immutable backups, network recovery). However, there is **one critical blocker**: **3,110 Syncthing sync conflict files** that must be resolved before proceeding.
@@ -19,8 +20,10 @@ Once resolved, this system can be made accessible and usable by AI apps from ANY
 
 ---
 
+<!-- section_id: "be098a70-8962-441b-839b-b4a6ad0b9f4e" -->
 ## System Analysis
 
+<!-- section_id: "b15a00c1-b1e7-4487-9dc3-cea508016962" -->
 ### ✓ STRENGTHS (Ready for Resilience)
 
 #### 1. **Complete Hierarchical Structure**
@@ -113,6 +116,7 @@ hand_off_documents/
 
 ---
 
+<!-- section_id: "59e6c5ca-4223-4563-b63d-c2fcc3a66198" -->
 ### ✗ CRITICAL ISSUE: Syncthing Sync Conflicts
 
 #### **3,110 Sync Conflict Files Detected**
@@ -180,6 +184,7 @@ Option C: Audit then decide
 
 ---
 
+<!-- section_id: "ab8214cc-65f4-488b-a192-5f1fda067e40" -->
 ### ⚠ CONCERNS (Medium Priority)
 
 #### 1. **No .stignore Configuration**
@@ -219,8 +224,10 @@ Deleted:
 
 ---
 
+<!-- section_id: "6b2478ea-b1fb-4107-8942-11ab670ac3d5" -->
 ## Resilience Implementation Roadmap
 
+<!-- section_id: "ffec1a1f-ae2d-4859-8a4d-feea78bc6970" -->
 ### PHASE 0: RESOLVE SYNC CONFLICTS (BLOCKING)
 - [ ] **Week 1** (This week): Clean up 3,110 .sync-conflict files
   - Manual review of layer_0 conflicts (highest priority)
@@ -231,6 +238,7 @@ Deleted:
 
 ---
 
+<!-- section_id: "05f9f2bb-888f-4b05-9c97-d1625a9483bc" -->
 ### PHASE 1: LAYER 0 (Universal Rules) - FOUNDATION
 
 **After sync conflicts resolved**
@@ -249,6 +257,7 @@ Actions:
 
 ---
 
+<!-- section_id: "a535f72a-9de9-4b73-81e6-97b317a3f806" -->
 ### PHASE 2: A/B REDUNDANCY (Automatic Failover)
 
 ```
@@ -266,6 +275,7 @@ Actions:
 
 ---
 
+<!-- section_id: "fde87155-02d1-4526-b32d-32bb1b488a36" -->
 ### PHASE 3: EXTERNAL IMMUTABLE BACKUP
 
 ```
@@ -283,6 +293,7 @@ Actions:
 
 ---
 
+<!-- section_id: "474f3117-e716-4e34-9016-52ef313d8291" -->
 ### PHASE 4: LIVE BOOT USB
 
 ```
@@ -299,6 +310,7 @@ Actions:
 
 ---
 
+<!-- section_id: "4c93586f-e14e-43b9-96a4-899b84af8a9f" -->
 ### PHASE 5: NETWORK RECOVERY (Optional)
 
 ```
@@ -314,6 +326,7 @@ Actions:
 
 ---
 
+<!-- section_id: "41003358-086c-4f71-a1c5-31434b2feec6" -->
 ## Resilience Matrix: System State vs. Data Access
 
 After PHASE 5 complete, this is what you get:
@@ -330,6 +343,7 @@ After PHASE 5 complete, this is what you get:
 
 ---
 
+<!-- section_id: "2e9d4308-4858-4235-81af-895b2eb2d4d1" -->
 ## AI Access During Degradation
 
 Once resilient, AI apps will be configured to:
@@ -354,8 +368,10 @@ Once resilient, AI apps will be configured to:
 
 ---
 
+<!-- section_id: "4398f7d0-2f76-4c07-8cb4-d141ae16164f" -->
 ## File Inventory
 
+<!-- section_id: "39fe3d0a-981b-4b3e-9e7b-464141c8d3e6" -->
 ### By Layer
 
 | Component | Files | Size | Criticality |
@@ -367,6 +383,7 @@ Once resilient, AI apps will be configured to:
 | **layer_-1_research** | ~16,000 | ~2GB | Nice to have |
 | **Total** | **~28,900** | **~2.9GB** | - |
 
+<!-- section_id: "40fc5a32-40de-4f1f-9061-733735833a6d" -->
 ### By Format
 
 | Format | Files | Resilience | Notes |
@@ -379,8 +396,10 @@ Once resilient, AI apps will be configured to:
 
 ---
 
+<!-- section_id: "cf4c6566-0732-44d7-b133-a159013686ba" -->
 ## Implementation Checklist
 
+<!-- section_id: "caca63aa-d58f-4189-9f5e-e981eb3973ef" -->
 ### Pre-Resilience (Next 1 week)
 
 - [ ] **Resolve sync conflicts**
@@ -401,6 +420,7 @@ Once resilient, AI apps will be configured to:
   - [ ] Test: Syncthing ignores excluded patterns
   - [ ] Commit and push
 
+<!-- section_id: "b0c1f260-aa1a-4fd4-aed4-f7fb1c9553e7" -->
 ### Phase 1-5 (Over next 5-6 weeks)
 
 - [ ] Create recovery partition
@@ -411,6 +431,7 @@ Once resilient, AI apps will be configured to:
 
 ---
 
+<!-- section_id: "81d2967f-cfce-4beb-8eb8-c01ec983d0f2" -->
 ## Success Criteria
 
 After completing all phases:
@@ -425,6 +446,7 @@ After completing all phases:
 
 ---
 
+<!-- section_id: "d64d73ee-f906-45b2-9cb5-0c417a621315" -->
 ## Risks & Mitigations
 
 | Risk | Impact | Mitigation |
@@ -437,8 +459,10 @@ After completing all phases:
 
 ---
 
+<!-- section_id: "d7ba4667-99e4-4ac5-afd8-4984c5dfe8a0" -->
 ## Bottom Line
 
+<!-- section_id: "cc0e2dcf-1c81-483d-b9d1-318ac51d5386" -->
 ### ✓ YES, This System CAN Be Fully Resilient
 
 Your architecture is **perfect for resilience**:
@@ -448,6 +472,7 @@ Your architecture is **perfect for resilience**:
 - Documented context (CLAUDE.md hierarchy)
 - Manageable size (2.9GB fits on USB)
 
+<!-- section_id: "c2a96d6a-4c76-47bb-b817-0889ef3f59d5" -->
 ### ⚠ BLOCKER: Sync Conflicts Must Be Resolved First
 
 The 3,110 `.sync-conflict` files represent a **critical blocker**. Before implementing resilience partitions and backups, these must be cleaned up to ensure:
@@ -455,6 +480,7 @@ The 3,110 `.sync-conflict` files represent a **critical blocker**. Before implem
 - Recovery partitions don't contain duplicates
 - Layer 0 rules are authoritative across all machines
 
+<!-- section_id: "b9797d47-f9b8-45fe-a119-7b9b833a566a" -->
 ### ✓ Timeline: 6-7 Weeks to Full Resilience
 
 ```
@@ -469,19 +495,23 @@ Week 6-7: Phase 5 (network recovery)
 
 ---
 
+<!-- section_id: "3d6d14d8-4451-441e-8c83-97269025d30b" -->
 ## Recommendations
 
+<!-- section_id: "81e81cf4-67b4-4d99-be28-f14123257939" -->
 ### Immediate (This Week)
 
 1. **Resolve sync conflicts** - This is blocking everything else
 2. **Review the conflict audit** - Determine if wrong versions were kept
 3. **Commit cleanup** to git and push to all machines
 
+<!-- section_id: "b67af3c1-2d40-4f84-889d-3fd6a53250a8" -->
 ### This Month
 
 4. **Implement Phase 1** (recovery partition) - Gets Layer 0 resilient
 5. **Set up A/B redundancy** - Automates failover
 
+<!-- section_id: "db88458b-d351-49ff-a2dc-489e9c70c3ea" -->
 ### This Quarter
 
 6. **Create immutable backups** - Complete safety net
@@ -490,6 +520,7 @@ Week 6-7: Phase 5 (network recovery)
 
 ---
 
+<!-- section_id: "d11f5821-977b-4fde-95d8-93a32d814352" -->
 ## Questions for You
 
 Before I create the detailed implementation plan for Phases 1-5:
@@ -502,6 +533,7 @@ Before I create the detailed implementation plan for Phases 1-5:
 
 ---
 
+<!-- section_id: "5a00a87f-e5e2-41a1-81f5-750e243ed69c" -->
 ## Next Steps
 
 1. **This session**: Resolve sync conflicts

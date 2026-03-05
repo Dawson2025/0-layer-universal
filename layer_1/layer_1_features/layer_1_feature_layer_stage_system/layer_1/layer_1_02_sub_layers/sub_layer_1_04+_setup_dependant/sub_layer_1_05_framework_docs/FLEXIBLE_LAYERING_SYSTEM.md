@@ -14,6 +14,7 @@ resource_name: "FLEXIBLE_LAYERING_SYSTEM"
 
 ---
 
+<!-- section_id: "6c557d93-b6e1-454f-a676-aedf4cd462fc" -->
 ## Overview
 
 The flexible layering system allows **arbitrary nesting** of features and components to any depth required by your project's complexity, using the **same-type nesting convention** to clearly indicate relationships and the **layer grouping convention** to organize entity internals vs nested content.
@@ -30,8 +31,10 @@ The flexible layering system allows **arbitrary nesting** of features and compon
 
 ---
 
+<!-- section_id: "b5ee0f6a-d5e3-432e-801d-d4fe9583ddcf" -->
 ## Layer Grouping Pattern
 
+<!-- section_id: "63a56fc0-72e4-44ec-85df-2cc8711a7dd5" -->
 ### The Two-Folder Structure
 
 Every project-type entity (project, sub_project, sub*N_project) has two sibling folders at its root:
@@ -55,6 +58,7 @@ layer_N_<type>_<name>/
 - These two folders are **SIBLINGS** at the entity root, not nested within each other
 - Every project-type entity **always has all three folders** in `layer_N+1/`: sub*X_projects, features, components
 
+<!-- section_id: "eb7f0e48-5e36-4322-b02d-55775826a940" -->
 ### Why Layer Grouping?
 
 1. **Clear separation**: Entity internals vs nested content are visually distinct
@@ -64,13 +68,16 @@ layer_N_<type>_<name>/
 
 ---
 
+<!-- section_id: "c3e4cb32-b5f2-4645-b6c3-3ba18deafb60" -->
 ## Layer Numbering System
 
+<!-- section_id: "debe58e6-e7df-4f7b-ac0c-0e336ddb258a" -->
 ### Fixed Layers (0-1)
 
 - **Layer 0:** Universal - Applies to all projects
 - **Layer 1:** Project - Project-specific context
 
+<!-- section_id: "2e6f1b0d-bb0b-4d78-b270-bfbb6822a27b" -->
 ### Flexible Layers (2-N)
 
 Starting at Layer 2, the system supports **arbitrary depth** using **same-type nesting convention**:
@@ -96,8 +103,10 @@ But DIFFERENT types don't get the "sub" prefix:
 
 ---
 
+<!-- section_id: "9cfb2bd1-7501-45f5-90a8-7817252eea74" -->
 ## Directory Structure Pattern
 
+<!-- section_id: "796fb210-add6-4fbd-a886-cf5805148b7c" -->
 ### Pattern for Project/Sub_Project/Sub*N_Project
 
 Projects (and sub_projects) contain **features** and **components** directly (not sub_features/sub_components):
@@ -122,6 +131,7 @@ layer_1_project_<name>/                          # OR layer_2_sub_project_<name>
         └── layer_2_component_<name>/
 ```
 
+<!-- section_id: "1f73b6c5-ad9a-45ef-adf3-cda2854fc21a" -->
 ### Pattern for Feature/Sub_Feature/Sub*N_Feature
 
 Features contain **sub_features** and **sub_components** (because feature inside feature = sub_feature):
@@ -144,6 +154,7 @@ layer_2_feature_<name>/                          # OR layer_3_sub_feature_<name>
         └── layer_3_sub_component_<name>/
 ```
 
+<!-- section_id: "e1b122b4-f62a-4011-9551-3a6901a9c0a9" -->
 ### Pattern for Component/Sub_Component/Sub*N_Component
 
 Components contain **sub_components** (because component inside component = sub_component):
@@ -173,8 +184,10 @@ layer_2_component_<name>/                        # OR layer_3_sub_component_<nam
 
 ---
 
+<!-- section_id: "ac1a61ac-a1ec-46a5-bee4-edfc6a2b7d32" -->
 ## Naming Conventions
 
+<!-- section_id: "2668edb8-6c08-4692-9508-76d2bb70539c" -->
 ### Old vs New Directory Naming
 
 The layer grouping convention changes how internal directories are named:
@@ -188,6 +201,7 @@ The layer grouping convention changes how internal directories are named:
 | `layer_N+1_features/` | `layer_N+1/layer_N+1_features/` |
 | `layer_N+1_components/` | `layer_N+1/layer_N+1_components/` |
 
+<!-- section_id: "ab6701a5-57ac-45f7-97ad-b70abf4596e6" -->
 ### The "Sub" Prefix Rule
 
 **CRITICAL:** The "sub" prefix indicates **same-type nesting only**:
@@ -203,6 +217,7 @@ The layer grouping convention changes how internal directories are named:
 | Feature | Component | YES -> `sub_component` (in feature context) |
 | Component | Component | YES -> `sub_component` |
 
+<!-- section_id: "0eaf2657-7dcb-4e2c-b970-46fcc1409fd5" -->
 ### Project Naming
 
 ```
@@ -212,6 +227,7 @@ layer_3_subx2_project_<name>/
 layer_N_sub*<N-1>_project_<name>/
 ```
 
+<!-- section_id: "7e92d222-bd5b-4143-83e4-40a3c014a474" -->
 ### Feature Naming
 
 **In a project/sub_project (no "sub" prefix):**
@@ -234,6 +250,7 @@ layer_5_subx3_feature_<name>/  # Feature inside a subx2_feature
 - `layer_3_sub_feature_derivatives/` - Sub-feature inside a feature (depth 3)
 - `layer_4_subx2_feature_power_rule/` - Sub*2-feature inside a sub_feature (depth 4)
 
+<!-- section_id: "4eaea2ab-e616-4efd-a1ce-85dfd3e0a6a1" -->
 ### Component Naming
 
 **In a project/sub_project (no "sub" prefix):**
@@ -254,6 +271,7 @@ layer_4_subx2_component_<name>/ # Component inside a sub_component
 - `layer_3_component_web_app/` - Component in sub_project (depth 3, still "component" not "sub_component")
 - `layer_3_sub_component_practice_set/` - Sub-component inside a feature (depth 3)
 
+<!-- section_id: "c1423daa-0d1b-428f-a8bb-c66208bcd470" -->
 ### Directory Naming Within Layers
 
 **Manager and Handoffs (inside `layer_N/`):**
@@ -281,8 +299,10 @@ layer_4_subx2_component_<name>/ # Component inside a sub_component
 
 ---
 
+<!-- section_id: "6fabf903-fca2-4a03-8ecd-ba26c7a6a43e" -->
 ## Real-World Example: Applied Calculus
 
+<!-- section_id: "feb5c374-09c5-4054-b303-f812cd64961d" -->
 ### Scenario: Organizing in-class work with topics and daily components
 
 ```
@@ -350,8 +370,10 @@ layer_1_project_applied_calculus/                    # Applied Calculus Project 
 
 ---
 
+<!-- section_id: "7c13d6bc-6abf-4c03-a379-e05722576d4c" -->
 ## Applied Calculus Use Case
 
+<!-- section_id: "33c5b1f6-3231-4c57-b178-973d4656dc9b" -->
 ### Your Classroom Workflow
 
 **During lecture with BYUI Math page, Excalidraw, and Proactor AI:**
@@ -375,8 +397,10 @@ layer_1_project_applied_calculus/                    # Applied Calculus Project 
 
 ---
 
+<!-- section_id: "99a4a51a-5480-4274-a65e-d34e98ab0a44" -->
 ## When to Create Each Layer Type
 
+<!-- section_id: "418be94a-1113-454f-afcf-653e9020593b" -->
 ### Features (Topics/Concepts)
 
 Create a **feature** when you have:
@@ -392,6 +416,7 @@ Create a **feature** when you have:
 - `layer_3_sub_feature_power_rule/` - Sub-feature inside a feature
 - `layer_4_subx2_feature_negative_exponents/` - Sub*2-feature inside a sub_feature
 
+<!-- section_id: "3df87ee7-7252-4301-9dbd-b1ca0aab6abd" -->
 ### Components (Work/Artifacts)
 
 Create a **component** when you have:
@@ -411,8 +436,10 @@ Create a **component** when you have:
 
 ---
 
+<!-- section_id: "a1a46e4b-f2ed-4db2-8346-5a5eea48152b" -->
 ## Navigation Patterns
 
+<!-- section_id: "65f3a9b7-18c4-47c2-ad2a-c3a7c72048f9" -->
 ### Depth-First Navigation (Feature inside Feature)
 
 ```bash
@@ -432,6 +459,7 @@ cd layer_4/layer_4_subx2_features/layer_4_subx2_feature_negative_exponents/
 cd ../layer_4_subx2_components/layer_4_subx2_component_practice_set_1/
 ```
 
+<!-- section_id: "1aea6524-0f62-413f-952d-6b3deaedf4dd" -->
 ### Breadth Navigation (Siblings at Same Level)
 
 ```bash
@@ -445,6 +473,7 @@ cd ../layer_3_sub_feature_product_rule/
 cd ../layer_3_sub_feature_chain_rule/
 ```
 
+<!-- section_id: "120723b0-14f2-4a3d-b86b-93e1b275ec1f" -->
 ### Navigation in Sub_Project Context (uses features, not sub_features)
 
 ```bash
@@ -458,6 +487,7 @@ cd layer_3/layer_3_features/layer_3_feature_machine_learning/
 cd ../layer_3_components/layer_3_component_web_app/
 ```
 
+<!-- section_id: "9c54a60d-c947-43c7-a859-784dc1b4964e" -->
 ### Accessing Entity Internals
 
 ```bash
@@ -474,6 +504,7 @@ cd ../layer_2_99_stages/
 cd ../layer_2_02_sub_layers/
 ```
 
+<!-- section_id: "1e442139-f995-4d6e-bc7b-42ec79648e62" -->
 ### Upward Navigation (Parent Layers)
 
 ```bash
@@ -486,8 +517,10 @@ cd <project_root>/0_context/0_context/
 
 ---
 
+<!-- section_id: "51b84381-bf85-4b3c-b43c-96478cfdb87b" -->
 ## Creating New Layers
 
+<!-- section_id: "580abbc6-fb40-481b-b3a0-ad9b79a5f403" -->
 ### Template Pattern
 
 All layers N >= 2 use the same template structure, just with different numbers.
@@ -512,6 +545,7 @@ cp -r "<universal_context>/layer_1/layer_1_features/layer_1_feature_layer_stage_
 # Update status_N.json with appropriate layer number
 ```
 
+<!-- section_id: "2d762804-e487-4056-b044-dbf3cf87115f" -->
 ### Automated Creation Script Pattern
 
 ```bash
@@ -553,6 +587,7 @@ echo "Created layer_${LAYER_NUM}_${TYPE}_${NAME}"
 
 ---
 
+<!-- section_id: "0a014671-d80b-4537-a516-b5b2fe50bc9b" -->
 ## Status Tracking at All Levels
 
 Each layer maintains its own `status_N.json` inside `layer_N/layer_N_99_stages/`:
@@ -588,6 +623,7 @@ Each layer maintains its own `status_N.json` inside `layer_N/layer_N_99_stages/`
 
 ---
 
+<!-- section_id: "4f8709a2-0769-4ba8-8f65-ac89b58fc092" -->
 ## Benefits of Flexible Layering
 
 1. **Unlimited Organization:** Break down topics to any level of detail needed
@@ -600,8 +636,10 @@ Each layer maintains its own `status_N.json` inside `layer_N/layer_N_99_stages/`
 
 ---
 
+<!-- section_id: "c445a479-dc41-4042-85bd-881d1db0ea5d" -->
 ## Integration with Learning Tools
 
+<!-- section_id: "05ee9257-247b-42fd-a8d7-13ddf12a5333" -->
 ### Proactor AI Placement
 
 Store lecture transcripts at the **most specific** applicable layer:
@@ -610,6 +648,7 @@ Store lecture transcripts at the **most specific** applicable layer:
 - Power rule specific lecture -> `layer_3_sub_feature_power_rule/layer_3/layer_3_99_stages/stage_3.04_development/hand_off_documents/`
 - Negative exponents discussion -> `layer_4_subx2_feature_negative_exponents/layer_4/layer_4_99_stages/stage_4.04_development/hand_off_documents/`
 
+<!-- section_id: "20d4c484-e416-466a-b6bb-0f0f24037861" -->
 ### Excalidraw Placement
 
 Store visual notes at the **layer where the work was done**:
@@ -618,6 +657,7 @@ Store visual notes at the **layer where the work was done**:
 - Power rule examples -> `layer_3_sub_feature_power_rule/layer_3/layer_3_02_sub_layers/sub_layer_3.01_visual_notes/`
 - Practice problem work -> `layer_4_subx2_component_practice_set_1/layer_4/layer_4_02_sub_layers/sub_layer_4.01_visual_notes/`
 
+<!-- section_id: "70a22042-f344-4f61-a078-19ddffbcbf79" -->
 ### BYUI Math Page References
 
 Document problem sources and answers at the appropriate component layer:
@@ -626,8 +666,10 @@ Document problem sources and answers at the appropriate component layer:
 
 ---
 
+<!-- section_id: "cebf930a-be74-46bf-a219-4b1fc6f339e3" -->
 ## Quick Reference
 
+<!-- section_id: "5959b207-4f55-4f34-8288-372593ba8bc0" -->
 ### Same-Type Nesting Rules (CRITICAL)
 
 | Context | Features Are | Components Are |
@@ -641,6 +683,7 @@ Document problem sources and answers at the appropriate component layer:
 
 **Rule:** "sub" prefix ONLY for same-type nesting (project->project, feature->feature, component->component)
 
+<!-- section_id: "966ac905-0e47-4835-918f-04f12db0c696" -->
 ### Layer Grouping Quick Reference
 
 | Folder | Contains | Purpose |
@@ -648,6 +691,7 @@ Document problem sources and answers at the appropriate component layer:
 | `layer_N/` | Internals | Manager, handoffs, sub_layers, stages |
 | `layer_N+1/` | Nested content | Sub*X_projects, features, components |
 
+<!-- section_id: "5270513d-6b82-4092-854f-bc3f401f55ad" -->
 ### Maximum Flexibility Rules
 
 1. Projects/Sub_projects contain `features/` and `components/` (NOT sub_*)
@@ -658,6 +702,7 @@ Document problem sources and answers at the appropriate component layer:
 6. Each layer follows the same structural pattern
 7. Entity internals in `layer_N/`, nested content in `layer_N+1/`
 
+<!-- section_id: "a0fc63df-4e76-4cf7-9338-881a15334b5e" -->
 ### Recommended Depth Guidelines
 
 While **unlimited depth is supported**, consider these practical guidelines:

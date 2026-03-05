@@ -6,6 +6,7 @@ resource_name: "README"
 ---
 # Setup-Dependent (02-08)
 
+<!-- section_id: "6a587ad3-2847-40e7-9b8a-790eb71d31c1" -->
 ## What This Contains
 
 The setup-dependent layer adds **environment and configuration-specific context** to the core system. While the core system (01-05) contains universal knowledge, rules, protocols, and memory that applies everywhere, the setup-dependent layer captures what's specific to YOUR setup:
@@ -19,6 +20,7 @@ The setup-dependent layer adds **environment and configuration-specific context*
 - **Tools & APIs**: External tools, utilities, and API integrations
 - **Other Setup Specifics**: Additional environment-dependent context
 
+<!-- section_id: "b82fd81b-c04f-49a9-b58e-f8edc16be44b" -->
 ## Propagation Hierarchy
 
 These setup-dependent resources layer on top of core system knowledge:
@@ -33,6 +35,7 @@ Context Avenue Web (09-13) — Avenue-specific formatting
 .1merge System — AI app-specific final versions
 ```
 
+<!-- section_id: "8c8fb009-b9bd-4132-9e59-5733a805df7b" -->
 ## Subdirectories
 
 Each numbered subdirectory represents a layer in the setup hierarchy:
@@ -46,6 +49,7 @@ Each numbered subdirectory represents a layer in the setup hierarchy:
 - **07_tools_and_apis/** → External tools, utilities, API keys, integrations
 - **08_other_setup_specifics/** → Additional environment-dependent content
 
+<!-- section_id: "110130c1-ae5d-4e08-9570-b4177ad16953" -->
 ## Next Step
 
 After understanding setup-dependent organization, see `00_setup_dependent_overview/README.md` for detailed explanation of the hierarchy.

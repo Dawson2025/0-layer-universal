@@ -6,9 +6,11 @@ resource_name: "README"
 ---
 # Playwright MCP (Codex CLI on WSL/WSLg)
 
+<!-- section_id: "ba982dd6-0cbd-49be-be70-0f4c3c530d35" -->
 ## Canonical docs
 - `../../../../../_shared/0.04_ai_apps/_shared/0.05_mcp_servers/playwright-mcp/`
 
+<!-- section_id: "6cb14850-6611-4918-8c51-98309e97e059" -->
 ## WSL/WSLg requirements (headed)
 - Ensure WSLg runtime env is present in the MCP server process:
   - `DISPLAY=:0`
@@ -20,6 +22,7 @@ resource_name: "README"
   - `launchOptions.args`: `["--ozone-platform=wayland","--enable-features=UseOzonePlatform"]`
   - `launchOptions.executablePath`: `~/.cache/ms-playwright/chromium-*/chrome-linux64/chrome`
 
+<!-- section_id: "50929ec7-c40c-485d-bcc6-ceaa0e8a981e" -->
 ## Open a visible browser (WSL Codex CLI)
 
 1. Ensure WSLg exists:
@@ -37,9 +40,11 @@ If the server fails to start, check for:
 - `--headless=false` anywhere in your config (remove it; headed is default).
 - Missing WSLg (`/mnt/wslg/runtime-dir`), in which case use `--headless` or a Windows-visible browser fallback.
 
+<!-- section_id: "6f3dbb15-9641-4ccd-8402-15840f17047f" -->
 ## Codex integration
 - Use `0.06_automation/scripts/codex_mcp_sync.py` to generate `~/.codex/config.toml` and the Playwright config file under `~/.codex/`.
 
+<!-- section_id: "d922c412-9265-468e-94a7-e9233346c6a4" -->
 ## Concurrent Browser Setup (NEW)
 
 To enable **simultaneous** Playwright MCP browser use in both Codex CLI and other AI tools (Claude Code, Gemini):

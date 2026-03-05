@@ -9,6 +9,7 @@ paths: layer_-1_research/**
 
 # Research Context
 
+<!-- section_id: "fd44b86f-3c75-4be3-ad06-6d7a07340ec7" -->
 ## Required Reading
 
 When working in research directories:
@@ -20,6 +21,7 @@ When working in research directories:
    ```
 4. Read `.claude/skills/*/SKILL.md` — check WHEN/WHEN NOT conditions
 
+<!-- section_id: "7460a5ac-2abd-450d-9ec3-5acb405e9de2" -->
 ## Skill Usage
 
 | Situation | Skill | When |
@@ -29,11 +31,13 @@ When working in research directories:
 | Creating research entities | `/entity-creation` | When new features/sub-features needed |
 | Ending session | `/handoff-creation` | Before closing, to preserve research state |
 
+<!-- section_id: "b68d580a-e8cf-4fff-b390-716ec2663462" -->
 ## Episodic Memory
 
 - **Session start**: Check `memory/episodic.md` (auto-memory topic file) for recent research session history
 - **Session end**: Update `.0agnostic/episodic_memory/index.md` in the working research directory, then run `.0agnostic/01_knowledge/layer_stage_system/resources/tools/episodic-sync.sh`
 
+<!-- section_id: "71a27dda-3409-4366-aa8e-fd8b375ad578" -->
 ## Agnostic System
 
 - **Source of truth**: `0AGNOSTIC.md` is the source — edit this, NOT `CLAUDE.md` (which is auto-generated)
@@ -41,6 +45,7 @@ When working in research directories:
 - **After changes**: Run `agnostic-sync.sh` to regenerate tool-specific files (CLAUDE.md, AGENTS.md, GEMINI.md, OPENAI.md)
 - **Tool overrides**: `.1merge/` (if present) provides tool-specific overrides via 3-tier merge (synced → overrides → additions)
 
+<!-- section_id: "deb54784-d8d9-4f46-a86f-a0f34db36590" -->
 ## Research-Specific Rules
 
 - Always include a **Sources:** section with any research output

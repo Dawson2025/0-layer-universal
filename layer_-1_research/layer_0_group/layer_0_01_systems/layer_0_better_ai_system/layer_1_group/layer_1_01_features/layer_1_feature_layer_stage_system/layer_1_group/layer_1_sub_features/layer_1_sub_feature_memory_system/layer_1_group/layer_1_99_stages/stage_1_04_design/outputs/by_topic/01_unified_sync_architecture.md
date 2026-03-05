@@ -7,10 +7,12 @@ resource_name: "01_unified_sync_architecture"
 
 > **This document is a pointer.** The canonical source of truth lives in the context chain system (Layer 2).
 
+<!-- section_id: "6da3e9fe-1f22-4f43-9e2c-6443ac5594ba" -->
 ## Canonical Source
 
 **Full design**: `layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_context_chain_system/layer_2_group/layer_2_99_stages/stage_2_04_design/outputs/by_topic/07_unified_sync_architecture.md`
 
+<!-- section_id: "793c5537-0b18-4a40-9fc7-e57342028ccc" -->
 ## Quick Summary
 
 5 existing sync scripts (agnostic-sync.sh, episodic-sync.sh, jsonld-to-md.sh, sync-handoffs.sh, user-level-sync.sh) plus a designed orchestrator (sync-main.sh) that coordinates them in 4 phases:

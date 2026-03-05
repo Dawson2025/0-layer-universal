@@ -9,10 +9,12 @@ resource_name: "BROWSER_ENV_VAR_FIX"
 **Location**: Universal Layer → MCP Servers and Tools Setup  
 **Status**: ✅ Implemented and Documented
 
+<!-- section_id: "4d5a51f7-3700-4206-b9fc-34a6238db300" -->
 ## Problem Summary
 
 Browser MCP servers kept reporting "Browser specified in your config is not installed" even when browsers were installed. This problem recurred constantly, making it seem like browsers needed constant reinstallation.
 
+<!-- section_id: "810fd542-97a7-4aa7-9f6f-492377a4afc8" -->
 ## Root Cause
 
 **The Real Issue**: MCP servers run via `npx` in isolated execution environments that don't inherit your shell's environment variables. The browsers ARE installed, but the MCP server processes can't find them because:
@@ -22,6 +24,7 @@ Browser MCP servers kept reporting "Browser specified in your config is not inst
 3. Each Cursor restart spawns new MCP processes that need the environment configured
 4. Environment variables from `.bashrc` or your shell aren't automatically passed to MCP servers
 
+<!-- section_id: "87145cb3-4e7a-4fd4-a106-0f8bd4de880e" -->
 ## Solution
 
 Add environment variables directly to the MCP server configuration in `~/.cursor/mcp.json`:
@@ -51,8 +54,10 @@ Add environment variables directly to the MCP server configuration in `~/.cursor
 
 **Important**: Replace `/home/dawson` with your actual home directory path.
 
+<!-- section_id: "0f5b9983-714f-4b4d-bfeb-194f36400b67" -->
 ## Implementation Status
 
+<!-- section_id: "6e7b3651-74f4-4661-8747-449b1c1c9e4c" -->
 ### ✅ Completed
 
 1. **Documentation Updated**:
@@ -69,10 +74,12 @@ Add environment variables directly to the MCP server configuration in `~/.cursor
    - Added `PLAYWRIGHT_BROWSERS_PATH` to `.bashrc` (for shell sessions)
    - Configured passwordless sudo (for future browser dependency installations)
 
+<!-- section_id: "9b199e98-d0ef-4a24-abb8-eddb87ae8672" -->
 ## Headed Browser Configuration
 
 To run browsers in headed (visible) mode instead of headless:
 
+<!-- section_id: "4ffda0ac-416f-4c5c-be12-ad963b35aac8" -->
 ### For Playwright MCP
 
 The Playwright MCP server runs in headless mode by default. To run in headed mode, you may need to:
@@ -81,12 +88,14 @@ The Playwright MCP server runs in headless mode by default. To run in headed mod
 2. **Use browser MCP** which may have better headed mode support
 3. **Configure via environment variables** if supported
 
+<!-- section_id: "3310baaf-42e0-4457-93dd-c890158bc8f6" -->
 ### Current Configuration
 
 The current configuration uses `--browser chromium` which defaults to headless mode. To enable headed mode, check the Playwright MCP documentation for the appropriate flag (likely `--headed` or similar).
 
 **Note**: The environment variable fix ensures browsers can be found regardless of headless/headed mode.
 
+<!-- section_id: "dd8a11f9-35bb-490a-b0ef-62a7bb9b044d" -->
 ## Verification
 
 After updating the configuration:
@@ -98,6 +107,7 @@ After updating the configuration:
    ```
 3. **Test browser MCP tools** - they should now work without "browser not installed" errors
 
+<!-- section_id: "6fbab2ce-7447-4e7a-b0ed-f0294576732d" -->
 ## Why This Fix Works
 
 - **Explicit Environment**: MCP servers now have explicit environment variables pointing to browser locations
@@ -105,14 +115,17 @@ After updating the configuration:
 - **No More Reinstallation**: Browsers don't need constant reinstallation - they're found via environment variables
 - **Cross-Platform**: This fix works on Linux, macOS, and Windows (with appropriate path adjustments)
 
+<!-- section_id: "00e99ada-1508-4c0f-b8c4-7823e140604f" -->
 ## Related Documentation
 
 - [MCP Configuration Guide](./MCP_CONFIGURATION_GUIDE.md)
 - [Browser MCP Setup Experience](./BROWSER_MCP_SETUP_EXPERIENCE.md)
 - [Cursor Browser MCP Setup](./CURSOR_BROWSER_MCP_SETUP.md)
 
+<!-- section_id: "93437314-f0ea-468b-9c78-50b4bbc64a98" -->
 ## Changelog
 
+<!-- section_id: "fbd49b8e-ac64-4af9-bfbc-03d5487bedc8" -->
 ### 2025-12-05
 - Identified root cause: Missing environment variables in MCP server configuration
 - Implemented fix in all MCP config files

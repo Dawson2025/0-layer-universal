@@ -6,10 +6,12 @@ resource_name: "AGENT_CONFIG_REFERENCE_TEMPLATE"
 # Agent Configuration File Reference Template
 *Template for Agent-Specific Configuration Files*
 
+<!-- section_id: "cdc2ba6d-6ab9-48af-a477-3aafdb3c6741" -->
 ## Purpose
 
 This template shows how agent-specific configuration files should reference the master terminal execution protocol.
 
+<!-- section_id: "4d4a34f9-8bcf-4d76-834d-303d73bd2ece" -->
 ## Template Structure
 
 ```markdown
@@ -32,8 +34,10 @@ This template shows how agent-specific configuration files should reference the 
 ...
 ```
 
+<!-- section_id: "fccfa68c-c624-4f2b-948f-02a4fcb09b69" -->
 ## Examples
 
+<!-- section_id: "7bde6969-5681-4a08-bcd2-f87a6f07fd87" -->
 ### For Cursor
 ```markdown
 ## 🚨 Terminal Execution Protocol
@@ -49,6 +53,7 @@ This template shows how agent-specific configuration files should reference the 
 **Tool**: `run_terminal_cmd`
 ```
 
+<!-- section_id: "99888339-d0bc-4ce2-b1d4-5568bc00e05d" -->
 ### For Warp
 ```markdown
 ## 🚨 Terminal Execution Protocol
@@ -64,6 +69,7 @@ This template shows how agent-specific configuration files should reference the 
 **Tool**: `run_command`
 ```
 
+<!-- section_id: "61b0223a-dfee-4c81-b337-bb658df84d33" -->
 ### For Claude Code
 ```markdown
 ## 🚨 Terminal Execution Protocol
@@ -79,6 +85,7 @@ This template shows how agent-specific configuration files should reference the 
 **Tool**: `run_terminal_cmd` (built-in) or VS Code terminal integration
 ```
 
+<!-- section_id: "b95d4479-bd34-4b54-8b3f-38342a27992e" -->
 ## Key Principles
 
 1. **Reference, Don't Duplicate**: Always reference the master document rather than copying rules
@@ -86,6 +93,7 @@ This template shows how agent-specific configuration files should reference the 
 3. **Quick Reference**: Include a brief quick reference for convenience
 4. **Link to Master**: Always include the link to the master document
 
+<!-- section_id: "f1fe45df-573f-4f0b-b884-619216792106" -->
 ## Files That Should Use This Template
 
 - `.cursorrules` or Cursor user rules

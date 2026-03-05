@@ -8,12 +8,15 @@ resource_name: "system_tts_current_product"
 **Date**: 2026-02-25
 **Status**: Working (Kokoro GPU upgrade complete)
 
+<!-- section_id: "3f93f9c9-b0a3-4b55-8db9-c9c8d99af70a" -->
 ## Design Philosophy
 
 **Selective, on-demand TTS** — the user chooses exactly what gets read aloud. No automatic reading of UI elements, keystrokes, or focus changes. This is NOT a screen reader setup.
 
+<!-- section_id: "c5570799-6171-40e4-9705-20c6f85cc49b" -->
 ## What's Delivered
 
+<!-- section_id: "053996e5-a539-4e72-85ac-22a12bec0d12" -->
 ### Primary: Highlight-and-Speak (Ctrl+Alt+S)
 
 The main interaction: highlight any text in any app, press **Ctrl+Alt+S** to hear it.
@@ -22,6 +25,7 @@ The main interaction: highlight any text in any app, press **Ctrl+Alt+S** to hea
 - Uses **Kokoro** GPU-accelerated neural voice (0.17s generation for 6s audio)
 - Falls back to Piper if Kokoro server is down
 
+<!-- section_id: "f9c7931c-d2eb-4e3a-8b80-6e9f2ca63ecf" -->
 ### CLI: `speak` Command
 
 ```bash
@@ -31,6 +35,7 @@ cat article.txt | speak             # read a file
 speak -s                            # stop current speech
 ```
 
+<!-- section_id: "d4c1d240-04db-49ae-8549-26f51bd3439f" -->
 ### Speech Dispatcher Integration
 
 Any app or script that uses Speech Dispatcher now gets Piper's natural voice:
@@ -40,6 +45,7 @@ spd-say "Hello from Speech Dispatcher"         # Piper (default)
 spd-say -o espeak-ng "Hello from eSpeak"       # eSpeak fallback (robotic)
 ```
 
+<!-- section_id: "b56c00db-a44c-48a5-af55-49a5966d7cba" -->
 ### Components
 
 | Component | Version | Location |
@@ -52,6 +58,7 @@ spd-say -o espeak-ng "Hello from eSpeak"       # eSpeak fallback (robotic)
 | Speech Dispatcher | 0.12.0 | User config at `~/.config/speech-dispatcher/` |
 | paplay | system | PulseAudio playback |
 
+<!-- section_id: "189092f4-8812-42ab-b79b-67369f02b9c8" -->
 ### Configuration Files
 
 | File | Purpose |
@@ -59,6 +66,7 @@ spd-say -o espeak-ng "Hello from eSpeak"       # eSpeak fallback (robotic)
 | `~/.config/speech-dispatcher/speechd.conf` | Speech Dispatcher user config (Piper as default module) |
 | `~/.config/speech-dispatcher/modules/piper-generic.conf` | Piper sd_generic module config |
 
+<!-- section_id: "bdddc856-0e0d-4e65-99ed-21a8d5058199" -->
 ### Test Suite
 
 ```bash
@@ -66,11 +74,13 @@ bash .../stage_2_07_testing/outputs/test-system-tts.sh
 # 29/29 tests: components, config, modules, audio pipeline, scripts, keepalive
 ```
 
+<!-- section_id: "f3819167-1e4b-45ee-9e79-daaf38f969ce" -->
 ## NOT Included (by design)
 
 - **Orca screen reader is NOT enabled** — Orca reads every UI element, keystroke, and focus change. That's designed for visually impaired users, not selective TTS. Orca is installed (v46.1) and configured to use Piper via Speech Dispatcher, but is disabled by default.
 - No automatic speech on any event — all TTS is user-initiated
 
+<!-- section_id: "fce4632c-f85c-4407-a632-2b14a52c57f3" -->
 ## Kokoro Upgrade (Completed 2026-02-25)
 
 Piper replaced by **Kokoro** as primary TTS engine:
@@ -88,12 +98,14 @@ Piper replaced by **Kokoro** as primary TTS engine:
 **Service**: `systemctl --user status kokoro-tts.service`
 **Fallback**: Piper auto-activates if Kokoro server is unreachable
 
+<!-- section_id: "839a8d05-0d3d-400e-a7ff-79b0780f3ea2" -->
 ## Limitations
 
 - Speech Dispatcher module not yet updated (still uses Piper via piper-generic)
 - X11 only for speak-selection (no Wayland yet)
 - Single Kokoro voice configured (af_heart) — 40+ available
 
+<!-- section_id: "c4ccbb4f-5990-4c45-af9f-abad5aca78cb" -->
 ## Architecture
 
 ```

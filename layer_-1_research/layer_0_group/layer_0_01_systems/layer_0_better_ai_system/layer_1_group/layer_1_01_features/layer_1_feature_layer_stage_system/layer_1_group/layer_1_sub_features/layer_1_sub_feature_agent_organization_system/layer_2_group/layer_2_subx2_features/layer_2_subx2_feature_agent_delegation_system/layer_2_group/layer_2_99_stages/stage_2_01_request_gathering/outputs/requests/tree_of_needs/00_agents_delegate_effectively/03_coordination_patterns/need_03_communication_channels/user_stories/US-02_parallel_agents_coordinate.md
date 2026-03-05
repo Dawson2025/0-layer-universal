@@ -13,6 +13,7 @@ resource_name: "US-02_parallel_agents_coordinate"
 **I want** parallel agents to use real-time messaging (SendMessage) to coordinate on shared concerns,
 **So that** parallel work does not produce conflicting outputs that I have to manually reconcile.
 
+<!-- section_id: "75bfa7a7-10bf-45ab-8bb2-dabe44d1531e" -->
 ### What Happens
 
 1. User has two stage agents working in parallel on independent but related tasks
@@ -21,6 +22,7 @@ resource_name: "US-02_parallel_agents_coordinate"
 4. Agent B adjusts its work to align with Agent A's findings
 5. Both agents produce compatible outputs without the manager mediating
 
+<!-- section_id: "0ff926d5-9981-4125-89b5-252e4afd7dc9" -->
 ### Acceptance Criteria
 
 - Parallel agents use SendMessage for real-time coordination, not stage reports

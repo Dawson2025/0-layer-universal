@@ -9,10 +9,12 @@ resource_name: "MCP_TOOL_EXPOSURE_SOLUTIONS"
 **Location**: Universal Layer → MCP Servers and Tools Setup  
 **Status**: Comprehensive solutions guide
 
+<!-- section_id: "e7b22434-4732-43bc-8a64-1d96f7a5f36c" -->
 ## Overview
 
 This document provides solutions and workarounds for the Cursor IDE MCP tool exposure issue, where MCP tools are registered but not exposed to AI agents.
 
+<!-- section_id: "25399be1-a07a-4423-954f-9920613c509c" -->
 ## Quick Reference: Most Promising Solutions
 
 **CRITICAL: Enable MCP Servers in UI** (Solution 22):
@@ -40,6 +42,7 @@ This document provides solutions and workarounds for the Cursor IDE MCP tool exp
 - Update Cursor to latest version (Solution 2)
 - Check all diagnostic solutions (Solutions 6, 7, 15-21)
 
+<!-- section_id: "b548e327-22aa-4e82-8aab-4fd7b439d0d2" -->
 ## Confirmed: This is a Cursor IDE Bug
 
 **Root Cause**: Cursor IDE bug (specifically version 2.0.77 has a known issue) where MCP tools aren't exposed to agents even though they appear connected.
@@ -48,8 +51,10 @@ This document provides solutions and workarounds for the Cursor IDE MCP tool exp
 
 **Evidence**: Internet research shows this is a cross-platform Cursor IDE bug, not OS-specific.
 
+<!-- section_id: "3949023b-3942-44e0-a268-ea4a637b16be" -->
 ## Solutions and Workarounds
 
+<!-- section_id: "bf3f7127-139d-4e11-9c51-23b483dc6ce9" -->
 ### Solution 1: Use Cursor CLI (Recommended Workaround)
 
 **Status**: ✅ **Official Tool** - CLI is legitimate and officially supported by Cursor
@@ -123,6 +128,7 @@ cursor-agent mcp list-tools browser
 - Forum discussions on IDE vs CLI tradeoffs
 - Bug reports comparing TUI vs GUI stability
 
+<!-- section_id: "65bdf8a2-adce-45f4-90cb-20c92d6ecf15" -->
 ### Solution 2: Update Cursor IDE
 
 **Status**: ⚠️ **May Fix Issue** - If newer version fixes the bug
@@ -139,6 +145,7 @@ cursor-agent mcp list-tools browser
 
 **Note**: If you're on 2.1.49, the bug may still exist or may have been partially fixed.
 
+<!-- section_id: "b482a985-0d45-4b96-8b7f-aef0c03961b4" -->
 ### Solution 3: Use Cursor Browser Extension Tools
 
 **Status**: ✅ **Works** - These tools are available
@@ -157,6 +164,7 @@ cursor-agent mcp list-tools browser
 - May have browser detection issues
 - Not as comprehensive as Playwright MCP tools
 
+<!-- section_id: "169aff7d-eeb1-4c95-bcd2-389be973b47e" -->
 ### Solution 4: Change HTTP Compatibility Mode (For HTTP Remote MCP Servers)
 
 **Status**: ⚠️ **For HTTP Servers Only**
@@ -168,6 +176,7 @@ cursor-agent mcp list-tools browser
 
 **Note**: This only helps if you're using HTTP remote MCP servers, not local stdio servers like Playwright.
 
+<!-- section_id: "c9788652-2929-4c80-ba42-a4efeec8dc0a" -->
 ### Solution 5: Use Full Path to Node.js in MCP Config
 
 **Status**: ⚠️ **May Help** - Some users report this fixes issues
@@ -216,6 +225,7 @@ cursor-agent mcp list-tools browser
 }
 ```
 
+<!-- section_id: "c24b2dfb-c47e-4c95-97d4-5f056530c895" -->
 ### Solution 6: Restart Cursor Completely
 
 **Status**: ⚠️ **Basic Troubleshooting**
@@ -229,6 +239,7 @@ cursor-agent mcp list-tools browser
 
 **Note**: This is basic troubleshooting but sometimes helps.
 
+<!-- section_id: "ebe6f3f2-d88c-4f4f-9d43-b3396ccab271" -->
 ### Solution 7: Check Cursor Settings for Tool Availability
 
 **Status**: ⚠️ **Diagnostic**
@@ -241,6 +252,7 @@ cursor-agent mcp list-tools browser
 
 **Note**: Tools may show as "22 tools" but not be accessible to agents - this confirms the bug.
 
+<!-- section_id: "a72479b5-5116-4ae8-af5d-89f7201b8b71" -->
 ### Solution 8: Delete and Regenerate mcp.json
 
 **Status**: ✅ **Reported Success** - User reported this fixed the issue
@@ -256,6 +268,7 @@ cursor-agent mcp list-tools browser
 
 **Note**: This may reset all MCP configurations, so backup first.
 
+<!-- section_id: "a50a1000-cffc-47ad-9c26-b1952d083943" -->
 ### Solution 9: Disable Cursor's Internal Browser Automation
 
 **Status**: ⚠️ **May Help** - Prevents interference with MCP browser tools
@@ -274,6 +287,7 @@ cursor-agent mcp list-tools browser
 - Forum: "Browser Automation interferes with other MCP tools"
 - Forum: "Ability to disable Browser Automation has been removed"
 
+<!-- section_id: "98b16f0b-c0b8-4778-8b99-3912f714d59b" -->
 ### Solution 10: Reorder MCP Servers in mcp.json
 
 **Status**: ⚠️ **May Help** - Order can matter
@@ -295,6 +309,7 @@ cursor-agent mcp list-tools browser
 
 **Source**: User reported: "As a last try, I moved the Figma config to the head of the mcp.json, and suddenly it worked"
 
+<!-- section_id: "7ec3c046-a49f-4ea0-8782-d55687558686" -->
 ### Solution 11: Use Project-Specific mcp.json
 
 **Status**: ✅ **Recommended for CLI** - CLI requires project-specific config
@@ -312,6 +327,7 @@ cp ~/.cursor/mcp.json .cursor/mcp.json
 
 **Note**: You may need both global and project-specific configs depending on your workflow.
 
+<!-- section_id: "ccdb43ab-fb9f-43e3-9837-018c699c18a1" -->
 ### Solution 12: Check for Duplicate MCP Server Entries
 
 **Status**: ⚠️ **Common Issue** - Duplicates can cause problems
@@ -325,6 +341,7 @@ cp ~/.cursor/mcp.json .cursor/mcp.json
 
 **Source**: Forum post: "Make sure 'hf-mcp-server' is described in only one place. Either remove the duplicate or rename"
 
+<!-- section_id: "0c453f86-7b8c-49f9-8058-986d8ec6a294" -->
 ### Solution 13: Manually Add Tools to Allowlist
 
 **Status**: ⚠️ **Workaround** - May help with tool approval issues
@@ -340,6 +357,7 @@ cp ~/.cursor/mcp.json .cursor/mcp.json
 - Forum: "MCP Allowlist doesn't work, also can't be edited"
 - Forum: "How to allow MCP to execute automatically in cursor"
 
+<!-- section_id: "ae17091c-1c56-4683-b702-4f24a91fa3c8" -->
 ### Solution 14: Use MCP Server Refresh Extension
 
 **Status**: ⚠️ **Community Solution** - For stuck MCP servers
@@ -350,6 +368,7 @@ cp ~/.cursor/mcp.json .cursor/mcp.json
 
 **Source**: Forum: "Community Extension MCP Server Refresh - Fix for Stuck MCP Servers"
 
+<!-- section_id: "d893d3ed-bfd5-4170-bf26-a52245a6bd2c" -->
 ### Solution 15: Check for Module Resolution Errors
 
 **Status**: ⚠️ **Diagnostic** - May reveal underlying issues
@@ -368,6 +387,7 @@ cp ~/.cursor/mcp.json .cursor/mcp.json
 
 **Source**: GitHub issue: "Cursor detects the MCP as 'no tools, prompts or resources'" - module resolution errors
 
+<!-- section_id: "d0125d65-5835-492d-a0ad-cffea93ec30c" -->
 ### Solution 16: Verify MCP Tool Protection Settings
 
 **Status**: ⚠️ **Security Setting** - May block tools
@@ -380,6 +400,7 @@ cp ~/.cursor/mcp.json .cursor/mcp.json
 
 **Note**: Security settings may prevent MCP tools from running even if exposed.
 
+<!-- section_id: "a7820f26-721f-4f5a-ac98-e097c2b56e17" -->
 ### Solution 17: Check AutoApprove Settings
 
 **Status**: ⚠️ **Configuration** - May affect tool execution
@@ -404,6 +425,7 @@ cp ~/.cursor/mcp.json .cursor/mcp.json
 - Forum: "Atlassian MCP autoApprove: true Not Being Respected"
 - Forum: "Run Everything does not work with MCP calls"
 
+<!-- section_id: "261cfd48-69b6-454a-ba53-520f16dcd93a" -->
 ### Solution 18: Use Community Extension for MCP Refresh
 
 **Status**: ⚠️ **Community Solution**
@@ -412,6 +434,7 @@ cp ~/.cursor/mcp.json .cursor/mcp.json
 
 **Benefits**: Can refresh MCP servers without restarting entire Cursor IDE.
 
+<!-- section_id: "dd3db810-32e4-4ed9-a93a-aa9f905487d1" -->
 ### Solution 19: Check for Stuck "Loading Tools" Status
 
 **Status**: ⚠️ **Diagnostic** - Indicates server connection issue
@@ -426,6 +449,7 @@ cp ~/.cursor/mcp.json .cursor/mcp.json
 
 **Source**: Forum: "How to refresh mcp (Cursor 1.0)" - servers stuck on loading
 
+<!-- section_id: "e5a4eda8-454f-4b29-aec5-10e0a5201146" -->
 ### Solution 20: Verify HTTP Remote MCP Server Configuration
 
 **Status**: ⚠️ **For HTTP Servers** - Different configuration needed
@@ -438,6 +462,7 @@ cp ~/.cursor/mcp.json .cursor/mcp.json
 
 **Note**: HTTP remote servers have different requirements than local stdio servers.
 
+<!-- section_id: "39a8fcef-28f5-49f8-97cf-99b93cc9e51a" -->
 ### Solution 21: Check Cursor Version Compatibility
 
 **Status**: ⚠️ **Important** - Some versions have known bugs
@@ -453,6 +478,7 @@ cp ~/.cursor/mcp.json .cursor/mcp.json
 - Version 1.4.0: MCP tools not recognized
 - Older versions: Various MCP issues
 
+<!-- section_id: "64377f9e-03d4-459d-adb3-aa180d5227bb" -->
 ### Solution 22: Disable Unused MCP Servers (If Cursor Warns About Limits)
 
 **Status**: ⚠️ **May Be Required** - If Cursor warns about too many servers/tools
@@ -477,6 +503,7 @@ cp ~/.cursor/mcp.json .cursor/mcp.json
 
 **Recommendation**: Only enable MCP servers that you actively need.
 
+<!-- section_id: "efda7f4f-f465-4aad-88f8-297fc9ae5bde" -->
 ### Solution 23: Enable MCP Servers in Cursor Settings UI ⚠️ **CRITICAL STEP!**
 
 **Status**: ✅ **BREAKTHROUGH DISCOVERY** - UI enablement is required!
@@ -503,6 +530,7 @@ cp ~/.cursor/mcp.json .cursor/mcp.json
 
 **Note**: This is separate from login requirement (Solution 23 below).
 
+<!-- section_id: "2f85b31a-f2a3-4a81-898e-1cacd6c88fa9" -->
 ### Solution 24: Ensure You're Logged Into Cursor IDE
 
 **Status**: ✅ **CRITICAL DISCOVERY** - Login may be required!
@@ -526,6 +554,7 @@ cp ~/.cursor/mcp.json .cursor/mcp.json
 
 **Note**: Even after login, browser detection may still fail - see Solution 24.
 
+<!-- section_id: "8172cce4-d935-485b-850b-d8c8545fe97c" -->
 ### Solution 25: Use Browser MCP Tools (Working Solution!)
 
 **Status**: ✅ **CONFIRMED WORKING** - Browser MCP tools work after login!
@@ -544,6 +573,7 @@ cp ~/.cursor/mcp.json .cursor/mcp.json
 
 **Why This Works**: Browser MCP server (`@agent-infra/mcp-server-browser`) has better browser detection than Playwright MCP in this environment.
 
+<!-- section_id: "d74a051a-adf0-4e63-8a76-a0961008f9a3" -->
 ### Solution 26: Use Playwright Browser Install Tool
 
 **Status**: ⚠️ **May Fix Browser Detection** - Try this if Playwright tools are available but browser not found
@@ -565,6 +595,7 @@ cp ~/.cursor/mcp.json .cursor/mcp.json
 
 **Current Status**: Tools are available but browser detection failing - this may resolve it.
 
+<!-- section_id: "c1a79785-b14a-438d-8f26-17587388d959" -->
 ### Solution 25: Report to Cursor Team
 
 **Status**: ✅ **Important for Long-term Fix**
@@ -585,8 +616,10 @@ cp ~/.cursor/mcp.json .cursor/mcp.json
 - "Browser Agent Tools Not Accessible Despite 'Ready' Status"
 - "Playwright MCP not working on Cursor"
 
+<!-- section_id: "b2552141-855a-4e1e-876c-36f00c0463e1" -->
 ## Recommended Approach
 
+<!-- section_id: "41482d45-9abc-4bfe-be31-0e57f03580b4" -->
 ### Quick Fixes to Try First
 
 1. **Delete and Regenerate mcp.json** (Solution 8):
@@ -609,6 +642,7 @@ cp ~/.cursor/mcp.json .cursor/mcp.json
    - Ensure each MCP server is only defined once
    - Remove any duplicate entries
 
+<!-- section_id: "ca179fad-3f29-4c24-a6fe-d4084b333f72" -->
 ### For Immediate Use
 
 1. **✅ USE BROWSER MCP TOOLS** (Solution 24) - **CONFIRMED WORKING!**
@@ -638,6 +672,7 @@ cp ~/.cursor/mcp.json .cursor/mcp.json
    - Update to latest version
    - Test if bug is fixed
 
+<!-- section_id: "1db688fc-78d4-48cc-81f5-17c8f81ab938" -->
 ### For Long-term Fix
 
 1. **Report the Issue** (Solution 8):
@@ -650,8 +685,10 @@ cp ~/.cursor/mcp.json .cursor/mcp.json
    - Watch for MCP tool exposure fixes
    - Test new versions
 
+<!-- section_id: "88c40d48-f426-47d2-b3fe-c2531bcf3abd" -->
 ## Testing Checklist
 
+<!-- section_id: "a1602594-a865-4d32-8360-1eb1957c37ed" -->
 ### Test Cursor CLI
 
 - [ ] Install Cursor CLI: `curl https://cursor.com/install -fsS | bash`
@@ -663,6 +700,7 @@ cp ~/.cursor/mcp.json .cursor/mcp.json
 - [ ] Test if tools are accessible in CLI vs. IDE
 - [ ] Document findings
 
+<!-- section_id: "06f3fa98-02e9-4354-987a-8424855f4674" -->
 ### Test Cursor IDE Updates
 
 - [ ] Check current version: `cursor --version`
@@ -671,6 +709,7 @@ cp ~/.cursor/mcp.json .cursor/mcp.json
 - [ ] Test if MCP tools are now exposed
 - [ ] Document version and results
 
+<!-- section_id: "63094be5-f6d3-42fa-b676-d9a3f85f0c12" -->
 ### Test Configuration Changes
 
 - [ ] Delete and regenerate mcp.json (Solution 8)
@@ -687,6 +726,7 @@ cp ~/.cursor/mcp.json .cursor/mcp.json
 - [ ] Restart Cursor completely (Solution 6)
 - [ ] Test tool exposure after each change
 
+<!-- section_id: "9003be4d-be95-4a99-b6f5-3ef84604279d" -->
 ## Related Documentation
 
 - [MCP Tool Exposure OS Analysis](./MCP_TOOL_EXPOSURE_OS_ANALYSIS.md) - Platform comparison
@@ -694,13 +734,16 @@ cp ~/.cursor/mcp.json .cursor/mcp.json
 - [Cursor Browser MCP Setup](./CURSOR_BROWSER_MCP_SETUP.md) - Browser automation setup
 - [MCP Configuration Guide](./MCP_CONFIGURATION_GUIDE.md) - Configuration details
 
+<!-- section_id: "0ce4c1f9-b6c6-4e46-a1db-a2793d18cf11" -->
 ## References
 
+<!-- section_id: "b061ca1a-085c-4834-8b58-254d8b49bb5b" -->
 ### Cursor Documentation
 - [Cursor CLI Documentation](https://cursor.com/docs/cli)
 - [Cursor CLI MCP Guide](https://cursor.com/docs/cli/mcp)
 - [Cursor MCP Documentation](https://cursor.com/docs/context/mcp)
 
+<!-- section_id: "8b5da3b6-bd8c-4461-820c-9748e7f74a70" -->
 ### Forum Posts
 - [MCP servers are not exposed to agents](https://forum.cursor.com/t/mcp-servers-are-not-exposed-to-agents/143482)
 - [Browser Agent Tools Not Accessible](https://forum.cursor.com/t/browser-agent-tools-not-accessible-despite-ready-status/143140)
@@ -710,8 +753,10 @@ cp ~/.cursor/mcp.json .cursor/mcp.json
 - [MCP Allowlist doesn't work](https://forum.cursor.com/t/mcp-allowlist-doesnt-work-also-cant-be-edited/135594)
 - [Community Extension MCP Server Refresh](https://forum.cursor.com/t/community-extension-mcp-server-refresh-fix-for-stuck-mcp-servers-in-cursor/107283)
 
+<!-- section_id: "7d0161fa-2cc7-44e1-add8-2ba54e2a3cad" -->
 ## Changelog
 
+<!-- section_id: "aa7db211-a815-4cbe-aebb-cce40caf7107" -->
 ### 2025-12-07 (Updated - Gemini CLI Workaround)
 - **NEW WORKAROUND**: Use Gemini CLI for browser automation when Cursor tools unavailable
 - Gemini CLI has independent MCP configuration in `~/.gemini/settings.json`
@@ -720,6 +765,7 @@ cp ~/.cursor/mcp.json .cursor/mcp.json
 - Created GEMINI_CLI_BROWSER_WORKAROUND.md documenting this approach
 - See [Gemini CLI Browser Workaround](./GEMINI_CLI_BROWSER_WORKAROUND.md) for details
 
+<!-- section_id: "3a81ebd1-e538-4918-adc1-ecf1df450bab" -->
 ### 2025-12-05 (Updated - Second Update)
 - **BREAKTHROUGH DISCOVERY**: Login to Cursor IDE may be required for MCP tool exposure!
 - After user login, Playwright MCP tools became available (`mcp_playwright_*`)
@@ -729,6 +775,7 @@ cp ~/.cursor/mcp.json .cursor/mcp.json
 - Updated quick reference with login requirement as #1 priority
 - Created MCP_TOOL_EXPOSURE_TESTING_LOG.md documenting testing journey
 
+<!-- section_id: "c553abf3-37bb-4083-84c6-330d5c11141f" -->
 ### 2025-12-05 (Updated - First Update)
 - **Added 15 additional workarounds** from comprehensive internet research:
   - Delete and regenerate mcp.json (reported success)
@@ -748,6 +795,7 @@ cp ~/.cursor/mcp.json .cursor/mcp.json
 - Expanded testing checklist
 - Added more forum post references
 
+<!-- section_id: "b63dc8a0-aa5c-4d2c-98ff-193dc60a79c9" -->
 ### 2025-12-05 (Initial)
 - Created comprehensive solutions document
 - Added Cursor CLI as recommended workaround

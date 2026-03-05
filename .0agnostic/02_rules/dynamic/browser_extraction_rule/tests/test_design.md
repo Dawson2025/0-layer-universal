@@ -11,14 +11,17 @@ resource_name: "test_design"
 
 ---
 
+<!-- section_id: "aacfaa92-2120-427d-87c4-5e694ea4d4ce" -->
 ## Purpose
 
 Validates that browser extraction tools are used for React-rendered pages
 
+<!-- section_id: "a5c61b95-19e3-4a7d-bb7e-96b965fac5fb" -->
 ## Test Cases
 
 (To be designed)
 
+<!-- section_id: "41bf87ff-8e27-43b7-b093-b3d1bd64d15e" -->
 ### TC-XXX-01: Rule file exists and is well-formed
 
 **Steps**:
@@ -30,6 +33,7 @@ Validates that browser extraction tools are used for React-rendered pages
 
 ---
 
+<!-- section_id: "5c5e0647-ae18-40e3-b0ca-6835f7fcb2f5" -->
 ## Notes
 
 This test design is scaffolded. Detailed test cases should be written when this rule is actively being validated or when compliance issues are observed.

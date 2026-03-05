@@ -12,12 +12,14 @@ argument-hint: [--verbose]
 
 Check the current status of the 08_criticism stage.
 
+<!-- section_id: "26b79e0a-6d0f-4a49-81ab-c125e264b1f5" -->
 ## Steps
 1. Read the stage's outputs/ folder
 2. Check hand_off_documents/ for context
 3. Review any in-progress work
 4. Report status summary
 
+<!-- section_id: "261bd58f-47bf-46cb-ac0e-306278466dda" -->
 ## Output
 - Current progress
 - Pending items

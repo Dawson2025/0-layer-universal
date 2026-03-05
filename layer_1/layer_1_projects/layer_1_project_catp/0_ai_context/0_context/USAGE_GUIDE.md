@@ -7,6 +7,7 @@ resource_name: "USAGE_GUIDE"
 
 This directory contains a universal trickle-down documentation system that can be used for any AI-assisted coding project. Follow this guide to adapt it for your specific project.
 
+<!-- section_id: "83199d34-5b79-48d5-8c8c-a589022724b2" -->
 ## 🎯 Quick Start
 
 1. **Copy the entire `0_context` directory** to your project root (or desired location)
@@ -14,8 +15,10 @@ This directory contains a universal trickle-down documentation system that can b
 3. **Add project-specific documentation** as needed
 4. **Update file paths** to match your project structure
 
+<!-- section_id: "3f5c3c9a-f2a4-45f0-ba89-041ecd4f293a" -->
 ## 📋 Step-by-Step Setup
 
+<!-- section_id: "bb4a2d17-b01f-47f7-af30-31d345aeb975" -->
 ### Step 1: Copy to Your Project
 
 ```bash
@@ -26,6 +29,7 @@ cp -r /path/to/0_ai_context/0_context /path/to/your/project/docs/
 cp -r /path/to/0_ai_context/0_context /path/to/your/project/
 ```
 
+<!-- section_id: "77cfe275-a015-4e98-85c3-183ef8bbb746" -->
 ### Step 2: Customize Core Prompt
 
 Edit `0_basic_prompts_throughout/what_to_do_next.md`:
@@ -55,6 +59,7 @@ Edit `0_basic_prompts_throughout/what_to_do_next.md`:
    - Specify target platform
    - Mention next milestone
 
+<!-- section_id: "b9423ace-1f24-479d-b8aa-2d26c06bd7a3" -->
 ### Step 3: Add Project-Specific Documentation
 
 Create or update files in these directories as needed:
@@ -79,6 +84,7 @@ Create or update files in these directories as needed:
 - Add implementation guides
 - Create component documentation
 
+<!-- section_id: "387f9edc-b9cb-449b-ae30-1e22ab7e0099" -->
 ### Step 4: Update References
 
 Search for and update these common patterns:
@@ -87,13 +93,16 @@ Search for and update these common patterns:
 2. **Project names**: Update any hardcoded project names
 3. **Technology references**: Update technology stack references if different
 
+<!-- section_id: "8da7ef66-6b4c-43a6-a8a5-3f606d26a623" -->
 ## 📁 Directory Structure Overview
 
+<!-- section_id: "327a8c96-0e3f-4436-a229-60b3b5bf1657" -->
 ### Universal Directories (Keep As-Is)
 - `trickle_down_0_universal/`: Universal AI agent instructions
 - `trickle_down_0.5_setup/`: Setup and configuration (customize as needed)
 - `trickle_down_0.75_universal_tools/`: Universal tools documentation
 
+<!-- section_id: "3571fddf-93b4-452d-9cf9-fded73b2d968" -->
 ### Project-Specific Directories (Customize)
 - `trickle_down_1_project/`: Your project's specific documentation
 - `trickle_down_1.5_project_tools/`: Your project's tools
@@ -102,8 +111,10 @@ Search for and update these common patterns:
 - `trickle_down_3_components/`: Component documentation
 - `trickle_down_3_testing/`: Testing documentation
 
+<!-- section_id: "4d568cf4-84dc-46bd-9f73-66cfd425f107" -->
 ## 🎨 Customization Examples
 
+<!-- section_id: "6bb14aad-d7e4-4203-856d-37fa1b8d7d8f" -->
 ### Example 1: React/Node.js Project
 
 ```markdown
@@ -114,6 +125,7 @@ Search for and update these common patterns:
 - **Deployment**: Vercel (frontend), Railway (backend)
 ```
 
+<!-- section_id: "7e79036e-1fb4-445b-9916-42aa865f5cd7" -->
 ### Example 2: Python Django Project
 
 ```markdown
@@ -124,6 +136,7 @@ Search for and update these common patterns:
 - **Deployment**: Docker + AWS/GCP
 ```
 
+<!-- section_id: "6d029875-278c-466c-9304-47cbae26b417" -->
 ### Example 3: Mobile App Project
 
 ```markdown
@@ -134,8 +147,10 @@ Search for and update these common patterns:
 - **Deployment**: App Store + Google Play
 ```
 
+<!-- section_id: "429c6f60-f9dc-413f-8b45-4302d7c98597" -->
 ## 📝 Documentation Organization
 
+<!-- section_id: "aeddce7c-9c0b-4ad7-9f58-a972193855c7" -->
 ### Follow the Trickle-Down Pattern
 
 1. **0_instruction_docs/**: How-to guides, procedures, specifications
@@ -143,6 +158,7 @@ Search for and update these common patterns:
 3. **2_archive_docs/**: Completed work, resolutions, historical records
 4. **2_testing_docs/**: Testing documentation, test results
 
+<!-- section_id: "d51e44d7-5816-4c60-ad38-ba9ac23ced90" -->
 ### Naming Conventions
 
 Use this pattern for dated documentation:
@@ -150,8 +166,10 @@ Use this pattern for dated documentation:
 - `DESCRIPTION_DATE.md` for major milestones
 - `CATEGORY_description.md` for category-specific docs
 
+<!-- section_id: "68d74b02-a8c8-4601-bd52-70ef3d8cbb1e" -->
 ## ⚙️ Important Files to Know
 
+<!-- section_id: "a03d44bf-acc5-4856-a920-912347192c27" -->
 ### Critical Files (Update These First)
 
 1. **`0_basic_prompts_throughout/what_to_do_next.md`**
@@ -165,6 +183,7 @@ Use this pattern for dated documentation:
    - Comprehensive index of all documentation
    - Update when adding new documentation
 
+<!-- section_id: "41634c1c-7eb1-4991-9e63-1b9473e2973e" -->
 ### Reference Files (Review and Adapt)
 
 1. **`TERMINAL_HANGING_FIX.md`**
@@ -175,8 +194,10 @@ Use this pattern for dated documentation:
    - Cursor IDE terminal issues
    - Universal reference
 
+<!-- section_id: "940d1b90-bfa4-4046-bc95-30057e4b7da6" -->
 ## 🚀 Using with AI Agents
 
+<!-- section_id: "d1e5e5df-46c5-46f5-8982-39a1838eb5b0" -->
 ### For Claude/ChatGPT/Cursor AI:
 
 Point the AI to this directory:
@@ -190,6 +211,7 @@ The AI will:
 3. Use universal instructions when appropriate
 4. Apply project-specific documentation when available
 
+<!-- section_id: "7ef7adbf-d7b7-43e5-99b5-066d97b815c6" -->
 ### For Multiple AI Agents:
 
 This system is designed to work with:
@@ -199,8 +221,10 @@ This system is designed to work with:
 - **GitHub Copilot**
 - Other MCP-compatible agents
 
+<!-- section_id: "8595d97a-d438-47b4-b3f5-fb2a658ae391" -->
 ## 🔧 Advanced Customization
 
+<!-- section_id: "cebf16f2-ceca-4c99-a24b-08fcfea8f66b" -->
 ### Adding New Trickle-Down Levels
 
 If you need additional organization levels:
@@ -212,6 +236,7 @@ If you need additional organization levels:
    - `2_archive_docs/`
 3. Update `MASTER_DOCUMENTATION_INDEX.md`
 
+<!-- section_id: "246eddb4-c021-4639-9f5a-31c043307ed3" -->
 ### Creating Project-Specific Tools
 
 Document custom tools in:
@@ -223,6 +248,7 @@ Include:
 - Configuration guides
 - Troubleshooting
 
+<!-- section_id: "d12125fb-d86d-467d-911e-b1f94ea05b4c" -->
 ## 📚 Best Practices
 
 1. **Always update `what_to_do_next.md`** for each project
@@ -231,6 +257,7 @@ Include:
 4. **Document testing** in `2_testing_docs/` or `trickle_down_3_testing/`
 5. **Maintain the index** in `MASTER_DOCUMENTATION_INDEX.md`
 
+<!-- section_id: "cab4d412-9091-4df8-b61c-cd40fdb827db" -->
 ## ⚠️ Common Pitfalls
 
 1. **Don't hardcode project paths** - Use relative paths or environment variables
@@ -238,6 +265,7 @@ Include:
 3. **Don't skip the customization step** - Generic docs won't help without customization
 4. **Don't ignore the master index** - Keep it updated as you add documentation
 
+<!-- section_id: "ba586e71-e858-4d27-886f-ee4f93ed5b37" -->
 ## 🎯 Next Steps
 
 1. ✅ Copy `0_context` to your project

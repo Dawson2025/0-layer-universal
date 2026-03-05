@@ -5,15 +5,21 @@ resource_name: "uuid_identity_system_design"
 ---
 # Design Proposal: UUID Identity System for Layer-Stage Entities
 
+<!-- section_id: "954bade0-48e4-46cf-9d58-493f6771bed5" -->
 ## Status: PROPOSED
+<!-- section_id: "8f196934-70c1-4cab-a2be-3328663704d4" -->
 ## Date: 2026-03-02
+<!-- section_id: "0c009ec6-14a4-4a2a-a1a1-817c94690c49" -->
 ## Author: AI Agent (stage_3_04_design)
+<!-- section_id: "9c557305-6dc4-4408-aeea-a91bb135de37" -->
 ## Related Research: `../../../stage_3_02_research/outputs/rename_propagation_research.md`
 
 ---
 
+<!-- section_id: "2e31bc9d-ad98-4785-a06a-17fddc22fe62" -->
 ## 1. Problem Statement
 
+<!-- section_id: "b5e892df-d58d-4846-b951-dd39ed60aa96" -->
 ### Current Behavior
 
 The pointer-sync.sh system resolves pointer files using **name-based lookup**:
@@ -25,6 +31,7 @@ canonical_stage: "stage_2_04_design"
 
 Resolution uses `find -type d -name "$CANONICAL_ENTITY"` to locate the entity directory. This works when entities are **moved** (same name, new location) but **breaks completely** when entities are **renamed**.
 
+<!-- section_id: "3da26aa2-dfbe-4020-aaa1-480fa20691fc" -->
 ### Impact of Renames
 
 When `layer_1_feature_old_name` is renamed to `layer_1_feature_new_name`:
@@ -33,6 +40,7 @@ When `layer_1_feature_old_name` is renamed to `layer_1_feature_new_name`:
 - Discovery happens later when pointer-sync.sh runs and reports BROKEN pointers
 - Manual find-and-replace across all pointer files is required
 
+<!-- section_id: "a4ff7559-19ca-4cca-b4a2-b711270ba866" -->
 ### Why This Matters
 
 - Entity names change as understanding evolves (e.g., renaming a feature to better reflect scope)
@@ -42,8 +50,10 @@ When `layer_1_feature_old_name` is renamed to `layer_1_feature_new_name`:
 
 ---
 
+<!-- section_id: "04a31a02-2a5f-42ba-95b6-21f914b788e8" -->
 ## 2. Proposed Solution: UUID-Based Identity
 
+<!-- section_id: "bb532a6f-945d-45c8-a2a6-c994b1bbd11d" -->
 ### Core Idea
 
 Assign every entity and every stage a **UUID v4** (random, 128-bit) that:
@@ -52,6 +62,7 @@ Assign every entity and every stage a **UUID v4** (random, 128-bit) that:
 - Serves as the **primary** resolution key for pointer-sync.sh
 - Coexists with human-readable names (which become display-only)
 
+<!-- section_id: "38d541ed-f154-4969-a1a7-af34f2cc89b9" -->
 ### Why UUID v4 (Random)
 
 | Version | Method | Why Not |
@@ -63,6 +74,7 @@ Assign every entity and every stage a **UUID v4** (random, 128-bit) that:
 
 UUID v4 is the only version where the identifier is completely decoupled from the entity's name or path.
 
+<!-- section_id: "5f468613-5c04-4cd3-92bb-d1953d426976" -->
 ### Generation
 
 ```bash
@@ -80,10 +92,12 @@ Output format: `xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx` (36 chars with hyphens)
 
 ---
 
+<!-- section_id: "c945fdff-9fe7-45ee-9884-34125f8a2be1" -->
 ## 3. Where UUIDs Live
 
 **Fundamental rule**: Every file, every directory, every entity, and every stage within `/home/dawson/dawson-workspace/code/0_layer_universal/` MUST have a universally unique identifier (UUID v4). No exceptions for any file type or directory — only binary files (`.png`, `.woff`, `.wav`, `.db`) are exempt. Empty `.gitkeep` files are replaced by `.dir-id` files (see Section 3.6).
 
+<!-- section_id: "20a1f739-0100-4145-8762-d5baa7619f7d" -->
 ### 3.1 Entity UUID — in 0AGNOSTIC.md Identity Section
 
 ```yaml
@@ -102,6 +116,7 @@ The `entity_id` field is added to the **Identity** section of every entity's `0A
 - Survives all renames and moves
 - Propagated to `CLAUDE.md` (and other tool files) via `agnostic-sync.sh`
 
+<!-- section_id: "e52c7320-fbc4-41c9-9f0e-2c212bf6de65" -->
 ### 3.2 Stage UUID — in Stage's 0AGNOSTIC.md
 
 Each stage directory that has a `0AGNOSTIC.md` gets its own UUID:
@@ -118,6 +133,7 @@ You are the **Stage 04 (Design)** agent for the Context Chain System.
 
 For stages that don't yet have a `0AGNOSTIC.md` (scaffolded stages), the UUID is assigned when the stage's `0AGNOSTIC.md` is first created.
 
+<!-- section_id: "00bc9e33-6dd1-4437-9651-d0522a024110" -->
 ### 3.3 Stage Registry — Machine-Readable Index
 
 The existing `stage_N_00_stage_registry/` directory gets a `stage_index.json` mapping all stage UUIDs:
@@ -154,6 +170,7 @@ This registry is the single source of truth for stage identity within an entity.
 - Stage rename tracking (update `stage_name` and `directory`, `stage_id` stays the same)
 - Validation that all 12 stages (00-11) exist and have IDs
 
+<!-- section_id: "97ca01dd-47a4-4d62-8590-21935611031b" -->
 ### 3.4 Pointer Files — Updated YAML Frontmatter
 
 Pointer files reference entities and stages by UUID:
@@ -177,6 +194,7 @@ canonical_subpath: "outputs/by_topic/architecture/context_chain_architecture.md"
 - `canonical_subpath` remains name-based (file paths within a stage don't get UUIDs in pointer references)
 - Old format (`canonical_entity` without `_id`) still works as fallback
 
+<!-- section_id: "b04b8a05-022d-4800-9b3e-05d96c7bca10" -->
 ### 3.5 File-Level UUIDs — Every File Gets an ID
 
 Every non-binary, non-empty file in `0_layer_universal/` gets a UUID, stored using the comment syntax appropriate to its file type:
@@ -198,6 +216,7 @@ Every non-binary, non-empty file in `0_layer_universal/` gets a UUID, stored usi
 
 **Script**: `assign-file-uuids.sh` handles all types. For edge cases, a Python catch-all script processes remaining files.
 
+<!-- section_id: "f1b87d69-3cbf-4c4b-a169-778871b94129" -->
 ### 3.6 Directory UUIDs — Every Directory Gets an ID
 
 Every directory within `0_layer_universal/` gets a UUID via a `.dir-id` file placed inside it.
@@ -288,31 +307,81 @@ This means **renames and moves are handled automatically** with no hooks, no scr
 
 **Merge conflicts in `.dir-id`**: Impossible — each `.dir-id` contains only a UUID unique to that directory. Two branches can't independently create the same directory with different UUIDs unless the directory was created on both branches (in which case, keep either UUID).
 
-### 3.7 Section-Level UUIDs — Future Phase
+<!-- section_id: "3f35fa5b-b1b1-45e7-8b1c-1c3b894fae44" -->
+### 3.7 Section-Level UUIDs — Every Section Gets an ID
 
-Section-level UUIDs within files would enable stable references to specific headings, code blocks, or paragraphs. This is **deferred to a future phase** after directory UUIDs are stable.
+Section-level UUIDs enable stable references to specific headings within files. When a heading is renamed or sections are reordered, the UUID stays the same.
 
-**Rationale for deferral**:
-- File-level and directory-level UUIDs solve 95%+ of reference breakage
-- Section UUIDs add significant complexity (tracking heading renames, content reorganization within files)
-- No current use case requires section-level addressing that can't be solved by file-level UUIDs
-- Can be added incrementally later without breaking existing UUID infrastructure
+#### Scope: Which Headings Get UUIDs
 
-**When to revisit**: If pointer files need to reference specific sections within large documents (e.g., "Section 3.2 of the design doc") and those sections are frequently renamed or reorganized.
+| Heading Level | Gets UUID | Rationale |
+|--------------|-----------|-----------|
+| `#` (h1) | No | File title — file-level `resource_id` already covers this |
+| `##` (h2) | **Yes** | Primary structural divisions — most commonly referenced |
+| `###` (h3) | **Yes** | Sub-sections within h2 — frequently referenced in design/research docs |
+| `####` (h4+) | No | Too granular — diminishing returns, adds noise |
 
-**Proposed format** (for future implementation):
-```yaml
-canonical_section_id: "uuid"  # in pointer file
-```
+#### Format: HTML Comment Before Heading
+
 ```markdown
-<!-- section_id: "uuid" -->
 ## Section Heading
+
+### Sub-Section Heading
 ```
+
+**Why HTML comment above the heading** (not inline or below):
+- Stays paired with the heading even when content below changes
+- HTML comments are invisible in rendered markdown
+- Does not affect heading anchor links (`#section-heading`)
+- Easy to parse: line matching `<!-- section_id: "..." -->` followed by `## ` or `### `
+
+#### Pointer Reference Format
+
+Pointers can reference sections by UUID:
+
+```yaml
+---
+pointer_to: "Migration Plan section of UUID Design"
+canonical_entity_id: "a1b2c3d4-..."
+canonical_resource_id: "f47ac10b-..."
+canonical_section_id: "e5f6a7b8-..."
+canonical_section_name: "Migration Plan"
+---
+```
+
+**Resolution**: `canonical_section_id` resolves to a specific heading within the file identified by `canonical_resource_id`. The section name is display-only.
+
+#### Coverage
+
+| File Type | h2+h3 Sections | Gets Section UUIDs |
+|-----------|----------------|-------------------|
+| `.md` files (AI context) | ~458,000+ | Yes |
+| `.py`, `.js`, `.sh` (code) | N/A (no markdown headings) | No — functions/classes use different patterns |
+| `.json`, `.yaml` | N/A | No |
+
+#### Section UUID Index
+
+Section UUIDs are NOT indexed in `.uuid-index.json` (too many entries, would bloat the index). Instead:
+- Section UUIDs are resolved by scanning the target file directly
+- Since `canonical_resource_id` or `canonical_entity_id` + path already narrows to one file, finding a section within that file is a simple `grep`
+- No separate index needed — O(1) file lookup + O(n) line scan within file
+
+#### Edge Cases
+
+**Section deleted**: Pointer references a `canonical_section_id` that no longer exists in the file → BROKEN at section level (file still resolves, but the specific section is gone).
+
+**Section moved to different file**: The section_id travels with the text if copy-pasted, but the `canonical_resource_id` still points to the old file. This is a manual fix — section IDs don't have cross-file tracking.
+
+**Duplicate section_ids within a file**: Should not happen (each section gets a unique UUID). Detection: `assign-section-uuids.sh --validate` checks for duplicates.
+
+**Auto-generated files (CLAUDE.md)**: Do NOT get section UUIDs. They are derived files — sections come from 0AGNOSTIC.md which has the authoritative section IDs.
 
 ---
 
+<!-- section_id: "a3ac7ef8-c08e-43af-9c9d-bae84578f83e" -->
 ## 4. Updated Resolution Algorithm
 
+<!-- section_id: "21c7e6d6-56a0-4082-bcb8-4e5166fe6418" -->
 ### Current Algorithm (Name-Based)
 
 ```
@@ -323,6 +392,7 @@ canonical_section_id: "uuid"  # in pointer file
 5. Compute relative path from pointer to target
 ```
 
+<!-- section_id: "f75f1145-4a9d-44c9-8d09-f18da3dd5238" -->
 ### Proposed Algorithm (UUID-First with Name Fallback)
 
 ```
@@ -348,6 +418,7 @@ canonical_section_id: "uuid"  # in pointer file
 8. Compute relative path from pointer to target
 ```
 
+<!-- section_id: "12e9a4d3-ac64-4dda-925f-ca84d7e283f9" -->
 ### Performance: Hybrid Index Architecture
 
 Scanning all `0AGNOSTIC.md` files for UUIDs on every run would be slow. Solution: a **hybrid index architecture** — local authoritative indexes per entity, aggregated into a global root index.
@@ -425,8 +496,10 @@ Root index is **rebuilt from local indexes** — `--rebuild-index` reads all loc
 
 ---
 
+<!-- section_id: "09f40e54-a242-4d9c-ad3f-b7a0f964aaa0" -->
 ## 5. Migration Plan
 
+<!-- section_id: "8441115f-e0a5-4210-8a36-fc4889343bb0" -->
 ### Phase 1: Assign UUIDs to All Existing Entities (Script)
 
 Create `assign-uuids.sh` that:
@@ -449,6 +522,7 @@ find "$ROOT" -name "0AGNOSTIC.md" -path "*/layer_*" | while read -r file; do
 done
 ```
 
+<!-- section_id: "1168c3b7-1a06-40f8-a70a-53db7244191b" -->
 ### Phase 2: Assign Stage UUIDs and Create Registries
 
 For each entity with stages:
@@ -458,6 +532,7 @@ For each entity with stages:
 3. If the stage has a `0AGNOSTIC.md`, insert `stage_id:` into its Identity section
 4. Create/update `stage_index.json` in `stage_N_00_stage_registry/`
 
+<!-- section_id: "5c57ef4d-3cd0-4c14-8340-e1b5ab8854b3" -->
 ### Phase 3: Update pointer-sync.sh
 
 Modify the resolution algorithm to:
@@ -466,6 +541,7 @@ Modify the resolution algorithm to:
 3. Emit deprecation warnings for name-based pointers
 4. Add `--rebuild-index` flag
 
+<!-- section_id: "2237e979-10c0-4137-b4e3-13a2ee1ee452" -->
 ### Phase 4: Update Entity Creation Skill
 
 Modify `/entity-creation` to:
@@ -473,6 +549,7 @@ Modify `/entity-creation` to:
 2. Auto-generate `stage_id` UUIDs for all 12 stages
 3. Create `stage_index.json` in `stage_N_00_stage_registry/`
 
+<!-- section_id: "6e1715d8-a8b3-4b21-91f3-144c4e326705" -->
 ### Phase 5: Migrate Existing Pointers
 
 Create `migrate-pointers.sh` that:
@@ -483,14 +560,17 @@ Create `migrate-pointers.sh` that:
    c. Optionally remove the old `canonical_entity:` field (or keep for readability)
 3. Same for `canonical_stage:` → `canonical_stage_id:` + `canonical_stage_name:`
 
+<!-- section_id: "a18f60bb-666b-4826-9f6f-52d07d7f6557" -->
 ### Phase 6: Run agnostic-sync.sh
 
 Regenerate all CLAUDE.md files so they include the `entity_id` from 0AGNOSTIC.md.
 
 ---
 
+<!-- section_id: "6aefb236-5df6-464c-847c-8ea07b672542" -->
 ## 6. Impact on Existing Tools
 
+<!-- section_id: "541f4984-5e96-4de6-9659-78efd356b9a0" -->
 ### pointer-sync.sh
 
 | Component | Change |
@@ -501,6 +581,7 @@ Regenerate all CLAUDE.md files so they include the `entity_id` from 0AGNOSTIC.md
 | New flag: `--rebuild-index` | Rebuild `.uuid-index.json` |
 | Output | Show UUID in verbose mode, deprecation warnings for name-based |
 
+<!-- section_id: "1c1e560c-df18-40ad-a3e7-ec20139aa4dd" -->
 ### entity-creation skill (SKILL.md)
 
 | Component | Change |
@@ -509,6 +590,7 @@ Regenerate all CLAUDE.md files so they include the `entity_id` from 0AGNOSTIC.md
 | Stage creation loop | Generate UUID per stage, insert into stage 0AGNOSTIC.md |
 | Stage registry | Create `stage_index.json` with all stage UUIDs |
 
+<!-- section_id: "5b2dca89-dc85-4eea-8a46-174ab061e7f6" -->
 ### agnostic-sync.sh
 
 | Component | Change |
@@ -516,6 +598,7 @@ Regenerate all CLAUDE.md files so they include the `entity_id` from 0AGNOSTIC.md
 | CLAUDE.md generation | Pass through `entity_id` from 0AGNOSTIC.md to generated files |
 | No other changes needed | entity_id is just another field in the Identity section |
 
+<!-- section_id: "4d3414a0-f5e0-4785-b535-add370af60f1" -->
 ### entity_structure.md (canonical reference)
 
 | Component | Change |
@@ -527,26 +610,31 @@ Regenerate all CLAUDE.md files so they include the `entity_id` from 0AGNOSTIC.md
 
 ---
 
+<!-- section_id: "9f7c0248-cc5d-46ae-93d9-e9b290114b4d" -->
 ## 7. Edge Cases
 
+<!-- section_id: "cc1c4cde-6971-43da-887e-92f96c7ce775" -->
 ### 7.1 Duplicate Entity Names
 
 **Problem**: Two entities named `layer_1_feature_auth` in different locations.
 **Before (name-based)**: `find -type d -name` returns first match — ambiguous.
 **After (UUID-based)**: Each has a unique UUID. No ambiguity. Pointers reference the exact entity they intend.
 
+<!-- section_id: "f2512263-3a4c-42e2-a83b-f25589d0bc47" -->
 ### 7.2 Cross-Layer References
 
 **Problem**: A layer 1 pointer references a layer 0 entity. Layer 0 entity gets renamed.
 **Before**: Pointer breaks silently.
 **After**: UUID doesn't change. Pointer still resolves.
 
+<!-- section_id: "a4d0a655-89de-4d56-b815-3f6521ca2be2" -->
 ### 7.3 Orphaned UUIDs
 
 **Problem**: An entity is deleted but pointers still reference its UUID.
 **Behavior**: Same as today — pointer reports BROKEN. The UUID just makes it clearer which entity was intended (the UUID can be searched in git history).
 **Mitigation**: `pointer-sync.sh --validate` already catches broken pointers.
 
+<!-- section_id: "b6e8c7f8-a4f7-461c-b4c6-11015a6db41b" -->
 ### 7.4 Subpath Changes
 
 **Problem**: Files within a stage are renamed/moved.
@@ -554,10 +642,12 @@ Regenerate all CLAUDE.md files so they include the `entity_id` from 0AGNOSTIC.md
 **Fallback**: `canonical_subpath` is kept as a display-only field (like `canonical_entity_name`). If no `canonical_resource_id` is present, subpath resolution falls back to name-based.
 **Principle**: Every referenceable thing gets an ID — same as primary keys in a database. This eliminates the entire class of rename-breaks-reference problems.
 
+<!-- section_id: "4d78ae91-d6a9-491b-99c9-3b8857917ef5" -->
 ### 7.5 UUID Collision
 
 **Probability**: UUID v4 has 122 random bits. Collision probability with 1000 entities: ~2.7 × 10^-31. Negligible.
 
+<!-- section_id: "e0f8689a-a31c-4b55-9e5e-d33f380d1e8e" -->
 ### 7.6 Merging Entities
 
 **Problem**: Two entities are merged into one. Which UUID survives?
@@ -570,6 +660,7 @@ previous_ids:
   - "absorbed-uuid-2"
 ```
 
+<!-- section_id: "ada77794-1c84-41c6-a452-f714212fc867" -->
 ### 7.7 Stage Without 0AGNOSTIC.md
 
 **Problem**: Scaffolded stages don't have `0AGNOSTIC.md` yet.
@@ -577,8 +668,10 @@ previous_ids:
 
 ---
 
+<!-- section_id: "62ff95cb-e568-4bdb-9277-934e4008b5e3" -->
 ## 8. Before/After Examples
 
+<!-- section_id: "f99c9b15-d9d3-412e-b7c8-b97ed6f07385" -->
 ### Example 1: Simple Entity Pointer
 
 **Before (name-based)**:
@@ -605,6 +698,7 @@ canonical_subpath: "outputs/by_topic/architecture/context_chain_architecture.md"
 
 **What happens on rename**: Entity renamed to `layer_2_subx2_feature_chain_system`. The `canonical_entity_name` becomes stale but `canonical_entity_id` still resolves correctly. A future `pointer-sync.sh` run can optionally update the display name.
 
+<!-- section_id: "48c356f6-abeb-45af-b08b-ca76e5299de3" -->
 ### Example 2: Entity 0AGNOSTIC.md Identity Section
 
 **Before**:
@@ -629,6 +723,7 @@ You are the **Context Chain System Manager** at **Layer 2** (Sub-Feature).
 - **Parent**: `../../../0AGNOSTIC.md`
 ```
 
+<!-- section_id: "5d6f0175-b3e8-463b-8b56-22d850f3e031" -->
 ### Example 3: Stage 0AGNOSTIC.md Identity Section
 
 **Before**:
@@ -647,6 +742,7 @@ stage_id: "44444444-aaaa-4bbb-cccc-dddddddddddd"
 You are the **Stage 04 (Design)** agent for the Context Chain System.
 ```
 
+<!-- section_id: "14aa0d1a-a78f-4f14-a9a6-78e289df2e60" -->
 ### Example 4: Stage Registry (stage_index.json)
 
 **New file** at `stage_2_00_stage_registry/stage_index.json`:
@@ -673,6 +769,7 @@ You are the **Stage 04 (Design)** agent for the Context Chain System.
 
 ---
 
+<!-- section_id: "95a97c2e-5ce7-4456-b7e1-5cdaf1bb4a6a" -->
 ## 9. Implementation Priority
 
 | Phase | What | Effort | Risk | Prerequisite |
@@ -690,6 +787,7 @@ You are the **Stage 04 (Design)** agent for the Context Chain System.
 
 ---
 
+<!-- section_id: "17d0c1fa-1b74-4122-a07d-54dccb785f5c" -->
 ## 10. Open Questions
 
 1. **Should `canonical_entity` (old field) be removed or kept?** Recommendation: keep during migration, remove after all pointers are migrated.
@@ -701,12 +799,15 @@ You are the **Stage 04 (Design)** agent for the Context Chain System.
 
 ---
 
+<!-- section_id: "9c30a471-4b85-4162-a432-0147b7aa33ca" -->
 ## 11. Addendum: Universal Resource IDs (Expanded Scope)
 
+<!-- section_id: "8343d6aa-0968-4b0c-912d-2fd969a3d2a0" -->
 ### Rationale
 
 The original design covers entities and stages. However, **anything that can be pointed to or referenced** should have a stable ID. This includes `.0agnostic/` resources that participate in the deduplication pattern (pointer files redirect to canonical locations). When a knowledge doc, rule, or protocol is renamed, pointers to it break — the same problem as entity renames.
 
+<!-- section_id: "0a56d48e-cbf5-4e51-bed0-ad4d5d6ae6c0" -->
 ### Resource Types That Get IDs
 
 | Resource Type | ID Field | Where It Lives | Example |
@@ -719,6 +820,7 @@ The original design covers entities and stages. However, **anything that can be 
 | **Skill** | `resource_id` | YAML frontmatter in `SKILL.md` | `resource_id: "s1s2s3s4-..."` |
 | **Output file** | `resource_id` | YAML frontmatter at top of output `.md` | `resource_id: "o1o2o3o4-..."` |
 
+<!-- section_id: "c28e91e4-a7a3-414e-b17f-9f38348ab676" -->
 ### Resource ID Format
 
 All resources use the same `resource_id` field name (unified, not type-specific) with UUID v4:
@@ -733,6 +835,7 @@ resource_name: "pointer_sync_knowledge"
 ...
 ```
 
+<!-- section_id: "68a2de07-52f6-4946-808e-86cf1b8a408a" -->
 ### Updated Pointer Format (Full)
 
 Pointers can now reference any resource by ID:
@@ -752,6 +855,7 @@ canonical_resource_name: "pointer_sync_knowledge"
 
 **Resolution order**: `canonical_resource_id` (if present, resolves directly to the file) → `canonical_entity_id` + `canonical_stage_id` + `canonical_subpath` (composed path) → name-based fallback.
 
+<!-- section_id: "335339bf-a6aa-47d0-b2cd-cdffb7561396" -->
 ### Where Files Get IDs — Every File
 
 ```
@@ -784,6 +888,7 @@ canonical_resource_name: "pointer_sync_knowledge"
 └── layer_2_orchestrator.integration.md   ← derived_from (source file_id)
 ```
 
+<!-- section_id: "36824e47-b789-4aa2-ab08-428aba346ad5" -->
 ### Resource Registry
 
 Each entity's `.0agnostic/` gets a `resource_index.json`:
@@ -808,6 +913,7 @@ Each entity's `.0agnostic/` gets a `resource_index.json`:
 }
 ```
 
+<!-- section_id: "50fdf838-d34d-4db6-9e69-3e0737e56b36" -->
 ### Universal File IDs — Every File Gets a UUID
 
 **Design principle**: Every file in the AI system gets an ID. No exceptions. This eliminates ambiguity ("does this file have an ID?"), future-proofs against any file becoming a reference target, and enables stable cross-tool addressing.
@@ -874,6 +980,7 @@ JSON files get a `file_id` at the root level:
 }
 ```
 
+<!-- section_id: "547b2643-a42a-4f97-af75-b4e868d420a5" -->
 ### Migration Impact
 
 The Phase 1-6 migration plan expands to include:
@@ -886,10 +993,12 @@ The Phase 1-6 migration plan expands to include:
 
 ---
 
+<!-- section_id: "8c3ee180-d1cd-4f03-80f9-51d7483d2444" -->
 ## 12. Database Paradigm Analysis
 
 The layer-stage hierarchy is functionally a **filesystem-backed database**. Comparing against all major database paradigms reveals which patterns we're using and validates the UUID design.
 
+<!-- section_id: "e18766d5-c1d4-4efb-84a8-f9013b4dfa1c" -->
 ### Similarity Ranking
 
 | Rank | Database Type | Overlap | Why |
@@ -901,6 +1010,7 @@ The layer-stage hierarchy is functionally a **filesystem-backed database**. Comp
 | 5 | **Key-Value** (Redis) | Low | UUID index is a key-value lookup (one component) |
 | 6 | **Relational DB** (PostgreSQL) | Lowest | Normalization would destroy self-contained design |
 
+<!-- section_id: "5084e850-9e93-4a74-af4e-e9fabde179f9" -->
 ### Key Document DB Parallels
 
 | Document DB Concept | Layer-Stage Equivalent |
@@ -914,6 +1024,7 @@ The layer-stage hierarchy is functionally a **filesystem-backed database**. Comp
 | **Schema / validation** | `entity_structure.md` |
 | **Materialized view** | `CLAUDE.md` (auto-generated from `0AGNOSTIC.md`) |
 
+<!-- section_id: "fe4a9344-718d-4f4c-8963-296267250694" -->
 ### Why Document DB Wins Over Hierarchical DB
 
 Both have high overlap, but the **self-contained entity** pattern is the most defining characteristic. Hierarchical DBs organize by tree structure (which we also do) but don't emphasize data locality — each entity carrying its own resources, indexes, and identity is fundamentally document-oriented. Hierarchical DBs also lack cross-tree references (our pointer files link across branches).
@@ -922,8 +1033,10 @@ Full research: `../../../stage_3_02_research/outputs/uuid_and_database_patterns_
 
 ---
 
+<!-- section_id: "d87fd77e-a2c1-4183-8ddd-c49027313d50" -->
 ## 13. Reference Integrity
 
+<!-- section_id: "72c170a0-823b-42dc-b421-5474253f359a" -->
 ### 13.1 Dangling References
 
 A **dangling reference** occurs when a pointer file references a UUID that no longer exists (entity deleted, resource removed).
@@ -939,6 +1052,7 @@ A **dangling reference** occurs when a pointer file references a UUID that no lo
 - BROKEN pointers fall back to name-based resolution (if `canonical_entity_name` still matches)
 - If name-based also fails → pointer is truly broken, requires manual fix
 
+<!-- section_id: "80f550db-7d71-4743-beca-91fe8d159ee4" -->
 ### 13.2 Cascading Operations
 
 **Policy**: No automatic cascading deletes. Deleting an entity does NOT automatically delete pointers to it.
@@ -951,6 +1065,7 @@ A **dangling reference** occurs when a pointer file references a UUID that no lo
 3. After grace period (or explicit confirmation), physically delete the entity directory
 4. Run `--rebuild-index` to remove from UUID index
 
+<!-- section_id: "6ed07f38-747f-45c0-b695-cec76251aca2" -->
 ### 13.3 Circular References
 
 **Policy**: Circular references are **allowed** but detectable.
@@ -961,6 +1076,7 @@ A **dangling reference** occurs when a pointer file references a UUID that no lo
 
 **When cycles matter**: If a future tool needs to traverse references recursively (e.g., "find all transitive dependencies"), it must implement cycle detection with a visited set to avoid infinite loops.
 
+<!-- section_id: "86ebb16e-72c7-4260-9c97-fc407537a4df" -->
 ### 13.4 Orphaned UUIDs
 
 An **orphaned UUID** is an entry in the UUID index that points to a path that no longer exists.
@@ -974,6 +1090,7 @@ An **orphaned UUID** is an entry in the UUID index that points to a path that no
 
 **Recovery**: `--gc` removes orphaned entries. `--rebuild-index` is the nuclear option — rebuilds from scratch.
 
+<!-- section_id: "82be01e7-0632-423e-a319-e23db40b829b" -->
 ### 13.5 Duplicate UUIDs
 
 Two entities/resources should never share the same UUID. UUID v4 collision probability is near-zero, but copy-paste errors can create duplicates.
@@ -984,8 +1101,10 @@ Two entities/resources should never share the same UUID. UUID v4 collision proba
 
 ---
 
+<!-- section_id: "ef591e6b-01cc-464e-a9c8-1d9a2307efc0" -->
 ## 14. Failure Modes & Recovery
 
+<!-- section_id: "42a8aa8d-3184-46d7-a523-1d0ce15ebd2d" -->
 ### 14.1 Index Corruption
 
 | Failure | Cause | Detection | Recovery |
@@ -997,6 +1116,7 @@ Two entities/resources should never share the same UUID. UUID v4 collision proba
 
 **Recovery priority**: Always rebuild from local indexes (authoritative) → root index (derived). Never rebuild local from root.
 
+<!-- section_id: "a257e4ec-e5ad-4f9a-ae3a-cde5b3ba06d1" -->
 ### 14.2 Atomic Write Protocol
 
 All index file writes MUST follow this protocol:
@@ -1015,6 +1135,7 @@ mv "$temp_file" "$index_file"
 
 This ensures the index file is always either the old version or the new version — never a partial write.
 
+<!-- section_id: "2644220a-ee32-4ddb-8cef-c6af6d76991e" -->
 ### 14.3 Concurrent Access
 
 **Problem**: Multiple AI agents may run `pointer-sync.sh` or `--rebuild-index` simultaneously.
@@ -1044,6 +1165,7 @@ rm -rf "$lockfile"
 
 **Why `mkdir`**: `mkdir` is atomic on all filesystems — it either succeeds or fails, never creates a partial lock.
 
+<!-- section_id: "001da772-75c1-4314-94fe-8ab4cc59f431" -->
 ### 14.4 Materialized View Staleness
 
 **Problem**: `0AGNOSTIC.md` is edited but `agnostic-sync.sh` is not run → `CLAUDE.md` is stale.
@@ -1057,6 +1179,7 @@ A validation tool can compare the stored hash against the current `0AGNOSTIC.md`
 
 **Prevention**: Git hooks can run `agnostic-sync.sh` on commit if any `0AGNOSTIC.md` file changed.
 
+<!-- section_id: "11db3a39-11bd-42a7-b9a8-fab733ca7ea6" -->
 ### 14.5 Git Branch Merge Conflicts
 
 **Scenario**: Branch A adds entity X with UUID `aaa`. Branch B deletes entity Y with UUID `bbb`. Branch A has a pointer to entity Y. On merge:
@@ -1078,6 +1201,7 @@ pointer-sync.sh --rebuild-index
 pointer-sync.sh --validate
 ```
 
+<!-- section_id: "79b1cf09-0c80-4309-8305-d8dea1b672d4" -->
 ### 14.6 Performance at Scale
 
 | Scale | Entity Count | UUID Count | Index Size | Rebuild Time |
@@ -1093,6 +1217,7 @@ pointer-sync.sh --validate
 - **Binary index format** (future): msgpack or protobuf instead of JSON if parsing becomes bottleneck
 - **Parallel scanning**: Scan multiple entity directories concurrently during rebuild
 
+<!-- section_id: "11e67891-17da-46d6-80d7-2b9c862a4090" -->
 ### 14.7 Observability
 
 All UUID operations should produce structured log output:
@@ -1110,6 +1235,7 @@ This enables:
 - Tracking index rebuild frequency and duration
 - Detecting patterns (frequently broken pointers → systemic issue)
 
+<!-- section_id: "d7a762ed-828a-41f6-92b5-c3aa2494f1d1" -->
 ### 14.8 Chaos Testing
 
 Recommended chaos tests for the UUID system:
@@ -1125,6 +1251,7 @@ Recommended chaos tests for the UUID system:
 
 ---
 
+<!-- section_id: "3fe8772e-1285-4d36-8d52-2c42396ebf03" -->
 ## Sources
 
 - Research: `../../../stage_3_02_research/outputs/rename_propagation_research.md` — evaluation of 7 rename propagation approaches

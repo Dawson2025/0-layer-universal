@@ -5,14 +5,17 @@ resource_name: "directional_scope_boundaries"
 ---
 # Design Decision: Directional Scope Boundary Framework
 
+<!-- section_id: "9b1d14e3-5b21-402c-9e46-20f147b5f0a8" -->
 ## Decision
 
 Expand the scope boundary decision framework (Principle 8) from a simple "do it yourself / delegate / instantiate" choice into a three-step process: (1) identify direction, (2) decide how to handle, (3) communicate per direction. Add explicit support for multi-location work that spans multiple layers, stages, or entities simultaneously.
 
+<!-- section_id: "510bc9b5-41ec-4dce-8fe1-08c0a6a47bd7" -->
 ## Status
 
 **Decided** — 2026-02-26
 
+<!-- section_id: "d9ca8f30-08c7-4799-9b9a-d4f9af29ec80" -->
 ## Context
 
 The original Principle 8 and Scope Boundary Rule defined three options (do it yourself, delegate, instantiate) and examples for stage and layer boundaries. But they lacked:
@@ -24,8 +27,10 @@ The original Principle 8 and Scope Boundary Rule defined three options (do it yo
 
 This gap was identified when analyzing what agents truly need in their context: the minimal context model says "compact neighbor interfaces," but agents also need the traversal framework itself.
 
+<!-- section_id: "f9f1acab-3a88-497b-897c-e5d87bfa098e" -->
 ## The Design
 
+<!-- section_id: "cb02cf46-648c-49fa-80fa-0db4aca1484c" -->
 ### Three-Step Scope Decision
 
 1. **Identify direction**: Up (parent/ancestor), down (child/descendant), left (earlier stage), right (later stage), sideways (sibling entity), multi-location (spans several)
@@ -40,6 +45,7 @@ This gap was identified when analyzing what agents truly need in their context: 
    - Multi-location → escalate to nearest common ancestor
    - Did it yourself → document all out-of-scope changes
 
+<!-- section_id: "1bc07c06-1b4b-45f3-8801-1c3d6765efe3" -->
 ### Multi-Location Coordination
 
 The key question: **who has scope to see all affected locations?**
@@ -50,6 +56,7 @@ The key question: **who has scope to see all affected locations?**
 
 This is recursive — escalate until scope covers all locations, then that manager delegates to individual agents at each location.
 
+<!-- section_id: "22b2db04-aa3f-4359-871d-cb58bb4d8603" -->
 ### Where This Lives
 
 | Content | Where | How loaded |
@@ -60,26 +67,31 @@ This is recursive — escalate until scope covers all locations, then that manag
 
 This separation confirms the minimal context model: the framework is loaded on-demand, the positional awareness is compact STATIC, and routing is delegated to managers.
 
+<!-- section_id: "8a1dcaba-c623-4dfb-9870-dc06e1d4b94d" -->
 ## Alternatives Considered
 
+<!-- section_id: "819af537-520d-4df5-89f8-98ba0da52117" -->
 ### Every Agent Carries Full Hierarchy Map
 
 Give every agent a complete map of the entire entity tree with all agents, their scopes, and routing paths.
 
 **Rejected because**: Violates minimal context. Most of the map is irrelevant to any single agent. The relay pattern (ask your parent, who asks their parent) achieves the same routing without pre-loading the full map.
 
+<!-- section_id: "da028221-b254-482a-9d9e-0c1594c4fa52" -->
 ### Direction-Agnostic Decision (Status Quo)
 
 Keep the original three-option framework without directional awareness.
 
 **Rejected because**: Agents were making scope decisions without knowing the right communication method. Escalating up requires a stage report; delegating down requires spawning an agent. Without directional awareness, agents used the wrong communication method.
 
+<!-- section_id: "81b4ef35-65e9-483e-a1f2-ef0c0c413274" -->
 ### Separate Rules Per Direction
 
 Create individual rules for up-traversal, down-traversal, left/right-traversal, etc.
 
 **Rejected because**: The decision framework is the same regardless of direction — only the communication method differs. A single rule with a direction table is cleaner than 5 separate rules.
 
+<!-- section_id: "72b57d4d-3061-4495-a56e-069fb37f446d" -->
 ## Trade-offs Accepted
 
 1. **Slightly more complex rule**: The 3-step process is more to learn than the old 3-option choice. Justified because the old rule was underspecified — agents didn't know HOW to communicate their decisions.
@@ -88,6 +100,7 @@ Create individual rules for up-traversal, down-traversal, left/right-traversal, 
 
 3. **Multi-location still requires judgment**: "Escalate to nearest common ancestor" is a pattern, not a mechanical rule. Agents must judge what counts as multi-location vs. a clean handoff with a side note. This is intentional — mechanical rules for nuanced decisions produce worse outcomes than judgment-based frameworks.
 
+<!-- section_id: "29db9e42-f7ae-4505-ba22-8ae3f916512a" -->
 ## Cross-Stage Traceability
 
 | Stage | Connection |
@@ -98,6 +111,7 @@ Create individual rules for up-traversal, down-traversal, left/right-traversal, 
 | Stage 02 (Research) | `multi_agent_context_patterns/` — framework communication patterns validate relay model |
 | Stage 06 (Development) | Principle 8 (expanded), Scope Boundary Rule (expanded) — promoted universal artifacts |
 
+<!-- section_id: "97700401-bbae-4b67-b40e-9fbd50cee316" -->
 ## Related Decisions
 
 - **Minimal context model** — directional framework is on-demand infrastructure, not STATIC

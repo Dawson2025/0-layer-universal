@@ -10,6 +10,7 @@ resource_name: "daemon_persistence_findings"
 
 ---
 
+<!-- section_id: "590f837f-f3b0-4645-9021-2a7f6840b808" -->
 ## Problem Statement
 
 After power-off/power-on restart:
@@ -22,8 +23,10 @@ After power-off/power-on restart:
 
 ---
 
+<!-- section_id: "631aee94-39b7-40f3-b8a3-7260403219ff" -->
 ## Root Cause Analysis
 
+<!-- section_id: "a35d9a65-e13e-4119-9131-751a4fe8db69" -->
 ### Current Implementation (Existing)
 
 **Systemd-based keepalive approach**:
@@ -31,6 +34,7 @@ After power-off/power-on restart:
 - `gsd-keepalive.service` — attempts to manually restart dead daemons
 - Problem: Services fail with `Cannot open display:` even when display IS ready
 
+<!-- section_id: "d38ff71a-a52e-4e86-9826-d5956d690ff7" -->
 ### Why Manual Restart Fails
 
 The GNOME SettingsDaemon services are marked as **"static"** units:
@@ -48,6 +52,7 @@ This means:
    - Missing session manager registration
    - Missing proper environment setup that only gnome-session provides
 
+<!-- section_id: "7a7d48e9-5159-4292-a5be-5191cfa4b32a" -->
 ### Service Startup Flow (Current Broken State)
 
 ```
@@ -70,8 +75,10 @@ User logs in to see broken keybindings
 
 ---
 
+<!-- section_id: "a90235dd-8617-48ad-87c6-706610ee48dc" -->
 ## What We've Built (Phase 1)
 
+<!-- section_id: "4117e731-0611-4c98-92e8-2cd5c1d8e289" -->
 ### 1. Display Readiness Detection ✓
 
 **File**: `/home/dawson/.local/bin/wait-for-display.sh`
@@ -85,6 +92,7 @@ Checks for actual display readiness:
 
 **Result**: Successfully detects when display is ready (waited 0s = already available)
 
+<!-- section_id: "0ae353c6-f9d6-4e20-a21c-0545fa4ccab6" -->
 ### 2. Graphical Session Ready Target ✓
 
 **Files**:
@@ -99,6 +107,7 @@ Checks for actual display readiness:
 
 **Result**: Clean systemd-native approach to signal display readiness
 
+<!-- section_id: "cdab91e1-f68c-4b68-8f3d-09b38e3e9228" -->
 ### 3. Enhanced Keepalive Timers ✓
 
 **Files**:
@@ -110,6 +119,7 @@ Checks for actual display readiness:
 
 ---
 
+<!-- section_id: "da35fa59-39b6-4fa1-b72a-d254ec70e0ab" -->
 ## The Core Problem: Manual Daemon Restart ✗
 
 When we try to restart daemons from a systemd service:
@@ -135,10 +145,12 @@ Display detection works, but daemon start still fails.
 
 ---
 
+<!-- section_id: "46a18d72-a1be-43fe-b31c-fc56392f5154" -->
 ## Next Phase: Three Parallel Solutions
 
 To fix daemon persistence after restart, we need to work **with gnome-session**, not around it.
 
+<!-- section_id: "2b3771bb-5aaa-44bb-b0ab-46847abfa707" -->
 ### Solution 1: Fix gnome-session Service Startup Order
 Delay gnome-session's daemon startup until display is confirmed ready.
 
@@ -150,6 +162,7 @@ Delay gnome-session's daemon startup until display is confirmed ready.
 **Pros**: Fixes root cause, clean systemd ordering
 **Cons**: Requires system service modifications
 
+<!-- section_id: "92d78062-76f2-4799-aee0-e8177fae48b4" -->
 ### Solution 2: Post-Login Hook
 Create a script that runs immediately after login and checks daemon status.
 
@@ -161,6 +174,7 @@ Create a script that runs immediately after login and checks daemon status.
 **Pros**: Works within existing gnome-session framework
 **Cons**: Small delay before daemon restart on login
 
+<!-- section_id: "c73057a8-aa34-4f4e-9052-a30b41c43f7c" -->
 ### Solution 3: Re-Login Trigger
 Detect broken keybindings on startup and guide user to re-login.
 
@@ -174,6 +188,7 @@ Detect broken keybindings on startup and guide user to re-login.
 
 ---
 
+<!-- section_id: "abc2f2a1-9eb9-4081-a8f4-5f00468c3421" -->
 ## Testing Plan
 
 See: `stage_0_06_testing/design/daemon_persistence_test_suite.md`
@@ -185,6 +200,7 @@ Each solution will be tested:
 
 ---
 
+<!-- section_id: "108203a2-ad94-4655-a40f-bfd1a8c901f8" -->
 ## Files Created
 
 **Phase 1 (Detection)**:
@@ -196,6 +212,7 @@ Each solution will be tested:
 
 ---
 
+<!-- section_id: "5b436021-1a87-4723-9936-486235960eb4" -->
 ## Next Steps
 
 1. Design test suite for three solutions

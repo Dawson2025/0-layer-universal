@@ -5,18 +5,21 @@ resource_name: "agent_context_model"
 ---
 # Topic: Agent Context Model
 
+<!-- section_id: "b30e20f7-d8c9-4f19-9f4a-44a6e9522853" -->
 ## Summary
 
 The agent context model defines what each agent type (entity manager, stage agent, sub-feature agent) knows in its static context vs what it loads on demand. This follows the three-tier knowledge principle: pointers load automatically, distilled knowledge loads on demand, full detail stays within stages.
 
 The critical insight is that managers work at the pointer tier — they read 0AGNOSTIC.md and stage reports. Stage agents load distilled knowledge from .0agnostic/ on demand. Full detail (research outputs, design specs, test results) stays within stage output directories.
 
+<!-- section_id: "17d5adbe-b7a1-4ca9-ba3d-45ce089442b9" -->
 ## Key Points
 
 - Entity managers: static context = 0AGNOSTIC.md, dynamic = stage reports + .0agnostic/ summaries
 - Stage agents: static context = stage 0AGNOSTIC.md, dynamic = parent .0agnostic/ knowledge, sibling stage outputs
 - Context window is finite — every loaded byte must earn its place (Principle 7)
 
+<!-- section_id: "4eedae5e-90a0-46f0-919b-194e1e66cf6c" -->
 ## References
 
 | What | Where |

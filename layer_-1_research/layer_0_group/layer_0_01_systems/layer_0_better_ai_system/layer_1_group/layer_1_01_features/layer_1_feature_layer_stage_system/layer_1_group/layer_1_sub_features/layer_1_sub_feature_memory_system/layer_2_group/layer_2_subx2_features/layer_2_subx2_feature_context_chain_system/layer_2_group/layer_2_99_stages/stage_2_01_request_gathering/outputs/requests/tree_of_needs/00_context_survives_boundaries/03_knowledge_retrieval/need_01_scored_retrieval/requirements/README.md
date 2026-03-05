@@ -8,10 +8,12 @@ resource_name: "README"
 
 **Need**: [Scored Context Retrieval](../README.md)
 
+<!-- section_id: "d6f8b7f8-caa1-4449-9e63-bb13655227be" -->
 ## Overview
 
 These requirements define how agents move from manual file selection ("read this file") to scored retrieval that automatically ranks available context by a composite of recency, relevance, and importance. They cover the scoring function definition with tunable weights, the metadata enrichment that files need to be scoreable, and how scored retrieval integrates into context loading decisions so agents read the top-K most relevant files instead of guessing.
 
+<!-- section_id: "93d41651-7ab3-49ff-a0b8-90ad8e936895" -->
 ## Key Themes
 
 - **Composite Scoring**: A tunable scoring function combines recency, relevance, and importance to rank files across all tiers -- knowledge files, stage outputs, and episodic notes alike

@@ -12,12 +12,14 @@ resource_name: "README"
 
 ---
 
+<!-- section_id: "5ef827f8-7e61-4909-9db6-1463de4f1da8" -->
 ## Definition
 
 Each agent type (manager, stage agent, sub-feature agent) has a defined context model specifying what is in its static context (always loaded), what is in its dynamic context (loaded on demand), and what it never loads. This prevents context overflow and ensures agents operate within their scope.
 
 ---
 
+<!-- section_id: "6515fa52-c473-4dc2-b663-fb4608bd78a8" -->
 ## Why This Matters
 
 - Without a context model, agents load too much (overflow) or too little (incompetence)
@@ -27,18 +29,21 @@ Each agent type (manager, stage agent, sub-feature agent) has a defined context 
 
 ---
 
+<!-- section_id: "7b56718a-d919-49aa-955a-55f920114a08" -->
 ## Requirements
 
 See [requirements/](./requirements/) for individual requirements.
 
 ---
 
+<!-- section_id: "9d17f012-bd9b-4258-811c-07b2a181d030" -->
 ## User Stories
 
 See [user_stories/](./user_stories/) for individual stories.
 
 ---
 
+<!-- section_id: "9a9be331-ce5b-4bff-8a89-b1241909d9e4" -->
 ## Acceptance Criteria
 
 - [ ] Context model is documented for all three agent types (manager, stage agent, sub-feature agent)
@@ -49,6 +54,7 @@ See [user_stories/](./user_stories/) for individual stories.
 
 ---
 
+<!-- section_id: "0877b714-fd0c-438b-ae2e-a942e875d666" -->
 ## Research References
 
 - Context chain research on static vs dynamic context dimensions

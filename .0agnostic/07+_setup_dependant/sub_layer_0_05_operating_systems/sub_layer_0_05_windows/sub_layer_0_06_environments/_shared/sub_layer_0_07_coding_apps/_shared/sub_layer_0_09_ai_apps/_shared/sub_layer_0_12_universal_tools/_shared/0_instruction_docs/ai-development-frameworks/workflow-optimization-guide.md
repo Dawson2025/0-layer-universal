@@ -6,12 +6,15 @@ resource_name: "workflow-optimization-guide"
 # Workflow Optimization Guide
 *Phase-Based AI Tool Selection for Maximum Productivity*
 
+<!-- section_id: "fed28f98-a058-437c-bbdc-5b1152ac0f14" -->
 ## Overview
 
 This guide provides phase-based recommendations for AI coding assistants, helping you choose the right tool for each stage of your development workflow. The goal is to optimize productivity by using the best tool for each specific task.
 
+<!-- section_id: "b3b3be75-5feb-44eb-b9bb-12ea3382e56f" -->
 ## Development Phase Framework
 
+<!-- section_id: "943de1b2-489e-4542-b0be-dbcb22b32fb6" -->
 ### Phase 1: Design & Ideation
 **Goal**: Transform ideas into concrete specifications
 
@@ -43,6 +46,7 @@ This guide provides phase-based recommendations for AI coding assistants, helpin
 - Needs visual design → V0/Bolt/Lovable
 - Needs structured output → Spec Kit
 
+<!-- section_id: "9b41ecfa-2406-40a6-9931-e2849894d0bc" -->
 ### Phase 2: Prototyping & Validation
 **Goal**: Build quick prototypes to validate ideas
 
@@ -74,6 +78,7 @@ claude-code analyze prototype/
 - Iteration → Cursor
 - Exploration → Copilot
 
+<!-- section_id: "35278846-b255-4155-8ba6-cca7bb8925d6" -->
 ### Phase 3: Frontend Scaffolding
 **Goal**: Build the frontend foundation
 
@@ -105,6 +110,7 @@ claude-code analyze prototype/
 - Complex architecture → Windsurf
 - Standard patterns → Copilot
 
+<!-- section_id: "cedf1797-2cbb-43aa-9301-8f9f907547c2" -->
 ### Phase 4: Core Implementation
 **Goal**: Implement business logic and features
 
@@ -141,6 +147,7 @@ aider - "Add JWT authentication to auth routes"
 - Comprehensive context → Cursor
 - Single functions → Copilot
 
+<!-- section_id: "d985080a-cccb-4658-ad81-b25f8b821578" -->
 ### Phase 5: Refactoring & Optimization
 **Goal**: Improve code quality and performance
 
@@ -179,6 +186,7 @@ windsurf refactor multi-file-changes
 - Complex refactoring → Windsurf
 - Quick fixes → Cursor
 
+<!-- section_id: "529896fa-a417-4a60-ba90-60e4313631b0" -->
 ### Phase 6: Testing & QA
 **Goal**: Ensure code quality and functionality
 
@@ -211,6 +219,7 @@ claude-code analyze:test-coverage
 - Comprehensive testing → Cursor
 - Test strategy → Claude Code
 
+<!-- section_id: "435f7c37-7f71-4c7d-a9bd-9d2acdcfa5a9" -->
 ### Phase 7: DevOps & Cloud Setup
 **Goal**: Configure deployment and infrastructure
 
@@ -243,6 +252,7 @@ aider - "Add AWS S3 configuration to deployment"
 - Architecture → Claude Code
 - Quick changes → Aider
 
+<!-- section_id: "4bf388ba-05eb-48cc-964a-8defec609a06" -->
 ### Phase 8: Deployment & Iteration
 **Goal**: Deploy and iterate on feedback
 
@@ -277,8 +287,10 @@ cursor features/new-feature.ts
 - Complex issues → Windsurf
 - New features → Cursor
 
+<!-- section_id: "64a32688-3f17-40eb-b836-a3c68515e586" -->
 ## Workflow Patterns
 
+<!-- section_id: "a1a6bbe0-5e60-4174-ace3-4573113c59ff" -->
 ### Pattern 1: Solo Developer Fast Track
 
 **Phase 1-2**: Design & Prototype
@@ -296,6 +308,7 @@ cursor features/new-feature.ts
 - Tool: Cursor for deployment config
 - Tool: Aider for production fixes
 
+<!-- section_id: "b046a685-d7a9-4f9f-a00b-2c46c1586239" -->
 ### Pattern 2: Team Collaboration
 
 **Phase 1-2**: Design & Prototype
@@ -312,6 +325,7 @@ cursor features/new-feature.ts
 **Phase 7-8**: Deploy & Iterate
 - Tool: Windsurf for team coordination
 
+<!-- section_id: "1388320d-11e0-4896-adb6-a5caab96f993" -->
 ### Pattern 3: Enterprise Privacy-Focused
 
 **Phase 1-2**: Design & Prototype
@@ -327,6 +341,7 @@ cursor features/new-feature.ts
 **Phase 7-8**: Deploy & Iterate
 - Tool: Aider for infrastructure changes
 
+<!-- section_id: "61426999-5873-43ec-b24e-db8fbc131838" -->
 ## Integration with Spec Kit
 
 Spec Kit provides structure across all phases:
@@ -346,6 +361,7 @@ Spec Kit provides structure across all phases:
 /implement  # Uses your chosen assistant
 ```
 
+<!-- section_id: "4b933795-44cb-4f73-a69f-c6d90b4908d2" -->
 ## Integration with BMAD
 
 BMAD provides team workflow across phases:
@@ -361,6 +377,7 @@ Phase 7: Developer → Deploy
 Phase 8: All agents → Iterate
 ```
 
+<!-- section_id: "04070e0e-18a3-407d-a466-850d5527f902" -->
 ## Quick Reference Matrix
 
 | Phase | Primary Tool | Secondary Tool | Quick Pick |
@@ -374,50 +391,61 @@ Phase 8: All agents → Iterate
 | DevOps | Cursor | Claude Code | Cursor |
 | Deployment | Aider | Windsurf | Aider |
 
+<!-- section_id: "4d4f1df3-7e3a-488a-a90e-2a5b924b1b53" -->
 ## Best Practices by Phase
 
+<!-- section_id: "cd4af7f9-63e0-4df6-a4ae-de22a30e5f91" -->
 ### Design Phase
 - ✅ Start broad, then narrow down
 - ✅ Document decisions
 - ✅ Consider architecture early
 - ✅ Validate with prototypes
 
+<!-- section_id: "c6b3d623-697a-4d13-8c12-41c6b06193fa" -->
 ### Implementation Phase
 - ✅ Follow your specifications
 - ✅ Write tests alongside code
 - ✅ Commit frequently
 - ✅ Review AI suggestions
 
+<!-- section_id: "d3d5c216-84a9-460c-9b5e-3e32530de000" -->
 ### Refactoring Phase
 - ✅ Test before refactoring
 - ✅ Commit at safe points
 - ✅ Measure improvements
 - ✅ Document changes
 
+<!-- section_id: "622f4750-e862-4412-abb1-c355b7d99f72" -->
 ### Deployment Phase
 - ✅ Test in staging first
 - ✅ Monitor post-deployment
 - ✅ Have rollback plan
 - ✅ Gather user feedback
 
+<!-- section_id: "7f393c98-a08a-46ff-adae-e764b3f0b03c" -->
 ## Common Pitfalls
 
+<!-- section_id: "b07f4cb6-7600-4211-bc58-1e0ce090f631" -->
 ### Using Wrong Tool for Phase
 **Problem**: Using prototyping tools for production code
 **Solution**: Match tool to phase requirements
 
+<!-- section_id: "e0139f92-f577-41c4-91da-5f59d705b5f0" -->
 ### Not Validating Assumptions
 **Problem**: Assuming AI suggestions are always correct
 **Solution**: Always test and review
 
+<!-- section_id: "5d8fe4ec-963c-4a5e-a330-1976bc73f70a" -->
 ### Ignoring Feedback
 **Problem**: Not iterating based on user feedback
 **Solution**: Make iteration a core part of workflow
 
+<!-- section_id: "0fbf5932-66de-4884-8c35-38598b580351" -->
 ### Over-engineering
 **Problem**: Using complex tools for simple tasks
 **Solution**: Choose simplest effective tool
 
+<!-- section_id: "d174394a-52ee-4df2-b8a6-b2542edffab5" -->
 ## Success Metrics
 
 Track these metrics across phases:
@@ -427,6 +455,7 @@ Track these metrics across phases:
 - **User Satisfaction**: Are users happy with the product?
 - **Developer Experience**: How productive is the team?
 
+<!-- section_id: "878db0b0-0e61-47d8-95e8-28c5ccda06c8" -->
 ## Conclusion
 
 Optimizing your workflow means using the right AI tool for each development phase. By following this guide:

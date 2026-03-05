@@ -6,12 +6,15 @@ resource_name: "universal-db-version-control-guide"
 # Universal Database Version Control Guide
 *Core Concepts and Practices for All Database Platforms*
 
+<!-- section_id: "d093eb24-5043-47b9-a285-c94e23f6caf1" -->
 ## Overview
 
 This guide covers universal concepts and practices for database version control that apply to all platforms. Whether you're working with PostgreSQL, NoSQL, data warehouses, or ML pipelines, these principles will help you manage database changes effectively.
 
+<!-- section_id: "480131f3-1891-49ba-897f-2d1e09215e23" -->
 ## Core Concepts
 
+<!-- section_id: "13ebdfbe-d01c-4db3-8172-4d00733bf3ca" -->
 ### What is Database Version Control?
 
 Database version control is the practice of managing database schema changes, configuration, and data migrations using version control systems (like Git) and automated migration tools. It treats database changes as code, making them:
@@ -20,6 +23,7 @@ Database version control is the practice of managing database schema changes, co
 - **Reversible**: Changes can be rolled back
 - **Traceable**: History of all changes is maintained
 
+<!-- section_id: "40774c57-1247-4268-91dc-151a07144f6a" -->
 ### Why Version Control Databases?
 
 #### Problems Without Version Control
@@ -38,8 +42,10 @@ Database version control is the practice of managing database schema changes, co
 - Consistent database states
 - Safe testing in isolation
 
+<!-- section_id: "0f1b272b-220d-49c2-aa89-92b70b36fed4" -->
 ## Approaches to Database Version Control
 
+<!-- section_id: "53d52d9b-d9b4-43b4-8a17-e06e6b9a54c4" -->
 ### 1. Migration-Based Approach
 
 **How It Works**: Each database change is captured as a migration file that describes how to transform the database from one state to another.
@@ -73,6 +79,7 @@ CREATE TABLE users (
 - Can accumulate technical debt
 - Requires discipline
 
+<!-- section_id: "39198283-6d86-4fd5-881d-b4232e300524" -->
 ### 2. State-Based Approach
 
 **How It Works**: Maintain a single source of truth (the desired final state) and generate migrations automatically by diffing current state vs desired state.
@@ -109,6 +116,7 @@ tables:
 - Can lose history of change intent
 - May generate unexpected migrations
 
+<!-- section_id: "0e19cdf4-ac23-48b7-a448-094333f85f7d" -->
 ### 3. Hybrid Approach
 
 **How It Works**: Use state-based for schema definition but migration-based for complex or critical changes.
@@ -125,8 +133,10 @@ tables:
 - Simplicity for routine changes
 - Safety for complex changes
 
+<!-- section_id: "e0b7f604-fc05-4c1b-8199-cdf5fac70ff9" -->
 ## Version Control Strategies
 
+<!-- section_id: "8eb909f3-7426-42fa-a09e-69743d399d48" -->
 ### 1. Schema Versioning
 
 Schema versioning tracks structural changes to your database:
@@ -158,6 +168,7 @@ CREATE INDEX idx_users_email ON users(email);
 CREATE TABLE users (...); -- What does this do?
 ```
 
+<!-- section_id: "69db6d24-f260-4088-aece-70aed7a56f4e" -->
 ### 2. Data Versioning
 
 Data versioning tracks data changes:
@@ -182,6 +193,7 @@ ON CONFLICT (email) DO NOTHING;
 -- Better: Separate seed files or dedicated seed commands
 ```
 
+<!-- section_id: "1b3cb2f4-c5f3-4160-bfb4-5ab37393648d" -->
 ### 3. Configuration Versioning
 
 Configuration versioning tracks non-schema, non-data changes:
@@ -208,8 +220,10 @@ service cloud.firestore {
 }
 ```
 
+<!-- section_id: "2d21b2ac-ed7c-4feb-993d-226e2506cf6f" -->
 ## Migration Workflows
 
+<!-- section_id: "d4dcf0dd-43be-49fa-8a7f-682f74be2743" -->
 ### Basic Migration Lifecycle
 
 ```
@@ -230,6 +244,7 @@ service cloud.firestore {
 8. Verify Success
 ```
 
+<!-- section_id: "5f510b30-7f33-4021-9e59-ca02821536fa" -->
 ### Environment Promotion
 
 Typical environment flow:
@@ -255,6 +270,7 @@ Development → Staging → Production
 - Verify results
 - Have rollback ready
 
+<!-- section_id: "cb2188c9-cbb8-456d-9ef4-84b5dfc7c9cb" -->
 ### Rollback Procedures
 
 #### Preventive Measures
@@ -293,8 +309,10 @@ ALTER TABLE users ADD COLUMN status VARCHAR(50);
 SELECT * FROM users WHERE (status = 'active' OR status IS NULL);
 ```
 
+<!-- section_id: "6b99cec7-1b32-4e9b-9893-ea8ba959eb7e" -->
 ## Database Change Patterns
 
+<!-- section_id: "6b647354-228a-4be2-af28-b3b93b4625e4" -->
 ### 1. Safe Changes (No Downtime)
 
 These changes can be made without application downtime:
@@ -305,6 +323,7 @@ These changes can be made without application downtime:
 - Adding new functions
 - Decreasing constraints
 
+<!-- section_id: "2a107710-78a0-4f92-beff-43918f380c4c" -->
 ### 2. Breaking Changes (Require Coordination)
 
 These changes require application coordination:
@@ -314,6 +333,7 @@ These changes require application coordination:
 - Adding NOT NULL constraints (make nullable first)
 - Dropping tables (prevent access first)
 
+<!-- section_id: "fb7f72ca-5a18-48ce-b122-c10d08265f5a" -->
 ### 3. Data Migrations
 
 Moving or transforming data:
@@ -345,8 +365,10 @@ ALTER TABLE users RENAME COLUMN status_new TO status;
 ALTER TABLE users DROP COLUMN status_old;
 ```
 
+<!-- section_id: "a93c999c-d394-4ddf-b485-70b698535a37" -->
 ## Best Practices
 
+<!-- section_id: "b4dcf34c-873b-483e-94f4-8a2be7d3dbf7" -->
 ### 1. Naming Conventions
 
 #### Migration Files
@@ -370,6 +392,7 @@ ALTER TABLE users DROP COLUMN status_old;
 ❌ Bad: "Update db"
 ```
 
+<!-- section_id: "f69cea85-7cd2-4ba3-96d0-4cc9cea0e053" -->
 ### 2. Review Process
 
 #### What to Review
@@ -390,6 +413,7 @@ ALTER TABLE users DROP COLUMN status_old;
 - [ ] Documentation updated
 - [ ] Rollback tested
 
+<!-- section_id: "3a7d9fd8-0bba-47d3-97cf-a54ac58e3ae2" -->
 ### 3. Testing Migrations
 
 #### Unit Testing
@@ -410,6 +434,7 @@ ALTER TABLE users DROP COLUMN status_old;
 - Monitor resource usage
 - Check for locking issues
 
+<!-- section_id: "93929490-5adc-4667-b623-e81bf3c1a2e3" -->
 ### 4. Documentation
 
 #### Migration Comments
@@ -434,8 +459,10 @@ ALTER TABLE users ADD COLUMN email VARCHAR(255) UNIQUE;
 - Added unique constraint on email
 ```
 
+<!-- section_id: "ae5befd6-623d-438c-97a7-9794262d3342" -->
 ## Universal Principles
 
+<!-- section_id: "6b77c956-df52-4efc-8090-5282297b6c03" -->
 ### 1. Immutability
 
 Once a migration is applied, it should never be changed. Instead:
@@ -443,6 +470,7 @@ Once a migration is applied, it should never be changed. Instead:
 - Document the fix clearly
 - Add test coverage
 
+<!-- section_id: "e0923710-a5ea-44e8-9e61-629f920a5560" -->
 ### 2. Idempotency
 
 Migrations should be idempotent when possible:
@@ -457,6 +485,7 @@ ALTER TABLE users ADD COLUMN IF NOT EXISTS email VARCHAR(255);
 CREATE TABLE users (...);
 ```
 
+<!-- section_id: "4921ed1a-de18-4027-a1b6-22d44b91d853" -->
 ### 3. Atomicity
 
 Migrations should be atomic:
@@ -464,6 +493,7 @@ Migrations should be atomic:
 - Failure: No changes applied
 - Use transactions when possible
 
+<!-- section_id: "f1ba9ecc-e300-4e42-ba51-18ea36fc76f2" -->
 ### 4. Reviewability
 
 Migrations should be reviewable:
@@ -472,6 +502,7 @@ Migrations should be reviewable:
 - Links to related issues
 - Examples of usage
 
+<!-- section_id: "32fedd4c-6a9d-4c69-9356-4854a8d29916" -->
 ### 5. Traceability
 
 Track relationships:
@@ -480,8 +511,10 @@ Track relationships:
 - Migration to deployment
 - Migration to rollback
 
+<!-- section_id: "379f9077-1993-4846-956b-85510099d6b1" -->
 ## Common Patterns
 
+<!-- section_id: "d734bfea-ab8e-4dfa-87e2-cc97e7b38ffd" -->
 ### 1. Add New Table
 ```sql
 CREATE TABLE users (
@@ -493,6 +526,7 @@ CREATE TABLE users (
 CREATE INDEX idx_users_email ON users(email);
 ```
 
+<!-- section_id: "58cc3f76-0658-4a8f-aede-1b780609d088" -->
 ### 2. Add Column to Existing Table
 ```sql
 -- Add column
@@ -502,6 +536,7 @@ ALTER TABLE users ADD COLUMN phone VARCHAR(20);
 CREATE INDEX idx_users_phone ON users(phone);
 ```
 
+<!-- section_id: "da26aeca-2a59-4144-9e67-364aef917e4f" -->
 ### 3. Modify Column
 ```sql
 -- Add NOT NULL constraint (two-step)
@@ -512,6 +547,7 @@ ALTER TABLE users DROP COLUMN status;
 ALTER TABLE users RENAME COLUMN status_temp TO status;
 ```
 
+<!-- section_id: "9d708704-9477-4a3b-95de-944853a7c043" -->
 ### 4. Add Foreign Key
 ```sql
 ALTER TABLE orders 
@@ -520,6 +556,7 @@ ALTER TABLE orders
 CREATE INDEX idx_orders_user_id ON orders(user_id);
 ```
 
+<!-- section_id: "1f11101e-bf9a-419c-aa90-2c397ac4eb0a" -->
 ### 5. Data Backfill
 ```sql
 -- Add new column
@@ -533,38 +570,50 @@ UPDATE users SET display_name =
 ALTER TABLE users ALTER COLUMN display_name SET NOT NULL;
 ```
 
+<!-- section_id: "2c4ca138-b285-4c12-b87b-f61ccc3d8809" -->
 ## Platform-Agnostic Guidelines
 
+<!-- section_id: "afd4d772-0bf7-4d26-8ea4-536f2edcdef7" -->
 ### 1. Always Use Version Control
 Store all database changes in Git or similar VCS.
 
+<!-- section_id: "877a3887-d376-4eed-8fbd-1e9858090f99" -->
 ### 2. One Change Per Migration
 Keep migrations focused and atomic.
 
+<!-- section_id: "3e01abfd-277f-4179-a00b-0f9bcce48d49" -->
 ### 3. Include Rollback Procedures
 Always have a way to undo changes.
 
+<!-- section_id: "2fccf5f0-7394-4f8d-b763-63d766efe83f" -->
 ### 4. Test Before Deploy
 Never deploy untested migrations.
 
+<!-- section_id: "201f9f42-967e-43b4-90d5-db9db800ace3" -->
 ### 5. Monitor Execution
 Watch for errors, performance issues, locks.
 
+<!-- section_id: "15cffcde-669c-460c-b9f2-45f07543d3f8" -->
 ### 6. Document Decisions
 Explain why changes are made.
 
+<!-- section_id: "4facea76-f94a-495c-aefa-f0a91905ea97" -->
 ### 7. Review Together
 Get team input on database changes.
 
+<!-- section_id: "2d00355a-d6c2-4d4e-83a3-ec10b8bef44b" -->
 ### 8. Automate Deployment
 Use CI/CD for consistent application.
 
+<!-- section_id: "71a41969-22aa-4d68-bedd-10f602e6afda" -->
 ### 9. Backup Regularly
 Keep backups before significant changes.
 
+<!-- section_id: "34ad94a9-88a2-48d1-83a1-5044fd01239c" -->
 ### 10. Plan for Rollback
 Have rollback procedures ready.
 
+<!-- section_id: "50ce9fb4-5f68-4b1c-a85b-bde762ae8291" -->
 ## Conclusion
 
 Database version control is essential for modern development. By following these universal principles, you can safely manage database changes across any platform or team size.

@@ -7,10 +7,12 @@ resource_name: "CHROME_DEVTOOLS_MCP_SETUP"
 
 This guide documents the setup process for the Chrome DevTools MCP (Model Context Protocol) server for use with Claude Code.
 
+<!-- section_id: "c012c8e2-10ee-4417-9b75-2464f4be35c3" -->
 ## Overview
 
 The Chrome DevTools MCP server provides Chrome-specific debugging and automation capabilities. **Unlike Playwright MCP**, this server requires **actual Google Chrome** to be installed on your system, not just Playwright's Chromium.
 
+<!-- section_id: "f4994dc8-487d-418d-91ca-db8ad914c409" -->
 ## Common Setup Issues
 
 **Before starting setup, check these common issues:**
@@ -31,6 +33,7 @@ The Chrome DevTools MCP server provides Chrome-specific debugging and automation
    - Check: `ps aux | grep chrome-devtools-mcp`
    - Fix: Install Chrome and restart Claude Code
 
+<!-- section_id: "a62819ea-5188-4334-9c3b-39c3be5a9b33" -->
 ## Prerequisites
 
 - **Node.js and npm** installed
@@ -38,6 +41,7 @@ The Chrome DevTools MCP server provides Chrome-specific debugging and automation
 - Claude Code installed
 - WSL2 (if on Windows) or Linux environment
 
+<!-- section_id: "816611d4-57a4-4ae0-9769-373b80e630a1" -->
 ## Key Differences from Playwright MCP
 
 | Feature | Playwright MCP | Chrome DevTools MCP |
@@ -47,8 +51,10 @@ The Chrome DevTools MCP server provides Chrome-specific debugging and automation
 | Use Case | Cross-browser testing, general automation | Chrome-specific debugging, performance analysis |
 | Stability | Very stable | May have connection issues (see Troubleshooting) |
 
+<!-- section_id: "69eb3754-7276-4c69-8e71-3633e4b4b673" -->
 ## Setup Steps
 
+<!-- section_id: "1679b6bd-5f4d-4a5f-97c2-85f7e36f315d" -->
 ### 1. Install Google Chrome (System Installation)
 
 **On Ubuntu/WSL2:**
@@ -68,6 +74,7 @@ google-chrome --version
 
 **⚠️ Important:** Chrome DevTools MCP requires the actual Google Chrome browser, not Playwright's Chromium. Installing Chromium via Playwright (`npx playwright install chromium`) will NOT work for Chrome DevTools MCP.
 
+<!-- section_id: "dcb20720-564c-4998-beda-6ddf19a9fb4d" -->
 ### 2. Create MCP Configuration
 
 Create or edit `.mcp.json` in your project root:
@@ -93,6 +100,7 @@ Create or edit `.mcp.json` in your project root:
 - **Do NOT** include `--browserUrl` unless Chrome is already running with remote debugging
 - Without `--browserUrl`, Chrome DevTools MCP will auto-launch Chrome when needed
 
+<!-- section_id: "1554b961-dd0d-4c75-b997-56df642bfb8c" -->
 ### 3. Verify Chrome Installation
 
 Check that Chrome is accessible:
@@ -108,6 +116,7 @@ google-chrome --version
 ls -la /opt/google/chrome/chrome
 ```
 
+<!-- section_id: "33033edb-53a1-457a-a4d7-52c71234746f" -->
 ### 4. Restart Claude Code
 
 After configuration:
@@ -115,8 +124,10 @@ After configuration:
 2. Restart Claude Code
 3. The Chrome DevTools MCP server should now be available
 
+<!-- section_id: "98ac4de7-512a-42f5-8aec-17d2b7889a73" -->
 ## Troubleshooting
 
+<!-- section_id: "301a59a5-2d03-4844-b387-53d25522d15e" -->
 ### Issue: "Chrome not found" or "Chrome executable not found"
 
 **Error message:**
@@ -166,6 +177,7 @@ google-chrome: command not found
    sudo ln -s $(which google-chrome) /opt/google/chrome/chrome
    ```
 
+<!-- section_id: "7315ef17-14ed-410f-bbaa-4d0355bd5777" -->
 ### Issue: Chrome DevTools MCP closes immediately or disconnects
 
 **Symptom:** The MCP server connects but then immediately closes or disconnects.
@@ -201,6 +213,7 @@ google-chrome: command not found
    ```
    If this fails, Chrome may not be properly configured for headless operation.
 
+<!-- section_id: "9b3a5220-d9d3-4283-ac3a-9f61b5038e59" -->
 ### Issue: "Cannot connect to Chrome DevTools"
 
 **Error message:**
@@ -216,6 +229,7 @@ Error: Cannot connect to Chrome DevTools Protocol
    ```
 3. Try specifying a different port in Chrome DevTools MCP configuration (if supported)
 
+<!-- section_id: "a6c1692d-046c-4cf5-b87c-b1b502b91d3d" -->
 ### Issue: Chrome DevTools MCP connects but cannot use Chrome
 
 **Symptom:** Chrome DevTools MCP server starts and connects to MCP protocol, but operations fail or Chrome DevTools port (9222) is not active.
@@ -263,6 +277,7 @@ Error: Cannot connect to Chrome DevTools Protocol
    google-chrome --version
    ```
 
+<!-- section_id: "f9146d49-8b89-4c6a-9598-9e90e04b2189" -->
 ### Issue: Chrome DevTools MCP not available in Claude Code
 
 **Possible causes:**
@@ -284,14 +299,17 @@ Error: Cannot connect to Chrome DevTools Protocol
 5. Verify Chrome installation (see Step 3 above)
 6. Check Chrome DevTools MCP logs: `tail -50 /tmp/mcp-chrome.log`
 
+<!-- section_id: "4e21117b-aee0-48e1-ab9d-42f8250e8348" -->
 ## When to Use Chrome DevTools MCP vs Playwright MCP
 
+<!-- section_id: "3ab8ba18-1ec7-40a1-99fa-4f921d406c42" -->
 ### Use Chrome DevTools MCP when:
 - You need Chrome-specific debugging features
 - You require performance analysis tools
 - You're debugging Chrome-specific issues
 - You need access to Chrome DevTools Protocol directly
 
+<!-- section_id: "cbc9d32a-962a-4673-998a-b5ebd69b5cbf" -->
 ### Use Playwright MCP when:
 - You need cross-browser testing
 - You want more stable automation
@@ -299,6 +317,7 @@ Error: Cannot connect to Chrome DevTools Protocol
 - You prefer not to install system Chrome
 - **Recommended for most use cases**
 
+<!-- section_id: "6b224a79-b207-4f89-b596-b83174257fa7" -->
 ## Alternative: Use Playwright MCP with Chromium
 
 If Chrome DevTools MCP is causing issues, consider using Playwright MCP instead:
@@ -326,11 +345,13 @@ npx -y playwright@latest install chromium
 
 See `playwright-mcp-setup.md` for complete Playwright MCP setup instructions.
 
+<!-- section_id: "ab9866de-6f02-4cab-8e1d-4d33ec079689" -->
 ## Files Modified
 
 - `.mcp.json` - MCP server configuration
 - System Chrome installation (via package manager)
 
+<!-- section_id: "3c772431-5c86-436d-beec-03c20b6c8940" -->
 ## Next Steps
 
 After setup is complete:

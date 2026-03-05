@@ -9,8 +9,10 @@ resource_name: "configuration.sync-conflict-20260126-102106-IF2WOGZ"
 **System**: Ubuntu 24.04 GNOME
 **Driver**: libinput
 
+<!-- section_id: "a4c33820-e46a-48da-b7c6-16eebd28f0c7" -->
 ## Current Configuration
 
+<!-- section_id: "8916ed81-8bd6-4449-a002-2e5bc56302d0" -->
 ### Base Settings
 ```bash
 # Set base speed to minimum
@@ -21,12 +23,14 @@ xinput set-prop <TRACKPAD_ID> "libinput Accel Speed" -1.0
 xinput set-prop <TRACKPAD_ID> "libinput Accel Profile Enabled" 0, 0, 1
 ```
 
+<!-- section_id: "811af2e9-badd-405c-afdc-f1eef5f24017" -->
 ### Acceleration Curve (7-Zone Piecewise Function)
 ```bash
 xinput set-prop <TRACKPAD_ID> "libinput Accel Custom Motion Points" 0.0 0.0001 0.0001 0.0003 0.0003 0.001 0.001 0.003 0.003 0.01 0.01 0.03 0.03 0.1
 xinput set-prop <TRACKPAD_ID> "libinput Accel Custom Motion Step" 0.05
 ```
 
+<!-- section_id: "d4e84e36-559f-45d7-bcaa-36663eb0fc86" -->
 ## Zone Breakdown
 
 | Zone | Trackpad Velocity Range | Cursor Speed Multiplier | Description |
@@ -39,33 +43,40 @@ xinput set-prop <TRACKPAD_ID> "libinput Accel Custom Motion Step" 0.05
 | 6 | 0.50 - 0.60 | 0.03x | Medium-fast |
 | 7 | 0.60+ | 0.1x | Fast |
 
+<!-- section_id: "706239d4-c613-40f7-a8c2-2fe86082143b" -->
 ## Design Rationale
 
+<!-- section_id: "2d5e65db-45cb-4ae2-bf27-fb8f32127029" -->
 ### Why Piecewise Function?
 - **Predictable behavior**: Each zone maintains consistent speed
 - **Intentional transitions**: Harder to accidentally jump to fast zones
 - **Precision control**: Zone 1 (0.0001x) allows pixel-perfect cursor placement
 
+<!-- section_id: "6a94dc23-3305-449a-a9ea-d29595bf2347" -->
 ### Why ~3x Progression?
 - 2x jumps (0.0001 → 0.0002) feel too gradual
 - 10x jumps (0.001 → 0.01) feel too aggressive
 - ~3x jumps (0.0001 → 0.0003 → 0.001 → 0.003) provide natural-feeling acceleration
 
+<!-- section_id: "d86a71a6-3f4b-47b1-9bec-d7e963f2504c" -->
 ### Why 7 Zones?
 - Fewer zones (3-5): Too jumpy, not enough granularity
 - More zones (10+): Diminishing returns, harder to feel distinct zones
 - 7 zones: Optimal balance of smoothness and distinct behavior
 
+<!-- section_id: "36aca155-986c-4dc5-9765-2f577e01c161" -->
 ### Why Step Size 0.05?
 - Small step (0.002): Zones transition too quickly, hard to stay in slow zones
 - Large step (0.05): Spreads zones across wide velocity range (~0.7 units total)
 - Prevents accidental fast zone activation during medium movements
 
+<!-- section_id: "1a839c01-5ade-4cc7-b161-1093beeb1748" -->
 ### Why Maximum 0.1x?
 - Higher values (0.5x, 1.0x) made even fast movements feel uncontrollable
 - 0.1x provides good speed for fast movements while maintaining control
 - Combined with base speed -1.0, this is the optimal balance
 
+<!-- section_id: "c7c546d6-0f15-4b24-85d0-896b8b1a891a" -->
 ## Key Parameters
 
 | Parameter | Value | Purpose |
@@ -77,32 +88,38 @@ xinput set-prop <TRACKPAD_ID> "libinput Accel Custom Motion Step" 0.05
 | Maximum Multiplier | 0.1x | Fast movement |
 | Progression Factor | ~3x | Multiplier increase between zones |
 
+<!-- section_id: "a2caf395-c7f7-4a11-a2b6-3b56d3e0f1b1" -->
 ## Adjustment Guidelines
 
+<!-- section_id: "4d58309d-9c69-44a3-b4db-82fe8d743c77" -->
 ### To make slow movements even slower
 ```bash
 # Reduce first zone values
 xinput set-prop <TRACKPAD_ID> "libinput Accel Custom Motion Points" 0.0 0.00005 0.00005 0.0003 0.0003 0.001 0.001 0.003 0.003 0.01 0.01 0.03 0.03 0.1
 ```
 
+<!-- section_id: "74b54f30-bc8c-48e1-8baa-0a0690eeaabf" -->
 ### To make fast movements faster
 ```bash
 # Increase last zone value
 xinput set-prop <TRACKPAD_ID> "libinput Accel Custom Motion Points" 0.0 0.0001 0.0001 0.0003 0.0003 0.001 0.001 0.003 0.003 0.01 0.01 0.03 0.03 0.15
 ```
 
+<!-- section_id: "487d5ded-6929-49fa-8ede-b4daf1f5396a" -->
 ### To require faster physical movement for zone transitions
 ```bash
 # Increase step size
 xinput set-prop <TRACKPAD_ID> "libinput Accel Custom Motion Step" 0.1
 ```
 
+<!-- section_id: "b45781ec-a6a7-4271-b38b-60c326a068f2" -->
 ### To make transitions smoother (more gradual)
 ```bash
 # Decrease step size
 xinput set-prop <TRACKPAD_ID> "libinput Accel Custom Motion Step" 0.03
 ```
 
+<!-- section_id: "883bcc0c-7380-48e3-b1ff-1f92f58f63a1" -->
 ## Related Documentation
 - [Scroll Configuration](../scroll/configuration.md)
 - [Full Trackpad Setup Guide](/home/dawson/code/setup-hub/docs/ubuntu-trackpad-advanced-config.md)

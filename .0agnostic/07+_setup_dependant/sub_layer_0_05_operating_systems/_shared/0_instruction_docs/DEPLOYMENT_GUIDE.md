@@ -9,6 +9,7 @@ resource_name: "DEPLOYMENT_GUIDE"
 
 ---
 
+<!-- section_id: "ef7fd66d-9cef-4b03-9f12-96a8e6894f95" -->
 ## Quick Deploy
 
 ```bash
@@ -18,8 +19,10 @@ bash scripts/deploy/deploy-production.sh
 
 ---
 
+<!-- section_id: "2cdc0e81-06ea-4a71-b792-3bf908b7120c" -->
 ## Deployment Options
 
+<!-- section_id: "dfa197f9-80c5-4934-aec7-a2fc1922d0f4" -->
 ### Option 1: Simple Production Server (Recommended)
 
 **Best for**: Initial deployment, small-medium traffic
@@ -41,6 +44,7 @@ gunicorn --config gunicorn.conf.py app:app
 
 ---
 
+<!-- section_id: "22cb32db-02ba-40c6-8d56-e8164e2b827d" -->
 ### Option 2: SystemD Service (Recommended for Long-term)
 
 **Best for**: Production servers, automatic startup
@@ -67,6 +71,7 @@ sudo systemctl status lang-trak
 
 ---
 
+<!-- section_id: "8299ab2c-1916-43a5-bbd6-49daefc241fb" -->
 ### Option 3: Development Mode
 
 **Best for**: Testing, development
@@ -80,8 +85,10 @@ PORT=5000 python3 app.py
 
 ---
 
+<!-- section_id: "6a17662d-392f-4ca1-9e72-383b0ed35a92" -->
 ## Pre-Deployment Checklist
 
+<!-- section_id: "c6fb7085-24d1-4809-9c08-299483f54fe2" -->
 ### 1. Environment Configuration
 
 **Create `.env` file**:
@@ -101,6 +108,7 @@ echo "GOOGLE_APPLICATION_CREDENTIALS=config/firebase/firebase-service-account-pr
 
 ---
 
+<!-- section_id: "6a0f2a3e-e554-44a5-977b-982bc23d6e30" -->
 ### 2. Firebase Setup (if using cloud features)
 
 **Service Account**:
@@ -126,6 +134,7 @@ firebase deploy --only firestore:rules --project lang-trak-prod
 
 ---
 
+<!-- section_id: "3a1716f1-cb1e-40a3-8c85-4e4842b080d3" -->
 ### 3. Database Initialization
 
 The SQLite database auto-initializes on first run, or initialize manually:
@@ -137,6 +146,7 @@ python3 -c "import main; print('Database initialized')"
 
 ---
 
+<!-- section_id: "e619de47-667f-4ca2-a309-8e0c66a56df9" -->
 ### 4. Dependencies
 
 **Install production requirements**:
@@ -153,8 +163,10 @@ pip install -r requirements-prod.txt
 
 ---
 
+<!-- section_id: "bede780d-3ba2-47c8-906e-9a3b35f461a7" -->
 ## Deployment Steps
 
+<!-- section_id: "1b6aa9f7-8d29-4c2e-8b0c-5fb405614d37" -->
 ### Step 1: Prepare Environment
 
 ```bash
@@ -169,6 +181,7 @@ pip install -r requirements-prod.txt
 
 ---
 
+<!-- section_id: "72a585ca-fb36-47eb-bc00-a5cc02c9a4ce" -->
 ### Step 2: Configure Environment
 
 ```bash
@@ -185,6 +198,7 @@ python3 -c "import secrets; print('SECRET_KEY=' + secrets.token_hex(32))"
 
 ---
 
+<!-- section_id: "1c5f8b11-7a46-4767-a59c-e437674c33b3" -->
 ### Step 3: Initialize Database
 
 ```bash
@@ -196,6 +210,7 @@ EOF
 
 ---
 
+<!-- section_id: "a7fc9f31-512c-4cab-b32d-cbb666bb6294" -->
 ### Step 4: Start Production Server
 
 **Option A: Foreground (for testing)**
@@ -220,6 +235,7 @@ bash scripts/deploy/setup-systemd.sh
 
 ---
 
+<!-- section_id: "f5014927-6dce-4b26-9c5f-7ce076cd8a2f" -->
 ### Step 5: Verify Deployment
 
 ```bash
@@ -236,8 +252,10 @@ curl -I http://localhost:5000/login
 
 ---
 
+<!-- section_id: "a7ad61a2-536b-49b3-adfb-06f77006c731" -->
 ## Production Configuration
 
+<!-- section_id: "2052a3c9-05c4-45f0-9494-66bacd31f3a1" -->
 ### Gunicorn Settings
 
 **Configuration file**: `gunicorn.conf.py`
@@ -254,8 +272,10 @@ Edit `gunicorn.conf.py` to adjust workers, timeout, logging, etc.
 
 ---
 
+<!-- section_id: "5161f5ab-ee89-42e6-b663-a3d9a1180adb" -->
 ## Monitoring & Maintenance
 
+<!-- section_id: "bbb6effd-a1b6-4b86-a5cd-8d93cea27e14" -->
 ### Check Application Status
 
 ```bash
@@ -272,6 +292,7 @@ curl http://localhost:5000/health
 
 ---
 
+<!-- section_id: "9499ccb9-29c5-45c7-b02d-e7b74c8d9355" -->
 ### View Logs
 
 ```bash
@@ -288,6 +309,7 @@ sudo journalctl -u lang-trak -f
 
 ---
 
+<!-- section_id: "7912ce93-c980-4dc5-aa27-71ccfa3a5971" -->
 ### Restart Application
 
 ```bash
@@ -304,8 +326,10 @@ gunicorn --config gunicorn.conf.py app:app
 
 ---
 
+<!-- section_id: "f39696a6-a750-4a74-a6f9-6bd4b724ed47" -->
 ## Deployment Platforms
 
+<!-- section_id: "4d6e3c6d-1ae9-46fd-bc38-eb350abbd81f" -->
 ### Deploy to Cloud Platforms
 
 #### Google Cloud Run
@@ -339,6 +363,7 @@ Use the SystemD service setup for these platforms.
 
 ---
 
+<!-- section_id: "9640d417-cd2b-4ad7-839e-ff1321ce7167" -->
 ## Security Checklist
 
 Before deploying to production:
@@ -355,6 +380,7 @@ Before deploying to production:
 
 ---
 
+<!-- section_id: "6728129a-06b1-425d-9deb-d94129eef8ff" -->
 ## Rollback Procedure
 
 If deployment fails:
@@ -373,8 +399,10 @@ sudo systemctl start lang-trak
 
 ---
 
+<!-- section_id: "7b3dbd0e-ff02-4c18-bf51-520221a06e01" -->
 ## Performance Tuning
 
+<!-- section_id: "fe7dffed-4483-4d7f-9d4d-0c2275c860a4" -->
 ### Optimize Worker Count
 
 ```python
@@ -384,6 +412,7 @@ workers = (2 * CPU_CORES) + 1  # Default
 # Decrease for memory constraints: workers = CPU_CORES
 ```
 
+<!-- section_id: "ea535c83-e331-43f9-89fb-8c5b0eb2525a" -->
 ### Database Optimization
 
 ```bash
@@ -392,6 +421,7 @@ sqlite3 data/phonemes.db "VACUUM;"
 sqlite3 data/phonemes.db "ANALYZE;"
 ```
 
+<!-- section_id: "c2ac3f0d-fda0-4246-afc9-3f732bd30a8b" -->
 ### Enable Caching
 
 Add to app.py:
@@ -402,8 +432,10 @@ cache = Cache(app, config={'CACHE_TYPE': 'simple'})
 
 ---
 
+<!-- section_id: "a822f9db-fa49-4a84-bf13-c4c84f61b80c" -->
 ## Troubleshooting
 
+<!-- section_id: "16a8d183-3276-4abf-861f-73a4dafdb18b" -->
 ### Common Issues
 
 **Port already in use**:
@@ -439,8 +471,10 @@ ls -la templates/
 
 ---
 
+<!-- section_id: "fe2c6b37-0287-4d3c-9f62-34cd49f72425" -->
 ## Post-Deployment Verification
 
+<!-- section_id: "e49892f5-83d7-4448-9e48-54afaed47b06" -->
 ### Quick Smoke Test
 
 ```bash
@@ -461,6 +495,7 @@ curl -I http://localhost:5000/static/css/base.css
 # Expected: HTTP/1.1 200 OK
 ```
 
+<!-- section_id: "cb737f16-c222-4653-abcb-a307d0f87ce2" -->
 ### Run Automation Tests
 
 ```bash
@@ -474,6 +509,7 @@ APP_BASE_URL=http://localhost:5000 \
 
 ---
 
+<!-- section_id: "00b719f7-ce6f-4a40-a3e5-d2c66ba9596e" -->
 ## Success Criteria
 
 ✅ Deployment successful if:
@@ -486,8 +522,10 @@ APP_BASE_URL=http://localhost:5000 \
 
 ---
 
+<!-- section_id: "982e2efa-d500-4b6c-a452-87aeac31d1b8" -->
 ## Support & Maintenance
 
+<!-- section_id: "22d5d24d-eb1f-4d12-9d7b-689ac1e7a992" -->
 ### Backup Strategy
 
 ```bash
@@ -498,6 +536,7 @@ cp data/phonemes.db data/phonemes.db.$(date +%Y%m%d)
 0 2 * * 0 cp /path/to/data/phonemes.db /backups/phonemes.db.$(date +\%Y\%m\%d)
 ```
 
+<!-- section_id: "d0b2c737-d506-4794-93c6-3f2b1470fbed" -->
 ### Update Procedure
 
 ```bash
@@ -519,6 +558,7 @@ curl http://localhost:5000/health
 
 ---
 
+<!-- section_id: "5528f4c2-7039-4151-ad2f-87eb5dfbed66" -->
 ## Next Steps After Deployment
 
 1. ✅ **Verify US-053** endpoint manually

@@ -3,6 +3,7 @@ resource_id: "08ed9e43-c532-4d61-911e-5945aa7fa146"
 resource_type: "knowledge"
 resource_name: "persona_library"
 ---
+<!-- section_id: "b16cd639-6f7a-43af-bc50-526d5e082615" -->
 ## Persona Library and Output Styles Guide
 
 This document explains how to create and maintain reusable agent personas using output styles and custom system prompts.
@@ -11,6 +12,7 @@ Personas define specialized roles that agents can assume for specific tasks.
 
 ---
 
+<!-- section_id: "9405bfcb-5a17-4230-88c0-55d7e5ebb5e5" -->
 ## 1. Persona Concept
 
 A **persona** is a predefined agent role with:
@@ -28,8 +30,10 @@ A **persona** is a predefined agent role with:
 
 ---
 
+<!-- section_id: "405bfe07-5f19-46dc-adaf-722f58380fe3" -->
 ## 2. Implementation Approaches
 
+<!-- section_id: "fc209c6e-2f31-4466-94e8-58c1eabb4ece" -->
 ### 2.1 Claude Code Output Styles
 
 Claude Code supports `.claude/output-styles/` for reusable personas.
@@ -122,6 +126,7 @@ claude-code --output-style security-reviewer review src/auth/
 }
 ```
 
+<!-- section_id: "24b1bc7b-ec7b-4420-adde-7bf8783240ee" -->
 ### 2.2 Layer-Specific Personas
 
 Define personas at different layers:
@@ -152,8 +157,10 @@ layer_2_auth/ai_agent_system/personas/
 
 ---
 
+<!-- section_id: "558a7359-f014-4bc6-a3cc-f09ec4f5b5ad" -->
 ## 3. Example Personas
 
+<!-- section_id: "0ab4380a-bc61-421f-b2d8-ca1df97110f5" -->
 ### 3.1 Performance Optimizer
 
 ```markdown
@@ -219,6 +226,7 @@ Always quantify when possible:
 - Bundle size (KB)
 ```
 
+<!-- section_id: "f337d23c-d26f-4e48-a2c7-017fa82d9d63" -->
 ### 3.2 Accessibility Auditor
 
 ```markdown
@@ -285,6 +293,7 @@ Provide specific testing instructions:
 - ARIA state changes
 ```
 
+<!-- section_id: "623b0034-5484-47bd-906a-f8002c1ac4c5" -->
 ### 3.3 Test Generator
 
 ```markdown
@@ -357,8 +366,10 @@ Provide:
 
 ---
 
+<!-- section_id: "fdccd8f2-be73-4311-b93c-527ba991405a" -->
 ## 4. Persona Library Management
 
+<!-- section_id: "37a6b92d-29b1-4c3c-b3a8-668ea58e1fed" -->
 ### 4.1 Directory Structure
 
 ```
@@ -383,6 +394,7 @@ personas/
     └── fintech-compliance-checker.md
 ```
 
+<!-- section_id: "f737c8b6-3dc4-41c9-86bb-0ad30981ce66" -->
 ### 4.2 Persona Index
 
 ```markdown
@@ -451,6 +463,7 @@ See [PERSONA_TEMPLATE.md](./PERSONA_TEMPLATE.md) for persona creation guide.
 
 ---
 
+<!-- section_id: "cb542396-4956-493e-ba23-d6931965ada7" -->
 ## 5. Persona Template
 
 ```markdown
@@ -526,8 +539,10 @@ Output:
 
 ---
 
+<!-- section_id: "9c20172e-8888-43b2-b54b-ddd214ff942a" -->
 ## 6. Using Personas in the Hierarchy
 
+<!-- section_id: "74828247-c749-40bc-9bb7-f5e29fed2de5" -->
 ### 6.1 Handoff with Persona
 
 ```json
@@ -553,6 +568,7 @@ Output:
 }
 ```
 
+<!-- section_id: "dbfd1fff-e899-43c2-9678-84aaab734907" -->
 ### 6.2 Stage-Specific Personas
 
 ```yaml
@@ -575,6 +591,7 @@ stages:
 
 ---
 
+<!-- section_id: "f7b9884e-5f60-4d25-9a90-5becb7068e02" -->
 ## 7. Summary
 
 Personas provide consistent, specialized agent behavior:

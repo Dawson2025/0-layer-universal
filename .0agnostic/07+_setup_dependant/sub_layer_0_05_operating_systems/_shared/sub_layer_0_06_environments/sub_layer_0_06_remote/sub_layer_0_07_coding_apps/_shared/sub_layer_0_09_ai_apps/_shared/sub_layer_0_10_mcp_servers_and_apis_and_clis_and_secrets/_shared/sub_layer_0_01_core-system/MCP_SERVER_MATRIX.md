@@ -9,11 +9,13 @@ Lists all MCP servers we have configs for, plus which AI tools/CLIs have automat
 
 See `BROWSER_MCP_ROUTING_TABLE.md` for recommendations on which browser server to use per CLI/OS/task.
 
+<!-- section_id: "a72585a3-b187-4a0b-b65d-701dab18db60" -->
 ## Legend
 - ✅ Automated / documented working setup
 - ⚠️ Manual setup documented but not automated
 - ✖️ Not configured
 
+<!-- section_id: "dad2ba97-ac5b-42eb-9403-aebf72404bb3" -->
 ## Servers
 | Server              | Status (Codex env: development) | Codex CLI (config.toml / codex_mcp_sync.py) | Gemini CLI (~/.gemini/settings.json) | Notes |
 |---------------------|----------------------------------|--------------------------------------------|---------------------------------------|-------|
@@ -24,6 +26,7 @@ See `BROWSER_MCP_ROUTING_TABLE.md` for recommendations on which browser server t
 | filesystem          | Disabled                         | ✅ (auto via sync script; currently disabled) | ✖️                                    | Generic fs server; enable as needed |
 | chrome-devtools     | Disabled                         | ✅ (auto via sync script; currently disabled) | ⚠️ (manual pattern)                  | Needs running Chrome with remote debugging |
 
+<!-- section_id: "1cdf9e26-3e15-41df-a165-ed73873bda69" -->
 ## How to switch/disable/enable (Codex)
 - Use `codex_mcp_sync.py --env <env> [--disable <servers...>]`
   - Active snippet: `~/.codex/environments/<env>.toml`
@@ -32,9 +35,11 @@ See `BROWSER_MCP_ROUTING_TABLE.md` for recommendations on which browser server t
   - Backup: `~/.codex/config.toml.bak`
 - Restart Codex CLI after sync.
 
+<!-- section_id: "e829b574-475d-4df2-9150-8548a5eda12a" -->
 ## Gemini reference
 - Single canonical file: `~/.gemini/settings.json` with `mcpServers` entries (see core-system/README.md and GEMINI CLI sections).
 
+<!-- section_id: "83edcc1a-ebe5-4058-97cf-76b441279532" -->
 ## To add another tool
 - Add its server block to the presets in `automation/scripts/codex_mcp_sync.py` (and, if desired, document Gemini settings.json pattern).
 - Rerun the sync script to regenerate Codex config and snippets.

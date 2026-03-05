@@ -5,6 +5,7 @@ resource_name: "19_prototype_specification"
 ---
 # Prototype Specification: Layer-Stage System as Memory System Prototype
 
+<!-- section_id: "c46033c1-97d7-457e-bd84-8f4ea97e2a25" -->
 ## Decision
 
 The **layer-stage system** at `layer_0_feature_layer_stage_system/` is the primary prototype for the better_ai_system memory system research.
@@ -15,8 +16,10 @@ The **layer-stage system** at `layer_0_feature_layer_stage_system/` is the prima
 
 ---
 
+<!-- section_id: "9666d1e5-36ec-4f70-852a-7fba45c5a734" -->
 ## What the Prototype Already Implements
 
+<!-- section_id: "57d1c511-2f73-460e-b170-4b2d87e4e9d3" -->
 ### Data Structures Currently In Use
 
 | # | Data Structure (from file 18) | Where in Layer-Stage System | Status |
@@ -27,6 +30,7 @@ The **layer-stage system** at `layer_0_feature_layer_stage_system/` is the prima
 | 12 | **Semantic tree (hierarchical tree)** | The layer-stage hierarchy itself IS a semantic tree — layers → features → sub-features, each with stages | **Core architecture** |
 | 15 | **Production rule database (IF-THEN)** | `.0agnostic/rules/static/` and `rules/dynamic/` — condition-action rules for agent behavior | **In use** |
 
+<!-- section_id: "12acea8e-6916-433f-9c53-62aa5c6381f9" -->
 ### Memory Types Currently Implemented
 
 | Memory Type | Implementation | Quality |
@@ -39,6 +43,7 @@ The **layer-stage system** at `layer_0_feature_layer_stage_system/` is the prima
 | **Context chain (working memory)** | CLAUDE.md chain loaded into system prompt; on-demand reads for dynamic context | Working — the main innovation |
 | **Shared / collaborative memory** | Git-based — all context files version-controlled, synced across tools via agnostic system | Working well |
 
+<!-- section_id: "20b6de19-993e-4c37-9ec1-512a3e405a6d" -->
 ### Context Chain Architecture Already Built
 
 The context chain system (at `layer_2_subx2_feature_context_chain_system/`) has:
@@ -51,8 +56,10 @@ The context chain system (at `layer_2_subx2_feature_context_chain_system/`) has:
 
 ---
 
+<!-- section_id: "caaa7728-5ba7-4f6b-a5b7-9a61035fc5b7" -->
 ## What's Missing (Gap Analysis from Research)
 
+<!-- section_id: "8294a146-1b98-4bf9-a228-372ffdf87fbf" -->
 ### Data Structures NOT Yet In Use
 
 | # | Data Structure | What It Would Add | Priority | Proposed Location |
@@ -68,6 +75,7 @@ The context chain system (at `layer_2_subx2_feature_context_chain_system/`) has:
 | 11 | **Model parameters** | Internal to LLM — not something we control | N/A | — |
 | 16 | **Activation snapshots** | Requires model-level access — not feasible for our prototype | N/A | — |
 
+<!-- section_id: "30d9bb80-eb28-4c91-aca9-2326c934b5a4" -->
 ### Memory Types NOT Yet Implemented
 
 | Memory Type | What's Missing | How To Add |
@@ -79,11 +87,14 @@ The context chain system (at `layer_2_subx2_feature_context_chain_system/`) has:
 
 ---
 
+<!-- section_id: "cd92c2d8-784f-4c96-a994-02fda4f5bb60" -->
 ## Knowledge Graph Proposal for Context Chain System
 
+<!-- section_id: "b0d4a660-3f5c-44d5-b243-486f6534af93" -->
 ### Location
 `context_chain_system/.0agnostic/knowledge/context_chain_graph.jsonld`
 
+<!-- section_id: "4b016a37-8475-4ce8-9ddc-5641491ecef6" -->
 ### What It Would Contain
 
 ```
@@ -100,6 +111,7 @@ Edges (typed, directed):
   - PRECEDES / FOLLOWS (stage ordering)
 ```
 
+<!-- section_id: "12dee2fa-0702-4c1b-850d-ee5810b5a240" -->
 ### How to Build and Maintain
 
 1. **Auto-generate** from 0AGNOSTIC.md declarations — a script reads all 0AGNOSTIC.md files, extracts Identity (parent/children), Triggers, and Pointers sections, and outputs JSON-LD
@@ -107,6 +119,7 @@ Edges (typed, directed):
 3. **Regenerate** after structural changes (new entities, moved files) — add to `agnostic-sync.sh` workflow
 4. **Manual overrides** only for relationships not declared in 0AGNOSTIC.md (cross-references, dependencies)
 
+<!-- section_id: "1fb55fe1-5bf3-4feb-bbf4-f8e0c85f812d" -->
 ### Why This Fits (Research Grounding)
 
 | Research Finding (from our docs) | Application |
@@ -119,6 +132,7 @@ Edges (typed, directed):
 
 ---
 
+<!-- section_id: "2961fb46-dab0-4ce3-b905-1b37ed5ee834" -->
 ## Prototype Strengths (What We Already Do Well)
 
 Based on the research (files 01-18), the layer-stage system already has several advantages over commercial systems:
@@ -132,6 +146,7 @@ Based on the research (files 01-18), the layer-stage system already has several 
 
 ---
 
+<!-- section_id: "4c39d307-433b-40a3-801d-83867301f722" -->
 ## Next Steps
 
 | Step | Stage | Description |
@@ -147,6 +162,7 @@ Based on the research (files 01-18), the layer-stage system already has several 
 
 ---
 
+<!-- section_id: "3a088f8d-7bf8-4fc3-ac1f-f30e2aa2b76e" -->
 ## Sources
 
 - All research files in this directory (files 00-18)

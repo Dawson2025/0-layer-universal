@@ -8,6 +8,7 @@ resource_name: "0AGNOSTIC"
 
 # ── Entity Definition ──
 
+<!-- section_id: "86c585e2-e3a9-4b38-9514-5721edc6ac9b" -->
 ## Identity
 
 entity_id: "e3f7291d-0aab-4b9b-ad65-879000ed236e"
@@ -18,8 +19,10 @@ entity_id: "e3f7291d-0aab-4b9b-ad65-879000ed236e"
 **Parent**: `../../0AGNOSTIC.md` (layer_-1_research)
 **Children**: (none yet — features will be added as research topics emerge)
 
+<!-- section_id: "d010bab2-1d93-491c-9989-72350c38afa6" -->
 ## Key Behaviors
 
+<!-- section_id: "f9ec21cd-97ef-401a-ace7-6b0e0c923a64" -->
 ### What This System Covers
 
 This research project investigates how to create a development agent system specifically for LangTrak. Unlike the generic agent_delegation_system (which defines universal delegation patterns), this project:
@@ -30,6 +33,7 @@ This research project investigates how to create a development agent system spec
 4. **Integrates MCP tools** — which tools (Mermaid, Playwright, Perplexity, etc.) each agent needs and when
 5. **Creates agent definitions** — GAB/AALang agent files for LangTrak-specific roles
 
+<!-- section_id: "3323cd79-9d03-4a78-b08d-9e2a6d0994ce" -->
 ### Relationship to Agent Delegation System
 
 The ADS entity (`layer_-1_better_ai_system/.../agent_delegation_system/`) defines **universal** delegation patterns. This project **applies** those patterns to LangTrak specifically:
@@ -39,6 +43,7 @@ The ADS entity (`layer_-1_better_ai_system/.../agent_delegation_system/`) define
 - ADS defines stage reports → this project designs what reports each LangTrak stage produces
 - ADS defines relay patterns → this project maps relay chains through LangTrak's L2-L11 hierarchy
 
+<!-- section_id: "4c160017-e00f-47fb-9443-5a501d5be479" -->
 ### Context Discovery
 
 Before starting any task:
@@ -47,6 +52,7 @@ Before starting any task:
 3. Check `.0agnostic/` for project-specific resources
 4. Read episodic memory if resuming work: `.0agnostic/04_episodic_memory/sessions/`
 
+<!-- section_id: "e1855af1-7e4d-4451-b121-55e7bb3112ba" -->
 ## Methodology
 
 1. **Research** (stage 02): Study LangTrak's codebase, feature modules, and existing architecture
@@ -54,6 +60,7 @@ Before starting any task:
 3. **Development** (stage 06): Create agent definitions (GAB/AALang files), context templates, workflow scripts
 4. **Testing** (stage 07): Validate agent definitions against real LangTrak development tasks
 
+<!-- section_id: "80f9a527-c3c1-4e7f-823c-06634fec69aa" -->
 ## Inputs
 
 | Source | What | Location |
@@ -63,6 +70,7 @@ Before starting any task:
 | Universal delegation patterns | Principles, rules, stage guides | `../../../.0agnostic/01_knowledge/principles/` |
 | ADS research | Delegation patterns, scope boundaries | `../layer_0_01_systems/layer_0_better_ai_system/layer_0_group/layer_0_features/layer_0_feature_agent_delegation_system/` |
 
+<!-- section_id: "f8b6d66e-da22-4d48-aacb-0da297d51b41" -->
 ## Outputs
 
 | Output | Location | Purpose |
@@ -72,6 +80,7 @@ Before starting any task:
 | Agent GAB/AALang files | Stage 06 outputs | Actual agent definition files |
 | Development workflow guides | Stage 06 outputs | How agents work through LangTrak stages |
 
+<!-- section_id: "196a5a1f-6cec-4139-a718-703addd100b4" -->
 ## Triggers
 
 Load this context when:
@@ -82,6 +91,7 @@ Load this context when:
 
 # ── Current Status ──
 
+<!-- section_id: "e84fed83-4b37-45ef-939d-9be5c97f5751" -->
 ## Current Status
 
 **Phase**: Active — Agent Hierarchy Structure Experiment designed, ready for trial execution
@@ -100,6 +110,7 @@ Load this context when:
 
 # ── Current State ──
 
+<!-- section_id: "b36d2039-0afa-433c-937d-09fcd6bdbf66" -->
 ## Open Items
 
 - Initial research topics need to be defined in stage 02
@@ -108,6 +119,7 @@ Load this context when:
 
 # ── References ──
 
+<!-- section_id: "83018c91-b83f-47a8-a0fa-117234d832cd" -->
 ## Navigation
 
 | Direction | Path |
@@ -119,6 +131,7 @@ Load this context when:
 | ADS entity | `../layer_-1_better_ai_system/.../agent_delegation_system/` |
 | Universal principles | `../../.0agnostic/01_knowledge/principles/` |
 
+<!-- section_id: "618c47a6-193a-4591-bf93-e991223fea09" -->
 ## Where to Contribute
 
 | Work Type | Location |

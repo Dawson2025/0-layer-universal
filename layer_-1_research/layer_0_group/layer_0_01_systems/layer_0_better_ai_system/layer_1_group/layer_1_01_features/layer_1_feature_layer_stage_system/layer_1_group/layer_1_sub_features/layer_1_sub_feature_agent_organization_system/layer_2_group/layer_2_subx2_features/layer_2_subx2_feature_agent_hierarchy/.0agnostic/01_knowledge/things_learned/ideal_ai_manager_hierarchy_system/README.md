@@ -4,6 +4,7 @@ resource_type: "readme
 knowledge"
 resource_name: "README"
 ---
+<!-- section_id: "b1fadff5-9eac-4f6f-9280-03c4a2fc7fd1" -->
 ## Ideal AI Manager Hierarchy System – Directory Guide
 
 This folder contains all of the documentation for your **Ideal AI Manager Hierarchy System**.  
@@ -17,6 +18,7 @@ This file explains the layout and how to use it.
 
 ---
 
+<!-- section_id: "30c75766-8b99-4a8a-bff2-790beaf91dc0" -->
 ### 1. Top-Level Layout
 
 Current contents:
@@ -41,6 +43,7 @@ You may also have other helper files or subdirectories here in the future (e.g.,
 
 ---
 
+<!-- section_id: "aabda3d6-a4e7-4b30-ba62-fd27a4f380c6" -->
 ### 2. Recommended Reading Order
 
 For a **human reader**:
@@ -62,6 +65,7 @@ For an **AI agent**:
 
 ---
 
+<!-- section_id: "450e0fce-1578-4f9b-8492-764c4c454f37" -->
 ### 3. How This Fits the Larger Repo
 
 This directory is part of:
@@ -82,6 +86,7 @@ It is intentionally **decoupled from any one project** so that:
 
 ---
 
+<!-- section_id: "a21e9897-6f50-474e-9a12-840355d8624a" -->
 ### 4. Evolving the Structure
 
 As you continue refining your system, you can:

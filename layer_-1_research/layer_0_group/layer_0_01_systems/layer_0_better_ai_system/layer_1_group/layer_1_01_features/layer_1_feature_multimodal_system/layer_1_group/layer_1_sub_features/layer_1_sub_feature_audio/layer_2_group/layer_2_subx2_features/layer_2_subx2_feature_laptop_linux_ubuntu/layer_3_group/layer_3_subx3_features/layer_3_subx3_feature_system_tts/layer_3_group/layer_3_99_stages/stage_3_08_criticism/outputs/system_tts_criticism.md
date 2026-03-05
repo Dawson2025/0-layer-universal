@@ -7,6 +7,7 @@ resource_name: "system_tts_criticism"
 
 **Date**: 2026-02-23
 
+<!-- section_id: "0b90a4f8-83a6-4224-a5c4-8c9178f90a6b" -->
 ## What Works Well
 
 - Piper produces natural-sounding speech, significantly better than eSpeak
@@ -14,6 +15,7 @@ resource_name: "system_tts_criticism"
 - PID-based toggle is intuitive — same hotkey to start/stop
 - Scripts are self-contained with no external service dependencies
 
+<!-- section_id: "00b47f0f-f693-4599-aa3d-e9818902003b" -->
 ## Issues and Gaps
 
 1. **No speech queue**: New speech kills old speech. If you select new text while speech is playing, you lose the previous. Consider a queue or "finish then play next" mode.
@@ -30,6 +32,7 @@ resource_name: "system_tts_criticism"
 
 7. **No text preprocessing**: No handling of abbreviations, numbers, URLs, or code in the selected text. Piper reads them literally.
 
+<!-- section_id: "2ca03d89-f80b-47ba-b5dd-dc0021232813" -->
 ## Recommendations
 
 - **Priority 1**: Configure the GNOME hotkey to make it usable day-to-day

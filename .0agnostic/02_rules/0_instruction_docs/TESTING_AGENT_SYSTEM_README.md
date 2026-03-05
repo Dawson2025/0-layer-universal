@@ -12,10 +12,12 @@ resource_name: "TESTING_AGENT_SYSTEM_README"
 
 ---
 
+<!-- section_id: "915bbc6e-2191-47b7-ae78-a8e9631cc0e3" -->
 ## 🎯 **Overview**
 
 The **Testing Agent System** implements a best-practice separation of concerns between development and testing activities. This system enables dedicated AI agents to focus exclusively on quality assurance and test creation, following industry-standard testing methodologies.
 
+<!-- section_id: "ba1669c9-aea1-4de5-9ae8-266beb576e5a" -->
 ### **Why Testing Agents?**
 
 Traditional Approach (❌ Not ideal):
@@ -38,8 +40,10 @@ Developer writes code → Handoff to Testing Agent → Testing Agent writes comp
 
 ---
 
+<!-- section_id: "04357808-82db-4c05-b939-1e40308f8e98" -->
 ## 📚 **Documentation Suite**
 
+<!-- section_id: "c58e3885-ea52-4751-9470-127b917bcb6f" -->
 ### **1. Testing Agent Protocol** 📘
 **File**: `testing-agent-protocol.md`
 
@@ -61,6 +65,7 @@ Developer writes code → Handoff to Testing Agent → Testing Agent writes comp
 
 ---
 
+<!-- section_id: "e8094611-5668-4f61-a7f4-53ce3e79e461" -->
 ### **2. Testing Agent Instructions** 📗
 **File**: `testing-agent-instructions.md`
 
@@ -81,6 +86,7 @@ Developer writes code → Handoff to Testing Agent → Testing Agent writes comp
 
 ---
 
+<!-- section_id: "d9f331b1-c0ed-40d1-a515-e0b1cb298be9" -->
 ### **3. Handoff Template** 📙
 **File**: `testing-agent-handoff-template.md`
 
@@ -99,6 +105,7 @@ Developer writes code → Handoff to Testing Agent → Testing Agent writes comp
 
 ---
 
+<!-- section_id: "24baa868-e59c-4cb8-9a3c-4e943f476398" -->
 ### **4. Report Template** 📕
 **File**: `testing-agent-report-template.md`
 
@@ -119,8 +126,10 @@ Developer writes code → Handoff to Testing Agent → Testing Agent writes comp
 
 ---
 
+<!-- section_id: "cebe11a4-5bc2-4615-9b00-14108e6b25fc" -->
 ## 🛠️ **Automation Tools**
 
+<!-- section_id: "eabaa802-f311-48e7-aba6-5ba569c5b208" -->
 ### **1. Testing Agent Invoker**
 **File**: `scripts/invoke-testing-agent.sh`
 
@@ -143,6 +152,7 @@ Developer writes code → Handoff to Testing Agent → Testing Agent writes comp
 
 ---
 
+<!-- section_id: "3fc31ba5-226f-442a-8f62-4b0cefc7f0f1" -->
 ### **2. Coverage Checker**
 **File**: `scripts/check-test-coverage.sh`
 
@@ -165,8 +175,10 @@ Developer writes code → Handoff to Testing Agent → Testing Agent writes comp
 
 ---
 
+<!-- section_id: "1739d46a-6d73-49d1-be05-8d81e1a4f652" -->
 ## 🚀 **Quick Start Guide**
 
+<!-- section_id: "35ce3874-e2a0-45d7-86af-d161fafa446a" -->
 ### **For Development Agents**
 
 When you finish coding:
@@ -189,6 +201,7 @@ cat docs/testing_handoffs/handoff_*.md
 
 ---
 
+<!-- section_id: "772e8cc5-dcc8-4549-9c96-cda7430484ca" -->
 ### **For Testing Agents**
 
 When you receive a handoff:
@@ -220,8 +233,10 @@ pytest tests/ -v --cov=. --cov-report=term --cov-report=html
 
 ---
 
+<!-- section_id: "cad7681e-dd1e-4981-9a05-f68a5b13ef00" -->
 ## 📋 **Complete Workflow Example**
 
+<!-- section_id: "9d9e45aa-2b90-48f7-a991-264efb5e6dfb" -->
 ### **Scenario**: New User Authentication Feature
 
 #### **Phase 1: Development** (Development Agent)
@@ -371,8 +386,10 @@ $ git push origin main
 
 ---
 
+<!-- section_id: "7c62029f-ec70-45b6-879e-9294cda8432f" -->
 ## 🎯 **Best Practices**
 
+<!-- section_id: "a71260d2-cdb0-43f9-b58f-9dd586a99a69" -->
 ### **DO** ✅
 
 1. **Always invoke Testing Agent after code changes**
@@ -398,6 +415,7 @@ $ git push origin main
 
 ---
 
+<!-- section_id: "8f831b2a-17c0-4a1b-9f65-77ff5f1cc0e1" -->
 ### **DON'T** ❌
 
 1. **Don't skip Testing Agent**
@@ -422,6 +440,7 @@ $ git push origin main
 
 ---
 
+<!-- section_id: "03ef122f-78dd-48dd-9532-c1b10dd80ff4" -->
 ## 📊 **Success Metrics**
 
 Track these metrics to measure Testing Agent effectiveness:
@@ -436,8 +455,10 @@ Track these metrics to measure Testing Agent effectiveness:
 
 ---
 
+<!-- section_id: "27eb4c9b-8e04-4228-9d58-c8e3e472c4ee" -->
 ## 🔄 **Integration with Existing Systems**
 
+<!-- section_id: "765064a6-aa6a-4cf9-ac75-2bf6cb353d49" -->
 ### **Version Control**
 
 ```bash
@@ -453,6 +474,7 @@ Track these metrics to measure Testing Agent effectiveness:
 
 ---
 
+<!-- section_id: "53770e21-37f5-4dc4-bf19-2af674b0a2ca" -->
 ### **CI/CD Pipeline**
 
 ```yaml
@@ -475,6 +497,7 @@ jobs:
 
 ---
 
+<!-- section_id: "961b76b4-df6f-45f2-99fa-0865ecad8755" -->
 ### **Project Documentation**
 
 Testing Agent System integrates with:
@@ -486,19 +509,23 @@ Testing Agent System integrates with:
 
 ---
 
+<!-- section_id: "b399f903-34d9-4043-85f3-76452d41e394" -->
 ## 📖 **Additional Resources**
 
+<!-- section_id: "d356456d-4ce2-4668-8898-a33ab55a1d8f" -->
 ### **Related Documentation**
 - Testing Guidelines (comprehensive standards)
 - Testing Workflow Guide (Firebase testing strategy)
 - Pytest Documentation (testing framework)
 - Coverage.py Documentation (coverage tool)
 
+<!-- section_id: "8a31471c-34ef-422b-aa19-ea3fe8ad48fe" -->
 ### **Training Materials**
 - Testing Agent Instructions (step-by-step guide)
 - Testing Recipes (code examples)
 - Quality Checklist (self-assessment)
 
+<!-- section_id: "46c0db15-8eaa-4072-b2ce-2adea7fd0fea" -->
 ### **Tools and Scripts**
 - `invoke-testing-agent.sh` (create handoffs)
 - `check-test-coverage.sh` (verify coverage)
@@ -507,8 +534,10 @@ Testing Agent System integrates with:
 
 ---
 
+<!-- section_id: "ebadcdd7-888d-476b-a0dd-8a342b228758" -->
 ## 🚦 **Status and Roadmap**
 
+<!-- section_id: "a25dfafe-af68-4c90-a398-1f6046cdf257" -->
 ### **Current Status** (v1.0)
 ✅ Core protocol defined
 ✅ Documentation complete
@@ -516,6 +545,7 @@ Testing Agent System integrates with:
 ✅ Templates provided
 ✅ Ready for production use
 
+<!-- section_id: "bb306815-d07c-42b5-b993-4f9ff64b72f0" -->
 ### **Planned for v2.0**
 - [ ] AI-powered test generation
 - [ ] Automated test recommendations
@@ -525,8 +555,10 @@ Testing Agent System integrates with:
 
 ---
 
+<!-- section_id: "264ca61d-7d2d-4a05-9a9a-e85ec29daf25" -->
 ## 📞 **Getting Help**
 
+<!-- section_id: "f833ceca-0c8f-4159-982a-b8d1bd245364" -->
 ### **Questions?**
 
 1. **Read the documentation**
@@ -547,6 +579,7 @@ Testing Agent System integrates with:
 
 ---
 
+<!-- section_id: "f1da90db-fd09-4662-a93a-455ed16093f7" -->
 ## 🎓 **Summary**
 
 The Testing Agent System provides:

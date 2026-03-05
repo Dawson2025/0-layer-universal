@@ -6,11 +6,13 @@ resource_name: "0INDEX"
 ---
 # Index: 0_layer_universal (Root)
 
+<!-- section_id: "fd9ac3a8-4c2d-4073-851f-d929b420814f" -->
 ## Purpose
 Root of the layer-stage system. Contains universal rules (layer_0), projects (layer_1), and research (layer_-1).
 
 ---
 
+<!-- section_id: "8054f914-a6ce-4284-9db3-a2616f931e7e" -->
 ## Children
 
 | Name | Type | Keywords | Description |
@@ -22,6 +24,7 @@ Root of the layer-stage system. Contains universal rules (layer_0), projects (la
 
 ---
 
+<!-- section_id: "9cd37b65-a278-4c37-8a48-6ec8ed21a28e" -->
 ## Navigation Guide
 
 **Looking for universal rules?** → `layer_0/`
@@ -31,6 +34,7 @@ Root of the layer-stage system. Contains universal rules (layer_0), projects (la
 
 ---
 
+<!-- section_id: "9548d375-e94f-418f-9fe1-29f6e98c0eef" -->
 ## Quick Access
 
 | Need | Path |

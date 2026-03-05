@@ -3,6 +3,7 @@ resource_id: "4cf68151-106a-4590-85e4-fcd6684e53dd"
 resource_type: "document"
 resource_name: "tool_additions"
 ---
+<!-- section_id: "ad95e468-c956-45a5-aae9-64bd01ca2b7d" -->
 ## Codex Discovery Triggers
 
 When requests mention context-chain operations, load these next:
@@ -12,6 +13,7 @@ When requests mention context-chain operations, load these next:
 3. Protocols: `.0agnostic/03_protocols/chain_validation_protocol.md`
 4. Skills: `.0agnostic/05_skills/chain-validate/SKILL.md` and `.0agnostic/05_skills/avenue-check/SKILL.md`
 
+<!-- section_id: "a06e6035-18c8-4eb9-a79a-4f239d1e2681" -->
 ## Codex Merge Diagnostics
 
 If projection looks wrong:

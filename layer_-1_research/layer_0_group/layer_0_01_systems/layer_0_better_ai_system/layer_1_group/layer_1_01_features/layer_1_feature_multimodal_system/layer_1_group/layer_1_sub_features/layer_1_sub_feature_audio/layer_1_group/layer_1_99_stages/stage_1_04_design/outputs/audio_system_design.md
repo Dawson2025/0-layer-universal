@@ -5,8 +5,10 @@ resource_name: "audio_system_design"
 ---
 # Audio System Design
 
+<!-- section_id: "b25de36d-a650-4bb7-9376-5d21f3ecefcf" -->
 ## High-Level Architecture
 
+<!-- section_id: "73ecadd0-e08b-4127-913e-ad97adc1f5c9" -->
 ### Layer 1: TTS Engine (Shared)
 Both system-wide and agentic TTS share the same engine stack:
 
@@ -17,6 +19,7 @@ Both system-wide and agentic TTS share the same engine stack:
 | **Speech Dispatcher** | Routes text to engines, manages queue | `apt install speech-dispatcher` |
 | **PulseAudio/PipeWire** | Audio output | Already installed on Ubuntu |
 
+<!-- section_id: "9643f8e3-2e8d-4d68-b70b-897ab4acb478" -->
 ### Layer 2: System-Wide TTS
 | Component | Purpose |
 |-----------|---------|
@@ -25,6 +28,7 @@ Both system-wide and agentic TTS share the same engine stack:
 | **Highlight-and-speak script** | Custom hotkey: `xclip` → Piper → `paplay` (Ctrl+Alt+S) |
 | **spd-say** | CLI for any app needing Speech Dispatcher TTS |
 
+<!-- section_id: "7949b7aa-30a6-47e6-b729-675a44ca7f6e" -->
 ### Layer 3: Agentic TTS (Claude Code)
 | Component | Purpose |
 |-----------|---------|
@@ -32,13 +36,16 @@ Both system-wide and agentic TTS share the same engine stack:
 | **Speech extractor** | Parses response for spoken summary (`<!-- speech: ... -->` or first sentence) |
 | **TTS caller** | Sends extracted text to Piper/eSpeak |
 
+<!-- section_id: "0a6d412f-bd98-44fa-95f1-fa0006e27218" -->
 ## Implementation Phases
 
+<!-- section_id: "cd6e7e3d-44e2-49a4-aeaa-176fe9dbee75" -->
 ### Phase 1: Engine Setup
 1. Install Piper + voice model
 2. Verify `echo "test" | piper --model en_US-lessac-medium --output-raw | aplay -r 22050 -f S16_LE`
 3. Install eSpeak NG as fallback
 
+<!-- section_id: "30d06709-c590-435e-9595-6d01802574aa" -->
 ### Phase 2: System-Wide TTS (**COMPLETE**)
 1. ~~Enable Orca (`Super+Alt+S`)~~ Done — gsettings + manual start
 2. ~~Configure Speech Dispatcher to use Piper as default voice~~ Done — user-local piper-generic module
@@ -46,11 +53,13 @@ Both system-wide and agentic TTS share the same engine stack:
 4. ~~Bind to keyboard shortcut~~ Done — Unity keybinding schema
 5. Test across: browser, terminal, GUI apps
 
+<!-- section_id: "8137b79f-9969-4fda-8d5f-6cf45b5f0bb1" -->
 ### Phase 3: Agentic TTS
 1. Try community Claude Code TTS hooks (Kokoro-based or MCP)
 2. If needed, build custom PostToolUse hook with speech extraction
 3. Test with various Claude Code outputs (code, text, diagrams)
 
+<!-- section_id: "476274b7-ef3c-4350-af4a-f4a5e4e78a8c" -->
 ## Coexistence Strategy
 
 - Orca uses Speech Dispatcher's queue — messages are ordered
@@ -58,10 +67,12 @@ Both system-wide and agentic TTS share the same engine stack:
 - If both speak simultaneously, agentic TTS takes priority (Orca can be paused)
 - Speech interruption: pressing hotkey again or Orca's stop key cancels current speech
 
+<!-- section_id: "6d901254-e8cc-4f40-b869-a68529ed12bf" -->
 ## Children — Detailed Design
 
 This document covers the **overall audio system design** at the parent level. Each child has its own design outputs:
 
+<!-- section_id: "c978704b-7e67-4fdf-95c1-48fe4f82dc3a" -->
 ### System TTS Design (Summary)
 - Two audio paths: direct (speak scripts → Piper → paplay) and Speech Dispatcher (Orca/spd-say → speechd → sd_generic → Piper → paplay)
 - Scripts: `speak` (general TTS) and `speak-selection` (X11 highlight-and-speak, Ctrl+Alt+S)
@@ -70,6 +81,7 @@ This document covers the **overall audio system design** at the parent level. Ea
 - All audio through paplay (PulseAudio) — no ALSA conflicts
 - **Full details**: `../../../../../../layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_laptop_linux_ubuntu/layer_3_group/layer_3_subx3_features/layer_3_subx3_feature_system_tts/layer_3_group/layer_3_99_stages/stage_3_04_design/outputs/system_tts_design.md`
 
+<!-- section_id: "96329311-a3d3-4408-a56d-026442b19a1c" -->
 ### Agentic TTS Design (Summary)
 - Architecture: Claude Stop event → Hook 1 (sound) → Hook 2 (tts-response.sh) → jq extract → sed strip → Piper background
 - Text pipeline: strip code blocks, markdown, URLs, paths, tables → truncate to 600 chars → Piper → aplay

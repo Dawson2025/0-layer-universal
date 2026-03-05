@@ -12,6 +12,7 @@ argument-hint: [--notes "completion notes"]
 
 Complete the 02_research stage and prepare for next stage.
 
+<!-- section_id: "64604cef-1f15-4577-a7dd-a1b9ef120ee7" -->
 ## Steps
 1. Verify all deliverables in outputs/
 2. Create handoff document

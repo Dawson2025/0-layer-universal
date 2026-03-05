@@ -9,6 +9,7 @@ resource_name: "CURSOR_BROWSER_MCP_SETUP"
 **Last Updated**: 2025-12-05  
 **Status**: ✅ Working and tested (Linux/Ubuntu), ⚠️ Partially working (WSL)
 
+<!-- section_id: "50bfdd4e-56cb-4927-93e1-3ac6f1478a48" -->
 ## Overview
 
 This document documents the setup and troubleshooting of browser MCP servers in Cursor IDE on Linux/Ubuntu systems, including WSL (Windows Subsystem for Linux) environments. It covers Playwright MCP, browser MCP, and cursor-browser-extension MCP server configurations.
@@ -17,8 +18,10 @@ This document documents the setup and troubleshooting of browser MCP servers in 
 - ✅ Native Linux/Ubuntu
 - ⚠️ WSL2 (Ubuntu 24.04) on Windows 11 (Lenovo Yoga 9 Pro)
 
+<!-- section_id: "efefa250-49d6-4669-87c8-35ff3ea5ae59" -->
 ## Current Configuration
 
+<!-- section_id: "fe15f4d3-e33f-4cbd-a7e3-e280c4ea9120" -->
 ### MCP Servers Configured
 
 **Location**: `~/.cursor/mcp.json`
@@ -92,6 +95,7 @@ The previous configuration had many options that may cause issues:
 
 **Lesson Learned**: Simpler is better. The Playwright MCP server can automatically find and use Chromium without explicit paths.
 
+<!-- section_id: "4683fd16-f6f8-4f74-ad2d-dce78434870a" -->
 ### Status
 
 - ✅ **Playwright MCP**: Configured, running, and **tested successfully** (2025-12-04)
@@ -99,6 +103,7 @@ The previous configuration had many options that may cause issues:
 - ✅ **Cursor IDE Browser Tools**: Working (`mcp_cursor-ide-browser_*` tools available)
 - ⚠️ **cursor-browser-extension**: Shows "No server info found" - requires Chrome extension (not needed)
 
+<!-- section_id: "5c25b603-105b-48a9-a793-af4a9a03523d" -->
 ### Successful Setup Process (2025-12-04)
 
 **Problem**: Playwright MCP was configured but needed verification and simplification.
@@ -129,8 +134,10 @@ The previous configuration had many options that may cause issues:
 
 **Both tool sets work and provide full browser automation capabilities.**
 
+<!-- section_id: "0ffff423-3724-432a-a88c-7cd0416c9fc1" -->
 ## Browser Installation
 
+<!-- section_id: "1401102c-1100-4de7-9e10-5ac435859ba8" -->
 ### Chromium (Playwright)
 
 **Installed via Node.js Playwright:**
@@ -144,20 +151,24 @@ npx -y playwright@latest install chromium
 **Size**: 252MB  
 **Status**: ✅ Installed and executable
 
+<!-- section_id: "a2b2497d-81a6-47d1-99c0-3cbd2a41ec7b" -->
 ### Google Chrome (System)
 
 **Location**: `/usr/bin/google-chrome`  
 **Version**: 143.0.7499.40  
 **Status**: ✅ Installed
 
+<!-- section_id: "4d9ec9e6-064b-4c69-b4e5-8d83c3fe39ab" -->
 ## Cursor IDE Browser Automation Settings
 
+<!-- section_id: "84147796-a3f9-441b-87f9-dcf52e8c97f1" -->
 ### Configuration
 
 - **Browser Automation**: "Ready (Chrome detected)"
 - **Connection Type**: "Custom Executable Path"
 - **Chrome Executable Path**: `/usr/bin/google-chrome`
 
+<!-- section_id: "142f0f33-b5ee-4954-aa73-0fcee2adc95d" -->
 ### Linux-Specific Issues
 
 **Problem**: `cursor-browser-extension` MCP server shows "No server info found" even with:
@@ -172,8 +183,10 @@ npx -y playwright@latest install chromium
 2. Use Playwright MCP tools directly (22 tools available)
 3. Use browser MCP tools directly (21 tools available)
 
+<!-- section_id: "472ff9ad-5a0f-4c48-b7b7-d23cb73e92e1" -->
 ## Available Tools
 
+<!-- section_id: "58e75109-fab4-4421-8710-d331c262a7ff" -->
 ### Playwright MCP (22 tools)
 - Navigation: `browser_navigate`, `browser_navigate_back`, `browser_tabs`
 - Interaction: `browser_click`, `browser_type`, `browser_hover`, `browser_drag`
@@ -184,16 +197,20 @@ npx -y playwright@latest install chromium
 - Management: `browser_close`, `browser_resize`, `browser_install`
 - Waiting: `browser_wait_for`
 
+<!-- section_id: "38311934-5ae3-4d19-a059-3356d714a768" -->
 ### Browser MCP (21 tools, 1 resource)
 - Similar tool set to Playwright
 - Configured with explicit Chromium executable path
 
+<!-- section_id: "84dc2811-5b8c-4070-9b5e-dcdd1c378a2a" -->
 ### cursor-browser-extension (18 tools)
 - **Status**: Not working - requires Chrome extension
 - Tools available but return "Browser specified in your config is not installed"
 
+<!-- section_id: "1dcd2f4a-7677-49fc-8478-8e6c8a48c6a9" -->
 ## Troubleshooting
 
+<!-- section_id: "0b6dafbd-1393-4578-b8cc-624398f6935f" -->
 ### Issue: "Browser specified in your config is not installed"
 
 **Symptoms**:
@@ -210,6 +227,7 @@ npx -y playwright@latest install chromium
 2. Use Playwright MCP tools directly (they work without extension)
 3. Use browser MCP tools directly (configured with explicit path)
 
+<!-- section_id: "7ad2f805-7d4e-4b42-919d-05712e2fe934" -->
 ### Issue: cursor-browser-extension "No server info found"
 
 **Cause**: Requires Cursor Chrome extension to be installed
@@ -221,6 +239,7 @@ npx -y playwright@latest install chromium
 
 **Note**: According to Cursor documentation, browser automation is "native" and doesn't require an extension. The `cursor-browser-extension` MCP server may be separate from native browser automation.
 
+<!-- section_id: "3b17edaf-8197-4cc9-baea-c60fb88923b4" -->
 ## WSL (Windows Subsystem for Linux) Setup - Lenovo Yoga 9 Pro
 
 **Last Updated**: 2025-12-05  
@@ -228,6 +247,7 @@ npx -y playwright@latest install chromium
 **Status**: ⚠️ Partially Working - Configuration documented, requires Windows Chrome path  
 **Critical Finding (2025-12-05)**: In WSL, both Playwright and Browser MCP tools are NOT exposed to AI agents. Only `mcp_cursor-browser-extension_*` tools are available.
 
+<!-- section_id: "5580202d-a157-493d-94c7-3f9edc4e7646" -->
 ### WSL-Specific Configuration
 
 When running Cursor IDE within WSL, the browser automation setup requires special consideration because:
@@ -236,6 +256,7 @@ When running Cursor IDE within WSL, the browser automation setup requires specia
 2. **Chrome can be installed in both WSL and Windows**
 3. **Browser extension needs Windows Chrome path**, not WSL Chrome path
 
+<!-- section_id: "7253988f-2b60-429e-b9a3-37f338262103" -->
 ### System Configuration
 
 **WSL Environment**:
@@ -246,6 +267,7 @@ When running Cursor IDE within WSL, the browser automation setup requires specia
 - Chrome Version (WSL): 142.0.7444.162
 - Chrome Version (Windows): Available and accessible from WSL
 
+<!-- section_id: "e5be6150-413a-473c-8a2a-73f998781e1e" -->
 ### Setup Process Attempted (2025-12-05)
 
 #### Step 1: Initial WSL Chrome Path Configuration
@@ -295,6 +317,7 @@ ls -la "/mnt/c/Program Files/Google/Chrome/Application/chrome.exe"
 # Output: Opens in existing browser session (works)
 ```
 
+<!-- section_id: "f4593f61-7a01-483a-b4cd-5ef7e66b59fb" -->
 ### Current Configuration (WSL)
 
 **Cursor Settings → Tools → Browser Automation**:
@@ -332,6 +355,7 @@ ls -la "/mnt/c/Program Files/Google/Chrome/Application/chrome.exe"
 }
 ```
 
+<!-- section_id: "c7d36e4a-b13e-4b5a-990c-66f298f7838e" -->
 ### WSL-Specific Issues Encountered
 
 #### Issue 1: MCP Server Not Reading Browser Path
@@ -363,6 +387,7 @@ ls -la "/mnt/c/Program Files/Google/Chrome/Application/chrome.exe"
 
 **Impact**: Using `/usr/bin/google-chrome` should work (symlinks are resolved), but explicit path may be more reliable.
 
+<!-- section_id: "d4fa6d48-59d6-490c-9f5a-eceb8a61e634" -->
 ### WSL Troubleshooting Steps
 
 #### Check WSL Chrome Installation
@@ -403,6 +428,7 @@ echo $DISPLAY
 which xeyes || echo "X11 apps not available"
 ```
 
+<!-- section_id: "c0ec8ff1-d3c3-49da-9804-b810413b9567" -->
 ### Recommended WSL Configuration
 
 **For Cursor IDE Browser Automation in WSL**:
@@ -424,6 +450,7 @@ which xeyes || echo "X11 apps not available"
    - Check MCP server logs for specific errors
    - Consider using Playwright MCP tools directly instead
 
+<!-- section_id: "c73aab6d-cb6e-469b-841e-b68d7a212f76" -->
 ### WSL-Specific Notes
 
 - **X11 Forwarding**: Required for GUI applications in WSL. Verify with `echo $DISPLAY`
@@ -432,6 +459,7 @@ which xeyes || echo "X11 apps not available"
 - **MCP Server Location**: MCP config is at `~/.config/mcp/mcp.json` (symlinked from `~/.cursor/mcp.json`)
 - **Log Location**: Cursor server logs at `~/.cursor-server/data/logs/`
 
+<!-- section_id: "701342ca-6b47-4844-b9ba-e81dda6714ab" -->
 ### Next Steps for WSL Users
 
 1. ✅ Configure Cursor Settings with Windows Chrome path: `C:\Program Files\Google\Chrome\Application\chrome.exe`
@@ -439,6 +467,7 @@ which xeyes || echo "X11 apps not available"
 3. ⚠️ If MCP tools still don't work, use Playwright MCP as alternative
 4. 🔄 Monitor Cursor updates for potential fixes to browser extension MCP server
 
+<!-- section_id: "6ae5ded9-02fb-4667-b8e2-de1273be561d" -->
 ### Related WSL Documentation
 
 - WSL Setup: `../../sub_layer_0_05_os_setup/trickle_down_0.5_setup/0_instruction_docs/setup/WSL_SETUP.md`
@@ -446,13 +475,16 @@ which xeyes || echo "X11 apps not available"
 
 ---
 
+<!-- section_id: "64f883ee-2aef-4925-8124-02d08e4e8b68" -->
 ## Verification
 
+<!-- section_id: "989a188b-f2c9-48ae-81d3-e0e386cddad5" -->
 ### Check MCP Servers Running
 ```bash
 ps aux | grep -E "playwright|mcp.*browser" | grep -v grep
 ```
 
+<!-- section_id: "5a5a44e1-09f0-47fb-92d6-83a11a3eee35" -->
 ### Check Browser Installation
 ```bash
 # Chromium (Playwright)
@@ -462,12 +494,14 @@ ls -la ~/.cache/ms-playwright/chromium-1200/chrome-linux64/chrome
 which google-chrome && google-chrome --version
 ```
 
+<!-- section_id: "1f1c7983-11d2-4b74-9b15-c689c2fe573d" -->
 ### Check MCP Logs
 ```bash
 LATEST_LOG=$(ls -t ~/.config/Cursor/logs/*/window*/exthost/anysphere.cursor-mcp/MCP\ cursor-browser-extension.log 2>/dev/null | head -1)
 tail -20 "$LATEST_LOG"
 ```
 
+<!-- section_id: "2e9f67e1-2c01-4c0f-93c1-2e52da6849d5" -->
 ## Recommended Approach
 
 **For Linux/Ubuntu users:**
@@ -488,6 +522,7 @@ tail -20 "$LATEST_LOG"
    - Linux-specific issues
    - Not officially supported
 
+<!-- section_id: "d2923eeb-10f8-483f-9fe1-74afaa92c6c2" -->
 ## References
 
 - [Cursor Browser Documentation](https://cursor.com/docs/agent/browser)
@@ -495,13 +530,16 @@ tail -20 "$LATEST_LOG"
 - [Browser Automation Framework](../browser-automation/README.md)
 - [MCP Configuration Guide](./MCP_CONFIGURATION_GUIDE.md)
 
+<!-- section_id: "ba919e40-9fbf-4984-b341-1401a9640109" -->
 ## Related Documentation
 
 - Universal Browser Opening Rule: `layer_0/0.02_sub_layers/sub_layer_0_04_universal_rules/trickle_down_0_universal/0_instruction_docs/browser_opening_rule.md`
 - Playwright MCP Usage: `layer_0/0.02_sub_layers/sub_layer_0_05_os_setup/trickle_down_0.5_setup/0_instruction_docs/setup/playwright-mcp-usage.md`
 
+<!-- section_id: "d357f4db-5cd6-4354-b907-b56cae8fdcab" -->
 ## Setup Instructions
 
+<!-- section_id: "c3605baf-0afd-4040-8734-789554f27d94" -->
 ### Quick Setup for Cursor IDE
 
 1. **Edit Cursor MCP Configuration**:
@@ -535,6 +573,7 @@ tail -20 "$LATEST_LOG"
    - Check that Chromium is installed: `npx playwright install chromium`
    - Verify MCP server is running in Cursor IDE settings
 
+<!-- section_id: "876a9328-871a-49de-8080-3ae423e4ea47" -->
 ### Verification Test
 
 After setup, test browser control:

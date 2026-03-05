@@ -6,6 +6,7 @@ resource_name: "0AGNOSTIC"
 ---
 # navigation — Stage 11: archives
 
+<!-- section_id: "09e07d77-765b-400f-9dd2-3bca8f1c0ff9" -->
 ## Identity
 
 stage_id: "49f550ec-6d29-47bd-b248-c25b840a5513"
@@ -16,5 +17,6 @@ Stage 11 (archives) for the navigation research sub-feature.
 - **Parent**: `../../0AGNOSTIC.md`
 - **Purpose**: Archived versions and history
 
+<!-- section_id: "a3d75eb4-7c99-46f1-9dc1-bb781c62fca2" -->
 ## Triggers
 Load when working in this stage directory.

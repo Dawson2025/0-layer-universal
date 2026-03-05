@@ -5,16 +5,19 @@ resource_name: "form_filling_workflow"
 ---
 # Form Filling Automation Workflow (Playwright MCP)
 
+<!-- section_id: "94432df3-2ef2-4aa8-8199-a5b06e5d111d" -->
 ## Overview
 
 This protocol defines standard procedures for automating form completion using Playwright MCP. Form automation includes filling text inputs, selecting options, checking boxes, and submitting forms.
 
+<!-- section_id: "0bd7923f-9be1-4f31-bd6c-58ef77594d7e" -->
 ## Prerequisites
 
 1. Playwright MCP server must be running and accessible
 2. User must provide the data to fill (AI should never generate sensitive data)
 3. Forms requiring authentication may need user to log in first
 
+<!-- section_id: "9d3c173a-e94c-457e-a92b-b385c883a8ab" -->
 ## Security Considerations
 
 **IMPORTANT**: AI assistants should:
@@ -25,11 +28,14 @@ This protocol defines standard procedures for automating form completion using P
 
 ---
 
+<!-- section_id: "a466e8d6-ebbd-4613-b2c8-5a71a77b2f26" -->
 ## Workflow 1: Basic Text Form Filling
 
+<!-- section_id: "073a615d-a108-4bb5-86e2-321dfbd2dc30" -->
 ### Use Case
 Fill a simple contact form or registration form with text inputs.
 
+<!-- section_id: "4512251d-eb83-4d8c-81c5-09dfbdac0c13" -->
 ### Steps
 
 1. **Navigate to form page:**
@@ -78,11 +84,14 @@ Fill a simple contact form or registration form with text inputs.
 
 ---
 
+<!-- section_id: "ec7d2d0c-13f4-4339-b351-a0d2212597aa" -->
 ## Workflow 2: Multi-Field Form (Using fill_form)
 
+<!-- section_id: "b4b905bf-848e-4e3a-9e41-e6065cc14635" -->
 ### Use Case
 Fill multiple form fields efficiently in a single operation.
 
+<!-- section_id: "78622518-7888-49c9-bf5c-711dee0a80c1" -->
 ### Steps
 
 1. **Navigate and get snapshot:**
@@ -112,11 +121,14 @@ Fill multiple form fields efficiently in a single operation.
 
 ---
 
+<!-- section_id: "b0690dff-b36d-4cac-97ae-5a7ddf3ce03f" -->
 ## Workflow 3: Dropdown Selection
 
+<!-- section_id: "816cb32e-2444-4296-aba9-66b1ce734033" -->
 ### Use Case
 Select options from dropdown menus (country, state, category, etc.).
 
+<!-- section_id: "776c9594-a420-4f00-826a-8d28b8728d42" -->
 ### Steps
 
 1. **Get snapshot to identify dropdown:**
@@ -155,11 +167,14 @@ Select options from dropdown menus (country, state, category, etc.).
 
 ---
 
+<!-- section_id: "4325bfc5-6e0a-4b8e-8c22-a8a61e290f2c" -->
 ## Workflow 4: Checkbox and Radio Button Handling
 
+<!-- section_id: "e7952d2d-ff2c-4985-bbde-22281149319d" -->
 ### Use Case
 Toggle checkboxes and select radio button options.
 
+<!-- section_id: "a2921707-b86f-4fb5-9086-3ff7bf494e53" -->
 ### Steps
 
 1. **Get snapshot to identify checkboxes/radios:**
@@ -192,11 +207,14 @@ Toggle checkboxes and select radio button options.
 
 ---
 
+<!-- section_id: "0729ad07-ff11-4dc7-84ff-f9925a497009" -->
 ## Workflow 5: Date and Time Inputs
 
+<!-- section_id: "d9373c46-566f-46d9-af59-0bc5c44d32fb" -->
 ### Use Case
 Fill date pickers, time selectors, and datetime fields.
 
+<!-- section_id: "3dbf097e-dbb8-4348-a81e-d7f323e8b527" -->
 ### Steps
 
 1. **For standard HTML date inputs:**
@@ -232,11 +250,14 @@ Fill date pickers, time selectors, and datetime fields.
 
 ---
 
+<!-- section_id: "ac387f73-8505-4e5a-b11f-4c39c4e4afc7" -->
 ## Workflow 6: File Upload Fields
 
+<!-- section_id: "c2109d72-1b6f-4f87-b64a-882a5e49d93f" -->
 ### Use Case
 Upload files through file input fields.
 
+<!-- section_id: "706d8200-6d28-44f9-b7a4-3aa9bbcdbe7f" -->
 ### Steps
 
 1. **Identify file input:**
@@ -265,11 +286,14 @@ Upload files through file input fields.
 
 ---
 
+<!-- section_id: "e1275460-74c2-4fb0-a17e-c5e5e3d1f1be" -->
 ## Workflow 7: Multi-Step Forms (Wizards)
 
+<!-- section_id: "41434bec-8065-4e8a-bb6f-dee07f9c9e4c" -->
 ### Use Case
 Complete forms that span multiple pages or steps.
 
+<!-- section_id: "2b83f93e-ee1e-4dc1-8836-5e161f29f374" -->
 ### Steps
 
 1. **Complete Step 1:**
@@ -309,11 +333,14 @@ Complete forms that span multiple pages or steps.
 
 ---
 
+<!-- section_id: "5adb5181-a43e-465f-abdd-da6670ddde58" -->
 ## Workflow 8: Form Validation Handling
 
+<!-- section_id: "99677f83-d1a9-49c0-8c5b-0e512fa6c7de" -->
 ### Use Case
 Handle validation errors and correct form entries.
 
+<!-- section_id: "8e3c5b77-3959-4d67-8e50-2306f9eba8cf" -->
 ### Steps
 
 1. **Submit form:**
@@ -346,6 +373,7 @@ Handle validation errors and correct form entries.
 
 ---
 
+<!-- section_id: "aa21a2d2-9ced-4c5f-b9ff-8e7fccb71449" -->
 ## Field Type Reference
 
 | Field Type | Tool | Example |
@@ -363,6 +391,7 @@ Handle validation errors and correct form entries.
 
 ---
 
+<!-- section_id: "5a986dcf-ec15-440b-952b-2719999e964c" -->
 ## Best Practices
 
 1. **Always get snapshot first**: Identify field references before filling
@@ -375,8 +404,10 @@ Handle validation errors and correct form entries.
 
 ---
 
+<!-- section_id: "6b5c38ea-e9e7-4c79-9296-611489558c49" -->
 ## Error Handling
 
+<!-- section_id: "dfa87399-dac0-4d9d-b54a-737aed44a4f3" -->
 ### Field Not Found
 ```
 # Re-get snapshot
@@ -388,6 +419,7 @@ mcp__playwright__browser_evaluate(
 )
 ```
 
+<!-- section_id: "701a3a3f-0796-48ae-a082-1202541f6619" -->
 ### Value Not Accepted
 ```
 # Clear field first
@@ -399,6 +431,7 @@ mcp__playwright__browser_press_key(key="Backspace")
 mcp__playwright__browser_type(element="Field", ref="ref_1", text="new value")
 ```
 
+<!-- section_id: "453e5765-0082-40a6-9f1d-a591c447ce49" -->
 ### Form Timeout
 ```
 # Check if page reloaded
@@ -410,6 +443,7 @@ mcp__playwright__browser_navigate(url="https://example.com/form")
 
 ---
 
+<!-- section_id: "7215917e-e30c-4d93-af16-3df0a28ca4fe" -->
 ## Example: Complete Registration Form
 
 ```

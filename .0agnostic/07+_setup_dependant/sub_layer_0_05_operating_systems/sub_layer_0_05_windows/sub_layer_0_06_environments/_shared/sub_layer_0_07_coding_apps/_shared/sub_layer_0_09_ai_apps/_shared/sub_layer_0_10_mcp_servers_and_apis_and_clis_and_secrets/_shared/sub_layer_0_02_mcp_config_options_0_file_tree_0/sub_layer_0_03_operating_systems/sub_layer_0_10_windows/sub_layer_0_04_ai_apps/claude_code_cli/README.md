@@ -6,9 +6,11 @@ resource_name: "README"
 ---
 # Claude Code CLI MCP Setup (Windows)
 
+<!-- section_id: "4087139a-ce4e-49d3-91ce-5f275b2c3655" -->
 ## Config location
 - Claude Code client config (typically in your user profile; use `claude mcp ...` commands to manage servers).
 
+<!-- section_id: "291179e0-e65c-472b-b9eb-9f35535ec3d1" -->
 ## Notes
 - Use Windows-native `npx.cmd` in server configs.
 - Prefer env vars for secrets; avoid committing keys.

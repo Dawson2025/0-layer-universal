@@ -5,9 +5,11 @@ resource_name: "01_implementation_plan_0agnostic_1merge_avenue_web"
 ---
 # Implementation Plan: 0AGNOSTIC + .1merge + Avenue Web
 
+<!-- section_id: "a18762e8-4e06-41d4-812c-acf6cc8eb246" -->
 ## Objective
 Implement and validate the 8-avenued MVP using `0AGNOSTIC` as source, `.1merge` as projection, and the Avenue Web as runtime behavior.
 
+<!-- section_id: "4fe8a8fc-7ec7-43d4-9694-edff2b66912a" -->
 ## Scope
 In scope:
 - End-to-end MVP implementation of all 8 current avenues.
@@ -18,6 +20,7 @@ Out of scope:
 - Full post-MVP advanced avenues (A2A, telemetry, policy, provenance).
 - Deep per-tool optimization beyond baseline correctness.
 
+<!-- section_id: "571b6cf1-2ea6-4c7d-a8c3-efe334beec84" -->
 ## Workstreams
 1. Source Modeling
 - Normalize canonical content in `0AGNOSTIC` for rules, skills, knowledge, memory, and references.
@@ -90,6 +93,7 @@ Out of scope:
   - primary dynamic surfaces
   - required fallback routes
 
+<!-- section_id: "a56bcbaa-72e2-4506-bf49-200343de0796" -->
 ## Milestones
 1. M1 - Canonical + Merge Spec Complete
 - Deliverables: source map, merge policy, emission map, JSON-LD class inventory, canonical-class propagation map.
@@ -109,6 +113,7 @@ Out of scope:
 6. M6 - Research Alignment Closure
 - Deliverables: checklist showing each major research requirement is either implemented, deferred with rationale, or explicitly out of scope.
 
+<!-- section_id: "c6ad36ec-f8d9-4d87-9056-69ea2af96bfc" -->
 ## Acceptance Criteria
 1. All 8 MVP avenues pass at least one end-to-end scenario each.
 2. Merge outputs are deterministic and reproducible.
@@ -122,6 +127,7 @@ Out of scope:
 10. JSON-LD coverage includes orchestrator variants (layer/stage/runtime/spec/gabwork variants where present), and each has a matching integration summary.
 11. Static-chain budget and compaction-safe subset checks pass.
 
+<!-- section_id: "1aad5769-3e30-4af7-b2b0-3b1b2d0ea83d" -->
 ## Risks and Mitigations
 1. Merge drift across tools
 - Mitigation: regenerate and diff checks in CI.
@@ -135,6 +141,7 @@ Out of scope:
 4. Context bloat
 - Mitigation: progressive disclosure defaults and compaction-safe subset.
 
+<!-- section_id: "88316fe8-a48c-4d25-9080-82419c7fb353" -->
 ## Execution Order (High Level)
 1. Finalize design artifacts in Stage 2.04.
 2. Build merge/emission specification.
@@ -143,6 +150,7 @@ Out of scope:
 5. Roll out and monitor.
 6. Queue post-MVP advanced avenues.
 
+<!-- section_id: "c80197de-e02a-4684-9f42-a044f778bae9" -->
 ## Post-MVP Queue
 1. Advanced MCP primitives and richer docs retrieval.
 2. Telemetry-as-context and policy-as-context.

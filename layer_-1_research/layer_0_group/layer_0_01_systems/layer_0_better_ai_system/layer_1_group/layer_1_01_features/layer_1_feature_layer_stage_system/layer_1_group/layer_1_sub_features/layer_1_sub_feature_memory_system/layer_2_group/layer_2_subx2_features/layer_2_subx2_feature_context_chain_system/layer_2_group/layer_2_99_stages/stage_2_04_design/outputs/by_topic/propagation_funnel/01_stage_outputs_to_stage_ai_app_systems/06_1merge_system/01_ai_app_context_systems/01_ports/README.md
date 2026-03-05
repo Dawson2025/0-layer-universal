@@ -11,6 +11,7 @@ resource_name: "README"
 
 ---
 
+<!-- section_id: "1e419322-817a-4c6c-99b2-78f8051691bd" -->
 ## Overview
 
 This directory contains comprehensive documentation for porting the 0AGNOSTIC.md system and .0agnostic/ directory into 5 different AI applications:
@@ -23,6 +24,7 @@ This directory contains comprehensive documentation for porting the 0AGNOSTIC.md
 
 ---
 
+<!-- section_id: "bcdb58b6-382a-45b5-9a35-12c032ee4cee" -->
 ## File Structure
 
 Each application has:
@@ -36,8 +38,10 @@ Each application has:
 
 ---
 
+<!-- section_id: "d80c2528-60e8-4053-9df8-7e18bab2c78a" -->
 ## Key Concepts
 
+<!-- section_id: "ecae449c-98b6-4645-946c-08ca93dcb7f9" -->
 ### Native vs. Application-Implemented
 
 **Native** (Tool Provides):
@@ -50,6 +54,7 @@ Each application has:
 - What goes INTO native mechanisms
 - Examples: Writing actual .cursor/rules content, deciding what to remember in Memory Bank, choosing which MCP servers to configure
 
+<!-- section_id: "c206f7e3-a02f-4188-b5fc-177bb7f38784" -->
 ### Three-Part Pattern
 
 Every application documentation follows:
@@ -79,8 +84,10 @@ Every application documentation follows:
 
 ---
 
+<!-- section_id: "ad570521-547b-4457-b911-b8a57496563d" -->
 ## Completed Applications
 
+<!-- section_id: "8909e8f3-c72a-40ff-8fea-1ad1ad492a6f" -->
 ### 1. Claude Code CLI
 
 **Status**: ✅ Complete
@@ -96,6 +103,7 @@ Every application documentation follows:
 - `01_claude_code_cli/ai_app_system/COMPLETE_ARCHITECTURE.md` (400 lines)
 - `01_claude_code_cli/port_system/PORTING_STRATEGY.md` (750 lines)
 
+<!-- section_id: "f4109776-44d8-4088-a63d-9ce7a34d4f96" -->
 ### 2. Codex CLI
 
 **Status**: ✅ Complete
@@ -111,6 +119,7 @@ Every application documentation follows:
 - `02_codex_cli/ai_app_system/COMPLETE_ARCHITECTURE.md` (500 lines)
 - `02_codex_cli/port_system/PORTING_STRATEGY.md` (900 lines)
 
+<!-- section_id: "ffc50ef3-eca4-4f05-b6f2-3c8fcec8daed" -->
 ### 3. Gemini SDK
 
 **Status**: ✅ Nearly Complete (3/4 files)
@@ -126,6 +135,7 @@ Every application documentation follows:
 - `03_gemini/ai_app_system/COMPLETE_ARCHITECTURE.md` (380 lines) ✅
 - `03_gemini/port_system/PORTING_STRATEGY.md` (750 lines) ✅
 
+<!-- section_id: "1bf97a63-1f38-4b18-b498-9cadce46e3fe" -->
 ### 4. Cursor IDE
 
 **Status**: ✅ Mostly Complete (3/4 files)
@@ -141,6 +151,7 @@ Every application documentation follows:
 - `04_cursor_ide/ai_app_system/COMPLETE_ARCHITECTURE.md` (350 lines) ✅
 - `04_cursor_ide/port_system/PORTING_STRATEGY.md` (⏳ In Progress)
 
+<!-- section_id: "5c073bc3-d876-4672-9d5c-703ec7239cff" -->
 ### 5. Cursor Agent CLI
 
 **Status**: ⚠️ Partial (1/4 files)
@@ -158,10 +169,12 @@ Every application documentation follows:
 
 ---
 
+<!-- section_id: "47aea5b6-e23d-4a00-a913-0adaa91f88be" -->
 ## Common Patterns
 
 All applications follow the same pattern:
 
+<!-- section_id: "abbe6e04-c4d2-4eb1-b48b-9a018658c2ae" -->
 ### Pattern: Static Context Loading
 
 ```
@@ -174,6 +187,7 @@ Loaded for every interaction
 Influences response generation
 ```
 
+<!-- section_id: "2fd58b39-4cc6-40c2-8220-5e0b19166598" -->
 ### Pattern: Dynamic Context Management
 
 ```
@@ -186,6 +200,7 @@ Triggered on-demand based on context
 Reads from .0agnostic/ resources
 ```
 
+<!-- section_id: "77563e32-e2b1-4fe1-9a75-566c2bfa632c" -->
 ### Pattern: .0agnostic/ Directory Implementation
 
 ```
@@ -200,18 +215,22 @@ Reads from .0agnostic/ resources
 
 ---
 
+<!-- section_id: "86876af3-b28a-4db3-8e2c-8c4620fecf72" -->
 ## How to Use This Documentation
 
+<!-- section_id: "cd7de555-7aba-4968-b83d-62b435b0f2fb" -->
 ### For Understanding a Specific Tool:
 1. Read `NATIVE_FEATURES.md` — understand what the tool provides
 2. Read `APPLICATION_IMPLEMENTED.md` — understand your responsibilities
 3. Read `COMPLETE_ARCHITECTURE.md` — see how they work together
 
+<!-- section_id: "2c63915d-81c7-4648-945b-59f3c51c94fc" -->
 ### For Porting Your System:
 1. Read `PORTING_STRATEGY.md` for the tool
 2. Follow the step-by-step migration guide
 3. Use the provided checklist to validate completion
 
+<!-- section_id: "58074f09-d560-410c-af32-a2f70bb2f8e5" -->
 ### For Comparing Tools:
 - Each `NATIVE_FEATURES.md` lists 10 mechanisms
 - Each `APPLICATION_IMPLEMENTED.md` covers 7-8 decision areas
@@ -219,6 +238,7 @@ Reads from .0agnostic/ resources
 
 ---
 
+<!-- section_id: "91b783f6-0776-4830-97fd-d7425845bb15" -->
 ## Key Takeaways
 
 1. **Every tool has native mechanisms** — you understand these by reading NATIVE_FEATURES.md
@@ -233,6 +253,7 @@ Reads from .0agnostic/ resources
 
 ---
 
+<!-- section_id: "92a6e062-d850-4b22-b9fb-9968bd8faa52" -->
 ## Research Sources
 
 Documentation based on:
@@ -244,6 +265,7 @@ Documentation based on:
 
 ---
 
+<!-- section_id: "c7685cbc-163b-4668-afe6-bbbbbc698ade" -->
 ## Next Steps
 
 To complete all documentation:

@@ -5,12 +5,14 @@ resource_name: "stage_delegation"
 ---
 # Topic: Stage Delegation
 
+<!-- section_id: "1f60a3a3-2614-4a69-94d7-9c43a5795e68" -->
 ## Summary
 
 Stage delegation is the core pattern: entity managers delegate work to stage-specialized agents. Each stage agent has its own 0AGNOSTIC.md that defines its identity, methodology, scope (IS and IS NOT), and success criteria. Managers don't carry stage-level operational knowledge — they coordinate via stage reports.
 
 The pattern prevents context overflow: instead of one agent trying to hold requirements + research + design + development, each stage agent loads only what it needs.
 
+<!-- section_id: "b0faf762-64ef-4299-ac7b-82e0f88cf193" -->
 ## Key Points
 
 - Managers delegate, agents operate (Principle 1)
@@ -18,6 +20,7 @@ The pattern prevents context overflow: instead of one agent trying to hold requi
 - Explicit scope boundaries with IS/IS NOT lists prevent scope creep (Principle 2)
 - Stages are reentrant — can loop back from testing to design (Principle 5)
 
+<!-- section_id: "e83c61e7-1ab2-461a-84b9-e5250e3a0d6d" -->
 ## References
 
 | What | Where |

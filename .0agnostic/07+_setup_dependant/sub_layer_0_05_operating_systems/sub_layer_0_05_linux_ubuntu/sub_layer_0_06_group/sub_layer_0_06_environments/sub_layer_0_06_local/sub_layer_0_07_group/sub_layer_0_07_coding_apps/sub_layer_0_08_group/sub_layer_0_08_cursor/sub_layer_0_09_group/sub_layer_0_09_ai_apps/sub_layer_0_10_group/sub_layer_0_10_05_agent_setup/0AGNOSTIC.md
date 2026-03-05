@@ -10,6 +10,7 @@ resource_name: "0AGNOSTIC"
 
 # ── Entity Definition ──
 
+<!-- section_id: "3cad2c8e-10e1-4034-8bbf-bc43e394aa6c" -->
 ## Identity
 
 **Entity**: Agent Setup
@@ -20,6 +21,7 @@ resource_name: "0AGNOSTIC"
 
 **Specificity Chain**: OS (05) → Linux Ubuntu (05) → Environments (06) → Local (06) → Coding Apps (07) → Cursor (08) → AI Apps (09) → **Agent Setup (10)**
 
+<!-- section_id: "013ac874-0c9a-41b0-9ada-cd6ecdf13d75" -->
 ## Key Behaviors
 
 - Last in feature sequence — depends on knowledge from: Tools and Services (01), AI Models (02), Universal Tools (03), Protocols (04)
@@ -29,12 +31,14 @@ resource_name: "0AGNOSTIC"
 - References Protocols (04) for behavioral protocol bindings
 - Templates support instantiation for any AI app (Claude Code, Cursor Agent, Codex, Gemini)
 
+<!-- section_id: "157e8fcb-463b-417c-9268-b1624da41e0b" -->
 ## Delegation Contract
 
 **Children** (level 11): Individual agent template or configuration entities (future)
 **Parent** (level 09): AI Apps Category
 **Siblings**: 01_tools_and_services, 02_ai_models, 03_universal_tools, 04_protocols (features), claude_code_cli, codex_cli, cursor_agent, gemini_cli (further_specificity)
 
+<!-- section_id: "7c71a590-fdac-49a4-85f1-1fd7160e6254" -->
 ## Inputs
 
 - Tool capabilities from Tools and Services (01)
@@ -43,6 +47,7 @@ resource_name: "0AGNOSTIC"
 - Operational protocols from Protocols (04)
 - Agent requirements from individual AI app entities
 
+<!-- section_id: "1d4a1afe-5a53-4b3c-82b1-747ee7498ec4" -->
 ## Outputs
 
 - Reusable agent configuration templates
@@ -51,6 +56,7 @@ resource_name: "0AGNOSTIC"
 
 # ── Current Status ──
 
+<!-- section_id: "d5647bc5-5990-4888-a41b-453a9e14fc34" -->
 ## Current Status
 
 - **Stage**: Created (2026-02-25, awaiting content population)
@@ -62,10 +68,12 @@ resource_name: "0AGNOSTIC"
 
 # ── Current State ──
 
+<!-- section_id: "7c0dd3bb-252a-4916-9f75-a3f166b2e235" -->
 ## Current State Detail
 
 Entity created as the capstone feature in the AI Apps feature sequence. No content migrated yet — this entity will be populated by extracting common agent configuration patterns from individual AI app entities (claude_code_cli, cursor_agent, codex_cli, gemini_cli) once those are established.
 
+<!-- section_id: "a2f61716-d467-4afb-8759-2a30af7482cf" -->
 ## Open Items
 
 - [ ] Survey existing AI app entities for common agent configuration patterns
@@ -76,6 +84,7 @@ Entity created as the capstone feature in the AI Apps feature sequence. No conte
 
 # ── References ──
 
+<!-- section_id: "c40f617b-0019-48b3-913d-a447b74def70" -->
 ## Navigation
 
 | Resource | Location |

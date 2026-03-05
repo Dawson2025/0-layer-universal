@@ -5,6 +5,7 @@ resource_name: "episodic_memory"
 ---
 # Episodic Memory Rules
 
+<!-- section_id: "7d5f49fc-3dee-4148-800f-029f2f3ddd1e" -->
 ## Rule: Record Significant Work
 
 After completing significant work, create a session record:
@@ -13,6 +14,7 @@ After completing significant work, create a session record:
 .0agnostic/episodic_memory/sessions/YYYY-MM-DD_session_NNN.md
 ```
 
+<!-- section_id: "44c13bab-9d8c-4351-9575-4e864220e717" -->
 ## Session File Structure
 
 ```markdown
@@ -47,6 +49,7 @@ After completing significant work, create a session record:
 [Any relevant observations or context]
 ```
 
+<!-- section_id: "4fe79b37-7c69-42b5-bb46-8d191ecb8fc8" -->
 ## Change Tracking
 
 When modifying outputs, update divergence.log:
@@ -57,6 +60,7 @@ YYYY-MM-DDTHH:MM:SSZ | agent_id | path | ACTION | before_hash → after_hash
 
 Actions: CREATED, MODIFIED, DELETED
 
+<!-- section_id: "88902606-d98e-4072-951b-3b12d3195bfe" -->
 ## Why Episodic Memory
 
 - **Prevents amnesia**: Next session knows what happened

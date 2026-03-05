@@ -11,6 +11,7 @@ resource_name: "01_implementation_roadmap"
 
 ---
 
+<!-- section_id: "7d8eb445-0935-4f4b-8749-b0738fc35d82" -->
 ## Overview
 
 This roadmap documents the implementation pathway from research findings (design phase) through production deployment. It covers three major systems that evolved during this session:
@@ -21,8 +22,10 @@ This roadmap documents the implementation pathway from research findings (design
 
 ---
 
+<!-- section_id: "e138dba7-41e1-4530-a0ff-f4a682a8893b" -->
 ## Phase 1: Layer Consolidation (COMPLETED)
 
+<!-- section_id: "39b0d53f-0ed2-4018-8653-692cc8a82912" -->
 ### Objectives
 
 ✅ Identify duplicate and fragmented directory structures
@@ -32,6 +35,7 @@ This roadmap documents the implementation pathway from research findings (design
 ✅ Update Git submodule references to new paths
 ✅ Validate consistency across all 6 course projects
 
+<!-- section_id: "15d4ee27-d1b5-47b0-8e9c-c3ddfae2ef39" -->
 ### Scope
 
 **Affected Entities**:
@@ -46,6 +50,7 @@ This roadmap documents the implementation pathway from research findings (design
   - layer_4_subx3_project_parallelism_concurrency
   - layer_4_subx3_project_professional_readiness (new)
 
+<!-- section_id: "29b9b27a-23bb-4261-8a55-a1da99cb5d46" -->
 ### Deliverables
 
 ✅ **Protocol Document** — `.0agnostic/03_protocols/layer_consolidation_and_naming_protocol.md`
@@ -69,6 +74,7 @@ This roadmap documents the implementation pathway from research findings (design
 - Submodule references reinitialized
 - All commits pushed with proper messages
 
+<!-- section_id: "f70d07ba-db31-4f94-a76a-2fe30e1cca7d" -->
 ### Execution Timeline
 
 | Date | Task | Status |
@@ -82,6 +88,7 @@ This roadmap documents the implementation pathway from research findings (design
 | 2026-02-27 | Verify Git status | ✅ Done |
 | 2026-02-27 | Commit and push | ✅ Done |
 
+<!-- section_id: "87f6e657-3156-4fe9-8fd0-9b1d8441a400" -->
 ### Validation Results
 
 ✅ **layer_3_group**: Properly structured, 7 child projects accessible, old architecture removed
@@ -89,6 +96,7 @@ This roadmap documents the implementation pathway from research findings (design
 ✅ **All 6 projects**: Named consistently, 0AGNOSTIC.md created, .0agnostic/ populated
 ✅ **Git tracking**: .gitmodules synchronized, submodule references valid
 
+<!-- section_id: "b2fdbefd-e86a-42ee-ae78-9ababc300661" -->
 ### Key Learnings
 
 1. **mv behavior** — When target exists, `mv source existing_target/` moves source INTO target (nesting), not replacing it
@@ -106,8 +114,10 @@ This roadmap documents the implementation pathway from research findings (design
 
 ---
 
+<!-- section_id: "0660b0fe-86e6-4435-a92c-e6813f0a68ad" -->
 ## Phase 2: Context Chain Architecture (COMPLETED)
 
+<!-- section_id: "2a26a94a-1d1c-44ba-a945-3dca2a7e34b2" -->
 ### Objectives
 
 ✅ Clarify terminology — distinguish "AI Apps" from "MCP Server Tools"
@@ -116,6 +126,7 @@ This roadmap documents the implementation pathway from research findings (design
 ✅ Explain agnostic-sync.sh output (CLAUDE.md, AGENTS.md, etc.)
 ✅ Document context avenue web (13 avenues)
 
+<!-- section_id: "0bdc469c-9bb2-4ad4-934e-70702479bed1" -->
 ### Scope
 
 **AI Apps Identified**:
@@ -132,6 +143,7 @@ This roadmap documents the implementation pathway from research findings (design
 - Bash (OS shell commands)
 - File system (local storage)
 
+<!-- section_id: "823cf7f9-90ab-4e05-af1c-71abd6623c87" -->
 ### Key Distinction
 
 | Category | Receives Context? | Receives Calls? | Role |
@@ -139,6 +151,7 @@ This roadmap documents the implementation pathway from research findings (design
 | **AI Apps** | ✅ YES | ❌ NO | Context recipient that reasons about tasks |
 | **MCP Server Tools** | ❌ NO | ✅ YES | Function-call responders providing capabilities |
 
+<!-- section_id: "b1395d59-e926-4ba1-9919-17a871464fa5" -->
 ### Deliverables
 
 ✅ **Architecture Document** — `.0agnostic/07+_setup_dependant/context_chain_architecture.md` (stored in research)
@@ -154,6 +167,7 @@ This roadmap documents the implementation pathway from research findings (design
 - "AI Apps" explicitly names Claude Code, Cursor, Copilot, Gemini, Codex
 - Context files now labeled as Layer 1 outputs (CLAUDE.md, .cursorrules, etc.)
 
+<!-- section_id: "bee68001-9c35-4e3c-a4ee-56cf0f7ea50a" -->
 ### Current Implementation Status
 
 ✅ **Implemented**:
@@ -169,6 +183,7 @@ This roadmap documents the implementation pathway from research findings (design
 🔄 **Designed but Not Yet Implemented**:
 - Layer 2: .1merge port system (three-tier merge to deploy universal context to app-native directories)
 
+<!-- section_id: "1ac3d76f-36e3-4cd4-8811-ee9f0b4fbe77" -->
 ### Roadmap for .1merge Implementation
 
 **Phase 2A: Design boilerplate specifications**
@@ -197,8 +212,10 @@ This roadmap documents the implementation pathway from research findings (design
 
 ---
 
+<!-- section_id: "15f9c894-ee43-4ce8-a45c-9510cc6de1ca" -->
 ## Phase 3: Grade Strategy System & Trajectory Stores (COMPLETED)
 
+<!-- section_id: "0b606650-376b-4be9-96c3-2f8bdab37496" -->
 ### Objectives
 
 ✅ Research trajectory store concept (academic validation)
@@ -207,6 +224,7 @@ This roadmap documents the implementation pathway from research findings (design
 ✅ Build cascading system so ANY class can inherit
 ✅ Validate with MATH 119 (specs-based) and CSE 300 (percentage-based)
 
+<!-- section_id: "da3e32d5-bca2-46d6-8c51-76828d8b8da4" -->
 ### Scope
 
 **Trajectory Stores** (5 documents):
@@ -227,6 +245,7 @@ This roadmap documents the implementation pathway from research findings (design
   - Dashboard skill: /cse300-dashboard
   - Status: 🚧 Created, ready for production
 
+<!-- section_id: "db030234-5576-44b8-ad0d-67490126c0e1" -->
 ### Deliverables
 
 ✅ **Research Document** — `.0agnostic/03_protocols/grade_strategy_system/` contains all 5 trajectories
@@ -255,6 +274,7 @@ This roadmap documents the implementation pathway from research findings (design
   - schedule.md (7 weeks + final project deadlines)
   - /cse300-dashboard skill (7-step workflow)
 
+<!-- section_id: "860d0f44-36c7-4a1b-a706-c039b47c7b2f" -->
 ### Execution Timeline
 
 | Date | Task | Status |
@@ -270,6 +290,7 @@ This roadmap documents the implementation pathway from research findings (design
 | 2026-02-27 | Create 0AGNOSTIC.md for each | ✅ Done |
 | 2026-02-27 | Run agnostic-sync.sh | ✅ Done |
 
+<!-- section_id: "3029954f-1d23-487e-8864-1072f21d2af1" -->
 ### Validation Results
 
 ✅ **MATH 119**: Specs-based dashboard works, validates threshold crossing logic
@@ -277,6 +298,7 @@ This roadmap documents the implementation pathway from research findings (design
 ✅ **Layer 2 trajectories**: Both grading models tested, formula validation passed
 ✅ **Cascading system**: All 6 projects can reference layer_2 trajectories without duplication
 
+<!-- section_id: "af157ca9-b2c5-4f20-b7be-393f21383756" -->
 ### Key Learnings
 
 1. **Trajectory stores are distinct from SOPs/runbooks** — They capture reasoning, not just procedures
@@ -296,14 +318,17 @@ This roadmap documents the implementation pathway from research findings (design
 
 ---
 
+<!-- section_id: "a6bd8e3b-a3ad-46d8-b6bb-9ae256d285eb" -->
 ## Phase 4: Documentation & Research (CURRENT)
 
+<!-- section_id: "5982cb25-1aec-4b34-a661-2926d26b5e6b" -->
 ### Objectives
 
 Document research findings in research layer stages (design phase)
 Store implementation details as reference for future development
 Create comprehensive guides for maintaining these systems
 
+<!-- section_id: "2d1f8f43-ece8-40a4-be19-5c645c743c55" -->
 ### Deliverables
 
 ✅ **Design Documents** (in stage_1_04_design/outputs/):
@@ -314,6 +339,7 @@ Create comprehensive guides for maintaining these systems
 📝 **Planning Documents** (in stage_1_05_planning/outputs/):
 1. `01_implementation_roadmap.md` (this file) — Phases 1-5 roadmap, status, next steps
 
+<!-- section_id: "2b135bbd-99d3-4d6f-b0a7-5300caa0102b" -->
 ### Current Session Status
 
 ✅ **Phase 1** (Layer Consolidation): Complete
@@ -321,14 +347,17 @@ Create comprehensive guides for maintaining these systems
 ✅ **Phase 3** (Grade Strategy): Complete (production-ready for CSE 300)
 ✅ **Phase 4** (Documentation): Current (design docs being written)
 
+<!-- section_id: "8f197bfb-ed66-4b7f-90e4-a42717fd2962" -->
 ### Pending Phases
 
 🔄 **Phase 5** (Promotion to Production) — Not yet started
 
 ---
 
+<!-- section_id: "28ac1f14-94f4-404e-a007-cf9d73d0b36e" -->
 ## Phase 5: Promotion to Production (PLANNED)
 
+<!-- section_id: "a33d9d77-453a-4a51-b377-d620186b13bd" -->
 ### Objectives
 
 Move research findings into production layer-0 system
@@ -336,6 +365,7 @@ Create canonical protocol documents for future reference
 Establish best practices and templates
 Update universal rules and procedures
 
+<!-- section_id: "46807826-34ab-4493-b704-067ce9a4caae" -->
 ### Scope
 
 **Content to Promote**:
@@ -364,6 +394,7 @@ Update universal rules and procedures
    - Add layer_1 rules for entity consistency (all entities MUST have 0AGNOSTIC.md)
    - Add stage rules for design phase (when to document architectures)
 
+<!-- section_id: "bdc96b62-1a4e-4100-a968-1b57d8eabfee" -->
 ### Execution Timeline (ESTIMATED)
 
 | Phase | Timeline | Effort | Dependencies |
@@ -377,6 +408,7 @@ Update universal rules and procedures
 
 **Estimated Total**: 13 hours | **Recommendation**: Break into 2-3 sessions
 
+<!-- section_id: "25cd2f31-0dca-4f0f-8175-8f338b4b7b04" -->
 ### Success Criteria
 
 ✅ All research docs archived to layer_0
@@ -388,8 +420,10 @@ Update universal rules and procedures
 
 ---
 
+<!-- section_id: "a80b355a-64d0-4bb8-903b-78f3a5d9f5c1" -->
 ## Cross-Cutting Concerns
 
+<!-- section_id: "7e0c6e10-2167-4b9b-95d8-aadfe56003e3" -->
 ### Git Workflow
 
 **Commit Message Format**:
@@ -415,6 +449,7 @@ Example:
 - Multiple small changes → batch into logical commit
 - Pre-exit → push all pending commits
 
+<!-- section_id: "0c3d9a23-34eb-4145-89d6-b6979e36fdfd" -->
 ### Testing & Validation
 
 **Phase 1 (Layer Consolidation)**:
@@ -445,6 +480,7 @@ Example:
 - Verify no duplication across apps
 - Verify updates propagate correctly
 
+<!-- section_id: "3a471561-e486-44de-8856-6f9adfda279f" -->
 ### Rollback & Recovery
 
 **If layer consolidation fails**:
@@ -465,8 +501,10 @@ Example:
 
 ---
 
+<!-- section_id: "7972f4aa-04a1-4deb-935b-74251b89b6aa" -->
 ## Success Metrics
 
+<!-- section_id: "506fbcae-762f-4402-a705-c999e8b2e598" -->
 ### By Phase
 
 | Phase | Success Metric | Target | Status |
@@ -483,6 +521,7 @@ Example:
 | 4 | Design documentation in research layer | 100% | ✅ Done (3 design docs) |
 | 5 | Promotion to layer_0 | 100% | ⏳ Planned |
 
+<!-- section_id: "0e10a0b0-5b65-40fb-a996-a1c48f93c8b5" -->
 ### Overall System Health
 
 **Context Chain Completeness**:
@@ -504,6 +543,7 @@ Example:
 
 ---
 
+<!-- section_id: "295086a2-8b12-4c7c-8b74-f509b9046ab3" -->
 ## Risks & Mitigation
 
 | Risk | Impact | Likelihood | Mitigation |
@@ -516,6 +556,7 @@ Example:
 
 ---
 
+<!-- section_id: "b5bc2221-ce20-4e96-8dab-a5fd4685f485" -->
 ## Conclusion
 
 This roadmap demonstrates the progression from **research findings** (Phase 4) through **production deployment** (Phase 5). All major systems are either implemented (Phases 1, 3) or designed (Phase 2). The next step is Phase 5 promotion: archiving validated approaches to layer_0 where they become canonical patterns for all future work.

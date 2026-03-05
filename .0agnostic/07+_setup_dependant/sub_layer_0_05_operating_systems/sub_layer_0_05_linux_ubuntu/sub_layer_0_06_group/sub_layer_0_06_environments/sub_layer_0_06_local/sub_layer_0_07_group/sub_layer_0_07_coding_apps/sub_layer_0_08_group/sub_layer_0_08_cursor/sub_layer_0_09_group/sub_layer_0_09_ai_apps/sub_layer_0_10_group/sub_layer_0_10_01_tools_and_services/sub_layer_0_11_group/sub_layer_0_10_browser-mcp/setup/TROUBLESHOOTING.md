@@ -9,8 +9,10 @@ This document covers common issues encountered when using Browser MCP with Claud
 
 ---
 
+<!-- section_id: "f13a5049-360c-4f6c-98e8-5e2df12fb8a8" -->
 ## Connection Failures
 
+<!-- section_id: "dc29a4c9-b40c-4363-9eb3-f9e1db4dfdc6" -->
 ### Issue: "MCP server failed to start"
 
 **Symptoms:**
@@ -51,6 +53,7 @@ This document covers common issues encountered when using Browser MCP with Claud
    # - Unescaped backslashes in paths
    ```
 
+<!-- section_id: "9afaf577-1664-4388-9793-6ca0074f36e6" -->
 ### Issue: "Connection refused" or "Socket error"
 
 **Symptoms:**
@@ -84,8 +87,10 @@ This document covers common issues encountered when using Browser MCP with Claud
 
 ---
 
+<!-- section_id: "31bd5d42-a154-4691-b0ec-554b97f911e2" -->
 ## Browser Detection Problems
 
+<!-- section_id: "8ad6d765-cdca-4691-8895-52cf46ec55bd" -->
 ### Issue: "Browser specified in your config is not installed"
 
 **Symptoms:**
@@ -129,6 +134,7 @@ MCP servers run via npx do not inherit shell environment variables, preventing t
    npx playwright install chromium --with-deps  # Also installs system dependencies
    ```
 
+<!-- section_id: "1ae8a347-c7b2-4e41-854f-78d5de5740e3" -->
 ### Issue: "Browser executable not found at path"
 
 **Symptoms:**
@@ -160,6 +166,7 @@ MCP servers run via npx do not inherit shell environment variables, preventing t
    npx playwright install chromium
    ```
 
+<!-- section_id: "f28cbc83-45ee-43e4-a6d1-a325fd958a07" -->
 ### Issue: Browser crashes immediately on launch
 
 **Symptoms:**
@@ -204,8 +211,10 @@ MCP servers run via npx do not inherit shell environment variables, preventing t
 
 ---
 
+<!-- section_id: "2423291f-b685-4cbd-ac7a-6a67005e07a7" -->
 ## Tab Management Issues
 
+<!-- section_id: "9eb960d9-8caa-4a8c-8cc8-a30c344b9f9b" -->
 ### Issue: "Browser is already in use"
 
 **Symptoms:**
@@ -237,6 +246,7 @@ MCP server process locking - only one client can connect to a given MCP server i
    }
    ```
 
+<!-- section_id: "2061496a-8894-44d1-b5a9-542175aa0f6b" -->
 ### Issue: "Tab not found" or "Invalid tab ID"
 
 **Symptoms:**
@@ -259,6 +269,7 @@ MCP server process locking - only one client can connect to a given MCP server i
    - Tab IDs may become invalid after navigation errors
    - Get fresh tab list before operations
 
+<!-- section_id: "dbcf639c-3711-4301-8995-fa03390a343d" -->
 ### Issue: Tab operations hang or timeout
 
 **Symptoms:**
@@ -292,8 +303,10 @@ MCP server process locking - only one client can connect to a given MCP server i
 
 ---
 
+<!-- section_id: "62b76cc1-10ab-4295-bf42-84abc094bde9" -->
 ## Display and Rendering Issues
 
+<!-- section_id: "8b00a99d-1fd2-434e-b3ef-f40dcf59ca99" -->
 ### Issue: "Cannot open display" (Linux)
 
 **Symptoms:**
@@ -329,6 +342,7 @@ MCP server process locking - only one client can connect to a given MCP server i
    }
    ```
 
+<!-- section_id: "3c95060d-6159-41d5-8cf3-54aa6546c222" -->
 ### Issue: Screenshots are blank or black
 
 **Symptoms:**
@@ -360,8 +374,10 @@ MCP server process locking - only one client can connect to a given MCP server i
 
 ---
 
+<!-- section_id: "3715743f-8ca4-45f7-bc7a-0c4aaa0d0116" -->
 ## Performance Issues
 
+<!-- section_id: "834c1780-0b73-4a9c-a544-317ffb2ba10c" -->
 ### Issue: Browser operations are slow
 
 **Symptoms:**
@@ -389,6 +405,7 @@ MCP server process locking - only one client can connect to a given MCP server i
    df -h
    ```
 
+<!-- section_id: "6cc69177-aafa-452f-b6cb-2f858466a2c1" -->
 ### Issue: Memory leak / high memory usage
 
 **Symptoms:**
@@ -414,8 +431,10 @@ MCP server process locking - only one client can connect to a given MCP server i
 
 ---
 
+<!-- section_id: "8b87674a-d2a0-4f5d-a254-89ac0481e0f3" -->
 ## Diagnostic Commands
 
+<!-- section_id: "18678f56-5fda-40dd-b3a3-6e76aa33a87d" -->
 ### Quick Health Check
 
 ```bash
@@ -435,6 +454,7 @@ ps aux | grep -E "(chromium|chrome|playwright)" | grep -v grep
 python3 -m json.tool ~/.config/mcp/mcp.json > /dev/null && echo "Config OK"
 ```
 
+<!-- section_id: "731a9a8a-462d-4af7-a079-fdc2d3ee0d5f" -->
 ### Verbose Logging
 
 Enable debug output:
@@ -443,6 +463,7 @@ export DEBUG=pw:api
 export DEBUG=pw:browser*
 ```
 
+<!-- section_id: "1578cd3b-81d0-4073-a583-fff7d9c549c5" -->
 ### Reset to Clean State
 
 ```bash
@@ -461,6 +482,7 @@ npx playwright install chromium --with-deps
 
 ---
 
+<!-- section_id: "1106ff2b-c5b9-41cb-9df8-0ab87748901c" -->
 ## Getting Help
 
 If issues persist after trying these solutions:

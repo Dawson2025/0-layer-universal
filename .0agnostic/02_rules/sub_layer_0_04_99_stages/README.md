@@ -6,14 +6,17 @@ resource_name: "README"
 ---
 # Universal Rules Sublayer - Stage Structure
 
+<!-- section_id: "cffbc01c-2ed4-4ec2-a9b4-d1b2ff6edcf7" -->
 ## Overview
 
 This directory contains the stage-based development structure for universal rules research, design, implementation, and deployment.
 
+<!-- section_id: "25ddf1d8-4db2-486e-952e-57b61a60bb4e" -->
 ## Purpose
 
 The universal rules system needs to overcome Anthropic's discretionary context wrapper that allows critical governance rules to be deprioritized. This staged approach documents the research, designs the solution, and tracks implementation.
 
+<!-- section_id: "5bf66006-fa34-46cc-8ef5-45e1912cf526" -->
 ## Stage Directories
 
 Each stage directory contains:
@@ -23,6 +26,7 @@ Each stage directory contains:
 - `outputs/` - Deliverables, research, documentation
 - `ai_agent_system/` - Agent-specific configuration for stage
 
+<!-- section_id: "07dad005-b599-49ee-bba1-29637ac34fc1" -->
 ## Current Stage: 02_research
 
 **Location**: `stage_0_02_research/outputs/`
@@ -37,6 +41,7 @@ Each stage directory contains:
 - Proposed solution: Dynamic critical rules injection
 - Implementation architecture and benefits
 
+<!-- section_id: "9f3335e5-d6ae-4ff4-8512-4a6cd436edf8" -->
 ## Stage Progression
 
 ```
@@ -63,6 +68,7 @@ Each stage directory contains:
 11_archives (HISTORY)
 ```
 
+<!-- section_id: "f0bad3e9-c710-44b3-a81d-8d445f001657" -->
 ## Key Concepts
 
 **Problem Being Solved**:
@@ -75,6 +81,7 @@ Each stage directory contains:
 - Inject critical rules directly into the system prompt (not wrapped foundational context)
 - Create wrapper scripts and initialization logic to apply on every session
 
+<!-- section_id: "6c278551-fe20-490b-b7c2-569dbb623692" -->
 ## Navigation
 
 - **Parent**: `../CLAUDE.md`

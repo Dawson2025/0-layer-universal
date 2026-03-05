@@ -7,10 +7,12 @@ resource_name: "HIERARCHY_SYSTEM_OVERVIEW.sync-conflict-20260126-102106-IF2WOGZ"
 
 This document describes how the universal setup hierarchy is structured and how to navigate it.
 
+<!-- section_id: "97acaf09-54cb-48a0-a541-59e475d916dc" -->
 ## Purpose
 
 The hierarchy is a **traversable file tree** that lets you locate setup documentation by following a consistent path from operating system → environment → coding app → AI app → tool/model/protocol/agent setup.
 
+<!-- section_id: "ecefafb2-dd43-4423-86f0-60500673859e" -->
 ## Core Path Pattern
 
 Use the following path pattern for any setup configuration:
@@ -34,6 +36,7 @@ Use the following path pattern for any setup configuration:
                 0.14_agent_setup/
 ```
 
+<!-- section_id: "709f9418-da16-49fe-afc5-22500cc4cbd0" -->
 ## Level Rules
 
 - **Operating systems** are under `0.05_operating_systems/` (e.g., `wsl`, `linux_ubuntu`, `macos`, `windows`).
@@ -43,12 +46,14 @@ Use the following path pattern for any setup configuration:
 - **MCP servers** and **AI models** are **siblings** at the same depth.
 - **Universal tools**, **protocols**, and **agent setup** are **siblings** of MCP servers and AI models.
 
+<!-- section_id: "ff2d1221-bfb6-4158-ab89-d3a5559c99be" -->
 ## _shared Conventions
 
 - `_shared` directories store content that applies across all siblings at that level.
 - Prefer `_shared` when content is not OS-, environment-, or app-specific.
 - When content is specific, place it under the exact OS/environment/app path.
 
+<!-- section_id: "72400509-2b1c-4dea-961a-f15cbd7e86c9" -->
 ## Example
 
 ```
@@ -59,6 +64,7 @@ Use the following path pattern for any setup configuration:
         0.10_mcp_servers_and_apis_and_secrets/playwright-mcp/
 ```
 
+<!-- section_id: "8728a32a-eca9-4631-9a25-d94fc491504b" -->
 ## Integration Notes
 
 - Legacy sublayer content is merged into the hierarchy under the closest matching level.

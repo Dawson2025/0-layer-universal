@@ -5,10 +5,12 @@ resource_name: "content_extraction_workflow"
 ---
 # Content Extraction Workflow
 
+<!-- section_id: "b7107778-c79c-4ec4-b7ab-ec93516ef703" -->
 ## Overview
 
 This workflow describes the standardized process for extracting content from web pages using the Claude in Chrome MCP server. Content extraction involves retrieving text, data, and structured information from websites for analysis, archival, or processing purposes.
 
+<!-- section_id: "d5d7a7e7-6b10-4d52-a333-e2d9f6ca5e26" -->
 ## Use Cases
 
 - Article and blog post extraction
@@ -19,6 +21,7 @@ This workflow describes the standardized process for extracting content from web
 - Research data collection
 - Price and availability checking
 
+<!-- section_id: "81de7ae5-a1c6-4f0b-a795-a3a3caf5f1e6" -->
 ## Legal and Ethical Considerations
 
 Before extracting content:
@@ -30,8 +33,10 @@ Before extracting content:
 5. **Personal Data** - Be careful with PII extraction (GDPR, CCPA)
 6. **No Facial Data** - Never scrape or analyze facial images
 
+<!-- section_id: "a94502a1-837b-4958-a972-82ca700ce780" -->
 ## Workflow Steps
 
+<!-- section_id: "4b33d1dd-0998-483b-97db-36aa2a93f7ac" -->
 ### Step 1: Initialize and Navigate
 
 Set up the browser session and navigate to the target page.
@@ -55,6 +60,7 @@ mcp__claude-in-chrome__computer(
 )
 ```
 
+<!-- section_id: "196d16ed-99f5-4684-9435-4eea835d2c2d" -->
 ### Step 2: Assess Page Structure
 
 Understand what content is available and how it's organized.
@@ -84,6 +90,7 @@ mcp__claude-in-chrome__find(
 )
 ```
 
+<!-- section_id: "c18b9926-a352-4b1f-be0d-d605f6a0ab47" -->
 ### Step 3: Extract Text Content
 
 Get the main text content from the page.
@@ -101,6 +108,7 @@ This method:
 - Removes HTML formatting
 - Returns clean plain text
 
+<!-- section_id: "5ec22316-0ac1-412a-b902-52ec80ed5a08" -->
 ### Step 4: Extract Structured Data
 
 Use JavaScript to extract specific data structures.
@@ -208,6 +216,7 @@ mcp__claude-in-chrome__javascript_tool(
 )
 ```
 
+<!-- section_id: "d3bea981-86ae-422f-b1d8-b4af255aefdb" -->
 ### Step 5: Handle Pagination
 
 For multi-page content, navigate through pages.
@@ -240,6 +249,7 @@ mcp__claude-in-chrome__computer(
 content_page_2 = get_page_text(tabId=TAB_ID)
 ```
 
+<!-- section_id: "2c21a6c3-9c5d-493f-a6c5-cd59a1e5d5cc" -->
 ### Step 6: Handle Infinite Scroll
 
 For pages with infinite scroll, load more content before extraction.
@@ -264,6 +274,7 @@ for i in range(5):  # Scroll 5 times
 mcp__claude-in-chrome__get_page_text(tabId=TAB_ID)
 ```
 
+<!-- section_id: "77128dc8-ee8b-4173-99f4-3cb1a67b5223" -->
 ### Step 7: Handle Dynamic Content
 
 For JavaScript-rendered content, ensure it's loaded.
@@ -296,8 +307,10 @@ mcp__claude-in-chrome__javascript_tool(
 )
 ```
 
+<!-- section_id: "c380217a-dbe1-4c4a-abef-b37db9a4b536" -->
 ## Extraction Patterns
 
+<!-- section_id: "b560e47a-85da-463d-b108-17d276fa7449" -->
 ### Pattern 1: Article Extraction
 
 Complete workflow for extracting a blog post or news article.
@@ -339,6 +352,7 @@ images = javascript_tool(
 # Result: { metadata, content, images }
 ```
 
+<!-- section_id: "367ad4e2-cb10-43d0-8449-d0ae3f15dad7" -->
 ### Pattern 2: Product Information
 
 Extract product details from e-commerce pages.
@@ -385,6 +399,7 @@ specs = javascript_tool(
 )
 ```
 
+<!-- section_id: "e577964c-00f5-457b-b05d-94cda8632f84" -->
 ### Pattern 3: Search Results
 
 Extract search results from a search engine or site search.
@@ -417,6 +432,7 @@ results = javascript_tool(
 )
 ```
 
+<!-- section_id: "7edbc771-5632-4321-84c5-5ce1881a7f74" -->
 ### Pattern 4: Contact Information
 
 Extract contact details from a contact page.
@@ -437,6 +453,7 @@ contacts = javascript_tool(
 )
 ```
 
+<!-- section_id: "92b60197-41d1-4d76-bbd6-075730252747" -->
 ### Pattern 5: Documentation/Wiki Pages
 
 Extract structured documentation content.
@@ -491,6 +508,7 @@ content = javascript_tool(
 )
 ```
 
+<!-- section_id: "2bf7e6a7-719a-4334-a2a7-74264af9f3b5" -->
 ## Network Request Monitoring
 
 Monitor API calls to understand data sources.
@@ -512,8 +530,10 @@ data_requests = mcp__claude-in-chrome__read_network_requests(
 )
 ```
 
+<!-- section_id: "e11e6602-c770-401f-9e61-cb86e0530df4" -->
 ## Error Handling
 
+<!-- section_id: "aa1303ab-2260-46f7-ba51-ac72373417d2" -->
 ### Content Not Found
 
 ```python
@@ -533,6 +553,7 @@ if not result:
     )
 ```
 
+<!-- section_id: "c15c6308-a78c-40eb-b63d-3e14b5c4211d" -->
 ### Page Requires Login
 
 ```python
@@ -548,6 +569,7 @@ if is_login_required:
     pass
 ```
 
+<!-- section_id: "67e0b603-b6da-4ac2-8247-ab344c988240" -->
 ### Rate Limiting / Blocking
 
 ```python
@@ -567,8 +589,10 @@ if is_blocked:
     computer(action="wait", duration=60, tabId=TAB_ID)
 ```
 
+<!-- section_id: "29682b12-3040-46be-8f6e-9ebc56b3e118" -->
 ## Output Formats
 
+<!-- section_id: "e1bec70e-b206-4ff4-96be-34c47578079f" -->
 ### JSON Structure
 
 ```json
@@ -595,6 +619,7 @@ if is_blocked:
 }
 ```
 
+<!-- section_id: "9d32ded0-cf9a-42b8-b477-c3f0093352ac" -->
 ### Markdown Output
 
 ```python
@@ -631,6 +656,7 @@ markdown_output = javascript_tool(
 )
 ```
 
+<!-- section_id: "a7046e7e-db4e-4106-a77f-406d43124e7c" -->
 ## Best Practices
 
 1. **Respect website terms** - Check robots.txt and ToS before scraping

@@ -10,6 +10,7 @@ resource_name: "0AGNOSTIC"
 
 # ── Entity Definition ──
 
+<!-- section_id: "11ee2042-48f2-4aba-afd9-1c63e42119fb" -->
 ## Identity
 
 entity_id: "b237d704-5b90-421c-85f4-c0ba15ada1ce"
@@ -22,8 +23,10 @@ You are an agent at **Layer 2** (Sub-Feature), **Sub-Feature**: Agent Delegation
 - **Parent**: `../../../0AGNOSTIC.md` (layer_1_sub_feature_agent_organization_system)
 - **Children**: None (memory_system and multi_agent_system have been reorganized — memory_system promoted to L1 sibling, multi_agent_system absorbed into agent_organization_system)
 
+<!-- section_id: "c231ba0b-5edf-4449-b7f8-0cdaed02c892" -->
 ## Key Behaviors
 
+<!-- section_id: "4fca742d-07b5-4ee5-a71a-63b3e85dcf3b" -->
 ### What This System Covers
 
 The agent delegation system spans two domains:
@@ -33,6 +36,7 @@ The agent delegation system spans two domains:
 
 These two domains are deeply coupled: delegation decisions depend on what context is available, and context loading depends on delegation structure.
 
+<!-- section_id: "309b4408-9447-4c24-8afc-61636ccd5626" -->
 ### Canonical Workspace for Delegation
 
 This entity is the **canonical workspace** for all agent delegation patterns. When any agent (working anywhere in the system) encounters work related to delegation, they should:
@@ -46,6 +50,7 @@ Delegation-related work includes: manager-agent contracts, scope boundaries, sta
 
 **Update protocol**: `.0agnostic/03_protocols/agent_delegation_update_protocol.md`
 
+<!-- section_id: "49650c14-6b0a-47a7-bbb1-bdeb2421c514" -->
 ### Domain Concepts
 
 - **Stage delegation model**: Managers delegate to stage agents. Managers don't carry operational knowledge — each stage agent has its own 0AGNOSTIC.md with methodology, output format, and success criteria.
@@ -54,6 +59,7 @@ Delegation-related work includes: manager-agent contracts, scope boundaries, sta
 - **Context chains**: How context traverses from root to leaf entities through the hierarchy.
 - **Three-tier knowledge**: Pointers (0AGNOSTIC.md) -> Distilled (.0agnostic/knowledge/) -> Full (stage outputs).
 
+<!-- section_id: "131fade0-cb19-4ac4-b82f-9e0f5727f880" -->
 ## Triggers
 
 Load this context when:
@@ -63,8 +69,10 @@ Load this context when:
 - Keywords: Principle 8, Scope Boundary Rule, manager-agent contracts, delegation principles, context chains, consolidation funnel, agent context model, stage report protocol
 - Entering: `layer_2_subx2_feature_agent_delegation_system/`
 
+<!-- section_id: "1fffab15-c09e-412e-b5ba-7cb8067693bb" -->
 ## AALang Agent Context
 
+<!-- section_id: "116e5622-d86c-4539-a2a8-f9647d7d76dc" -->
 ### Local Agent Files
 
 **Directory**: `.0agnostic/06_context_avenue_web/01_aalang/`
@@ -85,6 +93,7 @@ Load this context when:
 }
 ```
 
+<!-- section_id: "56b307a8-c35a-48f6-86df-de3855002e81" -->
 ### How to Load Full Graph
 
 ```bash
@@ -95,6 +104,7 @@ jq '."@graph"[] | select(."@type" == "gab:Mode") | {id: ."@id", purpose: .purpos
 jq '."@graph"[] | select(."@id" == "ads:ImplementMode")' .0agnostic/06_context_avenue_web/01_aalang/layer_2.orchestrator.gab.jsonld
 ```
 
+<!-- section_id: "a256fc7e-1e1d-4f6a-baa2-7d1892e2ac7c" -->
 ### Parent Orchestrator
 
 **File**: `../../../layer_1_orchestrator.gab.jsonld` (layer_1_sub_feature_agent_organization_system)
@@ -103,6 +113,7 @@ The entity-level orchestrator inherits from and is scoped by the parent sub-feat
 
 # ── Current Status ──
 
+<!-- section_id: "de940a31-b595-4fa3-97e0-8c7e8e3b02d2" -->
 ## Current Status
 
 **Phase**: active — 4 stages with content, universal artifacts in use, 4 formal research topics + 10 design decisions | **Last Updated**: 2026-02-26
@@ -113,8 +124,10 @@ Stages 01, 02, 04, and 06 have produced universal artifacts at root `.0agnostic/
 
 # ── Current State ──
 
+<!-- section_id: "c205940e-acb5-4367-8250-6a67d34c6ac0" -->
 ## Current State Detail
 
+<!-- section_id: "58335855-83ed-474c-b34e-58a9c78b97c3" -->
 ### Stage Work Summary
 
 | Stage Work | What Was Produced | Where It Lives |
@@ -125,6 +138,7 @@ Stages 01, 02, 04, and 06 have produced universal artifacts at root `.0agnostic/
 | **05 Planning** | Planned stage-by-stage guide creation for all 11 stages | Plan executed across all 11 stages |
 | **06 Development** | Created 11 universal stage guides, 3 static rules, 2 dynamic rules, 7 delegation principles, stage report protocol | See "Universal Artifacts" below |
 
+<!-- section_id: "d40cc9b9-65be-40e3-b30f-bc1d7b617437" -->
 ### Universal Artifacts (at `.0agnostic/`)
 
 | Artifact | Count | Location |
@@ -136,6 +150,7 @@ Stages 01, 02, 04, and 06 have produced universal artifacts at root `.0agnostic/
 | Dynamic rules | 2 | `02_rules/dynamic/` (loops, parallel) |
 | Stage report protocol | 1 | `03_protocols/stage_report_protocol.md` |
 
+<!-- section_id: "69123ab5-6351-478e-9d49-949a58884c91" -->
 ### Working Example: context_chain_system
 
 The context_chain_system (now under memory_system, a sibling sub-feature) serves as the **primary working example** of agent delegation in practice:
@@ -146,6 +161,7 @@ The context_chain_system (now under memory_system, a sibling sub-feature) serves
 
 **Path**: `../../../layer_1_sub_feature_memory_system/layer_1_group/layer_1_sub_features/layer_1_sub_feature_context_chain_system/` (sibling tree under layer_stage_system)
 
+<!-- section_id: "164dee1d-a331-46fb-bfb7-055dce9ef216" -->
 ### Key Discoveries (Formalized as Universal Principles)
 
 | Discovery | Principle | Rule/Artifact |
@@ -157,6 +173,7 @@ The context_chain_system (now under memory_system, a sibling sub-feature) serves
 
 Full details: `.0agnostic/01_knowledge/tree_of_knowledge/00_agent_delegation_knowledge/02_patterns_and_principles/`
 
+<!-- section_id: "c1ded060-6dce-4b34-bc90-cfb501eba9c8" -->
 ### Tree of Knowledge
 
 Entity knowledge is organized as a **tree of knowledge** (mirroring the tree of needs in stage 01). The tree lives in `.0agnostic/01_knowledge/tree_of_knowledge/` and contains **summaries + references** — the main bulk of detailed content stays in the stages.
@@ -169,14 +186,17 @@ Entity knowledge is organized as a **tree of knowledge** (mirroring the tree of 
 
 # ── References ──
 
+<!-- section_id: "1a12f342-db4c-4b91-9023-29e8a27b3ab8" -->
 ## Navigation
 
+<!-- section_id: "61571eea-c2e1-40d2-ad74-c37310e5233f" -->
 ### Children
 
 No active children. Former children have been reorganized:
 - **memory_system** → promoted to L1 sibling under layer_stage_system
 - **multi_agent_system** → absorbed into agent_organization_system (agent_hierarchy + orchestration extracted)
 
+<!-- section_id: "ac7b5dab-f327-4c1e-9acc-82f0f2dfc00f" -->
 ### Key Locations
 
 | Content | Location |
@@ -196,6 +216,7 @@ No active children. Former children have been reorganized:
 | Context avenue web | `.0agnostic/06_context_avenue_web/` (aalang, integration MDs, auto-memory, @imports, skills, agents, rules, hooks) |
 | Children | `layer_3_group/layer_3_subx3_features/` |
 
+<!-- section_id: "a9d9fde3-3887-4b98-bbe1-3d99aeb03663" -->
 ## Success Criteria
 
 This entity succeeds when:
@@ -204,6 +225,7 @@ This entity succeeds when:
 - Memory and multi-agent systems work together coherently
 - Stage report protocol is standardized and in use
 
+<!-- section_id: "8b14d76b-b598-4947-99f8-c6b88ed20ec2" -->
 ## On Exit
 
 1. Update `0INDEX.md` with current state

@@ -5,24 +5,29 @@ resource_name: "deduplication_onboarding"
 ---
 # Deduplication Pattern Onboarding Guide
 
+<!-- section_id: "22d87c7d-7076-4f6e-a0a0-1b7d6f9dc9dc" -->
 ## For New Team Members & Agents
 
 This guide explains the **single-source-of-truth deduplication pattern** used throughout the codebase and how to maintain it.
 
 ---
 
+<!-- section_id: "39406266-498f-4b4d-8b6f-0cbb6cf01734" -->
 ## Quick Start (3 minutes)
 
+<!-- section_id: "2cafb101-0797-4426-a1fd-1a117e00f098" -->
 ### The Problem We Solved
 - Same documentation existed in 10+ locations
 - Updating one location meant manually updating all others
 - Risk of inconsistency and drift
 
+<!-- section_id: "34f626ab-7dad-4f4a-8108-17bdd5538e65" -->
 ### The Solution
 - **Canonical** versions at root `.0agnostic/`
 - **Pointer** files in research subdirectories link to canonical
 - Update one place → automatically used everywhere
 
+<!-- section_id: "43136607-e473-453f-921a-a4304e6a2820" -->
 ### Your Role
 - **When editing**: Always edit the canonical file (at root)
 - **When reading**: Follow pointers to canonical sources
@@ -30,8 +35,10 @@ This guide explains the **single-source-of-truth deduplication pattern** used th
 
 ---
 
+<!-- section_id: "d1a0a43e-cc5d-43e2-b3f9-4f6dc2c0a41d" -->
 ## Understanding the Structure
 
+<!-- section_id: "3f62e27e-8f91-45ac-84a9-58a76d93e1a6" -->
 ### Three-Tier System
 
 ```
@@ -59,8 +66,10 @@ This guide explains the **single-source-of-truth deduplication pattern** used th
 
 ---
 
+<!-- section_id: "a8b3cdb6-fc2f-42a2-bdf6-2d2976139da7" -->
 ## Common Scenarios
 
+<!-- section_id: "33c5e647-af45-4ed5-bc82-7e4496799a82" -->
 ### Scenario 1: You Need to Update Documentation
 
 **Question:** Where should I make the change?
@@ -76,6 +85,7 @@ This guide explains the **single-source-of-truth deduplication pattern** used th
 
 ---
 
+<!-- section_id: "641ccd28-fe0a-46fe-80f0-76fa18c64799" -->
 ### Scenario 2: You Find Duplicate Documentation
 
 **Question:** I found the same document in two places. What do I do?
@@ -101,6 +111,7 @@ This guide explains the **single-source-of-truth deduplication pattern** used th
 
 ---
 
+<!-- section_id: "5b026f14-f6bc-469d-bec9-6b995e3e9db4" -->
 ### Scenario 3: You're Reading Documentation
 
 **Question:** I found a pointer file. How do I read the full content?
@@ -120,6 +131,7 @@ This file has been replaced with a pointer to the canonical source.
 
 ---
 
+<!-- section_id: "ce04c81a-da04-408e-b9a0-2dd93da6f4a0" -->
 ### Scenario 4: You're Creating New Documentation
 
 **Question:** Should I create a new document or reference an existing one?
@@ -135,8 +147,10 @@ If it exists, use/reference it. If not, create it at the appropriate level.
 
 ---
 
+<!-- section_id: "2931b173-8f76-4778-8a4f-cce09de7012e" -->
 ## Red Flags: When to Take Action
 
+<!-- section_id: "0d7a6229-1ff5-42e3-a1de-9f44f78a9696" -->
 ### 🚩 Red Flag 1: You Find a Duplicate
 
 **Scenario:** Same file name in both:
@@ -147,6 +161,7 @@ If it exists, use/reference it. If not, create it at the appropriate level.
 
 ---
 
+<!-- section_id: "1321106c-2045-485c-b98a-cae2bce76f63" -->
 ### 🚩 Red Flag 2: You See Stale Information in a Pointer
 
 **Scenario:** A pointer link seems outdated
@@ -158,6 +173,7 @@ If it exists, use/reference it. If not, create it at the appropriate level.
 
 ---
 
+<!-- section_id: "dfcc7703-f907-43a6-816c-48171d63a29e" -->
 ### 🚩 Red Flag 3: A File Says "Inherits From" Another File
 
 **Scenario:** You see text like "Inherits from: `.0agnostic/02_rules/...`"
@@ -169,6 +185,7 @@ If it exists, use/reference it. If not, create it at the appropriate level.
 
 ---
 
+<!-- section_id: "5c27bcb9-6179-471a-a7ba-d853ee691736" -->
 ### 🚩 Red Flag 4: Multiple Files with Same Name at Same Level
 
 **Scenario:** Two different `.0agnostic/` directories at the same layer both have `my_rule.md`
@@ -182,6 +199,7 @@ If it exists, use/reference it. If not, create it at the appropriate level.
 
 ---
 
+<!-- section_id: "7ff89185-492b-45c3-a890-dd7b3e7c8df5" -->
 ## Maintenance Checklist
 
 Use this checklist when adding new content to keep the pattern intact:
@@ -208,8 +226,10 @@ Use this checklist when adding new content to keep the pattern intact:
 
 ---
 
+<!-- section_id: "047590f5-a473-4958-afb9-062806fe08fc" -->
 ## How to Calculate Pointer Paths
 
+<!-- section_id: "270b0194-0ce8-4a92-9114-e32d861dff75" -->
 ### Quick Formula
 
 **From:** `layer_-1_research/layer_0_group/layer_0_01_systems/layer_0_better_ai_system/layer_0_01_features/layer_0_feature_X/layer_1_group/layer_1_sub_features/layer_1_sub_feature_Y/layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_Z/.0agnostic/02_rules/my_rule.md`
@@ -223,11 +243,13 @@ Use this checklist when adding new content to keep the pattern intact:
  Go up to root         Navigate to .0agnostic/
 ```
 
+<!-- section_id: "6ddd9233-84de-4045-b2a1-d2bf6337ac33" -->
 ### Tools
 - **Manual:** Count directory levels, use `../` for each level
 - **Git:** Use `git show` to see file paths
 - **IDE:** Most editors show relative paths in breadcrumbs
 
+<!-- section_id: "f28b810f-9700-406e-8072-80228dd01b4b" -->
 ### Verification
 After creating a pointer:
 1. Check the link in an editor
@@ -236,8 +258,10 @@ After creating a pointer:
 
 ---
 
+<!-- section_id: "671f090f-589f-41af-9edc-6a3aa661872e" -->
 ## Integration with Workflow
 
+<!-- section_id: "13c037bf-26f4-4da3-b8ed-16874bdd4ee0" -->
 ### When Reviewing Code/Documentation
 
 ✓ **Good signs:**
@@ -250,6 +274,7 @@ After creating a pointer:
 - Multiple files with same name in different locations
 - Pointer links that are broken or incomplete
 
+<!-- section_id: "429783e9-a567-4604-8331-fd6fdc42e36c" -->
 ### When Committing
 
 Use this commit message format for deduplication work:
@@ -273,29 +298,37 @@ Example:
 
 ---
 
+<!-- section_id: "d2a675fd-7692-4cf1-b56f-4ac28f70024d" -->
 ## Key Principles
 
+<!-- section_id: "0276f656-0552-47d8-a772-a11e9616b4d0" -->
 ### 1. Single Source of Truth
 One canonical location for each piece of documentation. No duplication.
 
+<!-- section_id: "03ce56e9-bb29-4ad6-b629-4c8c2289ddc8" -->
 ### 2. Progressive Disclosure
 - Pointers provide lightweight references
 - Canonical provides full details
 - Conceptual provides quick summaries
 
+<!-- section_id: "1daee1a6-2f4c-425b-b823-ce5734d3528b" -->
 ### 3. Lazy Loading
 Only load details when needed. Pointers let readers decide when to dive deep.
 
+<!-- section_id: "787d990b-101d-4f43-a7a4-cc60715e9382" -->
 ### 4. Automatic Consistency
 Update canonical once → all pointers automatically current. No manual syncing.
 
+<!-- section_id: "fb25096f-64d5-4318-a9a5-8b9013d4f07b" -->
 ### 5. Entity Specificity
 Entity-specific knowledge stays local. Universal knowledge goes to root `.0agnostic/`.
 
 ---
 
+<!-- section_id: "cfdbcaf6-a532-47cd-9ee8-3ee7f09e3fdd" -->
 ## Troubleshooting
 
+<!-- section_id: "723e622d-e0fe-4d50-b7e9-604c3c9ca336" -->
 ### Problem: Pointer link is broken
 
 **Fix:** Recalculate the path using the quick formula above.
@@ -312,6 +345,7 @@ Correct path (for context_chain_system):
 
 ---
 
+<!-- section_id: "b7a0ca2b-f58b-469c-bb1a-acab8e839e2b" -->
 ### Problem: You see conflicting information
 
 **Diagnosis:**
@@ -323,6 +357,7 @@ Correct path (for context_chain_system):
 
 ---
 
+<!-- section_id: "6f9b5f93-36ff-43ee-8f8f-c93bea035e80" -->
 ### Problem: You're not sure if something should be canonical or local
 
 **Decision tree:**
@@ -338,6 +373,7 @@ Is this used by multiple entities?
 
 ---
 
+<!-- section_id: "b27f89b3-fd2d-48f4-9eec-f72f81b3cd6c" -->
 ## Resources
 
 - **Detailed rules:** `.0agnostic/01_knowledge/deduplication_pattern.md`
@@ -346,6 +382,7 @@ Is this used by multiple entities?
 
 ---
 
+<!-- section_id: "f3f0146c-a1fd-42a0-9afa-aef2e66826eb" -->
 ## Questions?
 
 If something is unclear:

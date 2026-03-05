@@ -13,6 +13,7 @@ resource_name: "US-04_chain_loads_identity_not_detail"
 **I want** ancestor levels in the context chain to include only identity and scope, not full detail,
 **So that** the AI gets orientation about its place in the hierarchy without context bloat.
 
+<!-- section_id: "33143d23-e8c8-46db-acac-9abad08f9699" -->
 ### What Happens
 
 1. User starts a session and the AI loads its context chain
@@ -21,6 +22,7 @@ resource_name: "US-04_chain_loads_identity_not_detail"
 4. Grandparent level (if included) loads only a brief scope statement
 5. Each ancestor level loads progressively less content, preserving context window
 
+<!-- section_id: "73944791-8fb2-4909-8ef2-63199776212b" -->
 ### Acceptance Criteria
 
 - Each ancestor level loads progressively less content than the level below it

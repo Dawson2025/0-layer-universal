@@ -6,6 +6,7 @@
 
 ---
 
+<!-- section_id: "b5f5be92-dc6c-4e41-be1c-b69ee615539c" -->
 ## Table of Contents
 
 1. [System Instructions and Configuration](#system-instructions-and-configuration)
@@ -25,8 +26,10 @@
 
 ---
 
+<!-- section_id: "34318a7e-dec2-49d0-9ab8-8ed255dcc628" -->
 ## System Instructions and Configuration
 
+<!-- section_id: "1821f299-e82e-4861-bab7-58b6e27f6e12" -->
 ### Overview
 
 System instructions represent a distinct processing layer that precedes main prompt input. They function as meta-instructions establishing behavioral parameters, output formatting requirements, and role definitions that apply across the entire request and subsequent conversation turns.
@@ -37,6 +40,7 @@ System instructions represent a distinct processing layer that precedes main pro
 - Available across all API access patterns (generateContent, batch processing, Interactions API)
 - Consumed from token budget at standard rates (~4 characters per token)
 
+<!-- section_id: "1648fedc-907d-4410-bcb1-a464fa5839b9" -->
 ### Implementation Across SDKs
 
 #### Python SDK
@@ -75,6 +79,7 @@ POST https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generate
 }
 ```
 
+<!-- section_id: "95423513-45f3-4e0a-abbc-6bb0484725a5" -->
 ### Specification Format and Use Cases
 
 **Supported instruction types**:
@@ -100,6 +105,7 @@ Output format: Use Markdown with code blocks for all code examples.
 Tone: Professional but approachable
 ```
 
+<!-- section_id: "3f18806f-324c-40fd-b72a-93cbf761c3b1" -->
 ### Character and Token Limitations
 
 **Critical fact**: There is NO explicit character limit on system instructions, but all content consumes tokens from the context window budget.
@@ -123,8 +129,10 @@ System instructions: 50,000 characters
 
 ---
 
+<!-- section_id: "6a96d149-838a-4b7d-94dc-fac96a10c6ba" -->
 ## Context Windows and Token Management
 
+<!-- section_id: "175e7b45-0d34-4e92-b92a-0cb942aa5967" -->
 ### Evolution Timeline and Capacity Progression
 
 | Period | Model | Context Window | Practical Capacity |
@@ -133,6 +141,7 @@ System instructions: 50,000 characters
 | 2024 | Gemini 1.5 Pro | 1,000,000 tokens | ~50,000 lines of code; 8 novels |
 | 2025-2026 | Gemini 3/3.1 Pro | 2,000,000 tokens | ~100,000 lines of code; 16 novels |
 
+<!-- section_id: "770b3547-bcbe-4706-ba61-2b15044614d3" -->
 ### 1 Million Token Context Window Specifications
 
 **Practical capacity equivalents**:
@@ -153,6 +162,7 @@ System instructions: 50,000 characters
 - Cost per query increases proportionally
 - Rate limits measured in tokens, not requests
 
+<!-- section_id: "24b3a434-2d1e-4e18-8773-b82228b9b72e" -->
 ### 2 Million Token Context Window Specifications
 
 **Capacity**: Double the 1M window, enabling:
@@ -178,6 +188,7 @@ If performing 100 different queries against same 2M token base:
 - Savings: ~89% reduction with caching
 ```
 
+<!-- section_id: "2694cf6e-8462-4c99-b3f6-02fff9193a04" -->
 ### Output Token Limits and Constraints
 
 | Model | Default Output | Max Output | Cost per 64K |
@@ -194,8 +205,10 @@ If performing 100 different queries against same 2M token base:
 
 ---
 
+<!-- section_id: "5b874077-e695-4dde-b36a-9bf12dc19144" -->
 ## Multimodal Input Processing
 
+<!-- section_id: "67f148f7-8b30-4c19-828d-e72a8c6feabc" -->
 ### Supported Input Modalities
 
 | Modality | Formats | Max Size | Token Rate |
@@ -207,6 +220,7 @@ If performing 100 different queries against same 2M token base:
 | PDF | PDF documents | 50 MB; 1,000 pages | 258 tokens/page |
 | Code | Source files | Depends on modality | Text token rate |
 
+<!-- section_id: "4312c689-e6a1-4ec4-856f-75ae02bb5110" -->
 ### Image Processing and Token Calculation
 
 #### Image Size Classification
@@ -251,6 +265,7 @@ The `media_resolution` parameter enables granular control over image processing:
 - Use `HIGH` only for text-critical analysis
 - Use `LOW` for bulk image processing where exact text isn't required
 
+<!-- section_id: "b2d6f462-5e66-4636-b238-05cf2e644f3b" -->
 ### Video Input Processing
 
 **Token consumption formula**:
@@ -276,6 +291,7 @@ media_resolution_medium: 140 tokens/frame
 media_resolution_high:   280 tokens/frame
 ```
 
+<!-- section_id: "7bae4601-9068-450b-a664-faf2c97e651e" -->
 ### Audio Input Processing
 
 **Token consumption**:
@@ -288,6 +304,7 @@ media_resolution_high:   280 tokens/frame
 - Gemini 3 Flash: ~9.5 hours (1M tokens ÷ 32 tokens/sec)
 - Stored files auto-delete after 48 hours
 
+<!-- section_id: "7e24b103-82a9-401f-bffb-8b8dbec41d70" -->
 ### PDF Document Processing
 
 **Token calculation**:
@@ -315,8 +332,10 @@ Example: 100-page scanned PDF
 
 ---
 
+<!-- section_id: "0d5bd813-ce04-48fa-bf31-6dd8f80ec27f" -->
 ## File Management and Upload Systems
 
+<!-- section_id: "f5ea377b-b778-445b-9855-db2a1679a8fa" -->
 ### File API Architecture
 
 #### Storage Specifications
@@ -334,6 +353,7 @@ Example: 100-page scanned PDF
 - Files auto-deleted after TTL expiration
 - No recovery after deletion
 
+<!-- section_id: "51d7954e-88fc-4448-b839-d749c7460480" -->
 ### Upload Methods
 
 #### Method 1: Inline Base64 (< 100 MB)
@@ -415,6 +435,7 @@ response = model.generate_content({
 - Direct access from cloud storage
 - Supports AWS S3, Azure Blob, GCS
 
+<!-- section_id: "1446f321-37d4-48ea-bc15-ab1cdb4665ce" -->
 ### File Lifecycle Management
 
 ```
@@ -443,8 +464,10 @@ for uploaded_file in uploaded_files:
 
 ---
 
+<!-- section_id: "a8362e27-8fba-4ab3-810c-b316de916cc8" -->
 ## Function Calling and Tool Integration
 
+<!-- section_id: "0cc987ce-0276-4275-80d7-3c7c315cf2d5" -->
 ### Function Declaration and Schema
 
 Function declarations use JSON Schema format to specify callable functions:
@@ -480,6 +503,7 @@ tools = [
 ]
 ```
 
+<!-- section_id: "6a23dc83-a5c4-4351-9f18-cacb6a3f5005" -->
 ### Function Calling Flow
 
 **Standard execution pattern**:
@@ -527,6 +551,7 @@ response = model.generate_content([
 print(response.text)  # "Here are some great science fiction books under $30..."
 ```
 
+<!-- section_id: "187445d6-9eec-4359-a8ef-cf73111a9810" -->
 ### Multimodal Function Responses (Gemini 3+)
 
 **New capability**: Function responses can include images, PDFs, and text
@@ -548,6 +573,7 @@ function_result = {
 - Code analysis with relevant code snippets
 - Scientific analysis with supporting figures
 
+<!-- section_id: "34c30c79-3099-4238-a88a-904d921ff079" -->
 ### Parallel Function Execution
 
 Models can request multiple function calls simultaneously:
@@ -575,8 +601,10 @@ with ThreadPoolExecutor(max_workers=3) as executor:
 
 ---
 
+<!-- section_id: "21c052d3-0d9e-42cb-b107-2f4fdef81cc5" -->
 ## Context Caching and Optimization
 
+<!-- section_id: "aee4e413-df26-44bd-b85e-d6c6c2ed1372" -->
 ### Implicit Caching (Automatic)
 
 **Enabled by default** with no developer configuration required.
@@ -618,6 +646,7 @@ response2 = model.generate_content(f"{document}\n\nQuestion 2...")  # Cache hit
 response3 = model.generate_content(f"{document}\n\nQuestion 3...")  # Cache hit
 ```
 
+<!-- section_id: "f6b06187-0d14-4318-8aa7-3ddab98fe89b" -->
 ### Explicit Caching (Managed)
 
 **Developer-controlled cache creation and TTL management**:
@@ -690,8 +719,10 @@ Savings: 79.4% reduction
 
 ---
 
+<!-- section_id: "65125fb7-eb7f-4b26-a4c1-d12f2afb8ce0" -->
 ## Pricing and Cost Models
 
+<!-- section_id: "65a8fd7f-d04d-4469-9f1d-079546931ff3" -->
 ### Base Pricing Structure (Gemini 3 / 3.1 Pro)
 
 #### Standard pricing (input < 200k tokens):
@@ -723,6 +754,7 @@ def calculate_cost(input_tokens, output_tokens):
 # 1M input, 100k output: $4.00 + $1.20 = $5.20
 ```
 
+<!-- section_id: "ca09943c-cc4e-4be3-935c-68a4ae789c42" -->
 ### Gemini 3 Flash Pricing
 
 ```
@@ -730,6 +762,7 @@ Input:  $0.50 per million tokens (4x cheaper than Pro)
 Output: $3.00 per million tokens (4x cheaper than Pro)
 ```
 
+<!-- section_id: "a5089dc4-966d-4431-ad28-1db956594f27" -->
 ### Context Caching Pricing
 
 | Component | Gemini 3 Pro | Gemini 3 Flash |
@@ -739,6 +772,7 @@ Output: $3.00 per million tokens (4x cheaper than Pro)
 | Storage | $0.30/1M tokens/hour | $0.30/1M tokens/hour |
 | Output | $12/1M | $3/1M |
 
+<!-- section_id: "cda4852f-30e8-4ee8-a6b8-0edf80131bb9" -->
 ### Batch API Pricing (50% discount)
 
 ```
@@ -752,6 +786,7 @@ Batch request:   $0.10 input + $0.006 output = $0.106 (50% discount)
 - Max quota: Higher than synchronous requests
 - Use case: Non-latency-critical bulk operations
 
+<!-- section_id: "61c9f216-c4ba-4d61-a211-bea610434127" -->
 ### Grounding Cost Structure
 
 #### Google Search grounding:
@@ -767,6 +802,7 @@ Cost: Currently free (may change as feature matures)
 Available on Gemini 3 Flash and some other models
 ```
 
+<!-- section_id: "ccabdca2-6503-4d8f-913f-2fc4344a1441" -->
 ### File Upload and Storage Costs
 
 ```
@@ -778,8 +814,10 @@ Deletion:       Automatic after 48 hours (no manual cleanup needed)
 
 ---
 
+<!-- section_id: "b02feede-fb46-4ac8-8560-142973bf1838" -->
 ## Token Counting Methodology
 
+<!-- section_id: "0bd52f70-1197-4211-b566-ab1c82f17f8a" -->
 ### Basic Formula
 
 ```
@@ -787,6 +825,7 @@ English text: ~4 characters = 1 token
 Average English: ~¾ words = 1 token
 ```
 
+<!-- section_id: "f476dd23-26c5-4116-947f-87bf7376eaff" -->
 ### Precise Token Counting via API
 
 **Endpoint**:
@@ -806,6 +845,7 @@ response = model.count_tokens([
 ])
 ```
 
+<!-- section_id: "1afacf9f-a3d6-47d2-ae70-95c241ccb991" -->
 ### Multimodal Token Calculations
 
 #### Text:
@@ -847,6 +887,7 @@ Text extraction: Native embedded text extracted without charge
 100-page PDF: 100 × 258 = 25,800 tokens
 ```
 
+<!-- section_id: "fa22e9ff-77da-4799-9f09-c69db8556d45" -->
 ### Token Counting Examples
 
 ```python
@@ -871,6 +912,7 @@ total = 129,005 tokens
 input_cost = (129_005 / 1_000_000) * 2.00 = $0.258
 ```
 
+<!-- section_id: "b5eb225f-c263-4b2d-bb4b-4e734ab1d1e4" -->
 ### Token Counting Strategies for Production
 
 ```python
@@ -905,8 +947,10 @@ def track_request_cost(response):
 
 ---
 
+<!-- section_id: "8187def9-d191-4e53-8cbf-55b61fbc0fb9" -->
 ## Session and Conversation Management
 
+<!-- section_id: "8f80d9ff-449f-405c-b3ce-4bb42be64ba6" -->
 ### Stateful Conversation with Interactions API
 
 **Architecture**: Server maintains conversation history using interaction IDs.
@@ -948,6 +992,7 @@ response = client.models.interactions.create(
 - State loss: If interaction ID lost, context unavailable
 - Stateless fallback: Can always revert to manual history management
 
+<!-- section_id: "24a92dbf-b5ae-4cf9-98f3-f5dc00ee9cb7" -->
 ### Live API Session Management
 
 **Use case**: Real-time voice/video conversations with WebSocket streaming.
@@ -1003,8 +1048,10 @@ while True:
 
 ---
 
+<!-- section_id: "e0c51e51-467d-4ffe-afae-0283a81c1178" -->
 ## Thinking/Reasoning Mode
 
+<!-- section_id: "0379f384-28af-41af-9bfc-9fb7f77c788a" -->
 ### Extended Thinking (Gemini 3.1 Pro)
 
 **Purpose**: Enable models to engage in explicit reasoning processes before answering complex questions.
@@ -1052,8 +1099,10 @@ Total: $0.10 for single complex reasoning request
 
 ---
 
+<!-- section_id: "78e50bd2-aed8-4e20-8da9-75f59061d34e" -->
 ## Structured Outputs and Validation
 
+<!-- section_id: "e09f5479-d69e-4dc7-9361-7d2603b4d654" -->
 ### Specification Using JSON Schema
 
 ```python
@@ -1091,6 +1140,7 @@ response = model.generate_content(
 product_data = json.loads(response.text)
 ```
 
+<!-- section_id: "1c388f30-286a-4d66-af35-5072447ade9d" -->
 ### Advanced JSON Schema Features (Gemini 3+)
 
 | Feature | Syntax | Example |
@@ -1102,6 +1152,7 @@ product_data = json.loads(response.text)
 | Tuples | `"prefixItems": [schema1, schema2]` | Fixed-length arrays |
 | Additional properties | `"additionalProperties": false` | Strict field lists |
 
+<!-- section_id: "d113688c-0379-4a44-968b-dd32ef69f66b" -->
 ### Validation Best Practices
 
 **Important**: Structured outputs guarantee syntactic correctness only, not semantic correctness.
@@ -1141,8 +1192,10 @@ if error:
 
 ---
 
+<!-- section_id: "09b6651a-6804-46c4-8424-67249ae4df10" -->
 ## Grounding and Enhanced Capabilities
 
+<!-- section_id: "63865f14-e6df-4d0d-a9a9-4940f4a69cd5" -->
 ### Google Search Grounding
 
 **Integration**: Automatic fact verification and information retrieval.
@@ -1190,6 +1243,7 @@ response = model.generate_content(
 )
 ```
 
+<!-- section_id: "275f8375-ae12-47c6-b02b-71e28f33380f" -->
 ### Google Maps Grounding
 
 **Integration**: Location-aware responses with real-world data.
@@ -1222,8 +1276,10 @@ response = model.generate_content(
 
 ---
 
+<!-- section_id: "4317cdfd-1fa0-406c-969d-da38f58d4d70" -->
 ## API Endpoints and Error Handling
 
+<!-- section_id: "6d9895c5-3778-4ec4-aa59-2044520881ef" -->
 ### REST API Endpoints
 
 **Base URL**: `https://generativelanguage.googleapis.com/v1beta/`
@@ -1242,6 +1298,7 @@ response = model.generate_content(
 | Update Cache | `/caches/{cacheId}` | PATCH | Update TTL |
 | Create Interaction | `/interactions` | POST | Create stateful conversation |
 
+<!-- section_id: "6803185a-eac4-41cd-825c-17096d083558" -->
 ### Error Response Format
 
 ```json
@@ -1254,6 +1311,7 @@ response = model.generate_content(
 }
 ```
 
+<!-- section_id: "f7abeb71-21c7-482a-90f4-bdc841f5109a" -->
 ### Error Codes and Handling
 
 | HTTP | Status | Cause | Recovery |
@@ -1267,6 +1325,7 @@ response = model.generate_content(
 | 500 | INTERNAL | Server error | Retry with exponential backoff |
 | 504 | DEADLINE_EXCEEDED | Timeout (e.g., file URLs expire after 30s) | Retry request, ensure fast processing |
 
+<!-- section_id: "052c88a0-5e92-4c6d-8248-ff2ceaa95e3c" -->
 ### Retry Strategy for Production
 
 ```python
@@ -1294,8 +1353,10 @@ def call_with_retry(model, prompt, max_retries=3, base_delay=1):
 
 ---
 
+<!-- section_id: "fe668ca8-55cc-4576-9a29-a33e7d553981" -->
 ## Rate Limits and Quota Management
 
+<!-- section_id: "45b3a3a4-d282-43b7-b590-7b786dc95598" -->
 ### Request Rate Limits
 
 | Metric | Limit | Notes |
@@ -1306,6 +1367,7 @@ def call_with_retry(model, prompt, max_retries=3, base_delay=1):
 
 **Important**: Exact limits vary by project, model, and account tier. Check Google Cloud Console for specific quotas.
 
+<!-- section_id: "b78a5dbd-b1ca-4a72-9be5-72d492e8d356" -->
 ### Quota Management
 
 #### Monitoring quotas:
@@ -1336,6 +1398,7 @@ def handle_rate_limit(error):
         use_batch_api()
 ```
 
+<!-- section_id: "4338c516-6353-4165-bf80-10cb57d8bab1" -->
 ### Token-Based Rate Limiting
 
 Quotas are often expressed as tokens per minute (TPM) rather than requests per minute:
@@ -1352,8 +1415,10 @@ Calculation:
 
 ---
 
+<!-- section_id: "ce923c31-cb4e-4098-b2fb-f5b9333417e3" -->
 ## Summary: Key Takeaways for Production Implementation
 
+<!-- section_id: "617492db-d0f0-4bfb-b4dd-52cf3be0e95c" -->
 ### Cost Optimization Checklist
 
 - [ ] Use Gemini 3 Flash for high-volume, lower-accuracy-requirement tasks (4x cheaper)
@@ -1363,6 +1428,7 @@ Calculation:
 - [ ] Monitor actual token consumption via `usage_metadata` in responses
 - [ ] Implement rate limiting and quota monitoring in Cloud Console
 
+<!-- section_id: "ce8dc68e-66fd-4816-910b-0ef5edda751e" -->
 ### Performance Optimization Checklist
 
 - [ ] Set explicit `max_output_tokens` for controlled output length
@@ -1372,6 +1438,7 @@ Calculation:
 - [ ] Use parallel function calling where possible
 - [ ] Cache frequently-accessed context with explicit caching API
 
+<!-- section_id: "ef01cc3a-7335-4456-860a-3da87c09949b" -->
 ### Reliability Checklist
 
 - [ ] Implement exponential backoff retry logic for transient errors
@@ -1381,6 +1448,7 @@ Calculation:
 - [ ] Validate structured outputs with custom business logic
 - [ ] Test multimodal content with `countTokens` before deployment
 
+<!-- section_id: "2e7e8375-59c7-4c1e-b4e4-b0e33297ea23" -->
 ### Security Checklist
 
 - [ ] Rotate API keys regularly
@@ -1392,6 +1460,7 @@ Calculation:
 
 ---
 
+<!-- section_id: "77c31d86-0cc7-4cb1-88e8-aa62c06c3b04" -->
 ## References
 
 1. Google Generative AI Documentation: https://ai.google.dev/

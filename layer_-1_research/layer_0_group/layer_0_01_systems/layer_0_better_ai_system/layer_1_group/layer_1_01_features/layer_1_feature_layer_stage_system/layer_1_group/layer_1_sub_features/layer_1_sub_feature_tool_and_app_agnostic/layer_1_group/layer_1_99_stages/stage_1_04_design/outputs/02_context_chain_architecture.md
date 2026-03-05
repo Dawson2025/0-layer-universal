@@ -11,6 +11,7 @@ resource_name: "02_context_chain_architecture"
 
 ---
 
+<!-- section_id: "1d3d8149-15c5-4cfd-a04a-1f272ce679cb" -->
 ## Executive Summary
 
 The context delivery system for AI agents involves TWO distinct categories that must not be conflated:
@@ -22,8 +23,10 @@ Previous documentation sometimes used "tools" to mean both, creating confusion. 
 
 ---
 
+<!-- section_id: "93f1d9bb-455d-4a2a-b053-749762617814" -->
 ## Terminology Clarification
 
+<!-- section_id: "3817b1b9-ae36-4d42-bd37-103eb174e7d2" -->
 ### AI Apps (LLM Clients)
 
 AI apps are **integration points where AI models receive context and tools**. Each app has its own native configuration system and directory structure.
@@ -36,6 +39,7 @@ AI apps are **integration points where AI models receive context and tools**. Ea
 | **Google Gemini** | Web/CLI | `.gemini/` | `.gemini/` | Google integration |
 | **Codex/OpenAI** | API client | `.codex/` | `.codex/` | OpenAI integration |
 
+<!-- section_id: "e278be2e-58ce-4a9d-bad8-6076b1cfec6f" -->
 ### MCP Server Tools (External Capabilities)
 
 MCP Server Tools are **external services providing specific capabilities** through standardized Model Context Protocol interfaces. They are NOT context recipients — they are context providers (and data sources).
@@ -50,8 +54,10 @@ MCP Server Tools are **external services providing specific capabilities** throu
 
 ---
 
+<!-- section_id: "d50998e1-a516-4e7a-b168-f532b2c6bc6b" -->
 ## Context Chain Architecture
 
+<!-- section_id: "3751c73d-b122-4f22-a2bf-2e8560c37f44" -->
 ### Three Layers of Context Delivery
 
 The complete context chain has **three layers**:
@@ -83,6 +89,7 @@ Layer 2: AI App Integration (.1merge port system)
       └── instructions/
 ```
 
+<!-- section_id: "91626954-24ab-4df3-bd13-a2e34e3dfc1d" -->
 ### What Flows Through Each Layer
 
 **Layer 0 → Layer 1 (agnostic-sync.sh)**
@@ -96,6 +103,7 @@ The `agnostic-sync.sh` script extracts STATIC context from `0AGNOSTIC.md` and ge
 - **.cursorrules** — Lean context (Identity + Navigation) for Cursor IDE
 - **.github/copilot-instructions.md** — Medium context (Identity + Triggers + Navigation) for GitHub Copilot
 
+<!-- section_id: "5a6fa908-ddf3-407f-aa03-cc1c4fc8d602" -->
 ### Layer 1 → Layer 2 (.1merge port system)
 
 The `.1merge/` directory system (THREE-TIER MERGE) ports the Layer 1 context to each AI app's native config structure:
@@ -142,8 +150,10 @@ Codex:          .codex/CODEX.md         (Layer 1 OPENAI.md + .1codex_merge/)
 
 ---
 
+<!-- section_id: "d86b2d8e-e2ff-40d3-936a-da7337ed2d9f" -->
 ## Context Chain Data Flow
 
+<!-- section_id: "c58d22c0-4208-4617-89b8-5aec8a9dfddf" -->
 ### Request to Response (With AI Apps & MCP Tools)
 
 ```
@@ -170,6 +180,7 @@ Execute skill → Skill invokes MCP Server Tool
 Generate response → AI App outputs result to user
 ```
 
+<!-- section_id: "c1646522-d7bb-4065-ba28-5fa8da720d6f" -->
 ### Example: CSE 300 Grade Dashboard Request
 
 ```
@@ -200,8 +211,10 @@ The MCP Tool is a capability provider, not a context recipient.
 
 ---
 
+<!-- section_id: "682d5fa4-64e3-4749-8e9d-3e3fbd7e49a5" -->
 ## Key Distinctions
 
+<!-- section_id: "72539924-7542-425e-974a-059ba5534f7c" -->
 ### AI Apps Receive Context
 
 ✅ AI Apps are **context recipients**. They receive `.0agnostic/` content via:
@@ -209,6 +222,7 @@ The MCP Tool is a capability provider, not a context recipient.
 - Layer 2 ported configs (.claude/, .cursor/, .github/, etc.)
 - These files contain instructions, triggers, skill references, rules
 
+<!-- section_id: "4d4947cc-ef39-44cd-ab15-040851a53809" -->
 ### MCP Server Tools Don't Receive Context
 
 ❌ MCP Server Tools **don't receive context**. They receive:
@@ -216,6 +230,7 @@ The MCP Tool is a capability provider, not a context recipient.
 - These calls come FROM AI app skill execution
 - MCP Tools return data which AI app processes using its context
 
+<!-- section_id: "32d9d22d-41d2-4c9a-bbc6-d390c9de097f" -->
 ### Example Comparison
 
 | Entity | Type | Receives Context? | Receives Calls? | Returns |
@@ -227,12 +242,15 @@ The MCP Tool is a capability provider, not a context recipient.
 
 ---
 
+<!-- section_id: "e8108150-344e-4b1f-a8e6-2d495a1334e9" -->
 ## .1merge Port System Design
 
+<!-- section_id: "e2ec4b5f-280f-4858-8e96-baaf27ed50d3" -->
 ### Purpose
 
 The `.1merge/` system ensures that `.0agnostic/` content (universal, synced from source) can be **ported to each AI app's native directory structure** with app-specific customization.
 
+<!-- section_id: "be7fb107-c188-403a-8a09-cad8392f6d0e" -->
 ### Three-Tier Merge Strategy
 
 **Tier 0 (Synced)**: Base content from agnostic-sync.sh output
@@ -261,6 +279,7 @@ The `.1merge/` system ensures that `.0agnostic/` content (universal, synced from
 - Purpose: Fix issues, add missing content, customize per app
 - Example: `.1cursor_merge/2_additions/cursor_extra_rules.md` with Cursor-specific rules
 
+<!-- section_id: "9b71dc12-1ca7-4d5f-a389-345f3182682e" -->
 ### Merge Execution
 
 The merge system (not yet implemented, designed) would:
@@ -271,6 +290,7 @@ The merge system (not yet implemented, designed) would:
 4. **Merge** them with **Tier 2 > Tier 1 > Tier 0** precedence (later tiers override)
 5. **Port** result to app-native location (e.g., .claude/, .cursor/)
 
+<!-- section_id: "85f26d5f-8962-4e10-b31d-a1332323e2aa" -->
 ### Example Merge for Claude Code
 
 ```
@@ -307,6 +327,7 @@ Output:
       └── (+ additions from Tier 2)
 ```
 
+<!-- section_id: "4fef5695-8483-4913-9537-a7f2e5ad3c22" -->
 ### Why Three-Tier Merge?
 
 1. **Tier 0 (Synced)**: Keeps source-of-truth content consistent across all apps without duplication
@@ -317,8 +338,10 @@ Output:
 
 ---
 
+<!-- section_id: "a9b17a34-7e03-45b3-a7a3-36ac85af1d79" -->
 ## Current Implementation Status
 
+<!-- section_id: "b33ac50e-e0de-4ffe-bf9a-f4acd87005a1" -->
 ### Implemented
 
 ✅ **Layer 0**: `0AGNOSTIC.md` files created at every entity level (layer_2, layer_3, layer_4 projects)
@@ -331,6 +354,7 @@ Output:
 - .cursorrules (lean context)
 - .github/copilot-instructions.md (medium context)
 
+<!-- section_id: "3dad7de1-6830-4825-a8c7-c37806b20641" -->
 ### Designed But Not Yet Implemented
 
 🔄 **Layer 2 (.1merge port system)**:
@@ -343,10 +367,12 @@ Output:
 
 ---
 
+<!-- section_id: "eebce230-3781-47f8-a4c7-c93277210cd4" -->
 ## Context Avenue Web Integration
 
 The `.0agnostic/06_context_avenue_web/` structure supports both file-based AND data-based context delivery:
 
+<!-- section_id: "a4c96555-e4f4-4749-bc9e-f925c6991a2c" -->
 ### File-Based Avenues (01-08) — Currently in Use
 
 1. **01_aalang/** — AALang/GAB JSON-LD agent definitions
@@ -358,6 +384,7 @@ The `.0agnostic/06_context_avenue_web/` structure supports both file-based AND d
 7. **07_path_specific_rules/** — Directory-specific rule overrides
 8. **08_hooks/** — Event hooks for automation
 
+<!-- section_id: "f925e5c8-ffe2-41fb-a01f-ac162f056dd9" -->
 ### Data-Based Avenues (09-13) — Future Extensibility
 
 9. **09_knowledge_graph/** — Graph representation of knowledge relationships
@@ -368,6 +395,7 @@ The `.0agnostic/06_context_avenue_web/` structure supports both file-based AND d
 
 ---
 
+<!-- section_id: "7272feb5-fa7a-45c7-92e6-2dea4a73d42a" -->
 ## Propagation Chain Verification
 
 For context to flow correctly from source to AI app:
@@ -394,6 +422,7 @@ If any step is missing, context doesn't reach AI app.
 
 ---
 
+<!-- section_id: "f392d7b6-ab8a-4f83-bc90-34f5f3c1fe1d" -->
 ## References
 
 - **Terminology Clarification**: This document (2026-02-27)
@@ -404,6 +433,7 @@ If any step is missing, context doesn't reach AI app.
 
 ---
 
+<!-- section_id: "cf0acdcc-46c6-4b90-9606-63adb72579ab" -->
 ## Summary
 
 The context chain architecture consists of:

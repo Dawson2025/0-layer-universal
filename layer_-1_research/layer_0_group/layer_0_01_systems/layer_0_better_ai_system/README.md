@@ -11,6 +11,7 @@ Research into improving AI agent architecture: context systems, memory, orchestr
 **Source of truth**: [0AGNOSTIC.md](0AGNOSTIC.md)
 **Navigation index**: [0INDEX.md](0INDEX.md)
 
+<!-- section_id: "2c12c47e-10db-4619-a75b-9e11b15ae0c1" -->
 ## Current Structure
 
 Three pillar features:
@@ -37,6 +38,7 @@ layer_0_group/layer_0_features/
 └── layer_0_feature_multimodal_system/              ← Future: video, audio, TTS/STT, 3D
 ```
 
+<!-- section_id: "28affc19-d63c-487f-87e1-bc1c0f747716" -->
 ## Key Documents
 
 | Document | Location |

@@ -10,6 +10,7 @@ resource_name: "README.sync-conflict-20260101-084512-IF2WOGZ"
 
 ---
 
+<!-- section_id: "11d5aafa-9df3-4406-8df1-491ff682a322" -->
 ## Overview
 
 This sublayer consolidates all setup documentation that was previously scattered across sublayers 0.05 through 0.14:
@@ -29,6 +30,7 @@ Instead of maintaining 10 separate sublayers, all setup documentation is now org
 
 ---
 
+<!-- section_id: "8a351b36-3cad-42f1-a2cb-c74c7c77a306" -->
 ## Primary Navigation: Universal Setup File Tree
 
 **Main entry point**: `0.01_universal_setup_file_tree_0/`
@@ -39,6 +41,7 @@ This file tree provides hierarchical navigation across all 10 setup dimensions:
 OS → Environment → Coding App → AI App → MCP Server → AI Model → Universal Tools → Protocols → Agent Setup
 ```
 
+<!-- section_id: "63728b80-a2c7-489e-acbd-cdb75ffff75d" -->
 ### Quick Start
 
 ```bash
@@ -53,6 +56,7 @@ cd 0.05_operating_systems/<your_os>/
 # Continue navigating down...
 ```
 
+<!-- section_id: "3c7f78e2-975b-40d1-abc1-300b14e7283d" -->
 ### Key Files in File Tree
 
 - **README.md** - Complete navigation guide
@@ -63,8 +67,10 @@ cd 0.05_operating_systems/<your_os>/
 
 ---
 
+<!-- section_id: "4e85ec48-09b0-40dd-92dd-995057915c40" -->
 ## Organization Structure
 
+<!-- section_id: "8a268759-16c6-4704-b72a-f70bc5179bc8" -->
 ### Primary Organization: File Tree
 
 The file tree at `0.01_universal_setup_file_tree_0/` is the **primary organizational structure** for this sublayer. It provides:
@@ -74,6 +80,7 @@ The file tree at `0.01_universal_setup_file_tree_0/` is the **primary organizati
 3. **Combination-specific docs** - Setup for specific OS + IDE + MCP combinations
 4. **Discoverability** - Browse to find relevant documentation
 
+<!-- section_id: "8f68a8d9-1c1b-4050-b6da-61d730d0a81d" -->
 ### Content Organization
 
 All content from the old sublayers (0.05-0.14) has been integrated into the file tree at appropriate levels:
@@ -88,8 +95,10 @@ Each level's `_shared/` directory contains documentation that applies across all
 
 ---
 
+<!-- section_id: "2182c684-075c-4337-ba62-1ca5526b8fbe" -->
 ## How to Use This Sublayer
 
+<!-- section_id: "6695c7d6-d911-44f3-8df9-188300bdb269" -->
 ### For Users: Finding Setup Documentation
 
 1. **Start at the file tree**: `cd 0.01_universal_setup_file_tree_0/`
@@ -100,6 +109,7 @@ Each level's `_shared/` directory contains documentation that applies across all
    - Continue through all levels to your specific combination
 3. **Read setup docs**: `cat general_setup_and_config/README.md`
 
+<!-- section_id: "ed90f10c-6981-4e92-941e-83b9fa644a30" -->
 ### For Maintainers: Adding Setup Documentation
 
 1. **Determine the appropriate path** in the file tree
@@ -110,8 +120,10 @@ Each level's `_shared/` directory contains documentation that applies across all
 
 ---
 
+<!-- section_id: "e89488a9-0a0b-43ee-b96a-3e32b54a0a14" -->
 ## Relationship to Other Sublayers
 
+<!-- section_id: "a55b3524-4bdd-4dc7-8768-1110d47feb2d" -->
 ### Previously Separate Sublayers (Now Consolidated)
 
 This sublayer consolidates what were previously 10 separate sublayers:
@@ -129,6 +141,7 @@ This sublayer consolidates what were previously 10 separate sublayers:
 | sub_layer_0_13_universal_protocols | File tree: `0.09_protocols/` |
 | sub_layer_0_14_agent_setup | File tree: `0.10_agent_setup/` |
 
+<!-- section_id: "d5131b80-f20a-4d25-b721-3ba752d3c9f6" -->
 ### Integration with Non-Setup Sublayers
 
 This sublayer works alongside other universal sublayers:
@@ -140,8 +153,10 @@ This sublayer works alongside other universal sublayers:
 
 ---
 
+<!-- section_id: "e0d10e16-1552-4338-8535-a1ca6f3b7306" -->
 ## Why Consolidate?
 
+<!-- section_id: "64fb196d-ce78-430a-83b0-764c91a30cfb" -->
 ### Problems with 10 Separate Sublayers
 
 1. **Scattered documentation** - Hard to find setup for specific combinations
@@ -150,6 +165,7 @@ This sublayer works alongside other universal sublayers:
 4. **Maintenance burden** - 10 separate structures to maintain
 5. **Unclear relationships** - How does OS setup relate to AI app setup?
 
+<!-- section_id: "07a40f61-d8d2-45b5-9860-8e105f8513bd" -->
 ### Benefits of Consolidated Sublayer
 
 1. **Single entry point** - One place to find all setup docs
@@ -160,6 +176,7 @@ This sublayer works alongside other universal sublayers:
 
 ---
 
+<!-- section_id: "45e38893-783c-4ec6-9ee5-c3a2c285a0e2" -->
 ## Structure Statistics
 
 - **Sublayer range**: 0.05-0.014 (consolidates 10 sublayers)
@@ -170,8 +187,10 @@ This sublayer works alongside other universal sublayers:
 
 ---
 
+<!-- section_id: "ee2cfda4-2f65-4043-8b92-86d28f0110f3" -->
 ## Migration Status
 
+<!-- section_id: "0fabb7b1-d92f-4a67-8626-01741d79bea8" -->
 ### Completed ✅
 
 ✅ File tree structure created (`0.01_universal_setup_file_tree_0/`)
@@ -182,6 +201,7 @@ This sublayer works alongside other universal sublayers:
 ✅ References in universal_init_prompt.md updated
 ✅ Old sublayer directories removed
 
+<!-- section_id: "389cd55b-af42-48fb-998d-58c0ecccda21" -->
 ### Content Integration Mapping
 
 All content has been integrated into the file tree hierarchy:
@@ -196,6 +216,7 @@ All content has been integrated into the file tree hierarchy:
 - **sub_layer_0_13 → Level 8**: Protocols in `0.09_protocols/`
 - **sub_layer_0_14 → Level 9**: Agent setup in `0.10_agent_setup/`
 
+<!-- section_id: "3fba9a19-2f67-4357-9813-9c48cc160bbb" -->
 ### Future Enhancements
 
 🔮 Continue organizing content within the hierarchy
@@ -204,8 +225,10 @@ All content has been integrated into the file tree hierarchy:
 
 ---
 
+<!-- section_id: "ae1b8795-f323-4b52-be1f-6978082f1385" -->
 ## Quick Reference
 
+<!-- section_id: "b289cc15-f6a8-4f5a-9c06-92ad178d7507" -->
 ### Finding Setup Documentation
 
 **Universal Git setup** (all platforms):
@@ -243,6 +266,7 @@ All content has been integrated into the file tree hierarchy:
 
 ---
 
+<!-- section_id: "b96f218e-6f65-479e-af5f-496cccb4ccd1" -->
 ## Contact & Support
 
 For issues or questions about this sublayer:

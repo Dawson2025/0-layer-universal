@@ -5,16 +5,19 @@ resource_name: "github_browser_automation"
 ---
 # GitHub Browser Automation Protocol (Playwright MCP)
 
+<!-- section_id: "5f0c9f47-119c-4993-9ac9-88c710ff6c9c" -->
 ## Overview
 
 This protocol defines standard procedures for automating GitHub operations via the Playwright MCP server. These operations should be used when CLI tools (like `gh`) are unavailable or when browser-based interaction is required.
 
+<!-- section_id: "d652bc27-d4cf-432d-8508-b3dd08dcb8d5" -->
 ## Pre-Requisites
 
 1. Playwright MCP server must be running and accessible
 2. User must be logged into GitHub in the browser session
 3. Browser instance must be available (not in use by another process)
 
+<!-- section_id: "9ff36708-c3a1-46db-ac48-3f5bcde38ab5" -->
 ## Handling Browser Conflicts
 
 If you encounter "Browser is already in use" errors:
@@ -28,8 +31,10 @@ Then retry the browser operation.
 
 ---
 
+<!-- section_id: "acc2cb88-6773-4c9c-a28e-0bfc4bce8309" -->
 ## Protocol 1: Creating a New GitHub Repository
 
+<!-- section_id: "ae9c5a61-2058-450e-8e20-fcae500527f2" -->
 ### Steps
 
 1. **Navigate to new repo page**
@@ -62,6 +67,7 @@ Then retry the browser operation.
    - Wait for redirect to new repo page
    - Verify "Private" badge appears on repo page
 
+<!-- section_id: "dcf04121-6523-4a6d-94a0-0ce0395412a0" -->
 ### Verification
 
 After creation, confirm:
@@ -71,8 +77,10 @@ After creation, confirm:
 
 ---
 
+<!-- section_id: "0adf71ac-5a4a-4ce4-8830-99d75de6924a" -->
 ## Protocol 2: Changing Repository Visibility
 
+<!-- section_id: "175dd3d7-80b8-48f5-8cca-b68f2350a420" -->
 ### Making a Repository Private
 
 1. **Navigate to settings**
@@ -97,6 +105,7 @@ After creation, confirm:
    - Lock icon should appear next to repo name
    - Danger Zone should now show "This repository is currently private"
 
+<!-- section_id: "03296401-db3e-47b0-b7f0-b1134570fa9c" -->
 ### Making a Repository Public
 
 **WARNING**: Only do this when explicitly instructed by user.
@@ -105,6 +114,7 @@ Follow same steps but select "Change to public" instead.
 
 ---
 
+<!-- section_id: "27947c68-cc1e-4592-a11d-0a89dfa3adc9" -->
 ## Protocol 3: Renaming a Repository
 
 1. **Navigate to settings**
@@ -128,6 +138,7 @@ Follow same steps but select "Change to public" instead.
 
 ---
 
+<!-- section_id: "9e5167da-56dc-4ef4-8182-b531a1c25fb3" -->
 ## Protocol 4: Managing Collaborators/Access
 
 1. **Navigate to access settings**
@@ -144,6 +155,7 @@ Follow same steps but select "Change to public" instead.
 
 ---
 
+<!-- section_id: "399169f7-2fa3-41b3-b77a-af2fd4c74982" -->
 ## Protocol 5: Creating/Managing Releases
 
 1. **Navigate to releases**
@@ -162,6 +174,7 @@ Follow same steps but select "Change to public" instead.
 
 ---
 
+<!-- section_id: "d1c85c82-cc37-413c-8299-ed970fb029f8" -->
 ## Common Element References
 
 When using Playwright, these are typical element patterns:
@@ -177,20 +190,24 @@ When using Playwright, these are typical element patterns:
 
 ---
 
+<!-- section_id: "5e8df0ad-c38b-4f5c-8e6e-435823d2a8d5" -->
 ## Error Handling
 
+<!-- section_id: "2fc3518a-3079-43bd-9ea7-27105805f680" -->
 ### Browser Not Responding
 ```bash
 pkill -f "chrome.*mcp-chrome"
 # Then retry operation
 ```
 
+<!-- section_id: "025ee17d-5dbd-4821-83a3-5cd4936ff9a1" -->
 ### Authentication Required
 If GitHub requires re-authentication:
 1. Inform user that authentication is needed
 2. Wait for user to complete 2FA/password
 3. Continue with operation
 
+<!-- section_id: "f73a4202-450b-4f0b-b5fb-267c43aa24cd" -->
 ### Rate Limiting
 If GitHub shows rate limit errors:
 1. Wait 60 seconds
@@ -199,6 +216,7 @@ If GitHub shows rate limit errors:
 
 ---
 
+<!-- section_id: "c17f2587-144f-4d3e-8905-d6ce54728608" -->
 ## Best Practices
 
 1. **Always verify repo exists before operations** - Check if repo already exists to avoid duplicates

@@ -11,6 +11,7 @@ resource_name: "claude_code_agent_teams_research"
 
 ---
 
+<!-- section_id: "838c229d-1639-480e-93a2-5e0167bf8151" -->
 ## Executive Summary
 
 Claude Code Agent Teams is an **experimental feature** released alongside Opus 4.6 in February 2026. It enables multiple Claude Code instances to work in parallel, coordinated by a lead session through a shared task list and peer-to-peer messaging system. The feature is disabled by default and must be enabled via `CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS=1`.
@@ -19,6 +20,7 @@ Below are findings for each claim under investigation, with source citations.
 
 ---
 
+<!-- section_id: "7eea015a-d83f-4390-b806-065e409acc55" -->
 ## 1. Are agents terminated when the team is deleted? Or do they persist?
 
 **Finding: Agents must be shut down BEFORE the team can be cleaned up. They do not persist after cleanup.**
@@ -40,6 +42,7 @@ Teammates are separate Claude Code processes. Once shut down and cleaned up, the
 
 ---
 
+<!-- section_id: "4df62a2d-1170-415b-a1ae-03ac1f60b16c" -->
 ## 2. Can users "enter" any running agent and interact with it?
 
 **Finding: Yes. Users can interact directly with any running teammate, independent of the lead.**
@@ -59,6 +62,7 @@ This direct interaction is one of the main advantages over subagents, which can 
 
 ---
 
+<!-- section_id: "19c0240a-9d78-4622-acb8-21b8bbccfef3" -->
 ## 3. Is agent context reusable across team sessions?
 
 **Finding: No. Agent context is NOT reusable across sessions. This is a known limitation.**
@@ -81,6 +85,7 @@ For long-running work, some practitioners use a `claude-progress.txt` file in th
 
 ---
 
+<!-- section_id: "3f2df871-8c10-421b-b621-537ac35d90b1" -->
 ## 4. How are teams created -- from layer structure or ad-hoc?
 
 **Finding: Teams are created ad-hoc via natural language prompts. There is no layer/structure-based creation mechanism.**
@@ -112,10 +117,12 @@ There is no declarative team definition file, no YAML/JSON team specification, a
 
 ---
 
+<!-- section_id: "102d9ef3-2ebf-4a5d-89de-5e1266051442" -->
 ## 5. What is the actual lifecycle: create team -> spawn agents -> work -> shutdown?
 
 **Finding: The lifecycle is as documented below.**
 
+<!-- section_id: "84bc41fa-fae3-4e41-b27a-039a4dd1559a" -->
 ### Full Lifecycle
 
 1. **Enable**: Set `CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS=1` in settings or environment.
@@ -132,6 +139,7 @@ There is no declarative team definition file, no YAML/JSON team specification, a
 7. **Shutdown**: Lead sends shutdown requests to each teammate. Teammates approve or reject. They finish current work before exiting.
 8. **Cleanup**: Lead removes shared team resources. Fails if any teammates are still active.
 
+<!-- section_id: "3c967063-9434-4437-9365-0f4f3363794c" -->
 ### Key Coordination Mechanisms
 
 - **Shared task list** with automatic dependency unblocking
@@ -146,6 +154,7 @@ There is no declarative team definition file, no YAML/JSON team specification, a
 
 ---
 
+<!-- section_id: "faa59227-820b-4c2b-aa5f-2cd1f6e4c938" -->
 ## 6. Can agents be spawned with custom CLAUDE.md paths or context?
 
 **Finding: No custom CLAUDE.md paths. All teammates load the standard project CLAUDE.md. Context is customized via spawn prompts.**
@@ -177,6 +186,7 @@ The docs also note: "CLAUDE.md works normally: teammates read CLAUDE.md files fr
 
 ---
 
+<!-- section_id: "4e8623f3-5de7-41a1-bd33-2f3c1161f5dd" -->
 ## 7. What tools do teammates have access to?
 
 **Finding: Teammates have the same tools as any regular Claude Code session, inheriting the lead's permission settings.**
@@ -188,6 +198,7 @@ Teammates get access to:
 - **Skills**: All skills defined in `.claude/skills/`
 - **Team-specific tools**: SendMessage (direct messages, broadcasts, shutdown responses, plan approval responses), TaskUpdate
 
+<!-- section_id: "e32633b1-81db-490f-828d-3dafbf7c8a4f" -->
 ### Permission Inheritance
 
 - Teammates start with the **lead's permission settings**
@@ -196,6 +207,7 @@ Teammates get access to:
 - You CANNOT set per-teammate permission modes at spawn time
 - Permission tiers: read-only operations (Read, Grep) need no approval; file modifications and Bash commands may need approval based on settings
 
+<!-- section_id: "d7f30c3d-7897-4d84-b87a-86f4d5b0665e" -->
 ### Lead in Delegate Mode
 
 When the lead enters delegate mode (`Shift+Tab`), it is restricted to **coordination-only tools**:
@@ -206,6 +218,7 @@ When the lead enters delegate mode (`Shift+Tab`), it is restricted to **coordina
 
 The lead CANNOT touch code directly in delegate mode.
 
+<!-- section_id: "1000cfca-e200-4c76-a121-69664d79aff9" -->
 ### Hooks
 
 Two hooks are specific to agent teams:
@@ -219,10 +232,12 @@ Two hooks are specific to agent teams:
 
 ---
 
+<!-- section_id: "9105686b-349c-48e5-aae5-de1b6e7a95fd" -->
 ## 8. How does the team lead coordinate -- is it customizable?
 
 **Finding: The lead coordinates via natural language instructions, shared task lists, and messaging. Coordination behavior is customizable through prompts and modes.**
 
+<!-- section_id: "c7b77b6b-7207-4c4f-9803-ad0bdb78b678" -->
 ### Default Lead Behavior
 
 The lead is your main Claude Code session. It:
@@ -233,6 +248,7 @@ The lead is your main Claude Code session. It:
 - Synthesizes results from teammates
 - Manages shutdown and cleanup
 
+<!-- section_id: "d0d95c26-1719-437a-8904-66710508af40" -->
 ### Customization Points
 
 1. **Natural language instructions**: The lead's coordination behavior is shaped by your prompts. You can tell it:
@@ -250,6 +266,7 @@ The lead is your main Claude Code session. It:
 
 6. **Hooks**: `TeammateIdle` and `TaskCompleted` hooks let you enforce automated quality gates.
 
+<!-- section_id: "293adb88-0e92-43a0-8e3d-c684ed541e56" -->
 ### What is NOT Customizable
 
 - The lead is **fixed** to the session that creates the team. No promotion or transfer.
@@ -264,8 +281,10 @@ The lead is your main Claude Code session. It:
 
 ---
 
+<!-- section_id: "d9ebeb8f-9a3d-4007-862b-3412a88888f1" -->
 ## Additional Findings
 
+<!-- section_id: "6c19ba9a-b63f-4fc5-95f4-f8392d57547f" -->
 ### Known Limitations (Official)
 
 | Limitation | Detail |
@@ -279,6 +298,7 @@ The lead is your main Claude Code session. It:
 | Shutdown can be slow | Teammates finish current work before exiting |
 | Task status can lag | Teammates sometimes forget to mark tasks complete |
 
+<!-- section_id: "93174f92-6502-48fb-8b35-2f1fbce3fee5" -->
 ### Storage Locations
 
 ```
@@ -288,6 +308,7 @@ The lead is your main Claude Code session. It:
   tasks/{team-name}/     # Shared task list files
 ```
 
+<!-- section_id: "3bb666c1-2f65-4bf2-b947-c44621a2b1ec" -->
 ### Environment Variables (from binary analysis)
 
 | Variable | Purpose |
@@ -299,12 +320,14 @@ The lead is your main Claude Code session. It:
 | `CLAUDE_CODE_AGENT_TYPE` | Agent role/type |
 | `CLAUDE_CODE_PLAN_MODE_REQUIRED` | Whether plan approval is needed |
 
+<!-- section_id: "805d2f06-373c-4323-ae49-80097297612b" -->
 ### Cost Considerations
 
 Agent teams use significantly more tokens than single sessions. Each teammate has its own full context window. A 3-teammate team running for 30 minutes uses roughly 3-4x the tokens of a single session. The C compiler project (16 agents, ~2000 sessions) cost approximately $20,000 in API calls.
 
 ---
 
+<!-- section_id: "c308b5c4-4ddf-45ee-964a-d8a141c9dec5" -->
 ## Sources
 
 - [Official Documentation: Agent Teams](https://code.claude.com/docs/en/agent-teams)

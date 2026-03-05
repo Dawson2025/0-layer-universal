@@ -5,6 +5,7 @@ resource_name: "INSTALL"
 ---
 # Playwright MCP Server Installation Guide
 
+<!-- section_id: "1d456e48-4c5d-4ca3-91e2-634226b3e13d" -->
 ## Overview
 The Playwright MCP Server (`@playwright/mcp`) enables browser automation for AI agents.
 
@@ -12,10 +13,12 @@ The Playwright MCP Server (`@playwright/mcp`) enables browser automation for AI 
 
 ---
 
+<!-- section_id: "73a2c18b-0038-44d1-9dbe-4230e9bf9217" -->
 ## 🚀 Universal Automated Setup (Recommended)
 
 We have created a unified automation tool to handle installation across all OSs and AI tools.
 
+<!-- section_id: "63b141ee-132f-4946-ab20-342a0e32f10d" -->
 ### 1. Run the Automation Script
 ```bash
 # Run from the project root or universal context
@@ -29,10 +32,12 @@ This script automatically:
 
 ---
 
+<!-- section_id: "ebcc5c1c-905a-4bc1-aae5-a0503de219e6" -->
 ## 🛠️ Manual Installation by OS & Tool
 
 If you cannot use the automation script, follow these specific instructions.
 
+<!-- section_id: "ec914d96-cc40-4eb6-82fc-3d0aafb0863c" -->
 ### 🐧 Linux / WSL (Ubuntu)
 
 **Critical Prerequisite**: You must set `PLAYWRIGHT_BROWSERS_PATH` and `HOME` environment variables, or the server will fail to find browsers.
@@ -97,6 +102,7 @@ If you need headless on WSL (no GUI), set `"headless": true` (or use `--headless
 **⚠️ WARNING**: As of v2.0.77, Cursor on Linux/WSL has a bug where Playwright tools are not exposed to the agent even if connected.
 **Workaround**: Use `@agent-infra/mcp-server-browser` instead.
 
+<!-- section_id: "37d2c8ff-7202-4fa2-8a8a-a030beb08964" -->
 ### 🪟 Windows
 
 #### For Gemini CLI / Claude / Cursor
@@ -112,6 +118,7 @@ Config structure:
 }
 ```
 
+<!-- section_id: "c53657e8-cd8e-44d3-909f-3c229dbbcf9f" -->
 ### 🍎 macOS
 
 Similar to Linux, but typically requires less strict environment wrapping if your shell environment is standard.
@@ -127,6 +134,7 @@ Similar to Linux, but typically requires less strict environment wrapping if you
 
 ---
 
+<!-- section_id: "3ef6ad57-463e-425a-8c62-a2e6e4fcff84" -->
 ## 🧪 Verification
 
 1. **Install Browsers**: `npx playwright install chromium`

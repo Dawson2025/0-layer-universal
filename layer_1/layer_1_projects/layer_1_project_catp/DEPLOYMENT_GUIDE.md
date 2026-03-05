@@ -5,8 +5,10 @@ resource_name: "DEPLOYMENT_GUIDE"
 ---
 # 🚀 Deployment & Testing Guide
 
+<!-- section_id: "fe24ca54-b757-4846-9dd3-df5b24b84807" -->
 ## ✅ Pre-Deployment Verification
 
+<!-- section_id: "0e9a5553-2d7e-427c-9e14-52ca5f82cac6" -->
 ### Backend Tests
 - ✅ **Statistics Calculator**: All tests passing
   - Mean calculation: ✅ Working
@@ -17,14 +19,17 @@ resource_name: "DEPLOYMENT_GUIDE"
 - ✅ **Code Syntax**: Validated with Node.js
 - ✅ **Dependencies**: Installed (245 packages, 0 vulnerabilities)
 
+<!-- section_id: "1243e0a9-e991-4dff-a68e-f0cc13a65707" -->
 ### Frontend Build
 - ✅ **Bundle Size**: 1000.4kb
 - ✅ **Build Status**: Success (43ms)
 - ✅ **Linter Errors**: 0
 - ✅ **Dependencies**: Firebase SDK installed
 
+<!-- section_id: "14a474bd-7148-4777-8c57-9a54c2a8a0cd" -->
 ## 📦 What's Ready to Deploy
 
+<!-- section_id: "1ecabd20-8434-465e-bcfc-7f53fb34133a" -->
 ### Backend (`assignment-time/dawson-v`)
 ```
 functions/
@@ -35,6 +40,7 @@ functions/
 firestore.rules                  ➕ NEW (security rules)
 ```
 
+<!-- section_id: "33c509e1-1a5d-4d43-a0e2-ae111617b861" -->
 ### Frontend (`task-timer-frontend/dawson-v`)
 ```
 classInfo.js           ✏️  Modified (extract course/assignment IDs)
@@ -45,8 +51,10 @@ package.json           ✏️  Modified (added firebase dependency)
 bundle.js              🔄 Rebuilt (1000.4kb)
 ```
 
+<!-- section_id: "e7f5ef73-d171-4aaa-9df8-81624608a281" -->
 ## 🎯 Deployment Steps
 
+<!-- section_id: "03ec8c8f-ab83-401f-be24-13441a9bd30b" -->
 ### Option 1: Deploy to Production (Recommended)
 
 ```bash
@@ -60,6 +68,7 @@ firebase deploy --only functions:onTimingDataWrite,firestore:rules
 # Select: /home/dawson/dawson-workspace/code/catp/task-timer-frontend/
 ```
 
+<!-- section_id: "1b6fe5bc-12d9-4bf4-8150-4517b2e5494d" -->
 ### Option 2: Test with Dev Environment
 
 ```bash
@@ -73,6 +82,7 @@ firebase deploy --only functions:onTimingDataWrite,firestore:rules
 # 4. Load extension in Chrome
 ```
 
+<!-- section_id: "8128e145-4ccb-4c68-9fe3-86a8604aa73a" -->
 ### Option 3: Local Testing (Requires Java)
 
 ```bash
@@ -86,8 +96,10 @@ firebase emulators:start --only functions,firestore
 # Frontend will need to be configured to use localhost:8085
 ```
 
+<!-- section_id: "68ea329b-637c-499e-aa8f-1724ed8d3f48" -->
 ## 🧪 Testing the Implementation
 
+<!-- section_id: "736d5cea-9991-4078-b9bc-dc4bfcfd49de" -->
 ### Test Flow
 
 1. **Navigate to Canvas Assignment**
@@ -121,6 +133,7 @@ firebase emulators:start --only functions,firestore
    - Watch statistics update in real-time
    - Verify calculations are correct
 
+<!-- section_id: "652fa718-b7fa-4d4f-b078-8ac5a88991c5" -->
 ### Expected Behavior
 
 ✅ **After 1st submission:**
@@ -134,6 +147,7 @@ firebase emulators:start --only functions,firestore
 - Count = 3
 - Real-time updates in UI
 
+<!-- section_id: "e9ae3f31-86bc-4301-9898-a994b7aadc5d" -->
 ### Debugging
 
 **If data isn't appearing in Firestore:**
@@ -157,8 +171,10 @@ firebase emulators:start --only functions,firestore
 # Check Firestore rules allow read access
 ```
 
+<!-- section_id: "7b0206af-3901-4979-8642-0e4f079d1eb8" -->
 ## 📊 Firestore Console Views
 
+<!-- section_id: "696a8276-f75b-41dc-987b-9de5a35c6cc9" -->
 ### View Submissions
 ```
 Firestore → Data → assignment_times
@@ -167,6 +183,7 @@ Firestore → Data → assignment_times
 → See all student submissions
 ```
 
+<!-- section_id: "763be07e-12e6-4a0f-a8b0-98f647a08f69" -->
 ### View Statistics
 ```
 Firestore → Data → assignment_statistics
@@ -174,6 +191,7 @@ Firestore → Data → assignment_statistics
 → View calculated stats (mean, median, mode, count)
 ```
 
+<!-- section_id: "bd7d32e1-742b-41d8-9b4e-e7d4f43345c2" -->
 ## 🔐 Security Notes
 
 - ✅ **Firestore Rules** deployed allow:
@@ -186,13 +204,16 @@ Firestore → Data → assignment_statistics
   - No personal information collected
   - IDs stored only in Chrome sync storage
 
+<!-- section_id: "8c021891-b982-4cc0-80d5-b21cc7d43bac" -->
 ## 📈 Monitoring
 
+<!-- section_id: "f2bed37c-4832-4cf9-ae24-6e3887a4cffd" -->
 ### Firebase Console
 - **Functions → Logs**: Monitor trigger executions
 - **Firestore → Usage**: Track reads/writes
 - **Functions → Dashboard**: View invocation count
 
+<!-- section_id: "992024c7-121b-4fcd-b544-fa96d70e24f4" -->
 ### Chrome Extension Console
 ```javascript
 // Check student ID
@@ -207,6 +228,7 @@ getStatistics(courseId, assignmentId).then(stats => {
 });
 ```
 
+<!-- section_id: "da69bccf-6cf8-4c2e-b467-85277350f828" -->
 ## 🎉 Success Criteria
 
 ✅ Implementation is successful when:
@@ -218,6 +240,7 @@ getStatistics(courseId, assignmentId).then(stats => {
 6. Multiple students can submit to same assignment
 7. Statistics update correctly with each new submission
 
+<!-- section_id: "98909994-1dad-4b53-94a0-69beb7ec1100" -->
 ## 🚨 Rollback Plan
 
 If issues occur:
@@ -234,6 +257,7 @@ npm run test
 # Reload extension in Chrome
 ```
 
+<!-- section_id: "ae765242-933c-4865-84b8-237c35546194" -->
 ## 📞 Support
 
 - Check `IMPLEMENTATION_SUMMARY.md` for architecture details

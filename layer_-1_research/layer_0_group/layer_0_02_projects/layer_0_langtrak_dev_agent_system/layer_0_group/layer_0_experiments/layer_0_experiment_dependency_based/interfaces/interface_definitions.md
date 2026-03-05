@@ -10,6 +10,7 @@ resource_name: "interface_definitions"
 
 ---
 
+<!-- section_id: "f899a333-a773-434d-992e-5696f8b73037" -->
 ## IStorageProvider (L2 → L3, L4, L5, L6, L7, L8)
 
 Unified local/cloud storage interface.
@@ -25,6 +26,7 @@ Unified local/cloud storage interface.
 
 ---
 
+<!-- section_id: "6ca756ec-28a3-4643-9b78-f7d881bbbda9" -->
 ## IAuthProvider (L2 → L3)
 
 Authentication and authorization.
@@ -40,6 +42,7 @@ Authentication and authorization.
 
 ---
 
+<!-- section_id: "3f823d26-278e-4bbc-8291-5d24a212e92c" -->
 ## IUserProvider (L3 → L4, L8)
 
 User identity and profile access.
@@ -54,6 +57,7 @@ User identity and profile access.
 
 ---
 
+<!-- section_id: "4eed6937-608c-4597-85b8-acf13922b166" -->
 ## IPhonemeProvider (L4 → L5)
 
 Core phoneme data access.
@@ -69,6 +73,7 @@ Core phoneme data access.
 
 ---
 
+<!-- section_id: "4850db9d-4494-4968-925f-673376ef0d32" -->
 ## IPhonemeAudio (L4 → L6)
 
 Audio generation for individual phonemes.
@@ -82,6 +87,7 @@ Audio generation for individual phonemes.
 
 ---
 
+<!-- section_id: "15e36592-e877-490e-8ade-2d1e26b091d6" -->
 ## IFrequencyProvider (L4 → internal)
 
 Phoneme usage statistics.
@@ -96,6 +102,7 @@ Phoneme usage statistics.
 
 ---
 
+<!-- section_id: "19e13016-89b3-4ad1-8697-bfc052c930b3" -->
 ## IPhonemeAdmin (L4 → internal)
 
 CRUD operations for phoneme management.
@@ -112,6 +119,7 @@ CRUD operations for phoneme management.
 
 ---
 
+<!-- section_id: "7aa03508-ac21-4aab-8a5a-3a26aa17f342" -->
 ## ITemplateProvider (L5 → L6)
 
 Template and phoneme subset access.
@@ -126,6 +134,7 @@ Template and phoneme subset access.
 
 ---
 
+<!-- section_id: "8acacd27-12ba-4e83-b560-545dd8cacac8" -->
 ## IContentProvider (L6 → L7)
 
 Language content (words, syllables) access.
@@ -141,6 +150,7 @@ Language content (words, syllables) access.
 
 ---
 
+<!-- section_id: "a057f388-514a-46b0-b8ec-4fd9284c318c" -->
 ## IContentAudio (L6 → external)
 
 Audio generation for words and syllables.
@@ -154,6 +164,7 @@ Audio generation for words and syllables.
 
 ---
 
+<!-- section_id: "face62e7-2b89-4339-b03d-7a0ebe58d3b6" -->
 ## IProjectProvider (L7 → L8)
 
 Project access and management.
@@ -168,6 +179,7 @@ Project access and management.
 
 ---
 
+<!-- section_id: "9a2a040c-b813-451b-b924-7e345f02bd90" -->
 ## ICollaborationProvider (L8 → external)
 
 Team collaboration and sharing.
@@ -182,6 +194,7 @@ Team collaboration and sharing.
 
 ---
 
+<!-- section_id: "4b74a433-5771-4348-81f9-a84c14e5530a" -->
 ## Interface Dependency Map
 
 ```
@@ -206,6 +219,7 @@ L8 uses: IProjectProvider, IUserProvider (skip-link to L3)
 L8 provides: ICollaborationProvider
 ```
 
+<!-- section_id: "63592530-041b-4272-9cb0-3ef7b283e1de" -->
 ## Summary
 
 | Interface | Methods | Provider | Primary Consumer |

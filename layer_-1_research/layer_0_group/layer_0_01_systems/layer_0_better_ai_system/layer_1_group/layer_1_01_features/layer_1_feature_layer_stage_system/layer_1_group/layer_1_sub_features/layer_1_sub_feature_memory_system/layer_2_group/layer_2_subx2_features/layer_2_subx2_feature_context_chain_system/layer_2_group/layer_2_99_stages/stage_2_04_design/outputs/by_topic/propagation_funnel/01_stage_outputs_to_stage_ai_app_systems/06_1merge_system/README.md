@@ -6,6 +6,7 @@ resource_name: "README"
 ---
 # Stage 03: .1merge System (AI App Context Porting)
 
+<!-- section_id: "e79432e9-aeab-4ffa-8892-2e3bc8639c8f" -->
 ## Purpose
 
 The **.1merge system** is the **three-tier merge architecture** that ports 0AGNOSTIC.md context into each AI application's native configuration format.
@@ -17,10 +18,12 @@ It enables:
 
 This makes context **portable across 6+ AI apps** (Claude, Cursor, Codex, Gemini, GitHub Copilot, OpenAI) without duplication.
 
+<!-- section_id: "77d53ad7-4145-4ca2-beae-5389905a7416" -->
 ## Architecture: Two Subsystems
 
 The .1merge system has two parallel subsystems:
 
+<!-- section_id: "c486c1e9-d09b-4c95-8ab6-0482241066b9" -->
 ### 1. AI App Context Systems (01_ai_app_context_systems/)
 
 **What**: How to port `.0agnostic/` folders to each AI app's native directory structure
@@ -32,6 +35,7 @@ The .1merge system has two parallel subsystems:
 
 **Output**: Mirrored directory structures for each AI app
 
+<!-- section_id: "e543438f-de2d-41e3-afe7-3e986b53148a" -->
 ### 2. AI App Personal System Prompts (02_ai_app_personal_system_prompts/)
 
 **What**: How to port context into each AI app's personal system prompt file
@@ -46,6 +50,7 @@ The .1merge system has two parallel subsystems:
 
 **Output**: One system prompt file per AI app
 
+<!-- section_id: "1e848781-cc85-41e6-bd85-443f06742e4b" -->
 ## How It Works: Three-Tier Merge
 
 ```
@@ -82,6 +87,7 @@ Final output: Merged file = Tier 0 + Tier 1 overrides + Tier 2 additions
 
 **Merge Precedence**: Tier 2 > Tier 1 > Tier 0 (additions override overrides override synced base)
 
+<!-- section_id: "2e68e928-cbd2-4e9c-9585-8269a6990888" -->
 ## Directory Structure
 
 ```
@@ -123,6 +129,7 @@ Final output: Merged file = Tier 0 + Tier 1 overrides + Tier 2 additions
         └── tool_additions.md (Custom OpenAI enhancements)
 ```
 
+<!-- section_id: "1495a3da-b7b4-4066-9bf4-e71d9677cb5a" -->
 ## AI App Context Systems (Subsystem 01)
 
 **Purpose**: Port `.0agnostic/` folder structure to each AI app's native directory system
@@ -151,6 +158,7 @@ Final output: Merged file = Tier 0 + Tier 1 overrides + Tier 2 additions
 - Google Gemini (`.gemini/`)
 - Terminal tools (`.github/cli/`)
 
+<!-- section_id: "67f1470a-b3e3-4d3f-9849-1f9479c46b09" -->
 ## AI App Personal System Prompts (Subsystem 02)
 
 **Purpose**: Port 0AGNOSTIC.md content into each AI app's personal system prompt format
@@ -193,6 +201,7 @@ You are an agent at **Layer X** (Entity Type), **Entity**: [Name].
 - **.cursorrules** — Cursor IDE rules file
 - **.github/copilot-instructions.md** — GitHub Copilot instructions
 
+<!-- section_id: "fb9f8c42-7a56-411a-9a1f-6d36878fee6b" -->
 ## Merge Execution Workflow
 
 **When agnostic-sync.sh runs**:
@@ -210,6 +219,7 @@ You are an agent at **Layer X** (Entity Type), **Entity**: [Name].
    d. Write final file (e.g., CLAUDE.md)
 ```
 
+<!-- section_id: "497e9d86-5c98-4378-a366-9c908e78df1e" -->
 ## Validation Checklist
 
 After running merge, verify:
@@ -223,6 +233,7 @@ After running merge, verify:
 - ✅ Grammar and formatting correct
 - ✅ Files are readable by respective AI tools
 
+<!-- section_id: "36f97cf5-f299-42c0-b39d-0939bfc37538" -->
 ## Phase in Propagation Funnel
 
 The .1merge system is the **final translation** between:
@@ -240,6 +251,7 @@ With .1merge:
 - Tool-specific customizations stay isolated in Tier 1-2
 - Easy to add new tools (just add new .1{tool}_merge/ subdirectory)
 
+<!-- section_id: "63a0d76d-ffd4-4d9a-9093-04f82545424f" -->
 ## See Also
 
 - Level 04 (AI Apps) → Final deployment to each AI tool

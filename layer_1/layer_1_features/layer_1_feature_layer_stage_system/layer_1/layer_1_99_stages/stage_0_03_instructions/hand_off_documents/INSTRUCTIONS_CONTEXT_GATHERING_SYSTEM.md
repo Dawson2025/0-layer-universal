@@ -11,6 +11,7 @@ resource_name: "INSTRUCTIONS_CONTEXT_GATHERING_SYSTEM"
 
 ---
 
+<!-- section_id: "0861815a-b5fa-4098-9090-55fff6fb8741" -->
 ## 1. Overview
 
 The context gathering system determines:
@@ -21,6 +22,7 @@ The context gathering system determines:
 
 ---
 
+<!-- section_id: "ae39aa5e-bbae-4ba9-80bd-567734130a11" -->
 ## 2. Core Principle
 
 ```
@@ -34,10 +36,12 @@ The context gathering system determines:
 
 ---
 
+<!-- section_id: "899e164e-270b-423f-8f54-9b6630feac23" -->
 ## 3. Vertical Chain (Always Relevant)
 
 The vertical chain consists of **ancestors** and **descendants** of the current entity.
 
+<!-- section_id: "c76f69ff-1bbc-46be-b297-79c32b19c9f6" -->
 ### 3.1 Diagram
 
 ```
@@ -63,6 +67,7 @@ The vertical chain consists of **ancestors** and **descendants** of the current 
      └────────────────┘ └─────────────┘ └─────────────┘
 ```
 
+<!-- section_id: "a85c49e0-9363-4bce-8db0-7a3bfe7837ed" -->
 ### 3.2 What to Gather from Ancestors
 
 | Ancestor Level | What to Gather |
@@ -71,6 +76,7 @@ The vertical chain consists of **ancestors** and **descendants** of the current 
 | **Project (Layer 1)** | Project-specific rules, context, conventions |
 | **Feature (Layer 2)** | Feature-specific context, current stage status |
 
+<!-- section_id: "8416ad9b-9f4a-43b0-8bfd-551a279afbb1" -->
 ### 3.3 What to Gather from Descendants
 
 | Descendant Type | What to Gather |
@@ -81,10 +87,12 @@ The vertical chain consists of **ancestors** and **descendants** of the current 
 
 ---
 
+<!-- section_id: "9ef7f701-c955-420c-a254-01c6f3898a0c" -->
 ## 4. Horizontal Siblings (Conditionally Relevant)
 
 Horizontal siblings are entities at the **same level** as the current entity.
 
+<!-- section_id: "afdf28cd-60f5-4ba7-a4d5-a839f080bf81" -->
 ### 4.1 Diagram
 
 ```
@@ -107,6 +115,7 @@ Horizontal siblings are entities at the **same level** as the current entity.
        └───────────────────────────────────────────────┘
 ```
 
+<!-- section_id: "aaaf9c27-f500-4afe-bd64-97bfc3200e31" -->
 ### 4.2 When Siblings Are Relevant
 
 **Condition 1: Sibling is RELATED**
@@ -120,6 +129,7 @@ Horizontal siblings are entities at the **same level** as the current entity.
 - Current task affects both entities
 - Current task requires knowledge from sibling
 
+<!-- section_id: "4133094d-58fe-42d3-a34d-26e94c38b3b1" -->
 ### 4.3 Examples
 
 | Scenario | Sibling Relevant? | Why |
@@ -131,10 +141,12 @@ Horizontal siblings are entities at the **same level** as the current entity.
 
 ---
 
+<!-- section_id: "e927fa6a-26b8-4fef-933d-194ee9e95d4e" -->
 ## 5. Task Sources
 
 Tasks that determine what context is relevant come from multiple sources:
 
+<!-- section_id: "09a38f95-944d-458f-91cc-32d0df3479fd" -->
 ### 5.1 Task Source Diagram
 
 ```
@@ -157,6 +169,7 @@ Tasks that determine what context is relevant come from multiple sources:
 └─────────────────────────────────────────────────────────────────────────────┘
 ```
 
+<!-- section_id: "dd41565d-89f4-4ba3-988e-065f415dbb35" -->
 ### 5.2 Task Source Priority
 
 ```
@@ -166,6 +179,7 @@ Tasks that determine what context is relevant come from multiple sources:
 4. Todo lists (pending)     ← LOWEST PRIORITY
 ```
 
+<!-- section_id: "3688b595-6487-40de-9f80-21dc1a162439" -->
 ### 5.3 Status.json Structure
 
 ```json
@@ -192,10 +206,12 @@ Tasks that determine what context is relevant come from multiple sources:
 
 ---
 
+<!-- section_id: "3719f77c-8a70-491c-820c-34bce2412cac" -->
 ## 6. Init Prompt Chain
 
 The init prompt chain is how context is inherited from universal down to current location.
 
+<!-- section_id: "8806212b-f141-461b-b2cc-06183fffaa2d" -->
 ### 6.1 Chain Diagram
 
 ```
@@ -229,6 +245,7 @@ The init prompt chain is how context is inherited from universal down to current
 └─────────────────────────────────────────────────────────────────────────────┘
 ```
 
+<!-- section_id: "d9911ae4-9787-4c41-9443-082ae438e48e" -->
 ### 6.2 Init Prompt Template
 
 ```markdown
@@ -253,10 +270,12 @@ The init prompt chain is how context is inherited from universal down to current
 
 ---
 
+<!-- section_id: "73c67cea-c461-4d1d-b1eb-989b628e217d" -->
 ## 7. Claude Code Integration
 
 Claude Code's hierarchical CLAUDE.md discovery aligns with our init prompt chain.
 
+<!-- section_id: "8156f026-79d8-4e1d-b224-d5d86569eea6" -->
 ### 7.1 CLAUDE.md Discovery Order
 
 ```
@@ -267,6 +286,7 @@ Claude Code's hierarchical CLAUDE.md discovery aligns with our init prompt chain
 5. .../layer_3_component_calc/CLAUDE.md   # Component (Layer 3)
 ```
 
+<!-- section_id: "50d42be0-1636-444d-bc0c-8e1f68cc9cc8" -->
 ### 7.2 Inheritance Behavior
 
 - Later CLAUDE.md files **override** earlier ones where conflicts exist
@@ -274,6 +294,7 @@ Claude Code's hierarchical CLAUDE.md discovery aligns with our init prompt chain
 - Skills, commands, agents are **inherited** from ancestors
 - Child entities can **extend** parent configurations
 
+<!-- section_id: "ddc694ab-3f3b-49e3-a6e2-05bd6762e473" -->
 ### 7.3 Agnostic → CLAUDE.md Relationship
 
 ```
@@ -291,8 +312,10 @@ agnostic/init_prompt.md          CLAUDE.md
 
 ---
 
+<!-- section_id: "e8f4148d-105b-4582-a9b5-1fc1fdd2c8e9" -->
 ## 8. Context Gathering Algorithm
 
+<!-- section_id: "8d2efdc3-5f01-4839-9da0-ba2d7badff9c" -->
 ### 8.1 Pseudocode
 
 ```
@@ -324,6 +347,7 @@ function gatherContext(currentEntity):
     return context
 ```
 
+<!-- section_id: "5ba32138-6ba0-4b5e-81aa-df594606c162" -->
 ### 8.2 Flowchart
 
 ```
@@ -371,8 +395,10 @@ function gatherContext(currentEntity):
 
 ---
 
+<!-- section_id: "170bad4f-0394-4af4-894a-078470801898" -->
 ## 9. Implementation Notes
 
+<!-- section_id: "300e8a19-4166-4b91-938b-fb21f6d3d5d1" -->
 ### 9.1 For Claude Code
 
 When using Claude Code, context gathering happens automatically via:
@@ -380,6 +406,7 @@ When using Claude Code, context gathering happens automatically via:
 - Skills that navigate the layer hierarchy
 - Commands that gather specific context
 
+<!-- section_id: "1d372c7f-2c0c-4ce1-895e-5caf82aba44c" -->
 ### 9.2 For Other AI Tools
 
 For tools without hierarchical discovery:
@@ -387,6 +414,7 @@ For tools without hierarchical discovery:
 - Check status.json at each level
 - Apply the algorithm above
 
+<!-- section_id: "3d96664b-76c3-4ba3-888b-865609853ac5" -->
 ### 9.3 Tool-Agnostic Implementation
 
 The agnostic `init_prompt.md` files should:
@@ -397,6 +425,7 @@ The agnostic `init_prompt.md` files should:
 
 ---
 
+<!-- section_id: "02178b0e-4760-4e76-9a9c-270e6f02a608" -->
 ## 10. Success Criteria
 
 - [ ] Vertical chain is always gathered

@@ -6,13 +6,16 @@ resource_name: "README"
 ---
 # Codex CLI MCP Setup (WSL)
 
+<!-- section_id: "07d410e6-11c6-4e3a-b5af-0a9d8cfef0fe" -->
 ## Config location
 - `~/.codex/config.toml`
 
+<!-- section_id: "ebe56413-4124-4a41-bbe2-84e7380e4e2f" -->
 ## Recommended setup (WSLg headed Playwright)
 Use the Codex sync automation:
 - `automation/scripts/codex_mcp_sync.py`
 
+<!-- section_id: "c891b608-a3e4-4c31-9ec0-1f359b46d2a8" -->
 ### Quickstart (headed, visible browser)
 ```bash
 cd /home/dawson/dawson-workspace/code/0_layer_universal/0_context/layer_0/0.02_sub_layers/sub_layer_0_10_mcp_servers_and_tools_setup/0.06_automation/scripts
@@ -31,6 +34,7 @@ Key requirements for headed browser on WSLg:
   - `isolated=true` to avoid profile lock
   - `executablePath` pointing at `~/.cache/ms-playwright/chromium-*/chrome-linux64/chrome`
 
+<!-- section_id: "1cbd840a-c45b-45dd-a790-229cb49779ec" -->
 ### If no WSLg (no visible Linux GUI browser)
 If `/mnt/wslg/runtime-dir` does not exist, you will not get a visible headed browser from WSL.
 
@@ -42,6 +46,7 @@ Options:
 - Use a Windows-visible browser:
   - Start Windows Chrome with remote debugging and use `chrome-devtools-mcp` from WSL.
 
+<!-- section_id: "66146f07-13ba-4f0c-a77e-bb19e9b6d421" -->
 ## Secrets
 Put API keys in `~/.codex/mcp.env` and re-run the sync:
 ```bash
@@ -50,9 +55,11 @@ CONTEXT7_API_KEY=...
 CONTEXT7_API_URL=https://context7.com/api/v1
 ```
 
+<!-- section_id: "1581f2d8-3330-46fb-b4b0-4c98f078c924" -->
 ## Disable/enable servers
 - Disable: `codex_mcp_sync.py --disable <servers...>`
 - Re-enable: rerun without disabling (or restore from `~/.codex/environments/<env>.full.toml`)
 
+<!-- section_id: "89972fa0-4323-4d16-a3cd-71b96cb1e802" -->
 ## Server notes
 See `0.05_mcp_servers/` in this folder for Codex-on-WSL notes per server (mirrors the top-level server list).

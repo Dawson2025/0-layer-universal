@@ -9,6 +9,7 @@ resource_name: "local_ubuntu_desktop_troubleshooting"
 **Importance**: 1 (high — must be loaded when working on local Ubuntu desktop issues)
 **Scope**: All agents working on the local machine
 
+<!-- section_id: "06be1278-af51-4fc7-b3a1-ae377f673a30" -->
 ## Rule
 
 When troubleshooting Ubuntu desktop, GNOME, system services, audio, or keybinding issues on the local machine, the agent MUST:
@@ -18,6 +19,7 @@ When troubleshooting Ubuntu desktop, GNOME, system services, audio, or keybindin
 3. **Check** stage outputs for existing fixes at `.../sub_layer_0_06_99_stages/stage_0_09_current_product/outputs/`
 4. **Follow** established recovery protocols before attempting novel fixes
 
+<!-- section_id: "27765cbd-36fc-4500-9ed8-0a3fe499f318" -->
 ## Trigger Conditions
 
 This rule activates when ANY of these conditions are met:
@@ -32,6 +34,7 @@ This rule activates when ANY of these conditions are met:
 - Portal service failures
 - Any local Ubuntu desktop/GNOME troubleshooting
 
+<!-- section_id: "6fc6cb83-f775-49f4-b0b6-8ac688bc8cd3" -->
 ## Key Knowledge Paths (from repo root)
 
 | Topic | Path |
@@ -44,6 +47,7 @@ This rule activates when ANY of these conditions are met:
 
 **Note**: `...` abbreviates `sub_layer_0_05_operating_systems/sub_layer_0_05_linux_ubuntu/sub_layer_0_06_group/sub_layer_0_06_environments`
 
+<!-- section_id: "f0d5aac4-6f91-4122-a19f-2de3faa83cc9" -->
 ## Critical Facts
 
 - Desktop is **Unity** (XDG_CURRENT_DESKTOP=Unity), NOT GNOME Shell — but uses GNOME components

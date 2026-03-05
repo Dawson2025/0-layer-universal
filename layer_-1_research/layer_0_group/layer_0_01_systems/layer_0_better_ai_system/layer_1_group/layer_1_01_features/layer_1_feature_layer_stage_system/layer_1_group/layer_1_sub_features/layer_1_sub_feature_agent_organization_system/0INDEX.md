@@ -6,10 +6,12 @@ resource_name: "0INDEX"
 ---
 # Agent Organization System — Manager Dashboard
 
+<!-- section_id: "93c04054-8dbe-49a1-b2d8-0ad41f6aff11" -->
 ## Entity Status
 **Phase**: active — entity created, all children migrated successfully
 **Last Updated**: 2026-03-04
 
+<!-- section_id: "85cc2977-f564-4433-8247-5bea58e44272" -->
 ## Stage Summary
 
 | # | Stage | Status | Key Output | Updated |
@@ -26,6 +28,7 @@ resource_name: "0INDEX"
 | 10 | current_product | scaffolded | — | — |
 | 11 | archives | scaffolded | — | — |
 
+<!-- section_id: "92881715-10bc-4db3-84c9-9e322cbc18e2" -->
 ## Children
 
 | Sub-Feature | Purpose | Status |
@@ -36,6 +39,7 @@ resource_name: "0INDEX"
 
 **Location**: `layer_2_group/layer_2_subx2_features/`
 
+<!-- section_id: "84231876-caec-4541-a3d9-a6baa2188127" -->
 ## Quick Access
 
 | Content | Location |

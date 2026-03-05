@@ -9,10 +9,12 @@ resource_name: "configuration"
 **System**: Ubuntu 24.04 GNOME on Wayland
 **Hardware**: ELAN06FA:00 04F3:32FD Touchpad (149mm × 93mm)
 
+<!-- section_id: "a9584e9c-e4d0-4723-8607-4915d9507399" -->
 ## Overview
 
 Wayland provides **fewer customization options** than X11 for trackpad settings. The custom piecewise acceleration curves available on X11 (via xinput) **do not work on Wayland**.
 
+<!-- section_id: "533a0037-31a3-4a31-9dd1-adc1c46fbea7" -->
 ## Why Wayland Has Limited Trackpad Controls
 
 | Aspect | Reason |
@@ -21,8 +23,10 @@ Wayland provides **fewer customization options** than X11 for trackpad settings.
 | **Architecture** | Compositor handles input directly |
 | **Tool support** | xinput doesn't work; tools haven't caught up |
 
+<!-- section_id: "999aa11c-580e-4584-821e-0c5001d055bb" -->
 ## Available Settings
 
+<!-- section_id: "8e8e99ed-6c92-4f83-822c-03cd87cd7c58" -->
 ### Cursor Speed
 ```bash
 # Check current speed
@@ -42,6 +46,7 @@ gsettings set org.gnome.desktop.peripherals.touchpad speed 0.15
 | 0.5 | Moderate |
 | 1.0 | Very fast |
 
+<!-- section_id: "8101765c-a16e-421e-98b5-3aa430749d1a" -->
 ### Acceleration Profile
 ```bash
 # Check current profile
@@ -56,6 +61,7 @@ gsettings set org.gnome.desktop.peripherals.touchpad accel-profile 'adaptive'
 | `adaptive` | Slow movements = slow cursor, fast movements = accelerated (recommended) |
 | `flat` | Linear, no acceleration |
 
+<!-- section_id: "5e2a565e-bfbe-4b42-baf5-c86adf6b03a0" -->
 ### Other Touchpad Settings
 ```bash
 # Natural scrolling (reverse direction)
@@ -68,12 +74,14 @@ gsettings set org.gnome.desktop.peripherals.touchpad tap-to-click true
 gsettings set org.gnome.desktop.peripherals.touchpad disable-while-typing true
 ```
 
+<!-- section_id: "91d5f7cd-3583-48bd-bdcd-b698c9f8e759" -->
 ## Scroll Speed Workaround
 
 **Problem**: GNOME Wayland has no scroll speed setting.
 
 **Solution**: Use hwdb to set a virtual touchpad size. Larger virtual size = slower scrolling.
 
+<!-- section_id: "ae675d58-ea05-4437-b075-7438b680b365" -->
 ### Current Configuration
 
 File: `/etc/udev/hwdb.d/99-touchpad-scroll-speed.hwdb`
@@ -87,6 +95,7 @@ evdev:name:ELAN06FA:00 04F3:32FD Touchpad:*
  EVDEV_ABS_36=::31
 ```
 
+<!-- section_id: "401d09fc-db44-48b8-b9f2-f92a23b30581" -->
 ### How to Adjust Scroll Speed
 
 **To make scrolling slower** (2x):
@@ -124,6 +133,7 @@ sudo systemd-hwdb update && sudo udevadm trigger
 # Log out and back in
 ```
 
+<!-- section_id: "ca3e89c1-b1e4-4716-aac8-a8aefad1c1cd" -->
 ### Known Issues with Scroll Speed Workaround
 
 | Issue | Description | Workaround |
@@ -132,6 +142,7 @@ sudo systemd-hwdb update && sudo udevadm trigger
 | Requires relogin | Changes only apply after logout/login | Reboot for reliability |
 | Per-device | Must match exact touchpad name | Check with `cat /proc/bus/input/devices` |
 
+<!-- section_id: "ad08a9ac-49cb-4483-b0c1-3f9a3ed289ba" -->
 ## Current Settings Summary
 
 | Setting | Value | Method |
@@ -140,8 +151,10 @@ sudo systemd-hwdb update && sudo udevadm trigger
 | Accel Profile | adaptive | gsettings |
 | Scroll Speed | ~1.5x slower | hwdb virtual size (requires logout) |
 
+<!-- section_id: "4e8adee4-501e-48cd-ade1-2f0a0a0540b0" -->
 ## Configuration History & Rationale
 
+<!-- section_id: "c34fa8a9-91e9-4ee5-9c39-5ea596329f3c" -->
 ### Why These Settings?
 
 This configuration was developed through iterative testing on January 11, 2026.
@@ -164,6 +177,7 @@ GNOME Wayland has **no native scroll speed setting**. The workaround:
 - **Flat**: Linear movement regardless of speed
 - Adaptive better matches natural hand movement expectations
 
+<!-- section_id: "539784d2-d0c1-474d-be5a-090793663739" -->
 ### What We Tried That Didn't Work (on Wayland)
 
 | Approach | Why It Failed |
@@ -173,6 +187,7 @@ GNOME Wayland has **no native scroll speed setting**. The workaround:
 | libinput config files | GNOME doesn't read them on Wayland |
 | gsettings scroll speed | Setting doesn't exist |
 
+<!-- section_id: "74bb7dbb-34ce-41c9-a65a-5f5ea424bb88" -->
 ### Key Insight: Wayland Limitations
 
 Wayland prioritizes security over customization. The compositor (Mutter for GNOME) handles all input directly, so:
@@ -182,6 +197,7 @@ Wayland prioritizes security over customization. The compositor (Mutter for GNOM
 
 This is a **tradeoff**: better security, smoother graphics, but fewer tweaking options.
 
+<!-- section_id: "8db007b0-bfe2-444d-8531-5dbac1c2c826" -->
 ## Wayland vs X11 Comparison
 
 | Feature | Wayland | X11 |
@@ -194,6 +210,7 @@ This is a **tradeoff**: better security, smoother graphics, but fewer tweaking o
 | Graphics | Smoother | Can have tearing |
 | Overall | Modern, limited tweaks | Legacy, full control |
 
+<!-- section_id: "c1b58cb4-89db-422f-89c2-3f22e07b8e12" -->
 ## Checking Display Server
 
 ```bash
@@ -201,6 +218,7 @@ This is a **tradeoff**: better security, smoother graphics, but fewer tweaking o
 echo $XDG_SESSION_TYPE
 ```
 
+<!-- section_id: "d9ed4aea-b77d-4f5b-95c1-5dd69bd4652f" -->
 ## Switching to X11 (for full trackpad control)
 
 If you need the advanced piecewise acceleration:
@@ -212,6 +230,7 @@ If you need the advanced piecewise acceleration:
 5. Log in
 6. Run `~/.config/trackpad-settings.sh` to apply X11 settings
 
+<!-- section_id: "52fbae50-817e-4403-89c3-cd579e8ba2fd" -->
 ## Troubleshooting
 
 | Issue | Solution |
@@ -222,11 +241,13 @@ If you need the advanced piecewise acceleration:
 | Scroll too fast | Create/adjust hwdb rule with larger virtual size |
 | Settings not applying | Try logout/login or full reboot |
 
+<!-- section_id: "32c2bf02-a058-43d0-ab47-f3088545945c" -->
 ## Related Documentation
 
 - [X11 Configuration](../x11/) - For advanced piecewise acceleration
 - [Main Trackpad README](../README.md) - Overview
 
+<!-- section_id: "dce8686e-87ed-4a2c-a4bb-8d3c3e5517c6" -->
 ## Sources
 
 - [Adjust Touchpad Scrolling Speed in Ubuntu 24.04](https://ubuntuhandbook.org/index.php/2023/05/adjust-touchpad-scrolling-ubuntu/)

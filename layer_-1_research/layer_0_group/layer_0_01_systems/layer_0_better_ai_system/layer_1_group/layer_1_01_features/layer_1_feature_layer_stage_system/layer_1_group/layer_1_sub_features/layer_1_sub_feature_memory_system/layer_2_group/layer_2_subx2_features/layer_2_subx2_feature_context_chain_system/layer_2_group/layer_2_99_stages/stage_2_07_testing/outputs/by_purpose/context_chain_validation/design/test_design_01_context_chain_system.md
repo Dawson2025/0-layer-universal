@@ -11,14 +11,17 @@ resource_name: "test_design_01_context_chain_system"
 
 ---
 
+<!-- section_id: "02a1de86-172d-4f29-9f65-1ef9ac8fd7cb" -->
 ## What We're Testing
 
 The foundational architecture: 4 architecture layers (Static, Dynamic Retrieval, Orchestration, Trust/Governance), 8 MVP avenues, dual-chain model (context chaining vs reference chaining), dual-path reachability requirement, JSON-LD coverage contract, and compaction-safe subset.
 
 ---
 
+<!-- section_id: "7a3a8137-7298-4b15-a6c1-50494a06875d" -->
 ## Test Cases
 
+<!-- section_id: "27815aa7-f53d-4b1e-bf78-f68a94d014e5" -->
 ### TC-01-01: Architecture layers — all 4 layers have representatives
 
 **Steps**:
@@ -30,6 +33,7 @@ The foundational architecture: 4 architecture layers (Static, Dynamic Retrieval,
 **Expected**: All 4 architecture layers have concrete artifacts
 **Type**: Structural
 
+<!-- section_id: "dc8ed2d9-7307-4303-8ff1-5ab41f762c39" -->
 ### TC-01-02: 8 MVP avenues — all present and functional
 
 **Steps**:
@@ -46,6 +50,7 @@ The foundational architecture: 4 architecture layers (Static, Dynamic Retrieval,
 **Note**: Extends existing test_avenue_coverage_functional with stricter per-avenue checks
 **Type**: Structural
 
+<!-- section_id: "77683e8b-4baa-40ae-bd8d-0161b3d8a552" -->
 ### TC-01-03: Avenue 5/6 paired contract — JSON-LD always has integration.md
 
 **Steps**:
@@ -58,6 +63,7 @@ The foundational architecture: 4 architecture layers (Static, Dynamic Retrieval,
 **Expected**: 1:1 pairing — no orphan JSON-LD without summary, no orphan summary without JSON-LD
 **Type**: Structural
 
+<!-- section_id: "933f4a0a-6f66-4ccc-b64b-95aeee7169e4" -->
 ### TC-01-04: JSON-LD coverage contract — required graph classes discoverable
 
 **Steps**:
@@ -72,6 +78,7 @@ The foundational architecture: 4 architecture layers (Static, Dynamic Retrieval,
 **Expected**: At minimum layer orchestrator class is present; report completeness of other classes
 **Type**: Structural (audit)
 
+<!-- section_id: "aea0bb3e-d5bc-4482-9971-b66af37c0da6" -->
 ### TC-01-05: Context chaining vs reference chaining distinction
 
 **Steps**:
@@ -84,6 +91,7 @@ The foundational architecture: 4 architecture layers (Static, Dynamic Retrieval,
 **Expected**: CLAUDE.md contains both inline context and pointer-based references — the two chain types are distinguishable
 **Type**: Structural
 
+<!-- section_id: "e1dbd352-2a04-4d9c-89d5-f2a6d53fffa6" -->
 ### TC-01-06: Dual-path reachability — critical rules reachable via 2+ avenues
 
 **Steps**:
@@ -100,6 +108,7 @@ The foundational architecture: 4 architecture layers (Static, Dynamic Retrieval,
 **Expected**: Each critical rule is reachable through at least 2 independent avenues
 **Type**: Integration
 
+<!-- section_id: "8327df69-6e81-49e1-bf6a-3a72fade2d06" -->
 ### TC-01-07: Compaction-safe subset — essential identity survives truncation
 
 **Steps**:
@@ -114,6 +123,7 @@ The foundational architecture: 4 architecture layers (Static, Dynamic Retrieval,
 **Expected**: Minimal viable context (identity + navigation + triggers) lives in the top of CLAUDE.md
 **Type**: Structural
 
+<!-- section_id: "0decb32d-a049-40f1-a213-7e0aa4efdae1" -->
 ### TC-01-08: Design goal validation — progressive disclosure in practice
 
 **Steps**:
@@ -127,6 +137,7 @@ The foundational architecture: 4 architecture layers (Static, Dynamic Retrieval,
 
 ---
 
+<!-- section_id: "d0d036cf-6c92-4c95-8ba6-c4ece09c663f" -->
 ## Coverage Gap Analysis
 
 | Design Concept | Test Case | Status |

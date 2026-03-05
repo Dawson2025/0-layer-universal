@@ -12,6 +12,7 @@ resource_name: "oop_class_hierarchy"
 
 ---
 
+<!-- section_id: "6ffb6221-6e1a-455a-854e-dea671eb9630" -->
 ## Design Rules Applied
 
 | OOP Principle | How It's Applied |
@@ -26,6 +27,7 @@ resource_name: "oop_class_hierarchy"
 
 ---
 
+<!-- section_id: "2419d309-570e-42e7-b11a-cdf229eda351" -->
 ## Interfaces (Contracts Between Layers)
 
 Interfaces define what each layer PROVIDES to the layers above it. They're small, segregated, and focused.
@@ -112,6 +114,7 @@ Interfaces define what each layer PROVIDES to the layers above it. They're small
 └─────────────────────────────────────────────────────────────┘
 ```
 
+<!-- section_id: "25a71b92-20cc-4c62-99e6-224c97838502" -->
 ### Interface Segregation Map
 
 Which layer agent USES which interfaces:
@@ -130,6 +133,7 @@ Each agent only depends on the INTERFACES it actually uses — not the full impl
 
 ---
 
+<!-- section_id: "7ec0aa20-ebdb-487e-b31e-ce56a1824f31" -->
 ## Abstract Base Classes (Inheritance Chain)
 
 Three levels of inheritance — no deeper.
@@ -281,6 +285,7 @@ Three levels of inheritance — no deeper.
 
 ---
 
+<!-- section_id: "303959ad-8b4b-4ee9-96cb-5961b056aaea" -->
 ## Composition Structure (Has-A Relationships)
 
 This is the ACTUAL object graph at runtime — who CONTAINS whom.
@@ -351,6 +356,7 @@ ManagerAgent
 
 ---
 
+<!-- section_id: "f1825757-19f3-43ef-b775-b6f0dae5693d" -->
 ## Interface Dependency Graph (DIP Applied)
 
 Every dependency points to an INTERFACE, never to a concrete class.
@@ -420,8 +426,10 @@ Note: ContentAgent (L6) uses `IPhonemeAudio` from L4 — it SKIPS L5 for this sp
 
 ---
 
+<!-- section_id: "2d8167f7-d2d3-4fc3-b87c-b7834ac0045c" -->
 ## How Delegation Flows Through the Class Hierarchy
 
+<!-- section_id: "f5f13925-92c7-445d-81ff-9ad1d441774a" -->
 ### Example: Task T1 — Fix multisyllable word creation test failures
 
 ```
@@ -448,6 +456,7 @@ Note: ContentAgent (L6) uses `IPhonemeAudio` from L4 — it SKIPS L5 for this sp
    → reports to ManagerAgent
 ```
 
+<!-- section_id: "59ed0260-e753-4bfa-ab08-5fd485db44cd" -->
 ### Example: Task T5 — Team invitation flow (MULTI-LAYER)
 
 ```
@@ -486,6 +495,7 @@ Note: ContentAgent (L6) uses `IPhonemeAudio` from L4 — it SKIPS L5 for this sp
 
 ---
 
+<!-- section_id: "0a8b8397-f025-4acd-ab0e-f89986ae8d70" -->
 ## Context Model Per Class Level
 
 | Class Level | STATIC Context (always loaded) | DYNAMIC Context (on-demand) |
@@ -499,6 +509,7 @@ Note: ContentAgent (L6) uses `IPhonemeAudio` from L4 — it SKIPS L5 for this sp
 
 ---
 
+<!-- section_id: "02b40b80-b335-4135-9edd-4104bc22fef8" -->
 ## When to Use Each Class
 
 | Situation | Class That Handles It | Why |
@@ -512,6 +523,7 @@ Note: ContentAgent (L6) uses `IPhonemeAudio` from L4 — it SKIPS L5 for this sp
 
 ---
 
+<!-- section_id: "fecb13dd-89fc-42a5-8ff2-e94f3e5ef677" -->
 ## Class Hierarchy Summary
 
 ```
@@ -533,6 +545,7 @@ Inheritance depth: 3 (BaseAgent → LayerAgent → ConcreteLayer)
 
 ---
 
+<!-- section_id: "b3864040-a601-4830-a3c3-6fc6890d0b51" -->
 ## Decisions
 
 | Decision | OOP Principle | Rationale |

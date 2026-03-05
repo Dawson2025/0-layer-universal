@@ -7,6 +7,7 @@ resource_name: "research_promotion_protocol"
 
 **Scope**: All agents | **Trigger**: When promoting validated research findings to the default context chain
 
+<!-- section_id: "eebd569e-1992-4201-8b72-154dadafcc6d" -->
 ## 1. Definitions
 
 | Term | Meaning |
@@ -16,6 +17,7 @@ resource_name: "research_promotion_protocol"
 | **Promotion** | Moving validated research findings into the default context chain so they become the new production standard. |
 | **Reference** | Pointing from production to research outputs without copying them. Research stays the source of truth for research content. |
 
+<!-- section_id: "8faceea6-a338-4bd6-a812-d5d6c50999be" -->
 ## 2. Two Context Chain Modes
 
 Agents operate in one of two modes (see `.0agnostic/02_rules/dynamic/CONTEXT_CHAIN_MODE/`):
@@ -25,8 +27,10 @@ Agents operate in one of two modes (see `.0agnostic/02_rules/dynamic/CONTEXT_CHA
 
 Default mode is always the safe baseline. Research mode extends it — never replaces it.
 
+<!-- section_id: "85a2b3d8-b830-4da3-be3e-b8e659a71541" -->
 ## 3. Promotion Workflow (5 Steps)
 
+<!-- section_id: "26b66499-0945-466b-9f1a-36182435d733" -->
 ### Step 1: Identify
 List what research changed:
 - Structural patterns (entity structure, directory conventions)
@@ -35,18 +39,21 @@ List what research changed:
 - Protocols (new workflows)
 - Tools (new scripts, utilities)
 
+<!-- section_id: "9fc3de83-2b75-4736-8517-a5b5dc165de1" -->
 ### Step 2: Validate
 Confirm research was tested:
 - Check `stage_*_07_testing/outputs/` for test results
 - Check for working examples (entities using the pattern successfully)
 - Minimum bar: pattern used in at least one real entity with documented results
 
+<!-- section_id: "d1df2f43-9440-48e3-9c5d-dd1a3ead356d" -->
 ### Step 3: Reference
 Add pointers in `RESEARCH_KNOWLEDGE_INDEX.md`:
 - Entry per research output with path, status, and description
 - Prefer linking over copying — research stays source of truth for research content
 - Mark promotion status: Referenced | Promoted | Experimental
 
+<!-- section_id: "1a772277-5d95-4156-ba53-eb2f00eff6aa" -->
 ### Step 4: Integrate
 Copy ONLY distilled/consolidated findings to production:
 - New protocol → `.0agnostic/03_protocols/`
@@ -57,6 +64,7 @@ Copy ONLY distilled/consolidated findings to production:
 
 Do NOT copy raw research artifacts — reference them instead.
 
+<!-- section_id: "9a237cfd-a8ac-4e20-9348-db25ae2adc94" -->
 ### Step 5: Verify
 - Run `agnostic-sync.sh` on all affected entities
 - Verify `entity_structure.md` reflects structural changes
@@ -64,6 +72,7 @@ Do NOT copy raw research artifacts — reference them instead.
 - Commit with `[AI Context]` prefix
 - Push
 
+<!-- section_id: "723fc6f1-d546-42cc-8f6c-a43c3f0e2566" -->
 ## 4. What Gets Promoted vs Referenced vs Stays
 
 | Category | Action | Examples |
@@ -72,6 +81,7 @@ Do NOT copy raw research artifacts — reference them instead.
 | **REFERENCE** | Link from production | Raw research docs, intermediate findings, test artifacts, design explorations |
 | **STAY** | Leave in research only | Entity-specific context, experimental/unvalidated features, WIP designs |
 
+<!-- section_id: "d09d1c47-e150-49b4-b60d-0ccf2be3ec94" -->
 ## 5. Promotion Checklist (Reusable)
 
 For each promotion cycle:
@@ -88,6 +98,7 @@ For each promotion cycle:
 - [ ] Commit `[AI Context] promote: <description>`
 - [ ] Push
 
+<!-- section_id: "852c7f5c-5207-41e4-b976-0e315dfc2441" -->
 ## 6. Research Entity Paths
 
 | Entity | Path (relative to 0_layer_universal/) | Covers |
@@ -96,6 +107,7 @@ For each promotion cycle:
 | **Memory System** | `...agent_delegation_system/layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_memory_system/` | Memory architecture, context flow, avenue web design, data-based avenues, SHIMI |
 | **Context Chain System** | `...memory_system/layer_3_group/layer_3_subx3_features/layer_3_subx3_feature_context_chain_system/` | 8-avenue architecture, chain optimization, static/dynamic context, chain validation (76 PASS tests) |
 
+<!-- section_id: "d1c3f915-4866-4264-9950-3a60dee804db" -->
 ## 7. Promotion History
 
 | Date | Research Entity | What Was Promoted | Target Production File |
@@ -107,6 +119,7 @@ For each promotion cycle:
 | 2026-02-25 | ALL | Research knowledge index + promotion protocol | `.0agnostic/01_knowledge/.../RESEARCH_KNOWLEDGE_INDEX.md`, `.0agnostic/03_protocols/research_promotion_protocol.md` |
 | 2026-02-25 | ALL | Context chain mode switching | `.0agnostic/02_rules/dynamic/CONTEXT_CHAIN_MODE/` |
 
+<!-- section_id: "a608e304-2552-4317-ae71-a619b9e58a3a" -->
 ## Related
 
 - **Knowledge index**: `.0agnostic/01_knowledge/layer_stage_system/docs/RESEARCH_KNOWLEDGE_INDEX.md`

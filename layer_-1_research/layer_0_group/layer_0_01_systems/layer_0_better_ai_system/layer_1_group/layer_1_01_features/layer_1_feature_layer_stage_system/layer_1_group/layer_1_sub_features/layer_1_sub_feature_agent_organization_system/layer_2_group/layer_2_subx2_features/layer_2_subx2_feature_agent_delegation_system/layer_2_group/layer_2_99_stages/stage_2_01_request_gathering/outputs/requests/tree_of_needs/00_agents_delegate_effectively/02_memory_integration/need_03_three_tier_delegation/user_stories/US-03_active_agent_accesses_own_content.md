@@ -13,6 +13,7 @@ resource_name: "US-03_active_agent_accesses_own_content"
 **I want** the stage agent to have full access to its own stage outputs (Tier 3) so it can build on previous work,
 **So that** the AI does not re-create work that already exists in the stage.
 
+<!-- section_id: "be10b04f-9082-46d4-800a-6ac9bbca201b" -->
 ### What Happens
 
 1. User says "continue the development work" on a stage that already has outputs
@@ -21,6 +22,7 @@ resource_name: "US-03_active_agent_accesses_own_content"
 4. Stage agent does NOT read other stages' Tier 3 outputs
 5. Stage agent builds on existing work rather than starting from scratch
 
+<!-- section_id: "7f8eac2a-dd9d-422e-b28d-bd96c025e096" -->
 ### Acceptance Criteria
 
 - Stage agent reads its own stage outputs, not other stages' outputs

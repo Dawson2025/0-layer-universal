@@ -8,10 +8,12 @@ resource_name: "README"
 
 **Research project for developing and validating AI agent systems for school-related tasks.**
 
+<!-- section_id: "6ead1a18-ae2a-4b8f-9355-e67d9300600a" -->
 ## Overview
 
 This research project investigates and develops AI agent systems specifically designed for educational and school contexts. It integrates layer_0 AI system patterns with educational domain requirements to create practical, validated agent architectures for school environments.
 
+<!-- section_id: "2a237c03-585e-4d22-bcc6-a67fa9cc7402" -->
 ## Research Focus
 
 - AI agent capabilities for student support and learning assistance
@@ -20,6 +22,7 @@ This research project investigates and develops AI agent systems specifically de
 - Integration of layer_0 better_ai_system patterns in school contexts
 - Validation in realistic school scenarios
 
+<!-- section_id: "28c5740a-e6f1-4be4-8f07-15ef3fbb3496" -->
 ## Structure
 
 This is a full layer_-1 research entity with:
@@ -28,6 +31,7 @@ This is a full layer_-1 research entity with:
 - **layer_-1_group/** — Workflow stages and entity registry
 - **stage_-1_0X_*** directories — Work organized by research phase
 
+<!-- section_id: "8f8a112a-d7e2-4777-8a6f-8bbcd155a84e" -->
 ## Navigation
 
 - **Parent research layer**: `../../0AGNOSTIC.md`
@@ -36,6 +40,7 @@ This is a full layer_-1 research entity with:
 - **Workflow stages**: `layer_-1_group/layer_-1_99_stages/`
 - **Context**: `0AGNOSTIC.md`
 
+<!-- section_id: "07fd4f78-7b53-42ce-9ce0-064aac021833" -->
 ## Getting Started
 
 1. Read `0AGNOSTIC.md` for entity context
@@ -43,12 +48,14 @@ This is a full layer_-1 research entity with:
 3. Review parent research context: `../../0AGNOSTIC.md`
 4. Consult sibling systems for patterns to build upon
 
+<!-- section_id: "a44fef83-c53d-4c51-8a90-cda47c5d9ead" -->
 ## Key Resources
 
 - **Research Layer Org**: `../../research_layer_organization.md` (stage output documenting structure)
 - **Better AI System**: `../../layer_0_01_systems/layer_-1_better_ai_system/` (foundational patterns)
 - **Learning Simulation**: `../../layer_0_01_systems/layer_-1_learning_simulation_system/` (educational frameworks)
 
+<!-- section_id: "447604f2-de41-4791-be18-37f8a19afd23" -->
 ## Workflow Stages
 
 Research progresses through 11 stages:

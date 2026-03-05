@@ -5,12 +5,14 @@ resource_name: "obstacles"
 ---
 # Obstacles — What Stands in the Way
 
+<!-- section_id: "3229dfef-3e11-4436-9dbe-8d3e6a410fbc" -->
 ## Purpose
 
 A catalog of known obstacles to building the context system described in the vision. Each obstacle includes what makes it hard, what we've learned about it, and possible paths forward.
 
 ---
 
+<!-- section_id: "05264a14-c652-45ed-9852-2c44038ff4be" -->
 ## Obstacle 1: Skill Invocation Is Non-Deterministic
 
 **The problem:** Claude Code has no algorithmic trigger system for skills. The LLM reads skill descriptions and decides — probabilistically — whether a situation matches. The same situation may trigger a skill in one session and miss it in another.
@@ -34,6 +36,7 @@ A catalog of known obstacles to building the context system described in the vis
 
 ---
 
+<!-- section_id: "fc684cef-fce1-4d2a-9dbf-47265f6c6188" -->
 ## Obstacle 2: Static Context Budget
 
 **The problem:** Every line in the CLAUDE.md chain costs tokens in every API message. The current chain is 717 lines. The recommended target is <400-500 lines. More context = less room for the actual conversation.
@@ -60,6 +63,7 @@ A catalog of known obstacles to building the context system described in the vis
 
 ---
 
+<!-- section_id: "3088c0be-024c-4ea3-aede-d994d163474d" -->
 ## Obstacle 3: JSON-LD Format Mismatch
 
 **The problem:** JSON-LD is the format used for AALang agent definitions, but research shows it's the worst-performing structured format for LLM comprehension (0.34 accuracy per KG-LLM-Bench). It also consumes 3-5x more tokens than equivalent markdown.
@@ -84,6 +88,7 @@ A catalog of known obstacles to building the context system described in the vis
 
 ---
 
+<!-- section_id: "656836b7-7ecf-4e07-9786-3f70ccecb2f5" -->
 ## Obstacle 4: Cross-Session Context Loss
 
 **The problem:** Each new AI session starts with a clean slate. The agent has its CLAUDE.md chain and auto-memory, but conversational context — nuance built up during a session, intermediate decisions, partial progress — is lost.
@@ -109,6 +114,7 @@ A catalog of known obstacles to building the context system described in the vis
 
 ---
 
+<!-- section_id: "76f618c1-a1de-4e73-928e-ff232684e8e5" -->
 ## Obstacle 5: Agent Teams Ephemerality
 
 **The problem:** Claude Code's Agent Teams spawns agents for a task, but when the team is deleted, all agent context is destroyed. Agents aren't reusable across sessions. No declarative config — teams are created ad-hoc via natural language.
@@ -133,6 +139,7 @@ A catalog of known obstacles to building the context system described in the vis
 
 ---
 
+<!-- section_id: "979244be-dd12-4aa8-af37-566296c4a41f" -->
 ## Obstacle 6: Tool Fragmentation
 
 **The problem:** Different AI tools (Claude Code, Cursor, Codex CLI, Gemini CLI) each have their own context format, skill system, and features. A context system that only works with one tool is fragile.
@@ -157,6 +164,7 @@ A catalog of known obstacles to building the context system described in the vis
 
 ---
 
+<!-- section_id: "48d79a37-9fe6-4993-9812-2d16b4f4c2c3" -->
 ## Obstacle 7: Reference Chain Discoverability
 
 **The problem:** The agent can only follow references it knows about. If a reference chain exists but the agent was never told about it, the context is invisible.
@@ -181,6 +189,7 @@ A catalog of known obstacles to building the context system described in the vis
 
 ---
 
+<!-- section_id: "3bc8c74c-d97e-4834-a761-98dd8877e5e9" -->
 ## Obstacle 8: Maintenance Burden
 
 **The problem:** The more structured the context system, the more maintenance it requires. Files must stay in sync, descriptions must be updated, transpiler must run, episodic memory must be written.
@@ -205,6 +214,7 @@ A catalog of known obstacles to building the context system described in the vis
 
 ---
 
+<!-- section_id: "32c2b033-2e2d-42fa-8bac-40c1cb884a51" -->
 ## Summary: Obstacle Severity
 
 | Obstacle | Severity | Solvable? | Approach |

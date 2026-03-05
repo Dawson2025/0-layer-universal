@@ -5,15 +5,19 @@ resource_name: "uuid_and_database_patterns_research"
 ---
 # UUID and Database Patterns Research
 
+<!-- section_id: "78c80b1a-441d-4983-924f-59dd2f3c8387" -->
 ## Date: 2026-03-02
+<!-- section_id: "1a4a9b42-d4dc-42db-b840-35951ac84cb2" -->
 ## Related: `rename_propagation_research.md`, `../../stage_3_04_design/outputs/uuid_identity_system_design.md`
 
 ---
 
+<!-- section_id: "d7fa3d85-8dde-49f9-be26-4978f6df172d" -->
 ## 1. UUID Usage Across Database Types
 
 UUIDs (Universally Unique Identifiers) are a standard identity mechanism used across **every major database paradigm**, not just relational databases.
 
+<!-- section_id: "e4e03e30-511d-41f0-996b-e79228c4afb5" -->
 ### Survey of UUID Adoption
 
 | Database Type | Examples | How UUIDs Are Used |
@@ -25,6 +29,7 @@ UUIDs (Universally Unique Identifiers) are a standard identity mechanism used ac
 | **Column-Family** | Cassandra, HBase | Cassandra has native `uuid` and `timeuuid` types — heavily used as partition keys |
 | **Search Engines** | Elasticsearch | Document `_id` defaults to auto-generated UUID-like strings |
 
+<!-- section_id: "3d0620cb-67ce-4273-b1dc-d8ce6cd7765e" -->
 ### Why UUIDs Are Universal
 
 1. **Distributed generation** — no central counter needed (unlike auto-increment)
@@ -32,6 +37,7 @@ UUIDs (Universally Unique Identifiers) are a standard identity mechanism used ac
 3. **No coordination** — any process can generate an ID without network calls
 4. **Immutability** — ID decoupled from mutable properties (name, location, schema)
 
+<!-- section_id: "95aa4224-bed7-4adb-a302-43dfc722c145" -->
 ### UUID v4 Specifically
 
 UUID v4 (random) is the most commonly used version for application-level identifiers because:
@@ -42,12 +48,15 @@ UUID v4 (random) is the most commonly used version for application-level identif
 
 ---
 
+<!-- section_id: "a61d3f76-5f8f-41f9-a27e-a953bb25fbc3" -->
 ## 2. Database Type Similarity Ranking
 
+<!-- section_id: "b37b39ec-2fc6-4ae7-8674-e43f93cc7531" -->
 ### Which Database Type Does Our System Most Resemble?
 
 The layer-stage hierarchy is a **filesystem-backed database**. To understand it properly, we compared it against every major database paradigm. The system has characteristics of multiple types, but one is the clear winner.
 
+<!-- section_id: "568b91e5-137b-4004-aa8c-306cf038c3ff" -->
 ### Ranked by Overlap
 
 #### 1. Document Database (MongoDB, CouchDB) — Highest Overlap
@@ -129,6 +138,7 @@ UUIDs as foreign keys and rigid schema create surface similarity. But relational
 
 **Why it's last**: Normalization is the opposite of our design philosophy. We intentionally denormalize — each entity carries its own copy of what it needs. Relational DBs would fragment that across tables.
 
+<!-- section_id: "a9b17efb-7f3e-41b7-a188-31306a8eb7d3" -->
 ### Summary
 
 | Rank | Database Type | Overlap | Key Parallel | Key Difference |
@@ -140,6 +150,7 @@ UUIDs as foreign keys and rigid schema create surface similarity. But relational
 | 5 | **Key-Value** | Low | UUID index is a key-value lookup | Only applies to index layer |
 | 6 | **Relational DB** | Lowest | UUIDs as foreign keys, rigid schema | Normalization destroys self-contained design |
 
+<!-- section_id: "181ef350-6dad-4d9b-b6f8-b5bea9a98337" -->
 ### What This Means for Design
 
 Recognizing the document database pattern validates several design decisions:
@@ -154,8 +165,10 @@ Recognizing the document database pattern validates several design decisions:
 
 ---
 
+<!-- section_id: "fefbaff4-ce81-4ec5-ae7a-2e21b7830264" -->
 ## 3. Index Architecture Decisions
 
+<!-- section_id: "9c1054cc-f94b-4c41-81f6-80fd278b47cc" -->
 ### Current Design: Hierarchical Indexes
 
 | Index File | Scope | Contents |
@@ -164,6 +177,7 @@ Recognizing the document database pattern validates several design decisions:
 | `stage_index.json` | Per entity | That entity's stage UUIDs → directories |
 | `resource_index.json` | Per entity | That entity's resource UUIDs → file paths |
 
+<!-- section_id: "05019eee-8a89-423a-910d-cb840f0620a7" -->
 ### Alternative: Unified Master Index
 
 A single root-level `.uuid-index.json` could contain ALL UUIDs:
@@ -179,6 +193,7 @@ A single root-level `.uuid-index.json` could contain ALL UUIDs:
 **Pros**: Single file to query, single rebuild command, simpler resolution algorithm
 **Cons**: Larger file, single point of failure, harder to distribute/decentralize
 
+<!-- section_id: "b6672dc5-053c-4d52-a5e0-bcaf3c3e8280" -->
 ### Recommendation: Hybrid
 
 - **Root `.uuid-index.json`**: Contains ALL UUIDs (entities + stages + resources) for fast global lookup
@@ -190,14 +205,17 @@ This mirrors how databases work: local data files + global indexes. The local fi
 
 ---
 
+<!-- section_id: "82662cf4-e333-4a5e-b41b-619642e2ce21" -->
 ## 4. Caching Strategy
 
+<!-- section_id: "d2f96d6a-e6b9-44d3-a02b-cd35860241d6" -->
 ### Current: Rebuild-on-Miss
 
 The `.uuid-index.json` is rebuilt:
 - On `--rebuild-index` (explicit)
 - When a UUID lookup fails (auto-rebuild)
 
+<!-- section_id: "df858451-53d5-40d7-b45c-f475213b9a14" -->
 ### Enhanced: Incremental Updates
 
 Instead of full rebuilds, the index could be updated incrementally:
@@ -215,6 +233,7 @@ This could be triggered by:
 - Git hooks (post-commit)
 - `pointer-sync.sh` (detect and self-heal)
 
+<!-- section_id: "7e0f3ecd-5867-4bd0-a3d0-d69fb1718264" -->
 ### Index Staleness Detection
 
 Add a hash-based staleness check:
@@ -225,8 +244,10 @@ Add a hash-based staleness check:
 
 ---
 
+<!-- section_id: "d55a57ef-28f3-432f-9f5a-93f7803e6438" -->
 ## 5. Reference Integrity Patterns
 
+<!-- section_id: "b70ef4ef-31dc-4c06-84fc-76ab23c0491c" -->
 ### 5.1 Dangling References
 
 A **dangling reference** is a pointer that refers to a UUID no longer present in the system (entity deleted, resource removed). Every database system must handle this.
@@ -239,6 +260,7 @@ A **dangling reference** is a pointer that refers to a UUID no longer present in
 - No automatic cascading deletes (too dangerous in a filesystem context)
 - Soft-delete pattern: mark entity as `deleted: true` before physical removal
 
+<!-- section_id: "d2164523-7671-4924-9a73-bf6251709726" -->
 ### 5.2 Circular References
 
 In graph databases (Neo4j), cycles are natural and expected. In hierarchical databases (IBM IMS), cycles are impossible (tree structure). Our system is a hybrid — the tree prevents structural cycles, but **pointer files can create reference cycles** (A → B → A).
@@ -247,6 +269,7 @@ In graph databases (Neo4j), cycles are natural and expected. In hierarchical dat
 
 **When cycles matter**: Any tool that recursively traverses references must implement a visited set to avoid infinite loops.
 
+<!-- section_id: "49e3d1b2-09cb-4643-8595-31def145a173" -->
 ### 5.3 Orphaned Entries
 
 An **orphaned entry** is a UUID in the index that points to a path that no longer exists on the filesystem.
@@ -255,6 +278,7 @@ An **orphaned entry** is a UUID in the index that points to a path that no longe
 
 **Our approach**: `--gc` (garbage collection) scans the index and removes entries whose paths don't exist. `--rebuild-index` is the nuclear option — discards everything and rebuilds from scratch.
 
+<!-- section_id: "1c066558-1e24-4f36-9114-9ea5a592b7b0" -->
 ### 5.4 Duplicate UUIDs
 
 UUID v4 collision probability is near-zero (2^122 random bits), but **copy-paste errors** can create duplicates when entities are cloned.
@@ -265,8 +289,10 @@ UUID v4 collision probability is near-zero (2^122 random bits), but **copy-paste
 
 ---
 
+<!-- section_id: "def24c4a-90f9-40ca-8683-4938e463c63c" -->
 ## 6. Failure Modes & Recovery
 
+<!-- section_id: "de16eb30-1fc0-4d0a-8cb2-9109c12faaf7" -->
 ### 6.1 Index Corruption
 
 | Failure | Cause | Detection | Recovery |
@@ -278,12 +304,14 @@ UUID v4 collision probability is near-zero (2^122 random bits), but **copy-paste
 
 **Recovery hierarchy**: Always rebuild from local indexes (authoritative) → root index (derived). Never rebuild local from root.
 
+<!-- section_id: "6d2d5cad-b109-42d4-81c9-aefaa90e6b8f" -->
 ### 6.2 Atomic Write Protocol
 
 All index writes should follow: write to temp → fsync → atomic rename. This ensures the index is always either the old version or the new version — never a partial write.
 
 **Database parallel**: Write-ahead logging (WAL) in PostgreSQL, journal files in SQLite. Our simpler approach (atomic rename) is sufficient because we can always rebuild from source.
 
+<!-- section_id: "5f5de813-2f25-4570-ba32-e481934836b6" -->
 ### 6.3 Concurrent Access
 
 Multiple AI agents may run pointer operations simultaneously. File-based locking via `mkdir` (atomic on all filesystems) prevents concurrent write corruption.
@@ -292,6 +320,7 @@ Multiple AI agents may run pointer operations simultaneously. File-based locking
 
 **Database parallel**: Pessimistic locking (our approach) vs optimistic concurrency (used in CouchDB). We choose pessimistic because our operations are short and filesystem locks are cheap.
 
+<!-- section_id: "5d7fd308-d9d9-4a39-96e8-9037ce63221b" -->
 ### 6.4 Materialized View Staleness
 
 `CLAUDE.md` is a materialized view of `0AGNOSTIC.md`. If the source changes but `agnostic-sync.sh` doesn't run, the view is stale.
@@ -300,6 +329,7 @@ Multiple AI agents may run pointer operations simultaneously. File-based locking
 
 **Database parallel**: Materialized views in PostgreSQL require explicit `REFRESH MATERIALIZED VIEW`. CouchDB views update lazily on query. Our `agnostic-sync.sh` is the refresh command.
 
+<!-- section_id: "fddbe9a0-38f8-4079-809d-13863465cded" -->
 ### 6.5 Git Branch Merge Conflicts
 
 When branches diverge (one adds entities, another deletes entities), merges can create dangling references.
@@ -308,6 +338,7 @@ When branches diverge (one adds entities, another deletes entities), merges can 
 
 **Database parallel**: Multi-master replication conflict resolution (CouchDB has built-in conflict detection). Our approach: detect after merge, repair manually.
 
+<!-- section_id: "dbf4ea64-6dc3-4bc9-8dad-ccb65e6720f0" -->
 ### 6.6 Performance at Scale
 
 | Scale | Entity Count | UUID Count | Index Size | Rebuild Time |
@@ -321,8 +352,10 @@ When branches diverge (one adds entities, another deletes entities), merges can 
 
 ---
 
+<!-- section_id: "979a37bb-3542-4659-ae49-cb5dd40f4abc" -->
 ## 7. Universal File IDs
 
+<!-- section_id: "19afb8ea-9abb-401d-b9bc-f2f44b091539" -->
 ### The Case for Every File Having a UUID
 
 The original scope limited UUIDs to "pointer targets" — files that could be referenced by pointer files. However, there are strong arguments for giving **every file** in the system a UUID:
@@ -333,6 +366,7 @@ The original scope limited UUIDs to "pointer targets" — files that could be re
 4. **Audit trail** — every file is uniquely addressable regardless of restructuring
 5. **Consistency** — no ambiguity about "does this file have an ID?" — the answer is always yes
 
+<!-- section_id: "a99dfc5c-eda8-446d-81d0-e9ae3909b663" -->
 ### What Changes
 
 Previously excluded files that now get UUIDs:
@@ -343,6 +377,7 @@ Previously excluded files that now get UUIDs:
 - JSON-LD files (`.gab.jsonld`) — get `resource_id` as a `@id` field or companion sidecar
 - `stage_index.json`, `resource_index.json` — get a `file_id` in their JSON structure
 
+<!-- section_id: "592510df-6398-4e7c-a57e-c6e60f2e894e" -->
 ### ID Storage by File Type
 
 | File Type | ID Field | Storage Method |
@@ -355,6 +390,7 @@ Previously excluded files that now get UUIDs:
 
 ---
 
+<!-- section_id: "a09d817f-4b5b-4c4d-a502-4dbb244ebc1f" -->
 ## Sources
 
 - RFC 4122 — UUID specification

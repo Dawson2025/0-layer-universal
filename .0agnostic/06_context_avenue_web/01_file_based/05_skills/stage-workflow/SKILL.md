@@ -6,10 +6,12 @@ resource_name: "SKILL"
 ---
 # Skill: Stage Workflow
 
+<!-- section_id: "3cb9c2c1-4a96-4eac-acdc-cd820b0cab8d" -->
 ## Purpose
 
 Work through stages properly, understanding what content belongs in each stage.
 
+<!-- section_id: "93edf965-4fed-4ac9-8fdc-f2bdc8fddf25" -->
 ## When to Use
 
 - Starting work on a new feature/project
@@ -17,6 +19,7 @@ Work through stages properly, understanding what content belongs in each stage.
 - Determining which stage to work in
 - Creating stage outputs
 
+<!-- section_id: "849670ff-b65c-4924-a7c2-28211e9b4dd7" -->
 ## References (MUST READ)
 
 | Reference | Path | Why |
@@ -27,8 +30,10 @@ Work through stages properly, understanding what content belongs in each stage.
 
 **Full path**: `layer_0/layer_0_04_sub_layers/sub_layer_0_01_knowledge_system/layer_stage_system/`
 
+<!-- section_id: "5ad89fff-e84e-4077-829c-aa6155e80b90" -->
 ## Protocol
 
+<!-- section_id: "94d44ef8-f89a-46cb-b2c0-0970dc44254f" -->
 ### 1. Identify Current Stage
 
 Ask: "What phase of work am I in?"
@@ -47,6 +52,7 @@ Ask: "What phase of work am I in?"
 | Finalizing deliverable | 10_current_product |
 | Archiving old versions | 11_archives |
 
+<!-- section_id: "335335ce-8280-4056-98cc-5f83c4c50275" -->
 ### 2. Work in outputs/ Folder
 
 All stage content goes in `outputs/`:
@@ -59,6 +65,7 @@ stage_X_05_design/
     └── decisions.md
 ```
 
+<!-- section_id: "35f6c635-afc8-452b-b647-12eaee9ebc8c" -->
 ### 3. Stage Transitions
 
 When moving to next stage:
@@ -67,6 +74,7 @@ When moving to next stage:
 3. Move to next stage folder
 4. Reference previous stage outputs as needed
 
+<!-- section_id: "cef81e0b-368f-4ca2-b847-179217470884" -->
 ### 4. [CRITICAL] Never Skip Stages
 
 All 11 stages must exist, even if empty.
@@ -76,6 +84,7 @@ If a stage isn't needed for this work:
 - Do NOT delete it
 - Do NOT skip creating it
 
+<!-- section_id: "1c719a2f-9b5e-4e0f-b5f2-247166ef4bea" -->
 ## Stage Content Guide
 
 | Stage | Typical Outputs |

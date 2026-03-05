@@ -11,6 +11,7 @@ resource_name: "design_diagramming_protocol"
 
 ---
 
+<!-- section_id: "78bd3eab-dc65-4b58-a82d-9faab118a628" -->
 ## Step 1: Choose Diagram Type
 
 Before writing any Mermaid code, identify what you're visualizing:
@@ -27,8 +28,10 @@ Before writing any Mermaid code, identify what you're visualizing:
 | Feature decomposition / brainstorming | Mindmap | `mindmap` |
 | Context grouping (what's loaded vs. on-demand) | Flowchart with subgraphs | `flowchart TB` with `subgraph` |
 
+<!-- section_id: "7b12db43-777a-412c-95b7-14e21b59b867" -->
 ## Step 2: Write the Diagram
 
+<!-- section_id: "ea03d4cd-0617-4d8c-ab70-812b792bfb60" -->
 ### Syntax Rules (Required)
 
 These rules prevent rendering failures across Quarto, VS Code Mermaid extensions, and the claude-mermaid MCP server:
@@ -41,6 +44,7 @@ These rules prevent rendering failures across Quarto, VS Code Mermaid extensions
 6. **No `style` inside `sequenceDiagram`**: Style directives only work in flowchart/graph types
 7. **Color coding**: Use `style NodeID fill:#hexcolor,color:#textcolor` for visual grouping
 
+<!-- section_id: "bad0425d-3937-4b1a-8e9b-79d7cd42200a" -->
 ### Naming Convention
 
 | Element | Convention | Example |
@@ -49,6 +53,7 @@ These rules prevent rendering failures across Quarto, VS Code Mermaid extensions
 | Subgraph IDs | UPPERCASE descriptive | `ALWAYS`, `CORE`, `UNIVERSAL` |
 | Labels | Human-readable in quotes | `["Layer 2: Infrastructure<br/>Database, Auth"]` |
 
+<!-- section_id: "f2d26922-2325-4a5e-9092-39fd860058e3" -->
 ## Step 3: Preview with MCP Server
 
 Use the `mermaid_preview` tool to validate before committing:
@@ -62,8 +67,10 @@ mermaid_preview:
 
 The diagram opens in browser at `http://localhost:3737/{preview_id}` with live reload. Iterate until correct.
 
+<!-- section_id: "90324347-1de2-4e92-b764-8d630a007b52" -->
 ## Step 4: Save Output
 
+<!-- section_id: "2304aab7-c839-4257-8bde-1747e1f66122" -->
 ### For markdown documentation (default)
 
 Place diagram in a markdown file with ` ```mermaid ` code fences:
@@ -78,6 +85,7 @@ Or alongside the design document:
 outputs/by_topic/diagrams/
 ```
 
+<!-- section_id: "f5d9e579-9a17-463f-8823-b32e3917e7f5" -->
 ### For static images (presentations, external docs)
 
 Export via `mermaid_save`:
@@ -89,6 +97,7 @@ mermaid_save:
   format: "svg"             # or png, pdf
 ```
 
+<!-- section_id: "3f21cede-f13c-451c-b8bc-bcd6dd4576c2" -->
 ## Step 5: Document in Design File
 
 Every diagram file should include:
@@ -98,6 +107,7 @@ Every diagram file should include:
 3. **Diagram Index**: Table at bottom listing all diagrams with descriptions
 4. **Date**: When the diagrams were created/updated
 
+<!-- section_id: "12274478-2ea8-4c22-b732-4bf4580bd4a6" -->
 ### Template
 
 ```markdown
@@ -128,6 +138,7 @@ flowchart TB
 | 1 | {Name} | {What it visualizes} |
 ```
 
+<!-- section_id: "80e3c777-4459-4ab9-a05e-c57ea59ca6aa" -->
 ## Available Skills
 
 | Skill | When to Use |
@@ -136,6 +147,7 @@ flowchart TB
 | `document-skills:canvas-design` | When you need static visual designs (PNG/PDF) beyond what Mermaid can do |
 | `document-skills:frontend-design` | When designing UI components that need visual mockups |
 
+<!-- section_id: "e8df9d13-a87f-42b7-962d-529b32438009" -->
 ## Troubleshooting
 
 | Problem | Fix |
@@ -146,6 +158,7 @@ flowchart TB
 | Quarto + extension conflict | Disable one renderer; check Quarto version |
 | Style not applying to subgraph | Verify subgraph ID matches style directive |
 
+<!-- section_id: "ef8e2337-7395-443c-9705-f1fdebe75dfe" -->
 ## Reference
 
 - Full tool documentation: `.0agnostic/01_knowledge/visualization_tools/docs/mermaid_tools_guide.md`

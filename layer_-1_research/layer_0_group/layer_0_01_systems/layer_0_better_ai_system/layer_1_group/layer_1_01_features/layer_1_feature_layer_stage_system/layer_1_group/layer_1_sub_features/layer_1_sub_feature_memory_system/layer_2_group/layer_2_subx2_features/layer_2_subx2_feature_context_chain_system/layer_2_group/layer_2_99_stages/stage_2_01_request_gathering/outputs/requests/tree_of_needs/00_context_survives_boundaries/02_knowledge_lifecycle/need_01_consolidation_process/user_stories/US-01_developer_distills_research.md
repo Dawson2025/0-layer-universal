@@ -13,6 +13,7 @@ resource_name: "US-01_developer_distills_research"
 **I want** a clear protocol for distilling many research files into a few knowledge files,
 **So that** future AI sessions get competence from ~260 lines instead of ~5,000.
 
+<!-- section_id: "2dbdddde-da7c-4b35-aa95-cf3c8abfaa16" -->
 ### What Happens
 
 1. User completes a research stage (e.g., 19 research topic files produced)
@@ -20,6 +21,7 @@ resource_name: "US-01_developer_distills_research"
 3. Each knowledge file contains actionable summaries with references back to the full research
 4. Future AI sessions read the knowledge files (Tier 2) and are immediately competent
 
+<!-- section_id: "62c9139e-dd2b-40e0-9af7-0eba0b8eeb48" -->
 ### Acceptance Criteria
 
 - Consolidation protocol exists with step-by-step instructions

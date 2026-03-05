@@ -8,10 +8,12 @@ resource_name: "README"
 
 **Purpose**: Approved AI models and usage guidance.
 
+<!-- section_id: "0a6289ed-533c-4df3-9c21-5da835f2cc89" -->
 ## Overview
 
 This sublayer contains documentation about approved AI models, their usage guidelines, and best practices for selecting and using models across different contexts.
 
+<!-- section_id: "5c8bd6a9-f7de-4a80-8fb2-870ae1cdf09c" -->
 ## Structure
 
 ```
@@ -19,6 +21,7 @@ sub_layer_0_11_ai_models/
 └── (content to be added)
 ```
 
+<!-- section_id: "42285043-8a6d-4709-8913-c66251368fcd" -->
 ## Relationship to Other Sublayers
 
 - **Depends on**: 
@@ -26,6 +29,7 @@ sub_layer_0_11_ai_models/
   - `sub_layer_0_10_mcp_servers_and_tools_setup` - Some models may be accessed via MCP
 - **Provides to**: All layers that need model selection and usage guidance
 
+<!-- section_id: "c79be738-8612-467b-88d1-c76a58e62c97" -->
 ## ⚠️ Linux/Ubuntu-Specific Model Access Issues
 
 **CRITICAL**: AI model access to MCP tools is limited on Linux. Read:
@@ -43,6 +47,7 @@ sub_layer_0_11_ai_models/
 - **Cursor IDE Issues**: `../sub_layer_0_07_coding_app_setup/trickle_down_0.5_setup/0_instruction_docs/CURSOR_IDE_LINUX_MCP_ISSUES.md`
 - **MCP Setup**: `../sub_layer_0_10_mcp_servers_and_tools_setup/`
 
+<!-- section_id: "dc1a24f3-51ec-4a1b-93ac-3f5f16914d0d" -->
 ## Notes
 
 - Document approved models and usage guidance here

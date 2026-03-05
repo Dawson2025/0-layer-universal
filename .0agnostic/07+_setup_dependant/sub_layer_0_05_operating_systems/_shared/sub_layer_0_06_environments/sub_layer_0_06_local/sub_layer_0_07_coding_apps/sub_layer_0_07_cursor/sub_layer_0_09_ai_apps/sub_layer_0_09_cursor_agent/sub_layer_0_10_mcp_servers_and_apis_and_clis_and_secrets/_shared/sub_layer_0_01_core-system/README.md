@@ -8,6 +8,7 @@ resource_name: "README"
 
 This folder contains **cross-OS / cross-app** documentation for how we manage MCP servers and tool availability across AI apps (Codex CLI, Claude Code CLI, Gemini CLI, Cursor Agent).
 
+<!-- section_id: "5e42996f-2eeb-4f10-8036-edcf5b10f9fd" -->
 ## Where Things Live
 
 ```text
@@ -17,6 +18,7 @@ sub_layer_0_10_mcp_servers_and_tools_setup/
 └── 0.06_automation/                       # Automation scripts and runbooks
 ```
 
+<!-- section_id: "e44daaf2-7f65-48dc-9dc7-3fed07c37db8" -->
 ## Start Here
 
 - **MCP Server Matrix**: `MCP_SERVER_MATRIX.md` (what servers exist, where they’re used, and automation status)
@@ -24,6 +26,7 @@ sub_layer_0_10_mcp_servers_and_tools_setup/
 - **Codex CLI MCP Setup**: `CODEX_CLI_MCP_SETUP.md` (where Codex config lives; enable/disable patterns)
 - **System Guide**: `MCP_SYSTEM_GUIDE.md` (overall architecture and conventions)
 
+<!-- section_id: "b031192c-14a3-4ac0-b3a9-7ce207693eff" -->
 ## Detailed Per-OS / Per-App Docs
 
 Use the traversable file tree:
@@ -31,6 +34,7 @@ Use the traversable file tree:
 - `../0.02_mcp_config_options_0_file_tree_0/README.md`
 - `../0.02_mcp_config_options_0_file_tree_0/0.03_operating_systems/`
 
+<!-- section_id: "2d1f1696-62bf-4997-b038-aff2707353c1" -->
 ## Automation
 
 Runbooks and scripts live in:
@@ -38,6 +42,7 @@ Runbooks and scripts live in:
 - `../0.06_automation/README.md`
 - `../0.06_automation/CONCURRENT_BROWSER_SETUP.md`
 
+<!-- section_id: "2351e470-58c5-4215-92b5-e6283865f664" -->
 ## Secrets
 
 Do not commit API keys. Use local env files (e.g., `~/.codex/mcp.env`) and have automation inject them into client configs.

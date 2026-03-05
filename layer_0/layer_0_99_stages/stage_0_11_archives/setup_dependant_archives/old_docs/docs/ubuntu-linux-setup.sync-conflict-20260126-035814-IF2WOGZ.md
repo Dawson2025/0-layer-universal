@@ -7,14 +7,17 @@ resource_name: "ubuntu-linux-setup.sync-conflict-20260126-035814-IF2WOGZ"
 
 This guide documents the setup process for Ubuntu Linux systems, including essential tools and applications.
 
+<!-- section_id: "8aa070e9-eb04-4d94-ae2d-3fdcad7496f3" -->
 ## Prerequisites
 
 - Ubuntu 24.04 (Noble) or later
 - Administrator (sudo) access
 - Internet connection
 
+<!-- section_id: "d9d2ce8a-a4a4-4d79-b7f4-b1c859e84995" -->
 ## Initial System Setup
 
+<!-- section_id: "b6b1e6c3-8c11-41f0-a58a-a6a3c71d4dbc" -->
 ### 1. Configure Passwordless Sudo (Optional but Recommended for Automation)
 
 For AI-assisted development and automation, passwordless sudo can be configured:
@@ -32,6 +35,7 @@ sudo visudo -c
 
 **Security Note**: This is recommended for personal development machines. For production systems, use more restrictive sudoers rules.
 
+<!-- section_id: "dded64ca-fd07-4eb2-9cec-598aa2d7f68c" -->
 ### 2. Install Essential Tools
 
 #### Git
@@ -45,8 +49,10 @@ sudo apt install git -y
 sudo apt install curl -y
 ```
 
+<!-- section_id: "836169fa-729a-4c24-b120-b717218c1b37" -->
 ## System Configuration
 
+<!-- section_id: "4c02df4d-ff8a-40bf-bf0e-b022de6141a7" -->
 ### Trackpad Sensitivity (GNOME)
 
 For Ubuntu systems using GNOME desktop environment, you can adjust trackpad cursor speed to make the cursor move faster with less finger movement.
@@ -101,8 +107,10 @@ xinput list-props <device-id>
 
 Replace `<device-id>` with the ID number from `xinput list` output.
 
+<!-- section_id: "22f05e0b-a8ea-402e-90ad-562e6c31ee42" -->
 ## Application Installations
 
+<!-- section_id: "e78a8df3-82e0-4657-858c-2d13f642f701" -->
 ### Google Chrome
 
 #### Method 1: Direct .deb Installation (Recommended)
@@ -140,6 +148,7 @@ Replace `<device-id>` with the ID number from `xinput list` output.
    sudo apt install google-chrome-stable -y
    ```
 
+<!-- section_id: "8dc7eb43-bf48-42e0-8f1a-b6da2144a934" -->
 ### Google Antigravity IDE
 
 Google Antigravity IDE is available as a native Linux application via apt repository for Ubuntu/Debian-based systems.
@@ -264,8 +273,10 @@ For Red Hat, Fedora, SUSE, etc.:
    sudo dnf install antigravity
    ```
 
+<!-- section_id: "ad4eefe8-c87e-4337-a732-103ebcd5d80e" -->
 ## Project Directory Structure
 
+<!-- section_id: "9b31b01a-2f9a-4205-9bf5-200ed7cc9a7a" -->
 ### Recommended Location for Coding Projects
 
 Store coding projects in `~/code`:
@@ -276,6 +287,7 @@ mkdir -p ~/code
 
 This follows Linux conventions and keeps projects organized.
 
+<!-- section_id: "bb1aa199-34ea-4a6c-ba8a-505dd87f7ef2" -->
 ### Repository Setup
 
 #### Clone Context Repositories
@@ -315,8 +327,10 @@ git clone git@github.com:Dawson2025/setup-hub.git
    ssh -T git@github.com
    ```
 
+<!-- section_id: "c81b57d9-5d3c-465a-ac7e-a94fde79e1c3" -->
 ## Troubleshooting
 
+<!-- section_id: "8725eb04-930d-435d-afab-90c65a572b75" -->
 ### APT Repository Issues
 
 If you encounter malformed repository errors:
@@ -331,6 +345,7 @@ If you encounter malformed repository errors:
    sudo apt update
    ```
 
+<!-- section_id: "3182ed6d-850c-42d0-8d84-903a45c579e3" -->
 ### Empty GPG Key Files
 
 If a GPG key file is 0 bytes:
@@ -345,6 +360,7 @@ If a GPG key file is 0 bytes:
    curl -fsSL <key-url> | sudo gpg --dearmor -o /etc/apt/keyrings/key-name.gpg
    ```
 
+<!-- section_id: "3af7ddc0-3050-48d3-93c9-6d872ee2d34c" -->
 ### Command Not Found Errors
 
 If you get "command not found" errors:
@@ -359,6 +375,7 @@ If you get "command not found" errors:
    sudo apt install <package-name> -y
    ```
 
+<!-- section_id: "6a6806ec-695b-4b0d-aecd-33f7babde32f" -->
 ## Next Steps
 
 - [ ] Complete Antigravity IDE installation
@@ -367,6 +384,7 @@ If you get "command not found" errors:
 - [ ] Set up version control workflows
 - [ ] Document additional tools and utilities
 
+<!-- section_id: "d729007f-9ae0-468d-8e03-14f9ce018f8a" -->
 ## Related Documentation
 
 - [Codex on Windows + VS Code](codex-windows-vscode.md) - Windows/WSL setup guide

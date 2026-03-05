@@ -5,10 +5,12 @@ resource_name: "MCP_SYSTEM_GUIDE"
 ---
 # MCP Configuration Management System
 
+<!-- section_id: "3d7b53e9-bab5-4d00-a99e-c31248359788" -->
 ## Overview
 
 This project now includes a comprehensive **Model Context Protocol (MCP) Configuration Management System** that serves as a single source of truth for all AI agent configurations across different environments.
 
+<!-- section_id: "bf891910-67d9-4b34-b63f-90c2bdc3311f" -->
 ## 🎯 Key Features
 
 - **Centralized Configuration**: All MCP server configurations in one place
@@ -18,8 +20,10 @@ This project now includes a comprehensive **Model Context Protocol (MCP) Configu
 - **Backup & Recovery**: Automatic backup of configurations
 - **Easy CLI Interface**: Simple command-line tools for management
 
+<!-- section_id: "09bc040c-0d66-42f5-9140-4d228de68698" -->
 ## 🚀 Quick Start
 
+<!-- section_id: "462942b2-6a9e-44a2-9d5c-7e54a15abb4d" -->
 ### 1. Initial Setup
 ```bash
 # Set up the complete MCP system
@@ -29,6 +33,7 @@ python3 automation/scripts/mcp_manager.py
 # (Health check script to be implemented)
 ```
 
+<!-- section_id: "56a42c15-39a0-49c4-a631-ec65ba390784" -->
 ### 2. Deploy Configuration
 ```bash
 # Deploy development environment (default)
@@ -41,6 +46,7 @@ python3 scripts/mcp-cli.py deploy production
 python3 scripts/mcp-cli.py deploy testing
 ```
 
+<!-- section_id: "b7289dd0-e869-4497-9bea-3100169cd6d6" -->
 ### 3. Check Status
 ```bash
 # Show system status
@@ -53,6 +59,7 @@ python3 scripts/mcp-cli.py health
 python3 scripts/mcp-cli.py report
 ```
 
+<!-- section_id: "2cf3cfd6-413f-471c-95bb-be3a1162fae7" -->
 ## 📁 Directory Structure
 
 ```
@@ -73,25 +80,31 @@ scripts/
 └── mcp-health-check.sh    # Health check script
 ```
 
+<!-- section_id: "d55486e8-a17a-4450-be74-3a977676ce7a" -->
 ## 🔧 Available MCP Servers
 
+<!-- section_id: "1dbdedb9-787f-489f-accb-a981e4a84ff6" -->
 ### Browser Automation
 - **chrome-devtools**: Chrome DevTools integration for debugging
 - **playwright**: Cross-browser testing and automation
 - **browser**: Simple browser automation
 
+<!-- section_id: "3fd9964b-1027-4440-b573-bcc71596c0dc" -->
 ### Search & Research
 - **web-search**: Tavily web search integration
 - **github-search**: GitHub repository search
 - **context7**: Documentation and context management (local and remote options)
 
+<!-- section_id: "2c86bb7d-d6c6-4930-94dc-06fa663db608" -->
 ### System Integration
 - **filesystem**: File system access and management
 - **slack**: Slack integration for notifications
 - **postgres**: PostgreSQL database integration
 
+<!-- section_id: "f7ee34a3-0bbf-4066-a79f-aae52d4c5b62" -->
 ## 🌍 Environment Configurations
 
+<!-- section_id: "e7654e83-3f9f-4ccd-b771-8c63d71c3c50" -->
 ### Development Environment
 **Purpose**: Full debugging and development tools
 **Servers**: chrome-devtools, playwright, browser, web-search, github-search, filesystem, context7
@@ -102,6 +115,7 @@ scripts/
 - Documentation tools
 - Debug logging enabled
 
+<!-- section_id: "0a59b572-2ffb-4a33-bb47-596370bce35a" -->
 ### Production Environment
 **Purpose**: Essential tools for production use
 **Servers**: web-search, github-search, filesystem, slack, postgres
@@ -112,6 +126,7 @@ scripts/
 - Optimized for performance
 - Minimal resource usage
 
+<!-- section_id: "6f1aaa24-de77-4d6a-b078-6fcf683cae97" -->
 ### Testing Environment
 **Purpose**: Automated testing and validation
 **Servers**: playwright, browser, filesystem
@@ -121,8 +136,10 @@ scripts/
 - Minimal resource usage
 - Fast startup times
 
+<!-- section_id: "8f859801-f34e-4521-a192-2a92904d108f" -->
 ## 🛠️ Management Commands
 
+<!-- section_id: "1a65899f-61cb-488d-9736-9d33a5b75fe4" -->
 ### CLI Interface
 ```bash
 # Setup and initialization
@@ -144,6 +161,7 @@ python3 scripts/mcp-cli.py validate <environment>
 python3 scripts/mcp-cli.py list
 ```
 
+<!-- section_id: "fabf81e7-ee25-43a4-bd3a-0cec5c24be7e" -->
 ### Advanced Management
 ```bash
 # Direct configuration management
@@ -157,14 +175,17 @@ python3 scripts/mcp_deployer.py status
 python3 scripts/mcp_deployer.py report
 ```
 
+<!-- section_id: "c23b199d-0535-422b-a219-6058de805d71" -->
 ## 📊 Monitoring and Health Checks
 
+<!-- section_id: "d6723df6-d0c6-4fae-aa22-13f3f4f02222" -->
 ### Automatic Monitoring
 - **Health Checks**: Every 5 minutes
 - **Server Status**: Real-time tracking
 - **Configuration Validation**: Pre-deployment checks
 - **Logging**: Comprehensive logging with rotation
 
+<!-- section_id: "6401bd8a-10f3-4a50-af96-48587d55dd02" -->
 ### Health Check Features
 ```bash
 # Run comprehensive health check
@@ -174,6 +195,7 @@ python3 scripts/mcp-cli.py health
 python3 scripts/mcp-cli.py validate development
 ```
 
+<!-- section_id: "e81ed50d-0797-44aa-9125-07544fe09b60" -->
 ### Status Information
 - Active server count
 - Environment status
@@ -181,28 +203,34 @@ python3 scripts/mcp-cli.py validate development
 - Dependency checks
 - Performance metrics
 
+<!-- section_id: "92aa7a64-2bad-4793-a672-b15fa64329ff" -->
 ## 🔒 Security and Configuration
 
+<!-- section_id: "1e50a595-9799-4db8-8897-fe8e5167bf09" -->
 ### API Key Management
 - Environment-specific API keys
 - Placeholder values for production setup
 - Secure storage recommendations
 - Key rotation support
 
+<!-- section_id: "c606a3a4-c9f6-4c0f-a60b-9c50618ae465" -->
 ### Configuration Security
 - Separate configurations per environment
 - No hardcoded production keys
 - Environment variable support
 - Backup and recovery
 
+<!-- section_id: "29f18fa8-5e95-4ee5-a8c6-a60bc2e184d1" -->
 ## 📈 Backup and Recovery
 
+<!-- section_id: "f220836c-c830-41e7-9c30-01b84a42be43" -->
 ### Automatic Backups
 - Configuration backups before each deployment
 - Timestamped backup files
 - Easy restoration process
 - Configuration history tracking
 
+<!-- section_id: "c30a32c9-99a2-46cc-8221-587691fd14e0" -->
 ### Manual Backup
 ```bash
 # Backup current configuration
@@ -212,8 +240,10 @@ cp .mcp.json backups/mcp/manual_backup_$(date +%Y%m%d_%H%M%S).json
 cp backups/mcp/backup_file.json .mcp.json
 ```
 
+<!-- section_id: "a9477264-4d95-40cc-8b0d-a29f75c40f19" -->
 ## 🚨 Troubleshooting
 
+<!-- section_id: "f1bea0d5-1fc2-4056-b0d3-14a99a99462b" -->
 ### Common Issues
 
 1. **Server Won't Start**
@@ -237,13 +267,16 @@ cp backups/mcp/backup_file.json .mcp.json
    python3 scripts/mcp-cli.py validate development
    ```
 
+<!-- section_id: "7548b0a0-6f03-4399-8732-739011b13154" -->
 ### Debug Information
 - Check logs: `tail -f backups/mcp/mcp.log`
 - Run health check: `python3 scripts/mcp-cli.py health`
 - Generate report: `python3 scripts/mcp-cli.py report`
 
+<!-- section_id: "aec5db2e-14d3-43fe-8e26-9c615a082b7b" -->
 ## 🔄 Workflow Integration
 
+<!-- section_id: "6b589857-3861-4483-a76f-736e381cda96" -->
 ### Development Workflow
 1. **Setup**: `python3 scripts/mcp-cli.py setup`
 2. **Deploy Dev**: `python3 scripts/mcp-cli.py deploy development`
@@ -251,6 +284,7 @@ cp backups/mcp/backup_file.json .mcp.json
 4. **Test**: `python3 scripts/mcp-cli.py deploy testing`
 5. **Deploy Prod**: `python3 scripts/mcp-cli.py deploy production`
 
+<!-- section_id: "0a7941fb-7d58-4f55-ab87-5f50e155d3fa" -->
 ### CI/CD Integration
 ```bash
 # In your CI/CD pipeline
@@ -259,8 +293,10 @@ python3 scripts/mcp-cli.py deploy production
 python3 scripts/mcp-cli.py health
 ```
 
+<!-- section_id: "dcc82504-d7cd-437b-97f4-d5d36b3b729f" -->
 ## 📚 Advanced Usage
 
+<!-- section_id: "dd6b0a26-317e-47b5-abba-7cb4d9d5ca72" -->
 ### Custom Server Configuration
 ```python
 from mcp_config_manager import MCPConfigManager, MCPServerConfig, MCPEnvironment
@@ -279,6 +315,7 @@ manager = MCPConfigManager()
 manager.add_custom_server(custom_server, MCPEnvironment.DEVELOPMENT)
 ```
 
+<!-- section_id: "461c2483-af17-40da-8fb5-0f7f1795647d" -->
 ### Environment Synchronization
 ```python
 from mcp_deployer import MCPDeployer, MCPEnvironment
@@ -290,30 +327,36 @@ deployer.sync_across_environments([
 ])
 ```
 
+<!-- section_id: "ac923011-ae97-4f24-9e1b-b3853ab3b7a4" -->
 ## 🎉 Benefits
 
+<!-- section_id: "1dd4aadb-0570-45d2-afdc-2ca20fa80370" -->
 ### For Developers
 - **Single Source of Truth**: All MCP configurations in one place
 - **Easy Management**: Simple CLI commands for all operations
 - **Environment Isolation**: Separate configs for different environments
 - **Automated Deployment**: No manual configuration management
 
+<!-- section_id: "caa7256d-80c0-485e-9edd-60df3b55557c" -->
 ### For Operations
 - **Health Monitoring**: Built-in monitoring and alerting
 - **Backup & Recovery**: Automatic backup and easy restoration
 - **Scalability**: Easy to add new servers and environments
 - **Documentation**: Comprehensive documentation and examples
 
+<!-- section_id: "580a0536-6538-428e-a309-947c65e5027e" -->
 ### For AI Agents
 - **Consistent Configuration**: Same tools available across environments
 - **Easy Access**: Simple commands to start/stop/configure
 - **Reliability**: Health checks ensure servers are running
 - **Flexibility**: Easy to add new MCP servers as needed
 
+<!-- section_id: "327e5ad2-2231-4307-99f9-167d9cbca4b4" -->
 ## 🔧 Context7 MCP Server Setup
 
 Context7 provides documentation and context management capabilities. You have two connection options:
 
+<!-- section_id: "e042ad25-25a0-45db-89cd-18fa615b8c79" -->
 ### Local Server (Recommended for Development)
 ```bash
 # Set up local Context7 MCP server
@@ -323,6 +366,7 @@ python3 scripts/context7-setup.py setup-local
 python3 scripts/context7-setup.py status
 ```
 
+<!-- section_id: "8a3dab0d-62c3-4749-9b35-d72ff993cf7a" -->
 ### Remote Server (Recommended for Production)
 ```bash
 # Set up remote Context7 MCP server
@@ -332,17 +376,20 @@ python3 scripts/context7-setup.py setup-remote
 python3 scripts/context7-setup.py status
 ```
 
+<!-- section_id: "8b35036b-980d-40d3-b55d-793c4dfe5f40" -->
 ### Hybrid Setup (Both Options)
 ```bash
 # Set up both local and remote options
 python3 scripts/context7-setup.py setup-hybrid
 ```
 
+<!-- section_id: "cc583c5e-bbda-4b5f-936a-cb9eb2d91118" -->
 ### Context7 Configuration Files
 - **Local**: `config/mcp/examples/context7-local.json`
 - **Remote**: `config/mcp/examples/context7-remote.json`
 - **Hybrid**: `config/mcp/examples/context7-hybrid.json`
 
+<!-- section_id: "46ebe71d-501c-4e9b-b334-c62588a2a960" -->
 ### Claude Code Integration
 For direct integration with Claude Code:
 
@@ -358,6 +405,7 @@ claude mcp add context7 -- npx -y @upstash/context7-mcp --api-key YOUR_CONTEXT7_
 
 📚 **Complete Setup Guide**: See `docs/CONTEXT7_CLAUDE_SETUP.md` for detailed instructions.
 
+<!-- section_id: "f4f7a55f-5e60-4594-a757-19d7fe566646" -->
 ## 🚀 Next Steps
 
 1. **Run Setup**: `python3 scripts/mcp-cli.py setup`
@@ -367,6 +415,7 @@ claude mcp add context7 -- npx -y @upstash/context7-mcp --api-key YOUR_CONTEXT7_
 5. **Explore Tools**: Use the MCP servers for your AI agent tasks
 6. **Customize**: Add your own MCP servers as needed
 
+<!-- section_id: "0166ef7f-f047-4953-8196-f5c1963ced84" -->
 ## 📞 Support
 
 - **Health Check**: `python3 scripts/mcp-cli.py health`

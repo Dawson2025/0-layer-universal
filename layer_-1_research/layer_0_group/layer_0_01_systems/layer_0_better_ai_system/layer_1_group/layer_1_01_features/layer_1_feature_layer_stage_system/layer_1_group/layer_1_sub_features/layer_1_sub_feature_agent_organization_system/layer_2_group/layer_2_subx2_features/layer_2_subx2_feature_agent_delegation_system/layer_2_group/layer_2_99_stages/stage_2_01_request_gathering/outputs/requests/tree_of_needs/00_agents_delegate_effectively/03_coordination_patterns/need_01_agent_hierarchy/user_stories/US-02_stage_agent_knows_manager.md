@@ -13,6 +13,7 @@ resource_name: "US-02_stage_agent_knows_manager"
 **I want** each stage agent to know which entity manager it reports to,
 **So that** the agent escalates scope-exceeding issues to the right manager instead of getting stuck or guessing.
 
+<!-- section_id: "ed67710c-9eaa-48f2-ab09-c25e79fa415e" -->
 ### What Happens
 
 1. User delegates work and the stage agent encounters something outside its scope
@@ -21,6 +22,7 @@ resource_name: "US-02_stage_agent_knows_manager"
 4. Manager receives the escalation and presents it to the user or resolves it
 5. User gets informed about cross-scope issues without the stage agent silently failing
 
+<!-- section_id: "924ccbbe-3e84-44d9-a202-abaa4efa7fbe" -->
 ### Acceptance Criteria
 
 - Stage agent's 0AGNOSTIC.md includes a parent pointer to the entity manager

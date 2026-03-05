@@ -5,10 +5,12 @@ resource_name: "supabase_javascript_integration_rule"
 ---
 # SUPABASE JAVASCRIPT INTEGRATION RULE
 
+<!-- section_id: "4b1a3516-824d-4226-bb28-c07b7a305b20" -->
 ## **MANDATORY REQUIREMENT**
 
 **ALL Supabase database operations, field management, table interactions, and data manipulation MUST be performed using the JavaScript/TypeScript client library methods, NOT direct SQL queries or database UI operations.**
 
+<!-- section_id: "f741a9c2-f63d-44c0-9b51-a00be96b7321" -->
 ## **RULE SCOPE**
 
 This rule applies to:
@@ -21,8 +23,10 @@ This rule applies to:
 - Storage operations
 - Edge functions integration
 
+<!-- section_id: "201eb712-bf0f-4e75-bca1-59ba90e2ba46" -->
 ## **REQUIRED JAVASCRIPT PATTERNS**
 
+<!-- section_id: "9015438a-1a5e-4a67-932f-e9ad63e32c69" -->
 ### **1. Database Operations**
 
 ```javascript
@@ -53,6 +57,7 @@ const { data, error } = await supabase
   .eq('id', recordId);
 ```
 
+<!-- section_id: "ca4063af-fd26-4b63-b097-368805a00ab5" -->
 ### **2. Authentication Operations**
 
 ```javascript
@@ -78,6 +83,7 @@ const { error } = await supabase.auth.signOut();
 const { data: { user } } = await supabase.auth.getUser();
 ```
 
+<!-- section_id: "0bfef3f0-a3e9-44a8-9516-52877ed0d501" -->
 ### **3. Real-time Subscriptions**
 
 ```javascript
@@ -95,6 +101,7 @@ const subscription = supabase
   .subscribe();
 ```
 
+<!-- section_id: "590de5f1-2dd1-4253-b584-8b34b6455b76" -->
 ### **4. Storage Operations**
 
 ```javascript
@@ -112,8 +119,10 @@ const { data, error } = await supabase.storage
   .download('file_path');
 ```
 
+<!-- section_id: "f6256818-0c7d-40d8-a55f-b70e9c4449c8" -->
 ## **FORBIDDEN PATTERNS**
 
+<!-- section_id: "3fe76961-0e06-4f62-a4ce-d5e38af307e4" -->
 ### **❌ NEVER USE: Direct SQL Queries**
 
 ```javascript
@@ -126,6 +135,7 @@ const { data, error } = await supabase.rpc('custom_function', {
 const query = "SELECT * FROM table_name WHERE field = 'value'";
 ```
 
+<!-- section_id: "9702965a-1190-4b1d-9c49-335d84c4433e" -->
 ### **❌ NEVER USE: Database UI Operations**
 
 - Creating tables through Supabase Dashboard
@@ -133,6 +143,7 @@ const query = "SELECT * FROM table_name WHERE field = 'value'";
 - Running SQL queries in SQL Editor
 - Manual data insertion through UI
 
+<!-- section_id: "6274be51-1cb4-4917-8b9b-1df0b36e7d95" -->
 ### **❌ NEVER USE: Direct Database Connections**
 
 ```javascript
@@ -141,8 +152,10 @@ import { Pool } from 'pg';
 const pool = new Pool({ connectionString: 'postgresql://...' });
 ```
 
+<!-- section_id: "b83b4259-1db3-4868-810c-073b4d52479a" -->
 ## **REQUIRED IMPLEMENTATION PATTERNS**
 
+<!-- section_id: "37f5ff28-6bc5-4397-8910-9bf3f02c5fc0" -->
 ### **1. Service Layer Architecture**
 
 ```javascript
@@ -185,6 +198,7 @@ export const databaseService = {
 };
 ```
 
+<!-- section_id: "f01da566-09e4-4507-a0e6-9fae9d16c14d" -->
 ### **2. Error Handling Pattern**
 
 ```javascript
@@ -222,6 +236,7 @@ export const pointsService = {
 };
 ```
 
+<!-- section_id: "38758d62-768d-412e-91b8-bb585b99dae4" -->
 ### **3. Real-time Integration Pattern**
 
 ```javascript
@@ -257,6 +272,7 @@ export const realtimeService = {
 };
 ```
 
+<!-- section_id: "c4e93408-1199-465d-8a4f-03916c9c3b2f" -->
 ## **REQUIRED FILE STRUCTURE**
 
 ```
@@ -277,8 +293,10 @@ website/src/
     └── constants.js        # Application constants
 ```
 
+<!-- section_id: "ba675935-0f2d-463e-9ad3-61a9f41f2614" -->
 ## **VALIDATION REQUIREMENTS**
 
+<!-- section_id: "3944b0b9-7484-47ee-b4f3-c4c6af7cebe5" -->
 ### **1. Data Validation**
 
 ```javascript
@@ -302,6 +320,7 @@ export const validateClassData = (classData) => {
 };
 ```
 
+<!-- section_id: "4f954ec1-7caf-42ce-b4c0-af188a00c11b" -->
 ### **2. Type Safety**
 
 ```javascript
@@ -328,8 +347,10 @@ interface Class {
 }
 ```
 
+<!-- section_id: "ff8c8b08-3ff1-4030-87c7-b9a679cceaae" -->
 ## **TESTING REQUIREMENTS**
 
+<!-- section_id: "d0278f7a-d5df-4e18-92b6-0b1ad7986bcc" -->
 ### **1. Unit Tests for Services**
 
 ```javascript
@@ -351,6 +372,7 @@ describe('Database Service', () => {
 });
 ```
 
+<!-- section_id: "dd3750e4-1d19-49ac-b140-d7ede987df75" -->
 ### **2. Integration Tests**
 
 ```javascript
@@ -370,8 +392,10 @@ describe('Supabase Integration', () => {
 });
 ```
 
+<!-- section_id: "57d969ac-30dd-4a0f-b205-c6c951ac8086" -->
 ## **ENFORCEMENT**
 
+<!-- section_id: "40aabb62-0ab4-466d-916d-3009d806fa5c" -->
 ### **Code Review Checklist**
 
 - [ ] All database operations use Supabase client methods
@@ -382,6 +406,7 @@ describe('Supabase Integration', () => {
 - [ ] Service layer architecture followed
 - [ ] Data validation before database operations
 
+<!-- section_id: "1d5eae5d-1e37-4908-b167-12b774017020" -->
 ### **Automated Checks**
 
 ```javascript
@@ -395,23 +420,28 @@ module.exports = {
 };
 ```
 
+<!-- section_id: "d364938b-0c99-43e3-a471-fa121e565225" -->
 ## **MIGRATION STRATEGY**
 
+<!-- section_id: "c026ffeb-31a7-4216-9826-dc4493383b76" -->
 ### **Phase 1: Service Layer Implementation**
 1. Create service layer files
 2. Implement all CRUD operations using Supabase client
 3. Add proper error handling and validation
 
+<!-- section_id: "d8f2cf92-eff6-4512-974c-dea0c12b85cb" -->
 ### **Phase 2: Component Integration**
 1. Update all components to use service layer
 2. Remove any direct database UI operations
 3. Implement real-time subscriptions
 
+<!-- section_id: "3b6d2f46-0919-434c-9c65-be806fab50c2" -->
 ### **Phase 3: Testing and Validation**
 1. Add comprehensive unit tests
 2. Implement integration tests
 3. Add end-to-end testing with Supabase operations
 
+<!-- section_id: "90c94596-0533-404f-a5a1-66e86b0a515b" -->
 ## **BENEFITS**
 
 1. **Consistency**: All database operations follow the same pattern
@@ -422,6 +452,7 @@ module.exports = {
 6. **Scalability**: Optimized for Supabase's architecture
 7. **Maintainability**: Clear separation of concerns
 
+<!-- section_id: "68b7a996-c9e8-411d-b0f3-b4bab5b7601e" -->
 ## **VIOLATION CONSEQUENCES**
 
 - **Code Review Rejection**: Any code using direct SQL or UI operations will be rejected

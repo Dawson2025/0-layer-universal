@@ -13,6 +13,7 @@ resource_name: "US-03_sub_feature_sees_own_tree"
 **I want** the sub-feature agent to see only its own entity and stages, not sibling entities,
 **So that** the AI stays focused on the sub-feature I asked about and does not get distracted.
 
+<!-- section_id: "09d434a9-6dd3-4d58-a85d-882558ce871d" -->
 ### What Happens
 
 1. User says "work on the memory system sub-feature"
@@ -21,6 +22,7 @@ resource_name: "US-03_sub_feature_sees_own_tree"
 4. Sub-feature agent's context does NOT include sibling entities (e.g., multi-agent system internals)
 5. Agent focuses entirely on its own scope without distraction from unrelated entities
 
+<!-- section_id: "738fdcd9-5129-41d1-b45b-a0128553d396" -->
 ### Acceptance Criteria
 
 - Sub-feature agent's context excludes all sibling entity details

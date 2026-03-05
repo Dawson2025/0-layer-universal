@@ -7,12 +7,14 @@ resource_name: "codex-vscode-manual-tests"
 
 Use this walkthrough to repeat the manual steps we executed while finishing the Codex + VS Code setup on Windows.
 
+<!-- section_id: "32eb99a7-0022-4ba9-98a2-c16baf0f78c2" -->
 ## Prerequisites
 
 - Codex CLI installed in WSL and working (`codex --version`)
 - Repository checked out under `~/code/setup-hub`
 - `scripts/check-codex-setup.sh` available (run `./scripts/check-codex-setup.sh` to verify the baseline)
 
+<!-- section_id: "c1897a90-e86a-4526-97be-44c0e6f76fb6" -->
 ## 1. Enable Developer Mode on Windows
 
 1. Press `Win + R`, type `ms-settings:developers`, and press Enter.
@@ -20,6 +22,7 @@ Use this walkthrough to repeat the manual steps we executed while finishing the 
 3. Approve any confirmation dialogs, then close Settings.
 4. Back in WSL, run `./scripts/check-codex-setup.sh` to confirm the script now reports `Developer Mode: Enabled`.
 
+<!-- section_id: "50b5857a-c6c7-4e44-a2b3-7c73dda7a4a3" -->
 ## 2. Install the Remote - WSL extension in VS Code
 
 1. Launch VS Code (Windows desktop version).
@@ -28,6 +31,7 @@ Use this walkthrough to repeat the manual steps we executed while finishing the 
 4. Reload VS Code when prompted.
 5. From a WSL terminal, run `./scripts/check-codex-setup.sh` again. It should now print `VS Code Remote - WSL extension installed`.
 
+<!-- section_id: "466870df-fcd5-42c6-9254-66335b96ced7" -->
 ## 3. Reopen the project inside WSL
 
 1. In a WSL terminal, switch to the repository:
@@ -44,6 +48,7 @@ Use this walkthrough to repeat the manual steps we executed while finishing the 
 
 3. Confirm the VS Code status bar shows `WSL: Ubuntu`.
 
+<!-- section_id: "a96fd698-64eb-4e56-a686-4858977cffa2" -->
 ## 4. Verify Codex extension behaviour
 
 1. Open the Codex panel and run `/status` to ensure the model (`gpt-5-codex`), mode, and working directory are correct.
@@ -51,6 +56,7 @@ Use this walkthrough to repeat the manual steps we executed while finishing the 
 3. Optional: switch to **Agent** mode, request another small edit, then return to Chat mode so you know how to toggle access levels.
 4. Ask Codex to run a benign command (e.g., `pwd`). The output should show `/home/dawson/code/setup-hub`.
 
+<!-- section_id: "62b29bbe-373c-4e64-bed6-e3048ecc81e0" -->
 ## 5. Validate browser automation prerequisites
 
 1. In the WSL terminal, ensure Playwright MCP browsers are installed via Node.js Playwright only:
@@ -70,12 +76,14 @@ Use this walkthrough to repeat the manual steps we executed while finishing the 
 
    Install it via `wget ... google-chrome-stable_current_amd64.deb && sudo apt install ./google-chrome-stable_current_amd64.deb` if those commands fail, then restart Codex after installation.
 
+<!-- section_id: "d51c4ae7-5079-49ff-9a83-054cb7f46db8" -->
 ## 6. Launch Codex via VS Code task (optional)
 
 1. Create `.vscode/tasks.json` (if not present) with the `Launch Codex` task from `docs/codex-windows-vscode.md`.
 2. Press `Ctrl+Shift+B` (or your custom binding) to ensure the Codex CLI session starts in a new panel.
 3. Exit the CLI session with `exit` when finished.
 
+<!-- section_id: "2f71459a-4754-4ce5-a5c4-79dc1b1fb267" -->
 ## 7. Re-run the checklist
 
 - Run `./scripts/check-codex-setup.sh` one more time. Use the output as a quick health check whenever your environment changes (VS Code updates, Codex CLI upgrades, etc.).

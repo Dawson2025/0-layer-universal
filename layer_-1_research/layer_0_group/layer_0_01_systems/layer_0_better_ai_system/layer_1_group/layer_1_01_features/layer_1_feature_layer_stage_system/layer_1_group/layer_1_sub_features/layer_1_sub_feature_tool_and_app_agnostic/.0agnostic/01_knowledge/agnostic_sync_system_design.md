@@ -12,10 +12,12 @@ resource_name: "agnostic_sync_system_design"
 
 ---
 
+<!-- section_id: "a7718c29-0831-4fa5-bf4b-10ec16d669d5" -->
 ## Overview
 
 This document describes the sync system that transforms agnostic AI context files into tool-specific formats.
 
+<!-- section_id: "ecff5ebe-e69e-49d6-8326-42374947f6fb" -->
 ## Source → Target Mapping
 
 | Source | Target | Transformation |
@@ -29,8 +31,10 @@ This document describes the sync system that transforms agnostic AI context file
 | `.agnostic/rules/` | `.cursor/rules/*.mdc` | Format conversion |
 | `.agnostic/automation/` | `.claude/hooks/` | Direct copy |
 
+<!-- section_id: "8f1df94d-4446-4ada-ac7d-0aa4989ccdf1" -->
 ## Shim Templates
 
+<!-- section_id: "2932b0b3-a030-4738-9037-684dfda052af" -->
 ### Claude Shim (prepended to AGNOSTIC.md)
 
 ```markdown
@@ -40,6 +44,7 @@ This document describes the sync system that transforms agnostic AI context file
 
 ```
 
+<!-- section_id: "08f3b590-9b88-419f-acb4-1e75e33de656" -->
 ### Codex/AGENTS.md Shim
 
 ```markdown
@@ -49,6 +54,7 @@ This document describes the sync system that transforms agnostic AI context file
 
 ```
 
+<!-- section_id: "8cf374f6-1a04-40c9-ae19-0d9b2f948ec8" -->
 ### Gemini Shim
 
 ```markdown
@@ -58,8 +64,10 @@ This document describes the sync system that transforms agnostic AI context file
 
 ```
 
+<!-- section_id: "5646d620-ac65-44ae-9d51-6cfa31bd092d" -->
 ## Sync Script Behavior
 
+<!-- section_id: "57b58a96-77d4-4750-9269-205c9d181cb8" -->
 ### Command: `agnostic-sync`
 
 ```bash
@@ -75,6 +83,7 @@ Arguments:
   path         Directory to sync (default: current directory)
 ```
 
+<!-- section_id: "e9dab4f9-634c-4003-b27b-e79c3d439e3f" -->
 ### Sync Logic
 
 1. **Find AGNOSTIC.md** in the specified directory
@@ -94,6 +103,7 @@ Arguments:
    - .claude/mcp.json
    - .cursor/settings.json
 
+<!-- section_id: "cef57e01-51a2-48c3-a0b0-15196812021d" -->
 ### File Preservation Rules
 
 Files in tool-specific folders that should NOT be overwritten:
@@ -101,6 +111,7 @@ Files in tool-specific folders that should NOT be overwritten:
 - `mcp.json` - MCP server configuration
 - Any file with `# MANUAL` comment in first line
 
+<!-- section_id: "7abcaf16-904a-4a16-bc1f-be7466b0e78b" -->
 ## Directory Structure After Sync
 
 ```
@@ -129,6 +140,7 @@ layer_X/
     └── settings.json           # MANUAL (preserved)
 ```
 
+<!-- section_id: "90591386-2f6f-494d-897a-5ac292765e21" -->
 ## Implementation Plan
 
 1. **Phase 1**: Bash script for basic sync
@@ -138,6 +150,7 @@ layer_X/
 
 ---
 
+<!-- section_id: "58e3a2aa-69b1-4d8d-b96d-dc9894501800" -->
 ## Related Files
 
 - Template: `../agnostic_templates/AGNOSTIC.md.template`

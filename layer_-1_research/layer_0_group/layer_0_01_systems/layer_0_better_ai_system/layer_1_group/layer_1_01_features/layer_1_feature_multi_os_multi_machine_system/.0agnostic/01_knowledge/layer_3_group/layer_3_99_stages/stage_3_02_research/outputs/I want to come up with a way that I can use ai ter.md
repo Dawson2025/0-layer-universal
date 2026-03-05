@@ -9,6 +9,7 @@ resource_name: "I want to come up with a way that I can use ai ter"
 
 You can treat a remote Linux box as your “AI dev hub” that exposes terminals, MCP browsers, and a shared filesystem to both phone and laptop.  Below is a concrete way to wire this together around SSH/Tailscale, Syncthing, and VNC/noVNC.[^1_1][^1_2]
 
+<!-- section_id: "2fc96eaf-3a6d-45b4-8679-013ded76dda5" -->
 ## Core architecture
 
 - **One main remote dev server** (e.g., Ubuntu VPS or home server) that runs all CLI tools (Claude Code, Gemini CLI, Codex CLI), MCP servers (Playwright), and optionally Cursor via remote desktop.[^1_2][^1_1]
@@ -24,6 +25,7 @@ All pointed at the same project folder(s) with full bidirectional sync.[^1_6][^1
     - Playwright MCP in “WebUI mode” inside Docker with VNC/noVNC, controllable from your AI tools.[^1_2]
 
 
+<!-- section_id: "a66d9913-dab5-400b-9795-59825c92dd33" -->
 ## Remote access from laptop and phone
 
 - Install Tailscale on:
@@ -36,6 +38,7 @@ All pointed at the same project folder(s) with full bidirectional sync.[^1_6][^1
 
 This gives you the same shell and tools from both devices, pointed at the shared project directories.
 
+<!-- section_id: "6cd21b46-d4c5-4113-97e2-8a48fdb1afdb" -->
 ## Running AI CLIs and MCP browsers on the server
 
 - Install your AI CLIs (Claude Code, Gemini CLI, etc.) directly on the server and configure them to use the shared project directory synced by Syncthing.[^1_7][^1_6]
@@ -47,6 +50,7 @@ This gives you the same shell and tools from both devices, pointed at the shared
 
 This lets your AI tools “drive” Chrome/Chromium remotely while you watch and interact from both phone and laptop, all through the same server.
 
+<!-- section_id: "0a5e6780-49aa-4b69-9cfd-01c127829489" -->
 ## Shared filesystem with Syncthing
 
 - Put your **canonical project folder** under Syncthing control on one machine first, then add all other devices as “remote devices” and share that folder with them.[^1_8][^1_6][^1_7]
@@ -56,6 +60,7 @@ This lets your AI tools “drive” Chrome/Chromium remotely while you watch and
 
 With that setup, edits from any environment (local IDE, server‑side CLIs, Cursor in VNC) propagate to all others nearly in real time.
 
+<!-- section_id: "97186aa2-f609-44d6-b6c3-8284848205f4" -->
 ## Visual desktop (Cursor, Chrome) from both devices
 
 - On the server, run a lightweight desktop (XFCE) plus a VNC server, or use a Dockerized VNC/noVNC environment like the Playwright MCP WebUI stack.[^1_9][^1_10][^1_2]
@@ -99,6 +104,7 @@ If you tell which provider you want to use for the remote box (home server vs. V
 
 You can extend your “remote AI dev hub” into a cloud 3D / voice / video stack by combining Unreal Pixel Streaming with realtime voice APIs and your existing remote server setup.  Think of it as one or more GPU servers running Unreal and AI, streamed to your phone and laptop over WebRTC.[^2_1][^2_2]
 
+<!-- section_id: "88d32ca2-f9ce-47e3-ad87-d05f96bde201" -->
 ## Key building blocks
 
 - **Unreal Engine in the cloud** with Pixel Streaming so any device can see and control the 3D world in a browser.[^2_3][^2_4][^2_5][^2_1]
@@ -107,6 +113,7 @@ You can extend your “remote AI dev hub” into a cloud 3D / voice / video stac
 
 All of this can run on the same remote environment concept as your MVP: you just add GPU capacity and WebRTC‑based streaming.
 
+<!-- section_id: "de580bff-ee65-431e-9626-cf906ddb8d76" -->
 ## Unreal worlds on phone and laptop
 
 - Use Unreal’s built‑in **Pixel Streaming** to run your Unreal app on a GPU server, and stream its audio/video to any WebRTC‑capable browser.[^2_5][^2_1][^2_3]
@@ -114,6 +121,7 @@ All of this can run on the same remote environment concept as your MVP: you just
 
 From your perspective, Unreal runs “wherever it needs to be” (on a GPU host), and your devices just open a URL to see and interact with the world.
 
+<!-- section_id: "1b4e9c4a-9cc4-4d7c-a8bd-b681234895d9" -->
 ## AI voice and video calls into the system
 
 - For **voice calls with AI**, implement a WebRTC audio client in your browser or app that connects to a Realtime LLM API for live speech‑to‑speech conversations.[^2_7][^2_2][^2_6]
@@ -121,6 +129,7 @@ From your perspective, Unreal runs “wherever it needs to be” (on a GPU host)
 
 This gives you a persistent “AI on the line” while you are in the 3D world, on either phone or laptop.
 
+<!-- section_id: "83041f91-5082-42ef-bcbf-3a28171cf064" -->
 ## Letting AI control Unreal worlds
 
 - Inside Unreal, expose a **control layer** (HTTP/REST, WebSockets, or a custom plugin) so external agents can drive pawns, cameras, and game state in response to function calls.[^2_9][^2_8][^2_3]
@@ -128,6 +137,7 @@ This gives you a persistent “AI on the line” while you are in the 3D world, 
 
 That lets your AI play as both an avatar (first‑person) and a **god‑mode** controller (editor‑like actions) in the same simulation.
 
+<!-- section_id: "e12c3b3b-a78c-4d39-9dae-ac9cb6dcf554" -->
 ## How this connects to your MVP
 
 - Keep the **remote AI dev server** as your orchestration layer: your CLIs, MCP servers, and file sync already live there, and you add:
@@ -166,6 +176,7 @@ Once the MVP is stable, the main extra work is wiring Unreal’s Pixel Streaming
 
 You can treat “voice/video with AI that can touch the CLI and filesystem” as a second layer on top of your remote dev server: a realtime voice agent that uses tools to run shell commands and read/write files.  The pattern is: WebRTC voice → backend agent → tools for shell and files.[^3_1][^3_2]
 
+<!-- section_id: "b1c9036b-0923-4142-a1d7-f1931dd12bb5" -->
 ## Overall architecture
 
 - **Voice/video client** in your browser or native app sends and receives audio (and optionally screen/video) via WebRTC.[^3_3][^3_4][^3_1]
@@ -176,6 +187,7 @@ You can treat “voice/video with AI that can touch the CLI and filesystem” as
 
 This lets you talk to the agent on your phone or laptop and have it act as a “voice Claude Code” with full access to the same synced filesystem.
 
+<!-- section_id: "ffe25ddb-74a5-43f0-bcd8-e34c760f3c8a" -->
 ## Core pieces to set up
 
 - **Realtime voice stack**
@@ -189,6 +201,7 @@ This lets you talk to the agent on your phone or laptop and have it act as a “
     - Use allow‑lists or pattern checks so destructive or dangerous commands are blocked, and optionally require explicit confirmation for high‑impact actions.[^3_5][^3_6]
 
 
+<!-- section_id: "1a99507b-5485-48d1-bb56-3f5f06739c18" -->
 ## How this connects to your existing setup
 
 - The **remote server** you’re already planning for Claude Code, Gemini CLI, and MCP stays the execution environment.
@@ -202,6 +215,7 @@ This lets you talk to the agent on your phone or laptop and have it act as a “
     - use a native client built on a framework like LiveKit agents to connect into your backend.[^3_3][^3_7][^3_4]
 
 
+<!-- section_id: "37412af6-f87e-46ae-9898-4f765c47ed8e" -->
 ## Suggested implementation path
 
 - Start with a **simple voice‑only agent** that:
@@ -251,6 +265,7 @@ If you share your preferred language (TypeScript vs Python) and which voice/LLM 
 
 Step 3 is essentially “3D world as a shared, AI‑aware space”: Unreal runs remotely, is streamed to you, and exposes control channels so both you and AI agents can act inside it. This builds on your step 1 (remote dev hub) and step 2 (voice/tools agent) and connects them to Unreal.
 
+<!-- section_id: "8f669bc4-6116-4e0f-aee3-c237e5e0dbff" -->
 ## What step 3 adds conceptually
 
 - **Remote 3D runtime**
@@ -263,6 +278,7 @@ Step 3 is essentially “3D world as a shared, AI‑aware space”: Unreal runs 
         - issue “god mode” commands (spawn objects, change environment parameters).
 
 
+<!-- section_id: "e6886bac-2471-4559-9d73-7898c742fb98" -->
 ## How your previous steps plug in
 
 - **From the remote dev hub (step 1)**
@@ -277,6 +293,7 @@ Step 3 is essentially “3D world as a shared, AI‑aware space”: Unreal runs 
         - optionally narrates what it did and why.
 
 
+<!-- section_id: "50235ecf-fa82-4fbc-a720-474073d8fc6d" -->
 ## User experience you’re aiming for
 
 - On your **phone**
@@ -292,6 +309,7 @@ Step 3 is essentially “3D world as a shared, AI‑aware space”: Unreal runs 
     - You can debug, inspect logs, or change code while the AI and your phone session remain connected to the running 3D world.
 
 
+<!-- section_id: "5e2cbcbc-060e-4a44-b0e2-5ead4bd927ac" -->
 ## High‑level design goals for step 3
 
 - **Clear separation between rendering and control**
@@ -312,6 +330,7 @@ If you want, the next step can be to sketch an end‑to‑end diagram of the com
 
 The best‑known way to make your whole vision real is to combine three mature patterns: remote dev + voice agents + Unreal pixel streaming. Existing guides and research back this as the most practical, scalable route.[^5_2][^5_3][^5_7]
 
+<!-- section_id: "48048206-cb36-4ccf-a1d0-06b87bb421a2" -->
 ## 1. Remote Unreal via Pixel Streaming
 
 Pixel Streaming is the standard for running Unreal on a GPU server and streaming it to browsers on phones and laptops with low‑latency control.[^5_3][^5_5][^5_7]
@@ -321,6 +340,7 @@ Pixel Streaming is the standard for running Unreal on a GPU server and streaming
 
 This gives you “Unreal anywhere” with only a browser on the client, which fits your phone + laptop requirement.[^5_7][^5_12][^5_5]
 
+<!-- section_id: "d1a2c982-12ea-4543-b89d-3965d011da1d" -->
 ## 2. Hosting and networking best practices
 
 For real‑world access across networks, Unreal docs and hosting guides recommend a focused networking setup.[^5_2][^5_6][^5_7]
@@ -330,6 +350,7 @@ For real‑world access across networks, Unreal docs and hosting guides recommen
 
 These practices are what commercial “Unreal‑in‑the‑cloud” providers follow to deliver 3D worlds to arbitrary devices.[^5_8][^5_7][^5_2]
 
+<!-- section_id: "236894f3-2b22-405f-b76a-adb261e4a2b6" -->
 ## 3. AI agents controlling Unreal (“avatar + god mode”)
 
 The strongest pattern for letting AI act inside Unreal is to add a control API layer, separate from the video stream.[^5_11][^5_18][^5_5]
@@ -339,6 +360,7 @@ The strongest pattern for letting AI act inside Unreal is to add a control API l
 
 Research and engineering write‑ups on cloud Unreal systems show that splitting rendering (Pixel Streaming) from control (APIs / events) is the cleanest, most maintainable architecture.[^5_12][^5_18][^5_11]
 
+<!-- section_id: "b28b0f93-8f58-4b7a-b39a-5b16a4892ec9" -->
 ## 4. Voice / video AI with tools and filesystem
 
 For step 2 (voice and video calls with AI that can use CLI agents and files), current best practice is a realtime multimodal agent with tool calling.[^5_29][^5_30][^5_31]
@@ -348,6 +370,7 @@ For step 2 (voice and video calls with AI that can use CLI agents and files), cu
 
 This lets you talk to “Claude‑code‑like” behavior by voice while the agent reads and edits the same synced files your CLIs and IDEs use.[^5_35][^5_29][^5_30]
 
+<!-- section_id: "8b963e1f-db81-46e9-8103-7f19c7b4576c" -->
 ## 5. Putting it all together for your roadmap
 
 Across docs and guides, the most feasible strategy for what you want is a staged, layered build.[^5_3][^5_29][^5_5]
@@ -440,6 +463,7 @@ That combination—remote Unreal via Pixel Streaming, plus a tool‑using voice 
 
 Step 1 focuses on creating a unified remote environment accessible from your phone and laptop for Claude Code, Codex CLI, Gemini CLI, and Cursor IDE visuals. Step 2 layers in voice/video AI agents that interact with that environment. Step 3 then integrates Unreal 3D worlds.
 
+<!-- section_id: "6b2da936-33df-49a9-94e8-eb6f0e36ba36" -->
 ## Step 1: Remote access to AI coding tools
 
 Set up a single Linux server (VPS with GPU if possible) as your central hub, using Tailscale for secure access and Syncthing for file sharing.
@@ -449,6 +473,7 @@ Set up a single Linux server (VPS with GPU if possible) as your central hub, usi
 - Sync your project folders bidirectionally with Syncthing across Windows, WSL, local Ubuntu, and the server to ensure one codebase everywhere.
 
 
+<!-- section_id: "5040443b-64fd-41dd-a62d-a39f0bbe9a25" -->
 ## Step 2: Voice/video AI agents with tool access
 
 Build a realtime voice agent backend on the same server using frameworks like LiveKit or OpenAI Realtime API.
@@ -458,6 +483,7 @@ Build a realtime voice agent backend on the same server using frameworks like Li
 - Access from phone/laptop via a simple web app for voice calls, with optional screen sharing of the remote terminal or Cursor view.
 
 
+<!-- section_id: "4c46c982-5dfb-401c-991d-8a8b4cde0f81" -->
 ## Step 3: Unreal 3D world integration
 
 Extend the hub with Unreal Pixel Streaming on a GPU instance.
@@ -511,6 +537,7 @@ This progression keeps everything centralized on your remote server, with seamle
 
 Yes, the layered remote server approach—starting with a secure hub for CLI AI tools, adding voice/video agents with tool access, then integrating streamed Unreal 3D—is among the strongest practical ways to achieve your full system. It leverages mature patterns like Tailscale SSH, Syncthing, realtime WebRTC agents, and Pixel Streaming, which align perfectly with multi‑device (phone + laptop) access, AI orchestration, and shared 3D environments.[^7_21][^7_22][^7_23][^7_24]
 
+<!-- section_id: "15cc4217-2e7d-4372-a4da-1b0a0562a660" -->
 ## Why this excels for your requirements
 
 - **Remote CLI AI coding from phone**: Tailscale + Mosh/Blink gives resilient terminal access to Claude Code/Codex/Gemini CLI on the server; VNC/noVNC handles Cursor visuals. Phone apps handle this natively without local compute limits.[^7_25][^7_26][^7_21]
@@ -518,6 +545,7 @@ Yes, the layered remote server approach—starting with a secure hub for CLI AI 
 - **AI‑accessible 3D environment**: Pixel Streaming delivers interactive Unreal to browsers; voice agent tools hit Unreal's control APIs for avatar/god‑mode actions. Shared Syncthing filesystem keeps code/world state unified.[^7_22][^7_23][^7_29]
 
 
+<!-- section_id: "8f5281d7-850f-4e3a-839e-b1d2888393be" -->
 ## Potential alternatives and trade‑offs
 
 | Approach | Strengths | Weaknesses vs. your stack |
@@ -528,6 +556,7 @@ Yes, the layered remote server approach—starting with a secure hub for CLI AI 
 
 Your design avoids these pitfalls by centralizing compute/powerful tools on the server while streaming everything thin to devices.
 
+<!-- section_id: "22e1b2d5-0bba-4ef2-ba3a-f59689e39a63" -->
 ## Validation from patterns
 
 Guides confirm this works: devs run Cursor/Claude Code in remote containers via Tailscale, voice agents safely execute CLI tools, and Pixel Streaming handles 3D reliably across networks. No single "magic" tool does it all, but this composes proven components scalably.[^7_20][^7_26][^7_21][^7_22][^7_24]
@@ -598,10 +627,12 @@ Guides confirm this works: devs run Cursor/Claude Code in remote containers via 
 
 # Unified Remote AI Dev \& 3D World System
 
+<!-- section_id: "04dfb42f-68d6-4f7d-a6ec-20e125e6087b" -->
 ## Executive Summary
 
 This vision outlines a centralized remote server ecosystem that unifies AI‑powered coding (CLI tools + IDE), voice/video agent orchestration, and interactive 3D worlds. Accessible from phone and laptop, it enables seamless workflows where you code via terminals/IDEs, direct AI via voice to run commands/edit files, and collaborate with AI inside streamed Unreal environments—all backed by shared filesystems.
 
+<!-- section_id: "3483bcb4-52c9-4c89-af20-d1ceb0b3600f" -->
 ## Core Goals
 
 - Phone/laptop parity for all features (CLI coding, voice control, 3D interaction)
@@ -610,6 +641,7 @@ This vision outlines a centralized remote server ecosystem that unifies AI‑pow
 - Scalable from MVP to multi‑user/multi‑world
 
 
+<!-- section_id: "f666d109-3f14-4295-9423-eec5a1889d31" -->
 ## System Architecture
 
 ```
@@ -627,6 +659,7 @@ This vision outlines a centralized remote server ecosystem that unifies AI‑pow
 ```
 
 
+<!-- section_id: "7f23cca7-3e66-4ae4-ae63-be51a2059452" -->
 ## Step 1: Remote AI Coding Hub
 
 **Objective**: Single server for all CLI/IDE tools, accessible anywhere.
@@ -643,6 +676,7 @@ This vision outlines a centralized remote server ecosystem that unifies AI‑pow
 
 **Success Metric**: Edit/run code from phone terminal, see Cursor desktop in browser.
 
+<!-- section_id: "457fceb3-c645-46ef-982c-8d4c80e9f571" -->
 ## Step 2: Voice/Video AI Orchestration
 
 **Objective**: Natural language control of the coding hub.
@@ -662,6 +696,7 @@ This vision outlines a centralized remote server ecosystem that unifies AI‑pow
 
 **Success Metric**: Say "debug the API endpoint" → AI runs tools, narrates fixes verbally.
 
+<!-- section_id: "01b10bd0-2c2b-4a17-b17a-b29c447ac38f" -->
 ## Step 3: Shared 3D Worlds
 
 **Objective**: Interactive Unreal environments for you + AI.
@@ -680,6 +715,7 @@ This vision outlines a centralized remote server ecosystem that unifies AI‑pow
 
 **Success Metric**: Voice "build a red platform for me" → AI spawns it, you see live in stream.
 
+<!-- section_id: "748ec9a6-d73e-4a94-b833-0ca3023b3483" -->
 ## Security \& Ops
 
 - Tailscale: Zero‑config VPN, auth‑only access
@@ -688,6 +724,7 @@ This vision outlines a centralized remote server ecosystem that unifies AI‑pow
 - Scaling: Kubernetes for multi‑GPU/multi‑agent
 
 
+<!-- section_id: "4d537c40-6582-4c58-8a1f-b82a3457acec" -->
 ## Roadmap
 
 | Phase | Deliverable | Timeline |
@@ -697,6 +734,7 @@ This vision outlines a centralized remote server ecosystem that unifies AI‑pow
 | 3D (3 weeks) | Step 3 streaming + AI control |  |
 | Polish (2 weeks) | Multi‑session, perf tuning |  |
 
+<!-- section_id: "9d5f1ed2-54b2-4b72-95c3-85e52aa4cc87" -->
 ## Risks \& Mitigations
 
 - Latency: WebRTC + edge GPU → <100ms
@@ -709,8 +747,10 @@ This system turns your devices into thin clients for a powerful, AI‑amplified 
 
 # Remote AI Dev \& 3D System - Requirements Document
 
+<!-- section_id: "c385d4e6-4806-44ec-9852-d043e0d82cfc" -->
 ## 1. Introduction
 
+<!-- section_id: "9f4e3188-6533-4bda-94f2-ada3b288ff39" -->
 ### 1.1 Purpose
 
 This document specifies functional and non‑functional requirements for a unified remote system enabling:
@@ -720,18 +760,22 @@ This document specifies functional and non‑functional requirements for a unifi
 - Shared Unreal 3D worlds with AI avatar/god‑mode control
 
 
+<!-- section_id: "98957a3a-06a1-4335-9207-f79285abbb0b" -->
 ### 1.2 Scope
 
 Covers infrastructure, access, agents, 3D streaming, and integration. Excludes production multi‑tenancy.
 
+<!-- section_id: "427cdc2e-a780-4c50-a416-67a4bb4d92a2" -->
 ### 1.3 Stakeholders
 
 - Primary User: You (multi‑device access)
 - AI Agents: Voice/video controllers
 
 
+<!-- section_id: "3d59ee90-0c8c-4aa6-baac-893bfa7203aa" -->
 ## 2. Functional Requirements
 
+<!-- section_id: "5ad7cf30-ac87-4ab9-86e7-14cebef922ce" -->
 ### 2.1 Remote Coding Hub (Step 1)
 
 | ID | Requirement | Priority |
@@ -741,6 +785,7 @@ Covers infrastructure, access, agents, 3D streaming, and integration. Excludes p
 | F1.3 | Bidirectional Syncthing sync of project folders across Windows/WSL/Ubuntu/server | Must |
 | F1.4 | Tailscale zero‑trust networking (no port forwarding) | Must |
 
+<!-- section_id: "fa29bf8c-f7a3-4d99-b73b-dad8ea06c0b7" -->
 ### 2.2 Voice/Video Agents (Step 2)
 
 | ID | Requirement | Priority |
@@ -751,6 +796,7 @@ Covers infrastructure, access, agents, 3D streaming, and integration. Excludes p
 | F2.4 | Verbal narration of tool results/actions | Should |
 | F2.5 | Screen sharing of terminal/Cursor during calls | Could |
 
+<!-- section_id: "ee2c8093-6863-4040-a821-530d574ac68b" -->
 ### 2.3 3D Worlds (Step 3)
 
 | ID | Requirement | Priority |
@@ -761,6 +807,7 @@ Covers infrastructure, access, agents, 3D streaming, and integration. Excludes p
 | F3.4 | Multi‑session support (user + ≥1 AI avatar) | Should |
 | F3.5 | God‑mode controls (time/light/physics) via voice | Could |
 
+<!-- section_id: "b1812638-56e7-40ce-b31a-5db15ee6dbda" -->
 ### 2.4 Integration
 
 | ID | Requirement | Priority |
@@ -769,8 +816,10 @@ Covers infrastructure, access, agents, 3D streaming, and integration. Excludes p
 | F4.2 | Voice agent routes commands to CLI or 3D based on context | Must |
 | F4.3 | Unified auth (Tailscale identities) across components | Must |
 
+<!-- section_id: "db05ba5e-93bf-4703-8c70-4c37c45285c4" -->
 ## 3. Non‑Functional Requirements
 
+<!-- section_id: "d3a7db9c-0785-4e4e-a685-f3a5e3763b40" -->
 ### 3.1 Performance
 
 - CLI latency: <500ms end‑to‑end
@@ -779,6 +828,7 @@ Covers infrastructure, access, agents, 3D streaming, and integration. Excludes p
 - Uptime: 99%
 
 
+<!-- section_id: "892cbb8d-e8a7-43fa-a02a-54dba6a60039" -->
 ### 3.2 Security
 
 - No public ports; Tailscale ACLs
@@ -787,6 +837,7 @@ Covers infrastructure, access, agents, 3D streaming, and integration. Excludes p
 - Filesystem scoped to project root
 
 
+<!-- section_id: "490dc595-de95-45f6-8246-eee555c8daad" -->
 ### 3.3 Usability
 
 - Phone: Native apps (Blink for SSH, browser for VNC/3D/voice)
@@ -794,12 +845,14 @@ Covers infrastructure, access, agents, 3D streaming, and integration. Excludes p
 - Voice UX: Natural language, context‑aware
 
 
+<!-- section_id: "bb68815f-c83f-4dd2-b50a-8a70eb803d48" -->
 ### 3.4 Scalability
 
 - Initial: Single server
 - Future: Multi‑GPU, agent pools
 
 
+<!-- section_id: "6d6806b2-4a2d-4704-addc-a40b405b18ee" -->
 ## 4. Interfaces
 
 - **User**: WebRTC app, SSH clients, browsers
@@ -807,6 +860,7 @@ Covers infrastructure, access, agents, 3D streaming, and integration. Excludes p
 - **External**: Tailscale, Syncthing peer mesh
 
 
+<!-- section_id: "30e3a98a-958f-4170-9c64-475c16824f04" -->
 ## 5. Assumptions \& Dependencies
 
 - GPU VPS availability (~\$0.5/hr)
@@ -815,6 +869,7 @@ Covers infrastructure, access, agents, 3D streaming, and integration. Excludes p
 - LLM API keys (Claude/Gemini/OpenAI Realtime)
 
 
+<!-- section_id: "fa4be462-7105-4aeb-8ddd-9c5e1504dee3" -->
 ## 6. Acceptance Criteria
 
 - **Step 1**: Code edit from phone → syncs to laptop Cursor
@@ -823,6 +878,7 @@ Covers infrastructure, access, agents, 3D streaming, and integration. Excludes p
 - **Full**: End‑to‑end voice‑driven coding + world build from phone
 
 
+<!-- section_id: "c8cdd871-f353-47aa-abc0-e42c4acd59c7" -->
 ## 7. Glossary
 
 - **Hub Server**: Central Ubuntu/Tailscale host
@@ -835,12 +891,15 @@ This spec provides a testable blueprint for iterative delivery.
 
 # Research Document: Foundations for Remote AI Dev, Voice Agents, and 3D Integration
 
+<!-- section_id: "4384eee5-44a2-473a-89da-80345a0b7ec5" -->
 ## 1. Executive Summary
 
 This research compiles evidence supporting the proposed system's viability, drawing from tool comparisons, remote dev patterns, realtime voice AI, and Unreal streaming. Key findings: CLI tools like Claude Code, Codex CLI, and Gemini CLI thrive in remote setups; voice agents with MCP/tools enable safe orchestration; Pixel Streaming provides proven 3D access.[^10_1][^10_2][^10_6]
 
+<!-- section_id: "6515d881-ee58-4f5c-8fa8-038f6038e769" -->
 ## 2. AI CLI Coding Tools Landscape
 
+<!-- section_id: "227dda80-29f3-41cf-9868-2200a54be3e3" -->
 ### 2.1 Tool Profiles
 
 | Tool | Strengths | Weaknesses | Remote Fit |
@@ -853,12 +912,14 @@ This research compiles evidence supporting the proposed system's viability, draw
 - Benchmarks show Claude leads in multi‑file refactoring (78.8% success), Gemini in real‑time grounding.[^10_10][^10_19]
 
 
+<!-- section_id: "9057c4d8-fa57-4f63-b82b-981af1e1ac22" -->
 ### 2.2 Remote Deployment Patterns
 
 - Devs run these in **DevContainers/Docker** over Tailscale/VS Code Remote for phone/laptop sync.[^10_28][^10_29]
 - Syncthing proven for multi‑OS file meshes; Cursor/Claude work headless or via noVNC.[^10_30][^10_31][^10_28]
 
 
+<!-- section_id: "f8b868bc-0c26-4deb-8cae-9595a53d2f91" -->
 ## 3. Voice/Video AI Agents Research
 
 - **Realtime APIs** (OpenAI Realtime, LiveKit): Enable <2s voice loops with tools; used for CLI orchestration.[^10_32][^10_33]
@@ -866,6 +927,7 @@ This research compiles evidence supporting the proposed system's viability, draw
 - Empirical: Agents boost productivity 2x for debugging/editing when filesystem‑aware.[^10_12][^10_10]
 
 
+<!-- section_id: "1f879115-8613-4a7b-986d-96afe4c8dd0b" -->
 ## 4. Unreal 3D Streaming \& AI Control
 
 - **Pixel Streaming**: Epic's WebRTC solution; 1080p/30fps to browsers, <100ms lag with TURN.[^10_37][^10_38][^10_39]
@@ -873,6 +935,7 @@ This research compiles evidence supporting the proposed system's viability, draw
 - Multi‑user: Signaling servers handle concurrent sessions (user + AI).[^10_42][^10_43]
 
 
+<!-- section_id: "62651b5b-2c93-4c39-ad0e-153eb80f32ba" -->
 ## 5. Integration Feasibility
 
 - **Unified Stack**: Tailscale + Syncthing + MCP bridges CLI/agents/3D; devs sync AI chats/IDEs across devices.[^10_29][^10_1]
@@ -880,6 +943,7 @@ This research compiles evidence supporting the proposed system's viability, draw
 - **Gaps**: Dependency expansion in AI code (13x claimed); mitigate via constrained envs.[^10_11]
 
 
+<!-- section_id: "120347e1-bdd1-4400-a560-5092fd50cdf8" -->
 ## 6. Risks \& Evidence‑Based Mitigations
 
 | Risk | Evidence | Mitigation |
@@ -888,6 +952,7 @@ This research compiles evidence supporting the proposed system's viability, draw
 | Safety | MCP exploits noted [^10_44] | Allowlists, audits [^10_35] |
 | Reproducibility | AI code gaps [^10_11] | Containers, tests [^10_12] |
 
+<!-- section_id: "144239d5-54b9-4e53-812e-bcc683587151" -->
 ## 7. Conclusions \& Recommendations
 
 Research validates the 3‑step architecture as optimal: mature tools (CLI/MCP), proven remote patterns (Tailscale/Syncthing), reliable streaming (Pixel). Proceed with MVP; monitor MCP safety evolutions.[^10_6][^10_1][^10_2][^10_37]
@@ -988,12 +1053,15 @@ Research validates the 3‑step architecture as optimal: mature tools (CLI/MCP),
 
 # Project Planning Document: Remote AI Dev \& 3D System
 
+<!-- section_id: "6244bd4c-348e-4733-88d6-ded8ca6959a7" -->
 ## 1. Project Overview
 
+<!-- section_id: "9fd628af-613d-4ad5-b29a-5a81a6ddc811" -->
 ### 1.1 Objectives
 
 Build a phased remote system for CLI AI coding, voice/video orchestration, and shared 3D worlds per vision/reqs/research.
 
+<!-- section_id: "274df708-012b-45b2-ae92-53c2ae206a3f" -->
 ### 1.2 Timeline
 
 - **Total**: 8 weeks (MVP + full)
@@ -1007,8 +1075,10 @@ Build a phased remote system for CLI AI coding, voice/video orchestration, and s
 | Step 3 | Weeks 5‑7 | 3D Integration |
 | Polish | Week 8 | Testing/Optimize |
 
+<!-- section_id: "805df3c3-7e41-4c04-9337-4d90064039a8" -->
 ## 2. Detailed Tasks \& Schedule
 
+<!-- section_id: "0f248b5c-5749-4112-b19f-1a6ccfb61df0" -->
 ### Phase 0: Preparation (Days 1‑3)
 
 - [ ] Procure VPS (Ubuntu 24.04, 16GB RAM; GPU later)
@@ -1017,6 +1087,7 @@ Build a phased remote system for CLI AI coding, voice/video orchestration, and s
 - **Est. Effort**: 8 hours
 
 
+<!-- section_id: "4f9f07ef-5c07-435d-8533-a8d8d81158a5" -->
 ### Phase 1: Remote Coding Hub (Days 4‑10)
 
 | Task ID | Task | Dependencies | Owner | Effort |
@@ -1027,6 +1098,7 @@ Build a phased remote system for CLI AI coding, voice/video orchestration, and s
 | P1.4 | Test full workflow (edit→sync→run) | All | You | 2h |
 | **Demo**: Phone CLI + laptop Cursor [Day 10] |  |  |  |  |
 
+<!-- section_id: "265b4e78-ccf0-4cb1-a083-cd58eeae5677" -->
 ### Phase 2: Voice/Video Agents (Days 11‑24)
 
 | Task ID | Task | Dependencies | Owner | Effort |
@@ -1038,6 +1110,7 @@ Build a phased remote system for CLI AI coding, voice/video orchestration, and s
 | P2.5 | E2E: Voice "fix bug" → CLI run → verbal report | All | You | 4h |
 | **Demo**: Live voice orchestration [Day 24] |  |  |  |  |
 
+<!-- section_id: "18530d97-d7a0-4fab-86c0-eee84a4f2fdc" -->
 ### Phase 3: 3D Worlds (Days 25‑45)
 
 | Task ID | Task | Dependencies | Owner | Effort |
@@ -1049,6 +1122,7 @@ Build a phased remote system for CLI AI coding, voice/video orchestration, and s
 | P3.5 | Test multi‑session (you + AI) | P3.4 | You | 4h |
 | **Demo**: Voice‑driven 3D collab [Day 45] |  |  |  |  |
 
+<!-- section_id: "69c301f1-661d-42d7-89d6-36a83e66c9f2" -->
 ### Phase 4: Integration \& Polish (Days 46‑56)
 
 - [ ] Unified monitoring (Prometheus/Grafana)
@@ -1057,6 +1131,7 @@ Build a phased remote system for CLI AI coding, voice/video orchestration, and s
 - [ ] Documentation/scripts
 
 
+<!-- section_id: "718c5b90-1ce7-414b-a5e4-4da4d7c91cb7" -->
 ## 3. Resources
 
 - **Hardware**: VPS (\$20/mo), GPU (~\$100/mo)
@@ -1065,6 +1140,7 @@ Build a phased remote system for CLI AI coding, voice/video orchestration, and s
 - **Total Budget**: <\$300 initial
 
 
+<!-- section_id: "f1e06695-cf33-4c23-bb2c-d91b3a0470a3" -->
 ## 4. Risks \& Contingencies
 
 | Risk | Probability | Impact | Mitigation |
@@ -1074,12 +1150,14 @@ Build a phased remote system for CLI AI coding, voice/video orchestration, and s
 | Sync conflicts | Medium | Low | Git overlay on Syncthing |
 | API costs overrun | Low | Medium | Rate limits, caching |
 
+<!-- section_id: "d4c4d56f-6d09-4308-b9ee-1b1917cfefe9" -->
 ## 5. Success Metrics
 
 - **Quantitative**: 95% uptime, <150ms 3D latency, 80% voice command success
 - **Qualitative**: "Phone feels like full workstation"
 
 
+<!-- section_id: "c71f7bd1-67cd-4482-b630-59ce96f581e3" -->
 ## 6. Next Actions
 
 1. Day 1: Spin up VPS, join Tailscale
@@ -1092,6 +1170,7 @@ This plan delivers testable increments, minimizing integration risk.
 
 # System Design Document: Remote AI Dev \& 3D Hub
 
+<!-- section_id: "912b5d49-6641-4b09-a907-aec0cb1e6187" -->
 ## 1. High‑Level Design
 
 The system comprises a **central remote hub** (Linux server) orchestrating three layers: coding environment, voice agents, and 3D streaming. Devices connect thinly via Tailscale (networking) and WebRTC (media), with Syncthing ensuring filesystem unity.
@@ -1120,20 +1199,24 @@ The system comprises a **central remote hub** (Linux server) orchestrating three
 ```
 
 
+<!-- section_id: "84f202a8-8114-48d3-92d8-23e390af247d" -->
 ## 2. Components
 
+<!-- section_id: "f22078c0-445b-4e23-980b-a3b3336d9ffc" -->
 ### 2.1 Networking Layer
 
 - **Tailscale**: WireGuard‑based VPN; ACLs for SSH/VNC/HTTP.
 - **WebRTC**: STUN/TURN for voice/3D; signaling via simple Node.js server.
 
 
+<!-- section_id: "d1bb5d02-4a77-468a-8f91-207b33df7c12" -->
 ### 2.2 Shared Filesystem
 
 - **Syncthing**: P2P mesh; watched folders trigger CLI/agent hooks.
 - Constraints: Projects under `/shared/`; ignorelists for temp files.
 
 
+<!-- section_id: "c16f65cd-1f8e-4a0e-b06c-c922031c8823" -->
 ### 2.3 Coding Hub
 
 - **CLI Tools**: Dockerized (Claude Code, etc.); exposed via constrained shell.
@@ -1141,6 +1224,7 @@ The system comprises a **central remote hub** (Linux server) orchestrating three
 - API: Unix sockets for agent calls.
 
 
+<!-- section_id: "e28e3a98-d43b-47ce-b669-1364ad1bd35d" -->
 ### 2.4 Voice/Video Agents
 
 - **Stack**: LiveKit server + LLM (Claude/Gemini) via Realtime API.
@@ -1157,6 +1241,7 @@ The system comprises a **central remote hub** (Linux server) orchestrating three
 - Flow: Audio → STT → LLM (with tools) → TTS + exec → stream response.
 
 
+<!-- section_id: "58e70de1-bacb-433d-99f5-b9887f7d0989" -->
 ### 2.5 3D Layer
 
 - **Unreal**: Packaged app with Pixel Streaming plugin; Cirrus signaling.
@@ -1172,14 +1257,17 @@ UFUNCTION() void SpawnCube(FVector Loc);
 - Integration: Agent tools POST to `/api/world/{session}/action`.
 
 
+<!-- section_id: "3be84ab1-f58e-44b3-8f7c-88e9815b9c72" -->
 ## 3. Data Flows
 
+<!-- section_id: "85927af3-5a74-41f4-a650-7aad9f89ffd6" -->
 ### 3.1 User Coding Session
 
 1. Tailscale SSH → run `claude-code refactor foo.py`
 2. Edit saves to Syncthing → propagates everywhere
 3. Laptop opens Cursor Remote → sees live changes
 
+<!-- section_id: "df34517e-f443-4b1a-a46f-49a7a937b5be" -->
 ### 3.2 Voice Orchestration
 
 ```
@@ -1189,6 +1277,7 @@ User: "Debug the API" ──►
 ```
 
 
+<!-- section_id: "80c0ab58-4011-42d0-92d1-5f8eec986bd9" -->
 ### 3.3 3D Collaboration
 
 ```
@@ -1198,6 +1287,7 @@ User: "Spawn platform" ──►
 ```
 
 
+<!-- section_id: "708ad98f-b588-4c6f-b7d9-c3118da6fee3" -->
 ## 4. Interfaces
 
 | Client | Endpoint | Protocol |
@@ -1207,8 +1297,10 @@ User: "Spawn platform" ──►
 | Voice | `wss://100.x:8888` | WebRTC |
 | 3D | `https://100.x:80/stream` | Pixel Signaling |
 
+<!-- section_id: "a58a9f15-cdc5-45d9-afd1-3b45ec63d257" -->
 ## 5. Non‑Functional Design
 
+<!-- section_id: "60d2879c-adc8-4415-b8c7-81132e7f0054" -->
 ### 5.1 Security
 
 ```
@@ -1218,18 +1310,21 @@ Logs: All actions to ELK stack
 ```
 
 
+<!-- section_id: "f895ad0c-4a8b-487a-a5a5-9ffa72c24e56" -->
 ### 5.2 Scalability
 
 - Horizontal: Kubernetes for agents/Unreal instances
 - State: Redis for sessions; FS for persistence
 
 
+<!-- section_id: "8fd9827d-8b02-4e01-adc1-5014badb0ebb" -->
 ### 5.3 Reliability
 
 - Health checks: Each service `/healthz`
 - Fallbacks: Text if voice fails; local if remote down
 
 
+<!-- section_id: "005aa02f-932a-4ff3-b466-5951d479c088" -->
 ## 6. Deployment Diagram
 
 ```
@@ -1248,6 +1343,7 @@ GPU Node:
 ```
 
 
+<!-- section_id: "51bde2eb-6fef-4bfc-8501-35fc8a879fdb" -->
 ## 7. Trade‑offs
 
 | Choice | Pro | Con |
@@ -1262,6 +1358,7 @@ This design ensures modularity, with clear extension points for new tools/worlds
 
 # Architecture Document: Remote AI DevHub \& 3D Ecosystem
 
+<!-- section_id: "2daea856-cbdc-4e74-9dc4-3758805314bf" -->
 ## 1. System Overview
 
 The architecture centers on a **Remote Hub Server** acting as the single source of truth for compute, state, and execution. Thin clients (phone/laptop) connect via secure tunnels and streaming protocols. Key principles: modularity, shared state via filesystem, agentic AI via standardized tools.
@@ -1273,6 +1370,7 @@ The architecture centers on a **Remote Hub Server** acting as the single source 
 3. **Compute Layer**: CLI tools + agents + Unreal
 4. **Orchestration Layer**: Voice/video AI with cross‑layer tools
 
+<!-- section_id: "fe3a359d-2dc9-4b50-bf49-bceaad900019" -->
 ## 2. Core Components \& Interactions
 
 ```
@@ -1317,8 +1415,10 @@ The architecture centers on a **Remote Hub Server** acting as the single source 
 ```
 
 
+<!-- section_id: "1b505f6d-b295-46e5-8a57-43c4852e4b43" -->
 ## 3. Detailed Component Specs
 
+<!-- section_id: "2a67e46c-8fd9-4758-ac78-afae01bd9ca2" -->
 ### 3.1 Access Layer
 
 - **Tailscale**: Mesh VPN; users `100.64.x.x`; ACL: SSH/VNC/HTTP to services.
@@ -1326,6 +1426,7 @@ The architecture centers on a **Remote Hub Server** acting as the single source 
 - **Ports**: 22(SSH), 6901(VNC), 8888(WebRTC), 80/443(3D signaling).
 
 
+<!-- section_id: "65af8007-617b-45ed-8873-7a625642c170" -->
 ### 3.2 State Layer (Syncthing)
 
 ```
@@ -1340,6 +1441,7 @@ Root: /shared/projects/
 - Hooks: Post‑sync triggers for agent notifications.
 
 
+<!-- section_id: "e322db4a-0b3a-4b81-bcc5-5901cfa8ed5f" -->
 ### 3.3 Compute Layer
 
 - **CLI Container**:
@@ -1352,6 +1454,7 @@ Constrained via `bubblewrap` or `seccomp`.
 - **Cursor VNC**: `novnc + xfce4 + cursor --remote`.
 
 
+<!-- section_id: "05a19d0b-7dac-4d04-892a-9eb22c138f79" -->
 ### 3.4 Voice Agent
 
 ```
@@ -1364,6 +1467,7 @@ Speech Out               Exec Results
 - **Tool Bus**: gRPC or Redis pubsub for `run_cli`, `fs_*`, `world_*`.
 
 
+<!-- section_id: "a5ab5ca2-8a4b-47a2-8c67-caf44ceb6486" -->
 ### 3.5 3D Compute (GPU Node)
 
 - **Unreal Instance**: systemd service; one per session or pooled.
@@ -1371,8 +1475,10 @@ Speech Out               Exec Results
 - **Control Server**: Node.js + UE WebSocket plugin.
 
 
+<!-- section_id: "e40f05c8-86c2-45ab-b793-4ebb56fe4b12" -->
 ## 4. Protocols \& Data Models
 
+<!-- section_id: "715db583-6284-4bd6-a31e-5a95fe694990" -->
 ### 4.1 Agent Tool Schema (MCP‑inspired)
 
 ```json
@@ -1385,6 +1491,7 @@ Speech Out               Exec Results
 ```
 
 
+<!-- section_id: "c1b3dcd3-dd59-401a-9163-e68e49423282" -->
 ### 4.2 Session State
 
 ```
@@ -1397,8 +1504,10 @@ Redis Key: session:{user_id}
 ```
 
 
+<!-- section_id: "d9ec8680-461b-4782-adaf-e828b527d82f" -->
 ## 5. Deployment \& Runtime
 
+<!-- section_id: "8c3f3cfe-2cc3-45aa-9140-3b235993fca8" -->
 ### 5.1 Docker Compose (Hub)
 
 ```yaml
@@ -1416,12 +1525,14 @@ services:
 ```
 
 
+<!-- section_id: "07820b94-814b-4fa8-99b8-2d2f40e944d9" -->
 ### 5.2 Orchestration
 
 - **Static**: systemd + Docker Compose
 - **Scale**: Nomad/K8s for dynamic Unreal pods
 
 
+<!-- section_id: "7e1de147-38a4-41d6-bd14-dbf23b654e10" -->
 ## 6. Observability
 
 - **Metrics**: Prometheus (latency, tool calls/sec)
@@ -1429,6 +1540,7 @@ services:
 - **Traces**: Jaeger (voice→tool→exec)
 
 
+<!-- section_id: "0e38cbd7-539c-40ea-9be9-5cc68e956848" -->
 ## 7. Evolution Path
 
 ```
@@ -1441,12 +1553,14 @@ This architecture prioritizes **separation of concerns** (render vs control), **
 
 # Implementation Plan Document: Remote AI DevHub \& 3D System
 
+<!-- section_id: "88bab8ac-f011-439b-a013-b8c3afc4cabd" -->
 ## 1. Overview
 
 This plan provides **actionable, sequential instructions** to build the system per architecture/design docs. Each phase includes prerequisites, commands, verification steps, and rollback. Total: ~60 hours over 8 weeks, self‑executable.
 
 **Assumptions**: Ubuntu familiarity, API keys ready (Claude/Gemini), VPS access.
 
+<!-- section_id: "c46b341e-cf14-40df-9384-6b00f1ea2b90" -->
 ## 2. Prerequisites (Day 0, 2 hours)
 
 1. **Provision Servers**:
@@ -1476,8 +1590,10 @@ tailscale up --authkey=tskey-...
     - Share `/shared/projects` folder
     - Test: Create `test.txt` on phone → verify everywhere
 
+<!-- section_id: "146c33f6-4ec6-4f28-8342-512a6e7c5ba0" -->
 ## 3. Phase 1: Coding Hub (Days 1‑3, 12 hours)
 
+<!-- section_id: "ebd2db26-8e38-4d73-93d7-738d2bf2c57c" -->
 ### 3.1 Server Setup
 
 ```
@@ -1486,6 +1602,7 @@ systemctl enable docker
 ```
 
 
+<!-- section_id: "bdd68a44-a083-4e3b-9f7c-8d7a27416258" -->
 ### 3.2 CLI Tools (3 hours)
 
 ```
@@ -1507,6 +1624,7 @@ gemini --help
 ```
 
 
+<!-- section_id: "0b1b424f-281b-4f61-8b69-44e1bb58ec2d" -->
 ### 3.3 Remote Access (4 hours)
 
 ```
@@ -1531,8 +1649,10 @@ websockify --web /usr/share/novnc 6901 localhost:5901
 
 **Rollback**: `docker stop all; vncserver -kill :1`
 
+<!-- section_id: "d3537a2a-ca63-477d-87b8-97813c05e452" -->
 ## 4. Phase 2: Voice Agents (Days 4‑10, 20 hours)
 
+<!-- section_id: "ef582e0d-5602-430e-bff0-0315cb4491ab" -->
 ### 4.1 Backend (8 hours)
 
 ```
@@ -1559,6 +1679,7 @@ EOF
 ```
 
 
+<!-- section_id: "49366472-132b-49d7-91dd-7b6ee4be4c05" -->
 ### 4.2 Tools Implementation (6 hours)
 
 ```python
@@ -1574,6 +1695,7 @@ TOOLS = {
 ```
 
 
+<!-- section_id: "6f4cb58e-2147-4d58-944e-35a366f9bfc5" -->
 ### 4.3 Client App (4 hours)
 
 ```
@@ -1586,8 +1708,10 @@ TOOLS = {
 
 **Rollback**: `docker-compose down`
 
+<!-- section_id: "c927ee4b-b154-4bc6-8480-096f925531d6" -->
 ## 5. Phase 3: 3D Worlds (Days 11‑20, 24 hours)
 
+<!-- section_id: "6b98d8eb-3417-43d6-b415-e81e197bd57b" -->
 ### 5.1 GPU Node (4 hours)
 
 ```
@@ -1598,6 +1722,7 @@ livekit-server --config cirrus.yaml
 ```
 
 
+<!-- section_id: "b7780649-1d0b-4e63-84d2-748401d3c171" -->
 ### 5.2 Unreal Setup (12 hours)
 
 ```
@@ -1609,6 +1734,7 @@ livekit-server --config cirrus.yaml
 ```
 
 
+<!-- section_id: "f67e707a-3a4e-4674-903a-2eb280f57e3f" -->
 ### 5.3 Integration (6 hours)
 
 ```
@@ -1622,6 +1748,7 @@ TOOLS["world_spawn"] = lambda data: requests.post("ws://gpu:8080/action", json=d
 
 **Rollback**: Stop UE service
 
+<!-- section_id: "b3929c72-a491-4de2-a4f8-ca3cf3d4cab5" -->
 ## 6. Phase 4: Integration \& Go‑Live (Days 21‑28, 8 hours)
 
 ```
@@ -1635,6 +1762,7 @@ apt install prometheus node-exporter
 ```
 
 
+<!-- section_id: "d970e02a-f9c9-4646-8cce-6e6d8886a56d" -->
 ## 7. Maintenance
 
 - **Daily**: `tailscale status; syncthing status`
@@ -1642,6 +1770,7 @@ apt install prometheus node-exporter
 - **Upgrades**: Rolling Docker/UE updates
 
 
+<!-- section_id: "c6bb2386-f5cc-4b6d-95ee-470869552602" -->
 ## 8. Cost Tracking
 
 | Item | Monthly |
@@ -1657,12 +1786,15 @@ apt install prometheus node-exporter
 
 # Implementation Guide: Remote AI DevHub \& 3D System
 
+<!-- section_id: "d3e56a3f-e1f1-4adb-a77e-0377a04c41b2" -->
 ## 1. Purpose
 
 This **hands‑on guide** provides copy‑paste commands, configs, and troubleshooting for building from the implementation plan. Assumes Ubuntu server access and Tailscale running. Each section is self‑contained.
 
+<!-- section_id: "a75839d4-7a36-476c-a715-7e7020d0f1a4" -->
 ## 2. Phase 1: Coding Hub Setup
 
+<!-- section_id: "90ba8b13-24d1-4058-9db9-9787a6defd85" -->
 ### 2.1 Base Server Config
 
 ```bash
@@ -1679,6 +1811,7 @@ usermod -aG docker $USER
 ```
 
 
+<!-- section_id: "ae231fd4-1f6d-40b9-be5d-c1e6fdac81bc" -->
 ### 2.2 Syncthing
 
 ```bash
@@ -1693,6 +1826,7 @@ mkdir -p /shared/projects/test
 ```
 
 
+<!-- section_id: "6caec534-2059-497a-832c-8ac8ab32e7b2" -->
 ### 2.3 AI CLI Tools
 
 ```bash
@@ -1717,6 +1851,7 @@ claude-code "refactor this" test.py
 ```
 
 
+<!-- section_id: "2744f6eb-9f6b-4914-86c1-eae638b1fe4b" -->
 ### 2.4 Cursor + VNC
 
 ```bash
@@ -1739,8 +1874,10 @@ wget https://cursor.sh/download/cursor.deb && dpkg -i cursor.deb
 
 **Test**: Phone SSH `claude-code test.py`; edit in Cursor VNC; verify sync.
 
+<!-- section_id: "702a2d91-a7fb-42c3-85e8-de077987148f" -->
 ## 3. Phase 2: Voice Agents
 
+<!-- section_id: "2c81455d-9e88-4e5e-aa28-7089850d8466" -->
 ### 3.1 Docker Stack
 
 ```yaml
@@ -1778,6 +1915,7 @@ keys:
 ```
 
 
+<!-- section_id: "f43a2b34-b566-4b32-8c9e-e09794a2b6c6" -->
 ### 3.2 Agent Code (agent/Dockerfile + agent.py)
 
 ```dockerfile
@@ -1819,6 +1957,7 @@ async function handleVoice(roomName, participant) {
 ```
 
 
+<!-- section_id: "2c95fcd3-655c-4135-bf62-060045400fd4" -->
 ### 3.3 Client (voice.html)
 
 ```html
@@ -1843,8 +1982,10 @@ async function handleVoice(roomName, participant) {
 
 **Test**: Open voice.html → speak "list files" → hears response.
 
+<!-- section_id: "2519e847-5399-4187-a50c-3553f0fe5dff" -->
 ## 4. Phase 3: 3D (GPU Node)
 
+<!-- section_id: "0142901c-a3f6-408b-bbbd-10e9d2eba1e9" -->
 ### 4.1 Quickstart on RunPod
 
 ```
@@ -1858,6 +1999,7 @@ systemd service for UnrealApp.exe
 ```
 
 
+<!-- section_id: "b6d0c5f2-f162-47eb-87c1-94280ec817d2" -->
 ### 4.2 Control API
 
 ```javascript
@@ -1878,6 +2020,7 @@ wss.on('connection', (ws) => {
 
 **Integrate**: Add to agent tools.
 
+<!-- section_id: "542b3f83-65b5-4ed9-ad0c-6db2fdd6a552" -->
 ## 5. Troubleshooting
 
 | Issue | Fix |
@@ -1887,6 +2030,7 @@ wss.on('connection', (ws) => {
 | VNC blank | `vncserver -kill :1; ./start-vnc.sh` |
 | Voice silent | `docker logs agent; check API keys` |
 
+<!-- section_id: "db9c26a0-bc43-4970-b6bd-802300b383c3" -->
 ## 6. Go‑Live Checklist
 
 - [ ] All verifies pass

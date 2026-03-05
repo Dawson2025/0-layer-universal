@@ -9,6 +9,7 @@ resource_name: "US-02_researcher_works_in_stages"
 **I want to** progress through stages (01 request gathering → 02 research → 04 design → ... → 10 current product) within my research entity,
 **So that** my exploratory work follows a repeatable, structured process that produces traceable deliverables at each phase.
 
+<!-- section_id: "def53ba8-7e95-4dc6-9042-7905ba85e269" -->
 ## Acceptance Criteria
 
 **Scenario 1: Stage agent provides methodology on entry**

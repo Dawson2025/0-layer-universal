@@ -9,6 +9,7 @@ resource_name: "US-02_developer_reads_one_guide"
 **I want to** read a single, self-contained guide that explains the pattern,
 **So that** I understand the organizational structure without needing to read dozens of files scattered across the repository.
 
+<!-- section_id: "5d9938ed-3f3c-48c0-8e35-2efcafbcca1a" -->
 ## Acceptance Criteria
 
 **Scenario 1: Single document covers the core pattern**

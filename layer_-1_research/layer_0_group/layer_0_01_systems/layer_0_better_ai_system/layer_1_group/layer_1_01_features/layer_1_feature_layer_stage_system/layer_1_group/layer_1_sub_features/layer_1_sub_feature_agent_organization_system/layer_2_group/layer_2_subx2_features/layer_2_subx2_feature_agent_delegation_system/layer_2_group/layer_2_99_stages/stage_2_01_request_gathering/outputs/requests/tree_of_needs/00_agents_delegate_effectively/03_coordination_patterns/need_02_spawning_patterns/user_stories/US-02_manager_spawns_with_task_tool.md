@@ -13,6 +13,7 @@ resource_name: "US-02_manager_spawns_with_task_tool"
 **I want** the manager to use a standard prompt template when spawning agents via the Task tool,
 **So that** every spawned agent receives the same reliable starting point regardless of which stage it targets.
 
+<!-- section_id: "1e53dbdc-a6c4-460a-a648-5d1d1ae67a5b" -->
 ### What Happens
 
 1. User tells the AI to work on a specific stage
@@ -21,6 +22,7 @@ resource_name: "US-02_manager_spawns_with_task_tool"
 4. Task tool spawns a stage agent with the template context
 5. Stage agent reads its 0AGNOSTIC.md and begins work -- no ad-hoc instructions needed
 
+<!-- section_id: "4de5f7e7-7946-44e1-b83c-914f7360c3dc" -->
 ### Acceptance Criteria
 
 - Standard prompt template exists for Task tool agent spawning

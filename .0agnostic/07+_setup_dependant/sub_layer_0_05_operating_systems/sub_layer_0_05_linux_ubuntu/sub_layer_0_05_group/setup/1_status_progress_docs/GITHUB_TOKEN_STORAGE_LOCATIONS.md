@@ -5,12 +5,15 @@ resource_name: "GITHUB_TOKEN_STORAGE_LOCATIONS"
 ---
 # GitHub Token Storage Locations
 
+<!-- section_id: "fef06e56-2e72-4ade-9529-95bef5f24746" -->
 ## Overview
 
 This document tracks where GitHub Personal Access Tokens are stored for the pac20026_fall2025 repository and provides quick reference for future access.
 
+<!-- section_id: "331a6f06-02d5-48bf-8b8b-efe310b6e8ec" -->
 ## Primary Storage Location (Preferred)
 
+<!-- section_id: "1ced93cd-6b49-44c8-8b4c-97f937ccee0d" -->
 ### Org-scoped credential helper + local PAT file
 
 **Goal**: Store a PAT for a single SSO-protected org (e.g., `byui-math-dept`) without using `~/.git-credentials` and without embedding tokens in remotes.
@@ -26,8 +29,10 @@ This document tracks where GitHub Personal Access Tokens are stored for the pac2
 git config --global credential.useHttpPath true
 ```
 
+<!-- section_id: "708d6ac0-3e12-4ce2-84f5-4086491bc796" -->
 ## Secondary Documentation Location
 
+<!-- section_id: "a0f8745d-71fc-4e56-8173-ca1eacb519c4" -->
 ### Repository Reference File
 
 **Location**: `/home/dawson/code/pac20026_fall2025/GITHUB_TOKEN_INFO.md`
@@ -42,17 +47,20 @@ git config --global credential.useHttpPath true
 - Added to `.gitignore` to prevent accidental commits
 - Local file only (never committed to repository)
 
+<!-- section_id: "187597fe-1778-406c-a637-2bff5d953415" -->
 ## GitHub Web Interface (Token Management)
 
 **Token Management**: https://github.com/settings/tokens  
 **Token ID / Value**: Do not store token IDs or token values in committed docs.
 
+<!-- section_id: "eb1a9a2c-9d23-4969-9672-5d8453e04a10" -->
 ### Token Details (example fields to track locally)
 - **Scopes**: `repo` (minimum for private repo access)
 - **Expires**: `<date>` or `No expiration` (per org policy)
 - **SSO Authorized**: ✅ (must be explicitly authorized)
 - **Status**: Active
 
+<!-- section_id: "bc31895e-585e-4f88-81e3-ef327659d09a" -->
 ## Universal Documentation (Source of Truth)
 
 **Complete Setup Guide**: 
@@ -67,13 +75,16 @@ Contains:
 - Browser automation examples
 - BYU-Idaho specific notes
 
+<!-- section_id: "214fb493-be57-40ae-8064-d5692082a084" -->
 ## Quick Reference Commands
 
+<!-- section_id: "30755114-a783-4dd7-b11f-9b4365ba2dbf" -->
 ### Check Token File Permissions
 ```bash
 ls -la ~/.config/git/pats/byui-math-dept.pat
 ```
 
+<!-- section_id: "3b6ea41e-ea0d-4849-b00c-4f6ab66bc140" -->
 ### Test Repository Access
 ```bash
 cd /home/dawson/code/pac20026_fall2025
@@ -81,14 +92,17 @@ git status
 git pull
 ```
 
+<!-- section_id: "04946a9c-7480-4736-9973-3918c91c69a5" -->
 ### View Git Configuration
 ```bash
 git config --global --get-all credential.helper
 git config --global credential.useHttpPath
 ```
 
+<!-- section_id: "8039ad42-81e0-49da-b61e-2ddcce0dcea8" -->
 ## Repository Configuration
 
+<!-- section_id: "9f737bc8-84f2-4329-a625-c7e3f7732ebb" -->
 ### pac20026_fall2025
 
 - **Local Path**: `/home/dawson/code/pac20026_fall2025`
@@ -97,6 +111,7 @@ git config --global credential.useHttpPath
 - **Organization**: byui-math-dept (SSO-protected)
 - **Status**: ✅ Fully accessible
 
+<!-- section_id: "8012256d-e09f-4191-9f6d-6a4091f8a0b6" -->
 ## Browser Session
 
 **MCP Browser**: cursor-browser-extension  
@@ -104,8 +119,10 @@ git config --global credential.useHttpPath
 **Location**: https://github.com/settings/tokens  
 **Session**: Persistent across AI chat sessions
 
+<!-- section_id: "b455a085-5b96-412a-bbdc-27d869f5ee03" -->
 ## Security Best Practices
 
+<!-- section_id: "8ee247f6-567c-4ef3-8d76-aece60ddf556" -->
 ### ✅ Do:
 - Keep token in a local file with `600` permissions (or an OS-native credential manager)
 - Add token documentation to `.gitignore`
@@ -113,6 +130,7 @@ git config --global credential.useHttpPath
 - Authorize token for SSO immediately after creation
 - Document token expiration date
 
+<!-- section_id: "e5931d53-835b-49d6-92b5-3604fa53f1a4" -->
 ### ❌ Don't:
 - Commit token to any repository
 - Share token publicly
@@ -120,6 +138,7 @@ git config --global credential.useHttpPath
 - Store token in unprotected files
 - Forget to authorize for SSO
 
+<!-- section_id: "5cb510c6-3e7b-4320-87f1-5adbaa421a30" -->
 ## Token Renewal Process
 
 When token expires (December 11, 2025):
@@ -134,6 +153,7 @@ When token expires (December 11, 2025):
    ```
 5. Test with `git fetch`
 
+<!-- section_id: "8847cc56-8046-435e-95ae-e0795d5f9e4e" -->
 ## Verification Checklist
 
 ✅ Token stored in `~/.git-credentials`  
@@ -145,6 +165,7 @@ When token expires (December 11, 2025):
 ✅ Documentation file created and ignored  
 ✅ Browser session authenticated and persistent
 
+<!-- section_id: "6b0c236b-125e-4279-8c7c-3ac729922573" -->
 ## Status
 
 - **Setup Date**: November 11, 2025

@@ -7,6 +7,7 @@ resource_name: "USAGE_GUIDE"
 
 This directory now follows the Layer + Stage framework (layers: universal/project/feature/component; stages: request_gathering → research → instructions → planning → design → development → testing → criticism → fixing → current_product → archives). Each layer has `layer_<N>_01_ai_manager_system/`, `layer_<N>_02_manager_handoff_documents/layer_<N>_00_to_universal|layer_<N>_01_to_specific/`, sub-layers under `layer_<N>_0X_sub_layers/sub_layer_<N>_XX_*`, and stages under `layer_<N>_99_stages/stage_<N>_XX_*` (each with `hand_off_documents/` and `ai_agent_system/`). Legacy `trickle_down_*` references remain below for historical context; prefer the layer paths for new work.
 
+<!-- section_id: "de9cb5e1-07c2-4e3b-854b-fc19d546b29f" -->
 ## 🎯 Quick Start
 
 1. **Copy the `0_layer_universal/` directory** to your project root (or desired location) if you need to vendor the framework
@@ -14,10 +15,12 @@ This directory now follows the Layer + Stage framework (layers: universal/projec
 3. **Add project-specific documentation** as needed
 4. **Update file paths** to match your project structure
 
+<!-- section_id: "1e6c22f2-6419-4ac0-a15a-3cbc83d9fdbd" -->
 ## 🏗️ Working with the AI Manager Hierarchy
 
 This system implements the **AI Manager Hierarchy System** - an Agent OS architecture for coordinating AI work across layers and stages.
 
+<!-- section_id: "9c9e05b9-c48d-439c-bb78-a4437b0067df" -->
 ### Understanding the Hierarchy
 
 **Layers (Abstraction Levels):**
@@ -46,6 +49,7 @@ Each layer moves work through stages:
 - Each handoff contains: task, constraints, artifacts, subtasks, results, status
 - Location: `hand_off_documents/incoming.json` and `outgoing.json` in each stage
 
+<!-- section_id: "374c2655-b57a-42a0-a58d-7f4fdd01d780" -->
 ### Which Docs to Read First
 
 **For AI Agents Starting Work:**
@@ -62,6 +66,7 @@ Each layer moves work through stages:
 - **Parallel work**: Read `parallel_execution.md`
 - **Production deployment**: Read `production_deployment.md`, `observability_and_logging.md`, `safety_and_governance.md`
 
+<!-- section_id: "124bbcf9-2a94-4b94-b0a7-b054aeb4a2d2" -->
 ### Which Layers/Stages to Touch
 
 **When to work at each layer:**
@@ -77,6 +82,7 @@ Each layer moves work through stages:
 - Always pass through `testing` and `criticism` before completing
 - End in `archiving` to document completed work
 
+<!-- section_id: "3be08f40-e1dd-457f-a4e8-dbbb4d77ecd0" -->
 ### Handoff Documents
 
 **Structure:**
@@ -104,6 +110,7 @@ Each layer moves work through stages:
 **For detailed handoff specification:**
 See `layer_0/layer_0_02_manager_handoff_documents/layer_0_00_to_universal/handoff_schema.md`
 
+<!-- section_id: "f0da42f2-5d27-441c-bd04-113bc2d58d2b" -->
 ### Tool Selection by Layer/Stage
 
 - **L0-L2 Managers**: Claude Code (deep reasoning, cascading CLAUDE.md)
@@ -112,13 +119,16 @@ See `layer_0/layer_0_02_manager_handoff_documents/layer_0_00_to_universal/handof
 - **Criticism**: Claude Code (multi-file review, complex reasoning)
 - **Interactive debugging**: Cursor IDE (human-in-the-loop)
 
+<!-- section_id: "92a126b0-ebf9-42d2-8661-1fa946324b11" -->
 ### More Information
 
 - **Complete Hierarchy Docs**: [`-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/`](-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/)
 - **Master Index**: [MASTER_DOCUMENTATION_INDEX.md](MASTER_DOCUMENTATION_INDEX.md#-canonical-agent-os-architecture---ai-manager-hierarchy-system)
 
+<!-- section_id: "8e5e0cd3-fa01-4164-a0b2-5f3f7453415a" -->
 ## 📋 Step-by-Step Setup
 
+<!-- section_id: "18f9c29b-2e4a-4633-b614-35add87c2d82" -->
 ### Step 1: Copy to Your Project
 
 ```bash
@@ -129,6 +139,7 @@ cp -r /path/to/0_layer_universal/0_context /path/to/your/project/docs/
 cp -r /path/to/0_layer_universal/0_context /path/to/your/project/
 ```
 
+<!-- section_id: "7a7b3207-9444-48fc-a25d-ae056492f603" -->
 ### Step 2: Customize Core Prompt
 
 Edit `0_basic_prompts_throughout/what_to_do_next.md`:
@@ -158,6 +169,7 @@ Edit `0_basic_prompts_throughout/what_to_do_next.md`:
    - Specify target platform
    - Mention next milestone
 
+<!-- section_id: "f1948c30-85e9-469e-b19a-fa3cffbaabaa" -->
 ### Step 3: Add Project-Specific Documentation
 
 Create or update files in these directories as needed:
@@ -182,6 +194,7 @@ Create or update files in these directories as needed:
 - Add implementation guides
 - Create component documentation
 
+<!-- section_id: "8602c137-c7a0-4a52-a2da-6b8519c5775a" -->
 ### Step 4: Update References
 
 Search for and update these common patterns:
@@ -190,13 +203,16 @@ Search for and update these common patterns:
 2. **Project names**: Update any hardcoded project names
 3. **Technology references**: Update technology stack references if different
 
+<!-- section_id: "74c4b007-62d7-4d8f-81ca-0e005c021475" -->
 ## 📁 Directory Structure Overview
 
+<!-- section_id: "ef2409d7-e09c-4608-a395-44c9e214654a" -->
 ### Universal Directories (Keep As-Is)
 - `trickle_down_0_universal/`: Universal AI agent instructions
 - `trickle_down_0.5_setup/`: Setup and configuration (customize as needed)
 - `trickle_down_0.75_universal_tools/`: Universal tools documentation
 
+<!-- section_id: "12acf433-9b2b-4bbb-9061-2b77b2a88628" -->
 ### Project-Specific Directories (Customize)
 - `trickle_down_1_project/`: Your project's specific documentation
 - `trickle_down_1.5_project_tools/`: Your project's tools
@@ -205,8 +221,10 @@ Search for and update these common patterns:
 - `trickle_down_3_components/`: Component documentation
 - `trickle_down_3_testing/`: Testing documentation
 
+<!-- section_id: "05b453ab-4efe-4390-9d46-156d4e613145" -->
 ## 🎨 Customization Examples
 
+<!-- section_id: "62262e4f-d53b-4c47-800d-12a3a20fc3d2" -->
 ### Example 1: React/Node.js Project
 
 ```markdown
@@ -217,6 +235,7 @@ Search for and update these common patterns:
 - **Deployment**: Vercel (frontend), Railway (backend)
 ```
 
+<!-- section_id: "fa562675-63d2-4055-8864-f484b5ae5998" -->
 ### Example 2: Python Django Project
 
 ```markdown
@@ -227,6 +246,7 @@ Search for and update these common patterns:
 - **Deployment**: Docker + AWS/GCP
 ```
 
+<!-- section_id: "74833ac4-01c5-47a1-bc5d-0d55cc473e8c" -->
 ### Example 3: Mobile App Project
 
 ```markdown
@@ -237,8 +257,10 @@ Search for and update these common patterns:
 - **Deployment**: App Store + Google Play
 ```
 
+<!-- section_id: "ef98ec2c-1d0e-4047-be6c-6114ec2a2651" -->
 ## 📝 Documentation Organization
 
+<!-- section_id: "2e5eae39-751f-4ec0-9c14-aa8d37545c5f" -->
 ### Follow the Trickle-Down Pattern
 
 1. **0_instruction_docs/**: How-to guides, procedures, specifications
@@ -246,6 +268,7 @@ Search for and update these common patterns:
 3. **2_archive_docs/**: Completed work, resolutions, historical records
 4. **2_testing_docs/**: Testing documentation, test results
 
+<!-- section_id: "65d5656c-6588-40cc-a09f-3b21ff9cb5de" -->
 ### Naming Conventions
 
 Use this pattern for dated documentation:
@@ -253,8 +276,10 @@ Use this pattern for dated documentation:
 - `DESCRIPTION_DATE.md` for major milestones
 - `CATEGORY_description.md` for category-specific docs
 
+<!-- section_id: "6fd51be9-a408-4d02-be60-0969b6b18e0d" -->
 ## ⚙️ Important Files to Know
 
+<!-- section_id: "51b49145-03fa-44ce-8e4a-41dfb5c4fca5" -->
 ### Critical Files (Update These First)
 
 1. **`0_basic_prompts_throughout/what_to_do_next.md`**
@@ -268,6 +293,7 @@ Use this pattern for dated documentation:
    - Comprehensive index of all documentation
    - Update when adding new documentation
 
+<!-- section_id: "ba6670b1-60cd-477f-90a1-e3b36ffc57ea" -->
 ### Reference Files (Review and Adapt)
 
 1. **`TERMINAL_HANGING_FIX.md`**
@@ -278,8 +304,10 @@ Use this pattern for dated documentation:
    - Cursor IDE terminal issues
    - Universal reference
 
+<!-- section_id: "a254a21e-4da0-4faf-8e53-f180f726f316" -->
 ## 🚀 Using with AI Agents
 
+<!-- section_id: "80e703ef-54c1-4bcb-a527-edb177ae7178" -->
 ### For Claude/ChatGPT/Cursor AI:
 
 Point the AI to this directory:
@@ -293,6 +321,7 @@ The AI will:
 3. Use universal instructions when appropriate
 4. Apply project-specific documentation when available
 
+<!-- section_id: "bcc25715-2fb5-4b2c-96a3-0d7dff14c035" -->
 ### For Multiple AI Agents:
 
 This system is designed to work with:
@@ -302,8 +331,10 @@ This system is designed to work with:
 - **GitHub Copilot**
 - Other MCP-compatible agents
 
+<!-- section_id: "213e32db-c771-4c1b-9230-b65ddd4f15d0" -->
 ## 🔧 Advanced Customization
 
+<!-- section_id: "71407611-3ecb-42b0-910f-e979bb2a09cd" -->
 ### Adding New Trickle-Down Levels
 
 If you need additional organization levels:
@@ -315,6 +346,7 @@ If you need additional organization levels:
    - `2_archive_docs/`
 3. Update `MASTER_DOCUMENTATION_INDEX.md`
 
+<!-- section_id: "1c5d39c0-679a-43bf-8463-84080006f6d8" -->
 ### Creating Project-Specific Tools
 
 Document custom tools in:
@@ -326,6 +358,7 @@ Include:
 - Configuration guides
 - Troubleshooting
 
+<!-- section_id: "582f09c4-2eac-49dd-9531-b2e9aff44f2a" -->
 ## 📚 Best Practices
 
 1. **Always update `what_to_do_next.md`** for each project
@@ -334,6 +367,7 @@ Include:
 4. **Document testing** in `2_testing_docs/` or `trickle_down_3_testing/`
 5. **Maintain the index** in `MASTER_DOCUMENTATION_INDEX.md`
 
+<!-- section_id: "8cbfcd06-bca8-4b63-84d2-88c894cc614e" -->
 ## ⚠️ Common Pitfalls
 
 1. **Don't hardcode project paths** - Use relative paths or environment variables
@@ -341,6 +375,7 @@ Include:
 3. **Don't skip the customization step** - Generic docs won't help without customization
 4. **Don't ignore the master index** - Keep it updated as you add documentation
 
+<!-- section_id: "27f62024-9d48-4eb3-b769-cf29aa59378d" -->
 ## 🎯 Next Steps
 
 1. ✅ Copy `0_context` to your project

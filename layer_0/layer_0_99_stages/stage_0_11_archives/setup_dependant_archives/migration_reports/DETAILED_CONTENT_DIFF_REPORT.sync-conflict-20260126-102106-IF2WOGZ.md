@@ -8,6 +8,7 @@ resource_name: "DETAILED_CONTENT_DIFF_REPORT.sync-conflict-20260126-102106-IF2WO
 Source: commit d64c065 (original standalone sublayers)
 Target: current hierarchy under 0.01_universal_setup_file_tree_0
 
+<!-- section_id: "e10e3376-0fc0-41a4-8f45-945c6c644653" -->
 ## Summary
 - exact_match: 40
 - mapped_diff: 3
@@ -18,6 +19,7 @@ Notes:
 - `normalized_match` means content matches after normalizing line endings.
 - `no_match` entries are preserved under `legacy_sublayer_readmes/` so their instructions are not lost.
 
+<!-- section_id: "7298b06e-4e86-495d-a255-6a041a72172f" -->
 ## Non-exact Matches
 - 0_context/layer_0/0.02_sub_layers/sub_layer_0_06_coding_app_setup/README.md
   - status: no_match

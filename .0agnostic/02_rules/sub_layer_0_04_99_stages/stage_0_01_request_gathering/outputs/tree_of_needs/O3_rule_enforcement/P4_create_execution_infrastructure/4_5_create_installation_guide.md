@@ -5,10 +5,12 @@ resource_name: "4_5_create_installation_guide"
 ---
 # 4.5: Create Installation Guide
 
+<!-- section_id: "81673313-3d40-4eeb-bcbf-9258ebd22829" -->
 ## Requirement
 
 Create comprehensive installation and setup documentation for users.
 
+<!-- section_id: "f5c95733-e86e-4f39-bc9f-0e9e25da36a2" -->
 ## Acceptance Criteria
 
 - [ ] Step-by-step installation instructions
@@ -19,15 +21,18 @@ Create comprehensive installation and setup documentation for users.
 - [ ] Installation takes < 5 minutes
 - [ ] Guide is tested with new users
 
+<!-- section_id: "4883a0a4-112f-47d2-a9ba-15a1f890cbf9" -->
 ## Owner Stage
 
 - **Documentation**: Stage 0_10_current_product
 
+<!-- section_id: "bd440596-8734-49d2-be82-73595f3a253c" -->
 ## Dependencies
 
 - Requires: 4.1-4.4 (all components built)
 - Enables: Users can start using system
 
+<!-- section_id: "aca1d68e-969b-4caa-94ee-df608fe1516d" -->
 ## Navigation
 
 - **Parent need**: `PARENT_NEED_P4.md`

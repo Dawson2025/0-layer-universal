@@ -9,12 +9,15 @@ resource_name: "BROWSER_MCP_SETUP_EXPERIENCE"
 **Location**: Universal Layer → MCP Servers and Tools Setup  
 **Status**: Documenting ongoing experience and lessons learned
 
+<!-- section_id: "2da177c1-cff1-4174-b51f-98441f6c78ae" -->
 ## Executive Summary
 
 This document captures our experience setting up and troubleshooting browser MCP servers in Cursor IDE on Linux/Ubuntu. It covers Playwright MCP, browser MCP (`@agent-infra/mcp-server-browser`), and Cursor's native browser automation (`cursor-browser-extension`).
 
+<!-- section_id: "a7c2be97-f9bc-4171-882e-7827609fe0dd" -->
 ## Current Status (2025-12-02)
 
+<!-- section_id: "c71bedcb-a37b-4e97-9d33-f968dad89762" -->
 ### MCP Servers Configured
 
 **Location**: `~/.gemini/settings.json`
@@ -57,6 +60,7 @@ This document captures our experience setting up and troubleshooting browser MCP
 }
 ```
 
+<!-- section_id: "2b1a1c01-e6fe-41bb-97a0-62d57db92699" -->
 ### Tool Availability
 
 **Available Tools** (as of 2025-12-02):
@@ -69,8 +73,10 @@ This document captures our experience setting up and troubleshooting browser MCP
 - Prefix matches the MCP server name in config
 - Cursor's browser extension uses `mcp_cursor-browser-extension_*`
 
+<!-- section_id: "707ed124-afba-4545-ae3a-0e1f35427c2f" -->
 ## Key Lessons Learned
 
+<!-- section_id: "bb30e3de-2468-45e7-bc48-adf97ad3b97d" -->
 ### Lesson 1: Linux/Ubuntu Has Platform-Specific MCP Issues
 
 **Critical Finding**: Linux/Ubuntu systems experience unique challenges with MCP servers in Cursor IDE that don't occur on Windows or macOS.
@@ -89,6 +95,7 @@ This document captures our experience setting up and troubleshooting browser MCP
 
 **Recommendation**: Always test MCP configurations on Linux separately from Windows/macOS documentation.
 
+<!-- section_id: "7e39fe3f-97c9-46af-b6df-69a398b89eff" -->
 ### Lesson 2: MCP Servers Need Environment Variables (Critical Fix - 2025-12-05)
 
 **Problem**: Browser MCP servers on Linux (and all platforms) fail with "Browser specified in your config is not installed" even when browsers are installed. This problem keeps recurring because browsers appear to need constant reinstallation.
@@ -136,6 +143,7 @@ This document captures our experience setting up and troubleshooting browser MCP
 - Using `--executable-path` with explicit browser paths can work, but environment variables are more reliable
 - The environment variable approach works for all Playwright-installed browsers automatically
 
+<!-- section_id: "ce8e22cd-13ce-4dac-a894-bc1e4a2fbd61" -->
 ### Lesson 3: Playwright MCP vs Browser MCP vs Cursor Browser Extension
 
 **Three Different Browser Automation Options**:
@@ -160,6 +168,7 @@ This document captures our experience setting up and troubleshooting browser MCP
 
 **Recommendation**: Use Playwright MCP or Browser MCP on Linux. Avoid `cursor-browser-extension` until Linux support improves.
 
+<!-- section_id: "56495fe0-9e6e-4bc7-8df0-012ed26d53a2" -->
 ### Lesson 4: Tool Naming Conventions Are Inconsistent
 
 **Observation**: Different MCP servers use different naming conventions:
@@ -172,6 +181,7 @@ This document captures our experience setting up and troubleshooting browser MCP
 - Don't assume naming conventions
 - Use `list_mcp_resources` or check Cursor's MCP settings to see available tools
 
+<!-- section_id: "b6873d19-8ea4-44fd-875f-21877965b20b" -->
 ### Lesson 4: "Browser Not Installed" Error Is Misleading
 
 **Problem**: Error message "Browser specified in your config is not installed" appears even when:
@@ -193,6 +203,7 @@ This document captures our experience setting up and troubleshooting browser MCP
 4. Verify MCP config syntax: `cat ~/.cursor/mcp.json | jq`
 5. Check MCP logs: `tail -f ~/.config/Cursor/logs/*/window*/exthost/anysphere.cursor-mcp/*.log`
 
+<!-- section_id: "000c24d3-1bc6-421d-b0e8-cf0763c02d14" -->
 ### Lesson 5: Cursor Browser Extension Requires Chrome Extension
 
 **Discovery**: The `cursor-browser-extension` MCP server requires a Chrome extension to function, regardless of browser path configuration.
@@ -207,6 +218,7 @@ This document captures our experience setting up and troubleshooting browser MCP
 - Install community-developed Cursor MCP extension (not officially supported)
 - Wait for official Linux support
 
+<!-- section_id: "63892db1-2517-4bd6-b068-7094e6a5156d" -->
 ### Lesson 6: Multiple MCP Servers Can Coexist
 
 **Finding**: Multiple browser MCP servers can be configured simultaneously:
@@ -222,8 +234,10 @@ This document captures our experience setting up and troubleshooting browser MCP
 
 **Best Practice**: Configure the server(s) you need. Don't configure unused servers.
 
+<!-- section_id: "f51be6d8-8f4f-4390-b4ca-2cb60573348e" -->
 ## Configuration Best Practices
 
+<!-- section_id: "21932009-7a8f-4a69-9dbd-e3f61349ad22" -->
 ### For Linux/Ubuntu
 
 1. **Always Use Explicit Paths**:
@@ -255,6 +269,7 @@ This document captures our experience setting up and troubleshooting browser MCP
    - Check Cursor Settings → Features → Model Context Protocol
    - Verify tools appear in available tools list
 
+<!-- section_id: "4113487f-4048-4297-8f69-ebd68df3d24d" -->
 ### For macOS/Windows
 
 1. **May Work with Default Paths**:
@@ -266,8 +281,10 @@ This document captures our experience setting up and troubleshooting browser MCP
    - Explicit paths for reliability
    - Playwright browser installation for consistency
 
+<!-- section_id: "2db5ad7e-c5fd-4fc1-96f6-0261e12d01d8" -->
 ## Troubleshooting Guide
 
+<!-- section_id: "8ad8b5e7-fe27-487b-b0d5-f91db7a5935b" -->
 ### Issue: "Browser specified in your config is not installed" (FIXED - 2025-12-05)
 
 **Root Cause**: MCP servers can't find browsers because `PLAYWRIGHT_BROWSERS_PATH` environment variable isn't set.
@@ -301,6 +318,7 @@ This document captures our experience setting up and troubleshooting browser MCP
 4. Restart Cursor IDE
 5. (Optional) Use explicit path as backup: `--executable-path /absolute/path/to/browser`
 
+<!-- section_id: "de5b89b3-77df-4ea8-93f1-f2e4b81219e5" -->
 ### Issue: "No server info found" (cursor-browser-extension)
 
 **Cause**: Chrome extension not installed
@@ -310,6 +328,7 @@ This document captures our experience setting up and troubleshooting browser MCP
 2. Use Playwright MCP or Browser MCP instead
 3. Check if native browser automation works (separate from MCP)
 
+<!-- section_id: "f22ffbbc-2dd8-4f44-b248-e3dab95aaf67" -->
 ### Issue: Tools Not Available
 
 **Checklist**:
@@ -325,8 +344,10 @@ This document captures our experience setting up and troubleshooting browser MCP
 3. Verify server name matches tool prefix
 4. Try different MCP server (Playwright vs Browser vs Extension)
 
+<!-- section_id: "860c68ca-8a65-4273-9f5f-e6cfa9b81cd7" -->
 ## Testing Results
 
+<!-- section_id: "6c39c221-b9ea-4090-bf86-2fdbae7f8e7d" -->
 ### Test 1: Browser MCP Navigation (2025-12-02)
 
 **Command**: `mcp_browser_browser_navigate("https://example.com")`
@@ -341,6 +362,7 @@ This document captures our experience setting up and troubleshooting browser MCP
 
 **Status**: ⚠️ Needs further investigation
 
+<!-- section_id: "459f8165-7bcc-443e-91f4-4af7da0bfbbb" -->
 ### Test 2: Browser MCP Get Text (2025-12-02)
 
 **Command**: `mcp_browser_browser_get_text()`
@@ -351,6 +373,7 @@ This document captures our experience setting up and troubleshooting browser MCP
 
 **Status**: ⚠️ Depends on navigation working
 
+<!-- section_id: "29031c91-b423-4f9c-bab0-f66d631111d9" -->
 ### Test 3: Browser MCP Close (2025-12-02)
 
 **Command**: `mcp_browser_browser_close()`
@@ -361,6 +384,7 @@ This document captures our experience setting up and troubleshooting browser MCP
 
 **Status**: ✅ Tool is functional
 
+<!-- section_id: "2ee3f2c7-71ca-4292-801e-40dc0d7b7a73" -->
 ### Test 4: Cursor Browser Extension Tools (2025-12-02)
 
 **Commands Tested**:
@@ -377,6 +401,7 @@ This document captures our experience setting up and troubleshooting browser MCP
 
 **Status**: ⚠️ All browser MCP tools currently non-functional on this Linux system
 
+<!-- section_id: "35f51313-1995-4d3f-a71b-b2a3bb831ec5" -->
 ### Test 5: Playwright MCP Configuration Fix (2025-12-02)
 
 **Issue**: Playwright MCP server may not have access to Node.js/npx if NVM is not loaded in the MCP process environment.
@@ -412,6 +437,7 @@ This document captures our experience setting up and troubleshooting browser MCP
 
 **Workaround**: Use `mcp_browser_*` tools from `@agent-infra/mcp-server-browser` server, which are accessible and functional.
 
+<!-- section_id: "627a0067-6155-4788-8634-bbba1017a190" -->
 ### Test 6: Precalc Work Attempt (2025-12-02)
 
 **Context**: Attempted to continue precalc ALEKS work in browser
@@ -439,8 +465,10 @@ This document captures our experience setting up and troubleshooting browser MCP
 2. Test navigation to Canvas ALEKS URL: `https://byui.instructure.com/courses/353368/external_tools/20009`
 3. Resume precalc problem-solving workflow once browser automation works
 
+<!-- section_id: "279adba5-a486-4b65-918b-6268f268ad0e" -->
 ## Recommendations
 
+<!-- section_id: "325f4cd7-ea50-452c-88f9-c7e986d77517" -->
 ### For New Setups
 
 1. **Start with Playwright MCP**:
@@ -458,6 +486,7 @@ This document captures our experience setting up and troubleshooting browser MCP
    - Use Playwright or Browser MCP instead
    - Wait for official Linux support
 
+<!-- section_id: "b1639def-fc84-4bc2-a590-b8d6cb4bb97d" -->
 ### For Existing Setups
 
 1. **Verify Current Configuration**:
@@ -475,8 +504,10 @@ This document captures our experience setting up and troubleshooting browser MCP
    - Note any platform-specific issues
    - Share solutions with team
 
+<!-- section_id: "78ac8f14-34cc-473a-a558-e734b7394242" -->
 ## Future Work
 
+<!-- section_id: "b4c3b4b4-7b6e-4b5b-8053-19aaa9199453" -->
 ### Areas Needing Investigation
 
 1. **Playwright Tool Naming**:
@@ -499,6 +530,7 @@ This document captures our experience setting up and troubleshooting browser MCP
    - Document browser-specific configurations
    - Test cross-browser compatibility
 
+<!-- section_id: "1394b4be-d898-4c97-abae-0de3109762c3" -->
 ## Related Documentation
 
 - [Cursor Browser MCP Setup](CURSOR_BROWSER_MCP_SETUP.md) - Detailed setup guide
@@ -506,8 +538,10 @@ This document captures our experience setting up and troubleshooting browser MCP
 - [MCP Configuration Guide](MCP_CONFIGURATION_GUIDE.md) - General MCP configuration
 - [MCP System Guide](MCP_SYSTEM_GUIDE.md) - Complete MCP management system
 
+<!-- section_id: "b987842b-56be-445e-b942-edfcc38c39af" -->
 ## Changelog
 
+<!-- section_id: "78c05077-ec67-4387-a726-9043545776f2" -->
 ### 2025-12-02
 - Initial documentation of browser MCP setup experience
 - Documented Linux/Ubuntu-specific issues

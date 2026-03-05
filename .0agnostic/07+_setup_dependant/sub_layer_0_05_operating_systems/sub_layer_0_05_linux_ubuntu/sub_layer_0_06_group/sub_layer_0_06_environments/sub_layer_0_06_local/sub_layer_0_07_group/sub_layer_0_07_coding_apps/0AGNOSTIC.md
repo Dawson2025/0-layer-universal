@@ -8,6 +8,7 @@ resource_name: "0AGNOSTIC"
 
 # ── Entity Definition ──
 
+<!-- section_id: "945a592d-1c5c-448f-a05e-e67198532133" -->
 ## Identity
 
 **Entity**: Coding Apps
@@ -17,12 +18,14 @@ resource_name: "0AGNOSTIC"
 
 **Specificity Chain**: OS (05) → Linux Ubuntu (05) → Environments (06) → Local (06) → **Coding Apps (07)**
 
+<!-- section_id: "c765f890-6ab4-4e51-b470-b8227651bb8c" -->
 ## Key Behaviors
 
 - Rules and protocols here cascade to all child coding apps (currently: Cursor at level 08)
 - Legacy shared content preserved in `.0agnostic/01_knowledge/legacy_shared/` (pre-restructuring)
 - Future coding apps (VS Code, Neovim, etc.) would be added as siblings to Cursor at level 08
 
+<!-- section_id: "9fdd06ed-3d8e-4d44-909a-e7d170a04e28" -->
 ## Delegation Contract
 
 **Children** (level 08): Cursor IDE (sub_layer_0_08_cursor)
@@ -30,6 +33,7 @@ resource_name: "0AGNOSTIC"
 
 # ── Current Status ──
 
+<!-- section_id: "df132f19-9766-4210-8c15-ebb1af3af945" -->
 ## Current Status
 
 **State**: Restructuring complete
@@ -41,6 +45,7 @@ resource_name: "0AGNOSTIC"
 
 # ── References ──
 
+<!-- section_id: "0553a5df-0734-4518-86f4-c5246e7a9a96" -->
 ## Navigation
 
 | Path | Purpose |

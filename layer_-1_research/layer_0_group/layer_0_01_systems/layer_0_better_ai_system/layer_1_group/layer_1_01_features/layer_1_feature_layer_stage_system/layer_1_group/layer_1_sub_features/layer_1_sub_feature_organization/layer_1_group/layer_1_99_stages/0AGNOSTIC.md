@@ -10,6 +10,7 @@ resource_name: "0AGNOSTIC"
 
 # ── Entity Definition ──
 
+<!-- section_id: "2782b62f-fa69-451b-9d32-9f3177c20374" -->
 ## Identity
 
 entity_id: "9fff3008-69fe-4387-8aaf-66ec8fb065a7"
@@ -21,8 +22,10 @@ You are the **Stages Manager** for the organization sub-feature.
 - **Parent**: `../../0AGNOSTIC.md` (organization entity)
 - **Layer**: 1
 
+<!-- section_id: "d65e6807-c0dc-4fb9-93de-a5642bf6e7ef" -->
 ## Key Behaviors
 
+<!-- section_id: "b3975f10-b38c-4a2e-a739-284e27be82cc" -->
 ### Stage Overview
 
 | Stage | Name | Status | Key Output |
@@ -39,6 +42,7 @@ You are the **Stages Manager** for the organization sub-feature.
 | 10 | Current Product | empty | Deliverables |
 | 11 | Archives | empty | History |
 
+<!-- section_id: "66640ab7-99a4-4298-a080-3e6e8286dbc7" -->
 ### How Stage Delegation Works
 
 1. Receive task from entity manager (parent 0AGNOSTIC.md)
@@ -46,6 +50,7 @@ You are the **Stages Manager** for the organization sub-feature.
 3. Delegate to stage agent: point to stage directory, let agent read its own 0AGNOSTIC.md
 4. Track stage status and dependencies
 
+<!-- section_id: "7e13703d-a2f5-45e4-bd05-451805d3b3ae" -->
 ### Stage Dependencies
 
 ```
@@ -58,6 +63,7 @@ You are the **Stages Manager** for the organization sub-feature.
 
 Stage 03 (instructions) can be populated at any point when constraints are identified.
 
+<!-- section_id: "704f8db9-1408-45a0-980f-50f32c45b551" -->
 ## Triggers
 
 Load when:
@@ -67,6 +73,7 @@ Load when:
 
 # ── Current Status ──
 
+<!-- section_id: "a1199f0f-3da6-4aa0-8499-122b01bdd6eb" -->
 ## Current Status
 
 **Phase**: initializing — stages 01 and 04 active | **Last Updated**: 2026-02-25
@@ -77,8 +84,10 @@ Stage 01 (request_gathering) has a tree of needs with 3 branches covering resear
 
 # ── Current State ──
 
+<!-- section_id: "1e31e4a3-f7c0-4ae0-a272-e19b5dad0f2e" -->
 ## Current State Detail
 
+<!-- section_id: "19ed87b7-14d1-4fca-92be-f06a51566c57" -->
 ### Active Stages
 
 | Stage | What's There | Entry Point |
@@ -86,6 +95,7 @@ Stage 01 (request_gathering) has a tree of needs with 3 branches covering resear
 | 01 | Tree of needs: 3 branches, ~12 needs | `stage_1_01_request_gathering/0AGNOSTIC.md` |
 | 04 | 3 design decisions | `stage_1_04_design/0AGNOSTIC.md` |
 
+<!-- section_id: "03db3afb-91d2-44c3-bcf5-1a402d19feaf" -->
 ### Domain Context
 
 The organization sub-feature researches the structural patterns for how any system — AI or otherwise — can be organized. The core insight: **every system should support three versions**:
@@ -98,6 +108,7 @@ School system is the concrete example: the AI system researches better teaching 
 
 # ── References ──
 
+<!-- section_id: "4a00c968-8922-47ac-8de8-4c32e6d0192e" -->
 ## Navigation
 
 | Content | Location |

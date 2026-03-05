@@ -5,12 +5,14 @@ resource_name: "STAGES_EXPLAINED"
 ---
 # Stages Explained
 
+<!-- section_id: "b8aa1fbd-b02a-45a0-af80-341ab94e13fa" -->
 ## Overview
 
 Stages represent the **workflow phases** that work passes through. Every entity with stages MUST have all 11 stages.
 
 ---
 
+<!-- section_id: "0e25662e-85ea-4ef6-b06e-276d6f3f06bc" -->
 ## The 11 Stages
 
 | # | Stage | Purpose | Guide |
@@ -29,10 +31,12 @@ Stages represent the **workflow phases** that work passes through. Every entity 
 
 ---
 
+<!-- section_id: "5e098536-4df4-428b-8265-94ac16da063c" -->
 ## Stage Completeness Rule
 
 **[CRITICAL] ALL 11 stages MUST be created when an entity uses stages.**
 
+<!-- section_id: "60e3fbe9-058e-4a39-962b-fa8a834817a3" -->
 ### Why This Rule Exists
 
 1. **Consistency**: AI agents always know where to put content
@@ -40,6 +44,7 @@ Stages represent the **workflow phases** that work passes through. Every entity 
 3. **Workflow tracking**: Clear progression through phases
 4. **No skipping**: Empty stages are valid; missing stages are NOT
 
+<!-- section_id: "8c49f1a9-3443-4e72-99ff-a1ea1f737a77" -->
 ### Required Structure
 
 When creating any entity with stages, create ALL of them:
@@ -72,6 +77,7 @@ entity_99_stages/
 
 Where `XX` is the layer number (e.g., `stage_0_01_...` for layer_0, `stage_1_01_...` for layer_1).
 
+<!-- section_id: "7bd70cdc-3845-4eed-8f41-f614b45566c7" -->
 ### Empty vs Missing
 
 | State | Valid? | Example |
@@ -80,6 +86,7 @@ Where `XX` is the layer number (e.g., `stage_0_01_...` for layer_0, `stage_1_01_
 | Stage exists but empty | ✅ Yes | `stage_0_03_instructions/outputs/` (empty folder) |
 | Stage missing entirely | ❌ NO | Only stages 01, 05, 10 exist |
 
+<!-- section_id: "3e66f8e1-b46f-4bc9-9577-22eb222cfbca" -->
 ### Enforcement
 
 When creating entities with stages:
@@ -90,6 +97,7 @@ When creating entities with stages:
 
 ---
 
+<!-- section_id: "5fedf21b-8cdb-493e-ba39-cee74a12e873" -->
 ## Stage Workflow
 
 ```
@@ -146,6 +154,7 @@ When creating entities with stages:
 
 ---
 
+<!-- section_id: "25e75a0d-2448-468a-a7b2-80fcaf318107" -->
 ## Stage Naming Convention
 
 ```
@@ -159,6 +168,7 @@ Examples:
 
 ---
 
+<!-- section_id: "782b8ddc-fc07-424e-af80-17caa5405967" -->
 ## Stage Contents
 
 Each stage folder contains:
@@ -175,6 +185,7 @@ stage_X_NN_name/
 
 ---
 
+<!-- section_id: "df00a588-e400-4f7f-8bcf-7ac1ede1e011" -->
 ## See Also
 
 - [SUB_STAGES_EXPLAINED.md](SUB_STAGES_EXPLAINED.md) - Sub-stages within stages

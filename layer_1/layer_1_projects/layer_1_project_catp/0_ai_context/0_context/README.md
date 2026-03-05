@@ -7,6 +7,7 @@ resource_name: "README"
 # AI Agent Context System
 *Universal Trickle-Down Documentation for AI Coding Agents*
 
+<!-- section_id: "94fe63cf-a8e6-4375-9589-872d2d7f54dd" -->
 ## 🚨 **CRITICAL: Terminal Hanging Fix**
 
 **IMPORTANT**: Before using any terminal commands, read the terminal hanging fix:
@@ -14,6 +15,7 @@ resource_name: "README"
 - **Full Protocol**: `trickle_down_0_universal/0_instruction_docs/terminal-tool-replacement.md`
 - **Quick Reference**: `trickle_down_0_universal/0_instruction_docs/terminal-quick-reference.md`
 
+<!-- section_id: "50967cd2-f914-41f9-ab57-d2e2bf188634" -->
 ## 🚨 **CRITICAL: Manual Steps Execution**
 
 **IMPORTANT**: AI agents must execute ALL manual steps directly using available tools:
@@ -21,8 +23,10 @@ resource_name: "README"
 - **Browser Automation**: Use MCP tools for web interface interaction
 - **No Delegation**: Never ask users to perform manual steps
 
+<!-- section_id: "7fafaae6-6089-4416-b271-d748ca6c216d" -->
 ## 📁 **Directory Structure**
 
+<!-- section_id: "5e3b351d-93a0-4994-85bc-ff7d98369a8a" -->
 ### **trickle_down_0_universal/**
 Universal instructions for all AI agents
 - `0_instruction_docs/` - How-to guides, protocols, and procedures
@@ -36,18 +40,21 @@ Universal instructions for all AI agents
   - `cursor_terminal_issues.md` - Cursor IDE output corruption diagnosis plus verified workarounds (preview box toggle, wrapper usage, logging pattern)
   - `canvas_submission_protocol.md` - Required evidence files, upload steps, and integrity rules for Canvas submissions (auto-generated logs only)
 
+<!-- section_id: "c72c1c00-81fb-4ab9-bd64-4b02b3dc616e" -->
 ### **trickle_down_0.5_setup/**
 Setup and configuration systems
 - `0_instruction_docs/` - Setup guides and configuration procedures
 - `1_status_progress_docs/` - Setup status and progress
 - `2_archive_docs/` - Completed setup documentation
 
+<!-- section_id: "9296f1a4-ae20-4173-a300-cee74c6f570a" -->
 ### **trickle_down_0.75_universal_tools/**
 Universal tools and utilities
 - `0_instruction_docs/` - Tool usage guides and procedures
 - `1_status_progress_docs/` - Tool development status
 - `2_archive_docs/` - Completed tool implementations
 
+<!-- section_id: "46cb66cf-1604-4c2f-98de-a698529d824a" -->
 ### **trickle_down_1_project/**
 Project-specific documentation
 - `0_instruction_docs/` - Project constitution and standards
@@ -55,12 +62,14 @@ Project-specific documentation
 - `2_archive_docs/` - Project completion documentation
 - `2_testing_docs/` - Testing documentation
 
+<!-- section_id: "78aa5a13-412a-4e2e-af1e-c7fcd368e20d" -->
 ### **trickle_down_1.5_project_tools/**
 Project-specific tools and implementations
 - `0_instruction_docs/` - Tool specifications and usage
 - `1_status_progress_docs/` - Tool development status
 - `2_archive_docs/` - Completed tool implementations
 
+<!-- section_id: "f5293a57-965b-49c5-a22b-217595cf8c4d" -->
 ### **trickle_down_2_features/**
 Feature-specific documentation
 - `0_instruction_docs/` - Feature specifications and guides
@@ -68,20 +77,24 @@ Feature-specific documentation
 - `2_archive_docs/` - Completed feature implementations
 - `2_testing_docs/` - Testing documentation
 
+<!-- section_id: "128073bf-4630-4da0-af51-461f80dd3190" -->
 ### **trickle_down_2_implementation/**
 Implementation-specific documentation
 - Contains detailed implementation guides and completed implementations
 
+<!-- section_id: "6c6e3e7a-82d9-44a7-a17a-2d3211a81efd" -->
 ### **trickle_down_3_components/**
 Component-specific documentation
 - `0_instruction_docs/` - Component specifications and guides
 - `1_status_progress_docs/` - Component development status
 - `2_archive_docs/` - Completed component implementations
 
+<!-- section_id: "7fa60529-a1f6-42dd-b16a-211eccf872cf" -->
 ### **trickle_down_3_testing/**
 Testing-specific documentation
 - Contains testing guides, test results, and bug reports
 
+<!-- section_id: "c04fcd65-8d3e-4d5a-a6a0-c44ca00cce8d" -->
 ## 📦 Integrated Project Imports
 
 - All project-level trickle-down content from `trickle_down_1_project/0_instruction_docs` now lives under the main numbered directories in `integrated_from_projects/<project_name>/`.
@@ -89,6 +102,7 @@ Testing-specific documentation
 - Run the `/init` loader at the start of a session so Cursor refreshes paths after this restructure.
 - Update any personal snippets or scripts that referenced the removed nested `trickle-down-*` directories.
 
+<!-- section_id: "6ee18761-5392-4241-ac66-5b1bb8e8f26e" -->
 ## 🚀 **Quick Start for AI Agents**
 
 1. **Read Terminal Fix**: `TERMINAL_HANGING_FIX.md`
@@ -98,6 +112,7 @@ Testing-specific documentation
 5. **Initialize**: Follow `trickle_down_0_universal/0_instruction_docs/initialization/init-command.md` (if exists)
 6. **Use Proper Tools**: Always use `terminal_wrapper.py` for Python scripts
 
+<!-- section_id: "ce316d1f-4d98-49ba-b7b6-b58614c8b37d" -->
 ## 🔧 **Customization for Your Project**
 
 To adapt this context system for your project:
@@ -119,6 +134,7 @@ To adapt this context system for your project:
    - Add environment-specific configurations
    - Document deployment procedures
 
+<!-- section_id: "3668aa89-cd89-4096-a7a0-43956e8406e4" -->
 ## ⚠️ **Critical Rules**
 
 - **NEVER** use `run_terminal_cmd` for Python scripts (hangs)
@@ -126,6 +142,7 @@ To adapt this context system for your project:
 - **FOLLOW** the initialization protocol for proper context loading
 - **READ** terminal execution protocol before executing commands
 
+<!-- section_id: "e1747319-3121-40ff-b070-cc449d57b5f9" -->
 ## 📚 **Documentation Hierarchy**
 
 This directory follows the Trickle-Down documentation pattern:

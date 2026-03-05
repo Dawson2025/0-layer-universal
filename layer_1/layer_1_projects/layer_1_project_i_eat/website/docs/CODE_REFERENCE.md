@@ -7,6 +7,7 @@ resource_name: "CODE_REFERENCE"
 
 Complete file-by-file breakdown of the codebase with line-by-line explanations.
 
+<!-- section_id: "ac4df048-6d44-4edd-a4c2-85c727392aef" -->
 ## Table of Contents
 
 - [index.html](#indexhtml) - HTML entry point
@@ -20,12 +21,14 @@ Complete file-by-file breakdown of the codebase with line-by-line explanations.
 
 ---
 
+<!-- section_id: "a2e462c2-1f17-484a-9dec-ec136c517fd1" -->
 ## index.html
 
 **Location**: `/website/index.html`
 
 **Purpose**: HTML entry point that loads the React application
 
+<!-- section_id: "fdf037ba-9156-41bc-bb4c-6b342f217697" -->
 ### Code Breakdown
 
 ```html
@@ -44,6 +47,7 @@ Complete file-by-file breakdown of the codebase with line-by-line explanations.
 13  </html>
 ```
 
+<!-- section_id: "a52083be-f211-4539-b153-2b4f6a5ea10c" -->
 ### Key Lines
 
 - **Line 1**: HTML5 doctype declaration
@@ -55,6 +59,7 @@ Complete file-by-file breakdown of the codebase with line-by-line explanations.
 - **Line 10**: React mount point - React renders the app here
 - **Line 11**: ES module script loading React entry point
 
+<!-- section_id: "9a88f476-0f3c-4459-856a-2992df6a1e2f" -->
 ### Notes
 
 - Minimal HTML structure
@@ -64,12 +69,14 @@ Complete file-by-file breakdown of the codebase with line-by-line explanations.
 
 ---
 
+<!-- section_id: "b289382f-2536-415f-b90f-917aa5e6155d" -->
 ## package.json
 
 **Location**: `/website/package.json`
 
 **Purpose**: Project metadata, dependencies, and npm scripts
 
+<!-- section_id: "4dcf6ad1-22f2-486d-b6ec-1d50dfd55b83" -->
 ### Code Breakdown
 
 ```json
@@ -102,6 +109,7 @@ Complete file-by-file breakdown of the codebase with line-by-line explanations.
 27  }
 ```
 
+<!-- section_id: "28b78fee-90c3-414d-bbdb-ef6f7094f006" -->
 ### Key Sections
 
 #### Project Metadata (lines 2-5)
@@ -128,6 +136,7 @@ Complete file-by-file breakdown of the codebase with line-by-line explanations.
 - **eslint-plugin-react-hooks**: React Hooks linting rules
 - **eslint-plugin-react-refresh**: React Refresh linting
 
+<!-- section_id: "28c8875b-5388-472a-86dd-4da290d4b000" -->
 ### Notes
 
 - Uses caret (^) for semver ranges
@@ -136,12 +145,14 @@ Complete file-by-file breakdown of the codebase with line-by-line explanations.
 
 ---
 
+<!-- section_id: "15087352-5ddd-4445-a9fd-d0e35ef7d4f2" -->
 ## vite.config.js
 
 **Location**: `/website/vite.config.js`
 
 **Purpose**: Vite build tool configuration
 
+<!-- section_id: "b7b5ec55-f326-4ca2-bda2-baf7a97f42d7" -->
 ### Code Breakdown
 
 ```javascript
@@ -154,6 +165,7 @@ Complete file-by-file breakdown of the codebase with line-by-line explanations.
 7   })
 ```
 
+<!-- section_id: "0f8fffec-54fd-4a08-ac19-0d7ac8b1fa76" -->
 ### Key Lines
 
 - **Line 1**: Import Vite's configuration helper
@@ -161,6 +173,7 @@ Complete file-by-file breakdown of the codebase with line-by-line explanations.
 - **Line 5**: Export Vite configuration object
 - **Line 6**: Enable React plugin with default settings
 
+<!-- section_id: "536a34b1-1e8e-42da-b11b-7f78f0d95c75" -->
 ### Default Settings (Not Shown)
 
 These are applied automatically:
@@ -181,6 +194,7 @@ These are applied automatically:
 }
 ```
 
+<!-- section_id: "397c0912-e220-4394-8b69-66ff8f1bfc34" -->
 ### React Plugin Features
 
 The `@vitejs/plugin-react` enables:
@@ -191,12 +205,14 @@ The `@vitejs/plugin-react` enables:
 
 ---
 
+<!-- section_id: "cb48a309-eac3-4298-a653-da0a834e0021" -->
 ## src/main.jsx
 
 **Location**: `/website/src/main.jsx`
 
 **Purpose**: React application entry point
 
+<!-- section_id: "93d331ed-36de-4817-a617-733f1b68f436" -->
 ### Full Code
 
 ```javascript
@@ -212,6 +228,7 @@ The `@vitejs/plugin-react` enables:
 10  )
 ```
 
+<!-- section_id: "051fe0e5-9057-49ea-b4d0-c130ce87c8ad" -->
 ### Line-by-Line Breakdown
 
 #### Line 1: StrictMode Import
@@ -257,6 +274,7 @@ createRoot(document.getElementById('root')).render(
 - Wraps app in StrictMode for development checks
 - Renders App component as root of component tree
 
+<!-- section_id: "61322afc-6983-4a58-848a-b40e1fde3cb3" -->
 ### StrictMode Features
 
 In development, StrictMode:
@@ -269,12 +287,14 @@ In development, StrictMode:
 
 ---
 
+<!-- section_id: "e5b31d32-77fb-4d40-819a-b80f3ad80016" -->
 ## src/App.jsx
 
 **Location**: `/website/src/App.jsx`
 
 **Purpose**: Main application component - authentication form with login/signup toggle
 
+<!-- section_id: "7992a0ba-3245-4e47-881c-c722b55f5388" -->
 ### Full Code (103 lines)
 
 ```javascript
@@ -383,6 +403,7 @@ In development, StrictMode:
 103 export default App
 ```
 
+<!-- section_id: "94182e91-51d3-47cd-bd82-04c7ca6f70c8" -->
 ### Section-by-Section Breakdown
 
 #### Imports (lines 1-2)
@@ -586,12 +607,14 @@ export default App
 ```
 - Default export for use in main.jsx
 
+<!-- section_id: "264098a3-f85c-49d0-aae3-e89961048c87" -->
 ### Data Flow
 
 1. **User types** → onChange fires → handleInputChange updates formData
 2. **User clicks submit** → onSubmit fires → handleSubmit validates/logs
 3. **User toggles mode** → onClick fires → setIsLogin updates isLogin → UI re-renders
 
+<!-- section_id: "764df695-9d50-4860-ae0c-4a5c81656b4c" -->
 ### State Persistence
 
 - formData is NOT cleared when toggling modes
@@ -600,12 +623,14 @@ export default App
 
 ---
 
+<!-- section_id: "20b98af6-105b-4323-9189-e7cc7f5ea762" -->
 ## src/App.css
 
 **Location**: `/website/src/App.css`
 
 **Purpose**: Component-specific styles with BYU-Idaho branding
 
+<!-- section_id: "d4c4fecd-8960-4987-a72f-d18932200552" -->
 ### Key Sections
 
 #### CSS Variables (lines 1-10)
@@ -737,6 +762,7 @@ export default App
 - Reduces padding on small screens
 - Smaller title font size
 
+<!-- section_id: "2f20201d-629c-48de-b1f1-996843f621d9" -->
 ### Color Usage
 
 - **Primary actions**: `--brand-blue` (#006EB6)
@@ -747,12 +773,14 @@ export default App
 
 ---
 
+<!-- section_id: "befe9c2f-29ef-490b-af8c-77a45373feec" -->
 ## src/index.css
 
 **Location**: `/website/src/index.css`
 
 **Purpose**: Global styles and CSS resets
 
+<!-- section_id: "86af8429-73e6-4785-a6fd-d86d528f3d56" -->
 ### Key Sections
 
 #### Root Variables (lines 1-14)
@@ -826,6 +854,7 @@ button {
 - Light text on white background
 - Note: App.css overrides this with custom styles
 
+<!-- section_id: "bd13c13e-9a18-4ad3-98b1-65052c8a6e90" -->
 ### Notes
 
 - These are Vite template defaults
@@ -835,8 +864,10 @@ button {
 
 ---
 
+<!-- section_id: "a63ea66b-a61e-4322-b34d-e2a174d3a45c" -->
 ## Backend & Frontend Directories
 
+<!-- section_id: "d8acae33-4d55-4569-b9f6-16b0c8ec5746" -->
 ### backend/logic.js
 
 **Location**: `/website/backend/logic.js`
@@ -847,6 +878,7 @@ button {
 
 **Current Content**: None
 
+<!-- section_id: "f7fef1b1-0ac9-447f-a820-ab5765e58451" -->
 ### frontend/README.md
 
 **Location**: `/website/frontend/README.md`
@@ -857,6 +889,7 @@ button {
 
 **Current Content**: None
 
+<!-- section_id: "9a004458-bc5c-4e7e-b7ed-8b2c64999e5b" -->
 ### Notes
 
 - These directories exist but are not used
@@ -866,8 +899,10 @@ button {
 
 ---
 
+<!-- section_id: "30246fc4-b849-4157-b0f2-17aab2ecaac5" -->
 ## Code Patterns Used
 
+<!-- section_id: "f634b448-99b4-4f54-816b-cd152400f674" -->
 ### 1. Controlled Components
 ```javascript
 <input
@@ -877,6 +912,7 @@ button {
 ```
 React state controls the input value.
 
+<!-- section_id: "3eee3aa2-7ac4-4d16-87d6-69902b7d690f" -->
 ### 2. Dynamic Object Keys
 ```javascript
 {
@@ -886,6 +922,7 @@ React state controls the input value.
 ```
 Uses input name attribute to update correct field.
 
+<!-- section_id: "bb468f3e-ce6e-4d0b-9bc5-77783d740969" -->
 ### 3. Conditional Rendering
 ```javascript
 {!isLogin && <Component />}
@@ -893,6 +930,7 @@ Uses input name attribute to update correct field.
 ```
 Shows/hides UI based on state.
 
+<!-- section_id: "2c82ef0e-dc1e-49d1-8c45-619d29fd5547" -->
 ### 4. Event Handler Pattern
 ```javascript
 const handleEvent = (e) => {
@@ -901,6 +939,7 @@ const handleEvent = (e) => {
 ```
 Consistent naming: handle + EventType.
 
+<!-- section_id: "f975ed14-266a-45e2-800d-9cc3c33d21db" -->
 ### 5. CSS Variables
 ```css
 :root {
@@ -912,6 +951,7 @@ Consistent naming: handle + EventType.
 ```
 Reusable design tokens.
 
+<!-- section_id: "8b8e4d0b-5dce-44ed-8b0e-8c80cae527af" -->
 ### 6. Spread Operator for State
 ```javascript
 setFormData({
@@ -921,8 +961,10 @@ setFormData({
 ```
 Preserves existing state while updating one field.
 
+<!-- section_id: "2656f9f7-3111-486c-81c2-448466e16028" -->
 ## Common Locations
 
+<!-- section_id: "b6e3678e-34f9-46a9-94c8-9b34f48cf3e0" -->
 ### Adding New Features
 
 1. **New Component**: Create in `src/components/NewComponent.jsx`
@@ -930,6 +972,7 @@ Preserves existing state while updating one field.
 3. **Global Styles**: Add to `src/index.css`
 4. **Shared Logic**: Create `src/utils/` or `src/hooks/`
 
+<!-- section_id: "b6f73a7c-8846-4957-8160-6125d0f050fa" -->
 ### Modifying Existing
 
 1. **Auth UI**: `src/App.jsx` lines 32-99
@@ -937,6 +980,7 @@ Preserves existing state while updating one field.
 3. **Styles**: `src/App.css` or `src/index.css`
 4. **Build Config**: `vite.config.js`
 
+<!-- section_id: "dbbc7823-d9bb-458f-9023-e25e96d98ab6" -->
 ### Configuration
 
 1. **Dependencies**: `package.json` lines 12-26
@@ -944,13 +988,16 @@ Preserves existing state while updating one field.
 3. **Vite**: `vite.config.js`
 4. **ESLint**: `eslint.config.js`
 
+<!-- section_id: "7fd2abe0-87cb-4749-8f0a-7b31ec7d2c7d" -->
 ## Dependencies Explained
 
+<!-- section_id: "2c4f9121-39ad-4fd6-9daa-b6e932647258" -->
 ### Production
 
 - **react**: UI library, component-based architecture
 - **react-dom**: Renders React to browser DOM
 
+<!-- section_id: "42084482-cfa9-43f7-a3c3-0a0f60d64bf1" -->
 ### Development
 
 - **vite**: Fast build tool, dev server with HMR
@@ -963,6 +1010,7 @@ Preserves existing state while updating one field.
 - **@types/react-dom**: TypeScript definitions for ReactDOM
 - **globals**: Global variable definitions for ESLint
 
+<!-- section_id: "a2cae18f-aafd-4f72-bf0c-f3bfe2c521c3" -->
 ## File Size Summary
 
 - **index.html**: 14 lines

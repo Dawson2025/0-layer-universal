@@ -11,6 +11,7 @@ resource_name: "chain_continuity"
 
 ---
 
+<!-- section_id: "93253f83-3978-4622-91ff-309ca16b8356" -->
 ## Statement
 
 **Every entity in the layer-stage system must maintain an unbroken parent reference chain from itself to the system root.**
@@ -19,6 +20,7 @@ A broken chain means an entity is orphaned — it cannot inherit context, rules,
 
 ---
 
+<!-- section_id: "cb7dbd14-03e2-46c2-82e1-76bbb0cbf646" -->
 ## Rationale
 
 The parent chain is the backbone of the context inheritance system. When an agent arrives at an entity:
@@ -34,8 +36,10 @@ If any link is broken, the agent works with incomplete context. This leads to:
 
 ---
 
+<!-- section_id: "2a9e7cad-3289-46f6-b9bb-9c1148d32493" -->
 ## Requirements
 
+<!-- section_id: "3f12913a-c5dc-4c7d-9262-80bca64f27eb" -->
 ### Must
 
 - Every `0AGNOSTIC.md` (except root) **must** have a `**Parent**:` line
@@ -43,6 +47,7 @@ If any link is broken, the agent works with incomplete context. This leads to:
 - The parent file **must** have an `## Identity` section
 - Container directories (groups, feature registries) **must** have `0AGNOSTIC.md` even if minimal
 
+<!-- section_id: "b0b334f4-32f2-47d2-a085-9ce353bc893d" -->
 ### Must Not
 
 - Never delete an `0AGNOSTIC.md` that is referenced as a parent by any child
@@ -51,6 +56,7 @@ If any link is broken, the agent works with incomplete context. This leads to:
 
 ---
 
+<!-- section_id: "04629a37-cfef-4773-bef1-76d2cea4c321" -->
 ## Verification
 
 Chain continuity is tested by `test_context_chain_traversal.sh`:
@@ -61,6 +67,7 @@ Chain continuity is tested by `test_context_chain_traversal.sh`:
 
 ---
 
+<!-- section_id: "2e97b0cb-006e-458d-8506-c5e812e199b9" -->
 ## Recovery
 
 If a chain break is discovered:
@@ -71,6 +78,7 @@ If a chain break is discovered:
 
 ---
 
+<!-- section_id: "c55e77cb-f1fc-41a8-9414-3a4c9548afcd" -->
 ## Related Principles
 
 - Single Source of Truth — the chain relies on 0AGNOSTIC.md being canonical

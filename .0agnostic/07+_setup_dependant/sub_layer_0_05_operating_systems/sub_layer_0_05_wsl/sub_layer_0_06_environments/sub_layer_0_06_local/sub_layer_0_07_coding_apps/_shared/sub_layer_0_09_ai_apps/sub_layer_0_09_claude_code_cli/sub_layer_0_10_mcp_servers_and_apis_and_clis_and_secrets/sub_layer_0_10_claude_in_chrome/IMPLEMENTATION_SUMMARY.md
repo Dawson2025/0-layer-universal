@@ -10,8 +10,10 @@ resource_name: "IMPLEMENTATION_SUMMARY"
 
 ---
 
+<!-- section_id: "48f7c6e0-3c10-459e-8fbb-5210efe15979" -->
 ## What Was Implemented
 
+<!-- section_id: "7bc3b9f6-7aa5-4f45-a532-a4744ae5326b" -->
 ### 1. Native Messaging Host Discovery ✓
 
 **Found:** Claude Code's built-in native messaging host
@@ -20,6 +22,7 @@ resource_name: "IMPLEMENTATION_SUMMARY"
 - **Command:** `claude --chrome-native-host` (internal flag)
 - **Protocol:** Native Messaging (32-bit length prefix + JSON over stdin/stdout)
 
+<!-- section_id: "816e95d2-ddcd-44c9-80cb-c2fa3290577c" -->
 ### 2. WSL Wrapper Script ✓
 
 **Created:** `/home/dawson/bin/claude-chrome-host.sh`
@@ -34,6 +37,7 @@ resource_name: "IMPLEMENTATION_SUMMARY"
 - Minimal overhead (direct exec)
 - Handles binary stdio correctly
 
+<!-- section_id: "d323a0a5-fdb1-4c58-923a-52814838d27c" -->
 ### 3. Complete Documentation ✓
 
 Created comprehensive guides:
@@ -63,6 +67,7 @@ Created comprehensive guides:
 - What was built and why
 - Testing procedures
 
+<!-- section_id: "59d984a0-ddb8-4af0-9a68-7b31643e20ec" -->
 ### 4. Verification Tools ✓
 
 **Created:** `/home/dawson/bin/verify-claude-chrome-setup.sh`
@@ -73,6 +78,7 @@ Created comprehensive guides:
 
 ---
 
+<!-- section_id: "c3296272-265f-4977-a754-f6fc65e3dc5b" -->
 ## Architecture
 
 ```
@@ -128,8 +134,10 @@ Created comprehensive guides:
 
 ---
 
+<!-- section_id: "3d02e393-beba-46ac-98f6-fa6d1d0cc2ee" -->
 ## Technical Details
 
+<!-- section_id: "869637d8-1177-46ff-93e8-ac6bbd1cb9d8" -->
 ### Native Messaging Protocol
 
 The Native Messaging protocol uses a binary format:
@@ -154,6 +162,7 @@ Bytes: 0x0E000000 + UTF-8("{"type":"ping"}")
 - stderr can be used for logging
 - Maximum message size: 1 MB
 
+<!-- section_id: "99f68937-fc8f-4244-b406-cf964b25a6a1" -->
 ### Why This Works
 
 1. **wsl.exe -e** maintains binary stdin/stdout
@@ -161,6 +170,7 @@ Bytes: 0x0E000000 + UTF-8("{"type":"ping"}")
 3. **Claude Code's native host** handles protocol correctly
 4. **No text mode conversions** preserves binary data
 
+<!-- section_id: "d4b3a578-974a-453d-a0a9-eb2f86fdabbb" -->
 ### Files Created
 
 | File | Size | Purpose |
@@ -174,8 +184,10 @@ Bytes: 0x0E000000 + UTF-8("{"type":"ping"}")
 
 ---
 
+<!-- section_id: "4c093b00-e032-47f0-96b0-e29923854394" -->
 ## Testing Performed
 
+<!-- section_id: "2520967a-4ecd-4eb1-aa03-eaa5c82c921e" -->
 ### WSL Components ✓
 
 1. **Native host verification:**
@@ -202,6 +214,7 @@ Bytes: 0x0E000000 + UTF-8("{"type":"ping"}")
    # All checks pass ✓
    ```
 
+<!-- section_id: "da42a772-a3a9-4e49-a867-737691c6406d" -->
 ### Windows Components (Documented, Not Tested)
 
 The Windows components require manual setup on the Windows side:
@@ -214,8 +227,10 @@ These are fully documented in QUICK_SETUP.md and BATCH_BRIDGE_SETUP.md.
 
 ---
 
+<!-- section_id: "92b34955-8584-4979-b2ad-9c9221a90583" -->
 ## How to Use
 
+<!-- section_id: "42dbe2b7-dbe7-4a57-8990-d74e84f3e0cf" -->
 ### For Users
 
 1. **WSL Setup (Complete):** 
@@ -236,6 +251,7 @@ These are fully documented in QUICK_SETUP.md and BATCH_BRIDGE_SETUP.md.
    - Try using it
    - Check DevTools console for errors
 
+<!-- section_id: "421d9ec9-3958-4096-b51e-d1cc94fa80ec" -->
 ### For Troubleshooting
 
 1. **Enable debug logging:**
@@ -260,8 +276,10 @@ These are fully documented in QUICK_SETUP.md and BATCH_BRIDGE_SETUP.md.
 
 ---
 
+<!-- section_id: "074593b6-3d4d-4e55-853a-2ffe2836b92e" -->
 ## What's Next
 
+<!-- section_id: "cd12c22a-1017-461d-a42a-bd954302a888" -->
 ### Immediate (User Action Required)
 
 1. Get Claude in Chrome extension ID from `chrome://extensions/`
@@ -269,6 +287,7 @@ These are fully documented in QUICK_SETUP.md and BATCH_BRIDGE_SETUP.md.
 3. Restart Chrome
 4. Test the connection
 
+<!-- section_id: "ba616984-d282-492f-a79a-0d49f13f245a" -->
 ### Future Enhancements (Optional)
 
 - [ ] Create automated Windows installer script
@@ -280,8 +299,10 @@ These are fully documented in QUICK_SETUP.md and BATCH_BRIDGE_SETUP.md.
 
 ---
 
+<!-- section_id: "1953a383-3947-4c0e-8569-b723081ae528" -->
 ## Security Notes
 
+<!-- section_id: "8bb2a171-3db1-483f-b6a8-eb224a13d859" -->
 ### Current Implementation
 
 - Extension ID must match in manifest (prevents unauthorized access)
@@ -289,6 +310,7 @@ These are fully documented in QUICK_SETUP.md and BATCH_BRIDGE_SETUP.md.
 - No network exposure (local only)
 - Logs can contain sensitive data (disabled by default)
 
+<!-- section_id: "d63348c0-bbd9-486e-af9d-1f79269980fa" -->
 ### Recommendations
 
 1. **Keep extension ID private** (prevents unauthorized connections)
@@ -307,6 +329,7 @@ These are fully documented in QUICK_SETUP.md and BATCH_BRIDGE_SETUP.md.
 
 ---
 
+<!-- section_id: "73869257-4883-477e-bd03-1ce18248d65d" -->
 ## Known Limitations
 
 1. **Single user:** Designed for one user (paths are absolute)
@@ -317,18 +340,22 @@ These are fully documented in QUICK_SETUP.md and BATCH_BRIDGE_SETUP.md.
 
 ---
 
+<!-- section_id: "527cd803-42cc-483a-a200-ae367e153044" -->
 ## Resources
 
+<!-- section_id: "5736972b-9760-4311-81e3-e153c539ddba" -->
 ### Created Documentation
 - `/home/dawson/code/0_layer_universal/.../claude_in_chrome/README.md`
 - `/home/dawson/code/0_layer_universal/.../claude_in_chrome/QUICK_SETUP.md`
 - `/home/dawson/code/0_layer_universal/.../claude_in_chrome/BATCH_BRIDGE_SETUP.md`
 - `/home/dawson/code/0_layer_universal/.../claude_in_chrome/IMPLEMENTATION_SUMMARY.md`
 
+<!-- section_id: "01fdbf6b-3933-42f6-a7b6-4664ff5e5b3a" -->
 ### Created Scripts
 - `/home/dawson/bin/claude-chrome-host.sh` (WSL wrapper)
 - `/home/dawson/bin/verify-claude-chrome-setup.sh` (verification tool)
 
+<!-- section_id: "3dcd1a8e-6aad-45fa-abbd-a476c8f96628" -->
 ### External Resources
 - [Chrome Native Messaging Docs](https://developer.chrome.com/docs/extensions/develop/concepts/native-messaging)
 - [Claude Code GitHub](https://github.com/anthropics/claude-code)
@@ -336,8 +363,10 @@ These are fully documented in QUICK_SETUP.md and BATCH_BRIDGE_SETUP.md.
 
 ---
 
+<!-- section_id: "f8c3ba53-02be-4990-95c6-3d96d90f4fc2" -->
 ## Success Criteria
 
+<!-- section_id: "f6c1da26-5735-488b-a351-ea870807b466" -->
 ### WSL Side ✓
 - [x] Native host discovered and verified
 - [x] WSL wrapper script created and executable
@@ -345,6 +374,7 @@ These are fully documented in QUICK_SETUP.md and BATCH_BRIDGE_SETUP.md.
 - [x] Verification script created
 - [x] All components tested
 
+<!-- section_id: "34e7e514-d865-4269-a2e4-e994469cc15d" -->
 ### Windows Side (User Action)
 - [ ] Batch script created
 - [ ] Native messaging manifest created
@@ -354,6 +384,7 @@ These are fully documented in QUICK_SETUP.md and BATCH_BRIDGE_SETUP.md.
 
 ---
 
+<!-- section_id: "81d9ad29-a85c-42b7-93c0-5e8374fd042c" -->
 ## Conclusion
 
 The WSL components of the Claude in Chrome bridge are **complete and tested**. 

@@ -8,10 +8,12 @@ resource_name: "stage_overview"
 **Entity**: agent_delegation_system
 **Last Updated**: 2026-02-19
 
+<!-- section_id: "bd6812b6-df45-4ccd-9834-dc2d002d81f8" -->
 ## Summary
 
 The agent delegation system has progressed through stages 01, 02, 04, and 06 — producing requirements, validating through the context_chain_system working example, designing the stage delegation pattern, and building universal artifacts. Stage 07 (testing) is the next priority.
 
+<!-- section_id: "07d9dd37-4018-4d64-9b1a-a3aef6390369" -->
 ## Stage Status
 
 | # | Stage | Status | Key Output | Report |
@@ -25,12 +27,14 @@ The agent delegation system has progressed through stages 01, 02, 04, and 06 —
 | 07 | Testing | scaffolded | — | — |
 | 08-11 | Remaining | scaffolded | — | — |
 
+<!-- section_id: "0b51c698-acb9-4983-9287-69b13bc9f202" -->
 ## Cross-Stage Dependencies
 
 - Stage 01 requirements → Stage 02 research questions → Stage 04 design decisions → Stage 06 artifacts
 - Branch 01 (delegation_model) is foundational — informs all downstream stages
 - Stages 02 and 04 were conducted implicitly (through the working example, not as formal documents)
 
+<!-- section_id: "24bbb7d5-8f4e-4746-a4f0-eeeb2ae6949e" -->
 ## Working Example
 
 The **context_chain_system** (grandchild entity) serves as the primary test bed:

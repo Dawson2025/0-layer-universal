@@ -12,6 +12,7 @@ This folder contains issues and fixes that apply to **multiple MCP servers** (an
 - Environment variable inheritance (e.g., browser paths)
 - WSL/Linux-specific integration pitfalls
 
+<!-- section_id: "0908906e-e9bb-4367-818a-ab8c9f170884" -->
 ## Related
 
 - Browser MCP setup experience: `../../browser-mcp/BROWSER_MCP_SETUP_EXPERIENCE.md`

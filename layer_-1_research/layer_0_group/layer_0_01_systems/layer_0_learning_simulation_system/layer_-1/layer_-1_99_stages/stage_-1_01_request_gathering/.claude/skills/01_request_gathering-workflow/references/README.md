@@ -8,6 +8,7 @@ resource_name: "README"
 
 Place reference documents, templates, and examples here.
 
+<!-- section_id: "40db6a47-bdea-4b51-af26-0e84365ced9c" -->
 ## Suggested Contents
 - Templates for 01_request_gathering outputs
 - Examples of good 01_request_gathering work

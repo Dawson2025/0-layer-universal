@@ -8,6 +8,7 @@ resource_name: "README"
 
 This directory contains the registry and metadata for layer internal structure.
 
+<!-- section_id: "80e3e363-a434-44f9-8dfa-783c0aad27b4" -->
 ## Purpose
 
 Defines the standard components that exist within each layer:
@@ -20,10 +21,12 @@ Defines the standard components that exist within each layer:
 | 03 | sub_layers | Knowledge, prompts, rules, setup |
 | 99 | stages | Workflow stages (01-11) |
 
+<!-- section_id: "85c9671a-7d21-44c5-859c-e74f1895c444" -->
 ## Files
 
 - `layer_registry.yaml` - Complete registry definition
 
+<!-- section_id: "57ad700c-4394-498d-8c99-a6fa21e110f5" -->
 ## Usage
 
 When creating a new layer (project, feature, component), use this structure:

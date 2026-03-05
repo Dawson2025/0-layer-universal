@@ -12,6 +12,7 @@ resource_name: "GEMINI.sync-conflict-20260126-035815-IF2WOGZ"
 
 ---
 
+<!-- section_id: "33945c3a-c0c1-455d-af7d-d4bf01af82e6" -->
 ## Normative Specification
 
 This file implements the OS-specific context pattern defined in:
@@ -21,19 +22,23 @@ Refer to that document for the canonical specification of the OS variant system.
 
 ---
 
+<!-- section_id: "25c99c86-e18a-4a43-aa6f-b4446736e9e6" -->
 ## WSL-Specific Context for Gemini CLI
 
+<!-- section_id: "3f374b49-4553-4148-b182-653db6c16f75" -->
 ### Environment Overview
 - WSL provides a Linux environment running on Windows kernel
 - Hybrid architecture: Linux userspace + Windows kernel + Windows filesystem access
 - Suitable for long-form research and planning tasks that span both ecosystems
 
+<!-- section_id: "daec2771-859a-448b-a34b-e97b0690e383" -->
 ### File System Considerations
 - **Primary workspace**: `/home/dawson/code/` (native Linux filesystem)
 - **Windows access**: `/mnt/c/`, `/mnt/d/`, etc.
 - **Performance**: Native Linux filesystem significantly faster than /mnt/c
 - **Permissions**: Linux permissions on native FS, Windows ACLs on /mnt/c
 
+<!-- section_id: "b9085176-32c2-4a99-9b20-8a845abdc869" -->
 ### Tool and Command Context
 - Linux commands available: bash, grep, find, awk, sed
 - Python: `python3` (Linux version)
@@ -41,18 +46,21 @@ Refer to that document for the canonical specification of the OS variant system.
 - Git: Configured for Linux (LF line endings)
 - Windows tools: Available via .exe suffix (e.g., `notepad.exe`)
 
+<!-- section_id: "79d36532-ecb3-47bb-8989-451a4ad6f291" -->
 ### Research and Planning Considerations
 - Can reference both Linux and Windows documentation
 - Path translations needed when working across boundary
 - Consider cross-platform compatibility in design decisions
 - Network access works normally (both Linux and Windows stacks available)
 
+<!-- section_id: "0531d945-fd03-4041-94c2-903131e6ed9f" -->
 ### Long Reasoning Tasks
 - Assume POSIX-compliant environment for scripting
 - File paths use forward slashes
 - Line endings default to LF (Unix-style)
 - Shell scripts use bash shebang: `#!/bin/bash`
 
+<!-- section_id: "2d7e00f8-9e6a-488f-b65e-56f10e0c03b2" -->
 ### Gemini-Specific Features in WSL
 - Use `systemInstruction` with manually composed context
 - Load this file as part of system instruction composition
@@ -61,6 +69,7 @@ Refer to that document for the canonical specification of the OS variant system.
 
 ---
 
+<!-- section_id: "fea70b02-164c-4858-ab82-0edb2af847ee" -->
 ## Integration Notes
 
 This context file:
@@ -70,6 +79,7 @@ This context file:
 
 ---
 
+<!-- section_id: "6424c22b-1f4e-4572-abf4-365b06ac1410" -->
 ## Future Extensions
 
 Add WSL-specific:

@@ -7,6 +7,7 @@ resource_name: "agentic_tts_plan"
 
 **Date**: 2026-02-23
 
+<!-- section_id: "30e8627e-2f5e-4592-b29e-0467c07ca362" -->
 ## Completed Steps
 
 1. [x] Research Claude Code hooks API (Stop event, JSON format)
@@ -18,6 +19,7 @@ resource_name: "agentic_tts_plan"
 7. [x] Add hook to ~/.claude/settings.json
 8. [x] Test with simulated JSON input
 
+<!-- section_id: "05526ea5-4f74-407e-8f02-9bdb4f811f6d" -->
 ## Remaining Steps
 
 9. [ ] Live test (next Claude Code response will auto-test)

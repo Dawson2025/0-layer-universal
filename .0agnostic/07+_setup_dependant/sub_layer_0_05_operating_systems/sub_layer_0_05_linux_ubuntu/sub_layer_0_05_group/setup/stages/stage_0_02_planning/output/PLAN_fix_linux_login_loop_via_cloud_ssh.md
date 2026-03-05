@@ -13,8 +13,10 @@ resource_name: "PLAN_fix_linux_login_loop_via_cloud_ssh"
 
 ---
 
+<!-- section_id: "8f699b2e-c3fd-46d1-b336-042794d44cc0" -->
 ## Execution Plan
 
+<!-- section_id: "b3cf1a29-27d8-4406-bde9-a6ce1fe977b0" -->
 ### Phase 1: Cloud Server Setup (From Phone)
 
 **Duration**: ~5 minutes
@@ -48,6 +50,7 @@ gemini "Say hello"
 
 ---
 
+<!-- section_id: "de8745ca-7b26-47e6-b7c6-411d083321c2" -->
 ### Phase 2: Boot Linux & Get SSH Access
 
 **Duration**: ~3 minutes
@@ -76,6 +79,7 @@ Note the IP address (e.g., 192.168.1.xxx)
 
 ---
 
+<!-- section_id: "db74f49f-6064-4438-80c6-17bf0b773584" -->
 ### Phase 3: SSH from Cloud Server to Linux
 
 **Duration**: ~1 minute
@@ -93,6 +97,7 @@ pwd
 
 ---
 
+<!-- section_id: "96c6a844-1411-48b2-beb2-e2d0ceb87009" -->
 ### Phase 4: Fix Login Loop
 
 **Duration**: ~5 minutes
@@ -134,6 +139,7 @@ sudo ./fix_linux_login_loop.sh
 
 ---
 
+<!-- section_id: "192413d7-664a-42a8-8d6d-a483a1ac560e" -->
 ### Phase 5: Verify Fix
 
 **Duration**: ~2 minutes
@@ -150,23 +156,28 @@ sudo reboot
 
 ---
 
+<!-- section_id: "e512e565-347f-455f-9d32-d40001eaee1f" -->
 ## Contingency Plans
 
+<!-- section_id: "6abf6103-17ce-4260-b3e6-20d90b180c74" -->
 ### If SSH Connection Fails
 1. Use TTY directly on Linux machine (Ctrl+Alt+F2)
 2. Run fix commands manually
 3. Check firewall: `sudo ufw allow ssh`
 
+<!-- section_id: "a51674bb-7776-41d1-ae52-6903c00bcd6a" -->
 ### If Quick Fixes Don't Work
 1. Check Xorg logs: `cat /var/log/Xorg.0.log | grep -i error`
 2. Reinstall display manager: `sudo apt install --reinstall gdm3`
 3. Check GPU drivers: `ubuntu-drivers devices`
 
+<!-- section_id: "da32bd3f-3910-4cdd-9a0a-85b32de08349" -->
 ### If Syncthing Not Working
 Copy script content manually or run commands directly
 
 ---
 
+<!-- section_id: "3723e0c0-2c82-47b1-8ac2-e42b4e5422f7" -->
 ## AI Assistance Commands
 
 While connected to cloud server, use AI to help troubleshoot:
@@ -182,6 +193,7 @@ claude
 
 ---
 
+<!-- section_id: "cae4493f-89c9-4b83-a782-3886e31f3a21" -->
 ## Success Criteria
 
 - [ ] Phase 1: AI CLIs working on cloud server
@@ -192,6 +204,7 @@ claude
 
 ---
 
+<!-- section_id: "bacc4d0a-eab5-4cd8-8d0a-838ab5b677e1" -->
 ## Rollback Plan
 
 If fixes cause more issues:
@@ -202,6 +215,7 @@ If fixes cause more issues:
 
 ---
 
+<!-- section_id: "7b3b463c-27cd-452a-9c60-35f8e12aac57" -->
 ## Post-Fix: Git Repo Filename Fix
 
 The git repo has files with `*` in names which Windows can't handle. Once Linux is working, fix this by replacing `*` with `x`:

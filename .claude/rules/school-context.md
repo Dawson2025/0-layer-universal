@@ -9,6 +9,7 @@ paths: layer_1/layer_1_projects/layer_1_project_school/**
 
 # School Project Context
 
+<!-- section_id: "251fc285-eb94-4c65-8570-4aa6e86dff92" -->
 ## Required Reading
 
 When working in school project directories:
@@ -20,6 +21,7 @@ When working in school project directories:
    ```
 4. Read `.claude/skills/*/SKILL.md` — check WHEN/WHEN NOT conditions
 
+<!-- section_id: "2d7ed65c-a898-41a2-a4a7-b3fc8bc6e8b2" -->
 ## Skill Usage
 
 | Situation | Skill | When |
@@ -29,11 +31,13 @@ When working in school project directories:
 | Creating new assignments | `/entity-creation` | Set up proper layer/stage structure |
 | Ending session | `/handoff-creation` | Preserve progress for next session |
 
+<!-- section_id: "942a4f9b-e89d-46bf-a0a3-3e4a2b42818b" -->
 ## Episodic Memory
 
 - **Session start**: Check `memory/episodic.md` (auto-memory topic file) for recent school session history
 - **Session end**: Update `.0agnostic/episodic_memory/index.md` in the working assignment/module directory, then run `.0agnostic/01_knowledge/layer_stage_system/resources/tools/episodic-sync.sh`
 
+<!-- section_id: "0ee3974e-1c73-4d56-b8e3-7139ee344b90" -->
 ## Agnostic System
 
 - **Source of truth**: `0AGNOSTIC.md` is the source — edit this, NOT `CLAUDE.md` (which is auto-generated)
@@ -41,6 +45,7 @@ When working in school project directories:
 - **After changes**: Run `agnostic-sync.sh` to regenerate tool-specific files (CLAUDE.md, AGENTS.md, GEMINI.md, OPENAI.md)
 - **Tool overrides**: `.1merge/` (if present) provides tool-specific overrides via 3-tier merge (synced → overrides → additions)
 
+<!-- section_id: "303c175d-9025-40ee-8ed2-afe71238a424" -->
 ## Canvas MCP Integration
 
 - Canvas tools are available as `mcp__canvas__*` (course list, assignments, modules, grades, etc.)
@@ -51,6 +56,7 @@ When working in school project directories:
 - **Token refresh**: Canvas → Account → Settings → Approved Integrations → New Access Token
 - **If 401 errors**: Token likely expired — regenerate and update `~/.claude.json`
 
+<!-- section_id: "5f1fe000-f093-4984-95cc-976668e7ce9b" -->
 ## School-Specific Rules
 
 - Check assignment requirements before starting work

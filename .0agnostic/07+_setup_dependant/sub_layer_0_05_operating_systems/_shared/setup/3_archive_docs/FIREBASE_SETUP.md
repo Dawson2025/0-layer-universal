@@ -7,6 +7,7 @@ resource_name: "FIREBASE_SETUP"
 
 Complete Firebase setup documentation for Lang Trak.
 
+<!-- section_id: "3a3b40c6-9ace-4568-818f-6cf317462609" -->
 ## Quick Links
 
 - [Quick Start Guide](QUICK_START.md) - Get up and running in 5 minutes
@@ -15,16 +16,19 @@ Complete Firebase setup documentation for Lang Trak.
 - [Best Practices](GOOGLE_FIREBASE_BEST_PRACTICES.md) - Google's recommendations
 - [Operational Status](OPERATIONAL_STATUS.md) - Current system status
 
+<!-- section_id: "055144fb-2c6f-41d3-b693-ae08faa0c21e" -->
 ## Firebase Environment Setup
 
 This project uses Google's recommended Firebase best practices with:
 - **Emulators for unit testing only** (fast, free, isolated)
 - **Real Firebase projects** for development, staging, and production
 
+<!-- section_id: "aeca0de4-0a65-473f-8c2f-2e68188fa0b5" -->
 ### Environment Scripts (Run in WSL)
 
 
 
+<!-- section_id: "cb0104b8-6e7d-4680-ad3a-626b260f6ffd" -->
 ### Firebase Projects
 
 | Environment | Project ID | Purpose |
@@ -34,6 +38,7 @@ This project uses Google's recommended Firebase best practices with:
 | **Staging** | lang-trak-staging | Pre-production testing |
 | **Production** | lang-trak-prod | Live application |
 
+<!-- section_id: "16a1de00-61da-43a6-bdb3-db5fa608cd1a" -->
 ## Documentation Structure
 
 - **[QUICK_START.md](QUICK_START.md)** - 5-minute setup guide
@@ -43,6 +48,7 @@ This project uses Google's recommended Firebase best practices with:
 - **[PRODUCTION_READINESS.md](PRODUCTION_READINESS.md)** - Deployment procedures
 - **[OPERATIONAL_STATUS.md](OPERATIONAL_STATUS.md)** - System status
 
+<!-- section_id: "973c80d5-56a2-474b-b213-b128c97f5d9d" -->
 ## Getting Started
 
 1. **New to the project?** Start with [QUICK_START.md](QUICK_START.md)

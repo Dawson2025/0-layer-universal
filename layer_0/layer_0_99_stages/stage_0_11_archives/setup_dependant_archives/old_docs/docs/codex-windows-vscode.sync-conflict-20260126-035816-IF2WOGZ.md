@@ -7,12 +7,14 @@ resource_name: "codex-windows-vscode.sync-conflict-20260126-035816-IF2WOGZ"
 
 This guide follows the official [Running Codex on Windows](https://developers.openai.com/codex/windows) playbook and adds a few quality-of-life tweaks for VS Code users.
 
+<!-- section_id: "d10c6be8-bfee-4423-9f86-98cbb5ae6465" -->
 ## Prerequisites
 
 - Windows 11 (22H2+) or Windows 10 (22H2) with administrator access
 - Stable internet connection and GitHub account
 - Optional: backups of existing VS Code or shell configurations
 
+<!-- section_id: "c592637b-83d8-433b-9c9a-a06d8519bea5" -->
 ## Progress checklist
 
 Copy these checkboxes into your notes (or mark them directly in VS Code’s markdown preview) to see which steps are complete. The commands help you confirm progress.
@@ -27,6 +29,7 @@ Copy these checkboxes into your notes (or mark them directly in VS Code’s mark
 - [ ] VS Code Remote WSL extension shows “WSL: Ubuntu” in the status bar.
 - [ ] Running `codex work` (or your task shortcut) opens a Codex session without errors.
 
+<!-- section_id: "38ed344c-f103-40d3-a218-8ae7d36f7c7a" -->
 ### Quick progress commands
 
 Use these one-liners to check where you stand:
@@ -50,6 +53,7 @@ Use these one-liners to check where you stand:
   pwd
   ```
 
+<!-- section_id: "b2455656-4aeb-4a23-bb9c-5cf37061b875" -->
 ### Self-check script (WSL)
 
 Run the bundled script to see a consolidated status report:
@@ -69,6 +73,7 @@ chmod +x ~/check-codex-setup.sh
 
 Re-run the script after major changes (Node upgrades, Codex updates, VS Code reinstalls) to ensure nothing regressed.
 
+<!-- section_id: "70298f70-a2db-44ee-9afd-7f82b87d3dac" -->
 ## 1. Prepare Windows
 
 1. Apply pending Windows Updates and reboot.
@@ -76,6 +81,7 @@ Re-run the script after major changes (Node upgrades, Codex updates, VS Code rei
 3. Install [Windows Terminal](https://aka.ms/terminal) from the Microsoft Store.
 4. Plan to set Ubuntu as the default terminal profile after WSL is in place.
 
+<!-- section_id: "ede4c632-dd2d-499a-af6c-f29d6242417a" -->
 ## 2. Install WSL 2
 
 Run these commands in an elevated PowerShell or Windows Terminal:
@@ -86,6 +92,7 @@ wsl --install
 
 When prompted, reboot. After restart, open Windows Terminal and launch the Ubuntu profile (`wsl`) to create your Linux username and password.
 
+<!-- section_id: "76e3b787-901e-4851-8a5c-a76fa0e51c6b" -->
 ## 3. Bootstrap your WSL environment
 
 Inside the Ubuntu shell:
@@ -104,6 +111,7 @@ git config --global core.editor "code --wait"
 git config --global core.autocrlf input
 ```
 
+<!-- section_id: "72a0a6ef-ce42-457d-a095-c21cc6190003" -->
 ## 4. Install Node.js with `nvm`
 
 Codex CLI is published as an npm package, so install Node.js inside WSL via `nvm`:
@@ -117,6 +125,7 @@ nvm use 22
 
 Open a new terminal if `nvm` is not immediately available.
 
+<!-- section_id: "711c6191-2c39-41ea-b308-6414f135d3e4" -->
 ## 5. Install Codex CLI
 
 ```bash
@@ -131,6 +140,7 @@ If your organization requires authentication:
 codex auth login
 ```
 
+<!-- section_id: "356b6b71-46fc-4221-a48d-88abc6583ffa" -->
 ## 6. Keep projects inside WSL
 
 - Create a workspace folder for repositories:
@@ -143,6 +153,7 @@ codex auth login
 - Access the same files from Windows via `\\wsl$\<Distro>\home\<user>\code` in Explorer.
 - Avoid syncing repositories through OneDrive/Dropbox/iCloud folders—these services can lock files, rewrite line endings, or duplicate symlinks. If you need a Windows-only checkout for native tools, use a folder like `C:\dev` (outside cloud sync) and clone separately from WSL (`/mnt/c/dev/...`) only when necessary.
 
+<!-- section_id: "c234d0be-19b7-4c7f-9ea6-34cc4822fd92" -->
 ## 7. Install VS Code and essential extensions
 
 1. Install [VS Code](https://code.visualstudio.com/Download) (System Installer recommended).
@@ -153,6 +164,7 @@ codex auth login
    - Project-specific linters and formatters
 3. Sign in and sync settings if you use Settings Sync.
 
+<!-- section_id: "1eed5449-6013-40f0-bf98-d861f0dd8d98" -->
 ## 8. Configure VS Code defaults for Codex
 
 - `File > Preferences > Settings`:
@@ -161,6 +173,7 @@ codex auth login
   - `git.confirmSync`: `false` to avoid extra prompts during automated syncs
 - Add project-specific preferences in `.vscode/settings.json` as needed.
 
+<!-- section_id: "2e86616d-4258-41e0-ba2c-ea52fa66989a" -->
 ## 9. Add a Codex task (optional but handy)
 
 Create `.vscode/tasks.json` in your project:
@@ -197,16 +210,19 @@ Bind the task to a shortcut (`File > Preferences > Keyboard Shortcuts (JSON)`):
 }
 ```
 
+<!-- section_id: "9f94f019-484d-4139-adfa-ec7fb380ddb9" -->
 ## 10. Run and validate Codex
 
 1. Open your repo from the WSL path (`code .`).
 2. Start the Codex task (`Ctrl+Shift+B` by default, or your custom binding).
 3. Run a smoke test (e.g., ask Codex to edit a file or run a project script).
 
+<!-- section_id: "cc8455de-003d-4aec-99a7-f1e52a1107a7" -->
 ## 11. Browser automation MCP servers (Playwright + Chrome)
 
 Some Codex workflows rely on browser automation via MCP servers. Set these up once per machine so future projects (Cursor, Codex CLI, VS Code agents, etc.) can launch browsers without repeatedly downloading gigabytes of binaries.
 
+<!-- section_id: "03708e66-2a99-41f4-ad0a-40ce2e883360" -->
 ### Playwright MCP (Chromium)
 
 - Install browsers with **Node.js Playwright** only:
@@ -218,6 +234,7 @@ Some Codex workflows rely on browser automation via MCP servers. Set these up on
 - **Do not** run `python3 -m playwright install ...`; the Python build stores browsers in a different cache so Codex/Cursor will never see them and will redownload every session.
 - If you already used the Python installer, wipe those caches (`rm -rf ~/.cache/ms-playwright/chromium-*`) and repeat the Node command above; then restart Codex so it re-detects the browsers.
 
+<!-- section_id: "2334d37d-82ab-420b-9776-edbe322a06c9" -->
 ### Chrome DevTools MCP
 
 Chrome DevTools MCP requires actual Google Chrome, not Playwright’s Chromium bundle.
@@ -241,6 +258,7 @@ Chrome DevTools MCP requires actual Google Chrome, not Playwright’s Chromium b
 
 If Chrome isn’t installed, Chrome DevTools MCP will spawn repeatedly and fail. Keeping Chromium (Playwright) and Chrome (system) separate prevents most “browser not installed” loops.
 
+<!-- section_id: "c4679dab-74a3-4a33-b7e5-495fbd685b19" -->
 ## 12. Troubleshooting & FAQ
 
 - **Extension installed but unresponsive**: Install the [Visual Studio Build Tools (C++ workload)](https://visualstudio.microsoft.com/visual-cpp-build-tools/) and the latest [Microsoft Visual C++ Redistributable](https://learn.microsoft.com/cpp/windows/latest-supported-vc-redist), then restart VS Code. Winget shortcut:
@@ -259,6 +277,7 @@ If Chrome isn’t installed, Chrome DevTools MCP will spawn repeatedly and fail.
 
 - **CLI vs IDE behavior**: In CLI mode (`codex work`) Codex uses Linux sandboxing inside WSL. In the VS Code extension, start with Chat mode (approval-based) and only switch to Agent (full access) if you trust the workspace.
 
+<!-- section_id: "29a31689-9335-4741-bb13-8332ee4fb413" -->
 ## 13. Stay up to date
 
 - Update Codex CLI periodically:

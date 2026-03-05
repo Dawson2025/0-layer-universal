@@ -10,12 +10,14 @@ resource_name: "README"
 
 ---
 
+<!-- section_id: "5b93fefe-12eb-4ff9-92eb-9d16c484a0f9" -->
 ## Definition
 
 > Agents never lose competence when crossing session boundaries, compaction events, or tool switches. Context is always recoverable without re-reading everything.
 
 ---
 
+<!-- section_id: "b1c71607-e250-4a84-967e-30ad4f526ee4" -->
 ## The Problem
 
 Current AI agent sessions are fragile:
@@ -28,6 +30,7 @@ Current AI agent sessions are fragile:
 
 ---
 
+<!-- section_id: "63de06cb-f9b7-44f1-9203-163d2ced1e30" -->
 ## The Vision
 
 A system where:
@@ -40,6 +43,7 @@ A system where:
 
 ---
 
+<!-- section_id: "c4b63936-1580-428c-8904-91c3315d452b" -->
 ## Four Branches
 
 | Branch | Question | Description |
@@ -51,6 +55,7 @@ A system where:
 
 ---
 
+<!-- section_id: "b92bdc76-7a51-4044-b266-6ae0fe273014" -->
 ## Branch Structure
 
 ```
@@ -78,6 +83,7 @@ A system where:
 
 ---
 
+<!-- section_id: "f8f32664-ca89-40f6-b643-8ccc9558983f" -->
 ## Success Criteria
 
 The root need is satisfied when:
@@ -91,6 +97,7 @@ The root need is satisfied when:
 
 ---
 
+<!-- section_id: "86cc4a5b-4c97-4d8c-9e1c-8cc1d736e291" -->
 ## Research Grounding
 
 All needs trace to `memory_system/stage_1_02_research/outputs/by_topic/`:

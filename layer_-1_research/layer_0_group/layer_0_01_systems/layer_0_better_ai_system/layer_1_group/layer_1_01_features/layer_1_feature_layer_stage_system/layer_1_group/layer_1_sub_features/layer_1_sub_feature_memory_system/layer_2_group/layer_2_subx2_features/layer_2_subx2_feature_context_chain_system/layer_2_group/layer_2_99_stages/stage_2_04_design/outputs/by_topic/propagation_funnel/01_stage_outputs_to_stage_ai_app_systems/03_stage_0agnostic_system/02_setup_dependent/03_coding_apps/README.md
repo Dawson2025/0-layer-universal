@@ -6,10 +6,12 @@ resource_name: "README"
 ---
 # Coding Apps (03_coding_apps)
 
+<!-- section_id: "55250872-109d-427a-9bd1-b1940bc20621" -->
 ## What This Contains
 
 IDE and code editor configurations specific to your coding environment. These are tools you use to write and edit code.
 
+<!-- section_id: "3b0626f7-efe9-447c-9dd2-9fb27f9fad88" -->
 ## Supported Editors
 
 | Editor | Location | Content |
@@ -21,6 +23,7 @@ IDE and code editor configurations specific to your coding environment. These ar
 | Sublime | 03_coding_apps/sublime/ | Preferences and packages |
 | Emacs | 03_coding_apps/emacs/ | .emacs, init.el, packages |
 
+<!-- section_id: "61c97d2e-da5e-4813-b0b7-195f2ad24962" -->
 ## Example Structure
 
 For Cursor:
@@ -41,6 +44,7 @@ For VS Code:
 └── tasks.json           # Build and run tasks
 ```
 
+<!-- section_id: "79b1c254-dcdb-4ef5-9558-e898dc30970b" -->
 ## Next Layer
 
 After coding apps configuration, the next layer is **04_ai_apps/** (AI service CLI tools).

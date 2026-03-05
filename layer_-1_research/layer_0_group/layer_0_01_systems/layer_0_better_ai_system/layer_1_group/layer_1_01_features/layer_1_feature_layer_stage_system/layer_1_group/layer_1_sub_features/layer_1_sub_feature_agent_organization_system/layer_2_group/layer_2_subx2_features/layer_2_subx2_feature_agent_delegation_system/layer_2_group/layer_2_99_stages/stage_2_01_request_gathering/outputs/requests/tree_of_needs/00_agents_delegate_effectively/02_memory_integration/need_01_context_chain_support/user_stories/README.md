@@ -8,10 +8,12 @@ resource_name: "README"
 
 **Need**: [Context Chain Support](../README.md)
 
+<!-- section_id: "75d93f41-fa9f-4136-9629-aa679a5a5983" -->
 ## Overview
 
 These stories cover how automatic context chain traversal provides agents with the hierarchy-level awareness they need for delegation. They validate that managers receive parent identity and scope automatically, that stage agents inherit domain context from their entity, that chain depth is bounded per agent type, and that chains deliver identity pointers rather than full operational detail.
 
+<!-- section_id: "14887ef7-e184-41a5-8060-32f16ae4ec57" -->
 ## Actors
 
 - **User (Developer)**: Human developer (Dawson) who gives instructions to the AI system, reviews outputs, and validates behavior

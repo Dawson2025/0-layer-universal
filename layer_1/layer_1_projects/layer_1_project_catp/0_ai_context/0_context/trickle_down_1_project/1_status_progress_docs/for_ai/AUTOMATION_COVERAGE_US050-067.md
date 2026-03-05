@@ -11,10 +11,12 @@ resource_name: "AUTOMATION_COVERAGE_US050-067"
 
 ---
 
+<!-- section_id: "ddac7d31-d114-40b4-99ff-6b55f33ec492" -->
 ## Executive Summary
 
 All 18 remaining user stories (US-050 through US-067) now have corresponding automation coverage. This completes the full automation suite for all 67 user stories in the Language Tracker application.
 
+<!-- section_id: "7e51a5c2-0669-41bf-aaae-af2c112c6616" -->
 ### Coverage Breakdown
 
 | Group | Stories | Scripts | Status |
@@ -31,8 +33,10 @@ All 18 remaining user stories (US-050 through US-067) now have corresponding aut
 
 ---
 
+<!-- section_id: "cfbc2764-52da-4431-87d1-8644b7db2ff9" -->
 ## Detailed Script Inventory
 
+<!-- section_id: "b6aab4c4-1950-4f3f-a920-885f7df6c4df" -->
 ### 1. Admin Data Maintenance (US-050–053)
 
 **Primary Script**: `scripts/mcp-admin-database-tools.mjs`
@@ -67,6 +71,7 @@ All 18 remaining user stories (US-050 through US-067) now have corresponding aut
 
 ---
 
+<!-- section_id: "0efdb3ea-c00f-4127-9f30-a51f01696941" -->
 ### 2. Audio & TTS Experience (US-054–056)
 
 **Primary Script**: `scripts/mcp-tts-experience.mjs`
@@ -104,6 +109,7 @@ All 18 remaining user stories (US-050 through US-067) now have corresponding aut
 
 ---
 
+<!-- section_id: "f33f2d90-457c-4ca5-8af3-bac42552471e" -->
 ### 3. Hybrid Storage Resilience (US-057–059)
 
 **Primary Script**: `scripts/mcp-storage-resilience.mjs`
@@ -134,6 +140,7 @@ All 18 remaining user stories (US-050 through US-067) now have corresponding aut
 
 ---
 
+<!-- section_id: "c28c3d22-24b1-481b-b099-d0766daded76" -->
 ### 4. Cloud Test Controls (US-060–061)
 
 **Primary Script**: `scripts/automation/run_cloud_tests.sh`
@@ -160,6 +167,7 @@ All 18 remaining user stories (US-050 through US-067) now have corresponding aut
 
 ---
 
+<!-- section_id: "87f768e1-69c1-4b9a-b238-f08d102eadfe" -->
 ### 5. Parallel Dev Workflow (US-062–063)
 
 **Primary Script**: `scripts/automation/validate_parallel_structure.py`
@@ -188,6 +196,7 @@ All 18 remaining user stories (US-050 through US-067) now have corresponding aut
 
 ---
 
+<!-- section_id: "320ccb0d-2799-43be-b8f7-13bc69fdefb0" -->
 ### 6. End-to-End Journeys (US-064–067)
 
 Four comprehensive journey scripts covering complete user workflows.
@@ -310,8 +319,10 @@ Four comprehensive journey scripts covering complete user workflows.
 
 ---
 
+<!-- section_id: "cbd4d7af-2781-4135-8ea3-ec04f3628306" -->
 ## Technical Improvements
 
+<!-- section_id: "db1719d4-d2a3-4a28-a233-b3436c6288d5" -->
 ### JSON Parsing Enhancement
 
 All journey scripts now include robust JSON parsing:
@@ -338,6 +349,7 @@ function parseJSONSafe(mcpResponse, fallback = {}) {
 }
 ```
 
+<!-- section_id: "4e9b69c9-3d9e-4c65-8697-136d48e752f6" -->
 ### MCP SDK Integration
 
 All journey scripts use proper MCP SDK:
@@ -352,8 +364,10 @@ await client.connect(new StreamableHTTPClientTransport(new URL(MCP_URL)));
 
 ---
 
+<!-- section_id: "8242b2f9-2b53-4eba-bfde-4cfb855bda8f" -->
 ## Testing Results Summary
 
+<!-- section_id: "6ca2e407-0d8c-4ad6-bc1c-01982e0db7e2" -->
 ### Successful Test Runs
 
 | Script | Status | Artifacts | Notes |
@@ -368,6 +382,7 @@ await client.connect(new StreamableHTTPClientTransport(new URL(MCP_URL)));
 | Branching Journey | ⚠️ Partial | Yes | JSON parsing fixed |
 | Mobile Journey | ⚠️ Partial | Yes | JSON parsing fixed, layout validated |
 
+<!-- section_id: "58f89211-1baf-4a0a-95c3-9ecc35d7fa73" -->
 ### Key Issues Identified
 
 1. **Authentication Session Persistence**
@@ -387,6 +402,7 @@ await client.connect(new StreamableHTTPClientTransport(new URL(MCP_URL)));
 
 ---
 
+<!-- section_id: "5066b18b-b89f-42e9-bb11-72f74e4af5c7" -->
 ## Artifact Organization
 
 All automation artifacts are organized under:
@@ -427,8 +443,10 @@ artifacts/
 
 ---
 
+<!-- section_id: "d4b16772-fb92-4e10-866e-14278c481ade" -->
 ## Running the Automation Suite
 
+<!-- section_id: "ef868fee-0247-41cb-a9fe-bce5b4e06934" -->
 ### Prerequisites
 
 1. **Start Services**:
@@ -444,6 +462,7 @@ artifacts/
    export APP_BASE_URL=http://127.0.0.1:5002
    ```
 
+<!-- section_id: "382b159d-5670-4418-8cf4-2a10136b9c55" -->
 ### Run Individual Suites
 
 ```bash
@@ -472,6 +491,7 @@ node scripts/mcp-journey-branching.mjs
 node scripts/mcp-journey-mobile.mjs
 ```
 
+<!-- section_id: "facf99bf-bd00-405e-8838-13fc28760057" -->
 ### Run Complete Suite
 
 ```bash
@@ -483,13 +503,16 @@ python3 scripts/automation/run_user_stories.py \
 
 ---
 
+<!-- section_id: "171fdf19-bde0-4684-b399-8dde71c1caec" -->
 ## Coverage Metrics
 
+<!-- section_id: "86c27683-befc-4506-a11f-62039c1a1fa8" -->
 ### User Story Coverage
 - **Total User Stories**: 67
 - **Automated**: 67
 - **Coverage**: 100%
 
+<!-- section_id: "568adad2-8db1-4195-9d3f-3a154a3d31e3" -->
 ### Story Groups Covered
 - Authentication & Access (US-001–005): ✅
 - Dashboard Navigation (US-006–011): ✅
@@ -504,6 +527,7 @@ python3 scripts/automation/run_user_stories.py \
 - Development Conventions (US-062–063): ✅
 - End-to-End Journeys (US-064–067): ✅
 
+<!-- section_id: "c1e9c646-5efe-4a7c-abdf-1af4c643f394" -->
 ### Test Types
 - UI Automation (Playwright): 7 scripts
 - API/Integration Tests: 2 scripts
@@ -514,8 +538,10 @@ python3 scripts/automation/run_user_stories.py \
 
 ---
 
+<!-- section_id: "e93e2728-6878-4318-9c99-2affb1ffbe19" -->
 ## Next Steps
 
+<!-- section_id: "02f0978a-61b3-486e-9409-07da7ae31d29" -->
 ### Immediate Priorities
 
 1. **Fix Authentication Flow**
@@ -533,6 +559,7 @@ python3 scripts/automation/run_user_stories.py \
    - Generate comprehensive pass/fail report
    - Document any new gaps
 
+<!-- section_id: "21fbddf1-d0c7-4e21-97d2-b43b950c8eee" -->
 ### Future Enhancements
 
 1. **Branch Merge Functionality**
@@ -557,6 +584,7 @@ python3 scripts/automation/run_user_stories.py \
 
 ---
 
+<!-- section_id: "4fca24ec-634b-40e9-bfa1-d05bc40b140c" -->
 ## Conclusion
 
 All 67 user stories now have corresponding automation coverage. The infrastructure is in place to:

@@ -6,11 +6,13 @@ resource_name: "README"
 ---
 # Layer Registry - learning_simulation_system
 
+<!-- section_id: "a433507d-83a3-431a-a583-6ba0d190e07c" -->
 ## Layer Information
 - **Layer Number**: -1 (Research)
 - **Entity Type**: Research Project
 - **Entity Name**: learning_simulation_system
 
+<!-- section_id: "4e17523d-72ef-41cd-8976-809a983782ee" -->
 ## Standard Layer Components
 | Position | Component | Purpose |
 |----------|-----------|---------|
@@ -20,11 +22,13 @@ resource_name: "README"
 | 03 | sub_layers | Knowledge system and configuration |
 | 99 | stages | Workflow stages with outputs |
 
+<!-- section_id: "60da12a7-3609-4a9c-86ee-92f202246eb5" -->
 ## Child Container (layer_0/)
 - `layer_0_features/` - Implementation features
 - `layer_0_sub_projects/` - Sub-projects
 - `layer_0_components/` - Reusable components
 
+<!-- section_id: "a26fbf0e-aa66-491b-9655-f2724d87da4c" -->
 ## Relative Layer Numbering
 In research context (layer_-1_research):
 - Layer -1 = This project level

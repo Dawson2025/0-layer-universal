@@ -9,12 +9,14 @@ resource_name: "GIT_REPO_SYNC_SYSTEM.sync-conflict-20260126-035814-IF2WOGZ"
 
 This document describes the system for managing git repositories across multiple operating systems in the `dawson-workspace` synced folder.
 
+<!-- section_id: "5aa718b5-cde4-4232-acc4-9df7701a079e" -->
 ## Overview
 
 The `dawson-workspace` folder syncs across Windows, WSL, and Ubuntu using Syncthing with a VPS relay. However, `.git` directories are **excluded from Syncthing sync** to prevent conflicts during git operations. This means each OS needs to set up its own git connection to GitHub.
 
 This system automates that process.
 
+<!-- section_id: "ff34375f-8eec-428a-922c-ed92b8bc1dea" -->
 ## Architecture
 
 ```
@@ -29,14 +31,17 @@ dawson-workspace/                    ← Synced via Syncthing
         └── 0_context/               ← Content IS synced
 ```
 
+<!-- section_id: "e3c06c90-c510-4f8c-99ae-069b9e44a3f8" -->
 ### Key Principle
 
 - **File content** syncs via Syncthing (automatic, real-time)
 - **Git history** syncs via GitHub (manual `git pull`/`git push`)
 - Each OS maintains its own `.git` directory
 
+<!-- section_id: "3b00b361-93e7-4efc-afed-33b246679b1a" -->
 ## Files
 
+<!-- section_id: "a1b226a1-27cc-4507-a973-5c1cac139afa" -->
 ### 1. `.stignore` (Workspace Root)
 
 Located at: `~/dawson-workspace/.stignore`
@@ -49,6 +54,7 @@ Tells Syncthing to exclude `.git` directories from sync:
 .git
 ```
 
+<!-- section_id: "63d62c43-a29d-415f-82fa-a96d134c1599" -->
 ### 2. `.git-repos.json` (Workspace Root)
 
 Located at: `~/dawson-workspace/.git-repos.json`
@@ -76,6 +82,7 @@ Central registry of all git repositories in the workspace:
 - `branch`: Default branch name
 - `description`: Human-readable description
 
+<!-- section_id: "15177d85-87c1-4fd0-aa6f-6b3c222f9886" -->
 ### 3. `setup-git-repos.sh` (Workspace Root)
 
 Located at: `~/dawson-workspace/setup-git-repos.sh`
@@ -106,6 +113,7 @@ Automation script that:
 - `jq` must be installed (`sudo apt install jq` on Ubuntu)
 - SSH key must be configured for GitHub access
 
+<!-- section_id: "31ccfbce-5f06-4c46-943e-27ccb700bedf" -->
 ### 4. `.git-repo.json` (Per Repository)
 
 Located in each git repo directory, e.g.: `~/dawson-workspace/code/0_layer_universal/.git-repo.json`
@@ -144,8 +152,10 @@ Documents the individual repository for manual setup or reference:
 }
 ```
 
+<!-- section_id: "942a018a-c91a-44d4-b3c1-6d5105dd54da" -->
 ## Workflow
 
+<!-- section_id: "a55321e0-2b91-4617-b7a7-48c22fb78e17" -->
 ### When Booting Into a New OS
 
 1. **Syncthing syncs automatically** - All file content syncs from VPS
@@ -159,6 +169,7 @@ Documents the individual repository for manual setup or reference:
    git pull
    ```
 
+<!-- section_id: "e0263456-3545-486d-9426-5e12f4c483c3" -->
 ### Daily Workflow
 
 1. **Make changes** - Edit files normally
@@ -171,6 +182,7 @@ Documents the individual repository for manual setup or reference:
    ```
 4. **On other OS** - Run `git pull` to get the commits
 
+<!-- section_id: "7b9dec54-a8f0-49ac-9208-66b81deb04d4" -->
 ### Handling Conflicts
 
 Since Syncthing syncs file content and git syncs history, conflicts can occur:
@@ -183,6 +195,7 @@ Since Syncthing syncs file content and git syncs history, conflicts can occur:
    - Resolve normally with `git mergetool` or manual editing
    - Commit the resolution
 
+<!-- section_id: "93600517-9a57-4fb7-a751-71e51cf47e3a" -->
 ## Adding a New Repository
 
 1. **Add to central registry** (`~/.git-repos.json`):
@@ -205,8 +218,10 @@ Since Syncthing syncs file content and git syncs history, conflicts can occur:
 
 4. **On other OS** - Script will auto-detect and set up the new repo.
 
+<!-- section_id: "cbb9796a-f600-43f9-ab8b-c2c0b4c51992" -->
 ## Troubleshooting
 
+<!-- section_id: "d9a177e4-6f67-4498-ad75-1943f5b6a4a3" -->
 ### Script says "jq is required"
 
 Install jq:
@@ -221,6 +236,7 @@ brew install jq
 choco install jq
 ```
 
+<!-- section_id: "401a7dae-17d6-43d7-a13c-6b29db2f6df0" -->
 ### SSH key not working
 
 Ensure your SSH key is set up for GitHub:
@@ -232,6 +248,7 @@ ls -la ~/.ssh/id_ed25519
 ssh -T git@github.com
 ```
 
+<!-- section_id: "6585a797-e147-4bca-aa95-0bdf3314d4f8" -->
 ### Git fetch fails
 
 1. Check network connection
@@ -241,18 +258,21 @@ ssh -T git@github.com
    git remote set-url origin https://github.com/Dawson2025/0-universal-context.git
    ```
 
+<!-- section_id: "1c0250b6-5ffe-4ff7-84d5-e609f53691b7" -->
 ### Files not syncing
 
 1. Check Syncthing is running
 2. Verify folder status in Syncthing GUI (http://localhost:8384)
 3. Check `.stignore` isn't excluding needed files
 
+<!-- section_id: "b147ecb9-bde0-4f2c-b0e5-d59b7cfe71ec" -->
 ## Related Documentation
 
 - [Multi-OS Sync System](../../-1_research/-1.01_things_researched/multi_os_system/README.md) - Overall sync architecture
 - [STATUS.md](../../-1_research/-1.01_things_researched/multi_os_system/STATUS.md) - Current sync status
 - [VPS_CREDENTIALS.md](../../-1_research/-1.01_things_researched/multi_os_system/VPS_CREDENTIALS.md) - VPS access details
 
+<!-- section_id: "7b4c6033-04dd-401c-9e1c-65908b693121" -->
 ## File Locations Quick Reference
 
 | File | Location | Purpose |

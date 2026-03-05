@@ -8,8 +8,10 @@ resource_name: "what_to_do_next"
 
 **🔧 CRITICAL**: Before executing any commands, read [Cursor Terminal Issues](../trickle_down_0_universal/0_instruction_docs/cursor_terminal_issues.md) to understand terminal handling problems and use the terminal wrapper system. 
 
+<!-- section_id: "fabf7317-e718-4eb6-930e-39ba68a9c56b" -->
 ## 🎯 **CURRENT PRIORITIES** (I-Eat University Food Delivery Platform)
 
+<!-- section_id: "2fb8305e-13a4-41ba-9acd-7ca3f654cb9c" -->
 ### 🚀 **PROJECT OVERVIEW**
 **I-Eat** is a university-focused food delivery platform that connects students with food delivery services on campus. The platform features:
 - **Student Users**: Order food, earn points from teachers, track deliveries
@@ -17,6 +19,7 @@ resource_name: "what_to_do_next"
 - **Points System**: Teachers award points to students for academic performance
 - **Campus Integration**: Specialized for university dorms, classrooms, and campus locations
 
+<!-- section_id: "ecbbc991-1ece-4ca5-b6f9-fb3ff099beb4" -->
 ### 🔴 **HIGH PRIORITY - IMMEDIATE ACTIONS**
 
 1. **Set Up Development Environment** (2 hours) 🎯 **IMMEDIATE PRIORITY**
@@ -55,6 +58,7 @@ resource_name: "what_to_do_next"
    - Build real-time tracking interface
    - Add campus location management
 
+<!-- section_id: "f3521cfb-bcb1-4526-b987-a05f7ff76672" -->
 ### 🟡 **MEDIUM PRIORITY**
 
 7. **Mobile App Development** (12 hours)
@@ -75,6 +79,7 @@ resource_name: "what_to_do_next"
    - Add payment history and receipts
    - Ensure secure transaction handling
 
+<!-- section_id: "cecd18d4-24f8-41a3-98a0-19f39862eda6" -->
 ### 🟢 **LOW PRIORITY**
 
 10. **Advanced Features** (10 hours)
@@ -89,6 +94,7 @@ resource_name: "what_to_do_next"
     - Security testing and hardening
     - User acceptance testing
 
+<!-- section_id: "2ee042aa-3cbe-4247-a7c5-31a76b1b10fe" -->
 ## 📊 **CURRENT PROJECT STATUS**
 
 - **Project Phase**: Initial Development (Stage 1)
@@ -97,6 +103,7 @@ resource_name: "what_to_do_next"
 - **Current Status**: Project setup and initial development
 - **Next Milestone**: Working authentication and basic ordering system
 
+<!-- section_id: "5e54b79a-3532-4e47-80fb-16f48a1545a0" -->
 ## 🚀 **IMMEDIATE NEXT ACTION**
 
 **Initialize the React + Vite project and set up Supabase integration** - Start by creating the basic project structure and implementing user authentication to establish the foundation for the I-Eat platform.

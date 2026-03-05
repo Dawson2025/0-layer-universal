@@ -11,14 +11,17 @@ resource_name: "test_design_07_sync_architecture"
 
 ---
 
+<!-- section_id: "056f4292-a2c8-4758-ad08-82d8864d51ad" -->
 ## What We're Testing
 
 5 existing sync scripts work correctly and independently. Dependency ordering is respected. Zero-dependency guarantee holds (file-based syncs need only standard unix tools). Each script transforms the right inputs to the right outputs.
 
 ---
 
+<!-- section_id: "bff0c1d9-55e8-489f-b07b-195634177969" -->
 ## Test Cases
 
+<!-- section_id: "c671abbd-f21e-4cc2-ae7c-9c8020b9b696" -->
 ### TC-07-01: agnostic-sync.sh — input/output contract
 
 **Steps**:
@@ -32,6 +35,7 @@ resource_name: "test_design_07_sync_architecture"
 **Note**: Extends existing test_agnostic_sync with .cursorrules and copilot-instructions.md coverage
 **Type**: Integration
 
+<!-- section_id: "b1c700b1-652f-4c4d-9353-970a4d962258" -->
 ### TC-07-02: episodic-sync.sh — aggregates to auto-memory
 
 **Steps**:
@@ -44,6 +48,7 @@ resource_name: "test_design_07_sync_architecture"
 **Expected**: Episodic memory from .0agnostic/04_episodic_memory/ lands in Claude auto-memory
 **Type**: Integration
 
+<!-- section_id: "c026483b-4350-43c9-884a-eb5514179d57" -->
 ### TC-07-03: jsonld-to-md.sh — generates integration summaries
 
 **Steps**:
@@ -56,6 +61,7 @@ resource_name: "test_design_07_sync_architecture"
 **Expected**: .integration.md generated from .gab.jsonld with correct structure
 **Type**: Integration
 
+<!-- section_id: "3449a395-085c-4e94-a1b5-643da84c4e6b" -->
 ### TC-07-04: sync-handoffs.sh — distributes reports
 
 **Steps**:
@@ -71,6 +77,7 @@ resource_name: "test_design_07_sync_architecture"
 **Expected**: Reports distributed to all three directions
 **Type**: Integration
 
+<!-- section_id: "f5c63d8d-06b5-405a-9563-0b887c6f1d60" -->
 ### TC-07-05: user-level-sync.sh — extends chain to ~/.0agnostic/
 
 **Steps**:
@@ -83,6 +90,7 @@ resource_name: "test_design_07_sync_architecture"
 **Expected**: Universal context extends beyond repo boundary to user level
 **Type**: Integration
 
+<!-- section_id: "8802dffe-0459-4a29-a1f5-cb15472010a9" -->
 ### TC-07-06: Dependency ordering — Phase 1 before Phase 2
 
 **Steps**:
@@ -94,6 +102,7 @@ resource_name: "test_design_07_sync_architecture"
 **Expected**: Later scripts see outputs from earlier scripts (dependency ordering works)
 **Type**: Integration
 
+<!-- section_id: "1c7ed82b-f6f8-42f4-9650-e80484fd12c2" -->
 ### TC-07-07: Zero-dependency guarantee — file-based syncs use standard tools
 
 **Steps**:
@@ -106,6 +115,7 @@ resource_name: "test_design_07_sync_architecture"
 **Expected**: All file-based sync scripts work with standard unix tools only
 **Type**: Structural
 
+<!-- section_id: "896e82b2-0373-4718-814c-4679d8113d15" -->
 ### TC-07-08: sync-registry.json matches actual scripts
 
 **Steps**:
@@ -120,6 +130,7 @@ resource_name: "test_design_07_sync_architecture"
 
 ---
 
+<!-- section_id: "739492cc-c778-4c6a-be6f-2b1ead33a432" -->
 ## Coverage Gap Analysis
 
 | Design Concept | Test Case | Status |

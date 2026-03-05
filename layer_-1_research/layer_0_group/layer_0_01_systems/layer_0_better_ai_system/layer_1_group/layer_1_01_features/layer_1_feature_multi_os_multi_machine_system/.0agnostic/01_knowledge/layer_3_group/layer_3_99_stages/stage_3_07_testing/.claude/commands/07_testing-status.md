@@ -12,12 +12,14 @@ argument-hint: [--verbose]
 
 Check the current status of the 07_testing stage.
 
+<!-- section_id: "21687632-4db2-48aa-827b-901f5068483b" -->
 ## Steps
 1. Read the stage's outputs/ folder
 2. Check hand_off_documents/ for context
 3. Review any in-progress work
 4. Report status summary
 
+<!-- section_id: "a3ea0eb3-58da-45b0-9691-d7a189f4339a" -->
 ## Output
 - Current progress
 - Pending items

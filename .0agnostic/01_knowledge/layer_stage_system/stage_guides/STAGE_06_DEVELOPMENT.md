@@ -5,10 +5,12 @@ resource_name: "STAGE_06_DEVELOPMENT"
 ---
 # Stage 06: Development — Universal Guide
 
+<!-- section_id: "0cd17072-a14a-44e3-b4aa-5a014526d29a" -->
 ## Purpose
 
 Build the artifacts specified in the implementation plan. This is the **build stage** — execute the plan, create the deliverables.
 
+<!-- section_id: "9f023b4e-2901-4f5f-98e4-f23d8a568fb5" -->
 ## What This Stage IS
 
 The development agent:
@@ -18,6 +20,7 @@ The development agent:
 - Produces working artifacts that can be validated in stage 07
 - Maintains a development status document tracking what's done vs remaining
 
+<!-- section_id: "24cb0149-c18c-40ed-8116-e3244af14dbf" -->
 ## What This Stage IS NOT
 
 The development agent does NOT:
@@ -30,6 +33,7 @@ The development agent does NOT:
 
 The agent **builds what was planned**, not **decides what to build**.
 
+<!-- section_id: "b62abbda-23b1-4206-b340-e2ec61d1de70" -->
 ## Methodology
 
 ```
@@ -42,6 +46,7 @@ outputs/
 └── [actual artifacts may live in the entity itself, not in outputs/]
 ```
 
+<!-- section_id: "558a2bd8-9d40-4c95-ac4c-55d1ed77d66c" -->
 ### Development Tracking
 
 The development status document tracks:
@@ -51,6 +56,7 @@ The development status document tracks:
 - **Deviations**: Any changes from the plan (with rationale)
 - **Blockers**: Issues preventing progress
 
+<!-- section_id: "6068c77b-14f4-48de-a9bc-7bc03a9d819b" -->
 ### Artifact Locations
 
 Development artifacts typically live in the **entity itself**, not in `outputs/`:
@@ -60,6 +66,7 @@ Development artifacts typically live in the **entity itself**, not in `outputs/`
 
 The `outputs/` directory holds the **development documentation** (runbook, status), not the artifacts themselves.
 
+<!-- section_id: "2e21edbd-5590-428e-9376-3d6cd68da236" -->
 ## Inputs
 
 - **Stage 05 outputs** — implementation plan with ordered tasks
@@ -67,6 +74,7 @@ The `outputs/` directory holds the **development documentation** (runbook, statu
 - **Stage 03 outputs** — constraints to follow during building
 - **Parent entity .0agnostic/** — existing structure to build upon
 
+<!-- section_id: "a34dc47f-a093-461f-a406-5d1a00f4f8e5" -->
 ## Outputs
 
 | Output | Location | Format |
@@ -76,6 +84,7 @@ The `outputs/` directory holds the **development documentation** (runbook, statu
 | Built artifacts | Entity itself (`.0agnostic/`, scripts, etc.) | Whatever the plan specifies |
 | Stage report | `outputs/stage_report.md` | Standard stage report format |
 
+<!-- section_id: "375ece5c-7e4b-4ccd-a4ea-a32dffc050cc" -->
 ## Success Criteria
 
 This stage is complete when:
@@ -85,6 +94,7 @@ This stage is complete when:
 4. Development status document reflects final state
 5. Artifacts are ready for stage 07 (testing) validation
 
+<!-- section_id: "c7135014-349a-4853-bb58-bc449a4e23d5" -->
 ## Exit Protocol
 
 1. Update `outputs/stage_report.md` with current status
@@ -92,6 +102,7 @@ This stage is complete when:
 3. If handing off to **stage 04** (design): note design issues discovered during implementation
 4. If handing off to **stage 05** (planning): note tasks that need replanning
 
+<!-- section_id: "35aa7304-6c35-4d72-9aa2-196d1b18d82c" -->
 ## Common Patterns
 
 - **Runbook-driven**: Follow the runbook step by step — deviations should be documented
@@ -99,6 +110,7 @@ This stage is complete when:
 - **Status tracking**: Update the status document as tasks complete
 - **Minimal design changes**: If the design needs changing, flag it — don't silently redesign during development
 
+<!-- section_id: "b4ba170c-6485-4bd5-9aab-0b1bffb9aaed" -->
 ## Anti-Patterns
 
 - Building without reading the plan (stage 05) first

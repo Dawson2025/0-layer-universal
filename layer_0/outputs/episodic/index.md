@@ -11,6 +11,7 @@ resource_name: "index"
 
 ---
 
+<!-- section_id: "0b942381-2479-4833-8057-6156a09cc6eb" -->
 ## Purpose
 
 This index provides quick access to session history, enabling agents to:
@@ -20,6 +21,7 @@ This index provides quick access to session history, enabling agents to:
 
 ---
 
+<!-- section_id: "78e26404-a684-4129-9553-61c85cd8cb2c" -->
 ## Recent Sessions
 
 | Date | Session | Summary | Status |
@@ -28,6 +30,7 @@ This index provides quick access to session history, enabling agents to:
 
 ---
 
+<!-- section_id: "95c1d131-3c52-4b4a-8fea-b74689a0b693" -->
 ## Key Decisions
 
 | Date | Decision | Rationale | Session |
@@ -38,6 +41,7 @@ This index provides quick access to session history, enabling agents to:
 
 ---
 
+<!-- section_id: "adab4e63-1c58-4010-af42-eae73d105eee" -->
 ## Active Work
 
 | Topic | Last Session | Status | Next Steps |
@@ -49,6 +53,7 @@ This index provides quick access to session history, enabling agents to:
 
 ---
 
+<!-- section_id: "ecb5073c-de27-4204-9148-e5697e1a8bd3" -->
 ## Change Tracking
 
 Recent changes are logged in:
@@ -58,20 +63,24 @@ Recent changes are logged in:
 
 ---
 
+<!-- section_id: "1bfe02de-fd74-462d-bce2-69892b1c8b66" -->
 ## How to Use This Index
 
+<!-- section_id: "b9d665cd-7f79-4a38-a55f-5c348d7fb62b" -->
 ### Starting a New Session
 1. Read this index to understand recent activity
 2. Check "Active Work" for current state
 3. Read relevant session files for context
 4. Begin work with full awareness
 
+<!-- section_id: "c651b517-a9c2-46ae-88df-726522d40b8e" -->
 ### Ending a Session
 1. Create session file in `sessions/`
 2. Update this index with new session entry
 3. Update "Key Decisions" if applicable
 4. Update "Active Work" status
 
+<!-- section_id: "ebcd4460-5ff1-4742-85f6-bbaad0084de3" -->
 ### Finding Information
 - **What happened yesterday?** → Check Recent Sessions
 - **Why was X decided?** → Check Key Decisions
@@ -80,6 +89,7 @@ Recent changes are logged in:
 
 ---
 
+<!-- section_id: "922284f9-46be-462a-a597-b2c7dd467e5c" -->
 ## Session File Location
 
 All session files are in: `sessions/YYYY-MM-DD_session_NNN.md`

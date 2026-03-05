@@ -5,6 +5,7 @@ resource_name: "CHANGELOG"
 ---
 # Changelog
 
+<!-- section_id: "fff4de15-68ee-4a23-af46-d10e0a54f745" -->
 ## 2026-02-25
 - Created initial tree of needs with 3 branches, 11 leaf needs
 - Branch 01: Research/Production Lifecycle (4 needs)

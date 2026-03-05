@@ -12,6 +12,7 @@ resource_name: "phase_6_summary"
 
 ---
 
+<!-- section_id: "982f7d6c-d29c-44c7-8a90-0c89085830e8" -->
 ## Executive Summary
 
 Phase 6 is now **100% complete**. All three required documentation areas have been implemented:
@@ -24,8 +25,10 @@ All documents reference the normative specifications from the ideal hierarchy, i
 
 ---
 
+<!-- section_id: "a81ae685-e05b-4807-a16b-66e556c25303" -->
 ## Deliverables Created
 
+<!-- section_id: "af14db13-8d2a-43a4-a0e6-98658a9f931b" -->
 ### 1. Observability and Logging Protocol
 
 **Location**: `/home/dawson/code/0_layer_universal/0_context/layer_0_group/0.02_sub_layers/sub_layer_0_13_universal_protocols/observability/README.md`
@@ -60,6 +63,7 @@ All documents reference the normative specifications from the ideal hierarchy, i
 
 ---
 
+<!-- section_id: "6d62ea1b-fe92-4be2-a08f-dc28a8ec2a06" -->
 ### 2. Safety, Permissions, and Governance Rules
 
 **Location**: `/home/dawson/code/0_layer_universal/0_context/layer_0_group/0.02_sub_layers/sub_layer_0_04_universal_rules/safety_governance.md`
@@ -112,6 +116,7 @@ All documents reference the normative specifications from the ideal hierarchy, i
 
 ---
 
+<!-- section_id: "33bc044c-a7e8-43d3-b865-6c7b4dc203fc" -->
 ### 3. AI Manager Hierarchy Deployment Overview
 
 **Location**: `/home/dawson/code/0_layer_universal/0_context/layer_0_group/0.02_sub_layers/sub_layer_0_05_os_setup/trickle_down_0.5_setup/0_instruction_docs/deployment/AI_MANAGER_HIERARCHY_DEPLOYMENT.md`
@@ -158,8 +163,10 @@ All documents reference the normative specifications from the ideal hierarchy, i
 
 ---
 
+<!-- section_id: "11d09e74-6258-472a-8e00-027dffc99bab" -->
 ## Updated READMEs
 
+<!-- section_id: "b21b3f1a-c3b8-4494-9c98-9cf69f6f8e4c" -->
 ### 1. Universal Protocols README
 
 **Location**: `/home/dawson/code/0_layer_universal/0_context/layer_0_group/0.02_sub_layers/sub_layer_0_13_universal_protocols/README.md`
@@ -169,6 +176,7 @@ All documents reference the normative specifications from the ideal hierarchy, i
 - Listed new observability protocol with description
 - Maintains consistency with existing protocol documentation style
 
+<!-- section_id: "a1b5a0f7-54f6-4e49-824f-8e47935e8021" -->
 ### 2. Universal Rules README
 
 **Location**: `/home/dawson/code/0_layer_universal/0_context/layer_0_group/0.02_sub_layers/sub_layer_0_04_universal_rules/README.md`
@@ -182,6 +190,7 @@ All documents reference the normative specifications from the ideal hierarchy, i
 
 ---
 
+<!-- section_id: "db09ab70-7efe-4770-b68c-ecf3f92e4fff" -->
 ## Directory Structure Created
 
 ```
@@ -205,8 +214,10 @@ layer_0_group/0.02_sub_layers/
 
 ---
 
+<!-- section_id: "da20cbe2-3c8f-458f-af46-917259da7788" -->
 ## Integration with Existing Content
 
+<!-- section_id: "29b2f7e2-a348-4c9b-bdb9-268007c7ae64" -->
 ### With Existing Deployment Guide
 
 **Existing**: `DEPLOYMENT_GUIDE.md` - Application-specific deployment (Flask, Gunicorn, systemd)
@@ -218,6 +229,7 @@ layer_0_group/0.02_sub_layers/
 - Both complement each other for full-stack deployment
 - New guide references existing guide for application-level details
 
+<!-- section_id: "0bc5769c-93cc-4d32-a30d-bac273e7b074" -->
 ### With Existing Universal Rules
 
 **Existing Rules**:
@@ -233,6 +245,7 @@ layer_0_group/0.02_sub_layers/
 - File headers now include permission metadata
 - Safety rules take precedence in case of conflict
 
+<!-- section_id: "71d6c615-af73-4f09-8204-32f4a15fe804" -->
 ### With Observability Protocol
 
 **New Protocol Links To**:
@@ -242,8 +255,10 @@ layer_0_group/0.02_sub_layers/
 
 ---
 
+<!-- section_id: "6d1ffda9-40fb-4986-8bbc-d483e3c03939" -->
 ## Success Criteria - Verification
 
+<!-- section_id: "14c14ff1-829c-4aae-be1f-cffeb91eaf28" -->
 ### 6.1 Observability & Logging
 
 - ✅ Document created in appropriate universal protocol location
@@ -253,6 +268,7 @@ layer_0_group/0.02_sub_layers/
 - ✅ Provides examples for manager/worker patterns
 - ✅ Links back to normative `observability_and_logging.md` spec
 
+<!-- section_id: "49e32851-b0cc-4393-87df-1fefcd285101" -->
 ### 6.2 Safety & Governance
 
 - ✅ Document created in universal rules location
@@ -263,6 +279,7 @@ layer_0_group/0.02_sub_layers/
 - ✅ Includes cost management and resource limits
 - ✅ References existing universal rules and extends them
 
+<!-- section_id: "c279a872-9284-4275-8979-4d529e129d80" -->
 ### 6.3 Deployment Overview
 
 - ✅ Document created in os_setup/deployment location
@@ -273,6 +290,7 @@ layer_0_group/0.02_sub_layers/
 - ✅ Addresses environment-specific configuration
 - ✅ Provides examples of deploying manager/worker systems
 
+<!-- section_id: "a510965a-911d-4b6a-9b8b-0f024f37f865" -->
 ### Additional Criteria
 
 - ✅ Updated READMEs in parent directories
@@ -284,8 +302,10 @@ layer_0_group/0.02_sub_layers/
 
 ---
 
+<!-- section_id: "a79261d4-5131-416d-b220-2d533cb76b12" -->
 ## Key Design Decisions
 
+<!-- section_id: "91009527-20ec-4732-b52c-3dc736e97bf0" -->
 ### 1. Observability Location
 
 **Decision**: Placed in `sub_layer_0_13_universal_protocols/observability/`
@@ -298,6 +318,7 @@ layer_0_group/0.02_sub_layers/
 **Alternative Considered**: `sub_layer_0_12_universal_tools/observability/`
 - Rejected because observability is a practice/protocol, not a tool
 
+<!-- section_id: "bb6101da-b958-4e7d-8c72-e27a49cb5537" -->
 ### 2. Safety/Governance Location
 
 **Decision**: Placed in `sub_layer_0_04_universal_rules/safety_governance.md`
@@ -310,6 +331,7 @@ layer_0_group/0.02_sub_layers/
 **Alternative Considered**: `sub_layer_0_13_universal_protocols/safety_governance/`
 - Rejected because these are mandatory rules, not optional protocols
 
+<!-- section_id: "a10a1d38-b694-44d1-90bc-505acb4cf4eb" -->
 ### 3. Deployment Location
 
 **Decision**: Placed in `sub_layer_0_05_os_setup/.../deployment/AI_MANAGER_HIERARCHY_DEPLOYMENT.md`
@@ -323,6 +345,7 @@ layer_0_group/0.02_sub_layers/
 - Rejected to avoid conflating application deployment with hierarchy deployment
 - Better to have focused, specialized guides that reference each other
 
+<!-- section_id: "439f992a-f960-43a9-bdb8-ef0854eacbee" -->
 ### 4. Document Format
 
 **Decision**: All documents follow **Protocol Writing Standard** format
@@ -343,24 +366,30 @@ layer_0_group/0.02_sub_layers/
 
 ---
 
+<!-- section_id: "bb658477-cee7-42f3-abfc-cd9fe5f034ef" -->
 ## Files Modified
 
+<!-- section_id: "3cf57a58-e19c-409f-b9f9-80241fb65ed8" -->
 ### Created (3 new files):
 1. `/home/dawson/code/0_layer_universal/0_context/layer_0_group/0.02_sub_layers/sub_layer_0_13_universal_protocols/observability/README.md`
 2. `/home/dawson/code/0_layer_universal/0_context/layer_0_group/0.02_sub_layers/sub_layer_0_04_universal_rules/safety_governance.md`
 3. `/home/dawson/code/0_layer_universal/0_context/layer_0_group/0.02_sub_layers/sub_layer_0_05_os_setup/trickle_down_0.5_setup/0_instruction_docs/deployment/AI_MANAGER_HIERARCHY_DEPLOYMENT.md`
 
+<!-- section_id: "5de4a55e-820c-4d60-b124-a9a26ccd6815" -->
 ### Updated (2 files):
 1. `/home/dawson/code/0_layer_universal/0_context/layer_0_group/0.02_sub_layers/sub_layer_0_13_universal_protocols/README.md`
 2. `/home/dawson/code/0_layer_universal/0_context/layer_0_group/0.02_sub_layers/sub_layer_0_04_universal_rules/README.md`
 
+<!-- section_id: "0cf0a714-0527-4bf6-bb96-edf399db9646" -->
 ### Created (1 summary):
 1. `/home/dawson/.cursor/plans/phase_6_ops_safety_deployment_summary_2025-12-24.md` (this file)
 
 ---
 
+<!-- section_id: "add5ada4-03b8-4b65-b708-9acd4114fdd0" -->
 ## Next Steps
 
+<!-- section_id: "49e2e7ee-7746-46f3-99b1-e0e8247f9f83" -->
 ### Immediate (Phase 7)
 
 Phase 6 is complete. Ready to proceed to **Phase 7: Rollout and Migration Strategy**.
@@ -379,6 +408,7 @@ Phase 6 is complete. Ready to proceed to **Phase 7: Rollout and Migration Strate
 5. **Phase 7.5**: Iteration based on feedback
 6. **Phase 7.6**: Full rollout plan
 
+<!-- section_id: "a27e189c-c5a1-4be3-89f5-856d523edd3a" -->
 ### Validation Tasks
 
 Before declaring Phase 6 fully complete, validate:
@@ -388,6 +418,7 @@ Before declaring Phase 6 fully complete, validate:
 - [ ] Are all cross-references working?
 - [ ] Do normative spec references point to correct locations?
 
+<!-- section_id: "9f168bf5-a363-452b-9087-f6df0d186ec8" -->
 ### Documentation Tasks
 
 - [ ] Update `MASTER_DOCUMENTATION_INDEX.md` to reference Phase 6 deliverables
@@ -396,6 +427,7 @@ Before declaring Phase 6 fully complete, validate:
 
 ---
 
+<!-- section_id: "3d553075-b181-4c8a-a905-ada8135c4d97" -->
 ## Summary
 
 Phase 6 successfully adds operational, safety, and deployment guidance to the 0_ai_context system:

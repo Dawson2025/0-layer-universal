@@ -7,18 +7,21 @@ resource_name: "stage_report_protocol"
 
 **Scope**: Universal — applies to all stage agents across all entities
 
+<!-- section_id: "e2fbf5e4-467b-44d9-8f1a-c5085cbcf3f2" -->
 ## Purpose
 
 Every stage agent writes a `stage_report.md` as a handoff document before exiting. The entity manager (or stages manager) reads these reports to maintain a rolled-up view of all stages without loading stage-level details.
 
 Stage reports are **handoff documents** — they communicate status upward to the manager. They are NOT work products (which belong in `outputs/`).
 
+<!-- section_id: "0f333bb6-3392-427c-b928-09fdee8492ae" -->
 ## When to Write
 
 - After completing any significant work in a stage
 - Before handing off to another stage
 - When the manager requests a status update
 
+<!-- section_id: "0a48a93b-0020-4090-8142-5bcae110e7fc" -->
 ## Location
 
 **Canonical — two outgoing directions**:
@@ -34,6 +37,7 @@ The same report goes to both locations. The "to above" copy is consumed by the m
 
 **Why handoff documents?** Stage reports communicate status in both directions. They are NOT work products (which belong in `outputs/`). Placing them in the handoff system makes their purpose explicit and keeps `outputs/` clean for actual deliverables.
 
+<!-- section_id: "7cb8f334-0e20-47f0-9133-3057a018a717" -->
 ## Format
 
 ```markdown
@@ -63,6 +67,7 @@ The same report goes to both locations. The "to above" copy is consumed by the m
 - **What next stage needs to know**: {1-2 sentences}
 ```
 
+<!-- section_id: "9154d792-a25d-4ae1-aa84-ef4b2c12bd2d" -->
 ## Rules
 
 1. Keep it under 30 lines — this is a summary, not a detailed report
@@ -72,6 +77,7 @@ The same report goes to both locations. The "to above" copy is consumed by the m
 5. Update the report, don't append — each write replaces the previous version
 6. The manager may update `0INDEX.md` after reading your report
 
+<!-- section_id: "12b26641-6bb1-4b63-bb4f-144ef5e747e4" -->
 ## Companion Overview Document
 
 Stages with substantial output may also produce a **stage overview document** alongside the stage report in both outgoing handoff locations (`01_to_above/` and `03_to_below/`).
@@ -85,6 +91,7 @@ The overview document:
 
 The stage report stays brief (under 30 lines). The overview document has no line limit — it's the detailed reference that the manager, next-stage agent, or child-level work can read when they need the full context.
 
+<!-- section_id: "5e8e26d6-2cd8-4749-911b-89a0c68dfe26" -->
 ## Distribution via sync-handoffs.sh
 
 Stage reports are automatically distributed to sibling stages and the entity manager by running:
@@ -103,6 +110,7 @@ bash .0agnostic/01_knowledge/layer_stage_system/resources/tools/sync-handoffs.sh
 
 **Run after**: Updating any stage report, completing a stage, or creating new entities.
 
+<!-- section_id: "8766629b-4daf-463f-af8b-3d30fd6e1086" -->
 ## Related
 
 - **Stage Report Rule**: `../02_rules/static/STAGE_REPORT_RULE.md` — mandates that all agents write stage reports

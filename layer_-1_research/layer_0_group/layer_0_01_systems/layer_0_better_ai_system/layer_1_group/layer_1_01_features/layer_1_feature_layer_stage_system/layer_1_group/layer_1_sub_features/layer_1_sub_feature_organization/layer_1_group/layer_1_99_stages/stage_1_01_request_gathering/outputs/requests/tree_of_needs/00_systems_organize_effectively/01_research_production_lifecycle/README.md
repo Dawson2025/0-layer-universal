@@ -8,6 +8,7 @@ resource_name: "README"
 
 **Question**: How do systems move from experimental to stable?
 
+<!-- section_id: "3708e535-102e-4f63-9117-0ec2b064e71e" -->
 ## Needs
 
 | # | Need | What It Answers |
@@ -17,6 +18,7 @@ resource_name: "README"
 | 03 | [Promotion Workflow](need_03_promotion_workflow/) | How does research become production? |
 | 04 | [Version Coexistence](need_04_version_coexistence/) | How do research and production coexist? |
 
+<!-- section_id: "011df4d0-e395-4592-ae05-26d51c5cade7" -->
 ## Key Insight
 
 Research and production are not phases — they are **concurrent, permanent structures**. A system always has both. Research proposes; production stabilizes. The promotion workflow is the bridge.

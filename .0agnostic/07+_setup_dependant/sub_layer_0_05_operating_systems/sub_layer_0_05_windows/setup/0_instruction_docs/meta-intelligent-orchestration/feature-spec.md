@@ -7,14 +7,17 @@ resource_name: "feature-spec"
 *Trickle-Down Level 0.5: Setup and Configuration System*
 *Generated via GitHub Spec Kit Workflow*
 
+<!-- section_id: "de4a91ea-8f82-4846-a859-83fd3517b0de" -->
 ## Setup System Overview
 **System Name**: Meta-Intelligent Universal Orchestration System  
 **System Domain**: Level 0.5 - Meta-Intelligent Development Environment Setup & Configuration
 **Purpose**: Optimal development environment and tooling setup for all projects
 **Priority**: Highest (Meta-level development optimization)
 
+<!-- section_id: "eaf96f9d-ae07-47bb-87bc-203508239da7" -->
 ## Specification Details
 
+<!-- section_id: "c6c07be8-9bc0-4cd1-9498-4ee3cee8022e" -->
 ### Core Setup Functionality
 1. **Development Environment Optimization** (Setup-001)
    - Optimal operating system and environment setup (WSL Ubuntu, Docker, native)
@@ -51,8 +54,10 @@ resource_name: "feature-spec"
    - B2B SaaS development environment optimization
    - Custom scenario setup analysis and recommendations
 
+<!-- section_id: "237fe46b-e473-4c6c-92cb-af0e6906bc5a" -->
 ## Technical Requirements
 
+<!-- section_id: "508b5b01-6fcc-4f55-83a7-26562502084a" -->
 ### Architecture Constraints
 - **Framework**: Python with asyncio for real-time processing
 - **Data Sources**: GitHub API, Stack Overflow API, NPM/PyPI APIs, Web scraping
@@ -61,6 +66,7 @@ resource_name: "feature-spec"
 - **Testing**: Comprehensive test coverage with trend simulation
 - **Environment**: WSL Ubuntu with full internet connectivity
 
+<!-- section_id: "a329cc21-54bb-4592-87ec-a91498015d8a" -->
 ### Data Sources Integration
 ```python
 # Real-time data sources
@@ -89,6 +95,7 @@ PYPI_DOWNLOADS = {
 }
 ```
 
+<!-- section_id: "dbe16faa-99ac-452d-9c92-f806ccfbcb04" -->
 ### Meta-Recommendation Data Structures
 ```python
 @dataclass
@@ -120,6 +127,7 @@ class TrendAnalysis:
     analysis_period: Tuple[datetime, datetime]
 ```
 
+<!-- section_id: "9bae101a-e9dc-4176-8b5e-04ce39b63019" -->
 ### API Endpoints
 1. **POST /api/meta/recommendations**
    - Input: project_scenario, requirements, constraints
@@ -141,8 +149,10 @@ class TrendAnalysis:
    - Output: success confirmation
    - Processing: Learning system feedback integration
 
+<!-- section_id: "a79c041d-917d-4b4b-8410-7189edb032cd" -->
 ## Acceptance Criteria
 
+<!-- section_id: "fbcc4c94-4947-4e7d-8b45-7415153311b9" -->
 ### Active Recommendation Engine (Meta-001)
 ✅ **Given** a project scenario and requirements  
 ✅ **When** the system analyzes current trends and best practices  
@@ -152,6 +162,7 @@ class TrendAnalysis:
 ✅ **When** the system evaluates compatibility and future-proofing  
 ✅ **Then** the best combination is recommended with detailed reasoning
 
+<!-- section_id: "baa7f01d-d957-4658-a6d1-06e72b779f19" -->
 ### Real-Time Learning System (Meta-002)
 ✅ **Given** the system is running continuously  
 ✅ **When** new data becomes available from external sources  
@@ -161,6 +172,7 @@ class TrendAnalysis:
 ✅ **When** the system detects the decline  
 ✅ **Then** deprecation warnings are added to relevant recommendations
 
+<!-- section_id: "2f4da6b3-da2b-4d30-95cd-d22db479299a" -->
 ### Future-Proofing Analysis (Meta-003)
 ✅ **Given** a technology recommendation  
 ✅ **When** the system calculates future-proof scores  
@@ -170,6 +182,7 @@ class TrendAnalysis:
 ✅ **When** they reach adoption thresholds  
 ✅ **Then** they are included in recommendations with appropriate confidence levels
 
+<!-- section_id: "aabccfec-c710-4ce6-9024-b87efc41b007" -->
 ### Meta-Analysis Engine (Meta-004)
 ✅ **Given** multiple decision contexts are provided  
 ✅ **When** the system performs meta-analysis  
@@ -179,6 +192,7 @@ class TrendAnalysis:
 ✅ **When** the system analyzes trade-offs  
 ✅ **Then** optimal compromises are suggested with clear reasoning
 
+<!-- section_id: "33d76642-7c2b-4906-8b4c-c5b405d27058" -->
 ### Scenario-Specific Recommendations (Meta-005)
 ✅ **Given** a specific project scenario (startup, enterprise, etc.)  
 ✅ **When** the system generates recommendations  
@@ -188,8 +202,10 @@ class TrendAnalysis:
 ✅ **When** the system analyzes the scenario  
 ✅ **Then** tailored recommendations are generated with scenario-specific reasoning
 
+<!-- section_id: "0fb2cf52-3d85-453a-b852-94570e1304d1" -->
 ## Testing Strategy
 
+<!-- section_id: "8f90157d-dcfc-4896-afd8-889ba8c93f94" -->
 ### Automated Test Coverage
 - **Unit Tests**: Recommendation algorithms, trend analysis, confidence scoring
 - **Integration Tests**: External API integrations, data source connections
@@ -197,12 +213,14 @@ class TrendAnalysis:
 - **Performance Tests**: Real-time data processing and recommendation speed
 - **Learning Tests**: Trend prediction accuracy and confidence calibration
 
+<!-- section_id: "dc0bbff5-d47b-4843-897e-a4986537196c" -->
 ### Test Execution
 - **Golden Rule**: Run `python features/universal-orchestration/meta_intelligent_demo.py`
 - **Feature Tests**: All Meta-001 through Meta-005 automated via comprehensive demo
 - **Coverage Target**: >95% for meta-intelligence modules
 - **Environment**: Testing in WSL Ubuntu with internet connectivity
 
+<!-- section_id: "8c42f0c0-e283-40be-ac11-0d902b0e63bd" -->
 ### Data Source Testing
 - **Mock Data**: Use simulated data for consistent testing
 - **API Testing**: Test external API integrations with rate limiting

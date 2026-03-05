@@ -5,10 +5,12 @@ resource_name: "PARENT_NEED_P1"
 ---
 # P1: OVERCOME DISCRETIONARY DISCLAIMER
 
+<!-- section_id: "47c5f10b-6f93-4222-994b-78bc092f346a" -->
 ## Tactical Objective
 
 **Understand and overcome Anthropic's discretionary context filtering mechanism.**
 
+<!-- section_id: "9ad354a9-1787-4415-b90c-c3373472bb4f" -->
 ## Context
 
 The core problem is that Claude Code wraps user-provided CLAUDE.md files with a disclaimer allowing Claude to decide whether to apply them based on perceived relevance. This undermines mandatory governance rules.
@@ -20,10 +22,12 @@ To overcome this, we must:
 4. Select the most viable approach
 5. Plan a clear implementation path
 
+<!-- section_id: "daaa0295-b68b-4f4a-9478-0c0529638da9" -->
 ## Parent Overarching Need
 
 **O1: Rule Identification & Categorization** - Understanding the problem and selecting the right solution
 
+<!-- section_id: "3723b46b-1b01-470e-bd83-65a8bf411238" -->
 ## Child Needs
 
 | ID | Need | Description |
@@ -34,6 +38,7 @@ To overcome this, we must:
 | 1.4 | Select viable approach | Which approach is best for our use case? |
 | 1.5 | Plan implementation path | How will we implement the selected approach? |
 
+<!-- section_id: "57a3a1e0-92e0-4503-b0ab-ff525a991c5b" -->
 ## Acceptance Criteria (Need Satisfied When)
 
 - [x] Discretionary disclaimer mechanism is documented and understood
@@ -44,18 +49,22 @@ To overcome this, we must:
 - [x] Implementation path is documented
 - [ ] Implementation begins (moves to O2-O4 planning)
 
+<!-- section_id: "42ce4efb-acd9-4a31-8ee4-3515897ebaeb" -->
 ## Dependencies
 
+<!-- section_id: "46dd6496-dddf-407b-bad4-84e7179520ee" -->
 ### Requires
 - Research findings from stage_0_02_research
 - Understanding of Claude Code architecture
 - Access to Claude Code and Agent SDK documentation
 
+<!-- section_id: "82afe40e-0ac3-4d7f-a550-f037191bc408" -->
 ### Enables
 - O2: Rule Management design
 - O3: Rule Enforcement design
 - O4: Rule Verification design
 
+<!-- section_id: "c646c61a-a425-4c6a-95e0-07542dbd5788" -->
 ## Success Metrics
 
 This parent need succeeds when:
@@ -64,12 +73,14 @@ This parent need succeeds when:
 3. **Path**: Clear, step-by-step implementation path exists
 4. **Confidence**: Team has high confidence in the selected approach
 
+<!-- section_id: "cd3fd2b5-f712-4341-ad3b-f654f6ab8050" -->
 ## Cross-References
 
 - Research findings: `../../../../stage_0_02_research/outputs/claude_code_system_prompt_research_findings.md`
 - Overarching need: `../OVERARCHING_O1.md`
 - Root need: `../../root_need/ROOT_NEED_enforce_critical_rules.md`
 
+<!-- section_id: "7cb259c4-09f6-4e0b-af54-7aa8dd13bd95" -->
 ## Navigation
 
 - **Overarching need**: `../OVERARCHING_O1.md`

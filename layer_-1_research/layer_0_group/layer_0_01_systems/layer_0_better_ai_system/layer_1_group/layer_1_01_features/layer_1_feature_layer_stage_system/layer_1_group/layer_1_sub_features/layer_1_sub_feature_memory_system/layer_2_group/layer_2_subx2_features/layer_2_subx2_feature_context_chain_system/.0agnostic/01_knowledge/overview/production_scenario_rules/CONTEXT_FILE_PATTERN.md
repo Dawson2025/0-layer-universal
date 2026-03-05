@@ -11,16 +11,19 @@ resource_name: "CONTEXT_FILE_PATTERN"
 
 ---
 
+<!-- section_id: "916aae9b-fb26-4793-8ef5-13e539b01b6a" -->
 ## Purpose
 
 Define the minimal, context-efficient pattern for AI context files (CLAUDE.md, 0AGNOSTIC.md, etc.). The goal is to give the AI enough to avoid "amnesia" while minimizing token usage per request.
 
 ---
 
+<!-- section_id: "97af1b3b-b1e8-4d5a-b175-e9cdd50f4812" -->
 ## The Pattern: Identity, Triggers, Pointers
 
 Every context file should contain three types of content:
 
+<!-- section_id: "9106422d-5be9-4f97-89a8-5aa59f9a0ad2" -->
 ### 1. Identity (~50-100 tokens)
 **What the AI needs to know about itself at this location.**
 
@@ -35,6 +38,7 @@ You are an agent at **Layer X** (Purpose), **Stage Y** (Purpose).
 - **Children**: `[child]/0AGNOSTIC.md`
 ```
 
+<!-- section_id: "5a94cfb2-0436-4bd7-b18f-bd634e9fa9bb" -->
 ### 2. Triggers (~100-200 tokens)
 **When/where/what conditions invoke specific behaviors.**
 
@@ -58,6 +62,7 @@ You are an agent at **Layer X** (Purpose), **Stage Y** (Purpose).
 | Need domain knowledge | `/domain-knowledge` |
 ```
 
+<!-- section_id: "dd9368e8-6ef1-4259-a6f4-f3e52eeef950" -->
 ### 3. Pointers (~50-100 tokens)
 **Where to find detailed instructions (loaded on-demand).**
 
@@ -81,6 +86,7 @@ You are an agent at **Layer X** (Purpose), **Stage Y** (Purpose).
 
 ---
 
+<!-- section_id: "02efb5b9-fe79-4bdf-a2ed-ccff5945c5d1" -->
 ## What NOT to Put in Context Files
 
 These belong in **skills** (loaded on-demand), not in the always-loaded context file:
@@ -95,6 +101,7 @@ These belong in **skills** (loaded on-demand), not in the always-loaded context 
 
 ---
 
+<!-- section_id: "b2ecb278-46ed-437f-8ad9-5d302f68ca3f" -->
 ## Token Budget Guidelines
 
 | Section | Target | Max |
@@ -108,6 +115,7 @@ If your context file exceeds 600 tokens, refactor content into skills.
 
 ---
 
+<!-- section_id: "29581372-8e3e-4c37-be5a-c4a0dc4fc86d" -->
 ## Example: Minimal Context File
 
 ```markdown
@@ -136,6 +144,7 @@ You are at Layer 1 (Projects), Feature X (Authentication).
 
 ---
 
+<!-- section_id: "30a226a2-37c7-43f4-8b58-93958b2ad444" -->
 ## Skill Structure (Official Pattern)
 
 From the official skill-creator, skills support:
@@ -155,6 +164,7 @@ From the official skill-creator, skills support:
 
 ---
 
+<!-- section_id: "f68c752c-99be-4ea5-9647-5700ac4ad092" -->
 ## Related Rules
 
 - `OUTPUT_FIRST_PROTOCOL.md` - Session continuity

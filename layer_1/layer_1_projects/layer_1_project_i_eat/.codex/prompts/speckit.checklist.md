@@ -5,6 +5,7 @@ resource_name: "speckit.checklist"
 description: Generate a custom checklist for the current feature based on user requirements.
 ---
 
+<!-- section_id: "6945da8c-8594-42d8-a9e6-0ed27abe3200" -->
 ## Checklist Purpose: "Unit Tests for English"
 
 **CRITICAL CONCEPT**: Checklists are **UNIT TESTS FOR REQUIREMENTS WRITING** - they validate the quality, clarity, and completeness of requirements in a given domain.
@@ -26,6 +27,7 @@ description: Generate a custom checklist for the current feature based on user r
 
 **Metaphor**: If your spec is code written in English, the checklist is its unit test suite. You're testing whether the requirements are well-written, complete, unambiguous, and ready for implementation - NOT whether the implementation works.
 
+<!-- section_id: "f518300e-b44e-4d7a-963d-ce64a87d7c5d" -->
 ## User Input
 
 ```text
@@ -34,6 +36,7 @@ $ARGUMENTS
 
 You **MUST** consider the user input before proceeding (if not empty).
 
+<!-- section_id: "180b91ad-a99a-440d-9df1-82117d97fa80" -->
 ## Execution Steps
 
 1. **Setup**: Run `.specify/scripts/bash/check-prerequisites.sh --json` from repo root and parse JSON for FEATURE_DIR and AVAILABLE_DOCS list.
@@ -222,6 +225,7 @@ You **MUST** consider the user input before proceeding (if not empty).
 
 To avoid clutter, use descriptive types and clean up obsolete checklists when done.
 
+<!-- section_id: "cb82ac09-6e6b-4a4e-9f87-1811bc63e2af" -->
 ## Example Checklist Types & Sample Items
 
 **UX Requirements Quality:** `ux.md`
@@ -265,6 +269,7 @@ Sample items:
 - "Are security requirements consistent with compliance obligations? [Consistency]"
 - "Are security failure/breach response requirements defined? [Gap, Exception Flow]"
 
+<!-- section_id: "228d7303-b322-452f-b083-dc9707643dc4" -->
 ## Anti-Examples: What NOT To Do
 
 **❌ WRONG - These test implementation, not requirements:**

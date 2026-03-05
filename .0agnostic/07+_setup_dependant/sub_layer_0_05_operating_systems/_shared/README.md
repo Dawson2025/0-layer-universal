@@ -8,6 +8,7 @@ resource_name: "README"
 
 This directory contains setup documentation that applies across **all operating systems**.
 
+<!-- section_id: "cc7b668c-86ff-44ee-9495-48f91489f7c5" -->
 ## When to Use This Directory
 
 Use this directory for:
@@ -16,6 +17,7 @@ Use this directory for:
 - Cross-platform tool setup (Node.js, Python, Git when using cross-platform patterns)
 - Universal environment variables or configuration patterns
 
+<!-- section_id: "45976601-c733-4ec1-9a04-a75428e8a3e1" -->
 ## When NOT to Use This Directory
 
 Don't use this directory for:
@@ -26,6 +28,7 @@ Don't use this directory for:
 
 If setup varies by OS, place it in the specific OS directory instead.
 
+<!-- section_id: "36e8a3b0-f742-41a1-a185-5e9fd9577793" -->
 ## Next Level
 
 Navigate to `0.06_environments/` to continue down the setup hierarchy.
@@ -33,6 +36,7 @@ Navigate to `0.06_environments/` to continue down the setup hierarchy.
 
 ---
 
+<!-- section_id: "54008768-59b3-4096-97bc-91bb7e5b3cb1" -->
 ## Legacy Source
 
 Source: `/home/dawson/dawson-workspace/code/0_layer_universal/0_context/layer_0/0.02_sub_layers/sub_layer_0_05_os_setup/README.md`
@@ -41,6 +45,7 @@ Source: `/home/dawson/dawson-workspace/code/0_layer_universal/0_context/layer_0/
 
 **Purpose**: Operating system setup, configuration, and platform-specific issues.
 
+<!-- section_id: "9605ba5f-67a6-420e-90e1-f44e5066fce7" -->
 ## ⚠️ Linux/Ubuntu-Specific MCP Issues
 
 **CRITICAL**: If using Linux/Ubuntu with Cursor IDE and MCP servers, read:
@@ -53,6 +58,7 @@ Source: `/home/dawson/dawson-workspace/code/0_layer_universal/0_context/layer_0/
 - Display/graphics environment setup required
 - File permissions and path conventions differ
 
+<!-- section_id: "01ffad4e-5987-45ec-a451-308cce780ee1" -->
 ## Related Documentation
 
 - **Cursor IDE Issues**: `../sub_layer_0_07_coding_app_setup/trickle_down_0.5_setup/0_instruction_docs/CURSOR_IDE_LINUX_MCP_ISSUES.md`
@@ -60,6 +66,7 @@ Source: `/home/dawson/dawson-workspace/code/0_layer_universal/0_context/layer_0/
 - **MCP Setup**: `../sub_layer_0_10_mcp_servers_and_tools_setup/`
 - **Environment Setup (GitHub SSO / PAT)**: `../sub_layer_0_06_environment_setup/trickle_down_0.5_setup/0_instruction_docs/github/github_sso_token_setup.md`
 
+<!-- section_id: "8f243a67-c7f0-4f46-a551-ec7c67b8da5a" -->
 ## Notes
 - Add slot-specific docs here over time.
 - Keep mappings up to date if paths change.

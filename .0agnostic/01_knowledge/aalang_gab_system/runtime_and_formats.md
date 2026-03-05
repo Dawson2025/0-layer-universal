@@ -5,6 +5,7 @@ resource_name: "runtime_and_formats"
 ---
 # Runtime Behaviors & Format Specifications
 
+<!-- section_id: "f2ef8d4b-0c6c-4ccf-b256-c9a26bdcc3bd" -->
 ## Overview
 
 The runtime and format specs define how AALang agents behave during execution and how they format their output. These are defined in two separate files that all personas reference.
@@ -15,10 +16,12 @@ The runtime and format specs define how AALang agents behave during execution an
 
 ---
 
+<!-- section_id: "6ee2b344-7c55-4187-a4d8-089dc05ed842" -->
 ## Runtime Behaviors (gab-runtime.jsonld)
 
 The runtime defines cross-persona behaviors — patterns that every persona in the agent follows consistently.
 
+<!-- section_id: "9339a55b-4411-4bae-be00-c47266ffb945" -->
 ### DebugModeCheck
 
 Every persona checks the DebugModeStateActor before producing output:
@@ -27,6 +30,7 @@ Every persona checks the DebugModeStateActor before producing output:
 
 This is checked at the start of every persona's execution turn.
 
+<!-- section_id: "ea7c14d6-978c-4627-a5da-c7d48ee937af" -->
 ### UserQuestionHandling
 
 When the user asks a question mid-execution:
@@ -37,6 +41,7 @@ When the user asks a question mid-execution:
 
 This prevents user questions from disrupting the execution flow.
 
+<!-- section_id: "4c43568b-4586-4d0b-95a4-ea923376f64d" -->
 ### DecisionLoggingPattern
 
 Every significant decision is logged to the DecisionLogStateActor:
@@ -47,6 +52,7 @@ Every significant decision is logged to the DecisionLogStateActor:
 
 This creates an audit trail in `build-log.md` format.
 
+<!-- section_id: "c56fa63f-c6ab-425c-910f-3e98634b67e1" -->
 ### ProductNameIdentification
 
 Early in execution, identify and lock the product name:
@@ -55,6 +61,7 @@ Early in execution, identify and lock the product name:
 - Store in ProductNameStateActor
 - Use consistently in all output
 
+<!-- section_id: "25fea269-c277-4eaa-a07e-1bec98845013" -->
 ### GenerationDebugFileCheck
 
 Before entering Generation mode:
@@ -62,6 +69,7 @@ Before entering Generation mode:
 - Prepare file structure for output
 - Validate that all prerequisite information is available
 
+<!-- section_id: "1972d711-935d-43a4-94bc-82ece9fb0197" -->
 ### GenerationReadinessCheck
 
 Gate check before Generation mode begins:
@@ -70,6 +78,7 @@ Gate check before Generation mode begins:
 - User has approved the approach?
 - Quality prerequisites met?
 
+<!-- section_id: "3bd37998-a4a9-4860-ac5c-334d49ffdbb8" -->
 ### ModeTransitionValidation
 
 When transitioning between modes:
@@ -78,6 +87,7 @@ When transitioning between modes:
 - Log the transition in DecisionLog
 - Update state actors with transition metadata
 
+<!-- section_id: "a7987add-65f7-4654-81ca-b554f274cb49" -->
 ### CommonErrorHandling
 
 When errors occur during execution:
@@ -88,10 +98,12 @@ When errors occur during execution:
 
 ---
 
+<!-- section_id: "5ab79173-e5d2-4435-a9ff-fbe130e7e214" -->
 ## Format Specifications (gab-formats.jsonld)
 
 The format specs define what output looks like in different contexts.
 
+<!-- section_id: "dd32c6c5-3c84-413e-b252-576cc7749be5" -->
 ### Debug Logging Format
 
 When debug mode is ON, output includes:
@@ -104,6 +116,7 @@ When debug mode is ON, output includes:
 [DEBUG] Rationale: <why>
 ```
 
+<!-- section_id: "019e08da-bf52-4d02-8843-69ca215fc574" -->
 ### Decision Logging Format (build-log.md)
 
 Decisions are logged in a structured format:
@@ -118,6 +131,7 @@ Decisions are logged in a structured format:
 - **Confidence**: <0.0-1.0>
 ```
 
+<!-- section_id: "3e7e4da4-9321-4ce3-a9e6-d5533ec4899d" -->
 ### Output Format Rules
 
 **Debug Mode ON**:
@@ -134,6 +148,7 @@ Decisions are logged in a structured format:
 
 ---
 
+<!-- section_id: "186865a8-5e7f-4ace-b3f3-b0125cf743e5" -->
 ## How Runtime & Formats Are Referenced
 
 Every persona definition in an AALang agent includes a reference to the runtime:
@@ -149,6 +164,7 @@ This means all personas in the agent share the same runtime behaviors — consis
 
 ---
 
+<!-- section_id: "a7abaace-d8cd-4d85-a7cf-db7a1eb19c42" -->
 ## Practical Implications
 
 1. **Debug mode is a first-class feature**: Not an afterthought — it's baked into every persona's execution

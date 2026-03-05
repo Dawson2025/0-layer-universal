@@ -5,6 +5,7 @@ resource_name: "SCOPE_VS_DELEGATION"
 ---
 # Agent Scope vs Delegation Decisions
 
+<!-- section_id: "8875e7eb-7e7e-45a7-944c-926046a49806" -->
 ## Overview
 
 When an AI agent needs work done in other layers, stages, or sub-layers, it must decide:
@@ -16,6 +17,7 @@ This document provides decision criteria for making this choice efficiently.
 
 ---
 
+<!-- section_id: "b2a4462a-bda7-4951-a0b2-eafdc5cea6f0" -->
 ## The Core Trade-off
 
 ```
@@ -46,8 +48,10 @@ This document provides decision criteria for making this choice efficiently.
 
 ---
 
+<!-- section_id: "d460a929-0e06-408f-b265-bc3264616a6a" -->
 ## Decision Matrix
 
+<!-- section_id: "f472e420-540f-466a-8c83-9079eaea46f6" -->
 ### When to EXPAND SCOPE (Work Yourself)
 
 | Condition | Why Expand |
@@ -59,6 +63,7 @@ This document provides decision criteria for making this choice efficiently.
 | **Same domain knowledge** | Your current expertise applies |
 | **1-2 additional layers** | Manageable context expansion |
 
+<!-- section_id: "020fe956-bd55-4504-a52a-716bd2328a42" -->
 ### When to DELEGATE (Spawn Agents)
 
 | Condition | Why Delegate |
@@ -72,6 +77,7 @@ This document provides decision criteria for making this choice efficiently.
 
 ---
 
+<!-- section_id: "a08c52e6-725b-47e6-92af-96ad4e7a9572" -->
 ## Decision Flowchart
 
 ```
@@ -116,8 +122,10 @@ This document provides decision criteria for making this choice efficiently.
 
 ---
 
+<!-- section_id: "1f1cdcdd-8446-4a37-83f4-72ba402e7186" -->
 ## Efficiency Factors to Consider
 
+<!-- section_id: "cc8920c2-d62f-470b-8c9d-f3583cb9b0ec" -->
 ### 1. Context Window Cost
 
 ```
@@ -135,6 +143,7 @@ If (current_usage + new_context) < 50%:
   → EXPAND SCOPE is safe
 ```
 
+<!-- section_id: "992a81ba-1787-4cfe-8d19-38f1a966a8ce" -->
 ### 2. Task Dependency Graph
 
 ```
@@ -159,6 +168,7 @@ Mixed:                      → EXPAND for chain, DELEGATE for independent
         └───┘
 ```
 
+<!-- section_id: "b8ed58ad-01d9-4b21-af30-81143285b5fc" -->
 ### 3. Specialization Benefit
 
 ```
@@ -175,6 +185,7 @@ Different domain (specialized):    → DELEGATE
 └─────────────────────────────┘
 ```
 
+<!-- section_id: "62eff03c-42c7-44a3-91dd-1816417f3865" -->
 ### 4. Communication Overhead
 
 ```
@@ -189,8 +200,10 @@ Handoff document complexity:
 
 ---
 
+<!-- section_id: "99be2ab9-2bb2-4af6-a62c-3fa2abce1535" -->
 ## How to Delegate via CLI
 
+<!-- section_id: "d018ce84-0b9e-4cee-9eda-4dc84ac570f5" -->
 ### Spawning an Agent at Another Entry Point
 
 ```bash
@@ -203,6 +216,7 @@ claude --task "Description of what to do" \
        --handoff-out ./hand_off_documents/outgoing/result.md
 ```
 
+<!-- section_id: "a7157e2d-2465-4a63-a3c7-0750df234f86" -->
 ### Using Task Tool for Delegation
 
 ```
@@ -212,6 +226,7 @@ Task tool parameters:
 - Entry point context will load automatically
 ```
 
+<!-- section_id: "07091925-8551-4d8d-9652-4bcd6ac581d2" -->
 ### Handoff Document for Delegation
 
 ```markdown
@@ -240,8 +255,10 @@ Task tool parameters:
 
 ---
 
+<!-- section_id: "c71cf2f8-2e55-40b8-b69c-7daaecb0fb14" -->
 ## Agent Coordination Patterns
 
+<!-- section_id: "aa7bd504-d54c-475c-ae0b-066b8a31563b" -->
 ### Pattern 1: Hub and Spoke (You Coordinate)
 
 ```
@@ -260,6 +277,7 @@ Task tool parameters:
 Use when: You need to coordinate results from multiple agents
 ```
 
+<!-- section_id: "fc0dc1a4-08f8-42c9-8718-e20ec4979dd5" -->
 ### Pattern 2: Chain (Sequential Delegation)
 
 ```
@@ -270,6 +288,7 @@ Use when: You need to coordinate results from multiple agents
 Use when: Each agent's output feeds the next
 ```
 
+<!-- section_id: "eb471395-03f0-46f0-b626-fe8465652b58" -->
 ### Pattern 3: Expand Then Delegate
 
 ```
@@ -296,6 +315,7 @@ Use when: Core work needs unified context, side tasks are independent
 
 ---
 
+<!-- section_id: "0075a3fa-bffd-4076-b956-74ff7c6851c0" -->
 ## Scope Expansion Checklist
 
 Before expanding your scope:
@@ -310,6 +330,7 @@ If all YES → Expand scope safely
 
 ---
 
+<!-- section_id: "4287ab3f-3df7-4496-adac-e44e2bf33b0e" -->
 ## Delegation Checklist
 
 Before delegating:
@@ -324,8 +345,10 @@ If all YES → Delegate efficiently
 
 ---
 
+<!-- section_id: "4c25125b-0006-4b94-a4b7-276d6521ce12" -->
 ## Examples
 
+<!-- section_id: "ab28166b-ac28-47d0-98c7-88e50bea0f16" -->
 ### Example 1: Small Scope Expansion
 
 ```
@@ -339,6 +362,7 @@ Decision: EXPAND SCOPE
 - Continue with expanded knowledge
 ```
 
+<!-- section_id: "19cb8111-73bc-4078-8a2b-e5319d4f8d79" -->
 ### Example 2: Delegation for Parallel Work
 
 ```
@@ -355,6 +379,7 @@ Decision: DELEGATE all three
 - Collect results via handoff documents
 ```
 
+<!-- section_id: "a8b3ccab-2cc2-4078-9dac-952e42e91a5c" -->
 ### Example 3: Mixed Strategy
 
 ```
@@ -373,6 +398,7 @@ Decision:
 
 ---
 
+<!-- section_id: "67453f92-fc6c-402a-8524-61df5d8981c4" -->
 ## Self-Assessment Questions
 
 When facing work in other layers/stages, ask:

@@ -7,6 +7,7 @@ resource_name: "init_prompt"
 
 You are managing work within the Layer-Stage Framework. This framework uses 10 stages (00-09) to organize workflow progression.
 
+<!-- section_id: "8bf52bda-f0f6-436a-b170-09ce0dc6e0ef" -->
 ## Stage Overview
 
 | Stage | Name | Purpose |
@@ -22,6 +23,7 @@ You are managing work within the Layer-Stage Framework. This framework uses 10 s
 | 08 | Current Product | Maintain current working version |
 | 09 | Archives | Store historical records |
 
+<!-- section_id: "75801083-c422-4264-9e1c-85b0168c39ea" -->
 ## Stage Progression Rules
 
 1. **Sequential Progress**: Generally move forward through stages
@@ -29,6 +31,7 @@ You are managing work within the Layer-Stage Framework. This framework uses 10 s
 3. **Clear Handoffs**: Each stage produces artifacts for the next
 4. **Entry/Exit Criteria**: Respect stage boundaries
 
+<!-- section_id: "93560c35-12ff-4d78-b277-a018b90c2db1" -->
 ## Your Role
 
 When working within a stage:
@@ -37,6 +40,7 @@ When working within a stage:
 3. Produce required artifacts for handoff
 4. Verify exit criteria before progressing
 
+<!-- section_id: "4bb7bfaf-a650-49f4-9f94-dfd47809d398" -->
 ## Documentation Reference
 
 Detailed stage documentation is available at:

@@ -5,6 +5,7 @@ resource_name: "gab_compiler"
 ---
 # GAB Compiler — How It Works
 
+<!-- section_id: "3153cedd-7c9b-474e-8bb3-3d8ae60b0dd4" -->
 ## Overview
 
 GAB (Generic AALang Builder) is the "compiler" for AALang. It takes natural language descriptions of desired agent behavior and produces structured AALang agent definitions in JSON-LD format.
@@ -15,6 +16,7 @@ GAB itself is an AALang agent — a **4-mode-13-actor** agent that follows the M
 
 ---
 
+<!-- section_id: "5c0221b5-54e1-4921-8366-df885040469b" -->
 ## The 4-Mode Pipeline
 
 GAB processes agent creation through four sequential modes:
@@ -60,8 +62,10 @@ User's natural language description
 
 ---
 
+<!-- section_id: "2ca47aa2-4702-4882-a817-262f05958ef4" -->
 ## Mode Details
 
+<!-- section_id: "e29496a6-74f1-4986-90d6-a7daa022618c" -->
 ### Mode 1: Clarification
 
 **Purpose**: Understand what the user wants to build.
@@ -75,6 +79,7 @@ The Clarification mode asks targeted questions to fill gaps in the user's descri
 - Identifies ambiguities in the description
 - Does NOT propose solutions yet — purely requirements gathering
 
+<!-- section_id: "9e33672d-ddcf-428a-9890-60080074319b" -->
 ### Mode 2: Discussion
 
 **Purpose**: Explore design options and converge on an approach.
@@ -89,6 +94,7 @@ The Discussion mode explores how to structure the agent. The Senior persona (Des
 - Identifies state that needs to persist across modes
 - Converges on a pattern (4-mode, 5-mode, custom)
 
+<!-- section_id: "316a8ca7-d006-43b2-9006-fb1329e3109c" -->
 ### Mode 3: Formalization
 
 **Purpose**: Create a precise formal specification before generating code.
@@ -103,6 +109,7 @@ The Formalization mode writes out the complete specification. The Senior persona
 - Documents message interfaces
 - Creates work artifact definitions
 
+<!-- section_id: "dffc8e28-e8ff-4255-9fed-97d6a229313c" -->
 ### Mode 4: Generation (MANDATORY)
 
 **Purpose**: Produce the final AALang agent definition in JSON-LD.
@@ -117,6 +124,7 @@ This mode is **mandatory** — it cannot be skipped even if the user seems satis
 
 ---
 
+<!-- section_id: "fe465c65-b966-43de-9eb4-924fe7b24a08" -->
 ## State Actors (Persist Across All 4 Modes)
 
 | State Actor | Tracks |
@@ -129,25 +137,30 @@ This mode is **mandatory** — it cannot be skipped even if the user seems satis
 
 ---
 
+<!-- section_id: "3a22ead9-a8b2-4562-bb1f-6c9e3ebd2bfd" -->
 ## Built-in Protocols
 
 GAB includes several protocols that govern execution:
 
+<!-- section_id: "07fb25f2-241b-4568-9307-715393493288" -->
 ### Clarification Protocol
 - How to ask questions effectively
 - When to stop asking and move forward
 - How to handle contradictory requirements
 
+<!-- section_id: "0899c8bf-d317-48f5-960f-db4f12f45b68" -->
 ### Debug Protocol
 - User can toggle debug mode on/off
 - When on: shows internal reasoning, decision rationale, state transitions
 - When off: clean user-facing output only
 
+<!-- section_id: "ff33b497-8447-4d22-bd07-7ace1dbf73ac" -->
 ### NonAALang Detection Protocol
 - If the user asks for something that ISN'T an AALang agent
 - GAB recognizes this and redirects appropriately
 - Prevents misuse of the compiler for non-agent tasks
 
+<!-- section_id: "2e7a2185-3916-4470-afb6-db85b982de93" -->
 ### Quality Checklist
 - Run before finalizing Generation mode output
 - Validates completeness of the produced agent definition
@@ -155,6 +168,7 @@ GAB includes several protocols that govern execution:
 
 ---
 
+<!-- section_id: "b26e2401-a729-4227-9bc4-dd54109242c7" -->
 ## User's Role
 
 In GAB's model, the user is the "Team Lead":
@@ -165,6 +179,7 @@ In GAB's model, the user is the "Team Lead":
 
 ---
 
+<!-- section_id: "d0cc0e71-e9f8-4180-b3f7-91099bab8b0f" -->
 ## Output Format
 
 GAB produces a `.gab.jsonld` file containing:
@@ -187,6 +202,7 @@ The output is a complete, self-contained agent definition that can be loaded int
 
 ---
 
+<!-- section_id: "20c7ba21-6115-4f6f-be6f-29e21d7607d3" -->
 ## Development Workflow (Post-Generation)
 
 After GAB generates the initial product, there's a structured refinement cycle (from `gab-development-workflow.md`):
@@ -227,6 +243,7 @@ GAB 4-Mode Workflow (creates initial product)
     Product Ready
 ```
 
+<!-- section_id: "6174a8f8-44a4-4fbd-9e52-27536f77d434" -->
 ### User Commands for Development
 
 | Command | Action |
@@ -239,6 +256,7 @@ GAB 4-Mode Workflow (creates initial product)
 | `show decisions` | View complete decision history |
 | `skip formalization` | Authorize skipping Formalization Mode |
 
+<!-- section_id: "c497d77f-d01d-4dbc-a527-7a1f16f1d87a" -->
 ### Self-Check Actors
 
 GAB has built-in quality assurance via self-check actors. They analyze agent definitions for:
@@ -247,6 +265,7 @@ GAB has built-in quality assurance via self-check actors. They analyze agent def
 - **Inconsistencies** — contradictions between sections
 - **Logic errors** — conditions that can't be met
 
+<!-- section_id: "d0e787fc-e9a9-4633-8d9f-ea24ddbe6e2f" -->
 ### AATest Testing Framework
 
 GAB includes a companion testing tool (AATest) that follows the same 4-mode-13-actor pattern:
@@ -260,6 +279,7 @@ Test results for GAB itself: **138 tests, 100% pass rate, 100% coverage** on all
 
 ---
 
+<!-- section_id: "3bbdd4cc-579e-4ca2-8972-68a7e0f9adcc" -->
 ## Tested Platforms
 
 From the professor's README:

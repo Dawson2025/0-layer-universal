@@ -8,6 +8,7 @@ resource_name: "README"
 
 This directory documents **core MCP server issues** that affect multiple MCP servers across different configurations.
 
+<!-- section_id: "da66adb3-8820-4a1a-8707-2c307e5819fb" -->
 ## Environment
 - **OS**: All operating systems (_shared)
 - **Environment**: All environments (_shared)
@@ -15,8 +16,10 @@ This directory documents **core MCP server issues** that affect multiple MCP ser
 - **AI App**: All AI apps (_shared)
 - **Scope**: Core MCP issues affecting multiple servers
 
+<!-- section_id: "f91b1a17-eb9e-4fb0-8ee8-c10a115d6846" -->
 ## Common MCP Server Issues
 
+<!-- section_id: "b39022c9-3ec3-489e-885b-c4dfa6792763" -->
 ### 1. Tool Exposure Issues
 
 **Issue**: MCP server connects successfully but tools are NOT exposed to the AI agent
@@ -53,6 +56,7 @@ This directory documents **core MCP server issues** that affect multiple MCP ser
    - This is an AI app issue, not MCP server issue
    - Provide detailed reproduction steps
 
+<!-- section_id: "83239dea-404e-4a00-8fa9-890bec23a25c" -->
 ### 2. Environment Variable Issues
 
 **Issue**: MCP server cannot access required environment variables
@@ -104,6 +108,7 @@ This directory documents **core MCP server issues** that affect multiple MCP ser
    - Relative paths may not work
    - Always use full absolute paths
 
+<!-- section_id: "51ac355c-6dc2-4507-86f0-de2ea1380790" -->
 ### 3. Node.js / NVM Path Issues
 
 **Issue**: MCP server cannot find Node.js or specific Node version from NVM
@@ -163,6 +168,7 @@ This directory documents **core MCP server issues** that affect multiple MCP ser
    }
    ```
 
+<!-- section_id: "8c32145e-f820-4d7a-b608-0e5132786e9c" -->
 ### 4. Server Timeout and Connection Issues
 
 **Issue**: MCP server times out or fails to connect
@@ -202,6 +208,7 @@ This directory documents **core MCP server issues** that affect multiple MCP ser
    - Verify it starts without errors
    - Check it responds to test requests
 
+<!-- section_id: "b5f87eb0-32c1-4ce6-8090-11f3b13f685e" -->
 ### 5. Configuration File Syntax Issues
 
 **Issue**: MCP configuration file has syntax errors
@@ -255,8 +262,10 @@ This directory documents **core MCP server issues** that affect multiple MCP ser
    "command": "C:/Program Files/nodejs/node.exe"
    ```
 
+<!-- section_id: "d84e6af6-08c3-4f82-87b0-7a7d3656c5ee" -->
 ## Testing MCP Server Setup
 
+<!-- section_id: "9fa01d44-98ad-4561-a8eb-6273fffeb292" -->
 ### Verification Checklist
 
 - [ ] Server appears as "Connected" in AI app settings
@@ -266,6 +275,7 @@ This directory documents **core MCP server issues** that affect multiple MCP ser
 - [ ] No timeout or connection errors
 - [ ] Configuration JSON is valid
 
+<!-- section_id: "e0019c0e-2d5b-4dbc-9358-e7433718477d" -->
 ### Debugging Steps
 
 1. **Check AI app settings**: Verify server is configured and connected
@@ -275,6 +285,7 @@ This directory documents **core MCP server issues** that affect multiple MCP ser
 5. **Check permissions**: Ensure server executable has correct permissions
 6. **Verify paths**: All paths (commands, files, directories) must be absolute or correct relative paths
 
+<!-- section_id: "d2ee3349-7ba5-40a7-ab11-d51739b142e3" -->
 ## Links to Detailed Documentation
 
 For server-specific issues, see:

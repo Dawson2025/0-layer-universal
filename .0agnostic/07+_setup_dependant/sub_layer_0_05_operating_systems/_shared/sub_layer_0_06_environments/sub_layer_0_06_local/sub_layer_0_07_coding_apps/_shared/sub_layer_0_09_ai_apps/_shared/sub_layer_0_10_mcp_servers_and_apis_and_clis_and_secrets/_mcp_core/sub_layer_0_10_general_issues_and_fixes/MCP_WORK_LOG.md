@@ -9,10 +9,12 @@ This document records the step-by-step work done to make the Playwright MCP serv
 
 Date range: ongoing (session captured on Oct 16, 2025)
 
+<!-- section_id: "01d08300-b135-4576-ab6e-a8fb826a5776" -->
 ## Goal
 
 - Make the Playwright MCP server easy to run locally and provide smoke tests + end-to-end handshake tests in Node and Python.
 
+<!-- section_id: "8f3d8d76-58cc-4cce-9890-7e627f2ba6a3" -->
 ## What I changed (summary)
 
 - Added and modified helper scripts:
@@ -32,6 +34,7 @@ Date range: ongoing (session captured on Oct 16, 2025)
 - Documentation:
   - `docs/setup/MCP_SERVER_SETUP.md` (existing) — updated earlier. This file complements that with a detailed work log (this file).
 
+<!-- section_id: "2b483e07-7706-45f0-b97c-c9b064778e3b" -->
 ## Detailed timeline & notes
 
 1. Initial analysis
@@ -68,6 +71,7 @@ Date range: ongoing (session captured on Oct 16, 2025)
 7. Cleanup
    - Removed the corrupted temporary file `scripts/mcp-handshake-node.cjs.tmp` left over from earlier edits.
 
+<!-- section_id: "6568fb13-755f-4772-b020-2acd291e4645" -->
 ## Commands I ran (representative)
 
 - Start server manually (what you may have run):
@@ -94,6 +98,7 @@ MCP_ALLOW_INSTALL=1 node scripts/mcp-handshake-node-full.cjs
 python3 scripts/mcp-handshake-py.py
 ```
 
+<!-- section_id: "7f5eb3cd-773b-4478-b93c-74c8115176a4" -->
 ## Observed outputs
 
 - `node scripts/mcp-handshake-node-full.cjs` (example output):
@@ -108,6 +113,7 @@ python3 scripts/mcp-handshake-py.py
   - Error: Chromium distribution 'chrome' is not found at /opt/google/chrome/chrome
     Run "npx playwright install chrome"
 
+<!-- section_id: "6e40b51e-0bdd-4204-871a-9fdf4ade8dda" -->
 ## Files edited/created (detailed)
 
 - scripts/mcp-start.sh (modified)
@@ -122,6 +128,7 @@ python3 scripts/mcp-handshake-py.py
 - scripts/mcp-handshake-node.cjs.tmp (deleted)
 - docs/setup/MCP_WORK_LOG.md (this file)
 
+<!-- section_id: "922213e1-b2a5-4486-95c5-296a78c09d52" -->
 ## Next steps / recommendations
 
 - If you want an automated end-to-end run now, run with auto-install enabled (note: it will download browsers):
@@ -137,12 +144,14 @@ python3 scripts/mcp-handshake-py.py
 
 - Optional: Add unit tests for the smoke test scripts (shell + Node + Python) and run them in CI with a Playwright MCP server image that has browsers pre-installed.
 
+<!-- section_id: "a8964ca1-0920-4cc8-bda0-71c9af60c085" -->
 ## Caveats and known issues
 
 - Auto-install will download browser distributions (multi-hundred MB). It's optional and guarded by `MCP_ALLOW_INSTALL=1`.
 - There is no official Python MCP client packaged by Playwright today; delegating to the Node client is pragmatic and stable.
 - Some Playwright server options may still try to launch a specific browser channel ('chrome') depending on the server config; `--browser=chromium` reduces that likelihood.
 
+<!-- section_id: "6df9a6ba-ed28-4184-b1c4-51551b554036" -->
 ## Contact / follow-up
 
 If you'd like, I can:

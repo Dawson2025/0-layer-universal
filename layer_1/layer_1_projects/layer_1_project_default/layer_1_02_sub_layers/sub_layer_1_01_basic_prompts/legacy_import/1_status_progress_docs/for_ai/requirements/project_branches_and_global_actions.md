@@ -7,9 +7,11 @@ resource_name: "project_branches_and_global_actions"
 
 - **Source Prompt**: `docs/for_ai/prompts.txt/cloud/project_branches_and_global_actions.md`
 
+<!-- section_id: "b6dc1142-5392-4d00-a0e9-2ffbd77fbd7f" -->
 ## Goal
 Decouple top-level project management from storage variants and introduce branching so teams can iterate on cloud or local copies similarly to Git workflows. Surface the project hierarchy through a dedicated variant menu so users can navigate parent projects, branches, and variants without leaving context.
 
+<!-- section_id: "25a45301-cd92-4cd1-9761-58d88060f407" -->
 ## Functional Requirements
 - Store and display a project-level title independent of any variant names; expose edit, delete, and share actions for the project group as a whole.
 - Provide a project-level branch control so teams can initiate new variants without drilling into an existing branch card first; default the workflow to the main variant when present.
@@ -20,6 +22,7 @@ Decouple top-level project management from storage variants and introduce branch
 - Ensure project-level delete removes all associated variants (local and cloud) and clears related shares.
 - Remove the “Cloud & Local Storage” entry from the Administration section now that equivalent controls live on the My Projects page.
 
+<!-- section_id: "347451ca-0fbb-41ff-915b-23be3b98939e" -->
 ## Acceptance Criteria
 - Editing a project group updates only the aggregated title; variant names remain unchanged unless explicitly edited.
 - The project-level Branch button opens the same branching flow available on variants, preselecting the default source (main when available) and records the new variant under the project group.
@@ -30,6 +33,7 @@ Decouple top-level project management from storage variants and introduce branch
 - Project-level share operations select the appropriate variant (cloud preferred) and succeed for both local and cloud groups without identifier errors.
 - The Administration screen no longer lists the “Cloud & Local Storage” card, while existing functionality remains accessible from My Projects.
 
+<!-- section_id: "992caf1d-cf5b-43f6-803b-76930f3a915b" -->
 ## Notes
 - Persist project hierarchy/branch metadata so future tooling (e.g., comparisons, merge operations) can build on the structure.
 - Consider fallbacks when a project lacks a cloud variant: project-level share should migrate or branch as needed without manual intervention.

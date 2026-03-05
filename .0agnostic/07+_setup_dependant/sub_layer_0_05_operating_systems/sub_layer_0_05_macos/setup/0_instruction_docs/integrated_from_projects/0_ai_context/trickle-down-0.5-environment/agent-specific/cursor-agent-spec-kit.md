@@ -6,6 +6,7 @@ resource_name: "cursor-agent-spec-kit"
 # Cursor Agent: Spec Kit Implementation Guide
 *Agent-Specific Instructions for Language Tracker Project*
 
+<!-- section_id: "c2c72f7a-ee3e-4e4e-89e4-b63d796ab229" -->
 ## Session Initialization Protocol
 
 **MANDATORY:** Start each session by declaring:
@@ -17,8 +18,10 @@ Coding System: GitHub Spec Kit
 Session Focus: [specify current work area - e.g., "Authentication Feature", "TDD Setup", "Environment Config"]
 ```
 
+<!-- section_id: "fed53aa9-586f-4dfd-8635-f5318d20b6ce" -->
 ## Cursor-Specific Spec Kit Integration
 
+<!-- section_id: "6d3d0442-be8b-48e3-b057-363c0f1d98ff" -->
 ### Cursor's Native Tools + Spec Kit Features
 **Cursor Tools Available:**
 - `codebase_search` - Semantic search for understanding code by meaning
@@ -37,6 +40,7 @@ Session Focus: [specify current work area - e.g., "Authentication Feature", "TDD
 - Code generation aligned with specs
 - Quality validation and testing
 
+<!-- section_id: "bfc168c7-f8e9-47dd-bfae-9450d40776a8" -->
 ### Phase 1: Constitution + Cursor Tools
 **Integration:**
 - Cursor: Load constitution with `read_file`
@@ -55,6 +59,7 @@ Session Focus: [specify current work area - e.g., "Authentication Feature", "TDD
 4. Generate acceptance criteria based on constitution principles
 ```
 
+<!-- section_id: "0733caa2-1541-49a4-802a-046e4a29e923" -->
 ### Phase 2: Feature Specification + Cursor Tools  
 **Integration:**
 - Cursor: Use `codebase_search` to understand existing architecture
@@ -71,6 +76,7 @@ Session Focus: [specify current work area - e.g., "Authentication Feature", "TDD
 5. Create testable acceptance criteria aligned with USER_STORIES.md
 ```
 
+<!-- section_id: "e42c3407-b90b-46f0-8e0c-48061c493119" -->
 ### Phase 3: Implementation Planning + Cursor Tools
 **Integration:**
 - Spec Kit: Break specifications into implementable tasks
@@ -90,6 +96,7 @@ Session Focus: [specify current work area - e.g., "Authentication Feature", "TDD
 4. Identify patterns: display.py, creation.py, editing.py, search.py
 ```
 
+<!-- section_id: "5a468262-1935-4f4d-871c-4c2cbd3f8d78" -->
 ### Phase 4: Task Generation + Cursor Tools
 **Integration:**
 - Spec Kit: Generate parallelizable implementation tasks
@@ -109,6 +116,7 @@ Session Focus: [specify current work area - e.g., "Authentication Feature", "TDD
 4. todo_write(merge=true, [{id: "task-1", status: "completed"}])
 ```
 
+<!-- section_id: "8a242bc8-83da-43b8-93c9-d1272ee3651d" -->
 ### Phase 5: Implementation + Cursor Tools
 **Integration:**
 - Cursor: Execute code changes with `search_replace` or `write`
@@ -126,8 +134,10 @@ Session Focus: [specify current work area - e.g., "Authentication Feature", "TDD
 5. Verify acceptance criteria met
 ```
 
+<!-- section_id: "97c6ce28-831b-4d12-aba9-667f04aed285" -->
 ## Cursor-Specific Workflow Patterns
 
+<!-- section_id: "10e25300-39cd-493c-b9d9-fa0ab1a88084" -->
 ### Pattern 1: Semantic Understanding First
 ```
 Before implementing any feature:
@@ -137,6 +147,7 @@ Before implementing any feature:
 4. Follow established patterns in new implementation
 ```
 
+<!-- section_id: "7134e201-657d-4974-9a44-87a64899cd58" -->
 ### Pattern 2: TODO-Driven Development
 ```
 For every task:
@@ -147,6 +158,7 @@ For every task:
 5. Repeat for next task
 ```
 
+<!-- section_id: "377d2676-8c8b-490b-a714-fb6d6d76f40f" -->
 ### Pattern 3: Test-First Implementation
 ```
 Following Constitution principle #3:
@@ -157,6 +169,7 @@ Following Constitution principle #3:
 5. Verify all tests pass before marking complete
 ```
 
+<!-- section_id: "97bce29b-0429-4dda-85eb-857940e110d9" -->
 ### Pattern 4: Traffic Light System Compliance
 ```
 Green Zone (95% - Work freely):
@@ -173,20 +186,24 @@ Red Zone (1% - Must coordinate):
 - Coordinate with user before changes
 ```
 
+<!-- section_id: "0331eb79-dffc-425b-b3d1-c553589fa1f9" -->
 ## Cursor Advantages for Spec Kit
 
+<!-- section_id: "834b00d1-3e7c-44fb-8fb0-06cbccfbdd7e" -->
 ### Real-Time Code Understanding
 **Cursor's `codebase_search`** provides semantic understanding:
 - "How does user authentication work?" - Understands intent
 - "Where are phoneme templates validated?" - Finds relevant code
 - "What's the pattern for creating new features?" - Identifies conventions
 
+<!-- section_id: "1ce2c73e-9bf3-489f-8345-cfc149d84dc6" -->
 ### Efficient File Operations
 **Cursor's file tools** enable precise changes:
 - `search_replace` - Exact string replacements with context
 - `write` - Complete file creation/overwrite
 - `read_file` - Selective reading with offset/limit for large files
 
+<!-- section_id: "1a987a80-c64b-459a-8408-23eb17e8df0d" -->
 ### Integrated Testing
 **Cursor's `run_terminal_cmd`** enables immediate validation:
 - Run pytest after each implementation
@@ -194,6 +211,7 @@ Red Zone (1% - Must coordinate):
 - Verify linter compliance
 - Check git status
 
+<!-- section_id: "caff008a-72c4-48c2-a4aa-0883c7edd809" -->
 ### Context-Aware Development
 **Cursor's IDE integration** provides:
 - Open file awareness
@@ -201,8 +219,10 @@ Red Zone (1% - Must coordinate):
 - Linter error detection
 - Multi-file editing in single session
 
+<!-- section_id: "c9a7533e-7c81-47b2-8d84-bf40b84c546a" -->
 ## Command Integration Examples
 
+<!-- section_id: "c71a95d0-c480-48f6-8e54-f72e8667c207" -->
 ### Spec Kit CLI + Cursor Tools
 ```bash
 # Hypothetical Spec Kit CLI usage (if installed):
@@ -214,8 +234,10 @@ cursor: codebase_search("authentication patterns", [])
 # → Spec Kit suggests implementation approach based on results
 ```
 
+<!-- section_id: "82fa3207-fba6-474b-905d-9b1e95c45fd3" -->
 ## Session Workflow Example
 
+<!-- section_id: "e4f557c8-25cc-41b4-9fc1-4104c9a85cb6" -->
 ### Full Feature Implementation Session
 
 **1. Initialize Session:**
@@ -276,8 +298,10 @@ run_terminal_cmd("pytest features/media/tests/", is_background=false)
 run_terminal_cmd("python3 scripts/automation/run_user_stories.py --navigation-mode=both", is_background=false)
 ```
 
+<!-- section_id: "c68cc8e3-73e6-4524-b892-f031b0ea1db3" -->
 ## Best Practices for Cursor + Spec Kit
 
+<!-- section_id: "a565b986-8748-46a1-9286-a371a7a4d194" -->
 ### DO:
 ✅ Use `codebase_search` for understanding, `grep` for exact matches
 ✅ Create TODO lists for every multi-step task
@@ -287,6 +311,7 @@ run_terminal_cmd("python3 scripts/automation/run_user_stories.py --navigation-mo
 ✅ Use `read_lints` to catch errors early
 ✅ Mark TODO items completed immediately after finishing
 
+<!-- section_id: "6daa4dac-5920-4de2-9ada-5067b1b4a40b" -->
 ### DON'T:
 ❌ Skip the constitution/requirements reading phase
 ❌ Implement without understanding existing patterns
@@ -295,8 +320,10 @@ run_terminal_cmd("python3 scripts/automation/run_user_stories.py --navigation-mo
 ❌ Commit code without running tests
 ❌ Assume implementation details - always verify with search/read
 
+<!-- section_id: "c06f54ab-7696-4d34-88c0-41d9fb54930e" -->
 ## Cursor-Specific Initialization
 
+<!-- section_id: "2c1bc191-a402-41a7-bb3d-5596272549ac" -->
 ### Every Session Checklist:
 1. ✅ Declare agent identity and session focus
 2. ✅ Verify WSL Ubuntu environment (`pwd` command)
@@ -306,6 +333,7 @@ run_terminal_cmd("python3 scripts/automation/run_user_stories.py --navigation-mo
 6. ✅ Create TODO list for session goals
 7. ✅ Begin implementation following Spec Kit phases
 
+<!-- section_id: "43566864-9d34-4b16-9cca-965c45064230" -->
 ## Quality Gates (Constitution Compliance)
 
 Before marking any task complete:

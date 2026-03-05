@@ -7,6 +7,7 @@ resource_name: "skills_integration"
 
 > **VERIFIED 2026-02-07**: The skills controllability problem is real and well-documented across multiple sources. See `verification_results.md` for evidence.
 
+<!-- section_id: "296ad410-e589-48a9-a855-a5d3554af385" -->
 ## The Problem
 
 Skills (files and folders in `.claude/skills/`, `.claude/commands/`, etc.) are not being used by AI agents in situations where they should be. The agent either:
@@ -18,6 +19,7 @@ Skills (files and folders in `.claude/skills/`, `.claude/commands/`, etc.) are n
 
 ---
 
+<!-- section_id: "3faca073-4e83-44ce-88a1-209492eb7452" -->
 ## Current Skills Architecture
 
 ```
@@ -39,10 +41,12 @@ Skills are:
 
 ---
 
+<!-- section_id: "c4a89adc-aad7-49e5-bb0c-3afc757a4c7b" -->
 ## Integration Approaches (REVISED after verification)
 
 > **CORRECTION**: Approaches A and the JSON-LD router are abandoned. Research shows JSON-LD is the worst format for LLM instruction following (0.34 accuracy, 3-5x token cost). All approaches now use markdown.
 
+<!-- section_id: "320fe54a-d666-4d96-b349-1d4da91dc096" -->
 ### Approach 1: Better Skill Descriptions (Immediate)
 
 The simplest fix — improve YAML frontmatter descriptions using WHEN/WHEN NOT patterns:
@@ -60,10 +64,12 @@ description: |
 
 Evidence shows specific descriptions with explicit trigger conditions significantly improve auto-invocation rates.
 
+<!-- section_id: "37b50f52-23fe-40d1-9d67-89cb3dcf2cbe" -->
 ### Approach 2: Increase Character Budget (Immediate)
 
 Set `SLASH_COMMAND_TOOL_CHAR_BUDGET=30000` or higher in `.claude/settings.json` to prevent skills from being silently dropped. Default is ~16K which is too small for a system with many skills.
 
+<!-- section_id: "b99e15ec-a758-4224-9fda-e12c00f2359e" -->
 ### Approach 3: Skill Hints in CLAUDE.md (Immediate)
 
 Add explicit skill routing hints to CLAUDE.md:
@@ -77,6 +83,7 @@ Add explicit skill routing hints to CLAUDE.md:
 
 This is an acknowledged hack, but it works because CLAUDE.md is always in static context.
 
+<!-- section_id: "a254e700-d0a6-4b22-8768-31483b073299" -->
 ### Approach 4: Path-Specific Rules (Medium-term)
 
 Use `.claude/rules/*.md` with `paths:` YAML frontmatter to inject skill hints only when working in relevant directories:
@@ -92,6 +99,7 @@ to ensure proper formatting and cross-session tracking.
 
 This targets skill hints to specific contexts without bloating the global CLAUDE.md.
 
+<!-- section_id: "b9e0fcc1-5bc5-4dcb-a801-9ef12a4e94f3" -->
 ### Approach 5: Skill Routing Skill (Medium-term)
 
 Create a meta-skill that recommends other skills based on current context:
@@ -106,6 +114,7 @@ When invoked, it:
 3. Recommends which skills apply to the current situation
 4. Explains how to invoke each recommended skill
 
+<!-- section_id: "53c32a0e-d476-4a25-a310-b5b7671b00de" -->
 ### Approach 6: AALang-to-Markdown Transpiler (Long-term)
 
 Build a tool that takes AALang .gab.jsonld definitions and produces optimized markdown skill instructions:
@@ -126,8 +135,10 @@ This bridges AALang's design precision with markdown's runtime efficiency.
 
 ---
 
+<!-- section_id: "afd90e35-2672-483e-a35a-06a8b1871179" -->
 ## Verified Technical Details
 
+<!-- section_id: "76b2dcc9-a25e-4c95-be6c-564414a3e1e0" -->
 ### How Skills Are Actually Discovered
 
 Skills use a **three-level progressive disclosure** system:
@@ -138,6 +149,7 @@ Skills use a **three-level progressive disclosure** system:
 
 3. **Level 3 — Supporting files** (on-demand): Additional files in the skill directory are read only when Claude explicitly reads them.
 
+<!-- section_id: "c59f65d8-8e0d-49ec-9e0f-8c3b9dd87cfd" -->
 ### Character Budget Constraint
 
 All skill descriptions combined must fit within **~16K characters** (2% of context window). Skills exceeding this are **silently excluded**. Check with `/context` command. Override with:
@@ -151,6 +163,7 @@ All skill descriptions combined must fit within **~16K characters** (2% of conte
 }
 ```
 
+<!-- section_id: "562e0734-a23a-420a-a7b0-0a35666da9df" -->
 ### Skill Invocation Modes
 
 | Frontmatter | User can invoke | Claude can invoke |
@@ -161,6 +174,7 @@ All skill descriptions combined must fit within **~16K characters** (2% of conte
 
 ---
 
+<!-- section_id: "ec164c56-0728-440c-9940-5870f6bd3f9e" -->
 ## Open Questions (Revised)
 
 1. ~~Does Claude Code follow JSON-LD references?~~ → **No. Only @import and YAML frontmatter.**
@@ -175,6 +189,7 @@ All skill descriptions combined must fit within **~16K characters** (2% of conte
 
 ---
 
+<!-- section_id: "8ae3da3b-6344-424a-87b8-e0b81d122fc4" -->
 ## Prototype Plan (Revised)
 
 1. Pick 2-3 existing skills that are known to be underused
@@ -187,6 +202,7 @@ All skill descriptions combined must fit within **~16K characters** (2% of conte
 
 ---
 
+<!-- section_id: "437a996e-3161-4063-9c12-540ed9f26bc8" -->
 ## Sources
 
 - [Claude Code Skills Documentation](https://code.claude.com/docs/en/skills)

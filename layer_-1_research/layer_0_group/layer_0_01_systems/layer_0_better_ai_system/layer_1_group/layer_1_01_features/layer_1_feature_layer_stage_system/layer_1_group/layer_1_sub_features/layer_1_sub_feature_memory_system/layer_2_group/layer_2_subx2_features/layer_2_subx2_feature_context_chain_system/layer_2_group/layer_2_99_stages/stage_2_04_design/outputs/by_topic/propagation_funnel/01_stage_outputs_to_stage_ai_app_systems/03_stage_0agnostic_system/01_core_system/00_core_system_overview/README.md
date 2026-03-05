@@ -6,6 +6,7 @@ resource_name: "README"
 ---
 # Core System (01-05) Overview
 
+<!-- section_id: "489da919-715c-4798-95e4-e6ad6c63392b" -->
 ## What Is Core System?
 
 The core system is the **unified, canonical source of truth** for all context in the layer-stage hierarchy. It lives in `.0agnostic/` at every entity and stage level, organized into five numbered sections:
@@ -16,6 +17,7 @@ The core system is the **unified, canonical source of truth** for all context in
 - **04_episodic_memory/** — What we've learned (session history, changes)
 - **05_handoff_documents/** — How we communicate (cross-entity messages)
 
+<!-- section_id: "d908b0b7-9f9e-483c-9b81-3a36155812e5" -->
 ## Why It's the Source of Truth
 
 1. **Single location** — One place for each concept (no duplication)
@@ -24,6 +26,7 @@ The core system is the **unified, canonical source of truth** for all context in
 4. **Cascading** — Content automatically applies to child entities and stages
 5. **Navigation** — Pointers in 0AGNOSTIC.md guide agents to relevant content
 
+<!-- section_id: "25132462-8eaa-4479-ab4a-32d41e491f8e" -->
 ## How It Gets Used
 
 The core system is **consumed by**:
@@ -33,6 +36,7 @@ The core system is **consumed by**:
 
 Each layer uses the core system content but adapts it for its specific purpose.
 
+<!-- section_id: "3face5b6-ede0-4937-9f26-fb45851779b1" -->
 ## Key Files
 
 At every entity and stage level:
@@ -43,6 +47,7 @@ At every entity and stage level:
 - `.0agnostic/04_episodic_memory/` — Session records and changes
 - `.0agnostic/05_handoff_documents/` — Cross-entity communication
 
+<!-- section_id: "cd849910-50a4-4ec5-8403-4504670e02e5" -->
 ## Reference
 
 See the numbered subdirectories (01_knowledge, 02_rules, etc.) for documentation of each core section.

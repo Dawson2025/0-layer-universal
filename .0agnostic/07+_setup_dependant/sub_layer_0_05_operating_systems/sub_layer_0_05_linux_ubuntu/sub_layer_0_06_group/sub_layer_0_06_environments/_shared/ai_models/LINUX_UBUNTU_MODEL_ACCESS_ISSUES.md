@@ -9,12 +9,15 @@ resource_name: "LINUX_UBUNTU_MODEL_ACCESS_ISSUES"
 **Location**: Universal Layer → AI Models  
 **Status**: Platform-specific limitations affecting model access via MCP
 
+<!-- section_id: "e1b2ea60-31cd-46cc-a7d9-5614657c92c2" -->
 ## Overview
 
 This document outlines Linux/Ubuntu-specific issues that affect how AI models access MCP (Model Context Protocol) tools and capabilities. These issues impact model selection, tool availability, and agent configuration.
 
+<!-- section_id: "c1036491-4aa7-4c02-bdf5-ad9ea9dfebf7" -->
 ## Model Access Issues on Linux
 
+<!-- section_id: "59e961fd-9cad-4afa-858c-29ece09ae153" -->
 ### 1. MCP Tool Availability
 
 **Problem**: Some MCP tools are not available to AI models on Linux, even when MCP servers are configured and running.
@@ -28,6 +31,7 @@ This document outlines Linux/Ubuntu-specific issues that affect how AI models ac
 - Model attempts to use `mcp_playwright_browser_navigate` → Tool not found
 - Workaround: Use `mcp_browser_browser_navigate` instead
 
+<!-- section_id: "ac3c12bb-b0cd-43b0-a18c-b3d4c336a0ef" -->
 ### 2. Tool Naming Conventions
 
 **Problem**: Tool naming may differ on Linux, causing model confusion.
@@ -39,6 +43,7 @@ This document outlines Linux/Ubuntu-specific issues that affect how AI models ac
 
 **Solution**: Always verify tool names available on Linux before instructing models.
 
+<!-- section_id: "10cf70c3-ba16-4dc3-9098-d8d209f3b67a" -->
 ### 3. Model Fallback Strategy
 
 **Problem**: Different models may have different capabilities for handling Linux-specific tool limitations.
@@ -50,8 +55,10 @@ This document outlines Linux/Ubuntu-specific issues that affect how AI models ac
 
 **Recommendation**: Configure model fallback chains that account for Linux tool limitations.
 
+<!-- section_id: "5c0e5969-0e04-4592-a2cc-10fb9b3507f9" -->
 ## Model Configuration Considerations
 
+<!-- section_id: "9ad29920-bf4c-4faf-9388-5f092e46167c" -->
 ### Primary Model Setup
 
 When configuring primary models on Linux:
@@ -71,6 +78,7 @@ When configuring primary models on Linux:
    - Provide fallback tool options
    - Document Linux-specific error patterns
 
+<!-- section_id: "f9b21e87-b806-4897-acc6-c0f278c0d9b8" -->
 ### Fallback Model Configuration
 
 When setting up fallback models:
@@ -85,18 +93,22 @@ When setting up fallback models:
    - Account for different model capabilities
    - Provide Linux-specific guidance for each model
 
+<!-- section_id: "5dd2cb59-370f-4a96-af74-4750e0402719" -->
 ## Available Tools for Models on Linux
 
+<!-- section_id: "e5deeb2c-8645-4611-917a-6573d520f4a9" -->
 ### ✅ Available MCP Tools
 
 - `mcp_browser_*` (21 tools) - Browser automation via Browser MCP
 - `mcp_cursor-browser-extension_*` (18 tools) - Cursor browser extension (may have issues)
 - Other non-browser MCP tools (documentation, search, filesystem, etc.)
 
+<!-- section_id: "658bcfee-d1c5-442a-984f-72b5b5a4ff45" -->
 ### ❌ Unavailable MCP Tools
 
 - `mcp_playwright_*` (22 tools) - Server connects but tools not exposed on Linux
 
+<!-- section_id: "4789339f-db93-4e60-a9e7-4318b7f1df6d" -->
 ## Model Instructions Template
 
 When creating model instructions for Linux:
@@ -115,6 +127,7 @@ When creating model instructions for Linux:
 3. Verify MCP server is running: Check Cursor Settings → Tools & MCP
 ```
 
+<!-- section_id: "fa3c921a-150c-45bf-94a0-9da6af33089b" -->
 ## Agent Configuration
 
 When configuring agents for Linux:
@@ -134,8 +147,10 @@ When configuring agents for Linux:
    - Provide fallback strategies
    - Document recovery procedures
 
+<!-- section_id: "29b7521a-4d0e-4ef2-9599-6b7ca07f0f98" -->
 ## Testing Model Access
 
+<!-- section_id: "f85c8078-612c-485d-8404-131e7b0f8d54" -->
 ### Verify Tool Availability
 
 ```bash
@@ -146,6 +161,7 @@ ps aux | grep -E "playwright|mcp" | grep -v grep
 find ~/.config/Cursor/logs -name "*mcp*" | head -5
 ```
 
+<!-- section_id: "1e91c849-e3cf-4898-9175-40378c74cfbf" -->
 ### Test Tool Access
 
 In Cursor IDE:
@@ -154,6 +170,7 @@ In Cursor IDE:
 3. Note which tools are listed
 4. Test tool access in agent session
 
+<!-- section_id: "b5dd188b-4a9d-438a-bdb1-fbaa520410c2" -->
 ## Related Documentation
 
 - **OS-Level Issues**: `layer_0/0.02_sub_layers/sub_layer_0_05_os_setup/trickle_down_0.5_setup/0_instruction_docs/LINUX_UBUNTU_MCP_ISSUES.md`
@@ -161,6 +178,7 @@ In Cursor IDE:
 - **MCP Setup**: `layer_0/0.02_sub_layers/sub_layer_0_10_mcp_servers_and_tools_setup/`
 - **Universal Tools**: `layer_0/0.02_sub_layers/sub_layer_0_12_universal_tools/`
 
+<!-- section_id: "d135fd7f-4692-4afa-9c89-f9cb5839982e" -->
 ## References
 
 - Model Context Protocol: https://modelcontextprotocol.io

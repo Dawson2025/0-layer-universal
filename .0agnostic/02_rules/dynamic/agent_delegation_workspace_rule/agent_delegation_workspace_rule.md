@@ -9,12 +9,14 @@ resource_name: "agent_delegation_workspace_rule"
 **Scope**: All agents working on delegation-related topics
 **Importance**: I1 (High)
 
+<!-- section_id: "b807a83f-248d-4e73-ab40-e97933d55ce4" -->
 ## Rule
 
 Work related to agent delegation patterns belongs in the **agent_delegation_system** entity, not in the entity where you currently are. This entity maintains the full propagation chain (stage outputs -> universal artifacts) and working examples. Delegation changes made elsewhere won't propagate correctly.
 
 **Canonical workspace path**: `layer_-1_research/layer_-1_better_ai_system/layer_0_group/layer_0_features/layer_0_feature_layer_stage_system/layer_1_group/layer_1_sub_features/layer_1_sub_feature_agent_delegation_system/`
 
+<!-- section_id: "7b121d2c-87d9-4055-a4a8-4459bb86dd06" -->
 ## When This Applies
 
 Triggers:
@@ -33,6 +35,7 @@ Keywords that indicate delegation work:
 - Stage reports, consolidation funnel, context propagation
 - Agent hierarchies, multi-agent coordination, instantiation decisions
 
+<!-- section_id: "d326ed4a-b7e6-439f-8914-73dafd532bd7" -->
 ## What to Do
 
 1. **Recognize** this is out-of-scope for your current entity/stage
@@ -40,6 +43,7 @@ Keywords that indicate delegation work:
 3. **Traverse** to the agent_delegation_system entity (path above)
 4. **Follow** the update protocol at that entity: `.0agnostic/03_protocols/agent_delegation_update_protocol.md`
 
+<!-- section_id: "bed831e1-1e16-4e5d-81c7-6800017f0560" -->
 ## Why
 
 The agent_delegation_system entity:
@@ -54,6 +58,7 @@ Delegation changes made elsewhere:
 - Won't be validated against working examples
 - Won't appear in entity reports for future reference
 
+<!-- section_id: "53cab4e8-a591-4d59-a7bd-a5d1960929e9" -->
 ## See Also
 
 - **Principle 8**: `.0agnostic/01_knowledge/principles/principles/STAGE_DELEGATION_PRINCIPLES.md`

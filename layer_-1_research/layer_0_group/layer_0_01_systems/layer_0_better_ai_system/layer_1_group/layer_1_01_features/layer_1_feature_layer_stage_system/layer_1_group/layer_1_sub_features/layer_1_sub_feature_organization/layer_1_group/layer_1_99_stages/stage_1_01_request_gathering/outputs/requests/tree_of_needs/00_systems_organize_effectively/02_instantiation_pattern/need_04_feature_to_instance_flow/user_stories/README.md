@@ -6,6 +6,7 @@ resource_name: "README"
 ---
 # User Stories — Feature to Instance Flow
 
+<!-- section_id: "64d5118b-82ed-4872-83f6-cf54762f6627" -->
 ## Actors
 
 | Actor | Description |
@@ -13,6 +14,7 @@ resource_name: "README"
 | System | Propagates features to instances |
 | User | Benefits from system improvements |
 
+<!-- section_id: "3c606be8-3a91-4f19-9202-3f388b2bacb7" -->
 ## Stories
 
 | ID | Story | Actor |

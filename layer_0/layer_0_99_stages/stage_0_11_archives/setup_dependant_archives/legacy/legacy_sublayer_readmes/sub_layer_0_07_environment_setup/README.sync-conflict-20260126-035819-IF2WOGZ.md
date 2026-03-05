@@ -10,6 +10,7 @@ resource_name: "README.sync-conflict-20260126-035819-IF2WOGZ"
 
 This sublayer has been consolidated into the unified setup sublayer for better organization and discoverability.
 
+<!-- section_id: "122ae9c9-67a3-4cbb-9ef7-173d6ac77169" -->
 ## Migration Path
 
 All setup documentation is now located in:
@@ -23,6 +24,7 @@ Navigate the file tree by your configuration:
 3. Choose your coding app: `0.07_coding_apps/<app>/`
 4. Continue through all levels to find your specific setup documentation
 
+<!-- section_id: "340797b6-8ea5-404b-9e67-969a76d76b16" -->
 ## Why Consolidate?
 
 - **Single entry point** for all setup docs
@@ -30,6 +32,7 @@ Navigate the file tree by your configuration:
 - **Cross-cutting organization** with `_shared/` folders at every level
 - **Easier maintenance** - one structure instead of 10
 
+<!-- section_id: "d6f9204d-80da-4f12-902e-e4cabaed12f2" -->
 ## Legacy Content Below
 
 The original content of this sublayer is preserved below for reference, but should not be updated. All new setup documentation should go into the consolidated sublayer.
@@ -40,11 +43,13 @@ The original content of this sublayer is preserved below for reference, but shou
 
 **Purpose**: Environment-level setup that is not OS-specific and not tied to a single coding/AI application (e.g., Git/GitHub auth patterns, credentials, cross-app environment rules).
 
+<!-- section_id: "efc14c62-59a0-47c8-a152-55a106985fd7" -->
 ## Included Topics
 
 - Git and GitHub authentication (PATs, SSO/SAML, credential storage patterns)
 - Cross-tool environment conventions (paths, permissions, shells)
 
+<!-- section_id: "7fa81797-b47d-4b50-bdc5-227c7200fe3b" -->
 ## Documentation
 
 - **GitHub SSO (PAT) Setup**: `trickle_down_0.5_setup/0_instruction_docs/github/github_sso_token_setup.md`

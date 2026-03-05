@@ -8,10 +8,12 @@ resource_name: "README"
 
 **Need**: [Scored Context Retrieval](../README.md)
 
+<!-- section_id: "48a17753-9bc7-4d84-bff2-4e4aa65b0284" -->
 ## Overview
 
 These stories cover the replacement of manual file selection with scored retrieval that ranks available context by recency, relevance, and importance. They validate that agents automatically load the most relevant context when entering an entity, that recent content is prioritized over stale content in the ranking, and that the developer can tune the scoring weights to adjust retrieval behavior as the system evolves.
 
+<!-- section_id: "8cda51d8-fa14-4bc6-99d9-c377723a2df6" -->
 ## Actors
 
 - **User (Developer)**: Human developer (Dawson) who gives instructions to the AI system, reviews outputs, and validates behavior

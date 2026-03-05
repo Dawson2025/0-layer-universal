@@ -6,6 +6,7 @@ resource_name: "0AGNOSTIC"
 ---
 # navigation — Layer Registry
 
+<!-- section_id: "1870fc61-948c-4c0d-8f68-54efc8062cdd" -->
 ## Identity
 
 entity_id: "3f639327-7a80-40c2-9788-927514d10420"

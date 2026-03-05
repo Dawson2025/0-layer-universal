@@ -7,6 +7,7 @@ resource_name: "README.sync-conflict-20260126-101457-IF2WOGZ"
 
 Place reference documents, templates, and examples here.
 
+<!-- section_id: "d56dc396-911f-43d0-95ea-342debd5cc63" -->
 ## Suggested Contents
 - Templates for 06_development outputs
 - Examples of good 06_development work

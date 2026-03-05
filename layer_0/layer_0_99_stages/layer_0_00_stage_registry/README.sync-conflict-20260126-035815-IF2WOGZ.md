@@ -9,6 +9,7 @@ resource_name: "README.sync-conflict-20260126-035815-IF2WOGZ"
 
 **Updated**: 2026-01-25
 
+<!-- section_id: "96fc17a0-3971-4e05-90c5-b33d3c3c718c" -->
 ## Current Stages (v2.0)
 
 | Slug | Number | Name | Purpose |
@@ -25,6 +26,7 @@ resource_name: "README.sync-conflict-20260126-035815-IF2WOGZ"
 | `current_product` | 09 | Current Product | Working deliverable |
 | `archives` | 10 | Archives | Historical records |
 
+<!-- section_id: "ccf944a4-10d4-40ff-968b-ed54e49f2b74" -->
 ## Version History
 
 | Version | Stages | Changes |
@@ -32,10 +34,12 @@ resource_name: "README.sync-conflict-20260126-035815-IF2WOGZ"
 | v1.0 | 00-09 | Original 10 stages |
 | v2.0 | 00-10 | Added `01_research` stage, renumbered 01-09 → 02-10 |
 
+<!-- section_id: "5974c517-7492-437e-9f56-d28778f0341d" -->
 ## Problem
 
 Stage numbers (e.g., `stage_1_05_development`) are **ordering labels**, not identifiers. If we insert/reorder stages, renumbering breaks every doc that hard-links to `stage_N_XX_*` paths.
 
+<!-- section_id: "1d560c61-9e3d-42e2-9f04-007465d3592c" -->
 ## Solution
 
 Use **stable slugs** (e.g., `development`) and resolve them via:
@@ -55,6 +59,7 @@ Instead of linking directly to:
 layer_N/layer_N_99_stages/stage_N_XX_<slug>/...
 ```
 
+<!-- section_id: "8bf27afb-0bf1-4639-af86-fce52a464f30" -->
 ## Stage Structure
 
 Each stage directory contains:
@@ -68,19 +73,23 @@ stage_N_XX_name/
 
 The `outputs/` folder allows handoff documents to remain concise by referencing artifacts rather than duplicating content inline.
 
+<!-- section_id: "53fcf4d0-e43c-4b46-8ebc-4e71777011f2" -->
 ## Usage
 
+<!-- section_id: "57519b6f-c061-4253-bb55-f36e9e81ab44" -->
 ### Get stage by slug
 ```yaml
 # In YAML configs or scripts
 stage: research  # Instead of: stage_N_01_research
 ```
 
+<!-- section_id: "77b9cfd2-4ca3-4ccc-9b8b-8aa1272f248f" -->
 ### Reference in documentation
 ```markdown
 See the [research stage](aliases/research.md) for exploration guidelines.
 ```
 
+<!-- section_id: "e6451aa9-8a7e-436a-b027-b2d91b27f215" -->
 ## Automation
 
 Generate/update the registry + aliases:

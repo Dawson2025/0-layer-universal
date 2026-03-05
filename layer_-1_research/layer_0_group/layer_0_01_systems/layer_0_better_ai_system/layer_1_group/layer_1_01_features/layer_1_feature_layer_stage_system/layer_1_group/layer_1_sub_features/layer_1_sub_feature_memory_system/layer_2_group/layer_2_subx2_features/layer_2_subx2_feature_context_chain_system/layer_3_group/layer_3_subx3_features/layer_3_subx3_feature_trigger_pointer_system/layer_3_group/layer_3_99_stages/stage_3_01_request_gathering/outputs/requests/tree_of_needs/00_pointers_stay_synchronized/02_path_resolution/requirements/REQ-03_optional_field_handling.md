@@ -5,10 +5,12 @@ resource_name: "REQ-03_optional_field_handling"
 ---
 # REQ-03: Optional Field Handling
 
+<!-- section_id: "18edaf98-6824-46a2-b60a-3a39e6056de3" -->
 ## Requirement
 
 The pointer sync system MUST handle missing optional frontmatter fields gracefully, without crashing.
 
+<!-- section_id: "262792f1-c6e4-49ff-bb83-1d2a8221e3aa" -->
 ## Specification
 
 - `canonical_stage` is optional — if absent, resolution stops at the entity directory
@@ -17,12 +19,14 @@ The pointer sync system MUST handle missing optional frontmatter fields graceful
 - `pointer_to` is required — if empty, the pointer is SKIP'd
 - The `extract_fm` function must return an empty string for missing fields instead of causing a pipeline failure
 
+<!-- section_id: "2c59a34d-8062-4de0-a36f-4fe40ee7dbd7" -->
 ## Bug Found During Testing
 
 The original `extract_fm` function used a pipeline with `grep "^${field}:"`. With `set -euo pipefail`, when the field was absent, `grep` returned exit code 1, which propagated through `pipefail` and caused the entire script to exit silently.
 
 **Fix applied**: Added `|| true` to the pipeline in `extract_fm` so missing fields return empty string instead of crashing.
 
+<!-- section_id: "c99ed374-06be-414e-a7fc-92c09b57387f" -->
 ## Test Coverage
 
 - Test 2.4 validates that missing `canonical_stage` still resolves the entity

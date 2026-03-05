@@ -12,12 +12,14 @@ resource_name: "README"
 
 ---
 
+<!-- section_id: "4d109f5d-e96f-4a28-baac-6efbc0cd6e81" -->
 ## Definition
 
 Replace manual file selection ("read this file") with scored retrieval that ranks available context by a composite of recency, relevance, and importance. Agents load the top-scoring context instead of guessing.
 
 ---
 
+<!-- section_id: "9786abc8-c9d8-4ecb-9a33-32af260dda79" -->
 ## Why This Matters
 
 - Currently agents follow explicit pointers or guess which files to read
@@ -26,6 +28,7 @@ Replace manual file selection ("read this file") with scored retrieval that rank
 
 ---
 
+<!-- section_id: "307686ae-364c-4122-a17d-5ea0ae187db7" -->
 ## Acceptance Criteria
 
 - [ ] Scoring function is defined and documented
@@ -35,16 +38,19 @@ Replace manual file selection ("read this file") with scored retrieval that rank
 
 ---
 
+<!-- section_id: "c55bc391-369a-41c5-9e66-6e5c07b40fc1" -->
 ## Requirements
 
 See [requirements/](./requirements/) for individual requirements.
 
+<!-- section_id: "0f40e17c-a79c-461d-acb9-fbe954d6ffc3" -->
 ## User Stories
 
 See [user_stories/](./user_stories/) for individual stories.
 
 ---
 
+<!-- section_id: "51259baa-992e-4775-bd44-45e4bfd0580a" -->
 ## Research References
 
 - `memory_system/stage_1_02_research/outputs/by_topic/18_underlying_data_structures.md` — Data structure #13 (scored list)

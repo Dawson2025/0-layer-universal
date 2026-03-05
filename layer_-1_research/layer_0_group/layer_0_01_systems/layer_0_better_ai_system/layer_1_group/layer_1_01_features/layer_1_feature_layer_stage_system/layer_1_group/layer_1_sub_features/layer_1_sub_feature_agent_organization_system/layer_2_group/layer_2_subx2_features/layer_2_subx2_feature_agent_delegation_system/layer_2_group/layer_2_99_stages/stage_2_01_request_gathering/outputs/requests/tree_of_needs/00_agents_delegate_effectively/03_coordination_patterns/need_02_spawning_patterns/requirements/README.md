@@ -8,10 +8,12 @@ resource_name: "README"
 
 **Need**: [Spawning Patterns](../README.md)
 
+<!-- section_id: "19e294e4-5982-4a24-9413-1f1ebfa8a145" -->
 ## Overview
 
 These requirements define when and how managers spawn specialized agents. If work requires stage methodology, spawn a stage agent; if it's a quick decision or status check, do it directly. Spawned agents receive a task description and directory pointer (never the manager's full context), follow a defined lifecycle (spawn, read 0AGNOSTIC.md, work, write report, exit), and parallel agents are only permitted for independent, non-overlapping work.
 
+<!-- section_id: "7b12feaa-0396-41e1-93d4-e98b97281320" -->
 ## Key Themes
 
 - **When to Spawn**: Clear criteria — spawn for methodology-requiring work, do directly for quick checks; work expected to exceed N steps should be delegated

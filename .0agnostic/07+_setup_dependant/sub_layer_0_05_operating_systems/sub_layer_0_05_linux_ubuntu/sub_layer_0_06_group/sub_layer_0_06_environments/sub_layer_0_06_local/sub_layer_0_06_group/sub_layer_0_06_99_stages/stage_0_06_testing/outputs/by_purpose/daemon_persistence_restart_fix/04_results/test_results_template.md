@@ -11,6 +11,7 @@ resource_name: "test_results_template"
 
 ---
 
+<!-- section_id: "5ee0540f-587a-4dec-928e-5f1ba60e2a45" -->
 ## Test Execution Summary
 
 | Metric | Result |
@@ -25,8 +26,10 @@ resource_name: "test_results_template"
 
 ---
 
+<!-- section_id: "3b62ad26-fd51-4f66-8316-bec700f78d60" -->
 ## Detailed Findings
 
+<!-- section_id: "792ec2d6-59a2-493f-8eee-d40b5b295d32" -->
 ### Daemon Status Post-Boot
 - **gsd-media-keys**: [running/not running]
   - Process: [output of pgrep]
@@ -35,6 +38,7 @@ resource_name: "test_results_template"
   - Process: [output of pgrep]
   - Service Status: [output of systemctl]
 
+<!-- section_id: "cae89da2-e5c1-4485-8091-0f9408efea94" -->
 ### Keybinding Tests
 - **Volume Key (XF86AudioRaiseVolume)**
   - Before: [VOLUME]%
@@ -45,6 +49,7 @@ resource_name: "test_results_template"
 
 - **Custom Keybinding (Ctrl+Alt+S for speak-selection)**: [PASS/FAIL]
 
+<!-- section_id: "b41c8ca7-640c-4e73-9d2a-d70484f53e8c" -->
 ### System Health
 - **Failed Services Count**: [N]
 - **X11 Status**: [healthy/issues]
@@ -52,12 +57,14 @@ resource_name: "test_results_template"
 
 ---
 
+<!-- section_id: "ca047bd2-b516-4139-bcc5-58e1299560e9" -->
 ## Observations
 
 [Free-form notes about system behavior, timing, unexpected results, etc.]
 
 ---
 
+<!-- section_id: "f87a1403-86af-4103-9371-fa391573e103" -->
 ## Root Cause Analysis
 
 **If WORKING**: 
@@ -71,6 +78,7 @@ resource_name: "test_results_template"
 
 ---
 
+<!-- section_id: "312d0204-e8f6-4318-8955-82f149d1a9bc" -->
 ## Logs and Evidence
 
 - Full validation log: `../03_runs/solution_N_run_[TIMESTAMP].log`

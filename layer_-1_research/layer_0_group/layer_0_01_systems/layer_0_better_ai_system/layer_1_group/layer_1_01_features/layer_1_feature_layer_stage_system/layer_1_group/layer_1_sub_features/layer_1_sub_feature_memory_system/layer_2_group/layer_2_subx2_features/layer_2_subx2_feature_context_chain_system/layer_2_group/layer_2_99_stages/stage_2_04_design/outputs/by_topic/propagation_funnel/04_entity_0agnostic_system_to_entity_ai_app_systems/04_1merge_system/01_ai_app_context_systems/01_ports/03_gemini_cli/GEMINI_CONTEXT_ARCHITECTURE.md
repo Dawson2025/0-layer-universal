@@ -12,10 +12,12 @@ resource_name: "GEMINI_CONTEXT_ARCHITECTURE"
 
 ---
 
+<!-- section_id: "1f82e84e-e2f4-4945-9ae1-62901e781a5a" -->
 ## Context Model
 
 Gemini CLI is Google's multimodal AI assistant. It loads context through:
 
+<!-- section_id: "a72e97c6-47de-492f-9184-7d565f175512" -->
 ### Static Context (Loaded on Initialization)
 
 **Tier 0 - Synced (auto-generated from 0AGNOSTIC.md)**:
@@ -39,6 +41,7 @@ Contains:
 - Multimodal resource handling
 - Google-specific tools (Search, Workspace, etc.)
 
+<!-- section_id: "6e1c89a8-c4cc-41fb-a027-547e0917474e" -->
 ### Dynamic Context (On-Demand)
 
 - Visual assets (`.0agnostic/01_knowledge/visual-assets/`)
@@ -48,12 +51,15 @@ Contains:
 
 ---
 
+<!-- section_id: "b986318f-b4b7-42a9-9c7f-9a5c5c676fae" -->
 ## Porting Architecture: 0AGNOSTIC → Gemini
 
+<!-- section_id: "f72f7ef3-d99e-4356-b7d4-f7d9595f3402" -->
 ### Step 1: Extract from 0AGNOSTIC.md
 
 Same as other tools — extract STATIC CONTEXT only.
 
+<!-- section_id: "30c5cb3e-4c9a-48ff-ae44-f8862d8606a2" -->
 ### Step 2: Transform to GEMINI.md Format
 
 **Transformation Rules** (Gemini-specific):
@@ -86,6 +92,7 @@ Gemini can process:
 - Demo Videos: `.0agnostic/01_knowledge/visual-assets/videos/`
 ```
 
+<!-- section_id: "0318a20a-f3db-4f02-95a5-a607722859d2" -->
 ### Step 3: Apply Tier 1 (Overrides)
 
 **Location**: `.1merge/.1gemini_merge/1_overrides/tool_boilerplate.md`
@@ -134,6 +141,7 @@ response = model.generate_content([
 - Rate limits: 10 requests/minute for free tier
 ```
 
+<!-- section_id: "271b318c-620f-4ca6-ac90-6ac0c2883893" -->
 ### Step 4: Apply Tier 2 (Additions)
 
 **Location**: `.1merge/.1gemini_merge/2_additions/tool_additions.md`
@@ -176,6 +184,7 @@ response = model.generate_content([
 - Music understanding
 ```
 
+<!-- section_id: "dd211f64-4d92-43d1-be27-aaecbe11673f" -->
 ### Step 5: Generate Output
 
 **Tool**: `agnostic-sync.sh` handles Gemini generation
@@ -184,8 +193,10 @@ response = model.generate_content([
 
 ---
 
+<!-- section_id: "168c928e-2192-4caa-83b7-f9a3f48f5bc0" -->
 ## File Locations
 
+<!-- section_id: "a12d8c41-1936-427d-a6de-6d17237c0ec3" -->
 ### Input Files
 
 ```
@@ -206,6 +217,7 @@ response = model.generate_content([
     └── 2_additions/tool_additions.md
 ```
 
+<!-- section_id: "edd6dc3c-eeb9-4ae3-934e-fea1176abccd" -->
 ### Output Files
 
 ```
@@ -220,8 +232,10 @@ response = model.generate_content([
 
 ---
 
+<!-- section_id: "7b115d03-3046-4071-8016-7907f0635f42" -->
 ## Gemini-Specific Features
 
+<!-- section_id: "03bc090b-b852-4865-a4ba-044e66269b75" -->
 ### Visual Asset Library
 
 Gemini benefits from organized visual assets in `.0agnostic/01_knowledge/visual-assets/`:
@@ -251,6 +265,7 @@ Triggers can reference these:
 | Explaining architecture | Load .0agnostic/01_knowledge/visual-assets/diagrams/ |
 ```
 
+<!-- section_id: "83fe5d5f-b9ac-4df0-aacf-45f34c99aaad" -->
 ### Multimodal Example Triggers
 
 ```
@@ -267,6 +282,7 @@ Gemini GEMINI.md should include:
 | Video analysis requested | Load video analysis protocol |
 ```
 
+<!-- section_id: "a18fa99c-b263-4ad8-be15-94d3fe2679d5" -->
 ### Document Processing Triggers
 
 ```markdown
@@ -284,8 +300,10 @@ Load protocol: `.0agnostic/03_protocols/document-extraction-protocol.md`
 
 ---
 
+<!-- section_id: "ff2d167b-7611-4bc6-895a-79cbf61564ec" -->
 ## Gemini-Specific Integration Patterns
 
+<!-- section_id: "6e574d57-f866-486e-8a04-8146a253b387" -->
 ### Image Annotation for Context
 
 Gemini can process images with arrows, highlights, and annotations:
@@ -299,6 +317,7 @@ When providing screenshots:
 This helps Gemini understand focus areas and context.
 ```
 
+<!-- section_id: "78802c59-877b-4faf-9051-9b48c223fd82" -->
 ### Video Context Windows
 
 For videos, provide:
@@ -315,6 +334,7 @@ response = model.generate_content([
 ])
 ```
 
+<!-- section_id: "ba8ccbf2-5f62-4164-9695-2aaadb120648" -->
 ### PDF Data Extraction
 
 For structured data extraction from PDFs:
@@ -334,8 +354,10 @@ Example triggers:
 
 ---
 
+<!-- section_id: "44686593-927c-467b-9248-2a4626ebb94f" -->
 ## Google API Authentication
 
+<!-- section_id: "513bd675-48a5-488e-82a5-5978bf430fa9" -->
 ### API Key Configuration
 
 ```markdown
@@ -370,6 +392,7 @@ except Exception as e:
 
 ---
 
+<!-- section_id: "79d0c9af-a1ea-463a-94ae-937495a3a4ca" -->
 ## Resources Section
 
 ```markdown
@@ -386,6 +409,7 @@ except Exception as e:
 
 ---
 
+<!-- section_id: "eb4f0a31-2af7-4521-8198-272229555117" -->
 ## Validation Checklist
 
 After porting to Gemini context:
@@ -403,6 +427,7 @@ After porting to Gemini context:
 
 ---
 
+<!-- section_id: "17879d7a-a186-46a9-b589-b2bc4c891707" -->
 ## Success Criteria
 
 Gemini context is successful when:
@@ -423,6 +448,7 @@ Gemini context is successful when:
 
 ---
 
+<!-- section_id: "59fc475a-e908-4af0-99e0-1c8f40f72858" -->
 ## References
 
 - **Visual Assets Guide**: `.0agnostic/01_knowledge/visual-assets/GUIDE.md`

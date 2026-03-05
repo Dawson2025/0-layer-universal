@@ -11,6 +11,7 @@ resource_name: "README"
 
 ---
 
+<!-- section_id: "fdcb57bb-20d8-4c98-86f3-ff5252c8e6b9" -->
 ## Overview
 
 This sublayer consolidates all setup documentation for sublayers 2.05 through 2.14:
@@ -30,12 +31,14 @@ All setup documentation is organized in a **hierarchical file tree structure**.
 
 ---
 
+<!-- section_id: "4d620d72-1975-427d-99db-e155049c5d00" -->
 ## Primary Navigation: Feature Setup File Tree
 
 **Main entry point**: `2.01_feature_setup_file_tree/`
 
 Navigate by your configuration to find feature-specific setup documentation.
 
+<!-- section_id: "fe2328cd-61cd-4c35-b1ec-ac81cd738258" -->
 ## Structure
 
 ```

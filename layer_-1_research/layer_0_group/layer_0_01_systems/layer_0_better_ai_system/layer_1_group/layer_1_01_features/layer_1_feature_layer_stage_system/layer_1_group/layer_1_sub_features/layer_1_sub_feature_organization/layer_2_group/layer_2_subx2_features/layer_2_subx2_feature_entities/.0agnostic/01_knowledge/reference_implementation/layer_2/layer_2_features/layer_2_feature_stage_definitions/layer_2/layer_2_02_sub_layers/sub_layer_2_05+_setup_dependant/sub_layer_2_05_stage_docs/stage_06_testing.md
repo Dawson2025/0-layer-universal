@@ -5,9 +5,11 @@ resource_name: "stage_06_testing"
 ---
 # Stage 05: Testing
 
+<!-- section_id: "de657a19-d07c-4db8-8ae9-5ba46cbb6b2e" -->
 ## Purpose
 Verify that the implementation meets all requirements and quality standards through systematic testing. This stage identifies defects, validates functionality, and ensures the product is ready for review.
 
+<!-- section_id: "64559ee8-4015-4d33-8a78-856c4f14fee9" -->
 ## Entry Criteria
 - Development completed from Stage 04
 - Unit tests passing
@@ -16,6 +18,7 @@ Verify that the implementation meets all requirements and quality standards thro
 - Test cases prepared
 - Acceptance criteria available
 
+<!-- section_id: "eaa015c5-47d6-4282-835e-1f126d639ad2" -->
 ## Exit Criteria
 - All test cases executed
 - Critical and high-priority bugs fixed
@@ -25,6 +28,7 @@ Verify that the implementation meets all requirements and quality standards thro
 - Test results documented
 - Product approved for review
 
+<!-- section_id: "d9ecc040-6d6f-4397-8d4c-dc2a0a5552cf" -->
 ## Typical Tasks
 - Execute functional tests
 - Perform integration testing
@@ -36,10 +40,12 @@ Verify that the implementation meets all requirements and quality standards thro
 - Report and track defects
 - Validate acceptance criteria
 
+<!-- section_id: "5eb0598b-70e8-492f-be02-307322fbb481" -->
 ## Handoffs
 - **From Previous**: Working implementation, unit tests, documentation
 - **To Next**: Test results, defect reports, quality metrics, tested product
 
+<!-- section_id: "b4b60b16-d756-45ec-8481-54f5ae0fd1d9" -->
 ## Directory Structure
 Each stage directory contains:
 - `CLAUDE.md` - Stage-specific context
@@ -48,6 +54,7 @@ Each stage directory contains:
 - `docs/` - Stage documentation
 - `work/` - Working files
 
+<!-- section_id: "fc8b5004-b1c8-4955-b289-36224a6e5047" -->
 ## Key Artifacts
 - Test plan
 - Test cases
@@ -57,6 +64,7 @@ Each stage directory contains:
 - Performance test results
 - Security scan results
 
+<!-- section_id: "1afaf408-a39b-460a-afb4-5063cbd0b34a" -->
 ## Common Pitfalls
 - Insufficient test coverage
 - Not testing edge cases

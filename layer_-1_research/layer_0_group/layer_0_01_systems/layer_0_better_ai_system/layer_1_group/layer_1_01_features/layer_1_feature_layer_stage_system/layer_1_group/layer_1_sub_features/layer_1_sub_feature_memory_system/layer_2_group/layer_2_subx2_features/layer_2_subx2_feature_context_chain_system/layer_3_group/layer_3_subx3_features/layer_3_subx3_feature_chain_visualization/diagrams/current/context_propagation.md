@@ -7,6 +7,7 @@ resource_name: "context_propagation"
 
 > **This document is a pointer.** The canonical source of truth for hierarchy inheritance and propagation lives in the context chain system (Layer 2) design docs.
 
+<!-- section_id: "4148a31d-0920-4ed1-b962-3a10c7fe2fcd" -->
 ## Canonical Source
 
 **Hierarchy inheritance model**: `../../../layer_2_group/layer_2_99_stages/stage_2_04_design/outputs/by_topic/05_hierarchy_inheritance_model.md`
@@ -15,6 +16,7 @@ resource_name: "context_propagation"
 
 **Full design index**: `../../../layer_2_group/layer_2_99_stages/stage_2_04_design/outputs/by_topic/README.md`
 
+<!-- section_id: "43b5813c-1d1b-4d97-a799-0ea068824338" -->
 ## Quick Summary
 
 - Parent context flows DOWN to children (inheritance model)

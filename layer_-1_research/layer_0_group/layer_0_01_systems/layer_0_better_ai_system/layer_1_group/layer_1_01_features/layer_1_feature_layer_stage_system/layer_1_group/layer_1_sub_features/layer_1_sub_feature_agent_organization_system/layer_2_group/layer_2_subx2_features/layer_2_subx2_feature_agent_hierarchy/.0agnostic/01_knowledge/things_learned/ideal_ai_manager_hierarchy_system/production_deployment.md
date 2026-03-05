@@ -3,6 +3,7 @@ resource_id: "568a9df1-044e-4c59-b975-cbf3851f107d"
 resource_type: "knowledge"
 resource_name: "production_deployment"
 ---
+<!-- section_id: "1f15b6f3-439c-4545-a8b5-e42a7651f865" -->
 ## Production Deployment Guide
 
 This document provides guidance for deploying the AI manager hierarchy system to production environments.
@@ -15,8 +16,10 @@ It covers:
 
 ---
 
+<!-- section_id: "003f3ae8-f743-4b69-8b54-571365e0789f" -->
 ## 1. Deployment Architectures
 
+<!-- section_id: "471b6bf0-7702-454d-82e1-a144c1b7e855" -->
 ### 1.1 Single-Machine Development
 
 **Architecture:**
@@ -39,6 +42,7 @@ It covers:
 - Personal projects
 - Small teams
 
+<!-- section_id: "34fd7b89-289e-406d-83a7-ddb3591c3bd2" -->
 ### 1.2 Distributed Production
 
 **Architecture:**
@@ -92,6 +96,7 @@ It covers:
 - Large organizations
 - High-volume workloads
 
+<!-- section_id: "5919e499-9aab-4baf-bc3a-0af879aae1a1" -->
 ### 1.3 Hybrid Cloud/Local
 
 **Architecture:**
@@ -106,8 +111,10 @@ It covers:
 
 ---
 
+<!-- section_id: "c6dfe383-e515-47d8-905f-68951f445373" -->
 ## 2. Scaling Guidelines
 
+<!-- section_id: "df5576d2-56b1-448a-899a-ae8a596493a9" -->
 ### 2.1 Recommended Limits
 
 **Layer Depth:**
@@ -130,6 +137,7 @@ It covers:
 | Queue throughput | 10/min | 100/min | 1K/min | 10K/min |
 | Storage (handoffs) | 1GB | 10GB | 100GB | 1TB+ |
 
+<!-- section_id: "28dc4d68-cf92-4f8f-a84f-700a6048c15f" -->
 ### 2.2 Auto-Scaling Policies
 
 **Worker Auto-Scaling:**
@@ -208,8 +216,10 @@ class CostAwareScaler:
 
 ---
 
+<!-- section_id: "c6ded76a-a833-4067-af85-def41226b52a" -->
 ## 3. Reliability and Fault Tolerance
 
+<!-- section_id: "b9f313a6-f115-4d34-b80e-8264e3179a31" -->
 ### 3.1 Failure Modes and Mitigations
 
 **Supervisor Failure:**
@@ -240,6 +250,7 @@ class CostAwareScaler:
   - Graceful degradation (work on cached tasks)
   - Reconciliation when partition heals
 
+<!-- section_id: "c18d1f58-b94c-4ed0-9e76-84cca30ef914" -->
 ### 3.2 High Availability Configuration
 
 **Supervisor Cluster:**
@@ -337,8 +348,10 @@ class StatelessWorker:
 
 ---
 
+<!-- section_id: "f83682a9-0b5b-4ff8-a438-088f866b1992" -->
 ## 4. Observability in Production
 
+<!-- section_id: "09b8c781-0f02-480e-9e6a-0288a7f1f67e" -->
 ### 4.1 Monitoring Stack
 
 **Recommended Stack:**
@@ -369,6 +382,7 @@ class StatelessWorker:
    - Cost per model
    - Budget burn rate
 
+<!-- section_id: "2efa3bb2-fe12-4186-b688-8fd22e0dc10e" -->
 ### 4.2 Alerting Rules
 
 ```yaml
@@ -408,8 +422,10 @@ alerts:
 
 ---
 
+<!-- section_id: "14aaff45-81a4-49ac-b2b9-96e109f441a7" -->
 ## 5. Deployment Checklist
 
+<!-- section_id: "17b4db30-ef55-448f-bbc1-66a11a2be385" -->
 ### 5.1 Pre-Deployment
 
 - [ ] Code review and approval
@@ -422,6 +438,7 @@ alerts:
 - [ ] Monitoring dashboards ready
 - [ ] Alerts configured
 
+<!-- section_id: "4b41da52-495e-4afe-b156-31078aba8d6f" -->
 ### 5.2 Deployment Steps
 
 **Zero-Downtime Deployment:**
@@ -439,6 +456,7 @@ alerts:
 - Response time p95 > 60 seconds
 - Any critical alert triggered
 
+<!-- section_id: "7693c231-3e9b-4c3f-9ecd-7402cf79512e" -->
 ### 5.3 Post-Deployment
 
 - [ ] Verify all monitors are green
@@ -450,8 +468,10 @@ alerts:
 
 ---
 
+<!-- section_id: "c21b4f3d-5d50-4d8c-9c34-b85f8141ae9d" -->
 ## 6. Operational Best Practices
 
+<!-- section_id: "e1a5bc26-e2a4-4143-b814-5d18cb837af7" -->
 ### 6.1 Runbook
 
 **Common Operations:**
@@ -498,6 +518,7 @@ kubectl set env deployment/supervisor EMERGENCY_STOP=true
 python scripts/drain_queues.py --reason "budget_exceeded"
 ```
 
+<!-- section_id: "75f4dbb3-2ded-4893-94f9-bdf21993abf6" -->
 ### 6.2 Incident Response
 
 **Severity Levels:**
@@ -525,8 +546,10 @@ python scripts/drain_queues.py --reason "budget_exceeded"
 
 ---
 
+<!-- section_id: "c795e4b6-335a-4668-8525-9616ffc7fa3f" -->
 ## 7. Cost Optimization
 
+<!-- section_id: "994e9718-95f1-425a-902a-11f52c58d8b5" -->
 ### 7.1 Production Cost Strategies
 
 **Spot/Preemptible Instances:**
@@ -564,6 +587,7 @@ tolerations:
 
 ---
 
+<!-- section_id: "7762f289-a20b-484f-a169-92de85470a62" -->
 ## 8. Summary
 
 Production deployment requires:

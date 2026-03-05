@@ -5,13 +5,16 @@ resource_name: "quickstart"
 ---
 # Quickstart
 
+<!-- section_id: "22e03b1d-ce9e-4231-880d-3284e261061a" -->
 ## Prerequisites
 - Python 3.9+
 
+<!-- section_id: "6c6a2743-a9d0-4df8-8da8-6c22bb4638c4" -->
 ## Install
 - No external dependencies are required beyond the standard library.
 - Clone or open the repository.
 
+<!-- section_id: "72614016-ad48-416d-b697-203b44d1196f" -->
 ## Run the App
 ```bash
 python3 main.py
@@ -19,11 +22,13 @@ python3 main.py
 
 On first run, the SQLite database `phonemes.db` will be created automatically.
 
+<!-- section_id: "e97b13cc-ea9d-4004-be3d-4b6fcd55f4d7" -->
 ## Common Tasks
 - View phonemes: choose options 2–4 from the main menu
 - Manage words: options 5–10
 - Admin-only actions (password: `20251010`): choose option 1 → see admin menu
 
+<!-- section_id: "04b8ceba-e7fb-437a-ad18-771bf7a49f9e" -->
 ## Sample Data
 - Insert default phonemes: when prompted by viewing functions, select to insert sample data
 - Insert sample words:
@@ -31,5 +36,6 @@ On first run, the SQLite database `phonemes.db` will be created automatically.
 python3 add_sample_words.py
 ```
 
+<!-- section_id: "45f57c56-b1a3-404e-bb15-a3744658b97d" -->
 ## Reset Database
 Accessible via Admin menu → Reset database. See `docs/admin.md` for safety details.

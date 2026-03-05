@@ -6,8 +6,10 @@ resource_name: "README"
 ---
 # chrome-devtools-mcp (gemini_cli on macos)
 
+<!-- section_id: "093acf8f-38bb-41da-b394-d2647563cfe4" -->
 ## Canonical docs
 - ../../../../../_shared/0.04_ai_apps/_shared/0.05_mcp_servers/chrome-devtools-mcp/
 
+<!-- section_id: "536f48fe-a390-4efa-9fa3-190f7102e94e" -->
 ## Notes
 Add macos + gemini_cli specific setup notes here.

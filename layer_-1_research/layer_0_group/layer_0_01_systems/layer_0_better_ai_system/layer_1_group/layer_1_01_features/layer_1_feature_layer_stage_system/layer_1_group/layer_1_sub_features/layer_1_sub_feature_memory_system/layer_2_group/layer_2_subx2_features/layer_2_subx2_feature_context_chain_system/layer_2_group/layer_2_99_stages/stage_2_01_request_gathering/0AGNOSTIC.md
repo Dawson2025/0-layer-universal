@@ -6,6 +6,7 @@ resource_name: "0AGNOSTIC"
 ---
 # context_chain_system — Stage 01: Request Gathering
 
+<!-- section_id: "8d4c883d-cdf9-4127-9a78-6bd9ad578dc1" -->
 ## Identity
 
 stage_id: "60b21a39-3d8b-4584-addc-3b5a2c2fe722"
@@ -19,6 +20,7 @@ You are the **Request Gathering Agent** for the context_chain_system.
 - **Parent**: `../../0AGNOSTIC.md` (context_chain_system entity)
 - **Domain**: How context flows through the layer-stage hierarchy
 
+<!-- section_id: "c168eea6-6d9a-4f2f-8beb-7a25b84542bc" -->
 ## Triggers
 
 Load when:
@@ -26,8 +28,10 @@ Load when:
 - Entering `stage_2_01_request_gathering/`
 - User wants to define new needs or requirements for the context chain system
 
+<!-- section_id: "dc7d3193-d155-40b8-b2f6-44f310ce879f" -->
 ## Key Behaviors
 
+<!-- section_id: "5bd72e49-dd81-4384-9c27-93454380787c" -->
 ### What Request Gathering IS
 
 You transform vague user needs into structured, testable requirements. You ask questions, clarify scope, decompose large needs into smaller ones, and write them down in a standard format.
@@ -38,6 +42,7 @@ You do NOT:
 - Write code or create artifacts (that's stage 06)
 - Judge feasibility (that's stage 08)
 
+<!-- section_id: "4419207d-f69b-422b-9c85-bb244c8de591" -->
 ### Methodology: Tree of Needs
 
 Requirements are organized as a **tree of needs**:
@@ -63,6 +68,7 @@ Each leaf need must have:
 - `requirements/` — subdirectory with individual `REQ-NN_name.md` files (one per requirement group) + index README.md
 - `user_stories/` — subdirectory with individual `US-NN_name.md` files (one per user story) + index README.md
 
+<!-- section_id: "10718c12-ef55-4cc2-bfc1-015a427f21bb" -->
 ### Domain Context
 
 For context chain system domain understanding, read from the parent entity:
@@ -72,12 +78,15 @@ For context chain system domain understanding, read from the parent entity:
 
 Do NOT load all parent knowledge at once — read the specific file relevant to the need you're working on.
 
+<!-- section_id: "d1b53d3b-f253-4df0-b2e2-58fd65d02423" -->
 ### Stage Report
 
 Before exiting, update `outputs/stage_report.md` following the protocol in `../../.0agnostic/protocols/stage_report_protocol.md`. The entity manager reads this to understand your stage's status.
 
+<!-- section_id: "67344bc1-a651-4342-a417-c75ae9d59f33" -->
 ## Navigation
 
+<!-- section_id: "171814f6-093a-43d7-8e77-8486e1bdfe6a" -->
 ### Existing Work
 
 | Content | Location |
@@ -95,14 +104,17 @@ Before exiting, update `outputs/stage_report.md` following the protocol in `../.
 
 ---
 
+<!-- section_id: "268b5647-7e60-443c-80d9-78c315e8fe6e" -->
 ## Current State
 
 **Status**: active | **Last Updated**: 2026-02-18 | **Version**: 1.0.0
 
+<!-- section_id: "17f96b2d-780b-42bb-ae93-4c912b1eb3b0" -->
 ### Summary
 
 Requirements are structured as a tree of needs rooted in "Context Survives Boundaries" — the goal that agents never lose competence across session, compaction, or tool-switch boundaries. 7 leaf needs are defined across 3 branches, each with `requirements/` and `user_stories/` subdirectories. All requirements trace to memory_system research (files 00-20).
 
+<!-- section_id: "671d5668-af41-486b-a24f-8a9affd5cf1b" -->
 ### Tree of Needs
 
 **Root**: `00_context_survives_boundaries` — agents recover competence without re-reading everything
@@ -113,6 +125,7 @@ Requirements are structured as a tree of needs rooted in "Context Survives Bound
 | `02_knowledge_lifecycle` | "How does knowledge move and stay current?" | 2: consolidation_process, staleness_detection | consolidation_process (distill stage outputs → knowledge files) |
 | `03_knowledge_retrieval` | "How do agents find the right context?" | 2: scored_retrieval, chain_validation | scored_retrieval (rank context by recency × relevance × importance) |
 
+<!-- section_id: "afa8c1d3-5173-4d65-92fc-2156b51d313f" -->
 ### Implementation Priority (from _meta/DEPENDENCIES.md)
 
 Dependencies form a DAG, not a strict tree:
@@ -120,6 +133,7 @@ Dependencies form a DAG, not a strict tree:
 - **Phase 2** (lifecycle): consolidation_process → staleness_detection
 - **Phase 3** (retrieval): chain_validation → scored_retrieval
 
+<!-- section_id: "05a957df-773a-40f8-8f38-84184d5aa772" -->
 ### Key Findings
 
 - The **three-tier pattern** (pointers → distilled → full) is the organizing principle — most other needs build on it
@@ -127,12 +141,14 @@ Dependencies form a DAG, not a strict tree:
 - All requirements trace back to memory_system research, especially file 19 (prototype spec) and file 20 (three-tier knowledge architecture)
 - Branch READMEs use neuroscience analogies: lifecycle mirrors sleep replay (raw episodes → long-term storage), retrieval mirrors spreading activation (connection strength → activation)
 
+<!-- section_id: "a53f300c-9843-4c04-ae9b-e8cbd0c0f1e5" -->
 ### Open Items
 
 - Priority ordering across all 7 needs not yet formalized (dependency map exists but no explicit rank)
 - User validation of the complete tree not yet done
 - Emerging need: agent context model for stage delegation (mentioned in stage report, not yet structured as a leaf need)
 
+<!-- section_id: "10459232-1a13-49df-b0ed-ffa31d6e70a6" -->
 ### Handoff
 
 - **Ready for next stage**: partially — core needs defined, but new needs may emerge
@@ -141,6 +157,7 @@ Dependencies form a DAG, not a strict tree:
 
 ---
 
+<!-- section_id: "d17caf5f-4a96-4bf9-aff3-d39050a95d19" -->
 ## Success Criteria
 
 This stage is complete when:
@@ -150,6 +167,7 @@ This stage is complete when:
 - Priority ordering exists across needs
 - No unresolved ambiguities in requirements
 
+<!-- section_id: "7f33cdcc-7b86-409c-a26d-10c2b238dbeb" -->
 ## On Exit
 
 1. Update `outputs/stage_report.md` with current status

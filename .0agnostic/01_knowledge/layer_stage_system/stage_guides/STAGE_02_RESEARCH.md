@@ -5,10 +5,12 @@ resource_name: "STAGE_02_RESEARCH"
 ---
 # Stage 02: Research — Universal Guide
 
+<!-- section_id: "b802a018-fe94-44f0-a568-3348d8834c7a" -->
 ## Purpose
 
 Investigate the problem space, gather information, and produce findings that inform design decisions. This is the **exploration stage** — understand what exists, what's possible, and what constraints apply.
 
+<!-- section_id: "6afab15c-04e7-400d-b1bb-b21491e68c58" -->
 ## What This Stage IS
 
 The research agent:
@@ -19,6 +21,7 @@ The research agent:
 - Verifies assumptions through testing or evidence gathering
 - Documents what was found to be true/false/uncertain
 
+<!-- section_id: "bf1a0b1f-2aed-4d9a-9002-32d296b26148" -->
 ## What This Stage IS NOT
 
 The research agent does NOT:
@@ -31,6 +34,7 @@ The research agent does NOT:
 
 The agent discovers **what's possible and what exists**, not **what to build**.
 
+<!-- section_id: "74cbb70e-ffc2-4ea1-bb93-c7676d45f059" -->
 ## Methodology: Topic-Based Research
 
 Research outputs are organized by topic:
@@ -47,6 +51,7 @@ outputs/
 └── stage_report.md               <- Status for the entity manager
 ```
 
+<!-- section_id: "7c9b8739-9f55-407e-bc6f-529a22a389ff" -->
 ### Research File Format
 
 Each research file should contain:
@@ -56,6 +61,7 @@ Each research file should contain:
 - **Implications**: How this affects the entity's design/implementation
 - **Open Questions**: What remains unknown
 
+<!-- section_id: "23402e7d-e201-4459-a574-983cda50e855" -->
 ### Research Index (README.md)
 
 The master index maps all topics and their key findings:
@@ -64,6 +70,7 @@ The master index maps all topics and their key findings:
 - Cross-references between topics
 - Open questions that need further investigation or that inform design
 
+<!-- section_id: "8615b84c-3849-4d5e-b583-16ad8f820008" -->
 ## Inputs
 
 What the research agent reads:
@@ -73,6 +80,7 @@ What the research agent reads:
 - **Web sources** — via search tools (always include Sources: section)
 - **Codebase** — existing implementations to learn from
 
+<!-- section_id: "d9ca9af7-11a4-43d7-8e20-968c1027214e" -->
 ## Outputs
 
 | Output | Location | Format |
@@ -82,6 +90,7 @@ What the research agent reads:
 | Verification results | `outputs/by_topic/verification/` | What was tested/verified |
 | Stage report | `outputs/stage_report.md` | Standard stage report format |
 
+<!-- section_id: "cfdff93f-d57b-42a5-91cd-e9df0398a3e8" -->
 ## Success Criteria
 
 This stage is complete when:
@@ -92,6 +101,7 @@ This stage is complete when:
 5. Research index (README.md) maps all findings
 6. Findings are sufficient for stage 04 (design) to make informed decisions
 
+<!-- section_id: "3cce4db3-1daa-444c-ab17-1eb99f5a2d88" -->
 ## Exit Protocol
 
 1. Update `outputs/stage_report.md` with current status
@@ -99,6 +109,7 @@ This stage is complete when:
 3. If handing off to **stage 01** (request_gathering): note new needs discovered during research
 4. If handing off to **stage 03** (instructions): note constraints discovered that should become guidelines
 
+<!-- section_id: "c40f66e4-ae60-42be-8e32-286b315f978d" -->
 ## Common Patterns
 
 - **Parallel with stage 01**: Research often reveals new requirements — feed these back to request_gathering
@@ -106,6 +117,7 @@ This stage is complete when:
 - **Evidence-based**: Always cite sources — don't assert without evidence
 - **Verification**: When possible, test claims through prototypes or experiments (but keep these minimal — full implementation is stage 06)
 
+<!-- section_id: "eed6899e-aac6-4ee4-b087-2fa8600b2ac1" -->
 ## Anti-Patterns
 
 - Making design decisions during research (that's stage 04's job — research presents options)

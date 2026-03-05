@@ -7,6 +7,7 @@ resource_name: "README.sync-conflict-20260126-035816-IF2WOGZ"
 
 Place reference documents, templates, and examples here.
 
+<!-- section_id: "c1376c41-1241-425b-a399-d875e3a469c2" -->
 ## Suggested Contents
 - Templates for 11_archives outputs
 - Examples of good 11_archives work

@@ -8,6 +8,7 @@ resource_name: "README"
 
 This is the main entry point for navigating sub-project setup documentation.
 
+<!-- section_id: "1c9faae7-2edf-4f12-9b41-eef50df8cd30" -->
 ## Navigation
 
 Navigate down the hierarchy based on your configuration:
@@ -26,6 +27,7 @@ At the AI app level, you'll find:
 - **2.14_agent_setup/** - Agent configuration
 - **setup/** - General setup documentation
 
+<!-- section_id: "85870ee2-6b6d-4dbe-a079-3e7f5402e8a9" -->
 ## Example Path
 
 For a Linux + Cursor + Claude Code setup:

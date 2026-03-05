@@ -13,10 +13,12 @@ resource_name: "CURSOR_CONTEXT_ARCHITECTURE"
 
 ---
 
+<!-- section_id: "6f151241-ab6b-4d58-adf2-c5c5b875616e" -->
 ## Context Model
 
 Cursor IDE is a VS Code-based IDE with AI integration. Context is **lean and actionable** — Cursor shows rules in the sidebar and applies them during editing.
 
+<!-- section_id: "b3c0fc0c-5ff7-4a24-9f75-7fdded8bba49" -->
 ### Static Context (Always Visible)
 
 **Tier 0 - Synced (auto-generated from 0AGNOSTIC.md, LEAN format)**:
@@ -43,6 +45,7 @@ Contains only:
 - Cursor-specific AI features (if not in Tier 1)
 - Local development workflow
 
+<!-- section_id: "0b441f57-a2dd-4951-abd6-ed12746853fd" -->
 ### Dynamic Context (On-Demand)
 
 Users load fuller context via:
@@ -53,8 +56,10 @@ Users load fuller context via:
 
 ---
 
+<!-- section_id: "180bd822-a459-490e-aaa3-3c481e70e908" -->
 ## Porting Architecture: 0AGNOSTIC → Cursor
 
+<!-- section_id: "204c7c34-f77a-4785-bc0a-1f55a6defee6" -->
 ### Step 1: Extract from 0AGNOSTIC.md
 
 Extract **STATIC CONTEXT only**, but **summarize aggressively**:
@@ -66,6 +71,7 @@ STATIC CONTEXT section → Strip to essentials only
   - Current Status: 1 sentence only
 ```
 
+<!-- section_id: "07cbf6d4-e99f-4dc3-8aab-ce4c76c5923f" -->
 ### Step 2: Transform to .cursorules Format
 
 **.cursorules is NOT markdown** — it's a special Cursor format optimized for IDE display:
@@ -120,6 +126,7 @@ Grade strategy: .0agnostic/03_protocols/grade_strategy_system/
 Learn more: ./CLAUDE.md (if expanded)
 ```
 
+<!-- section_id: "5f178af2-c600-4288-a111-36799a134975" -->
 ### Step 3: Generate Fallback CURSOR.md
 
 For users who want fuller context in IDE:
@@ -134,6 +141,7 @@ agnostic-sync.sh should generate **both**:
 - `.cursorules` (lean, primary)
 - `CURSOR.md` (fuller, for sidebar/modal viewing)
 
+<!-- section_id: "21c4075c-ba0d-44df-9a5a-89bf4ceaecc4" -->
 ### Step 4: Apply Tier 1 (Overrides)
 
 **Location**: `.1merge/.1cursor_merge/1_overrides/tool_boilerplate.md`
@@ -157,6 +165,7 @@ agnostic-sync.sh should generate **both**:
 - Keep .cursorules under 200 lines for responsiveness
 ```
 
+<!-- section_id: "9195a364-840d-412c-9b35-4545fa871942" -->
 ### Step 5: Apply Tier 2 (Additions)
 
 **Location**: `.1merge/.1cursor_merge/2_additions/tool_additions.md`
@@ -181,6 +190,7 @@ Cmd+P: File search
 Cmd+Shift+P: Command palette
 ```
 
+<!-- section_id: "4933821b-a2f7-4a25-a6b2-adddf2dd8618" -->
 ### Step 6: Generate Output
 
 **Tool**: `agnostic-sync.sh` handles Cursor generation
@@ -193,8 +203,10 @@ Cmd+Shift+P: Command palette
 
 ---
 
+<!-- section_id: "2c0de218-3b43-4688-99ae-2f733693671e" -->
 ## File Locations
 
+<!-- section_id: "e1027634-3de9-4ce8-aabe-c93f7214b512" -->
 ### Input Files
 
 ```
@@ -209,6 +221,7 @@ Cmd+Shift+P: Command palette
     └── 2_additions/tool_additions.md
 ```
 
+<!-- section_id: "0f974a16-20d1-48d8-8cc5-643bc1134234" -->
 ### Output Files
 
 ```
@@ -224,8 +237,10 @@ Cmd+Shift+P: Command palette
 
 ---
 
+<!-- section_id: "7c1acf06-ed9d-4286-8d8e-13161308847e" -->
 ## Cursor-Specific Features
 
+<!-- section_id: "57529399-28f3-4883-93ab-aa3f2ad6a007" -->
 ### .cursorules File Format
 
 The `.cursorules` file is **not standard markdown** — Cursor parses it specially:
@@ -251,6 +266,7 @@ Cursor displays:
 - Fast to scan while coding
 - IDE native (no markdown parsing needed)
 
+<!-- section_id: "0abed958-0765-4343-89f3-214131da16d3" -->
 ### Path-Specific Rules
 
 Cursor can load path-specific rules via `.cursor/rules/`:
@@ -270,6 +286,7 @@ When editing /backend/* → Cursor loads .cursor/rules/backend-context.md
 When in /src/* → Cursor loads .cursor/rules/frontend-context.md
 ```
 
+<!-- section_id: "31c9fccb-d7bd-44e9-b528-bbc50ace90d5" -->
 ### Component Generation Rules
 
 For Cursor's component generation feature:
@@ -293,6 +310,7 @@ Svelte:
 - Built-in scoped styling
 ```
 
+<!-- section_id: "ed54db50-25c2-4e52-bf12-1ed09b52b82c" -->
 ### IDE Extensions Integration
 
 `.cursor/extensions.json` recommends extensions:
@@ -318,6 +336,7 @@ Install: Cmd+Shift+P → Extensions: Show Recommended
 
 ---
 
+<!-- section_id: "775a6f56-911d-4b64-a301-5b640061c39b" -->
 ## Lean Context Philosophy
 
 Cursor context must be **actionable at a glance**. The principle:
@@ -350,6 +369,7 @@ return values. Lines should be kept under 80 characters... [continues]
 
 ---
 
+<!-- section_id: "939cf436-1769-44eb-b8e2-6a565ed86807" -->
 ## Resources Section
 
 **In .cursorules [Navigation]**:
@@ -364,8 +384,10 @@ Open in full: Cmd+Shift+P → Show Context
 
 ---
 
+<!-- section_id: "d372a69e-de0f-441c-b1c6-3b12b8de7b93" -->
 ## Integration with VS Code
 
+<!-- section_id: "4c76116b-c341-413e-abf8-14344a7119c5" -->
 ### Settings Inheritance
 
 Cursor reads:
@@ -386,6 +408,7 @@ Cursor reads:
 }
 ```
 
+<!-- section_id: "7e22a36e-d53c-4362-9779-70ae6971ec67" -->
 ### Keybindings
 
 Cursor inherits VS Code keybindings but adds:
@@ -397,6 +420,7 @@ These can be customized in `.cursor/keybindings.json`.
 
 ---
 
+<!-- section_id: "7b434373-ee73-426a-b4c3-6ee6c0491f0f" -->
 ## Validation Checklist
 
 After porting to Cursor context:
@@ -415,6 +439,7 @@ After porting to Cursor context:
 
 ---
 
+<!-- section_id: "3a9c7396-b188-4cbe-a04b-b514799116c4" -->
 ## Success Criteria
 
 Cursor context is successful when:
@@ -435,6 +460,7 @@ Cursor context is successful when:
 
 ---
 
+<!-- section_id: "ed320889-b433-4af1-ad3d-401053411b2d" -->
 ## References
 
 - **IDE Configuration**: `.cursor/settings.json`

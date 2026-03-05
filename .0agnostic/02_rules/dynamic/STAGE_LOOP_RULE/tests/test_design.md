@@ -11,14 +11,17 @@ resource_name: "test_design"
 
 ---
 
+<!-- section_id: "0caa5431-a149-4f5b-a16a-b6972723ea42" -->
 ## Purpose
 
 Validates correct stage looping behavior (test-fix-retest)
 
+<!-- section_id: "d82e4a1e-be3b-4804-bd56-0105475de955" -->
 ## Test Cases
 
 (To be designed)
 
+<!-- section_id: "50dc4cf5-2ff3-4a75-b3fd-0ddab6f8942d" -->
 ### TC-XXX-01: Rule file exists and is well-formed
 
 **Steps**:
@@ -30,6 +33,7 @@ Validates correct stage looping behavior (test-fix-retest)
 
 ---
 
+<!-- section_id: "a0fbf076-b4f9-4474-a371-e865709c3b51" -->
 ## Notes
 
 This test design is scaffolded. Detailed test cases should be written when this rule is actively being validated or when compliance issues are observed.

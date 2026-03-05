@@ -11,14 +11,17 @@ resource_name: "test_design"
 
 ---
 
+<!-- section_id: "8663e4bf-e8c3-4ce3-816f-449604656e8c" -->
 ## Purpose
 
 Validates multi-step development workflow
 
+<!-- section_id: "65e0acbb-05dc-48cb-91b4-d9b098ce7bc9" -->
 ## Test Cases
 
 (To be designed)
 
+<!-- section_id: "d0b2b197-eac9-440a-b61d-85580253a503" -->
 ### TC-XXX-01: Rule file exists and is well-formed
 
 **Steps**:
@@ -30,6 +33,7 @@ Validates multi-step development workflow
 
 ---
 
+<!-- section_id: "bc7c1b2f-326f-44eb-bffd-242bed7ca166" -->
 ## Notes
 
 This test design is scaffolded. Detailed test cases should be written when this rule is actively being validated or when compliance issues are observed.

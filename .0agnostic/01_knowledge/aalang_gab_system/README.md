@@ -6,6 +6,7 @@ resource_name: "README"
 ---
 # AALang & GAB System - Knowledge Reference
 
+<!-- section_id: "e56886a0-fc85-4e83-bad2-18b941885deb" -->
 ## Overview
 
 AALang (Actor-based Agent Language) is a programming language designed to run entirely within LLMs. Rather than traditional compilation to machine code, AALang programs execute within the LLM's context window as structured reasoning patterns.
@@ -16,6 +17,7 @@ Both are created and maintained by Professor Barney (upstream: `yenrab/AALang-Ga
 
 ---
 
+<!-- section_id: "b45dab5c-078a-44c2-a99c-0129b90ca9ce" -->
 ## Source Location
 
 | Property | Value |
@@ -25,6 +27,7 @@ Both are created and maintained by Professor Barney (upstream: `yenrab/AALang-Ga
 | **Upstream** | `https://github.com/yenrab/AALang-Gab.git` |
 | **Type** | Git submodule |
 
+<!-- section_id: "cc305545-dc9d-4cae-946a-a75fa1677aff" -->
 ### Key Source Files
 
 | File | Purpose |
@@ -37,6 +40,7 @@ Both are created and maintained by Professor Barney (upstream: `yenrab/AALang-Ga
 
 ---
 
+<!-- section_id: "fc181261-8d89-4cfa-8890-8caf5fcc5cc4" -->
 ## Knowledge Files in This Directory
 
 | File | Topic |
@@ -50,8 +54,10 @@ Both are created and maintained by Professor Barney (upstream: `yenrab/AALang-Ga
 
 ---
 
+<!-- section_id: "a46cf490-970c-4fd9-a615-30de07ca99f8" -->
 ## Key Concepts at a Glance
 
+<!-- section_id: "4206b196-95d6-44fa-bb09-bf7d7573bb8a" -->
 ### What Makes AALang Different (from professor's README)
 
 - **First programming language designed to run entirely within the LLM** — not adapted from human-readable languages
@@ -64,6 +70,7 @@ Both are created and maintained by Professor Barney (upstream: `yenrab/AALang-Ga
 - **Bounded non-determinism**: Same input produces consistently bounded (not identical) behavior across LLM instances
 - **Self-check system**: Built-in quality assurance — actors can analyze their own instructions for issues
 
+<!-- section_id: "99920946-8ea0-43c3-b916-59c3c9103f4e" -->
 ### Professor's Positioning
 
 AALang claims to solve problems with standard prompt engineering:
@@ -73,12 +80,14 @@ AALang claims to solve problems with standard prompt engineering:
 - No formal structure → **n-mode-m-actor architecture**
 - Hard to debug → **structured reasoning patterns, self-check actors, AATest framework**
 
+<!-- section_id: "b882a68e-b90d-4dbc-9f2d-0f8bb80a8248" -->
 ### Important Caveat (from professor's README)
 
 > "Stateful AALang tools created by GAB need significant context windows to not lose the instructions and states."
 
 This validates our concern about JSON-LD token cost. The professor acknowledges the context window pressure.
 
+<!-- section_id: "152afd76-cc05-4476-9f16-8bd060175210" -->
 ### Core Architecture
 
 ```
@@ -95,6 +104,7 @@ Agent
 └── Message Interface (communication layer)
 ```
 
+<!-- section_id: "6e0a02dd-99da-4737-ac89-c27fafb38228" -->
 ### Communication Layers
 
 1. **Agent-to-Agent**: P2P gossip protocol between separate agents
@@ -103,6 +113,7 @@ Agent
 
 ---
 
+<!-- section_id: "f1685dd2-3f84-4973-bcc8-edb71cb0aabf" -->
 ## When to Load This Knowledge
 
 | Situation | Load |

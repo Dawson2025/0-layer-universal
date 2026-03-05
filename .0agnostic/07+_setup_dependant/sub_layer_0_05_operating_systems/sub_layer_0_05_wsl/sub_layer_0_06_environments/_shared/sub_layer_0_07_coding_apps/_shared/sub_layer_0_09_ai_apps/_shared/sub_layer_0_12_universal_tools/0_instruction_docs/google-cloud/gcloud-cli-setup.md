@@ -5,8 +5,10 @@ resource_name: "gcloud-cli-setup"
 ---
 # gcloud CLI Setup Guide
 
+<!-- section_id: "ed9f45e8-ec03-452b-a15a-906829fb9375" -->
 ## Installation
 
+<!-- section_id: "cc63b9fc-8f34-4376-84a1-d125956fca9f" -->
 ### Linux/Ubuntu
 ```bash
 # Add Google Cloud SDK repository
@@ -20,22 +22,27 @@ sudo apt-get update && sudo apt-get install google-cloud-cli
 gcloud version
 ```
 
+<!-- section_id: "50755a63-e97d-4bba-b03a-825b17e7387b" -->
 ### macOS
 ```bash
 # Using Homebrew
 brew install --cask google-cloud-sdk
 ```
 
+<!-- section_id: "520bd297-ce74-44a7-802c-ba7c0967b403" -->
 ### Windows
 Download and run the installer from: https://cloud.google.com/sdk/docs/install
 
+<!-- section_id: "7acbe2f9-d2a3-4954-946d-d2685357b8c7" -->
 ## Authentication
 
+<!-- section_id: "8b589704-c80c-45f9-9a94-c5d0d5d560ec" -->
 ### Interactive Login (with browser)
 ```bash
 gcloud auth login
 ```
 
+<!-- section_id: "e77e12ae-4dc0-4a99-a6de-7e7938ffaaca" -->
 ### Headless/Remote Login (no browser)
 For systems without a browser or when using AI coding assistants:
 
@@ -64,6 +71,7 @@ sleep 3 && cat /tmp/gcloud_output.txt
 screen -S gcloud_auth -X stuff 'VERIFICATION_CODE\n'
 ```
 
+<!-- section_id: "edd6c183-e29f-4fa3-9727-18a8e31daa8e" -->
 ## Project Configuration
 
 ```bash
@@ -77,8 +85,10 @@ gcloud config set project PROJECT_ID
 gcloud config list
 ```
 
+<!-- section_id: "e51580ee-6300-4b9c-8004-f41ae1f036df" -->
 ## Common Issues
 
+<!-- section_id: "63042cea-1d56-4239-bdc8-8f60c813b974" -->
 ### Billing Required
 Some GCP services (like Secret Manager) require billing to be enabled:
 ```
@@ -87,6 +97,7 @@ ERROR: This API method requires billing to be enabled.
 
 **Solution:** Enable billing at https://console.cloud.google.com/billing
 
+<!-- section_id: "92b1745e-c9cf-4c25-8d29-18196bad1029" -->
 ### Multiple Accounts
 If you have multiple Google accounts:
 ```bash
@@ -97,6 +108,7 @@ gcloud auth list
 gcloud config set account EMAIL@example.com
 ```
 
+<!-- section_id: "c588d6c2-4810-4ddf-973a-290fbbcee3ea" -->
 ## Related
 - [Secret Manager Setup](./secret-manager.md)
 - [Canvas API Integration](./canvas-api-integration.md)

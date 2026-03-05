@@ -10,12 +10,14 @@ resource_name: "README"
 
 ---
 
+<!-- section_id: "b6cbcb95-f000-418d-9d90-b9b2d3d31398" -->
 ## Core Question
 
 > "Which data-based avenue delivers context most effectively, and how do we measure it?"
 
 ---
 
+<!-- section_id: "15dd2627-3b61-473a-89d6-7446207f7272" -->
 ## Description
 
 For context to survive boundaries, the system must choose the right storage and retrieval technology. Data-based avenues (Knowledge Graph, SHIMI, Relational Tables, Vector Databases) each have different strengths. Without objective comparison, technology choices are based on intuition rather than evidence.
@@ -27,6 +29,7 @@ The three failure modes:
 
 ---
 
+<!-- section_id: "62f3efef-f641-4df7-be07-742e473c0cb2" -->
 ## Child Needs
 
 | Need | Question | Description |
@@ -37,6 +40,7 @@ The three failure modes:
 
 ---
 
+<!-- section_id: "c2db5772-45e7-46aa-b8da-8f3d925e8dad" -->
 ## Key Insight
 
 Avenue comparison must be multi-dimensional: raw capability scores tell you what an avenue CAN do, operation benchmarks tell you HOW WELL it does specific tasks, and importance weighting tells you WHICH tasks matter for YOUR project. Only when all three dimensions are combined can you make an evidence-based avenue selection.

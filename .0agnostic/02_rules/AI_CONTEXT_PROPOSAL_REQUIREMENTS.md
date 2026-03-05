@@ -5,6 +5,7 @@ resource_name: "AI_CONTEXT_PROPOSAL_REQUIREMENTS"
 ---
 # AI Context Proposal Requirements
 
+<!-- section_id: "0809055c-cb33-485d-b37f-6fb902c39122" -->
 ## [CRITICAL] Rule: Diagram Requirement
 
 **ALL proposals that modify the AI context flow architecture MUST include:**
@@ -17,6 +18,7 @@ resource_name: "AI_CONTEXT_PROPOSAL_REQUIREMENTS"
 
 ---
 
+<!-- section_id: "ec821564-4033-436c-b25e-4bbfe5477775" -->
 ## What Requires This Rule
 
 Any proposal that involves changes to:
@@ -34,8 +36,10 @@ Any proposal that involves changes to:
 
 ---
 
+<!-- section_id: "8dd9a178-c216-478f-82ee-c05615cec964" -->
 ## Required Diagram Types
 
+<!-- section_id: "e2cee47f-e742-4c58-892b-a5e07ed5b525" -->
 ### 1. Context Flow Diagram
 
 Shows how context cascades through the system.
@@ -73,6 +77,7 @@ Shows how context cascades through the system.
 └─────────────────────────────────────────────────────────────────┘
 ```
 
+<!-- section_id: "9a6988dd-77a1-4511-a31b-84cbb5ce4ab5" -->
 ### 2. Critical Rules Cascade Diagram
 
 Shows how rules inherit and accumulate.
@@ -93,6 +98,7 @@ Shows how rules inherit and accumulate.
 └─────────────────────────────────────────────────────────────────┘
 ```
 
+<!-- section_id: "bafbdaae-ba0d-4c1e-979e-b6fdcdc31370" -->
 ### 3. Agent Workflow Diagram
 
 Shows how an agent will navigate and work with the change.
@@ -121,6 +127,7 @@ Shows how an agent will navigate and work with the change.
 
 ---
 
+<!-- section_id: "5dc12f87-7d1f-400a-959f-e9e89bfa6720" -->
 ## Proposal Template with Diagrams
 
 ```markdown
@@ -206,8 +213,10 @@ If change fails:
 
 ---
 
+<!-- section_id: "01a9a688-505e-40c1-a798-fe27f4b6d60b" -->
 ## Diagram Quality Requirements
 
+<!-- section_id: "f6478dc1-a797-4766-9361-7f737bd90f0b" -->
 ### Must Include:
 
 1. **Clear boxes/sections** for each component
@@ -216,6 +225,7 @@ If change fails:
 4. **CHANGE MARKERS** highlighting what's new/different
 5. **Layer numbers** where applicable
 
+<!-- section_id: "7a4c6406-5552-4acf-a74f-e1e31322192f" -->
 ### Must Show:
 
 1. **Entry points** where agents can start
@@ -224,6 +234,7 @@ If change fails:
 4. **Pointers** to resources
 5. **Outputs** where work products go
 
+<!-- section_id: "db892de8-4653-4ae5-8600-947295e21587" -->
 ### Format:
 
 - Use ASCII art (works in all tools)
@@ -233,8 +244,10 @@ If change fails:
 
 ---
 
+<!-- section_id: "da123495-58fb-4759-8ff9-baf0c6b134db" -->
 ## Example: Adding a Sub-Layer
 
+<!-- section_id: "2e3a2bc9-fb1b-4474-b154-a07bc790c2bc" -->
 ### Before Diagram
 
 ```
@@ -254,6 +267,7 @@ If change fails:
 └─────────────────────────────────────────────────────────────────┘
 ```
 
+<!-- section_id: "cc935f2c-e6d6-4407-9b82-37663cddea12" -->
 ### After Diagram
 
 ```
@@ -282,6 +296,7 @@ If change fails:
 └─────────────────────────────────────────────────────────────────┘
 ```
 
+<!-- section_id: "871090e6-d270-4f5c-ad8c-e73a347dd9bf" -->
 ### Agent Workflow Diagram
 
 ```
@@ -305,6 +320,7 @@ If change fails:
 
 ---
 
+<!-- section_id: "ce69cc10-eaee-487d-a0cb-894a647601d2" -->
 ## Self-Check Before Submitting Proposal
 
 - [ ] Does proposal include BEFORE context flow diagram?

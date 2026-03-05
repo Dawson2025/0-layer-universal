@@ -11,6 +11,7 @@ resource_name: "CLAUDE_CODE_NATIVE_CONTEXT_SYSTEM_VERIFIED"
 
 ---
 
+<!-- section_id: "4dd80eef-ef16-4564-84c2-dac7f425c75f" -->
 ## Overview
 
 Claude Code CLI is Anthropic's terminal-native command-line interface for AI-powered coding assistance. Its **native context system** is built around:
@@ -24,8 +25,10 @@ Claude Code CLI is Anthropic's terminal-native command-line interface for AI-pow
 
 ---
 
+<!-- section_id: "ec8ff9f6-29db-45ba-978e-8ed4c3350832" -->
 ## Part 1: Context Window Management
 
+<!-- section_id: "244d85ee-e10b-4d75-b214-29f7c80687d4" -->
 ### Size and Behavior
 
 - **Default**: 200,000 input tokens
@@ -35,6 +38,7 @@ Claude Code CLI is Anthropic's terminal-native command-line interface for AI-pow
   2. Then summarized conversation segments
   3. Preserves: Recent requests, code snippets, key memory files
 
+<!-- section_id: "24c38a14-710a-489b-a836-1640ac963ffa" -->
 ### What Fills the Context
 
 1. **Conversation history** — All previous turns in session
@@ -46,6 +50,7 @@ Claude Code CLI is Anthropic's terminal-native command-line interface for AI-pow
 7. **Subagent outputs** — Summaries returned from spawned agents
 8. **System prompts** — Claude Code's internal instructions
 
+<!-- section_id: "d7d8b170-7cbb-4302-85c6-debf930a91e4" -->
 ### Compaction Control
 
 Users can control compaction via:
@@ -62,8 +67,10 @@ CLAUDE_CODE_DISABLE_AUTO_MEMORY=0  # Force on
 
 ---
 
+<!-- section_id: "c78bc0ee-cd47-48ea-9beb-20d5e5e1a05e" -->
 ## Part 2: Hierarchical CLAUDE.md System
 
+<!-- section_id: "45b43119-0732-4410-a393-32a87cf6010a" -->
 ### Loading Order (Root to Leaf)
 
 Claude Code loads CLAUDE.md files in **hierarchical cascade**:
@@ -76,6 +83,7 @@ Claude Code loads CLAUDE.md files in **hierarchical cascade**:
 /path/to/project/subdirectory/CLAUDE.md (Subdirectory — lowest priority)
 ```
 
+<!-- section_id: "8c9381ad-59b3-4524-959b-08855afbd043" -->
 ### When Loaded
 
 | File | When Loaded | Purpose |
@@ -84,6 +92,7 @@ Claude Code loads CLAUDE.md files in **hierarchical cascade**:
 | **Project CLAUDE.md** | Session launch + ancestor dirs | Project-specific instructions |
 | **Subdir CLAUDE.md** | On-demand when files in subdir read | Subdirectory context |
 
+<!-- section_id: "879d17ae-cc92-4609-9cbb-9804fd900169" -->
 ### What Goes in CLAUDE.md
 
 - **Critical rules** (I0_* constraints)
@@ -94,14 +103,17 @@ Claude Code loads CLAUDE.md files in **hierarchical cascade**:
 
 ---
 
+<!-- section_id: "fa036d26-05d5-4cc6-99c8-0478ed884209" -->
 ## Part 3: MEMORY.md System (Session Persistence)
 
+<!-- section_id: "b96de684-7b47-469c-b0c8-82ac4021adde" -->
 ### File Location
 
 ```
 ~/.claude/projects/<project-name>/memory/MEMORY.md
 ```
 
+<!-- section_id: "da589670-9719-4be5-b459-55973f5cb878" -->
 ### Loading Behavior
 
 | Content | Loading | Purpose |
@@ -110,6 +122,7 @@ Claude Code loads CLAUDE.md files in **hierarchical cascade**:
 | **Rest of file** | On-demand via `/memory` command | Full session history |
 | **Topic files** (e.g., `debugging.md`) | On-demand (Claude reads/writes) | Organized knowledge by topic |
 
+<!-- section_id: "02a2c608-dcd3-416d-86d8-02ecafd0e70c" -->
 ### Auto-Memory Features
 
 - Claude **automatically reads** MEMORY.md at session start
@@ -117,6 +130,7 @@ Claude Code loads CLAUDE.md files in **hierarchical cascade**:
 - Topic files created on-demand (e.g., "remember X" creates `topic.md`)
 - Only first 200 lines loaded into system prompt (rest is on-demand to save tokens)
 
+<!-- section_id: "b2e0699f-6845-42b8-b720-cc63403c77b2" -->
 ### Example Structure
 
 ```
@@ -143,8 +157,10 @@ Claude Code loads CLAUDE.md files in **hierarchical cascade**:
 
 ---
 
+<!-- section_id: "017fa009-2a2d-4d8d-a27e-645cc88d92e2" -->
 ## Part 4: Subagents (Isolated Context)
 
+<!-- section_id: "866f0779-9949-45ce-b321-a99226f5b30a" -->
 ### When Spawned
 
 **Spawn via Task tool**:
@@ -155,6 +171,7 @@ Task(
 )
 ```
 
+<!-- section_id: "3aea205b-725d-4052-beff-23637a6c2ac6" -->
 ### Isolation Model
 
 Each subagent gets:
@@ -163,12 +180,14 @@ Each subagent gets:
 - **Task description** only (no parent conversation history)
 - **Optional mode**: plan (returns spec), acceptEdits (makes changes), delegate (spawns more agents)
 
+<!-- section_id: "0d4942e2-a18f-45ef-952c-e09500758deb" -->
 ### Why Subagents
 
 - **Parallel work**: Up to 10 agents work simultaneously
 - **Token efficiency**: Subagent returns *summary* not full output (parent doesn't get bloated)
 - **Specialization**: Different agent types for different tasks
 
+<!-- section_id: "8dc85f12-8347-43d9-baa0-d9c14437535e" -->
 ### Example: Parallel Exploration
 
 ```
@@ -189,8 +208,10 @@ Parent integrates summaries (not full outputs)
 
 ---
 
+<!-- section_id: "efe7e11e-372e-4428-ac2a-7c044931e4dc" -->
 ## Part 5: Model Context Protocol (MCP)
 
+<!-- section_id: "f540c02e-46e1-4a6c-bdf3-82bdca823910" -->
 ### Purpose
 
 MCP acts as the "nervous system" connecting Claude Code to external tools and APIs:
@@ -201,6 +222,7 @@ MCP acts as the "nervous system" connecting Claude Code to external tools and AP
 - **Build tools**: Compile, lint, format
 - **Custom tools**: Any custom integration
 
+<!-- section_id: "75ffe44c-8030-4acc-8ead-dda9fd8688ca" -->
 ### MCP Tools in Context
 
 When an MCP server is connected:
@@ -209,6 +231,7 @@ When an MCP server is connected:
 - Tool outputs are **fed back into context**
 - Cost is monitored via `/mcp` command
 
+<!-- section_id: "8fd445b3-935f-4d50-b538-991b185450aa" -->
 ### Example: Canvas MCP
 
 ```bash
@@ -225,8 +248,10 @@ When an MCP server is connected:
 
 ---
 
+<!-- section_id: "ced9cfca-eb42-44a7-a3d0-9a770ef7805a" -->
 ## Part 6: Context Loading (Reference-Based, Not Copy-Paste)
 
+<!-- section_id: "537c606e-fd40-4271-ab5c-b5eddd9da08c" -->
 ### How Files Are Included
 
 **NOT**: Full file copy-paste into context
@@ -246,6 +271,7 @@ Claude excludes:
 - Binary files
 ```
 
+<!-- section_id: "897de876-48de-434e-8ba7-2a1d4f2f4dd5" -->
 ### Reference Syntax
 
 - `@path/to/file` — Specific file
@@ -253,6 +279,7 @@ Claude excludes:
 - `/context` — Show what's loaded
 - `/skill name` — Invoke a skill
 
+<!-- section_id: "5a1792e7-edd1-4d66-822d-401798276822" -->
 ### On-Demand Loading
 
 For large codebases:
@@ -263,8 +290,10 @@ For large codebases:
 
 ---
 
+<!-- section_id: "47d94d6a-7eac-43ce-b244-02f0f092e91c" -->
 ## Part 7: Skills System
 
+<!-- section_id: "b0ae9d1d-d2bb-4673-b6b8-15df882cc1a6" -->
 ### How Skills Load
 
 | Phase | Content | Tokens |
@@ -272,6 +301,7 @@ For large codebases:
 | **Initial** | Skill descriptions, metadata | ~50-100 per skill |
 | **On invoke** | Full skill content | ~500-2000 per skill |
 
+<!-- section_id: "c91ff61b-b4d2-4f49-86ef-006c313eddf6" -->
 ### Example: Canvas Skill
 
 ```
@@ -287,6 +317,7 @@ User invokes: `/calc-dashboard`
 
 ---
 
+<!-- section_id: "d251afbe-24b4-4f78-a1ed-52e5ef4815ad" -->
 ## Part 8: How Context Flows (Complete Picture)
 
 ```
@@ -339,8 +370,10 @@ MEMORY.md updated (if /remember used)
 
 ---
 
+<!-- section_id: "2b7f366e-9744-43dc-8595-e3a7b521f8eb" -->
 ## Part 9: Critical Native Features
 
+<!-- section_id: "f0b9d226-0d5e-4a7a-98b6-260f18063c8f" -->
 ### Auto-Compaction (Transparent to User)
 
 When context nears limit (~190K tokens):
@@ -349,6 +382,7 @@ When context nears limit (~190K tokens):
 3. Create compressed versions if needed
 4. Preserve: recent turns, code, key instructions
 
+<!-- section_id: "9c4bbc9a-9182-4ef4-97ac-a150ac0e24cc" -->
 ### Hooks for Customization
 
 Users can define hooks in `.claude/hooks/` for:
@@ -356,6 +390,7 @@ Users can define hooks in `.claude/hooks/` for:
 - `OnSessionStart.md` — Run before each session
 - Other lifecycle events
 
+<!-- section_id: "45ecb45f-4344-4588-86a7-33fd44486cfa" -->
 ### Ephemeral vs. Persistent Context
 
 | Type | Persistence | Location |
@@ -366,8 +401,10 @@ Users can define hooks in `.claude/hooks/` for:
 
 ---
 
+<!-- section_id: "063bf802-052e-4cc6-b062-572f23206a12" -->
 ## Summary: What's Native vs. What's Custom
 
+<!-- section_id: "550b490e-ff60-40da-82ce-83ae83bbf33e" -->
 ### NATIVE TO CLAUDE CODE
 ✅ CLAUDE.md hierarchy
 ✅ MEMORY.md system (200 lines in prompt, rest on-demand)
@@ -378,6 +415,7 @@ Users can define hooks in `.claude/hooks/` for:
 ✅ Skills system (descriptions + on-invoke)
 ✅ Commands: /context, /compact, /memory, /status, /mcp
 
+<!-- section_id: "597623c1-de87-4738-a96b-c28b6ad8cbf9" -->
 ### NOT NATIVE (Custom Systems)
 ❌ 0AGNOSTIC.md (user-designed layer-stage system)
 ❌ Layer-stage architecture (user-designed hierarchy)
@@ -386,6 +424,7 @@ Users can define hooks in `.claude/hooks/` for:
 
 ---
 
+<!-- section_id: "1a76e45d-5f48-45f6-8530-3b4d1aeb4c8f" -->
 ## References
 
 - **Official**: https://code.claude.com/docs/en/overview

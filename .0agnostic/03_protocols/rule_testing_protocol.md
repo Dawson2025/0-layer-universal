@@ -7,10 +7,12 @@ resource_name: "rule_testing_protocol"
 
 **Scope**: Universal — applies to all rule tests at `.0agnostic/02_rules/`
 
+<!-- section_id: "585b1d6f-fec0-472c-a6ff-66238f1d3c58" -->
 ## Purpose
 
 Defines when and how to run rule compliance tests, how to track performance, and how to act on results.
 
+<!-- section_id: "f4959238-7fd4-4021-82f2-d2a6373b2dea" -->
 ## When to Run
 
 | Trigger | What to Run | Why |
@@ -22,23 +24,28 @@ Defines when and how to run rule compliance tests, how to track performance, and
 | On new agent/entity setup | `run_all_rule_tests.sh` | Verify infrastructure supports rules |
 | When compliance issue observed | Relevant rule's tests | Diagnose the specific failure |
 
+<!-- section_id: "3d8c509d-3012-42d5-a8ab-beeaa5aac949" -->
 ## How to Run
 
+<!-- section_id: "115741ff-d2bd-406a-8063-be494f46ab1d" -->
 ### Single rule
 ```bash
 bash .0agnostic/02_rules/{category}/{rule}/tests/test_structural.sh [repo_root]
 ```
 
+<!-- section_id: "e411926a-1505-4b25-a8dc-3c7ab58fa0bd" -->
 ### One category
 ```bash
 bash .0agnostic/02_rules/{category}/tests/run_category_tests.sh [repo_root]
 ```
 
+<!-- section_id: "8aa9b825-90ae-4d6e-bf3d-8a3bdba221ce" -->
 ### All rules
 ```bash
 bash .0agnostic/02_rules/run_all_rule_tests.sh [repo_root]
 ```
 
+<!-- section_id: "7daf34d4-62b8-4f1a-b0ae-62089abae9a9" -->
 ## Performance Tracking
 
 Results are appended to `.0agnostic/02_rules/test_results_history.md` automatically by `run_all_rule_tests.sh`.
@@ -48,6 +55,7 @@ Track these metrics:
 - **Trend**: Is reliability improving, stable, or declining over time?
 - **Coverage**: How many rules have structural tests vs scaffolded-only?
 
+<!-- section_id: "829129f5-4ca7-4edc-ae65-6852a0db1b29" -->
 ## Acting on Results
 
 | Result | Action |
@@ -58,6 +66,7 @@ Track these metrics:
 | SKIP (no test_structural.sh) | Low priority — write tests when the rule becomes actively validated |
 | Reliability below 80% | Investigate systemic issues — are rules being maintained? |
 
+<!-- section_id: "07932965-d150-4b55-a3c9-b58fd5f20f61" -->
 ## Behavioral Tests
 
 Behavioral tests (agent compliance) cannot be automated with bash scripts. To evaluate behavioral compliance:
@@ -67,6 +76,7 @@ Behavioral tests (agent compliance) cannot be automated with bash scripts. To ev
 3. Record findings in the rule's `tests/results/` directory
 4. Aggregate behavioral scores periodically alongside structural results
 
+<!-- section_id: "25d28f6d-4897-4cb9-8d3d-0d08b2fd7eed" -->
 ## Related
 
 - **Master runner**: `.0agnostic/02_rules/run_all_rule_tests.sh`

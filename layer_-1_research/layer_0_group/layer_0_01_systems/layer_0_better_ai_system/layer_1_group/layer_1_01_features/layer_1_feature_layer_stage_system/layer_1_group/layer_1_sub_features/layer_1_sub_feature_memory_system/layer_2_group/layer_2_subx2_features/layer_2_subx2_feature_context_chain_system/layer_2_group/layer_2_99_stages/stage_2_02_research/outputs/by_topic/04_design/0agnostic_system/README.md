@@ -6,12 +6,14 @@ resource_name: "README"
 ---
 # The 0Agnostic System
 
+<!-- section_id: "8b6db61e-67a9-453b-bb23-9b69b698c1b3" -->
 ## Purpose
 
 A complete, tool-agnostic context management system that stores all AI context in a single source of truth (`.0agnostic/` and `0AGNOSTIC.md`) and syncs it to every AI tool's native format — with multi-avenue redundancy ensuring context is loaded even when individual avenues fail.
 
 ---
 
+<!-- section_id: "9525ba71-2b30-4f54-94e3-46d1b7e432a6" -->
 ## What It Is
 
 The 0Agnostic System solves a fundamental problem: **AI tools each have their own context format, but you want a single source of truth.** Instead of maintaining separate CLAUDE.md, AGENTS.md, GEMINI.md, and .cursorrules files manually, you maintain one agnostic source and generate tool-specific files from it.
@@ -38,10 +40,12 @@ The 0Agnostic System solves a fundamental problem: **AI tools each have their ow
 
 ---
 
+<!-- section_id: "149a73de-3081-49e8-9f7f-c9923d0f556f" -->
 ## System Components
 
 The 0Agnostic System has four components. Each is documented in a dedicated file:
 
+<!-- section_id: "5ec7aca2-92f3-482f-97a0-2694ef895cb6" -->
 ### 1. [Internal Structure](internal_structure.md)
 The canonical directory structure inside `.0agnostic/`:
 - `knowledge/` (with `principles/` and `resources/`)
@@ -51,6 +55,7 @@ The canonical directory structure inside `.0agnostic/`:
 
 Covers how rules inform protocols, the relationship between static rules (full protocol inline) and dynamic rules (triggers only, reference protocols), and how knowledge/resources provide supporting material.
 
+<!-- section_id: "c0465b48-d52e-4e0b-877a-b5358cb98c1d" -->
 ### 2. [Sync System](sync_system.md)
 How `agnostic-sync.sh` transforms agnostic content into tool-specific formats:
 - `0AGNOSTIC.md` → CLAUDE.md, AGENTS.md, GEMINI.md, OPENAI.md
@@ -59,6 +64,7 @@ How `agnostic-sync.sh` transforms agnostic content into tool-specific formats:
 - `protocols/` → `.claude/skills/` (as SKILL.md format)
 - How the sync handles format differences between tools
 
+<!-- section_id: "6b0cfc65-8090-40dd-b552-ba5f44f9491b" -->
 ### 3. [.1merge Override System](merge_system.md)
 The three-tier merge system for tool-specific customizations:
 - Tier 1: `.0agnostic/` (agnostic source)
@@ -66,6 +72,7 @@ The three-tier merge system for tool-specific customizations:
 - Tier 3: `.claude/` / `.cursor/` / `.codex/` (generated output)
 - When to use overrides vs agnostic content
 
+<!-- section_id: "f5220d4a-f449-4176-b3d2-3e7993103448" -->
 ### 4. [Multi-Avenue Redundancy](multi_avenue_redundancy.md)
 How all context chaining avenues link together per tool:
 - 8 avenues: system prompt, path rules, skills, @imports, JSON-LD/jq, .integration.md, episodic memory, 0AGNOSTIC.md
@@ -76,6 +83,7 @@ How all context chaining avenues link together per tool:
 
 ---
 
+<!-- section_id: "0ddd87e3-3b63-4e4e-8ab2-638c1d3ebfa1" -->
 ## How It All Connects
 
 ```
@@ -115,6 +123,7 @@ How all context chaining avenues link together per tool:
 
 ---
 
+<!-- section_id: "a749e546-d5e3-4e23-8a88-bd3ca2cc1346" -->
 ## Related Documents
 
 | Document | Location |

@@ -3,6 +3,7 @@ resource_id: "551b656c-1688-4d25-b439-ba884db8e930"
 resource_type: "knowledge"
 resource_name: "IDEAL_AI_MANAGER_HIERARCHY_SYSTEM"
 ---
+<!-- section_id: "cc52a1bb-08d0-4739-8980-aeed21ca5908" -->
 ## IDEAL AI Manager Hierarchy System (Summary)
 
 This folder contains a **compact, context-window-friendly overview** of the ideal AI manager hierarchy system, plus links to more detailed documents.
@@ -15,6 +16,7 @@ It is meant to be:
 - **Summary-neutral**: does not assume a single topic; reflects themes present in the research.
 - **Open-world and extensible**: any future tools, OSes, layers, and workflows that fit the patterns can participate.
 
+<!-- section_id: "48cbe9ca-13e9-4519-91e7-b163efacf6a5" -->
 ### 1. High-Level Idea
 
 You have an **Agent OS** for software development that:
@@ -25,6 +27,7 @@ You have an **Agent OS** for software development that:
 - Coordinates a mix of **manager agents** and **worker agents** (CLI tools, IDE agents, multi-agent frameworks).
 - Keeps instructions **sticky** by using system-level or system-like prompts rather than re-sending rules in chat history.
 
+<!-- section_id: "ccfdfba5-d707-46d0-9ff9-c8c833d0ba59" -->
 ### 2. Core Components (Very Short)
 
 - **Layers**: Any number of layers (L0, L1, L2, L3, L4, …) with cascading rules, so lower layers inherit constraints from higher ones.
@@ -43,6 +46,7 @@ You have an **Agent OS** for software development that:
   - `os/<os-id>/...` subfolders where OS-specific context lives.
   - Quartets (or more) of context files per tool family (e.g., `CLAUDE.md`, `AGENTS.md`, `GEMINI.*`, `.cursor/rules/*.mdc`).
 
+<!-- section_id: "d54bd0ee-a596-4a78-bba0-b48b9b646fcf" -->
 ### 3. What to Load Into an AI Agent First
 
 When giving an agent high-level context for working with this system:
@@ -54,6 +58,7 @@ When giving an agent high-level context for working with this system:
 - Then, if the agent needs more depth, point it to the detailed specs under:
   - `../things_learned/ideal_ai_manager_hierarchy_system/`
 
+<!-- section_id: "b7e00701-9720-4978-abb0-e059ea7ec7a6" -->
 ### 4. Where to Find Details
 
 More detailed documents live under `../things_learned/ideal_ai_manager_hierarchy_system/`:

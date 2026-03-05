@@ -7,10 +7,12 @@ resource_name: "agentic_tts_fixes"
 
 **Date**: 2026-02-23
 
+<!-- section_id: "9cbc8fee-46df-4bb4-bbba-6eee0a2b9a94" -->
 ## No Fixes Required Yet
 
 Initial implementation passed all simulated tests. Live testing is pending (will occur on next Claude Code response).
 
+<!-- section_id: "e696eda3-82c5-4486-af93-550aab8ae948" -->
 ## Anticipated Fixes
 
 - Markdown stripping edge cases (will tune sed patterns after live testing)

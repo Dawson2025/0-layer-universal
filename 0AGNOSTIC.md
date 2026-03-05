@@ -6,16 +6,19 @@ resource_name: "0AGNOSTIC"
 ---
 # 0_layer_universal - Agnostic Identity
 
+<!-- section_id: "b2aab0fd-e9c1-4f32-85ff-4d13f0649c26" -->
 ## Identity
 
 **Role**: Root Manager
 **Scope**: Coordinates all layers in the AI context system
 **Layer**: Root (contains layer_0, layer_1, layer_-1_research)
 
+<!-- section_id: "f80cb478-72aa-4967-91e4-1aacd1b77565" -->
 ## Critical Rules
 
 These rules apply to EVERY AI agent at this level and below:
 
+<!-- section_id: "60ba0156-da52-4d22-a78a-7d5b1b1c9765" -->
 ### 1. Filesystem Change Visualization Protocol
 
 **Two tiers** — show proposed changes before executing:
@@ -28,6 +31,7 @@ These rules apply to EVERY AI agent at this level and below:
 
 **Full rule**: `.0agnostic/02_rules/0_every_api_request/AI_CONTEXT_MODIFICATION_PROTOCOL/AI_CONTEXT_MODIFICATION_PROTOCOL.md`
 
+<!-- section_id: "4bda3538-1a9c-45f7-8ead-48acec10920e" -->
 ### 2. Stage Completeness Rule
 
 When creating entities with stages: **ALL 11 stages MUST exist**.
@@ -36,6 +40,7 @@ Empty stages are valid. Missing stages are NOT.
 
 **Reference**: `layer_0/.../layer_stage_system/STAGES_EXPLAINED.md`
 
+<!-- section_id: "d98bbf96-7989-4c0d-b933-707f4a989053" -->
 ### 3. AI Context Commit/Push Rule
 
 After approved changes:
@@ -43,6 +48,7 @@ After approved changes:
 2. `git commit -m "[AI Context] description"`
 3. `git push`
 
+<!-- section_id: "2c6faf1a-3bb1-4b09-ba53-3d0deefa908d" -->
 ### 4. Submodule Integrity Protocol
 
 When any nested repository exists in a child path:
@@ -59,6 +65,7 @@ When any nested repository exists in a child path:
    - properly registered as a submodule, or
    - de-initialized as a standalone repo and converted to regular tracked files.
 
+<!-- section_id: "de02eca7-38ba-422c-83f2-46ea04923b46" -->
 ## Triggers
 
 | Situation | Action |
@@ -75,6 +82,7 @@ When any nested repository exists in a child path:
 | Creating or modifying pointer files | Follow `.0agnostic/03_protocols/pointer_sync_protocol.md` and run `pointer-sync.sh --validate` |
 | Modifying agent delegation patterns | Load `.0agnostic/02_rules/dynamic/agent_delegation_workspace_rule/agent_delegation_workspace_rule.md` |
 
+<!-- section_id: "1aa0e072-d338-4d31-a103-534f50df4ab8" -->
 ## Resources
 
 | Resource | Location | Purpose |
@@ -95,6 +103,7 @@ When any nested repository exists in a child path:
 | Pointer Sync Rule | `.0agnostic/02_rules/static/pointer_sync_rule/pointer_sync_rule.md` | Always-apply rule for pointer file format |
 | Context Chain Mode | `.0agnostic/02_rules/dynamic/CONTEXT_CHAIN_MODE/context_chain_mode.md` | Default vs Research mode switching |
 
+<!-- section_id: "7a3af372-8f41-431b-b5ed-e58c6c883565" -->
 ## Children
 
 | Layer | Purpose |
@@ -108,6 +117,7 @@ When any nested repository exists in a child path:
 *This is the source of truth for 0_layer_universal identity.*
 *Tool-specific files (CLAUDE.md, GEMINI.md, AGENTS.md) are generated from this.*
 
+<!-- section_id: "4dc9b6d7-b64d-4d67-9e22-7ff75e2e800e" -->
 ## Mandatory Checkpoint Cadence
 
 1. Commit and push for each new item.

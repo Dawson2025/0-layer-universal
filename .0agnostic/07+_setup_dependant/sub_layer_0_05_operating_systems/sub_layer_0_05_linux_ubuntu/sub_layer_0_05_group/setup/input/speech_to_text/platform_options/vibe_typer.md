@@ -9,12 +9,14 @@ resource_name: "vibe_typer"
 **Website**: [vibetyper.com](https://vibetyper.com)
 **Category**: Best "just works" option for WisprFlow-like UX
 
+<!-- section_id: "b3e0855c-71b7-4337-8678-a170e9703485" -->
 ## Overview
 
 Vibe Typer is a native desktop app that provides WisprFlow-style system-wide dictation on Linux and Windows. It's the **top recommendation** for users who want minimal setup and don't require local processing.
 
 **Key Strength**: Delivers instant transcription with seamless productivity across VS Code, terminals, browsers, and chat applications.
 
+<!-- section_id: "a4af0cbd-51a1-4ba8-b672-8ec9c0d67d21" -->
 ## Platform Support
 
 | Platform | Supported |
@@ -24,6 +26,7 @@ Vibe Typer is a native desktop app that provides WisprFlow-style system-wide dic
 | macOS | No |
 | iOS | No |
 
+<!-- section_id: "b7f7747a-1dbc-4bf6-9cba-7a27784175c7" -->
 ## Key Features
 
 | Feature | Details |
@@ -36,6 +39,7 @@ Vibe Typer is a native desktop app that provides WisprFlow-style system-wide dic
 | Smart context | Uses clipboard for contextual responses |
 | Instant transcription | Text appears in real-time as you speak |
 
+<!-- section_id: "ddfadba9-94a1-481b-bcff-c1a5592e6247" -->
 ## How It Works
 
 1. Set a global hotkey (e.g., Super+Z)
@@ -44,6 +48,7 @@ Vibe Typer is a native desktop app that provides WisprFlow-style system-wide dic
 4. Release the hotkey
 5. Text appears at cursor position
 
+<!-- section_id: "7cf36a6d-86dd-49b5-b9c1-bc5f92ac47b7" -->
 ## Privacy
 
 | Aspect | Details |
@@ -54,8 +59,10 @@ Vibe Typer is a native desktop app that provides WisprFlow-style system-wide dic
 
 **Note**: If you need fully local/offline processing, consider [Whisper-Dictation](whisper_dictation.md) or [Linux-Dictation-Project](linux_dictation_project.md) instead.
 
+<!-- section_id: "ff0c2bee-a6b2-4b6f-8939-6f2bc20e8508" -->
 ## Installation
 
+<!-- section_id: "4aa37480-f948-433a-93d6-d4d4d7f9eb95" -->
 ### Quick Install
 
 1. Download from [vibetyper.com/downloads](https://vibetyper.com/downloads)
@@ -63,6 +70,7 @@ Vibe Typer is a native desktop app that provides WisprFlow-style system-wide dic
 3. Launch and set your preferred global hotkey
 4. Start dictating
 
+<!-- section_id: "dfcab72e-a146-4786-8cfe-b72367864519" -->
 ### Detailed Install (Ubuntu 24+ / Wayland)
 
 ```bash
@@ -85,6 +93,7 @@ chmod +x ~/Downloads/VibeTyper.AppImage
 # 6. IMPORTANT: Log out and log back in for input group to take effect
 ```
 
+<!-- section_id: "648873d1-71e7-49ba-9067-e2a5909bbe31" -->
 ### Add to Autostart
 
 ```bash
@@ -93,10 +102,12 @@ mkdir -p ~/.config/autostart
 cp ~/.local/share/applications/com.vibetyper.app.desktop ~/.config/autostart/
 ```
 
+<!-- section_id: "7920e7eb-fe22-4e90-9a8b-165935013313" -->
 ### Default Hotkey
 
 After installation, the default hotkey is **Ctrl + Space** (hold to dictate, release to insert text).
 
+<!-- section_id: "60aa90a8-c236-4f07-a903-b92aebaa4829" -->
 ## Desktop Environment Compatibility
 
 Works across most Linux desktop environments:
@@ -105,6 +116,7 @@ Works across most Linux desktop environments:
 - XFCE
 - Others
 
+<!-- section_id: "d1d17949-bbfe-4e08-a2be-9605164e825b" -->
 ## Wayland vs X11
 
 | Display Server | Status |
@@ -112,6 +124,7 @@ Works across most Linux desktop environments:
 | X11 | Full support |
 | Wayland | Works with additional setup (see below) |
 
+<!-- section_id: "f3e751c2-1683-454c-b12b-44a1f49dcf56" -->
 ### Wayland Requirements
 
 On Wayland sessions (Ubuntu 22.04+, Fedora, etc.), you need:
@@ -134,6 +147,7 @@ On Wayland sessions (Ubuntu 22.04+, Fedora, etc.), you need:
 
 Without these, VibeTyper will fall back to Electron shortcuts which may have limited functionality.
 
+<!-- section_id: "8a3138a5-c55d-4b2c-bdb3-1f1ee21391c3" -->
 ## Troubleshooting
 
 | Issue | Solution |
@@ -148,6 +162,7 @@ Without these, VibeTyper will fall back to Electron shortcuts which may have lim
 | Hotkeys not working on Wayland | Ensure all Wayland requirements are met (see above), then log out/in |
 | Falls back to Electron shortcuts | Install Wayland dependencies and add to input group |
 
+<!-- section_id: "4739a35d-3850-4948-9881-0c20758444f3" -->
 ## Comparison to WisprFlow
 
 | Feature | Vibe Typer | WisprFlow |
@@ -159,6 +174,7 @@ Without these, VibeTyper will fall back to Electron shortcuts which may have lim
 | AI features | Yes | Yes |
 | Local processing | No | No |
 
+<!-- section_id: "8b24a9f5-d9c6-4912-92a7-bc2d51dc7ab9" -->
 ## Sources
 
 - [Vibe Typer Website](https://vibetyper.com)

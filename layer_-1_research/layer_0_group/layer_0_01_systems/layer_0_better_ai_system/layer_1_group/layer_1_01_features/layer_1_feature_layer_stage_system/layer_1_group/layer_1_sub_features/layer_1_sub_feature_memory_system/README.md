@@ -8,6 +8,7 @@ resource_name: "README"
 
 Research sub-feature exploring how AI agents remember, load, and navigate context.
 
+<!-- section_id: "149edb54-f595-4f93-994f-54aa498d7ba4" -->
 ## Scope
 
 - Context chain construction and traversal
@@ -15,10 +16,12 @@ Research sub-feature exploring how AI agents remember, load, and navigate contex
 - Context navigation and discovery
 - Memory persistence mechanisms
 
+<!-- section_id: "e6ceefca-c131-4743-a2c9-7a78098b436f" -->
 ## Parent
 
 Part of the **Layer-Stage System** feature, under **Better AI System** research.
 
+<!-- section_id: "9d082143-3032-4167-a29e-92c6841caa5c" -->
 ## Children
 
 - **context_chain_system** — How context flows through the layer-stage hierarchy

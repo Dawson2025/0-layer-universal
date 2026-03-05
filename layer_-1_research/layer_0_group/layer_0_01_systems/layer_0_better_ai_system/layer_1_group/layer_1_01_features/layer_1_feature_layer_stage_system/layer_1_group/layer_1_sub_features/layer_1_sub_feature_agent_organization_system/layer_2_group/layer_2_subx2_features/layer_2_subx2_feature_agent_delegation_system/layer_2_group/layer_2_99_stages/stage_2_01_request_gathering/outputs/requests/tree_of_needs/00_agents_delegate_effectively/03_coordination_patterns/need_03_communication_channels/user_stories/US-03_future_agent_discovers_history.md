@@ -13,6 +13,7 @@ resource_name: "US-03_future_agent_discovers_history"
 **I want** any new agent to discover the full work history through episodic memory and stage reports,
 **So that** the AI can contribute meaningfully without me having to summarize weeks of prior work.
 
+<!-- section_id: "018a33fb-bd76-49eb-bb1f-ad708efd7934" -->
 ### What Happens
 
 1. User returns to a project after a long break and says "continue this project"
@@ -21,6 +22,7 @@ resource_name: "US-03_future_agent_discovers_history"
 4. Agent builds a picture of: what has been done, what is in progress, what is next
 5. Agent resumes productive work without the user needing to provide a history summary
 
+<!-- section_id: "4e2c3319-d461-48d3-99d2-b80dcb5f5d09" -->
 ### Acceptance Criteria
 
 - Episodic memory + stage reports provide enough context to understand full project history

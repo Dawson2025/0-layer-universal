@@ -5,14 +5,17 @@ resource_name: "06_open_questions"
 ---
 # Open Questions: Decisions Needed Before Design
 
+<!-- section_id: "845f4008-d062-41aa-9f68-64a46ffad7cf" -->
 ## Questions That Need Answers
 
 These questions must be resolved during design (stage 04) or earlier. They represent genuine decision points where multiple valid approaches exist.
 
 ---
 
+<!-- section_id: "39d02001-f24f-40ab-9a4f-2c3b7d869c36" -->
 ## Architecture Questions
 
+<!-- section_id: "39a81caf-844e-463b-b5fa-0998e9bcbc1a" -->
 ### Q1: Where should entity-scoped memory physically live?
 
 **Options**:
@@ -25,6 +28,7 @@ These questions must be resolved during design (stage 04) or earlier. They repre
 
 **Leaning**: Option A — extends the agnostic system pattern naturally.
 
+<!-- section_id: "84cf6046-85f2-45a6-b679-b3cf30115479" -->
 ### Q2: Should memory files have a standard schema?
 
 **Options**:
@@ -37,6 +41,7 @@ These questions must be resolved during design (stage 04) or earlier. They repre
 
 **Leaning**: Option C — Markdown body with YAML frontmatter gives both readability and structure.
 
+<!-- section_id: "31f5fdf7-ad6c-40d6-831d-26daab09aa3f" -->
 ### Q3: How should memory hierarchy work?
 
 Does memory at a parent entity automatically include all children's memories? Or is memory strictly scoped?
@@ -53,8 +58,10 @@ Does memory at a parent entity automatically include all children's memories? Or
 
 ---
 
+<!-- section_id: "5008b302-b1f0-419f-bdb1-489c617cafe8" -->
 ## Automation Questions
 
+<!-- section_id: "4005dc6a-7902-4e2b-9878-121be44f5d9c" -->
 ### Q4: How much recording should be automatic?
 
 **Options**:
@@ -67,6 +74,7 @@ Does memory at a parent entity automatically include all children's memories? Or
 
 **Leaning**: Option C with good defaults — capture broadly, consolidate later.
 
+<!-- section_id: "b7868cdf-24d6-4752-be08-3d69ae61e390" -->
 ### Q5: Should memory sync happen automatically or manually?
 
 Syncing between tool-specific memory (e.g., `~/.claude/` auto-memory) and agnostic memory.
@@ -83,8 +91,10 @@ Syncing between tool-specific memory (e.g., `~/.claude/` auto-memory) and agnost
 
 ---
 
+<!-- section_id: "078740f5-a451-40b9-bd4c-3dd3e09bf7e7" -->
 ## Scope Questions
 
+<!-- section_id: "12e44106-3eaa-46b4-b464-46bc677b7d19" -->
 ### Q6: Should the memory system handle vector embeddings?
 
 Some queries benefit from semantic search. But embeddings are binary, model-specific, and don't fit in git.
@@ -99,6 +109,7 @@ Some queries benefit from semantic search. But embeddings are binary, model-spec
 
 **Leaning**: Option A for now, with D as future-proofing. File-based memory + smart file naming/organization may be sufficient.
 
+<!-- section_id: "a43ae709-7a88-4fd0-9e7f-8c892b8852aa" -->
 ### Q7: What's the scope boundary for multi-agent memory?
 
 When agents collaborate, what memory is shared vs. private?
@@ -115,8 +126,10 @@ When agents collaborate, what memory is shared vs. private?
 
 ---
 
+<!-- section_id: "593811e2-8ff1-40d4-87b8-cc55ccb2f96a" -->
 ## Content Questions
 
+<!-- section_id: "42ad6e23-6a02-4fd4-bacd-9571cb17f5c9" -->
 ### Q8: What memory types do we actually need?
 
 From the research, there are many memory types. Which ones apply to our framework?
@@ -132,6 +145,7 @@ From the research, there are many memory types. Which ones apply to our framewor
 | Reflection (insights) | YES | Auto-memory (Claude-specific) | Needs agnostic version |
 | Summary (consolidation) | YES | None | Needed for growth |
 
+<!-- section_id: "5d4921a6-8ed7-43e4-b591-df4e6fbc4bf2" -->
 ### Q9: How do we handle memory for entities that span multiple stages?
 
 An entity might be in stage 02 (research) but have useful memories from stage 01 (request gathering). Should stage-specific memory be accessible from other stages?
@@ -140,8 +154,10 @@ An entity might be in stage 02 (research) but have useful memories from stage 01
 
 ---
 
+<!-- section_id: "327472fa-b4f7-4409-bcbc-01b71902aa43" -->
 ## Quality Questions
 
+<!-- section_id: "5967d834-558d-4fc4-992f-e408f4e5e0c0" -->
 ### Q10: How do we prevent memory degradation?
 
 Memories can become stale, contradictory, or irrelevant over time. What maintenance mechanisms do we need?
@@ -152,6 +168,7 @@ Memories can become stale, contradictory, or irrelevant over time. What maintena
 - Consolidation threshold (when N similar memories exist, merge them)
 - Manual review triggers (flag for human review when confidence is low)
 
+<!-- section_id: "9b728f5a-4d1e-49ae-ac28-3517da357bc5" -->
 ### Q11: How do we measure memory system effectiveness?
 
 How will we know if the memory system is actually helping?

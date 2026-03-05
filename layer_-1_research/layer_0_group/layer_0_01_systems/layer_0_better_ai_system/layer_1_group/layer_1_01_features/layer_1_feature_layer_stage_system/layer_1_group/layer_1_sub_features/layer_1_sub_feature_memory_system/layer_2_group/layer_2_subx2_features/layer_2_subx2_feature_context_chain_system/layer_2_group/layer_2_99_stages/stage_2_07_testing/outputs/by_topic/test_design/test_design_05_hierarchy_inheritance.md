@@ -11,14 +11,17 @@ resource_name: "test_design_05_hierarchy_inheritance"
 
 ---
 
+<!-- section_id: "5f64c658-c74b-42df-9714-ed48d777ff0e" -->
 ## What We're Testing
 
 What context propagates across hierarchy levels, by which mechanism, and whether documented gaps are accurately described. The CLAUDE.md cascade is the primary enforcement mechanism — universal rules must appear at every level.
 
 ---
 
+<!-- section_id: "f869589e-8859-4225-ab05-4319966b4295" -->
 ## Test Cases
 
+<!-- section_id: "2f39b846-d3a5-466b-820c-f6a189dfcb62" -->
 ### TC-05-01: CLAUDE.md cascade delivers universal rules
 
 **Steps**:
@@ -32,6 +35,7 @@ What context propagates across hierarchy levels, by which mechanism, and whether
 **Note**: Claude Code auto-loads every CLAUDE.md from root to working directory — this test verifies the root has the right content
 **Type**: Structural
 
+<!-- section_id: "dffa9031-fd89-4444-9ff2-9cc8aa992ec4" -->
 ### TC-05-02: Parent references form unbroken chain
 
 **Steps**:
@@ -46,6 +50,7 @@ What context propagates across hierarchy levels, by which mechanism, and whether
 **Note**: Extends existing test_context_chain_traversal but validates 0AGNOSTIC.md chain, not just CLAUDE.md
 **Type**: Structural
 
+<!-- section_id: "5f9af48f-9bc0-4837-8d95-a9828bf10604" -->
 ### TC-05-03: Hot rule promotion — promote: hot frontmatter works
 
 **Steps**:
@@ -58,6 +63,7 @@ What context propagates across hierarchy levels, by which mechanism, and whether
 **Expected**: Every rule with `promote: hot` appears in the Promoted Rules table of generated tool files
 **Type**: Integration
 
+<!-- section_id: "c518f26a-61e9-4e57-a974-40f11e46b7e1" -->
 ### TC-05-04: Hot promotion content matches source
 
 **Steps**:
@@ -70,6 +76,7 @@ What context propagates across hierarchy levels, by which mechanism, and whether
 **Expected**: Promoted Rules table is complete (no missing rules) and paths are valid
 **Type**: Structural
 
+<!-- section_id: "21d6cfb9-4a5d-4d45-864b-badbf896e3e0" -->
 ### TC-05-05: Gap 1 detection — conventions.childNaming
 
 **Steps**:
@@ -82,6 +89,7 @@ What context propagates across hierarchy levels, by which mechanism, and whether
 **Outcome**: PASS = gap is accurately documented; FAIL = gap is worse/better than documented
 **Type**: Structural (audit)
 
+<!-- section_id: "bdbb040c-b725-472e-8140-f479fd94d4e0" -->
 ### TC-05-06: Gap 2 detection — layer number consistency
 
 **Steps**:
@@ -94,6 +102,7 @@ What context propagates across hierarchy levels, by which mechanism, and whether
 **Expected**: Layer numbers are consistent (or violations match documented gap)
 **Type**: Structural (audit)
 
+<!-- section_id: "f2920d7b-946c-43e6-bb7b-46bebe5d36cd" -->
 ### TC-05-07: Gap 3 detection — inherited context visibility
 
 **Steps**:
@@ -108,6 +117,7 @@ What context propagates across hierarchy levels, by which mechanism, and whether
 **Outcome**: Informational — validates gap 3 description
 **Type**: Structural (audit)
 
+<!-- section_id: "85c60150-eea0-44d6-8359-d1a62d8c34a3" -->
 ### TC-05-08: Dynamic rules don't cross entity boundaries
 
 **Steps**:
@@ -121,6 +131,7 @@ What context propagates across hierarchy levels, by which mechanism, and whether
 
 ---
 
+<!-- section_id: "cc8d4df6-3913-4d94-92a5-da104ed6b3dc" -->
 ## Coverage Gap Analysis
 
 | Design Concept | Test Case | Status |

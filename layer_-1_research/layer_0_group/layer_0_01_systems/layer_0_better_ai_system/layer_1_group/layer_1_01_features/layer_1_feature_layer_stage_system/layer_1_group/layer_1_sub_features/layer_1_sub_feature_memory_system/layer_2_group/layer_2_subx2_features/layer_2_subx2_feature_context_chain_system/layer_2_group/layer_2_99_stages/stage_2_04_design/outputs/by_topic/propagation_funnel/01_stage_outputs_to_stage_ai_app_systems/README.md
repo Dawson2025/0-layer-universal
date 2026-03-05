@@ -21,8 +21,10 @@ Raw Stage Outputs (01_outputs/)
     AI App–specific Contexts (.claude/, .cursor/, etc.)
 ```
 
+<!-- section_id: "ce9dd951-80bc-4704-8296-176c9c35eb24" -->
 ## Subdirectories
 
+<!-- section_id: "ac29bc25-d816-44bb-a6ec-a79f47fe037a" -->
 ### `01_outputs/`
 **Content**: Raw stage outputs collected from stage execution
 - Research documents
@@ -37,6 +39,7 @@ Raw Stage Outputs (01_outputs/)
 - `by_topic/` — Organized by topic domain
 - `raw/` — Unprocessed files
 
+<!-- section_id: "5d617b3d-9478-4817-8f0a-7da81ff3bfff" -->
 ### `02_output_reports/`
 **Content**: Processed reports analyzing stage outputs
 - `stage_NNN_report.md` — Comprehensive stage summary
@@ -45,6 +48,7 @@ Raw Stage Outputs (01_outputs/)
   - Connections to other stages
   - Propagation rules
 
+<!-- section_id: "0f883b26-78dd-4a65-b61d-72c1d097e595" -->
 ### `03_0agnostic_system/`
 **Content**: Context system for this stage
 - `0AGNOSTIC.md` — Source of truth (stage identity)
@@ -54,6 +58,7 @@ Raw Stage Outputs (01_outputs/)
   - `03_protocols/` — Stage protocols
   - etc.
 
+<!-- section_id: "2fad782a-7707-41ca-a8ad-d3a74915f819" -->
 ### `1merge_system/`
 **Content**: Merge rules for porting to AI apps
 - `.1claude_merge/` — Claude Code specific
@@ -64,6 +69,7 @@ Raw Stage Outputs (01_outputs/)
 - `.1gemini_merge/` — Google Gemini specific
 - `.1github_merge/` — GitHub Copilot specific
 
+<!-- section_id: "bad49b3e-0b53-4aa3-9ca0-5a3cd95e0190" -->
 ### AI App Directories (`.claude/`, `.cursor/`, `.codex/`, `.gemini/`, `.github/`)
 **Content**: Final context for each AI app
 - `CLAUDE.md` — Full context for Claude Code
@@ -73,6 +79,7 @@ Raw Stage Outputs (01_outputs/)
 - `.github/copilot-instructions.md` — GitHub Copilot
 - Supporting skill files, rule files, knowledge files
 
+<!-- section_id: "4af97ab6-bb90-4383-9bb6-904ae159dd27" -->
 ## Output Files (Created Here)
 
 - `stage_report.md` — Comprehensive summary
@@ -84,6 +91,7 @@ Raw Stage Outputs (01_outputs/)
 - `.cursorrules` — Cursor context (lean)
 - `.github/copilot-instructions.md` — Copilot context (medium)
 
+<!-- section_id: "d4278796-4194-41b5-96f3-00f68f2b2ac6" -->
 ## Workflow
 
 1. **Collect** — Place all stage outputs in `01_outputs/`
@@ -95,6 +103,7 @@ Raw Stage Outputs (01_outputs/)
 7. **Deploy** — Place outputs in `.claude/`, `.cursor/`, etc.
 8. **Verify** — Check that all AI apps can load context
 
+<!-- section_id: "91098a88-8e10-408c-8b2c-e0aec9af6c62" -->
 ## Integration
 
 **Input From**: Stage execution (stages 01-11)

@@ -8,10 +8,12 @@ resource_name: "README"
 
 **Need**: [Three-Tier Architecture](../README.md)
 
+<!-- section_id: "2db704d0-d9e9-468f-aa72-d09c7a2db6b9" -->
 ## Overview
 
 These requirements define the three-tier knowledge architecture that prevents agents from either overloading on raw outputs or operating without sufficient context. They establish exactly what content belongs in each tier -- pointers (Tier 1), distilled knowledge (Tier 2), and full stage outputs (Tier 3) -- with strict boundary rules, size budgets, and anti-patterns. The goal is to ensure an agent reading only Tier 1 and Tier 2 can work competently without ever touching Tier 3.
 
+<!-- section_id: "2424e64e-eeaa-47bb-8b5d-9cb8bdcc578c" -->
 ## Key Themes
 
 - **Tier Boundary Enforcement**: Each tier has explicit inclusion/exclusion rules, size budgets, and a defined directional flow from stages up through knowledge to pointers -- never the reverse

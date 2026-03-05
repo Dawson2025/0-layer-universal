@@ -13,6 +13,7 @@ resource_name: "US-04_agent_recovers_after_compaction"
 **I want** the agent to recover its working state by reading identity files, stage reports, and episodic memory,
 **So that** compaction does not mean starting from scratch and I don't lose all my progress.
 
+<!-- section_id: "f40e79a1-b406-4e70-8405-d4edd0421d8f" -->
 ### What Happens
 
 1. User is working with the AI and the context window gets compacted (conversation history is lost)
@@ -21,6 +22,7 @@ resource_name: "US-04_agent_recovers_after_compaction"
 4. Agent reads episodic memory to recover recent session details
 5. Agent resumes productive work within minutes, not after a lengthy re-exploration
 
+<!-- section_id: "e2af1b4c-4f2a-4640-bd9a-a291248ee800" -->
 ### Acceptance Criteria
 
 - Agent recovers competence in under 5 minutes of reading, not 30 minutes of re-exploration

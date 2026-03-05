@@ -5,14 +5,17 @@ resource_name: "DEVELOPMENT_CONVENTIONS"
 ---
 # Development Conventions for Parallel AI Agents
 
+<!-- section_id: "f026f944-f1ab-439a-b81c-d40d984ae27f" -->
 ## Purpose
 
 This document provides specific coding standards and conventions to ensure multiple AI agents can develop features simultaneously without conflicts, confusion, or integration issues.
 
 ---
 
+<!-- section_id: "c1bc9de9-7fbf-4ace-b50b-21b6661c3a4f" -->
 ## File Naming Conventions
 
+<!-- section_id: "44c175ed-aba8-4b3c-b003-9ad058e96f9e" -->
 ### Python Files
 
 - **Routes**: `routes.py` - Contains all Flask route handlers for the feature
@@ -21,12 +24,14 @@ This document provides specific coding standards and conventions to ensure multi
 - **Business Logic**: Descriptive name (e.g., `search.py`, `branching.py`, `template_system.py`)
 - **Tests**: `test_<functionality>.py` (e.g., `test_word_creation.py`, `test_group_invites.py`)
 
+<!-- section_id: "803f26a4-8b65-4f85-942a-ad4846e169ea" -->
 ### Template Files
 
 - Use lowercase with underscores: `word_creation_table.html`
 - Include feature prefix for clarity: `admin_phonemes.html`, `group_detail.html`
 - Place in feature-specific `templates/` subdirectory
 
+<!-- section_id: "a87d8539-9aa6-4d33-9103-2ee914320d93" -->
 ### Static Files
 
 - **JavaScript**: Descriptive names, lowercase with underscores: `project_search.js`
@@ -35,8 +40,10 @@ This document provides specific coding standards and conventions to ensure multi
 
 ---
 
+<!-- section_id: "a6315aab-2209-446e-b455-2eb37e3399bd" -->
 ## Code Organization Patterns
 
+<!-- section_id: "d6eea124-062e-42e6-b06a-8a2243258bd9" -->
 ### Feature Module Structure
 
 Every feature module MUST follow this structure:
@@ -59,6 +66,7 @@ features/<feature_name>/
     └── test_*.py
 ```
 
+<!-- section_id: "b2adc7b7-dc34-4038-9d2c-e3e49bf0a06a" -->
 ### Blueprint Definition (`__init__.py`)
 
 Every feature must register a Flask Blueprint:
@@ -107,6 +115,7 @@ from . import api
 __all__ = ['words_bp']
 ```
 
+<!-- section_id: "59266183-b5ac-4107-8054-a8f8053e3e2a" -->
 ### Routes Definition (`routes.py`)
 
 ```python
@@ -154,6 +163,7 @@ def display_words():
     return render_template('words/words_display.html', words=words, user=user)
 ```
 
+<!-- section_id: "7950a21b-d6c5-4a6e-9acf-4d582e1a796a" -->
 ### API Endpoints (`api.py`)
 
 ```python
@@ -181,6 +191,7 @@ def api_<action>():
     return jsonify({'success': True, 'data': result})
 ```
 
+<!-- section_id: "a2a68ca1-5937-480b-a986-eb69d3c4c762" -->
 ### Models/Database Layer (`models.py`)
 
 ```python
@@ -227,8 +238,10 @@ def create_<entity>(data: Dict, project_id: str) -> int:
 
 ---
 
+<!-- section_id: "2c77292e-4c7c-433d-bb86-072f7a12b277" -->
 ## Import Conventions
 
+<!-- section_id: "d4a3adc5-86fb-4893-b654-739dfc9c8084" -->
 ### Import Order
 
 1. Standard library imports
@@ -259,6 +272,7 @@ from . import words_bp
 from .models import get_all_words
 ```
 
+<!-- section_id: "46f53471-49fe-43e4-a2aa-ca44658cf4d6" -->
 ### Dependency Rules
 
 **Allowed**:
@@ -279,8 +293,10 @@ from .models import get_all_words
 
 ---
 
+<!-- section_id: "af691a46-153c-47ec-98f6-d97f6fbd3960" -->
 ## Template Conventions
 
+<!-- section_id: "a50b02af-afd8-4e69-9563-0a43b83a8664" -->
 ### Template Location
 
 Templates MUST be in feature's `templates/` subdirectory:
@@ -289,6 +305,7 @@ features/words/templates/word_creation.html  ✅
 templates/word_creation.html                  ❌
 ```
 
+<!-- section_id: "5df12ee1-97a3-497f-b7c2-bd0f7e46a576" -->
 ### Template Rendering
 
 Use feature-relative paths when rendering:
@@ -304,6 +321,7 @@ def create_word():
     # return render_template('word_creation.html')
 ```
 
+<!-- section_id: "25fa263d-672b-4c3f-9f3a-c3a964faffea" -->
 ### Template Inheritance
 
 All feature templates should extend the global base template:
@@ -320,6 +338,7 @@ All feature templates should extend the global base template:
 {% endblock %}
 ```
 
+<!-- section_id: "f48d374b-40cf-4f00-b6d7-70044c766367" -->
 ### Template Variables
 
 Always pass `user` context to templates:
@@ -336,8 +355,10 @@ def words_menu():
 
 ---
 
+<!-- section_id: "8150874a-7011-49ca-9d23-5bf5ab33b838" -->
 ## Static Asset Conventions
 
+<!-- section_id: "a806673c-f5d2-415f-8d0f-0a1691ca4fd6" -->
 ### Feature-Specific Assets
 
 CSS and JavaScript specific to a feature MUST live in that feature's static directory:
@@ -347,6 +368,7 @@ features/words/static/css/word_creation.css   ✅
 static/css/word_creation.css                  ❌
 ```
 
+<!-- section_id: "905a0df1-dc36-4caa-b490-6ef9b8fe6a38" -->
 ### Loading Feature Assets in Templates
 
 ```html
@@ -367,6 +389,7 @@ static/css/word_creation.css                  ❌
 {% endblock %}
 ```
 
+<!-- section_id: "bd2fa2bf-cf67-4d6d-a891-71668da3734c" -->
 ### Global vs Feature Assets
 
 **Global assets** (`static/`):
@@ -381,8 +404,10 @@ static/css/word_creation.css                  ❌
 
 ---
 
+<!-- section_id: "28ba958d-b406-4b28-a441-6ebd9da0c282" -->
 ## Testing Conventions
 
+<!-- section_id: "67e61bb2-d0bd-4590-8300-e81ba412a07c" -->
 ### Test File Location
 
 Tests MUST be in feature's `tests/` subdirectory:
@@ -392,6 +417,7 @@ features/words/tests/test_word_creation.py   ✅
 tests/test_word_creation.py                  ❌ (unless integration test)
 ```
 
+<!-- section_id: "5ade5e87-1281-4725-967a-839111114098" -->
 ### Test Naming
 
 - Filename: `test_<functionality>.py`
@@ -420,6 +446,7 @@ class TestWordCreation(unittest.TestCase):
         # ... test implementation
 ```
 
+<!-- section_id: "d7363ad2-daea-4257-87df-a92ace16fb0b" -->
 ### Test Isolation
 
 Feature tests should NOT depend on other features being present:
@@ -438,6 +465,7 @@ def test_word_validates_phonemes(self):
     # ... test implementation
 ```
 
+<!-- section_id: "cf3d9cd5-0db0-42b7-bf7d-ef3b4f8a2430" -->
 ### Integration Tests
 
 Full cross-feature tests go in global `tests/` directory:
@@ -455,8 +483,10 @@ class TestWordPhonemeIntegration(unittest.TestCase):
 
 ---
 
+<!-- section_id: "13219adc-75d3-4608-a6b8-c70d3f38a1ba" -->
 ## Database Conventions
 
+<!-- section_id: "b01bae7c-2923-4d5f-98b2-23457aaf1674" -->
 ### Schema Changes
 
 Database migrations must be coordinated:
@@ -476,6 +506,7 @@ ALTER TABLE words ADD COLUMN video_path TEXT;
 ALTER TABLE words ADD COLUMN image_path TEXT;
 ```
 
+<!-- section_id: "8bb8801f-7a9d-4e94-b14e-0449f9f77712" -->
 ### Database Access Patterns
 
 **Always use the core database helper**:
@@ -497,6 +528,7 @@ def get_word(word_id: int):
     # ... query
 ```
 
+<!-- section_id: "35239113-834a-4633-a24f-a26c37ffe605" -->
 ### Transaction Pattern
 
 For multi-statement operations, use transactions:
@@ -533,8 +565,10 @@ def create_word_with_phonemes(word_data: Dict, phoneme_ids: List[int]):
 
 ---
 
+<!-- section_id: "cd3947ab-fc22-4c7f-970a-ae67a6b490cd" -->
 ## Error Handling Conventions
 
+<!-- section_id: "f82f7f23-104f-486a-aaf8-f203ef5d0bf5" -->
 ### API Endpoints
 
 Always return consistent JSON structure:
@@ -555,6 +589,7 @@ return jsonify({
 }), 400
 ```
 
+<!-- section_id: "768977b0-2aab-40b8-ae90-cec18f866d17" -->
 ### Route Handlers
 
 Use Flask's `flash()` for user messages:
@@ -573,6 +608,7 @@ def create_word():
         return redirect(url_for('words.create_word_menu'))
 ```
 
+<!-- section_id: "aae3ec4d-8bcf-45a9-805e-1298e2c6070d" -->
 ### Logging
 
 Use consistent logging format:
@@ -595,8 +631,10 @@ def api_create_word():
 
 ---
 
+<!-- section_id: "4a8cc2da-d323-44e9-830f-df40b567a1f4" -->
 ## Type Hints and Documentation
 
+<!-- section_id: "00c7df0f-2618-4ea7-b230-95d00d1eef7c" -->
 ### Function Signatures
 
 Always include type hints:
@@ -626,6 +664,7 @@ def get_words_by_phoneme(
     # Implementation
 ```
 
+<!-- section_id: "28f0234a-5e53-4183-9f11-900c57d16e15" -->
 ### Class Documentation
 
 ```python
@@ -652,8 +691,10 @@ class WordCreationService:
 
 ---
 
+<!-- section_id: "72b21fce-2aa1-41f4-9ad6-755436fda6a5" -->
 ## Git Commit Conventions
 
+<!-- section_id: "7b9251e6-f1f6-4a7a-8bf1-00cbe4560da0" -->
 ### Commit Message Format
 
 ```
@@ -673,6 +714,7 @@ Files modified:
 Related requirement: word_management.md
 ```
 
+<!-- section_id: "eeae2c00-f5eb-4f02-ac88-bfd26dcb3a24" -->
 ### Branch Naming
 
 - Feature work: `feature/<feature-name>/<task>`
@@ -684,8 +726,10 @@ Related requirement: word_management.md
 
 ---
 
+<!-- section_id: "15a88ac7-5051-40fc-915a-31bc0de00fb7" -->
 ## Coordination Patterns
 
+<!-- section_id: "036695ab-845b-431a-90bc-024b8842fd15" -->
 ### When to Coordinate
 
 **No coordination needed** (work freely):
@@ -702,6 +746,7 @@ Related requirement: word_management.md
 - Modifying global static assets (`static/css/global.css`)
 - Changing shared function signatures
 
+<!-- section_id: "4d4bfc70-e809-44bc-8ddb-752788a5064a" -->
 ### How to Coordinate
 
 1. **Check active PRs**: Look for other PRs touching the same shared files
@@ -709,6 +754,7 @@ Related requirement: word_management.md
 3. **Determine order**: Decide which PR should merge first
 4. **Rebase after**: Second PR rebases after first merges
 
+<!-- section_id: "b2fccb3d-6031-4e55-8e19-fb740928a6d9" -->
 ### Example Coordination
 
 **Scenario**: Agent A needs new auth decorator, Agent B needs database helper
@@ -735,8 +781,10 @@ def get_project_owner(project_id: str) -> int:
 
 ---
 
+<!-- section_id: "6eba5b4f-3bda-4724-82ae-853cbab96f00" -->
 ## Anti-Patterns to Avoid
 
+<!-- section_id: "9ae299b1-e369-4500-8650-1a30a4c1f7e9" -->
 ### ❌ Anti-Pattern 1: Cross-Feature Route Calls
 
 ```python
@@ -763,6 +811,7 @@ def words_with_phoneme():
     # ... render with phoneme data
 ```
 
+<!-- section_id: "532e910e-c0bc-42e8-8251-2a616f5ea348" -->
 ### ❌ Anti-Pattern 2: Circular Dependencies
 
 ```python
@@ -775,6 +824,7 @@ from features.words.models import get_word  # ❌ Circular!
 
 **Solution**: Extract shared logic to `core/` or use dependency injection
 
+<!-- section_id: "eb0b1025-5379-418b-a8da-8897ecd9104f" -->
 ### ❌ Anti-Pattern 3: Hard-Coded Paths
 
 ```python
@@ -785,6 +835,7 @@ return render_template('../../templates/words/word_creation.html')  # ❌
 return render_template('words/word_creation.html')  # ✅
 ```
 
+<!-- section_id: "6f5ea3dd-84a3-4d9c-9c9a-d613b490bca1" -->
 ### ❌ Anti-Pattern 4: Direct Database Access in Routes
 
 ```python
@@ -807,6 +858,7 @@ def view_word(word_id):
     return render_template('words/word_detail.html', word=word)
 ```
 
+<!-- section_id: "074bc7ef-de81-46c7-834a-b70493fcb0e3" -->
 ### ❌ Anti-Pattern 5: Global State
 
 ```python
@@ -830,6 +882,7 @@ def words_menu():
 
 ---
 
+<!-- section_id: "b6fd9db4-d44e-4217-90b7-dfccd7c7fec7" -->
 ## Quick Reference Checklist
 
 Before committing feature work:
@@ -850,6 +903,7 @@ Before committing feature work:
 
 ---
 
+<!-- section_id: "8c4296ba-d3c3-4fc0-bbd9-57e797b81d96" -->
 ## Summary
 
 **The Golden Rule**: Each feature is an isolated vertical slice. If you're working on `words`, you should only be touching `features/words/`. If you need to touch something outside that directory, pause and coordinate.

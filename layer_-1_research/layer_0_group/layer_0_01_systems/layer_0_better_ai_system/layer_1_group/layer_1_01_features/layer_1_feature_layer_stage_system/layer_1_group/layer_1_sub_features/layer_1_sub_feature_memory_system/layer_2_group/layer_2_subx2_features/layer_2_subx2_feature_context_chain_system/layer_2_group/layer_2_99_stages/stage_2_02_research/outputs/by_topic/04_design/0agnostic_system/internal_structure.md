@@ -5,12 +5,14 @@ resource_name: "internal_structure"
 ---
 # Design — .0agnostic/ Internal Structure
 
+<!-- section_id: "ad9845d8-470e-449d-8f0b-0ed9ad8ef8cc" -->
 ## Purpose
 
 Design document defining the canonical internal structure of `.0agnostic/` directories. Sub-layers (knowledge, rules, protocols) are dissolved as standalone directories and absorbed into `.0agnostic/` as internal subdirectories, preserving the taxonomy while gaining native tool integration through sync.
 
 ---
 
+<!-- section_id: "92b99112-313b-4f26-b1c4-6a906949d818" -->
 ## Decision
 
 **Sub-layers become subdirectories inside `.0agnostic/`.**
@@ -19,8 +21,10 @@ The organizational taxonomy (knowledge, rules, protocols) is preserved — it mo
 
 ---
 
+<!-- section_id: "244e03aa-1dec-47f8-b9f7-37a6d1faf8a7" -->
 ## Current State
 
+<!-- section_id: "cfdf41f8-a036-414a-860c-b3b3208e5e7e" -->
 ### Sub-Layer Hierarchy (Being Dissolved)
 
 ```
@@ -48,6 +52,7 @@ layer_0/layer_0_04_sub_layers/
     └── sub_layer_0_05_operating_systems/
 ```
 
+<!-- section_id: "9233ea42-4ba6-4301-9b4f-22af0e7b4181" -->
 ### Current .0agnostic/ (Being Extended)
 
 255 `.0agnostic/` directories exist across the hierarchy. Most are minimal:
@@ -64,6 +69,7 @@ Only `.0agnostic/` has a fuller structure with rules, scripts, templates, and te
 
 ---
 
+<!-- section_id: "f03331af-3f78-4a76-8d62-e9ad02f7a25c" -->
 ## New .0agnostic/ Canonical Structure
 
 ```
@@ -96,6 +102,7 @@ Only `.0agnostic/` has a fuller structure with rules, scripts, templates, and te
 └── tests/                      # Validation tests (existing, unchanged)
 ```
 
+<!-- section_id: "30a77485-4b26-462f-bed3-52375459aec1" -->
 ### Core Relationship: Rules Inform Protocols
 
 Rules and protocols are not independent — **protocols are informed by rules**. The relationship differs between static and dynamic:
@@ -158,6 +165,7 @@ DYNAMIC RULES (loaded by path match):
 - The full procedure lives in protocols/ and is loaded only when the agent needs to execute it
 - This gives two levels of progressive disclosure: the rule triggers awareness, the protocol provides instruction
 
+<!-- section_id: "2c577c05-c85c-4e8e-8c4b-1ea440c45a71" -->
 ### What Changed
 
 | Component | Before | After |
@@ -174,8 +182,10 @@ DYNAMIC RULES (loaded by path match):
 
 ---
 
+<!-- section_id: "c1836c8a-f911-4847-8393-4422bdf6cc9e" -->
 ## How Each Subdirectory Works
 
+<!-- section_id: "789f226f-8a0d-45e7-bb3b-453074110c5e" -->
 ### knowledge/
 
 **Purpose:** Reference documentation that provides context but should NOT be auto-loaded into every session.
@@ -196,6 +206,7 @@ DYNAMIC RULES (loaded by path match):
 
 **Why NOT auto-loaded:** Knowledge files are reference material. Loading 38+ files into every API message wastes context budget. Agents should pull knowledge on-demand when the task requires it.
 
+<!-- section_id: "3a662c72-90b8-4d47-9225-7fa3d4bfb286" -->
 ### knowledge/principles/
 
 **Purpose:** Core principles that guide all work. A subset of knowledge that is foundational enough to warrant special treatment.
@@ -210,6 +221,7 @@ DYNAMIC RULES (loaded by path match):
 - Detailed principle documents: stay in `knowledge/principles/` and are accessed on-demand
 - This is a "promote the summary, reference the detail" pattern
 
+<!-- section_id: "2c578ff3-ed16-4c07-9fd5-ecac0725e0ca" -->
 ### knowledge/resources/
 
 **Purpose:** Supporting material that knowledge files reference — templates, databases, data tables, examples, and other reference artifacts.
@@ -229,6 +241,7 @@ DYNAMIC RULES (loaded by path match):
 
 **Relationship:** Resources are the leaf nodes of the reference chain. Knowledge files explain concepts and point to resources for concrete artifacts. Protocols use resources when executing procedures (e.g., "create entity from template at knowledge/resources/...").
 
+<!-- section_id: "dae7ca92-2489-474b-a5ed-fcef8c981b7d" -->
 ### rules/static/
 
 **Purpose:** Rules that must be followed in every session, regardless of context. These are the highest-priority behavioral constraints. **Static rules include their full protocol inline** — since they're always loaded anyway, there's no context cost to including the complete procedure.
@@ -263,6 +276,7 @@ NEVER proceed without explicit user approval.
 
 **Key property:** Files here are loaded into EVERY API message. They include both the constraint AND the procedure because both are always needed. The agent sees the rule and knows exactly what to do — no second lookup required.
 
+<!-- section_id: "528f3e22-e247-461a-805b-d595c1575003" -->
 ### rules/dynamic/
 
 **Purpose:** Rules that apply only in specific contexts — certain directories, file types, or project areas. **Dynamic rules contain only triggers** — when, where, why, and a description of what to do. The full procedure lives in `protocols/` and is referenced by the dynamic rule.
@@ -310,6 +324,7 @@ producing deliverables at each stage before advancing.
 
 **Why triggers only:** Dynamic rules load conditionally based on path. If the agent is working in a research directory, the trigger loads and says "follow this protocol." The full protocol loads only if the agent actually needs to execute it. Two levels of progressive disclosure: trigger → protocol.
 
+<!-- section_id: "170cdd9b-a38a-48df-b42e-037fb12f0f59" -->
 ### protocols/
 
 **Purpose:** Full step-by-step procedures for recurring workflows. Protocols are the "how to do it" — the complete instruction set. **Protocols are informed by rules** — rules define the constraints and triggers, protocols define the execution.
@@ -361,6 +376,7 @@ producing deliverables at each stage before advancing.
 
 ---
 
+<!-- section_id: "b6d0c7ba-f9d8-4497-9c56-1a375abd022a" -->
 ## Sync Flow
 
 ```
@@ -386,6 +402,7 @@ skills/                    ──sync──→ .claude/skills/             (alre
 .1merge/.1codex_merge/     ──merge─→ .codex/                     (tool-specific overrides)
 ```
 
+<!-- section_id: "03e8a39d-5a17-432c-a555-31cad1872c4d" -->
 ### Three-Tier Merge (Existing Pattern, Unchanged)
 
 ```
@@ -396,10 +413,12 @@ Tier 3: .claude/ (generated)  ← Final output (what the tool reads)
 
 ---
 
+<!-- section_id: "49982505-32f9-4d8d-b9e8-565e5ebf6298" -->
 ## Inheritance Across the Hierarchy
 
 Not every `.0agnostic/` needs all subdirectories. The structure is additive:
 
+<!-- section_id: "047d3711-24e7-4857-88d9-5065c5ace850" -->
 ### Root Level (.0agnostic/)
 ```
 .0agnostic/
@@ -409,6 +428,7 @@ Not every `.0agnostic/` needs all subdirectories. The structure is additive:
 └── skills/                   # Universal skills
 ```
 
+<!-- section_id: "b03484b0-0a27-43da-baf7-6829d115d946" -->
 ### Layer 0 (.0agnostic/)
 ```
 .0agnostic/
@@ -423,6 +443,7 @@ Not every `.0agnostic/` needs all subdirectories. The structure is additive:
 └── templates/                # Entity creation templates
 ```
 
+<!-- section_id: "9398d865-3a3f-44f3-9db7-777184df5350" -->
 ### Project Level (layer_1_project_X/.0agnostic/)
 ```
 .0agnostic/
@@ -434,6 +455,7 @@ Not every `.0agnostic/` needs all subdirectories. The structure is additive:
 └── episodic_memory/          # Project session history
 ```
 
+<!-- section_id: "2be67066-83ce-4a1b-a2f2-c5ec2ef140f9" -->
 ### Feature/Sub-Feature Level
 ```
 .0agnostic/
@@ -445,6 +467,7 @@ Not every `.0agnostic/` needs all subdirectories. The structure is additive:
 
 ---
 
+<!-- section_id: "a60115b7-c3f9-4e45-bbb6-702eeecbb879" -->
 ## What Happens to layer_0_04_sub_layers/
 
 The `layer_0/layer_0_04_sub_layers/` directory is dissolved. Its contents migrate:
@@ -470,6 +493,7 @@ The `layer_0/layer_0_04_sub_layers/` directory is dissolved. Its contents migrat
 
 ---
 
+<!-- section_id: "9010ff0a-4457-4031-bdd9-47ac1d9fb5e1" -->
 ## Benefits Over Sub-Layer Hierarchy
 
 | Aspect | Sub-Layer Hierarchy | .0agnostic/ Internal |
@@ -485,6 +509,7 @@ The `layer_0/layer_0_04_sub_layers/` directory is dissolved. Its contents migrat
 
 ---
 
+<!-- section_id: "bda330f9-fca2-45f4-86b3-10f28a40aedd" -->
 ## Related: Multi-Avenue Redundancy, Sync, and .1merge
 
 The internal structure described above is one component of the larger 0Agnostic System. The other components are documented in dedicated files:

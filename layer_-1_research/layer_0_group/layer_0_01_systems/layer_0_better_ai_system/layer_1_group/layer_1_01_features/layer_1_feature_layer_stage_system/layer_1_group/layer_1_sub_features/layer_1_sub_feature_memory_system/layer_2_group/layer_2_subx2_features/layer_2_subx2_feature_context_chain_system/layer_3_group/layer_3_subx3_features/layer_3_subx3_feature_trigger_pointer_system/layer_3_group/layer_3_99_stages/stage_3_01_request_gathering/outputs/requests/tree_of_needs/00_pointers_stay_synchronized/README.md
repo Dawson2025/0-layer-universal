@@ -10,12 +10,14 @@ resource_name: "README"
 
 ---
 
+<!-- section_id: "98f8491b-8bf8-40b1-a37e-8a1ca725502e" -->
 ## Definition
 
 > Pointer files always resolve to the correct canonical location, even after directories are moved or renamed. Stale pointers are detected automatically and agents are prompted to fix them.
 
 ---
 
+<!-- section_id: "99ac2ac9-74be-4747-9f46-4edb324b2b3b" -->
 ## The Problem
 
 Current pointer files use hardcoded relative paths. When directories move:
@@ -26,6 +28,7 @@ Current pointer files use hardcoded relative paths. When directories move:
 
 ---
 
+<!-- section_id: "42608161-36c9-41e6-8fff-93de1cebc943" -->
 ## The Vision
 
 A system where:
@@ -37,6 +40,7 @@ A system where:
 
 ---
 
+<!-- section_id: "abcfd27e-1598-479a-bb28-7543224467c6" -->
 ## Three Branches
 
 | Branch | Question | Description |
@@ -47,6 +51,7 @@ A system where:
 
 ---
 
+<!-- section_id: "2ceb0b4c-2ce5-467d-bb14-9c620a5cd75f" -->
 ## Branch Structure
 
 ```
@@ -67,6 +72,7 @@ A system where:
 
 ---
 
+<!-- section_id: "7e72ed0d-f80f-4dfc-955e-dafa04f3fa71" -->
 ## Success Criteria
 
 The root need is satisfied when:

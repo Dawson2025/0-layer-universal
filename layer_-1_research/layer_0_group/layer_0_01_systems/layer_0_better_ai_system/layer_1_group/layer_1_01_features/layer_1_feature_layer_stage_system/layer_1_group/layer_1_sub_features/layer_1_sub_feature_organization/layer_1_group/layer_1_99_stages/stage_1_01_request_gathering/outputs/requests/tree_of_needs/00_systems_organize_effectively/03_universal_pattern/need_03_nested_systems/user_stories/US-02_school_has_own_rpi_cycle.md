@@ -9,6 +9,7 @@ resource_name: "US-02_school_has_own_rpi_cycle"
 **I want** my own independent research/production/instantiation cycle,
 **So that** educational features can be researched, stabilized, and personalized independently of the parent AI system's R/P/I cycle.
 
+<!-- section_id: "e0a981a9-1389-4330-90e5-0be7b0a85bcb" -->
 ## Acceptance Criteria
 
 **Scenario 1: School system has its own research entities**

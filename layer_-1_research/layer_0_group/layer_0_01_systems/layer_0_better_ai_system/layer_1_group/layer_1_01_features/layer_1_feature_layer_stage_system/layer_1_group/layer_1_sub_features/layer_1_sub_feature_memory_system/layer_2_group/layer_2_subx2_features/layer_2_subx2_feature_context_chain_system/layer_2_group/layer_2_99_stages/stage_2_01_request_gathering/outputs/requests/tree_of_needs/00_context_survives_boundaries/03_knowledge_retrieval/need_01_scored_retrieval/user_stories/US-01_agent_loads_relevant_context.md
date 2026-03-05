@@ -13,6 +13,7 @@ resource_name: "US-01_agent_loads_relevant_context"
 **I want** the system to automatically rank and load the most relevant knowledge files for the task,
 **So that** the AI reads the most useful files first instead of guessing or asking me which ones to read.
 
+<!-- section_id: "4b67c7d5-17ce-45ae-a62f-340ca588be93" -->
 ### What Happens
 
 1. User tells the AI to work on an entity (e.g., "work on the memory system design")
@@ -20,6 +21,7 @@ resource_name: "US-01_agent_loads_relevant_context"
 3. Agent receives a ranked list and loads the top-scoring files first
 4. User gets informed work from the start, without manually directing the AI to specific files
 
+<!-- section_id: "499013ac-5cb3-4998-a56e-1a6e6cd533ff" -->
 ### Acceptance Criteria
 
 - Agent receives a ranked list of files scored by composite of recency, relevance, and importance

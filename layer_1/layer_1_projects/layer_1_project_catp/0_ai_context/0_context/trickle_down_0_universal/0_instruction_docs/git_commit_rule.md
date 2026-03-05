@@ -5,10 +5,12 @@ resource_name: "git_commit_rule"
 ---
 # GIT COMMIT RULE
 
+<!-- section_id: "09c71ce8-1532-4eab-9fb5-60654dc948f8" -->
 ## **MANDATORY REQUIREMENT**
 
 **ALL AI agents MUST commit ALL changes to git at the end of EVERY SINGLE AI TURN in EVERY SESSION, regardless of the scope or type of changes made.**
 
+<!-- section_id: "0a9d0ab8-770b-4820-9f0e-4ff21f260c68" -->
 ## **RULE SCOPE**
 
 This rule applies to:
@@ -25,8 +27,10 @@ This rule applies to:
 
 **NO AI TURN IS EXEMPT FROM THIS REQUIREMENT.**
 
+<!-- section_id: "be464e33-f54e-45af-b6b4-76b84780176a" -->
 ## **GIT COMMIT REQUIREMENTS**
 
+<!-- section_id: "4fc5da65-7ca9-47ff-8b3b-fe3e4b41e37a" -->
 ### **1. MANDATORY COMMIT ACTIONS**
 
 For EVERY AI turn, agents MUST:
@@ -38,6 +42,7 @@ For EVERY AI turn, agents MUST:
 5. **Verify Commit**: `git log --oneline -1` to confirm commit was created
 6. **Check Clean Status**: `git status` to ensure working directory is clean
 
+<!-- section_id: "43d07959-9b35-4163-b151-cf1a2f0ec1e4" -->
 ### **2. COMMIT MESSAGE FORMAT**
 
 **Required Format:**
@@ -67,6 +72,7 @@ Date: YYYY-MM-DD
 - `[DEBUG]` - Debugging and troubleshooting
 - `[INTEGRATION]` - Integration and system changes
 
+<!-- section_id: "264aa7a7-47e8-4b50-8fcc-c7f23cf14b3e" -->
 ### **3. COMMIT MESSAGE EXAMPLES**
 
 #### **Bug Fix Example:**
@@ -127,6 +133,7 @@ Turn: 005
 Date: 2025-01-27
 ```
 
+<!-- section_id: "211d92f7-e1d9-4de4-aa34-6d19ff57a0ad" -->
 ### **4. COMMIT VALIDATION CHECKLIST**
 
 Before completing any AI turn, agents MUST verify:
@@ -140,6 +147,7 @@ Before completing any AI turn, agents MUST verify:
 - [ ] Working directory is clean after commit
 - [ ] All documentation updates are included in commit
 
+<!-- section_id: "d239e186-f817-479f-9aa3-fbf92db5daf3" -->
 ### **5. COMMIT COMMANDS**
 
 **Standard Commit Sequence:**
@@ -170,6 +178,7 @@ git log --oneline -1
 git status
 ```
 
+<!-- section_id: "ebe9ac09-098f-4562-ae39-996c1e395980" -->
 ### **6. SPECIAL CASES**
 
 #### **No Changes Made**
@@ -207,6 +216,7 @@ Turn: 007
 Date: 2025-01-27
 ```
 
+<!-- section_id: "fb7ed957-5409-47f9-8f38-8b49ad2064c3" -->
 ### **7. COMMIT FREQUENCY**
 
 **Every AI Turn Must Result in a Commit:**
@@ -221,6 +231,7 @@ Date: 2025-01-27
 - After all documentation is updated
 - After all changes are made
 
+<!-- section_id: "72ba05b4-c768-458b-a079-35c56d789516" -->
 ### **8. COMMIT QUALITY STANDARDS**
 
 **Commit Messages Must Be:**
@@ -238,6 +249,7 @@ Date: 2025-01-27
 - All test results and validation
 - All analysis and research findings
 
+<!-- section_id: "dc12ec5d-9fd9-4922-8497-dc525e813a0c" -->
 ## **BENEFITS OF THIS RULE**
 
 - **Complete Version History**: Every change tracked in git
@@ -249,6 +261,7 @@ Date: 2025-01-27
 - **Project Continuity**: New agents can understand project evolution
 - **Quality Assurance**: Forces thorough analysis before committing
 
+<!-- section_id: "5877cd3d-5dde-4726-b739-01f1e3a580ed" -->
 ## **ENFORCEMENT**
 
 This rule is **MANDATORY** and **NON-NEGOTIABLE**.

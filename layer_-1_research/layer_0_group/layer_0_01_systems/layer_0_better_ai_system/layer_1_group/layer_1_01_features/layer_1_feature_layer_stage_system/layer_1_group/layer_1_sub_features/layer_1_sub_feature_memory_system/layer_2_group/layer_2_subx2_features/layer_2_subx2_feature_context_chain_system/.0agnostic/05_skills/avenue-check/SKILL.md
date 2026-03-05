@@ -6,10 +6,12 @@ resource_name: "SKILL"
 ---
 # Skill: Avenue Check
 
+<!-- section_id: "8518e08e-e187-4050-9d97-ff63e0e3cce3" -->
 ## Purpose
 
 Check that all 8 context delivery avenues are functional for a given entity, reporting per-avenue status and overall coverage percentage.
 
+<!-- section_id: "39995283-cf42-4dbb-87d9-2c2546b6e42a" -->
 ## When to Use
 
 - After creating a new entity to verify context is discoverable
@@ -17,14 +19,17 @@ Check that all 8 context delivery avenues are functional for a given entity, rep
 - During periodic audits of the context chain system
 - When debugging why an agent cannot find expected context
 
+<!-- section_id: "d7427b85-8f53-4053-b394-38927a746d39" -->
 ## When NOT to Use
 
 - For validating the parent chain only (use `/chain-validate` instead)
 - For creating missing structure (use `/entity-creation` instead)
 - For general context discovery (use `/context-gathering` instead)
 
+<!-- section_id: "c79afe97-7edf-4e36-937b-3a26e486aadd" -->
 ## Protocol
 
+<!-- section_id: "0c6564d6-f74e-442f-9b47-c1b72af5d3cc" -->
 ### 1. Check System Prompt Avenue
 
 Verify `CLAUDE.md` exists in the entity root and contains an `## Identity` section.
@@ -33,6 +38,7 @@ Verify `CLAUDE.md` exists in the entity root and contains an `## Identity` secti
 - **SCAFFOLDED**: File exists but is a placeholder (< 5 lines of content)
 - **FAIL**: File does not exist
 
+<!-- section_id: "3c00d57b-7b0d-4a48-b7d3-4a67f3b9f89d" -->
 ### 2. Check Path Rules Avenue
 
 Verify `.claude/rules/` directory contains at least one `.md` rule file.
@@ -41,6 +47,7 @@ Verify `.claude/rules/` directory contains at least one `.md` rule file.
 - **SCAFFOLDED**: Directory exists but is empty or files are placeholders
 - **FAIL**: Directory does not exist
 
+<!-- section_id: "da998173-4044-4d3b-b16f-2d8839b29bfc" -->
 ### 3. Check Skills Avenue
 
 Verify `.0agnostic/skills/` or `.claude/skills/` contains at least one skill with a `SKILL.md`.
@@ -49,6 +56,7 @@ Verify `.0agnostic/skills/` or `.claude/skills/` contains at least one skill wit
 - **SCAFFOLDED**: Skill directories exist but SKILL.md files are empty
 - **FAIL**: No skill directories found
 
+<!-- section_id: "d66fdd9e-8e6d-490d-8cf3-5b21c2126d9b" -->
 ### 4. Check Parent References Avenue
 
 Verify `0AGNOSTIC.md` exists and has a `## Parent` line that resolves to an existing file.
@@ -57,6 +65,7 @@ Verify `0AGNOSTIC.md` exists and has a `## Parent` line that resolves to an exis
 - **SCAFFOLDED**: 0AGNOSTIC.md exists but Parent path is missing or empty
 - **FAIL**: 0AGNOSTIC.md does not exist
 
+<!-- section_id: "a3a1c99e-fd8d-45c5-afd9-8bc684132dff" -->
 ### 5. Check JSON-LD Avenue
 
 Verify at least one `.gab.jsonld` file exists and contains an `@graph` array.
@@ -65,6 +74,7 @@ Verify at least one `.gab.jsonld` file exists and contains an `@graph` array.
 - **SCAFFOLDED**: File exists but @graph is empty
 - **FAIL**: No .gab.jsonld files found
 
+<!-- section_id: "f9846f38-cede-4ed3-9081-edd08c3cc901" -->
 ### 6. Check Integration Avenue
 
 Verify at least one `.integration.md` file exists with substantive content (> 5 lines).
@@ -73,6 +83,7 @@ Verify at least one `.integration.md` file exists with substantive content (> 5 
 - **SCAFFOLDED**: File exists but is a stub
 - **FAIL**: No .integration.md files found
 
+<!-- section_id: "b12b9e10-ef3c-4599-94f9-6ffca3cd742d" -->
 ### 7. Check Episodic Memory Avenue
 
 Verify `.0agnostic/episodic_memory/` directory exists.
@@ -81,6 +92,7 @@ Verify `.0agnostic/episodic_memory/` directory exists.
 - **SCAFFOLDED**: Directory exists but index.md is missing or empty
 - **FAIL**: Directory does not exist
 
+<!-- section_id: "43b8dad7-4757-46c6-87bd-a99fe0b64a3c" -->
 ### 8. Check Agnostic System Avenue
 
 Verify `.0agnostic/` contains `rules/` or `skills/` with content.
@@ -89,6 +101,7 @@ Verify `.0agnostic/` contains `rules/` or `skills/` with content.
 - **SCAFFOLDED**: Directories exist but are empty
 - **FAIL**: .0agnostic/ does not exist
 
+<!-- section_id: "75565990-f826-4be1-8c01-1b341f1145a6" -->
 ### 9. Report Results
 
 ```
@@ -109,6 +122,7 @@ Coverage: 6/8 PASS, 2/8 SCAFFOLDED, 0/8 FAIL
 Overall:  75% functional (100% reachable)
 ```
 
+<!-- section_id: "e6291e4f-d2fc-4f33-89e7-ea41dd17c3c9" -->
 ## Checklist
 
 - [ ] All 8 avenues checked

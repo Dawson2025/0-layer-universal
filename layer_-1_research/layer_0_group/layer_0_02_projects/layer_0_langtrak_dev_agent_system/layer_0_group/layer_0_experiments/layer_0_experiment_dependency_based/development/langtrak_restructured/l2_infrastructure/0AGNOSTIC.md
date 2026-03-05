@@ -8,6 +8,7 @@ resource_name: "0AGNOSTIC"
 
 # ── Entity Definition ──
 
+<!-- section_id: "3f48acac-677d-4203-af33-4ffac25d50d2" -->
 ## Identity
 
 entity_id: "0c1fc353-10b3-45c0-883f-3b7a916bc6ed"
@@ -17,8 +18,10 @@ entity_id: "0c1fc353-10b3-45c0-883f-3b7a916bc6ed"
 **Depends On**: Nothing (foundation layer)
 **Provides**: IStorageProvider, IAuthProvider
 
+<!-- section_id: "b8e09502-6f7f-4ab1-8e0b-9c41db68a364" -->
 ## Key Behaviors
 
+<!-- section_id: "bbb3466f-c30c-4766-88f0-a8fd99426107" -->
 ### Sub-layers
 - L2.1 App Factory: Flask app creation, configuration, blueprint registration
 - L2.2 Database: SQLite connection, schema migrations, session management
@@ -29,9 +32,11 @@ entity_id: "0c1fc353-10b3-45c0-883f-3b7a916bc6ed"
 - L2.7 Firebase Sync: Cloud synchronization of projects and data
 - L2.8 TTS: Text-to-speech integration (Azure) for phoneme and word pronunciation
 
+<!-- section_id: "12385858-d7cc-42aa-a1a1-117c0256edd4" -->
 ### Dependency Shape
 Star topology — all sub-layers depend on L2.2 Database (hub)
 
+<!-- section_id: "8d84f28c-403d-410d-9458-70bd7284f89c" -->
 ## Triggers
 
 | Situation | Action |
@@ -44,6 +49,7 @@ Star topology — all sub-layers depend on L2.2 Database (hub)
 
 # ── Current Status ──
 
+<!-- section_id: "f1335662-e555-488d-984e-bdc5461da671" -->
 ## Current Status
 
 **Phase**: Routes extracted from monolithic app.py into l2_bp Blueprint
@@ -54,6 +60,7 @@ Star topology — all sub-layers depend on L2.2 Database (hub)
 
 # ── References ──
 
+<!-- section_id: "15f16bf0-8b25-43d3-8967-05b1da31f02d" -->
 ## Navigation
 
 | Resource | Path |

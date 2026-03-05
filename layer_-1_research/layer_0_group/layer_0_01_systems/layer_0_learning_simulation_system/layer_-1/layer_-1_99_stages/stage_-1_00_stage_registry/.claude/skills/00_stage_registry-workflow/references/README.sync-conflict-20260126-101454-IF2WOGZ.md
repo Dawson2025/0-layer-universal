@@ -7,6 +7,7 @@ resource_name: "README.sync-conflict-20260126-101454-IF2WOGZ"
 
 Place reference documents, templates, and examples here.
 
+<!-- section_id: "865240bc-eed7-4cfd-bf30-f79e53478c72" -->
 ## Suggested Contents
 - Templates for 00_stage_registry outputs
 - Examples of good 00_stage_registry work

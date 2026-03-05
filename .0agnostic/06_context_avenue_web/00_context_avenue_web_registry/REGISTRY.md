@@ -5,6 +5,7 @@ resource_name: "REGISTRY"
 ---
 # Context Avenue Web Registry
 
+<!-- section_id: "8293a83e-eee0-4700-9363-ced4bd283ab0" -->
 ## Overview
 
 The context avenue web delivers content to AI agents through multiple complementary avenues. Avenues are ordered by **comprehensiveness** — how complete a picture each avenue provides.
@@ -13,6 +14,7 @@ The web is divided into two categories:
 - **File-based avenues (01-08)**: Deterministic transforms, human-readable, zero-dependency, version-controlled
 - **Data-based avenues (09-13)**: Derived indexes, queryable, regenerable from file-based content
 
+<!-- section_id: "07fb7329-78d1-4d01-a0ec-f31a1b856562" -->
 ## Physical Structure
 
 ```
@@ -35,6 +37,7 @@ The web is divided into two categories:
     └── 13_shimi_structures/
 ```
 
+<!-- section_id: "a9fd7c5a-4276-4988-b30e-ac2ab8106e4e" -->
 ## Avenue Inventory
 
 | # | Name | Category | Content | Comprehensiveness | Sync Script | Status |
@@ -54,6 +57,7 @@ The web is divided into two categories:
 | 12 | Temporal Index | Data-based | Time-series of events and changes | Low | build-temporal.sh | Scaffolded |
 | 13 | SHIMI Structures | Data-based | Per-node optimization primitives | Lowest (data) | build-shimi.sh | Scaffolded |
 
+<!-- section_id: "f49762df-6702-4dc0-bd12-fd357127d0e7" -->
 ## Key Properties
 
 **Single direction of authority**: Source of truth (01-05) -> Avenues (06). Never the reverse.
@@ -64,6 +68,7 @@ The web is divided into two categories:
 
 **Comprehensiveness ordering**: Both file-based and data-based avenues follow the same principle — most comprehensive first (01/09), most fragmented last (08/13).
 
+<!-- section_id: "d6c48a36-ff78-4d1f-90fb-6d4b491913ee" -->
 ## Sync Pipeline
 
 See `sync-registry.json` for the machine-readable mapping.

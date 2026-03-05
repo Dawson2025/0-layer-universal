@@ -5,8 +5,10 @@ resource_name: "NEXT_LEVEL_PARALLELIZATION"
 ---
 # Next Level: Sub-Feature Parallelization
 
+<!-- section_id: "79cc10b4-24ba-4ac9-96ac-b5e0929d4e61" -->
 ## Current State vs. Future State
 
+<!-- section_id: "68b6bd11-0bbd-4501-9f8e-42b5d7db9b77" -->
 ### ✅ Current: Feature-Level Parallelization
 **Capacity: 8 agents working in parallel**
 
@@ -23,6 +25,7 @@ Agent 8 → features/dashboard/
 
 **This is already implemented and working!**
 
+<!-- section_id: "bdde28df-976a-4aa0-b7e6-2dc780c79a1e" -->
 ### 🚀 Future: Sub-Feature Parallelization
 **Capacity: 24-40 agents working in parallel**
 
@@ -50,8 +53,10 @@ Admin Feature (4 agents):
 ... and so on
 ```
 
+<!-- section_id: "f04a1a5d-06b9-4903-b85b-0feed07c8fa2" -->
 ## Why Go Deeper?
 
+<!-- section_id: "cb912f9e-1465-41b0-bfde-fafa3bacdd85" -->
 ### Problem: Large Features Still Create Bottlenecks
 
 Even with feature-level isolation, some features like **words** have many distinct concerns:
@@ -63,6 +68,7 @@ Even with feature-level isolation, some features like **words** have many distin
 
 **If all of these are in one `routes.py` file, only ONE agent can work on the words feature at a time.**
 
+<!-- section_id: "b7b110b2-cad3-4817-b07b-9b99b3efa966" -->
 ### Solution: File-Per-Concern Pattern
 
 Break each large feature into **logical sub-modules** that can be developed in parallel:
@@ -83,6 +89,7 @@ features/words/
 
 **Result:** 5+ agents can work on the words feature simultaneously!
 
+<!-- section_id: "af4c9415-973f-4fc6-9dea-2e078b8b3672" -->
 ## Real-World Example: Your Question
 
 > "What about the difference between creating words and viewing and searching for them?"
@@ -133,11 +140,14 @@ def display_words():
 
 **Result:** ✅ Zero conflicts! All three agents work simultaneously.
 
+<!-- section_id: "b2052ebc-eed5-403f-931a-b8d9ac3d1b63" -->
 ## Implementation Roadmap
 
+<!-- section_id: "6d5e57e2-d4ae-4fe6-859d-810ba8bc4a92" -->
 ### Phase 1: ✅ DONE
 Feature-level isolation (8 features)
 
+<!-- section_id: "f29bf4a1-d009-4bd2-8af5-2a9e7d08e5aa" -->
 ### Phase 2: 🚀 NEXT
 Sub-feature organization for large features
 
@@ -165,6 +175,7 @@ Sub-feature organization for large features
 - [ ] Extract frequency → `features/phonemes/frequency.py`
 - [ ] Extract categorization → `features/phonemes/categorization.py`
 
+<!-- section_id: "fa6848ed-439e-44c9-a979-80ff09a5f90d" -->
 ## Pattern Template
 
 For any feature with multiple sub-concerns:
@@ -204,8 +215,10 @@ def helper_for_concern_a():
     pass
 ```
 
+<!-- section_id: "0dc2bc0c-c07c-409a-85e6-75571a463046" -->
 ## Benefits at Scale
 
+<!-- section_id: "5109e658-54b2-4063-9dfa-9e4821efa895" -->
 ### Parallelization Capacity
 
 | Architecture Level | Agents | Speedup |
@@ -214,6 +227,7 @@ def helper_for_concern_a():
 | Feature-level (current) | 8 | 4-8x |
 | Sub-feature level (future) | 24-40 | 12-20x |
 
+<!-- section_id: "eff3461e-70de-4056-bc1e-7ebcb162d518" -->
 ### Development Scenarios
 
 **Scenario: Building "All Fields Search" feature**
@@ -234,6 +248,7 @@ def helper_for_concern_a():
 - Very easy to review (one concern)
 - Other agents can work on creation, editing, display simultaneously
 
+<!-- section_id: "4cca74de-01bb-4c4c-aeb9-d44548732144" -->
 ## Quick Decision Tree
 
 **Should I split this feature into sub-modules?**
@@ -264,10 +279,12 @@ Does the feature have 2+ distinct concerns?
 - Share significant auth logic
 - Better to keep together
 
+<!-- section_id: "fcf95c4b-85c0-4cdb-9db8-54a7339f1045" -->
 ## Coordination for Shared Files
 
 When sub-features share files (models.py, validation.py):
 
+<!-- section_id: "71e14ead-0a8c-4b7a-8c21-ac48a73924d6" -->
 ### Strategy 1: Section Comments
 ```python
 # models.py
@@ -291,6 +308,7 @@ def update_word(...):
     pass
 ```
 
+<!-- section_id: "12758c31-27ef-493a-b1cd-c4be96419db7" -->
 ### Strategy 2: Add New Functions Only
 **Rule:** Don't modify existing functions, add new ones
 - Agent A adds `search_all_fields()`
@@ -298,12 +316,14 @@ def update_word(...):
 - Agent C adds `update_word_bulk()`
 - All can merge without conflicts!
 
+<!-- section_id: "0920a245-80da-494b-ae93-e3a83c89e8e9" -->
 ### Strategy 3: Pure Functions
 **Rule:** Make shared functions pure (no side effects)
 - Input → Output, no global state
 - Easy to test and understand
 - Multiple agents can add pure functions safely
 
+<!-- section_id: "322b1340-80a7-4177-9008-3bcdfd015783" -->
 ## Summary
 
 **Your Question:** "What about the difference between creating words and viewing and searching for them?"

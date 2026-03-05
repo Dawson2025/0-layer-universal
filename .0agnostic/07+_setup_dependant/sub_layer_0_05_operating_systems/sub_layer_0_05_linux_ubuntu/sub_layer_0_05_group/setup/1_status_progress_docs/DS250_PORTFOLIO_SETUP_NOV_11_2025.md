@@ -5,6 +5,7 @@ resource_name: "DS250_PORTFOLIO_SETUP_NOV_11_2025"
 ---
 # DS 250 Portfolio Setup Session - November 11, 2025
 
+<!-- section_id: "53dd761c-ae50-45ec-ad1c-194aa15196d4" -->
 ## Session Overview
 
 **Project**: DS 250 Data Science Portfolio (pac20026_fall2025)  
@@ -13,6 +14,7 @@ resource_name: "DS250_PORTFOLIO_SETUP_NOV_11_2025"
 **Duration**: ~2 hours  
 **Status**: ✅ Complete - Ready for coursework
 
+<!-- section_id: "ff9ca0f4-940c-4a94-ae17-c3c478a512b4" -->
 ## Session Objectives
 
 1. ✅ Set up GitHub Personal Access Token with SSO authorization
@@ -23,8 +25,10 @@ resource_name: "DS250_PORTFOLIO_SETUP_NOV_11_2025"
 6. ✅ Document setup process
 7. ⏳ Publish to GitHub Pages (final step in progress)
 
+<!-- section_id: "0400600f-c596-478f-946b-fd3b0fca3544" -->
 ## Work Completed
 
+<!-- section_id: "910fc9ab-8a8b-4a90-834f-e9e09d7af77d" -->
 ### Phase 1: GitHub Token Setup & SSO Authorization
 
 #### Token Creation
@@ -55,6 +59,7 @@ git config --global credential.helper store
 
 **Result**: All git operations (fetch, pull, push) working without authentication prompts
 
+<!-- section_id: "a9a09329-500d-48eb-a0ce-0c3dccdba4fa" -->
 ### Phase 2: Repository Configuration
 
 #### Repository Information
@@ -71,6 +76,7 @@ git config --global credential.helper store
 - Confirmed file structure visible in IDE
 - Verified git status and remote connectivity
 
+<!-- section_id: "fb372d00-a99e-4fa0-a044-90aab1db3608" -->
 ### Phase 3: Quarto Portfolio Personalization
 
 #### Updated `_quarto.yml`
@@ -104,6 +110,7 @@ git push
 
 **Result**: Changes successfully pushed to GitHub (commit 4edd146)
 
+<!-- section_id: "f9e7235a-69de-4ce5-9b06-0d21fc945848" -->
 ### Phase 4: Python Environment Setup
 
 #### Jupyter Installation
@@ -150,6 +157,7 @@ python3 -m pip install --break-system-packages pandas numpy matplotlib seaborn s
 
 **Installation Method**: Used `--break-system-packages` flag due to Ubuntu 24.04's externally-managed Python environment
 
+<!-- section_id: "68aa1f07-88ac-436e-a5b5-4accdd4ac714" -->
 ### Phase 5: Testing & Validation
 
 #### Render Test
@@ -169,6 +177,7 @@ quarto render --to html
 2. 250_Projects/project5.qmd (full test)
 3. Additional files were rendering when stopped
 
+<!-- section_id: "ea505390-2d13-469d-84cb-bbff9af315fe" -->
 ### Phase 6: Documentation
 
 #### Files Created/Updated
@@ -199,6 +208,7 @@ quarto render --to html
    - Quick access guide
    - Already documented from earlier session
 
+<!-- section_id: "35ccfe41-5495-4971-8f15-5705e6aad522" -->
 ### Phase 7: Publishing (In Progress)
 
 #### Command
@@ -215,8 +225,10 @@ quarto publish gh-pages
 
 **Status**: Ready to execute (requires 5-10 minutes)
 
+<!-- section_id: "3c7289be-4367-4953-919a-bf3c136b361d" -->
 ## Technical Accomplishments
 
+<!-- section_id: "f19de629-ba15-47d8-987b-23600450ae59" -->
 ### Git & GitHub
 - ✅ Token created with full repository permissions
 - ✅ SSO authorized via browser automation (Duo/SAML)
@@ -225,6 +237,7 @@ quarto publish gh-pages
 - ✅ All git operations functional (fetch, pull, push)
 - ✅ Changes committed and pushed successfully
 
+<!-- section_id: "90a85c4f-925a-4aca-9eb5-627df169d4f9" -->
 ### Quarto Configuration
 - ✅ Personal information updated
 - ✅ GitHub URLs corrected
@@ -232,6 +245,7 @@ quarto publish gh-pages
 - ✅ Footer updated with current year
 - ✅ Theme preserved (flatly/darkly)
 
+<!-- section_id: "acbec256-d115-4bfe-a9da-ecbb1f7eb7e8" -->
 ### Python Environment
 - ✅ Jupyter fully installed and functional
 - ✅ 12 data science libraries installed
@@ -239,12 +253,14 @@ quarto publish gh-pages
 - ✅ Python 3.12.3 environment working
 - ✅ Code execution tested and verified
 
+<!-- section_id: "4f460f0b-1c02-4c1e-9976-f51fa840aa0d" -->
 ### Documentation
 - ✅ 4 documentation files created
 - ✅ Security measures implemented (.gitignore)
 - ✅ Setup process fully documented
 - ✅ Reference materials compiled
 
+<!-- section_id: "25d7ae66-e83d-41d7-9d4a-54e7ba5a952e" -->
 ## Browser Session Management
 
 **Status**: Browser open and authenticated
@@ -253,6 +269,7 @@ quarto publish gh-pages
 - **Purpose**: Token management access
 - **Policy**: Persistent across AI sessions (per browser management policy)
 
+<!-- section_id: "d25afc59-4d31-4f2b-b928-df3c3cfd429d" -->
 ## Course Requirements Checklist
 
 Following https://byuidatascience.github.io/DS250-Course-Draft/Setup/git_github_setup.html:
@@ -275,23 +292,28 @@ Following https://byuidatascience.github.io/DS250-Course-Draft/Setup/git_github_
   - ⏳ 7.2 GitHub Actions (will run on publish)
 - ⏳ 8. Common bug fix (quarto publish gh-pages)
 
+<!-- section_id: "b0a460ab-81a1-4dee-bdfd-58a3ec989095" -->
 ## Statistics
 
+<!-- section_id: "cda053d5-f814-4f00-bbb2-5c718d7c3cbb" -->
 ### Packages Installed
 - **Jupyter Suite**: 47 packages (~50 MB)
 - **Data Science Libraries**: 12 packages (~80 MB)
 - **Total**: 59 packages installed
 
+<!-- section_id: "de7b8dab-92da-4f16-b6a6-961a8b5c4aca" -->
 ### Files Modified/Created
 - **Modified**: 2 files (_quarto.yml, .gitignore)
 - **Created**: 4 files (documentation)
 - **Gitignored**: 1 file (token info)
 
+<!-- section_id: "58d147ec-222d-4fa5-b013-7b0f63d36904" -->
 ### Git Activity
 - **Commits**: 1 commit (4edd146)
 - **Files Changed**: 2 files, 16 line changes
 - **Push**: Successful to origin/main
 
+<!-- section_id: "26996351-73a0-43dc-9d37-305995b969e3" -->
 ### Time Investment
 - **Token Setup**: ~30 minutes
 - **Repository Config**: ~20 minutes  
@@ -299,45 +321,54 @@ Following https://byuidatascience.github.io/DS250-Course-Draft/Setup/git_github_
 - **Testing & Documentation**: ~40 minutes
 - **Total**: ~2 hours
 
+<!-- section_id: "9a4a0eff-332d-47e3-95c7-716af981d35c" -->
 ## Next Actions
 
+<!-- section_id: "ed30e580-9ad9-4a68-8eea-c527dc864d4e" -->
 ### Immediate (Session Completion)
 1. ⏳ Complete `quarto publish gh-pages` command
 2. ⏳ Verify website deploys to https://byui-math-dept.github.io/pac20026_fall2025/
 3. ⏳ Check GitHub Actions success
 
+<!-- section_id: "a32fb982-7763-4802-8ce8-8d04de29e976" -->
 ### For Student
 1. Review SETUP_COMPLETE.md in repository
 2. Start working on DS 250 projects
 3. Use `quarto preview` for live development
 4. Publish updates with `quarto publish gh-pages`
 
+<!-- section_id: "7222a3cb-5bbf-4b25-8fa0-3b2199cd583f" -->
 ### Before Token Expiration (Dec 11, 2025)
 1. Generate new token 1-2 weeks before expiration
 2. Configure SSO authorization
 3. Update ~/.git-credentials
 4. Test git operations
 
+<!-- section_id: "6d65df02-3854-4e6b-83f7-0880e8e0e8e6" -->
 ## Key Learnings
 
+<!-- section_id: "6d898b98-c8d2-4ffa-a235-4d0109127fba" -->
 ### SSO Authorization Process
 - Token creation ≠ SSO authorization (separate steps!)
 - Must explicitly authorize token for SSO-protected organizations
 - Browser automation effective for completing SAML flows
 - Existing Duo sessions can be reused
 
+<!-- section_id: "55995f70-c7b0-4dee-92d1-6f6671d32c60" -->
 ### Python Environment Management
 - Ubuntu 24.04 uses externally-managed Python
 - `--break-system-packages` flag necessary for user installations
 - Alternative: use virtual environments (not needed for this use case)
 - All DS 250 libraries successfully installed
 
+<!-- section_id: "ca6c7864-5903-4115-94ac-30430cb11081" -->
 ### Quarto Publishing
 - Requires Jupyter for Python code execution
 - Renders all .qmd files sequentially  
 - Executes code cells during render
 - Can take 5-10 minutes for full site render
 
+<!-- section_id: "8a566506-313c-40a1-b5f2-737b23269290" -->
 ## Reference Links
 
 - **Repository**: https://github.com/byui-math-dept/pac20026_fall2025
@@ -346,6 +377,7 @@ Following https://byuidatascience.github.io/DS250-Course-Draft/Setup/git_github_
 - **Published Site** (after publish): https://byui-math-dept.github.io/pac20026_fall2025/
 - **GitHub Token Settings**: https://github.com/settings/tokens/2803378689
 
+<!-- section_id: "710691ce-c60d-48b0-8571-ca5ece3a3e21" -->
 ## Success Metrics
 
 - ✅ Repository accessible without authentication errors
@@ -366,13 +398,16 @@ Following https://byuidatascience.github.io/DS250-Course-Draft/Setup/git_github_
 
 ---
 
+<!-- section_id: "b5e2712b-f2ce-48fa-8adc-3388ce91053f" -->
 ## Follow-up Session: AI Context Separation & Repo Ownership Update (Nov 11, 2025 – Evening)
 
+<!-- section_id: "4b0eff5e-9d13-47ed-b765-0d99d63e3f82" -->
 ### Goals
 1. Eliminate every AI artifact from the public DS250 repository.
 2. Create personal private repositories for universal and project-specific context backups.
 3. Document the new “school wrapper” pattern so future workspaces stay compliant.
 
+<!-- section_id: "8399c304-4d1d-48c1-8ab9-b403b3365e1c" -->
 ### Actions Completed
 - **Wrapper migration**: `pac20026_fall2025/` now lives in `/home/dawson/code/school-pac20026_fall2025/` next to a private `0_context/` and `.ai_workspace`.
 - **AI traces removed**: Deleted `0_context/` + `0_CONTEXT_COPY_COMPLETE.md` from the public repo; added the ignore rules to `.git/info/exclude` so they are enforced locally but invisible on GitHub.
@@ -386,10 +421,12 @@ Following https://byuidatascience.github.io/DS250-Course-Draft/Setup/git_github_
   - `MASTER_DOCUMENTATION_INDEX.md` gained the “School Wrapper Pattern Standardized” entry describing structure/ownership expectations.
 - **Quarto verified**: `quarto preview --no-browser --port 7777` ran from the relocated public repo, confirming the move did not break rendering.
 
+<!-- section_id: "4d3fcc23-35cf-449b-8d08-8d7945e77e37" -->
 ### Org Repo Cleanup Attempt
 - Tried deleting `byui-math-dept/1-project-context-pac20026_fall2025` via the GitHub REST API.
 - Response: `403 Organization members cannot delete repositories.` A byui-math-dept org admin must remove it manually in the GitHub UI to avoid confusion.
 
+<!-- section_id: "f9feb111-e6ac-42ea-9727-a1dcb7ccb8da" -->
 ### Push Status
 - Public repo: still on `byui-math-dept/pac20026_fall2025` with `PUBLISHING_COMPLETE.md` and `SETUP_COMPLETE.md` staged for the next commit.
 - Universal context: clean on `Dawson2025/0-universal-context` (tracking `main`).

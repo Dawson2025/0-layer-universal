@@ -6,8 +6,10 @@ resource_name: "README"
 ---
 # chrome-devtools-mcp (codex_cli on linux_ubuntu)
 
+<!-- section_id: "c0731e7a-c3c3-45a4-9828-7d587730b21d" -->
 ## Canonical docs
 - ../../../../../_shared/0.04_ai_apps/_shared/0.05_mcp_servers/chrome-devtools-mcp/
 
+<!-- section_id: "769ec659-841b-4442-b931-0fd5a9e3d5c1" -->
 ## Notes
 Add linux_ubuntu + codex_cli specific setup notes here.

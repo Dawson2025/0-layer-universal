@@ -5,12 +5,14 @@ resource_name: "RESEARCH_PROJECT_ORGANIZATION_PROPOSAL_v2"
 ---
 # Proposal v2: Research Project Organization (With Proper Stages)
 
+<!-- section_id: "6ef3d9ce-0442-49e8-a889-d0ba0884c5d9" -->
 ## Key Correction
 
 Research content must use the **stage system** (01-11), not ad-hoc folders like `proposal/`, `design/`, `decisions/`.
 
 ---
 
+<!-- section_id: "9dc0bc20-c175-4671-9299-f7f25791349d" -->
 ## Proper Stage Mapping
 
 | Stage | Purpose | Research Content |
@@ -29,6 +31,7 @@ Research content must use the **stage system** (01-11), not ad-hoc folders like 
 
 ---
 
+<!-- section_id: "e44f8387-098d-4f02-8905-adc047ef834a" -->
 ## Revised Structure
 
 ```
@@ -113,6 +116,7 @@ layer_-1_better_ai_system/
 
 ---
 
+<!-- section_id: "14b7d313-db1b-4e08-a4be-7e3b7b1af3c4" -->
 ## AI Agent Context Flow (With Stages)
 
 ```
@@ -158,6 +162,7 @@ layer_-1_better_ai_system/
 
 ---
 
+<!-- section_id: "785e9782-debd-4bd9-ae04-2823ffffecca" -->
 ## Feature Workflow (Using Stages)
 
 ```
@@ -198,6 +203,7 @@ layer_-1_better_ai_system/
 
 ---
 
+<!-- section_id: "8825663a-06ba-47a5-bdc9-4093fcf365c3" -->
 ## What We Just Created → Proper Stage Locations
 
 The docs we created today should be organized as:
@@ -244,6 +250,7 @@ research_targets/target_layer_0/features/
 
 ---
 
+<!-- section_id: "1ee7f3a5-2ca0-4cd5-8fe1-7aeb702a75be" -->
 ## Summary of Changes
 
 | Before (Wrong) | After (Correct) |
@@ -256,6 +263,7 @@ research_targets/target_layer_0/features/
 
 ---
 
+<!-- section_id: "009c57e4-56c4-42e1-a1e6-e1f926d0a4e2" -->
 ## Decision Request
 
 1. **Approve this structure?** (Features have their own `feature_99_stages/`)

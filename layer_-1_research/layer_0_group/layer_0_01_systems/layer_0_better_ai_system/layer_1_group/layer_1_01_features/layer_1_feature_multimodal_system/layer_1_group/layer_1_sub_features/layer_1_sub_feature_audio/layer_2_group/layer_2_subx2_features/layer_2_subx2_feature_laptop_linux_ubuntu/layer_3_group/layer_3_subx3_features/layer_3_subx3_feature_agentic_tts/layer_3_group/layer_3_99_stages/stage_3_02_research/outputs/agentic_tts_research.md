@@ -7,6 +7,7 @@ resource_name: "agentic_tts_research"
 
 **Date**: 2026-02-23
 
+<!-- section_id: "2397f0a0-0e34-496b-8aae-1bc767a167a1" -->
 ## Claude Code Hooks System
 
 Claude Code provides 18 hook events. For TTS, the key ones are:
@@ -21,6 +22,7 @@ Claude Code provides 18 hook events. For TTS, the key ones are:
 
 **Decision**: Start with Stop hook — highest impact, simplest implementation.
 
+<!-- section_id: "f8e80ed6-53cc-4dc8-9673-23c50686fc52" -->
 ## Hook Input Format
 
 Hooks receive JSON on stdin:
@@ -34,6 +36,7 @@ Hooks receive JSON on stdin:
 }
 ```
 
+<!-- section_id: "65318f88-6f20-4cfb-a3d2-e13c6c23b39d" -->
 ## Community Projects Evaluated
 
 | Project | Approach | Status |
@@ -44,6 +47,7 @@ Hooks receive JSON on stdin:
 
 **Decision**: Custom Stop hook with Piper — simplest, reuses existing system TTS infrastructure.
 
+<!-- section_id: "288aaf8c-2792-4f42-98b3-5dd4a3475392" -->
 ## Text Cleanup for Speech
 
 Markdown elements that must be stripped:
@@ -56,6 +60,7 @@ Markdown elements that must be stripped:
 - Table pipes (| col | col |)
 - Multiple whitespace
 
+<!-- section_id: "59d038de-ea47-4af6-8bb9-9d95e2ee23be" -->
 ## Sources
 
 - [Claude Code Hooks Documentation](https://code.claude.com/docs/en/hooks)

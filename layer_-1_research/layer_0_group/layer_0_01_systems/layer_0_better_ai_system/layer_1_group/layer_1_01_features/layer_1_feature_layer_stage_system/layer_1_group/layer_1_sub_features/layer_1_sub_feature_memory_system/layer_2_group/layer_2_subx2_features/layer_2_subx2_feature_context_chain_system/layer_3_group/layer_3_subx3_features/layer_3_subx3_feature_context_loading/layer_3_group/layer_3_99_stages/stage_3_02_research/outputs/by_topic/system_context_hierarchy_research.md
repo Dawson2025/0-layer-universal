@@ -11,12 +11,15 @@ resource_name: "system_context_hierarchy_research"
 
 ---
 
+<!-- section_id: "28853b00-89cc-40f7-93fe-1090f3064dcf" -->
 ## Overview
 
 Research into how AI context files (CLAUDE.md, agnostic.md, .claude/) should be structured hierarchically across the entire filesystem from user home directory down through project layers.
 
+<!-- section_id: "1bc025bb-3b11-422b-9bb0-a7313b6bc8d0" -->
 ## Key Findings
 
+<!-- section_id: "c85404b8-8e1b-46d8-bb59-ca28a944af44" -->
 ### 1. Claude Code CLAUDE.md Loading Behavior
 
 **Discovery**: Claude Code walks the directory tree **upward only**, not downward.
@@ -38,6 +41,7 @@ NOT loaded (child directories):
 
 **Implication**: Starting at the deepest relevant level (the work location) gives maximum context, not starting at the root.
 
+<!-- section_id: "f218ab2a-a223-45b8-9f39-2e0cb174d04e" -->
 ### 2. Global vs. Directory-Level Context
 
 **Finding**: Two approaches for global context:
@@ -54,6 +58,7 @@ NOT loaded (child directories):
 
 **Note**: The official global location is `~/.claude/CLAUDE.md` (inside `.claude/` config folder).
 
+<!-- section_id: "2ce90e60-56bf-49a9-acb7-9f392b39a97b" -->
 ### 3. Agnostic vs. Claude-Specific Context
 
 **Pattern Discovered**:
@@ -74,6 +79,7 @@ any_directory/
 - System: `/home/dawson/dawson-workspace/code/0_layer_universal/{CLAUDE.md, agnostic.md}`
 - Layers: Each layer (layer_0, layer_1, layer_-1_research) has both
 
+<!-- section_id: "fecdd723-b262-40c2-821e-c03257436a25" -->
 ### 4. Linux Filesystem Hierarchy Learned
 
 **Confirmed Standard**:
@@ -94,6 +100,7 @@ any_directory/
 - `sudo` bypasses these restrictions (runs as root)
 - Password not needed if user is sudoer
 
+<!-- section_id: "46b62cbe-61f5-4899-9a51-0f8c1299df18" -->
 ### 5. Concern About Starting Agents at Higher Levels
 
 **Question Posed**: "Is it a problem if I don't start agents from high enough in the directory tree?"
@@ -104,8 +111,10 @@ any_directory/
 
 **Best Practice**: Start at the level containing all directories your task needs.
 
+<!-- section_id: "602546a9-256d-4805-8f80-a018e0c1dbdc" -->
 ## Implementation Status
 
+<!-- section_id: "8a0628ff-df7b-4069-99a5-508eb9483e7a" -->
 ### Completed
 - [x] Container-as-Manager pattern (Phase 1-4 of system prompt architecture)
 - [x] Four-directional hand_off_documents at all layers/stages
@@ -113,17 +122,20 @@ any_directory/
 - [x] agnostic.md files at same locations
 - [x] Registry conversion (stage_00 = data only, container = manager)
 
+<!-- section_id: "f626328b-d693-46eb-bdd9-30ffb39621c2" -->
 ### In Progress
 - [ ] Apply context files to all 70+ stages containers
 - [ ] Apply context files to all sub_layers containers
 - [ ] Apply context files to individual stages and sub_layers
 - [ ] Create .claude/ configurations at key levels
 
+<!-- section_id: "5c148c1a-d3bb-4aba-907e-302761331b4c" -->
 ### Not Yet Attempted
 - [ ] Hand_off_documents for all individual stages
 - [ ] Four-directional handoffs for sub_layers
 - [ ] Test delegation flows across hierarchy
 
+<!-- section_id: "c47df0af-0146-4a51-8245-d68448d91bb3" -->
 ## Open Questions
 
 1. **Should we create `~/.claude/CLAUDE.md` as the official global file?** Currently relying on `/home/dawson/CLAUDE.md` via directory walk, but standard says to use `~/.claude/CLAUDE.md`.
@@ -136,6 +148,7 @@ any_directory/
 
 4. **Should `.claude/` folders have settings.json at every level?** Currently only at some.
 
+<!-- section_id: "d54fe6e7-045d-4909-a53b-21d02c1844f9" -->
 ## References
 
 - `system_prompt_architecture.md` - Full architecture design
@@ -145,6 +158,7 @@ any_directory/
 - Perplexity research on Claude Code behavior
 - Perplexity research on Linux filesystem hierarchy
 
+<!-- section_id: "246831e1-d1c6-4139-8b17-dff31cae039c" -->
 ## Next Steps
 
 1. Decide on `~/.claude/CLAUDE.md` global implementation

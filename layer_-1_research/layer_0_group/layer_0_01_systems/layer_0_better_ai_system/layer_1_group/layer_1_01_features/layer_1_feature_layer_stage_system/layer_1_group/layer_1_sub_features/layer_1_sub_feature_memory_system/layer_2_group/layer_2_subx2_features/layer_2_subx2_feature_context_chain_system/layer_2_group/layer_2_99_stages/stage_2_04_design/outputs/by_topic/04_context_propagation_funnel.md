@@ -11,6 +11,7 @@ resource_name: "04_context_propagation_funnel"
 
 ---
 
+<!-- section_id: "aaeb5f54-b00d-403a-ac7e-67f3e2823ae2" -->
 ## Overview
 
 The propagation chain architecture (doc 03) covers **top-down** flow: how context reaches agents. This document covers **bottom-up** flow: how work products consolidate and propagate upward through the hierarchy, and the **last mile fan-out**: how the consolidated agnostic content propagates into each AI app's native configuration system.
@@ -19,6 +20,7 @@ The core insight: **stages and entities follow the same consolidation pattern** 
 
 ---
 
+<!-- section_id: "d77832ec-8dd7-4d8d-a29a-ecf37d8d6759" -->
 ## The Universal Consolidation Pattern
 
 ```
@@ -32,6 +34,7 @@ The theme is **progressive detail reduction**: each tier summarizes, organizes, 
 
 ---
 
+<!-- section_id: "bfa8d99a-0c94-4f12-8fd0-24472256a0c6" -->
 ## Diagram 1: Stage-Internal Consolidation Funnel
 
 How content within a single stage reduces from many files to a single consolidated entry point.
@@ -111,6 +114,7 @@ How content within a single stage reduces from many files to a single consolidat
 └──────────────────────────────────────────────────────────────────┘
 ```
 
+<!-- section_id: "ace76f48-d283-4c51-a4b4-16ea0074ebf5" -->
 ### What each tier does
 
 | Tier | Contains | Produced by | Consumed by |
@@ -121,6 +125,7 @@ How content within a single stage reduces from many files to a single consolidat
 | `stage_report.md` | <30-line summary of the whole stage | Stage agent before exiting | Entity manager; sibling stages (via sync) |
 | `0AGNOSTIC.md` | Consolidated entry point — identity + status + references | Stage agent (updated each session) | Any AI agent delegated to this stage |
 
+<!-- section_id: "c5d0e758-03a8-4fc7-aa51-273f09ea6e94" -->
 ### How each tier references the one above
 
 - **`output_report.md`** references files in `outputs/` by relative path
@@ -130,6 +135,7 @@ How content within a single stage reduces from many files to a single consolidat
 
 ---
 
+<!-- section_id: "43cb42cf-871f-4376-a55c-533429214fd5" -->
 ## Diagram 2: Cross-Level Connection Map
 
 How stages feed entities, and child entities feed parent entities.
@@ -202,6 +208,7 @@ How stages feed entities, and child entities feed parent entities.
 └─────────────────────────────────────────────────────────────────────────┘
 ```
 
+<!-- section_id: "5ab0f7e0-e3f9-4968-b5eb-afbd978c1b82" -->
 ### Information flow summary
 
 | Direction | What flows | Mechanism |
@@ -216,6 +223,7 @@ How stages feed entities, and child entities feed parent entities.
 
 ---
 
+<!-- section_id: "a4106bcb-8cca-4a1e-ae27-d6779702c7d4" -->
 ## The Recursive Nature
 
 The consolidation funnel repeats at every level:
@@ -246,6 +254,7 @@ At each level:
 
 ---
 
+<!-- section_id: "c3209081-7ffe-4a41-b6b3-2143e391e813" -->
 ## Diagram 3: App-Specific Propagation (The Last Mile)
 
 The funnel consolidates upward to 0AGNOSTIC.md. But 0AGNOSTIC.md is tool-agnostic — no AI app reads it directly. The **last mile** is where agnostic content fans out into each AI app's native configuration system through `agnostic-sync.sh` and the `.1merge` projection layer.
@@ -335,6 +344,7 @@ The funnel consolidates upward to 0AGNOSTIC.md. But 0AGNOSTIC.md is tool-agnosti
                                           └───────────────────────────────┘
 ```
 
+<!-- section_id: "f60486a4-6c30-43f8-a5d0-0767bb5d5ea8" -->
 ### How each app consumes context
 
 Each AI app has its own **context loading mechanism** with a cascade/walk model, a config directory, and native context surfaces. The agnostic system adapts to each through `.1merge` projections and `agnostic-sync.sh` generation profiles.
@@ -397,6 +407,7 @@ Each AI app has its own **context loading mechanism** with a cascade/walk model,
 | **Context surfaces** | copilot-instructions.md only — limited dynamic runtime |
 | **Unique features** | Minimal config surface — bias toward strong static propagation |
 
+<!-- section_id: "4ee265f5-54fe-495c-bf73-3a0980087a60" -->
 ### Three content profiles
 
 `agnostic-sync.sh` generates files at three detail levels, matched to each app's context budget and native capabilities:
@@ -409,6 +420,7 @@ Each AI app has its own **context loading mechanism** with a cascade/walk model,
 
 **Important**: Cursor CLI's cross-consumption of CLAUDE.md and AGENTS.md means our Full-profile generated files serve double duty — they're native to their primary app AND consumed as supplementary context by Cursor.
 
+<!-- section_id: "4177fbfd-2bb1-4604-80a3-d97d28300861" -->
 ### The .1merge projection layer
 
 `.1merge` is the bridge between tool-agnostic source and app-specific configuration. Each AI app gets its own merge directory:
@@ -445,6 +457,7 @@ Each AI app has its own **context loading mechanism** with a cascade/walk model,
 
 **Scoping rule**: Content in `.1claude_merge/2_additions/` appears ONLY in CLAUDE.md. It never leaks into AGENTS.md or GEMINI.md. Each app's additions are isolated to that app's generated file.
 
+<!-- section_id: "b80cfd43-4d6a-4d2b-b214-d6f6f0fe4e3a" -->
 ### App-specific context surfaces beyond generated files
 
 The generated tool file is just the **entry point**. Each AI app has additional context surfaces that the agnostic system populates:
@@ -465,6 +478,7 @@ These additional surfaces are populated from `.0agnostic/` content through the a
 
 **Cross-tool consumption note**: Cursor CLI's reading of CLAUDE.md and AGENTS.md means our generated files serve multiple apps simultaneously. This is a feature, not a bug — the agnostic system's Full-profile files contain universal context that any app can benefit from.
 
+<!-- section_id: "4963d34d-fc5a-430f-8e69-ecbc1113dcad" -->
 ### Complete propagation pipeline
 
 ```
@@ -490,6 +504,7 @@ These additional surfaces are populated from `.0agnostic/` content through the a
 
 ---
 
+<!-- section_id: "f3436422-4771-4ddf-8942-71978b897ae8" -->
 ## Automation Tools
 
 | Tool | Direction | What it moves | When to run |
@@ -498,6 +513,7 @@ These additional surfaces are populated from `.0agnostic/` content through the a
 | `sync-handoffs.sh` | Vertical + Horizontal | Reports → entity + siblings + parent | After updating any stage or layer report |
 | `episodic-sync.sh` | Lateral | Episodic memory → auto-memory | After session work |
 
+<!-- section_id: "63ec5fc2-f98e-49bd-a3a8-0c9eca59e275" -->
 ### Propagation triggers
 
 | Event | What propagates | Script |
@@ -510,6 +526,7 @@ These additional surfaces are populated from `.0agnostic/` content through the a
 
 ---
 
+<!-- section_id: "71293def-c6e3-4fba-a036-bb568d40e7b1" -->
 ## Related Documents
 
 - **Top-down propagation**: `03_propagation_chain_architecture.md`
@@ -523,6 +540,7 @@ These additional surfaces are populated from `.0agnostic/` content through the a
 
 ---
 
+<!-- section_id: "199ed171-8fea-4009-804b-6dced069927b" -->
 ## Sources
 
 App-specific configuration research informing Diagram 3:

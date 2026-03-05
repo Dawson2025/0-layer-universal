@@ -10,6 +10,7 @@ resource_name: "README.sync-conflict-20260126-102106-IF2WOGZ"
 
 This sublayer has been consolidated into the unified setup sublayer for better organization and discoverability.
 
+<!-- section_id: "b6ad344a-068a-465d-b7f1-e2ed8208d379" -->
 ## Migration Path
 
 All setup documentation is now located in:
@@ -23,6 +24,7 @@ Navigate the file tree by your configuration:
 3. Choose your coding app: `0.07_coding_apps/<app>/`
 4. Continue through all levels to find your specific setup documentation
 
+<!-- section_id: "a524b06a-15de-465c-ab1c-0de7a4123135" -->
 ## Why Consolidate?
 
 - **Single entry point** for all setup docs
@@ -30,6 +32,7 @@ Navigate the file tree by your configuration:
 - **Cross-cutting organization** with `_shared/` folders at every level
 - **Easier maintenance** - one structure instead of 10
 
+<!-- section_id: "4593bfbc-733c-416c-8404-68214bbd475e" -->
 ## Legacy Content Below
 
 The original content of this sublayer is preserved below for reference, but should not be updated. All new setup documentation should go into the consolidated sublayer.
@@ -40,6 +43,7 @@ The original content of this sublayer is preserved below for reference, but shou
 
 **Purpose**: Setup for general apps (non-AI), browsers, and browser extensions used across projects.
 
+<!-- section_id: "5f97d7ce-78bb-4bee-970d-3cc3092ae41c" -->
 ## Notes
 - Keep OS-specific details in `sub_layer_0_05_os_setup/`.
 - Keep AI app install/config in `sub_layer_0_09_ai_apps_tools_setup/`.

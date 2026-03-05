@@ -13,6 +13,7 @@ resource_name: "US-01_manager_knows_direct_reports"
 **I want** the manager to know exactly which stages and child entities it manages,
 **So that** it can delegate to the right agent without me having to explain the project structure.
 
+<!-- section_id: "4fbc6d71-9e66-4317-81b0-e0573b9b94c0" -->
 ### What Happens
 
 1. User says "manage this project" or "what can we work on?"
@@ -21,6 +22,7 @@ resource_name: "US-01_manager_knows_direct_reports"
 4. Manager can propose delegation options: "We can work on stage 02 research or the memory system sub-feature"
 5. User picks a direction and the manager delegates accordingly
 
+<!-- section_id: "4b8e6720-4401-486f-8b78-60332889c534" -->
 ### Acceptance Criteria
 
 - Manager's 0AGNOSTIC.md contains a children table and a stage overview table

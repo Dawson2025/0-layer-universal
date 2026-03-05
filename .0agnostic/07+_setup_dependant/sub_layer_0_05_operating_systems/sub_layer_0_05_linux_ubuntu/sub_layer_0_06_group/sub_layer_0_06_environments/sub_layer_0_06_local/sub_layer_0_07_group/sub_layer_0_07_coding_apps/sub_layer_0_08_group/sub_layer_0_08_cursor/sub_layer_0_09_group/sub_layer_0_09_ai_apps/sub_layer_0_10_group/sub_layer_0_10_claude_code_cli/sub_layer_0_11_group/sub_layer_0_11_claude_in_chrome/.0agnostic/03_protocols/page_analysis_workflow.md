@@ -5,10 +5,12 @@ resource_name: "page_analysis_workflow"
 ---
 # Page Analysis Workflow
 
+<!-- section_id: "c4ab4635-f821-4540-a311-ce89f1328ace" -->
 ## Overview
 
 This workflow describes the standardized process for analyzing web pages using the Claude in Chrome MCP server. Page analysis involves understanding page structure, identifying key elements, and extracting meaningful information for decision-making.
 
+<!-- section_id: "8e0e4de2-6b9f-444a-90b0-fe2758915d41" -->
 ## Use Cases
 
 - Understanding page layout and structure
@@ -18,8 +20,10 @@ This workflow describes the standardized process for analyzing web pages using t
 - Preparing for form automation
 - Content verification
 
+<!-- section_id: "6f61f9f0-55e7-45f4-8cc4-f126f72eb6e1" -->
 ## Workflow Steps
 
+<!-- section_id: "7971044e-1bfb-459f-b62e-a2161b68829e" -->
 ### Step 1: Initialize Tab Context
 
 Before any page analysis, establish the tab context to get valid tab IDs.
@@ -36,6 +40,7 @@ result = mcp__claude-in-chrome__tabs_context_mcp(createIfEmpty=True)
 
 **Failure Handling**: If no tabs exist and createIfEmpty is True, a new window with MCP tab group will be created.
 
+<!-- section_id: "428346e6-799f-4f9b-bfaf-295705924bdb" -->
 ### Step 2: Navigate to Target Page (if needed)
 
 If the target page is not already loaded, navigate to it.
@@ -59,6 +64,7 @@ mcp__claude-in-chrome__computer(
 )
 ```
 
+<!-- section_id: "20fc615f-96bd-4b96-8fb3-43ae01097d5c" -->
 ### Step 3: Capture Initial State
 
 Take a screenshot to visually understand the current page state.
@@ -77,6 +83,7 @@ mcp__claude-in-chrome__computer(
 - Identifying visual elements not captured in accessibility tree
 - Debugging layout issues
 
+<!-- section_id: "8a9d020f-b9ca-4f3b-97d2-fd9eac642103" -->
 ### Step 4: Get Accessibility Tree
 
 The accessibility tree provides structural understanding of the page.
@@ -112,6 +119,7 @@ mcp__claude-in-chrome__read_page(
 )
 ```
 
+<!-- section_id: "128052d7-0f49-4cc6-b17a-e0b6dba8f6fd" -->
 ### Step 5: Find Specific Elements
 
 Use natural language queries to locate elements of interest.
@@ -138,6 +146,7 @@ mcp__claude-in-chrome__find(
 
 **Result Interpretation**: Returns up to 20 matching elements with reference IDs that can be used in subsequent actions.
 
+<!-- section_id: "20fcc7e6-98aa-4505-9bc1-66dcc0e750e7" -->
 ### Step 6: Extract Page Text
 
 Get raw text content for content analysis.
@@ -155,6 +164,7 @@ mcp__claude-in-chrome__get_page_text(
 - Documentation pages
 - Content verification
 
+<!-- section_id: "c0a23b2e-ffa3-4b5a-aaf1-d0fc1298c742" -->
 ### Step 7: Execute Custom Analysis (Optional)
 
 Use JavaScript for custom analysis needs.
@@ -182,6 +192,7 @@ mcp__claude-in-chrome__javascript_tool(
 )
 ```
 
+<!-- section_id: "f33e07d2-3eec-447c-8820-b65160d427b6" -->
 ### Step 8: Monitor Console and Network (Optional)
 
 For debugging and deeper analysis.
@@ -200,8 +211,10 @@ mcp__claude-in-chrome__read_network_requests(
 )
 ```
 
+<!-- section_id: "4b7781e9-bb79-4ea9-bede-7ec69979f7ae" -->
 ## Analysis Patterns
 
+<!-- section_id: "e5283bed-424d-4e36-b735-c94343e79649" -->
 ### Pattern 1: Form Analysis
 
 ```python
@@ -221,6 +234,7 @@ javascript_tool(
 )
 ```
 
+<!-- section_id: "95b93fba-00df-48e2-bb9e-068ccd06b9a3" -->
 ### Pattern 2: Navigation Structure Analysis
 
 ```python
@@ -236,6 +250,7 @@ javascript_tool(
 )
 ```
 
+<!-- section_id: "26ea9d28-1cad-4e3c-86a2-386afd0fde1f" -->
 ### Pattern 3: Content Structure Analysis
 
 ```python
@@ -253,6 +268,7 @@ javascript_tool(
 find(query="main content area", tabId=TAB_ID)
 ```
 
+<!-- section_id: "118547d4-ef38-4a95-a111-3f75b7f6217f" -->
 ### Pattern 4: Accessibility Audit
 
 ```python
@@ -274,6 +290,7 @@ javascript_tool(
 )
 ```
 
+<!-- section_id: "f7fea295-b8ac-4d7d-a55a-687d5ae32cf7" -->
 ## Output Documentation Template
 
 After completing analysis, document findings in this format:
@@ -311,8 +328,10 @@ After completing analysis, document findings in this format:
 - [suggestions for automation or improvements]
 ```
 
+<!-- section_id: "c3d8e06a-3983-4dbf-b68d-c7d6014ea405" -->
 ## Error Handling
 
+<!-- section_id: "56095199-6a8b-4343-8634-d027cfc60545" -->
 ### Page Not Loaded
 ```python
 # Verify page loaded
@@ -324,6 +343,7 @@ result = javascript_tool(
 # Should return "complete"
 ```
 
+<!-- section_id: "2083d922-7832-4c27-a4c2-8dccfa4f9dc5" -->
 ### Timeout on Large Pages
 ```python
 # Use depth limiting for large pages
@@ -333,6 +353,7 @@ read_page(tabId=TAB_ID, depth=3)
 read_page(tabId=TAB_ID, ref_id="ref_5")  # Start from specific element
 ```
 
+<!-- section_id: "9688f411-8268-47d4-a50c-6c002786f7ad" -->
 ### Dynamic Content
 ```python
 # Wait for dynamic content to load
@@ -342,6 +363,7 @@ computer(action="wait", duration=3, tabId=TAB_ID)
 # (requires monitoring approach)
 ```
 
+<!-- section_id: "63e981f1-8e20-4dae-a7bc-b3198dff677d" -->
 ## Best Practices
 
 1. **Always get tab context first** - Stale tab IDs cause failures

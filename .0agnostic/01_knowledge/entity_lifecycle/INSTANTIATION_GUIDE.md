@@ -5,6 +5,7 @@ resource_name: "INSTANTIATION_GUIDE"
 ---
 # Entity Instantiation Guide
 
+<!-- section_id: "7ae6f7fe-cfae-4087-90b1-362642bad9a1" -->
 ## Overview
 
 This guide explains how to create new entities in the layer-stage system.
@@ -22,8 +23,10 @@ That document is the **single source of truth** for:
 - Post-instantiation checklist
 - All workflow details
 
+<!-- section_id: "5acf9933-708d-4fb0-a730-1aad0638a64b" -->
 ## Quick Decision Tree
 
+<!-- section_id: "2c99b782-6e83-4818-a2e6-365e7bb8666d" -->
 ### Creating a... | Goes in... | Layer N
 |---|---|---|
 | New project | `layer_1/layer_1_projects/` | 1 |
@@ -32,6 +35,7 @@ That document is the **single source of truth** for:
 | New research project | `layer_-1_research/` | -1 |
 | New research feature | `<research>/layer_0_group/layer_0_features/` | 0 |
 
+<!-- section_id: "f2c16d3e-8112-4718-8ae6-3f1cb2cc62c9" -->
 ## Key Architectural Pattern
 
 - **`layer_N_group/`** (entity's own internal structure): Contains ONLY `layer_N_00_layer_registry/` + `layer_N_99_stages/`
@@ -39,6 +43,7 @@ That document is the **single source of truth** for:
 
 **⚠️ CRITICAL**: Child-organizing containers (features, projects, components) go INSIDE `layer_N+1_group/`, NEVER inside `layer_N_group/`.
 
+<!-- section_id: "c3f4465d-3e3a-4e86-a197-8bd15f4f3ea2" -->
 ## Instantiation Workflow
 
 1. **Read the canonical source** (link above) for complete instructions
@@ -49,6 +54,7 @@ That document is the **single source of truth** for:
 6. **Run agnostic-sync.sh** on all 0AGNOSTIC.md files
 7. **Validate** with validate-entity.sh
 
+<!-- section_id: "af9b1d45-17c6-4b23-a511-59c7a3f97012" -->
 ## 0AGNOSTIC.md Template
 
 Each entity needs a 0AGNOSTIC.md defining its identity. Basic structure:
@@ -71,8 +77,10 @@ Load this context when:
 
 **For complete 0AGNOSTIC.md template**: See entity_structure.md → Required Files
 
+<!-- section_id: "402ccd39-6303-436e-bffe-5ae6458df6ac" -->
 ## Type-Specific Examples
 
+<!-- section_id: "07692ee1-6d3a-4ea2-9e30-af5574994392" -->
 ### Creating a New Project (layer_1)
 
 1. **Location**: `layer_1/layer_1_projects/layer_1_project_<name>/`
@@ -86,6 +94,7 @@ You are an agent at **Layer 1** (Project), **Project**: <name>.
 - **Children**: `layer_2_group/layer_2_features/`
 ```
 
+<!-- section_id: "407b16bc-b8d5-4d56-9a2e-c058667e059c" -->
 ### Creating a New Feature (layer_2+)
 
 1. **Location**: `<project>/layer_2_group/layer_2_features/layer_2_feature_<name>/`
@@ -99,6 +108,7 @@ You are an agent at **Layer 2** (Feature), **Feature**: <name>.
 - **Children**: `layer_3_group/layer_3_components/` (if any)
 ```
 
+<!-- section_id: "1aa63765-22c5-45d6-a2e1-bfc332396b1b" -->
 ### Creating a New Research Project (layer_-1)
 
 1. **Location**: `layer_-1_research/layer_-1_<name>/`
@@ -109,11 +119,13 @@ You are an agent at **Layer 2** (Feature), **Feature**: <name>.
 - **Scope**: Research, design, planning only. Does not implement in production.
 ```
 
+<!-- section_id: "29fbe5c4-a91c-4d84-9fba-18958b4e7313" -->
 ### Creating a New Stage
 
 1. **Location**: `<entity>/layer_N_group/layer_N_99_stages/stage_N_XX_<name>/`
 2. **Complete 12-stage example**: See entity_structure.md → Stage Structure
 
+<!-- section_id: "82ac852d-b43c-4d94-8b05-422c04a81235" -->
 ## Deprecated Patterns
 
 These patterns are **no longer used**. If found, migrate per entity_structure.md:

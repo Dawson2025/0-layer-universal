@@ -6,11 +6,14 @@ resource_name: "init-command"
 # Universal AI Agent Initialization System
 *TD0 Universal: /init Command Protocol*
 
+<!-- section_id: "3caa5938-4986-4633-b520-08a832ab74e1" -->
 ## Purpose
 The `/init` command provides complete project context to any AI coding agent by loading the Trickle-Down documentation hierarchy in the correct order.
 
+<!-- section_id: "f4e015cf-2943-46f4-b2c6-e65d5304b741" -->
 ## Command Specification
 
+<!-- section_id: "6dd6ce26-f711-4578-b3d8-991c7edc5f91" -->
 ### Usage
 ```
 /init [optional: specific-focus-area]
@@ -21,6 +24,7 @@ The `/init` command provides complete project context to any AI coding agent by 
 - `/init authentication` - Full context + focus on authentication feature
 - `/init testing` - Full context + focus on testing workflows
 
+<!-- section_id: "2300e98d-3067-43ac-b908-ed932f0e69c1" -->
 ### Loading Sequence
 
 #### Step 1: Agent Declaration Protocol
@@ -107,8 +111,10 @@ Ready for: [Spec Kit phase or development task]
 Session Goals: [based on focus area or ask user]
 ```
 
+<!-- section_id: "6ca947cd-20eb-4817-85e9-2175f7d9f062" -->
 ## Agent-Specific Implementation
 
+<!-- section_id: "3378c134-ea50-484d-ba6d-ed36b9984f77" -->
 ### For Warp AI Assistant
 **Tools to use during /init**:
 - `read_any_files` - Load all documentation in sequence
@@ -116,12 +122,14 @@ Session Goals: [based on focus area or ask user]
 - `create_todo_list` - Set up session goals based on focus area
 - `search_codebase` - Understand existing implementation if needed
 
+<!-- section_id: "43fe6ddd-550e-4323-b3c1-144ee7a3f415" -->
 ### For Claude Code Agent  
 **Integration points**:
 - VS Code workspace loading
 - Extension configuration verification
 - File tree navigation for documentation reading
 
+<!-- section_id: "2aca9f25-86e8-4b48-a012-fdb91acc5d96" -->
 ### For Cursor Agent
 **IDE-specific features**:
 - Project file indexing
@@ -135,14 +143,17 @@ Session Goals: [based on focus area or ask user]
 - Avoid `run_terminal_cmd` for Python scripts due to known hanging issues
 - **MANDATORY**: Read `docs/0_context/0_universal_instructions/terminal-tool-replacement.md` for complete terminal tool replacement protocol
 
+<!-- section_id: "18a2960f-de3e-40cf-8ac1-88d3757a3c15" -->
 ### For GitHub Copilot Agent
 **Preparation steps**:
 - Repository context synchronization
 - Code completion model warming
 - Documentation embedding preparation
 
+<!-- section_id: "57a7fa13-73f3-437d-88df-07444544d6d7" -->
 ## Error Handling
 
+<!-- section_id: "5b9051ec-56e4-4adb-a723-629cda9479d0" -->
 ### Missing Documentation
 **If any TD file is missing**:
 1. Report which files are missing
@@ -150,6 +161,7 @@ Session Goals: [based on focus area or ask user]
 3. Note gaps in context loading
 4. Suggest creation of missing documentation
 
+<!-- section_id: "f14820cc-24a7-4737-b5eb-781def01cd15" -->
 ### Environment Issues
 **If WSL Ubuntu verification fails**:
 1. Report environment mismatch
@@ -157,6 +169,7 @@ Session Goals: [based on focus area or ask user]
 3. Reference TD0.5 environment documentation
 4. Suggest environment switching if needed
 
+<!-- section_id: "16b61be0-329f-49da-a628-ca5b768515c6" -->
 ### Focus Area Not Found
 **If specified focus area doesn't exist**:
 1. List available feature areas

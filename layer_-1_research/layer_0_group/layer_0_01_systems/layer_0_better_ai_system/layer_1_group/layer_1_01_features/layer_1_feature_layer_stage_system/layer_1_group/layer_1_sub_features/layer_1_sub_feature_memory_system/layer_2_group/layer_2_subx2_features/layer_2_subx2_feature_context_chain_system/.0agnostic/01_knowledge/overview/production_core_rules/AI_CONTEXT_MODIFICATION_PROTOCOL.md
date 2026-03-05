@@ -5,6 +5,7 @@ resource_name: "AI_CONTEXT_MODIFICATION_PROTOCOL"
 ---
 # AI Context Modification Protocol
 
+<!-- section_id: "1f9dadab-354a-4795-bbea-26d9c4dc613f" -->
 ## Rule
 
 Before modifying ANY files within the AI context system (sublayers, stages, rules, prompts, knowledge system), the AI MUST:
@@ -32,6 +33,7 @@ Before modifying ANY files within the AI context system (sublayers, stages, rule
    - Change status to "Executed" in SUMMARY.md
    - Mark approval checkboxes as complete
 
+<!-- section_id: "50eba360-84a6-40a9-976d-51f074cf8c5d" -->
 ## Scope
 
 This rule applies to modifications in:
@@ -47,6 +49,7 @@ This rule applies to modifications in:
 | `*_knowledge_system/` | Knowledge system directories |
 | `status.json` | Stage status files |
 
+<!-- section_id: "1b81126d-6d88-4230-b651-5ac420fa85e6" -->
 ## Rationale
 
 - **Visibility**: User can see exactly what will change before it happens
@@ -54,6 +57,7 @@ This rule applies to modifications in:
 - **Intentionality**: Prevents accidental or unintended modifications
 - **Auditability**: Creates a clear record of approved changes
 
+<!-- section_id: "61105061-3e2f-4e7e-84d4-0a00cf6aabfb" -->
 ## Diagram Requirements
 
 The diagram MUST include:
@@ -63,6 +67,7 @@ The diagram MUST include:
 3. **Content summary** - Brief description of new file contents
 4. **Action type** - Mark files as NEW, UPDATE, or DELETE
 
+<!-- section_id: "74e6d871-e62d-4085-a8ee-0ee57146c228" -->
 ## Example
 
 ```
@@ -79,8 +84,10 @@ Content:
 - Rationale
 ```
 
+<!-- section_id: "98391a5a-5062-4213-ba6b-2f35c1128d44" -->
 ## Date Added
 2026-01-26
 
+<!-- section_id: "c5cb0e0f-e34b-4e42-adc8-490e354c3b7a" -->
 ## Related Issues
 - Yoga Pro 9 speaker audio fix documentation request

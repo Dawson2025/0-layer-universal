@@ -5,16 +5,20 @@ resource_name: "selective_jsonld_navigation"
 ---
 # Selective JSON-LD Graph Navigation — Research Findings
 
+<!-- section_id: "874443cb-d67f-4cc1-82d0-03d3cf91fa45" -->
 ## Date: 2026-02-07
 
+<!-- section_id: "aff53787-6a69-4b75-9cef-7e86cef9d15e" -->
 ## Summary
 
 Agents CAN parse JSON-LD files as a graph and load only the nodes they need. Using `jq` (available on the system), selective navigation reduces context load to **2-3% of the full file**. This directly addresses both Problem 4 (context efficiency) and Problem 3 (skill invocation precision).
 
 ---
 
+<!-- section_id: "d4889247-5977-4f54-87bc-1d3d427b25b2" -->
 ## Demonstration: `layer_0_orchestrator.gab.jsonld` (701 lines, 28,973 bytes)
 
+<!-- section_id: "faebe41f-3cfc-4dcc-9d51-643ecca9bbd6" -->
 ### Step 1: Read the Index (2.5% of file)
 
 ```bash
@@ -32,6 +36,7 @@ Returns 29 node IDs in 717 bytes:
 ... (29 total)
 ```
 
+<!-- section_id: "dc899771-bb54-4e13-89b5-493eeaf558cb" -->
 ### Step 2: Navigate to a Specific Node (2.8%)
 
 ```bash
@@ -45,6 +50,7 @@ Returns just that node's full definition (816 bytes), including:
 - Handoff document paths
 - Mode transitions
 
+<!-- section_id: "e6dd5742-7dc5-4ef0-bbf6-f981d3dc7d4e" -->
 ### Step 3: Filter by Type (1.8%)
 
 ```bash
@@ -53,6 +59,7 @@ jq '."@graph"[] | select(."@type" == "gab:Mode") | {id: ."@id", purpose: .purpos
 
 Returns just the 5 modes with their purposes (521 bytes).
 
+<!-- section_id: "b4a9c21a-5edc-4c64-b0b0-df81b3d473d7" -->
 ### Step 4: Get State Actors (~1.4%)
 
 ```bash
@@ -63,6 +70,7 @@ Returns 5 state actors with purposes (~400 bytes).
 
 ---
 
+<!-- section_id: "19f54ccb-fa33-46f2-a102-e571bdbf4be3" -->
 ## Efficiency Comparison
 
 | Loading Strategy | Bytes | Lines | % of Full |
@@ -78,8 +86,10 @@ A typical interaction (read index + load relevant mode + load relevant state act
 
 ---
 
+<!-- section_id: "a333b6c2-8e05-4e41-a436-b1c9e515a773" -->
 ## Three Implementation Approaches
 
+<!-- section_id: "52045c6b-5ce9-40c1-9b1a-dea02a6e0378" -->
 ### Approach A: jq via Bash Tool (Available NOW)
 
 The agent uses Bash to call jq queries directly:
@@ -98,6 +108,7 @@ jq '."@graph"[] | select(."@id" == "orch:DelegationMode") | .constraints' /path/
 **Pros**: Works today, no setup needed, jq already installed
 **Cons**: Agent needs to know jq syntax, Bash tool overhead per query
 
+<!-- section_id: "c3f8451b-5d67-4b5c-8a6c-aacafcbe6f0c" -->
 ### Approach B: Custom MCP Server (Needs Building)
 
 A dedicated `aalang-graph` MCP server that exposes clean tools:
@@ -113,6 +124,7 @@ Tool: aalang_get_state_actors(file_path) → returns all state actors
 **Pros**: Clean API, no jq knowledge needed, could cache parsed graphs
 **Cons**: Needs development, another MCP server to maintain
 
+<!-- section_id: "e4ba80e7-c823-4cbb-9595-5f395403e5dc" -->
 ### Approach C: Read Tool with Line Offsets (Available NOW)
 
 If JSON-LD files follow a consistent structure, the agent can use the Read tool with `offset` and `limit` to read just sections:
@@ -124,12 +136,14 @@ Read(file_path, offset=42, limit=30)  # Lines 42-72: ReceiveMode definition
 **Pros**: No extra tools needed
 **Cons**: Fragile (line numbers change), requires knowing the structure beforehand
 
+<!-- section_id: "d48498d8-de8b-4cf8-8e01-934a5390dc1d" -->
 ### Recommended: Start with A (jq), evolve to B (MCP server)
 
 jq works today and proves the concept. If it's valuable, build the MCP server for a cleaner interface.
 
 ---
 
+<!-- section_id: "55d71a7a-3082-4eb1-a418-9b532e66bcec" -->
 ## Application to Problem 3: Skill Invocation
 
 **How selective graph navigation fixes vague skill descriptions:**
@@ -158,6 +172,7 @@ The JSON-LD constraints become the precise WHEN/WHEN NOT conditions that the ski
 
 ---
 
+<!-- section_id: "29355631-5b1b-4b15-a3e6-9e5c59531f09" -->
 ## Application to Problem 4: Context Efficiency
 
 Instead of loading 701 lines of orchestrator definition into static context (via CLAUDE.md), the agent loads:
@@ -168,6 +183,7 @@ Instead of loading 701 lines of orchestrator definition into static context (via
 
 ---
 
+<!-- section_id: "2df8d8e4-820c-42e4-845e-33dba6961237" -->
 ## Next Steps
 
 1. **Test with real scenarios**: Have an agent use jq to navigate the orchestrator during an actual task

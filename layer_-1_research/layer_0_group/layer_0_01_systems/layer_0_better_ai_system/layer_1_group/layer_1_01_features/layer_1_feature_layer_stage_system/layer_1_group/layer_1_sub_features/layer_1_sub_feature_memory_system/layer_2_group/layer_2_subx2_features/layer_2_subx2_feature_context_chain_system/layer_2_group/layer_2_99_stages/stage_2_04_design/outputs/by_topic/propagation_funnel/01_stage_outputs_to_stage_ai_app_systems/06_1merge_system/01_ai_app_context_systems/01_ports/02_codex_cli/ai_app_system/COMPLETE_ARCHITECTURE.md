@@ -10,6 +10,7 @@ resource_name: "COMPLETE_ARCHITECTURE"
 
 ---
 
+<!-- section_id: "898ad460-49da-4276-8dc1-398dfadeac38" -->
 ## System Overview
 
 Codex combines **native mechanisms** (what it provides) with **application-implemented strategy** (what you provide):
@@ -48,8 +49,10 @@ Codex combines **native mechanisms** (what it provides) with **application-imple
 
 ---
 
+<!-- section_id: "bf0e1f98-ff45-42eb-9c0f-9add22041949" -->
 ## Context Loading Pipeline
 
+<!-- section_id: "3967a76a-79ad-43a4-887e-c87135b51c53" -->
 ### Step 1: Workspace Initialization
 
 **Codex Does**:
@@ -61,6 +64,7 @@ Codex combines **native mechanisms** (what it provides) with **application-imple
 - Linked project via `codex init` (GitHub or local)
 - Created initial config.toml (or relying on defaults)
 
+<!-- section_id: "95be55ad-b8e7-44b0-8568-5deaf2faa705" -->
 ### Step 2: Load Global AGENTS.md
 
 **Codex Does**:
@@ -72,6 +76,7 @@ Codex combines **native mechanisms** (what it provides) with **application-imple
 - Written `~/.codex/AGENTS.md` with universal instructions
 - Defined global context and resources
 
+<!-- section_id: "4a499e3d-b299-4e55-b12a-d9836fcf31e9" -->
 ### Step 3: Load Project AGENTS.md
 
 **Codex Does**:
@@ -83,6 +88,7 @@ Codex combines **native mechanisms** (what it provides) with **application-imple
 - Written `/project/AGENTS.md` with project-specific instructions
 - Defined project tech stack, conventions, workspace config
 
+<!-- section_id: "7fec1f09-83e6-4b88-bca2-bb59a3a171b0" -->
 ### Step 4: Load Directory-Specific AGENTS.md
 
 **Codex Does**:
@@ -94,6 +100,7 @@ Codex combines **native mechanisms** (what it provides) with **application-imple
 - Create AGENTS.md at subdirectory level (optional)
 - Document component-specific context
 
+<!-- section_id: "020d5467-6f78-4ce5-b3bc-e56227d9d85a" -->
 ### Step 5: Load config.toml Settings
 
 **Codex Does**:
@@ -105,6 +112,7 @@ Codex combines **native mechanisms** (what it provides) with **application-imple
 - Configure appropriate settings per project
 - Choose model (opus/sonnet/haiku) and reasoning_effort
 
+<!-- section_id: "f30b1173-f9ed-4505-9ba9-cdb206c6d8f8" -->
 ### Step 6: Restore Session (if resuming)
 
 **Codex Does**:
@@ -117,6 +125,7 @@ Codex combines **native mechanisms** (what it provides) with **application-imple
 - Decide to resume via `codex resume [session-id]`
 - Maintain session state (no cleanup between turns)
 
+<!-- section_id: "3e0d402f-488d-4feb-89fb-f05f4ea1c1e6" -->
 ### Step 7: Prepare for User Interaction
 
 **Codex Does**:
@@ -132,8 +141,10 @@ Codex combines **native mechanisms** (what it provides) with **application-imple
 
 ---
 
+<!-- section_id: "d498f56c-969b-4cc2-bbd2-80f56325356f" -->
 ## On Each Turn
 
+<!-- section_id: "4efbcc5a-cf2a-496e-9607-e67b5d3dfe7b" -->
 ### What Codex Does
 
 1. **Parse** user message
@@ -145,6 +156,7 @@ Codex combines **native mechanisms** (what it provides) with **application-imple
 7. **Save** turn to session JSONL
 8. **Report** token usage (if requested via `/context` command)
 
+<!-- section_id: "f3b42339-96a4-41bf-88d9-0aaa3c8fa19b" -->
 ### What You Do
 
 1. **Write** natural requests
@@ -156,6 +168,7 @@ Codex combines **native mechanisms** (what it provides) with **application-imple
 
 ---
 
+<!-- section_id: "4db87ea5-5d1c-4b6e-946e-b41a210c86c8" -->
 ## Context Composition (What's Actually in Context)
 
 At any point, your context window contains:
@@ -186,8 +199,10 @@ At any point, your context window contains:
 
 ---
 
+<!-- section_id: "fd05bfd2-c845-44df-b583-d4dd5baf7966" -->
 ## AGENTS.md Organization Strategy
 
+<!-- section_id: "9feef7e4-dfa2-42db-8e52-105063ceeb5d" -->
 ### Structure
 
 ```markdown
@@ -222,8 +237,10 @@ At any point, your context window contains:
 
 ---
 
+<!-- section_id: "237c2dd8-17de-4c99-8355-e9de66d44817" -->
 ## config.toml Organization Strategy
 
+<!-- section_id: "94f97555-613d-42e3-acf6-73ebc83d0a3b" -->
 ### Structure
 
 ```toml
@@ -244,6 +261,7 @@ max_tokens = 8192
 
 **Key Principle**: Global defaults, project-specific overrides.
 
+<!-- section_id: "b3e6f9a7-d788-4858-8ef9-09f5cd6c973c" -->
 ### Settings You'll Adjust
 
 | Setting | Effect | When to Change |
@@ -257,8 +275,10 @@ max_tokens = 8192
 
 ---
 
+<!-- section_id: "fd0ee7e7-0308-4176-a090-e5ae8adc251e" -->
 ## IDE Extension Integration
 
+<!-- section_id: "87009826-a62a-40c7-a709-28c2ede4b89c" -->
 ### VS Code Extension
 
 **Setup**:
@@ -273,6 +293,7 @@ max_tokens = 8192
 - Chat sidebar
 - Command palette (quick actions)
 
+<!-- section_id: "cab00f8e-45b5-4b05-b341-57f1fe7d1e96" -->
 ### Cursor IDE
 
 **Setup**:
@@ -287,6 +308,7 @@ max_tokens = 8192
 - Memory Bank (persistent notes)
 - Agent interface (agentic execution)
 
+<!-- section_id: "4d22a5cb-ceff-4b88-ab9b-a0fb16ce4fbf" -->
 ### Windsurf IDE
 
 **Setup**:
@@ -301,8 +323,10 @@ max_tokens = 8192
 
 ---
 
+<!-- section_id: "19ebc3d0-92c7-4d64-ac69-d7e1dd0a7003" -->
 ## Session Persistence Flow
 
+<!-- section_id: "c4952e2f-d6fa-4093-8926-c84eb6e6c3cd" -->
 ### Creating Sessions
 
 ```
@@ -316,6 +340,7 @@ Session contains:
   - state/ (if model supports checkpoints)
 ```
 
+<!-- section_id: "b61999ba-252a-4dcc-83f1-f692a9ae5928" -->
 ### Resuming Sessions
 
 ```
@@ -328,6 +353,7 @@ Restores conversation context
 Ready to continue from last turn
 ```
 
+<!-- section_id: "c1ea0733-8cd7-42d9-bced-9f4b7ebc2485" -->
 ### Session Cleanup
 
 Sessions persist indefinitely. You manually:
@@ -337,8 +363,10 @@ Sessions persist indefinitely. You manually:
 
 ---
 
+<!-- section_id: "0e870987-9789-46bd-a8bc-9d13b0ffa894" -->
 ## MCP Server Integration
 
+<!-- section_id: "0b7f1bf2-9a40-4999-b9f7-1387246c5a90" -->
 ### When You Need External Tools
 
 ```
@@ -365,8 +393,10 @@ Codex processes and responds
 
 ---
 
+<!-- section_id: "c6ae3e15-92a5-4b9c-b683-3112b78538bf" -->
 ## GitHub Integration
 
+<!-- section_id: "75faacdf-cc58-4e80-8090-5bf68d02ac28" -->
 ### Workspace Sync
 
 **Initialization**:
@@ -386,8 +416,10 @@ Links to GitHub for sync
 
 ---
 
+<!-- section_id: "7d383ad4-44ff-48b2-90d9-248af2a4fd65" -->
 ## Cloud Workspace Platform
 
+<!-- section_id: "d691574a-1194-4615-8ad6-a097e6b76b84" -->
 ### What Syncs to Cloud
 
 **Metadata**:
@@ -399,6 +431,7 @@ Links to GitHub for sync
 - Actual conversation history (unless you opt-in)
 - Code files (stay on local machine)
 
+<!-- section_id: "8aaa91ce-f15a-43e1-92fd-a1c4e9843e52" -->
 ### Cross-Device Resumption
 
 If you log into cloud.codex.ai on another device:
@@ -408,8 +441,10 @@ If you log into cloud.codex.ai on another device:
 
 ---
 
+<!-- section_id: "3dc92ffc-27f0-4762-8bfe-a7198df74175" -->
 ## Model and Reasoning Selection
 
+<!-- section_id: "9b4e89b3-bf12-41c0-b679-bb89d1df5ea0" -->
 ### Model Choice
 
 | Model | Speed | Depth | Cost | Best For |
@@ -423,6 +458,7 @@ If you log into cloud.codex.ai on another device:
 - Standard work → sonnet (5-15 seconds)
 - Complex problems → opus (30+ seconds)
 
+<!-- section_id: "37218acb-c0fe-4cb8-9613-8bdaa81c99c4" -->
 ### Reasoning Effort
 
 | Level | Time | Depth | When to Use |
@@ -435,8 +471,10 @@ If you log into cloud.codex.ai on another device:
 
 ---
 
+<!-- section_id: "449e3ccf-1114-415d-83dd-d1641be0dfa5" -->
 ## Token Management Philosophy
 
+<!-- section_id: "c13cc8bc-039e-4076-95d7-3ea55766b374" -->
 ### Goal: Maximize Quality, Manage Cost
 
 **Token Budgeting**:
@@ -459,8 +497,10 @@ If you log into cloud.codex.ai on another device:
 
 ---
 
+<!-- section_id: "ad4cb411-22fd-44e2-ac39-fbec122484d0" -->
 ## Troubleshooting
 
+<!-- section_id: "417d963a-8e1a-47d3-a650-527e1efb0df1" -->
 ### Codex Seems Confused
 
 **Check**:
@@ -473,6 +513,7 @@ If you log into cloud.codex.ai on another device:
 - Adjust config.toml (maybe use sonnet instead of opus to save cost)
 - Create directory-level AGENTS.md for specific context
 
+<!-- section_id: "3aef2ab3-fa47-46b3-9e2e-6d0e50e5bd7c" -->
 ### Reasoning Effort Not Deep Enough
 
 **Check**:
@@ -485,6 +526,7 @@ If you log into cloud.codex.ai on another device:
 - Switch to sonnet or opus (`model = "codex-sonnet"`)
 - Ask more specific questions (better prompts = better reasoning)
 
+<!-- section_id: "30220208-bad3-48c6-abd6-1b59f332459f" -->
 ### Tokens Running Out Quickly
 
 **Check**:
@@ -498,6 +540,7 @@ If you log into cloud.codex.ai on another device:
 - Switch reasoning_effort to medium (or low for simple work)
 - Use separate sessions for unrelated tasks
 
+<!-- section_id: "aeb21434-4932-4448-ad28-167608f11041" -->
 ### IDE Not Getting Context from Codex
 
 **Check**:
@@ -512,6 +555,7 @@ If you log into cloud.codex.ai on another device:
 
 ---
 
+<!-- section_id: "3b322e5d-6625-4b16-bbc5-1e463234707c" -->
 ## Summary: The System Works When
 
 ✅ **AGENTS.md is accurate** (reflects current architecture, rules, resources)

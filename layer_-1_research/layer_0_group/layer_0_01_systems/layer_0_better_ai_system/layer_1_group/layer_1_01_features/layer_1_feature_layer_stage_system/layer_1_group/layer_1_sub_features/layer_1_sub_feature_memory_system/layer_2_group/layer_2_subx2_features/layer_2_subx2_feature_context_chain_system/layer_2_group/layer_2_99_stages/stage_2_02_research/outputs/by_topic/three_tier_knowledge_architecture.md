@@ -5,6 +5,7 @@ resource_name: "three_tier_knowledge_architecture"
 ---
 # Three-Tier Knowledge Architecture
 
+<!-- section_id: "cf6db278-ec63-4a1e-b0aa-84c05cbae6b5" -->
 ## Source
 
 This document is a reference copy pointing to the primary research in the memory system.
@@ -15,6 +16,7 @@ This document is a reference copy pointing to the primary research in the memory
 
 ---
 
+<!-- section_id: "b5a39386-0aa3-4dbc-82ef-6fec1e24df2a" -->
 ## Summary
 
 Knowledge in the layer-stage system is organized into three tiers:
@@ -25,6 +27,7 @@ Knowledge in the layer-stage system is organized into three tiers:
 | **2. Distilled** | `.0agnostic/knowledge/` | Actionable summaries, principles, decisions | On-demand (entering entity) |
 | **3. Full** | `stage_*/outputs/` | Complete research, designs, raw analysis | On-demand (need detail) |
 
+<!-- section_id: "c7648a7f-e181-4f5d-a960-ca2d25cb5447" -->
 ### Key Rules
 
 1. **Knowledge files are NOT copies** — they're distilled summaries that reference stage outputs
@@ -33,11 +36,13 @@ Knowledge in the layer-stage system is organized into three tiers:
 4. **Consolidation at stage boundaries** — raw findings become distilled knowledge when a stage completes
 5. **Directional flow**: stages → knowledge → pointers (never upward)
 
+<!-- section_id: "7b31ac68-212e-4aa9-858a-38c3cc989cba" -->
 ### Compression Example
 
 19 research files (~5,000 lines) → 5 distilled knowledge files (~260 lines) = 19:1 ratio.
 Agent reads 260 lines for competence, 5,000 lines only when specific details needed.
 
+<!-- section_id: "c717e488-b175-4b6d-bb12-0d99f582dfec" -->
 ### Brain Analogy
 
 - Tier 3 (stage outputs) = Hippocampus (detailed episodic records)
@@ -47,6 +52,7 @@ Agent reads 260 lines for competence, 5,000 lines only when specific details nee
 
 ---
 
+<!-- section_id: "eb206f29-ac67-4c13-b44a-e44b6c33482a" -->
 ## Applicability to Context Chain System
 
 This architecture directly applies to how the context chain system organizes its own knowledge:

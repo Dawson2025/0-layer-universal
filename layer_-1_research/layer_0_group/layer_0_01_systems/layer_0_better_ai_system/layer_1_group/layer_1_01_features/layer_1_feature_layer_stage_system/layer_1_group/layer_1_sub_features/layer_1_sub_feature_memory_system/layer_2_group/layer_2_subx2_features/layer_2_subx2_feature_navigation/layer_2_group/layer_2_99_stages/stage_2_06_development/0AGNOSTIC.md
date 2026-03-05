@@ -6,6 +6,7 @@ resource_name: "0AGNOSTIC"
 ---
 # navigation — Stage 06: development
 
+<!-- section_id: "8e165bd1-5b5b-4cf9-850e-d71203122780" -->
 ## Identity
 
 stage_id: "e939d76c-f599-4814-b22a-71fd5056ab43"
@@ -16,5 +17,6 @@ Stage 06 (development) for the navigation research sub-feature.
 - **Parent**: `../../0AGNOSTIC.md`
 - **Purpose**: Implement solutions
 
+<!-- section_id: "7066293e-219f-4b0e-9a1c-fc9f69a50b4d" -->
 ## Triggers
 Load when working in this stage directory.

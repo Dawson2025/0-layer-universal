@@ -11,12 +11,14 @@ resource_name: "06_source_of_truth_to_avenue_flow"
 
 ---
 
+<!-- section_id: "d0b4dfa4-0462-4e0a-8b22-8c660e882e7c" -->
 ## Overview
 
 The `.0agnostic/` numbering is not arbitrary — it encodes the information flow from source to delivery. This document defines the holistic context ordering.
 
 ---
 
+<!-- section_id: "209f2af3-41ea-4884-b431-e8c221d3f3dc" -->
 ## The Three Zones
 
 ```
@@ -57,6 +59,7 @@ The `.0agnostic/` numbering is not arbitrary — it encodes the information flow
 
 ---
 
+<!-- section_id: "3100ae64-ebb6-468d-b1f8-2ba0630f35ea" -->
 ## Numbering Encodes the Flow
 
 | Number | Name | Role in Flow |
@@ -77,8 +80,10 @@ The `.0agnostic/` numbering is not arbitrary — it encodes the information flow
 
 ---
 
+<!-- section_id: "4f7762f1-515b-43ec-af92-2f5d52446c4b" -->
 ## Avenue Web: Complete Ordering
 
+<!-- section_id: "869dc1df-d918-4487-895a-d00a3f3d1ebf" -->
 ### File-Based Avenues (01-08)
 
 Ordered by comprehensiveness — how complete a picture each avenue provides:
@@ -94,6 +99,7 @@ Ordered by comprehensiveness — how complete a picture each avenue provides:
 | 07 | Path-Specific Rules | Directory-scoped rules (.claude/rules/) | Low — narrow behavioral constraints |
 | 08 | Hooks | Event-triggered shell scripts | Lowest — single-event responses |
 
+<!-- section_id: "ac7596e2-b23b-4fa8-bc8b-0f4d74487fea" -->
 ### Data-Based Avenues (09-13)
 
 Ordered by comprehensiveness — how complete a data model each avenue maintains:
@@ -106,6 +112,7 @@ Ordered by comprehensiveness — how complete a data model each avenue maintains
 | 12 | Temporal Index | Time-series of events and changes | Low — single dimension (time) |
 | 13 | SHIMI Structures | Per-node optimization primitives | Lowest — individual artifacts |
 
+<!-- section_id: "2cb3aba6-154f-4e6c-9bcb-e5cc7735efe5" -->
 ### The Full Spectrum
 
 ```
@@ -120,8 +127,10 @@ MOST COMPREHENSIVE ◀───────────────────�
 
 ---
 
+<!-- section_id: "bd2ecc1d-ae97-4fe8-acf4-269d0945b82e" -->
 ## Sync Pipelines
 
+<!-- section_id: "9de35620-b9fc-4585-9aa7-a8518f323e43" -->
 ### File-Based Sync (Implemented)
 
 ```
@@ -133,6 +142,7 @@ MOST COMPREHENSIVE ◀───────────────────�
 .0agnostic/04_episodic_memory/ ──episodic-sync.sh──▶ ~/.claude/.../memory/episodic.md
 ```
 
+<!-- section_id: "6daa1453-4680-4ecb-be38-501220806166" -->
 ### Data-Based Sync (Designed, Not Yet Implemented)
 
 ```
@@ -145,6 +155,7 @@ Context chain ──build-shimi.sh───────────────�
 
 ---
 
+<!-- section_id: "1c3c48ec-692f-4e6d-ae86-f1de6b94fa4d" -->
 ## Context Loading Order (Agent Perspective)
 
 When an AI agent enters an entity, it loads context in this order:
@@ -161,6 +172,7 @@ Steps 1-6 work with zero dependencies (file-based only). Step 7 is an optional a
 
 ---
 
+<!-- section_id: "12dc494e-77c8-4857-b3e9-735ec164dbfa" -->
 ## Key Architectural Properties
 
 **Single direction of authority**: Source of truth (01-05) → Avenues (06). Never the reverse.
@@ -171,6 +183,7 @@ Steps 1-6 work with zero dependencies (file-based only). Step 7 is an optional a
 
 ---
 
+<!-- section_id: "9da12ebc-947c-488a-9c3f-098e3b00d7e7" -->
 ## Related Documents
 
 - **Propagation chain**: `03_propagation_chain_architecture.md` (4-layer top-down flow)

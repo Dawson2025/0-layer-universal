@@ -9,6 +9,7 @@ resource_name: "context_loading_sequence"
 
 ---
 
+<!-- section_id: "77f0ebc5-f7f2-42fc-bfd6-4b5a9d1f8217" -->
 ## Overview: Complete Loading Sequence
 
 ```
@@ -156,8 +157,10 @@ resource_name: "context_loading_sequence"
 
 ---
 
+<!-- section_id: "aa6eab70-8513-41cd-8faa-4f1afd503ef9" -->
 ## Example: Specific Directory Loading
 
+<!-- section_id: "0819ebeb-6ec5-4709-ae45-c9332e4b287c" -->
 ### Working Directory: `.../layer_0_group/`
 
 ```
@@ -190,6 +193,7 @@ ORDER   SOURCE                                          CONTENT
         • .claude/schema/*.jsonld                       Type definitions
 ```
 
+<!-- section_id: "3eb3f89c-ab82-49dd-ab96-c1052742f265" -->
 ### Working Directory: `~/` (Minimal Context)
 
 ```
@@ -215,6 +219,7 @@ Note: Much less context! No layer-stage framework, no project conventions.
 
 ---
 
+<!-- section_id: "51d10dcb-7043-4af6-97ea-ae3b61c08632" -->
 ## Context Loading Summary Table
 
 | Phase | Steps | Source | Auto-loaded? | User Control? |

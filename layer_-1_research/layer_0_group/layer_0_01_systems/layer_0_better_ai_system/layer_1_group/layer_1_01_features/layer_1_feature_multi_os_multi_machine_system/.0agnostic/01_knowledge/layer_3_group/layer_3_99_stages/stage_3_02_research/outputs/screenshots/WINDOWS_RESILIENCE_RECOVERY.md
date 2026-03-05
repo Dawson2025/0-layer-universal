@@ -11,12 +11,14 @@ resource_name: "WINDOWS_RESILIENCE_RECOVERY"
 
 ---
 
+<!-- section_id: "ab4ac0ca-57ab-4c10-9d45-01d98513a0b3" -->
 ## Overview
 
 This document describes a Murphy's Law resilient recovery system for the Windows laptop (dual boot with Linux). The goal is to ensure that **no matter what breaks**, you can always remotely access the system via SSH/RDP through Tailscale and fix it using Claude Code or other tools.
 
 ---
 
+<!-- section_id: "be987c57-09da-48af-af68-71729604c2f5" -->
 ## Current State Assessment
 
 | Component | Status | Notes |
@@ -29,6 +31,7 @@ This document describes a Murphy's Law resilient recovery system for the Windows
 
 ---
 
+<!-- section_id: "5e57019d-e29e-4eed-ab8d-9b68acc0721a" -->
 ## System Configuration
 
 | Setting | Value |
@@ -41,8 +44,10 @@ This document describes a Murphy's Law resilient recovery system for the Windows
 
 ---
 
+<!-- section_id: "2910ab68-4fa4-49b4-b933-8177994976bd" -->
 ## Failure Modes & Solutions
 
+<!-- section_id: "ecb81c2a-af05-4b24-9b18-c677900a24b4" -->
 ### Layer 1: Service Failures
 
 | Failure | Solution | Status |
@@ -51,6 +56,7 @@ This document describes a Murphy's Law resilient recovery system for the Windows
 | SSH crashes | Auto-restart via Windows Service Recovery | ✅ Configured |
 | Syncthing crashes | Auto-restart via Task Scheduler | [ ] To configure |
 
+<!-- section_id: "ee56558d-f4ac-41ac-b75c-10fc1a6e952a" -->
 ### Layer 2: Boot/Login Failures
 
 | Failure | Solution | Status |
@@ -60,6 +66,7 @@ This document describes a Murphy's Law resilient recovery system for the Windows
 | User profile corrupted | RDP to other admin account | [ ] To set up |
 | BitLocker issues | Recovery key backup | [ ] To document |
 
+<!-- section_id: "a78e4c44-f8a7-45d4-8549-07d425e12ee9" -->
 ### Layer 3: Network Failures
 
 | Failure | Solution | Status |
@@ -68,6 +75,7 @@ This document describes a Murphy's Law resilient recovery system for the Windows
 | Tailscale auth expires | Auto-renewal + SSH via local IP fallback | ✅ Working |
 | Firewall blocks SSH | Configure Windows Firewall rules | ✅ Rule exists |
 
+<!-- section_id: "d0cb4b01-dd86-4146-b083-95413618bba0" -->
 ### Layer 4: Hardware Level
 
 | Failure | Solution | Status |
@@ -77,8 +85,10 @@ This document describes a Murphy's Law resilient recovery system for the Windows
 
 ---
 
+<!-- section_id: "427a9f85-e4cf-4e54-9ad2-ebcf28eac9e3" -->
 ## Implementation Plan
 
+<!-- section_id: "5a9f941b-2c8d-41be-8923-92e5f7b7b9f4" -->
 ### Phase 1: Install OpenSSH Server
 
 ```powershell
@@ -98,6 +108,7 @@ Set-Service -Name sshd -StartupType 'Automatic'
 sc.exe failure sshd reset= 86400 actions= restart/5000/restart/10000/restart/30000
 ```
 
+<!-- section_id: "e6076706-13bf-497c-93d6-b0035d7e90ab" -->
 ### Phase 2: Configure SSH Authentication
 
 ```powershell
@@ -122,6 +133,7 @@ icacls "C:\Users\Dawson\.ssh" /grant "SYSTEM:(OI)(CI)F"
 Restart-Service sshd
 ```
 
+<!-- section_id: "a01cb615-3bd6-4ea0-8e47-b7501d6093ab" -->
 ### Phase 3: Configure Windows Firewall
 
 ```powershell
@@ -135,6 +147,7 @@ New-NetFirewallRule -Name sshd -DisplayName 'OpenSSH Server (sshd)' -Enabled Tru
 New-NetFirewallRule -Name "Tailscale SSH" -DisplayName "SSH via Tailscale" -Enabled True -Direction Inbound -Protocol TCP -Action Allow -LocalPort 22 -InterfaceAlias "Tailscale"
 ```
 
+<!-- section_id: "09fd45ad-0826-4f47-aa1e-4eaa81222964" -->
 ### Phase 4: Configure Tailscale Service Recovery
 
 ```powershell
@@ -142,6 +155,7 @@ New-NetFirewallRule -Name "Tailscale SSH" -DisplayName "SSH via Tailscale" -Enab
 sc.exe failure Tailscale reset= 86400 actions= restart/5000/restart/10000/restart/30000
 ```
 
+<!-- section_id: "dc3649e2-b2e9-491f-8d69-02a74efee2ff" -->
 ### Phase 5: Configure Syncthing Auto-Start
 
 ```powershell
@@ -152,6 +166,7 @@ $settings = New-ScheduledTaskSettingsSet -AllowStartIfOnBatteries -DontStopIfGoi
 Register-ScheduledTask -TaskName "Syncthing" -Action $action -Trigger $trigger -Settings $settings -User "Dawson" -RunLevel Highest
 ```
 
+<!-- section_id: "3fdaac8b-5068-49fe-8fe3-baede89a4f30" -->
 ### Phase 6: Enable RDP (Backup Access Method)
 
 ```powershell
@@ -164,6 +179,7 @@ Enable-NetFirewallRule -DisplayGroup "Remote Desktop"
 # Note: RDP uses port 3389
 ```
 
+<!-- section_id: "123f5f4c-6bf4-4080-ab6c-6526f46f3f63" -->
 ### Phase 7: Create Recovery Admin Account
 
 ```powershell
@@ -175,8 +191,10 @@ Add-LocalGroupMember -Group "Administrators" -Member "RecoveryAdmin"
 
 ---
 
+<!-- section_id: "71ddad13-708a-4613-bebb-90461e3ec428" -->
 ## Emergency Recovery Procedures
 
+<!-- section_id: "6b10f965-cbee-4268-9d61-b0d5214a5af9" -->
 ### When GUI Breaks (Login Loop, etc.)
 
 1. **From iPhone**: Open Termius
@@ -186,6 +204,7 @@ Add-LocalGroupMember -Group "Administrators" -Member "RecoveryAdmin"
    - Check Event Viewer: `Get-EventLog -LogName System -Newest 50`
    - Check services: `Get-Service | Where-Object {$_.Status -eq 'Stopped'}`
 
+<!-- section_id: "8ecddf35-1e2b-4b96-8c4c-cbc182a13448" -->
 ### When SSH via Tailscale Fails
 
 1. Check Tailscale status from another device
@@ -193,6 +212,7 @@ Add-LocalGroupMember -Group "Administrators" -Member "RecoveryAdmin"
 3. If on same network: Try local IP (10.200.164.x)
 4. Boot to Safe Mode with Networking
 
+<!-- section_id: "222f00ed-a665-437b-8dfc-ae3f14138461" -->
 ### When Everything Fails
 
 1. Boot to Windows Recovery Environment
@@ -202,6 +222,7 @@ Add-LocalGroupMember -Group "Administrators" -Member "RecoveryAdmin"
 
 ---
 
+<!-- section_id: "7a96a176-4b28-4ebe-b5f9-1e0eef6d70d4" -->
 ## AI CLI Tools
 
 | Tool | Command | Status |
@@ -209,12 +230,14 @@ Add-LocalGroupMember -Group "Administrators" -Member "RecoveryAdmin"
 | Claude Code | `claude` | ✅ Installed (npm global) |
 | Other AI tools | TBD | Not installed |
 
+<!-- section_id: "d4ea5ce3-ef73-4d17-834a-e8cc2489ad63" -->
 ### Claude Code Location
 - Installation: `%APPDATA%\npm\node_modules\@anthropic-ai\claude-code`
 - Command: Available in PATH
 
 ---
 
+<!-- section_id: "780958f4-24d1-44fd-84fd-69d920adc5f6" -->
 ## Health Check Script
 
 Save as `C:\Users\Dawson\scripts\windows-health-check.ps1`:
@@ -264,6 +287,7 @@ Test-NetConnection -ComputerName 46.224.184.10 -Port 22 -WarningAction SilentlyC
 
 ---
 
+<!-- section_id: "e4894d6e-0697-4e3a-9922-eea7971aa05a" -->
 ## Testing Checklist
 
 - [x] SSH from localhost works (2026-01-21)
@@ -277,6 +301,7 @@ Test-NetConnection -ComputerName 46.224.184.10 -Port 22 -WarningAction SilentlyC
 
 ---
 
+<!-- section_id: "f7b8733a-2e23-46fd-8463-e007f76d99ff" -->
 ## Related Files
 
 - `LINUX_RESILIENCE_RECOVERY.md` - Linux laptop recovery

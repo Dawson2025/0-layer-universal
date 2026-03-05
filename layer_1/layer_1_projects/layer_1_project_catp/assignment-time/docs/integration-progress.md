@@ -7,6 +7,7 @@ resource_name: "integration-progress"
 
 This log captures our tangible progress against the infrastructure blueprint in [docs/integration-plan.md](integration-plan.md).
 
+<!-- section_id: "c71598ff-7da4-40ab-b2f6-d23c6dc6eaea" -->
 ## Snapshot Summary
 - Projects online: `assignment-time`, `assignment-time-dev`, `assignment-time-test`
 - Firestore: Default databases created in dev/test (region `nam5`)
@@ -14,6 +15,7 @@ This log captures our tangible progress against the infrastructure blueprint in 
 - Service accounts: `testing-ci@assignment-time-test.iam.gserviceaccount.com` provisioned, IAM verified, and secret access tested
 - Local configuration: `.firebaserc` aliases (`default`, `dev`, `test`, `prod`) and `functions/.env.local` stub committed to local disk (git-ignored)
 
+<!-- section_id: "836a9198-e37a-4b9a-a321-60918c1531aa" -->
 ## Detailed Status
 | Area | Status | Evidence |
 | --- | --- | --- |
@@ -26,6 +28,7 @@ This log captures our tangible progress against the infrastructure blueprint in 
 | IAM audit-log reminders | Pending | Not yet defined (integration plan section 6) |
 | Org policy (SA key creation limit) | Pending | Requires org-level configuration |
 
+<!-- section_id: "2784f37f-39c4-47fe-ac0b-91d8fee650bf" -->
 ## Next Actions
 1. Define and schedule IAM audit-log/key-rotation reminders (integration plan section 6).
 2. Apply an organization policy restricting service-account key creation (integration plan section 6).

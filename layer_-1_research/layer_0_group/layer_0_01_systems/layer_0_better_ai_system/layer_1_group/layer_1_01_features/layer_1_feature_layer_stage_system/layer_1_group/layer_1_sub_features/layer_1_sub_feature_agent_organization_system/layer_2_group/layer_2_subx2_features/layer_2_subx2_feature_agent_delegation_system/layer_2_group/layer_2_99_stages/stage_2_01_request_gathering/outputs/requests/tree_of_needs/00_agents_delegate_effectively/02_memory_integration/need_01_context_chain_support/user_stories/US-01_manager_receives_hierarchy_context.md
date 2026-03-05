@@ -13,6 +13,7 @@ resource_name: "US-01_manager_receives_hierarchy_context"
 **I want** the manager to automatically receive its identity, children, and parent scope through the context chain,
 **So that** the AI can make delegation decisions immediately without me explaining the project structure.
 
+<!-- section_id: "cc20201b-3a9c-4770-b604-215eb5c753a2" -->
 ### What Happens
 
 1. User opens a project and says "manage this entity"
@@ -21,6 +22,7 @@ resource_name: "US-01_manager_receives_hierarchy_context"
 4. Manager knows where it is in the hierarchy and what it can delegate to
 5. User can immediately ask "what needs work?" and get an informed answer
 
+<!-- section_id: "75ccdd35-e457-410e-b957-af45c201143c" -->
 ### Acceptance Criteria
 
 - Manager's static context includes self identity, children list, and parent scope

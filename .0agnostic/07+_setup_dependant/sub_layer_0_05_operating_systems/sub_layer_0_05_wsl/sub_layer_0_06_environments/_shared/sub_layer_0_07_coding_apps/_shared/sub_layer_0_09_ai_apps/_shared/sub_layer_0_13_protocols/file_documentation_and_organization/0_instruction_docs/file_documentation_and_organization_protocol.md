@@ -5,6 +5,7 @@ resource_name: "file_documentation_and_organization_protocol"
 ---
 # File Documentation and Organization Protocol
 
+<!-- section_id: "3e37af4a-6ad2-4410-9514-77f14a27edf5" -->
 ## Applicability
 **Context:** Use this protocol whenever you have a large or complex source file (chat transcript, research article, design doc, log, etc.) that you want to turn into durable, agent-friendly documentation and structure (e.g., like the `ai-manager-hierarchy-system-research.md` flow).  
 **Scope:** OS: universal; Tools: universal – applies to any project, feature, or component that is using the `-1_research` area and/or layered context system, regardless of OS or AI coding tool.  
@@ -15,6 +16,7 @@ resource_name: "file_documentation_and_organization_protocol"
 
 ---
 
+<!-- section_id: "c674af7a-5bed-4810-bbd1-5c4c980dc8ef" -->
 ## 1. Inputs and Target Structure
 
 - **Input:**  
@@ -31,6 +33,7 @@ resource_name: "file_documentation_and_organization_protocol"
 
 ---
 
+<!-- section_id: "d1e1aaf0-4719-47a0-8d8d-4366ef5d5fe5" -->
 ## 2. Step 1 – Create/Select the “Thing Researched” Container
 
 1. **Name the topic**  
@@ -49,6 +52,7 @@ resource_name: "file_documentation_and_organization_protocol"
 
 ---
 
+<!-- section_id: "83993f9b-0258-45e2-a36c-4fa8fb1fe139" -->
 ## 3. Step 2 – Discovery Pass (Concept Mapping, No Filtering)
 
 1. **Read the entire source file** (or as much as context allows, in batches if necessary).  
@@ -71,6 +75,7 @@ resource_name: "file_documentation_and_organization_protocol"
 
 ---
 
+<!-- section_id: "4e78ffbf-617f-4d51-af2a-6daf4c99d4bf" -->
 ## 4. Step 3 – Build “Things Learned” Documents
 
 1. **Create a topic‑specific subfolder (optional but recommended):**
@@ -94,6 +99,7 @@ resource_name: "file_documentation_and_organization_protocol"
 
 ---
 
+<!-- section_id: "2207a5a6-0193-49de-8afd-1b085878de07" -->
 ## 5. Step 4 – Summary‑Neutral, Pattern‑First Writing Rules
 
 When authoring the “things learned” docs:
@@ -116,6 +122,7 @@ When authoring the “things learned” docs:
 
 ---
 
+<!-- section_id: "1bb75a03-4064-428f-8a4f-bd16fb08cd6c" -->
 ## 6. Step 5 – Overview Documents for Agents
 
 1. **In `overview/` for each topic**, create a very short `README.md` that:
@@ -128,6 +135,7 @@ When authoring the “things learned” docs:
 
 ---
 
+<!-- section_id: "e9859e93-290d-4df9-81bc-13781fadd48f" -->
 ## 7. Maintenance Rules
 
 1. **Never delete raw `chat_history/` files** once organized; only append or supersede them with clearly versioned successors.  

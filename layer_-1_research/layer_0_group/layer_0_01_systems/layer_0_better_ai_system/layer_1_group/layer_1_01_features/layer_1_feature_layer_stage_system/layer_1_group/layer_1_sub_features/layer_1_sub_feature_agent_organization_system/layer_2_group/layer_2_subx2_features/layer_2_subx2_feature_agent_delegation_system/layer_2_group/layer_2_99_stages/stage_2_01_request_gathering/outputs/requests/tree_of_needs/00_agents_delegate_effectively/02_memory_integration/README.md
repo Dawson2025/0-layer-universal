@@ -10,12 +10,14 @@ resource_name: "README"
 
 ---
 
+<!-- section_id: "e645c9c9-de0a-401d-ab39-e123f7830faf" -->
 ## Core Question
 
 > "How does what agents remember support delegation?"
 
 ---
 
+<!-- section_id: "23941e7c-476a-44e9-b72b-e6ad454d6dea" -->
 ## Description
 
 Delegation depends on context availability. A manager cannot delegate effectively if it does not know what state a stage is in. A stage agent cannot do its work if it cannot access domain knowledge. Memory -- in the form of context chains, handoff protocols, and tiered knowledge -- is the infrastructure that makes delegation possible.
@@ -27,6 +29,7 @@ The three failure modes without memory integration:
 
 ---
 
+<!-- section_id: "6177859c-6bc5-4877-9ef8-c1ed612ac0c4" -->
 ## Child Needs
 
 | Need | Question | Description |
@@ -37,6 +40,7 @@ The three failure modes without memory integration:
 
 ---
 
+<!-- section_id: "d04c7f26-d152-4209-8c14-7f02c0c50d1b" -->
 ## Key Insight
 
 Memory integration is not just about persistence -- it is about the right information reaching the right agent at the right time. The delegation model defines who does what; memory integration defines what each agent knows when it starts working. These two branches are tightly coupled: delegation decisions depend on memory, and memory structure serves delegation.

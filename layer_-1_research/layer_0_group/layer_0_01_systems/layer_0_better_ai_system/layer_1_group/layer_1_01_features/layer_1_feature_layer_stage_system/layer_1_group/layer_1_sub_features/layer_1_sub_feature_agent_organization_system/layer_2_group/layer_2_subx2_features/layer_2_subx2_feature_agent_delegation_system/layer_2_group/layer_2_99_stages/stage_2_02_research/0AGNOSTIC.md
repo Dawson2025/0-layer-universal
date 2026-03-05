@@ -10,6 +10,7 @@ resource_name: "0AGNOSTIC"
 
 # ── Stage Definition ──
 
+<!-- section_id: "8c44c115-5b1d-484b-8dfa-7f63580d372c" -->
 ## Identity
 
 stage_id: "e6c6ecb1-6130-4967-abd7-28d8a462708c"
@@ -24,8 +25,10 @@ You are the **Research Agent** for the agent_delegation_system.
 - **Parent**: `../../0AGNOSTIC.md` (agent_delegation_system entity)
 - **Domain**: Stage delegation, agent context models, manager-agent communication
 
+<!-- section_id: "2e341de8-26e7-49a1-bff2-8dbfbb3848ad" -->
 ## Key Behaviors
 
+<!-- section_id: "373b3a58-3680-477f-8654-ec06d102634a" -->
 ### What Research IS
 
 You investigate the problem space by examining existing implementations, analyzing patterns, and documenting findings with evidence. Research is topic-based: one directory per topic, each with a README.md index.
@@ -36,6 +39,7 @@ You do NOT:
 - Build implementations (that's stage 06)
 - Judge quality (that's stage 08)
 
+<!-- section_id: "d204d3e4-49d9-4b7e-88aa-cf0cc76badf8" -->
 ### Delegation Contract
 
 When the manager delegates to this stage:
@@ -51,6 +55,7 @@ Example Task tool prompt the manager uses:
  Task: Investigate how AI agents delegate work — what patterns exist, what works, what gaps remain."
 ```
 
+<!-- section_id: "eac2e3ef-a7ed-46a4-a26c-c7441db7da9c" -->
 ### Methodology
 
 Topic-based research with evidence:
@@ -59,6 +64,7 @@ Topic-based research with evidence:
 3. Document findings with sources and evidence
 4. Write topic README.md as the index for each investigation
 
+<!-- section_id: "2be3785e-ab36-486c-86d7-5fb0ec4e3d86" -->
 ## Inputs
 
 What this agent reads:
@@ -76,6 +82,7 @@ What this agent reads:
 
 **Context loading order**: Read own 0AGNOSTIC.md first (mandatory). Then load stage 01 outputs to understand what to research. Load parent context on-demand — only the specific file needed, never all knowledge at once.
 
+<!-- section_id: "1dd31377-d76f-446b-8a39-4b06c82e0dfa" -->
 ## Outputs
 
 What this agent produces:
@@ -87,10 +94,12 @@ What this agent produces:
 | Overview report | `outputs/reports/overview_report.md` | Summary of all reports, links to each |
 | Current State update | This file, "Current State" section | Pointer-tier summary of what exists |
 
+<!-- section_id: "27df9314-16e5-4974-89ad-ef28f5b2cf5c" -->
 ### Stage Report
 
 Before exiting, update `outputs/reports/stage_report.md` following the universal protocol at `.0agnostic/03_protocols/stage_report_protocol.md`. The entity manager reads this to understand your stage's status without loading stage details.
 
+<!-- section_id: "1c006b83-8401-49f3-8def-cefbbc62362a" -->
 ## Triggers
 
 Load when:
@@ -98,8 +107,10 @@ Load when:
 - Entering `stage_1_02_research/`
 - Investigating how delegation works in practice
 
+<!-- section_id: "de71de08-8396-4485-9f26-2e2da82bd860" -->
 ## AALang Agent Context
 
+<!-- section_id: "a8b28c4d-6154-41c5-93fe-7bb812c2abb4" -->
 ### Local Agent Files
 
 **Directory**: `.0agnostic/06_context_avenue_web/01_aalang/`
@@ -120,6 +131,7 @@ Load when:
 }
 ```
 
+<!-- section_id: "cbe751df-61db-4d29-b01b-1e5c68e39079" -->
 ### How to Load Full Graph
 
 ```bash
@@ -130,6 +142,7 @@ jq '."@graph"[] | select(."@type" == "gab:Mode") | {id: ."@id", purpose: .purpos
 jq '."@graph"[] | select(."@id" == "rs:ExecuteMode")' .0agnostic/06_context_avenue_web/01_aalang/stage_02.orchestrator.gab.jsonld
 ```
 
+<!-- section_id: "f77da545-30ba-449d-85e5-ea99e11e2681" -->
 ### Parent Orchestrator
 
 **File**: `../../.0agnostic/06_context_avenue_web/01_aalang/layer_1.orchestrator.gab.jsonld` (agent_delegation_system entity)
@@ -138,6 +151,7 @@ Stage orchestrators inherit from the entity-level orchestrator.
 
 # ── Current Status ──
 
+<!-- section_id: "f88b83ce-9a5a-48bb-b668-c37466811fe4" -->
 ## Current Status
 
 **Status**: active | **Last Updated**: 2026-02-26
@@ -148,8 +162,10 @@ Four formal research topic directories created alongside the prior implicit rese
 
 # ── Current State ──
 
+<!-- section_id: "2fc8e830-0f50-4181-8355-cc6f6645f6e4" -->
 ## Current State Detail
 
+<!-- section_id: "203177e7-84b7-4422-b171-dbd17aed7bdd" -->
 ### Key Research Vehicle
 
 The context_chain_system at `../../layer_2_group/.../layer_3_subx3_feature_context_chain_system/` provided:
@@ -159,6 +175,7 @@ The context_chain_system at `../../layer_2_group/.../layer_3_subx3_feature_conte
 - Discovery that stage 0AGNOSTIC.md needs both operational guidance AND current state summary
 - Evidence for three-tier knowledge (pointers → distilled → full)
 
+<!-- section_id: "e9caa9da-46de-4e1c-b09e-599251ce4d0e" -->
 ### Key Findings
 
 - **Managers don't need stage methodology**: The entity manager can coordinate effectively by reading stage reports alone — no need to carry stage-level detail
@@ -172,6 +189,7 @@ The context_chain_system at `../../layer_2_group/.../layer_3_subx3_feature_conte
 - **Scope boundary traversal is directional** (2026-02-26): When agents hit scope boundaries, they must identify direction (up/down/left/right/sideways/multi-location) before deciding what to do. Communication protocol differs per direction. Universal traversal infrastructure is loaded on-demand (not STATIC), while per-agent positional awareness (parent/children/neighbors) is compact STATIC. Multi-location work escalates to nearest common ancestor with scope over all affected locations. See `outputs/by_topic/scope_boundary_traversal/`
 - **Agent architecture maps to OOP class/object patterns** (2026-02-26): OOP concepts map cleanly to agent delegation — base classes = universal infrastructure, interfaces = 0AGNOSTIC.md STATIC sections, composition = on-demand context loading, single responsibility = stage agents, factory pattern = agent instantiation via Principle 8, dependency injection = manager delegation contract. All 7 SOLID principles validated against existing patterns. Key insight: "favor composition over inheritance" directly validates the minimal context model (compose on-demand, don't cascade). Analogy breaks down for multiple inheritance, polymorphism, and strong encapsulation. See `outputs/by_topic/agent_class_object_patterns/`
 
+<!-- section_id: "8d0fac05-2c03-4a4e-b089-4eaaebd33189" -->
 ## Cross-Stage Traceability
 
 How each finding connects to requirements (stage 01) and design decisions (stage 04):
@@ -191,6 +209,7 @@ How each finding connects to requirements (stage 01) and design decisions (stage
 
 **Stage paths**: `../stage_1_01_request_gathering/`, `../stage_1_04_design/`
 
+<!-- section_id: "0a2b38e2-5648-43e8-84f7-aa2e410e8b91" -->
 ## Child Layer Detail (Principle 10)
 
 Research was primarily conducted through child entities rather than standalone documents:
@@ -203,11 +222,13 @@ Research was primarily conducted through child entities rather than standalone d
 
 **Child paths**: see stage 01 Child Layer Detail for full paths
 
+<!-- section_id: "ed8008c4-cdfd-4e45-ba69-2f34f8ad0614" -->
 ## Open Items
 
 - Context chain system lessons should still be documented as a formal research topic (implicit findings formalized)
 - multi_agent_system child entity not yet explored as a research vehicle
 
+<!-- section_id: "140d1430-4f5b-4147-b8ff-c9d4ed20e869" -->
 ## Handoff
 
 - **Ready for next stage**: yes (design was already done based on implicit research)
@@ -216,6 +237,7 @@ Research was primarily conducted through child entities rather than standalone d
 
 # ── References ──
 
+<!-- section_id: "e323bb0e-fff5-4502-84f8-d3dc58043295" -->
 ## Navigation
 
 | Content | Location |
@@ -224,6 +246,7 @@ Research was primarily conducted through child entities rather than standalone d
 | Stage reports | `outputs/reports/` |
 | Stage 01 tree of needs | `../stage_1_01_request_gathering/outputs/requests/tree_of_needs/` |
 
+<!-- section_id: "ec8297a5-028b-4970-a3c3-b71c6132cd8d" -->
 ## Domain Context
 
 For agent delegation system domain understanding, read from the parent entity:
@@ -233,6 +256,7 @@ For agent delegation system domain understanding, read from the parent entity:
 
 Do NOT load all parent knowledge at once — read the specific file relevant to the topic you're investigating.
 
+<!-- section_id: "8fe43843-c839-48ab-b2f1-2e35b4b40aa9" -->
 ## Success Criteria
 
 This stage is complete when:
@@ -241,6 +265,7 @@ This stage is complete when:
 - Gaps identified with research grounding
 - Findings inform design (stage 04)
 
+<!-- section_id: "8d3c0a63-692d-4a60-bbc4-32080b861b23" -->
 ## On Exit
 
 1. Update `outputs/reports/stage_report.md` with current status

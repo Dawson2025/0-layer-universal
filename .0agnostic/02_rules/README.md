@@ -6,6 +6,7 @@ resource_name: "README"
 ---
 # Rules — Universal Rule System
 
+<!-- section_id: "e8fa64a8-62b0-4006-9bbf-978937091381" -->
 ## Structure
 
 Rules are organized by **activation category**, and each rule lives in its own directory with co-located tests.
@@ -17,6 +18,7 @@ Rules are organized by **activation category**, and each rule lives in its own d
 | Dynamic | `dynamic/` | Triggered by specific conditions or scenarios |
 | Scenario-Based | `1_scenario_based/` | Read on-demand when a matching scenario is detected |
 
+<!-- section_id: "5391248e-d082-4535-9f02-592b46d585c2" -->
 ## Per-Rule Directory Structure
 
 Every rule follows this structure:
@@ -30,6 +32,7 @@ rule_name/
     └── results/          <- Test run outputs (timestamped)
 ```
 
+<!-- section_id: "148cbe07-0b74-435a-9edc-e5f875d28cad" -->
 ## Testing
 
 - **Run all tests**: `bash run_all_rule_tests.sh`
@@ -37,6 +40,7 @@ rule_name/
 - **Performance history**: `test_results_history.md`
 - **Testing protocol**: `../03_protocols/rule_testing_protocol.md`
 
+<!-- section_id: "ad297a4d-5d2f-4cfe-baaf-4daa3c418f60" -->
 ## Rules Index
 
 | Rule | Category | Hot? | Purpose |

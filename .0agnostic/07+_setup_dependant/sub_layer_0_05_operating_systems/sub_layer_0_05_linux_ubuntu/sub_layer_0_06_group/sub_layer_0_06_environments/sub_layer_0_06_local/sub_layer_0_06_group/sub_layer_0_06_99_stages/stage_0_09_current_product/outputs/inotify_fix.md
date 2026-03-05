@@ -5,6 +5,7 @@ resource_name: "inotify_fix"
 ---
 # Inotify Limits Fix
 
+<!-- section_id: "345228a9-7c95-48b6-93fd-19c18fdd5a8c" -->
 ## Problem
 
 System entered "degraded" state with multiple failures:
@@ -13,6 +14,7 @@ System entered "degraded" state with multiple failures:
 - xdg-desktop-portal services failing
 - "No space left on device" errors in logs (inotify, not disk)
 
+<!-- section_id: "17d1f9a6-467b-4d17-b271-0aa58c36ee21" -->
 ## Root Cause
 
 Inotify watches/instances exhausted due to:
@@ -23,8 +25,10 @@ Inotify watches/instances exhausted due to:
 
 Default limits (65,536 watches / 128 instances) insufficient for modern dev environment.
 
+<!-- section_id: "7218652a-93e2-4a31-9f39-ceef5d7dd361" -->
 ## Solution
 
+<!-- section_id: "13c9180e-5d89-4f95-88ef-a496edc43bee" -->
 ### 1. Increase Inotify Limits (Permanent)
 
 ```bash
@@ -44,6 +48,7 @@ cat /proc/sys/fs/inotify/max_user_instances # Should show: 512
 
 **This persists across reboots.**
 
+<!-- section_id: "1bc7aef1-3f82-427f-b62f-c23d3ed90d2c" -->
 ### 2. Restart Desktop Session
 
 After applying inotify fix, a fresh session is needed:
@@ -58,6 +63,7 @@ After applying inotify fix, a fresh session is needed:
 sudo reboot
 ```
 
+<!-- section_id: "528356d1-6fb8-4b67-8a36-9b96b890fac0" -->
 ### 3. Verify Fix
 
 ```bash
@@ -73,6 +79,7 @@ systemctl --user is-active xdg-desktop-portal xdg-desktop-portal-gtk
 # - Apps should open normally
 ```
 
+<!-- section_id: "67d29295-9764-4cca-8beb-e5aa76fd4ac9" -->
 ## If Portal Services Still Fail After Reboot
 
 The xdg-desktop-portal-gnome service has a known crash bug. Workaround:
@@ -85,6 +92,7 @@ systemctl --user mask xdg-desktop-portal-gnome
 systemctl --user restart xdg-desktop-portal-gtk xdg-desktop-portal
 ```
 
+<!-- section_id: "0481bcc0-0320-417d-b2c7-47fefc65c3f0" -->
 ## If Settings Daemons Not Running
 
 Manually start critical daemons:
@@ -100,6 +108,7 @@ for daemon in gsd-xsettings gsd-color gsd-keyboard gsd-housekeeping; do
 done
 ```
 
+<!-- section_id: "9a28d218-1cdc-4f4a-95bb-6a4bea129f7d" -->
 ## File Locations
 
 | File | Purpose |
@@ -108,6 +117,7 @@ done
 | `/proc/sys/fs/inotify/max_user_watches` | Current watch limit |
 | `/proc/sys/fs/inotify/max_user_instances` | Current instance limit |
 
+<!-- section_id: "423cb556-61ee-4f55-840a-f423e63bebf6" -->
 ## Prevention
 
 To reduce inotify usage:
@@ -125,6 +135,7 @@ In VS Code/Cursor settings.json:
 }
 ```
 
+<!-- section_id: "c2f22c21-a244-491c-8ecf-538bcd90bf3d" -->
 ## Related Knowledge
 - [Inotify Fundamentals](../../sub_layer_0_06_03_subx2_layers/sub_layer_01_linux_fundamentals/inotify.md)
 - [GNOME Architecture](../../sub_layer_0_06_03_subx2_layers/sub_layer_02_ubuntu_desktop/gnome_architecture.md)

@@ -5,14 +5,17 @@ resource_name: "QUICK_START"
 ---
 # Quick Start Guide - Universal Setup File Tree
 
+<!-- section_id: "5e3b4e59-f64d-45d8-af84-b21658c46dce" -->
 ## What is This?
 
 This is a **hierarchical navigable file tree** for all setup documentation. It allows you to drill down from general to specific setup configurations:
 
 **OS → Environment → Coding App → AI App → MCP Server → AI Model → Tools → Protocols → Agents**
 
+<!-- section_id: "4e6aca0e-e600-449c-bbd1-0f65c4fb043f" -->
 ## How to Use It
 
+<!-- section_id: "7a97d10b-ec11-4f4a-8ce0-04adbb02d0d3" -->
 ### Start with Your OS
 
 Navigate to: `0.05_operating_systems/<your_os>/`
@@ -23,6 +26,7 @@ Navigate to: `0.05_operating_systems/<your_os>/`
 - `wsl/` - For Windows Subsystem for Linux
 - `_shared/` - For cross-platform setup
 
+<!-- section_id: "0e918002-6a66-499c-98f4-3c133294f7a5" -->
 ### Then Follow the Path
 
 Each level has numbered directories that guide you deeper:
@@ -38,6 +42,7 @@ Each level has numbered directories that guide you deeper:
    - `0.13_protocols/` - Protocols (terminal/browser/git)
    - `0.14_agent_setup/` - Agent configuration
 
+<!-- section_id: "6b4c9b37-dc49-4689-8a29-ac1c34587eac" -->
 ### Use _shared Folders
 
 At **every level**, there's a `_shared/` folder for cross-cutting setup:
@@ -52,12 +57,15 @@ At **every level**, there's a `_shared/` folder for cross-cutting setup:
 - `0.13_protocols/_shared/` = Works with all protocols
 - `0.14_agent_setup/_shared/` = Works for all agent setups
 
+<!-- section_id: "598a750c-f009-46f1-b59a-5e94e40bd943" -->
 ### Find Setup Documentation
 
 Navigate to the deepest level `general_setup_and_config/` folder for actual setup instructions, configuration examples, and troubleshooting.
 
+<!-- section_id: "2f8aa21c-192b-4c65-9680-5177ee60e41e" -->
 ## Quick Examples
 
+<!-- section_id: "e9ff7550-c454-41c3-a881-f9786f08b1cb" -->
 ### Example 1: Git Setup (All Platforms)
 ```
 0.05_operating_systems/_shared/
@@ -68,6 +76,7 @@ Navigate to the deepest level `general_setup_and_config/` folder for actual setu
 → general_setup_and_config/README.md
 ```
 
+<!-- section_id: "752ba888-6950-4f58-9e85-3435fc63a5d4" -->
 ### Example 2: Linux + Cursor + Playwright MCP
 ```
 0.05_operating_systems/linux_ubuntu/
@@ -78,6 +87,7 @@ Navigate to the deepest level `general_setup_and_config/` folder for actual setu
 → general_setup_and_config/README.md
 ```
 
+<!-- section_id: "5ca5aff3-ba9c-4029-95e5-f31db7922099" -->
 ### Example 3: Core MCP Issues (Any Setup)
 ```
 0.05_operating_systems/_shared/
@@ -88,12 +98,14 @@ Navigate to the deepest level `general_setup_and_config/` folder for actual setu
 → general_setup_and_config/README.md
 ```
 
+<!-- section_id: "236b7672-98dd-4b38-a6a9-d78644c29e1d" -->
 ## Key Files
 
 - **README.md** - Main documentation and navigation guide
 - **STRUCTURE_VISUALIZATION.md** - Complete visual hierarchy
 - **QUICK_START.md** - This file (how to get started)
 
+<!-- section_id: "ee5b8ca2-80d9-46b2-b533-33168279aa05" -->
 ## Statistics
 
 - Total directories: 99+
@@ -101,6 +113,7 @@ Navigate to the deepest level `general_setup_and_config/` folder for actual setu
 - _shared folders at each level: Yes
 - README files: 10+
 
+<!-- section_id: "82222299-720c-4b8c-94ac-9da81a9640c7" -->
 ## Next Steps
 
 1. Read `README.md` for complete documentation
@@ -108,6 +121,7 @@ Navigate to the deepest level `general_setup_and_config/` folder for actual setu
 3. Follow the setup instructions in `general_setup_and_config/`
 4. Consult `STRUCTURE_VISUALIZATION.md` to understand the full hierarchy
 
+<!-- section_id: "23a04030-6ebf-450e-b71c-ef5282d735ad" -->
 ## Links to Detailed Setup Sublayers
 
 This file tree is a **navigational index**. Detailed documentation lives in:

@@ -13,6 +13,7 @@ resource_name: "US-04_manager_stays_out"
 **I want** the manager agent to contain only coordination logic and no stage-level methodology,
 **So that** I can trust the manager is focused on orchestration and not bloated with operational detail.
 
+<!-- section_id: "86f4f89f-1a78-48db-b1e2-b8e3977735a2" -->
 ### What Happens
 
 1. User reviews the manager's 0AGNOSTIC.md to check system health
@@ -20,6 +21,7 @@ resource_name: "US-04_manager_stays_out"
 3. User confirms there is zero stage-level methodology or procedure in the manager
 4. User knows the manager has room in its context window for actual coordination work
 
+<!-- section_id: "605bf0d1-4995-4b3c-8ef7-9e42604299ce" -->
 ### Acceptance Criteria
 
 - Manager's 0AGNOSTIC.md contains zero stage-level methodology or procedure descriptions

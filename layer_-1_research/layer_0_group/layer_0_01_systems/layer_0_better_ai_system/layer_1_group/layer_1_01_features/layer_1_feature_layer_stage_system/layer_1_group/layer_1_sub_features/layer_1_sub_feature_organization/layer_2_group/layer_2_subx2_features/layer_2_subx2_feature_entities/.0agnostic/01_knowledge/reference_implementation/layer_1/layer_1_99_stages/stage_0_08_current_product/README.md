@@ -12,6 +12,7 @@ resource_name: "README"
 
 ---
 
+<!-- section_id: "2e13bf48-9341-44bd-8c61-86c6b9618c92" -->
 ## Contents
 
 ```
@@ -34,8 +35,10 @@ stage_0_08_current_product/
 
 ---
 
+<!-- section_id: "007fb9eb-5dac-4f71-b5c0-2e825b8811e3" -->
 ## Quick Reference
 
+<!-- section_id: "55f3e990-8fb3-4266-8d6f-ea435f2f8d1f" -->
 ### Change Protocols
 
 | Document | Purpose |
@@ -44,6 +47,7 @@ stage_0_08_current_product/
 | `changes/traversal_update_protocol.md` | How to update navigation docs after changes |
 | `changes/verify_paths.sh` | Script to verify critical paths exist |
 
+<!-- section_id: "7e1cfa2b-08a9-496f-b5eb-76bdbf46fa54" -->
 ### Setup Guides
 
 | Document | Purpose |
@@ -55,6 +59,7 @@ stage_0_08_current_product/
 
 ---
 
+<!-- section_id: "2dc8b3c9-0702-4547-a0dd-289efde19b78" -->
 ## When to Archive
 
 Move content to `../stage_0_09_archives/` when:
@@ -66,6 +71,7 @@ Archive format: `../stage_0_09_archives/v<version>_<date>/`
 
 ---
 
+<!-- section_id: "b5872b6f-9827-4b20-ba54-27729da384cc" -->
 ## Related Stages
 
 | Stage | Purpose |

@@ -7,12 +7,14 @@ resource_name: "framework-status"
 
 Show the current status of the Layer-Stage Framework development.
 
+<!-- section_id: "5c013746-9a86-4f96-aae7-4d3dfd6144fd" -->
 ## Instructions
 1. Read the status file at `layer_1/layer_1_99_stages/status_1.json`
 2. List all child features and their status
 3. Show current stage and progress
 4. List any tasks in progress
 
+<!-- section_id: "ad0a8f21-6e57-4c7e-9c50-165afc1d2fba" -->
 ## Output Format
 ```
 === Layer-Stage Framework Status ===

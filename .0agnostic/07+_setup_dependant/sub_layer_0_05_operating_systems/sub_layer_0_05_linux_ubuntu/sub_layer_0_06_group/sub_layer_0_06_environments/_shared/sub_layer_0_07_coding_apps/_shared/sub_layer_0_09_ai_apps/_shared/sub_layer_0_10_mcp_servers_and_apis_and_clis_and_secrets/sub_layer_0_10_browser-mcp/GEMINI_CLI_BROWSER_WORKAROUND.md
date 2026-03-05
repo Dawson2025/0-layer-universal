@@ -9,18 +9,22 @@ resource_name: "GEMINI_CLI_BROWSER_WORKAROUND"
 **Location**: Universal Layer → MCP Servers and Tools Setup  
 **Status**: ✅ **Working Solution** - When Cursor MCP tools are unavailable
 
+<!-- section_id: "31cbcfab-3e98-43d6-9dac-f1d363028d63" -->
 ## Overview
 
 When Cursor IDE's MCP browser tools are not available (due to tool exposure bugs, configuration issues, or other problems), **Gemini CLI can be used as a reliable workaround** for browser automation tasks. Gemini CLI has its own MCP configuration and can access Playwright MCP tools even when Cursor cannot.
 
+<!-- section_id: "e1ae3b4c-77db-439e-b7e5-a3b73669e6bc" -->
 ## Why This Works
 
 1. **Independent MCP Configuration**: Gemini CLI uses `~/.gemini/settings.json` for MCP server configuration, separate from Cursor's `~/.cursor/mcp.json`
 2. **Proven Working**: User confirmed Gemini CLI successfully accessed browser tools when Cursor could not
 3. **Same MCP Servers**: Both use the same underlying Playwright MCP server, but Gemini CLI's tool exposure mechanism works more reliably
 
+<!-- section_id: "6e56d949-3915-4f29-b10a-822c2fb4390d" -->
 ## Configuration
 
+<!-- section_id: "1b5660a1-a427-45f2-8454-e646c01df14b" -->
 ### Gemini CLI MCP Setup
 
 **Location**: `~/.gemini/settings.json`
@@ -51,6 +55,7 @@ When Cursor IDE's MCP browser tools are not available (due to tool exposure bugs
 - Uses `@playwright/mcp@latest` without `-y` flag
 - Same environment variables
 
+<!-- section_id: "f63509e1-7b39-4739-9652-31b3c523cb0d" -->
 ### Cursor MCP Configuration (Updated to Match)
 
 **Location**: `~/.cursor/mcp.json`
@@ -80,8 +85,10 @@ When Cursor IDE's MCP browser tools are not available (due to tool exposure bugs
 
 **Note**: Updated to include `--executable-path` to match Gemini CLI's working configuration.
 
+<!-- section_id: "62bcaafe-d43e-4b82-8efc-0389db61f5f0" -->
 ## Usage
 
+<!-- section_id: "97acb393-9c20-4edb-b4ee-79b6b933896e" -->
 ### Basic Browser Automation via Gemini CLI
 
 ```bash
@@ -95,6 +102,7 @@ gemini
 > Take a screenshot after clicking
 ```
 
+<!-- section_id: "45c4ada0-a7ed-4561-9438-67022793bcfa" -->
 ### Example: ALEKS Problem Solving
 
 ```bash
@@ -108,8 +116,10 @@ gemini -p "I'm working on 'Matching parent graphs with their equations'. Open th
 gemini -p "Click the 'Continue' button to submit the answer"
 ```
 
+<!-- section_id: "41f115f5-c206-43ac-bbb5-4c1d2e337c27" -->
 ## Workflow Integration
 
+<!-- section_id: "2685de0a-e685-4d4a-8b85-ce79d6aa954d" -->
 ### When to Use Gemini CLI
 
 **Use Gemini CLI for browser automation when**:
@@ -123,6 +133,7 @@ gemini -p "Click the 'Continue' button to submit the answer"
 - General AI assistance
 - Tasks that don't require browser automation
 
+<!-- section_id: "0ef5412d-8c8a-420d-898b-6436c032f465" -->
 ### Hybrid Approach
 
 1. **Use Cursor** for code, file operations, and general assistance
@@ -132,6 +143,7 @@ gemini -p "Click the 'Continue' button to submit the answer"
    - JSON state files
    - Terminal output
 
+<!-- section_id: "9de7b8f2-fdc2-44a1-9118-4d57b0c93e5c" -->
 ## Advantages
 
 1. ✅ **Reliable**: Works when Cursor MCP tools don't
@@ -139,14 +151,17 @@ gemini -p "Click the 'Continue' button to submit the answer"
 3. ✅ **Same Tools**: Uses same Playwright MCP server
 4. ✅ **Proven**: User confirmed it works
 
+<!-- section_id: "38db173c-f748-41b7-9bac-5293bba60b01" -->
 ## Limitations
 
 1. ⚠️ **Separate Context**: Gemini CLI doesn't share context with Cursor session
 2. ⚠️ **Manual Coordination**: Need to manually share state between tools
 3. ⚠️ **Terminal-Based**: Requires terminal commands rather than integrated tools
 
+<!-- section_id: "b1e8d589-200d-4865-a9c4-b42e88363e53" -->
 ## Troubleshooting
 
+<!-- section_id: "3110307c-39a9-4b43-b388-d6d169a3580a" -->
 ### Gemini CLI Not Finding Browser Tools
 
 1. **Check Configuration**:
@@ -164,6 +179,7 @@ gemini -p "Click the 'Continue' button to submit the answer"
    gemini -p "List available browser tools"
    ```
 
+<!-- section_id: "1eb0669f-9d94-4c44-a491-dff855c1e6ff" -->
 ### Browser Not Found Error
 
 1. **Verify Executable Path**:
@@ -173,6 +189,7 @@ gemini -p "Click the 'Continue' button to submit the answer"
 2. **Check Environment Variables**:
    - `PLAYWRIGHT_BROWSERS_PATH` should be set correctly
 
+<!-- section_id: "487feb97-aebf-4bd7-87b3-dd01a381998c" -->
 ## Related Documentation
 
 - [Gemini CLI Usage Guide](../../../../../../GEMINI_CLI_USAGE.md)
@@ -180,8 +197,10 @@ gemini -p "Click the 'Continue' button to submit the answer"
 - [Playwright MCP Working Solution](./PLAYWRIGHT_MCP_WORKING_SOLUTION.md)
 - [Cursor Browser MCP Setup](./CURSOR_BROWSER_MCP_SETUP.md)
 
+<!-- section_id: "537a89f6-89e2-44c8-8622-dede0d97eacd" -->
 ## Testing and Verification
 
+<!-- section_id: "7ca51101-a9ea-4c8b-8586-6b0092aed69b" -->
 ### Test Gemini CLI Browser Access
 
 ```bash
@@ -195,12 +214,14 @@ gemini -p "Take a snapshot of the current browser state"
 gemini -p "Navigate to https://example.com and take a screenshot"
 ```
 
+<!-- section_id: "53369d51-cd1c-41d4-a46e-cb8e39354958" -->
 ### Expected Behavior
 
 - Gemini CLI should respond with available browser tools
 - Should be able to take snapshots and navigate
 - Should use Playwright MCP tools successfully
 
+<!-- section_id: "9feacded-d271-4106-b6c6-4f58654c03b3" -->
 ## Current Status (2025-12-07)
 
 **Testing Results**:
@@ -230,6 +251,7 @@ gemini -p "Navigate to https://example.com and take a screenshot"
 
 **Note**: Gemini CLI commands may take 30+ seconds to initialize and load MCP tools. This is normal behavior.
 
+<!-- section_id: "f89d7375-a07c-42b7-8821-a2a7114db04a" -->
 ## How Gemini CLI Launched Browser (Documented Process)
 
 **What Happened** (2025-12-07):
@@ -253,14 +275,17 @@ gemini -p "Navigate to https://example.com and take a screenshot"
 - **Profile-based** - Uses dedicated browser profile for session persistence
 - **Works when Cursor doesn't** - Successfully accessed browser tools that Cursor couldn't
 
+<!-- section_id: "ba83bd52-3ec1-4d85-9e54-ea7272593274" -->
 ## Changelog
 
+<!-- section_id: "85339154-78f6-4a56-9475-51f21bd7e7b1" -->
 ### 2025-12-07 (Updated - Browser Launch Documented)
 - Documented actual browser launch process from user testing
 - Confirmed Gemini CLI successfully opens browser and interacts with pages
 - Added evidence of successful ALEKS navigation and interaction
 - Documented automatic MCP server launch behavior
 
+<!-- section_id: "089c6538-ae46-4df7-9b0c-7a2c5d9da343" -->
 ### 2025-12-07 (Initial)
 - Created document documenting Gemini CLI as browser automation workaround
 - Documented working configuration differences

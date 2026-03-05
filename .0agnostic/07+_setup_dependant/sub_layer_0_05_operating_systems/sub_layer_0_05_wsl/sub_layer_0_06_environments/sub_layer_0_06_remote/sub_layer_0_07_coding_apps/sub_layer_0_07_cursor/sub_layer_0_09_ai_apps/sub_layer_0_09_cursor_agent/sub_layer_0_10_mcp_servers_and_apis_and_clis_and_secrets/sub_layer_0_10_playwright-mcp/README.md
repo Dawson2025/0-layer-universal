@@ -6,11 +6,14 @@ resource_name: "README"
 ---
 # playwright-mcp (cursor_agent on wsl)
 
+<!-- section_id: "c1c85362-9320-4671-a3c7-23805b3bc454" -->
 ## Canonical docs
 - ../../../../../_shared/0.04_ai_apps/_shared/0.05_mcp_servers/playwright-mcp/
 
+<!-- section_id: "9e16e912-9f22-40d8-8339-d6284555a880" -->
 ## Quick Start
 
+<!-- section_id: "82c0246e-d457-4a13-b6da-75ec79a6640a" -->
 ### Basic Setup (Recommended)
 
 1. **Create Playwright config with WSLg fixes**:
@@ -61,8 +64,10 @@ resource_name: "README"
 
 **⚠️ Critical**: The Wayland/Ozone flags are required to prevent browser crashes on WSLg. See `general_issues_and_fixes/WSLG_BROWSER_CRASH_FIX.md` for details.
 
+<!-- section_id: "a3fbe45c-8bea-4563-a67d-d2b051ba59c0" -->
 ## Notes
 
+<!-- section_id: "008ec4d4-d40b-4f3e-8420-0b2ba44718e3" -->
 ### Concurrent browser (optional)
 Use OS+tool-specific Playwright configs so Cursor Agent can run a headed browser concurrently with Codex/Claude:
 
@@ -80,6 +85,7 @@ Expected outputs:
 - Config: `~/.config/mcp/playwright.wsl_cursor.json`
 - Profile: `~/.cache/ms-playwright/mcp-chromium-wsl-cursor`
 
+<!-- section_id: "a8782825-0e79-4f56-9f9e-7d8c4a05d528" -->
 ## Issues and Fixes
 
 - **Browser crashes on WSLg**: See `general_issues_and_fixes/WSLG_BROWSER_CRASH_FIX.md`

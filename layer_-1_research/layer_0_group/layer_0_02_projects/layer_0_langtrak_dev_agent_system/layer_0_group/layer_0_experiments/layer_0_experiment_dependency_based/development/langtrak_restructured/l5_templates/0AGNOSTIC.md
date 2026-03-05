@@ -8,6 +8,7 @@ resource_name: "0AGNOSTIC"
 
 # ── Entity Definition ──
 
+<!-- section_id: "ad1738bb-9d52-4593-a6e1-e48cc088c1e9" -->
 ## Identity
 
 entity_id: "3283e3a7-922a-4857-be48-32b99bc92897"
@@ -17,15 +18,19 @@ entity_id: "3283e3a7-922a-4857-be48-32b99bc92897"
 **Depends On**: L2 Infrastructure (auth, firebase, storage), L3 Users (sessions), L4 Phoneme System (phoneme data)
 **Provides**: ITemplateProvider
 
+<!-- section_id: "d48ec9b6-bed6-433d-9ee8-d1ced3b61657" -->
 ## Key Behaviors
 
+<!-- section_id: "69865f68-94bd-40af-a03b-54420d8b2613" -->
 ### Sub-layers
 - L5.1 Core: Template CRUD, local template management
 - L5.2 Admin: Template administration, import/export, cloud template management
 
+<!-- section_id: "b6b05a2d-3169-4343-a2fa-2ee9faeba720" -->
 ### Dependency Shape
 Sequence: Core → Admin (admin builds on core operations)
 
+<!-- section_id: "bbbb837a-2733-47fb-9b75-b83764fca249" -->
 ## Triggers
 
 | Situation | Action |
@@ -35,6 +40,7 @@ Sequence: Core → Admin (admin builds on core operations)
 
 # ── Current Status ──
 
+<!-- section_id: "cd0fbc70-2f1f-4c22-a9e1-871b4afb5ddc" -->
 ## Current Status
 
 **Phase**: Routes extracted — all template routes from monolithic app.py
@@ -44,6 +50,7 @@ Sequence: Core → Admin (admin builds on core operations)
 
 # ── References ──
 
+<!-- section_id: "3515472d-7687-4d83-82d6-8d60fb5a64b2" -->
 ## Navigation
 
 | Resource | Path |

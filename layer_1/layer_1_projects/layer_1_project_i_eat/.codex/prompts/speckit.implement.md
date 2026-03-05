@@ -5,6 +5,7 @@ resource_name: "speckit.implement"
 description: Execute the implementation plan by processing and executing all tasks defined in tasks.md
 ---
 
+<!-- section_id: "ca1ce372-bed6-4a39-83e4-ad4501e7403a" -->
 ## User Input
 
 ```text
@@ -13,6 +14,7 @@ $ARGUMENTS
 
 You **MUST** consider the user input before proceeding (if not empty).
 
+<!-- section_id: "3eb62d13-cdec-4d01-b37e-553cd813d8d6" -->
 ## Outline
 
 1. Run `.specify/scripts/bash/check-prerequisites.sh --json --require-tasks --include-tasks` from repo root and parse FEATURE_DIR and AVAILABLE_DOCS list. All paths must be absolute. For single quotes in args like "I'm Groot", use escape syntax: e.g 'I'\''m Groot' (or double-quote if possible: "I'm Groot").

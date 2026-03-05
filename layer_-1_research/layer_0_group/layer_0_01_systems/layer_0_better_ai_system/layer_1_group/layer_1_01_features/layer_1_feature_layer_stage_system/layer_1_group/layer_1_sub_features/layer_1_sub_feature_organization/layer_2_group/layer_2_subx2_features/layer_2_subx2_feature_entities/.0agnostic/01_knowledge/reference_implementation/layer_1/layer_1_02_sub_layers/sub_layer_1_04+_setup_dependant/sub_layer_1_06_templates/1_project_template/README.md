@@ -14,6 +14,7 @@ The Project layer inherits Universal (L0) constraints and adds project-specific 
 - [`architecture.md`](../../-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/architecture.md) – Layer inheritance and project-level responsibilities
 - [`tools_and_context_systems.md`](../../-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/tools_and_context_systems.md) – Tool selection for project managers vs. workers
 
+<!-- section_id: "29cec30a-aefb-4446-9930-e82f4e761b94" -->
 ## Directory Structure
 
 ```
@@ -32,10 +33,12 @@ The Project layer inherits Universal (L0) constraints and adds project-specific 
 └── README.md
 ```
 
+<!-- section_id: "556989d9-325a-4235-b0c1-63981f89fb56" -->
 ## Manager + Handoff (layer_1/)
 - layer_1_00_ai_manager_system: project-level manager docs/configs.
 - layer_1_01_manager_handoff_documents: `1.00_to_universal/` and `1.01_to_specific/` for up/downstream handoffs.
 
+<!-- section_id: "12877700-46d7-4425-9c33-66e1dbf7a74b" -->
 ## Slots (stored under `layer_1/layer_1_02_sub_layers/` as `sub_layer_1.xx_*`)
 - sub_layer_1.01_basic_prompts: project init + what-to-do-next prompts.
 - sub_layer_1.02_project_se_knowledge: SE/domain knowledge this project relies on.
@@ -50,6 +53,7 @@ The Project layer inherits Universal (L0) constraints and adds project-specific 
 - sub_layer_1.11_project_tools: project-specific scripts/CLIs/migrations.
 - sub_layer_1.12_project_agent_setup: project-specific agent configuration with model fallbacks (depends on 1.08, 1.09, 1.10, 1.11).
 
+<!-- section_id: "967e12af-3359-4c9d-8eb0-07ab5f1f7239" -->
 ## Project AI Setup Dependency Chain (1.08–1.12)
 
 The slots 1.08–1.12 form a dependency chain for project-level AI agent setup:
@@ -61,6 +65,7 @@ The slots 1.08–1.12 form a dependency chain for project-level AI agent setup:
 
 Configure these in order when setting up project-specific AI environments.
 
+<!-- section_id: "7a1f5a23-e74c-448e-9d49-304f0f840af4" -->
 ## Nested Content Directories (layer_2/)
 
 **Same-Type Nesting Rule:** The "sub" prefix only applies to same-type nesting. Since features and components are different types from projects, they do NOT use the "sub" prefix.
@@ -69,6 +74,7 @@ Configure these in order when setting up project-specific AI environments.
 - layer_2/layer_2_features/: Features within this project (project→feature = different type, NO "sub")
 - layer_2/layer_2_components/: Components within this project (project→component = different type, NO "sub")
 
+<!-- section_id: "f73b064a-e1f1-4189-9b6c-aaac30a2c94d" -->
 ## Stages (layer_1/layer_1_99_stages/, folders named `stage_1.xx_*`)
 - stage_1.00_request_gathering
 - stage_1.01_instructions

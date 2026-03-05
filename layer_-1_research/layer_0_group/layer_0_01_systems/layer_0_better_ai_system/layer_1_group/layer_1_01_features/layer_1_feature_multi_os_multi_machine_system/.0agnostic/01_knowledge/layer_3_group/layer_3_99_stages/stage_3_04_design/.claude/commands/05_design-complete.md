@@ -12,6 +12,7 @@ argument-hint: [--notes "completion notes"]
 
 Complete the 05_design stage and prepare for next stage.
 
+<!-- section_id: "f12aa18a-10a2-4b2d-9cc1-87b6c29e900c" -->
 ## Steps
 1. Verify all deliverables in outputs/
 2. Create handoff document

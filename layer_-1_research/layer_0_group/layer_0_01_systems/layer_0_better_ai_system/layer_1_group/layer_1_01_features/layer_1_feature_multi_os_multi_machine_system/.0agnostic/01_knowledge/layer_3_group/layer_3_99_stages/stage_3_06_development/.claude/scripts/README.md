@@ -8,8 +8,10 @@ resource_name: "README"
 
 Utility scripts for the 06_development stage.
 
+<!-- section_id: "23aacbe4-e47a-448e-b831-c6a12756bf94" -->
 ## Available Scripts
 (Add scripts as needed)
 
+<!-- section_id: "f4edc9d7-ac3e-45fd-91ed-7a964a68e411" -->
 ## Usage
 Scripts can be called from hooks or directly via Bash tool.

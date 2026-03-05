@@ -11,6 +11,7 @@ resource_name: "CLAUDE.sync-conflict-20260126-035819-IF2WOGZ"
 
 ---
 
+<!-- section_id: "b43cb56d-1aad-4f3b-90ac-2ab66f86b24f" -->
 ## Normative Specification
 
 This file implements the OS-specific context pattern defined in:
@@ -20,32 +21,38 @@ Refer to that document for the canonical specification of the OS variant system.
 
 ---
 
+<!-- section_id: "d111b0d2-bafb-4543-9f52-1849c1e4931c" -->
 ## WSL-Specific Context for Claude Code
 
+<!-- section_id: "cfe5e12e-1ce3-4ed8-8fe1-694c40ba729e" -->
 ### Environment Detection
 - Running in Windows Subsystem for Linux
 - Check `WSL_DISTRO_NAME` environment variable
 - Typically Ubuntu-based distribution
 - Access to both Linux and Windows file systems
 
+<!-- section_id: "62050ff0-1a54-4d97-b502-cdf42f14c4e4" -->
 ### Path Conventions
 - **Linux paths**: `/home/dawson/...`
 - **Windows paths accessible via**: `/mnt/c/Users/...`
 - **WSL paths from Windows**: `\\wsl$\<distro>\...`
 - **Project root**: `/home/dawson/code/0_layer_universal/`
 
+<!-- section_id: "b9d535b5-aab9-4663-a887-14fca5ca8d29" -->
 ### Tool Availability
 - Standard Linux CLI tools available
 - Some Windows tools accessible via `.exe` suffix
 - Node.js, npm, Python typically installed in Linux environment
 - Git configured for Linux-style line endings (LF)
 
+<!-- section_id: "54dabd19-e11e-42fa-a77d-73dbaaa30549" -->
 ### Common WSL Quirks
 - File permissions may differ between /mnt/c and native Linux filesystem
 - Performance is better on native Linux filesystem (not /mnt/c)
 - Windows Defender may scan WSL files (can cause slowness)
 - `wsl.exe` command available to interact with Windows from Linux
 
+<!-- section_id: "df7137bf-17d2-4b8f-9391-305429b62cc6" -->
 ### Recommended Practices for This OS
 - Prefer native Linux filesystem for code and development
 - Use `/home/dawson/` paths, not `/mnt/c/` for primary work
@@ -54,6 +61,7 @@ Refer to that document for the canonical specification of the OS variant system.
 
 ---
 
+<!-- section_id: "e28ff393-615b-4bbb-85fd-c7d356a552f8" -->
 ## Integration Notes
 
 This context file:
@@ -64,6 +72,7 @@ This context file:
 
 ---
 
+<!-- section_id: "ea2c75ed-30bf-488d-abd4-3ff31cb62ea9" -->
 ## Future Extensions
 
 Add WSL-specific:

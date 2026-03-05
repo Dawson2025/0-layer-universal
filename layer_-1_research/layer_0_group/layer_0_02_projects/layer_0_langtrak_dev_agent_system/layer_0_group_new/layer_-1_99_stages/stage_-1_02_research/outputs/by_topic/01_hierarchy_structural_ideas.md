@@ -11,6 +11,7 @@ resource_name: "01_hierarchy_structural_ideas"
 
 ---
 
+<!-- section_id: "d00be75e-2ad5-4a4c-932a-940e01e5c1d9" -->
 ## The Core Question
 
 In our layer-stage system, **lower layer numbers = more universal** (applies to more things above). When we organize LangTrak's features into layers, the ordering principle determines:
@@ -24,12 +25,14 @@ Different ordering principles produce fundamentally different hierarchies. Let's
 
 ---
 
+<!-- section_id: "336457e2-ffc3-4e25-9494-eaf817d0c6b0" -->
 ## Principle 1: Dependency (Current Design)
 
 **Rule**: Layer N depends on all layers below it (lower numbers). If you need X to exist before Y can work, X goes at a lower layer number.
 
 **Question it answers**: "What must exist before this feature can function?"
 
+<!-- section_id: "6509d497-3f6a-46ff-9986-799b49d69990" -->
 ### Structure
 
 ```
@@ -50,22 +53,26 @@ L8: Teams (Collaboration, Invites, Sharing)
 Cross-cutting: L9 Enhancements, L10 Admin, L11 Orchestration
 ```
 
+<!-- section_id: "d37de600-2063-42ff-8d0d-453ef23bba00" -->
 ### What Cascades
 
 Infrastructure context (storage API, auth checks) reaches EVERYTHING. User scoping reaches everything above L3. Phoneme system context reaches templates, content, projects — but NOT teams or enhancements (they don't directly need phoneme internals).
 
+<!-- section_id: "3ebd3248-c04d-4df2-9021-433c588e792a" -->
 ### Agent Implications
 
 - Infrastructure agent is the most loaded (everything depends on it)
 - Relay chains can be long (Teams → Projects → Content → Templates → Phonemes → Users → Infrastructure)
 - Cross-cutting layers break the clean chain
 
+<!-- section_id: "d4a95532-e39a-45a8-9f70-b9b2c99ad14a" -->
 ### Strengths
 
 - Mirrors technical reality (you literally can't run templates without the phoneme system existing)
 - Clear build order (you'd implement bottom-up)
 - Minimal context is truly minimal (each layer only needs what it directly depends on)
 
+<!-- section_id: "696dbb4b-2e57-49e3-a26a-1528cf84743b" -->
 ### Weaknesses
 
 - Doesn't reflect how USERS think about the app
@@ -74,12 +81,14 @@ Infrastructure context (storage API, auth checks) reaches EVERYTHING. User scopi
 
 ---
 
+<!-- section_id: "f6aff517-95b1-46be-bc30-46bf05a18dd1" -->
 ## Principle 2: Containment (Ownership)
 
 **Rule**: Layer N contains/owns the things at higher layer numbers. What HOLDS what in the data model?
 
 **Question it answers**: "What owns this data? If I delete X, what else gets deleted?"
 
+<!-- section_id: "7c0df750-e1d0-4592-9758-a70976910960" -->
 ### Structure
 
 ```
@@ -103,10 +112,12 @@ L10: Teams + Sharing (shared ownership — cross-cuts)
 L11: Enhancements + Admin + Orchestration
 ```
 
+<!-- section_id: "e9ce00ff-1a95-4348-882e-5fa0b4be7a86" -->
 ### What Cascades
 
 User identity cascades to everything (all data is user-owned). Project context cascades to all content within it. The phoneme TYPE system is reference data that's queried but not owned by any single feature.
 
+<!-- section_id: "45433aab-b1a3-42c6-8faa-749f26597c9c" -->
 ### Agent Implications
 
 - The Project agent becomes central (knows about all content within its projects)
@@ -114,6 +125,7 @@ User identity cascades to everything (all data is user-owned). Project context c
 - The Phoneme Type System is a "library" that anything can query — it doesn't own anything, things reference it
 - Teams complicate the hierarchy because they introduce SHARED ownership (a project can belong to multiple users via a team)
 
+<!-- section_id: "484158e0-1f28-4738-a74b-794020f18bb7" -->
 ### Strengths
 
 - Matches the DATABASE schema naturally (foreign key relationships = ownership)
@@ -121,6 +133,7 @@ User identity cascades to everything (all data is user-owned). Project context c
 - Users and developers intuitively understand "what's inside what"
 - Makes data isolation easy (a project's content is self-contained)
 
+<!-- section_id: "986e991b-979d-40df-a608-1207574ba93a" -->
 ### Weaknesses
 
 - Phoneme type system is awkward — it's reference data, not owned by any container
@@ -130,12 +143,14 @@ User identity cascades to everything (all data is user-owned). Project context c
 
 ---
 
+<!-- section_id: "318120b6-e5c0-4c3a-8356-071682f09f4d" -->
 ## Principle 3: User Interaction Depth
 
 **Rule**: Features users interact with most directly go at the top. Features users never see go at the bottom. Layer number = distance from the user.
 
 **Question it answers**: "How visible is this feature to the end user?"
 
+<!-- section_id: "61514b0d-6ada-4c53-a4c0-615ff0e5f045" -->
 ### Structure
 
 ```
@@ -159,16 +174,19 @@ L10: Auth + Users + Sessions (invisible login layer)
 L11: Infrastructure (DB, Firebase, Storage — invisible)
 ```
 
+<!-- section_id: "f56eb4b8-a7c0-4a9a-b415-8515edecaf15" -->
 ### What Cascades
 
 The dashboard's context (what to display, navigation structure) cascades to everything — every feature is eventually displayed through the dashboard. Project context cascades to all content views.
 
+<!-- section_id: "e3789b3d-18f9-4bb2-8e09-9ab76187f9a1" -->
 ### Agent Implications
 
 - Dashboard agent needs broad knowledge (it displays info from every feature)
 - Infrastructure agent is deeply buried — it supports everything but has no user visibility
 - The cascade is INVERTED from dependency (infrastructure is universal in dependency, but deepest in interaction)
 
+<!-- section_id: "05314df2-2e29-4769-bd83-4609e5a43b63" -->
 ### Strengths
 
 - Matches the USER EXPERIENCE (how people actually use the app)
@@ -176,6 +194,7 @@ The dashboard's context (what to display, navigation structure) cascades to ever
 - Natural for UI/UX-first development
 - Testing can follow user flows (top-down)
 
+<!-- section_id: "a37d630c-5097-4367-8619-23cc1f93c683" -->
 ### Weaknesses
 
 - The "most universal" context is the dashboard, which is actually the LEAST foundational technically
@@ -185,12 +204,14 @@ The dashboard's context (what to display, navigation structure) cascades to ever
 
 ---
 
+<!-- section_id: "60fe63b1-ec40-4a89-8570-d32843329c9e" -->
 ## Principle 4: Frequency of Change
 
 **Rule**: Things that change rarely go at lower layer numbers. Things that change constantly go at higher numbers. Lower = more stable.
 
 **Question it answers**: "How often does this need to be modified?"
 
+<!-- section_id: "85c100a5-36ef-4cc4-8b2a-af40b1673d68" -->
 ### Structure
 
 ```
@@ -213,10 +234,12 @@ L10: Firebase Sync + Orchestration (runs on every change)
 L11: Dashboard (re-renders on every navigation)
 ```
 
+<!-- section_id: "34b694f6-a377-4203-8fa6-0c08fe2ed501" -->
 ### What Cascades
 
 Infrastructure stability cascades — everyone can rely on the DB schema not changing. Phoneme type system stability cascades — templates know the phoneme vocabulary is fixed.
 
+<!-- section_id: "25320266-2e68-4364-af76-26171e9aede4" -->
 ### Agent Implications
 
 - Lower layer agents rarely need updates — they become "fire and forget" specialists
@@ -224,6 +247,7 @@ Infrastructure stability cascades — everyone can rely on the DB schema not cha
 - Testing strategy inverts: test lower layers once thoroughly, test upper layers continuously
 - The most stable context is the most universal — good for caching
 
+<!-- section_id: "9ccc19cb-51d4-47c4-971a-65169b21abc1" -->
 ### Strengths
 
 - Matches deployment reality (you deploy infra changes carefully, UI changes frequently)
@@ -231,6 +255,7 @@ Infrastructure stability cascades — everyone can rely on the DB schema not cha
 - Reduces cascading changes (changing infrastructure SHOULD be rare and carefully managed)
 - Context caching works well (lower layers' context rarely invalidates)
 
+<!-- section_id: "69696af5-5a7f-488c-b2d7-d1cd6eed5acd" -->
 ### Weaknesses
 
 - "Frequency of change" is subjective and can shift over time
@@ -240,12 +265,14 @@ Infrastructure stability cascades — everyone can rely on the DB schema not cha
 
 ---
 
+<!-- section_id: "215b7096-767a-4f26-9f96-e7b3f6f7b8c4" -->
 ## Principle 5: Data Flow (Input → Process → Output)
 
 **Rule**: Follow how data moves through the system. Input layers at the bottom, processing in the middle, output at the top.
 
 **Question it answers**: "Where in the processing pipeline does this feature sit?"
 
+<!-- section_id: "6cd59721-e646-4d30-9d01-e220fbc13be6" -->
 ### Structure
 
 ```
@@ -288,10 +315,12 @@ L8: Collaboration Layer
     - Real-time sync
 ```
 
+<!-- section_id: "34e719b5-8509-425d-9cab-cc7e41e576c6" -->
 ### What Cascades
 
 Input format context (what data types, what validation rules) cascades to all processing. Storage API cascades to everything that reads/writes. Computation results cascade to presentation.
 
+<!-- section_id: "0999c810-4b4e-4790-8021-b0458b871ad6" -->
 ### Agent Implications
 
 - Pipeline-style processing: each agent hands off to the next
@@ -299,6 +328,7 @@ Input format context (what data types, what validation rules) cascades to all pr
 - BUT: most real features span the ENTIRE pipeline (creating a word touches input, validation, logic, storage, presentation)
 - Cross-cutting features like TTS don't fit neatly into one pipeline stage
 
+<!-- section_id: "f2e47ffd-e6e7-42ab-bb9a-6586a811445c" -->
 ### Strengths
 
 - Matches the MVC/pipeline architecture pattern familiar to developers
@@ -306,6 +336,7 @@ Input format context (what data types, what validation rules) cascades to all pr
 - Easy to reason about data flow
 - Good for debugging (follow the data through the pipeline)
 
+<!-- section_id: "150a2db3-c696-45ab-a065-75537a772160" -->
 ### Weaknesses
 
 - Real features span ALL layers (word creation touches every pipeline stage)
@@ -315,12 +346,14 @@ Input format context (what data types, what validation rules) cascades to all pr
 
 ---
 
+<!-- section_id: "b5278f5f-0ccc-4df8-942a-79bb1b2659d1" -->
 ## Principle 6: Feature Coupling (Cluster by Relatedness)
 
 **Rule**: Features that are tightly coupled (frequently change together, share data structures, have similar domain concepts) belong in the same layer. Like bounded contexts in DDD.
 
 **Question it answers**: "What features belong together? What changes together?"
 
+<!-- section_id: "490f44cd-cbe1-48f5-9655-135839254770" -->
 ### Structure
 
 ```
@@ -361,6 +394,7 @@ L9: Infrastructure Cluster
     - All about "where data lives"
 ```
 
+<!-- section_id: "04386559-93f4-49b9-8120-0655cdb0159d" -->
 ### What Cascades
 
 Identity context (who's logged in) cascades everywhere. Phoneme domain context cascades to content and enhancements. Infrastructure is at L9 — it's available to everything but isn't "universal" in the cascading sense.
@@ -370,6 +404,7 @@ Wait — this breaks the "lower = more universal" rule. Infrastructure IS univer
 - **Separate infrastructure**: Have it as a foundation below all clusters
 - **Make it cross-cutting**: Like L9-L11 in the dependency model
 
+<!-- section_id: "3c2252e7-d403-4e31-a81b-c936dbc4aaa8" -->
 ### Revised Structure (Infrastructure as Foundation)
 
 ```
@@ -386,6 +421,7 @@ L8: Enhancements (TTS, Video, Suggestions)
 L9: Management (Admin, Dashboard, Menu)
 ```
 
+<!-- section_id: "c965799a-8d47-44c1-898e-b9c638077dca" -->
 ### Agent Implications
 
 - Cluster agents are true DOMAIN EXPERTS — the Phoneme Domain agent knows everything about phonemes, templates, groups, types, and frequency
@@ -393,6 +429,7 @@ L9: Management (Admin, Dashboard, Menu)
 - Cross-domain work requires cluster-to-cluster communication (creating a word needs L4 + L5)
 - Infrastructure agent is universally available
 
+<!-- section_id: "6e8873db-5f71-4c44-ae00-14a7cc0733a9" -->
 ### Strengths
 
 - Matches Domain-Driven Design (bounded contexts)
@@ -401,6 +438,7 @@ L9: Management (Admin, Dashboard, Menu)
 - Natural for microservices architecture
 - Teams can own clusters independently
 
+<!-- section_id: "1178fa76-bb15-482b-870a-1757986a637d" -->
 ### Weaknesses
 
 - Cluster boundaries are subjective (should Templates be in Phoneme Domain or Content Domain?)
@@ -410,6 +448,7 @@ L9: Management (Admin, Dashboard, Menu)
 
 ---
 
+<!-- section_id: "2bf3d09e-76a4-4f1f-a9d9-36e6eca7a334" -->
 ## Comparison Matrix
 
 | Principle | Lower Layers Are... | Best For | Worst For | Context Cascade Makes Sense? |
@@ -423,8 +462,10 @@ L9: Management (Admin, Dashboard, Menu)
 
 ---
 
+<!-- section_id: "61eee24c-ed0c-4e6d-8396-2b380afb99c9" -->
 ## Hybrid Ideas
 
+<!-- section_id: "a1400cb6-de1d-4d85-bc77-4b6552684400" -->
 ### Hybrid 1: Dependency + Containment
 
 Use dependency for the ORDERING between layers, but group features within layers by containment.
@@ -440,6 +481,7 @@ L7: Teams (shares projects — cross-cuts containment)
 
 Problem: Dependency says Phonemes → Templates → Content → Projects. Containment says Projects → Content → Templates → Phonemes. **They order in opposite directions.** You can't satisfy both.
 
+<!-- section_id: "45b1a7d2-ea74-404a-bd09-2c5a2e3856a8" -->
 ### Hybrid 2: Feature Coupling + Dependency (Between Clusters)
 
 Use feature coupling WITHIN layers (group related features). Use dependency BETWEEN layers (order clusters by what depends on what).
@@ -465,6 +507,7 @@ L9: Management Cluster (Admin, Dashboard, Menu)
 
 **This is probably the strongest hybrid.** It preserves dependency ordering between clusters while giving each cluster deep domain knowledge. The agent structure maps 1:1 to clusters.
 
+<!-- section_id: "ab2b57ff-b301-472e-9488-721b1014c4ca" -->
 ### Hybrid 3: Stable Core + Volatile Shell
 
 Use change frequency to define an inner "stable core" and an outer "volatile shell":
@@ -490,10 +533,12 @@ Agents in the stable core have fewer updates. Active zone agents do most of the 
 
 ---
 
+<!-- section_id: "739d4fe5-c5f0-420c-bc85-35aefe60a588" -->
 ## Two Fundamental Design Axes
 
 Before adding more principles, we need to name the two meta-dimensions that ALL structural choices are optimizing for. Every hierarchy design makes tradeoffs between these two:
 
+<!-- section_id: "5e530931-a7e1-4466-9b0b-10a534274a6e" -->
 ### Axis 1: Cascading Context (Top-Down Flow)
 
 **The question**: What universal knowledge should flow downward from parent to child, so that every agent below a certain point in the tree has the right foundational context?
@@ -507,6 +552,7 @@ In the layer-stage system, lower-numbered layers (closer to root) provide contex
 
 **When this axis dominates**: Architecture design, context efficiency, reducing token budgets, ensuring consistency across the system.
 
+<!-- section_id: "3d157d5f-122d-4a5a-be08-4ecd217b94c4" -->
 ### Axis 2: Delegation/Traversal (Manager-Worker Trees)
 
 **The question**: How should manager agents delegate to sub-managers and eventually to leaf worker agents, so that:
@@ -522,6 +568,7 @@ In this axis, the hierarchy isn't about what context flows down — it's about w
 
 **When this axis dominates**: Task execution, debugging, feature implementation, coordination between teams.
 
+<!-- section_id: "383ca156-3bee-4735-ba34-d8c940968984" -->
 ### The Tension
 
 These axes can CONFLICT:
@@ -532,8 +579,10 @@ The ideal structure balances both. The principles below are organized by which a
 
 ---
 
+<!-- section_id: "a8589746-c890-43de-91c1-049fc1ad68ac" -->
 ## Additional Structural Principles
 
+<!-- section_id: "cc7957ab-bdbf-4526-b4b0-486f9b33e988" -->
 ### Principle 7: Skill/Capability Clustering
 
 **Rule**: Group agents by what TOOLS and CAPABILITIES they need, not by what domain they work on.
@@ -588,6 +637,7 @@ Each capability cluster shares tool-specific context: Database agents all know t
 
 ---
 
+<!-- section_id: "810ebe4f-1fe3-48f2-84ad-c3904bc3bf07" -->
 ### Principle 8: Knowledge Depth vs. Breadth (Specialist Tree)
 
 **Rule**: Root agents are GENERALISTS who know a little about everything. Deeper agents are SPECIALISTS who know one thing deeply. The tree mirrors expertise depth.
@@ -655,6 +705,7 @@ General system knowledge (how layers relate, what dependencies exist, what the a
 
 ---
 
+<!-- section_id: "4185d36a-e4e9-4b3f-bde7-be71ba9d6426" -->
 ### Principle 9: Communication Topology
 
 **Rule**: Structure the hierarchy based on what agents need to TALK TO each other about, not what they OWN or depend on. Minimize communication distance between frequently-communicating agents.
@@ -724,6 +775,7 @@ Manager Agent
 
 ---
 
+<!-- section_id: "c9a14729-0438-4ae7-bc0a-93052eabf70d" -->
 ### Principle 10: Risk/Criticality-Based Hierarchy
 
 **Rule**: The most critical, highest-risk components sit closest to root with the most oversight. Lower-risk, more isolated components are deeper leaves. Root manager has direct visibility into high-risk areas.
@@ -790,6 +842,7 @@ Root manager has detailed STATIC context for CRITICAL components (always loaded 
 
 ---
 
+<!-- section_id: "23446a2b-a00d-47fe-a1fc-d957b2ec7b1a" -->
 ### Principle 11: Lifecycle/Temporal Hierarchy
 
 **Rule**: Organize by WHEN things happen in the application lifecycle. Boot-time components at the root, session-time at the middle, interaction-time at the leaves.
@@ -838,6 +891,7 @@ Boot-time context (app config, DB connection info, auth setup) is available to A
 
 ---
 
+<!-- section_id: "72033379-fbec-45cb-8cc1-c505dac13340" -->
 ### Principle 12: API Surface Hierarchy
 
 **Rule**: Organize by what INTERFACES components expose to other components. Components with the most consumers (widest API surface) sit at lower layers.
@@ -904,6 +958,7 @@ This is extremely efficient for cascading context — interfaces are small (a fe
 
 ---
 
+<!-- section_id: "65463491-d52f-4f74-98c0-ab367429ce56" -->
 ### Principle 13: Concurrency/Isolation (Parallel Execution Tree)
 
 **Rule**: Things that can be developed, tested, and modified INDEPENDENTLY sit as siblings. Things that require coordination sit in parent-child relationships.
@@ -962,6 +1017,7 @@ Root (coordinates all work)
 
 ---
 
+<!-- section_id: "8480e221-b8dd-4be9-96cf-cd05714406e6" -->
 ## Meta-Analysis: Which Axis Does Each Principle Serve?
 
 | Principle | Cascading Context (top-down) | Delegation/Traversal (manager-worker) | Both? |
@@ -980,6 +1036,7 @@ Root (coordinates all work)
 | 12. API Surface | Strong | Moderate | |
 | 13. Concurrency/Isolation | Weak | Strong | |
 
+<!-- section_id: "7d41d811-91dd-4302-924e-71e0ef5bca3d" -->
 ### Key Insight
 
 **No single principle optimizes both axes equally.** This is why hybrid approaches are necessary:
@@ -988,6 +1045,7 @@ Root (coordinates all work)
 - **For delegation/traversal**, the strongest are: Containment (2), Feature Coupling (6), Skill/Capability (7), Communication Topology (9), Concurrency (13)
 - **Principles that serve BOTH axes** (Knowledge Depth, Risk/Criticality) tend to produce the most balanced hierarchies but may not excel at either
 
+<!-- section_id: "ed08d350-1457-4db6-b029-4e1081c2433e" -->
 ### The Design Space
 
 The ideal LangTrak agent hierarchy likely combines:
@@ -1001,8 +1059,10 @@ These can be DIFFERENT principles applied at different levels:
 
 ---
 
+<!-- section_id: "e48fb586-1914-4f17-8287-9b7c40db1e79" -->
 ## Updated Hybrid Ideas
 
+<!-- section_id: "20b44a99-b233-4666-b36c-45720f007b23" -->
 ### Hybrid 4: API Surface Ordering + Feature Coupling Clusters
 
 Layers are ordered by interface consumer count (API surface). Within each layer, features are grouped by coupling (bounded contexts).
@@ -1022,6 +1082,7 @@ L9: Management Cluster (Admin + Dashboard — 0 consumers)
 
 **Why this works**: API surface gives clean cascading (interfaces are small, cascade is cheap). Feature coupling gives clean delegation (domain experts handle domain work). Knowledge depth gives clean agent tree.
 
+<!-- section_id: "a30f05a8-5ea1-4bf3-ac4f-3bb3b31a6a6c" -->
 ### Hybrid 5: Risk-Aware Dependency with Communication-Optimized Hubs
 
 Use dependency for layer ordering. Add risk-awareness to the manager's context model (critical components get more attention). Organize the agent TREE by communication topology (frequently-communicating agents are co-located).
@@ -1051,6 +1112,7 @@ Root Manager [CRITICAL awareness: L2, Auth]
 
 **Why this works**: Dependency ordering ensures context cascades correctly. Communication hubs ensure agents that need to talk are co-located. Risk awareness ensures the manager closely supervises critical components.
 
+<!-- section_id: "086e73b5-862f-4b7a-8af0-5aefc6142f48" -->
 ### Hybrid 6: Concurrency-First with Specialist Depth
 
 Use independence analysis to create parallel branches. Within each branch, use knowledge depth (generalist branch manager → specialist leaf agents).
@@ -1076,8 +1138,10 @@ Foundation (sequential): Infrastructure → Auth → Users
 
 ---
 
+<!-- section_id: "9478693a-89f3-49b2-b459-6018a14cdeba" -->
 ## Recommendation for Experiment
 
+<!-- section_id: "83ca97f7-d382-4568-808d-55b448bc04a1" -->
 ### Original Trials (A-E): From experiment document
 
 | Trial | Structure | Tests What |
@@ -1088,6 +1152,7 @@ Foundation (sequential): Infrastructure → Auth → Users
 | D | Hybrid Layer+Stage | Both dimensions |
 | E | Flat Team | No hierarchy at all |
 
+<!-- section_id: "dd0c119a-308e-4936-b324-f29116c253bf" -->
 ### New Trials from Structural Ideas
 
 | Trial | Principle(s) | Why Test It |
@@ -1099,6 +1164,7 @@ Foundation (sequential): Infrastructure → Auth → Users
 | J | Communication-Optimized Hubs (Principle 9 + Hybrid 5) | Tests whether co-locating high-frequency communication pairs improves coordination |
 | K | Concurrency-First Branches (Principle 13 + Hybrid 6) | Tests whether maximizing parallel execution improves throughput |
 
+<!-- section_id: "f6ad2eee-bd7d-491d-acc1-4da866d99e69" -->
 ### Recommended First Trials (Maximum Variation)
 
 Run these 4 first for maximum structural diversity:
@@ -1112,6 +1178,7 @@ These four test fundamentally different organizational philosophies: domain grou
 
 ---
 
+<!-- section_id: "96e8c020-369e-4586-9dd5-c6a3945be223" -->
 ## Next Steps
 
 1. Add Trials F-K to the experiment document with concrete agent definitions

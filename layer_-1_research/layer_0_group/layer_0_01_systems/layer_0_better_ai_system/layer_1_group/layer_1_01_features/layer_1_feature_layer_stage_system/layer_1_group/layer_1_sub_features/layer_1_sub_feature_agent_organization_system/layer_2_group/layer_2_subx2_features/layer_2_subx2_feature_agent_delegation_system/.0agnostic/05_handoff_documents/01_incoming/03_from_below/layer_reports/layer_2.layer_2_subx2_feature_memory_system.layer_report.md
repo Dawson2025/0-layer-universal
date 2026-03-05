@@ -5,20 +5,24 @@ resource_name: "layer_2.layer_2_subx2_feature_memory_system.layer_report"
 ---
 # Layer Report: memory_system
 
+<!-- section_id: "d2b9050b-20dc-4102-bdca-ac66e3be2582" -->
 ## Status
 **active**
 
+<!-- section_id: "57bdf405-9172-435a-ad9e-7fc403535b59" -->
 ## Last Updated
 2026-02-21
 
 ---
 
+<!-- section_id: "5bdb13e6-f3bd-44a3-8cb0-e1b1c05d4f8f" -->
 ## Summary
 
 The memory_system entity researches how AI agents remember, load, and navigate context. Stage 02 (research) has produced comprehensive findings across 24 research documents (~350KB), covering biological memory foundations, AI memory architectures, data structures, commercial platforms, and performance benchmarks. The entity is ready to transition from research into instructions (stage 03) and design (stage 04).
 
 ---
 
+<!-- section_id: "698060ff-386c-4510-b841-406b08d1eb0f" -->
 ## Stage Status
 
 | Stage | Name | Status | Notes |
@@ -38,6 +42,7 @@ The memory_system entity researches how AI agents remember, load, and navigate c
 
 ---
 
+<!-- section_id: "a6dfe0dd-fbdb-4451-931d-f31d5af5f482" -->
 ## Key Deliverables from Stage 02
 
 | Deliverable | Location |
@@ -49,6 +54,7 @@ The memory_system entity researches how AI agents remember, load, and navigate c
 
 ---
 
+<!-- section_id: "a58256dc-abb8-4f4c-9ffb-72d17f307a69" -->
 ## Key Findings
 
 - Memory types form a 6-level biological dependency chain (sensory through autobiographical)
@@ -60,6 +66,7 @@ The memory_system entity researches how AI agents remember, load, and navigate c
 
 ---
 
+<!-- section_id: "74b66ad2-e6b2-4e74-8c0b-853366d5fac9" -->
 ## Open Items
 
 - Prototype implementation not yet started (see research doc 19_prototype_specification.md)
@@ -69,6 +76,7 @@ The memory_system entity researches how AI agents remember, load, and navigate c
 
 ---
 
+<!-- section_id: "b008d5b3-1209-4e1e-9569-ad50a60f3f45" -->
 ## Handoff Notes
 
 - **Ready for next stage**: Yes -- research is comprehensive

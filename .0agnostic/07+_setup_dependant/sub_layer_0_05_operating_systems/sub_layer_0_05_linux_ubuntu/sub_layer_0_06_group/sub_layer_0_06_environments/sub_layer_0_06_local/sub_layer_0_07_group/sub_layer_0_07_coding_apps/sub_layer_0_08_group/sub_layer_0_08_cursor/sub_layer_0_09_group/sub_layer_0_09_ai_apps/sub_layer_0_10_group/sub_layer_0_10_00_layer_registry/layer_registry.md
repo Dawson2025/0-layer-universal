@@ -5,8 +5,10 @@ resource_name: "layer_registry"
 ---
 # Level 10 Layer Registry — AI Apps Children
 
+<!-- section_id: "199ac054-dcad-4a35-82c3-da7172eea80a" -->
 ## Entity Types at Level 10
 
+<!-- section_id: "065ff2f2-b85c-4d5d-ab64-f02742ae4f82" -->
 ### Feature (numbered, shared)
 
 **Naming**: `sub_layer_0_10_NN_name/` (with sequence number)
@@ -21,6 +23,7 @@ resource_name: "layer_registry"
 | 04 | protocols | Shared operational protocols |
 | 05 | agent_setup | Agent configuration and customization patterns |
 
+<!-- section_id: "3b519a85-83db-4069-95fb-f07ca4ac3d8d" -->
 ### Further Specificity (unnumbered, app-specific)
 
 **Naming**: `sub_layer_0_10_name/` (no sequence number)
@@ -34,6 +37,7 @@ resource_name: "layer_registry"
 | cursor_agent | Cursor Agent/Composer setup and config |
 | gemini_cli | Google Gemini CLI setup and config |
 
+<!-- section_id: "d6cd6707-cbe6-4921-8863-ad788a36099f" -->
 ## Notes
 
 - Feature entities contain knowledge and tools shared across all AI apps

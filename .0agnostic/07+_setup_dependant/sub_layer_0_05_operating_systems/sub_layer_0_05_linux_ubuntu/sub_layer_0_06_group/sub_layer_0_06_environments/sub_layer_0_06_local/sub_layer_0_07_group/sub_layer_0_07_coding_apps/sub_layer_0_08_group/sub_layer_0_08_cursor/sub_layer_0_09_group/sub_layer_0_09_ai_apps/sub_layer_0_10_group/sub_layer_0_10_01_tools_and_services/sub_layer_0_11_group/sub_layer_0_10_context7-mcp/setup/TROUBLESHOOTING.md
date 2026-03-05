@@ -7,6 +7,7 @@ resource_name: "TROUBLESHOOTING"
 
 This document covers common issues encountered when using the Context7 MCP server and their solutions.
 
+<!-- section_id: "48815a53-e99f-49b9-8f41-f820a0b6bf38" -->
 ## Table of Contents
 
 1. [API Key Configuration Issues](#api-key-configuration-issues)
@@ -18,8 +19,10 @@ This document covers common issues encountered when using the Context7 MCP serve
 
 ---
 
+<!-- section_id: "a120cd03-243c-493d-9986-66073d102d9b" -->
 ## API Key Configuration Issues
 
+<!-- section_id: "6d34b8b3-26ab-4e09-8826-e9818dc1d68c" -->
 ### Error: "Authentication failed" or "Invalid API key"
 
 **Symptoms:**
@@ -62,6 +65,7 @@ This document covers common issues encountered when using the Context7 MCP serve
    python3 setup/scripts/mcp_manager.py --scope user
    ```
 
+<!-- section_id: "80ccf0f7-349f-4ae8-bb90-c5e12c383316" -->
 ### Error: "API key format invalid"
 
 **Symptoms:**
@@ -88,8 +92,10 @@ This document covers common issues encountered when using the Context7 MCP serve
 
 ---
 
+<!-- section_id: "ffb07b59-3e1a-488f-87e0-feabeedf3c48" -->
 ## Connection Timeouts
 
+<!-- section_id: "7731183f-ceaf-4b75-9046-b1c12db412dc" -->
 ### Error: "Connection timeout" or "ETIMEDOUT"
 
 **Symptoms:**
@@ -129,6 +135,7 @@ This document covers common issues encountered when using the Context7 MCP serve
    - Visit Context7 status page
    - Check their official communication channels
 
+<!-- section_id: "bc0b513d-d01b-46ac-8273-ac4f258632c9" -->
 ### Error: "Request timeout" during large documentation requests
 
 **Symptoms:**
@@ -154,8 +161,10 @@ This document covers common issues encountered when using the Context7 MCP serve
 
 ---
 
+<!-- section_id: "0c9028c8-4dd8-4817-bf50-47b5de8d99f7" -->
 ## Rate Limiting Problems
 
+<!-- section_id: "9515438b-5584-4e6e-8a9b-b263209bb95a" -->
 ### Error: "Rate limit exceeded" or "429 Too Many Requests"
 
 **Symptoms:**
@@ -184,6 +193,7 @@ This document covers common issues encountered when using the Context7 MCP serve
 4. **Use batch requests wisely:**
    If fetching multiple library docs, space them out rather than requesting all at once.
 
+<!-- section_id: "2ad7c9ca-241d-462a-a9a3-15db93f12b56" -->
 ### Error: "Daily quota exceeded"
 
 **Symptoms:**
@@ -205,8 +215,10 @@ This document covers common issues encountered when using the Context7 MCP serve
 
 ---
 
+<!-- section_id: "0824518d-25bc-4554-a8ba-c8cbed404a2f" -->
 ## MCP Server Startup Failures
 
+<!-- section_id: "574442f6-bdfc-421e-9542-c2aca3283eaf" -->
 ### Error: "Cannot find module @upstash/context7-mcp"
 
 **Symptoms:**
@@ -231,6 +243,7 @@ This document covers common issues encountered when using the Context7 MCP serve
    "args": ["-y", "@upstash/context7-mcp@latest"]
    ```
 
+<!-- section_id: "064770b9-68ef-41e4-8b76-dca93e9cec56" -->
 ### Error: "npx: command not found"
 
 **Symptoms:**
@@ -258,6 +271,7 @@ This document covers common issues encountered when using the Context7 MCP serve
    python3 setup/scripts/mcp_manager.py --scope user
    ```
 
+<!-- section_id: "d863a0a4-a728-476f-90c1-638aaa45d282" -->
 ### Error: MCP server starts but tools are not available
 
 **Symptoms:**
@@ -283,8 +297,10 @@ This document covers common issues encountered when using the Context7 MCP serve
 
 ---
 
+<!-- section_id: "8be93357-5cc1-4d61-b38f-b98602e5cf65" -->
 ## Tool Availability Issues
 
+<!-- section_id: "b72259aa-5a7f-43eb-9266-86613f96264f" -->
 ### Error: "Tool 'resolve-library-id' not found"
 
 **Symptoms:**
@@ -302,6 +318,7 @@ This document covers common issues encountered when using the Context7 MCP serve
 3. **Check for competing configurations:**
    Ensure no duplicate `context7` entries in different config files.
 
+<!-- section_id: "58dbd1bf-c990-4dee-8366-e929e2beb394" -->
 ### Error: "Library not found" when using resolve-library-id
 
 **Symptoms:**
@@ -320,8 +337,10 @@ This document covers common issues encountered when using the Context7 MCP serve
 
 ---
 
+<!-- section_id: "a891b0de-e0e5-4bb3-94fa-0df0d0cca643" -->
 ## Environment Variable Problems
 
+<!-- section_id: "62ec4bfa-9097-47bf-876c-facf2b8a2029" -->
 ### Error: Environment variables not passed to MCP server
 
 **Symptoms:**
@@ -359,6 +378,7 @@ MCP servers run via `npx` in isolated environments and don't inherit shell varia
    cat ~/.config/mcp/servers/mcp-context7-generic.sh
    ```
 
+<!-- section_id: "44a92885-efa1-4242-9276-c8a4779123f7" -->
 ### Error: HOME or PATH not set correctly
 
 **Symptoms:**
@@ -383,6 +403,7 @@ MCP servers run via `npx` in isolated environments and don't inherit shell varia
 
 ---
 
+<!-- section_id: "c7d3ac54-2201-4d59-89a1-9f386887660f" -->
 ## Diagnostic Commands
 
 Use these commands to diagnose Context7 MCP issues:
@@ -413,6 +434,7 @@ journalctl -u mcp-context7 --no-pager -n 50
 
 ---
 
+<!-- section_id: "289187c1-8e20-4ad9-8914-8314f0f2c704" -->
 ## Getting Help
 
 If issues persist after trying these solutions:

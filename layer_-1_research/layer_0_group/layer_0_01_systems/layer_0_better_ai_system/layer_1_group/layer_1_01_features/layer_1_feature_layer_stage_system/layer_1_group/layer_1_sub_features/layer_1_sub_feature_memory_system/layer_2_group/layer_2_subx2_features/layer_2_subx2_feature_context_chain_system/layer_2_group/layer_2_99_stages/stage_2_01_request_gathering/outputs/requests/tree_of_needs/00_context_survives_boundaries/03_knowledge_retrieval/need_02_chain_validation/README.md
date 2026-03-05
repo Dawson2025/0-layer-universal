@@ -12,12 +12,14 @@ resource_name: "README"
 
 ---
 
+<!-- section_id: "e3264b7a-3d57-4fe6-97a4-b9bbd0f61ba1" -->
 ## Definition
 
 Upgrade the existing `chain-validate` skill to validate against the knowledge graph (need_02_knowledge_graph). Currently validates file existence; should validate typed relationships, detect broken references, and flag staleness.
 
 ---
 
+<!-- section_id: "78aefbe8-83af-4fa3-9c88-9ca68aa02b58" -->
 ## Why This Matters
 
 - Current validation only checks "does this file exist?" -- misses relationship integrity
@@ -26,6 +28,7 @@ Upgrade the existing `chain-validate` skill to validate against the knowledge gr
 
 ---
 
+<!-- section_id: "2d06c889-8afe-4a33-b055-4d0e3918c584" -->
 ## Acceptance Criteria
 
 - [ ] Validation runs against the knowledge graph
@@ -36,10 +39,12 @@ Upgrade the existing `chain-validate` skill to validate against the knowledge gr
 
 ---
 
+<!-- section_id: "454e914c-48e0-4cdc-9272-a3cff461f2ce" -->
 ## Requirements
 
 See [requirements/](./requirements/) for individual requirements.
 
+<!-- section_id: "4c4aa00e-72ce-4e8f-9a84-9994adbab1c4" -->
 ## User Stories
 
 See [user_stories/](./user_stories/) for individual stories.

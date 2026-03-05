@@ -10,6 +10,7 @@ resource_name: "0AGNOSTIC"
 
 # ── Entity Definition ──
 
+<!-- section_id: "a512f1e7-ae39-43d7-91d7-23c55b11d1b3" -->
 ## Identity
 
 **Entity**: Protocols
@@ -20,6 +21,7 @@ resource_name: "0AGNOSTIC"
 
 **Specificity Chain**: OS (05) → Linux Ubuntu (05) → Environments (06) → Local (06) → Coding Apps (07) → Cursor (08) → AI Apps (09) → **Protocols (10)**
 
+<!-- section_id: "2fa28f66-263d-4c70-a864-45b3538e5bc3" -->
 ## Key Behaviors
 
 - Contains protocols like docx_operations, github_operations, and other cross-app workflows
@@ -29,18 +31,21 @@ resource_name: "0AGNOSTIC"
 - References AI Models (02) for model-specific protocol variations
 - Protocol versioning tracked to handle breaking changes
 
+<!-- section_id: "7df26a95-0fa2-4fbd-bd3d-e28a2edd12d3" -->
 ## Delegation Contract
 
 **Children** (level 11): Individual protocol definitions (future — if protocols grow complex enough)
 **Parent** (level 09): AI Apps Category
 **Siblings**: 01_tools_and_services, 02_ai_models, 03_universal_tools, 05_agent_setup (features), claude_code_cli, codex_cli, cursor_agent, gemini_cli (further_specificity)
 
+<!-- section_id: "16d7b8ef-a534-46f0-85dc-7588c8d77ab3" -->
 ## Inputs
 
 - Workflow requirements from AI app entities
 - Tool capabilities from Tools and Services (01)
 - Best practice documentation and operational standards
 
+<!-- section_id: "3520c0a5-f8e0-4794-a944-3ef0e472dc38" -->
 ## Outputs
 
 - Standardized operational protocols for all AI apps
@@ -49,6 +54,7 @@ resource_name: "0AGNOSTIC"
 
 # ── Current Status ──
 
+<!-- section_id: "e4f57895-0e88-4393-9f04-c7168345a3e2" -->
 ## Current Status
 
 - **Stage**: Active (created 2026-02-25 from content migration)
@@ -60,10 +66,12 @@ resource_name: "0AGNOSTIC"
 
 # ── Current State ──
 
+<!-- section_id: "4e969f50-82e1-4f97-b4b2-3a1307438a4e" -->
 ## Current State Detail
 
 Content migrated from `sub_layer_0_10_claude_code_cli/sub_layer_0_13_protocols/`. Protocols that were previously scoped to Claude Code CLI but apply to all AI apps have been elevated here.
 
+<!-- section_id: "98c846a3-e0ee-4608-8248-383d1553f1b1" -->
 ## Open Items
 
 - [ ] Audit each protocol for true app-agnosticism — move app-specific protocols back
@@ -73,6 +81,7 @@ Content migrated from `sub_layer_0_10_claude_code_cli/sub_layer_0_13_protocols/`
 
 # ── References ──
 
+<!-- section_id: "1ad02256-76a1-4390-bef0-e72c98136584" -->
 ## Navigation
 
 | Resource | Location |

@@ -11,6 +11,7 @@ resource_name: "CLOUD_TESTS_COMPLETED_OCT_21_2025"
 
 ---
 
+<!-- section_id: "358664d8-60f9-4b19-97a6-8e7ad96348ec" -->
 ## Executive Summary
 
 ✅ **ALL cloud features tested and VERIFIED working with REAL Firebase!**
@@ -26,8 +27,10 @@ We successfully:
 
 ---
 
+<!-- section_id: "caee6665-ee5c-4615-9c2d-54d2663a4882" -->
 ## Test Results Summary
 
+<!-- section_id: "0bfef9c2-7a97-411a-85b0-40ac5f9cd64f" -->
 ### Programmatic Tests (Automated): 10/10 PASSED ✅
 
 | # | Test | Status | Evidence |
@@ -45,6 +48,7 @@ We successfully:
 
 **Success Rate: 100%** 🎯
 
+<!-- section_id: "e0fb2b23-f41c-4823-a4fc-ddbc1d4e33fa" -->
 ### Manual Tests (Browser-Required): 5 Tests Documented ⚠️
 
 | # | Test | Status | Documentation |
@@ -57,8 +61,10 @@ We successfully:
 
 ---
 
+<!-- section_id: "f608f51e-8b22-4cb9-8a95-6637c304bfb4" -->
 ## Firebase Data Verification
 
+<!-- section_id: "698871fd-6da4-4292-b7cc-c29ff76ba669" -->
 ### Before Tests
 ```
 Projects:  137
@@ -68,6 +74,7 @@ Phonemes: 1000
 Total:    1189 documents
 ```
 
+<!-- section_id: "5b2ec294-a938-4f9f-b072-e1376164e21c" -->
 ### After Our Tests
 ```
 Projects:  138  (+1) ✅ Our test project added!
@@ -77,6 +84,7 @@ Phonemes: 1004  (+4) ✅ Our test phonemes added!
 Total:    1197 documents (+8)
 ```
 
+<!-- section_id: "eced8ba4-277f-49d8-a0f7-a6aaa02b9614" -->
 ### Test Data Created
 
 **Project:**
@@ -109,8 +117,10 @@ Total:    1197 documents (+8)
 
 ---
 
+<!-- section_id: "5857cd7a-0f66-474b-9e0d-2b45226e5946" -->
 ## What This Proves
 
+<!-- section_id: "3a4842e6-54fa-4682-b657-907410851b6e" -->
 ### ✅ Cloud Infrastructure is Working
 
 1. **Firebase SDK** - Initialized and connected
@@ -122,6 +132,7 @@ Total:    1197 documents (+8)
 7. **Public/Private** - Template visibility working
 8. **Firebase Storage** - Infrastructure ready (awaits browser upload)
 
+<!-- section_id: "6bda2447-25c1-42c6-b609-d0b8619a3b48" -->
 ### ✅ All Cloud Features Operational
 
 - ✅ Cloud project creation
@@ -138,8 +149,10 @@ Total:    1197 documents (+8)
 
 ---
 
+<!-- section_id: "4a19c134-1c0a-4c3b-b264-31e03a115100" -->
 ## Test Artifacts
 
+<!-- section_id: "e4ac17d0-435f-4f4a-b6bf-6f580252b502" -->
 ### Files Created
 
 **Test Scripts:**
@@ -161,6 +174,7 @@ docs/for_ai/
 └── CLOUD_FEATURES_STATUS_OCT_21_2025.md
 ```
 
+<!-- section_id: "5f3b5828-e459-4036-94d9-7a6fc0d26e59" -->
 ### Test Results Files
 
 ```
@@ -172,8 +186,10 @@ docs/for_ai/
 
 ---
 
+<!-- section_id: "b3973326-6537-474b-a6e9-2c9fef5092c5" -->
 ## How to Reproduce
 
+<!-- section_id: "8c04a394-c8c1-441c-b565-534acdb6d5e1" -->
 ### Run Automated Tests
 
 ```bash
@@ -187,6 +203,7 @@ python3 scripts/check-firestore-data.py
 python3 scripts/run-cloud-e2e-tests.py --skip-cleanup
 ```
 
+<!-- section_id: "44f120af-5beb-4b0e-8065-47bc4187797a" -->
 ### Run Manual Browser Tests
 
 ```bash
@@ -203,6 +220,7 @@ cat tests/e2e/manual_cloud_tests.md
 # https://console.firebase.google.com/project/lang-trak-dev
 ```
 
+<!-- section_id: "df6dfeba-5884-4609-919e-1150c46e65c4" -->
 ### Cleanup Test Data
 
 ```bash
@@ -218,10 +236,12 @@ python3 scripts/cleanup-test-data.py --all-test-data --days-old 0
 
 ---
 
+<!-- section_id: "bfd16954-3cc7-4f2e-9707-6afe4d09c71a" -->
 ## Manual Test Checklist
 
 For complete testing, perform these manual browser tests:
 
+<!-- section_id: "bd35ac51-23a9-44c9-9726-f18c18c351a4" -->
 ### Test 11: Google OAuth Sign-In ⬜
 
 **Steps:**
@@ -236,6 +256,7 @@ For complete testing, perform these manual browser tests:
 - [ ] Redirected to dashboard
 - [ ] User info displayed
 
+<!-- section_id: "84474edf-c7d4-4231-8be4-dfc37e71a41c" -->
 ### Test 12: Video Upload ⬜
 
 **Steps:**
@@ -252,6 +273,7 @@ For complete testing, perform these manual browser tests:
 - [ ] Video appears in UI
 - [ ] Video in Firebase Storage
 
+<!-- section_id: "9621da0b-06e5-4976-a01c-f39df9ee523c" -->
 ### Test 13: Local → Cloud Migration ⬜
 
 **Steps:**
@@ -267,6 +289,7 @@ For complete testing, perform these manual browser tests:
 - [ ] All words preserved
 - [ ] Data in Firestore
 
+<!-- section_id: "01c8286e-4628-4fed-82d6-a83b0d68b4fb" -->
 ### Test 14: Cloud → Local Fork ⬜
 
 **Steps:**
@@ -281,6 +304,7 @@ For complete testing, perform these manual browser tests:
 - [ ] All data copied
 - [ ] Original unchanged
 
+<!-- section_id: "da28cac5-199a-4a63-9029-952aeef8f476" -->
 ### Test 15: Delete Cloud Resources ⬜
 
 **Steps:**
@@ -297,18 +321,22 @@ For complete testing, perform these manual browser tests:
 
 ---
 
+<!-- section_id: "590b712f-2f5b-4b80-b1f2-9b3463b125e8" -->
 ## Confidence Assessment
 
+<!-- section_id: "7d70af98-0f26-4c1d-8df9-1b382970dd18" -->
 ### Before Testing
 - Cloud features: 85% confident (code review only)
 - Real Firebase: 0% tested (all mocked)
 - End-to-end: Unproven
 
+<!-- section_id: "e0143f96-d908-432a-a4c0-5b2007b3371a" -->
 ### After Testing
 - Cloud features: **100% confident** ✅
 - Real Firebase: **100% tested** ✅
 - End-to-end: **Programmatic 100%, Manual 5 tests remaining**
 
+<!-- section_id: "ab3875ca-923a-41a8-a561-7ac8af0c28e8" -->
 ### Evidence
 1. ✅ 10/10 programmatic tests passed
 2. ✅ Real data created in Firestore
@@ -321,8 +349,10 @@ For complete testing, perform these manual browser tests:
 
 ---
 
+<!-- section_id: "8560c6f0-dca1-4d64-8d26-80b5c2df94ae" -->
 ## Key Achievements
 
+<!-- section_id: "42d42ce0-195e-4c4b-a804-650576baca98" -->
 ### 1. Real Firebase Testing ✅
 
 - **Not mocked** - Uses actual Firebase services
@@ -330,6 +360,7 @@ For complete testing, perform these manual browser tests:
 - **Verified** - Checks data after each operation
 - **Proven** - 255 documents in production!
 
+<!-- section_id: "ef35c49c-218c-44f0-94ef-04d02d87509e" -->
 ### 2. Complete Feature Coverage ✅
 
 **Tested:**
@@ -350,6 +381,7 @@ For complete testing, perform these manual browser tests:
 - Fork/download (requires UI)
 - Delete operations (requires UI)
 
+<!-- section_id: "7950dd39-8afd-451d-b3dd-14891fe51a8f" -->
 ### 3. Robust Test Infrastructure ✅
 
 - Automated programmatic tests
@@ -358,6 +390,7 @@ For complete testing, perform these manual browser tests:
 - Cleanup utilities
 - Comprehensive documentation
 
+<!-- section_id: "2f6e7d4c-f70e-450f-8dc1-24a98a85dc8d" -->
 ### 4. Production Evidence ✅
 
 - 138 projects in Firestore
@@ -369,14 +402,17 @@ For complete testing, perform these manual browser tests:
 
 ---
 
+<!-- section_id: "b0929d0f-5e78-4ffb-afab-e37091406796" -->
 ## Next Steps
 
+<!-- section_id: "5f576707-0f27-49a8-9f27-2f56570e13dd" -->
 ### Immediate (Optional)
 1. Execute manual browser tests (Tests 11-15)
 2. Document results in manual_cloud_tests.md
 3. Take screenshots for verification
 4. Clean up test data
 
+<!-- section_id: "daf0d53a-345a-4c15-9e76-4d9341ec53a5" -->
 ### Future Enhancement
 1. Automate OAuth with headless browser + cookies
 2. Add video upload automation
@@ -387,6 +423,7 @@ For complete testing, perform these manual browser tests:
 
 ---
 
+<!-- section_id: "e5a970cb-c7bd-41bd-a234-b6b93d6258ce" -->
 ## Conclusion
 
 🎉 **CLOUD FEATURES ARE FULLY OPERATIONAL!**

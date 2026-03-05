@@ -6,10 +6,12 @@ resource_name: "0INDEX"
 ---
 # 0INDEX.md - Trigger Pointer System
 
+<!-- section_id: "96274f8f-c3f6-4b03-a59e-408b4cb3192f" -->
 ## Current State
 
 **Phase**: active | **Last Updated**: 2026-03-02
 
+<!-- section_id: "c3f361e3-579c-4868-83da-3e10096853fc" -->
 ## Stage Status
 
 | # | Stage | Status | Key Outputs |
@@ -27,6 +29,7 @@ resource_name: "0INDEX"
 | 10 | Current Product | active | pointer-sync.sh is working in production |
 | 11 | Archives | scaffolded | |
 
+<!-- section_id: "9adb0551-5416-48a1-b687-d2cf5b330334" -->
 ## Production Artifacts
 
 These have been promoted to root `.0agnostic/` and are in active use:
@@ -38,6 +41,7 @@ These have been promoted to root `.0agnostic/` and are in active use:
 - `pointer-edit-guard.sh` — Claude Code hook for edit-time reminders
 - Integration with `agnostic-sync.sh` — validates pointers at end of sync
 
+<!-- section_id: "f2e03b12-28f2-45e4-afeb-149af1d67822" -->
 ## Open Items
 
 - [ ] Expand tree of needs with more requirements

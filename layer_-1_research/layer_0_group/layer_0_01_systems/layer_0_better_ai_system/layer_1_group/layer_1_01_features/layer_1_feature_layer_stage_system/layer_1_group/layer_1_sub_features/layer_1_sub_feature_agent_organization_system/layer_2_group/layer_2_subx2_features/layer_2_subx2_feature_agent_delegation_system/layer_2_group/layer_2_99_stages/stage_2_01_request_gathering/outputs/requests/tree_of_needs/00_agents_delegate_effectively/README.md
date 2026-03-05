@@ -10,12 +10,14 @@ resource_name: "README"
 
 ---
 
+<!-- section_id: "36cbf715-39aa-467b-bd11-ac09ab92b212" -->
 ## Definition
 
 > Managers delegate work to specialized stage agents and sub-feature agents without carrying operational knowledge. Memory and multi-agent systems work together coherently.
 
 ---
 
+<!-- section_id: "2cc4d797-52e4-4da2-87cc-df03659af6e7" -->
 ## The Problem
 
 Current AI agents do everything in one context -- no delegation, no specialization:
@@ -28,6 +30,7 @@ Current AI agents do everything in one context -- no delegation, no specializati
 
 ---
 
+<!-- section_id: "9ed81478-f291-4a3d-9f57-fe5d5cd8e115" -->
 ## The Vision
 
 A system where:
@@ -40,6 +43,7 @@ A system where:
 
 ---
 
+<!-- section_id: "f6f44021-5720-4831-81e3-d74b91f15421" -->
 ## Three Branches
 
 | Branch | Question | Description |
@@ -50,6 +54,7 @@ A system where:
 
 ---
 
+<!-- section_id: "dcfe5fdf-3333-46d5-b015-21255b42e4d3" -->
 ## Branch Structure
 
 ```
@@ -73,6 +78,7 @@ A system where:
 
 ---
 
+<!-- section_id: "3ed52330-b4a7-4854-aac6-a21f5183ff1b" -->
 ## Success Criteria
 
 The root need is satisfied when:
@@ -88,6 +94,7 @@ The root need is satisfied when:
 
 ---
 
+<!-- section_id: "0b3ca818-3721-4987-ae78-3830053e68df" -->
 ## Research Grounding
 
 All needs trace to the agent delegation system's research and its sibling/lateral entities:

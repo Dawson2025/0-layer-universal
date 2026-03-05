@@ -5,10 +5,12 @@ resource_name: "README.sync-conflict-20260126-035814-IF2WOGZ"
 ---
 # Stage 0.02 Planning - AI Agent System
 
+<!-- section_id: "6864aa0a-bb35-4bd8-9bf4-07aa8ef2d414" -->
 ## Overview
 
 This directory contains AI agent configuration for the **Planning Stage** at Layer 0 (Universal). The planning stage is responsible for decomposing high-level goals into structured, actionable tasks that can be delegated to lower layers or subsequent stages.
 
+<!-- section_id: "39e83b1d-6e22-408b-b454-50e498e6ae1b" -->
 ## Stage Purpose
 
 The planning stage:
@@ -18,8 +20,10 @@ The planning stage:
 - Identifies dependencies and execution order
 - Creates structured plan with acceptance criteria
 
+<!-- section_id: "3ad0bb94-117e-42b2-b452-80eee88a8210" -->
 ## Manager/Worker Workflow
 
+<!-- section_id: "f51edc5f-f472-4701-920a-11edde037f15" -->
 ### Manager Workflow (Typical for Planning Stage)
 
 1. **Read Incoming Handoff**:
@@ -48,6 +52,7 @@ The planning stage:
    - Destination: Next stage (stage_0_05_design) OR Layer 1 managers
    - Contains: Structured plan with subtasks, dependencies, acceptance criteria
 
+<!-- section_id: "f2fdba89-05d2-46dd-8df7-0c9406a55e39" -->
 ### Worker Workflow (Less Common for Planning)
 
 Planning is typically manager-heavy, but workers may be used for:
@@ -60,8 +65,10 @@ Worker pattern:
 2. Perform bounded research (1-3 turns)
 3. Report findings in result handoff
 
+<!-- section_id: "d13b4bf5-1c39-48ec-8444-cb9020fc4f02" -->
 ## Handoff Flow
 
+<!-- section_id: "cb394064-86e0-48d9-8fc9-976a6d4c20fe" -->
 ### Incoming Handoff (from Instructions Stage)
 
 **File**: `../hand_off_documents/incoming.json`
@@ -94,6 +101,7 @@ Worker pattern:
 }
 ```
 
+<!-- section_id: "58cfb8d2-f1b4-49dd-8dda-f83f21692f67" -->
 ### Outgoing Handoff (to Design Stage or Layer 1)
 
 **File**: `../hand_off_documents/outgoing.json`
@@ -186,10 +194,12 @@ Worker pattern:
 }
 ```
 
+<!-- section_id: "b8eaf659-ebd9-427d-8094-1abb8bcf8fd5" -->
 ## Tool Recommendations
 
 For Layer 0 planning stage:
 
+<!-- section_id: "480fbf35-7d8b-4f59-a4d7-310602c8ebc3" -->
 ### Primary Tool: Claude Code or Gemini CLI
 
 **Claude Code**:
@@ -202,6 +212,7 @@ For Layer 0 planning stage:
 - Strengths: Large context window, research-focused, good for exploratory planning
 - Use when: Planning new projects or technologies
 
+<!-- section_id: "bc46d49c-4501-46ac-89a6-07cf53827ded" -->
 ### When to Use Workers
 
 Spawn workers for specific research tasks:
@@ -209,6 +220,7 @@ Spawn workers for specific research tasks:
 - **Pattern**: 1 worker per research question, execute in parallel
 - **Example**: "Research available React table libraries" → Codex worker provides options
 
+<!-- section_id: "3887351d-6c70-401f-853e-19e285a4c5a5" -->
 ## Parallel Execution
 
 Planning stage itself is typically sequential (one manager), but can spawn parallel research workers:
@@ -238,6 +250,7 @@ plan = create_plan(incoming, research_results)
 write_handoff("outgoing.json", plan)
 ```
 
+<!-- section_id: "98e5e175-76a7-4d66-8bd2-84f5284a677a" -->
 ## Context Files
 
 This stage uses standard context cascading:
@@ -247,6 +260,7 @@ This stage uses standard context cascading:
 
 Stage-specific context (if needed) goes in this directory.
 
+<!-- section_id: "bcaa7de3-a4e5-4fa1-b956-cc0cd37561b3" -->
 ## Deeper References
 
 For comprehensive understanding of planning patterns and decomposition strategies:
@@ -255,6 +269,7 @@ For comprehensive understanding of planning patterns and decomposition strategie
 - **Parallel Execution**: [../../../../-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/parallel_execution.md](../../../../-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/parallel_execution.md)
 - **Handoff Schema**: [../../../0.01_manager_handoff_documents/0.00_to_universal/handoff_schema.md](../../../0.01_manager_handoff_documents/0.00_to_universal/handoff_schema.md)
 
+<!-- section_id: "9c13b210-1b0c-4be6-be43-b4ac481fc96a" -->
 ## Best Practices
 
 1. **Be Specific**: Create concrete, actionable subtasks, not vague goals

@@ -10,16 +10,19 @@ resource_name: "daemon_persistence_test_design"
 
 ---
 
+<!-- section_id: "95263c93-1ead-4dbb-91d9-a3d07de84255" -->
 ## Test Scenarios
 
 All tests executed after a **full system restart** (power-off/on).
 
+<!-- section_id: "0aa5a15c-5af9-4846-9f84-a04e1d09db61" -->
 ### Pre-Test State
 - System powered off
 - User logs back in
 - GNOME session starts (daemons expected to fail initially)
 - Tests execute
 
+<!-- section_id: "c46ce9cc-7e80-478e-99b2-e3e4e7311f0d" -->
 ### Success Criteria (All Solutions)
 - ✓ `pgrep -a gsd-media-keys` returns process
 - ✓ `pgrep -a gsd-power` returns process
@@ -30,8 +33,10 @@ All tests executed after a **full system restart** (power-off/on).
 
 ---
 
+<!-- section_id: "735e63f6-82f4-427a-90c4-0500346b4a5b" -->
 ## Solution 1: Fix gnome-session Service Startup Order
 
+<!-- section_id: "29c5bcfd-4ff8-4361-839d-0f30bdbab118" -->
 ### Design
 ```
 graphical-session.target (existing)
@@ -43,6 +48,7 @@ graphical-session-readiness.service (wait-for-display.sh)
 gnome-session daemons can now start reliably
 ```
 
+<!-- section_id: "36453ef5-5376-4e18-b67c-5f478791caa2" -->
 ### Implementation Steps
 
 **Step 1a**: Create systemd override for gnome-session
@@ -65,6 +71,7 @@ Requires=graphical-session-readiness.service
 After=graphical-session-readiness.service
 ```
 
+<!-- section_id: "eccc9941-9325-48c5-bf5f-bdcc5a5c0e2f" -->
 ### Test Procedure
 
 1. Reload systemd: `systemctl --user daemon-reload`
@@ -76,14 +83,17 @@ After=graphical-session-readiness.service
 7. Test custom keybinding: Press Control-Alt-S, verify speak-selection executes
 8. Check services: `systemctl --user --failed`
 
+<!-- section_id: "0e641d15-844c-490c-aa7c-0c17139be8b0" -->
 ### Expected Outcome
 - If successful: Daemons start automatically on first login, all keys work
 - If failed: Same "Cannot open display:" errors, or new timing issues
 
 ---
 
+<!-- section_id: "47d91bb6-ed78-4e81-847c-9a881e810877" -->
 ## Solution 2: Post-Login Hook
 
+<!-- section_id: "6b40b76d-e4f7-4662-8823-83e6a06b205c" -->
 ### Design
 ```
 User logs in
@@ -97,6 +107,7 @@ Script checks daemon status, restarts if needed
 Keybindings work
 ```
 
+<!-- section_id: "035692b1-4238-4acf-844b-8dbe534271ab" -->
 ### Implementation Steps
 
 **Step 2a**: Create autostart desktop file
@@ -132,6 +143,7 @@ pgrep -x gsd-power > /dev/null 2>&1 || /usr/libexec/gsd-power &
 exit 0
 ```
 
+<!-- section_id: "3533702b-4139-47cf-9388-4d33ede32929" -->
 ### Test Procedure
 
 1. Remove/disable Solution 1 overrides if testing in isolation
@@ -142,14 +154,17 @@ exit 0
 6. Test all three keybindings (volume, brightness, Control-Alt-S)
 7. Check if desktop file actually executed: `journalctl -e` look for any errors
 
+<!-- section_id: "7efe8907-7593-48c9-9720-556a0900130c" -->
 ### Expected Outcome
 - If successful: Script runs post-login, daemons start, keys work within 15 seconds
 - If failed: Script doesn't run, or manual daemon start still fails
 
 ---
 
+<!-- section_id: "6219db4c-df01-4f82-9e25-53f71f6e2d4f" -->
 ## Solution 3: Re-Login Trigger
 
+<!-- section_id: "607d39f0-4585-46de-8cb4-f6d8b1d194a7" -->
 ### Design
 ```
 System boots
@@ -165,6 +180,7 @@ gnome-session fully reinitializes all daemons
 Keys work
 ```
 
+<!-- section_id: "5b294c9a-de58-4acb-bca3-6e64a492baa4" -->
 ### Implementation Steps
 
 **Step 3a**: Create keybinding test service
@@ -211,6 +227,7 @@ fi
 exit 0
 ```
 
+<!-- section_id: "383792b0-2875-463c-b855-d76ba7ba54e3" -->
 ### Test Procedure
 
 1. Create both files (service + script)
@@ -223,12 +240,14 @@ exit 0
 8. Log back in
 9. Test keybindings again (should work now)
 
+<!-- section_id: "f73ed8ba-9c52-4fe4-bc85-84f46983f49d" -->
 ### Expected Outcome
 - If successful: Notification appears, user re-logs in, keys work after re-login
 - If failed: No notification, or notification but re-login doesn't help
 
 ---
 
+<!-- section_id: "cc87647a-c495-478d-a63c-c279f90e2a19" -->
 ## Test Execution Matrix
 
 | Solution | Method | On First Login | After Re-Login | Daemons Running | Keys Working | Side Effects |
@@ -241,6 +260,7 @@ exit 0
 
 ---
 
+<!-- section_id: "2b73a2e6-13d9-4bb8-8401-44c4158d4851" -->
 ## Test Execution Order
 
 1. **Baseline Test** (no changes): Restart, log in, check daemon status → verify problem exists
@@ -251,6 +271,7 @@ exit 0
 
 ---
 
+<!-- section_id: "715895c2-0204-4f46-8cee-d94f4a19de02" -->
 ## Metrics to Collect
 
 For each test:
@@ -262,6 +283,7 @@ For each test:
 
 ---
 
+<!-- section_id: "adb6a888-f037-4241-a7cc-c4cb151c2756" -->
 ## Risk Assessment
 
 **Solution 1** (gnome-session override): Medium
@@ -278,6 +300,7 @@ For each test:
 
 ---
 
+<!-- section_id: "828a9d37-1f99-4225-9b24-6aa6878f1fee" -->
 ## Next Steps
 
 1. Create actual test scripts (shell scripts + test execution logs)

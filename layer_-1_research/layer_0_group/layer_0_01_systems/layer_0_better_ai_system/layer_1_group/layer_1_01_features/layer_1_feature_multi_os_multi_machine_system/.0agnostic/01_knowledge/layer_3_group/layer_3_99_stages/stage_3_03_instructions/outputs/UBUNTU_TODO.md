@@ -7,8 +7,10 @@ resource_name: "UBUNTU_TODO"
 
 **Current Status:** Ubuntu device configured, waiting for online verification
 
+<!-- section_id: "f7a0cc15-4ecb-4373-ba57-3ed93bde810f" -->
 ## What Claude Code on Ubuntu Should Do
 
+<!-- section_id: "e54d9709-b484-4696-accf-ec3ac54b08fb" -->
 ### 1️⃣ First: Read the Guide
 👉 **[START_HERE_UBUNTU.md](./START_HERE_UBUNTU.md)**
 
@@ -18,6 +20,7 @@ This is your primary guide. It contains:
 - Troubleshooting solutions
 - What to update after completion
 
+<!-- section_id: "30e914d6-c8b5-4ef5-9284-4838088125aa" -->
 ### 2️⃣ Second: Run the Health Check (Optional)
 ```bash
 ./ubuntu-quick-check.sh
@@ -30,6 +33,7 @@ This automated script checks:
 - Git configuration
 - Device connectivity
 
+<!-- section_id: "25397720-cdcc-4929-8f91-f47b398178b9" -->
 ### 3️⃣ Third: Verify Three-Way Sync
 
 **Minimum steps:**
@@ -39,6 +43,7 @@ This automated script checks:
 4. Confirm `dawson-workspace` folder shows "Up to Date"
 5. Test sync: Create a file, verify it appears on WSL/Windows
 
+<!-- section_id: "1955d449-3115-4f67-a436-085648442d6d" -->
 ### 4️⃣ Fourth: Update Documentation
 
 After successful verification, update these files:
@@ -58,6 +63,7 @@ After successful verification, update these files:
 - Mark all items complete
 - Add completion timestamp
 
+<!-- section_id: "acf29a34-5d20-44d8-bfe8-c6330ebd66db" -->
 ### 5️⃣ Fifth: Commit and Push
 
 ```bash
@@ -73,8 +79,10 @@ Co-Authored-By: Claude Sonnet 4.5 <noreply@anthropic.com>"
 git push
 ```
 
+<!-- section_id: "85f46468-f36a-45bd-985a-cf4ffc7f6649" -->
 ## Quick Reference
 
+<!-- section_id: "3f0c152e-640a-4b85-b25d-ee671f0fbcb1" -->
 ### File Structure
 ```
 multi_os_system/
@@ -88,6 +96,7 @@ multi_os_system/
 └── ... (other reference docs)
 ```
 
+<!-- section_id: "9f6dc032-1d3c-4bc8-92de-c19498644d32" -->
 ### Key Commands
 ```bash
 # Check service
@@ -108,10 +117,12 @@ echo "Test from Ubuntu" > test-sync.txt
 # Check if file appears on WSL/Windows
 ```
 
+<!-- section_id: "d4a80d9a-7f1d-46bc-8dba-3ef1ef532c95" -->
 ### Device IDs (for reference)
 - **WSL:** `IF2WOGZ-RVSVKT3-RCRN3TT-6NDFXQX-KCCCFPW-ABIWRWT-3BFX37C-CDHKTAN`
 - **Ubuntu:** `7UVVQQS-O3463OC-GUTDI63-EWLX3SE-LRX4ZU3-MEOWA34-KSCMF6K-DR7GEAH`
 
+<!-- section_id: "0a368082-4f83-4e5d-8bcb-2d17bbf91532" -->
 ### Expected Outcome
 - ✅ All 3 devices connected in Syncthing
 - ✅ `dawson-workspace` folder shows "Up to Date" on all devices
@@ -119,6 +130,7 @@ echo "Test from Ubuntu" > test-sync.txt
 - ✅ ~51,423 files, ~1.47 GiB synced
 - ✅ Documentation updated and pushed to GitHub
 
+<!-- section_id: "badf36c1-6734-411c-872c-ad86c07024e3" -->
 ## Success Checklist
 
 Use this to track your progress:

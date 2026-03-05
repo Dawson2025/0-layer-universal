@@ -8,8 +8,10 @@ resource_name: "README"
 
 This directory contains universal scripts that can be used across any project.
 
+<!-- section_id: "acb29909-883f-4d90-9824-b1d3ceb52f96" -->
 ## Available Scripts
 
+<!-- section_id: "6f382c93-8a13-4f32-a524-1caac318bc52" -->
 ### `sync-context-repos.sh`
 
 **Purpose**: Synchronize the universal context and setup-hub repositories.
@@ -35,6 +37,7 @@ alias sync-context='bash /home/dawson/dawson-workspace/code/0-universal-context/
 
 **Note**: This script will warn you if there are uncommitted changes but won't commit or push them automatically. You should commit and push changes manually after reviewing them.
 
+<!-- section_id: "ba2e2d30-38eb-404c-8d42-e190de6ea306" -->
 ## Adding New Universal Scripts
 
 When adding new universal scripts:
@@ -45,6 +48,7 @@ When adding new universal scripts:
 4. Follow the universal documentation standards
 5. Commit to the `0-universal-context` repository
 
+<!-- section_id: "655af153-8383-4ca5-a9df-c6e5ba5f2f8a" -->
 ## Script Standards
 
 - Use `#!/bin/bash` shebang
@@ -55,14 +59,17 @@ When adding new universal scripts:
 
 ---
 
+<!-- section_id: "1d6a520e-a773-42d3-8444-eb6ca31d645a" -->
 ## Legacy Universal Tools Source
 
 # Universal Scripts
 
 This directory contains universal scripts that can be used across any project.
 
+<!-- section_id: "050486b3-bf5d-4848-96d6-a53b0a1e78b1" -->
 ## Available Scripts
 
+<!-- section_id: "d6fcafde-3388-4599-be58-c309b669b18c" -->
 ### `sync-context-repos.sh`
 
 **Purpose**: Synchronize the universal context and setup-hub repositories.
@@ -88,6 +95,7 @@ alias sync-context='bash /home/dawson/code/0-universal-context/0_context/trickle
 
 **Note**: This script will warn you if there are uncommitted changes but won't commit or push them automatically. You should commit and push changes manually after reviewing them.
 
+<!-- section_id: "11407814-e957-474d-b4d7-880fcb5b15bc" -->
 ## Adding New Universal Scripts
 
 When adding new universal scripts:
@@ -98,6 +106,7 @@ When adding new universal scripts:
 4. Follow the universal documentation standards
 5. Commit to the `0-universal-context` repository
 
+<!-- section_id: "64ccac8d-8c41-46ce-8cb0-76096be7f3bb" -->
 ## Script Standards
 
 - Use `#!/bin/bash` shebang

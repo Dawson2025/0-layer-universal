@@ -8,10 +8,12 @@ resource_name: "README"
 
 This directory contains setup and configuration files for the Canvas LMS MCP server with Claude Code CLI.
 
+<!-- section_id: "6cb1f539-b614-4267-8e3e-88961f9851f6" -->
 ## Quick Start
 
 See `setup/canvas-mcp-setup.md` for full setup instructions.
 
+<!-- section_id: "748ef7c1-6643-48b2-a817-c82acb971ddc" -->
 ## Current Status
 
 - **Configured**: Yes

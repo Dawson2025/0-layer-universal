@@ -5,12 +5,14 @@ resource_name: "tree_of_needs"
 ---
 # Tree of Needs - Better Layer Stage System
 
+<!-- section_id: "d37bafa2-5151-4ef0-a026-b591dafecb5b" -->
 ## Purpose
 
 This document captures the hierarchical needs that drive this feature's requirements.
 
 ---
 
+<!-- section_id: "e3d07f34-dd44-4448-b810-5933498d52fa" -->
 ## Tree Structure
 
 ```
@@ -70,6 +72,7 @@ better_layer_stage_system
 
 ---
 
+<!-- section_id: "9976fcac-c52f-4490-a418-7d3dac41b0ee" -->
 ## Needs → Solutions Mapping
 
 | Need | Solution | Implemented |
@@ -87,6 +90,7 @@ better_layer_stage_system
 
 ---
 
+<!-- section_id: "f81903c6-76de-460e-87e2-bca5e340deed" -->
 ## How to Read This Tree
 
 1. **Top-level needs** are the main goals

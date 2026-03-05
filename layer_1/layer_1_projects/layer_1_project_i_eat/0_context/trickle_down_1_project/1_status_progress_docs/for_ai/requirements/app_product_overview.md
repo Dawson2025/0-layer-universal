@@ -7,14 +7,17 @@ resource_name: "app_product_overview"
 
 - **Source Prompt**: Live session directive (Codex CLI, feature overview request)
 
+<!-- section_id: "dd031f2c-3b41-4b1d-ba0c-f7d958a4d49e" -->
 ## Product Purpose
 Provide language teams with a unified workspace for building and managing constructed-language content. The app pairs phoneme frequency tracking with collaborative project management so contributors can analyze sounds, create words, and share artifacts across local and cloud storage without friction.
 
+<!-- section_id: "84fdbb0f-4d27-4af8-a41b-c244b4f6ef9f" -->
 ## Desired Outcomes
 - Empower linguists and educators to prototype and iterate on constructed languages rapidly by centralizing data entry, phoneme analytics, and multimedia attachments.
 - Reduce coordination overhead across teams by giving every feature an isolated workflow, minimizing conflicts while still supporting shared branching and cloud syncing.
 - Guarantee data integrity through automated tests and structured deployment flows that validate both local SQLite data and remote Firebase assets.
 
+<!-- section_id: "57656c0f-3c5b-4846-9f7f-fc6ed69de490" -->
 ## Feature Map
 Each feature below is documented in its own specification file. Refer to those specs for detailed functional and acceptance criteria; use this overview to understand how the pieces fit together to deliver the product goals.
 
@@ -27,6 +30,7 @@ Each feature below is documented in its own specification file. Refer to those s
 - **Selected Word Phoneme Feedback** (`ui_selected_word_phoneme_feedback.md`): Provides interactive phoneme breakdowns and audio feedback when users inspect a word, strengthening learning loops.
 - **Parallel Feature Isolation** (`parallel_feature_isolation.md`): Defines repository structure and coding conventions that keep feature work scoped, enabling multiple contributors (human or AI) to build in parallel without collisions.
 
+<!-- section_id: "7d9df550-4152-45fe-8a50-88eb3661f209" -->
 ## How to Use This Directory
 1. Start with this overview to understand how each feature contributes to the broader product vision.
 2. Open the linked spec for any feature you plan to implement or modify; capture new requirements there before coding.

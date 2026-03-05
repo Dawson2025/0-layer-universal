@@ -13,6 +13,7 @@ resource_name: "US-01_directory_moves"
 **I want** the pointer system to automatically detect that something changed and update all pointer paths,
 **So that** all pointers remain valid without me manually updating paths or requiring an AI agent to manually update everything.
 
+<!-- section_id: "bdff8cbc-3be3-4529-aba5-5ad07a075439" -->
 ### What Happens
 
 1. Developer reorganizes directory structure (e.g., renames intermediate directory)
@@ -23,6 +24,7 @@ resource_name: "US-01_directory_moves"
 6. All affected pointer files' `> **Canonical location**:` lines are updated automatically
 7. Developer is notified of what changed (summary log)
 
+<!-- section_id: "74610c77-5cd0-48af-8a16-14f8fdcc106f" -->
 ### Acceptance Criteria
 
 - Pointer resolves correctly after parent directory is renamed — no manual intervention needed

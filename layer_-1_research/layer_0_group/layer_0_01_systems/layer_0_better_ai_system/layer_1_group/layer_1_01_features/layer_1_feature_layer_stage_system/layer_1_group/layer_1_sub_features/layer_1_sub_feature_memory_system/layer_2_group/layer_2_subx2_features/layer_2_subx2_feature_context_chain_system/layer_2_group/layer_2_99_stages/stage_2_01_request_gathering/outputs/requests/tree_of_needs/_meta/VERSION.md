@@ -7,12 +7,14 @@ resource_name: "VERSION"
 
 **Current**: 1.0.0
 
+<!-- section_id: "411af345-e29d-455e-908c-66eca7aea8e2" -->
 ## Versioning Policy
 
 - **MAJOR**: New branches added or root need redefined
 - **MINOR**: New needs added to existing branches
 - **PATCH**: Requirements updated within existing needs
 
+<!-- section_id: "35c8ab85-72b1-4f1d-a964-e1bbdb267c8f" -->
 ## History
 
 | Version | Date | Change |

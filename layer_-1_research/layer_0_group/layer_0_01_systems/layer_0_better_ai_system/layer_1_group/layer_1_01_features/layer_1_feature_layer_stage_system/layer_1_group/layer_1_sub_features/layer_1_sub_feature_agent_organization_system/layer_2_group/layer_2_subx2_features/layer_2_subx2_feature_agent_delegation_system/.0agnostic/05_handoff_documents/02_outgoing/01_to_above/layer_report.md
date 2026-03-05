@@ -5,20 +5,24 @@ resource_name: "layer_report"
 ---
 # Layer Report: agent_delegation_system
 
+<!-- section_id: "a4f31c67-430b-44f2-8bdb-6ac7ca995199" -->
 ## Status
 **active**
 
+<!-- section_id: "9078121a-1b4c-4c86-a5f0-e74774febce4" -->
 ## Last Updated
 2026-02-26
 
 ---
 
+<!-- section_id: "ddc14817-b055-451a-b0fc-6ed7529135b7" -->
 ## Summary
 
 The agent delegation system defines how AI agents delegate work across the layer-stage hierarchy. It spans two domains: memory (what agents know) and multi-agent coordination (how agents work together). Four of eleven stages have produced content, yielding universal artifacts now in active use: 11 stage guides, 10 delegation principles, 5 rules, 1 stage report protocol, a context propagation design, a minimal context model, and a directional scope boundary framework. Stage 02 now has 3 formal research topics alongside the implicit context_chain_system research. Stage 04 has 10 architecture decisions (7 implicit + 3 formal). One child entity (memory_system) has completed substantial research; the other (multi_agent_system) is scaffolded.
 
 ---
 
+<!-- section_id: "393ac537-826f-4909-8fcc-8d0798cbc74e" -->
 ## Stage Progress
 
 4 active stages (01, 02, 04, 06) out of 11. See `stages_report.md` for full details.
@@ -32,6 +36,7 @@ The agent delegation system defines how AI agents delegate work across the layer
 
 ---
 
+<!-- section_id: "68976d8a-d63f-4e68-8303-4d8e312e22f4" -->
 ## Child Entity Progress
 
 1 of 2 children reporting. See `child_layers_report.md` for full details.
@@ -43,6 +48,7 @@ The agent delegation system defines how AI agents delegate work across the layer
 
 ---
 
+<!-- section_id: "e96d9465-358d-4fc8-bf97-09a7b2650bab" -->
 ## Universal Artifacts Produced
 
 | Artifact | Count | Root Location |
@@ -57,6 +63,7 @@ The agent delegation system defines how AI agents delegate work across the layer
 
 ---
 
+<!-- section_id: "af9ebc3d-1049-4fed-89d5-cb97f6f1937b" -->
 ## Key Discoveries
 
 - **Two-Halves Pattern** (P9): Every 0AGNOSTIC.md needs operational guidance + current state summary
@@ -69,6 +76,7 @@ The agent delegation system defines how AI agents delegate work across the layer
 
 ---
 
+<!-- section_id: "90191748-a68b-457d-b9cc-7042008aa7f8" -->
 ## Open Items
 
 - Multi-agent spawning patterns not yet designed
@@ -79,6 +87,7 @@ The agent delegation system defines how AI agents delegate work across the layer
 
 ---
 
+<!-- section_id: "d81697fb-c92e-4dd5-969a-d05681747703" -->
 ## Handoff
 
 - **Ready for parent**: Yes — universal artifacts in use, working example established

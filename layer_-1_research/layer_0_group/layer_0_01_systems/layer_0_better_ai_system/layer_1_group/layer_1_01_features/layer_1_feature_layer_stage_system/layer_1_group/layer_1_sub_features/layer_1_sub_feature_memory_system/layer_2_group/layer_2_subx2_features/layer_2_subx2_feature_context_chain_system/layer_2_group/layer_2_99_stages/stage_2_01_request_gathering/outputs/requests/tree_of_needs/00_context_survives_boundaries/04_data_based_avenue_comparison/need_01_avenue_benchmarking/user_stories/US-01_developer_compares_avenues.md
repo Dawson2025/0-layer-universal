@@ -13,6 +13,7 @@ resource_name: "US-01_developer_compares_avenues"
 **I want** to see ranked benchmark data with real units for each capability,
 **So that** I can make an evidence-based technology decision instead of relying on intuition.
 
+<!-- section_id: "9cf3a581-8f9a-4e39-95ed-ce16d10347af" -->
 ### What Happens
 
 1. Developer queries the database for a specific capability (e.g., speed)
@@ -20,6 +21,7 @@ resource_name: "US-01_developer_compares_avenues"
 3. Raw values with units are shown alongside normalized scores (e.g., "50ms, score: 95")
 4. Developer can compare across capability categories to see full picture
 
+<!-- section_id: "ab283a9f-0940-48b0-bd5b-d0b6f04eec68" -->
 ### Acceptance Criteria
 
 - Query returns ranked results with raw value, unit, and normalized score

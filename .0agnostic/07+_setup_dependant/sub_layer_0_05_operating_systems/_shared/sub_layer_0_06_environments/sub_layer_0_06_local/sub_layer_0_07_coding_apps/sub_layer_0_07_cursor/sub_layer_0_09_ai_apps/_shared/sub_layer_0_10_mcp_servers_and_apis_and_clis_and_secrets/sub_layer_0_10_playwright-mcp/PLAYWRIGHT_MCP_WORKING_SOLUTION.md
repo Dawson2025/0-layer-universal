@@ -9,16 +9,20 @@ resource_name: "PLAYWRIGHT_MCP_WORKING_SOLUTION"
 **Location**: Universal Layer → MCP Servers and Tools Setup  
 **Status**: ✅ **CONFIRMED WORKING**
 
+<!-- section_id: "3ac7cd4e-adfb-4911-8688-74b6860d9127" -->
 ## Problem
 
 Playwright MCP tools were configured in `mcp.json` but not available to AI agents. Tools showed as "22 tools enabled" in Cursor Settings but were not accessible.
 
+<!-- section_id: "f1c9f2de-c236-4f7a-9ee9-3175677451e3" -->
 ## Root Cause
 
 **MCP servers must be enabled in Cursor Settings UI**, not just configured in `mcp.json`. Configuration in the JSON file is not sufficient - servers must be toggled ON in the Cursor IDE Settings interface.
 
+<!-- section_id: "718da272-4687-4fe7-8c42-d0069d024672" -->
 ## Solution Steps
 
+<!-- section_id: "95297635-dc41-4478-970e-218cd5ee0d05" -->
 ### Step 1: Configure MCP Server in mcp.json ✅
 
 **File**: `~/.config/mcp/mcp.json` (or `~/.cursor/mcp.json` if symlinked)
@@ -53,6 +57,7 @@ Playwright MCP tools were configured in `mcp.json` but not available to AI agent
    - `HOME`: Ensures proper home directory resolution
 3. **Browser specification**: `--browser chromium` flag
 
+<!-- section_id: "cd7cdcf4-f51c-42c0-8373-09a7b4a30b92" -->
 ### Step 2: Disable Unused MCP Servers (If Needed) ⚠️ **May Be Required**
 
 **If Cursor warns about too many MCP servers/tools:**
@@ -68,6 +73,7 @@ Playwright MCP tools were configured in `mcp.json` but not available to AI agent
 - Too many enabled servers may prevent new tools from being exposed
 - Disabling unused servers may resolve tool availability issues
 
+<!-- section_id: "b790f9d7-5f9e-42a2-8b54-d048bd9ae5c4" -->
 ### Step 3: Enable MCP Server in Cursor Settings UI ⚠️ **CRITICAL**
 
 **This is the step that was missing!**
@@ -85,6 +91,7 @@ Playwright MCP tools were configured in `mcp.json` but not available to AI agent
 - UI toggle is the final step to expose tools to AI agents
 - Tools will not be available until server is enabled in UI
 
+<!-- section_id: "52f8ec50-b54e-4237-8a85-2e8c5c76f6c2" -->
 ### Step 4: Verify Tools Are Available ✅
 
 **Test**:
@@ -92,8 +99,10 @@ Playwright MCP tools were configured in `mcp.json` but not available to AI agent
 - Result: ✅ **SUCCESS** - Successfully navigated to page
 - Status: 22 Playwright tools available and working
 
+<!-- section_id: "9dbc436b-cd49-4f4c-be73-cc3a69d9d115" -->
 ## Complete Working Configuration
 
+<!-- section_id: "8d045de9-a774-40b7-8c78-eef357dbbe70" -->
 ### mcp.json Configuration
 ```json
 {
@@ -115,11 +124,13 @@ Playwright MCP tools were configured in `mcp.json` but not available to AI agent
 }
 ```
 
+<!-- section_id: "ec61488a-1cf2-4fd4-a460-9d2ef3190583" -->
 ### Cursor Settings UI
 - **Location**: Cursor Settings → Tools & MCP → Installed MCP Servers
 - **Status**: Playwright server toggle must be **ON** (green)
 - **Expected**: "22 tools enabled" status
 
+<!-- section_id: "8d06d78a-7f1b-4cc3-93bc-d7962f08ffc8" -->
 ## What We Tried (That Didn't Work Alone)
 
 1. ✅ Configured in mcp.json - Required but not sufficient
@@ -131,6 +142,7 @@ Playwright MCP tools were configured in `mcp.json` but not available to AI agent
 7. ✅ Disabled unused MCP servers - **May have helped** (freed up capacity)
 8. ❌ **Missing**: Enable in Cursor Settings UI - **This was the critical step!**
 
+<!-- section_id: "dac23c26-1914-4edf-8400-873805a46f91" -->
 ## Complete Solution (All Steps)
 
 **To get Playwright MCP tools working, you need:**
@@ -142,11 +154,14 @@ Playwright MCP tools were configured in `mcp.json` but not available to AI agent
 
 **All steps may be necessary for success.**
 
+<!-- section_id: "ec9bdf7b-42d2-4b75-a0e9-46dacea6acce" -->
 ## Key Learnings
 
+<!-- section_id: "ec979ad2-9cdf-48ec-bec1-e4720f2f827b" -->
 ### Critical Discovery #1: UI Enablement Required
 **MCP servers must be enabled in Cursor Settings UI**, not just configured in mcp.json.
 
+<!-- section_id: "1095facf-8a5f-4b44-84a3-4b4c802b2c3e" -->
 ### Critical Discovery #2: MCP Server/Tool Limits ✅ **RESEARCHED & CONFIRMED**
 
 **Cursor has a hard limit of 40 tools total across all enabled MCP servers.**
@@ -176,41 +191,50 @@ Playwright MCP tools were configured in `mcp.json` but not available to AI agent
 
 **See Also**: [MCP Tool Limits Research](./MCP_TOOL_LIMITS_RESEARCH.md) for comprehensive research findings.
 
+<!-- section_id: "6c21e24a-eea1-4d7b-a5cd-1eca0eac786e" -->
 ### Configuration Requirements
 1. **mcp.json configuration** - Required for server setup
 2. **Environment variables** - Required for browser detection
 3. **Full paths** - Recommended for NVM setups
 4. **UI enablement** - **CRITICAL** - Required to expose tools
 
+<!-- section_id: "6d943b3e-cf3b-4705-9960-1e13af3c795c" -->
 ### Tool Availability
 - After enabling in UI: Tools immediately available
 - Before enabling in UI: Tools configured but not accessible
 - After restart: May need to re-enable in UI (enablement may not persist)
 
+<!-- section_id: "79e926d6-186c-4831-aaa0-5c569c755e42" -->
 ## Testing Results
 
+<!-- section_id: "d014da93-091a-40de-97c4-870919f3c6b4" -->
 ### Successful Tests
 - ✅ Navigation: `mcp_playwright_browser_navigate("https://www.aleks.com")`
 - ✅ Page loading: Full page content retrieved
 - ✅ Tool availability: 22 Playwright tools accessible
 
+<!-- section_id: "cb955272-0e91-4822-81ef-2f2eb8607908" -->
 ### Test URLs
 - ALEKS: `https://www.aleks.com`
 - BYU-Idaho Canvas: `https://byui.instructure.com/courses/353368/grades`
 
+<!-- section_id: "154a3f15-3405-4323-b9bb-d5e8d1b442f2" -->
 ## Troubleshooting
 
+<!-- section_id: "39c4dced-4ef1-4924-8c3a-844f590ca4c1" -->
 ### Tools Not Available After Configuration
 1. Check Cursor Settings → Tools & MCP
 2. Verify server is enabled (green toggle)
 3. If disabled, toggle ON
 4. Wait for "X tools enabled" status
 
+<!-- section_id: "f7e28e39-9062-46e8-9a4e-a83d8b98d2b5" -->
 ### Tools Not Available After Restart
 1. Check if server is still enabled in UI
 2. Re-enable if needed
 3. Enablement may not persist across restarts
 
+<!-- section_id: "b3b9e261-80ab-46d9-bbf7-516dd5091780" -->
 ### Cursor Warning About Too Many MCP Servers/Tools
 1. Go to Cursor Settings → Tools & MCP
 2. Review all enabled servers
@@ -218,11 +242,13 @@ Playwright MCP tools were configured in `mcp.json` but not available to AI agent
 4. Try enabling the server you need again
 5. This may free up capacity for new tools
 
+<!-- section_id: "1c01908a-8511-4728-bacf-c63a00bdd4d6" -->
 ### Browser Detection Issues
 1. Verify `PLAYWRIGHT_BROWSERS_PATH` is set correctly
 2. Check browser installation: `ls ~/.cache/ms-playwright/chromium-*/`
 3. Use full npx path if using NVM
 
+<!-- section_id: "7d3a7e0f-05b5-4b5c-819b-291809824213" -->
 ## Related Documentation
 
 - [MCP Tool Exposure Solutions](./MCP_TOOL_EXPOSURE_SOLUTIONS.md) - All solutions
@@ -231,8 +257,10 @@ Playwright MCP tools were configured in `mcp.json` but not available to AI agent
 - [Browser Environment Variable Fix](./BROWSER_ENV_VAR_FIX.md) - Environment variables
 - [MCP Configuration Guide](./MCP_CONFIGURATION_GUIDE.md) - General configuration
 
+<!-- section_id: "5b80b30c-106a-4319-bf67-1b46f80b8899" -->
 ## Changelog
 
+<!-- section_id: "b56937a4-a768-4812-92da-326b2ccbe084" -->
 ### 2025-12-05
 - Created comprehensive working solution document
 - Documented critical UI enablement step

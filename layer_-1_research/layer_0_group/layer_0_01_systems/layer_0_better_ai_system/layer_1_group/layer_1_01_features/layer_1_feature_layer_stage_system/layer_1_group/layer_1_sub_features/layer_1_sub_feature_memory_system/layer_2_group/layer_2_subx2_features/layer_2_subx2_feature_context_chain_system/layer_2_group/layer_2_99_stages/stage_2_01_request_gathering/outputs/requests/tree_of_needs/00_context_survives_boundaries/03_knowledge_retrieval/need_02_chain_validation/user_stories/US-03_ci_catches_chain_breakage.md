@@ -13,6 +13,7 @@ resource_name: "US-03_ci_catches_chain_breakage"
 **I want** chain validation to run automatically as a git hook or CI check,
 **So that** broken references are caught at commit time, not discovered later when the AI fails.
 
+<!-- section_id: "73cf19ce-99a8-4663-b6e1-fffc736cc0de" -->
 ### What Happens
 
 1. User makes structural changes (moves files, renames directories, updates references)
@@ -21,6 +22,7 @@ resource_name: "US-03_ci_catches_chain_breakage"
 4. If any references are broken, the commit is flagged (or blocked) with a clear error message
 5. User fixes the broken references before the changes reach the main branch
 
+<!-- section_id: "87b90c1c-08b2-46da-bd9b-f4b7513b245d" -->
 ### Acceptance Criteria
 
 - Chain validation runs automatically on structural changes (git hook or CI)

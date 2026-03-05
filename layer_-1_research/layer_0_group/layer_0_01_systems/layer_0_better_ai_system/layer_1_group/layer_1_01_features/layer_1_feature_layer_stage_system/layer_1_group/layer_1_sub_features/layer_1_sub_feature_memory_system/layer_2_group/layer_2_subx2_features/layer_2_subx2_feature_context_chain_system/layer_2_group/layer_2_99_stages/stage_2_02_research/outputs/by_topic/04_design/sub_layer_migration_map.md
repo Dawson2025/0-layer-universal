@@ -5,12 +5,14 @@ resource_name: "sub_layer_migration_map"
 ---
 # Design — Sub-Layer Migration Map
 
+<!-- section_id: "14a07089-b601-4e0e-9277-61b42bcca469" -->
 ## Purpose
 
 Detailed mapping of every directory and file category in the current sub-layer hierarchy to its new location inside `.0agnostic/`. This document serves as the execution reference for the migration.
 
 ---
 
+<!-- section_id: "002f8805-38bd-464b-808a-e40a862e1a5d" -->
 ## Migration Overview
 
 ```
@@ -29,8 +31,10 @@ layer_0/layer_0_04_sub_layers/                  .0agnostic/
 
 ---
 
+<!-- section_id: "789bcbd3-0a06-4eb6-85a9-b3d55ac1bcfa" -->
 ## sub_layer_0_01_knowledge_system/ → .0agnostic/knowledge/
 
+<!-- section_id: "2cd44267-2e79-474f-8190-ffaf87ffb50e" -->
 ### aalang_gab_system/ → knowledge/aalang_gab_system/
 
 | File | Action | Rationale |
@@ -43,6 +47,7 @@ layer_0/layer_0_04_sub_layers/                  .0agnostic/
 | `runtime_and_formats.md` | Move | Format comparison |
 | `README.md` | Move | Directory index |
 
+<!-- section_id: "3aec7afa-d43c-4c77-9d9a-e7bf47ebeeea" -->
 ### agent_coordination/ → knowledge/agent_coordination/
 
 | File | Action | Rationale |
@@ -52,12 +57,14 @@ layer_0/layer_0_04_sub_layers/                  .0agnostic/
 | `SCOPE_VS_DELEGATION.md` | Move | Scope design reference |
 | `0INDEX.md` | Move | Directory index |
 
+<!-- section_id: "60892a72-d758-4ce3-82f8-d1edc5f28157" -->
 ### context_loading/ → knowledge/context_loading/
 
 | File | Action | Rationale |
 |------|--------|-----------|
 | `HOW_CONTEXT_WORKS.md` | Move | Context loading reference |
 
+<!-- section_id: "3aaf6f44-f9db-4727-bb53-552bf637420a" -->
 ### entity_lifecycle/ → knowledge/entity_lifecycle/
 
 | File | Action | Rationale |
@@ -66,6 +73,7 @@ layer_0/layer_0_04_sub_layers/                  .0agnostic/
 | `INSTANTIATION_GUIDE.md` | Move | Entity creation reference (also used by /entity-creation skill) |
 | `MAINTENANCE_GUIDE.md` | Move | Entity maintenance reference |
 
+<!-- section_id: "a28cb9c2-4385-49e8-a10b-35084f7215fc" -->
 ### layer_stage_system/ → knowledge/layer_stage_system/
 
 | File | Action | Rationale |
@@ -78,18 +86,21 @@ layer_0/layer_0_04_sub_layers/                  .0agnostic/
 | `NESTED_DEPTH_NAMING.md` | Move | Naming convention reference |
 | `0INDEX.md` | Move | Directory index |
 
+<!-- section_id: "feb77ddf-9434-4939-a2f1-c7d9786c8d73" -->
 ### naming_conventions/ → knowledge/naming_conventions/
 
 | File | Action | Rationale |
 |------|--------|-----------|
 | `HIERARCHY_NAMING_CONVENTION.md` | Move | Naming reference |
 
+<!-- section_id: "2a48a9d4-d840-466c-a3aa-9e80bb652cdf" -->
 ### navigation_patterns/ → knowledge/navigation_patterns/
 
 | File | Action | Rationale |
 |------|--------|-----------|
 | `TRAVERSAL_GUIDE.md` | Move | Navigation reference |
 
+<!-- section_id: "993a5db4-84f0-4c2c-865e-fb22d31b2761" -->
 ### principles/ → knowledge/principles/
 
 | File | Action | Rationale |
@@ -97,6 +108,7 @@ layer_0/layer_0_04_sub_layers/                  .0agnostic/
 | `README.md` | Move | Principles overview |
 | Short critical principles | **Also extract** to `rules/static/principles.md` | Core principles should be auto-loaded |
 
+<!-- section_id: "2c25c570-9c39-40a8-bb90-842f27254291" -->
 ### software_engineering_knowledge_system/ → knowledge/software_engineering/
 
 | File | Action | Rationale |
@@ -108,8 +120,10 @@ layer_0/layer_0_04_sub_layers/                  .0agnostic/
 
 ---
 
+<!-- section_id: "755ca2eb-14ef-4ad8-820a-cc2c8d86271a" -->
 ## sub_layer_0_02_rules/ → .0agnostic/rules/
 
+<!-- section_id: "d7cd1caf-2ac2-484a-9012-d5799c98273c" -->
 ### 0_every_api_request/ → rules/static/
 
 These are rules that must be followed in EVERY session. They belong in `rules/static/` and get synced to `.claude/rules/` for auto-loading.
@@ -121,6 +135,7 @@ These are rules that must be followed in EVERY session. They belong in `rules/st
 | `CONTEXT_TRAVERSAL_RULE.md` | Move to `rules/static/` | Universal rule, always needed |
 | `README.md` | Dissolve | Not needed — rules are self-describing |
 
+<!-- section_id: "20528743-5971-4519-b11f-c706444b4729" -->
 ### 1_scenario_based/ → rules/dynamic/
 
 These are rules that apply in specific situations. They belong in `rules/dynamic/` with YAML frontmatter for path-scoping.
@@ -137,6 +152,7 @@ These are rules that apply in specific situations. They belong in `rules/dynamic
 | `sequential_development_methodology.md` | Move to `rules/dynamic/` | Development paths |
 | `README.md` | Dissolve | Not needed |
 
+<!-- section_id: "23a2e991-696c-437b-bcb7-1b2719a33d7e" -->
 ### Root-level rule files
 
 | File | Action | Rationale |
@@ -147,6 +163,7 @@ These are rules that apply in specific situations. They belong in `rules/dynamic
 | `context_scope_boundaries.md` | Move to `rules/static/` | Universal rule |
 | `README.md` | Dissolve | Not needed |
 
+<!-- section_id: "5cbca4c5-f3f8-4558-a85b-fda9f22e5971" -->
 ### 0_instruction_docs/ → knowledge/instruction_docs/
 
 These are NOT rules — they are reference documentation that currently lives inside the rules directory. They should be knowledge.
@@ -162,12 +179,14 @@ These are NOT rules — they are reference documentation that currently lives in
 | `initialization/` | Move to `knowledge/instruction_docs/initialization/` | Reference |
 | `integrated_from_projects/` | Move to `knowledge/instruction_docs/integrated/` | Reference |
 
+<!-- section_id: "f2d2a161-fceb-4047-813f-08ccdaff71b2" -->
 ### 1_status_progress_docs/ → Evaluate
 
 | File | Action | Rationale |
 |------|--------|-----------|
 | `SESSION_SUMMARY_NOV_11_2025_*.md` | Move to `episodic_memory/` or archive | Session record, not a rule |
 
+<!-- section_id: "edee442d-965b-4a2f-bf8c-ae0e859de7dc" -->
 ### 3_archive_docs/ → Archive or delete
 
 | Content | Action | Rationale |
@@ -176,6 +195,7 @@ These are NOT rules — they are reference documentation that currently lives in
 | `CURSOR_*.md` | Archive or `.1merge/.1cursor_merge/` | Cursor-specific historical |
 | `TERMINAL_*.md` | Archive | Historical solutions |
 
+<!-- section_id: "8c15d9b0-1094-4d3c-8205-bc1bf9744280" -->
 ### sub_layer_0_04_99_stages/ → Evaluate per stage
 
 The rules sub-layer has its own stage hierarchy. This needs case-by-case evaluation:
@@ -189,6 +209,7 @@ The rules sub-layer has its own stage hierarchy. This needs case-by-case evaluat
 
 ---
 
+<!-- section_id: "6a37197d-c151-4fb3-9a5b-7113b5e421ad" -->
 ## sub_layer_0_03_protocols/ → .0agnostic/protocols/
 
 | File | Action | Rationale |
@@ -207,6 +228,7 @@ The rules sub-layer has its own stage hierarchy. This needs case-by-case evaluat
 
 ---
 
+<!-- section_id: "46f94703-6f26-4320-8cfe-c137157b1031" -->
 ## sub_layer_0_04+_setup_dependant/ → Split
 
 Setup-dependent content splits between knowledge and .1merge/:
@@ -225,6 +247,7 @@ Setup-dependent content splits between knowledge and .1merge/:
 
 ---
 
+<!-- section_id: "0754b01f-6942-4b83-9395-be8a566ea519" -->
 ## Sync Conflict Files
 
 Multiple `.sync-conflict-*` files exist in the sub-layers (from Syncthing). During migration:
@@ -236,17 +259,21 @@ Multiple `.sync-conflict-*` files exist in the sub-layers (from Syncthing). Duri
 
 ---
 
+<!-- section_id: "68172dff-4e70-4d61-9171-1e91c166eada" -->
 ## Migration Sequence
 
+<!-- section_id: "9af0b739-1b94-4aad-9848-2d12f65e0d05" -->
 ### Phase 1: Create Target Structure
 1. Create subdirectories inside `.0agnostic/`: `knowledge/`, `knowledge/principles/`, `rules/static/`, `rules/dynamic/`, `protocols/`
 2. The rest of the `.0agnostic/` structure already exists
 
+<!-- section_id: "377c4d8e-9ae0-4af7-966a-4d1ea69e7459" -->
 ### Phase 2: Move Knowledge Files
 1. Move all `sub_layer_0_01_knowledge_system/` subdirectories to `.0agnostic/knowledge/`
 2. Clean up sync-conflict files
 3. Update any @import references in CLAUDE.md files
 
+<!-- section_id: "a3f56ee7-d0f7-4b5b-a4e2-416a20d882ca" -->
 ### Phase 3: Move Rules
 1. Move `0_every_api_request/` files to `.0agnostic/rules/static/`
 2. Move `1_scenario_based/` files to `.0agnostic/rules/dynamic/` (add YAML frontmatter)
@@ -255,20 +282,24 @@ Multiple `.sync-conflict-*` files exist in the sub-layers (from Syncthing). Duri
 5. Archive `3_archive_docs/`
 6. Move stage content to `knowledge/rule_development/`
 
+<!-- section_id: "72f5993a-83f0-4add-b1ec-27297b10e387" -->
 ### Phase 4: Move Protocols
 1. Move all protocol files to `.0agnostic/protocols/`
 2. Clean up sync-conflict files
 
+<!-- section_id: "f1c312c0-d2fe-47ba-a494-f0d39dd8bf9e" -->
 ### Phase 5: Handle Setup-Dependent
 1. Move `_shared/` to `.0agnostic/knowledge/setup/shared/`
 2. Move OS-specific content to `.0agnostic/knowledge/setup/{os}/` or `.1merge/`
 
+<!-- section_id: "dcaf1592-ae06-44fe-9c46-8b1c8b498fa9" -->
 ### Phase 6: Update References
 1. Update all CLAUDE.md @import paths
 2. Update skill references to new locations
 3. Update `~/.claude/CLAUDE.md` scenario-based rule paths
 4. Run `agnostic-sync.sh` to regenerate tool files
 
+<!-- section_id: "be0dc4d8-6cee-43f2-bde8-bb6ea2f5d023" -->
 ### Phase 7: Clean Up
 1. Delete empty `layer_0_04_sub_layers/` directory
 2. Remove the `layer_0_00_sub_layer_registry/` (no longer needed)
@@ -276,6 +307,7 @@ Multiple `.sync-conflict-*` files exist in the sub-layers (from Syncthing). Duri
 
 ---
 
+<!-- section_id: "5b7f1894-742c-40c3-87d2-e0e61e074580" -->
 ## File Count Summary
 
 | Category | File Count | New Location |

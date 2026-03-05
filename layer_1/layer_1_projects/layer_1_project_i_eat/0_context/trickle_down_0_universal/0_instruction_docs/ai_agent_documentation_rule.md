@@ -5,10 +5,12 @@ resource_name: "ai_agent_documentation_rule"
 ---
 # AI AGENT DOCUMENTATION RULE
 
+<!-- section_id: "0046b773-3f1f-47b8-9d80-5a23ea2c4235" -->
 ## **MANDATORY REQUIREMENT**
 
 **ALL AI agents MUST create, update, and maintain comprehensive documentation in the `/home/dawson/dawson-workspace/code/I-eat-repo/0_context` directory for EVERY SINGLE AI TURN in EVERY SESSION, regardless of the scope or type of changes made.**
 
+<!-- section_id: "db331b34-249d-467a-9466-9412aee54890" -->
 ### **TURN-BY-TURN DOCUMENTATION REQUIREMENT**
 
 **EVERY AI TURN MUST RESULT IN DOCUMENTATION UPDATES, INCLUDING:**
@@ -26,6 +28,7 @@ resource_name: "ai_agent_documentation_rule"
 
 **NO AI TURN IS EXEMPT FROM THIS REQUIREMENT.**
 
+<!-- section_id: "00e4595a-8eec-4932-9b46-c98444f6a846" -->
 ### **GIT COMMIT REQUIREMENT**
 
 **ALL AI agents MUST commit ALL changes to git at the end of EVERY SINGLE AI TURN in EVERY SESSION, regardless of the scope or type of changes made.**
@@ -38,6 +41,7 @@ resource_name: "ai_agent_documentation_rule"
 5. **No Partial Commits**: All changes from a turn must be committed together
 6. **Documentation Included**: All documentation updates must be included in the commit
 
+<!-- section_id: "28635ba3-9c29-4871-8c60-09768fc170dc" -->
 ## **RULE SCOPE**
 
 This rule applies to:
@@ -51,8 +55,10 @@ This rule applies to:
 - Database schema modifications
 - API changes and updates
 
+<!-- section_id: "e03b8747-3f8c-4f42-ad12-abe63ae9dfee" -->
 ## **REQUIRED DOCUMENTATION ACTIONS**
 
+<!-- section_id: "a9db5f49-c51c-4ba7-ba5c-85132dbaa325" -->
 ### **1. IMMEDIATE DOCUMENTATION (Every AI Turn)**
 
 For EVERY SINGLE AI TURN in EVERY SESSION, agents MUST:
@@ -68,6 +74,7 @@ For EVERY SINGLE AI TURN in EVERY SESSION, agents MUST:
 9. **Commit to Git**: Commit all changes with descriptive commit message
 10. **Verify Git Status**: Ensure all changes are properly committed
 
+<!-- section_id: "b2991304-a5c4-407a-ab3b-817271228ee6" -->
 ### **2. DOCUMENTATION STRUCTURE**
 
 All documentation must follow the established hierarchy in `/home/dawson/dawson-workspace/code/I-eat-repo/0_context`:
@@ -82,6 +89,7 @@ All documentation must follow the established hierarchy in `/home/dawson/dawson-
 └── MASTER_DOCUMENTATION_INDEX.md                    # Master index
 ```
 
+<!-- section_id: "6d4e00aa-6620-40a4-bcf0-69391154eda2" -->
 ### **3. REQUIRED DOCUMENTATION TYPES**
 
 #### **A. Turn-by-Turn Change Logs**
@@ -117,6 +125,7 @@ All documentation must follow the established hierarchy in `/home/dawson/dawson-
 - **Format**: Activities performed, tools used, decisions made, outcomes
 - **Example**: `2025-01-27_session_001_turn_003.md`
 
+<!-- section_id: "2a9de270-0873-4a70-ae9f-259e9d87cda8" -->
 ### **4. DOCUMENTATION STANDARDS**
 
 #### **A. File Naming Convention**
@@ -163,6 +172,7 @@ Detailed explanation of what was done.
 - Monitoring requirements
 ```
 
+<!-- section_id: "cbefa906-6216-48c5-9ac2-fe5eedd7531c" -->
 ### **5. MANDATORY DOCUMENTATION CHECKLIST**
 
 For EVERY AI turn, agents MUST verify:
@@ -180,6 +190,7 @@ For EVERY AI turn, agents MUST verify:
 - [ ] Git status shows no uncommitted changes
 - [ ] Commit includes all documentation updates
 
+<!-- section_id: "8dae185f-c5c1-4bc6-af1e-98ead04690b2" -->
 ### **6. DOCUMENTATION VALIDATION**
 
 Before completing any AI turn, agents MUST:
@@ -193,6 +204,7 @@ Before completing any AI turn, agents MUST:
 7. **Verify Git Status**: Confirm no uncommitted changes remain
 8. **Validate Commit**: Ensure commit includes all changes and documentation
 
+<!-- section_id: "9bb39464-3753-40f9-a985-ed2ef379a71d" -->
 ## **BENEFITS OF THIS RULE**
 
 - **Complete Audit Trail**: Every change tracked and documented
@@ -208,6 +220,7 @@ Before completing any AI turn, agents MUST:
 - **Collaborative Development**: Multiple agents can work on same project
 - **Backup and Recovery**: All changes safely stored in git repository
 
+<!-- section_id: "70f99b9d-7ddf-450b-9149-a2d0a1daa162" -->
 ## **ENFORCEMENT**
 
 This rule is **MANDATORY** and **NON-NEGOTIABLE**. 
@@ -224,6 +237,7 @@ This rule is **MANDATORY** and **NON-NEGOTIABLE**.
 
 **This rule takes precedence over all other tasks and must be completed before marking any AI turn as complete.**
 
+<!-- section_id: "1fc7bb26-7589-46ae-977b-8b9ad497fde0" -->
 ### **GIT COMMIT MESSAGE STANDARDS**
 
 **Every git commit must follow this format:**

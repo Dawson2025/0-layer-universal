@@ -7,11 +7,13 @@ resource_name: "automation_plan"
 
 **📘 For complete automation coverage across all 67 user stories, see [COMPLETE_AUTOMATION_COVERAGE.md](./COMPLETE_AUTOMATION_COVERAGE.md)**
 
+<!-- section_id: "d331e122-6816-4155-b2af-f583aa4ee353" -->
 ## Scope
 - Prior automation runs cover US-001–US-049 (see `artifacts/story_runs/` for evidence).
 - This plan targets the outstanding scenarios in USER_STORIES.md, focusing on US-050–US-067 across admin tooling, storage resilience, testing workflows, and end-to-end journeys.
 - **Status**: ✅ All 67 user stories now have automation coverage (100%)
 
+<!-- section_id: "7a7286ad-239c-4eea-99f7-636b85a4a278" -->
 ## Story Grouping by Feature Flow
 | Group | Stories | Feature Focus | Primary Goals |
 | --- | --- | --- | --- |
@@ -22,42 +24,50 @@ resource_name: "automation_plan"
 | Parallel Dev Workflow | US-062 · US-063 | Developer productivity | Confirm directory isolation conventions and feature-level test execution expectations. |
 | End-to-End Journeys | US-064 · US-065 · US-066 · US-067 | Comprehensive user flows | Cover multi-step journeys: onboarding, team collaboration, variant experimentation, and mobile-first creation. |
 
+<!-- section_id: "b3015eff-e52e-4fa9-84a1-116fa6b459f2" -->
 ## Automation Approach by Group
+<!-- section_id: "0f7f42f4-4dda-4616-9e06-c4e14ba83479" -->
 ### Admin Data Maintenance (US-050–US-053)
 - **Playwright flow** exercising Administration ➜ Database Tools from an admin account.
 - Seed dedicated cleanup project with diverse words/media (leveraging `scripts/automation/reset_db.sh` followed by sample data restoration).
 - Capture pre/post metrics (word counts, phoneme frequencies) via API or UI exports to assert results.
 - For destructive actions (bulk delete, database reset) run in isolated test environment and verify guardrails (confirmation dialogs, logs).
 
+<!-- section_id: "c3f1fee3-801c-4bd4-b2c1-1bee2e35d772" -->
 ### Audio & TTS Experience (US-054–US-056)
 - Extend phoneme/word UI suite to trigger playback buttons and inspect network calls to `/api/tts/phoneme` and `/api/tts/ipa`.
 - Validate visual feedback (highlight class toggles) and confirm audio elements receive blobs (without needing actual audio playback).
 - Add API probe for `/api/tts/status` and surface results in Playwright assertion dashboard.
 - Prereq: Ensure mock or test TTS credentials available; fall back to local stub if Azure not configured.
 
+<!-- section_id: "856c5800-eb5f-4a03-a629-4dc26e896b75" -->
 ### Hybrid Storage Resilience (US-057–US-059)
 - Use combined UI + API checks to verify automatic routing when entering local vs cloud projects.
 - Simulate Firebase outage by disabling MCP server network calls (e.g., intercept `firestore.googleapis.com`) and confirm graceful degradation messaging.
 - Verify My Projects listing icons and session handling align with storage type.
 - Requires deterministic dataset with both SQLite and Firestore projects plus toggles to switch availability.
 
+<!-- section_id: "9dbc9f9b-61be-4a77-b89b-799ea7e188b0" -->
 ### Cloud Test Controls (US-060–US-061)
 - Add CLI harness tests invoking `python3 -m unittest tests.integration.test_cloud_integration` with and without `RUN_FIREBASE_INTEGRATION_TESTS`.
 - Capture outputs under artifacts, asserting pass, skip, and cleanup behavior.
 - Incorporate into automation runner as non-Playwright tasks executed sequentially to avoid port clashes.
 - Pre-flight check: confirm Firebase credentials present before enabling full run.
 
+<!-- section_id: "dd7f8134-f93e-4b8c-8289-15da9f07f472" -->
 ### Parallel Dev Workflow (US-062–US-063)
 - Use `scripts/automation/validate_parallel_structure.py` to audit each feature's structure (README, tests, templates) and flag deviations.
 - Optionally run targeted pytest commands per feature directory to confirm discoverability and independence.
 - Document conventions in artifacts, highlighting any gaps discovered during validation.
 
+<!-- section_id: "516eb648-a2a8-4eb1-b9e7-18dbd9a38e0c" -->
 ### End-to-End Journeys (US-064–US-067)
 - Compose long-form Playwright scripts that chain existing modular flows (auth, projects, words, phonemes) to mirror the journeys.
 - Ensure environment reset between journeys to avoid cross-contamination; leverage dedicated test accounts per journey.
 - For mobile-first coverage, run Playwright with mobile device emulation (e.g., `chromium.launch` with viewport/user agent overrides).
 - Collect timeline screenshots and step-by-step logs to support reporting requirements.
 
+<!-- section_id: "c22963d5-a2d2-428e-89b3-7fb78292d8b5" -->
 ## Implementation Backlog
 | ID | Group | Stories | Task | Deliverable / Notes |
 | --- | --- | --- | --- | --- |
@@ -78,6 +88,7 @@ resource_name: "automation_plan"
 | T15 | Cross-cutting | All | Update `scripts/automation/story_plan.sample.json` (or new `story_plan.us050-067.json`) to include new suites with sensible batching and concurrency. | Revised plan file referenced by runner + README update. |
 | T16 | Cross-cutting | All | Enhance reporting pipeline (`artifacts/story_runs/summary.json`) to aggregate legacy + new suites with metadata (storage type, viewport). | Script or doc update explaining report consumption. |
 
+<!-- section_id: "dc06db6c-e617-4dc4-98b6-5380a9470a82" -->
 ## Progress Log (Current Sprint)
 - Implemented T2 via `scripts/automation/admin_tools_fixture.py` to reset/seed cleanup datasets and purge artifacts post-run. Usage: `python3 scripts/automation/admin_tools_fixture.py prepare` before suites; `cleanup` afterwards.
 - Delivered T1 with `scripts/mcp-admin-database-tools.mjs`, covering bulk deletion, reset flows, and probing missing endpoints (`/api/admin/fix-video-paths`, `/api/admin/recalculate-phoneme-frequencies`). Artifacts emitted under `artifacts/admin-database-tools/`.
@@ -96,6 +107,7 @@ resource_name: "automation_plan"
   - Created `scripts/mcp-journey-mobile.mjs` for US-067 (mobile viewport emulation, responsive layout validation, touch-target checks, camera upload support).
   - All journey scripts emit structured artifacts under `artifacts/journeys/US-0XX-<timestamp>/` with screenshots and summary.json.
 
+<!-- section_id: "840a0f80-758f-4107-9bb9-3843ad4a9ebe" -->
 ### Audio & TTS Automation Blueprint (T3/T4)
 - **Service adjustments**
   - Extend `src/tts_ipa.py` with an offline fallback (`FORCE_FAKE_TTS` or automatic when Azure unavailable) that returns a deterministic base64-encoded WAV/MP3 clip; surface fallback availability via `/api/tts/status`.
@@ -113,6 +125,7 @@ resource_name: "automation_plan"
   - Document need to start Flask with fallback enabled; default to fallback when Azure SDK unavailable so suites run in CI without extra configuration.
   - Ensure sample phoneme exists in SQLite (fixture not required; `analytics` dataset already includes `tʃ`).
 
+<!-- section_id: "f497ecd9-0d3b-4ebb-955b-77df5e641647" -->
 ### Hybrid Storage Resilience Blueprint (US-057–US-059)
 - **Preconditions**
   - Launch Flask with Firebase credentials when available so cloud creation is enabled; otherwise expect automation to detect offline mode and adapt.
@@ -132,6 +145,7 @@ resource_name: "automation_plan"
 - **Open implementation tasks**
   - Extend the automation runner plan to include `scripts/mcp-storage-resilience.mjs` (with toggle support for `DISABLE_FIREBASE=1` runs).
 
+<!-- section_id: "2ce44f3f-4bd3-48bd-9b7a-6096c51700b9" -->
 ### Cloud Test Controls Blueprint (US-060–US-061)
 - **Preconditions**
   - Ensure `.venv` holds Firebase credentials and network access for live runs; document how to mock responses when credentials are absent.
@@ -148,6 +162,7 @@ resource_name: "automation_plan"
   - Provide CONTRIBUTING snippet documenting how to supply credentials locally and in CI.
   - Add optional dry-run/verification step (e.g., `--verify`) that checks connectivity before attempting the full integration suite.
 
+<!-- section_id: "17042ba8-bfe0-4ca1-82fa-3342d987d1d8" -->
 ### Parallel Dev Workflow Blueprint (US-062–US-063)
 - **Preconditions**
   - Establish canonical feature directory schema (README, `routes.py`, `templates/`, `tests/`) to compare against.
@@ -164,6 +179,7 @@ resource_name: "automation_plan"
   - Decide whether to auto-fix simple issues (e.g., generate placeholder README) or just report them.
   - Document how agents should interpret the validation output before starting new workstreams.
 
+<!-- section_id: "f2571484-301e-4f9b-8d9e-38d1ea02b0c8" -->
 ### End-to-End Journeys Blueprint (US-064–US-067)
 - **Preconditions**
   - Maintain reusable helper modules for auth, project creation, phoneme/word management to minimize duplicated Playwright logic across journeys.
@@ -181,6 +197,7 @@ resource_name: "automation_plan"
   - Identify reusable fixtures (sample media, invitation tokens) to keep runs deterministic.
   - Consider integrating Lighthouse/Performance traces for mobile journey to capture UX metrics (optional stretch goal).
 
+<!-- section_id: "1ac69d9c-3acf-4db0-b1d7-bacb6b7b1850" -->
 ## Next Steps
 1. Prioritize backlog items (T1–T16) based on dependencies and environment readiness.
 2. Implement tasks incrementally, committing scripts/fixtures and updating automation plans.

@@ -8,6 +8,7 @@ resource_name: "avenue_web_validation_report"
 - Target root: `/home/dawson/dawson-workspace/code/0_layer_universal/layer_-1_research/layer_-1_better_ai_system/layer_0_group/layer_0_features/layer_0_feature_layer_stage_system`
 - Generated: 2026-02-18T03:01:47Z
 
+<!-- section_id: "fcdef3fd-f2a8-4b8b-be21-bd4097311c70" -->
 ## Entity Results (8 Avenues)
 
 | Entity | Type | A1 Prompts | A2 Path Rules | A3 Skills | A4 Refs | A5 JSON-LD | A6 Integration | A7 Memory | A8 0AGNOSTIC | Score |
@@ -78,6 +79,7 @@ resource_name: "avenue_web_validation_report"
 | `layer_1_group/layer_1_subx2_features/layer_1_subx2_feature_tool_and_app_agnostic` | layer | PASS | PASS | PASS | PASS | PASS | PASS | PASS | PASS | 8/8 |
 
 
+<!-- section_id: "3afd5383-e9b8-4f59-9ed8-6b27318db15e" -->
 ## JSON-LD Class Coverage (Global)
 
 - Layer orchestrators: **33**
@@ -86,6 +88,7 @@ resource_name: "avenue_web_validation_report"
 - Layer/feature indexes: **7**
 - GAB/runtime/spec-like JSON-LDs: **35**
 
+<!-- section_id: "6cbc6222-3392-4eb8-8a98-a02cab7459ba" -->
 ## Summary
 
 - PASS checks: **512**

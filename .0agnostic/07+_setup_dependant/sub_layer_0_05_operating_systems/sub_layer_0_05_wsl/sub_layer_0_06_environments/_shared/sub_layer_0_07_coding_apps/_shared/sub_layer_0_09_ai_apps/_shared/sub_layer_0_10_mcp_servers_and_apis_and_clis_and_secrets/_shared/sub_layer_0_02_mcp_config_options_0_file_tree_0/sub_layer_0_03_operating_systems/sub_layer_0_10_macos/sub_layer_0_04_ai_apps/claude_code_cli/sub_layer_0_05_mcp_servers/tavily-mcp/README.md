@@ -6,8 +6,10 @@ resource_name: "README"
 ---
 # tavily-mcp (claude_code_cli on macos)
 
+<!-- section_id: "1258bc9d-afab-4ae9-a818-eb2afdb668e2" -->
 ## Canonical docs
 - ../../../../../_shared/0.04_ai_apps/_shared/0.05_mcp_servers/tavily-mcp/
 
+<!-- section_id: "ff39b2ca-d0c8-4920-a3d3-ce8342058b35" -->
 ## Notes
 Add macos + claude_code_cli specific setup notes here.

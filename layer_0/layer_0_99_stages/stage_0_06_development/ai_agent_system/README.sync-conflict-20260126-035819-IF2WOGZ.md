@@ -5,10 +5,12 @@ resource_name: "README.sync-conflict-20260126-035819-IF2WOGZ"
 ---
 # Stage 0.04 Development - AI Agent System
 
+<!-- section_id: "b8f85bb4-fb38-44ba-b08d-b1958e77a896" -->
 ## Overview
 
 This directory contains AI agent configuration for the **Development Stage** at Layer 0 (Universal). The development stage is responsible for implementing code, infrastructure, and documentation changes. At Layer 0, this typically means universal infrastructure, tools, protocols, or documentation that applies across all projects.
 
+<!-- section_id: "76dbea8d-fdf7-43c0-b213-dfb2cff20f75" -->
 ## Stage Purpose
 
 The development stage:
@@ -18,8 +20,10 @@ The development stage:
 - Produces artifacts ready for testing
 - Reports implementation details and any deviations from design
 
+<!-- section_id: "7732cdbd-9457-4bb8-afc5-e4342fbeafd4" -->
 ## Manager/Worker Workflow
 
+<!-- section_id: "cd4d6d37-12f6-4bb8-a6cb-0bec20963fb4" -->
 ### Manager Workflow (For Complex Universal Infrastructure)
 
 Use manager pattern when implementing complex universal systems that span multiple files or sub-components:
@@ -49,6 +53,7 @@ Use manager pattern when implementing complex universal systems that span multip
    - Destination: stage_0_07_testing
    - Contains: List of files created/modified, implementation notes, deviations
 
+<!-- section_id: "76de2537-de16-4d82-bc36-a60a514c7aca" -->
 ### Worker Workflow (Most Common for Development)
 
 For focused implementation tasks (single file, module, or small set of related files):
@@ -71,8 +76,10 @@ For focused implementation tasks (single file, module, or small set of related f
 
 4. **Exit**: Return control to manager or next stage
 
+<!-- section_id: "c90df59e-c0c7-425c-9419-a8197e38a25f" -->
 ## Handoff Flow
 
+<!-- section_id: "7e2c42de-4d04-42be-af9f-3d1bf059724f" -->
 ### Incoming Handoff (from Design Stage)
 
 **File**: `../hand_off_documents/incoming.json`
@@ -133,6 +140,7 @@ For focused implementation tasks (single file, module, or small set of related f
 }
 ```
 
+<!-- section_id: "a7b94ee7-a868-4dbd-8b69-cbe3bebd3950" -->
 ### Outgoing Handoff (to Testing Stage)
 
 **File**: `../hand_off_documents/outgoing.json`
@@ -187,10 +195,12 @@ For focused implementation tasks (single file, module, or small set of related f
 }
 ```
 
+<!-- section_id: "8dd055dc-4122-41e5-850a-d09138b2ac09" -->
 ## Tool Recommendations
 
 For Layer 0 development stage:
 
+<!-- section_id: "424b7085-40d8-4fdb-81fc-17c127456005" -->
 ### Primary Tools
 
 **For Workers** (most implementation):
@@ -210,6 +220,7 @@ For Layer 0 development stage:
   - Use for: Breaking down complex universal systems
   - Use for: Integrating multiple worker outputs
 
+<!-- section_id: "dfc44db9-c788-4d30-b9e5-5914b00ecb70" -->
 ### Tool Selection Guide
 
 ```
@@ -226,10 +237,12 @@ Critical component (security, core infrastructure):
   → Claude Code worker (deep reasoning required)
 ```
 
+<!-- section_id: "daf09105-ab27-402f-9886-3841f1cb3eda" -->
 ## Parallel Execution
 
 Development stage benefits significantly from parallelization:
 
+<!-- section_id: "a5a991ca-5206-4b40-8270-d3f4bb948e80" -->
 ### Pattern: Parallel Component Implementation
 
 ```python
@@ -270,6 +283,7 @@ integrate_components(all_results)
 write_outgoing_handoff()
 ```
 
+<!-- section_id: "668b593c-b501-4534-ae90-e58c0f9c0ab0" -->
 ### Example: Logging Protocol Implementation
 
 **Batch 0** (parallel - no dependencies):
@@ -285,6 +299,7 @@ write_outgoing_handoff()
 - core-logger (Claude Code - orchestrates all components)
 - index.ts export (Codex - simple re-export)
 
+<!-- section_id: "8fbc3956-9826-46f9-b27e-8445bdda1e55" -->
 ## Context Files
 
 Development stage benefits from comprehensive context:
@@ -293,6 +308,7 @@ Development stage benefits from comprehensive context:
 - **AGENTS.md**: Quick reference for common patterns
 - **Design artifacts**: Reference design documents from artifacts
 
+<!-- section_id: "406f0f28-3581-4636-a5c5-eaa47bea3ecd" -->
 ## Deeper References
 
 For comprehensive understanding of development patterns:
@@ -302,6 +318,7 @@ For comprehensive understanding of development patterns:
 - **Parallel Execution**: [../../../../-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/parallel_execution.md](../../../../-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/parallel_execution.md)
 - **Handoff Schema**: [../../../0.01_manager_handoff_documents/0.00_to_universal/handoff_schema.md](../../../0.01_manager_handoff_documents/0.00_to_universal/handoff_schema.md)
 
+<!-- section_id: "c2ab9d4c-c004-4e09-ba42-8817fc0a5686" -->
 ## Best Practices
 
 1. **Follow Design**: Implement exactly as designed, document deviations
@@ -312,8 +329,10 @@ For comprehensive understanding of development patterns:
 6. **Report Accurately**: List all files created/modified, note any issues
 7. **Flag Blockers Early**: If stuck on design issue, report immediately rather than guessing
 
+<!-- section_id: "5aa6be93-689f-40fc-abe4-2ff5328705b9" -->
 ## Common Patterns
 
+<!-- section_id: "576dea3e-24f0-4724-a2df-3a05d249d9df" -->
 ### Pattern 1: Single File Utility (Codex)
 ```
 Session: 1 turn
@@ -322,6 +341,7 @@ Output: 1 file with implementation
 Example: JsonFormatter.ts
 ```
 
+<!-- section_id: "6499bcd6-ce0e-49fb-87cc-7c60f8a63023" -->
 ### Pattern 2: Standard Component (Codex)
 ```
 Session: 2-3 turns
@@ -330,6 +350,7 @@ Output: Main file + types/interfaces
 Example: FileTransport.ts + FileTransportOptions.ts
 ```
 
+<!-- section_id: "c98064bc-2d6c-4c34-865e-9ab58a90fc52" -->
 ### Pattern 3: Complex Component (Claude Code)
 ```
 Session: 3-5 turns
@@ -338,6 +359,7 @@ Output: Multiple files with intricate logic
 Example: Logger.ts (plugin system, lifecycle management)
 ```
 
+<!-- section_id: "b3921f68-219f-43eb-a7b5-ffacc0808b34" -->
 ### Pattern 4: Multi-Component System (Manager + Workers)
 ```
 Manager: Claude Code (orchestrates)

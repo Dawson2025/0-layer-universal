@@ -6,6 +6,7 @@ resource_name: "0AGNOSTIC"
 ---
 # 0AGNOSTIC.md - layer_0_99_stages
 
+<!-- section_id: "3648a1d6-03dc-4787-a885-dfabfeed6b4a" -->
 ## Identity
 
 entity_id: "c7350a3e-cc90-45ae-9898-8e52a07e5d12"

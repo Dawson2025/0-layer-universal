@@ -11,6 +11,7 @@ resource_name: "component_creation_checklist"
 
 ---
 
+<!-- section_id: "895ec12e-873e-4fd4-8dce-fef60815677c" -->
 ## Pre-Creation
 
 - [ ] Determine component name (use lowercase with hyphens or underscores)
@@ -22,8 +23,10 @@ resource_name: "component_creation_checklist"
 
 ---
 
+<!-- section_id: "cc0d9676-7d7d-4e7e-8900-88c98da0518e" -->
 ## Creation Steps
 
+<!-- section_id: "e48a1df7-a0c1-4de5-9365-3dacc9985308" -->
 ### 1. Navigate to Parent's Components Folder
 
 For **component** (inside a feature):
@@ -38,6 +41,7 @@ cd <parent_component>/layer_<N+1>/layer_<N+1>_sub_components/
 
 - [ ] Navigated to correct parent folder
 
+<!-- section_id: "ec5d0e73-15da-4aae-b23f-f584846e2084" -->
 ### 2. Copy Template
 
 ```bash
@@ -49,6 +53,7 @@ cp -r <path_to>/layer_1/layer_1_features/layer_1_feature_layer_stage_system/laye
 
 - [ ] Copied component template
 
+<!-- section_id: "463421a2-30d3-4ccf-992f-fc893da9ff89" -->
 ### 3. Rename Layer Folders
 
 Replace template `layer_N` with actual layer number:
@@ -92,6 +97,7 @@ done
 - [ ] Renamed all `stage_N.*` to `stage_<actual>.*`
 - [ ] Renamed handoff subfolders
 
+<!-- section_id: "c7c1e11d-7d39-4055-bcd1-119e8a60bbaf" -->
 ### 4. Create Nested Content Folder
 
 ```bash
@@ -107,6 +113,7 @@ echo "# Sub-Components\n\nNested components go here." > layer_<N+2>_sub_componen
 - [ ] Created `layer_<N+2>_sub_components/`
 - [ ] Added README.md
 
+<!-- section_id: "3d36b984-e7b9-4bd9-973e-85cde04bcf23" -->
 ### 5. Initialize Status File
 
 ```bash
@@ -132,6 +139,7 @@ Edit `status_<N+1>.json`:
 - [ ] Updated `layer_id` field
 - [ ] Set `current_stage`
 
+<!-- section_id: "32222392-7ff3-4b73-a4e2-90b5df809304" -->
 ### 6. Create Component README
 
 Create `README.md` at component root:
@@ -159,6 +167,7 @@ See `layer_<N+1>/layer_<N+1>_99_stages/status_<N+1>.json`
 
 - [ ] Created component README.md
 
+<!-- section_id: "1edc7bc6-c134-4961-a6e8-e4ec4f467a75" -->
 ### 7. Populate Basic Prompts (sub_layer_N+1.01)
 
 Create `component_init_prompt.md` in `layer_<N+1>/layer_<N+1>_02_sub_layers/sub_layer_<N+1>.01_basic_prompts/`:
@@ -188,6 +197,7 @@ Create `component_init_prompt.md` in `layer_<N+1>/layer_<N+1>_02_sub_layers/sub_
 - [ ] Listed key files/directories
 - [ ] Documented current focus
 
+<!-- section_id: "3a8ed5c1-bf45-4659-a567-47376959439b" -->
 ### 8. Initial Commit (if separate repo)
 
 ```bash
@@ -202,6 +212,7 @@ Co-Authored-By: Claude <noreply@anthropic.com>"
 
 ---
 
+<!-- section_id: "03c50ce3-d783-4b32-a688-413ba2305309" -->
 ## Post-Creation Verification
 
 - [ ] `layer_<N+1>/` folder exists with correct structure
@@ -213,6 +224,7 @@ Co-Authored-By: Claude <noreply@anthropic.com>"
 
 ---
 
+<!-- section_id: "7dcc2ae8-8425-4f3d-be6d-51ff84e5e4a3" -->
 ## Component vs Sub-Component Decision
 
 | Question | Answer |
@@ -226,6 +238,7 @@ Co-Authored-By: Claude <noreply@anthropic.com>"
 
 ---
 
+<!-- section_id: "b334c943-41ad-4408-a40e-7226ebc9d3ea" -->
 ## Layer Number Calculation
 
 | Parent Type | Parent Layer | Component Layer | Component's Nested Content |
@@ -239,6 +252,7 @@ Co-Authored-By: Claude <noreply@anthropic.com>"
 
 ---
 
+<!-- section_id: "fa5c6252-d6f3-441b-872c-c657bc6e6309" -->
 ## Component Types
 
 Components are implementation units. Common types include:
@@ -254,8 +268,10 @@ Components are implementation units. Common types include:
 
 ---
 
+<!-- section_id: "fb383427-bc00-4eec-b5dc-fd2f5fbb5c65" -->
 ## Minimal vs Full Structure
 
+<!-- section_id: "3f1fd8c3-f5fc-4e32-a1c7-910d7fe62d9a" -->
 ### Minimal Component (for small items)
 
 ```
@@ -272,12 +288,14 @@ layer_N+1_component_<name>/
         └── README.md
 ```
 
+<!-- section_id: "0d7c15a5-9f29-4c42-8aad-a5faca17c38a" -->
 ### Full Component (for complex items)
 
 Includes all standard sub_layers and stages.
 
 ---
 
+<!-- section_id: "913f1380-d1e4-4a25-854d-f92ed6b60974" -->
 ## Common Issues
 
 | Issue | Solution |
@@ -289,6 +307,7 @@ Includes all standard sub_layers and stages.
 
 ---
 
+<!-- section_id: "34f337e3-e5db-48b0-952f-f03c4d813bff" -->
 ## Related
 
 - `instantiation_guide.md` - General instantiation guide

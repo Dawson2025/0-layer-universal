@@ -6,12 +6,15 @@ resource_name: "ci-cd-integration-guide"
 # CI/CD Integration Guide
 *Automating Database Migrations in Your Deployment Pipeline*
 
+<!-- section_id: "4eae1650-bfa3-44ea-9820-d99fa21d1fb9" -->
 ## Overview
 
 This guide shows you how to integrate database migrations into your CI/CD pipeline, ensuring automatic and safe deployment of database changes across environments.
 
+<!-- section_id: "fea9e100-735f-450b-95ac-6255f656f4d8" -->
 ## CI/CD Platform Examples
 
+<!-- section_id: "60c82f8d-849a-4689-89db-e8f53d703a12" -->
 ### GitHub Actions
 
 #### Basic Workflow
@@ -164,6 +167,7 @@ jobs:
 
 ---
 
+<!-- section_id: "3418ea45-b34f-42af-84c6-d327b4310086" -->
 ### GitLab CI/CD
 
 #### Basic Pipeline
@@ -262,6 +266,7 @@ migrate-production:
 
 ---
 
+<!-- section_id: "5481dbfd-7aa9-4109-b58b-f72602d68ac5" -->
 ### Jenkins
 
 #### Pipeline Definition
@@ -327,6 +332,7 @@ pipeline {
 
 ---
 
+<!-- section_id: "01508235-c33d-47bc-a5e6-36077bc251f2" -->
 ### Cloud Build (Google Cloud Platform)
 
 #### Basic Configuration
@@ -384,8 +390,10 @@ steps:
 
 ---
 
+<!-- section_id: "1ca9d0d8-b535-459a-bbd9-98fa00600598" -->
 ## Environment-Specific Strategies
 
+<!-- section_id: "7ad8ae74-2021-4cbc-853a-8c4e5140e25c" -->
 ### 1. Development Environment
 
 **Automatic on merge**:
@@ -409,6 +417,7 @@ jobs:
 - Migrations tested before pushing
 - No CI/CD migration for dev
 
+<!-- section_id: "acbcb24b-7b8d-4c20-83f1-baf9fdcc6c7c" -->
 ### 2. Staging Environment
 
 **Automated but monitored**:
@@ -429,6 +438,7 @@ migrate-staging:
           -d '{"text":"Migration to staging failed"}'
 ```
 
+<!-- section_id: "13a2a37a-f0b0-486f-bf6e-da679768967c" -->
 ### 3. Production Environment
 
 **Manual approval required**:
@@ -463,8 +473,10 @@ migrate-production:
 
 ---
 
+<!-- section_id: "3a54dc17-7bd9-4f65-923e-4266c602335b" -->
 ## Rollback Strategies
 
+<!-- section_id: "dce8fafb-0564-4b9a-a286-28dae1f26d87" -->
 ### Automatic Rollback
 
 ```yaml
@@ -489,6 +501,7 @@ migrate-production:
           -d '{"text":"Migration failed and rollback initiated"}'
 ```
 
+<!-- section_id: "11e6c414-7835-44be-ac98-0dbe35738057" -->
 ### Manual Rollback
 
 ```yaml
@@ -513,8 +526,10 @@ rollback-production:
 
 ---
 
+<!-- section_id: "7d1d6547-4639-4edb-9e4b-ae6d6f15fd1a" -->
 ## Safety Measures
 
+<!-- section_id: "0aaddd0e-0fda-4d90-acc7-85209b08c7ab" -->
 ### 1. Pre-Migration Checks
 
 ```yaml
@@ -531,6 +546,7 @@ steps:
       flyway info
 ```
 
+<!-- section_id: "0a7219fd-0ac7-4428-98ce-33c85f147378" -->
 ### 2. Backup Before Migration
 
 ```yaml
@@ -545,6 +561,7 @@ steps:
     run: flyway migrate
 ```
 
+<!-- section_id: "5908e2aa-75ce-4ffe-8502-d0caf7bbd964" -->
 ### 3. Verification After Migration
 
 ```yaml
@@ -561,6 +578,7 @@ steps:
     run: npm run test:integration
 ```
 
+<!-- section_id: "8a9cb160-70a0-4cd6-b7da-4fdbf2003334" -->
 ### 4. Notifications
 
 ```yaml
@@ -585,36 +603,47 @@ steps:
 
 ---
 
+<!-- section_id: "b5cc3af9-dfff-4a63-a46d-5bc43aa67ecc" -->
 ## Best Practices
 
+<!-- section_id: "6e6c8efa-9080-4c93-bb5e-e7c727e4cd58" -->
 ### 1. Environment Parity
 Keep development, staging, and production databases in sync.
 
+<!-- section_id: "9c0cb637-40f1-4992-9e56-79ad0a5b8dd1" -->
 ### 2. Migration Testing
 Test migrations in staging before production.
 
+<!-- section_id: "829514ef-9861-4e50-a08f-82a0f4e483b4" -->
 ### 3. Backup Strategy
 Always backup before running production migrations.
 
+<!-- section_id: "9a8aad08-f2d5-48a2-9258-dfd884c16f14" -->
 ### 4. Monitoring
 Monitor migration execution and database health.
 
+<!-- section_id: "6dcd50df-8c40-4df6-b70f-7007b8cecb60" -->
 ### 5. Rollback Plans
 Have rollback procedures ready and tested.
 
+<!-- section_id: "7e7a50ef-e7fc-4571-9f01-f95ff7c708ae" -->
 ### 6. Communication
 Notify team of migration status and failures.
 
+<!-- section_id: "ce786562-262f-4ec1-b115-9110f2c9b03a" -->
 ### 7. Audit Trail
 Log all migration executions.
 
+<!-- section_id: "baf06b5e-4b0d-481e-827b-5cfc96d60b04" -->
 ### 8. Security
 Use secrets management for database credentials.
 
 ---
 
+<!-- section_id: "2413c447-1fa1-4506-a1bc-f864819b2440" -->
 ## Common Patterns
 
+<!-- section_id: "17302b2d-229e-4f5f-b310-492c63595932" -->
 ### Sequential Deployments
 
 ```yaml
@@ -630,6 +659,7 @@ migrate-production:
   environment: production
 ```
 
+<!-- section_id: "469bb7fa-84e4-4b2c-82cc-6793893ba468" -->
 ### Parallel Testing
 
 ```yaml
@@ -645,6 +675,7 @@ jobs:
         test-suite: [unit, integration, e2e]
 ```
 
+<!-- section_id: "50bb7d21-1c95-43cd-9712-3b967f2fdd54" -->
 ### Feature Flags
 
 ```yaml
@@ -660,8 +691,10 @@ steps:
 
 ---
 
+<!-- section_id: "bfffc146-5a32-46a6-b700-7662d2a371f9" -->
 ## Troubleshooting
 
+<!-- section_id: "691b9db6-f7bf-45c6-8ebf-f602844543d6" -->
 ### Common Issues
 
 **Issue**: Migration fails in CI/CD but works locally
@@ -682,6 +715,7 @@ See [Troubleshooting Guide](./troubleshooting-guide.md) for more.
 
 ---
 
+<!-- section_id: "af7a42bd-434e-44c8-b5f7-33a855e8ab0f" -->
 ## Summary
 
 CI/CD integration for database migrations provides:

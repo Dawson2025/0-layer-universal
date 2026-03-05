@@ -10,6 +10,7 @@ resource_name: "APPLICATION_IMPLEMENTED"
 
 ---
 
+<!-- section_id: "678372d6-94be-492a-af0f-a00478c974dd" -->
 ## Overview
 
 Codex provides the **mechanisms**. Users/teams must provide the **content and strategy**:
@@ -24,12 +25,15 @@ Codex provides the **mechanisms**. Users/teams must provide the **content and st
 
 ---
 
+<!-- section_id: "7199ce95-e82e-42a9-a890-d5fab6b6ceee" -->
 ## 1. AGENTS.md Files — Content & Strategy
 
+<!-- section_id: "d3e40799-2481-45cf-ba59-254cfa6b0026" -->
 ### What You Must Create
 
 Each AGENTS.md file is entirely user-written. Codex just **finds and loads** it; you decide **what goes in it**.
 
+<!-- section_id: "a4a83101-509e-40df-a619-ac252e0db40f" -->
 ### Examples of Decisions YOU Make
 
 **Global (~/.codex/AGENTS.md)**:
@@ -48,6 +52,7 @@ Each AGENTS.md file is entirely user-written. Codex just **finds and loads** it;
 - What constraints apply HERE? (don't touch legacy code, follow specific patterns)
 - What should Claude know about THIS component before starting?
 
+<!-- section_id: "77c7090a-c2a6-49f1-a366-01bf23f99ce2" -->
 ### User Responsibility
 
 - **Write** AGENTS.md files from scratch
@@ -58,12 +63,15 @@ Each AGENTS.md file is entirely user-written. Codex just **finds and loads** it;
 
 ---
 
+<!-- section_id: "f512e0fe-805c-41e7-81b3-7f32c0ad888d" -->
 ## 2. config.toml — What & How to Configure
 
+<!-- section_id: "6731cde6-a39e-4007-ae57-5a207060d0c2" -->
 ### What You Must Decide
 
 `~/.codex/config.toml` and `/project/config.toml` are entirely user-managed.
 
+<!-- section_id: "a9ddd155-92ef-4bac-8a04-751387f2283b" -->
 ### Strategic Decisions YOU Make
 
 **Global Settings** (applies everywhere):
@@ -82,6 +90,7 @@ Each AGENTS.md file is entirely user-written. Codex just **finds and loads** it;
 - Should GitHub integration be on? (if managing via GitHub, enable sync)
 - What session_persistence setting? (persistent for long projects, ephemeral for experiments)
 
+<!-- section_id: "9e77ba2d-2013-4779-929c-48b8581a2893" -->
 ### User Responsibility
 
 - **Decide** what settings matter for each project
@@ -92,8 +101,10 @@ Each AGENTS.md file is entirely user-written. Codex just **finds and loads** it;
 
 ---
 
+<!-- section_id: "ef94b59b-2982-476b-b841-f3b2880bf6ec" -->
 ## 3. Workspace Initialization — Which Projects to Link
 
+<!-- section_id: "54903f3e-cc78-4410-9d50-3146821f86ae" -->
 ### What You Must Decide
 
 When you create a workspace, you choose which projects to link:
@@ -106,6 +117,7 @@ codex init  # Start with local project
 codex init /path/to/existing/project  # Link to local directory
 ```
 
+<!-- section_id: "ddec96d8-132f-4670-9311-116f0200f0bc" -->
 ### Strategic Decisions YOU Make
 
 **Initial Setup**:
@@ -118,6 +130,7 @@ codex init /path/to/existing/project  # Link to local directory
 - When to resume old sessions? (continuing work, debugging same feature)
 - How to organize sessions? (by feature, by date, by priority)
 
+<!-- section_id: "3b737f9a-0e98-4985-82e3-be6f89dfa469" -->
 ### User Responsibility
 
 - **Choose** which projects to initialize
@@ -128,8 +141,10 @@ codex init /path/to/existing/project  # Link to local directory
 
 ---
 
+<!-- section_id: "266b90a9-ad0b-4c49-9b88-c31c9b3efc0e" -->
 ## 4. Session Management — When to Resume vs. Start New
 
+<!-- section_id: "31dfdd45-43b1-449a-8ce0-055ed1c32b96" -->
 ### What You Must Decide
 
 Codex provides session persistence, but **you** decide how to use it:
@@ -139,6 +154,7 @@ codex resume [session-id]  # Continue previous conversation
 codex                       # Start new session (in current directory)
 ```
 
+<!-- section_id: "d95124a3-f76f-4dc1-abff-3001e1aa8e0c" -->
 ### Strategic Decisions YOU Make
 
 **Session Boundaries**:
@@ -151,6 +167,7 @@ codex                       # Start new session (in current directory)
 - When should you start fresh? (new feature, unrelated task)
 - What's the typical session lifespan? (2 hours, 8 hours, 1 day)
 
+<!-- section_id: "94e36bb3-1312-42f1-bc07-bc1b035cc064" -->
 ### User Responsibility
 
 - **Decide** session boundaries (no right answer, personal preference)
@@ -161,8 +178,10 @@ codex                       # Start new session (in current directory)
 
 ---
 
+<!-- section_id: "6906fcaf-ea3d-461f-b252-2627a0c0d745" -->
 ## 5. IDE Extension Setup — Which IDEs to Integrate
 
+<!-- section_id: "49ad6040-2d4d-43ab-b85e-a37b2824e352" -->
 ### What You Must Decide
 
 Codex integrates with VS Code, Cursor, Windsurf — but **you** choose which:
@@ -182,6 +201,7 @@ Codex integrates with VS Code, Cursor, Windsurf — but **you** choose which:
 - Configure agent-first workflow (Flow mode)
 - Set IDE preferences
 
+<!-- section_id: "9f703f6d-36bc-44f6-b7fd-bb366697f210" -->
 ### Strategic Decisions YOU Make
 
 **IDE Choice**:
@@ -194,6 +214,7 @@ Codex integrates with VS Code, Cursor, Windsurf — but **you** choose which:
 - Should IDE context differ from CLI? (usually same, but can customize per IDE)
 - What context should IDE auto-include? (current file, directory, project)
 
+<!-- section_id: "7ca427a2-aa21-49a6-bf55-3ec7e16cd407" -->
 ### User Responsibility
 
 - **Install** extensions (VS Code via marketplace, others as built-in)
@@ -204,8 +225,10 @@ Codex integrates with VS Code, Cursor, Windsurf — but **you** choose which:
 
 ---
 
+<!-- section_id: "2954d5f5-41fe-4565-a644-0007770daacf" -->
 ## 6. MCP Server Setup — Which External Tools to Connect
 
+<!-- section_id: "249df46e-f8cc-4e0e-8061-376ae308f13f" -->
 ### What You Must Decide
 
 Codex provides the **mechanism** to connect MCP servers. **You** decide:
@@ -226,6 +249,7 @@ Codex provides the **mechanism** to connect MCP servers. **You** decide:
 - Do I need GitHub repo access? → Load GitHub MCP
 - Do I need web search? → Load Tavily
 
+<!-- section_id: "ccd8e348-6de2-47b3-b386-97e77567ed29" -->
 ### User Responsibility
 
 - **Research** which MCP servers exist (not part of Codex)
@@ -237,8 +261,10 @@ Codex provides the **mechanism** to connect MCP servers. **You** decide:
 
 ---
 
+<!-- section_id: "c447fa60-bc50-49f1-86b8-95e078bd1e40" -->
 ## 7. Project Structure — How to Organize for AGENTS.md Hierarchy
 
+<!-- section_id: "134a3ea3-2cd6-479b-8523-b6e7e395c81e" -->
 ### What You Must Decide
 
 Codex provides **three-level hierarchy**. **You** decide:
@@ -259,6 +285,7 @@ Codex provides **three-level hierarchy**. **You** decide:
 - Are long paths navigable? (Codex doesn't have @folder syntax like Claude Code)
 - Can Codex easily find what it needs?
 
+<!-- section_id: "52010765-acf5-4cfa-9a03-239077683a3c" -->
 ### Example Organization
 
 **Good** (supports AGENTS.md hierarchy):
@@ -290,6 +317,7 @@ project/
 Hard for Codex to know what context applies where
 ```
 
+<!-- section_id: "766c0e75-185d-4087-a88d-4558aa3a5f19" -->
 ### User Responsibility
 
 - **Organize** code logically (helps Codex find context)
@@ -300,6 +328,7 @@ Hard for Codex to know what context applies where
 
 ---
 
+<!-- section_id: "faeaf96f-4f6b-4069-b098-f30d2551c6e0" -->
 ## Summary: Application-Implemented = Strategy & Content
 
 | Aspect | Codex Does | You Must Provide |
@@ -314,6 +343,7 @@ Hard for Codex to know what context applies where
 
 ---
 
+<!-- section_id: "8646a1ea-e19b-4612-9d75-6eeb80f2b47a" -->
 ## Key Principle
 
 **Codex provides the mechanisms. You provide the strategy and content.**

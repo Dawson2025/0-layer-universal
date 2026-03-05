@@ -3,6 +3,7 @@ resource_id: "c4676dcd-20db-467d-a0cb-722891e30555"
 resource_type: "knowledge"
 resource_name: "mcp_extensions"
 ---
+<!-- section_id: "325ee74e-7ef9-4dfe-b600-a52de4e8baf8" -->
 ## MCP Extension Patterns
 
 This document explains how to extend the AI manager hierarchy system with Model Context Protocol (MCP) servers and tools.
@@ -11,6 +12,7 @@ MCP provides a standardized way to expose tools and data sources to AI agents.
 
 ---
 
+<!-- section_id: "4d43bfae-bf28-4acc-81ca-15d83f25c457" -->
 ## 1. MCP Overview
 
 **Model Context Protocol** is a protocol for connecting AI agents to external tools and data sources through a standardized interface.
@@ -23,8 +25,10 @@ MCP provides a standardized way to expose tools and data sources to AI agents.
 
 ---
 
+<!-- section_id: "98926d6c-1e10-4dad-ad95-4c210bef4542" -->
 ## 2. Adding MCP Servers to the Hierarchy
 
+<!-- section_id: "04c6ec06-e59f-41ae-9305-82e2b7ffac10" -->
 ### 2.1 Layer-Specific MCP Configuration
 
 Each layer can have its own MCP servers:
@@ -52,6 +56,7 @@ mcp_servers:
       DATABASE_URL: "${AUTH_DB_URL}"
 ```
 
+<!-- section_id: "0d646a7b-e72e-457d-8916-5c6e74e6a432" -->
 ### 2.2 Tool Inheritance
 
 Tools available at layer L are also available at L+1:
@@ -79,8 +84,10 @@ L3 (Component):
 
 ---
 
+<!-- section_id: "fba72fd6-25cd-41ef-bfb7-60c7bf94243f" -->
 ## 3. Common MCP Server Patterns
 
+<!-- section_id: "4233f1b0-3491-4eab-918c-e6f9bc13f6f8" -->
 ### 3.1 Filesystem Server (Universal)
 
 ```python
@@ -131,6 +138,7 @@ async def call_tool(name, arguments):
         return [TextContent(type="text", text="File written successfully")]
 ```
 
+<!-- section_id: "c7d127e1-85db-4b72-87f7-9d1d499abdca" -->
 ### 3.2 Database Server (Project-Level)
 
 ```python
@@ -174,6 +182,7 @@ async def call_tool(name, arguments):
         return [TextContent(type="text", text=json.dumps(results))]
 ```
 
+<!-- section_id: "150c3a88-f81e-470f-b3c2-3a131a2a4419" -->
 ### 3.3 API Client Server (Feature-Level)
 
 ```python
@@ -229,8 +238,10 @@ async def call_tool(name, arguments):
 
 ---
 
+<!-- section_id: "92f57d56-379d-4181-9897-7fb3e84bd0f4" -->
 ## 4. Tool Discovery and Loading
 
+<!-- section_id: "12bd20d6-ee71-434e-9da8-164cea0d9935" -->
 ### 4.1 Automatic Tool Discovery
 
 ```python
@@ -280,6 +291,7 @@ def load_all_tools(layer_path):
     return tools
 ```
 
+<!-- section_id: "e28037f3-53ae-42f4-8058-cdd9e795a0dd" -->
 ### 4.2 Tool Injection into Agents
 
 **Claude Code:**
@@ -318,8 +330,10 @@ def inject_mcp_tools_gemini(layer_path, handoff_id):
 
 ---
 
+<!-- section_id: "0a7bc4b6-c382-42dc-ae0f-40047ae8e44d" -->
 ## 5. Custom MCP Server Template
 
+<!-- section_id: "004ab30f-de96-47b1-b6a9-b5321082f514" -->
 ### 5.1 Server Skeleton
 
 ```python
@@ -385,6 +399,7 @@ if __name__ == "__main__":
     asyncio.run(server.run())
 ```
 
+<!-- section_id: "0a7dde3d-3b7f-47be-aea2-dc9e5c4eb7a9" -->
 ### 5.2 Server Configuration
 
 ```yaml
@@ -400,8 +415,10 @@ mcp_servers:
 
 ---
 
+<!-- section_id: "be06ff70-571f-4be9-a7c6-c5d6bd68406b" -->
 ## 6. Security Considerations
 
+<!-- section_id: "0f08b08a-ae57-40c2-841f-355830367afe" -->
 ### 6.1 Tool Sandboxing
 
 ```python
@@ -433,6 +450,7 @@ class SecureMCPServer(Server):
             raise PermissionError(f"Path not allowed: {path}")
 ```
 
+<!-- section_id: "0ac285e1-e414-4025-87b3-b16128ba58c0" -->
 ### 6.2 Rate Limiting MCP Calls
 
 ```python
@@ -451,6 +469,7 @@ class RateLimitedMCPClient:
 
 ---
 
+<!-- section_id: "29f8f9d7-c67b-4411-8201-3aced62ffd4f" -->
 ## 7. Testing MCP Servers
 
 ```python
@@ -483,6 +502,7 @@ async def test_my_tool():
 
 ---
 
+<!-- section_id: "777cd6c2-d17c-4e18-8519-4f34c007e846" -->
 ## 8. Summary
 
 MCP servers provide a standardized way to extend agent capabilities:

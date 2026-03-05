@@ -5,25 +5,30 @@ resource_name: "BROWSER_MCP_SETUP_COMPLETE"
 ---
 # Browser MCP Setup - Complete
 
+<!-- section_id: "ced98de6-cd24-407c-a2cf-fd02a98834cf" -->
 ## ✅ What's Been Configured
 
+<!-- section_id: "9b85cc10-a63b-4f1f-a259-3bd0931eae11" -->
 ### 1. Playwright MCP Server
 - **Status**: ✅ Configured and running
 - **Location**: `~/.cursor/mcp.json`
 - **Browser**: Chromium (installed at `~/.cache/ms-playwright/chromium-1200/chrome-linux64/chrome`)
 - **Processes**: 3+ Playwright MCP processes running
 
+<!-- section_id: "11db0a0d-57bf-470d-83ca-c00487736c42" -->
 ### 2. Alternative Browser MCP Server
 - **Status**: ✅ Configured
 - **Server**: `@agent-infra/mcp-server-browser`
 - **Browser Path**: Explicitly set to Chromium executable
 - **Note**: Will be available after Cursor restart
 
+<!-- section_id: "05b5d26d-cfb6-4a6e-9c56-06ccd9cc87f2" -->
 ### 3. Cursor Browser Extension
 - **Status**: ⚠️ Requires manual installation
 - **Issue**: "No server info found" - needs Chrome extension installed
 - **Solution**: Install Cursor browser extension in Chrome (see below)
 
+<!-- section_id: "df332527-02dd-4d2f-8b25-92005fd648ff" -->
 ## 🔧 Current Configuration
 
 ```json
@@ -51,13 +56,16 @@ resource_name: "BROWSER_MCP_SETUP_COMPLETE"
 }
 ```
 
+<!-- section_id: "9d8ba8d3-5198-41bb-ab41-40fd059452cd" -->
 ## 📋 Next Steps
 
+<!-- section_id: "8f26e4d5-4282-42d8-996c-d47600073fb3" -->
 ### Option 1: Use Playwright/Browser MCP (Recommended - No Extension Needed)
 1. **Restart Cursor completely** (close all windows)
 2. After restart, Playwright MCP tools should be available
 3. Tools may be named differently (check available tools)
 
+<!-- section_id: "ec5f6160-a3fb-4970-8ccf-07fc55f68ab3" -->
 ### Option 2: Install Cursor Browser Extension (For cursor-browser-extension)
 1. Open Google Chrome
 2. Go to `chrome://extensions/`
@@ -67,6 +75,7 @@ resource_name: "BROWSER_MCP_SETUP_COMPLETE"
 6. Restart Cursor IDE
 7. The `cursor-browser-extension` tools should then work
 
+<!-- section_id: "39d04278-36a4-4136-a942-0ab274c10c8f" -->
 ## 🧪 Testing
 
 After restarting Cursor, test with:
@@ -75,6 +84,7 @@ After restarting Cursor, test with:
 - Click elements
 - Fill forms
 
+<!-- section_id: "4ca83f0d-8a44-46c7-b2c6-2b2e906b5f67" -->
 ## 📝 Available Tools (18 total)
 
 All browser automation tools are available:
@@ -86,6 +96,7 @@ All browser automation tools are available:
 - Code execution (evaluate, run_code)
 - Browser management (resize, close, install)
 
+<!-- section_id: "5e2afbba-3e57-4dd9-b515-f8d982ed7ffb" -->
 ## ⚠️ Important Notes
 
 - **Playwright MCP** is configured and should work after restart
@@ -93,6 +104,7 @@ All browser automation tools are available:
 - **@agent-infra/mcp-server-browser** is configured as an alternative
 - All browsers are properly installed and accessible
 
+<!-- section_id: "70c9e9b8-8231-4508-8463-3e952a2becb2" -->
 ## 🔍 Troubleshooting
 
 If tools still don't work after restart:

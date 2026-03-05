@@ -8,10 +8,12 @@ resource_name: "README"
 
 **Need**: [Staleness Detection](../README.md)
 
+<!-- section_id: "8659eb9f-61cf-480b-94bb-7a69c7e79d67" -->
 ## Overview
 
 These stories cover how the system detects when distilled knowledge files (Tier 2) have drifted from their source stage outputs (Tier 3). They validate that the developer can run a freshness check before starting a session to identify which knowledge files need updating, and that agents proactively flag potentially stale knowledge when they encounter references whose sources have changed since the last consolidation.
 
+<!-- section_id: "3033cfd7-74d5-42f5-bb3b-7406c017a80c" -->
 ## Actors
 
 - **User (Developer)**: Human developer (Dawson) who gives instructions to the AI system, reviews outputs, and validates behavior

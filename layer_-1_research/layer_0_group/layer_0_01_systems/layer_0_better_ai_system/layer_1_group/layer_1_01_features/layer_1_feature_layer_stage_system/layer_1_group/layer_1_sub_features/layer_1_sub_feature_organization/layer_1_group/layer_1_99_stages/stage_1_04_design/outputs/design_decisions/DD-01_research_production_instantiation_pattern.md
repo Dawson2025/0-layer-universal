@@ -11,6 +11,7 @@ resource_name: "DD-01_research_production_instantiation_pattern"
 
 ---
 
+<!-- section_id: "814875cb-cc9d-4d77-b324-82b9ec4c3614" -->
 ## Problem Statement
 
 Any system that evolves needs a way to separate experimental work from stable patterns, and both from personalized instances. Without this separation:
@@ -20,10 +21,12 @@ Any system that evolves needs a way to separate experimental work from stable pa
 3. There's no clear lifecycle from idea to delivery
 4. Features have no structured path from research to production
 
+<!-- section_id: "2bbe4584-d692-468e-ac6c-c3b75036cea9" -->
 ## Proposed Solution: The R/P/I Tri-Version Pattern
 
 Every system maintains three concurrent structural versions:
 
+<!-- section_id: "c7684509-399c-4a55-a662-a64abfd51f05" -->
 ### 1. Research (layer_-1)
 
 ```
@@ -47,6 +50,7 @@ system/
 - Can reference production content (read-only)
 - Multiple research features can run in parallel
 
+<!-- section_id: "87c07130-60b7-4d90-b4ba-59fb7e124007" -->
 ### 2. Production (standard entity)
 
 ```
@@ -67,6 +71,7 @@ system/
 - Conservative — prefers proven patterns over novel ones
 - Version tracked — knows what was promoted and when
 
+<!-- section_id: "07b19dbc-b886-4d75-915b-fcf7cf7f56dd" -->
 ### 3. Instantiation (children)
 
 ```
@@ -88,6 +93,7 @@ system/
 - Multiple instances coexist independently
 - Can be dynamically created as new users are added
 
+<!-- section_id: "beaf18d0-901b-43c5-9906-6838186fd4eb" -->
 ## The R/P/I Lifecycle
 
 ```
@@ -103,20 +109,25 @@ RESEARCH ──[promotion]──→ PRODUCTION ──[instantiation]──→ IN
 4. **Instantiation personalizes**: Per-user context, specific to their needs
 5. **Feedback informs**: Instance usage reveals needs for new research
 
+<!-- section_id: "c63f925a-89cd-43ed-8156-6954971f0e66" -->
 ## Alternatives Considered
 
+<!-- section_id: "f9a0e27f-0186-4371-a697-df37483af8e2" -->
 ### Alternative A: Single-Version System
 Everything in one place. No separation between experimental and stable.
 - **Rejected**: Too risky. Experimental changes affect all users immediately.
 
+<!-- section_id: "162f8a69-fc7a-474e-9ec6-860e06fd2f69" -->
 ### Alternative B: Branch-Based Versioning (git-style)
 Use git branches for research vs production.
 - **Rejected**: Branches are temporal (eventually merge). R/P/I is permanent and concurrent. Also doesn't handle instantiation.
 
+<!-- section_id: "5f097214-55db-4640-8eeb-3b3958dd08ab" -->
 ### Alternative C: Configuration-Based Versioning
 Use feature flags to toggle between research and production content.
 - **Rejected**: Doesn't provide structural separation. Config drift is hard to track. Doesn't address instantiation.
 
+<!-- section_id: "d37ee0d3-6077-46a6-99fd-f257126c2e13" -->
 ## Trade-offs
 
 | Trade-off | Accepted | Why |
@@ -126,6 +137,7 @@ Use feature flags to toggle between research and production content.
 | Context chain complexity | Yes | Inheritance through context chain avoids content duplication |
 | Duplication of entity structure | Minimal | Same conventions at every level reduce cognitive load |
 
+<!-- section_id: "dc6da1e3-19d8-4b7e-817f-5947a4340aca" -->
 ## Design Constraints
 
 - MUST use existing layer-stage conventions (entity structure, .0agnostic/, etc.)
@@ -133,6 +145,7 @@ Use feature flags to toggle between research and production content.
 - MUST NOT require agents to understand all three versions simultaneously
 - SHOULD be adoptable incrementally (start with R/P, add I later)
 
+<!-- section_id: "474cf539-dfd8-4466-8392-fcb4a5aa403e" -->
 ## Implementation Notes
 
 - Research entities use `layer_-1_research/` prefix

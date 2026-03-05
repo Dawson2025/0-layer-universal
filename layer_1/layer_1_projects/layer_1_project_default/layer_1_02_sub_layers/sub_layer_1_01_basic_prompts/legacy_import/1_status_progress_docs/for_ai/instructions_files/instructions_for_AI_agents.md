@@ -7,10 +7,12 @@ resource_name: "instructions_for_AI_agents"
 
 This file provides universal instructions for all AI agents working with the Language Tracker project.
 
+<!-- section_id: "a6334af5-b1ac-40a1-b033-01b4d4dc7c4e" -->
 ## Trickle-Down Documentation System
 
 **CRITICAL:** All AI agents must follow the hierarchical trickle-down documentation system.
 
+<!-- section_id: "ab9b0d35-31d1-4699-9926-ed29249f09f5" -->
 ### Mandatory Context Loading Order
 
 **TD0 ? TD0.5 ? TD1 ? TD2 ? TD3**
@@ -23,6 +25,7 @@ All AI agents must load context in this exact hierarchical order before beginnin
 4. **TD2 - Feature Guidance** (/docs/1_trickle_down/trickle-down-2-features/)
 5. **TD3 - Implementation Details** (/docs/1_trickle_down/trickle-down-3-components/)
 
+<!-- section_id: "3420901c-20ea-4089-907e-53531a1e37d5" -->
 ### WSL Ubuntu Environment Requirement
 
 **MANDATORY:** All AI agents must comply with TD0.5 environment standards:
@@ -31,6 +34,7 @@ All AI agents must load context in this exact hierarchical order before beginnin
 - No Windows C:\ drive operations
 - Use WSL Ubuntu development tools exclusively
 
+<!-- section_id: "b99dcff7-9d4f-4cdc-8ad4-ea47135f670d" -->
 ### Agent-Specific Configuration Files
 
 **Primary Configuration Files:**
@@ -38,6 +42,7 @@ All AI agents must load context in this exact hierarchical order before beginnin
 - **Warp AI**: WARP.md - File system and environment operations
 - **All Agents**: Agents.md - Universal agent configuration
 
+<!-- section_id: "86631178-862c-41e1-9375-8f4a2fcdb28e" -->
 ### Documentation Migration Notice
 
 **Legacy System**: The /docs/for_ai structure is being phased out in favor of the trickle-down system.
@@ -48,6 +53,7 @@ All AI agents must load context in this exact hierarchical order before beginnin
 - ?? Legacy files maintained for transition period
 - ?? Full migration target: Complete by spec kit implementation
 
+<!-- section_id: "eb3f0aa7-d3ad-4951-81e1-0f1d7e0b3c04" -->
 ### Required AI Agent Behaviors
 
 **Context Loading:**

@@ -5,12 +5,14 @@ resource_name: "US-03_git_hook_triggers"
 ---
 # US-03: Git Hook Triggers Pointer Sync
 
+<!-- section_id: "bdb9d98e-be64-4e29-8295-ad5b84bd73bf" -->
 ## User Story
 
 As a developer using git for version control,
 I want pointer-sync.sh to run automatically on git operations (pre-commit or post-commit),
 so that stale pointers are caught before they propagate to the remote repository.
 
+<!-- section_id: "82b9089c-5083-48fa-9a2e-cf13b2c7dbe8" -->
 ## Acceptance Criteria
 
 1. A git pre-commit hook runs `pointer-sync.sh --validate`
@@ -18,10 +20,12 @@ so that stale pointers are caught before they propagate to the remote repository
 3. The hook can be installed via a setup script or git template
 4. The hook runs quickly (< 2 seconds for typical repos)
 
+<!-- section_id: "00debf5c-c241-481f-ab8c-69eaf985ae0a" -->
 ## Integration with Existing Hooks
 
 The Claude Code PostToolUse hook (`pointer-edit-guard.sh`) already triggers warnings when pointer files are edited. The git hook provides a second safety net at commit time.
 
+<!-- section_id: "5f72e2f5-6f90-4166-b1f7-33929ddfb7fa" -->
 ## Status
 
 REQ-02 (git_integration) defines the requirement. This user story captures the developer experience.

@@ -6,12 +6,15 @@ resource_name: "tool-selection-guide"
 # Tool Selection Guide
 *Decision Framework for Choosing AI Coding Assistants*
 
+<!-- section_id: "76670a57-692f-4f33-a3f3-b5fbcd0f1f96" -->
 ## Overview
 
 This guide helps you make informed decisions about which AI coding assistant to use based on your specific needs, constraints, and goals. The decision framework considers multiple factors to recommend the optimal tool.
 
+<!-- section_id: "4d719ecb-1fa9-484f-bd3a-2a20fb411b46" -->
 ## Decision Factors
 
+<!-- section_id: "ca8d7334-da00-4bdb-a215-d1035810c33c" -->
 ### 1. Project Type
 
 **Web Applications**
@@ -39,6 +42,7 @@ This guide helps you make informed decisions about which AI coding assistant to 
 - Reason: Configuration file expertise
 - Best Pick: **Aider** for terminal-based configs
 
+<!-- section_id: "fa0db10e-bc2a-45d0-8f09-b8b804c36174" -->
 ### 2. Team Size
 
 **Solo Developer**
@@ -61,6 +65,7 @@ This guide helps you make informed decisions about which AI coding assistant to 
 - Reason: Enterprise features and consistency
 - Best Pick: **Windsurf** for team collaboration
 
+<!-- section_id: "c5cd8f6d-9ab9-4389-8d44-ac0b3ee6906b" -->
 ### 3. Privacy & Security Requirements
 
 **Low Sensitivity**
@@ -78,6 +83,7 @@ This guide helps you make informed decisions about which AI coding assistant to 
 - Reason: Must run locally, no cloud exposure
 - Best Pick: **Qwen3-Coder** for fully local operation
 
+<!-- section_id: "1f5cf73f-53ea-4af4-b5bc-7542dfe04026" -->
 ### 4. Codebase Size
 
 **Small (< 10k lines)**
@@ -100,6 +106,7 @@ This guide helps you make informed decisions about which AI coding assistant to 
 - Reason: Massive context windows
 - Best Pick: **Windsurf** (1M+ token context)
 
+<!-- section_id: "a510ea2b-718e-438e-a1ad-d51c047f74f5" -->
 ### 5. Budget Constraints
 
 **Free / Open Source**
@@ -122,6 +129,7 @@ This guide helps you make informed decisions about which AI coding assistant to 
 - Reason: Team features and support
 - Best Pick: **Windsurf** for large teams
 
+<!-- section_id: "7d545d18-b6b1-490d-b515-4e32961cd2da" -->
 ### 6. Learning Curve
 
 **Beginner Friendly**
@@ -139,8 +147,10 @@ This guide helps you make informed decisions about which AI coding assistant to 
 - Reason: More control and customization
 - Best Pick: **Windsurf** for power users
 
+<!-- section_id: "b7040e0f-d830-4d78-a83b-b837884a9f0e" -->
 ## Decision Trees
 
+<!-- section_id: "778b10c9-17bf-4abd-828e-175ce042787c" -->
 ### Quick Decision Tree
 
 ```
@@ -171,6 +181,7 @@ START: What's your primary concern?
    └─ Deep analysis → Claude Code
 ```
 
+<!-- section_id: "ebaa0549-1961-46eb-ad12-9f6135a9fcda" -->
 ### Detailed Decision Matrix
 
 | Criteria | Priority | Cursor | Windsurf | Copilot | Aider | Claude Code | Qwen3 |
@@ -186,8 +197,10 @@ START: What's your primary concern?
 
 **Legend**: ⭐⭐⭐⭐⭐ = Excellent | ⭐⭐⭐⭐ = Good | ⭐⭐⭐ = Fair | ⭐⭐ = Limited | ⭐ = Poor
 
+<!-- section_id: "a0f4a6ab-c7a6-4756-8651-5c7d0097918b" -->
 ## Comparison Matrices
 
+<!-- section_id: "841d4948-2a15-4b8b-ac94-8ceeaed2609c" -->
 ### Feature Comparison
 
 | Feature | Cursor | Windsurf | Copilot | Aider | Claude Code | Qwen3 |
@@ -201,6 +214,7 @@ START: What's your primary concern?
 | Testing | ✅ | ✅ | ✅ | ⚠️ | ⚠️ | ⚠️ |
 | Local Mode | ❌ | ❌ | ❌ | ⚠️ | ❌ | ✅ |
 
+<!-- section_id: "f189ff62-ad75-449f-a4a4-4d56823dad56" -->
 ### Productivity Comparison
 
 | Task | Cursor | Windsurf | Copilot | Aider | Claude Code |
@@ -214,84 +228,103 @@ START: What's your primary concern?
 
 **Note**: Percentages represent estimated productivity improvement over baseline.
 
+<!-- section_id: "25621a06-703c-4ba0-a176-0531ef111309" -->
 ## Use Case Scenarios
 
+<!-- section_id: "71253ca0-71de-4700-ad89-7dc021a665f4" -->
 ### Scenario 1: Startup MVP
 **Profile**: Solo developer, web app, tight budget
 **Recommendation**: **Cursor** (or **Aider** if budget is critical)
 **Reasoning**: Great web support, affordable, solo-friendly
 
+<!-- section_id: "4a586b46-fa95-427a-941d-9aa2e5af8a75" -->
 ### Scenario 2: Enterprise SaaS
 **Profile**: 20-person team, large codebase, security-sensitive
 **Recommendation**: **Windsurf** for development, **Qwen3** for sensitive modules
 **Reasoning**: Team collaboration + privacy where needed
 
+<!-- section_id: "5727b2b0-7f1b-48e0-a804-a9e26a3741db" -->
 ### Scenario 3: Academic Research
 **Profile**: Solo researcher, Python-heavy, free preferred
 **Recommendation**: **Aider** or **Qwen3-Coder**
 **Reasoning**: Free, good Python support, local option
 
+<!-- section_id: "c546e86e-3eb5-41be-9cdd-aa1396bee6d9" -->
 ### Scenario 4: Open Source Project
 **Profile**: Distributed team, various contributors, public code
 **Recommendation**: **Copilot** (widely accepted) or **Cursor**
 **Reasoning**: Accessibility for diverse contributors
 
+<!-- section_id: "f90d6360-9248-4ed2-bdb5-380f4ec9441b" -->
 ### Scenario 5: Regulated Industry
 **Profile**: Healthcare/Finance, must be privacy-compliant
 **Recommendation**: **Qwen3-Coder** or **Aider** with strict local mode
 **Reasoning**: Must run locally, no cloud exposure
 
+<!-- section_id: "ef66f6e5-3baf-49c0-9762-52600d8403fd" -->
 ## Integration Strategies
 
+<!-- section_id: "406021cb-dad3-43e8-bd06-bac62481b808" -->
 ### Single Tool Strategy
 **Best For**: Simple projects, solo developers
 **Approach**: Choose one primary tool and master it
 **Example**: Use Cursor for everything
 
+<!-- section_id: "23ac3aa6-111a-4ff5-8beb-f2fe6b3cdffc" -->
 ### Dual Tool Strategy
 **Best For**: Medium complexity, balanced needs
 **Approach**: Primary tool for development, secondary for specific tasks
 **Example**: Windsurf for coding + Claude Code for architecture
 
+<!-- section_id: "de561b7a-7d14-43cd-9429-83a16d25947a" -->
 ### Multi-Tool Strategy
 **Best For**: Complex projects, large teams
 **Approach**: Use different tools for different phases
 **Example**: V0 for prototyping + Windsurf for implementation + Aider for deployment
 
+<!-- section_id: "bbead5fe-96d0-4dbb-8cf3-42da5e1154fb" -->
 ## Migration Paths
 
+<!-- section_id: "f5a28713-6eb6-4f50-bc7d-301984dc8c3a" -->
 ### From Traditional to AI-Assisted
 
 **Step 1**: Add Copilot for completions
 **Step 2**: Introduce Cursor for broader assistance
 **Step 3**: Adopt Windsurf for team collaboration
 
+<!-- section_id: "691c45db-4755-415e-b93f-69d73b4da4d9" -->
 ### From IDE to AI-First
 
 **Step 1**: Try Aider for terminal workflow
 **Step 2**: Evaluate Cursor for IDE experience
 **Step 3**: Choose based on preference
 
+<!-- section_id: "0e043f07-053b-4d1c-a2ba-6ede3ad28667" -->
 ### Privacy Migration
 
 **Step 1**: Evaluate privacy needs
 **Step 2**: Configure cloud tools with strict settings
 **Step 3**: Migrate sensitive code to local tools (Qwen3)
 
+<!-- section_id: "59494f09-342e-4a50-9cb1-e0ba96e4b27d" -->
 ## Cost Analysis
 
+<!-- section_id: "6c32707d-469b-4192-a7f4-0fea3baa06de" -->
 ### Free Options
 - **Aider**: Free tier available, local mode free
 - **Qwen3-Coder**: Fully free and open source
 
+<!-- section_id: "02da91ad-8e79-4915-8321-e103f714320f" -->
 ### Low Cost (< $20/month)
 - **GitHub Copilot**: Individual $10/month
 - **Aider Pro**: $10/month (optional)
 
+<!-- section_id: "339be241-3c71-42e1-8232-10e5a3c11ccc" -->
 ### Mid-Range ($20-50/month)
 - **Cursor**: $20/month
 - **Windsurf**: Team pricing ~$30-50/month per user
 
+<!-- section_id: "296aead3-74af-4eca-ae75-c6bc54d4ded2" -->
 ### Enterprise
 - **GitHub Copilot Business**: ~$40/user/month
 - **Windsurf Enterprise**: Custom pricing
@@ -301,6 +334,7 @@ START: What's your primary concern?
 - Aider: Best free option with good features
 - Windsurf: Best for teams despite higher cost
 
+<!-- section_id: "c914087d-7fa9-4cf1-8862-1993f6ac9747" -->
 ## Decision Checklist
 
 Before choosing, consider:
@@ -316,32 +350,40 @@ Before choosing, consider:
 - [ ] What's my primary bottleneck?
 - [ ] Do I need local-only operation?
 
+<!-- section_id: "78c629ba-1bdf-4241-b734-66adf820a756" -->
 ## Recommendations by Common Goals
 
+<!-- section_id: "98baec98-539d-467b-bf57-b9cc28b0b0f3" -->
 ### Maximize Productivity
 **Choose**: Cursor or Windsurf
 **Why**: Best overall productivity gains
 
+<!-- section_id: "7fae7b83-8b9f-4687-b3a4-1a11695fc594" -->
 ### Minimize Cost
 **Choose**: Aider or Qwen3-Coder
 **Why**: Free to use
 
+<!-- section_id: "b0123bd7-cdcb-4c77-bf10-ae3bcb6f6ca6" -->
 ### Team Collaboration
 **Choose**: Windsurf
 **Why**: Best collaboration features
 
+<!-- section_id: "85886a32-9634-49cf-9069-28a57287f847" -->
 ### Privacy First
 **Choose**: Qwen3-Coder
 **Why**: Fully local, open source
 
+<!-- section_id: "2224528d-79f2-46d8-8a08-bc197b292568" -->
 ### Quick Start
 **Choose**: Copilot or Cursor
 **Why**: Easiest to learn and use
 
+<!-- section_id: "ec6adcc3-8b06-4bc6-9459-cbd1b2eb2957" -->
 ### Deep Analysis
 **Choose**: Claude Code or Windsurf
 **Why**: Best reasoning and context
 
+<!-- section_id: "149ad68f-e24b-4ab6-a3a2-4cf66d91cbb1" -->
 ## Conclusion
 
 Choosing the right AI coding assistant depends on multiple factors. This guide provides:

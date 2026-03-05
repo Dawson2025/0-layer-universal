@@ -5,6 +5,7 @@ resource_name: "TREE_TO_FEATURES_MAPPING"
 ---
 # Tree of Needs → Further Layering
 
+<!-- section_id: "b3c8e9b0-5982-496b-86ec-c594284cb3a7" -->
 ## Principle
 
 **The tree of needs hierarchy informs further layering from the current position.**
@@ -23,6 +24,7 @@ Tree of Needs                    →    Further Layering (Relative to Current)
 │   └── ...                      →    │   └── ...
 ```
 
+<!-- section_id: "baf5de66-c9c8-4e29-a9b2-7fe1aa69afd9" -->
 ## Context-Dependent Naming
 
 | If Current Entity Is | Branches Become | Needs Become |
@@ -34,6 +36,7 @@ Tree of Needs                    →    Further Layering (Relative to Current)
 
 ---
 
+<!-- section_id: "0ccd84c0-95a0-4ba9-b1f2-cd801afc568d" -->
 ## This Feature's Mapping
 
 ```
@@ -65,6 +68,7 @@ Tree of Needs                         Feature Organization
 
 ---
 
+<!-- section_id: "16017706-a426-49e1-802d-ae416f9248de" -->
 ## Why This Mapping Matters
 
 1. **Traceability**: Every feature maps to a need
@@ -74,6 +78,7 @@ Tree of Needs                         Feature Organization
 
 ---
 
+<!-- section_id: "508757b8-8411-4a9d-8c06-f1e641b446b9" -->
 ## Pattern (Relative Depth)
 
 | Tree Level | Relative Depth | Example at Layer 1 (Project) | Example at Layer 2 (Feature) |
@@ -85,6 +90,7 @@ Tree of Needs                         Feature Organization
 
 ---
 
+<!-- section_id: "af64cbc9-517d-4e5e-bc8f-5f01bd0669ee" -->
 ## Version
 
 - **Created**: 2026-02-03

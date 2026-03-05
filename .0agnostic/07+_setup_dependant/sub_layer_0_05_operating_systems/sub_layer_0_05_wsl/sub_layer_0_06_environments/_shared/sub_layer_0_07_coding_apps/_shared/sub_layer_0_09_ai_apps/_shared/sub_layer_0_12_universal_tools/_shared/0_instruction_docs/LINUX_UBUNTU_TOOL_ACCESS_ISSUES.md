@@ -9,12 +9,15 @@ resource_name: "LINUX_UBUNTU_TOOL_ACCESS_ISSUES"
 **Location**: Universal Layer → Universal Tools  
 **Status**: Platform-specific limitations affecting universal tool access
 
+<!-- section_id: "768db300-97b4-4c86-b4c9-e82c42cf42fa" -->
 ## Overview
 
 This document outlines Linux/Ubuntu-specific issues that affect access to universal tools, particularly those that depend on MCP (Model Context Protocol) servers. These issues impact browser automation tools, development frameworks, and other cross-cutting utilities.
 
+<!-- section_id: "0a6e9558-7714-4e58-a03a-87ad9ad95de2" -->
 ## Universal Tools Affected by Linux Issues
 
+<!-- section_id: "0b14b975-43d8-4b56-9b18-83105ed03214" -->
 ### 1. Browser Automation Tools
 
 **Problem**: Browser automation tools that depend on Playwright MCP are not available on Linux.
@@ -34,6 +37,7 @@ This document outlines Linux/Ubuntu-specific issues that affect access to univer
 - Update tool references in scripts and documentation
 - Provide Linux-specific tool usage examples
 
+<!-- section_id: "dd2ef4c3-c010-4ca0-a698-cc241aab23ec" -->
 ### 2. Development Frameworks
 
 **Problem**: AI development frameworks that assume Playwright MCP availability may not work on Linux.
@@ -53,6 +57,7 @@ This document outlines Linux/Ubuntu-specific issues that affect access to univer
 - Provide Linux-specific framework configurations
 - Document Linux workarounds in framework guides
 
+<!-- section_id: "dc67862d-d1b9-4e18-8421-21d620542972" -->
 ### 3. Cross-Cutting Utilities
 
 **Problem**: Universal utilities that depend on MCP tools may have Linux-specific limitations.
@@ -67,8 +72,10 @@ This document outlines Linux/Ubuntu-specific issues that affect access to univer
 - Scripts may need Linux-specific tool name updates
 - Workflows may require alternative tool paths
 
+<!-- section_id: "c3254a1c-5191-46db-95a1-dab147689f19" -->
 ## Tool Access Patterns
 
+<!-- section_id: "8a8ed349-bd91-471d-80fe-2e3378741a69" -->
 ### Pattern 1: Browser Automation
 
 **Standard (Windows/macOS)**:
@@ -85,6 +92,7 @@ mcp_browser_browser_navigate({ url: "https://example.com" })
 mcp_browser_browser_click({ element: "button" })
 ```
 
+<!-- section_id: "ff3eeaf7-fd59-40a1-98f5-a92c59493e3d" -->
 ### Pattern 2: Tool Availability Check
 
 **Before Using Tools**:
@@ -99,6 +107,7 @@ if (tool_available("mcp_playwright_browser_navigate")) {
 }
 ```
 
+<!-- section_id: "20534d37-6ea3-43cb-ba89-55a378c2c5c8" -->
 ### Pattern 3: Platform Detection
 
 **Detect Platform and Use Appropriate Tools**:
@@ -109,8 +118,10 @@ const browserTool = platform === "linux"
   : "mcp_playwright_browser_navigate";
 ```
 
+<!-- section_id: "6fdfc41e-c68c-429a-91a5-487c848290e6" -->
 ## Universal Tools Documentation Updates
 
+<!-- section_id: "01c5d3b3-7164-4710-9259-05ca5ad32c49" -->
 ### Browser Automation Documentation
 
 **Update Required Sections**:
@@ -119,6 +130,7 @@ const browserTool = platform === "linux"
 - Troubleshooting guides (Linux-specific issues)
 - Platform compatibility notes
 
+<!-- section_id: "db6fcbce-f4d7-4e2a-93be-365022e5cf01" -->
 ### Framework Documentation
 
 **Update Required Sections**:
@@ -127,8 +139,10 @@ const browserTool = platform === "linux"
 - Testing guides (Linux tool verification)
 - Platform-specific configurations
 
+<!-- section_id: "ebc6ed95-81a0-40e2-8b8c-773bb08cf329" -->
 ## Tool Configuration
 
+<!-- section_id: "ba01b291-e31e-43e1-94c2-2e1108f2177a" -->
 ### Browser Automation Tools
 
 **Linux Configuration**:
@@ -143,6 +157,7 @@ const browserTool = platform === "linux"
 }
 ```
 
+<!-- section_id: "57f94581-6e92-4dc2-8ee6-2e36293fe9c7" -->
 ### Development Framework Configuration
 
 **Linux-Specific Settings**:
@@ -159,8 +174,10 @@ const browserTool = platform === "linux"
 }
 ```
 
+<!-- section_id: "54bcec28-c8af-4615-be71-29201d9e00ac" -->
 ## Verification and Testing
 
+<!-- section_id: "c9f03e67-40ea-4f2f-a0c0-0a53d9fdb195" -->
 ### Verify Tool Access
 
 ```bash
@@ -171,6 +188,7 @@ const browserTool = platform === "linux"
 # - mcp_playwright_* (will NOT be available on Linux)
 ```
 
+<!-- section_id: "04998e58-79ef-45d9-aa15-b2a33686880d" -->
 ### Test Tool Usage
 
 1. **Test Browser Navigation**:
@@ -183,8 +201,10 @@ const browserTool = platform === "linux"
    - Verify expected tools are present
    - Note any missing tools
 
+<!-- section_id: "b574d926-83b5-4fea-9707-0ca7b0bee8a8" -->
 ## Tool Migration Guide
 
+<!-- section_id: "703585b2-623b-48df-a182-da305062596f" -->
 ### Migrating from Playwright to Browser MCP
 
 **Step 1**: Identify Playwright tool usage
@@ -211,6 +231,7 @@ grep -r "mcp_playwright_" .
 # Test all browser automation workflows
 ```
 
+<!-- section_id: "b4cfbc87-ce37-4654-a2a3-e8b0cf846e3d" -->
 ## Related Documentation
 
 - **OS-Level Issues**: `layer_0/0.02_sub_layers/sub_layer_0_05_os_setup/trickle_down_0.5_setup/0_instruction_docs/LINUX_UBUNTU_MCP_ISSUES.md`
@@ -218,6 +239,7 @@ grep -r "mcp_playwright_" .
 - **MCP Setup**: `layer_0/0.02_sub_layers/sub_layer_0_10_mcp_servers_and_tools_setup/`
 - **Browser Automation**: `layer_0/0.02_sub_layers/sub_layer_0_12_universal_tools/trickle_down_0.75_universal_tools/0_instruction_docs/browser-automation/`
 
+<!-- section_id: "03e74647-35b7-4825-84f0-1eb92db3f6db" -->
 ## References
 
 - Browser Automation Tools: See browser-automation documentation

@@ -5,6 +5,7 @@ resource_name: "speckit.plan"
 description: Execute the implementation planning workflow using the plan template to generate design artifacts.
 ---
 
+<!-- section_id: "e1c5b375-c275-46cf-9f7a-a18088d62759" -->
 ## User Input
 
 ```text
@@ -13,6 +14,7 @@ $ARGUMENTS
 
 You **MUST** consider the user input before proceeding (if not empty).
 
+<!-- section_id: "22aedecb-f64b-4994-b21c-a7167be84d49" -->
 ## Outline
 
 1. **Setup**: Run `.specify/scripts/bash/setup-plan.sh --json` from repo root and parse JSON for FEATURE_SPEC, IMPL_PLAN, SPECS_DIR, BRANCH. For single quotes in args like "I'm Groot", use escape syntax: e.g 'I'\''m Groot' (or double-quote if possible: "I'm Groot").
@@ -30,8 +32,10 @@ You **MUST** consider the user input before proceeding (if not empty).
 
 4. **Stop and report**: Command ends after Phase 2 planning. Report branch, IMPL_PLAN path, and generated artifacts.
 
+<!-- section_id: "8b9fd032-c01c-4e1b-af90-530dee61d036" -->
 ## Phases
 
+<!-- section_id: "130c3357-ebc4-4b73-8553-83f6bdfab2a3" -->
 ### Phase 0: Outline & Research
 
 1. **Extract unknowns from Technical Context** above:
@@ -55,6 +59,7 @@ You **MUST** consider the user input before proceeding (if not empty).
 
 **Output**: research.md with all NEEDS CLARIFICATION resolved
 
+<!-- section_id: "b30d09f9-f955-45bc-a6cc-ba3a25e7a9dd" -->
 ### Phase 1: Design & Contracts
 
 **Prerequisites:** `research.md` complete
@@ -78,6 +83,7 @@ You **MUST** consider the user input before proceeding (if not empty).
 
 **Output**: data-model.md, /contracts/*, quickstart.md, agent-specific file
 
+<!-- section_id: "a344f97e-3aa8-4586-80d5-24b8c5094b9b" -->
 ## Key rules
 
 - Use absolute paths

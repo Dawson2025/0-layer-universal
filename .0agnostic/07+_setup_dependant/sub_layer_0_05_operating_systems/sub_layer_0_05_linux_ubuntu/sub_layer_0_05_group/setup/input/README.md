@@ -9,10 +9,12 @@ resource_name: "README"
 **Last Updated**: January 13, 2026
 **System**: Ubuntu/Linux
 
+<!-- section_id: "3f819566-2480-4d32-8e2d-39606bdb0f73" -->
 ## Overview
 
 Configuration and setup documentation for input devices and methods on Linux.
 
+<!-- section_id: "e8bb0cbf-b5fd-4776-a704-3361fc105bc9" -->
 ## Available Input Setup Guides
 
 | Input Type | Description | Status |
@@ -20,8 +22,10 @@ Configuration and setup documentation for input devices and methods on Linux.
 | [Speech-to-Text](speech_to_text/) | System-wide voice dictation (WisprFlow alternatives) | Documented |
 | [Trackpad](trackpad/) | Cursor speed, acceleration, scroll settings | Documented |
 
+<!-- section_id: "77a0fed7-1799-4ae8-8049-05d970ba2284" -->
 ## Quick Setup
 
+<!-- section_id: "a7bc3338-b897-4799-a5ff-9d71f4462d66" -->
 ### Speech-to-Text (Recommended: VibeTyper)
 
 For system-wide dictation on Linux, use **VibeTyper**:
@@ -47,10 +51,12 @@ cp ~/.local/share/applications/com.vibetyper.app.desktop ~/.config/autostart/
 
 See [speech_to_text/platform_options/vibe_typer.md](speech_to_text/platform_options/vibe_typer.md) for full details.
 
+<!-- section_id: "896b4bd0-d881-455c-9401-bef74b262db0" -->
 ### Trackpad
 
 See [trackpad/](trackpad/) for cursor speed, acceleration, and scroll configuration on Wayland and X11.
 
+<!-- section_id: "29a44163-8b86-4f1e-a124-635ab4a0ba59" -->
 ## Directory Structure
 
 ```
@@ -71,6 +77,7 @@ input/
     └── ...
 ```
 
+<!-- section_id: "0bd5c84c-7de4-4985-bf4c-81f19288a93e" -->
 ## Related Documentation
 
 - Parent: [../README.md](../README.md) - OS Setup overview

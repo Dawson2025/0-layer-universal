@@ -8,12 +8,14 @@ resource_name: "README"
 
 This directory contains setup and configuration for integrating the **Claude in Chrome** browser extension with **Claude Code CLI** running in WSL.
 
+<!-- section_id: "aee3b05d-e753-437c-bf86-722abc35500b" -->
 ## Documentation
 
 - **[QUICK_SETUP.md](QUICK_SETUP.md)** - Fast 5-minute setup guide (start here!)
 - **[BATCH_BRIDGE_SETUP.md](BATCH_BRIDGE_SETUP.md)** - Complete detailed guide with troubleshooting
 - **[SETUP_FINDINGS.md](SETUP_FINDINGS.md)** - Research and findings about the integration
 
+<!-- section_id: "ec31def1-7d59-406d-b416-1b015eacccaf" -->
 ## What This Does
 
 Enables the Chrome extension running on Windows to communicate with Claude Code CLI running in WSL via a Native Messaging bridge.
@@ -30,6 +32,7 @@ Claude Code Native Host
 Claude Code CLI (WSL)
 ```
 
+<!-- section_id: "d29e835c-2dce-4d39-b89e-5673435e8bce" -->
 ## Quick Start
 
 1. Make sure WSL wrapper exists: `/home/dawson/bin/claude-chrome-host.sh` ✓ (already created)
@@ -37,6 +40,7 @@ Claude Code CLI (WSL)
 3. Restart Chrome
 4. Test the extension
 
+<!-- section_id: "44db6fa3-7c35-499e-a4ba-53a23e4f055e" -->
 ## Status
 
 - ✓ WSL wrapper script created and executable
@@ -45,6 +49,7 @@ Claude Code CLI (WSL)
 - ⏳ Native messaging manifest (needs manual creation - see QUICK_SETUP.md)
 - ⏳ Extension ID configuration (needs user's extension ID)
 
+<!-- section_id: "00fa7c69-0f9b-4eb6-b4f3-808ae992de2c" -->
 ## Key Files
 
 | Location | File | Status |
@@ -54,12 +59,14 @@ Claude Code CLI (WSL)
 | Windows | `%USERPROFILE%\bin\claude-chrome-host.bat` | ⏳ Create manually |
 | Windows | `%LOCALAPPDATA%\Google\Chrome\User Data\NativeMessagingHosts\com.anthropic.claude.chrome.json` | ⏳ Create manually |
 
+<!-- section_id: "f8a594a2-e963-485f-b4ca-4b2eda0b5cc0" -->
 ## Support
 
 - See [BATCH_BRIDGE_SETUP.md](BATCH_BRIDGE_SETUP.md) for detailed troubleshooting
 - Check Claude Code issues: https://github.com/anthropics/claude-code/issues
 - Chrome Native Messaging docs: https://developer.chrome.com/docs/extensions/develop/concepts/native-messaging
 
+<!-- section_id: "d9191761-a775-46e8-b463-6aca5e69f45d" -->
 ## Version
 
 Last updated: 2025-12-30

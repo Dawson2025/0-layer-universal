@@ -7,6 +7,7 @@ resource_name: "REQ-01_frontmatter_schema"
 
 **Need**: [Pointer Format](../README.md)
 
+<!-- section_id: "6a706613-c023-4a8a-a213-223ddbd56cb5" -->
 ## Requirements
 
 - **MUST** start with `---` YAML frontmatter delimiters

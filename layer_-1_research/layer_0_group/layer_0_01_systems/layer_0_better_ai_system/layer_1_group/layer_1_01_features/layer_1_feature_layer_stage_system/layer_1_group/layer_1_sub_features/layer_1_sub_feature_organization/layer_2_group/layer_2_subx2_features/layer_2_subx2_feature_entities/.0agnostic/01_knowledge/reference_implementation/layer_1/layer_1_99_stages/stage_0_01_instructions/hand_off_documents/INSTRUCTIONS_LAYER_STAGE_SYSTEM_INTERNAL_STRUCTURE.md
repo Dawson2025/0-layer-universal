@@ -11,6 +11,7 @@ resource_name: "INSTRUCTIONS_LAYER_STAGE_SYSTEM_INTERNAL_STRUCTURE"
 
 ---
 
+<!-- section_id: "982002d9-ecc0-4e2b-856c-7f3102d8c7b3" -->
 ## 1. Overview
 
 The layer-stage system is not just a folder of definitions - it is an **entity** that follows its own pattern. It has:
@@ -21,6 +22,7 @@ The layer-stage system is not just a folder of definitions - it is an **entity**
 
 ---
 
+<!-- section_id: "50088024-471e-4817-8562-a63319ac3518" -->
 ## 2. Layer-Stage System as a Feature
 
 The layer-stage system becomes `layer_1_feature_layer_stage_system` nested under the universal root:
@@ -34,6 +36,7 @@ The layer-stage system becomes `layer_1_feature_layer_stage_system` nested under
 
 ---
 
+<!-- section_id: "554e49fb-aeb1-4537-a61b-aeb9db3e582a" -->
 ## 3. Internal Structure Diagram
 
 ```
@@ -172,8 +175,10 @@ layer_1_feature_layer_stage_system/
 
 ---
 
+<!-- section_id: "512e6799-1ad4-4c97-9add-6be8a6ae921e" -->
 ## 4. Layer 2 Features (Children of Layer-Stage System)
 
+<!-- section_id: "d6a4da99-282e-46ba-b9f0-18184c2df38f" -->
 ### 4.1 layer_2_feature_stage_definitions
 
 **Purpose:** Defines the 9 stages and their workflow
@@ -214,6 +219,7 @@ layer_2_feature_stage_definitions/
 
 ---
 
+<!-- section_id: "234759d7-fa00-4179-98d3-39b27b0b3288" -->
 ### 4.2 layer_2_feature_layer_definitions
 
 **Purpose:** Defines layer numbering, nesting, and entity types
@@ -246,6 +252,7 @@ layer_2_feature_layer_definitions/
 
 ---
 
+<!-- section_id: "01f5e8af-117c-4aba-b1fd-1db3edeb8f51" -->
 ### 4.3 layer_2_feature_context_gathering
 
 **Purpose:** Defines how AI gathers relevant context
@@ -277,6 +284,7 @@ layer_2_feature_context_gathering/
 
 ---
 
+<!-- section_id: "82430081-c55f-48f9-9129-c438a65d09f7" -->
 ### 4.4 layer_2_feature_handoff_system
 
 **Purpose:** Defines handoff schemas and patterns
@@ -309,6 +317,7 @@ layer_2_feature_handoff_system/
 
 ---
 
+<!-- section_id: "16d8e142-062f-4af5-9634-be9bde8bb2c1" -->
 ### 4.5 layer_2_feature_ai_manager_hierarchy
 
 **Purpose:** Defines the agnostic/specific pattern and tool configurations
@@ -365,6 +374,7 @@ layer_2_feature_ai_manager_hierarchy/
 
 ---
 
+<!-- section_id: "cbe77a0b-5754-40c8-a767-997b051e3a15" -->
 ## 5. Sub-Layer Pattern
 
 The sub-layers within the layer-stage system follow the universal pattern:
@@ -385,10 +395,12 @@ The `05+` indicates this can expand:
 
 ---
 
+<!-- section_id: "8e884f1e-7e8c-4d47-933c-79d5b0afc62f" -->
 ## 6. Context Gathering Rules
 
 These were defined earlier in our discussion:
 
+<!-- section_id: "1551996f-5f94-45ff-9771-13007ef715f6" -->
 ### 6.1 Vertical Chain (Always Relevant)
 ```
 Ancestors + Descendants = Always in context
@@ -400,6 +412,7 @@ Current Entity  ← YOU ARE HERE
 Child Entities
 ```
 
+<!-- section_id: "99bcdff5-a840-4a7e-babd-ebc16da06019" -->
 ### 6.2 Horizontal Siblings (Conditionally Relevant)
 ```
 Only relevant when:
@@ -413,6 +426,7 @@ Tasks come from:
 - Todo lists (pending items)
 ```
 
+<!-- section_id: "953e45b6-cf86-4d2d-8436-c8c8d1a739f1" -->
 ### 6.3 Init Prompt Chain
 ```
 Universal init_prompt.md
@@ -430,6 +444,7 @@ Each init_prompt references:
 
 ---
 
+<!-- section_id: "db335b37-fae4-49c4-8369-116d550426a5" -->
 ## 7. Mapping: Current → New Locations
 
 | Current Location | New Location |
@@ -445,6 +460,7 @@ Each init_prompt references:
 
 ---
 
+<!-- section_id: "1cedfa0c-3507-402a-9910-22006e835500" -->
 ## 8. Feature Responsibilities Summary
 
 | Feature | Defines | Implemented At |
@@ -457,6 +473,7 @@ Each init_prompt references:
 
 ---
 
+<!-- section_id: "89870fbd-2310-4cb9-9821-2a22d8c10c59" -->
 ## 9. Success Criteria
 
 - [ ] Layer-stage system exists as `layer_1_feature_layer_stage_system`

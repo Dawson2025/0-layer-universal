@@ -8,8 +8,10 @@ resource_name: "README"
 
 Utility scripts for the 04_planning stage.
 
+<!-- section_id: "983d65e7-b3bd-4408-a593-0e639c9e6179" -->
 ## Available Scripts
 (Add scripts as needed)
 
+<!-- section_id: "cc221ddf-8e18-45c4-83b8-494813b1ef22" -->
 ## Usage
 Scripts can be called from hooks or directly via Bash tool.

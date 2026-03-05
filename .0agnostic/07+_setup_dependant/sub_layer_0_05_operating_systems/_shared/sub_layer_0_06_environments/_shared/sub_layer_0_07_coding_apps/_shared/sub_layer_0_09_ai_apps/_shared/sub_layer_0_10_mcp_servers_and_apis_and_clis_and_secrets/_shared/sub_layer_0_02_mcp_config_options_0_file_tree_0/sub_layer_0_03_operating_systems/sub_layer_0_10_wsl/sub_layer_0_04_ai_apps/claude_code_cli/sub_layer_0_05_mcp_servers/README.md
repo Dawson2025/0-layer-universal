@@ -8,6 +8,7 @@ resource_name: "README"
 
 This directory contains configuration and documentation for MCP (Model Context Protocol) servers used with Claude Code CLI in WSL environment.
 
+<!-- section_id: "7f39710c-a198-4057-8442-ba439533b2b4" -->
 ## Directory Structure
 
 ```
@@ -20,6 +21,7 @@ This directory contains configuration and documentation for MCP (Model Context P
 └── (other MCP servers to be added)
 ```
 
+<!-- section_id: "818f71af-b2d5-4d33-9e3b-8a79e974ad15" -->
 ## Quick Summary
 
 | MCP Server | Status | Notes |
@@ -27,22 +29,27 @@ This directory contains configuration and documentation for MCP (Model Context P
 | **Playwright MCP** | ⚠️ Configured | Needs browser path fix |
 | **Claude in Chrome** | ❌ Not Supported | WSL incompatible |
 
+<!-- section_id: "92cfb376-a41e-4b2e-9a39-64df6d5a3771" -->
 ## Key Findings
 
+<!-- section_id: "139fa85f-6155-412c-a13d-9bb5c6d6cb32" -->
 ### ✅ Playwright MCP (Recommended for WSL)
 - **Configuration:** Already set up in `/home/dawson/.claude.json`
 - **Status:** Server starts and responds, but browser detection needs fixing
 - **Solution:** Use `browser_install` tool from within Claude Code
 - **Documentation:** See `playwright-mcp-test-results.md`
 
+<!-- section_id: "5ddbad5b-aafe-4c80-a28a-e3073e9ee483" -->
 ### ❌ Claude in Chrome  
 - **Status:** Explicitly NOT supported on WSL
 - **Reason:** Uses Chrome Native Messaging API incompatible with WSL/Windows boundary
 - **Alternative:** Use Playwright MCP instead
 - **Documentation:** See `claude_in_chrome/SETUP_FINDINGS.md`
 
+<!-- section_id: "d5d91ef1-a837-4167-b1b3-169ebcd3ee6b" -->
 ## Quick Start
 
+<!-- section_id: "4b7bec19-20ae-436d-a64c-f2cc2b578e06" -->
 ### Using Playwright MCP
 
 1. From Claude Code, run:
@@ -57,6 +64,7 @@ This directory contains configuration and documentation for MCP (Model Context P
    - JavaScript execution
    - Full browser automation
 
+<!-- section_id: "e0d4d2b6-5fe1-4445-ac16-5cc6a73979dc" -->
 ## Resources
 
 - [Official MCP Documentation](https://code.claude.com/docs/en/mcp)

@@ -11,6 +11,7 @@ resource_name: "HIERARCHY_ADOPTION_CHECKLIST"
 
 ---
 
+<!-- section_id: "57e49d15-12d2-423c-b1a7-f19c0f71f18d" -->
 ## Overview
 
 This checklist guides you through adopting the AI Manager Hierarchy System for your project. You can adopt the full hierarchy or selectively implement components based on your needs. The checklist is organized into **must-have** (required for basic adoption) and **nice-to-have** (recommended for full benefits) items.
@@ -23,8 +24,10 @@ This checklist guides you through adopting the AI Manager Hierarchy System for y
 
 ---
 
+<!-- section_id: "638e9093-947d-427a-8470-e02a997a064f" -->
 ## Pre-Adoption: Understand the Hierarchy
 
+<!-- section_id: "6f74ba9d-cd5c-4384-b292-014f1ac58e67" -->
 ### Read Top-Level Documentation (Must-Have)
 
 **Time**: 30-45 minutes
@@ -44,6 +47,7 @@ This checklist guides you through adopting the AI Manager Hierarchy System for y
   - Focus: "Working with the AI Manager Hierarchy" section (lines 12-111)
   - Goal: Know which docs to read first, which layers to touch, how handoffs work
 
+<!-- section_id: "235cd267-a070-4919-ae8d-57a3611fd8bf" -->
 ### Understand Layer/Stage Framework (Must-Have)
 
 **Time**: 20-30 minutes
@@ -63,6 +67,7 @@ This checklist guides you through adopting the AI Manager Hierarchy System for y
   - Common stages: 0.00_request_gathering, 0.01_instructions, 0.02_planning, 0.03_research, 0.04_development, 0.05_testing, 0.06_delivery
   - Note: Not all stages are needed for every project
 
+<!-- section_id: "f71a411b-703d-4515-acf1-3870f154d561" -->
 ### Read Layer Manager System READMEs (Must-Have)
 
 **Time**: 30-40 minutes
@@ -83,6 +88,7 @@ This checklist guides you through adopting the AI Manager Hierarchy System for y
   - Location: `/home/dawson/code/0_layer_universal/0_context/layer_3_components/3.00_ai_manager_system/README.md`
   - Goal: Understand component-level manager/worker patterns
 
+<!-- section_id: "0113b85c-b426-4d7c-b730-e52bc63101fb" -->
 ### Review Handoff Schema (Must-Have)
 
 **Time**: 15-20 minutes
@@ -99,8 +105,10 @@ This checklist guides you through adopting the AI Manager Hierarchy System for y
 
 ---
 
+<!-- section_id: "d416f901-de7a-4ea7-8830-bace85a89a01" -->
 ## Adoption Step 1: OS Variant and Tool Specialization
 
+<!-- section_id: "17fe469e-8373-4285-ad5e-076b39d4b772" -->
 ### Select Appropriate OS Variant (Must-Have)
 
 **Time**: 10-15 minutes
@@ -121,6 +129,7 @@ This checklist guides you through adopting the AI Manager Hierarchy System for y
   - AGENTS.md: Worker execution context (if you're a short-lived worker)
   - GEMINI.md: Planning context (if you're doing research or long reasoning)
 
+<!-- section_id: "7351cd74-0959-4552-8701-0c480822f425" -->
 ### Choose Tool Specialization Strategy (Nice-to-Have)
 
 **Time**: 10-15 minutes
@@ -138,8 +147,10 @@ This checklist guides you through adopting the AI Manager Hierarchy System for y
 
 ---
 
+<!-- section_id: "d7c54bee-1743-4ce3-ba3a-7d3101794e72" -->
 ## Adoption Step 2: Observability and Safety
 
+<!-- section_id: "9273abe2-80b4-4b2e-affd-2b84c2e352d1" -->
 ### Implement Observability Logging (Must-Have)
 
 **Time**: 20-30 minutes
@@ -163,6 +174,7 @@ This checklist guides you through adopting the AI Manager Hierarchy System for y
   - Worker completion and results
   - Errors and warnings
 
+<!-- section_id: "47653cf8-19fe-48d2-a06e-ec1628860585" -->
 ### Configure Safety/Governance Boundaries (Must-Have)
 
 **Time**: 15-20 minutes
@@ -188,8 +200,10 @@ This checklist guides you through adopting the AI Manager Hierarchy System for y
 
 ---
 
+<!-- section_id: "6d6f92c8-25ec-482c-9964-3e45a20ad109" -->
 ## Adoption Step 3: Deployment Architecture
 
+<!-- section_id: "2caa322f-eef3-4830-8334-ee7a91bd224c" -->
 ### Plan Deployment Architecture (Nice-to-Have)
 
 **Time**: 20-30 minutes
@@ -215,8 +229,10 @@ This checklist guides you through adopting the AI Manager Hierarchy System for y
 
 ---
 
+<!-- section_id: "7b49b5ca-5aac-4a4f-939f-2733f9a93776" -->
 ## Adoption Step 4: Create First Handoff Documents
 
+<!-- section_id: "7499f09a-dbb6-4cef-88b8-9564f2304d45" -->
 ### Create Project-Level Handoff (Must-Have for L1)
 
 **Time**: 15-25 minutes
@@ -236,6 +252,7 @@ This checklist guides you through adopting the AI Manager Hierarchy System for y
   - Constraints well-defined (budget, time, scope)?
   - Artifacts specified (deliverables, outputs)?
 
+<!-- section_id: "136b2b13-17b8-48a3-bf20-65190afb1a36" -->
 ### Set Up Handoff Workflow (Nice-to-Have)
 
 **Time**: 10-15 minutes
@@ -253,8 +270,10 @@ This checklist guides you through adopting the AI Manager Hierarchy System for y
 
 ---
 
+<!-- section_id: "4e0c619c-33de-4109-8876-a36b3caeb789" -->
 ## Adoption Step 5: Test with Pilot Feature
 
+<!-- section_id: "6fbc5151-f3a1-4a84-8b3e-aac8c37278ee" -->
 ### Select Pilot Feature (Must-Have for Full Adoption)
 
 **Time**: 5-10 minutes
@@ -270,6 +289,7 @@ This checklist guides you through adopting the AI Manager Hierarchy System for y
   - Safety rules followed (no violations)?
   - Cost within budget?
 
+<!-- section_id: "f8e3158d-9137-484c-be37-91f503e00ffd" -->
 ### Implement Pilot Feature with Hierarchy (Must-Have)
 
 **Time**: 4-8 hours (varies by feature complexity)
@@ -301,6 +321,7 @@ This checklist guides you through adopting the AI Manager Hierarchy System for y
   - Costs tracked accurately?
   - Budget limits respected?
 
+<!-- section_id: "74a4434c-6a78-4760-b9e3-9e08030a8ae0" -->
 ### Evaluate Pilot Results (Must-Have)
 
 **Time**: 30-45 minutes
@@ -329,8 +350,10 @@ This checklist guides you through adopting the AI Manager Hierarchy System for y
 
 ---
 
+<!-- section_id: "d9cdcec4-9412-4d78-a380-6534d21fff6e" -->
 ## Adoption Step 6: Orchestration and CLI Recursion (Nice-to-Have)
 
+<!-- section_id: "8d8bca26-1695-4faf-98fc-abe69542052d" -->
 ### Review Orchestration Options (Nice-to-Have)
 
 **Time**: 15-20 minutes
@@ -343,6 +366,7 @@ This checklist guides you through adopting the AI Manager Hierarchy System for y
   - Simple projects: Handoff-based coordination is sufficient
   - Complex projects: Consider LangGraph (deterministic), AutoGen (dialogue), CrewAI (roles)
 
+<!-- section_id: "4accd3cd-5300-4133-b975-a52157811aff" -->
 ### Review CLI Recursion Patterns (Nice-to-Have)
 
 **Time**: 15-20 minutes
@@ -362,8 +386,10 @@ This checklist guides you through adopting the AI Manager Hierarchy System for y
 
 ---
 
+<!-- section_id: "f6416e08-9f6a-48ad-999a-9b0c294e100b" -->
 ## Post-Adoption: Continuous Improvement
 
+<!-- section_id: "844a5a7b-ac91-4505-b4a0-e2388aaaadf4" -->
 ### Contribute Lessons Learned (Nice-to-Have)
 
 **Time**: 15-20 minutes
@@ -380,6 +406,7 @@ This checklist guides you through adopting the AI Manager Hierarchy System for y
   - Worker coordination patterns
   - Cost optimization techniques
 
+<!-- section_id: "16636b83-5e59-45ee-9fe3-f40709493c21" -->
 ### Maintain Documentation (Nice-to-Have)
 
 **Time**: Ongoing (5-10 minutes/week)
@@ -401,8 +428,10 @@ This checklist guides you through adopting the AI Manager Hierarchy System for y
 
 ---
 
+<!-- section_id: "fdb8a73e-72b5-486a-9255-3e8788bc5209" -->
 ## Quick Reference: Must-Have vs. Nice-to-Have
 
+<!-- section_id: "b802e20c-b9d1-4dd2-a17b-b1acb7b32551" -->
 ### Must-Have (Minimum Viable Adoption)
 
 **Time**: 2-3 hours
@@ -417,6 +446,7 @@ This checklist guides you through adopting the AI Manager Hierarchy System for y
 8. ✅ Create first handoff document
 9. ✅ Test with pilot feature
 
+<!-- section_id: "d96db4d7-35dd-48f9-9140-008623208695" -->
 ### Nice-to-Have (Full-Featured Adoption)
 
 **Time**: +2-3 hours (4-6 hours total)
@@ -431,8 +461,10 @@ This checklist guides you through adopting the AI Manager Hierarchy System for y
 
 ---
 
+<!-- section_id: "ef40d655-cd05-40cb-9a46-eff0de6fbfc1" -->
 ## Troubleshooting
 
+<!-- section_id: "4257136f-1cc1-487e-b16d-a4a6014eabcc" -->
 ### Common Issues
 
 **Issue**: "I can't find the right documentation"
@@ -455,8 +487,10 @@ This checklist guides you through adopting the AI Manager Hierarchy System for y
 
 ---
 
+<!-- section_id: "4d77bf6f-1e09-4097-a975-76434608f55c" -->
 ## Appendix: Checklist for Different Project Types
 
+<!-- section_id: "aef41a60-d969-40f9-9d26-5160e9b3226a" -->
 ### Greenfield Project (New from Scratch)
 
 **Focus**: Start with full hierarchy from day 1
@@ -470,6 +504,7 @@ This checklist guides you through adopting the AI Manager Hierarchy System for y
 
 **Estimated Time**: 3-4 hours initial setup
 
+<!-- section_id: "b06d3c37-5785-461b-b1fe-2383ca54ebbc" -->
 ### Retrofit Existing Project
 
 **Focus**: Map existing work to hierarchy incrementally
@@ -484,6 +519,7 @@ This checklist guides you through adopting the AI Manager Hierarchy System for y
 
 **Estimated Time**: 4-6 hours initial setup + ongoing migration
 
+<!-- section_id: "84f546d7-0551-4afc-87a5-4cf16270c484" -->
 ### Small/Simple Project (< 5 features)
 
 **Focus**: Use L0-L1 without deep nesting
@@ -497,6 +533,7 @@ This checklist guides you through adopting the AI Manager Hierarchy System for y
 
 **Estimated Time**: 1-2 hours initial setup
 
+<!-- section_id: "de666c57-f589-4256-9447-2264b0a6a66d" -->
 ### Large/Complex Project (10+ features)
 
 **Focus**: Full hierarchy with deep nesting
@@ -513,6 +550,7 @@ This checklist guides you through adopting the AI Manager Hierarchy System for y
 
 ---
 
+<!-- section_id: "8f624c74-98df-4777-87bf-f81f9d2e8ac3" -->
 ## Next Steps After Adoption
 
 1. **Start Using the Hierarchy**
@@ -537,6 +575,7 @@ This checklist guides you through adopting the AI Manager Hierarchy System for y
 
 ---
 
+<!-- section_id: "1c769674-0e32-4251-aee0-344667950c75" -->
 ## Related Documentation
 
 **Top-Level Docs**:

@@ -8,10 +8,12 @@ resource_name: "README"
 
 **Need**: [Agent Context Model](../README.md)
 
+<!-- section_id: "dbad021a-9554-488e-9ece-7e875f369880" -->
 ## Overview
 
 These stories cover how each agent type (manager, stage agent, sub-feature agent) loads the right amount of context without overflow or incompetence. They validate that static, dynamic, and never-loaded boundaries are defined per agent type, that agents operate within their scoped context, and that the developer can audit whether those boundaries are being respected.
 
+<!-- section_id: "679e5e4d-090b-4086-b25f-7c2b125e85d3" -->
 ## Actors
 
 - **User (Developer)**: Human developer (Dawson) who gives instructions to the AI system, reviews outputs, and validates behavior

@@ -8,10 +8,12 @@ resource_name: "README"
 
 This directory contains documentation specific to the Layer-Stage Framework.
 
+<!-- section_id: "c4e4ef62-d8e6-4005-9adc-96843c3028ad" -->
 ## Contents
 - Framework specification documents
 - Pattern documentation
 - Usage guides
 
+<!-- section_id: "89770fc3-3275-42af-940d-1e9368920aa2" -->
 ## Note
 This is setup-dependent content that may vary based on implementation needs.

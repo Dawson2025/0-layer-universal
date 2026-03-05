@@ -8,10 +8,12 @@ resource_name: "README"
 
 Loaded unconditionally on every AI agent turn. These rules apply to EVERY interaction.
 
+<!-- section_id: "0ad68350-cf3b-4450-81e3-4236370f1389" -->
 ## Rules in This Category
 
 - [`AI_CONTEXT_MODIFICATION_PROTOCOL`](AI_CONTEXT_MODIFICATION_PROTOCOL/AI_CONTEXT_MODIFICATION_PROTOCOL.md)
 
+<!-- section_id: "b3637803-f863-4fcf-9741-ffee5674289a" -->
 ## Testing
 
 Run all tests in this category:

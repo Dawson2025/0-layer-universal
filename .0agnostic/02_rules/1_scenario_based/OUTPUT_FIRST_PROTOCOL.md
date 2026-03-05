@@ -11,6 +11,7 @@ resource_name: "OUTPUT_FIRST_PROTOCOL"
 
 ---
 
+<!-- section_id: "ed6ebc5d-f8c5-4e28-b357-c38e17a2c2a2" -->
 ## Purpose
 
 Ensure session continuity by writing outputs to files BEFORE responding to user. This creates persistent memory that survives:
@@ -21,6 +22,7 @@ Ensure session continuity by writing outputs to files BEFORE responding to user.
 
 ---
 
+<!-- section_id: "5b117dd0-f79f-41c1-bf06-4fae5add6bbc" -->
 ## The Rule
 
 **Before ANY response to user:**
@@ -31,6 +33,7 @@ Ensure session continuity by writing outputs to files BEFORE responding to user.
 
 ---
 
+<!-- section_id: "d7d37b04-0500-4ad2-9470-32c1b911264e" -->
 ## Episodic Memory Structure
 
 When enabled at a location, create:
@@ -44,6 +47,7 @@ When enabled at a location, create:
     └── YYYY-MM-DD_changes.md
 ```
 
+<!-- section_id: "36c1fea2-279f-4ba8-b1c1-72de92a67d62" -->
 ### Session Log Template
 
 ```markdown
@@ -67,6 +71,7 @@ When enabled at a location, create:
 [Continuation points]
 ```
 
+<!-- section_id: "e25239b3-0eec-46c5-b9f1-3c371a1d2cb3" -->
 ### Change Log Template
 
 ```markdown
@@ -85,6 +90,7 @@ When enabled at a location, create:
 
 ---
 
+<!-- section_id: "d450836e-8453-4926-890e-dc8a3624e5aa" -->
 ## How to Enable at a Location
 
 Add to the location's CLAUDE.md:
@@ -106,6 +112,7 @@ Add to the location's CLAUDE.md:
 
 ---
 
+<!-- section_id: "3bb0dc38-7066-474e-99f0-99babb0487f4" -->
 ## Benefits
 
 1. **Session Continuity**: New sessions can read previous session logs
@@ -116,6 +123,7 @@ Add to the location's CLAUDE.md:
 
 ---
 
+<!-- section_id: "58403b33-72f5-438b-8a1e-99c38e715a26" -->
 ## Related Rules
 
 - `LOCATION_RULE_APPLICATION_PROTOCOL.md` - How to apply rules to locations

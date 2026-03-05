@@ -12,6 +12,7 @@ argument-hint: [--notes "completion notes"]
 
 Complete the 09_fixing stage and prepare for next stage.
 
+<!-- section_id: "a1a08fd5-3417-46cc-afa8-b7a25547defe" -->
 ## Steps
 1. Verify all deliverables in outputs/
 2. Create handoff document

@@ -6,10 +6,12 @@ resource_name: "platform-specific-guides"
 # Platform-Specific Guides
 *Detailed Database Version Control Workflows for Each Platform*
 
+<!-- section_id: "662f52ce-6dec-4829-a0a0-a3bd6b0cbf0b" -->
 ## Overview
 
 This guide provides detailed, platform-specific instructions for version controlling databases across different platforms. Each section includes installation, configuration, common workflows, and examples.
 
+<!-- section_id: "6c4c3ae4-0803-491e-bd87-8cf75709b93f" -->
 ## Table of Contents
 
 1. [Supabase](#supabase)
@@ -22,18 +24,22 @@ This guide provides detailed, platform-specific instructions for version control
 
 ---
 
+<!-- section_id: "822f930a-6fa9-4d8a-9d05-01fb391b41f4" -->
 ## Supabase
 
+<!-- section_id: "0af73429-38ca-4231-974d-ec739e87d384" -->
 ### Overview
 
 Supabase is a PostgreSQL-based platform with built-in migration support through the Supabase CLI. It provides excellent version control capabilities with native Git integration.
 
+<!-- section_id: "efabcaf3-c10f-458d-9135-9a7e2270cefb" -->
 ### Prerequisites
 
 - Supabase account
 - Supabase CLI installed
 - Node.js 18+ or Python 3.8+
 
+<!-- section_id: "64516cd5-c2ef-408f-8895-63280cd44966" -->
 ### Installation
 
 ```bash
@@ -47,6 +53,7 @@ brew install supabase/tap/supabase
 supabase login
 ```
 
+<!-- section_id: "9c9ee1b7-2cdb-442e-bf42-1a50607f2e86" -->
 ### Initialization
 
 ```bash
@@ -57,6 +64,7 @@ supabase init
 supabase link --project-ref your-project-ref
 ```
 
+<!-- section_id: "455e450f-1bee-4031-9a9c-81a2c6bd2135" -->
 ### Migration Workflow
 
 #### 1. Create Migration
@@ -114,6 +122,7 @@ supabase db reset
 # Or use Supabase dashboard to manage
 ```
 
+<!-- section_id: "a4456008-ee25-4aa4-b919-d4fd45fb0da9" -->
 ### Common Commands
 
 ```bash
@@ -133,6 +142,7 @@ supabase db diff
 supabase studio
 ```
 
+<!-- section_id: "3d0b36fb-3cf2-4256-9804-91fd193ed960" -->
 ### Repository Structure
 
 ```
@@ -150,6 +160,7 @@ project/
 └── package.json
 ```
 
+<!-- section_id: "d2bdb2a4-f92b-4997-8d64-8499efb4739f" -->
 ### CI/CD Integration
 
 ```yaml
@@ -175,6 +186,7 @@ jobs:
           SUPABASE_PROJECT_ID: ${{ secrets.SUPABASE_PROJECT_ID }}
 ```
 
+<!-- section_id: "bd1735d1-4035-47f8-b394-9b94ffe5230d" -->
 ### Best Practices
 
 - ✅ Use timestamped migration names
@@ -186,18 +198,22 @@ jobs:
 
 ---
 
+<!-- section_id: "82f49eaf-c4b3-4ee9-81e0-ba143db52afe" -->
 ## Firebase Realtime Database
 
+<!-- section_id: "6b3f868d-2418-4e02-a1c1-b8e27d474f7d" -->
 ### Overview
 
 Firebase Realtime Database uses JSON and requires manual export/import for version control. The Firebase CLI manages configuration and deployments.
 
+<!-- section_id: "a9cce427-a30a-43c2-93b1-956d03e952e8" -->
 ### Prerequisites
 
 - Firebase account
 - Firebase CLI installed
 - Node.js 8.0+
 
+<!-- section_id: "a744b7d9-2bcb-487c-8183-41c6d4425d47" -->
 ### Installation
 
 ```bash
@@ -207,6 +223,7 @@ npm install -g firebase-tools
 firebase login
 ```
 
+<!-- section_id: "921602ac-5949-4e5d-975f-d9afe9ece851" -->
 ### Initialization
 
 ```bash
@@ -218,6 +235,7 @@ firebase init
 # - Configure security rules
 ```
 
+<!-- section_id: "e6beefee-67fb-423f-b187-ce90d6f569b2" -->
 ### Configuration Files
 
 #### Database Rules
@@ -258,6 +276,7 @@ firebase init
 }
 ```
 
+<!-- section_id: "d1a9b9e6-b747-468e-9c6d-aa0f4978c575" -->
 ### Deployment Workflow
 
 #### 1. Modify Rules
@@ -297,6 +316,7 @@ firebase database:get /users > backup/users.json
 firebase database:set /users backup/users.json
 ```
 
+<!-- section_id: "dc1dbbfc-ed53-4e5f-93b8-19863635f9a9" -->
 ### Data Versioning Strategy
 
 Since Firebase doesn't support migrations natively:
@@ -332,6 +352,7 @@ interface User {
 }
 ```
 
+<!-- section_id: "d40cd7a3-f2c6-498a-8d4b-2431e03ffbeb" -->
 ### Repository Structure
 
 ```
@@ -348,6 +369,7 @@ project/
 └── firebase.json
 ```
 
+<!-- section_id: "98a90910-8d4f-49bb-9539-3702711226ee" -->
 ### CI/CD Integration
 
 ```yaml
@@ -375,6 +397,7 @@ jobs:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
 ```
 
+<!-- section_id: "fccc9fba-dbcf-4729-89d0-750b211eb1be" -->
 ### Best Practices
 
 - ✅ Store rules in Git
@@ -386,21 +409,26 @@ jobs:
 
 ---
 
+<!-- section_id: "757d1805-efb0-4c37-a4b7-c0b13f626075" -->
 ## Firestore
 
+<!-- section_id: "1167ec52-f9c3-410d-9806-65a22b7fad10" -->
 ### Overview
 
 Firestore is a NoSQL document database. Like Firebase Realtime Database, it requires configuration versioning and manual data management.
 
+<!-- section_id: "2555365b-9bdb-4e86-b264-8ce76e4997e9" -->
 ### Prerequisites
 
 - Firebase account
 - Firebase CLI installed
 
+<!-- section_id: "e71bd7d1-0763-4ef1-9276-b4e02b9276e4" -->
 ### Installation and Setup
 
 Same as Firebase Realtime Database installation.
 
+<!-- section_id: "e4a1007b-83d8-4798-aabb-d1c013faffdf" -->
 ### Firestore-Specific Files
 
 #### Security Rules
@@ -450,6 +478,7 @@ service cloud.firestore {
 }
 ```
 
+<!-- section_id: "b493b4f1-5849-4bb3-842b-e14998708241" -->
 ### Deployment Workflow
 
 ```bash
@@ -463,6 +492,7 @@ firebase deploy --only firestore:rules
 firebase deploy --only firestore:indexes
 ```
 
+<!-- section_id: "294dd2f1-b7a5-4960-ae29-51c58fcd5069" -->
 ### Data Export/Import
 
 ```bash
@@ -473,6 +503,7 @@ gcloud firestore export gs://your-bucket/export
 gcloud firestore import gs://your-bucket/export
 ```
 
+<!-- section_id: "2c4de7f7-f130-4a35-b974-3d59aa2ac0b7" -->
 ### Repository Structure
 
 ```
@@ -486,6 +517,7 @@ project/
 └── firebase.json
 ```
 
+<!-- section_id: "e4fe5e9b-effb-4bb0-b501-07236f8a726d" -->
 ### Data Migration Example
 
 ```javascript
@@ -519,6 +551,7 @@ async function migrateUsers() {
 migrateUsers().catch(console.error);
 ```
 
+<!-- section_id: "d3ef73b0-c039-48a0-a617-a49e43af28ef" -->
 ### Best Practices
 
 - ✅ Version control rules and indexes
@@ -530,18 +563,22 @@ migrateUsers().catch(console.error);
 
 ---
 
+<!-- section_id: "03fffab6-8206-43fa-979d-fbcdd4764b1e" -->
 ## Google Cloud SQL
 
+<!-- section_id: "33c0fc18-0982-414e-ac9f-c96345d6c214" -->
 ### Overview
 
 Cloud SQL provides managed MySQL, PostgreSQL, and SQL Server databases. Use migration tools like Flyway or Liquibase for version control.
 
+<!-- section_id: "baa60c30-82bc-4a5e-8984-dfc370d18ff9" -->
 ### Prerequisites
 
 - Google Cloud account
 - gcloud CLI installed
 - Migration tool (Flyway or Liquibase)
 
+<!-- section_id: "ad94e883-f5f0-4eb7-88cb-3a26f42704f8" -->
 ### Installation
 
 ```bash
@@ -555,6 +592,7 @@ curl https://sdk.cloud.google.com | bash
 docker pull flyway/flyway
 ```
 
+<!-- section_id: "00201340-61f3-4c53-8004-0bd8bfd58a5c" -->
 ### Flyway Setup
 
 #### Directory Structure
@@ -595,6 +633,7 @@ CREATE TABLE users (
 CREATE INDEX idx_users_email ON users(email);
 ```
 
+<!-- section_id: "19c54363-eee1-459f-9f69-31abd8d8001a" -->
 ### Flyway Commands
 
 ```bash
@@ -614,6 +653,7 @@ flyway validate
 flyway repair
 ```
 
+<!-- section_id: "6ed6d639-b3f2-49ce-b08d-b3a9734713ed" -->
 ### CI/CD Integration
 
 ```yaml
@@ -639,6 +679,7 @@ jobs:
             migrate
 ```
 
+<!-- section_id: "c9764dea-60df-4aad-baf7-cf9b2484ec64" -->
 ### Liquibase Alternative
 
 ```xml
@@ -664,6 +705,7 @@ jobs:
 </databaseChangeLog>
 ```
 
+<!-- section_id: "1d204222-5c6c-4f38-8f24-75fdf860a52e" -->
 ### Best Practices
 
 - ✅ Use Flyway or Liquibase for migrations
@@ -675,18 +717,22 @@ jobs:
 
 ---
 
+<!-- section_id: "9a33e55e-2728-40b7-8830-74391d6e7626" -->
 ## BigQuery
 
+<!-- section_id: "13399e16-f6b4-4883-8b4a-f9c8e1de94f8" -->
 ### Overview
 
 BigQuery is a serverless data warehouse. Version control SQL queries, views, routines, and datasets through SQL files in Git.
 
+<!-- section_id: "b679f25b-9953-4f56-92e7-1258b521599c" -->
 ### Prerequisites
 
 - Google Cloud account
 - bq CLI installed
 - gcloud authenticated
 
+<!-- section_id: "647046cb-6c4f-4823-8d86-7a7f82cbcd79" -->
 ### Installation
 
 ```bash
@@ -695,6 +741,7 @@ BigQuery is a serverless data warehouse. Version control SQL queries, views, rou
 gcloud components install bq
 ```
 
+<!-- section_id: "12671795-6df0-4b85-83bd-f062942c1187" -->
 ### Version Control Strategy
 
 #### 1. SQL Queries and Views
@@ -733,6 +780,7 @@ description: Sales data warehouse
 defaultTableExpiration: 2592000  # 30 days
 ```
 
+<!-- section_id: "74ff874f-348c-47fe-86ab-16568656537b" -->
 ### Deployment Workflow
 
 ```bash
@@ -746,6 +794,7 @@ bq query --use_legacy_sql=false < db/bigquery/routines/f_calculate_revenue.sql
 bq mk --dataset --location=US project:dataset
 ```
 
+<!-- section_id: "5c3a630c-08ac-4c0c-884d-d9cf05c78544" -->
 ### Repository Structure
 
 ```
@@ -764,6 +813,7 @@ project/
     └── deploy-bigquery.sh
 ```
 
+<!-- section_id: "2bdb0112-f90f-4899-8f69-7f36cb68c08e" -->
 ### CI/CD Integration
 
 ```yaml
@@ -789,6 +839,7 @@ jobs:
           bq query --use_legacy_sql=false < db/bigquery/views/v_user_stats.sql
 ```
 
+<!-- section_id: "50b582b3-220a-406c-bbf8-80d14d54641d" -->
 ### Best Practices
 
 - ✅ Store all SQL in Git
@@ -800,24 +851,29 @@ jobs:
 
 ---
 
+<!-- section_id: "0de1c806-a722-4f2a-8242-c2dda54ce00c" -->
 ## Vertex AI
 
+<!-- section_id: "402c7077-35bb-494f-8aba-ca31ce010aed" -->
 ### Overview
 
 Vertex AI manages ML models and pipelines. Version control model definitions, pipeline configurations, and training code.
 
+<!-- section_id: "0abca3b0-9d14-46c9-beea-68395ae08008" -->
 ### Prerequisites
 
 - Google Cloud account
 - Vertex AI enabled
 - Python 3.8+ with Vertex AI SDK
 
+<!-- section_id: "f2711fa1-209c-4254-9a0d-d1ee60aa2d48" -->
 ### Installation
 
 ```bash
 pip install google-cloud-aiplatform
 ```
 
+<!-- section_id: "e0fa583e-b9bb-43b0-a660-787e7a04539e" -->
 ### Version Control Strategy
 
 #### 1. Model Definitions
@@ -872,6 +928,7 @@ pipeline_steps:
 }
 ```
 
+<!-- section_id: "f4b135de-4c28-4139-8adc-aec9c49a7dee" -->
 ### Deployment Workflow
 
 ```bash
@@ -882,6 +939,7 @@ python scripts/deploy_pipeline.py
 python scripts/submit_training.py --version v1.0
 ```
 
+<!-- section_id: "e9a7c674-6f5f-4fe0-b275-af13c7da026c" -->
 ### Repository Structure
 
 ```
@@ -899,6 +957,7 @@ project/
     └── submit_training.py
 ```
 
+<!-- section_id: "096f077e-2a6f-423d-9a17-6df87e165385" -->
 ### CI/CD Integration
 
 ```yaml
@@ -923,6 +982,7 @@ jobs:
         run: python scripts/deploy_pipeline.py
 ```
 
+<!-- section_id: "0c9d15fc-4429-4b37-9986-c432f3a48261" -->
 ### Best Practices
 
 - ✅ Version control model definitions
@@ -934,17 +994,21 @@ jobs:
 
 ---
 
+<!-- section_id: "29cdc161-72b7-44ce-813a-b3ec8f2a3b03" -->
 ## instant.db
 
+<!-- section_id: "d4a2e688-70e9-4ecb-90b4-1c2a743cc4ea" -->
 ### Overview
 
 instant.db is a developer-friendly NoSQL database with instant setup. Version control schema definitions and use CLI tools for schema management.
 
+<!-- section_id: "eb4692a8-54f8-48bf-b267-e561f1dd87da" -->
 ### Prerequisites
 
 - Node.js 18+
 - npm or yarn
 
+<!-- section_id: "f689ef6c-efd4-48dc-97e6-47365f0268e2" -->
 ### Installation
 
 ```bash
@@ -955,6 +1019,7 @@ npm install -g instant.db
 npm install instant.db
 ```
 
+<!-- section_id: "23741883-e217-4c68-9de8-b7190da71212" -->
 ### Configuration
 
 ```javascript
@@ -982,6 +1047,7 @@ module.exports = {
 };
 ```
 
+<!-- section_id: "4a952ea1-e641-4985-8e8f-0cf4d7421fad" -->
 ### Deployment Workflow
 
 ```bash
@@ -995,6 +1061,7 @@ instant.db export > backup.json
 instant.db import < backup.json
 ```
 
+<!-- section_id: "ccc1fda2-13da-477d-accc-d8eba2e8b1bc" -->
 ### Repository Structure
 
 ```
@@ -1009,6 +1076,7 @@ project/
 └── instant.config.js
 ```
 
+<!-- section_id: "c037fadb-5a30-427c-a81f-af2c51611d6f" -->
 ### Best Practices
 
 - ✅ Define schema in code
@@ -1020,6 +1088,7 @@ project/
 
 ---
 
+<!-- section_id: "d9091d94-b420-4dbf-a8b0-782eafd721f5" -->
 ## Summary
 
 Each platform has unique characteristics:

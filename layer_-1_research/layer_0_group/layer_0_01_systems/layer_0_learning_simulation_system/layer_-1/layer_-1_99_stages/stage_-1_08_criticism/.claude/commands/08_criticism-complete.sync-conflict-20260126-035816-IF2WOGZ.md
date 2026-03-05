@@ -10,6 +10,7 @@ argument-hint: [--notes "completion notes"]
 
 Complete the 08_criticism stage and prepare for next stage.
 
+<!-- section_id: "fa1f2ff1-815e-4c81-a86b-6c4a814683e1" -->
 ## Steps
 1. Verify all deliverables in outputs/
 2. Create handoff document

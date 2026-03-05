@@ -6,6 +6,7 @@ resource_name: "README"
 ---
 # User Stories — Promotion Workflow
 
+<!-- section_id: "a2f5beb1-b114-416f-a386-bac841dac786" -->
 ## Actors
 
 | Actor | Description |
@@ -13,6 +14,7 @@ resource_name: "README"
 | Researcher | Promotes validated findings to production |
 | Production Manager | Reviews and approves promotions |
 
+<!-- section_id: "8b2a2152-416f-4a19-91be-7b10799f336b" -->
 ## Stories
 
 | ID | Story | Actor |

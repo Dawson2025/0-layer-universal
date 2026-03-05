@@ -8,10 +8,12 @@ resource_name: "README"
 
 **Need**: [Three-Tier Delegation](../README.md)
 
+<!-- section_id: "422ea45c-e0f7-4c8d-889c-1a625277d29c" -->
 ## Overview
 
 These requirements map the three-tier knowledge architecture (pointers, distilled, full) to delegation roles. Managers operate at Tier 1 (0AGNOSTIC.md, stage overview, children list) and make delegation decisions from pointers alone. Stage agents work at Tier 2 (distilled knowledge files) for domain understanding, plus their own Tier 3 (stage outputs) for active work. The key constraint is that tiers must be genuinely distilled (not copied) and kept current through consolidation.
 
+<!-- section_id: "3d9e23cc-3452-404a-b3d9-176f3d0fe8f1" -->
 ## Key Themes
 
 - **Tier-to-Agent Mapping**: Manager = Tier 1 (pointers); Stage Agent = Tier 2 (distilled) + own Tier 3 (active outputs); agents must not routinely access other stages' Tier 3

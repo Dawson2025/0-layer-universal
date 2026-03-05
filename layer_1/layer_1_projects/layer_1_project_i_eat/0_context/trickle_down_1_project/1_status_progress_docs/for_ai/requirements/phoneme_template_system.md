@@ -8,9 +8,11 @@ resource_name: "phoneme_template_system"
 - **Source Prompt**: Existing implementation analysis (2025-10-15)
 - **Related Implementation**: `app.py` routes 1910-2526, `templates/admin_templates.html`
 
+<!-- section_id: "d73f5e88-e8a2-4ca1-8aae-ae60a637b179" -->
 ## Goal
 Streamline project setup and enable sharing of phoneme configurations by providing a template system that captures, exports, imports, and applies phoneme sets across projects.
 
+<!-- section_id: "9df726fe-ea99-460e-a6ea-9b658f0c9d4d" -->
 ## Functional Requirements
 - Allow admins to export the current project's phoneme set as a reusable template with a descriptive name.
 - Store templates with metadata including creation timestamp, phoneme count, and associated user/project.
@@ -21,6 +23,7 @@ Streamline project setup and enable sharing of phoneme configurations by providi
 - Include a "reset to default" option that restores a predefined set of phonemes.
 - Allow deletion of custom templates while preserving the default template.
 
+<!-- section_id: "9d22bcf4-170f-4b66-a3c6-9a537a632ad6" -->
 ## Acceptance Criteria
 - Exporting a template via `/api/admin/export-template` creates a JSON file containing all phonemes with their IPA symbols, categories, frequencies, and example words.
 - Templates are stored in the `phoneme_templates` table with unique IDs and descriptive names.
@@ -31,6 +34,7 @@ Streamline project setup and enable sharing of phoneme configurations by providi
 - Reset to default loads a built-in starter template with common IPA phonemes.
 - Template operations update the current project's phoneme data and refresh frequency statistics.
 
+<!-- section_id: "6a26f042-7dfd-4b86-bb8a-84a7970f2819" -->
 ## Notes
 - Templates include phoneme categories (vowel, consonant, etc.) to maintain organization across projects.
 - Export format should be version-tagged to support future schema migrations.

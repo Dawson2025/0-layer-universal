@@ -5,12 +5,14 @@ resource_name: "universal_artifacts"
 ---
 # Topic: Universal Artifacts
 
+<!-- section_id: "60069cef-df53-4107-a72b-bc9871ac6774" -->
 ## Summary
 
 Development produced universal artifacts that now live at `.0agnostic/`. These are tools that any entity across the layer-stage hierarchy can use — they're not specific to the agent_delegation_system.
 
 The artifacts span four categories: stage guides (how each stage works), principles (why things work this way), rules (what agents must do), and protocols (standard procedures).
 
+<!-- section_id: "04b6dd8c-0428-4f1b-85bb-a8b51ff40a35" -->
 ## Artifact Inventory
 
 | Category | Count | Location |
@@ -23,6 +25,7 @@ The artifacts span four categories: stage guides (how each stage works), princip
 | Stage report protocol | 1 | `.0agnostic/03_protocols/stage_report_protocol.md` |
 | Stages explained | 1 | `.0agnostic/01_knowledge/layer_stage_system/STAGES_EXPLAINED.md` |
 
+<!-- section_id: "75c20fb8-32fd-4095-b503-8dcbfd5fad56" -->
 ## References
 
 | What | Where |

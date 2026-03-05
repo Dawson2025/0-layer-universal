@@ -5,14 +5,17 @@ resource_name: "research_output_standards"
 ---
 # Research Output Standards
 
+<!-- section_id: "fd65e3c7-875d-43dd-a8c2-7e6278d8097c" -->
 ## Rule: Research documents MUST follow the numbered by_topic convention
 
+<!-- section_id: "76af9517-445d-45ea-b8fe-3269a7781024" -->
 ### Format
 - **Filename**: `NN_descriptive_snake_case_name.md`
 - **Numbering**: Sequential from 00, no gaps
 - **Location**: `outputs/by_topic/`
 - **00 is always**: The master overview/taxonomy
 
+<!-- section_id: "b253dcd2-b2b2-47f1-bc44-4780adb8e7e8" -->
 ### Required Sections
 1. **Title** (H1)
 2. **Purpose** — 1-2 sentences explaining what this document adds
@@ -20,6 +23,7 @@ resource_name: "research_output_standards"
 4. **Cross-References** — links to related documents in this collection
 5. **Sources** — all citations with markdown links
 
+<!-- section_id: "fa8f69c3-717d-4e03-bdaf-9d3fe601d8e0" -->
 ### Content Rules
 - One focused topic per document (no mixing)
 - Include tables for comparisons

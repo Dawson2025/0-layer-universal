@@ -8,6 +8,7 @@ resource_name: "highlight_and_speak"
 **Purpose**: Read any highlighted text aloud with a single keyboard shortcut.
 **Priority**: Primary use case — this is the main reason system TTS exists.
 
+<!-- section_id: "9836f09c-c204-4344-bc6d-aa1eee061569" -->
 ## User Flow
 
 ```
@@ -17,6 +18,7 @@ resource_name: "highlight_and_speak"
 4. Press Ctrl+Alt+S again to stop (toggle)
 ```
 
+<!-- section_id: "72f9d2cf-c37f-434d-9ade-8daa4a31a6f2" -->
 ## Current Implementation (Working)
 
 ```
@@ -29,6 +31,7 @@ Ctrl+Alt+S (GNOME custom keybinding)
   → speakers (via PipeWire)
 ```
 
+<!-- section_id: "5ce2ca4b-19d9-4367-867e-2066b933624b" -->
 ### Components
 
 | Component | Location | Role |
@@ -40,6 +43,7 @@ Ctrl+Alt+S (GNOME custom keybinding)
 | paplay | `/usr/bin/paplay` | PulseAudio playback |
 | gsd-media-keys | GNOME daemon | Custom keybinding dispatch |
 
+<!-- section_id: "3874988a-a45a-415d-a1bf-138faaf54c3b" -->
 ### Keybinding Config
 
 ```
@@ -48,18 +52,21 @@ binding: <Ctrl><Alt>s
 command: /home/dawson/.local/bin/speak-selection
 ```
 
+<!-- section_id: "b702c0ca-b1c1-4ae7-bd0e-3707c4b069a3" -->
 ### Toggle Behavior
 
 - PID file at `/tmp/speak-selection.pid`
 - If PID file exists: kill process, remove PID file, exit (stop speech)
 - If PID file absent: get text, speak, write PID, clean up on finish
 
+<!-- section_id: "2536cfa9-e3ab-411a-bd2e-3fbc55a96ea9" -->
 ### Fallback Chain
 
 1. Primary X selection (highlighted text)
 2. Clipboard (if no selection)
 3. `notify-send` error if both empty
 
+<!-- section_id: "40ebe805-4642-4f9c-9c45-d52d8bb91ced" -->
 ## Target Implementation (Kokoro Upgrade)
 
 ```
@@ -74,6 +81,7 @@ Ctrl+Alt+S (same keybinding)
   → speakers
 ```
 
+<!-- section_id: "026f826f-7bb6-424b-a52c-982a69ee927f" -->
 ### What Changes
 
 | Aspect | Piper (current) | Kokoro (target) |
@@ -85,6 +93,7 @@ Ctrl+Alt+S (same keybinding)
 | Sample rate | 22050 Hz | 24000 Hz |
 | Dependencies | piper binary + model file | kokoro-fastapi server (systemd) |
 
+<!-- section_id: "19a4a50d-a0ac-4f45-9a03-86900f04c035" -->
 ### Migration Steps
 
 1. Install Kokoro: `uvx kokoro-fastapi[gpu] serve`
@@ -93,6 +102,7 @@ Ctrl+Alt+S (same keybinding)
 4. Test with Ctrl+Alt+S
 5. Keep Piper as fallback (if Kokoro server is down)
 
+<!-- section_id: "f4523e3e-ad6b-4e37-8417-142c93c4fa1d" -->
 ## Known Dependencies
 
 - `gsd-media-keys` must be running for Ctrl+Alt+S to work

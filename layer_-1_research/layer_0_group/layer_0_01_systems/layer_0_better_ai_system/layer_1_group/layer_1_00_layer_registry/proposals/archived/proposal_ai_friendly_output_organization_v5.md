@@ -27,6 +27,7 @@ resource_name: "proposal_ai_friendly_output_organization_v5"
 
 ---
 
+<!-- section_id: "ef7e21f3-6ecc-406c-816c-fa9c7f328b2d" -->
 ## What v5 Corrects Over v4
 
 | Issue in v4 | v5 Correction |
@@ -39,8 +40,10 @@ resource_name: "proposal_ai_friendly_output_organization_v5"
 
 ---
 
+<!-- section_id: "6fdd128f-b015-4bf6-9cc0-702efdfd5619" -->
 ## Part 1: Core Architecture Principles
 
+<!-- section_id: "db87affa-de38-4d79-a709-ec62f7e457bf" -->
 ### 1.1 Content vs Config Separation
 
 **CRITICAL DISTINCTION**:
@@ -55,6 +58,7 @@ resource_name: "proposal_ai_friendly_output_organization_v5"
 - AI config is tool-specific infrastructure
 - No duplication - single source of truth for each
 
+<!-- section_id: "6e7ece9f-838f-4b03-ac5c-ecf443fb2a43" -->
 ### 1.2 The Two-Folder Structure (Layer Grouping)
 
 Every entity has TWO sibling **GROUP folders**:
@@ -78,6 +82,7 @@ layer_N_<type>_<name>/              # THE ENTITY
     └── layer_N+1_sub_projects/     # (only if project)
 ```
 
+<!-- section_id: "df1e2257-4a0a-4495-acd8-f9afe15099f2" -->
 ### 1.3 Naming Convention
 
 | Entity Type | Name Pattern | Example |
@@ -91,8 +96,10 @@ layer_N_<type>_<name>/              # THE ENTITY
 
 ---
 
+<!-- section_id: "24106294-5417-4467-b748-733905696814" -->
 ## Part 2: .0agnostic/ Structure (AI Config Only)
 
+<!-- section_id: "0c7fd49b-cf71-4ef0-900b-7c8f8693dff3" -->
 ### 2.1 What Goes in .0agnostic/
 
 ```
@@ -114,6 +121,7 @@ layer_N_<type>_<name>/              # THE ENTITY
 └── sync-config.yaml           # Sync configuration
 ```
 
+<!-- section_id: "018a146c-55dd-46fa-98e9-64b5e93d06d4" -->
 ### 2.2 What Does NOT Go in .0agnostic/
 
 | DON'T Put Here | Put Here Instead |
@@ -125,6 +133,7 @@ layer_N_<type>_<name>/              # THE ENTITY
 
 ---
 
+<!-- section_id: "b6c3d247-d2c0-4fef-8e4f-4f9b39aea78d" -->
 ## Part 3: 0AGNOSTIC.md Template (Short - Pointers Only)
 
 **CRITICAL**: 0AGNOSTIC.md should be SHORT. It contains Identity, Triggers, and **POINTERS** to resources.
@@ -180,8 +189,10 @@ Load this context when:
 
 ---
 
+<!-- section_id: "20f9b47f-483a-4847-8d77-ea205631e144" -->
 ## Part 4: Full Entity Template
 
+<!-- section_id: "68a1548d-0ead-4a53-854d-7a6bf087683a" -->
 ### 4.1 Complete Entity Structure
 
 ```
@@ -279,6 +290,7 @@ layer_N_<type>_<name>/
     └── layer_N+1_sub_projects/     # Sub-projects (if project)
 ```
 
+<!-- section_id: "cc7517a3-a14a-4f27-a494-862c4db0f8b0" -->
 ### 4.2 Stage Internal Structure
 
 ```
@@ -312,8 +324,10 @@ stage_N_XX_name/
 
 ---
 
+<!-- section_id: "4240364e-1048-4c6a-a0c1-e08bd399f9fc" -->
 ## Part 5: Proposals Location Rule
 
+<!-- section_id: "98d40f0d-35ee-4ded-bf32-9183b8447072" -->
 ### 5.1 Where Proposals Go
 
 | Proposal Type | Location |
@@ -324,6 +338,7 @@ stage_N_XX_name/
 | **Design proposals** | `stage_N_04_design/outputs/` |
 | **Planning proposals** | `stage_N_05_planning/outputs/` |
 
+<!-- section_id: "2194d02e-f52a-4fc1-b703-5798be03de92" -->
 ### 5.2 This Proposal's Correct Location
 
 This proposal (v5) affects:
@@ -342,8 +357,10 @@ TO:   layer_-1_group/layer_-1_00_layer_registry/proposals/
 
 ---
 
+<!-- section_id: "2c199b2a-1405-4f1f-9805-2f66fc34e12e" -->
 ## Part 6: Visual Architecture Diagrams
 
+<!-- section_id: "f1cbdb55-c378-4fc6-adf0-2b20529c7606" -->
 ### 6.1 Complete Entity Structure
 
 ```
@@ -415,6 +432,7 @@ TO:   layer_-1_group/layer_-1_00_layer_registry/proposals/
 └─────────────────────────────────────────────────────────────────────────────┘
 ```
 
+<!-- section_id: "97ffa1b1-e3e2-4331-bf92-cadd4f033b60" -->
 ### 6.2 Content vs Config Flow
 
 ```
@@ -447,6 +465,7 @@ TO:   layer_-1_group/layer_-1_00_layer_registry/proposals/
                         └──────────┘       └──────────┘         └──────────┘      └──────────┘
 ```
 
+<!-- section_id: "b802bd9e-e842-4960-8c0a-d2e2a3a9d8e7" -->
 ### 6.3 better_ai_system After v5 (Corrected)
 
 ```
@@ -524,29 +543,35 @@ layer_-1_better_ai_system/
 
 ---
 
+<!-- section_id: "fa88390b-f058-4032-82ed-fe59cb23283e" -->
 ## Part 7: Implementation Plan
 
+<!-- section_id: "ec6571af-5d49-4e49-9110-0fc8e9c68eb7" -->
 ### Phase 0: Cleanup
 1. Delete ~50 sync conflict files
 2. Remove empty directories
 3. Commit cleanup
 
+<!-- section_id: "9874a9cc-2d34-4d2a-b55f-c63e353acb1d" -->
 ### Phase 1: Move Proposals
 1. Create `layer_-1_group/layer_-1_00_layer_registry/proposals/`
 2. Move v1-v5 proposals there
 3. Update references
 
+<!-- section_id: "de118b75-f673-47fe-babe-b8ff4c56759b" -->
 ### Phase 2: Create Agnostic Infrastructure (Project Root)
 1. Create `.0agnostic/` with agents/, episodic/, hooks/, skills/
 2. Create short `0AGNOSTIC.md` with pointers
 3. Create `0INDEX.md`
 4. Create `agnostic-sync.sh`
 
+<!-- section_id: "a428b3d7-0531-4702-9a67-d308d1729d27" -->
 ### Phase 3: Ensure Full Entity Structure
 1. Verify `layer_-1_group/` has all required folders (00-03, 99)
 2. Verify `layer_0_group/` has `layer_0_features/`
 3. Create any missing registry folders
 
+<!-- section_id: "c125482a-c839-4a11-87ab-f2ed84825ed2" -->
 ### Phase 4: Feature Enhancement
 For each of 8 features:
 1. Create `0AGNOSTIC.md` (short - pointers)
@@ -556,6 +581,7 @@ For each of 8 features:
 5. Verify `layer_1/` (children) exists
 6. Create `synthesis/`
 
+<!-- section_id: "ab8901a7-7b7d-4c38-8011-38a991d46e04" -->
 ### Phase 5: Research Distribution
 1. Move memory files → `ai_dynamic_memory_system`
 2. Move context files → `ai_context_system`
@@ -564,14 +590,17 @@ For each of 8 features:
 5. Move automation files → `ai_automation_system`
 6. Keep cross-cutting files at project level
 
+<!-- section_id: "d8108ba5-8882-4885-86c9-d7511fe215f0" -->
 ### Phase 6: Content Migration
 1. Verify content is in sub-layers, not .0agnostic/
 2. Move any misplaced content to correct sub-layer
 
+<!-- section_id: "6d0466ae-4530-4b04-8de3-aa56ed1dd1cf" -->
 ### Phase 7: Sync Testing
 1. Run `agnostic-sync.sh all`
 2. Verify generated files
 
+<!-- section_id: "11d40feb-ec78-4ae4-946f-2924c0109bc2" -->
 ### Phase 8: Registry Updates
 1. Update layer_registry.yaml
 2. Update stage_registry.yaml
@@ -579,6 +608,7 @@ For each of 8 features:
 
 ---
 
+<!-- section_id: "7d03ce8a-a72c-4bed-812e-e28e415b173b" -->
 ## Part 8: Metrics
 
 | Metric | Count |
@@ -591,6 +621,7 @@ For each of 8 features:
 
 ---
 
+<!-- section_id: "2a67f48c-e71f-42be-ba99-e93825acc05c" -->
 ## Part 9: Success Criteria
 
 - [ ] All sync conflicts deleted

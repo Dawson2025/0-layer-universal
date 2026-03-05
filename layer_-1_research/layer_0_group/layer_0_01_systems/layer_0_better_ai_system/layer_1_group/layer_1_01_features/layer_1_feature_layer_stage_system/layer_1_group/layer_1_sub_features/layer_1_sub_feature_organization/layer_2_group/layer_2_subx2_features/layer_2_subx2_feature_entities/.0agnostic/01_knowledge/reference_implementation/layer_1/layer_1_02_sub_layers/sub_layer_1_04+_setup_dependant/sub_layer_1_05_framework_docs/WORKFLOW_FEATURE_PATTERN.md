@@ -13,6 +13,7 @@ resource_name: "WORKFLOW_FEATURE_PATTERN"
 
 ---
 
+<!-- section_id: "567fc24e-9a26-49b5-af8c-646b5816bb9a" -->
 ## 🎯 What is a Workflow Feature?
 
 A **workflow feature** is used when you need to:
@@ -24,8 +25,10 @@ A **workflow feature** is used when you need to:
 
 ---
 
+<!-- section_id: "20bec7bb-efba-456d-b592-a3ec52c7805f" -->
 ## 📐 Standard Structure vs Workflow Feature
 
+<!-- section_id: "0d2b40ab-1b25-4b3c-a292-cecaec0325b4" -->
 ### Standard Feature
 ```
 layer_<N>_feature_<name>/
@@ -39,6 +42,7 @@ layer_<N>_feature_<name>/
 
 **Good for:** Topics, learning, sequential work
 
+<!-- section_id: "9ae1ad9b-3ee5-40d9-a39a-377b1c1307f4" -->
 ### Workflow Feature
 ```
 layer_<N>_feature_<name>/
@@ -63,8 +67,10 @@ layer_<N>_feature_<name>/
 
 ---
 
+<!-- section_id: "1c42b14a-9502-4529-8f9c-b22f4f856f69" -->
 ## 🏗️ Creating a Workflow Feature
 
+<!-- section_id: "8eaf2ba9-03f8-4496-b43a-433563386739" -->
 ### Step 1: Create Base Structure
 
 ```bash
@@ -99,6 +105,7 @@ mkdir -p "$FEATURE_DIR/${LAYER}.99_stages"
 echo "Workflow feature created: $FEATURE_DIR"
 ```
 
+<!-- section_id: "9203c4ef-8557-443b-bfe6-8ee22295ca49" -->
 ### Step 2: Add README Documentation
 
 ```bash
@@ -193,6 +200,7 @@ layer_<N>_feature_<name>/
 EOF
 ```
 
+<!-- section_id: "72cd88f4-723e-4f2f-ba0e-5f6d5de17c7b" -->
 ### Step 3: Create Development Stages
 
 ```bash
@@ -237,8 +245,10 @@ EOF
 
 ---
 
+<!-- section_id: "55bbb1b2-86a0-4e6f-9563-f4fc51821c83" -->
 ## 📋 Real-World Examples
 
+<!-- section_id: "7b72d78c-56a3-428f-8acb-53b52d3c6dd4" -->
 ### Example 1: PAC School DS250 Assignments
 
 **Feature:** `layer_2_feature_2.01_2_workflow_feature_2_assignments`
@@ -257,6 +267,7 @@ EOF
 - ✅ Multiple workflow instances needed
 - ❌ Doesn't fit standard 8-stage pattern
 
+<!-- section_id: "84189893-e29d-4ee7-8475-4feb741f32ec" -->
 ### Example 2: PAC School DS250 Coding Challenges
 
 **Feature:** `layer_2_feature_2.02_2_workflow_feature_2_coding_challenges`
@@ -277,8 +288,10 @@ EOF
 
 ---
 
+<!-- section_id: "54d69b8c-e937-476f-9207-0a6544a5a076" -->
 ## 🔧 Workflow Document Template
 
+<!-- section_id: "b4ad7070-dc9a-44a5-9aa7-bc7389a0c145" -->
 ### workflow_<name>_v1.md
 
 ```markdown
@@ -336,8 +349,10 @@ EOF
 
 ---
 
+<!-- section_id: "70d2b827-c7d9-4375-ba55-51e7c43908aa" -->
 ## 🎯 When to Use Workflow Features
 
+<!-- section_id: "d07e8cd2-7688-49f4-bee0-1a45e9c865e6" -->
 ### Use Workflow Features When:
 - ✅ You have a **repeatable process** to follow
 - ✅ Process needs **development and refinement**
@@ -345,6 +360,7 @@ EOF
 - ✅ You want to **track results** separately
 - ✅ Process has **distinct phases** (creation → production → results)
 
+<!-- section_id: "607008e9-cae2-4cb4-999e-f7854cae7b91" -->
 ### Use Standard Features When:
 - ✅ Learning/studying topics
 - ✅ Hierarchical content organization
@@ -353,6 +369,7 @@ EOF
 
 ---
 
+<!-- section_id: "9d9f3921-df7c-44d3-9033-a6ccde94ee9c" -->
 ## 📊 Comparison: Standard vs Workflow Feature
 
 | Aspect | Standard Feature | Workflow Feature |
@@ -366,6 +383,7 @@ EOF
 
 ---
 
+<!-- section_id: "74e7cc30-5070-413d-8f7e-ce5a58338fc4" -->
 ## 🛠️ Quick Setup Script
 
 Save this as `create_workflow_feature.sh`:
@@ -454,6 +472,7 @@ Make executable: `chmod +x create_workflow_feature.sh`
 
 ---
 
+<!-- section_id: "26aae0f5-b32f-43da-b287-9d3cd391fd78" -->
 ## 📚 Related Documentation
 
 - `EXTENDING_THE_FRAMEWORK.md` - Complete extension patterns

@@ -10,6 +10,7 @@ resource_name: "default_view"
 
 > **Note**: No official unified context chain diagram exists from Anthropic. The official documentation covers each piece individually (settings, MCP, memory, skills, CLAUDE.md) but does not provide a single chronological visualization of everything loaded into context. This diagram was assembled from multiple official sources. See [Sources](#sources) below.
 
+<!-- section_id: "36d110d4-c000-4194-905c-63cb46ccf248" -->
 ## Dimensions
 
 | Tag | Meaning |
@@ -17,6 +18,7 @@ resource_name: "default_view"
 | `STATIC` | Automatically in every message sent to the AI model |
 | `DYNAMIC` | Only enters context when invoked on-demand |
 
+<!-- section_id: "e23c4180-2029-4813-94b2-c92b5e251250" -->
 ## Scope Levels (Official Claude Code Scopes)
 
 | Scope | Meaning | Shared? |
@@ -34,6 +36,7 @@ This view shows **only configurable context**. For the complete chain including 
 
 ---
 
+<!-- section_id: "f76246c3-2446-4ee5-adfb-881e6eb20769" -->
 ## Loading Order
 
 ```
@@ -283,10 +286,12 @@ What the AI model sees, in order, that YOU control.
 
 ---
 
+<!-- section_id: "dcb749d4-0074-49d9-850d-e5b5acfbac88" -->
 ## Filesystem Reference
 
 > Triple-click a path to select it, then Ctrl+C → Ctrl+P → Ctrl+V → Enter to open.
 
+<!-- section_id: "2c557788-16e8-4b2a-beb3-416167addfc6" -->
 ### Managed Scope
 
 Managed settings:
@@ -297,6 +302,7 @@ Managed MCP:
 
 /etc/claude-code/managed-mcp.json
 
+<!-- section_id: "2506014f-32b6-4612-b580-f5cfee4497db" -->
 ### User Scope
 
 User MCP servers (top-level mcpServers key):
@@ -323,6 +329,7 @@ User plugins/skills:
 
 /home/dawson/.claude/plugins/marketplaces/claude-plugins-official/
 
+<!-- section_id: "ee67defc-5a22-47e0-963e-8f7904eba674" -->
 ### Project Scope
 
 Auto memory:
@@ -353,6 +360,7 @@ Project skills:
 
 /home/dawson/dawson-workspace/code/0_layer_universal/.claude/skills/
 
+<!-- section_id: "6ee25429-7c29-4256-b0d8-1d4fda5b0b05" -->
 ### Local Scope
 
 Local MCP servers (projects["cwd"].mcpServers key):
@@ -367,6 +375,7 @@ Local CLAUDE.md (path varies by repo):
 
 \<repo\>/.claude.local.md
 
+<!-- section_id: "a6511663-87c0-4776-9be4-506f2e3bd288" -->
 ### Invocation Scope (examples)
 
 Deeper skills (layer_0_group):
@@ -375,12 +384,14 @@ Deeper skills (layer_0_group):
 
 ---
 
+<!-- section_id: "8b30a499-7034-428e-8090-1effcbc0e953" -->
 ## Key Insight
 
 Items 1-5 (STATIC) are the cost you pay on **every single API call**. Items 6-9 (DYNAMIC) only cost tokens when actually used. The biggest optimization lever is keeping items 1-5 lean and pushing detail into items 6-9.
 
 ---
 
+<!-- section_id: "2c683b7c-9498-495a-aa52-6146b5855221" -->
 ## Traversal Behavior: CLAUDE.md vs Auto Memory
 
 A critical difference between two configurable static items:
@@ -396,6 +407,7 @@ A critical difference between two configurable static items:
 
 ---
 
+<!-- section_id: "7963f80a-6e23-4ebc-ab44-ed4a536e0806" -->
 ## Scope Summary
 
 ```
@@ -421,8 +433,10 @@ A critical difference between two configurable static items:
 
 ---
 
+<!-- section_id: "d76789b6-843c-4c14-a6f3-f4a176f8256f" -->
 ## Sources
 
+<!-- section_id: "4871ce63-2e39-4c6d-b26a-0473838174a9" -->
 ### Per-Item Sources
 
 | # | Item | Sources |
@@ -444,6 +458,7 @@ A critical difference between two configurable static items:
 | 9 | Deeper skill listings | [Skills](https://code.claude.com/docs/en/skills) (directory traversal behavior) |
 | 10 | Deeper CLAUDE.md files | [Memory: CLAUDE.md](https://code.claude.com/docs/en/memory#claudemd) (traversal behavior) |
 
+<!-- section_id: "262d3dbb-e5ec-415d-a047-565ae416a4db" -->
 ### General Sources
 
 These sources informed the overall structure and multiple items:
@@ -457,6 +472,7 @@ These sources informed the overall structure and multiple items:
 - [Claude Code Session Memory](https://claudefa.st/blog/guide/mechanics/session-memory) — session memory rollout timeline
 - [The Complete Guide to Building Skills for Claude](https://resources.anthropic.com/hubfs/The-Complete-Guide-to-Building-Skill-for-Claude.pdf) — Anthropic's official skill-building guide
 
+<!-- section_id: "3595e9d9-f56e-4ffd-88f1-78acad8d70fc" -->
 ### No Official Unified Diagram
 
 As of February 2026, Anthropic does not publish a single unified context chain diagram. Each documentation page covers its own piece:

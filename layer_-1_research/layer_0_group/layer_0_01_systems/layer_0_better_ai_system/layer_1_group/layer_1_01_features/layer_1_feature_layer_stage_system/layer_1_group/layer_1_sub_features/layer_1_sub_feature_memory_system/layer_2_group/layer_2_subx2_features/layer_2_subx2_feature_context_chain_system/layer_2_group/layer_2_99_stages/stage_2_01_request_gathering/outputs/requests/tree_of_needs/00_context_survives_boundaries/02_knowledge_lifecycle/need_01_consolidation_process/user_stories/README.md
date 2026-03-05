@@ -8,10 +8,12 @@ resource_name: "README"
 
 **Need**: [Consolidation Process](../README.md)
 
+<!-- section_id: "d439c886-262a-4ac5-9576-8c337487a69d" -->
 ## Overview
 
 These stories cover the process of distilling raw stage outputs (Tier 3) into concise knowledge files (Tier 2) at natural stage boundaries. They validate that the developer performs consolidation at the right moments using a defined protocol, that agents surface reminders when consolidation is due, and that the developer can verify the quality and compression ratio of the distilled result against its source material.
 
+<!-- section_id: "8d33814f-f103-4cd6-ac9b-edefc1f06f40" -->
 ## Actors
 
 - **User (Developer)**: Human developer (Dawson) who gives instructions to the AI system, reviews outputs, and validates behavior

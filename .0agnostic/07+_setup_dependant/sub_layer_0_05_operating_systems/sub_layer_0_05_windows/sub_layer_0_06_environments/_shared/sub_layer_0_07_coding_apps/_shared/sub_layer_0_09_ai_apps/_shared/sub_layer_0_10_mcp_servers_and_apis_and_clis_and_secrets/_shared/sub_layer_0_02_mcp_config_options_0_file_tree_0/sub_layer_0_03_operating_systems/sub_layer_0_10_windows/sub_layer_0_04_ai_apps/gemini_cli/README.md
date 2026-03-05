@@ -6,9 +6,11 @@ resource_name: "README"
 ---
 # Gemini CLI MCP Setup (Windows)
 
+<!-- section_id: "ac62dd37-b586-4d5c-a082-e0c34afafb25" -->
 ## Config location
 - `~/.gemini/settings.json` (Windows user profile equivalent; contains `mcpServers`)
 
+<!-- section_id: "5f67ceed-4bc7-42a6-879a-e983568de25e" -->
 ## Notes
 - Use Windows-native `npx.cmd` for MCP servers.
 - Playwright browser cache is Windows-specific (Playwright-managed location).

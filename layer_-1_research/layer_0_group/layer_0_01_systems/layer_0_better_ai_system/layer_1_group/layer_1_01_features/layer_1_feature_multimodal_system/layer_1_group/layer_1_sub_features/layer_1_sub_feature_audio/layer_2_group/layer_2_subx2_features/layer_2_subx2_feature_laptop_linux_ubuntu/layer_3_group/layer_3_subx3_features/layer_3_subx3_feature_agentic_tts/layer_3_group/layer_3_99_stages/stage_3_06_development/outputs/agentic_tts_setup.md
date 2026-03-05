@@ -8,6 +8,7 @@ resource_name: "agentic_tts_setup"
 **Date**: 2026-02-23
 **Status**: Working (basic Stop hook)
 
+<!-- section_id: "30c4d29b-9aa1-4af6-9b96-5447d4fc504e" -->
 ## Architecture
 
 ```
@@ -24,8 +25,10 @@ Truncates to ~600 chars (spoken summary)
 Piper TTS → aplay (background)
 ```
 
+<!-- section_id: "31671fc3-3bc8-4d61-9c87-8a32431782b7" -->
 ## Implementation
 
+<!-- section_id: "20d95d68-128f-4801-bce2-54c88a62ce7b" -->
 ### Hook Script: `~/.claude/hooks/tts-response.sh`
 
 Features:
@@ -36,6 +39,7 @@ Features:
 - Runs speech in background (doesn't block Claude)
 - Uses Piper with Amy voice model
 
+<!-- section_id: "5ca87c9b-5aa8-4503-b298-c2c4f9c8452c" -->
 ### Hook Configuration: `~/.claude/settings.json`
 
 ```json
@@ -61,6 +65,7 @@ Features:
 }
 ```
 
+<!-- section_id: "8759ce6a-30f4-4fbd-b234-0687072f4d3e" -->
 ## Test Results
 
 | Test | Method | Result |
@@ -68,6 +73,7 @@ Features:
 | Simulated JSON input | `echo '{"last_assistant_message": "..."}' \| tts-response.sh` | Works — speaks the message |
 | Live Claude Code | Pending next response | Will auto-test on this response |
 
+<!-- section_id: "d2012d0c-c0ad-48f2-afe0-50b7d6f24db9" -->
 ## Available Hook Events for Future Use
 
 | Event | Use Case |
@@ -78,6 +84,7 @@ Features:
 | Notification | Speak notifications |
 | TaskCompleted | Announce team task completion |
 
+<!-- section_id: "e8dcc962-4184-41cc-a611-a6069888ed4d" -->
 ## Future Enhancements
 
 - [ ] Split-output pattern: Claude emits `spoken_summary` field for TTS-optimized text

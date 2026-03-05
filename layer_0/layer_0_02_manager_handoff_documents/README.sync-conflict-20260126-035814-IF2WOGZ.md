@@ -5,10 +5,12 @@ resource_name: "README.sync-conflict-20260126-035814-IF2WOGZ"
 ---
 # Layer 0 Universal Manager Handoff Documents
 
+<!-- section_id: "563fe812-02e5-4729-9472-42f1425805ae" -->
 ## Overview
 
 This directory contains handoff documents for **Layer 0 (Universal)** managers. Handoffs are the primary mechanism for communicating work, state, and results between layers, stages, and agents in the AI Manager Hierarchy System.
 
+<!-- section_id: "ee9266c3-3060-4f12-b38d-96e040282115" -->
 ## Purpose
 
 Manager handoff documents at Layer 0 serve two purposes:
@@ -16,6 +18,7 @@ Manager handoff documents at Layer 0 serve two purposes:
 1. **External Communication** (`0.00_to_universal/`): Handoffs between external users/systems and the Layer 0 manager
 2. **Downward Communication** (`0.01_to_specific/`): Handoffs between Layer 0 and Layer 1 (Project) managers
 
+<!-- section_id: "b93e1e45-6808-4a0a-a2c3-284301db4dae" -->
 ## Directory Structure
 
 ```
@@ -36,6 +39,7 @@ Manager handoff documents at Layer 0 serve two purposes:
         └── project-b.json
 ```
 
+<!-- section_id: "9828cb5c-199f-4751-a320-3d72662ebd3a" -->
 ## Handoff Schema
 
 All handoffs must conform to the **canonical handoff schema** defined in:
@@ -51,8 +55,10 @@ This schema defines:
 
 **Always consult the schema document when creating or reading handoffs.**
 
+<!-- section_id: "157eb811-2eb2-4f8e-8c68-33a05399a0a2" -->
 ## Handoff Flows at Layer 0
 
+<!-- section_id: "ff552cd7-b8ef-426d-878e-e75d2a71174e" -->
 ### External → Layer 0 (Incoming)
 
 **File**: `0.00_to_universal/incoming.json`
@@ -74,6 +80,7 @@ This schema defines:
 }
 ```
 
+<!-- section_id: "86adf0f4-321c-4f1d-a5ad-ab7096a013fe" -->
 ### Layer 0 → External (Outgoing)
 
 **File**: `0.00_to_universal/outgoing.json`
@@ -102,6 +109,7 @@ This schema defines:
 }
 ```
 
+<!-- section_id: "4c4ca428-8a25-4e1c-ac6d-6f1c95adfd43" -->
 ### Layer 0 → Layer 1 (Downward)
 
 **File**: `0.01_to_specific/outgoing.json` (or `outgoing/project-*.json`)
@@ -137,6 +145,7 @@ This schema defines:
 }
 ```
 
+<!-- section_id: "26b16c9b-2cd4-419d-82f5-820ef8574764" -->
 ### Layer 1 → Layer 0 (Upward)
 
 **File**: `0.01_to_specific/incoming.json` (or `incoming/project-*.json`)
@@ -172,6 +181,7 @@ This schema defines:
 }
 ```
 
+<!-- section_id: "43d43fb5-88e5-44c9-9e70-d74b35bba0d8" -->
 ## Multiple Projects
 
 When Layer 0 manages multiple projects in parallel, use subdirectories:
@@ -194,6 +204,7 @@ When Layer 0 manages multiple projects in parallel, use subdirectories:
 
 Each file follows the canonical handoff schema.
 
+<!-- section_id: "ba8d7f5a-1f31-4fdf-833d-649ad3893e4c" -->
 ## Best Practices
 
 1. **Always validate against schema**: Check that handoffs include all required fields
@@ -205,6 +216,7 @@ Each file follows the canonical handoff schema.
 7. **Status tracking**: Keep `status` field current (pending → in_progress → completed/failed)
 8. **Human-readable**: Write `task` and other text fields for human understanding, not just machines
 
+<!-- section_id: "da67b48e-99a7-46a1-83dd-c9c575862729" -->
 ## Related Documentation
 
 - **Canonical Schema**: [0.00_to_universal/handoff_schema.md](0.00_to_universal/handoff_schema.md) ← **START HERE**

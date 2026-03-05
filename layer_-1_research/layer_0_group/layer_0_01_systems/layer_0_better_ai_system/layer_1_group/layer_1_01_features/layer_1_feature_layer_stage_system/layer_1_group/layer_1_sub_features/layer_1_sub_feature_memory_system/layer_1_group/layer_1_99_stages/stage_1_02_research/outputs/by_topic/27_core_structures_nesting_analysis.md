@@ -5,12 +5,14 @@ resource_name: "27_core_structures_nesting_analysis"
 ---
 # Core Structures Nesting Analysis: Vectors, Relations, and Graphs in PostgreSQL
 
+<!-- section_id: "8d486b28-63a8-4bb1-a1a2-14bbe7b1594b" -->
 ## Purpose
 
 This document analyzes how the three core data structures of AI agent memory -- vectors, relational tables, and knowledge graphs -- nest inside a single PostgreSQL instance, what underlying CS data structures power each one, and why this unified approach works as a single backend for all memory types.
 
 ---
 
+<!-- section_id: "2987df45-d064-4d4e-863e-609edf0df3c7" -->
 ## 1. The Three Core Structures
 
 Modern AI long-term memory systems fundamentally use three data structures:
@@ -23,6 +25,7 @@ The dominant trend is nesting vectors and graphs inside PostgreSQL/SQL rather th
 
 ---
 
+<!-- section_id: "f97009bf-323e-45f7-801a-50be6c78471b" -->
 ## 2. Vectors Inside SQL: pgvector
 
 The pgvector extension allows storing vectors as a native PostgreSQL column type, making embeddings first-class citizens alongside regular columns:
@@ -53,8 +56,10 @@ The key insight is that pgvector does not create a separate database. It adds a 
 
 ---
 
+<!-- section_id: "563a8af2-1a06-4a82-8464-fb490c0623b1" -->
 ## 3. Knowledge Graphs Inside SQL
 
+<!-- section_id: "a32ab900-f5f4-4665-aa72-b1ace7815209" -->
 ### Adjacency List Representation
 
 Knowledge graphs are stored as pairs of relational tables -- one for nodes, one for edges:
@@ -76,6 +81,7 @@ CREATE TABLE relationships (
 );
 ```
 
+<!-- section_id: "c5f6b53b-7438-4753-9ab7-27a59d5f123f" -->
 ### Graph Traversal via Recursive CTEs
 
 SQL provides recursive Common Table Expressions for graph traversal, eliminating the need for a dedicated graph database for most use cases:
@@ -96,14 +102,17 @@ WITH RECURSIVE paths AS (
 SELECT * FROM paths;
 ```
 
+<!-- section_id: "2606b2ca-83f9-4a01-a716-a627d34b015e" -->
 ### Hybrid with Neo4j
 
 Some systems store graph structure in PostgreSQL for ACID guarantees but use Neo4j for complex graph queries (multi-hop traversals, shortest paths), syncing between them. However, for most AI memory use cases, PostgreSQL recursive CTEs are sufficient.
 
 ---
 
+<!-- section_id: "aef984f1-a680-4b78-ad43-5e5f1f6c058f" -->
 ## 4. Under the Hood: What Each Structure Really Is
 
+<!-- section_id: "bb91689f-af82-405c-882c-be5d47c61679" -->
 ### Vector Indexes
 
 Vector databases are built on graph and tree structures internally:
@@ -117,6 +126,7 @@ Vector databases are built on graph and tree structures internally:
 
 The critical realization: vector databases are actually graphs. The "vectors" are node values -- the index structure uses graph traversal to find nearest neighbors.
 
+<!-- section_id: "62284fa0-f435-4161-9b5b-22f555b44116" -->
 ### Relational Tables
 
 SQL tables use classic data structures internally:
@@ -127,6 +137,7 @@ SQL tables use classic data structures internally:
 | **Table data** | Heap files | Unsorted collection of records in 8KB pages |
 | **Hash indexes** | Hash tables | O(1) equality lookups (less common than B-trees) |
 
+<!-- section_id: "c2ee8b65-251c-4c88-b718-6e9cd291e413" -->
 ### Knowledge Graphs
 
 Graph databases use various representations:
@@ -140,6 +151,7 @@ Graph databases use various representations:
 
 ---
 
+<!-- section_id: "a1640197-1345-44ea-8b25-085add1793f1" -->
 ## 5. The Unified PostgreSQL Architecture
 
 ```
@@ -170,6 +182,7 @@ This diagram shows the layering:
 
 ---
 
+<!-- section_id: "72a4866c-1dda-435c-9c21-fbb5856478cc" -->
 ## 6. The Actual Data Structures in Play
 
 Everything reduces to five classic CS data structures:
@@ -186,8 +199,10 @@ The key insight: there is no magic. Every sophisticated memory system decomposes
 
 ---
 
+<!-- section_id: "8d94984f-6ceb-4064-8514-e3c1dec19d6d" -->
 ## 7. Why PostgreSQL Works as a Single Unified Backend
 
+<!-- section_id: "da7c342a-af13-40ab-a8f4-ec1457260c39" -->
 ### Cost and Operational Benefits
 
 The 66% cost reduction from unification comes from:
@@ -197,6 +212,7 @@ The 66% cost reduction from unification comes from:
 4. **One backup strategy** -- no multi-database coordination
 5. **Native integration** -- no network hops between databases
 
+<!-- section_id: "e352f98f-a629-4c34-b193-5c074cd890f4" -->
 ### Unified Cross-Type Query
 
 A single query can leverage all data structures simultaneously:
@@ -223,12 +239,14 @@ This single query uses:
 - **B-tree indexes** (on user_id, timestamp columns)
 - **Graph indexes** (HNSW for vector nearest-neighbor search)
 
+<!-- section_id: "0475b6a3-a516-4cbd-a0e1-b6098cc245ba" -->
 ### Why Not Specialized Databases?
 
 Specialized databases (Pinecone for vectors, Neo4j for graphs, TimescaleDB standalone) excel in isolation. But AI memory requires cross-type queries -- finding semantically similar facts from recent episodes that match known procedures. Running these across separate databases means multiple network round-trips, no shared transactions, and complex synchronization. PostgreSQL with extensions provides "good enough" performance (471 QPS at 99% recall) with dramatically simpler operations.
 
 ---
 
+<!-- section_id: "2c7c9233-58a3-481f-9d69-33e1c722742b" -->
 ## Cross-References
 
 - **Core data structure hierarchy (what implements each memory type)**: `22_core_data_structure_hierarchy.md`
@@ -238,6 +256,7 @@ Specialized databases (Pinecone for vectors, Neo4j for graphs, TimescaleDB stand
 
 ---
 
+<!-- section_id: "965a677d-6201-475b-a998-3559e5c20106" -->
 ## Sources
 
 - [TigerData: Building AI Agents with Persistent Memory -- A Unified Database Approach](https://www.tigerdata.com/learn/building-ai-agents-with-persistent-memory-a-unified-database-approach)

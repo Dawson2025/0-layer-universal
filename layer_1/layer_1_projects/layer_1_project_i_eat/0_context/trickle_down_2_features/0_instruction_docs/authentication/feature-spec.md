@@ -7,14 +7,17 @@ resource_name: "feature-spec"
 *Trickle-Down Level 2: Feature Specification*
 *Generated via GitHub Spec Kit Workflow*
 
+<!-- section_id: "b1294ff4-3341-4376-a61c-011959b402de" -->
 ## Feature Overview
 **Feature Name**: Authentication & Access Control System  
 **Feature Domain**: Level 0 - Core System Authentication
 **User Stories Covered**: US-001 through US-004
 **Priority**: Highest (Foundation requirement)
 
+<!-- section_id: "02f8b57a-eb29-4cfc-a791-3f75032f4e9b" -->
 ## Specification Details
 
+<!-- section_id: "9f554170-e479-447a-878f-bbb24d785166" -->
 ### Core Functionality
 1. **Local Account Registration** (US-001)
    - Username/email/password account creation
@@ -39,8 +42,10 @@ resource_name: "feature-spec"
    - Session termination
    - Secure cleanup of authentication state
 
+<!-- section_id: "7d68f700-b174-4d5e-9a8f-3cc76a73c9dc" -->
 ## Technical Requirements
 
+<!-- section_id: "d930226b-0e85-4fe1-b0f1-21eec1a311a3" -->
 ### Architecture Constraints
 - **Framework**: React with TypeScript (strict mode)
 - **Backend**: Python Flask with SQLite database
@@ -49,6 +54,7 @@ resource_name: "feature-spec"
 - **Testing**: TDD with >90% coverage, Playwright MCP automation
 - **Environment**: WSL Ubuntu development environment
 
+<!-- section_id: "39b5b324-3cda-412e-910a-c04a5e440cf5" -->
 ### Database Schema
 ```sql
 -- Users table for local authentication
@@ -73,6 +79,7 @@ CREATE TABLE user_sessions (
 );
 ```
 
+<!-- section_id: "de4aa291-29d2-432e-bf14-af8f07a2690c" -->
 ### API Endpoints
 1. **POST /api/auth/register**
    - Input: username, email, password, confirm_password
@@ -94,8 +101,10 @@ CREATE TABLE user_sessions (
    - Output: success confirmation
    - Processing: invalidate session, clear client state
 
+<!-- section_id: "ce8acbc4-8e54-424f-b6dc-12615b4a3cfa" -->
 ## Acceptance Criteria
 
+<!-- section_id: "627dabe5-2c90-4bcf-9724-589372a27822" -->
 ### Registration Flow (US-001)
 ✅ **Given** a new user visits   
 ✅ **When** they provide valid username, email, and matching passwords  
@@ -105,6 +114,7 @@ CREATE TABLE user_sessions (
 ✅ **When** they submit the form  
 ✅ **Then** clear error message is shown and registration is blocked
 
+<!-- section_id: "a170e4f7-9e6f-4be4-9387-6d225b26c517" -->
 ### Login Flow (US-002)  
 ✅ **Given** a registered user visits   
 ✅ **When** they provide correct email and password  
@@ -114,6 +124,7 @@ CREATE TABLE user_sessions (
 ✅ **When** user attempts login  
 ✅ **Then** generic error message shown, no account details leaked
 
+<!-- section_id: "ce1f0059-9f3a-4984-98cf-d7d9d4463fd6" -->
 ### Firebase OAuth (US-003)
 ✅ **Given** Firebase is available and user clicks "Sign in with Google"  
 ✅ **When** OAuth flow completes successfully  
@@ -123,13 +134,16 @@ CREATE TABLE user_sessions (
 ✅ **When** user attempts Google sign-in  
 ✅ **Then** fallback message shown, local auth still available
 
+<!-- section_id: "f9d0e249-e4f7-4ee9-bc2e-d7bca30b54b8" -->
 ### Logout (US-004)
 ✅ **Given** an authenticated user  
 ✅ **When** they click logout  
 ✅ **Then** session terminated and redirected to login page
 
+<!-- section_id: "57e76074-e795-4949-a614-9c3416d440aa" -->
 ## Testing Strategy
 
+<!-- section_id: "49093c6e-f109-4284-9de1-d593653bbec8" -->
 ### Automated Test Coverage
 - **Unit Tests**: Authentication logic, password hashing, validation
 - **Integration Tests**: API endpoints, database operations
@@ -137,6 +151,7 @@ CREATE TABLE user_sessions (
 - **Security Tests**: SQL injection, XSS protection, session security
 - **Performance Tests**: Login response time (<2s requirement)
 
+<!-- section_id: "99fb5ae9-4b3e-4812-9a36-e812f676a8d0" -->
 ### Test Execution
 - **Golden Rule**: Run `python scripts/automation/run_user_stories.py --navigation-mode=both` 
 - **Feature Tests**: All US-001 through US-004 automated via MCP

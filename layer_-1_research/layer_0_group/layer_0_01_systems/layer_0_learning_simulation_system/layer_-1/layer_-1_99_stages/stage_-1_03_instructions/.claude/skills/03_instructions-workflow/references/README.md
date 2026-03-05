@@ -8,6 +8,7 @@ resource_name: "README"
 
 Place reference documents, templates, and examples here.
 
+<!-- section_id: "cf04a268-bcd3-4b5f-80ad-c7202f8c2650" -->
 ## Suggested Contents
 - Templates for 03_instructions outputs
 - Examples of good 03_instructions work

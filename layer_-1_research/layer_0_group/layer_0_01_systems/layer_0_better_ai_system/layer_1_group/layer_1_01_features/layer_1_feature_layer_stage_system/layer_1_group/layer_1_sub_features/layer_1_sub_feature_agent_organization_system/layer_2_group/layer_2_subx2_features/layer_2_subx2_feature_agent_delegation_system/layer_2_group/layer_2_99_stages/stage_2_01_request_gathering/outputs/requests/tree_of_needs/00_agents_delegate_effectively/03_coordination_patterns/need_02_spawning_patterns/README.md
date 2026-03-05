@@ -12,12 +12,14 @@ resource_name: "README"
 
 ---
 
+<!-- section_id: "362764be-2d9b-43c3-b45f-6deb3430b4ee" -->
 ## Definition
 
 Spawning patterns define the rules for when a manager should create a new agent (vs doing work itself), how to create agents (Task tool, team creation, direct delegation), and how agent lifecycle works (creation, work, reporting, termination).
 
 ---
 
+<!-- section_id: "ec04bebe-181a-44b5-9d37-6dd9d35e3c6f" -->
 ## Why This Matters
 
 - Without spawning rules, managers either do everything themselves (no delegation) or spawn too many agents (coordination overhead)
@@ -27,18 +29,21 @@ Spawning patterns define the rules for when a manager should create a new agent 
 
 ---
 
+<!-- section_id: "0cc423cc-a98c-443b-9351-6dd41703db56" -->
 ## Requirements
 
 See [requirements/](./requirements/) for individual requirements.
 
 ---
 
+<!-- section_id: "a76a2e2f-d3c2-466f-9ad9-48a43b1a6180" -->
 ## User Stories
 
 See [user_stories/](./user_stories/) for individual stories.
 
 ---
 
+<!-- section_id: "fa19b3a6-e8f5-4c2b-8bc8-217049bbb63f" -->
 ## Acceptance Criteria
 
 - [ ] Spawning criteria are documented (when to delegate vs do directly)
@@ -49,6 +54,7 @@ See [user_stories/](./user_stories/) for individual stories.
 
 ---
 
+<!-- section_id: "83201a41-c411-497f-8b5a-88c6dcb30d91" -->
 ## Research References
 
 - Claude Code Task tool documentation

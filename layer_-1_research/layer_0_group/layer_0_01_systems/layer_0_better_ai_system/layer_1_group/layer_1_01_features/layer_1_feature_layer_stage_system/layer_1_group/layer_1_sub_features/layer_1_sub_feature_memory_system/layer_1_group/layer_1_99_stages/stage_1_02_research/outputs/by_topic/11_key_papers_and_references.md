@@ -5,12 +5,14 @@ resource_name: "11_key_papers_and_references"
 ---
 # Key Papers and References: AI Agent Memory Systems
 
+<!-- section_id: "60dd8b2f-87a9-4fbf-b65e-d35a91c5520f" -->
 ## Overview
 
 Organized bibliography of the most important papers, surveys, and resources on AI agent memory systems. Papers grouped by topic with links and brief descriptions.
 
 ---
 
+<!-- section_id: "49309882-5196-4c03-8da4-e87caed46710" -->
 ## 1. Comprehensive Surveys
 
 | Paper | Year | Venue | Focus |
@@ -23,6 +25,7 @@ Organized bibliography of the most important papers, surveys, and resources on A
 
 ---
 
+<!-- section_id: "1639a807-b556-4b24-b755-5fb021da496f" -->
 ## 2. Foundational Memory Architectures
 
 | Paper | Year | Venue | Focus |
@@ -33,6 +36,7 @@ Organized bibliography of the most important papers, surveys, and resources on A
 
 ---
 
+<!-- section_id: "69862340-ecac-4a6d-88c6-50d16eb89466" -->
 ## 3. Memory OS and Platforms
 
 | Paper/System | Year | Venue | Focus |
@@ -44,6 +48,7 @@ Organized bibliography of the most important papers, surveys, and resources on A
 
 ---
 
+<!-- section_id: "e56e1ff6-5e6d-43c7-8267-7490afa19bd5" -->
 ## 4. RAG and Knowledge Graph Memory
 
 | Paper | Year | Venue | Focus |
@@ -55,6 +60,7 @@ Organized bibliography of the most important papers, surveys, and resources on A
 
 ---
 
+<!-- section_id: "b45d475b-477e-4b5f-8d1d-6ada73171a31" -->
 ## 5. Cognitive Architecture Memory Models
 
 | Paper/System | Year | Focus |
@@ -66,6 +72,7 @@ Organized bibliography of the most important papers, surveys, and resources on A
 
 ---
 
+<!-- section_id: "d73b3a49-2a97-4454-a4a8-d0817edc6966" -->
 ## 6. Multi-Agent Memory
 
 | Paper | Year | Venue | Focus |
@@ -76,6 +83,7 @@ Organized bibliography of the most important papers, surveys, and resources on A
 
 ---
 
+<!-- section_id: "6a688087-6023-4a70-a54e-5b71ba5ca62c" -->
 ## 7. Self-Evolving and Learning Memory
 
 | Paper | Year | Venue | Focus |
@@ -86,6 +94,7 @@ Organized bibliography of the most important papers, surveys, and resources on A
 
 ---
 
+<!-- section_id: "9f08f957-8fe4-4028-9ac0-826a917b81bd" -->
 ## 8. Experiential and Procedural Memory
 
 | Paper | Year | Focus |
@@ -98,6 +107,7 @@ Organized bibliography of the most important papers, surveys, and resources on A
 
 ---
 
+<!-- section_id: "96612363-18f6-4693-b88a-48c482e2a246" -->
 ## 9. Framework Documentation
 
 | Resource | URL | Focus |
@@ -110,6 +120,7 @@ Organized bibliography of the most important papers, surveys, and resources on A
 
 ---
 
+<!-- section_id: "86853f26-3261-47b8-bb1a-d633ea848b40" -->
 ## 10. Recommended Reading Order
 
 For someone new to AI agent memory systems:

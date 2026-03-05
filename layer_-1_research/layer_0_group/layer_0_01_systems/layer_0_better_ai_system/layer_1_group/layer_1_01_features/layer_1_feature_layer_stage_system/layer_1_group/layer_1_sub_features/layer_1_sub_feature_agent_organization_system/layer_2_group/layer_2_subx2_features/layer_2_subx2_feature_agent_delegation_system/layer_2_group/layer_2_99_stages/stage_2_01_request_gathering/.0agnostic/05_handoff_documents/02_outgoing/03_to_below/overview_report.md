@@ -9,16 +9,19 @@ resource_name: "overview_report"
 **Stage**: 01_request_gathering
 **Last Updated**: 2026-02-19
 
+<!-- section_id: "3e3eec4a-ca4e-4970-a029-9d6c8e9d43d8" -->
 ## Summary
 
 Stage 01 gathered and structured requirements for the agent delegation system. 9 leaf needs are organized across 3 branches in a tree of needs format. All needs have requirements and user stories. The delegation model (branch 01) is foundational — it defines prerequisites for memory integration and coordination patterns.
 
+<!-- section_id: "2f2fd81b-23fa-4f71-ae44-928a127547b0" -->
 ## Reports Index
 
 | Report | Description | Last Updated |
 |--------|-------------|--------------|
 | [stage_report.md](./stage_report.md) | Canonical stage status — status, outputs, findings, handoff | 2026-02-19 |
 
+<!-- section_id: "09b84568-8edf-4ce4-a8b7-e96b1ee21a93" -->
 ## Key Metrics
 
 - **Total files**: 102 in tree_of_needs/

@@ -12,6 +12,7 @@ resource_name: "agent_amnesia_and_context_systems_conversation"
 
 ---
 
+<!-- section_id: "63fd30da-673f-4600-b9dd-92707c8b9eda" -->
 ## Problem Statement
 
 AI agents in the layer-stage system "forget" critical information:
@@ -24,8 +25,10 @@ The prompts in `sub_layer_0_01_prompts/` are outdated and don't address these is
 
 ---
 
+<!-- section_id: "fe8fd299-a532-414c-b413-68d6fd96a5a7" -->
 ## Research Conducted
 
+<!-- section_id: "3b8c41e5-0b70-4328-9004-f5e3cd814be9" -->
 ### Internal System Exploration
 
 **What Already Exists (Strong Foundation):**
@@ -47,6 +50,7 @@ The prompts in `sub_layer_0_01_prompts/` are outdated and don't address these is
 3. **Instantiation not discoverable** - Guide exists but agents don't know how to find it
 4. **Handoffs missing types** - No acknowledgment, query, or context negotiation handoffs
 
+<!-- section_id: "b446f031-7cda-4517-b043-4621ea67195e" -->
 ### External Research
 
 **Document Created**: `agent_amnesia_external_approaches.md`
@@ -76,8 +80,10 @@ The prompts in `sub_layer_0_01_prompts/` are outdated and don't address these is
 
 ---
 
+<!-- section_id: "6357b89b-c4de-4c78-8446-0c73ad190474" -->
 ## Proposed Solution: Agent Awakening Protocol
 
+<!-- section_id: "740ef7ed-2f00-43d0-936b-efc82b8d07c7" -->
 ### 1. Self-Referential System Prompt Template
 
 Every CLAUDE.md should inject dynamic identity:
@@ -105,6 +111,7 @@ You are an agent operating in the Layer-Stage Framework.
 3. Read status.json for current state
 ```
 
+<!-- section_id: "b4132c95-f7a3-411b-99e5-fbf59c948b65" -->
 ### 2. Mandatory Traversal Protocol
 
 ```
@@ -117,6 +124,7 @@ You are an agent operating in the Layer-Stage Framework.
 7. DECLARE: State your identity and understanding
 ```
 
+<!-- section_id: "708993ff-17bb-4bde-9ae4-208536655bc3" -->
 ### 3. Enhanced Handoff Types
 
 | Type | Purpose | When |
@@ -127,18 +135,22 @@ You are an agent operating in the Layer-Stage Framework.
 | **Acknowledgment** | Confirm receipt | After receiving any handoff |
 | **Context** | Share understanding | Before starting work |
 
+<!-- section_id: "88678e3b-a160-49a4-8602-3734af16790d" -->
 ### 4. Instantiation Discovery
 
 Each CLAUDE.md should include what can be created at that level.
 
+<!-- section_id: "b5b02680-8c19-4524-ad21-4869a81eef6f" -->
 ### 5. Episodic Memory via Searchable Handoffs
 
 Add keywords and summaries to handoff metadata for future retrieval.
 
 ---
 
+<!-- section_id: "ec1422a5-a160-409b-bf42-131c2e0df4d0" -->
 ## Current Discussion: AGNOSTIC.md System
 
+<!-- section_id: "cefd7932-acd5-4c4e-8c87-bbf3c2d2dae8" -->
 ### User Question
 
 How to create an AGNOSTIC.md system that:
@@ -146,6 +158,7 @@ How to create an AGNOSTIC.md system that:
 2. Uses Claude Code's .claude/ system efficiently
 3. Manages context in the most token-efficient way
 
+<!-- section_id: "5b544b5b-db37-4131-b8c6-492778fe9228" -->
 ### Research Direction
 
 Need to understand:
@@ -153,6 +166,7 @@ Need to understand:
 2. When each is loaded (every call vs on-demand)
 3. How to design AGNOSTIC.md as source of truth that transforms to tool-specific formats
 
+<!-- section_id: "ef31ff94-e455-4358-b2b5-be6fd5c7cb93" -->
 ### Existing Research on Tool Quartets
 
 From `os_and_quartets.md`:
@@ -166,6 +180,7 @@ From `os_and_quartets.md`:
 - `os/<os-id>/` subfolders contain OS-specific variants
 - Tools cascade context from generic → OS-specific
 
+<!-- section_id: "65c44db0-b535-4e54-9c71-bae00c4254e5" -->
 ### Open Questions
 
 1. **Where should Agent Awakening Protocol live?**
@@ -189,12 +204,15 @@ From `os_and_quartets.md`:
 
 ---
 
+<!-- section_id: "1d788db9-e097-4a97-9cb1-6aa957193daf" -->
 ## Claude Code Context System Research
 
+<!-- section_id: "2292c307-a9c9-4bd4-98b5-5ade487ec380" -->
 ### Key Finding: CLAUDE.md Loaded EVERY Request
 
 CLAUDE.md is NOT cached - it's loaded fresh every API call. This is critical for context efficiency.
 
+<!-- section_id: "c54d26cf-f33e-47e3-8c91-e1e0aa2ed1ec" -->
 ### Loading Timing & Context Cost
 
 | Component | When Loaded | Context Cost | On-Demand? |
@@ -206,6 +224,7 @@ CLAUDE.md is NOT cached - it's loaded fresh every API call. This is critical for
 | **Subagents** | On delegation | Isolated | Yes |
 | **Hooks** | On trigger | Zero | N/A |
 
+<!-- section_id: "56989660-c557-4941-91f5-29e4411697a5" -->
 ### Cascade Order (Highest to Lowest Priority)
 
 1. Managed policy (`/etc/claude-code/CLAUDE.md`)
@@ -214,6 +233,7 @@ CLAUDE.md is NOT cached - it's loaded fresh every API call. This is critical for
 4. Subdirectories (`./packages/foo/CLAUDE.md` - on-demand)
 5. Local overrides (`./CLAUDE.local.md` - not git-tracked)
 
+<!-- section_id: "eecc3efb-a4af-401a-bef0-6270f4b2edc9" -->
 ### What Goes Where - Decision Matrix
 
 | Content Type | CLAUDE.md | Skills | Subagents | Hooks | Notes |
@@ -226,6 +246,7 @@ CLAUDE.md is NOT cached - it's loaded fresh every API call. This is critical for
 | **Auto-formatting** | ❌ No | ❌ No | ❌ No | ✅ Yes | Must happen every time |
 | **Read-only research** | ❌ No | ❌ No | ✅ Yes | ❌ No | Isolate file reads |
 
+<!-- section_id: "549d887d-17f0-415c-b0b0-9ac5ac9d7436" -->
 ### Size Guidelines
 
 - **CLAUDE.md**: Under 500 lines (~3,000-5,000 tokens)
@@ -233,6 +254,7 @@ CLAUDE.md is NOT cached - it's loaded fresh every API call. This is critical for
 - **Subagents**: For any investigation reading 10+ files
 - **MCP servers**: Disable when not in use
 
+<!-- section_id: "5e428d58-f301-42b7-8692-5ae9e87c9344" -->
 ### Key Optimization Strategies (Ranked by Impact)
 
 1. **Aggressive context clearing** (`/clear` between tasks) - saves 30-50%
@@ -243,8 +265,10 @@ CLAUDE.md is NOT cached - it's loaded fresh every API call. This is critical for
 
 ---
 
+<!-- section_id: "351926a4-d2ea-41f8-ab86-f67c707b953d" -->
 ## AGNOSTIC.md System Design
 
+<!-- section_id: "6eb4754b-e132-48fe-8be8-cfa09e52efd5" -->
 ### The Proposal
 
 Create a single **AGNOSTIC.md** as the source of truth that:
@@ -256,6 +280,7 @@ Create a single **AGNOSTIC.md** as the source of truth that:
    - `GEMINI.md` for Gemini CLI
    - `.cursor/rules/*.mdc` for Cursor IDE
 
+<!-- section_id: "23f4afc7-bedb-4fbd-973f-00a779d9ee10" -->
 ### Proposed AGNOSTIC.md Structure
 
 ```markdown
@@ -304,6 +329,7 @@ WSL-specific instructions...
 macOS-specific instructions...
 ```
 
+<!-- section_id: "847214d6-d30d-4269-9ef1-fe465f3d6c2b" -->
 ### Transformation Rules
 
 | AGNOSTIC.md Section | Claude Code | Codex CLI | Gemini CLI | Cursor |
@@ -315,6 +341,7 @@ macOS-specific instructions...
 | `@automation` | `.claude/hooks/` | Shell scripts | Shell scripts | Shell scripts |
 | `@os-specific` | `os/<id>/CLAUDE.md` | `os/<id>/AGENTS.md` | `os/<id>/GEMINI.md` | `os/<id>/.cursor/` |
 
+<!-- section_id: "b4fdc093-e9c2-491f-b27b-a067355e2707" -->
 ### For Claude Code Specifically
 
 **Most context-efficient approach:**
@@ -344,6 +371,7 @@ macOS-specific instructions...
    - Extract from `@automation`
    - Formatting, validation, logging
 
+<!-- section_id: "46f22cff-2d96-4525-aaeb-3b29da63b66a" -->
 ### Implementation Options
 
 **Option A: Manual Extraction**
@@ -364,6 +392,7 @@ macOS-specific instructions...
 - Pro: DRY, no build step
 - Con: Not all tools support imports equally
 
+<!-- section_id: "b3ae0e9e-a785-4b45-9eef-7772f530a075" -->
 ### Recommended Approach for Claude Code
 
 **Option B with this structure:**
@@ -393,8 +422,10 @@ layer_X/
 
 ---
 
+<!-- section_id: "8c3dc1b6-590c-441c-b04e-f3c4ad6df758" -->
 ## Final Design: Dual AGNOSTIC.md + .agnostic/ System
 
+<!-- section_id: "8c95f1af-2b19-4885-9862-8ad4cbaef358" -->
 ### The Insight
 
 The cleanest design has BOTH:
@@ -403,6 +434,7 @@ The cleanest design has BOTH:
 
 This mirrors exactly how Claude Code separates concerns.
 
+<!-- section_id: "72e752a2-af29-4cb1-92f0-4d71b45040a5" -->
 ### Complete Structure
 
 ```
@@ -447,6 +479,7 @@ layer_X/
         └── ...
 ```
 
+<!-- section_id: "2402b9db-6c0d-4a8f-baa5-3f19b25d2e0f" -->
 ### Transformation Rules
 
 | Source | → Target | Notes |
@@ -461,6 +494,7 @@ layer_X/
 | .agnostic/automation/ | .claude/hooks/ | Direct copy |
 | .agnostic/os/<id>/ | os/<id>/CLAUDE.md | Merge with AGNOSTIC.md |
 
+<!-- section_id: "c8806a90-37e5-444c-8685-a47de3efa45e" -->
 ### Why This Is Clean
 
 1. **Clear separation**: AGNOSTIC.md = always-on, .agnostic/ = on-demand
@@ -468,6 +502,7 @@ layer_X/
 3. **Tool-specific additions work**: .claude/settings.json, .claude/mcp.json
 4. **Single source of truth per concern**: No duplication, no drift
 
+<!-- section_id: "f443dbd9-e0c5-43fe-8199-8e3fc32d2fbf" -->
 ### AGNOSTIC.md Template
 
 ```markdown
@@ -514,8 +549,10 @@ You can create:
 
 ---
 
+<!-- section_id: "2a1c0fc1-b39f-4957-832e-84b5dc1f5785" -->
 ## Earlier Design: .agnostic/ Folder System
 
+<!-- section_id: "3dc4dd33-6487-43c9-bc5c-ff07246fa8a8" -->
 ### The Problem with Context Gathering
 
 Agents currently spend significant time/resources gathering context at session start. But with the layer-stage system, an agent instantiated at the correct location **should already have most of what it needs**.
@@ -526,6 +563,7 @@ Agents currently spend significant time/resources gathering context at session s
 - Agent identity + traversal + instantiation instructions = in CLAUDE.md
 - Domain knowledge + reference material = in skills
 
+<!-- section_id: "49df007b-73ee-4455-b411-ed10ca516955" -->
 ### Proposed .agnostic/ Folder Structure
 
 Instead of AGNOSTIC.md as a single file, use a **folder structure** that mirrors what tools need:
@@ -582,6 +620,7 @@ layer_X/
     └── ...
 ```
 
+<!-- section_id: "ae5a2bd5-61a7-46e5-b23f-c1d434403f0d" -->
 ### Sync Rules
 
 | .agnostic/ Source | → Claude Code | → Codex | → Cursor | Notes |
@@ -593,6 +632,7 @@ layer_X/
 | `automation/` | .claude/hooks/ | Shell scripts | Shell scripts | Deterministic |
 | `os/<id>/` | os/<id>/CLAUDE.md | os/<id>/AGENTS.md | os/<id>/.cursor/ | OS variants |
 
+<!-- section_id: "7c469efe-6adb-42e8-8d8c-28217b7a8c1b" -->
 ### Tool-Specific Overrides
 
 Each tool folder can have additions that don't exist in .agnostic/:
@@ -608,10 +648,12 @@ Each tool folder can have additions that don't exist in .agnostic/:
 
 ---
 
+<!-- section_id: "fb029eb0-c650-4750-ac17-76ecafc0ac99" -->
 ## Should Code Files Be Inside .claude/?
 
 **Short answer: NO.**
 
+<!-- section_id: "e19c2814-ee2a-4b05-9e34-0449664f69c8" -->
 ### Why Not
 
 1. **.claude/ is for meta-configuration**, not application code
@@ -621,6 +663,7 @@ Each tool folder can have additions that don't exist in .agnostic/:
 5. **Other tools need the code** - linters, formatters, CI/CD
 6. **Violates separation of concerns** - context ≠ code
 
+<!-- section_id: "ff98f98c-3f73-40ec-9800-0289ba8e2fdd" -->
 ### What DOES Help Claude Find Code
 
 1. **@imports in CLAUDE.md**:
@@ -653,8 +696,10 @@ Each tool folder can have additions that don't exist in .agnostic/:
 
 ---
 
+<!-- section_id: "8ec93b7b-85fa-4915-93d5-2b8c5825d0a5" -->
 ## The Optimal Pattern: Layer-Stage + .agnostic/
 
+<!-- section_id: "14e73382-475f-4ee5-b3d9-35222bb793b8" -->
 ### At Each Layer/Stage
 
 ```
@@ -675,6 +720,7 @@ layer_X_stage_Y/
 └── status.json                  # Current state
 ```
 
+<!-- section_id: "476986a3-e327-493e-8a90-636752dc3ee0" -->
 ### CLAUDE.md at Each Level (Generated, <300 lines)
 
 ```markdown
@@ -707,6 +753,7 @@ Your scope is: [scope]
 [Brief, critical-only standards]
 ```
 
+<!-- section_id: "b4c01c40-92b2-4240-b09c-08d727e28192" -->
 ### Context Loading Efficiency
 
 | What | Loaded When | Token Cost |
@@ -723,8 +770,10 @@ Your scope is: [scope]
 
 ---
 
+<!-- section_id: "ce64ea3a-69bc-4023-95d2-2d109bc2fb3b" -->
 ## Sync Script Design
 
+<!-- section_id: "18937e6e-27e8-49b2-902d-8bb6238d2acc" -->
 ### What It Does
 
 ```bash
@@ -760,6 +809,7 @@ for os in .agnostic/os/*/; do
 done
 ```
 
+<!-- section_id: "19a26057-4f19-46aa-b84c-a3f6efe4d3b7" -->
 ### When to Run
 
 - **Git hook (post-checkout, post-merge)**: Auto-sync on pulls
@@ -768,6 +818,7 @@ done
 
 ---
 
+<!-- section_id: "093ce3f4-f2ae-4ebf-a75a-4014ed33cec8" -->
 ## Next Steps
 
 1. ✅ Research Claude Code's .claude/ system in detail
@@ -780,14 +831,17 @@ done
 
 ---
 
+<!-- section_id: "b1f2ea62-e9da-43ad-ac64-21c1386d2973" -->
 ## Sources
 
+<!-- section_id: "a9ba7da5-6378-44ed-95e6-d7d551155545" -->
 ### Internal
 - `layer_-1_research/layer_-1_better_ai_system/` - All feature research
 - `sub_layer_0_01_prompts/universal_init_prompt.md` - Current init prompt
 - `sub_layer_0_04_rules/` - Universal rules
 - `things_learned/ideal_ai_manager_hierarchy_system/` - Manager hierarchy research
 
+<!-- section_id: "efef900f-4cfc-4205-b6e3-ccf78b100da5" -->
 ### External (from agent_amnesia_external_approaches.md)
 - LangGraph Memory Documentation
 - AutoGen Documentation

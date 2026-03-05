@@ -5,12 +5,14 @@ resource_name: "core_ai_memory_architecture"
 ---
 # Core AI Memory Architecture — Knowledge Summary
 
+<!-- section_id: "0127db62-8446-4b2f-bb3b-85f89a5b4ae7" -->
 ## Overview
 
 This document summarizes the key architectural findings from Stage 02 Research on AI agent memory systems. It serves as the distilled knowledge reference for this stage.
 
 ---
 
+<!-- section_id: "66bfb529-2a3b-422e-82a6-f3e681440951" -->
 ## 1. Memory Structure Hierarchy (Biological Buildup)
 
 Memory types form a strict 6-level dependency chain, where each level requires the levels below:
@@ -30,10 +32,12 @@ Memory types form a strict 6-level dependency chain, where each level requires t
 
 ---
 
+<!-- section_id: "3b2d6df7-3eba-4d25-815f-bff39dfe30c0" -->
 ## 2. Core Long-Term Memory Types — Emphasis Areas
 
 The four critical long-term memory types for AI agents, ordered by dependency:
 
+<!-- section_id: "10e9a901-d82d-4495-a042-86776230780f" -->
 ### 2.1 Semantic Memory (L4 — Foundation)
 
 **What it stores**: Facts, concepts, relationships — the "what" of knowledge.
@@ -47,6 +51,7 @@ The four critical long-term memory types for AI agents, ordered by dependency:
 
 **AI systems**: pgvector (471 QPS at 99% recall), Neo4j, hybrid PostgreSQL (pgvector column + foreign-key edges). Mem0 uses vector-first with optional Neo4j graph overlay. SHIMI adds hierarchical tree retrieval for meaning-driven access.
 
+<!-- section_id: "e9f714d9-710f-4ae3-9abe-dbf0293ce96a" -->
 ### 2.2 Time-Based Memory (L4 — Foundation)
 
 **What it stores**: Temporal sequences, chronological ordering, "when" and "in what order."
@@ -60,6 +65,7 @@ The four critical long-term memory types for AI agents, ordered by dependency:
 
 **AI systems**: TimescaleDB hypertables, InfluxDB, ring buffers (O(1) fixed-size windows), skip lists (Redis sorted sets for time-ordered retrieval). Temporal validity tracking ensures facts are time-scoped.
 
+<!-- section_id: "a159932a-85d9-454a-a052-bbf164e62cff" -->
 ### 2.3 Episodic Memory (L5 — Builds on Semantic + Time-Based)
 
 **What it stores**: Specific experiences — the "what happened" with full context (who, where, when, emotional valence).
@@ -73,6 +79,7 @@ The four critical long-term memory types for AI agents, ordered by dependency:
 
 **AI systems**: FAISS, Pinecone, ChromaDB for vector episodes. AWS Bedrock two-stage extraction (extract → consolidate). MongoDB AI Memory Service adds cognitive dynamics (importance scoring, temporal decay, reinforcement on access, memory merging). Mem^p stores distilled trajectories.
 
+<!-- section_id: "e3968ea2-ec45-4c9a-aa4c-956baab1931a" -->
 ### 2.4 Procedural Memory (L5 — Builds on Semantic + Motor)
 
 **What it stores**: Skills, routines, how-to knowledge — the "how" of doing things.
@@ -86,6 +93,7 @@ The four critical long-term memory types for AI agents, ordered by dependency:
 
 **AI systems**: Mem^p framework (+8 points success, 18% fewer steps, transfers across tasks). LangMem for persistent tool-use memory. Skill libraries/tool registries with invocation tracking. Production rules encode IF-THEN action sequences.
 
+<!-- section_id: "773218cc-fce5-47f8-822d-b32f036805bf" -->
 ### 2.5 Memory Consolidation Pipeline (Cross-Type)
 
 All four types feed through a shared consolidation pipeline:
@@ -101,6 +109,7 @@ Working Memory → [Extract] → [Consolidate] → [Store] → [Retrieve]
 
 ---
 
+<!-- section_id: "2eff6f4a-a829-4b50-aaa7-0536456fa12f" -->
 ## 3. Core AI Memory Systems (9-Tier Ranking)
 
 AI memory structures ranked from most to least foundational (T1-T3 support semantic+time-based, T4-T6 support episodic+procedural):
@@ -124,6 +133,7 @@ AI memory structures ranked from most to least foundational (T1-T3 support seman
 
 ---
 
+<!-- section_id: "6fcd4e6c-7cd7-4257-8365-d49ff366e1da" -->
 ## 4. Data Structure Hierarchy (10 Levels)
 
 Every AI memory system is built on layered data structures:
@@ -147,10 +157,12 @@ L9: Composites (episodic store, semantic store, procedural store)
 
 ---
 
+<!-- section_id: "bdecb5c1-06ab-4834-8cb1-1a68c5720cdd" -->
 ## 5. Technology × Memory Type Mapping
 
 How each core technology serves each long-term memory type — and WHY that pairing works:
 
+<!-- section_id: "dc43523e-a0c6-4690-a9dd-7277b0c60704" -->
 ### 5.1 Vector Embeddings (pgvector)
 
 | Memory Type | How Used | Why It Works |
@@ -162,6 +174,7 @@ How each core technology serves each long-term memory type — and WHY that pair
 
 **Why vectors are T1 (most foundational)**: Every memory type benefits from "find similar things" — it's the universal retrieval primitive. Without vectors, retrieval is limited to exact match or keyword search.
 
+<!-- section_id: "e88f29b0-4a2e-43d9-8004-38952a291776" -->
 ### 5.2 Relational Tables (SQL / PostgreSQL)
 
 | Memory Type | How Used | Why It Works |
@@ -173,6 +186,7 @@ How each core technology serves each long-term memory type — and WHY that pair
 
 **Why SQL is T2**: Provides structure, transactions, JOINs, constraints. Vectors find similar things; SQL organizes and relates them. Together they form the irreducible core.
 
+<!-- section_id: "02c64059-cb3d-4930-acd2-6e8785e462db" -->
 ### 5.3 Knowledge Graphs (Neo4j or SQL Adjacency Lists)
 
 | Memory Type | How Used | Why It Works |
@@ -184,6 +198,7 @@ How each core technology serves each long-term memory type — and WHY that pair
 
 **Why KGs are T3 (MAYBE substitutable)**: KGs add explicit relationship modeling that vectors miss. A vector knows "dog" and "bone" are related but not HOW. A KG says `dog -[EATS]-> bone`. Critical for semantic memory, useful for others. Can be implemented as SQL adjacency lists (entities + relationships tables with recursive CTEs) — no need for separate Neo4j.
 
+<!-- section_id: "03676579-58e3-4ff8-bb5a-a21792ebea46" -->
 ### 5.4 SHIMI (Semantic Hierarchical Memory Index)
 
 | Memory Type | How Used | Why It Works |
@@ -195,6 +210,7 @@ How each core technology serves each long-term memory type — and WHY that pair
 
 **Why SHIMI is T3.5**: Adds hierarchy and explainability that flat vectors and even KGs lack. Merkle-DAG sync enables decentralized multi-agent memory sharing. Bloom filter protocol speeds up relevance checks. CRDTs handle concurrent updates. Most impactful for semantic memory but applicable to all types.
 
+<!-- section_id: "91d5594f-c5db-4f86-9ee7-36dfcb8d3403" -->
 ### 5.5 Summary Matrix
 
 | Technology | Semantic | Time-Based | Episodic | Procedural | Primary Strength |
@@ -208,8 +224,10 @@ How each core technology serves each long-term memory type — and WHY that pair
 
 ---
 
+<!-- section_id: "cef28c15-4450-45e7-83cc-d64ed5be6bf7" -->
 ## 6. Key Implementation Patterns
 
+<!-- section_id: "6f1279fb-ed15-40a0-8fc1-02cb02d39aae" -->
 ### Unified PostgreSQL Architecture
 Modern systems consolidate ALL memory in PostgreSQL:
 - `pgvector` for semantic similarity
@@ -218,12 +236,14 @@ Modern systems consolidate ALL memory in PostgreSQL:
 - Foreign keys for knowledge graph edges
 - **Result**: 66% cost reduction, single ACID transactions across all memory types
 
+<!-- section_id: "6bf26767-214c-4f76-956d-e9f367589965" -->
 ### SHIMI (Semantic Hierarchical Memory Index)
 - Hierarchical tree: abstract concepts at top, specific entities at bottom
 - Meaning-driven retrieval (not just similarity)
 - Explainable paths through hierarchy
 - Decentralized sync via Merkle-DAG + Bloom filters + CRDTs
 
+<!-- section_id: "a6397f01-5fa8-4471-90b6-c56b50b394ed" -->
 ### Memory Consolidation Pipeline
 1. **Extraction** — identify what's worth remembering
 2. **Consolidation** — merge related info, resolve conflicts
@@ -232,6 +252,7 @@ Modern systems consolidate ALL memory in PostgreSQL:
 
 ---
 
+<!-- section_id: "a652517c-1a2a-41d6-8986-00a81e44a079" -->
 ## 7. Key Performance Benchmarks
 
 | System | Metric | Value |
@@ -244,8 +265,10 @@ Modern systems consolidate ALL memory in PostgreSQL:
 
 ---
 
+<!-- section_id: "7d1faf74-ba8f-4c3f-be84-aa61926e0ae0" -->
 ## Research Document Index
 
+<!-- section_id: "6de291f6-afdb-4a75-93dc-971a3fc3041d" -->
 ### Foundation (00-20)
 
 | # | Document | Focus Area |
@@ -272,6 +295,7 @@ Modern systems consolidate ALL memory in PostgreSQL:
 | 19 | prototype_specification | Prototype design |
 | 20 | three_tier_knowledge_architecture | 3-tier architecture |
 
+<!-- section_id: "2722198b-a41e-44b4-b2e5-c813e1fcd126" -->
 ### Hierarchies & Core Systems (21-23)
 
 | # | Document | Focus Area |
@@ -280,6 +304,7 @@ Modern systems consolidate ALL memory in PostgreSQL:
 | **22** | **core_data_structure_hierarchy** | **Data structure layers (10 levels)** |
 | **23** | **core_ai_memory_systems** | **AI system tiers (9 tiers + SHIMI)** |
 
+<!-- section_id: "00947e7c-0bb1-4e02-8be6-a4028ff7f4ef" -->
 ### Deep Dives — Biology, Implementations, Schemas (24-28)
 
 | # | Document | Focus Area |
@@ -290,6 +315,7 @@ Modern systems consolidate ALL memory in PostgreSQL:
 | **27** | **core_structures_nesting_analysis** | **How vectors/graphs/SQL nest inside PostgreSQL** |
 | **28** | **supporting_data_structures_deep_dive** | **Bloom filters, skip lists, tries, ring buffers, LRU/LFU, heaps** |
 
+<!-- section_id: "d9e5dbc1-abc0-45d1-aaa4-a7a80e9859f5" -->
 ### Real-World Systems & Implementations (29-31)
 
 | # | Document | Focus Area |
@@ -298,6 +324,7 @@ Modern systems consolidate ALL memory in PostgreSQL:
 | **30** | **complete_ai_agent_systems_with_memory** | **OASIS, CrewAI, LangGraph+LangMem, AutoGen, GenAI_Agents** |
 | **31** | **personal_ai_tutor_systems** | **ATLAS, Mem0 Tutor, ChromaDB Tutor, AITutorAgent, ReMe** |
 
+<!-- section_id: "2da2cb3c-ab2c-4af6-b9f6-d490cfc56321" -->
 ### Comparisons with Layer-Stage System (32-37)
 
 | # | Document | Focus Area |

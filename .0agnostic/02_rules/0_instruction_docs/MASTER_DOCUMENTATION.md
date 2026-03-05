@@ -6,10 +6,12 @@ resource_name: "MASTER_DOCUMENTATION"
 # Master Documentation
 *Single Source of Truth for ALL AI Agents*
 
+<!-- section_id: "a4115d4c-dd9a-4220-812a-88a4494a88ef" -->
 ## Purpose
 
 This is the **authoritative master document** for all universal AI agent documentation. **ALL agent-specific configuration files** (Cursor, Claude Code, Codex, Gemini CLI, Warp, etc.) should reference this document.
 
+<!-- section_id: "4225535d-4d5e-4aff-a0eb-73391f9c427f" -->
 ## Location
 
 **Universal Location**: `0_context/trickle_down_0_universal/0_instruction_docs/MASTER_DOCUMENTATION.md`
@@ -25,10 +27,12 @@ This is the **authoritative master document** for all universal AI agent documen
 
 ---
 
+<!-- section_id: "03ba7128-08d5-4482-8718-b93bb2c0f138" -->
 ## Universal Section: Rules for ALL Agents
 
 The following rules and practices apply to **ALL AI agents**, regardless of which IDE or platform they're using.
 
+<!-- section_id: "4e79d27d-1c54-47f1-ad43-745ba0324f3d" -->
 ### 1. Documentation Standards
 
 **Universal Documentation System**: See `UNIVERSAL_DOCUMENTATION_SYSTEM.md`
@@ -36,6 +40,7 @@ The following rules and practices apply to **ALL AI agents**, regardless of whic
 - Document as you go
 - Update `0_context/` documentation before ending turn
 
+<!-- section_id: "51e262a1-ddd0-461a-981d-7323a35f6ecd" -->
 ### 2. Testing Protocols
 
 **Testing Agent System**: See `TESTING_AGENT_SYSTEM_README.md`
@@ -43,6 +48,7 @@ The following rules and practices apply to **ALL AI agents**, regardless of whic
 - Use testing agent handoff templates
 - Follow testing standards
 
+<!-- section_id: "9b3c0f74-373b-4138-95ca-f45a42622658" -->
 ### 3. Terminal Execution (Universal Best Practices)
 
 **Universal Terminal Execution**: See `UNIVERSAL_TERMINAL_EXECUTION.md`
@@ -56,6 +62,7 @@ The following rules and practices apply to **ALL AI agents**, regardless of whic
 
 **Note**: Terminal hanging issues and Python wrapper solutions are **Cursor-specific**. See agent-specific section below.
 
+<!-- section_id: "cee46e81-1771-492f-b123-325dad580818" -->
 ### 4. Manual Steps Automation
 
 **Manual Steps Automation**: See `manual-steps-automation.md`
@@ -64,6 +71,7 @@ The following rules and practices apply to **ALL AI agents**, regardless of whic
 - Use MCP tools for web interfaces
 - Execute all steps programmatically
 
+<!-- section_id: "638ab8a0-ef48-4e93-b210-d220b167c76c" -->
 ### 5. Security Protocols
 
 **Security**: See `sudo_password_management.md`
@@ -71,6 +79,7 @@ The following rules and practices apply to **ALL AI agents**, regardless of whic
 - Manage sudo access properly
 - Follow security best practices
 
+<!-- section_id: "7e035740-d1e6-47cc-92c8-72cc162fafd1" -->
 ### 6. Documentation Completion Protocol
 
 **Documentation**: See `post-completion-documentation-protocol.md`
@@ -81,6 +90,7 @@ The following rules and practices apply to **ALL AI agents**, regardless of whic
 
 ---
 
+<!-- section_id: "1d51dfec-0080-4157-8473-7d186cea1bfa" -->
 ## Agent-Specific Section: Conditional Instructions
 
 **If you are a Cursor agent**, see: `CURSOR_AGENT_GUIDE.md`
@@ -102,8 +112,10 @@ The following rules and practices apply to **ALL AI agents**, regardless of whic
 
 ---
 
+<!-- section_id: "11e896ee-4a9b-41e5-8563-efc6538718e8" -->
 ## Complete Documentation Index
 
+<!-- section_id: "d16b380d-9e9a-4acb-b2fc-7a634ecd266c" -->
 ### Universal Systems
 
 1. **Documentation System**
@@ -126,6 +138,7 @@ The following rules and practices apply to **ALL AI agents**, regardless of whic
    - `sudo_password_management.md` - Security protocols
    - `post-completion-documentation-protocol.md` - Documentation standards
 
+<!-- section_id: "278c1679-eacf-4482-80d1-4ed2108b8726" -->
 ### Agent-Specific Guides
 
 - `CURSOR_AGENT_GUIDE.md` - All Cursor-specific solutions
@@ -136,6 +149,7 @@ The following rules and practices apply to **ALL AI agents**, regardless of whic
 
 ---
 
+<!-- section_id: "efdb296e-4775-425c-a1f1-3f5048702c15" -->
 ## Quick Reference for Agent Config Files
 
 When creating or updating agent-specific configuration files, use this format:
@@ -151,6 +165,7 @@ When creating or updating agent-specific configuration files, use this format:
 
 ---
 
+<!-- section_id: "77357f65-c63c-4a7f-85a4-ab30ff2cd6b7" -->
 ## Key Principles
 
 1. **Universal First**: All agents follow universal rules

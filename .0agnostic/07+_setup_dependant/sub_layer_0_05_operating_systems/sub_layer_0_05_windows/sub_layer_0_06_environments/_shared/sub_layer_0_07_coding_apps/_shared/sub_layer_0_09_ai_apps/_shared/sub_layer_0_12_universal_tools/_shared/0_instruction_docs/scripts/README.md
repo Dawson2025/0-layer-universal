@@ -8,8 +8,10 @@ resource_name: "README"
 
 This directory contains universal scripts that can be used across any project.
 
+<!-- section_id: "6c92760d-90cd-4ad9-9f98-55bad5130bac" -->
 ## Available Scripts
 
+<!-- section_id: "57f61b32-474d-4142-ab88-816550f94ce0" -->
 ### `sync-context-repos.sh`
 
 **Purpose**: Synchronize the universal context and setup-hub repositories.
@@ -35,6 +37,7 @@ alias sync-context='bash /home/dawson/code/0-universal-context/0_context/trickle
 
 **Note**: This script will warn you if there are uncommitted changes but won't commit or push them automatically. You should commit and push changes manually after reviewing them.
 
+<!-- section_id: "a368e277-eef8-4c6d-a54d-977ffbaf1384" -->
 ## Adding New Universal Scripts
 
 When adding new universal scripts:
@@ -45,6 +48,7 @@ When adding new universal scripts:
 4. Follow the universal documentation standards
 5. Commit to the `0-universal-context` repository
 
+<!-- section_id: "5a7b5477-e6b3-4824-9c55-6c1c231ca194" -->
 ## Script Standards
 
 - Use `#!/bin/bash` shebang

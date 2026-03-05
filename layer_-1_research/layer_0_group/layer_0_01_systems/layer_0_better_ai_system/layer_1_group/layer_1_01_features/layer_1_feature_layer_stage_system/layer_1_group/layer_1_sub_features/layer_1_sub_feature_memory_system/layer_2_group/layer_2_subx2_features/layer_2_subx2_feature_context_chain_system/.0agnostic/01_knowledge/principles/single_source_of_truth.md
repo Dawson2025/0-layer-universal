@@ -11,12 +11,14 @@ resource_name: "single_source_of_truth"
 
 ---
 
+<!-- section_id: "a5308470-451f-4502-98fe-4f6062b6de3f" -->
 ## Statement
 
 **`0AGNOSTIC.md` is the single source of truth for every entity's context. All tool-specific files (CLAUDE.md, AGENTS.md, GEMINI.md, OPENAI.md) are derived from it. Edit 0AGNOSTIC.md, never the generated files.**
 
 ---
 
+<!-- section_id: "541f216c-2852-4046-bae3-b89e206b8030" -->
 ## Rationale
 
 Without a single source, context drifts:
@@ -29,6 +31,7 @@ The agnostic system solves this by establishing a single editable source (`0AGNO
 
 ---
 
+<!-- section_id: "76175e66-40da-49c7-9e75-f47a0233783e" -->
 ## The Source Chain
 
 ```
@@ -42,6 +45,7 @@ The agnostic system solves this by establishing a single editable source (`0AGNO
      └── OPENAI.md     ← GENERATED (do not edit)
 ```
 
+<!-- section_id: "f644d6e2-e454-4bdc-9bc3-76fb7840beb9" -->
 ### What agnostic-sync.sh Does
 
 1. Extracts specific h2 sections from 0AGNOSTIC.md (Identity, Navigation, Triggers, Key Behaviors, Critical Rules)
@@ -51,8 +55,10 @@ The agnostic system solves this by establishing a single editable source (`0AGNO
 
 ---
 
+<!-- section_id: "171053bc-c26b-4ea3-b5d7-46fe3d334881" -->
 ## Requirements
 
+<!-- section_id: "492b20c7-938b-442a-bcdb-53c5628696fe" -->
 ### Must
 
 - All context changes go through `0AGNOSTIC.md` first
@@ -60,6 +66,7 @@ The agnostic system solves this by establishing a single editable source (`0AGNO
 - Generated files must have the auto-generated footer: `*Auto-generated from 0AGNOSTIC.md via agnostic-sync.sh*`
 - Commit generated files alongside the source
 
+<!-- section_id: "9b86b4e4-a6b9-40a0-90e6-b89b9f3d0163" -->
 ### Must Not
 
 - Never edit CLAUDE.md, AGENTS.md, GEMINI.md, or OPENAI.md directly
@@ -68,6 +75,7 @@ The agnostic system solves this by establishing a single editable source (`0AGNO
 
 ---
 
+<!-- section_id: "9a708e54-dcf8-43f7-9483-31970437d31a" -->
 ## The .1merge/ Exception
 
 Some tools need content that isn't in 0AGNOSTIC.md. The `.1merge/` system handles this with a 3-tier merge:
@@ -89,6 +97,7 @@ This allows tool-specific customization while keeping 0AGNOSTIC.md as the primar
 
 ---
 
+<!-- section_id: "a0f64437-3e69-4582-a9b0-9360ce8ba608" -->
 ## Verification
 
 The single-source-of-truth property is verified by:
@@ -98,6 +107,7 @@ The single-source-of-truth property is verified by:
 
 ---
 
+<!-- section_id: "dafcc3df-87c6-478a-8edf-2405b02f1540" -->
 ## Related Principles
 
 - Chain Continuity — the Parent: reference in 0AGNOSTIC.md is the canonical chain link

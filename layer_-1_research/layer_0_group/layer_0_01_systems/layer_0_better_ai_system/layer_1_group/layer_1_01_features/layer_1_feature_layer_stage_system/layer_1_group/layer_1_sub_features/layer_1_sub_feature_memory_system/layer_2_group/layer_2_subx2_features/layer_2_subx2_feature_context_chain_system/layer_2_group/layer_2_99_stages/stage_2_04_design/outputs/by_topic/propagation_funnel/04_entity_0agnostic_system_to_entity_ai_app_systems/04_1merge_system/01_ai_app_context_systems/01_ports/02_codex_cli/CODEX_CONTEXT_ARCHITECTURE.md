@@ -12,10 +12,12 @@ resource_name: "CODEX_CONTEXT_ARCHITECTURE"
 
 ---
 
+<!-- section_id: "b9b19ee9-98be-4423-8199-873109c4cd6e" -->
 ## Context Model
 
 Codex CLI is OpenAI's code-oriented AI assistant. It loads context through:
 
+<!-- section_id: "44bd1d90-c7fa-4269-9766-c3160216382b" -->
 ### Static Context (Loaded on Tool Invocation)
 
 **Tier 0 - Synced (auto-generated from 0AGNOSTIC.md)**:
@@ -39,6 +41,7 @@ Contains:
 - Vision capabilities (if using GPT-4V)
 - Specific OpenAI integration patterns
 
+<!-- section_id: "eac1df19-132b-4946-972a-a148692bb46c" -->
 ### Dynamic Context (On-Demand)
 
 - Code examples (`.0agnostic/01_knowledge/code-patterns/`)
@@ -48,12 +51,15 @@ Contains:
 
 ---
 
+<!-- section_id: "cf57a116-653a-4878-9cd7-3881b0e0529a" -->
 ## Porting Architecture: 0AGNOSTIC → Codex
 
+<!-- section_id: "7b9927c1-826b-4049-93dd-0ab9517e6dff" -->
 ### Step 1: Extract from 0AGNOSTIC.md
 
 Same as Claude Code — extract STATIC CONTEXT only.
 
+<!-- section_id: "87baaa91-0953-419b-8492-1dc82f8c4c72" -->
 ### Step 2: Transform to CODEX.md Format
 
 **Transformation Rules** (Codex-specific adjustments):
@@ -81,6 +87,7 @@ Same as Claude Code — extract STATIC CONTEXT only.
 - Authentication: [patterns used]
 ```
 
+<!-- section_id: "a8d00497-6151-4d7c-b0f9-d36256bb5e99" -->
 ### Step 3: Apply Tier 1 (Overrides)
 
 **Location**: `.1merge/.1codex_merge/1_overrides/tool_boilerplate.md`
@@ -112,6 +119,7 @@ Codex limitations:
 5. Ask for tests alongside code
 ```
 
+<!-- section_id: "715f3124-e91f-4929-87ab-19aa5e9ac218" -->
 ### Step 4: Apply Tier 2 (Additions)
 
 **Location**: `.1merge/.1codex_merge/2_additions/tool_additions.md`
@@ -148,6 +156,7 @@ Codex can help prepare data and code for fine-tuning:
 4. Request refactoring suggestions if needed
 ```
 
+<!-- section_id: "c12067fb-6dc1-4828-8422-e154b0b5b331" -->
 ### Step 5: Generate Output
 
 **Tool**: `agnostic-sync.sh` handles Codex generation
@@ -156,8 +165,10 @@ Codex can help prepare data and code for fine-tuning:
 
 ---
 
+<!-- section_id: "13dace4c-0328-4006-95fc-04b1a80a84a4" -->
 ## File Locations
 
+<!-- section_id: "d2f6d179-e748-42d0-932c-42d2a8e53671" -->
 ### Input Files
 
 ```
@@ -177,6 +188,7 @@ Codex can help prepare data and code for fine-tuning:
     └── 2_additions/tool_additions.md
 ```
 
+<!-- section_id: "48735309-41d2-4d73-9357-ea253750fa3b" -->
 ### Output Files
 
 ```
@@ -191,8 +203,10 @@ Codex can help prepare data and code for fine-tuning:
 
 ---
 
+<!-- section_id: "315d96ad-f194-43c9-9081-47124a7583fc" -->
 ## Codex-Specific Features
 
+<!-- section_id: "60576c49-6112-4138-87b2-e576c21da365" -->
 ### Code Pattern Library
 
 Codex benefits from a structured pattern library in `.0agnostic/01_knowledge/code-patterns/`:
@@ -217,6 +231,7 @@ When Codex generates code, it can reference these patterns:
 .0agnostic/01_knowledge/code-patterns/python/async_patterns/"
 ```
 
+<!-- section_id: "81b5b6d0-ea32-4fc0-a280-a910aa7bada7" -->
 ### Testing Triggers
 
 Codex can auto-trigger test generation:
@@ -230,6 +245,7 @@ Codex can auto-trigger test generation:
 | Breaking changes | Load .0agnostic/02_rules/dynamic/breaking_changes_rule.md |
 ```
 
+<!-- section_id: "11cb58f6-f895-486a-9663-223dcbbc4a55" -->
 ### API Documentation Context
 
 For OpenAI integrations, include:
@@ -253,8 +269,10 @@ For OpenAI integrations, include:
 
 ---
 
+<!-- section_id: "3d9ee555-d3d8-4021-a284-5e1350aad1cf" -->
 ## Integration with Code Repository
 
+<!-- section_id: "c072cec9-e302-41b0-a617-dc1342e8ff11" -->
 ### Triggers for Code Operations
 
 ```
@@ -271,6 +289,7 @@ Codex CODEX.md should include:
 | Database schema change | Load schema-migration-protocol.md |
 ```
 
+<!-- section_id: "edf8cbe9-0b41-44cf-b70b-4bf359734492" -->
 ### Resources Section
 
 ```markdown
@@ -287,6 +306,7 @@ Codex CODEX.md should include:
 
 ---
 
+<!-- section_id: "dc4a5d3e-6957-42d6-a43e-809d096ecc99" -->
 ## Validation Checklist
 
 After porting to Codex context:
@@ -304,6 +324,7 @@ After porting to Codex context:
 
 ---
 
+<!-- section_id: "0a0ad924-eb81-4017-b674-e388651cef55" -->
 ## Success Criteria
 
 Codex context is successful when:
@@ -324,6 +345,7 @@ Codex context is successful when:
 
 ---
 
+<!-- section_id: "82c7b280-92d3-4acb-80ce-7adc5906d428" -->
 ## References
 
 - **Code Patterns Template**: `.0agnostic/01_knowledge/code-patterns/PATTERNS_GUIDE.md`

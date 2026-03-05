@@ -9,13 +9,16 @@ resource_name: "universal_init_prompt"
 
 ---
 
+<!-- section_id: "51f77f4c-7f8b-4e76-9b98-fef881dc344e" -->
 ## Quick Start
 
+<!-- section_id: "03c5144c-c9c9-41fe-b563-ce7318b44fed" -->
 ### 0. Sync First
 ```bash
 git pull && git status
 ```
 
+<!-- section_id: "76b5339c-6dbc-44ea-843b-72c3a24cc646" -->
 ### 1. Read Essential Docs
 
 | Priority | Document | Path |
@@ -24,6 +27,7 @@ git pull && git status
 | 2 | Layer-Stage Framework | `layer_1/layer_1_features/layer_1_feature_layer_stage_system/` |
 | 3 | Project CLAUDE.md | Find via `find . -name "CLAUDE.md" -type f` |
 
+<!-- section_id: "044ecf50-6c9e-49bf-a75e-9a30a32bef0d" -->
 ### 2. Find Project Init Prompt
 ```bash
 # List project init prompts
@@ -32,6 +36,7 @@ find . -name "project_init_prompt.md" -type f 2>/dev/null
 
 ---
 
+<!-- section_id: "da44b958-976e-43e2-90e2-8dffa3876a45" -->
 ## Directory Structure
 
 ```
@@ -58,8 +63,10 @@ find . -name "project_init_prompt.md" -type f 2>/dev/null
 
 ---
 
+<!-- section_id: "23eb993a-e3c3-46c3-8b75-bcc8da1330bf" -->
 ## Quick Reference Paths
 
+<!-- section_id: "e323b3d3-ccfa-4c05-87aa-c861524f0c6c" -->
 ### Universal Rules & Protocols
 ```
 layer_0/layer_0_04_sub_layers/sub_layer_0_02_rules/
@@ -71,6 +78,7 @@ layer_0/layer_0_04_sub_layers/sub_layer_0_02_rules/
 └── LAYER_CONTEXT_HEADER_PROTOCOL.md
 ```
 
+<!-- section_id: "d81f1b90-f3d4-46cb-92e9-28c02995e3af" -->
 ### Setup & Configuration
 ```
 layer_0/layer_0_04_sub_layers/sub_layer_0_04+_setup_dependant/
@@ -83,6 +91,7 @@ layer_0/layer_0_04_sub_layers/sub_layer_0_04+_setup_dependant/
 
 ---
 
+<!-- section_id: "c80e62e7-ffc7-4994-b3e1-557db8616675" -->
 ## Common Tasks Quick Lookup
 
 | Task | Go To |
@@ -94,6 +103,7 @@ layer_0/layer_0_04_sub_layers/sub_layer_0_04+_setup_dependant/
 
 ---
 
+<!-- section_id: "9f2c1889-2bf9-4d46-b877-8a6baf87000c" -->
 ## Layer System Summary
 
 | Layer | Purpose | Location |
@@ -108,6 +118,7 @@ layer_0/layer_0_04_sub_layers/sub_layer_0_04+_setup_dependant/
 
 ---
 
+<!-- section_id: "6b35ddaf-4170-45e7-9ccf-5c9baddcf88a" -->
 ## Stage System Summary
 
 Each layer has stages representing workflow phases:
@@ -138,6 +149,7 @@ stage_0_XX_name/
 
 ---
 
+<!-- section_id: "59c97d06-c573-463a-8fb3-a0de98ba5593" -->
 ## Workflow (Abbreviated)
 
 1. **Sync repos** - `git pull`
@@ -151,6 +163,7 @@ stage_0_XX_name/
 
 ---
 
+<!-- section_id: "dd7a52b2-66f7-48b0-aff4-d66a3f78f69e" -->
 ## Critical Rules
 
 1. **Always sync first** - `git pull` before any work
@@ -159,6 +172,7 @@ stage_0_XX_name/
 4. **Document changes** - Update relevant docs when making changes
 5. **Commit & push at significant points** - See below
 
+<!-- section_id: "af6bfb1c-1329-4139-bb6c-94d590332810" -->
 ### Commit & Push Protocol
 
 **Commit and push to remote at each significant milestone**, not just at the end of a session.
@@ -182,6 +196,7 @@ Co-Authored-By: <AI model> <noreply@anthropic.com>
 
 ---
 
+<!-- section_id: "f880c57a-79e0-423a-a1ed-a71cf71f830f" -->
 ## Reference Documents
 
 | Topic | Document |
@@ -194,6 +209,7 @@ Co-Authored-By: <AI model> <noreply@anthropic.com>
 
 ---
 
+<!-- section_id: "d4f4924f-1efb-4387-9bd6-18d33d459d6d" -->
 ## Known Issues & Research
 
 > **Active Research:** The AI system has known inconsistencies being addressed in:
@@ -208,6 +224,7 @@ Co-Authored-By: <AI model> <noreply@anthropic.com>
 
 ---
 
+<!-- section_id: "108b8327-8002-4025-b8cc-158394adcfc4" -->
 ## Maintenance Note
 
 > **When making structural changes to the framework:**

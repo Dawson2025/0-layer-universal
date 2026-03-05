@@ -9,12 +9,14 @@ Tools, MCP servers, and skills for creating architecture diagrams with Mermaid.j
 
 ---
 
+<!-- section_id: "e2bd5088-11a9-47fb-9a95-596921651e12" -->
 ## MCP Server: claude-mermaid
 
 **Package**: `claude-mermaid` (npm)
 **Repo**: https://github.com/veelenga/claude-mermaid
 **Scope**: User-level (available in all Claude Code sessions)
 
+<!-- section_id: "bd341563-fab5-4721-ae1f-07173fc90f25" -->
 ### Installation
 
 ```bash
@@ -27,6 +29,7 @@ claude mcp add --scope user mermaid claude-mermaid
 /plugin install claude-mermaid@claude-mermaid
 ```
 
+<!-- section_id: "cec6a4f5-d443-4d8c-a85e-67305a9f9119" -->
 ### Tools Provided
 
 | Tool | Purpose | Parameters |
@@ -34,6 +37,7 @@ claude mcp add --scope user mermaid claude-mermaid
 | `mermaid_preview` | Render diagram with live reload in browser | `diagram` (code), `preview_id`, `format` (svg/png/pdf), `theme` (default/forest/dark/neutral) |
 | `mermaid_save` | Save rendered diagram to file | `save_path`, `preview_id`, `format` |
 
+<!-- section_id: "28eaed81-6ba4-49b1-9786-ffff41c918fa" -->
 ### Usage Pattern
 
 1. Call `mermaid_preview` with diagram code and a `preview_id`
@@ -42,6 +46,7 @@ claude mcp add --scope user mermaid claude-mermaid
 4. Call `mermaid_save` to export as SVG, PNG, or PDF
 5. Multiple concurrent diagrams supported via different `preview_id` values
 
+<!-- section_id: "07833f40-d5e6-40f0-867e-0c0aacbc2399" -->
 ### Configuration
 
 Working files stored at: `~/.config/claude-mermaid/live/`
@@ -50,6 +55,7 @@ Port range: 3737-3747 (auto-selects available port)
 
 ---
 
+<!-- section_id: "0419f861-31d6-4682-b595-4041312f5162" -->
 ## Skill: mermaid-diagrams
 
 **Source**: Built into `claude-mermaid` plugin
@@ -61,14 +67,17 @@ Provides Mermaid.js expertise including:
 - Theme and styling guidance
 - Rendering troubleshooting
 
+<!-- section_id: "8384c722-aae7-49df-85c5-a39652a1adea" -->
 ### Installation
 
 Installed automatically with the plugin install method. For npm install, the skill may need manual setup.
 
 ---
 
+<!-- section_id: "9f6798a0-d60c-4cfd-8d7c-a394463a5e11" -->
 ## Mermaid Syntax Quick Reference
 
+<!-- section_id: "e697a37d-8554-4078-80bf-2d648b035ba2" -->
 ### Supported Diagram Types
 
 | Type | Keyword | Best For |
@@ -81,6 +90,7 @@ Installed automatically with the plugin install method. For npm install, the ski
 | Gantt | `gantt` | Timelines, project schedules |
 | Mindmap | `mindmap` | Feature hierarchies, brainstorming |
 
+<!-- section_id: "6efc818e-f38a-4141-8cab-20792f712247" -->
 ### Syntax Rules (Quarto/VS Code Compatibility)
 
 These rules ensure diagrams render in Quarto 1.8+ and common Mermaid VS Code extensions:
@@ -93,6 +103,7 @@ These rules ensure diagrams render in Quarto 1.8+ and common Mermaid VS Code ext
 6. **Style directives**: `style NodeID fill:#color,color:#textcolor` — works for nodes and subgraphs
 7. **Sequence diagrams**: Do NOT use `style` directives inside `sequenceDiagram` blocks
 
+<!-- section_id: "c61cde05-d4f4-479d-bdc4-50d49865674d" -->
 ### Common Patterns for Architecture Diagrams
 
 ```
@@ -114,6 +125,7 @@ flowchart TB
 
 ---
 
+<!-- section_id: "0da1a638-37b3-4970-87ef-41ba0ab31836" -->
 ## Design Stage Integration
 
 When working in **stage 04 (design)**:
@@ -125,6 +137,7 @@ When working in **stage 04 (design)**:
 5. Use `mermaid_preview` to validate diagrams before committing
 6. Export SVG/PNG for documentation that needs static images
 
+<!-- section_id: "b288ccd2-90eb-49a9-ac87-c8a8c35d7c67" -->
 ### Diagram Types for Design Work
 
 | Design Need | Recommended Diagram |
@@ -139,6 +152,7 @@ When working in **stage 04 (design)**:
 
 ---
 
+<!-- section_id: "e5224580-528e-408f-8706-5250938fbb7c" -->
 ## Troubleshooting
 
 | Problem | Cause | Fix |

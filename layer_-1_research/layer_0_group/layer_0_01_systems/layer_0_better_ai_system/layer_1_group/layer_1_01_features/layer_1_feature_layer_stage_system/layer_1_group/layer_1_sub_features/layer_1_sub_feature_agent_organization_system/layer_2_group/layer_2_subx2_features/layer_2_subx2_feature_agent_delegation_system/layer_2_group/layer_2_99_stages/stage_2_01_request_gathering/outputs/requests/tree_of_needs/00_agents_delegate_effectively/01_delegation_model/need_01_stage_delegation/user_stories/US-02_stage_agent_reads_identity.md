@@ -13,6 +13,7 @@ resource_name: "US-02_stage_agent_reads_identity"
 **I want** the stage agent to read its own identity file and immediately know its role, methodology, and output format,
 **So that** the AI never comes back asking me how it should do the work.
 
+<!-- section_id: "7402db95-eb5d-4f29-8d02-6f408c3caf68" -->
 ### What Happens
 
 1. User delegates a task (e.g., "do the research for this feature")
@@ -21,6 +22,7 @@ resource_name: "US-02_stage_agent_reads_identity"
 4. Stage agent discovers its role, methodology, output format, and success criteria
 5. Stage agent begins producing outputs without asking clarifying questions about process
 
+<!-- section_id: "389d366a-e095-4275-9a5b-a9f21ebdb2fb" -->
 ### Acceptance Criteria
 
 - Stage agent reads one file and has everything needed to start working

@@ -13,6 +13,7 @@ resource_name: "US-04_developer_validates_chain_integrity"
 **I want** to run chain-validate and get a report comparing the graph against the file system,
 **So that** I fix broken references before the AI encounters them and gets confused.
 
+<!-- section_id: "966c2169-1dbe-473f-ad24-d59fc959e7cd" -->
 ### What Happens
 
 1. User runs the chain-validate command
@@ -20,6 +21,7 @@ resource_name: "US-04_developer_validates_chain_integrity"
 3. Script produces a report listing orphaned nodes, missing nodes, and broken edges
 4. User fixes the issues; next AI session starts with a clean, valid context chain
 
+<!-- section_id: "81848c92-4d83-4676-88e7-bc78a29f9114" -->
 ### Acceptance Criteria
 
 - Report identifies orphaned nodes (in graph but not on disk)

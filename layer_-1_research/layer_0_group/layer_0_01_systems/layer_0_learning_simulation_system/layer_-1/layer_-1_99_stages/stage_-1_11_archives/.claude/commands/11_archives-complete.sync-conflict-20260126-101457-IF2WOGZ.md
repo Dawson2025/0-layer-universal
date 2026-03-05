@@ -10,6 +10,7 @@ argument-hint: [--notes "completion notes"]
 
 Complete the 11_archives stage and prepare for next stage.
 
+<!-- section_id: "500daf87-200f-4110-b7c1-866ab287d171" -->
 ## Steps
 1. Verify all deliverables in outputs/
 2. Create handoff document

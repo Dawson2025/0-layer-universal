@@ -13,6 +13,7 @@ resource_name: "US-01_project_custom_recommendation"
 **I want** to define that speed and scalability matter most, while cost and maintenance are secondary,
 **So that** the decision matrix recommends the best avenue for my specific priorities.
 
+<!-- section_id: "83ed3463-24cc-45c6-96f5-be6c77fd256f" -->
 ### What Happens
 
 1. Developer creates a project context (HighThroughputAPI, priority: speed + scalability)
@@ -20,6 +21,7 @@ resource_name: "US-01_project_custom_recommendation"
 3. System computes weighted scores: performance_score x importance_weight for each avenue
 4. Decision matrix shows: "HighThroughputAPI -> Best: Vector Databases (score: 87.3)"
 
+<!-- section_id: "4c344f41-91ca-4a25-bffa-22c5afe9786f" -->
 ### Acceptance Criteria
 
 - Project-specific weights override general importance correctly

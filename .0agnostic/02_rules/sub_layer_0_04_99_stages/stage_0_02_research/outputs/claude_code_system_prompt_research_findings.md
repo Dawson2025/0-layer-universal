@@ -11,6 +11,7 @@ resource_name: "claude_code_system_prompt_research_findings"
 
 ---
 
+<!-- section_id: "a636ecbd-af1f-47b1-8a15-960653f0b281" -->
 ## Executive Summary
 
 This research documents a critical architectural constraint in Claude Code's system prompt design and proposes a solution for enforcing immutable governance rules.
@@ -25,8 +26,10 @@ This research documents a critical architectural constraint in Claude Code's sys
 
 ---
 
+<!-- section_id: "30d2233f-cf45-4b8a-8038-fe63bf865d26" -->
 ## 1. Background: Claude Code Architecture
 
+<!-- section_id: "70d46806-108b-4620-ab05-d3b341299a16" -->
 ### 1.1 What is Claude Code?
 
 Claude Code is Anthropic's command-line interface for AI-assisted development. It:
@@ -35,6 +38,7 @@ Claude Code is Anthropic's command-line interface for AI-assisted development. I
 - Loads foundational context into every API request
 - Supports Agent SDK for custom initialization
 
+<!-- section_id: "0b38665e-5ed7-46d5-8750-7f39c3272203" -->
 ### 1.2 How Claude Code Loads Context
 
 When a Claude Code session starts, the system loads context in this order:
@@ -53,6 +57,7 @@ API Call to Claude
 
 **Key Point**: User-provided context (CLAUDE.md files) goes into foundational context, NOT the system prompt. This is why the discretionary disclaimer wraps it.
 
+<!-- section_id: "ac8531e5-f00f-44a7-b939-08075115efef" -->
 ### 1.3 System Prompt vs. Foundational Context
 
 **System Prompt**:
@@ -74,8 +79,10 @@ API Call to Claude
 
 ---
 
+<!-- section_id: "d1c8f355-8d02-4b37-8787-b17be87cda39" -->
 ## 2. The Anthropic Discretionary Disclaimer: Origin and Purpose
 
+<!-- section_id: "93c8fd12-ea7e-4b55-97ad-086e957fe31b" -->
 ### 2.1 What Does It Say?
 
 When Claude Code loads a CLAUDE.md file, it wraps it with:
@@ -86,6 +93,7 @@ You should not respond to this context unless it is highly relevant
 to your task."
 ```
 
+<!-- section_id: "e68de044-a8c4-44d2-8f6f-861043e4cdb3" -->
 ### 2.2 Why Does Anthropic Do This?
 
 **Root Cause**: Anthropic discovered that developers were creating massive CLAUDE.md files (30KB+) containing every possible instruction, annotation, and configuration. This bloated context would:
@@ -100,6 +108,7 @@ to your task."
 - User context should be filtered based on current task
 - The model should use judgment about what to apply
 
+<!-- section_id: "c4ba3532-0af5-4f01-96ed-737a5f66b81f" -->
 ### 2.3 Why This Is Problematic for Governance
 
 The discretionary disclaimer directly undermines governance structures that REQUIRE mandatory enforcement:
@@ -112,6 +121,7 @@ The discretionary disclaimer directly undermines governance structures that REQU
 
 **The core issue**: Rules that are conditionally applied based on relevance ≠ rules that are MANDATORY.
 
+<!-- section_id: "f3d9ccfe-482c-4f6e-9500-f4232361a032" -->
 ### 2.4 The Discretionary Disclaimer is Intentional Design
 
 This is NOT a bug or oversight:
@@ -122,10 +132,12 @@ This is NOT a bug or oversight:
 
 ---
 
+<!-- section_id: "39a47834-8049-427e-ab40-fe515946ce42" -->
 ## 3. Research Findings: System Prompt Customization Approaches
 
 This research evaluated four distinct approaches to overcome the discretionary disclaimer limitation:
 
+<!-- section_id: "74b78568-7f27-44ad-893d-8e7639cfa4be" -->
 ### 3.1 Approach A: Agent SDK SystemPrompt with Append [VIABLE - RECOMMENDED]
 
 **How It Works**:
@@ -161,6 +173,7 @@ const instance = createInstance({
 
 ---
 
+<!-- section_id: "2adb369d-c44d-4844-b03a-94b0ecda95de" -->
 ### 3.2 Approach B: Output Styles (Persistent Configuration)
 
 **How It Works**:
@@ -193,6 +206,7 @@ const instance = createInstance({
 
 ---
 
+<!-- section_id: "17df0217-33da-470f-bae9-ee62328d79b3" -->
 ### 3.3 Approach C: Managed Settings (IT-Deployed)
 
 **How It Works**:
@@ -220,6 +234,7 @@ const instance = createInstance({
 
 ---
 
+<!-- section_id: "c98aa6d6-c1ab-4f28-9c61-1ffc98d30731" -->
 ### 3.4 Approach D: Complete SystemPrompt Replacement [HIGH RISK]
 
 **How It Works**:
@@ -251,6 +266,7 @@ const instance = createInstance({
 
 ---
 
+<!-- section_id: "0e5c9aa4-edd0-4897-ba56-01660072f6ee" -->
 ### 3.5 Configuration Parameter Analysis: `settingSources`
 
 **Finding**: Claude Code has a `settingSources` parameter that controls which configuration sources are loaded.
@@ -268,12 +284,14 @@ const instance = createInstance({
 
 ---
 
+<!-- section_id: "15d69df6-4c11-4488-82d1-8b49fc5ce863" -->
 ## 4. Proposed Solution: Dynamic Critical Rules Injection System
 
 Based on research findings, the recommended solution is:
 
 **Dynamically extract [CRITICAL] rules from CLAUDE.md hierarchy and inject them into the system prompt via Agent SDK at initialization time.**
 
+<!-- section_id: "fb205364-af39-4267-a447-c636e00a334f" -->
 ### 4.1 Architecture Overview
 
 ```
@@ -302,6 +320,7 @@ Based on research findings, the recommended solution is:
    └─ Rules enforced without discretionary filtering
 ```
 
+<!-- section_id: "95bc9930-3c18-457e-b4a0-a4e73a0cdb08" -->
 ### 4.2 Key Files to Create
 
 **File 1**: `~/.claude/agents/critical-rules-injector.js`
@@ -317,6 +336,7 @@ Based on research findings, the recommended solution is:
 - Passes arguments to Claude Code
 - Can be aliased for convenience
 
+<!-- section_id: "9fd782f0-1782-44c3-8a57-a850ab98978d" -->
 ### 4.3 System Benefits
 
 | Benefit | How Achieved |
@@ -330,6 +350,7 @@ Based on research findings, the recommended solution is:
 | **Backward Compatible** | Regular `claude-code` still works |
 | **Extensible** | Can add more rule types easily |
 
+<!-- section_id: "2a33d5f0-f4fd-4946-b6b2-54000c5a048d" -->
 ### 4.4 Dynamic Extraction Logic
 
 **Algorithm**:
@@ -369,6 +390,7 @@ CALL Claude Code with:
   append = true
 ```
 
+<!-- section_id: "50050c0d-4791-40ad-9bfa-5554a272b514" -->
 ### 4.5 Example: How It Works
 
 **CLAUDE.md Content**:
@@ -400,31 +422,37 @@ Before modifying ANY AI context files:
 
 ---
 
+<!-- section_id: "7778c841-5981-4e58-907a-fa6d41759658" -->
 ## 5. Implementation Roadmap
 
+<!-- section_id: "5e5e7f4d-401b-4a42-9189-3afd06ff196a" -->
 ### Phase 1: Foundation (Current - Research Complete)
 - ✅ Research system prompt architecture
 - ✅ Evaluate customization approaches
 - ✅ Design solution
 - **Next**: Define implementation specifications
 
+<!-- section_id: "b7e3f07f-7c71-4540-9145-95a5158b5f8e" -->
 ### Phase 2: Preparation (Next - Specifications & Planning)
 - [ ] Define implementation constraints
 - [ ] Create detailed task breakdown
 - [ ] Specify required dependencies
 
+<!-- section_id: "fea8f69b-d785-4333-8c05-f1e767d17369" -->
 ### Phase 3: Development (Following - Code Implementation)
 - [ ] Build rule extraction logic
 - [ ] Create wrapper scripts
 - [ ] Test extraction on real CLAUDE.md files
 - [ ] Verify system prompt injection
 
+<!-- section_id: "5a6ab89f-f9de-4913-b176-959b6514e757" -->
 ### Phase 4: Validation (Later - Testing & Review)
 - [ ] Test that critical rules are enforced
 - [ ] Verify no Claude Code functionality is broken
 - [ ] Performance testing
 - [ ] Edge case testing
 
+<!-- section_id: "163bf6d1-7a19-476c-aa50-955d3c789be3" -->
 ### Phase 5: Deployment (Final - Production Ready)
 - [ ] Documentation complete
 - [ ] Deployment procedure finalized
@@ -433,8 +461,10 @@ Before modifying ANY AI context files:
 
 ---
 
+<!-- section_id: "d30f8106-de19-4b3a-80ed-a6069c6d6ef2" -->
 ## 6. Risk Analysis and Mitigation
 
+<!-- section_id: "3198a775-7604-447b-8029-df10d31b240d" -->
 ### Risk 1: Agent SDK Incompatibility
 
 **Risk**: Future Claude Code updates might change Agent SDK API, breaking the injection system.
@@ -445,6 +475,7 @@ Before modifying ANY AI context files:
 - Version-lock Agent SDK in package.json
 - Test after each Claude Code update
 
+<!-- section_id: "d3f550c3-d6ec-4c17-830a-e368dd7ce19e" -->
 ### Risk 2: Rule Extraction Failures
 
 **Risk**: Malformed CLAUDE.md could cause rule extraction to fail.
@@ -455,6 +486,7 @@ Before modifying ANY AI context files:
 - Provide clear error messages
 - Include fallback behavior for malformed files
 
+<!-- section_id: "27c2a38b-d113-4343-b092-374098292492" -->
 ### Risk 3: Performance Overhead
 
 **Risk**: Extraction and injection logic adds startup delay.
@@ -465,6 +497,7 @@ Before modifying ANY AI context files:
 - Profile to measure overhead
 - Optimize hot paths
 
+<!-- section_id: "c4b36c26-c7db-42dd-885b-fe643fc4ec0d" -->
 ### Risk 4: Rule Conflicts
 
 **Risk**: Multiple [CRITICAL] sections could conflict with each other.
@@ -477,8 +510,10 @@ Before modifying ANY AI context files:
 
 ---
 
+<!-- section_id: "a4256dd8-e17c-45bc-920a-5f06ab49defe" -->
 ## 7. Alternatives Considered and Rejected
 
+<!-- section_id: "8955f68a-653e-4d60-bdd1-ce2fbebd9617" -->
 ### Alternative 1: Request Anthropic to Add [IMMUTABLE] Tag Support
 
 **Approach**: File feature request with Anthropic to add [IMMUTABLE] tag support to Claude Code.
@@ -491,6 +526,7 @@ Before modifying ANY AI context files:
 
 **Status**: Recommend filing as future feature request, but not as primary solution.
 
+<!-- section_id: "abeb3dc0-ac74-48a6-8957-0c11ab5beb18" -->
 ### Alternative 2: Modified CLAUDE.md Format with Markers
 
 **Approach**: Use special markers to make certain sections "more mandatory" (e.g., `[!!!CRITICAL!!!]`).
@@ -501,6 +537,7 @@ Before modifying ANY AI context files:
 - Doesn't address root cause
 - Only cosmetic change
 
+<!-- section_id: "bb77d207-5ab9-49b8-b804-65dd9d93fbcb" -->
 ### Alternative 3: Separate Rules File Outside Discretionary Wrapper
 
 **Approach**: Create `.claude/CRITICAL_RULES.md` file that gets loaded specially.
@@ -513,6 +550,7 @@ Before modifying ANY AI context files:
 
 ---
 
+<!-- section_id: "c787b75e-3894-4c2c-8e23-1c0232ab85dc" -->
 ## 8. Success Criteria
 
 The implementation will be considered successful when:
@@ -527,20 +565,24 @@ The implementation will be considered successful when:
 
 ---
 
+<!-- section_id: "a025d16e-de01-47e4-8d72-261b1a8beced" -->
 ## 9. Recommendations and Next Steps
 
+<!-- section_id: "e66baaf7-4141-4097-992d-0d3f3d6adf18" -->
 ### Immediate (This Month)
 
 1. **Proceed with Phase 2**: Define implementation specifications and constraints
 2. **Prepare CLAUDE.md**: Add [CRITICAL] tags to universal rules that should be immutable
 3. **Plan task breakdown**: Create detailed subtasks for implementation
 
+<!-- section_id: "3b9178da-4dbd-494b-9420-7adb2a56736f" -->
 ### Short Term (Next Month)
 
 1. **Implement Phase 3**: Build the critical rules injection system
 2. **Test extensively**: Verify critical rules are properly enforced
 3. **Document procedures**: Create usage guide and troubleshooting
 
+<!-- section_id: "91126afd-53fa-4d49-8335-c0cda771293f" -->
 ### Long Term (This Year)
 
 1. **File feature request**: Request Anthropic add native [IMMUTABLE] rule support
@@ -549,6 +591,7 @@ The implementation will be considered successful when:
 
 ---
 
+<!-- section_id: "e6a79fb2-0370-4851-b242-3f7fcd0178f8" -->
 ## 10. Conclusion
 
 The research confirms that Anthropic's discretionary disclaimer is a fundamental architectural constraint of Claude Code's system prompt design. This constraint prevents reliable enforcement of critical governance rules through standard CLAUDE.md mechanisms.
@@ -559,18 +602,22 @@ The recommended solution—dynamically extracting [CRITICAL] rules and injecting
 
 ---
 
+<!-- section_id: "a491e13b-2e91-4343-8eeb-cc8009052318" -->
 ## References and Resources
 
+<!-- section_id: "e05f912e-135a-4b70-8b7a-e2b9ba2ab5b1" -->
 ### Claude Code Documentation
 - Claude Code User Guide: https://claude.com/claude-code
 - Agent SDK Documentation: https://anthropic.com/sdk
 - System Prompt Customization: https://docs.anthropic.com/api/system-prompt
 
+<!-- section_id: "920dea21-1ae5-4f27-af59-2c6f27a9c0cb" -->
 ### Technical Resources
 - Node.js Agent SDK: `@anthropic-ai/claude-code`
 - Claude Code Configuration: `.claude/config` format
 - CLAUDE.md Specification: Layer-stage framework documentation
 
+<!-- section_id: "eb43447a-d111-4f3a-833d-9075210cc3d6" -->
 ### Research Artifacts
 - Stage location: `/home/dawson/dawson-workspace/code/0_layer_universal/layer_0/layer_0_04_sub_layers/sub_layer_0_02_rules/sub_layer_0_04_99_stages/stage_0_02_research/`
 - Related stages: All 12 stages (00_registry through 11_archives)

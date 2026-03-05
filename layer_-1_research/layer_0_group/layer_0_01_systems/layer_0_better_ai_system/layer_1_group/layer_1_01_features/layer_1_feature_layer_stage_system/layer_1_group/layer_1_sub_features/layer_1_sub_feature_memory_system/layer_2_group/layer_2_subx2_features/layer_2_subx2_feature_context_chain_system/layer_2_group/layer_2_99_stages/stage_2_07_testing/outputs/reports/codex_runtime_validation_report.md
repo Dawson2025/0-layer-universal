@@ -5,9 +5,11 @@ resource_name: "codex_runtime_validation_report"
 ---
 # Codex Runtime Validation Report
 
+<!-- section_id: "bc949560-2cd3-40e1-9ccf-46eb0903ad04" -->
 ## Scope
 Validate that Codex agents can execute the stage 07 Codex context-chain tests and correctly discover/use required static context under runtime conditions.
 
+<!-- section_id: "8a1d8679-fca8-460a-b2c3-39d4eba9de7a" -->
 ## Critical Execution Requirement
 All Codex runtime tests in this stage must be run with:
 
@@ -17,12 +19,14 @@ codex --dangerously-bypass-approvals-and-sandbox ...
 
 Reason: default sandboxed execution can block write/sync operations used by these tests, causing false negatives that do not reflect context-chain correctness.
 
+<!-- section_id: "98e55b7c-f03e-463a-92b2-dd571a1fea7f" -->
 ## CLI Flag Note
 Requested phrase: `--dangerously-bypass-permissions-and-sandbox`.
 
 Actual Codex CLI flag (verified via `codex --help` and `codex exec --help`):
 - `--dangerously-bypass-approvals-and-sandbox`
 
+<!-- section_id: "9143fad0-0d54-4b7a-820d-048504f1f416" -->
 ## Runtime Findings
 1. Limited/sandboxed mode can fail valid tests.
 - Example observed: `test_codex_context_conditions.sh` failed at `Sync failed` when run without dangerous bypass mode.
@@ -41,6 +45,7 @@ Actual Codex CLI flag (verified via `codex --help` and `codex exec --help`):
   - `.0agnostic/03_protocols/`
   - `.0agnostic/05_skills/`
 
+<!-- section_id: "18235e4c-7d86-4fe8-876b-9a8835a7b43c" -->
 ## Recommended Standard Command Pattern
 ```bash
 codex exec --dangerously-bypass-approvals-and-sandbox \
@@ -50,5 +55,6 @@ codex exec --dangerously-bypass-approvals-and-sandbox \
 
 Repeat this pattern for all Codex runtime tests in this stage.
 
+<!-- section_id: "f480651b-d40b-4a1c-a1e7-02495f319858" -->
 ## Conclusion
 Codex runtime validation is passing when executed in required max-permission mode. Stage 07 Codex results should be interpreted as authoritative only when this execution requirement is met.

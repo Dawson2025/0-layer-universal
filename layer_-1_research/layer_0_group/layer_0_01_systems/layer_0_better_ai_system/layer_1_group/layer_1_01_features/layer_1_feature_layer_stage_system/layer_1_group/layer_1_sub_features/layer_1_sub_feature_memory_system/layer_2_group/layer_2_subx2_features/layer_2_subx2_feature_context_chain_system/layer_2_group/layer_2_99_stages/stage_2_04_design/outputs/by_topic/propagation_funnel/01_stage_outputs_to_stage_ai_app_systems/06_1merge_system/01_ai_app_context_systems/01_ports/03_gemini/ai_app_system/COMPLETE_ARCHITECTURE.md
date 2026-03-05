@@ -10,6 +10,7 @@ resource_name: "COMPLETE_ARCHITECTURE"
 
 ---
 
+<!-- section_id: "1a3435b8-7270-4b82-a227-99c9c7cdc241" -->
 ## System Overview
 
 Gemini combines **native mechanisms** (what it provides) with **application-implemented strategy** (what you provide):
@@ -48,8 +49,10 @@ Gemini combines **native mechanisms** (what it provides) with **application-impl
 
 ---
 
+<!-- section_id: "d6550fa3-5611-401a-be04-de3d0e79af22" -->
 ## Request-Response Flow
 
+<!-- section_id: "ef7cfe90-f9ae-43b5-9fea-9946fe41cda0" -->
 ### Every Request (What Happens)
 
 ```
@@ -88,6 +91,7 @@ Gemini combines **native mechanisms** (what it provides) with **application-impl
    - Display response
 ```
 
+<!-- section_id: "231ba858-d6eb-4cf1-9023-deb0a5b7c6a0" -->
 ### Token Counting (Before Request)
 
 ```python
@@ -116,8 +120,10 @@ if estimated_cost['total'] > budget:
 
 ---
 
+<!-- section_id: "72cb9efe-ae40-4fd5-a268-32f8ca9ef2c3" -->
 ## System Instruction Strategy
 
+<!-- section_id: "6508d730-8753-4eaa-91f8-e4f506f746fe" -->
 ### What You Control
 
 System instructions define the model's role and constraints. **You write these from scratch.**
@@ -146,6 +152,7 @@ response = client.models.generate_content(
 )
 ```
 
+<!-- section_id: "7f1b6814-a071-4025-b48c-76ecab200f4b" -->
 ### System Instruction Impact
 
 | Aspect | Effect | Trade-off |
@@ -157,8 +164,10 @@ response = client.models.generate_content(
 
 ---
 
+<!-- section_id: "de694c48-b4ca-4995-a946-7ec4b236fe17" -->
 ## Session Management Strategy
 
+<!-- section_id: "8c0d344c-b8ce-4945-8708-dd5132d0edc4" -->
 ### Stateless (Default)
 
 Each request is independent:
@@ -181,6 +190,7 @@ response2 = client.models.generate_content(
 
 **When to use**: One-off questions, stateless APIs, no need for conversation history.
 
+<!-- section_id: "48d30871-5826-407b-b076-977a754870f9" -->
 ### Stateful with Resumption
 
 Multi-turn conversation with history:
@@ -209,6 +219,7 @@ continued = client.messages.create(
 
 **When to use**: Multi-turn conversations, debugging sessions, projects where history is valuable.
 
+<!-- section_id: "76e68cc3-4559-498b-92e3-dd8574009978" -->
 ### Session Lifetime Limits
 
 - **2-hour resumption window**: Sessions expire after 2 hours. After that, you must start fresh.
@@ -217,8 +228,10 @@ continued = client.messages.create(
 
 ---
 
+<!-- section_id: "72c7f434-77fe-4939-ac0e-9f88ce5dbff9" -->
 ## File Upload & Storage
 
+<!-- section_id: "f0d879e8-2e72-4a92-b979-adf05963af36" -->
 ### When to Upload
 
 ```python
@@ -255,6 +268,7 @@ message = client.beta.messages.create(
 # If you need it later, re-upload
 ```
 
+<!-- section_id: "69841562-b966-4d13-9549-16db5ee489ae" -->
 ### Storage Quota & Retention
 
 | Aspect | Limit | Your Decision |
@@ -263,6 +277,7 @@ message = client.beta.messages.create(
 | **Storage quota** | 20GB per project | Track uploads, clean up as needed |
 | **Retention** | 48 hours auto-delete | Plan for re-uploads if sessions span days |
 
+<!-- section_id: "ff7b7e11-3c50-46da-a787-06bb5306ce10" -->
 ### Alternative: Base64 Inline
 
 For small files (<100MB), encode as base64:
@@ -299,8 +314,10 @@ message = client.beta.messages.create(
 
 ---
 
+<!-- section_id: "bbbee44b-9fb4-418a-a779-90b601b87fe0" -->
 ## Caching Strategy
 
+<!-- section_id: "d7e6da30-61d5-4fda-98b5-28b380feefda" -->
 ### Implicit Caching (Automatic)
 
 After a request with 4,096+ tokens, Gemini automatically caches the prefix:
@@ -331,6 +348,7 @@ response2 = client.models.generate_content(
 
 **When to use**: Repetitive queries with same context.
 
+<!-- section_id: "91d43232-452d-4453-9b15-4c1753dc77f3" -->
 ### Explicit Caching (Guaranteed)
 
 For critical contexts, use explicit caching with TTL:
@@ -359,8 +377,10 @@ response = client.models.generate_content(
 
 ---
 
+<!-- section_id: "9922ac02-9863-4528-9ee6-d8cddbad13d5" -->
 ## Model Selection Strategy
 
+<!-- section_id: "9c2a34ba-310d-46f7-a48b-966ccc6e5862" -->
 ### Available Models
 
 | Model | Speed | Intelligence | Cost | Best For |
@@ -370,6 +390,7 @@ response = client.models.generate_content(
 | **Gemini 2.5 Flash** | Very Fast | Good | $ | General-purpose, production |
 | **Gemini 2.5 Pro** | Slow | Excellent | $$$ | Research, analysis, writing |
 
+<!-- section_id: "3bdc9863-3dd6-4634-b03c-b51373d8f42b" -->
 ### Routing Strategy
 
 ```python
@@ -402,8 +423,10 @@ if result_quality_low():
 
 ---
 
+<!-- section_id: "39a70096-2bd5-43d1-88dd-8dbdaa7ce428" -->
 ## Error Handling & Retry Strategy
 
+<!-- section_id: "7763afa9-1cc0-4943-865f-9a33966300cc" -->
 ### Common Errors
 
 | Error | Status Code | Handling |
@@ -414,6 +437,7 @@ if result_quality_low():
 | Bad request | 400 | Fix prompt, don't retry |
 | Safety violation | 400 | Adjust system instruction, try again |
 
+<!-- section_id: "8f8f002c-8238-4e53-8118-c045233a667d" -->
 ### Retry Logic
 
 ```python
@@ -446,8 +470,10 @@ def call_gemini_with_retry(
 
 ---
 
+<!-- section_id: "5cca54c3-411d-421f-9108-4a390be4b596" -->
 ## Cost Tracking & Optimization
 
+<!-- section_id: "eb3613b7-b402-4bd4-a692-fdb8343e34d5" -->
 ### Token Accounting
 
 Every Gemini request reports:
@@ -456,6 +482,7 @@ Every Gemini request reports:
 - `cache_creation_input_tokens`: Tokens used to create cache
 - `cache_read_input_tokens`: Tokens read from cache
 
+<!-- section_id: "3b0f32b4-c3cc-4e27-8f28-44935b796375" -->
 ### Cost Calculation
 
 ```python
@@ -489,6 +516,7 @@ def calculate_cost(usage, model="gemini-2.5-flash"):
     return cost
 ```
 
+<!-- section_id: "d985853c-d518-4a1c-8d13-44dbd0061ae7" -->
 ### Optimization Strategies
 
 1. **Use Flash by default** → Upgrade to Pro only for complex tasks
@@ -498,6 +526,7 @@ def calculate_cost(usage, model="gemini-2.5-flash"):
 5. **Streaming responses** → Can stop early if answer is found (saves tokens)
 6. **Compress documents** → Only upload necessary content, not full files
 
+<!-- section_id: "e7ffd361-bd85-4dac-8de6-f847e861925b" -->
 ### Budget Enforcement
 
 ```python
@@ -522,6 +551,7 @@ class GeminiBudget:
 
 ---
 
+<!-- section_id: "57179716-2bdb-43c4-8a89-86ac3f3ef088" -->
 ## Context Composition (What's Actually Used)
 
 At any point, your request contains:
@@ -544,6 +574,7 @@ At any point, your request contains:
 
 ---
 
+<!-- section_id: "e46055c3-1add-43b3-9946-a47bdc819bb2" -->
 ## Summary: The System Works When
 
 ✅ **System instructions are clear and accurate** (model behavior depends on them)

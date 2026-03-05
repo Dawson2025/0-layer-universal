@@ -10,6 +10,7 @@ resource_name: "APPLICATION_IMPLEMENTED"
 
 ---
 
+<!-- section_id: "e614048f-247b-401a-8a98-7b82866ab08e" -->
 ## Overview
 
 Agent CLI provides **mechanisms for autonomous execution**. You provide **strategy and content**:
@@ -24,8 +25,10 @@ Agent CLI provides **mechanisms for autonomous execution**. You provide **strate
 
 ---
 
+<!-- section_id: "0263742a-676a-4286-bab6-73eb8300213a" -->
 ## 1. Task Definitions — What to Delegate
 
+<!-- section_id: "a2e598f3-3fa2-43c8-8cf0-662a1df76734" -->
 ### What You Must Create
 
 You define exactly **which tasks are safe and valuable to delegate** to agents:
@@ -43,6 +46,7 @@ You define exactly **which tasks are safe and valuable to delegate** to agents:
 - Tasks without success criteria
 - Tasks requiring business logic decisions
 
+<!-- section_id: "cb42dedc-558b-443e-8b75-ffb3eca3c06e" -->
 ### Examples of Decisions YOU Make
 
 **Task Specificity**:
@@ -55,6 +59,7 @@ You define exactly **which tasks are safe and valuable to delegate** to agents:
 - What is success? (tests passing? performance target? line count?)
 - What can agent modify vs. what's off-limits?
 
+<!-- section_id: "12dbe757-1557-408b-977e-24738b4bbce6" -->
 ### User Responsibility
 
 - **Define tasks clearly** (agent quality depends on task clarity)
@@ -63,6 +68,7 @@ You define exactly **which tasks are safe and valuable to delegate** to agents:
 - **Review results** (always validate agent work)
 - **Learn what works** (iterate on task definition)
 
+<!-- section_id: "45767ed0-94cd-4017-a4f5-e5a1db1517c7" -->
 ### Example Task Definitions
 
 ```bash
@@ -93,8 +99,10 @@ cursor agent "Add 'email' column to users table. \
 
 ---
 
+<!-- section_id: "e0c635d9-b542-447a-919b-58be284212d1" -->
 ## 2. Agent Context — What Agents Know
 
+<!-- section_id: "fb4ef530-c29f-497d-a0e6-17600f6acbbd" -->
 ### What You Must Decide
 
 **Context Sources**:
@@ -103,6 +111,7 @@ cursor agent "Add 'email' column to users table. \
 - Code context (relevant files, libraries)
 - Success criteria (how to verify completion)
 
+<!-- section_id: "75ab8ce3-e44c-4849-ab66-d34625242164" -->
 ### Strategic Decisions YOU Make
 
 **What to Include**:
@@ -116,6 +125,7 @@ cursor agent "Add 'email' column to users table. \
 - Implementation details agent can figure out
 - Unrelated project context
 
+<!-- section_id: "665c165a-bdc8-4a6b-9c63-62da9899c7e0" -->
 ### User Responsibility
 
 - **Build rich context** (agents perform better with good context)
@@ -125,8 +135,10 @@ cursor agent "Add 'email' column to users table. \
 
 ---
 
+<!-- section_id: "a11a1be5-f3e4-4ed6-94da-72b159b26a63" -->
 ## 3. Approval Policies — Human Safeguards
 
+<!-- section_id: "8f257d6d-cf7f-4cf9-b2c7-8e9f74992e69" -->
 ### What You Must Decide
 
 **Which Commands Need Approval**:
@@ -139,12 +151,14 @@ cursor agent "Add 'email' column to users table. \
 - Batch: Pre-approve certain command patterns
 - Auto-approve: Allowed commands (formatting, tests)
 
+<!-- section_id: "9c130ff6-e9b3-4864-80f5-55a2993f7332" -->
 ### User Responsibility
 
 - **Set appropriate thresholds** (balance safety vs. speed)
 - **Test approval policies** (verify they work as intended)
 - **Update as needed** (adjust based on experience)
 
+<!-- section_id: "83db494f-4449-4648-bfb5-53d863435a24" -->
 ### Example Approval Policies
 
 ```json
@@ -171,8 +185,10 @@ cursor agent "Add 'email' column to users table. \
 
 ---
 
+<!-- section_id: "3f3fb256-fe3d-4e4a-9294-6347632f6a7b" -->
 ## 4. Session Management — Organizing Work
 
+<!-- section_id: "b06cdfb5-9466-4ae5-9484-fd0f2d081c09" -->
 ### What You Must Decide
 
 **Session Boundaries**:
@@ -185,6 +201,7 @@ cursor agent "Add 'email' column to users table. \
 - What context to preserve? (which files matter)
 - How to organize old sessions? (archive, delete)
 
+<!-- section_id: "434ef6c2-823c-4172-b6ad-18dcfc1e6c5f" -->
 ### User Responsibility
 
 - **Choose boundaries** (no right answer, your preference)
@@ -193,8 +210,10 @@ cursor agent "Add 'email' column to users table. \
 
 ---
 
+<!-- section_id: "80097394-c044-4bae-95ec-e62e453420c0" -->
 ## 5. Validation Rules — Ensuring Quality
 
+<!-- section_id: "2fc98e2b-cc1b-4319-8b8e-baa7e633911b" -->
 ### What You Must Decide
 
 **What to Validate**:
@@ -209,6 +228,7 @@ cursor agent "Add 'email' column to users table. \
 - After result (feedback loop)
 - Both
 
+<!-- section_id: "412e317d-60c5-47fc-afb5-f69e3b00036b" -->
 ### User Responsibility
 
 - **Define rules** (what quality means to you)
@@ -217,8 +237,10 @@ cursor agent "Add 'email' column to users table. \
 
 ---
 
+<!-- section_id: "ea28b69e-d348-4ee3-a8f0-99d37a33188f" -->
 ## 6. MCP Server Configuration — Agent Tools
 
+<!-- section_id: "6cd21424-7e93-406b-bffd-e68c689f47e0" -->
 ### What You Must Decide
 
 **Which Servers to Enable**:
@@ -232,6 +254,7 @@ cursor agent "Add 'email' column to users table. \
 - Restrict specific tasks?
 - Enable/disable as needed?
 
+<!-- section_id: "324394bd-2427-4d9b-906d-dc83a67a2db6" -->
 ### User Responsibility
 
 - **Choose strategically** (don't load unused servers)
@@ -240,8 +263,10 @@ cursor agent "Add 'email' column to users table. \
 
 ---
 
+<!-- section_id: "d4c2310e-c126-4941-96e2-c35db925bdbf" -->
 ## 7. State Management — Across Sessions
 
+<!-- section_id: "8716a813-f8f2-4f92-8a8a-db01e32b1f6e" -->
 ### What You Must Decide
 
 **What to Persist**:
@@ -255,6 +280,7 @@ cursor agent "Add 'email' column to users table. \
 - Database (scalable)
 - Git commits (version controlled)
 
+<!-- section_id: "9f2aa4b9-5622-475e-b39b-a445c80b4b7b" -->
 ### User Responsibility
 
 - **Design schema** (what fields to track)
@@ -263,6 +289,7 @@ cursor agent "Add 'email' column to users table. \
 
 ---
 
+<!-- section_id: "f18ca161-3e02-4261-838a-34a09a234391" -->
 ## Summary: Application-Implemented = Strategy & Content
 
 | Aspect | Agent CLI Does | You Must Provide |
@@ -277,6 +304,7 @@ cursor agent "Add 'email' column to users table. \
 
 ---
 
+<!-- section_id: "ff852e22-fe36-48c3-860f-077f1a07be44" -->
 ## Key Principle
 
 **Agent CLI provides autonomy. You provide safety rails and good task definitions.**

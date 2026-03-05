@@ -6,6 +6,7 @@ resource_name: "README"
 ---
 # Data-Based Avenues (09-13) — Optional
 
+<!-- section_id: "d7d2c4af-3ba3-4b44-9261-be21541015ed" -->
 ## Overview
 
 The data-based avenues (09-13) are **optional, derived structures** that enhance the file-based avenues with structured data, semantic search, and temporal tracking.
@@ -16,6 +17,7 @@ The data-based avenues (09-13) are **optional, derived structures** that enhance
 - **Regenerable** — can be recreated from source files
 - **Specialized** — for semantic search, relational queries, and optimization
 
+<!-- section_id: "a04a9b16-6740-4ae2-8a0f-55f77cd2972f" -->
 ## Ordering Principle: Most Detailed → Optimization
 
 Data-based avenues are ordered from most comprehensive to most specialized:
@@ -32,8 +34,10 @@ Data-based avenues are ordered from most comprehensive to most specialized:
 12 Temporal Index
 ```
 
+<!-- section_id: "6f50806c-3e82-41f0-85d0-4847aa095787" -->
 ## The Five Data-Based Avenues
 
+<!-- section_id: "ed3e41c8-b07b-497e-9b1f-f2aae83c5398" -->
 ### Avenue 09: Knowledge Graph — Most Detailed
 
 **Format**: JSON graph structure with typed edges
@@ -61,6 +65,7 @@ Data-based avenues are ordered from most comprehensive to most specialized:
 - "What concepts relate to memory?"
 - "What are the dependencies of stage_01?"
 
+<!-- section_id: "5de2445c-3da8-4a88-abf5-6e7614831ad6" -->
 ### Avenue 10: Relational Tables (SQL) — Structured Data
 
 **Format**: SQL schema with tables, columns, relationships
@@ -300,6 +305,7 @@ sqlite3 "$DB_FILE" \
 - Queryable via SQLite, PostgreSQL, or any SQL database
 - Results can feed into dashboards or reports
 
+<!-- section_id: "4e38be71-f321-4493-9344-92391202e85d" -->
 ### Avenue 13: SHIMI Structures — Optimization Primitives
 
 **Format**: JSON optimization primitives per node
@@ -332,6 +338,7 @@ sqlite3 "$DB_FILE" \
 - "When should we refresh this node's cache?"
 - "What's the priority level of this feature?"
 
+<!-- section_id: "0d31c096-29e2-47a0-8ed4-a0ca1dcca672" -->
 ### Avenue 11: Vector Embeddings — Semantic Similarity
 
 **Format**: Binary embeddings (NPY, H5, ONNX)
@@ -357,6 +364,7 @@ Embedding: [-0.45, 0.78, -0.23, ..., 0.55]  (very different)
 - "Find related entities based on semantic meaning"
 - "RAG: retrieve most similar context for this task"
 
+<!-- section_id: "959f6891-0240-42cd-88f0-65bc1c78ef5b" -->
 ### Avenue 12: Temporal Index — Versioning All Above
 
 **Format**: JSON timeline with versions of 09-13
@@ -391,6 +399,7 @@ Embedding: [-0.45, 0.78, -0.23, ..., 0.55]  (very different)
 - "Restore to previous knowledge graph version"
 - "Compare old vs. new SHIMI configurations"
 
+<!-- section_id: "6cc9a446-1212-492b-a2a0-2919b60e73a6" -->
 ## Relationship to File-Based Avenues
 
 Data-based avenues are **generated FROM and augment** file-based avenues:
@@ -409,6 +418,7 @@ Example: `03_auto_memory/` and `05_skills/` files are parsed to generate:
 - **Avenue 11** (Vector Embeddings): Semantic representations
 - **Avenue 12** (Temporal Index): Version history
 
+<!-- section_id: "97db3b83-5c34-4993-9ce6-d42b5670f6fa" -->
 ## When to Use Data-Based Avenues
 
 | Question | Avenue | Method |
@@ -419,6 +429,7 @@ Example: `03_auto_memory/` and `05_skills/` files are parsed to generate:
 | What's semantically similar? | 11 Vector Embeddings | Cosine similarity |
 | How did X change over time? | 12 Temporal Index | Version comparison |
 
+<!-- section_id: "ca6a12f3-7576-437b-a5ff-19ad00c37d7d" -->
 ## Generation and Regeneration
 
 Data-based avenues are **automatically generated** from file-based sources and can be **regenerated** if stale:
@@ -433,10 +444,12 @@ Regenerate data-based avenues (09-13)
 
 If a data-based avenue becomes outdated, simply regenerate from current file-based content.
 
+<!-- section_id: "4cca2879-27b0-491a-b98f-a4849ee91c0a" -->
 ## Avenue 10 Implementation: SQLite Schema & Data
 
 Below is a complete **Avenue 10 (Relational Tables)** implementation — all avenue rankings stored as queryable SQL schema with data embedded in markdown.
 
+<!-- section_id: "2604e110-c5cf-4560-b214-d624d59e0351" -->
 ### Schema
 
 ```sql
@@ -471,6 +484,7 @@ CREATE TABLE rankings (
 );
 ```
 
+<!-- section_id: "adbf9813-3a2a-46ea-8787-35c6f678bea3" -->
 ### Data: Avenues
 
 | ID | Avenue # | Name | Format | Purpose | Status |
@@ -480,6 +494,7 @@ CREATE TABLE rankings (
 | 3 | 11 | Vector Embeddings | NPY/H5 binary | Semantic similarity (RAG) | mature |
 | 4 | 13 | SHIMI Structures | JSON primitives | Hierarchical agent memory | advanced_research |
 
+<!-- section_id: "879ab8c3-ac06-4341-a1f8-6254c3db8f31" -->
 ### Data: Capabilities (8 Dimensions)
 
 | ID | Name | Description | Category |
@@ -493,6 +508,7 @@ CREATE TABLE rankings (
 | 7 | Practical Adoption | Industry usage and tooling | adoption |
 | 8 | Maturity Level | Research completeness and stability | maturity |
 
+<!-- section_id: "11f19112-d9fb-48d6-a928-edc91cfd792d" -->
 ### Data: Rankings (One-Hot Encoded: 1-4)
 
 #### Reasoning Capabilities
@@ -559,6 +575,7 @@ CREATE TABLE rankings (
 | Vector Embeddings | **3** | Newer but widely adopted (2020s) |
 | SHIMI Structures | **4** | Active research (ArXiv 2504.06135) |
 
+<!-- section_id: "0096e078-381c-49f9-a619-4b4ec555330f" -->
 ### Example Queries
 
 If you export this markdown to SQLite using the schema above:
@@ -597,6 +614,7 @@ JOIN avenues a ON r.avenue_id = a.id
 GROUP BY c.name;
 ```
 
+<!-- section_id: "f91aca16-0c67-4112-9780-eafe053fa974" -->
 ### Implementation Note
 
 This data is **queryable and executable** — you can:
@@ -612,6 +630,7 @@ This data is **queryable and executable** — you can:
 
 This demonstrates **Avenue 10 (Relational Tables)** in action: SQL schema documented in markdown, queryable, and integrated with the full context chain.
 
+<!-- section_id: "69a04d4d-6673-42b1-9d1e-409b2ae1ca8a" -->
 ## Hierarchy of Comprehensiveness
 
 Complete comprehensiveness hierarchy across all avenues:
@@ -634,6 +653,7 @@ Data-Based (Derived)
 └── 12 Temporal: Version history (wraps all)
 ```
 
+<!-- section_id: "621bdffb-ae88-4591-8c68-15333dd6faf6" -->
 ## Summary
 
 Data-based avenues provide **semantic and optimization capabilities** to the file-based avenues, but are entirely **optional and regenerable**. Use them when:

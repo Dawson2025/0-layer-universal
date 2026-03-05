@@ -9,6 +9,7 @@ resource_name: "US-02_instance_has_own_stages"
 **I want** each instance to have its own stage progression,
 **So that** per-user work (assessments, learning paths, personalized plans) follows the same structured stage lifecycle as system-level work.
 
+<!-- section_id: "b00ccba5-f4bd-45d9-8e1a-b0ac053dac4e" -->
 ## Acceptance Criteria
 
 **Scenario 1: Instance has a stage lifecycle**

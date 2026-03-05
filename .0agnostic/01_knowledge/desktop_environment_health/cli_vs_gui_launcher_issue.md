@@ -12,6 +12,7 @@ resource_name: "cli_vs_gui_launcher_issue"
 
 ---
 
+<!-- section_id: "74db5a55-80a2-46d0-9112-230056a18f2a" -->
 ## The Problem
 
 Applications launch successfully via terminal but fail when clicking GUI icons:
@@ -35,8 +36,10 @@ gedit &              # Opens Text Editor
 
 ---
 
+<!-- section_id: "e3cd1db2-186c-465a-8cde-0a46fb11a940" -->
 ## Why This Happens
 
+<!-- section_id: "79e12522-a898-4520-afc2-bcc3ab0c1156" -->
 ### Environment Variables
 
 When you run a command in terminal, the shell sets environment variables:
@@ -52,6 +55,7 @@ When you click a GUI icon, it launches via the desktop environment's application
 - Stale session state
 - Wrong working directory
 
+<!-- section_id: "5f17bf54-9626-4920-832e-512bb2bfa989" -->
 ### D-Bus and Session State
 
 The `.desktop` file launcher relies on D-Bus to:
@@ -61,6 +65,7 @@ The `.desktop` file launcher relies on D-Bus to:
 
 If D-Bus is broken or GNOME session services are failed (like gsd-* daemons), the launcher fails silently.
 
+<!-- section_id: "3b6b9663-61f0-40be-a129-cff5e75647b2" -->
 ### Session vs Shell Environment
 
 **Shell Environment** (Terminal):
@@ -75,6 +80,7 @@ If D-Bus is broken or GNOME session services are failed (like gsd-* daemons), th
 
 ---
 
+<!-- section_id: "de323b6f-a4d7-4725-a288-2aa3f799dd11" -->
 ## Symptoms Checklist
 
 ✓ Apps work in terminal
@@ -86,6 +92,7 @@ If D-Bus is broken or GNOME session services are failed (like gsd-* daemons), th
 
 ---
 
+<!-- section_id: "3db1c147-872f-4629-99eb-f64c1222be0d" -->
 ## Root Causes (Priority Order)
 
 1. **Missing DISPLAY variable** (most common)
@@ -115,6 +122,7 @@ If D-Bus is broken or GNOME session services are failed (like gsd-* daemons), th
 
 ---
 
+<!-- section_id: "c21a374a-2d0e-4205-a8db-b98cbc0f3e71" -->
 ## Connection to Other Issues
 
 **Linked to**: Daemon persistence after restart
@@ -132,8 +140,10 @@ If D-Bus is broken or GNOME session services are failed (like gsd-* daemons), th
 
 ---
 
+<!-- section_id: "1cde2c9b-4dcd-41f4-9d64-a78c8423af17" -->
 ## Diagnostic Commands
 
+<!-- section_id: "073c44d2-1515-49a8-ac6c-9b4c7f8f89bb" -->
 ### Check what's broken
 ```bash
 # Is D-Bus running?
@@ -149,6 +159,7 @@ systemctl --user show-environment | grep -E "DISPLAY|DBUS|XAUTH"
 grep -A 10 "Exec=" ~/.local/share/applications/nautilus.desktop
 ```
 
+<!-- section_id: "af4fd449-8a1f-483f-97ac-fdbdb1792173" -->
 ### Check journal for errors
 ```bash
 journalctl --user -f &  # Start monitoring
@@ -156,6 +167,7 @@ journalctl --user -f &  # Start monitoring
 # Watch for error messages
 ```
 
+<!-- section_id: "b29fea19-d18e-4648-a5f7-f2e88cea3366" -->
 ### Verify terminal environment
 ```bash
 # This should work:
@@ -169,6 +181,7 @@ systemctl --user show-environment | grep DISPLAY
 
 ---
 
+<!-- section_id: "1270b020-10e0-46a6-a3c1-f63042624f73" -->
 ## When This Occurs
 
 **After system restart**: Most common
@@ -192,6 +205,7 @@ systemctl --user show-environment | grep DISPLAY
 
 ---
 
+<!-- section_id: "ea581fee-aa3a-47bf-ba6c-4c32e82cdd01" -->
 ## Impact
 
 **High severity because**:
@@ -207,6 +221,7 @@ systemctl --user show-environment | grep DISPLAY
 
 ---
 
+<!-- section_id: "4d4b6fd3-b522-446a-bb52-7b54e3807f9b" -->
 ## Solution Approach
 
 See `/protocols/cli_vs_gui_launcher_diagnosis_protocol.md` for detailed recovery steps.
@@ -221,6 +236,7 @@ See `/protocols/cli_vs_gui_launcher_diagnosis_protocol.md` for detailed recovery
 
 ---
 
+<!-- section_id: "c604e68e-1d84-4669-8bcf-3525a83e09d6" -->
 ## References
 
 - GNOME Session Management: `.0agnostic/01_knowledge/gnome_desktop/docs/gnome_architecture.md`

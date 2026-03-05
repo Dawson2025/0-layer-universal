@@ -10,6 +10,7 @@ resource_name: "APPLICATION_IMPLEMENTED"
 
 ---
 
+<!-- section_id: "24fdd0a1-95d9-4ac2-95dd-ba482f8da969" -->
 ## Overview
 
 Cursor provides the **mechanisms**. Users/developers must provide the **strategy and content**:
@@ -24,12 +25,15 @@ Cursor provides the **mechanisms**. Users/developers must provide the **strategy
 
 ---
 
+<!-- section_id: "01d2aed2-cb5d-4543-bdf2-a4eb3fbeeb98" -->
 ## 1. .cursor/rules Files — Content & Strategy
 
+<!-- section_id: "2b48d9f8-f590-4490-92b7-e03856480ba9" -->
 ### What You Must Create
 
 Cursor's rules are entirely user-defined. Cursor just **loads and applies** them; you decide **what goes in them**.
 
+<!-- section_id: "1adc683a-4442-49c7-a5d1-79985b2916f6" -->
 ### Examples of Decisions YOU Make
 
 **Global Rules** (`~/.cursor/rules/`):
@@ -49,6 +53,7 @@ Cursor's rules are entirely user-defined. Cursor just **loads and applies** them
 - What should the AI know about dependencies? (external libraries, internal modules)
 - What patterns should be followed here? (component structure, hooks usage)
 
+<!-- section_id: "46a31ff5-27ce-433e-babf-74b698d11b4a" -->
 ### User Responsibility
 
 - **Write** rule files from scratch
@@ -57,6 +62,7 @@ Cursor's rules are entirely user-defined. Cursor just **loads and applies** them
 - **Test** rules work as intended (check AI responses)
 - **Organize** rules hierarchically (global → project → component)
 
+<!-- section_id: "da6dfd4e-0534-4986-8c74-f1cf085e731c" -->
 ### Example Rule Structure
 
 ```yaml
@@ -98,8 +104,10 @@ description: "JavaScript/TypeScript best practices"
 
 ---
 
+<!-- section_id: "fc7fa3cc-c42c-4d13-969d-4f4e4b1aa942" -->
 ## 2. Memory Bank Organization — What to Remember
 
+<!-- section_id: "78dce609-ec55-4017-801f-b0fe7619e285" -->
 ### What You Must Decide
 
 Cursor provides Memory Bank storage; **you** decide **what to store and when**:
@@ -111,6 +119,7 @@ Cursor provides Memory Bank storage; **you** decide **what to store and when**:
 - **Bug trackers** — Known issues and their status
 - **Reference guides** — Frequently needed information
 
+<!-- section_id: "19a57693-71cf-4d31-a6cf-de5c40b276e1" -->
 ### Strategic Decisions YOU Make
 
 **What to Remember**:
@@ -128,6 +137,7 @@ Cursor provides Memory Bank storage; **you** decide **what to store and when**:
 - When are memories stale? (after X days)
 - Should memories be archived? (move old ones elsewhere)
 
+<!-- section_id: "bbfbcba1-b5ad-4ef1-a699-c3799473e3c1" -->
 ### User Responsibility
 
 - **Create** useful memories (not every conversation)
@@ -136,6 +146,7 @@ Cursor provides Memory Bank storage; **you** decide **what to store and when**:
 - **Review** memories periodically (delete outdated ones)
 - **Link** memories when they reference each other
 
+<!-- section_id: "f672ef02-1c82-475e-b9c7-b105b8b25f3a" -->
 ### Example Memory Structure
 
 ```markdown
@@ -170,8 +181,10 @@ Cursor provides Memory Bank storage; **you** decide **what to store and when**:
 
 ---
 
+<!-- section_id: "51b0ee50-cffd-4d22-bc21-f6aa19cc9346" -->
 ## 3. MCP Server Configuration — Which Tools to Enable
 
+<!-- section_id: "736538a8-3cf8-4e6c-a053-cd017a3367fc" -->
 ### What You Must Decide
 
 Cursor supports MCP servers; **you** decide **which to configure**:
@@ -182,6 +195,7 @@ Cursor supports MCP servers; **you** decide **which to configure**:
 - Tavily Search (web search)
 - Custom servers (your own APIs)
 
+<!-- section_id: "f8c6716d-a014-4df1-8921-c7a5d511dc48" -->
 ### Strategic Decisions YOU Make
 
 **Which Servers to Use**:
@@ -195,6 +209,7 @@ Cursor supports MCP servers; **you** decide **which to configure**:
 - How to store secrets securely? (env vars, credential manager)
 - Per-project or global? (share across projects or specific?)
 
+<!-- section_id: "b738e31e-d6a7-493f-815e-cc3d9a8fc384" -->
 ### User Responsibility
 
 - **Research** which MCP servers exist (not part of Cursor)
@@ -203,6 +218,7 @@ Cursor supports MCP servers; **you** decide **which to configure**:
 - **Test** server access (verify they work)
 - **Enable/disable** servers per project (avoid unnecessary overhead)
 
+<!-- section_id: "b57f0ace-ca2e-4c1b-9abf-1d0c4648db6f" -->
 ### Example MCP Configuration
 
 ```json
@@ -241,8 +257,10 @@ Cursor supports MCP servers; **you** decide **which to configure**:
 
 ---
 
+<!-- section_id: "77df8b7e-9a17-4686-8092-66a8fa6cbc66" -->
 ## 4. Hooks Configuration — Automation Triggers
 
+<!-- section_id: "668677af-da0e-490b-b8ae-aa1e859c2e89" -->
 ### What You Must Decide
 
 Hooks automate actions on file events; **you** decide **which hooks to set up**:
@@ -254,6 +272,7 @@ Hooks automate actions on file events; **you** decide **which hooks to set up**:
 - Generate documentation
 - Update dependencies
 
+<!-- section_id: "7904fd36-d060-40e0-8ce3-0f0f76de70ff" -->
 ### Strategic Decisions YOU Make
 
 **Which Hooks to Use**:
@@ -267,6 +286,7 @@ Hooks automate actions on file events; **you** decide **which hooks to set up**:
 - Run synchronously or asynchronously?
 - Block the save or run in background?
 
+<!-- section_id: "81188d7e-123c-47bd-acfc-1f2c564bb47f" -->
 ### User Responsibility
 
 - **Define** which hooks matter for your workflow
@@ -275,6 +295,7 @@ Hooks automate actions on file events; **you** decide **which hooks to set up**:
 - **Balance** automation vs. control (too many hooks = slow IDE)
 - **Document** why each hook exists
 
+<!-- section_id: "44bd5186-6c44-492d-817b-1cac1f33aa69" -->
 ### Example Hook Configuration
 
 ```json
@@ -316,8 +337,10 @@ Hooks automate actions on file events; **you** decide **which hooks to set up**:
 
 ---
 
+<!-- section_id: "21411a81-f590-4584-832d-73b58adae756" -->
 ## 5. Semantic Search Strategy — When/How to Use
 
+<!-- section_id: "6a8b7cfb-5496-43f3-888e-d83f8d652ffe" -->
 ### What You Must Decide
 
 Cursor provides semantic search; **you** decide **when to use it**:
@@ -328,6 +351,7 @@ Cursor provides semantic search; **you** decide **when to use it**:
 - Locating deprecated patterns for migration
 - Understanding code relationships without knowing exact location
 
+<!-- section_id: "bc1454fa-db46-4771-b669-a5ca3d59f78b" -->
 ### Strategic Decisions YOU Make
 
 **Search Strategy**:
@@ -339,6 +363,7 @@ Cursor provides semantic search; **you** decide **when to use it**:
 - Should semantic search be the default? (or use Ctrl+Shift+F for text search)
 - When to switch from text search to semantic?
 
+<!-- section_id: "ca65247b-c4b0-4777-be15-a1660f666ac8" -->
 ### User Responsibility
 
 - **Learn** semantic search syntax and best practices
@@ -346,6 +371,7 @@ Cursor provides semantic search; **you** decide **when to use it**:
 - **Balance** semantic vs. text search for different tasks
 - **Understand** when semantic search might fail (edge cases)
 
+<!-- section_id: "964af637-554c-46cf-9e8a-5a94439ddef2" -->
 ### Example Semantic Search Queries
 
 ```
@@ -363,8 +389,10 @@ Cursor provides semantic search; **you** decide **when to use it**:
 
 ---
 
+<!-- section_id: "328958f7-fc9b-4e45-acb4-712b5b77b9f4" -->
 ## 6. Agent CLI Task Definition — What to Delegate
 
+<!-- section_id: "711a8843-a516-4f6b-8329-ba44e3277e44" -->
 ### What You Must Decide
 
 Cursor Agent CLI can execute tasks autonomously; **you** decide **what tasks to delegate**:
@@ -382,6 +410,7 @@ Cursor Agent CLI can execute tasks autonomously; **you** decide **what tasks to 
 - Tasks with high ambiguity
 - High-risk changes (database schema changes)
 
+<!-- section_id: "d0112ab7-9d89-4909-b171-e65eaf9a9e17" -->
 ### Strategic Decisions YOU Make
 
 **Task Selection**:
@@ -394,6 +423,7 @@ Cursor Agent CLI can execute tasks autonomously; **you** decide **what tasks to 
 - Should agents ask for confirmation? (before/after)
 - What shell commands are allowed?
 
+<!-- section_id: "a07a39a5-ff21-4bbb-9f13-b581f35f6eee" -->
 ### User Responsibility
 
 - **Define** tasks clearly and specifically
@@ -402,6 +432,7 @@ Cursor Agent CLI can execute tasks autonomously; **you** decide **what tasks to 
 - **Learn** what makes a good agent task (specific, bounded)
 - **Avoid** vague or high-risk delegations
 
+<!-- section_id: "ff012d8e-01f5-4e2f-8783-200c4964d408" -->
 ### Example Agent Tasks
 
 ```bash
@@ -429,8 +460,10 @@ cursor agent "Update database schema: add 'email' column to users table. \
 
 ---
 
+<!-- section_id: "192fe6a3-a1f0-48c1-8cc1-14a5a329bfc0" -->
 ## 7. IDE Workflow — How to Organize Work
 
+<!-- section_id: "4e664172-2a1b-4234-86df-5c04b583d26e" -->
 ### What You Must Decide
 
 How you work in Cursor depends on your preferences:
@@ -441,6 +474,7 @@ How you work in Cursor depends on your preferences:
 - When to use Memory Bank? (per-session or per-task)
 - How to leverage AI assistant? (request code, review, refactor, explain)
 
+<!-- section_id: "b7631720-f1cb-4566-af5e-b0f1351110d4" -->
 ### Strategic Decisions YOU Make
 
 **Chat vs. Inline**:
@@ -458,6 +492,7 @@ How you work in Cursor depends on your preferences:
 - Ask for explanations or just accept code?
 - Use AI for code review or just generation?
 
+<!-- section_id: "5cda188b-e107-4812-9e59-c7f5cffb6983" -->
 ### User Responsibility
 
 - **Develop** a workflow that works for your style
@@ -468,6 +503,7 @@ How you work in Cursor depends on your preferences:
 
 ---
 
+<!-- section_id: "c6e241b9-c4c7-470e-a5d3-af5b75e8b85e" -->
 ## Summary: Application-Implemented = Strategy & Content
 
 | Aspect | Cursor Does | You Must Provide |
@@ -482,6 +518,7 @@ How you work in Cursor depends on your preferences:
 
 ---
 
+<!-- section_id: "bcde4c2a-2b17-48a5-9450-f25aa27fc97b" -->
 ## Key Principle
 
 **Cursor provides the mechanisms. You provide the strategy and content.**

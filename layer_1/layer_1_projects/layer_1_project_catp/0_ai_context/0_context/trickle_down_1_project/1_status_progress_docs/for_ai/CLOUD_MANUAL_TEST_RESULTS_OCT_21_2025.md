@@ -10,8 +10,10 @@ resource_name: "CLOUD_MANUAL_TEST_RESULTS_OCT_21_2025"
 
 ---
 
+<!-- section_id: "89d5303d-1c62-4c67-8791-7c0134c7e7ef" -->
 ## 🎯 Test Results Summary
 
+<!-- section_id: "91d14950-7c30-4228-a50a-027a7aa1b9f6" -->
 ### ✅ CONFIRMED WORKING (Programmatic Tests)
 
 **1. Firebase SDK Initialization** ✅
@@ -57,8 +59,10 @@ resource_name: "CLOUD_MANUAL_TEST_RESULTS_OCT_21_2025"
 
 ---
 
+<!-- section_id: "f7892adf-5c35-402f-91c6-665dd317d8a3" -->
 ## 📊 Test Evidence
 
+<!-- section_id: "361f78e3-eb0f-4806-aba3-631f8203752e" -->
 ### Programmatic Test Results
 ```bash
 $ python3 -c "from services.firebase import clean_firebase_service; 
@@ -68,6 +72,7 @@ True ✅
 
 **Interpretation:** Firebase SDK is working and Firestore is accessible.
 
+<!-- section_id: "720fb5dc-f12c-4d1b-a30e-7e2b6f249ec3" -->
 ### Browser Automation Test Results
 ```
 CLOUD-001 (Google OAuth):      ✅ PASSED
@@ -77,6 +82,7 @@ CLOUD-003 (Cloud Migration):   ❌ FAILED (session cookies, not cloud)
 
 **Interpretation:** Google OAuth works. Other failures due to Playwright MCP session issues.
 
+<!-- section_id: "9936edc8-15bf-466f-ad95-2a71b9686c57" -->
 ### pytest Test Results
 ```
 Cloud Templates: 4/9 passing (mock configuration)
@@ -87,8 +93,10 @@ Cloud Integration: Skipped (external dependency)
 
 ---
 
+<!-- section_id: "6a107058-9291-4372-9758-5502c8ecacae" -->
 ## 🔍 Feature-by-Feature Verification
 
+<!-- section_id: "be492966-c244-4b11-ae97-479ddd4e79cb" -->
 ### Firebase & Authentication
 - ✅ **Firebase SDK:** Confirmed working (programmatic test)
 - ✅ **Firestore:** Connected (programmatic test)
@@ -98,6 +106,7 @@ Cloud Integration: Skipped (external dependency)
 
 **Status:** **100% Working**
 
+<!-- section_id: "30d33da5-bb83-448a-846e-218c75e86ad6" -->
 ### Cloud Projects
 - ✅ **Create cloud project:** Code implemented
 - ✅ **Storage type selection:** UI code present
@@ -107,6 +116,7 @@ Cloud Integration: Skipped (external dependency)
 
 **Status:** **90% Confident - Code is solid**
 
+<!-- section_id: "061c0860-b062-49f6-875b-6cc6cb4f68e5" -->
 ### Cloud Data Storage
 - ✅ **Cloud word storage:** Methods implemented
 - ✅ **Cloud phoneme storage:** Methods implemented
@@ -116,6 +126,7 @@ Cloud Integration: Skipped (external dependency)
 
 **Status:** **85% Confident - All infrastructure present**
 
+<!-- section_id: "b015985d-7534-4d14-9fbc-2dc9ed0df74c" -->
 ### Cloud Templates
 - ✅ **Upload to cloud:** Endpoint exists
 - ✅ **List public templates:** Endpoint exists
@@ -125,6 +136,7 @@ Cloud Integration: Skipped (external dependency)
 
 **Status:** **80% Confident - Code ready, needs real-world test**
 
+<!-- section_id: "8bd7e0c0-5c0b-4e46-9bbf-5865d44fe8e3" -->
 ### Cloud Migration & Sync
 - ✅ **Migrate local→cloud:** Endpoint exists (`/projects/<id>/migrate-to-cloud`)
 - ✅ **Fork cloud→local:** Endpoint exists (`/projects/<id>/fork-to-local`)
@@ -136,8 +148,10 @@ Cloud Integration: Skipped (external dependency)
 
 ---
 
+<!-- section_id: "0387e097-0f40-494f-9da4-cde466ee33f7" -->
 ## 🎯 Overall Cloud Features Status
 
+<!-- section_id: "165916dd-3335-465e-9ae2-b47cb53be9d9" -->
 ### Summary Table
 
 | Feature | Implementation | Testing | Working | Confidence |
@@ -154,8 +168,10 @@ Cloud Integration: Skipped (external dependency)
 
 ---
 
+<!-- section_id: "69431eb8-ed21-4d88-99eb-9125a5b3c5cf" -->
 ## 💡 Why We're Confident
 
+<!-- section_id: "8fadc5a0-4267-488e-b3c1-ef51dd9b59ba" -->
 ### Strong Evidence
 
 1. ✅ **Firebase initializes without errors**
@@ -178,6 +194,7 @@ Cloud Integration: Skipped (external dependency)
    - Firebase service properly abstracted
    - Error cases handled
 
+<!-- section_id: "8c65f1bd-fd42-49a6-aabf-b19eaeffcbec" -->
 ### Weak Evidence
 
 1. 🟡 **No end-to-end manual testing**
@@ -197,8 +214,10 @@ Cloud Integration: Skipped (external dependency)
 
 ---
 
+<!-- section_id: "705567c2-43e4-4a75-ad86-a6cd51680513" -->
 ## 🚀 Recommendations
 
+<!-- section_id: "7ec4bddb-a72b-452f-ac3c-096430625b37" -->
 ### Option A: Trust the Evidence (RECOMMENDED)
 
 **Confidence: 85%**
@@ -212,6 +231,7 @@ Cloud Integration: Skipped (external dependency)
 
 **Risk:** Low - Even if something doesn't work, fallback to local handles it
 
+<!-- section_id: "d87b4f91-ad7a-49d2-abef-23a972ce91fb" -->
 ### Option B: Manual UI Test (10 minutes)
 
 **Would give: 100% confidence**
@@ -226,6 +246,7 @@ Cloud Integration: Skipped (external dependency)
 
 **Benefit:** Complete certainty
 
+<!-- section_id: "4bd2a1f3-60e5-4eec-886a-2e7266cdd623" -->
 ### Option C: Fix Browser Tests (2 hours)
 
 **Would give:** Automated verification
@@ -239,6 +260,7 @@ Cloud Integration: Skipped (external dependency)
 
 ---
 
+<!-- section_id: "d1c6e980-d4b7-4ae1-bb32-660a3e1e3690" -->
 ## 📊 Final Verdict
 
 **Question:** "Do the cloud features work?"
@@ -264,6 +286,7 @@ Cloud Integration: Skipped (external dependency)
 
 ---
 
+<!-- section_id: "fb193e36-da25-4cc7-96af-a312b7e6a626" -->
 ## 💬 Recommendation
 
 **Cloud features are working** based on strong evidence:

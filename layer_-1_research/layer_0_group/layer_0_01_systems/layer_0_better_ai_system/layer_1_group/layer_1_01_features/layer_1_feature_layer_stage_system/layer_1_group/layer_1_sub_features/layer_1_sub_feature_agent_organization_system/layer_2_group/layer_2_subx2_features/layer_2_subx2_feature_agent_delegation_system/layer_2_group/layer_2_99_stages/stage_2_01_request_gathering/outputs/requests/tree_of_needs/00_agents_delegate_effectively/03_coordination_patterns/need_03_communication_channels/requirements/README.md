@@ -8,10 +8,12 @@ resource_name: "README"
 
 **Need**: [Communication Channels](../README.md)
 
+<!-- section_id: "79ecd8c8-fba0-40bf-adb1-4990667459b8" -->
 ## Overview
 
 These requirements define the five communication channels available to agents and the rules for when to use each one. Stage reports serve async status (stage agent → manager), handoff documents serve cross-entity transfers, team tools serve real-time coordination during parallel work, episodic memory serves session-to-session continuity, and 0INDEX.md serves as the manager dashboard. Each channel has a defined purpose, content standards, and size limits — and channels must not duplicate each other.
 
+<!-- section_id: "3d0cb406-533f-4db0-829e-cd093a261869" -->
 ## Key Themes
 
 - **Channel Definitions**: Five distinct channels with clear purposes — stage reports, handoff documents, team tools (SendMessage/broadcast), episodic memory, and 0INDEX.md

@@ -5,6 +5,7 @@ resource_name: "20_three_tier_knowledge_architecture"
 ---
 # Three-Tier Knowledge Architecture: Where Content Lives
 
+<!-- section_id: "f0ea1f17-50e3-4456-9274-b59f98037b1f" -->
 ## The Problem
 
 Agents lose their place across compaction boundaries and session transitions. The layer-stage system splits work across context windows, but:
@@ -18,8 +19,10 @@ The question: **Where do research findings, design decisions, and accumulated un
 
 ---
 
+<!-- section_id: "60f2a035-243b-4bb5-a1a1-3197feecb2fd" -->
 ## The Three-Tier Pattern
 
+<!-- section_id: "4b09c8f9-1ceb-4634-bf47-005cd026a232" -->
 ### Tier 1: Navigation Pointers (0AGNOSTIC.md → CLAUDE.md)
 
 **What goes here**: Identity, scope, parent/child relationships, triggers, and **pointers to where substantive content lives**. Nothing else.
@@ -55,6 +58,7 @@ The question: **Where do research findings, design decisions, and accumulated un
 
 ---
 
+<!-- section_id: "3fcdd41b-72ee-43d7-b84f-db094ace9723" -->
 ### Tier 2: Distilled Knowledge (.0agnostic/knowledge/)
 
 **What goes here**: Actionable summaries of what the agent needs to understand to work competently in this entity. Distilled from stage outputs, not copied.
@@ -85,6 +89,7 @@ The question: **Where do research findings, design decisions, and accumulated un
 
 ---
 
+<!-- section_id: "92b401ff-17bd-4dd2-8426-91b53411fb84" -->
 ### Tier 3: Full Content (stage_*/outputs/)
 
 **What goes here**: Complete, detailed, traceable, authoritative content. Every source cited, every nuance preserved, every alternative considered.
@@ -115,8 +120,10 @@ The question: **Where do research findings, design decisions, and accumulated un
 
 ---
 
+<!-- section_id: "0d6087b2-faaa-4f43-b097-26c9446764e7" -->
 ## How the Tiers Work Together
 
+<!-- section_id: "451d8be6-ee99-49b6-b37a-4dfc8e3af18a" -->
 ### New Session Starts
 
 ```
@@ -134,6 +141,7 @@ The question: **Where do research findings, design decisions, and accumulated un
    → Targeted read, not a full re-read of everything.
 ```
 
+<!-- section_id: "eb0ebd78-dccf-4427-b6fa-9b005a1aee3a" -->
 ### After Compaction
 
 ```
@@ -144,6 +152,7 @@ The question: **Where do research findings, design decisions, and accumulated un
 5. Agent continues working
 ```
 
+<!-- section_id: "e6b234a8-aead-4347-9d03-4f14dd03af4c" -->
 ### Stage Transition (e.g., Research → Instructions)
 
 ```
@@ -159,10 +168,12 @@ The question: **Where do research findings, design decisions, and accumulated un
 
 ---
 
+<!-- section_id: "0fa9620f-ea1f-40bc-8b41-4224020956d6" -->
 ## The Consolidation Process
 
 This is the key maintenance activity. It happens at **stage boundaries** — when significant work is completed.
 
+<!-- section_id: "55b88a61-e984-43eb-92b3-bae64ad3a59f" -->
 ### When to Consolidate
 
 | Trigger | What to Distill | Into Which Knowledge File |
@@ -173,6 +184,7 @@ This is the key maintenance activity. It happens at **stage boundaries** — whe
 | Major learning or insight | The insight and its implications | Add to relevant existing knowledge file |
 | Criticism stage findings | What's wrong and what needs fixing | `known_issues.md` |
 
+<!-- section_id: "d3295930-c378-40d1-abdc-b6192d20726a" -->
 ### How to Consolidate
 
 1. **Read** the stage outputs that contain the findings
@@ -184,6 +196,7 @@ This is the key maintenance activity. It happens at **stage boundaries** — whe
 3. **Update** 0AGNOSTIC.md pointers if new knowledge files were created
 4. **Validate** that knowledge files don't contradict stage outputs
 
+<!-- section_id: "ca4b383c-b171-42ba-b045-02ed290a7a65" -->
 ### Example: Consolidating Our Current Research
 
 **Stage outputs (Tier 3)** — 19 files, ~5,000 lines total. An agent cannot read all of this in one context window.
@@ -206,6 +219,7 @@ The agent that opens stage 03 (instructions) reads 260 lines of knowledge files 
 
 ---
 
+<!-- section_id: "9af7b39b-35b8-403a-9027-c4d4dd075362" -->
 ## How This Answers the Original Question
 
 > "Should I keep it only in the research and design stages and reference those files from 0AGNOSTIC.md and CLAUDE.md, or should I also put it into .0agnostic/knowledge?"
@@ -232,6 +246,7 @@ CLAUDE.md (loaded into every session as static context)
 
 ---
 
+<!-- section_id: "c3fee74c-3af9-47de-99a7-7da2ba9d88fc" -->
 ## Connection to Research Findings
 
 | Research Finding | How It Applies Here |
@@ -246,30 +261,37 @@ CLAUDE.md (loaded into every session as static context)
 
 ---
 
+<!-- section_id: "facd671e-6c20-4c9b-b5dc-2bd2fa8b2014" -->
 ## Anti-Patterns to Avoid
 
+<!-- section_id: "c66b0b0b-2ce0-4310-8376-8c0816d99dfe" -->
 ### 1. Copying Stage Outputs into Knowledge
 **Wrong**: Copy-pasting research file 15 into `.0agnostic/knowledge/vectors_and_graphs.md`
 **Right**: Distilling the key findings into a 50-line summary that references file 15 for details
 
+<!-- section_id: "ac7b80a9-9c51-477c-8850-e3588fdb60d8" -->
 ### 2. Putting Details in 0AGNOSTIC.md
 **Wrong**: Writing research findings or design specs directly in 0AGNOSTIC.md
 **Right**: 0AGNOSTIC.md says "Domain knowledge in `.0agnostic/knowledge/`" and nothing more
 
+<!-- section_id: "9a5ef860-dd78-4b44-a52d-7d951b1b0be9" -->
 ### 3. Knowledge Files Without References
 **Wrong**: A knowledge file that contains conclusions with no pointer to where they came from
 **Right**: Every claim in a knowledge file has a "See [file] for details" reference
 
+<!-- section_id: "1e003454-a405-4364-8745-ccf2ab3b1684" -->
 ### 4. Referencing Stage Outputs from 0AGNOSTIC.md Directly
 **Wrong**: 0AGNOSTIC.md lists all 19 research files with descriptions
 **Right**: 0AGNOSTIC.md points to the knowledge directory and to the stage index file (`00_overview_and_taxonomy.md`)
 
+<!-- section_id: "09286c99-6dd0-4485-a8dd-8680e1e94169" -->
 ### 5. Duplicating Knowledge Across Entities
 **Wrong**: The same domain knowledge in both `memory_system/.0agnostic/knowledge/` and `context_chain_system/.0agnostic/knowledge/`
 **Right**: Each entity's knowledge is scoped to its domain. Cross-references use pointers, not copies.
 
 ---
 
+<!-- section_id: "08c83362-7ecb-4f81-8588-142eab0e2822" -->
 ## Sources
 
 - Memory consolidation dynamics: `04_memory_dynamics_and_operations.md`

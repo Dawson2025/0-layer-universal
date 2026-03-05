@@ -6,6 +6,7 @@ resource_name: "warp-agent-spec-kit"
 # Warp Agent: Spec Kit Implementation Guide
 *Agent-Specific Instructions for Language Tracker Project*
 
+<!-- section_id: "afdc2013-7205-4f0f-8373-1b518efc8785" -->
 ## Session Initialization Protocol
 
 **MANDATORY:** Start each session by declaring:
@@ -17,8 +18,10 @@ Coding System: GitHub Spec Kit
 Session Focus: [specify current work area - e.g., "Authentication Feature", "TDD Setup", "Environment Config"]
 ```
 
+<!-- section_id: "871fe44f-2102-4d8d-a6ce-a664df7a63f4" -->
 ## Warp-Specific Spec Kit Integration
 
+<!-- section_id: "45e08916-33c1-4a41-b191-3206fc4ca22c" -->
 ### Warp's Native Tools + Spec Kit Features
 **Warp Tools Available:**
 - `read_any_files`, `edit_files`, `create_file`
@@ -32,6 +35,7 @@ Session Focus: [specify current work area - e.g., "Authentication Feature", "TDD
 - Code generation aligned with specs
 - Quality validation and testing
 
+<!-- section_id: "497bad35-c950-4e14-a6ed-86e4fbd1fa7f" -->
 ### Phase 1: Constitution + Warp Tools
 **Integration:**
 - Warp: Load constitution with `read_any_files`
@@ -39,6 +43,7 @@ Session Focus: [specify current work area - e.g., "Authentication Feature", "TDD
 - Warp: Create `create_todo_list` for constitution implementation
 - Spec Kit: Generate acceptance criteria from user stories
 
+<!-- section_id: "45546588-0fd2-49cc-afba-78e17b6a6872" -->
 ### Phase 2: Feature Specification + Warp Tools  
 **Integration:**
 - Warp: Use `search_codebase` to understand existing architecture
@@ -46,6 +51,7 @@ Session Focus: [specify current work area - e.g., "Authentication Feature", "TDD
 - Warp: Create implementation specs with `create_file`
 - Spec Kit: Map to TD2 domains and generate testable criteria
 
+<!-- section_id: "1fd0dcb9-1785-4394-92ad-b7bbc80876cd" -->
 ### Phase 3: Implementation Planning + Warp Tools
 **Integration:**
 - Spec Kit: Break specifications into implementable tasks
@@ -53,6 +59,7 @@ Session Focus: [specify current work area - e.g., "Authentication Feature", "TDD
 - Warp: Use `find_files` and `grep` to assess current codebase
 - Spec Kit: Provide implementation patterns and best practices
 
+<!-- section_id: "450999d3-ca6f-44e9-aed9-737ff3efe8b1" -->
 ### Phase 4: Task Generation + Warp Tools
 **Integration:**
 - Spec Kit: Generate parallelizable implementation tasks
@@ -60,6 +67,7 @@ Session Focus: [specify current work area - e.g., "Authentication Feature", "TDD
 - Warp: Use `mark_todo_as_done` for progress tracking
 - Spec Kit: Provide task validation and completion criteria
 
+<!-- section_id: "b6d55183-305a-4fab-94e2-74fc70e5daad" -->
 ### Phase 5: Implementation + Warp Tools
 **Integration:**
 - Warp: Execute code changes with `edit_files`
@@ -67,8 +75,10 @@ Session Focus: [specify current work area - e.g., "Authentication Feature", "TDD
 - Warp: Run tests with `run_command`
 - Spec Kit: Provide quality assurance patterns
 
+<!-- section_id: "0687fe38-cac8-4f2d-b266-fad41fc25dbe" -->
 ## Command Integration Examples
 
+<!-- section_id: "21e6e653-70c4-4734-8d12-1011f17d5c62" -->
 ### Spec Kit CLI + Warp Tools
 ```bash
 # Spec Kit generates spec, Warp implements
@@ -80,6 +90,7 @@ warp: search_codebase("authentication patterns")
 # → Spec Kit suggests implementation approach
 ```
 
+<!-- section_id: "67670e77-bad5-46ef-ab3d-215c9873e7f9" -->
 ## Other AI Agent Templates
 
 Create similar guides for:

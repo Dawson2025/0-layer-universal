@@ -6,10 +6,12 @@ resource_name: "repo-structure-templates"
 # Repository Structure Templates
 *Organizing Database Files in Your Version Control System*
 
+<!-- section_id: "fc39a8a5-6ffd-4e4b-bfaf-bb0645ccc095" -->
 ## Overview
 
 This guide provides repository structure templates for organizing database files, migrations, seeds, and configuration across different project types and database platforms.
 
+<!-- section_id: "a1627312-85eb-428d-a247-a686a094d5dc" -->
 ## Template Categories
 
 1. [Simple Single-Database Project](#simple-single-database-project)
@@ -19,10 +21,12 @@ This guide provides repository structure templates for organizing database files
 
 ---
 
+<!-- section_id: "f6a576ca-7153-43fe-8020-bfbd29947548" -->
 ## Simple Single-Database Project
 
 Best for: Small projects, single team, one database
 
+<!-- section_id: "f88cdfb8-43a1-4f0f-8b2c-edcc5a817c95" -->
 ### Structure
 
 ```
@@ -47,6 +51,7 @@ project/
 └── README.md
 ```
 
+<!-- section_id: "7e19d050-65b4-417e-9267-810a3f3cfceb" -->
 ### Usage
 
 ```bash
@@ -62,10 +67,12 @@ touch database/migrations/$(date +%Y%m%d-%H%M%S)-description.sql
 
 ---
 
+<!-- section_id: "f15e59e8-4a6b-4207-a37d-985d49f16f58" -->
 ## Multi-Database Monorepo
 
 Best for: Projects with multiple databases (e.g., main DB + analytics DB)
 
+<!-- section_id: "a636fae8-63fe-4d7b-95a6-4288a6f845e4" -->
 ### Structure
 
 ```
@@ -103,6 +110,7 @@ project/
 └── README.md
 ```
 
+<!-- section_id: "7e67797e-1df2-4763-a6d3-26287515a4a4" -->
 ### Usage
 
 ```bash
@@ -118,10 +126,12 @@ cd databases/main && flyway migrate
 
 ---
 
+<!-- section_id: "e04a9960-ef2f-476e-847c-607b0fbc62fc" -->
 ## Microservices with Separate Databases
 
 Best for: Microservices architecture, each service has its own database
 
+<!-- section_id: "02002263-55be-43ec-a60f-722fb14e23e3" -->
 ### Structure
 
 ```
@@ -166,6 +176,7 @@ monorepo/
 └── docker-compose.yml
 ```
 
+<!-- section_id: "01a8b8c3-36ab-4159-979d-3949ba70f519" -->
 ### Usage
 
 ```bash
@@ -181,8 +192,10 @@ cd services/analytics-service && ./scripts/deploy-views.sh
 
 ---
 
+<!-- section_id: "479bce18-360c-4937-9c40-0da94b504c11" -->
 ## Platform-Specific Structures
 
+<!-- section_id: "55d0dad6-19ad-4c03-87c3-5ab89e0df000" -->
 ### Supabase Project
 
 ```
@@ -201,6 +214,7 @@ supabase-project/
 └── README.md
 ```
 
+<!-- section_id: "5ad2b1ad-ce50-444e-a5f6-686d1d73b111" -->
 ### Firebase Project
 
 ```
@@ -225,6 +239,7 @@ firebase-project/
 └── README.md
 ```
 
+<!-- section_id: "93199afd-653f-4ccb-aca1-ad8da19e4c91" -->
 ### Firebase + Firestore Structure
 
 ```
@@ -250,6 +265,7 @@ firebase-app/
 └── firebase.json
 ```
 
+<!-- section_id: "1f5642d1-952e-48da-a33a-28409b02547e" -->
 ### Flyway Project
 
 ```
@@ -279,6 +295,7 @@ flyway-project/
             └── application.properties
 ```
 
+<!-- section_id: "d86ed019-ca2d-4900-b8a8-ba7b9ca18340" -->
 ### Liquibase Project
 
 ```
@@ -302,6 +319,7 @@ liquibase-project/
 └── pom.xml
 ```
 
+<!-- section_id: "cd71209f-63a7-40d3-ab24-6331d195aa3f" -->
 ### Django Project
 
 ```
@@ -329,6 +347,7 @@ django-project/
 └── settings.py
 ```
 
+<!-- section_id: "f941d971-2404-4737-9d3f-21625d199558" -->
 ### Rails Project
 
 ```
@@ -355,6 +374,7 @@ rails-app/
 └── Gemfile
 ```
 
+<!-- section_id: "bf4d1ddd-faed-48f9-a743-8f766c5a459f" -->
 ### Prisma Project
 
 ```
@@ -377,8 +397,10 @@ prisma-app/
 └── package.json
 ```
 
+<!-- section_id: "57af60f1-6e6e-4f89-b935-850d8e17257b" -->
 ## Common Directory Patterns
 
+<!-- section_id: "2293d97b-9c03-4a4a-a736-3d9a92fddba1" -->
 ### Migrations Directory
 
 **Timestamped (Recommended)**:
@@ -405,6 +427,7 @@ migrations/
 └── 20251027000001_create_users_table.sql  # Rails
 ```
 
+<!-- section_id: "2d7aeffd-0d05-44db-9026-4ad52e781d60" -->
 ### Seeds Directory
 
 ```
@@ -421,6 +444,7 @@ seeds/
     └── products.json
 ```
 
+<!-- section_id: "78c203a3-fc3d-4014-9b91-6c5a5fa3fff5" -->
 ### Schema Directory
 
 ```
@@ -434,6 +458,7 @@ schema/
 └── data-types.sql                    # Custom types
 ```
 
+<!-- section_id: "c2193280-052f-44ed-bf24-e77888d24662" -->
 ### Configuration
 
 ```
@@ -446,6 +471,7 @@ config/
 └── test.toml                         # Test config
 ```
 
+<!-- section_id: "ef195564-7f5e-4c82-9823-93d17fd0b9b6" -->
 ## Large-Scale Enterprise Structure
 
 ```
@@ -497,8 +523,10 @@ enterprise-db-project/
         └── deploy-production.yml
 ```
 
+<!-- section_id: "89538d89-4ecb-4a40-83b5-0936e451489f" -->
 ## Best Practices
 
+<!-- section_id: "ac6cd92b-f2d3-42f6-b6c2-1cf4bdf2d353" -->
 ### 1. Naming Conventions
 
 ```bash
@@ -516,6 +544,7 @@ users.sql
 new-changes.sql
 ```
 
+<!-- section_id: "771baa7d-d6eb-4da7-b025-b4671c944409" -->
 ### 2. Directory Organization
 
 ```bash
@@ -535,6 +564,7 @@ database/
 │   └── schema.sql           # Schema in migrations
 ```
 
+<!-- section_id: "5ef386d2-3bfd-4c8e-897e-b8289daab393" -->
 ### 3. Git Integration
 
 ```gitignore
@@ -555,6 +585,7 @@ migration_lock.toml
 flyway.schemaHistory
 ```
 
+<!-- section_id: "f1c8a7d4-4e32-4459-9831-e016216b81b6" -->
 ### 4. Documentation
 
 Each structure should include:
@@ -581,8 +612,10 @@ Each structure should include:
 ./scripts/seed-dev.sh
 ```
 
+<!-- section_id: "2cd3cbc4-4404-4aa6-9dc8-fb78303a1bbf" -->
 ## Recommended Structures by Project Type
 
+<!-- section_id: "e7003bb7-3d12-4d5e-86d4-04179e9b0e05" -->
 ### Small Web Application
 ```
 project/
@@ -593,6 +626,7 @@ project/
 └── README.md
 ```
 
+<!-- section_id: "20d01d87-3f2b-4247-9821-03a26943b06e" -->
 ### SaaS Application
 ```
 project/
@@ -606,6 +640,7 @@ project/
     └── deploy.sh
 ```
 
+<!-- section_id: "c70afaed-3a59-48e8-aaf7-4395fa781f6c" -->
 ### Microservices
 ```
 monorepo/
@@ -615,6 +650,7 @@ monorepo/
     └── database-utils/
 ```
 
+<!-- section_id: "e7a01126-09f2-421b-9a7d-28bdc21091a6" -->
 ### Enterprise
 ```
 enterprise/

@@ -11,8 +11,10 @@ resource_name: "test_skill_discovery_chain"
 
 ---
 
+<!-- section_id: "e5b0696a-0e26-4f39-8665-2e2e2c52d0a8" -->
 ## Test Design
 
+<!-- section_id: "9d431b23-e660-4533-97a3-f8d94856076e" -->
 ### What We're Testing
 
 The `/perplexity-extract` skill was created and registered through multiple context avenues:
@@ -25,6 +27,7 @@ The `/perplexity-extract` skill was created and registered through multiple cont
 
 The question: **Will a fresh agent, receiving a Perplexity URL, discover and use this skill?**
 
+<!-- section_id: "86de4a4b-5d36-4f60-8bde-c6e1df087ce5" -->
 ### Test Method
 
 Two parallel agents were spawned:
@@ -33,8 +36,10 @@ Two parallel agents were spawned:
 
 ---
 
+<!-- section_id: "e6a6491b-570e-45c3-8ed8-54469664dad4" -->
 ## Checkpoint Results
 
+<!-- section_id: "9985972f-33ab-4d81-8e61-81c82ff4c161" -->
 ### 1. Root CLAUDE.md (HOT context — every session)
 
 | Field | Value |
@@ -48,6 +53,7 @@ Two parallel agents were spawned:
 
 **PASS** — The skill is directly visible in hot context.
 
+<!-- section_id: "2a2c5649-7d77-46c2-ba45-9cfcbc614d4b" -->
 ### 2. Global Config (~/.claude/CLAUDE.md)
 
 | Field | Value |
@@ -60,6 +66,7 @@ Two parallel agents were spawned:
 
 **PASS (partial)** — No direct mention, but the traversal rule leads to the dynamic rule.
 
+<!-- section_id: "5c922550-658d-4a56-b99e-4ce7d7710d04" -->
 ### 3. Path-Specific Rule (WARM context — on path entry)
 
 | Field | Value |
@@ -72,6 +79,7 @@ Two parallel agents were spawned:
 
 **PASS** — Skill explicitly listed with scope and trigger.
 
+<!-- section_id: "2af9bb7c-3718-4f62-bbe7-0675146f27fa" -->
 ### 4. Dynamic Rule (COLD context — on trigger)
 
 | Field | Value |
@@ -86,6 +94,7 @@ Two parallel agents were spawned:
 
 **PASS** — Comprehensive trigger conditions with clear action protocol.
 
+<!-- section_id: "64d4eac5-8970-4ff0-a2b1-fe8b42fe9e75" -->
 ### 5. .1merge Tool Additions (SOURCE for hot context)
 
 | Field | Value |
@@ -99,6 +108,7 @@ Two parallel agents were spawned:
 
 **PASS** — Source data is correct and properly scoped to Claude only.
 
+<!-- section_id: "0e733550-81a3-4162-bc1f-c2e5b10b9b20" -->
 ### 6. Skill Definition (COLD context — on invocation)
 
 | Field | Value |
@@ -116,11 +126,13 @@ Two parallel agents were spawned:
 
 ---
 
+<!-- section_id: "6e38579c-21ef-43d2-9a60-3c871eb3e5a3" -->
 ## Discovery Simulation Results
 
 A fresh Opus agent was given this task:
 > "Extract content and citations from https://www.perplexity.ai/search/compare-openai-tts-vs-google-lBc2xVjJQYqjkceMFqWraw"
 
+<!-- section_id: "858b760e-ef4a-41ca-881d-7b21aadedb53" -->
 ### Agent's Discovery Chain
 
 1. **Read root CLAUDE.md** → Found "Browser Extraction Capabilities" at lines 113-142
@@ -130,6 +142,7 @@ A fresh Opus agent was given this task:
 5. **Read dynamic rule** → Confirmed trigger conditions and fallback behavior
 6. **Located knowledge** → Found perplexity_extraction_rules.md and perplexity_extraction_protocol.md in AI apps level
 
+<!-- section_id: "73c8b065-b0b7-4505-b48e-49d0ceaf723e" -->
 ### Agent's Planned Action
 
 The agent would:
@@ -145,8 +158,10 @@ The agent would:
 
 ---
 
+<!-- section_id: "12840a36-b316-4693-b9c3-7faca6edca97" -->
 ## Insights
 
+<!-- section_id: "fac31ad2-9db0-4b77-8e25-94edba316bdb" -->
 ### What Works Well
 
 1. **Hot context is the primary discovery mechanism** — The .1merge system successfully injects skill documentation into root CLAUDE.md, making it visible in every session without agents needing to search
@@ -154,12 +169,14 @@ The agent would:
 3. **Trigger conditions are specific enough** — URL pattern matching (`perplexity.ai/search/*`) prevents false positives
 4. **Fallback behavior is documented** — If Claude in Chrome isn't available, agents know to fall back to WebFetch
 
+<!-- section_id: "11921a63-ff88-481b-bf5d-e1586be3bf56" -->
 ### What Could Be Improved
 
 1. **Global config gap** — `~/.claude/CLAUDE.md` doesn't directly mention perplexity extraction; the path to discovery is indirect (Context Traversal Rule → .0agnostic/02_rules/). This is by design (it's in .1merge additions, which only affect repo-level CLAUDE.md), but it means sessions outside the repo don't have the trigger.
 2. **`...` in knowledge path** — The CLAUDE.md reference uses `...` shorthand for the deep sub-layer path. This is readable but not copy-pasteable. Agent 2 had to glob for the actual path.
 3. **macOS mirror** — There's a `sub_layer_0_10_claude_in_chrome` under the macOS path too, but it only has the old structure (not migrated to .0agnostic/). This is a consistency issue.
 
+<!-- section_id: "615ed551-ae1d-4c8a-a978-1a379f274e4b" -->
 ### Key Metrics
 
 | Metric | Value |
@@ -173,6 +190,7 @@ The agent would:
 
 ---
 
+<!-- section_id: "c1fc83b0-ab9c-4399-9ed0-8157d5b76545" -->
 ## Test Environment
 
 - **Workspace**: `~/dawson-workspace/code/0_layer_universal/`

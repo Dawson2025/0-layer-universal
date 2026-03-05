@@ -6,6 +6,7 @@ resource_name: "README"
 ---
 # User Stories — Version Coexistence
 
+<!-- section_id: "77a6de5c-4644-41aa-97e2-d04007de2dab" -->
 ## Actors
 
 | Actor | Description |
@@ -13,6 +14,7 @@ resource_name: "README"
 | Agent | AI agent that works in either mode |
 | User | Person directing the agent |
 
+<!-- section_id: "268703a2-6a64-4a9e-b426-76ec60bc72e6" -->
 ## Stories
 
 | ID | Story | Actor |

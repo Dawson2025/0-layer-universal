@@ -5,6 +5,7 @@ resource_name: "hierarchy"
 ---
 # 0AGNOSTIC System Architecture
 
+<!-- section_id: "3e167b61-d566-4569-a047-f0fd0ec4590a" -->
 ## Hierarchy Diagram
 
 ```mermaid
@@ -45,6 +46,7 @@ graph TD
     L2_classes -.->|module system| L5_modules
 ```
 
+<!-- section_id: "48e7a343-3ea0-4a02-a033-9646bfced0e7" -->
 ## Resource Inheritance Chain
 
 ```mermaid
@@ -59,6 +61,7 @@ graph LR
     R2 --> R3
 ```
 
+<!-- section_id: "365fd239-be92-4377-a77d-f9266343108a" -->
 ## Trigger System Overview
 
 ```mermaid

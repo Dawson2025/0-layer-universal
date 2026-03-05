@@ -6,8 +6,10 @@ resource_name: "README"
 ---
 # context7-mcp (gemini_cli on macos)
 
+<!-- section_id: "1eda0a9b-38c5-44b4-a134-1613c1651afd" -->
 ## Canonical docs
 - ../../../../../_shared/0.04_ai_apps/_shared/0.05_mcp_servers/context7-mcp/
 
+<!-- section_id: "d04caf6c-027d-44d8-985b-995064e63b1c" -->
 ## Notes
 Add macos + gemini_cli specific setup notes here.

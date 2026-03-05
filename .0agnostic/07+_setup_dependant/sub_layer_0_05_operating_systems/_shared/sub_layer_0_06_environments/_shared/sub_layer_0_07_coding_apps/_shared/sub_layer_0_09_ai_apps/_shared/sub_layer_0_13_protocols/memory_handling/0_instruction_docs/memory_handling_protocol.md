@@ -5,11 +5,13 @@ resource_name: "memory_handling_protocol"
 ---
 # Memory Handling Protocol
 
+<!-- section_id: "805a4988-2a0c-499c-a513-55c5d23f1449" -->
 ## Applicability
 **When to use:** Whenever the user explicitly asks the agent to "remember" something (e.g., "Remember that I like...", "Remember this rule...").
 **Scope:** Universal (applies to all interactions).
 **Goal:** To ensure long-term memories are recorded accurately, located precisely, and confirmed to the user with evidence.
 
+<!-- section_id: "cd01b684-082a-42a9-a5d5-7d2d883ca6dc" -->
 ## Protocol Steps
 
 1.  **Record the Memory:** Update the appropriate context file (e.g., `universal_init_prompt.md`, a feature `README.md`, or a specific rule file).
@@ -19,6 +21,7 @@ resource_name: "memory_handling_protocol"
     *   **How context was updated:** Briefly explain the edit (e.g., "I appended a new 'Submission Safety Rule' section...").
     *   **Thing Remembered/Emphasis on the Code:** Explicitly point out the area/section where the memory was coded/written.
 
+<!-- section_id: "88d0064b-fad4-4dbb-acac-f9427b7ebd06" -->
 ## Example Response
 
 > "I have remembered that rule.

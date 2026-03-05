@@ -9,6 +9,7 @@ resource_name: "US-01_agent_uses_production_default"
 **I want to** automatically load production context from the standard entity hierarchy,
 **So that** I operate with stable, proven patterns without needing to evaluate or filter experimental alternatives.
 
+<!-- section_id: "84922e58-5c00-4bb0-9bd3-4aaa843c5794" -->
 ## Acceptance Criteria
 
 **Scenario 1: Default context chain excludes research**

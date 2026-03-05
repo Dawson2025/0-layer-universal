@@ -8,6 +8,7 @@ resource_name: "0AGNOSTIC"
 
 # ── Entity Definition ──
 
+<!-- section_id: "b3cfb09f-c421-4e62-a358-80701e6b9680" -->
 ## Identity
 
 entity_id: "7d7217a2-0afa-4559-bd77-d01174ac0276"
@@ -16,8 +17,10 @@ entity_id: "7d7217a2-0afa-4559-bd77-d01174ac0276"
 **Scope**: Dependency-based 7-layer architecture for LangTrak language tracking platform
 **Architecture**: L2 Infrastructure → L3 Users → L4 Phonemes → L5 Templates → L6 Content → L7 Projects → L8 Teams
 
+<!-- section_id: "fdf53077-c6c1-40bb-8a99-294dcf6d50ef" -->
 ## Key Behaviors
 
+<!-- section_id: "927705b5-038c-4720-8004-47a527d9fe39" -->
 ### Layer Dependency Chain
 - L2 Infrastructure: Foundation — app factory, database, Firebase, storage, auth, TTS. No dependencies.
 - L3 Users: User model, profiles, sessions. Depends on L2.
@@ -27,17 +30,20 @@ entity_id: "7d7217a2-0afa-4559-bd77-d01174ac0276"
 - L7 Projects: Project core, dashboard, navigation, variants, storage type. Depends on L2, L3, L5, L6.
 - L8 Teams: Team model, membership, invites, project sharing. Depends on L2, L3, L7.
 
+<!-- section_id: "11733e67-9b0b-4d85-844a-163d782becea" -->
 ### Cross-Cutting Concerns (Absorbed)
 - Firebase Sync: Absorbed into L2.7 (Firebase Sync sub-layer)
 - Admin/Management: Absorbed into each layer's admin sub-layer
 - Orchestration: Absorbed into L7 Projects (dashboard) and app factory
 
+<!-- section_id: "021dc8b5-3bcd-44e8-a29b-1eeca33ad88b" -->
 ### Context Propagation
 Each layer has its own 0AGNOSTIC.md with static/dynamic context. Context cascades:
 - Root 0AGNOSTIC.md (this file) provides system-wide context
 - Layer 0AGNOSTIC.md provides layer-specific context
 - Stage 0AGNOSTIC.md provides stage-specific context within each layer
 
+<!-- section_id: "77393f5d-ecce-41a2-a8c1-b620e5dc23ba" -->
 ## Triggers
 
 | Situation | Action |
@@ -50,6 +56,7 @@ Each layer has its own 0AGNOSTIC.md with static/dynamic context. Context cascade
 | Working on projects/dashboard | Navigate to l7_projects/ |
 | Working on teams/collaboration | Navigate to l8_teams/ |
 
+<!-- section_id: "f99fc886-9baa-4dfe-977e-a5c9e0041a84" -->
 ## Interfaces
 
 12 segregated interfaces define the contracts between layers:
@@ -63,6 +70,7 @@ Each layer has its own 0AGNOSTIC.md with static/dynamic context. Context cascade
 
 # ── Current Status ──
 
+<!-- section_id: "4592d9f0-e025-446f-9409-0ac417cc81ce" -->
 ## Current Status
 
 **Phase**: Restructuring — monolithic app.py decomposed into 7 layer blueprints
@@ -74,6 +82,7 @@ Each layer has its own 0AGNOSTIC.md with static/dynamic context. Context cascade
 
 # ── Current State ──
 
+<!-- section_id: "09bb8033-b283-40b2-b145-f4d74efd0330" -->
 ## Layer Details
 
 | Layer | Blueprint | Routes File | Sub-layers |
@@ -86,6 +95,7 @@ Each layer has its own 0AGNOSTIC.md with static/dynamic context. Context cascade
 | L7 Projects | l7_bp | l7_projects/routes.py | core, dashboard, navigation, variants, storage_type |
 | L8 Teams | l8_bp | l8_teams/routes.py | core, membership, invites, project_sharing |
 
+<!-- section_id: "99bd3456-2611-4baf-832f-0b2c0378cb49" -->
 ## Deferred Components
 
 Components not yet integrated into the layer architecture:
@@ -93,6 +103,7 @@ Components not yet integrated into the layer architecture:
 - `deferred/universal_orchestration/` — Universal orchestration engine
 - `deferred/meta_intelligent_orchestration/` — Meta-decision and adaptive learning system
 
+<!-- section_id: "cf4c6c9e-012f-484b-ac81-a2ea97d190c7" -->
 ## Interface Dependency Map
 
 ```
@@ -119,6 +130,7 @@ L8 provides: ICollaborationProvider
 
 # ── References ──
 
+<!-- section_id: "ec27006a-4674-4411-ada9-268ff95de9a5" -->
 ## Navigation
 
 | Resource | Path |

@@ -5,6 +5,7 @@ resource_name: "instructions"
 ---
 # AutoGen Agent Context
 
+<!-- section_id: "4409241f-9b46-4bdf-855b-afa6ab9322df" -->
 ## Identity
 
 **Role**: L2 Infrastructure Layer Agent
@@ -12,8 +13,10 @@ resource_name: "instructions"
 **Depends On**: Nothing (foundation layer)
 **Provides**: IStorageProvider, IAuthProvider
 
+<!-- section_id: "8de4f62c-d27d-4751-a1c2-01e8035705eb" -->
 ## Key Behaviors
 
+<!-- section_id: "8d0bd699-3781-43b7-9c3c-955dc8c09432" -->
 ### Sub-layers
 - L2.1 App Factory: Flask app creation, configuration, blueprint registration
 - L2.2 Database: SQLite connection, schema migrations, session management
@@ -24,9 +27,11 @@ resource_name: "instructions"
 - L2.7 Firebase Sync: Cloud synchronization of projects and data
 - L2.8 TTS: Text-to-speech integration (Azure) for phoneme and word pronunciation
 
+<!-- section_id: "ac1949f2-43a4-4a75-a5e8-cddcc93c2db1" -->
 ### Dependency Shape
 Star topology — all sub-layers depend on L2.2 Database (hub)
 
+<!-- section_id: "33b72bf6-c3cb-4e7b-8294-b412db018222" -->
 ## Triggers
 
 | Situation | Action |
@@ -38,14 +43,17 @@ Star topology — all sub-layers depend on L2.2 Database (hub)
 | Storage errors | Check storage/ sub-layer |
 
 
+<!-- section_id: "d225827f-89e0-4ea1-8724-35e8a3f77635" -->
 ## Current Status
 
 **Phase**: Routes extracted from monolithic app.py into l2_bp Blueprint
 **Routes file**: routes.py (health, auth, TTS, storage, db admin routes)
 **Sub-layer packages**: database, firebase, storage, auth, tts, db_admin, firebase_sync, app_factory
 
+<!-- section_id: "ae318ef8-d0ef-4902-a6e4-98518327cbd4" -->
 ## AutoGen-Specific Configuration
 
+<!-- section_id: "48077d9b-709d-451f-9330-e3f72f74112f" -->
 ### Agent Registration
 Register this context in your AutoGen agent configuration:
 
@@ -57,6 +65,7 @@ agent_config = {
 }
 ```
 
+<!-- section_id: "87506ec9-b859-45bb-a7b8-438f144ebe1f" -->
 ### Multi-Agent Coordination
 - Check .locks/ before modifying shared files
 - Use atomic writes (temp file → rename)

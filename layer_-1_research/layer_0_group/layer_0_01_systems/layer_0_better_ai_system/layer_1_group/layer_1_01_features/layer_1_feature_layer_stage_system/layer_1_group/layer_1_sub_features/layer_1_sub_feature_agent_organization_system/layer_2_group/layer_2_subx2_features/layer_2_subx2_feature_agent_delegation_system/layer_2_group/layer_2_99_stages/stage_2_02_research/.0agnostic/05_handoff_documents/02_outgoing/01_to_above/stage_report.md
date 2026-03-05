@@ -5,15 +5,19 @@ resource_name: "stage_report"
 ---
 # Stage Report: 02_research
 
+<!-- section_id: "f6bb6678-2edd-470f-b5a7-4e457c34841d" -->
 ## Status
 active
 
+<!-- section_id: "8409d739-da37-4754-be4d-4909e8b53ec5" -->
 ## Last Updated
 2026-02-26
 
+<!-- section_id: "5eec4da2-ce15-41bd-807e-f373ffff1136" -->
 ## Summary
 Research conducted through both the context_chain_system living laboratory (implicit findings) and 4 formal research topic directories. Topics cover tool context cascading (how AI coding tools handle CLAUDE.md/AGENTS.md/GEMINI.md cascading), multi-agent context patterns (how CrewAI/LangGraph/AutoGen handle shared context), scope boundary traversal (directional patterns for crossing layer/stage boundaries), and agent class/object patterns (how OOP concepts map to agent architecture — validates composition-over-inheritance, single responsibility, interfaces).
 
+<!-- section_id: "e2bed085-be49-4049-ab27-aa12b83c2142" -->
 ## Key Outputs
 - `outputs/by_topic/tool_context_cascading/README.md`: 3 of 4 tools cascade natively (Claude Code, Codex, Gemini CLI); Cursor uses glob targeting. Native cascading is an argument FOR lean content per level.
 - `outputs/by_topic/multi_agent_context_patterns/README.md`: All 3 frameworks converge on minimal context + on-demand access. None use full parent cascade.
@@ -22,6 +26,7 @@ Research conducted through both the context_chain_system living laboratory (impl
 - Implicit research via context_chain_system (56+ files across 9 topics, 76 PASS tests)
 - Child entity research: memory_system (21 files on cognitive science, memory types)
 
+<!-- section_id: "f8e2981f-645a-4c85-a612-4e4379470478" -->
 ## Findings
 - Managers don't need stage methodology — coordinate effectively by reading stage reports alone
 - 0AGNOSTIC.md is the right vehicle for stage identity — static context, tool-agnostic, single source of truth
@@ -34,10 +39,12 @@ Research conducted through both the context_chain_system living laboratory (impl
 - Scope boundary traversal is directional — direction determines communication method. Multi-location work escalates to nearest common ancestor
 - Agent architecture maps to OOP class/object patterns — composition-over-inheritance validates minimal context model, SRP validates stage agents, SOLID principles map cleanly to existing patterns
 
+<!-- section_id: "14393415-d2c1-4040-aa79-e2b56764ca27" -->
 ## Open Items
 - Context chain system lessons should be documented as a formal research topic
 - multi_agent_system child entity not yet explored as a research vehicle
 
+<!-- section_id: "c9fd2e67-6d1b-4e37-950e-a8a660898fe6" -->
 ## Handoff
 - **Ready for next stage**: yes
 - **Next stage**: 04_design (multiple design decisions already created from these findings)

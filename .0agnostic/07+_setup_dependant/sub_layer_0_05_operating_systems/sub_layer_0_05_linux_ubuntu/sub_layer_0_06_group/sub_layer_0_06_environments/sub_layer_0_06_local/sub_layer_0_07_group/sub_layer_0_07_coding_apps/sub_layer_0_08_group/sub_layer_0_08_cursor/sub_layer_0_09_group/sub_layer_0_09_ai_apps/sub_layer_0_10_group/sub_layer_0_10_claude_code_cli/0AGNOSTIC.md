@@ -10,6 +10,7 @@ resource_name: "0AGNOSTIC"
 
 # ── Entity Definition ──
 
+<!-- section_id: "d42a34c5-1c16-411f-940b-6f9244d8d092" -->
 ## Identity
 
 **Role**: AI App Configuration Manager — Claude Code CLI
@@ -19,6 +20,7 @@ resource_name: "0AGNOSTIC"
 
 **Specificity Chain**: OS (Linux Ubuntu) > Environment (Local) > Coding App (Cursor) > AI Apps > **Claude Code CLI**
 
+<!-- section_id: "4644c306-3590-43ac-b864-01ad82b7294f" -->
 ## Key Behaviors
 
 - Manages Claude Code CLI configuration and setup for this specific environment path
@@ -27,12 +29,14 @@ resource_name: "0AGNOSTIC"
 - Knowledge cascades from parent levels (coding apps > AI apps category) — only store Claude Code CLI-specific content here
 - Legacy setup docs migrated to `.0agnostic/01_knowledge/legacy_setup/`
 
+<!-- section_id: "734f2c0b-de09-4eb2-bba9-16bb010dd850" -->
 ## Inputs
 
 - Parent context from sub_layer_0_09_ai_apps (shared AI app knowledge)
 - Sibling feature entities (shared tools, models, protocols)
 - Claude Code CLI-specific setup docs and configuration
 
+<!-- section_id: "214715b0-b100-4b63-8671-57648a921c3a" -->
 ## Outputs
 
 - Claude Code CLI setup and configuration documentation
@@ -41,6 +45,7 @@ resource_name: "0AGNOSTIC"
 
 # ── Current Status ──
 
+<!-- section_id: "faeb0d3b-d2f1-4830-bb12-fbc18c486e90" -->
 ## Current Status
 
 - **Stage**: Active (entity created 2026-02-22, restructured 2026-02-25)
@@ -52,6 +57,7 @@ resource_name: "0AGNOSTIC"
 
 # ── Current State ──
 
+<!-- section_id: "67ec9921-651e-434d-8674-9a11c2e1d50f" -->
 ## Current State Detail
 
 Entity restructured. Shared infrastructure migrated to sibling feature entities at level 10:
@@ -63,6 +69,7 @@ Entity restructured. Shared infrastructure migrated to sibling feature entities 
 - Legacy setup docs → `.0agnostic/01_knowledge/legacy_setup/`
 - Claude in Chrome (app-specific child) → `sub_layer_0_11_group/sub_layer_0_11_claude_in_chrome/`
 
+<!-- section_id: "d5299d41-dc6f-4896-a414-03f886b06c0d" -->
 ## Open Items
 
 - [ ] Populate Claude Code CLI-specific rules and knowledge
@@ -70,6 +77,7 @@ Entity restructured. Shared infrastructure migrated to sibling feature entities 
 
 # ── References ──
 
+<!-- section_id: "1098ecd2-f34f-420c-b55e-2beb8ff38721" -->
 ## Navigation
 
 | Resource | Location |

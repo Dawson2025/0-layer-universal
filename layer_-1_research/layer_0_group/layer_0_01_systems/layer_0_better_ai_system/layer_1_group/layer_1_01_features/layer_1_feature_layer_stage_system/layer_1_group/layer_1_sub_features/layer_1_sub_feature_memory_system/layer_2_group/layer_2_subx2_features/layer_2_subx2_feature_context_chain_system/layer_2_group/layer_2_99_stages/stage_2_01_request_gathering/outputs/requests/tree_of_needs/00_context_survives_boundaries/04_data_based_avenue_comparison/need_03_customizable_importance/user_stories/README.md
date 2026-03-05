@@ -8,10 +8,12 @@ resource_name: "README"
 
 **Need**: [Customizable Importance](../README.md)
 
+<!-- section_id: "0d2ffc07-2d9b-4426-b917-870ac8485395" -->
 ## Overview
 
 These stories validate that the importance weighting system produces meaningful project-specific recommendations.
 
+<!-- section_id: "c79d5f3e-29be-474e-b518-5bcc9d31d55b" -->
 ## Actors
 
 - **User (Developer)**: Human developer configuring project priorities

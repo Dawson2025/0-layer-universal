@@ -13,8 +13,10 @@ resource_name: "USER_STORIES"
 
 ---
 
+<!-- section_id: "ccb76d6c-bc32-42ff-8565-7455e78609b3" -->
 ## 🔑 Level 0: Authentication & Access
 
+<!-- section_id: "cecc2c19-3fa3-4ebf-9bef-1355ccdeb87f" -->
 ### US-001: User Registration with Local Credentials
 **As a** language researcher
 **I want to** create an account with username, email, and password
@@ -50,6 +52,7 @@ resource_name: "USER_STORIES"
 
 ---
 
+<!-- section_id: "c36aaa44-5b5b-4769-b7b9-aa319c9c26f7" -->
 ### US-002: User Login with Local Credentials
 **As a** registered user
 **I want to** log in with my username/email and password
@@ -75,6 +78,7 @@ resource_name: "USER_STORIES"
 
 ---
 
+<!-- section_id: "65afc9d5-c4ce-49ac-87df-98da75b55a6c" -->
 ### US-003: Firebase Authentication (Google Sign-In)
 **As a** user preferring OAuth
 **I want to** sign in with my Google account
@@ -100,6 +104,7 @@ resource_name: "USER_STORIES"
 
 ---
 
+<!-- section_id: "afea8fcf-89ae-4db2-ab8b-bf5465441220" -->
 ### US-004: User Logout
 **As a** logged-in user
 **I want to** log out of my account
@@ -118,6 +123,7 @@ resource_name: "USER_STORIES"
 
 ---
 
+<!-- section_id: "152a0e0d-adaa-4b6b-8dae-8d2fa48f32b4" -->
 ### US-005: Session Persistence and Protected Routes
 **As a** logged-in user
 **I want to** stay logged in across page refreshes
@@ -140,8 +146,10 @@ resource_name: "USER_STORIES"
 
 ---
 
+<!-- section_id: "729c33bd-9d0b-4866-9c72-113177700f8c" -->
 ## 🏠 Level 1: Dashboard (Top-Level Navigation)
 
+<!-- section_id: "e3cafb81-090c-4616-bafc-88edc0adf77c" -->
 ### US-006: View Dashboard After Login
 **As a** newly logged-in user
 **I want to** see my dashboard with projects and groups overview
@@ -170,6 +178,7 @@ resource_name: "USER_STORIES"
 
 ---
 
+<!-- section_id: "6035e695-11a1-4a01-9bef-acf4bb416c89" -->
 ### US-007: Create New Group
 **As a** user wanting to collaborate
 **I want to** create a group for my team
@@ -205,6 +214,7 @@ resource_name: "USER_STORIES"
 
 ---
 
+<!-- section_id: "7dcbe058-9ecd-45b7-9573-471cf547b7c5" -->
 ### US-008: Generate and Share Group Invitation Link
 **As a** group admin
 **I want to** get a shareable invitation link
@@ -225,6 +235,7 @@ resource_name: "USER_STORIES"
 
 ---
 
+<!-- section_id: "400221d5-0169-45e8-830b-ccc0407e2405" -->
 ### US-009: Join Group via Invitation Link
 **As a** user receiving an invitation
 **I want to** click the invitation link
@@ -255,6 +266,7 @@ resource_name: "USER_STORIES"
 
 ---
 
+<!-- section_id: "7f5a91e7-081a-4c95-8234-d0f80a0a8879" -->
 ### US-010: Regenerate Group Invitation Token (Admin)
 **As a** group admin
 **I want to** regenerate the invitation link
@@ -280,6 +292,7 @@ resource_name: "USER_STORIES"
 
 ---
 
+<!-- section_id: "cd22e1f5-1179-4369-b27d-da6f3b8230db" -->
 ### US-011: View Group Members
 **As a** group member
 **I want to** see who else is in my group
@@ -303,8 +316,10 @@ resource_name: "USER_STORIES"
 
 ---
 
+<!-- section_id: "c1549ae3-3cd8-4752-8f3e-c23d0958fef7" -->
 ## 🗂️ Level 2: My Projects (Project Management Layer)
 
+<!-- section_id: "4252c061-ef5c-41d6-b9ce-3e04efb6f1ab" -->
 ### US-012: View All Projects
 **As a** user with multiple projects
 **I want to** see all my projects in one place
@@ -338,6 +353,7 @@ resource_name: "USER_STORIES"
 
 ---
 
+<!-- section_id: "84a5aedb-bd1b-4b75-877f-bfa6691ee35a" -->
 ### US-013: Search Projects
 **As a** user with many projects
 **I want to** search my projects by name
@@ -363,6 +379,7 @@ resource_name: "USER_STORIES"
 
 ---
 
+<!-- section_id: "f13cda8f-0df5-49da-b2ba-364bae86f6ea" -->
 ### US-014: Create New Project
 **As a** language creator
 **I want to** create a new project
@@ -396,6 +413,7 @@ resource_name: "USER_STORIES"
 
 ---
 
+<!-- section_id: "e99b8f60-f0f8-40da-a7e9-da628cdf38e8" -->
 ### US-015: Enter Project to Work On It
 **As a** user
 **I want to** enter a specific project
@@ -419,6 +437,7 @@ resource_name: "USER_STORIES"
 
 ---
 
+<!-- section_id: "1d287e53-ad17-4de1-a806-5088b8d41240" -->
 ### US-016: Branch a Project
 **As a** language developer
 **I want to** create a branch of my project
@@ -449,6 +468,7 @@ resource_name: "USER_STORIES"
 
 ---
 
+<!-- section_id: "349bf155-1b83-4ec9-b0fc-3423e5a077b5" -->
 ### US-017: Rename Project
 **As a** user who wants to reorganize
 **I want to** rename my project
@@ -476,6 +496,7 @@ resource_name: "USER_STORIES"
 
 ---
 
+<!-- section_id: "04087114-ea50-4e05-babd-e6c89dacabe6" -->
 ### US-018: Delete Project
 **As a** user cleaning up old work
 **I want to** delete a project I no longer need
@@ -510,6 +531,7 @@ resource_name: "USER_STORIES"
 
 ---
 
+<!-- section_id: "4c1ddb1c-f115-4c06-8066-bd104a6b5407" -->
 ### US-019: Share Project to Group
 **As a** project owner
 **I want to** share my project with a group
@@ -545,6 +567,7 @@ resource_name: "USER_STORIES"
 
 ---
 
+<!-- section_id: "73fa1188-cfbb-4522-9b47-4d8b24911cfb" -->
 ### US-020: Migrate Local Project to Cloud
 **As a** user wanting cloud backup
 **I want to** migrate my local project to cloud storage
@@ -582,6 +605,7 @@ resource_name: "USER_STORIES"
 
 ---
 
+<!-- section_id: "03ada6fc-be6c-4e9e-b0fd-23eb98befbb4" -->
 ### US-021: Fork Cloud Project to Local
 **As a** user wanting offline access
 **I want to** create a local copy of a cloud project
@@ -618,6 +642,7 @@ resource_name: "USER_STORIES"
 
 ---
 
+<!-- section_id: "4a8b9df5-c1b0-4673-b905-96d5b2f1d4c5" -->
 ### US-022: Push Local Changes to Cloud (Sync)
 **As a** user with linked local and cloud variants
 **I want to** push my local changes to cloud
@@ -642,6 +667,7 @@ resource_name: "USER_STORIES"
 
 ---
 
+<!-- section_id: "1f544166-27f4-4ac2-896a-8b4c88e06464" -->
 ### US-023: Pull Cloud Changes to Local
 **As a** user with linked local and cloud variants
 **I want to** pull cloud changes to my local copy
@@ -666,8 +692,10 @@ resource_name: "USER_STORIES"
 
 ---
 
+<!-- section_id: "e186c3c3-a156-4ae3-a487-c2db6bd8de3b" -->
 ## 🎯 Level 3: Variant Menu (Project Context)
 
+<!-- section_id: "455f3295-7d4b-49d5-9911-78d3ee658b1c" -->
 ### US-024: View Variant Menu After Entering Project
 **As a** user who entered a project
 **I want to** see the project overview and navigation options
@@ -703,6 +731,7 @@ resource_name: "USER_STORIES"
 
 ---
 
+<!-- section_id: "3da5154b-93c8-4773-9233-427a5b35249d" -->
 ### US-025: Navigate to Phonemes Section
 **As a** user in a project
 **I want to** view my phoneme inventory
@@ -727,8 +756,10 @@ resource_name: "USER_STORIES"
 
 ---
 
+<!-- section_id: "78d5eea2-8aaf-47cd-92bd-7089fd18f713" -->
 ## 🔤 Level 4a: Phonemes Section
 
+<!-- section_id: "47fc385d-2eea-4761-9bbd-768c8fe79a28" -->
 ### US-026: View Phonemes in Flat Mode
 **As a** linguist
 **I want to** see a simple list of all phonemes
@@ -757,6 +788,7 @@ resource_name: "USER_STORIES"
 
 ---
 
+<!-- section_id: "cf69a2cb-dec1-4c0c-9b50-66832b158620" -->
 ### US-027: View Phonemes in Nested Mode
 **As a** linguist analyzing sound patterns
 **I want to** see phonemes organized by category
@@ -787,6 +819,7 @@ resource_name: "USER_STORIES"
 
 ---
 
+<!-- section_id: "ded52f38-e9a6-41c0-ae9a-68480b91adab" -->
 ### US-028: View Full Phoneme Hierarchy
 **As a** detailed analyst
 **I want to** see complete phoneme relationships and metadata
@@ -816,8 +849,10 @@ resource_name: "USER_STORIES"
 
 ---
 
+<!-- section_id: "9c436970-97e9-44ec-bbea-a862c9758610" -->
 ## 📚 Level 4b: Words Section
 
+<!-- section_id: "6c1cb9c6-9820-46cc-890b-f42a04165608" -->
 ### US-029: Create New Word
 **As a** language builder
 **I want to** create a new word with phoneme composition
@@ -860,6 +895,7 @@ resource_name: "USER_STORIES"
 
 ---
 
+<!-- section_id: "f429e701-d8a0-4b87-9adb-5e953f621eb9" -->
 ### US-069: Build Multi-Syllable Word Structure
 **As a** linguist crafting complex vocabulary
 **I want to** add multiple syllables with position-specific phonemes
@@ -892,6 +928,7 @@ resource_name: "USER_STORIES"
 
 ---
 
+<!-- section_id: "ebfa72ab-d09b-4dca-9357-52a9f0d232de" -->
 ### US-070: Preview Syllable Audio During Creation
 **As a** language researcher refining pronunciation
 **I want to** listen to each syllable and the full word while constructing it
@@ -926,6 +963,7 @@ resource_name: "USER_STORIES"
 
 ---
 
+<!-- section_id: "be1848e5-52ff-4f0f-a392-330860806549" -->
 ### US-071: Manage Word Videos from Detail View
 **As a** teacher sharing pronunciation references
 **I want to** upload and watch videos tied to a word directly from its detail page
@@ -958,6 +996,7 @@ resource_name: "USER_STORIES"
 
 ---
 
+<!-- section_id: "976320e9-5b4a-4f15-ab24-bbd6373f2d77" -->
 ### US-030: View All Words
 **As a** language reviewer
 **I want to** see all words in my project
@@ -990,6 +1029,7 @@ resource_name: "USER_STORIES"
 
 ---
 
+<!-- section_id: "3210f885-9e8a-42a3-99cb-6a59a16b06e7" -->
 ### US-031: Search Words by Field
 **As a** user looking for specific words
 **I want to** search by different fields
@@ -1023,6 +1063,7 @@ resource_name: "USER_STORIES"
 
 ---
 
+<!-- section_id: "21471041-60d8-4888-9114-c3b463851870" -->
 ### US-032: Edit Existing Word
 **As a** language maintainer
 **I want to** modify word attributes
@@ -1061,6 +1102,7 @@ resource_name: "USER_STORIES"
 
 ---
 
+<!-- section_id: "90a9c6c8-f68a-45fe-914c-a99e4a8b4f7a" -->
 ### US-033: Delete Word
 **As a** user removing obsolete content
 **I want to** delete words I no longer need
@@ -1090,6 +1132,7 @@ resource_name: "USER_STORIES"
 
 ---
 
+<!-- section_id: "05cbda11-4482-4c6b-ac8a-3c31f49cd8a8" -->
 ### US-034: Attach Video to Word
 **As a** multimedia content creator
 **I want to** attach videos showing word pronunciation
@@ -1128,6 +1171,7 @@ resource_name: "USER_STORIES"
 
 ---
 
+<!-- section_id: "2a6b8a8f-354a-49b6-a008-9b7e7cfed17b" -->
 ### US-035: Remove Video from Word
 **As a** content manager
 **I want to** remove video attachments
@@ -1157,6 +1201,7 @@ resource_name: "USER_STORIES"
 
 ---
 
+<!-- section_id: "48fa2450-061c-4aa3-a35e-851ecb5edf6d" -->
 ### US-036: View Selected Word with Phoneme Feedback
 **As a** language learner
 **I want to** see phoneme-by-phoneme breakdown when selecting words
@@ -1197,6 +1242,7 @@ resource_name: "USER_STORIES"
 
 ---
 
+<!-- section_id: "bcd8d857-c665-47a0-bbd4-fb75e155cfce" -->
 ### US-037: Mobile Word Creation Experience
 **As a** mobile user
 **I want to** create words on my phone with an optimized layout
@@ -1234,8 +1280,10 @@ resource_name: "USER_STORIES"
 
 ---
 
+<!-- section_id: "8a9c8ad8-8af7-49d4-a963-7841a1caa5cb" -->
 ## 🛠️ Level 4c: Administration Section
 
+<!-- section_id: "9bec06ad-e8a4-4eb7-ad9b-9eae3779f740" -->
 ### US-038: View Administration Dashboard
 **As a** project admin
 **I want to** access administrative tools
@@ -1263,6 +1311,7 @@ resource_name: "USER_STORIES"
 
 ---
 
+<!-- section_id: "e4629b11-3ebc-4ff3-ae53-9b1581e54845" -->
 ### US-039: Add New Phoneme
 **As a** linguist expanding sound inventory
 **I want to** add new phonemes to my project
@@ -1293,6 +1342,7 @@ resource_name: "USER_STORIES"
 
 ---
 
+<!-- section_id: "bee45db7-9e6b-41c7-ae76-23b02bc90d9b" -->
 ### US-040: Edit Phoneme Details
 **As a** admin correcting data
 **I want to** modify phoneme attributes
@@ -1321,6 +1371,7 @@ resource_name: "USER_STORIES"
 
 ---
 
+<!-- section_id: "f870b29c-dd23-4130-af29-00be7149a776" -->
 ### US-041: View Phoneme Usage Statistics
 **As a** analyst
 **I want to** see which words use each phoneme
@@ -1352,6 +1403,7 @@ resource_name: "USER_STORIES"
 
 ---
 
+<!-- section_id: "e65d9773-ccd7-4abe-a1c5-217b14065289" -->
 ### US-042: Delete Unused Phoneme
 **As a** admin cleaning up
 **I want to** delete phonemes with zero frequency
@@ -1381,6 +1433,7 @@ resource_name: "USER_STORIES"
 
 ---
 
+<!-- section_id: "ef359a72-bc6f-4626-895d-104e4fc9aa84" -->
 ### US-043: Bulk Delete Unused Phonemes
 **As a** admin
 **I want to** delete all unused phonemes at once
@@ -1408,6 +1461,7 @@ resource_name: "USER_STORIES"
 
 ---
 
+<!-- section_id: "6e63db26-3c5d-4125-8ba7-be3b264ca465" -->
 ### US-044: Export Phoneme Template
 **As a** template creator
 **I want to** export my current phoneme set
@@ -1458,6 +1512,7 @@ resource_name: "USER_STORIES"
 
 ---
 
+<!-- section_id: "0b10971c-fdd3-4db5-8ff2-337f629d884c" -->
 ### US-045: Import Phoneme Template from JSON
 **As a** user receiving a shared template
 **I want to** import phoneme set from JSON file
@@ -1489,6 +1544,7 @@ resource_name: "USER_STORIES"
 
 ---
 
+<!-- section_id: "21c0bb8e-3a2f-47dc-99ad-5af00cf8aa89" -->
 ### US-046: Apply Phoneme Template to Project
 **As a** user starting new project
 **I want to** apply an existing template
@@ -1523,6 +1579,7 @@ resource_name: "USER_STORIES"
 
 ---
 
+<!-- section_id: "148746e8-66e1-4758-8fb3-b00f49923ab0" -->
 ### US-047: Download Phoneme Template as JSON
 **As a** template user
 **I want to** download template as JSON file
@@ -1548,6 +1605,7 @@ resource_name: "USER_STORIES"
 
 ---
 
+<!-- section_id: "3fddb656-20e6-42eb-827a-92be45e0a512" -->
 ### US-048: Reset to Default Phoneme Template
 **As a** user wanting to start fresh
 **I want to** restore default phoneme set
@@ -1578,6 +1636,7 @@ resource_name: "USER_STORIES"
 
 ---
 
+<!-- section_id: "9ec673ee-8ea7-4286-9765-7294dfd17b2e" -->
 ### US-049: Delete Custom Template
 **As a** template manager
 **I want to** remove templates I no longer need
@@ -1605,6 +1664,7 @@ resource_name: "USER_STORIES"
 
 ---
 
+<!-- section_id: "efa5b57e-86fd-4e3a-8ac3-763c50b09ed0" -->
 ### US-050: Bulk Delete Words by Criteria
 **As a** admin cleaning up data
 **I want to** delete multiple words matching criteria
@@ -1639,6 +1699,7 @@ resource_name: "USER_STORIES"
 
 ---
 
+<!-- section_id: "34fc9d4c-3369-4fde-9e64-942c1e079df9" -->
 ### US-051: Fix Broken Video Paths
 **As a** admin after file migration
 **I want to** repair broken video references
@@ -1676,6 +1737,7 @@ resource_name: "USER_STORIES"
 
 ---
 
+<!-- section_id: "1a298ef8-6d72-4a0a-a13a-a4d5a4de2d7f" -->
 ### US-052: Database Reset (Full)
 **As a** developer or admin
 **I want to** completely reset the database
@@ -1713,6 +1775,7 @@ resource_name: "USER_STORIES"
 
 ---
 
+<!-- section_id: "10dc89f5-f46b-4317-bd35-931058b294b4" -->
 ### US-053: Update Phoneme Frequencies
 **As a** admin maintaining data integrity
 **I want to** recalculate phoneme frequencies
@@ -1741,8 +1804,10 @@ resource_name: "USER_STORIES"
 
 ---
 
+<!-- section_id: "5ab61a64-3fe9-4d2e-8830-818dd38dfc7c" -->
 ## 🎵 Cross-Cutting: Audio & Media Features
 
+<!-- section_id: "4c1ba4dd-8347-49c7-a2ea-9cb315501437" -->
 ### US-054: Play Individual Phoneme Pronunciation
 **As a** language learner
 **I want to** hear how individual phonemes sound
@@ -1775,6 +1840,7 @@ resource_name: "USER_STORIES"
 
 ---
 
+<!-- section_id: "2dea5d8b-8e41-49b5-a082-091d6f5cdcef" -->
 ### US-055: Play Full Word Pronunciation
 **As a** language learner
 **I want to** hear how constructed words sound
@@ -1804,6 +1870,7 @@ resource_name: "USER_STORIES"
 
 ---
 
+<!-- section_id: "788f035f-e613-47e7-9bf8-704ad78efc15" -->
 ### US-056: Check TTS System Status
 **As a** admin troubleshooting
 **I want to** verify TTS service availability
@@ -1837,8 +1904,10 @@ resource_name: "USER_STORIES"
 
 ---
 
+<!-- section_id: "fe7ddbcf-6656-425a-bfde-a73e0671e5cc" -->
 ## 🌐 Cross-Cutting: Cloud & Storage
 
+<!-- section_id: "2a2026be-9d8a-4a3a-8069-cc56e3809f36" -->
 ### US-057: Automatic Storage Type Detection
 **As a** user
 **I want** the system to transparently handle storage
@@ -1865,6 +1934,7 @@ resource_name: "USER_STORIES"
 
 ---
 
+<!-- section_id: "f615b77a-b7f2-4ac3-9f2e-b0f2ba732262" -->
 ### US-058: Firebase Unavailable Graceful Degradation
 **As a** user when cloud services are down
 **I want** to continue using local features
@@ -1894,6 +1964,7 @@ resource_name: "USER_STORIES"
 
 ---
 
+<!-- section_id: "a893f4ce-3cbf-4952-8457-c08e7c841dc0" -->
 ### US-059: Hybrid Local and Cloud Project Management
 **As a** user
 **I want to** work with both local and cloud projects seamlessly
@@ -1927,8 +1998,10 @@ resource_name: "USER_STORIES"
 
 ---
 
+<!-- section_id: "ba5038c1-872b-4eee-8ce4-bb78abfbe613" -->
 ## 🧪 Cross-Cutting: Testing & Quality
 
+<!-- section_id: "38fb7e3c-9255-4c64-9a5d-901f4c338840" -->
 ### US-060: Run Cloud Integration Tests
 **As a** developer
 **I want to** verify cloud features work correctly
@@ -1963,6 +2036,7 @@ resource_name: "USER_STORIES"
 
 ---
 
+<!-- section_id: "0e311fc6-7904-41f3-9e7a-50ca744122ea" -->
 ### US-061: Skip Cloud Tests When Offline
 **As a** developer working offline
 **I want** tests to skip cloud tests gracefully
@@ -1989,8 +2063,10 @@ resource_name: "USER_STORIES"
 
 ---
 
+<!-- section_id: "8c91fb86-c35c-43db-b7e8-eb7c8c1b8352" -->
 ## 📐 Cross-Cutting: Development Conventions
 
+<!-- section_id: "fd3550a5-2467-4ee5-8361-052c5357a9b7" -->
 ### US-062: Follow Parallel Feature Isolation
 **As a** developer or AI agent
 **I want** to work on features in isolated directories
@@ -2025,6 +2101,7 @@ resource_name: "USER_STORIES"
 
 ---
 
+<!-- section_id: "5589e6bd-f164-480e-a74d-4a380d1b2cc8" -->
 ### US-063: Run Feature-Specific Tests
 **As a** developer
 **I want to** run tests for just my feature
@@ -2049,8 +2126,10 @@ resource_name: "USER_STORIES"
 
 ---
 
+<!-- section_id: "7e0bd713-0cf8-4905-9600-f680848c88b3" -->
 ## 🎯 End-to-End User Journeys
 
+<!-- section_id: "0ac071fb-01d5-43cc-a3d7-bc25e31b92ef" -->
 ### US-064: Complete New User Onboarding Journey
 **As a** new user discovering the application
 **I want to** get started quickly
@@ -2084,6 +2163,7 @@ resource_name: "USER_STORIES"
 
 ---
 
+<!-- section_id: "22038ccb-2cc5-470a-924d-a84d7b665607" -->
 ### US-065: Team Collaboration Journey
 **As a** team lead
 **I want to** set up my team for collaboration
@@ -2114,6 +2194,7 @@ resource_name: "USER_STORIES"
 
 ---
 
+<!-- section_id: "93385a8c-1d62-43e2-a0a9-cc60dc567479" -->
 ### US-066: Advanced User: Branching and Merging Journey
 **As an** experienced language developer
 **I want to** experiment with variants
@@ -2141,6 +2222,7 @@ resource_name: "USER_STORIES"
 
 ---
 
+<!-- section_id: "7207f183-891b-4003-b934-eaca63afe8e6" -->
 ### US-067: Mobile-First Creator Journey
 **As a** mobile user
 **I want to** create language content on my phone
@@ -2171,6 +2253,7 @@ resource_name: "USER_STORIES"
 
 ---
 
+<!-- section_id: "0a9ada1b-c5c9-44b1-9d5b-9f4d15048321" -->
 ## 📊 Summary Statistics
 
 **Total User Stories**: 67+ comprehensive stories
@@ -2181,6 +2264,7 @@ resource_name: "USER_STORIES"
 
 ---
 
+<!-- section_id: "658322dd-922b-43cb-96b4-c57829acd474" -->
 ## Maintenance Notes
 
 **Last Updated**: [Current Date]
@@ -2197,6 +2281,7 @@ resource_name: "USER_STORIES"
 
 ---
 
+<!-- section_id: "fcf806ea-e81e-440d-a618-285c89a9b88d" -->
 ### US-068: Google Account Cloud Lifecycle Verification
 **As a** QA engineer validating external identity flows  
 **I want to** exercise real Google and email accounts through onboarding, project creation, and migration  

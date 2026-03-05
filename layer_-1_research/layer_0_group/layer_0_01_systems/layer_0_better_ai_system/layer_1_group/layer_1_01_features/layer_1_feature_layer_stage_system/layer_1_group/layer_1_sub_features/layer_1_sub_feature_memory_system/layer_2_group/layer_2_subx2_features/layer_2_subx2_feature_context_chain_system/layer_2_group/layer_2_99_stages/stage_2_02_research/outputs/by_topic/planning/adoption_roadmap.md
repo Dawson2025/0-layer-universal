@@ -5,10 +5,12 @@ resource_name: "adoption_roadmap"
 ---
 # AALang Adoption Roadmap (Revised 2026-02-07)
 
+<!-- section_id: "83870fb2-29b8-4038-9be3-d41c392881c8" -->
 ## Current State
 
 AALang/GAB is integrated at multiple points but with a gap between **design-time precision** (JSON-LD definitions) and **runtime effectiveness** (what the LLM actually follows). The CLAUDE.md files have ceremonial pseudo-code that doesn't connect to real artifacts.
 
+<!-- section_id: "e6679199-f7dc-43e1-93e8-4417feafc419" -->
 ### What Exists
 
 | Artifact | Count | Quality |
@@ -22,6 +24,7 @@ AALang/GAB is integrated at multiple points but with a gap between **design-time
 | CLAUDE.md files | 298 | 15,363 total lines; 717 in static chain (target: <400) |
 | Integration markdown companions | 0 | **None exist yet** |
 
+<!-- section_id: "001d7871-a932-442a-a8fc-fa8f57aaf347" -->
 ### What's Been Verified (Research Completed)
 
 - Professor's upstream docs reviewed: 10 substantive docs, 3 test result docs
@@ -33,8 +36,10 @@ AALang/GAB is integrated at multiple points but with a gap between **design-time
 
 ---
 
+<!-- section_id: "4d34ba00-cb4b-484b-8e87-b8d5ccbcc653" -->
 ## Adoption Tiers (Revised)
 
+<!-- section_id: "81915c33-5a37-474a-ae98-600fc8175e84" -->
 ### Tier 1: Documentation & Knowledge — COMPLETE
 
 - Knowledge base: `sub_layer_0_01_knowledge_system/aalang_gab_system/` (7 docs)
@@ -42,6 +47,7 @@ AALang/GAB is integrated at multiple points but with a gap between **design-time
 - Professor's docs analysis: comprehensive review of upstream
 - Verification results: 5 claims verified via independent research
 
+<!-- section_id: "2b0864a3-ed83-434b-9676-ad9cc0636144" -->
 ### Tier 2: CLAUDE.md Optimization — READY TO START
 
 **Goal**: Slim static chain from 717 to ~350 lines, replace ceremonial AALang with real references.
@@ -53,6 +59,7 @@ Tasks:
 - [ ] Create @import targets for verbose content (compliance checklist, scenario rules, ASCII diagrams)
 - [ ] Slim `layer_0/CLAUDE.md` (206 → ~80 lines, move ASCII diagrams to @imports)
 
+<!-- section_id: "72b0656d-2f1f-43e9-b950-dcd872c5033a" -->
 ### Tier 3: Path-Specific Rules — READY TO START
 
 **Goal**: Create `.claude/rules/` directory with context that auto-loads by path.
@@ -65,6 +72,7 @@ Tasks:
 - [ ] `aalang-context.md` (paths: `layer_0/layer_0_01_ai_manager_system/**`)
 - [ ] `development-stages.md` (paths: `**/stage_*_06_development/**`)
 
+<!-- section_id: "7a726800-7c17-401b-aede-fe08a3c51cd7" -->
 ### Tier 4: Integration Companions + Skill Enhancement — SHORT-TERM
 
 **Goal**: Bridge JSON-LD definitions to runtime with readable markdown + better skill descriptions.
@@ -76,6 +84,7 @@ Tasks:
 - [ ] Create `/aalang-load` skill (reads JSON-LD, presents as markdown)
 - [ ] Create `/team-create` skill (generates spawn prompts from orchestrator definitions)
 
+<!-- section_id: "9151c5fc-5c32-4803-badd-821911ea15ed" -->
 ### Tier 5: Fill JSON-LD Definitions — MEDIUM-TERM
 
 **Goal**: Key layers/stages have real JSON-LD definitions (not stubs).
@@ -91,6 +100,7 @@ Tasks:
 - [ ] Expand 17-line stage agent stubs with real content
 - [ ] Update entity-creation skill to auto-generate JSON-LD + CLAUDE.md + integration.md
 
+<!-- section_id: "90a10f85-e443-42e4-805f-ffd52e812deb" -->
 ### Tier 6: Agent Teams Persistence — LONGER-TERM
 
 **Goal**: Teams that persist across sessions via orchestrator definitions + hand-off docs.
@@ -104,14 +114,17 @@ Tasks:
 
 ---
 
+<!-- section_id: "e2ec022f-ecbd-4af5-bb13-0d852c9fabe4" -->
 ## Key Decisions
 
+<!-- section_id: "3d38bd89-7dce-4051-bfe2-a2108b23051b" -->
 ### Decision 1: Hybrid Approach
 
 **Approved (2026-02-07)**: JSON-LD as source-of-truth + skills as runtime interface + compact CLAUDE.md references.
 
 **Why hybrid**: JSON-LD forces precision (the professor's "Explicit Over Implicit"). Markdown communicates that precision effectively to the LLM. Skills make it actionable at runtime. CLAUDE.md files just point to where things are.
 
+<!-- section_id: "7a57d81e-bf67-44c4-b6c8-88d5c48d5e66" -->
 ### Decision 2: Three-Layer Redundancy Model
 
 **Approved (2026-02-07)**: No single mechanism reliably solves skill invocation. Use three redundant layers.
@@ -132,6 +145,7 @@ See: `architecture_decision_reference_chain.md` for the full analysis.
 
 ---
 
+<!-- section_id: "55be7137-d107-4c72-9904-3ce14e056bcb" -->
 ## Scale
 
 | Level | Directories | JSON-LD Files | Coverage |
@@ -147,6 +161,7 @@ Practical target: Cover ~85 key definitions (manual + template), auto-generate t
 
 ---
 
+<!-- section_id: "a989e3d8-ca45-40c7-b6ca-5de85c3f6183" -->
 ## Dependencies
 
 | Dependency | Status | Needed For |
@@ -159,6 +174,7 @@ Practical target: Cover ~85 key definitions (manual + template), auto-generate t
 
 ---
 
+<!-- section_id: "c7028386-8b40-4176-89ab-bff8991a8ed0" -->
 ## Detailed Plan
 
 See: `implementation_plan.md` for the full phased implementation plan with specific file changes.

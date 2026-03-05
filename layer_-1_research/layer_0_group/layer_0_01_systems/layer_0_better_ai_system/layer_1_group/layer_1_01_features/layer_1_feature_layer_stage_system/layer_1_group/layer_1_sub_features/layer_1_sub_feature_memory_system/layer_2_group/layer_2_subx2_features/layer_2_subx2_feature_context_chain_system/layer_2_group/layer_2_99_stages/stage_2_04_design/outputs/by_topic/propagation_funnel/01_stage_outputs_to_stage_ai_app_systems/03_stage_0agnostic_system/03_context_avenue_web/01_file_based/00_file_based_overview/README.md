@@ -6,10 +6,12 @@ resource_name: "README"
 ---
 # File-Based Avenues (01-08) — Ordered by Comprehensiveness
 
+<!-- section_id: "710f23f5-ec15-437e-91ac-4144b2891eba" -->
 ## Overview
 
 The file-based avenues (01-08) are the **primary delivery mechanisms** for context. They are human-readable, version-controllable, and ordered from **most comprehensive to most fragmented**.
 
+<!-- section_id: "ae1bae87-d84c-4ec7-ae86-abe216b728a0" -->
 ## Ordering Principle: Most Detailed → Least Detailed
 
 The avenues are deliberately ordered from most comprehensive to most fragmented:
@@ -26,8 +28,10 @@ The avenues are deliberately ordered from most comprehensive to most fragmented:
 
 This ordering reflects **information density and detail level**, not importance or frequency of use.
 
+<!-- section_id: "142df3da-6986-4277-b62f-be96ceb85663" -->
 ## File-Based Avenues (01-08) in Detail
 
+<!-- section_id: "3058d356-4c36-4908-b33e-951507c70d1e" -->
 ### Avenue 01: AALang JSON-LD — Most Comprehensive
 
 **Detail Level**: Maximum
@@ -52,6 +56,7 @@ This ordering reflects **information density and detail level**, not importance 
 
 **Use when**: Need the complete, authoritative agent definition
 
+<!-- section_id: "51a022dc-d8bd-4c35-b588-3d6cf9e2f2c7" -->
 ### Avenue 02: AALang Markdown Integration — Nearly Complete
 
 **Detail Level**: ~80% (readable form)
@@ -73,6 +78,7 @@ This ordering reflects **information density and detail level**, not importance 
 
 **Use when**: Need readable reference without JSON-LD syntax
 
+<!-- section_id: "75eaa262-b813-494e-ac4e-316af6bc060c" -->
 ### Avenue 05: Skills — Focused Detail
 
 **Detail Level**: Complete for task execution
@@ -96,6 +102,7 @@ This ordering reflects **information density and detail level**, not importance 
 
 **Use when**: Need to execute a specific task
 
+<!-- section_id: "f6270582-f4cb-49b8-99ee-7d26163fc2b0" -->
 ### Avenue 04: @Import References — Curated Detail
 
 **Detail Level**: Organized navigation and discovery
@@ -118,6 +125,7 @@ This ordering reflects **information density and detail level**, not importance 
 
 **Use when**: Need to find/understand related entities or templates
 
+<!-- section_id: "5bd08e8e-ff85-42d9-8d24-ac26999102c9" -->
 ### Avenue 06: Agents — Lightweight Definition
 
 **Detail Level**: Identity and capability summary
@@ -139,6 +147,7 @@ This ordering reflects **information density and detail level**, not importance 
 
 **Use when**: Need to understand agent purpose quickly
 
+<!-- section_id: "19bb5c09-d32f-466c-91fa-c472b70d17f8" -->
 ### Avenue 07: Path-Specific Rules — Scoped Context
 
 **Detail Level**: Directory-specific, minimal
@@ -160,6 +169,7 @@ This ordering reflects **information density and detail level**, not importance 
 
 **Use when**: Working in this specific directory/path
 
+<!-- section_id: "0f27640b-8753-4986-8e0e-24ecff1f6def" -->
 ### Avenue 08: Hooks — Most Fragmented
 
 **Detail Level**: Event-specific actions
@@ -181,6 +191,7 @@ This ordering reflects **information density and detail level**, not importance 
 
 **Use when**: Need to automate a specific event
 
+<!-- section_id: "47c72b51-de20-4e98-a69a-2446e75cca6d" -->
 ## Why This Ordering?
 
 Think of the avenues as **layers of detail you peel back**:
@@ -193,6 +204,7 @@ Think of the avenues as **layers of detail you peel back**:
 
 The ordering reflects **decreasing comprehensiveness** as you move from 01 → 08.
 
+<!-- section_id: "6071ad67-af02-43c7-b0cd-756c089aafed" -->
 ## Any-One-Fires Resilience
 
 Each avenue is independent and self-contained. An AI system can load via:
@@ -205,6 +217,7 @@ Each avenue is independent and self-contained. An AI system can load via:
 
 If one avenue is unavailable, others provide the same context.
 
+<!-- section_id: "bae4da51-2ebc-433c-bc46-c343293606fa" -->
 ## File Organization
 
 | Avenue | Location | Format | Count |
@@ -217,6 +230,7 @@ If one avenue is unavailable, others provide the same context.
 | 07 | `07_path_specific_rules/` | `.md` | ~5-10 per directory |
 | 08 | `08_hooks/` | `.sh` | ~5-10 per layer |
 
+<!-- section_id: "21e89f67-52e2-4290-a875-b3c20e67b858" -->
 ## Next Steps
 
 For each avenue, read the detailed subdirectory README (once created) to understand file organization and specific patterns used in each avenue.

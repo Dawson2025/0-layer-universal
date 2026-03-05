@@ -6,12 +6,14 @@ resource_name: "README"
 ---
 # Playwright MCP - Browser Automation for AI Agents
 
+<!-- section_id: "5c4abf83-9801-404a-b851-d9432abf5d18" -->
 ## Overview
 
 Playwright MCP (Model Context Protocol) enables AI agents to control web browsers programmatically. It provides a standardized interface for browser automation tasks including navigation, form filling, screenshot capture, and web scraping.
 
 **Environment**: Linux/Ubuntu + Claude Code CLI (local Cursor setup)
 
+<!-- section_id: "7a90acef-a57f-4da3-ac20-642200ba786b" -->
 ## Features
 
 - **Full Browser Control**: Navigate, click, type, scroll, and interact with any web page
@@ -22,8 +24,10 @@ Playwright MCP (Model Context Protocol) enables AI agents to control web browser
 - **Network Monitoring**: Inspect requests, responses, and console messages
 - **Concurrent Browser Support**: Run multiple browser instances across different AI tools
 
+<!-- section_id: "82b6404a-9f1b-4c78-8043-18e7bd04973b" -->
 ## Quick Start
 
+<!-- section_id: "fda71554-48d3-43e4-a42a-c664774e4c80" -->
 ### Prerequisites
 
 ```bash
@@ -38,6 +42,7 @@ npx playwright install chromium
 npx playwright --version
 ```
 
+<!-- section_id: "76909170-da00-4681-88ba-2c9bbd9eb4f8" -->
 ### Basic Usage
 
 Once configured in Claude Code CLI, use these MCP tools:
@@ -59,6 +64,7 @@ mcp__playwright__browser_click(element="Submit button", ref="ref_1")
 mcp__playwright__browser_type(element="Search input", ref="ref_2", text="search query")
 ```
 
+<!-- section_id: "5fc1e800-e7d8-4599-a5a0-7d85d6dc2986" -->
 ## Available Tools
 
 | Tool | Description |
@@ -80,6 +86,7 @@ mcp__playwright__browser_type(element="Search input", ref="ref_2", text="search 
 | `browser_wait_for` | Wait for text/element/time |
 | `browser_close` | Close browser session |
 
+<!-- section_id: "30c10ad8-f4bf-456b-8278-c9bdc13f87f8" -->
 ## Directory Structure
 
 ```
@@ -103,8 +110,10 @@ playwright-mcp/
 └── 0.14_agent_setup/             # Agent-specific configurations
 ```
 
+<!-- section_id: "d50b05c6-c7d4-44cf-8f5c-49a59ac456b1" -->
 ## Configuration
 
+<!-- section_id: "8d53cc98-9170-454a-9759-a50bd11285dd" -->
 ### Claude Code CLI
 
 Playwright MCP is typically auto-configured. To verify or manually configure:
@@ -117,6 +126,7 @@ claude mcp list
 claude mcp add playwright -- npx -y @playwright/mcp@latest
 ```
 
+<!-- section_id: "d3ba0ffa-0444-4cf7-9e14-dd9c897f8643" -->
 ### Environment Variables
 
 For custom browser paths or headed mode:
@@ -131,12 +141,14 @@ For custom browser paths or headed mode:
 }
 ```
 
+<!-- section_id: "8686b336-e4de-4f17-b2d7-e9c7ea22b809" -->
 ## Documentation
 
 - **[Setup Guide](./setup/README.md)**: Detailed MCP server automation system
 - **[Troubleshooting](./setup/TROUBLESHOOTING.md)**: Common issues and solutions
 - **[Concurrent Browser Setup](./setup/CONCURRENT_BROWSER_SETUP.md)**: Run browsers across multiple AI tools
 
+<!-- section_id: "3a22f1f3-2a88-4884-9976-4dac8574ea9e" -->
 ### Workflow Protocols
 
 - **[Web Scraping](./0.13_protocols/web_scraping_workflow.md)**: Extract data from websites
@@ -144,6 +156,7 @@ For custom browser paths or headed mode:
 - **[Screenshot Capture](./0.13_protocols/screenshot_capture_workflow.md)**: Capture and analyze pages
 - **[GitHub Automation](./0.13_protocols/github_browser_automation.md)**: GitHub-specific operations
 
+<!-- section_id: "730a7982-9ac7-4829-965d-15b4707c4bd5" -->
 ## Headed vs Headless Mode
 
 - **Headed** (default): Opens visible browser window, useful for debugging
@@ -163,6 +176,7 @@ npx -y @playwright/mcp@latest --headless
 }
 ```
 
+<!-- section_id: "aa4db44e-5958-4c9d-9f1f-d4ea5df42231" -->
 ## Related Resources
 
 - [Playwright Documentation](https://playwright.dev/docs/intro)

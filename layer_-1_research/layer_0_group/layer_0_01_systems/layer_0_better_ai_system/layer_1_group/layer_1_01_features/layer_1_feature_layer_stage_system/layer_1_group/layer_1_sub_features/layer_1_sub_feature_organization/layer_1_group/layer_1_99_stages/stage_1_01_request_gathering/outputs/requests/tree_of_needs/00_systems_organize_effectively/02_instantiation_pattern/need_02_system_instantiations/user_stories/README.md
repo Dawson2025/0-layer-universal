@@ -6,6 +6,7 @@ resource_name: "README"
 ---
 # User Stories — System Instantiations
 
+<!-- section_id: "73c865e8-982b-48cb-852d-79fb58820c7a" -->
 ## Actors
 
 | Actor | Description |
@@ -13,6 +14,7 @@ resource_name: "README"
 | Student | End user who gets a personalized instance |
 | System | Manages instance creation and inheritance |
 
+<!-- section_id: "379cb2ab-c30e-4361-acde-12236ef2810e" -->
 ## Stories
 
 | ID | Story | Actor |

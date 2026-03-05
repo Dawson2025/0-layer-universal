@@ -6,6 +6,7 @@ resource_name: "README"
 ---
 # Stage 02: 0AGNOSTIC System Prompt Generation
 
+<!-- section_id: "872846eb-30b2-493f-b4ad-f77098501281" -->
 ## Purpose
 
 **0AGNOSTIC System Prompt** is the authoritative **single source of truth** that converts stage reports and accumulated context into structured context for agents.
@@ -20,6 +21,7 @@ From the stage report, we synthesize:
 
 This becomes the `0AGNOSTIC.md` file at each entity level.
 
+<!-- section_id: "1db31cd4-277b-4f92-9496-24cd3cd216fe" -->
 ## When to Create
 
 Create a 0AGNOSTIC system prompt **after stage reports are complete** and consolidated:
@@ -29,6 +31,7 @@ Create a 0AGNOSTIC system prompt **after stage reports are complete** and consol
 3. **Stage 06 (Development)** → Update 0AGNOSTIC.md with implemented resources
 4. **Stage 10 (Current Product)** → Finalize 0AGNOSTIC.md as shipped context
 
+<!-- section_id: "e9a72f03-6e5c-430a-9438-d44ab618315a" -->
 ## Location Convention
 
 **At each level** (01-04 in propagation funnel):
@@ -50,8 +53,10 @@ entity_root/
     └── {resources loaded on-demand from 0AGNOSTIC.md}
 ```
 
+<!-- section_id: "dcd394d5-4c79-4b0d-a0ed-5287fdf238f8" -->
 ## 0AGNOSTIC.md Structure
 
+<!-- section_id: "5902eaea-0ad6-48da-9f66-3ce2392335b6" -->
 ### Canonical Two-Section Format
 
 ```markdown
@@ -106,6 +111,7 @@ entity_root/
 - On-demand resources
 ```
 
+<!-- section_id: "40ff5228-8ca5-4b59-ae54-5617e3af2c92" -->
 ### Key Rules
 
 1. **STATIC CONTEXT**: Always loaded by agents. Keep lean (<400 lines total for chain).
@@ -113,6 +119,7 @@ entity_root/
 3. **Current Status** goes in STATIC, not DYNAMIC — agents see it every time.
 4. **Sources are 0AGNOSTIC.md, NOT CLAUDE.md** — CLAUDE.md is auto-generated via agnostic-sync.sh
 
+<!-- section_id: "f9256222-936f-4914-ab89-e7a3d0d05357" -->
 ## Synthesis Process: Stage Report → 0AGNOSTIC.md
 
 **Step 1: Extract Stage Report Sections**
@@ -210,6 +217,7 @@ This generates:
 - AGENTS.md, GEMINI.md, OPENAI.md, .cursorrules (tool-specific)
 - .github/copilot-instructions.md (GitHub Copilot config)
 
+<!-- section_id: "582c972c-07f2-4576-b065-1ab2f5b84a7e" -->
 ## Progressive Disclosure
 
 0AGNOSTIC.md implements **four-level progressive disclosure**:
@@ -219,6 +227,7 @@ This generates:
 3. **DYNAMIC detail**: Full context on demand (Current State + Resources + Navigation)
 4. **Resource documents**: Protocols, knowledge, rules (`.0agnostic/` on-demand)
 
+<!-- section_id: "f721e05a-a356-44c7-96ca-aad4384ebf67" -->
 ## Phase in Propagation Funnel
 
 0AGNOSTIC system prompts are the **translation layer** between:
@@ -227,6 +236,7 @@ This generates:
 
 0AGNOSTIC.md is the **canonical form** that cascades to all AI apps via agnostic-sync.sh and .1merge system.
 
+<!-- section_id: "d5686f77-39a8-4ef1-89da-c742fa20c4ae" -->
 ## See Also
 
 - `.0agnostic/01_knowledge/layer_stage_system/stage_guides/STAGE_AGENT_TEMPLATE.md` — Template for new entities

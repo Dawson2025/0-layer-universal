@@ -8,6 +8,7 @@ resource_name: "README"
 
 **Need**: [Path Resolution](../README.md)
 
+<!-- section_id: "07ac750b-6d7d-45e5-be3b-0b0b621583ea" -->
 ## Actors
 
 - **Script**: pointer-sync.sh running path resolution

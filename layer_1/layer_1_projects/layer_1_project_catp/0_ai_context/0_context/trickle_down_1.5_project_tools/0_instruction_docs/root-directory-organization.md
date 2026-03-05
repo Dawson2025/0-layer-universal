@@ -6,12 +6,15 @@ resource_name: "root-directory-organization"
 # Root Directory Organization Guide
 *Proper Organization of Files in Project Root Directory*
 
+<!-- section_id: "44295be4-8694-4b6e-83d3-8ced1c4829c9" -->
 ## 🎯 Purpose
 
 This document outlines which files should remain in the project root directory and which files should be organized into the trickle-down documentation structure.
 
+<!-- section_id: "96f09a2c-7a39-4de0-8c99-1690a139f48d" -->
 ## 📁 Files That Should Remain in Root
 
+<!-- section_id: "77c22fbc-b898-435c-8d46-6a59a991ad37" -->
 ### **Essential Application Files**
 These files are required for the application to function and must remain in the root directory:
 
@@ -21,6 +24,7 @@ These files are required for the application to function and must remain in the 
 - `conftest.py` - Pytest configuration
 - `setup.py` - Python package setup
 
+<!-- section_id: "df8e230e-5df0-4b7f-ba99-213760b71af9" -->
 ### **Configuration Files (Essential)**
 These configuration files are required for the application to run:
 
@@ -31,11 +35,14 @@ These configuration files are required for the application to run:
 - `package.json` - Node.js dependencies
 - `package-lock.json` - Node.js dependency lock file
 
+<!-- section_id: "bbe0ce86-d382-4e30-9ce5-97e4b3b55d40" -->
 ### **Git Configuration (Essential)**
 - `.gitignore` - Git ignore rules (required for version control)
 
+<!-- section_id: "b6322475-1b6d-484e-bc83-f22ae0e26e99" -->
 ## 📁 Files That Were Moved to Organized Structure
 
+<!-- section_id: "a6f5eed6-374b-4340-9ab5-843ac109b587" -->
 ### **Configuration Files** → `trickle_down_1.5_project_tools/0_instruction_docs/configs/`
 - `.mcp.json` - MCP server configuration
 - `architecture-plan.json` - System architecture planning
@@ -49,6 +56,7 @@ These configuration files are required for the application to run:
 - `security-config.json` - Security configuration
 - `simple_auth_config.json` - Simple authentication configuration
 
+<!-- section_id: "3a2dae33-9ea2-4772-8b5e-861160685719" -->
 ### **Script Files** → `trickle_down_1.5_project_tools/0_instruction_docs/scripts/`
 - `firebase_complete_demo.py` - Firebase complete demo script
 - `firebase_master_orchestrator.py` - Firebase master orchestrator
@@ -57,12 +65,14 @@ These configuration files are required for the application to run:
 - `install-playwright.sh` - Playwright installation script
 - `run-all-tests.sh` - Test runner script
 
+<!-- section_id: "73113391-a39c-44d5-8500-42b645ae1101" -->
 ### **Log Files** → `trickle_down_1.5_project_tools/0_instruction_docs/logs/`
 - `automation-test-after-fix.log` - Automation test log
 - `flask.log` - Flask application log
 - `flask.pid` - Flask process ID
 - `gunicorn.pid` - Gunicorn process ID
 
+<!-- section_id: "c2252ebb-4354-47f6-91bd-420c93c1a84d" -->
 ### **Data Files** → `trickle_down_1.5_project_tools/0_instruction_docs/data/`
 - `comprehensive-report-20251023-151108.json` - Comprehensive report
 - `comprehensive-report-20251023-151426.json` - Comprehensive report
@@ -74,10 +84,12 @@ These configuration files are required for the application to run:
 - `cookies-test.txt` - Cookies test data
 - `test-cookies.txt` - Test cookies data
 
+<!-- section_id: "2e70eb44-e4dc-45a2-a6fb-18f26a111b10" -->
 ### **Backup Files** → `trickle_down_1.5_project_tools/0_instruction_docs/backups/`
 - `README.md.backup` - Backup of README file
 - `app.py.backup` - Backup of app.py file
 
+<!-- section_id: "f017b14e-e1dd-4077-a5ba-7f57f4ccffc4" -->
 ### **Screenshot Files** → `trickle_down_1.5_project_tools/0_instruction_docs/screenshots/`
 - `deployment-plan-development-environment.png` - Development deployment plan
 - `deployment-plan-full-deployment.png` - Full deployment plan
@@ -90,18 +102,22 @@ These configuration files are required for the application to run:
 - `firebase-dashboard-20251023-151422.png` - Firebase dashboard screenshot
 - `firebase-dashboard-20251023-151423.png` - Firebase dashboard screenshot
 
+<!-- section_id: "56d9f44e-d01c-4a13-8a90-0f203862bdbe" -->
 ### **Database Files** → `trickle_down_2_features/0_instruction_docs/data/`
 - `main.db` - Main application database
 - `phonemes.db` - Phonemes database
 
+<!-- section_id: "c9fcd76e-e229-4076-9de5-560be7528151" -->
 ## 🎯 Organization Principles
 
+<!-- section_id: "f3aff507-2256-49ff-9a2a-72c3cb3307d7" -->
 ### **Keep in Root If:**
 - File is essential for application startup
 - File is required by build tools or package managers
 - File serves as the main entry point for the project
 - File is a standard configuration file for the technology stack
 
+<!-- section_id: "417fdf21-5626-41dd-b41f-2cfb343a1298" -->
 ### **Move to Organized Structure If:**
 - File is documentation or reference material
 - File is a script or utility not essential for startup
@@ -109,19 +125,23 @@ These configuration files are required for the application to run:
 - File is a configuration file for specific features or tools
 - File is a report or generated data file
 
+<!-- section_id: "6479ccdc-519b-4abb-8d03-8514f25327fb" -->
 ## 📊 Organization Results
 
+<!-- section_id: "c77d6d00-5c1a-443c-b091-0c8d214b0168" -->
 ### **Before Organization:**
 - 43+ files scattered in root directory
 - Mix of essential and non-essential files
 - Difficult to identify core application files
 
+<!-- section_id: "a7888ef0-46bd-468f-8f22-5352c4d41d05" -->
 ### **After Organization:**
 - **12 essential files** remain in root directory
 - **40+ files** moved to organized trickle-down structure
 - **Clear separation** between essential and organizational files
 - **Easy identification** of core application components
 
+<!-- section_id: "aba7dc9e-e2ba-47e6-af95-15c5c13c7162" -->
 ## 🔗 Related Documentation
 
 - **Project Tools**: `../trickle_down_1.5_project_tools/0_instruction_docs/`

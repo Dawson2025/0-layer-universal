@@ -6,6 +6,7 @@ resource_name: "0AGNOSTIC"
 ---
 # navigation — AI Manager System
 
+<!-- section_id: "40ce45a4-ede5-47f9-8003-63f96eaefd1c" -->
 ## Identity
 
 entity_id: "1a8240c3-c67c-4060-87d8-c80162846291"

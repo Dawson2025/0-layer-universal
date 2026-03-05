@@ -9,10 +9,12 @@ resource_name: "output_report"
 **Stage**: 04_design
 **Last Updated**: 2026-02-21
 
+<!-- section_id: "d51e287d-de2c-48eb-8e9d-c855b8299fe7" -->
 ## Summary
 
 Stage 04 produced 8 architecture decisions for agent delegation. 7 were made through iterative development (implicit design), and 1 — the context propagation design — was created as a formal design document. All decisions are codified in universal artifacts at root `.0agnostic/`.
 
+<!-- section_id: "f3a9577e-33a3-4ddb-9fd5-3c857fe41bb8" -->
 ## Outputs Index
 
 | Output | Description | Location |
@@ -21,6 +23,7 @@ Stage 04 produced 8 architecture decisions for agent delegation. 7 were made thr
 | Propagation funnel stage contract | Required stage/entity report and handoff structure for this entity | [`outputs/design_decisions/propagation_funnel_stage_contract.md`](../design_decisions/propagation_funnel_stage_contract.md) |
 | 7 implicit design decisions | Architecture decisions with rationale and alternatives | (embedded in 0AGNOSTIC.md § Key Design Decisions) |
 
+<!-- section_id: "6746f1db-cf17-4571-94df-2964187ecf8b" -->
 ## Universal Artifacts Produced
 
 | Artifact | Location (root `.0agnostic/`) |
@@ -32,6 +35,7 @@ Stage 04 produced 8 architecture decisions for agent delegation. 7 were made thr
 | Scope Boundary Rule | `02_rules/static/STAGE_BOUNDARY_RULE.md` |
 | Stage report protocol | `03_protocols/stage_report_protocol.md` |
 
+<!-- section_id: "b9da66fd-74aa-42dc-9f64-a9c0df5eb9bd" -->
 ## Key Metrics
 
 - **Design decisions**: 8 total (7 implicit + 1 formal)

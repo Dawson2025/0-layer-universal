@@ -5,6 +5,7 @@ resource_name: "FOLDER_REORGANIZATION_PLAN"
 ---
 # Folder Reorganization Plan
 
+<!-- section_id: "cb837fe3-ad95-4077-a65f-7c6622decb3d" -->
 ## Current Issues
 
 1. **Root Directory Clutter**: 30 Python files + 16 markdown docs at root level
@@ -13,6 +14,7 @@ resource_name: "FOLDER_REORGANIZATION_PLAN"
 4. **Misplaced Configuration**: Firebase configs, phoneme templates at root
 5. **Unclear Artifacts**: `tatus`, `tatus --porcelain grep ^UU` files
 
+<!-- section_id: "b2d4a2fa-2371-4a91-8d72-99b570218dad" -->
 ## Proposed Structure
 
 ```
@@ -144,6 +146,7 @@ lang-trak-in-progress/
 └── [dotfiles]               # .git, .venv, .pytest_cache, .claude (KEEP)
 ```
 
+<!-- section_id: "abe16535-2485-49eb-ba5a-36b635107820" -->
 ## Files to Delete (Artifacts)
 
 - `tatus` - Git artifact
@@ -151,6 +154,7 @@ lang-trak-in-progress/
 - `test_audio.html` - Should be in templates or features/admin/templates
 - `replit.md` - Not needed if already have .replit
 
+<!-- section_id: "a9062c55-b457-4281-b5bf-673273d81f1b" -->
 ## Benefits
 
 1. **Clear Separation**: Config, source, scripts, data, docs all separated
@@ -159,6 +163,7 @@ lang-trak-in-progress/
 4. **Scalability**: Easy to add new categories without cluttering root
 5. **Professionalism**: Clean root directory shows organized project
 
+<!-- section_id: "4c318695-5238-4191-bc5e-af6aff4943ca" -->
 ## Migration Strategy
 
 1. Create new folder structure
@@ -169,8 +174,10 @@ lang-trak-in-progress/
 6. Update CI/CD if any
 7. Git commit with descriptive message
 
+<!-- section_id: "40ef6bdf-d573-439e-a517-f648f0090d0d" -->
 ## Import Path Changes Required
 
+<!-- section_id: "90f074c8-12f4-410e-94b3-1bb8f84b44b1" -->
 ### Before:
 ```python
 from storage_manager import storage_manager
@@ -178,6 +185,7 @@ from phonotactics import ...
 from tts_ipa import ...
 ```
 
+<!-- section_id: "89ccec73-e0eb-439d-b17c-631b51ea0c2c" -->
 ### After:
 ```python
 from src.storage_manager import storage_manager
@@ -192,6 +200,7 @@ Files that import these will need updates:
 - features/words/*.py
 - Any other feature modules
 
+<!-- section_id: "52a03e9e-aa2f-4d87-bd0c-eb6b44ac76c4" -->
 ## Documentation Updates Required
 
 - docs/for_ai/instructions_files/CLAUDE.md - Update all file paths
@@ -199,6 +208,7 @@ Files that import these will need updates:
 - docs/README.md - Update structure section
 - README.md (root) - Update if it references file locations
 
+<!-- section_id: "857e253a-f966-4cb0-a6cc-e700ddb406b9" -->
 ## Priority
 
 **RECOMMENDED**: This reorganization will make the codebase much more professional and maintainable. The benefits significantly outweigh the one-time cost of migration.

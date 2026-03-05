@@ -12,6 +12,7 @@ resource_name: "dependency_based_agent_hierarchy_design"
 
 ---
 
+<!-- section_id: "ecb141bf-0711-4d54-a81d-5d5d83e93d1c" -->
 ## Design Principle
 
 **Dependency ordering with absorbed cross-cutting features.**
@@ -20,6 +21,7 @@ Every feature lives inside the layer it most naturally belongs to. There are no 
 
 Within each layer, sub-layers are ordered by internal dependency — the same principle applied recursively.
 
+<!-- section_id: "43cc37fb-349c-461f-a52f-05d35e7421c3" -->
 ### Why This Design
 
 | Problem with the original L2-L11 flat chain | How this design solves it |
@@ -31,8 +33,10 @@ Within each layer, sub-layers are ordered by internal dependency — the same pr
 
 ---
 
+<!-- section_id: "31bbc479-ace6-4c1d-98bd-e830f4668757" -->
 ## The Hierarchy
 
+<!-- section_id: "e668ba1e-0991-4a6c-96a4-3dba3e5ea538" -->
 ### Layer 2: Infrastructure
 
 Everything the system needs to run. Without this, nothing works.
@@ -65,6 +69,7 @@ Everything the system needs to run. Without this, nothing works.
 
 ---
 
+<!-- section_id: "7f4b7604-11c7-48f0-aa4b-56773c2a5b64" -->
 ### Layer 3: Users
 
 Identity within the system. Once authenticated (L2), everything is scoped to a user.
@@ -85,6 +90,7 @@ L3.1 User Model → L3.2 Profiles → L3.3 Sessions
 
 ---
 
+<!-- section_id: "d51d574f-59fa-41fc-8e79-364df7af29a6" -->
 ### Layer 4: Phoneme System
 
 The universe of possible sounds. The most fundamental domain concept — every language feature depends on having a sound inventory.
@@ -114,6 +120,7 @@ L4.1 Groups → L4.2 Types → L4.3 Phonemes
 
 ---
 
+<!-- section_id: "40a524f5-ceec-4745-82d0-6f8c32908c99" -->
 ### Layer 5: Templates
 
 A user-selected view/filter of the full phoneme system. Defines which phonemes are available for a specific language project.
@@ -137,6 +144,7 @@ A user-selected view/filter of the full phoneme system. Defines which phonemes a
 
 ---
 
+<!-- section_id: "e0f0e202-4d66-4000-b6cf-735b9c582c71" -->
 ### Layer 6: Language Content
 
 The actual language being created. Words built from syllables, syllables built from positions, positions filled with phonemes from the template.
@@ -164,6 +172,7 @@ L6.1 Words → L6.2 Syllables → L6.3 Positions → L6.4 Phoneme Refs
 
 ---
 
+<!-- section_id: "b955b40c-fd11-4399-af53-34f8b82d6d1d" -->
 ### Layer 7: Projects
 
 Containers that organize language content. A project links a user to a template and the words they've created.
@@ -191,6 +200,7 @@ Containers that organize language content. A project links a user to a template 
 
 ---
 
+<!-- section_id: "94b3be45-514b-4bd9-9493-5588d1d6236c" -->
 ### Layer 8: Teams
 
 Collaboration. Users working together on shared projects.
@@ -214,6 +224,7 @@ L8.4 Project Sharing (depends on L8.1 + L7 Project interface)
 
 ---
 
+<!-- section_id: "82353c44-8625-4556-b66b-de686d8a28c2" -->
 ## What Happened to L9, L10, L11
 
 They no longer exist as standalone layers. Every sub-feature was absorbed:
@@ -237,6 +248,7 @@ They no longer exist as standalone layers. Every sub-feature was absorbed:
 
 ---
 
+<!-- section_id: "a6511d22-64fc-44c9-abbe-47c193f95696" -->
 ## The Inter-Layer Dependency Chain
 
 ```
@@ -262,6 +274,7 @@ Each arrow means "the layer below provides an interface that the layer above dep
 
 ---
 
+<!-- section_id: "5b86f42d-c333-420b-b85d-3c7e39fcc1ad" -->
 ## Sub-Layer Count Summary
 
 | Layer | Sub-layers | Dependency Shape |
@@ -279,6 +292,7 @@ Each arrow means "the layer below provides an interface that the layer above dep
 
 ---
 
+<!-- section_id: "66e1da64-bd51-4aa2-a331-76ca89fd40f8" -->
 ## Decisions Made
 
 | Decision | Rationale |
@@ -294,6 +308,7 @@ Each arrow means "the layer below provides an interface that the layer above dep
 
 ---
 
+<!-- section_id: "66f0b9a4-2013-407f-a073-a78a15cfdf8a" -->
 ## Companion Diagrams
 
 See `diagrams/` directory for Mermaid visualizations of:

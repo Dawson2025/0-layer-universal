@@ -6,6 +6,7 @@ resource_name: "terminal-tool-replacement"
 # Terminal Tool Replacement System
 *Universal AI Agent Terminal Execution Protocol*
 
+<!-- section_id: "0f7dc619-209a-4e1f-8815-566291ca08a5" -->
 ## 🚨 **CRITICAL: Terminal Tool Hanging Issue**
 
 **PROBLEM**: The `run_terminal_cmd` tool has a known bug where it hangs indefinitely after executing **Python scripts**, even though the scripts complete successfully.
@@ -20,20 +21,25 @@ resource_name: "terminal-tool-replacement"
 - System commands (`apt`, `wget`) don't need the wrapper - use `run_terminal_cmd` directly
 - Always add `; exit` to prevent hanging on both success and failure
 
+<!-- section_id: "d0056ea9-efb5-4207-b5aa-0af32dbd545a" -->
 ## 🔧 **Mandatory Terminal Tool Replacement**
 
+<!-- section_id: "e82d5a1c-1b85-49c5-bf87-903580f1d4e1" -->
 ### **❌ NEVER USE:**
 ```python
 run_terminal_cmd("python3 scripts/script_name.py")
 ```
 
+<!-- section_id: "0b2d2f84-05b8-457d-8fd5-9cfc232ef6a8" -->
 ### **✅ ALWAYS USE:**
 ```bash
 python3 scripts/terminal_wrapper.py --script scripts/script_name.py
 ```
 
+<!-- section_id: "6b016c0c-9d70-47ab-a048-e3d32add52dc" -->
 ## 📋 **Universal Terminal Execution Rules**
 
+<!-- section_id: "5d79647c-4982-4a9e-8a3d-3302dfea1bb8" -->
 ### **Rule 1: Python Scripts (ALWAYS use wrapper)**
 **For ANY Python script execution:**
 - **Use**: `python3 scripts/terminal_wrapper.py --script <script_path> [args...]`
@@ -41,6 +47,7 @@ python3 scripts/terminal_wrapper.py --script scripts/script_name.py
 - **Timeout**: Default 30 seconds (configurable)
 - **Why**: Python scripts are the primary cause of Cursor's hanging issues
 
+<!-- section_id: "3e5b74ad-652a-46af-b8f2-d9395f913bfd" -->
 ### **Rule 2: Node.js Commands (Use run_terminal_cmd directly)**
 **For Node.js commands (`npx`, `npm`):**
 - **Use**: `run_terminal_cmd("npx <command> ; exit")` or `run_terminal_cmd("npm <command> ; exit")`
@@ -52,6 +59,7 @@ python3 scripts/terminal_wrapper.py --script scripts/script_name.py
   run_terminal_cmd("npx @playwright/mcp@latest ; exit")
   ```
 
+<!-- section_id: "aaf8bd26-c726-4a55-991a-de95cc5f8363" -->
 ### **Rule 3: System Commands (Use run_terminal_cmd directly)**
 **For system package managers and simple commands:**
 - **Use**: `run_terminal_cmd("command ; exit")`
@@ -63,6 +71,7 @@ python3 scripts/terminal_wrapper.py --script scripts/script_name.py
   run_terminal_cmd("google-chrome --version ; exit")
   ```
 
+<!-- section_id: "2ac28cbb-4b09-4099-8531-ec85b25aaacf" -->
 ### **Rule 4: Complex Shell Commands (Wrapper optional but recommended)**
 **For complex commands that might benefit from timeout protection:**
 - **Use**: `python3 scripts/terminal_wrapper.py "<command> ; exit"` (recommended)
@@ -73,14 +82,17 @@ python3 scripts/terminal_wrapper.py --script scripts/script_name.py
   python3 scripts/terminal_wrapper.py "command1 | command2 | command3 ; exit"
   ```
 
+<!-- section_id: "8153ed6c-cc92-4fe7-82c6-3682af1d9e46" -->
 ### **Rule 5: Complex/Long-Running Scripts**
 **For complex or long-running Python scripts:**
 - **Use**: `python3 scripts/robust_script_runner.py <script_path> [args...]`
 - **Features**: Real-time output, timeout protection, error handling
 - **Monitoring**: Built-in process monitoring and cleanup
 
+<!-- section_id: "ef68c481-79a0-4d1e-9cff-d1c89f479441" -->
 ## 🛠️ **Available Tools**
 
+<!-- section_id: "50d14a39-a378-411d-9eb8-642af045dbd1" -->
 ### **1. Terminal Wrapper (`scripts/terminal_wrapper.py`)**
 **Primary replacement for `run_terminal_cmd`**
 ```bash
@@ -94,6 +106,7 @@ python3 scripts/terminal_wrapper.py "echo 'Hello World'"
 python3 scripts/terminal_wrapper.py --script scripts/long_script.py --timeout 60
 ```
 
+<!-- section_id: "a561d72e-3561-4f97-ad1e-b7f66b8f122c" -->
 ### **2. Robust Script Runner (`scripts/robust_script_runner.py`)**
 **Advanced script execution with monitoring**
 ```bash
@@ -107,6 +120,7 @@ python3 scripts/robust_script_runner.py scripts/script.py arg1 arg2
 python3 scripts/robust_script_runner.py scripts/script.py --timeout 120
 ```
 
+<!-- section_id: "308063b3-daf8-4194-94f8-1a78a291a413" -->
 ### **3. Script Monitor (`scripts/run_with_visibility.py`)**
 **Enhanced visibility and monitoring**
 ```bash
@@ -117,6 +131,7 @@ python3 scripts/run_with_visibility.py scripts/script.py 30
 python3 scripts/run_with_visibility.py scripts/deploy.py 300
 ```
 
+<!-- section_id: "fea313e6-68ed-4e60-b7ed-7c98fbaffeb5" -->
 ## 📊 **Tool Selection Guide**
 
 | Use Case | Tool | Command |
@@ -129,41 +144,51 @@ python3 scripts/run_with_visibility.py scripts/deploy.py 300
 | **Long-running Scripts** | `run_with_visibility.py` | `python3 scripts/run_with_visibility.py <script> <timeout>` |
 | **Simple Commands** | `run_terminal_cmd` | `run_terminal_cmd("echo 'test' ; exit")` |
 
+<!-- section_id: "93e9e70a-d035-4f1f-a23b-11d1d494c562" -->
 ## ⚠️ **Critical Warnings**
 
+<!-- section_id: "14b26906-ddc8-4554-8641-357ebb5d96b7" -->
 ### **NEVER Use `run_terminal_cmd` For:**
 - ❌ Python scripts (will hang - use wrapper instead)
 - ❌ Interactive commands (without `; exit`)
 
+<!-- section_id: "cd2a0264-70b3-4bc1-9b1c-f249ef543d95" -->
 ### **ALWAYS Use Terminal Wrapper For:**
 - ✅ Python script execution (mandatory)
 - ✅ Complex shell commands (optional but recommended)
 
+<!-- section_id: "d34e3d12-6a00-4b86-8d62-0d3fc05d4754" -->
 ### **ALWAYS Use `run_terminal_cmd` For:**
 - ✅ Node.js commands (`npx`, `npm`) - Don't need wrapper
 - ✅ System commands (`apt`, `wget`) - Don't need wrapper
 - ✅ Simple commands (`ls`, `echo`, `cat`) - Don't need wrapper
 - ✅ **Always add `; exit`** to prevent hanging
 
+<!-- section_id: "82ebfe93-9832-478b-945c-f3979bb20dc1" -->
 ## 🔍 **Verification Commands**
 
+<!-- section_id: "db690f4b-12e7-49b1-a40b-b4535d2760c6" -->
 ### **Test Terminal Wrapper:**
 ```bash
 python3 scripts/terminal_wrapper.py --script scripts/simple_test.py
 ```
 
+<!-- section_id: "014d6e24-5e2f-4e1b-bd5d-b37c92e3232a" -->
 ### **Test Robust Runner:**
 ```bash
 python3 scripts/robust_script_runner.py scripts/simple_test.py
 ```
 
+<!-- section_id: "af5863e3-9f3a-462e-a218-a4fc6c63604c" -->
 ### **Test Script Monitor:**
 ```bash
 python3 scripts/run_with_visibility.py scripts/simple_test.py 10
 ```
 
+<!-- section_id: "20cf5ae1-6e06-4cc1-97a7-2fd69a3faa55" -->
 ## 📝 **Implementation Examples**
 
+<!-- section_id: "5ffe52f6-d40c-43a5-bfae-317a7a246676" -->
 ### **Example 1: Running Verification Script**
 ```bash
 # OLD (hangs):
@@ -173,6 +198,7 @@ run_terminal_cmd("python3 scripts/quick_verify.py")
 python3 scripts/terminal_wrapper.py --script scripts/quick_verify.py
 ```
 
+<!-- section_id: "cee56921-602d-4fd1-89bc-22ef1ec3dcbf" -->
 ### **Example 2: Running Complex Setup**
 ```bash
 # OLD (hangs):
@@ -182,6 +208,7 @@ run_terminal_cmd("python3 scripts/setup_environment.py --verbose")
 python3 scripts/terminal_wrapper.py --script scripts/setup_environment.py --verbose
 ```
 
+<!-- section_id: "3aa59d99-18eb-4076-9ad4-6b162d5995b7" -->
 ### **Example 3: Running Long Process**
 ```bash
 # OLD (hangs):
@@ -191,23 +218,28 @@ run_terminal_cmd("python3 scripts/deploy.py")
 python3 scripts/run_with_visibility.py scripts/deploy.py 300
 ```
 
+<!-- section_id: "04907b2c-7d5e-48ad-9d07-c6592dbe2a8f" -->
 ## 🎯 **Agent-Specific Implementation**
 
+<!-- section_id: "b24b34b7-0f62-4a67-b565-ba336109ae3e" -->
 ### **For Cursor Agent**
 - **Primary Tool**: `terminal_wrapper.py`
 - **Fallback**: `robust_script_runner.py` for complex tasks
 - **Monitoring**: `run_with_visibility.py` for long processes
 
+<!-- section_id: "3e71c0e2-7939-4ae5-813f-c65bce36675e" -->
 ### **For Claude Code Agent**
 - **Primary Tool**: `terminal_wrapper.py`
 - **Integration**: Use with VS Code terminal integration
 - **Debugging**: `run_with_visibility.py` for debugging
 
+<!-- section_id: "c8d62361-4534-4132-9c94-3fded78b1234" -->
 ### **For Warp AI Assistant**
 - **Primary Tool**: `terminal_wrapper.py`
 - **Command Integration**: Use with `run_command` tool
 - **Monitoring**: Built-in process monitoring
 
+<!-- section_id: "29d2700a-a868-4237-8b3b-c72ffaa371a6" -->
 ## 🚀 **Benefits of Our Solution**
 
 ✅ **Reduces Hanging**: Helps with subprocess communication issues  
@@ -218,6 +250,7 @@ python3 scripts/run_with_visibility.py scripts/deploy.py 300
 ✅ **Easy to Use**: Simple command-line interface  
 ✅ **Proven Methods**: Uses verified subprocess handling techniques
 
+<!-- section_id: "66733de3-ef00-4081-94af-195e656139b1" -->
 ## ⚠️ **Important Limitations**
 
 **The wrapper is a mitigation, not a complete fix:**
@@ -235,6 +268,7 @@ python3 scripts/run_with_visibility.py scripts/deploy.py 300
 
 **See**: `METHOD_VERIFICATION_REPORT.md` for detailed research findings  
 
+<!-- section_id: "868ce2a4-c05e-406c-b7b4-62cdfb75f9ca" -->
 ## 📚 **Documentation References**
 
 - **When to Use Wrapper**: `when-to-use-terminal-wrapper.md` - Detailed guide on when wrapper is needed
@@ -243,12 +277,14 @@ python3 scripts/run_with_visibility.py scripts/deploy.py 300
 - **Cursor Agent Solution**: `scripts/CURSOR_AGENT_TERMINAL_HANGING_SOLUTION.md`
 - **Tool Documentation**: Individual tool files in `scripts/`
 
+<!-- section_id: "867c1efc-97c8-415a-86b0-9a08e2c2ed8c" -->
 ## 🔧 **Recommended Workaround: "&& exit"**
 
 **Status**: ✅ **MOST RECOMMENDED** - Automatic, reliable, no manual intervention required
 
 **Confirmed Effective** (GitHub Issue #3200): Adding `&& exit` to commands forces the terminal to close after completion.
 
+<!-- section_id: "e0c33bed-dc03-4b6f-8309-ba8b8d3d7623" -->
 ### Why `&& exit` is Recommended
 
 1. **Automatic** - No manual clicking required (unlike "pop out terminal")
@@ -258,6 +294,7 @@ python3 scripts/run_with_visibility.py scripts/deploy.py 300
 5. **Reliable** - Works consistently across different shell configurations
 6. **Simple** - Easy to add to any command
 
+<!-- section_id: "b33a48aa-edbb-4272-85ea-0f1d106f00c2" -->
 ### How It Works
 
 The `&&` operator executes `exit` **only if** the previous command succeeds:
@@ -266,6 +303,7 @@ The `&&` operator executes `exit` **only if** the previous command succeeds:
 
 **⚠️ Important Limitation**: `&& exit` only prevents hanging on **successful** commands. Failed commands may still hang because `exit` doesn't run.
 
+<!-- section_id: "fcc2bc80-b0a3-4f74-87f6-8ba34e788828" -->
 ### For Both Success and Failure Cases
 
 **Use `; exit` instead** to always close the terminal:
@@ -281,6 +319,7 @@ python3 scripts/terminal_wrapper.py "quarto render ; exit"
 
 **Recommended for automation**: Use `; exit` when completion detection is more important than exit code checking.
 
+<!-- section_id: "715ecd62-07f7-4aaa-92cf-2cf3712e5f87" -->
 ### Examples
 
 ```bash
@@ -296,6 +335,7 @@ python3 scripts/terminal_wrapper.py "quarto render && exit"
 run_terminal_cmd("echo 'test' ; exit")
 ```
 
+<!-- section_id: "fa863109-15f8-4bcc-8aa5-baf4ddc9b9c5" -->
 ### Best Practice Formulas
 
 **For Automation (Recommended):**

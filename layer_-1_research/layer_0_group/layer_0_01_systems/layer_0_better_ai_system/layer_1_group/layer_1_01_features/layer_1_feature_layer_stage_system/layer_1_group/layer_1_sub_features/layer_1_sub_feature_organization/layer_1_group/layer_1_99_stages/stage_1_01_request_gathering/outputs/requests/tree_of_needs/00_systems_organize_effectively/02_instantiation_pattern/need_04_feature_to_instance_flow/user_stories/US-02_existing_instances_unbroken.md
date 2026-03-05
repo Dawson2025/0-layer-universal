@@ -9,6 +9,7 @@ resource_name: "US-02_existing_instances_unbroken"
 **I want** system improvements to not break my instance or lose my progress,
 **So that** I can trust that updates improve my experience without disrupting the work I've already done.
 
+<!-- section_id: "e521d025-63b9-4ccc-9a52-8f4509fd0e3b" -->
 ## Acceptance Criteria
 
 **Scenario 1: Instance-specific data survives template updates**

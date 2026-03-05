@@ -5,10 +5,12 @@ resource_name: "fact-checking-workflow"
 ---
 # Fact-Checking Workflow
 
+<!-- section_id: "d6a8d49e-4851-4677-865f-f9ac64b4d3fa" -->
 ## Overview
 
 This protocol defines a rigorous methodology for verifying claims, validating information, and assessing source reliability using the Tavily MCP server. It provides structured approaches for confirming accuracy of technical documentation, user-provided information, and web content.
 
+<!-- section_id: "286051ca-a8a2-4a1d-a5b9-614d421892f2" -->
 ## When to Use
 
 - Verifying technical claims before implementation
@@ -18,12 +20,15 @@ This protocol defines a rigorous methodology for verifying claims, validating in
 - Assessing credibility of sources
 - Checking current status of deprecated features
 
+<!-- section_id: "1bb6bec1-8cfa-4275-9b48-3dc438fccaf6" -->
 ## Core Principles
 
+<!-- section_id: "ea1aca63-6fc8-4517-908b-751592fff309" -->
 ### The Three-Source Rule
 
 No fact should be considered verified unless confirmed by at least three independent, authoritative sources.
 
+<!-- section_id: "e15241e1-54c6-461b-891b-6e9718f287e9" -->
 ### Source Independence
 
 Sources must be genuinely independent:
@@ -31,6 +36,7 @@ Sources must be genuinely independent:
 - Not citing each other
 - Different methodologies or perspectives
 
+<!-- section_id: "f3476ced-fb23-4490-9020-dcbc69b8fd1e" -->
 ### Recency Verification
 
 Information accuracy depends on timeliness:
@@ -38,8 +44,10 @@ Information accuracy depends on timeliness:
 - API/Library info: Verify within last 6 months
 - Security info: Verify within last 30 days
 
+<!-- section_id: "d25c9fe4-78f0-46c2-8a0b-1336f39133d8" -->
 ## Verification Workflow
 
+<!-- section_id: "0b6b00ea-3e33-4f71-926b-48e89b5e5105" -->
 ### Phase 1: Claim Identification
 
 Break down the information to verify into discrete, testable claims:
@@ -55,6 +63,7 @@ Discrete Claims:
 3. React 18 is 30% faster than React 17
 ```
 
+<!-- section_id: "b2a155bb-924c-4d2a-bcb7-9e011f8abd55" -->
 ### Phase 2: Initial Verification Search
 
 For each claim, conduct an initial search:
@@ -68,6 +77,7 @@ Parameters:
   include_answer: true
 ```
 
+<!-- section_id: "23c419c9-502e-4c6e-a828-ac9989e9b171" -->
 ### Phase 3: Source Authority Assessment
 
 Evaluate each source found:
@@ -84,6 +94,7 @@ Evaluate each source found:
 | Coverage | Is information complete or partial? |
 ```
 
+<!-- section_id: "6b91c167-8700-4864-af28-536bb12bf377" -->
 ### Phase 4: Cross-Verification
 
 Search for the same information using different approaches:
@@ -103,6 +114,7 @@ Search 4: Expert discussion
   Query: "[claim] explanation analysis"
 ```
 
+<!-- section_id: "c7ae4cce-9b65-48f3-a1e2-818c5ec4ee87" -->
 ### Phase 5: Conflict Resolution
 
 When sources conflict:
@@ -124,6 +136,7 @@ When sources conflict:
    Query: "[topic] common misconception"
    ```
 
+<!-- section_id: "74ca1616-3f10-4ba8-809d-1b1833405b79" -->
 ### Phase 6: Verification Report
 
 Document findings in structured format:
@@ -153,8 +166,10 @@ Document findings in structured format:
 ## Verification Date: [Date]
 ```
 
+<!-- section_id: "744c164c-3236-4db9-8971-169b64e64195" -->
 ## Verification Patterns
 
+<!-- section_id: "1aec88af-327c-40ea-b93c-886198d30494" -->
 ### Pattern: Technical Claim Verification
 
 ```
@@ -173,6 +188,7 @@ Step 4: Check version-specific accuracy
   Query: "[technology] [version] [feature]"
 ```
 
+<!-- section_id: "45efe88a-7010-4720-921e-d0d0f7acc2c8" -->
 ### Pattern: Version/Deprecation Verification
 
 ```
@@ -189,6 +205,7 @@ Step 4: Current status
   Query: "[technology] [feature] [current year]"
 ```
 
+<!-- section_id: "1a064225-303a-482f-bef1-53e3e78b14fd" -->
 ### Pattern: Performance Claim Verification
 
 ```
@@ -206,6 +223,7 @@ Step 4: Real-world validation
   Query: "[technology] production performance"
 ```
 
+<!-- section_id: "e31cf25f-115a-4585-b3c8-07d64da4e494" -->
 ### Pattern: Security Claim Verification
 
 ```
@@ -225,8 +243,10 @@ Step 4: Current threat status
   days: 30 (use news search)
 ```
 
+<!-- section_id: "a6ebac58-83e3-4e02-b2df-ba94086089e3" -->
 ## Source Authority Rankings
 
+<!-- section_id: "dd0a140d-d8bc-482a-b516-01b15348b1fa" -->
 ### Tier 1: Primary/Official Sources
 
 ```json
@@ -247,6 +267,7 @@ Characteristics:
 - Primary source material
 - Direct from maintainers
 
+<!-- section_id: "396fc7d9-01d0-4c43-a17f-743ee266b53c" -->
 ### Tier 2: Expert/Institutional Sources
 
 ```json
@@ -266,6 +287,7 @@ Characteristics:
 - Peer-reviewed or heavily scrutinized
 - Technical depth
 
+<!-- section_id: "af1241d8-5f2a-443e-a024-7e7d1bf8a5bd" -->
 ### Tier 3: Community/Educational Sources
 
 ```json
@@ -284,6 +306,7 @@ Characteristics:
 - Educational focus
 - Variable quality
 
+<!-- section_id: "5870e9ce-8096-4de9-bee2-44dc0d3907da" -->
 ### Tier 4: General Sources
 
 Use with caution:
@@ -291,8 +314,10 @@ Use with caution:
 - General tech blogs
 - Social media references
 
+<!-- section_id: "ffefbcc9-594d-4956-af16-2e0dc2ef20b2" -->
 ## Red Flags for False Information
 
+<!-- section_id: "5f1c8e1e-85ff-4751-aba6-818dd55da930" -->
 ### Content Red Flags
 
 | Red Flag | Description |
@@ -303,6 +328,7 @@ Use with caution:
 | Extreme claims | "Always", "never", "100%" |
 | Contradiction | Conflicts with known facts |
 
+<!-- section_id: "5a50af06-a22f-4f08-998a-fe59df3bc8cc" -->
 ### Source Red Flags
 
 | Red Flag | Description |
@@ -313,6 +339,7 @@ Use with caution:
 | Copied content | Duplicated from elsewhere |
 | SEO spam | Keyword-stuffed content |
 
+<!-- section_id: "401ec511-54e5-47a8-99a3-a72161a5c2ec" -->
 ## Verification Decision Matrix
 
 ```
@@ -330,8 +357,10 @@ DOUBT: Treat with skepticism
 REJECT: Do not rely on claim
 ```
 
+<!-- section_id: "ca7ff2fa-a9bc-48b8-8b1d-ee1444a3cdf9" -->
 ## Common Verification Scenarios
 
+<!-- section_id: "3db34c5f-30a8-4a83-bdf3-e3ce29094f3d" -->
 ### Scenario: Verifying Library Compatibility
 
 ```
@@ -351,6 +380,7 @@ Search Queries:
 - "[Library X] supported [Framework Y] versions"
 ```
 
+<!-- section_id: "5178f5a0-fd4a-4314-baf5-ea41ecdf82fd" -->
 ### Scenario: Verifying Best Practice Claims
 
 ```
@@ -370,6 +400,7 @@ Search Queries:
 - "[Y problem] alternatives to [X pattern]"
 ```
 
+<!-- section_id: "277a9fff-f972-42c9-8504-a35f5ce5ce87" -->
 ### Scenario: Verifying Statistics/Numbers
 
 ```
@@ -389,8 +420,10 @@ Search Queries:
 - "[original claim source] benchmark criticism"
 ```
 
+<!-- section_id: "3ccafeba-050f-4624-8130-f37e5a9a9636" -->
 ## Output Templates
 
+<!-- section_id: "1c59bceb-5371-4d25-8ca4-d999b9c96b0f" -->
 ### Quick Verification Summary
 
 ```markdown
@@ -401,6 +434,7 @@ Search Queries:
 ## Verified: [Date]
 ```
 
+<!-- section_id: "9360e6f8-7636-456c-85d1-e4c0ef557343" -->
 ### Detailed Verification Report
 
 ```markdown
@@ -440,6 +474,7 @@ Search Queries:
 [Full list of URLs consulted]
 ```
 
+<!-- section_id: "29e3eb6a-2d5d-446a-9758-9add2358fd02" -->
 ## Troubleshooting Verification
 
 | Issue | Solution |

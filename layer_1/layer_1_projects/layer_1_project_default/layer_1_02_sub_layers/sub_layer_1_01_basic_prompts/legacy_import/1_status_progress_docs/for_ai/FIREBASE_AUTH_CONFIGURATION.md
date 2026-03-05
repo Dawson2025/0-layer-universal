@@ -10,6 +10,7 @@ resource_name: "FIREBASE_AUTH_CONFIGURATION"
 
 ---
 
+<!-- section_id: "85da41ae-dab6-4c32-853f-2a11a3f53b01" -->
 ## Problem
 
 Google OAuth sign-in requires authorized domains to be configured in Firebase Console. By default, only certain domains are allowed.
@@ -21,19 +22,23 @@ Google OAuth sign-in requires authorized domains to be configured in Firebase Co
 
 ---
 
+<!-- section_id: "50c7acdb-fae1-4033-856b-91e79a9606c3" -->
 ## Solution: Configure Authorized Domains in Firebase Console
 
+<!-- section_id: "fde8a9be-bbbd-4f04-b908-b018aa486e85" -->
 ### Step 1: Open Firebase Console
 
 1. Go to: https://console.firebase.google.com/project/lang-trak-dev
 2. Sign in with: 2025computer2025@gmail.com
 
+<!-- section_id: "410bb5ae-9747-494e-9a22-b522e4f040cd" -->
 ### Step 2: Navigate to Authentication Settings
 
 1. Click **"Authentication"** in the left sidebar
 2. Click **"Settings"** tab
 3. Scroll to **"Authorized domains"** section
 
+<!-- section_id: "a1ea031b-79aa-4c6a-9996-61ce892f909c" -->
 ### Step 3: Add Required Domains
 
 Add the following domains if not already present:
@@ -53,6 +58,7 @@ localhost
 your-production-domain.com
 ```
 
+<!-- section_id: "f8aa6f3f-fb9e-48e0-93e6-2b50c4040df3" -->
 ### Step 4: Enable Google Sign-In Provider
 
 1. In Authentication section, click **"Sign-in method"** tab
@@ -64,10 +70,12 @@ your-production-domain.com
 
 ---
 
+<!-- section_id: "14b1aab7-7101-41af-962a-1eb4a353e402" -->
 ## Current Configuration Status
 
 **As of October 21, 2025:**
 
+<!-- section_id: "7a59f698-781d-4fae-a2e1-66d03c68bf47" -->
 ### ✅ Confirmed Working (Programmatic Tests)
 - Firebase SDK initialization
 - Firestore database access
@@ -77,6 +85,7 @@ your-production-domain.com
 - Data verification
 - **10/10 programmatic tests PASSED**
 
+<!-- section_id: "1b781ecf-042d-4c7d-bf20-058802699aa8" -->
 ### ⚠️ May Need Configuration (Browser Tests)
 - Google OAuth in automated browser tests
 - Requires authorized domain configuration
@@ -84,8 +93,10 @@ your-production-domain.com
 
 ---
 
+<!-- section_id: "027acf1c-2b1c-425c-8051-cf5336b91716" -->
 ## Workarounds for Testing
 
+<!-- section_id: "d3b877d9-7be1-4a82-9368-93179a23968d" -->
 ### Option 1: Manual Browser Testing
 Since programmatic tests (10/10) already passed, browser tests are supplementary.
 
@@ -100,6 +111,7 @@ Then manually:
 3. Test cloud features manually
 4. Verify in Firebase Console
 
+<!-- section_id: "2d035f67-cb07-452a-b3a3-a9166fdcb7aa" -->
 ### Option 2: Configure Firebase Then Re-run
 1. Configure authorized domains in Firebase Console (above)
 2. Re-run automated browser tests:
@@ -107,6 +119,7 @@ Then manually:
 python3 scripts/run-automated-browser-tests.py
 ```
 
+<!-- section_id: "e6a82904-9ebf-443c-87f5-b3ec58c177cd" -->
 ### Option 3: Local User Authentication
 If Google OAuth continues to have issues, the app also supports local user registration:
 1. Register with email/password
@@ -115,6 +128,7 @@ If Google OAuth continues to have issues, the app also supports local user regis
 
 ---
 
+<!-- section_id: "2f93c761-3881-49a1-866c-bcc4191b9417" -->
 ## Firebase Console Quick Links
 
 **Project:** lang-trak-dev
@@ -127,8 +141,10 @@ If Google OAuth continues to have issues, the app also supports local user regis
 
 ---
 
+<!-- section_id: "f4c8822f-f71b-46a4-b5ee-d4faf56ef8e9" -->
 ## Test Impact
 
+<!-- section_id: "5e242df4-1043-4422-8009-6c7c1d8f3ef5" -->
 ### What's Already Proven (100% Confidence) ✅
 
 All cloud features work without browser OAuth:
@@ -143,6 +159,7 @@ All cloud features work without browser OAuth:
 
 **Evidence:** 10/10 programmatic tests passed with real Firebase data created and verified.
 
+<!-- section_id: "5fd82e39-9b6e-4177-9595-0a0604b4a163" -->
 ### What Browser Tests Add (Nice-to-Have) 📋
 
 Browser tests verify UI/UX:
@@ -156,6 +173,7 @@ Browser tests verify UI/UX:
 
 ---
 
+<!-- section_id: "1337992e-ffca-4057-b3e5-c8585273c5c5" -->
 ## Recommendation
 
 **Since programmatic tests (10/10) already passed:**
@@ -175,6 +193,7 @@ Browser tests verify UI/UX:
 
 ---
 
+<!-- section_id: "e4f2b5cf-951e-42dc-93f8-b27a7cc69ace" -->
 ## Current Status Summary
 
 | Component | Status | Evidence |
@@ -190,6 +209,7 @@ Browser tests verify UI/UX:
 
 ---
 
+<!-- section_id: "fa60bd02-00c2-459c-8693-20ad0f285267" -->
 ## Quick Fix Commands
 
 ```bash

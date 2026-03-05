@@ -5,10 +5,12 @@ resource_name: "STAGE_04_DESIGN"
 ---
 # Stage 04: Design — Universal Guide
 
+<!-- section_id: "fa943494-d7b2-43ed-bcb7-f22b7e1f4848" -->
 ## Purpose
 
 Make architecture decisions and write design specifications based on research findings and within instruction constraints. This is the **architecture stage** — decide what to build and how the pieces fit together.
 
+<!-- section_id: "22b31bf2-4d51-4429-8200-11a16c5ab0c8" -->
 ## What This Stage IS
 
 The design agent:
@@ -18,6 +20,7 @@ The design agent:
 - Defines the system's layers, modules, data flows, and boundaries
 - Creates diagrams when they clarify complex relationships
 
+<!-- section_id: "a1b5844a-fb13-4b7d-bb3b-e02c904d7a50" -->
 ## What This Stage IS NOT
 
 The design agent does NOT:
@@ -30,6 +33,7 @@ The design agent does NOT:
 
 The agent decides **what the architecture is**, not **how to implement it step by step**.
 
+<!-- section_id: "5c9b3eb6-976e-4a2e-a0b2-1a6e600a680b" -->
 ## Methodology
 
 Design outputs are organized by topic:
@@ -44,6 +48,7 @@ outputs/
 └── stage_report.md
 ```
 
+<!-- section_id: "660b5621-4f70-4314-bba7-40253c8a747c" -->
 ### Design Document Format
 
 Each design document should contain:
@@ -55,6 +60,7 @@ Each design document should contain:
 - **Constraints respected**: Which stage 03 constraints this design operates within
 - **Risks**: Known risks and mitigations
 
+<!-- section_id: "28da8377-18b5-491a-9f8a-250c69ab1079" -->
 ## Inputs
 
 - **Stage 01 outputs** — requirements defining what must be built
@@ -62,6 +68,7 @@ Each design document should contain:
 - **Stage 03 outputs** — constraints that bound the design space
 - **Parent entity .0agnostic/01_knowledge/** — domain knowledge
 
+<!-- section_id: "a1f97549-7ab1-401a-ba36-d22fe216b84b" -->
 ## Outputs
 
 | Output | Location | Format |
@@ -70,6 +77,7 @@ Each design document should contain:
 | Design index | `outputs/by_topic/README.md` | Overview of all design decisions |
 | Stage report | `outputs/stage_report.md` | Standard stage report format |
 
+<!-- section_id: "44c25b75-338d-4eda-8066-0fb1dfdc124b" -->
 ## Success Criteria
 
 This stage is complete when:
@@ -79,14 +87,17 @@ This stage is complete when:
 4. Design is detailed enough for stage 05 to break into tasks
 5. Open design questions are resolved or explicitly deferred
 
+<!-- section_id: "5e11e742-1d78-482e-8602-5404061102af" -->
 ## Exit Protocol
 
 1. Update `outputs/stage_report.md` with current status
 2. If handing off to **stage 05** (planning): highlight the major components that need implementation tasks
 3. If handing off to **stage 02** (research): note design questions that need more investigation
 
+<!-- section_id: "54b7f0f6-bfb9-420f-a8fe-1b8cc8e00d36" -->
 ## Available Tools
 
+<!-- section_id: "93a20ea7-0aca-4dd8-85cf-023cad47f07e" -->
 ### Diagram Creation (Mermaid.js)
 
 Design stages use Mermaid.js for architecture diagrams. Available tooling:
@@ -105,6 +116,7 @@ Design stages use Mermaid.js for architecture diagrams. Available tooling:
 
 **Diagram output location**: `outputs/design_decisions/{topic}/diagrams/` or `outputs/by_topic/diagrams/`
 
+<!-- section_id: "c83f9d37-4793-4997-8658-0fc0db97ec41" -->
 ## Common Patterns
 
 - **Design follows research**: Design decisions should trace back to research findings — don't design in a vacuum
@@ -113,6 +125,7 @@ Design stages use Mermaid.js for architecture diagrams. Available tooling:
 - **Iterative refinement**: Design may loop back to research (02) when questions arise
 - **Diagrams complement text**: Use Mermaid diagrams alongside design documents to visualize dependencies, data flows, and communication patterns
 
+<!-- section_id: "5ea49038-07dc-4ad8-9696-104db2bc81ec" -->
 ## Anti-Patterns
 
 - Designing without reading research (stage 02) first

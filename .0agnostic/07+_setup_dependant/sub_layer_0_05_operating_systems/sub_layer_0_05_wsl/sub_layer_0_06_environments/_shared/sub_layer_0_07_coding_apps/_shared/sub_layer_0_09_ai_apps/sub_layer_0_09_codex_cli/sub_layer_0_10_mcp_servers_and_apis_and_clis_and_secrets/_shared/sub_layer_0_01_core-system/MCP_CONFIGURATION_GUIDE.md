@@ -5,10 +5,12 @@ resource_name: "MCP_CONFIGURATION_GUIDE"
 ---
 # MCP Configuration Guide - Universal Tools
 
+<!-- section_id: "1dfe96a4-6b0a-450f-a63c-b565b616ce02" -->
 ## Overview
 
 This guide provides comprehensive instructions for configuring and managing MCP (Model Context Protocol) tools across all environments in the lang-trak-in-progress project.
 
+<!-- section_id: "2170696c-3039-4349-b6fe-b8ae0bf3360a" -->
 ## 🎯 Configuration Philosophy
 
 The MCP system follows these principles:
@@ -17,6 +19,7 @@ The MCP system follows these principles:
 - **Automated Management**: Scripts handle deployment and updates
 - **Easy Switching**: Simple commands to change configurations
 
+<!-- section_id: "b1fef98f-e5ca-45d8-824b-521e8d569aed" -->
 ## 📁 Configuration Structure
 
 ```
@@ -32,8 +35,10 @@ config/mcp/
     └── context7-hybrid.json
 ```
 
+<!-- section_id: "3a63ea87-3205-4213-8172-bb9716d8d047" -->
 ## 🔧 Environment Configurations
 
+<!-- section_id: "0f59f44e-cafb-4704-891f-4e895ec962d1" -->
 ### Development Environment
 **Purpose**: Full debugging and development capabilities
 **Servers**: All available MCP servers
@@ -58,6 +63,7 @@ config/mcp/
 }
 ```
 
+<!-- section_id: "5caf7ebd-1124-44c0-beb0-c398ac65909b" -->
 ### Production Environment
 **Purpose**: Essential tools for production use
 **Servers**: Core functionality only
@@ -81,6 +87,7 @@ config/mcp/
 }
 ```
 
+<!-- section_id: "5bf54157-ba1c-4882-9d84-0e4a182475b1" -->
 ### Testing Environment
 **Purpose**: Automated testing and validation
 **Servers**: Testing-focused tools
@@ -102,8 +109,10 @@ config/mcp/
 }
 ```
 
+<!-- section_id: "879eef6e-1a27-418a-a0be-6a7c2d130fb2" -->
 ## 🚀 Setup Commands
 
+<!-- section_id: "9a1e2abc-20d2-4d0b-b789-c2716fddf819" -->
 ### Initial Setup
 ```bash
 # Set up complete MCP system
@@ -113,6 +122,7 @@ python3 scripts/mcp-cli.py setup
 python3 scripts/mcp-cli.py health
 ```
 
+<!-- section_id: "982044e5-eb69-45a9-bdad-b5c7e0238737" -->
 ### Environment Deployment
 ```bash
 # Deploy development environment
@@ -125,6 +135,7 @@ python3 scripts/mcp-cli.py deploy production
 python3 scripts/mcp-cli.py deploy testing
 ```
 
+<!-- section_id: "e2edfa21-7443-4540-8503-93022dfe94f1" -->
 ### Context7 Setup
 ```bash
 # Set up local Context7 server
@@ -137,8 +148,10 @@ python3 scripts/context7-setup.py setup-remote
 python3 scripts/context7-setup.py setup-hybrid
 ```
 
+<!-- section_id: "ba91cd17-877c-448f-bda4-2afc528d9b0d" -->
 ## 🔑 API Key Management
 
+<!-- section_id: "fa1fefa9-e5e6-43bd-82d0-e10fff8c83ce" -->
 ### API Key Configuration
 ```bash
 # Context7
@@ -151,14 +164,17 @@ TAVILY_API_KEY=your_tavily_api_key_here
 GITHUB_TOKEN=your_github_token_here
 ```
 
+<!-- section_id: "7c3a4683-26cd-4104-9938-6600df91ada9" -->
 ### Security Best Practices
 1. **Environment Variables**: Use env vars for sensitive data
 2. **Key Rotation**: Regularly rotate API keys
 3. **Access Control**: Limit key access to necessary environments
 4. **Monitoring**: Monitor key usage and access
 
+<!-- section_id: "a1497cc8-2319-4bd9-92c2-075d8ade74f2" -->
 ## 🛠️ Server Configurations
 
+<!-- section_id: "39c2e0ac-7c9a-4db3-889a-fabb64d3f4b5" -->
 ### Browser Automation Servers
 
 #### Chrome DevTools
@@ -208,6 +224,7 @@ GITHUB_TOKEN=your_github_token_here
 
 **Critical Configuration Note**: The `@agent-infra/mcp-server-browser` server also needs `PLAYWRIGHT_BROWSERS_PATH` set to find browsers installed via Playwright. Additionally, set `HOME` to ensure the MCP server process can access user-specific paths and configurations.
 
+<!-- section_id: "a6fbd3fc-a182-4922-88a7-648929161a97" -->
 ### Search & Research Servers
 
 #### Web Search (Tavily)
@@ -263,6 +280,7 @@ GITHUB_TOKEN=your_github_token_here
 }
 ```
 
+<!-- section_id: "ed475b6f-7276-42d4-bc1f-520f8fcd344a" -->
 ### System Integration Servers
 
 #### Filesystem
@@ -304,8 +322,10 @@ GITHUB_TOKEN=your_github_token_here
 }
 ```
 
+<!-- section_id: "7e215a8f-e716-4b50-bfa1-7b5aee923070" -->
 ## 🔄 Configuration Management
 
+<!-- section_id: "b32510e5-96e4-4172-b9a5-b13f0fb0474b" -->
 ### Adding New Servers
 ```python
 # Add custom server to environment
@@ -324,6 +344,7 @@ manager = MCPConfigManager()
 manager.add_custom_server(custom_server, MCPEnvironment.DEVELOPMENT)
 ```
 
+<!-- section_id: "3192d749-196d-4272-a521-efd0f0898202" -->
 ### Updating Server Configuration
 ```bash
 # Update server in specific environment
@@ -333,6 +354,7 @@ python3 scripts/mcp_config_manager.py update-server --environment development --
 python3 scripts/mcp_config_manager.py update-global-env --environment production --key LOG_LEVEL --value info
 ```
 
+<!-- section_id: "4f9f8c45-121e-4d06-8534-88d502503502" -->
 ### Switching Configurations
 ```bash
 # Switch to different environment
@@ -345,8 +367,10 @@ python3 scripts/context7-setup.py setup-local
 python3 scripts/context7-setup.py setup-remote
 ```
 
+<!-- section_id: "9bf0fba0-722d-4f58-af0d-fe77e70b2b2e" -->
 ## 📊 Monitoring and Health Checks
 
+<!-- section_id: "ff62ed56-bd9a-464c-baad-4b96d83cca9d" -->
 ### Health Check Commands
 ```bash
 # Overall MCP system health
@@ -359,6 +383,7 @@ python3 scripts/context7-setup.py status
 python3 scripts/mcp-cli.py validate development
 ```
 
+<!-- section_id: "73810729-6836-4c57-a01a-bf90b41c77f7" -->
 ### Monitoring Configuration
 ```json
 {
@@ -376,8 +401,10 @@ python3 scripts/mcp-cli.py validate development
 }
 ```
 
+<!-- section_id: "28f784d3-2113-4643-8381-d3981d31172f" -->
 ## 🚨 Troubleshooting
 
+<!-- section_id: "bc09749c-51bc-4a0e-aeb4-24c755b9cc61" -->
 ### Common Issues and Solutions
 
 #### Browser "Not Installed" Error (Most Common)
@@ -452,6 +479,7 @@ grep -r "API_KEY" config/mcp/
 python3 scripts/context7-setup.py status
 ```
 
+<!-- section_id: "a0a4bb26-574a-4eed-ba24-54be40faf7c4" -->
 ### Debug Information
 ```bash
 # View logs
@@ -464,26 +492,31 @@ python3 scripts/mcp-cli.py status
 python3 scripts/mcp-cli.py report
 ```
 
+<!-- section_id: "068aa3a8-f5b9-4f58-af35-611c492dfa13" -->
 ## 🎯 Best Practices
 
+<!-- section_id: "feda1ede-ae36-4f0c-b56b-a7ed066ec2b9" -->
 ### Development
 - Use local servers for better performance
 - Enable debug logging
 - Test both local and remote configurations
 - Keep configurations in version control
 
+<!-- section_id: "db69bb73-88ed-422e-9fa9-e2beaeb5ab24" -->
 ### Production
 - Use remote servers for simplicity
 - Enable monitoring and alerting
 - Regular configuration backups
 - Secure API key management
 
+<!-- section_id: "e8f66ff5-b20d-4243-bf0e-bba59421c113" -->
 ### Testing
 - Use minimal server configurations
 - Fast startup times
 - Reliable test environments
 - Automated health checks
 
+<!-- section_id: "f7d62578-c0ab-45cf-a699-08aba0986178" -->
 ## 📚 Additional Resources
 
 - **Complete Setup Guide**: [CONTEXT7_CLAUDE_SETUP.md](CONTEXT7_CLAUDE_SETUP.md)

@@ -3,6 +3,7 @@ resource_id: "3849c2ce-d94b-4494-96ad-7ab306a97236"
 resource_type: "knowledge"
 resource_name: "links_and_sources"
 ---
+<!-- section_id: "73234467-5cbf-4465-85c2-fc39952d8266" -->
 ## AI Manager Hierarchy System – External Links and Sources
 
 This file collects the external links and references that were cited in the original research conversation:
@@ -16,6 +17,7 @@ This document preserves the **raw link list** so agents (and you) can quickly ju
 
 ---
 
+<!-- section_id: "0aed52ac-6b3e-4979-8963-2a424da5da4c" -->
 ### 1. Multi-Agent Frameworks and Orchestration
 
 - https://www.kubiya.ai/blog/ai-agent-orchestration-frameworks
@@ -31,6 +33,7 @@ This document preserves the **raw link list** so agents (and you) can quickly ju
 
 ---
 
+<!-- section_id: "a693c3a9-2aaf-4fc9-9f2d-39e89b03edcc" -->
 ### 2. Coding LLMs, Models, and Benchmarks
 
 - https://www.labellerr.com/blog/best-coding-llms/
@@ -43,6 +46,7 @@ This document preserves the **raw link list** so agents (and you) can quickly ju
 
 ---
 
+<!-- section_id: "ca7f169e-4874-46c5-bb90-ae3aa4c0d834" -->
 ### 3. Claude Code – CLI, Sub-Agents, System Prompts, Best Practices
 
 - https://github.com/anthropics/claude-code
@@ -82,6 +86,7 @@ This document preserves the **raw link list** so agents (and you) can quickly ju
 
 ---
 
+<!-- section_id: "73ebbbd2-1a3d-409c-b892-3139c963e13e" -->
 ### 4. Codex CLI – Agents, AGENTS.md, System Prompt Behavior
 
 - https://developers.openai.com/codex/guides/agents-sdk/
@@ -108,6 +113,7 @@ This document preserves the **raw link list** so agents (and you) can quickly ju
 
 ---
 
+<!-- section_id: "73ff3650-0819-469d-8010-c9aa93ed2deb" -->
 ### 5. Gemini CLI and Gemini Code Assist
 
 - https://blog.google/technology/developers/introducing-gemini-cli-open-source-ai-agent/
@@ -126,6 +132,7 @@ This document preserves the **raw link list** so agents (and you) can quickly ju
 
 ---
 
+<!-- section_id: "c42c2876-7706-4713-b88a-c1de17de7cb4" -->
 ### 6. Cursor IDE and Rules System
 
 - https://cursor.com/features
@@ -144,6 +151,7 @@ This document preserves the **raw link list** so agents (and you) can quickly ju
 
 ---
 
+<!-- section_id: "c7440eca-3b4b-40d3-b8ed-1e5ac87fa46b" -->
 ### 7. Abstraction Layers and Architecture Concepts
 
 - https://dev.to/maneeshchaturvedi/software-design-principles-layers-of-abstraction-separation-of-concerns-and-uses-hierarchy-57ff
@@ -158,6 +166,7 @@ This document preserves the **raw link list** so agents (and you) can quickly ju
 
 ---
 
+<!-- section_id: "e7831ee5-e104-4a9b-9d3a-2f69bced0a11" -->
 ### 8. Prompting, System Prompts, and Memory
 
 - https://m.academy/lessons/understand-message-flow-claude-code/
@@ -170,6 +179,7 @@ This document preserves the **raw link list** so agents (and you) can quickly ju
 
 ---
 
+<!-- section_id: "e9f15aef-f179-415f-a5ed-b646a3f0fe9e" -->
 ### 9. Security, Governance, and Observability (Selected)
 
 - https://hiddenlayer.com/innovation-hub/how-hidden-prompt-injections-can-hijack-ai-code-assistants-like-cursor/
@@ -181,6 +191,7 @@ This document preserves the **raw link list** so agents (and you) can quickly ju
 
 ---
 
+<!-- section_id: "7aba90c7-31c6-46b7-806e-e26ff07942e6" -->
 ### 10. Miscellaneous References
 
 - https://r2cdn.perplexity.ai/pplx-full-logo-primary-dark%402x.png

@@ -7,6 +7,7 @@ resource_name: "TROUBLESHOOTING"
 
 This document covers common issues encountered when using the Claude in Chrome MCP server and their solutions.
 
+<!-- section_id: "1c8ca828-5066-4dc2-88ae-da4dc472cc56" -->
 ## Table of Contents
 
 1. [Extension Not Detected](#extension-not-detected)
@@ -19,11 +20,14 @@ This document covers common issues encountered when using the Claude in Chrome M
 
 ---
 
+<!-- section_id: "8bdb1be2-dc3a-4d2c-b352-ca4a24e37b34" -->
 ## Extension Not Detected
 
+<!-- section_id: "dc48f6da-bd27-43ce-8c4c-d8dd405fc5dc" -->
 ### Symptom
 Claude Code CLI cannot communicate with the browser, tools return errors like "No tab context found" or "Extension not responding".
 
+<!-- section_id: "5988ab80-64a2-46a9-b8dc-bbe3b244a87a" -->
 ### Causes and Solutions
 
 #### Extension Not Installed
@@ -78,11 +82,14 @@ chromium-browser &
 
 ---
 
+<!-- section_id: "db06e42a-603c-4084-b715-7364b8c53c22" -->
 ## Communication Errors
 
+<!-- section_id: "a5a4c224-4636-4d87-bf62-e8e016ecdf5d" -->
 ### Symptom
 Tools timeout, return "Connection refused", or fail with network errors.
 
+<!-- section_id: "c1217c86-f6e1-42c1-823a-b18de6821cd7" -->
 ### Causes and Solutions
 
 #### MCP Server Not Started
@@ -128,11 +135,14 @@ The `tabId` values can become stale if tabs are closed or the browser restarts.
 
 ---
 
+<!-- section_id: "398f4e4e-1703-414f-86db-c0127ab84f88" -->
 ## Permission Problems
 
+<!-- section_id: "426cd60d-1d6c-4126-81dc-4cb580cb6a44" -->
 ### Symptom
 Tools fail with "Permission denied" or security-related errors.
 
+<!-- section_id: "c1f3797d-2036-4472-8973-7419f1b2dad5" -->
 ### Causes and Solutions
 
 #### Extension Permissions Not Granted
@@ -168,11 +178,14 @@ Always use `tabs_context_mcp` first to ensure you're working with managed tabs.
 
 ---
 
+<!-- section_id: "f11085da-a0d2-4525-8fdb-c29a1296accf" -->
 ## Browser Issues
 
+<!-- section_id: "d97b7fe1-c959-48cb-9490-4d6340c4a971" -->
 ### Symptom
 Browser crashes, doesn't open, or displays incorrectly.
 
+<!-- section_id: "7d70213f-f56b-4472-8642-a24992c63487" -->
 ### Causes and Solutions
 
 #### Browser Not Installed
@@ -222,11 +235,14 @@ export DISPLAY=:0
 
 ---
 
+<!-- section_id: "68158186-836c-45c6-af60-285b8ac60d48" -->
 ## MCP Configuration Issues
 
+<!-- section_id: "8ff8c180-024e-4f3e-8be0-f59ba02943e2" -->
 ### Symptom
 MCP tools are not available or configuration errors appear.
 
+<!-- section_id: "a7d91ab2-140e-4711-84c3-bc61a9b7a6ed" -->
 ### Causes and Solutions
 
 #### Configuration File Missing
@@ -283,11 +299,14 @@ npx --version
 
 ---
 
+<!-- section_id: "c41170b6-8842-4317-af2f-1946bf209211" -->
 ## WSL-Specific Issues
 
+<!-- section_id: "87c2107c-f548-4ce9-8d45-44793289020c" -->
 ### Symptom
 Browser crashes immediately on WSL, graphical issues, or display not working.
 
+<!-- section_id: "7217221a-cdb2-4403-af6d-5fb641e0cc81" -->
 ### Causes and Solutions
 
 #### WSLg Not Configured
@@ -360,11 +379,14 @@ sudo apt install -y \
 
 ---
 
+<!-- section_id: "848ebdbf-b0f3-40cf-b942-0b5e2d66bd8c" -->
 ## Concurrent Browser Conflicts
 
+<!-- section_id: "980520e1-458c-473e-a7b1-6bee02eb70fb" -->
 ### Symptom
 "Browser is already in use" error when running multiple AI tools.
 
+<!-- section_id: "23395a25-156f-4e85-9e6b-3ed1f05c11cc" -->
 ### Causes and Solutions
 
 #### Shared Browser Instance
@@ -419,8 +441,10 @@ python3 setup/scripts/mcp_concurrent_browser.py setup
 
 ---
 
+<!-- section_id: "9c82c14a-0e1a-4c73-acb0-bd843381d2ed" -->
 ## Diagnostic Commands
 
+<!-- section_id: "5c6a63e0-0b9b-4e57-a692-74c5d8860fed" -->
 ### Check MCP Server Status
 
 ```bash
@@ -437,6 +461,7 @@ ls -la ~/.cache/ms-playwright/
 ls -la ~/.config/mcp/servers/
 ```
 
+<!-- section_id: "4bd186de-3af6-47c4-93e9-83081a70cc99" -->
 ### Test Browser Manually
 
 ```bash
@@ -447,6 +472,7 @@ ls -la ~/.config/mcp/servers/
 npx playwright screenshot https://example.com screenshot.png
 ```
 
+<!-- section_id: "5a443a60-a4f5-4c4a-9f1f-05ef3f57f7a5" -->
 ### Check Extension Connection
 
 In Chrome DevTools (F12):
@@ -458,8 +484,10 @@ console.log(chrome.runtime.id);
 
 ---
 
+<!-- section_id: "218476ec-132b-4096-9ebf-e07a9f30fc38" -->
 ## Getting Help
 
+<!-- section_id: "b7707424-93ee-4dbe-93ac-0d912fe105d4" -->
 ### Log Files
 
 Check these locations for error logs:
@@ -470,6 +498,7 @@ Check these locations for error logs:
 ~/.cache/ms-playwright/      # Playwright cache and crash dumps
 ```
 
+<!-- section_id: "5d65000d-bf57-452e-836c-719286b3bb85" -->
 ### Report Issues
 
 When reporting issues, include:

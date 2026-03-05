@@ -9,6 +9,7 @@ resource_name: "CLOUD_FEATURES_STATUS_OCT_21_2025"
 
 ---
 
+<!-- section_id: "47ab017e-1d00-41e6-b6a7-6e92ac48b1c2" -->
 ## 🎯 Quick Answer: YES (Partially) - Core Features Work, Some Browser Tests Fail
 
 **Firebase:** ✅ Configured and available  
@@ -21,8 +22,10 @@ resource_name: "CLOUD_FEATURES_STATUS_OCT_21_2025"
 
 ---
 
+<!-- section_id: "60662986-260a-4faf-9861-9f30073631a6" -->
 ## 📊 Cloud Feature Inventory
 
+<!-- section_id: "f0d767d6-1d8a-4ef6-a7e6-e727483ace70" -->
 ### What's Implemented
 
 **1. Firebase Integration ✅**
@@ -69,8 +72,10 @@ resource_name: "CLOUD_FEATURES_STATUS_OCT_21_2025"
 
 ---
 
+<!-- section_id: "71efb4e4-fc94-4cf2-bce6-199e22886e29" -->
 ## 🧪 Test Results
 
+<!-- section_id: "72e9d4d0-0263-4000-824e-ad3c9126b400" -->
 ### Browser Tests (From automation run)
 
 | Test | Status | Reason |
@@ -82,6 +87,7 @@ resource_name: "CLOUD_FEATURES_STATUS_OCT_21_2025"
 **Pass Rate:** 1/3 (33%)  
 **Root Cause:** Browser session persistence, NOT cloud functionality
 
+<!-- section_id: "2dc9025e-d075-4cd9-a2eb-b4af169e97f9" -->
 ### pytest Tests
 
 | Test Suite | Status | Pass Rate |
@@ -91,8 +97,10 @@ resource_name: "CLOUD_FEATURES_STATUS_OCT_21_2025"
 
 ---
 
+<!-- section_id: "b9943f08-d82c-423a-9b6c-a2eb6aa58ad2" -->
 ## 🔍 Feature-by-Feature Analysis
 
+<!-- section_id: "802ab16e-7d2c-4509-9960-3a67405ec56a" -->
 ### 1. Google OAuth (US-003) ✅ WORKING
 
 **Implementation:**
@@ -109,6 +117,7 @@ resource_name: "CLOUD_FEATURES_STATUS_OCT_21_2025"
 
 **Status:** **100% working**
 
+<!-- section_id: "291ef2b7-bfc5-471c-951f-e92da5e82689" -->
 ### 2. Cloud Project Creation (US-009, US-010) ✅ LIKELY WORKING
 
 **Implementation:**
@@ -125,6 +134,7 @@ resource_name: "CLOUD_FEATURES_STATUS_OCT_21_2025"
 
 **Status:** **Code is good, browser test issue**
 
+<!-- section_id: "c9e93fbd-7ca3-4af0-8614-a71eedac403f" -->
 ### 3. Cloud/Local Migration (US-020, US-021) ✅ IMPLEMENTED
 
 **Implementation:**
@@ -140,6 +150,7 @@ resource_name: "CLOUD_FEATURES_STATUS_OCT_21_2025"
 
 **Status:** **Implemented, needs manual testing**
 
+<!-- section_id: "f77c6a07-b6ef-4726-8186-ab19fbd22301" -->
 ### 4. Cloud Sync (US-022, US-023) ✅ IMPLEMENTED
 
 **Implementation:**
@@ -154,6 +165,7 @@ resource_name: "CLOUD_FEATURES_STATUS_OCT_21_2025"
 
 **Status:** **Implemented, untested**
 
+<!-- section_id: "ca41f902-a1b6-4dc1-8613-6cf0d4c9ae1d" -->
 ### 5. Cloud Templates ✅ IMPLEMENTED
 
 **Implementation:**
@@ -170,6 +182,7 @@ resource_name: "CLOUD_FEATURES_STATUS_OCT_21_2025"
 
 **Status:** **Implemented, partially tested**
 
+<!-- section_id: "8a9a11d6-93c6-4a96-8569-9ea4dab7e21e" -->
 ### 6. Firestore Data Storage ✅ WORKING
 
 **Implementation:**
@@ -187,8 +200,10 @@ resource_name: "CLOUD_FEATURES_STATUS_OCT_21_2025"
 
 ---
 
+<!-- section_id: "f4843544-f89d-4576-b74b-4921cc8610b6" -->
 ## 🐛 Issues Identified
 
+<!-- section_id: "6cda9c82-a75a-4a77-aa3c-7166f1075ce5" -->
 ### Not Cloud Bugs
 
 1. **Browser Test Session Cookies** (2 tests)
@@ -201,6 +216,7 @@ resource_name: "CLOUD_FEATURES_STATUS_OCT_21_2025"
    - NOT a cloud feature bug
    - Tests need better Firestore mocks
 
+<!-- section_id: "0bccf1d0-88c3-4469-a266-0a8661a373d6" -->
 ### Potential Cloud Issues
 
 1. **Untested Migration**
@@ -218,8 +234,10 @@ resource_name: "CLOUD_FEATURES_STATUS_OCT_21_2025"
 
 ---
 
+<!-- section_id: "7203624d-8c26-4cbf-8e9e-4bf7ec87945f" -->
 ## 🎯 Cloud Feature Checklist
 
+<!-- section_id: "304ce9c2-5c37-4612-88e6-f46f44440c50" -->
 ### ✅ CONFIRMED WORKING
 
 - [x] Firebase SDK initialization
@@ -228,6 +246,7 @@ resource_name: "CLOUD_FEATURES_STATUS_OCT_21_2025"
 - [x] Firebase config in UI
 - [x] Automatic fallback (cloud → local)
 
+<!-- section_id: "cc68a0ad-959f-4cc7-92ae-0cd0b734786b" -->
 ### ✅ IMPLEMENTED (Likely Working)
 
 - [x] Cloud project creation
@@ -238,6 +257,7 @@ resource_name: "CLOUD_FEATURES_STATUS_OCT_21_2025"
 - [x] Cloud template download
 - [x] Public template listing
 
+<!-- section_id: "ede7698d-58f2-411d-878d-ff786dbdb63d" -->
 ### 🟡 IMPLEMENTED (Untested)
 
 - [ ] Migrate local → cloud (US-020)
@@ -247,6 +267,7 @@ resource_name: "CLOUD_FEATURES_STATUS_OCT_21_2025"
 - [ ] Cloud project deletion
 - [ ] Cloud media storage (Firebase Storage)
 
+<!-- section_id: "cb7fde05-a29c-465c-89ce-b15a7a9f5d62" -->
 ### ❌ NOT WORKING / MISSING
 
 - [ ] Cloud sync conflict resolution
@@ -255,8 +276,10 @@ resource_name: "CLOUD_FEATURES_STATUS_OCT_21_2025"
 
 ---
 
+<!-- section_id: "41647e17-43dd-45cf-9a07-b7811aa28821" -->
 ## 💡 Honest Assessment
 
+<!-- section_id: "a957d926-76e5-4ce5-b4b2-8b11541e8b31" -->
 ### What We Know For Sure
 
 ✅ **Firebase is configured and working**
@@ -276,6 +299,7 @@ resource_name: "CLOUD_FEATURES_STATUS_OCT_21_2025"
 - Users can authenticate
 - Accounts created automatically
 
+<!-- section_id: "9b85dbc9-f487-4985-a196-7fcc85090d80" -->
 ### What We Don't Know For Sure
 
 🟡 **Full cloud workflow untested**
@@ -291,8 +315,10 @@ resource_name: "CLOUD_FEATURES_STATUS_OCT_21_2025"
 
 ---
 
+<!-- section_id: "407e45aa-0ff5-4cd6-913f-1715391e6d30" -->
 ## 🚀 How to Verify Cloud Features Work
 
+<!-- section_id: "03d52656-035a-44ad-860e-6200f2cdf6ff" -->
 ### Option 1: Manual Testing (30 minutes)
 
 1. **Test Google OAuth:**
@@ -319,12 +345,14 @@ resource_name: "CLOUD_FEATURES_STATUS_OCT_21_2025"
    # Verify: Appears in public templates
    ```
 
+<!-- section_id: "fdd15e16-8277-49fe-953b-cb586abeb414" -->
 ### Option 2: Fix Browser Tests (2 hours)
 
 - Rewrite cloud tests to use `window.location.href` instead of `browser_navigate`
 - This fixes session cookie persistence
 - Would prove cloud features work
 
+<!-- section_id: "259dcdbf-61b8-4d56-be63-09e65257ba7f" -->
 ### Option 3: Add pytest Integration Tests (3 hours)
 
 - Create `test_cloud_features_real.py`
@@ -334,6 +362,7 @@ resource_name: "CLOUD_FEATURES_STATUS_OCT_21_2025"
 
 ---
 
+<!-- section_id: "f567a46a-9b5d-4d69-a917-16f276724643" -->
 ## 📊 Cloud Feature Status Summary
 
 ```
@@ -354,8 +383,10 @@ Overall Cloud Features       ✅ 80% Ready  🟡 30%     70%
 
 ---
 
+<!-- section_id: "4a334b57-800b-4fb4-a822-03e0e091c99b" -->
 ## 🎯 Recommendation
 
+<!-- section_id: "db00d14d-077f-478d-9f3b-f2bd8c4438be" -->
 ### For Your Question: "Do the cloud features work?"
 
 **Answer: MOSTLY YES, with caveats**
@@ -376,6 +407,7 @@ Overall Cloud Features       ✅ 80% Ready  🟡 30%     70%
 - 🟡 Sync operations
 - 🟡 Full end-to-end cloud workflow
 
+<!-- section_id: "2c381d54-19bd-4093-88a4-ab900db48da8" -->
 ### Next Steps
 
 **Option A: Manual Test Now** (30 min)
@@ -397,6 +429,7 @@ Overall Cloud Features       ✅ 80% Ready  🟡 30%     70%
 
 ---
 
+<!-- section_id: "b5cc17c8-d36e-4e61-b15c-5597b5ae486a" -->
 ## 💬 My Honest Take
 
 **The cloud features are likely working based on:**

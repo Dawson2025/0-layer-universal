@@ -5,8 +5,10 @@ resource_name: "NEXT_STEPS"
 ---
 # Next Steps for Multi-OS Workspace Sync
 
+<!-- section_id: "5240cace-8964-4b79-920f-37b304270bc8" -->
 ## Current Status (2026-01-09)
 
+<!-- section_id: "659dc4d5-4114-4c8c-b2a6-553a45edca9f" -->
 ### System Health
 - **WSL:** ✅ Online & Syncing with Windows
 - **Windows:** ✅ Online & Syncing with WSL
@@ -14,8 +16,10 @@ resource_name: "NEXT_STEPS"
 
 ---
 
+<!-- section_id: "4c091fa8-b5d7-43c8-9813-099c4e7d1e80" -->
 ## 🔄 Active Tasks
 
+<!-- section_id: "232c62e2-0490-4398-b612-e3a05e16006c" -->
 ### Task 1: Restore Ubuntu Connection (URGENT)
 
 **IP Address Identified:** `10.200.164.40`
@@ -28,6 +32,7 @@ resource_name: "NEXT_STEPS"
 
 ---
 
+<!-- section_id: "fe7eaeb1-c4d5-4661-977b-0b665fa57d89" -->
 ### Task 2: Verify Three-Way Sync
 
 **Test Plan (Once Ubuntu is Connected):**
@@ -76,6 +81,7 @@ resource_name: "NEXT_STEPS"
 
 ---
 
+<!-- section_id: "38695a71-570e-4383-8a4b-a39e4f71bdfa" -->
 ### Task 3: Final Documentation
 
 After verifying three-way sync works:
@@ -104,8 +110,10 @@ All systems now fully synced and operational.
 
 ---
 
+<!-- section_id: "a0dff259-3817-4e0b-b012-bfed17acf80f" -->
 ## 📊 Quick Status Check Commands
 
+<!-- section_id: "bf6d9103-405f-4255-a19b-52b98c1ab3c0" -->
 ### On Ubuntu:
 ```bash
 # Check Syncthing status
@@ -120,12 +128,14 @@ curl -s -H "X-API-Key: $(cat ~/.local/state/syncthing/config.xml | grep -oP '(?<
   http://localhost:8384/rest/db/status?folder=dawson-workspace | jq
 ```
 
+<!-- section_id: "19495bb1-8587-4adf-83e9-27dba6cc4026" -->
 ### On WSL:
 ```bash
 # Same commands as Ubuntu
 systemctl --user status syncthing.service
 ```
 
+<!-- section_id: "d57c211c-a69a-4794-8ad0-195be31b2d4e" -->
 ### On Windows (PowerShell):
 ```powershell
 # Check if Syncthing is running
@@ -137,20 +147,25 @@ Start-Process "http://localhost:8384"
 
 ---
 
+<!-- section_id: "cfb2b833-46c9-496c-b8d0-05612b7046ac" -->
 ## 📁 Important Files
 
+<!-- section_id: "0bd961bf-06cf-4b67-bc2d-74fe723fc6db" -->
 ### On Ubuntu:
 - Helper script: `/home/dawson/dawson-workspace/add-ubuntu-to-wsl-syncthing.sh`
 - Syncthing config: `~/.local/state/syncthing/config.xml`
 - Workspace: `/home/dawson/dawson-workspace/`
 
+<!-- section_id: "33f0f9e8-cb2b-4697-a69c-d7f39ea67244" -->
 ### On WSL:
 - Workspace: `/home/dawson/dawson-workspace/`
 - Helper script: `/home/dawson/dawson-workspace/add-ubuntu-to-wsl-syncthing.sh` (after sync)
 
+<!-- section_id: "86aab760-b560-4a9e-9606-88ed65d772a4" -->
 ### On Windows:
 - Workspace: `C:\Users\Dawson\dawson-workspace\`
 
+<!-- section_id: "1fcd90a3-e618-432f-9b63-3721b1087b4e" -->
 ### Documentation:
 - `/home/dawson/code/0-universal-context/0_context/-1_research/-1.01_things_researched/multi_os_system/`
   - `DEVICE_IDS.md`
@@ -161,6 +176,7 @@ Start-Process "http://localhost:8384"
 
 ---
 
+<!-- section_id: "30f35029-296a-4a89-a4c0-fa99e993ee05" -->
 ## ✅ What's Already Done
 
 - ✅ Ubuntu workspace directory structure created

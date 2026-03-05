@@ -5,6 +5,7 @@ resource_name: "v2_hierarchical_aggregation_design"
 ---
 # Context Avenue Database Schema — Proposal v2
 
+<!-- section_id: "19fe0977-7d62-40fb-b56e-6409484d5c3a" -->
 ## Improved Design: Hierarchical Aggregation with Flat Tables
 
 This proposal refines the avenues.db schema to support:
@@ -15,6 +16,7 @@ This proposal refines the avenues.db schema to support:
 
 ---
 
+<!-- section_id: "42e898ce-1ebe-462d-9731-9850d6c25a38" -->
 ## Core Design Principle
 
 Operations are organized hierarchically but stored in a **flat table structure** using `parent_operation_id` foreign keys. This allows:
@@ -24,8 +26,10 @@ Operations are organized hierarchically but stored in a **flat table structure**
 
 ---
 
+<!-- section_id: "bed93adf-ce04-4497-9a65-1754865619d2" -->
 ## Database Schema
 
+<!-- section_id: "043a35d9-fa04-46f6-a430-0bee9472e81b" -->
 ### 1. AVENUES (Top-level container)
 
 ```sql
@@ -47,6 +51,7 @@ CREATE TABLE avenues (
 
 ---
 
+<!-- section_id: "d45585be-64d8-49af-8dc2-cbb2d38afc02" -->
 ### 2. AVENUE_TYPES (Organization)
 
 ```sql
@@ -68,6 +73,7 @@ CREATE TABLE avenue_types (
 
 ---
 
+<!-- section_id: "4c040469-21e4-40f7-9282-608474db0eda" -->
 ### 3. OPERATIONS (Hierarchical with flat structure)
 
 ```sql
@@ -101,6 +107,7 @@ delete (aggregate)
 
 ---
 
+<!-- section_id: "b438f201-3712-4ccc-bdfa-3984f2304635" -->
 ### 4. OPERATION_SPEEDS (Performance metrics)
 
 ```sql
@@ -124,6 +131,7 @@ CREATE TABLE operation_speeds (
 
 ---
 
+<!-- section_id: "6f96be57-bf48-47bf-9ee8-c5adeb436440" -->
 ### 5. OPERATION_QUALITIES (Quality aspects)
 
 ```sql
@@ -139,6 +147,7 @@ CREATE TABLE operation_qualities (
 
 ---
 
+<!-- section_id: "d4d1ca05-c881-42ba-9d9e-281b64419251" -->
 ### 6. CAPABILITIES (Expanded from 8 to 16)
 
 ```sql
@@ -173,6 +182,7 @@ CREATE TABLE capabilities (
 
 ---
 
+<!-- section_id: "f8f99f11-4df6-40a5-bfb5-fb6bb4b9b812" -->
 ### 7. RANKINGS (Maps avenues to capabilities)
 
 ```sql
@@ -190,8 +200,10 @@ CREATE TABLE rankings (
 
 ---
 
+<!-- section_id: "e0481191-9a69-4d9d-9f7c-20d8d57ed268" -->
 ## Views for Different Perspectives
 
+<!-- section_id: "7c224eff-2948-47c0-8d90-4c230dcd4774" -->
 ### View 1: By Reasoning Capability (highest → lowest)
 
 ```sql
@@ -208,6 +220,7 @@ WHERE c.name = 'Reasoning Capability'
 ORDER BY r.rank_place ASC;
 ```
 
+<!-- section_id: "08bb3309-fe1c-4bf3-99d5-a4bddba4881e" -->
 ### View 2: By Usage Frequency in Industry (highest → lowest)
 
 ```sql
@@ -224,6 +237,7 @@ WHERE c.name = 'Use Frequency in Industry'
 ORDER BY r.rank_place ASC;
 ```
 
+<!-- section_id: "b4f13971-eba8-49d1-92f4-7c473dd33262" -->
 ### View 3: By Cost (lowest → highest)
 
 ```sql
@@ -240,6 +254,7 @@ WHERE c.name = 'Cost'
 ORDER BY r.rank_place ASC;
 ```
 
+<!-- section_id: "a17024e6-a0e0-4eee-814b-ef47708c8210" -->
 ### View 4: By Scalability (highest → lowest)
 
 ```sql
@@ -258,8 +273,10 @@ ORDER BY r.rank_place ASC;
 
 ---
 
+<!-- section_id: "65e8ca68-fef8-47b4-b117-3323e5d356ea" -->
 ## Query Examples
 
+<!-- section_id: "ea7615da-9a3a-4063-a53b-c755af2f8470" -->
 ### Get overall query speed for Knowledge Graph
 
 ```sql
@@ -273,6 +290,7 @@ WHERE o.operation_name = 'query'
   );
 ```
 
+<!-- section_id: "098c92ed-7aeb-49e0-adb5-1c4f887b34e4" -->
 ### Get component speeds that make up Query
 
 ```sql
@@ -284,6 +302,7 @@ WHERE o.parent_operation_id = (
 );
 ```
 
+<!-- section_id: "3bccc823-7db4-4239-9af4-1968481a8980" -->
 ### Compare all avenue types on Reasoning Capability
 
 ```sql
@@ -299,6 +318,7 @@ WHERE c.name = 'Reasoning Capability'
 ORDER BY r.rank_place;
 ```
 
+<!-- section_id: "60110dd6-b90d-4d7b-9497-4d6c1f4e393b" -->
 ### Find fastest Query operations across all avenues
 
 ```sql
@@ -317,6 +337,7 @@ ORDER BY os.speed_value ASC;
 
 ---
 
+<!-- section_id: "4e01c136-8323-44b6-a85c-bd570d928c8f" -->
 ## Key Design Benefits
 
 1. **Flat SQL structure** — all rows have consistent columns (SQL normalization)
@@ -329,6 +350,7 @@ ORDER BY os.speed_value ASC;
 
 ---
 
+<!-- section_id: "b11ef518-73e8-43ae-98f0-e94b6b71a346" -->
 ## Migration Path
 
 From current avenues.db:
@@ -344,6 +366,7 @@ From current avenues.db:
 
 ---
 
+<!-- section_id: "e8433b1a-a4e6-4e03-b4f5-7068779fb209" -->
 ## Next Steps
 
 Ready for:

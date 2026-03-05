@@ -10,6 +10,7 @@ resource_name: "0AGNOSTIC"
 
 # ── Entity Definition ──
 
+<!-- section_id: "5855d87b-0f60-4c87-9fc5-54e634cefe0b" -->
 ## Identity
 
 **Entity**: Universal Tools
@@ -20,6 +21,7 @@ resource_name: "0AGNOSTIC"
 
 **Specificity Chain**: OS (05) → Linux Ubuntu (05) → Environments (06) → Local (06) → Coding Apps (07) → Cursor (08) → AI Apps (09) → **Universal Tools (10)**
 
+<!-- section_id: "28fba59e-b699-4b98-8dc2-4bb22a1e9623" -->
 ## Key Behaviors
 
 - Contains tools like docx_ai_tool and other cross-platform development utilities
@@ -28,18 +30,21 @@ resource_name: "0AGNOSTIC"
 - Each child tool entity contains its own documentation, configuration, and usage patterns
 - Tool dependencies and compatibility tracked in knowledge base
 
+<!-- section_id: "93bbf6c0-f8f4-42fa-a3a7-99161c758933" -->
 ## Delegation Contract
 
 **Children** (level 11): Individual tool entities (docx_ai_tool, etc.)
 **Parent** (level 09): AI Apps Category
 **Siblings**: 01_tools_and_services, 02_ai_models, 04_protocols, 05_agent_setup (features), claude_code_cli, codex_cli, cursor_agent, gemini_cli (further_specificity)
 
+<!-- section_id: "99ad0977-8a6a-45a0-b610-621862c031e1" -->
 ## Inputs
 
 - Tool source code and documentation
 - Configuration templates
 - Dependency requirements
 
+<!-- section_id: "4d53a162-0c45-4d3d-98ff-cf4488ebfb9e" -->
 ## Outputs
 
 - Organized tool documentation accessible to all AI apps
@@ -48,6 +53,7 @@ resource_name: "0AGNOSTIC"
 
 # ── Current Status ──
 
+<!-- section_id: "72ee7395-2610-4dee-ac1d-c852569cecb9" -->
 ## Current Status
 
 - **Stage**: Active (created 2026-02-25 from content migration)
@@ -59,10 +65,12 @@ resource_name: "0AGNOSTIC"
 
 # ── Current State ──
 
+<!-- section_id: "491c7258-37a9-4661-a114-31ca4bdc5710" -->
 ## Current State Detail
 
 Content migrated from `sub_layer_0_10_claude_code_cli/sub_layer_0_12_universal_tools/`. Tools that were previously scoped to Claude Code CLI but are actually app-agnostic have been moved here.
 
+<!-- section_id: "6066b8d7-bd60-44d0-8f7d-0ac153591636" -->
 ## Open Items
 
 - [ ] Renumber tool children from sub_layer_0_12_* to sub_layer_0_11_*
@@ -72,6 +80,7 @@ Content migrated from `sub_layer_0_10_claude_code_cli/sub_layer_0_12_universal_t
 
 # ── References ──
 
+<!-- section_id: "52e51aef-6856-4d04-8dcc-270c7d62055e" -->
 ## Navigation
 
 | Resource | Location |

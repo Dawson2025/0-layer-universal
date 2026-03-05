@@ -14,6 +14,7 @@ The Universal layer defines global rules, tools, and standards that cascade down
 - [`tools_and_context_systems.md`](../../-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/tools_and_context_systems.md) – Tool specialization at each layer
 - [`os_and_quartets.md`](../../-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/os_and_quartets.md) – OS-specific context variants
 
+<!-- section_id: "61294a71-551a-43fa-bc17-5f02b498b662" -->
 ## Directory Structure
 
 ```
@@ -28,10 +29,12 @@ The Universal layer defines global rules, tools, and standards that cascade down
 └── README.md
 ```
 
+<!-- section_id: "e51d6619-653e-43df-873b-c23ce53500ba" -->
 ## Manager + Handoff (layer_0/)
 - layer_0_00_ai_manager_system: manager docs/configs.
 - layer_0_01_manager_handoff_documents: `0.00_to_universal/` and `0.01_to_specific/` for cross-layer handoffs.
 
+<!-- section_id: "73b0540f-f2a3-4961-bc78-7758804b1f12" -->
 ## Slots (stored under `layer_0/layer_0_02_sub_layers/` as `sub_layer_0_xx_*`)
 - sub_layer_0_01_basic_prompts_throughout: session init, what-to-do-next, core prompts.
 - sub_layer_0_02_software_engineering_knowledge_system: general SE knowledge map.
@@ -47,6 +50,7 @@ The Universal layer defines global rules, tools, and standards that cascade down
 - sub_layer_0_12_universal_tools: cross-project scripts/utilities.
 - sub_layer_0_13_agent_setup: agent configuration with model fallbacks and MCP integration (depends on 0.09, 0.10, 0.11, 0.12).
 
+<!-- section_id: "40eebeaa-687e-45f7-b804-4d3a91277f85" -->
 ## AI Setup Dependency Chain (0.09–0.13)
 
 The slots 0.09–0.13 form a critical dependency chain for AI agent setup:
@@ -58,6 +62,7 @@ The slots 0.09–0.13 form a critical dependency chain for AI agent setup:
 
 Configure these in order when setting up a new AI environment.
 
+<!-- section_id: "34f041ec-c9dd-4ec8-ad00-862b3cc888d5" -->
 ## Stages (layer_0/layer_0_99_stages/, folders named `stage_0_xx_*`)
 - stage_0_01_request_gathering
 - stage_0_02_research

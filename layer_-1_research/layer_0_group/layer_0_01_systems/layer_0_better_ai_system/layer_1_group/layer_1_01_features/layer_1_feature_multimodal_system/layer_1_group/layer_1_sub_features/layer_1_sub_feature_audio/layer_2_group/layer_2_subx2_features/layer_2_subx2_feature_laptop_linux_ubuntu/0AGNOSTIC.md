@@ -6,6 +6,7 @@ resource_name: "0AGNOSTIC"
 ---
 # 0AGNOSTIC.md - layer_2_subx2_feature_laptop_linux_ubuntu
 
+<!-- section_id: "4553d879-3be4-4503-aec4-c55a15d09dd1" -->
 ## Identity
 
 entity_id: "115127f8-4201-4892-b616-3cd706593cf6"
@@ -16,17 +17,21 @@ You are an agent at **Layer 2** (Sub-Feature), **Sub-Feature**: Laptop Linux Ubu
 - **Parent**: `../../../0AGNOSTIC.md` (layer_1_sub_feature_audio)
 - **Children**: `layer_3_group/layer_3_subx3_features/` contains 2 sub-features (system_tts, agentic_tts)
 
+<!-- section_id: "514fbdd2-77f1-4017-a44c-623b8380b67a" -->
 ## Triggers
 Load this context when:
 - User mentions: Ubuntu, Linux, GNOME, Unity, PipeWire, RTX 4060, GPU TTS, Lenovo Yoga, laptop audio
 - Working on: Platform-specific TTS setup, GPU-accelerated TTS, desktop audio integration
 - Entering: `layer_2_subx2_feature_laptop_linux_ubuntu/`
 
+<!-- section_id: "2840d544-7387-4639-a04a-39bd81b5554d" -->
 ## Pointers
+<!-- section_id: "13f456ce-e490-4936-9769-3af136c97689" -->
 ### On Entry
 1. Read `0INDEX.md` for current state
 2. Check `layer_2_group/layer_2_99_stages/` for stage progress
 
+<!-- section_id: "c576dbe8-8540-43cf-a1ff-0d179e9f9ea4" -->
 ### Navigation
 | Direction | Path |
 |-----------|------|
@@ -35,12 +40,14 @@ Load this context when:
 | System TTS | `layer_3_group/layer_3_subx3_features/layer_3_subx3_feature_system_tts/` |
 | Agentic TTS | `layer_3_group/layer_3_subx3_features/layer_3_subx3_feature_agentic_tts/` |
 
+<!-- section_id: "f2e8f492-e361-4b76-8f32-7d3642ace8b8" -->
 ## Where to Contribute
 | Work Type | Location |
 |-----------|----------|
 | Research | Appropriate stage `outputs/` directory |
 | Session notes | `.0agnostic/04_episodic_memory/` |
 
+<!-- section_id: "4e9892c5-6360-46cc-b8fb-5c81b9c538c7" -->
 ## Hardware Specs
 
 | Component | Details |
@@ -55,12 +62,14 @@ Load this context when:
 | **Audio Stack** | PipeWire -> ALSA/SOF -> hardware; EasyEffects for speaker enhancement |
 | **nvidia-smi** | `/usr/bin/nvidia-smi` |
 
+<!-- section_id: "b0a99bc7-1321-4360-a927-878f57bbdbf4" -->
 ### GPU Capabilities for TTS
 - 8GB VRAM is more than enough for Kokoro (82M params, ~200-300MB VRAM)
 - Can run Kokoro + Whisper STT simultaneously on same GPU
 - `kokoro-fastapi[gpu]` variant uses CUDA for near-instant generation
 - Sub-0.1s TTS generation for short text with GPU acceleration
 
+<!-- section_id: "2d5a76f9-828b-482c-97c8-7877caa0221c" -->
 ## Platform Dependencies
 
 This entity's TTS implementations depend on the local desktop environment. The local Ubuntu entity contains foundational platform knowledge:
@@ -90,13 +99,16 @@ This entity's TTS implementations depend on the local desktop environment. The l
 
 **Dynamic rule**: Universal rule at `.0agnostic/02_rules/dynamic/local_ubuntu_desktop_troubleshooting/` triggers for desktop/audio issues.
 
+<!-- section_id: "fb295b03-9c17-4c74-8390-b5204dc11f8e" -->
 ## Resources Available
 
+<!-- section_id: "eccad0ef-d986-473b-8a2e-c8a5670232ad" -->
 ### Knowledge
 | Topic | Location | Description |
 |-------|----------|-------------|
 | GPU TTS | `.0agnostic/01_knowledge/gpu_tts/` | RTX 4060 capabilities, Kokoro GPU mode, VoiceMode MCP |
 
+<!-- section_id: "edce7d16-2339-4f30-aed2-8b3c96a19180" -->
 ### Key References
 - **TTS Engine (target)**: Kokoro TTS — 82M params, top of HuggingFace TTS Arena, 40+ voices, GPU-accelerated
 - **TTS Engine (current)**: Piper — Amy voice, CPU-only, `~/.local/bin/piper`

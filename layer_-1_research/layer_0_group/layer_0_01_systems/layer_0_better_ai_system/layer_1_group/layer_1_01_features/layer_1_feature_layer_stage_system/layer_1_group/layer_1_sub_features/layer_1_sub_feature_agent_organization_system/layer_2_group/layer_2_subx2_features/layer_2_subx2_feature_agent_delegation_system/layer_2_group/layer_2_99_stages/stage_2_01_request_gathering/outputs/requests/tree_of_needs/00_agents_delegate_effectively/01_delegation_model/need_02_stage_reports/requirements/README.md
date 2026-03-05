@@ -8,10 +8,12 @@ resource_name: "README"
 
 **Need**: [Stage Reports](../README.md)
 
+<!-- section_id: "fa66974f-510b-4b49-8570-0b2ac4e7a5ae" -->
 ## Overview
 
 These requirements define the stage report protocol — a concise, async status mechanism that lets managers understand what happened in a stage without loading its detailed outputs. Reports must live at a consistent location (`outputs/stage_report.md`), be written before every session exit, and contain status, summary, outputs, blockers, and next steps. The key constraint is that stage reports must be under 30 lines and sufficient for delegation decisions.
 
+<!-- section_id: "20cbde9a-118c-4195-9784-d711657aea7c" -->
 ## Key Themes
 
 - **Report Protocol**: Where reports live, when they're written, and what triggers an update — establishing a consistent, predictable mechanism across all stages

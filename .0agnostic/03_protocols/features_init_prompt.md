@@ -5,16 +5,19 @@ resource_name: "features_init_prompt"
 ---
 # Universal Features Initialization Prompt Template
 
+<!-- section_id: "d92b10a1-4208-49d2-8c78-b2e802ea5a74" -->
 ## Purpose
 
 This is the **universal template** for creating project-level features initialization prompts. It provides the standard structure and instructions that should be instantiated in each project's `layer_2_features/` folder.
 
+<!-- section_id: "c2a45334-0ab6-4a65-8129-d4dfac208fdf" -->
 ## When to Use This
 
 - When creating a new project's features layer
 - When instantiating a project's `features_init_prompt.md`
 - When setting up the features folder structure in a project
 
+<!-- section_id: "abc7ae18-9697-4c1c-aaac-0767c4ee64b0" -->
 ## Template Structure
 
 Each project's `layer_2_features/` folder should have:
@@ -43,36 +46,43 @@ layer_2_features/
     └── [feature-specific content]
 ```
 
+<!-- section_id: "5e9015f0-f3e0-401e-a01f-ac416290e2e3" -->
 ## Features Init Prompt Content Template
 
 When instantiating this in a project, the `features_init_prompt.md` should include:
 
+<!-- section_id: "cca26624-4f71-4fba-b620-e4ef57bd9675" -->
 ### 1. Critical Reading Order
 - Reference to Universal Init Prompt
 - Reference to Project Init Prompt
 - Reference to this Features Init Prompt
 
+<!-- section_id: "731c412f-680d-4819-baa3-957c82387fd8" -->
 ### 2. Features Layer Purpose
 - What the features layer manages in this project
 - How features relate to the project's goals
 - How features are organized and numbered
 
+<!-- section_id: "2777fdc6-2d6f-42db-a9a3-6bf750580201" -->
 ### 3. Feature Instantiation Process
 - How to create a new feature
 - What templates to use
 - How to set up feature structure
 - How to create feature-specific init prompts
 
+<!-- section_id: "b12c4ddb-0392-4930-bac2-ab2704045bdf" -->
 ### 4. Navigation Patterns
 - How to navigate from project → features → specific feature
 - How to use the features layer manager system
 - How to use handoff documents
 
+<!-- section_id: "ec1d39b8-f523-4cc8-97e0-8a39dfe06e86" -->
 ### 5. Feature Management
 - How features are coordinated
 - How features report to the project layer
 - How features communicate with each other
 
+<!-- section_id: "433a56ff-cb80-4fb4-ba44-c3798d60ee64" -->
 ## Instantiation Instructions
 
 When creating a project's `features_init_prompt.md`:
@@ -85,6 +95,7 @@ When creating a project's `features_init_prompt.md`:
 3. **Reference the universal and project init prompts**
 4. **Provide clear instructions for feature creation**
 
+<!-- section_id: "3a6ac0dc-1c96-45fc-b37d-805ebed5386a" -->
 ## Key Principles
 
 - **Hierarchy**: Universal → Project → Features → Individual Feature
@@ -93,6 +104,7 @@ When creating a project's `features_init_prompt.md`:
 - **Handoffs**: Proper use of manager handoff documents
 - **Stages**: Features can have their own stage progression
 
+<!-- section_id: "4530369e-57ef-48c8-930e-a5dd3f8bf68f" -->
 ## Related Documentation
 
 - **Universal Init Prompt**: `universal_init_prompt.md` (same directory)

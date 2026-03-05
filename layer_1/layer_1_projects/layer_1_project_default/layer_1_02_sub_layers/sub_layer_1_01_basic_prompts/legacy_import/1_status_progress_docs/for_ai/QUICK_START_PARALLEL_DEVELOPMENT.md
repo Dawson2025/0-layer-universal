@@ -5,12 +5,14 @@ resource_name: "QUICK_START_PARALLEL_DEVELOPMENT"
 ---
 # Quick Start: Parallel Development Guide
 
+<!-- section_id: "80dfc4b3-9bfb-4ec8-ae55-0f4e8ede5968" -->
 ## What This Is
 
 A fast-reference guide for AI agents working on the Language Tracker application in parallel. Read this first, then dive into detailed docs as needed.
 
 ---
 
+<!-- section_id: "e0d6953c-d29b-48c7-8565-533c01d8c6a8" -->
 ## 🎯 The Core Concept
 
 **One Feature = One Directory**
@@ -19,8 +21,10 @@ Each feature lives in its own isolated folder under `features/`. Multiple AI age
 
 ---
 
+<!-- section_id: "1a174542-b9ed-407a-a1ed-9e3a58398250" -->
 ## 📁 Where to Put Your Code
 
+<!-- section_id: "6b3e2402-82c6-45ac-ab5a-6bc80d838e8b" -->
 ### I'm Working On...
 
 | Feature | My Directory | I Own These Files |
@@ -34,6 +38,7 @@ Each feature lives in its own isolated folder under `features/`. Multiple AI age
 | **Words** | `features/words/` | All `/words/*` routes, word creation, search |
 | **Administration** | `features/admin/` | All `/admin/*` routes and admin tools |
 
+<!-- section_id: "01570a9b-1c47-405f-9b96-5c013a47c990" -->
 ### Basic Feature Structure
 
 ```
@@ -54,6 +59,7 @@ features/my_feature/
 
 ---
 
+<!-- section_id: "eb109f9a-fcf8-416c-a12c-78ce4f8ee6f6" -->
 ## ✅ Quick Checklist
 
 Before starting work:
@@ -72,8 +78,10 @@ Before committing:
 
 ---
 
+<!-- section_id: "3083dd39-4695-4bb2-84d6-82fe817ddd6d" -->
 ## 🚦 Traffic Light System
 
+<!-- section_id: "f277aee3-b9a7-4f73-952b-3772ef3a36f2" -->
 ### 🟢 GREEN - Work Freely (No Coordination Needed)
 
 - Adding routes to your feature
@@ -82,6 +90,7 @@ Before committing:
 - Writing tests for your feature
 - Modifying business logic in your feature
 
+<!-- section_id: "3eb32c6a-e53f-4260-a516-8801e124044d" -->
 ### 🟡 YELLOW - Check First
 
 - Using functions from `core/` or `services/`
@@ -89,6 +98,7 @@ Before committing:
 - Modifying global templates (`templates/base.html`)
 - Adding database migrations
 
+<!-- section_id: "112e4133-5088-4297-8438-004aab488c2c" -->
 ### 🔴 RED - Must Coordinate
 
 - Modifying `core/*` shared modules
@@ -99,8 +109,10 @@ Before committing:
 
 ---
 
+<!-- section_id: "de8aba62-e816-4614-8423-0fafd7223fae" -->
 ## 📖 Common Patterns
 
+<!-- section_id: "9ba01af8-6762-4112-8882-d0012a22da23" -->
 ### Pattern 1: Create a New Route
 
 ```python
@@ -117,6 +129,7 @@ def my_feature_page():
     return render_template('my_feature/page.html', user=user)
 ```
 
+<!-- section_id: "6b1a93e3-3f7c-4931-b0e5-8e4c25f42454" -->
 ### Pattern 2: Create an API Endpoint
 
 ```python
@@ -139,6 +152,7 @@ def api_do_action():
     return jsonify({'success': True, 'data': result})
 ```
 
+<!-- section_id: "78116e38-9bee-4f99-b907-e3183af64ee1" -->
 ### Pattern 3: Database Query
 
 ```python
@@ -164,6 +178,7 @@ def get_items(project_id: str) -> List[Dict]:
     ]
 ```
 
+<!-- section_id: "4663750e-e401-46a3-bb9b-f67a573c3e4a" -->
 ### Pattern 4: Render Template
 
 ```python
@@ -200,8 +215,10 @@ def list_items():
 
 ---
 
+<!-- section_id: "333b0733-bd21-470e-81fa-5f4fa90089ff" -->
 ## 🚫 What NOT to Do
 
+<!-- section_id: "0bf73174-d549-4923-bedf-873f74f72745" -->
 ### ❌ Don't Import Other Features' Routes
 
 ```python
@@ -213,6 +230,7 @@ def my_page():
     return create_word_page()  # ❌ Calling another feature's route
 ```
 
+<!-- section_id: "ad70086c-adef-4583-b9b2-e447c3ce0035" -->
 ### ✅ Instead, Use Models or Redirect
 
 ```python
@@ -232,6 +250,7 @@ def go_to_words():
     return redirect(url_for('words.words_menu'))  # ✅ Redirect
 ```
 
+<!-- section_id: "b07d6118-1f20-43aa-afce-7e6827a1efc5" -->
 ### ❌ Don't Put Templates in Global Directory
 
 ```python
@@ -242,6 +261,7 @@ return render_template('my_page.html')  # Looks in global templates/
 return render_template('my_feature/my_page.html')  # Looks in features/my_feature/templates/
 ```
 
+<!-- section_id: "cf24ba3d-ec7e-4f63-99e2-9c272b7bc1fa" -->
 ### ❌ Don't Hard-Code Database Paths
 
 ```python
@@ -256,8 +276,10 @@ conn = get_db_connection()  # ✅
 
 ---
 
+<!-- section_id: "4078df17-4374-4c8c-b269-a47e4eb8071e" -->
 ## 🔍 Need More Detail?
 
+<!-- section_id: "797400f3-b12a-4618-a7c4-006758ea0b0c" -->
 ### Detailed Architecture Documentation
 
 **[Parallel Development Architecture](PARALLEL_DEVELOPMENT_ARCHITECTURE.md)**
@@ -275,6 +297,7 @@ conn = get_db_connection()  # ✅
 - Error handling standards
 - Type hints and documentation guidelines
 
+<!-- section_id: "2bbe4e99-d92d-403b-8afa-698304b9e1f5" -->
 ### Requirements Documentation
 
 **[Requirements Overview](requirements/README.md)**
@@ -288,8 +311,10 @@ conn = get_db_connection()  # ✅
 
 ---
 
+<!-- section_id: "3fb117e0-ae10-4591-a893-15caf3a824a3" -->
 ## 🎮 Parallel Development Scenarios
 
+<!-- section_id: "3abee7e4-90f2-4b4c-a325-ec6db32c9b9e" -->
 ### Scenario 1: Three Agents, Three Features
 
 **Agent 1** works on: `features/words/` (search enhancement)
@@ -298,6 +323,7 @@ conn = get_db_connection()  # ✅
 
 **Result**: Zero conflicts! Each agent has isolated workspace.
 
+<!-- section_id: "ed27a9f7-7b03-4c64-b7ec-a9a2355aee89" -->
 ### Scenario 2: One Shared Module Change
 
 **Problem**: Agent 1 needs to add function to `core/database.py`
@@ -307,6 +333,7 @@ conn = get_db_connection()  # ✅
 2. **Interface First**: Define function signature (stub) first, implement later
 3. **Feature-Local**: Keep logic in feature if only one feature needs it
 
+<!-- section_id: "04914883-fc6d-4ced-a40c-d555f7498963" -->
 ### Scenario 3: Database Migration
 
 **Problem**: Agent 1 needs new column in `words` table
@@ -319,6 +346,7 @@ conn = get_db_connection()  # ✅
 
 ---
 
+<!-- section_id: "ddb8840c-535a-44f1-a521-638f6f7753fe" -->
 ## 💡 Pro Tips
 
 1. **Stay in Your Lane**: 95% of your work should be in `features/<your_feature>/`
@@ -339,6 +367,7 @@ conn = get_db_connection()  # ✅
 
 ---
 
+<!-- section_id: "b0283971-d06a-42f2-9561-c3d73592afc4" -->
 ## 🆘 Quick Reference
 
 | I Want To... | Where Do I Look? |
@@ -356,6 +385,7 @@ conn = get_db_connection()  # ✅
 
 ---
 
+<!-- section_id: "5df5a612-e4f2-4ac4-97a3-5836010608c9" -->
 ## 🚀 Getting Started
 
 1. **Identify your feature** from the [Requirements Overview](requirements/README.md)
@@ -369,6 +399,7 @@ conn = get_db_connection()  # ✅
 
 ---
 
+<!-- section_id: "3e04e6ca-b9e1-4f52-8fa6-9752d37f1cb7" -->
 ## Summary
 
 **The Golden Rule**: If you're working on `words`, you touch `features/words/`. If you're working on `groups`, you touch `features/groups/`. Keep features isolated and you can work in parallel without conflicts!

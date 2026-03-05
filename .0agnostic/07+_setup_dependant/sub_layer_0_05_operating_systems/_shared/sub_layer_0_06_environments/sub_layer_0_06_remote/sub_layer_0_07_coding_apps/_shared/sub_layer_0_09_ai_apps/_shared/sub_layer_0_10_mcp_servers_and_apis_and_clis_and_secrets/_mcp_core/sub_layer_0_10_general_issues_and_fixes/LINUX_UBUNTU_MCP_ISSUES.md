@@ -9,12 +9,15 @@ resource_name: "LINUX_UBUNTU_MCP_ISSUES"
 **Location**: Universal Layer → OS Setup  
 **Status**: Critical platform-specific limitations
 
+<!-- section_id: "5dd321d0-8f3c-4c9b-95c6-ab47d6887630" -->
 ## Overview
 
 This document outlines Linux/Ubuntu-specific issues that affect MCP (Model Context Protocol) server functionality at the OS level. These issues impact all MCP-dependent systems including Cursor IDE, AI apps, tools, and agents.
 
+<!-- section_id: "1a65854e-f947-4dd4-b005-56f541766c98" -->
 ## Critical IDE-Level Issues
 
+<!-- section_id: "e7484a8a-d8a6-4c30-ba59-0f75e5813b0b" -->
 ### 0. Cursor IDE Tool Exposure (Cross-Platform Bug)
 
 **Problem**: Cursor IDE (v2.0.77+) fails to expose Playwright MCP tools to agents, even when the server connects successfully.
@@ -27,8 +30,10 @@ This document outlines Linux/Ubuntu-specific issues that affect MCP (Model Conte
 
 **See Detailed Analysis**: `CURSOR_IDE_LINUX_MCP_ISSUES.md`
 
+<!-- section_id: "6d63e88b-34ec-4b9b-8c1a-aa722401776b" -->
 ## Critical OS-Level Issues
 
+<!-- section_id: "c76565cc-3686-453e-a792-7088617370bb" -->
 ### 1. Browser Path Detection
 
 **Problem**: Linux does not have a standard browser installation location, causing automatic browser detection to fail.
@@ -55,6 +60,7 @@ This document outlines Linux/Ubuntu-specific issues that affect MCP (Model Conte
 - System Chrome: `/usr/bin/google-chrome` or `/usr/bin/chromium-browser`
 - System Chromium: `/usr/bin/chromium`
 
+<!-- section_id: "6ee51058-f68e-445c-bdce-27e75fd2a8f8" -->
 ### 2. NVM/Node.js Environment Variables
 
 **Problem**: MCP server processes do not inherit NVM environment variables, causing Node.js/npx to be unavailable.
@@ -77,6 +83,7 @@ This document outlines Linux/Ubuntu-specific issues that affect MCP (Model Conte
 }
 ```
 
+<!-- section_id: "5f4808d5-2c2e-426a-9f50-ff507e7de6e5" -->
 ### 3. Display/Graphics Environment
 
 **Problem**: Headed browser automation requires proper DISPLAY environment variable and graphics support.
@@ -92,6 +99,7 @@ export DISPLAY=:0
 # Or for remote: export DISPLAY=:10.0
 ```
 
+<!-- section_id: "2ee2fcac-2b11-4751-b9cd-98ef27ba8872" -->
 ### 4. File Permissions and Paths
 
 **Problem**: Linux file permissions and path conventions differ from Windows/macOS.
@@ -106,8 +114,10 @@ export DISPLAY=:0
 - Verify executable permissions: `chmod +x /path/to/executable`
 - Check file ownership and permissions
 
+<!-- section_id: "6fd3a5ce-f551-4e60-916f-21d3f189b6c7" -->
 ## Platform-Specific Configuration Requirements
 
+<!-- section_id: "8592e1ba-c6ad-4995-8e03-4437f30af2af" -->
 ### Required Environment Variables
 
 ```bash
@@ -122,6 +132,7 @@ export DISPLAY=:0
 export PLAYWRIGHT_BROWSERS_PATH="$HOME/.cache/ms-playwright"
 ```
 
+<!-- section_id: "cddc8b66-e06e-474f-be00-4e0a633a714b" -->
 ### Required System Dependencies
 
 ```bash
@@ -132,6 +143,7 @@ npx playwright install-deps
 npx playwright install chromium
 ```
 
+<!-- section_id: "055fdb2c-260a-4cbd-9105-fe955fa9f4f3" -->
 ## Verification Commands
 
 ```bash
@@ -149,12 +161,14 @@ echo $DISPLAY
 ps aux | grep -E "playwright|mcp" | grep -v grep
 ```
 
+<!-- section_id: "384b0553-33e5-4d3c-a82d-499b304990bc" -->
 ## Related Documentation
 
 - **Browser MCP Setup Experience**: `../../browser-mcp/BROWSER_MCP_SETUP_EXPERIENCE.md`
 - **Cursor IDE Setup**: `layer_0/0.02_sub_layers/sub_layer_0_07_coding_app_setup/`
 - **AI Apps Setup**: `layer_0/0.02_sub_layers/sub_layer_0_09_ai_apps_tools_setup/`
 
+<!-- section_id: "62301f6f-cab4-4a42-b8d7-34f1bca2d3ac" -->
 ## References
 
 - GitHub Issues: #942, #1113 (Ubuntu-specific Playwright MCP problems)

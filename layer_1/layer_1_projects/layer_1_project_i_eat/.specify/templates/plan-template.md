@@ -10,10 +10,12 @@ resource_name: "plan-template"
 
 **Note**: This template is filled in by the `/speckit.plan` command. See `.specify/templates/commands/plan.md` for the execution workflow.
 
+<!-- section_id: "3ea5bdb3-632e-43e7-8aed-7a95dccdd825" -->
 ## Summary
 
 [Extract from feature spec: primary requirement + technical approach from research]
 
+<!-- section_id: "7df1bb9f-d206-468a-95f2-1b3cd4654b18" -->
 ## Technical Context
 
 <!--
@@ -32,14 +34,17 @@ resource_name: "plan-template"
 **Constraints**: [domain-specific, e.g., <200ms p95, <100MB memory, offline-capable or NEEDS CLARIFICATION]  
 **Scale/Scope**: [domain-specific, e.g., 10k users, 1M LOC, 50 screens or NEEDS CLARIFICATION]
 
+<!-- section_id: "9be79f6b-a8dd-446c-a4c8-0f58330b9643" -->
 ## Constitution Check
 
 *GATE: Must pass before Phase 0 research. Re-check after Phase 1 design.*
 
 [Gates determined based on constitution file]
 
+<!-- section_id: "969fe20c-039c-457a-aeaa-574200d8751c" -->
 ## Project Structure
 
+<!-- section_id: "f394edbb-c0b7-4a9b-bec3-185c387d4ff1" -->
 ### Documentation (this feature)
 
 ```text
@@ -52,6 +57,7 @@ specs/[###-feature]/
 └── tasks.md             # Phase 2 output (/speckit.tasks command - NOT created by /speckit.plan)
 ```
 
+<!-- section_id: "7bac00b2-6667-4567-821e-2c40d358792e" -->
 ### Source Code (repository root)
 <!--
   ACTION REQUIRED: Replace the placeholder tree below with the concrete layout
@@ -99,6 +105,7 @@ ios/ or android/
 **Structure Decision**: [Document the selected structure and reference the real
 directories captured above]
 
+<!-- section_id: "8b7b5ab0-9362-4453-84e3-0c7a42aff43b" -->
 ## Complexity Tracking
 
 > **Fill ONLY if Constitution Check has violations that must be justified**

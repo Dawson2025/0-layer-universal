@@ -5,6 +5,7 @@ resource_name: "three_tier_knowledge"
 ---
 # Topic: Three-Tier Knowledge
 
+<!-- section_id: "6dfc3733-4fe4-48ad-9825-783d2442b84e" -->
 ## Summary
 
 Knowledge flows through three tiers in the layer-stage hierarchy:
@@ -17,6 +18,7 @@ Managers work at the pointer tier. Stage agents load distilled knowledge on dema
 
 This tree of knowledge itself is a distilled-tier artifact — it provides organized summaries and points to where the full detail lives.
 
+<!-- section_id: "62326a33-baac-4aa1-8210-1f9f0a3e4b54" -->
 ## Key Points
 
 - Formalized as **Principle 3** in the Stage Delegation Principles
@@ -24,6 +26,7 @@ This tree of knowledge itself is a distilled-tier artifact — it provides organ
 - The two-halves pattern makes the pointer tier functional by adding current state to 0AGNOSTIC.md
 - The tree of knowledge makes the distilled tier functional by organizing summaries with references
 
+<!-- section_id: "c9f63932-dd17-4534-91e3-6bc2aebed9a0" -->
 ## References
 
 | What | Where |

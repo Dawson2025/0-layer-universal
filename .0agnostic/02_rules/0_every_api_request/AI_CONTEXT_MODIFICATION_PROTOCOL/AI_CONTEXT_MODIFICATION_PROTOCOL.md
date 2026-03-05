@@ -5,10 +5,12 @@ resource_name: "AI_CONTEXT_MODIFICATION_PROTOCOL"
 ---
 # Filesystem Change Visualization Protocol
 
+<!-- section_id: "781ced9e-310b-4db5-a20e-0b13171db4d4" -->
 ## Rule
 
 Before making structural filesystem changes, the AI MUST show a diagram of the proposed changes and wait for approval. This rule has **two tiers** based on what's being modified:
 
+<!-- section_id: "e345d17b-7fff-42fa-b828-896949e1a497" -->
 ### Tier 1: AI Context Changes (strict)
 
 **Trigger**: Modifying AI context files (CLAUDE.md, .0agnostic/, rules, knowledge, stages, etc.)
@@ -37,6 +39,7 @@ Before making structural filesystem changes, the AI MUST show a diagram of the p
    - Change status to "Executed" in SUMMARY.md
    - Mark approval checkboxes as complete
 
+<!-- section_id: "903c5c1e-564a-431c-bbe7-6ff0cd31295e" -->
 ### Tier 2: General Filesystem Changes (standard)
 
 **Trigger**: Any structural filesystem changes — creating directories, reorganizing files, adding multiple files, renaming/moving files, creating new directory structures.
@@ -57,8 +60,10 @@ Before making structural filesystem changes, the AI MUST show a diagram of the p
 
 **When Tier 2 applies**: Creating new directory structures, reorganizing existing files/dirs, scaffolding entities or stages, bulk file creation, structural refactors. Does NOT apply to simple single-file edits or appends within an existing file — those just need the File Change Reporting Rule.
 
+<!-- section_id: "a19585bd-e196-48ad-9b4a-86911537f3c3" -->
 ## Scope
 
+<!-- section_id: "4e927b13-32a6-41fc-8c54-66eb7232e3c9" -->
 ### Tier 1 (AI context — strict, with proposal registry)
 
 | Path Pattern | Description |
@@ -74,6 +79,7 @@ Before making structural filesystem changes, the AI MUST show a diagram of the p
 | `status.json`, `status_N.json` | Status files |
 | `*.gab.jsonld`, `*.integration.md` | Agent definitions |
 
+<!-- section_id: "17a7b2fe-1536-4e26-a3a0-4bb5b7c11a69" -->
 ### Tier 2 (General filesystem — standard, diagram only)
 
 | Trigger | Description |
@@ -89,6 +95,7 @@ Before making structural filesystem changes, the AI MUST show a diagram of the p
 - Creating a single file in an existing directory
 - Appending to an existing file
 
+<!-- section_id: "e04a9dcd-e20d-4696-95c9-19ec8b96ce59" -->
 ## Rationale
 
 - **Visibility**: User can see exactly what will change before it happens — directories, files, and their relationships
@@ -97,6 +104,7 @@ Before making structural filesystem changes, the AI MUST show a diagram of the p
 - **Auditability**: Creates a clear record of approved changes
 - **Orientation**: In deep paths (7+ levels), seeing the proposed structure helps the user stay oriented
 
+<!-- section_id: "e70dd3d3-cdb8-4499-ade4-60dab6e13e03" -->
 ## Diagram Requirements
 
 The diagram MUST include:
@@ -107,6 +115,7 @@ The diagram MUST include:
 4. **Action type** — Mark each item as `◄── NEW`, `◄── UPDATE`, `◄── MOVE from ...`, or `◄── DELETE`
 5. **Annotations** — Brief purpose of each new directory or file (what it's for)
 
+<!-- section_id: "96d1a55a-1b1d-4da7-afcb-51ab011c31cf" -->
 ## Example: Tier 1 (AI Context)
 
 ```
@@ -122,6 +131,7 @@ Content: Rule definition with scope, rationale, and examples.
 After sync: Will appear in CLAUDE.md Promoted Rules table.
 ```
 
+<!-- section_id: "5014036f-3a9d-45e4-bd6d-f07c02e9d8c2" -->
 ## Example: Tier 2 (General Filesystem)
 
 ```
@@ -160,10 +170,12 @@ REMOVED:
 - outputs/test_results_summary.md            ◄── MOVE to .0agnostic/.../01_to_above/
 ```
 
+<!-- section_id: "f8d2229c-1275-4982-919a-6aceae60c31b" -->
 ## Date Added
 2026-01-26 (original AI context scope)
 2026-02-24 (expanded to general filesystem changes)
 
+<!-- section_id: "52f6b432-3110-4ea7-accb-826186408cb0" -->
 ## Related
 - **File Change Reporting Rule**: `.0agnostic/02_rules/static/I0_FILE_CHANGE_REPORTING.md` — reports changes after they happen; this rule shows them before
 - **Agnostic Update Protocol**: `.0agnostic/02_rules/static/agnostic_update_protocol.md` — specific protocol for .0agnostic/ changes

@@ -9,6 +9,7 @@ resource_name: "TEST_ENVIRONMENTS_STATUS"
 
 ---
 
+<!-- section_id: "92d71dbd-d80c-4892-a3b7-b88e6119c69b" -->
 ## Environment Overview
 
 Your application has **4 test environments**:
@@ -23,12 +24,14 @@ Your application has **4 test environments**:
 
 ---
 
+<!-- section_id: "09c5e785-533d-4bbf-b4de-e6ad285d5a49" -->
 ## Development Environment ✅ FULLY OPERATIONAL
 
 **Firebase Project**: `lang-trak-dev`
 **Credentials**: `keys/lang-trak-dev-agent-key.json` ✅
 **Tests**: 7 comprehensive CRUD tests
 
+<!-- section_id: "bf8ff79d-757b-4e21-bc12-e34eb2083867" -->
 ### What's Tested:
 - ✅ Firestore connection
 - ✅ All collections accessible (projects, words, phonemes, groups)
@@ -38,6 +41,7 @@ Your application has **4 test environments**:
 - ✅ Group CRUD operations
 - ✅ Composite indexes work
 
+<!-- section_id: "9f48e1c2-2fbc-4277-a320-3b33070b6557" -->
 ### Run Tests:
 ```bash
 # Via script (recommended)
@@ -54,20 +58,24 @@ pytest tests/integration/real_firebase/test_dev_environment.py -v
 
 ---
 
+<!-- section_id: "e526b590-96e1-4ca2-9b15-1c14a9941202" -->
 ## Staging Environment 🔄 AWAITING CREDENTIALS
 
 **Firebase Project**: `lang-trak-staging` (referenced in `.firebaserc`)
 **Credentials**: `keys/lang-trak-staging-agent-key.json` ❌ **MISSING**
 **Tests**: 3 verification tests (created but can't run without credentials)
 
+<!-- section_id: "0b1071df-b2bc-4b69-9120-01a6ff29e984" -->
 ### What Would Be Tested:
 - 🔄 Firestore connection
 - 🔄 All collections accessible
 - 🔄 Basic CRUD operations
 
+<!-- section_id: "8d16ce76-972b-4f26-abf4-9cf9caf00cda" -->
 ### Test File Location:
 `tests/integration/real_firebase/test_staging_environment.py`
 
+<!-- section_id: "f705c003-76af-4d7c-83c8-3a1dd9202b7f" -->
 ### How to Enable:
 
 #### Option 1: Create New Staging Project
@@ -94,12 +102,14 @@ pytest tests/integration/real_firebase/test_staging_environment.py -v
 
 ---
 
+<!-- section_id: "78035e1f-d31c-400b-ab90-5f47a851f2d8" -->
 ## Production Environment 🔄 AWAITING CREDENTIALS
 
 **Firebase Project**: `lang-trak-prod` (referenced in `.firebaserc`)
 **Credentials**: `keys/lang-trak-prod-agent-key.json` ❌ **MISSING**
 **Tests**: 3 smoke tests (READ-ONLY for safety)
 
+<!-- section_id: "12bacd84-d81e-4868-9f25-118681957c32" -->
 ### What Would Be Tested (READ-ONLY):
 - 🔄 Firestore accessible
 - 🔄 Collections readable
@@ -111,9 +121,11 @@ pytest tests/integration/real_firebase/test_staging_environment.py -v
 - ❌ NO modifications
 - ✅ Only verification that production is accessible and responsive
 
+<!-- section_id: "67224cc1-3955-4a56-90c2-f890322eb64e" -->
 ### Test File Location:
 `tests/integration/real_firebase/test_prod_smoke.py`
 
+<!-- section_id: "02c2ff7a-9975-42f7-bba5-31cfeae3c43c" -->
 ### How to Enable:
 
 #### Option 1: Create New Production Project
@@ -144,6 +156,7 @@ pytest tests/integration/real_firebase/test_prod_smoke.py -v
 
 ---
 
+<!-- section_id: "1126bb72-99dd-4b68-971b-eccad3654a46" -->
 ## "Testing Environment" Clarification
 
 You mentioned "testing environment" - this typically refers to one of:
@@ -167,8 +180,10 @@ If you meant a different "testing" environment, please clarify and I can add it 
 
 ---
 
+<!-- section_id: "33d2d688-8f1a-4e15-a0dd-96a189b879a8" -->
 ## Current Capabilities
 
+<!-- section_id: "af1a09a8-ecca-47cf-823a-8395c1318281" -->
 ### What Works NOW (No Setup Required):
 ```bash
 # Fast tests - 36 tests in ~6 seconds
@@ -181,26 +196,31 @@ If you meant a different "testing" environment, please clarify and I can add it 
 ./scripts/run-all-tests.sh
 ```
 
+<!-- section_id: "003a6978-9fab-4117-a2fe-adca7297f196" -->
 ### What Needs Credentials:
 - Staging environment tests → Need `keys/lang-trak-staging-agent-key.json`
 - Production smoke tests → Need `keys/lang-trak-prod-agent-key.json`
 
 ---
 
+<!-- section_id: "19dd5112-894f-4953-aeef-34b7fe64cff0" -->
 ## Recommended Next Steps
 
+<!-- section_id: "9453f4b9-c7e6-42d3-ab51-40cd2df3ce66" -->
 ### Priority 1: Start Using What Works
 ```bash
 # Use this for daily development
 ./scripts/run-fast-tests.sh
 ```
 
+<!-- section_id: "66eaaf71-7632-4ba5-a356-de5a4f90a398" -->
 ### Priority 2: Set Up Staging (Optional, when ready for pre-production)
 1. Create/access `lang-trak-staging` Firebase project
 2. Generate service account key
 3. Save to `keys/lang-trak-staging-agent-key.json`
 4. Run staging tests to verify
 
+<!-- section_id: "5d71b7e3-23a7-448b-b1fe-121da608e878" -->
 ### Priority 3: Set Up Production (Before first deploy)
 1. Create/access `lang-trak-prod` Firebase project
 2. Generate service account key (read-only if possible)
@@ -209,8 +229,10 @@ If you meant a different "testing" environment, please clarify and I can add it 
 
 ---
 
+<!-- section_id: "4a4ecd78-4668-4238-84a2-b45fc4c75e8f" -->
 ## Security Notes
 
+<!-- section_id: "c7bdb439-29c9-43b2-8d5a-01eaaa9066d9" -->
 ### Credential Files (.gitignore)
 All credential files should be in `.gitignore`:
 ```
@@ -218,11 +240,13 @@ keys/*.json
 firebase-admin-config.json  # May contain sensitive paths
 ```
 
+<!-- section_id: "db99161d-bca7-417a-8013-7b5a662c83f8" -->
 ### Service Account Permissions
 - **Dev**: Full Firestore access (read/write/delete)
 - **Staging**: Full Firestore access (read/write/delete)
 - **Production**: Read-only recommended (for safety)
 
+<!-- section_id: "ec8d32ab-8f01-4b5c-afbf-0addba834a22" -->
 ### Credential Storage in CI/CD
 For GitHub Actions or other CI/CD:
 - Store credentials as encrypted secrets
@@ -231,6 +255,7 @@ For GitHub Actions or other CI/CD:
 
 ---
 
+<!-- section_id: "47665862-96df-4778-a70b-ba8b7c89e310" -->
 ## Summary
 
 **Fully Working**:

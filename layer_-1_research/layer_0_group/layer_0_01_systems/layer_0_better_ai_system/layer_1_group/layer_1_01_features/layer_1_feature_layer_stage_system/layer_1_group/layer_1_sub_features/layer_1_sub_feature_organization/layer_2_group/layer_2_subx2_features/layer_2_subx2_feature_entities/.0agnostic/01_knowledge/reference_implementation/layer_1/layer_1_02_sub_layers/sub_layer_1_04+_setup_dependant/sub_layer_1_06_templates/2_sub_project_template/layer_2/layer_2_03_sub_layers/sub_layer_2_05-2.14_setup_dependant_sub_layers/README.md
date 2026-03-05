@@ -11,6 +11,7 @@ resource_name: "README"
 
 ---
 
+<!-- section_id: "1e3a0bdb-e239-4da8-931b-e81d0e232933" -->
 ## Overview
 
 This sublayer consolidates all setup documentation for sublayers 2.05 through 2.14:
@@ -30,6 +31,7 @@ All setup documentation is organized in a single **hierarchical file tree struct
 
 ---
 
+<!-- section_id: "eaf75756-69c3-4373-828a-5515ad6743d3" -->
 ## Primary Navigation: Sub-Project Setup File Tree
 
 **Main entry point**: `2.01_sub_project_setup_file_tree/`
@@ -40,6 +42,7 @@ This file tree provides hierarchical navigation across all 10 setup dimensions:
 OS → Environment → Coding App → Apps/Browsers → AI App → MCP Server → AI Model → Tools → Protocols → Agent Setup
 ```
 
+<!-- section_id: "4cb23686-38eb-4b77-87d7-61a178526b21" -->
 ### Quick Start
 
 ```bash
@@ -55,6 +58,7 @@ cd 2.07_coding_apps/<your_app>/
 
 ---
 
+<!-- section_id: "0659f050-89bd-4bcf-b8cd-8aa72c2272d6" -->
 ## Structure
 
 ```
@@ -78,6 +82,7 @@ sub_layer_2.05-2.14_setup_dependant_sub_layers/
                                             └── setup/
 ```
 
+<!-- section_id: "9d8e0a23-e0e9-435c-9af8-f7aaa33868ac" -->
 ### Using `_shared/` Directories
 
 - `_shared/` directories contain documentation that applies across all options at that level
@@ -86,6 +91,7 @@ sub_layer_2.05-2.14_setup_dependant_sub_layers/
 
 ---
 
+<!-- section_id: "09039e4d-5a93-47a3-be38-4537b58baba6" -->
 ## Sublayer Mapping
 
 | Sublayer | Directory | Purpose |
@@ -103,6 +109,7 @@ sub_layer_2.05-2.14_setup_dependant_sub_layers/
 
 ---
 
+<!-- section_id: "eb417b3e-e034-443f-b9f5-e56530d44e0e" -->
 ## Relationship to Universal Context
 
 This structure mirrors the universal context's `sub_layer_0_05-0.014_setup_dependant_sub_layers/`. The numbering aligns:

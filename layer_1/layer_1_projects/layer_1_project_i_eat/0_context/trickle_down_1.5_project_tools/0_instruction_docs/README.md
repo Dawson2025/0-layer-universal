@@ -10,11 +10,13 @@ This repository includes a GitHub Actions workflow `.github/workflows/update-aut
 that runs `scripts/configure-auth-domains.py` using a Google Cloud service account. Use this
 if you prefer updating authorized domains from CI rather than running the script locally.
 
+<!-- section_id: "43107d8e-f7a5-41b7-b513-cddd89c330a7" -->
 ## Overview
 
 - The workflow is manual (workflow_dispatch) and accepts `projects`, `domains`, and `dry_run` inputs.
 - It authenticates to Google Cloud using a service account key stored in the repository secrets.
 
+<!-- section_id: "93fbbdf8-3bb4-4b7d-a39f-b5d69329a814" -->
 ## Create a service account (least-privilege steps)
 
 Run these locally using `gcloud` (replace `PROJECT` with one of your cloud project IDs):
@@ -39,17 +41,20 @@ gcloud iam service-accounts keys create firebase-domain-updater-key.json \
   --iam-account="firebase-domain-updater@$PROJECT.iam.gserviceaccount.com"
 ```
 
+<!-- section_id: "4cb2079e-ea65-458a-9638-1853db32d80e" -->
 ## Add the key to GitHub Secrets
 
 1. Open your GitHub repo -> Settings -> Secrets -> Actions -> New repository secret
 2. Name the secret `FIREBASE_SA_KEY`
 3. Paste the entire contents of `firebase-domain-updater-key.json` into the secret value
 
+<!-- section_id: "acaa2f24-18c6-4ee4-8c8f-3f34fb445c47" -->
 ## Run the workflow
 
 Go to the repository Actions tab, select "Update Firebase Authorized Domains", click "Run workflow",
 enter the `projects` and `domains` inputs, and set `dry_run` to `false` to apply changes.
 
+<!-- section_id: "a0ff0323-aedd-4871-836e-dd541797807a" -->
 ## Notes
 - The service account needs the ability to call the Identity Toolkit Admin API. `roles/editor`
   is a quick option. For production, consider a custom role that only includes the minimal

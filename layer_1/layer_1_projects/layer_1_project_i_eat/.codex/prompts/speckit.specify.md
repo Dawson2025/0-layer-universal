@@ -5,6 +5,7 @@ resource_name: "speckit.specify"
 description: Create or update the feature specification from a natural language feature description.
 ---
 
+<!-- section_id: "0421b319-1caf-4e51-9bb9-77bb5c8e63ac" -->
 ## User Input
 
 ```text
@@ -13,6 +14,7 @@ $ARGUMENTS
 
 You **MUST** consider the user input before proceeding (if not empty).
 
+<!-- section_id: "64062db2-eaf2-4c6c-aa5c-ea9e53e14cb5" -->
 ## Outline
 
 The text the user typed after `/speckit.specify` in the triggering message **is** the feature description. Assume you always have it available in this conversation even if `$ARGUMENTS` appears literally below. Do not ask the user to repeat it unless they provided an empty command.
@@ -188,8 +190,10 @@ Given that feature description, do this:
 
 **NOTE:** The script creates and checks out the new branch and initializes the spec file before writing.
 
+<!-- section_id: "9be42aee-59e5-4183-bcd2-8a950a8f1348" -->
 ## General Guidelines
 
+<!-- section_id: "40c3f150-365c-40a0-8eaa-925fefa06c30" -->
 ## Quick Guidelines
 
 - Focus on **WHAT** users need and **WHY**.
@@ -197,12 +201,14 @@ Given that feature description, do this:
 - Written for business stakeholders, not developers.
 - DO NOT create any checklists that are embedded in the spec. That will be a separate command.
 
+<!-- section_id: "dfeafb0c-cf01-41f9-ab43-aeee6e2689f3" -->
 ### Section Requirements
 
 - **Mandatory sections**: Must be completed for every feature
 - **Optional sections**: Include only when relevant to the feature
 - When a section doesn't apply, remove it entirely (don't leave as "N/A")
 
+<!-- section_id: "6df78a65-ebc5-429c-8a4e-27526078d9b5" -->
 ### For AI Generation
 
 When creating this spec from a user prompt:
@@ -228,6 +234,7 @@ When creating this spec from a user prompt:
 - Authentication method: Standard session-based or OAuth2 for web apps
 - Integration patterns: RESTful APIs unless specified otherwise
 
+<!-- section_id: "c2a40fe0-d0b1-4bcb-98f1-19059e5f903a" -->
 ### Success Criteria Guidelines
 
 Success criteria must be:

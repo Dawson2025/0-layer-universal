@@ -5,15 +5,18 @@ resource_name: "SYSTEM_OVERVIEW"
 ---
 # System Overview (Layer + Stage)
 
+<!-- section_id: "b8b40fd1-2fac-4201-b897-9d2c50285536" -->
 ## Big picture
 - **Layer System (specificity):** universal (0) → project (1) → feature (2) → component (3). Lower numbers are prerequisites. Each layer has `layer_<N>_01_ai_manager_system/`, `layer_<N>_02_manager_handoff_documents/layer_<N>_00_to_universal|layer_<N>_01_to_specific/`, and sub-layers in `layer_<N>_0X_sub_layers/` (layer 0 uses `layer_0_04_sub_layers/`).
 - **Stage System (chronology):** request_gathering → research → instructions → design → planning → development → testing → criticism → fixing → current_product → archives. Stages mirror the layer prefix (e.g., `stage_2_04_design`) inside `layer_<N>_99_stages/`, each with `hand_off_documents/` and `ai_agent_system/`.
 - **Status:** per-layer status JSON inside `layer_<N>_99_stages/` tracks `current_stage` and each stage state (`not_started | in_progress | blocked | done`).
 
+<!-- section_id: "875fcb5c-d64d-492c-8c9b-33c9280ae491" -->
 ## Agent OS Architecture
 
 This layer + stage framework implements the **AI Manager Hierarchy System** - a comprehensive **Agent Operating System** for software development.
 
+<!-- section_id: "d653b1c7-c8f0-486f-a601-369b24adb7b3" -->
 ### Core Concepts
 
 The Agent OS organizes AI work through:
@@ -40,6 +43,7 @@ The Agent OS organizes AI work through:
 
 - **Persistent Instructions**: System-level prompts (CLAUDE.md, AGENTS.md, GEMINI.md, .cursor/rules/) cascade from L0 down, keeping instructions sticky without chat history bloat
 
+<!-- section_id: "9a394efe-02b2-4117-a3cd-a957365e9e58" -->
 ### Where to Learn More
 
 - **Quick Start**: [`-1_research/-1.01_things_researched/ai_manager_hierarchy_system/overview/IDEAL_AI_MANAGER_HIERARCHY_SYSTEM.md`](-1_research/-1.01_things_researched/ai_manager_hierarchy_system/overview/IDEAL_AI_MANAGER_HIERARCHY_SYSTEM.md)
@@ -48,6 +52,7 @@ The Agent OS organizes AI work through:
 
 This Agent OS design is the **canonical architecture** for all AI agent coordination in this repository.
 
+<!-- section_id: "49a354f2-03fe-4ddf-a3de-c49a64b0a26b" -->
 ## Layout map (current repo)
 ```
 0_layer_universal/
@@ -59,20 +64,24 @@ This Agent OS design is the **canonical architecture** for all AI agent coordina
 
 Legacy `trickle_down_*` content is preserved under `legacy_import/` within the closest matching sub_layer; do not add new work there.
 
+<!-- section_id: "edad203b-b10e-4fb6-b83a-f68e67a0526c" -->
 ## How to work in this system
 1. **Start in universal:** `layer_0/layer_0_04_sub_layers/sub_layer_0_01_knowledge_system/universal_init_prompt.md` then `MASTER_DOCUMENTATION_INDEX.md`.
 2. **Load needed layers:** project (`layer_1_*`), feature (`layer_2_*`), component (`layer_3_*`).
 3. **Enter a stage:** use the layer’s `*.99_stages/` directory; read/update `status*.json`; use `hand_off_documents/` and `ai_agent_system/` inside the current stage.
 4. **Sync habit:** `git pull` at session start for all repos you will touch; `git commit` + `git push` and update docs/status before ending a response.
 
+<!-- section_id: "8c529cc6-17ef-41a5-b10f-c6397374538c" -->
 ## Slot numbers (zero‑padded examples)
 - Universal 0.xx (slots): 0.01 basic prompts, 0.02 SE knowledge, 0.03 principles, 0.04 rules, 0.05 OS setup, 0.06 coding app setup, 0.07 apps/browsers/extensions, 0.08 AI apps/tools, 0.09 MCP servers and tools setup, 0.10 AI models, 0.11 universal tools, 0.12 agent setup.
 - Project 1.xx mirrors 0.xx with project-specific content (e.g., 1.05 project architecture).
 - Feature 2.xx and Component 3.xx mirror the same pattern at finer scope.
 
+<!-- section_id: "943c3707-2619-47e6-b72c-55f5f7c14f0e" -->
 ## Stage numbers (per layer)
 - For layer N: stages are `stage_N_01_request_gathering`, `stage_N_02_research`, `stage_N_03_instructions`, `stage_N_04_design`, `stage_N_05_planning`, `stage_N_06_development`, `stage_N_07_testing`, `stage_N_08_criticism`, `stage_N_09_fixing`, `stage_N_10_current_product`, `stage_N_11_archives` under `layer_N_99_stages/`.
 
+<!-- section_id: "e08462e0-bb4d-44a3-be3b-1b8d582959b6" -->
 ## Why this structure
 - Deterministic, git-friendly navigation; no reliance on fuzzy search.
 - Clear prerequisites (lower layers first) and clear workflow (stages) for handoffs.

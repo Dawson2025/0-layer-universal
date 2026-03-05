@@ -11,6 +11,7 @@ resource_name: "cli_vs_gui_launcher_diagnosis_protocol"
 
 ---
 
+<!-- section_id: "40ef5b1e-004e-4ed1-92ec-84c11a53c7cb" -->
 ## Problem Pattern
 
 **Symptoms:**
@@ -28,8 +29,10 @@ resource_name: "cli_vs_gui_launcher_diagnosis_protocol"
 
 ---
 
+<!-- section_id: "31d6910d-ac9a-487d-9a97-1b3f6d8cb00d" -->
 ## Diagnosis Steps
 
+<!-- section_id: "42af8b63-6413-48ad-a156-89ecd5acff89" -->
 ### Step 1: Verify CLI Works
 ```bash
 # Test the application via terminal
@@ -39,6 +42,7 @@ gedit &
 ```
 **Expected**: Application opens and functions normally.
 
+<!-- section_id: "c114cb3c-a054-454e-a75e-b7c3326d359a" -->
 ### Step 2: Check Desktop File
 ```bash
 # Find the .desktop file
@@ -49,6 +53,7 @@ cat ~/.local/share/applications/org.gnome.Nautilus.desktop
 ```
 **Look for**: Exec line, Terminal=true/false, Environment variables
 
+<!-- section_id: "46711fdf-1c98-432c-8296-3e1aec4bf341" -->
 ### Step 3: Capture Working Environment
 ```bash
 # When CLI works, capture the environment
@@ -58,6 +63,7 @@ env | grep -E "DISPLAY|DBUS|XAUTH|PATH" > /tmp/working_env.txt
 # (If launcher runs in background, check: ~/.local/share/recently-used.xbel, journalctl)
 ```
 
+<!-- section_id: "8875bc94-5444-46ec-b6aa-6e7db5c62a17" -->
 ### Step 4: Check Session State
 ```bash
 # Is D-Bus session active?
@@ -75,6 +81,7 @@ systemctl --user status
 systemctl --user --failed
 ```
 
+<!-- section_id: "af34cfc3-832f-4158-b441-c2ad20cad711" -->
 ### Step 5: Check Launcher Log
 ```bash
 # Modern desktops may log launcher issues
@@ -86,8 +93,10 @@ journalctl -xe --user -n 50 | grep -i "nautilus\|launcher\|failed"
 
 ---
 
+<!-- section_id: "5eba4fa1-d1b1-4374-ab66-a4ad870a39bf" -->
 ## Recovery Solutions (in order of simplicity)
 
+<!-- section_id: "e05b7b20-f316-41e3-a68e-6a51750e6479" -->
 ### Solution A: Fix Environment in Desktop File
 Edit the .desktop file to include environment:
 
@@ -100,6 +109,7 @@ Terminal=false
 Categories=System;FileManager;
 ```
 
+<!-- section_id: "664599bd-c5f5-43e5-a073-4d204cf6832a" -->
 ### Solution B: Create Wrapper Script
 Create a launcher wrapper that sets environment:
 
@@ -116,6 +126,7 @@ Then update .desktop file:
 Exec=/home/user/.local/bin/nautilus-wrapper %U
 ```
 
+<!-- section_id: "9951271d-a49a-4607-a9bf-6425bdfd5973" -->
 ### Solution C: Force D-Bus Session
 ```bash
 # If DBUS_SESSION_BUS_ADDRESS is empty, manually set it
@@ -124,6 +135,7 @@ export DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus
 
 Add to `~/.profile` or `~/.bashrc` to make persistent.
 
+<!-- section_id: "1b7caaeb-8b08-4d63-bdee-8d7f7eacdf1d" -->
 ### Solution D: Restart Desktop Session
 ```bash
 # If launcher infrastructure is broken, restart the session
@@ -133,6 +145,7 @@ systemctl --user restart gnome-session-manager.service
 # Or simply log out and back in
 ```
 
+<!-- section_id: "f76fb0bf-395c-4607-8bdf-9452a431b368" -->
 ### Solution E: Check systemd User Session
 ```bash
 # User services may not have started properly
@@ -146,6 +159,7 @@ systemctl --user start graphical-session.target
 
 ---
 
+<!-- section_id: "cb2ddeca-dd22-4e39-a0ae-d05dd88822fa" -->
 ## Decision Tree
 
 ```
@@ -165,13 +179,16 @@ Check $DISPLAY → Empty?
 
 ---
 
+<!-- section_id: "179af25d-2873-44dd-b45d-b5806926e93f" -->
 ## Prevention
 
+<!-- section_id: "6e5ab733-06c8-41c8-b067-e76ba37435cd" -->
 ### For System Administrators
 1. Ensure `graphical-session.target` is properly configured
 2. Verify D-Bus user session auto-starts at login
 3. Test icon launches after system restart (not just after login)
 
+<!-- section_id: "fecf614b-116c-4051-879c-452a084a1e4f" -->
 ### For Users
 1. Monitor `journalctl --user -f` while clicking launcher icons
 2. Keep environment variables consistent across shell and session
@@ -179,6 +196,7 @@ Check $DISPLAY → Empty?
 
 ---
 
+<!-- section_id: "4c944bbe-de45-4b70-bfaa-c05e38c037fa" -->
 ## Related Issues
 
 - **Daemon persistence after restart** — gsd-* services failing breaks D-Bus
@@ -188,6 +206,7 @@ Check $DISPLAY → Empty?
 
 ---
 
+<!-- section_id: "1bf5e9d3-5da4-4c10-a675-ba05a7f15a26" -->
 ## Implementation Notes
 
 This protocol should be applied when:

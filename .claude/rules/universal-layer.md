@@ -9,6 +9,7 @@ paths: layer_0/**
 
 # Universal Layer Context
 
+<!-- section_id: "658d64fb-d220-4d8b-adc2-ef64ba2e30bf" -->
 ## Required Reading
 
 When working in layer_0 (universal) directories:
@@ -20,6 +21,7 @@ When working in layer_0 (universal) directories:
    ```
 4. Read `.claude/skills/*/SKILL.md` — check WHEN/WHEN NOT conditions
 
+<!-- section_id: "54bfafe7-2ca0-4155-bac0-5b59c854c5b6" -->
 ## Skill Usage
 
 | Situation | Skill | When |
@@ -29,11 +31,13 @@ When working in layer_0 (universal) directories:
 | Creating new sub-layers | `/entity-creation` | When extending layer_0 structure |
 | Session transitions | `/handoff-creation` | Preserve context for next session |
 
+<!-- section_id: "6b408044-5316-4cca-91c6-84a30b9e9fa7" -->
 ## Episodic Memory
 
 - **Session start**: Check `memory/episodic.md` (auto-memory topic file) for recent session history across all layers
 - **Session end**: After significant work, update `.0agnostic/episodic_memory/index.md` in the working layer, then run `.0agnostic/01_knowledge/layer_stage_system/resources/tools/episodic-sync.sh` to sync to auto-memory
 
+<!-- section_id: "0ccf3661-2d6a-4d9a-a38a-a9dab964d23f" -->
 ## Agnostic System
 
 - **Source of truth**: `0AGNOSTIC.md` is the source — edit this, NOT `CLAUDE.md` (which is auto-generated)
@@ -41,6 +45,7 @@ When working in layer_0 (universal) directories:
 - **After changes**: Run `agnostic-sync.sh` to regenerate tool-specific files (CLAUDE.md, AGENTS.md, GEMINI.md, OPENAI.md)
 - **Tool overrides**: `.1merge/` (if present) provides tool-specific overrides via 3-tier merge (synced → overrides → additions)
 
+<!-- section_id: "f24ecf5d-5fc5-432e-93de-30602993ac12" -->
 ## Universal Layer Rules
 
 - Layer 0 content applies to ALL projects — changes here affect everything

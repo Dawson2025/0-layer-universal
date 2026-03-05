@@ -13,6 +13,7 @@ resource_name: "US-04_manager_identifies_blocked"
 **I want** blocked stages to clearly state what they are blocked on and what decision is needed,
 **So that** I can make the decision and unblock the work without digging through output files.
 
+<!-- section_id: "a112ff1c-4157-4679-83a5-4ecd4bd4d34a" -->
 ### What Happens
 
 1. User asks "what's blocked?" or "why isn't this stage progressing?"
@@ -21,6 +22,7 @@ resource_name: "US-04_manager_identifies_blocked"
 4. Manager presents the blockers to the user with specific, actionable items
 5. User makes a decision, and the manager can unblock the stage agent
 
+<!-- section_id: "2ce32956-5824-4d13-a74d-d9a5afa8d222" -->
 ### Acceptance Criteria
 
 - Blocked stage reports include a "blockers" section with specific, actionable items

@@ -9,6 +9,7 @@ resource_name: "US-01_any_system_uses_pattern"
 **I want to** apply the Research/Production/Instantiation pattern to organize my system,
 **So that** the system has a structured space for experimentation, a stable production baseline, and personalized instances — regardless of the specific domain.
 
+<!-- section_id: "6f94b55a-d115-4ac2-b739-a778d334c8dc" -->
 ## Acceptance Criteria
 
 **Scenario 1: Pattern documentation is domain-agnostic**

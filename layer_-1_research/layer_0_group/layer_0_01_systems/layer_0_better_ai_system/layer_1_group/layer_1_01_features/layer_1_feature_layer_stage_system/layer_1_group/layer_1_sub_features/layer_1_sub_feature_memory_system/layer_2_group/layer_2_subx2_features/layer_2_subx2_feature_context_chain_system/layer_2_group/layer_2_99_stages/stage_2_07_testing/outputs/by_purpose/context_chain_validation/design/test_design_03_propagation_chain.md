@@ -11,14 +11,17 @@ resource_name: "test_design_03_propagation_chain"
 
 ---
 
+<!-- section_id: "9e6108bf-658e-445f-bc46-6ab191930454" -->
 ## What We're Testing
 
 The 4-layer propagation chain: Knowledge (.0agnostic/ 01-05) → Agnostic Source (0AGNOSTIC.md) → Tool Files (CLAUDE.md etc) → Agent Action (runtime). Each layer must exist, content must flow directionally, and chain integrity rules must hold.
 
 ---
 
+<!-- section_id: "54333e9b-a2b0-44ee-a018-b63130dce688" -->
 ## Test Cases
 
+<!-- section_id: "5dfe15fe-6540-4a98-8529-6def385ac64a" -->
 ### TC-03-01: Layer 1 (Knowledge) exists and has content
 
 **Precondition**: Entity has `.0agnostic/` directory
@@ -29,6 +32,7 @@ The 4-layer propagation chain: Knowledge (.0agnostic/ 01-05) → Agnostic Source
 **Expected**: Every entity with 0AGNOSTIC.md has at least one content source in .0agnostic/01-05
 **Type**: Structural
 
+<!-- section_id: "ac70b4b4-32b1-4dc8-8c48-ac35a052ca64" -->
 ### TC-03-02: Layer 2 (Agnostic Source) references Layer 1
 
 **Precondition**: Entity has 0AGNOSTIC.md
@@ -41,6 +45,7 @@ The 4-layer propagation chain: Knowledge (.0agnostic/ 01-05) → Agnostic Source
 **Metric**: Reference count per 0AGNOSTIC.md (flag if 0)
 **Type**: Structural
 
+<!-- section_id: "2722e226-2803-4fb6-a729-b00e2e8b9fcf" -->
 ### TC-03-03: Layer 3 (Tool Files) generated from Layer 2
 
 **Precondition**: Entity has 0AGNOSTIC.md and agnostic-sync.sh is accessible
@@ -53,6 +58,7 @@ The 4-layer propagation chain: Knowledge (.0agnostic/ 01-05) → Agnostic Source
 **Expected**: All 4 tool files exist, have footer, content derived from 0AGNOSTIC.md
 **Type**: Integration (extends existing test_agnostic_sync)
 
+<!-- section_id: "80b5a7b4-a28a-4c27-952c-87c5ddf03760" -->
 ### TC-03-04: Layer 3 includes .1merge overrides
 
 **Precondition**: Entity has `.1merge/.1claude_merge/2_additions/` with content
@@ -65,6 +71,7 @@ The 4-layer propagation chain: Knowledge (.0agnostic/ 01-05) → Agnostic Source
 **Expected**: .1merge additions appear in correct tool file only
 **Type**: Integration
 
+<!-- section_id: "17d8c6e9-3973-49eb-a466-631aa31f3d13" -->
 ### TC-03-05: Chain integrity — no orphan tool files
 
 **Precondition**: Scan all entities
@@ -76,6 +83,7 @@ The 4-layer propagation chain: Knowledge (.0agnostic/ 01-05) → Agnostic Source
 **Expected**: Every CLAUDE.md (with auto-generated footer) has a corresponding 0AGNOSTIC.md
 **Type**: Structural
 
+<!-- section_id: "73ad9cce-a0f7-4ce7-8720-0c14c474dc3a" -->
 ### TC-03-06: Chain integrity — no orphan 0AGNOSTIC.md files
 
 **Precondition**: Scan all entities
@@ -87,6 +95,7 @@ The 4-layer propagation chain: Knowledge (.0agnostic/ 01-05) → Agnostic Source
 **Expected**: Every 0AGNOSTIC.md has generated tool files (or is explicitly exempt)
 **Type**: Structural
 
+<!-- section_id: "d3301035-1347-4d8c-bf8d-c75a96f2b10b" -->
 ### TC-03-07: Unidirectional flow — tool files don't contain edit instructions
 
 **Steps**:
@@ -99,6 +108,7 @@ The 4-layer propagation chain: Knowledge (.0agnostic/ 01-05) → Agnostic Source
 
 ---
 
+<!-- section_id: "30f58abb-cb2b-4dba-afc3-50671e9e2426" -->
 ## Coverage Gap Analysis
 
 | Design Concept | Test Case | Status |

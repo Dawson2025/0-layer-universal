@@ -6,6 +6,7 @@ resource_name: "README"
 ---
 # User Stories — School System Example
 
+<!-- section_id: "12f34a75-980b-4b31-80e1-2736605b0808" -->
 ## Actors
 
 | Actor | Description |
@@ -13,6 +14,7 @@ resource_name: "README"
 | AI Tutor | Uses school system features to teach |
 | Student | Learns through the personalized system |
 
+<!-- section_id: "bbb2ee82-e687-4d40-8052-929326d8a9da" -->
 ## Stories
 
 | ID | Story | Actor |

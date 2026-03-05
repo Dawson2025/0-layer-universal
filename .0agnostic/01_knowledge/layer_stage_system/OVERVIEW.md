@@ -5,6 +5,7 @@ resource_name: "OVERVIEW"
 ---
 # Layer-Stage System Overview
 
+<!-- section_id: "474360e9-5a0f-4342-b302-c83a1cce140a" -->
 ## What Is It?
 
 The layer-stage system is a hierarchical framework for organizing AI-assisted work. It provides:
@@ -12,8 +13,10 @@ The layer-stage system is a hierarchical framework for organizing AI-assisted wo
 - **Stages**: Workflow phases (01-11: gather → research → design → develop → archive)
 - **Sub-layers**: Content types (prompts, knowledge, rules, setup-dependent)
 
+<!-- section_id: "a03c5a65-3544-4a87-8139-ca71495adfea" -->
 ## Core Principles
 
+<!-- section_id: "9a747818-5e30-4488-b3a9-4a40f47b8f3c" -->
 ### 1. Hierarchical Inheritance
 Lower layers inherit from higher layers:
 ```
@@ -23,11 +26,13 @@ layer_0 (universal) → applies to ALL
           └── layer_3 (components) → component-specific, inherits from layer_2
 ```
 
+<!-- section_id: "85bf9c47-64f3-4a6e-805a-2df113e58073" -->
 ### 2. Scope Isolation
 Each layer only contains what's specific to that scope:
 - Don't put universal rules in a project
 - Don't put project-specific config in universal
 
+<!-- section_id: "a3fac850-3a71-4599-975c-a4805ad686cb" -->
 ### 3. Stage-Based Workflow
 Work progresses through stages:
 ```
@@ -36,6 +41,7 @@ Work progresses through stages:
 10_current_product → 11_archives
 ```
 
+<!-- section_id: "bb06cc38-6465-4584-a264-4d6db0a75c3d" -->
 ## Visual Structure
 
 ```
@@ -62,8 +68,10 @@ Work progresses through stages:
         └── layer_0_group/                  # Research features
 ```
 
+<!-- section_id: "13f5277c-d516-4b39-bdd7-ce7e407a8dbf" -->
 ## Key Concepts
 
+<!-- section_id: "60372062-8eb9-4ca1-b6f2-826eeb859370" -->
 ### Layers (Scope)
 
 | Layer | Purpose | Example |
@@ -74,6 +82,7 @@ Work progresses through stages:
 | layer_3+ | Components | Sub-components |
 | layer_-1 | Research | Experimental/research work |
 
+<!-- section_id: "7eb8e444-d1b8-4625-8374-535fe729ee1d" -->
 ### Stages (Workflow)
 
 | Stage | Purpose |
@@ -90,6 +99,7 @@ Work progresses through stages:
 | 10_current_product | Final deliverable |
 | 11_archives | Historical versions |
 
+<!-- section_id: "2e013fc0-dadc-46b2-abb4-38a5a92bedde" -->
 ### Sub-Layers (Content Types)
 
 | Sub-Layer | Purpose |
@@ -100,6 +110,7 @@ Work progresses through stages:
 | 04_rules | Mandatory rules, protocols |
 | 05+_setup_dependant_hierarchy | OS/environment-specific content |
 
+<!-- section_id: "078e9b0e-1cfc-4e26-8c53-bf47efd8e80a" -->
 ## The Two Containers
 
 Every entity has two main containers:
@@ -121,6 +132,7 @@ my_project/
     └── layer_2_features/
 ```
 
+<!-- section_id: "090c908e-d324-4c37-8bc8-96ad8f9f0d96" -->
 ## How It All Connects
 
 ```

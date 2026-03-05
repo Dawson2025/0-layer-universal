@@ -10,12 +10,14 @@ resource_name: "perplexity-extract"
 **Scope**: All AI apps at level 09 and below
 **Trigger**: User provides a Perplexity search URL for content extraction
 
+<!-- section_id: "7a857a63-5a38-40d1-bcd6-8dc2880b41b0" -->
 ## Description
 
 Extracts structured content and citation source URLs from Perplexity search pages
 using Claude in Chrome browser automation. Uses React fiber traversal as the only
 reliable method for accessing citation URLs (standard DOM queries fail).
 
+<!-- section_id: "c46d41ad-310a-4e31-9c71-5bb1149ee5af" -->
 ## Related Resources
 
 | Resource | Location |

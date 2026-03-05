@@ -6,15 +6,18 @@ resource_name: "0INDEX"
 ---
 # 0INDEX.md - Agentic TTS
 
+<!-- section_id: "4c5c5fa2-9be9-44e6-ab97-e00a0a55991a" -->
 ## Current Status
 - **Phase**: MVP working — all stages populated
 - **Active Stage**: 10 (Current Product)
 - **Last Updated**: 2026-02-23
 
+<!-- section_id: "4ef53ec9-4393-42f3-8725-1b4d11e16158" -->
 ## Parent Reference
 Overview and cross-cutting context at parent audio sub-feature:
 - Parent stages: `../../../layer_1_group/layer_1_99_stages/` — each stage has summary + reference back here
 
+<!-- section_id: "b6bb7b93-dea9-403b-b633-16ca137918ca" -->
 ## Stage Progress
 | Stage | Status | Key Output |
 |-------|--------|------------|

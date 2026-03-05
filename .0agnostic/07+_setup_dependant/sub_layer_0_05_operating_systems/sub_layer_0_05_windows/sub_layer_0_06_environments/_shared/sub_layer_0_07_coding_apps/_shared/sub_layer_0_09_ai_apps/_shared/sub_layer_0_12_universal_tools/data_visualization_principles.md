@@ -12,6 +12,7 @@ resource_name: "data_visualization_principles"
 
 ---
 
+<!-- section_id: "8670244c-7871-4fbc-9ee2-31d079adfec5" -->
 ## Purpose
 
 This document establishes universal principles for data visualization, data cleaning, and analysis consistency that apply across all projects involving data analysis and visualization.
@@ -20,12 +21,15 @@ This document establishes universal principles for data visualization, data clea
 
 ---
 
+<!-- section_id: "8c1825b8-88e7-4c17-97b5-a0af7500a88f" -->
 ## 1. Data Cleaning Order of Operations
 
+<!-- section_id: "bf7917dc-b8c0-44f8-b665-256032352239" -->
 ### The Golden Rule
 
 **ALWAYS clean data BEFORE performing calculations on it.**
 
+<!-- section_id: "55c0c4fc-93e5-4865-8e9f-399fb0fcb96d" -->
 ### Standard Sequence
 
 Follow this order for all data cleaning tasks:
@@ -39,6 +43,7 @@ Follow this order for all data cleaning tasks:
 6. ONLY THEN: Perform calculations (multiplications, divisions, derived columns)
 ```
 
+<!-- section_id: "c3afeb07-95a6-4e4f-823e-c1902619ab6e" -->
 ### Why Order Matters
 
 **Bad Example** (calculation before cleaning):
@@ -56,6 +61,7 @@ df['value'] = df['value'].fillna(df['value'].mean())
 df['derived'] = df['value'] * 0.30  # Now using clean data
 ```
 
+<!-- section_id: "c11a6ce0-fb88-4de2-a7fe-7c5e8793d635" -->
 ### Red Flags to Watch For
 
 - Unexpected negative values in results
@@ -65,8 +71,10 @@ df['derived'] = df['value'] * 0.30  # Now using clean data
 
 ---
 
+<!-- section_id: "ea791591-268e-4294-866d-e07b328a971c" -->
 ## 2. Chart Rendering Best Practices
 
+<!-- section_id: "8fa35b2c-38fd-4670-9d90-5b208d0838c4" -->
 ### Pre-calculated Values in Bar Charts
 
 When using visualization libraries with bar charts and pre-calculated values:
@@ -97,6 +105,7 @@ ggplot(data, aes(x=category, y=percentage)) +
   ylim(0, 100)
 ```
 
+<!-- section_id: "2206361f-c409-4fba-9150-f77b8f0a52f1" -->
 ### Percentage Data Display
 
 **Best Practice**: Create both decimal and percentage versions of percentage columns.
@@ -118,6 +127,7 @@ ggplot(...) + geom_bar(aes(y="rate_percent"), stat="identity") + ylim(0, 100)
 - Decimal (0-1): Better for formatted table display
 - Percent (0-100): Better for explicit chart axis control
 
+<!-- section_id: "5d8b8e91-6b57-451c-b389-5f0c2cf4626f" -->
 ### Chart Verification Checklist
 
 Before publishing any visualization:
@@ -131,12 +141,15 @@ Before publishing any visualization:
 
 ---
 
+<!-- section_id: "ed8fa53d-be54-47fa-abff-53cd469b3cfb" -->
 ## 3. Analysis-Visual Consistency
 
+<!-- section_id: "dbd088c8-ba3a-425f-b57b-fe516e168612" -->
 ### The Principle
 
 **Written analysis must precisely match what visualizations show.**
 
+<!-- section_id: "1562a026-e249-4b4f-a525-637a7ff5e50c" -->
 ### Process
 
 ```
@@ -148,6 +161,7 @@ Before publishing any visualization:
 6. Verify once more before publishing
 ```
 
+<!-- section_id: "04ad40a3-6e01-4965-9ded-b120e3141b79" -->
 ### Common Mistakes
 
 **Mistake 1**: Writing analysis before looking at the actual data.
@@ -176,6 +190,7 @@ Solution: Always re-verify analysis after any data changes
               meaning more than one in four flights experiences a delay"
 ```
 
+<!-- section_id: "7ea68c58-1a5f-4278-95dc-b255bf523983" -->
 ### Verification Steps
 
 ```python
@@ -193,12 +208,15 @@ data.sort_values('metric').head(5)
 
 ---
 
+<!-- section_id: "0dc329e8-3699-44ae-8fe7-c54d13cee935" -->
 ## 4. Metric Justification
 
+<!-- section_id: "9d02c149-3fd4-4733-ac85-965da1273add" -->
 ### The Requirement
 
 **Always explain WHY you chose a metric, not just WHAT it shows.**
 
+<!-- section_id: "870c1ad1-5029-4ecd-b896-21fdc2352666" -->
 ### Complete Justification Structure
 
 ```markdown
@@ -209,6 +227,7 @@ data.sort_values('metric').head(5)
 5. Present the results using that metric
 ```
 
+<!-- section_id: "3cbbfc96-54d2-4419-81cc-c39eba32817f" -->
 ### Example
 
 **Incomplete** ❌:
@@ -231,6 +250,7 @@ with the highest delay rate (26.1%), meaning more than one in four flights
 experiences a delay.
 ```
 
+<!-- section_id: "5ce8b5fe-f2f9-4181-8b2a-0a0ada39df25" -->
 ### Common Metrics and Their Use Cases
 
 | Metric | When to Use | When NOT to Use |
@@ -242,8 +262,10 @@ experiences a delay.
 
 ---
 
+<!-- section_id: "7b659a24-32d3-46fe-8383-096cdaed772f" -->
 ## 5. Sequential Development Impact
 
+<!-- section_id: "3b85474a-e820-446f-a36a-3005fc5faf1a" -->
 ### Connection to Data Quality
 
 These visualization principles reinforce sequential workflow methodology:
@@ -268,8 +290,10 @@ Result: Must fix multiple tasks after the fact
 
 ---
 
+<!-- section_id: "2a51cc6a-ce84-45e4-a551-ba7b8824a2bc" -->
 ## 6. Technology-Specific Notes
 
+<!-- section_id: "887c9b32-6970-4f50-8868-a35786899afb" -->
 ### Python (pandas + lets-plot)
 
 ```python
@@ -282,6 +306,7 @@ from lets_plot import *
 ggplot(df) + geom_bar(aes(x="cat", y="val"), stat="identity") + ylim(0, 100)
 ```
 
+<!-- section_id: "7586d82d-be56-44c0-9ef9-551bcc5c1cb9" -->
 ### R (dplyr + ggplot2)
 
 ```r
@@ -296,6 +321,7 @@ ggplot(df, aes(x=cat, y=val)) +
   ylim(0, 100)
 ```
 
+<!-- section_id: "5b87bf2d-8de6-4a87-9c4c-1fe171dcb78d" -->
 ### JavaScript (D3.js, Observable)
 
 ```javascript
@@ -315,8 +341,10 @@ const yScale = d3.scaleLinear()
 
 ---
 
+<!-- section_id: "6923c99d-f5ed-4693-a799-f17a3d95fa5d" -->
 ## 7. Red Flags and Debugging
 
+<!-- section_id: "1c0817cc-9ca9-4c54-8b77-457f5bbcca36" -->
 ### Data Red Flags
 
 - Negative values where they shouldn't exist
@@ -324,6 +352,7 @@ const yScale = d3.scaleLinear()
 - Percentages over 100% or under 0%
 - Means/medians that don't make logical sense
 
+<!-- section_id: "55357ced-97c8-428c-abc5-c4766fa80c23" -->
 ### Visualization Red Flags
 
 - Chart scale doesn't match data range (0-3 for percentages)
@@ -331,6 +360,7 @@ const yScale = d3.scaleLinear()
 - Missing or incorrect axis labels/units
 - Legend categories don't match the data
 
+<!-- section_id: "9516a50f-634b-4c35-847f-5cd6bcf302a9" -->
 ### Analysis Red Flags
 
 - Analysis mentions values not in the top/bottom N of actual data
@@ -340,10 +370,12 @@ const yScale = d3.scaleLinear()
 
 ---
 
+<!-- section_id: "d6b18b6f-3e9b-4230-bc22-e9066ff11e9f" -->
 ## 8. Quality Checklist
 
 Before publishing any data analysis with visualizations:
 
+<!-- section_id: "2716e284-2d3e-4c6a-a5ab-486f8834988d" -->
 ### Data Quality
 - [ ] All sentinel values cleaned BEFORE calculations
 - [ ] All missing value indicators standardized
@@ -351,6 +383,7 @@ Before publishing any data analysis with visualizations:
 - [ ] No unexpected negative values
 - [ ] No values suspiciously near sentinel values
 
+<!-- section_id: "8dc26433-ca4c-49ad-8e8a-49319c390eab" -->
 ### Visualization Quality
 - [ ] Charts with pre-calculated values use `stat="identity"` (or equivalent)
 - [ ] Percentage charts have explicit 0-100 limits
@@ -358,6 +391,7 @@ Before publishing any data analysis with visualizations:
 - [ ] All axes labeled with units
 - [ ] Legends present and clear
 
+<!-- section_id: "b10e5129-e22d-4136-a93f-49236b1174a1" -->
 ### Analysis Quality
 - [ ] Written analysis checked against actual sorted data
 - [ ] Specific values/percentages cited in text
@@ -367,6 +401,7 @@ Before publishing any data analysis with visualizations:
 
 ---
 
+<!-- section_id: "7f49e8a5-1540-4440-9c84-f095535df24f" -->
 ## 9. Case Study: Unit 3 DS250
 
 This guidance originated from issues found in Unit 3 flight delay analysis:
@@ -390,6 +425,7 @@ This guidance originated from issues found in Unit 3 flight delay analysis:
 
 ---
 
+<!-- section_id: "0d4ad8be-f89e-4e78-8be5-d5cf961f6480" -->
 ## 10. Summary
 
 **Core Principles**:

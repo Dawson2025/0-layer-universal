@@ -8,6 +8,7 @@ resource_name: "README"
 
 Core MCP (Model Context Protocol) configuration and automation shared across all MCP servers in this structure.
 
+<!-- section_id: "796e0d5f-6e04-49d1-a70a-e2034871b33f" -->
 ## Overview
 
 `_mcp_core` serves as the centralized configuration hub for MCP server management. It contains:
@@ -17,6 +18,7 @@ Core MCP (Model Context Protocol) configuration and automation shared across all
 - Concurrent browser session handling for multiple AI tools
 - Universal protocols and agent setup templates
 
+<!-- section_id: "e061f661-bced-45c5-84de-00d3f015a797" -->
 ## Directory Structure
 
 ```
@@ -37,6 +39,7 @@ _mcp_core/
         └── mcp_concurrent_browser.py  # Concurrent browser manager
 ```
 
+<!-- section_id: "c243e289-327d-48fb-bc03-5a4fda5ed588" -->
 ## Relationship to Other MCP Servers
 
 `_mcp_core` provides the foundation that all sibling MCP server directories build upon:
@@ -53,6 +56,7 @@ _mcp_core/
 └── tavily-mcp/         <-- Uses _mcp_core automation
 ```
 
+<!-- section_id: "81c3c602-0408-4fc9-9052-2a034b7fae8d" -->
 ### How It Works
 
 1. **Server Definitions**: `mcp_manager.py` contains the source of truth for all supported MCP servers (playwright, browser, web-search, context7, chrome-devtools)
@@ -63,8 +67,10 @@ _mcp_core/
 
 4. **Tool-Specific Configs**: Creates configurations for different AI tools (Claude, Gemini, Codex, Cursor)
 
+<!-- section_id: "a2cfa83a-eeae-44ee-b756-2ceffea58c69" -->
 ## Quick Reference: Setup Scripts
 
+<!-- section_id: "0e928646-2c99-405f-8624-a25a4bf3902c" -->
 ### mcp_manager.py - Primary Setup Tool
 
 The main automation script for setting up all MCP servers.
@@ -89,6 +95,7 @@ python3 setup/scripts/mcp_manager.py --scope local
 - Generates `mcp.json` configuration file
 - Handles WSLg-specific browser settings
 
+<!-- section_id: "8a902731-db79-47ed-b368-039016fc6227" -->
 ### codex_mcp_sync.py - Codex CLI Sync
 
 Syncs MCP server configurations to Codex CLI's `config.toml`.
@@ -107,6 +114,7 @@ python3 setup/scripts/codex_mcp_sync.py --disable chrome-devtools web-search
 python3 setup/scripts/codex_mcp_sync.py --headless
 ```
 
+<!-- section_id: "d75ef0f8-fb4c-4ee1-afd9-8779336c681b" -->
 ### mcp_concurrent_browser.py - Concurrent Browser Manager
 
 Enables multiple AI tools to use Playwright browsers simultaneously.
@@ -125,6 +133,7 @@ python3 setup/scripts/mcp_concurrent_browser.py apply-codex
 python3 setup/scripts/mcp_concurrent_browser.py status
 ```
 
+<!-- section_id: "7fbc9e02-24dd-4a2a-b60b-396749dd71f5" -->
 ## Supported Platforms
 
 | Platform | Status | Notes |
@@ -134,6 +143,7 @@ python3 setup/scripts/mcp_concurrent_browser.py status
 | macOS | Supported | Standard Unix paths |
 | Windows | Supported | Uses .cmd wrappers |
 
+<!-- section_id: "1c2b9403-bfe5-45b4-b384-e16b7595ae88" -->
 ## Supported AI Tools
 
 | Tool | Config Location | Notes |
@@ -143,10 +153,12 @@ python3 setup/scripts/mcp_concurrent_browser.py status
 | Gemini CLI | `~/.gemini/settings.json` | JSON-based config |
 | Cursor | `~/.config/mcp/` or `.cursor/` | Per-project support |
 
+<!-- section_id: "eeadd404-c0c7-4114-af2f-8ab3c5701735" -->
 ## After Setup
 
 **Important**: Always restart your AI Agent/IDE after running setup scripts for changes to take effect.
 
+<!-- section_id: "48b730b7-b99a-4ca5-b59e-00c56e0623cc" -->
 ## Related Documentation
 
 - `setup/README.md` - Detailed setup automation documentation

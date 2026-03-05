@@ -8,6 +8,7 @@ resource_name: "README"
 
 This directory contains documentation for handoff schemas and patterns in the Layer-Stage Framework.
 
+<!-- section_id: "d5b41098-fb28-48ea-aea3-245a82db0157" -->
 ## Contents
 
 - `handoff_schema.md` - JSON schema definition for handoff documents
@@ -15,14 +16,17 @@ This directory contains documentation for handoff schemas and patterns in the La
 - `to_specific_pattern.md` - Pattern for downward layer handoffs
 - `stage_handoffs.md` - Stage transition handoff documentation
 
+<!-- section_id: "a188b256-a37b-46c0-b061-c247e7aef5cd" -->
 ## Quick Reference
 
+<!-- section_id: "54e845c0-9847-41db-9ff2-70eb8349b607" -->
 ### Creating a Handoff
 1. Verify exit criteria are met
 2. Gather artifacts and notes
 3. Create handoff document following schema
 4. Submit to target entity/stage
 
+<!-- section_id: "deef5f12-e3c1-42f7-a046-791d63ad4a28" -->
 ### Receiving a Handoff
 1. Validate against schema
 2. Check entry criteria

@@ -9,6 +9,7 @@ resource_name: "US-01_researcher_promotes_finding"
 **I want to** promote it from research to production through a documented workflow,
 **So that** the broader system benefits from the improvement while maintaining an audit trail from research origin to production integration.
 
+<!-- section_id: "27f0478c-f2cb-4e26-a3e9-467b96d5586b" -->
 ## Acceptance Criteria
 
 **Scenario 1: Promotion protocol provides clear steps**

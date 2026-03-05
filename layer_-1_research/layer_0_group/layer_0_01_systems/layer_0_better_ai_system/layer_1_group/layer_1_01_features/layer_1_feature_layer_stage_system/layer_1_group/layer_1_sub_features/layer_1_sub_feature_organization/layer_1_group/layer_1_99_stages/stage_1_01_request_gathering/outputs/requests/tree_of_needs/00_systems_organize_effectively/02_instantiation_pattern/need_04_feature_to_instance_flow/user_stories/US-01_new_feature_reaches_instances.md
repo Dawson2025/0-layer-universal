@@ -9,6 +9,7 @@ resource_name: "US-01_new_feature_reaches_instances"
 **I want** promoted features to reach all instances through template updates,
 **So that** every user benefits from system improvements without manual per-instance updates.
 
+<!-- section_id: "ae27bebe-5a32-4098-8aba-3b4f984824e0" -->
 ## Acceptance Criteria
 
 **Scenario 1: New instances get the latest template automatically**

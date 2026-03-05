@@ -10,6 +10,7 @@ resource_name: "0AGNOSTIC"
 
 # ── Entity Definition ──
 
+<!-- section_id: "8a85aa45-a728-45eb-8674-316e75a8930e" -->
 ## Identity
 
 **Role**: AI App Configuration Manager — Gemini CLI
@@ -19,6 +20,7 @@ resource_name: "0AGNOSTIC"
 
 **Specificity Chain**: OS (Linux Ubuntu) > Environment (Local) > Coding App (Cursor) > AI Apps > **Gemini CLI**
 
+<!-- section_id: "4258f508-16d2-4276-a1b9-7d9f59d97cf3" -->
 ## Key Behaviors
 
 - Manages Gemini CLI configuration and setup for this specific environment path
@@ -27,12 +29,14 @@ resource_name: "0AGNOSTIC"
 - Knowledge cascades from parent levels (coding apps > AI apps category) — only store Gemini CLI-specific content here
 - Legacy setup docs migrated to `.0agnostic/01_knowledge/legacy_setup/`
 
+<!-- section_id: "088ec400-8e1a-428e-b36e-1cb4fd6046a4" -->
 ## Inputs
 
 - Parent context from sub_layer_0_09_ai_apps (shared AI app knowledge)
 - Sibling feature entities (shared tools, models, protocols)
 - Gemini CLI-specific setup docs and configuration
 
+<!-- section_id: "72678b49-671d-41b0-b8ec-eb7c4cfb4be4" -->
 ## Outputs
 
 - Gemini CLI setup and configuration documentation
@@ -41,6 +45,7 @@ resource_name: "0AGNOSTIC"
 
 # ── Current Status ──
 
+<!-- section_id: "e2d3a0d0-6341-42ee-9202-4ec93c051397" -->
 ## Current Status
 
 - **Stage**: Active (entity created 2026-02-22, restructured 2026-02-25)
@@ -52,6 +57,7 @@ resource_name: "0AGNOSTIC"
 
 # ── Current State ──
 
+<!-- section_id: "2e50244d-a5e3-4859-837f-0b5b98d0d22b" -->
 ## Current State Detail
 
 Entity restructured. Shared infrastructure migrated to sibling feature entities at level 10:
@@ -62,6 +68,7 @@ Entity restructured. Shared infrastructure migrated to sibling feature entities 
 - Agent setup → `../sub_layer_0_10_05_agent_setup/`
 - Legacy setup docs → `.0agnostic/01_knowledge/legacy_setup/`
 
+<!-- section_id: "ee010863-ef34-4f21-9699-46e8756f7cb7" -->
 ## Open Items
 
 - [ ] Populate Gemini CLI-specific rules and knowledge
@@ -69,6 +76,7 @@ Entity restructured. Shared infrastructure migrated to sibling feature entities 
 
 # ── References ──
 
+<!-- section_id: "22ce3561-7d09-45ed-80d0-8ba07c507b88" -->
 ## Navigation
 
 | Resource | Location |

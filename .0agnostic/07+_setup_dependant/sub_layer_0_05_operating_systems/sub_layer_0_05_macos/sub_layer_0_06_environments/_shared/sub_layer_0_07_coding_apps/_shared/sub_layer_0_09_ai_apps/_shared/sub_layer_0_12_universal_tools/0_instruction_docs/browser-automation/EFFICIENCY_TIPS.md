@@ -12,14 +12,17 @@ resource_name: "EFFICIENCY_TIPS"
 
 ---
 
+<!-- section_id: "808d0dd5-d0eb-439a-9696-6ca4691c0ddd" -->
 ## Overview
 
 This document captures efficiency tips, learned patterns, and best practices discovered during browser automation work. These patterns are broadly applicable across different projects and automation tools.
 
 ---
 
+<!-- section_id: "aa9bc0ba-837c-458d-b72e-a531e6b77b19" -->
 ## Element Reference Management
 
+<!-- section_id: "9054910f-22be-40f8-a2c6-e5a69bbb7a1f" -->
 ### Problem: Stale Element References
 
 **Issue**: Element references become invalid after:
@@ -51,8 +54,10 @@ await browser_type({ element: "input", ref: "e789", text: "value" }); // Uses ne
 
 ---
 
+<!-- section_id: "47ad05da-e571-4cf5-8de5-b57a63aa4c42" -->
 ## Negative Number Input in Equation Editors
 
+<!-- section_id: "e9aac8b7-aa48-4349-90af-51c5c2111b95" -->
 ### Problem: Subtraction vs. Negative Number
 
 **Issue**: Many equation editors (e.g., ALEKS, math input fields) interpret "-" as subtraction when there's existing content in the field.
@@ -87,8 +92,10 @@ await browser_type({ element: "input", ref: "e123", text: "2" }); // Then number
 
 ---
 
+<!-- section_id: "4d738033-d55e-45d0-9156-21b63d6f9a82" -->
 ## Dialog State Management
 
+<!-- section_id: "f318e066-9971-4150-812d-26a74be2ac83" -->
 ### Pattern: Dialog Persistence
 
 **Observation**: Some dialogs remain open between operations (e.g., point plotting dialogs that allow multiple entries).
@@ -117,8 +124,10 @@ await browser_click({ element: "Close button", ref: "e112" });
 
 ---
 
+<!-- section_id: "75c71c28-bf1b-41cc-8046-d2de7e6db124" -->
 ## Concurrent Work Strategy
 
+<!-- section_id: "43b833ee-7732-46b0-bc69-c98ac1d81b28" -->
 ### Pattern: Working on Multiple Assignments
 
 **Strategy**: When working on multiple related tasks (e.g., multiple prerequisites), work concurrently and switch when blocked.
@@ -143,8 +152,10 @@ await browser_click({ element: "Close button", ref: "e112" });
 
 ---
 
+<!-- section_id: "94c4a0bd-a27a-4de6-bb35-226493e11225" -->
 ## Session Management
 
+<!-- section_id: "a3ba60bd-8ae5-4d23-9d3d-4d6a9115e2cc" -->
 ### Pattern: Session Expiration Handling
 
 **Issue**: Web application sessions can expire, causing automation to fail.
@@ -177,8 +188,10 @@ if (snapshot.includes("Session Closed") || snapshot.includes("Session expired"))
 
 ---
 
+<!-- section_id: "eda62731-0858-4a6b-9242-ac32f5dba6b4" -->
 ## Input Field Navigation
 
+<!-- section_id: "be53ef69-a0a6-4171-8678-33d57c564c8b" -->
 ### Pattern: Keyboard Navigation in Multi-Field Forms
 
 **Issue**: Some forms require keyboard navigation between fields rather than direct clicking.
@@ -202,8 +215,10 @@ await browser_click({ element: "next input", ref: "e456" }); // May not work
 
 ---
 
+<!-- section_id: "00638a8d-7c93-4d03-a8c9-36fcec5bd438" -->
 ## Error Recovery Patterns
 
+<!-- section_id: "4cc8f14c-91db-421e-89c3-48a2083d6360" -->
 ### Pattern: Dialog Reset on Input Errors
 
 **Issue**: When input errors occur (e.g., "Fill in all empty boxes"), the dialog state may be corrupted.
@@ -234,8 +249,10 @@ try {
 
 ---
 
+<!-- section_id: "933f6e76-541a-4092-8bbb-ec26eeb221dd" -->
 ## Tab Management
 
+<!-- section_id: "8f729740-c72e-495d-9349-a77d723261a5" -->
 ### Pattern: Tab State Verification
 
 **Issue**: Working in wrong tab or tab state not as expected.
@@ -263,8 +280,10 @@ if (!targetTab) {
 
 ---
 
+<!-- section_id: "c332774d-0f53-47c4-8030-9f8d626e79e4" -->
 ## Performance Optimization
 
+<!-- section_id: "f5ee413f-391d-4b43-a509-c43d1d441254" -->
 ### Pattern: Batch Operations
 
 **Observation**: Some operations can be batched for efficiency.
@@ -289,6 +308,7 @@ for (const point of points) {
 
 ---
 
+<!-- section_id: "1bcbc7bb-551c-4a12-a062-e205e166a6d2" -->
 ## Integration
 
 - **Browser Management Policy**: See `browser_management_policy.md`

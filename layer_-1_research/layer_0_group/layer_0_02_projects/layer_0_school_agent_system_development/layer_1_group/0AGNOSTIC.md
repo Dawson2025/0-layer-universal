@@ -10,6 +10,7 @@ resource_name: "0AGNOSTIC"
 
 # ── Group Definition ──
 
+<!-- section_id: "65eac8f5-ae9f-4f67-bc02-a6cd1a8848c3" -->
 ## Identity
 
 entity_id: "d7e4ea54-4306-46d0-9cdc-83baf95aa885"
@@ -22,8 +23,10 @@ This is a **layer_1_group** (organizational container, NOT a layer). It contains
 - **Type**: Project organization container
 - **Contains**: Multiple numbered grouping containers (01_features, 02_projects, etc.) that organize layer_2+ entities
 
+<!-- section_id: "7f1da4ce-39c3-4834-881d-e39755b2a50f" -->
 ## Key Behaviors
 
+<!-- section_id: "d3c4ea0e-75e4-4c1e-bce6-4081e9166e86" -->
 ### NOT a Layer - This is a Container
 
 This `layer_1_group/` is **NOT** a layer entity. It is an organizational container. Therefore:
@@ -33,6 +36,7 @@ This `layer_1_group/` is **NOT** a layer entity. It is an organizational contain
 - ✅ YES `layer_1_00_layer_registry/` — registry of how layer_1 is organized
 - ✅ YES `layer_1_0X_*` numbered grouping containers — organizational subdirectories
 
+<!-- section_id: "dc5f7739-1f06-45be-a590-18bfbac98e98" -->
 ### Grouping Container Structure
 
 This group can contain multiple numbered organizational containers:
@@ -43,6 +47,7 @@ This group can contain multiple numbered organizational containers:
 
 Each child entity inside these containers is a REAL LAYER with its own stages.
 
+<!-- section_id: "a3adc6d7-2cc0-4bad-848a-1304606e050b" -->
 ## Triggers
 
 Load this context when:
@@ -50,6 +55,7 @@ Load this context when:
 - Creating new layer_2 feature entities
 - Organizing project-level work
 
+<!-- section_id: "db5307c0-64b1-406f-8b88-7d87ae6c0d00" -->
 ## Current Status
 
 **Phase**: Initialization | **Last Updated**: 2026-02-28
@@ -60,14 +66,17 @@ Layer_1_group structure created with registry and feature grouping container. Re
 
 # ── Current State ──
 
+<!-- section_id: "d43c5369-f88d-492b-9cc4-f3f36b90a338" -->
 ## Current State Detail
 
+<!-- section_id: "73107894-873b-4105-bc60-5cff6b903f41" -->
 ### Structure Status
 
 - ✅ `layer_1_00_layer_registry/` created — for layer_1 organizational metadata
 - ✅ `layer_1_01_features/` created — grouping container for layer_2 feature entities
 - ⏳ Child layer_2 feature entities pending creation
 
+<!-- section_id: "1be9663b-977e-4ad5-a109-ae2828786b3a" -->
 ### Important Distinction
 
 Each child entity (e.g., `layer_2_feature_authentication/`) that goes inside `layer_1_01_features/` will be:
@@ -80,15 +89,19 @@ This `layer_1_group/` remains an organizational container — purely structural.
 
 # ── References ──
 
+<!-- section_id: "606a8417-8ddd-4b0d-9318-7d0d01eb6e34" -->
 ## Navigation
 
+<!-- section_id: "9cc46db9-3028-4c07-9d83-fcde5848816d" -->
 ### Parent
 `../0AGNOSTIC.md` — layer_0_school_agent_system_development
 
+<!-- section_id: "8967839f-6ad4-4e26-9fc1-3ba5348fbe12" -->
 ### Related Directories
 - `layer_1_00_layer_registry/` — Layer 1 registry (metadata about how layer_1 is organized)
 - `layer_1_01_features/` — Grouping container for layer_2 feature entities
 
+<!-- section_id: "7f6188fe-dd2f-4526-8818-8a5ebb0977aa" -->
 ## Key Locations
 
 | Content | Location |
@@ -98,6 +111,7 @@ This `layer_1_group/` remains an organizational container — purely structural.
 | Features organization | `layer_1_01_features/` (holds layer_2 entities) |
 | Parent context | `../0AGNOSTIC.md` (layer_0 entity) |
 
+<!-- section_id: "c5b85fe1-7e21-4f5a-a1f8-052858b987ba" -->
 ## On Exit
 
 1. Update this 0AGNOSTIC.md if adding/modifying grouping containers

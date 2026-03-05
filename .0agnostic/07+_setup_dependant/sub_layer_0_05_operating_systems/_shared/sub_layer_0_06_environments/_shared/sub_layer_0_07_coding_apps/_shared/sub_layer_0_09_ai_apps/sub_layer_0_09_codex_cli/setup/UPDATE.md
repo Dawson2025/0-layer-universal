@@ -8,10 +8,12 @@ resource_name: "UPDATE"
 **Last Updated:** 2025-01-26  
 **Current Version:** 0.80.0
 
+<!-- section_id: "85fa3254-4826-476d-8ef5-1e472efd249b" -->
 ## Overview
 
 This document describes how to update Codex CLI to the latest version. Codex CLI is distributed via npm and can be updated using standard npm commands.
 
+<!-- section_id: "5e429960-710d-4553-b1d4-e6a6edebe585" -->
 ## Checking Current Version
 
 Before updating, check your current version:
@@ -37,8 +39,10 @@ npm list -g @openai/codex
 └── @openai/codex@0.80.0
 ```
 
+<!-- section_id: "2878a0b0-426e-4b1f-94aa-6c8cf203cdea" -->
 ## Update Method
 
+<!-- section_id: "c24e1cfa-0a03-4624-81b2-e39def3b1748" -->
 ### npm Update (Standard Method)
 
 Codex CLI is managed through npm. To update to the latest version:
@@ -57,6 +61,7 @@ npm install -g @openai/codex@latest
 changed 1 package in 8s
 ```
 
+<!-- section_id: "27236283-909d-4beb-96ac-76b300ec08cf" -->
 ### Alternative: npm update
 
 You can also use the `npm update` command:
@@ -67,6 +72,7 @@ npm update -g @openai/codex
 
 **Note:** `npm update` may not always install the latest version if your current version satisfies the semver range. Using `npm install -g @openai/codex@latest` ensures you get the absolute latest version.
 
+<!-- section_id: "35fe6d43-40e4-4b80-9d87-213fba7f7b61" -->
 ## Verification After Update
 
 After updating, verify the installation:
@@ -85,8 +91,10 @@ npm list -g @openai/codex
 codex --help
 ```
 
+<!-- section_id: "ce5c3448-d2e5-4ed3-ab43-9cae3e614ac1" -->
 ## Troubleshooting
 
+<!-- section_id: "af84a1c7-d331-43cd-9180-4c77ee1046ca" -->
 ### Issue: "Command not found" after update
 
 **Solution:**
@@ -108,6 +116,7 @@ codex --help
    # Add that path/bin to your PATH if not already there
    ```
 
+<!-- section_id: "71f43058-7598-4119-b5d1-13e1db4e16ab" -->
 ### Issue: Permission errors during update
 
 **Solution:**
@@ -131,6 +140,7 @@ codex --help
 
 3. **Not recommended:** Using `sudo` can cause permission issues and is not recommended
 
+<!-- section_id: "f1fd5e42-58ec-4fe8-97a5-ef2cdb5af80e" -->
 ### Issue: Version not updating
 
 **Solution:**
@@ -151,8 +161,10 @@ codex --help
    npm --version
    ```
 
+<!-- section_id: "a6fcb0bf-3f14-4fd3-a472-9fd17a0ed620" -->
 ## Update History
 
+<!-- section_id: "fb5a5fd8-64e0-4395-a37d-a2c3e8542307" -->
 ### 2025-01-26: Updated to v0.80.0
 - **Previous version:** 0.79.0
 - **Method used:** `npm install -g @openai/codex@latest`
@@ -161,17 +173,20 @@ codex --help
   - No configuration changes required
   - All functionality verified after update
 
+<!-- section_id: "fb9478a8-d0f2-413b-9bfc-ecaea079de68" -->
 ## Platform Support
 
 - ✅ **macOS**: Fully supported
 - ✅ **Linux**: Fully supported
 - ⚠️ **Windows**: Experimental (recommended to use WSL)
 
+<!-- section_id: "aa6b7559-9ff5-41e9-bd73-e832c0e8739d" -->
 ## References
 
 - **Official Documentation:** https://developers.openai.com/codex/cli
 - **npm Package:** https://www.npmjs.com/package/@openai/codex
 
+<!-- section_id: "c23d150d-dc88-4a99-a3c2-3d4ac4aa880d" -->
 ## Related Documentation
 
 - **Setup README:** `README.md` (in this directory)

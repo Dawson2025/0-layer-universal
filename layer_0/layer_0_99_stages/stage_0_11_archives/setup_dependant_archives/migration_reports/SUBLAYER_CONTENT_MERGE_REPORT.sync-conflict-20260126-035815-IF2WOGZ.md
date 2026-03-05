@@ -12,6 +12,7 @@ Hierarchy root: /home/dawson/dawson-workspace/code/0_layer_universal/0_context/l
 - Ambiguous matches skipped: 0
 - Skipped (already contained): 0
 
+<!-- section_id: "1a3ec3a6-18a1-4e31-b604-0d08d5e232dc" -->
 ## Merged Files
 - /home/dawson/dawson-workspace/code/0_layer_universal/0_context/layer_0/0.02_sub_layers/sub_layer_0_05-0.014_setup/0.01_universal_setup_file_tree_0/README.md
 - /home/dawson/dawson-workspace/code/0_layer_universal/0_context/layer_0/0.02_sub_layers/sub_layer_0_05-0.014_setup/0.01_universal_setup_file_tree_0/README.md
@@ -22,6 +23,7 @@ Hierarchy root: /home/dawson/dawson-workspace/code/0_layer_universal/0_context/l
 - /home/dawson/dawson-workspace/code/0_layer_universal/0_context/layer_0/0.02_sub_layers/sub_layer_0_05-0.014_setup/0.01_universal_setup_file_tree_0/README.md
 - /home/dawson/dawson-workspace/code/0_layer_universal/0_context/layer_0/0.02_sub_layers/sub_layer_0_05-0.014_setup/0.01_universal_setup_file_tree_0/README.md
 
+<!-- section_id: "36afe7a8-db86-4aea-9a9a-5dcb74a464a2" -->
 ## Created Legacy Placements
 - /home/dawson/dawson-workspace/code/0_layer_universal/0_context/layer_0/0.02_sub_layers/sub_layer_0_07_environment_setup/trickle_down_0.5_setup/0_instruction_docs/github/github_sso_token_setup.md -> /home/dawson/dawson-workspace/code/0_layer_universal/0_context/layer_0/0.02_sub_layers/sub_layer_0_05-0.014_setup/0.01_universal_setup_file_tree_0/0.05_operating_systems/_shared/legacy_sublayer_content/sub_layer_0_07_environment_setup/trickle_down_0.5_setup/0_instruction_docs/github/github_sso_token_setup.md
 - /home/dawson/dawson-workspace/code/0_layer_universal/0_context/layer_0/0.02_sub_layers/sub_layer_0_11_ai_models/trickle_down_0.5_setup/0_instruction_docs/LINUX_UBUNTU_MODEL_ACCESS_ISSUES.md -> /home/dawson/dawson-workspace/code/0_layer_universal/0_context/layer_0/0.02_sub_layers/sub_layer_0_05-0.014_setup/0.01_universal_setup_file_tree_0/0.05_operating_systems/_shared/legacy_sublayer_content/sub_layer_0_11_ai_models/trickle_down_0.5_setup/0_instruction_docs/LINUX_UBUNTU_MODEL_ACCESS_ISSUES.md
@@ -85,10 +87,12 @@ Hierarchy root: /home/dawson/dawson-workspace/code/0_layer_universal/0_context/l
 - /home/dawson/dawson-workspace/code/0_layer_universal/0_context/layer_0/0.02_sub_layers/sub_layer_0_13_universal_protocols/reordering_operations/0_instruction_docs/README.md -> /home/dawson/dawson-workspace/code/0_layer_universal/0_context/layer_0/0.02_sub_layers/sub_layer_0_05-0.014_setup/0.01_universal_setup_file_tree_0/0.05_operating_systems/_shared/legacy_sublayer_content/sub_layer_0_13_universal_protocols/reordering_operations/0_instruction_docs/README.md
 - /home/dawson/dawson-workspace/code/0_layer_universal/0_context/layer_0/0.02_sub_layers/sub_layer_0_13_universal_protocols/reordering_operations/0_instruction_docs/reordering_operations_protocol.md -> /home/dawson/dawson-workspace/code/0_layer_universal/0_context/layer_0/0.02_sub_layers/sub_layer_0_05-0.014_setup/0.01_universal_setup_file_tree_0/0.05_operating_systems/_shared/legacy_sublayer_content/sub_layer_0_13_universal_protocols/reordering_operations/0_instruction_docs/reordering_operations_protocol.md
 
+<!-- section_id: "4635373e-cb8e-421f-aabc-c234c5775c64" -->
 ## Legacy Content Relocation
 - Moved files: 1
 - /home/dawson/dawson-workspace/code/0_layer_universal/0_context/layer_0/0.02_sub_layers/sub_layer_0_05-0.014_setup/0.01_universal_setup_file_tree_0/0.05_operating_systems/_shared/legacy_sublayer_content/sub_layer_0_11_ai_models/trickle_down_0.5_setup/0_instruction_docs/LINUX_UBUNTU_MODEL_ACCESS_ISSUES.md -> /home/dawson/dawson-workspace/code/0_layer_universal/0_context/layer_0/0.02_sub_layers/sub_layer_0_05-0.014_setup/0.01_universal_setup_file_tree_0/0.05_operating_systems/_shared/0.06_environments/_shared/0.07_coding_apps/_shared/0.09_ai_apps/_shared/0.11_ai_models/_shared/trickle_down_0.5_setup/0_instruction_docs/LINUX_UBUNTU_MODEL_ACCESS_ISSUES.md
 
+<!-- section_id: "e12879b3-588c-4cb8-841a-9311d1bb88e9" -->
 ## Legacy Content Merge (AI Models/Tools/Protocols)
 - Copied new files: 0
 - Merged into existing files: 6

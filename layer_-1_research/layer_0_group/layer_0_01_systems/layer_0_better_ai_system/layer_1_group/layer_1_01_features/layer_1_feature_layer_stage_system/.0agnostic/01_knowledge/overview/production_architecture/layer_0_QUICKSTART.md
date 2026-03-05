@@ -5,8 +5,10 @@ resource_name: "layer_0_QUICKSTART"
 ---
 # Quick Start Guide - Better AI System
 
+<!-- section_id: "070bf538-c38c-46fb-852f-7ffb58948a2b" -->
 ## 5-Minute Setup
 
+<!-- section_id: "a4eebe9c-3878-4039-9302-b4e7a770d066" -->
 ### 1. Read Your Context (30 seconds)
 
 ```bash
@@ -17,6 +19,7 @@ cat 0AGNOSTIC.md
 cat CLAUDE.md  # For Claude Code
 ```
 
+<!-- section_id: "971f6e6a-d68d-4cb1-bc97-37f47763b425" -->
 ### 2. Check Previous Sessions (30 seconds)
 
 ```bash
@@ -27,14 +30,17 @@ cat outputs/episodic/index.md
 cat outputs/episodic/sessions/2026-01-30_session_001.md
 ```
 
+<!-- section_id: "6a82a2c1-be0a-46f3-bcde-588efa4bb29a" -->
 ### 3. Start Working
 
 You now have full context. Begin your task.
 
 ---
 
+<!-- section_id: "fab45f2e-fef9-4d12-b50f-8052d00018d1" -->
 ## Essential Commands
 
+<!-- section_id: "ce796e26-c800-45cc-abae-2bf2f9528c9b" -->
 ### Finding Information
 
 ```bash
@@ -46,6 +52,7 @@ bash .0agnostic/scripts/find-helper.sh search "SHIMI"
 bash .0agnostic/scripts/find-helper.sh all  # List all indices
 ```
 
+<!-- section_id: "01d5e9e8-bcb7-4c21-aa10-215d9c5186e4" -->
 ### Working with Shared Files
 
 ```bash
@@ -62,6 +69,7 @@ bash .0agnostic/scripts/track-change.sh output.md CREATED my_agent
 bash .0agnostic/scripts/lock-manager.sh release my_scope my_agent
 ```
 
+<!-- section_id: "391f5625-31cc-47eb-8909-694f9cc0b96b" -->
 ### Creating Session Records
 
 ```bash
@@ -71,6 +79,7 @@ bash .0agnostic/scripts/create-session.sh "my_agent" "Brief summary of work" "CO
 # Then edit the created file to add details
 ```
 
+<!-- section_id: "cb311fbd-d13c-4c74-88b9-ffb1c4e653f3" -->
 ### Generating Tool-Specific Files
 
 ```bash
@@ -80,6 +89,7 @@ bash .0agnostic/agnostic-sync.sh .
 
 ---
 
+<!-- section_id: "ad7de260-32ee-4a46-9bbf-214db2d11ec3" -->
 ## Directory Structure
 
 ```
@@ -99,8 +109,10 @@ layer_0/
 
 ---
 
+<!-- section_id: "c060ad4d-8505-46be-be8d-034600623312" -->
 ## Common Workflows
 
+<!-- section_id: "6f7b2721-3a45-4171-b5cc-d1692aa659ae" -->
 ### Starting a New Session
 
 1. `cat 0AGNOSTIC.md` - Read context
@@ -108,6 +120,7 @@ layer_0/
 3. Work on your task
 4. Create session file when done
 
+<!-- section_id: "03fc12b4-d445-42ab-9dfa-1341f9442fdf" -->
 ### Finding Where Something Is
 
 1. Read `0INDEX.md` at current directory
@@ -115,6 +128,7 @@ layer_0/
 3. Repeat until found
 4. Or use: `bash .0agnostic/scripts/find-helper.sh search "keyword"`
 
+<!-- section_id: "5d13e708-52a6-416e-9286-e1fa82bbb29a" -->
 ### Modifying Shared Outputs
 
 1. Acquire lock
@@ -123,6 +137,7 @@ layer_0/
 4. Release lock
 5. Create session record
 
+<!-- section_id: "d06c7482-43b2-4bc0-be12-d640265b1a57" -->
 ### Syncing Tool-Specific Files
 
 1. Edit `0AGNOSTIC.md` (source of truth)
@@ -131,6 +146,7 @@ layer_0/
 
 ---
 
+<!-- section_id: "121e7a53-7f00-419d-8379-540066f24ef0" -->
 ## Key Concepts
 
 | Concept | What It Does |
@@ -142,6 +158,7 @@ layer_0/
 
 ---
 
+<!-- section_id: "95bececc-a0db-445f-a201-4ef01d6b5d14" -->
 ## Need More Help?
 
 - **Full rules**: `.0agnostic/rules/`

@@ -5,12 +5,14 @@ resource_name: "working_examples"
 ---
 # Topic: Working Examples
 
+<!-- section_id: "ee5708b1-d771-4504-bdcd-b5e192a37da7" -->
 ## Summary
 
 The **context_chain_system** (a grandchild entity of this agent_delegation_system) served as the primary working example and testing ground for agent delegation patterns. It was the first entity to have all 11 stage 0AGNOSTIC.md files populated, demonstrating the delegation model in a real entity with real work.
 
 The context_chain_system has 50+ knowledge files, 76 PASS tests, and real stage work across stages 01-07. It validated that the stage delegation model works: managers can coordinate via stage reports, stage agents can orient via 0AGNOSTIC.md, and the three-tier knowledge pattern provides enough context without overflow.
 
+<!-- section_id: "e22f6267-e2d7-4a53-a023-d93ea76af1ba" -->
 ## What Was Validated
 
 - Stage delegation works: manager → stage agent via stage reports
@@ -19,6 +21,7 @@ The context_chain_system has 50+ knowledge files, 76 PASS tests, and real stage 
 - Three-tier knowledge: pointer → distilled → full tiers each serve their purpose
 - agnostic-sync.sh correctly generates tool-specific files from 0AGNOSTIC.md
 
+<!-- section_id: "38195fbf-73d3-43e0-8942-bb0c9c79cf9f" -->
 ## References
 
 | What | Where |

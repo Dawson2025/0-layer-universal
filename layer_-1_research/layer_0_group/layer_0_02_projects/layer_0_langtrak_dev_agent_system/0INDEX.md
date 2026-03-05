@@ -6,8 +6,10 @@ resource_name: "0INDEX"
 ---
 # LangTrak Dev Agent System — Navigation Index
 
+<!-- section_id: "4035ccc5-13f4-4ea6-962b-a5ae08df3a72" -->
 ## Status: New (scaffolding complete)
 
+<!-- section_id: "958ef6bc-7866-4795-aaba-2272cdec9a5e" -->
 ## Structure
 
 ```
@@ -33,6 +35,7 @@ layer_-1_langtrak_dev_agent_system/
 └── layer_0_group/        <- Children (features, if needed)
 ```
 
+<!-- section_id: "75483b1f-6b27-4dc9-bf04-596979b022c9" -->
 ## Key References
 
 | Resource | Path |

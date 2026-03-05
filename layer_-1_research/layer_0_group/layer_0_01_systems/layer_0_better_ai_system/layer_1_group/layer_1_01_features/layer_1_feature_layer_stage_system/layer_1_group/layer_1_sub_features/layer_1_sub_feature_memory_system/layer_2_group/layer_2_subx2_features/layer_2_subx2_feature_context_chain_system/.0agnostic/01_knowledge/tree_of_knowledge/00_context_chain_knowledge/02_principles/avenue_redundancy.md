@@ -5,6 +5,7 @@ resource_name: "avenue_redundancy"
 ---
 # Principle: Avenue Redundancy
 
+<!-- section_id: "f484f5ec-d98d-4e1d-86e4-23a923b05da8" -->
 ## Summary
 
 Critical context must be reachable through at least 3 independent avenues. No single point of failure should prevent an agent from accessing essential information. This is a reliability principle -- AI agents operate in unpredictable conditions where CLAUDE.md might not be in the cascade path, a .gab.jsonld might fail to parse, or episodic memory might be empty.
@@ -13,6 +14,7 @@ The 8 avenues each operate through different mechanisms (filesystem walk, direct
 
 Avenue coverage is tested by `test_avenue_coverage_functional.sh`, which checks each avenue for functional content and reports PASS / SCAFFOLDED / FAIL with an overall coverage percentage. Target is 100% PASS on all 8 avenues.
 
+<!-- section_id: "db94b8d7-290a-46e3-9208-afa715800137" -->
 ## Key Concepts
 
 - **3+ avenues** for critical context (identity, rules)
@@ -21,6 +23,7 @@ Avenue coverage is tested by `test_avenue_coverage_functional.sh`, which checks 
 - **How to add redundancy**: Mention in 0AGNOSTIC.md (A1), create path rule (A2), create skill (A3), add to .gab.jsonld (A5)
 - **Measurement**: Automated test script validates functional coverage
 
+<!-- section_id: "79baf975-6359-4ee0-a600-bbb6888aeb16" -->
 ## Reference Table
 
 | What | Where | Notes |

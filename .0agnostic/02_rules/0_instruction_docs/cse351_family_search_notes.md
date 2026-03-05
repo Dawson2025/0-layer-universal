@@ -7,16 +7,19 @@ resource_name: "cse351_family_search_notes"
 
 These patterns apply to any local BYU CSE 351 assignment that couples a Python client with the provided `server.py` API.
 
+<!-- section_id: "12eb30d7-509c-4cd7-bbd6-4cea3632fdf0" -->
 ## Environment Patterns
 - **Local package resolution** – The helper module (`cse351`) is vendored under `.venv/lib/python3.12/site-packages`. Export this directory through `PYTHONPATH` before invoking any assignment driver.
 - **Background services** – Always launch `server.py` in a dedicated terminal, redirect stdout to `/tmp/<lesson>_server.log`, and capture the PID for cleanup. This prevents orphan servers from skewing later tests.
 - **Retry-friendly logging** – Mirror the assignment output to `/tmp/<lesson>_prove.log`; repo-local logs stay clean while you retain the raw console stream for debugging.
 
+<!-- section_id: "ad7473ef-328e-4d8a-b561-c37acd32b990" -->
 ## Performance Mindset
 - The FS server sleeps 0.25 seconds per HTTP call. Meeting the “<10 second” targets requires parallelism: batch every family + person lookup via a `ThreadPoolExecutor` instead of issuing requests serially.
 - Track max concurrency using the server’s “active threads / max count” line. If values dip unexpectedly, the client code likely throttled its executors.
 - Keep state mutations (adding people/families) guarded by locks while allowing network I/O to run free; this balances correctness with throughput.
 
+<!-- section_id: "55522bce-553a-4276-96a6-f569c7cc4dc3" -->
 ## Testing Workflow
 1. Kill any stale `server.py` instances (`pkill -f server.py || true`).
 2. Start a fresh server and log output to `/tmp`.
@@ -24,6 +27,7 @@ These patterns apply to any local BYU CSE 351 assignment that couples a Python c
 4. Tail both `/tmp` logs plus `lesson_##/prove/logs/assignment.log` to capture timings and API counts immediately after the run.
 5. For the C# port (Lesson 14) add `.dotnet` to PATH and run from `lesson_14/prove/assignment14/Assignment14`; collect timings from `lesson_14/prove/logs/assignment.log` because console logging is disabled during performance runs. The HTTP gate can be overridden with `FS_HTTP_GATE` (default 45) and is logged at startup.
 
+<!-- section_id: "7894b378-8435-4e5d-a4f9-1270c90e066d" -->
 ## Common Pitfalls & Fixes
 - **`ModuleNotFoundError: cse351`** – add the `.venv` site-packages folder to `PYTHONPATH`.
 - **Server 500/timeout spikes** – back off by reducing the queue depth temporarily, then re-run once the server stabilizes. Document any sustained slowdowns.

@@ -5,6 +5,7 @@ resource_name: "speckit.clarify"
 description: Identify underspecified areas in the current feature spec by asking up to 5 highly targeted clarification questions and encoding answers back into the spec.
 ---
 
+<!-- section_id: "0c907d5a-2cbc-4d29-9f8d-86f4938a6feb" -->
 ## User Input
 
 ```text
@@ -13,6 +14,7 @@ $ARGUMENTS
 
 You **MUST** consider the user input before proceeding (if not empty).
 
+<!-- section_id: "8886a5f3-b68e-4051-a443-b95cdeaaa80f" -->
 ## Outline
 
 Goal: Detect and reduce ambiguity or missing decision points in the active feature specification and record the clarifications directly in the spec file.

@@ -5,12 +5,15 @@ resource_name: "HOW_CONTEXT_WORKS"
 ---
 # How Context Loading Works
 
+<!-- section_id: "9f844342-9ca3-4bd6-ad71-1e3be51d82c6" -->
 ## Overview
 
 AI agents need context to understand their role, scope, and available resources. This document explains how context is loaded and managed.
 
+<!-- section_id: "715d2bb9-755d-4eff-8d36-da0af8f3f4ef" -->
 ## Context Loading Mechanism
 
+<!-- section_id: "11d4f1ec-0c14-4b18-a133-c94d4e1cc843" -->
 ### 1. CLAUDE.md Cascade
 
 When Claude Code starts in a directory, it walks **upward** to find CLAUDE.md files:
@@ -30,6 +33,7 @@ Loads (in order):
 
 **Each file adds context**, with more specific files having priority for conflicts.
 
+<!-- section_id: "d4d74cd4-056d-40ef-8254-58b2b0c9f109" -->
 ### 2. Context Sources
 
 | Source | Loaded | Purpose |
@@ -39,6 +43,7 @@ Loads (in order):
 | .0agnostic/ | On-demand | Detailed resources |
 | sub_layer_*/ | On-demand | Rules, knowledge, prompts |
 
+<!-- section_id: "0074a54c-22e2-4ef4-a64f-d5f4343f6ab1" -->
 ### 3. Always-Loaded vs On-Demand
 
 **Always-Loaded** (keep small!):
@@ -55,8 +60,10 @@ Loads (in order):
 
 ---
 
+<!-- section_id: "cecce893-cfc8-41d7-90e3-b5448ef7842f" -->
 ## The Agnostic System
 
+<!-- section_id: "ae4e95e9-b92e-4ee4-8c2d-7db1267bf871" -->
 ### Three-Tier Architecture
 
 ```
@@ -78,6 +85,7 @@ Loads (in order):
 └─────────────────────────────────────────┘
 ```
 
+<!-- section_id: "b2bd7e34-e8df-4703-927e-2d9afc9d4995" -->
 ### 0AGNOSTIC.md Structure
 
 ```markdown
@@ -93,6 +101,7 @@ Loads (in order):
 - Where to find detailed resources
 ```
 
+<!-- section_id: "656c9d96-72c2-473b-b268-27eb4822ecdb" -->
 ### .0agnostic/ Structure
 
 ```
@@ -107,8 +116,10 @@ Loads (in order):
 
 ---
 
+<!-- section_id: "82a71b43-6973-4128-834c-753f63b501f9" -->
 ## Trigger-Based Loading
 
+<!-- section_id: "9e860258-b6ca-4005-8da1-54aa5515f5a2" -->
 ### What Are Triggers?
 
 Triggers tell AI agents when to load specific context:
@@ -122,6 +133,7 @@ Load this context when:
 - Entering: `/layer_1_project_app/layer_2_features/layer_2_feature_auth/`
 ```
 
+<!-- section_id: "9968bd96-799e-4074-8abb-c4cc12f76f82" -->
 ### Trigger Types
 
 | Type | Example | When Activated |
@@ -130,6 +142,7 @@ Load this context when:
 | Activity | "security features" | Working on this type of task |
 | Path | `/path/to/entity/` | Entering this directory |
 
+<!-- section_id: "a9185a6a-a812-4fd7-8c3f-d1f93adbb33d" -->
 ### Trigger Hierarchy
 
 More specific triggers override general ones:
@@ -141,8 +154,10 @@ layer_0 triggers (general)
 
 ---
 
+<!-- section_id: "9bbcf5af-55ec-4c98-a831-6ac12e846ea9" -->
 ## Context Inheritance
 
+<!-- section_id: "14dfc975-a0b8-4e55-95e8-e4d604ab8abc" -->
 ### How Inheritance Works
 
 Child entities inherit from parents:
@@ -164,6 +179,7 @@ layer_0 (universal)
             └── Can reference: Parent knowledge
 ```
 
+<!-- section_id: "a3bbeb1f-5ec9-4557-b676-89e50c19c09b" -->
 ### What Inherits
 
 | Content Type | Inherits? | Notes |
@@ -175,8 +191,10 @@ layer_0 (universal)
 
 ---
 
+<!-- section_id: "fc333870-1601-457a-845b-4e283ab0612a" -->
 ## Best Practices
 
+<!-- section_id: "30bad8aa-795a-48ee-b39d-0c99b7cface8" -->
 ### Keep CLAUDE.md Small
 
 ```markdown
@@ -193,6 +211,7 @@ layer_0 (universal)
 - Historical information
 ```
 
+<!-- section_id: "a94b89d6-79d0-4262-a576-feea0a24fde5" -->
 ### Use Pointers
 
 ```markdown
@@ -205,6 +224,7 @@ layer_0 (universal)
 | Knowledge base | `layer_N_group/layer_N_03_sub_layers/sub_layer_N_02_knowledge/` |
 ```
 
+<!-- section_id: "3e38357e-7936-4b8b-97f6-bed0fea59bd7" -->
 ### Layer Your Context
 
 ```
@@ -215,8 +235,10 @@ Rarely loaded:     Detailed knowledge, archived docs
 
 ---
 
+<!-- section_id: "617eb0f0-19dd-4396-a53d-64c725f1512c" -->
 ## Debugging Context Issues
 
+<!-- section_id: "c498b910-627d-4c19-8c3a-d4f0cbdff3d4" -->
 ### Context Not Loading?
 
 1. Check CLAUDE.md exists and has correct path
@@ -224,12 +246,14 @@ Rarely loaded:     Detailed knowledge, archived docs
 3. Check for syntax errors
 4. Verify parent CLAUDE.md files exist
 
+<!-- section_id: "90a42d07-38a2-4c4c-a3b5-aba4f7853000" -->
 ### Wrong Context Loading?
 
 1. Check triggers in 0AGNOSTIC.md
 2. Verify you're in the right directory
 3. Check for conflicting triggers in parents
 
+<!-- section_id: "8e3536a1-71b3-4302-b77a-f3c5c145115d" -->
 ### Context Too Large?
 
 1. Move details to .0agnostic/ or sub_layers

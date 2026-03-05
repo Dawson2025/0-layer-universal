@@ -8,6 +8,7 @@ resource_name: "README"
 
 Design documents for the context chain system. These are the **canonical source of truth** for context propagation, discovery, and chaining architecture.
 
+<!-- section_id: "5afafdf8-9a01-4695-8d54-ac4809e02e53" -->
 ## Documents
 
 | # | Document | Scope |
@@ -21,6 +22,7 @@ Design documents for the context chain system. These are the **canonical source 
 | 07 | `07_unified_sync_architecture.md` | Sync scripts, sync-main.sh orchestrator, execution order |
 | 08 | `08_discovery_temperature_model.md` | Hot/Warm/Cold discovery, promotion system, defense in depth |
 
+<!-- section_id: "631dac43-8bbb-4797-ab60-8cd125db78e3" -->
 ## Reading Order
 
 For a complete picture, read in this order:
@@ -34,6 +36,7 @@ For a complete picture, read in this order:
 7. **07** (sync) — how sync scripts orchestrate propagation
 8. **08** (discovery) — how agents discover context at Hot/Warm/Cold temperatures
 
+<!-- section_id: "3c18f804-193f-4838-bccf-2fb422446feb" -->
 ## Ancestry
 
 These documents supersede earlier design work at ancestor levels. The following ancestor docs now reference back here:

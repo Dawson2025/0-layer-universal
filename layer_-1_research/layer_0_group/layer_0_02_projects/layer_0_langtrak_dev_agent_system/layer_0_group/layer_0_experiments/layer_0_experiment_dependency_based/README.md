@@ -12,6 +12,7 @@ resource_name: "README"
 
 ---
 
+<!-- section_id: "7d9ad80b-1e1f-4b2f-bac3-50be61c148a1" -->
 ## Design
 
 This experiment implements the **dependency-based agent hierarchy** design:
@@ -33,6 +34,7 @@ This experiment implements the **dependency-based agent hierarchy** design:
 
 ---
 
+<!-- section_id: "e0d2bebf-bbef-48e6-aab7-7328e0f7c2d9" -->
 ## Agent Hierarchy
 
 ```
@@ -50,6 +52,7 @@ Total: 1 Manager + 7 Layer Agents + 38 Sub-Layer responsibilities = 46 logical u
 
 ---
 
+<!-- section_id: "f61ef757-c888-4a77-9bf0-fcf6e57c8c56" -->
 ## Inter-Layer Dependency Chain
 
 ```
@@ -60,6 +63,7 @@ Each arrow = "layer below provides an interface that layer above depends on."
 
 ---
 
+<!-- section_id: "a45d94e0-53d5-48fa-8acd-71b6a0be5cd6" -->
 ## Test Tasks
 
 | ID | Task | Layers Involved | Tests |
@@ -74,6 +78,7 @@ Each arrow = "layer below provides an interface that layer above depends on."
 
 ---
 
+<!-- section_id: "c060b263-a523-46fe-9f2c-9dbb78279f92" -->
 ## Evaluation Metrics
 
 | Metric | Weight | Measures |
@@ -89,6 +94,7 @@ Each arrow = "layer below provides an interface that layer above depends on."
 
 ---
 
+<!-- section_id: "0a4703d6-d7ac-48cf-a04a-43d609112202" -->
 ## Directory Structure
 
 ```
@@ -100,6 +106,7 @@ results/          # Aggregated metrics and comparison data
 
 ---
 
+<!-- section_id: "4c9c05f7-82c1-44dc-bd9c-0ffbd2b5511b" -->
 ## How to Run a Trial
 
 1. Pick a test task (T1-T7)

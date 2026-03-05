@@ -10,6 +10,7 @@ resource_name: "PORTING_STRATEGY"
 
 ---
 
+<!-- section_id: "b79abf52-f450-40c2-b806-51daa82c7979" -->
 ## Overview
 
 Porting to Gemini means mapping two things:
@@ -21,8 +22,10 @@ Gemini has no native `.0agnostic/` equivalent — you must manually implement th
 
 ---
 
+<!-- section_id: "e1f1de5f-5d5d-440b-a8af-b524c037eeee" -->
 ## Part 1: Porting 0AGNOSTIC.md → System Instructions & Configuration
 
+<!-- section_id: "de7c3975-9461-402f-b189-8b517a0f5c7f" -->
 ### Step 1: Extract STATIC Context
 
 Read the STATIC section of your 0AGNOSTIC.md:
@@ -39,6 +42,7 @@ Read the STATIC section of your 0AGNOSTIC.md:
 [Substantive status: phase, key findings, readiness]
 ```
 
+<!-- section_id: "e3a84b51-d7b0-4a22-84e4-8a8fe37808e8" -->
 ### Step 2: Map to Gemini System Instructions
 
 The STATIC section becomes your **system instruction**:
@@ -71,6 +75,7 @@ system_instruction = """
 """
 ```
 
+<!-- section_id: "1a691a9c-9247-48e8-8387-51d3aca2e107" -->
 ### Example: Identity Porting
 
 **From 0AGNOSTIC.md (STATIC)**:
@@ -121,6 +126,7 @@ Python, pandas, numpy, data ETL, performance optimization. You do NOT handle bus
 """
 ```
 
+<!-- section_id: "e3869c0c-068f-42cf-a33f-b5d1e990f8cf" -->
 ### Step 3: Porting Triggers
 
 STATIC triggers become **application-level conditional logic**:
@@ -159,6 +165,7 @@ response = client.models.generate_content(
 )
 ```
 
+<!-- section_id: "9aa28fc0-c1ab-42f2-875b-77852cf22d8e" -->
 ### Step 4: Porting Current Status
 
 Include status in system instructions for context:
@@ -179,10 +186,12 @@ This helps Gemini understand what's known, what's unknown, and where to focus.
 
 ---
 
+<!-- section_id: "8dd4265a-c5c5-4dd2-bcdf-3c3b4cd3e4c1" -->
 ## Part 2: Porting .0agnostic/ Directory → Application Implementation
 
 The `.0agnostic/` directory doesn't have a native Gemini equivalent. You must implement these patterns in your application code.
 
+<!-- section_id: "fc858003-b64a-4790-8b5c-0f5e4c83eba7" -->
 ### Mapping .0agnostic/ Directories
 
 | .0agnostic/ Directory | Gemini Port | How |
@@ -196,6 +205,7 @@ The `.0agnostic/` directory doesn't have a native Gemini equivalent. You must im
 | `06_context_avenue_web/` (skills) | Modular functions/methods in your application | Implement as Python functions or classes |
 | `07+_setup_dependant/` | Configuration files, environment variables | Load from config.json or env vars |
 
+<!-- section_id: "da6ab3c1-6007-4f87-b7f6-2c566bea5f7c" -->
 ### Detailed Porting Strategy
 
 #### 01_knowledge/ → Documentation + Context
@@ -607,6 +617,7 @@ response = client.models.generate_content(
 
 ---
 
+<!-- section_id: "93ea105e-dd46-4e6c-8b65-ac80e2bd6268" -->
 ## Part 3: Complete Integration Example
 
 Here's how to integrate everything together:
@@ -821,6 +832,7 @@ if __name__ == "__main__":
 
 ---
 
+<!-- section_id: "e027b92e-51c0-4973-92fc-a097b180fdd0" -->
 ## Part 4: Configuration File Template
 
 Create `.0agnostic/07+_setup_dependant/gemini_config.json`:
@@ -859,6 +871,7 @@ Create `.0agnostic/07+_setup_dependant/gemini_config.json`:
 
 ---
 
+<!-- section_id: "acb30a34-b57b-4f6c-b3ae-abb3e497871b" -->
 ## Part 5: Migration Checklist
 
 - [ ] Extract STATIC section from 0AGNOSTIC.md
@@ -881,6 +894,7 @@ Create `.0agnostic/07+_setup_dependant/gemini_config.json`:
 
 ---
 
+<!-- section_id: "4fe35f2a-b412-4b80-b478-f0fa38f93732" -->
 ## Summary
 
 Porting to Gemini requires:

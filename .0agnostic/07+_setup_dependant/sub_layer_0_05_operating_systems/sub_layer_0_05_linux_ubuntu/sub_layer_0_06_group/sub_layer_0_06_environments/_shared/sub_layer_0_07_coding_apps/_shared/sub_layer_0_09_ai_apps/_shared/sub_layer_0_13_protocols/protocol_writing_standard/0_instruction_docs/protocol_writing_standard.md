@@ -5,13 +5,16 @@ resource_name: "protocol_writing_standard"
 ---
 # Protocol Writing Standard
 
+<!-- section_id: "644d365e-17d9-487c-8ab7-814389509f78" -->
 ## Applicability
 **When to use:** Whenever creating or updating a protocol document at ANY layer (Universal, Project, Feature, or Component).
 **Where to use:** The very first section of any `.md` file that defines a protocol or standard operating procedure (SOP).
 
+<!-- section_id: "4e7585ab-45c3-44de-abde-1b0c6516fd96" -->
 ## The Rule
 Every protocol document **MUST** begin with an **Applicability** section immediately after the title.
 
+<!-- section_id: "dfb252da-42c0-438e-9f78-3ae715f6e4ec" -->
 ### Structure
 1.  **Title** (`# Protocol Name`)
 2.  **Applicability** (`## Applicability`)
@@ -20,11 +23,13 @@ Every protocol document **MUST** begin with an **Applicability** section immedia
     *   **Triggers:** What specific user requests or error states trigger this protocol?
 3.  **Body**: The actual rules and steps.
 
+<!-- section_id: "988beba8-0009-4af4-987d-33d6a6dc7698" -->
 ## Why?
 Efficiency. Agents scan documents to determine relevance. Placing "Applicability" at the top allows the agent to quickly decide whether to load the full context or skip it, saving context window space and processing time.
 
 ---
 
+<!-- section_id: "7e01757f-730e-4914-beae-743db8fb8cb8" -->
 ## OS and AI Tool Specificity Conventions
 
 To make it clear whether a protocol is **OS/tool‑agnostic** or tied to specific environments/tools, use the following pattern inside the **Applicability → Scope** field:

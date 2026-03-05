@@ -11,6 +11,7 @@ resource_name: "manager_agent"
 
 ---
 
+<!-- section_id: "8055f133-6089-4ecf-9298-71c70f7d3bb8" -->
 ## Responsibilities
 
 1. **Task Routing**: Analyze incoming tasks, identify which layer(s) are involved
@@ -18,14 +19,17 @@ resource_name: "manager_agent"
 3. **Result Aggregation**: Collect results from Layer Agents, synthesize final response
 4. **Status Overview**: Know the state of all Layer Agents (idle, working, blocked)
 
+<!-- section_id: "346dbc93-610b-4a88-b9c0-e53768d0bbb1" -->
 ## Context Model (~350 tokens)
 
+<!-- section_id: "00e8474b-3384-43aa-a3e0-c9aa03b0e01b" -->
 ### STATIC (always loaded)
 
 - Own identity and routing table
 - Layer summary (7 layers, what each does in 1 line)
 - Dependency chain: L2 → L3 → L4 → L5 → L6 → L7 → L8
 
+<!-- section_id: "3cb1bfee-386c-4862-a33a-ac14dd8cd94f" -->
 ### Routing Table
 
 | Keywords | Route To |
@@ -38,6 +42,7 @@ resource_name: "manager_agent"
 | project, dashboard, menu, storage type, variant | L7 ProjectsAgent |
 | team, invite, share, collaborate, member | L8 TeamsAgent |
 
+<!-- section_id: "0c05539a-bb33-44d6-aab1-0c7af0054af2" -->
 ### Multi-Layer Task Detection
 
 If a task mentions keywords from multiple layers:
@@ -45,6 +50,7 @@ If a task mentions keywords from multiple layers:
 2. Delegate to primary layer first
 3. If the primary agent needs data from another layer, it requests via interface
 
+<!-- section_id: "e6ec65ad-e658-40e4-8205-aae347daed73" -->
 ### Delegation Protocol
 
 ```
@@ -56,12 +62,14 @@ User Task → Manager analyzes keywords
   → Unknown? → Ask for clarification
 ```
 
+<!-- section_id: "1a875b6f-1d15-4a21-bd05-0f0dbd543b4d" -->
 ## Does NOT Know
 
 - Internal sub-layer structure of any layer
 - Implementation details of any feature
 - How to fix code directly
 
+<!-- section_id: "ad94a9cd-6ec0-427a-b311-49440485b158" -->
 ## Communication
 
 | Direction | With | Purpose |

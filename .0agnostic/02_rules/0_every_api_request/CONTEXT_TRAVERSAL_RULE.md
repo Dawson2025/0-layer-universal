@@ -5,9 +5,11 @@ resource_name: "CONTEXT_TRAVERSAL_RULE"
 ---
 # Context Traversal Rule
 
+<!-- section_id: "f2f96b9d-b64f-4abd-a291-7401e619bf61" -->
 ## Status
 **MANDATORY** - Applies to EVERY API request
 
+<!-- section_id: "2add72bf-2dc0-40c4-992a-f88ae6f3aa49" -->
 ## Rule
 
 Before starting any task, traverse the AI system to gather context:
@@ -17,6 +19,7 @@ Before starting any task, traverse the AI system to gather context:
 3. **Check relevant sub_layers** for applicable rules, prompts, knowledge
 4. **Read status.json** if exists to understand current state
 
+<!-- section_id: "aa2fd2e1-9c20-4d9a-bbde-eb9abef0f2fa" -->
 ## Why This Matters
 
 The layer-stage system contains context that informs how work should be done:
@@ -25,6 +28,7 @@ The layer-stage system contains context that informs how work should be done:
 - Sub_layers contain rules, prompts, and knowledge that may apply
 - status.json tracks progress and dependencies
 
+<!-- section_id: "ca56bd2e-b324-4792-9048-657ab9f79d29" -->
 ## Example Traversal
 
 Working in: `layer_1/layer_1_projects/project_foo/`
@@ -38,6 +42,7 @@ Read in order:
 6. `layer_1_projects/CLAUDE.md` (projects container)
 7. `project_foo/CLAUDE.md` (specific project)
 
+<!-- section_id: "61565543-54dc-46af-9b1e-eb4b35c32635" -->
 ## Integration
 
 This rule works with:

@@ -9,11 +9,14 @@ resource_name: "STATUS"
 
 ---
 
+<!-- section_id: "7b7a8cdd-6465-45c2-a595-12e04e7e9413" -->
 ## Current Session: Goals & Plan
 
+<!-- section_id: "b2ad4f8f-7d45-479c-9860-7e2c901b25ef" -->
 ### Request
 Set up secure credential storage and Termius Desktop across devices (Linux laptop, Windows) for seamless SSH management with cloud sync.
 
+<!-- section_id: "0ebfb6ca-9788-41a5-88af-34300152a945" -->
 ### Goals
 1. ✅ Set up `pass` (GPG-based password manager) on Linux laptop for secure credential storage
 2. ✅ Store Termius credentials in pass
@@ -21,6 +24,7 @@ Set up secure credential storage and Termius Desktop across devices (Linux lapto
 4. ⏳ Set up Termius on Windows (when booted)
 5. ⏳ Complete Windows SSH mesh integration
 
+<!-- section_id: "6ced3f69-8986-4486-a59e-24422078d87d" -->
 ### Why `pass` Instead of Alternatives?
 | Option | Decision | Reason |
 |:---|:---|:---|
@@ -28,6 +32,7 @@ Set up secure credential storage and Termius Desktop across devices (Linux lapto
 | Google Secret Manager | ❌ Rejected | 6 secret version free limit, then $0.06/secret/month |
 | pass (GPG) | ✅ Chosen | Free, unlimited secrets, encrypted, CLI-friendly |
 
+<!-- section_id: "16d64529-9d9a-4893-8be0-c72623e6d468" -->
 ### Current Execution Status
 
 | Step | Status | Notes |
@@ -40,6 +45,7 @@ Set up secure credential storage and Termius Desktop across devices (Linux lapto
 | Store Termius credentials | ✅ Done | `pass insert termius/email` and `termius/password` stored |
 | Log into Termius Desktop | ✅ Done | Automated login via xdotool, hosts synced from iPhone |
 
+<!-- section_id: "acb40972-b4ef-4ff8-b3f9-d89ce81a1769" -->
 ### Commands to Complete Setup (from iPhone SSH)
 
 ```bash
@@ -54,6 +60,7 @@ pass insert termius/password
 
 ---
 
+<!-- section_id: "6ba6bc30-7c27-47d2-a7c6-2ec11b22d54e" -->
 ## Current System State
 
 | Device | Status | Sync Mode | Connection | Notes |
@@ -62,6 +69,7 @@ pass insert termius/password
 | **Hetzner VPS** | 🟢 **Online** | Send & Receive | Always on | Relay server at 46.224.184.10 |
 | **Windows/WSL** | ⏸️ Offline | Send & Receive | VPS via IPv6 | Will connect when booted |
 
+<!-- section_id: "94c6528f-cbe2-4706-8d4f-2cf3f2038e1e" -->
 ## Architecture Overview
 
 ```
@@ -84,6 +92,7 @@ pass insert termius/password
 
 ---
 
+<!-- section_id: "a7889c48-f5e5-4682-bc34-cde92b129e83" -->
 ## Sync Verification Status
 
 | Direction | Status | Verified Date |
@@ -93,10 +102,12 @@ pass insert termius/password
 
 ---
 
+<!-- section_id: "4a089f1d-b71a-4406-a61a-7b982052965a" -->
 ## FOR UBUNTU AGENTS: PRIORITY TASK
 
 **When you boot into Ubuntu, complete the following verification steps:**
 
+<!-- section_id: "2076f3ad-909c-49bb-bc19-f12e8649fc72" -->
 ### Step 1: Verify Syncthing is Running
 ```bash
 # Check Syncthing status
@@ -109,6 +120,7 @@ systemctl --user start syncthing
 xdg-open http://localhost:8384
 ```
 
+<!-- section_id: "fdb4cf18-899c-4afb-984a-a861b8a21cb5" -->
 ### Step 2: Check VPS Connection
 In the Syncthing GUI (http://localhost:8384):
 - **Hetzner-VPS** should show as connected (green)
@@ -120,6 +132,7 @@ Or via command line:
 curl -s http://localhost:8384/rest/system/connections | grep -A5 "JTAFCHA"
 ```
 
+<!-- section_id: "4f999476-f588-406c-9d10-d502df95fe7f" -->
 ### Step 3: Verify Windows Test File Synced
 
 **THIS IS THE KEY VERIFICATION STEP**
@@ -136,6 +149,7 @@ cat ~/dawson-workspace/SYNC_TEST_WINDOWS_TO_UBUNTU.md
 
 **If this file exists and is readable, the bidirectional dual boot sync is FULLY VERIFIED!**
 
+<!-- section_id: "6ba1478d-cd89-45ef-b2c7-7c0ad881b997" -->
 ### Step 4: Update This Documentation
 
 After verifying the sync works, update this STATUS.md file:
@@ -151,6 +165,7 @@ git commit -m "Verify Windows → Ubuntu sync working"
 git push
 ```
 
+<!-- section_id: "54102e3a-d1aa-4585-8aad-02a3c4b4ebaa" -->
 ### Step 5: (Optional) Quick Verification Script
 ```bash
 ~/dawson-workspace/code/0_layer_universal/0_context/-1_research/-1.01_things_researched/multi_os_system/ubuntu-quick-check.sh
@@ -158,14 +173,17 @@ git push
 
 ---
 
+<!-- section_id: "1ab421a8-633d-472c-930b-4096df9ba767" -->
 ## What's Working
 
+<!-- section_id: "29498cc4-0ce2-44a7-ba0b-1cdd712fc44c" -->
 ### Syncthing Three-Way Sync
 - **Ubuntu ↔ VPS:** ✅ Configured and tested
 - **Windows ↔ VPS:** ✅ Connected and verified (2026-01-12)
 - **Sync Folder:** `dawson-workspace` (only folder - "Default Folder" removed 2026-01-17)
 - **Sync Status:** Complete, all devices connected
 
+<!-- section_id: "7edeb790-f851-4eab-98c7-1bae05537411" -->
 ### SSH Access (Full Mesh)
 
 | From | To | Status | Method |
@@ -176,6 +194,7 @@ git push
 | **iPhone** | Linux | ✅ Working | Termius + SSH key (2026-01-17) |
 | **Windows** | VPS | ✅ Working | `ssh -i ~/.ssh/id_ed25519 root@46.224.184.10` |
 
+<!-- section_id: "5866584a-f43a-41bd-a04b-293f1f7c5ff5" -->
 ### SSH Key Architecture
 
 Each device has its own SSH key pair. The public key is added to `~/.ssh/authorized_keys` on each server the device needs to access.
@@ -195,6 +214,7 @@ Each device has its own SSH key pair. The public key is added to `~/.ssh/authori
 
 **Principle:** One key per device, add public key to all target servers.
 
+<!-- section_id: "25c4da95-3890-4ca7-9dce-269db38c316a" -->
 ### Termius Setup (iPhone)
 
 | Configuration | Status |
@@ -204,6 +224,7 @@ Each device has its own SSH key pair. The public key is added to `~/.ssh/authori
 | VPS Host | ✅ Configured (SSH key auth) |
 | Linux Host | ✅ Configured (SSH key auth) |
 
+<!-- section_id: "fbcfb5e5-2b42-4137-bfd4-4600da5695b7" -->
 ### Pass Password Manager (Linux Laptop)
 
 | Component | Status | Details |
@@ -245,6 +266,7 @@ pass ls
 # First use requires GPG passphrase, then cached for 8 hours
 ```
 
+<!-- section_id: "f09ac51f-f6ec-4b06-9696-616c44738bdb" -->
 ### Termius CLI/API Status
 
 | Option | Status | Notes |
@@ -256,6 +278,7 @@ pass ls
 
 **Conclusion:** Termius hosts must be added manually via the iPhone/desktop app. No free programmatic access available.
 
+<!-- section_id: "d34045d2-8c47-4ab2-bca9-fa240da23f09" -->
 ### Termius Desktop Automation (Linux)
 
 | Capability | Status | Notes |
@@ -297,6 +320,7 @@ ssh -f -N -L 9222:localhost:9222 linux
 ssh linux "DISPLAY=:0 xdotool windowactivate --sync 52428805 && DISPLAY=:0 xdotool key Tab"
 ```
 
+<!-- section_id: "85d0e8df-44c8-4ae3-a7bd-4e385a4971e0" -->
 ### GUI Automation Learnings (xdotool via SSH)
 
 **What Works:**
@@ -356,6 +380,7 @@ scp linux:/tmp/state.png /tmp/state.png
 5. Escape key can reset forms/close dialogs if something goes wrong
 6. Restarting the app gives a clean state when automation gets stuck
 
+<!-- section_id: "7d8e91ee-c6b7-41a7-8c4a-a477c8b4d5d9" -->
 ### Test Files for Verification
 
 | File | Created On | Status |
@@ -365,8 +390,10 @@ scp linux:/tmp/state.png /tmp/state.png
 
 ---
 
+<!-- section_id: "c7cf521f-800f-4e28-83b4-c187e936567d" -->
 ## Key Configuration Details
 
+<!-- section_id: "89f1a22d-e29a-4d48-bafd-d10703b60479" -->
 ### Syncthing Device IDs
 | Device | ID |
 | :--- | :--- |
@@ -374,6 +401,7 @@ scp linux:/tmp/state.png /tmp/state.png
 | Windows/WSL | `IF2WOGZ-RVSVKT3-RCRN3TT-6NDFXQX-KCCCFPW-ABIWRWT-3BFX37C-CDHKTAN` |
 | Hetzner VPS | `JTAFCHA-VWKO4GU-W5N6GWM-GHAZC6Y-GCLT4VI-PWAXY45-UBCP3RJ-2ZPJWQR` |
 
+<!-- section_id: "0243e1b5-749a-428d-8a96-318840873149" -->
 ### VPS Details
 - **IP:** 46.224.184.10
 - **IPv6:** 2a01:4f8:1c1a:885b::1
@@ -382,6 +410,7 @@ scp linux:/tmp/state.png /tmp/state.png
 - **SSH:** `ssh -i ~/.ssh/id_ed25519 root@46.224.184.10` or `ssh vps` (from Linux)
 - **Sync Folder on VPS:** `/root/sync/dawson-workspace`
 
+<!-- section_id: "d9afcf6e-6c65-49f8-a92c-e8cddc922840" -->
 ### Tailscale Network
 
 | Device | Tailscale IP | Status |
@@ -390,6 +419,7 @@ scp linux:/tmp/state.png /tmp/state.png
 | VPS | 100.93.148.5 | ✅ Connected |
 | iPhone | 100.75.210.27 | ✅ Connected |
 
+<!-- section_id: "29cb6e9f-cf36-4329-b9e3-5e58bdbeebd1" -->
 ### Syncthing Ports
 - 22000/TCP - Data transfer
 - 21027/UDP - Local discovery
@@ -397,8 +427,10 @@ scp linux:/tmp/state.png /tmp/state.png
 
 ---
 
+<!-- section_id: "f5264899-a95b-4649-ae49-5b7a163fa4f5" -->
 ## Automation & Self-Healing
 
+<!-- section_id: "a9be2ece-872d-4a17-898e-582b958ca8ed" -->
 ### Automated Health Monitoring (Ubuntu)
 
 | Component | Type | Status | Notes |
@@ -417,6 +449,7 @@ scp linux:/tmp/state.png /tmp/state.png
 systemctl --user list-timers sync-health.timer
 ```
 
+<!-- section_id: "22f572cd-7039-47aa-b60d-f327bb1e5343" -->
 ### Automated Health Monitoring (VPS)
 
 | Component | Type | Status | Notes |
@@ -424,6 +457,7 @@ systemctl --user list-timers sync-health.timer
 | Syncthing service | systemd system service | ✅ Enabled | Auto-starts on boot |
 | inotify limits | sysctl | ✅ Configured | 524288 watches (increased from 29504) |
 
+<!-- section_id: "092e31a3-aca4-4791-84c2-c078c136d36c" -->
 ### What's Automated
 
 1. **Syncthing auto-start** - Both Ubuntu and VPS start Syncthing automatically
@@ -432,6 +466,7 @@ systemctl --user list-timers sync-health.timer
 4. **VPS connection monitoring** - Health script verifies Ubuntu ↔ VPS connectivity
 5. **Log rotation** - Old health logs cleaned up after 7 days
 
+<!-- section_id: "3adf4f97-c9a0-4531-85b4-c68b107b9641" -->
 ### What Requires Manual Attention
 
 1. **Stale directories** - Occasionally need manual cleanup (directories deleted on one device but containing ignored files on another)
@@ -441,6 +476,7 @@ systemctl --user list-timers sync-health.timer
 
 ---
 
+<!-- section_id: "1390b269-bac1-4c0d-b1f8-fb66c8f23bb3" -->
 ## Recent Log
 
 - **2026-01-25 18:54:** ✅ **Automation setup complete!** Added health monitoring timer (30 min), VPS systemd service, increased inotify limits. Cleaned 17 stale sync errors from old `sub*2_projects` directories.
@@ -467,6 +503,7 @@ systemctl --user list-timers sync-health.timer
 
 ---
 
+<!-- section_id: "db297162-4f25-491d-b300-cce096f550e8" -->
 ## Completed Tasks
 
 1. ✅ Create Hetzner VPS as relay server
@@ -494,8 +531,10 @@ systemctl --user list-timers sync-health.timer
 23. ✅ **Increase VPS inotify limits** - Set to 524288 for better file watching (2026-01-25)
 24. ✅ **Clean up stale sync directories** - Deleted old `sub*2_projects` dirs causing 17 sync errors (2026-01-25)
 
+<!-- section_id: "b518de2e-f9fe-413b-b544-d65db1f85b62" -->
 ## Pending Tasks
 
+<!-- section_id: "e871558f-f82e-470d-a208-19043d082749" -->
 ### Windows Setup (When Booted)
 1. ⏳ **Windows: Enable OpenSSH Server** - Required for full mesh SSH
 2. ⏳ **Windows: Get Tailscale IP** - Need IP for SSH config and Termius
@@ -504,6 +543,7 @@ systemctl --user list-timers sync-health.timer
 5. ⏳ **Add Windows host to iPhone Termius** - Manual setup required
 6. ⏳ **Termius Host Groups & Keys via AutoHotkey** - Automate host group creation and SSH key import (see Windows Automation section below)
 
+<!-- section_id: "183c591c-eec6-494a-b1e6-9e7ce2c8a656" -->
 ### Windows GUI Automation (AutoHotkey)
 
 **Why Windows for Termius Automation?**
@@ -576,14 +616,17 @@ CreateHostGroup(groupName) {
 
 **Note:** Unlike Linux xdotool, AutoHotkey can reliably click on Electron app buttons because it uses Windows native APIs that Electron properly responds to.
 
+<!-- section_id: "6c13e937-7640-477d-9d68-01e0aef81a19" -->
 ### Future
 6. ⏳ **Monitor Oracle Cloud ticket** - May migrate to free tier if approved
 7. ⏳ **Test full mesh connectivity** - All devices SSH to all others
 
 ---
 
+<!-- section_id: "5a034837-0d0a-4c54-aef9-1425bc159b0e" -->
 ## Troubleshooting
 
+<!-- section_id: "83d51040-8eb3-47a8-b34a-3766ed91056d" -->
 ### Ubuntu: Syncthing not running
 ```bash
 # Check status
@@ -596,12 +639,14 @@ systemctl --user start syncthing
 journalctl --user -u syncthing -f
 ```
 
+<!-- section_id: "e0d952c3-691d-4571-8e25-717ce1dc635e" -->
 ### Ubuntu: Files not syncing
 1. Check folder status in Syncthing GUI (http://localhost:8384)
 2. Look for "Out of Sync" items
 3. Check `.stignore` file for excluded patterns
 4. Force rescan: `curl -X POST http://localhost:8384/rest/db/scan?folder=dawson-workspace`
 
+<!-- section_id: "ff88c49a-b5a5-4d93-b14e-5fd1849cece4" -->
 ### SSH connection issues
 - Ensure using correct key: `~/.ssh/id_ed25519`
 - VPS IP: 46.224.184.10
@@ -609,6 +654,7 @@ journalctl --user -u syncthing -f
 
 ---
 
+<!-- section_id: "bc56a7fd-9442-49c3-bab3-44de7eb029b0" -->
 ## Related Documentation
 
 - [VPS_CREDENTIALS.md](./VPS_CREDENTIALS.md) - Full VPS access details

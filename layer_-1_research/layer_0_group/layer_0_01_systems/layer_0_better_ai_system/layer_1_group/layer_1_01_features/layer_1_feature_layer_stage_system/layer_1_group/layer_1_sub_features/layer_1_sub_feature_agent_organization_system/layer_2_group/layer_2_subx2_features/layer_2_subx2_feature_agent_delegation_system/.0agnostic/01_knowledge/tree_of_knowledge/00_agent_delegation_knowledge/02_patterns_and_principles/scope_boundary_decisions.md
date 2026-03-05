@@ -5,6 +5,7 @@ resource_name: "scope_boundary_decisions"
 ---
 # Topic: Scope Boundary Decisions
 
+<!-- section_id: "567ee69c-2cc5-4738-aeca-e82b22c4d4d9" -->
 ## Summary
 
 When an agent reaches the boundary of its layer or stage scope, it must make a **delegation decision** with three options:
@@ -17,10 +18,12 @@ The default should be **delegate**. The key factor driving the decision is **con
 
 Scope boundaries exist at two levels: **stage boundaries** (work belonging to another stage within the same entity) and **layer boundaries** (work belonging to a sibling, parent, or child entity).
 
+<!-- section_id: "aa9c499d-39f6-47c6-acbf-4c13311b7664" -->
 ## Discovery
 
 Discovered through practice: agents working in one stage would naturally encounter work belonging to other stages or entities. Without a framework for making the decision, agents would either try to do everything (context overflow) or hand off everything (even trivial work).
 
+<!-- section_id: "3b04049e-3465-419c-811d-7be5adbb0951" -->
 ## Key Points
 
 - Formalized as **Principle 8** in the Stage Delegation Principles
@@ -28,6 +31,7 @@ Discovered through practice: agents working in one stage would naturally encount
 - Decision factors: size of work, coupling, context window capacity, whether an agent exists, domain knowledge needed
 - Default is always delegate — spawning an agent is cheap, confused context is expensive
 
+<!-- section_id: "c8bdec9e-12ed-455b-8ab7-c5aacb5f10f4" -->
 ## References
 
 | What | Where |

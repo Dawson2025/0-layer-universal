@@ -5,12 +5,14 @@ resource_name: "APP_PY_CLEANED_STATUS"
 ---
 # app.py Cleanup - Final Status
 
+<!-- section_id: "58dda41c-461c-44ec-8350-67c2e24df4a7" -->
 ## ✅ SUCCESS: app.py is Now Minimal!
 
 **Date:** October 16, 2025
 
 ---
 
+<!-- section_id: "b6c9a2a3-533e-4a85-932e-40ae5b7fd217" -->
 ## Before vs After
 
 | Metric | Before | After | Reduction |
@@ -21,8 +23,10 @@ resource_name: "APP_PY_CLEANED_STATUS"
 
 ---
 
+<!-- section_id: "c236bcb1-7867-4adc-a214-7afe98f00df0" -->
 ## Routes Removed (49 routes extracted to features)
 
+<!-- section_id: "bfe307d2-c17c-4507-81a5-acd6089c8c36" -->
 ### ✅ Phonemes Routes → `features/phonemes/`
 - `/phonemes` (menu)
 - `/phonemes/flat`
@@ -34,6 +38,7 @@ resource_name: "APP_PY_CLEANED_STATUS"
 
 **Extracted to:** `features/phonemes/display.py` and `features/phonemes/menu.py`
 
+<!-- section_id: "da9be143-710c-4c1f-a0a3-99978f5c56f2" -->
 ### ✅ Admin Routes → `features/admin/`
 - `/admin` (dashboard)
 - `/api/admin/add-phoneme`
@@ -56,6 +61,7 @@ resource_name: "APP_PY_CLEANED_STATUS"
 
 **Extracted to:** `features/admin/dashboard.py`, `features/admin/phoneme_management.py`, `features/admin/template_system.py`, `features/admin/database_tools.py`
 
+<!-- section_id: "4f531d2d-8f35-4149-8eaa-e9ba32f9c98d" -->
 ### ✅ Template Routes → `features/admin/`
 - `/api/templates` (POST)
 - `/api/templates/<int:template_id>` (DELETE)
@@ -63,6 +69,7 @@ resource_name: "APP_PY_CLEANED_STATUS"
 
 **Extracted to:** `features/admin/template_system.py`
 
+<!-- section_id: "3e6bda6b-cd1b-4827-89b6-205c4c19b4df" -->
 ### ✅ Auth Routes → `features/auth/`
 - `/login`
 - `/register`
@@ -72,6 +79,7 @@ resource_name: "APP_PY_CLEANED_STATUS"
 
 **Extracted to:** `features/auth/login.py`, `features/auth/registration.py`, `features/auth/firebase_auth.py`
 
+<!-- section_id: "72bc78e4-8842-4a01-a85f-fc6d9a447afd" -->
 ### ✅ Projects Routes → `features/projects/`
 - `/projects` (list)
 - `/projects/group/<group_id>`
@@ -94,6 +102,7 @@ resource_name: "APP_PY_CLEANED_STATUS"
 
 **Extracted to:** `features/projects/display.py`, `features/projects/creation.py`, `features/projects/editing.py`, `features/projects/storage_ops.py`, `features/projects/context.py`, `features/projects/api.py`
 
+<!-- section_id: "80d43d6f-9698-4da8-a23e-4601b74e2ad4" -->
 ### ✅ Dashboard Route → `features/dashboard/`
 - `/dashboard`
 
@@ -101,10 +110,12 @@ resource_name: "APP_PY_CLEANED_STATUS"
 
 ---
 
+<!-- section_id: "cdac5447-c2a0-46bb-a903-6f73498c28c6" -->
 ## Routes Remaining in app.py (8 routes - intentional)
 
 These routes remain in app.py for valid architectural reasons:
 
+<!-- section_id: "38619aa3-573d-4935-b4ce-84dc59994e09" -->
 ### 1. Application Entry Points (2 routes)
 ```python
 @app.route('/')                    # Root redirect logic
@@ -112,12 +123,14 @@ These routes remain in app.py for valid architectural reasons:
 ```
 **Reason:** Core application routing and monitoring
 
+<!-- section_id: "ba8630a8-c8dc-4ba3-b6fd-83581523536d" -->
 ### 2. Main Menu (1 route)
 ```python
 @app.route('/main-menu')           # Project context menu
 ```
 **Reason:** Cross-feature navigation hub (could be extracted to a 'menu' feature later)
 
+<!-- section_id: "c255588b-15df-4c1a-ae51-668b77d4ce8b" -->
 ### 3. TTS API Routes (3 routes)
 ```python
 @app.route('/api/tts/ipa', methods=['POST'])
@@ -126,12 +139,14 @@ These routes remain in app.py for valid architectural reasons:
 ```
 **Reason:** Service layer functionality (could be extracted to `services/tts/` later)
 
+<!-- section_id: "d37edd7e-328f-4e45-b771-e0230f767258" -->
 ### 4. Media Serving (1 route)
 ```python
 @app.route('/videos/<path:filename>')
 ```
 **Reason:** Static file serving (could be extracted to a media feature later)
 
+<!-- section_id: "16849643-d363-4d24-9b20-9abb09a328f3" -->
 ### 5. Test Route (1 route)
 ```python
 @app.route('/test-audio')
@@ -140,6 +155,7 @@ These routes remain in app.py for valid architectural reasons:
 
 ---
 
+<!-- section_id: "8d700068-8370-435a-8d48-c436c7b6d70d" -->
 ## Current app.py Structure
 
 ```python
@@ -204,14 +220,17 @@ if __name__ == '__main__':
 
 ---
 
+<!-- section_id: "3f150816-78ae-4816-99d9-04d2d84408c1" -->
 ## Verification
 
+<!-- section_id: "b6a13035-e3df-4750-8b78-498df02d2184" -->
 ### ✅ App Imports Successfully
 ```bash
 $ python -c "import app"
 # Success!
 ```
 
+<!-- section_id: "55e8f555-3ee4-4206-a577-827b207ff0b4" -->
 ### ✅ All Blueprints Registered
 - `auth_bp` ✅
 - `projects_bp` ✅
@@ -223,8 +242,10 @@ $ python -c "import app"
 
 ---
 
+<!-- section_id: "48a60328-6e47-48e7-9877-16102eafcc5f" -->
 ## Isolation Status
 
+<!-- section_id: "5449cc11-3994-46e3-ba9d-eaf6241821a6" -->
 ### ✅ Fully Isolated Features (Zero conflicts)
 
 Each feature is now completely isolated in its own module:
@@ -243,20 +264,24 @@ Each feature is now completely isolated in its own module:
 
 ---
 
+<!-- section_id: "c271cad9-5660-41cb-99c6-95be5ee0fb4f" -->
 ## Optional Future Improvements
 
 The 8 remaining routes in app.py could be further extracted:
 
+<!-- section_id: "25a08e4e-b3dd-4c8d-8307-1b70f13204ff" -->
 ### 1. Main Menu Route
 - **Current:** `app.py` (84 lines)
 - **Could move to:** `features/menu/` or `features/dashboard/`
 - **Benefit:** Better organization
 
+<!-- section_id: "354832d7-fbb3-43cf-b586-0449d1e1422d" -->
 ### 2. TTS Routes (3 routes)
 - **Current:** `app.py` (~90 lines)
 - **Could move to:** `services/tts/routes.py` or `features/tts/`
 - **Benefit:** Service isolation
 
+<!-- section_id: "ccd27df9-9a16-45d0-8077-85de8086d4e8" -->
 ### 3. Video Serving
 - **Current:** `app.py` (15 lines)
 - **Could move to:** `features/media/` or stay as utility
@@ -266,6 +291,7 @@ The 8 remaining routes in app.py could be further extracted:
 
 ---
 
+<!-- section_id: "8d3f85ab-8e7d-4426-880d-0acca802549b" -->
 ## Success Metrics
 
 | Goal | Target | Achieved | Status |
@@ -278,8 +304,10 @@ The 8 remaining routes in app.py could be further extracted:
 
 ---
 
+<!-- section_id: "d8e33d4e-1f7c-4d33-b8d2-357d63244cb7" -->
 ## Conclusion
 
+<!-- section_id: "37607762-6fb4-4a03-8d25-3a533197afa5" -->
 ### 🎉 app.py is NO LONGER a Monolith!
 
 **What we accomplished:**

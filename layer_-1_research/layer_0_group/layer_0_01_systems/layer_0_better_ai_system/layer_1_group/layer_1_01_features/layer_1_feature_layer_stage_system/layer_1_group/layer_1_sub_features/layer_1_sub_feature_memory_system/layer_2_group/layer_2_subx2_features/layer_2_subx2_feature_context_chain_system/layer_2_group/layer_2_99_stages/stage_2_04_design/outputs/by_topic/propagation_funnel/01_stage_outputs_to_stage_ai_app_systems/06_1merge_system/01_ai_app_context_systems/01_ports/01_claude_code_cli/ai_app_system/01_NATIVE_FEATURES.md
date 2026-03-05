@@ -10,6 +10,7 @@ resource_name: "01_NATIVE_FEATURES"
 
 ---
 
+<!-- section_id: "5d142bcf-5c95-46f7-90b6-01f09800326d" -->
 ## Overview
 
 Codex CLI's native context system provides these built-in mechanisms:
@@ -26,8 +27,10 @@ Codex CLI's native context system provides these built-in mechanisms:
 
 ---
 
+<!-- section_id: "4d70ff5d-518b-48c1-beee-a4f14900bd8b" -->
 ## 1. Three-Level AGENTS.md Hierarchy
 
+<!-- section_id: "039b8cfe-5d00-4f9a-85ef-06a756b93586" -->
 ### The Mechanism
 
 Codex automatically loads AGENTS.md files in three-level cascade:
@@ -40,6 +43,7 @@ Codex automatically loads AGENTS.md files in three-level cascade:
 /workspace/subdir/AGENTS.md (workspace/directory-specific, lowest priority)
 ```
 
+<!-- section_id: "8c37aa18-e976-44a2-afc4-5ac8dfcc1c47" -->
 ### What Codex Does
 
 - **Reads** all AGENTS.md files found in hierarchy
@@ -48,6 +52,7 @@ Codex automatically loads AGENTS.md files in three-level cascade:
 - **Reloads** on directory change
 - **No user action required** — automatic discovery and cascade
 
+<!-- section_id: "cc915633-3926-4bcb-b5e8-33ebe592ad52" -->
 ### What Codex Does NOT Do
 
 - Doesn't create AGENTS.md files (you must create them)
@@ -58,8 +63,10 @@ Codex automatically loads AGENTS.md files in three-level cascade:
 
 ---
 
+<!-- section_id: "de5d8724-5b2c-4aec-ad0d-b9457f5df29d" -->
 ## 2. Config.toml Shared Configuration
 
+<!-- section_id: "d4d34105-90da-4308-92c2-5267f1905381" -->
 ### The Mechanism
 
 Codex reads workspace-wide settings from `config.toml`:
@@ -67,6 +74,7 @@ Codex reads workspace-wide settings from `config.toml`:
 **Global**: `~/.codex/config.toml` (applies to all workspaces)
 **Project**: `/project/config.toml` (applies to this project only)
 
+<!-- section_id: "685dcc37-d9bc-4508-a43f-b1ca21661119" -->
 ### What Codex Does
 
 - **Discovers** config.toml in project root
@@ -75,6 +83,7 @@ Codex reads workspace-wide settings from `config.toml`:
 - **Merges** with global config (project overrides global)
 - **Reloads** on config file change
 
+<!-- section_id: "6964b463-b485-4c31-b91a-c3d0b611af9d" -->
 ### Settings Available
 
 | Setting | Type | Default | Purpose |
@@ -87,6 +96,7 @@ Codex reads workspace-wide settings from `config.toml`:
 | `session_persistence` | bool | true | Save/resume conversations |
 | `github_integration` | bool | true | Link to GitHub repos |
 
+<!-- section_id: "ed49698c-09f6-453b-b6d0-a5f379feda00" -->
 ### What Codex Does NOT Do
 
 - Doesn't validate config values (accepts invalid settings)
@@ -96,8 +106,10 @@ Codex reads workspace-wide settings from `config.toml`:
 
 ---
 
+<!-- section_id: "391c23ad-d335-441f-b0a6-054cf0df8728" -->
 ## 3. Session Persistence
 
+<!-- section_id: "40019f73-6fc4-4ca3-b5f9-f014c311d93d" -->
 ### The Mechanism
 
 Codex automatically saves and restores conversation state:
@@ -115,6 +127,7 @@ Codex automatically saves and restores conversation state:
 - Restores context
 - Allows continuing previous conversation
 
+<!-- section_id: "c94d15e3-29a9-42bf-a872-1868f228833b" -->
 ### What Codex Does
 
 - **Creates** new session directory on project init
@@ -124,6 +137,7 @@ Codex automatically saves and restores conversation state:
 - **Maintains** session metadata (duration, turn count)
 - **Indexes** sessions for quick lookup
 
+<!-- section_id: "affcba6f-97ec-422f-b51d-084594b96df9" -->
 ### What Codex Does NOT Do
 
 - Doesn't auto-cleanup old sessions (manual deletion required)
@@ -134,8 +148,10 @@ Codex automatically saves and restores conversation state:
 
 ---
 
+<!-- section_id: "f9f59175-df65-4138-95cd-fa654cec5952" -->
 ## 4. IDE Extensions
 
+<!-- section_id: "f88a5cad-bd62-40d7-bdd1-97a99aeee4d7" -->
 ### The Mechanism
 
 Codex integrates with three major IDEs via native extensions:
@@ -160,6 +176,7 @@ Reads: AGENTS.md + config.toml
 Agent-first interface, Flow mode (agentic execution)
 ```
 
+<!-- section_id: "eedb6041-3bfc-40a6-bf07-21c99f98548e" -->
 ### What Codex Does
 
 - **Discovers** IDE environment (VS Code, Cursor, Windsurf)
@@ -168,6 +185,7 @@ Agent-first interface, Flow mode (agentic execution)
 - **Syncs** state between CLI and IDE
 - **Respects** IDE-specific context (currently open file, selection, line number)
 
+<!-- section_id: "21069982-2f6f-4f64-952c-30cf110fde9a" -->
 ### What Codex Does NOT Do
 
 - Doesn't modify IDE keyboard shortcuts (IDE manages keybindings)
@@ -177,8 +195,10 @@ Agent-first interface, Flow mode (agentic execution)
 
 ---
 
+<!-- section_id: "5fbcea65-43c7-4893-9fb1-50c80a529bf6" -->
 ## 5. Context Window Management
 
+<!-- section_id: "2c5dee12-a71a-46f0-b103-e618f71861e1" -->
 ### The Mechanism
 
 Codex tracks token usage and manages context windows:
@@ -195,6 +215,7 @@ Codex tracks token usage and manages context windows:
 - Tool outputs (from MCP calls)
 - System prompt overhead
 
+<!-- section_id: "670b2a62-5da1-449f-8b1d-a75f73dee958" -->
 ### What Codex Does
 
 - **Counts** tokens as context fills
@@ -203,6 +224,7 @@ Codex tracks token usage and manages context windows:
 - **Reports** usage via `/context` command
 - **Adjusts** model behavior based on window size
 
+<!-- section_id: "bb1f26ef-dd2e-4b13-9c03-f1808920c79c" -->
 ### What Codex Does NOT Do
 
 - Doesn't have auto-compaction (manually manages via truncation)
@@ -212,8 +234,10 @@ Codex tracks token usage and manages context windows:
 
 ---
 
+<!-- section_id: "6f3e20dc-cc22-49aa-a21b-9e61a9520a7f" -->
 ## 6. Model Selection
 
+<!-- section_id: "4ff4068e-82a8-42c6-9c1c-68b5accacbe4" -->
 ### The Mechanism
 
 Codex provides multiple models with different capabilities:
@@ -234,6 +258,7 @@ Codex provides multiple models with different capabilities:
 | medium | Standard reasoning | 10-30s | 2x | Most tasks |
 | high | Deep chain-of-thought | 30-120s | 4x | Complex problems, math, logic |
 
+<!-- section_id: "79531eca-d53e-4eaf-958b-0ea3ac4e0982" -->
 ### What Codex Does
 
 - **Accepts** model selection via CLI flag (`--model codex-opus`)
@@ -242,6 +267,7 @@ Codex provides multiple models with different capabilities:
 - **Routes** requests to correct backend (API endpoint)
 - **Reports** token usage and cost estimates
 
+<!-- section_id: "1053ac1e-f215-4775-b68a-501da5a329e4" -->
 ### What Codex Does NOT Do
 
 - Doesn't auto-select models (user decides)
@@ -251,8 +277,10 @@ Codex provides multiple models with different capabilities:
 
 ---
 
+<!-- section_id: "4822d18b-2c75-470b-b8bb-9c1c683a4a5a" -->
 ## 7. Model Context Protocol (MCP)
 
+<!-- section_id: "6b4126c9-cdd6-4fb3-b7fd-3c2b1733e2ef" -->
 ### The Mechanism
 
 MCP servers extend Codex with external tools:
@@ -268,6 +296,7 @@ MCP Server
 Codex receives tool outputs in context
 ```
 
+<!-- section_id: "ea986211-09df-4cbb-bede-ebfe5b3c17ba" -->
 ### What Codex Does
 
 - **Discovers** available MCP servers (from config)
@@ -276,6 +305,7 @@ Codex receives tool outputs in context
 - **Streams** results back into context
 - **Manages** tool failures and timeouts (30s default)
 
+<!-- section_id: "f3a7d7a8-adff-4df7-a0b7-e4eda4a49622" -->
 ### What Codex Does NOT Do
 
 - Doesn't create MCP servers (requires separate setup)
@@ -285,8 +315,10 @@ Codex receives tool outputs in context
 
 ---
 
+<!-- section_id: "76539d5f-5e54-44bb-9f09-6d374daea870" -->
 ## 8. GitHub Integration
 
+<!-- section_id: "432552bb-3b76-4b0a-89c9-e22dfa5562bc" -->
 ### The Mechanism
 
 Codex can initialize and sync with GitHub repositories:
@@ -306,6 +338,7 @@ Links to GitHub workspace
 - Can integrate commit history
 - Syncs workspace state to GitHub (optional)
 
+<!-- section_id: "673f48ed-4d43-4ce6-ad78-6a75ee906828" -->
 ### What Codex Does
 
 - **Accepts** GitHub URLs for project init
@@ -314,6 +347,7 @@ Links to GitHub workspace
 - **Links** local state to GitHub project
 - **Enables** git-aware context (branch info, recent commits)
 
+<!-- section_id: "c4f8745f-eccc-4f82-8112-0b880d821e58" -->
 ### What Codex Does NOT Do
 
 - Doesn't manage git commands (user runs `git` directly)
@@ -323,8 +357,10 @@ Links to GitHub workspace
 
 ---
 
+<!-- section_id: "89f2b9a5-bf0c-443b-a7f8-980666774204" -->
 ## 9. Cloud Workspace Platform
 
+<!-- section_id: "28c7f46d-540c-471a-9ec3-5e5f77767f86" -->
 ### The Mechanism
 
 Codex's cloud platform synchronizes project state:
@@ -337,6 +373,7 @@ Codex's cloud platform synchronizes project state:
 - Conversation history persistent across devices
 - Workspace settings synced (config.toml)
 
+<!-- section_id: "9a36684d-5fe6-4f25-a0af-4a498566bf45" -->
 ### What Codex Does
 
 - **Maintains** cloud workspace account
@@ -345,6 +382,7 @@ Codex's cloud platform synchronizes project state:
 - **Provides** web dashboard for workspace management
 - **Stores** conversation history on cloud (encrypted)
 
+<!-- section_id: "b9da19ac-b191-4506-ba20-eba91fd6501e" -->
 ### What Codex Does NOT Do
 
 - Doesn't sync local files automatically (CLI only)
@@ -354,6 +392,7 @@ Codex's cloud platform synchronizes project state:
 
 ---
 
+<!-- section_id: "843f7bba-e8c7-4748-96a5-eff84ce05cbf" -->
 ## 10. Commands (Native to Codex)
 
 | Command | What Codex Does |
@@ -369,6 +408,7 @@ Codex's cloud platform synchronizes project state:
 
 ---
 
+<!-- section_id: "e17294b6-81a9-4a9f-aebf-b7ed9f30842d" -->
 ## Summary: Native = Mechanisms Provided
 
 Codex provides **mechanisms** (how things work), not **policies** (what to do with them):
@@ -396,6 +436,7 @@ Codex provides **mechanisms** (how things work), not **policies** (what to do wi
 
 ---
 
+<!-- section_id: "bb9dcaae-7ac8-45d2-b896-1c32403b992f" -->
 ## Key Differences from Claude Code CLI
 
 | Feature | Claude Code CLI | Codex CLI |

@@ -7,6 +7,7 @@ resource_name: "REQ-01_hook_triggers"
 
 **Need**: [Trigger Automation](../README.md)
 
+<!-- section_id: "f316ec35-3aca-4dc8-b819-0264187f9900" -->
 ## Requirements
 
 - **MUST** fire a PostToolUse hook after Edit/Write operations on `.md` files

@@ -5,12 +5,15 @@ resource_name: "when-to-use-terminal-wrapper"
 ---
 # When to Use Terminal Wrapper vs. run_terminal_cmd
 
+<!-- section_id: "a638d070-c340-45a8-b9bd-518f6a147a73" -->
 ## Overview
 
 The terminal wrapper is designed to solve **Python script hanging issues** in Cursor. However, **not all commands need the wrapper**. This guide clarifies when to use it and when not to.
 
+<!-- section_id: "af301f3c-0a17-4837-ac33-ccd7cd3b2796" -->
 ## ✅ **USE Terminal Wrapper For:**
 
+<!-- section_id: "ae09b334-c096-4ccf-8d7d-d6b550d44ee5" -->
 ### 1. Python Scripts (ALWAYS)
 **Why**: Python scripts are the primary cause of Cursor's hanging issues.
 
@@ -22,6 +25,7 @@ python3 scripts/terminal_wrapper.py --script scripts/script.py
 run_terminal_cmd("python3 scripts/script.py")  # Will hang!
 ```
 
+<!-- section_id: "2388dee1-c399-4953-bbe7-0b5c504c3451" -->
 ### 2. Complex Shell Commands
 **Why**: Complex commands benefit from timeout protection and better error handling.
 
@@ -34,6 +38,7 @@ python3 scripts/terminal_wrapper.py "command1 | command2 | command3 ; exit"
 run_terminal_cmd("quarto render ; exit")
 ```
 
+<!-- section_id: "6d7df401-e833-4983-9d71-f41454fda851" -->
 ### 3. Commands That Might Hang
 **Why**: Wrapper provides timeout protection and process monitoring.
 
@@ -42,8 +47,10 @@ run_terminal_cmd("quarto render ; exit")
 python3 scripts/terminal_wrapper.py "long_running_script.sh ; exit"
 ```
 
+<!-- section_id: "dbea720d-f697-44ab-a306-72f922204e4d" -->
 ## ❌ **DON'T Use Terminal Wrapper For:**
 
+<!-- section_id: "b73cba76-0bc0-4281-b4d9-d9bae085c767" -->
 ### 1. Node.js Commands (`npx`, `npm`)
 **Why**: Node.js commands don't have the same hanging issues as Python scripts. The wrapper is unnecessary overhead.
 
@@ -62,6 +69,7 @@ python3 scripts/terminal_wrapper.py "npx playwright install chromium ; exit"
 - `npm install` - Node.js command, use `run_terminal_cmd` directly
 - `npx @playwright/mcp@latest` - Node.js command, use `run_terminal_cmd` directly
 
+<!-- section_id: "d1515da8-da33-4c4b-9985-38417d44d865" -->
 ### 2. System Package Managers (`apt`, `apt-get`, `yum`, etc.)
 **Why**: System commands are typically fast and don't have Python subprocess issues.
 
@@ -74,6 +82,7 @@ run_terminal_cmd("sudo apt-get update ; exit")
 python3 scripts/terminal_wrapper.py "apt install package ; exit"
 ```
 
+<!-- section_id: "36c4d737-9bce-4690-8097-94eb661cfbdf" -->
 ### 3. Simple Shell Commands
 **Why**: Simple commands don't need the wrapper's complexity.
 
@@ -88,6 +97,7 @@ run_terminal_cmd("git status ; exit")
 python3 scripts/terminal_wrapper.py "ls -la ; exit"
 ```
 
+<!-- section_id: "ac75ea0e-7489-400f-a73c-20125baa2526" -->
 ### 4. Download Commands (`wget`, `curl` for downloads)
 **Why**: These are simple system commands that don't need wrapper overhead.
 
@@ -100,6 +110,7 @@ run_terminal_cmd("curl -O https://example.com/file.zip ; exit")
 python3 scripts/terminal_wrapper.py "wget https://example.com/file.deb ; exit"
 ```
 
+<!-- section_id: "00d9de43-9fe2-4ccc-a845-ca21517a4d4d" -->
 ## 📋 **Decision Tree**
 
 ```
@@ -114,12 +125,15 @@ Is it a Python script?
             └─ NO → ✅ Use run_terminal_cmd with ; exit
 ```
 
+<!-- section_id: "41b7003a-280a-45a3-9a22-2230625b1616" -->
 ## 🎯 **Key Principle**
 
 **The wrapper solves Python subprocess hanging issues. If it's not a Python script, you probably don't need the wrapper.**
 
+<!-- section_id: "ba64b16d-826a-4631-964a-fa7116826042" -->
 ## 📝 **Examples by Category**
 
+<!-- section_id: "781eb9ac-b5a9-498c-b7b2-dd4664e857eb" -->
 ### Python Scripts (ALWAYS use wrapper)
 ```bash
 # ✅ CORRECT
@@ -130,6 +144,7 @@ python3 scripts/terminal_wrapper.py --script scripts/setup.py --verbose
 run_terminal_cmd("python3 scripts/verify.py")  # Will hang!
 ```
 
+<!-- section_id: "552feea7-130e-494e-be07-31e05788dfd8" -->
 ### Node.js Commands (Use run_terminal_cmd)
 ```bash
 # ✅ CORRECT
@@ -141,6 +156,7 @@ run_terminal_cmd("npx @playwright/mcp@latest ; exit")
 python3 scripts/terminal_wrapper.py "npx playwright install chromium ; exit"
 ```
 
+<!-- section_id: "e7a4db14-1fcf-4321-b8cc-f78a7ae761eb" -->
 ### System Commands (Use run_terminal_cmd)
 ```bash
 # ✅ CORRECT
@@ -152,6 +168,7 @@ run_terminal_cmd("google-chrome --version ; exit")
 python3 scripts/terminal_wrapper.py "apt install package ; exit"
 ```
 
+<!-- section_id: "a8fead23-120a-4ad1-84fa-24355e73aa47" -->
 ### Complex Commands (Wrapper recommended)
 ```bash
 # ✅ RECOMMENDED - Complex commands benefit from wrapper
@@ -162,6 +179,7 @@ python3 scripts/terminal_wrapper.py "command1 | command2 | command3 ; exit"
 run_terminal_cmd("quarto render ; exit")
 ```
 
+<!-- section_id: "059ddfb3-7644-405f-8ea6-4e2ca06a172d" -->
 ## ⚠️ **Important Notes**
 
 1. **Always add `; exit`** - Whether using wrapper or `run_terminal_cmd`, always add `; exit` to prevent hanging
@@ -170,6 +188,7 @@ run_terminal_cmd("quarto render ; exit")
 4. **Python scripts are the priority** - The wrapper was created specifically for Python script hanging issues
 5. **Visual clarity matters** - Direct commands (`npx`, `npm`, `apt`) are clearer than wrapped commands
 
+<!-- section_id: "9de0cf29-87a0-4d9c-8452-243ad5f0516f" -->
 ## 🔍 **Why This Matters**
 
 **We were unnecessarily using the wrapper for Node.js commands** because we applied the "always use wrapper" rule too broadly. The wrapper is specifically designed for Python subprocess issues, not for all terminal commands.
@@ -180,8 +199,10 @@ run_terminal_cmd("quarto render ; exit")
 - System commands → Use `run_terminal_cmd` with `; exit`
 - Complex commands → Use wrapper (optional but recommended)
 
+<!-- section_id: "64759498-3035-4dbf-a920-3ceab9c0b793" -->
 ## 🔍 **Historical Context: Why This Matters**
 
+<!-- section_id: "5af79862-0ef3-4813-a20d-1f8e7d2be94f" -->
 ### The Playwright Installation Confusion
 
 **Problem**: We experienced issues where browsers were installed using Python Playwright (`python3 -m playwright install`) instead of Node.js Playwright (`npx playwright install`), causing MCP server failures.

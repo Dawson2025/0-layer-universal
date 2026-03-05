@@ -5,14 +5,18 @@ resource_name: "REQ_001_audio_implementation"
 ---
 # Implementation: Laptop Speaker Audio Enhancement
 
+<!-- section_id: "71241573-732e-401f-aff7-37164e292933" -->
 ## Request Reference
 REQ_001 - Improve Laptop Speaker Audio Quality
 
+<!-- section_id: "af9a90c0-434c-4d0f-8487-b0cb4b79451f" -->
 ## Date
 2026-01-26
 
+<!-- section_id: "c5d991ef-28e8-442f-8f00-eca90c6d4000" -->
 ## Implementation Attempts
 
+<!-- section_id: "a640e956-1078-426f-a034-ef3923adf78c" -->
 ### Attempt 1: Basic EasyEffects Preset
 
 **What was done:**
@@ -29,6 +33,7 @@ REQ_001 - Improve Laptop Speaker Audio Quality
 
 ---
 
+<!-- section_id: "5af7e5a0-4091-4375-b21f-6aab9e2b6ac3" -->
 ### Attempt 2: Aggressive Custom Preset
 
 **What was done:**
@@ -46,6 +51,7 @@ REQ_001 - Improve Laptop Speaker Audio Quality
 
 ---
 
+<!-- section_id: "41a7f9c4-becb-4dd4-99e6-5296b30b7946" -->
 ### Attempt 3: Community Presets
 
 **What was done:**
@@ -65,6 +71,7 @@ REQ_001 - Improve Laptop Speaker Audio Quality
 
 ---
 
+<!-- section_id: "5ce66ad3-241c-45f0-8d8c-7c509e05123f" -->
 ### Attempt 4: Fix Audio Routing
 
 **Critical discovery:**
@@ -85,6 +92,7 @@ pactl set-default-sink easyeffects_sink
 
 ---
 
+<!-- section_id: "535d0f70-e16c-4228-a4b5-30274fff9a74" -->
 ### Attempt 5: Fix Volume Button Conflict
 
 **Problem:** After routing audio through EasyEffects:
@@ -109,20 +117,25 @@ pactl set-default-sink alsa_output.pci-0000_00_1f.3-platform-skl_hda_dsp_generic
 
 ---
 
+<!-- section_id: "3a863d50-319e-4bf7-8f4c-8069942df78d" -->
 ## Files Created/Modified
 
+<!-- section_id: "ad01e8f8-477e-4456-adc3-12203b3db035" -->
 ### EasyEffects Presets
 - `~/.config/easyeffects/output/LaptopSpeakers.json` - Custom basic preset
 - `~/.config/easyeffects/output/Dolby-Like (Framework).json` - Community Dolby-like preset
 - `~/.config/easyeffects/output/Advanced Auto Gain.json` - JackHack96 preset
 - `~/.config/easyeffects/output/*.json` - Other community presets
 
+<!-- section_id: "24d80f8b-17d2-4125-9852-f4066cd2811c" -->
 ### Scripts
 - `~/.local/bin/volume-control.sh` - Hardware volume control script (created but not used in final solution)
 
+<!-- section_id: "9b3a05cc-b76e-4a24-95eb-dee7795d10a3" -->
 ### Autostart
 - `~/.config/autostart/com.github.wwmm.easyeffects.desktop` - EasyEffects autostart
 
+<!-- section_id: "a9dbf6b9-4e6d-49f7-bd72-dde26eece24f" -->
 ## Commands Used
 
 ```bash

@@ -10,14 +10,17 @@ resource_name: "01_setup_problems"
 
 ---
 
+<!-- section_id: "1d12c812-eb1d-469c-914a-700561ee365a" -->
 ## Problem Summary
 
 The setup and configuration systems have structural and organizational issues that make it difficult for AI agents and users to properly configure environments.
 
 ---
 
+<!-- section_id: "152c62f5-1b76-4e46-9f6c-28389378c48b" -->
 ## Problems Identified
 
+<!-- section_id: "255a773d-4e7d-4d58-9a49-7e5234632c05" -->
 ### 0. [FIXED] CRITICAL: Wrong Naming Convention (layer_ vs sub_layer_)
 **Severity**: CRITICAL
 **Resolution**: FIXED on 2026-01-25. The structure was refactored to use the correct `sub_layer_` prefixing.
@@ -46,6 +49,7 @@ sub_layer_0_05+_setup_dependant/
 
 ---
 
+<!-- section_id: "a214b78e-fe70-4096-b2f2-e08b4432bee4" -->
 ### 1. [FIXED] Consolidated Structure Unstable
 **Severity**: MAJOR (upgraded from MINOR)
 **Resolution**: FIXED on 2026-01-25. The structure was refactored, wrapper folder removed, and naming corrected. Clutter was also archived.
@@ -63,6 +67,7 @@ Sub-layers 0.05-0.14 were consolidated into `sub_layer_0_05+_setup_dependant`, b
 
 ---
 
+<!-- section_id: "27b86cea-f9f9-43b4-afd9-5e585bf5c8d8" -->
 ### 2. Legacy Code Not Cleaned Up
 **Severity**: MINOR
 **Location**: `sub_layer_0_05+_setup_dependant/legacy_sublayer_readmes/`
@@ -79,6 +84,7 @@ Old sub-layer READMEs are preserved but:
 
 ---
 
+<!-- section_id: "3cbd2b16-005e-41d3-9792-a7b2089c208d" -->
 ### 3. Cross-OS Compatibility Rules Scattered
 **Severity**: MINOR
 **Location**: Multiple
@@ -93,6 +99,7 @@ OS-specific guidance exists in multiple places:
 
 ---
 
+<!-- section_id: "8378dd7f-5887-4396-8ad8-4ad07727dc0b" -->
 ### 4. No Setup Validation
 **Severity**: MAJOR
 **Location**: N/A (missing)
@@ -111,6 +118,7 @@ No scripts or tools to validate:
 
 ---
 
+<!-- section_id: "90f3d4a3-12dd-4444-99c4-c0cb64a2b970" -->
 ### 5. OS-Specific Paths Mixed with Agnostic
 **Severity**: MINOR
 **Location**: `layer_0_01_ai_manager_system/specific/`
@@ -125,6 +133,7 @@ But the pattern is inconsistent and sparse.
 
 ---
 
+<!-- section_id: "4fa45ba8-78f8-4c6b-a0c8-af4dc8261ae4" -->
 ### 6. Environment Detection Not Automated
 **Severity**: MINOR
 **Location**: N/A (missing)
@@ -138,6 +147,7 @@ No automated way to:
 
 ---
 
+<!-- section_id: "40ac5359-b766-4909-9717-a3ffe2f24c42" -->
 ## Recommendations
 
 1. **Restructure setup sub-layers** with clear hierarchy
@@ -148,6 +158,7 @@ No automated way to:
 
 ---
 
+<!-- section_id: "eabf3526-796f-46da-81a5-71305ccc05bd" -->
 ## Related
 
 - Multi-OS system research (child feature)

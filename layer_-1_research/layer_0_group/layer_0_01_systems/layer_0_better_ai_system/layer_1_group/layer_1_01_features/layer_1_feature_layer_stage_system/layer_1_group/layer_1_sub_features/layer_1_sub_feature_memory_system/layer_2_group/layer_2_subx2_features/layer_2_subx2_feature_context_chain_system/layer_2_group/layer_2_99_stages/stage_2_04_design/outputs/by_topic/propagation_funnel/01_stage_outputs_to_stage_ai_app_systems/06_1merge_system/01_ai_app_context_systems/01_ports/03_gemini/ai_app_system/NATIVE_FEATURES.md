@@ -10,6 +10,7 @@ resource_name: "NATIVE_FEATURES"
 
 ---
 
+<!-- section_id: "7c9b98df-063b-49a3-97bd-13e3fcb33e58" -->
 ## Overview
 
 Google's Gemini provides these built-in mechanisms:
@@ -27,8 +28,10 @@ Google's Gemini provides these built-in mechanisms:
 
 ---
 
+<!-- section_id: "9dcef698-4ae0-41a4-9027-99a47fd22eb1" -->
 ## 1. Multiple Context Modes
 
+<!-- section_id: "bf89dd87-d1ba-4894-9a40-0f794cf62b45" -->
 ### The Mechanism
 
 Gemini handles two context window sizes:
@@ -44,6 +47,7 @@ Gemini handles two context window sizes:
 - Higher cost
 - 99%+ retrieval accuracy
 
+<!-- section_id: "d08ae622-b601-4296-92b0-32a744648927" -->
 ### What Gemini Does
 
 - **Accepts** context up to 1M or 2M tokens
@@ -51,6 +55,7 @@ Gemini handles two context window sizes:
 - **Manages** token counting internally
 - **Applies** context window limits per request
 
+<!-- section_id: "2767a69a-6c2f-4a26-9a50-3945da975223" -->
 ### What Gemini Does NOT Do
 
 - Doesn't auto-split context (you manage what goes in)
@@ -60,8 +65,10 @@ Gemini handles two context window sizes:
 
 ---
 
+<!-- section_id: "eda58a64-41f9-4b76-8b24-3adcc0129c2c" -->
 ## 2. System Instructions
 
+<!-- section_id: "2346a0a4-502c-410d-be55-f1c18a040293" -->
 ### The Mechanism
 
 You provide system instructions to define Gemini's role and behavior:
@@ -80,6 +87,7 @@ response = client.models.generate_content(
 )
 ```
 
+<!-- section_id: "aff2add0-10f3-48c3-b6f9-5c7d7025db85" -->
 ### What Gemini Does
 
 - **Accepts** system instructions (no character limit, token-counted)
@@ -87,6 +95,7 @@ response = client.models.generate_content(
 - **Combines** system instructions with user messages
 - **Respects** instruction priority (system > user)
 
+<!-- section_id: "9587be34-e813-4fe6-8627-28a915477c5d" -->
 ### What Gemini Does NOT Do
 
 - Doesn't validate instruction quality
@@ -96,8 +105,10 @@ response = client.models.generate_content(
 
 ---
 
+<!-- section_id: "ee4f47a8-baa7-4be3-ab5b-4785ec041b85" -->
 ## 3. Multimodal Input
 
+<!-- section_id: "d5d35c8a-1c72-40f5-b6d1-15ac30847481" -->
 ### The Mechanism
 
 Gemini accepts 5 types of input modality:
@@ -110,6 +121,7 @@ Gemini accepts 5 types of input modality:
 | **Audio** | WAV, MP3, AIFF, AAC | ~32 tokens/sec | 15 minutes |
 | **PDFs** | PDF documents | Variable | 2GB |
 
+<!-- section_id: "05db931e-b091-4d7d-b1f9-431b38f84496" -->
 ### What Gemini Does
 
 - **Accepts** any combination of modalities in single request
@@ -117,6 +129,7 @@ Gemini accepts 5 types of input modality:
 - **Counts** tokens for each modality
 - **Returns** analysis of all input types
 
+<!-- section_id: "6fa8b782-7b70-4ab0-a7fd-4ec7cfaf4761" -->
 ### What Gemini Does NOT Do
 
 - Doesn't transcribe audio (reads content directly)
@@ -126,8 +139,10 @@ Gemini accepts 5 types of input modality:
 
 ---
 
+<!-- section_id: "57d72d3e-2cd2-4605-9b4c-06b50c545514" -->
 ## 4. File Upload & Storage
 
+<!-- section_id: "8240f41d-54d7-43b1-af03-e1dae36bdd5f" -->
 ### The Mechanism
 
 Files are uploaded and stored temporarily:
@@ -137,6 +152,7 @@ Files are uploaded and stored temporarily:
 **File Size Limit**: 2GB per file
 **Upload Methods**: Base64 (<100MB), Files API (>100MB), external URLs
 
+<!-- section_id: "3e2ae445-6aa7-4c3d-90b7-29a3f4197c72" -->
 ### What Gemini Does
 
 - **Accepts** file uploads via Files API
@@ -144,6 +160,7 @@ Files are uploaded and stored temporarily:
 - **Returns** file references for use in requests
 - **Deletes** files automatically after 48 hours
 
+<!-- section_id: "bfb508f8-8848-42f4-82f2-c8874a596a1a" -->
 ### What Gemini Does NOT Do
 
 - Doesn't offer permanent storage
@@ -153,8 +170,10 @@ Files are uploaded and stored temporarily:
 
 ---
 
+<!-- section_id: "335ace83-102e-4a80-a9e2-5f0261183a0d" -->
 ## 5. Session Management
 
+<!-- section_id: "b70da7e3-2d9c-4d80-8345-7d693ab7c15d" -->
 ### The Mechanism
 
 Gemini supports two session models:
@@ -169,6 +188,7 @@ Gemini supports two session models:
 - Sessions can be resumed with tokens
 - Token valid for 2 hours post-termination
 
+<!-- section_id: "e661cd5b-51f0-45aa-8334-8c0e2fa5297b" -->
 ### What Gemini Does
 
 - **Creates** sessions on-demand
@@ -176,6 +196,7 @@ Gemini supports two session models:
 - **Generates** resumption tokens (2-hour expiry)
 - **Returns** history on session resume
 
+<!-- section_id: "491764f3-2bbb-41f1-b725-73828a56a67f" -->
 ### What Gemini Does NOT Do
 
 - Doesn't auto-resume (you must explicitly resume)
@@ -185,8 +206,10 @@ Gemini supports two session models:
 
 ---
 
+<!-- section_id: "b32497b5-2fc8-485d-a8de-ab4bb81af8e6" -->
 ## 6. Context Caching
 
+<!-- section_id: "dd29def7-1756-40ad-a7ca-99d9f7a2e082" -->
 ### The Mechanism
 
 Two caching strategies:
@@ -201,6 +224,7 @@ Two caching strategies:
 - Guaranteed availability for TTL duration
 - ~90% cost reduction on cached tokens
 
+<!-- section_id: "a041a06d-c6cb-48a4-843c-a85d05068355" -->
 ### What Gemini Does
 
 - **Detects** identical prefixes (implicit)
@@ -208,6 +232,7 @@ Two caching strategies:
 - **Reduces** costs on cache hits
 - **Expires** caches after TTL
 
+<!-- section_id: "02b672e8-4749-4881-9fd1-206aa26bfcf7" -->
 ### What Gemini Does NOT Do
 
 - Doesn't guarantee cache persistence beyond TTL
@@ -217,8 +242,10 @@ Two caching strategies:
 
 ---
 
+<!-- section_id: "1614fdb8-b962-49fd-a8fe-600044c6b0b3" -->
 ## 7. Function Calling
 
+<!-- section_id: "b3b87b43-1011-4158-b04f-4edd094df51d" -->
 ### The Mechanism
 
 Gemini can generate structured function calls:
@@ -244,6 +271,7 @@ response = client.models.generate_content(
 )
 ```
 
+<!-- section_id: "87872708-51d1-4f27-801d-7d06c460ad35" -->
 ### What Gemini Does
 
 - **Accepts** JSON Schema tool definitions
@@ -251,6 +279,7 @@ response = client.models.generate_content(
 - **Supports** parallel function execution
 - **Returns** tool call results in conversation
 
+<!-- section_id: "3f830bab-7dc8-46e0-add1-607c8a6e42c7" -->
 ### What Gemini Does NOT Do
 
 - Doesn't execute functions (you execute them)
@@ -260,8 +289,10 @@ response = client.models.generate_content(
 
 ---
 
+<!-- section_id: "7be373b6-65bc-467e-af2f-fbc9e6ff2520" -->
 ## 8. Streaming Output
 
+<!-- section_id: "19e7e8b0-63cf-466a-8cda-c240b6a6c3b2" -->
 ### The Mechanism
 
 Responses can stream tokens in real-time:
@@ -277,6 +308,7 @@ for chunk in response:
     print(chunk.text, end="", flush=True)
 ```
 
+<!-- section_id: "f5231c34-078a-41bc-92d2-1d8abd1d7d0a" -->
 ### What Gemini Does
 
 - **Streams** tokens as they're generated
@@ -284,6 +316,7 @@ for chunk in response:
 - **Allows** early termination
 - **Enables** progressive display
 
+<!-- section_id: "cad717fd-e761-4cef-9803-d70a9735ffa1" -->
 ### What Gemini Does NOT Do
 
 - Doesn't guarantee token order (stream order may vary)
@@ -293,8 +326,10 @@ for chunk in response:
 
 ---
 
+<!-- section_id: "f1bbcb21-7a3c-460f-a5ff-05aa938f6235" -->
 ## 9. Model Selection
 
+<!-- section_id: "efd3f43b-eae8-498e-8db2-ae3928aedfb0" -->
 ### The Mechanism
 
 Multiple models available with different capabilities:
@@ -306,6 +341,7 @@ Multiple models available with different capabilities:
 | **Gemini 2.5 Flash** | 1M/2M | Very Fast | $ | Good |
 | **Gemini 2.5 Pro** | 1M/2M | Slow | $$$ | Excellent |
 
+<!-- section_id: "89147df3-1961-4ea0-be40-7729b4d2ceaa" -->
 ### What Gemini Does
 
 - **Accepts** model selection per request
@@ -313,6 +349,7 @@ Multiple models available with different capabilities:
 - **Applies** model-specific defaults
 - **Returns** model-specific outputs
 
+<!-- section_id: "fb5f7ffe-cb30-451b-9a54-647b3704bd76" -->
 ### What Gemini Does NOT Do
 
 - Doesn't auto-select models
@@ -322,8 +359,10 @@ Multiple models available with different capabilities:
 
 ---
 
+<!-- section_id: "c57814fa-1c6b-4ceb-8574-281326576f70" -->
 ## 10. Safety & Content Filtering
 
+<!-- section_id: "2a3de726-4eca-4ca9-b1f2-566d4455495a" -->
 ### The Mechanism
 
 Built-in safety filters for:
@@ -332,6 +371,7 @@ Built-in safety filters for:
 - Harassment
 - Dangerous/illegal activities
 
+<!-- section_id: "38e75d41-be4c-412b-b1b7-c0eeb9da4dc0" -->
 ### What Gemini Does
 
 - **Applies** safety filters automatically
@@ -339,6 +379,7 @@ Built-in safety filters for:
 - **Returns** safety ratings for input/output
 - **Allows** tuning safety levels
 
+<!-- section_id: "f58fe362-dedf-4fd7-b845-1447c2c92f21" -->
 ### What Gemini Does NOT Do
 
 - Doesn't expose filter thresholds
@@ -348,6 +389,7 @@ Built-in safety filters for:
 
 ---
 
+<!-- section_id: "4ae4cdd8-f377-4e49-9f10-760cda6c8bdf" -->
 ## Summary: Native = Mechanisms Provided
 
 Gemini provides **mechanisms** (how things work), not **policies** (what to do with them):

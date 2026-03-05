@@ -13,6 +13,7 @@ resource_name: "US-02_manager_reads_reports"
 **I want** the system to read stage reports and give me a quick status across all stages,
 **So that** I get a project-wide overview without the AI needing to load every output file.
 
+<!-- section_id: "cd1fde0a-8d73-43bc-9b46-fe819cf38c7e" -->
 ### What Happens
 
 1. User asks "what stage should we work on next?" or "what's the project status?"
@@ -21,6 +22,7 @@ resource_name: "US-02_manager_reads_reports"
 4. Manager recommends what to work on next based on priorities and blockers
 5. User gets a clear answer without the system loading N * M detail files
 
+<!-- section_id: "3b63c18c-946b-4898-80c1-546ddf458755" -->
 ### Acceptance Criteria
 
 - Manager reads N stage reports (one per stage) and can rank priority

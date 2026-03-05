@@ -11,6 +11,7 @@ resource_name: "03_trajectory_stores_and_grade_strategy"
 
 ---
 
+<!-- section_id: "8f7d0ed5-1297-4682-bbc0-2e82f365cc7c" -->
 ## Executive Summary
 
 A **Trajectory Store** is a **procedural memory** artifact that captures step-by-step workflows, including what worked, what didn't, preconditions, and lessons learned. Unlike SOPs (procedures) or runbooks (incident response), trajectory stores preserve agent reasoning, decision context, and effectiveness metrics.
@@ -19,8 +20,10 @@ The **Cascading Grade Strategy System** uses trajectory stores at layer_2 (unive
 
 ---
 
+<!-- section_id: "9559f124-c525-411c-b29a-579580ceaf4e" -->
 ## What Are Trajectory Stores?
 
+<!-- section_id: "8b4e7d1e-1a26-4e0b-84f6-b39cdbfac019" -->
 ### Definition
 
 **Trajectory Store**: A documented record of how an AI agent successfully (or unsuccessfully) accomplished a procedural task, including:
@@ -32,6 +35,7 @@ The **Cascading Grade Strategy System** uses trajectory stores at layer_2 (unive
 5. **Reasoning & hypotheses** — Why it worked, lessons learned, theories for next time
 6. **Integration points** — Links to skills, protocols, knowledge bases that use this trajectory
 
+<!-- section_id: "e32d7f74-dba7-40b9-8054-611b1fc2fa11" -->
 ### Key Difference from Other Documentation
 
 | Documentation Type | Focus | Time Horizon | Audience | Example |
@@ -42,6 +46,7 @@ The **Cascading Grade Strategy System** uses trajectory stores at layer_2 (unive
 
 **Trajectory stores capture**: *How we did this successfully, with context about decisions and effectiveness.*
 
+<!-- section_id: "93356d30-60e6-4cca-bdbd-a8ae70085ed7" -->
 ### Research-Validated Pattern
 
 Academic research (ProcMEM, AgentWorkforce, Trajectory Miner) validates this pattern:
@@ -52,8 +57,10 @@ Academic research (ProcMEM, AgentWorkforce, Trajectory Miner) validates this pat
 
 ---
 
+<!-- section_id: "52db7219-fb38-47a4-a534-118b496720bf" -->
 ## Cascading Grade Strategy System
 
+<!-- section_id: "a87ee4db-f477-4895-ab3a-e62993f19f3f" -->
 ### Architecture
 
 ```
@@ -97,6 +104,7 @@ Layer 3 (Computer Science) & Layer 4 (Individual Classes)
         Each skill executes 7-step workflow from canvas_grade_dashboard_trajectory.md
 ```
 
+<!-- section_id: "2f2eb137-5c7c-432e-b69a-e7c5c30dcd4d" -->
 ### How It Works
 
 **Example: User asks "How am I doing in CSE 300?"**
@@ -130,8 +138,10 @@ Layer 3 (Computer Science) & Layer 4 (Individual Classes)
 
 ---
 
+<!-- section_id: "a85eec8b-e01c-4a3e-bf17-85a845a35e09" -->
 ## Five Trajectory Stores
 
+<!-- section_id: "211b1f1a-c4bd-41c0-b7e2-eb550bd7a4c6" -->
 ### 1. Canvas Grade Dashboard Trajectory
 
 **What it captures**: The 7-step workflow for building any Canvas-powered grade dashboard.
@@ -190,6 +200,7 @@ Layer 3 (Computer Science) & Layer 4 (Individual Classes)
 
 ---
 
+<!-- section_id: "fbebb3ee-1aa4-410c-8b23-73e857fac6e1" -->
 ### 2. Grading Model Analysis Trajectory
 
 **What it captures**: How to analyze a course's grading structure and determine its model type.
@@ -245,6 +256,7 @@ Layer 3 (Computer Science) & Layer 4 (Individual Classes)
 
 ---
 
+<!-- section_id: "9c4e63b1-e3f8-42b4-9256-0514e761b308" -->
 ### 3. Assignment Classification Trajectory
 
 **What it captures**: How to categorize Canvas assignments by name patterns and types.
@@ -298,6 +310,7 @@ Layer 3 (Computer Science) & Layer 4 (Individual Classes)
 
 ---
 
+<!-- section_id: "842930e6-03e9-44d7-aeb5-25c4d5c2be85" -->
 ### 4. Deadline Tracking Trajectory
 
 **What it captures**: How to extract lock dates, compute urgency, and flag approaching deadlines.
@@ -352,6 +365,7 @@ Layer 3 (Computer Science) & Layer 4 (Individual Classes)
 
 ---
 
+<!-- section_id: "c79718b2-f043-426b-808f-b9d50670a61e" -->
 ### 5. Strategy Generation Trajectory
 
 **What it captures**: How to compute priority scores and recommend next actions.
@@ -444,6 +458,7 @@ Layer 3 (Computer Science) & Layer 4 (Individual Classes)
 
 ---
 
+<!-- section_id: "97015d26-4774-4e70-8b33-f8257b8dc2ee" -->
 ## Integration with Skills
 
 Each trajectory inform class-specific skills:
@@ -473,6 +488,7 @@ Future Class: /future-dashboard skill
 
 ---
 
+<!-- section_id: "8f92caa4-334f-45d4-b892-4e62af79eba3" -->
 ## Triggers for Loading Trajectories
 
 When should trajectories be loaded?
@@ -489,6 +505,7 @@ When should trajectories be loaded?
 
 ---
 
+<!-- section_id: "d46fb27d-fdff-4330-ba9c-060cc4dc025e" -->
 ## Research Sources
 
 **Trajectory Store Concept** (Academic Research):
@@ -507,6 +524,7 @@ When should trajectories be loaded?
 
 ---
 
+<!-- section_id: "4d399b9a-3c82-4192-886a-e065acf38c21" -->
 ## Summary
 
 **Trajectory Stores** capture procedural knowledge in a format optimized for AI agent learning and reuse. Unlike traditional documentation (SOPs, runbooks), they preserve reasoning, context, failure modes, and effectiveness metrics.
@@ -517,6 +535,7 @@ When should trajectories be loaded?
 
 ---
 
+<!-- section_id: "1fcd510c-80ca-42ef-9ae0-0ae60afd2aec" -->
 ## References
 
 - `.0agnostic/03_protocols/grade_strategy_system/` — Trajectory store implementations (in production layer_2)

@@ -6,12 +6,14 @@ resource_name: "README"
 ---
 # AALang Integration Research
 
+<!-- section_id: "4bdcc409-1322-4036-ae6e-933de660c411" -->
 ## Purpose
 
 This research feature tracks how AALang/GAB is integrated into our layer-stage AI system, identifies gaps, and plans deeper adoption.
 
 ---
 
+<!-- section_id: "3c3d9f2f-38b6-47dc-9d42-3e9ecbe6a5df" -->
 ## Current State
 
 AALang is integrated in three main areas:
@@ -22,6 +24,7 @@ AALang is integrated in three main areas:
 | Layer 0 Orchestrator | `layer_0/layer_0_01_ai_manager_system/personal/` | 5-mode-15-actor | Defined |
 | Project Orchestrators | Various `layer_N/` directories | 5-mode-15-actor (inherited) | Template exists |
 
+<!-- section_id: "c03e57b8-7cd3-41e6-8b76-3594377f4365" -->
 ### What Exists
 
 1. **context_loading.gab.jsonld** — Full AALang agent definition for CLAUDE.md chain traversal
@@ -29,6 +32,7 @@ AALang is integrated in three main areas:
 3. **layer_6_orchestrator.gab.jsonld** — Project-level orchestrator inheriting from layer_0 template
 4. **GAB compiler** (professor submodule) — Tool for creating new AALang agents
 
+<!-- section_id: "dc951688-9d76-44c3-9a60-9d7c9bc9ae94" -->
 ### CLAUDE.md Audit (2026-02-07)
 
 - **298 CLAUDE.md files** across the system, **15,363 total lines**
@@ -38,6 +42,7 @@ AALang is integrated in three main areas:
 - **No `.claude/rules/` directory** — path-specific rules not being used
 - **4 root skills** exist but descriptions are vague — agents don't invoke them
 
+<!-- section_id: "c7e78f4d-3b23-4597-b994-7c81e735c731" -->
 ### Approved Approach: Hybrid with Three-Layer Redundancy
 
 JSON-LD as source-of-truth (design-time) + markdown as runtime interface + skills as bridge.
@@ -50,6 +55,7 @@ JSON-LD as source-of-truth (design-time) + markdown as runtime interface + skill
 See [architecture_decision_reference_chain.md](architecture/architecture_decision_reference_chain.md) for full analysis.
 See [implementation_plan.md](planning/implementation_plan.md) for the phased execution plan.
 
+<!-- section_id: "d884f866-d38f-49cb-928c-c590388a2808" -->
 ### Core Problems Being Addressed
 
 1. **Instructions lost across sessions** — markdown too imprecise for machine execution
@@ -62,25 +68,30 @@ See [problems_and_vision.md](02_problem_analysis/problems_and_vision.md) for ful
 
 ---
 
+<!-- section_id: "c78244ae-3630-4500-855c-01b844e90647" -->
 ## Research Files
 
+<!-- section_id: "6e38179e-2b6f-43ea-b767-f949d998df5a" -->
 ### 01_vision/ — What's possible
 | File | Topic |
 |------|-------|
 | [context_system_vision.md](01_vision/context_system_vision.md) | Vision for a complete AI context system — static/dynamic separation, reference chains, AI traversal, tool agnosticism |
 
+<!-- section_id: "d87e155a-bdac-41cd-992d-5a58d2712dab" -->
 ### 02_problem_analysis/ — Problem identification and analysis
 | File | Topic |
 |------|-------|
 | [problems_and_vision.md](02_problem_analysis/problems_and_vision.md) | 5 core problems and the architectural vision (REVISED post-verification) |
 | [rule_propagation_problem.md](02_problem_analysis/rule_propagation_problem.md) | Universal rules not automatically applied to all sessions |
 
+<!-- section_id: "072a52d0-a01b-4a2d-a6b4-6f7b55f123f2" -->
 ### 03_obstacles/ — What stands in the way
 | File | Topic |
 |------|-------|
 | [obstacles.md](03_obstacles/obstacles.md) | 8 key obstacles: skill invocation, context budget, JSON-LD mismatch, session loss, tool fragmentation, and more |
 | [skill_reliability_per_tool.md](03_obstacles/skill_reliability_per_tool.md) | **PRIMARY RESEARCH** — Instruction/skill adherence evaluated across 8 tools (Claude Code, Codex, Gemini CLI, OpenCode, Cursor, Windsurf, Aider, Junie) with real GitHub issues and benchmarks |
 
+<!-- section_id: "299e8d5d-f61f-4252-a852-178b726526b4" -->
 ### 04_design/ — Possible designs and approaches
 | File | Topic |
 |------|-------|
@@ -88,6 +99,7 @@ See [problems_and_vision.md](02_problem_analysis/problems_and_vision.md) for ful
 | [sublayers_vs_dot_folders.md](04_design/sublayers_vs_dot_folders.md) | **PRIMARY RESEARCH** — Should sub-layers (knowledge, rules, protocols) live in separate directories or inside dot folders (.claude/, .0agnostic/)? Auto-discovery analysis, tool comparison, migration mapping |
 | [sub_layer_migration_map.md](04_design/sub_layer_migration_map.md) | Detailed file-by-file migration map from sub-layer hierarchy into .0agnostic/ internal structure. 7-phase execution plan |
 
+<!-- section_id: "ed7eadda-fc84-462e-8908-eeea8f9bf55c" -->
 ### 04_design/0agnostic_system/ — The 0Agnostic System design
 | File | Topic |
 |------|-------|
@@ -97,12 +109,14 @@ See [problems_and_vision.md](02_problem_analysis/problems_and_vision.md) for ful
 | [merge_system.md](04_design/0agnostic_system/merge_system.md) | The .1merge three-tier override system: agnostic source → tool-specific overrides → generated output. When to use overrides vs agnostic content |
 | [multi_avenue_redundancy.md](04_design/0agnostic_system/multi_avenue_redundancy.md) | **KEY DESIGN** — How all 8 context avenues link together per tool. AALang/GAB integration, effectiveness matrix, "any-one-fires" resilience model reducing failure from ~40% to ~1% |
 
+<!-- section_id: "53a36118-df3e-4a67-9091-7c7dce8e646e" -->
 ### architecture/ — Architecture decisions and technical approaches
 | File | Topic |
 |------|-------|
 | [architecture_decision_reference_chain.md](architecture/architecture_decision_reference_chain.md) | **KEY DECISION** — Three-layer redundancy model: jq-first + skill descriptions + transpiled markdown |
 | [selective_jsonld_navigation.md](architecture/selective_jsonld_navigation.md) | **PROVEN** — Agents can navigate JSON-LD graphs via jq, loading only 2-5% of files |
 
+<!-- section_id: "7ae85125-77a5-4138-b7d6-bcd5ab32e556" -->
 ### integration/ — How components integrate with each other
 | File | Topic |
 |------|-------|
@@ -111,17 +125,20 @@ See [problems_and_vision.md](02_problem_analysis/problems_and_vision.md) for ful
 | [skills_integration.md](integration/skills_integration.md) | How to improve skill discovery and invocation (REVISED) |
 | [agent_teams_convergence.md](integration/agent_teams_convergence.md) | Merging Agent Teams interactivity with layer-stage persistence |
 
+<!-- section_id: "5fe35c4f-acb3-4409-ae06-87e860cf1f75" -->
 ### verification/ — Audits and verification of assumptions
 | File | Topic |
 |------|-------|
 | [verification_results.md](verification/verification_results.md) | **READ FIRST** — What was verified true/false on 2026-02-07 |
 | [claude_md_audit.md](verification/claude_md_audit.md) | CLAUDE.md chain audit — 717 lines in static chain, duplication analysis, recommendations |
 
+<!-- section_id: "c00d36fb-2171-44d6-b12b-ff1a1f3b2982" -->
 ### 05_discovery/ — Context discovery and auto-discoverability
 | File | Topic |
 |------|-------|
 | [discovery_gap_audit.md](05_discovery/discovery_gap_audit.md) | **KEY FINDING** — Systematic audit of hot vs cold context: agnostic_update_protocol and propagation chain are invisible to fresh agents. Discovery temperature model (Hot/Warm/Cold) validated |
 
+<!-- section_id: "fefb9eee-67e2-41c5-962d-377c018dbf7a" -->
 ### planning/ — Roadmaps and execution plans
 | File | Topic |
 |------|-------|
@@ -130,6 +147,7 @@ See [problems_and_vision.md](02_problem_analysis/problems_and_vision.md) for ful
 
 ---
 
+<!-- section_id: "17c40475-47f0-4582-a5d7-1a6c45ef722a" -->
 ## Related Research Features
 
 | Feature | Relationship |

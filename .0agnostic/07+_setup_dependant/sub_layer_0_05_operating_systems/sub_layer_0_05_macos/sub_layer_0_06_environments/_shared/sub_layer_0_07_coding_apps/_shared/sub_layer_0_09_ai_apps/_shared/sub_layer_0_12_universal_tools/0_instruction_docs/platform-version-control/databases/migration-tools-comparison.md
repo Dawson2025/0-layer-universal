@@ -6,10 +6,12 @@ resource_name: "migration-tools-comparison"
 # Migration Tools Comparison
 *Choosing the Right Database Migration Tool*
 
+<!-- section_id: "faef9d03-ca8d-449f-b0f7-dfc06f5f8b90" -->
 ## Overview
 
 This guide compares popular database migration tools to help you choose the right one for your project. Each tool has different strengths, and the best choice depends on your specific needs.
 
+<!-- section_id: "1f6ebabc-55f4-4851-8504-817878cc3d82" -->
 ## Quick Comparison Table
 
 | Tool | Type | SQL Support | NoSQL Support | CI/CD | GUI | Best For |
@@ -25,8 +27,10 @@ This guide compares popular database migration tools to help you choose the righ
 | **Prisma** | ORM | ✅ | ❌ | ✅ | ✅ | Modern web apps |
 | **TypeORM** | ORM | ✅ | ❌ | ✅ | ❌ | TypeScript/Node.js |
 
+<!-- section_id: "e73506dc-944b-433a-8f0a-e020c76ad87f" -->
 ## Detailed Tool Profiles
 
+<!-- section_id: "a4aa331a-b501-4a8c-b2a7-35842f908584" -->
 ### Liquibase
 
 **Type**: Standalone migration tool
@@ -110,6 +114,7 @@ liquibase diff
 
 ---
 
+<!-- section_id: "0ee3f90d-39bb-4118-ab7f-1ef7a62775de" -->
 ### Flyway
 
 **Type**: Standalone or Maven plugin
@@ -189,6 +194,7 @@ flyway info
 
 ---
 
+<!-- section_id: "459c7e81-a957-44f3-995a-e0f1c3f8814c" -->
 ### Supabase CLI
 
 **Type**: Platform-specific tool
@@ -253,6 +259,7 @@ supabase gen types typescript --local > types/supabase.ts
 
 ---
 
+<!-- section_id: "252885ca-7d15-4906-8280-0b93cad1aceb" -->
 ### Bytebase
 
 **Type**: Standalone tool with GUI
@@ -308,6 +315,7 @@ docker run --init \
 
 ---
 
+<!-- section_id: "df31648a-de44-42df-97c2-1f52290c6dda" -->
 ### Firebase CLI
 
 **Type**: Platform-specific tool
@@ -379,6 +387,7 @@ firebase emulators:start
 
 ---
 
+<!-- section_id: "662d108e-a3b7-4f0f-be76-d701bbbc4372" -->
 ## Tool Selection Decision Tree
 
 ```
@@ -405,8 +414,10 @@ What type of database?
    └─ Liquibase (broadest support)
 ```
 
+<!-- section_id: "f4b8219b-5ef6-408c-a4c5-ac389f561f1a" -->
 ## Feature Comparison Matrix
 
+<!-- section_id: "870fe9c9-0306-4814-a16d-a6edace29249" -->
 ### Core Features
 
 | Feature | Liquibase | Flyway | Supabase CLI | Bytebase | Firebase CLI |
@@ -419,6 +430,7 @@ What type of database?
 | Schema Diff | ✅ | ✅ | ⚠️ | ✅ | ❌ |
 | Multi-DB Support | ✅ | ✅ | PostgreSQL | ✅ | Firebase |
 
+<!-- section_id: "b2aca83f-bac0-40a0-b9a7-baf1d1c5aa1a" -->
 ### Database Support
 
 | Database | Liquibase | Flyway | Supabase | Bytebase | Firebase |
@@ -430,6 +442,7 @@ What type of database?
 | MongoDB | ✅ | ❌ | ❌ | ⚠️ | ❌ |
 | Firebase | ❌ | ❌ | ❌ | ❌ | ✅ |
 
+<!-- section_id: "00b6ef62-0d8c-4406-8929-661852db3f1d" -->
 ### CI/CD Integration
 
 | CI/CD Platform | Liquibase | Flyway | Supabase | Bytebase | Firebase |
@@ -440,8 +453,10 @@ What type of database?
 | CircleCI | ✅ | ✅ | ✅ | ✅ | ✅ |
 | Azure DevOps | ✅ | ✅ | ✅ | ✅ | ✅ |
 
+<!-- section_id: "4630746c-0779-4380-a13c-084f728abfbb" -->
 ## Use Case Recommendations
 
+<!-- section_id: "47e30013-0367-48b2-8fa5-618861aa82ea" -->
 ### Small Projects / Startups
 **Recommended**: Flyway or Prisma
 - Simplicity and speed
@@ -449,6 +464,7 @@ What type of database?
 - Free and open source
 - Fast iteration
 
+<!-- section_id: "27e31205-490a-4d54-a636-9bd66f98ef70" -->
 ### Enterprise / Large Teams
 **Recommended**: Liquibase or Bytebase
 - Advanced features
@@ -456,6 +472,7 @@ What type of database?
 - Team collaboration
 - Audit requirements
 
+<!-- section_id: "fde80a2c-025c-47a2-ba75-08bba58a6726" -->
 ### Supabase Projects
 **Recommended**: Supabase CLI
 - Native integration
@@ -463,6 +480,7 @@ What type of database?
 - Best developer experience
 - Free tier
 
+<!-- section_id: "cedea033-a847-4ae8-a474-67bb7198ab31" -->
 ### Firebase Projects
 **Recommended**: Firebase CLI
 - Official tool
@@ -470,6 +488,7 @@ What type of database?
 - Emulator support
 - Real-time features
 
+<!-- section_id: "913cc0c2-9ad1-4a88-a1ef-0e79c662a339" -->
 ### Java/Spring Projects
 **Recommended**: Flyway
 - Excellent integration
@@ -477,6 +496,7 @@ What type of database?
 - Maven/Gradle support
 - Common in ecosystem
 
+<!-- section_id: "2ed831e8-8130-43c8-a488-7f775bcfaf7e" -->
 ### Python/Django Projects
 **Recommended**: Django Migrations
 - Built-in to Django
@@ -484,6 +504,7 @@ What type of database?
 - Excellent ORM integration
 - Python-friendly
 
+<!-- section_id: "789fa85a-9224-4b5b-8b55-d8bd2f5d204b" -->
 ### Node.js/TypeScript Projects
 **Recommended**: Prisma or TypeORM
 - TypeScript-first
@@ -491,8 +512,10 @@ What type of database?
 - Good type safety
 - Active communities
 
+<!-- section_id: "e025a551-de86-4c98-a241-9501480a98a6" -->
 ## Migration Complexity Support
 
+<!-- section_id: "1637b939-c6fd-4acd-b657-81a29a085c75" -->
 ### Simple Migrations
 All tools handle simple schema changes:
 - ✅ Creating tables
@@ -502,6 +525,7 @@ All tools handle simple schema changes:
 
 **Best Tool**: Flyway (simplest)
 
+<!-- section_id: "2fbbab9f-e37e-42b8-8915-4ca2409374c1" -->
 ### Complex Migrations
 Advanced features for complex changes:
 - Refactoring tables
@@ -511,6 +535,7 @@ Advanced features for complex changes:
 
 **Best Tool**: Liquibase (most flexible)
 
+<!-- section_id: "cfeb5cfe-fafb-471a-9435-f40ef263c3db" -->
 ### Undo/Rollback
 Rolling back changes:
 
@@ -522,8 +547,10 @@ Rolling back changes:
 | Bytebase | ✅ Full support |
 | Firebase | ❌ Manual only |
 
+<!-- section_id: "503123d6-74a8-4088-97e8-f824fc710486" -->
 ## Cost Comparison
 
+<!-- section_id: "b91e2267-98c1-4373-be1c-98649d750bbb" -->
 ### Free/Open Source
 - ✅ Liquibase (open source)
 - ✅ Flyway (open source)
@@ -531,13 +558,16 @@ Rolling back changes:
 - ✅ Firebase CLI (free tier)
 - ✅ Framework migrations (free)
 
+<!-- section_id: "fb853778-251e-44b7-badc-62df4552f0a5" -->
 ### Commercial
 - 💰 Bytebase (free tier available)
 - 💰 Flyway Pro (commercial features)
 - 💰 Liquibase Hub (commercial features)
 
+<!-- section_id: "14b9e473-9a13-414a-a5c1-f91dbceca9d9" -->
 ## Integration with Development Workflows
 
+<!-- section_id: "87ffe670-2211-4a7d-b84c-e1e6e925a6c6" -->
 ### Git Flow
 All tools support:
 - ✅ Store migrations in Git
@@ -545,6 +575,7 @@ All tools support:
 - ✅ Branch management
 - ✅ Tagging releases
 
+<!-- section_id: "5e67314a-3b8f-4e27-96b7-a4b05c47b303" -->
 ### Testing
 Migration testing support:
 
@@ -556,8 +587,10 @@ Migration testing support:
 | Bytebase | ✅ Staging environments |
 | Firebase | ✅ Emulator |
 
+<!-- section_id: "121f3b67-ffb7-4e52-8567-5a9c494231f6" -->
 ## Conclusion
 
+<!-- section_id: "52eb9f80-6ccf-43d7-b1ff-31b3ea9c5285" -->
 ### Quick Picks by Scenario
 
 **New Project Starting**:
@@ -576,6 +609,7 @@ Migration testing support:
 **Already Using ORM**:
 - **Prisma** / **TypeORM** (built-in migrations)
 
+<!-- section_id: "ce74bae4-08c9-4263-94d6-ffa5520a8b49" -->
 ### General Recommendation
 
 For most projects: **Flyway** or **Liquibase**

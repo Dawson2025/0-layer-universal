@@ -8,6 +8,7 @@ resource_name: "README"
 
 Platform-specific TTS implementation for Ubuntu Linux on Lenovo Yoga Pro 9 with NVIDIA RTX 4060 GPU.
 
+<!-- section_id: "764d41d2-e484-4ead-af08-bea95f47cf8a" -->
 ## What This Entity Covers
 - GPU-accelerated TTS inference (Kokoro with CUDA)
 - Ubuntu desktop integration (Unity, GNOME components, PipeWire)
@@ -15,10 +16,12 @@ Platform-specific TTS implementation for Ubuntu Linux on Lenovo Yoga Pro 9 with 
 - Claude Code TTS hooks for spoken output
 - VoiceMode MCP server for local voice conversations
 
+<!-- section_id: "b2c06e5e-5796-4905-a157-1f8ebc5cdf65" -->
 ## Children
 - **System TTS**: Highlight-and-speak, desktop-wide text-to-speech
 - **Agentic TTS**: Claude Code Stop hook, AI-driven spoken summaries
 
+<!-- section_id: "e2ed9ba9-a5a6-4d96-9cd6-e279ba0a3e29" -->
 ## Quick Navigation
 - Start here: `0AGNOSTIC.md`
 - Current state: `0INDEX.md`

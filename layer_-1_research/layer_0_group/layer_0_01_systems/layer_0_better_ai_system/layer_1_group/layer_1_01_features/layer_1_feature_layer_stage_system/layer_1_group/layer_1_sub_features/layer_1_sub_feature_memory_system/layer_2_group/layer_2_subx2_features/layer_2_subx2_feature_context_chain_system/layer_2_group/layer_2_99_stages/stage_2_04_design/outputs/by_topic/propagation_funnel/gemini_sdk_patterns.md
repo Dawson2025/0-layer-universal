@@ -9,8 +9,10 @@ This document covers production-ready patterns, common pitfalls, and optimizatio
 
 ---
 
+<!-- section_id: "b8dfdb7c-44e8-40fb-8429-69b16651a894" -->
 ## 1. Client Initialization Patterns
 
+<!-- section_id: "cd26affc-6695-4c92-8213-060f638aef11" -->
 ### Pattern 1.1: Singleton Client (Recommended)
 
 In production, create one client instance and reuse it:
@@ -42,6 +44,7 @@ response2 = client.models.generate_content(...)  # Reuses client
 - Better resource utilization
 - Faster subsequent requests
 
+<!-- section_id: "7840c013-f25c-4706-91bd-da9cb3e42544" -->
 ### Pattern 1.2: Environment-Based Configuration
 
 ```python
@@ -83,6 +86,7 @@ if __name__ == "__main__":
     client = create_client(env)
 ```
 
+<!-- section_id: "cd01f96f-50d4-44f6-99af-f8f2ad490ce6" -->
 ### Pattern 1.3: Context Manager Pattern
 
 ```python
@@ -107,8 +111,10 @@ with gemini_client() as client:
 
 ---
 
+<!-- section_id: "5cf2f083-d00b-4987-81c8-93ed1a1ecd3f" -->
 ## 2. Request Configuration Patterns
 
+<!-- section_id: "0c65e65a-2984-41a9-afdb-5dee0c3b649e" -->
 ### Pattern 2.1: Config Builder
 
 ```python
@@ -153,6 +159,7 @@ response = client.models.generate_content(
 )
 ```
 
+<!-- section_id: "2b9e01b9-708a-4c5d-8a3d-8baeaa3fd06c" -->
 ### Pattern 2.2: Preset Configurations
 
 ```python
@@ -208,8 +215,10 @@ response = client.models.generate_content(
 
 ---
 
+<!-- section_id: "5c7e2157-704f-43d2-b77f-d14c6b184db9" -->
 ## 3. Chat/Session Patterns
 
+<!-- section_id: "b69dd367-77be-431c-bd9e-7b46de07c48f" -->
 ### Pattern 3.1: Typed Chat Handler
 
 ```python
@@ -265,6 +274,7 @@ response2 = handler.send_message("Explain in simpler terms")
 print(f"Conversation history: {len(handler.get_history())} messages")
 ```
 
+<!-- section_id: "3f72fbf7-e984-48a8-aa55-02ae0bc99db9" -->
 ### Pattern 3.2: Conversation with Rollback
 
 ```python
@@ -328,8 +338,10 @@ response4 = chat.send_message("Different direction")  # Continues from checkpoin
 
 ---
 
+<!-- section_id: "5865cac6-c6ca-450f-83f1-5c31f965f3c2" -->
 ## 4. Error Handling Patterns
 
+<!-- section_id: "6f7714ba-992d-4180-a73e-7d61a48c88eb" -->
 ### Pattern 4.1: Retry with Exponential Backoff
 
 ```python
@@ -374,6 +386,7 @@ def generate_text(client, prompt):
 response = generate_text(client, "Explain quantum computing")
 ```
 
+<!-- section_id: "24162bfc-b0c4-4dfc-950a-d0d3cb47cdce" -->
 ### Pattern 4.2: Circuit Breaker Pattern
 
 ```python
@@ -470,8 +483,10 @@ for i in range(10):
 
 ---
 
+<!-- section_id: "b3a6c1c5-967d-4cf8-bb54-61264d3d5ec3" -->
 ## 5. File Handling Patterns
 
+<!-- section_id: "399a359f-b8f6-49f8-9973-8cdb33b4bc9a" -->
 ### Pattern 5.1: File Manager with Cleanup
 
 ```python
@@ -559,6 +574,7 @@ with FileManager(client) as fm:
     # Files auto-deleted on exit
 ```
 
+<!-- section_id: "b59ccfc8-5f22-49b7-88e4-63c816af8d1a" -->
 ### Pattern 5.2: Batch File Processing
 
 ```python
@@ -612,8 +628,10 @@ for filepath, summary in results.items():
 
 ---
 
+<!-- section_id: "c4b9951e-92d4-42a0-bd3f-ff43170aee9a" -->
 ## 6. Caching Patterns
 
+<!-- section_id: "2a82817d-158f-4376-a8bd-b1564e3f0a87" -->
 ### Pattern 6.1: Cache Manager
 
 ```python
@@ -721,8 +739,10 @@ cache_mgr.list_caches()
 
 ---
 
+<!-- section_id: "0ed81efc-0780-4ba7-ba14-7445c1ff92b6" -->
 ## 7. Cost Tracking Patterns
 
+<!-- section_id: "d994e7c3-191d-45ae-b21f-83a63854569c" -->
 ### Pattern 7.1: Cost Monitor with Alerts
 
 ```python
@@ -826,8 +846,10 @@ monitor.print_summary()
 
 ---
 
+<!-- section_id: "2ec772fe-0c44-42c9-b9ba-4fabef1a1e4b" -->
 ## 8. Testing Patterns
 
+<!-- section_id: "64a256b6-8464-4f61-a7b9-46d38a422454" -->
 ### Pattern 8.1: Mock Client for Testing
 
 ```python
@@ -871,6 +893,7 @@ def test_my_function():
 
 ---
 
+<!-- section_id: "054b0590-d6a6-4de4-85cd-31516428a9e1" -->
 ## 9. Production Checklist
 
 - [ ] **API Key Management**: Use environment variables, never hardcode

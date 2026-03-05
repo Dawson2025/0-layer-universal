@@ -24,6 +24,7 @@ resource_name: "proposal_ai_friendly_output_organization"
 
 ---
 
+<!-- section_id: "29983ea4-6fe9-413f-b44b-4f2eed3b8e5b" -->
 ## Problem Statement
 
 Current `by_topic/` flat file organization has limitations for AI agents:
@@ -39,8 +40,10 @@ Current `by_topic/` flat file organization has limitations for AI agents:
 
 ---
 
+<!-- section_id: "0ae53311-a856-47b3-8927-7ef203b8d809" -->
 ## Proposed Solution
 
+<!-- section_id: "53b3624c-4b65-46de-9d5d-e17d3af55ab1" -->
 ### 1. Nested Thematic Directories
 
 Organize files into numbered thematic directories with sub-directories where appropriate:
@@ -64,6 +67,7 @@ by_topic/
 
 ---
 
+<!-- section_id: "cbaa8257-d828-4eac-868e-c56a0bf021a6" -->
 ### 2. CLAUDE.md at Each Folder Level
 
 Each folder gets a `CLAUDE.md` that tells the agent:
@@ -105,6 +109,7 @@ You are a research agent focused on **[topic]**.
 
 ---
 
+<!-- section_id: "5a83a8e1-e223-4a9e-8b13-221d03e929cb" -->
 ### 3. 0INDEX.md at Each Folder Level
 
 Each folder gets a `0INDEX.md` that provides:
@@ -147,6 +152,7 @@ Each folder gets a `0INDEX.md` that provides:
 
 ---
 
+<!-- section_id: "98888a4c-9514-48c7-a083-b472980a7357" -->
 ### 4. Synthesis Folder at Each Level
 
 Each folder gets a `synthesis/` subfolder containing a synthesis document:
@@ -170,6 +176,7 @@ Each folder gets a `synthesis/` subfolder containing a synthesis document:
 
 ---
 
+<!-- section_id: "c05451a2-90b5-4145-b9d9-1ce3eb6c2767" -->
 ### 5. Root-Level Cross-Reference Map
 
 A `_crossref.md` at the `by_topic/` root showing topic relationships:
@@ -186,6 +193,7 @@ A `_crossref.md` at the `by_topic/` root showing topic relationships:
 
 ---
 
+<!-- section_id: "d8a9d5e5-defa-4255-b982-7c8384279fcb" -->
 ### 6. Contribution Template
 
 A `_template.md` for creating new research files with consistent format:
@@ -208,6 +216,7 @@ A `_template.md` for creating new research files with consistent format:
 
 ---
 
+<!-- section_id: "f232cfe3-579d-4a99-97fa-8a7ee2c0817d" -->
 ## Full Proposed Structure
 
 ```
@@ -293,8 +302,10 @@ by_topic/
 
 ---
 
+<!-- section_id: "6a162e62-0278-42c8-8265-5e44e3bb4241" -->
 ## Proposed File Mapping
 
+<!-- section_id: "083215cd-3e2f-4369-b1f4-8cdd6afb3cc8" -->
 ### Files to Move
 
 | Original File | New Location |
@@ -323,6 +334,7 @@ by_topic/
 | `rule_propagation_problem.md` | `07_layer_stage_architecture/02_hierarchy_patterns/` |
 | `automated_traversal_for_your_system.md` | `08_automation_tooling/` |
 
+<!-- section_id: "adbb0121-27ae-4d18-a9dc-2e345253e61a" -->
 ### Files to Split
 
 `layer_stage_instantiation_understanding.md` (2300+ lines) splits into:
@@ -336,8 +348,10 @@ by_topic/
 
 ---
 
+<!-- section_id: "c881105c-8c49-4009-ab51-d18c059f131a" -->
 ## Registry Updates Required
 
+<!-- section_id: "366a6bf9-43a8-4c96-ac62-292f6f70ec5d" -->
 ### 1. Stage Registry (`stage_registry.yaml`)
 
 Add to Stage 02 (Research) output patterns:
@@ -360,6 +374,7 @@ stages:
           - "synthesis/ folder at each level"
 ```
 
+<!-- section_id: "9a4a456b-bb4a-4196-857b-7f1e8b3f4b70" -->
 ### 2. Layer Registry (`layer_registry.yaml`)
 
 Add output organization conventions:
@@ -382,6 +397,7 @@ conventions:
 
 ---
 
+<!-- section_id: "ee553784-fce4-4bec-bc37-fa80edc71ebd" -->
 ## Benefits Summary
 
 | Benefit | How Achieved |
@@ -395,6 +411,7 @@ conventions:
 
 ---
 
+<!-- section_id: "2cf20707-5c76-4239-8839-faa4f86e90fb" -->
 ## Implementation Steps
 
 1. **Create directory structure** - Make all numbered folders
@@ -408,6 +425,7 @@ conventions:
 
 ---
 
+<!-- section_id: "be639a34-618e-4b37-9c7d-49c9d8a6c130" -->
 ## Open Questions
 
 1. Should this pattern apply to ALL stages or just research (02)?
@@ -417,6 +435,7 @@ conventions:
 
 ---
 
+<!-- section_id: "ad663eed-c039-43fe-8063-b6fd19a17067" -->
 ## Related Research
 
 - `system_prompt_architecture.md` - Container-as-Manager pattern
@@ -425,6 +444,7 @@ conventions:
 
 ---
 
+<!-- section_id: "e8646be0-65bc-44a7-b3cc-efcb6c0261d9" -->
 ## Decision Needed
 
 - [ ] Approve proposal as-is

@@ -9,6 +9,7 @@ resource_name: "US-01_developer_works_on_feature"
 **I want to** work on a feature entity that has its own complete stage lifecycle (stages 01-11),
 **So that** I can develop the capability from requirements through delivery in an isolated, structured environment without affecting other features.
 
+<!-- section_id: "0ba17396-d507-4c4a-84a7-2deebf83f24b" -->
 ## Acceptance Criteria
 
 **Scenario 1: Feature entity has all 11 stages**

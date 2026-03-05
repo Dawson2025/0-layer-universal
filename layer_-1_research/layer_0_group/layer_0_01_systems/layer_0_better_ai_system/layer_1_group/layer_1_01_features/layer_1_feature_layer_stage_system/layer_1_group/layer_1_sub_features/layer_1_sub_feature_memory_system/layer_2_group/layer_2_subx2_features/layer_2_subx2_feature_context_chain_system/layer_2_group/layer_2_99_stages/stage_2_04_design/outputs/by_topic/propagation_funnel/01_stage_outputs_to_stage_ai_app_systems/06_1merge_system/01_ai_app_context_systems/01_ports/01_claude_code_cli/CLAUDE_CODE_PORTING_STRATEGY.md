@@ -10,6 +10,7 @@ resource_name: "CLAUDE_CODE_PORTING_STRATEGY"
 
 ---
 
+<!-- section_id: "d6031c0a-df75-4fba-9258-879f1ed116fb" -->
 ## Overview
 
 Claude Code's context system **was designed around the 0AGNOSTIC.md model**. Porting from 0AGNOSTIC.md to Claude Code means the system is already aligned — no translation needed. However, this document covers:
@@ -21,8 +22,10 @@ Claude Code's context system **was designed around the 0AGNOSTIC.md model**. Por
 
 ---
 
+<!-- section_id: "7ebef096-6d6f-4eb4-a921-ac4fe79fd3b0" -->
 ## Part 1: Validation Checklist
 
+<!-- section_id: "152ea27a-a02d-4bf5-9b0b-c172631043b8" -->
 ### 1.1 0AGNOSTIC.md Structure Validation
 
 **Required Elements** (Claude Code expects all of these):
@@ -77,6 +80,7 @@ current_status_lines=$(grep -A10 "# ── Current Status" 0AGNOSTIC.md | grep -
 [ $current_status_lines -lt 3 ] && echo "WARN: Current Status too brief (< 3 lines)"
 ```
 
+<!-- section_id: "2af9a76d-e9ea-498f-bfac-b8adf3fad30f" -->
 ### 1.2 .0agnostic/ Directory Validation
 
 **Required Directories**:
@@ -129,8 +133,10 @@ done
 
 ---
 
+<!-- section_id: "89d53728-e748-4978-93e6-69bc6f07714c" -->
 ## Part 2: Propagation Strategy
 
+<!-- section_id: "9d679f13-80e1-4e5f-9319-6c5d33dfa96b" -->
 ### 2.1 Hierarchical Context Cascading
 
 Claude Code loads context in this order (highest to lowest priority):
@@ -167,6 +173,7 @@ layer_3_99_stages/stage_04_design/.0agnostic/ (Design phase specifics)
 
 Each level adds refinement while preserving parent context.
 
+<!-- section_id: "58dc7f74-7717-4a67-ac6b-4154cbc8dd3c" -->
 ### 2.2 Trigger-Based Loading
 
 Triggers in 0AGNOSTIC.md determine which resources load on-demand.
@@ -204,8 +211,10 @@ When user says "How am I doing in CSE 300?":
 
 ---
 
+<!-- section_id: "c8394f47-dd7d-4f1a-b88a-89f5baf066ae" -->
 ## Part 3: Optimization Strategies
 
+<!-- section_id: "a44bc188-6926-4734-be47-17ea9aa9ebc6" -->
 ### 3.1 Token Efficiency
 
 Claude Code's default context window: **200,000 input tokens**
@@ -238,6 +247,7 @@ Available for task execution: ~175,000 tokens
 4. **Compress cascading context** — If a child layer overrides parent context, prefer child-only in that layer's 0AGNOSTIC.md.
 5. **Archive old context** — Move outdated information to `11_archives/` (not referenced by triggers).
 
+<!-- section_id: "20b51506-f809-42b1-ba5d-fb4c085002b1" -->
 ### 3.2 Cascade Optimization Example
 
 **Before** (inefficient — 8,000 STATIC tokens):
@@ -269,8 +279,10 @@ See `.0agnostic/01_knowledge/behaviors/` for full list.
 
 ---
 
+<!-- section_id: "b73e8a1f-4576-40fa-8bc1-3548b6f378f4" -->
 ## Part 4: Extension Framework
 
+<!-- section_id: "22188e60-9433-43d0-946f-8a26bf86c702" -->
 ### 4.1 Adding New Rules
 
 **When to add**:
@@ -308,6 +320,7 @@ Then add to 0AGNOSTIC.md:
 | Security Boundary | `.0agnostic/02_rules/static/I0_SECURITY_BOUNDARY.md` | I0 (Critical) | Data handling constraints |
 ```
 
+<!-- section_id: "eb67320a-fb8d-421f-a519-b7903cf26ce0" -->
 ### 4.2 Adding New Skills
 
 **When to add**:
@@ -344,6 +357,7 @@ description: "Fetch live Canvas grade data and compute priority strategy."
 [Detailed workflow from trajectory]
 ```
 
+<!-- section_id: "00773591-9ea3-4386-afb6-b0e5fbe60898" -->
 ### 4.3 Adding New Knowledge
 
 **When to add**:
@@ -383,8 +397,10 @@ description: "Fetch live Canvas grade data and compute priority strategy."
 
 ---
 
+<!-- section_id: "92174a49-f866-4e0e-b668-013da2369062" -->
 ## Part 5: Implementation Workflow
 
+<!-- section_id: "0ae50c0b-8751-4ea0-82d6-2cc56b89c1a3" -->
 ### 5.1 Creating a New Entity
 
 When adding a new project/feature/class:
@@ -424,6 +440,7 @@ When adding a new project/feature/class:
    git push
    ```
 
+<!-- section_id: "dd3ad21b-69f0-41e0-987b-4e9c8fd03dc4" -->
 ### 5.2 Updating Context at a Layer
 
 1. **Identify change scope** (affects which layers?)
@@ -435,6 +452,7 @@ When adding a new project/feature/class:
 
 ---
 
+<!-- section_id: "499cf37e-1ca8-4495-ba49-df123813f3ec" -->
 ## Part 6: Comparison Table
 
 | Aspect | 0AGNOSTIC.md | Claude Code Generated Files | Why Different |
@@ -447,8 +465,10 @@ When adding a new project/feature/class:
 
 ---
 
+<!-- section_id: "35818b7e-d21f-4d4b-8dc8-8116f2e23098" -->
 ## Part 7: Critical Rules for Claude Code Porting
 
+<!-- section_id: "796e950c-7d9e-4777-ab3f-ef8e372eba3e" -->
 ### 7.1 The "No Direct CLAUDE.md Edits" Rule
 
 **CRITICAL**: Never edit generated files directly. Always edit `0AGNOSTIC.md` first.
@@ -463,6 +483,7 @@ When adding a new project/feature/class:
 5. Verify CLAUDE.md updated
 6. Commit
 
+<!-- section_id: "d5c38745-9c17-4e34-a5d9-3afc23cdf030" -->
 ### 7.2 The "Trigger Loading" Rule
 
 **CRITICAL**: Resources in `.0agnostic/` are NOT automatically included in context.
@@ -484,6 +505,7 @@ They only load when:
 | User mentions X | Load workflow | `.0agnostic/03_protocols/my_workflow.md` | Skill |
 ```
 
+<!-- section_id: "8508d135-0d41-45f3-8b96-c82c8a440811" -->
 ### 7.3 The "Cascade Inheritance" Rule
 
 **CRITICAL**: Child layers inherit parent context automatically.
@@ -504,6 +526,7 @@ layer_3_subx2_project_cse300/.0agnostic/02_rules/static/
 
 ---
 
+<!-- section_id: "05b0d2eb-a1f5-4c8a-8947-dd2f93e255b6" -->
 ## Summary: Porting Checklist
 
 - [ ] Validate 0AGNOSTIC.md structure (2.1 marker check)
@@ -520,6 +543,7 @@ layer_3_subx2_project_cse300/.0agnostic/02_rules/static/
 
 ---
 
+<!-- section_id: "55a5a280-b52f-4113-a6d3-fc75453c21a8" -->
 ## References
 
 - **Source of Truth**: `0AGNOSTIC.md` at each layer

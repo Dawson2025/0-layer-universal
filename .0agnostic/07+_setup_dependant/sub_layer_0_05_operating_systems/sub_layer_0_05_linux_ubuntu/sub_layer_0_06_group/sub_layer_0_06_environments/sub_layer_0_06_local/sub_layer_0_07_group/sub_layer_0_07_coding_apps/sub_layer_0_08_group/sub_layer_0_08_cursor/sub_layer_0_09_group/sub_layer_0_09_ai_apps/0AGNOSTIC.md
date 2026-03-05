@@ -8,6 +8,7 @@ resource_name: "0AGNOSTIC"
 
 # ── Entity Definition ──
 
+<!-- section_id: "ff7063c9-fb84-4c10-a37c-3d1b11cc5cd7" -->
 ## Identity
 
 **Entity**: AI Apps Category
@@ -17,6 +18,7 @@ resource_name: "0AGNOSTIC"
 
 **Specificity Chain**: OS (05) → Linux Ubuntu (05) → Environments (06) → Local (06) → Coding Apps (07) → Cursor (08) → **AI Apps (09)**
 
+<!-- section_id: "03abacdc-2eba-4d0c-aa6c-507b69e45e2b" -->
 ## Key Behaviors
 
 - Shared protocols, knowledge, and rules cascade to all child AI app entities (level 10)
@@ -25,6 +27,7 @@ resource_name: "0AGNOSTIC"
 - Browser automation protocol applies to all AI apps that use browser-based tools
 - **Two entity types at level 10**: *Features* (numbered, shared infrastructure) and *Further Specificity* (unnumbered, app-specific config). Features provide shared tools, models, protocols, and agent setup; app-specific entities inherit from and can override shared features.
 
+<!-- section_id: "65725336-b256-4061-8952-424442c9c17f" -->
 ## Triggers
 
 | Situation | Action |
@@ -34,6 +37,7 @@ resource_name: "0AGNOSTIC"
 | User asks about API spending | Read `memory/mcp_api_usage.md` and report budget status |
 | Extracting content from Perplexity | Read `.0agnostic/02_rules/static/perplexity_extraction_rules.md` |
 
+<!-- section_id: "fd36bf53-222a-493e-9149-55d63c58d8b0" -->
 ## Delegation Contract
 
 **Children** (level 10):
@@ -43,6 +47,7 @@ resource_name: "0AGNOSTIC"
 
 # ── Current Status ──
 
+<!-- section_id: "b9f3d131-628a-4e8c-99d4-e4020d720bad" -->
 ## Current Status
 
 **State**: Active
@@ -54,12 +59,14 @@ resource_name: "0AGNOSTIC"
 
 # ── Current State ──
 
+<!-- section_id: "0cb9ac10-1807-47c6-8ee4-7cb89c97152f" -->
 ## Open Items
 
 - Session handoff to be created in `.0agnostic/05_handoff_documents/02_outgoing/01_to_above/`
 
 # ── References ──
 
+<!-- section_id: "3eb3ad94-834e-4f2e-87e0-0fd5487fa4fb" -->
 ## Navigation
 
 | Path | Purpose |

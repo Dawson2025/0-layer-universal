@@ -11,6 +11,7 @@ resource_name: "subagent_usage_decision_matrix"
 
 ---
 
+<!-- section_id: "d3457471-bc16-4db7-92be-a46855ee713d" -->
 ## Quick Decision (3 Questions)
 
 ```
@@ -29,6 +30,7 @@ resource_name: "subagent_usage_decision_matrix"
 
 ---
 
+<!-- section_id: "41076452-9c94-4246-9fdf-099ca63a5e4c" -->
 ## Decision Matrix
 
 | Situation | Use Subagent? | Reason |
@@ -47,8 +49,10 @@ resource_name: "subagent_usage_decision_matrix"
 
 ---
 
+<!-- section_id: "ae800648-cccc-4d37-8ced-20ccd2528cdf" -->
 ## When to Use Subagents
 
+<!-- section_id: "c1b0477c-28bb-4124-98b4-c6440433805a" -->
 ### Ideal Cases
 
 1. **Context Preservation**
@@ -82,14 +86,17 @@ resource_name: "subagent_usage_decision_matrix"
    - Same task pattern used frequently
    - Defined in `.claude/agents/` for reuse
 
+<!-- section_id: "8ccd62aa-a5a8-4ace-9bf3-63e9a74ac849" -->
 ### Anthropic's Recommendation
 
 > "This is the part of the workflow where you should consider strong use of subagents, especially for complex problems. Telling Claude to use subagents to verify details or investigate particular questions it might have, **especially early on in a conversation or task**, tends to **preserve context availability** without much downside in terms of lost efficiency."
 
 ---
 
+<!-- section_id: "111a774a-e86e-46f2-99b7-6c4d039c59b0" -->
 ## When to Stay in Main Conversation
 
+<!-- section_id: "c01b3e33-efec-4144-9e27-9019b11fe2aa" -->
 ### Ideal Cases
 
 1. **Small Scope**
@@ -113,6 +120,7 @@ resource_name: "subagent_usage_decision_matrix"
 
 ---
 
+<!-- section_id: "b8d3a66e-1a65-4054-bb3e-e2cee10a0cb7" -->
 ## Overhead Awareness
 
 Both Tasks and subagents have approximately **20,000 tokens** of context loading overhead before actual work begins.
@@ -124,8 +132,10 @@ Both Tasks and subagents have approximately **20,000 tokens** of context loading
 
 ---
 
+<!-- section_id: "9a5b876d-ad84-4fc5-91cf-67a3e4fabf01" -->
 ## Execution Patterns
 
+<!-- section_id: "6b24f8ad-7993-4c7a-bec1-e9b6862c0a3f" -->
 ### Parallel Pattern
 Use when work spans **independent domains** with no file overlap.
 
@@ -134,6 +144,7 @@ Good: Search frontend/, backend/, docs/ simultaneously
 Bad:  Edit config.json while another agent reads it
 ```
 
+<!-- section_id: "c2c24888-bda9-4798-8ecc-e581ead0265b" -->
 ### Sequential Pattern
 Use when **output from one step feeds the next**.
 
@@ -143,6 +154,7 @@ Research → Planning → Implementation
 Implementation → Testing → Security audit
 ```
 
+<!-- section_id: "6df0416a-ba2f-404d-b261-22e690f0c238" -->
 ### Background Pattern
 Use for **non-blocking research** while continuing other work.
 
@@ -154,6 +166,7 @@ Check /tasks to see progress
 
 ---
 
+<!-- section_id: "eb3e53d9-15dd-4d1c-8c71-c6a29a40a14c" -->
 ## Common Mistakes
 
 | Mistake | Problem | Solution |
@@ -166,6 +179,7 @@ Check /tasks to see progress
 
 ---
 
+<!-- section_id: "cce20905-afd7-4e45-a60b-50a2fec6fdcf" -->
 ## Invocation Quality
 
 Subagents have temporary context windows - they can't ask clarifying questions. Provide:
@@ -182,6 +196,7 @@ Always include:
 
 ---
 
+<!-- section_id: "aa3adad0-d017-49f9-b2b3-17fbd77172bc" -->
 ## Task Tool vs Custom Subagents
 
 | Feature | Task Tool | Custom Subagent |
@@ -196,8 +211,10 @@ Always include:
 
 ---
 
+<!-- section_id: "acada0d2-79b6-416b-8bbf-99833a4e1eaf" -->
 ## Examples
 
+<!-- section_id: "13d4bb9b-3fcb-4789-ab9f-d111a700428b" -->
 ### Use Subagent
 ```
 User: "Create documentation guides for all entity types"
@@ -205,6 +222,7 @@ User: "Create documentation guides for all entity types"
 → Main context only needs final summary
 ```
 
+<!-- section_id: "ef3ff2d9-074b-43e9-b14f-abd9b8bf54a3" -->
 ### Stay in Main Thread
 ```
 User: "Fix the typo in README.md"
@@ -212,6 +230,7 @@ User: "Fix the typo in README.md"
 → Overhead would exceed the work itself
 ```
 
+<!-- section_id: "576914c7-eea6-4676-b262-b9a7e47fc783" -->
 ### Use Subagent
 ```
 User: "Search the codebase for all database connections"
@@ -219,6 +238,7 @@ User: "Search the codebase for all database connections"
 → Results summarized back
 ```
 
+<!-- section_id: "387f9059-fef0-4455-aa99-c89a925ae8e1" -->
 ### Stay in Main Thread
 ```
 User: "Let's iterate on this API design together"
@@ -228,6 +248,7 @@ User: "Let's iterate on this API design together"
 
 ---
 
+<!-- section_id: "ecc32e79-9de4-42d9-9adb-45916469c04a" -->
 ## Related Documents
 
 - `UNIVERSAL_AGENT_TERMINAL_PROTOCOL.md` - Terminal usage rules
@@ -237,6 +258,7 @@ User: "Let's iterate on this API design together"
 
 ---
 
+<!-- section_id: "d724c65a-80ad-4ff5-bd96-911ddf217fc3" -->
 ## Sources
 
 - [Anthropic: Claude Code Best Practices](https://www.anthropic.com/engineering/claude-code-best-practices)

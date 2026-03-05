@@ -11,14 +11,17 @@ resource_name: "test_design"
 
 ---
 
+<!-- section_id: "d42ea78c-2d72-4657-9698-a3bbbd1f4fb2" -->
 ## Purpose
 
 Validates rules for running multiple stages simultaneously
 
+<!-- section_id: "74c3573b-49fe-41d2-963f-f1d7c681c02f" -->
 ## Test Cases
 
 (To be designed)
 
+<!-- section_id: "63445ccd-a4be-4bcc-aaa9-d8d1f0249787" -->
 ### TC-XXX-01: Rule file exists and is well-formed
 
 **Steps**:
@@ -30,6 +33,7 @@ Validates rules for running multiple stages simultaneously
 
 ---
 
+<!-- section_id: "7ff21a47-5a6c-483e-8ba8-7014f347cece" -->
 ## Notes
 
 This test design is scaffolded. Detailed test cases should be written when this rule is actively being validated or when compliance issues are observed.

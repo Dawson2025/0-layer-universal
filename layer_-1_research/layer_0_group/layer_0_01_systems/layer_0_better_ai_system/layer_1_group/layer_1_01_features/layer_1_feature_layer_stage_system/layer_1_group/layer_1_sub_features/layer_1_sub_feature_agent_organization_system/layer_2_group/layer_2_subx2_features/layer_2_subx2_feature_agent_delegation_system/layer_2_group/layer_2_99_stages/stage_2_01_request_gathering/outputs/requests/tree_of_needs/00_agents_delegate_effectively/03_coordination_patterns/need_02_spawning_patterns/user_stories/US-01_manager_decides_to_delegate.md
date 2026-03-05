@@ -13,6 +13,7 @@ resource_name: "US-01_manager_decides_to_delegate"
 **I want** the manager to have clear criteria for when to spawn a stage agent versus doing work itself,
 **So that** the AI consistently delegates specialized work instead of sometimes doing it in the wrong context.
 
+<!-- section_id: "0859a697-9e99-4386-a172-c997f3fc1a89" -->
 ### What Happens
 
 1. User says "design the agent delegation system"
@@ -21,6 +22,7 @@ resource_name: "US-01_manager_decides_to_delegate"
 4. Manager delegates to a design stage agent with task description + directory pointer
 5. Stage agent handles the specialized work with its full methodology
 
+<!-- section_id: "a83148f1-9185-4f96-af31-236c629ac239" -->
 ### Acceptance Criteria
 
 - Spawning criteria documentation answers "should I spawn?" for common scenarios

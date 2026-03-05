@@ -10,12 +10,14 @@ This folder contains nested sub-projects (subx2 projects) within this sub-projec
 
 Each subx2-project follows the standard sub-project template structure (`2_sub_project_template`).
 
+<!-- section_id: "f06b8824-1be4-4592-9220-0e8680b7bdb0" -->
 ## Naming Convention
 
 ```
 layer_3_subx2_project_<name>/
 ```
 
+<!-- section_id: "245287d2-8f9e-493c-8303-533f37e578f9" -->
 ## When to Create a Sub*2-Project
 
 Create a subx2-project when you have a nested project within a sub-project that:
@@ -23,6 +25,7 @@ Create a subx2-project when you have a nested project within a sub-project that:
 - Warrants its own Git repository (submodule)
 - Contains multiple features/components of its own
 
+<!-- section_id: "985ee9ef-91d8-4a09-9ea9-604772c43b2d" -->
 ## Note on "Sub" Prefix
 
 The "sub" prefix indicates nesting within the **same type**:

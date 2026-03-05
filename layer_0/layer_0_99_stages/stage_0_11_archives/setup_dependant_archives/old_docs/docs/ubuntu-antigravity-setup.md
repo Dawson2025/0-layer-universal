@@ -7,6 +7,7 @@ resource_name: "ubuntu-antigravity-setup"
 
 Complete guide for installing and configuring Google Antigravity IDE on native Ubuntu Linux systems.
 
+<!-- section_id: "7cb7bf2a-f275-4542-902f-fefcc22ddc65" -->
 ## Prerequisites
 
 - Ubuntu 20.04+ (24.04 recommended)
@@ -14,6 +15,7 @@ Complete guide for installing and configuring Google Antigravity IDE on native U
 - Internet connection
 - Desktop environment (GNOME, KDE, XFCE, etc.) with display server (X11 or Wayland)
 
+<!-- section_id: "bc6511fd-fa5f-4f28-85e3-1ce1b84059d5" -->
 ## Environment Verification
 
 Before starting, verify your Ubuntu environment:
@@ -35,10 +37,12 @@ echo $DISPLAY
 ldd --version | head -n 1
 ```
 
+<!-- section_id: "1bb70088-5e9f-4f79-abb8-dd42b2cd1fa7" -->
 ## Step 1: Install Google Chrome
 
 Chrome is required for Antigravity's authentication system and browser automation features.
 
+<!-- section_id: "99df53eb-e797-49cb-9ec5-6b58c3ef2dfc" -->
 ### Check if Chrome is already installed
 
 ```bash
@@ -47,6 +51,7 @@ google-chrome --version
 
 If not installed, follow these steps:
 
+<!-- section_id: "99435ddc-cfbd-4e53-8b5b-6eb772681587" -->
 ### Install Chrome via apt repository
 
 1. **Add Google's signing key**:
@@ -70,6 +75,7 @@ If not installed, follow these steps:
    google-chrome --version
    ```
 
+<!-- section_id: "319e41b2-a84f-4bdc-a7cc-9b7cf17c6b21" -->
 ### Alternative: Direct .deb Installation
 
 If repository installation fails:
@@ -85,8 +91,10 @@ sudo apt install ~/Downloads/google-chrome-stable_current_amd64.deb -y
 google-chrome --version
 ```
 
+<!-- section_id: "3c8d0118-1422-47fa-848e-69a7bcb0101a" -->
 ## Step 2: Install Antigravity IDE
 
+<!-- section_id: "7ffd6d15-142e-4caa-af4a-3d8a98315bdb" -->
 ### Add Antigravity Repository
 
 1. **Create keyring directory**:
@@ -127,6 +135,7 @@ google-chrome --version
    antigravity --version
    ```
 
+<!-- section_id: "e71ba85c-97e1-4c36-8e37-b7102a895dfe" -->
 ### Troubleshooting Repository Issues
 
 If you get a "Malformed entry" error:
@@ -154,10 +163,12 @@ If you get a "Malformed entry" error:
    sudo apt install -y antigravity
    ```
 
+<!-- section_id: "42dd03ff-e0f1-4215-80ba-31f52e6b9106" -->
 ## Step 3: Configure Chrome for Authentication (Optional but Recommended)
 
 While Antigravity can work without Chrome remote debugging on native Linux, enabling it provides better authentication integration and browser automation features.
 
+<!-- section_id: "cacbe255-1cf1-4ec6-bfb8-10fb7a50bd69" -->
 ### Launch Chrome with Remote Debugging
 
 1. **Kill any existing Chrome and Antigravity processes**:
@@ -179,6 +190,7 @@ While Antigravity can work without Chrome remote debugging on native Linux, enab
 
    **Note**: The debugging port may not be immediately accessible via HTTP, but this does not prevent Antigravity from working. Chrome uses the port internally for authentication flows. If the curl command fails, Antigravity should still launch and function correctly.
 
+<!-- section_id: "0ddd8a61-3f60-456c-a999-63717f27510b" -->
 ### Alternative: Launch Chrome with Explicit User Profile
 
 If the standard remote debugging launch doesn't work, try with an explicit user profile:
@@ -190,12 +202,15 @@ google-chrome --remote-debugging-port=9222 \
   --no-default-browser-check > /dev/null 2>&1 &
 ```
 
+<!-- section_id: "dc83b052-3aa2-4135-a170-17501836868f" -->
 ### Alternative: Use Chrome Normally
 
 On native Linux, you can also use Chrome normally without remote debugging. Antigravity will attempt to use the default Chrome instance for authentication. However, remote debugging provides more reliable authentication flows.
 
+<!-- section_id: "c01ed54c-e35b-4653-bb3b-00c57161d46b" -->
 ## Step 4: Launch Antigravity IDE
 
+<!-- section_id: "c4db2b0c-3dd8-4fa5-9b4d-74cb8ae33b68" -->
 ### Basic Launch
 
 ```bash
@@ -204,12 +219,14 @@ antigravity .
 
 This opens Antigravity in the current directory.
 
+<!-- section_id: "82a4d691-c7d3-41da-b013-9bf09e0abaef" -->
 ### Open a Specific Project
 
 ```bash
 antigravity ~/code/my-project
 ```
 
+<!-- section_id: "51b52cd9-7984-4b63-b75c-d53f24937793" -->
 ### Launch from Applications Menu
 
 After installation, Antigravity should appear in your applications menu:
@@ -217,6 +234,7 @@ After installation, Antigravity should appear in your applications menu:
 - **KDE**: Search for "Antigravity" in Application Launcher
 - **XFCE**: Look in Applications > Development > Antigravity
 
+<!-- section_id: "0da0249b-804e-4c1e-918f-c5ec083225e4" -->
 ### Create Desktop Shortcut (Optional)
 
 Create desktop launchers for quick access. Two options are available:
@@ -288,6 +306,7 @@ You can now launch Antigravity from:
 - Your applications menu (search for "Antigravity")
 - By dragging folders onto the shortcut to open that directory
 
+<!-- section_id: "c2314733-57ad-43af-9ebe-dcca6bae9efd" -->
 ## Step 5: Sign In to Antigravity
 
 1. Once Antigravity opens, click the **Sign In** button
@@ -296,6 +315,7 @@ You can now launch Antigravity from:
 4. Grant necessary permissions
 5. You should be redirected back to Antigravity, now signed in
 
+<!-- section_id: "13c8ca74-0a91-46eb-acff-3e8d3ac15c1c" -->
 ### If Sign-In Button Doesn't Work
 
 This usually means Chrome isn't properly configured for authentication:
@@ -323,6 +343,7 @@ This usually means Chrome isn't properly configured for authentication:
    antigravity .
    ```
 
+<!-- section_id: "b0e8abf7-2f08-4c76-8f68-2925abdd4ac5" -->
 ## Complete Startup Script
 
 Create a script to automate the startup process with Chrome remote debugging:
@@ -351,6 +372,7 @@ EOF
 chmod +x ~/start-antigravity.sh
 ```
 
+<!-- section_id: "41168cd5-5de5-4c95-ae37-310fd94782de" -->
 ### Usage
 
 ```bash
@@ -361,6 +383,7 @@ chmod +x ~/start-antigravity.sh
 ~/start-antigravity.sh ~/code/my-project
 ```
 
+<!-- section_id: "fbaab8fc-b090-44bb-bcc5-92dcf96d6d10" -->
 ### Add to Shell Profile (Optional)
 
 To make the script available system-wide:
@@ -373,8 +396,10 @@ source ~/.bashrc
 
 Now you can run `start-antigravity.sh` from anywhere.
 
+<!-- section_id: "fb43f610-fd0c-494d-9621-fac14b6be338" -->
 ## Troubleshooting
 
+<!-- section_id: "f4ad702c-a723-4eae-aa54-5099bd93064c" -->
 ### Display Issues
 
 **Problem**: GUI doesn't appear or "cannot open display" error
@@ -393,6 +418,7 @@ Now you can run `start-antigravity.sh` from anywhere.
    ```
 4. For Wayland, ensure Wayland session is active (should work automatically)
 
+<!-- section_id: "e3c56dd1-dac9-4b59-bd83-5f70349d0e94" -->
 ### Authentication Failures
 
 **Problem**: Sign-in button does nothing or authentication fails
@@ -418,6 +444,7 @@ Now you can run `start-antigravity.sh` from anywhere.
    **Note**: The debugging port may not be accessible via HTTP (`curl` may fail), but this is normal and doesn't prevent Antigravity from working.
 4. Restart Antigravity using the startup script
 
+<!-- section_id: "569e0e72-cf17-462e-801e-551ff95c15ca" -->
 ### Repository Errors
 
 **Problem**: "Malformed entry" or "cannot read list" errors
@@ -443,6 +470,7 @@ Now you can run `start-antigravity.sh` from anywhere.
   ```
 - Or create the key with the name the repository expects
 
+<!-- section_id: "fecfc1ba-1b8c-4976-973e-6f4a66f850d1" -->
 ### Performance Issues
 
 **Problem**: Antigravity is slow or unresponsive
@@ -458,6 +486,7 @@ Now you can run `start-antigravity.sh` from anywhere.
 4. Check if other heavy applications are running
 5. Restart Antigravity and Chrome
 
+<!-- section_id: "440e6f91-6117-4b96-ac9e-ee62e8b618b9" -->
 ### Missing Dependencies
 
 **Problem**: Antigravity fails to launch with library errors
@@ -474,6 +503,7 @@ Now you can run `start-antigravity.sh` from anywhere.
    ```
 3. Install specific missing libraries if identified
 
+<!-- section_id: "4440cba7-af65-436d-a418-52080906024a" -->
 ## System Requirements
 
 - **Ubuntu**: 20.04+ (24.04 recommended)
@@ -485,14 +515,17 @@ Now you can run `start-antigravity.sh` from anywhere.
 - **Disk Space**: ~1GB for Antigravity installation
 - **Google Chrome**: Latest stable version
 
+<!-- section_id: "6a89285c-a798-45ee-9f37-a2db796d9e83" -->
 ## Additional Resources
 
 - [Google Antigravity Documentation](https://antigravity.google/docs)
 - [Ubuntu Desktop Guide](https://help.ubuntu.com/lts/ubuntu-help/)
 - [Chrome DevTools Protocol](https://chromedevtools.github.io/devtools-protocol/)
 
+<!-- section_id: "dfa7294d-4bb8-4c07-a724-f030534cc51a" -->
 ## Quick Reference
 
+<!-- section_id: "08901c78-21fd-47bc-a1d5-ea84a5670568" -->
 ### Daily Startup
 ```bash
 ~/start-antigravity.sh ~/code/my-project
@@ -503,12 +536,14 @@ Or simply:
 antigravity ~/code/my-project
 ```
 
+<!-- section_id: "b233e632-68a3-423b-bde2-86b15df4b10d" -->
 ### Stop Everything
 ```bash
 pkill -f antigravity-server
 pkill chrome
 ```
 
+<!-- section_id: "2faf9cc6-9861-4285-a9fa-baa9affd040f" -->
 ### Check Status
 ```bash
 # Check if Antigravity is running
@@ -518,12 +553,14 @@ ps aux | grep antigravity-server | grep -v grep
 curl -s http://127.0.0.1:9222/json/version
 ```
 
+<!-- section_id: "2c6e81e9-de2a-4ecc-9d03-215c7de38a7c" -->
 ### Update Antigravity
 ```bash
 sudo apt update
 sudo apt upgrade antigravity
 ```
 
+<!-- section_id: "8bcc2dc4-c929-4eb0-81cc-57660cbb4fcf" -->
 ### Uninstall Antigravity
 ```bash
 sudo apt remove antigravity

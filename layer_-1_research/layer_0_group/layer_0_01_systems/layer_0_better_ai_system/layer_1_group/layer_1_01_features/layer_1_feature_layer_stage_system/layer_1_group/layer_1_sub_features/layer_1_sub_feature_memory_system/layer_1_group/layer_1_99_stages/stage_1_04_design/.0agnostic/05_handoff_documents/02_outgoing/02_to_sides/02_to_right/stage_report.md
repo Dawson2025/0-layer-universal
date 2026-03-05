@@ -5,16 +5,20 @@ resource_name: "stage_report"
 ---
 # Stage Report: 04_design (Memory System)
 
+<!-- section_id: "f4f4c36b-07f6-4377-bc27-b80b4cbb1556" -->
 ## Status
 **active** — 4 architecture documents produced, avenue web restructured
 
+<!-- section_id: "a3ec50ad-dc85-41c7-90b5-df4710d6d49a" -->
 ## Last Updated
 2026-02-22
 
+<!-- section_id: "e239865b-5dc2-4081-bfa5-4bfeeb58170b" -->
 ## Summary
 
 Architecture and design for memory system integration into the layer-stage framework. 4 design documents translate 38 research documents into concrete specifications: unified sync orchestration, data-based avenue expansion (avenues 09-13), enriched skill model with trajectory stores, and holistic source-of-truth-to-avenue flow. Avenue web physically restructured with 01_file_based/ and 02_data_based/ subdirectories.
 
+<!-- section_id: "471e77a1-0ea1-40be-8102-3cf6961c12e5" -->
 ## Key Outputs
 
 - `outputs/by_topic/01_unified_sync_architecture.md` — sync-main.sh orchestrator spec, sync registry, dependency ordering
@@ -26,6 +30,7 @@ Architecture and design for memory system integration into the layer-stage frame
 - Avenue registry: REGISTRY.md + sync-registry.json at 00_context_avenue_web_registry/
 - 5 data-based avenue directories scaffolded with READMEs
 
+<!-- section_id: "4953b70a-0dd0-4366-9dd2-8f5901e1a0a1" -->
 ## Key Findings
 
 - The .0agnostic/ numbering (01-05 content, 06 delivery, 07+ environment) naturally encodes the source-of-truth-to-avenue flow
@@ -33,6 +38,7 @@ Architecture and design for memory system integration into the layer-stage frame
 - A single sync-main.sh orchestrator can coordinate all existing + future sync scripts with dependency ordering
 - Skills can be enriched with trajectory stores and temporal data without becoming full entities
 
+<!-- section_id: "458aaf11-51ab-43da-b08b-80d663cdb445" -->
 ## Open Items
 
 - sync-main.sh implementation needed (stage 06)
@@ -40,6 +46,7 @@ Architecture and design for memory system integration into the layer-stage frame
 - Enriched skill model not yet applied to existing skills (stage 06)
 - Testing and validation (stage 07)
 
+<!-- section_id: "47d897ec-f75b-4d0f-b151-0f80dbe1ace8" -->
 ## Handoff
 
 - **Ready for next stage**: yes

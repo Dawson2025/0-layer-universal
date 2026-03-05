@@ -3,6 +3,7 @@ resource_id: "6e54505f-724a-4ca8-b6bb-5c93afd65a18"
 resource_type: "knowledge"
 resource_name: "supervisor_patterns"
 ---
+<!-- section_id: "e33c2c55-0920-4d8b-9db6-fc9f92705a71" -->
 ## Supervisor Patterns and Implementation
 
 This document provides concrete patterns and examples for implementing supervisors in the AI manager hierarchy system.
@@ -15,6 +16,7 @@ It builds on:
 
 ---
 
+<!-- section_id: "4e1fd61e-0b4d-4592-a228-d975fb0ff115" -->
 ## 1. Supervisor Core Responsibilities
 
 A supervisor must:
@@ -28,8 +30,10 @@ A supervisor must:
 
 ---
 
+<!-- section_id: "e5cff305-8b12-4582-ba68-7fa49f3cc93c" -->
 ## 2. Supervisor Architecture Patterns
 
+<!-- section_id: "665d0389-e784-4f72-ba6d-4d0db9d3ada3" -->
 ### 2.1 Pattern 1: Simple File-Watching Supervisor
 
 **Use Case:** Lightweight, single-machine development
@@ -270,6 +274,7 @@ if __name__ == "__main__":
     supervisor.start()
 ```
 
+<!-- section_id: "9a8dfbfd-7bea-475d-9cc9-5fa705e0b067" -->
 ### 2.2 Pattern 2: Queue-Based Supervisor
 
 **Use Case:** Distributed systems, multiple machines, high throughput
@@ -380,6 +385,7 @@ app.conf.task_routes = {
 }
 ```
 
+<!-- section_id: "ad973e19-6526-4b89-b3f3-7806af888328" -->
 ### 2.3 Pattern 3: LangGraph-Based Supervisor
 
 **Use Case:** Complex workflows, explicit state management, auditability
@@ -504,8 +510,10 @@ while True:
 
 ---
 
+<!-- section_id: "4d750b14-51e2-4fc3-9dd4-75497cb6dd93" -->
 ## 3. Failure Handling Patterns
 
+<!-- section_id: "f81b6ae6-afca-4c4d-8405-ccffb827444c" -->
 ### 3.1 Retry with Escalation
 
 ```python
@@ -570,6 +578,7 @@ def execute_with_retry(task, layer, stage):
     return escalate_to_human(task, error="Max retries exceeded")
 ```
 
+<!-- section_id: "738b9594-a167-41bc-9b4a-781e22ece20a" -->
 ### 3.2 Circuit Breaker Pattern
 
 ```python
@@ -643,8 +652,10 @@ def execute_with_breaker(task, tool):
 
 ---
 
+<!-- section_id: "9b96761d-7ae6-48bc-ac61-8b949d4d97d1" -->
 ## 4. Monitoring and Visualization
 
+<!-- section_id: "5b1d179c-ed78-4970-aca9-87c85a607c1b" -->
 ### 4.1 Real-Time Dashboard
 
 ```python
@@ -699,6 +710,7 @@ class SupervisorMonitor:
         })
 ```
 
+<!-- section_id: "11b5bfc1-fc41-47f9-8d25-bec40e4a5d1b" -->
 ### 4.2 Task Dependency Visualization
 
 ```python
@@ -724,6 +736,7 @@ def visualize_task_graph(handoffs):
 
 ---
 
+<!-- section_id: "4991e8b6-6660-4a20-892d-38b508443751" -->
 ## 5. Supervisor Selection Guide
 
 | Pattern | Best For | Complexity | Scalability |

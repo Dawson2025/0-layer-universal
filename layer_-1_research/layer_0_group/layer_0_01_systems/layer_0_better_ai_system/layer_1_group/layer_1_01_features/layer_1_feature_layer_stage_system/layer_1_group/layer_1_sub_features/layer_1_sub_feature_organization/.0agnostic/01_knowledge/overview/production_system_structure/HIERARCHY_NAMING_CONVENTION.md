@@ -5,10 +5,12 @@ resource_name: "HIERARCHY_NAMING_CONVENTION"
 ---
 # Hierarchy Naming Convention (`_hierarchy` suffix)
 
+<!-- section_id: "f32cd230-62e8-4193-9056-36b82b17ca8f" -->
 ## Purpose
 
 The `_hierarchy` suffix indicates that a folder contains **nested sub-layers that branch based on choices made at higher levels**. This is different from `_group` which simply contains child content.
 
+<!-- section_id: "5eb7e854-3872-41cf-974e-e226e51617ff" -->
 ## Quick Reference
 
 | Suffix | Meaning | Contains |
@@ -16,6 +18,7 @@ The `_hierarchy` suffix indicates that a folder contains **nested sub-layers tha
 | `_group` | Child content container | Direct children (files, folders) |
 | `_hierarchy` | Branching sub-layer tree | Nested sub-layers that vary by parent choice |
 
+<!-- section_id: "ea050919-ba5b-43a1-ad17-a58fc9358959" -->
 ## When to Use `_hierarchy`
 
 Use `_hierarchy` when:
@@ -23,6 +26,7 @@ Use `_hierarchy` when:
 2. Those children **branch differently based on a choice/selection**
 3. The structure forms a **tree where paths diverge**
 
+<!-- section_id: "07799211-7766-4d64-87c1-ea370ce51429" -->
 ## Canonical Example: Setup-Dependent Hierarchy
 
 ```
@@ -45,6 +49,7 @@ sub_layer_0_05+_setup_dependant_hierarchy/
 │       └── sub_layer_0_05_group/               ← Windows-specific content
 ```
 
+<!-- section_id: "25ffba1a-3de4-43ac-9fc0-df8dd711e1b2" -->
 ### Why This is a Hierarchy
 
 1. **Choice at Level 05**: Which operating system? (Linux, macOS, Windows)
@@ -53,6 +58,7 @@ sub_layer_0_05+_setup_dependant_hierarchy/
 
 The sub_layer_06 content **depends on** which sub_layer_05 you chose. This branching structure is what makes it a hierarchy.
 
+<!-- section_id: "326cf24e-d661-44a3-bd8f-31bdafadf5c3" -->
 ## Visual: Hierarchy vs Group
 
 ```
@@ -67,14 +73,17 @@ folder_group/                        folder_hierarchy/
                                          └── sub_layer_B2/
 ```
 
+<!-- section_id: "912b15fa-a58b-41c5-9f97-c05b69ee44de" -->
 ## AI Agent Guidance
 
+<!-- section_id: "daa2297f-3afd-43bb-8e64-f64ef63abf44" -->
 ### When Navigating a `_hierarchy` Folder
 
 1. **Identify the branching factor** - What choice determines the path?
 2. **Select the relevant branch** - Based on current context (OS, environment, tool)
 3. **Descend only the relevant path** - Don't load all branches
 
+<!-- section_id: "e96c459e-565c-43fa-bc02-6da75ae31ab2" -->
 ### Example Navigation
 
 ```
@@ -90,6 +99,7 @@ sub_layer_0_05+_setup_dependant_hierarchy/
             → sub_layer_0_07_cursor/      ← Selected by tool
 ```
 
+<!-- section_id: "bf4bbf7a-849a-4e4d-875b-6284b562809a" -->
 ### When Creating a `_hierarchy` Folder
 
 Ask yourself:
@@ -99,6 +109,7 @@ Ask yourself:
 
 If yes to all → use `_hierarchy` suffix.
 
+<!-- section_id: "0dd05120-ec85-4bc9-900c-4afeb3bf80c0" -->
 ## Common Hierarchy Patterns
 
 | Hierarchy Root | Branching Factor | Example Branches |
@@ -108,6 +119,7 @@ If yes to all → use `_hierarchy` suffix.
 | `tools_hierarchy` | Tool/App Choice | cursor, vscode, vim |
 | `models_hierarchy` | AI Model | claude-4, gpt-4, gemini |
 
+<!-- section_id: "a69a61ad-842e-4358-9847-ced8b772fbe5" -->
 ## Relationship to Layer-Stage System
 
 Hierarchies exist **within** sub-layers, not as a replacement:

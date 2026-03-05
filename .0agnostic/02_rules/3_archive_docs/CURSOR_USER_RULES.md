@@ -5,6 +5,7 @@ resource_name: "CURSOR_USER_RULES"
 ---
 # Cursor User Rules - Copy & Paste Ready
 
+<!-- section_id: "a0b79f15-7846-44ff-a178-4eae61ee9443" -->
 ## 🚨 **CRITICAL: Terminal Tool Replacement Rules**
 
 **MASTER REFERENCE**: See `0_context/trickle_down_0_universal/0_instruction_docs/MASTER_DOCUMENTATION.md` for complete documentation.
@@ -109,6 +110,7 @@ Test the solution with: `python3 scripts/terminal_wrapper.py --script scripts/si
 
 ---
 
+<!-- section_id: "c79ae122-1e43-4791-b8d7-43ee7c0841d1" -->
 ## 📋 **How to Add to Cursor Settings**
 
 1. **Open Cursor Settings** (Ctrl/Cmd + ,)
@@ -116,6 +118,7 @@ Test the solution with: `python3 scripts/terminal_wrapper.py --script scripts/si
 3. **Paste the rules above** into the text area
 4. **Save settings**
 
+<!-- section_id: "4dbc8fdb-e08a-4973-9d7a-3098119d70ed" -->
 ## 🎯 **What This Accomplishes**
 
 - **Prevents terminal hanging** on Python script execution
@@ -124,6 +127,7 @@ Test the solution with: `python3 scripts/terminal_wrapper.py --script scripts/si
 - **Maintains productivity** without manual intervention
 - **Eliminates the need** to remember specific commands
 
+<!-- section_id: "b2a4c94c-c13e-4da8-8bc7-8ba3c0994ee6" -->
 ## ✅ **Testing the Rules**
 
 After adding these rules, test with:

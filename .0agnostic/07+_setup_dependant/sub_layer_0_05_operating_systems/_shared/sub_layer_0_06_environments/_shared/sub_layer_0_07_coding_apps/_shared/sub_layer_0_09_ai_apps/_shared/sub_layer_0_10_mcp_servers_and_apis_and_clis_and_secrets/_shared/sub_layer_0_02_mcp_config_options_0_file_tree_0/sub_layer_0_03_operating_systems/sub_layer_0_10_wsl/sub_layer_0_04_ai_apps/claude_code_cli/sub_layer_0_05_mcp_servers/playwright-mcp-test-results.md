@@ -11,20 +11,25 @@ resource_name: "playwright-mcp-test-results"
 **Playwright Version:** 1.55.0
 **Playwright MCP Version:** 0.0.54
 
+<!-- section_id: "ab8a50df-e24f-4052-860c-815326d8ff0a" -->
 ## Test Summary
 
 The Playwright MCP server is **CONFIGURED and PARTIALLY WORKING** in Claude Code CLI. The server can start successfully and respond to MCP protocol commands, but has browser installation path issues that prevent full functionality.
 
+<!-- section_id: "996e0b59-85c4-4f7c-ac37-f4bdd1ddcf4e" -->
 ### Overall Status: ⚠️ CONFIGURED BUT NEEDS BROWSER PATH FIX
 
 ---
 
+<!-- section_id: "bbeffba6-482a-40c1-a732-939b223f3b8a" -->
 ## 1. Configuration Review
 
+<!-- section_id: "5788594a-fbeb-415d-9892-8fdde57753fa" -->
 ### Claude Code Configuration Location
 - **File:** `/home/dawson/.claude.json`
 - **Project Scope:** `/home/dawson` (user's home directory)
 
+<!-- section_id: "68fc5720-2792-45c3-bbc3-d011b547ff5f" -->
 ### Playwright MCP Configuration
 ```json
 {
@@ -49,12 +54,15 @@ The Playwright MCP server is **CONFIGURED and PARTIALLY WORKING** in Claude Code
 
 ---
 
+<!-- section_id: "5966691f-c19c-4485-a3f1-718e1de6e11a" -->
 ## 2. Browser Installation Verification
 
+<!-- section_id: "34f47074-5156-46aa-a9ad-c1fd8bdd9e12" -->
 ### Playwright Browsers Directory
 - **Path:** `/home/dawson/.cache/ms-playwright`
 - **Status:** ✅ EXISTS
 
+<!-- section_id: "2f1c69a6-662a-45b2-8bb6-b8adb2820d54" -->
 ### Installed Browsers
 ```
 /home/dawson/.cache/ms-playwright/
@@ -73,8 +81,10 @@ The Playwright MCP server is **CONFIGURED and PARTIALLY WORKING** in Claude Code
 
 ---
 
+<!-- section_id: "fe572cc4-763a-4b2e-9ec3-f2e866b0889b" -->
 ## 3. MCP Server Startup Test
 
+<!-- section_id: "6ba29b60-ea33-467a-86b8-10edda7a5648" -->
 ### Test Method
 Sent MCP protocol initialization request via stdio:
 ```json
@@ -90,6 +100,7 @@ Sent MCP protocol initialization request via stdio:
 }
 ```
 
+<!-- section_id: "a6018f19-2979-48fa-bf7f-38a905564f6e" -->
 ### Response
 ```json
 {
@@ -107,11 +118,14 @@ Sent MCP protocol initialization request via stdio:
 
 ---
 
+<!-- section_id: "27a4768e-f9ef-4b83-ad6e-b4c2e04ea711" -->
 ## 4. Available Tools Test
 
+<!-- section_id: "3b187fa7-b2f5-40e2-835b-260f5e41e32a" -->
 ### Test Method
 Sent `tools/list` request after initialization
 
+<!-- section_id: "c03ed0cb-78bf-414c-b62c-bd8f7fae111c" -->
 ### Available Tools (22 total)
 1. `browser_close` - Close the page
 2. `browser_resize` - Resize the browser window
@@ -140,8 +154,10 @@ Sent `tools/list` request after initialization
 
 ---
 
+<!-- section_id: "4e195a11-c0bc-48fa-8a49-fd1ce60ea8d7" -->
 ## 5. Functional Test Results
 
+<!-- section_id: "dea7ded2-5fdf-424c-ae6c-76699d84ceaa" -->
 ### Test: Navigate to https://example.com
 
 **Command Sent:**
@@ -176,19 +192,23 @@ Sent `tools/list` request after initialization
 
 ---
 
+<!-- section_id: "2d871993-d161-42da-8649-2175ba607f32" -->
 ## 6. Issue Analysis
 
+<!-- section_id: "e4a21f5e-a6ca-459e-af2f-c93aa1ab78be" -->
 ### Root Cause
 The Playwright MCP server cannot find the installed Chromium browser despite:
 - Chromium being installed at `/home/dawson/.cache/ms-playwright/chromium-1200/chrome-linux64/chrome`
 - Environment variable `PLAYWRIGHT_BROWSERS_PATH` being set in the configuration
 - Environment variable `HOME` being set in the configuration
 
+<!-- section_id: "ac372187-b96f-4487-890a-d499f5762e38" -->
 ### Possible Reasons
 1. **Version Mismatch:** The MCP server may be looking for a different Chromium version
 2. **Path Recognition:** The MCP server's internal Playwright installation may not respect the `PLAYWRIGHT_BROWSERS_PATH` environment variable when launched via `npx -y`
 3. **NPX Caching:** The `npx -y` command may create its own temporary installation that doesn't share the browser cache
 
+<!-- section_id: "a85b05a8-ac59-4c58-a418-cf2d420ca3c0" -->
 ### Evidence
 - Browser install attempt via `browser_install` tool timed out (15+ seconds)
 - Manual Playwright installation shows Chromium 1200 is present
@@ -196,6 +216,7 @@ The Playwright MCP server cannot find the installed Chromium browser despite:
 
 ---
 
+<!-- section_id: "84a0c149-419c-4c7e-a417-0d1ef8716d01" -->
 ## 7. Test Results Summary
 
 | Test Component | Status | Details |
@@ -212,8 +233,10 @@ The Playwright MCP server cannot find the installed Chromium browser despite:
 
 ---
 
+<!-- section_id: "bce57132-0b9c-4be5-82b8-e103609599f8" -->
 ## 8. Recommendations
 
+<!-- section_id: "912fdcc8-46c5-41e5-aae6-aa49e3fe9664" -->
 ### Immediate Fixes
 
 1. **Run Browser Install Tool from Claude Code:**
@@ -236,6 +259,7 @@ The Playwright MCP server cannot find the installed Chromium browser despite:
    npx -y playwright install --dry-run chromium
    ```
 
+<!-- section_id: "629d7e20-4859-41c8-86d4-26688bf530a3" -->
 ### Configuration Adjustments
 
 Consider adding these to the MCP configuration:
@@ -259,6 +283,7 @@ Consider adding these to the MCP configuration:
 }
 ```
 
+<!-- section_id: "ddfcc557-0b33-4e3b-96f4-97c8e8e57da5" -->
 ### Long-term Solution
 
 1. **Use Local Installation:**
@@ -287,6 +312,7 @@ Consider adding these to the MCP configuration:
 
 ---
 
+<!-- section_id: "df4dc892-1281-475f-b6a2-693c583e1ef4" -->
 ## 9. Workaround for Immediate Use
 
 If you need to use Playwright MCP right now:
@@ -301,24 +327,29 @@ This will let the MCP server install browsers in its own cache location.
 
 ---
 
+<!-- section_id: "8986fd2b-a4ec-4b55-b5c0-ff8a58c987f8" -->
 ## 10. Additional Information
 
+<!-- section_id: "706ea427-942d-4f3b-81a9-760838dac5a8" -->
 ### Environment Details
 - **OS:** Linux 6.6.87.2-microsoft-standard-WSL2 (WSL)
 - **Shell:** bash
 - **Node Package Manager:** npm via nvm
 - **npx Path:** `/home/dawson/.nvm/versions/node/v22.20.0/bin/npx`
 
+<!-- section_id: "97bcbbca-45c5-4429-9f9d-be03881e13f0" -->
 ### Related Directories
 - **Playwright Cache:** `/home/dawson/.cache/ms-playwright/`
 - **Claude Config:** `/home/dawson/.claude.json`
 - **MCP Directory:** `/home/dawson/.playwright-mcp/` (empty/doesn't exist)
 
+<!-- section_id: "b720aa6e-607b-4aa7-8beb-540ce98d481e" -->
 ### Test Files Created
 - `/tmp/test-playwright-mcp.js` - Node.js test script for MCP protocol
 
 ---
 
+<!-- section_id: "ba349962-fc13-466b-99ef-fc87b306ab87" -->
 ## Conclusion
 
 The Playwright MCP server is **properly configured** in Claude Code and can:

@@ -5,6 +5,7 @@ resource_name: "README.sync-conflict-20260126-101634-IF2WOGZ"
 ---
 # Learning Simulation System - Overview
 
+<!-- section_id: "8c3822de-fabe-44ef-8604-ec936a49545f" -->
 ## What This Research Is About
 
 This research explores the **Multi-Scale Discovery Environment (MSDE)** - a next-generation STEM learning platform that merges real physics-based simulation with interactive learning.
@@ -15,6 +16,7 @@ This research explores the **Multi-Scale Discovery Environment (MSDE)** - a next
 
 ---
 
+<!-- section_id: "0765bf87-8043-4364-ba73-ca9e4f7f5c08" -->
 ## Core Concept
 
 The MSDE is essentially a video game where you learn in a real 3D space - like a 3D sandbox or VR world where the "rules" are math and physics. The platform delivers **100% real-life applicable knowledge**:
@@ -24,8 +26,10 @@ The MSDE is essentially a video game where you learn in a real 3D space - like a
 
 ---
 
+<!-- section_id: "f4cf8bf4-e215-40a6-8470-437afd3a511a" -->
 ## High-Level Architecture
 
+<!-- section_id: "fea4c84a-f52b-4e53-8887-6bab22fbeaae" -->
 ### Three-Layer Simulation Stack
 
 | Layer | Technology | Function |
@@ -34,6 +38,7 @@ The MSDE is essentially a video game where you learn in a real 3D space - like a
 | **Layer 2: Multi-Physics Solver** | NVIDIA Newton (built on Warp) | Heat transfer, structural stress, fluid flow calculations |
 | **Layer 3: Micro Lens** | NVIDIA ALCHEMI | Atomic-level visualization and simulation |
 
+<!-- section_id: "4f0d9ad8-c00e-42ec-9154-f432f56885b9" -->
 ### Zone Progression
 
 Users advance through environments unlocking science layers:
@@ -44,6 +49,7 @@ Users advance through environments unlocking science layers:
 
 ---
 
+<!-- section_id: "fe11fbac-af42-445b-a193-3e1ebd210160" -->
 ## Integration Points
 
 - **Mathlab Automation Ecosystem**: Merges with automation intelligence for adaptive learning
@@ -52,6 +58,7 @@ Users advance through environments unlocking science layers:
 
 ---
 
+<!-- section_id: "ee5b4689-a96c-4617-af8a-5516ae760cf2" -->
 ## Development Status
 
 - **Phase 1**: Single-player MVP (Dec 28 - Jan 7)
@@ -60,6 +67,7 @@ Users advance through environments unlocking science layers:
 
 ---
 
+<!-- section_id: "0fbb1e8e-162f-4f4b-9698-9c3d35cbf5c2" -->
 ## Related Documentation
 
 - `../things_learned/` - Detailed technical specifications and design documents

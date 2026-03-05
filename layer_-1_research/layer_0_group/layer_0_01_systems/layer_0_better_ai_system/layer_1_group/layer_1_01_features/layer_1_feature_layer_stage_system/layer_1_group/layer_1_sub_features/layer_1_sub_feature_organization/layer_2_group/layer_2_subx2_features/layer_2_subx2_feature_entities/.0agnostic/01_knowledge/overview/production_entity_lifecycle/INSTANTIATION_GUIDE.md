@@ -5,12 +5,15 @@ resource_name: "INSTANTIATION_GUIDE"
 ---
 # Entity Instantiation Guide
 
+<!-- section_id: "d8cf983f-c100-4904-b09a-6261fae4eefb" -->
 ## Overview
 
 This guide explains how to create new entities in the layer-stage system.
 
+<!-- section_id: "beb081ba-05d1-44d4-94d2-8c4f8aa6f822" -->
 ## General Instantiation Process
 
+<!-- section_id: "4675c0b2-165f-46f9-b377-84fad08e98d1" -->
 ### Step 1: Determine Entity Type and Location
 
 | Creating a... | Goes in... | Layer Number |
@@ -20,6 +23,7 @@ This guide explains how to create new entities in the layer-stage system.
 | New research project | `layer_-1_research/` | layer_-1 |
 | New research feature | `<research>/layer_0_group/layer_0_features/` | layer_0 |
 
+<!-- section_id: "91603257-31d4-4742-bd5f-f8f642c0b43c" -->
 ### Step 2: Create Directory Structure
 
 ```bash
@@ -27,6 +31,7 @@ This guide explains how to create new entities in the layer-stage system.
 mkdir -p layer_1_project_myapp/{.0agnostic/{hooks/scripts,skills,agents,episodic/{sessions,changes}},layer_1_group/{layer_1_00_layer_registry/proposals,layer_1_03_sub_layers/{sub_layer_1_00_sub_layer_registry,sub_layer_1_01_prompts,sub_layer_1_02_knowledge_system/{overview,things_learned},sub_layer_1_03_principles,sub_layer_1_04_rules,sub_layer_1_05+_setup_dependant_hierarchy},layer_1_99_stages},layer_2_group/{layer_2_00_layer_registry/proposals,layer_2_features}}
 ```
 
+<!-- section_id: "8193afa8-fa89-429c-a918-2b25e00d1141" -->
 ### Step 3: Create Required Files
 
 #### 0AGNOSTIC.md (Identity)
@@ -84,6 +89,7 @@ Load this context when:
 | ... | ... |
 ```
 
+<!-- section_id: "b1743953-e499-49c2-b6d7-1e3cb6d7aad0" -->
 ### Step 4: Generate Tool Files
 
 Run the agnostic-sync script:
@@ -93,6 +99,7 @@ bash .0agnostic/hooks/scripts/agnostic-sync.sh all
 
 Or copy from parent and modify.
 
+<!-- section_id: "1f8ba23b-fde8-4573-8d8a-b6bb834f6bdc" -->
 ### Step 5: Create Stage Structure (if needed)
 
 ```bash
@@ -104,8 +111,10 @@ done
 
 ---
 
+<!-- section_id: "b626aeb3-1814-440a-8849-ccffb0bfdded" -->
 ## Specific Entity Instantiation
 
+<!-- section_id: "ad2c1ca5-c4ab-4f95-a150-70c15121e35a" -->
 ### Creating a New Project
 
 1. **Location**: `layer_1/layer_1_projects/layer_1_project_<name>/`
@@ -146,6 +155,7 @@ You are an agent at **Layer 1** (Project), **Project**: <name>.
 - **Children**: `layer_2_group/layer_2_features/`
 ```
 
+<!-- section_id: "13a8595b-a844-4091-b76b-fb42ce5897a3" -->
 ### Creating a New Feature
 
 1. **Location**: `<project>/layer_2_group/layer_2_features/layer_2_feature_<name>/`
@@ -164,6 +174,7 @@ You are an agent at **Layer 2** (Feature), **Feature**: <name>.
 - **Children**: `layer_3_group/layer_3_components/` (if any)
 ```
 
+<!-- section_id: "a922da59-6d7f-414b-be8b-97b0e4b1d9b6" -->
 ### Creating a New Research Project
 
 1. **Location**: `layer_-1_research/layer_-1_<name>/`
@@ -175,6 +186,7 @@ You are an agent at **Layer 2** (Feature), **Feature**: <name>.
 - **Scope**: Research, design, planning only. Does not implement in production.
 ```
 
+<!-- section_id: "9e2b409b-248c-4a17-9aa1-482c1e9c7c3f" -->
 ### Creating a New Stage
 
 1. **Location**: `<entity>/layer_N_group/layer_N_99_stages/stage_N_XX_<name>/`
@@ -195,6 +207,7 @@ stage_N_XX_<name>/
     └── outgoing/to_below/
 ```
 
+<!-- section_id: "79220f3c-d09b-4b22-95f0-2243168cd36d" -->
 ### Creating a Proposal
 
 1. **Location**: `<entity>/layer_N_group/layer_N_00_layer_registry/proposals/`
@@ -221,6 +234,7 @@ stage_N_XX_<name>/
 
 ---
 
+<!-- section_id: "eb49fa58-c384-464f-8579-6b3c9935bba7" -->
 ## Post-Instantiation Checklist
 
 - [ ] 0AGNOSTIC.md created with correct identity

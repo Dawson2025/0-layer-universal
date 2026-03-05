@@ -10,6 +10,7 @@ resource_name: "audit_avenues_on_creation"
 
 ---
 
+<!-- section_id: "1f659cff-a641-431c-86bb-f87068a47b07" -->
 ## When This Rule Activates
 
 - Creating a new entity (directory with `0AGNOSTIC.md`)
@@ -17,6 +18,7 @@ resource_name: "audit_avenues_on_creation"
 - Adding new rules or knowledge that should be discoverable
 - Scaffolding a new feature or sub-feature
 
+<!-- section_id: "26f1bcb9-4ef0-4dfd-8213-1ea87d308c65" -->
 ## Rule
 
 After creating a new entity, verify that critical context is reachable through at least 3 independent avenues:
@@ -34,6 +36,7 @@ After creating a new entity, verify that critical context is reachable through a
 3. **Target**: 5+ avenues functional at creation time
 4. **Minimum**: 3 avenues functional (identity reachable through 3 paths)
 
+<!-- section_id: "981cc2f4-2f09-4526-b060-83c65dd0b3a2" -->
 ## What to Create at Minimum
 
 | Avenue | Minimum File | Lines |
@@ -42,6 +45,7 @@ After creating a new entity, verify that critical context is reachable through a
 | A4 | `0AGNOSTIC.md` with Identity + Parent | 10 |
 | A8 | `.0agnostic/rules/.gitkeep` | 0 |
 
+<!-- section_id: "beb36672-b4a4-4387-b17c-d367bfe2c330" -->
 ## Related
 
 - Static rule: `static/avenue_redundancy.md`

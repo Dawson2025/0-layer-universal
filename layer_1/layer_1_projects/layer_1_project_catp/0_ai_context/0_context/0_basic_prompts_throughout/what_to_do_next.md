@@ -10,6 +10,7 @@ resource_name: "what_to_do_next"
 
 **🔧 CRITICAL**: Before executing any commands, read [Cursor Terminal Issues](../trickle_down_0_universal/0_instruction_docs/cursor_terminal_issues.md) to understand terminal handling problems and use the terminal wrapper system.
 
+<!-- section_id: "66968e49-f51a-4e5d-be2b-de1224a5ef8e" -->
 ## 📍 **Project Location**
 Update this path to point to your project's documentation directory:
 ```
@@ -18,8 +19,10 @@ Update this path to point to your project's documentation directory:
 
 Follow the instructions and documentation in this directory along with your judgement to figure out what you should do next. If there is anything you need to update within `/PATH/TO/YOUR/PROJECT/0_context` to make it better, do so.
 
+<!-- section_id: "793add63-3529-48d9-bd68-27f24a31a2f8" -->
 ## 🎯 **CURRENT PRIORITIES**
 
+<!-- section_id: "7b1425bf-ca95-4d4d-bd44-1e4bf099911f" -->
 ### 🚀 **PROJECT OVERVIEW**
 **Your Project Name** - Brief description of what your project does.
 
@@ -28,12 +31,14 @@ Follow the instructions and documentation in this directory along with your judg
 - **Feature 3**: Brief description
 - **Integration**: Technologies or services integrated
 
+<!-- section_id: "e0650d58-512d-43c7-9c39-203432855151" -->
 ### Technology Stack
 - **Frontend**: Your frontend technology
 - **Backend**: Your backend technology
 - **Database**: Your database solution
 - **Deployment**: Your deployment platform
 
+<!-- section_id: "1c2cbb49-85ab-455c-9640-e0d3c29c92e8" -->
 ### 🔴 **HIGH PRIORITY - IMMEDIATE ACTIONS**
 
 1. **Task Name** (Estimated Time) 🎯 **IMMEDIATE PRIORITY**
@@ -46,18 +51,21 @@ Follow the instructions and documentation in this directory along with your judg
    - Subtask 2
    - Subtask 3
 
+<!-- section_id: "4f68b69c-fc74-4972-8f00-4185c5a02de5" -->
 ### 🟡 **MEDIUM PRIORITY**
 
 3. **Task Name** (Estimated Time)
    - Subtask 1
    - Subtask 2
 
+<!-- section_id: "1bd76d6b-46c2-467c-b283-21107c0c5aaa" -->
 ### 🟢 **LOW PRIORITY**
 
 4. **Task Name** (Estimated Time)
    - Subtask 1
    - Subtask 2
 
+<!-- section_id: "68da72b0-5393-46f5-bfc4-204ef8f6700d" -->
 ## 📊 **CURRENT PROJECT STATUS**
 
 - **Project Phase**: Current development stage
@@ -66,6 +74,7 @@ Follow the instructions and documentation in this directory along with your judg
 - **Current Status**: Brief status description
 - **Next Milestone**: Next major milestone
 
+<!-- section_id: "e524d74e-a011-413b-a538-10f11baa6dbf" -->
 ## 🚀 **IMMEDIATE NEXT ACTION**
 
 **Brief description of what to do next** - Specific action item with details.

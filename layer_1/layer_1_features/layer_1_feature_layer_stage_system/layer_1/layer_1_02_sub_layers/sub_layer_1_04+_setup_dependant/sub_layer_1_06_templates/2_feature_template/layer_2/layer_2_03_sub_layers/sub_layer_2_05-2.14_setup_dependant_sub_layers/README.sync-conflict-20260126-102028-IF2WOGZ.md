@@ -10,6 +10,7 @@ resource_name: "README.sync-conflict-20260126-102028-IF2WOGZ"
 
 ---
 
+<!-- section_id: "54a3d4ff-d696-4d7f-9684-c2d5358a22c5" -->
 ## Overview
 
 This sublayer consolidates all setup documentation for sublayers 2.05 through 2.14:
@@ -29,12 +30,14 @@ All setup documentation is organized in a **hierarchical file tree structure**.
 
 ---
 
+<!-- section_id: "56596e65-bce9-4691-94e7-f3be47139226" -->
 ## Primary Navigation: Feature Setup File Tree
 
 **Main entry point**: `2.01_feature_setup_file_tree/`
 
 Navigate by your configuration to find feature-specific setup documentation.
 
+<!-- section_id: "a917cfdd-1a37-4def-bf38-b3e46775f4f8" -->
 ## Structure
 
 ```

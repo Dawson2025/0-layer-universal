@@ -8,10 +8,12 @@ resource_name: "README"
 
 **Need**: [Stage Delegation](../README.md)
 
+<!-- section_id: "6c9c7bef-30cd-45b8-9b6c-7102c8427e3f" -->
 ## Overview
 
 These stories cover the end-to-end workflow of a manager handing off work to a stage agent and that agent becoming operational independently. They validate that managers can delegate with minimal information, that stage agents self-configure from their own 0AGNOSTIC.md, and that clear boundaries prevent managers from doing stage-level work themselves.
 
+<!-- section_id: "05555b05-5e21-4887-afd1-214b64ddb3c0" -->
 ## Actors
 
 - **User (Developer)**: Human developer (Dawson) who gives instructions to the AI system, reviews outputs, and validates behavior

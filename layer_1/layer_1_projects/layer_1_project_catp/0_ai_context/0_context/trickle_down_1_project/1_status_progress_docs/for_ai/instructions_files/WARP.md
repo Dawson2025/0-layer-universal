@@ -7,10 +7,12 @@ resource_name: "WARP"
 
 This file provides guidance to Warp AI Assistant when working with the Language Tracker project.
 
+<!-- section_id: "c47c7cc5-3ab6-4b4f-937d-d6dd6fe1cb44" -->
 ## Trickle-Down Documentation System
 
 **MANDATORY:** Warp AI Assistant must use the hierarchical trickle-down documentation system for all operations.
 
+<!-- section_id: "49e502a6-9495-427b-a2fb-f1aaa951071c" -->
 ### Context Loading Protocol for Warp
 
 **Required Loading Order: TD0 ? TD0.5 ? TD1 ? TD2 ? TD3**
@@ -20,6 +22,7 @@ This file provides guidance to Warp AI Assistant when working with the Language 
 - **Contains**: WSL Ubuntu file system requirements (MANDATORY)
 - **Why Critical**: Warp operates at the file system level and must comply with environment standards
 
+<!-- section_id: "bedfccdc-eccd-474a-9ec4-c77290a86595" -->
 ### Warp-Specific Requirements
 
 **File System Operations:**
@@ -35,6 +38,7 @@ This file provides guidance to Warp AI Assistant when working with the Language 
 - Firebase CLI: Use WSL Ubuntu Firebase CLI installation
 - Git: Use WSL Ubuntu Git configuration
 
+<!-- section_id: "cba83da7-6073-43f1-8ebb-281b0f47ce3e" -->
 ### Trickle-Down Context Loading for Warp
 
 **Before any file operations or code assistance:**
@@ -45,6 +49,7 @@ This file provides guidance to Warp AI Assistant when working with the Language 
 4. **TD2**: Relevant feature documentation (as needed)
 5. **TD3**: Implementation details (as needed)
 
+<!-- section_id: "113d1e50-bae4-48c6-80f3-6e178e6d8ec8" -->
 ### WSL Ubuntu Environment Compliance
 
 **CRITICAL:** All Warp operations must comply with TD0.5 environment standards:

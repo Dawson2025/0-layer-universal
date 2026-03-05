@@ -6,12 +6,14 @@ resource_name: "README"
 ---
 # Tree of Needs - Better Layer Stage System
 
+<!-- section_id: "7ac65862-b59c-4451-aed2-8ee4b5309072" -->
 ## Root Need
 
 **00_better_layer_stage_system**: A consistent, navigable layer-stage system that AI agents can work with effectively.
 
 ---
 
+<!-- section_id: "522179b2-9af3-4d80-a457-d41867d158c9" -->
 ## Branches
 
 ```
@@ -38,6 +40,7 @@ resource_name: "README"
 
 ---
 
+<!-- section_id: "89f94f47-c441-4138-a8bf-5bd56a468776" -->
 ## Quick Reference
 
 | Branch | Question | Key Needs |
@@ -49,6 +52,7 @@ resource_name: "README"
 
 ---
 
+<!-- section_id: "4dca5071-8c64-44af-aaa6-4feb44f1a877" -->
 ## Inheritance
 
 This tree inherits from parent project's tree:
@@ -61,6 +65,7 @@ Specifically maps to:
 
 ---
 
+<!-- section_id: "4dbcdf90-9a4b-4117-8124-aa939d5ad541" -->
 ## Further Layering
 
 **This tree informs how child entities are organized (relative depth):**
@@ -77,6 +82,7 @@ See: `TREE_TO_FEATURES_MAPPING.md` for full mapping.
 
 ---
 
+<!-- section_id: "d7d27a00-5ede-4210-8760-a8d929043471" -->
 ## Version
 
 - **Tree Version**: 1.0.0

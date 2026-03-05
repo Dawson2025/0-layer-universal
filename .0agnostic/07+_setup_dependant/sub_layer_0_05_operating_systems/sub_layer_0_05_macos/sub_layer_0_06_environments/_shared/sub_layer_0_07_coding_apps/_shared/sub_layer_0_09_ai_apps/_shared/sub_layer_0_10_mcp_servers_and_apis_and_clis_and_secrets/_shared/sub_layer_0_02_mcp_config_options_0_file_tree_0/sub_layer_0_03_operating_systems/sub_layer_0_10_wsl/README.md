@@ -6,9 +6,11 @@ resource_name: "README"
 ---
 # WSL (Windows Subsystem for Linux) MCP Notes
 
+<!-- section_id: "3355fecc-bcc8-4f74-adc5-0aba96317c19" -->
 ## Scope
 Use this when running AI CLIs inside WSL (Ubuntu) and using MCP servers (especially Playwright/browser automation).
 
+<!-- section_id: "6caf5df4-a51f-4d88-8d77-eb0c2137d12d" -->
 ## Key prerequisites
 - **WSLg enabled** for headed browser visibility (required if you want a visible Chromium window from WSL):
   - `/mnt/wslg` exists
@@ -19,6 +21,7 @@ Use this when running AI CLIs inside WSL (Ubuntu) and using MCP servers (especia
   - `PLAYWRIGHT_BROWSERS_PATH=~/.cache/ms-playwright`
   - Node/NPM available (often via NVM)
 
+<!-- section_id: "765bae51-c3e2-40f4-8211-f2e2ea738d05" -->
 ## Critical browser automation findings (WSLg)
 - Playwright MCP is headed by default; use `--headless` to force headless.
 - Do **not** use `--headless=false` (newer `@playwright/mcp` versions reject it).
@@ -28,6 +31,7 @@ Use this when running AI CLIs inside WSL (Ubuntu) and using MCP servers (especia
 - **See**: `0.04_ai_apps/cursor_agent/0.05_mcp_servers/playwright-mcp/general_issues_and_fixes/WSLG_BROWSER_CRASH_FIX.md` for complete setup instructions
 - Avoid browser profile lock issues by using Playwright MCP `isolated` mode.
 
+<!-- section_id: "14e44197-4e8a-442e-98ce-47993a8716dc" -->
 ## Quickstart: visible browser from WSL (Codex CLI)
 
 1. Confirm WSLg is present:
@@ -46,5 +50,6 @@ If you do not have WSLg, you cannot open a visible Linux GUI browser from WSL. U
 - Playwright MCP **headless** (`codex_mcp_sync.py --headless`) and rely on screenshots/logs, or
 - A **Windows-visible** browser via DevTools (see `chrome-devtools-mcp` in the Codex WSL runbook).
 
+<!-- section_id: "7844e46b-94d0-42c8-8308-d5a550a6f009" -->
 ## Runbooks
 See `0.04_ai_apps/` for per-app MCP setup instructions on WSL.

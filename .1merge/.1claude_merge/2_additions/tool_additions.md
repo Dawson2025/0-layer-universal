@@ -5,16 +5,19 @@ resource_name: "tool_additions"
 ---
 # Claude Code CLI — Universal Additions
 
+<!-- section_id: "e59fa8d3-f2c3-425a-8362-dc3acab35963" -->
 ## Browser Extraction Capabilities
 
 Claude Code CLI has browser extraction capabilities via the **Claude in Chrome** MCP server. When you need to extract content from web pages — especially pages that use React rendering (Perplexity, SPAs) — use the following:
 
+<!-- section_id: "bee1bdb1-028f-4325-9173-8c5aecf85506" -->
 ### Available Skills
 
 | Skill | Trigger | What It Does |
 |-------|---------|--------------|
 | `/perplexity-extract` | User provides a Perplexity URL | Extracts structured content + citation source URLs using React fiber traversal |
 
+<!-- section_id: "26803820-3e44-47fb-aaba-5baead604ad7" -->
 ### When to Use Browser Extraction
 
 - User shares a Perplexity search URL and wants the content/citations preserved
@@ -23,11 +26,13 @@ Claude Code CLI has browser extraction capabilities via the **Claude in Chrome**
 - Any page where URLs are stored in React component props, not DOM attributes
 - User asks to open Claude in Chrome and navigate to or work in Perplexity (e.g., "open Perplexity in the browser", "search Perplexity for X")
 
+<!-- section_id: "c3908443-8b63-4644-a07f-a21bd382685b" -->
 ### Prerequisites
 
 - Claude in Chrome MCP server must be connected (check with `tabs_context_mcp`)
 - If MCP server is not available, fall back to `WebFetch` for basic content or ask the user to copy/paste
 
+<!-- section_id: "1a3c3a40-d60e-45fc-8ded-b28eb49ea7f5" -->
 ### Key Knowledge
 
 - React fiber traversal (`__reactFiber$*` → `memoizedProps.children.props`) is the ONLY reliable method for Perplexity citation URLs

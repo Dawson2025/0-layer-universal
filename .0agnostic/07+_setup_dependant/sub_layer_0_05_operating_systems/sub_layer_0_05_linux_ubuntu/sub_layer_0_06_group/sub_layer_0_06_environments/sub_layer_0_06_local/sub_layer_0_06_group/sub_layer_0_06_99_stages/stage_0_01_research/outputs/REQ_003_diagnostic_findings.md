@@ -11,8 +11,10 @@ resource_name: "REQ_003_diagnostic_findings"
 
 ---
 
+<!-- section_id: "f437911f-0819-422d-8fc7-35d4ea858ebd" -->
 ## Issue 1: Vibe-Typer Audio Renderer Timeout
 
+<!-- section_id: "3b6b365e-3d46-4f10-b532-2737398c26ed" -->
 ### Root Cause: PipeWire ALSA Hardware Parameter Failure
 
 **Evidence**:
@@ -26,6 +28,7 @@ pw.node: (alsa_output.pci-0000_00_1f.3-platform-skl_hda_dsp_generic.HiFi__hw_sof
 **Duration**: At least since 2026-01-29 18:08:38 (26+ minutes)
 **Service Status**: PipeWire service appears running but in error state
 
+<!-- section_id: "b7103297-5715-4c55-b35d-783f1c317210" -->
 ### What's Happening
 
 When vibe-typer tries to record audio:
@@ -35,6 +38,7 @@ When vibe-typer tries to record audio:
 4. PipeWire suspends the device with error
 5. vibe-typer timeout waiting for renderer to become ready
 
+<!-- section_id: "fca28216-f827-4653-a113-c859bba541bf" -->
 ### Why This Is Happening
 
 **Most Likely Causes** (in order of probability):
@@ -53,6 +57,7 @@ When vibe-typer tries to record audio:
    - Intel SOF DSP firmware (`sof-hda-dsp`) may need reloading
    - Possible firmware/kernel mismatch
 
+<!-- section_id: "780fd6f6-e2db-499f-b324-20720d5728c2" -->
 ### Supporting Evidence
 
 **Audio Device Status**:
@@ -81,8 +86,10 @@ Apps → EasyEffects ("Yoga Pro 9i Official" EQ) → PipeWire → ALSA → Hardw
 
 ---
 
+<!-- section_id: "71460ef8-8364-416e-a414-07182f341489" -->
 ## Issue 2: LibreOffice & Portal Service Crash
 
+<!-- section_id: "8c02580b-e892-4f44-a0bf-c36369f80774" -->
 ### Root Cause: xdg-desktop-portal D-Bus Initialization Timeout
 
 **Evidence**:
@@ -100,6 +107,7 @@ Status: Failed (Result: signal) - Main process killed with SIGKILL
 - Service killed: 2026-01-28 09:51:53 (total 90 seconds, then timeout/SIGKILL)
 - **Status**: Crashed and never recovered (1 day+ ago)
 
+<!-- section_id: "308a2177-3843-454b-ad5e-5f78733eab00" -->
 ### What's Happening
 
 LibreOffice needs portal to:
@@ -114,6 +122,7 @@ Portal can't initialize because:
 4. Systemd kills it after 90 seconds
 5. Process never fully starts, leaving LibreOffice blocked
 
+<!-- section_id: "9b2f30fc-616a-4305-bf8c-fcae3223df68" -->
 ### Why This Is Happening
 
 **Most Likely Causes** (in order of probability):
@@ -133,6 +142,7 @@ Portal can't initialize because:
    - Portal trying to use GNOME backend when should use GTK
    - Configuration mismatch after system changes
 
+<!-- section_id: "f73633f5-d39c-4d1a-b925-4f46f6481ad0" -->
 ### Supporting Evidence
 
 **Portal Processes**:
@@ -157,8 +167,10 @@ Other portal-dependent apps: Unknown (not tested)
 
 ---
 
+<!-- section_id: "6fb5bdbe-2e7d-437d-b8f6-0e50e71f2953" -->
 ## Cross-Issue Analysis
 
+<!-- section_id: "b547aa71-65df-4b4f-b921-7853e4b83dea" -->
 ### Are These Related?
 
 **Probability**: 70% related
@@ -174,6 +186,7 @@ Other portal-dependent apps: Unknown (not tested)
 - EasyEffects/PipeWire changes affected service initialization timing
 - System resource constraints (not memory, maybe file descriptors?)
 
+<!-- section_id: "efaa529b-6e29-4180-ad33-fab76716f452" -->
 ### Unlikely to be Related
 
 - Different subsystems (audio vs. portal)
@@ -182,8 +195,10 @@ Other portal-dependent apps: Unknown (not tested)
 
 ---
 
+<!-- section_id: "091be4dc-8f47-4f96-aaf7-9a361c8255a2" -->
 ## Recommended Investigation Path
 
+<!-- section_id: "079d20e5-d44c-4ecf-9c90-d8579b441d3c" -->
 ### Step 1: Determine if Reboot Fixes Both (5 minutes)
 ```bash
 sudo reboot
@@ -197,6 +212,7 @@ sudo reboot
 - If one fixed → independent issues
 - If neither fixed → configuration problem
 
+<!-- section_id: "b835591f-e2f7-4482-bd07-df62ffda5ac4" -->
 ### Step 2: If Not Fixed by Reboot, Test Audio Isolation (5 minutes)
 ```bash
 # Disable EasyEffects
@@ -211,6 +227,7 @@ vibe-typer
 #   → Deeper audio system issue
 ```
 
+<!-- section_id: "c1580ad4-2bcc-4f6d-95fe-6aeaaf39e153" -->
 ### Step 3: If Not Fixed, Test Portal Isolation (5 minutes)
 ```bash
 # Check if autostart is running
@@ -228,6 +245,7 @@ libreoffice
 #   → Portal service fundamentally broken
 ```
 
+<!-- section_id: "2a183794-cbcc-4297-bda2-a5667257c6b6" -->
 ### Step 4: Deep Diagnostics (if Steps 1-3 don't work)
 ```bash
 # Audio debugging
@@ -244,6 +262,7 @@ gdbus introspect --system --dest org.freedesktop.impl.portal.desktop.gtk --objec
 
 ---
 
+<!-- section_id: "3355834b-a317-45ee-b3e4-5e43cd0c72e6" -->
 ## Configuration Files to Review
 
 | File | Purpose | Status |
@@ -256,17 +275,21 @@ gdbus introspect --system --dest org.freedesktop.impl.portal.desktop.gtk --objec
 
 ---
 
+<!-- section_id: "13d85e65-44a7-4fbc-8058-529aade7c216" -->
 ## Summary
 
+<!-- section_id: "56273df7-2d7e-488b-a914-f76bfc71542a" -->
 ### Vibe-Typer Issue
 - **Status**: PipeWire can't initialize ALSA hardware
 - **Likely Cause**: EasyEffects config issue or hardware state corruption
 - **Fix Probability**: Reboot (80%), Disable EasyEffects (70%), Firmware reload (30%)
 
+<!-- section_id: "2baa4e47-5da2-4523-9021-e850ee8bd47c" -->
 ### LibreOffice Issue
 - **Status**: Portal service times out during D-Bus initialization
 - **Likely Cause**: Service dependency loop or incomplete previous fix
 - **Fix Probability**: Reboot (75%), Restart autostart (85%), Reconfigure portal (60%)
 
+<!-- section_id: "06210810-247f-43b8-9f6b-be9b15bd1497" -->
 ### Recommended Action
 **Reboot first** - has 75%+ probability of fixing both issues with no configuration changes needed.

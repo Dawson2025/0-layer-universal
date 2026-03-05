@@ -5,6 +5,7 @@ resource_name: "RESEARCH_PROJECT_ORGANIZATION_PROPOSAL"
 ---
 # Proposal: Research Project Organization
 
+<!-- section_id: "e9320844-bf4e-4810-aaac-d7e7710cae01" -->
 ## Problem Statement
 
 The current organization of `layer_-1_better_ai_system` has structural issues:
@@ -16,6 +17,7 @@ The current organization of `layer_-1_better_ai_system` has structural issues:
 
 ---
 
+<!-- section_id: "31fdd302-bc5a-4225-bb67-7cc1273e7870" -->
 ## Current Structure (BEFORE)
 
 ```
@@ -56,6 +58,7 @@ layer_-1_better_ai_system/                    ← Research project root
 
 ---
 
+<!-- section_id: "06449c1f-0265-4802-8eaa-55c6c2f45a55" -->
 ## Proposed Structure (AFTER)
 
 ```
@@ -104,6 +107,7 @@ layer_-1_better_ai_system/                    ← Research project root
 
 ---
 
+<!-- section_id: "8f0c9132-64a7-44d5-b4c1-79a3470616ba" -->
 ## Key Changes
 
 | Before | After | Reason |
@@ -118,6 +122,7 @@ layer_-1_better_ai_system/                    ← Research project root
 
 ---
 
+<!-- section_id: "5ca3c18e-45ba-48ef-bf50-b22f37262654" -->
 ## AI Agent Context Flow (How Agents Work With This)
 
 ```
@@ -162,6 +167,7 @@ layer_-1_better_ai_system/                    ← Research project root
 
 ---
 
+<!-- section_id: "c9517dc6-1a7b-4fd0-b390-3985686970ad" -->
 ## Feature Lifecycle (Handoff to Production)
 
 ```
@@ -201,6 +207,7 @@ layer_-1_better_ai_system/                    ← Research project root
 
 ---
 
+<!-- section_id: "eda1b6ca-d780-46cf-ad22-b8593c31cbfe" -->
 ## STATUS.md Template (For Each Feature)
 
 ```markdown
@@ -235,6 +242,7 @@ layer_-1_better_ai_system/                    ← Research project root
 
 ---
 
+<!-- section_id: "11791c62-0973-41ea-8a74-f5f0737c153c" -->
 ## Implementation Steps
 
 1. **Rename `layer_0_group/` to `research_targets/target_layer_0/`**
@@ -248,6 +256,7 @@ layer_-1_better_ai_system/                    ← Research project root
 
 ---
 
+<!-- section_id: "6ce44947-fdc1-4934-a0d4-b923098b6d30" -->
 ## Migration Commands (Draft)
 
 ```bash
@@ -277,6 +286,7 @@ mkdir -p "$BASE/graduated"
 
 ---
 
+<!-- section_id: "774ef75d-74d6-482a-9486-3022e679a2eb" -->
 ## Decision Request
 
 **Do you approve this reorganization?**

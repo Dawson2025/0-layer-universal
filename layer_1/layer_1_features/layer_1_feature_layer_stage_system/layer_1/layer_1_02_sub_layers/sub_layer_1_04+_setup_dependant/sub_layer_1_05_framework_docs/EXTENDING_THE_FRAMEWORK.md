@@ -14,6 +14,7 @@ resource_name: "EXTENDING_THE_FRAMEWORK"
 
 ---
 
+<!-- section_id: "a932329c-50dc-4c64-8d61-fafb5536ac64" -->
 ## 🎯 When to Use This Guide
 
 **Use the STANDARD framework** (`FLEXIBLE_LAYERING_SYSTEM.md`) when:
@@ -31,6 +32,7 @@ resource_name: "EXTENDING_THE_FRAMEWORK"
 
 ---
 
+<!-- section_id: "fecda1b4-959b-4a89-af71-aa1133c4e449" -->
 ## 📐 Standard Structure Recap
 
 ```
@@ -55,12 +57,15 @@ layer_<N>_<type>_<name>/
 
 ---
 
+<!-- section_id: "8f023e8a-bbdc-4500-8af4-320db43ffec8" -->
 ## 🔧 Extension Pattern 1: Custom Numbered Directories
 
+<!-- section_id: "db612ba8-1960-444c-93e0-6f13a747e0c5" -->
 ### What It Is
 
 Add **custom numbered directories** (`.03-.98`) alongside standard ones for specific organizational needs.
 
+<!-- section_id: "60c0f111-2e2d-41b6-bd07-858fb22d6621" -->
 ### Numbering Scheme
 
 ```
@@ -77,6 +82,7 @@ Add **custom numbered directories** (`.03-.98`) alongside standard ones for spec
 - Use **sequential numbering** (`.03`, `.04`, `.05`, ...)
 - Each custom directory should have a **clear purpose**
 
+<!-- section_id: "7788ec1c-4566-41ee-9de6-77ec359c0b6a" -->
 ### Example: Workflow Lifecycle Management
 
 **Use Case:** Managing AI workflows with distinct phases (creation, production, results)
@@ -116,6 +122,7 @@ layer_2_feature_assignments/
 - `.05` = **Results/Output** - Links to what workflows produced
 - Each custom directory has **nested standard structure**
 
+<!-- section_id: "9acafa68-4626-453c-936e-cb99535ed88a" -->
 ### Example: Experimentation Pipeline
 
 **Use Case:** Scientific experiments with distinct phases
@@ -138,6 +145,7 @@ layer_2_feature_protein_analysis/
 └── 2.99_stages/                         # STANDARD - Overall project stages
 ```
 
+<!-- section_id: "975581c6-cdc0-43b2-871b-ca069a4645c7" -->
 ### When to Use Custom Directories
 
 **Use custom numbered directories when:**
@@ -153,12 +161,15 @@ layer_2_feature_protein_analysis/
 
 ---
 
+<!-- section_id: "297362b7-8ab7-418b-b362-a90f5f6c00f8" -->
 ## 🔧 Extension Pattern 2: Slot Directories
 
+<!-- section_id: "41b78a67-a45b-44f2-82a8-d41878b29c75" -->
 ### What It Is
 
 **Slots** are numbered directories that hold multiple **instances** of something.
 
+<!-- section_id: "94bad968-b118-4ed1-ad29-82dfd40ceb05" -->
 ### Pattern
 
 ```
@@ -171,6 +182,7 @@ layer_2_feature_protein_analysis/
     └── <N>.99_stages/
 ```
 
+<!-- section_id: "cbb07902-6b81-4ce0-839e-30858c3738ac" -->
 ### Example: Multiple Workflow Instances
 
 ```
@@ -188,6 +200,7 @@ layer_2_feature_protein_analysis/
     └── 2.99_stages/
 ```
 
+<!-- section_id: "7de1d3d1-9f29-4d41-a01b-e4eee346babe" -->
 ### Example: Version Management
 
 ```
@@ -203,6 +216,7 @@ layer_2_feature_protein_analysis/
     └── 2.99_stages/                     # Release stages for v2.0
 ```
 
+<!-- section_id: "b490a91c-7882-4681-8578-8d873c7a13be" -->
 ### When to Use Slots
 
 **Use slot directories when:**
@@ -220,12 +234,15 @@ layer_2_feature_protein_analysis/
 
 ---
 
+<!-- section_id: "5f144bd3-7613-4888-8b35-152cf3c825ec" -->
 ## 🔧 Extension Pattern 3: Nested Stages
 
+<!-- section_id: "9d693d9d-440d-4a59-bfa1-8b7d37be918d" -->
 ### What It Is
 
 Having **multiple `<N>.99_stages/` directories** at different levels of your hierarchy.
 
+<!-- section_id: "63ac016c-6d22-4342-bd08-1b8b69355af2" -->
 ### Pattern
 
 ```
@@ -237,6 +254,7 @@ layer_<N>_feature_<name>/
         └── <N>.99_stages/               # Instance-level stages
 ```
 
+<!-- section_id: "0afdfbb4-13fa-4848-ac08-d7728456de71" -->
 ### Example: Three Levels of Stages
 
 ```
@@ -265,6 +283,7 @@ layer_2_feature_assignments/
 2. **Creation stages** - Developing workflows (design → validation)
 3. **Execution stages** - Running workflows (setup → completion)
 
+<!-- section_id: "0577b2d4-1e24-46fe-a53e-e83df0f59692" -->
 ### When to Use Nested Stages
 
 **Use nested stages when:**
@@ -275,12 +294,15 @@ layer_2_feature_assignments/
 
 ---
 
+<!-- section_id: "039411cf-b2a1-416f-bed2-5682bcd81dd8" -->
 ## 🎨 Extension Pattern 4: Hybrid Features/Components + Custom Directories
 
+<!-- section_id: "8b755fa0-4dce-4dea-a33a-5a4dc344bfab" -->
 ### What It Is
 
 Combining standard nesting (features/components) with custom directories.
 
+<!-- section_id: "04f74ca6-c388-4bc8-8b17-36f040d1c757" -->
 ### Pattern
 
 ```
@@ -297,6 +319,7 @@ layer_<N>_feature_<name>/
     └── layer_<N+1>_component_<compname>/
 ```
 
+<!-- section_id: "d115ef75-9dcd-4238-b2e9-b1589fa3a88c" -->
 ### Example: Class with Assignments AND Topics
 
 ```
@@ -327,8 +350,10 @@ layer_2_feature_ds250_course/
 
 ---
 
+<!-- section_id: "e3397a96-d0f3-4722-88d6-37f3d64c4aad" -->
 ## 🧭 Decision Framework
 
+<!-- section_id: "95783aea-f139-45df-9639-063942b34b86" -->
 ### Step 1: Start with Standard Structure
 
 **Always start here:**
@@ -344,6 +369,7 @@ layer_<N>_<type>_<name>/
 - **YES** → Use standard structure with features/components nesting
 - **NO** → Continue to Step 2
 
+<!-- section_id: "ab720749-dcd4-4d92-b5af-3878c58327de" -->
 ### Step 2: Consider Standard Nesting First
 
 **Add features/components:**
@@ -356,6 +382,7 @@ layer_<N>_<type>_<name>/
 - **YES** → Use standard nesting (most cases!)
 - **NO** → Continue to Step 3
 
+<!-- section_id: "dbde8d0f-7d08-4dfc-a908-39d0dcb42a2c" -->
 ### Step 3: Identify Your Specific Need
 
 **What doesn't fit?**
@@ -367,6 +394,7 @@ layer_<N>_<type>_<name>/
 | Different lifecycles at each level | Nested stages | Pattern 3 |
 | Mix of process and content | Hybrid approach | Pattern 4 |
 
+<!-- section_id: "e7204a8d-0930-4eae-9f4f-da2b79dd4f50" -->
 ### Step 4: Implement Extension
 
 **Choose your extension pattern:**
@@ -377,8 +405,10 @@ layer_<N>_<type>_<name>/
 
 ---
 
+<!-- section_id: "cd806b3f-13f2-409e-9108-33ab98d0e679" -->
 ## 📋 Real-World Examples
 
+<!-- section_id: "a95886fb-eaca-4037-a60a-c136cac91983" -->
 ### Example 1: Applied Calculus (Standard + Minimal Extension)
 
 **Use Case:** Class notes with Proactor AI + Excalidraw + BYUI Math
@@ -403,6 +433,7 @@ layer_2_feature_derivatives/              # Standard feature
 
 **Extensions used:** NONE - standard structure is perfect!
 
+<!-- section_id: "4c73918c-7009-46bb-ac3d-703610a063d5" -->
 ### Example 2: PAC School DS250 (Full Extensions)
 
 **Use Case:** Managing assignments with workflow creation, execution, and results
@@ -436,6 +467,7 @@ layer_2_feature_assignments/
 - ✅ Slot directories (`workflow_1`, `workflow_2`, `workflow_3`)
 - ✅ Nested stages (feature level, creation level, execution level)
 
+<!-- section_id: "8b5107bf-129a-413c-b60c-0d809f4cc684" -->
 ### Example 3: Research Lab (Hybrid Approach)
 
 **Use Case:** Research with experiments, papers, and topic organization
@@ -469,8 +501,10 @@ layer_2_feature_protein_research/
 
 ---
 
+<!-- section_id: "815b5e7a-1da0-4b8e-a5e7-3bc17179b447" -->
 ## ⚠️ Best Practices
 
+<!-- section_id: "33a3deb3-1737-45dc-8a99-561766766acd" -->
 ### 1. Start Simple
 
 **Always start with standard structure** and only add extensions when you have a clear need.
@@ -481,6 +515,7 @@ Add: features/components nesting if needed
 Extend: custom directories only if standard doesn't fit
 ```
 
+<!-- section_id: "41812024-0098-4a13-bd4f-812b282f3722" -->
 ### 2. Document Your Extensions
 
 **Create a README** in your project explaining:
@@ -502,6 +537,7 @@ This project extends the standard framework with:
 See EXTENDING_THE_FRAMEWORK.md in universal context for pattern details.
 ```
 
+<!-- section_id: "4c923695-dc5b-48c2-b210-f7fc829efee7" -->
 ### 3. Be Consistent
 
 **Once you choose a pattern**, use it consistently:
@@ -509,6 +545,7 @@ See EXTENDING_THE_FRAMEWORK.md in universal context for pattern details.
 - Same slot naming conventions
 - Same purposes for each custom directory
 
+<!-- section_id: "562e30fc-a386-4720-a25f-5dd35748c6b3" -->
 ### 4. Maintain Standard Core
 
 **Always keep the required directories:**
@@ -519,6 +556,7 @@ See EXTENDING_THE_FRAMEWORK.md in universal context for pattern details.
 
 **Never repurpose these** - they're the foundation of the system.
 
+<!-- section_id: "d8b23bb3-dfcb-409f-9797-d5a4e0d6ff13" -->
 ### 5. Use Features/Components First
 
 **Before adding custom directories**, ask:
@@ -530,8 +568,10 @@ See EXTENDING_THE_FRAMEWORK.md in universal context for pattern details.
 
 ---
 
+<!-- section_id: "2c071ae6-a9f7-4d7d-8488-20282c0ab831" -->
 ## 🎯 Summary
 
+<!-- section_id: "cd604d80-424d-4761-b8f2-3b2a3c5c2659" -->
 ### The Framework Supports:
 
 | Pattern | Use Case | Complexity |
@@ -543,6 +583,7 @@ See EXTENDING_THE_FRAMEWORK.md in universal context for pattern details.
 | **Nested Stages** | Multi-level workflows | ⭐⭐⭐⭐ Expert |
 | **Hybrid** | Complex projects | ⭐⭐⭐⭐⭐ Expert |
 
+<!-- section_id: "c0e16df9-e1c7-4333-acff-b57c8fd84c78" -->
 ### Quick Decision Tree
 
 ```
@@ -560,6 +601,7 @@ Need organization?
 └─ NO: You probably don't need this guide!
 ```
 
+<!-- section_id: "a7377845-8148-464c-ae08-60cd590f54bf" -->
 ### Remember
 
 - **90% of projects** work with standard framework + features/components
@@ -570,6 +612,7 @@ Need organization?
 
 ---
 
+<!-- section_id: "9366a731-b17b-4b6d-80d3-2a8497dc0d11" -->
 ## 📚 Related Documentation
 
 - `FLEXIBLE_LAYERING_SYSTEM.md` - Standard framework (read this first!)

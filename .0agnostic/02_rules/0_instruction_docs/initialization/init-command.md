@@ -6,11 +6,14 @@ resource_name: "init-command"
 # Universal AI Agent Initialization System
 *TD0 Universal: /init Command Protocol*
 
+<!-- section_id: "3316751c-9b4f-46b2-985f-597e9db32d67" -->
 ## Purpose
 The `/init` command provides complete project context to any AI coding agent by loading the Trickle-Down documentation hierarchy in the correct order.
 
+<!-- section_id: "c84fd80c-e626-4597-9528-1fca768ab0cf" -->
 ## Command Specification
 
+<!-- section_id: "7de8cc69-ed72-4cf9-8682-fb80ab3cf5a8" -->
 ### Usage
 ```
 /init [optional: specific-focus-area]
@@ -21,6 +24,7 @@ The `/init` command provides complete project context to any AI coding agent by 
 - `/init authentication` - Full context + focus on authentication feature
 - `/init testing` - Full context + focus on testing workflows
 
+<!-- section_id: "6bf9b581-0fea-44fa-9355-300b7beb09db" -->
 ### Loading Sequence
 
 #### Step 1: Agent Declaration Protocol
@@ -107,8 +111,10 @@ Ready for: [Spec Kit phase or development task]
 Session Goals: [based on focus area or ask user]
 ```
 
+<!-- section_id: "61dff4f8-35f3-4d48-8437-5ff953b7f919" -->
 ## Agent-Specific Implementation
 
+<!-- section_id: "36323f63-dcab-40d9-92c7-d48e9fadc113" -->
 ### For Warp AI Assistant
 **Tools to use during /init**:
 - `read_any_files` - Load all documentation in sequence
@@ -116,12 +122,14 @@ Session Goals: [based on focus area or ask user]
 - `create_todo_list` - Set up session goals based on focus area
 - `search_codebase` - Understand existing implementation if needed
 
+<!-- section_id: "0a1dd559-a218-477a-b22f-581b6bdc25a5" -->
 ### For Claude Code Agent  
 **Integration points**:
 - VS Code workspace loading
 - Extension configuration verification
 - File tree navigation for documentation reading
 
+<!-- section_id: "343ce181-5d7e-4265-9e76-04d4ae8c6e76" -->
 ### For Cursor Agent
 **IDE-specific features**:
 - Project file indexing
@@ -136,14 +144,17 @@ Session Goals: [based on focus area or ask user]
 - System commands → Use agent's terminal tool directly: `<agent_tool>("<command> ; exit")`
 - Always add `; exit` to commands to prevent hanging on both success and failure
 
+<!-- section_id: "b41678b7-38db-4b9d-8c52-5c9df0b3b368" -->
 ### For GitHub Copilot Agent
 **Preparation steps**:
 - Repository context synchronization
 - Code completion model warming
 - Documentation embedding preparation
 
+<!-- section_id: "71cfe0f9-9845-4642-a530-8050817671d4" -->
 ## Error Handling
 
+<!-- section_id: "639f1d9a-4c3c-47f2-aa79-6bff086a3c02" -->
 ### Missing Documentation
 **If any TD file is missing**:
 1. Report which files are missing
@@ -151,6 +162,7 @@ Session Goals: [based on focus area or ask user]
 3. Note gaps in context loading
 4. Suggest creation of missing documentation
 
+<!-- section_id: "6637c528-9aa7-46e5-948e-e705a269e099" -->
 ### Environment Issues
 **If WSL Ubuntu verification fails**:
 1. Report environment mismatch
@@ -158,6 +170,7 @@ Session Goals: [based on focus area or ask user]
 3. Reference TD0.5 environment documentation
 4. Suggest environment switching if needed
 
+<!-- section_id: "1038f4a7-1042-40b7-9587-01afc5c1c5c7" -->
 ### Focus Area Not Found
 **If specified focus area doesn't exist**:
 1. List available feature areas

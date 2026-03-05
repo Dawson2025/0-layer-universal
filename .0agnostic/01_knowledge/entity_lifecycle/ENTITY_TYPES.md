@@ -5,6 +5,7 @@ resource_name: "ENTITY_TYPES"
 ---
 # Entity Types
 
+<!-- section_id: "cd02736c-2d56-488b-8317-17d38caf3675" -->
 ## What is an Entity?
 
 An entity is any managed unit in the layer-stage system: projects, features, components, stages, research projects, etc.
@@ -19,6 +20,7 @@ That document is the **single source of truth** for:
 - Mkdir templates
 - Agent file specifications
 
+<!-- section_id: "419b4bf4-64c6-4b95-ba2d-065b4fead6db" -->
 ## Entity Types Overview
 
 | Type | Layer | Purpose | Parent Location |
@@ -29,8 +31,10 @@ That document is the **single source of truth** for:
 | Research Project | -1 | Experimental exploration | `layer_-1_research/` |
 | Stage | varies | Workflow phase (01-11) | `<entity>/layer_N_group/layer_N_99_stages/` |
 
+<!-- section_id: "70baf877-087e-45ba-83c7-dd177aaa545b" -->
 ## Quick Reference
 
+<!-- section_id: "41ea4739-3de6-40be-aec4-83bde5f69856" -->
 ### 1. Projects (layer_1)
 
 **Purpose**: A complete application, system, or body of work
@@ -39,6 +43,7 @@ That document is the **single source of truth** for:
 
 **0AGNOSTIC.md identity**: Layer 1 project with children at `layer_2_group/layer_2_features/`
 
+<!-- section_id: "620bfbc5-8378-4c93-83e3-08de291c5fc5" -->
 ### 2. Features (layer_2+)
 
 **Purpose**: A distinct capability within a project
@@ -47,6 +52,7 @@ That document is the **single source of truth** for:
 
 **0AGNOSTIC.md identity**: Layer N feature with children at `layer_N+1_group/layer_N+1_components/` (if any)
 
+<!-- section_id: "76482a21-ad02-4dd4-a0bb-52e52976d3a7" -->
 ### 3. Research Projects (layer_-1)
 
 **Purpose**: Experimental, exploratory work
@@ -57,6 +63,7 @@ That document is the **single source of truth** for:
 
 **0AGNOSTIC.md includes**: "Research, design, planning only. Does not implement in production."
 
+<!-- section_id: "8896c862-43f4-40c2-beaf-6b80f2c9f984" -->
 ### 4. Stages (stage_N_XX)
 
 **Purpose**: Workflow phase container
@@ -67,6 +74,7 @@ That document is the **single source of truth** for:
 
 **Parent**: Always inside `layer_N_group/layer_N_99_stages/` of their entity
 
+<!-- section_id: "b0300975-7514-4390-8d56-13f80f29bd00" -->
 ### 5. Setup-Dependant Entities
 
 **Purpose**: Machine/OS/environment-specific configuration
@@ -80,6 +88,7 @@ That document is the **single source of truth** for:
 
 **Example**: `sub_layer_0_06_local/` (Ubuntu environment) with internal stages and child entities at `sub_layer_0_07_group/`
 
+<!-- section_id: "8fa35878-b23a-495f-b36a-ba057252a333" -->
 ## Naming Conventions
 
 | Convention | Rule | Example |
@@ -92,6 +101,7 @@ That document is the **single source of truth** for:
 
 Children are always layer N+1 of their parent.
 
+<!-- section_id: "3ae1114b-7be7-46ea-9fc0-ef1d3d64c95e" -->
 ## Key File Requirements
 
 | File | Purpose | Required For |
@@ -108,6 +118,7 @@ Children are always layer N+1 of their parent.
 | `layer_N.orchestrator.gab.jsonld` | Entity-level agent orchestrator | All entities |
 | `layer_N_99_stages.orchestrator.gab.jsonld` | Stages orchestrator | All entities |
 
+<!-- section_id: "840fb5ba-1ca1-4df9-b3c4-26794efcd583" -->
 ## Entity Nesting Rules
 
 1. **Projects contain features**: `layer_1` → `layer_2` children in `layer_2_group/layer_2_features/`
@@ -116,6 +127,7 @@ Children are always layer N+1 of their parent.
 4. **Setup-dependant entities nest by specificity**: OS → Distro → Environment → Local → Apps
 5. **Stages don't nest** — they're siblings inside `layer_N_group/layer_N_99_stages/`
 
+<!-- section_id: "b3ea75f1-5f16-4b14-9232-1a5674668020" -->
 ## Deprecated Patterns
 
 The following patterns are **no longer used**. If found in existing entities, they should be migrated:

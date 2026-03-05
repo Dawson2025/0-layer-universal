@@ -8,10 +8,12 @@ resource_name: "README"
 
 **Need**: [Avenue Benchmarking](../README.md)
 
+<!-- section_id: "0c04ee9b-9402-44db-85ba-ea4505579914" -->
 ## Overview
 
 These stories validate that the benchmarking framework produces meaningful, reproducible, and actionable capability comparisons across avenue types.
 
+<!-- section_id: "bde3f42b-b20c-465b-b7e0-e3bb28601d1a" -->
 ## Actors
 
 - **User (Developer)**: Human developer who needs to choose between data-based avenues

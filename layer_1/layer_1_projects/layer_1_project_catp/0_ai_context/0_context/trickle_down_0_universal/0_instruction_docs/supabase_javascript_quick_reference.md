@@ -5,12 +5,15 @@ resource_name: "supabase_javascript_quick_reference"
 ---
 # SUPABASE JAVASCRIPT QUICK REFERENCE
 
+<!-- section_id: "c7595b8d-3df3-412a-90f8-8582c07b6fcb" -->
 ## **🚨 MANDATORY RULE**
 
 **ALL Supabase operations MUST use JavaScript client methods - NO direct SQL, NO UI operations, NO raw database access.**
 
+<!-- section_id: "98f4c8c4-df50-4ada-af3e-5af3b9909f14" -->
 ## **✅ CORRECT PATTERNS**
 
+<!-- section_id: "dd97b164-c63e-4262-b042-ac0e49b9dee7" -->
 ### **Database Operations**
 ```javascript
 // ✅ Insert
@@ -37,6 +40,7 @@ const { data, error } = await supabase
   .eq('id', recordId);
 ```
 
+<!-- section_id: "764a0271-c1b2-4ea0-8202-c7d9f7b08bdc" -->
 ### **Authentication**
 ```javascript
 // ✅ Sign up
@@ -55,6 +59,7 @@ const { data, error } = await supabase.auth.signInWithPassword({
 const { error } = await supabase.auth.signOut();
 ```
 
+<!-- section_id: "954e9075-ff98-4d53-8ac3-a2bfafe421a3" -->
 ### **Real-time Subscriptions**
 ```javascript
 // ✅ Real-time updates
@@ -67,6 +72,7 @@ const subscription = supabase
   .subscribe();
 ```
 
+<!-- section_id: "2bfafd8a-0084-447a-84d0-41b3183dcb32" -->
 ## **❌ FORBIDDEN PATTERNS**
 
 ```javascript
@@ -80,6 +86,7 @@ const query = "SELECT * FROM table_name";
 import { Pool } from 'pg';
 ```
 
+<!-- section_id: "951d3cf1-3569-4749-91e5-62660d8215d8" -->
 ## **🔧 REQUIRED SERVICE LAYER**
 
 ```javascript
@@ -97,6 +104,7 @@ export const databaseService = {
 };
 ```
 
+<!-- section_id: "b9759140-a60d-4e42-b421-485339c3761c" -->
 ## **📁 REQUIRED FILE STRUCTURE**
 
 ```
@@ -108,6 +116,7 @@ website/src/services/
 └── realtime.js     # Real-time subscriptions
 ```
 
+<!-- section_id: "bc28fbb7-9b5d-424c-afbe-64649dab8472" -->
 ## **🎯 ENFORCEMENT**
 
 - **Code Review**: Reject any direct SQL or UI operations

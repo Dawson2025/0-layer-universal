@@ -5,6 +5,7 @@ resource_name: "CHECKLIST"
 ---
 # Claude in Chrome WSL Bridge Setup Checklist
 
+<!-- section_id: "dfee69ba-c9a3-4893-a0e2-40b1af14d555" -->
 ## WSL Setup (Complete ✓)
 
 - [x] Claude Code CLI installed
@@ -18,8 +19,10 @@ resource_name: "CHECKLIST"
 
 ---
 
+<!-- section_id: "3c6443b4-ba2d-4677-8b43-624d6d5d5b00" -->
 ## Windows Setup (User Action Required)
 
+<!-- section_id: "f5e5ee58-8b7d-4a39-a40d-d75f9da2bce8" -->
 ### 1. Get Extension ID
 
 - [ ] Open Chrome
@@ -30,6 +33,7 @@ resource_name: "CHECKLIST"
 
 **Extension ID:** `____________________________________`
 
+<!-- section_id: "47ba020c-b4e7-4465-acad-c07d20af0297" -->
 ### 2. Create Batch Script
 
 - [ ] Open PowerShell as Administrator
@@ -47,6 +51,7 @@ resource_name: "CHECKLIST"
   Test-Path "$env:USERPROFILE\bin\claude-chrome-host.bat"
   ```
 
+<!-- section_id: "481aa714-e194-43f1-87ab-6295b0b7a58d" -->
 ### 3. Create Native Messaging Manifest
 
 - [ ] Replace `YOUR_EXTENSION_ID` below with actual ID
@@ -75,12 +80,14 @@ resource_name: "CHECKLIST"
   Get-Content "$env:LOCALAPPDATA\Google\Chrome\User Data\NativeMessagingHosts\com.anthropic.claude.chrome.json"
   ```
 
+<!-- section_id: "e9048254-3ae3-4c70-afad-a12101d3a738" -->
 ### 4. Restart Chrome
 
 - [ ] Close ALL Chrome windows (check system tray)
 - [ ] Reopen Chrome
 - [ ] Verify extension is still enabled
 
+<!-- section_id: "c207d984-28aa-4cb8-b758-0ba39a265455" -->
 ### 5. Test Connection
 
 - [ ] Open Chrome
@@ -90,8 +97,10 @@ resource_name: "CHECKLIST"
 
 ---
 
+<!-- section_id: "906ac348-5b55-4e8e-a7a4-a4e021562b06" -->
 ## Testing Checklist
 
+<!-- section_id: "af2c29c8-2f55-495f-95a3-e0fb083043bc" -->
 ### Basic Tests
 
 - [ ] Extension opens without errors
@@ -99,6 +108,7 @@ resource_name: "CHECKLIST"
 - [ ] Response is received
 - [ ] No console errors in Chrome
 
+<!-- section_id: "6d3ad194-8cf8-44ee-9dbf-d1aa944125b2" -->
 ### Debug Tests (If Issues)
 
 - [ ] Enable logging in `~/bin/claude-chrome-host.sh`
@@ -114,8 +124,10 @@ resource_name: "CHECKLIST"
 
 ---
 
+<!-- section_id: "600bb6fb-fdcc-41d0-b568-fed81363c4b2" -->
 ## Troubleshooting Checklist
 
+<!-- section_id: "6f523e9a-98ff-4e1e-aa76-86df2feccf86" -->
 ### "Native messaging host not found"
 
 - [ ] Verify manifest exists
@@ -123,12 +135,14 @@ resource_name: "CHECKLIST"
 - [ ] Verify batch script path is correct
 - [ ] Restart Chrome completely
 
+<!-- section_id: "02368545-5548-4868-b949-0c885a8c81dd" -->
 ### "Access denied" or permission errors
 
 - [ ] Check batch script permissions
 - [ ] Run PowerShell as Administrator
 - [ ] Check Windows Defender/antivirus
 
+<!-- section_id: "bc2bc3ed-5673-4b61-a968-d5c2adc87302" -->
 ### Native host starts but doesn't respond
 
 - [ ] Enable debug logging
@@ -136,6 +150,7 @@ resource_name: "CHECKLIST"
 - [ ] Test WSL wrapper manually
 - [ ] Verify Claude Code authentication
 
+<!-- section_id: "ddee765a-aa42-4705-b0b9-2bcbae4d2a38" -->
 ### Other issues
 
 - [ ] See BATCH_BRIDGE_SETUP.md troubleshooting section
@@ -144,8 +159,10 @@ resource_name: "CHECKLIST"
 
 ---
 
+<!-- section_id: "8a6822cd-56ef-4ce4-b62c-44d06665eeef" -->
 ## Quick Commands Reference
 
+<!-- section_id: "85caf813-d66e-44ba-8483-e6dfce7d1324" -->
 ### WSL
 
 ```bash
@@ -166,6 +183,7 @@ tail -f ~/claude-chrome-host.log
 ~/.claude/chrome/chrome-native-host
 ```
 
+<!-- section_id: "474f69a9-a392-417b-b293-820ec8ba286c" -->
 ### Windows (PowerShell)
 
 ```powershell
@@ -185,6 +203,7 @@ wsl.exe -e /home/dawson/bin/claude-chrome-host.sh
 
 ---
 
+<!-- section_id: "6986f123-b8e2-4d2d-a7e4-96cda0e063c0" -->
 ## Documentation Reference
 
 | File | Purpose | When to Use |
@@ -197,6 +216,7 @@ wsl.exe -e /home/dawson/bin/claude-chrome-host.sh
 
 ---
 
+<!-- section_id: "838e14cd-e578-4460-99fa-2a90cb442eea" -->
 ## Success!
 
 When everything is working, you should see:

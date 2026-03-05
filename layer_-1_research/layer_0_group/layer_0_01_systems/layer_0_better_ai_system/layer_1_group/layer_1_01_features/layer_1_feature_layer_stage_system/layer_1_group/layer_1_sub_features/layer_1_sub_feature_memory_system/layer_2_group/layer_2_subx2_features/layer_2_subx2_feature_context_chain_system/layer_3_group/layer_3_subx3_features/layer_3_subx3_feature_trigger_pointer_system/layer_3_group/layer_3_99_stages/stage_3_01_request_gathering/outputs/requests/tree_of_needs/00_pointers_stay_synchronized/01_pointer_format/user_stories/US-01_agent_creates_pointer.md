@@ -13,6 +13,7 @@ resource_name: "US-01_agent_creates_pointer"
 **I want** to replace it with a pointer file using the standard frontmatter format,
 **So that** the canonical content has a single source of truth and the pointer auto-updates if the target moves.
 
+<!-- section_id: "6e3dd0bf-aaaf-4405-b568-a03fe790bb3e" -->
 ### What Happens
 
 1. Agent identifies content that duplicates a canonical source
@@ -21,6 +22,7 @@ resource_name: "US-01_agent_creates_pointer"
 4. Agent runs `pointer-sync.sh --validate` to confirm it resolves
 5. Hook reminds agent to validate if they forget
 
+<!-- section_id: "87038748-472c-483d-ad09-4ee5413b96f2" -->
 ### Acceptance Criteria
 
 - Pointer file passes `pointer-sync.sh --validate`

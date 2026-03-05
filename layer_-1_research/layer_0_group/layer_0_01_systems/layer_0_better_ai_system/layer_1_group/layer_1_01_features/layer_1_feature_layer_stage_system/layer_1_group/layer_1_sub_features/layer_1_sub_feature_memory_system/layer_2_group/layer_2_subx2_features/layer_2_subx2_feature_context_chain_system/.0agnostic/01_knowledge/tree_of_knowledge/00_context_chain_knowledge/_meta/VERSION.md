@@ -5,6 +5,7 @@ resource_name: "VERSION"
 ---
 # Version History
 
+<!-- section_id: "d80c6cd1-c620-4d2e-90a5-2e197c3ff100" -->
 ## v1.0.0 — 2026-02-19
 
 Initial tree of knowledge creation.

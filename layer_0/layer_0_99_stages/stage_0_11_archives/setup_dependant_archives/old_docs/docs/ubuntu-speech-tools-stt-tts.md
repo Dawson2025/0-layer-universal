@@ -10,6 +10,7 @@ resource_name: "ubuntu-speech-tools-stt-tts"
 **GPU:** NVIDIA RTX 4060 Mobile (CUDA 550.163.01)
 **Audio:** PipeWire 1.0.5
 
+<!-- section_id: "5330b101-50a0-4bf6-97bd-ddd5c76884f7" -->
 ## Overview
 
 Complete local, offline, and free Speech-to-Text (STT) and Text-to-Speech (TTS) setup using:
@@ -22,8 +23,10 @@ All tools run 100% locally with no internet connection required after initial se
 
 ---
 
+<!-- section_id: "34595b31-c1f4-407a-9f5e-9b2f8d3462b4" -->
 ## Installation Steps
 
+<!-- section_id: "2f225c72-0916-4654-8b74-d358696798ca" -->
 ### 1. System Prerequisites
 
 ```bash
@@ -44,6 +47,7 @@ sudo apt install -y pipx
 pipx ensurepath
 ```
 
+<!-- section_id: "4e108c8d-9589-4032-ab9e-867bc0bcc193" -->
 ### 2. Python Virtual Environment Setup
 
 ```bash
@@ -61,6 +65,7 @@ source venv/bin/activate
 pip install --upgrade pip wheel
 ```
 
+<!-- section_id: "3d0cc9eb-9796-49f9-87f1-f5ade7438847" -->
 ### 3. Install Python Packages
 
 ```bash
@@ -78,6 +83,7 @@ pip install piper-tts
 pip install vosk soundfile
 ```
 
+<!-- section_id: "f2d1c2d4-dd44-48a2-bd63-a80ee2d52d32" -->
 ### 4. Download Voice Models
 
 #### Piper TTS Voice Model
@@ -103,8 +109,10 @@ rm vosk-model-small-en-us-0.15.zip
 
 ---
 
+<!-- section_id: "c1e478a6-053b-4971-9e7e-4aa559f3e3a1" -->
 ## Scripts Created
 
+<!-- section_id: "2048ff6a-48cb-43d1-bbbe-d4d87ffdb9d6" -->
 ### 5. Main STT Script
 
 **File:** `~/speech-tools/whisper-stt.py`
@@ -249,6 +257,7 @@ Make executable:
 chmod +x ~/speech-tools/whisper-stt.py
 ```
 
+<!-- section_id: "7df13174-f09b-46c5-8423-93622a006fd4" -->
 ### 6. Main TTS Script
 
 **File:** `~/speech-tools/piper-tts.py`
@@ -375,6 +384,7 @@ Make executable:
 chmod +x ~/speech-tools/piper-tts.py
 ```
 
+<!-- section_id: "a4cb600c-0d25-4c2b-92bb-d22c82b17271" -->
 ### 7. Wrapper Scripts
 
 **STT Wrapper** (`~/speech-tools/stt`):
@@ -413,8 +423,10 @@ chmod +x ~/speech-tools/stt ~/speech-tools/tts ~/speech-tools/speak-text
 
 ---
 
+<!-- section_id: "74acfd2f-9a38-4802-90c1-2dcf26434b61" -->
 ## Configuration
 
+<!-- section_id: "2da3f936-f7a3-43ce-8cf8-1c4b1f4558d1" -->
 ### 8. Add to PATH
 
 Add to `~/.bashrc`:
@@ -457,8 +469,10 @@ source ~/.bashrc
 
 ---
 
+<!-- section_id: "d146adac-b222-4d44-b05a-10bd4e0a574e" -->
 ## Usage
 
+<!-- section_id: "9cf4ecd4-1301-4e06-97bb-b0937e10d90f" -->
 ### Speech-to-Text (STT)
 
 ```bash
@@ -476,6 +490,7 @@ stt large-v3    # Best accuracy (~2.9GB)
 # Output shows timestamped segments and full text
 ```
 
+<!-- section_id: "e3e5bb9e-2dd4-4bf0-824b-591b334154f3" -->
 ### Text-to-Speech (TTS)
 
 ```bash
@@ -491,6 +506,7 @@ cat myfile.txt | tts
 espeak-ng "Quick message"
 ```
 
+<!-- section_id: "39bd2ab2-7bce-42aa-8b0a-e20e0fcd9323" -->
 ### Advanced Usage
 
 ```bash
@@ -513,8 +529,10 @@ USE_GPU=1 stt
 
 ---
 
+<!-- section_id: "5ee00a8d-e495-4e06-9514-611484f61a1b" -->
 ## Claude Code Integration
 
+<!-- section_id: "748b3992-dec4-4276-9d02-2b92ac1b47cf" -->
 ### Auto-Speaking Responses
 
 When using Claude Code, I can automatically speak my responses by running the TTS command after each response.
@@ -535,6 +553,7 @@ This works in the current session without any special setup - just ask Claude to
 
 ---
 
+<!-- section_id: "5a3c139c-dd5b-46c3-b943-f52a75028e19" -->
 ## File Structure
 
 ```
@@ -562,6 +581,7 @@ This works in the current session without any special setup - just ask Claude to
 
 ---
 
+<!-- section_id: "757c6695-4a5a-40af-908e-75b2eb768e44" -->
 ## System Requirements Verified
 
 - ✅ **GPU:** NVIDIA RTX 4060 Mobile
@@ -573,8 +593,10 @@ This works in the current session without any special setup - just ask Claude to
 
 ---
 
+<!-- section_id: "887e4bf0-850b-4332-b477-52f2e09fab2f" -->
 ## Model Downloads
 
+<!-- section_id: "63566665-41a8-4fdc-8b5f-62419766ecb1" -->
 ### Whisper Models (Auto-downloaded on first use)
 Stored in: `~/.cache/huggingface/`
 
@@ -586,12 +608,14 @@ Stored in: `~/.cache/huggingface/`
 | medium | 1.5GB | High accuracy |
 | large-v3 | 2.9GB | Best accuracy |
 
+<!-- section_id: "8292196d-359f-40f2-8fa6-59679817a267" -->
 ### Piper Voices
 Download more from: https://huggingface.co/rhasspy/piper-voices
 
 Current installed:
 - **en_US-lessac-medium** (63MB) - High quality American English
 
+<!-- section_id: "07fa25bf-fe6a-4011-bf65-421b18b5ea98" -->
 ### Vosk Models
 Download more from: https://alphacephei.com/vosk/models
 
@@ -600,6 +624,7 @@ Current installed:
 
 ---
 
+<!-- section_id: "d21a755d-a913-49a9-b604-dbb64c069831" -->
 ## Performance
 
 - **Whisper (GPU):** ~1-2 seconds per minute of audio
@@ -609,8 +634,10 @@ Current installed:
 
 ---
 
+<!-- section_id: "dee36324-dd9b-4731-a2e0-4df0ebf33178" -->
 ## Troubleshooting
 
+<!-- section_id: "d6c1546f-c575-43e9-a8a8-4450f63cbdec" -->
 ### Audio Issues
 ```bash
 # Check audio server
@@ -623,6 +650,7 @@ paplay /usr/share/sounds/alsa/Front_Center.wav
 sudo apt install pulseaudio-utils alsa-utils
 ```
 
+<!-- section_id: "4f12599d-ef81-41b7-8798-5aef7464caf7" -->
 ### GPU Issues
 ```bash
 # Check NVIDIA GPU
@@ -632,6 +660,7 @@ nvidia-smi
 nvcc --version
 ```
 
+<!-- section_id: "7e72e085-edb7-4913-933d-77c6bf7f87fe" -->
 ### Model Issues
 ```bash
 # Whisper models cache
@@ -644,6 +673,7 @@ ls ~/speech-tools/voices/
 ls ~/speech-tools/vosk-models/
 ```
 
+<!-- section_id: "d642d9c5-9d1f-4532-bfaf-c2d9d5aee055" -->
 ### Permission Issues
 ```bash
 # Make scripts executable
@@ -655,6 +685,7 @@ arecord -l
 
 ---
 
+<!-- section_id: "de6e225e-00de-431b-a67f-5a0bb934ccbf" -->
 ## Privacy & Offline Operation
 
 - ✅ **100% Local:** All processing on-device
@@ -664,8 +695,10 @@ arecord -l
 
 ---
 
+<!-- section_id: "20ea2313-11c6-4a53-9f62-3d8a401b495f" -->
 ## Additional Voice Models
 
+<!-- section_id: "df7a5fcc-3d20-4a16-8901-14e5dfb9c374" -->
 ### Download More Piper Voices
 
 ```bash
@@ -684,6 +717,7 @@ Browse all voices: https://rhasspy.github.io/piper-samples/
 
 ---
 
+<!-- section_id: "91b17d8f-1be7-4a5c-90a4-128d4c3cd589" -->
 ## Credits
 
 - **Whisper:** OpenAI (via faster-whisper)
@@ -693,6 +727,7 @@ Browse all voices: https://rhasspy.github.io/piper-samples/
 
 ---
 
+<!-- section_id: "f0c22147-5b69-4a32-b940-09c64433f386" -->
 ## Next Steps
 
 1. ✅ STT and TTS installed

@@ -5,6 +5,7 @@ resource_name: "avenue_web"
 ---
 # Delivery Avenues
 
+<!-- section_id: "b03e8dc4-e709-4a16-b265-77fc578f8aa1" -->
 ## Summary
 
 An avenue is an independent path through which context reaches an AI agent. The context chain system uses 8 redundant avenues to ensure critical context is never lost even if one delivery mechanism fails. Each avenue operates through a different mechanism (filesystem walk, directory matching, jq query, manual read), so a failure in one does not cascade to others.
@@ -13,6 +14,7 @@ The 8 avenues are: A1 System Prompt (CLAUDE.md cascade, static/automatic), A2 Pa
 
 Avenues can be categorized by timing (static: A1; semi-static: A2; dynamic: A3-A8) and by ownership (fixed: A1 cascade order, A2 matching; configurable: all content). The avenue redundancy principle requires 3+ avenues for critical context items like entity identity and applicable rules. Some avenues function as intentional pairs: A5+A6 (structured + readable), A1+A4 (generated + source), A2+A8 (auto-loaded + manual).
 
+<!-- section_id: "64138b19-b6d9-48c0-a5d1-62754e893638" -->
 ## Key Concepts
 
 - **Avenue independence**: Each avenue uses a different mechanism; one failure does not affect others
@@ -21,6 +23,7 @@ Avenues can be categorized by timing (static: A1; semi-static: A2; dynamic: A3-A
 - **Paired avenues**: A5+A6, A1+A4, A2+A8 provide same content through two formats
 - **Test coverage**: `test_avenue_coverage_functional.sh` validates all 8 avenues are functional
 
+<!-- section_id: "68331970-753f-4732-83bc-6f05324311bd" -->
 ## Reference Table
 
 | What | Where | Notes |

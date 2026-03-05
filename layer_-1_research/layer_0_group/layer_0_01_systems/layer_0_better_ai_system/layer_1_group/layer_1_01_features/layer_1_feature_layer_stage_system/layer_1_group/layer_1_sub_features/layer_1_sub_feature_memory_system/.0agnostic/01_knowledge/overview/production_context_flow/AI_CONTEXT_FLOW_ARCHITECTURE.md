@@ -5,12 +5,14 @@ resource_name: "AI_CONTEXT_FLOW_ARCHITECTURE"
 ---
 # AI Context Flow Architecture
 
+<!-- section_id: "84437499-d34e-4e4b-b629-8fdd27d4edaf" -->
 ## Complete System Overview
 
 This document explains the full flow of how AI agents receive context, navigate the system, and access the knowledge they need.
 
 ---
 
+<!-- section_id: "41b3bf4f-6a75-4f84-abb7-039170f363e9" -->
 ## The Big Picture
 
 ```
@@ -93,12 +95,15 @@ This document explains the full flow of how AI agents receive context, navigate 
 
 ---
 
+<!-- section_id: "a8372fc8-2df7-45c9-8b92-e0ae7c8cb963" -->
 ## CRITICAL RULES: Every API Call Enforcement
 
+<!-- section_id: "294114e3-5c7c-4b45-8be5-a5e1d3e09efd" -->
 ### What Are Critical Rules?
 
 Critical rules are constraints that **MUST be followed on EVERY API call** when working at a layer or any deeper layer within it.
 
+<!-- section_id: "0c8068f7-aca0-430c-b756-2ea1ab73157f" -->
 ### How Critical Rules Cascade
 
 ```
@@ -125,6 +130,7 @@ layer_0/CLAUDE.md
             └── ADDS: Component-specific critical rules
 ```
 
+<!-- section_id: "fcbe868b-d523-479d-b786-e9d4df3b1481" -->
 ### Critical Rules in System Prompt Files
 
 Every CLAUDE.md (and equivalent files) MUST include:
@@ -153,6 +159,7 @@ Failure to follow these rules is a violation. Always verify compliance.
 
 ---
 
+<!-- section_id: "1911fb08-dd4c-400e-a9f7-465ea093ce62" -->
 ## Layer Cascade: Full Example
 
 ```
@@ -211,6 +218,7 @@ Failure to follow these rules is a violation. Always verify compliance.
 
 ---
 
+<!-- section_id: "585e6bd7-f1ec-4251-ac4b-415616c17368" -->
 ## Complete Reference Chain
 
 ```
@@ -251,6 +259,7 @@ Failure to follow these rules is a violation. Always verify compliance.
 
 ---
 
+<!-- section_id: "8b0c6426-b212-43da-bb63-32024d4b23c1" -->
 ## What CLAUDE.md Points To
 
 ```
@@ -278,10 +287,12 @@ CLAUDE.md
 
 ---
 
+<!-- section_id: "0b3168f0-1b3a-4fbd-82f8-d0709d586e22" -->
 ## What .0agnostic/ Is For
 
 **.0agnostic/ is NOT loaded by tools directly.** It is the **sync source** that generates all tool-specific files.
 
+<!-- section_id: "af8ce7f7-5623-4aca-bff5-ada66d451f3b" -->
 ### Purpose of .0agnostic/
 
 | Folder | Purpose |
@@ -292,6 +303,7 @@ CLAUDE.md
 | `episodic/` | Session memory (can be synced or referenced) |
 | `templates/` | Templates for instantiating new entities |
 
+<!-- section_id: "d1ee4d7b-1b07-4c9c-9c3b-df540149d84f" -->
 ### Sync Workflow
 
 ```
@@ -308,6 +320,7 @@ CLAUDE.md
 
 ---
 
+<!-- section_id: "fbcb13c4-d925-482d-a048-17882b6ea074" -->
 ## Critical Rules Template for System Prompts
 
 Every generated system prompt file should include:
@@ -345,6 +358,7 @@ Every generated system prompt file should include:
 
 ---
 
+<!-- section_id: "b283e9e3-e936-4ae8-90d1-efe716a26eaf" -->
 ## Summary: The Complete Flow
 
 ```
@@ -384,6 +398,7 @@ Every generated system prompt file should include:
 
 ---
 
+<!-- section_id: "8e87eb1e-fc49-43d6-aa9a-d461e3eeb395" -->
 ## Sub-Layers as Entry Points
 
 Sub-layers can also be agent entry points with their own context cascade:
@@ -418,6 +433,7 @@ Sub-layers can also be agent entry points with their own context cascade:
 
 ---
 
+<!-- section_id: "585710d1-ffbc-4c02-aa91-44090ad07928" -->
 ## Nested Depth Naming (subxN)
 
 When sub-layers contain nested sub-layers, use depth indicators:
@@ -452,6 +468,7 @@ When sub-layers contain nested sub-layers, use depth indicators:
 
 ---
 
+<!-- section_id: "141864ec-18e4-43eb-b51a-cd28faa3cc23" -->
 ## Sub-Stages within Stages
 
 Stages can contain sub-stages for finer workflow phases:
@@ -489,10 +506,12 @@ Stages can contain sub-stages for finer workflow phases:
 
 ---
 
+<!-- section_id: "5d57d61d-9946-4bc0-a69c-65308b732182" -->
 ## [CRITICAL] Propagation Chain Requirement
 
 **When modifying AI context (rules, knowledge, skills, CLAUDE.md, etc.), you MUST show a propagation chain diagram.**
 
+<!-- section_id: "8c598186-168b-48f6-91f7-e0702dd63bac" -->
 ### What is a Propagation Chain?
 
 Changes to AI context flow through multiple layers:
@@ -529,6 +548,7 @@ Changes to AI context flow through multiple layers:
 └─────────────────────────────────────────────────────────────────────────────┘
 ```
 
+<!-- section_id: "13588392-d42b-4423-a0ed-2e6b6e0e3b97" -->
 ### Required Diagram for AI Context Changes
 
 Before modifying AI context, show:
@@ -559,6 +579,7 @@ Before modifying AI context, show:
 └─────────────────────────────────────────────────────────────────────────────┘
 ```
 
+<!-- section_id: "b2bfbe5d-c10d-4ed0-96fa-5e1d9827eae3" -->
 ### Why This Matters
 
 1. **Traceability**: Know where content lives and how it flows
@@ -568,6 +589,7 @@ Before modifying AI context, show:
 
 ---
 
+<!-- section_id: "515fb0aa-fa1b-4885-8685-416cc110b4da" -->
 ## Skills Architecture
 
 Skills are the bridge between CLAUDE.md and knowledge:
@@ -621,6 +643,7 @@ Skills are the bridge between CLAUDE.md and knowledge:
 └─────────────────────────────────────────────────────────────────────────────┘
 ```
 
+<!-- section_id: "6ddf4c25-a37c-4a41-bcac-7d559c7a65b8" -->
 ### Key Principles
 
 1. **CLAUDE.md is minimal** - Identity, critical rules, triggers, pointers only
@@ -630,6 +653,7 @@ Skills are the bridge between CLAUDE.md and knowledge:
 
 ---
 
+<!-- section_id: "4f1ea094-a260-4cf1-9e3b-58e4c30c7462" -->
 ## Proposal Requirement: Context Flow Diagrams
 
 **[CRITICAL] All proposals that modify AI context architecture MUST include:**
@@ -643,6 +667,7 @@ Skills are the bridge between CLAUDE.md and knowledge:
 
 ---
 
+<!-- section_id: "0accf625-3881-4490-b149-be567cb81039" -->
 ## [CRITICAL] Stage Completeness Rule
 
 **ALL 11 stages MUST be created when an entity uses stages.**
@@ -668,6 +693,7 @@ entity_99_stages/
 
 ---
 
+<!-- section_id: "a2bb04b7-fa71-4eef-90cb-21ed0e637bca" -->
 ## Related Documentation
 
 | Document | Location |

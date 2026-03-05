@@ -7,8 +7,10 @@ resource_name: "database"
 
 SQLite database file: `phonemes.db`
 
+<!-- section_id: "d78dd84f-5bbf-4e4e-8a65-5a05b1df9306" -->
 ## Tables
 
+<!-- section_id: "4d65f61e-8a0c-4931-8795-f75486869b0f" -->
 ### phonemes
 ```sql
 CREATE TABLE IF NOT EXISTS phonemes (
@@ -36,6 +38,7 @@ ON phonemes (syllable_type, position, length_type, group_type, subgroup_type, ph
 - **phoneme**: Symbol (e.g., `p`, `a`, `aɪ`)
 - **frequency**: Integer counter
 
+<!-- section_id: "8cc6b563-cebc-45da-97f9-06b7a1cd5f2a" -->
 ### words
 ```sql
 CREATE TABLE IF NOT EXISTS words (
@@ -58,12 +61,15 @@ CREATE TABLE IF NOT EXISTS words (
 - **english_words** is stored as JSON (list of translations)
 - Structured phoneme fields are optional and populated by creation/edit flows
 
+<!-- section_id: "fbfb990c-6122-4954-a7cc-3f7eb1b455d0" -->
 ## Ordering Logic
 Functions use `get_sorted_phonemes()` to impose a fixed logical ordering across classification levels, then sort by aggregated frequencies within groups/subgroups.
 
+<!-- section_id: "b122f240-b3af-472b-8ace-0fa26ea9c08e" -->
 ## Migrations
 - `migrate_schema()` creates tables and index if missing
 - `migrate_existing_words_to_structured()` prints guidance for manual migration to structured fields
 
+<!-- section_id: "a2cd0f22-0116-4bdb-9706-f58d7d91142e" -->
 ## Sample Dataset
 - See `flattened_dataset.py` for initial phoneme entries used by `insert_sample_data()`

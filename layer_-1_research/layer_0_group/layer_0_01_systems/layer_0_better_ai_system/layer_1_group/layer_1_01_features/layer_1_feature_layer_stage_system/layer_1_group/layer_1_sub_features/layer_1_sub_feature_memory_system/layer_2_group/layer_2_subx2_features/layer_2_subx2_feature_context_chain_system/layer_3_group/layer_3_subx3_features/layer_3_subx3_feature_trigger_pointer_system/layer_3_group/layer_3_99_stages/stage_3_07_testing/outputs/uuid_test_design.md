@@ -5,15 +5,21 @@ resource_name: "uuid_test_design"
 ---
 # UUID Identity System — Test Design
 
+<!-- section_id: "0f2ded3e-3058-4f2e-89fe-3bd2b4500507" -->
 ## Date: 2026-03-02
+<!-- section_id: "12bd7cc6-f8dd-4318-8e05-e77edaa245ea" -->
 ## Design Reference: `../../stage_3_04_design/outputs/uuid_identity_system_design.md`
+<!-- section_id: "72ca1ebf-9095-4219-abf5-3f92a67e0c6b" -->
 ## Implementation Plan: `../../stage_3_05_planning/outputs/uuid_implementation_plan.md`
+<!-- section_id: "4653a9bb-5b59-4799-887f-b6347c4ecfe3" -->
 ## Existing Test Suite: `test_pointer_sync.sh` (108 tests, same directory)
 
 ---
 
+<!-- section_id: "79c476ee-84b3-4092-9634-6f3b7f0aad9b" -->
 ## Test Strategy
 
+<!-- section_id: "b044f71f-b6fe-4ddf-b16e-9262f995766e" -->
 ### Approach
 
 1. **Extend existing test suite** (`test_pointer_sync.sh`) with UUID-specific categories (20-25)
@@ -21,6 +27,7 @@ resource_name: "uuid_test_design"
 3. **All tests use temp directories** — no modification of real repo
 4. **Mock hierarchy** mirrors the real repo structure with entities, stages, resources
 
+<!-- section_id: "0e2e9982-5e46-44ae-a41e-7028004566c0" -->
 ### Test Environments
 
 | Suite | Tests | What It Validates |
@@ -30,6 +37,7 @@ resource_name: "uuid_test_design"
 
 ---
 
+<!-- section_id: "984fbba0-b82f-4597-a5cc-dd62a6a14c3b" -->
 ## Test Category 20: UUID-Based Entity Resolution
 
 **Tests pointer-sync.sh resolves entities by UUID when `canonical_entity_id` is present.**
@@ -45,6 +53,7 @@ resource_name: "uuid_test_design"
 
 ---
 
+<!-- section_id: "0fd382f7-4a28-419d-b073-e6cb31b5b2c4" -->
 ## Test Category 21: UUID-Based Stage Resolution
 
 **Tests pointer-sync.sh resolves stages by UUID via stage_index.json.**
@@ -59,6 +68,7 @@ resource_name: "uuid_test_design"
 
 ---
 
+<!-- section_id: "f6ac694d-31b2-49f0-8e60-82c142e772ba" -->
 ## Test Category 22: Resource ID Resolution
 
 **Tests pointer-sync.sh resolves resources by `canonical_resource_id`.**
@@ -72,6 +82,7 @@ resource_name: "uuid_test_design"
 
 ---
 
+<!-- section_id: "41c1a96d-c825-490b-a297-fe45617e98ba" -->
 ## Test Category 23: Index Behavior
 
 **Tests `.uuid-index.json` creation, usage, and rebuild.**
@@ -86,6 +97,7 @@ resource_name: "uuid_test_design"
 
 ---
 
+<!-- section_id: "0a29d780-6e9e-4e11-986e-4471711af5bb" -->
 ## Test Category 24: Backward Compatibility
 
 **Ensures all 108 existing tests pass unchanged.**
@@ -99,6 +111,7 @@ resource_name: "uuid_test_design"
 
 ---
 
+<!-- section_id: "58af3f0a-7bba-4031-b063-a37c0439ec24" -->
 ## Test Category 25: assign-entity-uuids.sh
 
 **Tests the UUID assignment script for entities.**
@@ -115,6 +128,7 @@ resource_name: "uuid_test_design"
 
 ---
 
+<!-- section_id: "e8452379-d3d7-43fd-a65f-87333ab14220" -->
 ## Test Category 26: create-stage-indexes.sh
 
 **Tests stage UUID assignment and registry creation.**
@@ -132,6 +146,7 @@ resource_name: "uuid_test_design"
 
 ---
 
+<!-- section_id: "1f2b4e59-84f4-4849-b56d-38aa8bc1d985" -->
 ## Test Category 27: assign-resource-uuids.sh
 
 **Tests resource UUID assignment to knowledge, rules, protocols, skills, and output files.**
@@ -155,6 +170,7 @@ resource_name: "uuid_test_design"
 
 ---
 
+<!-- section_id: "efc249df-de15-4eeb-9cf1-8e031e5d507d" -->
 ## Test Category 28: migrate-pointers.sh
 
 **Tests migration of existing name-based pointers to UUID-based.**
@@ -173,6 +189,7 @@ resource_name: "uuid_test_design"
 
 ---
 
+<!-- section_id: "52e78fab-dc71-49c4-9d7d-b12014a0bee5" -->
 ## Test Category 29: Resource Index
 
 **Tests resource_index.json creation and usage.**
@@ -186,6 +203,7 @@ resource_name: "uuid_test_design"
 
 ---
 
+<!-- section_id: "5c3cc0d8-b64f-4582-be9a-ed7678143be6" -->
 ## Test Category 30: Edge Cases
 
 | # | Test | Setup | Expected |
@@ -201,6 +219,7 @@ resource_name: "uuid_test_design"
 
 ---
 
+<!-- section_id: "ecb9223e-7caa-483f-a286-53c676d33a48" -->
 ## Test Category 31: Reference Integrity
 
 **Tests `--find-references`, `--detect-cycles`, `--gc`, and duplicate UUID detection.**
@@ -220,6 +239,7 @@ resource_name: "uuid_test_design"
 
 ---
 
+<!-- section_id: "5722f122-3f94-4a10-896d-3de2c4e1dd29" -->
 ## Test Category 32: Index Safety & Concurrency
 
 **Tests atomic writes, file locking, checksum validation.**
@@ -235,6 +255,7 @@ resource_name: "uuid_test_design"
 
 ---
 
+<!-- section_id: "f5c62d78-8ece-4063-b737-be57729a79f8" -->
 ## Test Category 33: Universal File IDs
 
 **Tests `assign-file-uuids.sh` across all file types.**
@@ -254,6 +275,7 @@ resource_name: "uuid_test_design"
 
 ---
 
+<!-- section_id: "dc571b9b-f697-4ea9-9cb6-3e39d6be6e60" -->
 ## Test Category 34: Git Hooks & Validation
 
 **Tests post-merge hooks, materialized view staleness detection.**
@@ -267,6 +289,7 @@ resource_name: "uuid_test_design"
 
 ---
 
+<!-- section_id: "3e4782e8-78ee-4b5d-aa0a-769820337056" -->
 ## Summary
 
 | Suite | Categories | Estimated Tests |
@@ -277,6 +300,7 @@ resource_name: "uuid_test_design"
 | **Total new** | **15 categories** | **~122 tests** |
 | **Grand total (with existing 108)** | **34 categories** | **~230 tests** |
 
+<!-- section_id: "18cf9b7d-61e6-4df2-b513-6a4f6c87596f" -->
 ### Test Execution Order
 
 1. Run existing 108 tests first (regression gate)
@@ -287,6 +311,7 @@ resource_name: "uuid_test_design"
 6. Run hook tests (cat 34) after Phase 9
 7. Full suite run as final gate before commit
 
+<!-- section_id: "a1173c1c-7f37-4cad-a98a-9f7d7c6c1190" -->
 ### Pass Criteria
 
 - **All 108 existing tests**: PASS (zero regressions)

@@ -7,6 +7,7 @@ resource_name: "README.sync-conflict-20260126-035816-IF2WOGZ"
 
 This is the main entry point for navigating sub-project setup documentation.
 
+<!-- section_id: "20ed26d9-0f73-4058-9ec6-547155adcdad" -->
 ## Navigation
 
 Navigate down the hierarchy based on your configuration:
@@ -25,6 +26,7 @@ At the AI app level, you'll find:
 - **2.14_agent_setup/** - Agent configuration
 - **setup/** - General setup documentation
 
+<!-- section_id: "69845d3c-418a-49bc-92bf-5f0fe5e80f3a" -->
 ## Example Path
 
 For a Linux + Cursor + Claude Code setup:

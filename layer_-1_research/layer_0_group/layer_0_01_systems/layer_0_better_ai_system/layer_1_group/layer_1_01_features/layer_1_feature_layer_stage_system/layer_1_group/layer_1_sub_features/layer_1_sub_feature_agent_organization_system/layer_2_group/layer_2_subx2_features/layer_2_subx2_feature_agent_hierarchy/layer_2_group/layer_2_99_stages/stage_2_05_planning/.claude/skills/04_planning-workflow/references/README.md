@@ -8,6 +8,7 @@ resource_name: "README"
 
 Place reference documents, templates, and examples here.
 
+<!-- section_id: "72943754-e7b8-4266-8a3b-115b23cf118e" -->
 ## Suggested Contents
 - Templates for 04_planning outputs
 - Examples of good 04_planning work

@@ -6,12 +6,15 @@ resource_name: "troubleshooting-guide"
 # Troubleshooting Guide
 *Common Issues and Solutions for Database Version Control*
 
+<!-- section_id: "b8476092-d697-4851-b711-fedcfa216255" -->
 ## Overview
 
 This guide helps you troubleshoot common issues encountered when using database version control tools and migration systems. Each issue includes symptoms, causes, and step-by-step solutions.
 
+<!-- section_id: "6176ed51-cf3a-4ab1-b97a-e5f13d9afb0f" -->
 ## Common Issues
 
+<!-- section_id: "34a75ac5-01e9-4594-8dec-41e6df207f12" -->
 ### 1. Migration Conflicts
 
 **Symptoms**:
@@ -51,6 +54,7 @@ EOF
 
 ---
 
+<!-- section_id: "35da1d82-03d4-461d-b2d8-bb60d0357852" -->
 ### 2. Failed Migrations
 
 **Symptoms**:
@@ -110,6 +114,7 @@ liquibase clear-check-sums
 
 ---
 
+<!-- section_id: "1e8985fc-7d74-4e1b-b4c8-c853915b5860" -->
 ### 3. Migration Lock Issues
 
 **Symptoms**:
@@ -151,6 +156,7 @@ jobs:
 
 ---
 
+<!-- section_id: "86023d06-eb97-4af1-8b05-fa813219aa70" -->
 ### 4. Data Consistency Issues
 
 **Symptoms**:
@@ -206,6 +212,7 @@ COMMIT;
 
 ---
 
+<!-- section_id: "f55d260f-44d3-4885-b009-041891a6c924" -->
 ### 5. Performance Issues
 
 **Symptoms**:
@@ -281,6 +288,7 @@ pt-online-schema-change \
 
 ---
 
+<!-- section_id: "24d76b4e-e535-4ce3-8917-cf2d748fa74c" -->
 ### 6. Environment-Specific Issues
 
 **Symptoms**:
@@ -330,6 +338,7 @@ export PROD_DATABASE_URL="postgresql://user:pass@prod:5432/prod_db"
 
 ---
 
+<!-- section_id: "372090df-d2e5-4eb2-9701-a7a7307cdf26" -->
 ### 7. Git Integration Issues
 
 **Symptoms**:
@@ -384,6 +393,7 @@ fi
 
 ---
 
+<!-- section_id: "43c708f9-a807-4b66-a211-1fa3d26406b0" -->
 ### 8. Supabase-Specific Issues
 
 **Symptoms**:
@@ -427,6 +437,7 @@ supabase gen types typescript --schema public > types/database.ts
 
 ---
 
+<!-- section_id: "a5d8ccd9-2b22-4ba1-9e8c-1860a3938dd2" -->
 ### 9. Firebase-Specific Issues
 
 **Symptoms**:
@@ -466,6 +477,7 @@ firebase emulators:start --only firestore --port 8080
 
 ---
 
+<!-- section_id: "5163b632-67ea-4126-98a0-20701f5ece13" -->
 ### 10. Liquibase-Specific Issues
 
 **Symptoms**:
@@ -506,8 +518,10 @@ SET LOCKED = false,
 
 ---
 
+<!-- section_id: "cd41cb6c-29e7-40e7-9109-8780af97bf30" -->
 ## Debugging Tips
 
+<!-- section_id: "37a92a11-2047-4320-8d4d-6a411ff53f02" -->
 ### 1. Enable Verbose Logging
 
 ```bash
@@ -518,6 +532,7 @@ flyway migrate -X
 liquibase update --logLevel=DEBUG
 ```
 
+<!-- section_id: "077014e1-c30e-4709-8e87-21d0ee040690" -->
 ### 2. Check Migration Status
 
 ```bash
@@ -531,6 +546,7 @@ liquibase status
 supabase migration list
 ```
 
+<!-- section_id: "5e87558c-cef6-4a7b-a4aa-db6638c44878" -->
 ### 3. Dry Run Migrations
 
 ```bash
@@ -541,6 +557,7 @@ flyway migrate -dryRun
 liquibase markNextChangesetRan
 ```
 
+<!-- section_id: "e27e9c80-6efe-48a2-b56b-a026bf8973d0" -->
 ### 4. Verify Database State
 
 ```sql
@@ -556,8 +573,10 @@ SELECT COUNT(*), MIN(created_at), MAX(created_at) FROM users;
 
 ---
 
+<!-- section_id: "cdd8df61-fd0b-4e82-845d-35d0b9b5ff63" -->
 ## Getting Help
 
+<!-- section_id: "48ef9f79-f9e9-43ab-bad9-bcf12d06bcf8" -->
 ### 1. Check Logs
 ```bash
 # Application logs
@@ -570,6 +589,7 @@ tail -f /var/log/postgresql/postgresql.log
 gh run view --log
 ```
 
+<!-- section_id: "73606bb2-1c85-43a4-9808-b2d21da4b466" -->
 ### 2. Reproduce Locally
 ```bash
 # Clone the issue
@@ -582,6 +602,7 @@ docker run -d -e POSTGRES_PASSWORD=postgres postgres:15
 flyway migrate
 ```
 
+<!-- section_id: "1c6906ec-9fa3-4ea1-8ec6-12714a9d842b" -->
 ### 3. Community Resources
 - Tool-specific GitHub issues
 - Stack Overflow
@@ -590,8 +611,10 @@ flyway migrate
 
 ---
 
+<!-- section_id: "c5f40270-2315-4048-b193-9fea39aff900" -->
 ## Prevention Strategies
 
+<!-- section_id: "5c885e5e-260a-4216-b197-8de2993423fb" -->
 ### 1. Pre-Migration Checks
 ```yaml
 steps:
@@ -602,6 +625,7 @@ steps:
       done
 ```
 
+<!-- section_id: "471d61bb-af4d-4f78-bbdf-0eaf877a52e8" -->
 ### 2. Test Migrations
 ```yaml
 steps:
@@ -611,6 +635,7 @@ steps:
       flyway migrate -url=jdbc:postgresql://localhost/test_db
 ```
 
+<!-- section_id: "95d531cc-f094-4558-9c2b-2eb80c26c8e3" -->
 ### 3. Backup Before Migration
 ```bash
 # Always backup
@@ -620,6 +645,7 @@ pg_dump $DATABASE_URL > backup.sql
 psql $DATABASE_URL < backup.sql
 ```
 
+<!-- section_id: "914d3e16-3e0d-43fb-aeb2-1f7e89ee16c8" -->
 ### 4. Monitor Migrations
 ```bash
 # Log migration execution
@@ -633,8 +659,10 @@ fi
 
 ---
 
+<!-- section_id: "9dd11bf9-26fc-4c54-a72d-07d703dc69be" -->
 ## Quick Reference
 
+<!-- section_id: "1517caf6-b92f-44f3-8293-d1721ed10652" -->
 ### Common Commands
 
 | Task | Flyway | Liquibase |
@@ -646,6 +674,7 @@ fi
 | Rollback | `flyway undo` (Pro) | `liquibase rollback` |
 | History | `flyway info` | `liquibase history` |
 
+<!-- section_id: "a97f5962-9fec-4cc1-84fc-38f33cd14dd3" -->
 ### Error Codes
 
 | Error | Cause | Solution |
@@ -658,6 +687,7 @@ fi
 
 ---
 
+<!-- section_id: "63745d29-294f-4def-a0ec-c593ce1395d7" -->
 ## Summary
 
 Common issues include:

@@ -8,6 +8,7 @@ resource_name: "README"
 
 This directory contains metadata about the research layer itself.
 
+<!-- section_id: "c0e1a027-5286-457b-9bb2-cba6e17b7b92" -->
 ## Purpose
 
 - Registry of all research projects in layer_-1_research
@@ -15,6 +16,7 @@ This directory contains metadata about the research layer itself.
 - Cross-project dependencies and relationships
 - Research timeline and status tracking
 
+<!-- section_id: "edd780a4-353b-4c3d-bea7-c609b0859031" -->
 ## Contents (TBD)
 
 As research projects are organized, this registry will contain:
@@ -23,6 +25,7 @@ As research projects are organized, this registry will contain:
 - `timeline.md` — Research project timeline
 - Configuration files for layer-level settings
 
+<!-- section_id: "a2bf2cae-4873-4cd1-b9a2-6d94eb300754" -->
 ## Layer Metadata
 
 - **Layer**: -1 (Research)

@@ -6,6 +6,7 @@ resource_name: "FirebaseIntegrationTests_HowTheyWork"
 # How Firebase Integration Tests Actually Work
 *Technical Deep Dive: Real Firebase Verification*
 
+<!-- section_id: "5cffe7c9-1d3f-49b3-8c64-04261ed033da" -->
 ## 🔍 The Question
 
 **"How does it check these things in Firebase?"**
@@ -14,10 +15,12 @@ Great question! Here's the complete technical explanation of how the tests inter
 
 ---
 
+<!-- section_id: "9f44b6c9-47a9-4825-a961-49185df42f91" -->
 ## 🎯 The Answer: Direct Firebase API Calls
 
 Unlike the mocked cloud template tests, these integration tests make **actual HTTP requests** to Google's Firebase servers using the Firebase Admin SDK.
 
+<!-- section_id: "5ee2744c-5f4b-42ca-bba0-4ed175d0398b" -->
 ### The Call Chain
 
 ```
@@ -38,8 +41,10 @@ Document created in real Firebase database
 
 ---
 
+<!-- section_id: "cf6cd385-24d6-4c1b-967e-49cdd3845fca" -->
 ## 📊 Step-by-Step: How test_phoneme_lifecycle Works
 
+<!-- section_id: "74529ae4-ed1f-430c-b700-966b0681f977" -->
 ### Step 1: Create Phoneme
 ```python
 # Test code
@@ -59,6 +64,7 @@ phoneme_id = firestore_db.create_phoneme(phoneme_payload)
 5. **Document created in Cloud Firestore**
 6. Firebase returns document ID (e.g., `"abc123xyz"`)
 
+<!-- section_id: "7e2593dd-3d13-4fa1-9e9e-5bd1a488341c" -->
 ### Step 2: Verify Phoneme Exists
 ```python
 # Test code
@@ -87,6 +93,7 @@ self.assertIn(phoneme_id, [p.get("id") for p in project_phonemes])
 
 **This proves**: The phoneme **actually exists** in Firebase's database
 
+<!-- section_id: "fbb13a4a-25bb-4320-b417-32529949efbd" -->
 ### Step 3: Delete Phoneme
 ```python
 # Test code
@@ -108,6 +115,7 @@ self.assertTrue(delete_success)
 5. **Document removed from Cloud Firestore**
 6. Returns True on success
 
+<!-- section_id: "5b615365-2d70-4a6a-a3c6-407926647272" -->
 ### Step 4: Verify Phoneme GONE
 ```python
 # Test code
@@ -125,8 +133,10 @@ self.assertNotIn(phoneme_id, phoneme_ids_after)
 
 ---
 
+<!-- section_id: "be6e306d-f3af-46e2-9524-0ef745507c96" -->
 ## 🔬 The Underlying Technology
 
+<!-- section_id: "8d352568-286b-4e3c-9f12-3ed3165f510c" -->
 ### Firebase Admin SDK
 ```python
 # services/firebase/firestore.py (lines 16-28)
@@ -139,6 +149,7 @@ firebase_admin.initialize_app(cred)
 db = firestore.client()  # Real Firestore client
 ```
 
+<!-- section_id: "9e742438-612b-420f-a24b-c762a176a05f" -->
 ### Real Database Operations
 
 #### 1. **Creating a Document**
@@ -204,8 +215,10 @@ Authorization: Bearer [Firebase Token]
 
 ---
 
+<!-- section_id: "5bac4581-0aaf-4a43-aabb-caca15b67c28" -->
 ## 🆚 Comparison: Integration Tests vs Unit Tests
 
+<!-- section_id: "862c2ad3-1d59-4049-8731-55273ca7fbb3" -->
 ### Unit Tests (test_cloud_templates.py)
 ```python
 # MOCKED - no real Firebase
@@ -220,6 +233,7 @@ mock_firestore.get_project_phonemes.return_value = [{'phoneme': 'p'}]
 **What it tests**: Does the app code call the right methods?
 **What it DOESN'T test**: Does Firebase actually store/retrieve/delete the data?
 
+<!-- section_id: "b8040442-352a-4386-b1bd-9218a64e672a" -->
 ### Integration Tests (test_cloud_integration.py)
 ```python
 # REAL FIREBASE - actual network calls
@@ -236,8 +250,10 @@ success = firestore_db.delete_phoneme(phoneme_id)  # Real HTTPS DELETE
 
 ---
 
+<!-- section_id: "9a9cfb46-a1c8-450b-a8a8-9a817e572953" -->
 ## 🔐 How Tests Authenticate with Firebase
 
+<!-- section_id: "879b8510-a6e8-41cd-b2d7-35cc4581f4ca" -->
 ### Credentials
 ```python
 # services/firebase/firestore.py
@@ -248,6 +264,7 @@ cred = credentials.Certificate(credentials_path)
 firebase_admin.initialize_app(cred)
 ```
 
+<!-- section_id: "b2eb0bcf-3cdb-41d2-ae8b-fc448cfa7253" -->
 ### Service Account
 The `firebase-admin-config.json` file contains:
 ```json
@@ -268,8 +285,10 @@ This gives the tests **admin access** to Firebase, allowing them to:
 
 ---
 
+<!-- section_id: "62b1076e-d32f-41b5-b4d4-eb4d159d33d5" -->
 ## 📍 Where Data Actually Lives
 
+<!-- section_id: "1d963dd6-d227-42e1-8d24-e1fefa206327" -->
 ### Cloud Firestore Console
 You can see the test data in Firebase Console:
 ```
@@ -298,8 +317,10 @@ Collections:
 
 ---
 
+<!-- section_id: "83518fb4-55ec-435c-aa38-d989d6d239f0" -->
 ## 🧪 Verification Methods
 
+<!-- section_id: "33e193a6-1e46-4250-a82a-e5804846a2ad" -->
 ### Method 1: Query-Based Verification
 ```python
 # Get all phonemes for a project
@@ -313,6 +334,7 @@ self.assertIn(phoneme_id, phoneme_ids)  # ✅ Found in Firebase
 self.assertNotIn(phoneme_id, phoneme_ids)  # ✅ Not in Firebase
 ```
 
+<!-- section_id: "b94a02af-00c4-47a8-b821-65f149c1d2b0" -->
 ### Method 2: Direct Fetch Verification
 ```python
 # Try to get specific document
@@ -325,6 +347,7 @@ self.assertIsNotNone(word)  # ✅ Document exists
 self.assertIsNone(word)  # ✅ Document doesn't exist
 ```
 
+<!-- section_id: "0dcd6782-e247-49e4-82db-4c26a5e15d0d" -->
 ### Method 3: Low-Level Document Check
 ```python
 # Direct document reference check
@@ -339,8 +362,10 @@ self.assertIsNone(doc)  # ✅ Document not in collection
 
 ---
 
+<!-- section_id: "2341a7cb-d62e-4a50-be93-2bf85f4b9d05" -->
 ## 🎯 Summary: How It All Works
 
+<!-- section_id: "fd9ac0de-b655-43c7-9f39-ada4a062d15f" -->
 ### The Complete Flow
 
 1. **Test starts** → Sets `RUN_FIREBASE_INTEGRATION_TESTS=1`
@@ -371,6 +396,7 @@ self.assertIsNone(doc)  # ✅ Document not in collection
 
 7. **Test cleans up** → Deletes any remaining test data
 
+<!-- section_id: "6aa9a858-d8be-4b31-955f-ccca0f10658e" -->
 ### Key Takeaway
 
 **These tests make actual HTTP requests to Google's Firebase servers and verify that:**
@@ -383,8 +409,10 @@ self.assertIsNone(doc)  # ✅ Document not in collection
 
 ---
 
+<!-- section_id: "5b786aad-296e-4e80-8463-d52e90acc460" -->
 ## 📊 Evidence You Can See
 
+<!-- section_id: "4906034e-7387-42ec-9fdd-70cece329e48" -->
 ### In Test Output
 ```
 test_phoneme_lifecycle ... ok
@@ -396,6 +424,7 @@ test_phoneme_lifecycle ... ok
   - Queried phonemes: Found 1 ✅ (Firebase shows only remaining)
 ```
 
+<!-- section_id: "8515e2d0-f808-46af-8190-5fd45043b1b1" -->
 ### In Firebase Console
 During test execution, you could:
 1. Open Firebase Console
@@ -404,6 +433,7 @@ During test execution, you could:
 4. See them disappear when deleted
 5. Refresh to confirm they're gone
 
+<!-- section_id: "e1681f35-5aa0-431e-9b33-0ea6aefa4e0f" -->
 ### In Network Logs
 If you enable network logging:
 ```

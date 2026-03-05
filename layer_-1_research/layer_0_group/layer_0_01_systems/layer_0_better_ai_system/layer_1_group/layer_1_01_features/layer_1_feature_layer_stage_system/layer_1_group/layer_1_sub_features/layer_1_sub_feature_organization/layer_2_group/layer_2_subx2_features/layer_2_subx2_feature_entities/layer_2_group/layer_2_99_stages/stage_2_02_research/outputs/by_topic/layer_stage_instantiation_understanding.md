@@ -12,6 +12,7 @@ resource_name: "layer_stage_instantiation_understanding"
 
 ---
 
+<!-- section_id: "b2e22486-20d5-417f-94a3-8e7281a98fc6" -->
 ## Core Concept: Layers of Specificity
 
 **The layer system is fundamentally about SPECIFICITY and ABSTRACTION.**
@@ -33,6 +34,7 @@ resource_name: "layer_stage_instantiation_understanding"
 
 ---
 
+<!-- section_id: "f84f2805-cbbc-4baf-b689-366aaf482cb2" -->
 ## Cascading Context
 
 When an agent works at any level:
@@ -46,8 +48,10 @@ When an agent works at any level:
 
 ---
 
+<!-- section_id: "e1e59a24-ca2e-4396-913b-43ab93db8b4d" -->
 ## Nesting: Same-Type vs Different-Type
 
+<!-- section_id: "0be3189e-a8e8-42db-a764-f139fed372fb" -->
 ### CRITICAL NAMING RULE
 
 The **"sub" prefix ONLY applies when nesting the SAME type**:
@@ -61,6 +65,7 @@ The **"sub" prefix ONLY applies when nesting the SAME type**:
 | Component inside Project | **component** (NOT sub_component) | Different type → no "sub" |
 | Component inside Feature | **component** (NOT sub_component) | Different type → no "sub" |
 
+<!-- section_id: "f9c7971e-5f11-4943-821e-cdec93b5cefa" -->
 ### Same-Type Nesting Depth Markers
 
 When nesting the same type multiple levels deep:
@@ -69,6 +74,7 @@ When nesting the same type multiple levels deep:
 - 3 levels deep: `subx3_project`, `subx3_feature`, `subx3_component`
 - N levels deep: `subxN_*`
 
+<!-- section_id: "ad1aff6b-d500-451b-9a68-cef8c6f8251c" -->
 ### What Each Entity Contains
 
 | Entity Type | Contains (in layer_N+1/) |
@@ -83,6 +89,7 @@ When nesting the same type multiple levels deep:
 - **Components** only contain `sub_components/` (same-type nesting)
 - **Layer N+1 can have multiple types**: At any `layer_N+1/`, you may find `sub_projects/`, `features/`, AND `components/` as siblings
 
+<!-- section_id: "60578c56-701c-41ee-8257-aa5f6322b690" -->
 ### Stages Within Sub-Layers
 
 Stages can exist WITHIN sub-layers for specialized workflows. Example location:
@@ -97,10 +104,12 @@ This allows stage-based workflows (01-11) to be applied to specific setup contex
 
 ---
 
+<!-- section_id: "e6b0f8b0-2d82-4b8c-95b1-39c0846bce53" -->
 ## Layer Hierarchy (Detailed)
 
 ---
 
+<!-- section_id: "281b7140-cba5-4916-bdf7-fdb044139326" -->
 ## The Two-Folder Structure (Layer Grouping)
 
 Every entity has TWO sibling **GROUP folders** at its root:
@@ -127,6 +136,7 @@ layer_N_<type>_<name>/              # THE ENTITY
 
 ---
 
+<!-- section_id: "bb521ad5-3a77-4183-82d7-3b84a65dd6f3" -->
 ## Layer Internal Structure
 
 Each layer has standard components at specific positions (from `layer_registry.yaml`):
@@ -143,6 +153,7 @@ Each layer has standard components at specific positions (from `layer_registry.y
 
 ---
 
+<!-- section_id: "1f263591-dc5b-4316-83b1-0f055905a344" -->
 ## Sub-Layer Slots (within position 03)
 
 Sub-layers organize different types of content:
@@ -168,6 +179,7 @@ Sub-layers organize different types of content:
 
 ---
 
+<!-- section_id: "8bc2b724-4e1d-4be5-91e9-652fe290bc66" -->
 ## Stage System
 
 **CORRECTED ORDER** (design before planning):
@@ -189,6 +201,7 @@ Sub-layers organize different types of content:
 
 **Note**: Design (04) comes BEFORE planning (05). You design the solution first, then plan how to implement it.
 
+<!-- section_id: "650842d4-5691-4e7c-afe3-390bf006ab72" -->
 ### Stage Internal Structure
 
 Each stage contains:
@@ -202,10 +215,12 @@ stage_N_XX_name/
 
 ---
 
+<!-- section_id: "501c46af-88a7-46b7-80d8-06fd250eda87" -->
 ## Stage Output Organization Patterns
 
 Each stage has specific output organization patterns suited to its purpose:
 
+<!-- section_id: "e0db75a4-5254-42d7-9d20-ace7f73af9c1" -->
 ### Stage 01: Request Gathering
 
 ```
@@ -229,6 +244,7 @@ outputs/
 
 ---
 
+<!-- section_id: "a2dda373-d63c-4b7f-8fce-f1487051ac28" -->
 ### Stage 02: Research
 
 ```
@@ -252,6 +268,7 @@ outputs/
 
 ---
 
+<!-- section_id: "4313fd7c-e1c4-45db-b65d-e4e77d467e11" -->
 ### Stage 03: Instructions
 
 ```
@@ -271,6 +288,7 @@ outputs/
 
 ---
 
+<!-- section_id: "049d0bf3-4e45-437c-8195-70a06a46c95d" -->
 ### Stage 04: Design
 
 ```
@@ -288,6 +306,7 @@ outputs/
 
 ---
 
+<!-- section_id: "e5b5af07-a65c-4a6d-a415-b5588362fdc5" -->
 ### Stage 05: Planning
 
 ```
@@ -301,6 +320,7 @@ outputs/
 
 ---
 
+<!-- section_id: "48971375-3574-49aa-be0f-20a724583e78" -->
 ### Stage 06: Development
 
 ```
@@ -313,6 +333,7 @@ outputs/
 
 ---
 
+<!-- section_id: "a640913b-0c3b-4e06-a986-d95ecaa01745" -->
 ### Stage 07: Testing
 
 ```
@@ -327,6 +348,7 @@ outputs/
 
 ---
 
+<!-- section_id: "51945cf5-c24c-4858-9f6f-f510f6cee058" -->
 ### Stage 08: Criticism
 
 ```
@@ -341,6 +363,7 @@ outputs/
 
 ---
 
+<!-- section_id: "2d96e709-0bcc-4596-b0fc-052b6ac2338f" -->
 ### Stage 09: Fixing
 
 ```
@@ -352,6 +375,7 @@ outputs/
 
 ---
 
+<!-- section_id: "08ffda9a-3483-400f-a9c6-e53013616fbf" -->
 ### Stage 10: Current Product
 
 ```
@@ -365,6 +389,7 @@ outputs/
 
 ---
 
+<!-- section_id: "d392a425-f286-4ac7-ac0a-ec854fadb101" -->
 ### Stage 11: Archives
 
 ```
@@ -376,6 +401,7 @@ outputs/
 
 ---
 
+<!-- section_id: "4ee8a49f-9459-4eba-b43f-e5272e138f68" -->
 ### Universal Output Patterns
 
 **Organization by Need vs Topic**:
@@ -389,6 +415,7 @@ outputs/
 
 ---
 
+<!-- section_id: "27bb3901-fca3-4381-b52c-8d2dcc000bb1" -->
 ### AI System Infrastructure (NOT in outputs/)
 
 **Episodic Memory** - belongs in `.0agnostic/`, NOT `outputs/`:
@@ -452,6 +479,7 @@ layer_N/layer_N_03_sub_layers/
 
 ---
 
+<!-- section_id: "c5ff0315-8b70-4784-ae51-e1a0b7646124" -->
 ### Tool-Specific Overrides, Additions, and Exclusions
 
 Each tool-specific folder (`.claude/`, `.cursor/`, `.gemini/`) needs:
@@ -545,6 +573,7 @@ entity/
 
 ---
 
+<!-- section_id: "233dfe73-1ae5-4ec2-8eab-6f5460158d05" -->
 ### Final Architecture: Source → Merge → Output
 
 **Three-tier folder system with numbered sorting**:
@@ -708,6 +737,7 @@ entity/
 
 ---
 
+<!-- section_id: "99657e4c-5d51-453e-a808-ab7a0d130485" -->
 ### Supported Tools Reference (Researched)
 
 **IMPORTANT**: Each tool has different native conventions. Our merge system outputs to their ACTUAL locations.
@@ -723,6 +753,7 @@ entity/
 
 **Native Tool Conventions (Researched 2025-2026)**:
 
+<!-- section_id: "8daa6b7c-eee4-4cbb-a52c-49ddb1a8f66a" -->
 ### Terminal/CLI Tools
 
 | Tool | Official Location | Format | Notes |
@@ -731,6 +762,7 @@ entity/
 | **OpenAI Codex CLI** | `~/.codex/config.toml` | TOML | Global only, no project folder |
 | **Aider** | `.aider.conf.yml` | YAML | Searches: home → repo root → cwd |
 
+<!-- section_id: "005b457f-abed-4a92-9564-fa637a39def5" -->
 ### IDE Extensions
 
 | Tool | Official Location | Format | Notes |
@@ -768,12 +800,14 @@ entity/
 
 ---
 
+<!-- section_id: "1554167b-8183-4998-a9bf-dc47c5102fba" -->
 ## Tool Context Systems (Researched 2025-2026)
 
 This section documents how each AI coding tool handles system prompts, static context, and dynamic context.
 
 ---
 
+<!-- section_id: "3288d994-8998-487e-8643-fa8b8dd43ede" -->
 ### Claude Code CLI
 
 **Main Instruction File**: `CLAUDE.md` (project root) + `~/.claude/CLAUDE.md` (global)
@@ -838,6 +872,7 @@ alwaysApply: false        # true = always include
 
 ---
 
+<!-- section_id: "988eaa23-da3a-4fa7-8eef-1a3311e3fd18" -->
 ### OpenAI Codex CLI
 
 **Main Instruction File**: `AGENTS.md` (project root) - created via `/init` command
@@ -895,6 +930,7 @@ codex --config developer_instructions="Additional context..."
 
 ---
 
+<!-- section_id: "380e739a-8cf7-4fbd-9b87-9ff04fa95973" -->
 ### Google Gemini CLI
 
 **Main Instruction File**: `GEMINI.md` (hierarchical - global, ancestor, sub-directory)
@@ -957,6 +993,7 @@ codex --config developer_instructions="Additional context..."
 
 ---
 
+<!-- section_id: "2d57553f-9c78-4475-a0be-537662c7815c" -->
 ### OpenCode CLI
 
 **Main Instruction File**: Custom `prompt` config pointing to markdown file
@@ -1014,6 +1051,7 @@ agent:
 
 ---
 
+<!-- section_id: "fb8f01db-1598-48c1-a1ba-4240e8b28705" -->
 ### Aider
 
 **Main Instruction Files**: `.aider.conf.yml` + `.aider.model.settings.yml`
@@ -1083,6 +1121,7 @@ weak-model: gpt-4o-mini
 
 ---
 
+<!-- section_id: "3bc3c68d-15fb-4239-beb4-53d0ad2d548f" -->
 ### Cursor (IDE + CLI)
 
 **Main Instruction File**: `.cursor/rules/*.mdc` (MDC format with YAML frontmatter)
@@ -1153,6 +1192,7 @@ Rule content with instructions...
 
 ---
 
+<!-- section_id: "0bd9eaa1-ac94-45e2-9482-6d31759acfa8" -->
 ### GitHub Copilot
 
 **Main Instruction File**: `.github/copilot-instructions.md`
@@ -1217,6 +1257,7 @@ applyTo: "docs/**/*.md"
 
 ---
 
+<!-- section_id: "2616640b-bbcf-4df0-ae61-2b27c16446c6" -->
 ### Continue
 
 **Main Config Files**: `config.yaml` or `config.json` (project) + `~/.continue/config.yaml` (global)
@@ -1288,8 +1329,10 @@ rules:
 
 ---
 
+<!-- section_id: "de5a2f95-e297-40a8-afc8-59df51ddde03" -->
 ## Agnostic to Tool-Specific Mapping
 
+<!-- section_id: "bbf39091-551f-426c-a2da-9277639e6361" -->
 ### Concept Matrix
 
 | Agnostic Concept | Claude Code | Codex CLI | Gemini CLI | OpenCode | Aider | Cursor | Copilot | Continue |
@@ -1306,6 +1349,7 @@ rules:
 
 ---
 
+<!-- section_id: "4ef3dc45-c9d7-4b7e-921c-76ac9afafc8c" -->
 ### Mapping from .0agnostic/ to Tool Outputs
 
 **Source Structure** (`.0agnostic/`):
@@ -1340,6 +1384,7 @@ rules:
 
 ---
 
+<!-- section_id: "99cae584-4ea9-47ed-947c-05f14677e36e" -->
 ### Build Script Requirements
 
 The `agnostic-merge.sh` script must handle these transformations:
@@ -1419,8 +1464,10 @@ cat .0agnostic/instructions/*.md > .opencode/agent/default.md
 
 ---
 
+<!-- section_id: "a2757e8a-8670-446f-9d28-5d221940c707" -->
 ## AI Coding Tool Rankings & Prioritization (2025-2026)
 
+<!-- section_id: "7b076635-51b9-42ab-8431-903c9a0e451c" -->
 ### Quick Reference: When to Use Which Tool
 
 | Task Type | Best Tool | Runner-up | Why |
@@ -1440,6 +1487,7 @@ cat .0agnostic/instructions/*.md > .opencode/agent/default.md
 
 ---
 
+<!-- section_id: "ab02276a-55bb-4ed2-a785-363a217c3c7a" -->
 ### Tool Tier Rankings
 
 #### Tier 1: Primary Recommendations
@@ -1467,6 +1515,7 @@ cat .0agnostic/instructions/*.md > .opencode/agent/default.md
 
 ---
 
+<!-- section_id: "287e2ef6-55fd-479a-ba6b-7c92f9f47899" -->
 ### Detailed Tool Profiles
 
 #### Claude Code CLI
@@ -1654,6 +1703,7 @@ cat .0agnostic/instructions/*.md > .opencode/agent/default.md
 
 ---
 
+<!-- section_id: "74e3818e-7e00-4024-a899-eb8c219f743d" -->
 ### Recommended Tool Combinations
 
 #### For Solo Developers
@@ -1689,6 +1739,7 @@ Secondary: OpenCode (fully open source)
 
 ---
 
+<!-- section_id: "93951e71-cac7-4af2-8fb2-c204105b6e09" -->
 ### Migration Paths
 
 **From Copilot to Claude Code**:
@@ -1705,6 +1756,7 @@ Secondary: OpenCode (fully open source)
 
 ---
 
+<!-- section_id: "f784536d-21e3-4393-8f9a-77ee70363f6a" -->
 ### Sources for Rankings
 - [Render AI Coding Agents Benchmark](https://render.com/blog/ai-coding-agents-benchmark)
 - [Claude Code vs Cursor Comparison](https://www.qodo.ai/blog/claude-code-vs-cursor/)
@@ -1715,6 +1767,7 @@ Secondary: OpenCode (fully open source)
 
 ---
 
+<!-- section_id: "400be2e1-6bdc-497c-9c6c-d88ecdb4fa73" -->
 ### Official vs Custom Folders
 
 **Claude Code Official** (`.claude/`):
@@ -1776,8 +1829,10 @@ layer_N/layer_N_03_sub_layers/
 
 ---
 
+<!-- section_id: "3293db2a-70fa-4019-b643-62609e789a6e" -->
 ## Entity Instantiation Patterns
 
+<!-- section_id: "9fb77cef-3525-4f15-b64b-1b2afb953d2b" -->
 ### Research Project (Layer -1)
 
 ```
@@ -1804,6 +1859,7 @@ layer_-1_research/
         └── layer_0_features/   # Features within the research project
 ```
 
+<!-- section_id: "284bb17a-358c-4c99-b30b-49dc1ecd24f5" -->
 ### Project (Layer 1)
 
 ```
@@ -1825,6 +1881,7 @@ layer_1/layer_1_projects/
         └── ...
 ```
 
+<!-- section_id: "b2ae03b6-2d8e-489b-adab-bdb86385de6f" -->
 ### Feature (Layer 2, nested under project)
 
 ```
@@ -1837,6 +1894,7 @@ layer_1_project_<name>/
             └── layer_2/   # Child features/components
 ```
 
+<!-- section_id: "464c7848-fd1e-4bd2-b33e-ef347316bcad" -->
 ### Component (Layer 3)
 
 ```
@@ -1848,6 +1906,7 @@ layer_2_feature_<name>/
 
 ---
 
+<!-- section_id: "f94656f2-a2fc-4274-b93a-727b5e248695" -->
 ## Entity Creation Process
 
 From the `entity-creation` skill:
@@ -1859,6 +1918,7 @@ From the `entity-creation` skill:
 5. **Create initial status file** (status_N.json)
 6. **Update parent's children list**
 
+<!-- section_id: "6402fc1b-ae1e-4ecd-9b08-e19e30decc98" -->
 ### Required Structure for New Entity
 
 Every new entity MUST have the two-folder structure with ALL possible child types:
@@ -1901,10 +1961,12 @@ layer_N_<type>_<name>/
 
 ---
 
+<!-- section_id: "cf426e7f-d08e-41e2-81ac-c37b8ecd8e84" -->
 ## Handoff System
 
 Entities communicate via handoff documents in **four directions**:
 
+<!-- section_id: "abf026c7-b3c0-4b79-ae69-523f4e7026b8" -->
 ### Handoff Directions
 
 | Direction | Purpose | Folder |
@@ -1914,6 +1976,7 @@ Entities communicate via handoff documents in **four directions**:
 | **SIDEWAYS** | Coordinate with siblings | `hand_off_documents/outgoing/to_siblings/` |
 | **INCOMING** | Receive from any direction | `hand_off_documents/incoming/from_above/`, `from_below/`, `from_siblings/` |
 
+<!-- section_id: "85f2641f-fabb-4cf6-9933-43ff698c2bf4" -->
 ### Handoff Document Structure
 
 ```json
@@ -1932,6 +1995,7 @@ Entities communicate via handoff documents in **four directions**:
 }
 ```
 
+<!-- section_id: "15111d9c-4f7e-4116-a0eb-cd7dc98f42aa" -->
 ### Handoff Workflow
 1. **Read incoming** from `hand_off_documents/incoming/`
 2. **Process** the task
@@ -1940,10 +2004,12 @@ Entities communicate via handoff documents in **four directions**:
 
 ---
 
+<!-- section_id: "b76c77e5-6dff-4ba3-99d5-f06f22c2bd30" -->
 ## AGNOSTIC System (Subcomponent of Layer-Stage)
 
 The AGNOSTIC system is a **subcomponent** of the layer-stage system, providing tool portability and session management at each layer:
 
+<!-- section_id: "8617ed8c-e0ec-4be7-90cb-3ef47da3e836" -->
 ### Structure at Each Entity
 
 ```
@@ -1968,6 +2034,7 @@ layer_N_<type>_<name>/
 └── .locks/               # Multi-agent file locking
 ```
 
+<!-- section_id: "fa018271-009c-406d-80db-be88fa7b61aa" -->
 ### Key Functions
 
 | Function | Component | Purpose |
@@ -1977,6 +2044,7 @@ layer_N_<type>_<name>/
 | Multi-Agent Sync | `.locks/` | Prevents conflicts when multiple agents work in parallel |
 | Session Continuity | `divergence.log` | Tracks changes made during sessions |
 
+<!-- section_id: "9d131df6-4256-4c43-bbc7-6170c4156d95" -->
 ### Integration with Layer-Stage
 
 - **0AGNOSTIC.md** defines Identity, Navigation, Behaviors for each entity
@@ -1986,14 +2054,17 @@ layer_N_<type>_<name>/
 
 ---
 
+<!-- section_id: "8705f513-276e-4338-b5d0-a51c02749e65" -->
 ## Key Observations
 
+<!-- section_id: "684c60a5-4d3d-436f-890e-26d2ff43667b" -->
 ### Inconsistencies in Existing Structure
 
 1. **Stage numbering varies**: Some older projects use stages 00-09, newer ones use 01-11
 2. **Component positions vary**: Some use 01/02, others use 00/01/02/03/99
 3. **Design/Planning order**: Stage registry says planning=04, design=05, but the decision is design=04, planning=05
 
+<!-- section_id: "5dfe1bc8-924c-42cf-a137-fe72170ea363" -->
 ### System Integration
 
 The AGNOSTIC system is a **subcomponent** of the layer-stage system:
@@ -2001,6 +2072,7 @@ The AGNOSTIC system is a **subcomponent** of the layer-stage system:
 - AGNOSTIC provides tool portability and session continuity within that structure
 - Both work together - entities have layer-stage structure AND agnostic files
 
+<!-- section_id: "f1892bb2-7421-43d6-9395-a293e857c0f3" -->
 ### Nesting Capability
 
 Features can contain their own layer structure:
@@ -2008,6 +2080,7 @@ Features can contain their own layer structure:
 
 ---
 
+<!-- section_id: "81cc8517-378a-4bb1-9b9c-94625a4c8d18" -->
 ## Status Tracking
 
 Each layer tracks status in `layer_N_99_stages/status.json`:
@@ -2029,6 +2102,7 @@ Each layer tracks status in `layer_N_99_stages/status.json`:
 
 ---
 
+<!-- section_id: "2f34e9a4-35aa-4623-8a76-5d184abf34c7" -->
 ## Summary
 
 **Layer instantiation**:
@@ -2052,8 +2126,10 @@ Each layer tracks status in `layer_N_99_stages/status.json`:
 
 ---
 
+<!-- section_id: "fbf7cf65-cb69-4cca-8edd-5bd63e062460" -->
 ## Proposed Improvements (In Progress)
 
+<!-- section_id: "9d12767b-596a-4065-b99c-ad695fe1b732" -->
 ### Problem 1: Container vs Item Ambiguity
 
 **Current Issue**: Folders like `sub_layer_0_05_content` are ambiguous - is it an item at position 05, or a container grouping items?
@@ -2071,6 +2147,7 @@ Each layer tracks status in `layer_N_99_stages/status.json`:
 
 ---
 
+<!-- section_id: "d664099d-770c-4b8b-9e8b-7c7aa2f50184" -->
 ### Clarification: Setup-Dependent Hierarchy vs SubxN Nesting
 
 **Two DIFFERENT concepts - don't confuse them:**
@@ -2116,6 +2193,7 @@ sub_layer_0_06_local/
 
 ---
 
+<!-- section_id: "7c232ba4-b4b3-4114-bb1e-0c8c46776259" -->
 ### Problem 2: Episodic Memory Location
 
 **Current Issue**: Episodic memory (`outputs/episodic/`) is in the wrong place. It's AI system infrastructure, not stage output.
@@ -2159,12 +2237,14 @@ entity/
 
 ---
 
+<!-- section_id: "48c0bf40-e0d5-4379-9e4e-3fbf8629e912" -->
 ### Problem 3: Content/Group Folder Naming
 
 **Current Issue**: Folders like `sub_layer_0_06_content` are confusing - they act as containers but look like items.
 
 ---
 
+<!-- section_id: "954cd1a9-0ae8-4f10-8a55-78f5d5964900" -->
 ### Problem 3: Setup Folder Ordering
 
 **Current Issue**: Setup folders don't sort first in directory listings.
@@ -2187,6 +2267,7 @@ sub_layer_0_06_local/
 
 ---
 
+<!-- section_id: "5d304801-23d1-4d0f-a1d4-253f7c2c45a3" -->
 ### Pattern: Stages Within Sub-Layers
 
 **Observed Working Pattern**: Stages CAN exist within deep sub-layers for specialized workflows:
@@ -2209,6 +2290,7 @@ sub_layer_0_13_protocols/
 
 ---
 
+<!-- section_id: "304cb859-acbe-4e56-9fb2-e1fc38694d4e" -->
 ### Summary of Proposed Naming Conventions
 
 | Concept | Naming Pattern | Example |
@@ -2229,6 +2311,7 @@ sub_layer_0_13_protocols/
 
 ---
 
+<!-- section_id: "18b06245-f365-4eae-a9b1-3cdc0baa2d4e" -->
 ## Key Source Documents
 
 | Document | Location | What It Explains |
@@ -2240,8 +2323,10 @@ sub_layer_0_13_protocols/
 
 ---
 
+<!-- section_id: "dd69a1d7-c837-4e26-a918-5deeab392ac9" -->
 ## Summary
 
+<!-- section_id: "ecf0206b-9b90-4af7-949c-d9f0810a6701" -->
 ### Core Concepts (Established)
 1. **Layers = Specificity**: Universal (0) → Project (1) → Feature (2) → Component (3) → deeper
 2. **Rules CASCADE**: Lower layer rules apply to all higher layers
@@ -2254,6 +2339,7 @@ sub_layer_0_13_protocols/
 9. **Stages can exist in sub-layers**: For specialized workflows like OS-specific setup
 10. **Entity structure requires**: 0AGNOSTIC.md (source), tool-specific files, .0agnostic/, .claude/, layer_N/, layer_N+1/
 
+<!-- section_id: "824e8444-6886-4542-8dc0-6fe3800601c8" -->
 ### Proposed Improvements (New)
 11. **Entity vs Group distinction**:
     - **Entity** = actual item (project, feature, component, specific sub-layer)
@@ -2263,17 +2349,20 @@ sub_layer_0_13_protocols/
 14. **Setup ordering**: Use `00_setup/` or `0_setup/` to ensure setup sorts first in directories
 15. **Stages in deep sub-layers**: Pattern confirmed - position 99 for stages even within deep sub-layer nesting
 
+<!-- section_id: "a5bbac8d-7b6a-405b-82d4-84af782aec56" -->
 ### Stage Output Patterns (Documented)
 16. **Tree of Needs**: Stage 01 uses hierarchical `tree_of_needs/` structure for requirements
 17. **In-progress/Finished**: Stages 02-03 use `01_*_in_progress/` and `02_finished_*/` separation
 18. **By-need/By-topic/Synthesis**: Research-like stages organize by need, topic, and synthesis
 19. **Numbered design decisions**: Stage 04 uses numbered `01_*, 02_*` files in `by_topic/`
 
+<!-- section_id: "c4d0a4ff-d01b-4a6c-9ca6-8a8cd761c99b" -->
 ### AI System Infrastructure (Proposed Changes)
 20. **Episodic memory location**: Move from `outputs/episodic/` to `.0agnostic/episodic/` (AI infra, not output)
 21. **Content in sub-layers**: `knowledge/`, `prompts/`, `rules/`, `principles/` live in sub-layers, NOT dot-folders
 22. **Dot-folders for tool config only**: agents, skills, hooks, episodic (references sub-layers)
 
+<!-- section_id: "4e76e4d1-c292-4693-908e-d3700307668f" -->
 ### Three-Tier Folder Architecture
 23. **Source**: `.0agnostic/` - tool-agnostic source of truth
 24. **Merge workspaces**: `.1claude_merge/`, `.1cursor_merge/`, `.1gemini_merge/` - build folders with overrides/additions
@@ -2283,6 +2372,7 @@ sub_layer_0_13_protocols/
 28. **MD generation**: `CLAUDE.md` = `0AGNOSTIC.md` + `.1claude_merge/CLAUDE.override.md`
 29. **SessionStart hook**: Auto-runs merge script on session start
 
+<!-- section_id: "4b010622-d33f-4924-96be-61df85382334" -->
 ### Tool Context Systems (Researched)
 30. **Claude Code**: `CLAUDE.md` hierarchy + `.claude/rules/` (frontmatter: description, globs, alwaysApply) + skills + agents + hooks
 31. **Codex CLI**: `AGENTS.md` + `~/.codex/config.toml` + skills folder + experimental_instructions_file override
@@ -2293,6 +2383,7 @@ sub_layer_0_13_protocols/
 36. **GitHub Copilot**: `.github/copilot-instructions.md` + `.github/instructions/*.instructions.md` (applyTo frontmatter)
 37. **Continue**: `config.yaml` with models, rules, contextProviders, slashCommands + `.continuerc.json` workspace override
 
+<!-- section_id: "7a8957e7-c262-490a-b478-e7e17b60ee85" -->
 ### Agnostic Mapping Patterns
 38. **Instructions** → Main MD file (CLAUDE.md, AGENTS.md, GEMINI.md, copilot-instructions.md)
 39. **Always rules** → Tool rules with `alwaysApply: true` or embedded in main file
@@ -2301,6 +2392,7 @@ sub_layer_0_13_protocols/
 42. **Skills** → Claude `.claude/skills/`, Codex skills folder
 43. **Hooks** → Claude `settings.json` hooks only (others don't support)
 
+<!-- section_id: "c64d3bdd-9c05-4555-98a0-3c8cd56e1177" -->
 ### Tool Rankings (2025-2026)
 44. **Tier 1**: Claude Code (⭐⭐⭐⭐⭐ - large codebases, refactoring, reasoning) + Cursor (⭐⭐⭐⭐⭐ - IDE, real-time)
 45. **Tier 2**: Aider (⭐⭐⭐⭐ - Git native, BYOK) + Copilot (⭐⭐⭐⭐ - teams) + Codex CLI (⭐⭐⭐⭐ - autonomous)

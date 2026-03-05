@@ -5,13 +5,16 @@ resource_name: "SESSION_LOG_2026-01-17"
 ---
 # Session Log - 2026-01-17
 
+<!-- section_id: "eb9ed155-9e5a-48ca-b4f1-e5067c545bc4" -->
 ## Summary
 Successfully fixed Ubuntu login loop and set up remote access infrastructure via Tailscale.
 
 ---
 
+<!-- section_id: "439e038b-424d-4c39-92d6-3d8dd68ddcf1" -->
 ## What Was Done
 
+<!-- section_id: "c9061aea-c6da-4892-bad2-f2b917d2618b" -->
 ### 1. VPS Enhancements
 
 #### Playwright MCP Server ✅
@@ -35,6 +38,7 @@ tailscale up
 
 ---
 
+<!-- section_id: "02a21b14-157b-42ce-ac6c-bfa19f0ea642" -->
 ### 2. Ubuntu Setup (via Recovery Mode)
 
 #### Tailscale Installation ✅
@@ -58,13 +62,16 @@ systemctl enable ssh
 
 ---
 
+<!-- section_id: "ad30937c-dac3-4638-b2e1-578d234c755e" -->
 ## The Login Loop Problem
 
+<!-- section_id: "74a4b992-069b-47c1-b2c4-b4df4651e3ca" -->
 ### Symptoms
 - Enter password at GDM login screen
 - Screen goes black briefly
 - Returns to login screen (loop)
 
+<!-- section_id: "37f19946-a074-44d3-9fe8-c9931043921b" -->
 ### Diagnosis
 Connected via SSH from VPS and checked logs:
 ```bash
@@ -77,6 +84,7 @@ Gdm: GdmDisplay: Session never registered, failing
 Gdm: GdmLocalDisplayFactory: maximum number of X display failures reached
 ```
 
+<!-- section_id: "87178474-03cd-43f9-9711-df839b5879e1" -->
 ### What Didn't Work
 1. **Disabling Wayland** - `WaylandEnable=false` in `/etc/gdm3/custom.conf` - no effect
 2. **Updating NVIDIA drivers** - `ubuntu-drivers autoinstall` - no effect
@@ -84,6 +92,7 @@ Gdm: GdmLocalDisplayFactory: maximum number of X display failures reached
 4. **Reinstalling GNOME session** - `apt install --reinstall gnome-session gnome-shell ubuntu-session` - no effect
 5. **Resetting GNOME config** - moved `.config/gnome-session` and `.config/dconf` - no effect
 
+<!-- section_id: "3c3c1086-dbd5-4583-bbec-d15b96d2c31f" -->
 ### What Worked ✅
 **Switching from GDM3 to LightDM:**
 ```bash
@@ -95,13 +104,16 @@ systemctl set-default graphical.target
 reboot
 ```
 
+<!-- section_id: "5d404907-0590-413e-9665-bf9b2dc93d2a" -->
 ### Root Cause
 GDM3 has known issues with NVIDIA hybrid graphics (Intel + NVIDIA RTX 4060). The GNOME session fails to register with GDM's display factory. LightDM handles this setup more reliably.
 
 ---
 
+<!-- section_id: "167f29f1-8e1c-4744-bd56-02a34d441c95" -->
 ## Post-Fix Issue
 
+<!-- section_id: "e6facd37-fabc-4d08-98a4-3bd4fae9224d" -->
 ### Blank Screen After Reboot
 After rebooting, LightDM didn't auto-start.
 
@@ -114,8 +126,10 @@ ln -sf /usr/lib/systemd/system/lightdm.service /etc/systemd/system/display-manag
 
 ---
 
+<!-- section_id: "8a7ad4ad-868d-4345-9b39-d2a9e2fbdeca" -->
 ## Current State
 
+<!-- section_id: "e8115635-6792-4cff-8d32-8b03c66f298c" -->
 ### Devices on Tailscale Network
 | Device | IP | Hostname | Status |
 |--------|-----|----------|--------|
@@ -123,6 +137,7 @@ ln -sf /usr/lib/systemd/system/lightdm.service /etc/systemd/system/display-manag
 | VPS | `100.93.148.5` | `ubuntu-4gb-nbg1-1` | ✅ Online |
 | iPhone | `100.75.210.27` | `iphone171` | ✅ Online |
 
+<!-- section_id: "ff82ce41-67bd-4c95-b2f7-66400dd31370" -->
 ### SSH Access
 ```bash
 # From VPS to Ubuntu:
@@ -136,6 +151,7 @@ ssh dawson@dawson-yoga-pro-9-16imh9
 ssh root@ubuntu-4gb-nbg1-1
 ```
 
+<!-- section_id: "34f75fb4-73b3-465d-9f6a-1fe4a8da09e2" -->
 ### Ubuntu Configuration
 - **Display Manager:** LightDM (Unity Greeter)
 - **Graphics:** Intel + NVIDIA RTX 4060 hybrid
@@ -145,14 +161,17 @@ ssh root@ubuntu-4gb-nbg1-1
 
 ---
 
+<!-- section_id: "0ee0d0b8-9192-4647-865c-670349026b1e" -->
 ## Files Modified
 
+<!-- section_id: "22c2c68a-edc1-480a-8697-a64935f0ebfb" -->
 ### On VPS
 | File | Change |
 |------|--------|
 | `/root/.claude/mcp_servers.json` | Created - Playwright MCP config |
 | `/root/.claude/settings.local.json` | Updated - Full tool permissions |
 
+<!-- section_id: "a5dffc76-0e12-4e46-ae35-0466c2300133" -->
 ### On Ubuntu
 | File | Change |
 |------|--------|
@@ -164,6 +183,7 @@ ssh root@ubuntu-4gb-nbg1-1
 
 ---
 
+<!-- section_id: "4cdb217e-f30e-42c7-bc7a-7361f8cd91c4" -->
 ## Lessons Learned
 
 1. **GDM3 + NVIDIA hybrid = trouble** - LightDM is more reliable
@@ -174,8 +194,10 @@ ssh root@ubuntu-4gb-nbg1-1
 
 ---
 
+<!-- section_id: "c6f8859a-5e8d-4210-8397-079c0103fcd4" -->
 ## Quick Reference
 
+<!-- section_id: "05002b9b-70d4-48ee-91a1-7e0b9a110f06" -->
 ### If Login Loop Returns
 ```bash
 # From VPS:
@@ -183,12 +205,14 @@ ssh root@100.73.84.89
 systemctl restart lightdm
 ```
 
+<!-- section_id: "deffa7c8-979b-4e77-bcf0-abc1d4e6cc54" -->
 ### If Display is Blank
 ```bash
 ssh root@100.73.84.89
 systemctl start lightdm
 ```
 
+<!-- section_id: "5d4d2543-c817-40da-ac22-be3a8de7b083" -->
 ### Check Tailscale Status
 ```bash
 tailscale status
@@ -196,8 +220,10 @@ tailscale status
 
 ---
 
+<!-- section_id: "a998d36d-5ab8-45d0-9f11-dc6583efba26" -->
 ## Session 2: Repository Consolidation
 
+<!-- section_id: "3b6408a7-861e-4b1c-917f-9b08a84742b0" -->
 ### 1. Integrated 0_ai_context into 0_layer_universal ✅
 
 Merged all content from `/home/dawson/dawson-workspace/code/0_ai_context` into `0_layer_universal`:
@@ -217,6 +243,7 @@ Merged all content from `/home/dawson/dawson-workspace/code/0_ai_context` into `
 - Kept the staging system (stage_00 through stage_03) with HANDOFF pattern
 - Renamed files to use underscores instead of dots for cross-OS compatibility
 
+<!-- section_id: "9310fd44-1f43-4336-b305-5ffbadda1b4e" -->
 ### 2. Git Commit & Push ✅
 ```bash
 git add -A
@@ -226,11 +253,13 @@ git push
 - 37 files changed, +4185 lines
 - Pushed to `github.com:Dawson2025/0-universal-context.git`
 
+<!-- section_id: "fc899581-11db-4823-80e9-e3163ca24a09" -->
 ### 3. Deleted 0_ai_context ✅
 ```bash
 rm -rf /home/dawson/dawson-workspace/code/0_ai_context
 ```
 
+<!-- section_id: "35e0b9e4-2ac4-4e65-9ed0-271588c42145" -->
 ### 4. Syncthing Cleanup ✅
 
 **Removed empty "Default Folder":**
@@ -250,6 +279,7 @@ rm -rf /home/dawson/Sync
 
 ---
 
+<!-- section_id: "579338f1-c7d7-4468-9d76-0bd37516b983" -->
 ## Current Repository Structure
 
 ```

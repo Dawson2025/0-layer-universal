@@ -11,14 +11,17 @@ resource_name: "test_design_08_discovery_temperatures"
 
 ---
 
+<!-- section_id: "fcc1d120-4413-49b6-8f0b-45bb25bf4a86" -->
 ## What We're Testing
 
 Three context temperatures: Hot (always loaded via CLAUDE.md), Warm (on directory entry via .claude/rules/), Cold (on demand/trigger). The hot rule promotion system. PostToolUse hooks. Three-layer defense in depth. Token budgets.
 
 ---
 
+<!-- section_id: "63cef9ef-c0f9-44dd-a93a-46d0caa02f8e" -->
 ## Test Cases
 
+<!-- section_id: "07041573-e5c9-4512-b534-9f361da0437e" -->
 ### TC-08-01: Hot context — CLAUDE.md contains required sections
 
 **Steps**:
@@ -34,6 +37,7 @@ Three context temperatures: Hot (always loaded via CLAUDE.md), Warm (on director
 **Expected**: Hot context always contains identity, triggers, critical rules, promoted rules
 **Type**: Structural
 
+<!-- section_id: "7bc8a536-ec2b-4436-8929-d35a563cd3d4" -->
 ### TC-08-02: Hot context — token budget compliance
 
 **Steps**:
@@ -48,6 +52,7 @@ Three context temperatures: Hot (always loaded via CLAUDE.md), Warm (on director
 **Note**: These are targets, not hard limits — report violations as warnings
 **Type**: Structural
 
+<!-- section_id: "03f3b1fe-adc5-4417-bdaa-2e1800814987" -->
 ### TC-08-03: Warm context — .claude/rules/ files have path matchers
 
 **Steps**:
@@ -62,6 +67,7 @@ Three context temperatures: Hot (always loaded via CLAUDE.md), Warm (on director
 **Expected**: Warm rules are scoped to specific paths, not universal
 **Type**: Structural
 
+<!-- section_id: "c8755612-63d1-480c-9740-ddc4588a79db" -->
 ### TC-08-04: Warm context — rules fire on correct paths
 
 **Steps**:
@@ -74,6 +80,7 @@ Three context temperatures: Hot (always loaded via CLAUDE.md), Warm (on director
 **Expected**: Warm rules have clear path scopes that match their content
 **Type**: Structural
 
+<!-- section_id: "de6963cc-557d-4038-ba50-ec0405327f5e" -->
 ### TC-08-05: Cold context — .0agnostic/ resources exist and are organized
 
 **Steps**:
@@ -88,6 +95,7 @@ Three context temperatures: Hot (always loaded via CLAUDE.md), Warm (on director
 **Expected**: Cold content exists in organized locations, not duplicated into hot context
 **Type**: Structural
 
+<!-- section_id: "4af56253-927f-4caf-90b0-6f17fe3ddd50" -->
 ### TC-08-06: Cold context — skills have WHEN conditions
 
 **Steps**:
@@ -100,6 +108,7 @@ Three context temperatures: Hot (always loaded via CLAUDE.md), Warm (on director
 **Expected**: Skills are properly gated with specific trigger conditions
 **Type**: Structural
 
+<!-- section_id: "ef9b94b9-1fee-42ed-9a4e-97bf79bcfa92" -->
 ### TC-08-07: Hot rule promotion — full pipeline
 
 **Steps**:
@@ -114,6 +123,7 @@ Three context temperatures: Hot (always loaded via CLAUDE.md), Warm (on director
 **Expected**: End-to-end promotion: rule file → frontmatter → sync → CLAUDE.md table → path back to full rule
 **Type**: Integration
 
+<!-- section_id: "5f9257e2-c631-4e42-8510-4a68fd1fa7aa" -->
 ### TC-08-08: PostToolUse hook — agnostic-edit-guard exists
 
 **Steps**:
@@ -126,6 +136,7 @@ Three context temperatures: Hot (always loaded via CLAUDE.md), Warm (on director
 **Expected**: Hook fires for .0agnostic/ edits and returns context, stays silent for other paths
 **Type**: Integration
 
+<!-- section_id: "b53dcd72-4c73-4a3e-842c-3fab103cf422" -->
 ### TC-08-09: Three-layer defense — all layers present for .0agnostic/ protection
 
 **Steps**:
@@ -136,6 +147,7 @@ Three context temperatures: Hot (always loaded via CLAUDE.md), Warm (on director
 **Expected**: All three layers are configured and active
 **Type**: Structural
 
+<!-- section_id: "f5570117-c8f8-4b48-9ab5-bb7bc528cef1" -->
 ### TC-08-10: Temperature assignment — no hot content that should be cold
 
 **Steps**:
@@ -149,6 +161,7 @@ Three context temperatures: Hot (always loaded via CLAUDE.md), Warm (on director
 
 ---
 
+<!-- section_id: "40f2764f-0290-4253-891c-eaa8c15aaf7f" -->
 ## Coverage Gap Analysis
 
 | Design Concept | Test Case | Status |

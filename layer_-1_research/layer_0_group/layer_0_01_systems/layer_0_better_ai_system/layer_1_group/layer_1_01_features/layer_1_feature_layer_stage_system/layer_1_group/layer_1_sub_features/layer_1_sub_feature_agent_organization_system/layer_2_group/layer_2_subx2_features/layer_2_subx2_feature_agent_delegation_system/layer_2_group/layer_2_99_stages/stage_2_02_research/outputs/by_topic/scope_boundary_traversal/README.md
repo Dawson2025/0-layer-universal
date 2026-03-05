@@ -6,14 +6,17 @@ resource_name: "README"
 ---
 # Scope Boundary Traversal Patterns
 
+<!-- section_id: "e9e2f3f4-3591-4288-ba3f-69d8f4f71733" -->
 ## Research Question
 
 When an agent hits a scope boundary (work outside its layer or stage), what information does it need to make the right traversal decision? What are the directional patterns, and what communication infrastructure must every agent have?
 
 This matters because the minimal context model says agents get compact neighbor interfaces — but if scope boundary decisions require substantial knowledge about the hierarchy, traversal patterns, and communication protocols, that "compact" interface may need to be larger than initially assumed.
 
+<!-- section_id: "0c3916b8-e1cf-4596-8e37-536f35f5b22e" -->
 ## Findings
 
+<!-- section_id: "007cb09f-4b06-4b90-9ca7-b7ccc322d561" -->
 ### Every Agent Needs Traversal Infrastructure
 
 Regardless of the minimal context model, every agent must know:
@@ -28,6 +31,7 @@ Regardless of the minimal context model, every agent must know:
 
 5. **Instantiation knowledge**: How to spawn a new agent (point to target 0AGNOSTIC.md + task description). When to instantiate vs. document for later routing.
 
+<!-- section_id: "f06c7f3c-10ea-4d28-980f-d5d230753c63" -->
 ### The Key Insight: Infrastructure vs. Content
 
 This traversal knowledge falls into two categories:
@@ -47,6 +51,7 @@ The universal infrastructure is substantial but **shared** — it lives in Princ
 
 The per-agent positional content is compact — it's the Inputs/Outputs tables and Navigation sections already in 0AGNOSTIC.md.
 
+<!-- section_id: "2b0b2ae5-6974-413c-b3e3-5b148cb7927d" -->
 ### Multi-Location Work: The Hard Case
 
 When work spans multiple locations simultaneously (not a clean handoff to one place):
@@ -58,6 +63,7 @@ When work spans multiple locations simultaneously (not a clean handoff to one pl
 
 This is a recursive pattern: escalate until you find an agent whose scope covers all affected locations. That agent then coordinates by delegating to individual agents at each location.
 
+<!-- section_id: "e2338dd3-b3c5-4803-a217-ee3df4d252f8" -->
 ### Connection to Minimal Context Model
 
 The scope boundary framework does NOT contradict the minimal context model:
@@ -68,6 +74,7 @@ The scope boundary framework does NOT contradict the minimal context model:
 
 The minimal context model holds: own STATIC (including compact positional awareness) + on-demand rules (Principle 8, Scope Boundary Rule when boundary hit) + delegation to managers for routing.
 
+<!-- section_id: "34a1a5fc-f754-452b-b3a9-b4a204514eaa" -->
 ## Promoted Artifacts
 
 These findings have been promoted to universal artifacts:
@@ -77,6 +84,7 @@ These findings have been promoted to universal artifacts:
 | Principle 8 (expanded) | `.0agnostic/01_knowledge/principles/principles/STAGE_DELEGATION_PRINCIPLES.md` | Directional framework, communication protocol per direction, multi-location section |
 | Scope Boundary Rule (expanded) | `.0agnostic/02_rules/static/STAGE_BOUNDARY_RULE/STAGE_BOUNDARY_RULE.md` | 3-step structure (direction → decide → communicate), direction column in examples, multi-location examples |
 
+<!-- section_id: "88c20511-a3ae-41ce-bf46-816b663d72fd" -->
 ## Date
 
 2026-02-26

@@ -7,6 +7,7 @@ resource_name: "README.sync-conflict-20260126-035813-IF2WOGZ"
 
 Place reference documents, templates, and examples here.
 
+<!-- section_id: "b6fc65f9-ba56-4a1f-9b8d-63e60c8c270d" -->
 ## Suggested Contents
 - Templates for 09_fixing outputs
 - Examples of good 09_fixing work

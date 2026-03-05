@@ -13,6 +13,7 @@ resource_name: "deduplication_project_summary"
 
 ---
 
+<!-- section_id: "b736bea4-035c-4365-be6e-7142cbef2a1e" -->
 ## Executive Summary
 
 The codebase previously suffered from documentation duplication: the same content existed in 10+ locations. Updating required manual changes everywhere, creating risk of inconsistency.
@@ -25,8 +26,10 @@ We implemented a **single-source-of-truth deduplication pattern** where:
 
 ---
 
+<!-- section_id: "15c80d26-0a27-421f-8bc6-6164f73486a5" -->
 ## Project Phases
 
+<!-- section_id: "89bf3323-74f0-4875-8458-7e0304ef670b" -->
 ### Phase 1: Entity Structure (Completed)
 
 **Problem:** Entity creation guides were duplicated across 3 files.
@@ -42,6 +45,7 @@ We implemented a **single-source-of-truth deduplication pattern** where:
 
 ---
 
+<!-- section_id: "97419d23-9b7a-4f51-a138-ae2f490c2ad9" -->
 ### Phase 2: Layer/Stage Definitions (Completed)
 
 **Problem:** Layer and stage definitions were duplicated in research subdirectories.
@@ -68,6 +72,7 @@ layer_0_feature_layer_stage_system/layer_1_group/layer_1_sub_features/
 
 ---
 
+<!-- section_id: "64095d78-9387-46ea-9019-5198a688c7d4" -->
 ### Phase 3: Protocols & Knowledge (Completed)
 
 #### Protocols (1 duplicate)
@@ -107,8 +112,10 @@ layer_0_feature_layer_stage_system/layer_1_group/layer_1_sub_features/
 
 ---
 
+<!-- section_id: "bfc80b62-bd02-4b2b-b879-d71db30baaab" -->
 ## Pattern Architecture
 
+<!-- section_id: "4acb634b-b0d7-4720-bb03-e75d768dd8c8" -->
 ### Three-Tier System
 
 ```
@@ -143,8 +150,10 @@ layer_0_feature_layer_stage_system/layer_1_group/layer_1_sub_features/
 
 ---
 
+<!-- section_id: "fd701c75-aa52-487e-801f-69085bcb7398" -->
 ## Impact Analysis
 
+<!-- section_id: "5b9d326a-5a5b-40d6-862c-9b1012f74a74" -->
 ### Maintenance Burden Reduction
 
 **Before Deduplication:**
@@ -163,6 +172,7 @@ ase
 
 **Reduction:** 93% (14 locations → 1)
 
+<!-- section_id: "367359bd-5276-4aa4-ac35-9c69bc77d7c7" -->
 ### Code Quality Improvements
 
 | Metric | Before | After | Change |
@@ -177,6 +187,7 @@ ase
 
 ---
 
+<!-- section_id: "3532b081-dbd2-4a68-8bb8-ffbe8a32d5f9" -->
 ## Commits Created
 
 | Commit | Description | Files | Lines |
@@ -190,8 +201,10 @@ ase
 
 ---
 
+<!-- section_id: "2aed5ca7-c547-473d-9e45-329bbe58ee3c" -->
 ## Canonical Documents (Updated List)
 
+<!-- section_id: "1631e0ec-e87d-440b-ab1e-4207b9230bee" -->
 ### Knowledge
 - `.0agnostic/01_knowledge/entity_lifecycle/INSTANTIATION_GUIDE.md`
 - `.0agnostic/01_knowledge/entity_lifecycle/ENTITY_TYPES.md`
@@ -202,22 +215,27 @@ ase
 - `.0agnostic/01_knowledge/layer_stage_system/SUB_LAYERS_AS_ENTRY_POINTS.md`
 - `.0agnostic/01_knowledge/layer_stage_system/SUB_STAGES_EXPLAINED.md`
 
+<!-- section_id: "6094bc71-e90e-4c18-9d7d-945e1b259813" -->
 ### Rules
 - `.0agnostic/02_rules/context_scope_boundaries.md`
 - `.0agnostic/02_rules/context_priority_rules.md`
 - `.0agnostic/02_rules/context_traversal.md`
 
+<!-- section_id: "80abe3c4-234b-488e-b4f4-16049812ab8d" -->
 ### Protocols
 - `.0agnostic/03_protocols/stage_report_protocol.md`
 
+<!-- section_id: "2f030185-22a3-4916-a8bd-78fec6cc206e" -->
 ### Support Documentation (New)
 - `.0agnostic/01_knowledge/deduplication_pattern.md` — Naming conventions & rules
 - `.0agnostic/01_knowledge/deduplication_onboarding.md` — Team guidance & maintenance
 
 ---
 
+<!-- section_id: "ce2e3472-b6fa-41f7-b5ed-47ddcea1188d" -->
 ## How to Maintain the Pattern
 
+<!-- section_id: "0ceccb07-c60b-4e8f-ae13-e6495fe2e25c" -->
 ### For Developers & Agents
 
 1. **When editing documentation:**
@@ -234,6 +252,7 @@ ase
    - Commit: `[AI Context] Replace duplicate [filename] with canonical pointer`
    - Delete the old duplicate content
 
+<!-- section_id: "0bd72ad2-ae2d-4ab6-bcf8-707895347c7a" -->
 ### Monitoring
 
 Watch for these red flags:
@@ -241,6 +260,7 @@ Watch for these red flags:
 - Documentation with "Inherits from" text → legacy pattern, convert to pointer
 - Multiple canonical candidates for same content → consolidate
 
+<!-- section_id: "006fcc1f-4caa-4b51-b2d4-d8a4b2369eb0" -->
 ### Resources
 
 - **Detailed rules:** `deduplication_pattern.md`
@@ -249,14 +269,17 @@ Watch for these red flags:
 
 ---
 
+<!-- section_id: "6f3c954a-013f-4dc9-9371-077c6f271e46" -->
 ## Lessons Learned
 
+<!-- section_id: "db61a4df-f169-42b2-8731-ff46d9f86799" -->
 ### What Worked Well
 1. **Progressive approach** — Phase-by-phase deduplication easier to validate
 2. **Clear naming** — Canonical vs pointer distinction is intuitive
 3. **Link-based pointers** — No need for complex tooling, just markdown links
 4. **Root-to-research flow** — Natural hierarchy matches layer-stage system
 
+<!-- section_id: "7d67cb7b-1d90-4ede-8b69-c669f7534412" -->
 ### Key Success Factors
 1. **Canonical placement** — Root `.0agnostic/` is naturally discoverable
 2. **Pointer simplicity** — 7-10 line files prevent resistance
@@ -265,22 +288,27 @@ Watch for these red flags:
 
 ---
 
+<!-- section_id: "bf4c03c7-f3d6-487c-9a3d-c1993332410a" -->
 ## Future Opportunities
 
+<!-- section_id: "ca343a8e-386e-4442-bb4d-c2d06b160a3e" -->
 ### Short-term (Next Review Cycle)
 - Monitor for new duplicates in research subdirectories
 - Ensure pointer pattern is followed in future documentation
 
+<!-- section_id: "0bc73ae4-1526-4212-a4bf-4c3c56fbd66c" -->
 ### Medium-term (Next Quarter)
 - Consider promoting well-validated research docs to canonical status
 - Document promotion criteria and process
 
+<!-- section_id: "4eeb77b6-cf8b-4b60-aaca-1a6e76875d78" -->
 ### Long-term (Ongoing)
 - Extend pattern to other duplicate content types (examples, templates, etc.)
 - Integrate pattern into onboarding and contribution guidelines
 
 ---
 
+<!-- section_id: "3fdca54b-96f4-41d3-b8e0-5c21fbfd9776" -->
 ## Conclusion
 
 The deduplication project successfully eliminated 2,217+ lines of duplicate documentation across 14 locations, reducing maintenance burden by 93%. The single-source-of-truth pattern is now established and documented for ongoing maintenance.
@@ -289,6 +317,7 @@ The deduplication project successfully eliminated 2,217+ lines of duplicate docu
 
 ---
 
+<!-- section_id: "f4f11820-2258-462a-9826-7bbbe1cc2cc5" -->
 ## References
 
 - Deduplication Pattern: `.0agnostic/01_knowledge/deduplication_pattern.md`

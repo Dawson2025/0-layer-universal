@@ -5,19 +5,23 @@ resource_name: "constitution"
 ---
 # Language Tracker Constitution
 
+<!-- section_id: "1d2e75b5-3b46-402d-99a2-2c11b22c8401" -->
 ## Core Principles
 
+<!-- section_id: "8dcc0851-f7ba-4452-91ea-e711798fb46d" -->
 ### 1. User-Centric Design
 - **Intuitive Interface**: Every feature should be immediately understandable and require minimal learning
 - **Language Learner First**: All decisions should prioritize the learner's experience and motivation
 - **Accessibility**: The application must be usable by learners with diverse abilities and technical backgrounds
 
+<!-- section_id: "0f8c8ec5-f191-4efa-985d-c8c66c021090" -->
 ### 2. Code Quality Standards
 - **Type Safety**: All code must use TypeScript with strict type checking enabled
 - **Component Reusability**: Build modular, reusable React components that follow DRY principles
 - **Clean Architecture**: Maintain clear separation between data layer, business logic, and presentation
 - **Documentation**: Every public function, component, and API endpoint must have clear documentation
 
+<!-- section_id: "f66bdac7-7b89-4e03-9103-e5ec3996655e" -->
 ### 3. Testing Standards
 - **Comprehensive Coverage**: Maintain >90% test coverage for critical user flows
 - **Test-Driven Development**: Write tests before implementation for new features
@@ -31,30 +35,35 @@ resource_name: "constitution"
 - **Cloud Data Verification**: All cloud operations must verify Firestore collections match UI state using both REST API and Admin SDK
 - **Test Isolation**: Tests must be organized by feature (`features/<feature>/tests/`) to enable parallel development
 
+<!-- section_id: "e9dac569-85a5-491a-a559-893ec3403f17" -->
 ### 4. Performance Excellence
 - **Fast Loading**: Page load times must be under 2 seconds on average connections
 - **Responsive Design**: Smooth interactions across desktop, tablet, and mobile devices
 - **Efficient Data Handling**: Minimize API calls and optimize database queries
 - **Progressive Enhancement**: Core functionality works even with limited connectivity
 
+<!-- section_id: "39de9b22-d93a-465b-b40a-2e4ac75dc6f0" -->
 ### 5. Data Integrity & Privacy
 - **Secure Storage**: User progress and personal data must be encrypted and secure
 - **Privacy First**: Collect only necessary data and provide clear privacy controls
 - **Data Portability**: Users can export their learning data at any time
 - **Backup & Recovery**: Robust systems to prevent data loss
 
+<!-- section_id: "77b4b389-c16f-4155-b1f5-980f6a810cb4" -->
 ### 6. Continuous Learning Platform
 - **Adaptive Learning**: The system should learn from user behavior to improve recommendations
 - **Gamification Balance**: Motivational elements without becoming manipulative or addictive
 - **Progress Transparency**: Clear visualization of learning progress and goals
 - **Community Features**: Optional social learning features that enhance motivation
 
+<!-- section_id: "8528cccb-90c6-45c5-abdc-3c07fccee5ea" -->
 ### 7. Technical Excellence
 - **Modern Tech Stack**: Use current, well-supported technologies (React, TypeScript, modern CSS)
 - **Scalable Architecture**: Design for growth in users and features
 - **Error Handling**: Graceful degradation and clear error messages
 - **Monitoring**: Comprehensive logging and monitoring for proactive issue resolution
 
+<!-- section_id: "85b5429b-4988-446d-b987-d44ef38006ea" -->
 ### 8. Development Process Excellence
 - **Universal Workflow**: Follow `docs/1_instructions/universal_instructions.md` for all development tasks
 - **Project-Specific Guidelines**: Adhere to `docs/1_instructions/project_instructions.md` for Language Tracker conventions
@@ -63,6 +72,7 @@ resource_name: "constitution"
 - **TODO-Driven Development**: Create explicit TODO lists for every task and track progress systematically
 - **Sub-Feature Parallelization**: Apply sub-feature patterns (display.py, creation.py, search.py, editing.py, api_operations.py) for maximum parallel development capacity
 
+<!-- section_id: "63e7a249-ffab-4c70-81b4-fe6c82277c01" -->
 ### 9. Documentation Ecosystem Excellence
 - **Essential Reading Order**: Must read universal_instructions.md → project_instructions.md → requirements/README.md → feature-specific docs
 - **Multi-Layered Documentation**: Maintain documentation at root (README.md, TESTING.md), docs/ (setup, api, archive), and docs/for_ai/ (requirements, architecture, patterns)
@@ -71,6 +81,7 @@ resource_name: "constitution"
 - **API Reference Standards**: Maintain complete API documentation for main.py functions and utility modules
 - **Setup Documentation**: Provide comprehensive setup guides for Claude Code CLI, Codex CLI, and MCP server configuration
 
+<!-- section_id: "31781cf0-4de0-4d06-b2d2-1796630db280" -->
 ### 10. Firebase/Google Cloud Professional Standards
 - **Complete Multi-Environment Architecture**: Maintain 4-tier Firebase + Google Cloud project structure:
   - **Testing**: `lang-trak-test` Firebase project + corresponding Google Cloud project
@@ -89,6 +100,7 @@ resource_name: "constitution"
 - **WSL Development**: All Firebase and Google Cloud commands must be executed in WSL environment, never Windows PowerShell
 - **Google Cloud Console Integration**: Maintain proper Google Cloud Console project setup, IAM configuration, and resource management for each environment tier
 
+<!-- section_id: "32dc6fe5-4231-46fd-9f82-477fec96e4c0" -->
 ## Decision Framework
 
 When making any development decision, evaluate against these principles in order:
@@ -105,6 +117,7 @@ When making any development decision, evaluate against these principles in order
 11. For Firebase/Google Cloud operations: Am I using the correct environment tier (testing/development/staging/production) with proper service accounts and executing in WSL?
 12. Does this maintain or enhance the sub-feature parallelization capacity for maximum concurrent development?
 
+<!-- section_id: "879a557c-f480-4119-b641-be11eff33fe1" -->
 ## Non-Negotiables
 
 - User data security and privacy
@@ -133,8 +146,10 @@ When making any development decision, evaluate against these principles in order
 - MCP server configuration standards for browser automation testing
 
 These principles guide every decision from feature design to code implementation, ensuring we build a language learning platform that truly serves our users while maintaining technical excellence.
+<!-- section_id: "1be46b82-ca5d-4749-af89-7a49d8e1bc1d" -->
 ## Development Environment Standards
 
+<!-- section_id: "543694ea-30ed-4f9a-80bf-578fc2c4bbbb" -->
 ### WSL Ubuntu File System Requirement
 
 **This project REQUIRES all development work to be performed within the WSL Ubuntu file system as defined in TD0 universal instructions.**

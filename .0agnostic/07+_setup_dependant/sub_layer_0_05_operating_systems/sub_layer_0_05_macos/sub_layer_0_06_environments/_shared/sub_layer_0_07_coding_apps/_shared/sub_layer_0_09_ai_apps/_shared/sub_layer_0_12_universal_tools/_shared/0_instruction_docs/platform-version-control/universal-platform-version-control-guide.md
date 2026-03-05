@@ -6,12 +6,15 @@ resource_name: "universal-platform-version-control-guide"
 # Universal Platform Version Control Guide
 *Core Principles and Practices for All Platforms*
 
+<!-- section_id: "0a05f29b-b197-409b-9bc9-12b29b7faa94" -->
 ## Overview
 
 This guide covers universal principles and practices for version controlling any platform or service your application uses - from infrastructure and hosting to authentication, storage, APIs, and third-party services. These principles apply regardless of which specific platforms you use.
 
+<!-- section_id: "9ccae515-9935-4f40-b96c-665c0b081c99" -->
 ## Core Concepts
 
+<!-- section_id: "f890281f-64c0-471a-92f5-1cd4d9ff2154" -->
 ### What is Platform Version Control?
 
 Platform version control means managing all platform configurations, settings, and deployments through version control systems (like Git). This includes:
@@ -24,6 +27,7 @@ Platform version control means managing all platform configurations, settings, a
 - **CI/CD pipelines** (automated deployments)
 - **Documentation** (why and how decisions were made)
 
+<!-- section_id: "551f350f-8f27-4af9-a013-527ab93ae336" -->
 ### Why Version Control Platforms?
 
 #### Without Version Control
@@ -42,8 +46,10 @@ Platform version control means managing all platform configurations, settings, a
 - Team coordination through PRs
 - Safe, tested deployments
 
+<!-- section_id: "156c4b2e-d074-4ab6-a699-7c0eaa4d7bac" -->
 ## Universal Principles
 
+<!-- section_id: "c7215be3-9004-4786-90b2-3468472e07ff" -->
 ### 1. Everything as Code
 
 #### Infrastructure as Code (IaC)
@@ -89,6 +95,7 @@ Store configurations in files:
 }
 ```
 
+<!-- section_id: "d1119747-ffbf-418f-9e48-c521ec6c3093" -->
 ### 2. Environment Parity
 
 #### Three-Environment Model
@@ -118,6 +125,7 @@ API_KEY=prod_api_key_secret
 ENVIRONMENT=production
 ```
 
+<!-- section_id: "d7fefe79-483c-4f2b-9deb-e91ef263eddc" -->
 ### 3. Secrets Management
 
 **NEVER** commit secrets to Git. Instead:
@@ -143,6 +151,7 @@ API_KEY=
 STRIPE_SECRET_KEY=
 ```
 
+<!-- section_id: "6f2b0b04-5e3c-47cd-822c-8a391cb58bc4" -->
 ### 4. Immutable Deployments
 
 #### Blue-Green Deployment
@@ -164,6 +173,7 @@ Shut down Blue
 - Safe testing in production environment
 - Low risk
 
+<!-- section_id: "f7b1cad2-69bf-4f5d-9d23-13bc91acff22" -->
 ### 5. Rollback Strategy
 
 Always have a way to revert changes:
@@ -177,8 +187,10 @@ Always have a way to revert changes:
 5. Fix and redeploy when ready
 ```
 
+<!-- section_id: "85a03d28-7482-4e8f-99a5-49dfc2d18f06" -->
 ## Configuration Patterns
 
+<!-- section_id: "14ab211d-6f79-4e1e-8a80-566c315dfd65" -->
 ### Pattern 1: Monorepo with All Platforms
 
 ```
@@ -214,6 +226,7 @@ project/
 └── .env.example
 ```
 
+<!-- section_id: "41fc85a4-d717-4515-8f4c-b3f8d3b91c02" -->
 ### Pattern 2: Environment-Specific Structure
 
 ```
@@ -234,6 +247,7 @@ environments/
     └── deploy.sh
 ```
 
+<!-- section_id: "6609356d-ee33-4fa6-9376-12cac1b0d0b3" -->
 ### Pattern 3: Platform per Directory
 
 ```
@@ -255,8 +269,10 @@ platforms/
     └── lambda/
 ```
 
+<!-- section_id: "f3c238e6-074a-4885-803a-8da413335e78" -->
 ## Version Control Strategies
 
+<!-- section_id: "cea7c2bf-7294-460f-b39a-017c1f21ed71" -->
 ### Strategy 1: Git-Based (Recommended)
 
 Store all configurations in Git:
@@ -266,6 +282,7 @@ Store all configurations in Git:
 - ✅ Branch-based testing
 - ✅ Tagged releases
 
+<!-- section_id: "d7759cb4-d8eb-4d6e-80ed-6c84c96ed03c" -->
 ### Strategy 2: Platform APIs
 
 Use platform APIs for version control:
@@ -274,6 +291,7 @@ Use platform APIs for version control:
 - Platform CLIs for deployment
 - CI/CD for automation
 
+<!-- section_id: "6932b693-5bf5-4afc-85ca-28b702d5fe65" -->
 ### Strategy 3: Hybrid Approach
 
 Combine Git + Platform features:
@@ -282,8 +300,10 @@ Combine Git + Platform features:
 - Platform features for monitoring
 - Both for backup and redundancy
 
+<!-- section_id: "f1fa561f-89c8-4a55-98bc-358b92c36796" -->
 ## Deployment Workflows
 
+<!-- section_id: "557df875-2124-462b-8566-c0735a57db78" -->
 ### Workflow 1: Git Push to Deploy
 
 ```bash
@@ -300,6 +320,7 @@ git push origin main
 # 6. Monitor and alert
 ```
 
+<!-- section_id: "937cd5a7-cf1f-4b46-ac94-3985c0dcae42" -->
 ### Workflow 2: Manual Approval
 
 ```bash
@@ -313,6 +334,7 @@ git push origin main
 # 4. Notify team
 ```
 
+<!-- section_id: "3503b82a-cf93-400d-8ee3-4f3ff6180686" -->
 ### Workflow 3: Feature Branch Deployments
 
 ```bash
@@ -330,8 +352,10 @@ git merge feature/new-auth
 # Automated: Deploy to production
 ```
 
+<!-- section_id: "9afc84d2-4585-4117-b787-94e77cf749e6" -->
 ## Best Practices
 
+<!-- section_id: "d1ded43b-ffc8-4ed4-9ea7-ba573fdfe1a8" -->
 ### 1. Document Decisions
 
 ```markdown
@@ -349,6 +373,7 @@ git merge feature/new-auth
 - Cons: Platform-specific lock-in
 ```
 
+<!-- section_id: "18ee1ff8-9c37-4aaf-800b-195649718c3e" -->
 ### 2. Test Configuration Changes
 
 ```bash
@@ -365,6 +390,7 @@ git push origin feature/update-config
 # (manual approval required)
 ```
 
+<!-- section_id: "45745973-b3cb-40e0-9cb5-ddf190f17b75" -->
 ### 3. Use Tags for Releases
 
 ```bash
@@ -377,6 +403,7 @@ git checkout v1.0.0
 ./scripts/deploy.sh production
 ```
 
+<!-- section_id: "3dbd0c34-48e6-4109-be9f-07cfd54d4092" -->
 ### 4. Keep Configurations Simple
 
 ```yaml
@@ -396,6 +423,7 @@ api:
           config: "hard to read"
 ```
 
+<!-- section_id: "e8340326-8e05-496e-affe-3b102e2c493f" -->
 ### 5. Validate Configurations
 
 ```bash
@@ -405,6 +433,7 @@ vercel --debug build
 docker-compose config
 ```
 
+<!-- section_id: "05b7f136-559e-4344-90c9-6095c1cea2d2" -->
 ### 6. Version Platform-Specific Settings
 
 ```json
@@ -418,8 +447,10 @@ docker-compose config
 }
 ```
 
+<!-- section_id: "56a7a5e1-4514-4f56-8c03-a5bab5fb13af" -->
 ## Common Patterns
 
+<!-- section_id: "1f0dc9a2-bce1-4be4-806f-001b9656f31a" -->
 ### Pattern 1: Multi-Platform Coordination
 
 ```bash
@@ -437,6 +468,7 @@ vercel deploy --prod && \
 # ... continue ...
 ```
 
+<!-- section_id: "ef8f700a-86dd-47d7-a48d-c673860b8d54" -->
 ### Pattern 2: Feature Flags
 
 ```yaml
@@ -450,6 +482,7 @@ features:
         - us-east
 ```
 
+<!-- section_id: "ccdfc5f4-ca94-43cd-abe8-6be278cea5da" -->
 ### Pattern 3: Environment-Specific Settings
 
 ```yaml
@@ -470,32 +503,38 @@ performance:
     ttl: 600  # 10 minutes
 ```
 
+<!-- section_id: "7b8e1c35-b1ff-4cc9-ac49-c4a91f418d7e" -->
 ## Troubleshooting Universal Issues
 
+<!-- section_id: "25ad0986-5c1d-45d4-ba92-4ef0805ff899" -->
 ### Issue: Config Drift
 
 **Symptoms**: Local and production configs differ
 
 **Solution**: Use config synchronization tools and always deploy from Git
 
+<!-- section_id: "8dc7bf9a-6d43-4faa-b61f-b8f637d279fb" -->
 ### Issue: Missing Secrets
 
 **Symptoms**: Deployment fails due to missing credentials
 
 **Solution**: Use secret managers and validate before deployment
 
+<!-- section_id: "a61d6d04-7139-41f5-a094-40f413751e3d" -->
 ### Issue: Environment Mismatch
 
 **Symptoms**: Dev works but production fails
 
 **Solution**: Ensure environment parity and use same deployment process
 
+<!-- section_id: "56e2309c-56c7-437f-bc51-8dc5b1d7d106" -->
 ### Issue: Rollback Failure
 
 **Symptoms**: Cannot revert to previous version
 
 **Solution**: Keep previous versions in Git and test rollback procedures
 
+<!-- section_id: "83070b49-47ac-44f7-945d-4a7e0acaba19" -->
 ## Summary
 
 Universal platform version control means:

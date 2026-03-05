@@ -9,8 +9,10 @@ resource_name: "MCP_FIX_ATTEMPTS_LOG"
 **Location**: Universal Layer → MCP Servers and Tools Setup  
 **Status**: Active testing of all solutions
 
+<!-- section_id: "4d885dd4-6bf5-4c28-8efe-c4c74458b6c2" -->
 ## Fix Attempts Timeline
 
+<!-- section_id: "37ef1b3d-546c-4997-ab11-32891edf71de" -->
 ### Attempt 1: Check for Duplicate Entries ✅
 **Solution**: Solution 12 - Check for duplicate MCP server entries  
 **Time**: < 1 minute  
@@ -28,6 +30,7 @@ resource_name: "MCP_FIX_ATTEMPTS_LOG"
 
 ---
 
+<!-- section_id: "ac7d7126-3e37-41f6-bdb3-32090270e71c" -->
 ### Attempt 2: Reorder MCP Servers ✅
 **Solution**: Solution 10 - Move problematic servers to top  
 **Time**: < 2 minutes  
@@ -64,6 +67,7 @@ resource_name: "MCP_FIX_ATTEMPTS_LOG"
 
 ---
 
+<!-- section_id: "3e74eba8-566f-482e-b3c2-34c79319ea4c" -->
 ### Attempt 3: Use Full Node.js/npx Paths ✅
 **Solution**: Solution 5 - Use full paths instead of `npx` command  
 **Time**: < 2 minutes  
@@ -79,6 +83,7 @@ resource_name: "MCP_FIX_ATTEMPTS_LOG"
 
 ---
 
+<!-- section_id: "1bae838e-e456-4bcd-8ac6-5f7587a842d7" -->
 ### Attempt 4: Create Project-Specific Config ✅
 **Solution**: Solution 11 - Use project-specific `.cursor/mcp.json`  
 **Time**: < 1 minute  
@@ -89,14 +94,17 @@ resource_name: "MCP_FIX_ATTEMPTS_LOG"
 
 ---
 
+<!-- section_id: "06e75851-d53e-4f93-b3bd-48d3b3ea2688" -->
 ## Next Steps (Require Cursor Restart)
 
+<!-- section_id: "fbd5036f-3c7c-4350-8e71-f2c7ec6cc560" -->
 ### Immediate Testing Needed:
 1. **Restart Cursor IDE** - Required to pick up configuration changes
 2. **Test Playwright Tools** - Check if `mcp_playwright_*` tools work
 3. **Test Browser Tools** - Check if `mcp_browser_*` tools work (already working, verify still works)
 4. **Check Tool Exposure** - Verify tools are available in available tools list
 
+<!-- section_id: "0285f056-d0ad-4f7c-8572-6fe25bef00b1" -->
 ### Remaining Quick Fixes to Try:
 1. **Disable Internal Browser Automation** (Solution 9)
    - Go to Cursor Settings → Tools & MCP → Browser Automation
@@ -110,6 +118,7 @@ resource_name: "MCP_FIX_ATTEMPTS_LOG"
    - Re-add MCP servers
    - **User-reported success** - Worth trying
 
+<!-- section_id: "61a0e9d8-d858-48fa-94ca-00631ce33697" -->
 ### Medium Effort Fixes:
 1. **Update Cursor** (Solution 2)
    - Check for updates
@@ -120,8 +129,10 @@ resource_name: "MCP_FIX_ATTEMPTS_LOG"
    - Verify version compatibility
    - Check release notes for MCP fixes
 
+<!-- section_id: "0b88d092-182f-4459-8e18-91c1522ef983" -->
 ## Configuration Changes Summary
 
+<!-- section_id: "b47dbba4-4b7e-410a-80a8-da7bfd599598" -->
 ### Current Config State:
 - ✅ No duplicate entries
 - ✅ Playwright and browser servers at top
@@ -129,25 +140,30 @@ resource_name: "MCP_FIX_ATTEMPTS_LOG"
 - ✅ Project-specific config created
 - ✅ Environment variables set (PLAYWRIGHT_BROWSERS_PATH, HOME)
 
+<!-- section_id: "af510dbd-f250-4690-9635-98b0b90c1d89" -->
 ### Files Modified:
 - `~/.cursor/mcp.json` - Reordered, full paths added
 - `/home/dawson/code/0_layer_universal/.cursor/mcp.json` - Project-specific config created
 - `~/.cursor/mcp.json.backup.*` - Backup created
 
+<!-- section_id: "65f91bd9-9dd0-41c1-b4c5-c632361cf7d7" -->
 ## Expected Results After Restart
 
+<!-- section_id: "05ddb1de-a85a-40ff-873d-9a8f6b61512d" -->
 ### If Fixes Work:
 - Playwright MCP tools (`mcp_playwright_*`) should be available
 - Browser MCP tools (`mcp_browser_*`) should continue working
 - Tools should appear in available tools list
 - Browser detection should work for Playwright tools
 
+<!-- section_id: "6ae3898a-0de7-4fe5-a556-e4dfa7cd5cfe" -->
 ### If Fixes Don't Work:
 - Continue with remaining solutions
 - Try delete/regenerate mcp.json
 - Try disabling internal browser automation
 - Check for Cursor updates
 
+<!-- section_id: "6f95bef6-0df6-47ae-a077-15bdbe3ba8f6" -->
 ## Related Documentation
 
 - [MCP Tool Exposure Solutions](./MCP_TOOL_EXPOSURE_SOLUTIONS.md) - All solutions
@@ -156,6 +172,7 @@ resource_name: "MCP_FIX_ATTEMPTS_LOG"
 
 ---
 
+<!-- section_id: "24743982-db88-4911-8542-89cca9207fb4" -->
 ### Attempt 5: Test After Restart ❌
 **Solution**: Solution 6 - Restart Cursor completely  
 **Time**: User restarted Cursor  
@@ -171,6 +188,7 @@ resource_name: "MCP_FIX_ATTEMPTS_LOG"
 
 ---
 
+<!-- section_id: "255c8ab9-014c-4de1-bf14-5e10288395b6" -->
 ### Attempt 6: Fix Config File Location (In Progress)
 **Solution**: Update the actual config file that Cursor reads  
 **Time**: < 2 minutes  
@@ -181,6 +199,7 @@ resource_name: "MCP_FIX_ATTEMPTS_LOG"
 
 ---
 
+<!-- section_id: "bf98529b-d5bf-441e-a305-8cfd5555795d" -->
 ### Attempt 7: Delete and Regenerate mcp.json ✅
 **Solution**: Solution 8 - Delete and let Cursor regenerate  
 **Time**: < 1 minute  
@@ -198,6 +217,7 @@ resource_name: "MCP_FIX_ATTEMPTS_LOG"
 
 ---
 
+<!-- section_id: "94bfadd7-91ca-42d2-ae68-acad47a4798d" -->
 ### Attempt 8: Restore Working Config ✅
 **Solution**: Restore config that was working before  
 **Time**: < 1 minute  
@@ -214,8 +234,10 @@ resource_name: "MCP_FIX_ATTEMPTS_LOG"
 
 ---
 
+<!-- section_id: "d5342156-57a7-4dd6-824f-ae84e3f17e75" -->
 ## Summary of All Attempts
 
+<!-- section_id: "32f1dfc9-45db-4e19-97ca-42babc4946ad" -->
 ### ✅ Completed:
 1. Checked for duplicates - None found
 2. Reordered MCP servers - Moved playwright/browser to top
@@ -224,11 +246,13 @@ resource_name: "MCP_FIX_ATTEMPTS_LOG"
 5. Deleted and attempted regeneration
 6. Restored working config
 
+<!-- section_id: "c1379c2a-3888-4b6f-91b6-cdbde026e9a0" -->
 ### ⚠️ Current Status:
 - Config restored to working state
 - MCP tools not currently available (may need login or restart)
 - Need to verify user is logged into Cursor IDE
 
+<!-- section_id: "69a04e98-4a17-4d9e-8b7c-d2c9a63e1277" -->
 ### 🔄 Next Steps:
 1. **Verify login status** - User must be logged into Cursor IDE
 2. **Test tool availability** - Check if tools appear after ensuring login
@@ -237,6 +261,7 @@ resource_name: "MCP_FIX_ATTEMPTS_LOG"
 
 ---
 
+<!-- section_id: "52ed7f8b-462b-4b52-9df0-b93f200f5e76" -->
 ### Attempt 9: Enable MCP Servers in Cursor Settings UI ✅ **SUCCESS!**
 **Solution**: Enable MCP servers via Cursor Settings UI  
 **Time**: < 1 minute  
@@ -258,14 +283,17 @@ resource_name: "MCP_FIX_ATTEMPTS_LOG"
 
 ---
 
+<!-- section_id: "04d631bd-d97a-4881-84af-35bee354cc33" -->
 ## Final Status
 
+<!-- section_id: "ea2b3d56-00c5-4df9-9a38-c5feef3a4c42" -->
 ### ✅ **SUCCESS**: Playwright MCP Tools Working!
 - Playwright server enabled in Cursor Settings UI
 - 22 tools available and working
 - Navigation test successful
 - Browser detection working
 
+<!-- section_id: "bcc4bbfe-9cae-4ae2-b441-670e7b241b05" -->
 ### 🔄 Next Steps:
 1. Enable "browser" MCP server in Cursor Settings UI (currently disabled)
 2. Test browser MCP tools after enabling
@@ -277,6 +305,7 @@ resource_name: "MCP_FIX_ATTEMPTS_LOG"
 
 ---
 
+<!-- section_id: "d473946c-c9ac-4a79-abbf-c08c9b4aac1d" -->
 ### Attempt 10: Test After Second Restart ❌
 **Solution**: Test Playwright tools after user restarted Cursor again  
 **Time**: < 1 minute  

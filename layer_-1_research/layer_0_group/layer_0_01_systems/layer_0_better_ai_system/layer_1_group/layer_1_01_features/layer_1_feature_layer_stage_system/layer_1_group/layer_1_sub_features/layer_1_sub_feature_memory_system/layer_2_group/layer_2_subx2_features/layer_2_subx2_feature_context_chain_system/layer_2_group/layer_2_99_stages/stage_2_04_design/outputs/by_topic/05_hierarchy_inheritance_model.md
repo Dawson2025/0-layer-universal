@@ -11,12 +11,14 @@ resource_name: "05_hierarchy_inheritance_model"
 
 ---
 
+<!-- section_id: "965ed032-c18e-44c6-83b2-054f3dc3ed80" -->
 ## Overview
 
 The layer-stage hierarchy forms an inheritance chain. Parent context flows DOWN to children. Children inherit, extend, and can override — but cannot remove parent context. This document defines what propagates, how, and where enforcement gaps remain.
 
 ---
 
+<!-- section_id: "6a06c27b-6454-4a12-98de-9b09e128222c" -->
 ## Inheritance Model
 
 ```
@@ -29,8 +31,10 @@ This is analogous to object-oriented inheritance: a child entity inherits all pa
 
 ---
 
+<!-- section_id: "7d0128ad-d2b3-4219-965c-5914e61afe89" -->
 ## What Propagates
 
+<!-- section_id: "822e45b2-d5ab-4f0c-90bb-c065999bc5e7" -->
 ### Always Propagates (Inherited by ALL children)
 
 | Context | Source | Mechanism | Status |
@@ -43,6 +47,7 @@ This is analogous to object-oriented inheritance: a child entity inherits all pa
 
 These propagate because Claude Code auto-loads every CLAUDE.md in the filesystem path from root to working directory. The CLAUDE.md cascade is the primary enforcement mechanism for universal context.
 
+<!-- section_id: "387e14b6-0f47-48a7-9b29-681672777b44" -->
 ### Propagates to Immediate Children
 
 | Context | Source | Mechanism | Status |
@@ -52,6 +57,7 @@ These propagate because Claude Code auto-loads every CLAUDE.md in the filesystem
 | Triggers | Parent 0AGNOSTIC.md | Inherited unless overridden | **Defined but not enforced** |
 | Parent reference | Convention: `**Parent**: path` in child 0AGNOSTIC.md | Agent writes during entity creation | Enforced by chain validation |
 
+<!-- section_id: "d9e2f892-2e2e-44af-b1fb-c9eb9bed4805" -->
 ### Optional Propagation
 
 | Context | Source | Mechanism | Status |
@@ -62,8 +68,10 @@ These propagate because Claude Code auto-loads every CLAUDE.md in the filesystem
 
 ---
 
+<!-- section_id: "b96fb324-1b6f-4e9a-b500-7a941799aefb" -->
 ## Propagation Mechanisms
 
+<!-- section_id: "3791a8b2-65e4-4ef6-8842-d3b63f4a386f" -->
 ### 1. CLAUDE.md Cascade (Static, Always-Loaded)
 
 ```
@@ -80,6 +88,7 @@ Claude Code auto-loads every CLAUDE.md from root to working directory at session
 **What it carries**: Identity, critical rules, triggers, navigation pointers
 **What it doesn't carry**: Detailed knowledge, protocols, episodic memory (too large)
 
+<!-- section_id: "7f9fe61f-3e5e-4187-98f2-88998134f315" -->
 ### 2. 0AGNOSTIC Parent Chain (Dynamic, On-Demand)
 
 ```
@@ -95,6 +104,7 @@ Each 0AGNOSTIC.md has a `**Parent**:` reference. Agents can traverse upward to l
 **What it carries**: Full entity identity, behaviors, triggers, status, navigation
 **What it doesn't carry**: Only what's in 0AGNOSTIC.md — not .0agnostic/ content
 
+<!-- section_id: "f3ca6cb5-d6b9-4d32-83ed-db8d0ef80808" -->
 ### 3. .0agnostic/ Resource Inheritance (Convention)
 
 Children don't literally inherit parent .0agnostic/ content. Instead:
@@ -105,6 +115,7 @@ Children don't literally inherit parent .0agnostic/ content. Instead:
 **What it carries**: Whatever the agent explicitly loads
 **What it doesn't carry**: Nothing auto-propagates
 
+<!-- section_id: "b04143ae-e72a-4da3-906c-064227541e26" -->
 ### 4. Hot Rule Promotion (agnostic-sync.sh)
 
 Rules with `promote: hot` frontmatter get a summary pointer injected into ALL generated tool files at that entity level. This ensures agents always see critical rules without reading .0agnostic/ directly.
@@ -122,8 +133,10 @@ hot_summary: "Do this thing. Full rule: path/to/rule.md"
 
 ---
 
+<!-- section_id: "5fa87609-2e31-4096-8a0a-33b87dbc08f2" -->
 ## Propagation Gaps (Known Issues)
 
+<!-- section_id: "c0bb1804-be95-407d-8610-d9e04f4e240d" -->
 ### Gap 1: conventions.childNaming not enforced
 
 ```
@@ -139,6 +152,7 @@ RESULT: Agent creates wrong naming (e.g., "subfeature_*" instead of "layer_1_sub
 
 **Mitigation**: The `/entity-creation` skill reads entity_structure.md which defines naming conventions. Using the skill prevents this gap.
 
+<!-- section_id: "5f81b3be-e78b-4263-82c5-395e9e01b8de" -->
 ### Gap 2: Layer number not calculated automatically
 
 ```
@@ -149,6 +163,7 @@ ACTUALLY: Agent must manually calculate and set
 
 **Mitigation**: The `/entity-creation` skill handles this. Also documented in NESTED_DEPTH_NAMING.md.
 
+<!-- section_id: "d2b1c518-e2f7-41df-bac7-25f7abdbb7ef" -->
 ### Gap 3: No visibility into inherited context
 
 ```
@@ -159,6 +174,7 @@ NEED: Tool to show inherited context at any point
 
 **Mitigation**: The `/chain-validate` skill traverses the chain and reports. The chain_visualization child entity (layer 4) is designed to address this.
 
+<!-- section_id: "4c8d2397-14fd-448c-b4f1-7f8438b81cbe" -->
 ### Gap 4: Dynamic rules don't inherit across entities
 
 Parent dynamic rules (e.g., `sync_after_agnostic_edit.md`) don't automatically apply to children. Each entity must define its own dynamic rules or explicitly reference parent rules.
@@ -167,6 +183,7 @@ Parent dynamic rules (e.g., `sync_after_agnostic_edit.md`) don't automatically a
 
 ---
 
+<!-- section_id: "e0350fc7-2536-4cc4-996a-0fbc5384d39f" -->
 ## Propagation Rules Summary
 
 | Context | Source | Should Propagate | Actually Propagates | Enforcement |
@@ -182,6 +199,7 @@ Parent dynamic rules (e.g., `sync_after_agnostic_edit.md`) don't automatically a
 
 ---
 
+<!-- section_id: "4ef43c2e-f576-4017-8ea8-fad159d77a4f" -->
 ## Related Documents
 
 - **Chain structure**: `.0agnostic/01_knowledge/context_chain_architecture.md`

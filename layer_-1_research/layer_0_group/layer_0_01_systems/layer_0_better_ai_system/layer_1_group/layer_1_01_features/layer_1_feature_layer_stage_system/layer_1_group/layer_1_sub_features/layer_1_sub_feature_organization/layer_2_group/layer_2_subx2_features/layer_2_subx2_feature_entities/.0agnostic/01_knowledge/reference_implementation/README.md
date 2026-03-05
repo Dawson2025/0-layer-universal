@@ -11,12 +11,15 @@ This folder contains a copy of the current Layer-Stage System implementation fro
 
 **Purpose**: Serve as reference material for the `better_layer_stage_system` research feature.
 
+<!-- section_id: "09bb4f95-ef84-4e80-8cdc-5c0695514e48" -->
 ## Contents Overview
 
+<!-- section_id: "77fd67d6-98c9-46ad-a83a-5f70b319d3f2" -->
 ### Root Level
 - `CLAUDE.md` - Feature documentation
 - `.claude/` - Claude Code integration (commands)
 
+<!-- section_id: "adf0e75c-e24b-4a0b-b9c5-c1e2776f74cd" -->
 ### layer_1/ - Feature Internals
 ```
 layer_1/
@@ -34,6 +37,7 @@ layer_1/
         └── setup/                   # Entity creation guides
 ```
 
+<!-- section_id: "fbe2ab8f-675f-43ef-89d4-05c1a22b263a" -->
 ### layer_2/ - Sub-features
 ```
 layer_2/
@@ -45,6 +49,7 @@ layer_2/
     └── layer_2_feature_ai_manager_hierarchy/ # Manager patterns
 ```
 
+<!-- section_id: "0701c066-7d86-44ad-a6cc-ceccded40e79" -->
 ## Key Documents to Review
 
 | Document | Location | Purpose |
@@ -56,6 +61,7 @@ layer_2/
 | **Entity Creation** | `layer_1/layer_1_99_stages/.../setup/` | How to create entities |
 | **Handoff Patterns** | `layer_2/.../layer_2_feature_handoff_system/` | Inter-agent handoffs |
 
+<!-- section_id: "a4fe6ff3-aec1-4822-9c1e-cd4d45846814" -->
 ## Improvement Areas to Research
 
 Based on this reference implementation, potential areas for improvement:
@@ -85,5 +91,6 @@ Based on this reference implementation, potential areas for improvement:
    - stage_registry at position 00
    - Status: Implemented
 
+<!-- section_id: "250bc139-828f-4571-b4f2-378fa5dc6584" -->
 ## Date Copied
 2026-01-25

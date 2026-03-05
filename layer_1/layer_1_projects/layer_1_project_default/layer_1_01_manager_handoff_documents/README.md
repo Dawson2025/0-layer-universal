@@ -6,10 +6,12 @@ resource_name: "README"
 ---
 # Layer 1 Project Manager Handoff Documents
 
+<!-- section_id: "1845ec9e-8979-4d8e-99b5-e38ae086a958" -->
 ## Overview
 
 This directory contains handoff documents for **Layer 1 (Project)** managers. Handoffs communicate work, state, and results between Layer 1 and adjacent layers (Layer 0 above, Layer 2 below).
 
+<!-- section_id: "130c8575-4017-4ba3-bd45-23545e1ef48e" -->
 ## Purpose
 
 Manager handoff documents at Layer 1 serve two purposes:
@@ -17,6 +19,7 @@ Manager handoff documents at Layer 1 serve two purposes:
 1. **Upward Communication** (`1.00_to_universal/`): Handoffs between Layer 1 and Layer 0 (Universal)
 2. **Downward Communication** (`1.01_to_features/`): Handoffs between Layer 1 and Layer 2 (Features)
 
+<!-- section_id: "c630d77b-ad6e-4e24-9974-9baf337b015b" -->
 ## Directory Structure
 
 ```
@@ -36,6 +39,7 @@ Manager handoff documents at Layer 1 serve two purposes:
         └── feature-*.json
 ```
 
+<!-- section_id: "ff241218-db53-41e6-a29d-ea1a1b8f1fe7" -->
 ## Handoff Schema
 
 All handoffs must conform to the **canonical handoff schema** defined in:
@@ -44,8 +48,10 @@ All handoffs must conform to the **canonical handoff schema** defined in:
 
 **Always consult the schema document when creating or reading handoffs.**
 
+<!-- section_id: "d88194bd-8681-4915-be9b-e151514a6234" -->
 ## Handoff Flows at Layer 1
 
+<!-- section_id: "fdbf0c5f-2603-48b2-9092-7032b88bf0ae" -->
 ### Layer 0 → Layer 1 (Incoming from Universal)
 
 **File**: `1.00_to_universal/incoming.json`
@@ -78,6 +84,7 @@ All handoffs must conform to the **canonical handoff schema** defined in:
 }
 ```
 
+<!-- section_id: "d00202a4-d0d4-4787-a728-dd9faf29d605" -->
 ### Layer 1 → Layer 0 (Outgoing to Universal)
 
 **File**: `1.00_to_universal/outgoing.json`
@@ -110,6 +117,7 @@ All handoffs must conform to the **canonical handoff schema** defined in:
 }
 ```
 
+<!-- section_id: "690fa646-f356-4586-8cd3-d9c8da0ca345" -->
 ### Layer 1 → Layer 2 (Downward to Features)
 
 **File**: `1.01_to_features/outgoing/feature-<name>.json`
@@ -148,6 +156,7 @@ All handoffs must conform to the **canonical handoff schema** defined in:
 }
 ```
 
+<!-- section_id: "ae70094e-0638-4fca-90f9-2d9e71338087" -->
 ### Layer 2 → Layer 1 (Upward from Features)
 
 **File**: `1.01_to_features/incoming/feature-<name>.json`
@@ -184,6 +193,7 @@ All handoffs must conform to the **canonical handoff schema** defined in:
 }
 ```
 
+<!-- section_id: "4bce1e1b-c343-4e25-9837-1a335b74a5b0" -->
 ## Multiple Features in Parallel
 
 Layer 1 typically manages multiple features concurrently. Each feature gets its own handoff file:
@@ -208,6 +218,7 @@ Layer 1 typically manages multiple features concurrently. Each feature gets its 
   └── feature-admin.json
 ```
 
+<!-- section_id: "2119216d-d3f7-4ce9-935e-e29ebcd7ca94" -->
 ## Handoff Lifecycle at Layer 1
 
 1. **Receive Project Task**: Layer 0 writes to `1.00_to_universal/incoming.json`
@@ -218,6 +229,7 @@ Layer 1 typically manages multiple features concurrently. Each feature gets its 
 6. **Integration Testing**: Test integrated system
 7. **Report to Layer 0**: Write final results to `1.00_to_universal/outgoing.json`
 
+<!-- section_id: "1cd49b3a-3fd3-4d39-a1d7-054a5cb96a9a" -->
 ## Best Practices
 
 1. **Feature Independence**: Design features to minimize dependencies for parallel execution
@@ -228,8 +240,10 @@ Layer 1 typically manages multiple features concurrently. Each feature gets its 
 6. **Aggregate Thoughtfully**: Combine feature results meaningfully, not just concatenation
 7. **Preserve Metrics**: Collect and aggregate metrics from all features for reporting
 
+<!-- section_id: "d2d54505-9afe-4018-ae44-d4ab29daedc0" -->
 ## Example: E-Commerce Project Workflow
 
+<!-- section_id: "8b5d5c25-4dfd-4b6c-a299-ebc32efb0699" -->
 ### 1. Receive Project Task from Layer 0
 ```json
 // 1.00_to_universal/incoming.json
@@ -241,6 +255,7 @@ Layer 1 typically manages multiple features concurrently. Each feature gets its 
 }
 ```
 
+<!-- section_id: "06c38bf2-4d70-42c1-864d-cb04e71c0c42" -->
 ### 2. Decompose to 5 Features
 ```
 // 1.01_to_features/outgoing/
@@ -251,6 +266,7 @@ feature-checkout.json   (status: pending)
 feature-admin.json      (status: pending)
 ```
 
+<!-- section_id: "e092dfb0-912c-4eea-8f66-f96b2e729ec8" -->
 ### 3. Features Execute in Parallel
 ```
 // Each Layer 2 manager processes their feature
@@ -261,6 +277,7 @@ feature-checkout: request → ... → archiving
 feature-admin:    request → ... → archiving
 ```
 
+<!-- section_id: "fc6d0a74-1627-4d43-9c97-20cabf34e72e" -->
 ### 4. Collect Feature Results
 ```
 // 1.01_to_features/incoming/
@@ -271,6 +288,7 @@ feature-checkout.json   (status: completed)
 feature-admin.json      (status: completed)
 ```
 
+<!-- section_id: "4e48f1a9-8897-4412-80ca-571eebe1704a" -->
 ### 5. Report Project Completion
 ```json
 // 1.00_to_universal/outgoing.json
@@ -285,6 +303,7 @@ feature-admin.json      (status: completed)
 }
 ```
 
+<!-- section_id: "2df5c67d-531d-4b59-866c-3ae4a6d76c8a" -->
 ## Related Documentation
 
 - **Canonical Schema**: [../../layer_0/0.01_manager_handoff_documents/0.00_to_universal/handoff_schema.md](../../layer_0/0.01_manager_handoff_documents/0.00_to_universal/handoff_schema.md) ← **START HERE**

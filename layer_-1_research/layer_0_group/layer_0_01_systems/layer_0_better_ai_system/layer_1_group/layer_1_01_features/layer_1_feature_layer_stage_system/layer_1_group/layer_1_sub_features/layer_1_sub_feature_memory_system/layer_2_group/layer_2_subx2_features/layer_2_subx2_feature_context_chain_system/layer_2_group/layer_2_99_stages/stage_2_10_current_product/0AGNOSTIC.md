@@ -6,6 +6,7 @@ resource_name: "0AGNOSTIC"
 ---
 # context_chain_system — Stage 10: Current Product
 
+<!-- section_id: "74ab93ad-6972-41cc-846b-f742cb5eaef1" -->
 ## Identity
 
 stage_id: "427d46f2-50af-4707-9808-2f936b9ef43c"
@@ -19,6 +20,7 @@ You are the **Current Product Manager** for the context_chain_system.
 - **Parent**: `../../0AGNOSTIC.md` (context_chain_system entity)
 - **Domain**: Context chain system deliverables
 
+<!-- section_id: "94168947-2bda-4ab0-9c3f-163e3571557a" -->
 ## Triggers
 
 Load when:
@@ -26,8 +28,10 @@ Load when:
 - Entering `stage_2_10_current_product/`
 - Need to check what the latest deliverables are
 
+<!-- section_id: "cd4ba309-d874-4ab2-a7b4-0ddb409cc474" -->
 ## Key Behaviors
 
+<!-- section_id: "036bd694-4ef7-4b34-b5da-f303c28f1ae9" -->
 ### What Current Product IS
 
 This is the "shelf" — the canonical location for deliverables that are validated and ready for use. Only artifacts that passed testing (stage 07) and criticism (stage 08) belong here.
@@ -37,22 +41,27 @@ This is NOT:
 - An archive for historical versions (that's stage 11)
 - A place for unvalidated experiments
 
+<!-- section_id: "1294c0a4-a152-40a1-b692-eb3e27154a24" -->
 ### Promotion Rules
 
 - Archive previous version to stage 11 before updating
 - Include README.md explaining what's available
 - Only include artifacts that passed stage 07 testing
 
+<!-- section_id: "dfb7cb3d-40e0-47b4-9110-4dadafff3323" -->
 ### Current State
 
 The context chain system's primary deliverables currently live in the entity itself (`.0agnostic/`, `.1merge/`, orchestrator files) rather than in this stage's outputs. This is typical for research entities where the entity structure IS the product.
 
+<!-- section_id: "945c958f-6103-480f-b6d6-d6c20c809806" -->
 ### Stage Report
 
 Before exiting, update `outputs/stage_report.md`.
 
+<!-- section_id: "d991d293-6c93-4c8d-9222-d6050a23a5ce" -->
 ## Navigation
 
+<!-- section_id: "29c46d6a-8b44-4077-8152-23883d47712e" -->
 ### Existing Work
 
 | Content | Location |
@@ -61,6 +70,7 @@ Before exiting, update `outputs/stage_report.md`.
 
 *This stage is scaffolded — deliverables are currently in the entity root.*
 
+<!-- section_id: "587bdba2-baac-4ada-9c73-ee1da330a819" -->
 ## Success Criteria
 
 This stage is up to date when:
@@ -68,6 +78,7 @@ This stage is up to date when:
 - README.md accurately describes contents
 - Previous versions have been archived (stage 11)
 
+<!-- section_id: "da4f5769-6bf9-4025-99e0-1ddabe7f0b02" -->
 ## On Exit
 
 1. Update `outputs/stage_report.md` when products change

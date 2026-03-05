@@ -5,12 +5,14 @@ resource_name: "skill_reliability_per_tool"
 ---
 # Skill & Instruction Reliability Across AI Coding Tools
 
+<!-- section_id: "d02d8815-8239-41c2-9da6-dc03b6757fa3" -->
 ## Purpose
 
 Evaluate how much of a problem instruction/skill adherence is across each major AI coding CLI. This is primary research — real user reports, GitHub issues, and benchmark data.
 
 ---
 
+<!-- section_id: "f024e63e-ecf8-452b-b0f9-51b268e9c22b" -->
 ## Summary: Reliability Ranking
 
 | Rank | Tool | Instruction Reliability | Key Evidence |
@@ -25,8 +27,10 @@ Evaluate how much of a problem instruction/skill adherence is across each major 
 
 ---
 
+<!-- section_id: "5f3b1cf0-3dc1-4382-b1f3-49fd5c44be1b" -->
 ## Tool-by-Tool Analysis
 
+<!-- section_id: "adc49de2-dc6c-4a4d-81ad-86f36dc2f7c7" -->
 ### Claude Code
 
 **Instruction system:** CLAUDE.md chain (parent walk-up, child on-demand), .claude/skills/, .claude/rules/ with paths: frontmatter, auto-memory (MEMORY.md).
@@ -96,6 +100,7 @@ Budget scales at 2% of context window (~16K chars). Skills silently dropped with
 
 ---
 
+<!-- section_id: "46cc6d94-65cc-44ae-975d-fb2ad666ed53" -->
 ### Codex CLI (OpenAI)
 
 **Instruction system:** AGENTS.md chain (root walk-down, override files), .agents/skills/ with SKILL.md, slash commands, MCP servers.
@@ -124,6 +129,7 @@ Budget scales at 2% of context window (~16K chars). Skills silently dropped with
 
 ---
 
+<!-- section_id: "1c6dacb3-d5a8-4497-bec3-c6fa2948a30e" -->
 ### Gemini CLI (Google)
 
 **Instruction system:** GEMINI.md chain (parent walk-up + subdirectory scan), @file.md imports, GEMINI_SYSTEM_MD override, Agent Skills with lazy-loading, sub-agents, extensions (70+).
@@ -154,6 +160,7 @@ Budget scales at 2% of context window (~16K chars). Skills silently dropped with
 
 ---
 
+<!-- section_id: "0a72e66b-18b4-47d1-962a-cf90e4d40e6c" -->
 ### OpenCode
 
 **Instruction system:** AGENTS.md (with CLAUDE.md fallback), .opencode/skills/, custom agents with full model/tool/permission control, custom commands with arguments.
@@ -174,6 +181,7 @@ Budget scales at 2% of context window (~16K chars). Skills silently dropped with
 
 ---
 
+<!-- section_id: "905fb477-f71f-426d-8c17-178d085ffdab" -->
 ### Cursor
 
 **Instruction system:** .cursor/rules/*.mdc files with YAML frontmatter, four activation modes (Always, Auto-Attach via globs, Agent Requested, Manual).
@@ -187,6 +195,7 @@ Budget scales at 2% of context window (~16K chars). Skills silently dropped with
 
 ---
 
+<!-- section_id: "e90d2093-a508-4ef8-b35c-29e6e4b25206" -->
 ### Windsurf (formerly Codeium)
 
 **Instruction system:** global_rules.md, .windsurf/rules/ with globs/descriptions, auto-generated memories.
@@ -200,6 +209,7 @@ Budget scales at 2% of context window (~16K chars). Skills silently dropped with
 
 ---
 
+<!-- section_id: "ecfd1e8f-bf51-4a05-8099-30a9611e9979" -->
 ### Aider
 
 **Instruction system:** CONVENTIONS.md loaded via /read command, CLI flag, or .aider.conf.yml config.
@@ -212,6 +222,7 @@ Budget scales at 2% of context window (~16K chars). Skills silently dropped with
 
 ---
 
+<!-- section_id: "67cab6ab-0de1-4471-8606-c99996f67252" -->
 ### JetBrains Junie
 
 **Instruction system:** .junie/guidelines.md, AGENTS.md support, Action Allowlist for pre-authorization.
@@ -222,6 +233,7 @@ Budget scales at 2% of context window (~16K chars). Skills silently dropped with
 
 ---
 
+<!-- section_id: "e0920c07-cecf-49b5-b9b7-b5685537be16" -->
 ### GitHub Copilot
 
 **Instruction system:** .github/copilot-instructions.md (repo-wide), .github/instructions/*.instructions.md (path-specific with globs).
@@ -233,6 +245,7 @@ Budget scales at 2% of context window (~16K chars). Skills silently dropped with
 
 ---
 
+<!-- section_id: "673f5b03-c5a6-451e-a613-2a9f897e1493" -->
 ## Comparative Feature Matrix
 
 | Feature | Claude Code | Codex CLI | Gemini CLI | OpenCode | Cursor | Windsurf |
@@ -252,8 +265,10 @@ Budget scales at 2% of context window (~16K chars). Skills silently dropped with
 
 ---
 
+<!-- section_id: "06d4e9fb-4f02-4e1b-b6ad-f84cd480e9a0" -->
 ## Benchmark Data
 
+<!-- section_id: "efe1fae6-d5e2-4fe7-8d50-fe1035e53c6f" -->
 ### SWE-bench Verified (latest available)
 
 | Tool/Model | Score |
@@ -264,6 +279,7 @@ Budget scales at 2% of context window (~16K chars). Skills silently dropped with
 
 *Note: SWE-bench measures code correctness, not instruction adherence.*
 
+<!-- section_id: "a5ca8467-db06-425a-85c6-9cde72ab0b39" -->
 ### Render.com AI Coding Agents Benchmark (2025)
 
 | Category | Cursor | Claude Code | Gemini CLI | Codex |
@@ -273,36 +289,46 @@ Budget scales at 2% of context window (~16K chars). Skills silently dropped with
 | Context Understanding | 8 | 5 | **9** | 7 |
 | Integration | 8 | **9** | 5 | 4 |
 
+<!-- section_id: "d823e08c-3704-47dd-b7b5-f9a44dd7f611" -->
 ### No Instruction Adherence Benchmarks Exist
 
 A critical gap: **no public benchmarks specifically measure custom instruction adherence**. SWE-bench measures code correctness. Terminal-Bench measures CLI task completion. Nothing measures "did the agent follow the rules in CLAUDE.md/AGENTS.md/GEMINI.md?"
 
 ---
 
+<!-- section_id: "1e1887b2-518b-4afe-83bd-de7e61b809bd" -->
 ## Key Takeaways
 
+<!-- section_id: "6037f75b-5273-4a6d-8e08-9d5ba7a2d062" -->
 ### 1. The Problem Is Universal
 Every single tool has documented instruction-following issues. This is not a Claude Code-specific problem — it's an industry-wide challenge inherent to LLM-based agents.
 
+<!-- section_id: "68b0b7e8-7ba8-47d2-bf66-00fe4c3f6834" -->
 ### 2. The Problem Is Primarily Model-Level, Not Tool-Level
 OpenCode's evidence is clearest: the same AGENTS.md instructions followed by Claude Opus are ignored by GPT-5.2. The tool's instruction loading mechanism works fine — the model decides whether to comply.
 
+<!-- section_id: "a3e71e87-7145-438c-a49b-8f6261ff6263" -->
 ### 3. Instruction Systems Are Converging
 All major tools now have: hierarchical config files, skill/instruction lazy-loading, path-specific activation, and some form of context management. The AGENTS.md standard (now under AAIF) may unify file format.
 
+<!-- section_id: "08e65885-2565-4bf2-86d9-73decad7a93b" -->
 ### 4. Deterministic Enforcement Is the Only Reliable Mechanism
 Hooks (Claude Code, Gemini CLI) and Action Allowlists (Junie) provide deterministic behavior that doesn't depend on model compliance. Everything else — CLAUDE.md, AGENTS.md, skills — is ultimately probabilistic.
 
+<!-- section_id: "b2c658b5-604d-424f-abbb-83dd8b2b37a1" -->
 ### 5. Context Budget Is a Universal Constraint
 Claude Code: ~16K skill budget. Codex: 32KB silent truncation. Windsurf: 12K total. All tools face the tension between "more context for better behavior" and "less context for better comprehension."
 
+<!-- section_id: "d5304bda-2cd4-49f7-84d8-1692f1e19c20" -->
 ### 6. Gemini Has the Richest System and Worst Adherence
 Gemini CLI has the most feature-rich instruction system (imports, system prompt override, skills, sub-agents, hooks, 70+ extensions) but the worst documented instruction-following reliability. Features don't help if the model ignores them.
 
 ---
 
+<!-- section_id: "b89db456-ba09-4102-b0b3-0f2c36f61fd2" -->
 ## Sources
 
+<!-- section_id: "23441e99-057d-45ef-a734-2a4ba0ac5730" -->
 ### Claude Code
 - [How to Make Claude Code Skills Actually Activate (650 Trials)](https://medium.com/@ivan.seleznov1/why-claude-code-skills-dont-activate-and-how-to-fix-it-86f679409af1) — Ivan Seleznov
 - [How to Make Claude Code Skills Activate Reliably](https://scottspence.com/posts/how-to-make-claude-code-skills-activate-reliably) — Scott Spence
@@ -324,6 +350,7 @@ Gemini CLI has the most feature-rich instruction system (imports, system prompt 
 - [Claude Code Skill Activation Hook](https://claudefa.st/blog/tools/hooks/skill-activation-hook)
 - [Claude Code Rules Directory](https://claudefa.st/blog/guide/mechanics/rules-directory)
 
+<!-- section_id: "fee8c869-2b81-4e95-8f51-39a601ec98bd" -->
 ### Codex CLI
 - [Custom instructions with AGENTS.md](https://developers.openai.com/codex/guides/agents-md/)
 - [Agent Skills](https://developers.openai.com/codex/skills/)
@@ -337,6 +364,7 @@ Gemini CLI has the most feature-rich instruction system (imports, system prompt 
 - [OpenAI co-founds AAIF](https://openai.com/index/agentic-ai-foundation/)
 - [Claude Code vs Codex — Graphite](https://graphite.com/guides/claude-code-vs-codex)
 
+<!-- section_id: "febd52c6-33d9-4cf0-a1a0-cccea65a4110" -->
 ### Gemini CLI
 - [Provide context with GEMINI.md](https://geminicli.com/docs/cli/gemini-md/)
 - [Agent Skills](https://geminicli.com/docs/cli/skills/)
@@ -348,20 +376,24 @@ Gemini CLI has the most feature-rich instruction system (imports, system prompt 
 - [Render.com AI Coding Agents Benchmark](https://render.com/blog/ai-coding-agents-benchmark)
 - [Claude Code vs Gemini CLI — Shipyard](https://shipyard.build/blog/claude-code-vs-gemini-cli/)
 
+<!-- section_id: "b316f491-26a2-4e06-bcc5-a9a6930e3654" -->
 ### OpenCode
 - [OpenCode Official Site](https://opencode.ai/)
 - [OpenCode GitHub](https://github.com/opencode-ai/opencode)
 - [Issue #10677: GPT-5.2 ignores instructions, Claude Opus follows](https://github.com/anomalyco/opencode/issues/10677)
 - [Issue #4642: Permission system bypassed](https://github.com/sst/opencode/issues/4642)
 
+<!-- section_id: "adbb86f3-c8f7-4a2f-bef1-b2b47503086f" -->
 ### Cursor
 - [Cursor Rules Reference](https://github.com/sanjeed5/awesome-cursor-rules-mdc/blob/main/cursor-rules-reference.md)
 - [Why Your AI Agent Is Ignoring You — Michael Epelboim](https://sdrmike.medium.com/cursor-rules-why-your-ai-agent-is-ignoring-you-and-how-to-fix-it-5b4d2ac0b1b0)
 
+<!-- section_id: "b8157eb3-2557-46a6-b117-ee24765d3aa4" -->
 ### Windsurf
 - [.windsurfrules not working — Issue #157](https://github.com/Exafunction/codeium/issues/157)
 - [Using Windsurf Rules — Paul Duvall](https://www.paulmduvall.com/using-windsurf-rules-workflows-and-memories/)
 
+<!-- section_id: "dfb3af70-0798-4952-b4ef-0956aa55619e" -->
 ### Other
 - [System Prompts Define the Agent — dbreunig.com](https://www.dbreunig.com/2026/02/10/system-prompts-define-the-agent-as-much-as-the-model.html)
 - [AGENTS.md Specification](https://agents.md/)

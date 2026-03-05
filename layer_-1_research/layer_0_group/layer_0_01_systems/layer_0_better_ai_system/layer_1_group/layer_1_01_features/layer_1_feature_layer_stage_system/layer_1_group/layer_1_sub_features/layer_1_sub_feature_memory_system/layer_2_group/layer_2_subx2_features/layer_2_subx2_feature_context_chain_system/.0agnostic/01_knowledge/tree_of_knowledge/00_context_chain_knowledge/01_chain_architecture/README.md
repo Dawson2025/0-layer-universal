@@ -6,10 +6,12 @@ resource_name: "README"
 ---
 # Branch: Chain Architecture
 
+<!-- section_id: "23b05289-2e99-4b06-9237-fd0b8e80c8d5" -->
 ## Purpose
 
 How context chains are structured, how context is classified, and how it reaches agents.
 
+<!-- section_id: "e91e19d1-b381-47c7-88f6-6b195028d693" -->
 ## Topics
 
 | File | Topic | Summary |

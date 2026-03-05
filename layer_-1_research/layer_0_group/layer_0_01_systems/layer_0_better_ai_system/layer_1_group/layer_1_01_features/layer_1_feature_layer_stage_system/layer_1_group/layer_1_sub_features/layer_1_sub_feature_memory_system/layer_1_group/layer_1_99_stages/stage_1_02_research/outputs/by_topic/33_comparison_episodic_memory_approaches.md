@@ -5,14 +5,17 @@ resource_name: "33_comparison_episodic_memory_approaches"
 ---
 # Comparison: Episodic Memory Approaches
 
+<!-- section_id: "1333d99b-08c0-40d7-a3ae-0a32bc6ea913" -->
 ## Purpose
 
 This document compares the user's file-based episodic memory system (`.0agnostic/04_episodic_memory/` with session files, index.md, divergence.log, and episodic-sync.sh) against research and commercial approaches to episodic memory: vector DB episodes, time-indexed logs, scene-based grouping, AWS Bedrock two-stage extraction, and MongoDB cognitive dynamics.
 
 ---
 
+<!-- section_id: "b4a66c0f-f968-4410-af62-db2785e11663" -->
 ## 1. Overview of User's Episodic Memory System
 
+<!-- section_id: "f70e8bef-87c5-40d1-abde-5ebd99e12794" -->
 ### How It Works
 
 The user's episodic memory lives in `.0agnostic/04_episodic_memory/` directories at every entity and stage level in the layer-stage hierarchy. The structure uses two subdirectories:
@@ -20,6 +23,7 @@ The user's episodic memory lives in `.0agnostic/04_episodic_memory/` directories
 - **`sessions/`**: Individual session records — one file per work session
 - **`changes/`**: Records of modifications to outputs or shared state
 
+<!-- section_id: "3800c523-e9e1-4a61-a4df-18fdd4c7233c" -->
 ### Session Files
 
 After significant work, agents create a session file in `sessions/` containing:
@@ -30,12 +34,14 @@ After significant work, agents create a session file in `sessions/` containing:
 
 These are plain markdown files, created manually by the agent at session end.
 
+<!-- section_id: "40ac27af-0d7f-413b-b0bf-a9802d034a6e" -->
 ### Index and Aggregation
 
 - **`index.md`**: A manually maintained index at each entity's `outputs/episodic/` directory that summarizes recent sessions, enabling quick resumption of multi-session work
 - **`divergence.log`**: Updated when shared outputs are modified, tracking what changed and when so concurrent agents can detect conflicts
 - **`episodic-sync.sh`**: A script at `.0agnostic/01_knowledge/layer_stage_system/resources/tools/episodic-sync.sh` that aggregates episodic session files across the hierarchy into a single `memory/episodic.md` auto-memory topic file at `~/.claude/projects/<project>/memory/`
 
+<!-- section_id: "77188519-f782-4c2b-aa7c-7ea6086b434c" -->
 ### Key Properties
 
 - **Human-readable**: All session records are markdown
@@ -47,8 +53,10 @@ These are plain markdown files, created manually by the agent at session end.
 
 ---
 
+<!-- section_id: "1c6dd9a1-4631-4e96-a60c-3ed8dc4cbda3" -->
 ## 2. Overview of Research/Commercial Episodic Memory Systems
 
+<!-- section_id: "3fa64fe2-1f72-48a0-aead-4b56f3d38b35" -->
 ### Vector DB Episodes (FAISS, ChromaDB)
 
 Vector database episodic memory stores each episode as an embedding vector alongside metadata (timestamp, participants, outcome). Retrieval uses semantic similarity: given a current context, the system finds past episodes that are most semantically similar.
@@ -65,6 +73,7 @@ ChromaDB stores bug patterns as episodes. When a new error occurs, the system se
 **Strengths**: Fast semantic retrieval, automatic relevance ranking, handles large volumes
 **Weaknesses**: Opaque (no human-readable records), requires embedding infrastructure, no inherent temporal ordering
 
+<!-- section_id: "ac229217-4e0e-4021-8d90-329731648078" -->
 ### Time-Indexed Logs (InfluxDB, TimescaleDB)
 
 Time-series databases store episodes as time-ordered records with automatic partitioning by time range. Retrieval is primarily temporal: "what happened in the last hour/day/week" or "what happened between these two timestamps."
@@ -78,6 +87,7 @@ Time-series databases store episodes as time-ordered records with automatic part
 **Strengths**: Optimal for temporal queries, automatic time partitioning, efficient aggregation, handles high write throughput
 **Weaknesses**: No semantic understanding, requires structured schemas, no similarity-based retrieval
 
+<!-- section_id: "7f7c37cb-839b-415d-846c-f07e4d1658e0" -->
 ### Scene-Based Grouping (SQLite)
 
 Scene-based episodic memory groups interactions into coherent "scenes" or episodes based on context boundaries (topic changes, time gaps, participant changes). Used in systems like CrewAI's long-term memory (SQLite3 backend).
@@ -93,6 +103,7 @@ Scene-based episodic memory groups interactions into coherent "scenes" or episod
 **Strengths**: Natural grouping of related events, compact storage, clear episode boundaries
 **Weaknesses**: Boundary detection is imperfect, loses fine-grained detail within scenes, requires boundary-detection logic
 
+<!-- section_id: "6f767547-7b77-4b48-a54d-bf9cbbf1e70b" -->
 ### AWS Bedrock Two-Stage Extraction
 
 AWS's AgentCore implements a two-stage memory consolidation pipeline that separates extraction from storage.
@@ -109,6 +120,7 @@ OpenSearch stores three categories: raw events (episodic), system metrics (time-
 **Strengths**: Intelligent extraction (only stores what matters), automatic conflict resolution, importance-based prioritization
 **Weaknesses**: LLM-dependent (extraction quality varies), adds latency, expensive (requires LLM calls per interaction)
 
+<!-- section_id: "d0ba9452-a468-4389-a810-12bbd66ff5fa" -->
 ### MongoDB Cognitive Dynamics (Decay, Reinforcement, Merging)
 
 MongoDB AI Memory Service implements biologically-inspired dynamics where episodic memories are living entities that change over time.
@@ -126,6 +138,7 @@ MongoDB AI Memory Service implements biologically-inspired dynamics where episod
 
 ---
 
+<!-- section_id: "d9d54af4-0b99-46ab-824f-ebb4206e423d" -->
 ## 3. Comparison Table
 
 | Dimension | User's System | Vector DB (FAISS/ChromaDB) | Time-Series (InfluxDB/TimescaleDB) | Scene-Based (SQLite) | AWS Bedrock Two-Stage | MongoDB Cognitive |
@@ -146,8 +159,10 @@ MongoDB AI Memory Service implements biologically-inspired dynamics where episod
 
 ---
 
+<!-- section_id: "3a57c2d1-a0a4-445b-bfaf-a11c9a23c748" -->
 ## 4. Analysis
 
+<!-- section_id: "e4c45bf9-d84e-46f9-b3ff-d82677ae0830" -->
 ### Where User's System Excels
 
 **1. Simplicity and zero dependencies**
@@ -168,6 +183,7 @@ Episodic memory is scoped to the entity where the work happened. Stage-level ses
 **6. Conflict detection via divergence.log**
 The `divergence.log` mechanism provides a simple but effective way for concurrent agents to detect when shared outputs have been modified. While less sophisticated than database-level conflict resolution, it is explicit, human-readable, and requires no infrastructure.
 
+<!-- section_id: "54d14944-10be-4889-98bf-9eb31d24b371" -->
 ### Where User's System Falls Short
 
 **1. No semantic retrieval**
@@ -188,6 +204,7 @@ As the number of sessions grows into the hundreds per entity, reading index file
 **6. No cross-entity episode retrieval**
 If an agent working on `memory_system/` needs to find a past session from `multi_agent_system/` that discussed a relevant topic, there is no mechanism to discover it. The `episodic-sync.sh` script aggregates into a single `memory/episodic.md` file, but this is a flat summary, not a searchable index.
 
+<!-- section_id: "3f8c185e-48ab-4b23-875c-ef50b11c21f4" -->
 ### Potential Hybrid Improvements
 
 **1. Automatic session capture with human review**
@@ -210,6 +227,7 @@ Implement a simple archival policy: sessions older than N months are moved from 
 
 ---
 
+<!-- section_id: "5013bda1-4c89-483a-a339-298dff16e8a0" -->
 ## Sources
 
 - [Mem0 GitHub Repository](https://github.com/mem0ai/mem0) -- vector-based memory extraction and retrieval

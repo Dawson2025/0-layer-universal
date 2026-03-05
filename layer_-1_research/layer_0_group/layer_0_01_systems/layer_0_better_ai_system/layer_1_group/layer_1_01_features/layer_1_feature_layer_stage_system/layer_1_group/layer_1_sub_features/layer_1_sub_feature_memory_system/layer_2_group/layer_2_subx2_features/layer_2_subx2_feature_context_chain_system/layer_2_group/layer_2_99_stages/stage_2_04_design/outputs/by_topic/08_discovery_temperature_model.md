@@ -11,6 +11,7 @@ resource_name: "08_discovery_temperature_model"
 
 ---
 
+<!-- section_id: "f62b4029-2b7c-4175-b87e-87e1912042b6" -->
 ## Overview
 
 Not all context should be loaded the same way. Some must always be present (identity, critical rules). Some should appear when an agent enters a relevant directory. Some should only load when a specific trigger fires.
@@ -19,6 +20,7 @@ The **discovery temperature model** categorizes context delivery into three tier
 
 ---
 
+<!-- section_id: "9e1a2a0c-6c77-41f8-bdc4-1bc9db12e556" -->
 ## The Three Temperatures
 
 ```
@@ -35,6 +37,7 @@ The **discovery temperature model** categorizes context delivery into three tier
 └─────────────────────────────────────────────────────────────────┘
 ```
 
+<!-- section_id: "43ec3b18-4915-49d9-afcc-586bef4385a5" -->
 ### Hot Context (Always Loaded)
 
 **Mechanism**: CLAUDE.md cascade (filesystem walk from root to working directory)
@@ -54,6 +57,7 @@ The **discovery temperature model** categorizes context delivery into three tier
 
 **Token budget**: Target <170 lines per entity CLAUDE.md. Total chain (root to leaf) target <400 lines.
 
+<!-- section_id: "6829b558-ab0c-4e59-9a1c-22c1db0098d4" -->
 ### Warm Context (On Directory Entry)
 
 **Mechanism**: `.claude/rules/` path-specific rules (auto-loaded when agent enters matching directory)
@@ -75,6 +79,7 @@ The **discovery temperature model** categorizes context delivery into three tier
 - `research-context.md` — fires in research directories, loads research workflow
 - `development-stages.md` — fires in development stages, loads dev workflow
 
+<!-- section_id: "69771129-7f4b-4567-90cd-6a2bfd799265" -->
 ### Cold Context (On Demand / On Trigger)
 
 **Mechanism**: Agent explicitly reads files, or dynamic rules fire on specific conditions
@@ -97,6 +102,7 @@ The **discovery temperature model** categorizes context delivery into three tier
 
 ---
 
+<!-- section_id: "f9f6fd94-60cb-46f6-a6d7-4d1d289fb224" -->
 ## Temperature Assignment Criteria
 
 | Criterion | Hot | Warm | Cold |
@@ -107,6 +113,7 @@ The **discovery temperature model** categorizes context delivery into three tier
 | **Failure impact?** | Agent can't function | Agent misses workflow | Agent misses detail |
 | **Can agent discover it?** | Doesn't need to — always there | Automatic on path entry | Must know to look or be triggered |
 
+<!-- section_id: "b105bdf0-a129-40d2-8223-f898226173b7" -->
 ### Decision flowchart
 
 ```
@@ -123,10 +130,12 @@ Is this context needed EVERY session, for EVERY task?
 
 ---
 
+<!-- section_id: "0317477a-033d-4b55-87a2-02dac0723977" -->
 ## Hot Rule Promotion System
 
 Rules that are too detailed for CLAUDE.md but too important to be purely cold can be **promoted**. The promotion system puts a 1-line pointer in hot context while keeping the full rule cold.
 
+<!-- section_id: "d026cbac-bd07-4fbb-a08a-91d1b1041363" -->
 ### Frontmatter format
 
 ```yaml
@@ -137,6 +146,7 @@ hot_summary: "Do this thing. Full rule: .0agnostic/02_rules/static/rule_name.md"
 ---
 ```
 
+<!-- section_id: "ed6ddb9d-a172-4b48-90c2-5edfc96ef5d4" -->
 ### How it works
 
 1. Rule file lives in `.0agnostic/02_rules/static/` or `.0agnostic/02_rules/dynamic/` (cold storage)
@@ -145,6 +155,7 @@ hot_summary: "Do this thing. Full rule: .0agnostic/02_rules/static/rule_name.md"
 4. Table has two columns: `When` (trigger condition) and `Rule` (1-line summary + path)
 5. Agent sees the trigger in hot context → reads the full rule from cold storage on match
 
+<!-- section_id: "11110341-dbba-4563-aeb0-3ef96ed4525b" -->
 ### Current promoted rules
 
 | When | Rule |
@@ -154,10 +165,12 @@ hot_summary: "Do this thing. Full rule: .0agnostic/02_rules/static/rule_name.md"
 
 ---
 
+<!-- section_id: "02261467-af01-4d48-9c49-763f636dbb05" -->
 ## PostToolUse Hook System
 
 A third enforcement mechanism beyond hot and warm: **hooks** that fire after specific tool operations.
 
+<!-- section_id: "40eb5d40-2929-42db-9bf1-40fea50f5b61" -->
 ### agnostic-edit-guard.sh
 
 | Property | Value |
@@ -169,6 +182,7 @@ A third enforcement mechanism beyond hot and warm: **hooks** that fire after spe
 
 This catches the case where an agent modifies .0agnostic/ content without having read the warm rule (e.g., if the agent was spawned directly into a deep path).
 
+<!-- section_id: "8cd4fb2b-05da-4198-9e0a-eac840d30e52" -->
 ### Three-layer defense in depth
 
 ```
@@ -189,6 +203,7 @@ If any one layer fails, the other two still catch it.
 
 ---
 
+<!-- section_id: "84abb285-c8ac-4aae-934a-0139678d5b11" -->
 ## Empirical Validation
 
 The discovery temperature model was validated through the `/perplexity-extract` skill discovery chain test (2026-02-22):
@@ -203,6 +218,7 @@ The discovery temperature model was validated through the `/perplexity-extract` 
 
 ---
 
+<!-- section_id: "9a6cbb9d-9c1c-46de-827b-8660e0000f7c" -->
 ## Related Documents
 
 - **Propagation chain**: `03_propagation_chain_architecture.md` (4-layer top-down flow)

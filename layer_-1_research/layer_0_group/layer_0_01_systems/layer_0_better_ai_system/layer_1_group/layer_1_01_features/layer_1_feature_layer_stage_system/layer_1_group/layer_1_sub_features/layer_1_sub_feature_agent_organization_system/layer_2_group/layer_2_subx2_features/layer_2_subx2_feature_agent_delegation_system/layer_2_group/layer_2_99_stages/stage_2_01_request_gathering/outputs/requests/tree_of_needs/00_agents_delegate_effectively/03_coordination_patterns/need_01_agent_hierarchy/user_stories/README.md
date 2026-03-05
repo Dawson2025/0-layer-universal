@@ -8,10 +8,12 @@ resource_name: "README"
 
 **Need**: [Agent Hierarchy](../README.md)
 
+<!-- section_id: "34d13906-5c04-446f-8853-227497373f61" -->
 ## Overview
 
 These stories cover how parent-child management relationships are established and maintained across the agent tree. They validate that entity managers discover their direct reports from the entity structure, that stage agents know their reporting manager, that child managers can escalate issues upward, and that the developer can visualize the full agent tree to confirm correctness.
 
+<!-- section_id: "1bbf0eba-cf25-48f6-9fb5-b0f348734d08" -->
 ## Actors
 
 - **User (Developer)**: Human developer (Dawson) who gives instructions to the AI system, reviews outputs, and validates behavior

@@ -11,10 +11,12 @@ resource_name: "perplexity_research_threads.sync-conflict-20260126-101631-IF2WOG
 
 ---
 
+<!-- section_id: "9ba3b241-0236-47c5-abd6-816f01811493" -->
 ## Thread Summary
 
 This document summarizes the research threads found in the Perplexity space.
 
+<!-- section_id: "6de58295-a9b4-4977-a588-af98ae4d2871" -->
 ### Thread 1: Discovery Environment STEM Learning
 
 **Topic**: How the Discovery Environment transforms STEM learning into an immersive experience
@@ -26,6 +28,7 @@ This document summarizes the research threads found in the Perplexity space.
 
 ---
 
+<!-- section_id: "99791a92-3707-4398-aa07-0cbdc3861edf" -->
 ### Thread 2: Multi-Scale Discovery Environment Design
 
 **Topic**: Technical architecture and design of MSDE
@@ -38,6 +41,7 @@ This document summarizes the research threads found in the Perplexity space.
 
 ---
 
+<!-- section_id: "ab1b1a57-6758-438a-bbc0-acbcfed062f6" -->
 ### Thread 3: Video Game Learning in 3D Space
 
 **Topic**: Learning math and physics in a real 3D game environment
@@ -50,6 +54,7 @@ This document summarizes the research threads found in the Perplexity space.
 
 ---
 
+<!-- section_id: "b8a67d9e-0d39-4208-8bf2-6d9c5e9cd38c" -->
 ### Thread 4: Human Body Simulation Research
 
 **Topic**: Feasibility of complete human body simulation
@@ -62,6 +67,7 @@ This document summarizes the research threads found in the Perplexity space.
 
 ---
 
+<!-- section_id: "2575a13c-a5a5-4223-8244-ab83cd14db2f" -->
 ## Additional Threads Visible
 
 From the Perplexity sidebar, other research queries included:
@@ -80,6 +86,7 @@ These appear to be related research queries that contributed to the overall lear
 
 ---
 
+<!-- section_id: "2f350c39-271e-4e70-9a49-04eee64994eb" -->
 ## Source Links
 
 The Perplexity space aggregates research from multiple sources. Key references include:

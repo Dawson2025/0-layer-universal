@@ -5,12 +5,15 @@ resource_name: "PARALLEL_DEVELOPMENT_SETUP_COMPLETE"
 ---
 # Parallel Development Setup - COMPLETE
 
+<!-- section_id: "13a377aa-7280-4b0d-aa8b-e68b310dcb52" -->
 ## Status: ✅ READY FOR PARALLEL DEVELOPMENT
 
 The codebase has been successfully refactored to support parallel development by multiple AI agents working simultaneously on different features without conflicts.
 
+<!-- section_id: "5c9a6a6c-08e9-4e4e-8bd0-b8a43921c01d" -->
 ## What Was Accomplished
 
+<!-- section_id: "85b1ee00-404d-494d-b691-dea6b14122d1" -->
 ### Phase 1: Core Infrastructure ✅
 Created shared infrastructure layer that all features depend on:
 
@@ -29,6 +32,7 @@ Created shared infrastructure layer that all features depend on:
   from core.decorators import require_auth, require_project_admin
   ```
 
+<!-- section_id: "487081ec-3b02-40af-af2a-72ec6c672a44" -->
 ### Phase 2: Services Layer ✅
 Created cross-cutting services for shared business logic:
 
@@ -36,6 +40,7 @@ Created cross-cutting services for shared business logic:
 - **services/tts/** - Azure TTS integration
 - **services/media/** - Video and image handling
 
+<!-- section_id: "5221c75e-cd01-4d61-b5ee-e57a5a7dddf6" -->
 ### Phase 3: Feature Extraction ✅
 Successfully extracted all major features into isolated blueprints:
 
@@ -50,6 +55,7 @@ Successfully extracted all major features into isolated blueprints:
 | **words** | ✅ | routes.py | api.py | templates/ | tests/ |
 | **admin** | ✅ | routes.py | api.py | templates/ | tests/ |
 
+<!-- section_id: "5399185a-9386-43a0-80ed-8fd867372c86" -->
 ### Blueprint Registration ✅
 All blueprints are registered in app.py:
 
@@ -66,8 +72,10 @@ for blueprint in (auth_bp, projects_bp, admin_bp, words_bp, phonemes_bp, groups_
         app.register_blueprint(blueprint)
 ```
 
+<!-- section_id: "688e9874-c6d4-4870-befa-e571fab71bc6" -->
 ## Parallel Development Guide
 
+<!-- section_id: "228c68c6-4be6-4153-8ab0-21ab7cf66dcf" -->
 ### ✅ Green Zone - Work Freely (No Coordination Needed)
 
 You can work on any of these features **in parallel** without conflicts:
@@ -112,6 +120,7 @@ You can work on any of these features **in parallel** without conflicts:
    - User dashboard
    - Project overview
 
+<!-- section_id: "c1387777-42a3-4d9a-8736-313e3015bb4c" -->
 ### 🟡 Yellow Zone - Check First
 
 These areas require checking for other active work:
@@ -121,6 +130,7 @@ These areas require checking for other active work:
 - **Global templates** (`templates/base.html`)
 - **Global static assets** (`static/css/global.css`)
 
+<!-- section_id: "2d033e9f-d2ba-4e80-a169-775d1c21547c" -->
 ### 🔴 Red Zone - Must Coordinate
 
 These require explicit coordination between agents:
@@ -129,6 +139,7 @@ These require explicit coordination between agents:
 - **app.py** blueprint registration - Only when adding new features
 - **Migration scripts** - Sequential only
 
+<!-- section_id: "29e5c26b-b795-475c-ac8e-ca4b832ef733" -->
 ## How to Add a New Feature
 
 1. Create feature directory: `features/my_feature/`
@@ -169,6 +180,7 @@ These require explicit coordination between agents:
 5. Create templates in `features/my_feature/templates/`
 6. Create tests in `features/my_feature/tests/`
 
+<!-- section_id: "a7fd2a97-547f-40b9-84be-7c46d31d6846" -->
 ## Directory Structure
 
 ```
@@ -220,8 +232,10 @@ lang-trak-in-progress/
 └── app.py                          # Blueprint registration (~3,600 lines currently)
 ```
 
+<!-- section_id: "40233ba6-49d4-48cd-8e60-6968f79a8a41" -->
 ## Parallel Development Scenarios
 
+<!-- section_id: "5f46a9d0-4748-43d4-af75-bf7e550c9a16" -->
 ### Scenario 1: Three Features Simultaneously ✅
 
 **Agent 1** working on "All Fields Search" (words feature):
@@ -243,6 +257,7 @@ lang-trak-in-progress/
 
 **Result**: ✅ ZERO file conflicts! Each agent works in isolated directories.
 
+<!-- section_id: "311eb6ae-a952-4247-a49d-1f735b4816e2" -->
 ### Scenario 2: Eight Features in Parallel ✅
 
 All 8 feature areas can be developed simultaneously:
@@ -255,6 +270,7 @@ All 8 feature areas can be developed simultaneously:
 - Variant Menu team: Adding variant comparison
 - Dashboard team: Creating analytics widgets
 
+<!-- section_id: "822c945c-c40b-4ec3-9258-1267d4afca0e" -->
 ## Success Metrics
 
 ✅ **8 isolated feature modules** - Each with own routes, templates, tests
@@ -263,6 +279,7 @@ All 8 feature areas can be developed simultaneously:
 ✅ **Blueprint architecture** - All features properly registered
 ✅ **Development speed** - 2-3x faster with parallel development
 
+<!-- section_id: "4ae357b2-652f-42db-8f9f-99d239877982" -->
 ## Next Steps for Development
 
 1. **Pick a feature** from the list above
@@ -271,8 +288,10 @@ All 8 feature areas can be developed simultaneously:
 4. **Add tests** in the feature's tests/ directory
 5. **Submit PR** with only that feature's files changed
 
+<!-- section_id: "4220e74e-3c1a-4ad1-b658-b5be3a727d88" -->
 ## Common Patterns
 
+<!-- section_id: "06b088d8-5bed-49ed-b815-b90ac75e848a" -->
 ### Adding a Route
 ```python
 # features/my_feature/routes.py
@@ -287,6 +306,7 @@ def my_page():
     return render_template('my_feature/my_page.html', user=user)
 ```
 
+<!-- section_id: "7d5f8315-f647-41ba-b979-2607f06940b7" -->
 ### Adding an API Endpoint
 ```python
 # features/my_feature/api.py
@@ -302,6 +322,7 @@ def api_action():
     return jsonify({'success': True})
 ```
 
+<!-- section_id: "3ac775c7-27fc-4830-a2aa-525f1886e592" -->
 ### Database Operations
 ```python
 # features/my_feature/models.py
@@ -316,6 +337,7 @@ def get_items(user_id):
     return results
 ```
 
+<!-- section_id: "98712aaf-9355-4258-88b7-af911a2b6fd8" -->
 ## Reference Documentation
 
 - [Parallel Development Architecture](PARALLEL_DEVELOPMENT_ARCHITECTURE.md) - Full architectural design
@@ -325,6 +347,7 @@ def get_items(user_id):
 
 ---
 
+<!-- section_id: "600208fb-906b-4d73-a5e4-86a6fd701e49" -->
 ## Summary
 
 **The codebase is now optimally configured for parallel development!**

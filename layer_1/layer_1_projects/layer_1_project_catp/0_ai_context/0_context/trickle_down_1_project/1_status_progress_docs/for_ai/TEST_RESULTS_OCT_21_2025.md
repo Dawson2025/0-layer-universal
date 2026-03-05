@@ -9,8 +9,10 @@ resource_name: "TEST_RESULTS_OCT_21_2025"
 
 ---
 
+<!-- section_id: "85549671-c756-4181-94c8-3fcfcd709ca1" -->
 ## Executive Summary
 
+<!-- section_id: "e34286ee-a1b5-4dc9-9812-cb89e77b4a13" -->
 ### Test Run Configuration
 - **Date**: October 21, 2025
 - **Command**: `run_user_stories.py --navigation-mode=both`
@@ -18,6 +20,7 @@ resource_name: "TEST_RESULTS_OCT_21_2025"
 - **Concurrency**: 2 parallel executions
 - **Artifacts**: `artifacts/story_runs/oct-21-validation/`
 
+<!-- section_id: "59bc1138-437e-45c3-a0f2-7a0f796cfbac" -->
 ### Overall Results
 
 | Metric | Count | Percentage |
@@ -26,6 +29,7 @@ resource_name: "TEST_RESULTS_OCT_21_2025"
 | **Passed** | 20 | 56% |
 | **Failed** | 16 | 44% |
 
+<!-- section_id: "dbc367db-e081-4a24-af04-d01d7c9587eb" -->
 ### Pass Rate by Navigation Mode
 
 | Navigation Mode | Passed | Failed | Pass Rate |
@@ -35,8 +39,10 @@ resource_name: "TEST_RESULTS_OCT_21_2025"
 
 ---
 
+<!-- section_id: "183a0ca3-d366-4654-b7df-bf7c3288470c" -->
 ## Test Results by Category
 
+<!-- section_id: "8fb5f5f3-e18f-47ef-9425-b3766be4f7e4" -->
 ### ✅ Fully Passing (Both Modes)
 
 | Story Group | Direct | Realistic | Features Tested |
@@ -53,6 +59,7 @@ resource_name: "TEST_RESULTS_OCT_21_2025"
 
 ---
 
+<!-- section_id: "a918541b-65b4-4390-ad29-634db8f3dcf6" -->
 ### ⚠️ Direct Mode Passing, Realistic Failing
 
 | Story Group | Direct | Realistic | Issue |
@@ -68,6 +75,7 @@ resource_name: "TEST_RESULTS_OCT_21_2025"
 
 ---
 
+<!-- section_id: "f3e67102-35b9-447c-a13c-8c82641046e9" -->
 ### ❌ Failing in Both Modes
 
 | Story Group | Direct | Realistic | Root Cause |
@@ -84,8 +92,10 @@ resource_name: "TEST_RESULTS_OCT_21_2025"
 
 ---
 
+<!-- section_id: "3a8d7650-a7ab-44c9-b89c-503208c2ba55" -->
 ## Detailed Failure Analysis
 
+<!-- section_id: "4cd1e095-e997-4ec6-8941-059aa86bc9d6" -->
 ### Category 1: Timing Issues (6 realistic mode failures)
 
 **Issue**: Navigation happens before script can verify page state
@@ -104,6 +114,7 @@ Error: Did not land on dashboard after registration
 
 ---
 
+<!-- section_id: "a5557e65-bc28-4483-bbd8-47cdc2c24aea" -->
 ### Category 2: Admin Authentication Issues (2 failures)
 
 **Issue**: Tests can't log in to reach admin panel
@@ -126,6 +137,7 @@ Stuck on: http://127.0.0.1:5002/login
 
 ---
 
+<!-- section_id: "38c70fa3-8740-42b6-97c4-af8308506571" -->
 ### Category 3: Cloud Tests (6 failures - Expected)
 
 **Issue**: Firebase configuration required
@@ -141,8 +153,10 @@ Stuck on: http://127.0.0.1:5002/login
 
 ---
 
+<!-- section_id: "3b71c083-d3cc-4a5b-a9a8-fe87167c6e79" -->
 ## Positive Findings
 
+<!-- section_id: "c634b445-02a4-4af6-920c-d58d53cb4e69" -->
 ### ✅ Critical Journeys All Passing
 
 **End-to-end user journeys validated successfully**:
@@ -168,6 +182,7 @@ Stuck on: http://127.0.0.1:5002/login
 
 ---
 
+<!-- section_id: "ca93ea97-4872-4e89-a2ca-186abad25f52" -->
 ### ✅ Core Features Validated
 
 **Features with 100% pass rate**:
@@ -186,8 +201,10 @@ Stuck on: http://127.0.0.1:5002/login
 
 ---
 
+<!-- section_id: "3f1d450a-df93-4e48-a4df-3f3bed15614b" -->
 ## US-053 Validation Status
 
+<!-- section_id: "b8df5d09-1126-4714-98fb-e168e345ecfb" -->
 ### Implementation Status: ✅ COMPLETE
 
 **Endpoint**: `POST /api/admin/recalculate-phoneme-frequencies`
@@ -216,8 +233,10 @@ curl -X POST http://127.0.0.1:5002/api/admin/recalculate-phoneme-frequencies \
 
 ---
 
+<!-- section_id: "62dbe1b5-870f-4515-a7c6-e4165e56dc17" -->
 ## Recommendations
 
+<!-- section_id: "05c08a5c-ef5a-4250-85ec-065a0ee3871a" -->
 ### Immediate (High Priority)
 
 1. **Fix Realistic Mode Timing**
@@ -235,6 +254,7 @@ curl -X POST http://127.0.0.1:5002/api/admin/recalculate-phoneme-frequencies \
    - Verify it works as expected
    - Document results
 
+<!-- section_id: "e0a3b341-ad6f-4be6-8640-807946494801" -->
 ### Medium Priority
 
 4. **Improve Test Robustness**
@@ -247,6 +267,7 @@ curl -X POST http://127.0.0.1:5002/api/admin/recalculate-phoneme-frequencies \
    - Set up test environment
    - Enable cloud test suite
 
+<!-- section_id: "05800aef-956f-4e9c-824f-b9f5c0617ab3" -->
 ### Low Priority
 
 6. **Increase Test Coverage**
@@ -256,18 +277,22 @@ curl -X POST http://127.0.0.1:5002/api/admin/recalculate-phoneme-frequencies \
 
 ---
 
+<!-- section_id: "e3283a36-1b72-4d72-b8c7-25f3c8f3447f" -->
 ## Comparison: Before vs After
 
+<!-- section_id: "bb71535e-9000-45b7-9cff-b76645b132fc" -->
 ### Before This Session
 - User Stories Implemented: 69/71 (97%)
 - Test Suite: Not run
 - US-053: ❌ Not implemented
 
+<!-- section_id: "9268a1f5-74ae-43ad-a2f9-c14975962441" -->
 ### After This Session  
 - User Stories Implemented: 70/71 (99%)
 - Test Suite: 20/36 pass (56%) - within expected range
 - US-053: ✅ Implemented (automation pending)
 
+<!-- section_id: "b7750413-cf12-473b-a2cc-41fe41dbbe5b" -->
 ### Progress
 - ✅ +1 user story implemented
 - ✅ All journey tests passing
@@ -276,8 +301,10 @@ curl -X POST http://127.0.0.1:5002/api/admin/recalculate-phoneme-frequencies \
 
 ---
 
+<!-- section_id: "e9aa2fe5-0788-4647-89ad-1e911bad2061" -->
 ## Conclusion
 
+<!-- section_id: "1ae4dd3a-d2d2-4711-be82-047dc597a965" -->
 ### Overall Assessment: ✅ **SUCCESSFUL**
 
 **Key Achievements**:

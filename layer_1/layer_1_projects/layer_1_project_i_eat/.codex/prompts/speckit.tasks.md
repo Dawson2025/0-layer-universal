@@ -5,6 +5,7 @@ resource_name: "speckit.tasks"
 description: Generate an actionable, dependency-ordered tasks.md for the feature based on available design artifacts.
 ---
 
+<!-- section_id: "b15cb0cb-acf8-4501-8c2b-fded68e3c04a" -->
 ## User Input
 
 ```text
@@ -13,6 +14,7 @@ $ARGUMENTS
 
 You **MUST** consider the user input before proceeding (if not empty).
 
+<!-- section_id: "4f2e6fef-4e39-4d07-befd-d6ad0a5e5b38" -->
 ## Outline
 
 1. **Setup**: Run `.specify/scripts/bash/check-prerequisites.sh --json` from repo root and parse FEATURE_DIR and AVAILABLE_DOCS list. All paths must be absolute. For single quotes in args like "I'm Groot", use escape syntax: e.g 'I'\''m Groot' (or double-quote if possible: "I'm Groot").
@@ -58,12 +60,14 @@ Context for task generation: $ARGUMENTS
 
 The tasks.md should be immediately executable - each task must be specific enough that an LLM can complete it without additional context.
 
+<!-- section_id: "859dd57a-09b1-4992-bfba-54af8dc1adad" -->
 ## Task Generation Rules
 
 **CRITICAL**: Tasks MUST be organized by user story to enable independent implementation and testing.
 
 **Tests are OPTIONAL**: Only generate test tasks if explicitly requested in the feature specification or if user requests TDD approach.
 
+<!-- section_id: "6ee30e9f-78e0-4465-829a-f74f7a16c770" -->
 ### Checklist Format (REQUIRED)
 
 Every task MUST strictly follow this format:
@@ -96,6 +100,7 @@ Every task MUST strictly follow this format:
 - ❌ WRONG: `- [ ] [US1] Create User model` (missing Task ID)
 - ❌ WRONG: `- [ ] T001 [US1] Create model` (missing file path)
 
+<!-- section_id: "5900670d-befb-4581-8c57-3faddbd8b641" -->
 ### Task Organization
 
 1. **From User Stories (spec.md)** - PRIMARY ORGANIZATION:
@@ -121,6 +126,7 @@ Every task MUST strictly follow this format:
    - Foundational/blocking tasks → Foundational phase (Phase 2)
    - Story-specific setup → within that story's phase
 
+<!-- section_id: "b5460cbf-3252-4653-832a-f50f3c058625" -->
 ### Phase Structure
 
 - **Phase 1**: Setup (project initialization)

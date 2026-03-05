@@ -14,6 +14,7 @@ The Component layer inherits Universal (L0), Project (L1), and Feature (L2) cons
 - [`architecture.md`](../../-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/architecture.md) – Component-level workers and execution
 - [`tools_and_context_systems.md`](../../-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/tools_and_context_systems.md) – Worker agent selection (Codex CLI for atomic tasks)
 
+<!-- section_id: "3e0c632b-d124-43ad-aad3-07e1d821c6b7" -->
 ## Directory Structure
 
 ```
@@ -30,10 +31,12 @@ The Component layer inherits Universal (L0), Project (L1), and Feature (L2) cons
 └── README.md
 ```
 
+<!-- section_id: "321d4dde-29a6-4f04-8653-86d9d315d7d3" -->
 ## Manager + Handoff (layer_3/)
 - layer_3_00_ai_manager_system: component manager docs/configs.
 - layer_3_01_manager_handoff_documents: `3.00_to_universal/` and `3.01_to_specific/` for up/downstream handoffs.
 
+<!-- section_id: "615bcdd5-8637-494b-a6df-6613c5a5e546" -->
 ## Slots (stored under `layer_3/layer_3_02_sub_layers/` as `sub_layer_3.xx_*`)
 - sub_layer_3.01_basic_prompts: component init + what-to-do-next.
 - sub_layer_3.02_component_knowledge: what this component does; contracts/invariants.
@@ -48,6 +51,7 @@ The Component layer inherits Universal (L0), Project (L1), and Feature (L2) cons
 - sub_layer_3.11_component_tools: helper scripts/utilities for this component.
 - sub_layer_3.12_component_agent_setup: component-specific agent configuration with model fallbacks (depends on 3.08, 3.09, 3.10, 3.11).
 
+<!-- section_id: "6213df9e-9ba2-4668-9fe9-a65b079efe58" -->
 ## Component AI Setup Dependency Chain (3.08–3.12)
 
 The slots 3.08–3.12 form a dependency chain for component-level AI agent setup:
@@ -59,12 +63,14 @@ The slots 3.08–3.12 form a dependency chain for component-level AI agent setup
 
 Configure these in order when setting up component-specific AI environments.
 
+<!-- section_id: "b3235faf-bea0-44d8-9e3a-12e8c8cbab6b" -->
 ## Nested Content Directories (layer_4/)
 
 **Same-Type Nesting Rule:** The "sub" prefix applies when nesting the same type. Since a component inside a component is same-type nesting, sub-components here DO use the "sub" prefix.
 
 - layer_4/layer_4_sub_components/: Sub-components within this component (component→component = same-type, uses "sub")
 
+<!-- section_id: "5e7f6c73-93af-4eb1-8219-ace71e2f970c" -->
 ## Stages (layer_3/layer_3_99_stages/, folders named `stage_3.xx_*`)
 - stage_3.00_request_gathering
 - stage_3.01_instructions

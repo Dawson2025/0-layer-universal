@@ -12,6 +12,7 @@ resource_name: "README"
 
 ---
 
+<!-- section_id: "c2fb37d3-974d-46f2-ac75-bf6a1e66fdd5" -->
 ## Summary
 
 The organization sub-feature addresses a fundamental question: **how should any system be structurally organized to support experimentation, stability, and personalization?**
@@ -26,6 +27,7 @@ Three design decisions answer this question from different angles:
 
 ---
 
+<!-- section_id: "705e2c4d-601d-49b3-a426-92535fa849a4" -->
 ## DD-01: Research/Production/Instantiation Pattern {#dd-01}
 
 **File**: `../DD-01_research_production_instantiation_pattern.md`
@@ -48,6 +50,7 @@ RESEARCH (layer_-1)          PRODUCTION (standard entity)         INSTANCES (chi
 
 ---
 
+<!-- section_id: "7d90b384-6370-44da-ac55-9b07ffc4b533" -->
 ## DD-02: School System Architecture {#dd-02}
 
 **File**: `../DD-02_school_system_architecture.md`
@@ -68,6 +71,7 @@ Concrete proof that DD-01's pattern applies to a real domain. The school system 
 
 ---
 
+<!-- section_id: "f2bed3a7-4dab-441b-a276-e5505d5cbaee" -->
 ## DD-03: Stage Scaffolding Defaults {#dd-03}
 
 **File**: `../DD-03_stage_scaffolding_defaults.md`
@@ -89,6 +93,7 @@ Production-side tooling improvement. When new entities are created and their sta
 
 ---
 
+<!-- section_id: "7add8d55-fc48-4cc6-bc3a-dffa80d1ce7c" -->
 ## How These Decisions Relate
 
 ```
@@ -105,6 +110,7 @@ DD-01 defines the "what" (the pattern). DD-02 proves "it works" (the example). D
 
 ---
 
+<!-- section_id: "6495e6a6-83db-4b3d-9062-fb612242149d" -->
 ## Requirements Traceability
 
 These design decisions address requirements from Stage 01's tree of needs:
@@ -117,6 +123,7 @@ These design decisions address requirements from Stage 01's tree of needs:
 
 ---
 
+<!-- section_id: "ffac5917-01e1-4691-9e73-a750bf8dc9b8" -->
 ## Next Steps
 
 1. **Stage 02 (Research)**: Investigate how other systems implement similar patterns (academic research, industry case studies)

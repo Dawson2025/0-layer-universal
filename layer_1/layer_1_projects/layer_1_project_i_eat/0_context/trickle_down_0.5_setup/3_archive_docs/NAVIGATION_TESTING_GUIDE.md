@@ -5,6 +5,7 @@ resource_name: "NAVIGATION_TESTING_GUIDE"
 ---
 # Navigation Testing Guide
 
+<!-- section_id: "d0a6dc29-09c5-4174-8197-bd39528226c4" -->
 ## Overview
 
 See also: docs/for_ai/DEPTH_FIRST_SLICE.md for the depth-first slice prototype strategy we follow when expanding or tightening automation checks.
@@ -14,20 +15,24 @@ This project now supports **dual-mode testing** for all automation test scripts.
 - **Direct Mode** (fast): Uses direct URL navigation for quick validation
 - **Realistic Mode** (thorough): Uses only UI buttons/links to simulate real user navigation
 
+<!-- section_id: "df7542a2-c81e-4485-a91d-005aa1a1d47e" -->
 ## Why Two Modes?
 
+<!-- section_id: "e98161ff-5f82-4328-8a1a-c336a75d6734" -->
 ### Direct Mode Benefits
 - ⚡ **Speed**: 30-50% faster execution
 - 🔄 **CI/CD**: Ideal for continuous integration pipelines
 - 🎯 **API Focus**: Tests core functionality regardless of UI
 - 📊 **Regression**: Quick smoke tests to catch breaking changes
 
+<!-- section_id: "61bfa1c3-e4cd-40b0-9f95-3f2310544667" -->
 ### Realistic Mode Benefits
 - 🔍 **UX Validation**: Ensures features are actually accessible to users
 - 🐛 **Navigation Gaps**: Exposes pages only accessible via URL changes
 - 👤 **User Experience**: Tests actual user workflows and discoverability
 - 📝 **Documentation**: Validates that documentation matches reality
 
+<!-- section_id: "98dd6f34-93bf-4362-98c2-7c630e8085c9" -->
 ## Navigation Gaps Detected
 
 During the creation of realistic tests, we discovered several pages that may not be accessible via standard UI navigation:
@@ -38,29 +43,35 @@ During the creation of realistic tests, we discovered several pages that may not
 
 **These gaps are now tracked and can be validated with realistic mode tests.**
 
+<!-- section_id: "0ca5c8c1-9d1c-4cff-b913-c7f58fc1d19d" -->
 ## Running Tests
 
+<!-- section_id: "0421c19c-8848-4867-bdff-d407eec3b7b4" -->
 ### Run All Tests (Direct Mode Only)
 ```bash
 python scripts/automation/run_user_stories.py --plan scripts/automation/story_plan.sample.json --navigation-mode direct
 ```
 
+<!-- section_id: "55729565-3fc6-48fa-ae5f-caa04d7f4f74" -->
 ### Run All Tests (Realistic Mode Only)
 ```bash
 python scripts/automation/run_user_stories.py --plan scripts/automation/story_plan.sample.json --navigation-mode realistic
 ```
 
+<!-- section_id: "872dcbdb-7486-47e2-b795-e1f6beb3a792" -->
 ### Run All Tests (Both Modes)
 ```bash
 python scripts/automation/run_user_stories.py --plan scripts/automation/story_plan.sample.json --navigation-mode both
 ```
 
+<!-- section_id: "4d160d32-6f37-400d-9e04-32efcd04ecd9" -->
 ### Run Specific Test Group
 ```bash
 # Run only authentication tests in both modes
 python scripts/automation/run_user_stories.py --plan scripts/automation/story_plan.sample.json --filter "US-001" --navigation-mode both
 ```
 
+<!-- section_id: "412a7c1e-8c35-4855-bdf8-cf8511a43400" -->
 ## Test Coverage
 
 All 67 user stories now have both direct and realistic test versions:
@@ -85,8 +96,10 @@ All 67 user stories now have both direct and realistic test versions:
 
 **Total: 15 test groups covering all 67 user stories**
 
+<!-- section_id: "67e73870-a063-4541-86ae-3a76db5c73ba" -->
 ## When to Use Each Mode
 
+<!-- section_id: "50d154c6-83e4-4a3a-8bdb-8c3f85bc57ae" -->
 ### Use Direct Mode For:
 - Daily development workflow
 - Quick regression checks
@@ -94,6 +107,7 @@ All 67 user stories now have both direct and realistic test versions:
 - API/backend validation
 - Pre-commit hooks
 
+<!-- section_id: "6478881c-165c-4cc6-a206-9a04b8df5258" -->
 ### Use Realistic Mode For:
 - Pre-release QA validation
 - UX review sessions
@@ -101,23 +115,28 @@ All 67 user stories now have both direct and realistic test versions:
 - Navigation structure audits
 - Monthly comprehensive testing
 
+<!-- section_id: "7ee8a14c-f8a3-4505-a9ce-5bf94b3c4d89" -->
 ### Use Both Modes For:
 - Complete test suite runs
 - Major release validation
 - Monthly/quarterly testing cycles
 - Comprehensive regression testing
 
+<!-- section_id: "1753f399-04cc-4fe0-90c8-6fac44256541" -->
 ## Understanding Results
 
+<!-- section_id: "7079213a-1a95-45d6-836e-452ab68c5a88" -->
 ### Direct Mode Results
 - **Pass**: Feature functionality works correctly
 - **Fail**: Core functionality is broken (critical)
 
+<!-- section_id: "b3c75929-25b8-4369-99cc-8175a6e9f9c9" -->
 ### Realistic Mode Results
 - **Pass**: Feature is accessible AND works correctly
 - **Fail (Functionality)**: Feature is broken (critical)
 - **Fail (Navigation)**: Feature works but isn't accessible via UI (UX issue)
 
+<!-- section_id: "5794cb7d-b83f-4d54-8618-889b232c74fc" -->
 ### Navigation Gap Detection
 Realistic tests track navigation gaps in their output:
 
@@ -132,6 +151,7 @@ Realistic tests track navigation gaps in their output:
 }
 ```
 
+<!-- section_id: "e9a3e2b1-382d-4c0e-89b2-55f3ebf53cb9" -->
 ## Test Execution Times
 
 Based on initial benchmarking:
@@ -142,8 +162,10 @@ Based on initial benchmarking:
 | Realistic | 25-40 seconds | ~8 minutes |
 | Both | Combined | ~13 minutes |
 
+<!-- section_id: "7f6d362c-2766-4fe6-83d2-c63117f979f3" -->
 ## CI/CD Integration
 
+<!-- section_id: "0f408f6a-8e34-472d-b208-8ad7c93d22c7" -->
 ### Recommended Strategy
 
 **Fast Feedback (On Every Commit)**
@@ -164,8 +186,10 @@ python scripts/automation/run_user_stories.py --navigation-mode both
 python scripts/automation/run_user_stories.py --navigation-mode realistic --concurrency 1
 ```
 
+<!-- section_id: "d536e654-2ab4-4954-b342-c3f018f2fe8e" -->
 ## Common Patterns
 
+<!-- section_id: "5a89a8be-7a76-47c3-af64-5c95bf8f48a7" -->
 ### Realistic Test Structure
 All realistic tests follow this pattern:
 
@@ -187,6 +211,7 @@ await fillField(client, callTool, '#name', 'My Project');
 await clickButtonWithText(client, callTool, 'Create Project');
 ```
 
+<!-- section_id: "3ac9cc2d-8781-404c-bf41-94afb81c5ede" -->
 ### Direct Test Structure
 Direct tests use URL navigation:
 
@@ -200,20 +225,25 @@ await callTool(client, 'browser_evaluate', {
 });
 ```
 
+<!-- section_id: "d1efd44f-9ee7-428d-a95e-e3c54b16598c" -->
 ## Troubleshooting
 
+<!-- section_id: "38224bd6-6f2e-4fd6-b946-ec499169f671" -->
 ### Test Fails in Realistic Mode but Passes in Direct Mode
 This indicates a **navigation gap** - the feature works but isn't accessible via UI. This is a UX issue that should be addressed.
 
+<!-- section_id: "25108a26-e907-4b8a-8b7a-71d6da6eaac4" -->
 ### Test Fails in Both Modes
 This indicates a **functionality issue** - the feature is broken and needs immediate attention.
 
+<!-- section_id: "f4f038ef-a07d-490f-9ea6-a11591307280" -->
 ### Realistic Test Timeout
 Realistic tests are slower. Consider:
 - Increasing timeout values
 - Reducing concurrency
 - Checking for UI elements that may not be appearing
 
+<!-- section_id: "658945b6-5d2a-48fb-b302-9004a7198514" -->
 ## Navigation Helpers Reference
 
 The `scripts/lib/navigation-helpers.mjs` library provides:
@@ -226,6 +256,7 @@ The `scripts/lib/navigation-helpers.mjs` library provides:
 - **`switchTab(index)`** - Switch between UI tabs
 - **`waitForElement(selector, timeout)`** - Wait for element to appear
 
+<!-- section_id: "62f9e029-1748-4003-a7b6-94353d000f7e" -->
 ## Best Practices
 
 1. **Always run both modes before major releases**
@@ -235,6 +266,7 @@ The `scripts/lib/navigation-helpers.mjs` library provides:
 5. **Fix navigation gaps as UX improvements**
 6. **Keep both test versions in sync when updating tests**
 
+<!-- section_id: "78244c29-f266-4baa-a7ba-be84497945a9" -->
 ## Future Enhancements
 
 Potential improvements to the testing infrastructure:
@@ -247,6 +279,7 @@ Potential improvements to the testing infrastructure:
 - [ ] Visual regression testing
 - [ ] Mobile viewport testing enhancements
 
+<!-- section_id: "a6c57870-a9f7-42bb-8eb1-b5e71f1a5265" -->
 ## Related Documentation
 
 - [Realistic vs Direct Navigation Comparison](./REALISTIC_vs_DIRECT_NAVIGATION.md)

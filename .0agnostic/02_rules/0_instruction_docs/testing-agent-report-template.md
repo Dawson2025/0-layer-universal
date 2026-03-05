@@ -10,6 +10,7 @@ resource_name: "testing-agent-report-template"
 
 ---
 
+<!-- section_id: "b9dfaa7e-9d01-4b14-afdf-8c0a4bcb4abc" -->
 ## 📋 **Testing Report Template**
 
 ```markdown
@@ -272,8 +273,10 @@ None - unconditional approval ✅
 
 ---
 
+<!-- section_id: "1195ab99-a658-488d-8142-8251be284d19" -->
 ## 🎨 **Report Variations**
 
+<!-- section_id: "7c3f3cce-f245-4e62-8137-052417d5ae59" -->
 ### **Variation 1: Tests Failing**
 
 ```markdown
@@ -307,6 +310,7 @@ None - unconditional approval ✅
 **Estimated Fix Time**: 2-4 hours
 ```
 
+<!-- section_id: "c5696c83-cb31-444c-8bc8-3152a62fa539" -->
 ### **Variation 2: Low Coverage**
 
 ```markdown
@@ -335,6 +339,7 @@ None - unconditional approval ✅
 
 ---
 
+<!-- section_id: "6e103b9e-cfba-4837-9e47-76847e5e5a07" -->
 ## 📊 **Quick Status Indicators**
 
 Use these emoji status indicators for quick scanning:

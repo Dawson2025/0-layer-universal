@@ -8,10 +8,12 @@ resource_name: "README"
 
 **Need**: [Knowledge Graph](../README.md)
 
+<!-- section_id: "cc2c26e9-4f93-4942-9322-ccb1b89c7d4e" -->
 ## Overview
 
 These stories cover how entity relationships are formalized into an explicit JSON-LD knowledge graph and how that graph is used in practice. They validate that agents can discover related entities through graph traversal, that agents find the shortest path to relevant context, that the graph regenerates automatically after structural changes, and that the developer can validate the integrity of the full relationship web.
 
+<!-- section_id: "c608d391-7291-4a53-860d-5e6eeda57044" -->
 ## Actors
 
 - **User (Developer)**: Human developer (Dawson) who gives instructions to the AI system, reviews outputs, and validates behavior

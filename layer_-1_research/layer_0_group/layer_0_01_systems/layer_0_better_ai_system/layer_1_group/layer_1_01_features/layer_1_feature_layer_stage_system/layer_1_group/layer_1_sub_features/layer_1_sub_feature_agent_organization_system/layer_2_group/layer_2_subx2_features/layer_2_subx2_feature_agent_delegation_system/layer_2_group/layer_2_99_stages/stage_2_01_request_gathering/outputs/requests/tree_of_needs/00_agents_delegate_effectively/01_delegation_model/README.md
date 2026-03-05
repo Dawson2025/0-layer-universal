@@ -10,12 +10,14 @@ resource_name: "README"
 
 ---
 
+<!-- section_id: "3e35b442-6d68-4a1b-9af8-ebdabd534b2b" -->
 ## Core Question
 
 > "How do managers delegate without carrying operational knowledge?"
 
 ---
 
+<!-- section_id: "6b39b5ed-e989-4963-abf5-22c0894844d5" -->
 ## Description
 
 Managers read pointers, delegate to stage agents, read stage reports. They don't carry methodology. This branch defines the mechanics of that delegation: how work is handed off, how status flows back, and what each agent type knows.
@@ -27,6 +29,7 @@ The three failure modes without a clear delegation model:
 
 ---
 
+<!-- section_id: "38cfb69b-d735-48f7-b2c2-7a059b8c38ae" -->
 ## Child Needs
 
 | Need | Question | Description |
@@ -37,6 +40,7 @@ The three failure modes without a clear delegation model:
 
 ---
 
+<!-- section_id: "302e6578-73cf-4887-b4f0-4b9fa8fab1d2" -->
 ## Key Insight
 
 Delegation is an information design problem, not a workflow problem. The question is not "what steps does the manager follow?" but "what information does the manager need, and what information does the stage agent need?" When the information boundaries are clear, the delegation pattern follows naturally.

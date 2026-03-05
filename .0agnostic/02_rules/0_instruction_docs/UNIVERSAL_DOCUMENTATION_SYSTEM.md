@@ -12,14 +12,17 @@ resource_name: "UNIVERSAL_DOCUMENTATION_SYSTEM"
 
 ---
 
+<!-- section_id: "2bf2c483-b39e-4258-8756-62b7157a04cf" -->
 ## 🎯 **Purpose**
 
 This document defines the **Universal Documentation System** - a standardized approach to organizing documentation that can be applied to ANY software project, regardless of technology stack, size, or domain.
 
 ---
 
+<!-- section_id: "29ee56a2-4d10-409c-a3fb-26534f70cf5b" -->
 ## 📊 **The Trickle-Down Hierarchy**
 
+<!-- section_id: "009855b0-f7d8-4c97-8689-8a8abe019848" -->
 ### **Core Concept**
 
 Documentation follows a **hierarchical trickle-down structure** from universal principles to specific implementations:
@@ -44,8 +47,10 @@ Level 3: Components
 
 ---
 
+<!-- section_id: "fe2ee339-92de-4dfa-ab76-ec9a5f7a43cd" -->
 ## 🗂️ **Standard Directory Structure**
 
+<!-- section_id: "64688a64-a0dc-45bb-84fa-aa76dc19f90f" -->
 ### **Universal Template**
 
 Every project using this system should have:
@@ -96,10 +101,12 @@ docs/0_context/
 
 ---
 
+<!-- section_id: "38ab86e4-c330-4a02-8987-3332ad270f7d" -->
 ## 📋 **Document Type Categories**
 
 Each level has **3 standard subdirectories**:
 
+<!-- section_id: "3486378e-1732-43d1-8c41-d76a3b929198" -->
 ### **0_instruction_docs/** (Permanent)
 **Purpose**: How-to guides, procedures, specifications
 
@@ -115,6 +122,7 @@ Each level has **3 standard subdirectories**:
 - Referenced frequently
 - Updated when procedures change
 
+<!-- section_id: "059acd6e-16c7-41c6-91ee-8795ebc5a569" -->
 ### **1_status_progress_docs/** (Current)
 **Purpose**: Current status, active work, progress tracking
 
@@ -130,6 +138,7 @@ Each level has **3 standard subdirectories**:
 - Updated frequently
 - Moves to archive when complete
 
+<!-- section_id: "0b86c518-2e41-4a54-b8f2-01f51285a226" -->
 ### **3_archive_docs/** (Historical)
 **Purpose**: Completed work, resolved issues, historical records
 
@@ -147,8 +156,10 @@ Each level has **3 standard subdirectories**:
 
 ---
 
+<!-- section_id: "f38b81cd-c527-45a9-9156-79a02d734e6e" -->
 ## 🎨 **Universal Systems**
 
+<!-- section_id: "3cf1c7b9-0e90-4001-9f97-67b87d97a088" -->
 ### **1. Testing Agent System** (Level 0)
 
 **Universal Components**:
@@ -178,6 +189,7 @@ trickle_down_1_project/1_status_progress_docs/
 
 ---
 
+<!-- section_id: "89a5e41b-2595-4131-b9f4-3a838e7d4015" -->
 ### **2. Terminal Execution System** (Level 0)
 
 **Universal Components**:
@@ -197,6 +209,7 @@ trickle_down_1_project/0_instruction_docs/
 
 ---
 
+<!-- section_id: "722f9660-e173-46c4-b5a2-ab43f3f32dff" -->
 ### **3. AI Agent Protocols** (Level 0)
 
 **Universal Components**:
@@ -216,6 +229,7 @@ trickle_down_1_project/0_instruction_docs/
 
 ---
 
+<!-- section_id: "c260fab7-bd0f-4a77-826b-53315120e5f9" -->
 ### **4. Universal Tools System** (Level 0.75)
 
 **Universal Components**:
@@ -241,8 +255,10 @@ trickle_down_1.5_project_tools/0_instruction_docs/
 
 ---
 
+<!-- section_id: "6d6fc5e8-79bf-4fe2-937c-ec4613bcaef7" -->
 ## 🔄 **How Universal Systems Work**
 
+<!-- section_id: "f1199720-a51b-43fd-8e31-7c757ac780ed" -->
 ### **Pattern: Universal → Project Implementation**
 
 Every universal system follows this pattern:
@@ -316,8 +332,10 @@ Update master index showing both levels:
 
 ---
 
+<!-- section_id: "e71ab124-a701-4ffd-bd2c-5e0121847fc4" -->
 ## 📝 **Creating a New Universal System**
 
+<!-- section_id: "1dfa625f-aeb0-4c82-85f5-55e7ef4093e6" -->
 ### **Checklist**
 
 When creating a new universal system:
@@ -350,8 +368,10 @@ When creating a new universal system:
 
 ---
 
+<!-- section_id: "1cf236ab-6e32-4dff-b98f-e003088de7d0" -->
 ## 🎯 **System Examples**
 
+<!-- section_id: "c4842f06-098f-4444-9444-5e5672709e4e" -->
 ### **Example 1: Testing Agent System** ✅
 
 **Level 0 (Universal)**:
@@ -370,6 +390,7 @@ When creating a new universal system:
 
 ---
 
+<!-- section_id: "031c88eb-82bf-4786-8523-e1be0f2e77cd" -->
 ### **Example 2: MCP Tools System** ✅
 
 **Level 0.75 (Universal)**:
@@ -386,6 +407,7 @@ When creating a new universal system:
 
 ---
 
+<!-- section_id: "52566335-f0ec-47ca-88b4-9e8e12462f61" -->
 ### **Example 3: Documentation System** (This Document) ✅
 
 **Level 0 (Universal)**:
@@ -400,8 +422,10 @@ When creating a new universal system:
 
 ---
 
+<!-- section_id: "1bdad491-2c29-4d7d-9410-1a3ba97de27e" -->
 ## 🔍 **Finding Documentation**
 
+<!-- section_id: "6081cf36-586a-46b7-968a-55fcb59720e6" -->
 ### **For Universal Systems**
 
 Look in Level 0:
@@ -409,6 +433,7 @@ Look in Level 0:
 ls docs/0_context/trickle_down_0_universal/0_instruction_docs/
 ```
 
+<!-- section_id: "696b48a0-2e17-4d55-9e9c-9c6b8440a1f9" -->
 ### **For Project Implementation**
 
 Look in Level 1:
@@ -416,6 +441,7 @@ Look in Level 1:
 ls docs/0_context/trickle_down_1_project/0_instruction_docs/
 ```
 
+<!-- section_id: "34257844-b9bf-41a3-8c56-6135b406a5d0" -->
 ### **For Integration Guides**
 
 Always named `[SYSTEM_NAME]_INTEGRATION.md` in Level 1:
@@ -425,8 +451,10 @@ ls docs/0_context/trickle_down_1_project/0_instruction_docs/*INTEGRATION.md
 
 ---
 
+<!-- section_id: "c8ec0722-3377-487e-adfa-8005f50eb792" -->
 ## 📊 **Validation Checklist**
 
+<!-- section_id: "bbb9f675-9a6b-4d05-b1e6-44c9e75d48b8" -->
 ### **Is Your Documentation System Complete?**
 
 #### **Universal Level (Level 0)**
@@ -456,28 +484,34 @@ ls docs/0_context/trickle_down_1_project/0_instruction_docs/*INTEGRATION.md
 
 ---
 
+<!-- section_id: "0b7bbba9-cbde-4b19-b016-8bcbf913ed60" -->
 ## 🚀 **Benefits of This System**
 
+<!-- section_id: "a1affcac-01fc-464a-936a-042c8f50ce6c" -->
 ### **1. Reusability**
 - Universal protocols work for any project
 - Don't reinvent the wheel
 - Consistent practices across projects
 
+<!-- section_id: "2f907404-75f5-48f4-af56-6f5a0d19618e" -->
 ### **2. Clarity**
 - Clear separation of universal vs project-specific
 - Easy to find relevant documentation
 - Obvious where to put new docs
 
+<!-- section_id: "287e86ff-4205-40fe-8882-892e2409509d" -->
 ### **3. Scalability**
 - Structure supports any project size
 - New projects can adopt universal systems quickly
 - Systems can grow without chaos
 
+<!-- section_id: "b9f1bb58-ea97-43d6-a02c-0592d221bc9b" -->
 ### **4. Maintainability**
 - Universal docs maintained once, used everywhere
 - Project docs only contain project-specific info
 - Clear ownership and responsibilities
 
+<!-- section_id: "2268212b-f4e7-46db-abad-6ab3772846f0" -->
 ### **5. AI Agent Friendly**
 - Hierarchical structure is easy to navigate
 - Clear entry points for AI agents
@@ -485,25 +519,31 @@ ls docs/0_context/trickle_down_1_project/0_instruction_docs/*INTEGRATION.md
 
 ---
 
+<!-- section_id: "68e38066-e8c3-4e47-80c7-879f9e457743" -->
 ## 📚 **Related Documentation**
 
+<!-- section_id: "07d3f01b-692f-46bb-b8ec-1c435083cbc6" -->
 ### **Universal Systems**
 - Testing Agent System: `testing-agent-protocol.md`
 - Terminal Execution: `terminal_execution_protocol.md`
 - Manual Steps Automation: `manual-steps-automation.md`
 
+<!-- section_id: "5c9c0fb5-e08c-4adf-8cf9-d9884cdc9eff" -->
 ### **Project Documentation**
 - Master Index: `../../MASTER_DOCUMENTATION_INDEX.md`
 - Project Constitution: `../../trickle_down_1_project/0_instruction_docs/constitution.md`
 
+<!-- section_id: "c3bb1fdb-50c8-4529-a077-e9b9b7718b7b" -->
 ### **Tools**
 - Universal Tools: `../../trickle_down_0.75_universal_tools/0_instruction_docs/README.md`
 - Project Tools: `../../trickle_down_1.5_project_tools/0_instruction_docs/README.md`
 
 ---
 
+<!-- section_id: "38b3567e-ebbb-4e5c-ad72-761bc57ae3a2" -->
 ## ✅ **Quick Reference**
 
+<!-- section_id: "cde36f38-26ad-4f43-b76f-11f36fd4a79f" -->
 ### **When Creating New Documentation**
 
 1. **Is it universal?** → Put in Level 0
@@ -511,6 +551,7 @@ ls docs/0_context/trickle_down_1_project/0_instruction_docs/*INTEGRATION.md
 3. **Is it a feature?** → Put in Level 2
 4. **Is it a component?** → Put in Level 3
 
+<!-- section_id: "2dec5c23-3b6b-42fe-88fe-134d5255b53f" -->
 ### **When Looking for Documentation**
 
 1. **Universal system?** → Check Level 0
@@ -521,6 +562,7 @@ ls docs/0_context/trickle_down_1_project/0_instruction_docs/*INTEGRATION.md
 
 ---
 
+<!-- section_id: "22c83744-ff12-4ce8-9c43-195948cdd1ed" -->
 ## 🎯 **Summary**
 
 The Universal Documentation System provides:

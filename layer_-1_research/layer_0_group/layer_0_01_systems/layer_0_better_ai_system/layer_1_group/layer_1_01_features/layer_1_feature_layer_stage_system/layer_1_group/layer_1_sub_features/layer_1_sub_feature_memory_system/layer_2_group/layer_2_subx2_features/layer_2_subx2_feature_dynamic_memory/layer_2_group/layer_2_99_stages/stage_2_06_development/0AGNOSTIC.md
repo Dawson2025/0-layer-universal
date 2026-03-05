@@ -6,6 +6,7 @@ resource_name: "0AGNOSTIC"
 ---
 # dynamic_memory — Stage 06: development
 
+<!-- section_id: "286c0dba-dff1-457b-8c0d-356b645625ca" -->
 ## Identity
 
 stage_id: "6a709ca2-f41d-4dc2-8fb3-1e9f19c598cd"
@@ -16,5 +17,6 @@ Stage 06 (development) for the dynamic_memory research sub-feature.
 - **Parent**: `../../0AGNOSTIC.md`
 - **Purpose**: Implement solutions
 
+<!-- section_id: "e3ef77ba-6b44-419e-ab70-9bb4f4036e7a" -->
 ## Triggers
 Load when working in this stage directory.

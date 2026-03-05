@@ -10,6 +10,7 @@ resource_name: "perplexity-extract"
 **Scope**: Claude in Chrome feature — Perplexity page content extraction
 **Trigger**: User provides a Perplexity search URL for content extraction
 
+<!-- section_id: "d3debe7d-77fb-46ff-8ec9-3f2328509299" -->
 ## Description
 
 This skill is Claude in Chrome-specific because it depends on:
@@ -20,6 +21,7 @@ This skill is Claude in Chrome-specific because it depends on:
 
 No other MCP server or API can perform page-level extraction from Perplexity.
 
+<!-- section_id: "7b6d76d9-b279-4f36-9aaf-ecc2a836a815" -->
 ## Key Knowledge
 
 | Resource | Location |

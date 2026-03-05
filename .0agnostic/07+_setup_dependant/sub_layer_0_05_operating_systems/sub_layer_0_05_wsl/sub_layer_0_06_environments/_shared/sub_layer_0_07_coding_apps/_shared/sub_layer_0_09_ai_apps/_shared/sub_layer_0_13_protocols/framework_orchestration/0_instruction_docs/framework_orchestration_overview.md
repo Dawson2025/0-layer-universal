@@ -5,6 +5,7 @@ resource_name: "framework_orchestration_overview"
 ---
 # Framework Orchestration Overview
 
+<!-- section_id: "45e8b2a9-7923-445d-a237-8a11f7b7b536" -->
 ## Applicability
 **When to use:** When integrating multi-agent frameworks (LangGraph, AutoGen, CrewAI, MetaGPT) into the AI Manager Hierarchy System.
 **Where to use:** L0-L2 managers, supervisors, and complex stage orchestration where framework-based coordination provides value over simple handoff-based coordination.
@@ -12,6 +13,7 @@ resource_name: "framework_orchestration_overview"
 
 ---
 
+<!-- section_id: "36c8f70b-1966-49ac-bd29-c5d81bfbe1a0" -->
 ## Overview
 
 This document provides guidance on integrating multi-agent orchestration frameworks (LangGraph, AutoGen, CrewAI, MetaGPT) with the AI Manager Hierarchy System. It explains when to use framework-based orchestration versus simple handoff-based coordination, and how to maintain compatibility with the hierarchy's handoff protocol.
@@ -21,8 +23,10 @@ For detailed integration patterns, examples, and framework-specific guidance, se
 
 ---
 
+<!-- section_id: "ede566a7-a9cd-4e3d-b0df-6d8c3f5c8527" -->
 ## When to Use Framework Orchestration vs. Simple Handoffs
 
+<!-- section_id: "59da1380-4f5a-4883-ae62-70bd1f51b33c" -->
 ### Use Simple Handoff-Based Coordination When:
 - Work is clearly decomposable into independent tasks
 - Manager-worker relationships are straightforward (single manager, multiple workers)
@@ -32,6 +36,7 @@ For detailed integration patterns, examples, and framework-specific guidance, se
 
 **Example**: L3 component implementation where a manager decomposes a feature into 5 independent components, spawns Codex workers for each via CLI, waits for completion, and aggregates results.
 
+<!-- section_id: "906934db-d9c4-44ef-9b49-7ccf05a0c6b5" -->
 ### Use Framework Orchestration When:
 - Complex conditional logic or branching workflows (e.g., plan → implement → test → fix loop)
 - Need explicit state management and checkpointing
@@ -43,25 +48,30 @@ For detailed integration patterns, examples, and framework-specific guidance, se
 
 ---
 
+<!-- section_id: "9a6d62dd-c351-4b92-a5c0-4c9d88e1db4d" -->
 ## Framework Roles in the Hierarchy
 
 Frameworks can serve multiple roles:
 
+<!-- section_id: "4bec0515-4b75-4ecb-83af-d7bbb25f8b0d" -->
 ### 1. Supervisors (L0)
 Top-level orchestrators managing the entire workflow across layers.
 - **Recommended**: LangGraph (for deterministic control) or custom Python/shell scripts
 - **Role**: Watch handoff directories, apply tool policies, spawn layer managers, aggregate results
 
+<!-- section_id: "f5abc943-9c73-4ac5-92b2-c5f336e92872" -->
 ### 2. Layer Managers (L1/L2)
 Coordinating work within specific layers.
 - **L1 Project Managers**: LangGraph (complex workflows), AutoGen (dialogue-heavy), or MetaGPT (opinionated structure)
 - **L2 Feature Managers**: CrewAI (natural team abstraction) or LangGraph (control-heavy)
 
+<!-- section_id: "56ec0491-c30c-4cf2-abe1-84cf1845245a" -->
 ### 3. Specialized Workers (L2/L3)
 Teams of agents handling complex, multi-step tasks.
 - **Recommended**: CrewAI (role-based teams) or AutoGen (exploratory dialogue)
 - **Role**: Execute feature-level work that requires specialized agent collaboration
 
+<!-- section_id: "23d3e9f8-0fc8-4371-97eb-37ed9f0968e5" -->
 ### 4. Simple Workers (L3/L4)
 Leaf execution via direct CLI calls.
 - **Recommended**: Direct CLI invocation (codex, claude-code, gemini)
@@ -69,8 +79,10 @@ Leaf execution via direct CLI calls.
 
 ---
 
+<!-- section_id: "2bbae0e8-8238-4051-b99b-c1e70cc9b87c" -->
 ## Framework Summary
 
+<!-- section_id: "b8b38581-4336-433e-a406-3f9323f2fa6a" -->
 ### LangGraph
 **Best For**: Deterministic workflows with explicit state control, checkpointing, and complex conditional logic.
 
@@ -87,6 +99,7 @@ Leaf execution via direct CLI calls.
 
 **Key Pattern**: Define state machine nodes for each stage/operation, edges for transitions, and use checkpointing for resumability.
 
+<!-- section_id: "16782d9e-8df2-4664-ae4b-eae3ca5b430f" -->
 ### AutoGen
 **Best For**: Dialogue-heavy exploration, negotiation, and conversational multi-agent patterns.
 
@@ -103,6 +116,7 @@ Leaf execution via direct CLI calls.
 
 **Key Pattern**: Define specialized agents (project manager, requirements analyst, etc.) that converse via GroupChat, then extract structured handoffs from conversation.
 
+<!-- section_id: "cd061eef-de2b-42ea-8aa9-cd8fcba35e83" -->
 ### CrewAI
 **Best For**: Role-based team abstractions with clear task delegation patterns.
 
@@ -119,6 +133,7 @@ Leaf execution via direct CLI calls.
 
 **Key Pattern**: Define role-based agents (UI designer, backend developer, QA engineer), assign tasks with dependencies, execute crew in sequential or parallel mode.
 
+<!-- section_id: "66f1f0fe-0f68-4ee4-8627-04ff5ddd7085" -->
 ### MetaGPT
 **Best For**: Opinionated "software team in a box" with standardized artifacts (PRDs, design docs, code).
 
@@ -137,6 +152,7 @@ Leaf execution via direct CLI calls.
 
 ---
 
+<!-- section_id: "4b12b169-627e-457a-aa4c-4c7d0a3a6651" -->
 ## Integration Checklist
 
 When integrating a framework into the hierarchy, ensure:
@@ -151,8 +167,10 @@ When integrating a framework into the hierarchy, ensure:
 
 ---
 
+<!-- section_id: "70630b32-3eee-4999-ba91-c1548b63d211" -->
 ## Minimal Integration Examples
 
+<!-- section_id: "99ef21d2-ba6d-44f8-9858-a13d2ca0bb54" -->
 ### LangGraph as L1 Manager
 
 ```python
@@ -201,6 +219,7 @@ workflow.set_entry_point("read")
 result = workflow.invoke({})
 ```
 
+<!-- section_id: "2962b274-b340-4fd5-8c0b-17763408d34c" -->
 ### CrewAI as L2 Feature Manager
 
 ```python
@@ -275,6 +294,7 @@ with open("layer_2_auth/2.01_manager_handoff_documents/outgoing.json", "w") as f
 
 ---
 
+<!-- section_id: "08afa3b8-9b96-4f9e-bfe6-2ac8743b3ee4" -->
 ## Hybrid Patterns
 
 Frameworks can be mixed within the hierarchy:
@@ -297,6 +317,7 @@ Frameworks can be mixed within the hierarchy:
 
 ---
 
+<!-- section_id: "b272bb90-9a56-442c-b8fd-8d2af46a4a76" -->
 ## When to Skip Frameworks
 
 You may not need a framework at all if:
@@ -317,6 +338,7 @@ No framework needed - just handoffs and CLI calls.
 
 ---
 
+<!-- section_id: "69368f6f-3bb7-4c62-8c65-376dac2d9c07" -->
 ## Migration Path
 
 If starting from scratch or migrating existing workflows:
@@ -343,6 +365,7 @@ If starting from scratch or migrating existing workflows:
 
 ---
 
+<!-- section_id: "e74eb539-9495-4f40-be2a-4bb2337a65ce" -->
 ## Related Documentation
 
 **Within 0_ai_context**:
@@ -360,6 +383,7 @@ If starting from scratch or migrating existing workflows:
 
 ---
 
+<!-- section_id: "ce12bdb6-071a-4049-9ad3-303b5b25c31d" -->
 ## Summary
 
 **Key Takeaways**:
@@ -373,10 +397,12 @@ The handoff protocol ensures you can swap frameworks or remove them entirely wit
 
 ---
 
+<!-- section_id: "74386233-0c9f-4637-b23b-11d5a5ff2715" -->
 ## Legacy Universal Protocols Source
 
 # Framework Orchestration Overview
 
+<!-- section_id: "aa73733f-043f-4f4a-9521-21d491162fac" -->
 ## Applicability
 **When to use:** When integrating multi-agent frameworks (LangGraph, AutoGen, CrewAI, MetaGPT) into the AI Manager Hierarchy System.
 **Where to use:** L0-L2 managers, supervisors, and complex stage orchestration where framework-based coordination provides value over simple handoff-based coordination.
@@ -384,6 +410,7 @@ The handoff protocol ensures you can swap frameworks or remove them entirely wit
 
 ---
 
+<!-- section_id: "74c09662-3a3c-4c38-bb5f-2990f03d9a75" -->
 ## Overview
 
 This document provides guidance on integrating multi-agent orchestration frameworks (LangGraph, AutoGen, CrewAI, MetaGPT) with the AI Manager Hierarchy System. It explains when to use framework-based orchestration versus simple handoff-based coordination, and how to maintain compatibility with the hierarchy's handoff protocol.
@@ -393,8 +420,10 @@ For detailed integration patterns, examples, and framework-specific guidance, se
 
 ---
 
+<!-- section_id: "72e52ee2-0a94-4d81-9a13-b68453516a4d" -->
 ## When to Use Framework Orchestration vs. Simple Handoffs
 
+<!-- section_id: "9b205d69-7a9e-4798-878d-bca6171e9719" -->
 ### Use Simple Handoff-Based Coordination When:
 - Work is clearly decomposable into independent tasks
 - Manager-worker relationships are straightforward (single manager, multiple workers)
@@ -404,6 +433,7 @@ For detailed integration patterns, examples, and framework-specific guidance, se
 
 **Example**: L3 component implementation where a manager decomposes a feature into 5 independent components, spawns Codex workers for each via CLI, waits for completion, and aggregates results.
 
+<!-- section_id: "a6c30db0-7ec6-42dc-8cff-2153e9e22835" -->
 ### Use Framework Orchestration When:
 - Complex conditional logic or branching workflows (e.g., plan → implement → test → fix loop)
 - Need explicit state management and checkpointing
@@ -415,25 +445,30 @@ For detailed integration patterns, examples, and framework-specific guidance, se
 
 ---
 
+<!-- section_id: "07e2f403-ce74-43ce-a543-7fd5496660a2" -->
 ## Framework Roles in the Hierarchy
 
 Frameworks can serve multiple roles:
 
+<!-- section_id: "04fc8227-185f-4339-a45f-b9f4475133ad" -->
 ### 1. Supervisors (L0)
 Top-level orchestrators managing the entire workflow across layers.
 - **Recommended**: LangGraph (for deterministic control) or custom Python/shell scripts
 - **Role**: Watch handoff directories, apply tool policies, spawn layer managers, aggregate results
 
+<!-- section_id: "f6c9d968-f3d2-40b7-a0fd-3d3fac49b53e" -->
 ### 2. Layer Managers (L1/L2)
 Coordinating work within specific layers.
 - **L1 Project Managers**: LangGraph (complex workflows), AutoGen (dialogue-heavy), or MetaGPT (opinionated structure)
 - **L2 Feature Managers**: CrewAI (natural team abstraction) or LangGraph (control-heavy)
 
+<!-- section_id: "08d7a63b-1788-496f-80ec-fd875ba5a1fb" -->
 ### 3. Specialized Workers (L2/L3)
 Teams of agents handling complex, multi-step tasks.
 - **Recommended**: CrewAI (role-based teams) or AutoGen (exploratory dialogue)
 - **Role**: Execute feature-level work that requires specialized agent collaboration
 
+<!-- section_id: "e97e0063-bef0-4fc3-9561-71b0ad99a9b3" -->
 ### 4. Simple Workers (L3/L4)
 Leaf execution via direct CLI calls.
 - **Recommended**: Direct CLI invocation (codex, claude-code, gemini)
@@ -441,8 +476,10 @@ Leaf execution via direct CLI calls.
 
 ---
 
+<!-- section_id: "9c07ea22-7409-4e1a-aa34-870f28d22b9a" -->
 ## Framework Summary
 
+<!-- section_id: "cd63e2ab-3600-4809-a1ce-cc34fe52d814" -->
 ### LangGraph
 **Best For**: Deterministic workflows with explicit state control, checkpointing, and complex conditional logic.
 
@@ -459,6 +496,7 @@ Leaf execution via direct CLI calls.
 
 **Key Pattern**: Define state machine nodes for each stage/operation, edges for transitions, and use checkpointing for resumability.
 
+<!-- section_id: "679a758d-2892-4000-aa79-3805baa613bf" -->
 ### AutoGen
 **Best For**: Dialogue-heavy exploration, negotiation, and conversational multi-agent patterns.
 
@@ -475,6 +513,7 @@ Leaf execution via direct CLI calls.
 
 **Key Pattern**: Define specialized agents (project manager, requirements analyst, etc.) that converse via GroupChat, then extract structured handoffs from conversation.
 
+<!-- section_id: "35386703-32d5-4782-99ff-cde3fcc0a266" -->
 ### CrewAI
 **Best For**: Role-based team abstractions with clear task delegation patterns.
 
@@ -491,6 +530,7 @@ Leaf execution via direct CLI calls.
 
 **Key Pattern**: Define role-based agents (UI designer, backend developer, QA engineer), assign tasks with dependencies, execute crew in sequential or parallel mode.
 
+<!-- section_id: "42179a1f-bb70-41f7-be59-5c7ca39e0a91" -->
 ### MetaGPT
 **Best For**: Opinionated "software team in a box" with standardized artifacts (PRDs, design docs, code).
 
@@ -509,6 +549,7 @@ Leaf execution via direct CLI calls.
 
 ---
 
+<!-- section_id: "3c9ab616-4225-4825-baeb-8d2d66584e44" -->
 ## Integration Checklist
 
 When integrating a framework into the hierarchy, ensure:
@@ -523,8 +564,10 @@ When integrating a framework into the hierarchy, ensure:
 
 ---
 
+<!-- section_id: "46c23aea-a72d-43ac-8422-663cc533b941" -->
 ## Minimal Integration Examples
 
+<!-- section_id: "25ebbe9a-12c9-4e09-9985-de64834eb310" -->
 ### LangGraph as L1 Manager
 
 ```python
@@ -573,6 +616,7 @@ workflow.set_entry_point("read")
 result = workflow.invoke({})
 ```
 
+<!-- section_id: "978fc25a-46d5-4ba5-8b62-4cc88830fd0b" -->
 ### CrewAI as L2 Feature Manager
 
 ```python
@@ -647,6 +691,7 @@ with open("layer_2_auth/2.01_manager_handoff_documents/outgoing.json", "w") as f
 
 ---
 
+<!-- section_id: "be7a121d-4811-4be6-9e9a-b0571c68851e" -->
 ## Hybrid Patterns
 
 Frameworks can be mixed within the hierarchy:
@@ -669,6 +714,7 @@ Frameworks can be mixed within the hierarchy:
 
 ---
 
+<!-- section_id: "ad990e1a-775f-47f4-806e-6e4653707580" -->
 ## When to Skip Frameworks
 
 You may not need a framework at all if:
@@ -689,6 +735,7 @@ No framework needed - just handoffs and CLI calls.
 
 ---
 
+<!-- section_id: "908308f0-bbb4-48b2-af2f-7ea2668db803" -->
 ## Migration Path
 
 If starting from scratch or migrating existing workflows:
@@ -715,6 +762,7 @@ If starting from scratch or migrating existing workflows:
 
 ---
 
+<!-- section_id: "05838d6f-3df3-44d4-9b4b-dc260288fa1f" -->
 ## Related Documentation
 
 **Within 0_ai_context**:
@@ -732,6 +780,7 @@ If starting from scratch or migrating existing workflows:
 
 ---
 
+<!-- section_id: "e660a69d-bec0-441a-ad0b-456a06070a58" -->
 ## Summary
 
 **Key Takeaways**:
@@ -746,12 +795,14 @@ The handoff protocol ensures you can swap frameworks or remove them entirely wit
 
 ---
 
+<!-- section_id: "4924fca7-0274-485e-a561-e42241129bab" -->
 ## Legacy Source
 
 Source: `/home/dawson/dawson-workspace/code/0_layer_universal/0_context/layer_0/0.02_sub_layers/sub_layer_0_13_universal_protocols/framework_orchestration/0_instruction_docs/framework_orchestration_overview.md`
 
 # Framework Orchestration Overview
 
+<!-- section_id: "0e6bd31b-f633-487a-84f6-cca4b481c963" -->
 ## Applicability
 **When to use:** When integrating multi-agent frameworks (LangGraph, AutoGen, CrewAI, MetaGPT) into the AI Manager Hierarchy System.
 **Where to use:** L0-L2 managers, supervisors, and complex stage orchestration where framework-based coordination provides value over simple handoff-based coordination.
@@ -759,6 +810,7 @@ Source: `/home/dawson/dawson-workspace/code/0_layer_universal/0_context/layer_0/
 
 ---
 
+<!-- section_id: "db4e245d-faab-46a6-b26c-8ff3a48433ff" -->
 ## Overview
 
 This document provides guidance on integrating multi-agent orchestration frameworks (LangGraph, AutoGen, CrewAI, MetaGPT) with the AI Manager Hierarchy System. It explains when to use framework-based orchestration versus simple handoff-based coordination, and how to maintain compatibility with the hierarchy's handoff protocol.
@@ -768,8 +820,10 @@ For detailed integration patterns, examples, and framework-specific guidance, se
 
 ---
 
+<!-- section_id: "28676cee-b96c-42f5-b137-94c13ffb0bfa" -->
 ## When to Use Framework Orchestration vs. Simple Handoffs
 
+<!-- section_id: "1666f415-b8d7-45df-9a4c-4d66f06639de" -->
 ### Use Simple Handoff-Based Coordination When:
 - Work is clearly decomposable into independent tasks
 - Manager-worker relationships are straightforward (single manager, multiple workers)
@@ -779,6 +833,7 @@ For detailed integration patterns, examples, and framework-specific guidance, se
 
 **Example**: L3 component implementation where a manager decomposes a feature into 5 independent components, spawns Codex workers for each via CLI, waits for completion, and aggregates results.
 
+<!-- section_id: "cdf292f1-c2c1-44ce-bc65-786ff5f06107" -->
 ### Use Framework Orchestration When:
 - Complex conditional logic or branching workflows (e.g., plan → implement → test → fix loop)
 - Need explicit state management and checkpointing
@@ -790,25 +845,30 @@ For detailed integration patterns, examples, and framework-specific guidance, se
 
 ---
 
+<!-- section_id: "edb25547-8cce-4712-8874-f2c4ed051ec9" -->
 ## Framework Roles in the Hierarchy
 
 Frameworks can serve multiple roles:
 
+<!-- section_id: "6e640e98-7bbd-48c9-abc7-cb4b2ab5b749" -->
 ### 1. Supervisors (L0)
 Top-level orchestrators managing the entire workflow across layers.
 - **Recommended**: LangGraph (for deterministic control) or custom Python/shell scripts
 - **Role**: Watch handoff directories, apply tool policies, spawn layer managers, aggregate results
 
+<!-- section_id: "17c84e28-7ec7-4bf8-9334-9670813f94d9" -->
 ### 2. Layer Managers (L1/L2)
 Coordinating work within specific layers.
 - **L1 Project Managers**: LangGraph (complex workflows), AutoGen (dialogue-heavy), or MetaGPT (opinionated structure)
 - **L2 Feature Managers**: CrewAI (natural team abstraction) or LangGraph (control-heavy)
 
+<!-- section_id: "258342ab-7676-4718-baa9-08d8fe849570" -->
 ### 3. Specialized Workers (L2/L3)
 Teams of agents handling complex, multi-step tasks.
 - **Recommended**: CrewAI (role-based teams) or AutoGen (exploratory dialogue)
 - **Role**: Execute feature-level work that requires specialized agent collaboration
 
+<!-- section_id: "9a5dab92-512c-47e4-b2fa-a6bb96855998" -->
 ### 4. Simple Workers (L3/L4)
 Leaf execution via direct CLI calls.
 - **Recommended**: Direct CLI invocation (codex, claude-code, gemini)
@@ -816,8 +876,10 @@ Leaf execution via direct CLI calls.
 
 ---
 
+<!-- section_id: "eac3d735-d8b0-4fbc-8cf4-d7d122abf05b" -->
 ## Framework Summary
 
+<!-- section_id: "f9e26e3e-8761-4364-895a-8d03b27ac5d8" -->
 ### LangGraph
 **Best For**: Deterministic workflows with explicit state control, checkpointing, and complex conditional logic.
 
@@ -834,6 +896,7 @@ Leaf execution via direct CLI calls.
 
 **Key Pattern**: Define state machine nodes for each stage/operation, edges for transitions, and use checkpointing for resumability.
 
+<!-- section_id: "afab28db-3e86-43d5-9031-cb7a4ed4af4b" -->
 ### AutoGen
 **Best For**: Dialogue-heavy exploration, negotiation, and conversational multi-agent patterns.
 
@@ -850,6 +913,7 @@ Leaf execution via direct CLI calls.
 
 **Key Pattern**: Define specialized agents (project manager, requirements analyst, etc.) that converse via GroupChat, then extract structured handoffs from conversation.
 
+<!-- section_id: "d0347459-3ca8-4306-b16c-4b97c26b5b9d" -->
 ### CrewAI
 **Best For**: Role-based team abstractions with clear task delegation patterns.
 
@@ -866,6 +930,7 @@ Leaf execution via direct CLI calls.
 
 **Key Pattern**: Define role-based agents (UI designer, backend developer, QA engineer), assign tasks with dependencies, execute crew in sequential or parallel mode.
 
+<!-- section_id: "be3e0d6d-4017-443c-b120-86a6b8ae2be1" -->
 ### MetaGPT
 **Best For**: Opinionated "software team in a box" with standardized artifacts (PRDs, design docs, code).
 
@@ -884,6 +949,7 @@ Leaf execution via direct CLI calls.
 
 ---
 
+<!-- section_id: "2b2124a5-43a9-4c75-a9ad-11e89dc9f106" -->
 ## Integration Checklist
 
 When integrating a framework into the hierarchy, ensure:
@@ -898,8 +964,10 @@ When integrating a framework into the hierarchy, ensure:
 
 ---
 
+<!-- section_id: "16f0288f-5e94-4de5-a3d0-a2f963a9cc03" -->
 ## Minimal Integration Examples
 
+<!-- section_id: "53fcb8fa-2ec6-463c-8b60-ffb4efe0dddf" -->
 ### LangGraph as L1 Manager
 
 ```python
@@ -948,6 +1016,7 @@ workflow.set_entry_point("read")
 result = workflow.invoke({})
 ```
 
+<!-- section_id: "4ded0c69-ee89-416b-8cc9-a8f505564c23" -->
 ### CrewAI as L2 Feature Manager
 
 ```python
@@ -1022,6 +1091,7 @@ with open("layer_2_auth/2.01_manager_handoff_documents/outgoing.json", "w") as f
 
 ---
 
+<!-- section_id: "c3725d9b-1f3c-4c77-9fbe-9f868e12d1a9" -->
 ## Hybrid Patterns
 
 Frameworks can be mixed within the hierarchy:
@@ -1044,6 +1114,7 @@ Frameworks can be mixed within the hierarchy:
 
 ---
 
+<!-- section_id: "f0f8644c-22d8-4722-9c91-b582d208dab1" -->
 ## When to Skip Frameworks
 
 You may not need a framework at all if:
@@ -1064,6 +1135,7 @@ No framework needed - just handoffs and CLI calls.
 
 ---
 
+<!-- section_id: "393a36c3-c570-4ee5-8f5f-b04454f93764" -->
 ## Migration Path
 
 If starting from scratch or migrating existing workflows:
@@ -1090,6 +1162,7 @@ If starting from scratch or migrating existing workflows:
 
 ---
 
+<!-- section_id: "6331a9ba-27f6-4463-827c-44dedd59f907" -->
 ## Related Documentation
 
 **Within 0_ai_context**:
@@ -1107,6 +1180,7 @@ If starting from scratch or migrating existing workflows:
 
 ---
 
+<!-- section_id: "baadf910-ca7c-4b15-ab6f-eca7af054856" -->
 ## Summary
 
 **Key Takeaways**:

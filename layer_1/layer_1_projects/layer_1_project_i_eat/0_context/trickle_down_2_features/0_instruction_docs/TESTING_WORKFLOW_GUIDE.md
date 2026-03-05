@@ -6,8 +6,10 @@ resource_name: "TESTING_WORKFLOW_GUIDE"
 # Testing Workflow Guide
 *Complete Guide to the Comprehensive Firebase Testing Strategy*
 
+<!-- section_id: "c806ef62-72cc-4dd8-86fd-ed2f8047b8ed" -->
 ## 🎯 Quick Reference
 
+<!-- section_id: "72fd1f1c-29aa-4551-9b02-498b7375b583" -->
 ### Development (Every Commit)
 ```bash
 # Fast tests - run before every commit
@@ -19,6 +21,7 @@ pytest tests/unit tests/integration/emulator -v
 **Time**: ~15 seconds
 **Cost**: $0
 
+<!-- section_id: "4a44af74-3ea0-4fdd-b544-017bcb924118" -->
 ### Dev Environment Verification (Weekly / Before Deploy)
 ```bash
 # Test against real lang-trak-dev Firebase
@@ -27,6 +30,7 @@ pytest tests/unit tests/integration/emulator -v
 **Time**: ~1 minute
 **Cost**: ~$0.50/month
 
+<!-- section_id: "b0d7ba8a-a4d5-4a0a-8f9a-1cc4d6b96a8a" -->
 ### Complete Test Suite
 ```bash
 # Everything (fast + dev environment)
@@ -37,6 +41,7 @@ pytest tests/unit tests/integration/emulator -v
 
 ---
 
+<!-- section_id: "fea1c5a9-37af-4c02-aceb-b6898d3abb42" -->
 ## 📊 Test Organization
 
 ```
@@ -61,8 +66,10 @@ tests/
 
 ---
 
+<!-- section_id: "d637f57d-6eee-434a-974a-5eb247a8ce3f" -->
 ## 🚀 How to Run Tests
 
+<!-- section_id: "45e3e0f6-03c2-47b8-a11c-31515c08dd88" -->
 ### 1. Fast Tests (Development Loop) ⭐ **Use This Daily**
 
 ```bash
@@ -78,6 +85,7 @@ tests/
 
 **When to use**: Before every commit, during development
 
+<!-- section_id: "ebfcd47c-2a66-4a9c-b625-19a0efff7104" -->
 ### 2. Dev Environment Tests (Weekly)
 
 ```bash
@@ -93,6 +101,7 @@ tests/
 
 **When to use**: Weekly, before deployments, after Firebase changes
 
+<!-- section_id: "1f27ce46-68a5-482c-8ac3-2fed72712a62" -->
 ### 3. Manual Test Runs
 
 #### Run emulator tests only
@@ -126,8 +135,10 @@ pytest -m smoke -v
 
 ---
 
+<!-- section_id: "7419f37f-eb52-4e83-8e85-8ac815c0565d" -->
 ## 🔧 Configuration
 
+<!-- section_id: "ef649a8b-a08d-41a5-8bdf-8e9edc7cec80" -->
 ### Firebase Emulator
 **Config file**: `firebase.json`
 ```json
@@ -143,6 +154,7 @@ pytest -m smoke -v
 
 **Access Emulator UI**: http://localhost:4000 (when emulator running)
 
+<!-- section_id: "78af14da-a485-49f1-85b4-913ffe128f70" -->
 ### Environment Selection
 ```bash
 # Test against dev (default)
@@ -158,8 +170,10 @@ export ALLOW_PROD_TESTS=yes_i_know_what_im_doing
 
 ---
 
+<!-- section_id: "bea17edb-be23-4efc-908b-4c2b92529492" -->
 ## 🎯 CI/CD Integration
 
+<!-- section_id: "a6eba552-8342-47b6-a721-0b7b405c2a42" -->
 ### Pull Request Checks (Required for Merge)
 ```
 ✅ Unit tests
@@ -167,6 +181,7 @@ export ALLOW_PROD_TESTS=yes_i_know_what_im_doing
 Total time: ~15 seconds
 ```
 
+<!-- section_id: "f772fb64-d171-4e53-a425-be667d5bb1b2" -->
 ### Main Branch Merge
 ```
 ✅ Fast tests (unit + emulator)
@@ -174,6 +189,7 @@ Total time: ~15 seconds
 Total time: ~2 minutes
 ```
 
+<!-- section_id: "3f608918-0088-436d-8f08-197e6fbd5c5d" -->
 ### Nightly Build
 ```
 ✅ All fast tests
@@ -182,6 +198,7 @@ Total time: ~2 minutes
 Total time: ~5 minutes
 ```
 
+<!-- section_id: "723d1b59-fce6-42ea-a3e4-fdc6ab7ee6f0" -->
 ### Production Deploy
 ```
 ✅ All tests pass on main
@@ -192,8 +209,10 @@ Total time: ~5 minutes
 
 ---
 
+<!-- section_id: "cd623f58-7b9d-4263-bb21-311a80b5d3f9" -->
 ## 📝 Writing New Tests
 
+<!-- section_id: "99cdca59-8164-431b-ac9b-b7720e8e8596" -->
 ### For Fast Development (Emulator)
 
 **Create test in**: `tests/integration/emulator/`
@@ -224,6 +243,7 @@ class TestMyFeature:
 - Works offline
 - Perfect for TDD
 
+<!-- section_id: "6e817dd3-fb70-4910-8028-6e14a3ce212a" -->
 ### For Environment Verification (Real Firebase)
 
 **Create test in**: `tests/integration/real_firebase/test_dev_environment.py`
@@ -260,8 +280,10 @@ class TestDevEnvironment:
 
 ---
 
+<!-- section_id: "f5b10e12-9347-4aac-9561-66c31549f6e2" -->
 ## 🐛 Troubleshooting
 
+<!-- section_id: "1daddf3e-c61a-4785-87fb-517df712b768" -->
 ### Emulator won't start
 ```bash
 # Check if ports are in use
@@ -275,6 +297,7 @@ kill -9 <PID>
 # Or use different ports in firebase.json
 ```
 
+<!-- section_id: "efb0e1f4-93a9-454b-8770-e2aba04f8a33" -->
 ### Tests fail with "Firebase not available"
 ```bash
 # For emulator tests - ensure FIRESTORE_EMULATOR_HOST is set
@@ -287,12 +310,14 @@ ls firebase-admin-config.json
 export RUN_FIREBASE_INTEGRATION_TESTS=1
 ```
 
+<!-- section_id: "c8f9e375-e28d-4c17-928a-2f9ad09d4b4f" -->
 ### Emulator data persists between runs
 ```bash
 # Clear emulator data
 firebase emulators:start --import=./empty --export-on-exit=./empty
 ```
 
+<!-- section_id: "9bbca408-46ae-4a95-a831-d7631509cd85" -->
 ### Tests are slow
 ```bash
 # Make sure you're running emulator tests, not real Firebase
@@ -303,6 +328,7 @@ pytest tests/integration/real_firebase -v  # Slow (real Firebase)
 
 ---
 
+<!-- section_id: "4e71cf60-1f61-44a4-8b94-409eeb34aae0" -->
 ## 📊 Performance Benchmarks
 
 | Test Type | Count | Duration | When to Run |
@@ -316,8 +342,10 @@ pytest tests/integration/real_firebase -v  # Slow (real Firebase)
 
 ---
 
+<!-- section_id: "721d5714-780b-4ab8-958c-4b8ac75dc8c0" -->
 ## ✅ Best Practices
 
+<!-- section_id: "9a911a9f-e1c3-47a5-9094-1473e4c0d0a8" -->
 ### DO
 ✅ Use emulator for daily development
 ✅ Run fast tests before every commit
@@ -326,6 +354,7 @@ pytest tests/integration/real_firebase -v  # Slow (real Firebase)
 ✅ Keep production smoke tests read-only
 ✅ Run dev environment tests weekly
 
+<!-- section_id: "400d7708-a37a-466b-8ed2-6d0cb8c9da28" -->
 ### DON'T
 ❌ Run real Firebase tests on every commit (too slow/expensive)
 ❌ Write to production in tests (EVER!)
@@ -335,6 +364,7 @@ pytest tests/integration/real_firebase -v  # Slow (real Firebase)
 
 ---
 
+<!-- section_id: "425a086d-3022-4f85-9dc5-9ffe079b4a38" -->
 ## 🎯 Summary
 
 **The Strategy**:

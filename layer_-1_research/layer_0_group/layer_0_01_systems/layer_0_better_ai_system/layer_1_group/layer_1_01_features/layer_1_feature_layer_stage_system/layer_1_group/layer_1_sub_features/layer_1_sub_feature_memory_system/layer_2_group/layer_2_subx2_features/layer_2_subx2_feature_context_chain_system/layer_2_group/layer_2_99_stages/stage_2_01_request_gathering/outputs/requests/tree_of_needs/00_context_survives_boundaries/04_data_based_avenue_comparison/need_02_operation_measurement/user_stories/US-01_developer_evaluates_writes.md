@@ -13,6 +13,7 @@ resource_name: "US-01_developer_evaluates_writes"
 **I want** to compare write operation benchmarks (single insert, bulk insert, update, delete) across avenues,
 **So that** I can choose the avenue that handles my write workload best.
 
+<!-- section_id: "aaeb511b-b9cb-434e-a0d6-313ba29e4df4" -->
 ### What Happens
 
 1. Developer queries operation benchmarks filtered by write category
@@ -20,6 +21,7 @@ resource_name: "US-01_developer_evaluates_writes"
 3. Developer sees aggregate write speed (composite of components) alongside individual operations
 4. Developer identifies which avenue handles their specific write pattern best
 
+<!-- section_id: "a69932e9-2636-4999-a8ab-502a7cf9c202" -->
 ### Acceptance Criteria
 
 - Write operations are broken down into sub-operations (single, bulk)

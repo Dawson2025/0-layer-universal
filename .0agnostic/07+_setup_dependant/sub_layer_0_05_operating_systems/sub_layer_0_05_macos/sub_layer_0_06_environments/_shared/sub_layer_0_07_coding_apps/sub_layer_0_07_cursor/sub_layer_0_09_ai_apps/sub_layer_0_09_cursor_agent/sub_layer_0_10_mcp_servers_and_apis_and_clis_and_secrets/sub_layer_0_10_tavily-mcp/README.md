@@ -6,8 +6,10 @@ resource_name: "README"
 ---
 # tavily-mcp (cursor_agent on macos)
 
+<!-- section_id: "c3473bfd-2187-465b-a3aa-6aed43fe17f6" -->
 ## Canonical docs
 - ../../../../../_shared/0.04_ai_apps/_shared/0.05_mcp_servers/tavily-mcp/
 
+<!-- section_id: "ab47cb73-d6dc-498a-9df3-a730d5995316" -->
 ## Notes
 Add macos + cursor_agent specific setup notes here.

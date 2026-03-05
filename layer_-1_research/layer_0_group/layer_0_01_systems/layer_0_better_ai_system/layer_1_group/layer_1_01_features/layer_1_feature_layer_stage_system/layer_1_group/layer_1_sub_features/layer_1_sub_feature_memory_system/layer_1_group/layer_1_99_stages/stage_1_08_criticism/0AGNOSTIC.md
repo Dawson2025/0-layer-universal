@@ -6,6 +6,7 @@ resource_name: "0AGNOSTIC"
 ---
 # memory_system — Stage 08: criticism
 
+<!-- section_id: "6cedd9d9-c3b2-4db1-9b15-4546f9811a8b" -->
 ## Identity
 
 stage_id: "47f4ff66-9b03-477f-8b04-c0a6b78864f7"
@@ -16,5 +17,6 @@ Stage 08 (criticism) for the memory_system research sub-feature.
 - **Parent**: `../../0AGNOSTIC.md`
 - **Purpose**: Review and critique
 
+<!-- section_id: "6393053e-b648-4a03-a4c9-d28da8606583" -->
 ## Triggers
 Load when working in this stage directory.

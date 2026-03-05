@@ -8,10 +8,12 @@ resource_name: "system_tts_complete_design"
 **Date**: 2026-02-24
 **Platform**: Lenovo Yoga Pro 9, RTX 4060 (8GB VRAM), Ubuntu Linux, Unity Desktop, X11
 
+<!-- section_id: "d06dc0e1-8926-458d-a8ce-e99c70e4597e" -->
 ## Design Philosophy
 
 **Selective, on-demand TTS** — the user chooses exactly what gets spoken. No screen reader behavior. No automatic reading of UI elements, keystrokes, or focus changes. Every speech event is explicitly user-initiated.
 
+<!-- section_id: "6685fc9a-0384-4d98-b436-5f2ac7714cc8" -->
 ## System Architecture
 
 ```
@@ -53,8 +55,10 @@ resource_name: "system_tts_complete_design"
 └─────────────────────────────────────────────────────────────────────┘
 ```
 
+<!-- section_id: "9776b8cd-3838-4b41-9b99-930b2ed025dd" -->
 ## Three Use Cases
 
+<!-- section_id: "07c4b39a-9423-416e-9010-7c8fcabc5e33" -->
 ### 1. Highlight-and-Speak (Primary)
 
 The main use case. Highlight text anywhere, press Ctrl+Alt+S.
@@ -67,6 +71,7 @@ The main use case. Highlight text anywhere, press Ctrl+Alt+S.
 | Toggle | Press again while speaking to stop |
 | Design doc | `highlight_and_speak.md` |
 
+<!-- section_id: "f5d98ee9-852d-4cb1-88ed-55ff84300f33" -->
 ### 2. CLI Speak (Secondary)
 
 Terminal convenience for scripting and quick speech.
@@ -79,6 +84,7 @@ Terminal convenience for scripting and quick speech.
 | Stop | `speak -s` kills current speech |
 | Design doc | `cli_speak_command.md` |
 
+<!-- section_id: "032a1231-9fe1-41a5-9d16-816c28b98eee" -->
 ### 3. Speech Dispatcher (Tertiary)
 
 Infrastructure for any app that uses spd-say or libspeechd.
@@ -91,6 +97,7 @@ Infrastructure for any app that uses spd-say or libspeechd.
 | Orca | Installed but disabled (screen reader, not selective TTS) |
 | Design doc | `speech_dispatcher.md` |
 
+<!-- section_id: "84a07576-4738-4aec-8011-91c2e85a7025" -->
 ## Current State vs Target
 
 | Component | Current (Working) | Target (Kokoro Upgrade) |
@@ -105,6 +112,7 @@ Infrastructure for any app that uses spd-say or libspeechd.
 | API | None | OpenAI-compatible `/v1/audio/speech` |
 | Fallback | eSpeak NG (robotic) | Piper (still good quality) |
 
+<!-- section_id: "2bef1835-30bf-4878-b9c1-b8cf4b0288ee" -->
 ## Key Dependencies
 
 | Dependency | Role | Required By |
@@ -116,6 +124,7 @@ Infrastructure for any app that uses spd-say or libspeechd.
 | paplay | Audio playback | all three use cases |
 | X11 session | xclip works on X11 only | highlight-and-speak |
 
+<!-- section_id: "3654a737-b87d-4db1-85e7-0676901bcfbc" -->
 ## Migration Plan Summary
 
 1. Install Kokoro: `pip install kokoro-fastapi[gpu]`
@@ -127,6 +136,7 @@ Infrastructure for any app that uses spd-say or libspeechd.
 
 Full migration details: `kokoro_migration.md`
 
+<!-- section_id: "41f6c23e-61f3-4e5d-980a-605efb1997a7" -->
 ## File Map
 
 ```
@@ -153,6 +163,7 @@ Full migration details: `kokoro_migration.md`
 └── name: Speak Selection
 ```
 
+<!-- section_id: "d4d8ccef-8160-4e7f-89e8-f10ab92a744d" -->
 ## What's NOT Included (by design)
 
 - **Screen reader (Orca)**: Installed but disabled. Reads everything — not selective TTS.

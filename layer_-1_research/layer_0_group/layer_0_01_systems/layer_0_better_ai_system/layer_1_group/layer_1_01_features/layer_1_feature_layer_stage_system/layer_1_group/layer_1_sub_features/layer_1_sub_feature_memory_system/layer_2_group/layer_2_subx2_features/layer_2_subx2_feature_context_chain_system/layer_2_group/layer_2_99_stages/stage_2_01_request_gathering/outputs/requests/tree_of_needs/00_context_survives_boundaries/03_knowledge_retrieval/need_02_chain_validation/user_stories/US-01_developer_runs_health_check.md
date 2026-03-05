@@ -13,6 +13,7 @@ resource_name: "US-01_developer_runs_health_check"
 **I want** to run one command and get a unified report covering chain integrity, broken references, and stale knowledge,
 **So that** I fix everything in one pass rather than running three separate checks.
 
+<!-- section_id: "f39d21b4-58b2-4083-91d0-4f408eae7c14" -->
 ### What Happens
 
 1. User runs the chain health check command
@@ -20,6 +21,7 @@ resource_name: "US-01_developer_runs_health_check"
 3. Script produces a unified report with all three dimensions in one output
 4. User sees everything that needs fixing and addresses it in a single maintenance pass
 
+<!-- section_id: "a082c358-5f9b-4916-8c5d-a2ffeb3615e9" -->
 ### Acceptance Criteria
 
 - Single command invocation produces a unified report

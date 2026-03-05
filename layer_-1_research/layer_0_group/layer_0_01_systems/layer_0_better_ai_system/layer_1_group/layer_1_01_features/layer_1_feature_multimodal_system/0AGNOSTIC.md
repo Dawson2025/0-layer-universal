@@ -6,6 +6,7 @@ resource_name: "0AGNOSTIC"
 ---
 # 0AGNOSTIC.md - layer_1_feature_multimodal_system
 
+<!-- section_id: "53b981fc-3d5a-41ad-8dd9-0971baa3767b" -->
 ## Identity
 
 entity_id: "0481b56e-80a9-4ebc-9e9c-6dda3a9fca9d"
@@ -16,17 +17,21 @@ You are an agent at **Layer 1** (Feature), **Feature**: Multimodal System.
 - **Parent**: `../../0AGNOSTIC.md` (layer_0_better_ai_system)
 - **Children**: `layer_2_group/layer_2_sub_features/` contains 1 sub-feature (audio)
 
+<!-- section_id: "e5d59058-f8e6-4902-b4d2-54479848541c" -->
 ## Triggers
 Load this context when:
 - User mentions: multimodal, voice, vision, audio, image processing
 - Working on: Multimodal integration, new modality support
 - Entering: `layer_1_feature_multimodal_system/`
 
+<!-- section_id: "c32f4768-ea96-44bc-972c-30ec9ae420b8" -->
 ## Pointers
+<!-- section_id: "8c884a19-e409-4597-9dcb-f5c4d70ec4a4" -->
 ### On Entry
 1. Read `0INDEX.md` for current state
 2. Check `layer_0_group/layer_0_99_stages/` for stage progress
 
+<!-- section_id: "5e81a99c-62d2-4194-8855-e6a5c1376d2a" -->
 ### Navigation
 | Direction | Path |
 |-----------|------|
@@ -34,12 +39,14 @@ Load this context when:
 | Stages | `layer_1_group/layer_1_99_stages/` |
 | Audio sub-feature | `layer_2_group/layer_2_sub_features/layer_2_sub_feature_audio/` |
 
+<!-- section_id: "77a197ab-4e43-4b90-bec6-67efd0d56078" -->
 ## Where to Contribute
 | Work Type | Location |
 |-----------|----------|
 | Research | Appropriate stage `outputs/` directory |
 | Session notes | `.0agnostic/episodic_memory/` |
 
+<!-- section_id: "e527bc9b-94e9-4679-b6ce-573d82b5d4d2" -->
 ## Platform Dependencies
 Multimodal features (especially audio/TTS) depend on the local desktop environment. The local Ubuntu entity has been restructured as a proper entity with knowledge topics:
 

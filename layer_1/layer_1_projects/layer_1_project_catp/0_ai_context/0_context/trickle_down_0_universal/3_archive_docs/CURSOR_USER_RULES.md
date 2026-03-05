@@ -5,6 +5,7 @@ resource_name: "CURSOR_USER_RULES"
 ---
 # Cursor User Rules - Copy & Paste Ready
 
+<!-- section_id: "ffc41aeb-87ca-4859-b87d-69c50bdea696" -->
 ## 🚨 **CRITICAL: Terminal Tool Replacement Rules**
 
 Copy and paste the following into your Cursor User Rules:
@@ -59,6 +60,7 @@ Test the solution with: `python3 scripts/terminal_wrapper.py --script scripts/si
 
 ---
 
+<!-- section_id: "a33ad693-364e-4576-8439-9891711c7d77" -->
 ## 📋 **How to Add to Cursor Settings**
 
 1. **Open Cursor Settings** (Ctrl/Cmd + ,)
@@ -66,6 +68,7 @@ Test the solution with: `python3 scripts/terminal_wrapper.py --script scripts/si
 3. **Paste the rules above** into the text area
 4. **Save settings**
 
+<!-- section_id: "761ce3fb-700b-4fd6-a10e-59ccd5b4d0d5" -->
 ## 🎯 **What This Accomplishes**
 
 - **Prevents terminal hanging** on Python script execution
@@ -74,6 +77,7 @@ Test the solution with: `python3 scripts/terminal_wrapper.py --script scripts/si
 - **Maintains productivity** without manual intervention
 - **Eliminates the need** to remember specific commands
 
+<!-- section_id: "12b86747-cb12-40d9-b6d1-b1727574fe03" -->
 ## ✅ **Testing the Rules**
 
 After adding these rules, test with:

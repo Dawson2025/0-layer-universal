@@ -13,6 +13,7 @@ resource_name: "US-03_child_receives_handoff"
 **I want** the child entity to have an incoming handoff document explaining its purpose and expectations,
 **So that** the AI working on the child entity knows its role in the broader hierarchy without me re-explaining the parent context.
 
+<!-- section_id: "c3ea30c2-9498-49d7-aa9d-363f5a075940" -->
 ### What Happens
 
 1. User creates a new sub-feature entity (e.g., "create a memory system sub-feature")
@@ -21,6 +22,7 @@ resource_name: "US-03_child_receives_handoff"
 4. When the AI starts working on the child entity, it reads the handoff document first
 5. Child entity agent understands its purpose without reading the parent's full context
 
+<!-- section_id: "42dcaeb8-f1ad-44bb-8801-8da7814ac331" -->
 ### Acceptance Criteria
 
 - Incoming handoff document exists and is under 50 lines with clear scope and expectations

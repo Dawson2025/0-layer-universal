@@ -6,6 +6,7 @@ resource_name: "20251023_CloudTemplateTests_Resolution_v1.0"
 # Cloud Template Tests Resolution
 *Date: 2025-10-23*
 
+<!-- section_id: "bc5139e1-e065-4d5a-9361-dea9524376c7" -->
 ## 🎯 Problem Statement
 
 Three cloud template integration tests were failing with various issues:
@@ -15,8 +16,10 @@ Three cloud template integration tests were failing with various issues:
 
 Additionally, a production bug was discovered during test investigation.
 
+<!-- section_id: "c737dea4-4dc0-4c4d-814f-810629b4b11e" -->
 ## 🔍 Investigation
 
+<!-- section_id: "02e15409-e04d-4d39-aea1-cd1371290b32" -->
 ### Test Failures Analysis
 
 **Test 1: test_upload_template_to_cloud**
@@ -36,6 +39,7 @@ Additionally, a production bug was discovered during test investigation.
 - **Location**: `app.py:3123`
 - **Impact**: Endpoint fails in test environments with custom database paths; breaks local template functionality
 
+<!-- section_id: "74e571aa-8972-4624-b3a0-fb92423734a1" -->
 ### Production Bug Impact & Additional Discoveries
 
 The hardcoded database path bug affects:
@@ -51,8 +55,10 @@ The hardcoded database path bug affects:
 
 **Total Impact**: 5 endpoints were affected by hardcoded database paths, all now fixed.
 
+<!-- section_id: "04de6f12-228f-4e1e-9781-fef46fb8dafd" -->
 ## ✅ Solution Implemented
 
+<!-- section_id: "4f89eeca-c91c-4897-bff9-57b621211efd" -->
 ### Test Fixes
 
 **Test 1 Fix (test_upload_template_to_cloud)**:
@@ -103,6 +109,7 @@ assert mock_firestore.get_phoneme_template.called
 - Changed: `conn = sqlite3.connect('phonemes.db')`
 - To: `conn = sqlite3.connect(main.DB_NAME)`
 
+<!-- section_id: "f046d72a-0424-42be-8409-30d60947bc08" -->
 ### Production Bug Fixes (5 Total)
 
 **File**: `app.py`
@@ -128,8 +135,10 @@ conn = sqlite3.connect(main.DB_NAME)
 
 These fixes ensure all template-related endpoints respect the configured database location in all environments.
 
+<!-- section_id: "859d5ea5-e5ca-4977-900e-7f84bb193f50" -->
 ## 📊 Results
 
+<!-- section_id: "87d06d7e-c831-4ba5-a64c-ba23723d4293" -->
 ### Test Results
 All 8 cloud template tests now passing (100% success rate):
 - ✅ test_upload_template_to_cloud
@@ -141,6 +150,7 @@ All 8 cloud template tests now passing (100% success rate):
 - ✅ test_template_without_firebase
 - ✅ test_cloud_template_requires_authentication
 
+<!-- section_id: "b936b467-0593-4c01-a39c-d5bd6d547b89" -->
 ### Production Impact
 - **Bugs Fixed**: 5 endpoints with hardcoded database paths now work correctly in all environments
 - **Test Coverage**: Cloud template functionality fully tested and verified
@@ -148,29 +158,36 @@ All 8 cloud template tests now passing (100% success rate):
 - **Codebase Health**: Systematic bug hunting prevented future issues
 - **Reliability**: All template-related features now environment-agnostic
 
+<!-- section_id: "43697261-9b4e-47e4-9c10-52649e6b2fce" -->
 ## 🚀 Next Steps
 
+<!-- section_id: "a940fff7-5f11-40a8-ad01-290436e212bf" -->
 ### Recommended Actions
 1. ✅ **Code Review**: ~~Review other API endpoints for similar hardcoded database paths~~ **COMPLETED** - All 5 instances found and fixed
 2. **Test Coverage**: Add integration tests for other template-related endpoints
 3. **Documentation**: Update API documentation to reflect cloud template functionality
 4. **Monitoring**: Monitor production logs for any template-related issues
 
+<!-- section_id: "40c2750e-5b32-456a-a92a-89c6ab820f73" -->
 ### Potential Follow-up Work
 - ✅ ~~Search codebase for other instances of hardcoded `'phonemes.db'` strings~~ **COMPLETED** - No remaining instances
 - Add linting rule or static analysis to prevent hardcoded database paths in future
 - Consider centralizing database connection logic in a utility function
 - Add pre-commit hook to catch hardcoded paths before they reach the codebase
 
+<!-- section_id: "928b8a2b-32a3-4a07-8e16-35172512c7b4" -->
 ## 📁 Related Files
 
+<!-- section_id: "9818769e-d279-47ce-914d-5731f7f60c9f" -->
 ### Modified Files
 - `tests/integration/test_cloud_templates.py` - Fixed test mocks and assertions
 - `app.py` - Fixed hardcoded database path bugs (lines 3078, 3123, 3174, 3190, 3975)
 
+<!-- section_id: "fd125e59-be83-404b-90a9-b52cc2fe7714" -->
 ### Test Files
 - `tests/integration/test_cloud_templates.py` - All 8 tests passing
 
+<!-- section_id: "4ef835b1-eb4d-4baf-b671-def5cb46a6bb" -->
 ### API Endpoints Fixed
 **Production Bugs Fixed**:
 - `GET /admin/templates` - Admin templates management (app.py:3078)
@@ -183,6 +200,7 @@ All 8 cloud template tests now passing (100% success rate):
 - `POST /api/cloud-templates` - Upload template to cloud
 - `POST /api/cloud-templates/<template_id>/download` - Download cloud template
 
+<!-- section_id: "f1271f62-7300-4522-a22f-1fa9a3a0b4c7" -->
 ### Related Documentation
 - `/home/dawson/code/lang-trak-in-progress/docs/0_context/trickle_down_0_universal_instructions/0_instruction_docs/post-completion-documentation-protocol.md`
 - `/home/dawson/code/lang-trak-in-progress/docs/0_context/README.md`

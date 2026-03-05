@@ -6,14 +6,17 @@ resource_name: "README"
 ---
 # Tool Context Cascading
 
+<!-- section_id: "6e9a6f6a-8e6f-4acb-bab7-c42ee339c17f" -->
 ## Research Question
 
 How do the major AI coding tools handle context file cascading? Specifically: does each tool automatically walk up/down directory hierarchies loading its context file (CLAUDE.md, AGENTS.md, GEMINI.md, .cursorrules), or does each agent only see the single file in its working directory?
 
 This matters for the agent delegation system because: if tools natively cascade, the layer-stage hierarchy can rely on that behavior for context propagation. If they don't, agents need explicit instructions to load parent context.
 
+<!-- section_id: "d33ae8ef-f41c-4c8e-bb43-2be085dfd774" -->
 ## Findings
 
+<!-- section_id: "856c0b25-ebca-4e91-8070-2fbbcc20ef72" -->
 ### Claude Code (CLAUDE.md)
 
 **Cascading**: YES — upward walk + on-demand downward.
@@ -26,6 +29,7 @@ This matters for the agent delegation system because: if tools natively cascade,
 
 **Implication**: Full upward cascade is native. Agents at any level automatically see all parent context. This is the most natural fit for the layer-stage hierarchy.
 
+<!-- section_id: "209957c4-ba0e-4922-bfe2-a52cafb4dcec" -->
 ### OpenAI Codex (AGENTS.md)
 
 **Cascading**: YES — root-to-CWD walk.
@@ -37,6 +41,7 @@ This matters for the agent delegation system because: if tools natively cascade,
 
 **Implication**: Full cascade is native but in reverse direction (top-down). Same effect — agents see all ancestor context.
 
+<!-- section_id: "73d26159-e44d-4012-8274-04af5de873d3" -->
 ### Google Gemini CLI (GEMINI.md)
 
 **Cascading**: YES — most aggressive, bidirectional BFS.
@@ -48,6 +53,7 @@ This matters for the agent delegation system because: if tools natively cascade,
 
 **Implication**: Agents automatically see both ancestor AND descendant context. The layer-stage hierarchy's full tree is potentially visible.
 
+<!-- section_id: "1ea7c39b-d0e1-4955-83c0-f36d2c109d76" -->
 ### Cursor (.cursorrules / Rules)
 
 **Cascading**: PARTIAL — glob-based targeting, not automatic walk.
@@ -61,6 +67,7 @@ This matters for the agent delegation system because: if tools natively cascade,
 
 **Implication**: Cursor cannot rely on hierarchical cascading. Instead, each rule must explicitly declare its scope via glob patterns. This is more flexible (rules can apply to cross-cutting concerns) but doesn't naturally support the parent→child inheritance model.
 
+<!-- section_id: "0a452ccd-ff4d-4ca5-ba9d-1a16d1239268" -->
 ## Summary Table
 
 | Tool | Context File | Cascades? | Direction | Mechanism |
@@ -70,8 +77,10 @@ This matters for the agent delegation system because: if tools natively cascade,
 | Gemini CLI | `GEMINI.md` | YES | Both (up + BFS down 200 dirs) | Automatic JIT |
 | Cursor | `.cursorrules` / Rules | PARTIAL | N/A — glob targeting | Rule-type system |
 
+<!-- section_id: "79564298-822c-4531-9b31-65f0f3cb6fd8" -->
 ## Design Implications
 
+<!-- section_id: "d72ee816-4ce0-4b82-b80c-31d44f8a6e81" -->
 ### What This Means for the Agent Delegation System
 
 1. **Three of four tools cascade natively**: The layer-stage hierarchy can rely on automatic context propagation for Claude Code, Codex, and Gemini CLI. Only Cursor needs special handling.
@@ -88,6 +97,7 @@ This matters for the agent delegation system because: if tools natively cascade,
 
 5. **The key insight**: Native cascading is an argument FOR minimal content per level, not against it. Because tools will automatically merge all ancestors, verbosity compounds. The minimal context model (own identity + neighbor interfaces + on-demand access) becomes even more important WITH cascading than without it.
 
+<!-- section_id: "b23b9caa-683b-4670-93d5-9e05dce72c00" -->
 ## Sources
 
 - Perplexity search: "Claude Code CLAUDE.md file cascading directory hierarchy loading" (2026-02-26)
@@ -96,6 +106,7 @@ This matters for the agent delegation system because: if tools natively cascade,
 - Perplexity search: "Cursor AI .cursorrules context file cascading directory hierarchy" (2026-02-26)
 - Perplexity ask: "AI coding tools context file cascading" (2026-02-26)
 
+<!-- section_id: "4c2f799c-c2a8-46b7-aa1a-727b0eba7632" -->
 ## Date
 
 2026-02-26

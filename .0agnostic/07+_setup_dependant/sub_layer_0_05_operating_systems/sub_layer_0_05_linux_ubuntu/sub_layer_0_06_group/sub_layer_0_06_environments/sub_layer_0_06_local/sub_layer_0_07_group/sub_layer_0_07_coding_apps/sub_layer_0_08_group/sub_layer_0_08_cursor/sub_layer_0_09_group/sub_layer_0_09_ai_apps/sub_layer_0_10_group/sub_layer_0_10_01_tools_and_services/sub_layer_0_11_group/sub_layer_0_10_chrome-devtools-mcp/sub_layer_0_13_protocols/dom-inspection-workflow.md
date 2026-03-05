@@ -7,18 +7,22 @@ resource_name: "dom-inspection-workflow"
 
 This workflow describes how to use Chrome DevTools MCP to inspect, query, and manipulate the Document Object Model (DOM) of web pages.
 
+<!-- section_id: "56f58b11-2390-4455-9c39-f22bac9e8068" -->
 ## Overview
 
 The DOM domain of Chrome DevTools Protocol provides comprehensive access to the page's document structure. This workflow covers querying elements, reading attributes, observing mutations, and executing JavaScript in page context.
 
+<!-- section_id: "c65563a8-3c64-4f3b-a7d6-4dace3e93b5b" -->
 ## Prerequisites
 
 1. Chrome running with remote debugging enabled
 2. Chrome DevTools MCP server connected
 3. Target page loaded in browser
 
+<!-- section_id: "291cf8c7-9546-4264-a3c4-8b890a584ea0" -->
 ## Workflow Steps
 
+<!-- section_id: "f86f83b8-1ca7-4fb3-b4ff-975134de59b4" -->
 ### Step 1: Enable DOM Domain
 
 Enable the DOM domain to access document structure:
@@ -35,6 +39,7 @@ This enables:
 - Attribute access
 - DOM mutation observation
 
+<!-- section_id: "736fbb29-af32-4a1e-a441-f6316be98d92" -->
 ### Step 2: Get Document Root
 
 Retrieve the document root node:
@@ -51,6 +56,7 @@ The document node provides:
 - `nodeType`: Type of node (1=element, 3=text, etc.)
 - `children`: Child nodes
 
+<!-- section_id: "8dcb84e9-2fb3-41ac-b1b5-6df35f5d1cdc" -->
 ### Step 3: Query Elements
 
 Find elements using CSS selectors or XPath:
@@ -69,6 +75,7 @@ Input: query (XPath expression)
 Output: searchId, resultCount
 ```
 
+<!-- section_id: "4576ab84-f17c-4f4f-b73b-0960c14dc1dc" -->
 ### Step 4: Inspect Element Properties
 
 For each element, retrieve:
@@ -94,6 +101,7 @@ Input: nodeId
 Output: content, padding, border, margin boxes
 ```
 
+<!-- section_id: "9f73135e-dfcf-40e5-9d03-5b20bb1fe203" -->
 ### Step 5: Observe DOM Changes
 
 Monitor DOM mutations in real-time:
@@ -103,8 +111,10 @@ Method: DOM.setChildNodesRequested
 Events: DOM.childNodeInserted, DOM.childNodeRemoved, DOM.attributeModified
 ```
 
+<!-- section_id: "61761570-20e2-4626-a2d5-47559821506f" -->
 ## Common Use Cases
 
+<!-- section_id: "889abca3-69a7-4916-b128-c3a9f4305106" -->
 ### Use Case 1: Find Elements by Selector
 
 **Scenario:** Locate specific elements on the page
@@ -128,6 +138,7 @@ Events: DOM.childNodeInserted, DOM.childNodeRemoved, DOM.attributeModified
 "nav a[href^='/']"        - Navigation links
 ```
 
+<!-- section_id: "324a8a93-357b-44ed-98d0-dadc72dcb9d7" -->
 ### Use Case 2: Verify Element State
 
 **Scenario:** Check if element has expected attributes/content
@@ -148,6 +159,7 @@ Events: DOM.childNodeInserted, DOM.childNodeRemoved, DOM.attributeModified
 - Does text content match expected?
 - Are ARIA attributes correct?
 
+<!-- section_id: "97307d14-e2c7-45a8-aa09-f9fd48ecb013" -->
 ### Use Case 3: Monitor Dynamic Content
 
 **Scenario:** Track DOM changes as application runs
@@ -168,6 +180,7 @@ Events: DOM.childNodeInserted, DOM.childNodeRemoved, DOM.attributeModified
 - Monitoring AJAX-driven changes
 - Debugging rendering issues
 
+<!-- section_id: "ab28304e-7fc5-495e-bf11-468446c46942" -->
 ### Use Case 4: Accessibility Inspection
 
 **Scenario:** Verify accessibility tree structure
@@ -188,6 +201,7 @@ Events: DOM.childNodeInserted, DOM.childNodeRemoved, DOM.attributeModified
 - Landmarks properly defined
 - Focus order logical
 
+<!-- section_id: "7bfde103-2902-4c4f-83b3-d57ff202c31a" -->
 ### Use Case 5: Form State Analysis
 
 **Scenario:** Inspect form field values and states
@@ -207,8 +221,10 @@ Query: "form#loginForm input, form#loginForm select"
 Check: value, validity, disabled, required, type
 ```
 
+<!-- section_id: "6c2d4126-2ff1-4e49-9bdd-07eb77833c60" -->
 ## Advanced Techniques
 
+<!-- section_id: "253276a9-60a2-4603-a04a-864c0c2b3157" -->
 ### Execute JavaScript in Page Context
 
 Run JavaScript and interact with DOM directly:
@@ -234,6 +250,7 @@ document.querySelector('input[name="email"]').value
 document.querySelectorAll('ul.items li').length
 ```
 
+<!-- section_id: "7c1c26d6-a51e-4add-b0fc-b8ad89976206" -->
 ### Capture Element Screenshot
 
 Screenshot a specific element:
@@ -243,6 +260,7 @@ Method: DOM.getBoxModel (get element bounds)
 Method: Page.captureScreenshot (with clip region)
 ```
 
+<!-- section_id: "2f5f8ac3-8e46-40b9-b0e7-63bb5d844694" -->
 ### Set Element Attributes
 
 Modify element attributes:
@@ -258,6 +276,7 @@ Input: nodeId, name, value
 - Change visibility for testing
 - Add/remove classes
 
+<!-- section_id: "501aef4d-8d77-45cf-8f26-6b7ef7ff80ca" -->
 ### Remove Elements
 
 Remove elements from DOM:
@@ -272,8 +291,10 @@ Input: nodeId
 - Hide popups/modals
 - Clean up test artifacts
 
+<!-- section_id: "4085a959-2f9a-461c-a6d1-bca41f3dcb96" -->
 ## Output Examples
 
+<!-- section_id: "89792ce8-f6d0-4016-b9d9-6afe6846ae46" -->
 ### Document Node
 
 ```json
@@ -305,6 +326,7 @@ Input: nodeId
 }
 ```
 
+<!-- section_id: "d712dc4c-a3c8-49e2-86cd-78bb420c155e" -->
 ### Element with Attributes
 
 ```json
@@ -323,6 +345,7 @@ Input: nodeId
 }
 ```
 
+<!-- section_id: "f18e4ed5-7628-4c56-8a79-0988fc68aa93" -->
 ### Box Model
 
 ```json
@@ -338,6 +361,7 @@ Input: nodeId
 }
 ```
 
+<!-- section_id: "70481878-2bf4-4a91-b319-0b91de1f47a4" -->
 ### Computed Styles
 
 ```json
@@ -353,8 +377,10 @@ Input: nodeId
 }
 ```
 
+<!-- section_id: "4455668d-ba6e-43a8-be50-305257ac99f7" -->
 ## Element Query Reference
 
+<!-- section_id: "5029b0a0-c54b-4bd2-89af-e3e24c426349" -->
 ### CSS Selector Syntax
 
 | Selector | Description | Example |
@@ -376,6 +402,7 @@ Input: nodeId
 | `:nth-child(n)` | Nth child | `tr:nth-child(odd)` |
 | `:not(sel)` | Negation | `input:not([disabled])` |
 
+<!-- section_id: "d4be05b5-8e7c-486d-b8a7-e761290a4648" -->
 ### XPath Syntax
 
 | XPath | Description | Example |
@@ -392,8 +419,10 @@ Input: nodeId
 | `//tag[1]` | First match | `//li[1]` |
 | `//tag[last()]` | Last match | `//li[last()]` |
 
+<!-- section_id: "499a40ca-55ab-461c-bd7a-0d8777729cc8" -->
 ## Troubleshooting
 
+<!-- section_id: "caf7de4d-edcb-41dd-a3c4-2195e05eac60" -->
 ### Element Not Found
 
 **Problem:** querySelector returns null
@@ -405,6 +434,7 @@ Input: nodeId
 4. Shadow DOM elements need special handling
 5. Use broader selector then narrow down
 
+<!-- section_id: "97707b1a-2900-4204-ba04-ef4b18df649b" -->
 ### Stale Node ID
 
 **Problem:** nodeId no longer valid
@@ -415,6 +445,7 @@ Input: nodeId
 3. Use DOM.resolveNode to get JavaScript reference
 4. Cache selectors, not nodeIds
 
+<!-- section_id: "89926f76-7956-4635-8578-e7056b0ed0cd" -->
 ### Cannot Access Shadow DOM
 
 **Problem:** Elements inside shadow DOM not accessible
@@ -424,6 +455,7 @@ Input: nodeId
 2. Get shadow root and query within it
 3. Use JavaScript evaluation to access shadow DOM
 
+<!-- section_id: "3c29efa1-3d93-464e-bfd1-f64f72cfd801" -->
 ### Computed Styles Not Available
 
 **Problem:** CSS.getComputedStyleForNode fails
@@ -435,6 +467,7 @@ Input: nodeId
 
 ---
 
+<!-- section_id: "25c6ce20-bc5c-441e-8b25-2fb9b8c3685a" -->
 ## Related Workflows
 
 - [Network Inspection Workflow](./network-inspection-workflow.md)

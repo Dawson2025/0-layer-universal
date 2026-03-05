@@ -3,6 +3,7 @@ resource_id: "359c28a9-011d-4a63-aedb-2151dca5cadd"
 resource_type: "knowledge"
 resource_name: "IDEAL_AI_MANAGER_HIERARCHY_SYSTEM"
 ---
+<!-- section_id: "374d7f67-b525-444a-9d65-9c39a1ee9711" -->
 ## IDEAL AI Manager Hierarchy System
 
 This document captures an idealized **AI manager hierarchy system** derived from the research conversation in `../../../chat_history/ai-manager-hierarchy-system-research.md`.  
@@ -17,8 +18,10 @@ If something exists in the research (or is added later) and fits the patterns de
 
 ---
 
+<!-- section_id: "bb5635f4-5d67-4fa8-bb3e-68d0415bd6c2" -->
 ## 1. Goals and Core Ideas
 
+<!-- section_id: "c8203a6d-b8a8-47fd-9f25-603252925120" -->
 ### 1.1 High-level Goal
 
 Build an **Agent Operating System (Agent OS)** for software development that:
@@ -31,6 +34,7 @@ Build an **Agent Operating System (Agent OS)** for software development that:
 - Keeps **instructions sticky** via system-level or system-like prompts instead of bloated chat history.
 - Remains **tool-agnostic and future-proof**.
 
+<!-- section_id: "1d6cf1e8-ea64-46d8-a4e3-f69fef284e15" -->
 ### 1.2 Non-exclusion and Discovery Principles
 
 To avoid hidden assumptions:
@@ -49,8 +53,10 @@ To avoid hidden assumptions:
 
 ---
 
+<!-- section_id: "b56499ee-a275-4275-b512-1e59fb63d1f3" -->
 ## 2. Architecture Overview (Layers, Stages, Agents)
 
+<!-- section_id: "3ac52cd8-69e0-4f10-b2c3-e1930ca29d0e" -->
 ### 2.1 Generic Layer Hierarchy
 
 Layers represent **levels of abstraction/specificity**, similar to CSS:
@@ -88,6 +94,7 @@ Every layer `L` has:
 
 The system is defined for **any number of layers**; L0–L3/L4 are common, but it can extend deeper where useful.
 
+<!-- section_id: "c852428f-2e19-4872-9fb8-537e38f3676a" -->
 ### 2.2 Chronological Stage Pipeline
 
 Stages represent **time-ordered roles** in a development loop.  
@@ -135,6 +142,7 @@ The stage set is **open**: new stages can be added as long as they:
 - Produce a compatible handoff as output.
 - Respect the “don’t destroy previous stages’ artifacts” rule (append or refine).
 
+<!-- section_id: "ddda49eb-6529-4f76-a502-194a87c4de0c" -->
 ### 2.3 Manager / Sub-Manager / Worker Model
 
 The system uses a generic **Manager / Worker** abstraction:
@@ -162,8 +170,10 @@ Workers may themselves be managers of deeper sub-layers (e.g., L3 Manager contro
 
 ---
 
+<!-- section_id: "d85544ff-0d9d-4859-9749-75021795721e" -->
 ## 3. Tool Abstraction and Current Specializations
 
+<!-- section_id: "76c669f0-dce9-4af4-8541-6d476c4ce04a" -->
 ### 3.1 Generic Tool Interface
 
 Any tool (CLI, IDE agent, remote API) participating in this system is modeled as:
@@ -185,6 +195,7 @@ Any tool (CLI, IDE agent, remote API) participating in this system is modeled as
 This interface is independent of vendor (Anthropic, OpenAI, Google, local LLMs) and independent of particular CLIs.  
 Claude Code, Codex CLI, Gemini CLI, Cursor IDE, as well as frameworks like LangGraph/AutoGen/CrewAI, can all be seen as implementations or compositions of this interface.
 
+<!-- section_id: "da45955b-2595-4b2f-8319-5daf4800342f" -->
 ### 3.2 Current Tool Instances (Examples)
 
 These are **current** examples from the research, not an exhaustive or permanent list.
@@ -262,8 +273,10 @@ They are not mandated; they are compatible implementations of the patterns defin
 
 ---
 
+<!-- section_id: "9b03acf6-3b22-46ef-80dc-33324d915a7b" -->
 ## 4. Filesystem Layout and Cascading Rules
 
+<!-- section_id: "1cd8fe13-d33a-4748-8e1f-85b45038eb3b" -->
 ### 4.1 Generic Layout Pattern
 
 The filesystem acts as a **universal configuration database**.  
@@ -291,6 +304,7 @@ The exact numeric prefixes can vary; what matters is that:
   - Stage type.
   - Manager vs worker roles.
 
+<!-- section_id: "103cc973-74dd-4a4e-ba02-5f73e82bf0bb" -->
 ### 4.2 Context Cascading
 
 Every context system follows a **cascading rule**:
@@ -308,6 +322,7 @@ Every context system follows a **cascading rule**:
 
 This rule applies **generically**: any new context file type for a new tool can be incorporated by specifying a similar cascading rule.
 
+<!-- section_id: "b0736e62-cf90-42cb-af74-ca562f728b10" -->
 ### 4.3 Example Cascade (Informal)
 
 For a login implementation stage at L3:
@@ -327,8 +342,10 @@ Each tool’s view:
 
 ---
 
+<!-- section_id: "0ecaa189-b87c-4e44-93bf-926337fb1075" -->
 ## 5. Handoff Protocol (Schema and Flow)
 
+<!-- section_id: "38535d61-16a1-4cbb-989f-ae008ed0f83d" -->
 ### 5.1 Generic Handoff Schema
 
 Handoffs are **versioned, forward-compatible** documents.  
@@ -349,6 +366,7 @@ A generic JSON structure might include:
 
 The schema is **extensible**: additional fields are allowed and should be ignored by agents that do not understand them.
 
+<!-- section_id: "653423ab-827b-4910-9a5e-0d16377171cc" -->
 ### 5.2 Vertical Handoffs (Layer-to-Layer)
 
 Vertical handoffs propagate work **up and down the abstraction stack**:
@@ -362,6 +380,7 @@ These handoffs allow:
 - High-level agents to push constraints downward.
 - Low-level agents to report results upward with enough context for aggregation.
 
+<!-- section_id: "417ff644-154d-4529-adb6-a5a1e77e3f2f" -->
 ### 5.3 Horizontal Handoffs (Stage-to-Stage)
 
 Horizontal handoffs move work through the **chronological pipeline** within a layer:
@@ -378,8 +397,10 @@ Stages may be skipped or repeated if the handoff’s `status` or `kind` indicate
 
 ---
 
+<!-- section_id: "2cb500b5-7ef4-44bf-a320-8c7822ac9294" -->
 ## 6. Execution and Orchestration Patterns
 
+<!-- section_id: "f834deb8-537d-4153-b112-d7f7f25b1ee4" -->
 ### 6.1 Abstract Command Model
 
 At runtime, all actions can be seen as calls to a generic function:
@@ -396,6 +417,7 @@ Where:
 
 Concrete wrapper scripts (e.g., `l3-impl-codex`, `l1-request-gemini`) are **named instances** of this interface.
 
+<!-- section_id: "39ca7b2c-2f2a-41b2-a0f6-9fa42bd0d0ac" -->
 ### 6.2 Wrapper Responsibilities (Manager vs Stage)
 
 Two broad wrapper types:
@@ -416,6 +438,7 @@ Two broad wrapper types:
 
 The design does not limit how many wrappers exist; new wrappers can be added freely if they obey these responsibilities.
 
+<!-- section_id: "0ac9157b-ff5d-49f0-b024-5af6c344f32a" -->
 ### 6.3 Parallel Execution
 
 Managers can run multiple workers **in parallel** as long as:
@@ -433,6 +456,7 @@ Typical patterns:
 
 This parallelism can scale to many workers across L3/L4 and beyond.
 
+<!-- section_id: "923a1fc4-e18e-47a3-83bd-32fa45f4a5df" -->
 ### 6.4 Supervisor Patterns
 
 Supervisors implement generic orchestration logic outside any specific agent:
@@ -452,8 +476,10 @@ Frameworks like LangGraph or AutoGen can be used to implement or enhance these s
 
 ---
 
+<!-- section_id: "e1d63a85-b270-46d3-ad96-59debc6a00f8" -->
 ## 7. OS and Tool Variant “Quartet” Pattern
 
+<!-- section_id: "f4745b77-6337-4fc6-a3fe-4924a346488e" -->
 ### 7.1 OS Variant Dimension
 
 OS differences (WSL, Ubuntu, Windows, macOS, etc.) are treated as a separate **dimension** orthogonal to layers, stages, and tools:
@@ -466,6 +492,7 @@ OS differences (WSL, Ubuntu, Windows, macOS, etc.) are treated as a separate **d
 
 Where `<os-id>` is open-ended (e.g., `wsl`, `ubuntu`, `windows`, `macos`, `termux`, `freebsd`).
 
+<!-- section_id: "a78d2006-5a83-40df-83fc-9b01e8dc0c40" -->
 ### 7.2 Auto-Selection
 
 Launchers or supervisors:
@@ -479,6 +506,7 @@ Launchers or supervisors:
 
 This pattern generalizes easily to new OSes: just add a new `os/<os-id>/` folder and detection rule.
 
+<!-- section_id: "9ca5e5c0-20a0-4838-a2b4-546602194ecb" -->
 ### 7.3 Tool Extension
 
 New tools can be integrated by:
@@ -491,6 +519,7 @@ The Tool Interface and OS variant patterns ensure this can be done without revis
 
 ---
 
+<!-- section_id: "d5e72f49-1834-41d3-98ca-8df36e572074" -->
 ## 8. Token and Responsibility Strategy (Policy)
 
 Tool usage is governed by a **policy mapping**:
@@ -520,8 +549,10 @@ The policy is continuously revisable: future models (e.g., Gemini 3 or new local
 
 ---
 
+<!-- section_id: "fba37ceb-f5c6-497a-bb0a-01db5779e349" -->
 ## 9. Extensibility, Open World, and Additional Themes
 
+<!-- section_id: "6216f2e3-e296-47ab-a181-e518be7d3875" -->
 ### 9.1 Extending Layers and Stages
 
 - New layers (`layer_4_*`, `layer_5_*`, etc.) can be introduced by:
@@ -534,6 +565,7 @@ The policy is continuously revisable: future models (e.g., Gemini 3 or new local
   - Defining their role and handoff transformations.
   - Updating the policy mapping to route tasks to appropriate tools.
 
+<!-- section_id: "0c55e510-a923-4dfb-95ef-3c23b4cc1a60" -->
 ### 9.2 Additional Concepts from the Research
 
 The research also touches on:
@@ -546,6 +578,7 @@ The research also touches on:
 These are compatible with the patterns here and can be expanded into dedicated documents or sections as needed.  
 They are not considered “out of scope” merely because they are summarized lightly here.
 
+<!-- section_id: "7f4a4f5b-8369-432d-8df0-1c650bc1dcc1" -->
 ### 9.3 Summary-Neutrality and Future Work
 
 This specification does **not** claim the research is only about one thing.  

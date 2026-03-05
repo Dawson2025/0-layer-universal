@@ -15,12 +15,14 @@ description: "Task list template for feature implementation"
 
 **Organization**: Tasks are grouped by user story to enable independent implementation and testing of each story.
 
+<!-- section_id: "c9a60a47-c03d-4d8c-ba55-444e28bb0d53" -->
 ## Format: `[ID] [P?] [Story] Description`
 
 - **[P]**: Can run in parallel (different files, no dependencies)
 - **[Story]**: Which user story this task belongs to (e.g., US1, US2, US3)
 - Include exact file paths in descriptions
 
+<!-- section_id: "0f483354-5f2a-4190-9956-e413d41fbe41" -->
 ## Path Conventions
 
 - **Single project**: `src/`, `tests/` at repository root
@@ -47,6 +49,7 @@ description: "Task list template for feature implementation"
   ============================================================================
 -->
 
+<!-- section_id: "f6d6c145-21d5-4dcd-87b6-962e94d22577" -->
 ## Phase 1: Setup (Shared Infrastructure)
 
 **Purpose**: Project initialization and basic structure
@@ -57,6 +60,7 @@ description: "Task list template for feature implementation"
 
 ---
 
+<!-- section_id: "6b9ae2e5-d34a-4ea9-87c9-af0712ecc1ef" -->
 ## Phase 2: Foundational (Blocking Prerequisites)
 
 **Purpose**: Core infrastructure that MUST be complete before ANY user story can be implemented
@@ -76,12 +80,14 @@ Examples of foundational tasks (adjust based on your project):
 
 ---
 
+<!-- section_id: "869dcf8c-d1b3-47fb-b4ff-4af3deda04f3" -->
 ## Phase 3: User Story 1 - [Title] (Priority: P1) 🎯 MVP
 
 **Goal**: [Brief description of what this story delivers]
 
 **Independent Test**: [How to verify this story works on its own]
 
+<!-- section_id: "535cb771-7a72-44d0-ac9d-c6ad34ca5369" -->
 ### Tests for User Story 1 (OPTIONAL - only if tests requested) ⚠️
 
 > **NOTE: Write these tests FIRST, ensure they FAIL before implementation**
@@ -89,6 +95,7 @@ Examples of foundational tasks (adjust based on your project):
 - [ ] T010 [P] [US1] Contract test for [endpoint] in tests/contract/test_[name].py
 - [ ] T011 [P] [US1] Integration test for [user journey] in tests/integration/test_[name].py
 
+<!-- section_id: "702dca95-6b74-4219-9527-500405668a40" -->
 ### Implementation for User Story 1
 
 - [ ] T012 [P] [US1] Create [Entity1] model in src/models/[entity1].py
@@ -102,17 +109,20 @@ Examples of foundational tasks (adjust based on your project):
 
 ---
 
+<!-- section_id: "bbbc6990-d360-4899-ab5e-77ee1766b543" -->
 ## Phase 4: User Story 2 - [Title] (Priority: P2)
 
 **Goal**: [Brief description of what this story delivers]
 
 **Independent Test**: [How to verify this story works on its own]
 
+<!-- section_id: "1bfe6198-1571-43a9-a02f-e5a42dec0363" -->
 ### Tests for User Story 2 (OPTIONAL - only if tests requested) ⚠️
 
 - [ ] T018 [P] [US2] Contract test for [endpoint] in tests/contract/test_[name].py
 - [ ] T019 [P] [US2] Integration test for [user journey] in tests/integration/test_[name].py
 
+<!-- section_id: "83d21b15-a093-473f-8267-bede7e9e219e" -->
 ### Implementation for User Story 2
 
 - [ ] T020 [P] [US2] Create [Entity] model in src/models/[entity].py
@@ -124,17 +134,20 @@ Examples of foundational tasks (adjust based on your project):
 
 ---
 
+<!-- section_id: "3b62f391-d345-4602-9768-a941be3eaae0" -->
 ## Phase 5: User Story 3 - [Title] (Priority: P3)
 
 **Goal**: [Brief description of what this story delivers]
 
 **Independent Test**: [How to verify this story works on its own]
 
+<!-- section_id: "55332017-b4a9-49b8-b0eb-faae70ebd4f9" -->
 ### Tests for User Story 3 (OPTIONAL - only if tests requested) ⚠️
 
 - [ ] T024 [P] [US3] Contract test for [endpoint] in tests/contract/test_[name].py
 - [ ] T025 [P] [US3] Integration test for [user journey] in tests/integration/test_[name].py
 
+<!-- section_id: "3b212220-e83f-4981-88c2-1a8464235293" -->
 ### Implementation for User Story 3
 
 - [ ] T026 [P] [US3] Create [Entity] model in src/models/[entity].py
@@ -149,6 +162,7 @@ Examples of foundational tasks (adjust based on your project):
 
 ---
 
+<!-- section_id: "4e15dee2-cf30-493d-8d87-3e45c10f9b70" -->
 ## Phase N: Polish & Cross-Cutting Concerns
 
 **Purpose**: Improvements that affect multiple user stories
@@ -162,8 +176,10 @@ Examples of foundational tasks (adjust based on your project):
 
 ---
 
+<!-- section_id: "463ff6a5-b47a-4629-b1f5-709abcd5eda6" -->
 ## Dependencies & Execution Order
 
+<!-- section_id: "21819ac8-f7b7-4ce6-8524-ffa4a04f2e81" -->
 ### Phase Dependencies
 
 - **Setup (Phase 1)**: No dependencies - can start immediately
@@ -173,12 +189,14 @@ Examples of foundational tasks (adjust based on your project):
   - Or sequentially in priority order (P1 → P2 → P3)
 - **Polish (Final Phase)**: Depends on all desired user stories being complete
 
+<!-- section_id: "1a72ffbf-04bb-43af-9d98-e4cc4b3e9f78" -->
 ### User Story Dependencies
 
 - **User Story 1 (P1)**: Can start after Foundational (Phase 2) - No dependencies on other stories
 - **User Story 2 (P2)**: Can start after Foundational (Phase 2) - May integrate with US1 but should be independently testable
 - **User Story 3 (P3)**: Can start after Foundational (Phase 2) - May integrate with US1/US2 but should be independently testable
 
+<!-- section_id: "2e442b06-9c7b-4737-a56e-1907745358bc" -->
 ### Within Each User Story
 
 - Tests (if included) MUST be written and FAIL before implementation
@@ -187,6 +205,7 @@ Examples of foundational tasks (adjust based on your project):
 - Core implementation before integration
 - Story complete before moving to next priority
 
+<!-- section_id: "059043fa-92ff-46db-8dc5-ae4683cbd75f" -->
 ### Parallel Opportunities
 
 - All Setup tasks marked [P] can run in parallel
@@ -198,6 +217,7 @@ Examples of foundational tasks (adjust based on your project):
 
 ---
 
+<!-- section_id: "7e6f8134-1a35-4ca3-a9b9-d4756316ee0b" -->
 ## Parallel Example: User Story 1
 
 ```bash
@@ -212,8 +232,10 @@ Task: "Create [Entity2] model in src/models/[entity2].py"
 
 ---
 
+<!-- section_id: "ed1364a8-cc76-420d-845a-d8e47b5d6ccd" -->
 ## Implementation Strategy
 
+<!-- section_id: "e597d347-7d1b-46b2-ba26-5692ce9431b3" -->
 ### MVP First (User Story 1 Only)
 
 1. Complete Phase 1: Setup
@@ -222,6 +244,7 @@ Task: "Create [Entity2] model in src/models/[entity2].py"
 4. **STOP and VALIDATE**: Test User Story 1 independently
 5. Deploy/demo if ready
 
+<!-- section_id: "f47908db-617a-4e55-aa82-51d04c6debdd" -->
 ### Incremental Delivery
 
 1. Complete Setup + Foundational → Foundation ready
@@ -230,6 +253,7 @@ Task: "Create [Entity2] model in src/models/[entity2].py"
 4. Add User Story 3 → Test independently → Deploy/Demo
 5. Each story adds value without breaking previous stories
 
+<!-- section_id: "9097dde5-80cf-469a-8735-72fa3050af5c" -->
 ### Parallel Team Strategy
 
 With multiple developers:
@@ -243,6 +267,7 @@ With multiple developers:
 
 ---
 
+<!-- section_id: "1186162b-b6b3-4ca9-9855-26aaddfe1ba9" -->
 ## Notes
 
 - [P] tasks = different files, no dependencies

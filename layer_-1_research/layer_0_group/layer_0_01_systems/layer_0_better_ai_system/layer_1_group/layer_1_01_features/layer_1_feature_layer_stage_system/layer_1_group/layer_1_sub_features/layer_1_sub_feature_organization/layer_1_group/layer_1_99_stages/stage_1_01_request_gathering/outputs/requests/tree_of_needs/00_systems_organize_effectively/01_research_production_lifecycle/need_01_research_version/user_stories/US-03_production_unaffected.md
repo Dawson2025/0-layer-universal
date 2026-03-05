@@ -9,6 +9,7 @@ resource_name: "US-03_production_unaffected"
 **I want** research entity changes to be fully isolated from production content,
 **So that** no experimental work — whether successful or failed — can accidentally break the stable patterns that agents and users depend on.
 
+<!-- section_id: "8bfc0ebe-7016-4b33-be8d-171a61e2a9ec" -->
 ## Acceptance Criteria
 
 **Scenario 1: Research modifications stay within research boundaries**

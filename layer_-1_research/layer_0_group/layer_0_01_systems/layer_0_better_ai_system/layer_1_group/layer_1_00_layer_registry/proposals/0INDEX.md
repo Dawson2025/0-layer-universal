@@ -6,6 +6,7 @@ resource_name: "0INDEX"
 ---
 # Proposals Index
 
+<!-- section_id: "c87d64d2-350f-4064-85aa-d8034ce09f16" -->
 ## Structure
 
 ```
@@ -21,6 +22,7 @@ proposals/
 └── archived/         # Historical/superseded proposals
 ```
 
+<!-- section_id: "1fa83536-f7df-4d7c-8338-3157aa74d5ce" -->
 ## Staging Workflow
 
 ```
@@ -31,6 +33,7 @@ Each proposal progresses through full 01-11 stages at each level before graduati
 
 ---
 
+<!-- section_id: "a8dc13c4-d91e-4a68-b231-9be32045a1ed" -->
 ## Active Proposals
 
 | Proposal | Description | Since |
@@ -39,24 +42,29 @@ Each proposal progresses through full 01-11 stages at each level before graduati
 
 ---
 
+<!-- section_id: "f1d09361-e408-4be5-87ad-97e31ff3ad13" -->
 ## Staging
 
+<!-- section_id: "64397808-9d4f-412b-aeb6-38ea425f42e0" -->
 ### Experimental (Limited Scope)
 
 | Proposal | Stage | Description |
 |----------|-------|-------------|
 | [Cleanup & Staged Proposals v1](staging/stage_experimental/stage_02_research/proposal_cleanup_and_staged_proposals_v1.md) | 02_research | Cleanup _content→_group, relocate orphans, add staging |
 
+<!-- section_id: "31f8eb79-d8fa-4d59-bdd7-fa9f061c7650" -->
 ### Testing (Expanded Scope)
 
 _No proposals currently in testing_
 
+<!-- section_id: "873a833d-ce8c-424b-91aa-7dcea66706e6" -->
 ### Rollout (Gradual Deployment)
 
 _No proposals currently in rollout_
 
 ---
 
+<!-- section_id: "8f5c9909-436f-4541-888e-a91c52fd775e" -->
 ## Archived
 
 | Proposal | Superseded By | Date |
@@ -69,6 +77,7 @@ _No proposals currently in rollout_
 
 ---
 
+<!-- section_id: "ae206926-5e40-428a-9bf9-d5c9fd297799" -->
 ## Proposal Metadata Template
 
 ```yaml

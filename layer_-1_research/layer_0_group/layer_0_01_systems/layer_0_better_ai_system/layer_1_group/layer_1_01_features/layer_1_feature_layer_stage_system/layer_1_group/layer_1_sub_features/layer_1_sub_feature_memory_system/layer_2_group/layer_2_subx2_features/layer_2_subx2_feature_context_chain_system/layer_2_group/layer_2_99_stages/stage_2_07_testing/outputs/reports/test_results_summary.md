@@ -11,6 +11,7 @@ resource_name: "test_results_summary"
 
 ---
 
+<!-- section_id: "c71531d6-6ce3-4f66-8698-93fc9e5df818" -->
 ## test_outputs_purpose_taxonomy
 
 **Status**: PASS | **Exit code**: 0
@@ -106,6 +107,7 @@ resource_name: "test_results_summary"
 
 ---
 
+<!-- section_id: "bfad47fe-ee24-4a09-9bac-f052716947aa" -->
 ## test_cross_entity_porting_bridge
 
 **Status**: PASS | **Exit code**: 0
@@ -140,6 +142,7 @@ resource_name: "test_results_summary"
 
 ---
 
+<!-- section_id: "b9bf7f26-3ef8-43de-820a-3bdac76c06bb" -->
 ## test_reports_funnel_structure
 
 **Status**: PASS | **Exit code**: 0
@@ -179,6 +182,7 @@ resource_name: "test_results_summary"
 
 ---
 
+<!-- section_id: "a482a9ad-32d1-4d23-8068-664071d11530" -->
 ## test_agnostic_sync
 
 **Status**: PASS | **Exit code**: 0
@@ -245,6 +249,7 @@ Sync script: /home/dawson/dawson-workspace/code/0_layer_universal/.0agnostic/agn
 
 ---
 
+<!-- section_id: "41cbf879-cf57-4f0a-a1e5-f38de029376f" -->
 ## test_context_chain_traversal
 
 **Status**: PASS | **Exit code**: 0
@@ -320,6 +325,7 @@ Entity: layer_2_subx2_feature_context_chain_system
 
 ---
 
+<!-- section_id: "5512cb4c-ab04-4e32-97f2-326e645086f2" -->
 ## test_avenue_coverage_functional
 
 **Status**: PASS | **Exit code**: 0
@@ -384,6 +390,7 @@ Entity: layer_2_subx2_feature_context_chain_system
 
 ---
 
+<!-- section_id: "cd346248-b193-4f10-bea2-584d6af9ccea" -->
 ## test_1merge_structure
 
 **Status**: PASS | **Exit code**: 0
@@ -449,6 +456,7 @@ Entity: layer_2_subx2_feature_context_chain_system
 
 ---
 
+<!-- section_id: "0b39c188-1c79-4253-8f87-92c3fb885ff0" -->
 ## test_instantiation_readiness
 
 **Status**: PASS | **Exit code**: 0
@@ -543,6 +551,7 @@ Path: /home/dawson/dawson-workspace/code/0_layer_universal/layer_-1_research/lay
 
 ---
 
+<!-- section_id: "061e1583-2931-4569-b93f-08fee7f20511" -->
 ## test_codex_projection
 
 **Status**: PASS | **Exit code**: 0
@@ -581,6 +590,7 @@ Entity: layer_2_subx2_feature_context_chain_system
 
 ---
 
+<!-- section_id: "4bb2102a-b88b-4970-a805-4db822826506" -->
 ## test_codex_discovery_chain
 
 **Status**: PASS | **Exit code**: 0
@@ -622,6 +632,7 @@ Entity: layer_2_subx2_feature_context_chain_system
 
 ---
 
+<!-- section_id: "4b538d85-e228-4195-a112-b05081d33d03" -->
 ## test_codex_context_conditions
 
 **Status**: PASS | **Exit code**: 0
@@ -669,6 +680,7 @@ Entity: layer_2_subx2_feature_context_chain_system
 
 ---
 
+<!-- section_id: "a8f03efc-a3f2-4530-82fb-6da6a3ebe530" -->
 ## test_codex_governance_runtime
 
 **Status**: FAIL | **Exit code**: 1
@@ -703,6 +715,7 @@ Entity: layer_2_group
 
 ---
 
+<!-- section_id: "6dff000e-eb3d-483f-9cbb-01848537510c" -->
 ## test_codex_runtime_behavior
 
 **Status**: FAIL | **Exit code**: 1
@@ -736,6 +749,7 @@ Entity: layer_2_subx2_feature_context_chain_system
 
 ---
 
+<!-- section_id: "fa27dbd7-2ab2-4872-be75-f9a368297a50" -->
 ## test_codex_ci_gate
 
 **Status**: FAIL | **Exit code**: 1
@@ -782,6 +796,7 @@ Entity: layer_2_subx2_feature_context_chain_system
 ---
 
 
+<!-- section_id: "a8315022-b927-46c2-82d5-963b4bfd67a3" -->
 ## Overall Summary
 
 | Metric | Count |
@@ -792,6 +807,7 @@ Entity: layer_2_subx2_feature_context_chain_system
 | **Total SCAFFOLDED** | 2 |
 | **Readiness Score** | 92% |
 
+<!-- section_id: "22491cf3-7eb4-4b7a-90ed-949000fa2956" -->
 ### Interpretation
 
 - **PASS**: Check is fully functional
@@ -799,6 +815,7 @@ Entity: layer_2_subx2_feature_context_chain_system
 - **SKIP**: Check was skipped (dependency unavailable)
 - **SCAFFOLDED**: Structure exists but content is empty — needs population during instantiation
 
+<!-- section_id: "509aa897-8203-4b8b-a199-1ae27174d4bc" -->
 ### Next Steps
 
 **Fix 10 failing checks before instantiation.**

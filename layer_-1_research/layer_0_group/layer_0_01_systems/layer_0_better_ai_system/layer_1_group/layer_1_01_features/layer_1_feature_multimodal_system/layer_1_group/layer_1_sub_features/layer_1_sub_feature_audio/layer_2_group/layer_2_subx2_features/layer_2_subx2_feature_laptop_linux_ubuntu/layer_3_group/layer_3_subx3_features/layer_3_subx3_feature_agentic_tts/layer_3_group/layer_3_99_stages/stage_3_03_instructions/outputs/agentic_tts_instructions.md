@@ -7,6 +7,7 @@ resource_name: "agentic_tts_instructions"
 
 **Date**: 2026-02-23
 
+<!-- section_id: "838aff75-021e-4479-aae7-cb0c529d4ce1" -->
 ## Technical Constraints
 
 1. **Hook script must exit 0**: Non-zero exit codes may be reported as hook failures
@@ -16,6 +17,7 @@ resource_name: "agentic_tts_instructions"
 5. **jq required**: Hook parses JSON stdin with jq to extract `last_assistant_message`
 6. **Truncation**: Max 600 chars spoken to keep summaries brief
 
+<!-- section_id: "de78af0d-b7f8-4d0d-9098-a4adca5a4c98" -->
 ## Dependencies
 
 - `jq` (JSON parsing from hook stdin)
@@ -23,6 +25,7 @@ resource_name: "agentic_tts_instructions"
 - `aplay` (audio playback)
 - Voice model at `~/.local/share/piper-voices/en_US-amy-medium.onnx`
 
+<!-- section_id: "86206e02-1285-4796-a17a-270e4f812b20" -->
 ## Hook Configuration Rules
 
 - Hooks are defined in `~/.claude/settings.json` under `hooks.Stop`
@@ -30,6 +33,7 @@ resource_name: "agentic_tts_instructions"
 - Completion sound hook runs first, TTS hook runs second
 - `timeout: 60` prevents runaway speech from blocking session
 
+<!-- section_id: "5357b19a-9372-4434-9c44-49c1aa64f4cd" -->
 ## Do NOT
 
 - Do not use synchronous speech in the hook (will block Claude)

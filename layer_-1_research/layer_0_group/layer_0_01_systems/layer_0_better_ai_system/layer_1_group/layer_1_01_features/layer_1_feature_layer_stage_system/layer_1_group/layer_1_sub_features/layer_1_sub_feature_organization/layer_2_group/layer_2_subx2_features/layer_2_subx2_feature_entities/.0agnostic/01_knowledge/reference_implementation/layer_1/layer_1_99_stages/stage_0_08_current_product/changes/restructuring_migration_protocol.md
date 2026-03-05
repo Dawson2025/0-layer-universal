@@ -11,6 +11,7 @@ resource_name: "restructuring_migration_protocol"
 
 ---
 
+<!-- section_id: "5ce6ba5b-942d-47b4-b5f4-910f63df7aea" -->
 ## The Problem
 
 When restructuring a project's layer/stage organization, it's easy to:
@@ -22,6 +23,7 @@ When restructuring a project's layer/stage organization, it's easy to:
 
 ---
 
+<!-- section_id: "0164422e-3f7c-4456-85e6-bdc642541ab2" -->
 ## Key Principle
 
 > **Structural migration ≠ Content migration**
@@ -30,10 +32,12 @@ When restructuring a project's layer/stage organization, it's easy to:
 
 ---
 
+<!-- section_id: "1033e341-57fc-4975-b378-29743e66a807" -->
 ## Restructuring Checklist
 
 When restructuring any project or layer:
 
+<!-- section_id: "00a634c0-6f6e-46fa-b486-3b18eff6f452" -->
 ### 1. Identify Legacy Content
 
 ```bash
@@ -47,6 +51,7 @@ Look for:
 - Old numbered structures (`1.xx`, `2.xx` at wrong layer level)
 - `layer_N_*` folders at wrong nesting level
 
+<!-- section_id: "4622cb2a-3a8b-40be-8d84-72e18cdd0f3b" -->
 ### 2. Create New Structure
 
 Use templates from `layer_1/layer_1_features/layer_1_feature_layer_stage_system/layer_1/layer_1_02_sub_layers/` to create:
@@ -57,6 +62,7 @@ Use templates from `layer_1/layer_1_features/layer_1_feature_layer_stage_system/
 - `layer_N_99_stages/`
 - `layer_N+1/` for nested content
 
+<!-- section_id: "2fc28f85-49e7-44be-a681-c1c21bd9f776" -->
 ### 3. Migrate Content (Critical Step)
 
 **Do not skip this step.** For each legacy location:
@@ -82,6 +88,7 @@ cp -r <legacy>/layer_2_features/layer_2_feature_* \
 - Feature-specific documentation
 - Any actual work artifacts
 
+<!-- section_id: "fedf831d-c873-43d0-a80c-ef3a7404a12c" -->
 ### 4. Verify Migration
 
 ```bash
@@ -93,6 +100,7 @@ echo "Legacy:" && find <legacy> -type f | wc -l
 echo "New:" && find <new>/layer_N -type f | wc -l
 ```
 
+<!-- section_id: "5336342a-7438-453e-9d96-9ed102366f49" -->
 ### 5. Remove Legacy Folders
 
 **Only after verification:**
@@ -104,6 +112,7 @@ rm -rf <project>/legacy_context
 # Remove old N.xx folders if they existed at root
 ```
 
+<!-- section_id: "6d07ac60-95d4-40e4-8f9a-cd7e6223aa13" -->
 ### 6. Update Traversal Documentation (Critical)
 
 **Do not skip this step.** After restructuring, paths have changed. Update:
@@ -125,6 +134,7 @@ grep -r "old_path_or_name" --include="*.md" <0_context_root>/
 
 See `traversal_update_protocol.md` for full verification checklist.
 
+<!-- section_id: "e8e9d5d2-ea3f-4f37-8d89-3d809ab876b6" -->
 ### 7. Commit and Push
 
 ```bash
@@ -142,6 +152,7 @@ git push
 
 ---
 
+<!-- section_id: "94571b8c-1238-41d4-8857-de8be1081359" -->
 ## Common Mistakes
 
 | Mistake | Consequence | Prevention |
@@ -155,8 +166,10 @@ git push
 
 ---
 
+<!-- section_id: "443305f9-2295-4446-b1aa-7619b5c1a1cb" -->
 ## Migration Patterns
 
+<!-- section_id: "7ec53c60-2304-4ec2-a57e-ddd029f25141" -->
 ### Pattern A: 0_context to layer_N
 
 ```
@@ -170,6 +183,7 @@ FROM: project/0_context/layer_2_features/
 TO:   project/layer_5/layer_5_features/
 ```
 
+<!-- section_id: "c1d31a5a-3940-4054-81a5-1be946124da9" -->
 ### Pattern B: Old N.xx at root to layer_N/
 
 ```
@@ -180,6 +194,7 @@ FROM: project/2.99_stages/stage_2.01_*/
 TO:   project/layer_4/layer_4_99_stages/stage_4.01_*/
 ```
 
+<!-- section_id: "b80af094-1a22-4578-899d-fb9ad1671868" -->
 ### Pattern C: Renaming features/components
 
 ```
@@ -192,6 +207,7 @@ TO:   layer_5_feature_* (remove "sub_" if not same-type nesting)
 
 ---
 
+<!-- section_id: "211f1c0a-c0ca-4724-8128-e33232e83f23" -->
 ## Verification Commands
 
 ```bash
@@ -207,6 +223,7 @@ find <project> -name "status_*.json"
 
 ---
 
+<!-- section_id: "6e045dde-681a-47e8-90de-f5be0cff87a0" -->
 ## Related Documents
 
 - `traversal_update_protocol.md` - **Path verification after changes** (read this!)

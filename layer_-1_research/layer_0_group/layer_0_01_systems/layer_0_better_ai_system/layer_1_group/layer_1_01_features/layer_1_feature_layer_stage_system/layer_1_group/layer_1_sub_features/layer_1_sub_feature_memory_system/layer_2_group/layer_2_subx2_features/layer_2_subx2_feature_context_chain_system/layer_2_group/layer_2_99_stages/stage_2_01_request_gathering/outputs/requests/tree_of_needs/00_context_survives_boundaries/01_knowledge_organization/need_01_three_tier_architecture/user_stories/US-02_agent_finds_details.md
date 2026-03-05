@@ -13,6 +13,7 @@ resource_name: "US-02_agent_finds_details"
 **I want** the AI to look up the exact source file instead of searching blindly,
 **So that** I get a precise answer quickly, not a vague guess or a long wait while it hunts through files.
 
+<!-- section_id: "4c64d060-aaf6-48c9-8e68-713788dcea1f" -->
 ### What Happens
 
 1. User asks the AI a detailed domain question
@@ -21,6 +22,7 @@ resource_name: "US-02_agent_finds_details"
 4. Agent loads one targeted file and reads the specific section
 5. User gets a precise, sourced answer
 
+<!-- section_id: "a7883ae0-bdfc-4a17-99ff-e8782a6f93be" -->
 ### Acceptance Criteria
 
 - Every knowledge file claim has a "See [file] Section [X]" reference to its source

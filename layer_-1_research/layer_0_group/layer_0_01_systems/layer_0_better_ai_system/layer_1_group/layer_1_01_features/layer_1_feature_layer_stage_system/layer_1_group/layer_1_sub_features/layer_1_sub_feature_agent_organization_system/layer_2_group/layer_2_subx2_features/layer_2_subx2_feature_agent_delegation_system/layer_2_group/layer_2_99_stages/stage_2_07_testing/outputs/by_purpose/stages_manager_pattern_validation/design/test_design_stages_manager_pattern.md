@@ -11,14 +11,17 @@ resource_name: "test_design_stages_manager_pattern"
 
 ---
 
+<!-- section_id: "386855e0-1bb1-4fa9-8fa9-ce914eaa0564" -->
 ## What We're Testing
 
 The stages manager pattern upgrades `layer_N_99_stages/` from a thin container to a proper managed entity with `.0agnostic/`, `.1merge/`, and full `0AGNOSTIC.md`. We validate: the stages manager has correct structure, stage coordination content lives in the stages manager (not the entity manager), handoff documents flow correctly, and generated tool files are produced.
 
 ---
 
+<!-- section_id: "0704d828-1a58-4899-a996-712c1472e733" -->
 ## Test Cases
 
+<!-- section_id: "c3bf8c6a-bf12-4bfc-8d7e-9c11a0ef865f" -->
 ### TC-SM-01: Stages manager has full .0agnostic/ structure
 
 **Steps**:
@@ -38,6 +41,7 @@ The stages manager pattern upgrades `layer_N_99_stages/` from a thin container t
 **Expected**: All numbered subdirectories exist following the standard agnostic structure
 **Type**: Structural
 
+<!-- section_id: "5951f772-41ec-4fa4-ac75-cbcdcdc929cc" -->
 ### TC-SM-02: Stages manager .0agnostic/01_knowledge/ has coordination knowledge
 
 **Steps**:
@@ -51,6 +55,7 @@ The stages manager pattern upgrades `layer_N_99_stages/` from a thin container t
 **Expected**: Knowledge directory contains the three core coordination documents with real content
 **Type**: Structural
 
+<!-- section_id: "ddb8936d-835d-4a56-97fe-5fa43aae44c1" -->
 ### TC-SM-03: Stages manager .0agnostic/02_rules/ has transition and consolidation rules
 
 **Steps**:
@@ -64,6 +69,7 @@ The stages manager pattern upgrades `layer_N_99_stages/` from a thin container t
 **Expected**: Rules directory has transition, consolidation, and blocking detection rules with real content
 **Type**: Structural
 
+<!-- section_id: "0cd585ed-b89b-4f9d-a261-829937c1b34d" -->
 ### TC-SM-04: Stages manager .0agnostic/03_protocols/ has step-by-step procedures
 
 **Steps**:
@@ -75,6 +81,7 @@ The stages manager pattern upgrades `layer_N_99_stages/` from a thin container t
 **Expected**: Protocols directory has actionable step-by-step procedures
 **Type**: Structural
 
+<!-- section_id: "184d91d9-d9ce-4123-9104-11f2057e6f51" -->
 ### TC-SM-05: Stages manager has .1merge/ with 3-tier structure
 
 **Steps**:
@@ -88,6 +95,7 @@ The stages manager pattern upgrades `layer_N_99_stages/` from a thin container t
 **Expected**: .1merge has at minimum a Claude merge directory with the standard 3-tier structure
 **Type**: Structural
 
+<!-- section_id: "2481b1ca-ff24-4d58-9a48-d7a44ae57af9" -->
 ### TC-SM-06: Stages manager 0AGNOSTIC.md has coordination identity
 
 **Steps**:
@@ -104,6 +112,7 @@ The stages manager pattern upgrades `layer_N_99_stages/` from a thin container t
 **Expected**: 0AGNOSTIC.md is a proper manager identity with coordination knowledge pointers
 **Type**: Structural
 
+<!-- section_id: "7f149ce0-8f76-4cca-b452-d60b31a66861" -->
 ### TC-SM-07: Entity manager 0AGNOSTIC.md does NOT contain stage coordination
 
 **Steps**:
@@ -121,6 +130,7 @@ The stages manager pattern upgrades `layer_N_99_stages/` from a thin container t
 **Expected**: Stage coordination content has moved to stages manager; entity manager retains only strategic references
 **Type**: Structural (heuristic)
 
+<!-- section_id: "fff67fc1-39a4-49fb-aa21-4b8f0318c44a" -->
 ### TC-SM-08: Generated tool files exist at stages manager level
 
 **Steps**:
@@ -137,6 +147,7 @@ The stages manager pattern upgrades `layer_N_99_stages/` from a thin container t
 **Expected**: agnostic-sync produces all generated tool files with stages manager content
 **Type**: Integration
 
+<!-- section_id: "8fcda879-cae4-463b-b823-b777c428643f" -->
 ### TC-SM-09: 0INDEX.md exists as stages dashboard
 
 **Steps**:
@@ -150,6 +161,7 @@ The stages manager pattern upgrades `layer_N_99_stages/` from a thin container t
 **Expected**: 0INDEX.md serves as the stages dashboard for the stages manager
 **Type**: Structural
 
+<!-- section_id: "ce1f7bc8-ed22-4d34-a2dc-f400a1bb870e" -->
 ### TC-SM-10: Stage reports flow into stages manager from_below
 
 **Steps**:
@@ -162,6 +174,7 @@ The stages manager pattern upgrades `layer_N_99_stages/` from a thin container t
 **Note**: Requires sync-handoffs.sh to have been run
 **Type**: Integration
 
+<!-- section_id: "45bccadc-ff72-4d4e-89b4-efda6a2e4492" -->
 ### TC-SM-11: Stages manager produces consolidated stages_report.md
 
 **Steps**:
@@ -173,6 +186,7 @@ The stages manager pattern upgrades `layer_N_99_stages/` from a thin container t
 **Expected**: Stages manager produces a consolidated report for the entity manager
 **Type**: Structural
 
+<!-- section_id: "e84b89f8-58a4-4ba5-b90f-ac81da8b780d" -->
 ### TC-SM-12: Orchestrator .gab.jsonld backs the stages manager
 
 **Steps**:
@@ -184,6 +198,7 @@ The stages manager pattern upgrades `layer_N_99_stages/` from a thin container t
 **Expected**: The existing orchestrator file properly backs the stages manager role
 **Type**: Structural
 
+<!-- section_id: "d356f525-dba9-43c7-98f8-75e487217971" -->
 ### TC-SM-13: stage_00_stage_registry is managed by stages manager
 
 **Steps**:
@@ -195,6 +210,7 @@ The stages manager pattern upgrades `layer_N_99_stages/` from a thin container t
 **Expected**: The stage registry serves as the stages manager's inventory and is referenced from 0AGNOSTIC.md
 **Type**: Structural
 
+<!-- section_id: "b7a21047-5105-4099-b8d0-dee82a58279a" -->
 ### TC-SM-14: Stages manager does NOT have its own stages or children
 
 **Steps**:
@@ -207,6 +223,7 @@ The stages manager pattern upgrades `layer_N_99_stages/` from a thin container t
 
 ---
 
+<!-- section_id: "96d7a13e-2e7b-4cd2-bfc1-93c63d07ae70" -->
 ## Coverage Gap Analysis
 
 | Design Concept | Test Case | Status |
@@ -229,6 +246,7 @@ The stages manager pattern upgrades `layer_N_99_stages/` from a thin container t
 | Optional per entity (4+ stages) | Not directly testable | Policy, not structure |
 | Backward compatibility | Covered by TC-SM-08 | agnostic-sync still works |
 
+<!-- section_id: "9acb2887-43cc-4af4-a806-92332eda1e5c" -->
 ## Test Case Summary
 
 | Category | Count | Type |

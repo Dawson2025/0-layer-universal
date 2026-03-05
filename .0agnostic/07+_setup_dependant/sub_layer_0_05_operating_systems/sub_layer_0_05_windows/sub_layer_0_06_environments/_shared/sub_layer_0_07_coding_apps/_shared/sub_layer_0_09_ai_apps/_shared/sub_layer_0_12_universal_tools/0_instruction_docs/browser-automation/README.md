@@ -7,29 +7,36 @@ resource_name: "README"
 # Browser Automation Framework
 *Universal Tool: Intelligent Browser Automation Strategy and Management*
 
+<!-- section_id: "0c9634bc-5fc6-4c92-bf93-70cf5ad25455" -->
 ## Overview
 
 The Browser Automation Framework provides intelligent selection and management of browser automation tools based on task requirements, performance needs, and context. It supports multiple browser automation tools and automatically selects the optimal one for each specific task.
 
+<!-- section_id: "611682b4-3625-4fd1-8353-04f3e6f23a9d" -->
 ## Supported Tools
 
+<!-- section_id: "3ab4a51f-8a3f-47fa-bfd9-8578828bbaf8" -->
 ### 1. Browser Automation Tool
 **MCP Server**: `browser`
 **Purpose**: General-purpose browser automation
 **Best For**: Simple navigation, form filling, basic interactions
 
+<!-- section_id: "4b9f963a-01b1-4419-aadb-e3e2647409ee" -->
 ### 2. Chrome DevTools MCP
 **MCP Server**: `chrome-devtools`
 **Purpose**: Chrome-specific debugging and automation
 **Best For**: Advanced debugging, performance analysis, Chrome-specific features
 
+<!-- section_id: "9afb4784-7464-4b4f-a5fc-34868d8226e9" -->
 ### 3. Playwright MCP
 **MCP Server**: `playwright`
 **Purpose**: Cross-browser automation and testing
 **Best For**: Cross-browser testing, complex interactions, reliable automation
 
+<!-- section_id: "ef1ee52b-6fe0-4ecc-82ba-4138f5729e70" -->
 ## Tool Selection Strategy
 
+<!-- section_id: "50937faf-452e-45fe-ac14-87a727ad5f68" -->
 ### Selection Criteria
 
 #### 1. Task Complexity
@@ -52,6 +59,7 @@ The Browser Automation Framework provides intelligent selection and management o
 - **Basic Debugging**: Playwright MCP
 - **No Debugging**: Browser Automation Tool
 
+<!-- section_id: "c6a7fb5d-6731-4fd5-b04a-4242247c6ca1" -->
 ### Selection Algorithm
 
 ```python
@@ -80,8 +88,10 @@ def select_browser_tool(task_requirements: Dict[str, Any]) -> str:
     return 'playwright'
 ```
 
+<!-- section_id: "8220eac9-a5f3-4370-95dd-6b47a36ed4a2" -->
 ## Usage
 
+<!-- section_id: "2db68ab7-0ae2-4420-b693-35971886aadf" -->
 ### Basic Tool Selection
 ```python
 from features.meta_intelligent_orchestration.core.browser_automation_strategy import BrowserAutomationStrategy
@@ -101,6 +111,7 @@ selected_tool = strategy.select_tool(task_requirements)
 print(f"Selected tool: {selected_tool}")
 ```
 
+<!-- section_id: "fae933a2-16d3-4e98-a309-cfc139ff61a7" -->
 ### Tool Execution
 ```python
 # Execute task with selected tool
@@ -114,6 +125,7 @@ result = await strategy.execute_task(
 )
 ```
 
+<!-- section_id: "7b95d539-cd76-4d0c-b291-66d5f515a892" -->
 ### Fallback Strategy
 ```python
 # Execute with fallback
@@ -125,8 +137,10 @@ result = await strategy.execute_with_fallback(
 )
 ```
 
+<!-- section_id: "08edd5ca-350d-4545-88b1-60ad013dfd6c" -->
 ## Tool-Specific Features
 
+<!-- section_id: "2b2304ae-8bd1-44bb-accc-390458a728de" -->
 ### Browser Automation Tool
 ```python
 # Simple navigation
@@ -142,6 +156,7 @@ await browser.fill_form([
 await browser.click('#submit-button')
 ```
 
+<!-- section_id: "b88759ba-4139-4d36-8982-261c2ff9ea6b" -->
 ### Chrome DevTools MCP
 ```python
 # Advanced debugging
@@ -156,6 +171,7 @@ await chrome_devtools.performance_stop_trace()
 requests = await chrome_devtools.list_network_requests()
 ```
 
+<!-- section_id: "0fbc0eb9-20f9-49a4-a0eb-a3bef25380eb" -->
 ### Playwright MCP
 ```python
 # Cross-browser testing
@@ -173,8 +189,10 @@ await playwright.fill_form([
 await playwright.wait_for('text=Success')
 ```
 
+<!-- section_id: "c590f4b2-b63f-4643-b3e7-4ef3e5ef4d96" -->
 ## Performance Optimization
 
+<!-- section_id: "6ebdcb4f-0cd0-4446-b9c2-eb005957ebe6" -->
 ### Tool Performance Characteristics
 
 #### Browser Automation Tool
@@ -195,6 +213,7 @@ await playwright.wait_for('text=Success')
 - **Reliability**: Very High
 - **Features**: Comprehensive
 
+<!-- section_id: "25ff90ec-d0f2-43ce-a197-fc2c2830c006" -->
 ### Optimization Strategies
 
 #### 1. Tool Selection Optimization
@@ -242,8 +261,10 @@ async def get_browser_instance(tool: str) -> Any:
     return browser_cache[tool]
 ```
 
+<!-- section_id: "ad24d313-23f8-47e1-87eb-bbdfe3256087" -->
 ## Error Handling and Recovery
 
+<!-- section_id: "c87a49dd-0998-4ccb-b26d-862b55541f8c" -->
 ### Error Types
 
 #### 1. Tool Unavailable
@@ -274,6 +295,7 @@ except BrowserCrashError:
     result = await execute_task(tool, task)
 ```
 
+<!-- section_id: "5b740ed4-eb7e-47da-b23b-2eff7610572a" -->
 ### Recovery Strategies
 
 #### 1. Automatic Fallback
@@ -303,8 +325,10 @@ async def execute_with_retry(task: str, max_retries: int = 3) -> Any:
             await asyncio.sleep(2 ** attempt)  # Exponential backoff
 ```
 
+<!-- section_id: "9d8d50f8-dc86-45f4-8534-13cf77e2da77" -->
 ## Testing
 
+<!-- section_id: "79bf327a-0189-4959-91ce-a23b7bd2aa21" -->
 ### Test Suite
 ```bash
 # Run browser automation tests
@@ -315,40 +339,48 @@ python3 features/meta-intelligent-orchestration/core/tests/test_playwright_integ
 python3 features/meta-intelligent-orchestration/core/tests/test_chrome_devtools_integration.py
 ```
 
+<!-- section_id: "00fbfb82-356b-49f4-8fb5-a7d8e39221ba" -->
 ### Test Coverage
 - **Unit Tests**: Individual tool testing
 - **Integration Tests**: Tool interaction testing
 - **Performance Tests**: Tool performance validation
 - **Error Handling Tests**: Error recovery testing
 
+<!-- section_id: "e3c64f6a-9e1e-45b7-92d3-701f95922d0e" -->
 ## Integration with Project
 
+<!-- section_id: "61cb158b-7008-4dda-95ed-9fa3bb9b3f07" -->
 ### Trickle-Down Integration
 - **Level 0**: Universal instructions inform tool design
 - **Level 0.75**: Universal tools provide browser automation framework
 - **Level 1.5**: Project tools use browser automation for specific tasks
 - **Level 2**: Features integrate browser automation for user interactions
 
+<!-- section_id: "fdb0f02c-ddb2-40b9-8def-5f45a3372393" -->
 ### Project Constitution Compliance
 - **Type Safety**: Python type hints throughout
 - **Component Reusability**: Modular, reusable browser automation components
 - **Clean Architecture**: Clear separation between tool selection and execution
 - **Documentation**: Comprehensive documentation for all browser automation features
 
+<!-- section_id: "7919dab0-8f58-42b3-ba5e-4709d5e0b7ac" -->
 ## Future Enhancements
 
+<!-- section_id: "64278c74-9087-4f1f-a833-f5daa317b729" -->
 ### Planned Features
 - **Advanced Tool Selection**: ML-powered tool selection
 - **Performance Monitoring**: Real-time performance tracking
 - **Custom Tool Support**: Support for custom browser automation tools
 - **Cloud Integration**: Cloud-based browser automation
 
+<!-- section_id: "e0e40cdc-c2ef-430c-9ec4-7382b82a78ae" -->
 ### Extensibility
 - **Plugin Architecture**: Support for custom tool plugins
 - **API Integration**: RESTful API for browser automation
 - **SDK Development**: Software development kits for tool integration
 - **Community Contributions**: Open source tool contributions
 
+<!-- section_id: "819c569c-1022-42d1-9a51-7047bc4bcecd" -->
 ## Documentation
 
 - [Meta-Intelligent Orchestration Framework](./meta-intelligent-orchestration/README.md)
@@ -358,6 +390,7 @@ python3 features/meta-intelligent-orchestration/core/tests/test_chrome_devtools_
 
 ---
 
+<!-- section_id: "d84c7be9-88ef-49c1-b5bd-f9bf3aa63891" -->
 ## Efficiency Tips
 
 For learned patterns, best practices, and efficiency tips discovered during browser automation work, see:

@@ -12,6 +12,7 @@ resource_name: "README"
 
 ---
 
+<!-- section_id: "c4160f04-bacd-4f70-818c-6f7a42200bac" -->
 ## Definition
 
 Knowledge is organized into three tiers with clear boundaries:
@@ -23,6 +24,7 @@ Each tier serves a different access pattern and has strict rules about what belo
 
 ---
 
+<!-- section_id: "2350e4ad-0eae-47d9-bb75-521fc8ce7845" -->
 ## Why This Matters
 
 - Without tiers, agents either load everything (overflow) or nothing (incompetence)
@@ -32,6 +34,7 @@ Each tier serves a different access pattern and has strict rules about what belo
 
 ---
 
+<!-- section_id: "2a7c01f1-f141-403f-809c-530b997d77f8" -->
 ## Acceptance Criteria
 
 - [ ] Tier boundary rules are documented and unambiguous
@@ -42,16 +45,19 @@ Each tier serves a different access pattern and has strict rules about what belo
 
 ---
 
+<!-- section_id: "d20d5687-4039-4e5e-87f0-f3f5c9d26f48" -->
 ## Requirements
 
 See [requirements/](./requirements/) for individual requirements.
 
+<!-- section_id: "72a12662-3b05-4578-b456-0901d75b13bf" -->
 ## User Stories
 
 See [user_stories/](./user_stories/) for individual stories.
 
 ---
 
+<!-- section_id: "bf1913a5-0e50-4cba-b823-c3a8172ee480" -->
 ## Research References
 
 - `memory_system/stage_1_02_research/outputs/by_topic/20_three_tier_knowledge_architecture.md` — full design

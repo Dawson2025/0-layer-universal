@@ -9,8 +9,10 @@ This document explains how to securely manage API keys for MCP servers without e
 
 ---
 
+<!-- section_id: "acefee47-bf28-476b-ae07-c3f947776979" -->
 ## Required API Keys
 
+<!-- section_id: "775b6f10-b249-4c59-b49f-6f41403f5d15" -->
 ### 1. TAVILY_API_KEY
 **Service:** Tavily AI Search API
 **Purpose:** Web search capabilities for AI agents
@@ -21,6 +23,7 @@ This document explains how to securely manage API keys for MCP servers without e
 3. Navigate to your dashboard
 4. Copy your API key from the API Keys section
 
+<!-- section_id: "289bf9ae-1f24-4f52-a572-b5c4ede22c6f" -->
 ### 2. CONTEXT7_API_KEY
 **Service:** Context7 MCP Server
 **Purpose:** Library documentation and code context retrieval
@@ -30,6 +33,7 @@ This document explains how to securely manage API keys for MCP servers without e
 2. Follow the registration/API key generation process
 3. Copy your API key
 
+<!-- section_id: "a1c45a44-0391-4b7e-9fa7-f627aa84f75d" -->
 ### 3. CONTEXT7_API_URL
 **Service:** Context7 API Endpoint
 **Purpose:** Base URL for Context7 API requests
@@ -38,8 +42,10 @@ This document explains how to securely manage API keys for MCP servers without e
 
 ---
 
+<!-- section_id: "329e153c-683d-4f86-82e3-7fc11bfad566" -->
 ## Secure Storage Methods
 
+<!-- section_id: "6dd78d2d-096f-47a6-8a9f-1da4af2b7422" -->
 ### Method 1: Environment Variables (Recommended)
 
 #### Option A: Shell Profile (~/.bashrc or ~/.zshrc)
@@ -83,6 +89,7 @@ if [ -f ~/.secrets/mcp_keys.sh ]; then
 fi
 ```
 
+<!-- section_id: "10c01edf-8a24-478c-8d21-b76df8ece32e" -->
 ### Method 2: Local Config Files
 
 Use the template pattern with local overrides:
@@ -92,8 +99,10 @@ Use the template pattern with local overrides:
 
 ---
 
+<!-- section_id: "f56b45eb-9a06-4444-8805-8c0762e3c495" -->
 ## Template Pattern Explanation
 
+<!-- section_id: "2bd93ac4-bfab-43ed-8f65-d642b3ed51ea" -->
 ### How It Works
 
 ```
@@ -106,6 +115,7 @@ config.template.json  (committed to repo)
 config.local.json    (gitignored, contains real keys)
 ```
 
+<!-- section_id: "0d4ecccd-8ff7-4d2b-a568-6eb2d1f73176" -->
 ### Files Overview
 
 | File | Git Status | Purpose |
@@ -114,6 +124,7 @@ config.local.json    (gitignored, contains real keys)
 | `config.local.json` | Ignored | Your actual configuration with real keys |
 | `.secrets/` | Ignored | Directory for any secret files |
 
+<!-- section_id: "84189e89-251b-4ce2-a9b6-a9a595dbdc91" -->
 ### Setup Steps
 
 1. Copy the template:
@@ -136,6 +147,7 @@ cp config.template.json config.local.json
 
 3. Your application reads from `config.local.json` or environment variables
 
+<!-- section_id: "aa6363ab-0b89-4144-96fa-3fc41b11ab57" -->
 ### Environment Variable Substitution
 
 Some tools support automatic environment variable substitution. The template uses `${VAR_NAME}` syntax:
@@ -152,6 +164,7 @@ If your MCP server supports this, you can use the template directly after settin
 
 ---
 
+<!-- section_id: "30c88b0c-786d-4525-8615-16f0a4c778aa" -->
 ## Security Best Practices
 
 1. **Never commit secrets** - Always verify `.gitignore` is working
@@ -163,8 +176,10 @@ If your MCP server supports this, you can use the template directly after settin
 
 ---
 
+<!-- section_id: "b0ab14a6-d4f2-483c-923b-bb689dcfc399" -->
 ## Verification
 
+<!-- section_id: "195afa73-307f-4a2b-b4b6-ccfbcb2f2b5c" -->
 ### Check Environment Variables
 ```bash
 # Verify keys are set (shows if set, not the actual value)
@@ -173,6 +188,7 @@ echo "CONTEXT7_API_KEY: ${CONTEXT7_API_KEY:+SET}"
 echo "CONTEXT7_API_URL: ${CONTEXT7_API_URL:+SET}"
 ```
 
+<!-- section_id: "c46cce71-42f1-4dbc-8273-c652bd217fe8" -->
 ### Check Git Status
 ```bash
 # Ensure local config is not tracked
@@ -181,17 +197,21 @@ git status --ignored | grep -E "config\.local|\.secrets"
 
 ---
 
+<!-- section_id: "f797db85-2885-4e1e-8b01-72807fad0c6f" -->
 ## Troubleshooting
 
+<!-- section_id: "239ae71e-b486-4781-93a6-5bebe820d963" -->
 ### Keys Not Loading
 - Ensure you've sourced your shell profile: `source ~/.bashrc`
 - Check for typos in variable names
 - Verify file permissions on secrets files
 
+<!-- section_id: "66243cc6-8f52-4c94-86a7-61bb2c5d7c47" -->
 ### Git Tracking Local Files
 - Verify `.gitignore` entries are correct
 - If already tracked, remove from git: `git rm --cached config.local.json`
 
+<!-- section_id: "22de4a37-9cdd-42d9-8dc9-109c780609a8" -->
 ### API Key Invalid
 - Verify the key is copied correctly (no extra spaces)
 - Check if the key has expired or been revoked

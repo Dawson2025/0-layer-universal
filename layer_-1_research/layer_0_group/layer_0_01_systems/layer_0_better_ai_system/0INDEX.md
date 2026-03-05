@@ -6,11 +6,13 @@ resource_name: "0INDEX"
 ---
 # Index: layer_-1_better_ai_system
 
+<!-- section_id: "45b25623-ca6d-406e-a217-591f18d8b39f" -->
 ## Purpose
 Research project for improving AI agent systems. Implements concepts for multi-agent sync, automated traversal, and agent memory.
 
 ---
 
+<!-- section_id: "253208a7-484e-403d-943f-122997395874" -->
 ## Structure Overview
 
 ```
@@ -50,6 +52,7 @@ layer_-1_better_ai_system/
 
 ---
 
+<!-- section_id: "686d8437-78cf-44dd-adab-c80568e3745f" -->
 ## Features (layer_0_group)
 
 | Feature | Description | Key Files |
@@ -60,6 +63,7 @@ layer_-1_better_ai_system/
 
 ---
 
+<!-- section_id: "26e5a15d-7f97-48d9-8fbf-3da2e24a821d" -->
 ## Research Stages (layer_-1_group)
 
 | Stage | Purpose | Location |
@@ -78,6 +82,7 @@ layer_-1_better_ai_system/
 
 ---
 
+<!-- section_id: "fb7243f7-f1c2-4115-afe8-d101f10ba4a7" -->
 ## Key Documents
 
 | Document | Purpose |
@@ -88,6 +93,7 @@ layer_-1_better_ai_system/
 
 ---
 
+<!-- section_id: "c7812bdb-9600-4971-bf9e-975d4b23525d" -->
 ## Navigation Guide
 
 | Looking for... | Go to... |

@@ -6,6 +6,7 @@ resource_name: "README"
 ---
 # User Stories — Nested Systems
 
+<!-- section_id: "9b1c5f32-f66c-404d-9f46-2185201c804f" -->
 ## Actors
 
 | Actor | Description |
@@ -13,6 +14,7 @@ resource_name: "README"
 | AI System | Contains sub-systems like the school system |
 | School System | Sub-system with its own R/P/I cycle |
 
+<!-- section_id: "b3233c42-dfd9-49e4-8cdc-6a49b267e1dc" -->
 ## Stories
 
 | ID | Story | Actor |

@@ -8,10 +8,12 @@ resource_name: "UPDATE"
 **Last Updated:** 2025-01-26  
 **Current Version:** 0.23.0
 
+<!-- section_id: "b6f21cdb-d943-4fbb-bf28-5908c75b71d1" -->
 ## Overview
 
 This document describes how to update Gemini CLI to the latest version. Gemini CLI is distributed via npm and can be updated using standard npm commands.
 
+<!-- section_id: "613c6066-3c51-456a-ac41-b6160c18f8fb" -->
 ## Checking Current Version
 
 Before updating, check your current version:
@@ -37,8 +39,10 @@ npm list -g @google/gemini-cli
 └── @google/gemini-cli@0.23.0
 ```
 
+<!-- section_id: "42eff552-72a3-4574-8a20-bb2148888c33" -->
 ## Update Method
 
+<!-- section_id: "f21268a0-6623-4e90-b130-81343a0a9ef5" -->
 ### npm Update (Standard Method)
 
 Gemini CLI is managed through npm. To update to the latest version:
@@ -64,6 +68,7 @@ changed 583 packages in 19s
 
 **Note:** The deprecation warning about `node-domexception` is harmless and comes from a dependency. It does not affect functionality.
 
+<!-- section_id: "eadf6f25-27bf-4a9a-a427-5759a4d0dd5b" -->
 ### Alternative: npm update
 
 You can also use the `npm update` command:
@@ -74,6 +79,7 @@ npm update -g @google/gemini-cli
 
 **Note:** `npm update` may not always install the latest version if your current version satisfies the semver range. Using `npm install -g @google/gemini-cli@latest` ensures you get the absolute latest version.
 
+<!-- section_id: "abcc7337-09c9-4301-8176-e95be2b0599d" -->
 ### Alternative: Using npx (No Global Installation)
 
 If you prefer not to install globally, you can use `npx` which automatically fetches and runs the latest version:
@@ -91,6 +97,7 @@ npx @google/gemini-cli
 - Slightly slower startup (downloads on first run)
 - Requires internet connection
 
+<!-- section_id: "4b4003dd-ae53-4727-a84d-f2d22c4276af" -->
 ## Verification After Update
 
 After updating, verify the installation:
@@ -109,8 +116,10 @@ npm list -g @google/gemini-cli
 gemini --help
 ```
 
+<!-- section_id: "61a0ae82-ae0e-4a4f-b329-6de4480cc908" -->
 ## Troubleshooting
 
+<!-- section_id: "76408404-780c-446e-8f77-40c02f006930" -->
 ### Issue: "Command not found" after update
 
 **Solution:**
@@ -132,6 +141,7 @@ gemini --help
    # Add that path/bin to your PATH if not already there
    ```
 
+<!-- section_id: "26ccb097-d0dc-4352-9cc2-ab96c07b7124" -->
 ### Issue: Permission errors during update
 
 **Solution:**
@@ -155,6 +165,7 @@ gemini --help
 
 3. **Not recommended:** Using `sudo` can cause permission issues and is not recommended
 
+<!-- section_id: "17b8f255-6d61-48df-84d6-9c0d3c04386f" -->
 ### Issue: Version not updating
 
 **Solution:**
@@ -175,6 +186,7 @@ gemini --help
    npm --version
    ```
 
+<!-- section_id: "aa7c893a-c6ba-4eb0-9055-2b05d798831e" -->
 ### Issue: Deprecation warnings
 
 **Solution:**
@@ -182,8 +194,10 @@ gemini --help
 - It comes from a dependency and does not affect Gemini CLI functionality
 - The warning will be resolved when the dependency is updated by the maintainers
 
+<!-- section_id: "4f47ed8c-8e97-4daa-a08c-8afd1b2259a5" -->
 ## Update History
 
+<!-- section_id: "54c2d426-2713-4a12-b9a3-1f850cc7060f" -->
 ### 2025-01-26: Verified/Updated to v0.23.0
 - **Previous version:** 0.23.0 (already at latest)
 - **Method used:** `npm install -g @google/gemini-cli@latest`
@@ -193,18 +207,21 @@ gemini --help
   - All functionality verified
   - Deprecation warning noted but harmless
 
+<!-- section_id: "1197071f-b675-456a-b2b0-653f4eeb470b" -->
 ## Platform Support
 
 - ✅ **macOS**: Fully supported
 - ✅ **Linux**: Fully supported
 - ✅ **Windows**: Supported (via npm)
 
+<!-- section_id: "156566c1-6cd2-4678-898e-984ccff15772" -->
 ## References
 
 - **Official Documentation:** https://ai.google.dev/docs
 - **npm Package:** https://www.npmjs.com/package/@google/gemini-cli
 - **Update Guide:** https://milvus.io/ai-quick-reference/how-do-i-update-gemini-cli
 
+<!-- section_id: "623daf56-afbf-47ac-966e-ff112204c595" -->
 ## Related Documentation
 
 - **Setup README:** `README.md` (in this directory)

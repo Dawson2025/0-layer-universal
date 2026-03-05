@@ -13,6 +13,7 @@ resource_name: "US-01_auto_sync_on_move"
 **I want** the pointer system to automatically notice that something changed and update all pointer paths,
 **So that** all pointers remain valid without me manually running anything or having an AI agent manually update everything.
 
+<!-- section_id: "845f40fc-3fdf-41d4-9d52-7925bd873584" -->
 ### What Happens
 
 1. Developer renames or moves a directory (e.g., via file manager, `git mv`, or IDE refactor)
@@ -22,6 +23,7 @@ resource_name: "US-01_auto_sync_on_move"
 5. Any stale paths are updated to reflect the new directory structure
 6. Developer sees a summary log of what was updated (or a "nothing changed" confirmation)
 
+<!-- section_id: "bc7719b3-4fbd-4a5d-9c0d-75fae7bbdeb4" -->
 ### Acceptance Criteria
 
 - No manual invocation required — sync happens automatically on structural changes

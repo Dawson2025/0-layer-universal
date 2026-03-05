@@ -8,6 +8,7 @@ resource_name: "README"
 
 Place reference documents, templates, and examples here.
 
+<!-- section_id: "82ba7d94-111c-47ab-ae8e-fdf7d796e6a5" -->
 ## Suggested Contents
 - Templates for 09_fixing outputs
 - Examples of good 09_fixing work

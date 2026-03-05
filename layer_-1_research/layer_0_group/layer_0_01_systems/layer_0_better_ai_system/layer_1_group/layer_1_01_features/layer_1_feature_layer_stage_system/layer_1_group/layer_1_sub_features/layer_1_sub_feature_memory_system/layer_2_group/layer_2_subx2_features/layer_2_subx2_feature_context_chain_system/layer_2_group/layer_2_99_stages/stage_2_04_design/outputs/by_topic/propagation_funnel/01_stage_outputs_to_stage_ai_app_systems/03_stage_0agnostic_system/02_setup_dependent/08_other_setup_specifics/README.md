@@ -6,10 +6,12 @@ resource_name: "README"
 ---
 # Other Setup Specifics (08_other_setup_specifics)
 
+<!-- section_id: "5b99b7c5-3346-43c6-aeb6-772054ee463c" -->
 ## What This Contains
 
 Additional environment-dependent context that doesn't fit neatly into the other categories. This is where machine-specific quirks, workarounds, and customizations go.
 
+<!-- section_id: "906b8811-cd17-4d0f-ad2a-9e2b9f4a7b40" -->
 ## Common Content
 
 | Type | Examples |
@@ -23,6 +25,7 @@ Additional environment-dependent context that doesn't fit neatly into the other 
 | Performance Tuning | Memory limits, process priorities, disk settings |
 | Workarounds | Known issues and their solutions specific to this machine |
 
+<!-- section_id: "8520668f-abac-4727-ae11-8eb3277a7777" -->
 ## Example Structure
 
 ```
@@ -38,6 +41,7 @@ Additional environment-dependent context that doesn't fit neatly into the other 
 └── known_issues_and_workarounds.md
 ```
 
+<!-- section_id: "552ed549-e6e7-4c65-8b29-72d6ee5ca280" -->
 ## When to Add Content Here
 
 Add content to this section when:
@@ -47,6 +51,7 @@ Add content to this section when:
 - It's hardware-specific
 - It's a convenience customization
 
+<!-- section_id: "1cb46d91-19e3-4c10-8894-9cb4009f4dea" -->
 ## End of Setup-Dependent Hierarchy
 
 After this section, context moves to **03_context_avenue_web/** where core system and setup-dependent content are adapted into context avenue-specific formats.

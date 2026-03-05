@@ -6,12 +6,14 @@ resource_name: "ComprehensiveFirebaseTestingStrategy"
 # Comprehensive Firebase Testing Strategy
 *The Complete Approach: Emulator + Real Environment Verification*
 
+<!-- section_id: "492a3d9a-d51a-48c0-9bcb-4c4c7ccb4408" -->
 ## 🎯 The Reality Check
 
 **You're absolutely right!** We need BOTH:
 1. ✅ **Firebase Emulator** - Fast development testing
 2. ✅ **Real Firebase Tests** - Environment/integration verification
 
+<!-- section_id: "9eb89cea-92a2-4231-8563-a32ab11d23f8" -->
 ## 📋 The Complete Testing Strategy
 
 ```
@@ -45,8 +47,10 @@ resource_name: "ComprehensiveFirebaseTestingStrategy"
 
 ---
 
+<!-- section_id: "ddd58886-7884-460f-9d4d-96ab03db83e9" -->
 ## 🎯 Why We Need BOTH
 
+<!-- section_id: "03dc6bac-7e6d-4606-b335-3ca49a47fe48" -->
 ### Firebase Emulator (70% of tests)
 **Purpose**: Fast development feedback
 - ✅ Quick iteration during coding
@@ -54,6 +58,7 @@ resource_name: "ComprehensiveFirebaseTestingStrategy"
 - ✅ Offline development
 - ❌ **Doesn't verify**: Real environment, security rules, indexes, quotas
 
+<!-- section_id: "d7acd75e-a97f-4385-a9a1-bb494de0b0b3" -->
 ### Real Firebase Tests (30% of tests) ⭐ CRITICAL
 **Purpose**: Environment verification
 - ✅ **Actual Firebase projects** (lang-trak-dev, lang-trak-prod)
@@ -66,8 +71,10 @@ resource_name: "ComprehensiveFirebaseTestingStrategy"
 
 ---
 
+<!-- section_id: "fba42b20-dc5a-477b-a051-6c7d7537d69b" -->
 ## 📊 Test Organization by Environment
 
+<!-- section_id: "53ad0209-ecb8-49b1-833b-cc1542335e4b" -->
 ### Test Structure
 ```
 tests/
@@ -94,8 +101,10 @@ tests/
 
 ---
 
+<!-- section_id: "a758ce28-68a2-4c52-af8c-b6efb9bf5206" -->
 ## 🏗️ Real Firebase Environment Tests (The Critical Part!)
 
+<!-- section_id: "1ebb19ca-4d65-41aa-a74f-dbd599e2aa56" -->
 ### Test Categories
 
 #### 1. **Environment Verification Tests**
@@ -274,8 +283,10 @@ class TestFirebaseFeatures:
 
 ---
 
+<!-- section_id: "6ca564d1-e681-452f-acab-700640e48bcc" -->
 ## 🔧 Configuration Management
 
+<!-- section_id: "93373db0-416c-4274-b343-9c683cb829ed" -->
 ### Environment Selection
 ```python
 # tests/integration/real_firebase/conftest.py
@@ -322,8 +333,10 @@ def firebase_environment():
 
 ---
 
+<!-- section_id: "70995841-e9df-44a8-82bf-7843e4f9b92b" -->
 ## 🚀 CI/CD Integration Strategy
 
+<!-- section_id: "726127a9-3302-4c46-a753-430a3ac927a1" -->
 ### GitHub Actions Workflow
 ```yaml
 # .github/workflows/comprehensive-tests.yml
@@ -454,8 +467,10 @@ jobs:
 
 ---
 
+<!-- section_id: "3d7a0003-a724-461f-8519-0dc531d4921d" -->
 ## 📅 Test Execution Schedule
 
+<!-- section_id: "622ef061-ae74-43b2-8c23-58dfa487804f" -->
 ### Development Workflow
 ```
 ┌──────────────────────────────────────────────────────────┐
@@ -468,6 +483,7 @@ jobs:
 └──────────────────────────────────────────────────────────┘
 ```
 
+<!-- section_id: "2669dc14-f1bc-4c09-b446-9332e9e58459" -->
 ### Pull Request
 ```
 ┌──────────────────────────────────────────────────────────┐
@@ -479,6 +495,7 @@ jobs:
 └──────────────────────────────────────────────────────────┘
 ```
 
+<!-- section_id: "ffab16c2-920c-48d6-b7d5-f17318d07f3c" -->
 ### Main Branch Merge
 ```
 ┌──────────────────────────────────────────────────────────┐
@@ -491,6 +508,7 @@ jobs:
 └──────────────────────────────────────────────────────────┘
 ```
 
+<!-- section_id: "02fd6138-c950-45cc-830a-652e2202ede8" -->
 ### Nightly Build
 ```
 ┌──────────────────────────────────────────────────────────┐
@@ -505,6 +523,7 @@ jobs:
 └──────────────────────────────────────────────────────────┘
 ```
 
+<!-- section_id: "1cb0581d-a904-4092-8c2f-f55be2f4455d" -->
 ### Production Deploy
 ```
 ┌──────────────────────────────────────────────────────────┐
@@ -520,8 +539,10 @@ jobs:
 
 ---
 
+<!-- section_id: "7796c932-682d-4339-865d-aaa109239c5d" -->
 ## 🎯 Test Execution Commands
 
+<!-- section_id: "6e88c439-c817-44a2-aef5-d20affd38b90" -->
 ### Local Development
 ```bash
 # Fast development loop
@@ -544,6 +565,7 @@ FIREBASE_TEST_ENV=production \
 
 ---
 
+<!-- section_id: "165ed3ee-de16-45ef-9d48-894d4feb52d4" -->
 ## 📊 Complete Test Coverage Matrix
 
 | Test Type | Tool | Frequency | Duration | Cost | Purpose |
@@ -559,8 +581,10 @@ FIREBASE_TEST_ENV=production \
 
 ---
 
+<!-- section_id: "d1886e2d-2c16-4ac3-9606-a57e4fdf906b" -->
 ## ✅ Summary: The Best of Both Worlds
 
+<!-- section_id: "70fdff1c-bea3-4560-9d02-45cfe5485e1f" -->
 ### What We Keep (Real Firebase Tests)
 1. ✅ **Dev environment verification** - Ensures lang-trak-dev works
 2. ✅ **Staging environment verification** - Pre-production confidence
@@ -569,6 +593,7 @@ FIREBASE_TEST_ENV=production \
 5. ✅ **Index verification** - Complex queries work
 6. ✅ **Integration verification** - All services connected correctly
 
+<!-- section_id: "27567359-2330-4b5b-8e1c-556cc824a319" -->
 ### What We Add (Firebase Emulator)
 1. ✅ **Fast development tests** - Instant feedback loop
 2. ✅ **Offline development** - Work anywhere
@@ -576,6 +601,7 @@ FIREBASE_TEST_ENV=production \
 4. ✅ **CI/CD efficiency** - 15s instead of 2 minutes
 5. ✅ **Cost savings** - $0 vs $50/month
 
+<!-- section_id: "2db6e2f9-b7f1-4a54-9181-277fb4c87c95" -->
 ### The Result
 - 🚀 **Fast development** (emulator)
 - ✅ **Production confidence** (real Firebase tests)
@@ -584,6 +610,7 @@ FIREBASE_TEST_ENV=production \
 
 ---
 
+<!-- section_id: "917a2aba-91aa-48f3-b615-15a88aeec9d9" -->
 ## 🎯 Next Steps
 
 1. **Set up Firebase Emulator** (for fast development)

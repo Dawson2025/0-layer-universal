@@ -10,6 +10,7 @@ All new testing artifacts are organized as:
 
 `outputs/by_purpose/<purpose>/{design,implementation,runs,results,insights}/`
 
+<!-- section_id: "a7d33589-cc8f-4da3-8daa-9e7526d8e80e" -->
 ## Current Purposes
 - `report_porting_contract_validation`
 - `rule_compliance_validation`

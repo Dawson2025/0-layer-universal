@@ -5,12 +5,14 @@ resource_name: "v5_comprehensive_operations_with_customizable_importance"
 ---
 # Context Avenue Database Schema — Proposal v5
 
+<!-- section_id: "06793d59-f390-493e-984c-ef5c123b03f9" -->
 ## Comprehensive Operations with Customizable Importance Weighting
 
 This proposal adds **all 20+ database operations** with comprehensive **importance measurement** at both general and project-specific levels, enabling projects to customize what matters to their needs.
 
 ---
 
+<!-- section_id: "335b8873-395e-4a86-8f0e-a228b82bf7f1" -->
 ## Core Concept
 
 **Every operation has two dimensions:**
@@ -33,8 +35,10 @@ Operation: Bulk Insert
 
 ---
 
+<!-- section_id: "3fcac249-0da3-4790-a213-4fdafd7488bc" -->
 ## Database Schema
 
+<!-- section_id: "61b1220a-7382-4ad5-bc70-66d6b434b545" -->
 ### 1. OPERATIONS (Comprehensive List)
 
 ```sql
@@ -90,6 +94,7 @@ Analytics Operations
 
 ---
 
+<!-- section_id: "24cd8608-7a84-4250-8f56-a13bbd259a26" -->
 ### 2. OPERATION_METRICS (How to measure operation performance)
 
 ```sql
@@ -109,6 +114,7 @@ CREATE TABLE operation_metrics (
 
 ---
 
+<!-- section_id: "4e6aa85b-2d65-4064-9918-1b862ab22f7e" -->
 ### 3. OPERATION_BENCHMARKS (Performance data)
 
 ```sql
@@ -129,6 +135,7 @@ CREATE TABLE operation_benchmarks (
 
 ---
 
+<!-- section_id: "e6ac947e-40c7-45ed-9080-532cc0a6ae96" -->
 ### 4. IMPORTANCE_METRICS (How to measure importance)
 
 ```sql
@@ -160,6 +167,7 @@ CREATE TABLE importance_metrics (
 
 ---
 
+<!-- section_id: "1db2e892-4d7e-45fa-8018-86dafb36e00b" -->
 ### 5. OPERATION_IMPORTANCE_GENERAL (Base importance for all projects)
 
 ```sql
@@ -195,6 +203,7 @@ Delete - Bulk:
 
 ---
 
+<!-- section_id: "7cb93662-d651-4935-a280-61ed3a48e0f3" -->
 ### 6. PROJECT_CONTEXTS (Define projects and their priorities)
 
 ```sql
@@ -218,6 +227,7 @@ CREATE TABLE project_contexts (
 
 ---
 
+<!-- section_id: "0262cd06-574f-4aee-b75f-d1cd97a737de" -->
 ### 7. PROJECT_OPERATION_IMPORTANCE (Customized importance per project)
 
 ```sql
@@ -253,6 +263,7 @@ FinancialSystemProject:
 
 ---
 
+<!-- section_id: "2419770c-cf3d-468f-a1fb-aecd6789c0ec" -->
 ### 8. WEIGHTED_OPERATION_SCORES (Project-specific recommendations)
 
 ```sql
@@ -277,8 +288,10 @@ ORDER BY p.project_name, weighted_score DESC;
 
 ---
 
+<!-- section_id: "e597ffcf-d784-454c-8cb1-6180b96bc8d4" -->
 ## Importance Measurement Definitions
 
+<!-- section_id: "91f161da-acae-45ce-be9c-abb1aea43598" -->
 ### 1. Frequency (How Often Used)
 
 | Property | Value |
@@ -290,6 +303,7 @@ ORDER BY p.project_name, weighted_score DESC;
 | **Baseline "Critical"** | >70% (used in most deployments) |
 | **General Examples** | Query Point: 95%, Bulk Delete: 15%, Graph Traversal: 20% |
 
+<!-- section_id: "c27eae5a-4f1a-420d-8b0f-5652d0c4c8ac" -->
 ### 2. Criticality (Impact if Broken)
 
 | Property | Value |
@@ -301,6 +315,7 @@ ORDER BY p.project_name, weighted_score DESC;
 | **Baseline "Critical"** | >4/5 (system seriously impaired if broken) |
 | **General Examples** | Query: 5/5, Bulk Insert: 3/5, Rebalancing: 1/5 |
 
+<!-- section_id: "e13fd9a4-2b64-43eb-9a4f-eba07db41778" -->
 ### 3. Cost Impact (Financial Consequence)
 
 | Property | Value |
@@ -312,6 +327,7 @@ ORDER BY p.project_name, weighted_score DESC;
 | **Baseline "High Impact"** | >$1/query |
 | **General Examples** | Query: $0.01, Bulk Insert: $5, Replication: $100/month |
 
+<!-- section_id: "e8247c4e-b30a-4813-9e04-792fb2cb320a" -->
 ### 4. Risk Score (Failure Impact)
 
 | Property | Value |
@@ -323,6 +339,7 @@ ORDER BY p.project_name, weighted_score DESC;
 | **Baseline "High Risk"** | >7/10 (major risk) |
 | **General Examples** | Query: 9/10, Bulk Delete: 4/10, Index Rebuild: 2/10 |
 
+<!-- section_id: "4b9b9824-efb5-4685-bc1a-1ef2042b4d57" -->
 ### 5. User Impact (Direct User-Facing)
 
 | Property | Value |
@@ -334,6 +351,7 @@ ORDER BY p.project_name, weighted_score DESC;
 | **Baseline "High Impact"** | >3.5/5 |
 | **General Examples** | Query: 5/5, Transaction: 4/5, Backup: 1/5 |
 
+<!-- section_id: "9c0c3a2d-2abc-4734-9b98-14bdf871eb1e" -->
 ### 6. SLA Requirement (Service Level Target)
 
 | Property | Value |
@@ -347,8 +365,10 @@ ORDER BY p.project_name, weighted_score DESC;
 
 ---
 
+<!-- section_id: "08e2f527-6f32-4b93-b904-6791ec68e620" -->
 ## SQL Implementation
 
+<!-- section_id: "2b517ddf-9695-49f6-9b3b-3443af07cef7" -->
 ### Insert Operations
 
 ```sql
@@ -366,6 +386,7 @@ VALUES
 -- ... continue for all 20+ operations
 ```
 
+<!-- section_id: "9c88705a-90d7-4555-b0a8-e41133b7b926" -->
 ### Insert General Importance
 
 ```sql
@@ -393,6 +414,7 @@ VALUES
 -- ... continue for all operations × metrics
 ```
 
+<!-- section_id: "d40cda1b-4e23-4655-a484-6e1b205162a9" -->
 ### Insert Project Context and Overrides
 
 ```sql
@@ -421,8 +443,10 @@ VALUES
 
 ---
 
+<!-- section_id: "feb4b773-466c-454a-9265-208f8ddc296b" -->
 ## Query Examples
 
+<!-- section_id: "ee649d48-6e9d-4c56-b9e2-3db727c5b3cc" -->
 ### Get Weighted Scores for a Project
 
 ```sql
@@ -440,6 +464,7 @@ ORDER BY weighted_score DESC
 LIMIT 20;
 ```
 
+<!-- section_id: "1aa815b6-dfa0-44e9-ab94-c2d10a5e8c80" -->
 ### Compare Projects' Priorities
 
 ```sql
@@ -458,6 +483,7 @@ WHERE o.operation_name = 'insert_bulk'
 ORDER BY poi.normalized_importance DESC;
 ```
 
+<!-- section_id: "f3cff801-1abb-4399-bee2-0368d0a67582" -->
 ### Find Best Avenue for Project's Top Priorities
 
 ```sql
@@ -478,6 +504,7 @@ WHERE p.project_name = 'FinancialLedger'
 ORDER BY weighted_score DESC;
 ```
 
+<!-- section_id: "ff281f4f-2a04-465b-814e-cf20999d8936" -->
 ### Create Custom Project Instance
 
 ```sql
@@ -500,6 +527,7 @@ FROM operation_importance_general;
 
 ---
 
+<!-- section_id: "04fb4a70-a5d6-4a6c-b22b-2e11cf8725fd" -->
 ## Benefits of This Comprehensive Architecture
 
 ✅ **Universal Base Layer** — all operations measured the same way
@@ -514,8 +542,10 @@ FROM operation_importance_general;
 
 ---
 
+<!-- section_id: "f7eb2b4b-9644-4b4b-a839-a3dda024d4e1" -->
 ## Complete Operation Taxonomy (20+ Operations)
 
+<!-- section_id: "1701f685-d0b7-42d8-9ec8-d3e61404f353" -->
 ### Read Operations (6)
 - Query - Point Lookup
 - Query - Range Query
@@ -524,6 +554,7 @@ FROM operation_importance_general;
 - Query - Full-Text Search
 - Query - Graph Traversal
 
+<!-- section_id: "170e4698-f2af-48d6-9836-e5f2b7b1a05e" -->
 ### Write Operations (6)
 - Insert - Single Record
 - Insert - Bulk
@@ -532,12 +563,14 @@ FROM operation_importance_general;
 - Delete - Single Record
 - Delete - Bulk
 
+<!-- section_id: "c79751dc-b921-4174-b089-2ccf02350d48" -->
 ### Structural Operations (4)
 - Index - Create/Rebuild
 - Index - Optimize/Defragment
 - Rebalancing (tree/hierarchy)
 - Schema Migration
 
+<!-- section_id: "c7d9befc-121f-492c-ad78-7c98b0539b09" -->
 ### Consistency Operations (5)
 - Transaction - Begin/Commit
 - Rollback - Undo
@@ -545,6 +578,7 @@ FROM operation_importance_general;
 - Conflict Resolution - Merge
 - Backup/Recovery
 
+<!-- section_id: "d562a917-93d1-4b20-9a88-196e5ebeb8c7" -->
 ### Analytics Operations (3)
 - Aggregation (SUM, AVG, COUNT)
 - Join - Multi-source
@@ -552,6 +586,7 @@ FROM operation_importance_general;
 
 ---
 
+<!-- section_id: "d6663406-caf0-4bd3-84c7-6d3125e23749" -->
 ## Next Steps
 
 1. **Populate OPERATIONS** — add all 20+ operations with hierarchy
@@ -565,6 +600,7 @@ FROM operation_importance_general;
 
 ---
 
+<!-- section_id: "fdbd9644-7bfe-49c0-a2fd-8aa8abe2b44f" -->
 ## Summary
 
 This v5 proposal creates a **fully parameterizable database** where:

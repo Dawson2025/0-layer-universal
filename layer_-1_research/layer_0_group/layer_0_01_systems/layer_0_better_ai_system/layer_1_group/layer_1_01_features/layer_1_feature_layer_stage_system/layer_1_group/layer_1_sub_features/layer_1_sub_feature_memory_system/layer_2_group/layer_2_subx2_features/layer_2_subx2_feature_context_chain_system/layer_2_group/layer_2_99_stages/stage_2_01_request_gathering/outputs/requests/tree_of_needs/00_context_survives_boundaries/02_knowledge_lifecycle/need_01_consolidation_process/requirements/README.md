@@ -8,10 +8,12 @@ resource_name: "README"
 
 **Need**: [Consolidation Process](../README.md)
 
+<!-- section_id: "c81eb54f-c3dc-48fe-8276-7180a6afa9c2" -->
 ## Overview
 
 These requirements define when and how raw stage outputs (Tier 3) are distilled into actionable knowledge files (Tier 2). Without a defined consolidation process, knowledge files never get created and agents are forced to read raw outputs every time. The requirements cover event-driven triggers (stage completion, major milestones), a step-by-step distillation protocol that enforces compression over duplication, and supporting tooling that measures compression ratios and generates consolidation reports.
 
+<!-- section_id: "6d6f9d7f-0fc3-4f56-93f3-54446c46b528" -->
 ## Key Themes
 
 - **Event-Driven Triggers**: Consolidation happens at natural stage boundaries (stage completion, major milestones), not continuously -- matching the brain's sleep consolidation pattern

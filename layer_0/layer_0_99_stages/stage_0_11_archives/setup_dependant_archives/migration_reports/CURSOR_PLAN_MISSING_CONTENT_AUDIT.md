@@ -5,6 +5,7 @@ resource_name: "CURSOR_PLAN_MISSING_CONTENT_AUDIT"
 ---
 # Cursor IDE Plan Mode: Missing Content Audit and Recovery
 
+<!-- section_id: "3c79c100-159e-45f6-8c78-f125a80d8436" -->
 ## Context
 
 We recently consolidated 10 separate setup sublayers (0.05-0.14) into a single unified hierarchical structure at `sub_layer_0_05-0.014_setup/0.01_universal_setup_file_tree_0/`.
@@ -16,6 +17,7 @@ During this consolidation:
 
 **Problem**: Not all original data from the original sublayer folders appears to be in the updated hierarchical system.
 
+<!-- section_id: "4024e95e-1660-41bc-b369-580a61550850" -->
 ## Your Task
 
 Please create a comprehensive plan to:
@@ -26,6 +28,7 @@ Please create a comprehensive plan to:
 4. **Plan the recovery strategy** to restore missing content
 5. **Execute the recovery** to integrate all missing content into the proper levels
 
+<!-- section_id: "c9ca34a3-5db8-4b7a-aa9e-18779ad27802" -->
 ## Git History Reference
 
 Key commits in this consolidation:
@@ -34,6 +37,7 @@ Key commits in this consolidation:
 - `3dda597` - Moved content to legacy_content/
 - `e505fbc` - Integrated content into hierarchical structure
 
+<!-- section_id: "d30de547-d543-4cc4-86f7-7a7c4eca4be4" -->
 ## Original Sublayers That Were Consolidated
 
 1. `sub_layer_0_05_os_setup` → Level 1: `0.05_operating_systems/`
@@ -47,6 +51,7 @@ Key commits in this consolidation:
 9. `sub_layer_0_13_universal_protocols` → Level 8: `0.13_protocols/`
 10. `sub_layer_0_14_agent_setup` → Level 9: `0.14_agent_setup/`
 
+<!-- section_id: "22a6e7e8-4e16-4c83-a8b8-7beac1f644f2" -->
 ## Current Hierarchical Structure
 
 Content should be nested in:
@@ -66,6 +71,7 @@ sub_layer_0_05-0.014_setup/
                                             └── 0.14_agent_setup/
 ```
 
+<!-- section_id: "dd2db5cd-1f98-4bba-90f0-3eb688a1cb0e" -->
 ## Investigation Steps You Should Plan
 
 1. **Git History Analysis**
@@ -100,6 +106,7 @@ sub_layer_0_05-0.014_setup/
    - Update any cross-references or links
    - Verify completeness with file counts and content checks
 
+<!-- section_id: "bc3e1bc4-e928-4ee0-8f70-3e2364f3f89a" -->
 ## Expected Deliverables
 
 Your plan should result in:
@@ -110,6 +117,7 @@ Your plan should result in:
 4. **Verification Strategy**: How to confirm all content has been recovered
 5. **Implementation**: Actual recovery and integration of missing content
 
+<!-- section_id: "4d7c73fb-4c3d-49ce-b7ad-21234257149b" -->
 ## Questions to Answer
 
 - How many files existed in each old sublayer before consolidation?
@@ -119,6 +127,7 @@ Your plan should result in:
 - Are they in git history and can be recovered?
 - What was in the `legacy_content/` directory that might not have been moved?
 
+<!-- section_id: "f4888300-74cd-4e19-a97c-1ae29a853b45" -->
 ## Success Criteria
 
 - All original content from sublayers 0.05-0.14 is present in the hierarchical structure
@@ -127,6 +136,7 @@ Your plan should result in:
 - Git history properly tracks all moves/renames
 - Documentation is updated to reflect complete integration
 
+<!-- section_id: "0a5ea666-6e58-4014-9bee-14ff80df40cc" -->
 ## Additional Context
 
 The file tree has 10 levels of hierarchy with `_shared/` directories at each level for cross-cutting documentation. Content should be organized by:

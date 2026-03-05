@@ -6,12 +6,15 @@ resource_name: "framework-comparison"
 # Framework Comparison Guide
 *Choosing Between Spec Kit and BMAD Method (or Using Both)*
 
+<!-- section_id: "a5be0e8d-f96f-4bfb-a906-e85634a017f9" -->
 ## Overview
 
 This guide helps you decide which framework(s) to use for your AI-driven development projects. Both frameworks have unique strengths and can be used together or independently.
 
+<!-- section_id: "3078b6f0-1c5a-44ea-b0a7-9138293b6921" -->
 ## Quick Decision Matrix
 
+<!-- section_id: "02dadf0f-659a-47d7-8e6e-c872aa78f22f" -->
 ### Use Spec Kit If:
 - ✅ You want structured, predictable workflows
 - ✅ You prefer gated phases with validation checkpoints
@@ -20,6 +23,7 @@ This guide helps you decide which framework(s) to use for your AI-driven develop
 - ✅ You want clear documentation alongside code
 - ✅ You use GitHub Copilot, Claude Code, or Gemini CLI
 
+<!-- section_id: "375d165b-3f82-46c0-a3f8-2acb6b990547" -->
 ### Use BMAD Method If:
 - ✅ You want agentic team collaboration
 - ✅ You need specialized roles for different aspects of development
@@ -28,6 +32,7 @@ This guide helps you decide which framework(s) to use for your AI-driven develop
 - ✅ You want context-engineered development
 - ✅ You need human + AI review processes
 
+<!-- section_id: "e175eec2-5492-4bf2-bbea-6f79414c13f6" -->
 ### Use Both If:
 - ✅ You want maximum structure and collaboration
 - ✅ You're building complex, multi-faceted projects
@@ -35,8 +40,10 @@ This guide helps you decide which framework(s) to use for your AI-driven develop
 - ✅ You want comprehensive coverage from ideation to deployment
 - ✅ You have resources for both frameworks
 
+<!-- section_id: "36f56565-be82-4a80-aa16-094986091eae" -->
 ## Detailed Comparison
 
+<!-- section_id: "190ce9ad-f3d4-4f90-8ddb-2abc8c2a7b06" -->
 ### Approach
 
 | Aspect | Spec Kit | BMAD Method |
@@ -46,6 +53,7 @@ This guide helps you decide which framework(s) to use for your AI-driven develop
 | **Primary Focus** | Structure and validation | Team collaboration and traceability |
 | **Development Model** | Waterfall-like with gates | Agile with sprints |
 
+<!-- section_id: "2dcc07d0-0c0b-4463-bcc3-ec7733b599ef" -->
 ### Validation and Quality
 
 | Aspect | Spec Kit | BMAD Method |
@@ -55,6 +63,7 @@ This guide helps you decide which framework(s) to use for your AI-driven develop
 | **Review Process** | Phase-based validation | Both human and AI agents review |
 | **Testing Strategy** | TDD approach in task plan | Comprehensive QA process with dedicated agent |
 
+<!-- section_id: "a9287e7d-181b-475b-8392-32f2a64bc744" -->
 ### Specification Management
 
 | Aspect | Spec Kit | BMAD Method |
@@ -64,6 +73,7 @@ This guide helps you decide which framework(s) to use for your AI-driven develop
 | **Traceability** | From spec to implementation | Complete audit trail with context preservation |
 | **Documentation** | Specifications, plans, tasks | PRDs, architecture, stories, tests |
 
+<!-- section_id: "d41ef96c-5464-4c18-8613-50433e8bae0a" -->
 ### AI Integration
 
 | Aspect | Spec Kit | BMAD Method |
@@ -73,6 +83,7 @@ This guide helps you decide which framework(s) to use for your AI-driven develop
 | **Context Management** | Clear, structured guidance | Context-engineered with hyper-detailed stories |
 | **AI Review** | Self-validation through checkpoints | Human + AI collaborative review |
 
+<!-- section_id: "b1428636-ec47-40a4-927d-5215348b0d74" -->
 ### Team and Collaboration
 
 | Aspect | Spec Kit | BMAD Method |
@@ -82,6 +93,7 @@ This guide helps you decide which framework(s) to use for your AI-driven develop
 | **Collaboration** | Through specifications and documentation | Through specialized agent interactions |
 | **Scalability** | Best for small to medium projects | Designed for medium to large projects |
 
+<!-- section_id: "061deb29-f596-441a-82fc-72b2ef27fab8" -->
 ### Installation and Setup
 
 | Aspect | Spec Kit | BMAD Method |
@@ -91,6 +103,7 @@ This guide helps you decide which framework(s) to use for your AI-driven develop
 | **Initialization** | `specify init my-project` | Setup Web UI + configure agents |
 | **Complexity** | Simple CLI-based | Requires agent configuration |
 
+<!-- section_id: "e893fe47-ab0d-455d-86d8-b33d8116c5ad" -->
 ### Learning Curve
 
 | Aspect | Spec Kit | BMAD Method |
@@ -100,8 +113,10 @@ This guide helps you decide which framework(s) to use for your AI-driven develop
 | **Getting Started** | Minutes to initialize | Hours to configure agents |
 | **Mastery** | Days to weeks | Weeks to months |
 
+<!-- section_id: "996f5bf4-9867-462e-a92d-1390c91e28f0" -->
 ## Use Case Scenarios
 
+<!-- section_id: "b8cdc85d-ba2d-4782-ac4f-7f9969ed20b1" -->
 ### Scenario 1: Personal Project
 
 **Project**: Personal task management app
@@ -116,6 +131,7 @@ This guide helps you decide which framework(s) to use for your AI-driven develop
 
 **Setup Time**: ~10 minutes
 
+<!-- section_id: "dd77e0ab-1e0a-4080-b48f-55901a6b5972" -->
 ### Scenario 2: Small Startup MVP
 
 **Project**: MVP for a B2B SaaS product
@@ -130,6 +146,7 @@ This guide helps you decide which framework(s) to use for your AI-driven develop
 
 **Setup Time**: ~30 minutes
 
+<!-- section_id: "1d9b567d-38ac-4fc1-9875-9165547c63ba" -->
 ### Scenario 3: Enterprise Product
 
 **Project**: Large-scale enterprise application with multiple teams
@@ -144,6 +161,7 @@ This guide helps you decide which framework(s) to use for your AI-driven develop
 
 **Setup Time**: ~2-4 hours
 
+<!-- section_id: "43ac332e-52da-4283-a3ba-56c3ba2b7c08" -->
 ### Scenario 4: Research Project with AI
 
 **Project**: Exploratory research project
@@ -158,6 +176,7 @@ This guide helps you decide which framework(s) to use for your AI-driven develop
 
 **Setup Time**: ~3-5 hours
 
+<!-- section_id: "0dbe207d-83c9-42d1-aae3-8073199124d0" -->
 ### Scenario 5: Learning and Experimentation
 
 **Project**: Learning new technologies and AI capabilities
@@ -172,8 +191,10 @@ This guide helps you decide which framework(s) to use for your AI-driven develop
 
 **Setup Time**: Start with 10 minutes, expand as needed
 
+<!-- section_id: "2ceafdf5-4190-48d8-a077-cd241ba7acec" -->
 ## Framework Synergy: Using Both Together
 
+<!-- section_id: "e15bd0a9-d741-4a8f-95dd-98fb80ebb31e" -->
 ### How They Complement Each Other
 
 Spec Kit and BMAD Method can work together effectively:
@@ -188,6 +209,7 @@ Spec Kit and BMAD Method can work together effectively:
 - **Context**: Hyper-detailed development stories
 - **Review**: Human + AI collaborative review
 
+<!-- section_id: "ff89cda6-a6ed-4026-97ce-218b9479f099" -->
 ### Combined Workflow
 
 1. **Phase 1: Ideation** (BMAD - Analyst + Product Manager)
@@ -211,6 +233,7 @@ Spec Kit and BMAD Method can work together effectively:
    - Use BMAD QA agent for testing
    - Human + AI review through pull requests
 
+<!-- section_id: "f8a90e87-cf27-4d9a-ab1b-d3d3be3ea7a7" -->
 ### Benefits of Combining
 
 - **Maximum Structure**: Gated phases from Spec Kit
@@ -219,6 +242,7 @@ Spec Kit and BMAD Method can work together effectively:
 - **Quality Assurance**: Validation gates + AI reviews
 - **Flexibility**: Use best parts of each framework
 
+<!-- section_id: "231294c8-6c6c-4bd0-ba08-a33add5930fd" -->
 ### Recommendations for Combination
 
 **Start Simple**: Begin with Spec Kit for structure
@@ -229,8 +253,10 @@ Spec Kit and BMAD Method can work together effectively:
 
 **Clear Boundaries**: Define when to use which framework
 
+<!-- section_id: "e271e169-c7a9-423f-8954-0172c27d6ec3" -->
 ## Decision Framework
 
+<!-- section_id: "781fe2f8-ee80-4030-95e5-c3550f6cca75" -->
 ### Decision Tree
 
 ```
@@ -255,8 +281,10 @@ Need rapid iteration and flexibility?
 └─ No → Spec Kit (Gated approach)
 ```
 
+<!-- section_id: "94429c82-8564-40ef-bb51-d92117278769" -->
 ## Migration Path
 
+<!-- section_id: "abd073ec-9fd8-4b42-b446-1a24466232e9" -->
 ### From Ad-Hoc to Spec Kit
 
 **Week 1**: Install and initialize
@@ -264,6 +292,7 @@ Need rapid iteration and flexibility?
 **Week 3**: Generate plan and implement
 **Week 4**: Refine and iterate
 
+<!-- section_id: "3a76566c-05ef-4a78-969a-03c00b0a432e" -->
 ### From Spec Kit to BMAD
 
 **Week 1**: Continue using Spec Kit for structure
@@ -271,14 +300,17 @@ Need rapid iteration and flexibility?
 **Week 3**: Add BMAD Architect for design
 **Week 4**: Add BMAD Developer + QA
 
+<!-- section_id: "0a667199-871f-44a4-bf2c-d56569df80b3" -->
 ### From Nothing to Both
 
 **Week 1**: Start with Spec Kit
 **Week 2**: Add BMAD as needed for specific roles
 **Week 3-4**: Refine integration and workflow
 
+<!-- section_id: "fd496291-a452-4b11-874d-10f62ea06b38" -->
 ## Conclusion
 
+<!-- section_id: "7d19c05e-a9a2-494c-a8ba-7dc80f7e2082" -->
 ### Key Takeaways
 
 1. **Spec Kit** is ideal for structured, gated development with validation checkpoints
@@ -287,6 +319,7 @@ Need rapid iteration and flexibility?
 4. **Start Simple**: Begin with Spec Kit, add BMAD as complexity grows
 5. **Flexibility**: You can use both frameworks complementarily
 
+<!-- section_id: "55ccabef-8b30-4e9d-8e1a-6e168adf0655" -->
 ### Final Recommendation
 
 **For Most Projects**: Start with Spec Kit

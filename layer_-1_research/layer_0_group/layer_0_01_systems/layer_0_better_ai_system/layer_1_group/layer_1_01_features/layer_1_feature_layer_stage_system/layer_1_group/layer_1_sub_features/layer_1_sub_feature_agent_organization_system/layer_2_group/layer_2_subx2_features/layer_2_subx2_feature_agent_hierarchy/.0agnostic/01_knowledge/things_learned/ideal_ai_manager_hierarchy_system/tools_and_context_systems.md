@@ -3,6 +3,7 @@ resource_id: "bdaa33fa-48bf-428c-9f80-c1d88715bf28"
 resource_type: "knowledge"
 resource_name: "tools_and_context_systems"
 ---
+<!-- section_id: "15a3c2ce-be15-4ee9-8175-8c4daa15d317" -->
 ## Tools and Context Systems
 
 This document expands on how specific tools and their context systems fit into the ideal AI manager hierarchy system.
@@ -16,6 +17,7 @@ The goal is to keep the **architecture tool-agnostic**, while capturing enough *
 
 ---
 
+<!-- section_id: "ff3a399f-39b6-48bd-b8bc-bde1d94d11d5" -->
 ## 1. Generic Tool Interface (Recap)
 
 Any tool (CLI, IDE, framework, or agent) is modeled as:
@@ -43,8 +45,10 @@ Context can be injected via:
 
 ---
 
+<!-- section_id: "c5f3fb4d-71d5-447b-8f21-4db2b220e3c8" -->
 ## 2. Claude Code and `CLAUDE.md`
 
+<!-- section_id: "401aee67-ee6d-4693-9958-37e126c03f8c" -->
 ### 2.1 System Prompt Sources
 
 Claude Code can draw its system prompt from multiple sources (summarized conceptually):
@@ -64,6 +68,7 @@ Key points:
 - Project and directory-specific `CLAUDE.md` files give you **filesystem-as-config**.
 - Output styles and custom agents let you define reusable personas (e.g., “Security Reviewer”).
 
+<!-- section_id: "cd5661fb-7c59-4248-b030-9cc7d4bb64e3" -->
 ### 2.2 Sub-Agents and Hierarchies
 
 Claude Code offers:
@@ -88,6 +93,7 @@ This effectively creates:
 - L1 managers spawning L2/L3 managers/workers.
 - Deeper recursive chains as needed.
 
+<!-- section_id: "ae652b3b-65b8-4397-a3b0-71896e554735" -->
 ### 2.3 Ideal Usage in This System
 
 Claude Code is best used for:
@@ -100,8 +106,10 @@ Claude Code is best used for:
 
 ---
 
+<!-- section_id: "fcea0192-a647-4869-ad4f-5efd1149a131" -->
 ## 3. Codex CLI and `AGENTS.md`
 
+<!-- section_id: "ad5a17de-32d3-4539-8bb0-3e2309ab692e" -->
 ### 3.1 Context via AGENTS.md
 
 Codex CLI uses `AGENTS.md` files to provide filesystem-based context:
@@ -119,6 +127,7 @@ Important:
 - The actual `system` field of the API call is a **hard-coded internal prompt**.
 - `AGENTS.md` lives inside the **chat history**, not the system field.
 
+<!-- section_id: "a025e3ba-2780-4c69-ab33-ae7eb8918bf1" -->
 ### 3.2 Dilution and Session Length
 
 Because `AGENTS.md` is a user message:
@@ -138,6 +147,7 @@ Therefore:
   - 1–3 main turns.
   - A single compact task per session.
 
+<!-- section_id: "8fa2a4d1-21f2-4151-82f7-2bf5f99201eb" -->
 ### 3.3 Ideal Usage in This System
 
 Codex CLI fits perfectly as:
@@ -154,8 +164,10 @@ Managers and supervisors should:
 
 ---
 
+<!-- section_id: "d115afeb-14d8-4719-bb5a-c9ba4007a765" -->
 ## 4. Gemini CLI and `GEMINI` System Prompts
 
+<!-- section_id: "30f15c3c-c16e-4fe4-96be-a42319ca3a7a" -->
 ### 4.1 SystemInstruction and Merging
 
 Gemini CLI allows:
@@ -172,6 +184,7 @@ Unlike Claude:
   - Concatenate relevant layer/feature/component files into a single system file.
   - Point Gemini CLI at that file.
 
+<!-- section_id: "e81536d1-5977-4251-b6e6-dd531b8ba5d9" -->
 ### 4.2 Long-Context Reasoning
 
 Gemini is well-suited to:
@@ -185,6 +198,7 @@ Because:
 - System instructions stay pinned in `systemInstruction`.
 - Large context windows allow long clarifying conversations.
 
+<!-- section_id: "4a24ac91-5a12-436a-91ef-1041190efe16" -->
 ### 4.3 Ideal Usage in This System
 
 Use Gemini CLI primarily for:
@@ -200,8 +214,10 @@ Execution-heavy or multi-file code changes are better left to Claude or Codex.
 
 ---
 
+<!-- section_id: "3053615f-bf56-4b1a-a3f8-193381bf675e" -->
 ## 5. Cursor IDE and Rules
 
+<!-- section_id: "3cc69625-6615-448d-a1b6-08880c22c9c9" -->
 ### 5.1 Cursor Rules as Context
 
 Cursor uses `.cursor/rules/*.mdc` files:
@@ -218,6 +234,7 @@ This gives:
 - Persistent, layered project rules for interactive use.
 - CSS-like cascading via `globs` plus priorities.
 
+<!-- section_id: "aca771b2-047c-4dfa-b5a6-b7312fda26cf" -->
 ### 5.2 Terminal and Orchestration Constraints
 
 Cursor excels at:
@@ -232,6 +249,7 @@ But has known constraints:
 - No programmatic API to launch agents from external CLIs.
 - No standardized handoff JSON interface.
 
+<!-- section_id: "bacc4f7f-66b8-4c41-8a02-a024b17c377b" -->
 ### 5.3 Ideal Usage in This System
 
 Cursor is best treated as:
@@ -245,6 +263,7 @@ It is **not** a first-class participant in the automated CLI-based hierarchy, bu
 
 ---
 
+<!-- section_id: "f6ad7ede-2509-4353-96aa-5d93fee589cb" -->
 ## 6. Other Frameworks (LangGraph, AutoGen, CrewAI, MetaGPT, etc.)
 
 The research references several multi-agent frameworks:
@@ -269,6 +288,7 @@ The key requirement:
 
 ---
 
+<!-- section_id: "3eacc79b-c566-4c59-ab1b-a9df19814922" -->
 ## 7. Adding New Tools
 
 To add a new tool (CLI, IDE, service, or framework):

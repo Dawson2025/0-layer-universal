@@ -11,6 +11,7 @@ resource_name: "CLAUDE_CODE_CLI_DOT_CLAUDE_SYSTEM_SETUP"
 
 ---
 
+<!-- section_id: "91a62d44-b642-435b-979c-2bd15e5d0c2d" -->
 ## Overview
 
 Claude Code CLI stores all its persistent configuration, state, and memory in the **~/.claude/** directory. This is the "home base" for all Claude Code sessions, independent of the project being worked on.
@@ -25,8 +26,10 @@ The `.claude` directory implements:
 
 ---
 
+<!-- section_id: "6f09371c-42e3-497d-9825-ade88c4434f4" -->
 ## Part 1: Directory Structure Overview
 
+<!-- section_id: "1be1d7ca-ed38-4c8d-a3e7-e30e1cdefa28" -->
 ### Complete Directory Tree
 
 ```
@@ -137,8 +140,10 @@ The `.claude` directory implements:
 
 ---
 
+<!-- section_id: "7b63345a-ebb3-45e9-a236-58f0dfcee5d3" -->
 ## Part 2: Core Configuration Files
 
+<!-- section_id: "4bc69d03-b035-48b6-b83b-659e0283a4e3" -->
 ### ~/.claude/CLAUDE.md
 
 **Purpose**: Global Claude Code configuration applied to **every session**, across all projects.
@@ -156,6 +161,7 @@ The `.claude` directory implements:
 
 **When Loaded**: At the start of every Claude Code session, before project-specific CLAUDE.md files.
 
+<!-- section_id: "48ec0c46-c675-4556-ade5-77417844df4c" -->
 ### ~/.claude/settings.json
 
 **Purpose**: User preferences for Claude Code behavior.
@@ -174,6 +180,7 @@ The `.claude` directory implements:
 }
 ```
 
+<!-- section_id: "92ab92d0-1def-481a-b16f-621bb0ec9168" -->
 ### ~/.claude/.credentials.json
 
 **Purpose**: Securely store API keys and authentication tokens.
@@ -187,6 +194,7 @@ The `.claude` directory implements:
 
 **Security**: File is encrypted at rest, never displayed in logs.
 
+<!-- section_id: "172def6a-a06d-4099-8e07-5adaac0458f9" -->
 ### ~/.claude/history.jsonl
 
 **Purpose**: Complete conversation history across all sessions (optional, for personal archival).
@@ -213,6 +221,7 @@ The `.claude` directory implements:
 
 **Size**: Can grow very large (GBs for heavy usage). Useful for tracking patterns but not loaded into context.
 
+<!-- section_id: "92f6120d-17e8-4e2e-8e38-8e0e3f50b013" -->
 ### ~/.claude/stats-cache.json
 
 **Purpose**: Usage statistics and performance metrics.
@@ -229,14 +238,17 @@ The `.claude` directory implements:
 
 ---
 
+<!-- section_id: "dbd3239e-b29b-4cf4-a124-edbc79687b38" -->
 ## Part 3: Per-Project Memory System
 
+<!-- section_id: "edbea4db-ebbe-4cbe-853c-2b938fddd4cb" -->
 ### Directory: ~/.claude/projects/[project-id]/
 
 **Purpose**: Memory and state specific to a single project.
 
 **Project ID Format**: Hashed from working directory path. Example: `-home-dawson` (represents `/home/dawson`).
 
+<!-- section_id: "8ad43eaf-23a5-4505-88bf-19e910cb1445" -->
 ### Subdirectory: memory/
 
 ```
@@ -276,6 +288,7 @@ The `.claude` directory implements:
 3. **On-demand**: Full MEMORY.md loaded via `/memory` command
 4. **Topic files**: Loaded by name when mentioned or needed
 
+<!-- section_id: "264e1bf9-e9c7-4cc5-b42b-7e2fd939c27e" -->
 ### Subdirectory: session-data/
 
 Stores current session state:
@@ -293,8 +306,10 @@ session-data/
 
 ---
 
+<!-- section_id: "c9cd0be3-eb4a-4527-80bb-27cb323c7162" -->
 ## Part 4: Skills System
 
+<!-- section_id: "03116995-7464-4d39-9479-87490909e615" -->
 ### Directory: ~/.claude/skills/
 
 **Purpose**: Reusable workflows and specialized knowledge (like prompts with attached tools).
@@ -354,8 +369,10 @@ tags: [category, subtopic]
 
 ---
 
+<!-- section_id: "ef67cf4a-8317-4911-a7d1-49ddb5de2d10" -->
 ## Part 5: Plans & Plan Mode
 
+<!-- section_id: "6551fe6f-193d-472f-9d36-544271370ad3" -->
 ### Directory: ~/.claude/plans/
 
 **Purpose**: Store design and implementation plans created in "plan mode".
@@ -399,8 +416,10 @@ Example: recursive-floating-quill.md (identifies a specific plan)
 
 ---
 
+<!-- section_id: "60918309-a6c2-4322-9858-6d0fa3b05acb" -->
 ## Part 6: Teams & Task Management
 
+<!-- section_id: "23ba4bf2-3c05-4d9b-adae-58a0148a96c2" -->
 ### Directory: ~/.claude/teams/
 
 **Purpose**: Multi-agent team coordination.
@@ -440,6 +459,7 @@ teams/
 }
 ```
 
+<!-- section_id: "539411a8-a2a3-4f2b-aad2-07605cecb19e" -->
 ### Directory: ~/.claude/tasks/
 
 **Purpose**: Task lists per team.
@@ -471,8 +491,10 @@ tasks/
 
 ---
 
+<!-- section_id: "73fc8ee0-2e38-45d1-a25b-1582e01071b3" -->
 ## Part 7: Session & Environment State
 
+<!-- section_id: "c90053f2-d0f8-457f-ba49-6275d9ae223d" -->
 ### Directory: ~/.claude/session-env/
 
 **Purpose**: Snapshot the session environment for recovery and state persistence.
@@ -508,6 +530,7 @@ session-env/
 }
 ```
 
+<!-- section_id: "39b410af-7e62-492b-9401-1e9a2b2a6be0" -->
 ### Directory: ~/.claude/file-history/
 
 **Purpose**: Track file changes across sessions for context.
@@ -536,8 +559,10 @@ file-history/
 
 ---
 
+<!-- section_id: "561279d9-2ecc-4ba6-96cf-74acf0e39419" -->
 ## Part 8: Hooks System
 
+<!-- section_id: "faa10d52-3754-4211-9718-d51bc5b110a9" -->
 ### Directory: ~/.claude/hooks/
 
 **Purpose**: Custom scripts that execute on lifecycle events.
@@ -571,8 +596,10 @@ fi
 
 ---
 
+<!-- section_id: "6c3b62b7-7541-4ed6-b7d2-6e09a7cf82aa" -->
 ## Part 9: Debug, Cache & Telemetry
 
+<!-- section_id: "f285ba3b-791a-471c-bd76-59b5c2d283a5" -->
 ### Directory: ~/.claude/debug/
 
 **Purpose**: Diagnostic logs for troubleshooting.
@@ -588,6 +615,7 @@ tail -f ~/.claude/debug/error-*.log     # Watch for errors
 grep "timeout" ~/.claude/debug/trace-*.log
 ```
 
+<!-- section_id: "fb24f2af-e0c1-4852-8a2c-4ca51a67bf79" -->
 ### Directory: ~/.claude/cache/
 
 **Purpose**: Performance optimization via caching.
@@ -599,6 +627,7 @@ grep "timeout" ~/.claude/debug/trace-*.log
 
 **TTL**: Entries expire after 1 hour by default.
 
+<!-- section_id: "fff4ee65-837e-4c60-bf35-d84be1b95242" -->
 ### Directory: ~/.claude/telemetry/
 
 **Purpose**: Analytics and usage tracking (privacy-respecting).
@@ -614,8 +643,10 @@ grep "timeout" ~/.claude/debug/trace-*.log
 
 ---
 
+<!-- section_id: "5f84ad57-fcb7-481d-bc49-b86505907d9e" -->
 ## Part 10: Browser & IDE Integration
 
+<!-- section_id: "c7997499-3d65-473b-b9c2-2388d9343fd1" -->
 ### Directory: ~/.claude/chrome/
 
 **Purpose**: Browser automation state (for Claude in Chrome MCP).
@@ -627,6 +658,7 @@ grep "timeout" ~/.claude/debug/trace-*.log
 
 **Used by**: `/perplexity-extract` and other browser skills.
 
+<!-- section_id: "c4feb9b6-465d-4ef5-90a9-398fbb0ebf54" -->
 ### Directory: ~/.claude/ide/
 
 **Purpose**: IDE-specific configurations and integrations.
@@ -649,8 +681,10 @@ grep "timeout" ~/.claude/debug/trace-*.log
 
 ---
 
+<!-- section_id: "0a588317-8a22-4219-8a0b-d5a59a96c4ff" -->
 ## Part 11: Version Control & Git
 
+<!-- section_id: "5ee82779-e648-4621-98e4-8951df03716b" -->
 ### Directory: ~/.claude/.git/
 
 **Purpose**: Claude Code's own version control (for internal state management).
@@ -661,6 +695,7 @@ grep "timeout" ~/.claude/debug/trace-*.log
 
 ---
 
+<!-- section_id: "6094601f-f501-46e4-bf12-6a9095167158" -->
 ## Part 12: Complete Session Startup Flow
 
 ```
@@ -717,6 +752,7 @@ SESSION CLEANUP (on exit):
 
 ---
 
+<!-- section_id: "04209b6d-383a-4363-95a5-c13945477eaa" -->
 ## Part 13: Context Loading Cascade
 
 When Claude Code loads context, it follows this priority order:
@@ -754,8 +790,10 @@ When Claude Code loads context, it follows this priority order:
 
 ---
 
+<!-- section_id: "885bab31-0a5f-4485-af2d-0e897a80aa27" -->
 ## Summary: Native Components of .claude
 
+<!-- section_id: "ea2365c7-0c5e-4136-853f-321e61976e19" -->
 ### NATIVE TO .claude DIRECTORY
 
 ✅ **CLAUDE.md** — Global configuration (universal rules, triggers, skills)
@@ -776,6 +814,7 @@ When Claude Code loads context, it follows this priority order:
 ✅ **ide/** — IDE integration configs
 ✅ **telemetry/** — Usage analytics
 
+<!-- section_id: "b8cbbc20-86a1-4ed0-b407-acc5df207eb9" -->
 ### NOT NATIVE (Should Be Elsewhere)
 
 ❌ **Project code** (should be in project directory, not ~/.claude/)
@@ -785,6 +824,7 @@ When Claude Code loads context, it follows this priority order:
 
 ---
 
+<!-- section_id: "aaa2d4da-10cb-4c19-a92d-32834c5e4bdd" -->
 ## References
 
 - **Claude Code Documentation**: https://code.claude.com/docs

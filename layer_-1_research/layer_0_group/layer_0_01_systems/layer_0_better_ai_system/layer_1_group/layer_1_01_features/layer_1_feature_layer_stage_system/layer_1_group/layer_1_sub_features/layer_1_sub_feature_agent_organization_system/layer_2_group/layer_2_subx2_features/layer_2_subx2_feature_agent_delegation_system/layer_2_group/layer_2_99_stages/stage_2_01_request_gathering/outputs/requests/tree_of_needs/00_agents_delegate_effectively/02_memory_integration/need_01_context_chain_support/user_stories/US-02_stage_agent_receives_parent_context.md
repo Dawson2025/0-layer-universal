@@ -13,6 +13,7 @@ resource_name: "US-02_stage_agent_receives_parent_context"
 **I want** the stage agent's context chain to include the parent entity's identity and knowledge pointers,
 **So that** the agent can load the right domain knowledge on demand without me telling it which files to read.
 
+<!-- section_id: "bd8b622b-98c5-4e80-b578-d964cd022ac0" -->
 ### What Happens
 
 1. User says "research the context chain architecture"
@@ -21,6 +22,7 @@ resource_name: "US-02_stage_agent_receives_parent_context"
 4. Stage agent sees pointers to `.0agnostic/knowledge/` and knows which files contain domain concepts
 5. Stage agent loads the specific knowledge file it needs, not the full parent context
 
+<!-- section_id: "ce637cc2-0b5f-4e1a-a08e-ec9f226eb712" -->
 ### Acceptance Criteria
 
 - Stage agent's chain includes parent 0AGNOSTIC.md pointers, not full knowledge content

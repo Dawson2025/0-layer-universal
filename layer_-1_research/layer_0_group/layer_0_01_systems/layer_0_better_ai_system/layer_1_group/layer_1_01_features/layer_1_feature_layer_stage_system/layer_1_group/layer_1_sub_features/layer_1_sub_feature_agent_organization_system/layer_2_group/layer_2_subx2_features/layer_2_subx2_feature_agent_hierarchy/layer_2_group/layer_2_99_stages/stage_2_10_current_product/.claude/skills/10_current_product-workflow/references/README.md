@@ -8,6 +8,7 @@ resource_name: "README"
 
 Place reference documents, templates, and examples here.
 
+<!-- section_id: "16cd3a17-350d-46d5-b4a6-c9fd2d9da300" -->
 ## Suggested Contents
 - Templates for 10_current_product outputs
 - Examples of good 10_current_product work

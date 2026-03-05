@@ -5,10 +5,12 @@ resource_name: "interactive_browsing_workflow"
 ---
 # Interactive Browsing Workflow
 
+<!-- section_id: "8e5622a8-5580-49e1-a6a7-6b9d2e5f1a28" -->
 ## Overview
 
 This workflow describes the standardized process for interactive browser automation using the Claude in Chrome MCP server. Interactive browsing involves navigating websites, clicking elements, filling forms, and performing complex multi-step browser interactions.
 
+<!-- section_id: "41cb4b42-614d-4961-8815-9d8264ac7d38" -->
 ## Use Cases
 
 - Form submission and data entry
@@ -18,6 +20,7 @@ This workflow describes the standardized process for interactive browser automat
 - Account management tasks
 - Data entry automation
 
+<!-- section_id: "e64c1c80-9863-4826-ab94-9fe7f783c189" -->
 ## Safety Guidelines
 
 Before performing interactive actions, be aware of these safety requirements:
@@ -41,8 +44,10 @@ Before performing interactive actions, be aware of these safety requirements:
    - Element targets before clicking
    - Form data before submission
 
+<!-- section_id: "a857cc70-4839-4d90-9647-36af14ab092c" -->
 ## Workflow Steps
 
+<!-- section_id: "6b25616e-97cc-4a01-8f9b-a27410ecd6d7" -->
 ### Step 1: Initialize Session
 
 Establish the browser session and tab context.
@@ -56,6 +61,7 @@ TAB_ID = result.tabs[0].id  # Extract tab ID
 new_tab = mcp__claude-in-chrome__tabs_create_mcp()
 ```
 
+<!-- section_id: "7794f1f3-8551-480e-b1db-1c8539ad0700" -->
 ### Step 2: Navigate to Target
 
 Navigate to the starting point of the interaction.
@@ -84,6 +90,7 @@ navigate(url="back", tabId=TAB_ID)
 navigate(url="forward", tabId=TAB_ID)
 ```
 
+<!-- section_id: "8648875a-ac01-411a-a6b5-96d9a41d659c" -->
 ### Step 3: Analyze Page State
 
 Before interacting, understand the current page state.
@@ -108,6 +115,7 @@ mcp__claude-in-chrome__find(
 )
 ```
 
+<!-- section_id: "bee489a3-2834-4ad2-95b2-f57acd1cd8d0" -->
 ### Step 4: Perform Interactions
 
 Execute the required browser actions.
@@ -253,6 +261,7 @@ mcp__claude-in-chrome__computer(
 )
 ```
 
+<!-- section_id: "6215ad18-3841-4646-a85c-4e62a9f059e7" -->
 ### Step 5: Verify Actions
 
 After each significant action, verify the result.
@@ -278,6 +287,7 @@ mcp__claude-in-chrome__read_page(
 )
 ```
 
+<!-- section_id: "56c7d1a5-fbbe-4089-a9e5-6dc7c074ac17" -->
 ### Step 6: Handle Dynamic Content
 
 For pages with dynamic content, use appropriate waiting strategies.
@@ -298,8 +308,10 @@ result = mcp__claude-in-chrome__find(
 # If not found, wait and retry
 ```
 
+<!-- section_id: "383e3000-e588-43f2-9d8c-3c8031b77262" -->
 ## Interaction Patterns
 
+<!-- section_id: "87d5c26a-b3da-4d27-a843-d06b7570ffc4" -->
 ### Pattern 1: Login Flow
 
 ```python
@@ -325,6 +337,7 @@ computer(action="wait", duration=3, tabId=TAB_ID)
 computer(action="screenshot", tabId=TAB_ID)
 ```
 
+<!-- section_id: "b854401a-4b92-44c4-a267-3872d49800ee" -->
 ### Pattern 2: Form Filling
 
 ```python
@@ -351,6 +364,7 @@ find(query="submit button", tabId=TAB_ID)
 computer(action="left_click", ref="ref_6", tabId=TAB_ID)
 ```
 
+<!-- section_id: "925f75ff-da50-4f5b-bd22-488d43ba103d" -->
 ### Pattern 3: Multi-Page Navigation
 
 ```python
@@ -376,6 +390,7 @@ find(query="cart icon with count", tabId=TAB_ID)
 computer(action="screenshot", tabId=TAB_ID)
 ```
 
+<!-- section_id: "ce958431-49c5-4d39-831b-e9c9228d570e" -->
 ### Pattern 4: Table Interaction
 
 ```python
@@ -397,6 +412,7 @@ find(query="view details button", tabId=TAB_ID)
 computer(action="left_click", ref="ref_6", tabId=TAB_ID)
 ```
 
+<!-- section_id: "12f5f63d-572c-40f2-a9e8-be7b3ee992e0" -->
 ### Pattern 5: Modal/Dialog Handling
 
 ```python
@@ -421,6 +437,7 @@ computer(action="left_click", ref="ref_4", tabId=TAB_ID)
 computer(action="key", text="Escape", tabId=TAB_ID)
 ```
 
+<!-- section_id: "47057dec-5773-407d-bed7-d1611db851ca" -->
 ## GIF Recording for Documentation
 
 Record browser sessions for documentation or debugging.
@@ -461,6 +478,7 @@ mcp__claude-in-chrome__gif_creator(
 )
 ```
 
+<!-- section_id: "7550d68d-ecae-4a87-83ac-47734a47c53f" -->
 ## Window Management
 
 ```python
@@ -478,8 +496,10 @@ mcp__claude-in-chrome__resize_window(
 # HD: 1280 x 720
 ```
 
+<!-- section_id: "c6d14d71-9eff-4a6b-a9c1-9dfbd050e989" -->
 ## Error Handling
 
+<!-- section_id: "abc649fa-95ff-4d2a-b01e-ebc265e689ee" -->
 ### Element Not Found
 ```python
 result = find(query="button that may not exist", tabId=TAB_ID)
@@ -490,6 +510,7 @@ if not result.elements:
              scroll_amount=3, coordinate=[500, 400], tabId=TAB_ID)
 ```
 
+<!-- section_id: "09901722-190f-470d-be17-c5c662d44137" -->
 ### Click Misses Target
 ```python
 # Use element reference instead of coordinates when possible
@@ -499,6 +520,7 @@ if not result.elements:
 computer(action="zoom", region=[400, 200, 600, 400], tabId=TAB_ID)
 ```
 
+<!-- section_id: "7ec4f8d2-a3bb-406e-8d3a-97d1743b9d64" -->
 ### Page Not Responding
 ```python
 # Refresh the page
@@ -512,6 +534,7 @@ javascript_tool(
 )
 ```
 
+<!-- section_id: "5d4200a1-b914-47ab-96b4-559f94b9c51d" -->
 ### Stale Element Reference
 ```python
 # Re-read page to get fresh references
@@ -520,6 +543,7 @@ read_page(tabId=TAB_ID, filter="interactive")
 find(query="target element", tabId=TAB_ID)
 ```
 
+<!-- section_id: "12efd70d-c15b-4860-b7f1-079efaffc0fc" -->
 ## Best Practices
 
 1. **Always screenshot before complex interactions** - Provides context and documentation

@@ -5,14 +5,17 @@ resource_name: "26_long_term_storage_sql_schemas"
 ---
 # Long-Term Storage Architecture: SQL Schemas
 
+<!-- section_id: "4f2ff4b7-0f28-422e-8faf-a56c5d222f1d" -->
 ## Purpose
 
 This document presents the complete SQL schema designs for persistent long-term memory storage across all four memory types (semantic, episodic, time-based, procedural), the 4-stage consolidation pipeline that populates them, the unified PostgreSQL architecture that houses them, and performance benchmarks from production systems.
 
 ---
 
+<!-- section_id: "eafa9181-b36d-4696-9705-a5e0d7ac7e96" -->
 ## 1. Semantic Memory SQL
 
+<!-- section_id: "dd6ab946-50f0-4cc7-9a2c-b27406cc4dec" -->
 ### Vector Database (pgvector)
 
 The dominant approach for persistent semantic memory uses pgvector to store embeddings as native PostgreSQL column types with specialized indexing for similarity search.
@@ -38,6 +41,7 @@ Key characteristics:
 - Semantic similarity search finds related facts even with different phrasing
 - Alternative index types include IVFFlat (cluster-based) and HNSW (multi-layer graph)
 
+<!-- section_id: "782aac34-08b4-45a4-8f4a-fff16ccc98bb" -->
 ### Knowledge Graph Schema
 
 For explicit entity relationships, knowledge graphs are represented as relational adjacency lists:
@@ -60,6 +64,7 @@ CREATE TABLE relationships (
 
 This stores graph structure using foreign keys, which effectively creates adjacency lists. Graph traversal is performed via recursive CTEs (see doc 27 for details).
 
+<!-- section_id: "57a8ca50-6e3c-4e8c-908d-3fcf8546f0a3" -->
 ### Hybrid PostgreSQL (Unified Semantic)
 
 Modern systems consolidate vectors and knowledge graphs in one PostgreSQL database:
@@ -70,8 +75,10 @@ Modern systems consolidate vectors and knowledge graphs in one PostgreSQL databa
 
 ---
 
+<!-- section_id: "fb0b6db1-cc67-42b9-aff5-433ec5e389d5" -->
 ## 2. Episodic Memory SQL
 
+<!-- section_id: "81262dab-785e-42dc-aa4f-ef0f9eddef6b" -->
 ### Hypertable with Vector Extensions (TimescaleDB)
 
 Episodic memory requires both temporal ordering and semantic search, combining time-series partitioning with vector similarity:
@@ -103,6 +110,7 @@ Query capabilities:
 - Semantic: `ORDER BY embedding <=> query_vector LIMIT 5`
 - Combined: filter by time window, then rank by semantic similarity
 
+<!-- section_id: "bd6c8c43-567d-4f12-a8a9-b761ea62eeb3" -->
 ### Scene-Based Grouping (SQLite)
 
 For self-organizing memory systems that group interactions into coherent scenes:
@@ -136,8 +144,10 @@ Consolidation process:
 
 ---
 
+<!-- section_id: "f1c6d925-1cd6-45ec-b667-d77408e94899" -->
 ## 3. Time-Based Memory SQL
 
+<!-- section_id: "8654024a-b794-4886-925c-2fbb3bbcc5f5" -->
 ### Hypertables (TimescaleDB)
 
 Purpose-built for time-series data with automatic partitioning:
@@ -161,6 +171,7 @@ Features:
 - Continuous aggregates for summaries
 - Compression for older data
 
+<!-- section_id: "11b7b766-e7ab-45e7-8b62-e62f66a4635a" -->
 ### Temporal Validity Tracking
 
 For facts that change over time, tracking when each fact was valid:
@@ -187,8 +198,10 @@ This enables temporal queries like "what did we know about entity X as of date Y
 
 ---
 
+<!-- section_id: "724d1195-f7b2-46af-afb1-47d5a79bf1c2" -->
 ## 4. Procedural Memory SQL
 
+<!-- section_id: "dd4d653c-8bdc-4fb4-8efa-afd5b42859f3" -->
 ### Trajectory Store with Metadata
 
 Stores complete execution paths with success metrics for learned procedures:
@@ -222,6 +235,7 @@ Example trajectory format in JSONB:
 }
 ```
 
+<!-- section_id: "eb196186-5482-4d0f-b5f2-117f9c3f4b28" -->
 ### Skill Registry and Invocation Tracking
 
 For callable functions and tools with usage analytics:
@@ -255,14 +269,17 @@ The `skill_invocations` table provides a feedback loop: track which skills succe
 
 ---
 
+<!-- section_id: "870d47c3-f099-4070-9549-e6813e76cc03" -->
 ## 5. Four-Stage Consolidation Pipeline
 
 Production systems implement a four-stage pipeline to move raw interactions into persistent long-term memory:
 
+<!-- section_id: "f6547fe9-9f0f-4112-9bed-630ee5554b08" -->
 ### Stage 1: Extraction (~20-40 seconds)
 
 Identify what is worth remembering from raw interactions. An LLM extracts meaningful information (facts, preferences, insights) while ignoring filler content. Extraction time is approximately 20-40 seconds for standard conversations.
 
+<!-- section_id: "5d6d43ad-fe15-4e63-bde6-8085b12bc283" -->
 ### Stage 2: Consolidation (LLM-powered)
 
 Merge related information and resolve conflicts. The system:
@@ -270,6 +287,7 @@ Merge related information and resolve conflicts. The system:
 2. Uses an LLM to decide: merge (same fact, different phrasing), update (supersede old fact), or store as new
 3. Produces a deduplicated, coherent knowledge base
 
+<!-- section_id: "fca3857d-fa0a-4949-8723-61c626230da7" -->
 ### Stage 3: Storage (PostgreSQL)
 
 Persist to the appropriate table with proper indexes:
@@ -284,6 +302,7 @@ INSERT INTO episodes (timestamp, context, action, embedding)
 VALUES (NOW(), ?, ?, ?);
 ```
 
+<!-- section_id: "de1b3238-dd82-4049-af4f-d2f31d9e8e5a" -->
 ### Stage 4: Retrieval (~200ms)
 
 Fetch relevant memories for the current context using hybrid retrieval:
@@ -306,6 +325,7 @@ Retrieval latency is approximately 200ms for semantic search operations.
 
 ---
 
+<!-- section_id: "fefc60d6-a0cb-4b3a-9640-0081b7db1073" -->
 ## 6. Unified PostgreSQL Architecture
 
 Modern production systems consolidate all memory types in a single PostgreSQL database:
@@ -362,24 +382,29 @@ Benefits of the unified approach:
 
 ---
 
+<!-- section_id: "8056764b-ed92-4922-83f0-719abfc049eb" -->
 ## 7. Performance Benchmarks
 
+<!-- section_id: "d03abef5-e6f6-40f4-93e0-6d3897d1ca6d" -->
 ### Mem0 Long-Term Memory System
 - 91% lower p95 latency vs full-context prompting
 - 90% token reduction
 - Scales to hundreds of sessions without re-reading history
 
+<!-- section_id: "23bc14f1-b7d0-4c0b-a4fe-e8a2a322ed90" -->
 ### PostgreSQL Unified Approach (pgvector/pgvectorscale)
 - 471 QPS at 99% recall on 50M vectors
 - Competitive with specialized vector databases
 - ACID guarantees for consistency
 
+<!-- section_id: "cb621635-cefd-49dc-b507-d07d25cae50b" -->
 ### Key Insight
 
 Long-term memory is not about better algorithms -- it is about persistent storage with hybrid retrieval combining semantic similarity (vectors), temporal ordering (hypertables), and relational constraints (PostgreSQL) in a unified system that survives restarts and scales to production workloads.
 
 ---
 
+<!-- section_id: "c93d5450-5656-4cda-b57b-91cada6dc8b6" -->
 ## Cross-References
 
 - **Core data structure hierarchy**: `22_core_data_structure_hierarchy.md`
@@ -389,6 +414,7 @@ Long-term memory is not about better algorithms -- it is about persistent storag
 
 ---
 
+<!-- section_id: "e6fc5780-da72-432e-87b6-0ceb3f542e8e" -->
 ## Sources
 
 - [Mem0: Long-Term Memory for AI Agents](https://mem0.ai/blog/long-term-memory-ai-agents)

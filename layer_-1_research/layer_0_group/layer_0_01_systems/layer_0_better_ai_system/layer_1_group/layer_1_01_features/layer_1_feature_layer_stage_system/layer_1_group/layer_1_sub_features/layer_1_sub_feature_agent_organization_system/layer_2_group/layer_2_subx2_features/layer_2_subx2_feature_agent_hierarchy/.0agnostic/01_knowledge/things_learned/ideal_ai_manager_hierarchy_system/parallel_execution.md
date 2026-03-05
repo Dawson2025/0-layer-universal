@@ -3,6 +3,7 @@ resource_id: "01104001-339b-4436-9432-67786386c7a9"
 resource_type: "knowledge"
 resource_name: "parallel_execution"
 ---
+<!-- section_id: "da01e5d8-2b90-434e-82b9-0d2049d2894c" -->
 ## Parallel Execution Cookbook
 
 This document provides concrete patterns and examples for parallelizing work across the AI manager hierarchy system.
@@ -15,8 +16,10 @@ It covers:
 
 ---
 
+<!-- section_id: "ddc82d29-336e-43f9-be00-e454bc81f669" -->
 ## 1. Parallelization Opportunities
 
+<!-- section_id: "7074cbc1-e89e-4e7f-8dc5-0b53fc87b458" -->
 ### 1.1 Where to Parallelize
 
 **Layer 2 (Feature Level):**
@@ -33,6 +36,7 @@ It covers:
   - Multiple test suites
   - Independent fixes
 
+<!-- section_id: "514906b0-2273-4377-86aa-19fa6b9bc2ec" -->
 ### 1.2 When NOT to Parallelize
 
 **Sequential Dependencies:**
@@ -52,8 +56,10 @@ It covers:
 
 ---
 
+<!-- section_id: "16241fd0-3969-4dab-82cf-787aa4ff8e0b" -->
 ## 2. Decomposition Strategies
 
+<!-- section_id: "607f98b3-1fbf-4cc5-902e-f55dc1f44842" -->
 ### 2.1 Feature to Components
 
 ```python
@@ -121,6 +127,7 @@ def create_component_handoffs(components, feature_handoff):
     return handoffs
 ```
 
+<!-- section_id: "0d3952ee-ac75-4129-807a-dfe1f38816e6" -->
 ### 2.2 Dependency Graph
 
 ```python
@@ -182,8 +189,10 @@ batches = get_parallel_batches(dep_graph)
 
 ---
 
+<!-- section_id: "36add50e-020d-4875-8881-f44810f0163c" -->
 ## 3. Parallel Execution Patterns
 
+<!-- section_id: "869c1e93-fde6-45bc-b8ba-b520feba3b7b" -->
 ### 3.1 Fork-Join Pattern
 
 ```python
@@ -241,6 +250,7 @@ def execute_with_dependencies(batches, handoffs, layer, stage):
     return all_results
 ```
 
+<!-- section_id: "b0ee1af2-cc4a-4656-a3d9-a1ec713405f3" -->
 ### 3.2 Worker Pool Pattern
 
 ```python
@@ -311,6 +321,7 @@ def execute_with_worker_pool(tasks, num_workers=4):
     return results
 ```
 
+<!-- section_id: "a385d324-6c36-45f6-9f14-7dfacb7b0087" -->
 ### 3.3 Async/Await Pattern (Python)
 
 ```python
@@ -369,8 +380,10 @@ asyncio.run(main())
 
 ---
 
+<!-- section_id: "1bde52b0-4aa3-4668-b818-00c7a3f0dd2f" -->
 ## 4. Synchronization and Aggregation
 
+<!-- section_id: "a74171f7-4894-48e7-9cd2-35cf2be3ef42" -->
 ### 4.1 Result Aggregation
 
 ```python
@@ -417,6 +430,7 @@ def aggregate_component_results(component_results, feature_handoff):
     return aggregated
 ```
 
+<!-- section_id: "d6d1da9e-97a3-479b-9147-af2761464673" -->
 ### 4.2 Barrier Synchronization
 
 ```python
@@ -464,8 +478,10 @@ def worker_with_barrier(task, barrier):
 
 ---
 
+<!-- section_id: "b5add8c6-a078-43f3-98ce-a8de872d8a5b" -->
 ## 5. Error Handling and Partial Failures
 
+<!-- section_id: "3c7e3187-7523-4f8b-b0d7-052fa2721feb" -->
 ### 5.1 Graceful Degradation
 
 ```python
@@ -515,6 +531,7 @@ def execute_with_partial_failure_tolerance(batch, handoffs, layer, stage):
         return results, "batch_failed"
 ```
 
+<!-- section_id: "d0c2598f-4b84-4d53-be3d-54e04d0bb763" -->
 ### 5.2 Retry Failed Components
 
 ```python
@@ -557,8 +574,10 @@ def retry_failed_components(results, handoffs, layer, stage, max_retries=3):
 
 ---
 
+<!-- section_id: "159ad531-0b02-42e8-aa77-25ecd731f73e" -->
 ## 6. Resource Management
 
+<!-- section_id: "4b1e12d5-9942-4b69-991d-e19a31a80514" -->
 ### 6.1 Concurrency Limiting
 
 ```python
@@ -588,6 +607,7 @@ limiter = ConcurrencyLimiter(max_concurrent=4)
 results = limiter.execute_with_limit(tasks, execute_component)
 ```
 
+<!-- section_id: "b5285169-690e-4221-ad72-0ecd264ae20a" -->
 ### 6.2 Rate Limiting
 
 ```python
@@ -633,8 +653,10 @@ def execute_with_rate_limit(task):
 
 ---
 
+<!-- section_id: "65db01b1-e46d-4174-8fc6-433fb19e8857" -->
 ## 7. Performance Optimization
 
+<!-- section_id: "3e968227-80af-486d-9fc7-e3a8f80e5aa4" -->
 ### 7.1 Optimal Parallelism
 
 ```python
@@ -663,6 +685,7 @@ def calculate_optimal_workers(tasks, avg_task_duration, budget, cost_per_task):
     return max(optimal, 1)  # At least 1 worker
 ```
 
+<!-- section_id: "24685ec3-84ff-4e61-a143-12459e2ad582" -->
 ### 7.2 Work Stealing
 
 ```python
@@ -734,6 +757,7 @@ class WorkStealingPool:
 
 ---
 
+<!-- section_id: "56cedcad-3eee-49f6-8f24-0df702023678" -->
 ## 8. Summary
 
 Effective parallelization requires:

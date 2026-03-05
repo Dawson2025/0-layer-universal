@@ -5,12 +5,15 @@ resource_name: "PARALLEL_DEVELOPMENT_ARCHITECTURE"
 ---
 # Parallel Development Architecture
 
+<!-- section_id: "49826353-5488-4a00-aae3-bfaac32dc2bb" -->
 ## Purpose
 
 This document defines the optimal code organization for the Language Tracker application to enable multiple AI agents (or human developers) to work on different features simultaneously without file conflicts or integration issues.
 
+<!-- section_id: "c09b70d6-a635-46d1-b807-f4c057a69458" -->
 ## Current State Analysis
 
+<!-- section_id: "671d1e98-cb70-447d-a6c1-2ab05100cc0d" -->
 ### Problems with Current Structure
 
 1. **Monolithic app.py (4,055 lines)**: All routes, business logic, and API endpoints are in one file
@@ -19,6 +22,7 @@ This document defines the optimal code organization for the Language Tracker app
 4. **Minimal static assets organization**: JavaScript and CSS not separated by feature
 5. **Limited feature isolation**: Only 3 feature modules started (`auth`, `firebase`, `projects`)
 
+<!-- section_id: "2a3f4daf-32bc-446b-af2c-b3c7a9ed9d99" -->
 ### What's Working
 
 1. **Features directory exists**: Good foundation at `/features/` with Python package structure
@@ -28,8 +32,10 @@ This document defines the optimal code organization for the Language Tracker app
 
 ---
 
+<!-- section_id: "49aef830-cfa5-4be4-b444-fc82a9336cb4" -->
 ## Proposed Architecture
 
+<!-- section_id: "76e8eee8-7f6b-40d1-b0b7-66289833b066" -->
 ### Core Principles
 
 1. **Feature Isolation**: Each feature owns its routes, templates, static assets, business logic, and tests
@@ -37,6 +43,7 @@ This document defines the optimal code organization for the Language Tracker app
 3. **Interface Contracts**: Clear APIs between features to minimize coupling
 4. **Parallel Safety**: Multiple developers can work on different features without touching the same files
 
+<!-- section_id: "b175672e-66bd-4e88-a695-fa432c95b56b" -->
 ### Directory Structure
 
 ```
@@ -250,6 +257,7 @@ lang-trak-in-progress/
 
 ---
 
+<!-- section_id: "5aba792e-90f5-4e19-a918-cfb3d6dad118" -->
 ## Feature Ownership Matrix
 
 This table shows which files/folders each feature "owns" for parallel development:
@@ -267,10 +275,12 @@ This table shows which files/folders each feature "owns" for parallel developmen
 
 ---
 
+<!-- section_id: "8d1ae811-b6fc-4ad2-b541-b851fb667b9c" -->
 ## Shared Dependencies (Interfaces)
 
 These modules are shared across features and should have stable interfaces:
 
+<!-- section_id: "25cf495b-d8cc-44fa-9854-a5c3462bd9c5" -->
 ### Core Layer (Rarely Changes)
 
 **`core/database.py`**
@@ -293,6 +303,7 @@ def get_current_project_id() -> Optional[str]
 def set_current_project(project_id: str) -> None
 ```
 
+<!-- section_id: "bc998dc6-b819-4512-81e5-de1984fe530b" -->
 ### Services Layer (Shared Logic)
 
 **`services/firebase/firestore.py`**
@@ -318,6 +329,7 @@ def delete_video(video_path: str) -> bool
 def get_video_url(video_path: str) -> str
 ```
 
+<!-- section_id: "09fcdac1-76ea-4d3b-aa93-30c832cfdf55" -->
 ### Feature-to-Feature Interfaces
 
 **`auth/helpers.py`** (Already exists)
@@ -348,8 +360,10 @@ def search_words(query: str, project_id: str, fields: List[str]) -> List[Dict]
 
 ---
 
+<!-- section_id: "f79ddbfd-9565-4c22-94b4-4d40d8cfc9f6" -->
 ## Parallel Development Workflow
 
+<!-- section_id: "9d4c0ae0-5fdc-4753-8df4-5758f648948d" -->
 ### How AI Agents Work in Parallel
 
 #### Scenario 1: Three Features at Once
@@ -397,6 +411,7 @@ def my_feature_function(get_user_func=get_user_info):
     # ... feature logic
 ```
 
+<!-- section_id: "c8ca4825-1a07-4587-85a5-14ae54385141" -->
 ### Development Checklist
 
 Before starting work on a feature, verify:
@@ -411,8 +426,10 @@ Before starting work on a feature, verify:
 
 ---
 
+<!-- section_id: "1487ad0e-e96c-4ce6-aeaf-42451aa1777c" -->
 ## Migration Plan
 
+<!-- section_id: "d1056fc2-0602-4ca0-a04b-0cd9249245aa" -->
 ### Phase 1: Extract Core Infrastructure (Foundation)
 
 **Goal**: Create stable shared layer that all features depend on
@@ -424,6 +441,7 @@ Before starting work on a feature, verify:
 
 **Estimated Conflicts**: Low - This is mostly extraction, not modification
 
+<!-- section_id: "630b59fc-31a4-4122-ad8e-5bc9a5519b50" -->
 ### Phase 2: Extract Services (Shared Business Logic)
 
 **Goal**: Isolate cross-cutting services
@@ -437,6 +455,7 @@ Before starting work on a feature, verify:
 
 **Estimated Conflicts**: Medium - Multiple features may touch these during phase 2
 
+<!-- section_id: "b6bc1d30-41ae-4401-8658-4c88ce3e4b61" -->
 ### Phase 3: Feature Extraction (Can be done in parallel!)
 
 Each feature can be extracted independently:
@@ -485,6 +504,7 @@ Each feature can be extracted independently:
 - Create: `features/admin/phoneme_management.py`, `features/admin/template_system.py`
 - Move templates: `admin_*.html`
 
+<!-- section_id: "a4d2c374-988d-4745-873d-9a9c4b18b3e6" -->
 ### Phase 4: Update app.py (Final integration)
 
 **Goal**: Convert `app.py` to just blueprint registration
@@ -526,6 +546,7 @@ if __name__ == '__main__':
     app.run(debug=True)
 ```
 
+<!-- section_id: "d2128cc2-c67d-4e6f-a386-15b6c98204d0" -->
 ### Phase 5: Cleanup
 
 - Move test files from root to appropriate `features/*/tests/` directories
@@ -535,8 +556,10 @@ if __name__ == '__main__':
 
 ---
 
+<!-- section_id: "ad4f8592-9805-4f7f-b819-120728fe15c0" -->
 ## Parallel Development Rules
 
+<!-- section_id: "89c63b7a-e951-4629-b752-ed1a747d25d2" -->
 ### Golden Rules for AI Agents
 
 1. **One Feature, One PR**: Each feature change should only touch files in that feature's directory (+ tests)
@@ -554,6 +577,7 @@ if __name__ == '__main__':
 
 6. **Database Migrations**: Coordinate schema changes - only one agent should create migration at a time
 
+<!-- section_id: "71f35342-7864-47bf-aa66-62e3b603984d" -->
 ### File Conflict Probability Matrix
 
 | File/Directory | Conflict Risk | Mitigation |
@@ -567,6 +591,7 @@ if __name__ == '__main__':
 | `tests/` (integration) | **Low** | End-to-end tests - add new files |
 | `migrations/` | **High** | Sequential only - coordinate DB changes |
 
+<!-- section_id: "0bd885a6-8729-4e39-b89b-8decefbc6eb8" -->
 ### Recommended Parallel Work Patterns
 
 **Pattern 1: Vertical Slice**
@@ -589,8 +614,10 @@ if __name__ == '__main__':
 
 ---
 
+<!-- section_id: "d444f9dc-9b6b-413e-ab2f-bc780a959587" -->
 ## Benefits of This Architecture
 
+<!-- section_id: "10729ba8-df84-4dbd-85ba-cadf57e92c31" -->
 ### For Parallel AI Development
 
 1. **Conflict Avoidance**: Features in separate directories = no merge conflicts
@@ -598,6 +625,7 @@ if __name__ == '__main__':
 3. **Independent Testing**: Each feature has its own test suite
 4. **Faster Iteration**: No waiting for other agents to finish in same file
 
+<!-- section_id: "07a97993-5c66-4e13-94b1-120f956fcc56" -->
 ### For Code Quality
 
 1. **Modularity**: Features are self-contained and testable
@@ -605,6 +633,7 @@ if __name__ == '__main__':
 3. **Scalability**: New features add new directories, don't expand existing files
 4. **Clarity**: Directory structure matches feature requirements docs
 
+<!-- section_id: "8d537539-0099-4395-9e97-f7a83adeeb4f" -->
 ### For Debugging
 
 1. **Feature Tracing**: Bug in words? Look in `features/words/`
@@ -613,6 +642,7 @@ if __name__ == '__main__':
 
 ---
 
+<!-- section_id: "f2ee65ca-ead1-48b1-be6b-7bfbed619072" -->
 ## Migration Effort Estimate
 
 | Phase | Effort | Risk | Can Parallelize? |
@@ -627,6 +657,7 @@ if __name__ == '__main__':
 
 ---
 
+<!-- section_id: "d3617f5c-f779-413e-9252-98f0d464e3ca" -->
 ## Success Criteria
 
 The migration is successful when:
@@ -641,6 +672,7 @@ The migration is successful when:
 
 ---
 
+<!-- section_id: "ce753539-18e0-48c8-af03-ee9f53150c7a" -->
 ## Next Steps
 
 1. **Review and approve this architecture** with stakeholders
@@ -652,6 +684,7 @@ The migration is successful when:
 
 ---
 
+<!-- section_id: "301861e9-ea89-45b9-90c4-1b096f858b5d" -->
 ## Related Documentation
 
 - [Requirements Overview](requirements/README.md) - Maps features to this architecture

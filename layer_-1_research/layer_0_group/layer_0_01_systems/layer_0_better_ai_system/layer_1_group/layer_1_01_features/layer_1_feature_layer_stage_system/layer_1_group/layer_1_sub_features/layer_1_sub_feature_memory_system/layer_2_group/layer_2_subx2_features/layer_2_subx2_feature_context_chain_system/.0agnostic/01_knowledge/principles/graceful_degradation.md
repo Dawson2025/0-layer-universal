@@ -11,12 +11,14 @@ resource_name: "graceful_degradation"
 
 ---
 
+<!-- section_id: "68969cfd-6d32-415d-8976-16161b0cef39" -->
 ## Statement
 
 **When one or more context delivery avenues fail, the system must continue functioning with reduced but sufficient context. No single avenue failure should render an entity unusable.**
 
 ---
 
+<!-- section_id: "b178f9f4-9d79-47dd-941e-bceb555f8475" -->
 ## Rationale
 
 In practice, context delivery is imperfect:
@@ -30,6 +32,7 @@ Rather than requiring all 8 avenues to function perfectly, the system should deg
 
 ---
 
+<!-- section_id: "9071bf31-d958-48e6-8f3a-748828e3231e" -->
 ## Degradation Tiers
 
 | Tier | Avenues Available | Agent Capability | Acceptable? |
@@ -42,6 +45,7 @@ Rather than requiring all 8 avenues to function perfectly, the system should deg
 
 ---
 
+<!-- section_id: "693b9020-d839-40ee-a1f6-a38e6ae478de" -->
 ## Minimum Viable Context
 
 An agent can function with just these elements:
@@ -56,6 +60,7 @@ This minimum is achievable through any single avenue that provides identity:
 
 ---
 
+<!-- section_id: "509af032-3631-4ca2-b36d-6388cc35bdcf" -->
 ## Failure Scenarios and Mitigations
 
 | Scenario | Lost Avenue(s) | Mitigation |
@@ -68,12 +73,15 @@ This minimum is achievable through any single avenue that provides identity:
 
 ---
 
+<!-- section_id: "5e053814-7487-4219-af36-4c9907e9a40c" -->
 ## Design Implications
 
+<!-- section_id: "59ab61dd-7c39-4a4e-b6f6-504e23c17cef" -->
 ### Avenue Overlap is Intentional
 
 The 8 avenues intentionally overlap. This is not redundancy waste — it's resilience engineering. Each avenue delivers context through a different mechanism, so a failure in one mechanism doesn't cascade.
 
+<!-- section_id: "b7022478-50bc-4ff6-b5d7-812c1edc389e" -->
 ### Paired Avenues
 
 Some avenues function as pairs:
@@ -83,6 +91,7 @@ Some avenues function as pairs:
 
 If one member of a pair fails, the other provides coverage.
 
+<!-- section_id: "87078d88-ba81-43ca-9f2e-c68247f26be0" -->
 ### Fail-Open vs Fail-Closed
 
 The context chain system fails **open**: missing context means the agent operates with less guidance, not that it stops working. This is appropriate because:
@@ -94,6 +103,7 @@ The exception is **identity**: if the agent cannot determine its role and scope,
 
 ---
 
+<!-- section_id: "f40996bb-61d1-4841-9e2b-2bc8fb2ade33" -->
 ## Related Principles
 
 - Avenue Redundancy — redundancy is what enables graceful degradation

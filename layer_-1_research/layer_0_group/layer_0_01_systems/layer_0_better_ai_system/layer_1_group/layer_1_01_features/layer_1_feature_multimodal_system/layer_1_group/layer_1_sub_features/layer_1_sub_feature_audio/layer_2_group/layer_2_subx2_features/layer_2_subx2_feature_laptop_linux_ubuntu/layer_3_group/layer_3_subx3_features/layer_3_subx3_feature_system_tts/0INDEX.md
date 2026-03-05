@@ -6,15 +6,18 @@ resource_name: "0INDEX"
 ---
 # 0INDEX.md - System TTS
 
+<!-- section_id: "83d09552-7713-48c5-90d4-7490e5cae3a4" -->
 ## Current Status
 - **Phase**: Phase 2 complete — Speech Dispatcher + Piper + Orca integrated
 - **Active Stage**: 10 (Current Product)
 - **Last Updated**: 2026-02-24
 
+<!-- section_id: "6b7a1032-6332-4452-a6fc-a31ff8a0f8d3" -->
 ## Parent Reference
 Overview and cross-cutting context at parent audio sub-feature:
 - Parent stages: `../../../layer_1_group/layer_1_99_stages/` — each stage has summary + reference back here
 
+<!-- section_id: "61e33911-b922-4b1a-b746-45c5113ec086" -->
 ## Stage Progress
 | Stage | Status | Key Output |
 |-------|--------|------------|

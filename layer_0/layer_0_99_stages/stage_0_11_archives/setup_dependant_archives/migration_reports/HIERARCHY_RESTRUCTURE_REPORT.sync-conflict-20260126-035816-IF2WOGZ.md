@@ -11,14 +11,17 @@ Root: /home/dawson/dawson-workspace/code/0_layer_universal/0_context/layer_0/0.0
 - Merged files: 0
 - Created .gitkeep: 264
 
+<!-- section_id: "df40716c-ef83-4e70-bc89-acb05a412bb9" -->
 ## Moved Directories
 - /home/dawson/dawson-workspace/code/0_layer_universal/0_context/layer_0/0.02_sub_layers/sub_layer_0_05-0.014_setup/0.01_universal_setup_file_tree_0/0.05_operating_systems/_shared/0.06_environments/_shared/0.07_coding_apps/_shared/0.09_ai_apps/_shared/0.10_mcp_servers_and_apis_and_secrets/_shared/0.07_ai_models -> /home/dawson/dawson-workspace/code/0_layer_universal/0_context/layer_0/0.02_sub_layers/sub_layer_0_05-0.014_setup/0.01_universal_setup_file_tree_0/0.05_operating_systems/_shared/0.06_environments/_shared/0.07_coding_apps/_shared/0.09_ai_apps/_shared/0.11_ai_models
 
+<!-- section_id: "b67b1213-a070-42e6-bf39-fbaaa1a7d042" -->
 ## Follow-up Moves
 - Moved directories: 1
 - Merged files: 0
 - /home/dawson/dawson-workspace/code/0_layer_universal/0_context/layer_0/0.02_sub_layers/sub_layer_0_05-0.014_setup/0.01_universal_setup_file_tree_0/0.05_operating_systems/_shared/0.06_environments/_shared/0.07_coding_apps/_shared/0.09_ai_apps/_shared/0.11_ai_models/_shared/0.08_universal_tools -> /home/dawson/dawson-workspace/code/0_layer_universal/0_context/layer_0/0.02_sub_layers/sub_layer_0_05-0.014_setup/0.01_universal_setup_file_tree_0/0.05_operating_systems/_shared/0.06_environments/_shared/0.07_coding_apps/_shared/0.09_ai_apps/_shared/0.12_universal_tools
 
+<!-- section_id: "6048bc8d-0209-4df8-a1ce-3e1799a4c192" -->
 ## Cleanup Moves
 - Moved files: 28
 - /home/dawson/dawson-workspace/code/0_layer_universal/0_context/layer_0/0.02_sub_layers/sub_layer_0_05-0.014_setup/0.01_universal_setup_file_tree_0/0.05_operating_systems/_shared/0.06_environments/_shared/0.07_coding_apps/_shared/0.09_ai_apps/_shared/0.12_universal_tools/0.12_universal_tools/_shared/.gitkeep -> /home/dawson/dawson-workspace/code/0_layer_universal/0_context/layer_0/0.02_sub_layers/sub_layer_0_05-0.014_setup/0.01_universal_setup_file_tree_0/0.05_operating_systems/_shared/0.06_environments/_shared/0.07_coding_apps/_shared/0.09_ai_apps/_shared/0.12_universal_tools/_shared/.gitkeep
@@ -50,5 +53,6 @@ Root: /home/dawson/dawson-workspace/code/0_layer_universal/0_context/layer_0/0.0
 - /home/dawson/dawson-workspace/code/0_layer_universal/0_context/layer_0/0.02_sub_layers/sub_layer_0_05-0.014_setup/0.01_universal_setup_file_tree_0/0.05_operating_systems/_shared/0.06_environments/_shared/0.07_coding_apps/_shared/0.09_ai_apps/_shared/0.12_universal_tools/_shared/0.09_protocols/reordering_operations/0_instruction_docs/reordering_operations_protocol.md -> /home/dawson/dawson-workspace/code/0_layer_universal/0_context/layer_0/0.02_sub_layers/sub_layer_0_05-0.014_setup/0.01_universal_setup_file_tree_0/0.05_operating_systems/_shared/0.06_environments/_shared/0.07_coding_apps/_shared/0.09_ai_apps/_shared/0.13_protocols/reordering_operations/0_instruction_docs/reordering_operations_protocol.md
 - /home/dawson/dawson-workspace/code/0_layer_universal/0_context/layer_0/0.02_sub_layers/sub_layer_0_05-0.014_setup/0.01_universal_setup_file_tree_0/0.05_operating_systems/_shared/0.06_environments/_shared/0.07_coding_apps/_shared/0.09_ai_apps/_shared/0.12_universal_tools/0.14_agent_setup/.gitkeep -> /home/dawson/dawson-workspace/code/0_layer_universal/0_context/layer_0/0.02_sub_layers/sub_layer_0_05-0.014_setup/0.01_universal_setup_file_tree_0/0.05_operating_systems/_shared/0.06_environments/_shared/0.07_coding_apps/_shared/0.09_ai_apps/_shared/0.14_agent_setup/.gitkeep
 
+<!-- section_id: "fe31a09a-c7ec-4858-b1cc-affe921092d1" -->
 ## Protocol Cleanup Moves
 - Moved files: 0

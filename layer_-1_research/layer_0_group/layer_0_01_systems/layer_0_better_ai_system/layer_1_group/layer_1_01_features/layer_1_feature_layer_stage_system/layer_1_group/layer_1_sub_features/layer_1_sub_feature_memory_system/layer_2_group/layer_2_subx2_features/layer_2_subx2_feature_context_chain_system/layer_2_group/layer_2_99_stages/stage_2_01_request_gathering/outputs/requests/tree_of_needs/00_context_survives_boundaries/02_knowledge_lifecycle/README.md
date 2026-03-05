@@ -10,12 +10,14 @@ resource_name: "README"
 
 ---
 
+<!-- section_id: "01a66cac-7354-4d4f-9976-86d0ac694c0d" -->
 ## Core Question
 
 > "How does knowledge move between tiers, and how do we know when it's stale?"
 
 ---
 
+<!-- section_id: "e5df535d-5c0b-41e3-ae7e-3a1e62414813" -->
 ## Description
 
 Organization without maintenance decays. Knowledge must flow from stage outputs (Tier 3) into distilled summaries (Tier 2) at the right moments, and staleness must be detected before agents rely on outdated knowledge.
@@ -26,6 +28,7 @@ The two failure modes:
 
 ---
 
+<!-- section_id: "458ad3fe-dfad-4f6e-ad2a-21891dbd045e" -->
 ## Child Needs
 
 | Need | Question | Description |
@@ -35,6 +38,7 @@ The two failure modes:
 
 ---
 
+<!-- section_id: "dc85f794-7a03-4de7-b47f-7e8281594cfc" -->
 ## Key Insight
 
 Consolidation mirrors the brain's sleep replay mechanism — raw episodes (stage outputs) are compressed and transferred to long-term semantic storage (knowledge files) at natural boundaries (stage transitions). The trigger is the boundary, not a timer.

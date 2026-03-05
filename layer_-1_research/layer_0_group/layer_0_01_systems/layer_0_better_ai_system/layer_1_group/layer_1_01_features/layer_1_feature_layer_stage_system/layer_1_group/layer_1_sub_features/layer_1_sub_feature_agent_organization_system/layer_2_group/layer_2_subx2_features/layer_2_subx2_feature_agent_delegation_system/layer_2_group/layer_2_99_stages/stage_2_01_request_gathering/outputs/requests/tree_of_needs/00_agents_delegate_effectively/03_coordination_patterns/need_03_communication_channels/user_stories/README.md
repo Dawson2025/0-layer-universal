@@ -8,10 +8,12 @@ resource_name: "README"
 
 **Need**: [Communication Channels](../README.md)
 
+<!-- section_id: "83af510b-1df0-4e57-a5bd-ba0cb15187ab" -->
 ## Overview
 
 These stories cover the mechanisms agents use to share information with each other across time and scope. They validate that stage agents communicate status asynchronously via structured reports, that concurrent agents coordinate in real time without duplicating work, that future agents can discover the full session history of what happened before them, and that agents select the appropriate channel for each type of communication.
 
+<!-- section_id: "e785a0b6-51a6-42ef-9fd4-2bed0599b18c" -->
 ## Actors
 
 - **User (Developer)**: Human developer (Dawson) who gives instructions to the AI system, reviews outputs, and validates behavior

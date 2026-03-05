@@ -12,12 +12,14 @@ resource_name: "README"
 
 ---
 
+<!-- section_id: "71679ed7-bb62-4691-9b35-504c6c341a69" -->
 ## Definition
 
 > Agents automatically discover and follow context chain update protocols when modifying `.0agnostic/` content, without the user providing specific instructions or file paths.
 
 ---
 
+<!-- section_id: "d8294b85-fde4-4000-9e7c-83a88a72b19d" -->
 ## Why This Matters
 
 The context chain system has a complete update protocol (`agnostic_update_protocol.md`) that describes the full propagation chain:
@@ -36,6 +38,7 @@ This creates a systemic failure: agents modify `.0agnostic/` but don't update `0
 
 ---
 
+<!-- section_id: "ee96ac96-3809-43cb-9d65-e3ddfa879bf5" -->
 ## Acceptance Criteria
 
 - [ ] A fresh agent modifying `.0agnostic/` content automatically knows to update `0AGNOSTIC.md`
@@ -47,6 +50,7 @@ This creates a systemic failure: agents modify `.0agnostic/` but don't update `0
 
 ---
 
+<!-- section_id: "b414e6e5-b6e7-4e39-8f02-85c67be2445f" -->
 ## Research References
 
 | Document | Location | Relevance |
@@ -58,6 +62,7 @@ This creates a systemic failure: agents modify `.0agnostic/` but don't update `0
 
 ---
 
+<!-- section_id: "5d801c4f-9918-4a08-b1b5-d675d186220b" -->
 ## Scope Boundaries
 
 **In scope**:
@@ -72,6 +77,7 @@ This creates a systemic failure: agents modify `.0agnostic/` but don't update `0
 
 ---
 
+<!-- section_id: "291f6a96-a76f-4e4d-a515-1117dc84e1a8" -->
 ## Relationship to Other Needs
 
 | Need | Relationship |

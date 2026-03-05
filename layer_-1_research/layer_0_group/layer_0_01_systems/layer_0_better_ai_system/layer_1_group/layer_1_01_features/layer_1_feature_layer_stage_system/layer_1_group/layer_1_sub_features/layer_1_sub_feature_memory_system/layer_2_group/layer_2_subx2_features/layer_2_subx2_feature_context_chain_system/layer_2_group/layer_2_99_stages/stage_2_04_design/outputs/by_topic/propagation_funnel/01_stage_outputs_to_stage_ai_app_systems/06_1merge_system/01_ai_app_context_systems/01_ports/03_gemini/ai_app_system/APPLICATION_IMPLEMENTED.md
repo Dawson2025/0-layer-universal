@@ -10,6 +10,7 @@ resource_name: "APPLICATION_IMPLEMENTED"
 
 ---
 
+<!-- section_id: "94eacb1e-9650-4d74-b2dc-8cce0359e180" -->
 ## Overview
 
 Gemini provides the **mechanisms**. Developers/applications must provide the **strategy and content**:
@@ -25,12 +26,15 @@ Gemini provides the **mechanisms**. Developers/applications must provide the **s
 
 ---
 
+<!-- section_id: "cf74f510-7945-4207-951c-c91fd84d2bae" -->
 ## 1. System Instructions — Content & Strategy
 
+<!-- section_id: "cd0e546a-0bd7-4602-9d50-7781403633a1" -->
 ### What You Must Create
 
 Gemini's system instructions are entirely application-defined. Gemini just **applies** them; you decide **what goes in them**.
 
+<!-- section_id: "caab2c90-2588-4288-9ee5-39826d7ce0f5" -->
 ### Examples of Decisions YOU Make
 
 **Instructions Content**:
@@ -44,6 +48,7 @@ Gemini's system instructions are entirely application-defined. Gemini just **app
 - Per-request instructions (overrides for specific calls)
 - Context-dependent instructions (vary by conversation phase)
 
+<!-- section_id: "16e3f331-aa3f-43f7-9e31-2ee61c521c65" -->
 ### User Responsibility
 
 - **Write** system instructions from scratch
@@ -52,6 +57,7 @@ Gemini's system instructions are entirely application-defined. Gemini just **app
 - **Test** instructions with sample requests
 - **Balance** instruction length (token budget is limited)
 
+<!-- section_id: "b05699d3-c9ea-49f7-8235-7eccb2c9dc03" -->
 ### Example
 
 ```python
@@ -78,8 +84,10 @@ response = client.models.generate_content(
 
 ---
 
+<!-- section_id: "fe63d588-2bd3-4f34-b0b5-8f7fedbf2b6c" -->
 ## 2. Session Management Strategy — When to Resume vs. Create
 
+<!-- section_id: "26799dcc-8742-46af-a9b4-9cdf8c7c5c0e" -->
 ### What You Must Decide
 
 Gemini supports two session models, but **you** decide **when to use each**:
@@ -94,6 +102,7 @@ Gemini supports two session models, but **you** decide **when to use each**:
 - Sessions resumable for 2 hours
 - Best for: Multi-step projects, debugging
 
+<!-- section_id: "83501f09-793e-44a9-af27-6f178ab1ed68" -->
 ### Strategic Decisions YOU Make
 
 **Session Boundaries**:
@@ -106,6 +115,7 @@ Gemini supports two session models, but **you** decide **when to use each**:
 - When should you start fresh? (new feature, unrelated task)
 - How long to keep sessions active? (2-hour limit is hard stop)
 
+<!-- section_id: "0d95b873-4b79-4e8d-a616-eeb01215a96e" -->
 ### User Responsibility
 
 - **Decide** session boundaries (no right answer)
@@ -114,6 +124,7 @@ Gemini supports two session models, but **you** decide **when to use each**:
 - **Handle** session expiry (2-hour limit)
 - **Balance** context retention vs. token cost
 
+<!-- section_id: "6c56a9ab-3064-4e79-8d82-e806091640cc" -->
 ### Example
 
 ```python
@@ -137,8 +148,10 @@ if session_expiry_valid():
 
 ---
 
+<!-- section_id: "981f0e8c-8a9a-49fd-b872-da7164a04125" -->
 ## 3. File Upload Strategy — What, When, How Long
 
+<!-- section_id: "e569f8b5-e92a-4789-9132-5c0c412e3133" -->
 ### What You Must Decide
 
 Gemini stores files for 48 hours automatically, but **you** decide:
@@ -158,6 +171,7 @@ Gemini stores files for 48 hours automatically, but **you** decide:
 - Plan for re-uploads if sessions span multiple days
 - Track file IDs to avoid redundant uploads
 
+<!-- section_id: "39085f96-28e0-49fd-b556-748491725c02" -->
 ### User Responsibility
 
 - **Choose** upload method (base64, Files API, URLs)
@@ -166,6 +180,7 @@ Gemini stores files for 48 hours automatically, but **you** decide:
 - **Manage** file quota (20GB per project limit)
 - **Re-upload** as needed for long-running projects
 
+<!-- section_id: "e55b23ba-52e2-4e09-84b9-2b9a7c6fdd48" -->
 ### Example
 
 ```python
@@ -209,8 +224,10 @@ message = client.beta.messages.create(
 
 ---
 
+<!-- section_id: "0ad8fae7-7d08-4a09-8e72-bc6fd2d348a6" -->
 ## 4. Caching Strategy — When to Cache, Which Type
 
+<!-- section_id: "9b738629-eae5-44f3-9988-08fbd223abc5" -->
 ### What You Must Decide
 
 Gemini offers two caching modes; **you** decide **when to use each**:
@@ -225,6 +242,7 @@ Gemini offers two caching modes; **you** decide **when to use each**:
 - Guaranteed availability for TTL
 - ~90% cost reduction
 
+<!-- section_id: "faf6e8ba-8a85-4fda-9d07-7400fb2a2102" -->
 ### Strategic Decisions YOU Make
 
 **When to Use Implicit**:
@@ -242,6 +260,7 @@ Gemini offers two caching modes; **you** decide **when to use each**:
 - When to refresh? (when context changes)
 - Cost of re-creating cache vs. TTL cost?
 
+<!-- section_id: "002e9352-b66f-4975-baed-16f2dd36c77b" -->
 ### User Responsibility
 
 - **Identify** cacheable content (stable prefixes)
@@ -250,6 +269,7 @@ Gemini offers two caching modes; **you** decide **when to use each**:
 - **Monitor** cache hits (verify caching is working)
 - **Refresh** when context changes
 
+<!-- section_id: "57ba269d-4691-4ce6-bcd6-b136d3e41cbb" -->
 ### Example
 
 ```python
@@ -282,8 +302,10 @@ response2 = client.models.generate_content(
 
 ---
 
+<!-- section_id: "e25b6689-adee-475c-8b47-f464db7efd70" -->
 ## 5. Model Selection — Which Model for Each Task
 
+<!-- section_id: "eadbd6cb-6131-4e61-b0c2-78c176a60ffb" -->
 ### What You Must Decide
 
 Multiple models available; **you** choose **for each request**:
@@ -295,6 +317,7 @@ Multiple models available; **you** choose **for each request**:
 | **Gemini 2.5 Flash** | Very Fast | Good | $ | Production, real-time |
 | **Gemini 2.5 Pro** | Slow | Excellent | $$$ | Research, advanced tasks |
 
+<!-- section_id: "fb52e22a-4e36-4554-ace2-e931ce03781f" -->
 ### Strategic Decisions YOU Make
 
 **Model Strategy**:
@@ -307,6 +330,7 @@ Multiple models available; **you** choose **for each request**:
 - Auto-routing based on complexity?
 - User-override capability?
 
+<!-- section_id: "8306f50e-d262-47fc-bf79-563d3386190b" -->
 ### User Responsibility
 
 - **Choose** default model
@@ -315,6 +339,7 @@ Multiple models available; **you** choose **for each request**:
 - **Decide** speed vs. quality trade-off
 - **Update** strategy as new models release
 
+<!-- section_id: "87ea47ab-ad73-4dbd-bbab-e6009bd61553" -->
 ### Example
 
 ```python
@@ -333,8 +358,10 @@ complex_response = client.models.generate_content(
 
 ---
 
+<!-- section_id: "e7514397-76f3-4a78-8bfa-c4eb93dabdcd" -->
 ## 6. Generation Parameters — Temperature, Top P, Token Limits
 
+<!-- section_id: "be54793f-050e-41bd-9686-3feb0c3f582f" -->
 ### What You Must Decide
 
 Fine-tune model behavior for each request:
@@ -346,6 +373,7 @@ Fine-tune model behavior for each request:
 | `top_k` | 1-40 | Top-K sampling (restricted vocabulary) | Default 40; lower = more focused |
 | `max_output_tokens` | 1-2048 | Response length limit | Match expected response size |
 
+<!-- section_id: "1dd35389-acda-4bf0-8a6a-b08e45c0c27d" -->
 ### Strategic Decisions YOU Make
 
 **Temperature Strategy**:
@@ -363,6 +391,7 @@ Fine-tune model behavior for each request:
 - User-customizable parameters?
 - Auto-adjust based on request type?
 
+<!-- section_id: "d991006b-7569-4141-ad86-f1b13c1060e2" -->
 ### User Responsibility
 
 - **Set** temperature based on task (deterministic for code, creative for ideas)
@@ -371,6 +400,7 @@ Fine-tune model behavior for each request:
 - **Document** what works for each use case
 - **Update** as you learn model behavior
 
+<!-- section_id: "281da3e2-399a-4134-bfed-9c8777835b91" -->
 ### Example
 
 ```python
@@ -397,8 +427,10 @@ story = client.models.generate_content(
 
 ---
 
+<!-- section_id: "8e723052-8a1b-45f9-a1d4-38cc518720d6" -->
 ## 7. Error Handling — Retry Logic, Fallbacks, Graceful Degradation
 
+<!-- section_id: "9287c424-7d90-4ee3-9a92-b7a3adfbebcc" -->
 ### What You Must Decide
 
 Gemini can fail in several ways; **you** decide **how to handle each**:
@@ -415,6 +447,7 @@ Gemini can fail in several ways; **you** decide **how to handle each**:
 - Queue for later?
 - Notify user of failure?
 
+<!-- section_id: "4859b433-0254-4c5f-a74b-5e2768fd1df3" -->
 ### User Responsibility
 
 - **Implement** retry logic with exponential backoff
@@ -423,6 +456,7 @@ Gemini can fail in several ways; **you** decide **how to handle each**:
 - **Provide** fallback responses
 - **Test** error scenarios
 
+<!-- section_id: "45011d9b-3ed1-4540-9e41-001ade98ce81" -->
 ### Example
 
 ```python
@@ -452,8 +486,10 @@ def call_gemini_with_retry(prompt, max_retries=3):
 
 ---
 
+<!-- section_id: "e5990879-6fc3-435f-9ab9-327a0dbfa954" -->
 ## 8. Cost Tracking — Monitoring Spend, Optimization
 
+<!-- section_id: "426f0de8-5af0-4faf-9866-721461bc4dee" -->
 ### What You Must Decide
 
 Gemini pricing is token-based; **you** decide **how to manage costs**:
@@ -464,6 +500,7 @@ Gemini pricing is token-based; **you** decide **how to manage costs**:
 - Caching (reduces token cost 50-90%)
 - Context window (larger = more tokens)
 
+<!-- section_id: "97a81be0-b82f-411c-84ba-8375c1820704" -->
 ### Strategic Decisions YOU Make
 
 **Monitoring**:
@@ -481,6 +518,7 @@ Gemini pricing is token-based; **you** decide **how to manage costs**:
 - Alert at percentage of budget?
 - Auto-disable when limit reached?
 
+<!-- section_id: "d1d90709-8a50-4a21-8cf0-f2bc30f9cf39" -->
 ### User Responsibility
 
 - **Monitor** API costs
@@ -489,6 +527,7 @@ Gemini pricing is token-based; **you** decide **how to manage costs**:
 - **Optimize** for budget constraints
 - **Review** cost patterns monthly
 
+<!-- section_id: "47165e4b-8634-4f7b-aeaf-ac3eb9a07f68" -->
 ### Example
 
 ```python
@@ -524,6 +563,7 @@ print(f"Estimated cost: ${estimated['total']:.4f}")
 
 ---
 
+<!-- section_id: "4e93da03-0a1e-4b3a-95de-fb7203742ccb" -->
 ## Summary: Application-Implemented = Strategy & Content
 
 | Aspect | Gemini Does | You Must Provide |
@@ -539,6 +579,7 @@ print(f"Estimated cost: ${estimated['total']:.4f}")
 
 ---
 
+<!-- section_id: "4d2fad75-00da-4a78-a23a-d4e82dfad90d" -->
 ## Key Principle
 
 **Gemini provides the mechanisms. You provide the strategy and content.**

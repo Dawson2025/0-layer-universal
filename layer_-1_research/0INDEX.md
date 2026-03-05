@@ -6,11 +6,13 @@ resource_name: "0INDEX"
 ---
 # Index: layer_-1_research (Research)
 
+<!-- section_id: "ec232183-4146-4900-84e4-21235b6e0da5" -->
 ## Purpose
 Research projects and experiments. Contains exploratory work, studies, and research-driven development.
 
 ---
 
+<!-- section_id: "5e93f4ee-ff13-4ac4-b8b6-30f250f980d6" -->
 ## Children
 
 | Name | Type | Keywords | Description |
@@ -22,6 +24,7 @@ Research projects and experiments. Contains exploratory work, studies, and resea
 
 ---
 
+<!-- section_id: "2622da1e-9fcc-435d-8001-3b679c7b3d8e" -->
 ## Active Research Projects
 
 | Project | Keywords | Status | Description |
@@ -31,6 +34,7 @@ Research projects and experiments. Contains exploratory work, studies, and resea
 
 ---
 
+<!-- section_id: "24f01ad0-900b-4e25-95bd-a27591f4e04e" -->
 ## Navigation Guide
 
 **Looking for Better AI System research?** → `layer_-1_better_ai_system/`

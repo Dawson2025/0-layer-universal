@@ -9,6 +9,7 @@ How this tree of needs relates to lateral entities after the 2026-03-04 hierarch
 
 ---
 
+<!-- section_id: "3b352b10-5681-430c-897f-7947cf91ec10" -->
 ## Entity Cross-References
 
 > **Reorganization note**: memory_system and multi_agent_system were formerly children of agent_delegation_system. After reorganization:
@@ -24,18 +25,22 @@ How this tree of needs relates to lateral entities after the 2026-03-04 hierarch
 
 ---
 
+<!-- section_id: "39240985-860b-484d-bcce-05c5c6185e99" -->
 ## Branch-to-Entity Mapping
 
+<!-- section_id: "eedd09e9-b9c1-4d65-8fa8-78c6716be570" -->
 ### 01_delegation_model
 - **memory_system** (lateral): Agent context model requires context chain loading rules (need_03)
 - **orchestration** (sibling): Stage delegation and stage reports define multi-agent communication (need_01, need_02)
 
+<!-- section_id: "0858d07b-169c-4456-b419-71737711caea" -->
 ### 02_memory_integration
 - **memory_system** (lateral): All three needs directly inform memory system design
   - Context chain support (need_01) -> context_chain_system
   - Handoff protocols (need_02) -> episodic memory, navigation
   - Three-tier delegation (need_03) -> three-tier knowledge architecture
 
+<!-- section_id: "fd0c55fe-ac69-480f-818f-832f96e22d9d" -->
 ### 03_coordination_patterns
 - **agent_hierarchy** (sibling): Agent hierarchy need (need_01) -> who manages whom
 - **orchestration** (sibling): Spawning patterns and communication channels (need_02, need_03) -> Task tool, teams, agent lifecycle
@@ -43,6 +48,7 @@ How this tree of needs relates to lateral entities after the 2026-03-04 hierarch
 
 ---
 
+<!-- section_id: "4cc067f7-365c-4c30-941a-4a9d80c912ab" -->
 ## Dependency Direction
 
 ```

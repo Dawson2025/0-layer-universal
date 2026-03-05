@@ -9,6 +9,7 @@ resource_name: "stage_workflow_flow"
 
 ---
 
+<!-- section_id: "2a401175-93a0-49a3-8132-b7b30529af45" -->
 ## Current Flow: Stage Entry
 
 ```
@@ -85,6 +86,7 @@ resource_name: "stage_workflow_flow"
 
 ---
 
+<!-- section_id: "eec5da19-0834-4783-81fd-06a2a6a21c10" -->
 ## Context Chain for Stage Workflow
 
 ```
@@ -130,6 +132,7 @@ resource_name: "stage_workflow_flow"
 
 ---
 
+<!-- section_id: "51b0ff0f-2408-4983-b0b0-2114eb50f468" -->
 ## Stage Context Loading Pattern
 
 ```
@@ -159,6 +162,7 @@ resource_name: "stage_workflow_flow"
 
 ---
 
+<!-- section_id: "7eb2dc53-e539-4315-b14e-a60f8bfa011b" -->
 ## Stages and Their Contexts
 
 | Stage | Purpose | Key Context Files |
@@ -177,6 +181,7 @@ resource_name: "stage_workflow_flow"
 
 ---
 
+<!-- section_id: "46ead11e-4502-4cb6-8ff0-4f1925c18581" -->
 ## Proposed Improvement: trigger:onStageEnter
 
 ```

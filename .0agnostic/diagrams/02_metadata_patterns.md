@@ -5,6 +5,7 @@ resource_name: "02_metadata_patterns"
 ---
 # Metadata-Based Organization Patterns
 
+<!-- section_id: "9fecb580-c439-4534-9b1c-a857ee53f234" -->
 ## Pattern 1: Parent-Child Inheritance
 
 **File**: `machine_learning/0AGNOSTIC.md`
@@ -21,6 +22,7 @@ resource_name: "02_metadata_patterns"
 
 ---
 
+<!-- section_id: "c05db65a-165f-4f25-bcae-7ea49981fb86" -->
 ## Pattern 2: Trigger-Based Resource Loading
 
 **File**: `.0agnostic/02_rules/module_management_triggers.md`
@@ -41,6 +43,7 @@ Triggers:
 
 ---
 
+<!-- section_id: "47282dc7-91d1-4e43-8a55-99d4787bd731" -->
 ## Pattern 3: Shared Skill Parameterization
 
 **File**: `.0agnostic/01_knowledge/shared_skills/canvas-fetch.md`
@@ -63,6 +66,7 @@ Returns: Structured course data
 
 ---
 
+<!-- section_id: "6bdea19f-fbb6-4786-8257-2402b04196fc" -->
 ## Pattern 4: Cross-Layer References
 
 Instead of deep nesting, use **pointer documents**:
@@ -77,8 +81,10 @@ machine_learning/
 
 ---
 
+<!-- section_id: "8d2d299c-8d43-47b3-99fc-a6df4d8aee9b" -->
 ## Recommended Transition Strategy
 
+<!-- section_id: "8e08fa3d-b225-4de8-9398-bfc8b037233c" -->
 ### Phase 1: Flatten Filesystem (Immediate)
 
 ```
@@ -95,6 +101,7 @@ New:
 
 Paths reduce from **155+ chars** → **30-40 chars**
 
+<!-- section_id: "a1b66f47-4c3e-4cdd-b55f-b55d416e58bf" -->
 ### Phase 2: Migrate Relationships to Metadata (Parallel)
 
 - Update 0AGNOSTIC.md with explicit parent/child pointers
@@ -102,6 +109,7 @@ Paths reduce from **155+ chars** → **30-40 chars**
 - Create cross-reference index
 - Update status.json to track relationships
 
+<!-- section_id: "6a78a575-ecb8-4bac-b933-d0c2635b2122" -->
 ### Phase 3: Validate System
 
 - Run diagram generator on new structure
@@ -110,6 +118,7 @@ Paths reduce from **155+ chars** → **30-40 chars**
 
 ---
 
+<!-- section_id: "16a53cf5-7076-4fe4-9180-493feb943ba5" -->
 ## Tools That Work With This Pattern
 
 | Tool | Purpose | Input |

@@ -9,6 +9,7 @@ resource_name: "US-02_ai_tailors_to_student"
 **I want to** adapt my explanations based on the student's knowledge level, learning style, and goals,
 **So that** I provide the right level of detail — not too basic for advanced students, not too complex for beginners.
 
+<!-- section_id: "8fc0152e-1b6d-4bf9-8a0d-1e2dd13a6ed9" -->
 ## Acceptance Criteria
 
 **Scenario 1: Student model is accessible from instance**

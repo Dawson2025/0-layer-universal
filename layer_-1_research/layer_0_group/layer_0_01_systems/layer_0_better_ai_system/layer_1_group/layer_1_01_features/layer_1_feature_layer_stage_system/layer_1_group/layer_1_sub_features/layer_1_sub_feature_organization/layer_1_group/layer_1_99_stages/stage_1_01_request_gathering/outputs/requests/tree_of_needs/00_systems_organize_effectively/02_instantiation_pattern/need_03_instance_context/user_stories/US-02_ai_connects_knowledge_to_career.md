@@ -9,6 +9,7 @@ resource_name: "US-02_ai_connects_knowledge_to_career"
 **I want to** connect the student's current coursework to their stated career goals,
 **So that** I can explain why specific topics matter and help the student prioritize their learning effectively.
 
+<!-- section_id: "7eb10d61-8c7f-43a1-a852-557d01981fc2" -->
 ## Acceptance Criteria
 
 **Scenario 1: Career goals are accessible from instance context**

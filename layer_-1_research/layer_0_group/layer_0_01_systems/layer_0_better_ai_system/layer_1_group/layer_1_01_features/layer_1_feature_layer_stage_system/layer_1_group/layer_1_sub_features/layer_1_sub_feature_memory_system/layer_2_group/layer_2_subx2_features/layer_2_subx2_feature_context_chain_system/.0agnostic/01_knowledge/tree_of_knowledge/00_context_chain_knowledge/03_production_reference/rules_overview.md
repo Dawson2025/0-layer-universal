@@ -5,6 +5,7 @@ resource_name: "rules_overview"
 ---
 # Production Rules Overview
 
+<!-- section_id: "2a39d57a-792d-4883-ad32-6b0a215c2cea" -->
 ## Summary
 
 The production rules system lives in `.0agnostic/02_rules/` and is organized into static rules (always-apply, loaded on every relevant API request) and scenario-based rules (loaded when specific conditions are met). Rules cascade downward through the hierarchy -- all layer_0 rules apply to every entity below.
@@ -13,6 +14,7 @@ Static (always-apply) rules include: AI Context Modification Protocol, AI Contex
 
 A known issue identified in early research (2026-01-25) was the lack of a rule priority system, conflicting rule versions, and unclear rule scoping. The current production system partially addresses this by splitting into static vs scenario-based categories, but the full rule registry and conflict resolution infrastructure remains an area for improvement.
 
+<!-- section_id: "b0c2a710-96af-4ff4-b07c-970857e3d024" -->
 ## Key Concepts
 
 - **Static rules**: Always apply; loaded at .0agnostic/02_rules/static/ (or 0_every_api_request/)
@@ -21,6 +23,7 @@ A known issue identified in early research (2026-01-25) was the lack of a rule p
 - **Known gap**: No formal rule priority/conflict resolution system yet
 - **Entity-level rules**: Each entity can have its own .0agnostic/02_rules/ that extend (not override) parent rules
 
+<!-- section_id: "2e8bb449-c526-4be9-8c91-cdf769ae9e8c" -->
 ## Reference Table
 
 | What | Where | Notes |

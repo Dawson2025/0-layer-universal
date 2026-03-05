@@ -10,6 +10,7 @@ resource_name: "0AGNOSTIC"
 
 # ── Entity Definition ──
 
+<!-- section_id: "ef48ebd0-3b86-49ad-8373-2a1038d3b248" -->
 ## Identity
 
 **Role**: AI App Configuration Manager — Cursor Agent
@@ -19,6 +20,7 @@ resource_name: "0AGNOSTIC"
 
 **Specificity Chain**: OS (Linux Ubuntu) > Environment (Local) > Coding App (Cursor) > AI Apps > **Cursor Agent**
 
+<!-- section_id: "1d363f45-3ec7-4d82-8b9d-9a63aaaa98fc" -->
 ## Key Behaviors
 
 - Manages Cursor Agent configuration and setup for this specific environment path
@@ -27,6 +29,7 @@ resource_name: "0AGNOSTIC"
 - Knowledge cascades from parent levels (coding apps > AI apps category) — only store Cursor Agent-specific content here
 - Legacy setup docs migrated to `.0agnostic/01_knowledge/legacy_setup/`
 
+<!-- section_id: "bd46651e-f134-4928-8766-f4649879d5c9" -->
 ### Cursor Agent Context Delivery
 
 Cursor Agent reads context from (in priority order):
@@ -40,17 +43,20 @@ The layer-stage system delivers context via `agnostic-sync.sh`:
 - Future: generate `.cursor/rules/*.mdc` (modern format with frontmatter)
 - Also: generates `AGENTS.md` (full static content, read by Cursor)
 
+<!-- section_id: "8ed80fbf-ae92-4c08-8882-8690f2c4563e" -->
 ### Capabilities Reference
 
 See `../../cursor_capabilities.md` for full Cursor AI feature reference.
 See `../../cursor_context_mapping.md` for agnostic system → Cursor mapping.
 
+<!-- section_id: "eabffb33-0372-45ea-86a5-7d9163cedc10" -->
 ## Inputs
 
 - Parent context from sub_layer_0_09_ai_apps (shared AI app knowledge)
 - Sibling feature entities (shared tools, models, protocols)
 - Cursor Agent-specific setup docs and configuration
 
+<!-- section_id: "0e53ddc1-ce00-4e21-a74f-54b0e9853a83" -->
 ## Outputs
 
 - Cursor Agent setup and configuration documentation
@@ -59,6 +65,7 @@ See `../../cursor_context_mapping.md` for agnostic system → Cursor mapping.
 
 # ── Current Status ──
 
+<!-- section_id: "2f07fc3d-e64e-466f-817d-480544692842" -->
 ## Current Status
 
 - **Stage**: Active (entity created 2026-02-22, restructured 2026-02-25)
@@ -70,6 +77,7 @@ See `../../cursor_context_mapping.md` for agnostic system → Cursor mapping.
 
 # ── Current State ──
 
+<!-- section_id: "addd5ad7-4423-428c-9aa6-2e3c70e3f158" -->
 ## Current State Detail
 
 Entity restructured. Shared infrastructure migrated to sibling feature entities at level 10:
@@ -80,6 +88,7 @@ Entity restructured. Shared infrastructure migrated to sibling feature entities 
 - Agent setup → `../sub_layer_0_10_05_agent_setup/`
 - Legacy setup docs → `.0agnostic/01_knowledge/legacy_setup/`
 
+<!-- section_id: "3daf4b5c-1d46-4d5c-9858-e5fe1a4fa64a" -->
 ## Open Items
 
 - [ ] Populate Cursor Agent-specific rules and knowledge
@@ -87,6 +96,7 @@ Entity restructured. Shared infrastructure migrated to sibling feature entities 
 
 # ── References ──
 
+<!-- section_id: "0dd7c054-d13b-42db-a47f-88b1baad42d1" -->
 ## Navigation
 
 | Resource | Location |

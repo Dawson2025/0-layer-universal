@@ -13,6 +13,7 @@ resource_name: "PROGRESS_termius_cross_device_ssh"
 
 ---
 
+<!-- section_id: "fc1cf668-1eb3-42f9-881e-6874abb1654c" -->
 ## Overall Progress
 
 | Phase | Status | Notes |
@@ -27,8 +28,10 @@ resource_name: "PROGRESS_termius_cross_device_ssh"
 
 ---
 
+<!-- section_id: "ace75650-3c8f-42d3-af55-fd7e21dcb6c4" -->
 ## Detailed Status
 
+<!-- section_id: "497695e2-91e2-4d33-8247-7e1bbbb59835" -->
 ### Windows (COMPLETE)
 - [x] Termius installed
 - [x] SSH config updated with VPS and Linux hosts
@@ -36,12 +39,14 @@ resource_name: "PROGRESS_termius_cross_device_ssh"
 - [x] Connection to VPS verified
 - [x] Menu command working
 
+<!-- section_id: "d4009c9e-846a-4b3b-88bc-8114deef69b4" -->
 ### iPhone (PENDING)
 - [ ] Download Termius from App Store
 - [ ] Sign in with Termius account
 - [ ] Verify hosts synced
 - [ ] Test VPS connection
 
+<!-- section_id: "f24339d7-cf81-4978-a4d1-d3501df10baa" -->
 ### Linux (BLOCKED - waiting for login fix)
 - [ ] Fix login loop first
 - [ ] Install Termius via snap
@@ -49,6 +54,7 @@ resource_name: "PROGRESS_termius_cross_device_ssh"
 - [ ] Verify hosts synced
 - [ ] Test connections
 
+<!-- section_id: "31a3d254-59d9-478e-8c58-10511b11196a" -->
 ### VPS (COMPLETE)
 - [x] SSH accessible from Windows
 - [x] Menu with AI CLIs working
@@ -57,6 +63,7 @@ resource_name: "PROGRESS_termius_cross_device_ssh"
 
 ---
 
+<!-- section_id: "4787d2d1-c63d-49f0-a5c8-10ccd4ebc5cf" -->
 ## Connection Status
 
 | Connection | Status | Tested |
@@ -70,6 +77,7 @@ resource_name: "PROGRESS_termius_cross_device_ssh"
 
 ---
 
+<!-- section_id: "91543a71-d7aa-46c0-8ed8-cf98c1038dc3" -->
 ## Next Steps
 
 1. User downloads Termius on iPhone
@@ -81,6 +89,7 @@ resource_name: "PROGRESS_termius_cross_device_ssh"
 
 ---
 
+<!-- section_id: "2a4584e5-3371-439b-9652-f00da3150796" -->
 ## Blockers
 
 | Blocker | Impact | Resolution |

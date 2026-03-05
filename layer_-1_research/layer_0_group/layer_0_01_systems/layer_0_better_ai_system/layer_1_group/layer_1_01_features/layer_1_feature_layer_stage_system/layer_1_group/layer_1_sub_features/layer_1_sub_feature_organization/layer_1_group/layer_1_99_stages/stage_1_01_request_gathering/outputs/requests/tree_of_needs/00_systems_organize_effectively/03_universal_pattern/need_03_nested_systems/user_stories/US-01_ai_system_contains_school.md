@@ -9,6 +9,7 @@ resource_name: "US-01_ai_system_contains_school"
 **I want to** organize the school system as a sub-system entity within the broader AI system,
 **So that** education capabilities are a coherent, self-contained domain that inherits universal context from its parent while maintaining its own internal structure.
 
+<!-- section_id: "7b7ba6f4-5683-4553-8854-8a6c0589b5a1" -->
 ## Acceptance Criteria
 
 **Scenario 1: School system is a child entity of the AI system**

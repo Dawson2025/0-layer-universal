@@ -13,8 +13,10 @@ resource_name: "PROGRESS_fix_linux_login_loop_via_cloud_ssh"
 
 ---
 
+<!-- section_id: "0c3122f3-45d5-4861-90bd-191847fa4353" -->
 ## Execution Progress
 
+<!-- section_id: "2adac60b-879e-43c8-84f2-ed74ec2d4524" -->
 ### Phase 1: Cloud Server Setup
 **Status**: COMPLETED
 
@@ -35,6 +37,7 @@ resource_name: "PROGRESS_fix_linux_login_loop_via_cloud_ssh"
 
 ---
 
+<!-- section_id: "a30dc96e-e356-42c7-af04-eb783934850d" -->
 ### Phase 2: Phone Setup
 **Status**: IN PROGRESS
 
@@ -50,6 +53,7 @@ https://apps.apple.com/us/app/termius-modern-ssh-client/id549039908
 
 ---
 
+<!-- section_id: "39410b75-3a00-43c2-aed7-33148549a7b0" -->
 ### Phase 3: Boot Linux & SSH Access
 **Status**: NOT STARTED
 
@@ -63,6 +67,7 @@ https://apps.apple.com/us/app/termius-modern-ssh-client/id549039908
 
 ---
 
+<!-- section_id: "fed2fe6d-2033-4192-8aab-de0ac3588a99" -->
 ### Phase 4: Fix Login Loop
 **Status**: NOT STARTED
 
@@ -76,6 +81,7 @@ https://apps.apple.com/us/app/termius-modern-ssh-client/id549039908
 
 ---
 
+<!-- section_id: "1b7372d7-6c14-44c1-916a-926e646787dc" -->
 ### Phase 5: Verify Fix
 **Status**: NOT STARTED
 
@@ -87,8 +93,10 @@ https://apps.apple.com/us/app/termius-modern-ssh-client/id549039908
 
 ---
 
+<!-- section_id: "6089f80f-e955-4789-bc64-b6392eee7c88" -->
 ## Quick Reference Commands
 
+<!-- section_id: "d6c5141e-0cca-4b94-8273-7a8be23d1988" -->
 ### From Phone (after setting up Termius)
 
 ```bash
@@ -104,6 +112,7 @@ c "Help me diagnose this error: [paste error]"
 cx "Check disk space on Linux"
 ```
 
+<!-- section_id: "8ee4db61-6f24-428c-b9e6-aab3b7315ffd" -->
 ### VPS Connection Details
 - **Host**: 46.224.184.10
 - **User**: root
@@ -111,6 +120,7 @@ cx "Check disk space on Linux"
 
 ---
 
+<!-- section_id: "d4d01342-7250-471c-9556-7a2c1f20f95b" -->
 ## Files Created
 
 | File | Location | Purpose |
@@ -126,6 +136,7 @@ cx "Check disk space on Linux"
 
 ---
 
+<!-- section_id: "72614028-553d-4203-8150-198cd17c168d" -->
 ## Next Actions
 
 1. User: Download Termius on iPhone from App Store
@@ -136,6 +147,7 @@ cx "Check disk space on Linux"
 6. User: Run fix script or manual commands
 7. User: Reboot and test login
 
+<!-- section_id: "465ce07f-8f08-46e9-9445-8af4d49c7d40" -->
 ### Post-Fix Tasks
 8. Install Termius on Linux (`sudo snap install termius-app`)
 9. Sign in to Termius with same account - hosts sync automatically
@@ -144,6 +156,7 @@ cx "Check disk space on Linux"
 12. Update all SSH configs with actual Linux IP
 13. Verify bidirectional connections: VPS ↔ Linux ↔ Windows ↔ iPhone
 
+<!-- section_id: "3f315466-6454-4ac0-9325-c8b3450981bd" -->
 ### Cross-Device Connection Matrix
 
 | From ↓ / To → | VPS | Linux | Windows |
@@ -157,6 +170,7 @@ See `TERMIUS_CROSS_DEVICE_SETUP.md` for full details.
 
 ---
 
+<!-- section_id: "1a33436e-a1de-4d63-9776-9df97f9332c9" -->
 ## Blockers / Issues
 
 | Issue | Status | Resolution |

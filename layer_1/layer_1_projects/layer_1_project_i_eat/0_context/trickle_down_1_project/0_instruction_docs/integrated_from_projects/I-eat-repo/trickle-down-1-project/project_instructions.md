@@ -7,6 +7,7 @@ resource_name: "project_instructions"
 
 **Auto-loaded at the start of every Claude Code conversation**
 
+<!-- section_id: "85dc859f-102d-4ae6-9b4a-dff0c618e4ec" -->
 ## Quick Start: Read These Files First
 
 Before starting any work, read these four essential files:
@@ -16,26 +17,33 @@ Before starting any work, read these four essential files:
 3. **[@docs/for_ai/instructions_files/CLAUDE.md](../docs/for_ai/instructions_files/CLAUDE.md)** - Complete repository guide and architecture
 4. **[@docs/for_ai/requirements/README.md](../docs/for_ai/requirements/README.md)** - All feature requirements and product goals
 
+<!-- section_id: "7047d5b3-ed67-4596-ba31-15aec96b8666" -->
 ## Critical Rules (From instructions_for_AI_agents.md)
 
+<!-- section_id: "e6429a7c-0a47-487e-a49a-8e187ba0c965" -->
 ### 1. TODO List for Every Prompt
 For every prompt, create a TODO list explicitly stating what you will do. Use the `TodoWrite` tool to track progress.
 
+<!-- section_id: "bc54ddc4-e59f-4ca1-8619-6a005406e8db" -->
 ### 2. Feature Isolation
 - Work only within `features/<feature_name>/` directories (Green Zone)
 - Avoid editing `core/`, `services/`, or `app.py` unless absolutely necessary (Yellow/Red Zones)
 - This enables parallel development without conflicts
 
+<!-- section_id: "de4857b8-ca8f-40e7-aeb3-e6383eba5047" -->
 ### 3. Requirement Documentation
 - Capture all new requirements in `docs/for_ai/requirements/` specs
 - Update the requirements index at `docs/for_ai/requirements/README.md`
 
+<!-- section_id: "7263badd-62d8-433c-9eee-c7b618d1b345" -->
 ### 4. Testing is Mandatory
 - Create tests for every feature you implement in `features/<feature>/tests/`
 - Run tests after changes to verify nothing broke
 
+<!-- section_id: "f9af0a9c-a607-47e5-b391-214dcaea47da" -->
 ## Architecture Quick Reference
 
+<!-- section_id: "eddc7337-0c95-489f-9818-26433f31850a" -->
 ### Folder Structure (Post-Reorganization)
 ```
 lang-trak-in-progress/
@@ -50,6 +58,7 @@ lang-trak-in-progress/
 └── tests/                  # Integration and global tests
 ```
 
+<!-- section_id: "e26b0e78-2e34-456f-9616-8e3c891ab7bd" -->
 ### Import Patterns
 ```python
 # Core modules (in src/)
@@ -67,6 +76,7 @@ from features.auth import get_user_info, require_auth
 import main
 ```
 
+<!-- section_id: "0a755853-f857-401f-8f04-443b607dacc9" -->
 ### File Paths
 ```python
 DB_NAME = "data/phonemes.db"  # Not "phonemes.db"
@@ -74,6 +84,7 @@ credentials_file = "config/firebase/firebase-service-account-dev.json"
 template_dir = "data/phoneme_templates"
 ```
 
+<!-- section_id: "037bf663-fdbb-4ffe-9731-5b5126ea92fe" -->
 ## Navigation Hierarchy
 
 ```
@@ -91,6 +102,7 @@ Level 4: Work Areas
     └── 4c: Administration (features/admin/)
 ```
 
+<!-- section_id: "0bf58366-0cbf-4199-97bd-9887676dcb6c" -->
 ## Traffic Light System
 
 🟢 **Green Zone (95%)** - Work freely:
@@ -107,6 +119,7 @@ Level 4: Work Areas
 - `app.py` modifications
 - Breaking changes to shared services
 
+<!-- section_id: "dfd2afd2-279d-42e7-8477-d4d1cb4b714a" -->
 ## Running the Application
 
 ```bash
@@ -121,6 +134,7 @@ pytest
 pytest features/words/tests/  # Feature-specific tests
 ```
 
+<!-- section_id: "b81db982-3767-4ddf-b5d6-14b0f81da647" -->
 ## Key Achievements
 
 - **Feature-isolated architecture** enabling 27+ parallel agents
@@ -129,6 +143,7 @@ pytest features/words/tests/  # Feature-specific tests
 - **Clean folder structure** (reduced root from 46 to 13 files)
 - **Sub-feature pattern** applied to all major features
 
+<!-- section_id: "32e45349-d732-4751-9107-706fa8ce7f75" -->
 ## For Detailed Information
 
 See the three essential files listed at the top. They contain:

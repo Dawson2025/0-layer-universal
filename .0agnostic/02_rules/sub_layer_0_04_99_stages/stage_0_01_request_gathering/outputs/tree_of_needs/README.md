@@ -6,10 +6,12 @@ resource_name: "README"
 ---
 # Needs Tree: Critical Rules Enforcement System
 
+<!-- section_id: "0edef48d-64cc-452f-9ba0-73063f3e2e8c" -->
 ## Overview
 
 This needs tree defines the complete set of requirements for implementing a system that enforces critical governance rules without subject to Anthropic's discretionary context filtering.
 
+<!-- section_id: "33f73d42-9b38-4f90-9ebc-58c80766fa82" -->
 ## Tree Structure
 
 ```
@@ -64,8 +66,10 @@ ROOT NEED: Enforce Critical Rules Without Deprioritization
       └─ 5.6: Document limitations
 ```
 
+<!-- section_id: "8a9e539f-e764-471c-a8d1-18c77ad8dcc3" -->
 ## How to Navigate
 
+<!-- section_id: "1b3121bf-38c0-4740-8a36-dcf94f9ebccc" -->
 ### Starting Points
 
 - **See the root problem**: `root_need/ROOT_NEED_enforce_critical_rules.md`
@@ -73,6 +77,7 @@ ROOT NEED: Enforce Critical Rules Without Deprioritization
 - **Explore a tactical area**: Go into any `PARENT_NEED_PX.md` file
 - **Read specific requirements**: See individual `X_Y_*.md` files
 
+<!-- section_id: "e442d2a3-418a-415e-89c1-417642de51df" -->
 ### Navigation Paths
 
 **For understanding the complete picture**:
@@ -90,11 +95,14 @@ ROOT NEED: Enforce Critical Rules Without Deprioritization
 2. Review P5 requirements
 3. Check cross-references to O3 enforcement mechanism
 
+<!-- section_id: "b9a0b9c3-97ec-4744-af88-3866e200bced" -->
 ## Requirement Hierarchy
 
+<!-- section_id: "2e91de7a-95e4-45a2-9adb-28f3ea6c8772" -->
 ### Level 1: Root Need
 - `ROOT_NEED_enforce_critical_rules.md` - The core problem and objective
 
+<!-- section_id: "443cd2ca-d1d3-48df-b6e4-b3eb79cfb207" -->
 ### Level 2: Overarching Branches (O1-O4)
 Strategic dimensions covering what the system must do:
 - **O1**: Identifies and understands critical rules
@@ -102,6 +110,7 @@ Strategic dimensions covering what the system must do:
 - **O3**: Executes and enforces critical rules
 - **O4**: Verifies rules are working correctly
 
+<!-- section_id: "2089f7bb-6218-43a0-ad30-6f59975a60ff" -->
 ### Level 3: Parent Tactical Needs (P1-P5)
 Tactical requirement categories that implement overarching branches:
 - **P1**: Solves the discretionary disclaimer problem
@@ -110,6 +119,7 @@ Tactical requirement categories that implement overarching branches:
 - **P4**: Builds execution infrastructure
 - **P5**: Validates and maintains system
 
+<!-- section_id: "239efd7a-62f1-4578-ba3f-9bceac530dc7" -->
 ### Level 4: Child Tactical Needs (1.1-5.6)
 Specific, actionable requirements with:
 - Clear description
@@ -117,17 +127,21 @@ Specific, actionable requirements with:
 - Dependencies on other needs
 - Owner stage (which development stage handles it)
 
+<!-- section_id: "59e55f40-9670-411b-815b-ff132ff239e3" -->
 ## Lookup Index
 
+<!-- section_id: "e2bd5072-a00a-4ab7-8163-70f62901a9c4" -->
 ### By Branch
 - `O1_rule_identification_and_categorization/` - Understanding critical rules
 - `O2_rule_management/` - Managing rule storage and extraction
 - `O3_rule_enforcement/` - Building and deploying the enforcement system
 - `O4_rule_verification_and_compliance/` - Testing and validating the system
 
+<!-- section_id: "5db94bb0-63e4-4269-a17e-974f23832945" -->
 ### By Priority
 All needs listed here are required (no prioritization in request gathering stage).
 
+<!-- section_id: "ee3cac3e-26c2-45f7-a6e6-ad52ca9688c8" -->
 ### By Stage Ownership
 - **Stage 0_02_research** (current): Informs O1 (understanding the problem)
 - **Stage 0_03_instructions**: Defines constraints for O2-O4
@@ -136,6 +150,7 @@ All needs listed here are required (no prioritization in request gathering stage
 - **Stage 0_06_development**: Implements O2-O4
 - **Stage 0_07_testing**: Validates O4
 
+<!-- section_id: "cdb1345e-2420-4d5a-b9df-67b3e842a1ed" -->
 ## Cross-References
 
 Each need file includes:
@@ -145,6 +160,7 @@ Each need file includes:
 - **Research basis**: Links to research stage findings
 - **Acceptance criteria**: How we know it's satisfied
 
+<!-- section_id: "c5f52ea9-1543-43e9-abf4-5296c0131ad0" -->
 ## Next Steps
 
 After request gathering is complete:

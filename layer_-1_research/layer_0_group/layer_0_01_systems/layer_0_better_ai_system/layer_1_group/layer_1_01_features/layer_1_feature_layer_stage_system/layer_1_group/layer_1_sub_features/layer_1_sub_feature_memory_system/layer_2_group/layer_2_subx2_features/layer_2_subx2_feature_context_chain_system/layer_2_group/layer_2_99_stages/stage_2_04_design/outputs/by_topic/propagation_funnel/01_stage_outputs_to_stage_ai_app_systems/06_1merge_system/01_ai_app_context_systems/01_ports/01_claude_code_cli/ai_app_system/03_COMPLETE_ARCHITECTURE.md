@@ -10,6 +10,7 @@ resource_name: "03_COMPLETE_ARCHITECTURE"
 
 ---
 
+<!-- section_id: "63dc8812-3393-45a5-9d95-b7d0b33afc7f" -->
 ## System Overview
 
 Claude Code CLI combines **native mechanisms** (what it provides) with **application-implemented strategy** (what you provide):
@@ -47,8 +48,10 @@ Claude Code CLI combines **native mechanisms** (what it provides) with **applica
 
 ---
 
+<!-- section_id: "4533b099-23a1-4312-b886-8ac192b6b3b5" -->
 ## Context Loading Pipeline
 
+<!-- section_id: "ba171d0d-9ffd-4471-90cd-01ee684c1dbd" -->
 ### Step 1: Session Initialization
 
 **Claude Code Does**:
@@ -61,6 +64,7 @@ Claude Code CLI combines **native mechanisms** (what it provides) with **applica
 - Organized memory/config files
 - Set up initial state (or use defaults)
 
+<!-- section_id: "0fcaf061-fae1-49ce-ba33-d3ee9fbd435b" -->
 ### Step 2: Load Global Configuration
 
 **Claude Code Does**:
@@ -73,6 +77,7 @@ Claude Code CLI combines **native mechanisms** (what it provides) with **applica
 - Defined triggers (when to load context)
 - Listed skills, resources, behaviors
 
+<!-- section_id: "13d4a1cb-ebfe-4014-98ed-0a01d217d44f" -->
 ### Step 3: Load Project CLAUDE.md
 
 **Claude Code Does**:
@@ -85,6 +90,7 @@ Claude Code CLI combines **native mechanisms** (what it provides) with **applica
 - Defined layer/stage context (if layered project)
 - Listed project-specific skills
 
+<!-- section_id: "a6857d03-a9d7-4937-b15f-896d0ec26334" -->
 ### Step 4: Load Directory Chain CLAUDE.md
 
 **Claude Code Does**:
@@ -96,6 +102,7 @@ Claude Code CLI combines **native mechanisms** (what it provides) with **applica
 - Created CLAUDE.md at layer/stage/entity levels (for hierarchical projects)
 - Documented layer-specific identity and context
 
+<!-- section_id: "38357965-efc5-4e03-b60b-6231a8506d8b" -->
 ### Step 5: Load MEMORY.md (First 200 Lines)
 
 **Claude Code Does**:
@@ -108,6 +115,7 @@ Claude Code CLI combines **native mechanisms** (what it provides) with **applica
 - Organized supplementary content after 200-line boundary
 - Updated MEMORY.md as you work
 
+<!-- section_id: "a5a2cb02-1547-42f8-aafd-3331e5936f8d" -->
 ### Step 6: Prepare for User Interaction
 
 **Claude Code Does**:
@@ -123,8 +131,10 @@ Claude Code CLI combines **native mechanisms** (what it provides) with **applica
 
 ---
 
+<!-- section_id: "0a71b120-1f9d-4fe4-9d13-51af5c0533c1" -->
 ## On Each Turn
 
+<!-- section_id: "33af2e18-a603-49b8-a5a9-cdb0d75be8eb" -->
 ### What Claude Code Does
 
 1. **Parse** user message
@@ -138,6 +148,7 @@ Claude Code CLI combines **native mechanisms** (what it provides) with **applica
 6. **Update** state (if /remember used, /skill invoked, etc.)
 7. **Log** turn to `~/.claude/projects/[hash]/history.jsonl`
 
+<!-- section_id: "5520b21d-67b7-4c79-b57c-c7c7fb67bc32" -->
 ### What You Do
 
 1. **Write** natural requests
@@ -149,6 +160,7 @@ Claude Code CLI combines **native mechanisms** (what it provides) with **applica
 
 ---
 
+<!-- section_id: "9175fd36-00db-4ecc-a8b6-86581bf51aa1" -->
 ## Context Composition (What's Actually in Context)
 
 At any point, your context window contains:
@@ -179,8 +191,10 @@ At any point, your context window contains:
 
 ---
 
+<!-- section_id: "accbc5c3-f5f5-412c-9923-4ff139fb4220" -->
 ## Auto-Compaction Flow
 
+<!-- section_id: "128cedb6-4253-461b-b9cd-fd11186ece37" -->
 ### When Triggered
 
 ```
@@ -208,8 +222,10 @@ Conversation resumes with freed tokens
 
 ---
 
+<!-- section_id: "d3586078-d367-4fb1-82a3-cc4199619624" -->
 ## Project Structure and Storage
 
+<!-- section_id: "f528e0fa-cda5-496b-8d72-b7db8916b55a" -->
 ### Local Storage Locations
 
 ```
@@ -228,6 +244,7 @@ Conversation resumes with freed tokens
         └── history.jsonl              (Conversation history, all turns)
 ```
 
+<!-- section_id: "c51b7699-ac34-46bf-a07a-2bed8d293041" -->
 ### Project Hash
 
 Claude Code computes a **deterministic hash** from the working directory:
@@ -245,8 +262,10 @@ Project Directory: ~/.claude/projects/a1b2c3d4e5f6/
 
 ---
 
+<!-- section_id: "e9597158-36a5-421a-8be8-85126ed551ed" -->
 ## Subagent Architecture
 
+<!-- section_id: "6bd8a826-d3be-4088-bfe5-9cd7daec992d" -->
 ### When You Spawn Subagents
 
 ```
@@ -274,8 +293,10 @@ Main context:
 
 ---
 
+<!-- section_id: "c09a2b8a-f368-42c9-8a43-ab087dd92cca" -->
 ## MEMORY.md Organization Strategy
 
+<!-- section_id: "73f9a1bf-50bb-4663-8035-7ce520a340ba" -->
 ### Structure
 
 ```markdown
@@ -318,8 +339,10 @@ Main context:
 
 ---
 
+<!-- section_id: "cb59502d-c2bc-431e-bd02-af8a58077d0d" -->
 ## CLAUDE.md Organization Strategy
 
+<!-- section_id: "b8ccefd9-743c-4d73-bf04-9c569b7cd77d" -->
 ### Structure
 
 ```markdown
@@ -348,8 +371,10 @@ Main context:
 
 ---
 
+<!-- section_id: "d25d8d2a-3c30-4b05-a4c8-786f590b6be0" -->
 ## MCP Server Integration
 
+<!-- section_id: "7830bdae-beac-457e-bb69-c2cc8aabb3ef" -->
 ### When You Need External Tools
 
 ```
@@ -371,6 +396,7 @@ Claude Code searches:
 
 ---
 
+<!-- section_id: "f8da13d8-57c2-47d0-894e-75f8db4d73a6" -->
 ## Conversation History
 
 Claude Code automatically persists all conversations:
@@ -398,8 +424,10 @@ On Resumption:
 
 ---
 
+<!-- section_id: "8e7d51a8-e41f-4e5c-8119-9e714912876a" -->
 ## Token Management Philosophy
 
+<!-- section_id: "56fdddd9-a7ee-4ae5-b737-09a21ccb7e4b" -->
 ### Goal: Maximize Quality, Manage Cost
 
 **Token Budgeting**:
@@ -422,8 +450,10 @@ On Resumption:
 
 ---
 
+<!-- section_id: "d8c4a7f8-425e-4c38-897c-9fc48fe53576" -->
 ## Scalability: From Small to Large Projects
 
+<!-- section_id: "39f8a13b-7dc9-4959-8390-1fbcdc7c6ac0" -->
 ### Small Project (1-person, simple codebase)
 
 ```
@@ -433,6 +463,7 @@ On Resumption:
 
 **Tokens**: Few hundred, plenty of room.
 
+<!-- section_id: "c0345706-ee8b-4bf5-828c-ccee0b82c809" -->
 ### Medium Project (team, complex codebase)
 
 ```
@@ -447,6 +478,7 @@ On Resumption:
 
 **Tokens**: Managed carefully, compaction active.
 
+<!-- section_id: "d3f0aece-ba74-4c12-8c69-923de7bb3f12" -->
 ### Large Project (distributed team, massive codebase)
 
 ```
@@ -467,8 +499,10 @@ On Resumption:
 
 ---
 
+<!-- section_id: "846ea611-62c5-484c-be33-cd32faa4a1ad" -->
 ## When Things Go Wrong
 
+<!-- section_id: "b84fc0a9-31af-447d-9cfa-bda802a902f7" -->
 ### Claude Seems Confused
 
 **Check**:
@@ -481,6 +515,7 @@ On Resumption:
 - Update MEMORY.md with current state
 - Use /remember to add missing context
 
+<!-- section_id: "d43f4603-6dbd-44f9-8e9b-264ac5d44e19" -->
 ### Running Out of Tokens Quickly
 
 **Check**:
@@ -493,6 +528,7 @@ On Resumption:
 - Use @file instead of @folder
 - Use subagents to parallelize large work
 
+<!-- section_id: "6c778a82-1682-4543-a57b-4b47b911b7cc" -->
 ### Skills Not Being Invoked When Expected
 
 **Check**:
@@ -507,6 +543,7 @@ On Resumption:
 
 ---
 
+<!-- section_id: "f64fae5a-33da-4d13-ab39-37b37c2c3b22" -->
 ## Summary: The System Works When
 
 ✅ **CLAUDE.md is accurate** (reflects current architecture, rules, available skills)

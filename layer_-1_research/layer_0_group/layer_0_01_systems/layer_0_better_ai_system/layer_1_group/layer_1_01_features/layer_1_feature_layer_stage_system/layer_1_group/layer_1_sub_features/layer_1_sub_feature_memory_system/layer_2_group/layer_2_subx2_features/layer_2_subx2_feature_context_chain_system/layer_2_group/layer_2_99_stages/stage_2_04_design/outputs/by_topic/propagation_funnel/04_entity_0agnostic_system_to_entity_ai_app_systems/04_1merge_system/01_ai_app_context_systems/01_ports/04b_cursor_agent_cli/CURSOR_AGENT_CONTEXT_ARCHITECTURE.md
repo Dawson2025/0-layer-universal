@@ -12,10 +12,12 @@ resource_name: "CURSOR_AGENT_CONTEXT_ARCHITECTURE"
 
 ---
 
+<!-- section_id: "ab7992df-7a98-405f-8217-801a92bea147" -->
 ## Context Model
 
 Cursor Agent CLI is an **agentic AI tool** — similar to Claude Code CLI but focused on agent orchestration, delegation, and multi-step task automation. It loads context through:
 
+<!-- section_id: "8e18e0e8-36a0-4653-a6b1-811fcfd81d27" -->
 ### Static Context (Loaded on Agent Invocation)
 
 **Tier 0 - Synced (auto-generated from 0AGNOSTIC.md)**:
@@ -40,6 +42,7 @@ Contains:
 - Specialized delegation strategies
 - Team-specific configuration
 
+<!-- section_id: "48933118-74a4-47cf-9696-4543076929e4" -->
 ### Dynamic Context (On-Demand)
 
 - Agent definitions (`.0agnostic/06_context_avenue_web/01_file_based/06_agents/`)
@@ -49,8 +52,10 @@ Contains:
 
 ---
 
+<!-- section_id: "bd7ca64a-664f-47a1-9fc9-8aa02756d0ae" -->
 ## Porting Architecture: 0AGNOSTIC → Cursor Agent
 
+<!-- section_id: "2eb468b8-b9e5-4a2a-ad7c-141cc8cb5bbc" -->
 ### Step 1: Extract from 0AGNOSTIC.md
 
 Extract **STATIC CONTEXT** with emphasis on **agent-specific sections**:
@@ -62,6 +67,7 @@ STATIC CONTEXT section → Extract with agent focus
   - Current Status: Agent readiness and team status
 ```
 
+<!-- section_id: "baebd104-da74-4f0e-9f5c-0200506c6b6b" -->
 ### Step 2: Transform to CURSOR_AGENT.md Format
 
 **Transformation Rules** (Agent-centric):
@@ -96,6 +102,7 @@ STATIC CONTEXT section → Extract with agent focus
 - CAN: [optional capabilities]
 ```
 
+<!-- section_id: "ddc2113d-2325-43dc-bf63-efdebdbb3aae" -->
 ### Step 3: Apply Tier 1 (Overrides)
 
 **Location**: `.1merge/.1cursor_agent_merge/1_overrides/tool_boilerplate.md`
@@ -136,6 +143,7 @@ As an agent, you:
 - Go idle waiting for next task (implicit)
 ```
 
+<!-- section_id: "8aa74391-f2d5-426b-bc99-7c9d89f04f3b" -->
 ### Step 4: Apply Tier 2 (Additions)
 
 **Location**: `.1merge/.1cursor_agent_merge/2_additions/tool_additions.md`
@@ -194,6 +202,7 @@ if message.type == "shutdown_request":
 ```
 ```
 
+<!-- section_id: "f9402bac-a645-484e-8cae-99155685f144" -->
 ### Step 5: Generate Output
 
 **Tool**: `agnostic-sync.sh` handles Cursor Agent generation
@@ -202,8 +211,10 @@ if message.type == "shutdown_request":
 
 ---
 
+<!-- section_id: "0211853f-23ae-4d96-b1c8-8990dd81e9e5" -->
 ## File Locations
 
+<!-- section_id: "5e34add7-c0f0-4c79-9fee-10f23e92fdab" -->
 ### Input Files
 
 ```
@@ -228,6 +239,7 @@ if message.type == "shutdown_request":
     └── 2_additions/tool_additions.md
 ```
 
+<!-- section_id: "6138dab2-d96e-4758-9737-b7116b58fe6e" -->
 ### Output Files
 
 ```
@@ -243,8 +255,10 @@ if message.type == "shutdown_request":
 
 ---
 
+<!-- section_id: "6d355990-fef9-4e95-87b0-f144e4ac6ee8" -->
 ## Agent-Specific Features
 
+<!-- section_id: "47e69914-9009-4483-bf8e-56748e7b388a" -->
 ### Agent Delegation Patterns
 
 Cursor Agent implements the **Agent Delegation System** from `.0agnostic/`:
@@ -264,6 +278,7 @@ Each agent has:
 - Communication channel (SendMessage)
 - Status tracking (TaskUpdate)
 
+<!-- section_id: "7e4e8615-d12e-4aba-b7f6-bd647a7873cd" -->
 ### Task Management
 
 Cursor Agent uses the task list for coordination:
@@ -283,6 +298,7 @@ Protocols:
 - **TaskUpdate**: Claim task, mark progress, mark complete
 - **TaskGet**: Read full task details before starting
 
+<!-- section_id: "3bc27a1d-a31f-4a4e-bb53-923b545567d2" -->
 ### Agent-to-Agent Communication
 
 Agents communicate via **SendMessage**:
@@ -305,6 +321,7 @@ SendMessage(
 )
 ```
 
+<!-- section_id: "c1bc6e36-9ec5-4cbe-8efa-9764f79f591a" -->
 ### Team Configuration
 
 Cursor Agent reads team config to understand hierarchy:
@@ -330,8 +347,10 @@ Agents use this to:
 
 ---
 
+<!-- section_id: "2be47a89-8d39-4eb3-aa91-44b5a43c9cd7" -->
 ## Agent Behaviors vs. Key Behaviors
 
+<!-- section_id: "a988742b-fec1-4716-a681-543c1a16d1ae" -->
 ### CLAUDE.md (User-Driven)
 ```markdown
 ## Key Behaviors
@@ -340,6 +359,7 @@ Agents use this to:
 - Debug issues when user shows errors
 ```
 
+<!-- section_id: "a66119d1-a888-452c-965d-1e8c781946e9" -->
 ### CURSOR_AGENT.md (Autonomous)
 ```markdown
 ## Agent Behaviors
@@ -354,6 +374,7 @@ Agents use this to:
 
 ---
 
+<!-- section_id: "d757d92f-4086-4ce8-b6af-ca1cca55f878" -->
 ## Graceful Shutdown Protocol
 
 When parent agent requests shutdown:
@@ -385,6 +406,7 @@ SendMessage(
 
 ---
 
+<!-- section_id: "0069e362-b479-4b06-b5f6-47f687e9426c" -->
 ## Agent State Persistence
 
 Unlike Claude Code (per-session), Cursor Agent can maintain state via:
@@ -412,6 +434,7 @@ Agent can resume work by:
 
 ---
 
+<!-- section_id: "a16d5a81-367e-4754-803d-9e80e69a3f0b" -->
 ## Integration with Agent Delegation System
 
 Cursor Agent implements the **three-tier delegation model**:
@@ -436,6 +459,7 @@ This is the **Agent Delegation System** architecture from the research layer.
 
 ---
 
+<!-- section_id: "f94471dd-6b36-4c03-bd73-39de4dceaa2b" -->
 ## Resources Section
 
 ```markdown
@@ -452,6 +476,7 @@ This is the **Agent Delegation System** architecture from the research layer.
 
 ---
 
+<!-- section_id: "9ce0b456-626d-4eff-bb17-da68780d55e5" -->
 ## Validation Checklist
 
 After porting to Cursor Agent context:
@@ -471,6 +496,7 @@ After porting to Cursor Agent context:
 
 ---
 
+<!-- section_id: "cdd454b4-e2df-4ca2-9ad6-86738b6bef4e" -->
 ## Success Criteria
 
 Cursor Agent context is successful when:
@@ -493,6 +519,7 @@ Cursor Agent context is successful when:
 
 ---
 
+<!-- section_id: "721fece4-2762-4e95-b25d-f1d3c7cba38d" -->
 ## References
 
 - **Agent Delegation System**: `.0agnostic/02_rules/dynamic/agent_delegation_workspace_rule.md`

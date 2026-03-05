@@ -9,6 +9,7 @@ resource_name: "US-02_production_updated_safely"
 **I want** promoted content to go through validation and approval before entering production,
 **So that** production stability is maintained and any issues from promotion can be identified and rolled back.
 
+<!-- section_id: "8008e22c-5323-4759-85d9-fb880757070f" -->
 ## Acceptance Criteria
 
 **Scenario 1: Promotion requires explicit approval**

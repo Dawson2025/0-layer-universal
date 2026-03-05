@@ -6,6 +6,7 @@ resource_name: "WHAT_ACTUALLY_WORKS"
 # What Actually Works: Bypass Permissions Mode
 *Lessons Learned from Real-World Testing*
 
+<!-- section_id: "2915cecf-b62a-4692-9ec0-b9a7e990a608" -->
 ## TL;DR - The Working Configuration
 
 ```json
@@ -39,8 +40,10 @@ resource_name: "WHAT_ACTUALLY_WORKS"
 }
 ```
 
+<!-- section_id: "d4dc312c-3622-485a-b88c-07f6a876a8da" -->
 ## The Problem with Old Documentation
 
+<!-- section_id: "d952c115-9ab9-4117-a3a7-dbad4fe8213c" -->
 ### ❌ What DOESN'T Work
 
 Many guides (including earlier versions of our own documentation) suggest:
@@ -59,6 +62,7 @@ Many guides (including earlier versions of our own documentation) suggest:
 2. **No UI Toggle**: This approach doesn't show the Shift+Tab bypass mode indicator
 3. **Doesn't Auto-Enable**: Even if the schema accepted it, bypass mode wouldn't automatically activate
 
+<!-- section_id: "035f833e-1518-45c9-9807-2d98ff922688" -->
 ### The Truth About `disableBypassPermissionsMode`
 
 According to the actual Claude Code schema:
@@ -69,8 +73,10 @@ According to the actual Claude Code schema:
 | `disableBypassPermissionsMode` | `false` | ❌ Invalid - Schema validation fails |
 | `disableBypassPermissionsMode` | Not set | ⚠️ Allows bypass but doesn't enable it or show toggle |
 
+<!-- section_id: "6fbe4872-86aa-4870-b447-4c286767fcfb" -->
 ## ✅ What Actually Works
 
+<!-- section_id: "14d084b2-7d90-4cfe-8f84-9643e9edafb4" -->
 ### The Magic Combination
 
 To enable bypass permissions mode AND show the Shift+Tab toggle, you need:
@@ -79,6 +85,7 @@ To enable bypass permissions mode AND show the Shift+Tab toggle, you need:
 2. **Comprehensive `allow` rules** - List all operations you want to permit
 3. **Strategic `deny` rules** - Block dangerous operations
 
+<!-- section_id: "e512dddc-7171-4f71-935b-3a54a0dcf1f6" -->
 ### Why This Works
 
 ```json
@@ -116,8 +123,10 @@ To enable bypass permissions mode AND show the Shift+Tab toggle, you need:
   - Overrides both bypass mode and allow rules
   - Safety net against destructive commands
 
+<!-- section_id: "8f4aa554-70bf-40ed-b6e8-2d79fe1db68d" -->
 ## Real-World Tested Configurations
 
+<!-- section_id: "e7bf9842-1cb7-488a-b4fb-f6a31d446ca8" -->
 ### Configuration 1: I-eat-repo (This Project)
 
 ```json
@@ -175,6 +184,7 @@ To enable bypass permissions mode AND show the Shift+Tab toggle, you need:
 - All common operations work without prompts
 - Dangerous operations still blocked
 
+<!-- section_id: "036934e6-1110-432a-b0be-72a78d9b514c" -->
 ### Configuration 2: Lang-trak-in-progress (Comparison)
 
 ```json
@@ -199,8 +209,10 @@ To enable bypass permissions mode AND show the Shift+Tab toggle, you need:
 - Functions like bypass mode due to comprehensive permissions
 - May not show Shift+Tab toggle as prominently
 
+<!-- section_id: "87314471-ce0c-49a5-8aea-1da3ff4c15d2" -->
 ## The Shift+Tab Toggle Mystery Solved
 
+<!-- section_id: "9acfa6aa-a226-4d09-ac09-2f33461f3cee" -->
 ### What Makes the Toggle Appear?
 
 The Shift+Tab toggle indicator appears when:
@@ -209,12 +221,14 @@ The Shift+Tab toggle indicator appears when:
 2. ✅ Claude Code is restarted after settings change
 3. ✅ No enterprise policy is blocking bypass mode
 
+<!-- section_id: "18dc0aa4-b976-4715-a88c-6e2d2a6e9f86" -->
 ### What DOESN'T Show the Toggle?
 
 1. ❌ Only having extensive `allow` rules without `defaultMode`
 2. ❌ Using `disableBypassPermissionsMode: false` (invalid)
 3. ❌ Command-line `--dangerously-skip-permissions` flag (works but no persistent toggle)
 
+<!-- section_id: "05d7eb2d-46a0-425a-9376-c6da0cd0de51" -->
 ## Comparison Table
 
 | Approach | Shows Toggle? | Auto-Enables Bypass? | Valid Schema? |
@@ -225,8 +239,10 @@ The Shift+Tab toggle indicator appears when:
 | `--dangerously-skip-permissions` flag | ❌ No | ✅ Yes | ✅ Yes |
 | Nothing (omit field) | ❌ No | ❌ No | ✅ Yes |
 
+<!-- section_id: "09dc5943-de6a-4bb2-938b-d6d0b97b2c54" -->
 ## Migration Guide
 
+<!-- section_id: "1e86286f-f2c2-4e78-96c2-7f14e4670c17" -->
 ### If You Have This (Old/Wrong):
 
 ```json
@@ -237,6 +253,7 @@ The Shift+Tab toggle indicator appears when:
 }
 ```
 
+<!-- section_id: "ccf8c17c-c42c-40cf-9d7d-a4588d5d54dd" -->
 ### Change To This (New/Correct):
 
 ```json
@@ -261,6 +278,7 @@ The Shift+Tab toggle indicator appears when:
 }
 ```
 
+<!-- section_id: "b30a8921-8ff5-4b05-9340-291e7e37f35f" -->
 ### Steps:
 
 1. Update `.claude/settings.json` or `.claude/settings.local.json`
@@ -268,6 +286,7 @@ The Shift+Tab toggle indicator appears when:
 3. Restart Claude Code
 4. Verify by pressing Shift+Tab - you should see the bypass mode indicator
 
+<!-- section_id: "157e2a61-3d2b-4b96-96ae-5e433393de20" -->
 ## Key Takeaways
 
 1. **Use `defaultMode: "bypassPermissions"`** - This is the only reliable way to enable bypass mode and show the UI toggle
@@ -280,6 +299,7 @@ The Shift+Tab toggle indicator appears when:
 
 5. **Ignore old documentation** - Many guides suggest `disableBypassPermissionsMode: false` which doesn't work
 
+<!-- section_id: "e88c5459-627a-473e-bfc3-ae2ddd54eed5" -->
 ## Schema Reference
 
 The actual Claude Code schema expects:
@@ -296,6 +316,7 @@ interface Permissions {
 
 Note that `disableBypassPermissionsMode` is NOT a boolean - it only accepts the string `"disable"`.
 
+<!-- section_id: "9bf1a161-a08f-4a3c-afa4-1c62aad6980b" -->
 ## Testing Checklist
 
 After configuring bypass permissions, verify:
@@ -309,6 +330,7 @@ After configuring bypass permissions, verify:
 - [ ] Operations work without prompts
 - [ ] Denied operations are still blocked
 
+<!-- section_id: "e5d6e21a-dc9a-42bf-8972-e5b7b7af01d8" -->
 ## Related Documentation
 
 - [bypass-permissions-setup.md](./bypass-permissions-setup.md) - Complete setup guide (now corrected)

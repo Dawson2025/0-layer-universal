@@ -5,12 +5,14 @@ document"
 resource_name: "README"
 ---
 # BYUI DS Portfolio Template
+<!-- section_id: "fe697cdb-4289-43ba-9969-f0d598279369" -->
 ## Building a Quarto Portfolo
 
 A template for a portfolio developed with Quarto and hosted on GitHub.
 
 This is all configured so you only need to edit the source files in Quarto (.qmd). The website is generated and hosted automatically by GitHub.
 
+<!-- section_id: "19a64de4-5ab0-4070-82fc-cc83cc8a5b1f" -->
 ## Using this template
 
 1. Click on green button "Use this Tempalte" -> "Create a new Repo"

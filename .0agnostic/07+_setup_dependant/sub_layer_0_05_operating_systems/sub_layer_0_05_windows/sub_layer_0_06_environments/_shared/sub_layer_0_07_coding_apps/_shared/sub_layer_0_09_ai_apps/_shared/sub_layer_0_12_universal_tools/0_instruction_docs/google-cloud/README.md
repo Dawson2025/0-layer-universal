@@ -8,14 +8,17 @@ resource_name: "README"
 
 This directory contains documentation for Google Cloud Platform (GCP) tools and integrations used across AI development workflows.
 
+<!-- section_id: "dec3256a-9722-4964-bb46-6ecfbd8c3df0" -->
 ## Contents
 
 - [gcloud-cli-setup.md](./gcloud-cli-setup.md) - Installing and configuring the gcloud CLI
 - [secret-manager.md](./secret-manager.md) - Using Google Secret Manager for API keys and credentials
 - [canvas-api-integration.md](./canvas-api-integration.md) - Canvas LMS API integration with GCP
 
+<!-- section_id: "1a6126da-1ccb-40dd-8e5d-a52f67edd5c8" -->
 ## Quick Reference
 
+<!-- section_id: "8e93867f-3c66-449f-a051-fd360b971170" -->
 ### Authentication
 ```bash
 # Login with browser-based auth
@@ -31,6 +34,7 @@ gcloud auth list
 gcloud config set project PROJECT_ID
 ```
 
+<!-- section_id: "bf440a2d-12a9-41f4-b015-4ad5f703c2d5" -->
 ### Secret Manager
 ```bash
 # List secrets
@@ -43,6 +47,7 @@ gcloud secrets versions access latest --secret=SECRET_NAME | tr -d '\n'
 echo "secret-value" | gcloud secrets create SECRET_NAME --data-file=-
 ```
 
+<!-- section_id: "62ee4153-17da-495c-a897-47a8ed47f0db" -->
 ## Related Documentation
 
 - [Canvas API Integration](./canvas-api-integration.md)

@@ -13,6 +13,7 @@ resource_name: "US-01_agent_discovers_related_entities"
 **I want** the AI to automatically discover what other entities are related (parent, children, cross-references),
 **So that** it loads relevant context without me having to list every related file manually.
 
+<!-- section_id: "d5aaf38e-40fa-401d-9e64-f68ac89122f0" -->
 ### What Happens
 
 1. User tells the AI to work on a specific entity (e.g., "work on the memory system")
@@ -20,6 +21,7 @@ resource_name: "US-01_agent_discovers_related_entities"
 3. Agent loads relevant sibling/parent context based on graph relationships
 4. User gets informed work that accounts for related entities, not just the immediate one
 
+<!-- section_id: "12b9277d-fa12-498c-b092-568a7e455d75" -->
 ### Acceptance Criteria
 
 - Agent identifies parent + children + cross-references from the graph in one query

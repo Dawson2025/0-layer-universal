@@ -5,6 +5,7 @@ resource_name: "INSTALL_CURSOR_EXTENSION"
 ---
 # Installing Cursor MCP Chrome Extension
 
+<!-- section_id: "b1314ceb-9c00-469d-bfe1-7a9ba290dc6a" -->
 ## Found Extension
 
 There IS a Cursor MCP extension, but it's **not on the Chrome Web Store** - it's on GitHub and needs to be installed manually.
@@ -13,6 +14,7 @@ There IS a Cursor MCP extension, but it's **not on the Chrome Web Store** - it's
 
 **Note**: This is a **community-developed** extension, not officially from Cursor. However, it may be what the `cursor-browser-extension` MCP server needs.
 
+<!-- section_id: "8d0ac4c0-b8f0-4909-998c-adc056356b39" -->
 ## Installation Steps
 
 1. **The extension is already cloned** to `/tmp/cursor-mcp-extension`
@@ -29,6 +31,7 @@ There IS a Cursor MCP extension, but it's **not on the Chrome Web Store** - it's
 
 7. **Restart Cursor IDE**
 
+<!-- section_id: "3f5b7381-8a4b-422c-bc12-371803876a31" -->
 ## Important Notes
 
 - According to Cursor's official docs, browser automation is "native" and doesn't require an extension
@@ -36,6 +39,7 @@ There IS a Cursor MCP extension, but it's **not on the Chrome Web Store** - it's
 - This GitHub extension may or may not be what's needed
 - It's community-developed, not official
 
+<!-- section_id: "0ad3c3c4-d98e-4a4b-bcaf-34cd8a116e44" -->
 ## Alternative
 
 Since Cursor docs say browser automation is native, the issue might be:
@@ -43,6 +47,7 @@ Since Cursor docs say browser automation is native, the issue might be:
 - The cursor-browser-extension MCP server needing different configuration
 - Using Playwright MCP tools directly instead
 
+<!-- section_id: "a3d567f3-2371-4890-906a-29e86481a2df" -->
 ## Next Steps
 
 After installing the extension:

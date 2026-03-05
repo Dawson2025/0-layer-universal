@@ -7,6 +7,7 @@ resource_name: "README.sync-conflict-20260126-035814-IF2WOGZ"
 
 Place reference documents, templates, and examples here.
 
+<!-- section_id: "34cc6f35-aca1-437e-967f-95fad67cf684" -->
 ## Suggested Contents
 - Templates for 01_request_gathering outputs
 - Examples of good 01_request_gathering work

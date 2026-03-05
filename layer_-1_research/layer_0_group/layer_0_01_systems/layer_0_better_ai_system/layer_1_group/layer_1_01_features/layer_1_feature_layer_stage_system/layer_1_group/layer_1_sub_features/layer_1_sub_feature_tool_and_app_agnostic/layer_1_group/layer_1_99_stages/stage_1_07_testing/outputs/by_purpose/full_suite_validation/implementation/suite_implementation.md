@@ -5,5 +5,6 @@ resource_name: "suite_implementation"
 ---
 # Full Suite Validation Implementation
 
+<!-- section_id: "0e76f2bd-bc9f-4a16-a7e5-ba902208ec2d" -->
 ## Script
 - `outputs/run_all_tests.sh`

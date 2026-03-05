@@ -8,6 +8,7 @@ resource_name: "README"
 
 How agents load context at runtime within the layer-stage hierarchy.
 
+<!-- section_id: "4056b1c0-12bd-4e9a-9b95-298eef19b3af" -->
 ## Scope
 
 - Context loading strategies and priorities
@@ -15,6 +16,7 @@ How agents load context at runtime within the layer-stage hierarchy.
 - Performance optimization for context retrieval
 - Tool-specific loading patterns
 
+<!-- section_id: "5f2f2cbd-770f-44af-89f3-d81622ce07e6" -->
 ## Parent
 
 Part of the **Context Chain System** sub-feature.

@@ -7,6 +7,7 @@ resource_name: "REQ-02_body_convention"
 
 **Need**: [Pointer Format](../README.md)
 
+<!-- section_id: "a4e87edd-838b-4057-ada0-ca287f9d5c8e" -->
 ## Requirements
 
 - **MUST** include `> **Canonical location**: \`path\`` line (auto-updated by script)

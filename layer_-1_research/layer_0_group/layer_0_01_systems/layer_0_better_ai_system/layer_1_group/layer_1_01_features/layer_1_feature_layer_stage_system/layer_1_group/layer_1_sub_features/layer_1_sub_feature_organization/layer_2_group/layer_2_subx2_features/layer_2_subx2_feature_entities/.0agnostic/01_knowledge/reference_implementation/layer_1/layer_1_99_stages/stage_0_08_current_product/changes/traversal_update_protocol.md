@@ -11,6 +11,7 @@ resource_name: "traversal_update_protocol"
 
 ---
 
+<!-- section_id: "89b2c75a-5d72-40ed-9a67-66e5a2cdfeb2" -->
 ## The Problem
 
 When changing the system (renaming folders, restructuring, adding features), it's easy to:
@@ -22,6 +23,7 @@ When changing the system (renaming folders, restructuring, adding features), it'
 
 ---
 
+<!-- section_id: "abcdfdad-f41a-41fe-96d3-9d2efd12b9ee" -->
 ## Key Principle
 
 > **Every structural change requires traversal verification.**
@@ -30,6 +32,7 @@ When changing the system (renaming folders, restructuring, adding features), it'
 
 ---
 
+<!-- section_id: "ee5cbb24-80d5-4000-9cdd-e04aa10f3173" -->
 ## Critical Navigation Documents
 
 These documents are the **entry points** for AI agent navigation. They MUST be updated when paths change:
@@ -44,8 +47,10 @@ These documents are the **entry points** for AI agent navigation. They MUST be u
 
 ---
 
+<!-- section_id: "daf6f88d-01ae-46f3-88f6-50a6410f7900" -->
 ## Traversal Update Checklist
 
+<!-- section_id: "2993de4a-664a-420a-81b0-d3bb1dac26b3" -->
 ### When Renaming Folders
 
 ```bash
@@ -61,12 +66,14 @@ grep -r "old_folder_name" --include="*.md" /path/to/0_context/
 # Should return empty
 ```
 
+<!-- section_id: "3d547236-bf5e-4621-98b0-6c6233e1e50d" -->
 ### When Restructuring (Moving Content)
 
 1. **Before moving:** Document current paths in a temp file
 2. **After moving:** Update ALL navigation documents
 3. **Verify:** Run path verification (see below)
 
+<!-- section_id: "ac49f71f-ffe2-4ce6-b743-4b2ef6418cb9" -->
 ### When Adding New Layers/Stages
 
 1. Update `SYSTEM_OVERVIEW.md` with new layer/stage info
@@ -76,6 +83,7 @@ grep -r "old_folder_name" --include="*.md" /path/to/0_context/
 
 ---
 
+<!-- section_id: "97a1ae26-98a4-45d3-a216-0e7979a78bcd" -->
 ## Path Verification Script
 
 Run this after ANY structural change:
@@ -123,10 +131,12 @@ fi
 
 ---
 
+<!-- section_id: "3f9fe91e-77e2-4571-b687-17e2ccaf43d7" -->
 ## Navigation Verification Tests
 
 After changes, manually verify an agent can:
 
+<!-- section_id: "8cedc3c5-f613-4812-8e50-393c47415d4d" -->
 ### Test 1: Entry Point → Framework Docs
 ```
 universal_init_prompt.md
@@ -135,6 +145,7 @@ universal_init_prompt.md
   → SYSTEM_OVERVIEW.md (should exist)
 ```
 
+<!-- section_id: "6d5d363c-a0fa-4653-8208-127d522dcbc7" -->
 ### Test 2: Find Layer-Specific Context
 ```
 From init prompt:
@@ -143,6 +154,7 @@ From init prompt:
   → Find status.json in any layer
 ```
 
+<!-- section_id: "3da7cbdd-39b9-46a3-b011-070ef3cba2c1" -->
 ### Test 3: Find Setup/Creation Guides
 ```
 From init prompt:
@@ -151,6 +163,7 @@ From init prompt:
   → layer_1/layer_1_features/layer_1_feature_layer_stage_system/layer_1/layer_1_02_sub_layers/2_feature_template/
 ```
 
+<!-- section_id: "97346786-19a7-483f-9162-cc67a21190f6" -->
 ### Test 4: Find Current Work Stage
 ```
 For any entity:
@@ -160,6 +173,7 @@ For any entity:
 
 ---
 
+<!-- section_id: "8023279f-1765-4c90-9cf0-162dbef3f675" -->
 ## Common Path-Breaking Changes
 
 | Change Type | What Breaks | Update Required |
@@ -172,6 +186,7 @@ For any entity:
 
 ---
 
+<!-- section_id: "c11470f7-5111-439f-b933-2cf139776cef" -->
 ## Post-Change Verification Checklist
 
 After ANY structural change:
@@ -186,6 +201,7 @@ After ANY structural change:
 
 ---
 
+<!-- section_id: "441fb235-4eab-46f0-bf91-f5d612e9a0bb" -->
 ## Emergency Recovery
 
 If agents report broken navigation:
@@ -212,6 +228,7 @@ If agents report broken navigation:
 
 ---
 
+<!-- section_id: "2f014bf9-a2ce-46d8-bc6c-9a42caef0193" -->
 ## Integration with Other Protocols
 
 This protocol works alongside:
@@ -224,6 +241,7 @@ This protocol works alongside:
 
 ---
 
+<!-- section_id: "cb579093-3737-4359-849b-144d020a0fc1" -->
 ## Related Documents
 
 - `restructuring_migration_protocol.md` - Content migration checklist

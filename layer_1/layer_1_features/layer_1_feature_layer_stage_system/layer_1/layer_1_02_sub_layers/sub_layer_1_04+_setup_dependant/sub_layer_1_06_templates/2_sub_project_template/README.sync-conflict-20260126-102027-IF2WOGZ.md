@@ -13,6 +13,7 @@ The Sub-Project layer inherits Project (L1) constraints and adds sub-project-spe
 - [`architecture.md`](../../-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/architecture.md) – Layer inheritance and sub-project responsibilities
 - [`FLEXIBLE_LAYERING_SYSTEM.md`](../FLEXIBLE_LAYERING_SYSTEM.md) – Flexible nesting patterns
 
+<!-- section_id: "9531326d-93f3-45dc-b8f0-0dbe3747366a" -->
 ## When to Use a Sub-Project
 
 Use this template when you have a nested project that:
@@ -21,6 +22,7 @@ Use this template when you have a nested project that:
 - Contains multiple features/components of its own
 - Examples: Individual classes within a school project, microservices within a monorepo
 
+<!-- section_id: "cc2d806d-2301-42e4-86fe-7d4d3f79efba" -->
 ## Directory Structure
 
 ```
@@ -39,10 +41,12 @@ Use this template when you have a nested project that:
 └── README.md
 ```
 
+<!-- section_id: "63c4c4b1-7c92-47ca-8c31-04225e2d9967" -->
 ## Manager + Handoff (layer_2/)
 - layer_2_00_ai_manager_system: sub-project-level manager docs/configs.
 - layer_2_01_manager_handoff_documents: `2.00_to_universal/` and `2.01_to_specific/` for up/downstream handoffs.
 
+<!-- section_id: "aff37e3d-23f6-45a3-8122-4f086e9255da" -->
 ## Slots (stored under `layer_2/layer_2_02_sub_layers/` as `sub_layer_2.xx_*`)
 - sub_layer_2.01_basic_prompts: sub-project init + what-to-do-next prompts.
 - sub_layer_2.02_sub_project_se_knowledge: SE/domain knowledge this sub-project relies on.
@@ -57,6 +61,7 @@ Use this template when you have a nested project that:
 - sub_layer_2.11_sub_project_tools: sub-project-specific scripts/CLIs/migrations.
 - sub_layer_2.12_sub_project_agent_setup: sub-project-specific agent configuration with model fallbacks.
 
+<!-- section_id: "840d9d85-0a40-412c-8a4d-dcbdd0aa33df" -->
 ## Nested Content Directories (layer_3/)
 
 **Same-Type Nesting Rule:** The "sub" prefix only applies to same-type nesting. Since a feature inside a sub_project is a different type (not project→project), features and components here do NOT use the "sub" prefix.
@@ -65,6 +70,7 @@ Use this template when you have a nested project that:
 - layer_3/layer_3_features/: Features within this sub-project (project→feature = different type, NO "sub")
 - layer_3/layer_3_components/: Components within this sub-project (project→component = different type, NO "sub")
 
+<!-- section_id: "6016dfe0-338b-4dc1-ac6a-fbfabbc728bc" -->
 ## Stages (layer_2/layer_2_99_stages/, folders named `stage_2.xx_*`)
 - stage_2.00_request_gathering
 - stage_2.01_instructions

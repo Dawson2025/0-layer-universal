@@ -11,6 +11,7 @@ resource_name: "DESIGN_DOCUMENTATION"
 
 ---
 
+<!-- section_id: "7a0a8228-6b63-44ed-966b-3aa2a135d517" -->
 ## Table of Contents
 
 1. [What Was Created](#what-was-created)
@@ -24,8 +25,10 @@ resource_name: "DESIGN_DOCUMENTATION"
 
 ---
 
+<!-- section_id: "d20eaa5a-63da-427d-88b2-6140581d81c3" -->
 ## What Was Created
 
+<!-- section_id: "05515e4f-50fc-4825-86cf-21f3e0082081" -->
 ### Overview
 
 A **hierarchical navigable file tree structure** for organizing and accessing setup documentation across multiple dimensions:
@@ -34,6 +37,7 @@ A **hierarchical navigable file tree structure** for organizing and accessing se
 Operating System → Environment → Coding App → AI App → MCP Server → AI Model → Universal Tools → Protocols → Agent Setup
 ```
 
+<!-- section_id: "6c782503-12e8-4aec-9552-764450a5c0a4" -->
 ### Structure Statistics
 
 - **Total directories**: 99+
@@ -48,6 +52,7 @@ Operating System → Environment → Coding App → AI App → MCP Server → AI
 - **Tools**: 4 (git, docker, npm, python) + _shared
 - **Protocols**: 4 (terminal, browser, git, testing) + _shared
 
+<!-- section_id: "6159b167-eb4b-4e88-9433-68285eff709b" -->
 ### Key Components
 
 1. **Root README.md** - Main navigation guide and documentation
@@ -58,6 +63,7 @@ Operating System → Environment → Coding App → AI App → MCP Server → AI
 6. **Example setup documents** - Real-world configuration examples
 7. **99+ directories** - Complete navigable hierarchy
 
+<!-- section_id: "f5228ed5-20eb-4c9a-af25-9132ed5b5a85" -->
 ### File Tree Pattern
 
 ```
@@ -84,8 +90,10 @@ Operating System → Environment → Coding App → AI App → MCP Server → AI
 
 ---
 
+<!-- section_id: "b63f94a0-6db3-413f-bd8e-29710e703107" -->
 ## Why It Was Created
 
+<!-- section_id: "a9f459ca-1f95-4bce-9ce8-e4da4be267e8" -->
 ### Problem Statement
 
 The universal context repository had setup documentation scattered across multiple sublayers:
@@ -101,6 +109,7 @@ The universal context repository had setup documentation scattered across multip
 - **sub_layer_0_13_universal_protocols** - Protocols
 - **sub_layer_0_14_agent_setup** - Agent configuration
 
+<!-- section_id: "66c37706-fad0-4d18-8c51-ea0118defc02" -->
 ### Challenges with Scattered Documentation
 
 1. **No unified navigation** - Hard to find setup docs for specific combinations
@@ -108,6 +117,7 @@ The universal context repository had setup documentation scattered across multip
 3. **Cross-cutting concerns** - No clear place for setup that applies across multiple dimensions
 4. **Precedent exists** - MCP servers already had a successful file tree pattern (`0.02_mcp_config_options_0_file_tree_0`)
 
+<!-- section_id: "7ac7edda-82f0-435f-9811-0ab375a26692" -->
 ### User Requirements
 
 From the user's request:
@@ -120,6 +130,7 @@ Key requirements:
 4. **Nested structure** - OS → coding app → AI app → MCP servers → AI models → tools → protocols → agents
 5. **Shared folders at each level** - For cross-cutting concerns
 
+<!-- section_id: "b1a00576-a0ca-470e-936e-6bb35f357f7f" -->
 ### Goals
 
 1. **Unified navigation** - Single entry point to find setup docs for any configuration combination
@@ -131,8 +142,10 @@ Key requirements:
 
 ---
 
+<!-- section_id: "12b39492-185c-4bf8-923f-0e78296d67a7" -->
 ## How It Was Created
 
+<!-- section_id: "3d42dec4-c159-466c-be76-d891bae2b6bb" -->
 ### Step-by-Step Creation Process
 
 #### Step 1: Research Existing Patterns
@@ -314,8 +327,10 @@ git commit -m "feat: Create universal setup file tree structure..."
 
 ---
 
+<!-- section_id: "62cfa4a9-de2e-46be-b120-81fc9709aad4" -->
 ## Design Decisions
 
+<!-- section_id: "b75a92e9-cb69-4a15-b3e3-86eeb431523f" -->
 ### Decision 1: Hierarchical vs Flat Structure
 
 **Options considered**:
@@ -338,6 +353,7 @@ git commit -m "feat: Create universal setup file tree structure..."
 - Path length can be long
 - More directories to maintain
 
+<!-- section_id: "2bfe56a1-43b8-4fd5-8039-a7974bb73f84" -->
 ### Decision 2: _shared Folders at Every Level
 
 **Options considered**:
@@ -359,6 +375,7 @@ git commit -m "feat: Create universal setup file tree structure..."
 - `0.07_coding_apps/_shared/` = Works with all coding apps
 - `0.10_mcp_servers_and_apis_and_secrets/_shared/` = Works with all MCP servers
 
+<!-- section_id: "302d36fa-8aa1-4b0d-b1e0-c3d39164f38a" -->
 ### Decision 3: Terminal Node Naming
 
 **Options considered**:
@@ -375,6 +392,7 @@ git commit -m "feat: Create universal setup file tree structure..."
 - **Extensibility**: Can add other folders if needed later
 - **Organization**: Clear place for setup docs vs other docs
 
+<!-- section_id: "cfc3f92f-8825-41ff-ac0a-615e1d1ab420" -->
 ### Decision 4: Numbering System
 
 **Options considered**:
@@ -391,6 +409,7 @@ git commit -m "feat: Create universal setup file tree structure..."
 - **Extensibility**: Room for insertions (e.g., 0.025 between 0.02 and 0.03)
 - **Familiarity**: Users already understand this from sublayers
 
+<!-- section_id: "d756a7e8-4478-415f-968b-d0af3dbacdb5" -->
 ### Decision 5: Integration Strategy
 
 **Options considered**:
@@ -412,6 +431,7 @@ git commit -m "feat: Create universal setup file tree structure..."
 - Sublayers remain authoritative sources
 - File tree provides specific-combination docs (OS + App + MCP setup)
 
+<!-- section_id: "6cde1c9f-bb3d-40bb-a846-406505db32b9" -->
 ### Decision 6: Example Content Strategy
 
 **Options considered**:
@@ -433,6 +453,7 @@ git commit -m "feat: Create universal setup file tree structure..."
 - Cross-platform MCP core issues
 - OS-level READMEs (Linux Ubuntu, etc.)
 
+<!-- section_id: "0eaa545e-34dc-46d8-89f1-37d0bfaee7be" -->
 ### Decision 7: Documentation Depth
 
 **Options considered**:
@@ -450,8 +471,10 @@ git commit -m "feat: Create universal setup file tree structure..."
 
 ---
 
+<!-- section_id: "096d3e10-cf04-490d-867a-360776b16ccd" -->
 ## Technical Implementation
 
+<!-- section_id: "0a884db8-322f-4cad-b711-08fe9c361cda" -->
 ### Directory Creation Pattern
 
 ```bash
@@ -464,6 +487,7 @@ mkdir -p 0.05_operating_systems/_shared/0.06_environments/{development,productio
 mkdir -p 0.05_operating_systems/{linux_ubuntu,macos,windows,wsl}
 ```
 
+<!-- section_id: "c42d7960-2065-4a2b-87a9-65b33c0c1c41" -->
 ### README Generation Pattern
 
 ```markdown
@@ -488,6 +512,7 @@ Description of this level's purpose.
 - Link to relevant sublayer
 ```
 
+<!-- section_id: "c70cea7c-19cc-438d-96cf-6d62078ddf49" -->
 ### Terminal Node Pattern
 
 ```
@@ -496,6 +521,7 @@ path/to/specific/combination/
     └── README.md  # Contains actual setup instructions
 ```
 
+<!-- section_id: "f6e3b7ef-571d-473a-8fd3-267216585a0c" -->
 ### Documentation Structure
 
 Each `general_setup_and_config/README.md` follows this pattern:
@@ -529,6 +555,7 @@ Each `general_setup_and_config/README.md` follows this pattern:
 - Link to related docs
 ```
 
+<!-- section_id: "c4f09790-2648-4312-a3ba-396f06af1f97" -->
 ### Tools Used
 
 1. **Bash** - Directory creation, file operations
@@ -538,8 +565,10 @@ Each `general_setup_and_config/README.md` follows this pattern:
 
 ---
 
+<!-- section_id: "51545ab8-3552-4560-a38b-ff590b349843" -->
 ## Usage Patterns
 
+<!-- section_id: "f8f76191-e122-49ca-b2d2-26220e8a61d2" -->
 ### Pattern 1: Find Setup for Specific Configuration
 
 **Scenario**: User needs to set up Playwright MCP on Linux with Cursor
@@ -555,6 +584,7 @@ Each `general_setup_and_config/README.md` follows this pattern:
 
 **Result**: Finds Linux-specific Playwright MCP setup with known issues and workarounds
 
+<!-- section_id: "ac5d0119-4deb-4070-90dc-69ea74fa6114" -->
 ### Pattern 2: Find Cross-Platform Setup
 
 **Scenario**: User needs to set up Git (works same on all platforms)
@@ -566,6 +596,7 @@ Each `general_setup_and_config/README.md` follows this pattern:
 
 **Result**: Finds universal Git setup that works on any OS, any environment, any coding app
 
+<!-- section_id: "8201c341-0d3e-4149-8aab-0d54b5eb48dd" -->
 ### Pattern 3: Find Platform-Agnostic Tool Issues
 
 **Scenario**: User has MCP server tool exposure issue (affects multiple servers)
@@ -578,6 +609,7 @@ Each `general_setup_and_config/README.md` follows this pattern:
 
 **Result**: Finds core MCP issues that affect multiple servers
 
+<!-- section_id: "379b83c2-21bf-4f41-99cb-dba881fbd31e" -->
 ### Pattern 4: Explore What's Available
 
 **Scenario**: User wants to see all supported MCP servers
@@ -588,6 +620,7 @@ Each `general_setup_and_config/README.md` follows this pattern:
 
 **Result**: Sees `_shared/`, `_mcp_core/`, `browser-mcp/`, `playwright-mcp/`, etc.
 
+<!-- section_id: "ad5186ca-f70e-4880-bdd4-6ee0a7f5dcf5" -->
 ### Pattern 5: Add New Configuration
 
 **Scenario**: Admin wants to add new OS (e.g., FreeBSD)
@@ -602,8 +635,10 @@ Each `general_setup_and_config/README.md` follows this pattern:
 
 ---
 
+<!-- section_id: "e3a94414-9aea-431a-ac7e-aaf50575b22b" -->
 ## Integration with Existing Systems
 
+<!-- section_id: "8282fc81-bd34-468f-87da-7f74bc7246e6" -->
 ### How File Tree Relates to Setup Sublayers
 
 ```
@@ -620,6 +655,7 @@ File Tree (Navigation)          Sublayers (Detailed Docs)
 0.14_agent_setup/          ←→  sub_layer_0_14_agent_setup/
 ```
 
+<!-- section_id: "54095454-ddbb-42d7-9677-45567a89222f" -->
 ### Division of Responsibility
 
 **File Tree Responsibilities**:
@@ -634,6 +670,7 @@ File Tree (Navigation)          Sublayers (Detailed Docs)
 3. Troubleshooting guides
 4. Best practices and patterns
 
+<!-- section_id: "9d42f730-9471-465c-9a1a-4124e763a21a" -->
 ### Cross-Reference Pattern
 
 File tree READMEs link to sublayers:
@@ -651,6 +688,7 @@ For quick navigation to your specific configuration, see:
 - **sub_layer_0_05_os_setup/0.01_universal_setup_file_tree_0/**
 ```
 
+<!-- section_id: "3054b79f-65b8-4708-8032-b8ab40c2c3c3" -->
 ### Avoiding Duplication
 
 **Strategy**: Reference, don't duplicate
@@ -667,8 +705,10 @@ For quick navigation to your specific configuration, see:
 
 ---
 
+<!-- section_id: "d4165ae4-5014-48d9-b234-f2c18536d2df" -->
 ## Future Expansion
 
+<!-- section_id: "cb7a7c81-265f-4e80-a815-f3cae36fab11" -->
 ### Adding New Options
 
 #### New Operating System
@@ -696,6 +736,7 @@ mkdir -p path/to/0.10_mcp_servers_and_apis_and_secrets/new-server/general_setup_
 # Create README with setup docs
 ```
 
+<!-- section_id: "d6064ca4-1589-4aab-8165-a9783672ba22" -->
 ### Potential Enhancements
 
 1. **Automated README generation**
@@ -719,6 +760,7 @@ mkdir -p path/to/0.10_mcp_servers_and_apis_and_secrets/new-server/general_setup_
    - Script to migrate docs from sublayers to file tree
    - Automated cross-referencing
 
+<!-- section_id: "856c5aea-c391-4905-aae8-be7c46027fd0" -->
 ### Maintenance Guidelines
 
 1. **When adding new option**:
@@ -739,6 +781,7 @@ mkdir -p path/to/0.10_mcp_servers_and_apis_and_secrets/new-server/general_setup_
 
 ---
 
+<!-- section_id: "a8316c7b-5004-4982-837e-a6520acb3434" -->
 ## Conclusion
 
 The Universal Setup File Tree provides a **hierarchical, navigable structure** for accessing setup documentation across all configuration dimensions. It complements existing sublayers by providing:

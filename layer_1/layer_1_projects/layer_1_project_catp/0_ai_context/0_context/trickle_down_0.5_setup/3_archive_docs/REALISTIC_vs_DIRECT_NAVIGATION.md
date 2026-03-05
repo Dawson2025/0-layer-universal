@@ -5,14 +5,17 @@ resource_name: "REALISTIC_vs_DIRECT_NAVIGATION"
 ---
 # Realistic vs Direct Navigation Testing
 
+<!-- section_id: "07d4e166-c5df-4779-8071-c4fdf5e3b9d1" -->
 ## Overview
 
 This document explains the difference between the two navigation approaches in our automation tests and when to use each.
 
 ---
 
+<!-- section_id: "796d1304-e199-4189-a49a-e648520c3a11" -->
 ## Comparison
 
+<!-- section_id: "a2cb1b52-cee4-4a2e-8507-9ea09841d75a" -->
 ### Original Approach (Direct URL Navigation)
 
 **File**: `scripts/mcp-projects-flow.mjs`
@@ -24,6 +27,7 @@ await callTool(client, 'browser_navigate', { url: `${BASE}/projects/create` });
 await callTool(client, 'browser_navigate', { url: `${BASE}/admin/templates` });
 ```
 
+<!-- section_id: "a7c46fdb-6e05-4bc4-8fdf-b1f0dece4ccf" -->
 ### Realistic Approach (UI Navigation)
 
 **Files**:
@@ -42,8 +46,10 @@ await callTool(client, 'browser_evaluate', {
 
 ---
 
+<!-- section_id: "8f53190f-0360-4bd7-8b4f-3e622bb41394" -->
 ## What Each Approach Tests
 
+<!-- section_id: "76624637-b227-4837-a292-d235aa93aa50" -->
 ### Direct URL Navigation ✅ Tests:
 - ✅ Page functionality works correctly
 - ✅ Forms can be filled and submitted
@@ -51,6 +57,7 @@ await callTool(client, 'browser_evaluate', {
 - ✅ End-to-end workflows complete
 - ✅ State management within pages
 
+<!-- section_id: "0ee40889-622e-4537-9c13-f4307bc8427a" -->
 ### Direct URL Navigation ❌ Misses:
 - ❌ Navigation menu structure
 - ❌ Breadcrumb link functionality
@@ -59,6 +66,7 @@ await callTool(client, 'browser_evaluate', {
 - ❌ Deep linking edge cases
 - ❌ Navigation guards and redirects
 
+<!-- section_id: "eb28bd6a-2611-4fe9-aeb8-6ba84c5436ec" -->
 ### Realistic UI Navigation ✅ Tests:
 - ✅ **Everything from Direct approach PLUS:**
 - ✅ Navigation menus work correctly
@@ -70,8 +78,10 @@ await callTool(client, 'browser_evaluate', {
 
 ---
 
+<!-- section_id: "cca99a03-27b0-4f96-84ab-806d018414dd" -->
 ## Example: Projects Flow
 
+<!-- section_id: "f42d81f6-a3d1-47f7-9286-33a2d65f6936" -->
 ### Original (Direct Navigation)
 ```javascript
 // 1. Login
@@ -97,6 +107,7 @@ await navigate('/projects');
 - Doesn't validate breadcrumb navigation
 - User would be lost without knowing URLs
 
+<!-- section_id: "392aa530-5c6d-433e-82e5-c87ae4737b83" -->
 ### Realistic (UI Navigation)
 ```javascript
 // 1. Login
@@ -124,8 +135,10 @@ await click('a[href="/projects"]');
 
 ---
 
+<!-- section_id: "36fc3034-53e5-4121-8ca9-0c36e631e821" -->
 ## Navigation Paths Validated
 
+<!-- section_id: "13903288-625c-47e5-9a80-a905a59985dc" -->
 ### Realistic Test Validates These Flows:
 
 1. **Dashboard → Projects**
@@ -153,6 +166,7 @@ await click('a[href="/projects"]');
 
 ---
 
+<!-- section_id: "58abbd29-cd73-4ac8-acda-c59d9297bdcd" -->
 ## Conversion Progress
 
 | User Stories | Direct Script | Realistic Script | Status |
@@ -177,6 +191,7 @@ await click('a[href="/projects"]');
 
 ---
 
+<!-- section_id: "2dd4420d-e587-44eb-995f-b6aaeef92dcb" -->
 ## Running Both Modes
 
 ```bash
@@ -194,8 +209,10 @@ The runner reads `scripts/automation/story_plan.sample.json`, which now maps eac
 
 ---
 
+<!-- section_id: "26ca6a40-e6da-4b4c-be05-158588783545" -->
 ## When to Use Each Approach
 
+<!-- section_id: "8f2894dd-4133-4859-a7fc-9d7b77c94b72" -->
 ### Use Direct Navigation When:
 - ✅ **Speed is critical** (running thousands of tests)
 - ✅ **Testing page functionality** (not navigation)
@@ -203,6 +220,7 @@ The runner reads `scripts/automation/story_plan.sample.json`, which now maps eac
 - ✅ **Testing specific features** in isolation
 - ✅ **Running smoke tests** (quick validation)
 
+<!-- section_id: "77c46b3a-d24f-4444-835d-e91c3564cd62" -->
 ### Use Realistic Navigation When:
 - ✅ **Testing user experience** end-to-end
 - ✅ **Validating navigation flows** are intuitive
@@ -214,6 +232,7 @@ The runner reads `scripts/automation/story_plan.sample.json`, which now maps eac
 
 ---
 
+<!-- section_id: "25911180-3c26-4606-a24d-e3f0b45b11ea" -->
 ## Performance Comparison
 
 | Metric | Direct Navigation | Realistic Navigation |
@@ -226,8 +245,10 @@ The runner reads `scripts/automation/story_plan.sample.json`, which now maps eac
 
 ---
 
+<!-- section_id: "ec05e374-6d9c-45cf-84f6-1b98a143b657" -->
 ## Recommended Strategy
 
+<!-- section_id: "046a6b69-d39e-4a1c-8240-6131b34fe63f" -->
 ### Hybrid Approach (Best of Both Worlds)
 
 1. **Smoke Tests**: Use direct navigation
@@ -242,6 +263,7 @@ The runner reads `scripts/automation/story_plan.sample.json`, which now maps eac
    - Direct navigation for speed
    - Realistic for critical user paths
 
+<!-- section_id: "76150d55-c7d1-4d21-b2bd-5df52ec612aa" -->
 ### Example Test Suite Structure:
 
 ```
@@ -261,6 +283,7 @@ tests/
 
 ---
 
+<!-- section_id: "1873e83c-6582-4a5f-84f0-35eecf2cf1d3" -->
 ## Running the Realistic Test
 
 ```bash
@@ -274,8 +297,10 @@ node scripts/mcp-projects-flow-realistic.mjs
 
 ---
 
+<!-- section_id: "18fa1bb2-b0ea-4738-9364-7b8f7cccb305" -->
 ## Key Differences in Code
 
+<!-- section_id: "0685a1c6-c3ee-4da1-bf90-f9e7601667f1" -->
 ### Finding Elements
 
 **Original (assumes you know page structure):**
@@ -295,6 +320,7 @@ await browser_click({ element: 'New Project button', ref });
 await fillForm('#name', 'My Project');
 ```
 
+<!-- section_id: "616c50e6-bb20-482a-aa23-fe9c18850b64" -->
 ### Navigation Validation
 
 **Original:**
@@ -321,14 +347,17 @@ if (result === 'button-not-found') {
 
 ---
 
+<!-- section_id: "6cc3866f-9eff-4ddd-ae25-f60342dd86e1" -->
 ## Bugs Each Approach Catches
 
+<!-- section_id: "a1f468f8-3e73-4653-93b5-0fe753c9d96f" -->
 ### Direct Navigation Catches:
 - ✅ Form validation errors
 - ✅ API endpoint failures
 - ✅ Database errors
 - ✅ Business logic bugs
 
+<!-- section_id: "ffb69648-be21-49f6-b321-a906ecc1076b" -->
 ### Realistic Navigation ALSO Catches:
 - ✅ **Missing navigation buttons**
 - ✅ **Broken breadcrumb links**
@@ -339,8 +368,10 @@ if (result === 'button-not-found') {
 
 ---
 
+<!-- section_id: "d44bbf8a-ff19-40e0-899f-176cc71a82cd" -->
 ## Example Bug Scenarios
 
+<!-- section_id: "29206cf2-54c5-491a-9341-5a8d404b9782" -->
 ### Bug Only Realistic Navigation Would Catch:
 
 **Scenario**: Developer accidentally removes "Open My Projects" button from Dashboard
@@ -360,6 +391,7 @@ if (result === 'button-not-found') {
 
 ---
 
+<!-- section_id: "be478b67-56f3-46cf-9e6e-9a3898c3fae2" -->
 ## Conclusion
 
 - **Both approaches have value**

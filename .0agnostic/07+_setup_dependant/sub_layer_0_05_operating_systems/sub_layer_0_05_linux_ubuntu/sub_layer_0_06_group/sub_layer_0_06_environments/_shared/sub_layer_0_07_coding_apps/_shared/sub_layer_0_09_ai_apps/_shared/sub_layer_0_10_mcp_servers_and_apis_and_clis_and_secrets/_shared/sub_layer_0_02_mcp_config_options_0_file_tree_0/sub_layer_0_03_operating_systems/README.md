@@ -16,12 +16,14 @@ Use this when a setup is sensitive to OS/display/runtime differences (e.g., WSLg
 
 ---
 
+<!-- section_id: "7125542f-f150-4adc-8ecc-b85e2b03af2d" -->
 ## Relationship to OS Variant and Quartet Pattern
 
 This OS-specific MCP structure follows the broader **OS Variant Pattern** defined in the Ideal AI Manager Hierarchy System:
 
 - **Normative Specification**: `/home/dawson/dawson-workspace/code/0_layer_universal/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/os_and_quartets.md`
 
+<!-- section_id: "a77acdd1-493f-4b44-89cd-e552a1142142" -->
 ### How MCP OS Structure Maps to the Ideal Spec
 
 The MCP server setup uses a similar OS separation pattern:
@@ -53,6 +55,7 @@ stage_*.01_instructions/ai_agent_system/os/
 └── macos/
 ```
 
+<!-- section_id: "4b2c99f7-b2e4-45a4-8b02-2576e244d506" -->
 ### Integration Points
 
 - **MCP Setup**: Defines which MCP servers are available per OS/app combination
@@ -65,6 +68,7 @@ Agents should reference both:
 
 ---
 
+<!-- section_id: "d213a772-5a35-4794-b173-fe55890c874a" -->
 ## Legacy MCP Source
 
 # Operating System (MCP Setup)
@@ -79,12 +83,14 @@ Use this when a setup is sensitive to OS/display/runtime differences (e.g., WSLg
 
 ---
 
+<!-- section_id: "4f7ddf03-f2d3-48f0-9164-4da33d0e898a" -->
 ## Relationship to OS Variant and Quartet Pattern
 
 This OS-specific MCP structure follows the broader **OS Variant Pattern** defined in the Ideal AI Manager Hierarchy System:
 
 - **Normative Specification**: `/home/dawson/code/0_layer_universal/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/os_and_quartets.md`
 
+<!-- section_id: "3f14fd3d-ba75-4f60-a262-d1a7a1479a0d" -->
 ### How MCP OS Structure Maps to the Ideal Spec
 
 The MCP server setup uses a similar OS separation pattern:
@@ -116,6 +122,7 @@ stage_*.01_instructions/ai_agent_system/os/
 └── macos/
 ```
 
+<!-- section_id: "0e4fb527-252c-4343-9123-23e18e42d78d" -->
 ### Integration Points
 
 - **MCP Setup**: Defines which MCP servers are available per OS/app combination

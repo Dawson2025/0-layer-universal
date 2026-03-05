@@ -5,12 +5,15 @@ resource_name: "REQ_001_audio_improvement_research"
 ---
 # Research: Improving Laptop Speaker Audio on Linux
 
+<!-- section_id: "fc4bbdaf-5b6e-4c8e-a9b4-a75edbafc965" -->
 ## Request Reference
 REQ_001 - Improve Laptop Speaker Audio Quality
 
+<!-- section_id: "998350e0-60d8-4b3e-94ee-977d539ef889" -->
 ## Research Date
 2026-01-26
 
+<!-- section_id: "eb46e545-6a3b-4ab6-b6db-a071222491cf" -->
 ## Executive Summary
 
 Multiple viable approaches exist to significantly improve Linux laptop audio quality. The most promising solutions combine:
@@ -19,8 +22,10 @@ Multiple viable approaches exist to significantly improve Linux laptop audio qua
 3. **PipeWire filter-chains** - Low-level audio processing
 4. **JamesDSP** - Dolby-like processing with lower latency
 
+<!-- section_id: "c894171d-6b40-4093-92ca-dc2e0a3b13c6" -->
 ## Key Findings
 
+<!-- section_id: "f470993b-6b2f-4148-8145-3825ca700893" -->
 ### 1. AutoEQ Profiles (Highest Impact)
 
 AutoEQ generates scientifically-measured equalizer settings that correct frequency response.
@@ -41,6 +46,7 @@ AutoEQ generates scientifically-measured equalizer settings that correct frequen
 ~/.config/pipewire/filter-chain.conf.d/
 ```
 
+<!-- section_id: "22420c2d-1200-4cfc-8de4-c3478033ebfb" -->
 ### 2. Advanced EasyEffects Presets
 
 Community-developed presets specifically for laptop speakers:
@@ -65,6 +71,7 @@ Community-developed presets specifically for laptop speakers:
 5. Stereo Widener (expand soundstage)
 6. Exciter (high-frequency presence)
 
+<!-- section_id: "1d50971e-c1e4-45fc-86e6-3b12384efb46" -->
 ### 3. JamesDSP for Linux (Dolby Alternative)
 
 **What it is:**
@@ -81,6 +88,7 @@ Community-developed presets specifically for laptop speakers:
 - Can load HeSuVi IRs (Dolby Atmos, DTS simulations)
 - Real-time EQ adjustment
 
+<!-- section_id: "62f17e73-923a-420f-adac-6eef61c956b7" -->
 ### 4. PipeWire Filter-Chain (Advanced)
 
 Direct configuration of audio processing in PipeWire:
@@ -95,6 +103,7 @@ Components:
 - Limiter (boost input, limit to -6dB max)
 - Can chain LADSPA/LV2 plugins
 
+<!-- section_id: "35237dd2-cbde-4521-b0ec-c8bf8b53a148" -->
 ### 5. Virtual Surround Sound
 
 **PipeWire SOFA Spatializer:**
@@ -107,6 +116,7 @@ Components:
 - Can be loaded via convolution
 - Source: https://sourceforge.net/projects/hesuvi/
 
+<!-- section_id: "9b23c7dc-c9c9-476b-b131-d64c3deb211a" -->
 ### 6. Kernel/Driver Considerations
 
 **Important for Lenovo Yoga Pro 9:**
@@ -119,18 +129,22 @@ Components:
 uname -r
 ```
 
+<!-- section_id: "3b2dbae5-24ff-4a96-a810-3347c5ff95f6" -->
 ## Recommended Implementation Order
 
+<!-- section_id: "4be1c62e-c94e-4419-8f34-fa224b1503bf" -->
 ### Phase 1: Foundation
 1. Verify kernel is 6.8+ (or update if needed)
 2. Verify ALSA mixer controls work (`alsamixer`)
 3. Confirm PipeWire is active (`pactl info`)
 
+<!-- section_id: "39ca76a6-b5aa-4d8e-a02a-ba1d58b238a9" -->
 ### Phase 2: Frequency Response Correction
 1. Generate AutoEQ profile for laptop speakers
 2. Implement via PipeWire parametric EQ
 3. Test with bass-heavy content
 
+<!-- section_id: "7d148ccc-09f1-4465-a869-4504b00cb718" -->
 ### Phase 3: Effects Processing
 1. Install JamesDSP (lower latency than EasyEffects)
 2. Apply "Dolby-like" preset with:
@@ -139,11 +153,13 @@ uname -r
    - Exciter for presence
    - Stereo widening
 
+<!-- section_id: "6f67978a-c290-4c44-8ce0-3e6b4e9bed49" -->
 ### Phase 4: Fine-tuning
 1. Test different content types (music, voice, movies)
 2. Create multiple presets for different use cases
 3. Consider measurement-based optimization (REW software)
 
+<!-- section_id: "e85d539b-795f-4226-bb38-5a72fa21c192" -->
 ## Tools to Install
 
 ```bash
@@ -158,6 +174,7 @@ uname -r
 sudo apt install lsp-plugins  # More LV2 effects
 ```
 
+<!-- section_id: "664e0684-0aae-4684-ad90-7015bcb3fcfb" -->
 ## Realistic Expectations
 
 **What's achievable:**
@@ -172,6 +189,7 @@ sudo apt install lsp-plugins  # More LV2 effects
 - Physical bass below speaker resonance
 - Windows-identical sound (different tuning)
 
+<!-- section_id: "e987f8d0-3632-4f8a-a018-e9c05c70ba7f" -->
 ## Next Steps
 
 1. [ ] Check kernel version, update if < 6.8
@@ -181,6 +199,7 @@ sudo apt install lsp-plugins  # More LV2 effects
 5. [ ] Test and iterate on processing chain
 6. [ ] Document final working configuration
 
+<!-- section_id: "29bbe159-dc32-4cf7-ae66-f56bb60baf0d" -->
 ## Sources
 
 - AutoEQ: https://autoeq.app

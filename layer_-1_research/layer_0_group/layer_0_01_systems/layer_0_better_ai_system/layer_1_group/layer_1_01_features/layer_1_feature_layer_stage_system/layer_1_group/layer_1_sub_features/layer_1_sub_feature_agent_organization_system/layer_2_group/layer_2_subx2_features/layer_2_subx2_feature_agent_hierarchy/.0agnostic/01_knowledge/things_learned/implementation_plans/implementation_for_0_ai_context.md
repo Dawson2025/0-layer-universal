@@ -5,10 +5,12 @@ resource_name: "implementation_for_0_ai_context"
 ---
 # Integrate Ideal AI Manager Hierarchy System Into 0_ai_context
 
+<!-- section_id: "c5558ef9-51e2-4122-83f1-96372ee3ee07" -->
 ## Overview
 
 We will weave the "Ideal AI Manager Hierarchy System" spec into the existing `0_layer_universal` documentation and layer/stage structure so that it becomes the **canonical Agent OS** design for all AI work. The work is primarily documentation and directory-structure alignment: no behavioral code changes are required, but agents will be able to discover, navigate, and apply the ideal hierarchy directly from the repo.
 
+<!-- section_id: "7522ff98-ffcd-45be-8d27-3cfe3fca92dc" -->
 ## 1. Wire the Ideal Spec Into Top-Level Navigation
 
 - **1.1 Master index and overview docs**
@@ -24,6 +26,7 @@ We will weave the "Ideal AI Manager Hierarchy System" spec into the existing `0_
 - Update [`USAGE_GUIDE.md`](code/0_layer_universal/0_context/USAGE_GUIDE.md) to:
     - Add a short "How to work with the AI Manager Hierarchy" section (which docs to read first, which layers/stages to touch, what handoffs are).
 
+<!-- section_id: "a659b135-6ef9-41ca-9dfb-a1fadf8b3b08" -->
 ## 2. Align the Layer/Stage Framework With the Ideal Architecture
 
 - **2.1 Framework docs**
@@ -34,6 +37,7 @@ We will weave the "Ideal AI Manager Hierarchy System" spec into the existing `0_
 - Where appropriate, add short references in the layer templates under `layer_1/layer_2_features/layer_2_feature_layer_stage_system/layer_1/layer_2_02_sub_layers` (L0–L3 templates) that:
     - Link to the relevant sections of `architecture.md`, `tools_and_context_systems.md`, and `os_and_quartets.md`.
 
+<!-- section_id: "99d92bfc-315d-4a67-b483-d89834917755" -->
 ## 3. Standardize Manager/Worker + Handoff Behavior Across Layers
 
 - **3.1 Layer manager system READMEs**
@@ -51,6 +55,7 @@ We will weave the "Ideal AI Manager Hierarchy System" spec into the existing `0_
 - In each layer’s `0.99_stages/*/ai_agent_system/README.md` (or equivalent stage docs):
     - Briefly document how that stage’s manager reads an `incoming` handoff, spawns workers (possibly parallel), and writes `outgoing` handoffs, with a pointer back to the ideal hierarchy docs for full detail.
 
+<!-- section_id: "6ece0472-1a2d-4178-8bb4-1d1612c759a9" -->
 ### Diagram – Manager/Worker + Handoffs
 
 ```mermaid
@@ -66,6 +71,7 @@ flowchart TD
 
 
 
+<!-- section_id: "75ab24c8-5334-4572-8159-5ee0dabdc94c" -->
 ## 4. Implement OS and Tool Variants (Quartets) in the Live Context
 
 - **4.1 OS folders at key layer/stage locations**
@@ -81,6 +87,7 @@ flowchart TD
     - Ensure docs reference the quartet/N-tuple pattern for tool context (Claude, Codex, Gemini, Cursor, plus future tools).
     - Tie existing MCP OS/app layout under `sub_layer_0_10_mcp_servers_and_tools_setup/0.02_mcp_config_options_0_file_tree_0/0.03_operating_systems/` back to the ideal-spec OS-variant description.
 
+<!-- section_id: "8a2c3269-58f0-48e5-a7e3-f10a755a533e" -->
 ## 5. Integrate Tool & Framework Orchestration Guidance
 
 - **5.1 Framework orchestration**
@@ -93,6 +100,7 @@ flowchart TD
     - Lift the concrete CLI examples from [`cli_recursion_syntax.md`](code/0_layer_universal/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/cli_recursion_syntax.md).
     - Adapt them to your current terminal wrapper and environment (keeping `OS/Tool scope` explicit in the Applicability section, following the Protocol Writing Standard).
 
+<!-- section_id: "2c1d65ac-6382-41be-a17e-a8fcf9dbdc80" -->
 ## 6. Add Operational, Safety, and Deployment Guidance
 
 - **6.1 Observability & logging**
@@ -110,6 +118,7 @@ flowchart TD
     - Summarize main deployment patterns from [`production_deployment.md`](code/0_layer_universal/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/production_deployment.md).
     - Clarify how the Agent OS maps to deployed services and background workers.
 
+<!-- section_id: "f2dcd406-fa2e-4834-aeeb-539a30aa08bf" -->
 ## 7. Rollout and Migration Strategy
 
 - **7.1 Phase 1 – Documentation alignment only**

@@ -11,18 +11,22 @@ Target: preserved under legacy_sublayer_structure/
 - Total original directories: 260
 - Mapped directory pairs (file-derived): 180
 
+<!-- section_id: "de80c65a-0851-441f-a31e-8352bb177712" -->
 ## Preservation
 The full original folder structure is recreated under:
 `legacy_sublayer_structure/`
 
 Each directory contains a `.gitkeep` to preserve empty folders in git.
 
+<!-- section_id: "d101273f-fb67-4525-ab30-ec277da05fc1" -->
 ## Mapping Notes
 Directory mappings are inferred from file mappings; directories that only existed as containers without files are preserved solely in the legacy structure.
 
+<!-- section_id: "4aa87833-9b42-4db1-8ca3-b5544719f56b" -->
 ## Hierarchy Coverage Note
 To keep OS navigation consistent with the original sublayer layout, the hierarchy now includes `macos/` and `windows/` folders under `0.05_operating_systems/` with minimal scaffolding and pointers to OS-specific MCP docs.
 
+<!-- section_id: "0c64b618-ab5e-41e3-bed7-9afb8d0ed5f7" -->
 ## Examples (Old -> New)
 - 0_context/layer_0/0.02_sub_layers/sub_layer_0_07_environment_setup/trickle_down_0.5_setup/0_instruction_docs/github -> 0_context/layer_0/0.02_sub_layers/sub_layer_0_05-0.014_setup/0.01_universal_setup_file_tree_0/0.05_operating_systems/_shared/trickle_down_0.5_setup/0_instruction_docs/github
 - 0_context/layer_0/0.02_sub_layers/sub_layer_0_10_mcp_servers_and_tools_setup/0.01_core-system -> 0_context/layer_0/0.02_sub_layers/sub_layer_0_05-0.014_setup/0.01_universal_setup_file_tree_0/0.05_operating_systems/_shared/0.06_environments/_shared/0.07_coding_apps/_shared/0.09_ai_apps/_shared/0.10_mcp_servers_and_apis_and_secrets/_shared/0.01_core-system

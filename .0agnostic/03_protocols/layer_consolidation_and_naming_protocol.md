@@ -10,6 +10,7 @@ resource_name: "layer_consolidation_and_naming_protocol"
 
 ---
 
+<!-- section_id: "eee74afe-063f-4e5e-80f2-d2862c01c28b" -->
 ## What This Protocol Addresses
 
 When a layer directory (e.g., `layer_3/`, `layer_4/`) uses old naming conventions and has duplicate `layer_N_group/` directories, this protocol provides the standardized workflow to:
@@ -19,6 +20,7 @@ When a layer directory (e.g., `layer_3/`, `layer_4/`) uses old naming convention
 
 ---
 
+<!-- section_id: "b85151c0-b44c-4273-a684-c89cf37d43fc" -->
 ## Problem Pattern
 
 **Symptoms**:
@@ -36,8 +38,10 @@ When a layer directory (e.g., `layer_3/`, `layer_4/`) uses old naming convention
 
 ---
 
+<!-- section_id: "9018cbb7-8915-4856-a580-476b6e37885c" -->
 ## Consolidation Workflow
 
+<!-- section_id: "5abb6618-ccb3-4623-bc5a-f73f31cb30ff" -->
 ### Step 1: Verify Content Distribution
 
 ```bash
@@ -48,6 +52,7 @@ ls -la layer_N_group/layer_N_subx3_projects/
 
 **Outcome**: Know which directory has which projects.
 
+<!-- section_id: "0ef687f7-49c7-4b39-90f4-204225813a60" -->
 ### Step 2: Copy Missing Content
 
 Copy projects from one location to the unified location:
@@ -60,6 +65,7 @@ cp -r layer_N_group/layer_N_subx3_projects/* layer_N/layer_N_subx3_projects/
 
 **Outcome**: All content now in `layer_N/` (source of truth).
 
+<!-- section_id: "47293794-e2f3-4236-9fa2-9e392b4b9db4" -->
 ### Step 3: Rename Layer (Handle mv Behavior)
 
 ```bash
@@ -76,6 +82,7 @@ layer_N_group/
 └── layer_N_subx3_projects/  ← Top-level (correct)
 ```
 
+<!-- section_id: "3854f019-c90f-408b-9c8e-8b06bec61feb" -->
 ### Step 4: Flatten Nested Structure (If Needed)
 
 If nesting occurred, merge the nested content up one level:
@@ -88,6 +95,7 @@ find . -maxdepth 1 -type d -name "layer_N" -exec rm -rf {} +
 
 **Outcome**: Single `layer_N_subx3_projects/` at top level with all content.
 
+<!-- section_id: "535dba56-7101-4dba-b62b-387233412952" -->
 ### Step 5: Verify Final Structure
 
 ```bash
@@ -96,6 +104,7 @@ ls -1 layer_N_group/layer_N_subx3_projects/ | grep layer_N_subx3_project
 
 **Expected**: All projects visible (old + new consolidated).
 
+<!-- section_id: "f712134a-b231-44e8-9651-bd0cc61927a0" -->
 ### Step 6: Handle Old Architecture Remnants
 
 `layer_N` directory may contain old-style sub-structure:
@@ -111,6 +120,7 @@ ls -1 layer_N_group/layer_N_subx3_projects/ | grep layer_N_subx3_project
 
 ---
 
+<!-- section_id: "5c848524-2db8-42ed-befb-2370d8d2d6a1" -->
 ## Naming Convention After Consolidation
 
 **Correct structure**:
@@ -130,6 +140,7 @@ layer_N_group/                          ← Follows layer_N_group naming
 
 ---
 
+<!-- section_id: "c82a1d66-ec72-4dc3-a646-8c63007f2b49" -->
 ## Validation Checklist
 
 - [ ] All projects from both old locations are in `layer_N_group/layer_N_subx3_projects/`
@@ -141,6 +152,7 @@ layer_N_group/                          ← Follows layer_N_group naming
 
 ---
 
+<!-- section_id: "162db7d4-6f4e-4021-9098-34ce458124a0" -->
 ## Git Operations After Consolidation
 
 ```bash
@@ -161,6 +173,7 @@ git push
 
 ---
 
+<!-- section_id: "52d09d31-f485-4d18-bdc6-f3adf6dfe510" -->
 ## Common Pitfalls
 
 | Pitfall | Prevention |
@@ -172,6 +185,7 @@ git push
 
 ---
 
+<!-- section_id: "06b244db-0419-4a45-bfcc-cd325a73d367" -->
 ## Integration with .0agnostic/
 
 After consolidation, `layer_N_group/` should have:
@@ -184,8 +198,10 @@ If `.0agnostic/` is missing, create it following the unified numbering conventio
 
 ---
 
+<!-- section_id: "ba17ad2b-c550-48b4-aeec-427301b64653" -->
 ## Session Notes
 
+<!-- section_id: "d93f15df-9ee2-4ea6-911d-4bacfaef7ce9" -->
 ### 2026-02-27 — Initial Consolidation (layer_4)
 
 - ✅ **Validated**: layer_4 had all base projects (ML, algorithms, erlang, pac20026, parallelism)
@@ -195,6 +211,7 @@ If `.0agnostic/` is missing, create it following the unified numbering conventio
 - ✅ **Resolved**: Flattened structure using `cp -r` to move layer_4's projects up, then deleted nested layer_4
 - ✅ **Result**: layer_4_group now has all 8 projects consolidated (7 old + 1 new professional_readiness)
 
+<!-- section_id: "1f96449b-c28f-4bf6-a8cb-7ff668bac4db" -->
 ### 2026-02-27 — Consolidation Planned (layer_3)
 
 - layer_3 has old naming: layer_3_00_ai_manager_system, layer_3_01_manager_handoff_documents, layer_3_02_sub_layers, layer_3_99_stages
@@ -203,6 +220,7 @@ If `.0agnostic/` is missing, create it following the unified numbering conventio
 
 ---
 
+<!-- section_id: "70d52b38-6d43-48fe-bec4-e75656e53453" -->
 ## References
 
 - **Layer Stage System**: `.0agnostic/01_knowledge/layer_stage_system/`

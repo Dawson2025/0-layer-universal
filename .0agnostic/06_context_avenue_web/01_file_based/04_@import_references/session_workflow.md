@@ -5,6 +5,7 @@ resource_name: "session_workflow"
 ---
 # Session Workflow
 
+<!-- section_id: "6a007332-1d1b-4d39-a8a8-d8267fce9f90" -->
 ## Session Start Protocol
 
 ```
@@ -28,6 +29,7 @@ professor/ personal/  context_agents/ sub_layers/
 4. Begin work with full context
 ```
 
+<!-- section_id: "df725871-ea7e-4673-966d-c52e9bc7b45e" -->
 ## Steps
 
 1. **Sync**: `git pull && git status`

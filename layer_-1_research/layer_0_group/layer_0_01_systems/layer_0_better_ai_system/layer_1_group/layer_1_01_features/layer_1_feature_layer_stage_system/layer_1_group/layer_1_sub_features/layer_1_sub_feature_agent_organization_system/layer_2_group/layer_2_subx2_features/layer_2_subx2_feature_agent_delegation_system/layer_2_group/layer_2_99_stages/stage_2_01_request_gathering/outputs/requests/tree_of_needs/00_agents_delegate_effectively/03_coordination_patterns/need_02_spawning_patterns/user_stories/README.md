@@ -8,10 +8,12 @@ resource_name: "README"
 
 **Need**: [Spawning Patterns](../README.md)
 
+<!-- section_id: "d73ee577-8970-4c43-b89f-f4655bef4bf4" -->
 ## Overview
 
 These stories cover when and how managers create specialized agents, and how those agents follow a defined lifecycle. They validate that managers apply spawning criteria to decide between delegating and doing work directly, that spawning uses the correct mechanism (Task tool, team creation), that spawned agents follow the full lifecycle from creation through reporting to termination, and that parallel agents are coordinated without conflicts.
 
+<!-- section_id: "0d3a0ecb-9ffa-4073-97fd-564140bcac5d" -->
 ## Actors
 
 - **User (Developer)**: Human developer (Dawson) who gives instructions to the AI system, reviews outputs, and validates behavior

@@ -13,6 +13,7 @@ resource_name: "US-02_agent_recommends_avenue"
 **I want** benchmark-backed rankings for each capability,
 **So that** my recommendations are grounded in measured data, not guesses.
 
+<!-- section_id: "d4523aa0-379e-45d8-99e7-3f742b8e60f9" -->
 ### What Happens
 
 1. Agent loads capability benchmarks from the database
@@ -20,6 +21,7 @@ resource_name: "US-02_agent_recommends_avenue"
 3. Agent ranks avenues by relevant capability scores
 4. Agent provides recommendation with supporting benchmark data
 
+<!-- section_id: "ea3696d5-0a2b-4875-84be-72485cc40050" -->
 ### Acceptance Criteria
 
 - Agent can query benchmarks programmatically

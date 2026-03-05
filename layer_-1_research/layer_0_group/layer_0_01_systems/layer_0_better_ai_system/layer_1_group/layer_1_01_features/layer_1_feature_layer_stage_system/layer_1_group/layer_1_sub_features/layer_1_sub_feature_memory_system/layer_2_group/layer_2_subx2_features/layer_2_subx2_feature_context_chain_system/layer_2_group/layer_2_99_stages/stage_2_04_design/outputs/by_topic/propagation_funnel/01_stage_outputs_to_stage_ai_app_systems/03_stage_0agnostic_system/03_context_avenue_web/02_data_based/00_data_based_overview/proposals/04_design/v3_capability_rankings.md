@@ -5,12 +5,14 @@ resource_name: "v3_capability_rankings"
 ---
 # Context Avenue Database Schema — Proposal v3
 
+<!-- section_id: "37028b1a-0c9d-4cdb-b204-528fda0b1a3e" -->
 ## Capability Rankings for Data-Based Avenues
 
 This proposal adds comprehensive capability rankings showing how the four primary data-based avenue types score across all 16 capabilities.
 
 ---
 
+<!-- section_id: "6f175490-f74e-4490-9d98-a430ea3881d5" -->
 ## Overview
 
 Each data-based avenue type (Knowledge Graph, SHIMI, Relational Tables, Vector Databases) is ranked 1-4 for each of the 16 capabilities, where:
@@ -23,8 +25,10 @@ Rankings reflect practical tradeoffs in database architecture and information re
 
 ---
 
+<!-- section_id: "0244439c-f296-4cb0-a615-0f25c445346e" -->
 ## Capability Rankings Matrix
 
+<!-- section_id: "9c33105e-1b09-4d40-8d1b-e486cb44ef2d" -->
 ### Performance Metrics
 
 #### Speed (Retrieval/Read/Write Performance)
@@ -53,6 +57,7 @@ Rankings reflect practical tradeoffs in database architecture and information re
 
 ---
 
+<!-- section_id: "e480d200-420f-4f5c-91b3-43ad00e5f269" -->
 ### Usability & Comprehensibility
 
 #### Readability (Ease of Parsing)
@@ -81,6 +86,7 @@ Rankings reflect practical tradeoffs in database architecture and information re
 
 ---
 
+<!-- section_id: "9cfd2abb-a482-4c3f-89f3-521b82165fbf" -->
 ### Coverage & Completeness
 
 #### Coverage (% Information Available)
@@ -101,6 +107,7 @@ Rankings reflect practical tradeoffs in database architecture and information re
 
 ---
 
+<!-- section_id: "e17182e3-6ee0-44f1-b08a-a8b6b31d4d4f" -->
 ### Maintainability & Deployment
 
 #### Setup Difficulty (Effort to Implement)
@@ -129,6 +136,7 @@ Rankings reflect practical tradeoffs in database architecture and information re
 
 ---
 
+<!-- section_id: "9fac51c7-a6db-4c07-ba8c-2a2d5a3b9184" -->
 ### Integration & Discoverability
 
 #### Searchability (Quick Content Discovery)
@@ -157,6 +165,7 @@ Rankings reflect practical tradeoffs in database architecture and information re
 
 ---
 
+<!-- section_id: "c1e21234-5349-4233-beca-d040999a55a2" -->
 ### Economics & Industry Adoption
 
 #### Cost (Implementation & Operational Cost)
@@ -177,8 +186,10 @@ Rankings reflect practical tradeoffs in database architecture and information re
 
 ---
 
+<!-- section_id: "13ac6ad2-5828-46db-b7cd-bba49bfe950e" -->
 ## Ranking Insights
 
+<!-- section_id: "3c9f0859-3450-4625-863d-0d2c4e502bf8" -->
 ### Strong Points by Avenue Type
 
 **Knowledge Graph**
@@ -203,8 +214,10 @@ Rankings reflect practical tradeoffs in database architecture and information re
 
 ---
 
+<!-- section_id: "19825d90-b70a-4a56-b61e-5868b3e8c1fa" -->
 ## SQL Implementation
 
+<!-- section_id: "df8476b2-cbf2-4ec1-984c-396f39e466dd" -->
 ### Insert Rankings
 
 ```sql
@@ -241,6 +254,7 @@ INSERT INTO rankings (avenue_type_id, capability_id, rank_place, score, notes) V
 -- ... (continue for all 16 capabilities)
 ```
 
+<!-- section_id: "6369d4f6-1d4b-447e-810e-7c2e6c971552" -->
 ### Query Views by Capability
 
 ```sql
@@ -286,6 +300,7 @@ ORDER BY at.type_name, c.category, c.name;
 
 ---
 
+<!-- section_id: "4f719273-d60a-4b48-83d3-372259cad5c8" -->
 ## Next Steps
 
 1. **Populate RANKINGS table** with all 64 rows (4 avenues × 16 capabilities)
@@ -296,6 +311,7 @@ ORDER BY at.type_name, c.category, c.name;
 
 ---
 
+<!-- section_id: "cd41cb87-3c4c-460b-acd0-fb35b22ebc8c" -->
 ## Summary
 
 This v3 proposal provides:

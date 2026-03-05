@@ -3,6 +3,7 @@ resource_id: "0f31faac-1a12-46d7-b6a2-8cacda50cfd6"
 resource_type: "knowledge"
 resource_name: "framework_orchestration"
 ---
+<!-- section_id: "5392b155-913a-491c-bc70-7ec1dad4745f" -->
 ## Framework Orchestration Guide
 
 This document provides detailed guidance on using multi-agent frameworks (LangGraph, AutoGen, CrewAI, MetaGPT) within the AI manager hierarchy system.
@@ -14,6 +15,7 @@ It builds on the generic architecture described in:
 
 ---
 
+<!-- section_id: "efe531b3-40c6-4951-8707-dc8abe152383" -->
 ## 1. Overview: Frameworks as Orchestrators
 
 Multi-agent frameworks can serve multiple roles in the hierarchy:
@@ -26,8 +28,10 @@ The key requirement: frameworks must respect the **Tool Interface** and **Handof
 
 ---
 
+<!-- section_id: "8319d25a-edb7-4a0d-9e82-d5ec2bb580a3" -->
 ## 2. Framework Comparison Matrix
 
+<!-- section_id: "f0d05c75-b18c-474c-971c-dcb6f1698296" -->
 ### 2.1 LangGraph
 
 **Strengths:**
@@ -85,6 +89,7 @@ workflow.add_edge("decompose", "spawn")
 - Require checkpointing/resumability
 - Want to visualize and audit workflow execution
 
+<!-- section_id: "38c77ab1-4c72-4873-b049-cc922ce9a7d4" -->
 ### 2.2 AutoGen
 
 **Strengths:**
@@ -140,6 +145,7 @@ write_handoff("outgoing.json", handoff)
 - Prototyping new multi-agent patterns before formalizing
 - Need flexible agent-to-agent communication
 
+<!-- section_id: "5c6cd610-df01-4d44-ae5c-396a741319ba" -->
 ### 2.3 CrewAI
 
 **Strengths:**
@@ -215,6 +221,7 @@ write_handoff("outgoing.json", result)
 - Need intuitive "team" abstraction
 - Want built-in task sequencing and dependencies
 
+<!-- section_id: "0ff55c8e-9ea8-40e3-ba93-1515fa49cfbc" -->
 ### 2.4 MetaGPT
 
 **Strengths:**
@@ -267,6 +274,7 @@ write_handoff("outgoing.json", outgoing)
 
 ---
 
+<!-- section_id: "74923356-2c4a-408a-a376-1a31140046f1" -->
 ## 3. Framework Selection Decision Tree
 
 ```
@@ -302,6 +310,7 @@ write_handoff("outgoing.json", outgoing)
 
 ---
 
+<!-- section_id: "c81f065c-6d4c-4d85-872b-41937e0757a3" -->
 ## 4. Hybrid Patterns
 
 Frameworks can be mixed within the hierarchy:
@@ -324,6 +333,7 @@ Frameworks can be mixed within the hierarchy:
 
 ---
 
+<!-- section_id: "2c94bb40-0181-46cb-a645-b0a5f8c13687" -->
 ## 5. Integration Checklist
 
 When integrating a framework into the hierarchy:
@@ -338,6 +348,7 @@ When integrating a framework into the hierarchy:
 
 ---
 
+<!-- section_id: "1b15be25-b83b-43a3-be3e-7c4e33aff4da" -->
 ## 6. Migration Path
 
 If starting from scratch or migrating:
@@ -364,26 +375,32 @@ If starting from scratch or migrating:
 
 ---
 
+<!-- section_id: "7c11c35f-c42d-4775-b9c6-90819c4134c3" -->
 ## 7. Common Pitfalls
 
+<!-- section_id: "462d6e5d-096b-46eb-86be-7f3f2de43824" -->
 ### 7.1 Over-Engineering Early
 **Problem:** Starting with complex LangGraph workflows before understanding patterns
 **Solution:** Prototype with AutoGen/CrewAI first, formalize later
 
+<!-- section_id: "77a16c3f-eb76-4276-bc59-af1b7126c331" -->
 ### 7.2 Framework Lock-In
 **Problem:** Tightly coupling architecture to framework-specific APIs
 **Solution:** Always maintain handoff protocol as abstraction boundary
 
+<!-- section_id: "82c3bfe5-8cd5-47df-823b-1bb5ea96a975" -->
 ### 7.3 Ignoring Context Cascading
 **Problem:** Frameworks not loading layer-specific CLAUDE.md/AGENTS.md
 **Solution:** Build context loaders that merge layer context before agent initialization
 
+<!-- section_id: "7347806a-2f6b-42b6-a51a-909e269c16c9" -->
 ### 7.4 Missing Error Boundaries
 **Problem:** Framework failures don't produce valid handoffs
 **Solution:** Wrap framework calls in error handlers that write failure handoffs
 
 ---
 
+<!-- section_id: "933c925f-d5a8-4044-a017-2c972e3db93b" -->
 ## 8. Summary
 
 Multi-agent frameworks are **powerful orchestrators** within the hierarchy, but they are:

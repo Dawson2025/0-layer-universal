@@ -3,6 +3,7 @@ resource_id: "665c2898-1185-4026-9ee7-8cd980aaf199"
 resource_type: "knowledge"
 resource_name: "safety_and_governance"
 ---
+<!-- section_id: "25fc7e9a-7d63-4f25-9694-0748300e9558" -->
 ## Safety, Permissions, and Governance
 
 This document defines security boundaries, permission models, and governance policies for the AI manager hierarchy system.
@@ -15,8 +16,10 @@ It ensures:
 
 ---
 
+<!-- section_id: "88d34385-0ce9-407a-903f-b156ad309dfe" -->
 ## 1. Permission Model
 
+<!-- section_id: "01224fc9-a68d-49e2-a646-3e9304e0e2b6" -->
 ### 1.1 Permission Levels
 
 Agents operate under a hierarchical permission system:
@@ -56,6 +59,7 @@ Agents operate under a hierarchical permission system:
 - Requires human approval for destructive actions
 - **Use Case**: Universal managers (L0), administrators
 
+<!-- section_id: "6ea34123-f5f2-4a1f-a045-4e8edf4af65e" -->
 ### 1.2 Permission Assignment
 
 ```yaml
@@ -118,8 +122,10 @@ permissions:
 
 ---
 
+<!-- section_id: "ab728fbf-28a4-4dc6-ab0c-ae73bfaed519" -->
 ## 2. Security Boundaries
 
+<!-- section_id: "9472c69a-8fc6-4e29-bb13-a4ebf7d4a5a1" -->
 ### 2.1 Filesystem Isolation
 
 **Workspace Boundaries:**
@@ -180,6 +186,7 @@ class WorkspaceIsolation:
         return any(path.match(pattern) for pattern in critical_patterns)
 ```
 
+<!-- section_id: "004e9daa-3d20-499b-ba41-219eca708188" -->
 ### 2.2 Command Execution Sandboxing
 
 ```python
@@ -283,6 +290,7 @@ class CommandSandbox:
         return env
 ```
 
+<!-- section_id: "8212729e-4791-43c5-879f-fe617b5871cf" -->
 ### 2.3 Network Access Control
 
 ```python
@@ -351,8 +359,10 @@ class NetworkPolicy:
 
 ---
 
+<!-- section_id: "7fca0ba3-8d7a-41db-a143-cd9df5155851" -->
 ## 3. Human-in-the-Loop Approvals
 
+<!-- section_id: "5a7ac9f7-eb7e-41d4-9a2c-298f0687f6a7" -->
 ### 3.1 Approval Requirements
 
 Certain actions require human approval before execution:
@@ -436,6 +446,7 @@ class ApprovalGate:
             self.pending_approvals[approval_id]["reason"] = reason
 ```
 
+<!-- section_id: "f1b533d2-57e3-44a6-80bc-9bbc6590fc6f" -->
 ### 3.2 Approval UI (Slack Bot Example)
 
 ```python
@@ -517,8 +528,10 @@ class SlackApprovalBot:
 
 ---
 
+<!-- section_id: "2518cacf-c0be-4404-8bb7-af54ca609900" -->
 ## 4. Budget and Resource Governance
 
+<!-- section_id: "de7597f5-e567-4181-83c7-7296396e5a00" -->
 ### 4.1 Budget Controls
 
 ```python
@@ -576,6 +589,7 @@ class BudgetGovernor:
         return approved
 ```
 
+<!-- section_id: "d5dac66e-0507-40e7-9479-f376b2b11455" -->
 ### 4.2 Resource Quotas
 
 ```python
@@ -635,8 +649,10 @@ class ResourceQuota:
 
 ---
 
+<!-- section_id: "9e5b587c-459e-4644-89e8-b376015c03d4" -->
 ## 5. Audit and Compliance
 
+<!-- section_id: "1f49815a-4d80-4c94-b574-53fccbb3615e" -->
 ### 5.1 Compliance Requirements
 
 ```yaml
@@ -683,6 +699,7 @@ compliance:
       - pii_redaction_enabled
 ```
 
+<!-- section_id: "3ee2b2fe-bfa0-490f-88c9-3f87a9690ce0" -->
 ### 5.2 Audit Trail Requirements
 
 All actions must be logged with:
@@ -697,6 +714,7 @@ See `observability_and_logging.md` for implementation details.
 
 ---
 
+<!-- section_id: "3f611aa1-966b-450e-b488-03b6ba1e8ad3" -->
 ## 6. Summary
 
 Effective governance requires:

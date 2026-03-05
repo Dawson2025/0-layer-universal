@@ -6,12 +6,14 @@ resource_name: "0INDEX"
 ---
 # Agent Coordination Knowledge
 
+<!-- section_id: "426ed82e-ca7e-4a09-9ac5-3175a6789f93" -->
 ## Purpose
 
 This folder documents how AI agents coordinate work across layers, stages, and sub-layers - including when to expand scope versus delegate to other agents.
 
 ---
 
+<!-- section_id: "1f55091d-d242-4843-aa3a-47c7d609d57c" -->
 ## Contents
 
 | Document | Purpose | When to Read |
@@ -22,6 +24,7 @@ This folder documents how AI agents coordinate work across layers, stages, and s
 
 ---
 
+<!-- section_id: "fed4c552-3816-4d07-95bb-edec4ec1bebc" -->
 ## Quick Decision Guide
 
 ```
@@ -55,23 +58,28 @@ Need work in another layer/stage?
 
 ---
 
+<!-- section_id: "f4b4e7b8-0735-4810-8653-ff629fe46313" -->
 ## Key Concepts
 
+<!-- section_id: "21711106-88b5-465e-8a87-1885120cea25" -->
 ### Scope Expansion
 - Load additional layer/stage context yourself
 - Maintain continuity and full context
 - Best for: small tasks, tightly coupled work, sequential dependencies
 
+<!-- section_id: "54e8df4d-066d-43a9-906c-199633b78359" -->
 ### Delegation
 - Spawn agents at other entry points via CLI
 - Communicate via handoff documents
 - Best for: large tasks, parallel work, specialized domains
 
+<!-- section_id: "220beaf5-641a-4339-b170-1be92c2295a3" -->
 ### Entry Points
 Every layer, stage, sub-layer, or sub-stage with a CLAUDE.md can be an agent entry point.
 
 ---
 
+<!-- section_id: "6fd2bc5c-0539-496b-b078-78092709cd8a" -->
 ## Related Knowledge
 
 - [../AI_CONTEXT_FLOW_ARCHITECTURE.md](../AI_CONTEXT_FLOW_ARCHITECTURE.md) - How context flows

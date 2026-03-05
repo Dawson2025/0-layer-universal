@@ -11,6 +11,7 @@ resource_name: "project_creation_checklist"
 
 ---
 
+<!-- section_id: "80580c0d-7f22-4158-9a48-dc59c4faaa27" -->
 ## Pre-Creation
 
 - [ ] Determine project name (use lowercase with hyphens or underscores)
@@ -20,8 +21,10 @@ resource_name: "project_creation_checklist"
 
 ---
 
+<!-- section_id: "e7217e4f-34f6-45da-b484-5aded6239446" -->
 ## Creation Steps
 
+<!-- section_id: "4df516d9-9fb0-460c-b254-a59979d648ff" -->
 ### 1. Repository Setup
 
 For **top-level project**:
@@ -42,6 +45,7 @@ git init  # If separate repo
 - [ ] Created project directory
 - [ ] Initialized git (if needed)
 
+<!-- section_id: "ff936d46-fa55-4565-bd0d-7ffeddf400bd" -->
 ### 2. Copy Template
 
 ```bash
@@ -52,6 +56,7 @@ cp -r <path_to>/layer_1/layer_1_features/layer_1_feature_layer_stage_system/laye
 
 - [ ] Copied appropriate template
 
+<!-- section_id: "e79dc8ad-f635-41d0-999f-5c45d4f4a57e" -->
 ### 3. Rename Layer Folders
 
 Replace template `layer_N` with actual layer number:
@@ -93,6 +98,7 @@ done
 - [ ] Renamed all `stage_N.*` to `stage_<actual>.*`
 - [ ] Renamed handoff subfolders
 
+<!-- section_id: "c81deb72-ae21-4661-8364-3b24cb0d6747" -->
 ### 4. Create Nested Content Folders
 
 ```bash
@@ -112,6 +118,7 @@ echo "# Components\n\nComponents go here." > layer_<N+1>_components/README.md
 - [ ] Created `layer_<N+1>_components/`
 - [ ] Added README.md to each
 
+<!-- section_id: "7d18f223-db8a-4286-9757-0e7591567170" -->
 ### 5. Initialize Status File
 
 ```bash
@@ -137,6 +144,7 @@ Edit `status_<N>.json` to set initial state:
 - [ ] Updated `layer_id` field
 - [ ] Set `current_stage`
 
+<!-- section_id: "eed76da5-b6af-4b90-b181-1d5410090519" -->
 ### 6. Create Project README
 
 Create `README.md` at project root:
@@ -162,6 +170,7 @@ See `layer_<N>/layer_<N>_99_stages/status_<N>.json`
 
 - [ ] Created project README.md
 
+<!-- section_id: "93161c8f-cdcc-4cfc-b7ad-d1549395fd3a" -->
 ### 7. Populate Basic Prompts (sub_layer_N.01)
 
 Create `project_init_prompt.md` in `layer_<N>/layer_<N>_02_sub_layers/sub_layer_<N>.01_basic_prompts/`:
@@ -189,6 +198,7 @@ Create `project_init_prompt.md` in `layer_<N>/layer_<N>_02_sub_layers/sub_layer_
 - [ ] Listed key directories
 - [ ] Documented current focus
 
+<!-- section_id: "de0e1c7d-5ec7-432b-b03f-356a46b1e638" -->
 ### 8. Git Submodule Setup (if applicable)
 
 If this project will be a submodule of a parent:
@@ -202,6 +212,7 @@ git commit -m "Add <project_name> as submodule"
 - [ ] Added as submodule (if needed)
 - [ ] Updated parent's .gitmodules
 
+<!-- section_id: "ec055795-234d-48be-88e3-8b72048435e4" -->
 ### 9. Initial Commit
 
 ```bash
@@ -216,6 +227,7 @@ Co-Authored-By: Claude <noreply@anthropic.com>"
 
 ---
 
+<!-- section_id: "542dcb0a-b196-4fdd-8c72-1856f32dd423" -->
 ## Post-Creation Verification
 
 - [ ] `layer_<N>/` folder exists with correct structure
@@ -228,6 +240,7 @@ Co-Authored-By: Claude <noreply@anthropic.com>"
 
 ---
 
+<!-- section_id: "00af82de-98f6-4a4b-be6c-5c01af40cc7b" -->
 ## Common Issues
 
 | Issue | Solution |
@@ -239,6 +252,7 @@ Co-Authored-By: Claude <noreply@anthropic.com>"
 
 ---
 
+<!-- section_id: "f320a3fd-8a37-4764-99fb-d64809e683bf" -->
 ## Related
 
 - `instantiation_guide.md` - General instantiation guide

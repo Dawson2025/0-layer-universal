@@ -7,6 +7,7 @@ resource_name: "REQ-01_entity_search"
 
 **Need**: [Path Resolution](../README.md)
 
+<!-- section_id: "d823aad4-3042-4de9-b79f-e8b69190868c" -->
 ## Requirements
 
 - **MUST** find entity directories by name using `find ... -type d -name "$canonical_entity" -path "*/layer_*"`

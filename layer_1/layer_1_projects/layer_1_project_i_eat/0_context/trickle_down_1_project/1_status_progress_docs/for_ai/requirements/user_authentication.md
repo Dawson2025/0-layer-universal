@@ -8,9 +8,11 @@ resource_name: "user_authentication"
 - **Source Prompt**: Existing implementation analysis (2025-10-15)
 - **Related Implementation**: `app.py` routes 3088-3262, `features/auth.py`, `templates/login.html`, `templates/register.html`
 
+<!-- section_id: "c61545e6-74e5-457c-a049-20a90da328b5" -->
 ## Goal
 Provide secure user authentication and account management to enable multi-user collaboration, personalized workspaces, and access control across the language tracking application.
 
+<!-- section_id: "c546e70b-96fe-449c-aed6-fc076888c7a4" -->
 ## Functional Requirements
 - Support local username/password authentication with secure password hashing for users who prefer not to use cloud services.
 - Integrate Firebase Authentication to allow OAuth-based login via Google and other providers.
@@ -20,6 +22,7 @@ Provide secure user authentication and account management to enable multi-user c
 - Store user metadata including creation timestamps and active status flags.
 - Protect routes and features based on authentication state (logged-in vs. anonymous).
 
+<!-- section_id: "59c8c187-92f8-468b-838f-f754a9c96ca8" -->
 ## Acceptance Criteria
 - Users can register new accounts via `/register` with username, email, and password; passwords are hashed before storage.
 - Users can log in via `/login` using either local credentials or Firebase OAuth (Google Sign-In).
@@ -30,6 +33,7 @@ Provide secure user authentication and account management to enable multi-user c
 - Duplicate usernames or emails are rejected during registration with clear error messages.
 - User info (username, email) is accessible throughout the application via `get_user_info()` helper.
 
+<!-- section_id: "cc7b0f9e-68b5-41af-9bd8-7deeeef4e71c" -->
 ## Notes
 - The `users` table stores both locally-registered and Firebase-authenticated users.
 - Firebase authentication is optional; the app functions fully with local auth if Firebase is unavailable.

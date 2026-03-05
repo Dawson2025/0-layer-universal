@@ -9,10 +9,12 @@ resource_name: "BUG_FIX_ATTEMPT_OCT_21_2025"
 
 ---
 
+<!-- section_id: "a44de301-6b03-4596-a3bf-85882a13ca73" -->
 ## Summary
 
 After implementing US-053 and running the full automation suite, attempted fixes for test failures. While some timing improvements were made, the core issues persist and require more sophisticated solutions.
 
+<!-- section_id: "ac83083a-13b3-4494-bdba-f4242b3280ba" -->
 ### Test Results: Before vs After Fixes
 
 | Metric | Round 1 (Initial) | Round 2 (After Fixes) | Change |
@@ -23,8 +25,10 @@ After implementing US-053 and running the full automation suite, attempted fixes
 
 ---
 
+<!-- section_id: "0856c4f6-879f-49a6-9bef-11fc0f00eb5d" -->
 ## Fixes Attempted
 
+<!-- section_id: "eacb2a73-3a27-498d-add0-72e9023c0fa8" -->
 ### 1. ✅ Realistic Mode Navigation Timing Fix
 
 **File Modified**: `scripts/mcp-playwright-demo-realistic.mjs`
@@ -51,6 +55,7 @@ await ensure(
 
 ---
 
+<!-- section_id: "e6d52a58-843a-4278-95f6-bfac89c4b2ad" -->
 ### 2. ✅ Admin Test Authentication Fix
 
 **File Modified**: `scripts/mcp-admin-database-tools.mjs`
@@ -76,8 +81,10 @@ await callTool(client, 'browser_snapshot', {}, 'Post-registration snapshot');
 
 ---
 
+<!-- section_id: "dc2fbe77-0866-4c77-b39c-1fa2b0280c40" -->
 ## Root Cause Analysis
 
+<!-- section_id: "1f8d4ab9-4f77-4aea-bb85-0121b1f23447" -->
 ### Realistic Mode Failures (6 tests)
 
 **Issue**: Navigation events fire before scripts can verify page state
@@ -112,6 +119,7 @@ const [response] = await Promise.all([
 
 ---
 
+<!-- section_id: "fcd787a5-3dbb-4c3d-b451-055510c02eac" -->
 ### Admin Test Failures (2 tests)
 
 **Issue**: Can't establish authenticated session to reach admin panel
@@ -134,8 +142,10 @@ const [response] = await Promise.all([
 
 ---
 
+<!-- section_id: "b545b713-273a-449c-b4af-f057e7e88790" -->
 ## Current Test Status
 
+<!-- section_id: "b3b1c6d5-2c09-4949-8d2a-021187aa5c15" -->
 ### ✅ Fully Passing (14 tests - 39%)
 
 | Story Group | Status |
@@ -148,6 +158,7 @@ const [response] = await Promise.all([
 | US-066 Branching | ✅✅ Both modes pass |
 | US-067 Mobile | ✅✅ Both modes pass |
 
+<!-- section_id: "ae5005bd-3ddf-4ee4-9f59-a55b1d178565" -->
 ### ⚠️ Direct Pass, Realistic Fail (12 tests - 33%)
 
 | Story Group | Direct | Realistic | Issue |
@@ -161,6 +172,7 @@ const [response] = await Promise.all([
 
 **Analysis**: Features work correctly. Tests need proper navigation handling.
 
+<!-- section_id: "715604e6-70a6-4451-9462-d8b1afd33e7f" -->
 ### ❌ Failing Both Modes (10 tests - 28%)
 
 | Story Group | Issue |
@@ -171,13 +183,16 @@ const [response] = await Promise.all([
 
 ---
 
+<!-- section_id: "b28e2ae5-060a-421e-aacb-c0ec5e8f9916" -->
 ## US-053 Validation Status
 
+<!-- section_id: "39d07155-e6cd-49e6-87c1-74a48d56df8b" -->
 ### Implementation: ✅ COMPLETE
 
 **Endpoint**: `POST /api/admin/recalculate-phoneme-frequencies`
 **Code**: `app.py` lines 2580-2673
 
+<!-- section_id: "b333a4f1-1d57-46f7-b5df-1d930ca991b7" -->
 ### Automation Validation: ❌ BLOCKED
 
 **Blocker**: Admin test authentication issues prevent reaching the endpoint
@@ -188,8 +203,10 @@ The endpoint is implemented correctly but cannot be validated via automation due
 
 ---
 
+<!-- section_id: "9b30e59c-9c1e-4660-bedc-d7dec2fab7af" -->
 ## Recommendations
 
+<!-- section_id: "cbcf5c3f-f6b8-4af7-9283-427a54cd1ade" -->
 ### Short-term (Production Deployment)
 
 **Status**: ✅ **PROCEED WITH DEPLOYMENT**
@@ -208,6 +225,7 @@ The endpoint is implemented correctly but cannot be validated via automation due
 
 ---
 
+<!-- section_id: "b8162f4f-f5b3-4cbe-9185-108700a6654d" -->
 ### Medium-term (Test Infrastructure Improvements)
 
 **Priority 1: Fix Navigation Handling in Realistic Mode**
@@ -245,14 +263,17 @@ The endpoint is implemented correctly but cannot be validated via automation due
 
 ---
 
+<!-- section_id: "ab73777a-cc19-4c41-ae6c-df0f9579f38f" -->
 ## Conclusion
 
+<!-- section_id: "e1e9186b-e0ea-46f2-9e1d-c8c5c92520f9" -->
 ### Attempted Fixes: Limited Success
 
 - ✅ Timing improvements added (didn't resolve issues)
 - ❌ Realistic mode failures persist (need proper navigation handling)
 - ❌ Admin test failures persist (need session debugging)
 
+<!-- section_id: "f831bf8e-5159-486d-b195-0f7c998f3865" -->
 ### Production Readiness: ✅ APPROVED
 
 Despite test failures, the codebase is production-ready because:
@@ -263,6 +284,7 @@ Despite test failures, the codebase is production-ready because:
 4. ✅ All failures are test infrastructure, not bugs
 5. ✅ 99% implementation complete (70/71 user stories)
 
+<!-- section_id: "4110723a-2d23-496f-8fb4-0b5c00e19278" -->
 ### Next Steps
 
 1. **Immediate**: Deploy to production

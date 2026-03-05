@@ -17,6 +17,7 @@ resource_name: "official_claude_code_loading"
 
 ---
 
+<!-- section_id: "6dcc3f31-27fd-45a5-a58f-7e7eee5bd936" -->
 ## Session Initialization Sequence
 
 ```
@@ -225,8 +226,10 @@ resource_name: "official_claude_code_loading"
 
 ---
 
+<!-- section_id: "7c311e8c-73cd-4d35-ba6c-66a47213d97f" -->
 ## File Locations Reference
 
+<!-- section_id: "4168a579-07fe-4a11-b771-30febe27887b" -->
 ### Memory Files (CLAUDE.md)
 
 | Scope | Location | Shared? | Precedence |
@@ -237,6 +240,7 @@ resource_name: "official_claude_code_loading"
 | Local | `CLAUDE.local.md` | No (gitignored) | Lowest (wins) |
 | Rules | `.claude/rules/*.md` | Yes (git) | Same as project |
 
+<!-- section_id: "e7c3d4af-b111-4c7e-93c0-2fe64fc7e400" -->
 ### Settings Files
 
 | Scope | Location | Shared? | Precedence |
@@ -247,6 +251,7 @@ resource_name: "official_claude_code_loading"
 | Project | `.claude/settings.json` | Yes (git) | Low |
 | User | `~/.claude/settings.json` | No | Lowest |
 
+<!-- section_id: "beadec3e-644b-46b4-822c-ec947fe9adbc" -->
 ### MCP Server Definitions
 
 | Scope | Location | Shared? |
@@ -255,6 +260,7 @@ resource_name: "official_claude_code_loading"
 | User | `~/.claude.json` (mcpServers field) | No |
 | Project | `.mcp.json` | Yes (git) |
 
+<!-- section_id: "682e4318-cada-4d35-94e7-26b665215395" -->
 ### Other Configuration
 
 | Type | User Location | Project Location |
@@ -265,8 +271,10 @@ resource_name: "official_claude_code_loading"
 
 ---
 
+<!-- section_id: "f702c66b-72ce-477a-947f-61ef1105e42c" -->
 ## Auto-Loaded vs On-Demand
 
+<!-- section_id: "3f4a3927-6a32-4c49-b76d-309c5c045db0" -->
 ### Automatically Loaded at Session Start
 
 | What | Source | Notes |
@@ -280,6 +288,7 @@ resource_name: "official_claude_code_loading"
 | Skill descriptions | .claude/skills/*/SKILL.md | YAML frontmatter only |
 | Settings | All settings.json files | Merged by precedence |
 
+<!-- section_id: "48aa4e08-e989-40cd-a976-588338859136" -->
 ### Loaded On-Demand (NOT at startup)
 
 | What | When Loaded | Notes |
@@ -291,8 +300,10 @@ resource_name: "official_claude_code_loading"
 
 ---
 
+<!-- section_id: "341dce3b-fc6b-44dc-a686-8183aa706416" -->
 ## CLAUDE.md Features
 
+<!-- section_id: "aa36b156-7fc4-4593-953d-7b3baa4a2ef1" -->
 ### @import System
 
 CLAUDE.md files can reference other files:
@@ -309,6 +320,7 @@ CLAUDE.md files can reference other files:
 - Maximum 5 levels of nesting
 - Imported content loaded with parent CLAUDE.md
 
+<!-- section_id: "976b1cff-0cbf-4388-b847-db66abbf5bd0" -->
 ### .claude/rules/ Directory
 
 Alternative to @imports for modular organization:
@@ -326,6 +338,7 @@ Alternative to @imports for modular organization:
 
 All .md files in .claude/rules/ (including subdirectories) are auto-loaded.
 
+<!-- section_id: "101eaa6a-0e6a-42e3-979f-6caf187c633f" -->
 ### Case Sensitivity
 
 **CRITICAL**: Filename must be exactly `CLAUDE.md`:
@@ -336,8 +349,10 @@ All .md files in .claude/rules/ (including subdirectories) are auto-loaded.
 
 ---
 
+<!-- section_id: "558c9e8d-15b0-4310-9849-c7afd98f5f68" -->
 ## Environment Variables
 
+<!-- section_id: "34d07266-2394-4631-8f7a-c6acdd8bb7bc" -->
 ### Key Variables for Context/Loading
 
 | Variable | Purpose |
@@ -350,6 +365,7 @@ All .md files in .claude/rules/ (including subdirectories) are auto-loaded.
 
 ---
 
+<!-- section_id: "16d1e3d4-5521-477f-89c2-f6eefcd4c3d6" -->
 ## Summary: What Claude Knows at Session Start
 
 When you run `claude` in a directory, Claude immediately knows:

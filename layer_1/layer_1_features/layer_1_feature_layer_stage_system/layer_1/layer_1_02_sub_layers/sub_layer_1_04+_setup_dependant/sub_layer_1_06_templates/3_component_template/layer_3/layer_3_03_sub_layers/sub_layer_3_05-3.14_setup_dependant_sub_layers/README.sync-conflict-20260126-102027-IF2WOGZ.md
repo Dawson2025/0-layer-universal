@@ -10,6 +10,7 @@ resource_name: "README.sync-conflict-20260126-102027-IF2WOGZ"
 
 ---
 
+<!-- section_id: "133f6ffb-fad7-48cd-b4ef-59fbd27f1b04" -->
 ## Overview
 
 This sublayer consolidates all setup documentation for sublayers 3.05 through 3.14:
@@ -29,12 +30,14 @@ All setup documentation is organized in a **hierarchical file tree structure**.
 
 ---
 
+<!-- section_id: "a47eabeb-cb61-4576-bc17-9e1e53a45052" -->
 ## Primary Navigation: Component Setup File Tree
 
 **Main entry point**: `3.01_component_setup_file_tree/`
 
 Navigate by your configuration to find component-specific setup documentation.
 
+<!-- section_id: "e0f40db4-ae4c-4759-96b4-176f1ed67db2" -->
 ## Structure
 
 ```

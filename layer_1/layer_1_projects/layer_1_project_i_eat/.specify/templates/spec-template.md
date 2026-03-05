@@ -10,6 +10,7 @@ resource_name: "spec-template"
 **Status**: Draft  
 **Input**: User description: "$ARGUMENTS"
 
+<!-- section_id: "f183128a-ee00-4f0a-bbb9-39856b2decf2" -->
 ## User Scenarios & Testing *(mandatory)*
 
 <!--
@@ -25,6 +26,7 @@ resource_name: "spec-template"
   - Demonstrated to users independently
 -->
 
+<!-- section_id: "da5278f7-01ca-49d8-b639-dd6342ce394f" -->
 ### User Story 1 - [Brief Title] (Priority: P1)
 
 [Describe this user journey in plain language]
@@ -40,6 +42,7 @@ resource_name: "spec-template"
 
 ---
 
+<!-- section_id: "28eacb3b-b353-42c6-bcfe-084b5169c57b" -->
 ### User Story 2 - [Brief Title] (Priority: P2)
 
 [Describe this user journey in plain language]
@@ -54,6 +57,7 @@ resource_name: "spec-template"
 
 ---
 
+<!-- section_id: "e36104b3-3af3-4578-b604-5bbc73830585" -->
 ### User Story 3 - [Brief Title] (Priority: P3)
 
 [Describe this user journey in plain language]
@@ -70,6 +74,7 @@ resource_name: "spec-template"
 
 [Add more user stories as needed, each with an assigned priority]
 
+<!-- section_id: "7ef247c9-990e-4832-92dc-62aa75201707" -->
 ### Edge Cases
 
 <!--
@@ -80,6 +85,7 @@ resource_name: "spec-template"
 - What happens when [boundary condition]?
 - How does system handle [error scenario]?
 
+<!-- section_id: "6423ae3b-59db-4e6a-abc3-425af6c677e1" -->
 ## Requirements *(mandatory)*
 
 <!--
@@ -87,6 +93,7 @@ resource_name: "spec-template"
   Fill them out with the right functional requirements.
 -->
 
+<!-- section_id: "a0126412-3fff-4639-b086-6f5a552f7ace" -->
 ### Functional Requirements
 
 - **FR-001**: System MUST [specific capability, e.g., "allow users to create accounts"]
@@ -100,11 +107,13 @@ resource_name: "spec-template"
 - **FR-006**: System MUST authenticate users via [NEEDS CLARIFICATION: auth method not specified - email/password, SSO, OAuth?]
 - **FR-007**: System MUST retain user data for [NEEDS CLARIFICATION: retention period not specified]
 
+<!-- section_id: "324f19a5-2d70-4031-9223-2442fdaef95c" -->
 ### Key Entities *(include if feature involves data)*
 
 - **[Entity 1]**: [What it represents, key attributes without implementation]
 - **[Entity 2]**: [What it represents, relationships to other entities]
 
+<!-- section_id: "0e512b1a-c549-421c-a174-5e4db2c72426" -->
 ## Success Criteria *(mandatory)*
 
 <!--
@@ -112,6 +121,7 @@ resource_name: "spec-template"
   These must be technology-agnostic and measurable.
 -->
 
+<!-- section_id: "63850d72-c091-4b14-aefe-94f0306a170c" -->
 ### Measurable Outcomes
 
 - **SC-001**: [Measurable metric, e.g., "Users can complete account creation in under 2 minutes"]

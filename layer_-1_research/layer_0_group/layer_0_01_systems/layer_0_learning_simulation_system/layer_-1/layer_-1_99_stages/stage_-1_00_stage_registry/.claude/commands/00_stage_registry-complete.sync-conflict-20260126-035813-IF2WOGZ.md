@@ -10,6 +10,7 @@ argument-hint: [--notes "completion notes"]
 
 Complete the 00_stage_registry stage and prepare for next stage.
 
+<!-- section_id: "abc8818f-5bf5-4b62-9c1b-a479a1f547c9" -->
 ## Steps
 1. Verify all deliverables in outputs/
 2. Create handoff document

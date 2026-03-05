@@ -7,8 +7,10 @@ resource_name: "universal_instructions"
 
 **Use these instructions for any project, any codebase, any task**
 
+<!-- section_id: "5245217c-2bca-4ae4-8936-87729a2b7a16" -->
 ## Core Principles
 
+<!-- section_id: "227b5d30-6542-4b56-8b1f-c53543d16944" -->
 ### 0. Identify Fundamental Intent First
 **Before executing any request, identify and articulate the fundamental intent, purpose, or need:**
 
@@ -24,6 +26,7 @@ resource_name: "universal_instructions"
 
 **When the fundamental intent differs from the literal request**, briefly explain what you identified and how your approach serves the deeper need.
 
+<!-- section_id: "1af76666-8d7e-4160-a2d5-5f4d26352b1c" -->
 ### 1. Always Use TODO Lists
 For every prompt, create a TODO list explicitly stating what you will do:
 - Break down complex tasks into specific steps
@@ -32,12 +35,14 @@ For every prompt, create a TODO list explicitly stating what you will do:
 - Only one item should be in_progress at a time
 - Complete tasks immediately after finishing them
 
+<!-- section_id: "37c7c513-ebfc-4c03-8d72-2094033dd769" -->
 ### 1b. Start With a Depth-First Prototype
 - When taking on a broad or multi-phase request, implement a **small, end-to-end slice first**.
 - This prototype must cover the full lifecycle (planning → implementation → integration → verification) for a representative subset.
 - Use what you learn from the slice to adjust scope, tooling, and quality benchmarks before scaling to larger batches.
 - Do **not** expand to additional surfaces until the initial slice is fully integrated, documented, and validated.
 
+<!-- section_id: "88d10145-bcf4-4a3a-a5d1-7cf3141020fe" -->
 ### 2. Read Before You Write
 - **NEVER** make assumptions about code you haven't read
 - **ALWAYS** use Read/Glob/Grep tools to understand existing code first
@@ -45,6 +50,7 @@ For every prompt, create a TODO list explicitly stating what you will do:
 - Check imports, dependencies, and related modules
 - Look for existing tests to understand expected behavior
 
+<!-- section_id: "a27dd04f-483c-41f0-9c83-386fc03867ee" -->
 ### 3. Understand the Architecture First
 Before making changes:
 - Identify the project structure (where are features/modules/services?)
@@ -53,6 +59,7 @@ Before making changes:
 - Find configuration files
 - Identify shared infrastructure vs feature-specific code
 
+<!-- section_id: "0e033c07-1bfa-4fff-9d84-8e0735256708" -->
 ### 4. Test Everything
 - Create tests for every feature you implement
 - Run existing tests before making changes
@@ -60,6 +67,7 @@ Before making changes:
 - If tests fail, fix them before marking work complete
 - Never mark a task complete if tests are failing
 
+<!-- section_id: "cf7a3a0c-3c28-4701-a42a-3524d5972211" -->
 ### 5. Follow Existing Patterns
 - Match the coding style of the existing codebase
 - Use the same naming conventions
@@ -67,6 +75,7 @@ Before making changes:
 - Don't introduce new patterns unless explicitly requested
 - When in doubt, ask before deviating from established patterns
 
+<!-- section_id: "3bf604d5-a18a-4d55-aecc-f60e804f776e" -->
 ### 6. Document As You Go
 - Add clear comments for complex logic
 - Update README files when adding new features
@@ -74,6 +83,7 @@ Before making changes:
 - Keep requirements/specifications up to date
 - Create or update architecture docs for significant changes
 
+<!-- section_id: "a630a4ea-228f-465b-a3df-f2eda1683749" -->
 ### 7. Update 0_context Documentation Before Ending Turn
 **CRITICAL:** Before completing any task or ending your turn as an AI agent:
 
@@ -112,6 +122,7 @@ Before making changes:
 
 **Do NOT end your turn until `0_context/` documentation reflects your work.**
 
+<!-- section_id: "6571f1d8-5829-4a10-ad76-27d798f97a37" -->
 ### 8. File Organization Best Practices
 **CRITICAL:** Always organize files following this three-level hierarchy:
 
@@ -204,8 +215,10 @@ If you find poor organization:
 🚩 Tests separated from features
 🚩 Files organized by feature first (should be by best practice first)
 
+<!-- section_id: "f47ffb0b-9e45-440d-a921-a637dbdffc24" -->
 ## Workflow
 
+<!-- section_id: "ec012583-acde-4f95-9ed2-555178d146af" -->
 ### For Every Task:
 
 1. **Understand the Request**
@@ -271,26 +284,31 @@ If you find poor organization:
    - Verify tests pass
    - Check git diff for unintended changes
 
+<!-- section_id: "6b6a503e-d8a2-4cb5-b050-9af2c8d92787" -->
 ## Code Quality Standards
 
+<!-- section_id: "0f0be052-39f3-4beb-b46c-f8709d59170a" -->
 ### Readability
 - Write self-documenting code with clear variable names
 - Keep functions focused on single responsibilities
 - Limit function/method length to ~50 lines when possible
 - Use meaningful comments for "why", not "what"
 
+<!-- section_id: "e059e4e5-8d85-4e9d-a752-0dc671b7eaa8" -->
 ### Maintainability
 - Avoid code duplication (DRY principle)
 - Keep dependencies minimal and explicit
 - Use consistent error handling patterns
 - Make code easy to test
 
+<!-- section_id: "d143eeb5-e891-41ea-9e48-4a417408736d" -->
 ### Performance
 - Don't optimize prematurely
 - Profile before making performance changes
 - Consider scalability for data processing
 - Avoid blocking operations in async code
 
+<!-- section_id: "c7485c83-018a-4363-ba01-bd78cb253265" -->
 ### Security
 - **NEVER** commit secrets or credentials
 - Validate all user inputs
@@ -298,6 +316,7 @@ If you find poor organization:
 - Follow principle of least privilege
 - Sanitize outputs to prevent XSS/injection
 
+<!-- section_id: "1103314e-e906-4585-b275-9d4e62cba24b" -->
 ## Common Mistakes to Avoid
 
 ❌ **Don't:**
@@ -320,8 +339,10 @@ If you find poor organization:
 - Understand patterns before implementing them
 - Ask clarifying questions about requirements
 
+<!-- section_id: "98c2ecad-c742-4358-ac0e-84a112e706a4" -->
 ## Communication
 
+<!-- section_id: "8513d1a1-422b-4485-ac71-3cf4e082bdb4" -->
 ### When to Ask Questions
 - Requirements are ambiguous or incomplete
 - Multiple implementation approaches are possible
@@ -330,6 +351,7 @@ If you find poor organization:
 - Dependencies need to be added
 - Architecture changes are needed
 
+<!-- section_id: "d1b88e63-390b-4aff-b476-169ebfe75d7b" -->
 ### How to Communicate Progress
 - Update TODO list as you work
 - Explain what you're doing and why
@@ -338,8 +360,10 @@ If you find poor organization:
 - Highlight areas that need review
 - Document decisions and trade-offs
 
+<!-- section_id: "6bbdf4d5-1c3d-4392-9750-d24005f3485f" -->
 ## Git & Version Control
 
+<!-- section_id: "c9abc83f-23f8-4b6e-8eb9-7ec954e230e0" -->
 ### Commits
 - Commit working code frequently
 - Write clear, descriptive commit messages
@@ -347,14 +371,17 @@ If you find poor organization:
 - Don't commit broken code
 - Don't commit debugging artifacts
 
+<!-- section_id: "5c554083-f01a-40fc-bf71-738375e02b57" -->
 ### Branches
 - Follow the project's branching strategy
 - Keep branches focused on single features
 - Merge/rebase from main regularly
 - Clean up branches after merging
 
+<!-- section_id: "540c5d36-5da1-4be7-bf69-0dc986a2add6" -->
 ## Error Handling
 
+<!-- section_id: "baefed7d-f618-417f-b434-e4af660ce951" -->
 ### When Things Go Wrong
 1. Read the full error message carefully
 2. Check the stack trace for root cause
@@ -362,6 +389,7 @@ If you find poor organization:
 4. Test your assumptions with minimal examples
 5. Ask for help if stuck after reasonable effort
 
+<!-- section_id: "e69a9ad0-abf9-4444-95eb-0346646ac733" -->
 ### Debugging Strategy
 - Add logging strategically
 - Use debugger breakpoints
@@ -369,8 +397,10 @@ If you find poor organization:
 - Check assumptions one at a time
 - Document the bug and fix for future reference
 
+<!-- section_id: "7e4a3c59-4e01-4842-ba52-92953fc6e935" -->
 ## Efficiency Tips
 
+<!-- section_id: "b24ecb38-b500-45c5-af5f-c907e943bcfb" -->
 ### Use Tools Effectively
 - Use Grep for code search, not manual scanning
 - Use Glob for finding files by pattern
@@ -378,6 +408,7 @@ If you find poor organization:
 - Run multiple independent operations in parallel
 - Use specialized tools instead of bash commands when available
 
+<!-- section_id: "ac56edda-71ad-4b91-b3f5-382d0038a6b2" -->
 ### Optimize Your Workflow
 - Read documentation before experimenting
 - Check for existing solutions before implementing
@@ -385,6 +416,7 @@ If you find poor organization:
 - Automate repetitive tasks with scripts
 - Keep a mental model of the codebase structure
 
+<!-- section_id: "e3669cc4-f1e1-4136-9fa9-6ac4a8530c80" -->
 ## When Working on Unfamiliar Codebases
 
 1. **Start with README and docs**
@@ -410,8 +442,10 @@ If you find poor organization:
    - Follow established patterns
    - Learn from existing tests
 
+<!-- section_id: "0bccc396-9fdc-45d8-a08e-44308a80b632" -->
 ## Mindset
 
+<!-- section_id: "60160c45-372f-43fa-bd6a-218a39b17583" -->
 ### Be Professional
 - Take ownership of your work
 - Deliver quality over speed
@@ -419,6 +453,7 @@ If you find poor organization:
 - Learn from mistakes
 - Help improve the codebase
 
+<!-- section_id: "820c2576-a2cd-42b2-9cfe-f197d62d677e" -->
 ### Be Thorough
 - Check edge cases
 - Think about failure scenarios
@@ -426,6 +461,7 @@ If you find poor organization:
 - Test on different environments when relevant
 - Review your own work critically
 
+<!-- section_id: "bfb894b8-a9a6-4b99-b611-f12a8999ff96" -->
 ### Be Collaborative
 - Follow team conventions
 - Write code others can understand
@@ -435,6 +471,7 @@ If you find poor organization:
 
 ---
 
+<!-- section_id: "95c85b18-e9ea-4b5d-904b-66a5a3a1facc" -->
 ## Summary Checklist
 
 Before marking any task complete or ending your turn, verify:

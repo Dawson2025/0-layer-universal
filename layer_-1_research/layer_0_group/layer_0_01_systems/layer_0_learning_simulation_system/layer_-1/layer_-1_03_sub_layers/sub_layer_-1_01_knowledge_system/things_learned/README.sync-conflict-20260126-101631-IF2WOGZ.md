@@ -9,6 +9,7 @@ This folder contains distilled notes, specifications, and conclusions from resea
 
 ---
 
+<!-- section_id: "b75a46f2-816c-428f-b600-0ae05abaa876" -->
 ## Table of Contents
 
 1. [Three-Layer Simulation Architecture](#1-three-layer-simulation-architecture)
@@ -24,20 +25,24 @@ This folder contains distilled notes, specifications, and conclusions from resea
 
 ---
 
+<!-- section_id: "c9483d5d-006c-4427-a565-617d5306cdef" -->
 ## 1. Three-Layer Simulation Architecture
 
+<!-- section_id: "1a848feb-2c5c-48a6-9648-b153fa7c7cfd" -->
 ### Layer 1: Macro Zone
 - **Technology**: Unreal Engine 5.5 + NVIDIA Genesis
 - **Function**: Environment simulation (terrain, weather, gravity)
 - **Performance**: Uses "bubble of activity" model with World Partition
 - **Scope**: 500m active physics bubble around players
 
+<!-- section_id: "6eeaa3ea-cd3f-4e53-80f5-2a219b4a6fa9" -->
 ### Layer 2: Multi-Physics Solver
 - **Technology**: NVIDIA Newton (built on Warp)
 - **Function**: The "Math Engine" - calculates heat transfer, structural stress, fluid flow
 - **Optimization**: Physics-Informed Neural Networks (PINNs) for **300,000x faster solves**
 - **Capabilities**: Real-time multi-physics coupling
 
+<!-- section_id: "295d6715-f6f1-4eb0-861d-7548a5130f74" -->
 ### Layer 3: Micro Lens
 - **Technology**: NVIDIA ALCHEMI
 - **Function**: Atomic-level visualization
@@ -45,6 +50,7 @@ This folder contains distilled notes, specifications, and conclusions from resea
 
 ---
 
+<!-- section_id: "e6f3e5be-9745-490e-a953-e321f20f42ad" -->
 ## 2. Zone Progression System
 
 Users advance through environments unlocking science layers:
@@ -58,6 +64,7 @@ Users advance through environments unlocking science layers:
 
 ---
 
+<!-- section_id: "f1a4e7ef-dda4-4c40-9129-6a2255237dc8" -->
 ## 3. Material Physics Configuration
 
 Initial materials defined with real-world physics properties:
@@ -72,8 +79,10 @@ Initial materials defined with real-world physics properties:
 
 ---
 
+<!-- section_id: "6a9e018d-d414-4030-8d29-fed2f71b4d39" -->
 ## 4. Interaction Design
 
+<!-- section_id: "3a62dd4f-4df1-4364-9958-91600af51dd2" -->
 ### Dual-Mode Avatar System
 
 | Mode | Controls | Capabilities |
@@ -81,12 +90,14 @@ Initial materials defined with real-world physics properties:
 | **Avatar Mode** | WASD/VR thumbsticks | Physics-constrained movement, resource gathering |
 | **God Mode** | Shift+Tab/grip toggle | Override gravity/density, MCP CLI commands |
 
+<!-- section_id: "50d12c47-ff4e-4787-a37b-e54d42afdd5c" -->
 ### AI Companion
 - Toggleable avatar that acts alongside the user
 - Can operate as **tutor** (narrating physics concepts) or **player2** (co-building)
 - Reads live Newton Solver data for intelligent feedback
 - Voice-activated: "Show torque" triggers physics demonstrations
 
+<!-- section_id: "aa6e2e5a-d1c6-4948-8d6f-2e3c9afcc488" -->
 ### Control Support
 - **Laptop**: WASD controls + mouse
 - **VR Headsets**: OpenXR plugin for Quest/Pico, hand gestures, thumbsticks
@@ -94,6 +105,7 @@ Initial materials defined with real-world physics properties:
 
 ---
 
+<!-- section_id: "d5b5eedf-21de-412b-b040-76a9d11acee6" -->
 ## 5. World Persistence
 
 Using **World Partition** technology:
@@ -106,8 +118,10 @@ Using **World Partition** technology:
 
 ---
 
+<!-- section_id: "c510a1eb-3fc2-4e11-9ac6-647e84e3f6e8" -->
 ## 6. Mathlab Automation Integration
 
+<!-- section_id: "a44274f7-8ccc-432f-bf57-dc54d2128cf6" -->
 ### Core Metrics
 
 | Metric | Definition | Target |
@@ -117,6 +131,7 @@ Using **World Partition** technology:
 | **Automation Ratio** | AI time / total time | <0.3 |
 | **Knowledge Debt** | Sum(1-Mastery x Impact) | <0.2 |
 
+<!-- section_id: "c68d9d29-13bf-4440-95a2-727c8fbad826" -->
 ### Knowledge Triad
 
 Hierarchical mastery tracking across:
@@ -125,6 +140,7 @@ Hierarchical mastery tracking across:
 - **PHYSICS**: Newton -> Rigid bodies -> PGS solvers -> MuJoCo dynamics
 - **SOFTWARE**: Arrays -> Event loops -> PyTorch autograd -> Godot plugins
 
+<!-- section_id: "eea0205e-a545-462b-ab68-d151ac663d70" -->
 ### Closed Learning Loop
 
 1. Task Request -> Predict metrics + gaps
@@ -135,8 +151,10 @@ Hierarchical mastery tracking across:
 
 ---
 
+<!-- section_id: "c8f77276-07f8-48d8-9f01-2d5c0861c5b2" -->
 ## 7. Math Learning Game Design
 
+<!-- section_id: "4c238325-21c9-460a-a8bb-6638af7c2f6d" -->
 ### Key Design Principle
 
 Math as a **mechanic** rather than a gatekeeper:
@@ -145,6 +163,7 @@ Math as a **mechanic** rather than a gatekeeper:
 - Path and space manipulation via geometric transforms
 - Network/flow tuning with conservation constraints
 
+<!-- section_id: "0f7034cd-fa21-4529-ac1a-9095706b7921" -->
 ### Graph Visualization Features
 
 - Overlay transparent 3D graphs onto any surface or space
@@ -152,14 +171,17 @@ Math as a **mechanic** rather than a gatekeeper:
 - Volumetric point clouds floating in 3D space
 - Avatar-based measurement (walking lines, turning for angles)
 
+<!-- section_id: "2b88e1e4-f581-45d5-b757-18b7f0f09396" -->
 ### Platform Support
 
 Works on **PC, Xbox, and mobile** - not VR-dependent
 
 ---
 
+<!-- section_id: "fa9ccf84-1b7f-4513-811c-a250f747730b" -->
 ## 8. Development Plan
 
+<!-- section_id: "a9dcf03f-ad75-4476-91a5-30fa095cafc9" -->
 ### Timeline (MSDE v3.2)
 
 | Phase | Dates | Deliverables |
@@ -168,12 +190,14 @@ Works on **PC, Xbox, and mobile** - not VR-dependent
 | **Phase 2** | Jan 8-14 | Multiplayer layer (8 humans + 16 AI) |
 | **Phase 3** | Feb 2026 | Steam Early Access |
 
+<!-- section_id: "b6bbc2e5-ef47-4dba-9bca-1e6c918c1a68" -->
 ### Automation Target
 
 - **87% AI automation**
 - 11 human hours for Phase 1
 - 83 AI hours (Claude/Codex/Gemini)
 
+<!-- section_id: "b34019b9-acac-41aa-a92e-79dd96fbb842" -->
 ### Fidelity Tiers (F1-F4)
 
 | Tier | Physics Backend | Visuals | Use Case |
@@ -185,8 +209,10 @@ Works on **PC, Xbox, and mobile** - not VR-dependent
 
 ---
 
+<!-- section_id: "06a26e21-f8d5-4887-86fc-c427683e24cf" -->
 ## 9. Human Body Simulation Limitations
 
+<!-- section_id: "a285926b-2d81-42f5-af47-b664cf6bb06d" -->
 ### Key Finding
 
 Complete human body simulation at atomistic level is **not currently possible** due to:
@@ -195,6 +221,7 @@ Complete human body simulation at atomistic level is **not currently possible** 
 - Billions of capillaries
 - Exascale computing requirements
 
+<!-- section_id: "45c5a17a-7f20-4146-8e9e-47c6a6941fca" -->
 ### Current Capabilities
 
 - Organ-specific digital twins (heart, lungs, brain)
@@ -202,12 +229,14 @@ Complete human body simulation at atomistic level is **not currently possible** 
 - Finite element crash dynamics
 - Multi-agent frameworks like Organ-Agents
 
+<!-- section_id: "92ea41d9-3092-467a-972c-3b2746dffd42" -->
 ### Why Sequential Simulation Fails
 
 - Bidirectional interactions prevent chaining
 - Real-time feedback loops cannot be simulated sequentially
 - Validation errors compound over chains
 
+<!-- section_id: "9e705cc4-729e-4b22-bbaa-70e2fb2b6cd6" -->
 ### Measurement Limitations
 
 - No method captures real-time proteomics, microbiome, subcellular events simultaneously
@@ -216,8 +245,10 @@ Complete human body simulation at atomistic level is **not currently possible** 
 
 ---
 
+<!-- section_id: "a0905e62-0798-40f6-8a2e-2ab5cd0808c3" -->
 ## 10. Hardware & Software Stack
 
+<!-- section_id: "0b056b75-0808-4e86-a98c-e47552fd5927" -->
 ### Hardware Requirements
 
 | Tier | GPU | Fidelity Modes |
@@ -226,6 +257,7 @@ Complete human body simulation at atomistic level is **not currently possible** 
 | **Optimal** | RTX 4060+ | F1 full physics |
 | **Minimum** | Integrated graphics | F3+F4 only |
 
+<!-- section_id: "c44d1f85-9daf-4033-bfa9-88bb053485be" -->
 ### Software Stack
 
 | Component | Technology |
@@ -239,6 +271,7 @@ Complete human body simulation at atomistic level is **not currently possible** 
 
 ---
 
+<!-- section_id: "817f7882-ba84-40e3-b627-d50d54d7e0c3" -->
 ## Success Vision
 
 The platform delivers **100% real-life applicable knowledge**:

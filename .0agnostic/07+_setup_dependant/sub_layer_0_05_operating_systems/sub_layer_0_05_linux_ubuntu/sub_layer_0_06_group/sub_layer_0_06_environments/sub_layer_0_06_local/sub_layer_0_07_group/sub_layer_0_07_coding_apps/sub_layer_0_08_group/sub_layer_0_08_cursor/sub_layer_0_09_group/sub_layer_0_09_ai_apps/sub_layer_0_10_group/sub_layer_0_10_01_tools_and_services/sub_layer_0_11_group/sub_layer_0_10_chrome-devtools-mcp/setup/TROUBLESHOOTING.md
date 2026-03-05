@@ -7,6 +7,7 @@ resource_name: "TROUBLESHOOTING"
 
 This guide covers common issues when using the Chrome DevTools MCP server on Linux/Ubuntu with Claude Code CLI.
 
+<!-- section_id: "5d7401df-42f4-4440-8c7a-87f65d8a56fd" -->
 ## Table of Contents
 
 - [Chrome Connection Issues](#chrome-connection-issues)
@@ -18,8 +19,10 @@ This guide covers common issues when using the Chrome DevTools MCP server on Lin
 
 ---
 
+<!-- section_id: "334920cf-1488-4ff4-9d7f-5813713c4790" -->
 ## Chrome Connection Issues
 
+<!-- section_id: "c19042b2-f1e3-47c1-8ec8-741c7d320f38" -->
 ### Error: "Cannot connect to browser"
 
 **Symptoms:**
@@ -62,6 +65,7 @@ This guide covers common issues when using the Chrome DevTools MCP server on Lin
    "--browserUrl", "localhost:9222"        // Missing protocol
    ```
 
+<!-- section_id: "8cec906a-6088-4cd5-9ff5-b4719f667c3c" -->
 ### Error: "WebSocket connection failed"
 
 **Symptoms:**
@@ -92,6 +96,7 @@ This guide covers common issues when using the Chrome DevTools MCP server on Lin
 
    Close Chrome DevTools GUI if open - only one client can connect to a debugging target at a time.
 
+<!-- section_id: "c4ab36fc-0636-405f-b9e4-10743321725b" -->
 ### Error: "No debugging targets available"
 
 **Symptoms:**
@@ -115,8 +120,10 @@ This guide covers common issues when using the Chrome DevTools MCP server on Lin
 
 ---
 
+<!-- section_id: "a260fa4a-2cb5-47f8-9d70-fa7f7b4d46b9" -->
 ## DevTools Protocol Errors
 
+<!-- section_id: "3b28b9cb-d9b5-4611-b24f-409d68d82413" -->
 ### Error: "Method not found"
 
 **Symptoms:**
@@ -143,6 +150,7 @@ This guide covers common issues when using the Chrome DevTools MCP server on Lin
    - DOM methods require `DOM.enable`
    - Console methods require `Runtime.enable`
 
+<!-- section_id: "9d1df4f3-4d9d-4fae-afa6-57216a236911" -->
 ### Error: "Target closed"
 
 **Symptoms:**
@@ -166,6 +174,7 @@ This guide covers common issues when using the Chrome DevTools MCP server on Lin
    pgrep -f "google-chrome.*remote-debugging"
    ```
 
+<!-- section_id: "7c1f9fef-8b1c-4084-beff-98e16666a92d" -->
 ### Error: "Cannot find execution context"
 
 **Symptoms:**
@@ -187,8 +196,10 @@ This guide covers common issues when using the Chrome DevTools MCP server on Lin
 
 ---
 
+<!-- section_id: "42430b72-5786-49ab-906b-bddf917258d8" -->
 ## Port Configuration Problems
 
+<!-- section_id: "208c37ea-6b0f-4a20-a0f7-3d76e2cf9f4c" -->
 ### Error: "Port already in use"
 
 **Symptoms:**
@@ -222,6 +233,7 @@ This guide covers common issues when using the Chrome DevTools MCP server on Lin
    "--browserUrl", "http://127.0.0.1:9223"
    ```
 
+<!-- section_id: "c5e8a073-127f-4b48-9db4-316a7a1089b5" -->
 ### Error: "Connection refused on localhost"
 
 **Symptoms:**
@@ -253,6 +265,7 @@ This guide covers common issues when using the Chrome DevTools MCP server on Lin
    sudo iptables -A INPUT -i lo -j ACCEPT
    ```
 
+<!-- section_id: "8e61de26-2222-46c2-9cf8-14bd4ba49a17" -->
 ### Port Not Accessible from MCP Server
 
 **Symptoms:**
@@ -275,8 +288,10 @@ This guide covers common issues when using the Chrome DevTools MCP server on Lin
 
 ---
 
+<!-- section_id: "9e60f5d9-4db7-4487-bc10-4d27589980d7" -->
 ## MCP Server Startup Issues
 
+<!-- section_id: "14c4d4e3-0c40-4aa8-9a57-c78f37dbd891" -->
 ### Error: "MCP server failed to start"
 
 **Symptoms:**
@@ -315,6 +330,7 @@ This guide covers common issues when using the Chrome DevTools MCP server on Lin
    ~/.config/mcp/servers/mcp-chrome-devtools-generic.sh
    ```
 
+<!-- section_id: "a0541d75-1f7f-4006-9b1e-d383c116a647" -->
 ### Error: "Package not found" or "npm error"
 
 **Symptoms:**
@@ -343,8 +359,10 @@ This guide covers common issues when using the Chrome DevTools MCP server on Lin
 
 ---
 
+<!-- section_id: "16d26cd5-d03f-4ad2-b61a-28c3f61a173e" -->
 ## Permission and Access Issues
 
+<!-- section_id: "079cf100-3d15-4717-b81e-e0c6c7d6bfc6" -->
 ### Error: "Permission denied" accessing Chrome
 
 **Symptoms:**
@@ -367,6 +385,7 @@ This guide covers common issues when using the Chrome DevTools MCP server on Lin
    google-chrome --remote-debugging-port=9222 --user-data-dir=/tmp/chrome-debug-$(whoami)
    ```
 
+<!-- section_id: "57e1a07f-efad-45ca-957d-50fab37d2701" -->
 ### Error: "Cannot write to log file"
 
 **Symptoms:**
@@ -394,8 +413,10 @@ This guide covers common issues when using the Chrome DevTools MCP server on Lin
 
 ---
 
+<!-- section_id: "9dc494df-6921-4669-8d09-9b056c106425" -->
 ## Diagnostic Commands
 
+<!-- section_id: "cc9b8393-6560-46c0-9b76-fd781200ac2d" -->
 ### Quick Health Check
 
 ```bash
@@ -457,6 +478,7 @@ else
 fi
 ```
 
+<!-- section_id: "6d0f66f9-d6e6-46f7-96c5-ddcf24d57582" -->
 ### View Recent Log Entries
 
 ```bash
@@ -467,6 +489,7 @@ tail -n 50 /tmp/mcp-chrome.log
 grep -i "error\|fail\|exception" /tmp/mcp-chrome.log
 ```
 
+<!-- section_id: "158398fa-910b-4f20-9f5f-bff9d74dca1f" -->
 ### Test CDP Connection Manually
 
 ```bash
@@ -478,6 +501,7 @@ echo "WebSocket URL: $WS_URL"
 # echo '{"id":1,"method":"Runtime.evaluate","params":{"expression":"1+1"}}' | websocat "$WS_URL"
 ```
 
+<!-- section_id: "6a5a951a-0419-4497-b4cc-3ef6ebe83f4b" -->
 ### Full System Information
 
 ```bash
@@ -493,6 +517,7 @@ echo "Home: $HOME"
 
 ---
 
+<!-- section_id: "7bf9cc9a-301b-4ca1-934d-17804476cffa" -->
 ## Getting Help
 
 If issues persist after trying these solutions:

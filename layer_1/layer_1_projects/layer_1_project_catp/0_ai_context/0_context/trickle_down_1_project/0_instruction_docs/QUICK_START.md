@@ -7,6 +7,7 @@ resource_name: "QUICK_START"
 
 This guide explains how to work on the Firebase backend (`assignment-time`) and the Chrome extension frontend (`task-timer-frontend`) in the same session without crossing wires.
 
+<!-- section_id: "f0fb2b84-959c-4b8f-ab1c-a22c92fd3959" -->
 ## Repository Roles
 
 | Repo | Path | Purpose |
@@ -14,17 +15,21 @@ This guide explains how to work on the Firebase backend (`assignment-time`) and 
 | `assignment-time` | `/home/dawson/dawson-workspace/code/catp/assignment-time` | Firebase Functions + CLI tooling for Canvas assignment ingestion, timing, and data syncing. Contains the Functions emulator (`functions/`) and the CLI timer (`assignment-timer/`). |
 | `task-timer-frontend` | `/home/dawson/dawson-workspace/code/catp/task-timer-frontend` | Chrome extension (bundled via `manifest.json`) that surfaces timing averages in Canvas. |
 
+<!-- section_id: "5a1c6ac0-fefb-469a-b6f7-2256066a7922" -->
 ## One-Time Setup Per Repo
 
+<!-- section_id: "393323e6-f6e8-4430-a38e-971535d27682" -->
 ### assignment-time
 1. `cd /home/dawson/dawson-workspace/code/catp/assignment-time/functions && npm install` (Firebase Functions + emulator deps)
 2. `cd /home/dawson/dawson-workspace/code/catp/assignment-time/assignment-timer && npm install` (CLI timer)
 3. Export Canvas credentials or place them in `functions/.env.local` (`CANVAS_API_KEY`, etc.).
 
+<!-- section_id: "daa904ae-c307-43fe-b637-4d5b751104be" -->
 ### task-timer-frontend
 1. `cd /home/dawson/dawson-workspace/code/catp/task-timer-frontend && npm install`
 2. Enable Chrome developer mode once (`chrome://extensions → Developer mode → Load unpacked → repo root`).
 
+<!-- section_id: "54a0d9c2-f8b0-4ea3-821a-ae300c82cb69" -->
 ## Daily Workflow (Same Session)
 1. **Open two terminals/tabs** (or panes) so each repo has its own working directory. Never run commands for one repo from the other's shell.
 2. **Backend terminal** (`assignment-time/functions`):
@@ -37,16 +42,19 @@ This guide explains how to work on the Firebase backend (`assignment-time`) and 
 4. **Environment variables**: keep Canvas + Firebase secrets in `assignment-time/functions/.env.*`; extension-specific settings (if any) live in `task-timer-frontend/.env`. Do not share files between repos—duplicate values manually when required.
 5. **Branch coordination**: create matching branch names manually (e.g., `feature/session-sync`) in both repos when implementing a cross-cutting change. Commit/push separately.
 
+<!-- section_id: "1a663e51-eb7d-4cf2-952a-a2056f2a1d0f" -->
 ## Testing & Verification
 - Backend: run `node test-student-course-details.js` while emulators are up, plus any Jest/CLI tests under `assignment-timer/test.js`.
 - Frontend: rely on `npm run dev` for hot reload and manually exercise the extension on the Canvas Assignments page; document manual test steps in `trickle_down_3_testing` when behavior changes.
 - When both sides change, verify end-to-end: seed Canvas data → run the CLI timer → observe the extension overlay once you reload it in Chrome.
 
+<!-- section_id: "6e8596f7-51ba-4a05-af45-8192b36942b7" -->
 ## Troubleshooting Tips
 - If terminal commands hang, run Python scripts through `scripts/terminal_wrapper.py` per the universal terminal policy.
 - Keep emulator logs and Vite output visible simultaneously; coordination bugs usually show up in one console first.
 - When Chrome caches assets, click “Update” in the Extensions page or bump the extension version in `manifest.json` before packaging.
 
+<!-- section_id: "8027c7c3-0103-47cb-a712-49debeb32a9b" -->
 ## Reference Checklist Before Ending a Session
 - [ ] `assignment-time` emulator stopped cleanly (Ctrl+C) and recent logs reviewed.
 - [ ] `task-timer-frontend` extension reloaded to confirm the latest bundle.

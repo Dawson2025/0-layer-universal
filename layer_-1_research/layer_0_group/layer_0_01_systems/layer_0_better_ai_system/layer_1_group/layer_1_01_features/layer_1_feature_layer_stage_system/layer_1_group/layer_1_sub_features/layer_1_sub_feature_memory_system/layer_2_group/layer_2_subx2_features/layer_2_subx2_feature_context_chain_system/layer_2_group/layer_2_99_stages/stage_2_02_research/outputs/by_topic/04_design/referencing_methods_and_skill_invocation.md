@@ -5,14 +5,17 @@ resource_name: "referencing_methods_and_skill_invocation"
 ---
 # Design — Referencing Methods & Getting Agents to Use Skills
 
+<!-- section_id: "f9cabb70-cece-4972-bc08-30e2c5af90ec" -->
 ## Purpose
 
 A comprehensive survey of every mechanism available for referencing information, instructions, and skills to AI agents — and design approaches for making agents reliably use them.
 
 ---
 
+<!-- section_id: "17cd7a2b-bfed-497b-9502-91b6e291527d" -->
 ## Part 1: All Available Referencing Methods
 
+<!-- section_id: "1d542564-0562-4ef6-ac5b-d65bf4737d84" -->
 ### 1. CLAUDE.md Chain (Static Context)
 
 **What it is:** Markdown files named `CLAUDE.md` placed at every directory level. Claude Code automatically walks upward from the working directory to the filesystem root, loading every `CLAUDE.md` it finds.
@@ -36,6 +39,7 @@ A comprehensive survey of every mechanism available for referencing information,
 
 ---
 
+<!-- section_id: "14f504c6-653a-4cba-9d79-4099dd27a2c1" -->
 ### 2. @import References
 
 **What it is:** Inline references in CLAUDE.md using `@path/to/file` syntax. Claude Code resolves these and loads the referenced file's content.
@@ -60,6 +64,7 @@ A comprehensive survey of every mechanism available for referencing information,
 
 ---
 
+<!-- section_id: "c6f68213-01f6-4e2f-8486-d11e64fdf9fd" -->
 ### 3. Skills (.claude/skills/)
 
 **What it is:** Markdown files or folders in `.claude/skills/` that define reusable procedures the agent can invoke with `/skill-name`.
@@ -88,6 +93,7 @@ A comprehensive survey of every mechanism available for referencing information,
 
 ---
 
+<!-- section_id: "71cb63a4-4f6b-46d6-8de3-d023f1974c87" -->
 ### 4. Path-Specific Rules (.claude/rules/)
 
 **What it is:** Markdown files in `.claude/rules/` with optional `paths:` YAML frontmatter. Rules without `paths:` load globally. Rules with `paths:` load only when the agent works with matching file patterns.
@@ -111,6 +117,7 @@ A comprehensive survey of every mechanism available for referencing information,
 
 ---
 
+<!-- section_id: "d1921d92-6b74-4e5d-b590-d3c1cba34165" -->
 ### 5. JSON-LD Agent Definitions (.gab.jsonld)
 
 **What it is:** Structured agent definitions in JSON-LD format (AALang/GAB). Define modes, actors, personas, state management, transitions, and constraints.
@@ -144,6 +151,7 @@ jq '."@graph"[] | select(."@id" == "orch:DelegationMode")' file.gab.jsonld
 
 ---
 
+<!-- section_id: "84b60258-8f2c-4964-b200-d00224963596" -->
 ### 6. Integration Summaries (.integration.md)
 
 **What it is:** Auto-generated markdown files that summarize JSON-LD agent definitions. Same base name as the `.gab.jsonld` file (e.g., `orchestrator.gab.jsonld` → `orchestrator.integration.md`).
@@ -167,6 +175,7 @@ jq '."@graph"[] | select(."@id" == "orch:DelegationMode")' file.gab.jsonld
 
 ---
 
+<!-- section_id: "b507260d-0638-4a3e-964b-f4e23a2aa678" -->
 ### 7. Episodic Memory (outputs/episodic/)
 
 **What it is:** Session records stored in `outputs/episodic/index.md` within each layer. Documents what was done, files changed, decisions made.
@@ -189,6 +198,7 @@ jq '."@graph"[] | select(."@id" == "orch:DelegationMode")' file.gab.jsonld
 
 ---
 
+<!-- section_id: "9ec89a1f-a705-4005-a385-c2c101922d23" -->
 ### 8. Auto Memory (~/.claude/projects/*/memory/)
 
 **What it is:** Claude Code's built-in persistent memory. `MEMORY.md` (first 200 lines) loads into every session. Topic files alongside it load on-demand.
@@ -211,6 +221,7 @@ jq '."@graph"[] | select(."@id" == "orch:DelegationMode")' file.gab.jsonld
 
 ---
 
+<!-- section_id: "54f39aa4-6471-4440-a4ad-a84186a81df9" -->
 ### 9. Hand-Off Documents
 
 **What it is:** Structured documents created at session end to preserve context for the next session or agent. Stored in layer-stage directories.
@@ -223,6 +234,7 @@ jq '."@graph"[] | select(."@id" == "orch:DelegationMode")' file.gab.jsonld
 
 ---
 
+<!-- section_id: "794d2f13-0401-44ba-88e0-1e4c7923dca4" -->
 ### 10. Status Files (status.json)
 
 **What it is:** JSON files tracking stage progress, task completion, and blockers within each entity.
@@ -235,6 +247,7 @@ jq '."@graph"[] | select(."@id" == "orch:DelegationMode")' file.gab.jsonld
 
 ---
 
+<!-- section_id: "b04f12e7-144d-4527-b1a2-75e7c59c1f2b" -->
 ### 11. 0AGNOSTIC.md (Agnostic Source of Truth)
 
 **What it is:** The tool-neutral source file from which all tool-specific context files are generated.
@@ -248,12 +261,15 @@ jq '."@graph"[] | select(."@id" == "orch:DelegationMode")' file.gab.jsonld
 
 ---
 
+<!-- section_id: "a6754edb-842c-444d-82a4-d5805fb71946" -->
 ## Part 2: Getting Agents to Actually Use Skills
 
+<!-- section_id: "5bda88aa-734c-4a8e-b353-032dc4e5a36c" -->
 ### The Core Problem
 
 Skill invocation in Claude Code is non-deterministic. The LLM reads skill descriptions and decides — based on semantic judgment — whether a situation matches. There is no algorithmic trigger system. This means skills are missed, misapplied, or ignored depending on how well the description matches the agent's interpretation of the task.
 
+<!-- section_id: "1022a385-2fb8-48be-b8ab-a9259f60f0ad" -->
 ### Design Approaches
 
 #### Approach A: Multi-Avenue Redundancy
@@ -352,6 +368,7 @@ export SLASH_COMMAND_TOOL_CHAR_BUDGET=32000
 
 This prevents skills from being silently dropped when there are many skills. However, more descriptions = more tokens in every message, so this trades context efficiency for coverage.
 
+<!-- section_id: "3d95f42c-2e72-4f83-b3a3-1f6f7504f273" -->
 ### Recommended Design: Combine A + B + C + D
 
 No single approach is sufficient. The recommended design combines all four:
@@ -365,8 +382,10 @@ Approach E (budget increase) is a tactical fix, not a design solution — use it
 
 ---
 
+<!-- section_id: "f887951a-ea08-46ed-b56b-5b13b54de9c1" -->
 ## Part 3: Design Considerations for the Full System
 
+<!-- section_id: "3aac176d-6625-48b9-b57a-3ac4cb6869e5" -->
 ### What Needs to Be Decided
 
 1. **How many lines should static context use?** Target <400, but what's the right balance between navigation pointers and actual rules?
@@ -390,6 +409,7 @@ Approach E (budget increase) is a tactical fix, not a design solution — use it
    - Log skill invocations and compare to expected
    - A/B test different description styles
 
+<!-- section_id: "850e143d-726d-434d-9036-60dfa565ebbd" -->
 ### Design Constraints
 
 - All context must work in markdown (the format LLMs read best)

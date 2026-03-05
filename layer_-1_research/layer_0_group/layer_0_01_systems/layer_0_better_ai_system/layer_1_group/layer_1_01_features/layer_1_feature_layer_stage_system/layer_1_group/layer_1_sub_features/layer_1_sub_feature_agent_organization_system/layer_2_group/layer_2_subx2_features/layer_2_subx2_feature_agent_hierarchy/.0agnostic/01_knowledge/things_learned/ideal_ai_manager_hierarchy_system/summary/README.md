@@ -4,6 +4,7 @@ resource_type: "readme
 knowledge"
 resource_name: "README"
 ---
+<!-- section_id: "1b04e7d1-fe39-4d0a-98e5-3f5517895c66" -->
 ## Ideal AI Manager Hierarchy System – Overview
 
 This file is the **primary overview** of the ideal AI manager hierarchy system.  
@@ -25,6 +26,7 @@ It is:
 
 ---
 
+<!-- section_id: "aa564191-0c69-44c7-a1b4-868c797e52cb" -->
 ### 1. High-Level Idea
 
 You have an **Agent OS** for software development that:
@@ -48,6 +50,7 @@ You have an **Agent OS** for software development that:
 
 ---
 
+<!-- section_id: "c2eea9f4-4e1c-480e-b26a-f2e96a7941bf" -->
 ### 2. Core Components (Very Short)
 
 - **Layers**  
@@ -80,6 +83,7 @@ You have an **Agent OS** for software development that:
 
 ---
 
+<!-- section_id: "8e8a6c1c-1dc3-4401-8d03-8449b46d85bf" -->
 ### 3. Where to Find More Detail
 
 Use this file when you need a quick mental model or to prime an AI agent.  

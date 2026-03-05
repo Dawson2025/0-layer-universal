@@ -8,6 +8,7 @@ resource_name: "README"
 
 Claude Code agentic text-to-speech — AI-controlled speech for CLI tools.
 
+<!-- section_id: "1487f8dd-a8d5-4d99-9fc7-684dbff2e6d1" -->
 ## Scope
 - Claude Code TTS hook evaluation and setup (Kokoro, MCP plugin)
 - PostToolUse hook for automatic speech on responses
@@ -15,5 +16,6 @@ Claude Code agentic text-to-speech — AI-controlled speech for CLI tools.
 - pyttsx3 / Piper integration for offline TTS
 - Speech extraction logic
 
+<!-- section_id: "d619958c-dca0-42fe-a2ce-0c4f5263fac6" -->
 ## Parent
 Part of `layer_1_sub_feature_audio` (audio capabilities research).

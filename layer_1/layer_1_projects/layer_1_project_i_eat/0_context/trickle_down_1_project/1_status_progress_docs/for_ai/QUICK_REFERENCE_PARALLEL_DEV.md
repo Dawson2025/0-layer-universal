@@ -5,10 +5,12 @@ resource_name: "QUICK_REFERENCE_PARALLEL_DEV"
 ---
 # Quick Reference: Parallel Development
 
+<!-- section_id: "6592fda4-7764-4a7b-8b48-0ef5768bafbf" -->
 ## 🚀 Start Here
 
 **Your codebase is configured for parallel development!** Multiple agents can work on different features simultaneously without conflicts.
 
+<!-- section_id: "ef59ad40-43bb-4e69-a65b-20b19b8940fa" -->
 ## Feature Directory Map
 
 | Feature | Directory | Your Work Area |
@@ -22,8 +24,10 @@ resource_name: "QUICK_REFERENCE_PARALLEL_DEV"
 | **Words** | `features/words/` | Word creation, search, editing, media |
 | **Admin** | `features/admin/` | Phoneme management, templates, DB tools |
 
+<!-- section_id: "cae1d17c-c3d6-41ef-aac4-e781e5981aa7" -->
 ## Traffic Light System
 
+<!-- section_id: "6b2c9a28-7f2d-4dc7-b137-62720a698255" -->
 ### 🟢 GREEN - Work Freely
 - ✅ Add routes to your feature
 - ✅ Modify templates in your feature
@@ -31,20 +35,24 @@ resource_name: "QUICK_REFERENCE_PARALLEL_DEV"
 - ✅ Create tests in your feature
 - ✅ Modify business logic in your feature
 
+<!-- section_id: "d6948212-9f32-40d9-9f1d-68918bf2bf36" -->
 ### 🟡 YELLOW - Check First
 - ⚠️ Using functions from `core/` or `services/`
 - ⚠️ Modifying `templates/base.html`
 - ⚠️ Adding database migrations
 - ⚠️ Modifying global CSS
 
+<!-- section_id: "e9a481e4-2969-44ef-87e5-25e1ce320132" -->
 ### 🔴 RED - Must Coordinate
 - 🛑 Modifying `core/*` or `services/*`
 - 🛑 Changing database schema
 - 🛑 Modifying another feature's code
 - 🛑 Changing `app.py` blueprint registration
 
+<!-- section_id: "c8074294-624b-4772-96dc-7b601076bf83" -->
 ## Common Code Patterns
 
+<!-- section_id: "90337f5e-a374-449b-846e-0a6706d365f4" -->
 ### 1. Add a Route
 
 ```python
@@ -61,6 +69,7 @@ def my_page():
     return render_template('my_feature/my_page.html', user=user)
 ```
 
+<!-- section_id: "7e831425-cc8e-4faf-9290-d106a2af3c4f" -->
 ### 2. Add an API Endpoint
 
 ```python
@@ -77,6 +86,7 @@ def api_action():
     return jsonify({'success': True, 'data': result})
 ```
 
+<!-- section_id: "f6e57143-3640-4df9-a4af-8882b10e1a78" -->
 ### 3. Database Query
 
 ```python
@@ -95,6 +105,7 @@ def get_items(user_id, project_id):
     return results
 ```
 
+<!-- section_id: "cdff68bd-c450-4530-8d1c-ae2cf3937c47" -->
 ### 4. Render Template with User Context
 
 ```python
@@ -108,6 +119,7 @@ def page():
     return render_template('my_feature/page.html', user=user)
 ```
 
+<!-- section_id: "c1b135cb-4e5e-4fa5-be75-a4f979866ef8" -->
 ### 5. Check Project Ownership
 
 ```python
@@ -120,6 +132,7 @@ def admin_action():
     pass
 ```
 
+<!-- section_id: "eddee93f-cd09-4b35-a9b1-a461e8e1b1f4" -->
 ## Quick Task Lookup
 
 | I want to... | Location | Example |
@@ -133,6 +146,7 @@ def admin_action():
 | Project menu | `features/variant_menu/routes.py` | `/main-menu` |
 | Dashboard | `features/dashboard/routes.py` | `/dashboard` |
 
+<!-- section_id: "e9b1d018-2391-45b1-8532-ad8da5d1361a" -->
 ## Import Quick Reference
 
 ```python
@@ -153,6 +167,7 @@ from features.auth.helpers import is_project_owner
 from features.projects.metadata import normalize_project_identifier
 ```
 
+<!-- section_id: "0c7b7156-1678-4ee3-971a-5f5700304404" -->
 ## Feature Structure Template
 
 ```
@@ -175,6 +190,7 @@ features/my_feature/
     └── test_api.py
 ```
 
+<!-- section_id: "2a046836-eadf-44e9-b31e-0493a2cb81c3" -->
 ## Testing Your Feature
 
 ```bash
@@ -188,6 +204,7 @@ pytest features/my_feature/tests/test_routes.py
 pytest --cov=features/my_feature features/my_feature/tests/
 ```
 
+<!-- section_id: "9fc63bc6-0f69-4dbf-abd9-d2fd0775957f" -->
 ## Starting a New Feature
 
 1. **Create directory**: `mkdir -p features/my_feature/templates`
@@ -211,6 +228,7 @@ pytest --cov=features/my_feature features/my_feature/tests/
 
 5. **Add tests** (`tests/test_my_feature.py`)
 
+<!-- section_id: "b02eab6e-f326-4292-a584-a931c22c467a" -->
 ## Parallel Work Example
 
 **Scenario: 3 agents working simultaneously**
@@ -229,6 +247,7 @@ pytest --cov=features/my_feature features/my_feature/tests/
 
 **Result**: All three can commit without merge conflicts!
 
+<!-- section_id: "57e475b4-4cfa-44ca-b014-29f8f2feec13" -->
 ## Help & Documentation
 
 - **Full Architecture**: [PARALLEL_DEVELOPMENT_ARCHITECTURE.md](PARALLEL_DEVELOPMENT_ARCHITECTURE.md)
@@ -237,6 +256,7 @@ pytest --cov=features/my_feature features/my_feature/tests/
 - **Setup Guide**: [PARALLEL_DEVELOPMENT_SETUP_COMPLETE.md](PARALLEL_DEVELOPMENT_SETUP_COMPLETE.md)
 - **Requirements**: [requirements/README.md](requirements/README.md)
 
+<!-- section_id: "83d0667f-dc32-4dda-9585-d122904b3363" -->
 ## Key Reminders
 
 1. **Stay in your feature directory** - That's your green zone

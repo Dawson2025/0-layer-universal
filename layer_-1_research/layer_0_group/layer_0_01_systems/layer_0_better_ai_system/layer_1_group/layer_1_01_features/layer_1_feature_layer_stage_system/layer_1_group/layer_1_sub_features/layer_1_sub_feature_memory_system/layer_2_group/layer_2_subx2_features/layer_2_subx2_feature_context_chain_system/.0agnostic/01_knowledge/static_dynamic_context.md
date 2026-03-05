@@ -12,6 +12,7 @@ resource_name: "static_dynamic_context"
 
 ---
 
+<!-- section_id: "40eaa9c1-d2fc-4291-9ec6-2456a57d405f" -->
 ## Overview
 
 Context in the layer-stage system is classified along two independent dimensions:
@@ -23,6 +24,7 @@ These dimensions are orthogonal — any combination is possible.
 
 ---
 
+<!-- section_id: "d423c401-395b-4816-9c98-8f04148a2c4b" -->
 ## Dimension 1: Timing (Static vs Dynamic)
 
 | Type | When Loaded | Token Cost | Examples |
@@ -30,6 +32,7 @@ These dimensions are orthogonal — any combination is possible.
 | **Static** | Every API message, automatically | Constant (per call) | CLAUDE.md chain, MCP schemas, skill listings, auto memory |
 | **Dynamic** | Only when explicitly invoked | On-demand (pay per use) | Tool results, skill full content, deeper CLAUDE.md, .0agnostic/ reads |
 
+<!-- section_id: "558b1ad3-44be-4fea-8376-9d5104bc39b1" -->
 ### Static Context Budget
 
 Static context is the "tax" paid on every single API call:
@@ -44,6 +47,7 @@ Managed settings:    ~200 tokens
 Total static:        ~7,500 tokens per API call
 ```
 
+<!-- section_id: "2dcd5a01-3268-43b8-b4f9-7f7234275ae1" -->
 ### Dynamic Context Loading
 
 Dynamic context only costs tokens when used:
@@ -59,6 +63,7 @@ Read episodic memory: ~500 tokens (session history)
 
 ---
 
+<!-- section_id: "8306bc0b-b4da-4541-9160-1a047d19d83c" -->
 ## Dimension 2: Ownership (Fixed vs Configurable)
 
 | Type | Who Controls | Can Modify? | Examples |
@@ -66,6 +71,7 @@ Read episodic memory: ~500 tokens (session history)
 | **Fixed** | Claude Code runtime / Anthropic | No | System prompt, tool schemas, loading order, cascade behavior |
 | **Configurable** | Project author / user | Yes | CLAUDE.md content, .0agnostic/ resources, skills, MCP servers |
 
+<!-- section_id: "373bc520-3fa7-4b4d-9a79-33fe87a5a424" -->
 ### Fixed Context
 
 These items are determined by Claude Code itself and cannot be changed by the user:
@@ -74,6 +80,7 @@ These items are determined by Claude Code itself and cannot be changed by the us
 - How path rules match directories
 - The tool call/result format
 
+<!-- section_id: "45d46ece-37fc-4fef-871a-500e8a295c20" -->
 ### Configurable Context
 
 Everything the user can edit to change what the AI sees:
@@ -85,6 +92,7 @@ Everything the user can edit to change what the AI sees:
 
 ---
 
+<!-- section_id: "bb7247a3-a2e5-44f9-93c5-8d32bddb945f" -->
 ## The 2x2 Matrix
 
 | | **Fixed** | **Configurable** |
@@ -92,6 +100,7 @@ Everything the user can edit to change what the AI sees:
 | **Static** | System prompt preamble, tool schemas, loading order | CLAUDE.md content, MCP schemas, skill listings, auto memory |
 | **Dynamic** | Tool call format, cascade mechanics | .0agnostic/ resources, .gab.jsonld, skills content, episodic memory |
 
+<!-- section_id: "b879726e-cc67-424c-aacf-61e679af6370" -->
 ### Optimization Strategy
 
 The biggest optimization lever is the **Static + Configurable** quadrant:
@@ -105,6 +114,7 @@ The biggest optimization lever is the **Static + Configurable** quadrant:
 
 ---
 
+<!-- section_id: "6ff3c665-10d0-404d-b85d-5db5e7d87e05" -->
 ## Context Flow Diagram
 
 ```
@@ -150,6 +160,7 @@ The biggest optimization lever is the **Static + Configurable** quadrant:
 
 ---
 
+<!-- section_id: "aaa09820-8dfc-485b-bfa3-e83032ae2887" -->
 ## Related Documents
 
 - Context chain default view (full diagram): `layer_3_group/.../chain_visualization/diagrams/current/context_chain/default_view.md`

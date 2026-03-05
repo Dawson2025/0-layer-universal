@@ -10,6 +10,7 @@ resource_name: "02_APPLICATION_IMPLEMENTED"
 
 ---
 
+<!-- section_id: "a6642b7f-c2c1-4e81-91b6-536fa3340d60" -->
 ## Overview
 
 Claude Code provides the **mechanisms**. Users/teams must provide the **content and strategy**:
@@ -24,12 +25,15 @@ Claude Code provides the **mechanisms**. Users/teams must provide the **content 
 
 ---
 
+<!-- section_id: "d66b0732-3a96-4604-99c0-3a16ac3a2353" -->
 ## 1. CLAUDE.md Files — Content & Strategy
 
+<!-- section_id: "36518350-eb1c-4223-a6b4-f0889c68d997" -->
 ### What You Must Create
 
 Each CLAUDE.md file is entirely user-written. Claude Code just **finds and loads** it; you decide **what goes in it**.
 
+<!-- section_id: "30a6f6b2-c410-4c63-9ad8-3e3452a8f5b5" -->
 ### Examples of Decisions YOU Make
 
 **Global (~/.claude/CLAUDE.md)**:
@@ -48,6 +52,7 @@ Each CLAUDE.md file is entirely user-written. Claude Code just **finds and loads
 - What's forbidden in this directory? (don't touch this, it's legacy)
 - What should Claude know about THIS component?
 
+<!-- section_id: "ff827530-3972-4c4e-b0e6-0fd5c36a8866" -->
 ### User Responsibility
 
 - **Write** CLAUDE.md files from scratch
@@ -58,12 +63,15 @@ Each CLAUDE.md file is entirely user-written. Claude Code just **finds and loads
 
 ---
 
+<!-- section_id: "4d77a42b-9a0d-4453-a589-1ee238336d7c" -->
 ## 2. MEMORY.md — What & How to Remember
 
+<!-- section_id: "99df63ae-c5ea-47f7-ac1b-4cd81af6b1fc" -->
 ### What You Must Create
 
 `~/.claude/projects/[project-id]/memory/MEMORY.md` is entirely user-managed.
 
+<!-- section_id: "7e286d50-af9f-45e2-8c58-d3128a6479c3" -->
 ### Strategic Decisions YOU Make
 
 **What to put in first 200 lines** (auto-injected every session):
@@ -84,6 +92,7 @@ Each CLAUDE.md file is entirely user-written. Claude Code just **finds and loads
 - `database.md` — Database schema, queries
 - Custom topics as needed
 
+<!-- section_id: "59b8350f-808b-47bf-9581-bb3bc6bf33ed" -->
 ### User Responsibility
 
 - **Decide** what's important enough to remember
@@ -95,12 +104,15 @@ Each CLAUDE.md file is entirely user-written. Claude Code just **finds and loads
 
 ---
 
+<!-- section_id: "1d490d3d-e3ad-4ecd-b44b-82cc09ecea37" -->
 ## 3. Skills Creation — Reusable Workflows
 
+<!-- section_id: "334af333-b3c8-43ad-a99a-148bfa45dab5" -->
 ### What You Must Create
 
 `~/.claude/skills/[skill-name]/SKILL.md` — entirely user-designed.
 
+<!-- section_id: "9bc65ac1-6b06-4324-9694-d2dd79df7a22" -->
 ### Strategic Decisions YOU Make
 
 **What skills to create**:
@@ -138,6 +150,7 @@ description: "What this skill does"
 [Related documentation]
 ```
 
+<!-- section_id: "b318b50c-0d13-41fa-8cfe-dd834f302e76" -->
 ### Examples of Skills You Might Create
 
 - **`/code-review`** — Systematic code review checklist
@@ -146,6 +159,7 @@ description: "What this skill does"
 - **`/test-new-feature`** — Test-first workflow for new features
 - **`/performance-profile`** — Steps to find performance bottlenecks
 
+<!-- section_id: "58c2c9ee-5381-4245-9717-6c4955d2798c" -->
 ### User Responsibility
 
 - **Identify** workflows worth encapsulating
@@ -156,8 +170,10 @@ description: "What this skill does"
 
 ---
 
+<!-- section_id: "214f1f78-ad1f-430b-81f5-7d8239f4e3ab" -->
 ## 4. MCP Server Setup — Which Tools to Connect
 
+<!-- section_id: "00c80c2b-f83e-41b0-8bc7-ad00800c7143" -->
 ### What You Must Decide
 
 Claude Code provides the **mechanism** to connect MCP servers. **You** decide:
@@ -178,6 +194,7 @@ Claude Code provides the **mechanism** to connect MCP servers. **You** decide:
 - Do I need GitHub repo access? → Load GitHub MCP
 - Do I need web search? → Load Tavily
 
+<!-- section_id: "7cef89fa-b8c1-4eb7-806e-33c60e0ec445" -->
 ### User Responsibility
 
 - **Research** which MCP servers exist (not part of Claude Code)
@@ -189,8 +206,10 @@ Claude Code provides the **mechanism** to connect MCP servers. **You** decide:
 
 ---
 
+<!-- section_id: "cdc5a62a-f80f-4a44-a420-17af04045279" -->
 ## 5. Subagent Strategy — When to Parallelize
 
+<!-- section_id: "8e69f39d-a373-4532-930c-6a38a2554fd4" -->
 ### What You Must Decide
 
 Claude Code provides subagent **capability**. **You** decide:
@@ -210,6 +229,7 @@ Claude Code provides subagent **capability**. **You** decide:
 - No parent conversation history (unless needed)
 - Access to same MCP servers (if required)
 
+<!-- section_id: "d89b07dd-31cb-40ea-8ce4-b16a743adb69" -->
 ### Example Strategy
 
 ```
@@ -223,6 +243,7 @@ Strategy (with subagents):
 Parent agent: Aggregates summaries, identifies patterns
 ```
 
+<!-- section_id: "449594e2-2123-438b-9df1-70887d776fa4" -->
 ### User Responsibility
 
 - **Analyze** task parallelizability
@@ -233,8 +254,10 @@ Parent agent: Aggregates summaries, identifies patterns
 
 ---
 
+<!-- section_id: "5eae687d-e2fd-4a20-ad14-e693fac1e01f" -->
 ## 6. Context Management Strategy — Staying Under Limits
 
+<!-- section_id: "07abf02a-5f73-4c71-ae05-1b594b7dcf96" -->
 ### What You Must Decide
 
 Claude Code provides **auto-compaction**. **You** decide:
@@ -254,6 +277,7 @@ Claude Code provides **auto-compaction**. **You** decide:
 - Should I use subagents to parallelize?
 - Can I complete before context fills?
 
+<!-- section_id: "f2c7ef12-ad1d-4410-a92c-43035ebe88d8" -->
 ### Strategic Decisions
 
 **Lean static context**:
@@ -271,6 +295,7 @@ Claude Code provides **auto-compaction**. **You** decide:
 - Use `/compact` proactively if needed
 - Save state and start fresh session if stuck
 
+<!-- section_id: "cf3a4182-cc6b-4024-b70b-22de72c4e9ac" -->
 ### User Responsibility
 
 - **Design** context hierarchically
@@ -281,8 +306,10 @@ Claude Code provides **auto-compaction**. **You** decide:
 
 ---
 
+<!-- section_id: "0ce51a68-95a3-48e6-a688-769f176b5631" -->
 ## 7. File Organization — Structuring for @References
 
+<!-- section_id: "6afc879d-f8b9-48fb-bf35-38f960226424" -->
 ### What You Must Decide
 
 Claude Code provides **@file/@folder** loading. **You** decide:
@@ -301,6 +328,7 @@ Claude Code provides **@file/@folder** loading. **You** decide:
 - Related code together → easier to load with @folder
 - Modular code split across files → load only needed @files
 
+<!-- section_id: "d59e25e6-b884-4b2d-8b22-fa3637e8403f" -->
 ### Example Organization
 
 **Good** (easy to @reference):
@@ -331,6 +359,7 @@ src/
 └── config.py
 ```
 
+<!-- section_id: "f1db165d-2c10-4a8a-be60-afbad77e88f5" -->
 ### User Responsibility
 
 - **Organize** code logically (helps Claude, not just humans)
@@ -341,6 +370,7 @@ src/
 
 ---
 
+<!-- section_id: "f7fa1d5d-6084-4d89-92ea-24d33578895d" -->
 ## Summary: Application-Implemented = Strategy & Content
 
 | Aspect | Claude Code Does | You Must Provide |
@@ -355,6 +385,7 @@ src/
 
 ---
 
+<!-- section_id: "1c9bc23a-0324-434d-9526-ee9847367ec8" -->
 ## Key Principle
 
 **Claude Code provides the mechanisms. You provide the strategy and content.**

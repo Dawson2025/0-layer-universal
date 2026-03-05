@@ -5,16 +5,20 @@ resource_name: "layer_2.stage_02_research.stage_report"
 ---
 # Stage Report: 02_research (Memory System)
 
+<!-- section_id: "a7d0d2a2-df48-46b8-ab0e-238c9324d001" -->
 ## Status
 **active** — Research substantially complete, ready for review
 
+<!-- section_id: "e2f4c874-35e9-4327-a7df-0296a99a5413" -->
 ## Last Updated
 2026-02-21
 
+<!-- section_id: "dd7b8139-c78f-4e1c-8525-a6a5185dce2b" -->
 ## Summary
 
 Comprehensive research into AI agent memory systems covering biological foundations, cognitive science mappings, implementation architectures, data structures, commercial platforms, performance benchmarks, and layer-stage system comparisons. 38 research documents produced spanning ~600KB of distilled knowledge.
 
+<!-- section_id: "11211961-91b7-4043-b46a-c6d5148da083" -->
 ## Key Outputs
 
 - `outputs/by_topic/` — 38 research documents (00-37) covering the full landscape of AI agent memory
@@ -25,6 +29,7 @@ Comprehensive research into AI agent memory systems covering biological foundati
   - Docs 32-37: Comparisons (layer-stage vs commercial systems)
 - `.0agnostic/01_knowledge/memory_systems/docs/core_ai_memory_architecture.md` — Distilled knowledge summary
 
+<!-- section_id: "01d4a244-f4d5-4f42-99ea-9b03d61165cc" -->
 ## Key Findings
 
 - Memory types form a 6-level biological dependency chain (sensory → autobiographical)
@@ -35,6 +40,7 @@ Comprehensive research into AI agent memory systems covering biological foundati
 - The 4-stage consolidation pipeline (extract → consolidate → store → retrieve) is the standard architecture
 - All data structures reduce to: arrays, trees (B-trees), graphs (HNSW, adjacency lists), and hash tables
 
+<!-- section_id: "05aad222-9843-454b-93a1-8d4c23f36013" -->
 ## Open Items
 
 - Prototype implementation not yet started (see `19_prototype_specification.md`)
@@ -42,6 +48,7 @@ Comprehensive research into AI agent memory systems covering biological foundati
 - Emotional and spatial memory types not yet mapped to concrete AI implementations
 - Multi-agent memory synchronization patterns need deeper investigation
 
+<!-- section_id: "78f669bb-8179-4d61-a927-9714e258571e" -->
 ## Handoff
 
 - **Ready for next stage**: yes (research is comprehensive)

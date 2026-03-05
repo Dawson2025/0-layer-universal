@@ -9,6 +9,7 @@ resource_name: "agent_instantiation_chain"
 
 ---
 
+<!-- section_id: "9f660277-ca73-4655-8d96-f9e763b3a705" -->
 ## Overview
 
 ```
@@ -71,6 +72,7 @@ resource_name: "agent_instantiation_chain"
 
 ---
 
+<!-- section_id: "8fc055a3-5970-401d-8b62-3c6e554d1c67" -->
 ## Working Directory Impact
 
 The agent's working directory determines TIER 3 context:
@@ -113,6 +115,7 @@ The agent's working directory determines TIER 3 context:
 
 ---
 
+<!-- section_id: "1f4adbca-fdb2-42b0-802d-5f834fc64735" -->
 ## Context Chain Loading
 
 Files reference each other, creating chains:
@@ -143,6 +146,7 @@ Files reference each other, creating chains:
 
 ---
 
+<!-- section_id: "077f77e1-1277-4fb7-924a-470b8cf12b0d" -->
 ## File Format Roles
 
 ```
@@ -169,6 +173,7 @@ Files reference each other, creating chains:
 
 ---
 
+<!-- section_id: "8278d9a1-9052-4e98-8284-3d124d9acaef" -->
 ## Sub-Agent Spawning
 
 ```
@@ -211,6 +216,7 @@ Files reference each other, creating chains:
 
 ---
 
+<!-- section_id: "b00930c8-2085-494a-9821-510625d0e4dc" -->
 ## Agent Decisions (TIER 6)
 
 ```
@@ -248,6 +254,7 @@ Files reference each other, creating chains:
 
 ---
 
+<!-- section_id: "e831567d-84da-45ed-8855-9aea8b6b36eb" -->
 ## Summary Table
 
 | Working Directory | CLAUDE.md Files | Key Context Gained |

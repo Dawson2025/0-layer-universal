@@ -7,9 +7,11 @@ resource_name: "knowledge_system_README"
 
 This slot maps to existing universal content.
 
+<!-- section_id: "4defed3b-3673-4d2f-ac07-126deffb1c6f" -->
 ## Primary sources
 (See parent README in 0_universal for mapped paths.)
 
+<!-- section_id: "a79d63a5-4da6-4421-aca4-159ed624323f" -->
 ## Notes
 - Add slot-specific docs here over time.
 - Keep mappings up to date if paths change.

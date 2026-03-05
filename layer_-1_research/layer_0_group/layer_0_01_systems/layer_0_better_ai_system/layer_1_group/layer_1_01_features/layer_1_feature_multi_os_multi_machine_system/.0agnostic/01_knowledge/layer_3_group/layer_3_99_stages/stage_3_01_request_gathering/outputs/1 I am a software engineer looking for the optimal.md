@@ -73,6 +73,7 @@ Below is an opinionated design focused on minimizing friction and avoiding I/O t
 
 ***
 
+<!-- section_id: "e8bcbbcf-c772-4cec-825f-05d289784ca3" -->
 ## Recommended architecture
 
 Use this high‑level setup:
@@ -93,10 +94,12 @@ On Windows you work in `C:\...\dawson-workspace-win`, WSL syncs that to its ext4
 
 ***
 
+<!-- section_id: "d723931c-86ee-42fe-ab0a-80ac4c61b3f0" -->
 ## 1. Store‑and‑forward sync feasibility
 
 Given that Windows/WSL and native Ubuntu never run together, you need a “mailbox” device/service.
 
+<!-- section_id: "04e52b16-cf7b-42f2-af2c-e3149333aafc" -->
 ### Using Syncthing or Mutagen with a relay
 
 - **Topology**:
@@ -109,6 +112,7 @@ Given that Windows/WSL and native Ubuntu never run together, you need a “mailb
     - After the first scan, incremental updates are usually much faster because only changed files are rehashed and transferred.
 
 
+<!-- section_id: "c0ed26ca-62a9-4543-882d-b2e9a3a2cda0" -->
 ### Reducing scan pain
 
 - **Ignore heavy, reproducible directories** in the sync config:
@@ -125,8 +129,10 @@ Result: yes, store‑and‑forward is viable for large workspaces, as long as he
 
 ***
 
+<!-- section_id: "f2be6d64-a80c-4a48-ae90-ce328dc47fb8" -->
 ## 2. Shared filesystem options
 
+<!-- section_id: "523d603a-dfd9-4a4e-9edf-6f97af7a4757" -->
 ### Shared NTFS partition
 
 - Pros:
@@ -138,6 +144,7 @@ Result: yes, store‑and‑forward is viable for large workspaces, as long as he
 
 This works **only** if you are okay developing from Windows host tools and using WSL/Linux tools in a more limited way; it does not satisfy “Linux‑native performance in WSL and native Ubuntu from the same partition”.
 
+<!-- section_id: "e1fdfb6e-2e44-476b-8239-4168e6fcdaf9" -->
 ### Shared Btrfs with WinBtrfs
 
 - A Btrfs data partition mounted:
@@ -150,6 +157,7 @@ This works **only** if you are okay developing from Windows host tools and using
     - Good for sharing a data partition between **Windows host** and **Ubuntu**, but does not solve WSL2 performance; for that, you still want the WSL ext4 VHD and a sync layer.
 
 
+<!-- section_id: "d1a72af6-40ca-4771-a889-5fe36f0a5598" -->
 ### Shared exFAT
 
 - Pros:
@@ -164,8 +172,10 @@ This works **only** if you are okay developing from Windows host tools and using
 
 ***
 
+<!-- section_id: "2b86cbce-553f-4cb8-9127-4aa229e614fd" -->
 ## 3. Novel / out‑of‑the‑box options
 
+<!-- section_id: "19e25a60-8cfa-4b75-951e-1d9ac1d99d52" -->
 ### Mutagen, Unison, and similar sync tools
 
 - **Mutagen**
@@ -177,6 +187,7 @@ This works **only** if you are okay developing from Windows host tools and using
 
 Either is more “dev‑centric” and script‑friendly than generic cloud sync.
 
+<!-- section_id: "9580a97e-374b-4fb1-b4de-5d1b4597c46a" -->
 ### Dual‑boot focused tools
 
 There is currently no widely adopted, dev‑ready “dual‑boot workspace sync” product that directly solves “WSL ext4 + native Linux + Windows” in one turnkey package; community answers consistently point to combinations of:
@@ -186,6 +197,7 @@ There is currently no widely adopted, dev‑ready “dual‑boot workspace sync�
 - Occasionally external SSDs with a shared Linux installation, but that changes your hardware assumptions.[^1_2]
 
 
+<!-- section_id: "a1665b89-1eb7-4c1f-b35b-2cabddbe7e83" -->
 ### Git‑ or watcher‑based automation
 
 - Using **git only** for active sync quickly becomes annoying: you must commit/stash before reboots, deal with uncommitted changes, and you cannot easily sync `node_modules` or `.venv` even if you wanted to.[^1_4]
@@ -193,6 +205,7 @@ There is currently no widely adopted, dev‑ready “dual‑boot workspace sync�
 
 Git is still essential as a **logical sync and backup layer**, but not your transport for every file edit between OSes.
 
+<!-- section_id: "e887e021-69e0-4a7f-9ca7-470d1e0fb80d" -->
 ### Virtualization tricks (raw partitions into WSL2)
 
 - WSL2 uses a per‑distro virtual disk (VHDX) by default, but Windows 11 can mount physical disks directly into WSL in certain setups.[^1_9]
@@ -208,6 +221,7 @@ This can work for enthusiasts but **increases** maintenance friction, which conf
 
 ***
 
+<!-- section_id: "438a0d9a-df2c-42a3-85b2-d59a13c2d76a" -->
 ## Concrete, low‑friction plan
 
 Given your constraints and the state of tools in 2025/2026, this is a practical, low‑maintenance plan:
@@ -293,6 +307,7 @@ Because tool access is currently restricted, this answer leans on prior discussi
 
 ***
 
+<!-- section_id: "5d606f3b-71c5-4875-807a-e80d8a8fce6f" -->
 ## Core idea: three working trees + one sync fabric
 
 To have changes from *any* of Windows, WSL, or native Ubuntu propagate to the other two, think in terms of three peers:
@@ -315,8 +330,10 @@ Result: edit in *any* environment, and after that environment has synced to the 
 
 ***
 
+<!-- section_id: "ad4240bf-047c-409d-a753-65f3225fbf61" -->
 ## How this satisfies “edit anywhere”
 
+<!-- section_id: "1da28268-1deb-40ae-83c4-22b567155a93" -->
 ### 1. Editing in Windows (host tools)
 
 - You work in `C:\Users\you\dawson-workspace-win`.
@@ -327,6 +344,7 @@ Result: edit in *any* environment, and after that environment has synced to the 
     - On next Windows↔relay↔Ubuntu sync, Ubuntu sees everything too.
 
 
+<!-- section_id: "c8b688e6-bc8c-44f7-a4ad-2eb9d05b9712" -->
 ### 2. Editing in WSL
 
 - You work directly in `/home/you/dawson-workspace` inside WSL.
@@ -334,6 +352,7 @@ Result: edit in *any* environment, and after that environment has synced to the 
 - The WSL tree also syncs to the relay so Ubuntu will pick it up next time you boot into it.
 
 
+<!-- section_id: "7fa0e333-82b0-4f13-8ba4-fc4a76140256" -->
 ### 3. Editing in native Ubuntu
 
 - You work in `/home/you/dawson-workspace` on bare metal.
@@ -351,6 +370,7 @@ As long as:
 
 ***
 
+<!-- section_id: "348216df-5c8c-4c45-a575-21f7a43f63cd" -->
 ## Handling the big pain point: heavy directories
 
 To keep this usable in practice (and avoid long scans every reboot), you need strict boundaries:
@@ -369,6 +389,7 @@ This keeps the sync surface relatively small and makes per‑boot reconciliation
 
 ***
 
+<!-- section_id: "da8c84bd-d234-47e8-8ef4-7432bd86712f" -->
 ## What this *doesn’t* give you
 
 It is important to be explicit about limits:
@@ -384,6 +405,7 @@ Given the dual‑boot constraint (never online simultaneously), the relay + thre
 
 ***
 
+<!-- section_id: "b21b4dd9-2c72-425d-9288-707f02b25b48" -->
 ## Concrete steps you can take
 
 Here is an actionable outline you can refine:
@@ -471,6 +493,7 @@ Below are concrete strategies to stay safe if WSL breaks, and to recover if it d
 
 ***
 
+<!-- section_id: "0b585766-dabb-4776-a8f4-01bf52ac7c22" -->
 ## Don’t let WSL be “the only copy”
 
 Design things so that, at any moment, your code is also present outside the WSL VHD:
@@ -489,10 +512,12 @@ With this setup, WSL failing is an inconvenience, not data loss.
 
 ***
 
+<!-- section_id: "f8e9127e-2268-4ce0-b6d6-28ee28012eec" -->
 ## What to do when WSL actually breaks
 
 If WSL itself is corrupted (VHD won’t mount, distro won’t start), you have two paths:
 
+<!-- section_id: "ab599208-32ff-4d42-bb9a-0683d78d2131" -->
 ### 1. Recreate WSL and re‑sync
 
 - Re‑install the WSL distro (or fix it) so you get a fresh ext4 VHD.[^3_19]
@@ -502,6 +527,7 @@ If WSL itself is corrupted (VHD won’t mount, distro won’t start), you have t
 
 This is quick if your canonical copy is outside WSL.
 
+<!-- section_id: "9ef44403-d472-4815-9bb9-bc6ecb76fcef" -->
 ### 2. Try to recover the old WSL VHD (optional)
 
 If you really need something that only lived inside WSL:
@@ -517,6 +543,7 @@ This is your “last resort” path; you shouldn’t rely on it for routine resi
 
 ***
 
+<!-- section_id: "68d01c04-a947-48ae-bdff-91fa1cc05025" -->
 ## Adjusting your sync model for WSL failure
 
 To make your “edit anywhere” story robust even if WSL dies mid‑work:
@@ -535,6 +562,7 @@ To make your “edit anywhere” story robust even if WSL dies mid‑work:
 
 ***
 
+<!-- section_id: "66ed1b3b-30a3-4c7c-9a7e-52abd9f8ccc4" -->
 ## Bottom line
 
 If you architect your workspace so that:

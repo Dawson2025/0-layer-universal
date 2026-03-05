@@ -10,12 +10,14 @@ resource_name: "04_CLAUDE_FILE_PATH_RULES"
 
 ---
 
+<!-- section_id: "2708b842-569c-4d58-a1a3-6c435f55b33e" -->
 ## Overview
 
 Claude Code CLI automatically discovers and loads CLAUDE.md files from a cascading hierarchy. This document explains **exactly how** Claude Code searches for these files, in what order, and how the cascade works.
 
 ---
 
+<!-- section_id: "818e2f21-91cd-427a-9d96-2c15603c115a" -->
 ## The Discovery Hierarchy
 
 Claude Code searches for CLAUDE.md files in this order (top = highest priority):
@@ -42,6 +44,7 @@ Claude Code searches for CLAUDE.md files in this order (top = highest priority):
 
 ---
 
+<!-- section_id: "3f513509-b0fb-47c2-98bd-651c61b09105" -->
 ## Project Identification: The Hash
 
 Claude Code identifies projects by hashing the **working directory path**:
@@ -64,8 +67,10 @@ Contains:
 
 ---
 
+<!-- section_id: "57274e26-57ff-487b-8410-0a2aa9900e16" -->
 ## The Load Sequence: Step-by-Step
 
+<!-- section_id: "eabe22d6-da45-40b2-829d-683c4e2abc25" -->
 ### Step 1: Session Start
 
 ```
@@ -78,6 +83,7 @@ Claude Code computes project hash: a1b2c3d4e5f6
 Claude Code checks: ~/.claude/projects/a1b2c3d4e5f6/
 ```
 
+<!-- section_id: "24bfa5b7-e811-4eaa-93da-7548c5cca69d" -->
 ### Step 2: Discover Global CLAUDE.md
 
 ```
@@ -90,6 +96,7 @@ Load into context (highest priority, ~5K tokens)
 
 **Always exists** (or creates default if missing)
 
+<!-- section_id: "ed36f861-591a-4a5a-8ff8-8520ff67f476" -->
 ### Step 3: Discover Project CLAUDE.md
 
 ```
@@ -102,6 +109,7 @@ Load and merge (project settings override global)
 
 **May not exist** for new projects (optional)
 
+<!-- section_id: "bc3b3bfc-a93e-4ceb-a378-5827f7ba33ca" -->
 ### Step 4: Discover Directory Chain CLAUDE.md
 
 ```
@@ -124,6 +132,7 @@ Check: [GRANDPARENT_DIR]/CLAUDE.md
 
 **Traversal stops at**: Git repository root or home directory (whichever comes first)
 
+<!-- section_id: "79590226-4c9b-400c-8d90-6d425ec94e58" -->
 ### Step 5: Final Merged Context
 
 ```
@@ -141,8 +150,10 @@ Result: Single merged CLAUDE.md loaded into context
 
 ---
 
+<!-- section_id: "b430dcc7-6886-40be-82d5-37533d902f78" -->
 ## Filesystem Structure
 
+<!-- section_id: "72d87539-8a80-44e4-8528-6652f39b5d93" -->
 ### Global Level
 
 ```
@@ -164,6 +175,7 @@ Result: Single merged CLAUDE.md loaded into context
         └── SKILL.md
 ```
 
+<!-- section_id: "1710c52f-e26c-4d32-bc30-12013e319c9d" -->
 ### Project/Workspace Level
 
 ```
@@ -181,6 +193,7 @@ Result: Single merged CLAUDE.md loaded into context
             └── CLAUDE.md      ← Entity-specific context
 ```
 
+<!-- section_id: "798a8ea7-8261-4d66-8db5-e534294e93af" -->
 ### Directory Chain Pattern
 
 ```
@@ -205,8 +218,10 @@ layer_0_universal/
 
 ---
 
+<!-- section_id: "9b944d9e-cbae-4fd9-922b-1fbde78875af" -->
 ## File Discovery Rules
 
+<!-- section_id: "e6776dd0-6efe-4b3b-bee1-9d9b5e437a0e" -->
 ### Rule 1: Global CLAUDE.md (Always Loaded)
 
 ```
@@ -217,6 +232,7 @@ Size: Should be ≤300 lines (global rules, triggers, resources)
 Requirement: MUST EXIST (Claude Code creates default if missing)
 ```
 
+<!-- section_id: "ccb0d105-caa6-4141-9b93-2dca065512f0" -->
 ### Rule 2: Project CLAUDE.md (Optional)
 
 ```
@@ -227,6 +243,7 @@ Hash: Computed from current working directory
 Requirement: Optional (created automatically for new projects)
 ```
 
+<!-- section_id: "c2364017-4715-403d-8d78-8184005bc001" -->
 ### Rule 3: Directory Chain (Optional)
 
 ```
@@ -238,6 +255,7 @@ Stops: At git repo root or home directory
 Requirement: Optional (only in layered projects)
 ```
 
+<!-- section_id: "6f1c83e7-522d-4c73-8453-1c415819a86c" -->
 ### Rule 4: Git Root (If in Repo)
 
 ```
@@ -250,10 +268,12 @@ Requirement: Optional (only if using git-based projects)
 
 ---
 
+<!-- section_id: "2330ce38-d1ba-4fcb-9941-f68bce6dcb51" -->
 ## Merge Behavior: What "Cascade" Means
 
 When multiple CLAUDE.md files exist, Claude Code **merges** them with specific rules:
 
+<!-- section_id: "4732a521-4bb6-4e3d-af34-265441550f29" -->
 ### Example: Full Chain Merge
 
 ```
@@ -279,6 +299,7 @@ Result (merged):
   → All rules from all levels coexist, with same-named rules overridden
 ```
 
+<!-- section_id: "5e49d2f8-0221-414b-991d-70a0d965bf97" -->
 ### Merge Strategy
 
 - **Same section name**: Later (higher priority) file wins
@@ -288,6 +309,7 @@ Result (merged):
 
 ---
 
+<!-- section_id: "b0699de5-f448-4015-8a90-dd2a70baa2d7" -->
 ## Auto-Loading: MEMORY.md
 
 In addition to CLAUDE.md, Claude Code auto-loads **only the first 200 lines** of MEMORY.md:
@@ -304,6 +326,7 @@ Full file: Available on-demand via /memory command
 
 ---
 
+<!-- section_id: "7b595767-c7ac-4c97-ac6e-6519bb170677" -->
 ## Commands for Exploring the Chain
 
 | Command | What It Shows |
@@ -315,6 +338,7 @@ Full file: Available on-demand via /memory command
 
 ---
 
+<!-- section_id: "0e8d9016-376f-4767-96b2-d722331f83bd" -->
 ## Search Algorithm (Pseudo-Code)
 
 ```
@@ -350,6 +374,7 @@ function load_claude_md(working_dir):
 
 ---
 
+<!-- section_id: "88141a34-1e22-459e-8b0d-93f4b5cf64ab" -->
 ## Common Paths Loaded (Example)
 
 **When working in**: `/home/dawson/dawson-workspace/code/0_layer_universal/layer_1/layer_1_projects/layer_1_project_school/layer_1/...`
@@ -369,8 +394,10 @@ function load_claude_md(working_dir):
 
 ---
 
+<!-- section_id: "2fdd9cec-b0f2-47e1-93be-3c823ef9f1ce" -->
 ## Gotchas and Edge Cases
 
+<!-- section_id: "72805d6c-4abf-4b5c-85c3-9387b88688e7" -->
 ### Gotcha 1: Hash Changes If Path Changes
 
 ```
@@ -386,10 +413,12 @@ New project treated as separate project
 
 **Mitigation**: Don't move projects between paths. If you do, manually migrate the `.claude/projects/[OLD_HASH]/` directory to the new hash, or use `/project-migrate` command.
 
+<!-- section_id: "ecffc89c-eccf-465d-bb1e-32dc8ce58509" -->
 ### Gotcha 2: .gitignore Affects Which Files Load
 
 If CLAUDE.md is in .gitignore, it still loads (Claude Code doesn't respect .gitignore for context files). But git won't version it.
 
+<!-- section_id: "563455d9-d40a-4951-90bf-d9769a2acc1a" -->
 ### Gotcha 3: Symlinks and Path Resolution
 
 ```
@@ -404,6 +433,7 @@ Same project, different hashes = two separate projects
 
 **Mitigation**: Always use canonical path (resolve symlinks before working)
 
+<!-- section_id: "694adbca-5d61-4900-8081-f6d11b15d720" -->
 ### Gotcha 4: Moving Between Git Repos
 
 When you `cd` into a different git repository, the chain resets:
@@ -422,8 +452,10 @@ Old repo-a context is dropped
 
 ---
 
+<!-- section_id: "cc7ec4d5-234c-4003-8d87-07dcb38c50a5" -->
 ## Best Practices
 
+<!-- section_id: "3cffd5bb-5c3c-4866-a32c-a584da5fc384" -->
 ### 1. Use Global CLAUDE.md for Universal Rules
 
 ```
@@ -434,6 +466,7 @@ Old repo-a context is dropped
 - Global keybindings
 ```
 
+<!-- section_id: "d59ed3b7-366d-4b1a-80e9-fda5f1947c3e" -->
 ### 2. Use Project CLAUDE.md for Project-Specific Rules
 
 ```
@@ -443,6 +476,7 @@ Old repo-a context is dropped
 - Project skills listing
 ```
 
+<!-- section_id: "b294185f-779c-4e17-8fff-c82868748c9c" -->
 ### 3. Use Directory CLAUDE.md for Layer Context
 
 ```
@@ -453,16 +487,19 @@ Old repo-a context is dropped
 - Current status for this layer
 ```
 
+<!-- section_id: "9511bad1-ab9c-435d-8f60-7118514b1764" -->
 ### 4. Avoid Duplication in the Chain
 
 If a rule exists in global CLAUDE.md, don't repeat it in project or directory CLAUDE.md. Let the cascade handle it.
 
+<!-- section_id: "fa2e3464-9035-4baa-9d28-4362f24b583c" -->
 ### 5. Keep Global CLAUDE.md Small
 
 Global context is loaded for **every project**. Keep it ≤300 lines.
 
 ---
 
+<!-- section_id: "9006e9a1-e828-44fc-b750-92cb78829d79" -->
 ## Summary
 
 Claude Code discovers CLAUDE.md files through a **cascading hierarchy**:

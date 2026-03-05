@@ -5,6 +5,7 @@ resource_name: "menu"
 ---
 # Menus and Navigation
 
+<!-- section_id: "edf2026f-af3f-4930-84f1-4e0499548c83" -->
 ## Main Menu
 ```
 1. Admin Commands
@@ -20,6 +21,7 @@ resource_name: "menu"
 11. Exit
 ```
 
+<!-- section_id: "ecc4fb79-af1a-4c0e-bf50-92696ce1f756" -->
 ## Admin Menu (Password Protected)
 Password: `20251010`
 ```

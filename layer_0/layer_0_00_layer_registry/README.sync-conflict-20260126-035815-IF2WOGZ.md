@@ -7,6 +7,7 @@ resource_name: "README.sync-conflict-20260126-035815-IF2WOGZ"
 
 This directory contains the registry and metadata for layer internal structure.
 
+<!-- section_id: "ec88f3f5-e481-4bed-b232-27f63fb5dac3" -->
 ## Purpose
 
 Defines the standard components that exist within each layer:
@@ -19,10 +20,12 @@ Defines the standard components that exist within each layer:
 | 03 | sub_layers | Knowledge, prompts, rules, setup |
 | 99 | stages | Workflow stages (01-11) |
 
+<!-- section_id: "67715a37-4107-4e93-aec8-9b7afa0233fe" -->
 ## Files
 
 - `layer_registry.yaml` - Complete registry definition
 
+<!-- section_id: "970de97b-2d82-4581-a96a-575e6752a1a5" -->
 ## Usage
 
 When creating a new layer (project, feature, component), use this structure:

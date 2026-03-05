@@ -5,9 +5,11 @@ resource_name: "report_and_porting_contract"
 ---
 # Report And Porting Contract
 
+<!-- section_id: "29bcdd77-c5f0-446f-b7be-b1a0c4338bdb" -->
 ## Purpose
 Define one canonical behavior for report generation and propagation across this entity and all child entities, and define how that behavior must survive tool-specific projection (including Codex).
 
+<!-- section_id: "5131de47-3021-465b-9707-6392e9b7fbbb" -->
 ## Canonical Report Contract
 
 For every active stage:
@@ -27,6 +29,7 @@ Entity-level consolidation:
 Compatibility note:
 - `outputs/stage_report.md` is legacy-only compatibility, not canonical.
 
+<!-- section_id: "a54533cf-8139-4e39-baf1-23c14df03600" -->
 ## Propagation Funnel Requirements
 
 Funnel sequence (stage scope):
@@ -41,6 +44,7 @@ Funnel sequence (entity scope):
 2. Consolidate into `stages_report.md` and `layer_report.md`
 3. Publish to `.0agnostic/05_handoff_documents/02_outgoing/01_to_above/`
 
+<!-- section_id: "d5cfd17f-452c-4ae1-acc2-e1c7b8789a1a" -->
 ## Codex Porting Contract
 
 Agnostic-source requirement:
@@ -55,6 +59,7 @@ Runtime validation requirement:
   - `codex --dangerously-bypass-approvals-and-sandbox`
 - Reason: sandbox limitations can produce false negatives unrelated to contract correctness.
 
+<!-- section_id: "a4939e37-0a13-4486-a401-09b6c5cdf167" -->
 ## Enforcement
 
 Minimum checks for each stage:
@@ -67,6 +72,7 @@ Minimum checks for each entity:
 - `.0agnostic/05_handoff_documents/` inbound/outbound structure exists
 - `layer_report.md` and `stages_report.md` exist in outbound `01_to_above/`
 
+<!-- section_id: "6c813065-ae51-4159-b06f-8a9c29df175d" -->
 ## Decision Rule
 
 When agnostic contract and projected tool behavior differ:

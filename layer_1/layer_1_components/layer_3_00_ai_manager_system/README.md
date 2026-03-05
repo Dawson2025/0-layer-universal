@@ -6,12 +6,15 @@ resource_name: "README"
 ---
 # Layer 3 (Component) AI Manager System
 
+<!-- section_id: "d9852416-de83-455e-a157-47900d4d8b55" -->
 ## Overview
 
 This directory contains the AI manager system for **Layer 3 - Components**, which manages concrete implementation units within a feature. Layer 3 is where abstract requirements become actual code, files, modules, UI components, and other tangible artifacts. Components at this layer are the primary execution points where most coding work happens.
 
+<!-- section_id: "854c042d-2ae6-4483-94a2-00a7d0f5e03a" -->
 ## Manager/Worker Roles at Layer 3
 
+<!-- section_id: "1659a767-3dee-4bdb-90a5-3d6bbdacccd6" -->
 ### Manager Responsibilities
 
 The **Layer 3 Manager** is responsible for:
@@ -30,6 +33,7 @@ The **Layer 3 Manager** is responsible for:
 4. **Component Quality Assurance**: Ensures the component meets all acceptance criteria
 5. **Upward Reporting**: Reports component completion and results to Layer 2
 
+<!-- section_id: "85ade82a-f6c2-4196-bdcb-535d71079f09" -->
 ### Worker Characteristics
 
 Layer 3 is the **primary worker layer** where most execution happens. Workers handle:
@@ -40,6 +44,7 @@ Layer 3 is the **primary worker layer** where most execution happens. Workers ha
 
 Most Layer 3 work is done by **workers**, not managers, since components are often leaf nodes that don't need further decomposition.
 
+<!-- section_id: "52c46e89-9ea3-4cde-9bd2-5128e97fb938" -->
 ### Tool Recommendations
 
 Based on the ideal hierarchy system:
@@ -56,8 +61,10 @@ Based on the ideal hierarchy system:
     - Components requiring deep reasoning about edge cases
     - Critical components where correctness is paramount
 
+<!-- section_id: "904d1883-86d1-43e0-873e-227c282f6a22" -->
 ## Handoff Consumption and Production
 
+<!-- section_id: "fe407871-1299-4d74-8f79-761b96ceaeed" -->
 ### Incoming Handoffs (Upstream from Layer 2)
 
 Layer 3 receives handoffs from Layer 2 feature managers:
@@ -106,6 +113,7 @@ Layer 3 receives handoffs from Layer 2 feature managers:
 }
 ```
 
+<!-- section_id: "66494e93-fc20-4ac4-b4cc-9d05f75b3ab9" -->
 ### Outgoing Handoffs (Downstream to Layer 4)
 
 If the component is complex enough to decompose, Layer 3 can produce handoffs for Layer 4:
@@ -142,12 +150,14 @@ If the component is complex enough to decompose, Layer 3 can produce handoffs fo
 }
 ```
 
+<!-- section_id: "5e91db4e-9ce2-4e9c-a842-39c2c242bb06" -->
 ### Horizontal Handoffs (Stage-to-Stage)
 
 Within Layer 3, handoffs flow between stages:
 - **Location**: Each stage's `hand_off_documents/outgoing.json` → next stage's `incoming.json`
 - **Pipeline**: request → instructions → planning → design → implementation → testing → criticism → fixing → archiving
 
+<!-- section_id: "148100e4-d98b-4041-ac87-ad5cb48e2622" -->
 ### Upward Handoffs (To Layer 2)
 
 Layer 3 reports results back to Layer 2:
@@ -202,6 +212,7 @@ Layer 3 reports results back to Layer 2:
 }
 ```
 
+<!-- section_id: "a63e3cbf-73d0-4272-aa88-eb3938992fad" -->
 ## Stage Pipeline
 
 Layer 3 operates through the chronological pipeline (often abbreviated for simple components):
@@ -218,8 +229,10 @@ Layer 3 operates through the chronological pipeline (often abbreviated for simpl
 
 For simple components, stages 1-4 may be very brief, with most work in stages 5-7 (development, testing, fixing).
 
+<!-- section_id: "16cd25d6-c6b2-4aa4-8b41-c3f1586c8d5f" -->
 ## Worker Workflow at Layer 3
 
+<!-- section_id: "5375efc3-574f-4d49-98ed-b5ce3f5f2a13" -->
 ### Typical Worker Workflow (Simple Component)
 
 1. **Read Incoming Handoff**:
@@ -241,6 +254,7 @@ For simple components, stages 1-4 may be very brief, with most work in stages 5-
 
 4. **Exit**: Return control to Layer 2 manager
 
+<!-- section_id: "9780d9e1-1402-4d87-9edd-b12372fd3372" -->
 ### Manager Workflow (Complex Component → Layer 4)
 
 Only when a component is complex enough to warrant decomposition:
@@ -257,8 +271,10 @@ Only when a component is complex enough to warrant decomposition:
 5. **Integration**: Assemble sub-components into final component
 6. **Report to Layer 2**: Write completion handoff
 
+<!-- section_id: "10089562-d74a-42d6-ae50-10a1082a6888" -->
 ## Parallel Execution at Layer 3
 
+<!-- section_id: "2fc218df-7935-4437-82e9-7d525b9d4f5a" -->
 ### When to Parallelize
 
 Parallel execution at Layer 3 is beneficial when:
@@ -276,6 +292,7 @@ Parallel Batch (all can run simultaneously):
   - session-indicator component
 ```
 
+<!-- section_id: "cee772ed-d841-437b-8fdf-83b1263549cd" -->
 ### Execution Pattern
 
 Layer 2 manager spawns multiple Layer 3 workers:
@@ -304,8 +321,10 @@ with ThreadPoolExecutor() as executor:
 # Aggregate and continue to integration testing
 ```
 
+<!-- section_id: "6152c73a-7d1a-4477-a263-dbbad969ccd0" -->
 ## Tool Selection Strategy at Layer 3
 
+<!-- section_id: "be7a3dee-b42f-40e8-b911-e4f426db10d1" -->
 ### Use Codex CLI when:
 - Component is straightforward (single file, clear requirements)
 - Implementation is 1-3 turns of work
@@ -314,6 +333,7 @@ with ThreadPoolExecutor() as executor:
 
 **Example**: Simple utility function, basic React component, standard API endpoint
 
+<!-- section_id: "3878de28-8362-4dc7-8c81-07dc910a2717" -->
 ### Use Claude Code when:
 - Component is complex (multiple files, intricate logic)
 - Deep reasoning required (security, edge cases, performance)
@@ -322,6 +342,7 @@ with ThreadPoolExecutor() as executor:
 
 **Example**: Complex state management, cryptographic functions, core business logic
 
+<!-- section_id: "98256f56-6ce8-4c1e-8bcc-093afae3f710" -->
 ## Deeper References
 
 For comprehensive understanding of the manager/worker model, handoff protocol, and orchestration patterns, see:
@@ -332,6 +353,7 @@ For comprehensive understanding of the manager/worker model, handoff protocol, a
 - **Supervisor Patterns**: [ideal_ai_manager_hierarchy_system/supervisor_patterns.md](../../../code/0_layer_universal/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/supervisor_patterns.md)
 - **Handoff Schema**: [../layer_0/0.01_manager_handoff_documents/0.00_to_universal/handoff_schema.md](../../layer_0/0.01_manager_handoff_documents/0.00_to_universal/handoff_schema.md)
 
+<!-- section_id: "d65f1ada-887b-420f-bd39-61d3bf128c8d" -->
 ## Directory Structure
 
 ```
@@ -353,6 +375,7 @@ layer_3_components/
     └── ... (full stage pipeline)
 ```
 
+<!-- section_id: "23bafb0b-3c08-4310-ac0e-2667c1bf9f7d" -->
 ## Best Practices
 
 1. **Keep Components Focused**: Single responsibility, well-defined interface
@@ -364,8 +387,10 @@ layer_3_components/
 7. **Test Before Reporting**: Always run tests and verify they pass before marking complete
 8. **Report Blockers Early**: If stuck, report to Layer 2 immediately rather than attempting workarounds
 
+<!-- section_id: "d6900d91-c870-4e53-a8fd-269c8334c967" -->
 ## Common Patterns
 
+<!-- section_id: "bdc6c5a2-e14a-4dc4-8e44-534532b809f3" -->
 ### Pattern 1: Simple React Component (Codex Worker)
 
 **Session**: 1-2 turns
@@ -377,6 +402,7 @@ layer_3_components/
 4. Verify tests pass
 5. Report completion
 
+<!-- section_id: "81159c38-19e1-451b-a368-38d339cb22f9" -->
 ### Pattern 2: Complex Business Logic (Claude Code Worker)
 
 **Session**: 2-4 turns
@@ -389,6 +415,7 @@ layer_3_components/
 5. Document behavior
 6. Report completion
 
+<!-- section_id: "ab453a7f-af29-4442-bdf1-18cd24167281" -->
 ### Pattern 3: Multi-File Component (Layer 3 Manager → Layer 4 Workers)
 
 **Components**: UI + logic + types + tests

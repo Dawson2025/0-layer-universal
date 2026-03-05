@@ -8,10 +8,12 @@ resource_name: "README"
 
 **Need**: [Chain Validation Enhancement](../README.md)
 
+<!-- section_id: "19c2b024-0ecb-4537-9a79-c7ed5693cb83" -->
 ## Overview
 
 These stories cover upgrading chain validation to check relationship integrity against the knowledge graph, not just file existence. They validate that the developer can run a comprehensive health check covering integrity, validity, and staleness in one report, that agents detect broken references before following them and failing silently, and that CI hooks or pre-commit checks catch chain breakage automatically before changes are merged.
 
+<!-- section_id: "77663401-12cf-4ce0-8f75-57e9a1a6b8f3" -->
 ## Actors
 
 - **User (Developer)**: Human developer (Dawson) who gives instructions to the AI system, reviews outputs, and validates behavior

@@ -11,6 +11,7 @@ resource_name: "02_sublayer_dependency_structures"
 
 ---
 
+<!-- section_id: "933f4c1c-f53c-4276-b442-0495479bd05f" -->
 ## The Problem with Atomic Layers
 
 Document 01 explored 13 principles for organizing the **ordering between layers**. But it treated each layer as a single, indivisible unit. In reality:
@@ -23,10 +24,12 @@ Each layer is itself a miniature dependency system. The question this document e
 
 ---
 
+<!-- section_id: "e9ff387f-6548-4f1b-b63a-8fbcc39c4cc8" -->
 ## Three Dependency Shapes
 
 Dependencies within a layer (or between any set of components) follow one of three shapes:
 
+<!-- section_id: "48d0dd10-69a6-4800-899f-89894336583b" -->
 ### Shape 1: Dependency Sequence (Linear Chain)
 
 ```
@@ -57,6 +60,7 @@ Phoneme Groups → Phoneme Types → Individual Phonemes → Frequency Tracking
 
 **Agent implication:** A sequential chain maps naturally to a pipeline of sub-agents, OR a single agent that processes steps in order. There's no parallelism possible — it's strictly sequential internally.
 
+<!-- section_id: "41ad0f0a-456f-4097-a3c1-2e2bfd6e66c6" -->
 ### Shape 2: Dependency Tree (Branching)
 
 ```
@@ -92,6 +96,7 @@ One root component, multiple children that depend on it. Children are INDEPENDEN
 
 **Agent implication:** The root (Project Core) can be a single sub-agent, and the branches can be handled by parallel sub-agents or by a single agent that tackles them in any order. Maximum parallelism potential.
 
+<!-- section_id: "715680fc-d9d0-401d-951a-b40e96647048" -->
 ### Shape 3: Dependency DAG (Diamond/Graph)
 
 ```
@@ -142,10 +147,12 @@ Components have MULTIPLE dependencies. D depends on BOTH B and C. This creates "
 
 ---
 
+<!-- section_id: "ba616aa4-94ff-43a7-815f-ed0e4f4de181" -->
 ## Concrete LangTrak Sublayer Structures
 
 Let's map every layer's internal dependency shape:
 
+<!-- section_id: "f57397de-122e-4cd8-a9d4-7a1a4089dbd6" -->
 ### L2: Infrastructure — DAG
 
 ```
@@ -164,6 +171,7 @@ Let's map every layer's internal dependency shape:
 **Public layer interface** (what L3 Users sees): Auth check API + Storage API + DB session
 **Build order**: App Factory → [Database, Firebase] in parallel → Storage Manager → Auth
 
+<!-- section_id: "d4c6c44c-b0f8-4768-bc01-5aeb633be3db" -->
 ### L3: Users — Sequence (simple)
 
 ```
@@ -175,6 +183,7 @@ User Model → User Profiles → Sessions
 **Public layer interface**: `current_user` (authenticated user with profile loaded)
 **Build order**: User Model → Profiles → Sessions
 
+<!-- section_id: "1596d720-6002-4f3f-957d-47b2c86ebce3" -->
 ### L4: Phoneme System — Sequence (with branch)
 
 ```
@@ -190,6 +199,7 @@ Phoneme Groups → Phoneme Types → Individual Phonemes
 **Public layer interface**: Phoneme inventory API (query by group, type, or individual. Get frequency. Render hierarchy views.)
 **Build order**: Groups → Types → Phonemes → [Frequency, Display] in parallel
 
+<!-- section_id: "7215625c-65b6-48c8-9387-47d7b72676a2" -->
 ### L5: Templates — Tree (shallow)
 
 ```
@@ -205,6 +215,7 @@ phonemes)      to a project)
 **Public layer interface**: Template API (get available phonemes for a project's template)
 **Build order**: Core → [Selection, Application] in parallel
 
+<!-- section_id: "2232ca23-b1e0-4fa5-af17-75bd269563d6" -->
 ### L6: Language Content — Deep Sequence (Containment Chain)
 
 ```
@@ -217,6 +228,7 @@ Words → Syllables → Positions → Phoneme References
 **Public layer interface**: Content API (create/read/update/delete words with full syllable → position → phoneme structure)
 **Build order**: Words → Syllables → Positions → Phoneme References (strictly sequential — can't have syllables without words)
 
+<!-- section_id: "64255c3e-7909-42f9-b186-2e636fd9525c" -->
 ### L7: Projects — Star/Hub
 
 ```
@@ -231,6 +243,7 @@ Type             Assoc.
 **Public layer interface**: Project API (CRUD projects with storage type, variants, content, settings)
 **Build order**: Core → [Storage Type, Variants, Content Assoc., Settings] all in parallel
 
+<!-- section_id: "c2561e33-07ee-418a-be30-466b557170bb" -->
 ### L8: Teams — Sequence (short)
 
 ```
@@ -242,6 +255,7 @@ Team Model → Membership → Invite System → Project Sharing
 **Public layer interface**: Collaboration API (create team, invite members, share projects)
 **Build order**: Team Model → Membership → Invites → Sharing
 
+<!-- section_id: "adfc06ce-06eb-4aae-9785-36c66e6d2faf" -->
 ### L9-L11: Cross-Cutting — Independent Leaves
 
 ```
@@ -257,6 +271,7 @@ L11: Firebase-Orch  Universal-Orch  Meta-AI-Orch  (three independent orchestrato
 
 ---
 
+<!-- section_id: "9ada9dfc-5f41-47b8-9855-e9ccbf754d1a" -->
 ## The "Giant Dependency" Concept
 
 This is the key insight: **sublayers form internal dependency chains, but collectively they produce ONE interface that the next layer depends on.**
@@ -274,6 +289,7 @@ L6 only sees:   "Template API" (doesn't know about selection vs application logi
 
 This is **interface aggregation** — the sublayer complexity is hidden behind a clean public interface. It's exactly like a software module with private implementation and public API.
 
+<!-- section_id: "05618a31-b63e-4a3e-b8ec-e7e734403130" -->
 ### Three Levels of Structure
 
 ```
@@ -315,8 +331,10 @@ This is **interface aggregation** — the sublayer complexity is hidden behind a
 
 ---
 
+<!-- section_id: "d884ac9c-9561-4a0c-95d6-a8976c497cdc" -->
 ## Sublayer Depth: How Deep Should Internal Structure Go?
 
+<!-- section_id: "66bf34b5-7b6d-48ad-9700-13b56e494217" -->
 ### Option A: Two Levels Only (Layers + Sublayers)
 
 ```
@@ -333,6 +351,7 @@ Layer (L4: Phoneme System)
 **Cons**: Some sublayers are still complex (Database sublayer has connection, schema, migration, query patterns)
 **When to use**: Small-to-medium projects, layers with few components (< 8 sublayers)
 
+<!-- section_id: "4e035ed4-24f9-474e-bf45-6dff5589adfd" -->
 ### Option B: Three Levels (Layers + Sublayers + Sub-sublayers)
 
 ```
@@ -354,6 +373,7 @@ Layer (L2: Infrastructure)
 **Cons**: More complex, more agents/sub-agents to coordinate, deeper delegation chains
 **When to use**: Complex layers with internally complex sublayers
 
+<!-- section_id: "ae4d2a3d-f3a5-4f75-9449-1c006bbfb7df" -->
 ### Option C: Recursive (Fractal — Layers All the Way Down)
 
 ```
@@ -377,6 +397,7 @@ Layer (L4: Phoneme System)
 **Cons**: Can become absurdly deep, coordination overhead grows exponentially, context chains become unmanageable
 **When to use**: Never in practice — this is the theoretical extreme. Real systems should cap depth.
 
+<!-- section_id: "4d1e4171-f07c-453a-a96d-904413376cf9" -->
 ### Recommended: Adaptive Depth (2 levels default, 3 when needed)
 
 ```
@@ -398,8 +419,10 @@ Only L2 (Infrastructure) actually needs 3 levels. Everything else works fine at 
 
 ---
 
+<!-- section_id: "ef0c6324-0cc7-42c5-b1da-b59405149865" -->
 ## Agent Implications: How Sublayers Change the Agent Tree
 
+<!-- section_id: "11813094-2b2c-461b-9905-cc17d993aafe" -->
 ### Model 1: One Agent Per Layer (sublayers are internal tasks)
 
 The layer agent handles ALL sublayers itself. Sublayers aren't separate agents — they're tasks the layer agent works through.
@@ -415,6 +438,7 @@ Phoneme System Agent
 **When this works**: When sublayers are simple and the layer agent has enough context to handle all of them. Good for 2-level depth with < 5 sublayers.
 **When this breaks**: When sublayers are complex enough to need specialized knowledge (e.g., Firebase sublayer needs Firestore expertise that's very different from SQLite expertise).
 
+<!-- section_id: "7056ac5f-238d-411f-a643-41a5b77e64ac" -->
 ### Model 2: Layer Agent + Sub-Agents
 
 The layer agent coordinates sub-agents for complex sublayers. Simple sublayers stay as tasks; complex ones get their own agent.
@@ -430,6 +454,7 @@ Infrastructure Agent (coordinator)
 **When this works**: Complex layers (L2 Infrastructure) where sublayers need different expertise. The layer agent acts as a mini-manager.
 **When this breaks**: When too many sub-agents create coordination overhead that exceeds the benefit of specialization.
 
+<!-- section_id: "1291a76e-18b0-41b6-a638-d4534692dd9c" -->
 ### Model 3: Sublayers as First-Class Agents (Flat Within Layer)
 
 Each sublayer gets its own agent, and they communicate peer-to-peer within the layer. The layer agent is just a router/coordinator.
@@ -450,6 +475,7 @@ Infrastructure Layer Router
 **When this works**: When sublayers have complex internal state, need different tools, and the dependency shape benefits from parallel execution (DAGs especially).
 **When this breaks**: When the router becomes a bottleneck and agents need to understand the layer-level interface (which is an aggregation of all sublayers).
 
+<!-- section_id: "95c8ca32-872f-443c-93fe-51ac0a6b446a" -->
 ### Recommendation: Adaptive Model
 
 ```
@@ -470,10 +496,12 @@ For LangTrak:
 
 ---
 
+<!-- section_id: "84c9ccf0-172e-4d3f-afd0-0ba57eb5fad4" -->
 ## Interface Aggregation Patterns
 
 How sublayers' outputs combine into the layer's public interface:
 
+<!-- section_id: "d1ff84a8-fdcc-4abb-96d2-8e2b4f493dec" -->
 ### Pattern A: Sequential Aggregation
 
 Each sublayer builds on the previous, and the LAST sublayer's output IS the layer interface.
@@ -487,6 +515,7 @@ Groups → Types → Phonemes → Frequency
 
 **Context implication**: The next layer (L5 Templates) only needs to know about the aggregated API. It doesn't need to understand that groups exist separately from types — it just queries "give me phonemes."
 
+<!-- section_id: "d05d4dc8-22eb-419e-9d57-02e8197795f1" -->
 ### Pattern B: Hub Aggregation
 
 A central component collects outputs from all sublayers and produces a unified interface.
@@ -500,6 +529,7 @@ Settings     ──→
 
 **Context implication**: The hub (Project Core) acts as the aggregation point. The next layer (L8 Teams) talks to the Project API, which internally routes to the right sublayer.
 
+<!-- section_id: "1237da95-3411-4327-bd7f-35b79c9e2212" -->
 ### Pattern C: Faceted Aggregation
 
 Multiple sublayers each expose PART of the layer interface. The layer interface is a collection of independent facets, not a single unified API.
@@ -512,6 +542,7 @@ Suggest ──→ "Suggest API"  ─┘
 
 **Context implication**: Consumers of this layer may only need ONE facet (e.g., only TTS, not Video). The layer interface is more like a catalog than a single endpoint.
 
+<!-- section_id: "e7c6defe-9128-4728-9551-80cf0bb5350d" -->
 ### Pattern D: Diamond Aggregation
 
 Multiple paths converge, and the convergence point IS the layer interface.
@@ -526,8 +557,10 @@ Firebase ──┘
 
 ---
 
+<!-- section_id: "2ef603ac-c1da-43ca-b5c8-22a7b6b4500a" -->
 ## How This Interacts with the Two Design Axes
 
+<!-- section_id: "e3c5a696-fad5-4e74-8d21-473b47c810c1" -->
 ### Cascading Context Axis
 
 **Sublayers WITHIN a layer** do NOT cascade to external layers. Only the layer's **aggregated interface** cascades.
@@ -544,6 +577,7 @@ This is critical: the cascading context between layers stays LEAN because sublay
 - The Phonemes sub-agent inherits Groups + Types context
 - This is a PRIVATE cascade within the layer
 
+<!-- section_id: "7c5e8d33-ed62-4c1c-a792-86324d2a70f1" -->
 ### Delegation Axis
 
 **Between layers**: Delegation follows the inter-layer hierarchy (Manager → L4 agent → L5 agent)
@@ -566,6 +600,7 @@ Intra-layer delegation (within L4):
 
 ---
 
+<!-- section_id: "66b84c27-9c2e-4fd9-afd7-ecfebd5b905e" -->
 ## New Experiment Trials Based on Sublayer Structures
 
 | Trial | Structure | What It Tests |
@@ -574,6 +609,7 @@ Intra-layer delegation (within L4):
 | M | Adaptive sublayers (Model 1/2/3 based on complexity) | Does matching agent model to dependency shape improve performance? |
 | N | Deep sublayers (3 levels, sub-agents for everything) | Does maximum specialization outweigh coordination overhead? |
 
+<!-- section_id: "d9682605-e4b5-42b8-9ed0-9f8181506a40" -->
 ### Trial L: Flat Sublayers (Single Agent Per Layer)
 
 Each layer gets exactly ONE agent. That agent handles all sublayers as internal tasks. No sub-agents.
@@ -592,6 +628,7 @@ Manager
 
 **Predicted outcome**: Works well for simple layers (L3, L5, L8). Struggles for L2 (DAG is hard for one agent to manage) and for tasks spanning multiple sublayers that need different expertise.
 
+<!-- section_id: "04670787-1a68-4161-b40f-75e240630831" -->
 ### Trial M: Adaptive Sublayers (Matched to Dependency Shape)
 
 Layer agent model chosen based on sublayer dependency shape:
@@ -618,6 +655,7 @@ Manager
 
 **Predicted outcome**: Best balance — complex areas (L2) get sub-agents, simple areas stay lean, cross-cutting areas get independence. Predicted to outperform flat (Trial L) on L2 tasks specifically.
 
+<!-- section_id: "a3d08061-669e-4569-9f4f-b2de51daf064" -->
 ### Trial N: Deep Sublayers (Maximum Specialization)
 
 Every sublayer with >1 internal component gets its own sub-agent. Sub-sublayers get sub-sub-agents.
@@ -648,6 +686,7 @@ Manager
 
 ---
 
+<!-- section_id: "c5ef4046-5490-4df0-b642-f18ca904e88d" -->
 ## Key Insight: The Fractal Nature of Agent Hierarchies
 
 The same structural choices that apply BETWEEN layers also apply WITHIN layers. You can:
@@ -676,6 +715,7 @@ Based on LangTrak's concrete structure, the answer appears to be **2-3 levels ma
 
 ---
 
+<!-- section_id: "ab45a404-453c-46db-ae0f-6232e57173d3" -->
 ## Relationship to Document 01 Principles
 
 | Doc 01 Principle | How Sublayers Interact |
@@ -689,6 +729,7 @@ Based on LangTrak's concrete structure, the answer appears to be **2-3 levels ma
 
 ---
 
+<!-- section_id: "0e902c93-f442-4273-8060-e8ad5925ecee" -->
 ## Next Steps
 
 1. Add Trials L, M, N to the experiment document

@@ -12,6 +12,7 @@ resource_name: "REQ_004_portal_regression_after_reboot"
 
 ---
 
+<!-- section_id: "04c00012-15c1-426f-96bf-3440ed970bff" -->
 ## Problem Statement
 
 After rebooting the system to fix audio issues:
@@ -24,6 +25,7 @@ After rebooting the system to fix audio issues:
 
 ---
 
+<!-- section_id: "4e467e7a-a213-43cb-8df2-3b1352c22d6f" -->
 ## Timeline
 
 | Time | Event |
@@ -37,8 +39,10 @@ After rebooting the system to fix audio issues:
 
 ---
 
+<!-- section_id: "5d24bbb8-5c4e-45b1-ae0e-82b42454b795" -->
 ## Diagnostic Findings
 
+<!-- section_id: "3dd6ef2b-9d92-42ae-b52f-fc89e49f12ad" -->
 ### Portal Crash at Boot
 ```
 Status: Failed (Result: signal - SIGKILL)
@@ -47,6 +51,7 @@ Crashed: 2026-01-29 18:46:34 (6 seconds after startup)
 Error: Failed to create access proxy: Process org.freedesktop.impl.portal.desktop.gtk exited with status 1
 ```
 
+<!-- section_id: "1fe6e1fd-af9c-48c8-974c-8b8ab41fb005" -->
 ### Autostart Script Issue
 **File**: `~/.config/autostart/fix-portal-services.desktop`
 - File exists ✓
@@ -60,6 +65,7 @@ Error: Failed to create access proxy: Process org.freedesktop.impl.portal.deskto
 - Not fast enough - portal already crashed
 - Autostart timing is not reliable
 
+<!-- section_id: "9e5d59f5-c777-470d-959f-c938ea4ed2b9" -->
 ### Manual Fix Success
 Running the script manually:
 ```bash
@@ -74,8 +80,10 @@ Result:
 
 ---
 
+<!-- section_id: "108939a0-fd3f-412f-9e67-03d1833bd584" -->
 ## Root Cause Analysis
 
+<!-- section_id: "d8c03513-9d7e-4c1e-9db8-7c78afa668ae" -->
 ### Why Portal Crashes at Boot
 The xdg-desktop-portal service starts before the GTK portal backend is ready:
 1. Systemd starts `xdg-desktop-portal.service`
@@ -83,6 +91,7 @@ The xdg-desktop-portal service starts before the GTK portal backend is ready:
 3. GTK backend exits with status 1 (likely missing display, not ready)
 4. Portal has no backends, systemd kills it
 
+<!-- section_id: "45a4a456-7445-4fd0-b9bf-609f30420928" -->
 ### Why Autostart Didn't Prevent It
 Current approach:
 ```
@@ -97,6 +106,7 @@ Portal crashes before autostart has a chance to fix it
 
 ---
 
+<!-- section_id: "ee15a95b-05ce-4471-bca9-35887f4d6700" -->
 ## Why This Wasn't Caught Before
 
 ISSUE_005 was marked "resolved" on 2026-01-28, but:
@@ -109,6 +119,7 @@ The fix prevented the crash from recurring in the live session, but doesn't prev
 
 ---
 
+<!-- section_id: "77fb440f-a9ae-4d45-88ff-e6e142ee69d1" -->
 ## Solution Requirements
 
 The fix must:
@@ -117,6 +128,7 @@ The fix must:
 3. **Be reliable** (work without manual intervention)
 4. **Persist across reboots**
 
+<!-- section_id: "cb695dc0-6b80-4cfd-95dc-6c2b4c527b6d" -->
 ### Possible Approaches
 
 **Option A**: Systemd service dependency (best)
@@ -138,6 +150,7 @@ The fix must:
 
 ---
 
+<!-- section_id: "0f3a0d35-4eff-4690-8844-1cef6f09a248" -->
 ## Immediate Workaround
 
 Users experiencing this can manually run:
@@ -149,6 +162,7 @@ This immediately restores Files, Terminal, and LibreOffice functionality.
 
 ---
 
+<!-- section_id: "37b0bf86-860e-4530-84ae-d8cbcbcd4f3c" -->
 ## Questions for Investigation
 
 1. Why does GTK portal exit with status 1 at boot?
@@ -158,6 +172,7 @@ This immediately restores Files, Terminal, and LibreOffice functionality.
 
 ---
 
+<!-- section_id: "cd7eaabe-beb4-43b3-bc1e-f777027a15f7" -->
 ## Related Issues
 
 | Issue | Status | Location |

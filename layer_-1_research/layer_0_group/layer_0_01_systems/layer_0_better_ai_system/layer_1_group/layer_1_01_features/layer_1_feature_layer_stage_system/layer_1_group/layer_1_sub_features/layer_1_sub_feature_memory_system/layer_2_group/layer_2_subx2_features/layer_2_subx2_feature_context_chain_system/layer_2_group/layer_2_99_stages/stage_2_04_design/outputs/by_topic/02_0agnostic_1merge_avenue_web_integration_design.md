@@ -5,14 +5,17 @@ resource_name: "02_0agnostic_1merge_avenue_web_integration_design"
 ---
 # 0AGNOSTIC + .1merge Integration Design for the Avenue Web
 
+<!-- section_id: "4903cb42-c581-4b89-977f-af81d74e98df" -->
 ## Purpose
 Define how `0AGNOSTIC` (source of truth), `.1merge` (tool projections), the context chain, and the `multi_avenue_redundancy_web` connect as one architecture.
 
+<!-- section_id: "3ac1d932-0c1f-4c50-af3d-13ad27a9129b" -->
 ## Core Positioning
 - `0AGNOSTIC` is the canonical content model.
 - `.1merge` is the projection and customization model per tool.
 - The Avenue Web is the runtime loading model (context chain + reference chain).
 
+<!-- section_id: "5e8882ad-2128-428e-94a3-a5d22c43ab98" -->
 ## System Components
 1. `0AGNOSTIC`
 - Holds canonical rules, skills, protocols, knowledge, memory conventions.
@@ -40,6 +43,7 @@ Define how `0AGNOSTIC` (source of truth), `.1merge` (tool projections), the cont
 - Layer/feature indexes: `index.jsonld`
 - GAB runtime/spec graph files used by orchestrators and agents
 
+<!-- section_id: "ba88d468-bf8e-4ab6-9b40-b956622ed6d0" -->
 ## How They Connect
 1. Author once in `0AGNOSTIC`.
 2. Merge per tool via `.1merge` (`synced -> overrides -> additions`).
@@ -47,6 +51,7 @@ Define how `0AGNOSTIC` (source of truth), `.1merge` (tool projections), the cont
 4. Runtime agent follows Avenue Web routes to load only needed context.
 5. Episodic memory and updates feed back into next sessions.
 
+<!-- section_id: "f45baa20-3b35-4569-b3d0-d42a82601cb0" -->
 ## Propagation Model: 0AGNOSTIC -> Sync -> .1merge -> Avenue Web
 Canonical content classes in `0AGNOSTIC`:
 - knowledge
@@ -64,6 +69,7 @@ Propagation pipeline:
 
 This keeps one source of truth while allowing controlled tool specialization.
 
+<!-- section_id: "d43e4c24-e267-473c-afc0-71e635f16dd2" -->
 ## Static -> Dynamic Bridging in the Avenue Web
 Context chaining bridge:
 - Static: generated prompts/rules/skills/indexes from `0AGNOSTIC` + `.1merge`.
@@ -79,6 +85,7 @@ Result:
 - principles/rules from canonical static sources remain authoritative,
 - while dynamic context retrieval provides relevance and efficiency at execution time.
 
+<!-- section_id: "98cc509b-858c-453e-b897-b73a62307777" -->
 ## Cross-Tool Application Model (Best-Fit by Tool)
 The Avenue Web is common architecture; application is tool-specific through `.1merge` outputs and runtime routing.
 
@@ -98,17 +105,20 @@ Design rule:
 - Core Avenue Web semantics remain identical across tools.
 - `.1merge` encodes the per-tool adaptation without forking canonical `0AGNOSTIC` content.
 
+<!-- section_id: "8ae55db2-a218-44ed-b096-6c990bc7fb61" -->
 ## Context Chain Mapping
 - Stage-level static context: generated agent files + path rules.
 - Task-level dynamic context: skills, JSON-LD summaries, memory, retrieval.
 - Fallback context: direct read of `0AGNOSTIC`.
 
+<!-- section_id: "83c73405-020a-4d0a-9692-3c7f5074e265" -->
 ## Reference Chain Mapping
 - Trigger tables and path rules point to skills.
 - Skills and prompts point to knowledge/integration summaries.
 - Summaries point to deeper JSON-LD and source docs.
 - Memory points to prior decisions and changed files.
 
+<!-- section_id: "bc65d2e3-af57-40d6-9823-54fe0c6112ac" -->
 ## 8-Avenue MVP Integration Matrix
 1. System prompt chain
 - Source: `0AGNOSTIC` + `.1merge` emissions
@@ -142,6 +152,7 @@ Design rule:
 - Source: canonical files
 - Role: last-resort truth source
 
+<!-- section_id: "f974dbef-d5d8-43f0-8ac3-c77a2f745fdf" -->
 ## Design Constraints
 1. No tool-specific logic in canonical `0AGNOSTIC` unless unavoidable.
 2. `.1merge` overrides must be explicit, scoped, and documented.
@@ -150,6 +161,7 @@ Design rule:
 - one static reference path and one dynamic reference path
 4. Emitted files must be reproducible from source + merge rules.
 
+<!-- section_id: "bf61f4ac-0ccf-41d9-a7dc-19d44730f41a" -->
 ## Design Outputs Required by Planning
 1. Merge workflow for `0_synced -> 1_overrides -> 2_additions`.
 2. Generation map from source artifacts to emitted files per tool.

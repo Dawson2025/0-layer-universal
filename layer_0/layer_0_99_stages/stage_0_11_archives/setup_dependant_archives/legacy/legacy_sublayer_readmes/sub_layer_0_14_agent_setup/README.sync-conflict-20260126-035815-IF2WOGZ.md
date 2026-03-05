@@ -10,6 +10,7 @@ resource_name: "README.sync-conflict-20260126-035815-IF2WOGZ"
 
 This sublayer has been consolidated into the unified setup sublayer for better organization and discoverability.
 
+<!-- section_id: "e48eff7b-ff96-43d4-86a7-f6c1c4955833" -->
 ## Migration Path
 
 All setup documentation is now located in:
@@ -23,6 +24,7 @@ Navigate the file tree by your configuration:
 3. Choose your coding app: `0.07_coding_apps/<app>/`
 4. Continue through all levels to find your specific setup documentation
 
+<!-- section_id: "42d58826-7bdf-47e6-b211-a79b1047c85d" -->
 ## Why Consolidate?
 
 - **Single entry point** for all setup docs
@@ -30,6 +32,7 @@ Navigate the file tree by your configuration:
 - **Cross-cutting organization** with `_shared/` folders at every level
 - **Easier maintenance** - one structure instead of 10
 
+<!-- section_id: "3eb98396-180c-438e-8d28-53194358024e" -->
 ## Legacy Content Below
 
 The original content of this sublayer is preserved below for reference, but should not be updated. All new setup documentation should go into the consolidated sublayer.
@@ -40,6 +43,7 @@ The original content of this sublayer is preserved below for reference, but shou
 
 **Purpose**: Agent configuration and setup for AI applications and tools.
 
+<!-- section_id: "b05c9d6b-49b1-4f9f-b5cb-22ef3bd9e96f" -->
 ## Overview
 
 This sublayer contains documentation and configuration for setting up AI agents across different AI applications and tools. Agent setup is dependent on:
@@ -47,24 +51,29 @@ This sublayer contains documentation and configuration for setting up AI agents 
 - **MCP Servers** (sub_layer_0_10): Which MCP servers are configured and available
 - **AI Models** (sub_layer_0_11): Which AI models are available and approved for use
 
+<!-- section_id: "ae8eecbf-d300-4bce-af1a-165392431773" -->
 ## Agent Configuration Features
 
+<!-- section_id: "203edb33-8c44-4b04-84bf-7db707f010f6" -->
 ### Model Selection and Fallbacks
 - Instructions for configuring agents with specific AI models
 - Fallback model ordering when primary models are unavailable
 - Model-specific agent instructions and capabilities
 
+<!-- section_id: "ddefa98b-d294-40ad-8fc1-4ec5520f33d4" -->
 ### App-Specific Agent Setup
 - **Cursor IDE**: Agent configurations for Cursor-specific workflows
 - **Claude Code**: Agent configurations for Claude Code CLI
 - **Other AI Tools**: Configurations for other AI applications
 
+<!-- section_id: "fe5d4645-9393-4656-b9a4-e2f46829ab98" -->
 ### MCP Integration
 - Agent instructions for using specific MCP servers
 - MCP tool availability and agent capabilities
 - Browser automation agent setup
 - Documentation agent setup (Context7, etc.)
 
+<!-- section_id: "2684b023-25bc-47c5-831d-0e33a0ca9f68" -->
 ## Structure
 
 ```
@@ -77,6 +86,7 @@ sub_layer_0_13_agent_setup/
         └── mcp-agent-integration/  # MCP server agent integration
 ```
 
+<!-- section_id: "82aa9f13-eadf-41a8-a000-0021f0135067" -->
 ## Dependency Chain
 
 Agent setup follows this dependency order:
@@ -93,6 +103,7 @@ Agent setup follows this dependency order:
 0.13_agent_setup (depends on 0.09, 0.10, 0.11, 0.12) ← You are here
 ```
 
+<!-- section_id: "8de83756-75eb-4843-87fe-4876c27a084c" -->
 ## Relationship to Other Sublayers
 
 - **Depends on**: 
@@ -102,20 +113,24 @@ Agent setup follows this dependency order:
   - `sub_layer_0_12_universal_tools` - Agents use universal tools for capabilities
 - **Provides to**: All layers that need configured agents for work
 
+<!-- section_id: "de74807b-f87c-4225-b626-c404c6fd3058" -->
 ## Key Concepts
 
+<!-- section_id: "3cc3cfe4-1e08-4878-b0a5-20bd0a272bbf" -->
 ### Model Fallback Strategy
 Agents should be configured with:
 1. **Primary model(s)**: Preferred models for the agent's tasks
 2. **Fallback order**: Sequence of models to try if primary is unavailable
 3. **Model-specific instructions**: Instructions that vary by model capabilities
 
+<!-- section_id: "05a5f294-ab10-4692-b98b-04cc02412d2c" -->
 ### Agent Capabilities Matrix
 - **Browser Automation Agents**: Require browser MCP servers (0.09)
 - **Documentation Agents**: Require documentation MCP servers (Context7, etc.)
 - **Development Agents**: Require development tools and MCP servers
 - **Testing Agents**: Require testing frameworks and MCP servers
 
+<!-- section_id: "f7846f34-72b4-4dc9-83af-7844bb96d6bd" -->
 ## Notes
 
 - Agent configurations are app-specific and model-specific

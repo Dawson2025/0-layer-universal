@@ -11,6 +11,7 @@ resource_name: "instantiation_guide.sync-conflict-20260126-102106-IF2WOGZ"
 
 ---
 
+<!-- section_id: "0af10409-a88c-487f-a44f-aa1a69cf8012" -->
 ## Entity Types Overview
 
 | Entity Type | Description | Template Location |
@@ -26,13 +27,16 @@ resource_name: "instantiation_guide.sync-conflict-20260126-102106-IF2WOGZ"
 
 ---
 
+<!-- section_id: "0d35eb4f-ca5c-4fe8-8816-37ad11a74851" -->
 ## Naming Conventions
 
+<!-- section_id: "92ecb552-b541-4e30-b833-8d33db83560e" -->
 ### General Pattern
 ```
 layer_<N>_<type>_<name>/
 ```
 
+<!-- section_id: "41a801d6-c68f-42eb-b1cc-0ac8ae74deeb" -->
 ### Type Prefixes
 
 | Entity | Naming Pattern | Example |
@@ -45,6 +49,7 @@ layer_<N>_<type>_<name>/
 | Component | `layer_<N>_component_<name>/` | `layer_3_component_login_form/` |
 | Sub-component | `layer_<N>_sub_component_<name>/` | `layer_4_sub_component_validation/` |
 
+<!-- section_id: "1f8bf16d-a256-4fd5-a2a0-2cfeefc32165" -->
 ### The "sub" Prefix Rule
 
 **Use "sub" prefix ONLY for same-type nesting:**
@@ -56,6 +61,7 @@ layer_<N>_<type>_<name>/
 - Project containing feature → just `feature` (not sub_feature)
 - Feature containing component → just `component` (not sub_component)
 
+<!-- section_id: "05a57457-599b-4510-95ae-3a1432b1225c" -->
 ### Sub*X Numbering for Projects
 
 When projects nest inside projects, track the nesting depth:
@@ -65,6 +71,7 @@ When projects nest inside projects, track the nesting depth:
 
 ---
 
+<!-- section_id: "90734867-79b8-43f5-a4a0-21013b34ac3c" -->
 ## Quick Reference: Where to Create What
 
 ```
@@ -93,8 +100,10 @@ When projects nest inside projects, track the nesting depth:
 
 ---
 
+<!-- section_id: "5689bd90-0ffa-401d-b81f-a8e41e278915" -->
 ## Instantiation Procedures
 
+<!-- section_id: "f7a8b892-595d-45fa-b8f7-1bca79ae1028" -->
 ### 1. Creating a Project
 
 **When:** Starting a new top-level project repository
@@ -143,6 +152,7 @@ When projects nest inside projects, track the nesting depth:
 
 ---
 
+<!-- section_id: "4b0b2f68-e4be-460a-b241-c08017c90be1" -->
 ### 2. Creating a Sub-Project
 
 **When:** A project needs to contain another project (same-type nesting)
@@ -190,6 +200,7 @@ cp -r .../2_sub_project_template/ layer_3_subx2_project_computer_science/
 
 ---
 
+<!-- section_id: "9df7852d-bce7-40fc-aa0a-6550382cc77a" -->
 ### 3. Creating a Feature
 
 **When:** Adding a distinct capability to a project or sub-project
@@ -232,6 +243,7 @@ cp -r .../2_feature_template/ layer_2_feature_authentication/
 
 ---
 
+<!-- section_id: "8630ea74-507c-4817-a7dd-7eea408118f6" -->
 ### 4. Creating a Sub-Feature
 
 **When:** A feature needs to contain another feature (same-type nesting)
@@ -269,6 +281,7 @@ cp -r .../2_feature_template/ layer_3_sub_feature_oauth/
 
 ---
 
+<!-- section_id: "5f429eae-cd37-424a-a0d0-965476f9d711" -->
 ### 5. Creating a Component
 
 **When:** Adding an implementation unit to a feature
@@ -305,6 +318,7 @@ cp -r .../3_component_template/ layer_3_component_login_form/
 
 ---
 
+<!-- section_id: "a3ccc129-840a-42d9-91b6-36accd469d08" -->
 ### 6. Creating a Sub-Component
 
 **When:** A component needs to contain another component (same-type nesting)
@@ -334,6 +348,7 @@ cp -r .../3_component_template/ layer_3_component_login_form/
 
 ---
 
+<!-- section_id: "c8258314-68e3-48d0-8c1f-513db317ee77" -->
 ### 7. Adding a Sub-Layer
 
 **When:** Adding a new content slot (N.01-N.12) to any entity
@@ -388,6 +403,7 @@ cp -r .../3_component_template/ layer_3_component_login_form/
 
 ---
 
+<!-- section_id: "e0ecce5c-c425-4f7d-842c-1c699b5c8c22" -->
 ### 8. Working with Stages
 
 **Location:** `<entity>/layer_N/layer_N_99_stages/`
@@ -430,6 +446,7 @@ stage_N.XX_<name>/
 
 ---
 
+<!-- section_id: "f894010f-1051-4c17-96e4-e9e215d97343" -->
 ## Decision Guide: Which Entity Type?
 
 | Question | If Yes → |
@@ -448,8 +465,10 @@ stage_N.XX_<name>/
 
 ---
 
+<!-- section_id: "e2be5ed8-2d0d-437b-9ecf-3f35b5dd7b58" -->
 ## Common Patterns
 
+<!-- section_id: "5d713886-96a7-4960-9bcf-bac2e7c9f5f6" -->
 ### Pattern A: School/Classes Structure
 ```
 1_layer_school/                           # Project
@@ -466,6 +485,7 @@ stage_N.XX_<name>/
                                 └── layer_4_component_hw1/  # Component
 ```
 
+<!-- section_id: "fb24598b-3380-4bfa-8224-23a27f1082b9" -->
 ### Pattern B: Software Project Structure
 ```
 1_layer_webapp/                           # Project
@@ -484,6 +504,7 @@ stage_N.XX_<name>/
 
 ---
 
+<!-- section_id: "d84f599f-7818-45ed-97de-862c8a905525" -->
 ## Related Documents
 
 - `project_creation_checklist.md` - Detailed project creation checklist

@@ -8,10 +8,12 @@ resource_name: "README"
 
 **Need**: [Reference Format Standard](../README.md)
 
+<!-- section_id: "af076e41-444e-4262-a44e-20054ce82c20" -->
 ## Overview
 
 These stories cover how knowledge files reference each other across tiers using a consistent, parseable format. They validate that agents can follow references from distilled knowledge to full source content, that automated scripts can parse and validate all references across the system, and that developers creating new knowledge files apply the standard format correctly from the start.
 
+<!-- section_id: "aa2507da-fee2-431f-b2fb-ab84b4bd698f" -->
 ## Actors
 
 - **User (Developer)**: Human developer (Dawson) who gives instructions to the AI system, reviews outputs, and validates behavior

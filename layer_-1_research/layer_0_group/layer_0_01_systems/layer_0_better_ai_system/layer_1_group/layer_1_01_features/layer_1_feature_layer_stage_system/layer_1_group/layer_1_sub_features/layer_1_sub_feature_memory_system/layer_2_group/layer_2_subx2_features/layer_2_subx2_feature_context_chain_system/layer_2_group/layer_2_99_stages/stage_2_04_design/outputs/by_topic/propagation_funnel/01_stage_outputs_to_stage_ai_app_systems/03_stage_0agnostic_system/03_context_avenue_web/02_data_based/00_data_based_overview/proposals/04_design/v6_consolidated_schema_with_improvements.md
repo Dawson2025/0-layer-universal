@@ -5,12 +5,14 @@ resource_name: "v6_consolidated_schema_with_improvements"
 ---
 # Context Avenue Database Schema — Proposal v6
 
+<!-- section_id: "ede0e42c-a696-4dd4-941e-d4b05eacec86" -->
 ## Consolidated Schema with All Improvements
 
 This proposal merges v1-v5 into a single unified schema and adds new capabilities: file-based avenues, combination recommendations, benchmark history, and decision matrix.
 
 ---
 
+<!-- section_id: "67abc3c9-a361-4264-b910-db640bcf2f6d" -->
 ## Complete Table Index
 
 | # | Table | Purpose | Source |
@@ -45,6 +47,7 @@ This proposal merges v1-v5 into a single unified schema and adds new capabilitie
 
 ---
 
+<!-- section_id: "082e9637-aaf0-4a81-a329-58f75e39abbe" -->
 ## 1. AVENUES (Top-level container)
 
 ```sql
@@ -60,6 +63,7 @@ CREATE TABLE avenues (
 
 ---
 
+<!-- section_id: "5058fa59-c6ff-4f74-a4eb-46a62530df81" -->
 ## 2. AVENUE_TYPES (Data-based + File-based)
 
 ```sql
@@ -95,6 +99,7 @@ CREATE TABLE avenue_types (
 
 ---
 
+<!-- section_id: "a862c06d-2611-44bd-9933-a3924b751aee" -->
 ## 3. CAPABILITIES (16 metrics)
 
 ```sql
@@ -111,6 +116,7 @@ CREATE TABLE capabilities (
 
 ---
 
+<!-- section_id: "b917b6ff-ea3e-427f-a193-5782515b2a3f" -->
 ## 4. CAPABILITY_METRICS (Measurement definitions)
 
 ```sql
@@ -131,6 +137,7 @@ CREATE TABLE capability_metrics (
 
 ---
 
+<!-- section_id: "af22cda6-bc55-407c-a8d1-d20c3fbc04db" -->
 ## 5. CAPABILITY_BENCHMARKS (Raw + normalized scores)
 
 ```sql
@@ -151,6 +158,7 @@ CREATE TABLE capability_benchmarks (
 
 ---
 
+<!-- section_id: "0490754b-4f9a-456a-8707-3e864b12bd38" -->
 ## 6. OPERATIONS (24 comprehensive operations)
 
 ```sql
@@ -200,6 +208,7 @@ CREATE TABLE operations (
 
 ---
 
+<!-- section_id: "b662e87c-3a3e-4b11-bcae-a69a4f1eba0d" -->
 ## 7. OPERATION_METRICS (How to measure operations)
 
 ```sql
@@ -219,6 +228,7 @@ CREATE TABLE operation_metrics (
 
 ---
 
+<!-- section_id: "dc61fe5e-e6a3-4898-a348-7fed1ceb966d" -->
 ## 8. OPERATION_BENCHMARKS (Operation performance data)
 
 ```sql
@@ -240,6 +250,7 @@ CREATE TABLE operation_benchmarks (
 
 ---
 
+<!-- section_id: "fd062364-384f-44dd-9a34-dc682ad1f53d" -->
 ## 9. OPERATION_QUALITIES (Quality aspects)
 
 ```sql
@@ -257,6 +268,7 @@ CREATE TABLE operation_qualities (
 
 ---
 
+<!-- section_id: "3b92348a-395f-47b8-8bcd-0a5f84efa4ea" -->
 ## 10. IMPORTANCE_METRICS (How to measure importance)
 
 ```sql
@@ -288,6 +300,7 @@ CREATE TABLE importance_metrics (
 
 ---
 
+<!-- section_id: "3e831a80-a5aa-484d-9bd7-c684071abf67" -->
 ## 11. OPERATION_IMPORTANCE_GENERAL (Base importance)
 
 ```sql
@@ -306,6 +319,7 @@ CREATE TABLE operation_importance_general (
 
 ---
 
+<!-- section_id: "d65467d8-acf2-4bb8-9037-1525c54ed32b" -->
 ## 12. PROJECT_CONTEXTS (Project definitions)
 
 ```sql
@@ -321,6 +335,7 @@ CREATE TABLE project_contexts (
 
 ---
 
+<!-- section_id: "9e6a0bbd-2d3a-4a9b-818f-4ce5720c82ae" -->
 ## 13. PROJECT_OPERATION_IMPORTANCE (Project-specific overrides)
 
 ```sql
@@ -342,6 +357,7 @@ CREATE TABLE project_operation_importance (
 
 ---
 
+<!-- section_id: "a7ce1885-35c1-4175-843e-77cfe61c227d" -->
 ## 14. AVENUE_COMBINATIONS (NEW - Hybrid pairings)
 
 ```sql
@@ -367,6 +383,7 @@ CREATE TABLE avenue_combinations (
 
 ---
 
+<!-- section_id: "90fca74e-3906-4169-b6b1-f9c402738fc5" -->
 ## 15. COMBINATION_BENCHMARKS (NEW - Hybrid performance)
 
 ```sql
@@ -385,6 +402,7 @@ CREATE TABLE combination_benchmarks (
 
 ---
 
+<!-- section_id: "f7e974f5-e510-4fc9-bbb5-609f4d957ca6" -->
 ## 16. BENCHMARK_HISTORY (NEW - Version tracking)
 
 ```sql
@@ -404,6 +422,7 @@ CREATE TABLE benchmark_history (
 
 ---
 
+<!-- section_id: "8d354470-d9e3-482e-9fd6-1085430b878d" -->
 ## 17. RANKINGS (Derived from benchmarks)
 
 ```sql
@@ -423,8 +442,10 @@ CREATE TABLE rankings (
 
 ---
 
+<!-- section_id: "b18965ec-8d9e-462c-acfb-61c11ecc9089" -->
 ## Views
 
+<!-- section_id: "edb542ae-797a-4101-aac0-6024a50c1a36" -->
 ### V1: Weighted Operation Scores (Project-specific)
 
 ```sql
@@ -446,6 +467,7 @@ WHERE ob.normalized_score IS NOT NULL
 ORDER BY p.project_name, weighted_score DESC;
 ```
 
+<!-- section_id: "b75fbc0b-cd52-4dc8-909f-40f2ef1e7366" -->
 ### V2: Ranking by Capability
 
 ```sql
@@ -465,6 +487,7 @@ JOIN capabilities c ON cb.capability_id = c.id
 ORDER BY c.name, rank_place;
 ```
 
+<!-- section_id: "e15a21cf-d780-473a-8944-32aed621d8d6" -->
 ### V3: Decision Matrix (Final recommendation per project)
 
 ```sql
@@ -491,6 +514,7 @@ ORDER BY project_name, recommendation_rank;
 | GraphAISystem      | shimi              | 76.5              | 2                   |
 ```
 
+<!-- section_id: "b1240743-dc45-4cd5-9a19-3a725d8c3382" -->
 ### V4: Cross-Category Comparison (File vs Data)
 
 ```sql
@@ -507,6 +531,7 @@ JOIN capabilities c ON cb.capability_id = c.id
 ORDER BY c.name, overall_rank;
 ```
 
+<!-- section_id: "2b99263b-9798-441a-9b58-70a8373a6616" -->
 ### V5: Hybrid Recommendations
 
 ```sql
@@ -527,6 +552,7 @@ JOIN avenue_types s_at ON ac.secondary_avenue_type_id = s_at.id
 ORDER BY cb.combined_score DESC;
 ```
 
+<!-- section_id: "7aed34b1-a429-4458-9815-3df066f4b6ab" -->
 ### V6: Benchmark Trends
 
 ```sql
@@ -545,6 +571,7 @@ ORDER BY changed_date DESC;
 
 ---
 
+<!-- section_id: "2d03839c-61ff-449e-a50c-a685490d8223" -->
 ## Entity Relationship Diagram
 
 ```
@@ -564,6 +591,7 @@ avenue_combinations (1) ──< combination_benchmarks (M) >── capabilities 
 
 ---
 
+<!-- section_id: "41c4f1fb-8e70-47e3-a3d7-aa25af233dea" -->
 ## Implementation Order
 
 1. Create tables 1-3 (avenues, avenue_types, capabilities) — foundation
@@ -581,6 +609,7 @@ avenue_combinations (1) ──< combination_benchmarks (M) >── capabilities 
 
 ---
 
+<!-- section_id: "f5462cec-7d6b-4ad6-8a2e-eb817829458f" -->
 ## Summary
 
 This v6 consolidates all previous proposals into a single implementable schema:

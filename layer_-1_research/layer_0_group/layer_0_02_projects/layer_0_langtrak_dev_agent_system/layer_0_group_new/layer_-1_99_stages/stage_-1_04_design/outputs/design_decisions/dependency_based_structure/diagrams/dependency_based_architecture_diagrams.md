@@ -12,6 +12,7 @@ Visualizations of the dependency-based agent hierarchy design for LangTrak.
 
 ---
 
+<!-- section_id: "2db6ab7c-8f8e-4655-88d5-7f2da3048b1d" -->
 ## 1. Inter-Layer Dependency Chain
 
 The 7-layer linear dependency chain. Each layer depends on all layers below it.
@@ -44,6 +45,7 @@ flowchart TB
 
 ---
 
+<!-- section_id: "5cb86a87-0a8c-4ea0-9dcc-909de37ea79b" -->
 ## 2. L2 Infrastructure Internal Dependencies (DAG)
 
 The most complex layer — a directed acyclic graph with diamond convergence patterns.
@@ -79,6 +81,7 @@ flowchart TB
 
 ---
 
+<!-- section_id: "d1baefaf-a395-47ed-a352-4c809ad97600" -->
 ## 3. L4 Phoneme System Internal Dependencies (Sequence + Branches)
 
 A sequence core with independent feature branches trailing from the main chain.
@@ -113,6 +116,7 @@ flowchart TB
 
 ---
 
+<!-- section_id: "a8900cb4-4c11-4f3a-9ecd-18433b6c3048" -->
 ## 4. L6 Language Content Internal Dependencies (Containment Sequence + Branches)
 
 A containment chain (words contain syllables contain positions) with enhancement branches.
@@ -145,6 +149,7 @@ flowchart TB
 
 ---
 
+<!-- section_id: "9649f2a0-7e00-49d2-a138-76ef1108f903" -->
 ## 5. L7 Projects Internal Dependencies (Star/Hub)
 
 A hub pattern — everything depends on the core, nothing depends on each other.
@@ -174,6 +179,7 @@ flowchart TB
 
 ---
 
+<!-- section_id: "fb26e8d3-2db2-4255-aba4-455a099514c7" -->
 ## 6. OOP Inheritance Hierarchy
 
 The three-level class hierarchy with abstract bases and concrete implementations.
@@ -236,6 +242,7 @@ classDiagram
 
 ---
 
+<!-- section_id: "24f24e36-4026-4bb6-89e1-24cb15b97654" -->
 ## 7. Concrete Layer Agents
 
 The 7 concrete LayerAgent implementations with their interface relationships.
@@ -306,6 +313,7 @@ classDiagram
 
 ---
 
+<!-- section_id: "94d2afbb-6f72-4ad3-b49d-ee2d9538b696" -->
 ## 8. Interface Segregation Map
 
 Which interfaces each layer provides and which it consumes.
@@ -371,6 +379,7 @@ flowchart LR
 
 ---
 
+<!-- section_id: "18338993-b945-4e0a-aef5-3dd12c5424da" -->
 ## 9. Delegation Flow — Task T5: Team Invitation
 
 Sequence diagram showing how a multi-layer task flows through the class hierarchy.
@@ -411,6 +420,7 @@ sequenceDiagram
 
 ---
 
+<!-- section_id: "eba7354d-3780-43b2-b81b-6cae8362e95a" -->
 ## 10. Cross-Cutting Feature Absorption
 
 Shows where L9, L10, L11 features were absorbed into domain layers.
@@ -467,6 +477,7 @@ flowchart TB
 
 ---
 
+<!-- section_id: "ce289c2c-cd96-4106-a20a-da1da887fe2d" -->
 ## 11. Full Composition Tree
 
 The complete has-a object graph at runtime — Manager contains Layers, Layers contain Sub-layers.
@@ -554,6 +565,7 @@ flowchart TB
 
 ---
 
+<!-- section_id: "5420afea-d37c-4030-a2cf-9786dd88635b" -->
 ## Diagram Index
 
 | # | Diagram | Shows |

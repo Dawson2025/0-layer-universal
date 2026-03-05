@@ -5,10 +5,12 @@ resource_name: "STAGE_07_TESTING"
 ---
 # Stage 07: Testing — Universal Guide
 
+<!-- section_id: "acde9181-6779-4ef0-a6d3-45911c7f6ec4" -->
 ## Purpose
 
 Validate that built artifacts work correctly and meet requirements. This is the **verification stage** — prove that what was built actually works.
 
+<!-- section_id: "fc770e5f-b625-42ca-96cc-bdf1393c1206" -->
 ## What This Stage IS
 
 The testing agent:
@@ -18,6 +20,7 @@ The testing agent:
 - Produces a test results summary with coverage analysis
 - Identifies gaps where testing is insufficient
 
+<!-- section_id: "5f6ad00e-9113-49ff-a914-430a2181ff1e" -->
 ## What This Stage IS NOT
 
 The testing agent does NOT:
@@ -30,8 +33,10 @@ The testing agent does NOT:
 
 The agent determines **whether things work**, not **how to fix them**.
 
+<!-- section_id: "584bf14d-c217-46f0-aee8-bca666a1ddba" -->
 ## Methodology
 
+<!-- section_id: "be550a3b-e88d-425f-87be-020b940cb79c" -->
 ### Output Structure
 
 ```
@@ -77,6 +82,7 @@ stage_N_07_testing/
 
 **Key separation**: `outputs/` contains only work products (test suites). Handoff documents (stage report, results summary) live in `.0agnostic/05_handoff_documents/02_outgoing/01_to_above/` because they exist to communicate upward to the manager, not as deliverables of the testing work itself.
 
+<!-- section_id: "1f402152-6b61-4c05-a09a-220a314e9bcc" -->
 ### Suite Organization
 
 Each test suite groups everything about one testing topic:
@@ -87,6 +93,7 @@ Each test suite groups everything about one testing topic:
 
 Suite names should reflect the topic being tested (e.g., `context_chain_validation`, `agnostic_sync`, `1merge_structure`, `hierarchy_inheritance`).
 
+<!-- section_id: "6834dade-4119-43f4-9a2e-ff1bf8373d65" -->
 ### Test Script Format
 
 Each test script:
@@ -96,6 +103,7 @@ Each test script:
 - Is idempotent (can be run repeatedly)
 - Documents what it tests in comments
 
+<!-- section_id: "d1e33566-07dd-4397-b1c0-c4706fc1e191" -->
 ### Test Results Summary (Handoff)
 
 The test results summary (`.0agnostic/05_handoff_documents/02_outgoing/01_to_above/test_results_summary.md`) includes:
@@ -106,6 +114,7 @@ The test results summary (`.0agnostic/05_handoff_documents/02_outgoing/01_to_abo
 
 This is a companion to the stage report — the stage report gives the high-level summary (under 30 lines), the test results summary gives the detailed breakdown.
 
+<!-- section_id: "7d9ba7ea-475c-4edd-bc3a-a2d1784b589e" -->
 ### Test Categories
 
 - **Structural tests**: Does the expected directory/file structure exist?
@@ -115,6 +124,7 @@ This is a companion to the stage report — the stage report gives the high-leve
 - **Constraint tests**: Are stage 03 constraints respected?
 - **Regression tests**: Do previously working things still work?
 
+<!-- section_id: "5ec4419c-1144-4085-a0d8-744a40da56e0" -->
 ## Inputs
 
 - **Stage 01 outputs** — requirements to validate against
@@ -123,8 +133,10 @@ This is a companion to the stage report — the stage report gives the high-leve
 - **Stage 06 outputs** — artifacts to test (and development status for what was built)
 - **Parent entity .0agnostic/** — entity structure to validate
 
+<!-- section_id: "4bc11d77-7ac4-41e5-87ca-2348b51534a9" -->
 ## Outputs
 
+<!-- section_id: "027713bf-1738-4c4f-ae37-d00fee5d6e9b" -->
 ### Work Products (in `outputs/`)
 
 | Output | Location | Format |
@@ -137,6 +149,7 @@ This is a companion to the stage report — the stage report gives the high-leve
 | Test insights | `outputs/by_suite/{suite}/insights/` | Coverage analysis, findings per suite |
 | Suite runner | `outputs/by_suite/{suite}/tests/run_suite.sh` | Per-suite runner |
 
+<!-- section_id: "12124f09-3d59-436e-936c-11d2fe7e1bcc" -->
 ### Handoff Documents (in `.0agnostic/05_handoff_documents/02_outgoing/`)
 
 Same content goes to both `01_to_above/` (for the manager) and `03_to_below/` (for test suites to reference).
@@ -151,6 +164,7 @@ The **testing overview** (`testing_overview.md`) is the master reference documen
 
 The **to_below** copy lets individual test suites see the broader context — overall test status, what other suites exist, and where the stage stands. A suite agent working on `agnostic_sync/` can read the downward-facing overview to understand what `1merge_structure/` found.
 
+<!-- section_id: "35fe9ccd-5c68-4a46-9732-1973d5be89fe" -->
 ## Success Criteria
 
 This stage is complete when:
@@ -160,6 +174,7 @@ This stage is complete when:
 4. Test coverage is documented (what's tested, what's not)
 5. Results summary is up to date
 
+<!-- section_id: "530d43c3-3366-4b8e-927b-68219d09767c" -->
 ## Exit Protocol
 
 1. Write/update handoff documents in both outgoing directions (`01_to_above/` and `03_to_below/`):
@@ -170,6 +185,7 @@ This stage is complete when:
 3. If handing off to **stage 09** (fixing): list specific failures that need fixing
 4. If handing off to **stage 06** (development): note implementation gaps discovered during testing
 
+<!-- section_id: "1340101c-387e-4bfd-a50f-7c950ce6ccfd" -->
 ## Common Patterns
 
 - **Test-driven verification**: Write tests based on requirements, not just what was built
@@ -177,6 +193,7 @@ This stage is complete when:
 - **Progressive coverage**: Start with structural tests, add functional, then integration
 - **Loop to fixing**: Failed tests trigger stage 09 (fixing), then re-run
 
+<!-- section_id: "a1005f39-b27c-48fd-bfe8-8ae37a814d4a" -->
 ## Anti-Patterns
 
 - Writing tests only for what passes (testing should find failures)

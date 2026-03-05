@@ -5,14 +5,17 @@ resource_name: "05_use_cases"
 ---
 # Use Cases: How the Memory System Will Be Used
 
+<!-- section_id: "0a7036ec-3943-413a-9b8f-d068f489b367" -->
 ## Overview
 
 Concrete scenarios that the memory system must support, organized by the three child sub-features (context chain, dynamic memory, navigation) plus cross-cutting concerns.
 
 ---
 
+<!-- section_id: "930a9c90-b330-4073-8706-930b1516c7a4" -->
 ## Context Chain Use Cases
 
+<!-- section_id: "9463b7b6-bb9e-474e-930a-3d6b52ee88b4" -->
 ### UC-CC1: Session Start Context Loading
 **Actor**: AI agent starting a new session
 **Trigger**: User launches Claude Code (or any tool) in a project directory
@@ -25,6 +28,7 @@ Concrete scenarios that the memory system must support, organized by the three c
 
 **Current gap**: Steps 3-4 are manual or missing
 
+<!-- section_id: "3eee5289-6446-4b03-9327-bf30835301d4" -->
 ### UC-CC2: Cross-Entity Context Discovery
 **Actor**: AI agent working on a sub-feature
 **Trigger**: Agent needs context from a sibling entity (e.g., working on `dynamic_memory` but needs info from `context_chain_system`)
@@ -36,6 +40,7 @@ Concrete scenarios that the memory system must support, organized by the three c
 
 **Current gap**: No mechanism for sibling discovery beyond manual navigation
 
+<!-- section_id: "bce0503b-bf99-4f80-b754-fbec79349bf0" -->
 ### UC-CC3: Relevance-Based Context Filtering
 **Actor**: AI agent with deep hierarchy path
 **Trigger**: Loading full CLAUDE.md chain would consume too many tokens
@@ -49,8 +54,10 @@ Concrete scenarios that the memory system must support, organized by the three c
 
 ---
 
+<!-- section_id: "2413d6fe-e64c-49ab-b056-e6d9904cb4bf" -->
 ## Dynamic Memory Use Cases
 
+<!-- section_id: "ffbb1c0e-2721-4768-b253-ecfc4bf50ab1" -->
 ### UC-DM1: Automatic Session Recording
 **Actor**: AI agent completing significant work
 **Trigger**: End of session or significant milestone within session
@@ -62,6 +69,7 @@ Concrete scenarios that the memory system must support, organized by the three c
 
 **Current gap**: This is entirely manual today
 
+<!-- section_id: "769f7a84-de0d-4d7b-8745-e783b181f151" -->
 ### UC-DM2: Resume Previous Work
 **Actor**: AI agent starting a session on previously-worked-on entity
 **Trigger**: User says "continue where we left off" or similar
@@ -73,6 +81,7 @@ Concrete scenarios that the memory system must support, organized by the three c
 
 **Current gap**: Episodic memory is empty, so there's nothing to resume from
 
+<!-- section_id: "da93df70-19f6-46b2-8bb1-8fccdb194935" -->
 ### UC-DM3: Learning Capture and Propagation
 **Actor**: AI agent that discovers a reusable insight
 **Trigger**: Agent encounters a gotcha, best practice, or pattern worth remembering
@@ -84,6 +93,7 @@ Concrete scenarios that the memory system must support, organized by the three c
 
 **Current gap**: Insights are lost between sessions or siloed in auto-memory
 
+<!-- section_id: "503b20ac-88fd-49e0-b5b9-4c16618df388" -->
 ### UC-DM4: Decision Recording
 **Actor**: AI agent or user making an architectural/design decision
 **Trigger**: A choice is made between alternatives with lasting implications
@@ -95,6 +105,7 @@ Concrete scenarios that the memory system must support, organized by the three c
 
 **Current gap**: Decisions are sometimes captured in outputs but not systematically
 
+<!-- section_id: "a0bb79c8-43bd-4187-8e94-1730b7496160" -->
 ### UC-DM5: Memory Consolidation
 **Actor**: System (automated or manually triggered)
 **Trigger**: Entity's memory has grown large, or periodic maintenance
@@ -109,8 +120,10 @@ Concrete scenarios that the memory system must support, organized by the three c
 
 ---
 
+<!-- section_id: "1c66d60c-081c-409a-93c8-79722e44001e" -->
 ## Navigation Use Cases
 
+<!-- section_id: "e980daca-55c8-4408-bb22-e51ca3e77b2f" -->
 ### UC-NAV1: "Where Am I?" Context Orientation
 **Actor**: AI agent entering a new directory
 **Trigger**: User navigates to unfamiliar part of the hierarchy
@@ -122,6 +135,7 @@ Concrete scenarios that the memory system must support, organized by the three c
 
 **Current behavior**: Context traversal rule handles this, but agent doesn't always proactively orient
 
+<!-- section_id: "6a477e3d-9b94-4112-9b91-defe4db39915" -->
 ### UC-NAV2: "What Else Is Related?" Exploration
 **Actor**: User or agent wanting to understand scope
 **Trigger**: Exploring what exists in the framework
@@ -133,6 +147,7 @@ Concrete scenarios that the memory system must support, organized by the three c
 
 **Current gap**: No systematic exploration capability
 
+<!-- section_id: "e64dfa72-81d0-4d72-8227-92788cf532ee" -->
 ### UC-NAV3: "What Have We Done?" History Query
 **Actor**: User wanting to understand project history
 **Trigger**: "What did we work on last week?" or "What's the status of feature X?"
@@ -146,8 +161,10 @@ Concrete scenarios that the memory system must support, organized by the three c
 
 ---
 
+<!-- section_id: "dfc87c4e-59db-4e72-8d53-db79bd6e4f5f" -->
 ## Cross-Cutting Use Cases
 
+<!-- section_id: "685d1764-279e-4eb7-bcbe-d8e7ee165e94" -->
 ### UC-XC1: Multi-Tool Memory Access
 **Actor**: User switching between AI tools (Claude Code → Cursor → Gemini)
 **Trigger**: User works on same entity with different tools
@@ -160,6 +177,7 @@ Concrete scenarios that the memory system must support, organized by the three c
 
 **Current gap**: Only `0AGNOSTIC.md` is truly tool-agnostic; memory files are tool-specific
 
+<!-- section_id: "c66d3697-17db-458e-b777-4ad9a3b8939d" -->
 ### UC-XC2: Multi-Agent Collaboration
 **Actor**: Team of AI agents working on related tasks
 **Trigger**: User launches parallel agents (Claude Code team workflows)
@@ -172,6 +190,7 @@ Concrete scenarios that the memory system must support, organized by the three c
 
 **Current gap**: No shared memory protocol for multi-agent scenarios
 
+<!-- section_id: "8b904080-27be-43e3-b6d5-2ad659d1e090" -->
 ### UC-XC3: Memory Health Check
 **Actor**: User or automated maintenance
 **Trigger**: Periodic or on-demand review

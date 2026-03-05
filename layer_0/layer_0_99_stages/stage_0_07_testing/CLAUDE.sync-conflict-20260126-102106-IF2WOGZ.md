@@ -5,15 +5,18 @@ resource_name: "CLAUDE.sync-conflict-20260126-102106-IF2WOGZ"
 ---
 # Stage 05: Testing
 
+<!-- section_id: "9fe2863a-9e2a-4697-ac97-7b738f7d886e" -->
 ## Purpose
 Verify the implementation meets requirements. This stage performs systematic testing to identify defects and validate functionality.
 
+<!-- section_id: "83986c26-a6a7-40d7-9bf2-0c53686a50a2" -->
 ## Entry Criteria
 - Implementation received
 - Unit tests passing
 - Test environment available
 - Test data prepared
 
+<!-- section_id: "8b1b6722-64ff-4e9e-9961-84f92a7fa001" -->
 ## Exit Criteria
 - All test cases executed
 - Test results documented
@@ -21,6 +24,7 @@ Verify the implementation meets requirements. This stage performs systematic tes
 - Quality metrics collected
 - Handoff prepared for Criticism
 
+<!-- section_id: "c0aef398-97c3-41cb-80e4-ebafccd37e44" -->
 ## Typical Tasks
 - Execute test plans
 - Perform integration testing
@@ -29,10 +33,12 @@ Verify the implementation meets requirements. This stage performs systematic tes
 - Document test results
 - Log defects with reproduction steps
 
+<!-- section_id: "8a5907ae-5400-4074-92c1-fe495ce47b36" -->
 ## Handoffs
 - **From Previous (04_development)**: IMPLEMENTATION
 - **To Next (06_criticism)**: TEST_RESULTS with defects and metrics
 
+<!-- section_id: "0e74500b-a2bf-4369-a124-70b120ca394a" -->
 ## Directory Structure
 ```
 stage_0_07_testing/
@@ -41,6 +47,7 @@ stage_0_07_testing/
 └── hand_off_documents/   # Stage handoffs
 ```
 
+<!-- section_id: "92c3ab29-bac2-4c1a-81ea-013c4abe4c46" -->
 ## AI Agent Guidelines
 When working in this stage:
 - Test against requirements, not assumptions

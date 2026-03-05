@@ -9,11 +9,13 @@ resource_name: "context_chain_mode"
 **Importance**: 1 (High)
 **Scope**: All agents at all levels
 
+<!-- section_id: "1f8dbb79-14c4-4c09-95e3-bcf3b0588ac1" -->
 ## Rule
 
 The context chain operates in one of two modes: **Default** or **Research**.
 The user controls which mode is active. Default mode is always the starting state.
 
+<!-- section_id: "5a72664a-4c48-4a1b-bbcf-f6ed5b4f3f66" -->
 ### Default Mode (default)
 
 Use ONLY production resources:
@@ -24,6 +26,7 @@ Use ONLY production resources:
 
 This is the tried-and-true, stable context chain.
 
+<!-- section_id: "866cb7f7-881a-49d5-b8f6-c32bf82c25ba" -->
 ### Research Mode (user opt-in)
 
 Use production resources AS THE BASE, then ADDITIONALLY load:
@@ -35,6 +38,7 @@ Use production resources AS THE BASE, then ADDITIONALLY load:
 Research mode EXTENDS default — it never replaces it. Production rules and protocols still apply.
 Research content provides additional context, experimental alternatives, and deeper rationale.
 
+<!-- section_id: "853c8fa4-3533-484a-9812-645c2ae1a4c9" -->
 ## Trigger Conditions
 
 Switch to **Research Mode** when the user:
@@ -50,6 +54,7 @@ Switch back to **Default Mode** when the user:
 - Says "disable research mode"
 - Starts a new session (default mode is always the starting state)
 
+<!-- section_id: "689141be-353a-47db-8eca-c9ed79b47dc0" -->
 ## What Changes in Research Mode
 
 | Aspect | Default Mode | Research Mode |
@@ -62,10 +67,12 @@ Switch back to **Default Mode** when the user:
 | Agent behavior | Follow proven patterns | May suggest experimental alternatives |
 | Stage instantiation | Empty stage directories | Pre-scaffolded with stage templates (see below) |
 
+<!-- section_id: "d5ba9b55-4905-4517-9be2-40257de502a9" -->
 ## Stage Instantiation Templates (Research Mode Only)
 
 In Research Mode, when creating new entities with stages, agents should pre-scaffold stage directories with experimental organizational patterns instead of leaving them empty.
 
+<!-- section_id: "183443ca-66ea-4eac-9f05-4908d27c7ab4" -->
 ### Stage 01: Request Gathering
 
 Instantiate with directory-based tree of needs:
@@ -93,6 +100,7 @@ outputs/requests/tree_of_needs/
 
 **Reference implementation**: `layer_1/layer_1_projects/layer_1_project_internship_prep/layer_1_group/layer_1_99_stages/stage_1_01_request_gathering/outputs/requests/tree_of_needs/`
 
+<!-- section_id: "1419a3f1-ddfc-454e-9345-4e8e684983b1" -->
 ### Stage 07: Testing
 
 Instantiate with by-purpose organization:
@@ -110,12 +118,14 @@ outputs/by_purpose/
 
 **Reference implementation**: `layer_1/layer_1_projects/layer_1_project_internship_prep/layer_1_group/layer_1_99_stages/stage_1_07_testing/outputs/by_purpose/`
 
+<!-- section_id: "d06d8ae7-e527-44c2-aa2b-122420ee59d7" -->
 ### Other Stages
 
 No experimental templates yet. In research mode, agents may propose new templates when patterns emerge from real usage.
 
 **Status**: Experimental — these templates have been validated in one entity (internship_prep). They need broader testing before promotion to default mode.
 
+<!-- section_id: "5bdd2073-2046-441a-90fd-08e59d2b983b" -->
 ## Agent Behavior in Research Mode
 
 When in Research Mode, agents should:
@@ -127,6 +137,7 @@ When in Research Mode, agents should:
 5. **Track findings**: If new discoveries are made, suggest adding them to research entity outputs
 6. **Never auto-promote**: Research findings are NOT automatically promoted to production — that requires the promotion protocol
 
+<!-- section_id: "1cf0a302-36e7-4d23-8c05-4e9efef59629" -->
 ## Related
 
 - **Research Knowledge Index**: `.0agnostic/01_knowledge/layer_stage_system/docs/RESEARCH_KNOWLEDGE_INDEX.md`

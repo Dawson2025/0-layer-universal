@@ -5,12 +5,14 @@ resource_name: "gsd_keepalive_fix"
 ---
 # GSD Keepalive Service Fix
 
+<!-- section_id: "eaca8696-22bf-4c17-98e7-d32c9c3646ab" -->
 ## Problem
 
 GNOME Settings Daemons (`gsd-media-keys`, `gsd-power`) repeatedly failing, causing:
 - Volume buttons not working
 - Brightness buttons not working
 
+<!-- section_id: "2a3eed74-3292-4ffe-84e4-d4aef95b32d2" -->
 ### Root Cause
 
 1. Services failed during login (due to inotify exhaustion or portal issues)
@@ -18,6 +20,7 @@ GNOME Settings Daemons (`gsd-media-keys`, `gsd-power`) repeatedly failing, causi
 3. Services configured to only start via GNOME session, not manually
 4. Manual starts work but nothing restarts them if they die
 
+<!-- section_id: "88aa64cd-8bd7-4368-85d4-be5f2dbbbebf" -->
 ### Error Evidence
 
 ```
@@ -27,10 +30,12 @@ GNOME Settings Daemons (`gsd-media-keys`, `gsd-power`) repeatedly failing, causi
   "Failed with result 'exit-code'"
 ```
 
+<!-- section_id: "71512a44-d982-4580-9882-338b246b8977" -->
 ## Solution
 
 Created a keepalive timer that checks every 60 seconds and restarts dead daemons.
 
+<!-- section_id: "a7bf8c86-baa8-4706-b8a2-51e1eeb23539" -->
 ### Files Created
 
 **~/.config/systemd/user/gsd-keepalive.service**
@@ -65,6 +70,7 @@ OnUnitActiveSec=60
 WantedBy=timers.target
 ```
 
+<!-- section_id: "66e00fa6-81c7-4b79-adf9-0db21d6b8c60" -->
 ### Commands to Apply
 
 ```bash
@@ -78,6 +84,7 @@ systemctl --user enable --now gsd-keepalive.timer
 systemctl --user status gsd-keepalive.timer
 ```
 
+<!-- section_id: "f89243ea-5817-40ab-bbbe-b5dafd6e0ff8" -->
 ## Verification
 
 ```bash
@@ -91,6 +98,7 @@ pgrep -a gsd-power
 # Test volume/brightness buttons
 ```
 
+<!-- section_id: "20654ec1-e65c-47a8-92d9-0d1a6dac1e71" -->
 ## Known Limitation: Stale GNOME Shell Grabs
 
 The keepalive timer successfully restarts gsd-media-keys and gsd-power processes. However, if gnome-shell's internal accelerator grab table is stale (common after suspend/resume), the restarted daemons still get "Failed to grab accelerator" for standard media keys.
@@ -101,10 +109,12 @@ The keepalive timer successfully restarts gsd-media-keys and gsd-power processes
 1. `gnome-shell --replace` on X11 (WARNING: kills Cursor/Electron apps)
 2. Or log out and back in
 
+<!-- section_id: "9893c362-614f-432f-8b16-a9b0fbe8a1c2" -->
 ## Long-term Fix
 
 Log out and log back in after the underlying issues (inotify, portals) are resolved. This allows GNOME session to properly start all services. After a fresh login, the keepalive timer becomes a safety net rather than a necessity.
 
+<!-- section_id: "3254b793-d966-4c9e-a39a-70be3d88668e" -->
 ## Related Issues
 
 - inotify_exhaustion (resolved)

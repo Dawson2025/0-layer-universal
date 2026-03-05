@@ -13,6 +13,7 @@ resource_name: "US-02_agent_finds_shortest_context_path"
 **I want** the AI to find the most direct path to that context instead of walking the entire tree,
 **So that** it loads minimum context and doesn't waste my token budget on irrelevant files.
 
+<!-- section_id: "48b53df9-d8f8-42e8-8100-404bb688c4ae" -->
 ### What Happens
 
 1. User asks the AI something that requires context from a distant entity (e.g., asking about research while working in design)
@@ -20,6 +21,7 @@ resource_name: "US-02_agent_finds_shortest_context_path"
 3. Agent loads only the files along that path, skipping unrelated branches
 4. User gets the answer without the AI needing to read the entire hierarchy
 
+<!-- section_id: "3cd41ad6-4815-4193-9ecc-47e2d9a3169d" -->
 ### Acceptance Criteria
 
 - Graph traversal returns a typed path between any two entities

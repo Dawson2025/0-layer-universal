@@ -6,10 +6,13 @@ resource_name: "README"
 ---
 # playwright-mcp (gemini_cli on wsl)
 
+<!-- section_id: "b710548e-38b5-4801-b5a5-b53a0a80a5db" -->
 ## Canonical docs
 - ../../../../../_shared/0.04_ai_apps/_shared/0.05_mcp_servers/playwright-mcp/
 
+<!-- section_id: "9a9ccce6-fb0c-487d-a65b-f4a83a3517f2" -->
 ## Notes
+<!-- section_id: "624111e4-0471-41be-a11f-b31d609d0985" -->
 ### Concurrent browser (recommended)
 Use OS+tool-specific Playwright configs so Gemini can run a headed browser concurrently with Codex/Claude:
 

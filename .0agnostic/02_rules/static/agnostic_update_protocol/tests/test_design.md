@@ -11,14 +11,17 @@ resource_name: "test_design"
 
 ---
 
+<!-- section_id: "3a1d04b3-9b2b-468a-8e0b-3842b44bfcf6" -->
 ## Purpose
 
 Validates the sync chain: edit .0agnostic/ -> update 0AGNOSTIC.md -> run agnostic-sync.sh
 
+<!-- section_id: "0c3054d5-6037-4022-a76a-4fe69be5d6b8" -->
 ## Test Cases
 
 (To be designed)
 
+<!-- section_id: "ae2e72e1-b4f8-4377-9376-67c04cd42946" -->
 ### TC-XXX-01: Rule file exists and is well-formed
 
 **Steps**:
@@ -30,6 +33,7 @@ Validates the sync chain: edit .0agnostic/ -> update 0AGNOSTIC.md -> run agnosti
 
 ---
 
+<!-- section_id: "24ac1b89-5793-4147-bd2f-40063d90928c" -->
 ## Notes
 
 This test design is scaffolded. Detailed test cases should be written when this rule is actively being validated or when compliance issues are observed.

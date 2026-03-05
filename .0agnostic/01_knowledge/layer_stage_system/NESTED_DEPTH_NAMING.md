@@ -5,6 +5,7 @@ resource_name: "NESTED_DEPTH_NAMING"
 ---
 # Nested Depth Naming Convention (subxN)
 
+<!-- section_id: "fadd879d-07dc-4e69-aebe-2db39fec2375" -->
 ## Overview
 
 When sub-layers contain nested sub-layers, we use a **depth indicator** in the naming:
@@ -15,8 +16,10 @@ When sub-layers contain nested sub-layers, we use a **depth indicator** in the n
 
 ---
 
+<!-- section_id: "4bd96668-7c4e-47a2-92cd-00079bd8edf9" -->
 ## Why Depth Naming Matters
 
+<!-- section_id: "7d7f2b92-be46-465c-b82f-8fc9ef3d2f77" -->
 ### Problem Without Depth Indicators
 
 ```
@@ -25,6 +28,7 @@ sub_layer_0_05_operating_systems/
     └── sub_layer_0_07_coding_apps/     # Confusing!
 ```
 
+<!-- section_id: "b35455ca-a74a-4208-89c5-3006f3c2a410" -->
 ### Solution With Depth Indicators
 
 ```
@@ -35,6 +39,7 @@ sub_layer_0_05_operating_systems/
 
 ---
 
+<!-- section_id: "44693503-9fbd-43e2-b6a7-2f070610b0b6" -->
 ## Naming Pattern
 
 ```
@@ -52,8 +57,10 @@ sub[x{depth}]_layer_{layer_number}_{sequence}_{name}/
 
 ---
 
+<!-- section_id: "a1bd3d48-14f6-43aa-9dfd-1ddb25c7f634" -->
 ## Depth Examples
 
+<!-- section_id: "908dce9a-785a-4c91-a1c0-2dcc09af5e9d" -->
 ### Depth 1: `sub_layer_`
 
 Direct children of a layer's `layer_N_03_sub_layers/` folder.
@@ -69,6 +76,7 @@ layer_0/
         └── sub_layer_0_04+_setup_dependant/  # Depth 1
 ```
 
+<!-- section_id: "9b951a81-8250-4368-9e2d-662b3b38fff7" -->
 ### Depth 2: `subx2_layer_`
 
 Children nested within a depth-1 sub-layer.
@@ -81,6 +89,7 @@ sub_layer_0_04+_setup_dependant/
     └── subx2_layer_0_05_windows/               # Depth 2
 ```
 
+<!-- section_id: "d5ca0836-8da7-456f-ad99-9262de107634" -->
 ### Depth 3: `subx3_layer_`
 
 Children nested within a depth-2 sub-layer.
@@ -93,6 +102,7 @@ subx2_layer_0_05_linux_ubuntu/
     └── subx3_layer_0_06_container/             # Depth 3
 ```
 
+<!-- section_id: "08c998c6-6f4f-4ce3-b863-1fb9bef81203" -->
 ### Depth 4+: `subx4_layer_`, `subx5_layer_`, etc.
 
 Continue the pattern as needed.
@@ -107,6 +117,7 @@ subx3_layer_0_06_local/
 
 ---
 
+<!-- section_id: "cfa3802d-4c47-4c28-a982-f9186e3a1101" -->
 ## Complete Hierarchy Example
 
 ```
@@ -130,6 +141,7 @@ layer_0/
 
 ---
 
+<!-- section_id: "31948559-06ef-438f-8085-37d22cf05e0e" -->
 ## Context Flow for Nested Sub-Layers
 
 Each depth level can be an entry point with its own context:
@@ -170,8 +182,10 @@ Each depth level can be an entry point with its own context:
 
 ---
 
+<!-- section_id: "ffd3fb06-d608-4be7-84e3-9696ed31cc9a" -->
 ## When to Use Depth Naming
 
+<!-- section_id: "e6593bbd-85da-4569-acf5-df9fe48e2c93" -->
 ### Use subxN_ When:
 
 1. **Inside a `_hierarchy` folder**
@@ -186,6 +200,7 @@ Each depth level can be an entry point with its own context:
    - Single nesting can use regular `sub_layer_`
    - Multiple nesting needs depth indicators
 
+<!-- section_id: "579547b7-baa6-4b82-8f69-74d21a715bb5" -->
 ### Don't Use subxN_ When:
 
 1. **Flat structure**
@@ -198,6 +213,7 @@ Each depth level can be an entry point with its own context:
 
 ---
 
+<!-- section_id: "c470f3c7-adbc-4394-9992-0c4322d91e08" -->
 ## Critical Rules at Each Depth
 
 Each depth level can add its own critical rules:
@@ -225,6 +241,7 @@ layer_0/CLAUDE.md
 
 ---
 
+<!-- section_id: "be4e5b9a-7e07-43c1-80c5-9146da7a8ad9" -->
 ## Generalized Pattern: subxN_
 
 For any depth N:
@@ -244,6 +261,7 @@ subx{N}_layer_{layer_num}_{seq}_{name}/
 
 ---
 
+<!-- section_id: "d44e47a0-b5db-491f-9172-52c62f4d723f" -->
 ## AI Agent Navigation
 
 When an agent encounters nested sub-layers:
@@ -256,6 +274,7 @@ When an agent encounters nested sub-layers:
 5. Apply most specific rules from current depth
 ```
 
+<!-- section_id: "42e42953-1ab8-41be-9ff6-088c360c9c9b" -->
 ### Example Navigation
 
 ```
@@ -276,6 +295,7 @@ NOT loaded:
 
 ---
 
+<!-- section_id: "35b62539-d039-4084-926b-34a0cbd4ba22" -->
 ## Self-Check for Nested Navigation
 
 - [ ] Did I identify the depth from the prefix?

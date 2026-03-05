@@ -8,6 +8,7 @@ resource_name: "0AGNOSTIC"
 
 # ── Entity Definition ──
 
+<!-- section_id: "227c6edc-d981-4dbd-9ef0-7e0594024250" -->
 ## Identity
 
 entity_id: "15103670-9902-4b01-89b1-8f45aa3f08b7"
@@ -17,16 +18,20 @@ entity_id: "15103670-9902-4b01-89b1-8f45aa3f08b7"
 **Depends On**: L2 Infrastructure (auth, firebase)
 **Provides**: IUserProvider
 
+<!-- section_id: "72f5b4f7-e467-47b3-b062-a3409b5cc5ff" -->
 ## Key Behaviors
 
+<!-- section_id: "8c731a5e-ac9e-473e-8598-41b56aaa3c0a" -->
 ### Sub-layers
 - L3.1 Model: User data structures and database operations
 - L3.2 Profiles: Profile display and management
 - L3.3 Sessions: Session management, authentication state, current project context
 
+<!-- section_id: "3cb44805-f5c4-46f3-9d06-8371baee0584" -->
 ### Dependency Shape
 Sequence: Model → Profiles → Sessions (each builds on previous)
 
+<!-- section_id: "83dda782-4ebf-46ee-958b-c555a97cdc2f" -->
 ## Triggers
 
 | Situation | Action |
@@ -37,6 +42,7 @@ Sequence: Model → Profiles → Sessions (each builds on previous)
 
 # ── Current Status ──
 
+<!-- section_id: "33ffa1e3-5f28-49f9-a7f2-17f3e48c5bcf" -->
 ## Current Status
 
 **Phase**: Routes extracted — user search and profile API routes
@@ -47,6 +53,7 @@ Sequence: Model → Profiles → Sessions (each builds on previous)
 
 # ── References ──
 
+<!-- section_id: "4c90fcf6-4978-4946-b504-328fcf86933e" -->
 ## Navigation
 
 | Resource | Path |

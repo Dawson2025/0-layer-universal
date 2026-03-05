@@ -7,12 +7,15 @@ resource_name: "progress_assessment"
 **Date**: 2025-12-24
 **Plan File**: `/home/dawson/.cursor/plans/integrate_ideal_ai_manager_hierarchy_system_into_0aicontext_8473a05b.plan.md`
 
+<!-- section_id: "20cc1a5d-ffb8-422d-b5da-9e1159cb5c48" -->
 ## Executive Summary
 
 The integration of the Ideal AI Manager Hierarchy System into the 0_ai_context structure is **~57% complete** (4 of 7 phases). The foundational work (Phases 1-4) has been successfully completed, establishing the canonical Agent OS architecture with OS-aware context management. The remaining work (Phases 5-7) focuses on operational patterns: orchestration and CLI recursion, observability/safety/deployment, and rollout planning.
 
+<!-- section_id: "d00db761-59f1-4ecd-addc-373c1bd58e3b" -->
 ## Detailed Phase Status
 
+<!-- section_id: "1dd72104-2a02-42f0-b4bc-5d70dc515b5c" -->
 ### ✅ Phase 1: Navigation and Overview Integration (COMPLETED - 100%)
 
 **Goal**: Update top-level docs to reference the Ideal AI Manager Hierarchy System
@@ -36,6 +39,7 @@ The integration of the Ideal AI Manager Hierarchy System into the 0_ai_context s
 
 ---
 
+<!-- section_id: "f9c93d60-8d1b-4a61-a6f5-4e415b763f16" -->
 ### ✅ Phase 2: Framework Alignment (COMPLETED - 100%)
 
 **Goal**: Align layer/stage framework with ideal hierarchy definitions
@@ -53,6 +57,7 @@ The integration of the Ideal AI Manager Hierarchy System into the 0_ai_context s
 
 ---
 
+<!-- section_id: "5203dfc9-36bc-4796-be02-515e6a376b43" -->
 ### ✅ Phase 3: Manager/Worker + Handoff Standardization (COMPLETED - 95%)
 
 **Goal**: Standardize manager/worker behavior and handoff usage across L0-L3
@@ -83,6 +88,7 @@ The integration of the Ideal AI Manager Hierarchy System into the 0_ai_context s
 
 ---
 
+<!-- section_id: "23212070-c141-4aa9-904d-95a7a1043b58" -->
 ### ✅ Phase 4: OS and Tool Variants (Quartets) Implementation (COMPLETED - 100%)
 
 **Goal**: Implement initial os/<os-id>/ and tool context quartets in key locations
@@ -128,6 +134,7 @@ The integration of the Ideal AI Manager Hierarchy System into the 0_ai_context s
 
 ---
 
+<!-- section_id: "4eeb2a9b-868f-478b-81f4-e1722af54d7d" -->
 ### ❌ Phase 5: Orchestration and CLI Recursion Integration (NOT STARTED - 0%)
 
 **Goal**: Integrate framework orchestration and CLI recursion guidance into universal tools/protocols
@@ -157,6 +164,7 @@ The integration of the Ideal AI Manager Hierarchy System into the 0_ai_context s
 
 ---
 
+<!-- section_id: "91fa70bf-e09a-48ff-91df-b05fa2b4c0f8" -->
 ### ❌ Phase 6: Ops, Safety, and Deployment Guidance (NOT STARTED - 0%)
 
 **Goal**: Add observability, safety/governance, and deployment docs to universal sub-layers
@@ -189,6 +197,7 @@ The integration of the Ideal AI Manager Hierarchy System into the 0_ai_context s
 
 ---
 
+<!-- section_id: "c8ef1b77-f034-4a71-85a5-2745773962fb" -->
 ### ❌ Phase 7: Rollout and Migration Strategy (NOT STARTED - 0%)
 
 **Goal**: Define and execute phased rollout plan
@@ -209,14 +218,17 @@ The integration of the Ideal AI Manager Hierarchy System into the 0_ai_context s
 
 ---
 
+<!-- section_id: "ea0dda2a-3de6-46bf-9231-01a31a9b2460" -->
 ## Summary of Remaining Work
 
+<!-- section_id: "cc0a047a-d601-44fc-be42-451e8c52c673" -->
 ### Immediate Next Steps (Phases 4-6)
 
 1. **Phase 4 - OS/Tool Variants**: Create os/<os-id>/ structure with CLAUDE.md, AGENTS.md, GEMINI.md at key layer/stage locations
 2. **Phase 5 - Orchestration**: Create CLI recursion syntax doc and framework orchestration index
 3. **Phase 6 - Operations**: Create observability, safety/governance, and deployment docs aligned with ideal spec
 
+<!-- section_id: "9ba43692-c46e-4791-a3d2-e90294800b18" -->
 ### Approach
 
 Use **sub-agents for each phase** to avoid context bloat:
@@ -225,6 +237,7 @@ Use **sub-agents for each phase** to avoid context bloat:
 - Sub-agents implement their phase and document completion
 - Proceed sequentially: Phase 4 → Phase 5 → Phase 6 → Phase 7
 
+<!-- section_id: "52e824f9-06d2-4139-a302-d24a35e99ab2" -->
 ### Success Criteria
 
 Integration is complete when:
@@ -238,6 +251,7 @@ Integration is complete when:
 
 ---
 
+<!-- section_id: "7879f7f2-0612-4813-b609-9f91d8398282" -->
 ## Reference Links
 
 - **Plan File**: `/home/dawson/.cursor/plans/integrate_ideal_ai_manager_hierarchy_system_into_0aicontext_8473a05b.plan.md`

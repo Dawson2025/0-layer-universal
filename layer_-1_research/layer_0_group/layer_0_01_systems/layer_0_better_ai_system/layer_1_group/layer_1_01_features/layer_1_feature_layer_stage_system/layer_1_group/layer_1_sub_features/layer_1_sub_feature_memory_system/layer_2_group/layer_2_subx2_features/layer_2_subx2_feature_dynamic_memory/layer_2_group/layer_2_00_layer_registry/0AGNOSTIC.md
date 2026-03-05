@@ -6,6 +6,7 @@ resource_name: "0AGNOSTIC"
 ---
 # dynamic_memory — Layer Registry
 
+<!-- section_id: "fac0b0ab-e54d-499d-872f-b304adbb3684" -->
 ## Identity
 
 entity_id: "0b5e50f8-0838-4e64-8a23-27b83eab64a4"

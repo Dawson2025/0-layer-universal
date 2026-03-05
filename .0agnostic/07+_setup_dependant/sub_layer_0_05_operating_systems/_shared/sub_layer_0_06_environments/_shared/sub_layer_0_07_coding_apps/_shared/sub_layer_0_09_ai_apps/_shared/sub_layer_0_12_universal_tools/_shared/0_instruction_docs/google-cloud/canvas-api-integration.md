@@ -7,16 +7,19 @@ resource_name: "canvas-api-integration"
 
 This guide covers integrating with the Canvas LMS API using credentials stored in Google Secret Manager.
 
+<!-- section_id: "96839891-7ff4-4ca5-b032-48af551e41c1" -->
 ## Overview
 
 Canvas LMS provides a REST API for accessing course data, assignments, grades, and more. API keys should be stored securely in Google Secret Manager.
 
+<!-- section_id: "ccf1190d-27a9-4cef-8bcb-5bc3ece35cc0" -->
 ## Prerequisites
 
 - Canvas LMS account with API access
 - Google Cloud project with Secret Manager enabled
 - gcloud CLI installed and authenticated
 
+<!-- section_id: "92f30753-f383-4837-8d7c-652466f49260" -->
 ## Generating a Canvas API Token
 
 1. Log into Canvas at your institution's URL
@@ -26,6 +29,7 @@ Canvas LMS provides a REST API for accessing course data, assignments, grades, a
 5. Provide a purpose description and optional expiry
 6. Copy the generated token (it won't be shown again)
 
+<!-- section_id: "76a269f6-b21d-4491-bc4e-2b33799ac0bc" -->
 ## Storing the Token in Secret Manager
 
 ```bash
@@ -36,8 +40,10 @@ gcloud config set project YOUR_PROJECT_ID
 echo -n "YOUR_CANVAS_TOKEN" | gcloud secrets create CANVAS_API_KEY --data-file=-
 ```
 
+<!-- section_id: "94727a9e-6e9b-462f-add6-a99d9b7ab9f0" -->
 ## Using the API
 
+<!-- section_id: "a4d307ba-edc5-4ead-a637-2ff6de61660c" -->
 ### Quick Test
 ```bash
 # Get the API key
@@ -48,6 +54,7 @@ wget -qO- --header="Authorization: Bearer $CANVAS_API_KEY" \
   "https://YOUR_INSTITUTION.instructure.com/api/v1/users/self"
 ```
 
+<!-- section_id: "7cbb6f46-0728-4faf-8f0c-36ce6ddfada2" -->
 ### Common Endpoints
 
 | Endpoint | Description |
@@ -57,6 +64,7 @@ wget -qO- --header="Authorization: Bearer $CANVAS_API_KEY" \
 | `/api/v1/courses/:id/assignments` | Course assignments |
 | `/api/v1/courses/:id/students` | Course students |
 
+<!-- section_id: "d954505c-b3a5-477b-a497-170ad270c823" -->
 ### Example: List Courses
 
 ```bash
@@ -67,6 +75,7 @@ wget -qO- --header="Authorization: Bearer $CANVAS_API_KEY" \
   "$BASE_URL/courses?enrollment_state=active" | jq '.[].name'
 ```
 
+<!-- section_id: "792574f1-f731-42e1-b793-adddbf441025" -->
 ### Example: Get Assignments
 
 ```bash
@@ -75,6 +84,7 @@ wget -qO- --header="Authorization: Bearer $CANVAS_API_KEY" \
   "$BASE_URL/courses/$COURSE_ID/assignments" | jq '.[] | {name, due_at}'
 ```
 
+<!-- section_id: "7ee81077-b405-482c-bd8d-29e6058bda67" -->
 ## Node.js Integration
 
 ```javascript
@@ -102,6 +112,7 @@ const apiKey = await getCanvasApiKey();
 const courses = await fetchCanvasCourses(apiKey, 'https://byui.instructure.com/api/v1');
 ```
 
+<!-- section_id: "531d2786-3deb-46d9-9623-ade1299f150b" -->
 ## Python Integration
 
 ```python
@@ -124,12 +135,14 @@ api_key = get_canvas_api_key("assignment-time")
 courses = fetch_courses(api_key, "https://byui.instructure.com/api/v1")
 ```
 
+<!-- section_id: "bf335bd2-e041-475b-969f-9b06ffd452cc" -->
 ## Rate Limiting
 
 Canvas API has rate limits. Check response headers:
 - `X-Rate-Limit-Remaining`: Requests remaining
 - `X-Request-Cost`: Cost of the request
 
+<!-- section_id: "291642d1-4ad1-4b21-ad79-891e46d73495" -->
 ## Institution-Specific URLs
 
 | Institution | Base URL |
@@ -137,16 +150,20 @@ Canvas API has rate limits. Check response headers:
 | BYU-Idaho | `https://byui.instructure.com/api/v1` |
 | Generic | `https://YOUR_SCHOOL.instructure.com/api/v1` |
 
+<!-- section_id: "b000a316-5b4c-4390-98ed-341e817299f9" -->
 ## Troubleshooting
 
+<!-- section_id: "cba26c7a-a895-4b20-8ddc-990b06e9e50b" -->
 ### 401 Unauthorized
 - Check if token is valid and not expired
 - Ensure token has necessary permissions
 
+<!-- section_id: "64cb2cac-0a43-4ee6-9d8a-cf9c75e9ca2a" -->
 ### 403 Forbidden
 - User may not have access to the requested resource
 - Check course enrollment status
 
+<!-- section_id: "6fbcc61e-2b44-4aaa-a41f-c97d4e362a1f" -->
 ### curl vs wget
 If `curl` fails with exit code 43, use `wget`:
 ```bash
@@ -154,11 +171,13 @@ If `curl` fails with exit code 43, use `wget`:
 wget -qO- --header="Authorization: Bearer $TOKEN" "URL"
 ```
 
+<!-- section_id: "4fb30c54-c990-43af-b252-244070da65fa" -->
 ## Related Projects
 
 - **catp (Canvas Assignment Time Predictor)**: `/home/dawson/dawson-workspace/code/catp/`
   - Reference implementation using Canvas API with Firebase
 
+<!-- section_id: "e3ff3676-6728-4c81-912a-d92eadb2e56a" -->
 ## Related Documentation
 - [gcloud CLI Setup](./gcloud-cli-setup.md)
 - [Secret Manager](./secret-manager.md)

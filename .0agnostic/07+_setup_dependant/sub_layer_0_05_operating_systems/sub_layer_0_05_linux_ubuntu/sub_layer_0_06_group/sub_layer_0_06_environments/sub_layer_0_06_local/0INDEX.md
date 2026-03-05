@@ -6,10 +6,12 @@ resource_name: "0INDEX"
 ---
 # Local Ubuntu Environment — Navigation Index
 
+<!-- section_id: "b5d20a84-8640-4b84-bb49-08e9cd3b9db0" -->
 ## Entity Overview
 
 Local Ubuntu desktop environment setup and maintenance. Manages GNOME/Unity desktop, system services, audio stack, and TTS configuration.
 
+<!-- section_id: "5595dcf9-6dd2-41f2-b8db-da76915b4b94" -->
 ## Quick Navigation
 
 | What | Where |
@@ -20,6 +22,7 @@ Local Ubuntu desktop environment setup and maintenance. Manages GNOME/Unity desk
 | **Setup instructions** | `sub_layer_0_06_group/setup/0_instruction_docs/` |
 | **Coding Apps (child)** | `sub_layer_0_07_group/sub_layer_0_07_coding_apps/` |
 
+<!-- section_id: "3e36e3c2-239c-424b-bc5f-bf68a505a0dc" -->
 ## Knowledge Topics
 
 | Topic | Key Docs |
@@ -29,6 +32,7 @@ Local Ubuntu desktop environment setup and maintenance. Manages GNOME/Unity desk
 | System Services | `systemd_user_services.md` — systemctl --user, overrides |
 | Audio | `linux_audio_stack.md` — PipeWire, ALSA, SOF, EasyEffects |
 
+<!-- section_id: "c6fe7de4-8d16-44eb-aa0a-30900793f49e" -->
 ## Stage Progress
 
 Stages track setup work (audio enhancement, speaker tuning, GSD fixes, portal fixes):
@@ -46,6 +50,7 @@ Stages track setup work (audio enhancement, speaker tuning, GSD fixes, portal fi
 | 09 Current Product | Audio config, Yoga speaker config, GSD keepalive, EasyEffects, WirePlumber crash fix, inotify fix, sync health, portal config |
 | 10 Archives | (empty) |
 
+<!-- section_id: "7c4d4c13-50f6-4d63-b185-31b67ab380ed" -->
 ## Children
 
 | Child | Purpose |

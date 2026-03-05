@@ -9,6 +9,7 @@ resource_name: "current_product"
 
 The current working product is the `pointer-sync.sh` script at the root `.0agnostic/` level. It is production-ready and integrated into the agnostic-sync workflow.
 
+<!-- section_id: "2187b9e6-ab3e-4583-878f-983b66b5d8ee" -->
 ## What's Shipped
 
 | Component | Status | Location |
@@ -20,6 +21,7 @@ The current working product is the `pointer-sync.sh` script at the root `.0agnos
 | Pointer edit guard hook | Production | `.0agnostic/06_.../08_hooks/scripts/pointer-edit-guard.sh` |
 | agnostic-sync integration | Production | `.0agnostic/agnostic-sync.sh` (validation section) |
 
+<!-- section_id: "f51874ea-40be-4ce2-a8ec-9bde37e0778d" -->
 ## Usage
 
 ```bash

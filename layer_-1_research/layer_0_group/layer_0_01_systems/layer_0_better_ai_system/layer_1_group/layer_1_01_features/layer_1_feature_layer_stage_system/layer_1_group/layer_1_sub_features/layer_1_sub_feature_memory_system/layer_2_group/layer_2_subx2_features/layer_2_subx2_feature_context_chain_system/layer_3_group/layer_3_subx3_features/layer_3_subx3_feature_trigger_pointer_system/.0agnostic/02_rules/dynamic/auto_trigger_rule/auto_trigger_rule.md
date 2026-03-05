@@ -8,6 +8,7 @@ resource_name: "auto_trigger_rule"
 **Scope**: Triggered when structural changes are detected
 **Type**: Dynamic (scenario-triggered)
 
+<!-- section_id: "c2ffd0d0-9b9c-41a5-a979-fa1b211e63c5" -->
 ## When This Rule Applies
 
 - After renaming or moving directories that contain pointer targets
@@ -15,6 +16,7 @@ resource_name: "auto_trigger_rule"
 - After any file reorganization that changes directory paths
 - When `pointer-sync.sh --validate` reports BROKEN or STALE pointers
 
+<!-- section_id: "177fff97-a7ad-4b25-80aa-a14c14cd1fc7" -->
 ## Rule
 
 1. **MUST** run `pointer-sync.sh` (full sync) when structural changes affect pointer targets
@@ -23,6 +25,7 @@ resource_name: "auto_trigger_rule"
 4. **MUST NOT** leave broken pointers unresolved across commits
 5. **SHOULD** review the sync summary to confirm expected changes
 
+<!-- section_id: "05bdc84f-2ad1-4fb5-8364-68447da022e8" -->
 ## Trigger Mechanisms
 
 | Mechanism | Coverage | How |

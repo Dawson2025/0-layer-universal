@@ -5,6 +5,7 @@ resource_name: "task_source_identification"
 ---
 # Task Source Identification
 
+<!-- section_id: "b78f9c58-cafe-43fa-86f5-451c2cd50cc1" -->
 ## Priority Order (Highest to Lowest)
 
 1. **Current User Request** - What the user just asked
@@ -12,8 +13,10 @@ resource_name: "task_source_identification"
 3. **Handoff Documents** - Context from previous sessions
 4. **Todo Lists** - Backlog items
 
+<!-- section_id: "f8a198c2-2148-4c98-b107-1a88fce93a3a" -->
 ## Source Details
 
+<!-- section_id: "2f95f2b5-8a64-4da5-9f8f-0283083c92e0" -->
 ### 1. Current User Request (Priority: HIGHEST)
 - Direct instruction from user in current message
 - Always takes precedence over stored tasks
@@ -23,6 +26,7 @@ resource_name: "task_source_identification"
 - Latest user message in conversation
 - Explicit instructions or questions
 
+<!-- section_id: "2b5639aa-f7c6-4a76-975b-af1ca6d60567" -->
 ### 2. status.json in_progress (Priority: HIGH)
 - Tasks with `"status": "in_progress"`
 - Represents active, committed work
@@ -40,6 +44,7 @@ resource_name: "task_source_identification"
 }
 ```
 
+<!-- section_id: "1305184e-b33d-4d05-af41-792fe5bbd485" -->
 ### 3. Handoff Documents (Priority: MEDIUM)
 - Created when sessions end mid-task
 - Contains context about incomplete work
@@ -50,6 +55,7 @@ resource_name: "task_source_identification"
 - Located in entity's documentation
 - Contains session context and next steps
 
+<!-- section_id: "0aaaaf1a-1565-4563-9095-16e32d744c5e" -->
 ### 4. Todo Lists (Priority: LOWEST)
 - Backlog of potential work
 - Not yet committed to
@@ -60,6 +66,7 @@ resource_name: "task_source_identification"
 - Sections marked as backlog
 - Items without status markers
 
+<!-- section_id: "09cdbbb9-c886-41ce-a2a4-4b885d8b3200" -->
 ## Resolution Strategy
 
 ```
@@ -81,6 +88,7 @@ identify_current_task():
     return ask_user_for_task
 ```
 
+<!-- section_id: "748a9c1c-f881-4282-b8f8-19235fc37bd3" -->
 ## Conflict Resolution
 
 When multiple sources suggest different tasks:
@@ -92,6 +100,7 @@ When multiple sources suggest different tasks:
 | status.json vs handoff | status.json wins |
 | status.json vs todo | status.json wins |
 
+<!-- section_id: "62f734ca-374e-4edb-9a1a-9051a5a10a84" -->
 ## Best Practices
 
 1. **Always check user request first** - Don't assume stored tasks are current
@@ -99,6 +108,7 @@ When multiple sources suggest different tasks:
 3. **Review handoff context** - Contains valuable session info
 4. **Treat todos as suggestions** - Not committed work
 
+<!-- section_id: "10b45a69-f704-4cbd-af89-ed8ea34e0770" -->
 ## Updating Task Sources
 
 After identifying task:

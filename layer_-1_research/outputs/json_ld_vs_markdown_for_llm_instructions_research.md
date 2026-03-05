@@ -9,16 +9,19 @@ resource_name: "json_ld_vs_markdown_for_llm_instructions_research"
 
 ---
 
+<!-- section_id: "32d9e4f0-a383-49e7-922b-7855170a669e" -->
 ## Executive Summary
 
 After reviewing academic papers, empirical benchmarks, blog analyses, and real-world projects, the evidence strongly suggests that **JSON-LD is NOT more effective than markdown for LLM agent instructions**. In fact, it is likely worse across most dimensions that matter: token efficiency, instruction-following accuracy, human maintainability, and practical adoption. JSON-LD has a narrow but real value in a completely different domain: web entity disambiguation and knowledge graph alignment for AI search crawlers. The two use cases should not be conflated.
 
 ---
 
+<!-- section_id: "14440b1b-5c02-428d-a9ec-27f3a50defea" -->
 ## 1. Is There Research Showing JSON-LD Improves LLM Instruction Following vs Markdown?
 
 **Verdict: No. The research that exists shows the opposite.**
 
+<!-- section_id: "77fc5a89-c83e-4d86-9acf-7de05dc176c6" -->
 ### Key Paper: "Does Prompt Formatting Have Any Impact on LLM Performance?" (arXiv:2411.10541, 2024)
 
 This is the most rigorous direct comparison. Researchers formatted identical prompts into plain text, Markdown, JSON, and YAML and tested across GPT-3.5-turbo, GPT-4-32k, GPT-4-turbo, and GPT-4-1106-preview across six benchmarks.
@@ -32,6 +35,7 @@ Findings:
 
 **JSON-LD was not tested separately in this paper**, but plain JSON (a simpler format) already showed mixed-to-negative results compared to Markdown on modern models.
 
+<!-- section_id: "ace3d059-d97c-4d13-acba-cfa129a3dfd8" -->
 ### Key Paper: "Prompt Engineering for Structured Data" (William & Mary, 2024-2025)
 
 Compared six prompt styles (JSON, YAML, CSV, function-calling APIs, simple prefixes, hybrid CSV/prefix) across ChatGPT-4o, Claude, and Gemini for structured data generation.
@@ -41,6 +45,7 @@ Findings:
 - Lightweight formats (CSV, simple prefixes) reduced token usage and latency.
 - **No single format was universally optimal** -- it depends on the task and model.
 
+<!-- section_id: "53256c5d-8ad1-4c63-8cd2-a29d3a12c489" -->
 ### Key Paper: KG-LLM-Bench (arXiv:2504.07087, 2025)
 
 This is the **only paper to directly test JSON-LD** as a format for feeding data to LLMs. It compared five textualization strategies for knowledge graphs: Structured JSON, List-of-Edges, Structured YAML, JSON-LD, and RDF Turtle.
@@ -56,10 +61,12 @@ Findings:
 
 ---
 
+<!-- section_id: "6bd02703-7702-4cc2-aa56-41426ed8a4e5" -->
 ## 2. Do LLMs Handle JSON-LD Better Than Markdown for Agent Behavior?
 
 **Verdict: No. They handle it worse.**
 
+<!-- section_id: "da1c6bc0-62e6-4a79-81dd-4a3cfac587a6" -->
 ### Why JSON-LD is problematic for LLMs:
 
 1. **Token overhead**: JSON-LD includes `@context`, `@type`, `@id`, `@graph`, URI prefixes, and namespace declarations. These are essential for linked data interoperability but are pure noise to an LLM that processes tokens probabilistically. The KG-LLM-Bench paper showed JSON-LD used 4-5x more tokens than simpler formats for the same information.
@@ -70,6 +77,7 @@ Findings:
 
 4. **Structural complexity**: JSON-LD supports features like `@graph`, `@reverse`, blank nodes, and compact/expanded forms. This complexity can confuse LLMs, leading to parsing failures or misinterpretation. The sitelint.com guide documents numerous common JSON-LD parsing issues (malformed JSON, encoding problems, incorrect nesting).
 
+<!-- section_id: "f69551f3-19eb-4263-aacb-96c38fc403c3" -->
 ### What Markdown does well for LLMs:
 
 - Preserves natural language flow that LLMs excel at processing.
@@ -78,6 +86,7 @@ Findings:
 - Supports hierarchical structure through heading levels.
 - Is approximately **15% more token-efficient** than equivalent JSON and **34-38% more efficient** than JSON when representing nested data (ImprovingAgents benchmark).
 
+<!-- section_id: "97719608-5d56-493f-a47b-c542c224820c" -->
 ### What Anthropic, OpenAI, and Google actually recommend:
 
 - **Anthropic** (Claude): Recommends XML tags for structured prompt sections, with Markdown for content.
@@ -89,14 +98,17 @@ One emerging observation from researcher Anand S.: "XML tags are the best way to
 
 ---
 
+<!-- section_id: "9d711d49-63e3-488a-9b00-d9f7fc950332" -->
 ## 3. Projects or Tools Using JSON-LD for LLM Agent Behavior
 
 **Verdict: Almost none for agent behavior. One for agent discovery.**
 
+<!-- section_id: "dbbcf688-ada1-4c9b-bd07-e30cd70e500c" -->
 ### LMOS (Language Model Operating System) -- Eclipse Foundation
 
 LMOS is the only real project found that uses JSON-LD in the AI agent ecosystem, and it uses JSON-LD **not for agent instructions/behavior** but for **agent discovery and capability description**. LMOS uses JSON-LD as its standardized format for describing agent and tool metadata, building on the W3C Web of Things (WoT) Thing Description specification. This is about machine-to-machine interoperability for finding agents, not for telling agents how to behave.
 
+<!-- section_id: "d28c3fc8-2deb-4ac8-a213-0c5eb4c08aac" -->
 ### What projects actually use for agent behavior:
 
 | Framework | Format for Agent Config | Notes |
@@ -115,10 +127,12 @@ The industry has converged on Markdown for human-authored instructions, JSON/JSO
 
 ---
 
+<!-- section_id: "f39871ac-72f5-4ed0-956b-2cb3e74b77de" -->
 ## 4. Token Cost Comparison: JSON-LD vs Equivalent Markdown
 
 **Verdict: JSON-LD is dramatically more expensive.**
 
+<!-- section_id: "fda90719-9f3b-45d4-ac21-4ee88272ea99" -->
 ### Direct measurements:
 
 | Format | Relative Token Cost | Source |
@@ -130,6 +144,7 @@ The industry has converged on Markdown for human-authored instructions, JSON/JSO
 | XML | ~1.8x Markdown | ImprovingAgents (80% more tokens) |
 | JSON-LD | ~3-5x Markdown | KG-LLM-Bench (13,000+ vs 3,000 tokens) |
 
+<!-- section_id: "671679b1-d892-44d5-85b4-715d5246df2c" -->
 ### Why JSON-LD is especially expensive:
 
 A simple agent instruction like "You are a helpful assistant that searches the web" in Markdown is a single line. In JSON-LD:
@@ -149,6 +164,7 @@ A simple agent instruction like "You are a helpful assistant that searches the w
 
 The `@context`, `@type`, structural braces, quotes, and key names all consume tokens without adding any information the LLM could not derive from the natural language description. At scale (thousands of tokens of agent instructions), this overhead becomes prohibitive.
 
+<!-- section_id: "a4dcbe22-e14d-420d-9cca-3b1a8c2f112e" -->
 ### Specific benchmark data:
 
 - **shshell.com Token Benchmarks**: For a simple 2-user dataset, JSON uses 50 tokens, YAML uses 35 tokens, Markdown table uses 70 tokens. JSON-LD would add @context overhead on top of JSON's 50, pushing to 80-100+ tokens.
@@ -157,16 +173,19 @@ The `@context`, `@type`, structural braces, quotes, and key names all consume to
 
 ---
 
+<!-- section_id: "455de36f-2878-4bc8-9442-b91ebedf62da" -->
 ## 5. Does JSON-LD's Graph/Linked-Data Structure Help LLMs Understand Relationships?
 
 **Verdict: No, not for in-context processing. Yes, for pre-processing pipelines.**
 
+<!-- section_id: "7c0dfa22-3c5e-40b6-aa93-17cb4c387b14" -->
 ### For in-context (prompt) processing:
 
 LLMs do not traverse graph structures. They process linear sequences of tokens. JSON-LD's graph model (nodes connected by typed edges with URI identifiers) is invisible to the LLM's attention mechanism. The LLM sees `"@id": "http://example.com/agent/1"` as a sequence of tokens, not as a graph node identifier.
 
 The KG-LLM-Bench paper directly tested this: when knowledge graphs were represented as JSON-LD (preserving the full linked data structure) vs as simple structured JSON or even flat lists of edges, **the simpler formats performed better**. The graph structure of JSON-LD actively hurt performance because it added token noise without helping the LLM reason about relationships.
 
+<!-- section_id: "d78ca0d9-f615-4c8d-996f-32126a1d7b46" -->
 ### For pre-processing / RAG pipelines:
 
 There is evidence that JSON-LD helps **outside** the LLM context window:
@@ -174,12 +193,14 @@ There is evidence that JSON-LD helps **outside** the LLM context window:
 - **iunera Benchmark (2025)**: Adding JSON-LD labels to web content improved vector search accuracy by helping AI disambiguate terms (e.g., distinguishing "bug fix" in software from "insect repellent" in biology). This is a pre-processing/embedding benefit, not an in-context benefit.
 - **Ranktracker analysis**: JSON-LD helps LLMs at the web crawling/indexing stage by providing semantic scaffolding for embeddings and knowledge graph alignment. This is about web content consumption, not prompt engineering.
 
+<!-- section_id: "b5167850-2854-4176-8aec-7076340569b8" -->
 ### Key distinction:
 
 JSON-LD's value for AI is in **data preparation** (structuring web content for AI crawlers and search engines) -- not in **prompt content** (telling an LLM agent how to behave).
 
 ---
 
+<!-- section_id: "69258ff3-173a-4e8f-8626-de1227ae2bc0" -->
 ## 6. Known Issues with LLMs Parsing or Following JSON-LD
 
 **Verdict: Multiple significant issues documented.**
@@ -200,8 +221,10 @@ JSON-LD's value for AI is in **data preparation** (structuring web content for A
 
 ---
 
+<!-- section_id: "bdd8d3a0-2287-4c4d-8bc5-cc619ed7232d" -->
 ## 7. Comparison with Other Structured Formats
 
+<!-- section_id: "e479c2c0-93fa-4ec8-88f5-16f61a180060" -->
 ### Format Rankings for LLM Agent Instructions
 
 Based on the aggregated research:
@@ -217,6 +240,7 @@ Based on the aggregated research:
 | **TOON** | Good (per tensorlake.ai) | Excellent (70-75% less than JSON) | Good | Emerging | Promising for data payloads |
 | **CSV** | Good for flat data | Best for tabular | Moderate | Low | Niche (tabular data) |
 
+<!-- section_id: "1f30dc2f-9918-4c88-8645-6b06dee8acd7" -->
 ### Key findings by model family:
 
 - **GPT-5 Nano / Gemini 2.5 Flash Lite**: YAML performed best. JSON performed poorly. Markdown was most token-efficient.
@@ -224,6 +248,7 @@ Based on the aggregated research:
 - **GPT-4 / GPT-4-turbo**: More robust to format variations. Markdown slightly preferred for reasoning.
 - **Claude models**: Structured JSON outperformed on knowledge graph tasks. XML recommended by Anthropic for prompt sectioning.
 
+<!-- section_id: "eb266100-11c2-4b2b-ae89-62a418259dab" -->
 ### The emerging consensus:
 
 The practical recommendation across multiple independent analyses is a **hybrid approach**:
@@ -234,6 +259,7 @@ The practical recommendation across multiple independent analyses is a **hybrid 
 
 ---
 
+<!-- section_id: "29294980-6718-4802-970f-2e218c1ea76a" -->
 ## Conclusions
 
 1. **JSON-LD is not appropriate for LLM agent instructions.** It is the worst-performing format in the only benchmark that directly tested it (KG-LLM-Bench), and it has 3-5x the token cost of alternatives.
@@ -252,8 +278,10 @@ The practical recommendation across multiple independent analyses is a **hybrid 
 
 ---
 
+<!-- section_id: "9ab6300b-60fa-42b1-b13a-72553e5f55cd" -->
 ## Sources
 
+<!-- section_id: "7f709725-050e-4b24-8407-5e1e793942e1" -->
 ### Academic Papers
 - [Does Prompt Formatting Have Any Impact on LLM Performance? (arXiv:2411.10541)](https://arxiv.org/html/2411.10541v1/)
 - [Prompt Engineering for Structured Data (William & Mary)](https://www.cs.wm.edu/~dcschmidt/PDF/Optimizing_Prompt_Styles_for_Structured_Data_Generation_in_LLM.pdf)
@@ -261,12 +289,14 @@ The practical recommendation across multiple independent analyses is a **hybrid 
 - [A Survey of AI Agent Protocols (arXiv:2504.16736)](https://arxiv.org/html/2504.16736v1)
 - [IBM: Formally Specifying the High-Level Behavior of LLM-Based Agents](https://github.com/IBM/llm-agent-framework)
 
+<!-- section_id: "6e018030-1f94-4869-9912-5d43471ca6d9" -->
 ### Benchmarks and Empirical Studies
 - [Which Nested Data Format Do LLMs Understand Best? (ImprovingAgents)](https://www.improvingagents.com/blog/best-nested-data-format/)
 - [JSON vs. YAML vs. Markdown: Token Benchmarks (shshell.com)](https://shshell.com/blog/token-efficiency-module-13-lesson-2-format-comparison)
 - [YAML vs JSON for LLM Token Efficiency: The Minification Truth](https://curiouslychase.com/posts/yaml-vs-json-for-llm-token-efficiency-the-minification-truth/)
 - [YAML Over JSON in LLM Applications (BlogOS)](https://blog.tashif.codes/blog/JSON-YAML-LLM)
 
+<!-- section_id: "a25bc3bc-533a-4f98-9b93-c12bbf8dd8c3" -->
 ### Industry Analysis and Blog Posts
 - [Markdown vs. XML in LLM Prompts: A Comparative Analysis](https://www.robertodiasduarte.com.br/en/markdown-vs-xml-em-prompts-para-llms-uma-analise-comparativa/)
 - [Marking Up the Prompt: How Markdown Formatting Influences LLM Responses (NeuralBuddies)](https://www.neuralbuddies.com/p/marking-up-the-prompt-how-markdown-formatting-influences-llm-responses)
@@ -276,6 +306,7 @@ The practical recommendation across multiple independent analyses is a **hybrid 
 - [AI Prompts: Ditch JSON -- Use Markdown & Plain Text (Bachynski)](https://www.bachynski.blog/2025/11/ai-prompts-ditch-json-use-markdown.html)
 - [Markdown vs JSON: Choosing the Right Format for LLM Prompts (WebcrawlerAPI)](https://webcrawlerapi.com/blog/markdown-vs-json-choosing-the-right-format-for-llm-prompts)
 
+<!-- section_id: "fb811f30-1409-44eb-a11f-a40abf14cb3c" -->
 ### JSON-LD for AI/SEO (Different Use Case)
 - [The Comparative Effectiveness of llms.txt and JSON-LD in LLM Optimization](https://www.benallymarketing.com/post/the-comparative-effectiveness-of-llm-txt-and-json-ld-in-large-language-model-optimization)
 - [Using JSON-LD to Strengthen LLM Understanding (Ranktracker)](https://www.ranktracker.com/blog/json-ld-strengthen-llm-understanding/)
@@ -283,17 +314,20 @@ The practical recommendation across multiple independent analyses is a **hybrid 
 - [How AI Engines Read Your JSON-LD, Schema, and Entities (WebTrek)](https://webtrek.io/blog/how-ai-engines-read-your-json-ld-schema-and-entities)
 - [Do LLMs use JSON-LD beyond FAQPage and HowTo types? (Brandlight)](https://sat.brandlight.ai/articles/do-llms-use-json-ld-beyond-faqpage-and-howto-types)
 
+<!-- section_id: "e17f47c6-b846-4e7c-ad32-5c5e23bc230f" -->
 ### Agent Frameworks and Protocols
 - [LMOS Protocol Documentation (Eclipse Foundation)](https://eclipse.dev/lmos/docs/lmos_protocol/introduction/)
 - [agents.json Specification (Wildcard AI)](https://github.com/wild-card-ai/agents-json)
 - [LLM-Based Agent Frameworks (EmergentMind)](https://www.emergentmind.com/topics/llm-based-agent-frameworks)
 - [Structured Knowledge in a Lightweight Format (AgentNet)](https://agentnet.bearblog.dev/structured-knowledge-in-a-lightweight-format/)
 
+<!-- section_id: "59f2982d-c89a-40ca-8462-1708129afab8" -->
 ### Token-Optimized Formats (Emerging)
 - [TOON vs JSON: A Token-Optimized Data Format (Tensorlake)](https://tensorlake.ai/blog/toon-vs-json)
 - [TOON vs JSON vs YAML vs CSV for LLM Applications](https://www.piotr-sikora.com/blog/2025-11-29-toon-format-comparison-csv-json-yaml)
 - [Why JSON Is Inefficient for LLMs vs TOON and YAML (Scalevise)](https://scalevise.com/resources/json-vs-toon-yaml-llm-context-efficiency/)
 
+<!-- section_id: "44dc8730-7396-4a78-a63e-cf6437f4e89a" -->
 ### Standards
 - [JSON-LD 1.1 W3C Specification](https://www.w3.org/TR/json-ld11/)
 - [OpenAI Community: Markdown is 15% More Token Efficient Than JSON](https://community.openai.com/t/markdown-is-15-more-token-efficient-than-json/841742)

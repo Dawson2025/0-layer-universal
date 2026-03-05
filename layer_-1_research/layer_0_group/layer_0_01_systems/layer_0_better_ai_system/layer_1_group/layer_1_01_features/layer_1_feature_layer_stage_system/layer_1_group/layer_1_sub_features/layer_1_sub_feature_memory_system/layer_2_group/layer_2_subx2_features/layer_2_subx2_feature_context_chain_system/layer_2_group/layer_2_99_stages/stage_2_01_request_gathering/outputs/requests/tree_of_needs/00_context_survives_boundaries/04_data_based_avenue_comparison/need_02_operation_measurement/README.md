@@ -12,6 +12,7 @@ resource_name: "README"
 
 ---
 
+<!-- section_id: "a7060f68-f4fa-49ab-9769-9c6db5410c01" -->
 ## Definition
 
 A comprehensive taxonomy of database operations (20+) covering read, write, maintenance, consistency, and analytics categories. Each operation must have:
@@ -23,6 +24,7 @@ Operations include: point lookup, range query, fuzzy search, semantic search, fu
 
 ---
 
+<!-- section_id: "5991f48f-edb2-44df-ac4b-52d1e1cb70f9" -->
 ## Why This Matters
 
 - Avenue selection depends on what operations the project actually needs
@@ -33,6 +35,7 @@ Operations include: point lookup, range query, fuzzy search, semantic search, fu
 
 ---
 
+<!-- section_id: "52fbb795-7661-455f-9715-165b2a9eaaa3" -->
 ## Acceptance Criteria
 
 - [ ] 20+ operations are defined across 5 categories (read, write, maintenance, consistency, analytics)
@@ -43,16 +46,19 @@ Operations include: point lookup, range query, fuzzy search, semantic search, fu
 
 ---
 
+<!-- section_id: "cfb1c918-2760-49bb-86a0-8db43b82e1ee" -->
 ## Requirements
 
 See [requirements/](./requirements/) for individual requirements.
 
+<!-- section_id: "80cb4b61-2853-440d-95cf-3cf766b3ae13" -->
 ## User Stories
 
 See [user_stories/](./user_stories/) for individual stories.
 
 ---
 
+<!-- section_id: "0c7a4161-975b-4f20-bd73-1d6b851ca76b" -->
 ## Research References
 
 - `proposals/04_design/v2_hierarchical_aggregation_design.md` -- hierarchy design

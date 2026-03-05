@@ -5,6 +5,7 @@ resource_name: "01_hierarchy"
 ---
 # System Architecture - Hierarchy Visualization
 
+<!-- section_id: "1b7a6b61-700f-4720-8e52-0f07bdd0aa0a" -->
 ## Layer Hierarchy (Layer 0 → Layer 4)
 
 ```mermaid
@@ -33,6 +34,7 @@ graph TD
     style L5B fill:#ffe0b2
 ```
 
+<!-- section_id: "a2bcabeb-8b1b-4191-b32a-1e227c9387d7" -->
 ## Resource Inheritance
 
 ```mermaid
@@ -56,6 +58,7 @@ graph LR
     style SKILLS fill:#f3e5f5
 ```
 
+<!-- section_id: "6e006914-8305-426c-83ab-7619eb36f069" -->
 ## Trigger System Architecture
 
 ```mermaid
@@ -87,8 +90,10 @@ graph TD
     style S3 fill:#fce4ec
 ```
 
+<!-- section_id: "cdd33dda-9352-4c63-a55b-303c21e51841" -->
 ## Path Organization (Current vs. Ideal)
 
+<!-- section_id: "bb6a2ace-a637-4949-baa6-19a9133ef50b" -->
 ### Current Structure
 **Problem**: Deep nesting creates long paths (155+ characters)
 
@@ -100,6 +105,7 @@ layer_0_universal/
             └── layer_4_group/layer_4_subx3_projects/layer_4_subx3_project_machine_learning/
 ```
 
+<!-- section_id: "05dd9465-9e50-443e-b10b-84f0fa5343c9" -->
 ### Ideal Structure (Flattened + Metadata-Based)
 **Solution**: Flat filesystem + metadata layer defines relationships
 

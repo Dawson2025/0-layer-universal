@@ -8,10 +8,12 @@ resource_name: "README"
 
 **Need**: [Three-Tier Delegation](../README.md)
 
+<!-- section_id: "d330672b-6e4f-418e-934a-32cd6ae0922e" -->
 ## Overview
 
 These stories cover how the three-tier knowledge pattern (pointers, distilled, full) maps to agent delegation responsibilities. They validate that managers operate from Tier 1 pointers alone to make delegation decisions, that stage agents work competently from Tier 2 distilled knowledge, that only the active stage agent accesses its own Tier 3 full content, and that the developer can verify the tier-to-agent alignment is correct.
 
+<!-- section_id: "fc5f32d4-20b4-4388-8e34-ab1b055d8b55" -->
 ## Actors
 
 - **User (Developer)**: Human developer (Dawson) who gives instructions to the AI system, reviews outputs, and validates behavior

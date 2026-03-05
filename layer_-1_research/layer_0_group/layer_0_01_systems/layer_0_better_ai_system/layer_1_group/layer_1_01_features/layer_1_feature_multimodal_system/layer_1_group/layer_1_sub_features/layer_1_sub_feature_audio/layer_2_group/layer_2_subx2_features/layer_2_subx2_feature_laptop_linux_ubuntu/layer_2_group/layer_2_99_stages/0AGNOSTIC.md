@@ -6,6 +6,7 @@ resource_name: "0AGNOSTIC"
 ---
 # 0AGNOSTIC.md - layer_2_99_stages (Laptop Linux Ubuntu)
 
+<!-- section_id: "2f250f2a-8ea1-42f8-aaf8-7296bf81bb3c" -->
 ## Identity
 
 entity_id: "70228222-a4b6-48f5-b599-ed6ab57226fe"
@@ -13,6 +14,7 @@ entity_id: "70228222-a4b6-48f5-b599-ed6ab57226fe"
 Stages container for the laptop linux ubuntu platform sub-feature.
 - **Parent**: `../../0AGNOSTIC.md` (layer_2_subx2_feature_laptop_linux_ubuntu)
 
+<!-- section_id: "6411396e-1732-41b5-adcf-6d1016c95242" -->
 ## Stages
 
 | Stage | Name | Purpose |

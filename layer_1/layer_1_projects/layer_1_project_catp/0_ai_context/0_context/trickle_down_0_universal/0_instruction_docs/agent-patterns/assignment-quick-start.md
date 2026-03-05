@@ -7,19 +7,23 @@ resource_name: "assignment-quick-start"
 
 **TL;DR**: Use `assignment-planner` to create a plan, get user approval, then use `assignment-executor` to execute it automatically.
 
+<!-- section_id: "84686b15-d837-44c5-8668-47c730cfe833" -->
 ## 1-Minute Overview
 
 ```
 User Request → assignment-planner → Plan → User Approval → assignment-executor → Done
 ```
 
+<!-- section_id: "5b0d47ee-3ab3-4d8f-9e0e-30c406ee7944" -->
 ## Quick Example
 
+<!-- section_id: "016f8345-e71a-4577-ac11-345d019607e5" -->
 ### User Says:
 ```
 "Set up Unit 3 Assignment 1"
 ```
 
+<!-- section_id: "16ddb00b-e37b-462f-9a98-736eae657f99" -->
 ### You Do:
 
 **Step 1**: Invoke planning agent
@@ -39,6 +43,7 @@ Paste the approved plan in the prompt
 
 **Step 5**: Monitor todos and wait for completion
 
+<!-- section_id: "54d5cf5e-8d20-4cf5-803f-67628a0c488d" -->
 ## When to Use
 
 ✅ **Use this pattern for:**
@@ -52,8 +57,10 @@ Paste the approved plan in the prompt
 - Quick questions
 - One-off changes
 
+<!-- section_id: "f46943d8-c652-43ac-8ae4-fe5021b260e2" -->
 ## Detailed Walkthrough
 
+<!-- section_id: "66b6bd89-3aa8-4194-afa4-425ff463610f" -->
 ### Step 1: User Makes Request
 
 User wants to set up a new assignment following 0_context rules.
@@ -63,6 +70,7 @@ User wants to set up a new assignment following 0_context rules.
 - "Create Unit 5 Task 1 with Canvas assignment https://..."
 - "Organize Unit 3 into assignment folders"
 
+<!-- section_id: "3d556636-089b-43c5-a99f-6253d5c5df77" -->
 ### Step 2: Invoke Planning Agent
 
 **Use the Task tool:**
@@ -82,6 +90,7 @@ Task(
 )
 ```
 
+<!-- section_id: "08bf978b-e550-4988-9f90-9d7d454f0159" -->
 ### Step 3: Review Planning Agent Output
 
 **Planning agent will:**
@@ -110,6 +119,7 @@ Task(
 **Files to modify**: 3
 ```
 
+<!-- section_id: "9a5726a7-1da0-4934-a74e-007319f9ee7b" -->
 ### Step 4: User Approves Plan
 
 **User says:**
@@ -123,6 +133,7 @@ Task(
 
 If changes requested, re-invoke planning agent with modifications.
 
+<!-- section_id: "a32a3dab-232c-4e1b-bff7-89e0b6e44167" -->
 ### Step 5: Invoke Execution Agent
 
 **Use the Task tool with approved plan:**
@@ -145,6 +156,7 @@ Task(
 )
 ```
 
+<!-- section_id: "5dc8c504-f5d9-4fca-9122-d2647db388e4" -->
 ### Step 6: Monitor Execution
 
 **Execution agent will:**
@@ -164,6 +176,7 @@ Task(
 ...]
 ```
 
+<!-- section_id: "9ba4355d-7011-4bb3-89dd-acd7ed5230f1" -->
 ### Step 7: Completion
 
 **Execution agent reports:**
@@ -184,8 +197,10 @@ Task(
 - CHANGELOG updated
 ```
 
+<!-- section_id: "cb55a178-f0c9-4c2a-bc3d-b00bfb2a98e4" -->
 ## Common Patterns
 
+<!-- section_id: "64d45975-ec1b-4033-bb51-de5e8a73b677" -->
 ### Pattern 1: New Unit Assignment
 ```
 User: "Set up Unit 4 Assignment 1"
@@ -195,6 +210,7 @@ User: "Set up Unit 4 Assignment 1"
 → done
 ```
 
+<!-- section_id: "f3ff45a3-d13b-429b-89f8-6c5f8106169e" -->
 ### Pattern 2: Template Only
 ```
 User: "Complete Unit 3 Assignment 2 template"
@@ -204,6 +220,7 @@ User: "Complete Unit 3 Assignment 2 template"
 → done
 ```
 
+<!-- section_id: "691185f4-bda0-41cb-8dd1-3e1d9c8af66a" -->
 ### Pattern 3: Folder Reorganization
 ```
 User: "Reorganize Unit 5 like Unit 2"
@@ -213,44 +230,54 @@ User: "Reorganize Unit 5 like Unit 2"
 → done
 ```
 
+<!-- section_id: "6c29b12d-db6e-472c-bc59-90659651cd93" -->
 ## Troubleshooting
 
+<!-- section_id: "ca69185c-9412-4c29-a80f-ac6d91695dcf" -->
 ### "Canvas authentication failed"
 - Verify `.env` file exists with credentials
 - Test: `python3 0_context/.../canvas_authenticate.py`
 - Check credentials are correct
 
+<!-- section_id: "c7f47b03-3ded-41e3-b6cf-4cde99458153" -->
 ### "MCP browser tools not working"
 - Try different MCP server: playwright → chrome-devtools → browser
 - Check MCP configuration in `~/.config/mcp/mcp.json`
 
+<!-- section_id: "dbc501df-aa6c-4298-81dd-17cb0b006953" -->
 ### "Template rendering failed"
 - Execution agent will render from template directory
 - Check Quarto env vars (or render from template dir)
 - Verify Python packages installed in .venv
 
+<!-- section_id: "4f5d19a4-28f4-452c-b6fc-7df80295891c" -->
 ### "Plan doesn't match 0_context rules"
 - Planning agent loads all guides automatically
 - If pattern is wrong, it's a bug - report it
 - User can request modifications before approval
 
+<!-- section_id: "2b79fc0b-38fb-43ad-8606-e0797f74c2f8" -->
 ## Security Notes
 
+<!-- section_id: "4d09f4ae-15e1-46fb-90c6-5d5ec96f5d9b" -->
 ### Canvas Authentication
 - ✅ Both agents use canvas_authenticate.py script
 - ❌ Never read .env file directly
 - ✅ Credentials never exposed in logs
 - ✅ Security boundary maintained
 
+<!-- section_id: "3c934512-61cc-4088-af74-6adc85f42379" -->
 ### Tool Access
 - **Planner**: Read-only tools (safe)
 - **Executor**: Full access (after user approval)
 
+<!-- section_id: "0914ec84-cf4f-4c10-813d-0935dde94c49" -->
 ### User Control
 - User MUST approve plan before execution
 - User can stop execution at any time
 - All changes are tracked in git
 
+<!-- section_id: "9f6b8c98-e0f2-4cac-8cae-40aceb33edb3" -->
 ## Success Criteria
 
 Assignment setup is successful when:
@@ -262,6 +289,7 @@ Assignment setup is successful when:
 - ✅ PROJECT_CHANGELOG.md updated
 - ✅ User receives completion report
 
+<!-- section_id: "4c1d9aef-abd8-48b4-8e53-8998ac8de7fd" -->
 ## Next Steps
 
 - **Full documentation**: `agent-patterns/assignment-workflow.md`

@@ -5,12 +5,14 @@ resource_name: "sublayers_vs_dot_folders"
 ---
 # Design Research — Sub-Layers vs. Dot-Folder-Centric Context Organization
 
+<!-- section_id: "60b35192-7a54-4cc2-8045-d4cfb1256cb6" -->
 ## Purpose
 
 Should rules, knowledge, and protocols live in separate sub-layer directories or inside the tool-specific dot folders (.claude/, .0agnostic/, .codex/, .gemini/, .cursor/)? Primary research into how every major tool organizes context and what the industry is converging on.
 
 ---
 
+<!-- section_id: "33c0d896-c3f2-473f-91aa-aebb9f139f69" -->
 ## The Question
 
 **Current setup (sub-layer hierarchy):**
@@ -42,8 +44,10 @@ layer_0_group/layer_0_04_sub_layers/
 
 ---
 
+<!-- section_id: "27290068-c1e1-4fde-b096-7cb7ee07406d" -->
 ## How Every Major Tool Organizes Context
 
+<!-- section_id: "f7aacb10-2f02-45d5-8a20-eb78a4c13bd7" -->
 ### Claude Code (.claude/)
 
 ```
@@ -61,6 +65,7 @@ layer_0_group/layer_0_04_sub_layers/
 
 **Key behavior:** All `.md` files in `.claude/rules/` are auto-loaded recursively at session start with the **same priority as CLAUDE.md**. Path-specific rules use YAML frontmatter (`paths: src/api/**/*.ts`). Skills use progressive disclosure — only descriptions load at start.
 
+<!-- section_id: "89dd61c8-d51e-42bb-a1d3-2e78d4ac482c" -->
 ### Codex CLI (.codex/ + .agents/)
 
 ```
@@ -77,6 +82,7 @@ project/
 
 **Key behavior:** AGENTS.md walks from project root to cwd. Skills scan `.agents/skills/` from cwd up to repo root.
 
+<!-- section_id: "ba37e1be-e07f-434e-99d8-7d428937fbbb" -->
 ### Gemini CLI (.gemini/)
 
 ```
@@ -94,6 +100,7 @@ project/.gemini/
 
 **Key behavior:** Extensions bundle skills, commands, sub-agents, and MCP servers. Skills are inside extensions, not standalone.
 
+<!-- section_id: "8a12528f-07f5-4bf2-8aaf-1fd59b94a9fd" -->
 ### Cursor (.cursor/)
 
 ```
@@ -106,6 +113,7 @@ project/.gemini/
 
 **Key behavior:** Four activation modes: Always, Auto-Attach (by file glob), Agent Requested (AI decides), Manual. Uses `.mdc` format (not plain `.md`).
 
+<!-- section_id: "e682f793-f983-4bb0-a1cf-07bc1a5f9957" -->
 ### Feature Comparison
 
 | Feature | Claude Code | Codex CLI | Gemini CLI | Cursor |
@@ -119,6 +127,7 @@ project/.gemini/
 
 ---
 
+<!-- section_id: "6458b939-4869-416c-a9f8-253e59534edb" -->
 ## The Critical Finding: Auto-Discovery
 
 **Tools reliably read from their native dot folders.** Claude Code auto-loads all `.md` files from `.claude/rules/` recursively at session start with high priority. Codex scans `.agents/skills/`. Cursor loads `.cursor/rules/*.mdc`.
@@ -135,8 +144,10 @@ project/.gemini/
 
 ---
 
+<!-- section_id: "efc7ece1-f22a-4602-89d3-1a5d9a4bf869" -->
 ## Tradeoffs
 
+<!-- section_id: "5f54bb31-4c6e-4e8f-bf3e-92143d452330" -->
 ### Dot-Folder Approach
 
 **Advantages:**
@@ -152,6 +163,7 @@ project/.gemini/
 - No single human-readable overview of all rules and knowledge
 - Tool-specific limitations (Cursor uses .mdc, not .md)
 
+<!-- section_id: "345221c1-6b5a-499b-87ec-563ab22a16b6" -->
 ### Separate Sub-Layer Hierarchy
 
 **Advantages:**
@@ -167,6 +179,7 @@ project/.gemini/
 - No native path-scoping or progressive disclosure
 - Agent must be taught the hierarchy (context cost)
 
+<!-- section_id: "427419b6-17f3-47cf-a3e1-63d4a95d3ca1" -->
 ### Hybrid: Agnostic Source Generating Tool-Specific Files
 
 **Advantages:**
@@ -181,13 +194,16 @@ project/.gemini/
 
 ---
 
+<!-- section_id: "9cc29a89-1ae0-403b-90d3-d1eae622f631" -->
 ## What Experienced Users Recommend
 
+<!-- section_id: "f381bfb6-1825-4363-948c-161612250ee2" -->
 ### Anthropic's Official Guidance
 - Use `.claude/rules/` for modular, topic-specific instructions
 - Keep CLAUDE.md under 100-200 lines, move details to per-folder files
 - Use skills for reference content with progressive disclosure
 
+<!-- section_id: "f8432b43-7e52-4198-b1d8-ad774957505d" -->
 ### Industry Convergence on AGENTS.md
 The AGENTS.md specification (now under the Linux Foundation's AAIF) has been adopted by 40,000+ repos. Recommended pattern:
 1. Maintain `AGENTS.md` at project root as canonical file
@@ -195,16 +211,19 @@ The AGENTS.md specification (now under the Linux Foundation's AAIF) has been ado
 3. Use `.agents/skills/` for shared skills
 4. Use tool-specific dot folders only for tool-specific overrides
 
+<!-- section_id: "139e9248-be77-4e3c-8957-cd7917656e5d" -->
 ### Three-Tier Architecture (Alexander Opalic)
 1. **Always-loaded** (CLAUDE.md): Under 60 lines, project overview, pointers
 2. **On-demand** (/docs folder): Domain-specific knowledge, loaded when referenced
 3. **Specialized agents** (.claude/agents/): Domain experts in forked contexts
 
+<!-- section_id: "86d04b58-959d-4508-a1f5-c4cb4c21b86b" -->
 ### AI-Rules-Sync Tool
 The [ai-rules-sync](https://github.com/lbb00/ai-rules-sync) project supports 8 tools: one rules repository with symlinks into each tool's expected directory.
 
 ---
 
+<!-- section_id: "566bba49-9548-4b19-83ed-f744fa2ac1fa" -->
 ## Migration Mapping: Sub-Layers → Dot-Folder-Centric
 
 | Current Sub-Layer | New Location | Rationale |
@@ -218,6 +237,7 @@ The [ai-rules-sync](https://github.com/lbb00/ai-rules-sync) project supports 8 t
 
 ---
 
+<!-- section_id: "826312b6-0d07-485e-8986-8434d5852ed0" -->
 ## Proposed Structure
 
 ```
@@ -260,6 +280,7 @@ entity/
     └── config.toml
 ```
 
+<!-- section_id: "1a5f051a-8b33-4457-9340-d0348ba402cd" -->
 ### Key Principles
 
 1. **Rules go in dot folders** — auto-loaded, high priority, path-scoped
@@ -269,6 +290,7 @@ entity/
 5. **Symlinks over copies where possible** — reduces sync burden
 6. **Tool-specific overrides in `.1merge/`** — existing pattern is sound
 
+<!-- section_id: "f62f2c69-ddcf-48db-80b0-b468be587b91" -->
 ### Why This Is Better Than Sub-Layers
 
 1. **Auto-discovery**: Tools natively find and load content from their dot folders
@@ -280,6 +302,7 @@ entity/
 
 ---
 
+<!-- section_id: "f5b4dda6-4756-419c-909d-683d096241a5" -->
 ## Sources
 
 - [Claude Code Memory Documentation](https://code.claude.com/docs/en/memory)

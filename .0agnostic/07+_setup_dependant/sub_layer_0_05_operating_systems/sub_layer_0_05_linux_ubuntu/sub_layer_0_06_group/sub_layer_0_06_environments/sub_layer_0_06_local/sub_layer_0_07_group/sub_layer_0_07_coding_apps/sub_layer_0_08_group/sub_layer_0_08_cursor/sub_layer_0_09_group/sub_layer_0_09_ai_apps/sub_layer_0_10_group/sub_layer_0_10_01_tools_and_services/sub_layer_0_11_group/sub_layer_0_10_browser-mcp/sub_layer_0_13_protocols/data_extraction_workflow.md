@@ -5,10 +5,12 @@ resource_name: "data_extraction_workflow"
 ---
 # Data Extraction Workflow (Browser MCP)
 
+<!-- section_id: "eb69ba00-c9d3-415b-be24-5cfec6965971" -->
 ## Overview
 
 This protocol defines standard procedures for extracting content and data from web pages using Browser MCP tools. Data extraction workflows are essential for web scraping, research, and content analysis tasks.
 
+<!-- section_id: "decd6c44-032f-44f0-99e6-c71787bbeef4" -->
 ## Prerequisites
 
 1. Browser MCP server running and accessible
@@ -16,6 +18,7 @@ This protocol defines standard procedures for extracting content and data from w
 3. Understanding of page structure (DOM elements, accessibility tree)
 4. Awareness of site's terms of service regarding scraping
 
+<!-- section_id: "3e3e63d3-ca61-47eb-96bc-49e84d43f3ce" -->
 ## Extraction Methods Overview
 
 | Method | Tool | Best For |
@@ -28,11 +31,14 @@ This protocol defines standard procedures for extracting content and data from w
 
 ---
 
+<!-- section_id: "d9adaab5-a354-4f07-ba89-0cc3e40ab8ed" -->
 ## Protocol 1: Basic Text Extraction
 
+<!-- section_id: "851851bd-35e6-4c4d-b317-08e35aa15020" -->
 ### Purpose
 Extract readable text content from a web page.
 
+<!-- section_id: "d5180482-b14f-473e-a291-bc7ae7d612dc" -->
 ### Steps
 
 1. **Navigate to target page**
@@ -61,6 +67,7 @@ Extract readable text content from a web page.
    - Extract paragraph content
    - Note any interactive elements
 
+<!-- section_id: "a684576c-b2aa-4997-a484-dc93ac9cbf16" -->
 ### Text Extraction Notes
 - Snapshot returns accessibility tree format
 - Elements include type, name, and ref ID
@@ -69,11 +76,14 @@ Extract readable text content from a web page.
 
 ---
 
+<!-- section_id: "d268443d-61aa-4b31-bbcc-871cddab2cda" -->
 ## Protocol 2: Structured Data Extraction
 
+<!-- section_id: "11d99c70-1819-49d2-a6d7-88a67b10b5c3" -->
 ### Purpose
 Extract data from tables, lists, or repeated elements.
 
+<!-- section_id: "0954bb83-e4fb-4f56-8875-6495f2347a50" -->
 ### Steps
 
 1. **Navigate and load page**
@@ -109,6 +119,7 @@ Extract data from tables, lists, or repeated elements.
      }"
    ```
 
+<!-- section_id: "306ed763-8458-49a1-b23d-21208e411b2e" -->
 ### Table Extraction Example
 
 ```javascript
@@ -130,11 +141,14 @@ Extract data from tables, lists, or repeated elements.
 
 ---
 
+<!-- section_id: "dc61bd6a-96a6-492e-ba7f-b02802d979c8" -->
 ## Protocol 3: Link Extraction
 
+<!-- section_id: "d38d240f-de54-4fd5-b479-47f1b0e889ee" -->
 ### Purpose
 Extract all links from a page for further crawling or analysis.
 
+<!-- section_id: "6c7362c0-7c7d-4f23-a91b-eda291762328" -->
 ### Steps
 
 1. **Navigate to page**
@@ -165,6 +179,7 @@ Extract all links from a page for further crawling or analysis.
    - Links by domain
    - Links by type (pdf, doc, etc.)
 
+<!-- section_id: "5687d155-ba95-4f04-988d-528794cfafaf" -->
 ### Link Filtering Patterns
 
 ```javascript
@@ -188,11 +203,14 @@ Extract all links from a page for further crawling or analysis.
 
 ---
 
+<!-- section_id: "4e88fa8d-392e-499b-8858-82ca27bb2752" -->
 ## Protocol 4: Form Data Extraction
 
+<!-- section_id: "1cc36b9e-9121-420f-9405-cdc464817749" -->
 ### Purpose
 Extract form field information for analysis or automated filling.
 
+<!-- section_id: "d76c0589-b6fa-4b39-90fe-399d81799f05" -->
 ### Steps
 
 1. **Navigate to page with form**
@@ -231,6 +249,7 @@ Extract form field information for analysis or automated filling.
      }"
    ```
 
+<!-- section_id: "c95a6b2a-d65f-49a5-9eac-157fd9ae8977" -->
 ### Form Analysis Output
 ```json
 {
@@ -246,11 +265,14 @@ Extract form field information for analysis or automated filling.
 
 ---
 
+<!-- section_id: "01b258de-815e-4b0b-a024-0433ce973651" -->
 ## Protocol 5: API/Network Data Extraction
 
+<!-- section_id: "48b53959-4203-4ec2-9dba-9b543d839b09" -->
 ### Purpose
 Capture data from API calls and network requests made by the page.
 
+<!-- section_id: "b11c8986-f703-4f77-a390-0865f788b731" -->
 ### Steps
 
 1. **Navigate and trigger data load**
@@ -284,6 +306,7 @@ Capture data from API calls and network requests made by the page.
      }"
    ```
 
+<!-- section_id: "96d29e4e-b302-4c6b-a127-17e428df8d1f" -->
 ### Network Request Filtering
 ```javascript
 // Get only API requests from network log
@@ -296,11 +319,14 @@ networkRequests.filter(req =>
 
 ---
 
+<!-- section_id: "229a658c-d3a0-4e2e-a187-38d4642b2e97" -->
 ## Protocol 6: Visual Content Extraction
 
+<!-- section_id: "f8a96df0-9ff3-415c-8b74-52a859e3126b" -->
 ### Purpose
 Capture visual content and screenshots for analysis or archival.
 
+<!-- section_id: "60d7cfd7-f81a-494c-ba57-481763cfe252" -->
 ### Steps
 
 1. **Navigate to page**
@@ -354,11 +380,14 @@ Capture visual content and screenshots for analysis or archival.
 
 ---
 
+<!-- section_id: "95cc3d7b-b6a6-4208-9b1a-77ad862b21d1" -->
 ## Protocol 7: Dynamic Content Extraction
 
+<!-- section_id: "5c516ce8-49b8-4062-ac8e-da1fb5e3043f" -->
 ### Purpose
 Extract content from pages that load data dynamically (infinite scroll, lazy loading).
 
+<!-- section_id: "971b1359-e887-4c2f-8f8e-cf645e09e779" -->
 ### Steps
 
 1. **Navigate to page**
@@ -395,6 +424,7 @@ Extract content from pages that load data dynamically (infinite scroll, lazy loa
 
 5. **Repeat until complete or limit reached**
 
+<!-- section_id: "2b13e2c3-9bec-4a52-bbc6-1384bf9ac347" -->
 ### Infinite Scroll Handling
 
 ```javascript
@@ -416,11 +446,14 @@ async () => {
 
 ---
 
+<!-- section_id: "1cb603b5-fcc3-428b-b2a7-8c293db46e02" -->
 ## Protocol 8: Console Log Extraction
 
+<!-- section_id: "e21e9a7b-2361-4bd0-a5b1-a4b3ce0996ca" -->
 ### Purpose
 Capture console output for debugging or data that's logged to console.
 
+<!-- section_id: "29272887-8270-47a9-a2cc-75f1feed7fa6" -->
 ### Steps
 
 1. **Navigate to page**
@@ -446,6 +479,7 @@ Capture console output for debugging or data that's logged to console.
 
 ---
 
+<!-- section_id: "64a25eed-b0d7-460e-89a3-d8ce54186a4b" -->
 ## Data Validation Checklist
 
 After extraction, verify data quality:
@@ -460,8 +494,10 @@ After extraction, verify data quality:
 
 ---
 
+<!-- section_id: "9a86a090-b976-464e-9301-65e2baec8f79" -->
 ## Error Handling
 
+<!-- section_id: "a28128c0-95e8-4cb3-8112-d1d15b2dd0a5" -->
 ### Empty extraction results
 
 **Causes**:
@@ -478,6 +514,7 @@ After extraction, verify data quality:
 4. Use JavaScript evaluation for dynamic content
 ```
 
+<!-- section_id: "1f7495d6-ed63-44c6-806c-0bae28d9a381" -->
 ### Encoding issues
 
 **Symptoms**: Strange characters, garbled text
@@ -491,6 +528,7 @@ After extraction, verify data quality:
 }
 ```
 
+<!-- section_id: "19ceb2c9-7a91-4a4c-a137-76aabca593e5" -->
 ### Rate limiting / blocking
 
 **Symptoms**: Empty responses, captcha pages, blocked
@@ -503,6 +541,7 @@ After extraction, verify data quality:
 
 ---
 
+<!-- section_id: "0276fe30-1fbd-448c-962e-af568ee53872" -->
 ## Best Practices
 
 1. **Respect robots.txt and ToS**

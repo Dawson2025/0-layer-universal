@@ -13,6 +13,7 @@ resource_name: "US-04_agent_knows_which_channel"
 **I want** agents to have clear rules for which communication channel to use in each situation,
 **So that** information reaches the right audience and I can find it where I expect it.
 
+<!-- section_id: "6ad66afd-ee89-46d8-bfeb-3bce2d28266e" -->
 ### What Happens
 
 1. User delegates work and the agent needs to communicate something
@@ -21,6 +22,7 @@ resource_name: "US-04_agent_knows_which_channel"
 4. Information lands in the right place and is discoverable by the right audience
 5. User finds status in stage reports, history in episodic memory, and handoffs in handoff docs
 
+<!-- section_id: "7334fe02-8be8-4633-a93c-60967bfd008d" -->
 ### Acceptance Criteria
 
 - Channel selection rules are unambiguous for common communication scenarios

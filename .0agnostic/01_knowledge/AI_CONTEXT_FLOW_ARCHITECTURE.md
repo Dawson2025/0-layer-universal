@@ -5,12 +5,14 @@ resource_name: "AI_CONTEXT_FLOW_ARCHITECTURE"
 ---
 # AI Context Flow Architecture
 
+<!-- section_id: "79f17088-db62-4380-b814-82a5a76da55a" -->
 ## Complete System Overview
 
 This document explains the full flow of how AI agents receive context, navigate the system, and access the knowledge they need.
 
 ---
 
+<!-- section_id: "9cbd603b-278b-41ff-96bb-c91a0d694359" -->
 ## The Big Picture
 
 ```
@@ -93,12 +95,15 @@ This document explains the full flow of how AI agents receive context, navigate 
 
 ---
 
+<!-- section_id: "c92e8bf6-bf43-4df3-bf8c-8bc15a2b014f" -->
 ## CRITICAL RULES: Every API Call Enforcement
 
+<!-- section_id: "07d29963-2b48-4985-937a-ea49c081c6f4" -->
 ### What Are Critical Rules?
 
 Critical rules are constraints that **MUST be followed on EVERY API call** when working at a layer or any deeper layer within it.
 
+<!-- section_id: "0e14f0bc-4a12-4aef-a5bb-e134630bfc82" -->
 ### How Critical Rules Cascade
 
 ```
@@ -125,6 +130,7 @@ layer_0/CLAUDE.md
             └── ADDS: Component-specific critical rules
 ```
 
+<!-- section_id: "3aed8c2d-55e8-400d-90b1-f5f11ceb181e" -->
 ### Critical Rules in System Prompt Files
 
 Every CLAUDE.md (and equivalent files) MUST include:
@@ -153,6 +159,7 @@ Failure to follow these rules is a violation. Always verify compliance.
 
 ---
 
+<!-- section_id: "28e6d0e5-6c08-4a8d-bbf7-c027324c12cd" -->
 ## Layer Cascade: Full Example
 
 ```
@@ -211,6 +218,7 @@ Failure to follow these rules is a violation. Always verify compliance.
 
 ---
 
+<!-- section_id: "cea2ca48-53fa-4166-9365-63580f5c18d8" -->
 ## Complete Reference Chain
 
 ```
@@ -251,6 +259,7 @@ Failure to follow these rules is a violation. Always verify compliance.
 
 ---
 
+<!-- section_id: "4af76f97-cd74-4175-9101-8f8869f6283d" -->
 ## What CLAUDE.md Points To
 
 ```
@@ -276,10 +285,12 @@ CLAUDE.md
 
 ---
 
+<!-- section_id: "20d4545c-162b-4c12-83bd-c22d860c49fa" -->
 ## What .0agnostic/ Is For
 
 **.0agnostic/ is NOT loaded by tools directly.** It is the **sync source** that generates all tool-specific files.
 
+<!-- section_id: "8464f804-a241-4f61-b80f-3e67331c6765" -->
 ### Purpose of .0agnostic/
 
 | Folder | Purpose |
@@ -290,6 +301,7 @@ CLAUDE.md
 | `episodic/` | Session memory (can be synced or referenced) |
 | `templates/` | Templates for instantiating new entities |
 
+<!-- section_id: "3dad0c6d-a22d-45e8-afd4-0e8815eb3001" -->
 ### Sync Workflow
 
 ```
@@ -306,6 +318,7 @@ CLAUDE.md
 
 ---
 
+<!-- section_id: "3d434513-6e91-4e8e-87ec-a9606c02d0dc" -->
 ## Critical Rules Template for System Prompts
 
 Every generated system prompt file should include:
@@ -343,6 +356,7 @@ Every generated system prompt file should include:
 
 ---
 
+<!-- section_id: "5cd3e93e-f85d-4c18-b4ee-5abbd2bfeb46" -->
 ## Summary: The Complete Flow
 
 ```
@@ -382,6 +396,7 @@ Every generated system prompt file should include:
 
 ---
 
+<!-- section_id: "14617321-42d9-4351-b134-fe8f26943d80" -->
 ## Sub-Layers as Entry Points
 
 Sub-layers can also be agent entry points with their own context cascade:
@@ -416,6 +431,7 @@ Sub-layers can also be agent entry points with their own context cascade:
 
 ---
 
+<!-- section_id: "34746701-10d4-4cea-b57b-82a40d4f3fe7" -->
 ## Nested Depth Naming (subxN)
 
 When sub-layers contain nested sub-layers, use depth indicators:
@@ -450,6 +466,7 @@ When sub-layers contain nested sub-layers, use depth indicators:
 
 ---
 
+<!-- section_id: "8167e948-b441-49ba-b8a3-e3d9023243a3" -->
 ## Sub-Stages within Stages
 
 Stages can contain sub-stages for finer workflow phases:
@@ -487,10 +504,12 @@ Stages can contain sub-stages for finer workflow phases:
 
 ---
 
+<!-- section_id: "bbeacf4b-7c7a-446d-9439-85a356a77479" -->
 ## [CRITICAL] Propagation Chain Requirement
 
 **When modifying AI context (rules, knowledge, skills, CLAUDE.md, etc.), you MUST show a propagation chain diagram.**
 
+<!-- section_id: "80b1341c-7818-4b9a-a229-32bcddbe73a2" -->
 ### What is a Propagation Chain?
 
 Changes to AI context flow through multiple layers:
@@ -527,6 +546,7 @@ Changes to AI context flow through multiple layers:
 └─────────────────────────────────────────────────────────────────────────────┘
 ```
 
+<!-- section_id: "725f136e-b2c7-4dc3-8ba1-826dd3496bdc" -->
 ### Required Diagram for AI Context Changes
 
 Before modifying AI context, show:
@@ -557,6 +577,7 @@ Before modifying AI context, show:
 └─────────────────────────────────────────────────────────────────────────────┘
 ```
 
+<!-- section_id: "8d989396-f4ad-483e-a1e6-ab61c9fa09a8" -->
 ### Why This Matters
 
 1. **Traceability**: Know where content lives and how it flows
@@ -566,6 +587,7 @@ Before modifying AI context, show:
 
 ---
 
+<!-- section_id: "423679e6-9217-47b5-b485-89a2543c733b" -->
 ## Skills Architecture
 
 Skills are the bridge between CLAUDE.md and knowledge:
@@ -619,6 +641,7 @@ Skills are the bridge between CLAUDE.md and knowledge:
 └─────────────────────────────────────────────────────────────────────────────┘
 ```
 
+<!-- section_id: "357e6548-9abb-495b-b868-14e6bd313632" -->
 ### Key Principles
 
 1. **CLAUDE.md is minimal** - Identity, critical rules, triggers, pointers only
@@ -628,6 +651,7 @@ Skills are the bridge between CLAUDE.md and knowledge:
 
 ---
 
+<!-- section_id: "255cb3b1-5945-490e-b3f9-fb5f17247704" -->
 ## Proposal Requirement: Context Flow Diagrams
 
 **[CRITICAL] All proposals that modify AI context architecture MUST include:**
@@ -641,6 +665,7 @@ Skills are the bridge between CLAUDE.md and knowledge:
 
 ---
 
+<!-- section_id: "e5f5e7f2-e19e-4f08-b197-84a3b2a479df" -->
 ## [CRITICAL] Stage Completeness Rule
 
 **ALL 11 stages MUST be created when an entity uses stages.**
@@ -666,6 +691,7 @@ entity_99_stages/
 
 ---
 
+<!-- section_id: "e1d3a752-6360-4332-b53f-d8dba842246a" -->
 ## Related Documentation
 
 | Document | Location |
@@ -681,6 +707,7 @@ entity_99_stages/
 
 ---
 
+<!-- section_id: "3159ac79-ea96-4e2d-adef-3163fe2ec713" -->
 ## See Also
 
 - **Bottom-up context propagation**: `CONTEXT_PROPAGATION_DESIGN.md` — how work products consolidate within stages and propagate upward through the hierarchy (stage outputs → reports → entity → parent)

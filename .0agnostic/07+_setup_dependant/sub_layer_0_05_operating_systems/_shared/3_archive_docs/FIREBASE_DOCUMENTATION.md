@@ -7,8 +7,10 @@ resource_name: "FIREBASE_DOCUMENTATION"
 
 Complete Firebase setup and development documentation for Lang Trak.
 
+<!-- section_id: "75048763-c406-436d-a488-89e45e1e3fd8" -->
 ## 🔗 Firebase Documentation Index
 
+<!-- section_id: "7e2812ff-484d-4e1c-8665-f91c4520d208" -->
 ### Essential Guides
 - **[README.md](../README.md)** - Main project overview and Firebase setup
 - **[QUICK_START.md](QUICK_START.md)** - 5-minute Firebase setup guide 
@@ -16,21 +18,26 @@ Complete Firebase setup and development documentation for Lang Trak.
 - **[DEV_WORKFLOW.md](DEV_WORKFLOW.md)** - Daily development with Firebase
 - **[OPERATIONAL_STATUS.md](OPERATIONAL_STATUS.md)** - Current Firebase system status
 
+<!-- section_id: "3ab890cd-024c-4b12-9ce4-ed7fb0d545ab" -->
 ### Advanced Guides  
 - **[GOOGLE_FIREBASE_BEST_PRACTICES.md](GOOGLE_FIREBASE_BEST_PRACTICES.md)** - Architecture decisions
 - **[PRODUCTION_READINESS.md](PRODUCTION_READINESS.md)** - Production deployment
 
+<!-- section_id: "c7f5d67d-fd05-4def-b7e8-7bb84f92e5cc" -->
 ## 🚀 Quick Commands
 
+<!-- section_id: "42ed0f36-5d82-441a-b359-4c1a35572e50" -->
 ### Environment Setup (Run in WSL)
 
 
+<!-- section_id: "d6e5528c-bf5c-4402-9d21-25db921f864a" -->
 ### Firebase Projects
 - **lang-trak-dev** - Development
 - **lang-trak-staging** - Staging  
 - **lang-trak-prod** - Production
 - **Local emulators** - Unit testing only
 
+<!-- section_id: "d281394e-7163-4c81-b11e-390eb872afec" -->
 ## 📋 Getting Started
 
 1. **New developer?** → [QUICK_START.md](QUICK_START.md)

@@ -9,6 +9,7 @@ resource_name: "US-01_developer_creates_research_entity"
 **I want to** create a research entity under `layer_-1_research/` with a complete stage lifecycle,
 **So that** I have an isolated, structured workspace where I can explore ideas without risking production stability.
 
+<!-- section_id: "1f531924-b827-4d5f-95db-bdbbc059e330" -->
 ## Acceptance Criteria
 
 **Scenario 1: Entity scaffolding is complete**

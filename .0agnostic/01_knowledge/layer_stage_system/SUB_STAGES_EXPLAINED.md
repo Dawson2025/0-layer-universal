@@ -5,12 +5,14 @@ resource_name: "SUB_STAGES_EXPLAINED"
 ---
 # Sub-Stages Explained (sub_stage and subxN_stage)
 
+<!-- section_id: "60fc5ea5-ea6c-409e-8730-4b9dbd6aa9ff" -->
 ## Overview
 
 Just as layers can have sub-layers, **stages can have sub-stages**. Sub-stages break down workflow phases into finer-grained steps, each potentially being an agent entry point.
 
 ---
 
+<!-- section_id: "58ed36ac-4b41-47cd-9163-aaf99915629a" -->
 ## What Are Sub-Stages?
 
 Sub-stages are nested divisions within a stage:
@@ -27,8 +29,10 @@ Each sub-stage represents a **distinct phase** within the parent stage's workflo
 
 ---
 
+<!-- section_id: "4741c8f8-13d0-4738-a2a5-3893b5df5528" -->
 ## Why Sub-Stages?
 
+<!-- section_id: "e944df29-446a-4ba5-ba2a-927a561c130c" -->
 ### Problem: Stage Too Broad
 
 ```
@@ -37,6 +41,7 @@ stage_06_development/
     └── [Everything mixed together]
 ```
 
+<!-- section_id: "021daf5e-810f-48e8-b3df-3f98e21f827f" -->
 ### Solution: Sub-Stages for Organization
 
 ```
@@ -54,6 +59,7 @@ stage_06_development/
 
 ---
 
+<!-- section_id: "ea3a774a-042e-4951-8079-cc7519a2e3ba" -->
 ## Sub-Stage Naming Convention
 
 ```
@@ -72,8 +78,10 @@ sub[x{depth}]_stage_{layer}_{stage_num}_{sequence}_{name}/
 
 ---
 
+<!-- section_id: "e236e428-60d6-4a12-9236-c0c8f14bf971" -->
 ## Sub-Stage Depth Levels
 
+<!-- section_id: "3c622f95-a7a6-4ac2-a0cd-4070394f6fb6" -->
 ### Depth 1: `sub_stage_`
 
 Direct children of a stage.
@@ -86,6 +94,7 @@ stage_06_development/
 └── sub_stage_06_04_final_polish/           # Depth 1
 ```
 
+<!-- section_id: "01a5af2e-0252-4af0-a840-7b29cfe95d50" -->
 ### Depth 2: `subx2_stage_`
 
 Nested within a depth-1 sub-stage.
@@ -98,6 +107,7 @@ sub_stage_06_02_core_implementation/
 └── subx2_stage_06_02_04_views/             # Depth 2
 ```
 
+<!-- section_id: "bc0d7bb3-c016-470f-8b41-e8132794c360" -->
 ### Depth 3+: `subx3_stage_`, `subx4_stage_`, etc.
 
 Continue pattern as needed.
@@ -111,6 +121,7 @@ subx2_stage_06_02_02_services/
 
 ---
 
+<!-- section_id: "1ee2f4d2-6029-4d4c-b1fb-8df2531c730f" -->
 ## Sub-Stage Structure
 
 Each sub-stage can be an agent entry point:
@@ -131,6 +142,7 @@ sub_stage_06_02_implementation/
 
 ---
 
+<!-- section_id: "73b19c6b-3699-4299-80dc-23c81452598f" -->
 ## Sub-Stage Context Flow Architecture
 
 ```
@@ -180,8 +192,10 @@ sub_stage_06_02_implementation/
 
 ---
 
+<!-- section_id: "18a54d06-8a1b-457f-8f86-3b60b7c18226" -->
 ## When to Use Sub-Stages
 
+<!-- section_id: "8f17fdfb-6015-4787-8912-01112684b360" -->
 ### Use Sub-Stages When:
 
 1. **Complex Stage**
@@ -200,6 +214,7 @@ sub_stage_06_02_implementation/
    - Too many outputs to organize in one stage
    - Need finer-grained organization
 
+<!-- section_id: "5cfca1bf-632b-471d-9efc-bf0a4ed06c3c" -->
 ### Don't Use Sub-Stages When:
 
 1. **Simple Stage**
@@ -212,6 +227,7 @@ sub_stage_06_02_implementation/
 
 ---
 
+<!-- section_id: "209990a3-de12-431e-83c3-3227da07c897" -->
 ## Sub-Stage Critical Rules
 
 Each sub-stage level can add rules:
@@ -231,6 +247,7 @@ stage_06_development/CLAUDE.md
 
 ---
 
+<!-- section_id: "ea3c596d-71ea-44a6-a4a7-d2c03d0910d4" -->
 ## Sub-Stage CLAUDE.md Template
 
 ```markdown
@@ -283,6 +300,7 @@ Load this context when:
 
 ---
 
+<!-- section_id: "1f94170c-5d0f-49dd-9700-27021b251089" -->
 ## Sub-Stage Workflow Example
 
 ```
@@ -319,6 +337,7 @@ Load this context when:
 
 ---
 
+<!-- section_id: "aeee3a2f-ea41-4682-bfae-28925746e9a5" -->
 ## Generalized Pattern: subxN_stage_
 
 For any depth N:
@@ -336,6 +355,7 @@ subx{N}_stage_{layer}_{parent_stage}_{sequence}_{name}/
 
 ---
 
+<!-- section_id: "5255610b-0dbd-4214-9193-82d9b6fb02dc" -->
 ## AI Agent Navigation in Sub-Stages
 
 ```
@@ -351,6 +371,7 @@ subx{N}_stage_{layer}_{parent_stage}_{sequence}_{name}/
 
 ---
 
+<!-- section_id: "a9895b7e-6099-495e-8084-16960f8742b5" -->
 ## Self-Check for Sub-Stage Work
 
 - [ ] Did I load parent stage context?

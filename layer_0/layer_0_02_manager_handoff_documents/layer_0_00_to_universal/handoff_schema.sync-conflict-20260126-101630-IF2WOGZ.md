@@ -5,18 +5,21 @@ resource_name: "handoff_schema.sync-conflict-20260126-101630-IF2WOGZ"
 ---
 # Handoff Schema Definition
 
+<!-- section_id: "0c626a49-ba5b-4158-a9ff-60953086b897" -->
 ## Overview
 
 This document defines the canonical handoff schema used throughout the AI Manager Hierarchy System. Handoffs are the primary mechanism for communicating work, state, and results between managers, workers, layers, and stages.
 
 All agents participating in the hierarchy must read and write handoffs conforming to this schema.
 
+<!-- section_id: "fab66ad4-f549-43f0-8294-9fc52f764282" -->
 ## Schema Version
 
 **Current Version:** `1.0.0`
 
 This schema follows semantic versioning. Agents should check `schemaVersion` and handle backward compatibility appropriately.
 
+<!-- section_id: "70fa1dcc-a4f1-46f7-94be-f03ac5260f0c" -->
 ## Core Principles
 
 1. **Forward Compatibility**: Additional fields can be added without breaking existing agents
@@ -24,6 +27,7 @@ This schema follows semantic versioning. Agents should check `schemaVersion` and
 3. **Structured but Flexible**: Required fields ensure consistency; optional fields allow specialization
 4. **Human-Readable**: JSON format with descriptive field names for debugging and transparency
 
+<!-- section_id: "d840bc96-b430-4024-96b7-82ad9960b419" -->
 ## Canonical Schema (JSON Schema Form)
 
 ```json
@@ -229,8 +233,10 @@ This schema follows semantic versioning. Agents should check `schemaVersion` and
 }
 ```
 
+<!-- section_id: "0c7daeca-61d9-4795-8037-bad71ebae86a" -->
 ## Flow Types
 
+<!-- section_id: "6a04085d-6e53-4e6e-a8f7-e52d5709d71c" -->
 ### Vertical Handoffs (Layer-to-Layer)
 
 Vertical handoffs pass tasks and results **between layers** in the hierarchy.
@@ -273,6 +279,7 @@ Vertical handoffs pass tasks and results **between layers** in the hierarchy.
 }
 ```
 
+<!-- section_id: "fecfc60c-302f-4116-8c30-6dbd29d8d2cc" -->
 ### Horizontal Handoffs (Stage-to-Stage)
 
 Horizontal handoffs move work through the **chronological pipeline** within a single layer.
@@ -344,8 +351,10 @@ Each stage:
 }
 ```
 
+<!-- section_id: "b3efc40f-8fce-4b52-b0a9-92b329ea6b21" -->
 ## File Locations
 
+<!-- section_id: "bc3d8ca2-b2d1-42a7-b5f3-58c4786f3292" -->
 ### Stage-Level Handoffs
 
 Each stage directory has:
@@ -362,6 +371,7 @@ stage_X.YY_<stage_name>/
       task-2.json
 ```
 
+<!-- section_id: "4f20c8b0-9ee0-44ae-a1c5-6ce9a291ab22" -->
 ### Layer-Level Handoffs
 
 Each layer's manager handoff directory:
@@ -376,8 +386,10 @@ layer_N/
       outgoing.json     # From L(N+1) back to this layer
 ```
 
+<!-- section_id: "60851c5f-d59d-4f18-9a03-9b3a19474a1b" -->
 ## Extensibility
 
+<!-- section_id: "ef38f8f6-dec3-461c-b83c-ac83f9abb0cb" -->
 ### Adding Custom Fields
 
 Agents may add custom fields to handoffs as long as:
@@ -401,6 +413,7 @@ Agents may add custom fields to handoffs as long as:
 }
 ```
 
+<!-- section_id: "f076bb60-c51b-4901-b744-b8e75bf29092" -->
 ### Version Evolution
 
 When the schema evolves:
@@ -410,6 +423,7 @@ When the schema evolves:
    - Read: Accept older versions, map to current understanding
    - Write: Use current version
 
+<!-- section_id: "26e3c160-4a2c-4ce1-81e9-476b63f5e0f9" -->
 ## Reference Implementations
 
 For detailed implementation patterns, see:
@@ -417,6 +431,7 @@ For detailed implementation patterns, see:
 - **Parallel Execution**: `/code/0_layer_universal/layer_-1_research/layer_-1_better_ai_system/layer_0/layer_0_features/layer_0_feature_ai_manager_hierarchy_system/layer_0/layer_0_03_sub_layers/sub_layer_0_02_knowledge_system/things_learned/ideal_ai_manager_hierarchy_system/parallel_execution.md`
 - **Supervisor Patterns**: `/code/0_layer_universal/layer_-1_research/layer_-1_better_ai_system/layer_0/layer_0_features/layer_0_feature_ai_manager_hierarchy_system/layer_0/layer_0_03_sub_layers/sub_layer_0_02_knowledge_system/things_learned/ideal_ai_manager_hierarchy_system/supervisor_patterns.md`
 
+<!-- section_id: "2a780b6d-7b43-45b3-9389-1543393333a5" -->
 ## Usage Guidelines
 
 1. **Managers**: Read incoming handoffs, decompose to subtasks, spawn workers, aggregate results to outgoing handoffs
@@ -424,8 +439,10 @@ For detailed implementation patterns, see:
 3. **Supervisors**: Watch handoff directories, route to appropriate agents based on policy, monitor completion
 4. **Debugging**: All handoffs are human-readable JSON files in the filesystem for easy inspection and debugging
 
+<!-- section_id: "6d5a2df3-066d-47f0-8d69-58f55a78e9f0" -->
 ## Change Log
 
+<!-- section_id: "9e93cb4f-fcee-4874-b222-340fd77c80c5" -->
 ### Version 1.0.0 (2024-12-23)
 - Initial canonical schema definition
 - Support for vertical and horizontal handoff flows

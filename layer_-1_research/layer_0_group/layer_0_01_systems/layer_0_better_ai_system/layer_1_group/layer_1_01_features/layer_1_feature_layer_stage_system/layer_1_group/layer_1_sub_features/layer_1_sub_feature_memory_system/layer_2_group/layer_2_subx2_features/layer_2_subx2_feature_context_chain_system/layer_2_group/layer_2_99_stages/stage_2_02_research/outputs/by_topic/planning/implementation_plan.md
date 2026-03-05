@@ -5,6 +5,7 @@ resource_name: "implementation_plan"
 ---
 # Implementation Plan — AALang/GAB + Claude Code Integration
 
+<!-- section_id: "de2612c4-550d-4fea-b231-b1b205989ca4" -->
 ## Context
 
 This plan addresses the 5 core problems identified in `problems_and_vision.md` and verified in `verification_results.md` (including professor's documentation review on 2026-02-07). It implements the **hybrid approach with three-layer redundancy**: JSON-LD as source of truth (design-time), skills and markdown as runtime interface, compact CLAUDE.md references connecting them, and a transpiler keeping everything in sync.
@@ -15,6 +16,7 @@ This plan addresses the 5 core problems identified in `problems_and_vision.md` a
 
 ---
 
+<!-- section_id: "39b8d104-ebd1-4dbf-8dea-6d1505e329dd" -->
 ## Problems Being Solved
 
 | # | Problem | Root Cause | Solution Approach |
@@ -27,14 +29,17 @@ This plan addresses the 5 core problems identified in `problems_and_vision.md` a
 
 ---
 
+<!-- section_id: "86fa8840-e9be-41b6-bdf6-8945cd76f6d8" -->
 ## Key Research Findings
 
+<!-- section_id: "c09ccc76-a4bf-4d06-86c0-c4d8bda8c3d4" -->
 ### Finding 1: JSON-LD Precision vs Runtime Comprehension
 
 **Question**: Is AALang/GAB's JSON-LD format better at getting agents to understand WHEN to use skills?
 
 **Answer**: JSON-LD is better at *defining* precision, not at *communicating* it to the LLM directly. But agents CAN navigate JSON-LD selectively via jq (proven — see `selective_jsonld_navigation.md`), loading only 2-5% of the file.
 
+<!-- section_id: "c922f7f5-edd8-4242-95ff-acfacc7af8d0" -->
 ### Finding 2: Selective JSON-LD Graph Navigation (PROVEN)
 
 Agents can use `jq` to navigate JSON-LD as a graph, extracting only what they need:
@@ -44,6 +49,7 @@ Agents can use `jq` to navigate JSON-LD as a graph, extracting only what they ne
 
 This directly enables the jq-first approach (Layer 1 of the redundancy model).
 
+<!-- section_id: "74d3ebad-be0c-425e-81ed-dfe900e34562" -->
 ### Finding 3: Three-Layer Redundancy Model (DECIDED)
 
 No single mechanism reliably solves skill invocation. The solution is redundancy:
@@ -56,6 +62,7 @@ Layer 3 (FALLBACK):  Transpiled .integration.md → auto-generated markdown from
 
 See `architecture_decision_reference_chain.md` for the full decision analysis.
 
+<!-- section_id: "565f9224-e92a-4b19-a323-e69ab086d1a4" -->
 ### Finding 4: Transpiler Concept
 
 A transpiler converts JSON-LD → optimized markdown (`.integration.md`). This provides:
@@ -66,6 +73,7 @@ A transpiler converts JSON-LD → optimized markdown (`.integration.md`). This p
 
 ---
 
+<!-- section_id: "5420baeb-28f4-4349-93cc-5d9650838dc2" -->
 ## Structural Requirement: JSON-LD at Every Level
 
 Every layer, stage, sub-layer, sub-stage, and subxn layer/stage should have:
@@ -79,6 +87,7 @@ any_directory/
     └── workflow/SKILL.md        ← Markdown translation of JSON-LD precision
 ```
 
+<!-- section_id: "7cacffd0-d514-459b-8542-5e631194c519" -->
 ### Scale Analysis
 
 | Level | Count | JSON-LD Exists | Strategy |
@@ -93,8 +102,10 @@ any_directory/
 
 ---
 
+<!-- section_id: "41125fa4-8684-46c4-a392-5639d8e64495" -->
 ## Phase 1: CLAUDE.md Chain Optimization (Immediate)
 
+<!-- section_id: "c937bb3e-1754-4222-9edd-e0e8609a45d3" -->
 ### 1.1 Slim the Static Chain
 
 **Current**: 717 lines across 5 files. **Target**: ~350 lines.
@@ -107,6 +118,7 @@ any_directory/
 | `~/dawson-workspace/code/CLAUDE.md` | 55 | ~30 | Remove AALang pseudo-code |
 | `0_layer_universal/CLAUDE.md` | 225 | ~130 | Remove duplicate universal rules, move ASCII structure to @import, replace AALang pseudo-code with references |
 
+<!-- section_id: "b34a9831-59dc-41c9-89a1-6db03687978d" -->
 ### 1.2 Add Context Loading Instructions for ALL Three Layers
 
 Add ~35-45 lines to the primary CLAUDE.md with instructions that tell the agent to read from ALL three layers AND rules. **Critical**: every layer needs its own explicit "read this" trigger — the agent won't discover skills, `.integration.md` files, or rules on its own.
@@ -176,6 +188,7 @@ Run to see this stage's modes: jq '."@graph"[] | select(."@type" == "gab:Mode") 
 
 See `architecture_decision_reference_chain.md` for the complete analysis of why all layers need explicit triggers.
 
+<!-- section_id: "6fcd30b5-5d75-403c-8a9a-190f2333ee4f" -->
 ### 1.3 Replace Ceremonial AALang with Real References
 
 **Before** (15-25 lines per file):
@@ -192,6 +205,7 @@ ctx:ContextConfidenceStateActor.rulesAwareness += 0.3
 
 **After**: Replaced by the layer-appropriate variant from 1.2 above (root, layer, or stage level).
 
+<!-- section_id: "0506f544-f8e7-4ef1-a798-3be048b0c26b" -->
 ### 1.4 Create @import Targets
 
 ```
@@ -204,6 +218,7 @@ ctx:ContextConfidenceStateActor.rulesAwareness += 0.3
 
 ---
 
+<!-- section_id: "43101404-38e0-41f1-ac8c-a3943dcc96ef" -->
 ## Phase 2: Path-Specific Rules (Short-term)
 
 Create `.claude/rules/` directory (currently missing). **Critical**: each rules file must contain explicit "read this" instructions that re-trigger all three layers — not just directory-specific hints.
@@ -226,6 +241,7 @@ Create `.claude/rules/` directory (currently missing). **Critical**: each rules 
     paths: **/stage_*_06_development/**
 ```
 
+<!-- section_id: "10ee78a6-7098-4bcc-aa9f-e130e9e05b97" -->
 ### What Rules Files Must Contain
 
 Each rules file includes THREE sections, not just context hints:
@@ -261,10 +277,12 @@ When working in this directory:
 
 ---
 
+<!-- section_id: "1ec08178-65da-4af5-8016-50531a54beff" -->
 ## Phase 3: Transpiler + Integration Markdown Companions (Short-term)
 
 **This is Layer 3 of the three-layer redundancy model.**
 
+<!-- section_id: "1c7597ca-233f-478b-a81c-a105322c1636" -->
 ### 3.1 Build the Transpiler
 
 Create a tool that converts JSON-LD → optimized markdown (`.integration.md`):
@@ -286,6 +304,7 @@ The transpiler extracts from any `.gab.jsonld` file:
 2. **Claude Code skill** (`/transpile-jsonld`) — invokable on demand, uses jq internally
 3. **Node.js/Python script** — richer handling of edge cases, for later
 
+<!-- section_id: "6432d817-afe8-4105-856a-b83ac5e86b24" -->
 ### 3.2 Generate Integration Companions
 
 Run the transpiler on key JSON-LD files:
@@ -309,6 +328,7 @@ The `.integration.md` contains (auto-generated, not hand-written):
 - Constraints per mode: MUST/MUST NOT lists
 - Source reference back to the JSON-LD file
 
+<!-- section_id: "e9593de0-9a12-41fc-a247-6d2a70c7398e" -->
 ### 3.3 Keep in Sync
 
 The transpiler runs:
@@ -320,8 +340,10 @@ The transpiler runs:
 
 ---
 
+<!-- section_id: "6c540529-9498-446b-9c0d-714c990258cc" -->
 ## Phase 4: Enhance Existing Skills (Medium-term)
 
+<!-- section_id: "1d580419-ff98-4078-af10-c9f6f83ba338" -->
 ### 4.1 Improve Root Skills with WHEN/WHEN NOT Patterns
 
 | Skill | Current Lines | Enhancement |
@@ -331,6 +353,7 @@ The transpiler runs:
 | `entity-creation` | 85 | Add: references `gab.jsonld` for proper actor creation, auto-generate JSON-LD stubs for new entities |
 | `stage-workflow` | 91 | Add: references stage agent definitions, mode-specific instructions per stage |
 
+<!-- section_id: "aeda3b59-c171-4d98-8196-b03fbd09eec5" -->
 ### 4.2 Create New Skills
 
 | Skill | Purpose | Backed By |
@@ -339,6 +362,7 @@ The transpiler runs:
 | `aalang-navigate` | Selective navigation of JSON-LD graphs — reads top-level, drills into specific nodes | `index.jsonld` |
 | `team-create` | Creates Agent Team from layer structure — generates spawn prompts with context | orchestrator definitions |
 
+<!-- section_id: "a630b08a-faf0-4a57-a6c7-c415b6bbf173" -->
 ### 4.3 Improve Skill Descriptions for Better Invocation
 
 Current problem: skills exist but Claude Code doesn't invoke them because descriptions are vague.
@@ -356,8 +380,10 @@ TRIGGERS: user says 'where am I', session start, task requires knowing project c
 
 ---
 
+<!-- section_id: "3ac9147a-3eea-4874-b20a-24edd575102e" -->
 ## Phase 5: Fill JSON-LD Definitions (Medium-term)
 
+<!-- section_id: "f46a4156-17da-4cbb-a1bf-04b8a3eacf31" -->
 ### 5.1 Manual Creation (~35 key definitions)
 
 | Location | Type | Priority |
@@ -369,6 +395,7 @@ TRIGGERS: user says 'where am I', session start, task requires knowing project c
 | `stage_*_01` through `stage_*_11` (layer 0) | Stage agents | HIGH |
 | Key sub-layers (`sub_layer_0_01` through `sub_layer_0_05`) | Sub-layer agents | MEDIUM |
 
+<!-- section_id: "f9484e24-81df-4643-9d3a-10601c3d1124" -->
 ### 5.2 Template-Based Creation (~50 definitions)
 
 Create GAB templates that can be parameterized:
@@ -376,6 +403,7 @@ Create GAB templates that can be parameterized:
 - `stage_agent_template.gab.jsonld` — for new stages
 - `sub_layer_agent_template.gab.jsonld` — for new sub-layers
 
+<!-- section_id: "9199f8c0-5b5a-4026-b495-49830943b8dc" -->
 ### 5.3 Auto-Generation (ongoing)
 
 Update `entity-creation` skill to:
@@ -387,6 +415,7 @@ Update `entity-creation` skill to:
 
 ---
 
+<!-- section_id: "a0b0563d-f078-4434-b971-35d396d28089" -->
 ## Phase 6: Agent Teams Persistence (Longer-term)
 
 Bridge AALang orchestrator definitions with Claude Code Agent Teams:
@@ -398,6 +427,7 @@ Bridge AALang orchestrator definitions with Claude Code Agent Teams:
 
 ---
 
+<!-- section_id: "1381bfed-edde-4781-9b9d-2debbf7d2d10" -->
 ## Implementation Priority
 
 | Phase | Impact | Effort | Do When |
@@ -411,6 +441,7 @@ Bridge AALang orchestrator definitions with Claude Code Agent Teams:
 
 ---
 
+<!-- section_id: "31396327-4d2b-48cf-9187-32099c74b807" -->
 ## Success Criteria
 
 | Problem | Metric | Target |
@@ -423,6 +454,7 @@ Bridge AALang orchestrator definitions with Claude Code Agent Teams:
 
 ---
 
+<!-- section_id: "3d24d4e6-ce8d-4690-94a8-461d551de9e0" -->
 ## Dependencies
 
 | Depends On | For |

@@ -13,10 +13,12 @@ resource_name: "testing-agent-instructions"
 
 ---
 
+<!-- section_id: "808daac4-012b-4d1c-9b8c-e858785c6a07" -->
 ## 🎯 **Your Mission as a Testing Agent**
 
 You are a **Testing Agent** - a specialized AI focused exclusively on quality assurance and test creation. Your mission is to ensure that all code changes are thoroughly tested, reliable, and maintainable.
 
+<!-- section_id: "2e2d8f48-d97a-410c-a015-3a076f30a58c" -->
 ### **Core Responsibilities**
 
 1. ✅ **Write comprehensive tests** for all code changes
@@ -25,6 +27,7 @@ You are a **Testing Agent** - a specialized AI focused exclusively on quality as
 4. ✅ **Identify edge cases** that developers might miss
 5. ✅ **Report findings** clearly and actionably
 
+<!-- section_id: "bbdd8154-1caf-4369-b14b-6f97e2e056e9" -->
 ### **Your Mindset**
 
 Think like a quality assurance engineer:
@@ -36,8 +39,10 @@ Think like a quality assurance engineer:
 
 ---
 
+<!-- section_id: "4bdfdad9-dd4d-4926-a8b8-cb523ecfbbd6" -->
 ## 📋 **Step-by-Step Testing Workflow**
 
+<!-- section_id: "2a1df020-c236-4a1e-9579-ccdc58546af2" -->
 ### **STEP 1: Receive and Review Handoff**
 
 When you receive a handoff document:
@@ -59,6 +64,7 @@ When you receive a handoff document:
 
 ---
 
+<!-- section_id: "50f7885e-e14c-4558-99b4-9307653f6a6a" -->
 ### **STEP 2: Analyze the Code**
 
 Before writing tests, understand the code:
@@ -88,6 +94,7 @@ pytest --cov=[module] --cov-report=term
 
 ---
 
+<!-- section_id: "a493317d-f270-4c02-86e2-1debeda5a37b" -->
 ### **STEP 3: Create Test Plan**
 
 Create a systematic test plan:
@@ -130,6 +137,7 @@ Create a systematic test plan:
 
 ---
 
+<!-- section_id: "54ad486e-2b60-495b-8303-81d4191aba89" -->
 ### **STEP 4: Implement Tests**
 
 Follow these principles when writing tests:
@@ -193,6 +201,7 @@ For each code change, create tests for:
 
 ---
 
+<!-- section_id: "a9d2b3b4-0dae-4971-ab8e-3d29fb9e0dec" -->
 ### **STEP 5: Run Tests and Verify Coverage**
 
 After implementing tests:
@@ -221,6 +230,7 @@ pytest tests/ --durations=10
 
 ---
 
+<!-- section_id: "6c6aaec6-7783-4694-abe2-ec164673d1e8" -->
 ### **STEP 6: Create Testing Report**
 
 Document your testing efforts:
@@ -303,8 +313,10 @@ All tests pass, coverage meets standards, no issues found.
 
 ---
 
+<!-- section_id: "6618b92b-1e90-4b9b-8614-842a5c1ff276" -->
 ## 🧪 **Testing Recipes**
 
+<!-- section_id: "8d84f8c9-53cb-4ae1-abad-6723f2b24c4f" -->
 ### **Recipe 1: Testing a New Feature**
 
 ```python
@@ -414,6 +426,7 @@ class TestUserAuthentication:
 
 ---
 
+<!-- section_id: "53ad73b5-42e1-4556-94cb-93b0e2e8b0ac" -->
 ### **Recipe 2: Testing a Bug Fix**
 
 ```python
@@ -461,10 +474,12 @@ class TestWordDeletionBugFix:
 
 ---
 
+<!-- section_id: "614f7416-56bd-4140-b843-bfcfac5f46d9" -->
 ## 🎯 **Quality Checklist**
 
 Before submitting your testing report, verify:
 
+<!-- section_id: "144c6538-2dfa-48dd-b8f3-1fdaeaca019d" -->
 ### **Test Quality**
 - [ ] All tests have clear, descriptive names
 - [ ] All tests follow AAA pattern
@@ -473,6 +488,7 @@ Before submitting your testing report, verify:
 - [ ] Tests are independent (no interdependencies)
 - [ ] Tests are repeatable (same results every time)
 
+<!-- section_id: "b9c8c6c6-4db0-45bd-bc49-18479061151f" -->
 ### **Coverage**
 - [ ] Coverage ≥ 80% (minimum)
 - [ ] All new code is covered
@@ -480,12 +496,14 @@ Before submitting your testing report, verify:
 - [ ] Error conditions are tested
 - [ ] Edge cases are identified and tested
 
+<!-- section_id: "988d10dc-61a3-4a74-8773-1a9eac79177d" -->
 ### **Performance**
 - [ ] Unit tests run in < 1ms each
 - [ ] Integration tests run in < 100ms each
 - [ ] Total test suite runs in < 60 seconds
 - [ ] No unnecessary delays or sleeps
 
+<!-- section_id: "d08224e4-980e-4983-bc58-01ed538d1cec" -->
 ### **Documentation**
 - [ ] Test plan created and followed
 - [ ] Testing report completed
@@ -494,19 +512,23 @@ Before submitting your testing report, verify:
 
 ---
 
+<!-- section_id: "93f71555-6994-4ac7-8337-bb7a32629555" -->
 ## 📚 **Resources**
 
+<!-- section_id: "9fc6f1aa-e2c2-4a8b-b33a-93e0d03db825" -->
 ### **Project Documentation**
 - Testing Protocol: `testing-agent-protocol.md`
 - Testing Guidelines: `TESTING_GUIDELINES_JAN_24_2025.md`
 - Testing Workflow: `TESTING_WORKFLOW_GUIDE.md`
 - Handoff Template: `testing-agent-handoff-template.md`
 
+<!-- section_id: "0bdaf8af-b428-4660-8283-471d37dac2e9" -->
 ### **Tools**
 - Pytest Documentation: https://docs.pytest.org/
 - Coverage.py: https://coverage.readthedocs.io/
 - Testing Best Practices: Project testing guidelines
 
+<!-- section_id: "ccb38e64-a999-4926-8664-3564fd23e7be" -->
 ### **Quick Commands**
 ```bash
 # Run specific test file
@@ -527,6 +549,7 @@ pytest --cov=. --cov-fail-under=80
 
 ---
 
+<!-- section_id: "16d72afe-8d64-413e-9737-029836413a96" -->
 ## 🚀 **Quick Start Checklist**
 
 For each testing assignment:

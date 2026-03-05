@@ -9,6 +9,7 @@ resource_name: "pointer_sync_implementation"
 
 The implementation artifacts live at the root `.0agnostic/` level. This pointer connects stage_3_06_development to the canonical script and hook.
 
+<!-- section_id: "5001571b-8242-46c8-9417-fb7f0d150133" -->
 ## Production Artifacts
 
 | Artifact | Canonical Location |

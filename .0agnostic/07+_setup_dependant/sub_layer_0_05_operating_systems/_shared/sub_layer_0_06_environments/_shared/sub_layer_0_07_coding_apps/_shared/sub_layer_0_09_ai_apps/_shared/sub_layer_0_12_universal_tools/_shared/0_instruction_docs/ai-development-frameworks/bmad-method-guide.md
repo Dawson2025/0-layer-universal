@@ -6,12 +6,15 @@ resource_name: "bmad-method-guide"
 # BMAD Method - Comprehensive Guide
 *Breakthrough Method for Agile AI-Driven Development*
 
+<!-- section_id: "94602ad6-cea1-4d27-ba6c-d7ea4c191889" -->
 ## Overview
 
 The BMAD (Breakthrough Method for Agile AI-Driven Development) Method introduces specialized AI agents that collaborate as a development team, streamlining the development process. Each agent has specific responsibilities, working together to transform vague requirements into production-ready software.
 
+<!-- section_id: "e7d3885c-8b80-4394-9e00-a2a952aa360f" -->
 ## Key Concepts
 
+<!-- section_id: "904361c2-6312-439d-8a6f-a389878b2246" -->
 ### What is Agentic Team Development?
 
 Agentic team development is a methodology where:
@@ -21,14 +24,17 @@ Agentic team development is a methodology where:
 - **Context-Engineered Development** uses hyper-detailed development stories
 - **Human + AI Review** ensures quality through pull request reviews
 
+<!-- section_id: "ae4c6c5b-172b-4ac9-88e1-0b75e660363d" -->
 ### Core Philosophy
 
 **Problem**: Traditional AI prompting lacks structure, traceability, and accountability.
 
 **Solution**: Create a system where specialized AI agents collaborate like a real development team, with clear roles, responsibilities, and comprehensive audit trails.
 
+<!-- section_id: "b3720b09-e4f2-412a-bb7d-06c554412cbc" -->
 ## Key Features
 
+<!-- section_id: "b78b4bf1-5408-4994-bd27-4b2fd4dd1288" -->
 ### 1. Specialized AI Agents
 
 Each agent has specific responsibilities:
@@ -41,6 +47,7 @@ Each agent has specific responsibilities:
 - **Developer**: Code implementation
 - **QA**: Testing and quality assurance
 
+<!-- section_id: "bc973b33-fddd-454a-a259-6842faf3aa91" -->
 ### 2. Git-Based Artifact Versioning
 
 All artifacts are version-controlled:
@@ -50,6 +57,7 @@ All artifacts are version-controlled:
 - Code implementations
 - Test results
 
+<!-- section_id: "7397299c-46de-4108-90d7-591eaf9d66bd" -->
 ### 3. Context-Engineered Development
 
 Hyper-detailed development stories ensure:
@@ -58,6 +66,7 @@ Hyper-detailed development stories ensure:
 - Traceable decision-making
 - Single source of truth
 
+<!-- section_id: "26e9acc0-d8cf-48b2-b461-bbdd0ecc89a0" -->
 ### 4. Pull Request Reviews
 
 Quality assurance through:
@@ -66,14 +75,17 @@ Quality assurance through:
 - Automated testing
 - Comprehensive validation
 
+<!-- section_id: "54f0c919-92f3-4f92-8581-511169b77f25" -->
 ## Installation
 
+<!-- section_id: "060f10bf-a215-454a-8325-c8c1cb3be0cc" -->
 ### Prerequisites
 
 - Node.js v20+
 - `npx` command available
 - Git repository initialized
 
+<!-- section_id: "fd1e3aee-ca0c-4a7c-8e82-4769761cb226" -->
 ### Install BMAD
 
 ```bash
@@ -85,6 +97,7 @@ This command handles:
 - Upgrades
 - Expansion packs
 
+<!-- section_id: "efe47039-91c5-424e-b0cb-6f060a0dea54" -->
 ### Verify Installation
 
 ```bash
@@ -95,8 +108,10 @@ ls -la .bmad/
 bmad --help
 ```
 
+<!-- section_id: "75167aea-2dce-4c13-ad66-faa4ccbfdfec" -->
 ## Getting Started
 
+<!-- section_id: "19c8f955-a4d7-4ffa-9434-54ffa132b0ee" -->
 ### Step 1: Set Up the Web UI
 
 1. **Obtain the Full-Stack Team Bundle**
@@ -110,6 +125,7 @@ bmad --help
 3. **Configure the Agent**
    - Upload instruction: "Your critical operating instructions are attached, do not break character as directed."
 
+<!-- section_id: "1ca4a947-77cd-4085-a9de-8c4260313c47" -->
 ### Step 2: Begin Ideation and Planning
 
 #### Start with Analyst Agent
@@ -145,6 +161,7 @@ After PRD is complete:
 *product_owner     # Manage backlog and prioritization
 ```
 
+<!-- section_id: "64fb3442-5d64-4eb8-8010-4bad880a26d3" -->
 ### Step 3: Transition to IDE
 
 Once you have PRD, architecture, and briefs:
@@ -163,8 +180,10 @@ Once you have PRD, architecture, and briefs:
    - Runs automated tests
    - Validates against acceptance criteria
 
+<!-- section_id: "018288e9-a2d5-4fbd-8276-6cbb8091770b" -->
 ## Agent Responsibilities
 
+<!-- section_id: "9c24ec03-f47f-4917-93fd-ca9587f2ad6d" -->
 ### Analyst Agent
 
 **Role**: Requirements gathering and analysis
@@ -182,6 +201,7 @@ Once you have PRD, architecture, and briefs:
 - User stories
 - Acceptance criteria
 
+<!-- section_id: "159e4361-1809-4e8a-8e44-4aa7ad793897" -->
 ### Product Manager Agent
 
 **Role**: Product vision and roadmap
@@ -199,6 +219,7 @@ Once you have PRD, architecture, and briefs:
 - Market analysis
 - Competitive positioning
 
+<!-- section_id: "46cf10ee-11be-4028-93a8-943d6733fb6f" -->
 ### Architect Agent
 
 **Role**: System architecture and technical decisions
@@ -216,6 +237,7 @@ Once you have PRD, architecture, and briefs:
 - Technology decisions
 - Integration plans
 
+<!-- section_id: "0a629697-eb6d-4c95-b6b1-19074d146e48" -->
 ### Scrum Master Agent
 
 **Role**: Process management and sprint planning
@@ -233,6 +255,7 @@ Once you have PRD, architecture, and briefs:
 - Progress reports
 - Retrospective notes
 
+<!-- section_id: "50eab41d-5fce-4fe3-8e9f-1a500548deb6" -->
 ### Product Owner Agent
 
 **Role**: Backlog management and prioritization
@@ -250,6 +273,7 @@ Once you have PRD, architecture, and briefs:
 - Acceptance criteria
 - Release planning
 
+<!-- section_id: "8cb7e2f1-d0e8-40d0-90ec-d08e949e5f9c" -->
 ### Developer Agent
 
 **Role**: Code implementation
@@ -267,6 +291,7 @@ Once you have PRD, architecture, and briefs:
 - Code reviews
 - Technical notes
 
+<!-- section_id: "e9be7713-76da-40ad-b0ed-45015c612b4c" -->
 ### QA Agent
 
 **Role**: Testing and quality assurance
@@ -284,8 +309,10 @@ Once you have PRD, architecture, and briefs:
 - Test results
 - Bug reports
 
+<!-- section_id: "db644142-c98e-4cef-8efd-a6921ce7365d" -->
 ## Workflow Example
 
+<!-- section_id: "5aacc4c6-e308-4e79-af96-38a0c61a7cd4" -->
 ### Scenario: Building a Task Management App
 
 #### Phase 1: Ideation (Analyst + Product Manager)
@@ -370,6 +397,7 @@ Test User Authentication feature:
 
 **Output**: Test results, bug reports, validation report
 
+<!-- section_id: "3deec574-0dcf-469f-95ff-eb9ea3da815a" -->
 ## Directory Structure
 
 After initialization, your project will have this structure:
@@ -399,8 +427,10 @@ After initialization, your project will have this structure:
     └── e2e/
 ```
 
+<!-- section_id: "c033e0c3-e116-40e9-9aa1-4d483ca60196" -->
 ## Best Practices
 
+<!-- section_id: "eafe84b9-cbf3-483c-969a-a44c55191d2e" -->
 ### Working with Agents
 
 1. **Be Specific**: Provide clear, detailed instructions
@@ -408,6 +438,7 @@ After initialization, your project will have this structure:
 3. **Review Outputs**: Always review agent outputs before proceeding
 4. **Iterate**: Don't be afraid to refine and iterate
 
+<!-- section_id: "1f195529-5eb2-4d0f-babc-d13f5d702e9b" -->
 ### Artifact Management
 
 1. **Version Control**: All artifacts in Git
@@ -415,6 +446,7 @@ After initialization, your project will have this structure:
 3. **Sharding**: Break large documents into manageable pieces
 4. **Organization**: Maintain clear directory structure
 
+<!-- section_id: "5cbb6953-6c23-453c-90a6-7b98bed63f32" -->
 ### Development Process
 
 1. **Follow the Sprint Plan**: Stick to the plan during sprints
@@ -422,6 +454,7 @@ After initialization, your project will have this structure:
 3. **Test Continuously**: Run tests frequently
 4. **Code Reviews**: Review AI-generated code before acceptance
 
+<!-- section_id: "82044f42-f73f-46b8-970f-241ed278c309" -->
 ### Quality Assurance
 
 1. **Test Early**: Write tests alongside code
@@ -429,8 +462,10 @@ After initialization, your project will have this structure:
 3. **Security Testing**: Don't skip security testing
 4. **User Testing**: Include real user feedback
 
+<!-- section_id: "f39c6824-1e8c-4a77-89ba-ea60015cf6c2" -->
 ## Advanced Features
 
+<!-- section_id: "f4ccc582-c82e-4e3c-a884-88a5d086bd78" -->
 ### Custom Agents
 
 Create custom agents for specific needs:
@@ -440,6 +475,7 @@ Create custom agents for specific needs:
 3. **Set Outputs**: What should the agent produce?
 4. **Test Agent**: Validate agent behavior
 
+<!-- section_id: "f8372b0f-c57b-4551-ae46-d1602277fe18" -->
 ### Multi-Agent Coordination
 
 Coordinate multiple agents working together:
@@ -455,6 +491,7 @@ Coordinate multiple agents working together:
 *architect -> *developer: Transfer architecture
 ```
 
+<!-- section_id: "bd0f60ec-e4b9-4ef7-8f52-7fd81f50b789" -->
 ### Integration with Git
 
 Git integration provides:
@@ -463,6 +500,7 @@ Git integration provides:
 - Rollback capabilities
 - Collaboration support
 
+<!-- section_id: "670ec873-fb16-4313-b07d-246d0936d1b2" -->
 ### Continuous Integration
 
 Integrate with CI/CD:
@@ -471,8 +509,10 @@ Integrate with CI/CD:
 - Quality checks
 - Performance monitoring
 
+<!-- section_id: "729e7d93-2b32-467f-9cfb-4a5b44f3c8e1" -->
 ## Troubleshooting
 
+<!-- section_id: "5bb7ca54-1a2b-43b4-8709-e7b653ea0576" -->
 ### Common Issues
 
 #### Issue: Agent not responding
@@ -497,6 +537,7 @@ bmad agent:check [agent-name]
 bmad shard:create [document] --max-size 5000
 ```
 
+<!-- section_id: "b81bdc81-3904-49ae-8ff5-063506e5c713" -->
 ### Validation
 
 Always validate agent outputs:
@@ -505,21 +546,26 @@ Always validate agent outputs:
 - Verify alignment with requirements
 - Test implementations
 
+<!-- section_id: "b38c2233-bca1-4272-9836-2754b34b33b6" -->
 ## Resources
 
+<!-- section_id: "d68b9f69-d637-490d-a24d-44f8515ec62b" -->
 ### Official Documentation
 - **Documentation**: https://bmadcodes.com/
 - **User Guide**: https://deepwiki.com/bmad-code-org/BMAD-METHOD/3-user-guide
 - **GitHub**: https://github.com/bmad-code-org/BMAD-METHOD
 
+<!-- section_id: "bb4a23ce-0eed-44eb-a5cd-ca2004fea77c" -->
 ### Community
 - **Issues**: https://github.com/bmad-code-org/BMAD-METHOD/issues
 - **Discussions**: GitHub Discussions
 
+<!-- section_id: "13e593a4-6264-4d33-bcda-6630a1dfa977" -->
 ### Examples
 - **Quick Start**: See `docs/brief.md` in any initialized project
 - **Templates**: Check `.bmad/agents/` directory
 
+<!-- section_id: "0561f4dd-f29a-4f4b-b552-f4ba7f4b5bbb" -->
 ## Summary
 
 BMAD Method provides:

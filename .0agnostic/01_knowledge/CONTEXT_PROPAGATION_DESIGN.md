@@ -7,6 +7,7 @@ resource_name: "CONTEXT_PROPAGATION_DESIGN"
 
 > **This document is a pointer.** The canonical source of truth for context propagation design lives in the context chain system (Layer 3), which owns this domain.
 
+<!-- section_id: "652cedf4-808e-4519-b00c-9a6c202c9c36" -->
 ## Canonical Sources
 
 | Topic | Location |
@@ -20,6 +21,7 @@ resource_name: "CONTEXT_PROPAGATION_DESIGN"
 | **Avenue web design** | `...stage_3_04_design/outputs/by_topic/01_context_chain_system_design.md` |
 | **Full design index** | `...stage_3_04_design/outputs/by_topic/README.md` |
 
+<!-- section_id: "91eec99a-1d75-447a-b510-9518c56aaeb4" -->
 ## Quick Summary
 
 Work products consolidate via a **universal funnel pattern**: many detailed files → consolidation reports → .0agnostic/ structured system → summary report → 0AGNOSTIC.md entry point. This pattern is recursive at every level (stages, entities, root).

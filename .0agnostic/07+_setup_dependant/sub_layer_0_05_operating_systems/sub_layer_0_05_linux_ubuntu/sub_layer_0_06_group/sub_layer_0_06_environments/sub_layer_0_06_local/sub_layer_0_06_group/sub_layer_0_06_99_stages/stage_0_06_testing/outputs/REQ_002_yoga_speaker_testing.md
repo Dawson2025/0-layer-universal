@@ -5,14 +5,18 @@ resource_name: "REQ_002_yoga_speaker_testing"
 ---
 # Testing: Yoga Pro 9 Speaker I2C Configuration
 
+<!-- section_id: "8656b9f2-fee9-4a45-8a08-a8004750f40a" -->
 ## Request Reference
 REQ_002 - Fix Yoga Pro 9 Subwoofer/Speaker Quality on Linux
 
+<!-- section_id: "fb1eae84-ae15-4f55-8f5a-ab22bbd77fac" -->
 ## Date
 2026-01-26
 
+<!-- section_id: "82912193-ccc5-466a-807a-da49e2bcd861" -->
 ## Test Results
 
+<!-- section_id: "f26e57b1-bf25-4082-ab6f-47a715ac325a" -->
 ### Test 1: I2C Bypass Script Execution
 
 **Command**:
@@ -33,6 +37,7 @@ Speaker bypass configured successfully
 
 ---
 
+<!-- section_id: "bdad668d-f062-4c98-ad58-7bfc4ecb2a43" -->
 ### Test 2: Immediate Audio Improvement
 
 **Method**: Play audio immediately after running bypass script
@@ -45,6 +50,7 @@ Speaker bypass configured successfully
 
 ---
 
+<!-- section_id: "24132c01-dea8-4686-968b-c02c8ee5af09" -->
 ### Test 3: Audio Persistence
 
 **Method**: Wait a few seconds after script runs, continue playing audio
@@ -57,6 +63,7 @@ Speaker bypass configured successfully
 
 ---
 
+<!-- section_id: "adb94b73-975d-44fc-ab8d-3035c4de5740" -->
 ### Test 4: Driver Interference Check
 
 **Command**:
@@ -77,6 +84,7 @@ snd_soc_tas2781_comlib        24576  2 ...
 
 ---
 
+<!-- section_id: "734be56d-2c58-4aba-b206-f97710f0c4ad" -->
 ### Test 5: Driver Unload
 
 **Command**:
@@ -92,6 +100,7 @@ sudo rmmod snd_hda_scodec_tas2781_i2c
 
 ---
 
+<!-- section_id: "ab0f895d-f9b1-4c6b-b678-d26ef04bcb52" -->
 ### Test 6: Audio After Driver Removal
 
 **Method**: Play audio after driver blacklist and unload
@@ -104,8 +113,10 @@ sudo rmmod snd_hda_scodec_tas2781_i2c
 
 ---
 
+<!-- section_id: "410b1b02-1c0c-4ae9-9a45-4385ce4f6592" -->
 ## Issues Found
 
+<!-- section_id: "08351ab6-bf28-4114-91dd-fc1481a80511" -->
 ### Issue 1: TAS2781 Driver Resets Configuration
 
 **Severity**: Critical
@@ -118,6 +129,7 @@ sudo rmmod snd_hda_scodec_tas2781_i2c
 
 ---
 
+<!-- section_id: "7eb908c8-03c8-4a37-a668-f11be57b4c26" -->
 ## Test Summary
 
 | Test | Description | Result |
@@ -129,6 +141,7 @@ sudo rmmod snd_hda_scodec_tas2781_i2c
 | 5 | Driver unload | PASS |
 | 6 | Audio after driver removal | PASS |
 
+<!-- section_id: "38c540e2-d9b7-44a8-8be6-4b3802dacdb3" -->
 ## Final Verification
 
 After all fixes applied:

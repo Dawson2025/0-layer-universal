@@ -6,10 +6,12 @@ resource_name: "README"
 ---
 # Context Avenue Web — Complete Overview with Ordering Principle
 
+<!-- section_id: "125f227c-d771-4b03-8806-8290990ed1b6" -->
 ## What Is the Context Avenue Web?
 
 The context avenue web is the **layer where core system content (01-05) and setup-dependent content (02-08) are formatted into avenue-specific representations**. Each avenue is an independent delivery mechanism capable of carrying the complete context to any AI system.
 
+<!-- section_id: "aabcf724-36bf-416f-bf25-bcdbc8c208b5" -->
 ## Architecture
 
 The context avenue web sits between the core .0agnostic/ system and the .1merge AI app-specific system:
@@ -28,10 +30,12 @@ Core System (01-05)
      Codex, Aider, Copilot)
 ```
 
+<!-- section_id: "c807ccc2-aa25-471a-b96d-c8672865cc4b" -->
 ## Ordering Principle: Most Comprehensive → Most Fragmented
 
 **The fundamental organizing principle of the context avenue web is ordering by comprehensiveness**.
 
+<!-- section_id: "43258117-fc06-419d-b927-b13fe8a7c201" -->
 ### File-Based Avenues (01-08): Ordered by Detail Level
 
 From most comprehensive to most fragmented:
@@ -52,6 +56,7 @@ From most comprehensive to most fragmented:
 08 Hooks
 ```
 
+<!-- section_id: "3be0ee17-a49c-487f-8c26-4bacf80c224f" -->
 ### Data-Based Avenues (09-13): Ordered by Type/Purpose
 
 From most detailed to optimization/versioning:
@@ -68,6 +73,7 @@ From most detailed to optimization/versioning:
 12 Temporal Index (version history of all above)
 ```
 
+<!-- section_id: "8345de1e-1bd6-41f4-a1a3-91e6d1f885f6" -->
 ### What Each Comprehensiveness Level Provides
 
 #### File-Based Avenues
@@ -92,6 +98,7 @@ From most detailed to optimization/versioning:
 | 11 Vector Embeddings | Semantic similarity representations | Find semantically similar contexts |
 | 12 Temporal Index | Version history of all above structures | Track evolution and changes |
 
+<!-- section_id: "5435c29f-251e-4a2c-a3a2-70a5a3b1b166" -->
 ### Why This Ordering?
 
 **Comprehensiveness principle**: Start with the most complete representation, and allow drill-down to more specific ones.
@@ -105,8 +112,10 @@ Think of it like a telescope:
 
 An AI system can start at 01 (most detailed) and work down to 08 (most specific) until finding what it needs.
 
+<!-- section_id: "f5c52f59-5e13-41fa-8ba2-1289d8d39f9b" -->
 ## The Eight File-Based Avenues (01-08)
 
+<!-- section_id: "d8c2ccba-c261-4f35-8834-42d7ccb74cea" -->
 ### Avenue 01: AALang JSON-LD — Most Detailed
 
 **Comprehensiveness**: Maximum
@@ -121,6 +130,7 @@ An AI system can start at 01 (most detailed) and work down to 08 (most specific)
 
 **Example**: `layer_2_orchestrator.gab.jsonld` (816 lines, 38 graph nodes, 5 modes, 100% detail)
 
+<!-- section_id: "7490f691-acc9-4637-99ee-2ed3854e9a89" -->
 ### Avenue 02: AALang Markdown Integration — High Detail
 
 **Comprehensiveness**: ~80% of JSON-LD detail
@@ -134,6 +144,7 @@ An AI system can start at 01 (most detailed) and work down to 08 (most specific)
 
 **Example**: `layer_2_orchestrator.integration.md` (readable summary of full JSON-LD)
 
+<!-- section_id: "ce598829-fac3-4ae5-8f4b-3b571fd356d0" -->
 ### Avenue 05: Skills — Medium-High Detail
 
 **Comprehensiveness**: Complete for specific tasks
@@ -148,6 +159,7 @@ An AI system can start at 01 (most detailed) and work down to 08 (most specific)
 
 **Example**: `/calc-dashboard` (full workflow for grade dashboards)
 
+<!-- section_id: "260899ad-b159-41eb-8d86-c761f368a922" -->
 ### Avenue 04: @Import References — Medium Detail
 
 **Comprehensiveness**: Curated, indexed, navigational
@@ -161,6 +173,7 @@ An AI system can start at 01 (most detailed) and work down to 08 (most specific)
 
 **Example**: `entity_structure.md`, `compliance_checklist.md`
 
+<!-- section_id: "a84ee1fa-bcaa-4038-906f-e58576728e7c" -->
 ### Avenue 06: Agents — Medium-Low Detail
 
 **Comprehensiveness**: Lightweight, identity-focused
@@ -174,6 +187,7 @@ An AI system can start at 01 (most detailed) and work down to 08 (most specific)
 
 **Example**: `stage_delegator.agent.jsonld`, `orchestrator.md` stub
 
+<!-- section_id: "2b6f05e9-1cac-496e-bca5-814e16c0e21d" -->
 ### Avenue 07: Path-Specific Rules — Low Detail
 
 **Comprehensiveness**: Context-scoped, minimal
@@ -187,6 +201,7 @@ An AI system can start at 01 (most detailed) and work down to 08 (most specific)
 
 **Example**: `.claude/rules/agnostic-edits.md`
 
+<!-- section_id: "7f49184c-101a-48e7-8d83-e4e9454c6555" -->
 ### Avenue 08: Hooks — Most Fragmented
 
 **Comprehensiveness**: Event-specific, minimal context
@@ -200,6 +215,7 @@ An AI system can start at 01 (most detailed) and work down to 08 (most specific)
 
 **Example**: `.git/hooks/pre-commit`, `agnostic-sync.sh`
 
+<!-- section_id: "12a96722-1705-4846-862a-171a51013be6" -->
 ## The Five Data-Based Avenues (09-13) — Optional
 
 Data-based avenues provide **semantic enhancements and specialized memory architectures** to file-based avenues:
@@ -212,6 +228,7 @@ Data-based avenues provide **semantic enhancements and specialized memory archit
 | Optional | Relational Tables | Structured queries (find entity by type/status/criteria) | Mature |
 | 12 | Temporal Versioning | Change history (how did structures evolve? — versions all above) | Meta-layer |
 
+<!-- section_id: "61a0508a-c536-4c0c-a301-901d691aeffc" -->
 ### About Avenue 10: SHIMI (Semantic Hierarchical Memory Index)
 
 **SHIMI** is NOT just optimization metadata. It's a sophisticated hierarchical memory architecture designed for AI agents:
@@ -223,8 +240,10 @@ Data-based avenues provide **semantic enhancements and specialized memory archit
 
 ---
 
+<!-- section_id: "31bcc68a-4487-4057-9b2d-35c695202d1d" -->
 ## Data-Based Avenues: Comparative Rankings
 
+<!-- section_id: "04864d6d-bf37-477e-898a-ed007c8f97c4" -->
 ### Rankings by Dimension (1st = Highest, 4th = Lowest)
 
 | Dimension | 1st Place | 2nd Place | 3rd Place | 4th Place |
@@ -238,6 +257,7 @@ Data-based avenues provide **semantic enhancements and specialized memory archit
 | **Practical Adoption** | Vector Embeddings | Knowledge Graph | Relational Tables | SHIMI |
 | **Maturity Level** | Relational Tables | Knowledge Graph | Vector Embeddings | SHIMI |
 
+<!-- section_id: "0b933167-6727-49f8-9138-ad01cb74fef6" -->
 ### Composite Rankings (by Use Case)
 
 **For Complex Reasoning Tasks:**
@@ -255,6 +275,7 @@ Data-based avenues provide **semantic enhancements and specialized memory archit
 **For Structured Fact Storage:**
 1st: Relational Tables | 2nd: Knowledge Graph | 3rd: SHIMI | 4th: Vector Embeddings
 
+<!-- section_id: "4f6eb01c-9848-4acb-bd78-e904ee6e4544" -->
 ### Hybrid Approach Performance (Research-Backed)
 
 The research shows that combining multiple avenues provides superior performance:
@@ -263,6 +284,7 @@ The research shows that combining multiple avenues provides superior performance
 - **SHIMI + Vector Embeddings**: Superior scalability with semantic fidelity
 - **All Three (Knowledge Graph + SHIMI + Vector Embeddings)**: Optimal reasoning + retrieval + scalability
 
+<!-- section_id: "04250c4d-4a6a-415d-83d0-9e4f0fdf5a86" -->
 ## Any-One-Fires Resilience Model
 
 **Key principle**: Any single avenue can deliver the complete context.
@@ -277,6 +299,7 @@ An AI system loading context can choose to start at ANY comprehensiveness level:
 
 If the chosen avenue is unavailable, fall back to the next level. All avenues together form a **resilience mesh**.
 
+<!-- section_id: "4dfd14c8-bc83-40cf-a771-e45bef1ea57d" -->
 ## Subdirectories
 
 - **01_file_based/** — Contains avenues 01-08 (primary delivery mechanisms, ordered by comprehensiveness)

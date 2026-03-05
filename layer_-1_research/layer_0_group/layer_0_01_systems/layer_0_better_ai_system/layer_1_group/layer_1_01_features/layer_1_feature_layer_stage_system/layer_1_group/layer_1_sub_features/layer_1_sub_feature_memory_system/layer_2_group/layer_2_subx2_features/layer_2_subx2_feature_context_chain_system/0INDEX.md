@@ -6,10 +6,12 @@ resource_name: "0INDEX"
 ---
 # Context Chain System — Manager Dashboard
 
+<!-- section_id: "18dfbce9-eb2a-4667-aa84-621b50733335" -->
 ## Entity Status
 **Phase**: active research and development
 **Last Updated**: 2026-02-22
 
+<!-- section_id: "0ee28666-8882-4f7f-9ed1-46f4a0f3c75b" -->
 ## Stage Summary
 
 | # | Stage | Status | Key Output | Files | Updated |
@@ -25,6 +27,7 @@ resource_name: "0INDEX"
 
 **Stage reports**: each active stage has `outputs/reports/stage_report.md` — read for details.
 
+<!-- section_id: "5ea5cdc6-2cb1-4eaa-9aff-82d3459c1626" -->
 ## How Stages Connect
 
 ```
@@ -43,6 +46,7 @@ resource_name: "0INDEX"
 
 Stages 01 and 02 ran in parallel (research informed requirements and vice versa). Stages 04→05→06→07 were sequential.
 
+<!-- section_id: "d0655793-de26-422c-856b-410974e627b3" -->
 ## Current Focus
 
 - **Skill discovery chain**: End-to-end propagation from .0agnostic/ content → 0AGNOSTIC.md → agnostic-sync → .1merge → CLAUDE.md → agent discovery — proven working with /perplexity-extract skill
@@ -50,6 +54,7 @@ Stages 01 and 02 ran in parallel (research informed requirements and vice versa)
 - **Discovery temperature model**: Hot (CLAUDE.md) → Warm (path rules) → Cold (dynamic rules, skills) — validated empirically
 - **agnostic-sync validation**: New quality gate warns when .0agnostic/ content isn't referenced in 0AGNOSTIC.md
 
+<!-- section_id: "06dd6e35-1e0e-4d61-a403-173088ff1f4a" -->
 ## Children
 
 | Sub-Feature | Purpose | Status |
@@ -59,6 +64,7 @@ Stages 01 and 02 ran in parallel (research informed requirements and vice versa)
 
 **Location**: `layer_3_group/layer_3_subx3_features/`
 
+<!-- section_id: "ffa7236d-3c3b-45fe-9817-db8fbb1e350f" -->
 ## Quick Access
 
 | Content | Location |
@@ -71,6 +77,7 @@ Stages 01 and 02 ran in parallel (research informed requirements and vice versa)
 | Orchestrator | `layer_2_orchestrator.gab.jsonld` + `.integration.md` |
 | Stage directories | `layer_2_group/layer_2_99_stages/stage_2_*` |
 
+<!-- section_id: "17032f8f-1962-46ce-96d3-1c4070efe6a9" -->
 ## Delegation
 
 To work on a specific stage, spawn a stage agent:

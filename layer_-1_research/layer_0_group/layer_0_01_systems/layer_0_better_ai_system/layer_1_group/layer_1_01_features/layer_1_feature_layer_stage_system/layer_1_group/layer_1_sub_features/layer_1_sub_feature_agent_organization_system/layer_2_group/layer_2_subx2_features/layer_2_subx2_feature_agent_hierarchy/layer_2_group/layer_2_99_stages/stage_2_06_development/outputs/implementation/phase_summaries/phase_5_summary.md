@@ -11,6 +11,7 @@ resource_name: "phase_5_summary"
 
 ---
 
+<!-- section_id: "ed9d45bb-6a62-4097-b2c4-17cf329feee7" -->
 ## Executive Summary
 
 Phase 5 has been successfully completed. Framework orchestration guidance and CLI recursion patterns have been integrated into universal protocols, making these patterns discoverable and applicable to agents working within the AI Manager Hierarchy System.
@@ -19,8 +20,10 @@ Phase 5 has been successfully completed. Framework orchestration guidance and CL
 
 ---
 
+<!-- section_id: "3b7bb3ae-ff65-460b-a57c-4de4b725fe86" -->
 ## Deliverables Created
 
+<!-- section_id: "27c7fe03-5dcc-45de-a450-dfd429f3279e" -->
 ### 1. Framework Orchestration Overview
 **Location**: `/home/dawson/code/0_layer_universal/0_context/layer_0_group/0.02_sub_layers/sub_layer_0_13_universal_protocols/framework_orchestration/0_instruction_docs/framework_orchestration_overview.md`
 
@@ -45,6 +48,7 @@ Phase 5 has been successfully completed. Framework orchestration guidance and CL
 - **Where**: L0-L2 managers, supervisors, complex stage orchestration
 - **Scope**: OS: universal; Tools: universal
 
+<!-- section_id: "def663b7-32dc-4904-adb0-9eeecdd35037" -->
 ### 2. CLI Recursion Syntax Document
 **Location**: `/home/dawson/code/0_layer_universal/0_context/layer_0_group/0.02_sub_layers/sub_layer_0_13_universal_protocols/cli_recursion/0_instruction_docs/cli_recursion_syntax.md`
 
@@ -83,6 +87,7 @@ Phase 5 has been successfully completed. Framework orchestration guidance and CL
 - Tool commands reference actual CLI tools in use (Claude Code, Codex CLI, Gemini CLI)
 - PowerShell and macOS variants provided for cross-platform reference
 
+<!-- section_id: "90bbf357-a726-4e37-9a7d-479f3a37c0ee" -->
 ### 3. Updated Universal Protocols README
 **Location**: `/home/dawson/code/0_layer_universal/0_context/layer_0_group/0.02_sub_layers/sub_layer_0_13_universal_protocols/README.md`
 
@@ -91,6 +96,7 @@ Phase 5 has been successfully completed. Framework orchestration guidance and CL
 - Added Section 7: CLI Recursion
 - Both sections include brief descriptions and links to full documentation
 
+<!-- section_id: "4a4c42a5-c935-449e-96de-65c8513302db" -->
 ### 4. Updated Universal Tools README
 **Location**: `/home/dawson/code/0_layer_universal/0_context/layer_0_group/0.02_sub_layers/sub_layer_0_12_universal_tools/README.md`
 
@@ -105,8 +111,10 @@ Phase 5 has been successfully completed. Framework orchestration guidance and CL
 
 ---
 
+<!-- section_id: "315a99a2-ecc4-47ac-81fc-45a8d9145a33" -->
 ## Integration with Existing Content
 
+<!-- section_id: "9ba98005-7320-4d7c-b988-f7fd75beae90" -->
 ### Relationship to Existing AI Framework Documentation
 
 The existing AI framework documentation in `sub_layer_0_12_universal_tools/trickle_down_0.75_universal_tools/0_instruction_docs/ai-development-frameworks/` focuses on:
@@ -120,6 +128,7 @@ The new framework orchestration documentation is **complementary**:
 
 Both sets of documentation are cross-linked for comprehensive coverage.
 
+<!-- section_id: "562dd443-18d4-4d09-a9e4-a7c15de7f166" -->
 ### Normative Specification References
 
 Both new documents reference the normative specifications from the ideal hierarchy:
@@ -130,10 +139,12 @@ This ensures agents can access detailed specifications while having practical, O
 
 ---
 
+<!-- section_id: "d8154f20-5770-4043-af90-9b639bca2f74" -->
 ## Protocol Writing Standard Compliance
 
 Both documents follow the Protocol Writing Standard:
 
+<!-- section_id: "6158b6f7-43c7-4e46-882a-e98455379a1f" -->
 ### Applicability Section
 - ✅ Placed immediately after title
 - ✅ Includes "When to use", "Where to use", "Scope" fields
@@ -147,6 +158,7 @@ Both documents follow the Protocol Writing Standard:
 **Scope:** OS: wsl | linux_ubuntu (examples adapted for WSL/Ubuntu; patterns apply to all OS variants with appropriate command adjustments); Tools: claude-code, codex, gemini (primary CLI tools in current environment).
 ```
 
+<!-- section_id: "8ea1d278-7c93-401e-94ba-7ac79aabcfd7" -->
 ### OS/Tool Specificity
 - ✅ Framework Orchestration: OS-agnostic, tool-agnostic (universal patterns)
 - ✅ CLI Recursion: OS-specific examples (WSL/Ubuntu), tool-specific (Claude Code, Codex, Gemini)
@@ -154,6 +166,7 @@ Both documents follow the Protocol Writing Standard:
 
 ---
 
+<!-- section_id: "7663a962-f95c-4037-becd-bf968cdd9694" -->
 ## Directory Structure Created
 
 ```
@@ -170,6 +183,7 @@ layer_0_group/0.02_sub_layers/sub_layer_0_13_universal_protocols/
 
 ---
 
+<!-- section_id: "ef33907e-a056-4981-8a63-936eac18b777" -->
 ## Files Modified
 
 1. `/home/dawson/code/0_layer_universal/0_context/layer_0_group/0.02_sub_layers/sub_layer_0_13_universal_protocols/README.md`
@@ -180,6 +194,7 @@ layer_0_group/0.02_sub_layers/sub_layer_0_13_universal_protocols/
 
 ---
 
+<!-- section_id: "e24c5b38-c6ab-4abe-86f5-c7a5caea489d" -->
 ## Success Criteria Met
 
 ✅ **Framework orchestration guidance is discoverable from universal protocols**
@@ -207,8 +222,10 @@ layer_0_group/0.02_sub_layers/sub_layer_0_13_universal_protocols/
 
 ---
 
+<!-- section_id: "636b28a8-85bb-4aa8-8361-a4d0993c4230" -->
 ## Key Design Decisions
 
+<!-- section_id: "4efc7997-e694-4762-99a6-1a6950586866" -->
 ### 1. Location Choice: Universal Protocols
 **Decision**: Place both framework orchestration and CLI recursion in `sub_layer_0_13_universal_protocols/`
 
@@ -217,6 +234,7 @@ layer_0_group/0.02_sub_layers/sub_layer_0_13_universal_protocols/
 - Protocols are the right abstraction for "how to do X" guidance
 - Maintains separation: tools provide capabilities, protocols provide patterns
 
+<!-- section_id: "d189859f-d52a-4902-8fb5-2dc840226842" -->
 ### 2. OS Adaptation Level
 **Decision**: Provide WSL/Ubuntu-specific examples in CLI recursion, with OS-agnostic framework orchestration
 
@@ -225,6 +243,7 @@ layer_0_group/0.02_sub_layers/sub_layer_0_13_universal_protocols/
 - Framework orchestration is OS-agnostic (Python code works everywhere)
 - Following Protocol Writing Standard for OS specificity
 
+<!-- section_id: "978fc143-f2aa-42e7-a0a6-c57497513dbf" -->
 ### 3. Reference Strategy
 **Decision**: Always link to normative specs from ideal hierarchy, but provide practical adapted content
 
@@ -233,6 +252,7 @@ layer_0_group/0.02_sub_layers/sub_layer_0_13_universal_protocols/
 - Practical docs bridge the gap between "what" (normative) and "how in this environment" (adapted)
 - Agents can navigate to deeper specs when needed
 
+<!-- section_id: "bff247e9-d105-4900-a2bd-b3059fbccf67" -->
 ### 4. Integration with Existing Docs
 **Decision**: Keep existing AI framework docs separate, cross-link for comprehensive coverage
 
@@ -243,6 +263,7 @@ layer_0_group/0.02_sub_layers/sub_layer_0_13_universal_protocols/
 
 ---
 
+<!-- section_id: "ff68ddb5-0f47-464d-9de2-12d0c85cabe4" -->
 ## Agent Discoverability Path
 
 An agent working on orchestration or CLI recursion can now discover these patterns via:
@@ -265,6 +286,7 @@ An agent working on orchestration or CLI recursion can now discover these patter
 
 ---
 
+<!-- section_id: "fa12d836-3ea2-4f7e-9998-357cb8ca4e5f" -->
 ## Next Steps (Phase 6)
 
 With Phase 5 complete, the next phase is:
@@ -278,6 +300,7 @@ See: `/home/dawson/.cursor/plans/integration_progress_assessment_2025-12-24.md` 
 
 ---
 
+<!-- section_id: "96ef7f00-7164-4b28-8fed-9d3c3e3275b0" -->
 ## Related Documentation
 
 **Created in This Phase**:
@@ -299,6 +322,7 @@ See: `/home/dawson/.cursor/plans/integration_progress_assessment_2025-12-24.md` 
 
 ---
 
+<!-- section_id: "2618a20c-f49a-4405-a55a-c9d1f6572743" -->
 ## Metrics
 
 - **Files Created**: 2 (framework_orchestration_overview.md, cli_recursion_syntax.md)
@@ -310,6 +334,7 @@ See: `/home/dawson/.cursor/plans/integration_progress_assessment_2025-12-24.md` 
 
 ---
 
+<!-- section_id: "784faf4e-c20f-4218-b06b-77cd2ef9c858" -->
 ## Conclusion
 
 Phase 5 is complete. Framework orchestration and CLI recursion patterns are now integrated into the universal protocols layer, making them discoverable and applicable to agents working within the AI Manager Hierarchy System. The documentation is OS-adapted for the current environment (WSL/Ubuntu) while maintaining links to normative specifications for comprehensive coverage.

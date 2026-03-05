@@ -8,8 +8,10 @@ resource_name: "README"
 
 Utility scripts for the 09_fixing stage.
 
+<!-- section_id: "8f062d77-368b-44db-bc29-2ba9a9baae9c" -->
 ## Available Scripts
 (Add scripts as needed)
 
+<!-- section_id: "147b0b0a-8021-4332-b979-f0d5994515c0" -->
 ## Usage
 Scripts can be called from hooks or directly via Bash tool.

@@ -7,18 +7,22 @@ resource_name: "console-log-capture-workflow"
 
 This workflow describes how to use Chrome DevTools MCP to capture console messages, monitor JavaScript errors, and debug runtime issues.
 
+<!-- section_id: "dd0e572b-7070-416b-be22-d87f10f95acf" -->
 ## Overview
 
 The Runtime and Log domains of Chrome DevTools Protocol provide access to console output, JavaScript exceptions, and runtime evaluation. This workflow covers capturing and analyzing console output for debugging.
 
+<!-- section_id: "9e0f9b72-601e-40b4-803e-d68d075cf628" -->
 ## Prerequisites
 
 1. Chrome running with remote debugging enabled
 2. Chrome DevTools MCP server connected
 3. Target page loaded in browser
 
+<!-- section_id: "f86979b0-c55d-43e5-ae45-0873149d109b" -->
 ## Workflow Steps
 
+<!-- section_id: "a43d9305-a01b-4da3-8fe6-a16928b2aba8" -->
 ### Step 1: Enable Runtime Domain
 
 Enable the Runtime domain to receive console messages:
@@ -34,6 +38,7 @@ This enables:
 - JavaScript exceptions
 - Runtime evaluation
 
+<!-- section_id: "c3b9e96b-d8b4-4d1a-8bd6-1787a2d76994" -->
 ### Step 2: Enable Log Domain (Optional)
 
 For additional log entries beyond console API:
@@ -49,6 +54,7 @@ This captures:
 - Security warnings
 - Deprecation notices
 
+<!-- section_id: "b4509f72-60c4-41f0-a15e-0ea57406b868" -->
 ### Step 3: Capture Console Messages
 
 Console messages are received as events with these properties:
@@ -62,6 +68,7 @@ Console messages are received as events with these properties:
 - `stackTrace`: Call stack (for errors)
 - `timestamp`: When message was logged
 
+<!-- section_id: "228e9eb4-d7f1-4512-9d76-16c2deaf17f1" -->
 ### Step 4: Filter and Analyze
 
 Filter console output by:
@@ -84,6 +91,7 @@ Filter: text contains "failed"
 Purpose: Find failure-related messages
 ```
 
+<!-- section_id: "e4ecd294-7627-4cc4-a4ef-61e023ade047" -->
 ### Step 5: Handle Exceptions
 
 JavaScript exceptions provide detailed information:
@@ -95,8 +103,10 @@ JavaScript exceptions provide detailed information:
 - Source URL
 - Whether exception was caught
 
+<!-- section_id: "89e98197-b96f-48ab-a880-111ccc4dbd3f" -->
 ## Common Use Cases
 
+<!-- section_id: "a01dfa58-6cf6-4e41-9c41-b6a7550a53d7" -->
 ### Use Case 1: Debug JavaScript Errors
 
 **Scenario:** Application throwing unexpected errors
@@ -117,6 +127,7 @@ JavaScript exceptions provide detailed information:
 3. Identify source file and line number
 4. Determine what user action triggered error
 
+<!-- section_id: "a2673465-2979-4dab-93c3-7c0eb7b0981e" -->
 ### Use Case 2: Monitor Application Logging
 
 **Scenario:** Track application state through console.log
@@ -137,6 +148,7 @@ JavaScript exceptions provide detailed information:
 - Understanding timing of operations
 - Finding where code stops executing
 
+<!-- section_id: "031fd83d-a278-4450-969a-b9968f3f8d62" -->
 ### Use Case 3: Find Deprecation Warnings
 
 **Scenario:** Application using deprecated APIs
@@ -156,6 +168,7 @@ JavaScript exceptions provide detailed information:
 - Mixed content warnings
 - Insecure form warnings
 
+<!-- section_id: "6ce454e5-e50c-4d6d-871f-a8d2fa63ad3d" -->
 ### Use Case 4: Track Async Operations
 
 **Scenario:** Debug async/await or Promise issues
@@ -175,6 +188,7 @@ JavaScript exceptions provide detailed information:
 - Whether rejection was handled
 - Full async call stack
 
+<!-- section_id: "7e885904-1aab-4822-891d-b7c2f41cadc0" -->
 ### Use Case 5: Security Issue Detection
 
 **Scenario:** Find security-related console warnings
@@ -194,8 +208,10 @@ JavaScript exceptions provide detailed information:
 - "Content Security Policy" violations
 - Certificate warnings
 
+<!-- section_id: "0d84af9f-544e-4a69-ad1d-2143a743692a" -->
 ## Advanced Techniques
 
+<!-- section_id: "9e53554c-5a3b-41c8-aa9d-55b34c20cafd" -->
 ### Runtime Evaluation
 
 Execute JavaScript and capture output:
@@ -212,6 +228,7 @@ Output: Return value and any console output
 - Test JavaScript snippets
 - Access variables and objects
 
+<!-- section_id: "923f2151-4bc6-4c81-bec2-89ce1f9a6e6a" -->
 ### Exception Breakpoints
 
 Set up to pause on exceptions:
@@ -224,6 +241,7 @@ Options:
 - "none": Don't pause on exceptions
 ```
 
+<!-- section_id: "0fa13175-634f-4a10-9ca2-906b546b0706" -->
 ### Console API Interception
 
 Monitor specific console methods:
@@ -242,8 +260,10 @@ Console Methods:
 - console.time() - Performance timing
 ```
 
+<!-- section_id: "dcafc7a3-d5e6-4b16-a033-2d7a85826283" -->
 ## Output Examples
 
+<!-- section_id: "f86d4ff5-84a9-4157-959a-dcf5d395b4d5" -->
 ### Console Message Event
 
 ```json
@@ -271,6 +291,7 @@ Console Methods:
 }
 ```
 
+<!-- section_id: "24402cef-2034-4408-ad32-fcbe0d4152b0" -->
 ### Exception Event
 
 ```json
@@ -310,6 +331,7 @@ Console Methods:
 }
 ```
 
+<!-- section_id: "10f5a965-b718-4341-b409-38fddaa3e646" -->
 ### Log Entry Event
 
 ```json
@@ -324,6 +346,7 @@ Console Methods:
 }
 ```
 
+<!-- section_id: "24bb2ed7-28c9-4f60-8776-3c5cf7fa3a3d" -->
 ## Message Type Reference
 
 | Type | Description | Severity |
@@ -344,8 +367,10 @@ Console Methods:
 | `profile` | console.profile | Info |
 | `profileEnd` | console.profileEnd | Info |
 
+<!-- section_id: "23c208ff-a1ff-455f-a11c-3de8a5e46877" -->
 ## Troubleshooting
 
+<!-- section_id: "c42a7fd7-2c62-4137-b5d1-9e7d1f60059a" -->
 ### Missing Console Messages
 
 **Problem:** Expected console output not appearing
@@ -356,6 +381,7 @@ Console Methods:
 3. Verify correct execution context is selected
 4. Some messages may be filtered by log level
 
+<!-- section_id: "c8a0b150-f8a9-4144-8345-8426394114ff" -->
 ### Incomplete Stack Traces
 
 **Problem:** Stack traces are truncated or missing
@@ -365,6 +391,7 @@ Console Methods:
 2. Source maps may be needed for minified code
 3. Native functions don't appear in stack traces
 
+<!-- section_id: "78971b2f-90f2-4fcc-99dc-c8ecd890eb84" -->
 ### High Volume of Messages
 
 **Problem:** Too many console messages to process
@@ -375,6 +402,7 @@ Console Methods:
 3. Use pattern matching on message text
 4. Clear console periodically
 
+<!-- section_id: "acdc8cc7-37ca-4917-86f5-0b1624b20350" -->
 ### Exception Not Caught
 
 **Problem:** Exceptions happening but not being captured
@@ -387,6 +415,7 @@ Console Methods:
 
 ---
 
+<!-- section_id: "35222c88-03c2-4aab-a376-92fb1399fbd2" -->
 ## Related Workflows
 
 - [Network Inspection Workflow](./network-inspection-workflow.md)

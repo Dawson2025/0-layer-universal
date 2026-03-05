@@ -5,6 +5,7 @@ resource_name: "ARCHITECTURE_DIAGRAM"
 ---
 # Parallel Development Architecture - Visual Diagram
 
+<!-- section_id: "34327a09-8f43-4109-9f01-d4fd2aa8c0f3" -->
 ## Architecture Overview
 
 ```
@@ -86,6 +87,7 @@ resource_name: "ARCHITECTURE_DIAGRAM"
 └─────────────────────────────────────────────────────────────────────┘
 ```
 
+<!-- section_id: "36fb4dcb-815d-4ef4-8d09-a1da5a64831b" -->
 ## Parallel Development Flow
 
 ```
@@ -117,6 +119,7 @@ resource_name: "ARCHITECTURE_DIAGRAM"
                     independently
 ```
 
+<!-- section_id: "dc3089f6-23f6-4edd-873b-971f447af8e4" -->
 ## Traffic Light Coordination
 
 ```
@@ -159,6 +162,7 @@ resource_name: "ARCHITECTURE_DIAGRAM"
 └─────────────────────────────────────┘
 ```
 
+<!-- section_id: "4288fc5a-0aba-41bf-b695-daa9fb688f9e" -->
 ## Dependency Flow
 
 ```
@@ -202,6 +206,7 @@ Feature → Feature Business Logic
 └──x from features.admin.phoneme_management import reset  ❌
 ```
 
+<!-- section_id: "af05ea6d-f2d9-4fa8-a16d-0001d506a7e5" -->
 ## File Conflict Matrix
 
 ```
@@ -229,6 +234,7 @@ Database migrations           High             🛑 Sequential
 app.py blueprint registration Low              🛑 Only for new features
 ```
 
+<!-- section_id: "fb48b3d6-dfff-410d-a2d9-62dcda2cecb0" -->
 ## Success Metrics Dashboard
 
 ```
@@ -261,6 +267,7 @@ Code Organization              Code Organization
 └──────────────────────────────────────────────┘
 ```
 
+<!-- section_id: "7ac761d3-9255-42a3-a807-c7e9fb4f3d30" -->
 ## Quick Start Workflow
 
 ```
@@ -311,6 +318,7 @@ git commit -m "Add feature X"
 
 ---
 
+<!-- section_id: "a1ef0596-cb9c-42a1-9011-f729fd74156a" -->
 ## Visual Summary
 
 **The codebase is now a well-organized, modular application where:**

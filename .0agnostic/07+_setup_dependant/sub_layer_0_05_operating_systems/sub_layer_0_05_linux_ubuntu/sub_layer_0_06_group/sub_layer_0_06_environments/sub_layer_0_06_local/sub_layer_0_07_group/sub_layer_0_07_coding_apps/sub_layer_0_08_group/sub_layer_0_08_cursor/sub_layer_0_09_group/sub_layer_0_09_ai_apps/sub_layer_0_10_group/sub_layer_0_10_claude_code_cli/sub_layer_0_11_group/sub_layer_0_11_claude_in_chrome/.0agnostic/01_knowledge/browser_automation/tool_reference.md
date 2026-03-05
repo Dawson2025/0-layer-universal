@@ -5,6 +5,7 @@ resource_name: "tool_reference"
 ---
 # Claude in Chrome — Tool Reference
 
+<!-- section_id: "868d278e-ae95-41b4-aac2-8b484f9e68f1" -->
 ## Core Tools
 
 | Tool | Purpose | Key Parameters |
@@ -26,6 +27,7 @@ resource_name: "tool_reference"
 | `shortcuts_list` | List available shortcuts | `tabId` |
 | `shortcuts_execute` | Run a shortcut | `command`, `tabId` |
 
+<!-- section_id: "74febce2-78e7-43cd-a26e-f2df0d27a596" -->
 ## Computer Action Types
 
 | Action | Description | Required Params |
@@ -44,6 +46,7 @@ resource_name: "tool_reference"
 | `wait` | Wait N seconds | `duration` |
 | `left_click_drag` | Drag from A to B | `start_coordinate`, `coordinate` |
 
+<!-- section_id: "10f86569-78c3-4d99-b7a2-fca1ca93fe6c" -->
 ## Session Startup Pattern
 
 Every browser session MUST start with:
@@ -54,6 +57,7 @@ Every browser session MUST start with:
 4. computer(action="wait", duration=2)    → wait for load
 ```
 
+<!-- section_id: "ffc609a9-cfe1-4b5d-815e-d1b09409e4c9" -->
 ## Critical Rules
 
 1. **Never reuse tab IDs** from previous sessions

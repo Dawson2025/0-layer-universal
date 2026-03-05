@@ -12,6 +12,7 @@ resource_name: "context_chain_architecture"
 
 ---
 
+<!-- section_id: "96a53ec6-bf78-4924-adc5-cc0443b86f3a" -->
 ## Overview
 
 A **context chain** is the sequence of `0AGNOSTIC.md` files linked by `Parent:` references that forms the inheritance path from any entity to the system root. Every entity in the layer-stage system participates in exactly one chain.
@@ -22,8 +23,10 @@ The chain serves two purposes:
 
 ---
 
+<!-- section_id: "eb401da0-951e-44c1-bcd5-be99a4397895" -->
 ## Chain Structure
 
+<!-- section_id: "441ab748-ade5-4451-9ae3-1eb8b7ed20d8" -->
 ### The 0AGNOSTIC Parent Chain
 
 Each `0AGNOSTIC.md` contains a `**Parent**: \`../path/0AGNOSTIC.md\`` reference. Following these links produces a chain:
@@ -47,6 +50,7 @@ layer_-1_research/0AGNOSTIC.md
 
 **Depth**: 7 levels for the context_chain_system entity.
 
+<!-- section_id: "6b52e97a-e2cf-403c-9ef6-421ef53fbeb2" -->
 ### Chain vs CLAUDE.md Cascade
 
 These are two **independent** chain mechanisms:
@@ -63,14 +67,17 @@ Both mechanisms produce context inheritance but serve different roles. The 0AGNO
 
 ---
 
+<!-- section_id: "e2925ec8-1fcb-484d-a68e-36767a624294" -->
 ## Chain Construction Rules
 
+<!-- section_id: "d3e01634-5440-477d-bd98-c467f10436be" -->
 ### Relative Path Convention
 
 Parent references use **relative paths**, not absolute:
 - `**Parent**: \`../0AGNOSTIC.md\`` — parent is one directory up
 - `**Parent**: \`../../../0AGNOSTIC.md\`` — parent is three directories up (through group/sub-features/feature structure)
 
+<!-- section_id: "34fca8f3-2222-4a2e-92b9-d2aad7c61b1b" -->
 ### Depth Calculation
 
 Depth varies by entity type in the layer-stage system:
@@ -84,6 +91,7 @@ Depth varies by entity type in the layer-stage system:
 
 The extra `../` levels traverse the `layer_N_group/layer_N_*_features/` container structure.
 
+<!-- section_id: "69eee6c0-cff2-4a9b-bdb8-4b97e9896087" -->
 ### Container vs Entity Nodes
 
 Not every directory in the chain is a full entity:
@@ -97,6 +105,7 @@ Containers (like `layer_0_group/`, `layer_0_features/`) exist for organizational
 
 ---
 
+<!-- section_id: "34b83859-741d-4812-8de6-51454ca0ee27" -->
 ## Chain Traversal Algorithm
 
 ```
@@ -117,6 +126,7 @@ function traverse_chain(entity_path):
     return chain  # ordered leaf → root
 ```
 
+<!-- section_id: "ddfc0f14-c7bb-40ff-b5f8-e3b8f8edad0d" -->
 ### Traversal Uses
 
 | Use Case | Direction | When |
@@ -128,6 +138,7 @@ function traverse_chain(entity_path):
 
 ---
 
+<!-- section_id: "3e2e2d46-1aeb-47a3-8a23-4a0c8faf3fb9" -->
 ## Related Documents
 
 - Chain visualization: `layer_3_group/.../chain_visualization/diagrams/current/context_chain/`

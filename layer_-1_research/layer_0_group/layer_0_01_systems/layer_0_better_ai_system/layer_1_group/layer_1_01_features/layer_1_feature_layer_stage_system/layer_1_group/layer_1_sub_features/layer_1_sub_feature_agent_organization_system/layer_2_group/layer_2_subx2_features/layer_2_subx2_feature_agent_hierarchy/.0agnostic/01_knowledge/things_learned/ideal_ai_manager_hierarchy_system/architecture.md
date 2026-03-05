@@ -3,6 +3,7 @@ resource_id: "ee4b6c15-b10a-4797-b784-8e76cd196283"
 resource_type: "knowledge"
 resource_name: "architecture"
 ---
+<!-- section_id: "384d872d-18eb-4c2c-81e2-fd7cd7c2131f" -->
 ## Architecture, Tools, and OS Variants (Detailed)
 
 This document describes the architecture, tool roles, and OS-aware patterns for your ideal AI manager hierarchy system, as distilled from `../../../chat_history/ai-manager-hierarchy-system-research.md`.
@@ -14,8 +15,10 @@ It is intended as a detailed companion to:
 
 ---
 
+<!-- section_id: "b55da3cd-443d-4dbf-8a5a-5bc83c8395cb" -->
 ## 1. Layered & Staged Architecture (Recap)
 
+<!-- section_id: "e3e434dc-1c09-4885-8ec2-da6d537365da" -->
 ### 1.1 Layers (Abstraction / Specificity)
 
 The system is structured into a stack of layers:
@@ -61,6 +64,7 @@ Each layer has:
   - `LayerContext(L) = Context(L0) + Context(L1) + … + Context(L)` (plus OS/tool-specific overrides).
   - Maintained via `CLAUDE.md`, `AGENTS.md`, `GEMINI.*`, `.cursor/rules/*.mdc`, etc.
 
+<!-- section_id: "df825249-b1a4-45e6-a1fd-d582e7ed0352" -->
 ### 1.2 Stages (Chronological Pipeline)
 
 Within each layer, you operate through a canonical pipeline:
@@ -77,6 +81,7 @@ Within each layer, you operate through a canonical pipeline:
 
 This list is **not closed**; you may add, split, or rename stages as long as they still use the handoff protocol described below.
 
+<!-- section_id: "803d44be-46b9-4a35-8d72-ad5ce6ee2607" -->
 ### 1.3 Managers & Workers
 
 #### 1.3.1 Manager Agents
@@ -110,8 +115,10 @@ Workers never assume global authority over the project; they just satisfy the co
 
 ---
 
+<!-- section_id: "b07c2656-4ef1-4149-b5f7-0a6ae5b75866" -->
 ## 2. Handoff Protocol (Detailed)
 
+<!-- section_id: "eb7995dd-60e2-4619-a424-31945cd01be0" -->
 ### 2.1 Structure
 
 Every handoff document (JSON or Markdown with an embedded JSON block) should include:
@@ -144,6 +151,7 @@ Every handoff document (JSON or Markdown with an embedded JSON block) should inc
 
 Agents are free to add more fields (e.g., `securityFindings`, `perfMetrics`, `notes`) as long as they keep the top-level schema backwards-compatible.
 
+<!-- section_id: "6436d04c-cf97-481e-bc40-b98393ef880b" -->
 ### 2.2 File Locations
 
 Each stage directory has:
@@ -162,6 +170,7 @@ Vertical handoffs between layers use similar patterns, just under each layer’s
 
 This keeps all cross-layer state explicit and inspectable in the filesystem.
 
+<!-- section_id: "cad9852c-e1ff-4880-906e-e2e7dfc4f669" -->
 ### 2.3 Flow Types
 
 #### 2.3.1 Vertical Flows
@@ -189,6 +198,7 @@ Within a single layer `L`, a stage network might look like:
 
 ---
 
+<!-- section_id: "2b04af86-a9a7-4aef-867e-20b5ef1c49df" -->
 ## 3. Tools & Context Systems (Pointer)
 
 Tool selection and prompt mechanics are described in detail in:
@@ -219,6 +229,7 @@ can be slotted into this architecture as either a manager or worker.
 
 ---
 
+<!-- section_id: "d6a8467d-4b89-4142-a876-b31bdfeda80e" -->
 ## 4. OS-Aware Patterns (Pointer)
 
 OS and environment differences are captured in:
@@ -235,6 +246,7 @@ Key points:
 
 ---
 
+<!-- section_id: "b9e5d06d-51c1-4dea-8558-315d927d1318" -->
 ## 5. Supervisors and Parallel Execution
 
 Supervisors are the “process schedulers” of your Agent OS:
@@ -259,6 +271,7 @@ Frameworks like LangGraph or AutoGen can be used to implement this supervisory l
 
 ---
 
+<!-- section_id: "14512197-b1eb-4da8-bc87-ee22143d46eb" -->
 ## 6. Extending the Architecture
 
 The system is designed to be future-proof:
@@ -275,6 +288,7 @@ As long as each new piece:
 
 it can be introduced without altering existing semantics.
 
+<!-- section_id: "74998a5d-f6b9-4753-a29a-91ad1c796cda" -->
 ## Architecture Details: Ideal AI Manager Hierarchy System
 
 This document expands on the architectural aspects of the system sketched in:
@@ -285,6 +299,7 @@ It focuses on **layers**, **stages**, **agents**, **handoffs**, **supervisors**,
 
 ---
 
+<!-- section_id: "99ea431e-3ab3-4eea-9538-da9d134ef79b" -->
 ## 1. Layers (Abstraction / Specificity)
 
 Layers are a stack of abstraction levels, similar to CSS:
@@ -309,6 +324,7 @@ Layers are a stack of abstraction levels, similar to CSS:
   - Optional deeper splits where needed for parallelism or clean separation.
   - Examples: `login-form-ui`, `login-validation`, `login-api`, etc.
 
+<!-- section_id: "870fd1df-64cd-42b2-b43a-4ada49b48350" -->
 ### 1.1 Layer Inheritance
 
 Each layer `L` inherits:
@@ -321,6 +337,7 @@ Effective behavior at any point = **merge(L0..L, OS variant, tool context)**.
 
 ---
 
+<!-- section_id: "b8d31695-4a1c-45e4-8a99-f0f393f07c57" -->
 ## 2. Stages (Chronological Pipeline)
 
 Stages provide a **time-ordered** structure within each layer:
@@ -346,8 +363,10 @@ Stages:
 
 ---
 
+<!-- section_id: "42694a34-1c70-4e0a-8a3f-686f58472341" -->
 ## 3. Agents: Managers and Workers
 
+<!-- section_id: "bfeddec6-cae3-464d-b348-d2f39cb54181" -->
 ### 3.1 Manager Agents
 
 Managers exist at any layer where coordination is required:
@@ -361,6 +380,7 @@ Managers exist at any layer where coordination is required:
 
 Managers are defined by behavior, not by a specific tool; any agent with this interface can be a manager.
 
+<!-- section_id: "93654b26-8022-4b31-856d-a0e82b7c3c11" -->
 ### 3.2 Worker Agents
 
 Workers are leaf or near-leaf agents that:
@@ -377,10 +397,12 @@ Workers should:
 
 ---
 
+<!-- section_id: "0fa679af-c2bb-48b1-9094-63f31cf35baa" -->
 ## 4. Handoffs (Data Flow)
 
 Handoffs are structured representations of work-in-progress.
 
+<!-- section_id: "95d87949-ff66-44fd-a42b-155304e4150d" -->
 ### 4.1 Vertical Handoffs (Layer ↔ Layer)
 
 Vertical handoffs pass tasks and results between layers:
@@ -398,6 +420,7 @@ Vertical flow ensures:
 - Universal rules are visible everywhere.
 - Local decisions and progress can be understood higher up.
 
+<!-- section_id: "8b03bd9a-afb4-4959-b062-3406e0db22ad" -->
 ### 4.2 Horizontal Handoffs (Stage ↔ Stage)
 
 Within a layer:
@@ -418,6 +441,7 @@ Stages can be:
 
 ---
 
+<!-- section_id: "b1bcafe0-5f66-440d-8931-67416d4f358c" -->
 ## 5. Supervisors and Orchestration
 
 Supervisors are meta-components that orchestrate agents:
@@ -427,6 +451,7 @@ Supervisors are meta-components that orchestrate agents:
   - As higher-level LLM agents.
   - Via frameworks (LangGraph, AutoGen, CrewAI, etc.).
 
+<!-- section_id: "4cb52a6d-aae1-4fdd-b161-4a09d12190b7" -->
 ### 5.1 Supervisor Responsibilities
 
 - Discover tasks by:
@@ -444,6 +469,7 @@ Supervisors are meta-components that orchestrate agents:
   - Errors, retries, backoff.
   - Escalation to humans or higher layers.
 
+<!-- section_id: "11ef8efe-5641-4fca-a2c1-51acee844e83" -->
 ### 5.2 Abstract Command Model
 
 Supervisors treat everything as:
@@ -461,6 +487,7 @@ This keeps orchestration logic generic and tool-independent.
 
 ---
 
+<!-- section_id: "2ade182b-4c15-42de-a17e-791f4ae4b96d" -->
 ## 6. Parallelism and Scaling
 
 Parallelism is obtained through **independent workers**:
@@ -487,6 +514,7 @@ Scaling up:
 
 ---
 
+<!-- section_id: "058539cd-4077-485e-a037-7a60f49f32fb" -->
 ## 7. Extensibility
 
 The architecture is deliberately **open-ended**:

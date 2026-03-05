@@ -12,6 +12,7 @@ resource_name: "README"
 
 ---
 
+<!-- section_id: "2c81f9a8-7139-45f7-b2e7-b3415d1ea738" -->
 ## Definition
 
 Every capability metric (speed, scalability, readability, cost, etc.) must have:
@@ -25,6 +26,7 @@ This enables reproducible, verifiable, and comparable avenue evaluation.
 
 ---
 
+<!-- section_id: "58c6611e-c355-4b83-8fe5-d155eac4e184" -->
 ## Why This Matters
 
 - "Score of 95" is meaningless without units -- is that milliseconds, dollars, or an arbitrary rating?
@@ -35,6 +37,7 @@ This enables reproducible, verifiable, and comparable avenue evaluation.
 
 ---
 
+<!-- section_id: "d513dc46-1eea-4a7a-afc5-28f572ce29eb" -->
 ## Acceptance Criteria
 
 - [ ] All 16 capabilities have defined units, methodology, and scale
@@ -45,16 +48,19 @@ This enables reproducible, verifiable, and comparable avenue evaluation.
 
 ---
 
+<!-- section_id: "37545ad0-1cb4-426f-a5e0-36ab6c99aab5" -->
 ## Requirements
 
 See [requirements/](./requirements/) for individual requirements.
 
+<!-- section_id: "64441178-1315-4452-b161-d36fd410fd72" -->
 ## User Stories
 
 See [user_stories/](./user_stories/) for individual stories.
 
 ---
 
+<!-- section_id: "c1d72b2b-06d4-4689-b66a-a2711a5411c5" -->
 ## Research References
 
 - `proposals/04_design/v3_capability_rankings.md` -- complete ranking matrix

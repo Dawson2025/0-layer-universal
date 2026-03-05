@@ -5,10 +5,12 @@ resource_name: "00_overview"
 ---
 # Context Propagation Through 0AGNOSTIC System
 
+<!-- section_id: "a9fe7f3f-01f5-40f2-b85a-2670bfe43529" -->
 ## Overview
 
 This documentation describes how unified context (0AGNOSTIC.md and .0agnostic/) flows through the system and gets adapted for different contexts.
 
+<!-- section_id: "ba9ce24b-034e-44a6-a561-8b82bf702a40" -->
 ## Propagation Flow
 
 ```
@@ -22,8 +24,10 @@ This documentation describes how unified context (0AGNOSTIC.md and .0agnostic/) 
 (documented separately)
 ```
 
+<!-- section_id: "f7fa62e6-eb98-4fb4-a236-73529ed75be4" -->
 ## Four Layers of Context
 
+<!-- section_id: "5277f11c-a715-4d57-845c-7d7627b4bbcc" -->
 ### 1. Core System (01_core_system/)
 The canonical source of truth at every level. All context originates here:
 - **01_knowledge/**: Domain knowledge, principles, documentation, resources
@@ -32,6 +36,7 @@ The canonical source of truth at every level. All context originates here:
 - **04_episodic_memory/**: Session history and accumulated learnings
 - **05_handoff_documents/**: Communication across entities and stages
 
+<!-- section_id: "0e8227da-73e0-43fd-aeeb-a96923ac9e38" -->
 ### 2. Setup-Dependent (02_setup_dependent/)
 Environment and configuration-specific context organized hierarchically:
 - **01_os/**: Operating system specifics (Linux, macOS, Windows)
@@ -43,6 +48,7 @@ Environment and configuration-specific context organized hierarchically:
 - **07_tools_and_apis/**: External tools, utilities, APIs
 - **08_other_setup_specifics/**: Additional setup context
 
+<!-- section_id: "2f202f3b-81ac-4a39-954e-9ae4fdcee1ef" -->
 ### 3. Context Avenue Web (03_context_avenue_web/)
 Ports core system content into context avenue-specific formats:
 
@@ -63,11 +69,13 @@ Ports core system content into context avenue-specific formats:
 - 12_temporal_index/ — Time-series of events and changes
 - 13_shimi_structures/ — Per-node optimization primitives
 
+<!-- section_id: "679c8080-680f-4a46-86c0-e9908f609a41" -->
 ### 4. AI App-Specific Versions
 Final versions tailored for specific AI applications (Claude, Cursor, Gemini, Codex, Aider, Copilot).
 
 Documented in: `.1merge/` system (parallel structure)
 
+<!-- section_id: "8badd440-e5cd-4ae5-9c6c-0d3424978e12" -->
 ## Key Principle
 
 The same unified context flows through all four layers, being adapted at each step:

@@ -5,10 +5,12 @@ resource_name: "STAGE_03_INSTRUCTIONS"
 ---
 # Stage 03: Instructions — Universal Guide
 
+<!-- section_id: "7bc55118-d41b-4aec-b39b-2d13c0237d63" -->
 ## Purpose
 
 Define constraints, guidelines, and non-negotiable rules that govern all subsequent stages. This is the **guardrails stage** — it sets boundaries that design, development, and testing must respect.
 
+<!-- section_id: "970d363c-7602-49a3-bb40-d5aa81879891" -->
 ## What This Stage IS
 
 The instructions agent:
@@ -18,6 +20,7 @@ The instructions agent:
 - Captures non-functional requirements (performance, security, compatibility)
 - Records decisions that constrain future work ("we MUST use X", "we MUST NOT do Y")
 
+<!-- section_id: "9f439cb2-11bc-45a3-a1d4-4a22e497cd3e" -->
 ## What This Stage IS NOT
 
 The instructions agent does NOT:
@@ -29,6 +32,7 @@ The instructions agent does NOT:
 
 The agent defines **what must be true**, not **how to make it true**.
 
+<!-- section_id: "b528d1ec-5aab-4ff3-b887-29a02b6ba584" -->
 ## Methodology
 
 Instructions are organized by type:
@@ -42,6 +46,7 @@ outputs/
 └── stage_report.md
 ```
 
+<!-- section_id: "6730b77f-5202-4a19-9dfd-73aa0c3b9663" -->
 ### Constraint Format
 
 Each constraint should specify:
@@ -50,6 +55,7 @@ Each constraint should specify:
 - **Scope**: What stages/artifacts this applies to
 - **Enforcement**: How to verify compliance (feeds into stage 07 testing)
 
+<!-- section_id: "0af5cca6-ff7b-470d-a908-8e3253c953b1" -->
 ## Inputs
 
 - **Stage 01 outputs** — requirements that imply constraints
@@ -57,6 +63,7 @@ Each constraint should specify:
 - **Parent entity .0agnostic/02_rules/** — inherited rules from parent hierarchy
 - **Organizational standards** — from layer_0 universal rules
 
+<!-- section_id: "d36ff83a-a43a-44dc-a237-bba0e01d90d7" -->
 ## Outputs
 
 | Output | Location | Format |
@@ -67,6 +74,7 @@ Each constraint should specify:
 | Non-functional reqs | `outputs/non_functional.md` | Performance, security, compatibility |
 | Stage report | `outputs/stage_report.md` | Standard stage report format |
 
+<!-- section_id: "0915c486-d6e2-4c98-b7c3-e9499c4d465c" -->
 ## Success Criteria
 
 This stage is complete when:
@@ -76,12 +84,14 @@ This stage is complete when:
 4. No contradictions between constraints
 5. Parent hierarchy rules are referenced (not duplicated)
 
+<!-- section_id: "cc0f77c4-da72-4c8b-90ac-625250e014db" -->
 ## Exit Protocol
 
 1. Update `outputs/stage_report.md` with current status
 2. If handing off to **stage 04** (design): highlight constraints that most affect architecture decisions
 3. If handing off to **stage 06** (development): highlight coding standards and conventions
 
+<!-- section_id: "e1be1532-f385-4886-8560-4a3ba4c51d7b" -->
 ## Common Patterns
 
 - **Often lightweight**: Many entities inherit most constraints from parent hierarchy — only entity-specific constraints need documenting
@@ -89,6 +99,7 @@ This stage is complete when:
 - **Feeds testing**: Every constraint should have a corresponding test in stage 07
 - **Living document**: Constraints may be added as work progresses and new boundaries are discovered
 
+<!-- section_id: "29c24b86-abe8-41b5-ad48-8e31db5c25aa" -->
 ## Anti-Patterns
 
 - Duplicating parent rules (reference them instead)

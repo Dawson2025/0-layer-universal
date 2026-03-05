@@ -5,12 +5,14 @@ resource_name: "stage_reports"
 ---
 # Topic: Stage Reports
 
+<!-- section_id: "40afc09e-cd59-4da1-802c-2fcd18346144" -->
 ## Summary
 
 Stage reports are the async communication channel between stage agents and entity managers. Before exiting a stage, the agent writes `outputs/stage_report.md` summarizing what was done, what's left, and what the next stage needs to know. The manager reads these to understand stage status without loading stage outputs.
 
 This design decision means managers never need to explore stage output directories — the report provides sufficient context for coordination decisions.
 
+<!-- section_id: "c6423e68-30f2-4829-882b-4a032abf7ff3" -->
 ## Key Points
 
 - Stage reports follow the universal stage report protocol
@@ -18,6 +20,7 @@ This design decision means managers never need to explore stage output directori
 - Managers read reports at the pointer tier — no need to load full stage outputs
 - Reports are complementary to the 0AGNOSTIC.md Current State section
 
+<!-- section_id: "1ddc5cba-0840-4fc7-9e2d-024d58552249" -->
 ## References
 
 | What | Where |

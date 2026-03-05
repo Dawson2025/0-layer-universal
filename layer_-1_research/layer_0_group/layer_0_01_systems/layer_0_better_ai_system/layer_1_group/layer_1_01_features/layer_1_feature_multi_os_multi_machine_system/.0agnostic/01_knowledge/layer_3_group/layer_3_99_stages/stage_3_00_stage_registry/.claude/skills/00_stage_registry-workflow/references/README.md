@@ -8,6 +8,7 @@ resource_name: "README"
 
 Place reference documents, templates, and examples here.
 
+<!-- section_id: "978f2308-cd54-4459-85fc-031382a67a72" -->
 ## Suggested Contents
 - Templates for 00_stage_registry outputs
 - Examples of good 00_stage_registry work

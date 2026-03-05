@@ -3,6 +3,7 @@ resource_id: "88b322eb-bc51-45e8-b753-b278cb392970"
 resource_type: "knowledge"
 resource_name: "observability_and_logging"
 ---
+<!-- section_id: "350949a8-7bf1-4b81-a0d1-1e3999e261e7" -->
 ## Observability and Logging Framework
 
 This document defines structured logging, monitoring, and observability patterns for the AI manager hierarchy system.
@@ -14,8 +15,10 @@ It ensures the system is:
 
 ---
 
+<!-- section_id: "132bbd43-fa46-4766-8c52-a5710afffb57" -->
 ## 1. Logging Levels and Contexts
 
+<!-- section_id: "77176b3f-e456-4b83-8935-a350d06b352c" -->
 ### 1.1 Log Levels
 
 Following standard severity hierarchy:
@@ -26,6 +29,7 @@ Following standard severity hierarchy:
 - **ERROR**: Failures that require attention (task failures, API errors)
 - **CRITICAL**: System-level failures (supervisor crashes, data corruption)
 
+<!-- section_id: "85effd3d-e685-4dc1-b086-458364e3b8a0" -->
 ### 1.2 Contextual Logging
 
 Every log entry includes:
@@ -58,8 +62,10 @@ Every log entry includes:
 
 ---
 
+<!-- section_id: "b325f809-8d93-424d-8147-aa05461c16de" -->
 ## 2. Structured Logging Schema
 
+<!-- section_id: "a825106d-b7ce-4326-bc82-db398ec329d7" -->
 ### 2.1 Task Lifecycle Events
 
 **Task Started:**
@@ -121,6 +127,7 @@ Every log entry includes:
 }
 ```
 
+<!-- section_id: "ba0702d7-ee8b-40e5-a64e-403a71155d5c" -->
 ### 2.2 Agent Interaction Events
 
 **Agent Spawned:**
@@ -163,6 +170,7 @@ Every log entry includes:
 }
 ```
 
+<!-- section_id: "31549b00-6892-49ee-8e64-55efcc73b48e" -->
 ### 2.3 Supervisor Events
 
 **Supervisor Started:**
@@ -208,8 +216,10 @@ Every log entry includes:
 
 ---
 
+<!-- section_id: "ef7e4480-f061-41b2-a0d5-f13fa754486e" -->
 ## 3. Log Storage and Retention
 
+<!-- section_id: "55b0e79c-ff44-4cee-a231-0950cebeb72a" -->
 ### 3.1 Storage Backends
 
 **Local Files (Development):**
@@ -266,6 +276,7 @@ def log_to_cloudwatch(log_group, log_stream, event):
     )
 ```
 
+<!-- section_id: "58867177-5d06-4e02-96ed-5a55575767a6" -->
 ### 3.2 Retention Policy
 
 ```yaml
@@ -297,8 +308,10 @@ retention:
 
 ---
 
+<!-- section_id: "256c1cf1-8746-4c98-9c3d-56f9b4a99842" -->
 ## 4. Distributed Tracing
 
+<!-- section_id: "67a03b41-ae35-4f3a-b890-f0d739d70603" -->
 ### 4.1 OpenTelemetry Integration
 
 ```python
@@ -341,6 +354,7 @@ def execute_task_with_tracing(task_id, layer, stage, handoff):
             raise
 ```
 
+<!-- section_id: "841fec14-19e9-46bf-96fe-6e8205f0522f" -->
 ### 4.2 Trace Visualization
 
 Traces show full workflow from L0 to L4:
@@ -358,8 +372,10 @@ trace-L1-auth-system (5m 32s, $4.50)
 
 ---
 
+<!-- section_id: "89cde335-21f2-4f3c-aaba-68eb34f1ad83" -->
 ## 5. Metrics and Monitoring
 
+<!-- section_id: "00146473-5fc3-44aa-a48e-0df07c8513e3" -->
 ### 5.1 Key Metrics
 
 **Task Metrics:**
@@ -386,6 +402,7 @@ trace-L1-auth-system (5m 32s, $4.50)
 - Worker utilization
 - Queue depth
 
+<!-- section_id: "471580ea-c27b-4f68-9fea-141b22142fa3" -->
 ### 5.2 Metrics Collection
 
 ```python
@@ -459,6 +476,7 @@ def execute_task_with_metrics(task_id, layer, stage, tool, model):
         active_tasks.labels(layer=layer).dec()
 ```
 
+<!-- section_id: "c024baec-b5f1-48c1-9be5-5349b6650e21" -->
 ### 5.3 Alerting Rules
 
 ```yaml
@@ -487,8 +505,10 @@ alerts:
 
 ---
 
+<!-- section_id: "89af67a2-0565-4691-82c7-4ef82081d754" -->
 ## 6. Audit Trail
 
+<!-- section_id: "256c8899-8915-4704-ba3b-77882b1787c6" -->
 ### 6.1 Immutable Audit Log
 
 Every decision and action is logged:
@@ -538,6 +558,7 @@ audit.log_decision(
 )
 ```
 
+<!-- section_id: "9159c6ce-0d39-4874-a31f-c42bdbd5233d" -->
 ### 6.2 Queryable Audit API
 
 ```python
@@ -563,8 +584,10 @@ def search_audit():
 
 ---
 
+<!-- section_id: "1f08456e-2668-47ed-b01b-57b680710e1b" -->
 ## 7. Observability Dashboard
 
+<!-- section_id: "e8bfe50b-6ffc-4cd3-8318-fe1567f3fdef" -->
 ### 7.1 Real-Time Dashboard Components
 
 **Overview Panel:**
@@ -588,6 +611,7 @@ def search_audit():
 - Test coverage by component
 - Human review outcomes
 
+<!-- section_id: "34d888ae-e4cc-4ec8-9a33-109a91db5ccb" -->
 ### 7.2 Implementation (Grafana Example)
 
 ```yaml
@@ -640,6 +664,7 @@ def search_audit():
 
 ---
 
+<!-- section_id: "120baca2-23fc-4926-a60f-7655f8512057" -->
 ## 8. Summary
 
 Comprehensive observability requires:

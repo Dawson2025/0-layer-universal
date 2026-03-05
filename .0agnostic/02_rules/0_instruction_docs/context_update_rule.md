@@ -10,6 +10,7 @@ Every AI agent session must keep the knowledge bases in sync:
 1. **Project context (`/home/dawson/code/Parallelism and Concurrency/0_context`)** – capture assignment-specific observations, SOPs, and optimizations so the next run inside the same repo inherits the latest state.
 2. **Universal context (`/home/dawson/code/0_ai_context`)** – extract any broadly applicable lessons (tooling quirks, workflow rules, environment gotchas) and document them in the appropriate universal section.
 
+<!-- section_id: "72767ce8-037a-47cd-839f-f1b3b9ce2677" -->
 ### Performance Anchor Policy (applies to all projects)
 - Track the “best-performing” commit and its metric snapshot (e.g., run_history_best_*.json) as the **anchor**. Record the commit hash and artifact path in both project and universal contexts.
 - Run new experiments off the anchor. If a later milestone beats the anchor’s primary metric (e.g., % of runs meeting the SLA), promote that milestone’s commit to become the new anchor and document the change.

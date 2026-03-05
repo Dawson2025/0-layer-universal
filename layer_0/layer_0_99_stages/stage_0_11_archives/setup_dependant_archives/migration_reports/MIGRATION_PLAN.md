@@ -7,6 +7,7 @@ resource_name: "MIGRATION_PLAN"
 
 **Created**: January 12, 2026
 
+<!-- section_id: "cd294908-ed6e-48f3-8dc4-40292e536650" -->
 ## Summary
 
 Analysis of old sub_layers (0.05-0.14) vs the unified file tree reveals:
@@ -14,8 +15,10 @@ Analysis of old sub_layers (0.05-0.14) vs the unified file tree reveals:
 - **Content needing migration**: Specific files with unique content
 - **Empty sub_layers**: Just placeholder READMEs, can be deleted
 
+<!-- section_id: "fa9be42b-d8d9-428b-a352-797fdb5709da" -->
 ## Analysis by Sub_Layer
 
+<!-- section_id: "9ce73c3c-2c3e-49ee-aa03-d4e97dc72bfe" -->
 ### Already Duplicated (Delete Immediately)
 
 | Sub_Layer | Files | Status |
@@ -23,6 +26,7 @@ Analysis of old sub_layers (0.05-0.14) vs the unified file tree reveals:
 | `sub_layer_0_12_universal_tools` | 37 files | **Fully duplicated** in `0.12_universal_tools` |
 | `sub_layer_0_13_universal_protocols` | 20 files | **Fully duplicated** in `0.13_protocols` |
 
+<!-- section_id: "6a1d0292-9b9d-4ee2-8dcb-48be2058f8bf" -->
 ### Empty/Placeholder (Delete Immediately)
 
 | Sub_Layer | Files | Content |
@@ -33,6 +37,7 @@ Analysis of old sub_layers (0.05-0.14) vs the unified file tree reveals:
 | `sub_layer_0_12_agent_setup` | 0 | Empty |
 | `sub_layer_0_14_agent_setup` | 1 | README.md only |
 
+<!-- section_id: "04212089-4028-4ac7-8bd2-ed644ef75d47" -->
 ### Needs Migration
 
 | Sub_Layer | Files | Action |
@@ -42,11 +47,14 @@ Analysis of old sub_layers (0.05-0.14) vs the unified file tree reveals:
 | `sub_layer_0_10_mcp_servers_and_tools_setup` | 75+ | Substantial MCP docs - **consolidate with unified tree's MCP structure** |
 | `sub_layer_0_11_ai_models` | 2 | Migrate `LINUX_UBUNTU_MODEL_ACCESS_ISSUES.md` |
 
+<!-- section_id: "ac8cc305-9cef-46ad-810d-2801e878911a" -->
 ## Migration Destinations
 
+<!-- section_id: "226083ab-da9c-409e-91c6-af92bc9578b0" -->
 ### sub_layer_0_07_environment_setup/github_sso_token_setup.md
 → `0.01_universal_setup_file_tree_0/0.05_operating_systems/_shared/0.06_environments/_shared/setup/github/`
 
+<!-- section_id: "fe093131-9b8d-4fe7-b4d0-76ad6daf68be" -->
 ### sub_layer_0_10_mcp_servers_and_tools_setup
 This has its own nested file tree (`0.02_mcp_config_options_0_file_tree_0`). Options:
 1. **Merge into unified tree's MCP sections** (under each AI app's `0.10_mcp_servers_and_apis_and_secrets/`)
@@ -58,9 +66,11 @@ Analysis shows it has a different hierarchy:
 
 **Recommendation**: Migrate unique content from old MCP tree into the unified tree's existing MCP server directories.
 
+<!-- section_id: "7500db77-b94f-4f7e-aa0e-f774fe32fba8" -->
 ### sub_layer_0_11_ai_models/LINUX_UBUNTU_MODEL_ACCESS_ISSUES.md
 → `0.01_universal_setup_file_tree_0/0.05_operating_systems/linux_ubuntu/0.06_environments/_shared/ai_models/`
 
+<!-- section_id: "1a4defda-e79c-4ec3-afa7-bd5d0c5cd30a" -->
 ### sub_layer_0_05_os_setup/trickle_down_0.5_setup
 This contains **project-specific** content (Firebase setup, WSL, deployment guides for a specific project).
 
@@ -69,6 +79,7 @@ This contains **project-specific** content (Firebase setup, WSL, deployment guid
 2. Extract truly universal content (WSL setup, agent specs) to unified tree
 3. Archive as historical project documentation
 
+<!-- section_id: "20c9a896-183c-40fe-b3fd-ebf44e0da149" -->
 ## Execution Order
 
 1. **Phase 1 - Delete Empty/Duplicated** (safe, no data loss risk)
@@ -84,6 +95,7 @@ This contains **project-specific** content (Firebase setup, WSL, deployment guid
    - Review: 0.05 trickle_down_0.5_setup
    - Decide on archival vs extraction
 
+<!-- section_id: "608f0316-1fa4-425e-9a47-dfb2b0350909" -->
 ## Verification
 
 Before deleting, verify:
@@ -93,17 +105,21 @@ Before deleting, verify:
 - [x] All migrated files are in correct locations
 - [ ] No broken references in other documentation
 
+<!-- section_id: "a241cadb-6c30-44a7-a7a9-7e405f6223dd" -->
 ## Migration Status (Updated January 12, 2026)
 
+<!-- section_id: "adb7529f-203b-4bbc-85c5-246822d9af14" -->
 ### Completed Migrations:
 1. **github_sso_token_setup.md** → `0.05_operating_systems/_shared/0.06_environments/_shared/setup/github/`
 2. **LINUX_UBUNTU_MODEL_ACCESS_ISSUES.md** → `0.05_operating_systems/linux_ubuntu/0.06_environments/_shared/ai_models/`
 
+<!-- section_id: "069b9724-a9d4-4db4-9dbb-727b0a5a13b0" -->
 ### Verified Duplications (Safe to Delete):
 - `sub_layer_0_10_mcp_servers_and_tools_setup` - Content exists in unified tree's `0.10_mcp_servers`
 - `sub_layer_0_12_universal_tools` - Content exists in unified tree's `0.12_universal_tools`
 - `sub_layer_0_13_universal_protocols` - Content exists in unified tree's `0.13_protocols`
 
+<!-- section_id: "224edba3-f315-4d8c-b018-3432577235ca" -->
 ### Empty Sub_Layers (Safe to Delete):
 - `sub_layer_0_06_coding_app_setup`
 - `sub_layer_0_08_apps_browsers_extensions_setup`
@@ -111,11 +127,13 @@ Before deleting, verify:
 - `sub_layer_0_12_agent_setup`
 - `sub_layer_0_14_agent_setup`
 
+<!-- section_id: "4c3ad8b9-e7f4-4119-ba7e-1e95fc8488c5" -->
 ### Remaining Items:
 - `sub_layer_0_05_os_setup` - Contains project-specific trickle_down content (needs user decision)
 - ~~`sub_layer_0_07_environment_setup`~~ - DELETED (content migrated)
 - ~~`sub_layer_0_11_ai_models`~~ - DELETED (content migrated)
 
+<!-- section_id: "bcda06a4-2166-4088-9326-4b39d815acca" -->
 ## DELETION LOG (January 12, 2026)
 
 **Deleted sub_layers:**
@@ -139,8 +157,10 @@ Before deleting, verify:
 - `sub_layer_0_05-0.014_setup` - Unified file tree (this is the target)
 - `sub_layer_0_05_os_setup` - **PENDING USER DECISION** (project-specific content)
 
+<!-- section_id: "95e76a7a-afc7-4fd9-aa40-4a5b80258dd9" -->
 ## FINAL STATUS (January 12, 2026)
 
+<!-- section_id: "44180dd3-5cc1-44b5-bca1-b52156764292" -->
 ### ✅ Migration Complete
 
 **From `sub_layer_0_05_os_setup` (38 files):**
@@ -156,6 +176,7 @@ Before deleting, verify:
 - All archive docs (historical project data)
 - All other trickle_down project content
 
+<!-- section_id: "a682c595-ddee-4191-8ee0-ecc4379669c4" -->
 ### Final Sub_Layers Directory Structure
 
 ```
@@ -168,6 +189,7 @@ Before deleting, verify:
 └── sub_layer_0_05-0.014_setup/     # ← Unified file tree (COMPLETE)
 ```
 
+<!-- section_id: "5c57061e-a69b-49c7-b242-fe5a16539c1f" -->
 ### Total Deleted Sub_Layers: 11
 1. sub_layer_0_05_os_setup (content extracted/archived)
 2. sub_layer_0_06_coding_app_setup

@@ -13,6 +13,7 @@ resource_name: "US-04_manager_coordinates_parallel"
 **I want** the manager to spawn parallel agents for independent work but avoid parallelism for dependent work,
 **So that** I get faster results for independent tasks without introducing conflicts.
 
+<!-- section_id: "9e3aad7c-d901-4b24-9b4b-05e5bc4451e2" -->
 ### What Happens
 
 1. User says "research topic A and topic B" (two independent tasks)
@@ -21,6 +22,7 @@ resource_name: "US-04_manager_coordinates_parallel"
 4. For dependent tasks: manager sequences them (stage A completes before stage B starts)
 5. Parallel agents work simultaneously; user gets faster results with no conflicts
 
+<!-- section_id: "231ae212-2830-40cf-9ce6-fc62631c1c82" -->
 ### Acceptance Criteria
 
 - Parallel spawning rules clearly distinguish independent vs dependent work

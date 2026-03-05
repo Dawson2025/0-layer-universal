@@ -7,10 +7,12 @@ resource_name: "STAGE_DELEGATION_PRINCIPLES"
 
 These principles govern how agents delegate and operate across the layer-stage hierarchy.
 
+<!-- section_id: "849c6344-193e-4544-aeab-49bea3d5930f" -->
 ## 1. Managers Delegate, Agents Operate
 
 Entity managers maintain the big picture. Stage agents do the work. A manager reads stage reports and decides what to delegate next — it does not carry operational methodology for any stage.
 
+<!-- section_id: "2a6c8e3d-8895-40a7-aadd-6462295c691f" -->
 ## 2. Explicit Scope Boundaries (Layer AND Stage)
 
 Every agent knows what it IS and what it IS NOT. Scope boundaries exist at **two levels**:
@@ -20,6 +22,7 @@ Every agent knows what it IS and what it IS NOT. Scope boundaries exist at **two
 
 The "NOT" list is as important as the "IS" description. When work falls outside either boundary, the agent must make a **scope decision** (see Principle 8).
 
+<!-- section_id: "39e75665-135b-49dd-8c53-2c45b91f1baf" -->
 ## 3. Three-Tier Knowledge
 
 Knowledge flows through three tiers:
@@ -29,26 +32,32 @@ Knowledge flows through three tiers:
 
 Managers work at the pointer tier. Stage agents load distilled knowledge on demand. Full detail stays within stages.
 
+<!-- section_id: "71e85a68-4aa2-4fd9-b778-511c76c06e66" -->
 ## 4. Stage Reports Are the Communication Channel
 
 Stage agents communicate with managers through stage reports, not through shared context. The report is the async handoff — it tells the manager what was done, what's left, and what the next stage needs.
 
+<!-- section_id: "9b11dadb-6532-4e52-bf87-1feea8231e99" -->
 ## 5. Stages Are Reentrant
 
 Stages can be entered multiple times. Research can loop back from design. Testing can loop through criticism and fixing. Requirements can be revised after criticism. Each reentry starts by reading the stage's current state (0AGNOSTIC.md, existing outputs, stage report).
 
+<!-- section_id: "668d74d2-d090-498b-991d-b56c6c4ea45e" -->
 ## 6. Output-First, Not Process-First
 
 Stage agents produce deliverables, not process logs. The value is in the outputs/ directory — the requirements, research findings, design specs, test results. Process notes are secondary.
 
+<!-- section_id: "8dcc374e-5348-4db3-846d-bd6ab439f68b" -->
 ## 7. Selective Context Loading
 
 Never load all parent knowledge at once. Read the specific file relevant to the task at hand. Context windows are finite — every byte loaded must earn its place.
 
+<!-- section_id: "82e1ea8d-3892-4965-a19c-bc94b9e38709" -->
 ## 8. Scope Boundary Decisions
 
 When an agent reaches the boundary of its layer or stage scope, it must make a **delegation decision** that includes both WHAT to do and WHERE to go.
 
+<!-- section_id: "0ee24d7a-5b1f-40df-801a-664dbc31ebe7" -->
 ### Step 1: Determine Direction
 
 Every scope boundary has a direction. The agent must identify which way the out-of-scope work points:
@@ -62,6 +71,7 @@ Every scope boundary has a direction. The agent must identify which way the out-
 | **Sideways (layer)** | Work belongs to a sibling entity at the same layer | memory_system agent finds multi_agent_system concern |
 | **Multi-location** | Work spans multiple layers, stages, or entities | Refactoring that requires research + design + development |
 
+<!-- section_id: "2df7a7ca-ee2d-4460-a020-41e4c8eb9587" -->
 ### Step 2: Decide How to Handle
 
 | Question | If Yes | If No |
@@ -70,6 +80,7 @@ Every scope boundary has a direction. The agent must identify which way the out-
 | Does an agent already exist for the target layer/stage? | Delegate to it (send message, create task, or write handoff) | Consider instantiating one |
 | Would handling this myself overflow my context window? | Always delegate — context window preservation is paramount | You may handle it if it's small |
 
+<!-- section_id: "c17728f7-6229-455a-9835-23044d3c597d" -->
 ### Step 3: Communicate
 
 How the agent communicates depends on the direction and the handling decision:
@@ -83,6 +94,7 @@ How the agent communicates depends on the direction and the handling decision:
 | **Multi-location** work | Escalate to the nearest common ancestor manager who can coordinate across all locations |
 | Doing it **yourself** across boundaries | Document ALL out-of-scope changes in your stage report with exact paths and rationale |
 
+<!-- section_id: "86eee15f-29bc-4396-b07f-2919694ab06b" -->
 ### Instantiation Decision
 
 When no agent exists for the target scope:
@@ -95,6 +107,7 @@ When instantiating:
 - Provide a clear task description + any findings that prompted the instantiation
 - The new agent may itself hit scope boundaries and make its own delegation decisions
 
+<!-- section_id: "5da20d18-1303-42a4-8aef-3f5553da6e16" -->
 ### Multi-Location Work
 
 When work genuinely spans multiple locations (not just a clean handoff to one place):
@@ -106,6 +119,7 @@ When work genuinely spans multiple locations (not just a clean handoff to one pl
 
 The key question for multi-location: **who has the scope to see all affected locations?** That's the agent who should coordinate.
 
+<!-- section_id: "ab945e3c-3f3b-42b9-98c8-e72022d380c8" -->
 ### Why This Matters
 
 Context windows are the fundamental constraint. An agent that tries to work across too many layers/stages will:
@@ -116,10 +130,12 @@ Context windows are the fundamental constraint. An agent that tries to work acro
 
 The default should be **delegate**, not **do it yourself**. The cost of spawning an agent is low; the cost of a bloated, confused context is high.
 
+<!-- section_id: "623f060b-1b8e-4287-b30a-6fc2795e67a3" -->
 ## 9. Two-Halves Context Pattern
 
 Every 0AGNOSTIC.md (whether for an entity or a stage) needs **two halves**:
 
+<!-- section_id: "d76ae077-6ca4-4e31-ad74-252a9c22e2af" -->
 ### Half 1: Operational Guidance (written once, rarely changes)
 - **Identity**: Role, scope, parent reference, domain
 - **Scope boundaries**: What this IS and IS NOT (the NOT list is critical)
@@ -128,6 +144,7 @@ Every 0AGNOSTIC.md (whether for an entity or a stage) needs **two halves**:
 - **Success criteria**: When is this done?
 - **Exit protocol**: What to do before leaving
 
+<!-- section_id: "ab99edfd-c98c-459d-b966-58d28e065509" -->
 ### Half 2: Current State Summary (updated as work progresses)
 - **Status**: pending / active / complete / scaffolded
 - **Summary**: 2-3 sentences on what's been accomplished
@@ -136,21 +153,25 @@ Every 0AGNOSTIC.md (whether for an entity or a stage) needs **two halves**:
 - **Open items**: What's unresolved — specific and actionable
 - **Handoff**: Ready for next stage? What should next stage prioritize?
 
+<!-- section_id: "36fc90ef-b5d9-4642-af62-8a69685596b7" -->
 ### Why Both Halves Are Needed
 
 Without the current state half, an agent landing in a stage must explore outputs/ manually to understand what exists — wasting context window tokens on orientation instead of productive work.
 
 The operational half tells the agent **how to work**. The current state half tells the agent **what's already here**. Together, they make the pointer tier functional: 0AGNOSTIC.md is the single file an agent reads to be immediately oriented and productive.
 
+<!-- section_id: "89b48c02-dddb-40bc-a1de-8f771969c81e" -->
 ## 10. Cross-Layer Stage References
 
 When content at one layer becomes detailed enough to warrant its own entity (child layer), both layers must maintain **bidirectional references** between their stages.
 
+<!-- section_id: "ae2b9711-b458-4bd5-a111-ac5b30346287" -->
 ### The Pattern
 
 - **Parent layer stages → child**: Overviews and summaries pointing to child entity stages where the detailed work lives. The parent stage is the "pointer tier" for its child's stages.
 - **Child layer → parent stages**: References back to the parent layer stages that provide broader context, the original requirement, or the design decision being implemented.
 
+<!-- section_id: "ed089f69-412c-4e16-a4a2-857a72068fb2" -->
 ### When to Push to a Child Layer
 
 | Factor | Stay at current layer | Push to child layer |
@@ -160,6 +181,7 @@ When content at one layer becomes detailed enough to warrant its own entity (chi
 | Stage breadth | Needs 1-2 stages | Needs its own full stage progression (01-11) |
 | Agent specialization | Same agent handles it | Needs a specialized agent with domain knowledge |
 
+<!-- section_id: "f3ac10ec-4741-40ca-b1f7-e9e64ef4d61a" -->
 ### Bidirectional References
 
 **Parent pointing down** (in parent stage 0AGNOSTIC.md):
@@ -175,6 +197,7 @@ When content at one layer becomes detailed enough to warrant its own entity (chi
 | Stage 01 (needs) | Original requirements this entity details | `parent_entity/.../stage_NN/` |
 | Stage 04 (design) | Design decisions governing this entity | `parent_entity/.../stage_NN/` |
 
+<!-- section_id: "a30c478e-ad9d-40f0-9aff-d587d76d3169" -->
 ### Why Both Directions
 
 - **Parent → child**: Managers reading the parent layer can find where detailed work lives without discovering child entities by exploration
@@ -183,6 +206,7 @@ When content at one layer becomes detailed enough to warrant its own entity (chi
 
 Without bidirectional references, agents either don't know child layers exist (lost detail) or don't know where their work fits (lost context).
 
+<!-- section_id: "9eeb1530-4105-4a17-8174-2ce9bf49e053" -->
 ## Canonical Workspace
 
 These principles are maintained at the **agent_delegation_system** entity:

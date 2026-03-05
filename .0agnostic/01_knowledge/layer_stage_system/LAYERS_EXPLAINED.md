@@ -5,10 +5,12 @@ resource_name: "LAYERS_EXPLAINED"
 ---
 # Layers Explained
 
+<!-- section_id: "f8f9a8af-9d42-40c0-87c3-b516c220f8db" -->
 ## What is a Layer?
 
 A layer represents a **scope level** in the system hierarchy. Higher layers (lower numbers) are more universal; lower layers (higher numbers) are more specific.
 
+<!-- section_id: "afe6c60e-032e-4243-8fee-612b59f4b9fb" -->
 ## Layer Numbers
 
 | Layer | Name | Scope | Example |
@@ -20,6 +22,7 @@ A layer represents a **scope level** in the system hierarchy. Higher layers (low
 | 4+ | Sub-component | Nested components | Specific validation rule |
 | -1 | Research | Experimental | Research projects |
 
+<!-- section_id: "cc19a376-66ed-4a8f-a47b-27b85ec8a521" -->
 ## Layer Relationships
 
 ```
@@ -43,6 +46,7 @@ layer_0 (Universal)
                └── Nested as needed
 ```
 
+<!-- section_id: "88f3d303-02be-43ef-a559-a9465615c658" -->
 ## Special Layer: -1 (Research)
 
 Research projects use negative layer numbers:
@@ -61,6 +65,7 @@ layer_-1_research/
         │   └── layer_0_feature_one/
 ```
 
+<!-- section_id: "37857ee3-6e18-41dd-b890-70eb9f903347" -->
 ## Layer Structure
 
 **For the complete canonical entity structure**, see:
@@ -68,8 +73,10 @@ layer_-1_research/
 
 That document is the **single source of truth** and includes full directory trees, mkdir templates, and complete file examples. This section provides the conceptual framework; the canonical reference provides the implementation details.
 
+<!-- section_id: "8b925236-2c09-43c2-b55e-e30b0acd723a" -->
 ## The Two Group Folders
 
+<!-- section_id: "18399dc2-ffd0-4351-b960-893980526958" -->
 ### `layer_N_group/` - Entity's Internal Structure (MINIMAL)
 
 Contains ONLY this entity's own workflow:
@@ -80,6 +87,7 @@ Contains ONLY this entity's own workflow:
 
 **Why minimal?** Entity-scoped AI resources (knowledge, rules, protocols) go in `.0agnostic/`, not in layer_N_group. This keeps layer_N_group focused and prevents confusion about where child entities belong.
 
+<!-- section_id: "d132bc47-a29b-4722-836c-380076911e6d" -->
 ### `layer_N+1_group/` - Further Layering (CHILDREN CONTAINER)
 
 Contains the next layer down and organizing containers for them:
@@ -90,8 +98,10 @@ Contains the next layer down and organizing containers for them:
 
 **Key distinction**: `layer_N+1_group/` is not a layer itself — it's a container for organizing child layer entities. Child entities inside these containers are actual layers with their own `layer_N+1_group/` and stages.
 
+<!-- section_id: "7c90ac07-7b56-48d5-b50a-227c78eb1248" -->
 ## Layer Inheritance Rules
 
+<!-- section_id: "e64a572d-1428-4e8d-b56c-5fe70ebf7eaf" -->
 ### What Inherits
 
 | Content | Inherits? | How |
@@ -102,6 +112,7 @@ Contains the next layer down and organizing containers for them:
 | Identity | No | Each entity has unique identity |
 | Stages | No | Each entity has own workflow |
 
+<!-- section_id: "8536e4f5-a0a8-4b60-abd2-d33ed5437d0c" -->
 ### Inheritance Example
 
 ```
@@ -121,28 +132,34 @@ layer_2 (feature) inherits:
   - "Validate all inputs" ← Added by feature
 ```
 
+<!-- section_id: "b297212b-2180-47e9-a739-c757e16f7100" -->
 ## When to Create a New Layer
 
+<!-- section_id: "a35add57-a2ec-48ec-961f-a391dab89226" -->
 ### Create layer_1 (Project) when:
 - Starting a new application/system
 - Work has distinct identity and lifecycle
 - Will have its own features and components
 
+<!-- section_id: "54d3a954-e708-4f49-9ecf-c71c710e2355" -->
 ### Create layer_2 (Feature) when:
 - Adding distinct capability to a project
 - Work could potentially be reused
 - Has its own development cycle
 
+<!-- section_id: "93b270be-c1be-491a-87d1-24854cb1509d" -->
 ### Create layer_3+ (Component) when:
 - Feature has separable sub-parts
 - Need further organization
 - Component has distinct interface
 
+<!-- section_id: "06c4d3c4-15ff-4d72-a9df-f3fa33fa6ee8" -->
 ### Create layer_-1 (Research) when:
 - Exploring new ideas
 - Work is experimental
 - Not ready for production
 
+<!-- section_id: "40e43954-d1e1-4ab1-853d-ffea98c08750" -->
 ## Layer Naming Convention
 
 ```
@@ -161,6 +178,7 @@ layer_N_<type>_<name>/
 - `layer_3_component_password_validator/`
 - `layer_-1_research_new_framework/`
 
+<!-- section_id: "d7b32046-2538-4e27-b4f4-7d7574a1881a" -->
 ## Renumbering
 
 When entities move to a different depth in the hierarchy, their layer numbers must be updated. Common triggers: re-parenting entities, promoting features to projects, or merging entity trees.
@@ -176,6 +194,7 @@ bash .0agnostic/01_knowledge/layer_stage_system/resources/tools/renumber-layers.
 
 **Note**: `subxN_` prefixes track nesting depth, not layer number -- they are intentionally preserved during renumbering. See `NESTED_DEPTH_NAMING.md`.
 
+<!-- section_id: "defe9a0c-17e9-46cb-a7e7-e6e6cbead905" -->
 ## Research vs Production (Context Chain Modes)
 
 Any system can have two parallel versions of its context chain:
@@ -185,6 +204,7 @@ Any system can have two parallel versions of its context chain:
 | **Research** | Experimental — for trying new patterns, features, designs | `layer_-1_research/layer_-1_better_<system>/` |
 | **Production (Default)** | Tried-and-true — stable, validated, what agents use by default | `layer_0/` + `.0agnostic/` (for AI system), or `layer_1_project_<system>/` (for specific systems) |
 
+<!-- section_id: "f3905b6b-4342-4681-8dd0-a9fd8c732e15" -->
 ### How It Works
 
 1. **Research version**: Lives in `layer_-1_research/`. Features are developed through stages (01-11). Each feature has its own layers and stages for research, design, development, testing.
@@ -192,6 +212,7 @@ Any system can have two parallel versions of its context chain:
 3. **Promotion**: When research features pass testing, they're promoted to production via the research promotion protocol.
 4. **Mode switching**: Agents default to production context. Users can say "use research context chain" to additionally load research knowledge. See `.0agnostic/02_rules/dynamic/CONTEXT_CHAIN_MODE/`.
 
+<!-- section_id: "bafc119a-1d8d-4bf4-ae2b-9261c238ebc6" -->
 ### Current Example: AI System
 
 - **Research**: `layer_-1_research/layer_-1_better_ai_system/` (agent delegation, memory, context chains)

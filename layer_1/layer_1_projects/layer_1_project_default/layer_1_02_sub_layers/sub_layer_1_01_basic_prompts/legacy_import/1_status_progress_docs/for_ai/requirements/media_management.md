@@ -8,9 +8,11 @@ resource_name: "media_management"
 - **Source Prompt**: Existing implementation analysis (2025-10-15)
 - **Related Implementation**: `app.py` routes 1314-4018, `storage_manager.py`, `services/firebase/firestore.py`
 
+<!-- section_id: "27b4fc6a-d322-469f-ad07-331e176198d7" -->
 ## Goal
 Enable multimedia enrichment of constructed language words by supporting video uploads, storage, playback, and deletion across both local file systems and Firebase Cloud Storage.
 
+<!-- section_id: "afeed5db-cedd-4f12-ac72-4e7c9ed8d8bc" -->
 ## Functional Requirements
 - Allow users to upload video files (MP4, WebM, etc.) and associate them with specific words.
 - Store uploaded videos in a project-specific directory structure for organization.
@@ -23,6 +25,7 @@ Enable multimedia enrichment of constructed language words by supporting video u
 - Track video file paths in word records for retrieval and deletion.
 - Manage storage quotas and file size limits to prevent abuse.
 
+<!-- section_id: "e3df4ad4-10d9-4921-a325-942e8c264dce" -->
 ## Acceptance Criteria
 - Video upload during word creation saves file to `videos/<project_id>/` directory and stores path in word record.
 - Endpoint `/videos/<filename>` serves video files with proper MIME types for browser playback.
@@ -34,6 +37,7 @@ Enable multimedia enrichment of constructed language words by supporting video u
 - Failed uploads return clear error messages (file too large, unsupported format, storage unavailable).
 - Deleting a word cascades to delete its associated video file from storage.
 
+<!-- section_id: "dfc5350c-9ba2-4277-b9cd-6c2b270381fa" -->
 ## Automation Mapping
 - Playwright MCP flows:
   - `scripts/mcp-word-media.mjs` — creates a word, uploads a video, verifies presence in detail/list, and removes the video.
@@ -45,6 +49,7 @@ Enable multimedia enrichment of constructed language words by supporting video u
   - Start MCP: `npm run mcp:playwright:headed`
   - Run flow: `MCP_URL=http://127.0.0.1:9234/mcp node scripts/mcp-word-media.mjs`
 
+<!-- section_id: "0d44ad70-fc75-4243-abcc-6ae99a9eac96" -->
 ## Notes
 - Video storage should be organized by project ID to enable per-project cleanup and migration.
 - Large video files may require chunked upload or background processing for cloud storage.

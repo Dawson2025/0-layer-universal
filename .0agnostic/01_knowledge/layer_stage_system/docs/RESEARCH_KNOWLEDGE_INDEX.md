@@ -16,6 +16,7 @@ these references as additional knowledge sources.
 
 ---
 
+<!-- section_id: "608d588d-1043-4ce7-a20d-4f984bf092df" -->
 ## Research Entity 1: Agent Delegation System
 
 **Path**: `layer_-1_research/layer_-1_better_ai_system/layer_0_group/layer_0_features/layer_0_feature_layer_stage_system/layer_1_group/layer_1_sub_features/layer_1_sub_feature_agent_delegation_system/`
@@ -24,6 +25,7 @@ these references as additional knowledge sources.
 
 **Covers**: How managers delegate to stage agents, delegation principles, stage guides, scope boundary decisions, three-tier knowledge pattern
 
+<!-- section_id: "e3d19e4c-aeed-4f92-af73-79afa46e4b91" -->
 ### Key Outputs
 
 | Output | Stage | Path (relative to entity) | Promotion Status |
@@ -38,6 +40,7 @@ these references as additional knowledge sources.
 | Delegate-not-operate rule | .0agnostic | `.0agnostic/02_rules/static/delegate_not_operate.md` | Referenced |
 | Stage boundary rule | .0agnostic | `.0agnostic/02_rules/static/stage_boundary_rule.md` | Referenced |
 
+<!-- section_id: "c8eea87a-1a12-4a8d-a952-7cda96220958" -->
 ### Key Concepts Discovered
 - **Two-Halves Pattern**: Every 0AGNOSTIC.md needs STATIC (operational guidance) + DYNAMIC (current state)
 - **Scope Boundary Decisions**: When hitting layer/stage boundaries, default = delegate (not do yourself)
@@ -45,6 +48,7 @@ these references as additional knowledge sources.
 
 ---
 
+<!-- section_id: "deef1027-9945-4e32-a1d9-53a7749f3ec4" -->
 ## Research Entity 2: Memory System
 
 **Path**: `...agent_delegation_system/layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_memory_system/`
@@ -53,6 +57,7 @@ these references as additional knowledge sources.
 
 **Covers**: Memory architecture, context flow, avenue web design, data-based avenues, SHIMI, storage consolidation
 
+<!-- section_id: "58ed8934-df5e-44ba-82b9-974e39b6301d" -->
 ### Key Outputs
 
 | Output | Stage | Path (relative to entity) | Promotion Status |
@@ -67,6 +72,7 @@ these references as additional knowledge sources.
 | Enriched skill model spec | 04 | `.../by_topic/05_enriched_skill_model_specification.md` | Referenced |
 | AI Context Flow Architecture | .0agnostic | `.0agnostic/01_knowledge/overview/production_context_flow/AI_CONTEXT_FLOW_ARCHITECTURE.md` | Referenced |
 
+<!-- section_id: "89d06533-5336-4b08-8a66-3f667e7e858f" -->
 ### Key Concepts Discovered
 - **Avenue Web**: 8 file-based + 5 data-based avenues for redundant context delivery
 - **Data-Based Avenues**: Knowledge graphs, vector indexes, SHIMI hierarchies derived from file-based content
@@ -75,6 +81,7 @@ these references as additional knowledge sources.
 
 ---
 
+<!-- section_id: "dff4f3a5-b560-4e6f-be9c-244ec1f9d286" -->
 ## Research Entity 3: Context Chain System
 
 **Path**: `...memory_system/layer_3_group/layer_3_subx3_features/layer_3_subx3_feature_context_chain_system/`
@@ -83,6 +90,7 @@ these references as additional knowledge sources.
 
 **Covers**: Context chain architecture, parent chain validation, optimization strategies, static/dynamic split, avenue redundancy
 
+<!-- section_id: "8734edd8-ba0c-40a0-8dd5-55fa49cbb6c5" -->
 ### Key Outputs
 
 | Output | Stage | Path (relative to entity) | Promotion Status |
@@ -99,6 +107,7 @@ these references as additional knowledge sources.
 | Static/dynamic context model | .0agnostic | `.0agnostic/01_knowledge/static_dynamic_context.md` | Referenced |
 | Chain optimization strategies | .0agnostic | `.0agnostic/01_knowledge/chain_optimization_strategies.md` | Referenced |
 
+<!-- section_id: "67e895f3-c40e-434f-b20b-160011fc633c" -->
 ### Key Concepts Discovered
 - **Parent Chain Validation**: Context propagates through hierarchical chains; each level inherits from parent
 - **Avenue Redundancy**: Multiple independent paths deliver context so any-one-fires ensures resilience
@@ -108,6 +117,7 @@ these references as additional knowledge sources.
 
 ---
 
+<!-- section_id: "d1496a7f-6d1d-4fbc-813d-a7a9715b5d64" -->
 ## Reference Implementation: Internship Prep (Stage Instantiation)
 
 **Path**: `layer_1/layer_1_projects/layer_1_project_internship_prep/`
@@ -116,6 +126,7 @@ these references as additional knowledge sources.
 
 **Covers**: Directory-based tree of needs pattern, by-purpose testing organization, stage report in handoff docs
 
+<!-- section_id: "c17a2042-94ef-4372-b8a8-15449e8ac2dc" -->
 ### Key Outputs
 
 | Output | Stage | Path (relative to entity) | Promotion Status |
@@ -124,6 +135,7 @@ these references as additional knowledge sources.
 | By-purpose testing taxonomy | 07 | `layer_1_group/layer_1_99_stages/stage_1_07_testing/outputs/by_purpose/` | Referenced — experimental stage template |
 | Stage report in handoff docs | entity | `.0agnostic/05_handoff_documents/02_outgoing/01_to_above/stage_report.md` | Referenced |
 
+<!-- section_id: "12f12153-f17e-4508-b493-232888707d75" -->
 ### Key Concepts Demonstrated
 - **Stage Instantiation Templates**: Pre-scaffolding stage directories with organizational patterns instead of empty dirs
 - **Tree of Needs as Directory Structure**: Each need gets `requirements/` and `user_stories/` subdirectories with individual files (not flat markdown)
@@ -131,6 +143,7 @@ these references as additional knowledge sources.
 
 ---
 
+<!-- section_id: "1118e707-c355-4b9b-8bc1-c8fb21372db9" -->
 ## How to Use This Index
 
 1. **Finding WHY a pattern exists**: Locate the topic → follow the path to the research entity → read the referenced output
@@ -138,6 +151,7 @@ these references as additional knowledge sources.
 3. **Promotion decisions**: Check "Promotion Status" column — "Referenced" items are candidates for future promotion when needed
 4. **Adding new research**: Create entries in this index when new research entities produce findings
 
+<!-- section_id: "56f92c4b-f6dc-4267-8123-174bae492685" -->
 ## Related
 
 - **Promotion protocol**: `.0agnostic/03_protocols/research_promotion_protocol.md`

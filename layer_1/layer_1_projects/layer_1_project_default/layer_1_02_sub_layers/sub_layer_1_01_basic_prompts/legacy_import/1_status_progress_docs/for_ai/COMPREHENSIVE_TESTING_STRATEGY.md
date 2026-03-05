@@ -9,6 +9,7 @@ resource_name: "COMPREHENSIVE_TESTING_STRATEGY"
 
 ---
 
+<!-- section_id: "069add88-bc8c-43cb-832b-6dddd399d21b" -->
 ## 🎯 Fundamental Intent
 
 **Surface Request:** "Research automated testing and fix failing tests"
@@ -22,8 +23,10 @@ resource_name: "COMPREHENSIVE_TESTING_STRATEGY"
 
 ---
 
+<!-- section_id: "7791a3a7-a75b-4871-b568-288f5feeb99a" -->
 ## 📊 Current State Analysis
 
+<!-- section_id: "23a01b56-9038-4ca2-b168-8185c4e9e218" -->
 ### What We Have
 - ✅ **19 pytest unit/integration tests** (10 files)
 - ✅ **41 MCP browser automation scripts** (E2E tests)
@@ -32,6 +35,7 @@ resource_name: "COMPREHENSIVE_TESTING_STRATEGY"
 - ⚠️ **Tests are slow** (~5-10 seconds per browser test)
 - ⚠️ **Tests are brittle** (session cookie issues with Playwright MCP)
 
+<!-- section_id: "92ad001e-1040-4fb7-b563-8ff09790f73b" -->
 ### The Problem: Inverted Test Pyramid
 
 **Current Ratio (WRONG):**
@@ -51,8 +55,10 @@ resource_name: "COMPREHENSIVE_TESTING_STRATEGY"
 
 ---
 
+<!-- section_id: "aaea9dae-b999-4ec6-9240-29cef6deb13f" -->
 ## 🏗️ Optimal Testing Strategy
 
+<!-- section_id: "7c1f631d-ba88-4a86-8ee0-b3b60903ed89" -->
 ### The Testing Pyramid
 
 ```
@@ -65,6 +71,7 @@ resource_name: "COMPREHENSIVE_TESTING_STRATEGY"
      /--------------\ - Business logic, utilities, helpers
 ```
 
+<!-- section_id: "3ccd7934-fd42-4098-9649-8154231c1f6b" -->
 ### Layer 1: Unit Tests (70% - ~150 tests)
 
 **What to Test:**
@@ -93,6 +100,7 @@ resource_name: "COMPREHENSIVE_TESTING_STRATEGY"
 
 ---
 
+<!-- section_id: "25c0c80a-b2b5-4ce1-a496-51cfc7ea36e7" -->
 ### Layer 2: Integration Tests (20% - ~40 tests)
 
 **What to Test:**
@@ -119,6 +127,7 @@ resource_name: "COMPREHENSIVE_TESTING_STRATEGY"
 
 ---
 
+<!-- section_id: "3066049d-d2bc-4ba0-8f33-0e8a20c8a09d" -->
 ### Layer 3: E2E Tests (10% - ~20 tests)
 
 **What to Test (ONLY):**
@@ -142,8 +151,10 @@ resource_name: "COMPREHENSIVE_TESTING_STRATEGY"
 
 ---
 
+<!-- section_id: "5e5c0d46-155d-45cc-9c47-7f7d533fce2f" -->
 ## 🚀 Implementation Plan
 
+<!-- section_id: "95335c64-b4b1-45d7-9bec-0bcf444d27fe" -->
 ### Phase 1: Fix Immediate Issues (Week 1)
 
 1. ✅ **Fix registration bug** (DONE - removed blocking `/register` route)
@@ -157,6 +168,7 @@ resource_name: "COMPREHENSIVE_TESTING_STRATEGY"
    - Write pytest tests that hit the emulator
    - Remove browser-based cloud tests
 
+<!-- section_id: "a97d708c-405f-4aa0-883e-e7526900e780" -->
 ### Phase 2: Expand pytest Coverage (Week 2)
 
 4. **Create pytest fixtures** in `conftest.py`:
@@ -187,6 +199,7 @@ resource_name: "COMPREHENSIVE_TESTING_STRATEGY"
    - 80% can be tested with `test_client` (no browser needed!)
    - Write ~50 integration tests covering API endpoints
 
+<!-- section_id: "871f28af-872a-4b37-b5ce-19ddca6553d0" -->
 ### Phase 3: Streamline E2E Tests (Week 3)
 
 7. **Convert MCP scripts to pytest-playwright**:
@@ -198,6 +211,7 @@ resource_name: "COMPREHENSIVE_TESTING_STRATEGY"
    - Keep ~20 E2E tests for critical paths
    - Archive remaining ~21 MCP scripts as documentation
 
+<!-- section_id: "1d0cc704-d1c9-45af-b93f-0b8366ac1b78" -->
 ### Phase 4: CI/CD Integration (Week 4)
 
 9. **Set up GitHub Actions** (or similar):
@@ -219,6 +233,7 @@ resource_name: "COMPREHENSIVE_TESTING_STRATEGY"
 
 ---
 
+<!-- section_id: "50ae060b-7b57-46dc-9c86-f357a34317b7" -->
 ## 📁 Recommended File Structure
 
 ```
@@ -246,8 +261,10 @@ tests/
 
 ---
 
+<!-- section_id: "0c18eb29-6004-41af-b116-cc4c03e0115f" -->
 ## ⚡ Expected Outcomes
 
+<!-- section_id: "c4106f09-6a06-48a6-b7c9-51b9151898b2" -->
 ### Before (Current State)
 - **Test Count:** 60 total (19 pytest + 41 browser)
 - **Pass Rate:** 78% (14/18 browser tests passing)
@@ -255,6 +272,7 @@ tests/
 - **Reliability:** Low (session issues)
 - **CI/CD Ready:** No
 
+<!-- section_id: "5a3c9616-dede-4927-94b7-5bea1f8f4bdb" -->
 ### After (Optimized State)
 - **Test Count:** ~210 total (150 unit + 40 integration + 20 e2e)
 - **Pass Rate:** 95%+ target
@@ -265,6 +283,7 @@ tests/
 - **Reliability:** High
 - **CI/CD Ready:** Yes
 
+<!-- section_id: "59d88db7-b241-4704-8278-7ce708369fa9" -->
 ### Benefits
 - **6x faster** test execution
 - **3.5x more test coverage**
@@ -275,6 +294,7 @@ tests/
 
 ---
 
+<!-- section_id: "c51bbbad-750f-4563-b60c-b35ebd1d6af6" -->
 ## 🎯 Success Metrics
 
 1. **Coverage:** 90%+ code coverage
@@ -286,20 +306,24 @@ tests/
 
 ---
 
+<!-- section_id: "d9bf0b5b-45f5-4e0d-85c7-cd4725b02989" -->
 ## 📝 Action Items
 
+<!-- section_id: "427a1fa5-7864-415c-b420-f8c349bd5d6f" -->
 ### Immediate (This Week)
 - [x] Fix registration bug
 - [ ] Convert 2 admin browser tests to pytest integration tests
 - [ ] Convert 2 cloud browser tests to pytest with Firebase emulator
 - [ ] Run pytest suite and confirm 100% pass rate
 
+<!-- section_id: "2d9d2f43-0f42-4d30-8743-03042abd1758" -->
 ### Next Week
 - [ ] Create comprehensive fixtures in conftest.py
 - [ ] Write 50 unit tests for core business logic
 - [ ] Write 20 integration tests for API endpoints
 - [ ] Achieve 70% code coverage
 
+<!-- section_id: "de5bd85c-bcb6-461c-8178-b93ad56a654f" -->
 ### Following Weeks
 - [ ] Migrate critical MCP scripts to pytest-playwright
 - [ ] Archive non-critical browser tests
@@ -309,6 +333,7 @@ tests/
 
 ---
 
+<!-- section_id: "c9ae3331-b03e-4d2b-9a20-1ec6bd49f161" -->
 ## 💡 Key Principles
 
 1. **Unit tests are cheap** - write many
@@ -320,6 +345,7 @@ tests/
 
 ---
 
+<!-- section_id: "9589edda-d6dd-4189-b0e5-df7ef0dfdc14" -->
 ## 🔗 Resources
 
 - [Testing Pyramid Explained](https://martinfowler.com/articles/practical-test-pyramid.html)

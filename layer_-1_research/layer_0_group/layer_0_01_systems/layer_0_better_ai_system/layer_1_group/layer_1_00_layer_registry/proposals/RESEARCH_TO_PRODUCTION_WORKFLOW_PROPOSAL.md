@@ -5,6 +5,7 @@ resource_name: "RESEARCH_TO_PRODUCTION_WORKFLOW_PROPOSAL"
 ---
 # Proposal: Research-to-Production Workflow
 
+<!-- section_id: "42affc66-a71f-44bc-956e-f9b15383d2f5" -->
 ## Problem Statement
 
 We just created documentation directly in production `layer_0/`:
@@ -20,6 +21,7 @@ We just created documentation directly in production `layer_0/`:
 
 ---
 
+<!-- section_id: "fc68c4bf-ae01-412a-8b6e-a0edcd84617d" -->
 ## Option A: Research-First Workflow
 
 **All new content goes through research before production.**
@@ -65,6 +67,7 @@ We just created documentation directly in production `layer_0/`:
 
 ---
 
+<!-- section_id: "1a22260a-d125-40ba-ad54-bda1608fbf56" -->
 ## Option B: Size-Based Workflow
 
 **Small changes go direct, large changes go through research.**
@@ -104,6 +107,7 @@ We just created documentation directly in production `layer_0/`:
 
 ---
 
+<!-- section_id: "94c11cb0-353b-47af-8abe-7cd88d57ad5c" -->
 ## Option C: Research as Design Doc (RECOMMENDED)
 
 **Research contains PROPOSALS and DESIGNS. Production contains FINAL content. Research mirrors production structure.**
@@ -158,6 +162,7 @@ We just created documentation directly in production `layer_0/`:
 
 ---
 
+<!-- section_id: "d3593176-d307-49e8-81d1-82a0ad6addd8" -->
 ## Recommended Structure for Research Project
 
 If we adopt Option C, here's how the research project should be organized:
@@ -215,6 +220,7 @@ layer_-1_better_ai_system/
 
 ---
 
+<!-- section_id: "8defe062-2122-4152-b71b-8148a297224e" -->
 ## Mapping: What We Just Created → Research Location
 
 | Production Location | Research Location | Content Type |
@@ -238,6 +244,7 @@ The production versions contain:
 
 ---
 
+<!-- section_id: "db867037-a8e8-4242-90fc-0bbda6bc8473" -->
 ## Action Plan
 
 **Option 1: Retroactive Documentation (Minimal)**
@@ -257,6 +264,7 @@ The production versions contain:
 
 ---
 
+<!-- section_id: "1348e3c9-8e0d-4a18-9d13-f55368985722" -->
 ## Recommendation
 
 I recommend **Option C (Research as Design Doc)** with **Action Plan Option 3 (Going Forward Only)**.
@@ -269,6 +277,7 @@ This means:
 
 ---
 
+<!-- section_id: "9810db52-de86-4d28-9b24-6cdcf51fd200" -->
 ## Decision Request
 
 1. **Do you approve Option C workflow?** (Research = design docs, Production = final docs)

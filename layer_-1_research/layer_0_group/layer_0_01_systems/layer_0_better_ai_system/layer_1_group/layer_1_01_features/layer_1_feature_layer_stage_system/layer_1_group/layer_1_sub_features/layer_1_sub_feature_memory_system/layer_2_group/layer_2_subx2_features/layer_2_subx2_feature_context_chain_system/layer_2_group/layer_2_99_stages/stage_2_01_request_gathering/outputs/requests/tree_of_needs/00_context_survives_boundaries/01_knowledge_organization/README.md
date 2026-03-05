@@ -10,12 +10,14 @@ resource_name: "README"
 
 ---
 
+<!-- section_id: "f846beb5-4643-4bfb-a034-e46498d3c15c" -->
 ## Core Question
 
 > "Where does each kind of content live, and how do the tiers connect?"
 
 ---
 
+<!-- section_id: "153f841c-729b-46bc-b5e9-95b5fae5be58" -->
 ## Description
 
 For context to survive boundaries, knowledge must be organized into clear tiers with defined rules for what goes where. Without this, agents either load too much (blowing the window) or too little (losing competence).
@@ -27,6 +29,7 @@ The three failure modes:
 
 ---
 
+<!-- section_id: "b588a322-83cf-497d-899c-b7b9b5161cc5" -->
 ## Child Needs
 
 | Need | Question | Description |
@@ -37,6 +40,7 @@ The three failure modes:
 
 ---
 
+<!-- section_id: "cd4445ad-432c-4abf-9aff-6bd75fc8dbfa" -->
 ## Key Insight
 
 Organization follows the brain's consolidation pattern: raw episodic memories (stage outputs) are distilled into semantic knowledge (.0agnostic/knowledge/), with navigation pointers (0AGNOSTIC.md) on top. Each tier serves a different access pattern — always-loaded, on-demand understanding, or on-demand detail.

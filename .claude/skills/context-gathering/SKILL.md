@@ -11,6 +11,7 @@ description: "Gather context about current position in the layer-stage hierarchy
 
 # Context Gathering Skill
 
+<!-- section_id: "cc3ec229-eb42-477e-a244-3cb3639a887f" -->
 ## WHEN to Use
 - **First action** when entering any directory in the layer-stage system
 - When starting work on a new task and you don't know the current layer/stage
@@ -18,11 +19,13 @@ description: "Gather context about current position in the layer-stage hierarchy
 - When you need to understand what rules, skills, or agents apply here
 - After being spawned as a child agent (you have no inherited context)
 
+<!-- section_id: "428e87f7-3137-4b39-9c46-923a8bc9ee8d" -->
 ## WHEN NOT to Use
 - You already read the CLAUDE.md chain for this directory this session
 - You're doing a simple edit where the layer/stage is already known
 - The user explicitly said to skip context loading
 
+<!-- section_id: "d88841bb-0ebc-41ed-8c95-b6c28f8cc3f3" -->
 ## Steps
 
 1. **Read CLAUDE.md chain**: Starting from the working directory, read each CLAUDE.md up to root
@@ -47,6 +50,7 @@ description: "Gather context about current position in the layer-stage hierarchy
 8. **Check status.json** for current state
 9. **Check applicable rules** in `.claude/rules/`
 
+<!-- section_id: "29d13d77-3b10-4583-b801-2ba3dfac74af" -->
 ## Output Format
 
 Provide a summary including:
@@ -57,6 +61,7 @@ Provide a summary including:
 - Available skills for this context
 - Active tasks or goals (from status.json)
 
+<!-- section_id: "a982b300-09c7-4d4d-bfec-ac8c69765462" -->
 ## AALang Reference
 
 This skill maps to the context loading agent defined at:

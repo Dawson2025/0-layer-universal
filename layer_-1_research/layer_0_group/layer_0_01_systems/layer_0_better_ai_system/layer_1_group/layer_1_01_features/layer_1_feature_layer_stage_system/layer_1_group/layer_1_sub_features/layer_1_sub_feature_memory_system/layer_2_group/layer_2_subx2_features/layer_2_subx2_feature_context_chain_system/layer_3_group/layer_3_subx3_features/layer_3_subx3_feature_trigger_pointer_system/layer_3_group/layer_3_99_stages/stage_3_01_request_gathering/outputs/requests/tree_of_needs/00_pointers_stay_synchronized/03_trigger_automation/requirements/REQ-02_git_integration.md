@@ -7,6 +7,7 @@ resource_name: "REQ-02_git_integration"
 
 **Need**: [Trigger Automation](../README.md)
 
+<!-- section_id: "a6e823e3-0af0-4830-93e1-dafbb5293c10" -->
 ## Requirements
 
 - **SHOULD** provide a git post-commit hook that detects directory renames/moves

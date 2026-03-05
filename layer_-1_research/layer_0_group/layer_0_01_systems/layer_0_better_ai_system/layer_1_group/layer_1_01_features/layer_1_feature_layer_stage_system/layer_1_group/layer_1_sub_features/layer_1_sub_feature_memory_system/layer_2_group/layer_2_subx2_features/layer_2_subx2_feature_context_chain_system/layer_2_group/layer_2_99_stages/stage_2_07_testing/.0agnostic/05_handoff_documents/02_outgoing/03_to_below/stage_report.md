@@ -5,15 +5,19 @@ resource_name: "stage_report"
 ---
 # Stage Report: 07_testing
 
+<!-- section_id: "c797d289-e430-41dc-ae81-eff579387d9c" -->
 ## Status
 active
 
+<!-- section_id: "9e1fe366-5eb2-40c7-a982-33ce8ffa9cc9" -->
 ## Last Updated
 2026-02-25
 
+<!-- section_id: "d007a35a-e582-40c5-8593-9e02ec718dbc" -->
 ## Summary
 Test suite now uses purpose-based output taxonomy (`outputs/by_purpose/<purpose>/{design,implementation,runs,results,insights}`) and enforces it via an automated gate. Codex-specific projection, discovery, runtime, and condition-based checks remain passing and integrated into the full-suite runner.
 
+<!-- section_id: "2af40772-ed1a-45d5-b213-307c07925e2b" -->
 ## Key Outputs
 - `outputs/reports/stage_report.md`: Canonical stage handoff status report
 - `outputs/reports/output_report.md`: Stage output navigation hub for propagation funnel
@@ -33,6 +37,7 @@ Test suite now uses purpose-based output taxonomy (`outputs/by_purpose/<purpose>
 - `outputs/test_cross_entity_porting_bridge.sh`: Validates upstream agnostic -> downstream context-chain bridge contract
 - Test scripts in `outputs/` for repeatable execution
 
+<!-- section_id: "65fe32d9-c729-4151-a70c-0e0eaedf8702" -->
 ## Findings
 - Codex merge-to-output path is now functional: `.1merge/.1codex_merge/*` projects into `AGENTS.md`
 - Codex projection isolation validated: Codex additions do not appear in `CLAUDE.md`
@@ -47,12 +52,14 @@ Test suite now uses purpose-based output taxonomy (`outputs/by_purpose/<purpose>
 - Chain integrity validated across 7 levels
 - **Skill discovery chain (Claude) remains validated**: Hot (CLAUDE.md) -> Warm (path rules) -> Cold (rules/skills)
 
+<!-- section_id: "7a7aaaea-0289-4622-adf5-cc40567a8fab" -->
 ## Open Items
 - A7 episodic memory remains scaffolded (sessions/changes directories exist but may be empty)
 - macOS mirror of claude_in_chrome not yet migrated to .0agnostic/ convention (consistency issue)
 - agnostic-sync.sh validation reports 29 warnings on root 0AGNOSTIC.md (old format, needs comprehensive update — separate task)
 - Add CI/runtime wrapper to enforce `--dangerously-bypass-approvals-and-sandbox` for Codex runtime validation jobs
 
+<!-- section_id: "e87bee43-bafd-40d5-9bcf-b2100151f551" -->
 ## Handoff
 - **Ready for next stage**: yes for Codex projection feature set
 - **Next stage**: 08_criticism (review quality and completeness)

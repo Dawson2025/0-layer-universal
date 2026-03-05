@@ -7,11 +7,13 @@ resource_name: "data_science_operations"
 
 Utilities for aggregating assignment timing data either directly from Firestore or from local fixtures. The CLI lives in `assignment-timer/data_science_operations/data_science_operations.py`.
 
+<!-- section_id: "bde1315e-b794-4d11-bb95-7f8b5b55c6e7" -->
 ## Requirements
 - Python 3.11+
 - `firebase-admin` (only needed when hitting Firestore)
 - Optional: `matplotlib` and `numpy` for plotting (`pip install matplotlib numpy`)
 
+<!-- section_id: "17efa8a7-73cf-4c20-a2ff-dba5c1a9b8ef" -->
 ## CLI Usage
 ```bash
 python assignment-timer/data_science_operations/data_science_operations.py \
@@ -21,6 +23,7 @@ python assignment-timer/data_science_operations/data_science_operations.py \
   --plot reports/timings.png
 ```
 
+<!-- section_id: "9cb42632-bf47-4830-a9d7-dd297a0d0b89" -->
 ### Key Flags
 - `--project`: Firestore project to query (skipped if `--input-json` is provided).
 - `--group-by`: `assignmentId` (default) or `courseAssignment`.
@@ -31,6 +34,7 @@ python assignment-timer/data_science_operations/data_science_operations.py \
 
 The printed summary table displays mean/median/std-dev/min/max in `hh:mm:ss` for readability, while JSON exports retain raw seconds for downstream calculations.
 
+<!-- section_id: "2d0c6c99-e675-4d8d-9281-b174d092d762" -->
 ## Sample Data Quickstart
 1. Run the bundled smoke-test script:
    ```bash

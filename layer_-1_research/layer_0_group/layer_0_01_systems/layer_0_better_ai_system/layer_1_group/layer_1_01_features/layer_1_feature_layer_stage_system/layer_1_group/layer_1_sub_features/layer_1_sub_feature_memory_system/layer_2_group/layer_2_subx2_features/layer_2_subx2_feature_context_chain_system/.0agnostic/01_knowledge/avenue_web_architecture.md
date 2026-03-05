@@ -12,12 +12,14 @@ resource_name: "avenue_web_architecture"
 
 ---
 
+<!-- section_id: "181f9008-b119-4f82-b810-6ea0d602436a" -->
 ## Overview
 
 An **avenue** is an independent path through which context can reach an AI agent. The context chain system uses multiple redundant avenues to ensure critical context is never lost, even if one delivery mechanism fails.
 
 ---
 
+<!-- section_id: "2600f28d-c720-4cf9-a0ee-4f8113a3ba73" -->
 ## The 8 Primary Avenues
 
 | # | Avenue | Mechanism | Static/Dynamic |
@@ -31,6 +33,7 @@ An **avenue** is an independent path through which context can reach an AI agent
 | A7 | Episodic Memory (.0agnostic/episodic_memory/) | Session history and decisions | Dynamic |
 | A8 | Agnostic System (.0agnostic/) | On-demand rules, knowledge, scripts | Dynamic |
 
+<!-- section_id: "f96665b6-1352-4d08-bf63-84a611f5f82f" -->
 ### Avenue Independence
 
 Each avenue operates through a **different mechanism**:
@@ -50,8 +53,10 @@ This independence means a failure in one avenue (e.g., A5 JSON-LD parsing error)
 
 ---
 
+<!-- section_id: "f222f1c6-b4e1-43df-9947-e0fbab364427" -->
 ## Avenue Categories
 
+<!-- section_id: "1371045f-64ce-41b6-9e37-fb7fb960b0c0" -->
 ### By Timing
 
 | Category | Avenues | Token Cost |
@@ -60,6 +65,7 @@ This independence means a failure in one avenue (e.g., A5 JSON-LD parsing error)
 | **Semi-static** (loaded on directory entry) | A2 (Path rules) | When in directory |
 | **Dynamic** (loaded on-demand) | A3-A8 | Only when invoked |
 
+<!-- section_id: "06ddabdd-7040-4d28-8598-f7931e044ce1" -->
 ### By Ownership
 
 | Category | Avenues | Who controls |
@@ -69,6 +75,7 @@ This independence means a failure in one avenue (e.g., A5 JSON-LD parsing error)
 
 ---
 
+<!-- section_id: "2bf5bad2-6461-435d-9c7d-8923381faa57" -->
 ## Redundancy Matrix
 
 For the context_chain_system entity, critical context is delivered via:
@@ -82,12 +89,14 @@ For the context_chain_system entity, critical context is delivered via:
 | Session history | | | | | | | x | | 1 |
 | Rules | | x | | | | | | x | 2 |
 
+<!-- section_id: "16d7ae25-388e-4045-80c8-3735cf4de575" -->
 ### Minimum Redundancy Target
 
 The avenue redundancy principle requires **3+ avenues** for critical context. Items with fewer than 3 avenues need additional references added.
 
 ---
 
+<!-- section_id: "6bb56375-fd12-4b9a-a159-464d800fbb55" -->
 ## Avenue Health Metrics
 
 Test results (2026-02-17):
@@ -107,6 +116,7 @@ Test results (2026-02-17):
 
 ---
 
+<!-- section_id: "68544c7a-60bd-454c-a671-85c3a5c1e8a3" -->
 ## Related Documents
 
 - Context chain architecture: `./context_chain_architecture.md`

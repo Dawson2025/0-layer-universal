@@ -10,12 +10,14 @@ resource_name: "TERMIUS_HOST_GROUPS_AND_AUTOMATION"
 
 ---
 
+<!-- section_id: "016636dc-07db-4114-b938-9ea679e9c4fa" -->
 ## Overview
 
 This document covers the Termius host groups structure and automation attempts for managing SSH connections across multiple devices.
 
 ---
 
+<!-- section_id: "32411946-3e73-4619-a7c0-023e9b490e37" -->
 ## SSH Key Strategy
 
 **IMPORTANT: Each device uses its OWN SSH key for outbound connections.**
@@ -26,6 +28,7 @@ This means:
 - When connecting FROM Windows laptop → use Windows laptop's key
 - When connecting FROM VPS → use VPS's key
 
+<!-- section_id: "59c70a60-059d-4a78-be9e-ac98d2eeac74" -->
 ### Key Configuration Per Group
 
 | Group | Key to Use | Purpose |
@@ -35,6 +38,7 @@ This means:
 | for_laptop_windows | Windows laptop key | Windows connects OUT to other hosts |
 | for_vps | VPS key (/root/.ssh/id_ed25519) | VPS connects OUT to other hosts |
 
+<!-- section_id: "3ed6be92-777b-4ee5-9974-917203300665" -->
 ### Termius Keychain Setup
 
 Each device's private key needs to be imported into Termius Keychain:
@@ -44,6 +48,7 @@ Each device's private key needs to be imported into Termius Keychain:
 3. **Windows laptop key**: Import from Windows SSH directory
 4. **VPS key**: Import `/root/.ssh/id_ed25519`
 
+<!-- section_id: "03d2e040-e8e9-43eb-a5e8-c904d76978b0" -->
 ### Host Configuration
 
 When creating hosts in each group, assign the appropriate key:
@@ -51,6 +56,7 @@ When creating hosts in each group, assign the appropriate key:
 - Hosts in `for_iphone` → use the iPhone-generated key
 - etc.
 
+<!-- section_id: "0acbbbe6-bbfa-4857-8ba0-2814fcaa8bbe" -->
 ### Public Keys (authorized_keys)
 
 Each target machine's `~/.ssh/authorized_keys` must contain the PUBLIC keys of all devices that should be able to connect to it.
@@ -62,10 +68,12 @@ Current known public keys:
 
 ---
 
+<!-- section_id: "15d3a6de-82cf-4b1f-af5d-9fa7f3381930" -->
 ## Manual Steps Required
 
 Due to GUI automation limitations with multi-line content (private keys), the following must be done manually:
 
+<!-- section_id: "232fe8b2-4b64-4bb8-9e91-a43c7807e942" -->
 ### 1. Import Linux Laptop Key to Termius Keychain
 
 1. Open Termius → Click "Vaults" tab
@@ -82,6 +90,7 @@ Due to GUI automation limitations with multi-line content (private keys), the fo
    - Public key will auto-populate after valid private key is entered
 5. Save the key
 
+<!-- section_id: "d925bb00-9da8-4cdf-b099-be8bb0b05f25" -->
 ### 2. Assign Keys to Hosts
 
 For each host in `for_laptop_linux` group:
@@ -90,6 +99,7 @@ For each host in `for_laptop_linux` group:
 3. Select `linux-laptop-key` from dropdown
 4. Save
 
+<!-- section_id: "2237cb74-21e1-4636-a48a-0d879700add4" -->
 ### 3. Add Linux Laptop Host to Groups
 
 The Linux laptop (Tailscale IP: 100.73.84.89) needs to be added to:
@@ -105,6 +115,7 @@ For each:
    - Key: Select appropriate key (VPS key for for_vps, iPhone key for for_iphone)
 2. Save
 
+<!-- section_id: "262126ff-d2b5-4ce4-bab5-a3fb614ae5a8" -->
 ### 4. Verify authorized_keys on Linux Laptop
 
 Ensure `/home/dawson/.ssh/authorized_keys` contains public keys from:
@@ -113,13 +124,16 @@ Ensure `/home/dawson/.ssh/authorized_keys` contains public keys from:
 
 ---
 
+<!-- section_id: "b903d916-1ff3-48bd-9216-7dbbfc3518c7" -->
 ## Host Groups Strategy
 
+<!-- section_id: "10897bbe-1421-4cdb-98f9-75256e3affb2" -->
 ### Naming Convention
 - All lowercase
 - Underscores for spaces
 - Format: `for_<starting_device>` (group) and `for_<starting_device>_<target>` (host)
 
+<!-- section_id: "8d758d35-0adc-4a72-9b18-cf298883b7d7" -->
 ### Groups Structure
 
 | Group Name | Purpose | Hosts |
@@ -129,6 +143,7 @@ Ensure `/home/dawson/.ssh/authorized_keys` contains public keys from:
 | `for_laptop_windows` | Hosts to connect to from Windows laptop | vps, linux |
 | `for_vps` | Hosts to connect to from VPS | linux, windows (optional) |
 
+<!-- section_id: "ea1c068e-0bae-4771-bf8e-07cf946f4568" -->
 ### Host Naming Examples
 
 | Host Label | In Group | Target |
@@ -142,24 +157,29 @@ Ensure `/home/dawson/.ssh/authorized_keys` contains public keys from:
 
 ---
 
+<!-- section_id: "125800d8-f066-4f56-9d32-be59a8157637" -->
 ## Connection Details
 
+<!-- section_id: "5afe93fe-03a1-498c-b8ae-8991f42eec87" -->
 ### VPS (Hetzner)
 - **Public IP**: 46.224.184.10
 - **Tailscale IP**: 100.93.148.5
 - **User**: root
 - **Auth**: SSH key
 
+<!-- section_id: "aa347755-b67c-4010-a504-8e61fd2d43c3" -->
 ### Linux Laptop (Ubuntu)
 - **Tailscale IP**: 100.73.84.89
 - **Local IP**: varies (check with `ip addr`)
 - **User**: dawson
 - **Auth**: SSH key
 
+<!-- section_id: "42a263fd-b431-43ff-9d2f-35381a62582d" -->
 ### iPhone
 - **Tailscale IP**: 100.75.210.27
 - **Role**: Client only (no incoming SSH)
 
+<!-- section_id: "daec7cd1-98d6-47ec-b7bd-416088eab8c2" -->
 ### Windows (Optional)
 - **Local IP**: varies
 - **User**: dawson
@@ -167,27 +187,33 @@ Ensure `/home/dawson/.ssh/authorized_keys` contains public keys from:
 
 ---
 
+<!-- section_id: "966aae18-e5d5-44b5-9a08-56a49f285d5a" -->
 ## What Works
 
+<!-- section_id: "2004243d-4ccc-4f8f-a78c-e906782d186a" -->
 ### Manual Termius App Configuration
 - Creating hosts manually in Termius app
 - Creating groups manually
 - Termius account sync across devices
 - SSH key import/export
 
+<!-- section_id: "cd757208-7cab-42ec-9c5a-3a5693344435" -->
 ### Account Sync
 - Sign in with same Termius account on all devices
 - Hosts and groups sync automatically
 - Works on Windows, Linux, iPhone, Android
 
+<!-- section_id: "2e9d3c17-a462-409e-ba88-620bfb0b5084" -->
 ### SSH Config Integration
 - Termius can import from `~/.ssh/config`
 - Keys stored in `~/.ssh/` are accessible
 
 ---
 
+<!-- section_id: "5ad0338b-02fc-4b2f-ba57-69eab196ae39" -->
 ## What Doesn't Work
 
+<!-- section_id: "92147e5b-351e-4730-ba5a-f38d3e4e4752" -->
 ### Termius CLI Automation
 **Problem**: Termius CLI is archived and broken
 
@@ -214,13 +240,16 @@ Error: Unsupported cipher: chacha20-poly1305
 
 **Conclusion**: Use GUI only. Termius CLI is dead.
 
+<!-- section_id: "8922ff73-f0d9-4e55-8466-e0ef86f5b74b" -->
 ### Scripted Host Creation
 Cannot automate via scripts due to CLI limitations above.
 
 ---
 
+<!-- section_id: "d5b0d559-d1a4-4910-a200-04b71e1cc1d5" -->
 ## Termius Account Credentials
 
+<!-- section_id: "e1b8ec93-c4e0-4b80-879b-598740c25b76" -->
 ### Storage Location
 
 Termius account credentials are stored in the `pass` password manager:
@@ -230,6 +259,7 @@ pass termius/email     # Termius account email
 pass termius/password  # Termius account password
 ```
 
+<!-- section_id: "46e5d705-4542-4fca-bcf9-8277de4e9c28" -->
 ### Termius Encryption Password
 
 When you enable Termius Vault sync, you may set an encryption password. This is:
@@ -244,15 +274,18 @@ pass insert termius/encryption_password
 
 ---
 
+<!-- section_id: "31904d37-bafc-4229-9e48-9c877968ca93" -->
 ## Pass Password Manager Setup
 
 As a workaround for storing credentials securely on Linux:
 
+<!-- section_id: "87b47299-657c-461e-b31d-83e08638bedc" -->
 ### Installation
 ```bash
 sudo apt install pass
 ```
 
+<!-- section_id: "f3d71a82-6c1d-49ef-82c5-32c110aa210c" -->
 ### GPG Key Setup
 ```bash
 # Generate GPG key
@@ -263,6 +296,7 @@ gpg --full-generate-key
 pass init "YOUR_GPG_KEY_ID"
 ```
 
+<!-- section_id: "3f46fa81-092c-4108-9800-5de79b3cfc78" -->
 ### Storing Credentials
 ```bash
 # Store Termius password
@@ -272,6 +306,7 @@ pass insert termius/password
 pass insert ssh/vps_key_passphrase
 ```
 
+<!-- section_id: "aeee5bdb-aa2b-4f4d-8062-3f838835259e" -->
 ### Retrieving Credentials
 ```bash
 # Get password (copies to clipboard for 45 seconds)
@@ -283,6 +318,7 @@ pass termius/password
 
 ---
 
+<!-- section_id: "1e6332a6-e9d7-482f-80b0-bd4f5d2b2bf9" -->
 ## Current Implementation Status
 
 | Task | Status | Notes |
@@ -305,6 +341,7 @@ pass termius/password
 | xdotool GUI automation | ✅ Working | Use --window flag to target specific windows |
 | Pass password manager | ✅ Done | On Linux laptop |
 
+<!-- section_id: "203e0be9-b196-471c-89bd-b25db9467846" -->
 ### Next Steps (Priority Order)
 
 1. **Import Linux laptop SSH key into Termius Keychain**
@@ -328,6 +365,7 @@ pass termius/password
 
 ---
 
+<!-- section_id: "d5b44d22-a5a8-4c21-b1f8-4724eeb2f78d" -->
 ## Recommended Workflow
 
 Since CLI automation doesn't work:
@@ -336,6 +374,7 @@ Since CLI automation doesn't work:
 2. **Sign in to Termius account** on all devices
 3. **Hosts sync automatically** via Termius cloud
 
+<!-- section_id: "7313c70f-f3ad-4166-aaf5-db56bd1dd118" -->
 ### Manual Setup Steps
 
 1. Open Termius app
@@ -349,6 +388,7 @@ Since CLI automation doesn't work:
 
 ---
 
+<!-- section_id: "734b157e-1a59-4392-b20e-0467fe69fec9" -->
 ## Files Related to This Setup
 
 | File | Location | Purpose |
@@ -361,10 +401,12 @@ Since CLI automation doesn't work:
 
 ---
 
+<!-- section_id: "5fecf768-3496-425e-97ad-1de1cd66a4f5" -->
 ## xdotool GUI Automation (Working Method)
 
 Since the Termius CLI is broken, you can automate the GUI using `xdotool` on X11.
 
+<!-- section_id: "91b2a18f-ee70-467d-afec-20ae7e9e35ee" -->
 ### Key Technique: Target Specific Windows
 
 ```bash
@@ -384,6 +426,7 @@ xdotool type --window $TERMIUS_WIN "text to type"
 xdotool mousemove 176 88 && xdotool click 1
 ```
 
+<!-- section_id: "8b9ba3e3-22bf-44fc-a1f8-bb8cfc7ddd00" -->
 ### Coordinates and Visual Information
 
 **Window identification:**
@@ -403,6 +446,7 @@ xdotool search --name "Termius" | head -1
 - Host entries are clickable to open connection
 - Right-click for context menu options
 
+<!-- section_id: "e7d19993-3b8f-4a54-9c7d-c7b108740aac" -->
 ### Creating Groups via Dropdown
 
 To create a new host group:
@@ -434,6 +478,7 @@ xdotool mousemove --window $TERMIUS_WIN 505 340
 xdotool click 1
 ```
 
+<!-- section_id: "46c81b2c-7faf-4269-833e-46c492cdf4ba" -->
 ### Termius UI Navigation
 
 **To access the NEW HOST dropdown menu:**
@@ -483,6 +528,7 @@ xdotool click 1
 - Click dropdown arrow → Import
 - Select SSH config file
 
+<!-- section_id: "823cfa70-40d4-4950-ac13-727ce8275051" -->
 ### Useful Tools
 
 | Tool | Purpose | Install |
@@ -491,6 +537,7 @@ xdotool click 1
 | `wmctrl` | Window management | `apt install wmctrl` |
 | `scrot` | Screenshots | `apt install scrot` |
 
+<!-- section_id: "1a5e8d88-1903-4b6f-bdc2-a9a3b9c95e19" -->
 ### Example: List Windows
 ```bash
 wmctrl -l  # List all windows with IDs
@@ -499,10 +546,12 @@ xdotool search --name "Termius"  # Get Termius window ID
 
 ---
 
+<!-- section_id: "3475c54e-b971-445f-9e4d-0d9dbc1b4817" -->
 ## xdotool Automation Challenges
 
 This section documents learnings from automation attempts with Termius using xdotool and wmctrl.
 
+<!-- section_id: "05dd3029-1373-4ef4-a116-de928a3ab466" -->
 ### What Works
 
 1. **Window management**: `wmctrl` works well for positioning and focusing Termius window
@@ -524,6 +573,7 @@ This section documents learnings from automation attempts with Termius using xdo
    - Click on host to open Host Details
    - Click Parent Group field → Select group from dropdown
 
+<!-- section_id: "ab4f1a0d-f1ed-4d73-ad0e-7ef45b560b2d" -->
 ### What Doesn't Work Well
 
 1. **KEY button in Keychain**: Automated clicks don't register reliably
@@ -542,6 +592,7 @@ This section documents learnings from automation attempts with Termius using xdo
 4. **xdotool type**: Unreliable in Termius
    - Clipboard paste (xclip + ctrl+v) works better but still has issues
 
+<!-- section_id: "a305975d-0595-4505-8234-d7259c6081b1" -->
 ### Recommended Manual Steps
 
 For importing SSH keys, manual interaction is required (official Termius docs recommend drag-and-drop):
@@ -555,6 +606,7 @@ For importing SSH keys, manual interaction is required (official Termius docs re
 - Text input gets misdirected to wrong fields
 - No reliable programmatic API exists (CLI is dead)
 
+<!-- section_id: "cfe02711-132f-470e-ac5c-d5506b33d888" -->
 ### Research Findings (January 2026)
 
 **Perplexity search results:** No guides or documentation exist for automating Termius with xdotool.
@@ -579,6 +631,7 @@ For importing SSH keys, manual interaction is required (official Termius docs re
 
 **Conclusion:** Manual setup is the only reliable method for Termius on Linux
 
+<!-- section_id: "c05b94f7-b02a-4d6a-bf64-a42687a57eb0" -->
 ### Better Alternative: Use Windows + AutoHotkey
 
 If automated Termius setup is required, **use Windows instead of Linux**:
@@ -595,6 +648,7 @@ If automated Termius setup is required, **use Windows instead of Linux**:
 - `0_layer_universal/-1_research/-1.01_things_researched/multi_os_system/STATUS.md`
 - Section: "Windows GUI Automation (AutoHotkey)"
 
+<!-- section_id: "f408df2b-4265-492e-bb32-516faa99697d" -->
 ### Window Coordinates Reference
 
 When Termius window is positioned at 600,100:
@@ -607,6 +661,7 @@ When Termius window is positioned at 600,100:
 | CERTIFICATE button | ~760 | ~155 | Next button to the right |
 | First key entry in list | - | ~190 | Below the buttons |
 
+<!-- section_id: "9bb8fd03-2ba9-45f7-bfcc-48e5dc7387e6" -->
 ### VPS Chat History Location
 
 The VPS chat history with Termius setup information has been copied to:
@@ -614,6 +669,7 @@ The VPS chat history with Termius setup information has been copied to:
 
 ---
 
+<!-- section_id: "7caf4f40-cc36-4faf-b048-888826ab172d" -->
 ## Future Improvements
 
 1. **Wait for Termius CLI fix**: Future versions may support newer encryption
@@ -623,8 +679,10 @@ The VPS chat history with Termius setup information has been copied to:
 
 ---
 
+<!-- section_id: "54ed947d-1eb8-4d93-a111-57cecc63d4c6" -->
 ## Quick Reference
 
+<!-- section_id: "5b764af8-5d9e-40c6-9437-5dfa985b359d" -->
 ### Tailscale IPs (use these for cross-network access)
 ```
 VPS:     100.93.148.5
@@ -632,6 +690,7 @@ Linux:   100.73.84.89
 iPhone:  100.75.210.27
 ```
 
+<!-- section_id: "3604f8d9-2844-4b19-bab4-8f0362a94a62" -->
 ### SSH Commands (without Termius)
 ```bash
 # To VPS
@@ -641,6 +700,7 @@ ssh root@100.93.148.5
 ssh dawson@100.73.84.89
 ```
 
+<!-- section_id: "4be8976c-edb1-4e54-9be1-f6c9e6053d39" -->
 ### Check Connectivity
 ```bash
 # On any Tailscale device

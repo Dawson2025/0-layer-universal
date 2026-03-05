@@ -11,6 +11,7 @@ resource_name: "updated_understanding_system_scale"
 
 ---
 
+<!-- section_id: "18df2198-ff35-4361-bee8-53cfcf284405" -->
 ## Previous (Wrong) Understanding
 
 I thought:
@@ -25,6 +26,7 @@ Just 3 layers, relatively flat.
 
 ---
 
+<!-- section_id: "cc23e83c-0c7d-4a37-a967-66df921a2bb4" -->
 ## Actual Structure
 
 ```
@@ -53,8 +55,10 @@ Just 3 layers, relatively flat.
 
 ---
 
+<!-- section_id: "9bc8441a-c440-4209-98a7-019b1ed170cd" -->
 ## Scale Implications
 
+<!-- section_id: "1354238e-d7be-4936-abcd-754a0a7b9614" -->
 ### This IS Multi-Agent at Scale
 
 | Aspect | Previous Assumption | Reality |
@@ -63,6 +67,7 @@ Just 3 layers, relatively flat.
 | Depth | 2-3 levels | **5+ levels deep** |
 | Branching | Low | High (projects × features × components) |
 
+<!-- section_id: "bbd9fa15-257c-4461-8e7b-3fb629b63645" -->
 ### SHIMI Mechanisms Become Relevant
 
 At this scale:
@@ -74,6 +79,7 @@ At this scale:
 | **Bloom filters** | Efficient "what changed?" across massive tree |
 | **CRDTs** | If parallel work happens at different levels |
 
+<!-- section_id: "ce902a25-146a-4e9f-8f93-f31c1be2dffd" -->
 ### Manual Traversal Breaks Down
 
 With 3 layers: "Read layer_0, then layer_1/project_X" - manageable.
@@ -82,12 +88,15 @@ With 5930 nodes: Need automated navigation or you'll never find things.
 
 ---
 
+<!-- section_id: "ec57e23e-6336-4bf6-a9b6-ef09f6c273b0" -->
 ## Revised Assessment
 
+<!-- section_id: "536ba7af-e554-4625-a151-4d5ecbd8ae60" -->
 ### Do You Need Automated Traversal?
 
 **YES.** At 5930+ nodes, manual "read this file, then that file" doesn't scale.
 
+<!-- section_id: "74362b43-3870-4246-9e53-655b77cab19c" -->
 ### Do You Need SHIMI-Style Sync?
 
 **MAYBE.** Depends on:
@@ -95,6 +104,7 @@ With 5930 nodes: Need automated navigation or you'll never find things.
 - How often do changes in layer_4 need to propagate to layer_2?
 - Is git sufficient or do you need real-time sync?
 
+<!-- section_id: "f62a7ecc-2086-4046-93a6-4ac6f4e12194" -->
 ### What's The Right Approach?
 
 1. **Immediate: Index files at key levels**
@@ -111,6 +121,7 @@ With 5930 nodes: Need automated navigation or you'll never find things.
 
 ---
 
+<!-- section_id: "4a365872-dc8d-49e6-a14f-7ae16249a3b4" -->
 ## Key Insight
 
 Your system is **actually enterprise-scale** in complexity. The patterns I dismissed as "overkill" (SHIMI, automated traversal, hierarchical memory) are **exactly what you need** at 5930+ nodes.
@@ -119,6 +130,7 @@ This isn't a "maybe future" thing. With this scale, automated discovery and hier
 
 ---
 
+<!-- section_id: "b9514f8e-c915-41c8-853b-e78f1ca305d3" -->
 ## Recommendation Update
 
 | Previous Rec | Updated Rec |
@@ -130,6 +142,7 @@ This isn't a "maybe future" thing. With this scale, automated discovery and hier
 
 ---
 
+<!-- section_id: "789ec5d5-6311-405a-a889-b0f978f6c275" -->
 ## Next Steps
 
 1. **Map the hierarchy** - Understand branching structure

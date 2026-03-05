@@ -9,6 +9,7 @@ resource_name: "context_scope_boundaries"
 
 ---
 
+<!-- section_id: "a3cb3826-1ac2-4568-8bde-6c1327081b33" -->
 ## Core Concept: Scope
 
 Context has **scope** - it applies to certain locations and not others.
@@ -21,8 +22,10 @@ layer_2 context → applies to that feature only
 
 ---
 
+<!-- section_id: "8b2b4bf4-4532-4541-9a22-38b338c6bf7f" -->
 ## Scope Inheritance
 
+<!-- section_id: "19c0321c-eaf1-43d2-9f9b-d99019dfc93b" -->
 ### Downward Inheritance
 
 Context flows DOWN the hierarchy:
@@ -37,6 +40,7 @@ layer_0 (applies to all)
     └─── layer_1/project_b/ (inherits layer_0, NOT project_a)
 ```
 
+<!-- section_id: "66370eb2-9d9c-46eb-bfb6-042a2b0ff050" -->
 ### No Sibling Inheritance
 
 Context does NOT flow between siblings:
@@ -54,8 +58,10 @@ project_a's context does NOT apply to project_b.
 
 ---
 
+<!-- section_id: "5814410f-da31-4d88-b72c-903a872225b1" -->
 ## Scope by Layer
 
+<!-- section_id: "6a26b6da-0297-4b44-8cbe-c9bd666e3917" -->
 ### layer_0 (Universal Scope)
 
 - **Applies to**: Everything in the system
@@ -69,6 +75,7 @@ layer_0/
 └── sub_layer_0_02_knowledge/   ← Available everywhere
 ```
 
+<!-- section_id: "b8d43423-42a3-4828-a5c3-145ec8b380fa" -->
 ### layer_1 (Project Scope)
 
 - **Applies to**: That project and its children
@@ -85,6 +92,7 @@ layer_1/
     └── feature_z/              ← Can read project_b context, NOT project_a
 ```
 
+<!-- section_id: "c8613fdf-5d84-4a95-9ded-99bc04726568" -->
 ### layer_-1 (Research Scope)
 
 - **Applies to**: Research projects only
@@ -99,8 +107,10 @@ layer_-1_research/
 
 ---
 
+<!-- section_id: "25eda1d1-dbbb-4017-b2ab-5e0bc40ff458" -->
 ## Scope Rules
 
+<!-- section_id: "9b28dc6b-ea4b-474d-853e-da952e33ac6a" -->
 ### Rule 1: Parent Context Applies to Children
 
 If you're in `layer_1/project_a/feature_x/`, these contexts apply:
@@ -109,6 +119,7 @@ If you're in `layer_1/project_a/feature_x/`, these contexts apply:
 2. layer_1/project_a context (project)
 3. layer_1/project_a/feature_x context (feature)
 
+<!-- section_id: "b1d365d7-3815-4951-a1af-229e9284ffa2" -->
 ### Rule 2: Sibling Context is Invisible
 
 If you're in `layer_1/project_a/`, you CANNOT see:
@@ -117,6 +128,7 @@ If you're in `layer_1/project_a/`, you CANNOT see:
 - layer_1/project_c/ context
 - Any other sibling's context
 
+<!-- section_id: "e309209a-1e91-4461-b8dc-14d8ab90cd42" -->
 ### Rule 3: Child Context is Invisible to Parent
 
 If you're in `layer_1/project_a/`, you cannot see:
@@ -126,6 +138,7 @@ If you're in `layer_1/project_a/`, you cannot see:
 
 (Parent doesn't know about child's specific context)
 
+<!-- section_id: "9f4d3f30-01bf-4eb5-a04d-cbcf050285d5" -->
 ### Rule 4: Deeper Nesting = More Specific Scope
 
 ```
@@ -137,6 +150,7 @@ layer_1/project/feature/sub      ← Most specific (one sub-feature)
 
 ---
 
+<!-- section_id: "aaf14514-dc60-4386-a095-54f969c554c3" -->
 ## Context Visibility Matrix
 
 | If you're in... | You can see context from... |
@@ -149,6 +163,7 @@ layer_1/project/feature/sub      ← Most specific (one sub-feature)
 
 ---
 
+<!-- section_id: "8abe1020-97e2-4183-9fac-bc5d1b311c42" -->
 ## Scope Boundaries and Stages
 
 Stages (01-11) are workflow phases, not scope boundaries.
@@ -165,6 +180,7 @@ layer_1/project_a/
 
 ---
 
+<!-- section_id: "eddc85f9-963b-42a5-9a72-3ea744ca035d" -->
 ## Sub_layer Scope
 
 Sub_layers are content types, and their scope matches their parent:
@@ -176,6 +192,7 @@ layer_1/project_a/sub_layer_1_02_knowledge/  ← Project scope (from layer_1/pro
 
 ---
 
+<!-- section_id: "b9cf1f20-fd2d-4ec5-9187-ca179f812e1c" -->
 ## Determining Current Scope
 
 To determine what context applies:
@@ -199,8 +216,10 @@ Scope includes:
 
 ---
 
+<!-- section_id: "d9dcafe4-531c-4a7b-88de-d381e2be6439" -->
 ## Crossing Scope Boundaries
 
+<!-- section_id: "0f443f8d-fcd1-4abd-8bd5-02ffd5b933c3" -->
 ### When Moving Between Projects
 
 If you switch from `project_a` to `project_b`:
@@ -209,6 +228,7 @@ If you switch from `project_a` to `project_b`:
 2. Keep layer_0 context (still applies)
 3. Load project_b specific context
 
+<!-- section_id: "70331570-fbdd-4b1c-8bbc-c4b2f81a414d" -->
 ### When Moving Up Layers
 
 If you move from `layer_1/project_a` to `layer_0`:
@@ -219,6 +239,7 @@ If you move from `layer_1/project_a` to `layer_0`:
 
 ---
 
+<!-- section_id: "f9d760dc-1a5d-4143-ab15-c9c247053365" -->
 ## Related Documentation
 
 - `context_priority_rules.md` - How overrides work

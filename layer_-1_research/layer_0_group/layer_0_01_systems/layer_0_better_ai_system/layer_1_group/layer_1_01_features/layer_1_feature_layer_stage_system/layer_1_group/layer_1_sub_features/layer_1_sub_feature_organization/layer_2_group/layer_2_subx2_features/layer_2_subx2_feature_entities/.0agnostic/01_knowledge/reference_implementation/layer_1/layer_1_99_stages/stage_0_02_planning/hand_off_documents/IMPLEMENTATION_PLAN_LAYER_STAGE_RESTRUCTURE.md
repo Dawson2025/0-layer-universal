@@ -11,6 +11,7 @@ resource_name: "IMPLEMENTATION_PLAN_LAYER_STAGE_RESTRUCTURE"
 
 ---
 
+<!-- section_id: "12687a8d-e323-455d-92bc-f836f5c3cded" -->
 ## Overview
 
 ```
@@ -34,8 +35,10 @@ resource_name: "IMPLEMENTATION_PLAN_LAYER_STAGE_RESTRUCTURE"
 
 ---
 
+<!-- section_id: "0b82604f-891b-4348-854e-6557e1b252d2" -->
 ## Target Architecture Summary
 
+<!-- section_id: "01538fc3-677a-4391-aa21-b481798d610b" -->
 ### Root Structure (Everything Nested Under Layer 0)
 
 ```
@@ -76,6 +79,7 @@ resource_name: "IMPLEMENTATION_PLAN_LAYER_STAGE_RESTRUCTURE"
     └── layer_1_components/
 ```
 
+<!-- section_id: "5c36b17f-0dbb-40e6-b10c-60cb766be2f2" -->
 ### AI Manager Hierarchy (Nested Specificity)
 
 ```
@@ -113,8 +117,10 @@ layer_N_00_ai_manager_system/
 
 ---
 
+<!-- section_id: "7e9103f6-fabf-44e6-8bb9-dfa9c0851c24" -->
 ## PHASE 1: Preparation & Backup
 
+<!-- section_id: "2153564c-16e4-4199-922d-ca0b1cc2ff01" -->
 ### 1.1 Create Backup
 ```bash
 # Backup current state
@@ -122,12 +128,14 @@ cd /home/dawson/dawson-workspace/code
 cp -r 0_layer_universal 0_layer_universal_backup_$(date +%Y%m%d_%H%M%S)
 ```
 
+<!-- section_id: "752c689d-e7f2-4225-b5c8-ce51234cb6b7" -->
 ### 1.2 Document Current State
 ```bash
 # Generate current structure snapshot
 find 0_layer_universal -type d > current_structure_$(date +%Y%m%d).txt
 ```
 
+<!-- section_id: "ecbbcb7a-d147-4c0b-9e0f-4d7e2d05ca2d" -->
 ### 1.3 Commit Current State
 ```bash
 cd 0_layer_universal
@@ -138,8 +146,10 @@ git push
 
 ---
 
+<!-- section_id: "7439d6c6-8e71-4a5f-a531-ce651c1a9ba2" -->
 ## PHASE 2: Rename Root Repository
 
+<!-- section_id: "e68663c5-2deb-40f6-97d7-b9fd6c0d1bbb" -->
 ### 2.1 Rename Directory
 ```
 BEFORE: /home/dawson/dawson-workspace/code/0_layer_universal/
@@ -151,6 +161,7 @@ cd /home/dawson/dawson-workspace/code
 mv 0_layer_universal 0_layer_universal
 ```
 
+<!-- section_id: "e276423f-7f2a-4842-8106-96c972e6bced" -->
 ### 2.2 Flatten 0_context
 ```
 BEFORE: 0_layer_universal/0_context/
@@ -165,8 +176,10 @@ rmdir 0_context
 
 ---
 
+<!-- section_id: "2ca57a91-1562-4369-b633-e1efdfbeff51" -->
 ## PHASE 3: Create Tool-Specific Files at Root
 
+<!-- section_id: "fbb3658e-7778-4689-b576-b857357447f3" -->
 ### 3.1 Directory Structure
 ```
 0_layer_universal/
@@ -197,6 +210,7 @@ rmdir 0_context
 └── GEMINI.md                              # CREATE (Gemini CLI)
 ```
 
+<!-- section_id: "99dcb7c1-6cb4-430b-8957-1b1c6a103f4a" -->
 ### 3.2 CLAUDE.md Content Template
 ```markdown
 # 0_layer_universal
@@ -226,6 +240,7 @@ and components are nested under this structure.
 - `layer_1/` - Projects, features, components nested here
 ```
 
+<!-- section_id: "6269fee1-3fcc-49da-b4e1-5c4d8ca3a47c" -->
 ### 3.3 Files to Create
 
 | File | Purpose |
@@ -242,13 +257,16 @@ and components are nested under this structure.
 
 ---
 
+<!-- section_id: "023a335d-9c68-4846-af7e-971d3a8a1049" -->
 ## PHASE 4: Create layer_0_group/ Structure
 
+<!-- section_id: "6e1e8a76-7998-498f-a067-f7ac4d31103f" -->
 ### 4.1 Create Grouping Directory
 ```bash
 mkdir -p 0_layer_universal/layer_0
 ```
 
+<!-- section_id: "1edfd63f-3b99-4888-b96d-5805ac772707" -->
 ### 4.2 Move & Rename Universal Internals
 ```
 MOVE & RENAME:
@@ -258,6 +276,7 @@ layer_0_group/0.02_sub_layers/            → layer_0_group/layer_0_02_sub_layer
 layer_0_group/0.99_stages/                → layer_0_group/layer_0_99_stages/
 ```
 
+<!-- section_id: "32097fc5-1990-443f-a4e6-859ca6e54a3f" -->
 ### 4.3 Create Agnostic/Specific Structure in AI Manager
 ```
 layer_0_group/layer_0_00_ai_manager_system/
@@ -297,6 +316,7 @@ layer_0_group/layer_0_00_ai_manager_system/
             └── environment/...
 ```
 
+<!-- section_id: "c3e7d48f-b857-480e-b0db-6793328780ab" -->
 ### 4.4 Rename Sub-layers
 ```
 RENAME:
@@ -305,6 +325,7 @@ sub_layer_0_02_* → sub_layer_0_02_*
 ...etc
 ```
 
+<!-- section_id: "5d59e2eb-bba9-43e9-a638-b11b44e9ff97" -->
 ### 4.5 Rename Stages
 ```
 RENAME:
@@ -313,6 +334,7 @@ stage_0_02_* → stage_0_02_*
 ...etc
 ```
 
+<!-- section_id: "27cae22c-4969-4f95-877f-7aef19de8ba1" -->
 ### 4.6 Final layer_0_group/ Structure
 ```
 layer_0_group/
@@ -355,8 +377,10 @@ layer_0_group/
 
 ---
 
+<!-- section_id: "61d52a5c-56b5-49d9-8ae6-1a815b747576" -->
 ## PHASE 5: Create layer_1/ Structure
 
+<!-- section_id: "21499c80-b609-486a-9a53-66563aa63ba8" -->
 ### 5.1 Create Grouping Directory
 ```bash
 mkdir -p 0_layer_universal/layer_1/layer_1_projects
@@ -364,6 +388,7 @@ mkdir -p 0_layer_universal/layer_1/layer_1_features
 mkdir -p 0_layer_universal/layer_1/layer_1_components
 ```
 
+<!-- section_id: "d1d85e30-7f76-4be2-8ec3-f8955c682a76" -->
 ### 5.2 Move Existing Content
 ```
 MOVE:
@@ -372,6 +397,7 @@ layer_2_features/    → (will be restructured in Phase 6)
 layer_3_components/  → (will be restructured in Phase 6)
 ```
 
+<!-- section_id: "eeae6163-d0df-462f-970c-96ab9cf5af39" -->
 ### 5.3 Final layer_1/ Structure
 ```
 layer_1/
@@ -388,13 +414,16 @@ layer_1/
 
 ---
 
+<!-- section_id: "5658db31-2d2d-4bd2-bed6-ec60e47d7618" -->
 ## PHASE 6: Create layer_1_feature_layer_stage_system
 
+<!-- section_id: "da033000-381c-4588-9ba6-9cb7dcffcc0f" -->
 ### 6.1 Create Feature Directory
 ```bash
 mkdir -p layer_1/layer_1_features/layer_1_feature_layer_stage_system
 ```
 
+<!-- section_id: "dae824ee-6530-4171-aafb-3d451569036f" -->
 ### 6.2 Create Tool-Specific at Feature Root
 ```
 layer_1_feature_layer_stage_system/
@@ -405,6 +434,7 @@ layer_1_feature_layer_stage_system/
 │   └── skills/
 ```
 
+<!-- section_id: "b241c13f-7342-48ed-9828-459e65e169e6" -->
 ### 6.3 Create layer_1/ (Feature's Internals)
 ```
 layer_1_feature_layer_stage_system/layer_1/
@@ -458,6 +488,7 @@ layer_1_feature_layer_stage_system/layer_1/
     └── status_1.json
 ```
 
+<!-- section_id: "53279d10-8e26-483d-8de8-be0c218bc962" -->
 ### 6.4 Create layer_2/ (Feature's Children)
 ```
 layer_1_feature_layer_stage_system/layer_2/
@@ -468,8 +499,10 @@ layer_1_feature_layer_stage_system/layer_2/
 
 ---
 
+<!-- section_id: "700d6179-17a0-4e7c-be53-0538c29833a2" -->
 ## PHASE 7: Create layer_2 Features (Within Layer-Stage System)
 
+<!-- section_id: "2cdb544e-0120-4299-b7f4-a5be03ab7f52" -->
 ### 7.1 Features to Create
 ```
 layer_1_feature_layer_stage_system/layer_2/layer_2_features/
@@ -573,8 +606,10 @@ layer_1_feature_layer_stage_system/layer_2/layer_2_features/
 
 ---
 
+<!-- section_id: "0297dc2f-c424-42dd-ae3d-0d4942c5ea3b" -->
 ## PHASE 8: Apply Naming Conventions Throughout
 
+<!-- section_id: "433acd9d-b4a6-4bc1-aae1-29545464e2a9" -->
 ### 8.1 Rename All Directories
 ```
 PATTERN CHANGES:
@@ -592,11 +627,13 @@ stage_0_02_* → stage_0_02_*
 (Apply same pattern at all layer depths)
 ```
 
+<!-- section_id: "4919fd24-57f8-4ae5-bafe-6591a4fb9828" -->
 ### 8.2 Rename Status Files
 ```
 status.json → status_N.json (where N = layer number)
 ```
 
+<!-- section_id: "57f3d588-41c3-4143-97a5-974f31ee0957" -->
 ### 8.3 Update All Internal References
 - Update all markdown files that reference old paths
 - Update all scripts that use old naming
@@ -604,8 +641,10 @@ status.json → status_N.json (where N = layer number)
 
 ---
 
+<!-- section_id: "fde5ced2-5e16-422a-bea4-52a312a7186b" -->
 ## PHASE 9: Create Specific/ Nested Structure Templates
 
+<!-- section_id: "865ac0b4-4770-48b3-8930-0fd9248bb87c" -->
 ### 9.1 Create Template Script
 ```bash
 #!/bin/bash
@@ -651,8 +690,10 @@ create_os_structure() {
 
 ---
 
+<!-- section_id: "a2903537-5694-44e0-a6aa-ccff271226ba" -->
 ## PHASE 10: Add Stage-Level Tool Configs
 
+<!-- section_id: "bdae26bf-e374-4c93-9027-aea0ab1d42ee" -->
 ### 10.1 For Each Stage, Create:
 ```
 stage_N_XX_<name>/
@@ -668,6 +709,7 @@ stage_N_XX_<name>/
 └── work/
 ```
 
+<!-- section_id: "029a6223-eba0-4787-9076-c1ae61f1a84b" -->
 ### 10.2 Stage-Specific CLAUDE.md Template
 ```markdown
 # Stage N.XX: <Stage Name>
@@ -691,8 +733,10 @@ stage_N_XX_<name>/
 
 ---
 
+<!-- section_id: "fcc11613-7061-4121-ade7-21d37f658f87" -->
 ## PHASE 11: Update Documentation & References
 
+<!-- section_id: "39f37d9c-13ba-4767-b675-b687cf396254" -->
 ### 11.1 Files to Update
 - `MASTER_DOCUMENTATION_INDEX.md`
 - `SYSTEM_OVERVIEW.md`
@@ -700,11 +744,13 @@ stage_N_XX_<name>/
 - `USAGE_GUIDE.md`
 - All framework docs in `sub_layer_1_05_framework_docs/`
 
+<!-- section_id: "eccea32d-75fa-4684-95c4-0b25fa34361d" -->
 ### 11.2 Update verify_paths.sh
 ```bash
 # Update all path references to new structure
 ```
 
+<!-- section_id: "38f69453-cac3-454e-acad-dd9b40f39101" -->
 ### 11.3 Create Migration Guide
 ```markdown
 # Migration Guide: Old → New Structure
@@ -720,14 +766,17 @@ stage_N_XX_<name>/
 
 ---
 
+<!-- section_id: "1df46ec3-7894-4773-ba7e-97efe5341740" -->
 ## PHASE 12: Verification & Testing
 
+<!-- section_id: "144bc969-af41-4d0a-8d54-233080c505e2" -->
 ### 12.1 Run Verification Script
 ```bash
 # Updated verify_paths.sh with new paths
 ./verify_paths.sh
 ```
 
+<!-- section_id: "ddb7dbcb-2503-42e8-88bd-7f7a54eeeb0f" -->
 ### 12.2 Test Claude Code Discovery
 ```bash
 # From different locations, verify CLAUDE.md inheritance works
@@ -740,6 +789,7 @@ claude
 # Verify inherited + local configs work
 ```
 
+<!-- section_id: "c748add3-5cc8-4482-9d8b-d01a37aaf6ba" -->
 ### 12.3 Verification Checklist
 - [ ] All directories follow new naming (`layer_N_XX_*`)
 - [ ] All entities have CLAUDE.md and .claude/
@@ -752,8 +802,10 @@ claude
 
 ---
 
+<!-- section_id: "6b2d8ad9-579e-4499-b11d-bf8f4b348ab0" -->
 ## SUBAGENT EXECUTION STRATEGY
 
+<!-- section_id: "573757be-5e20-490b-8513-b5e2a1c29d44" -->
 ### Overview
 Each phase should be executed by dedicated subagents to maximize efficiency and enable parallel execution where possible.
 
@@ -778,6 +830,7 @@ Each phase should be executed by dedicated subagents to maximize efficiency and 
 └─────────────────────────────────────────────────────────────────────────────┘
 ```
 
+<!-- section_id: "def66a87-a0cf-45bf-b4d3-440d225e77ab" -->
 ### Subagent Assignments
 
 | Phase | Subagent Name | Type | Description |
@@ -799,6 +852,7 @@ Each phase should be executed by dedicated subagents to maximize efficiency and 
 | 11 | `docs-update-agent` | general-purpose | Update all documentation |
 | 12 | `verify-agent` | Bash | Run verification, test Claude Code |
 
+<!-- section_id: "d9fb967b-86d1-4e75-8946-fdc0565475d4" -->
 ### Parallel Execution Batches
 
 ```
@@ -866,6 +920,7 @@ Each phase should be executed by dedicated subagents to maximize efficiency and 
 └─────────────────────────────────────────────────────────────────────────────┘
 ```
 
+<!-- section_id: "e8713361-7e0a-44d0-837b-03b9e6a0ee87" -->
 ### Subagent Prompts
 
 #### Phase 1: prep-backup-agent
@@ -933,6 +988,7 @@ Report: Directory tree of created feature
 
 ---
 
+<!-- section_id: "f942bf9b-69d9-404f-b396-56538de87be1" -->
 ## PHASE EXECUTION ORDER (WITH SUBAGENTS)
 
 ```
@@ -981,6 +1037,7 @@ Report: Directory tree of created feature
 └─────────────────────────────────────────────────────────────────────────────┘
 ```
 
+<!-- section_id: "e0dcaad2-6962-4671-8050-4fd9bd7a77e8" -->
 ### Total Subagent Count
 - **Batch 1**: 2 sequential
 - **Batch 2**: 3 parallel
@@ -994,6 +1051,7 @@ Report: Directory tree of created feature
 
 ---
 
+<!-- section_id: "158e36b8-90a0-49c7-a927-f70bf3aa05e1" -->
 ## SUMMARY: What Gets Created/Moved
 
 | Action | Count |
@@ -1007,23 +1065,28 @@ Report: Directory tree of created feature
 
 ---
 
+<!-- section_id: "b7e72505-61bb-41ab-969c-00ac2f76c451" -->
 ## Key Architectural Decisions
 
+<!-- section_id: "03372888-ca0f-448a-8a3d-43a65f1a626f" -->
 ### 1. Everything Nested Under Layer 0
 - Enables Claude Code's hierarchical CLAUDE.md discovery
 - Universal skills/commands/agents inherited everywhere
 - Single root for all projects
 
+<!-- section_id: "d1cfb478-7032-422f-b184-c9d32fb70232" -->
 ### 2. Layer-Stage System as a Feature
 - The framework itself follows its own pattern
 - Has its own stages for development
 - Has child features for each major concept
 
+<!-- section_id: "4d2b14c4-8de4-4532-8c7a-dabb3da3fb72" -->
 ### 3. Agnostic → Specific Pattern
 - Tool-agnostic init_prompt.md is the source of truth
 - Tool-specific files (CLAUDE.md, .cursorrules, etc.) generated from it
 - Nested specificity: os → environment → coding_app → ai_app
 
+<!-- section_id: "147397fb-0e5c-4e37-9ab8-24fe25d5e42b" -->
 ### 4. AI Manager Hierarchy as a Feature
 - Defines the agnostic/specific pattern
 - Contains templates for each AI tool
@@ -1031,6 +1094,7 @@ Report: Directory tree of created feature
 
 ---
 
+<!-- section_id: "12b812f1-3a1a-4899-ac74-65d737cec294" -->
 ## Files to Delete After Migration
 
 ```

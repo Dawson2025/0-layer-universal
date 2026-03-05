@@ -9,6 +9,7 @@ resource_name: "US-01_student_gets_personalized_entity"
 **I want** my own instance entity that inherits the school system's production patterns,
 **So that** the AI knows my specific knowledge gaps, learning goals, and progress without mixing my data with other students'.
 
+<!-- section_id: "3b8a0916-f54a-4e8b-8af1-104c5749a937" -->
 ## Acceptance Criteria
 
 **Scenario 1: Instance is created with student identity**

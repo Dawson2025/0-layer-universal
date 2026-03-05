@@ -12,8 +12,10 @@ resource_name: "proposal_cleanup_and_staged_proposals_v1"
 
 ---
 
+<!-- section_id: "0ab9aa77-5029-4128-bcf8-79d8cb85f86c" -->
 ## Problem Statement
 
+<!-- section_id: "e1ff4013-e039-472d-a75d-f3dd228f77c4" -->
 ### 1. Naming Inconsistencies
 Directories named `*_content` should follow the `*_group` convention per v6:
 ```
@@ -21,6 +23,7 @@ WRONG:  sub_layer_-1_05_content
 RIGHT:  sub_layer_-1_05_group
 ```
 
+<!-- section_id: "b45a0664-d644-4fec-abe0-d5350d6799a2" -->
 ### 2. Orphaned Folders in Universal Layer
 These folders exist at `layer_0/sub_layer_0_05+_setup_dependant/` but don't follow proper structure:
 
@@ -30,9 +33,11 @@ These folders exist at `layer_0/sub_layer_0_05+_setup_dependant/` but don't foll
 | `templates/` | 0AGNOSTIC.md.template, .0agnostic-template/ | Should be in .0agnostic/ or sub_layer_0_01_prompts/ |
 | `scripts/` | agnostic-sync.sh | Duplicates .0agnostic/hooks/scripts/ |
 
+<!-- section_id: "85263386-f4cf-43df-b25d-f12242115b89" -->
 ### 3. Missing Hierarchy Indicator
 Sub-layers that contain nested sub-layers (hierarchical organization) have no naming indicator to signal this structure to AI agents.
 
+<!-- section_id: "217cdfee-d37a-4746-9861-42c5fb0724cf" -->
 ### 4. No Proposal Staging System
 Currently proposals are flat files. No way to:
 - Experiment with alternative approaches on specific layers/stages
@@ -41,8 +46,10 @@ Currently proposals are flat files. No way to:
 
 ---
 
+<!-- section_id: "c1d1f509-517e-42a6-9798-4770d6bf0c43" -->
 ## Proposed Solution
 
+<!-- section_id: "1e3d6305-3a09-45d8-9b5b-f5b4ced8f4ef" -->
 ### Phase 1: Rename `_content` → `_group`
 
 Find and rename all `*_content` directories to `*_group`:
@@ -59,6 +66,7 @@ subxN_layer_XX_content → subxN_layer_XX_group
 - `layer_0_group/.../sub_layer_0_06_content` → `sub_layer_0_06_group`
 - All nested `subxN_layer_XX_content` directories
 
+<!-- section_id: "0d53ac9d-005b-4a0f-aa15-f16eeb14bfee" -->
 ### Phase 2: Relocate Archives
 
 Move `sub_layer_0_14_archives/` contents to proper archive location:
@@ -77,6 +85,7 @@ Contents mapping:
 
 Then delete the empty `sub_layer_0_14_archives/` folder.
 
+<!-- section_id: "e171409a-d3b1-4d84-af2d-5a7cbbca014c" -->
 ### Phase 3: Relocate Templates
 
 Move templates to `.0agnostic/templates/` (the canonical location):
@@ -92,6 +101,7 @@ Contents:
 
 Then delete the empty `templates/` folder.
 
+<!-- section_id: "7b32936d-2ec9-47bd-ae90-549f8bb836aa" -->
 ### Phase 4: Add `_hierarchy` Suffix
 
 Add `_hierarchy` suffix to sub-layers that contain nested sub-layers:
@@ -111,6 +121,7 @@ AFTER:  sub_layer_0_05+_setup_dependant_hierarchy
 - `layer_0/layer_0_03_sub_layers/sub_layer_0_05+_setup_dependant` → `sub_layer_0_05+_setup_dependant_hierarchy`
 - Research project copies follow same pattern
 
+<!-- section_id: "1947e0f1-4cd1-4d0d-a48e-db7655926112" -->
 ### Phase 5: Consolidate Scripts
 
 The `scripts/agnostic-sync.sh` should be in `.0agnostic/hooks/scripts/`:
@@ -123,6 +134,7 @@ TO:   .0agnostic/hooks/scripts/agnostic-sync.sh  (if not exists)
 
 Then delete the empty `scripts/` folder.
 
+<!-- section_id: "0a672b63-03fb-419d-b5f6-83d78f70f1ad" -->
 ### Phase 5: Staged Proposals System
 
 Add staging infrastructure to layer registries for experimental proposals:
@@ -250,6 +262,7 @@ experiment_end: 2026-02-10
 
 ---
 
+<!-- section_id: "b55b2669-1569-4a57-9aa4-52a5a9300877" -->
 ## Implementation Plan
 
 | Phase | Task | Status | Impact |
@@ -263,6 +276,7 @@ experiment_end: 2026-02-10
 
 ---
 
+<!-- section_id: "9239b14c-89c4-4228-b5f6-c4246f495163" -->
 ## Verification Checklist
 
 - [ ] No `*_content` directories remain (all renamed to `*_group`)
@@ -274,6 +288,7 @@ experiment_end: 2026-02-10
 
 ---
 
+<!-- section_id: "d7484d6e-02bd-4bf3-ac9e-a8e1ea856be1" -->
 ## Risks & Mitigations
 
 | Risk | Mitigation |

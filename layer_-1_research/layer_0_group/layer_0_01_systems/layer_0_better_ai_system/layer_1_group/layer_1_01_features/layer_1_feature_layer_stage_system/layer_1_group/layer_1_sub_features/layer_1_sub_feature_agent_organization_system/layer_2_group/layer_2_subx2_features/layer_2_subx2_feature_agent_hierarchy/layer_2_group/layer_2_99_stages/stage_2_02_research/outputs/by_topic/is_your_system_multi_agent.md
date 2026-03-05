@@ -11,6 +11,7 @@ resource_name: "is_your_system_multi_agent"
 
 ---
 
+<!-- section_id: "b1625882-f05a-4884-a0eb-e79d1ad7ef21" -->
 ## The Question
 
 You have:
@@ -25,8 +26,10 @@ You have:
 
 ---
 
+<!-- section_id: "1813e791-b194-436f-90de-eb52f65b9727" -->
 ## Two Ways to Look at It
 
+<!-- section_id: "a2432b27-1160-4229-b9d6-41343574fb05" -->
 ### View 1: Conceptual Multi-Agent (What You Have)
 
 ```
@@ -48,6 +51,7 @@ You have:
 - **Shared filesystem** - All agents see same files instantly
 - **No sync needed** - Changes are immediate
 
+<!-- section_id: "5de4ac7d-5568-417b-bfe5-1cf5e6a94d4f" -->
 ### View 2: True Multi-Agent (What SHIMI Assumes)
 
 ```
@@ -67,6 +71,7 @@ You have:
 
 ---
 
+<!-- section_id: "ab74f892-ffcc-4089-9199-b051c5c72f2a" -->
 ## Your Current Reality
 
 | Aspect | Your System | True Multi-Agent |
@@ -81,8 +86,10 @@ You have:
 
 ---
 
+<!-- section_id: "c0e474dc-48d1-4f14-b8b9-ca88e611d535" -->
 ## When You WOULD Need SHIMI-Style Sync
 
+<!-- section_id: "048fc9e0-8320-4738-b664-e5b95fc82b29" -->
 ### Scenario 1: Parallel Claude Sessions
 
 ```
@@ -96,6 +103,7 @@ All running simultaneously, all writing to outputs/
 → **Conflict risk**: Multiple sessions writing to same or related files
 → **Would benefit from**: CRDT-style merge, conflict detection
 
+<!-- section_id: "7623cfc7-9c97-424c-88f0-803a3e28f53b" -->
 ### Scenario 2: Distributed Across Machines
 
 ```
@@ -109,6 +117,7 @@ Both write to hand_off_documents/ at same time
 → **Conflict risk**: Sync conflicts across devices
 → **Would benefit from**: Merkle-DAG for divergence detection
 
+<!-- section_id: "5697dee4-5fad-4f65-b557-10e788cb00ba" -->
 ### Scenario 3: Autonomous Agent Swarm
 
 ```
@@ -122,14 +131,17 @@ Report back when done
 
 ---
 
+<!-- section_id: "a60e4d6b-2cc0-4249-ae74-117bf4473ce5" -->
 ## What You Actually Need (Probably)
 
+<!-- section_id: "f74ce2ca-4040-4514-be1f-a275854ca940" -->
 ### Current State: Nothing Extra
 
 - Single Claude session at a time
 - Git handles cross-device sync
 - Conflicts are rare and manual
 
+<!-- section_id: "68275158-74c0-4e2c-96d2-5c8194ad2d61" -->
 ### Near-Term: Lightweight Conflict Prevention
 
 If you start running parallel sessions:
@@ -147,6 +159,7 @@ Before writing to shared locations:
 
 Simple file locking, no complex infrastructure.
 
+<!-- section_id: "00a30fcf-e384-4df0-a9c5-643b3fa74c30" -->
 ### Future: If True Multi-Agent
 
 If you build actual parallel agents:
@@ -159,6 +172,7 @@ If you build actual parallel agents:
 
 ---
 
+<!-- section_id: "d552572d-d6aa-4aa6-a250-5afa2d0ef3dd" -->
 ## Key Insight
 
 Your system is **architecturally prepared** for multi-agent but **operationally single-agent**.
@@ -173,6 +187,7 @@ Your system is **architecturally prepared** for multi-agent but **operationally 
 
 ---
 
+<!-- section_id: "ff4a96e2-3cdc-4c8b-87e4-7e0364e1ccde" -->
 ## Recommendation
 
 1. **Don't add SHIMI sync now** - You don't have parallel agents yet
@@ -184,6 +199,7 @@ Your system is future-proof. The sync problem will become real when you have tru
 
 ---
 
+<!-- section_id: "9db740b8-e0ba-4a0a-a854-9c3f5a840978" -->
 ## Summary
 
 | Question | Answer |

@@ -5,6 +5,7 @@ resource_name: "chain_continuity"
 ---
 # Principle: Chain Continuity
 
+<!-- section_id: "807578d8-01d1-479f-a003-59e5430d4091" -->
 ## Summary
 
 Every entity in the layer-stage system must maintain an unbroken parent reference chain from itself to the system root. A broken chain means an entity is orphaned -- it cannot inherit context, rules, or knowledge from its ancestors, and agents cannot traverse upward for escalation or scope validation.
@@ -13,6 +14,7 @@ The parent chain is the backbone of context inheritance. When an agent arrives a
 
 Container directories (groups, feature registries) must have 0AGNOSTIC.md even if minimal. Never delete an 0AGNOSTIC.md that is referenced as a parent. Never create an entity without establishing its parent reference. Recovery from a chain break involves creating a minimum viable 0AGNOSTIC.md with Identity + Parent, running agnostic-sync.sh, and re-testing.
 
+<!-- section_id: "b86a2554-0ab8-42c3-9045-901180865096" -->
 ## Key Concepts
 
 - **Every entity needs a Parent line** (except the root)
@@ -21,6 +23,7 @@ Container directories (groups, feature registries) must have 0AGNOSTIC.md even i
 - **Never delete** a 0AGNOSTIC.md that is referenced as a parent by any child
 - **Tested by**: `test_context_chain_traversal.sh` -- walks full chain, verifies each link
 
+<!-- section_id: "6ec08e7c-2366-417a-a43d-e00e67687de0" -->
 ## Reference Table
 
 | What | Where | Notes |

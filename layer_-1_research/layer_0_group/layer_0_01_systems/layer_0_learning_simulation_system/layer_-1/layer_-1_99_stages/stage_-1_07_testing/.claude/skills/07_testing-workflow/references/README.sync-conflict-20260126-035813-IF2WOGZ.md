@@ -7,6 +7,7 @@ resource_name: "README.sync-conflict-20260126-035813-IF2WOGZ"
 
 Place reference documents, templates, and examples here.
 
+<!-- section_id: "e52fb6a9-cdc3-4e97-a8e9-6ab98831057a" -->
 ## Suggested Contents
 - Templates for 07_testing outputs
 - Examples of good 07_testing work

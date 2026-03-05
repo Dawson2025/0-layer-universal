@@ -8,6 +8,7 @@ resource_name: "README"
 
 Four-directional communication hub for the Root Manager.
 
+<!-- section_id: "cf07968c-b031-447e-9ac4-7462a90edea9" -->
 ## Structure
 
 ```
@@ -20,6 +21,7 @@ hand_off_documents/
     └── to_below/        ← Tasks delegated to layers
 ```
 
+<!-- section_id: "25085e88-a5fe-4a2d-b425-af8fc79739cc" -->
 ## Flow
 
 ```
@@ -47,6 +49,7 @@ hand_off_documents/
    outgoing/to_above/       ← Final results to user
 ```
 
+<!-- section_id: "d4b2a024-1f29-46a7-b9d7-0c169dda0e18" -->
 ## Document Format
 
 ```markdown
@@ -76,6 +79,7 @@ hand_off_documents/
 [What happens next]
 ```
 
+<!-- section_id: "8fb9deaa-67f5-4989-b807-3331d0a33dd3" -->
 ## Usage
 
 - **from_above**: Root manager checks this on session start for user requests

@@ -10,10 +10,12 @@ resource_name: "RESEARCH_INDEX"
 
 ---
 
+<!-- section_id: "9d86bc03-8500-4e81-9a8b-1e021eeec383" -->
 ## Stage 04: Design Documents
 
 Located in: `stage_1_04_design/outputs/`
 
+<!-- section_id: "3c164b94-df92-4875-a66f-6034d523b73b" -->
 ### 1. Layer Consolidation Design
 **File**: `01_layer_consolidation_design.md`
 **Purpose**: Documents the pattern, pitfalls, and solutions for consolidating fragmented directory structures
@@ -31,6 +33,7 @@ Located in: `stage_1_04_design/outputs/`
 
 ---
 
+<!-- section_id: "f4931330-8305-480a-ad68-f948259cfc5d" -->
 ### 2. Context Chain Architecture
 **File**: `02_context_chain_architecture.md`
 **Purpose**: Clarifies the distinction between AI Apps (context recipients) and MCP Server Tools (function responders)
@@ -52,6 +55,7 @@ Located in: `stage_1_04_design/outputs/`
 
 ---
 
+<!-- section_id: "81dabef4-4299-4b61-bcd0-48c5d6ed30ef" -->
 ### 3. Trajectory Stores & Grade Strategy
 **File**: `03_trajectory_stores_and_grade_strategy.md`
 **Purpose**: Documents trajectory store concept (procedural memory) and its application to grade strategy system
@@ -77,10 +81,12 @@ Located in: `stage_1_04_design/outputs/`
 
 ---
 
+<!-- section_id: "eb7f199b-b454-478e-b1f1-f388c6285724" -->
 ## Stage 05: Planning Documents
 
 Located in: `stage_1_05_planning/outputs/`
 
+<!-- section_id: "e39b8fee-133c-4d7c-954d-1857537c17df" -->
 ### 1. Implementation Roadmap
 **File**: `01_implementation_roadmap.md`
 **Purpose**: End-to-end roadmap from research findings through production promotion
@@ -111,6 +117,7 @@ Located in: `stage_1_05_planning/outputs/`
 
 ---
 
+<!-- section_id: "b54212d4-f95f-4011-b7b8-1a23b327b1d5" -->
 ## How These Documents Integrate
 
 ```
@@ -130,20 +137,26 @@ Planning Phase (05)
 
 ---
 
+<!-- section_id: "be3b6c61-b3ff-45a1-a349-c95c6fb056a7" -->
 ## Key Findings Summary
 
+<!-- section_id: "ffec5532-dc58-4753-bbc9-4714338b9c26" -->
 ### 1. Naming Convention Matters
 Inconsistent `layer_N/` vs `layer_N_group/` created confusion about canonical location. Consolidated to unified `layer_N_group/` naming across all 13 entities.
 
+<!-- section_id: "33c92eb9-f824-44c2-8e63-e182f8c7405d" -->
 ### 2. AI Apps ≠ MCP Server Tools
 Critical terminology: AI Apps (Claude Code, Cursor, etc.) RECEIVE context; MCP Server Tools (Canvas, Perplexity, etc.) DON'T receive context, they respond to calls. These are fundamentally different roles.
 
+<!-- section_id: "58074959-8d23-46ab-9af1-220100b7fb77" -->
 ### 3. Three-Layer Context Delivery
 Source of truth (0AGNOSTIC.md) → Universal files (CLAUDE.md, .cursorrules) → AI app native directories (.claude/, .cursor/). The .1merge port system (Tier 0+1+2 merge) bridges Layer 1 → Layer 2.
 
+<!-- section_id: "390a64a5-50cf-468f-bc8e-985ae9544442" -->
 ### 4. Trajectory Stores Enable Reuse
 By capturing procedural knowledge once at layer_2, all layer_3/4 classes can inherit without duplication. Grade strategy: write once (7-step workflow), use everywhere (MATH 119 + CSE 300 + future classes).
 
+<!-- section_id: "6651398f-847f-42da-92b1-f984c402b7f9" -->
 ### 5. Two Grading Models Require Different Formulas
 - **Specs-based** (MATH 119): Threshold crossing matters — completing 1 more item can jump multiple point tiers
 - **Percentage-based** (CSE 300): Linear accumulation — each point earned is 1/1082 of grade
@@ -151,6 +164,7 @@ By capturing procedural knowledge once at layer_2, all layer_3/4 classes can inh
 
 ---
 
+<!-- section_id: "32bd5599-2513-4aad-83e5-793e998d44bf" -->
 ## What This Enables
 
 **For Users**:
@@ -173,6 +187,7 @@ By capturing procedural knowledge once at layer_2, all layer_3/4 classes can inh
 
 ---
 
+<!-- section_id: "d912e7a1-6cbe-4e5e-b263-fb7329707162" -->
 ## Status of Each Phase
 
 | Phase | Task | Status | Evidence |
@@ -188,6 +203,7 @@ By capturing procedural knowledge once at layer_2, all layer_3/4 classes can inh
 
 ---
 
+<!-- section_id: "7e4df1a8-09ce-431b-96f0-81aa4027d2d7" -->
 ## Reading Guide
 
 **For Understanding Context Chain**:
@@ -213,6 +229,7 @@ By capturing procedural knowledge once at layer_2, all layer_3/4 classes can inh
 
 ---
 
+<!-- section_id: "6f93f57f-8615-4355-a4ac-3282237bee0b" -->
 ## References to Production Implementations
 
 These research findings are already partially implemented in production:
@@ -227,6 +244,7 @@ These research findings are already partially implemented in production:
 
 ---
 
+<!-- section_id: "2dcb33f6-bcea-4586-9ad5-ae0962024771" -->
 ## Next Steps (From Roadmap Phase 5)
 
 1. **Archive research docs to layer_0** — Move validated approaches to canonical location

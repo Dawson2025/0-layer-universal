@@ -6,12 +6,15 @@ resource_name: "database-integration"
 # Database Integration in Platform Version Control
 *How Databases Fit into the Broader Platform Version Control System*
 
+<!-- section_id: "d68feba6-a444-4440-8c2a-0984023c3baa" -->
 ## Overview
 
 Databases are a critical component of your application platform stack, but they don't exist in isolation. This guide explains how database version control integrates with your broader platform version control strategy.
 
+<!-- section_id: "8c17b727-2c52-48db-8bbf-e6e4244530f5" -->
 ## Integration Points
 
+<!-- section_id: "4a2b6de8-c167-45c1-8821-794363e22dba" -->
 ### 1. Databases as Platform Components
 
 Your database is just one platform in your stack:
@@ -28,6 +31,7 @@ Application Platforms Stack:
 
 All need version control.
 
+<!-- section_id: "210b84ee-785d-43de-8d90-923848ec382b" -->
 ### 2. Coordinated Deployments
 
 Database changes often need coordination with other platform changes:
@@ -41,6 +45,7 @@ Example: Adding authentication
 └── 5. Verify integration → Test end-to-end
 ```
 
+<!-- section_id: "b2be14de-35f1-42d2-95b8-9810ba02b0fd" -->
 ### 3. Environment Synchronization
 
 Database and application platforms must stay in sync:
@@ -62,8 +67,10 @@ Production:
 └── Auth: Production Auth0 tenant
 ```
 
+<!-- section_id: "50dcb041-c752-457b-8415-6d4a71821b94" -->
 ## Database Version Control Principles
 
+<!-- section_id: "9af1073b-173c-4bc6-828d-1302fd662581" -->
 ### 1. Migration-Based Approach
 
 Every database change is a migration:
@@ -77,6 +84,7 @@ CREATE TABLE users (
 );
 ```
 
+<!-- section_id: "27a6d2c1-9bdf-42a5-b769-3c3b2b216cd9" -->
 ### 2. Schema Version Control
 
 Version control your schema files:
@@ -92,6 +100,7 @@ databases/
     └── dev-data.sql
 ```
 
+<!-- section_id: "37bcf234-d62f-4297-8f74-d1100bf1ae93" -->
 ### 3. Data Versioning Strategy
 
 - **Schema changes**: Always in migrations
@@ -99,6 +108,7 @@ databases/
 - **Production data**: Backed up but not in Git
 - **Reference data**: Version controlled
 
+<!-- section_id: "5786dcf5-9c2b-4b0b-9d1e-c1f169ac11de" -->
 ### 4. Integration with Platform CI/CD
 
 Database migrations run alongside platform deployments:
@@ -118,8 +128,10 @@ jobs:
         run: vercel deploy --prod
 ```
 
+<!-- section_id: "aae35515-cbb4-43ab-9eaa-640e514d8eb6" -->
 ## Platform-Specific Integration
 
+<!-- section_id: "15fa7da0-ceeb-4605-bfb3-1a9bc85ab638" -->
 ### Supabase Integration
 
 ```bash
@@ -135,6 +147,7 @@ vercel deploy && \
 supabase db push
 ```
 
+<!-- section_id: "ad3a286b-4150-4882-a2a4-514cd8d7cfca" -->
 ### Firebase Integration
 
 ```javascript
@@ -152,6 +165,7 @@ supabase db push
 firebase deploy --only database,hosting
 ```
 
+<!-- section_id: "0e4efaac-445b-48b1-9545-d33270f1fa24" -->
 ### AWS RDS + Terraform
 
 ```hcl
@@ -166,8 +180,10 @@ provisioner "local-exec" {
 }
 ```
 
+<!-- section_id: "671a276c-e52e-486d-98c8-a70edcfdd0a6" -->
 ## Database + Platform Coordination
 
+<!-- section_id: "ba4b84cc-9a2c-41d7-9ebd-9230c472ff43" -->
 ### Pattern 1: Sequential Deployment
 
 Deploy in dependency order:
@@ -186,6 +202,7 @@ npm run db:migrate
 vercel deploy --prod
 ```
 
+<!-- section_id: "711a7d22-58c7-497e-9dbc-2f7a6339fb68" -->
 ### Pattern 2: Blue-Green Database
 
 ```bash
@@ -202,6 +219,7 @@ vercel env add DATABASE_URL $BLUE_DATABASE_URL
 terraform destroy -target=aws_rds_instance.green
 ```
 
+<!-- section_id: "897001ca-632c-4098-aa71-7e4aaf336674" -->
 ### Pattern 3: Feature Flags for Database Changes
 
 ```sql
@@ -217,8 +235,10 @@ SELECT
 FROM users;
 ```
 
+<!-- section_id: "6222924d-7e2b-41b0-916f-451801a89d5e" -->
 ## Environment Management
 
+<!-- section_id: "b61ceb4e-6ca4-44f5-915e-bd46ed2df11d" -->
 ### Configuration Per Environment
 
 ```yaml
@@ -241,6 +261,7 @@ environments:
     database: myapp_prod
 ```
 
+<!-- section_id: "1a8d9ee3-a811-434b-836d-286f61dbfc6d" -->
 ### Secret Management for Databases
 
 ```bash
@@ -255,8 +276,10 @@ DATABASE_URL=postgresql://user:secret@host:5432/database
 aws secretsmanager get-secret-value --secret-id database-password
 ```
 
+<!-- section_id: "35d24698-abdd-48e1-aa59-4c02f7619e54" -->
 ## Repository Structure
 
+<!-- section_id: "8512967a-b924-4999-8e00-ae2b1ceb818e" -->
 ### Integrated Structure
 
 ```
@@ -286,6 +309,7 @@ project/
     └── sendgrid/                # Third-party services
 ```
 
+<!-- section_id: "85ff8119-f3f7-4f22-a161-786185c2f1d0" -->
 ### With Database Documentation
 
 Full database version control documentation is available in:
@@ -299,8 +323,10 @@ This includes:
 - Repository structure templates
 - Troubleshooting guide
 
+<!-- section_id: "1c49c583-2c56-4576-a5ce-92dd2dfb6b63" -->
 ## Best Practices
 
+<!-- section_id: "d9529a78-dcba-410e-b486-44a220a69402" -->
 ### 1. Separate Concerns
 
 - Database migrations: `databases/migrations/`
@@ -308,6 +334,7 @@ This includes:
 - Infrastructure: `infrastructure/`
 - Secrets: Secret managers (not Git)
 
+<!-- section_id: "8df82b03-3862-4b34-b1e8-9eeefca335b0" -->
 ### 2. Coordinate Changes
 
 When changing multiple platforms:
@@ -318,6 +345,7 @@ When changing multiple platforms:
 5. Test integration
 6. Deploy together or in coordinated order
 
+<!-- section_id: "504bb0c1-dee7-46af-84db-0c40310aa112" -->
 ### 3. Document Dependencies
 
 ```markdown
@@ -337,6 +365,7 @@ The application depends on these database tables:
 3. Deploy application (Vercel)
 ```
 
+<!-- section_id: "a3b94827-66cd-4180-8c69-03bab77e29c4" -->
 ### 4. Version Everything Together
 
 ```bash
@@ -348,6 +377,7 @@ git tag -a v1.0.0 -m "Release 1.0.0"
 # - Platform configs v1.0.0
 ```
 
+<!-- section_id: "7172dafa-16cc-470b-b14d-1b39a75d35e3" -->
 ### 5. Test Integration
 
 ```bash
@@ -356,8 +386,10 @@ npm run test:db
 npm run test:integration
 ```
 
+<!-- section_id: "d219649f-1955-42e5-868f-261e190ddaa8" -->
 ## Common Scenarios
 
+<!-- section_id: "fe6ffd47-660a-4bcb-9591-40edae3ca113" -->
 ### Scenario 1: Adding a New Feature
 
 ```bash
@@ -380,6 +412,7 @@ git push origin feature/new-feature
 # CI/CD deploys everything together
 ```
 
+<!-- section_id: "da1b07b3-1a4f-40bb-9934-ead927114657" -->
 ### Scenario 2: Database Migration in Production
 
 ```bash
@@ -401,6 +434,7 @@ npm run migrate
 # (Set up alerts and checks)
 ```
 
+<!-- section_id: "5ec462a1-b1af-4573-b1be-10be2bff6df1" -->
 ### Scenario 3: Platform Migration
 
 ```bash
@@ -428,6 +462,7 @@ supabase db push
 # Verify and monitor
 ```
 
+<!-- section_id: "9f295639-75a6-4bcb-9b05-aef82bb10ad3" -->
 ## Summary
 
 Database version control is:

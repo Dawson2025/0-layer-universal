@@ -11,6 +11,7 @@ resource_name: "MIGRATION_GUIDE"
 
 ---
 
+<!-- section_id: "a54baebe-3f46-4189-90f1-302b94e5a21b" -->
 ## Overview
 
 This guide helps you migrate existing projects to the AI Manager Hierarchy System **without disrupting ongoing work**. The key principle is **incremental adoption**: start with high-value pieces, gradually expand, and always maintain working code.
@@ -31,8 +32,10 @@ This guide helps you migrate existing projects to the AI Manager Hierarchy Syste
 
 ---
 
+<!-- section_id: "3426f058-9294-4bd0-92c5-6d122db5a86b" -->
 ## Migration Philosophy
 
+<!-- section_id: "d882201e-eda1-4a35-ab49-3afc413c4ab6" -->
 ### Core Principles
 
 1. **Working Code First**: Never break existing functionality to adopt the hierarchy
@@ -41,6 +44,7 @@ This guide helps you migrate existing projects to the AI Manager Hierarchy Syste
 4. **Documentation-Heavy**: Create handoff documents and context, not new code
 5. **Opt-In**: Teams can choose which pieces of the hierarchy to adopt
 
+<!-- section_id: "b5490f13-6212-4e5e-ac99-6bbda34c5e60" -->
 ### Migration Levels
 
 You can adopt the hierarchy at three levels of depth:
@@ -68,8 +72,10 @@ You can adopt the hierarchy at three levels of depth:
 
 ---
 
+<!-- section_id: "f4bc0160-84e1-4c4e-8e34-9346859c3d5e" -->
 ## Step 1: Assess Current Project Structure
 
+<!-- section_id: "ad19154d-dbdb-4eea-ad79-b1f913a49111" -->
 ### 1.1 Inventory Your Project
 
 **Time**: 30-45 minutes
@@ -95,6 +101,7 @@ You can adopt the hierarchy at three levels of depth:
    - [ ] How do agents coordinate? (ad-hoc, meetings, documents, other)
    - [ ] How are results delivered? (code commits, reports, demos, other)
 
+<!-- section_id: "092fbeea-7076-4172-a3fd-e14b88fa6698" -->
 ### 1.2 Create Project Assessment Document
 
 **Location**: `<project-root>/.ai_context/project_assessment.md`
@@ -162,8 +169,10 @@ You can adopt the hierarchy at three levels of depth:
 
 ---
 
+<!-- section_id: "979fade1-b2a4-41f5-8d62-53af2697ae7b" -->
 ## Step 2: Map Existing Work to Layers/Stages
 
+<!-- section_id: "41fb57d3-9cd3-4070-be0a-5cb0321e24ed" -->
 ### 2.1 Understand Layer Mapping
 
 **Layer Definitions**:
@@ -183,6 +192,7 @@ You can adopt the hierarchy at three levels of depth:
 | Components within features | L3 (one component per L3 context) |
 | Deeply nested modules | L4+ (optional, only if truly necessary) |
 
+<!-- section_id: "cf79a2ce-0aee-49ba-9fb4-0097585560d7" -->
 ### 2.2 Create Layer Mapping Document
 
 **Location**: `<project-root>/.ai_context/layer_mapping.md`
@@ -251,8 +261,10 @@ You can adopt the hierarchy at three levels of depth:
 
 ---
 
+<!-- section_id: "6c114595-7aba-4b07-b722-8a45eed0acc0" -->
 ## Step 3: Create Manager/Worker Boundaries
 
+<!-- section_id: "135a7460-9c43-47ea-85bc-c2dce4de3248" -->
 ### 3.1 Identify Manager and Worker Roles
 
 **Current State**: Likely flat structure (all agents are peers)
@@ -273,6 +285,7 @@ You can adopt the hierarchy at three levels of depth:
 - Does not spawn sub-workers (or only L3 → L4 workers)
 - Typically short-lived (spawned, executes, exits)
 
+<!-- section_id: "0a773cd0-f429-4dcb-af6a-9beeb5d8428c" -->
 ### 3.2 Define Boundaries for Your Project
 
 **Questions to Answer**:
@@ -298,6 +311,7 @@ You can adopt the hierarchy at three levels of depth:
    - [ ] CLI command (manager runs `claude-code --allowed ...` or `codex run ...`)
    - [ ] Framework orchestration (LangGraph, AutoGen, etc.)
 
+<!-- section_id: "a94ff599-6ac0-4aff-ac7e-774afccceb21" -->
 ### 3.3 Document Manager/Worker Boundaries
 
 **Location**: `<project-root>/.ai_context/manager_worker_boundaries.md`
@@ -357,8 +371,10 @@ You can adopt the hierarchy at three levels of depth:
 
 ---
 
+<!-- section_id: "7da4f118-dda9-4ad1-943d-4dd2d3a97d40" -->
 ## Step 4: Retrofit Handoff Documents
 
+<!-- section_id: "fcc9c373-ae76-49d6-bc3e-59eba8fcf7a8" -->
 ### 4.1 Understand Handoff Retrofitting
 
 **Purpose**: Create handoff documents for **past work** (already completed) to establish history and context
@@ -375,6 +391,7 @@ You can adopt the hierarchy at three levels of depth:
 2. Archive handoffs immediately (status: "completed", "archived")
 3. Focus on **why** decisions were made, not **what** was done (code is the record of "what")
 
+<!-- section_id: "4ad29d07-639b-4030-afb0-cdb1eee258c8" -->
 ### 4.2 Create Retrospective Handoffs
 
 **Location**: `<project-root>/.ai_context/handoffs/archive/`
@@ -435,6 +452,7 @@ You can adopt the hierarchy at three levels of depth:
 
 **Deliverable**: 3-5 retrospective handoff documents for major milestones
 
+<!-- section_id: "7330e0c4-efd4-442a-bfdc-4dca8037f67e" -->
 ### 4.3 Create Handoff Templates for Future Work
 
 **Location**: `<project-root>/.ai_context/handoffs/templates/`
@@ -456,8 +474,10 @@ You can adopt the hierarchy at three levels of depth:
 
 ---
 
+<!-- section_id: "c076ea82-6bf1-4a2f-a7b5-0f3a3986a219" -->
 ## Step 5: Incremental Migration Strategies
 
+<!-- section_id: "cbdb6535-e190-4762-849f-899dcbbe7257" -->
 ### Strategy 1: New Work First (Recommended)
 
 **Approach**: Keep existing code as-is, use hierarchy for all new work
@@ -481,6 +501,7 @@ You can adopt the hierarchy at three levels of depth:
 
 ---
 
+<!-- section_id: "918334f7-e0a3-4317-8f10-d799eff78906" -->
 ### Strategy 2: Feature-by-Feature Migration
 
 **Approach**: Migrate one feature at a time to full hierarchy
@@ -506,6 +527,7 @@ You can adopt the hierarchy at three levels of depth:
 
 ---
 
+<!-- section_id: "f8063647-af2e-42f0-95d9-7cc429c64f37" -->
 ### Strategy 3: Observability and Safety Only
 
 **Approach**: Add observability and safety without full hierarchy
@@ -530,6 +552,7 @@ You can adopt the hierarchy at three levels of depth:
 
 ---
 
+<!-- section_id: "fe2e0134-933d-490b-acaf-4c326982df04" -->
 ### Strategy 4: Documentation-Heavy Migration
 
 **Approach**: Create comprehensive documentation, minimal code/process changes
@@ -554,6 +577,7 @@ You can adopt the hierarchy at three levels of depth:
 
 ---
 
+<!-- section_id: "654e0f51-2197-4dfe-8d72-ce9b510f208d" -->
 ### Strategy 5: Hybrid Adoption
 
 **Approach**: Mix and match hierarchy components based on value
@@ -580,8 +604,10 @@ You can adopt the hierarchy at three levels of depth:
 
 ---
 
+<!-- section_id: "ca69909b-1aa7-4494-873f-e7ddff6bff9b" -->
 ## Common Migration Patterns
 
+<!-- section_id: "216b6b69-0fe2-4149-b1d7-990569fc503d" -->
 ### Pattern 1: Flat to Hierarchical (L1 → L1+L2+L3)
 
 **Before**:
@@ -603,6 +629,7 @@ You can adopt the hierarchy at three levels of depth:
 
 ---
 
+<!-- section_id: "0f54bcaa-6a82-4b59-868a-c9524f17b3a3" -->
 ### Pattern 2: Monolithic to Modular (Single file → L2+L3 breakdown)
 
 **Before**:
@@ -622,6 +649,7 @@ You can adopt the hierarchy at three levels of depth:
 
 ---
 
+<!-- section_id: "4cced3f2-c854-45cc-aecb-8feb403ae273" -->
 ### Pattern 3: Siloed to Coordinated (Isolated agents → Manager/Worker coordination)
 
 **Before**:
@@ -642,8 +670,10 @@ You can adopt the hierarchy at three levels of depth:
 
 ---
 
+<!-- section_id: "22b9182b-d040-48a7-9554-284f48f715e7" -->
 ## Migration Checklist
 
+<!-- section_id: "ca72fa60-fa0d-493f-bb78-80fce63b2c6d" -->
 ### Pre-Migration
 
 - [ ] Read this migration guide completely
@@ -651,6 +681,7 @@ You can adopt the hierarchy at three levels of depth:
 - [ ] Choose migration strategy (1-5 above)
 - [ ] Get stakeholder buy-in (if applicable)
 
+<!-- section_id: "f6da591d-73b8-4e81-81c5-41837bf39ba4" -->
 ### Phase 1: Assessment (Day 1)
 
 - [ ] Create project assessment document
@@ -658,6 +689,7 @@ You can adopt the hierarchy at three levels of depth:
 - [ ] Create manager/worker boundaries document
 - [ ] Review with team (if applicable)
 
+<!-- section_id: "cb64ca57-0ca2-46c5-9cde-881aee0f66b2" -->
 ### Phase 2: Setup (Day 2-3)
 
 - [ ] Create `.ai_context/` directory structure
@@ -669,12 +701,14 @@ You can adopt the hierarchy at three levels of depth:
 - [ ] Configure safety/governance boundaries
 - [ ] Create handoff templates
 
+<!-- section_id: "5a040f9f-7252-4d15-9155-c2e1e9fe2c36" -->
 ### Phase 3: Retrospective Documentation (Day 4-5, optional)
 
 - [ ] Create 3-5 retrospective handoff documents for major milestones
 - [ ] Archive retrospective handoffs
 - [ ] Document architecture decisions (if applicable)
 
+<!-- section_id: "a12c2c48-c178-4a94-b2e1-0b23204b2545" -->
 ### Phase 4: New Work Adoption (Ongoing)
 
 - [ ] Use handoff documents for all new features
@@ -682,6 +716,7 @@ You can adopt the hierarchy at three levels of depth:
 - [ ] Review logs weekly
 - [ ] Iterate on templates based on experience
 
+<!-- section_id: "d921f18d-c31b-4822-8cfc-f0b9835d59fb" -->
 ### Phase 5: Gradual Expansion (Weeks 2-4)
 
 - [ ] Migrate one existing feature to hierarchy (if using Strategy 2)
@@ -691,8 +726,10 @@ You can adopt the hierarchy at three levels of depth:
 
 ---
 
+<!-- section_id: "382577b3-4174-4b0d-b2e2-45ffeb3e6221" -->
 ## Troubleshooting Migration Issues
 
+<!-- section_id: "a64db70e-be75-40d8-b6d0-9f6af2ff185d" -->
 ### Issue: "Too much documentation overhead"
 
 **Symptoms**: Handoff creation takes longer than actual work
@@ -704,6 +741,7 @@ You can adopt the hierarchy at three levels of depth:
 
 ---
 
+<!-- section_id: "861794d0-6ead-4d5a-9abf-629f17ba8c64" -->
 ### Issue: "Existing code doesn't fit layer model"
 
 **Symptoms**: Features and components don't map cleanly to L2/L3
@@ -715,6 +753,7 @@ You can adopt the hierarchy at three levels of depth:
 
 ---
 
+<!-- section_id: "f37d75d8-7d8f-4c50-81f8-a9acb65d91e8" -->
 ### Issue: "Agents aren't using hierarchy patterns"
 
 **Symptoms**: Handoffs not created, logs not written, boundaries not respected
@@ -727,6 +766,7 @@ You can adopt the hierarchy at three levels of depth:
 
 ---
 
+<!-- section_id: "cd85d3f3-1867-49fd-9f5a-68b21cbb48fa" -->
 ### Issue: "Migration stalled after initial setup"
 
 **Symptoms**: L1 context created, but no ongoing adoption
@@ -738,6 +778,7 @@ You can adopt the hierarchy at three levels of depth:
 
 ---
 
+<!-- section_id: "90744216-642d-4a21-a57b-eb17de5fb90c" -->
 ### Issue: "Hierarchy feels too rigid for our workflow"
 
 **Symptoms**: Handoffs slow down fast-moving work
@@ -749,6 +790,7 @@ You can adopt the hierarchy at three levels of depth:
 
 ---
 
+<!-- section_id: "9f4858bf-9b3b-4a46-b343-24044ef104fc" -->
 ## Success Metrics for Migration
 
 | Metric | Measurement | Target |
@@ -762,6 +804,7 @@ You can adopt the hierarchy at three levels of depth:
 
 ---
 
+<!-- section_id: "f1a9420f-4974-4e3e-a682-3b932d2a9e97" -->
 ## Next Steps After Migration
 
 1. **Use the hierarchy** for all new work
@@ -773,6 +816,7 @@ You can adopt the hierarchy at three levels of depth:
 
 ---
 
+<!-- section_id: "e50a5cfc-aa28-46ff-aa23-6567459a1255" -->
 ## Related Documentation
 
 **Adoption and Rollout**:

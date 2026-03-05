@@ -13,6 +13,7 @@ resource_name: "US-02_agent_detects_broken_reference"
 **I want** references to be pre-validated (known good) so the AI never wastes context on a dead link,
 **So that** the AI doesn't hit a dead end mid-task and lose time on a file that doesn't exist.
 
+<!-- section_id: "124d59f3-8ca4-47c8-ae8f-ca32e3957652" -->
 ### What Happens
 
 1. User runs validation as part of regular maintenance (or it runs automatically)
@@ -20,6 +21,7 @@ resource_name: "US-02_agent_detects_broken_reference"
 3. During a session, the AI follows only pre-validated references
 4. User never sees the AI fail on a dead link -- all references resolve correctly
 
+<!-- section_id: "baf8dac4-b9b9-4db0-9bf5-531843b0bf44" -->
 ### Acceptance Criteria
 
 - Validation catches broken references before agents encounter them at runtime

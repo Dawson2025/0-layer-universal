@@ -6,6 +6,7 @@ resource_name: "README"
 ---
 # User Stories — Research Version
 
+<!-- section_id: "f7c45fc7-b72d-401c-b11f-f8e94a351e1b" -->
 ## Actors
 
 | Actor | Description |
@@ -14,6 +15,7 @@ resource_name: "README"
 | Researcher | Conducts exploratory work within research stages |
 | System | The AI system managing the layer-stage hierarchy |
 
+<!-- section_id: "a141c51a-a3f5-47cc-8e56-261381daf488" -->
 ## Stories
 
 | ID | Story | Actor |

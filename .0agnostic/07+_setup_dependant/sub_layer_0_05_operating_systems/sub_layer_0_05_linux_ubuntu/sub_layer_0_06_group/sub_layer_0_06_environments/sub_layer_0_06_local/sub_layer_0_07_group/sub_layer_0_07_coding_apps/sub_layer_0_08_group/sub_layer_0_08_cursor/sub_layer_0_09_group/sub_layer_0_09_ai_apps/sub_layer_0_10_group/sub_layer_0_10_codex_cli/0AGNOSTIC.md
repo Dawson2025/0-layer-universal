@@ -10,6 +10,7 @@ resource_name: "0AGNOSTIC"
 
 # ── Entity Definition ──
 
+<!-- section_id: "fb5667ca-3899-470b-ba60-6fb17e8268a6" -->
 ## Identity
 
 **Role**: AI App Configuration Manager — Codex CLI
@@ -19,6 +20,7 @@ resource_name: "0AGNOSTIC"
 
 **Specificity Chain**: OS (Linux Ubuntu) > Environment (Local) > Coding App (Cursor) > AI Apps > **Codex CLI**
 
+<!-- section_id: "77a52531-b1ff-4b45-afa0-27df1302df08" -->
 ## Key Behaviors
 
 - Manages Codex CLI configuration and setup for this specific environment path
@@ -27,12 +29,14 @@ resource_name: "0AGNOSTIC"
 - Knowledge cascades from parent levels (coding apps > AI apps category) — only store Codex CLI-specific content here
 - Legacy setup docs migrated to `.0agnostic/01_knowledge/legacy_setup/`
 
+<!-- section_id: "cd56d17c-ffdd-418f-9e8f-b283656dc338" -->
 ## Inputs
 
 - Parent context from sub_layer_0_09_ai_apps (shared AI app knowledge)
 - Sibling feature entities (shared tools, models, protocols)
 - Codex CLI-specific setup docs and configuration
 
+<!-- section_id: "13decd30-4f83-4ce5-b6da-9c62281e174b" -->
 ## Outputs
 
 - Codex CLI setup and configuration documentation
@@ -41,6 +45,7 @@ resource_name: "0AGNOSTIC"
 
 # ── Current Status ──
 
+<!-- section_id: "f8382bb1-02ff-4813-abfd-f36f96803d97" -->
 ## Current Status
 
 - **Stage**: Active (entity created 2026-02-22, restructured 2026-02-25)
@@ -52,6 +57,7 @@ resource_name: "0AGNOSTIC"
 
 # ── Current State ──
 
+<!-- section_id: "b5917f9e-e6a5-4f02-81ca-8b26875cb0a2" -->
 ## Current State Detail
 
 Entity restructured. Shared infrastructure migrated to sibling feature entities at level 10:
@@ -62,6 +68,7 @@ Entity restructured. Shared infrastructure migrated to sibling feature entities 
 - Agent setup → `../sub_layer_0_10_05_agent_setup/`
 - Legacy setup docs → `.0agnostic/01_knowledge/legacy_setup/`
 
+<!-- section_id: "d56ad280-73e3-49f8-8584-25a2fe1931c3" -->
 ## Open Items
 
 - [ ] Populate Codex CLI-specific rules and knowledge
@@ -69,6 +76,7 @@ Entity restructured. Shared infrastructure migrated to sibling feature entities 
 
 # ── References ──
 
+<!-- section_id: "9613b87e-7718-4d2c-97c8-a7b82e2da3ea" -->
 ## Navigation
 
 | Resource | Location |

@@ -11,6 +11,7 @@ resource_name: "CLAUDE_CODE_NATIVE_CONTEXT_SYSTEM"
 
 ---
 
+<!-- section_id: "31f55afe-0f0c-40f4-8e5a-8f1fa4a8abb0" -->
 ## Overview
 
 Claude Code's native context system is **hierarchical and file-based**. Unlike Cursor IDE (which uses rule patterns) or Gemini (which uses explicit caching), Claude Code uses a multi-level **CLAUDE.md chain** that cascades context from the root workspace down through layers and stages.
@@ -19,8 +20,10 @@ The system is built on the **layer-stage architecture**: a recursive directory s
 
 ---
 
+<!-- section_id: "e3d7097a-06ca-4a52-9793-a01b58f9ec72" -->
 ## Core Architecture
 
+<!-- section_id: "928bb734-ec03-47b0-8801-35ed77354bdd" -->
 ### 1. The CLAUDE.md Hierarchy
 
 **Purpose**: Provide tool-specific context that cascades down the directory tree.
@@ -54,6 +57,7 @@ layer_-1_research/[feature]/CLAUDE.md  (Layer -1: Research)
 
 **Key Characteristic**: CLAUDE.md files are **auto-generated** from `0AGNOSTIC.md` via `agnostic-sync.sh`. Never edit CLAUDE.md directly — edit `0AGNOSTIC.md` instead.
 
+<!-- section_id: "faa9ae8a-7a4d-4ce9-8ec7-48889c85232d" -->
 ### 2. Source of Truth: 0AGNOSTIC.md
 
 **Location**: One per entity (layer, stage, project, feature)
@@ -106,6 +110,7 @@ layer_-1_research/[feature]/CLAUDE.md  (Layer -1: Research)
 - **0AGNOSTIC.md**: Master source (hand-edited, version-controlled)
 - **CLAUDE.md**: Generated output (auto-generated, don't edit)
 
+<!-- section_id: "b72540de-16ae-4d13-9990-6e06baa7bb8f" -->
 ### 3. The .0agnostic/ Directory (On-Demand Resources)
 
 **Location**: Every entity has `.0agnostic/` with numbered subdirectories
@@ -150,6 +155,7 @@ layer_-1_research/[feature]/CLAUDE.md  (Layer -1: Research)
 | `03_protocols/` | Step-by-step procedures | Skill invocation |
 | `04_episodic_memory/` | Session history | Resumption |
 
+<!-- section_id: "da88a1a6-38b8-4ae4-a8dc-9abef240a6bf" -->
 ### 4. The Layer-Stage Hierarchy
 
 **Purpose**: Organize all work into **11 stages** (request, research, design, planning, development, testing, criticism, fixing, current product, archives).
@@ -182,6 +188,7 @@ layer_N+1_group/                         (child entities)
 
 **Key Characteristic**: Each stage has its own `.0agnostic/` directory with stage-specific knowledge, rules, and protocols. Each stage agent (manager for that stage) reads the stage's `0AGNOSTIC.md` to understand its methodology and output format.
 
+<!-- section_id: "9530c62f-5fac-469b-9bdd-48f4ef0b06c3" -->
 ### 5. Skills System
 
 **Location**: `.claude/skills/[skill-name]/SKILL.md`
@@ -225,6 +232,7 @@ description: "[What this skill does]"
 
 **How Skills Load**: When invoked (e.g., `/context-gathering`), Claude Code loads the skill's SKILL.md and executes the described workflow.
 
+<!-- section_id: "819e7ef2-4420-425e-bf9f-605f6aa74f6f" -->
 ### 6. Rules System
 
 **Two Types**:
@@ -255,6 +263,7 @@ When triggered:
 4. Validate consistency
 ```
 
+<!-- section_id: "0455371f-383a-48ee-8ded-3a2bd7f8111a" -->
 ### 7. Skills-Based Context Injection
 
 **How Skills Work**:
@@ -275,6 +284,7 @@ Claude Code executes each step
 Skill outputs context loaded and ready
 ```
 
+<!-- section_id: "b41d2cbe-d469-4c01-8327-303631bd3744" -->
 ### 8. Context Chain Propagation
 
 **Principle**: Context **cascades down** (parent → child) but child can **override** parent.
@@ -302,6 +312,7 @@ stage_2_04_design/CLAUDE.md (specific stage)
   └─ Overrides: for design work only
 ```
 
+<!-- section_id: "2e7a885a-f31f-4b5b-8331-62f3b33fd833" -->
 ### 9. Episodic Memory (Session Continuity)
 
 **Location**: `.0agnostic/04_episodic_memory/`
@@ -336,6 +347,7 @@ Session 2: Resume work
   └─ Update new session notes
 ```
 
+<!-- section_id: "dfa5589c-9c9f-4534-ae6b-8e05e6172205" -->
 ### 10. Handoff Documents (Async Communication)
 
 **Location**: `.0agnostic/05_handoff_documents/`
@@ -377,6 +389,7 @@ stage_2_04_design reads:
   (synced from research's outgoing by sync-handoffs.sh)
 ```
 
+<!-- section_id: "79451b4b-52f6-4c5f-89f7-1ca3208a6f90" -->
 ### 11. MCP Integration (Tool Expansion)
 
 **Purpose**: Extend Claude Code with external tools and services.
@@ -422,8 +435,10 @@ Claude Code continues with result (e.g., processes data, generates dashboard)
 
 ---
 
+<!-- section_id: "2c277e11-9554-4c10-9e09-04560ce3d44f" -->
 ## How Context Flows in Claude Code
 
+<!-- section_id: "58cea2c3-36f2-4d42-9e00-9cfdc9f41f89" -->
 ### Session Startup
 
 ```
@@ -435,6 +450,7 @@ Claude Code continues with result (e.g., processes data, generates dashboard)
 6. On first API message: prepend merged context to user message
 ```
 
+<!-- section_id: "84841bde-748b-4c94-ac7c-0885723ea06d" -->
 ### User Issues Command
 
 ```
@@ -447,6 +463,7 @@ Claude Code continues with result (e.g., processes data, generates dashboard)
 5. Include on-demand: any .0agnostic/ resources mentioned in active rules
 ```
 
+<!-- section_id: "68c3ffbf-c9ea-4a6b-a4d2-1cd44bd8cb1d" -->
 ### API Call
 
 ```
@@ -467,6 +484,7 @@ Response processed
 
 ---
 
+<!-- section_id: "7d52ced8-5877-4e9b-a6b6-f03371a5a062" -->
 ## Cascade vs. Inheritance
 
 **Key Principle**: Context **cascades** (flows down), not inherits (stays same).
@@ -486,6 +504,7 @@ Result: Stage 04 overrides Layer 0 (child > parent)
 
 ---
 
+<!-- section_id: "b8b5148d-a8d2-4149-a6f1-c533473481bf" -->
 ## Token Budget Management
 
 **Context Window**: 200K tokens (Claude Code + any pro upgrades)
@@ -508,6 +527,7 @@ Available for response:     180K+ tokens
 
 ---
 
+<!-- section_id: "81b943d2-fcef-47b7-b1b8-0876faf47026" -->
 ## Comparison with Other Native Systems
 
 | Aspect | Claude Code | Cursor IDE | Gemini | Codex |
@@ -522,6 +542,7 @@ Available for response:     180K+ tokens
 
 ---
 
+<!-- section_id: "6d83b2fe-86be-45d2-9b1d-ba1db33f4f53" -->
 ## Key Insights for Porting to Claude Code
 
 1. **Hierarchical Design**: Everything cascade from root down. Child overrides parent for flexibility.
@@ -540,6 +561,7 @@ Available for response:     180K+ tokens
 
 ---
 
+<!-- section_id: "1a907eea-d1cf-4b01-b98c-0a38a5466345" -->
 ## Porting Checklist
 
 - [ ] Create root-level 0AGNOSTIC.md with Identity, Key Behaviors, Triggers
@@ -555,6 +577,7 @@ Available for response:     180K+ tokens
 
 ---
 
+<!-- section_id: "ab2b0992-cec6-48c8-9dce-7f5c7ed5f3cf" -->
 ## References
 
 - **Layer-Stage System**: `layer_0/.../layer_stage_system/`

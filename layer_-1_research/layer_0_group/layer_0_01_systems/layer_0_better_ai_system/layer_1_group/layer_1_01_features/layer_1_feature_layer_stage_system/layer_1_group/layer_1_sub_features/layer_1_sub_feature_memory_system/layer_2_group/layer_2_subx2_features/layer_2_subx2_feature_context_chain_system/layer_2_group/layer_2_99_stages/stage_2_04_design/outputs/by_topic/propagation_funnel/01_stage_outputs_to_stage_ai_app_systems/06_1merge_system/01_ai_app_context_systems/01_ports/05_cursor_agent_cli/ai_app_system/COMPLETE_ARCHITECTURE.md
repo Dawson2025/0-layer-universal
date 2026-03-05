@@ -10,6 +10,7 @@ resource_name: "COMPLETE_ARCHITECTURE"
 
 ---
 
+<!-- section_id: "3a51ae9c-0087-4d36-9e1b-80cca3130b67" -->
 ## System Overview
 
 Agent CLI combines **native mechanisms** (what it provides) with **application-implemented strategy** (what you provide):
@@ -46,8 +47,10 @@ Agent CLI combines **native mechanisms** (what it provides) with **application-i
 
 ---
 
+<!-- section_id: "2c427a9b-8bb7-492a-a80d-ca0fb9a1c2af" -->
 ## Task Execution Flow
 
+<!-- section_id: "0a53aac0-35da-4e9c-b10b-1be4230c028c" -->
 ### When You Invoke Agent CLI
 
 ```
@@ -87,8 +90,10 @@ $ cursor agent "Refactor src/auth.js to async/await"
 
 ---
 
+<!-- section_id: "b485fdf3-162c-42db-b518-c3d61548be41" -->
 ## Context Loading Pipeline
 
+<!-- section_id: "985ffee5-e15d-45d0-a8ce-61f3950ed1ee" -->
 ### Step 1: Load Task Context
 
 **Agent CLI Does**:
@@ -99,6 +104,7 @@ $ cursor agent "Refactor src/auth.js to async/await"
 - TaskContext class with identity, triggers, rules
 - What goes in initial prompt
 
+<!-- section_id: "c63e2a58-e782-4601-be80-76b4d9891dfd" -->
 ### Step 2: Load Session History
 
 **Agent CLI Does**:
@@ -110,6 +116,7 @@ $ cursor agent "Refactor src/auth.js to async/await"
 - What to persist in session state
 - When to start new session
 
+<!-- section_id: "3f794efe-a865-4fcc-8218-b7883fcd3a62" -->
 ### Step 3: Load Agent Rules
 
 **Agent CLI Does**:
@@ -120,6 +127,7 @@ $ cursor agent "Refactor src/auth.js to async/await"
 - What rules exist
 - When to apply each rule
 
+<!-- section_id: "ad7672d7-bfdc-476c-96ec-4ee67659a8f2" -->
 ### Step 4: Load MCP Tools
 
 **Agent CLI Does**:
@@ -132,6 +140,7 @@ $ cursor agent "Refactor src/auth.js to async/await"
 - Server credentials
 - Per-task tool access
 
+<!-- section_id: "81f2e0e5-c42e-4e78-a7ea-5293de63f82c" -->
 ### Step 5: Generate Plan (Optional)
 
 **Agent CLI Does**:
@@ -143,6 +152,7 @@ $ cursor agent "Refactor src/auth.js to async/await"
 - Whether to require plan approval
 - What constitutes a good plan
 
+<!-- section_id: "6a85e8e9-33f8-49ea-baf9-b20aa81b7821" -->
 ### Step 6: Execute & Validate
 
 **Agent CLI Does**:
@@ -158,8 +168,10 @@ $ cursor agent "Refactor src/auth.js to async/await"
 
 ---
 
+<!-- section_id: "63e44f42-f291-4fee-b0da-89161bc925b0" -->
 ## Session State Management
 
+<!-- section_id: "c3e53130-6a24-41ba-84c7-9f0733a6ea8f" -->
 ### During Execution
 
 ```json
@@ -192,6 +204,7 @@ $ cursor agent "Refactor src/auth.js to async/await"
 }
 ```
 
+<!-- section_id: "b50739de-0ad0-4239-9396-ddd5f427cdc6" -->
 ### Resuming Session
 
 ```
@@ -206,8 +219,10 @@ $ cursor agent resume session-2026-02-27-001
 
 ---
 
+<!-- section_id: "b0fe3815-e524-4955-a699-cafeb8b035a4" -->
 ## Error Handling & Recovery
 
+<!-- section_id: "7199893e-425d-4b51-9ebd-356133445b68" -->
 ### When Agent Encounters Error
 
 ```
@@ -235,6 +250,7 @@ $ cursor agent "Fix bug in src/parser.js"
 ✅ Task complete: Bug fixed
 ```
 
+<!-- section_id: "9846d3ea-dfef-4b07-b534-785293b2b3b6" -->
 ### Retry Logic
 
 ```python
@@ -254,8 +270,10 @@ def execute_step(step_description):
 
 ---
 
+<!-- section_id: "6860941f-ae56-41a3-a19a-8a30734f659f" -->
 ## Approval Gate Workflow
 
+<!-- section_id: "180d23f9-0f9f-47c4-b2ad-2adf2c079421" -->
 ### Interactive Approval
 
 ```
@@ -282,6 +300,7 @@ User: y
 ✅ Build successful
 ```
 
+<!-- section_id: "b22144f5-8ce9-4f45-a622-f30003262315" -->
 ### Batch Approval
 
 ```json
@@ -302,8 +321,10 @@ User: y
 
 ---
 
+<!-- section_id: "f96d5611-1eba-44ff-b3fe-952a0040d049" -->
 ## Validation Gate Workflow
 
+<!-- section_id: "ebbdbaad-3ece-4dad-be59-930907af56e9" -->
 ### Static Validation (Before Accepting Result)
 
 ```python
@@ -344,6 +365,7 @@ class ResultValidator:
 
 ---
 
+<!-- section_id: "bd31a09f-d258-4f68-a9a9-e57972a5a5fe" -->
 ## Context Composition
 
 At any point, Agent CLI includes:
@@ -368,8 +390,10 @@ At any point, Agent CLI includes:
 
 ---
 
+<!-- section_id: "dadf9735-1b24-4e20-b336-ad74235b73b6" -->
 ## Practical Example
 
+<!-- section_id: "911819b4-2037-4d91-9bf2-08991bc5f061" -->
 ### Task: Refactor Database Queries
 
 ```bash
@@ -380,6 +404,7 @@ cursor agent --plan \
    Verify with perf_test.js"
 ```
 
+<!-- section_id: "e0ca90d9-2f91-478f-b459-eac188a0aafb" -->
 ### Agent Plan (Shown to User)
 
 ```
@@ -397,6 +422,7 @@ Total estimated time: 22-28 minutes
 Approval: [y/n]? y
 ```
 
+<!-- section_id: "1da65d96-a61d-44e2-80a6-a38ddb444ca0" -->
 ### Execution
 
 ```
@@ -424,6 +450,7 @@ After: 4 queries (85ms)
 ✅ Task complete: Performance improved 5.3x
 ```
 
+<!-- section_id: "bb777060-53e8-4fde-ab9f-893c3c16f4d2" -->
 ### Session Saved
 
 ```json
@@ -448,6 +475,7 @@ After: 4 queries (85ms)
 
 ---
 
+<!-- section_id: "d5093695-b4d4-45a3-ad60-6769d5add507" -->
 ## The System Works When
 
 ✅ **Tasks are specific and bounded** (agent can succeed)
@@ -462,20 +490,24 @@ The system fails when any of these are missing or misaligned.
 
 ---
 
+<!-- section_id: "4e806e73-49e4-4989-864a-9c22d920e41d" -->
 ## Workflow Patterns
 
+<!-- section_id: "603f76e7-85ba-42a3-8053-0091829d9d1c" -->
 ### Task-Focused Pattern
 - Define specific, bounded task
 - Let agent execute autonomously
 - Review and approve as needed
 - Move to next task
 
+<!-- section_id: "5347ecda-3fc7-4216-9f5a-5ddbf168e02f" -->
 ### Exploratory Pattern
 - Start with vague direction
 - Agent generates plan
 - Discuss and refine plan
 - Execute refined plan
 
+<!-- section_id: "ad75accc-0a21-4f1f-8989-b40e69190b64" -->
 ### Iterative Pattern
 - Agent completes task
 - Show results
@@ -485,20 +517,24 @@ The system fails when any of these are missing or misaligned.
 
 ---
 
+<!-- section_id: "16cbb234-dc6b-452e-b583-0a1c5e4c0aa0" -->
 ## Performance Considerations
 
+<!-- section_id: "51069046-c57f-4bac-a777-aa6264791564" -->
 ### Token Efficiency
 
 - Keep task descriptions concise (but complete)
 - Reuse session context (don't start fresh each time)
 - Archive old sessions (don't load centuries of history)
 
+<!-- section_id: "fbb1b3de-82a5-4055-89fe-b441ff546887" -->
 ### Execution Speed
 
 - Use auto-approval for safe operations (formatting, tests)
 - Batch related tasks (stay in same session)
 - Pre-stage context (have files ready)
 
+<!-- section_id: "d0277fd0-c1ea-487e-9321-19c9b1692261" -->
 ### Quality Assurance
 
 - Run validation before accepting

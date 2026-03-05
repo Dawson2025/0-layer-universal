@@ -5,18 +5,22 @@ resource_name: "29_open_source_memory_implementations"
 ---
 # Open-Source AI Agent Memory Implementations
 
+<!-- section_id: "35cbf824-e7ea-4558-b71b-6fbc4c6def7f" -->
 ## Purpose
 
 This document surveys the most notable **open-source AI agent memory systems** with working code. Each project demonstrates different approaches to the memory architectures described in earlier documents (see `22_core_data_structure_hierarchy.md`, `23_core_ai_memory_systems.md`). Includes API patterns, architectural choices, and guidance on where to start.
 
 ---
 
+<!-- section_id: "f3f2f673-a797-4efb-969e-a582577d1b6a" -->
 ## 1. Mem0 (mem0ai/mem0) — Most Popular and Production-Ready
 
+<!-- section_id: "3fb325a0-17f4-4295-a194-ed0b6c7e7f78" -->
 ### Overview
 
 The most widely adopted open-source memory framework for AI agents with 25k+ GitHub stars. Provides a clean `Memory` class API with automatic memory extraction, consolidation, and multi-backend support.
 
+<!-- section_id: "fe91720b-3f87-4a7e-9dde-e1f57856d810" -->
 ### Key Features
 
 - **Multi-level memory**: User, Session, and Agent scopes
@@ -26,6 +30,7 @@ The most widely adopted open-source memory framework for AI agents with 25k+ Git
 - **Memory consolidation**: Deduplication and merging of related memories
 - **Graph memory**: Neo4j integration for knowledge graph storage alongside vectors
 
+<!-- section_id: "331a3f13-d882-40e4-acd0-31354bfd3aa5" -->
 ### API Pattern
 
 ```python
@@ -62,6 +67,7 @@ results = memory.search("What are my allergies?", user_id="user_123")
 all_memories = memory.get_all(user_id="user_123")
 ```
 
+<!-- section_id: "6d1c59cb-8beb-410e-bd9f-ac7cf15cc665" -->
 ### Architecture Highlights
 
 - Vector embeddings for semantic memory storage and retrieval
@@ -69,6 +75,7 @@ all_memories = memory.get_all(user_id="user_123")
 - Multi-backend abstraction layer (swap storage without changing application code)
 - Memory consolidation pipeline: deduplication, merging, conflict resolution
 
+<!-- section_id: "4d6e1215-6bb6-4776-b42e-c87b7accb088" -->
 ### What You Learn
 
 - Production-grade memory API design patterns
@@ -80,12 +87,15 @@ all_memories = memory.get_all(user_id="user_123")
 
 ---
 
+<!-- section_id: "9d15b2dc-89cc-43d9-b502-4675794f09be" -->
 ## 2. Eion (eiondb/eion) — Knowledge Graph + Vector Hybrid
 
+<!-- section_id: "280499a7-6591-4299-a5c9-57f3d6541c11" -->
 ### Overview
 
 A hybrid memory system combining **PostgreSQL + pgvector** for semantic search with **Neo4j** for temporal knowledge graphs. Designed for multi-agent shared memory scenarios where relational reasoning matters alongside similarity search.
 
+<!-- section_id: "1b2e5e90-1225-46a9-9be7-1d14e33ae2c7" -->
 ### Key Features
 
 - **Dual backend**: PostgreSQL for vectors, Neo4j for knowledge graphs
@@ -94,6 +104,7 @@ A hybrid memory system combining **PostgreSQL + pgvector** for semantic search w
 - **Temporal knowledge tracking**: Tracks when facts were learned and how they change over time
 - **Hybrid queries**: Combines semantic similarity with graph traversal in a single query
 
+<!-- section_id: "d2d53108-d594-41b8-a002-3fe7589bb922" -->
 ### API Pattern
 
 ```python
@@ -121,6 +132,7 @@ results = eion.query(
 )
 ```
 
+<!-- section_id: "58b1bfe4-ffb0-4fdb-a2df-978f2c5cb567" -->
 ### Architecture Highlights
 
 - PostgreSQL stores embeddings via pgvector extension for similarity search
@@ -128,6 +140,7 @@ results = eion.query(
 - Hybrid query planner decides when to use vector search, graph traversal, or both
 - Agent-scoped writes with shared reads for multi-agent coordination
 
+<!-- section_id: "dd531802-da04-43fb-8e53-5b20d9ef2209" -->
 ### What You Learn
 
 - Hybrid vector + graph architecture design
@@ -139,12 +152,15 @@ results = eion.query(
 
 ---
 
+<!-- section_id: "9b7bb221-36da-4cf5-b653-8a7f83eceeff" -->
 ## 3. LangChain Email Assistant — Semantic + Episodic + Procedural Memory
 
+<!-- section_id: "8ffbf0a3-769e-4166-acd6-307dac90c307" -->
 ### Overview
 
 A practical demonstration of **three memory types working together** in a single agent. Built on LangGraph for agent orchestration with Mem0 as the memory backend. Shows how semantic, episodic, and procedural memories serve different roles in the same application.
 
+<!-- section_id: "b3cb6620-1f73-4129-bde0-a041e0c64cee" -->
 ### Key Features
 
 - **Semantic memory**: User preferences and company policies (static facts)
@@ -152,6 +168,7 @@ A practical demonstration of **three memory types working together** in a single
 - **Procedural memory**: User-defined workflows and email handling instructions (how-to knowledge)
 - **Human-in-the-loop**: Agent learns from user corrections to improve procedural memory
 
+<!-- section_id: "6ffe5a0f-db3e-43a1-aa34-06b3ef58b758" -->
 ### API Pattern
 
 ```python
@@ -186,6 +203,7 @@ def email_agent(state):
     return agent.invoke(context + state['input'])
 ```
 
+<!-- section_id: "88a9234c-312b-46f0-aaf9-07dbe9eaa5f6" -->
 ### Architecture Highlights
 
 - Each memory type has its own store with different access patterns
@@ -193,6 +211,7 @@ def email_agent(state):
 - Human-in-the-loop feedback updates procedural memory (agent learns new workflows)
 - Episodic memories are time-ordered and windowed (last N interactions)
 
+<!-- section_id: "32b1089e-5959-48bc-abad-7d9b77a6b8d1" -->
 ### What You Learn
 
 - How to combine three memory types in one agent system
@@ -204,12 +223,15 @@ def email_agent(state):
 
 ---
 
+<!-- section_id: "68ddae87-5f47-4e1d-b815-5daa5793f851" -->
 ## 4. MongoDB AI Memory Service — Cognitive Memory Dynamics
 
+<!-- section_id: "c64682ad-045b-44fa-8923-980cfbc87b9b" -->
 ### Overview
 
 A cognitively-inspired memory system built on **MongoDB Atlas** that models biological memory processes: importance scoring, temporal decay, reinforcement through repetition, and semantic merging. Goes beyond simple storage to simulate how human memory strengthens, fades, and consolidates.
 
+<!-- section_id: "1ea1db9a-1ef4-4c7f-b2c2-07260832b7e2" -->
 ### Key Features
 
 - **Memory importance scoring**: Each memory gets an importance weight (manual or auto-assessed)
@@ -219,6 +241,7 @@ A cognitively-inspired memory system built on **MongoDB Atlas** that models biol
 - **Memory pruning**: Low-importance memories are removed to stay within capacity limits
 - **MongoDB Atlas Vector Search**: Native vector similarity on MongoDB documents
 
+<!-- section_id: "6c6fb52c-58c6-404b-a0a1-4c7af77a6b16" -->
 ### API Pattern
 
 ```python
@@ -247,6 +270,7 @@ memory_service.merge_similar_memories(threshold=0.7)
 memory_service.prune(min_importance=0.1)
 ```
 
+<!-- section_id: "02638793-3ebc-4ca4-a922-16cc0b33d3cf" -->
 ### Architecture Highlights
 
 - Each memory document includes: content, embedding, importance score, access count, last accessed timestamp, decay state
@@ -255,6 +279,7 @@ memory_service.prune(min_importance=0.1)
 - Merging combines two similar memories into one, averaging their embeddings and summing importance
 - MongoDB Atlas vector search provides the similarity backbone
 
+<!-- section_id: "ebb16dcb-4060-412f-9f41-1da0efb450b8" -->
 ### What You Learn
 
 - Biologically-inspired memory dynamics (decay, reinforcement, consolidation)
@@ -266,12 +291,15 @@ memory_service.prune(min_importance=0.1)
 
 ---
 
+<!-- section_id: "f197c67d-f567-4483-abcd-3fcc1f678672" -->
 ## 5. MemOS (MemTensor/MemOS) — Modular Memory Operating System
 
+<!-- section_id: "c0076fb2-fa1d-4f40-908f-b253e44e13cf" -->
 ### Overview
 
 A **Memory-Augmented Generation (MAG)** framework that treats memory as a modular operating system. Uses a "MemCube" abstraction where different memory types are pluggable modules with a unified API. Designed for researchers who want to experiment with different memory architectures.
 
+<!-- section_id: "923aab3e-a1b2-4532-9326-2ef5238935cd" -->
 ### Key Features
 
 - **MemCube architecture**: Each memory type is an independent, pluggable module
@@ -279,6 +307,7 @@ A **Memory-Augmented Generation (MAG)** framework that treats memory as a modula
 - **Memory-Augmented Generation**: Retrieval is tightly integrated into the generation process
 - **Pluggable backends**: Swap storage implementations without changing application code
 
+<!-- section_id: "1ecfde68-60e8-48a3-a956-5e6ed9c468b4" -->
 ### API Pattern
 
 ```python
@@ -305,6 +334,7 @@ context = memos.retrieve(
 )
 ```
 
+<!-- section_id: "002047ca-c4ec-4507-95d4-7b2f3aa663d6" -->
 ### Architecture Highlights
 
 - Plugin architecture: Each memory type implements a standard interface
@@ -312,6 +342,7 @@ context = memos.retrieve(
 - Cross-module retrieval: A single query can draw from multiple memory types
 - Designed for research experimentation (easy to swap components)
 
+<!-- section_id: "8cba6489-d4ab-4c01-8ef7-4392f5fa8366" -->
 ### What You Learn
 
 - Modular memory system design with plugin architecture
@@ -323,12 +354,15 @@ context = memos.retrieve(
 
 ---
 
+<!-- section_id: "ace3c854-32be-41ab-a56d-e5235baece3e" -->
 ## 6. Hindsight (vectorize-io/hindsight) — Learning from Experience
 
+<!-- section_id: "c50c5198-e9fe-49f9-ab85-92a3b97cacf2" -->
 ### Overview
 
 A memory system focused on **agents that learn from experience**. Rather than just storing and retrieving memories, Hindsight enables agents to recognize patterns across past episodes and improve their behavior over time. Emphasizes the feedback loop between memory and action.
 
+<!-- section_id: "feeea22d-9f90-4cb9-ba2a-903440f02bd3" -->
 ### Key Features
 
 - **Experience-based learning loops**: Agent stores outcomes, reflects on patterns, adjusts behavior
@@ -336,6 +370,7 @@ A memory system focused on **agents that learn from experience**. Rather than ju
 - **Self-improving retrieval**: Retrieval strategies adapt based on which memories proved useful
 - **Adaptive behavior**: Agent learns which approaches work in which contexts
 
+<!-- section_id: "fc19d8da-32b3-4e9d-b5a1-f2cecd167dc7" -->
 ### What You Learn
 
 - Experience-based learning loop design
@@ -347,12 +382,15 @@ A memory system focused on **agents that learn from experience**. Rather than ju
 
 ---
 
+<!-- section_id: "bfa15549-abd4-4413-a86b-d2d75d7a85b0" -->
 ## 7. Simple RAG with ChromaDB — Minimal Working Example
 
+<!-- section_id: "e543180a-bcff-4f15-89e7-626a3ee6fd5f" -->
 ### Overview
 
 A minimal implementation of **vector memory with ChromaDB** and a local LLM. The simplest possible working example of an agent with memory. Ideal for learning the fundamentals before moving to more complex systems.
 
+<!-- section_id: "dcc0f57e-2290-4454-9513-66e805e26d69" -->
 ### Key Features
 
 - **Basic vector memory**: ChromaDB for embedding storage and retrieval
@@ -360,6 +398,7 @@ A minimal implementation of **vector memory with ChromaDB** and a local LLM. The
 - **Local LLM integration**: Works with Llama via llama_cpp (no API keys needed)
 - **Internet search integration**: Can search the web and store results in memory
 
+<!-- section_id: "15641047-22a3-466a-8a07-96d3214bf46f" -->
 ### API Pattern
 
 ```python
@@ -384,6 +423,7 @@ results = collection.query(
 # results: {"documents": [["The user name is Rustam Akimov"]]}
 ```
 
+<!-- section_id: "0eaa564e-f8f5-4581-8f96-39d06058ed50" -->
 ### Architecture Highlights
 
 - ChromaDB handles embedding generation, storage, and similarity search in one package
@@ -391,6 +431,7 @@ results = collection.query(
 - Simple document-in, document-out interface
 - Agent loop: receive input -> check memory -> generate response -> optionally store to memory
 
+<!-- section_id: "338c3dec-25e5-4a9a-8648-e681d40c02fc" -->
 ### What You Learn
 
 - Minimal RAG (Retrieval-Augmented Generation) implementation
@@ -402,6 +443,7 @@ results = collection.query(
 
 ---
 
+<!-- section_id: "09c1d3eb-0ea3-41aa-ad4b-bf83f1ca64af" -->
 ## 8. Comparison Table
 
 | System | Backend | Memory Types | Stars / Maturity | Key Innovation | Best For |
@@ -416,19 +458,23 @@ results = collection.query(
 
 ---
 
+<!-- section_id: "90205c49-7c3c-4cbe-a210-5c64bb6770a4" -->
 ## 9. Recommended Learning Path
 
+<!-- section_id: "e3583202-04b5-48fa-b531-263072dcc46c" -->
 ### For Learning Fundamentals
 
 1. **Start with Simple RAG** (ChromaDB example) — understand basic vector memory, the add/query loop, and how retrieval augments generation
 2. **Move to Mem0** — see production-grade patterns: multi-backend support, LLM-assisted extraction, memory lifecycle management
 
+<!-- section_id: "92a6724e-da58-412e-a452-1091ba1fbba9" -->
 ### For Real Projects
 
 - **Mem0** if you want a managed service with flexibility and community support
 - **Eion** if your application needs knowledge graph reasoning alongside vector search
 - **MongoDB AI Memory** if you want biologically-inspired cognitive dynamics (decay, reinforcement)
 
+<!-- section_id: "15f5391b-a282-45c9-a19e-2b7477f3f762" -->
 ### For Research and Experimentation
 
 - **MemOS** for modular architecture research (swap memory types as plugins)
@@ -437,6 +483,7 @@ results = collection.query(
 
 ---
 
+<!-- section_id: "30030389-8595-4a81-9946-c67593195d4f" -->
 ## Cross-References
 
 - **Data structures used by these systems**: `22_core_data_structure_hierarchy.md`, `28_supporting_data_structures_deep_dive.md`
@@ -446,6 +493,7 @@ results = collection.query(
 
 ---
 
+<!-- section_id: "bf8f0999-9490-40ba-9e50-6aad8a60b5dd" -->
 ## Sources
 
 - [Mem0 GitHub Repository](https://github.com/mem0ai/mem0) — production memory framework (25k+ stars)

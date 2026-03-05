@@ -6,6 +6,7 @@ resource_name: "README"
 ---
 # User Stories — General Pattern
 
+<!-- section_id: "f72fccf8-836c-401a-952f-f78e0febab25" -->
 ## Actors
 
 | Actor | Description |
@@ -13,6 +14,7 @@ resource_name: "README"
 | System Designer | Applies the pattern to a new domain |
 | Developer | Reads documentation to understand the pattern |
 
+<!-- section_id: "f9b1d185-ca13-42c9-aba0-5f9438ced61a" -->
 ## Stories
 
 | ID | Story | Actor |

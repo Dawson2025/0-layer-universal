@@ -6,12 +6,15 @@ resource_name: "README"
 ---
 # Layer 2 (Feature) AI Manager System
 
+<!-- section_id: "3956b22e-11d8-4972-99dc-9e1380d0f555" -->
 ## Overview
 
 This directory contains the AI manager system for **Layer 2 - Features**, which manages individual feature domains within a project. Layer 2 sits between project-level coordination (Layer 1) and concrete component implementation (Layer 3), ensuring that all components within a feature work together cohesively while respecting both universal and project-level constraints.
 
+<!-- section_id: "e148d41a-62bb-4086-9a46-5de59d13fd00" -->
 ## Manager/Worker Roles at Layer 2
 
+<!-- section_id: "c32a6057-f286-4c35-8c5d-d423507b0464" -->
 ### Manager Responsibilities
 
 The **Layer 2 Manager** is responsible for:
@@ -27,6 +30,7 @@ The **Layer 2 Manager** is responsible for:
 5. **Feature Quality Assurance**: Validates that the complete feature meets acceptance criteria
 6. **Upward Reporting**: Aggregates component results and reports feature status to Layer 1
 
+<!-- section_id: "9a8457d7-016c-47bf-a937-7efd9134dadb" -->
 ### Worker Characteristics
 
 Layer 2 workers handle:
@@ -35,6 +39,7 @@ Layer 2 workers handle:
 - **Feature documentation**: Feature-specific guides and API documentation
 - **Feature testing**: Integration tests that span multiple components
 
+<!-- section_id: "e8fa5edc-81a1-4ddf-8760-2f8ef93043fb" -->
 ### Tool Recommendations
 
 Based on the ideal hierarchy system:
@@ -46,8 +51,10 @@ Based on the ideal hierarchy system:
   - **Claude Code** for multi-component integration tasks
   - **Codex CLI** for single-file utilities or focused documentation
 
+<!-- section_id: "a6806627-c25a-4501-a240-e79fcbb7fc95" -->
 ## Handoff Consumption and Production
 
+<!-- section_id: "ad435b4c-2d51-4bed-80e3-d71c181e0f7f" -->
 ### Incoming Handoffs (Upstream from Layer 1)
 
 Layer 2 receives handoffs from Layer 1 project managers:
@@ -87,6 +94,7 @@ Layer 2 receives handoffs from Layer 1 project managers:
 }
 ```
 
+<!-- section_id: "21aadadd-9975-43f3-a014-b1bafa412443" -->
 ### Outgoing Handoffs (Downstream to Layer 3)
 
 Layer 2 produces handoffs for Layer 3 component managers/workers:
@@ -131,12 +139,14 @@ Layer 2 produces handoffs for Layer 3 component managers/workers:
 }
 ```
 
+<!-- section_id: "9c6f1e01-d32e-4ae2-9b65-5b6d551e7270" -->
 ### Horizontal Handoffs (Stage-to-Stage)
 
 Within Layer 2, handoffs flow between stages:
 - **Location**: Each stage's `hand_off_documents/outgoing.json` → next stage's `incoming.json`
 - **Pipeline**: request → instructions → planning → design → implementation → testing → criticism → fixing → archiving
 
+<!-- section_id: "1c88f5bb-f524-4cda-bc3e-22155b968402" -->
 ### Upward Handoffs (To Layer 1)
 
 Layer 2 reports results back to Layer 1:
@@ -184,6 +194,7 @@ Layer 2 reports results back to Layer 1:
 }
 ```
 
+<!-- section_id: "0188e803-71ae-4739-9c8c-fa37214f06ce" -->
 ## Stage Pipeline
 
 Layer 2 operates through the chronological pipeline:
@@ -198,8 +209,10 @@ Layer 2 operates through the chronological pipeline:
 8. **stage_2.07_fixing**: Resolve integration issues
 9. **stage_2.09_archives**: Document feature architecture and decisions
 
+<!-- section_id: "4c4e313b-b93e-47a7-a16d-1c989d2b0f8b" -->
 ## Manager/Worker Workflow at Layer 2
 
+<!-- section_id: "278ca9df-ee5f-4faf-bf78-86f2f784a64e" -->
 ### Manager Workflow
 
 1. **Read Incoming Handoff** from Layer 1:
@@ -225,6 +238,7 @@ Layer 2 operates through the chronological pipeline:
    - Execute criticism and fixing stages
    - Aggregate results and write to `2.01_manager_handoff_documents/2.00_to_project/outgoing.json`
 
+<!-- section_id: "4dbc5f51-c8cf-45c1-b170-1ed6b1f74bbd" -->
 ### Worker Workflow (Feature-Wide Tasks)
 
 1. **Read Task Handoff**: Receive specific feature-wide task (e.g., create shared types)
@@ -232,10 +246,12 @@ Layer 2 operates through the chronological pipeline:
 3. **Write Results**: Update handoff with created artifacts
 4. **Exit**: Return control to manager
 
+<!-- section_id: "3db337f9-9853-4cca-829a-0752a6d6c695" -->
 ## Parallel Execution at Layer 2
 
 Layer 2 is the **primary parallelization layer** where significant speedup occurs:
 
+<!-- section_id: "b3d9fa89-d4b8-472c-a137-5442c51e8de0" -->
 ### Decomposition Strategy
 
 During the planning stage, identify:
@@ -243,6 +259,7 @@ During the planning stage, identify:
 - **Shared Dependencies**: Must be created first (e.g., auth types, API client)
 - **Integration Components**: Must run after all independents complete (e.g., integration tests)
 
+<!-- section_id: "713b916f-33e2-4a25-b852-311fd376bffe" -->
 ### Execution Pattern
 
 ```
@@ -261,6 +278,7 @@ Batch 2 (sequential - integration):
   - integration-tests
 ```
 
+<!-- section_id: "fa676546-e86d-4634-b6e8-2d22d9b7929d" -->
 ### Example: Auth Feature Parallelization
 
 ```python
@@ -291,6 +309,7 @@ for batch in batches:
         break
 ```
 
+<!-- section_id: "d27e72f8-d991-4b78-9a7f-a7e3092dfe3b" -->
 ## Deeper References
 
 For comprehensive understanding of the manager/worker model, handoff protocol, and orchestration patterns, see:
@@ -301,6 +320,7 @@ For comprehensive understanding of the manager/worker model, handoff protocol, a
 - **Supervisor Patterns**: [ideal_ai_manager_hierarchy_system/supervisor_patterns.md](../../../code/0_layer_universal/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/supervisor_patterns.md)
 - **Handoff Schema**: [../layer_0/0.01_manager_handoff_documents/0.00_to_universal/handoff_schema.md](../../layer_0/0.01_manager_handoff_documents/0.00_to_universal/handoff_schema.md)
 
+<!-- section_id: "18fa8f45-3f48-40ce-b58a-69630228c8f2" -->
 ## Directory Structure
 
 ```
@@ -326,6 +346,7 @@ layer_2_features/
     └── ... (full stage pipeline)
 ```
 
+<!-- section_id: "91a50527-30ab-4085-a39b-80ee09cf80bc" -->
 ## Best Practices
 
 1. **Clear Component Boundaries**: Define clean interfaces between components

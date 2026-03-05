@@ -12,6 +12,7 @@ resource_name: "SUMMARY"
 
 ---
 
+<!-- section_id: "0f515c12-1a02-47e3-a5c6-7dbeb16d2868" -->
 ## Overview
 
 Two related changes:
@@ -20,6 +21,7 @@ Two related changes:
 
 ---
 
+<!-- section_id: "464600db-e870-4ac6-94d0-6637f6a91a76" -->
 ## Context Architecture Impact
 
 ```
@@ -52,6 +54,7 @@ Two related changes:
 
 ---
 
+<!-- section_id: "b7866097-8027-456b-a587-386f463e1aec" -->
 ## Change 1: AI Context Modification Protocol (Layer 0)
 
 **File**: `/home/dawson/dawson-workspace/code/0_layer_universal/layer_0/layer_0_04_sub_layers/sub_layer_0_02_rules/0_every_api_request/AI_CONTEXT_MODIFICATION_PROTOCOL.md`
@@ -92,6 +95,7 @@ Two related changes:
 
 ---
 
+<!-- section_id: "899e403e-8c35-48f9-b9f3-fb40ebf54e01" -->
 ## Change 2: Writing Style Rule (Layer 1 - School)
 
 **File**: `/home/dawson/dawson-workspace/code/0_layer_universal/layer_1/layer_1_projects/layer_1_project_school/layer_1/layer_1_02_sub_layers/sub_layer_1.04_project_rules/writing_style.md`
@@ -116,6 +120,7 @@ When programmatically filling Word documents, insert an empty paragraph with spa
 
 ---
 
+<!-- section_id: "f256ee85-5f29-478a-a7bd-d553aef7a22b" -->
 ## Change 3: Replace Filled Docx (Layer 7)
 
 **Action**: COPY/REPLACE
@@ -126,6 +131,7 @@ When programmatically filling Word documents, insert an empty paragraph with spa
 
 ---
 
+<!-- section_id: "ad94a9a3-d925-45c2-9cc8-9427a275738d" -->
 ## Change 4: Update Layer 1 Proposal (Link to this)
 
 **File**: `/home/dawson/dawson-workspace/code/0_layer_universal/layer_1/layer_1_projects/layer_1_project_school/layer_1/layer_1_00_layer_registry/proposals/2026-02-01_paragraph_spacing_rule/SUMMARY.md`
@@ -134,6 +140,7 @@ When programmatically filling Word documents, insert an empty paragraph with spa
 
 ---
 
+<!-- section_id: "7e36fee3-ad1f-4480-84ea-30390ce0be30" -->
 ## Approval Checklist
 
 - [x] Layer 0: AI_CONTEXT_MODIFICATION_PROTOCOL.md update approved & executed
@@ -143,6 +150,7 @@ When programmatically filling Word documents, insert an empty paragraph with spa
 
 ---
 
+<!-- section_id: "4936a5de-4982-4019-ba13-d9617dfe4193" -->
 ## Rationale
 
 1. **Proposal Storage**: Ensures proposals are tracked, versioned, and discoverable by future agents

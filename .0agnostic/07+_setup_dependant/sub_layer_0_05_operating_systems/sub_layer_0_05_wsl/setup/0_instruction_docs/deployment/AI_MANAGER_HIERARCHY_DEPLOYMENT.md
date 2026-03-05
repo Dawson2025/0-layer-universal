@@ -11,10 +11,12 @@ resource_name: "AI_MANAGER_HIERARCHY_DEPLOYMENT"
 
 ---
 
+<!-- section_id: "efe2febc-40b5-4cff-8442-6d32261d4bf1" -->
 ## Purpose
 
 This document provides deployment guidance specific to the **AI Manager Hierarchy System** (Agent OS). It clarifies how the layer/stage architecture maps to deployed services, background workers, and infrastructure components.
 
+<!-- section_id: "d05b3465-3843-4252-b41a-c6ed7e0e66ae" -->
 ## Normative Specification
 
 This document is a **derived implementation guide** from the canonical specification:
@@ -27,8 +29,10 @@ For application-specific deployment (Flask, Node.js, etc.), see:
 
 ---
 
+<!-- section_id: "e16f8223-df3d-45fc-a0c8-959d3591652b" -->
 ## Quick Reference
 
+<!-- section_id: "940653f7-8841-4f7a-a996-4b9966d3e1eb" -->
 ### Deployment Patterns by Environment
 
 | Environment | Architecture | Layers | Workers | Cost |
@@ -37,6 +41,7 @@ For application-specific deployment (Flask, Node.js, etc.), see:
 | Staging | Distributed (small) | L0-L3 | 2-5 workers | $10-50/day |
 | Production | Distributed (scaled) | L0-L4+ | 10-50+ workers | $50-500+/day |
 
+<!-- section_id: "6d7e86a9-9659-4b24-b148-1f86fe5f84d4" -->
 ### Component Mapping
 
 ```
@@ -53,8 +58,10 @@ Metrics → Prometheus + Grafana
 
 ---
 
+<!-- section_id: "5cc2432e-ed70-4df9-b63f-73e8eccfe7f1" -->
 ## Deployment Architectures
 
+<!-- section_id: "fd7f384b-a004-422b-9741-aa64005e04cc" -->
 ### Pattern 1: Single-Machine Development
 
 **Best For**: Local development, testing, small personal projects
@@ -123,6 +130,7 @@ tail -f logs/supervisor.log
 
 ---
 
+<!-- section_id: "bd97bcf8-b2d6-4fb9-a83a-2d024fe9892a" -->
 ### Pattern 2: Distributed Staging
 
 **Best For**: Testing production deployment patterns, team collaboration
@@ -200,6 +208,7 @@ curl https://staging.example.com/health
 
 ---
 
+<!-- section_id: "397ad280-ed43-44df-805b-e66949cbc029" -->
 ### Pattern 3: Production at Scale
 
 **Best For**: Production workloads, high-volume processing, enterprise deployments
@@ -242,8 +251,10 @@ curl https://staging.example.com/health
 
 ---
 
+<!-- section_id: "64679a12-1e8d-4610-ac75-ee91d6649d1d" -->
 ## Layer-to-Service Mapping
 
+<!-- section_id: "9bc4f1c8-8407-4fba-9d0c-33b6e4da059c" -->
 ### How Layers Map to Deployed Services
 
 ```yaml
@@ -297,6 +308,7 @@ Layer 4+ (Sub-component Worker):
     - Unit-level testing
 ```
 
+<!-- section_id: "ef7f106e-5a7a-4aec-b191-481bb9030466" -->
 ### Service Communication
 
 ```
@@ -314,8 +326,10 @@ All services read/write:
 
 ---
 
+<!-- section_id: "493c490a-c110-451e-b649-b90f8ce6c70e" -->
 ## Environment-Specific Configuration
 
+<!-- section_id: "c3d4df0b-3545-4718-b1b3-599d8f3a84b1" -->
 ### Development Environment
 
 **Configuration** (`config/development.yaml`):
@@ -350,6 +364,7 @@ budget:
 - Local AI tool binaries (codex, claude-code)
 - API calls to cloud services (OpenAI, Anthropic, Google)
 
+<!-- section_id: "91467891-7758-44f6-869c-fb83325cd2cb" -->
 ### Staging Environment
 
 **Configuration** (`config/staging.yaml`):
@@ -392,6 +407,7 @@ budget:
   alert_threshold: 0.8
 ```
 
+<!-- section_id: "25063e93-2e9a-4afd-a954-e95980bc39e6" -->
 ### Production Environment
 
 **Configuration** (`config/production.yaml`):
@@ -455,8 +471,10 @@ security:
 
 ---
 
+<!-- section_id: "d8e60fb1-c22a-48c0-a364-d5ae323531ef" -->
 ## Scaling Strategy
 
+<!-- section_id: "3cfb77cd-e3b2-4c3f-8e9f-a744fd767dd1" -->
 ### Vertical Scaling (Per-Service)
 
 **Supervisor**:
@@ -471,6 +489,7 @@ security:
 - Production: 10-100+ containers
 - Scale trigger: Queue depth, task backlog
 
+<!-- section_id: "431cb85f-8939-459c-9e6d-e689e9a261de" -->
 ### Horizontal Scaling (Auto-Scaling)
 
 **Kubernetes HPA Example**:
@@ -518,6 +537,7 @@ spec:
           periodSeconds: 60
 ```
 
+<!-- section_id: "785dd55a-083b-4328-b053-e31431ae685b" -->
 ### Cost-Based Scaling
 
 - **Peak Hours**: Scale up workers (9am-5pm)
@@ -527,8 +547,10 @@ spec:
 
 ---
 
+<!-- section_id: "65e95a1b-1763-4aad-b7dc-6b3e97f0f173" -->
 ## Deployment Pipeline
 
+<!-- section_id: "1accfe33-7f6e-4383-b778-5fa0bafaad52" -->
 ### Development → Staging → Production
 
 ```mermaid
@@ -546,6 +568,7 @@ graph LR
     I --> A
 ```
 
+<!-- section_id: "f9fe9886-8001-45d6-a96c-0b9cc36cd49f" -->
 ### Deployment Steps
 
 **1. Pre-Deployment Checklist**:
@@ -596,8 +619,10 @@ kubectl delete deployment supervisor-v1
 
 ---
 
+<!-- section_id: "68a81b2f-ef71-467d-9998-c3c3d6d6afeb" -->
 ## Reliability and Fault Tolerance
 
+<!-- section_id: "59661acc-5e4a-4043-ad4c-de221e81af73" -->
 ### Failure Modes and Mitigations
 
 | Failure | Impact | Mitigation |
@@ -609,6 +634,7 @@ kubectl delete deployment supervisor-v1
 | Database failure | State loss | Read replicas + backups |
 | Queue failure | Tasks lost | Message persistence + replication |
 
+<!-- section_id: "81bc570d-bd5f-4cc7-8195-e27169450e1f" -->
 ### High Availability Configuration
 
 **Supervisor Cluster**: See normative specification Section 3.2 for leader election implementation.
@@ -621,8 +647,10 @@ kubectl delete deployment supervisor-v1
 
 ---
 
+<!-- section_id: "2603ebd9-9372-49fc-ae6a-382e23da02b9" -->
 ## Monitoring and Observability
 
+<!-- section_id: "da1e76f1-3adf-4686-8b92-50229d5443df" -->
 ### Key Metrics
 
 **System Health**:
@@ -648,11 +676,13 @@ kubectl delete deployment supervisor-v1
 - Code quality scores
 - Human review approval rate
 
+<!-- section_id: "1166b4bf-816d-426b-9811-8a72312afff0" -->
 ### Dashboards
 
 See observability documentation for dashboard specifications:
 - **Reference**: `layer_0/0.02_sub_layers/sub_layer_0_13_universal_protocols/observability/`
 
+<!-- section_id: "803cfe8e-a778-4bff-9f42-8605b26bcaea" -->
 ### Alerts
 
 **Critical**:
@@ -667,8 +697,10 @@ See observability documentation for dashboard specifications:
 
 ---
 
+<!-- section_id: "581b85a1-15c0-42bb-8dd5-d2529988e0b3" -->
 ## Cost Optimization
 
+<!-- section_id: "03c1c799-411e-4d11-b24c-aefefd76dfdd" -->
 ### Production Cost Strategies
 
 1. **Spot/Preemptible Instances** for L3/L4 workers (70-90% savings)
@@ -677,6 +709,7 @@ See observability documentation for dashboard specifications:
 4. **Task Deduplication** (avoid redundant work)
 5. **Off-Peak Scaling** (reduce workers during low-demand periods)
 
+<!-- section_id: "e63b677f-d2f1-4790-9c47-8ac6a72b6649" -->
 ### Budget Management
 
 See safety/governance documentation:
@@ -684,8 +717,10 @@ See safety/governance documentation:
 
 ---
 
+<!-- section_id: "d6fe8623-f5b5-464c-b9af-803f0c495473" -->
 ## Security Considerations
 
+<!-- section_id: "18162b76-bc06-47d5-94bf-f307ebcde872" -->
 ### Deployment Security
 
 - **Network Isolation**: Workers in private subnets
@@ -694,6 +729,7 @@ See safety/governance documentation:
 - **API Authentication**: JWT tokens for service authentication
 - **Audit Logging**: All actions logged to immutable audit trail
 
+<!-- section_id: "c8dd4178-4d8b-44d2-8ca6-bb4ea9374341" -->
 ### Compliance
 
 See safety/governance documentation for compliance requirements:
@@ -701,6 +737,7 @@ See safety/governance documentation for compliance requirements:
 
 ---
 
+<!-- section_id: "5bd49c3f-dc26-45cf-b30c-e038bb466d41" -->
 ## References
 
 - **Normative Spec**: `.../-1_research/.../ideal_ai_manager_hierarchy_system/production_deployment.md`
@@ -710,8 +747,10 @@ See safety/governance documentation for compliance requirements:
 
 ---
 
+<!-- section_id: "f6e867a4-2106-4936-a2f3-8d78c10a22a3" -->
 ## Quick Start Commands
 
+<!-- section_id: "42fe1234-fd96-4ca3-abe5-36028514df37" -->
 ### Start Development Environment
 
 ```bash
@@ -721,6 +760,7 @@ source .venv/bin/activate
 python supervisor/main.py --config config/development.yaml
 ```
 
+<!-- section_id: "49a88186-5c0e-4cf9-ab47-19576220ffe7" -->
 ### Deploy to Staging
 
 ```bash
@@ -731,6 +771,7 @@ kubectl apply -f k8s/staging/
 kubectl get pods -n ai-manager-staging
 ```
 
+<!-- section_id: "f42c3413-fe48-4006-a20d-3f38e8589594" -->
 ### Deploy to Production
 
 ```bash

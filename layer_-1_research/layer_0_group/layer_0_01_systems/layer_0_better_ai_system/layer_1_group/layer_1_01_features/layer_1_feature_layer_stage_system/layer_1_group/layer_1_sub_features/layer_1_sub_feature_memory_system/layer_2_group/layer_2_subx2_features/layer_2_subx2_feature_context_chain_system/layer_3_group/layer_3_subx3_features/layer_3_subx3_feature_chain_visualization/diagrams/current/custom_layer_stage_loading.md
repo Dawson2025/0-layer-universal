@@ -11,6 +11,7 @@ resource_name: "custom_layer_stage_loading"
 
 ---
 
+<!-- section_id: "bb6ac9ef-7c8d-4979-995e-215a4a16d9cb" -->
 ## Extension Strategy
 
 Our system extends Claude Code through **two mechanisms**:
@@ -27,6 +28,7 @@ We do NOT currently use:
 
 ---
 
+<!-- section_id: "505349d9-7277-4300-863f-985b2641fef3" -->
 ## Architecture: Official + Custom
 
 ```
@@ -65,6 +67,7 @@ We do NOT currently use:
 
 ---
 
+<!-- section_id: "bdc0da29-6f9d-47bf-9abe-fad6abeec9bf" -->
 ## Custom Loading Sequence (Full)
 
 ```
@@ -229,6 +232,7 @@ We do NOT currently use:
 
 ---
 
+<!-- section_id: "11b4598c-76c5-462a-9808-8226a2c78e77" -->
 ## How We Hook Into Claude Code
 
 ```
@@ -260,6 +264,7 @@ We do NOT currently use:
 
 ---
 
+<!-- section_id: "7c7969d6-e503-4c65-a9c1-78f0d98e3538" -->
 ## Our Custom File Types
 
 | File Type | Purpose | How Loaded | Location Pattern |
@@ -272,6 +277,7 @@ We do NOT currently use:
 | `AGENTS.md` | Delegation rules | CLAUDE.md references | Deprecated, use .claude/ |
 | `0AGNOSTIC.md` | Tool-agnostic instructions | Synced to CLAUDE.md | Same dir as CLAUDE.md |
 
+<!-- section_id: "d7777ac9-90cf-4323-858e-c2991d5cbb37" -->
 ### Detailed File Descriptions
 
 #### index.jsonld
@@ -342,6 +348,7 @@ JSON-LD schema defining types, patterns, and validation:
 
 ---
 
+<!-- section_id: "84c6bc4e-f538-4f5e-84e6-c007a14a5d29" -->
 ## The Key Mechanism: CLAUDE.md Instructions
 
 Our system works because CLAUDE.md files (which Claude Code auto-loads) contain instructions that tell the agent to read our custom files:
@@ -387,6 +394,7 @@ Our system works because CLAUDE.md files (which Claude Code auto-loads) contain 
 
 ---
 
+<!-- section_id: "09fc9f7a-4357-455d-abeb-22fcbd6ea723" -->
 ## Summary: Official vs Custom
 
 | Aspect | Claude Code Official | Our Custom Addition |
@@ -401,10 +409,12 @@ Our system works because CLAUDE.md files (which Claude Code auto-loads) contain 
 
 ---
 
+<!-- section_id: "809381e9-efee-4b79-bc95-57eb7bf3878f" -->
 ## Potential Improvements Using Official Features
 
 Claude Code provides several features we could leverage to improve our context loading:
 
+<!-- section_id: "95485e6d-5cfc-439d-b6a4-129d451dbad9" -->
 ### 1. SessionStart Hooks
 
 **Current**: Agent reads rules manually when instructed
@@ -423,6 +433,7 @@ Claude Code provides several features we could leverage to improve our context l
 
 **Benefit**: Rules loaded automatically, no agent decision required
 
+<!-- section_id: "a213ab94-1b8e-4b03-bd54-f9b8f1c10436" -->
 ### 2. .claude/rules/ Directory
 
 **Current**: Rules in `sub_layer_0_04_rules/`, agent must navigate
@@ -437,6 +448,7 @@ Claude Code provides several features we could leverage to improve our context l
 
 **Benefit**: Critical rules auto-loaded, always present
 
+<!-- section_id: "03df5e1c-478a-4316-9940-35b74265f033" -->
 ### 3. @import System in CLAUDE.md
 
 **Current**: CLAUDE.md files are independent, contain instructions to read others
@@ -451,6 +463,7 @@ Claude Code provides several features we could leverage to improve our context l
 
 **Benefit**: Context loaded when CLAUDE.md loads, no agent action needed
 
+<!-- section_id: "7c71cf0b-3d4e-44a8-816f-02788b2827a1" -->
 ### 4. CLAUDE.local.md for Personal Preferences
 
 **Current**: All context is shared via git
@@ -469,6 +482,7 @@ Claude Code provides several features we could leverage to improve our context l
 
 ---
 
+<!-- section_id: "fb4e9886-8a9b-455f-8c17-426a5d5a18b7" -->
 ## Migration Path
 
 If we decide to adopt official features:
@@ -486,6 +500,7 @@ If we decide to adopt official features:
 
 ---
 
+<!-- section_id: "99d80989-b333-4f55-b328-eb9eabd89dcf" -->
 ## Directory Naming Conventions
 
 Our system encodes meaning in directory names:
@@ -520,10 +535,12 @@ sub_layer_{L}_{NN}_{name}
 
 ---
 
+<!-- section_id: "abb99c11-0b54-40cd-afdb-9b13e3bd357d" -->
 ## AALang Context Agents (NEW - 2026-02-05)
 
 Our system now includes **AALang context agents** that formalize the context loading process.
 
+<!-- section_id: "efd3e49e-e1b6-46c2-a309-61199064c3cf" -->
 ### Agent-Based Context Loading
 
 ```
@@ -582,6 +599,7 @@ Our system now includes **AALang context agents** that formalize the context loa
     ╚═══════════════════════════════════════════════════════════════════════════╝
 ```
 
+<!-- section_id: "59678903-22f4-4a55-b05d-dba00da963d9" -->
 ### State Actors
 
 | Actor | Purpose | Persisted |
@@ -591,6 +609,7 @@ Our system now includes **AALang context agents** that formalize the context loa
 | `NavigationStateActor` | Track layer/stage/sub_layer position | Yes |
 | `DebugContextStateActor` | Control debug output | Yes |
 
+<!-- section_id: "9f6edf2d-b85a-4131-be10-a92952d41837" -->
 ### Layer Inheritance Model
 
 ```
@@ -621,6 +640,7 @@ Our system now includes **AALang context agents** that formalize the context loa
     4. Explicit @override wins over implicit
 ```
 
+<!-- section_id: "e577986b-6568-4d4e-a130-e6578a900f7c" -->
 ### Cross-Session Persistence
 
 State is persisted to: `.claude/context_state.json`
@@ -634,6 +654,7 @@ State is persisted to: `.claude/context_state.json`
 }
 ```
 
+<!-- section_id: "500c2925-8c42-4bec-a272-3c26c99d0469" -->
 ### AALang Agent Files
 
 Location: `layer_0/layer_0_03_sub_layers/sub_layer_0_01_context_agents/`
@@ -645,6 +666,7 @@ Location: `layer_0/layer_0_03_sub_layers/sub_layer_0_01_context_agents/`
 | `context_modes.jsonld` | Mode definitions |
 | `README.md` | Documentation |
 
+<!-- section_id: "6f3a83d4-a025-472c-8caa-736cd6ab1b71" -->
 ### CLAUDE.md Integration
 
 Each CLAUDE.md in the chain includes:
@@ -666,6 +688,7 @@ Each CLAUDE.md in the chain includes:
 - ctx:NavigationStateActor.currentLayer = N
 ```
 
+<!-- section_id: "e74750db-8ae4-4e33-996e-e03e6fffa494" -->
 ### Related Documentation
 
 | Document | Location |

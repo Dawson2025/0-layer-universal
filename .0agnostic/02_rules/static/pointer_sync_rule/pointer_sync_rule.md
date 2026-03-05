@@ -7,6 +7,7 @@ resource_name: "pointer_sync_rule"
 
 **Type**: Static (always applies) | **Scope**: All agents
 
+<!-- section_id: "5b0f851f-4164-459c-a18c-b1566b0289f8" -->
 ## Rule
 
 When creating or modifying a pointer file:
@@ -19,6 +20,7 @@ When creating or modifying a pointer file:
 6. **MUST NOT** hardcode absolute paths in pointer files
 7. **MUST NOT** manually compute relative paths — let `pointer-sync.sh` handle it
 
+<!-- section_id: "d45fbe31-808d-4bde-9e5a-5a7f61fb63e7" -->
 ## Pointer File Template
 
 ```markdown
@@ -39,6 +41,7 @@ Brief description of what this points to.
 Do not duplicate content here — read the canonical location instead.
 ```
 
+<!-- section_id: "3eea5273-36f6-43bd-b5a4-c4433780393f" -->
 ## When This Rule Applies
 
 - Creating a new pointer file (instead of duplicating content)
@@ -46,6 +49,7 @@ Do not duplicate content here — read the canonical location instead.
 - Moving or renaming directories that contain pointer targets
 - Running `agnostic-sync.sh` (which includes pointer validation)
 
+<!-- section_id: "a93b9c17-242e-47c3-b20c-0efe11b34036" -->
 ## References
 
 - Protocol: `.0agnostic/03_protocols/pointer_sync_protocol.md`

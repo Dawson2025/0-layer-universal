@@ -11,6 +11,7 @@ This document provides a comprehensive overview of all the requests identified d
 
 # Request 01: Consolidate Cross-OS Compatibility Rules
 
+<!-- section_id: "d860a054-436c-47f5-a466-33362512098e" -->
 ## 1. Problem
 
 Cross-OS compatibility rules and guidance are currently scattered across multiple locations, including:
@@ -20,10 +21,12 @@ Cross-OS compatibility rules and guidance are currently scattered across multipl
 
 This makes it difficult for developers and AI agents to find a single, authoritative source for cross-OS patterns, leading to inconsistent implementations and duplicated effort.
 
+<!-- section_id: "67ed4a33-e33c-49c5-b55e-2504d1778eb7" -->
 ## 2. Request
 
 Create a single, centralized, and authoritative guide for cross-OS compatibility. This guide should consolidate all existing rules and provide clear patterns for handling OS-specific configurations.
 
+<!-- section_id: "c5276552-0c1d-42f3-9449-5f94d419e784" -->
 ## 3. Scope
 
 - **Analyze Existing Rules:** Systematically review all existing documentation and configuration files to identify all cross-OS compatibility rules.
@@ -36,12 +39,14 @@ Create a single, centralized, and authoritative guide for cross-OS compatibility
 - **Location:** The new consolidated guide should be placed in a logical, easy-to-find location within the `sub_layer_0_04_rules` directory. The proposed location is `sub_layer_0_04_rules/00_unified_cross_os_dev_patterns.md`.
 - **Update References:** All documentation or code that previously referenced the old, scattered rules should be updated to point to the new, centralized guide.
 
+<!-- section_id: "b99d40bb-9009-4c3a-b1e6-2457730aea08" -->
 ## 4. Deliverables
 
 1.  A single Markdown file containing the unified cross-OS compatibility guide.
 2.  Pull request/commit updating all relevant files to reference the new guide.
 3.  Deletion of the old, scattered rule files.
 
+<!-- section_id: "c12b2ef3-08a1-47c3-99ab-4fa8f1b1ebce" -->
 ## 5. Success Criteria
 
 - A developer or AI agent can easily find all the information they need to write cross-OS compatible code by consulting a single document.
@@ -52,16 +57,19 @@ Create a single, centralized, and authoritative guide for cross-OS compatibility
 
 # Request 02: Create Setup Validation Scripts
 
+<!-- section_id: "dd0e475f-10e7-4629-80af-47399bd311c4" -->
 ## 1. Problem
 
 The current setup process is manual and error-prone. There are no automated scripts to validate that the development environment is correctly configured. This leads to time-consuming debugging sessions when required files, directories, or tools are missing or misconfigured.
 
 As identified in the AI System Audit, this is a **MAJOR** severity issue.
 
+<!-- section_id: "7262b650-5caf-416d-8ab8-e5875a4994eb" -->
 ## 2. Request
 
 Develop a suite of setup validation scripts that can be run on-demand to ensure the integrity of the development environment across all supported operating systems (Linux, Windows/WSL, macOS).
 
+<!-- section_id: "2655d0b8-ffce-4769-988b-29b215de3946" -->
 ## 3. Scope
 
 - **Master Validation Script:** Create a main script, `validate-setup.sh` (or similar), that acts as the entry point for running all validation checks.
@@ -80,12 +88,14 @@ Develop a suite of setup validation scripts that can be run on-demand to ensure 
     - A successful run should report that the environment is valid.
     - A failed run should clearly list all the issues that were found, with guidance on how to fix them (e.g., "Tool `syncthing` not found. Please install it by following the instructions in [link-to-docs]").
 
+<!-- section_id: "31637727-d5c4-4d69-bcf3-c1fe01fd11aa" -->
 ## 4. Deliverables
 
 1.  A master `validate-setup.sh` script located in a top-level `/scripts` directory.
 2.  Supporting scripts or configuration files for the validation checks.
 3.  Documentation in the main `CLAUDE.md` or a dedicated `SETUP.md` on how to run the validation script.
 
+<!-- section_id: "9f15b62e-71b2-416b-b41f-2fce6a346141" -->
 ## 5. Success Criteria
 
 - Running the `validate-setup.sh` script provides a clear pass/fail status of the environment's health.
@@ -97,16 +107,19 @@ Develop a suite of setup validation scripts that can be run on-demand to ensure 
 
 # Request 03: Automate Environment Detection
 
+<!-- section_id: "47a3726d-d8f5-4211-bfd4-20dd08620a71" -->
 ## 1. Problem
 
 The system currently lacks an automated mechanism to detect the operating environment (e.g., OS, available tools, project context). This means scripts and tools cannot easily adapt to different machine configurations, requiring manual adjustments or hardcoded logic that is brittle and not scalable.
 
 This was identified as a **MINOR** severity issue in the AI System Audit.
 
+<!-- section_id: "282506fa-0208-4564-9e38-dd2e88c8ad75" -->
 ## 2. Request
 
 Create a standardized, automated environment detection script or mechanism. This utility should be easily callable by other scripts and tools to get a clear picture of the environment it is running in.
 
+<!-- section_id: "0fbcf52e-3b0f-455f-9cc1-a576948462b8" -->
 ## 3. Scope
 
 - **OS Detection:**
@@ -131,6 +144,7 @@ Create a standardized, automated environment detection script or mechanism. This
 - **Centralized Location:**
     - The script should be placed in a central, logical location, such as a new top-level `/scripts` directory, named something like `detect-env.sh`.
 
+<!-- section_id: "a410dd76-dfe3-448c-ae23-f7b52d8788f4" -->
 ## 4. Deliverables
 
 1.  A well-documented `detect-env.sh` script.
@@ -138,6 +152,7 @@ Create a standardized, automated environment detection script or mechanism. This
 3.  Examples of how to use this script in other parts of the system.
 4.  Documentation explaining how the detection works and how to use it.
 
+<!-- section_id: "93c3dcc9-f235-4c4b-bc5f-1de291aefd0f" -->
 ## 5. Success Criteria
 
 - Any script in the system can reliably determine the current OS and tool availability by calling the detection script.
@@ -149,16 +164,19 @@ Create a standardized, automated environment detection script or mechanism. This
 
 # Request 04: Archive Legacy Code and Documentation
 
+<!-- section_id: "8c3f4abb-6f36-4150-bf83-a2a30c0f0166" -->
 ## 1. Problem
 
 The codebase contains legacy code and documentation, specifically old sub-layer READMEs, that are no longer in use but have not been properly archived or removed. This creates confusion for both developers and AI agents, who may accidentally reference or rely on outdated information.
 
 This was identified as a **MINOR** severity issue ("Legacy Code Not Cleaned Up") in the AI System Audit.
 
+<!-- section_id: "d50ef5b1-bfac-45c8-8e6e-c1947ea3adcc" -->
 ## 2. Request
 
 Systematically identify, archive, and remove legacy code and documentation to reduce clutter and prevent confusion.
 
+<!-- section_id: "e53553f9-b47a-45a1-a160-49cd2e42336c" -->
 ## 3. Scope
 
 - **Identify Legacy Artifacts:**
@@ -177,6 +195,7 @@ Systematically identify, archive, and remove legacy code and documentation to re
 - **Removal:**
     - Once all references are updated and the files are securely archived, the original legacy files and directories should be deleted from their active locations in the codebase.
 
+<!-- section_id: "7bc824a4-a246-4fbf-aae8-0fb5bf523724" -->
 ## 4. Deliverables
 
 1.  An `archives` directory containing the archived legacy files.
@@ -185,6 +204,7 @@ Systematically identify, archive, and remove legacy code and documentation to re
     - Updates any code or documentation that referenced the legacy files.
 3.  A summary document in the root of the `archives` directory explaining what was archived and why.
 
+<!-- section_id: "2c5ac5dd-48fb-4cde-b2e2-7a2d2ddc9c88" -->
 ## 5. Success Criteria
 
 - The codebase no longer contains confusing or outdated legacy files in active development areas.
@@ -196,16 +216,19 @@ Systematically identify, archive, and remove legacy code and documentation to re
 
 # Request 05: Clarify OS-Specific vs. Agnostic Paths
 
+<!-- section_id: "7c6a6f81-791b-483b-83b6-e511decb4736" -->
 ## 1. Problem
 
 The current file structure inconsistently mixes OS-specific and OS-agnostic files and configurations. The `layer_0_01_ai_manager_system/specific/` directory, for example, contains a deeply nested and sparsely populated structure for OS-specific configurations, but the pattern is not applied consistently elsewhere. This makes it difficult to locate the correct configuration for a given OS and understand what is truly universal.
 
 This was identified as a **MINOR** severity issue ("OS-Specific Paths Mixed with Agnostic") in the AI System Audit.
 
+<!-- section_id: "6c02da9f-1c99-48af-bb7a-bb80570f78bb" -->
 ## 2. Request
 
 Define and implement a clear, consistent, and well-documented strategy for organizing OS-specific and OS-agnostic files and configurations throughout the project.
 
+<!-- section_id: "1b950000-c37f-4d53-be3c-d16c375df023" -->
 ## 3. Scope
 
 - **Define a Clear Naming Convention:**
@@ -223,12 +246,14 @@ Define and implement a clear, consistent, and well-documented strategy for organ
 - **Refactor Existing Files:**
     - Move existing files into the new structure. For example, files currently in `layer_0_01_ai_manager_system/specific/os/wsl/...` would be moved to a more streamlined path like `layer_0_01_ai_manager_system/specific/linux_wsl/...`.
 
+<!-- section_id: "e437900a-935f-41e1-8706-e6e303cf97dd" -->
 ## 4. Deliverables
 
 1.  A document defining the official directory structure and naming conventions for OS-specific vs. agnostic files.
 2.  A pull request/commit that refactors the existing file structure (primarily within `layer_0_01_ai_manager_system`) to conform to the new standard.
 3.  Updated documentation that explains the new pattern to developers and AI agents.
 
+<!-- section_id: "c4a86c42-8c17-4a6e-a642-ffe23011fe8b" -->
 ## 5. Success Criteria
 
 - Any developer or AI agent can immediately understand where to find OS-specific configurations versus universal ones.

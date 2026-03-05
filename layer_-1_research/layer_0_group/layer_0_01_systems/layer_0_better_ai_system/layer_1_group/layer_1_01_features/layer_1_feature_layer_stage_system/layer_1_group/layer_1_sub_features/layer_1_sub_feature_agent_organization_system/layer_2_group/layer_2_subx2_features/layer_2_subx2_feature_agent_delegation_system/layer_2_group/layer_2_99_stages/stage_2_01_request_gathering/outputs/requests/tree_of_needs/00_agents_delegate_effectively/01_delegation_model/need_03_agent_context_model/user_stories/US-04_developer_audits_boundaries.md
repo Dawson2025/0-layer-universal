@@ -13,6 +13,7 @@ resource_name: "US-04_developer_audits_boundaries"
 **I want** a documented context model for each agent type showing what goes in static, dynamic, and never-loaded,
 **So that** I can audit whether agents are operating within their intended scope.
 
+<!-- section_id: "e06825ea-f64d-4921-b988-02fa6ee72fff" -->
 ### What Happens
 
 1. User wants to verify the system's context architecture is sound
@@ -21,6 +22,7 @@ resource_name: "US-04_developer_audits_boundaries"
 4. User can verify that managers don't carry stage methodology and stage agents don't carry peer details
 5. User confirms the boundaries match the intended design
 
+<!-- section_id: "dfb4366b-b6f6-4e3c-a97b-895d74160695" -->
 ### Acceptance Criteria
 
 - Context model document exists with three columns (static / dynamic / never) for each agent type

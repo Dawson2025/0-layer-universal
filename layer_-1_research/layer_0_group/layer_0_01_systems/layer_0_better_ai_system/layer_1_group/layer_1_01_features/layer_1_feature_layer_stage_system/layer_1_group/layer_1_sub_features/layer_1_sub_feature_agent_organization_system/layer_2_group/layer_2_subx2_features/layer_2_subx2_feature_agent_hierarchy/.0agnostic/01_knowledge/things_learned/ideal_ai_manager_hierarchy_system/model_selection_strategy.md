@@ -3,6 +3,7 @@ resource_id: "8320c2a2-678c-4fe5-bd4b-cbc11bf2c58e"
 resource_type: "knowledge"
 resource_name: "model_selection_strategy"
 ---
+<!-- section_id: "f5e78fe6-b2b5-421a-9874-c3757c6ad234" -->
 ## Model Selection and Cost-Aware Routing Strategy
 
 This document provides detailed guidance on choosing models and routing tasks to optimize for cost, quality, and latency.
@@ -13,6 +14,7 @@ It extends the policy concepts from:
 
 ---
 
+<!-- section_id: "02dad07d-bb75-4c83-bb13-3a4c64e506e1" -->
 ## 1. Model Selection Dimensions
 
 When selecting a model for a specific task, consider:
@@ -39,8 +41,10 @@ When selecting a model for a specific task, consider:
 
 ---
 
+<!-- section_id: "4868861e-a188-4313-aee1-171af155f489" -->
 ## 2. Model Tiers and Characteristics
 
+<!-- section_id: "1a526438-371a-4700-a2a0-84b5957598e1" -->
 ### 2.1 Tier 1: Premium Reasoning Models
 
 **Models:**
@@ -66,6 +70,7 @@ When selecting a model for a specific task, consider:
 - Simple formatting or refactors
 - Repetitive tasks with clear patterns
 
+<!-- section_id: "5b54cd75-c621-4255-81b0-c6733f6be6d9" -->
 ### 2.2 Tier 2: Balanced Models
 
 **Models:**
@@ -88,6 +93,7 @@ When selecting a model for a specific task, consider:
 - Extremely complex reasoning
 - Bulk operations where cost matters most
 
+<!-- section_id: "ed378d26-081e-4519-9805-5762c7294032" -->
 ### 2.3 Tier 3: Code-Specialized Models
 
 **Models:**
@@ -113,6 +119,7 @@ When selecting a model for a specific task, consider:
 - Architecture decisions
 - Complex debugging requiring reasoning
 
+<!-- section_id: "cadfda7f-1bb8-4637-9685-8617b5813314" -->
 ### 2.4 Tier 4: Local and Self-Hosted Models
 
 **Models:**
@@ -139,8 +146,10 @@ When selecting a model for a specific task, consider:
 
 ---
 
+<!-- section_id: "b2a6cd76-aa99-4938-bae9-305f536323a5" -->
 ## 3. Cost-Aware Routing Policies
 
+<!-- section_id: "e84dfe36-53ba-482a-b954-97c2d9e57114" -->
 ### 3.1 Policy Matrix
 
 | Layer | Stage | Task Type | Primary Model | Fallback | Cost Ceiling |
@@ -158,6 +167,7 @@ When selecting a model for a specific task, consider:
 | L3 | Fixing | Complex fixes | Claude Sonnet 4.5 | GPT-4 Turbo | $2/task |
 | L4 | Implementation | Atomic tasks | Local Llama | Codestral | $0.05/task |
 
+<!-- section_id: "f3fb074a-b220-4a8a-bda8-1439168cdb12" -->
 ### 3.2 Dynamic Routing Algorithm
 
 ```python
@@ -230,6 +240,7 @@ def estimate_complexity(task: dict) -> float:
     return min(score, 1.0)
 ```
 
+<!-- section_id: "194e8e92-8896-41d4-9954-c0b58c5a4a45" -->
 ### 3.3 Budget Management
 
 **Per-Task Budgets:**
@@ -290,8 +301,10 @@ def check_budget(layer: int, stage: str, estimated_cost: float) -> bool:
 
 ---
 
+<!-- section_id: "74144905-2f9f-4c69-97fe-d8583be34fe3" -->
 ## 4. Quality-Cost Optimization Strategies
 
+<!-- section_id: "a0ee26f4-b8cd-442f-90d6-00787a87d3c4" -->
 ### 4.1 Cascading Fallback
 
 Start cheap, escalate on failure:
@@ -323,6 +336,7 @@ def execute_with_fallback(task: dict, layer: int, stage: str):
     return escalate_to_human(task, "Quality threshold not met")
 ```
 
+<!-- section_id: "1ce31c8c-da36-4eee-8942-396cf1bbc6ab" -->
 ### 4.2 Parallel Ensemble
 
 For critical tasks, run multiple models and vote:
@@ -353,6 +367,7 @@ def ensemble_execution(task: dict, layer: int, stage: str):
     return aggregate_results(results, strategy="best_quality")
 ```
 
+<!-- section_id: "95b0d87d-12ec-4e31-8516-b3e3af4608dc" -->
 ### 4.3 Caching and Deduplication
 
 Avoid redundant expensive calls:
@@ -391,8 +406,10 @@ def hash_task(task: dict, model: str) -> str:
 
 ---
 
+<!-- section_id: "c563c3d4-8b4e-4510-bb2b-0685d2c34b95" -->
 ## 5. Model-Specific Optimizations
 
+<!-- section_id: "951be746-731e-4e96-a69a-33966e670ba0" -->
 ### 5.1 Claude Sonnet 4.5
 
 **When to Use:**
@@ -405,6 +422,7 @@ def hash_task(task: dict, model: str) -> str:
 - Leverage system prompts heavily (re-injected every call)
 - Keep context focused - trim irrelevant history
 
+<!-- section_id: "e4c169d1-7af6-4f85-a76a-e46e5e3661df" -->
 ### 5.2 Codestral / Qwen-Coder
 
 **When to Use:**
@@ -417,6 +435,7 @@ def hash_task(task: dict, model: str) -> str:
 - Provide clear examples for pattern matching
 - Batch similar tasks together
 
+<!-- section_id: "5235ef07-cd5f-4e10-8d73-d02c5e6203f4" -->
 ### 5.3 Gemini Pro 2.0
 
 **When to Use:**
@@ -429,6 +448,7 @@ def hash_task(task: dict, model: str) -> str:
 - Use grounding for factual accuracy
 - Suitable for parallel research tasks
 
+<!-- section_id: "72948a43-0237-4f36-b64e-39ea920399fe" -->
 ### 5.4 Local Llama/Mistral
 
 **When to Use:**
@@ -443,8 +463,10 @@ def hash_task(task: dict, model: str) -> str:
 
 ---
 
+<!-- section_id: "67fe56d0-6034-47e4-85a3-1019767be85d" -->
 ## 6. Monitoring and Continuous Optimization
 
+<!-- section_id: "f11c8f5e-343f-4a52-89fd-f2589f597f2e" -->
 ### 6.1 Key Metrics
 
 Track per model, layer, and stage:
@@ -466,6 +488,7 @@ Track per model, layer, and stage:
   - Throughput (tasks per hour)
   - Utilization (active vs idle time)
 
+<!-- section_id: "842c2f08-c084-4a26-a2aa-9c488c345c02" -->
 ### 6.2 Optimization Loop
 
 ```python
@@ -497,8 +520,10 @@ def optimize_model_selection():
 
 ---
 
+<!-- section_id: "2bf3611e-b3bf-4c84-8908-11cb3673bae4" -->
 ## 7. Example Policies by Use Case
 
+<!-- section_id: "72b48702-bfc4-4eeb-bb90-8ec48b4f61e4" -->
 ### 7.1 Startup / Cost-Conscious
 
 ```yaml
@@ -520,6 +545,7 @@ policy:
     emergency_reserve: 20.00
 ```
 
+<!-- section_id: "4b1f8d75-4f8f-404b-83b8-a65f94a2aaf2" -->
 ### 7.2 Enterprise / Quality-First
 
 ```yaml
@@ -547,6 +573,7 @@ policy:
       require_premium: true
 ```
 
+<!-- section_id: "fab89214-2d14-4277-8606-e5e8a3a50f45" -->
 ### 7.3 Research / Experimentation
 
 ```yaml
@@ -570,6 +597,7 @@ policy:
 
 ---
 
+<!-- section_id: "056517fc-db05-4f46-bcb7-48c20189888c" -->
 ## 8. Summary
 
 Effective model selection balances:

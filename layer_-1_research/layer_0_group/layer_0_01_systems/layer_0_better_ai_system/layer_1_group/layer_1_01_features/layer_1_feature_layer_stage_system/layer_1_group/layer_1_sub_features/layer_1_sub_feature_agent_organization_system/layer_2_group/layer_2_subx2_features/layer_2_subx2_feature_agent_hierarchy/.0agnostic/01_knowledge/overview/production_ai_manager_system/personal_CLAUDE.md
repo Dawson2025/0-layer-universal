@@ -5,6 +5,7 @@ resource_name: "personal_CLAUDE"
 ---
 # Personal Orchestrator System
 
+<!-- section_id: "25ab4e69-1a1e-4f98-896c-b07f62e45f36" -->
 ## Identity
 
 | Property | Value |
@@ -13,12 +14,14 @@ resource_name: "personal_CLAUDE"
 | **Position** | `layer_0/layer_0_01_ai_manager_system/personal/` |
 | **Role** | **ORCHESTRATOR** - Multi-agent coordination and task delegation |
 
+<!-- section_id: "ef86ad21-fba0-411c-913b-d4925bffc724" -->
 ## Purpose
 
 This directory contains your personal implementation of the layer_0 orchestrator, which coordinates multiple child agents to complete complex tasks.
 
 ---
 
+<!-- section_id: "d2b52b44-7a58-422e-a9e3-b54bdec5dbf2" -->
 ## Core Files
 
 | File | Purpose | Load When |
@@ -30,6 +33,7 @@ This directory contains your personal implementation of the layer_0 orchestrator
 
 ---
 
+<!-- section_id: "1b81dbdb-f921-4f10-81a1-bf4f3364e9ef" -->
 ## 5-Mode-15-Actor Pattern
 
 The orchestrator uses a 5-mode pattern with 10 mode actors and 5 state actors:
@@ -55,6 +59,7 @@ The orchestrator uses a 5-mode pattern with 10 mode actors and 5 state actors:
 └─────────────────────────────────────────────────────────────────────────┘
 ```
 
+<!-- section_id: "934ee3b4-156d-4e0f-8df5-fe7b68e59273" -->
 ### Modes
 
 | Mode | Purpose | Key Actions |
@@ -65,6 +70,7 @@ The orchestrator uses a 5-mode pattern with 10 mode actors and 5 state actors:
 | **AggregationMode** | Collect results | Merge child outputs, calculate confidence |
 | **ReportMode** | Return results | Write to hand_off_documents/outgoing/to_above/ |
 
+<!-- section_id: "f8eefb1b-eb96-4d37-9b82-ece713b04603" -->
 ### State Actors
 
 | Actor | Purpose |
@@ -77,6 +83,7 @@ The orchestrator uses a 5-mode pattern with 10 mode actors and 5 state actors:
 
 ---
 
+<!-- section_id: "3225ba12-2f5b-4514-baaa-e3755837b972" -->
 ## Hand-off Documents
 
 Communication with parent/children uses file-based IPC:
@@ -99,6 +106,7 @@ layer_0/layer_0_02_manager_handoff_documents/
 
 ---
 
+<!-- section_id: "6a77b21c-bec7-4891-851c-491e5d933e59" -->
 ## When to Use Orchestration
 
 | Trigger | Action |
@@ -110,6 +118,7 @@ layer_0/layer_0_02_manager_handoff_documents/
 
 ---
 
+<!-- section_id: "e9ff1e5d-9637-4edd-aa2e-461f0f200b61" -->
 ## Spawning Agents
 
 The orchestrator uses `spawn_agent.sh` from the research prototype:
@@ -129,6 +138,7 @@ spawn_agent.sh -D -w /path/to/0_layer_universal claude task.json
 
 ---
 
+<!-- section_id: "0bdf5893-fb0a-45b1-9994-ebb09868d5b3" -->
 ## Context Chain Position
 
 - **Parent**: `layer_0/layer_0_01_ai_manager_system/CLAUDE.md`
@@ -137,10 +147,12 @@ spawn_agent.sh -D -w /path/to/0_layer_universal claude task.json
 
 ---
 
+<!-- section_id: "deeb54dd-8819-4661-81de-01144ec4d220" -->
 ## AALang Integration
 
 @agent ctx:ContextLoadingAgent
 
+<!-- section_id: "50f98303-c8e9-4186-80a6-2be1f9af7543" -->
 ### On Load
 
 When this file is loaded, update state actors:
@@ -148,6 +160,7 @@ When this file is loaded, update state actors:
 - `ctx:ContextLoadingStateActor.orchestratorReady` = true
 - `ctx:NavigationStateActor.currentSystem` = "personal"
 
+<!-- section_id: "6e2b5905-c3be-49d1-91b1-fcf594fec11a" -->
 ### Execution Instructions
 
 When orchestration is needed:

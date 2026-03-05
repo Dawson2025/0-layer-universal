@@ -9,6 +9,7 @@ resource_name: "US-01_agent_defaults_to_production"
 **I want** the context chain to automatically load production content without any manual configuration,
 **So that** I start every task with stable, proven patterns and only access research content when explicitly directed.
 
+<!-- section_id: "abcad2e0-982f-4842-b1c5-0b8ecabedc55" -->
 ## Acceptance Criteria
 
 **Scenario 1: Fresh session loads production only**

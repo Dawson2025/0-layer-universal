@@ -8,10 +8,12 @@ resource_name: "README"
 
 **Need**: [Stage Reports](../README.md)
 
+<!-- section_id: "009090ff-5eb7-4a7f-bae9-fa0523587324" -->
 ## Overview
 
 These stories cover the async communication loop between stage agents and managers through structured reports. They validate that stage agents produce concise reports before exiting, that managers can make informed delegation decisions from reports alone without loading stage details, and that subsequent agents can resume work from where the previous agent left off.
 
+<!-- section_id: "72d354c0-cc16-48c1-ac68-3b8ea72ef239" -->
 ## Actors
 
 - **User (Developer)**: Human developer (Dawson) who gives instructions to the AI system, reviews outputs, and validates behavior

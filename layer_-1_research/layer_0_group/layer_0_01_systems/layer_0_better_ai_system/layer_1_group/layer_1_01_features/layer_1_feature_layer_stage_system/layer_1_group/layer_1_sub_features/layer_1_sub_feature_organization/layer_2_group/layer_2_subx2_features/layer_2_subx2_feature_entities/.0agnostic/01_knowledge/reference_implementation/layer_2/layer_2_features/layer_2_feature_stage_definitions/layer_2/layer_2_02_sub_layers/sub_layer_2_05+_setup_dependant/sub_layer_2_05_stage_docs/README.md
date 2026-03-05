@@ -8,6 +8,7 @@ resource_name: "README"
 
 This directory contains detailed documentation for each of the 11 workflow stages (00-10) in the Layer-Stage Framework.
 
+<!-- section_id: "af68754e-fb2b-4617-bf34-f00419f12ea3" -->
 ## Stage Files
 
 | File | Stage | Description |
@@ -24,6 +25,7 @@ This directory contains detailed documentation for each of the 11 workflow stage
 | `stage_09_current_product.md` | Current Product | Working version |
 | `stage_10_archives.md` | Archives | Historical records |
 
+<!-- section_id: "ba722678-3523-416b-aaf7-9107b67eba10" -->
 ## Usage
 
 Each stage document follows a consistent template:
@@ -34,6 +36,7 @@ Each stage document follows a consistent template:
 - **Handoffs**: Input/output artifacts
 - **Directory Structure**: Expected file organization
 
+<!-- section_id: "4ae59e2b-20cb-4b7a-b4da-1fe30b9c4bd6" -->
 ## Workflow Pattern
 
 ```
@@ -48,6 +51,7 @@ Each stage document follows a consistent template:
 
 Stages support both linear progression and iterative loops based on feedback from criticism and testing stages.
 
+<!-- section_id: "315f90d9-38ba-42a4-ab2f-c6c021029ff2" -->
 ## Stage Structure
 
 Each stage directory contains:

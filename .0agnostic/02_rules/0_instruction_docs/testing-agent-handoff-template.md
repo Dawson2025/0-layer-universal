@@ -10,6 +10,7 @@ resource_name: "testing-agent-handoff-template"
 
 ---
 
+<!-- section_id: "01d4abaf-4aac-4202-b5d5-475d43f9333a" -->
 ## 📋 **Handoff Document**
 
 Copy this template when handing off to a Testing Agent:
@@ -243,8 +244,10 @@ Before handing off to Testing Agent, verify:
 
 ---
 
+<!-- section_id: "046c9bb8-2ed3-4297-b806-fbbcaa729ee1" -->
 ## 🎯 **Quick Start Examples**
 
+<!-- section_id: "40100f71-d349-4174-a59c-40f5f45a4199" -->
 ### **Example 1: New Feature Handoff**
 
 ```markdown
@@ -327,6 +330,7 @@ Implemented complete user authentication system with:
 - [X] Ready for Testing Agent
 ```
 
+<!-- section_id: "1a1473e9-399e-4ea4-8dc2-5d27176407c0" -->
 ### **Example 2: Bug Fix Handoff**
 
 ```markdown
@@ -388,6 +392,7 @@ Fixed bug where deleting a word didn't remove associated phonemes from the datab
 
 ---
 
+<!-- section_id: "0d590e9c-5768-4c51-a4c0-869b254348b0" -->
 ## 📊 **Handoff Quality Checklist**
 
 Use this to evaluate handoff quality:

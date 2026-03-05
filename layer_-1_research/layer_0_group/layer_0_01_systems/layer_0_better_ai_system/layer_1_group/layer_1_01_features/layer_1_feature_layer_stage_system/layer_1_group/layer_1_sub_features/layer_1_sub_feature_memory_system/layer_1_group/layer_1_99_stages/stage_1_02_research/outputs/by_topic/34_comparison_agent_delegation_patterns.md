@@ -5,12 +5,14 @@ resource_name: "34_comparison_agent_delegation_patterns"
 ---
 # Comparison: Agent Delegation Patterns -- User's System vs Multi-Agent Frameworks
 
+<!-- section_id: "5b3c1a36-247f-4e41-9aa4-65f648247011" -->
 ## Purpose
 
 Compare the user's layer-stage delegation system with established multi-agent frameworks (AutoGen, CrewAI, LangGraph, OASIS, ATLAS) across delegation architecture, memory sharing, context transfer, and orchestration patterns. Identify where the user's system excels, where it falls short, and what hybrid improvements could bridge the gaps.
 
 ---
 
+<!-- section_id: "f04f2c27-1479-43a4-9144-16cb97148640" -->
 ## 1. Overview of User's System
 
 The user's agent delegation system is a **hierarchical manager-to-stage-agent architecture** organized across layers and stages:
@@ -25,30 +27,37 @@ The user's agent delegation system is a **hierarchical manager-to-stage-agent ar
 
 ---
 
+<!-- section_id: "8a3722fb-7315-4693-8402-5b60123a6371" -->
 ## 2. Overview of Alternative Approaches
 
+<!-- section_id: "fbbb8f1c-f21e-4443-9790-b60d61c4f049" -->
 ### AutoGen (Microsoft)
 
 AutoGen uses a **GroupChat** pattern where multiple agents share a conversation history. A GroupChatManager routes messages based on role-based specialization. Agents include admin, planner, developer, executor, and QA roles. Memory is shared through the message list -- all agents see the full conversation. Teachable agents can persist user instructions across sessions. Context is flat and cumulative rather than hierarchical.
 
+<!-- section_id: "3156ed99-6398-46e6-b85f-d9f434e42fcb" -->
 ### CrewAI
 
 CrewAI organizes agents into **crews** with defined tasks. It has a built-in `Memory` class with configurable weights (recency, semantic, importance) and decay rates. Memory types include short-term (RAG), long-term (SQLite3), entity memory (RAG), contextual memory, and user memory. All crew members share memory through a scope hierarchy. Task results flow sequentially -- completed task outputs become available to subsequent tasks. Delegation is task-based, not stage-based.
 
+<!-- section_id: "2e29aead-cabd-4bde-9cc6-435d9cee95b0" -->
 ### LangGraph
 
 LangGraph models agent orchestration as a **state machine graph**. Nodes are agents or functions; edges encode transitions with conditional logic. State is the shared context accessible by all nodes. Checkpointing enables resumption and human-in-the-loop interrupts. Cross-thread memory stores allow sharing context across conversation threads. The graph structure explicitly defines the execution flow rather than relying on free-form delegation.
 
+<!-- section_id: "4d655f9c-4096-49cc-be00-150d08901dcf" -->
 ### OASIS (AWS)
 
 OASIS is a **production IT incident management** system using LangGraph, Amazon Bedrock, and OpenSearch. It has two specialized agents (monitoring + deployment specialist) coordinated through a state machine. Memory is stored in OpenSearch across three indices: raw event logs (episodic), system metrics (time-series), and agent findings (semantic + procedural). Status transitions track incident lifecycle. Human-in-the-loop approval gates exist for critical actions.
 
+<!-- section_id: "f400afde-89d3-49de-a006-06d11c1fefc2" -->
 ### ATLAS (Academic Task and Learning Agent System)
 
 ATLAS uses **four specialized agents**: coordinator (routes queries using semantic understanding), planner (creates schedules from episodic performance data), notewriter (generates notes based on learning style), and advisor (provides guidance using procedural memory). The coordinator acts as a router rather than a hierarchical manager. Each agent maintains its own memory type specialization.
 
 ---
 
+<!-- section_id: "8af9f551-81e1-4a40-9774-22c0334a7b24" -->
 ## 3. Comparison Table
 
 | Dimension | User's System | AutoGen | CrewAI | LangGraph | OASIS | ATLAS |
@@ -67,8 +76,10 @@ ATLAS uses **four specialized agents**: coordinator (routes queries using semant
 
 ---
 
+<!-- section_id: "cfc530d2-bf01-4448-b62a-5241cc4457b1" -->
 ## 4. Analysis
 
+<!-- section_id: "ad411565-f189-4447-98a1-64c31326a68a" -->
 ### Where User's System Excels
 
 **Separation of concerns through isolation**: The manager never carries operational knowledge, which prevents context bloat at scale. In AutoGen's GroupChat, every agent sees every message -- at 12 rounds with 5 agents, the context grows linearly. The user's system keeps each agent's context bounded by its tier.
@@ -83,6 +94,7 @@ ATLAS uses **four specialized agents**: coordinator (routes queries using semant
 
 **Recursive delegation**: The system supports arbitrary nesting depth (layer 0 > feature > sub-feature > sub-sub-feature, each with stages). Other frameworks are typically flat (one level of agents) or limited to two levels (manager + workers).
 
+<!-- section_id: "60a1b3d3-da22-4e17-a930-f635aa933d1d" -->
 ### Where User's System Falls Short
 
 **No runtime orchestration**: The user's system defines structure and process but relies on the AI tool (Claude, Cursor) to actually execute delegation. AutoGen, CrewAI, and LangGraph have runtime engines that automatically route messages, manage turns, and handle failures. The user's system is a blueprint that requires a capable executor.
@@ -97,6 +109,7 @@ ATLAS uses **four specialized agents**: coordinator (routes queries using semant
 
 **No quantitative benchmarks**: The user's system has 76 PASS tests for context chain validation, but no performance metrics (latency, throughput, recall). Other frameworks publish benchmarks -- pgvector at 471 QPS, Mem0 at 91% latency reduction.
 
+<!-- section_id: "24b90588-2030-4ea1-b227-74c3cb7c5fe0" -->
 ### Potential Hybrid Improvements
 
 **Add semantic retrieval layer**: Augment the file-based navigation with vector embeddings of `0AGNOSTIC.md` and stage report content. An agent could semantically search across all entities and stages rather than traversing the tree manually. This preserves the hierarchical structure while adding fuzzy retrieval as an overlay.
@@ -111,6 +124,7 @@ ATLAS uses **four specialized agents**: coordinator (routes queries using semant
 
 ---
 
+<!-- section_id: "ffd24a03-346b-4b6f-b462-609980ad0120" -->
 ## Sources
 
 - AutoGen GroupChat: https://github.com/microsoft/autogen

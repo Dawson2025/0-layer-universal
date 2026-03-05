@@ -12,14 +12,17 @@ resource_name: "phase_4_summary"
 
 ---
 
+<!-- section_id: "4ffa8e4d-b961-4a53-b629-7513d0318318" -->
 ## Executive Summary
 
 Phase 4 implementation is **COMPLETE**. OS variant structures and tool context quartets have been successfully implemented across Layers 0-3 for WSL and Linux Ubuntu environments. The implementation establishes the foundation for OS-aware agent context management as specified in the Ideal AI Manager Hierarchy System.
 
 ---
 
+<!-- section_id: "00ff67bb-5f5f-404c-889d-4ac5e03c2ec2" -->
 ## Implementation Overview
 
+<!-- section_id: "13d6e90f-8786-49b1-a908-0c707a97e8a6" -->
 ### What Was Implemented
 
 1. **OS Folder Structure**: Created `os/<os-id>/` directories at key layer/stage locations
@@ -27,6 +30,7 @@ Phase 4 implementation is **COMPLETE**. OS variant structures and tool context q
 3. **Documentation Updates**: Updated tool documentation to reference the quartet pattern
 4. **Integration Points**: Linked MCP OS structure to the ideal hierarchy specification
 
+<!-- section_id: "15b84d90-0963-4b3a-b8bc-c45037b9ac07" -->
 ### Implementation Scope
 
 - **Layers**: 0 (Universal), 1 (Project), 2 (Feature), 3 (Component)
@@ -35,8 +39,10 @@ Phase 4 implementation is **COMPLETE**. OS variant structures and tool context q
 
 ---
 
+<!-- section_id: "6da9ad8a-4cc6-4e2b-aabd-4d0235a18bac" -->
 ## Detailed Implementation
 
+<!-- section_id: "2b68a9cf-d6be-4664-bf83-7009d8b0dd35" -->
 ### 1. OS Folder Structure Created
 
 #### Layer 0 (Universal)
@@ -73,6 +79,7 @@ Same structure, with minimal scaffolds (to be fleshed out as needed).
 
 ---
 
+<!-- section_id: "e5b328ac-589e-4e0f-b95d-31a0a01f08fd" -->
 ### 2. Tool Context Quartet Files
 
 #### File Types
@@ -123,6 +130,7 @@ Same structure, with minimal scaffolds (to be fleshed out as needed).
 
 ---
 
+<!-- section_id: "aa246578-2258-407b-8264-8ded0644d5fc" -->
 ### 3. WSL Context Highlights
 
 **Environment**: Windows Subsystem for Linux
@@ -142,6 +150,7 @@ Same structure, with minimal scaffolds (to be fleshed out as needed).
 
 ---
 
+<!-- section_id: "09cc70a7-4600-464e-bb83-f1e02c888206" -->
 ### 4. Linux Ubuntu Context Highlights
 
 **Environment**: Native Ubuntu Linux
@@ -161,6 +170,7 @@ Same structure, with minimal scaffolds (to be fleshed out as needed).
 
 ---
 
+<!-- section_id: "daaf8c39-c81a-4969-96f5-f88bb0bfc0a9" -->
 ### 5. Documentation Updates
 
 #### Universal Tools Documentation
@@ -184,8 +194,10 @@ Same structure, with minimal scaffolds (to be fleshed out as needed).
 
 ---
 
+<!-- section_id: "4009fdfd-65da-433e-85f7-c20a14ead687" -->
 ## File Inventory
 
+<!-- section_id: "4df6496d-1e29-4086-81be-f0d379d4aa23" -->
 ### Total Files Created
 
 **Layer 0**: 6 files (WSL: 3, Linux Ubuntu: 3)
@@ -195,6 +207,7 @@ Same structure, with minimal scaffolds (to be fleshed out as needed).
 
 **Total**: 24 context files across 4 layers
 
+<!-- section_id: "80f38855-ff95-45ce-b718-ad816a66bea5" -->
 ### Directory Structure Created
 
 **Layers**: 4 (L0, L1, L2, L3)
@@ -203,8 +216,10 @@ Same structure, with minimal scaffolds (to be fleshed out as needed).
 
 ---
 
+<!-- section_id: "370b6455-0279-4a8f-9589-63b4df0f0948" -->
 ## Design Principles Applied
 
+<!-- section_id: "97dd996f-c8b0-40f6-b35a-00ec1dbb3795" -->
 ### 1. Normative Specification Reference
 Every context file includes:
 ```markdown
@@ -216,12 +231,14 @@ This file implements the OS-specific context pattern defined in:
 Refer to that document for the canonical specification of the OS variant system.
 ```
 
+<!-- section_id: "6a727539-d4c4-4f88-bf08-c358fcc29a4c" -->
 ### 2. Layer Inheritance
 Each layer's context explicitly states:
 - "This context builds on Layer 0 Universal [OS] context"
 - "This context builds on Layer 0 and Layer 1 [OS] contexts"
 - Clear inheritance chain
 
+<!-- section_id: "a74fb79a-61f5-4965-88ff-560bd82569c6" -->
 ### 3. Minimal Scaffolds for L2/L3
 Higher layers (2 and 3) use minimal scaffolds:
 - Establishes the pattern
@@ -229,12 +246,14 @@ Higher layers (2 and 3) use minimal scaffolds:
 - Avoids premature over-specification
 - Can be fleshed out as features/components are implemented
 
+<!-- section_id: "c0c6382b-ba00-4830-aef5-1cc142dfa50a" -->
 ### 4. Tool Specialization
 Each file type targets specific tool capabilities:
 - CLAUDE.md: Manager reasoning, deep code analysis
 - AGENTS.md: Worker execution, atomic tasks
 - GEMINI.md: Planning, research, long reasoning
 
+<!-- section_id: "e6ac13c4-33ff-468d-bd70-d90ad7c65cf7" -->
 ### 5. OS Detection Readiness
 Structure supports auto-detection:
 - `os/<os-id>/` naming convention
@@ -243,19 +262,23 @@ Structure supports auto-detection:
 
 ---
 
+<!-- section_id: "44875f0a-ffed-4482-935c-249f30add6f8" -->
 ## Integration with Existing Systems
 
+<!-- section_id: "a422e137-40fe-42a2-9a2e-d3513c921416" -->
 ### 1. MCP Server Setup
 - MCP OS structure at `sub_layer_0_10_mcp_servers_and_tools_setup/0.02_mcp_config_options_0_file_tree_0/0.03_operating_systems/`
 - Agent context OS structure at `*/stage_*.01_instructions/ai_agent_system/os/`
 - Documentation now links these two patterns
 - Agents can reference both MCP setup and execution context
 
+<!-- section_id: "b8e907b1-6d7c-48b5-a496-e1cb4af725d1" -->
 ### 2. Layer/Stage Framework
 - OS variants live at `stage_*.01_instructions` (instructions stage)
 - Follows layer/stage framework established in Phase 2
 - Integrates with manager/worker pattern from Phase 3
 
+<!-- section_id: "e9f01efb-1a3f-405a-99f1-d1ad65d1e2b9" -->
 ### 3. Handoff Protocol
 - OS context influences execution environment in handoffs
 - Handoff schema includes `environment` field for OS/repo/branch info
@@ -263,8 +286,10 @@ Structure supports auto-detection:
 
 ---
 
+<!-- section_id: "00ade789-6344-435c-bb75-11f6e64a402b" -->
 ## Future Work
 
+<!-- section_id: "e1efbf25-2344-4068-b6b5-88d1e1cc11fe" -->
 ### Immediate Next Steps (Phase 5)
 
 1. **Windows Context Files**
@@ -279,6 +304,7 @@ Structure supports auto-detection:
    - Add `.cursor/rules/*.mdc` files to complete the quartet
    - OS-specific Cursor rules for re-injection patterns
 
+<!-- section_id: "bf6dfab2-2e38-4f19-8c64-aa87016da3dc" -->
 ### Medium-Term Extensions
 
 1. **Layer 2 and Layer 3 Expansion**
@@ -295,6 +321,7 @@ Structure supports auto-detection:
    - Merge OS-specific and generic contexts
    - Handle conflicts/overrides
 
+<!-- section_id: "92c25b67-6903-433e-a5ea-4aaee204225c" -->
 ### Long-Term Vision
 
 1. **Additional OS Variants**
@@ -315,6 +342,7 @@ Structure supports auto-detection:
 
 ---
 
+<!-- section_id: "03a57e88-22cd-45e5-8681-75ca5d566744" -->
 ## Success Criteria Met
 
 - ✅ OS folders exist at Layer 0 and Layer 1 stage_*.01_instructions locations
@@ -327,19 +355,23 @@ Structure supports auto-detection:
 
 ---
 
+<!-- section_id: "8d98f1b7-0361-427b-9ec0-c43a22a6dc3a" -->
 ## References
 
+<!-- section_id: "e0c5a46e-9795-45d3-b372-5f4ba4bafc96" -->
 ### Normative Specifications
 - **OS and Quartets Spec**: `/home/dawson/code/0_layer_universal/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/os_and_quartets.md`
 - **Architecture Spec**: `/home/dawson/code/0_layer_universal/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/architecture.md`
 - **Tools and Context Systems**: `/home/dawson/code/0_layer_universal/0_context/-1_research/-1.01_things_researched/ai_manager_hierarchy_system/things_learned/ideal_ai_manager_hierarchy_system/tools_and_context_systems.md`
 
+<!-- section_id: "cc89dd2e-28fa-4306-bc78-e01c0c5c1b85" -->
 ### Implementation Locations
 - **Layer 0**: `/home/dawson/code/0_layer_universal/0_context/layer_0_group/0.99_stages/stage_0_01_instructions/ai_agent_system/os/`
 - **Layer 2**: `/home/dawson/code/0_layer_universal/0_context/layer_2_project/1.99_stages/stage_1.01_instructions/ai_agent_system/os/`
 - **Layer 2**: `/home/dawson/code/0_layer_universal/0_context/layer_2_features/2.99_stages/stage_2.01_instructions/ai_agent_system/os/`
 - **Layer 4**: `/home/dawson/code/0_layer_universal/0_context/layer_4_components/3.99_stages/stage_3.01_instructions/ai_agent_system/os/`
 
+<!-- section_id: "53703780-844d-44c3-b356-0bbdd57b843b" -->
 ### Related Documentation
 - **Universal Tools**: `/home/dawson/code/0_layer_universal/0_context/layer_0_group/0.02_sub_layers/sub_layer_0_12_universal_tools/README.md`
 - **MCP OS Setup**: `/home/dawson/code/0_layer_universal/0_context/layer_0_group/0.02_sub_layers/sub_layer_0_10_mcp_servers_and_tools_setup/0.02_mcp_config_options_0_file_tree_0/0.03_operating_systems/README.md`
@@ -348,8 +380,10 @@ Structure supports auto-detection:
 
 ---
 
+<!-- section_id: "342baaf1-1812-4b48-bba7-3770896e8610" -->
 ## Appendix: File Listing
 
+<!-- section_id: "cc7498df-ae82-4808-9d66-225498a6df5f" -->
 ### Layer 0 (Universal)
 ```
 /home/dawson/code/0_layer_universal/0_context/layer_0_group/0.99_stages/stage_0_01_instructions/ai_agent_system/os/
@@ -365,6 +399,7 @@ Structure supports auto-detection:
 └── macos/           (Directory only)
 ```
 
+<!-- section_id: "6c48fec6-c8f4-403f-a441-2f338fadb40e" -->
 ### Layer 1 (Project)
 ```
 /home/dawson/code/0_layer_universal/0_context/layer_2_project/1.99_stages/stage_1.01_instructions/ai_agent_system/os/
@@ -380,6 +415,7 @@ Structure supports auto-detection:
 └── macos/           (Directory only)
 ```
 
+<!-- section_id: "4b7f5fa2-0c8e-45be-a2ef-ff309e05dc09" -->
 ### Layer 2 (Feature)
 ```
 /home/dawson/code/0_layer_universal/0_context/layer_2_features/2.99_stages/stage_2.01_instructions/ai_agent_system/os/
@@ -395,6 +431,7 @@ Structure supports auto-detection:
 └── macos/           (Directory only)
 ```
 
+<!-- section_id: "047bf642-885f-4a22-b321-7b066309a7a9" -->
 ### Layer 3 (Component)
 ```
 /home/dawson/code/0_layer_universal/0_context/layer_4_components/3.99_stages/stage_3.01_instructions/ai_agent_system/os/

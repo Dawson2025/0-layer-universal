@@ -12,6 +12,7 @@ resource_name: "COMPLETE_AUTOMATION_COVERAGE"
 
 ---
 
+<!-- section_id: "5850cfeb-47fe-425c-a784-432b6c453f27" -->
 ## Table of Contents
 
 1. [Overview](#overview)
@@ -24,10 +25,12 @@ resource_name: "COMPLETE_AUTOMATION_COVERAGE"
 
 ---
 
+<!-- section_id: "355c0684-d995-429b-a519-8fc95012167a" -->
 ## Overview
 
 This document provides a complete mapping of all 67 user stories to their corresponding automation scripts. Every user story in the Language Tracker application now has automated test coverage.
 
+<!-- section_id: "182e6312-9d61-40f6-a9e8-3f49233ad943" -->
 ### Coverage Summary
 
 | Level | Stories | Automation Scripts | Status |
@@ -49,8 +52,10 @@ This document provides a complete mapping of all 67 user stories to their corres
 
 ---
 
+<!-- section_id: "074e2062-ffbc-4366-9570-7d115c73e340" -->
 ## Automation Architecture
 
+<!-- section_id: "4b440957-8a1a-4df9-b2af-629284bc61d2" -->
 ### Technology Stack
 
 - **UI Automation**: Playwright via MCP (Model Context Protocol)
@@ -59,6 +64,7 @@ This document provides a complete mapping of all 67 user stories to their corres
 - **Fixtures**: Python data seeders and cleaners
 - **Reporting**: JSON artifacts + screenshots
 
+<!-- section_id: "22d1d609-82a6-40ea-a386-7b4b0f4232c5" -->
 ### Directory Structure
 
 ```
@@ -92,8 +98,10 @@ tests/integration/
 
 ---
 
+<!-- section_id: "add9ac85-f3ab-4a96-8e63-50e2e8b1637a" -->
 ## Story-to-Script Mapping
 
+<!-- section_id: "c418a7a1-77ba-497f-b118-5f2798dc1539" -->
 ### Level 0: Authentication & Access (US-001–005)
 
 **Script**: `scripts/mcp-playwright-demo.mjs`
@@ -111,6 +119,7 @@ tests/integration/
 
 ---
 
+<!-- section_id: "1acb9f1e-568b-4439-9084-3dd875e9d804" -->
 ### Level 1: Dashboard (US-006–011)
 
 **Script**: `scripts/mcp-user-stories-006-009.mjs`
@@ -129,6 +138,7 @@ tests/integration/
 
 ---
 
+<!-- section_id: "e721d110-94d8-4f91-93ea-a3d597443be3" -->
 ### Level 2: My Projects (US-012–023)
 
 Three scripts cover the project management layer:
@@ -174,6 +184,7 @@ Three scripts cover the project management layer:
 
 ---
 
+<!-- section_id: "e6bb977a-1ef3-4923-be94-56bda73a01f7" -->
 ### Level 3: Variant Menu (US-024–025)
 
 **Covered in**: `scripts/mcp-project-variants.mjs` (US-024) and `mcp-phonemes-flat.mjs` (US-025)
@@ -185,6 +196,7 @@ Three scripts cover the project management layer:
 
 ---
 
+<!-- section_id: "275fdec0-a8ed-4949-ade7-d97e7f53ecb0" -->
 ### Level 4a: Phonemes Section (US-026–028)
 
 **Script**: `scripts/mcp-phonemes-flat.mjs`
@@ -200,6 +212,7 @@ Three scripts cover the project management layer:
 
 ---
 
+<!-- section_id: "9e4a5bb9-0a48-4daa-9f02-131b66acffa2" -->
 ### Level 4b: Words Section (US-029–037)
 
 **Script**: `scripts/mcp-words-flow.mjs`
@@ -223,6 +236,7 @@ Three scripts cover the project management layer:
 
 ---
 
+<!-- section_id: "d0472122-e676-4d46-8d51-c8ed1c74eabb" -->
 ### Level 4c: Administration (US-038–053)
 
 Two scripts cover admin functionality:
@@ -268,6 +282,7 @@ Two scripts cover admin functionality:
 
 ---
 
+<!-- section_id: "e3375e28-c4a9-4744-b35a-6caec8abb81d" -->
 ### Audio & Media Features (US-054–056)
 
 **Script**: `scripts/mcp-tts-experience.mjs`
@@ -295,6 +310,7 @@ RUN_AZURE_TTS_TESTS=1 pytest tests/integration/test_azure_tts.py
 
 ---
 
+<!-- section_id: "7a23c436-4299-4e04-a8dc-94c170378275" -->
 ### Cloud & Storage (US-057–059)
 
 **Script**: `scripts/mcp-storage-resilience.mjs`
@@ -314,6 +330,7 @@ RUN_AZURE_TTS_TESTS=1 pytest tests/integration/test_azure_tts.py
 
 ---
 
+<!-- section_id: "e7d86a81-3c4b-45bc-a8c0-6b3bbdf932fa" -->
 ### Testing & Quality (US-060–061)
 
 **Script**: `scripts/automation/run_cloud_tests.sh`
@@ -334,6 +351,7 @@ bash scripts/automation/run_cloud_tests.sh --online # Online (requires Firebase)
 
 ---
 
+<!-- section_id: "25b96d67-720d-4f52-b53f-fc1b0de6c614" -->
 ### Development Conventions (US-062–063)
 
 **Script**: `scripts/automation/validate_parallel_structure.py`
@@ -361,6 +379,7 @@ python3 scripts/automation/validate_parallel_structure.py \
 
 ---
 
+<!-- section_id: "e27c1e19-edaa-4246-987f-387937081be2" -->
 ### End-to-End User Journeys (US-064–067)
 
 Four comprehensive journey scripts covering complete workflows:
@@ -473,8 +492,10 @@ Four comprehensive journey scripts covering complete workflows:
 
 ---
 
+<!-- section_id: "2a036243-7a0b-447f-8ec2-7df34d7268f3" -->
 ## Script Inventory
 
+<!-- section_id: "86779029-347b-4fd4-8af6-3bec0a2c359d" -->
 ### Playwright MCP Scripts (16 total)
 
 | Script | Stories Covered | Lines | Status |
@@ -496,6 +517,7 @@ Four comprehensive journey scripts covering complete workflows:
 | `mcp-journey-mobile.mjs` | US-067 | ~550 | ✅ |
 | `mcp-client.mjs` | (MCP SDK demo) | ~100 | ✅ |
 
+<!-- section_id: "15692a42-b9e3-4fe1-850b-935659db0e9c" -->
 ### Supporting Scripts & Tools (3 total)
 
 | Script | Purpose | Language | Status |
@@ -505,6 +527,7 @@ Four comprehensive journey scripts covering complete workflows:
 | `validate_parallel_structure.py` | Feature structure audit | Python | ✅ |
 | `run_cloud_tests.sh` | Cloud integration wrapper | Bash | ✅ |
 
+<!-- section_id: "9c3637e2-c62b-4f54-b827-38fa16e4f9a7" -->
 ### Integration Tests (1 file)
 
 | Test File | Coverage | Framework | Status |
@@ -513,8 +536,10 @@ Four comprehensive journey scripts covering complete workflows:
 
 ---
 
+<!-- section_id: "8211ec04-1e8b-44f4-9f6a-d19b9d00c2d3" -->
 ## Running the Full Suite
 
+<!-- section_id: "282f48d5-e9a6-4819-a9cd-3880c3a013dc" -->
 ### Prerequisites
 
 1. **Environment Setup**:
@@ -537,6 +562,7 @@ Four comprehensive journey scripts covering complete workflows:
    export APP_BASE_URL=http://127.0.0.1:5002
    ```
 
+<!-- section_id: "ae1781fb-2daf-4dd1-80b3-c78b803b4302" -->
 ### Run Complete Test Suite
 
 ```bash
@@ -546,6 +572,7 @@ python3 scripts/automation/run_user_stories.py \
   --concurrency 2
 ```
 
+<!-- section_id: "a8317127-ccd3-46f8-894a-878684b481fd" -->
 ### Run Individual Scripts
 
 ```bash
@@ -587,6 +614,7 @@ node scripts/mcp-journey-branching.mjs
 node scripts/mcp-journey-mobile.mjs
 ```
 
+<!-- section_id: "2450bdda-259d-41b0-92c9-2d9c89d68d55" -->
 ### Run Subset by Story Range
 
 ```bash
@@ -605,6 +633,7 @@ done
 
 ---
 
+<!-- section_id: "68e596fc-4263-4648-a298-d226c3a9dd56" -->
 ## Artifact Organization
 
 All test runs produce structured artifacts:
@@ -678,6 +707,7 @@ artifacts/
         └── mobile-validation-report.json
 ```
 
+<!-- section_id: "850910ce-ade0-4663-a8ca-40d7fbacde25" -->
 ### Artifact Retention
 
 - **Local Development**: Keep last 10 runs per script
@@ -686,8 +716,10 @@ artifacts/
 
 ---
 
+<!-- section_id: "df61177b-c3ec-4759-85ee-066fcbcd6688" -->
 ## CI/CD Integration
 
+<!-- section_id: "9a0c4ca2-7a21-452d-b4a6-bad2c9a29fe2" -->
 ### GitHub Actions Workflow (Proposed)
 
 ```yaml
@@ -757,6 +789,7 @@ jobs:
           python3 scripts/automation/generate_report.py
 ```
 
+<!-- section_id: "5c6af9ad-0795-40fc-a195-c8e559e1311a" -->
 ### Jenkins Pipeline (Alternative)
 
 ```groovy
@@ -807,8 +840,10 @@ pipeline {
 
 ---
 
+<!-- section_id: "33af802c-8f7b-4c42-8403-df2175297308" -->
 ## Test Metrics & Reporting
 
+<!-- section_id: "198015c0-4c01-4a31-a6b7-9e52c2ce03f6" -->
 ### Coverage Metrics
 
 | Metric | Value | Target |
@@ -820,6 +855,7 @@ pipeline {
 | Total Lines of Test Code | ~5,500 | - |
 | Average Execution Time | ~15 min | <20 min |
 
+<!-- section_id: "46e1b7cf-c35c-4108-a6ae-2f15672506ee" -->
 ### Success Criteria
 
 For each user story, automation must:
@@ -829,6 +865,7 @@ For each user story, automation must:
 4. ✅ Handle expected errors gracefully
 5. ✅ Clean up test data (where applicable)
 
+<!-- section_id: "80fc76f8-1e68-437e-992d-fffd4a271092" -->
 ### Known Limitations
 
 | Issue | Stories Affected | Status |
@@ -840,8 +877,10 @@ For each user story, automation must:
 
 ---
 
+<!-- section_id: "92b8b8ee-843f-4ad1-84a9-a5576f045c13" -->
 ## Maintenance Guidelines
 
+<!-- section_id: "dcca7e95-83f6-4479-87db-65f100a5759d" -->
 ### Adding New User Stories
 
 1. **Create Script**:
@@ -863,6 +902,7 @@ For each user story, automation must:
    - Update `docs/for_ai/automation_plan.md`
    - Include artifacts location
 
+<!-- section_id: "06ee5003-063e-4015-8f4b-2978b57ec2c6" -->
 ### Updating Existing Tests
 
 1. **Modify Script**: Edit relevant `.mjs` file
@@ -870,6 +910,7 @@ For each user story, automation must:
 3. **Verify Artifacts**: Check `artifacts/<feature>/` output
 4. **Update Docs**: Reflect any behavior changes
 
+<!-- section_id: "61b81b5c-15f9-4767-85e4-0474c73c59ce" -->
 ### Troubleshooting
 
 Common issues and solutions:
@@ -885,6 +926,7 @@ Common issues and solutions:
 
 ---
 
+<!-- section_id: "718811d5-a0b0-4938-99a9-66b7ae618c08" -->
 ## Conclusion
 
 All 67 user stories in the Language Tracker application now have comprehensive automation coverage. The test suite provides:
@@ -897,6 +939,7 @@ All 67 user stories in the Language Tracker application now have comprehensive a
 - ✅ **Integration testing** (Azure Speech, Firebase)
 - ✅ **Developer workflow validation** (feature structure, parallel dev)
 
+<!-- section_id: "7e9ab58a-867c-4014-8dae-3feea6241c8e" -->
 ### Next Steps
 
 1. **Resolve Known Issues**:

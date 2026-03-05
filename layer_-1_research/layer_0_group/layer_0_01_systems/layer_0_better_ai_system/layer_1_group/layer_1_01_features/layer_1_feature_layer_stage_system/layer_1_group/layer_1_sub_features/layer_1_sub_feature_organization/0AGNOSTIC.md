@@ -10,6 +10,7 @@ resource_name: "0AGNOSTIC"
 
 # ── Entity Definition ──
 
+<!-- section_id: "af36d7f5-c1de-425c-8dab-203645eb06b6" -->
 ## Identity
 
 entity_id: "74919ea4-fd18-47b0-83e0-edc0a0c9fb79"
@@ -22,8 +23,10 @@ You are an agent at **Layer 1** (Sub-Feature), **Sub-Feature**: Organization.
 - **Parent**: `../../../0AGNOSTIC.md` (layer_0_feature_layer_stage_system)
 - **Children**: entities (`layer_2_group/layer_2_subx2_features/`)
 
+<!-- section_id: "c1819d14-e4bd-4403-90b6-964ebc411c43" -->
 ## Key Behaviors
 
+<!-- section_id: "f95d12ec-cbf8-4fb6-bc37-6e5e170a814d" -->
 ### What This Entity Covers
 
 The organization sub-feature researches the structural foundation: **how any system supports research, production, and instantiation versions**.
@@ -32,6 +35,7 @@ The organization sub-feature researches the structural foundation: **how any sys
 2. **Instantiation Pattern**: How systems create per-user or per-context instances that inherit from production
 3. **Universal Applicability**: The R/P/I pattern works beyond AI — school system is the concrete proving ground
 
+<!-- section_id: "558661f6-abb2-4494-9a32-bc4d6fe85b76" -->
 ### Domain Concepts
 
 - **R/P/I Pattern**: Research (layer_-1, experimental), Production (standard entity, stable), Instantiation (children, personalized)
@@ -40,6 +44,7 @@ The organization sub-feature researches the structural foundation: **how any sys
 - **Nested Systems**: Systems can contain sub-systems, each following the same R/P/I pattern recursively
 - **Stage Scaffolding**: When stages are instantiated, their outputs/ should include default structure
 
+<!-- section_id: "e978247a-a579-423d-87aa-6e3f20f72d12" -->
 ## Triggers
 
 Load this context when:
@@ -49,6 +54,7 @@ Load this context when:
 
 # ── Current Status ──
 
+<!-- section_id: "6577af25-93a3-4525-b4de-4032a6a8e32e" -->
 ## Current Status
 
 **Phase**: active — stages 01 and 04 populated | **Last Updated**: 2026-02-25
@@ -59,8 +65,10 @@ Stage 01 has a complete tree of needs with 3 branches (research_production_lifec
 
 # ── Current State ──
 
+<!-- section_id: "0c9180da-1cc5-4fdb-a771-4e48122b73a9" -->
 ## Current State Detail
 
+<!-- section_id: "61c6984e-f8f7-4fc9-9e8e-e9c9adc29413" -->
 ### Active Stages
 
 | Stage | Status | Key Content |
@@ -68,6 +76,7 @@ Stage 01 has a complete tree of needs with 3 branches (research_production_lifec
 | 01 Request Gathering | active | Tree of needs: 3 branches, 11 needs, all with REQ + US |
 | 04 Design | active | 3 design decisions (R/P/I pattern, school system, scaffolding) |
 
+<!-- section_id: "afeab7dd-465b-42d4-be0f-fa775bb3489c" -->
 ### Research Insights
 
 - Research and production are concurrent permanent structures, not phases
@@ -77,6 +86,7 @@ Stage 01 has a complete tree of needs with 3 branches (research_production_lifec
 
 # ── References ──
 
+<!-- section_id: "6b31f719-9cba-44b5-b6ed-6bb1d39405a4" -->
 ## Navigation
 
 | Direction | Path |
@@ -88,6 +98,7 @@ Stage 01 has a complete tree of needs with 3 branches (research_production_lifec
 | Children | `layer_2_group/layer_2_subx2_features/` |
 | Entity index | `0INDEX.md` |
 
+<!-- section_id: "db59e07c-fc79-4da4-87eb-9c70d913eb3f" -->
 ## Where to Contribute
 
 | Work Type | Location |

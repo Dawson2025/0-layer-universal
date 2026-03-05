@@ -5,12 +5,14 @@ resource_name: "v4_benchmarks_with_measurement_units"
 ---
 # Context Avenue Database Schema — Proposal v4
 
+<!-- section_id: "777ceba2-8e89-4300-ab0e-9fdf05004068" -->
 ## Benchmarks with Measurement Units & Methodology
 
 This proposal adds **measurable units** and **methodology** to every capability, enabling benchmarks to be data-driven, traceable, and updateable.
 
 ---
 
+<!-- section_id: "fc0ad639-5c54-4d16-8a34-ebf17388fff6" -->
 ## Core Concept
 
 **Benchmarks are only meaningful with units.** Each capability needs:
@@ -29,8 +31,10 @@ Normalized: Knowledge Graph = 33/100, Vector DB = 100/100
 
 ---
 
+<!-- section_id: "681491c8-66e6-4581-82e5-cda02d8d2f77" -->
 ## Database Schema
 
+<!-- section_id: "2e47fdf9-bfd0-431a-ba2a-4896e45a5c2a" -->
 ### 1. CAPABILITY_METRICS (Defines how each capability is measured)
 
 ```sql
@@ -49,6 +53,7 @@ CREATE TABLE capability_metrics (
 );
 ```
 
+<!-- section_id: "df9d9945-e4e8-46e2-84d0-a0220a5294fa" -->
 ### 2. CAPABILITY_BENCHMARKS (Actual measured values)
 
 ```sql
@@ -69,8 +74,10 @@ CREATE TABLE capability_benchmarks (
 
 ---
 
+<!-- section_id: "7ad3a3d0-6533-44cf-a01d-ddc448cad6e1" -->
 ## Capability Measurement Definitions
 
+<!-- section_id: "7b35b5d2-d702-46cd-b703-5e6b06f9df22" -->
 ### Performance Metrics
 
 #### 1. Speed (Retrieval/Read/Write Performance)
@@ -105,6 +112,7 @@ CREATE TABLE capability_benchmarks (
 
 ---
 
+<!-- section_id: "063cf06c-36a0-4561-8837-1be442d9ff73" -->
 ### Usability & Comprehensibility
 
 #### 4. Readability (Ease of Parsing)
@@ -139,6 +147,7 @@ CREATE TABLE capability_benchmarks (
 
 ---
 
+<!-- section_id: "e3904a41-5d55-40ff-8297-d253fc3c6cfb" -->
 ### Coverage & Completeness
 
 #### 7. Coverage (Information Available)
@@ -163,6 +172,7 @@ CREATE TABLE capability_benchmarks (
 
 ---
 
+<!-- section_id: "18bfdb40-f23c-4fc6-b7e3-3eef7b8215bc" -->
 ### Maintainability & Deployment
 
 #### 9. Setup Difficulty (Implementation Effort)
@@ -197,6 +207,7 @@ CREATE TABLE capability_benchmarks (
 
 ---
 
+<!-- section_id: "e19fd386-d838-4f5d-a245-ff0decfa1cba" -->
 ### Integration & Discoverability
 
 #### 12. Searchability (Content Discovery)
@@ -231,6 +242,7 @@ CREATE TABLE capability_benchmarks (
 
 ---
 
+<!-- section_id: "2e7ffbce-dd11-4a93-b4ea-15bf12210246" -->
 ### Economics & Industry Adoption
 
 #### 15. Cost (Implementation & Operational)
@@ -255,10 +267,12 @@ CREATE TABLE capability_benchmarks (
 
 ---
 
+<!-- section_id: "4e99fa42-e0ce-49e9-8fd7-4db6f2acd8a0" -->
 ## Normalization: Raw Units → 0-100 Scores
 
 Each raw benchmark is converted to a 0-100 normalized score for comparison.
 
+<!-- section_id: "b64fa350-6492-455f-b15f-a8cd16f4bce1" -->
 ### Normalization Formula
 
 For **higher-is-better** capabilities:
@@ -271,6 +285,7 @@ For **lower-is-better** capabilities:
 score = (max_value - raw_value) / (max_value - min_value) * 100
 ```
 
+<!-- section_id: "bf4f09fd-6faa-4cc6-a29d-4a035e9269e9" -->
 ### Example Conversions
 
 **Speed (lower is better)**
@@ -293,8 +308,10 @@ score = (max_value - raw_value) / (max_value - min_value) * 100
 
 ---
 
+<!-- section_id: "8ed30669-bdee-474a-9af1-d0ba85de0f90" -->
 ## SQL Implementation
 
+<!-- section_id: "ba80ed1d-6cd2-4c68-acc9-7e9056bfcda4" -->
 ### Insert Capability Metrics
 
 ```sql
@@ -333,6 +350,7 @@ VALUES
 -- ... continue for all 16 capabilities
 ```
 
+<!-- section_id: "4f1b8f3a-251a-4f16-b8f7-bd60ee713b33" -->
 ### Insert Benchmark Data
 
 ```sql
@@ -366,8 +384,10 @@ VALUES
 
 ---
 
+<!-- section_id: "bef074fa-3d62-4cee-8d60-ecf47dedeb75" -->
 ## Query Examples
 
+<!-- section_id: "09561e2a-7aa6-4fb8-ad43-a5cbde1f0fe5" -->
 ### Get Actual Measurements (Raw Values)
 
 ```sql
@@ -386,6 +406,7 @@ JOIN capability_metrics cm ON c.id = cm.capability_id
 ORDER BY at.type_name, c.name;
 ```
 
+<!-- section_id: "95025618-764e-4ac5-af7a-64e3e30b5c9c" -->
 ### Convert and Compare Scores
 
 ```sql
@@ -408,6 +429,7 @@ JOIN capabilities c ON cb.capability_id = c.id
 ORDER BY at.type_name, cb.normalized_score DESC;
 ```
 
+<!-- section_id: "88a07815-7c06-4227-b92d-eabee9d623d7" -->
 ### Threshold-Based Decisions
 
 ```sql
@@ -425,6 +447,7 @@ WHERE
 ORDER BY at.type_name;
 ```
 
+<!-- section_id: "2bb96506-e638-4780-9403-1d2fe924ab58" -->
 ### Tradeoff Analysis
 
 ```sql
@@ -443,6 +466,7 @@ ORDER BY speed_ms;
 
 ---
 
+<!-- section_id: "acf7de82-70cd-425b-b322-a78ce8cebbfe" -->
 ## Benefits of Measurement Units
 
 ✅ **Measurable** — every benchmark has a clear unit and methodology
@@ -454,6 +478,7 @@ ORDER BY speed_ms;
 
 ---
 
+<!-- section_id: "a189ebcd-3e84-4a56-8adc-464465b6f073" -->
 ## Next Steps
 
 1. **Populate CAPABILITY_METRICS** — insert all 16 capability definitions
@@ -464,6 +489,7 @@ ORDER BY speed_ms;
 
 ---
 
+<!-- section_id: "e84ff32f-6871-4819-97c9-074226360454" -->
 ## Summary
 
 This v4 proposal:

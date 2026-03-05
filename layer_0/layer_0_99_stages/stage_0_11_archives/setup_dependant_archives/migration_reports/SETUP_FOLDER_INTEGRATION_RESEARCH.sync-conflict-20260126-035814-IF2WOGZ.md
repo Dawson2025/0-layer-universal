@@ -7,6 +7,7 @@ resource_name: "SETUP_FOLDER_INTEGRATION_RESEARCH.sync-conflict-20260126-035814-
 
 This report summarizes local context instructions and external guidance related to what should live in `setup/` folders across the hierarchy.
 
+<!-- section_id: "eaf91de1-74a5-470e-bcbb-5f238f2b018e" -->
 ## Local Context Sources (Highest Priority)
 
 Key references in the existing context system:
@@ -36,6 +37,7 @@ Key references in the existing context system:
 - `0_context/layer_0/0.02_sub_layers/sub_layer_0_11_ai_models/`
   - Model access issues and model-specific constraints.
 
+<!-- section_id: "d2f97429-67cb-49c7-9e28-26145e03f2be" -->
 ## External Guidance (Best Practice Summary)
 
 The internet sources found are general documentation best practices and SOP templates. The recurring structure is:
@@ -49,6 +51,7 @@ The internet sources found are general documentation best practices and SOP temp
 
 While generic, this aligns with how setup content is already organized in the MCP and OS sublayers.
 
+<!-- section_id: "4ae8b9cd-800c-43c4-ab5b-6ab206333a56" -->
 ## Implications for the Hierarchy
 
 Based on the local sources, the `setup/` folder at each hierarchy level should contain:

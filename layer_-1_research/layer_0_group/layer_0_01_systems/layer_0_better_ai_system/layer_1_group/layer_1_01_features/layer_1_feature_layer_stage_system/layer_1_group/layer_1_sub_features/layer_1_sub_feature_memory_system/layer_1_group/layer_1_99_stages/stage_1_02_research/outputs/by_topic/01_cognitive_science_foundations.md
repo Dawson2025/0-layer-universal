@@ -5,20 +5,24 @@ resource_name: "01_cognitive_science_foundations"
 ---
 # Cognitive Science Foundations of AI Agent Memory
 
+<!-- section_id: "e07b0a74-5ac7-48f5-a1d9-bd4b3cd814b2" -->
 ## Overview
 
 Modern AI agent memory systems draw heavily from cognitive science theories of human memory. This file maps classical cognitive architectures and human memory types to their AI agent implementations.
 
 ---
 
+<!-- section_id: "4b6a3a0e-372e-4d11-87d1-3f02aff48b5b" -->
 ## 1. Human Memory Types (Cognitive Science)
 
+<!-- section_id: "f02578e0-63bf-44b9-a0d3-c74072ea8cbb" -->
 ### Sensory Memory
 - **Duration**: Milliseconds to seconds
 - **Function**: Brief registration of sensory input before processing
 - **Subtypes**: Iconic (visual), echoic (auditory), haptic (touch)
 - **AI Analog**: Raw input buffers, unprocessed token streams, initial perception layers
 
+<!-- section_id: "71d1c0eb-4670-4f7a-bd26-e8143e35310f" -->
 ### Short-Term / Working Memory
 - **Duration**: Seconds to minutes
 - **Capacity**: ~7 +/- 2 items (Miller's Law)
@@ -26,6 +30,7 @@ Modern AI agent memory systems draw heavily from cognitive science theories of h
 - **AI Analog**: Context window, attention mechanism, active prompt context
 - **Key Theory**: Baddeley's multi-component model (central executive, phonological loop, visuospatial sketchpad, episodic buffer)
 
+<!-- section_id: "c60fbb66-35eb-470d-a4cc-8d22a9dbf6d1" -->
 ### Long-Term Memory
 Three subtypes:
 
@@ -44,11 +49,13 @@ Three subtypes:
 - **Properties**: Implicit, difficult to verbalize, automatic
 - **AI Analog**: Tool-use patterns, learned action sequences, policy networks
 
+<!-- section_id: "b213555f-b0ad-44cb-af68-816b2cc501c7" -->
 ### Prospective Memory
 - **Content**: Intentions, planned future actions
 - **Properties**: Time-based or event-based triggers
 - **AI Analog**: Task queues, scheduled actions, goal stacks
 
+<!-- section_id: "1b5b453e-4ecf-4ca2-81b0-496786306c9d" -->
 ### Metamemory
 - **Content**: Knowledge about one's own memory capabilities
 - **Properties**: Self-monitoring, confidence calibration
@@ -56,8 +63,10 @@ Three subtypes:
 
 ---
 
+<!-- section_id: "657437f7-a00b-436b-b751-cd411410bfce" -->
 ## 2. Classical Cognitive Architectures
 
+<!-- section_id: "0929671f-a12b-48de-bafc-8dd0e3f6ece7" -->
 ### SOAR (State, Operator, And Result)
 **Developed by**: John Laird, Allen Newell, Paul Rosenbloom (1983+)
 
@@ -76,6 +85,7 @@ Three subtypes:
 - Semantic memory designed for very large long-term factual storage
 - Reinforcement learning for rule utility
 
+<!-- section_id: "b0d3014e-3e82-4c09-82b2-38b81a1916f7" -->
 ### ACT-R (Adaptive Control of Thought - Rational)
 **Developed by**: John Anderson (1993+)
 
@@ -93,6 +103,7 @@ Three subtypes:
 - Utility learning for production rule selection
 - Hybrid symbolic-subsymbolic architecture
 
+<!-- section_id: "1c8bc4c5-3259-413d-9863-f6cc6fd8ee6b" -->
 ### LIDA (Learning Intelligent Distribution Agent)
 **Developed by**: Stan Franklin (2006+)
 
@@ -113,6 +124,7 @@ Three subtypes:
 - Most comprehensive memory type coverage of any cognitive architecture
 - Emotional tagging via motivational system
 
+<!-- section_id: "1a7ac64b-dcd3-4d08-93bc-6d8f77264332" -->
 ### CLARION (Connectionist Learning with Adaptive Rule Induction ON-line)
 **Developed by**: Ron Sun (2002+)
 
@@ -132,6 +144,7 @@ Three subtypes:
 
 ---
 
+<!-- section_id: "eb0a6453-5c37-4a45-8ae6-b8283bf27b5f" -->
 ## 3. Mapping: Cognitive Types to AI Agent Memory
 
 | Human Memory Type | AI Implementation | Example Frameworks |
@@ -146,32 +159,39 @@ Three subtypes:
 
 ---
 
+<!-- section_id: "b0b00c59-98a8-4ed4-a8c7-2f0f8df5dfeb" -->
 ## 4. Key Principles from Cognitive Science Applied to AI
 
+<!-- section_id: "58749591-b71d-403e-a7f7-07433d50278a" -->
 ### Complementary Learning Systems Theory
 - Fast learning system (hippocampus) + slow learning system (neocortex)
 - AI analog: External memory (fast, specific) + parametric memory (slow, general)
 - Sleep/replay consolidation: periodic transfer from episodic to semantic
 
+<!-- section_id: "c29705ff-c43b-45fb-b213-0fec925d4f56" -->
 ### Levels of Processing (Craik & Lockhart)
 - Deeper processing = better retention
 - AI analog: Raw storage < summarization < reflection < abstraction
 
+<!-- section_id: "b2ffea44-67eb-45af-96cf-a22cc1de50c3" -->
 ### Decay and Interference
 - Memories fade without rehearsal (temporal decay)
 - New information can interfere with old (retroactive interference)
 - AI implementations: recency weighting, importance scoring, forgetting mechanisms
 
+<!-- section_id: "3a0db7a5-5857-49ce-95e8-b5f610822536" -->
 ### Chunking and Schema Formation
 - Grouping information into meaningful units
 - AI analog: Summarization, entity extraction, knowledge graph construction
 
+<!-- section_id: "259adc41-bf42-405d-8b7a-e1c2e915c9cc" -->
 ### Emotional/Salience Tagging
 - Emotionally significant events remembered better
 - AI analog: Importance scoring, salience-based retention
 
 ---
 
+<!-- section_id: "a4459cee-37ae-4445-85fb-318a162a9245" -->
 ## 5. Neural Encoding of Relationship Types
 
 For a deep dive into how the brain encodes different types of relationships between concepts (cause-effect, category membership, part-whole, etc.) and how this compares to vector embeddings and knowledge graphs, see `15_vectors_graphs_and_neurology.md`.
@@ -184,6 +204,7 @@ For a deep dive into how the brain encodes different types of relationships betw
 
 ---
 
+<!-- section_id: "e5c13c56-2c30-45d5-8c5f-5d6ff799305f" -->
 ## Sources
 
 - [SOAR Cognitive Architecture (Wikipedia)](https://en.wikipedia.org/wiki/Soar_(cognitive_architecture))

@@ -5,10 +5,12 @@ resource_name: "APPLYING_SUB_FEATURE_PATTERN"
 ---
 # Applying Sub-Feature Pattern Across All Features
 
+<!-- section_id: "fc856aef-b393-4da1-b9f1-f335ea1e280a" -->
 ## Strategy
 
 Based on the routes analysis, here's how to apply the sub-feature pattern to each major feature:
 
+<!-- section_id: "82448210-0bdb-49f2-b040-f975db0c9746" -->
 ## 1. Projects Feature
 
 **Routes Found (10 routes):**
@@ -44,6 +46,7 @@ features/projects/
 
 **Parallel Capacity:** 5 agents
 
+<!-- section_id: "d840f65f-899a-4fd0-a99f-d4d816c3174f" -->
 ## 2. Phonemes Feature
 
 **Routes Found (4 routes):**
@@ -69,6 +72,7 @@ features/phonemes/
 
 **Parallel Capacity:** 3-4 agents
 
+<!-- section_id: "c31fcefb-b25a-4471-87f9-878077f5719a" -->
 ## 3. Admin Feature
 
 **Routes Found (4 routes + many APIs):**
@@ -98,6 +102,7 @@ features/admin/
 
 **Parallel Capacity:** 5-6 agents
 
+<!-- section_id: "78b9a789-b2a8-49eb-92da-34d65fea5e7a" -->
 ## 4. Groups Feature
 
 **Already has routes extracted, but can be organized better:**
@@ -114,6 +119,7 @@ features/groups/
 
 **Parallel Capacity:** 4 agents
 
+<!-- section_id: "04dae821-e0b2-4c2a-b584-b703379110f1" -->
 ## Summary
 
 | Feature | Routes | Sub-Modules | Agents |
@@ -126,6 +132,7 @@ features/groups/
 
 **Total Parallel Capacity:** 24+ agents across all features!
 
+<!-- section_id: "0e66746f-5db1-47a8-a6ef-12314ce978a4" -->
 ## Implementation Order
 
 1. ✅ **Words** - COMPLETE (demonstrated pattern)
@@ -134,6 +141,7 @@ features/groups/
 4. **Phonemes** - MEDIUM (simpler, fewer routes)
 5. **Groups** - LOW (already mostly extracted)
 
+<!-- section_id: "e60dbdac-1642-44fd-98c9-0b4440d90a2b" -->
 ## Pattern Applied
 
 For each feature:

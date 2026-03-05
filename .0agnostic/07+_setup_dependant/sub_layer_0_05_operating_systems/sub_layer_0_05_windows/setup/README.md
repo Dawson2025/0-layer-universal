@@ -8,6 +8,7 @@ resource_name: "README"
 
 **Purpose**: Operating system setup, configuration, and platform-specific issues.
 
+<!-- section_id: "a5ce68cc-702b-475c-9f27-ace9433de10a" -->
 ## ⚠️ Linux/Ubuntu-Specific MCP Issues
 
 **CRITICAL**: If using Linux/Ubuntu with Cursor IDE and MCP servers, read:
@@ -20,6 +21,7 @@ resource_name: "README"
 - Display/graphics environment setup required
 - File permissions and path conventions differ
 
+<!-- section_id: "a813d784-dcfd-4285-b9c4-2cb150da6839" -->
 ## Related Documentation
 
 - **Cursor IDE Issues**: `../sub_layer_0_07_coding_app_setup/trickle_down_0.5_setup/0_instruction_docs/CURSOR_IDE_LINUX_MCP_ISSUES.md`
@@ -27,6 +29,7 @@ resource_name: "README"
 - **MCP Setup**: `../sub_layer_0_10_mcp_servers_and_tools_setup/`
 - **Environment Setup (GitHub SSO / PAT)**: `../sub_layer_0_06_environment_setup/trickle_down_0.5_setup/0_instruction_docs/github/github_sso_token_setup.md`
 
+<!-- section_id: "864cc4b1-fdde-4372-982a-661ef7ac7174" -->
 ## Notes
 - Add slot-specific docs here over time.
 - Keep mappings up to date if paths change.

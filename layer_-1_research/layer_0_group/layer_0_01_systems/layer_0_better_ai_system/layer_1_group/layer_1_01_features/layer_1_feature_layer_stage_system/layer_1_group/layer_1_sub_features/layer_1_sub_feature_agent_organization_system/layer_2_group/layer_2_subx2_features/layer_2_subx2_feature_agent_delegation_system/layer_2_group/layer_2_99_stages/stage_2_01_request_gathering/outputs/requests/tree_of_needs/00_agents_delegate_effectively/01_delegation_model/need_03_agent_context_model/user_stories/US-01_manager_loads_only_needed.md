@@ -13,6 +13,7 @@ resource_name: "US-01_manager_loads_only_needed"
 **I want** the manager agent to load only its identity, stage overview, and children list into static context,
 **So that** the AI has room in its context window for actual coordination work instead of being filled with stage details.
 
+<!-- section_id: "e2d8677a-edc8-446a-a04a-2e03901d9319" -->
 ### What Happens
 
 1. User starts a session and asks the AI to manage a project
@@ -21,6 +22,7 @@ resource_name: "US-01_manager_loads_only_needed"
 4. Manager has ample context window space for reading reports, making decisions, and delegating
 5. User gets fast, focused coordination responses
 
+<!-- section_id: "79bfd3df-5d2d-4eba-b875-4f096bb8d210" -->
 ### Acceptance Criteria
 
 - Manager's static context is under 200 lines and contains zero stage methodology

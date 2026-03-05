@@ -12,6 +12,7 @@ resource_name: "aalang_context_integration_proposal"
 
 ---
 
+<!-- section_id: "f14c8870-dd35-446f-8836-f3784b7f2518" -->
 ## Executive Summary
 
 This document proposes a deep integration of AALang/GAB patterns into the layer-stage system's context chaining. This goes beyond documentation to create **actual AALang agents** that implement context loading, validation, and propagation - making the context system itself powered by AALang.
@@ -24,8 +25,10 @@ This document proposes a deep integration of AALang/GAB patterns into the layer-
 
 ---
 
+<!-- section_id: "ea51f1aa-6a23-4b98-b9fc-a23024d8d25d" -->
 ## Part 1: Analysis (from v1)
 
+<!-- section_id: "f4c8f727-92dd-4596-9dfc-1090a3d6a585" -->
 ### 1.1 AALang Patterns Applicable to Context Chaining
 
 | Pattern | In AALang (gab.jsonld) | Application to Context System |
@@ -37,6 +40,7 @@ This document proposes a deep integration of AALang/GAB patterns into the layer-
 | Quality Checklists | Systematic verification before completion | Context quality checklist before work |
 | Prohibitions/Requirements | Severity levels (absolute, critical, standard) | Context priority system |
 
+<!-- section_id: "148d2988-b31e-4f44-8587-9361f6de1b4a" -->
 ### 1.2 Problems to Solve
 
 1. **Context gathering rules scattered** - no single authoritative source
@@ -49,8 +53,10 @@ This document proposes a deep integration of AALang/GAB patterns into the layer-
 
 ---
 
+<!-- section_id: "16a17090-def7-4c88-bd28-f83f7aa027a1" -->
 ## Part 2: AALang Agent Definitions
 
+<!-- section_id: "c391c277-b571-4aa3-b637-c03638abcbe0" -->
 ### 2.1 Context Loading Agent (JSON-LD)
 
 **File**: `layer_0/layer_0_03_sub_layers/sub_layer_0_01_ai_system/context_agents/context_loading_agent.jsonld`
@@ -110,6 +116,7 @@ This document proposes a deep integration of AALang/GAB patterns into the layer-
 }
 ```
 
+<!-- section_id: "39bf9caf-4efd-4398-9f9f-0ab1437fe8a4" -->
 ### 2.2 State Actor Definitions
 
 **File**: `layer_0/layer_0_03_sub_layers/sub_layer_0_01_ai_system/context_agents/context_state_actors.jsonld`
@@ -220,6 +227,7 @@ This document proposes a deep integration of AALang/GAB patterns into the layer-
 }
 ```
 
+<!-- section_id: "ca7326ab-2b78-4057-8093-95ce1ba7dc2c" -->
 ### 2.3 Mode Definitions
 
 **File**: `layer_0/layer_0_03_sub_layers/sub_layer_0_01_ai_system/context_agents/context_modes.jsonld`
@@ -350,8 +358,10 @@ This document proposes a deep integration of AALang/GAB patterns into the layer-
 
 ---
 
+<!-- section_id: "a01603ff-4934-4c62-aaa4-da0c6c1e97f7" -->
 ## Part 3: CLAUDE.md Integration
 
+<!-- section_id: "2b66783a-8e44-41a7-934a-bdfa03a344ce" -->
 ### 3.1 How CLAUDE.md Files Reference AALang Agents
 
 Each CLAUDE.md in the chain should include an **AALang Integration** section:
@@ -379,6 +389,7 @@ Before proceeding, agent MUST also load:
 - [list of required files from this level]
 ```
 
+<!-- section_id: "e3c47794-ca4a-45d8-b1dd-17d692807007" -->
 ### 3.2 Context Chain with AALang References
 
 ```
@@ -460,6 +471,7 @@ Before proceeding, agent MUST also load:
 └─────────────────────────────────────────────────────────────────────────────────┘
 ```
 
+<!-- section_id: "1455fffd-e5a4-486c-96be-9946737225fd" -->
 ### 3.3 Bidirectional Integration
 
 ```
@@ -507,8 +519,10 @@ INTEGRATION POINTS:
 
 ---
 
+<!-- section_id: "1b8bf444-e93e-41de-8ff9-044631d7caa6" -->
 ## Part 4: GAB System Integration
 
+<!-- section_id: "a444a4bb-4e79-4ee7-82b0-30839984641f" -->
 ### 4.1 Mapping GAB Concepts to Context System
 
 | GAB Concept | Context System Equivalent |
@@ -521,6 +535,7 @@ INTEGRATION POINTS:
 | `gab:DebugMode` | `ctx:DebugContextStateActor` |
 | `gab:DecisionLog` | Context loading audit trail |
 
+<!-- section_id: "ceadce9b-0a3a-4a78-9faf-65db6c3570a9" -->
 ### 4.2 Using gab.jsonld Patterns
 
 The context agents inherit patterns directly from gab.jsonld:
@@ -547,6 +562,7 @@ The context agents inherit patterns directly from gab.jsonld:
 }
 ```
 
+<!-- section_id: "ce94f141-cf79-4fe9-9d62-8816c8b93405" -->
 ### 4.3 GAB Quality Checklist for Context
 
 Adapted from gab.jsonld's quality verification:
@@ -581,8 +597,10 @@ Adapted from gab.jsonld's quality verification:
 
 ---
 
+<!-- section_id: "710d5312-f2c5-4e51-ad22-93894ff795c3" -->
 ## Part 5: Implementation Plan
 
+<!-- section_id: "20e276f2-630f-40a7-b78c-ca692e5c87d5" -->
 ### 5.1 Files to Create
 
 ```
@@ -604,6 +622,7 @@ layer_0/layer_0_03_sub_layers/sub_layer_0_04_rules/
 └── context_scope_boundaries.md       # Scope definitions
 ```
 
+<!-- section_id: "cce1e7f3-fbc2-43b8-981f-9c4b2e6803cc" -->
 ### 5.2 Files to Update
 
 ```
@@ -634,6 +653,7 @@ CLAUDE.md CHAIN UPDATES:
    + Add: ## AALang System Reference
 ```
 
+<!-- section_id: "85c9c392-ac8e-48e3-9edd-57eeb91f52a9" -->
 ### 5.3 Implementation Phases
 
 ```
@@ -670,6 +690,7 @@ PHASE 4: Testing & Validation
 
 ---
 
+<!-- section_id: "ab6ac777-d8fa-4264-884c-457733b7a99f" -->
 ## Part 6: Open Questions
 
 1. **Agent Execution Model**: How do AALang agents actually execute?
@@ -694,6 +715,7 @@ PHASE 4: Testing & Validation
 
 ---
 
+<!-- section_id: "485437aa-faa9-4838-bdde-020dd3c90077" -->
 ## Part 7: Summary
 
 This proposal creates a **living context system** powered by AALang agents:
@@ -709,6 +731,7 @@ The result: AI agents that **understand where they are** and **know what rules a
 
 ---
 
+<!-- section_id: "f8dc9cc9-1ba4-46a9-8e3e-ae2b4091ef54" -->
 ## References
 
 - **AALang/Gab Specification**: `layer_0/layer_0_03_sub_layers/sub_layer_0_01_ai_system/gab.jsonld`

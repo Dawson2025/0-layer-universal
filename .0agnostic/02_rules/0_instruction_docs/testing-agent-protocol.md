@@ -12,14 +12,17 @@ resource_name: "testing-agent-protocol"
 
 ---
 
+<!-- section_id: "f292deb1-8885-4e0d-881f-8d09260dccd4" -->
 ## 🎯 **Purpose**
 
 This protocol establishes a **separation of concerns** between development and testing activities by defining a dedicated Testing Agent role. This follows industry best practices for quality assurance and test-driven development.
 
 ---
 
+<!-- section_id: "bcc336bd-e32f-458e-bba0-ea0cac148de5" -->
 ## 👤 **Testing Agent Role Definition**
 
+<!-- section_id: "ff6001b2-4bde-4ce9-ae28-7e797f3deac1" -->
 ### **Primary Responsibilities**
 
 The Testing Agent is responsible for:
@@ -30,6 +33,7 @@ The Testing Agent is responsible for:
 4. **Coverage Analysis**: Maintaining test coverage metrics and identifying gaps
 5. **Test Documentation**: Documenting test strategies and test cases
 
+<!-- section_id: "6ee3f1a1-f75b-4af3-a4b9-8a644470c492" -->
 ### **Testing Agent Identity**
 
 When acting as a Testing Agent, the AI should:
@@ -39,6 +43,7 @@ When acting as a Testing Agent, the AI should:
 - Prioritize test maintainability and clarity
 - Think from a quality assurance perspective
 
+<!-- section_id: "862c7e55-793e-40cd-aa34-7e4f7d618d72" -->
 ### **Testing Agent vs Development Agent**
 
 | Development Agent | Testing Agent |
@@ -51,8 +56,10 @@ When acting as a Testing Agent, the AI should:
 
 ---
 
+<!-- section_id: "71ec1ca5-61c0-43d9-8935-10b4ae2930e0" -->
 ## 📋 **When to Invoke the Testing Agent**
 
+<!-- section_id: "c2492e18-55f0-45b8-966f-94758b244045" -->
 ### **Mandatory Invocation Triggers**
 
 The Testing Agent **MUST** be invoked after:
@@ -64,6 +71,7 @@ The Testing Agent **MUST** be invoked after:
 5. **Database Schema Changes** - When data models are modified
 6. **Configuration Changes** - When system configuration is updated
 
+<!-- section_id: "c361dc12-a45a-4830-a3de-e03ef793fdf9" -->
 ### **Optional Invocation Triggers**
 
 The Testing Agent **SHOULD** be invoked for:
@@ -73,6 +81,7 @@ The Testing Agent **SHOULD** be invoked for:
 3. **Performance Improvements** - To validate optimizations
 4. **Security Enhancements** - To verify security measures
 
+<!-- section_id: "b2427a42-8d64-47ac-8739-177ee92ab843" -->
 ### **Invocation Decision Tree**
 
 ```
@@ -95,8 +104,10 @@ Is this a documentation-only change?
 
 ---
 
+<!-- section_id: "56714b40-c775-4e17-b64e-150c1473147a" -->
 ## 🔄 **Development-to-Testing Handoff Workflow**
 
+<!-- section_id: "c1ef8c73-1ede-4ea7-bb84-0ad3becfbc55" -->
 ### **Phase 1: Development Completion**
 
 **Development Agent Actions:**
@@ -135,6 +146,7 @@ Is this a documentation-only change?
 - Risk 2
 ```
 
+<!-- section_id: "f431b59d-b9ff-4177-88d0-b563a0f4ba7e" -->
 ### **Phase 2: Testing Agent Invocation**
 
 **Testing Agent Actions:**
@@ -146,6 +158,7 @@ Is this a documentation-only change?
 6. Run tests and verify coverage
 7. Report results to Development Agent
 
+<!-- section_id: "2e692e4c-e9eb-4561-ba26-ea0ea18b239e" -->
 ### **Phase 3: Iteration (if needed)**
 
 **If Tests Fail:**
@@ -160,8 +173,10 @@ Is this a documentation-only change?
 
 ---
 
+<!-- section_id: "7a439966-00fb-4ff2-b2d3-2fc88fd603e4" -->
 ## 🧪 **Testing Standards and Requirements**
 
+<!-- section_id: "5277f057-9aeb-489e-b12e-79b8d5be4ad1" -->
 ### **Test Pyramid Compliance**
 
 All testing must follow the test pyramid:
@@ -181,6 +196,7 @@ All testing must follow the test pyramid:
 - **Should Have**: Integration tests for API/database interactions
 - **Nice to Have**: E2E tests for critical user workflows
 
+<!-- section_id: "f6564f84-8f8f-4881-a736-7adae9ea4904" -->
 ### **Coverage Requirements**
 
 | Test Type | Minimum Coverage | Target Coverage |
@@ -189,6 +205,7 @@ All testing must follow the test pyramid:
 | **Integration Tests** | 70% | 85% |
 | **E2E Tests** | Critical paths only | 100% of critical paths |
 
+<!-- section_id: "29f3b894-b3fe-4aec-870f-8c082555bddb" -->
 ### **Test Quality Standards**
 
 Every test must:
@@ -201,8 +218,10 @@ Every test must:
 
 ---
 
+<!-- section_id: "5b764336-9e00-4f6e-98c9-348fb9ba8b2c" -->
 ## 🛠️ **Testing Agent Execution Protocol**
 
+<!-- section_id: "b95ebbdf-3955-46a0-9957-52d927e4df7b" -->
 ### **Step 1: Analyze the Change**
 
 ```python
@@ -215,6 +234,7 @@ Every test must:
 6. What are the side effects?
 ```
 
+<!-- section_id: "c164468e-d7a9-4bdd-a601-c6e7255096f2" -->
 ### **Step 2: Create Test Plan**
 
 ```markdown
@@ -243,6 +263,7 @@ Every test must:
 - Minimum: 80% for new code
 ```
 
+<!-- section_id: "738b08d8-1ca4-4e85-9e9a-1d661ae861b6" -->
 ### **Step 3: Implement Tests**
 
 ```python
@@ -256,6 +277,7 @@ Every test must:
 7. Test both happy and sad paths
 ```
 
+<!-- section_id: "454b53b5-012d-4cd9-a775-5fb259eee2cc" -->
 ### **Step 4: Run and Verify**
 
 ```bash
@@ -269,6 +291,7 @@ pytest tests/ -v --cov=. --cov-report=term --cov-report=html
 ✅ Test execution time is reasonable
 ```
 
+<!-- section_id: "5b6ddf8f-1eca-4398-a2e0-2564463405cf" -->
 ### **Step 5: Report Results**
 
 ```markdown
@@ -301,8 +324,10 @@ OR
 
 ---
 
+<!-- section_id: "3b297c8f-a389-4b01-948f-d44ee0d64a8e" -->
 ## 🔧 **Automation Tools**
 
+<!-- section_id: "e2dea7fd-5cc0-4dc2-b929-8df7afa21704" -->
 ### **Testing Agent Invocation Script**
 
 Location: `scripts/invoke-testing-agent.sh`
@@ -364,6 +389,7 @@ echo "3. Testing Agent will implement tests"
 echo "4. Testing Agent will report results"
 ```
 
+<!-- section_id: "c53e5ddf-86c3-4330-b862-a70536da6d72" -->
 ### **Test Coverage Check Script**
 
 Location: `scripts/check-test-coverage.sh`
@@ -392,8 +418,10 @@ fi
 
 ---
 
+<!-- section_id: "f187002f-d245-4c3f-a17d-06de9e07bf38" -->
 ## 📊 **Testing Agent Metrics**
 
+<!-- section_id: "795a89af-043f-4020-8069-3f901bd0b04a" -->
 ### **Quality Metrics**
 
 Track these metrics for Testing Agent effectiveness:
@@ -404,6 +432,7 @@ Track these metrics for Testing Agent effectiveness:
 4. **Test Execution Time**: Time to run test suite
 5. **Test Maintenance Effort**: Time spent maintaining tests
 
+<!-- section_id: "ef1be43a-caad-41ab-bcac-6250c5cc958b" -->
 ### **Success Criteria**
 
 | Metric | Target | Minimum |
@@ -416,8 +445,10 @@ Track these metrics for Testing Agent effectiveness:
 
 ---
 
+<!-- section_id: "4aa6114e-3f8a-4453-96c5-9e07e7d5b2f3" -->
 ## 🎯 **Best Practices**
 
+<!-- section_id: "1890487d-34e5-4891-9116-28355537cd58" -->
 ### **DO**
 ✅ Invoke Testing Agent after every code change
 ✅ Write tests before fixing bugs (TDD)
@@ -428,6 +459,7 @@ Track these metrics for Testing Agent effectiveness:
 ✅ Follow the test pyramid
 ✅ Maintain high test coverage
 
+<!-- section_id: "8a1d0fc7-c308-43d5-ab89-54c60a8e576e" -->
 ### **DON'T**
 ❌ Skip testing to save time
 ❌ Write tests that depend on each other
@@ -440,8 +472,10 @@ Track these metrics for Testing Agent effectiveness:
 
 ---
 
+<!-- section_id: "7248c793-3cd7-4560-905d-37686c1bb640" -->
 ## 🚀 **Example Usage**
 
+<!-- section_id: "86d196d1-c007-4294-8ec2-6a8f967c3062" -->
 ### **Scenario: New Feature Development**
 
 **Development Agent:**
@@ -468,6 +502,7 @@ Track these metrics for Testing Agent effectiveness:
 
 ---
 
+<!-- section_id: "d1b98c04-c391-4651-b02e-db4cb8837442" -->
 ## 📝 **Integration with Existing Documentation**
 
 This protocol integrates with:
@@ -478,6 +513,7 @@ This protocol integrates with:
 
 ---
 
+<!-- section_id: "e9ecebd0-0b05-4245-8434-59556dce3513" -->
 ## 🔄 **Protocol Versioning**
 
 **Version 1.0** (Current)

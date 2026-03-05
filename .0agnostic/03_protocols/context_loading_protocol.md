@@ -11,6 +11,7 @@ resource_name: "context_loading_protocol"
 
 ---
 
+<!-- section_id: "69bc8833-6cfe-4ba6-b2f2-4ad73de4d1b7" -->
 ## Overview
 
 When an AI agent starts a session in the layer-stage system, it must:
@@ -24,8 +25,10 @@ This ensures agents understand where they are and what rules apply before doing 
 
 ---
 
+<!-- section_id: "2a6491a7-fac1-4616-9e5e-a25998867fd1" -->
 ## The 4 Phases
 
+<!-- section_id: "3114c4d9-62e6-49b0-bd9a-1485e76e4c73" -->
 ### Phase 1: Context Loading
 
 **Goal**: Load all CLAUDE.md files in the chain from root to cwd.
@@ -44,6 +47,7 @@ This ensures agents understand where they are and what rules apply before doing 
 
 **Exit Condition**: Initial confidence >= 0.6
 
+<!-- section_id: "5453b097-34ce-478f-9db1-e0fdef7b637b" -->
 ### Phase 2: Context Validation
 
 **Goal**: Identify current position and verify required context is loaded.
@@ -64,6 +68,7 @@ This ensures agents understand where they are and what rules apply before doing 
 
 **Exit Condition**: Confidence >= 0.8
 
+<!-- section_id: "269bd0e3-fea3-4aaf-93e9-ab1118814dc9" -->
 ### Phase 3: Context Propagation
 
 **Goal**: Resolve inheritance and apply overrides.
@@ -88,6 +93,7 @@ Layer 0 (base) → Layer 1 (inherits, can override) → Layer 2+ (inherits, can 
 
 **Exit Condition**: All inheritance resolved, conflicts handled
 
+<!-- section_id: "79020fde-bfd4-4c24-bcbe-da166bda1633" -->
 ### Phase 4: Context Delivery
 
 **Goal**: Confirm ready and present summary (if debug mode).
@@ -110,8 +116,10 @@ Layer 0 (base) → Layer 1 (inherits, can override) → Layer 2+ (inherits, can 
 
 ---
 
+<!-- section_id: "834dd1f4-bae2-4480-9f00-127d5c7184ef" -->
 ## Layer Inheritance Rules
 
+<!-- section_id: "ce136397-9a5d-4b95-a1ff-37cc6089efbf" -->
 ### Base Principle
 
 ```
@@ -119,6 +127,7 @@ Layer N inherits from layers 0 through N-1
 Layer N can override any inherited context
 ```
 
+<!-- section_id: "94806135-db39-4702-bca6-b37ee2517fe3" -->
 ### Examples
 
 **Working in Layer 1 (project)**:
@@ -134,6 +143,7 @@ Layer N can override any inherited context
 - Can override: Most things (research is experimental)
 - Note: Some safety rules in layer_0 cannot be overridden
 
+<!-- section_id: "05fbd630-869a-4652-b1ab-a1297e031bcb" -->
 ### Override Syntax
 
 In CLAUDE.md or rule files, use:
@@ -147,6 +157,7 @@ Reason: This project uses a different commit format.
 
 ---
 
+<!-- section_id: "24771667-7a5e-4241-b822-052c71ef64c2" -->
 ## Confidence Scoring
 
 | Factor | Weight | Description |
@@ -163,6 +174,7 @@ Reason: This project uses a different commit format.
 
 ---
 
+<!-- section_id: "ef9b3495-665e-47e8-bdc8-bf0c169eb9f9" -->
 ## Debug Commands
 
 | Command | Effect |
@@ -174,6 +186,7 @@ Reason: This project uses a different commit format.
 
 ---
 
+<!-- section_id: "7de5769e-1b3c-4455-b282-a65185dffe37" -->
 ## Integration with CLAUDE.md
 
 Each CLAUDE.md file should include position information:
@@ -200,6 +213,7 @@ Update state actors:
 
 ---
 
+<!-- section_id: "fe5c1baa-f294-47c0-ab5a-ec7b736b8c41" -->
 ## Related Documentation
 
 - **Agent Definitions**: `sub_layer_0_01_ai_system/context_agents/`

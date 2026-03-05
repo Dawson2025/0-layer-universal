@@ -10,12 +10,14 @@ argument-hint: [--verbose]
 
 Check the current status of the 00_stage_registry stage.
 
+<!-- section_id: "a0b95719-b5e7-4652-bd30-45faf5c84aa1" -->
 ## Steps
 1. Read the stage's outputs/ folder
 2. Check hand_off_documents/ for context
 3. Review any in-progress work
 4. Report status summary
 
+<!-- section_id: "f8e7cea2-39de-4418-93e8-c7542d85df03" -->
 ## Output
 - Current progress
 - Pending items

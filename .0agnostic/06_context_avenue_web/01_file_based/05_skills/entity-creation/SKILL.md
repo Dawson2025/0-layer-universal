@@ -6,16 +6,19 @@ resource_name: "SKILL"
 ---
 # Skill: Entity Creation
 
+<!-- section_id: "d8c77b00-4e10-414f-a6b8-dda3a024f2de" -->
 ## Purpose
 
 Create new layers, sub-layers, stages, features, projects, or components with proper structure.
 
+<!-- section_id: "393b0554-f98c-4cd5-a0d6-a65d79192d29" -->
 ## When to Use
 
 - Creating a new project, feature, component, or research project
 - Creating stages for an entity
 - When the user says "create a new project/feature/component"
 
+<!-- section_id: "98a127d5-81fa-49aa-a665-6b09678eba91" -->
 ## References (MUST READ BEFORE EXECUTING)
 
 | Reference | Path | Why |
@@ -26,8 +29,10 @@ Create new layers, sub-layers, stages, features, projects, or components with pr
 | Stages | `layer_0/.../layer_stage_system/STAGES_EXPLAINED.md` | **Stage Completeness Rule** |
 | Layers | `layer_0/.../layer_stage_system/LAYERS_EXPLAINED.md` | Layer structure |
 
+<!-- section_id: "d23527be-aafe-40c1-b2ee-568d9b965c33" -->
 ## Protocol
 
+<!-- section_id: "0784dba0-f952-49a6-a649-a09d0a00f24c" -->
 ### 1. Determine Entity Type and Layer
 
 | Creating a... | Location | Layer N |
@@ -38,6 +43,7 @@ Create new layers, sub-layers, stages, features, projects, or components with pr
 | Research project | `layer_-1_research/` | -1 |
 | Research feature | `<research>/layer_0_group/layer_0_features/` | 0 |
 
+<!-- section_id: "fb6bfdbb-4555-4514-95c8-69a155341786" -->
 ### 2. Create Full Canonical Structure
 
 Read `.0agnostic/06_context_avenue_web/01_file_based/04_@import_references/entity_structure.md` for the complete directory tree and mkdir template. Every entity needs:
@@ -46,19 +52,23 @@ Read `.0agnostic/06_context_avenue_web/01_file_based/04_@import_references/entit
 - `layer_N+1_group/` (if entity has children)
 - `synthesis/`
 
+<!-- section_id: "734e8b66-1655-46e9-a47b-8389e620121d" -->
 ### 3. [CRITICAL] Create ALL 11 Stages
 
 **Stage Completeness Rule**: If the entity has stages, create ALL 11. Empty stages are valid. Missing stages are NOT.
 
+<!-- section_id: "a6681b94-3342-4ea4-aa26-64b18409f4df" -->
 ### 4. Create Required Files
 
 - `0AGNOSTIC.md` and `0INDEX.md` (see INSTANTIATION_GUIDE.md for templates)
 - Run `agnostic-sync.sh` to generate tool files
 
+<!-- section_id: "12f95bd8-c4b3-42bc-a62c-5b6ebb82f19d" -->
 ### 5. Update Parent
 
 - Update parent's `0INDEX.md` and registry
 
+<!-- section_id: "b8e3e187-26c2-4320-967e-d33b66aed00f" -->
 ## Naming Convention
 
 ```
@@ -67,6 +77,7 @@ layer_{N}_{type}_{name}
 
 Children are always layer N+1 of their parent. Use `sub_feature` (not `subfeature`).
 
+<!-- section_id: "b9a717a4-2442-4783-9abd-aac04e57514f" -->
 ## Checklist
 
 Before completing:

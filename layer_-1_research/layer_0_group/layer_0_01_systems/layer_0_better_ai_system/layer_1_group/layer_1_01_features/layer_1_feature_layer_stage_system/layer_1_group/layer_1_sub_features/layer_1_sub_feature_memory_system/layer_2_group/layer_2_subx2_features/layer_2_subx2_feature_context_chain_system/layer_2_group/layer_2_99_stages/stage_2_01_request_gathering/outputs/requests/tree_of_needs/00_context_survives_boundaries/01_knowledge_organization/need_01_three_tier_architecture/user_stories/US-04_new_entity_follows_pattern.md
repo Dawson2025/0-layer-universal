@@ -13,6 +13,7 @@ resource_name: "US-04_new_entity_follows_pattern"
 **I want** a knowledge file template so every entity's knowledge is structured the same way,
 **So that** the AI can navigate any entity's knowledge without learning a new layout each time.
 
+<!-- section_id: "c639132b-c4c5-42e8-b8fc-6b7bac73adf7" -->
 ### What Happens
 
 1. User creates a new entity and tells the AI to set up its knowledge structure
@@ -20,6 +21,7 @@ resource_name: "US-04_new_entity_follows_pattern"
 3. New entity's knowledge files have the same sections (summary, references, version) as every other entity
 4. Any AI session entering the new entity can load its knowledge using the same pattern
 
+<!-- section_id: "97d3b1f6-4413-4239-a4d5-9e73fbc19ce3" -->
 ### Acceptance Criteria
 
 - Knowledge file template exists with required sections (summary, references, version)

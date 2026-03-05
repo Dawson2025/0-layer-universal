@@ -12,6 +12,7 @@ resource_name: "implementation_lessons_learned"
 
 ---
 
+<!-- section_id: "f302c912-ecc4-48e0-831d-4f165944ff9a" -->
 ## How to Use This Document
 
 This is a **living document** that captures lessons learned from implementing the AI Manager Hierarchy System in real projects. It's organized by topic and continuously updated as new patterns emerge.
@@ -48,8 +49,10 @@ This is a **living document** that captures lessons learned from implementing th
 
 ---
 
+<!-- section_id: "654bc3c9-f6e4-4c08-8e35-c1a3cfc80f41" -->
 ## Section 1: What Worked Well
 
+<!-- section_id: "fe18a4a6-6a79-408e-a9ec-d88411042027" -->
 ### Template Entry (Delete This When Adding Real Lessons)
 
 **Date**: 2025-12-24
@@ -81,8 +84,10 @@ Template saved 15 minutes per handoff creation.
 
 ---
 
+<!-- section_id: "a1461072-cc82-409e-9ce3-2c3964d8a022" -->
 ## Section 2: What Didn't Work as Expected
 
+<!-- section_id: "b4c30a1a-7e0a-42c7-a1e6-effa4f731524" -->
 ### Template Entry (Delete This When Adding Real Lessons)
 
 **Date**: 2025-12-24
@@ -108,8 +113,10 @@ Decision: Manager executed directly
 
 ---
 
+<!-- section_id: "73425528-801f-41bb-a8c4-7a4a63c184e1" -->
 ## Section 3: Recommended Improvements
 
+<!-- section_id: "3abee09b-570f-424c-ac4c-142b47d31b6d" -->
 ### Template Entry (Delete This When Adding Real Lessons)
 
 **Date**: 2025-12-24
@@ -142,8 +149,10 @@ Decision: Manager executed directly
 
 ---
 
+<!-- section_id: "a377ff43-8115-47fa-97e5-5783f720d529" -->
 ## Section 4: Tool-Specific Tips
 
+<!-- section_id: "ac863049-5ae6-483a-85db-26b19cc4e50a" -->
 ### Template Entry: Claude Code
 
 **Date**: 2025-12-24
@@ -166,6 +175,7 @@ claude-code --allowed=Read,Write,Bash \
 
 ---
 
+<!-- section_id: "8457c475-afd0-46a7-854b-41d9677539ba" -->
 ### Template Entry: Codex CLI
 
 **Date**: 2025-12-24
@@ -188,6 +198,7 @@ codex run --model=codestral \
 
 ---
 
+<!-- section_id: "a8c0dec5-4845-4b7b-a7c3-45bcbde1ded2" -->
 ### Template Entry: Gemini CLI
 
 **Date**: 2025-12-24
@@ -214,8 +225,10 @@ gemini chat --model=gemini-exp-1206 \
 
 ---
 
+<!-- section_id: "c682f430-1111-4215-812c-7adcaa60832e" -->
 ## Section 5: OS-Specific Gotchas
 
+<!-- section_id: "787a0a45-2944-4c01-969e-bbc8cc999f6c" -->
 ### Template Entry: WSL
 
 **Date**: 2025-12-24
@@ -237,6 +250,7 @@ Decision: Copy logs to Linux filesystem, process there, copy results back if nee
 
 ---
 
+<!-- section_id: "2b19e45a-d2ea-43ba-b8ee-dc9050cd2aa0" -->
 ### Template Entry: Linux Ubuntu
 
 **Date**: 2025-12-24
@@ -260,8 +274,10 @@ Decision: Copy logs to Linux filesystem, process there, copy results back if nee
 
 ---
 
+<!-- section_id: "e2fad85e-9650-47a9-9549-a0fcb6faaa00" -->
 ## Section 6: Pattern Evolution
 
+<!-- section_id: "615fe6a8-8b97-489e-9c6e-255822150cc8" -->
 ### Template Entry: Handoff Simplification
 
 **Date**: 2025-12-24
@@ -294,8 +310,10 @@ Full schema reserved for complex tasks (> 15 minutes, > $1 cost, multiple subtas
 
 ---
 
+<!-- section_id: "e7b6bd98-4580-4567-a490-4c124e627e6b" -->
 ## Section 7: Cost Optimization Patterns
 
+<!-- section_id: "9a9c06e1-20b9-481a-a482-6a30e70d90ac" -->
 ### Template Entry: Tool Selection Based on Complexity
 
 **Date**: 2025-12-24
@@ -325,8 +343,10 @@ Full schema reserved for complex tasks (> 15 minutes, > $1 cost, multiple subtas
 
 ---
 
+<!-- section_id: "614e722f-9746-4e17-8f66-198d2026bfed" -->
 ## Section 8: Common Failure Modes and Mitigations
 
+<!-- section_id: "61ce20f0-bc5c-411b-9a5d-3bb81f5dc6b5" -->
 ### Template Entry: Handoff Rejection Loop
 
 **Date**: 2025-12-24
@@ -357,8 +377,10 @@ Full schema reserved for complex tasks (> 15 minutes, > $1 cost, multiple subtas
 
 ---
 
+<!-- section_id: "85469e8a-1bd7-4a51-9898-b9db63a42a72" -->
 ## Section 9: Deployment Learnings
 
+<!-- section_id: "4d80caef-843e-4166-bd2f-057f99912920" -->
 ### Template Entry: Development vs. Production Configuration
 
 **Date**: 2025-12-24
@@ -395,8 +417,10 @@ Full schema reserved for complex tasks (> 15 minutes, > $1 cost, multiple subtas
 
 ---
 
+<!-- section_id: "78cea404-0575-4a44-a9a3-b993330f2412" -->
 ## Section 10: Training and Onboarding
 
+<!-- section_id: "1df51d0e-427d-4a2f-b87e-9f21d3a6c1d3" -->
 ### Template Entry: Onboarding Time Reduction
 
 **Date**: 2025-12-24
@@ -428,8 +452,10 @@ Full schema reserved for complex tasks (> 15 minutes, > $1 cost, multiple subtas
 
 ---
 
+<!-- section_id: "ffe81cc4-f9a4-4b2a-a1a2-04efd9823100" -->
 ## Appendix A: Metrics and Benchmarks
 
+<!-- section_id: "e077d75f-3450-4c2c-806a-00c93b135501" -->
 ### Template: Track These Metrics
 
 **Hierarchy Adoption**:
@@ -469,8 +495,10 @@ Full schema reserved for complex tasks (> 15 minutes, > $1 cost, multiple subtas
 
 ---
 
+<!-- section_id: "6e118b37-05b3-4926-9e30-45526e81d041" -->
 ## Appendix B: Contribution Guidelines
 
+<!-- section_id: "898776ce-bc46-4330-b743-5c5a6dd7e431" -->
 ### How to Add a Lesson
 
 1. **Choose the right section** (1-10 above)
@@ -480,12 +508,14 @@ Full schema reserved for complex tasks (> 15 minutes, > $1 cost, multiple subtas
 5. **Date and sign**: Always include date and your agent ID
 6. **Link to related docs**: Reference relevant specs, guides, or examples
 
+<!-- section_id: "b70066ee-465d-4f2e-9819-1dbf074674af" -->
 ### Review and Approval
 
 - **Self-approval**: Agents can add lessons directly (no approval required)
 - **Review cadence**: Document reviewed monthly for clarity and relevance
 - **Archival**: Outdated lessons moved to separate "historical" section
 
+<!-- section_id: "31be0c53-3e48-4183-b94a-86d60984b1dd" -->
 ### Versioning
 
 - **Version**: Incremented when major sections are added or reorganized
@@ -494,6 +524,7 @@ Full schema reserved for complex tasks (> 15 minutes, > $1 cost, multiple subtas
 
 ---
 
+<!-- section_id: "30f8a5c3-1af0-44b2-aeec-38e8e88434c9" -->
 ## Appendix C: Related Documentation
 
 **Rollout and Adoption**:

@@ -5,12 +5,14 @@ resource_name: "jsonld_design_vs_runtime"
 ---
 # Why AALang Uses JSON-LD (Design-Time vs Run-Time)
 
+<!-- section_id: "dcc7e480-acc2-47c7-b801-1e89a3068818" -->
 ## The Question
 
 Research shows JSON-LD is the **worst-performing** format for LLM instruction following (0.34 accuracy vs 0.42 for plain JSON, 3-5x more tokens). So why does the professor's AALang/GAB system use JSON-LD?
 
 ---
 
+<!-- section_id: "7a551dba-32f4-4085-9b6f-7af3096bb3d5" -->
 ## The Answer: Design-Time vs Run-Time
 
 JSON-LD serves a different purpose in AALang than what we assumed. There are two distinct phases:
@@ -30,6 +32,7 @@ DESIGN-TIME (authoring agent definitions)          RUN-TIME (LLM executing behav
 └──────────────────────────────────────┘          └──────────────────────────────────┘
 ```
 
+<!-- section_id: "d2e3338c-7345-4275-99bd-138893da7386" -->
 ### Why JSON-LD Works for Design-Time
 
 1. **Formal agent structure**: AALang defines complex structures — modes contain actors, actors have personas, state actors persist across modes, modes reference runtime behaviors. JSON-LD's `@context`, `@type`, and `@id` linking captures these relationships unambiguously.
@@ -42,6 +45,7 @@ DESIGN-TIME (authoring agent definitions)          RUN-TIME (LLM executing behav
 
 5. **Disambiguation**: "The Senior persona validates the output" in markdown could mean many things. In JSON-LD, the persona's exact responsibilities, inputs, outputs, and conditions are structured data.
 
+<!-- section_id: "e5971ee8-008c-499b-af43-d162159f74b0" -->
 ### Why JSON-LD Fails for Run-Time
 
 1. **Token cost**: A gab.jsonld file is ~170KB (~40K tokens). The equivalent behavioral instructions in markdown would be ~10-15K tokens.
@@ -54,6 +58,7 @@ DESIGN-TIME (authoring agent definitions)          RUN-TIME (LLM executing behav
 
 ---
 
+<!-- section_id: "bd66dba5-ead6-4a00-a836-2581eea73703" -->
 ## How AALang Actually Executes
 
 Based on the README and gab.jsonld, AALang execution works like this:
@@ -65,6 +70,7 @@ Based on the README and gab.jsonld, AALang execution works like this:
 
 This means the LLM IS reading the JSON-LD at runtime. The professor's design loads the full agent definition into context and relies on the LLM to follow it.
 
+<!-- section_id: "8295fc61-1d2c-49e9-b2aa-48a6b6c1f52e" -->
 ### The Tension
 
 This creates a tension:
@@ -72,6 +78,7 @@ This creates a tension:
 - JSON-LD is the **wrong format for instructing** the LLM (expensive, lower accuracy)
 - But AALang currently loads the JSON-LD definition directly into the LLM context
 
+<!-- section_id: "7d47c050-69ee-4ef1-a276-a33e9b3dfc8a" -->
 ### Possible Reconciliation
 
 The professor may be prioritizing **precision over efficiency**. The argument would be: even though JSON-LD costs more tokens and scores lower on generic benchmarks, the specific structural patterns it provides (modes, actors, state actors, transition gates) may be worth the overhead because they create a consistent execution framework that the LLM can follow.
@@ -84,6 +91,7 @@ This is unverified. It's possible that:
 
 ---
 
+<!-- section_id: "caaca776-2c81-4039-bd00-65a43c5f36b7" -->
 ## The Missing Bridge
 
 What doesn't exist yet is a **design-time to run-time bridge** — a way to take a JSON-LD agent definition and produce markdown instructions optimized for LLM consumption:
@@ -110,6 +118,7 @@ This is potentially the most important integration opportunity.
 
 ---
 
+<!-- section_id: "49e7e6de-98dc-45d0-95cb-0c7f49d1cd1e" -->
 ## What This Means for Our System
 
 1. **Keep AALang .jsonld files as design artifacts** — they define HOW agents should work
@@ -120,10 +129,12 @@ This is potentially the most important integration opportunity.
 
 ---
 
+<!-- section_id: "a3291bb0-e54f-423b-89d1-65581920f031" -->
 ## Alternative: JSON-LD as Navigable Graph (Selective Reading)
 
 The analysis above assumes the entire JSON-LD file is loaded into context at once. But there's another approach: **use JSON-LD as a structured index that the AI navigates selectively**.
 
+<!-- section_id: "db33c994-5243-44c4-8f0a-7b2b1356df63" -->
 ### The Idea
 
 Instead of:
@@ -148,6 +159,7 @@ Do this:
 
 Total tokens consumed: ~200-300 lines instead of 1300. The AI reads **10-25% of the file** instead of 100%.
 
+<!-- section_id: "17c2ae41-377b-400b-b7fd-4f1fc5ffc966" -->
 ### Why JSON-LD's Graph Structure Helps
 
 JSON-LD has properties that make selective navigation more precise than markdown:
@@ -160,6 +172,7 @@ JSON-LD has properties that make selective navigation more precise than markdown
 | **Navigable links** | `@id` references can be followed to exact locations | Cross-references rely on section names |
 | **Predictable structure** | Schema-defined fields — AI knows what to look for | Freeform — AI must scan to understand structure |
 
+<!-- section_id: "8a55afa0-d117-4f25-b694-a646a91f3463" -->
 ### How It Would Work in Practice
 
 The AI uses the Read tool with line offsets to navigate the JSON-LD:
@@ -182,6 +195,7 @@ Step 4: QualityBot references "gab-runtime.jsonld" behaviors
 
 Total: ~300 lines read across 4 Read operations instead of 1300 lines in one load.
 
+<!-- section_id: "00fa0c2c-dc3a-4852-84cb-a663991084dd" -->
 ### The Key Insight
 
 This reframes the JSON-LD question entirely:
@@ -191,6 +205,7 @@ This reframes the JSON-LD question entirely:
 
 In this model, JSON-LD's overhead (`@context`, `@type`, URIs) is NOT a problem because it's never loaded wholesale. It's a navigation aid — the boilerplate helps the AI understand what each section contains WITHOUT reading the full content.
 
+<!-- section_id: "7c7aa440-79b0-461b-b38c-7c27f805c8cd" -->
 ### Comparison: JSON-LD Graph Navigation vs Markdown Index
 
 Could you achieve the same selective reading with markdown? Yes, but with less precision:
@@ -223,6 +238,7 @@ The AI reads the same index, but:
 - Properties like `"mandatory": true` are structured data, not prose to interpret
 - Links to other nodes are explicit, not inferred
 
+<!-- section_id: "f2344c01-6fe5-4eeb-85ed-825b8e7166d6" -->
 ### Is It Worth It?
 
 The advantage of JSON-LD graph navigation over markdown index navigation is **marginal for simple cases** but **significant for complex agent definitions** with many cross-references:
@@ -230,6 +246,7 @@ The advantage of JSON-LD graph navigation over markdown index navigation is **ma
 - **Simple skills** (5-10 steps): Markdown is fine. No need for graph navigation.
 - **Complex agents** (GAB compiler, orchestrators): Multiple modes referencing multiple actors referencing runtime behaviors referencing format specs. The graph structure prevents the AI from getting lost in cross-references.
 
+<!-- section_id: "ed59564f-dff3-49b5-a58e-5fd95fa987e6" -->
 ### Open Questions
 
 1. **Does Claude actually navigate JSON-LD efficiently?** Need to test: give it a top-level read of a .jsonld file, then ask it to find specific details. Does it correctly follow @id references?
@@ -242,6 +259,7 @@ The advantage of JSON-LD graph navigation over markdown index navigation is **ma
 
 ---
 
+<!-- section_id: "fbd234f7-cbc6-4ad3-be23-f18597adbc35" -->
 ## Evidence and Sources
 
 - KG-LLM-Bench (arXiv:2504.07087): JSON-LD scored 0.34 avg accuracy

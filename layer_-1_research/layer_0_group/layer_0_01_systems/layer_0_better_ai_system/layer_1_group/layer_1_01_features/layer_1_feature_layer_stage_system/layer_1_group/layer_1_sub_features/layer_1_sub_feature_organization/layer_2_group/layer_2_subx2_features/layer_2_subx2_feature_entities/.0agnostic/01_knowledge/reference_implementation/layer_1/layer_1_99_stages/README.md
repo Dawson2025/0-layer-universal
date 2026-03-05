@@ -12,6 +12,7 @@ resource_name: "README"
 
 ---
 
+<!-- section_id: "2ac5abcc-b495-4426-b115-db2678e808f3" -->
 ## Stages
 
 | Stage | Name | Purpose |
@@ -29,14 +30,17 @@ resource_name: "README"
 
 ---
 
+<!-- section_id: "d1f7bf15-f2f6-4418-a52e-cb5a9e5a7bf3" -->
 ## Current Status
 
 See `status.json` for current stage tracking.
 
 ---
 
+<!-- section_id: "d8d3279c-cc33-4b6c-8483-0b752630b959" -->
 ## What Goes Where
 
+<!-- section_id: "fcf32109-ab3e-47c4-9cab-38ceaae0af19" -->
 ### stage_0_08_current_product/
 The actual deliverables of system management work:
 - Current change protocols
@@ -44,6 +48,7 @@ The actual deliverables of system management work:
 - Current verification scripts
 - Active system documentation
 
+<!-- section_id: "988cf785-3443-4373-b3d6-65ac5a865bc3" -->
 ### stage_0_09_archives/
 Previous versions:
 - Old protocol versions
@@ -52,6 +57,7 @@ Previous versions:
 
 ---
 
+<!-- section_id: "afc08e42-d997-4a77-b0fe-7de3e88e8f8f" -->
 ## Related
 
 - `../changes/` - Change protocols (restructuring, traversal)

@@ -8,10 +8,12 @@ resource_name: "README"
 
 **Need**: [Three-Tier Architecture](../README.md)
 
+<!-- section_id: "b67ff1af-c9cb-4aef-af16-f268c20dd10f" -->
 ## Overview
 
 These stories cover the end-to-end experience of agents and developers working with the three-tier knowledge system (pointers, distilled, full). They validate that agents regain competence quickly after context compaction by reading only Tiers 1 and 2, that agents can navigate from pointers to detailed sources when needed, that developers know which tier to place new content in, and that newly created entities follow the pattern consistently.
 
+<!-- section_id: "db1f160a-9135-49db-b2f0-bb6a4fe1fe94" -->
 ## Actors
 
 - **User (Developer)**: Human developer (Dawson) who gives instructions to the AI system, reviews outputs, and validates behavior

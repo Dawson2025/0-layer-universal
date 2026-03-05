@@ -28,6 +28,7 @@ resource_name: "proposal_ai_friendly_output_organization_v3"
 
 ---
 
+<!-- section_id: "21db1831-a969-4a83-a951-7ea1aadfb2e1" -->
 ## Change Summary
 
 | Version | Approach | What Was Missing |
@@ -46,8 +47,10 @@ resource_name: "proposal_ai_friendly_output_organization_v3"
 
 ---
 
+<!-- section_id: "83787daa-b71f-40d7-91be-7342e6578a59" -->
 ## Problem Statement
 
+<!-- section_id: "4e7d0670-bc72-4298-b2c4-568b38f6c3b2" -->
 ### Current State
 
 1. **Research lumped in one place** - All topics in `by_topic/` folder
@@ -57,6 +60,7 @@ resource_name: "proposal_ai_friendly_output_organization_v3"
 5. **AI agents struggle** - No entry points, discovery, or contribution guidelines
 6. **No sync system** - Manual updates required for each tool
 
+<!-- section_id: "619ad6d6-5ce2-4ed1-8e5b-59235a203c25" -->
 ### What's Needed
 
 | Need | Solution Component |
@@ -72,8 +76,10 @@ resource_name: "proposal_ai_friendly_output_organization_v3"
 
 ---
 
+<!-- section_id: "6aeb67ec-5922-4732-8add-c19b88e3c333" -->
 ## Proposed Architecture
 
+<!-- section_id: "f47ffe85-3a08-4ded-a6a2-b89ec7432338" -->
 ### 1. Three-Tier Folder Architecture
 
 Every entity uses this pattern:
@@ -139,6 +145,7 @@ entity/
 └── 0INDEX.md                    # NEW: Discovery and status
 ```
 
+<!-- section_id: "5ad481c6-4865-4e65-be26-d47f7fdd97ee" -->
 ### 2. Generation Flow
 
 ```
@@ -150,6 +157,7 @@ entity/
                     └──→ .1opencode_merge/ ──→ .opencode/
 ```
 
+<!-- section_id: "4197e844-f7fd-43c9-bb23-240b23dde330" -->
 ### 3. Sorting Order (Why Numbered Prefixes)
 
 ```
@@ -171,6 +179,7 @@ GEMINI.md            # Generated
 
 ---
 
+<!-- section_id: "ca8e0b36-70bc-42fc-9bbf-8e713bbc207d" -->
 ## 0AGNOSTIC.md Template
 
 Every entity gets a `0AGNOSTIC.md` that serves as the source of truth:
@@ -236,6 +245,7 @@ Load this context when:
 
 ---
 
+<!-- section_id: "d95021fc-480f-43d0-a4f3-eb56790a4d77" -->
 ## 0INDEX.md Template
 
 Every entity gets a `0INDEX.md` for discovery:
@@ -294,6 +304,7 @@ Every entity gets a `0INDEX.md` for discovery:
 
 ---
 
+<!-- section_id: "6db68bbb-dac3-4b34-87ca-cf82d3b4f786" -->
 ## .0agnostic/ Folder Structure
 
 ```
@@ -329,6 +340,7 @@ Every entity gets a `0INDEX.md` for discovery:
 └── sync-config.yaml             # Sync configuration
 ```
 
+<!-- section_id: "e10eed45-1f97-4cb2-8c34-fd32f42881a6" -->
 ### sync-config.yaml
 
 ```yaml
@@ -386,6 +398,7 @@ tools:
 
 ---
 
+<!-- section_id: "4dd8843d-4972-43ef-aeab-f5b482b9fbb1" -->
 ## Merge Folder Structure (.1*_merge/)
 
 Each tool gets a merge folder with this structure:
@@ -415,6 +428,7 @@ Each tool gets a merge folder with this structure:
 └── exclude.yaml                 # Items from .0agnostic to NOT include
 ```
 
+<!-- section_id: "84282a25-a2cf-4a2f-a769-66018da0076b" -->
 ### exclude.yaml
 
 ```yaml
@@ -426,6 +440,7 @@ exclude:
 
 ---
 
+<!-- section_id: "b26d406c-4b36-416c-ba04-3fa417a5deb2" -->
 ## Tool-Specific Output Mappings
 
 | Source (.0agnostic/) | Claude Code | Cursor | Copilot | Gemini |
@@ -440,6 +455,7 @@ exclude:
 
 ---
 
+<!-- section_id: "441fd84e-14a7-4ecc-924a-6627c3c11758" -->
 ## Content Location: Sub-Layers vs Dot-Folders
 
 **IMPORTANT**: Content (knowledge, prompts, rules, principles) lives in **sub-layers**, not dot-folders:
@@ -470,6 +486,7 @@ entity/
 
 ---
 
+<!-- section_id: "f1eba9eb-926f-4761-8fe1-e02d66e0a045" -->
 ## Episodic Memory Location (CORRECTED)
 
 **Move episodic from outputs/ to .0agnostic/**:
@@ -486,6 +503,7 @@ entity/
 
 ---
 
+<!-- section_id: "f57b1262-ff5f-48ac-ae55-18803eb121af" -->
 ## Full Proposed Entity Structure
 
 ```
@@ -592,6 +610,7 @@ layer_N_<type>_<name>/
 
 ---
 
+<!-- section_id: "ab61b82e-538e-4787-86a5-d027990c7169" -->
 ## agnostic-sync.sh Script
 
 ```bash
@@ -830,6 +849,7 @@ echo "Sync complete. Run 'git status' to see changes."
 
 ---
 
+<!-- section_id: "dacc871c-d6fd-4684-8940-52bdd4d51193" -->
 ## SessionStart Hook Integration
 
 ```json
@@ -852,6 +872,7 @@ echo "Sync complete. Run 'git status' to see changes."
 
 ---
 
+<!-- section_id: "3c667f3a-1e56-47a2-bed3-b85b3dfc86c9" -->
 ## Integration with v2 Features
 
 v3 includes ALL v2 AI-friendly improvements:
@@ -867,6 +888,7 @@ v3 includes ALL v2 AI-friendly improvements:
 
 ---
 
+<!-- section_id: "f23b9402-2e41-42da-b13a-2f3de6faf501" -->
 ## Research File Distribution (Same as v2)
 
 | Current File | → Feature | Location |
@@ -880,8 +902,10 @@ v3 includes ALL v2 AI-friendly improvements:
 
 ---
 
+<!-- section_id: "d72b5b98-dc7c-4146-8d68-4961bb377ce3" -->
 ## Registry Updates Required
 
+<!-- section_id: "8cf0a413-d808-4441-ae56-6ba0a694c97a" -->
 ### 1. Entity Registry (NEW)
 
 ```yaml
@@ -900,6 +924,7 @@ entity_patterns:
     - ".github/"                  # Generated (if using Copilot)
 ```
 
+<!-- section_id: "61056b61-15f5-4622-a646-da782838f809" -->
 ### 2. Stage Registry Updates
 
 ```yaml
@@ -920,6 +945,7 @@ stage_patterns:
       - "synthesis/"              # Stage synthesis
 ```
 
+<!-- section_id: "a65a4990-08e0-4aa8-bf4c-04628a90d59c" -->
 ### 3. Layer Registry Updates
 
 ```yaml
@@ -935,41 +961,49 @@ layer_conventions:
 
 ---
 
+<!-- section_id: "9d545a35-ea29-45f4-ae53-49557aad8816" -->
 ## Implementation Steps
 
+<!-- section_id: "106b8876-d1c6-4828-a9ce-9aba258d6a74" -->
 ### Phase 1: Agnostic Infrastructure
 1. Create `.0agnostic/` folder structure at project root
 2. Create `0AGNOSTIC.md` template
 3. Create `sync-config.yaml`
 4. Create `agnostic-sync.sh` script
 
+<!-- section_id: "825b38fc-feae-4389-bd41-90bf9af79dc9" -->
 ### Phase 2: Merge Workspaces
 1. Create `.1claude_merge/` structure
 2. Create `.1cursor_merge/` structure
 3. Create `.1copilot_merge/` structure
 4. Create other merge folders as needed
 
+<!-- section_id: "b6e14cfd-bd76-49c3-9e31-11eb91cda457" -->
 ### Phase 3: Move Episodic Memory
 1. Move `outputs/episodic/` to `.0agnostic/episodic/`
 2. Update all references
 3. Update session tracking scripts
 
+<!-- section_id: "868c8c9b-a527-4a22-a7c4-a60a6da34a64" -->
 ### Phase 4: Feature Enhancement (from v2)
 1. Add `0AGNOSTIC.md` to each feature
 2. Add `0INDEX.md` to each feature
 3. Add `synthesis/` to each feature
 4. Ensure `.0agnostic/` exists at each feature
 
+<!-- section_id: "e0da1dca-9400-470f-a23f-8c32fa405d42" -->
 ### Phase 5: Research Distribution (from v2)
 1. Move research files to appropriate features
 2. Split large files
 3. Create cross-cutting folder for multi-feature research
 
+<!-- section_id: "859d3ae7-0936-4b11-8807-70519b06fd63" -->
 ### Phase 6: Sync Testing
 1. Run `agnostic-sync.sh all`
 2. Verify generated files match expected output
 3. Test each tool reads its generated config correctly
 
+<!-- section_id: "9dd6a5e9-a30f-4105-935d-b663c4e5fd11" -->
 ### Phase 7: Registry Updates
 1. Update `entity_registry.yaml`
 2. Update `stage_registry.yaml`
@@ -977,6 +1011,7 @@ layer_conventions:
 
 ---
 
+<!-- section_id: "5f05019e-8f8a-4fe7-8ca4-66e8fec1b5b7" -->
 ## Benefits Summary
 
 | Benefit | How Achieved |
@@ -993,6 +1028,7 @@ layer_conventions:
 
 ---
 
+<!-- section_id: "d49efa7e-30ea-4f8e-b857-ee6ed5552c67" -->
 ## Metrics
 
 | Metric | Count |
@@ -1005,6 +1041,7 @@ layer_conventions:
 
 ---
 
+<!-- section_id: "f18f0de6-661a-4636-a5aa-7b2a91b9e3f2" -->
 ## Open Questions
 
 1. Should `agnostic-sync.sh` be at project root or in each entity's `.0agnostic/hooks/scripts/`?
@@ -1014,6 +1051,7 @@ layer_conventions:
 
 ---
 
+<!-- section_id: "a49d3045-25ae-45cc-9b28-b5111ac1711c" -->
 ## Decision Needed
 
 - [ ] Approve v3 proposal
@@ -1023,6 +1061,7 @@ layer_conventions:
 
 ---
 
+<!-- section_id: "285762d3-5964-4f01-b965-da0f22b020f8" -->
 ## Version History
 
 | Version | Date | Changes |

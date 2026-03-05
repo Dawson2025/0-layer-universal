@@ -13,6 +13,7 @@ resource_name: "US-01_stage_agent_hands_off"
 **I want** the stage agent to write a stage report and update episodic memory before exiting,
 **So that** the next session can continue where I left off without re-doing previous work.
 
+<!-- section_id: "8646a8bc-c733-4edf-b4cd-e203badbd439" -->
 ### What Happens
 
 1. User finishes a work session (or the session ends due to context limits)
@@ -21,6 +22,7 @@ resource_name: "US-01_stage_agent_hands_off"
 4. User returns later and says "continue working on this"
 5. New agent reads stage report + episodic memory and resumes from the right place
 
+<!-- section_id: "c8c63886-a852-491b-8d61-3dc626f2d17d" -->
 ### Acceptance Criteria
 
 - Next agent reads stage report + episodic memory and starts where the previous agent left off

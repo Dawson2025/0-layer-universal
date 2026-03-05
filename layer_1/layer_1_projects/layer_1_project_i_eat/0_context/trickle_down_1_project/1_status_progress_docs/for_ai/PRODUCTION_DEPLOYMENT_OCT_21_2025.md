@@ -9,8 +9,10 @@ resource_name: "PRODUCTION_DEPLOYMENT_OCT_21_2025"
 
 ---
 
+<!-- section_id: "a6646778-6366-4884-ae12-5e0e65384734" -->
 ## Deployment Summary
 
+<!-- section_id: "2742a69b-28f9-460e-8331-c28e3225fdb2" -->
 ### Server Information
 
 | Property | Value |
@@ -23,6 +25,7 @@ resource_name: "PRODUCTION_DEPLOYMENT_OCT_21_2025"
 | **Master PID** | 324763 |
 | **Protocol** | HTTP/1.1 |
 
+<!-- section_id: "88ba0bc1-b7dc-4ac8-a96d-d6fb42857ee3" -->
 ### Application Information
 
 | Property | Value |
@@ -35,6 +38,7 @@ resource_name: "PRODUCTION_DEPLOYMENT_OCT_21_2025"
 
 ---
 
+<!-- section_id: "39624b02-c7a8-432d-88e8-f5019ecd77a7" -->
 ## Deployment Timeline
 
 | Time | Action | Status |
@@ -51,8 +55,10 @@ resource_name: "PRODUCTION_DEPLOYMENT_OCT_21_2025"
 
 ---
 
+<!-- section_id: "c5f129bc-8667-4643-88e3-763954e10b14" -->
 ## Files Created for Deployment
 
+<!-- section_id: "7e921685-a888-48a1-974f-666e21ca81f9" -->
 ### 1. Production Requirements
 **File**: `requirements-prod.txt`
 - Includes base requirements
@@ -60,6 +66,7 @@ resource_name: "PRODUCTION_DEPLOYMENT_OCT_21_2025"
 - Adds Supervisor (optional)
 - Adds python-dotenv
 
+<!-- section_id: "6f37fe34-c258-4f04-a4da-22d467e62b71" -->
 ### 2. Gunicorn Configuration
 **File**: `gunicorn.conf.py`
 - Worker processes: Auto-calculated
@@ -68,6 +75,7 @@ resource_name: "PRODUCTION_DEPLOYMENT_OCT_21_2025"
 - Graceful worker restarts
 - Process hooks for monitoring
 
+<!-- section_id: "334fa2fa-556b-4e20-9754-3ee8b6ca29a3" -->
 ### 3. Deployment Script
 **File**: `scripts/deploy/deploy-production.sh`
 - Interactive deployment wizard
@@ -75,12 +83,14 @@ resource_name: "PRODUCTION_DEPLOYMENT_OCT_21_2025"
 - Pre-deployment checks
 - Directory creation
 
+<!-- section_id: "9c734365-26af-48c8-a717-e70ed64bd34c" -->
 ### 4. SystemD Service
 **File**: `scripts/deploy/setup-systemd.sh`
 - Auto-generates service file
 - Provides installation instructions
 - Enables automatic startup
 
+<!-- section_id: "35bb2fd1-9e29-4297-be65-2b550620ca1b" -->
 ### 5. Environment Template
 **File**: `.env.production.example`
 - Production environment variables
@@ -88,6 +98,7 @@ resource_name: "PRODUCTION_DEPLOYMENT_OCT_21_2025"
 - Security settings
 - Upload limits
 
+<!-- section_id: "f895ce13-32be-438f-abaa-23d648707ce8" -->
 ### 6. Deployment Documentation
 **File**: `docs/DEPLOYMENT_GUIDE.md`
 - Complete deployment guide
@@ -97,8 +108,10 @@ resource_name: "PRODUCTION_DEPLOYMENT_OCT_21_2025"
 
 ---
 
+<!-- section_id: "1b6630ce-b1ef-4b66-aed5-d6edf4f1c4a1" -->
 ## Smoke Test Results
 
+<!-- section_id: "f6932af1-26c9-449b-bc16-19d585fa1f12" -->
 ### ✅ All Endpoints Responding
 
 | Endpoint | Status | Response Time | Result |
@@ -108,6 +121,7 @@ resource_name: "PRODUCTION_DEPLOYMENT_OCT_21_2025"
 | `GET /` | 302 Redirect | < 1s | Redirects to /login |
 | `GET /api/tts/status` | 200 OK | < 1s | TTS system available |
 
+<!-- section_id: "47fe1b96-9e08-4cbe-8ec9-ca38d7a09d78" -->
 ### ✅ Worker Processes
 
 - **Master Process**: PID 324763 ✅
@@ -116,6 +130,7 @@ resource_name: "PRODUCTION_DEPLOYMENT_OCT_21_2025"
 - **Memory Usage**: ~90MB per worker ✅
 - **CPU Usage**: Idle (all < 10%) ✅
 
+<!-- section_id: "58df682a-7c06-4fdf-be22-bc2b7bd2baf6" -->
 ### ✅ Logging
 
 - **Access Log**: `logs/gunicorn-access.log` ✅
@@ -124,8 +139,10 @@ resource_name: "PRODUCTION_DEPLOYMENT_OCT_21_2025"
 
 ---
 
+<!-- section_id: "65762fd9-69ed-4766-b3e4-cccadb7c6841" -->
 ## Production Features Enabled
 
+<!-- section_id: "9bf994d6-1686-4bd0-a79f-23ca34274131" -->
 ### Performance
 - ✅ Multiple worker processes (33 workers)
 - ✅ Worker connection pooling
@@ -133,18 +150,21 @@ resource_name: "PRODUCTION_DEPLOYMENT_OCT_21_2025"
 - ✅ Graceful worker restarts
 - ✅ 120-second timeout for long requests
 
+<!-- section_id: "8625d99f-3291-4432-a237-13761f2e8b50" -->
 ### Reliability
 - ✅ Process monitoring
 - ✅ Automatic restart on failure
 - ✅ PID file tracking
 - ✅ Graceful shutdown handling
 
+<!-- section_id: "1d73cb8a-e855-46cd-8389-573b23a2df17" -->
 ### Logging
 - ✅ Structured access logs
 - ✅ Error tracking
 - ✅ Request timing
 - ✅ Client information
 
+<!-- section_id: "403ee81d-939e-466a-bc31-b2c142263cc9" -->
 ### Security
 - ✅ Production mode (DEBUG=False)
 - ✅ Secure session handling
@@ -153,22 +173,27 @@ resource_name: "PRODUCTION_DEPLOYMENT_OCT_21_2025"
 
 ---
 
+<!-- section_id: "ca0c3228-8a68-4a25-b7c4-7142d136e0d1" -->
 ## Access Information
 
+<!-- section_id: "cb06bca2-c596-49d5-8fce-151070b7cdae" -->
 ### Local Access
 - **URL**: http://localhost:5000
 - **Health Check**: http://localhost:5000/health
 - **Login**: http://localhost:5000/login
 - **Dashboard**: http://localhost:5000/dashboard (after login)
 
+<!-- section_id: "7329c0d7-1d9e-4c41-9e78-2887aab2eb60" -->
 ### Network Access (if firewall allows)
 - **URL**: http://[YOUR_IP]:5000
 - Replace `[YOUR_IP]` with your server's IP address
 
 ---
 
+<!-- section_id: "112dcf64-9e59-4b3b-98cd-4a0dbcfed12b" -->
 ## Post-Deployment Verification
 
+<!-- section_id: "1db13f14-d1cd-44e6-8ffc-09b3ffdc0f2e" -->
 ### Manual Testing Recommended
 
 1. **Test Registration**
@@ -195,8 +220,10 @@ resource_name: "PRODUCTION_DEPLOYMENT_OCT_21_2025"
 
 ---
 
+<!-- section_id: "1c808c70-8c08-4ddc-881a-6b9c47737e60" -->
 ## Monitoring Commands
 
+<!-- section_id: "ce478724-5201-42d4-8244-eb6fdb4c02b3" -->
 ### Check Status
 ```bash
 # Check if running
@@ -210,6 +237,7 @@ cat gunicorn.pid
 ps -p $(cat gunicorn.pid)
 ```
 
+<!-- section_id: "4a713309-4fb1-494d-ba7a-78eb1f394e44" -->
 ### View Logs
 ```bash
 # Access log (requests)
@@ -222,6 +250,7 @@ tail -f logs/gunicorn-error.log
 tail -f logs/gunicorn-*.log
 ```
 
+<!-- section_id: "e2503ff8-db88-4df1-aadf-7ffeefa0eb3f" -->
 ### Performance Monitoring
 ```bash
 # Worker status
@@ -236,8 +265,10 @@ top -b -n 1 | grep gunicorn
 
 ---
 
+<!-- section_id: "4328fa71-9692-4541-aeef-4e557b9d9cb5" -->
 ## Management Commands
 
+<!-- section_id: "ba2a3dce-29ac-459e-b167-781ba1a6c972" -->
 ### Restart
 ```bash
 # Graceful reload (zero downtime)
@@ -250,11 +281,13 @@ source .venv/bin/activate
 gunicorn --config gunicorn.conf.py --daemon app:app
 ```
 
+<!-- section_id: "027c6cce-7f0a-47b5-b388-062aa4429e09" -->
 ### Stop
 ```bash
 kill $(cat gunicorn.pid)
 ```
 
+<!-- section_id: "2854d3f9-7287-4b65-9608-a2a7d3ddf6e4" -->
 ### Start
 ```bash
 cd /home/dawson/dawson-workspace/code/lang-trak-in-progress
@@ -264,8 +297,10 @@ gunicorn --config gunicorn.conf.py --daemon app:app
 
 ---
 
+<!-- section_id: "997f6e6a-dec8-4f7f-bd42-aee7bfa3af7a" -->
 ## Next Steps
 
+<!-- section_id: "ebc88f3b-e266-4e89-9c1f-d4bfbd0c5528" -->
 ### Immediate (Recommended)
 
 1. **Manual Verification of US-053**
@@ -287,6 +322,7 @@ gunicorn --config gunicorn.conf.py --daemon app:app
    # Add: 0 2 * * * cp /home/dawson/dawson-workspace/code/lang-trak-in-progress/data/phonemes.db /backups/phonemes.db.$(date +\%Y\%m\%d)
    ```
 
+<!-- section_id: "32aa0f2b-8089-4e25-a028-f6553dcf968a" -->
 ### Optional Enhancements
 
 4. **Set Up Monitoring**
@@ -305,6 +341,7 @@ gunicorn --config gunicorn.conf.py --daemon app:app
 
 ---
 
+<!-- section_id: "32ad69e2-3619-431a-a199-b7b6992bd4d5" -->
 ## Rollback Plan
 
 If issues arise:
@@ -323,8 +360,10 @@ gunicorn --config gunicorn.conf.py --daemon app:app
 
 ---
 
+<!-- section_id: "9bb43117-1a0f-4f3e-a006-ff2aaad5f6d3" -->
 ## Success Metrics
 
+<!-- section_id: "bf26f57d-27c2-44db-aac1-8e5b87f16cab" -->
 ### Deployment ✅ SUCCESSFUL
 
 | Check | Status | Evidence |
@@ -339,8 +378,10 @@ gunicorn --config gunicorn.conf.py --daemon app:app
 
 ---
 
+<!-- section_id: "1271ef90-d3f2-499e-ac25-0409d43ee4f9" -->
 ## Implementation Status
 
+<!-- section_id: "e8e631c0-62a4-42e1-ab83-1ffcf34df1cc" -->
 ### Application Completeness: 99%
 
 - **User Stories**: 70/71 implemented ✅
@@ -349,6 +390,7 @@ gunicorn --config gunicorn.conf.py --daemon app:app
 - **US-053 Endpoint**: ✅ Implemented and deployed
 - **Remaining**: 1 future enhancement (branch merge)
 
+<!-- section_id: "2a0fa5fa-b8e7-43e2-b04a-44d31ee9e301" -->
 ### Deployment Quality: Production Grade
 
 - ✅ WSGI server (Gunicorn)
@@ -361,29 +403,35 @@ gunicorn --config gunicorn.conf.py --daemon app:app
 
 ---
 
+<!-- section_id: "a2b2d893-c052-47ff-b00c-97815f1db597" -->
 ## Support Information
 
+<!-- section_id: "49c69de2-253c-4f30-a12d-3aa48163ed20" -->
 ### Documentation
 - **Deployment Guide**: `docs/DEPLOYMENT_GUIDE.md`
 - **Requirements**: `docs/for_ai/requirements/README.md`
 - **User Stories**: `docs/for_ai/requirements/USER_STORIES.md`
 - **Architecture**: `docs/for_ai/instructions_files/CLAUDE.md`
 
+<!-- section_id: "3075114d-1cac-432e-b9a9-09e03ae0d06d" -->
 ### Management Scripts
 - **Deploy**: `bash scripts/deploy/deploy-production.sh`
 - **SystemD**: `bash scripts/deploy/setup-systemd.sh`
 - **Start Services**: `bash scripts/dev/start_services.sh`
 
+<!-- section_id: "cd790eb8-3361-4601-9d42-7ee90facdd15" -->
 ### Test Suite
 - **Full Suite**: `python3 scripts/automation/run_user_stories.py --navigation-mode=both`
 - **Smoke Tests**: `bash scripts/mcp-smoke-test.sh`
 
 ---
 
+<!-- section_id: "4f5eda2e-dce1-4477-bc6b-9799ba0815f2" -->
 ## Conclusion
 
 ✅ **Language Tracker is now running in production mode**
 
+<!-- section_id: "096857cc-9423-467a-b1d8-dc484f943738" -->
 ### Key Achievements Today:
 1. ✅ Implemented missing US-053 endpoint
 2. ✅ Created production deployment infrastructure
@@ -393,6 +441,7 @@ gunicorn --config gunicorn.conf.py --daemon app:app
 6. ✅ Comprehensive logging enabled
 7. ✅ Production-ready at 99% implementation
 
+<!-- section_id: "06467294-389e-40ed-be63-60693c489bcd" -->
 ### Application Status:
 - **Ready for use**: ✅ Yes
 - **Production deployment**: ✅ Complete

@@ -10,6 +10,7 @@ resource_name: "STAGE_BOUNDARY_RULE"
 **Previously**: "Stage Boundary Rule" — expanded to cover layer boundaries, directional traversal, and multi-location work
 **Detailed framework**: See Principle 8 in `.0agnostic/01_knowledge/principles/principles/STAGE_DELEGATION_PRINCIPLES.md`
 
+<!-- section_id: "80832832-1c01-4a77-a720-09eff6e9de9c" -->
 ## Rule
 
 An agent MUST NOT perform work that belongs to another stage or another layer/entity without making an explicit **scope decision** that covers: (1) which direction the work points, (2) whether to do it yourself or delegate, (3) how to communicate the decision.
@@ -18,6 +19,7 @@ Scope boundaries exist at two levels:
 - **Stage boundaries**: Work belonging to another stage within the same entity (e.g., designing in stage 01, or coding in stage 04)
 - **Layer boundaries**: Work belonging to a sibling entity, parent entity, or child entity (e.g., a memory_system agent doing multi_agent_system work)
 
+<!-- section_id: "d90d767b-3ad5-4545-b0aa-51750e72f794" -->
 ## Step 1: Identify Direction
 
 | Direction | What it means | Go to... |
@@ -29,6 +31,7 @@ Scope boundaries exist at two levels:
 | **Sideways** | Sibling entity at same layer | Sibling entity's manager (coordinated by parent) |
 | **Multi-location** | Spans multiple directions | Escalate to nearest common ancestor with scope over all locations |
 
+<!-- section_id: "82515770-ae85-410e-beee-441bd513d3fa" -->
 ## Step 2: Decide — Do It Yourself or Delegate
 
 | Factor | Favor doing it yourself | Favor delegating |
@@ -41,6 +44,7 @@ Scope boundaries exist at two levels:
 
 **Default**: delegate. The cost of spawning an agent is low; the cost of a bloated, confused context is high.
 
+<!-- section_id: "3409eb1b-8fa2-4f11-a729-575e1889ab64" -->
 ## Step 3: Communicate
 
 | Direction | Communication method |
@@ -52,6 +56,7 @@ Scope boundaries exist at two levels:
 | Multi-location | Escalate to common ancestor manager who coordinates all locations |
 | Did it yourself | Document ALL out-of-scope changes in stage report with paths and rationale |
 
+<!-- section_id: "9e26524a-3d91-4d81-98f7-e8a205976f97" -->
 ## Stage Boundary Examples
 
 | If you're in... | And you find yourself... | Direction | Decision |
@@ -63,6 +68,7 @@ Scope boundaries exist at two levels:
 | Stage 07 (testing) | Fixing a bug you found | Right → 09 | Document the failure, hand off to stage 09 |
 | Stage 04 (design) | Needs missing requirements AND implementation | Multi | Escalate to entity manager to coordinate stages 01 + 06 |
 
+<!-- section_id: "1f13eeb2-b031-4f8a-b484-82d24dfb201e" -->
 ## Layer Boundary Examples
 
 | If you're in... | And you find yourself... | Direction | Decision |
@@ -73,6 +79,7 @@ Scope boundaries exist at two levels:
 | Entity manager | Finding work needs a specialized sub-feature | Down | Instantiate child entity agent or delegate to existing one |
 | Entity manager | Refactoring spans research + design + dev | Multi | Coordinate yourself (you have scope over your stages) |
 
+<!-- section_id: "7416b9da-ef27-423c-bb36-39acec5a9fcf" -->
 ## Instantiation Decision
 
 When no agent exists for the target scope:
@@ -83,6 +90,7 @@ When no agent exists for the target scope:
 
 When instantiating, provide: (1) pointer to target 0AGNOSTIC.md, (2) clear task description, (3) any findings that prompted the delegation. The new agent self-orients from its own 0AGNOSTIC.md — do not dump your context into it.
 
+<!-- section_id: "3f17c9fa-db94-43d7-aa7f-f3a77925a6d3" -->
 ## Rationale
 
 Scope boundaries prevent:
@@ -91,10 +99,12 @@ Scope boundaries prevent:
 - **Lost context**: Work done in the wrong stage/entity becomes unfindable
 - **Skipped validation**: Building without designing, or deploying without testing
 
+<!-- section_id: "48242f37-a431-49a2-ad1f-616c78bbf3e6" -->
 ## Enforcement
 
 The entity manager verifies stage reports for out-of-scope work. The `/stage-workflow` skill checks stage boundaries when transitioning between stages.
 
+<!-- section_id: "ea962563-4dfa-4192-874b-5fbc7b1c6101" -->
 ## Canonical Workspace
 
 This rule is maintained at the **agent_delegation_system** entity:

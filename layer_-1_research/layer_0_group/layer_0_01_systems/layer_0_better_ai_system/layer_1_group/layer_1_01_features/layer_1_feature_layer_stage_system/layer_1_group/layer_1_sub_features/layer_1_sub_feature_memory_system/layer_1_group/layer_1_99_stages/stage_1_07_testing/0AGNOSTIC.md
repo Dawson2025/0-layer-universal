@@ -6,6 +6,7 @@ resource_name: "0AGNOSTIC"
 ---
 # memory_system — Stage 07: testing
 
+<!-- section_id: "86c867f9-204d-453a-9f9c-092f2147db75" -->
 ## Identity
 
 stage_id: "2f16da2c-db53-426b-bf7f-86d50fcd6f42"
@@ -16,5 +17,6 @@ Stage 07 (testing) for the memory_system research sub-feature.
 - **Parent**: `../../0AGNOSTIC.md`
 - **Purpose**: Test and validate
 
+<!-- section_id: "58b79149-c72d-4ea1-be5a-c7bdca68a5b6" -->
 ## Triggers
 Load when working in this stage directory.

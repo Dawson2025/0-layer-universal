@@ -8,8 +8,10 @@ resource_name: "README"
 
 Utility scripts for the 00_stage_registry stage.
 
+<!-- section_id: "93d9a1f1-663f-40cf-83df-fef05e0517e4" -->
 ## Available Scripts
 (Add scripts as needed)
 
+<!-- section_id: "d9db80c5-25be-449d-8a0a-99dd3591a530" -->
 ## Usage
 Scripts can be called from hooks or directly via Bash tool.

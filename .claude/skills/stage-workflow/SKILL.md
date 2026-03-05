@@ -11,6 +11,7 @@ description: "Work through stages (01-11) properly, understanding what content b
 
 # Stage Workflow Skill
 
+<!-- section_id: "12f6cee5-633f-4489-bf7c-a4cc91d222c5" -->
 ## WHEN to Use
 - Starting work on a new feature or project (need to identify which stage)
 - Moving content between stages
@@ -18,11 +19,13 @@ description: "Work through stages (01-11) properly, understanding what content b
 - Creating stage outputs (research docs, plans, designs, code)
 - When stage transitions are needed (e.g., done with research, moving to planning)
 
+<!-- section_id: "90e934a1-f6c1-4b41-b776-e84fcb43c17b" -->
 ## WHEN NOT to Use
 - Working entirely within a single known stage on a known task
 - Simple file edits where the stage is obvious
 - Non-stage-related work (e.g., updating global rules)
 
+<!-- section_id: "5dcd6ee9-48ff-44ec-a8ce-5fc16e852b38" -->
 ## References (MUST READ)
 
 | Reference | Path | Why |
@@ -36,8 +39,10 @@ description: "Work through stages (01-11) properly, understanding what content b
 
 **Knowledge path**: `.0agnostic/01_knowledge/layer_stage_system/`
 
+<!-- section_id: "aabe8cb5-8bca-4e22-a46c-d06d47373a5d" -->
 ## Protocol
 
+<!-- section_id: "83f296a4-85f5-4e8f-8644-0ee33f357e79" -->
 ### 1. Identify Current Stage
 
 Ask: "What phase of work am I in?"
@@ -56,6 +61,7 @@ Ask: "What phase of work am I in?"
 | Finalizing deliverable | 10_current_product |
 | Archiving old versions | 11_archives |
 
+<!-- section_id: "457429a0-820c-4bcb-ab42-f3bd83d4636f" -->
 ### 2. Work in outputs/ Folder
 
 All stage content goes in `outputs/`:
@@ -68,6 +74,7 @@ stage_X_04_design/
     └── decisions.md
 ```
 
+<!-- section_id: "e40b048b-721a-4019-856c-87cf2608f692" -->
 ### 3. Stage Agent Delegation
 
 Each stage has a dedicated agent role. Before operating in a stage:
@@ -87,6 +94,7 @@ Each stage has a dedicated agent role. Before operating in a stage:
 | Stage Loop Rule | Dynamic | How to loop back (07→08→09→07 quality loop) |
 | Parallel Stages Rule | Dynamic | How to run stages concurrently (01+02) |
 
+<!-- section_id: "3a1a3ad4-c4ed-4b2e-8113-974ea689594e" -->
 ### 4. Stage Transitions
 
 When moving to next stage:
@@ -96,6 +104,7 @@ When moving to next stage:
 4. Move to next stage folder
 5. Reference previous stage outputs as needed
 
+<!-- section_id: "f3ea11fd-5492-48d3-9d74-0686ee7f0325" -->
 ### 5. [CRITICAL] Never Skip Stages
 
 All 11 stages must exist, even if empty.
@@ -105,6 +114,7 @@ If a stage isn't needed for this work:
 - Do NOT delete it
 - Do NOT skip creating it
 
+<!-- section_id: "cccd0f41-d32e-476b-ab01-bd2d496c2e04" -->
 ## Stage Content Guide
 
 | Stage | Key Outputs | Guide |
@@ -121,6 +131,7 @@ If a stage isn't needed for this work:
 | 10 | promoted deliverables (from earlier stages) | `STAGE_10_CURRENT_PRODUCT.md` |
 | 11 | versioned snapshots, CHANGELOG.md | `STAGE_11_ARCHIVES.md` |
 
+<!-- section_id: "29a6be2c-5ab0-41da-a6d3-ce506c2c08e2" -->
 ## Agent Context
 
 Before starting stage work:
@@ -128,6 +139,7 @@ Before starting stage work:
 2. Read the matching `.integration.md` (same base name) for mode constraints and allowed transitions
 3. Query via jq for precise stage-specific constraints if needed
 
+<!-- section_id: "5596b42d-3969-4fcb-a98d-a56e95781936" -->
 ## Agnostic System
 
 When working in a stage directory:
@@ -136,6 +148,7 @@ When working in a stage directory:
 - After modifying `0AGNOSTIC.md`, run `agnostic-sync.sh` to regenerate tool-specific files
 - If `.1merge/` exists, it provides tool-specific overrides
 
+<!-- section_id: "24c3497c-8cd0-4baf-83ff-3d3a2e520e47" -->
 ## AALang Reference
 
 Stage workflows are managed by the orchestrator's StageStateActor:

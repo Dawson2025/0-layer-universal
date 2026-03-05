@@ -8,10 +8,12 @@ resource_name: "README"
 
 **Need**: [Avenue Benchmarking](../README.md)
 
+<!-- section_id: "9e4ba060-d274-42c7-9d72-f0ceac5c859c" -->
 ## Overview
 
 These requirements define the measurement framework for comparing data-based avenues (Knowledge Graph, SHIMI, Relational Tables, Vector Databases). They ensure every capability has actual units, every benchmark uses raw measured values, and rankings are computed from data rather than assigned arbitrarily.
 
+<!-- section_id: "1747f70e-c9de-4525-89a1-66ae4168bd3f" -->
 ## Key Themes
 
 - **Measurement Integrity**: Every metric has units, methodology, and reproducible benchmarks

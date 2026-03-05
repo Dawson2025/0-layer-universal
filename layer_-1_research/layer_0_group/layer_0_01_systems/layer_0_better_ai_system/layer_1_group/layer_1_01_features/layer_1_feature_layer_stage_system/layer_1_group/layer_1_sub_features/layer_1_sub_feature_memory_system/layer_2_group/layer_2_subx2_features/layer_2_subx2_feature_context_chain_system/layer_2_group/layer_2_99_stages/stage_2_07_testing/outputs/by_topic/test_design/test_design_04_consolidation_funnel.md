@@ -11,14 +11,17 @@ resource_name: "test_design_04_consolidation_funnel"
 
 ---
 
+<!-- section_id: "d40c635b-f795-4e7f-aa47-d405b857ee2e" -->
 ## What We're Testing
 
 Bottom-up consolidation: outputs → output_report → .0agnostic → stage_report → 0AGNOSTIC.md. This pattern should be consistent across all active stages. Cross-level flow: stage reports → entity from_below, entity reports → parent from_below. App-specific fan-out: 0AGNOSTIC.md → agnostic-sync → .1merge → generated tool files → AI app config systems (.claude/, .cursor/, .codex/, .gemini/, .github/).
 
 ---
 
+<!-- section_id: "ce7a7272-9c86-4624-bfce-65bb2be83541" -->
 ## Test Cases
 
+<!-- section_id: "a75fe667-23b2-4c8c-938b-2f2e41932808" -->
 ### TC-04-01: Active stages have outputs
 
 **Steps**:
@@ -28,6 +31,7 @@ Bottom-up consolidation: outputs → output_report → .0agnostic → stage_repo
 **Expected**: Every active stage has content in outputs/
 **Type**: Structural
 
+<!-- section_id: "b4cfb0ea-7055-4c28-b1cc-c0e5605d242c" -->
 ### TC-04-02: Active stages have stage reports
 
 **Steps**:
@@ -39,6 +43,7 @@ Bottom-up consolidation: outputs → output_report → .0agnostic → stage_repo
 **Expected**: Every active stage has a stage_report.md with all required sections, <30 lines
 **Type**: Structural
 
+<!-- section_id: "506a1cc1-11b4-4234-b3e9-b0393847c910" -->
 ### TC-04-03: Stage report references outputs
 
 **Steps**:
@@ -49,6 +54,7 @@ Bottom-up consolidation: outputs → output_report → .0agnostic → stage_repo
 **Expected**: Stage reports reference their stage's outputs (not empty summaries)
 **Type**: Structural
 
+<!-- section_id: "11006fdf-9928-4cde-8131-07e9ce14b5c6" -->
 ### TC-04-04: Entity has incoming stage reports (from_below)
 
 **Steps**:
@@ -60,6 +66,7 @@ Bottom-up consolidation: outputs → output_report → .0agnostic → stage_repo
 **Note**: This requires sync-handoffs.sh to have been run
 **Type**: Integration
 
+<!-- section_id: "82ed0bf1-82c7-4b36-b793-3c5a4dfe05e2" -->
 ### TC-04-05: Entity has consolidation reports (outgoing)
 
 **Steps**:
@@ -71,6 +78,7 @@ Bottom-up consolidation: outputs → output_report → .0agnostic → stage_repo
 **Expected**: Entity produces consolidation reports for its parent
 **Type**: Structural
 
+<!-- section_id: "dcfa8fab-f6f8-4317-9713-3f4bed787ca9" -->
 ### TC-04-06: 0AGNOSTIC.md reflects current stage status
 
 **Steps**:
@@ -81,6 +89,7 @@ Bottom-up consolidation: outputs → output_report → .0agnostic → stage_repo
 **Expected**: 0AGNOSTIC.md status is consistent with stage reports
 **Type**: Structural (heuristic — fuzzy match on stage count)
 
+<!-- section_id: "509c83ce-e3da-4118-9fed-5b2ce7c19fd7" -->
 ### TC-04-07: Recursive pattern — child entity reports flow to parent
 
 **Steps**:
@@ -92,6 +101,7 @@ Bottom-up consolidation: outputs → output_report → .0agnostic → stage_repo
 **Expected**: Reports flow upward at both stage→entity and entity→parent levels
 **Type**: Integration
 
+<!-- section_id: "4e4ac85f-da3f-4b44-af38-3e3b16cf146e" -->
 ### TC-04-08: sync-handoffs.sh distributes correctly
 
 **Steps**:
@@ -105,8 +115,10 @@ Bottom-up consolidation: outputs → output_report → .0agnostic → stage_repo
 
 ---
 
+<!-- section_id: "6ec3a63d-ca85-4375-813b-1933737b858a" -->
 ## App-Specific Propagation Test Cases
 
+<!-- section_id: "2aea2e18-d04b-4319-bd79-e52b2860859d" -->
 ### TC-04-09: Generated tool files land in correct app config directories
 
 **Steps**:
@@ -123,6 +135,7 @@ Bottom-up consolidation: outputs → output_report → .0agnostic → stage_repo
 **Expected**: All 6 generated files exist and have content
 **Type**: Integration
 
+<!-- section_id: "e2cdb3bf-4d27-4620-9e73-73eab991a6e6" -->
 ### TC-04-10: Content profile correctness — Full vs Medium vs Lean
 
 **Steps**:
@@ -134,6 +147,7 @@ Bottom-up consolidation: outputs → output_report → .0agnostic → stage_repo
 **Expected**: Full > Medium > Lean content volume, and each contains only its designated sections
 **Type**: Structural
 
+<!-- section_id: "193480b6-9bc2-4665-96ff-5c39de2cfa91" -->
 ### TC-04-11: .1merge scoping — additions don't cross app boundaries
 
 **Steps**:
@@ -148,6 +162,7 @@ Bottom-up consolidation: outputs → output_report → .0agnostic → stage_repo
 **Expected**: Claude-specific additions stay in CLAUDE.md only — no cross-app leakage
 **Type**: Integration
 
+<!-- section_id: "ab7c95dc-bde5-4038-837a-91f09e1d2982" -->
 ### TC-04-12: App config directories exist for active tools
 
 **Steps**:
@@ -162,6 +177,7 @@ Bottom-up consolidation: outputs → output_report → .0agnostic → stage_repo
 **Expected**: Config directories present for all tools that have generated files
 **Type**: Structural
 
+<!-- section_id: "d82a8381-6ef9-4d29-b9ef-2d2a122636d4" -->
 ### TC-04-13: App config surfaces populated from agnostic sources
 
 **Steps**:
@@ -185,6 +201,7 @@ Bottom-up consolidation: outputs → output_report → .0agnostic → stage_repo
 **Expected**: Each app's native config surfaces are populated with content derived from .0agnostic/
 **Type**: Structural
 
+<!-- section_id: "6ff69262-45ea-4058-828d-d2491e1a9f39" -->
 ### TC-04-16: Cursor CLI cross-consumption — reads CLAUDE.md and AGENTS.md as rules
 
 **Steps**:
@@ -198,6 +215,7 @@ Bottom-up consolidation: outputs → output_report → .0agnostic → stage_repo
 **Note**: Cursor CLI applies these as rules alongside .cursorrules and .cursor/rules/ — the Full-profile content serves double duty
 **Type**: Structural (heuristic)
 
+<!-- section_id: "67e98c90-96b3-4c18-9c87-87b17320cb54" -->
 ### TC-04-17: Each app's cascade/walk mechanism has matching generated files
 
 **Steps**:
@@ -210,6 +228,7 @@ Bottom-up consolidation: outputs → output_report → .0agnostic → stage_repo
 **Expected**: Generated files are placed where each app's cascade mechanism discovers them
 **Type**: Structural
 
+<!-- section_id: "cb7b154e-9c77-48e4-bfb3-93ffc1c640f8" -->
 ### TC-04-14: Complete pipeline — .0agnostic → 0AGNOSTIC → tool file → app config
 
 **Steps**:
@@ -223,6 +242,7 @@ Bottom-up consolidation: outputs → output_report → .0agnostic → stage_repo
 **Expected**: All 4 tiers of the complete pipeline are connected and populated
 **Type**: Integration
 
+<!-- section_id: "e243a1ae-1fcb-41f6-b847-dd36997d6b49" -->
 ### TC-04-15: .1merge directory structure per app
 
 **Steps**:
@@ -239,6 +259,7 @@ Bottom-up consolidation: outputs → output_report → .0agnostic → stage_repo
 
 ---
 
+<!-- section_id: "2b5513f0-f673-48a5-b201-836a39d01076" -->
 ## Coverage Gap Analysis
 
 | Design Concept | Test Case | Status |

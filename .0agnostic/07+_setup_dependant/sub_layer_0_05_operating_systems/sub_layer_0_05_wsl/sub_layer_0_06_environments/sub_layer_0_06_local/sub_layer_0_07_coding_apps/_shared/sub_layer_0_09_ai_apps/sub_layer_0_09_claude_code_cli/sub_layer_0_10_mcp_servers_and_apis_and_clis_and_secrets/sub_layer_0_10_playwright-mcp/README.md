@@ -6,12 +6,15 @@ resource_name: "README"
 ---
 # Playwright MCP (Claude Code CLI on WSL/WSLg)
 
+<!-- section_id: "fc6e8cc2-9a79-4702-b51f-f82ded6796aa" -->
 ## Canonical docs
 - `../../../../../_shared/0.04_ai_apps/_shared/0.05_mcp_servers/playwright-mcp/`
 
+<!-- section_id: "51c075e6-fb36-4519-882d-9f81d0c4a9c5" -->
 ## Status
 ✅ **WORKING** (as of 2025-12-13)
 
+<!-- section_id: "8cf9d67c-da28-4347-b31d-886f713d56cd" -->
 ## WSL/WSLg Requirements (Headed)
 
 Ensure WSLg runtime environment is present in the MCP server process:
@@ -19,8 +22,10 @@ Ensure WSLg runtime environment is present in the MCP server process:
 - `WAYLAND_DISPLAY=wayland-0`
 - `XDG_RUNTIME_DIR=/mnt/wslg/runtime-dir`
 
+<!-- section_id: "f698ca86-7297-4f3e-9eca-8da7e7a7ed3a" -->
 ## Claude Code CLI Configuration
 
+<!-- section_id: "202756fd-d88e-40f3-a11d-81c64556afe9" -->
 ### MCP Server Setup
 
 Claude Code CLI uses a different configuration approach than Codex. The Playwright MCP server is configured in the Claude Code settings.
@@ -33,8 +38,10 @@ Claude Code CLI uses a different configuration approach than Codex. The Playwrig
 - `launchOptions.args`: `["--ozone-platform=wayland","--enable-features=UseOzonePlatform"]` - Wayland support
 - `launchOptions.executablePath`: `~/.cache/ms-playwright/chromium-*/chrome-linux64/chrome`
 
+<!-- section_id: "28863152-91b9-4e4a-903f-3a40e6c1476b" -->
 ## Known Issues
 
+<!-- section_id: "f42efbd2-c86c-40c5-90df-a1a79f38e004" -->
 ### Issue: "Browser is already in use" Error
 
 **Symptom**:
@@ -50,6 +57,7 @@ use --isolated to run multiple instances of the same browser
 2. Close other MCP sessions using the browser
 3. If the error persists despite `isolated: true`, it indicates an active browser lock from another session
 
+<!-- section_id: "5e5e51f3-d010-4651-96c6-d6e9d8f83532" -->
 ### Issue: Cannot Access Browser Opened in Another Session
 
 **Symptom**: Browser opened in Codex session is not accessible from Claude Code session (and vice versa).
@@ -58,6 +66,7 @@ use --isolated to run multiple instances of the same browser
 
 **Expected Behavior**: Each AI tool (Codex, Claude Code) manages its own isolated browser instance when `isolated: true` is configured.
 
+<!-- section_id: "f3bcc4f9-53a3-4984-bf80-376286415831" -->
 ## Verification
 
 To verify Playwright MCP is working in Claude Code CLI:
@@ -73,6 +82,7 @@ mcp__playwright__browser_snapshot()
 mcp__playwright__browser_close()
 ```
 
+<!-- section_id: "ef138fcd-a07a-48a9-86f9-7edb9707f660" -->
 ## Environment Variables
 
 The MCP server process must have access to WSLg environment variables. Claude Code should automatically inherit these from the shell environment.
@@ -91,6 +101,7 @@ wayland-0
 /mnt/wslg/runtime-dir
 ```
 
+<!-- section_id: "54da234b-3081-4689-a158-34ea5a1125ea" -->
 ## Comparison to Codex CLI
 
 | Aspect | Codex CLI | Claude Code CLI |
@@ -101,6 +112,7 @@ wayland-0
 | WSLg env vars | Set in TOML `[env]` | Inherited from shell |
 | Browser sharing | Not supported | Not supported |
 
+<!-- section_id: "9fa40a11-8b64-42a2-9322-1c34ee2da4ab" -->
 ## Concurrent Browser Setup (NEW)
 
 To enable **simultaneous** Playwright MCP browser use in both Codex CLI and Claude Code CLI:
@@ -127,6 +139,7 @@ python3 mcp_concurrent_browser.py status --os wsl
 
 **Documentation:** See [CONCURRENT_BROWSER_SETUP.md](../../../../../../0.06_automation/CONCURRENT_BROWSER_SETUP.md)
 
+<!-- section_id: "0ebba987-66b2-4f0f-ac23-05ef5bf49451" -->
 ## Best Practices
 
 1. **Use concurrent browser setup** (recommended) - enables simultaneous browser use across AI tools
@@ -134,6 +147,7 @@ python3 mcp_concurrent_browser.py status --os wsl
 3. **Verify WSLg env vars** are present in the shell before starting Claude Code
 4. **Each tool has its own browser instance** - browser state is not shared between tools
 
+<!-- section_id: "2aa197ec-954c-4487-967d-e7c3528d99e5" -->
 ## Related Documentation
 
 - Codex Playwright MCP setup: `../../../codex_cli/0.05_mcp_servers/playwright-mcp/README.md`

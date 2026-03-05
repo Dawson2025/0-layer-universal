@@ -11,6 +11,7 @@ resource_name: "feature_creation_checklist"
 
 ---
 
+<!-- section_id: "68685cbe-ce18-4622-8b7d-1abbbf5cd77d" -->
 ## Pre-Creation
 
 - [ ] Determine feature name (use lowercase with hyphens or underscores)
@@ -22,8 +23,10 @@ resource_name: "feature_creation_checklist"
 
 ---
 
+<!-- section_id: "f97198a4-7bdc-42d9-a28d-f7700955448c" -->
 ## Creation Steps
 
+<!-- section_id: "383f8ff3-1c76-4802-8ccb-3f3230b64158" -->
 ### 1. Navigate to Parent's Features Folder
 
 For **feature** (inside a project):
@@ -38,6 +41,7 @@ cd <parent_feature>/layer_<N+1>/layer_<N+1>_sub_features/
 
 - [ ] Navigated to correct parent folder
 
+<!-- section_id: "24df2a7b-ce56-49cb-bed0-fc81ea92bff1" -->
 ### 2. Copy Template
 
 ```bash
@@ -49,6 +53,7 @@ cp -r <path_to>/layer_1/layer_1_features/layer_1_feature_layer_stage_system/laye
 
 - [ ] Copied feature template
 
+<!-- section_id: "938764ea-0f3d-4387-92d0-264f1088c163" -->
 ### 3. Rename Layer Folders
 
 Replace template `layer_N` with actual layer number:
@@ -92,6 +97,7 @@ done
 - [ ] Renamed all `stage_N.*` to `stage_<actual>.*`
 - [ ] Renamed handoff subfolders
 
+<!-- section_id: "689b0e59-49f8-475d-8649-c5493a0ffeec" -->
 ### 4. Create Nested Content Folders
 
 ```bash
@@ -110,6 +116,7 @@ echo "# Components\n\nComponents go here." > layer_<N+2>_components/README.md
 - [ ] Created `layer_<N+2>_components/`
 - [ ] Added README.md to each
 
+<!-- section_id: "306e0a01-73a4-4f00-8d29-b1019c005a56" -->
 ### 5. Initialize Status File
 
 ```bash
@@ -135,6 +142,7 @@ Edit `status_<N+1>.json`:
 - [ ] Updated `layer_id` field
 - [ ] Set `current_stage`
 
+<!-- section_id: "16d8979b-f77c-4f74-bbe0-c6554e76260e" -->
 ### 6. Create Feature README
 
 Create `README.md` at feature root:
@@ -161,6 +169,7 @@ See `layer_<N+1>/layer_<N+1>_99_stages/status_<N+1>.json`
 
 - [ ] Created feature README.md
 
+<!-- section_id: "ca4d8131-d0b3-465b-856e-3a1949fef35e" -->
 ### 7. Populate Basic Prompts (sub_layer_N+1.01)
 
 Create `feature_init_prompt.md` in `layer_<N+1>/layer_<N+1>_02_sub_layers/sub_layer_<N+1>.01_basic_prompts/`:
@@ -188,6 +197,7 @@ Create `feature_init_prompt.md` in `layer_<N+1>/layer_<N+1>_02_sub_layers/sub_la
 - [ ] Listed key directories
 - [ ] Documented current focus
 
+<!-- section_id: "7410aac0-c3fa-44f4-8014-9d355d345a2e" -->
 ### 8. Initial Commit (if separate repo)
 
 ```bash
@@ -202,6 +212,7 @@ Co-Authored-By: Claude <noreply@anthropic.com>"
 
 ---
 
+<!-- section_id: "c6fcbbd6-6ed7-44d4-88c4-b7c1ed15b961" -->
 ## Post-Creation Verification
 
 - [ ] `layer_<N+1>/` folder exists with correct structure
@@ -213,6 +224,7 @@ Co-Authored-By: Claude <noreply@anthropic.com>"
 
 ---
 
+<!-- section_id: "d9e55d30-ab15-4cb8-9275-37cfa82acae9" -->
 ## Feature vs Sub-Feature Decision
 
 | Question | Answer |
@@ -226,6 +238,7 @@ Co-Authored-By: Claude <noreply@anthropic.com>"
 
 ---
 
+<!-- section_id: "2e8d6e18-6128-42d2-a067-c5b801267818" -->
 ## Layer Number Calculation
 
 | Parent Type | Parent Layer | Feature Layer | Feature's Nested Content |
@@ -239,6 +252,7 @@ Co-Authored-By: Claude <noreply@anthropic.com>"
 
 ---
 
+<!-- section_id: "8a1604b3-bcc1-493f-94f3-cc3ace1dde12" -->
 ## Common Issues
 
 | Issue | Solution |
@@ -250,6 +264,7 @@ Co-Authored-By: Claude <noreply@anthropic.com>"
 
 ---
 
+<!-- section_id: "a77877da-5cc8-4a40-90cc-09df21e4ffa1" -->
 ## Related
 
 - `instantiation_guide.md` - General instantiation guide

@@ -9,6 +9,7 @@ resource_name: "US-01_ai_knows_student_gaps"
 **I want to** access the student's knowledge state from their instance context,
 **So that** I can identify which concepts they haven't mastered and tailor my explanations to bridge those specific gaps.
 
+<!-- section_id: "c8cc361b-d017-4f4f-8419-a78f219540ff" -->
 ## Acceptance Criteria
 
 **Scenario 1: Knowledge state is stored in instance context**

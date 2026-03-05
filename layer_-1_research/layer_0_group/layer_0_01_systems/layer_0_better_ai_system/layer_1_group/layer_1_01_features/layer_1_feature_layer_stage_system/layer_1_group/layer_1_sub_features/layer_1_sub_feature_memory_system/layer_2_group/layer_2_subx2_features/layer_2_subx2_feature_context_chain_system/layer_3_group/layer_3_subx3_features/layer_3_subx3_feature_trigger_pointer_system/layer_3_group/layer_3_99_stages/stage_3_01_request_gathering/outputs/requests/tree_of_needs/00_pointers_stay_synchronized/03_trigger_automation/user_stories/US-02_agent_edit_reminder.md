@@ -13,6 +13,7 @@ resource_name: "US-02_agent_edit_reminder"
 **I want** a hook to automatically remind me to validate pointers after my edits,
 **So that** I don't accidentally leave stale pointers behind without knowing.
 
+<!-- section_id: "c8c0680e-5143-42ca-867c-de4bfdfa68cb" -->
 ### What Happens
 
 1. AI agent uses Edit or Write tool on a `.md` file
@@ -21,6 +22,7 @@ resource_name: "US-02_agent_edit_reminder"
 4. Agent sees the reminder and runs validation
 5. If validation fails, agent runs full sync to fix paths
 
+<!-- section_id: "4939b2f7-32c2-4daa-b0d9-c79cf7ae031a" -->
 ### Acceptance Criteria
 
 - Hook fires automatically after Edit/Write on `.md` files

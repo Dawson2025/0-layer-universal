@@ -8,6 +8,7 @@ resource_name: "README"
 
 Place reference documents, templates, and examples here.
 
+<!-- section_id: "d33818ae-4793-40c5-aca5-2362f7e114b3" -->
 ## Suggested Contents
 - Templates for 02_research outputs
 - Examples of good 02_research work

@@ -13,6 +13,7 @@ resource_name: "proposal_ai_friendly_output_organization_v6"
 
 ---
 
+<!-- section_id: "17b86316-3830-4556-9058-f149dfd1f62c" -->
 ## What v6 Corrects Over v5
 
 | Issue in v5 | v6 Correction |
@@ -27,8 +28,10 @@ resource_name: "proposal_ai_friendly_output_organization_v6"
 
 ---
 
+<!-- section_id: "5b28ea19-95da-4b91-9f58-1c317ad7b8d7" -->
 ## Part 1: Core Architecture Principles
 
+<!-- section_id: "92a77b46-5777-4678-8d0b-fcf80557eee8" -->
 ### 1.1 Content vs Config Separation
 
 **CRITICAL DISTINCTION**:
@@ -43,6 +46,7 @@ resource_name: "proposal_ai_friendly_output_organization_v6"
 - AI config is tool-specific infrastructure
 - No duplication - single source of truth for each
 
+<!-- section_id: "f120e8bb-55df-4a76-a0c4-86c87cd1b526" -->
 ### 1.2 The Two-Folder Structure (Layer Grouping)
 
 Every entity has TWO sibling **GROUP folders** (named with `_group` suffix):
@@ -71,6 +75,7 @@ layer_N_<type>_<name>/              # THE ENTITY
     └── layer_N+1_sub_projects/     # (only if this is a project)
 ```
 
+<!-- section_id: "67bcf44a-4ee8-40e9-ab52-46290734fc21" -->
 ### 1.3 Naming Conventions
 
 #### Entity Types (Depth 0)
@@ -128,8 +133,10 @@ layer_N_<type>_<name>/              # THE ENTITY
 
 ---
 
+<!-- section_id: "81c8d12a-ae11-4ccf-aa88-b6bbc31bacc8" -->
 ## Part 2: .0agnostic/ Structure (AI Config Only)
 
+<!-- section_id: "79f10b00-77c9-4d4c-9d4e-a7aa3fb57dcc" -->
 ### 2.1 What Goes in .0agnostic/
 
 ```
@@ -151,6 +158,7 @@ layer_N_<type>_<name>/              # THE ENTITY
 └── sync-config.yaml           # Sync configuration
 ```
 
+<!-- section_id: "ea5b35fa-fa4e-4748-bbef-5e13edd33656" -->
 ### 2.2 What Does NOT Go in .0agnostic/
 
 | DON'T Put Here | Put Here Instead |
@@ -162,6 +170,7 @@ layer_N_<type>_<name>/              # THE ENTITY
 
 ---
 
+<!-- section_id: "c28c3226-3420-4660-b24c-474b2babc9ba" -->
 ## Part 3: 0AGNOSTIC.md Template (Short - Pointers Only)
 
 **CRITICAL**: 0AGNOSTIC.md should be SHORT. It contains Identity, Triggers, and **POINTERS** to resources.
@@ -218,8 +227,10 @@ Load this context when:
 
 ---
 
+<!-- section_id: "7a394cb2-7a68-40a4-be06-7c8d4b733190" -->
 ## Part 4: System Prompt Generation Flow
 
+<!-- section_id: "7fd5fae2-da8e-442f-abea-c7d9f0186bd9" -->
 ### 4.1 How 0AGNOSTIC.md Becomes Tool-Specific System Prompts
 
 ```
@@ -278,6 +289,7 @@ Load this context when:
 └─────────────────────────────────────────────────────────────────────────────┘
 ```
 
+<!-- section_id: "af6ca890-90f1-4888-b9c6-26fec72a8105" -->
 ### 4.2 Generated System Prompt Files
 
 | Tool | Generated File(s) | Merge Source |
@@ -291,8 +303,10 @@ Load this context when:
 
 ---
 
+<!-- section_id: "490cd43f-7863-4246-97e2-9cb892669aad" -->
 ## Part 5: Full Entity Template
 
+<!-- section_id: "90403efa-9861-41c6-905e-16b7287b54bf" -->
 ### 5.1 Complete Entity Structure
 
 ```
@@ -421,6 +435,7 @@ layer_N_<type>_<name>/
     └── layer_N+1_sub_projects/     # Sub-projects (if project)
 ```
 
+<!-- section_id: "adf66c4d-9fe9-406a-ae0a-ddadf321c10c" -->
 ### 5.2 Stage Internal Structure (Complete)
 
 ```
@@ -474,8 +489,10 @@ stage_N_XX_name/
 
 ---
 
+<!-- section_id: "b00ae3d9-cbfe-497f-b74d-1824aa3515db" -->
 ## Part 6: Proposals Location Rule
 
+<!-- section_id: "c11bfec6-4315-47b7-b2f1-615e1afec782" -->
 ### 6.1 Where Proposals Go
 
 | Proposal Type | Location |
@@ -487,6 +504,7 @@ stage_N_XX_name/
 | **Planning proposals** | `stage_N_05_planning/outputs/proposals/` |
 | **Development proposals** | `stage_N_06_development/outputs/proposals/` |
 
+<!-- section_id: "8dfa5c5c-2aef-4952-ba06-1e23ccc303b4" -->
 ### 6.2 This Proposal's Correct Location
 
 This proposal (v6) affects:
@@ -505,8 +523,10 @@ TO:   layer_-1_group/layer_-1_00_layer_registry/proposals/
 
 ---
 
+<!-- section_id: "35b4d152-9536-4089-98b4-5ac619342808" -->
 ## Part 7: Visual Architecture Diagrams
 
+<!-- section_id: "11473cc8-721d-4df5-8a5a-fcca3a90b08e" -->
 ### 7.1 AI Agent Context Flow (Entry → Triggers → Pointers)
 
 ```
@@ -583,6 +603,7 @@ TO:   layer_-1_group/layer_-1_00_layer_registry/proposals/
 └─────────────────────────────────────────────────────────────────────────────┘
 ```
 
+<!-- section_id: "97cd96eb-63de-430a-a003-d6f9fb006796" -->
 ### 7.2 Complete Entity Structure Diagram
 
 ```
@@ -658,6 +679,7 @@ TO:   layer_-1_group/layer_-1_00_layer_registry/proposals/
 └─────────────────────────────────────────────────────────────────────────────┘
 ```
 
+<!-- section_id: "f631afef-31a6-4e91-976f-84c7f37a6a7c" -->
 ### 7.3 better_ai_system After v6 (Corrected with Group Naming)
 
 ```
@@ -767,23 +789,28 @@ layer_-1_better_ai_system/
 
 ---
 
+<!-- section_id: "ddf009f8-9be3-4170-945f-824fead2127f" -->
 ## Part 8: Implementation Plan
 
+<!-- section_id: "e209860e-c6b7-48d4-abfc-721df6223fed" -->
 ### Phase 0: Cleanup
 1. Delete ~50 sync conflict files
 2. Remove empty directories
 3. Commit cleanup
 
+<!-- section_id: "c71aab9e-ff8b-4629-9272-1265d0cbaaf9" -->
 ### Phase 1: Move Proposals
 1. Create `layer_-1_group/layer_-1_00_layer_registry/proposals/`
 2. Move v1-v6 proposals there
 3. Update references
 
+<!-- section_id: "a7ad509e-14a4-4739-86ee-8fef6f927f20" -->
 ### Phase 2: Rename Group Folders
 1. Rename `layer_-1_group/` → `layer_-1_group/`
 2. Rename `layer_0_group/` → `layer_0_group/`
 3. Update all references
 
+<!-- section_id: "605f3b48-f235-4742-aa10-6adeec746403" -->
 ### Phase 3: Create Agnostic Infrastructure (Project Root)
 1. Create `.0agnostic/` with agents/, episodic/, hooks/, skills/
 2. Create short `0AGNOSTIC.md` with pointers
@@ -791,12 +818,14 @@ layer_-1_better_ai_system/
 4. Create merge workspaces (`.1claude_merge/`, etc.)
 5. Create `agnostic-sync.sh`
 
+<!-- section_id: "9ab0ca77-fd9a-4efd-a152-4647169554f5" -->
 ### Phase 4: Ensure Full Entity Structure
 1. Verify group folders have all required sub-folders (00-03, 99)
 2. Add setup-dependent sub-layers (05+) as needed
 3. Create any missing registry folders
 4. Add `proposals/` subdirectory to each stage's outputs/
 
+<!-- section_id: "d64df4fb-c483-4152-951f-ff7c42f90324" -->
 ### Phase 5: Feature Enhancement
 For each of 8 features:
 1. Create `0AGNOSTIC.md` (short - pointers)
@@ -808,6 +837,7 @@ For each of 8 features:
 7. Verify `layer_1_group/` (children) exists
 8. Create `synthesis/`
 
+<!-- section_id: "50812314-5487-4f01-9b02-2e7ddab1ee0f" -->
 ### Phase 6: Research Distribution
 1. Move memory files → `ai_dynamic_memory_system`
 2. Move context files → `ai_context_system`
@@ -816,16 +846,19 @@ For each of 8 features:
 5. Move automation files → `ai_automation_system`
 6. Keep cross-cutting files at project level
 
+<!-- section_id: "543883cc-f42c-4d87-86e4-f869e981f4d0" -->
 ### Phase 7: Content Migration
 1. Verify content is in sub-layers, not .0agnostic/
 2. Move any misplaced content to correct sub-layer
 3. Add setup-dependent content to appropriate sub_layer_N_05+ folders
 
+<!-- section_id: "bd613b28-b9a7-40f5-9953-b123bdf2ff38" -->
 ### Phase 8: Sync Testing
 1. Run `agnostic-sync.sh all`
 2. Verify all generated files (CLAUDE.md, GEMINI.md, AGENTS.md, etc.)
 3. Test context flow from entry point through triggers and pointers
 
+<!-- section_id: "87fa4038-8637-4dc4-be76-70f8aacd1c00" -->
 ### Phase 9: Registry Updates
 1. Update layer_registry.yaml
 2. Update stage_registry.yaml
@@ -833,6 +866,7 @@ For each of 8 features:
 
 ---
 
+<!-- section_id: "a4611ee0-ff6c-48fc-9e58-a86718030d59" -->
 ## Part 9: Metrics
 
 | Metric | Count |
@@ -847,6 +881,7 @@ For each of 8 features:
 
 ---
 
+<!-- section_id: "01f9065e-43b2-4794-8c1a-dbcee7b5b289" -->
 ## Part 10: Success Criteria
 
 - [ ] All sync conflicts deleted

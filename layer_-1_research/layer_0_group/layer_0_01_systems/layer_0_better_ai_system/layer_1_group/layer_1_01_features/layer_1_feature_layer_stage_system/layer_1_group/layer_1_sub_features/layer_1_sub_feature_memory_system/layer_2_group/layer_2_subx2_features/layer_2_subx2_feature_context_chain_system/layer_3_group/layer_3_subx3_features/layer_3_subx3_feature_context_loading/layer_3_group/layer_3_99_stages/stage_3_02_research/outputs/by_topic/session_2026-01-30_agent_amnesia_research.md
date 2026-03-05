@@ -12,10 +12,12 @@ resource_name: "session_2026-01-30_agent_amnesia_research"
 
 ---
 
+<!-- section_id: "73d7cc70-f12d-40e9-9a2b-2bf8cfc6ae97" -->
 ## Session Summary
 
 This session explored how to solve "agent amnesia" in the layer-stage system.
 
+<!-- section_id: "32439d58-f016-4f79-bc3a-020a8e5c39a6" -->
 ### Key Decisions Made
 
 1. **Dual AGNOSTIC.md + .agnostic/ System**
@@ -40,6 +42,7 @@ This session explored how to solve "agent amnesia" in the layer-stage system.
    - Creates episodic memory that survives compaction/reboots
    - Universal rule to be added at layer_0 level
 
+<!-- section_id: "a53dd820-59e3-4d46-a7c8-0fcd04b6c233" -->
 ### Research Documents Created
 
 | Document | Purpose |
@@ -48,6 +51,7 @@ This session explored how to solve "agent amnesia" in the layer-stage system.
 | `agent_amnesia_external_approaches.md` | External framework research |
 | `session_2026-01-30_agent_amnesia_research.md` | This session log |
 
+<!-- section_id: "03d82622-ba6c-41d3-9806-83f9dab8c7a3" -->
 ### Proposed System Changes
 
 1. **Episodic Memory System** (Universal)
@@ -66,8 +70,10 @@ This session explored how to solve "agent amnesia" in the layer-stage system.
 
 ---
 
+<!-- section_id: "39583901-476a-48fb-89ba-bc6688242275" -->
 ## Episodic Memory Design (Proposed)
 
+<!-- section_id: "28c27011-bac5-4e4d-8a8e-dd628c4d3646" -->
 ### Structure
 
 ```
@@ -79,6 +85,7 @@ outputs/episodic/
 └── index.md                            # Quick reference to recent sessions
 ```
 
+<!-- section_id: "ef526c7c-77e3-436c-9203-e00d04995260" -->
 ### Change Log Entry Format
 
 ```markdown
@@ -96,6 +103,7 @@ outputs/episodic/
 
 ---
 
+<!-- section_id: "22ecdde5-537d-4e21-a26b-09398f45b04c" -->
 ## Next Actions
 
 1. [ ] Get user approval for proposed changes
@@ -106,6 +114,7 @@ outputs/episodic/
 
 ---
 
+<!-- section_id: "bb3a8d43-3cd0-4e34-b759-483cb882a46c" -->
 ## Git Status
 
 To be updated after changes are committed.

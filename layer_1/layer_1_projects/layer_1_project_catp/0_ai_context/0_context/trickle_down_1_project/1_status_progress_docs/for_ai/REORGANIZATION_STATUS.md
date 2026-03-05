@@ -5,8 +5,10 @@ resource_name: "REORGANIZATION_STATUS"
 ---
 # Reorganization Status & Recommendations
 
+<!-- section_id: "ff8b1273-3c67-4236-8c4b-3f8acab6d20d" -->
 ## Current Status (October 16, 2025)
 
+<!-- section_id: "b619068b-8742-4fd4-93b8-4d15978a2378" -->
 ### ✅ Phase 1: Complete (Initial Reorganization)
 - Root directory reduced from 46 files to ~15 files
 - Created organized folder structure:
@@ -17,12 +19,14 @@ resource_name: "REORGANIZATION_STATUS"
   - `docs/archive/` - Historical documentation
   - `docs/setup/` - Setup guides
 
+<!-- section_id: "3cd7f424-f056-4cab-abda-41b8ee04310c" -->
 ### ✅ Phase 2: Complete (MCP & Instructions)
 - `.mcp.json` moved to `.claude/mcp.json` (AI config in AI folder)
 - Created `universal_instructions.md` with file organization best practices
 - Configured broad permissions in `.claude/settings.local.json`
 - Auto-loading project instructions configured
 
+<!-- section_id: "d826fdbc-882c-4f24-9b9c-7ccf9a815335" -->
 ## Current Root Directory
 
 ```
@@ -50,8 +54,10 @@ lang-trak-in-progress/
 └── attached_assets/            ✅ Good (project assets)
 ```
 
+<!-- section_id: "8cc5da88-3690-46c0-a112-ada057a3f543" -->
 ## Recommended Phase 3: Full Modern Structure (Optional)
 
+<!-- section_id: "6d2fa92a-ac5d-4e52-bfa9-64f421a09439" -->
 ### What Would Change
 Move remaining code into `src/`:
 ```
@@ -83,6 +89,7 @@ lang-trak-in-progress/
 └── attached_assets/
 ```
 
+<!-- section_id: "ff5c8d57-9c9a-4110-8bd8-a8e3277efe61" -->
 ### Benefits of Full Reorganization
 ✅ Cleaner root directory (only 5-6 files + directories)
 ✅ Clear separation: config, source, tests, docs, scripts
@@ -91,6 +98,7 @@ lang-trak-in-progress/
 ✅ Better IDE support and autocomplete
 ✅ Clearer what's code vs config vs assets
 
+<!-- section_id: "90260377-9dcb-4546-9a4b-c6584b4bd96f" -->
 ### Costs of Full Reorganization
 ❌ Requires updating ALL imports across 47+ files
 ❌ Breaks existing scripts that import modules
@@ -99,8 +107,10 @@ lang-trak-in-progress/
 ❌ Could break deployment scripts
 ❌ Team disruption if multiple developers
 
+<!-- section_id: "a918572f-47cb-49ac-ab77-8e1b0fb20dc7" -->
 ## Decision Matrix
 
+<!-- section_id: "770f5671-5ab9-4489-a16f-d62f6578241c" -->
 ### Keep Current Structure If:
 - You have active development happening (avoid breaking changes)
 - Multiple developers working (coordination needed)
@@ -108,6 +118,7 @@ lang-trak-in-progress/
 - Existing deployment pipelines that reference current paths
 - **This is the RECOMMENDED approach for now**
 
+<!-- section_id: "8eee137f-0846-4f71-9249-7f7b4981e600" -->
 ### Do Full Reorganization If:
 - Between major releases (good time for breaking changes)
 - Solo developer or small coordinated team
@@ -115,22 +126,27 @@ lang-trak-in-progress/
 - Planning to package/distribute the application
 - Want cleanest possible structure
 
+<!-- section_id: "30c64d59-30c5-4575-99c2-ad767263be5d" -->
 ## Current State Assessment
 
+<!-- section_id: "7e402970-4845-4479-b4e4-d89115f1e68f" -->
 ### What's Good
 ✅ Much better than before (46 files → 15 at root)
 ✅ Clear organization of scripts, config, data, docs
 ✅ Feature isolation working well
 ✅ Easy to find files by purpose
 
+<!-- section_id: "c349a05e-6a25-4780-abb2-009cce85fc32" -->
 ### What Could Be Better
 ⚠️ `features/`, `core/`, `services/` at root (should be in `src/`)
 ⚠️ Entry points (`app.py`, `main.py`) at root (modern practice: in `src/`)
 ⚠️ Still 13 items in root directory (could be 6-7)
 
+<!-- section_id: "85c8e8b6-4172-4dba-8a64-636c785198b9" -->
 ### Overall Grade
 **B+** - Very good organization, professional structure, small room for improvement
 
+<!-- section_id: "938a8a72-e8d8-41b3-a512-fd746d9aa51a" -->
 ## Recommendation
 
 **KEEP CURRENT STRUCTURE** for now because:
@@ -147,8 +163,10 @@ lang-trak-in-progress/
 - Natural refactoring opportunity arises
 - Team agrees on timeline
 
+<!-- section_id: "34cce524-06ba-4363-a3fd-fec09c231342" -->
 ## If You Decide to Proceed
 
+<!-- section_id: "0450d7dc-5e58-422d-aded-e8edc1deae19" -->
 ### Step-by-Step Plan
 
 1. **Create src/ structure**
@@ -205,11 +223,13 @@ lang-trak-in-progress/
    # Test all features manually
    ```
 
+<!-- section_id: "e9def42f-a685-46a6-a9b8-a011de004e4e" -->
 ### Estimated Effort
 - **Small project**: 2-4 hours
 - **This project**: 4-8 hours (47+ files to update)
 - **Risk level**: Medium (many imports to update)
 
+<!-- section_id: "89a7cb91-79c0-4711-a7b7-824b51839107" -->
 ## Conclusion
 
 **Current recommendation**: Keep the current structure. It's already well-organized and professional.

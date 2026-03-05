@@ -12,12 +12,14 @@ resource_name: "README"
 
 ---
 
+<!-- section_id: "595b1094-8072-4d27-9811-527dca4f63ca" -->
 ## Definition
 
 Stage agents write a `stage_report.md` in `outputs/` before exiting. Managers read these reports to understand status, outcomes, and handoff readiness without needing to load detailed stage outputs.
 
 ---
 
+<!-- section_id: "04a536cd-4400-421f-a7d5-14aadc7da291" -->
 ## Why This Matters
 
 - Without stage reports, managers must re-read all stage outputs to understand what happened
@@ -27,18 +29,21 @@ Stage agents write a `stage_report.md` in `outputs/` before exiting. Managers re
 
 ---
 
+<!-- section_id: "f030e7d7-f973-49d0-b98f-86eb4cd19b41" -->
 ## Requirements
 
 See [requirements/](./requirements/) for individual requirements.
 
 ---
 
+<!-- section_id: "a4add219-eeee-48d2-b7b3-da767b3f6a86" -->
 ## User Stories
 
 See [user_stories/](./user_stories/) for individual stories.
 
 ---
 
+<!-- section_id: "a5739a11-9fef-42c6-a177-6c30a3a02c24" -->
 ## Acceptance Criteria
 
 - [ ] Stage report protocol is documented with template
@@ -49,6 +54,7 @@ See [user_stories/](./user_stories/) for individual stories.
 
 ---
 
+<!-- section_id: "967ce9f5-d31b-4a6b-927f-45b3ad3df94b" -->
 ## Research References
 
 - Existing protocol: `context_chain_system/.0agnostic/protocols/stage_report_protocol.md` -- working implementation

@@ -6,10 +6,12 @@ resource_name: "bypass-permissions-setup"
 # Claude Code Bypass Permissions Setup Guide
 *Universal Configuration for Trusted Development Environments*
 
+<!-- section_id: "748300c5-1a89-424f-8037-60ce1dda812b" -->
 ## Overview
 
 Bypass permissions mode allows Claude Code to operate without permission prompts, enabling autonomous development in trusted environments. This guide covers configuration, implementation, and security considerations.
 
+<!-- section_id: "0f006fd0-be47-4508-ac27-c629107e2da5" -->
 ## ⚠️ Security Warning
 
 **Use bypass permissions mode ONLY in:**
@@ -25,8 +27,10 @@ Bypass permissions mode allows Claude Code to operate without permission prompts
 - Codebases with proprietary information
 - Systems with regulatory compliance requirements
 
+<!-- section_id: "08b3fb0f-97e6-4334-beaf-802ee372746b" -->
 ## Configuration Methods
 
+<!-- section_id: "ab517edb-f796-42e5-ae1c-02873a516294" -->
 ### Method 1: Project-Level Configuration (Recommended)
 
 This method enables bypass mode for a specific project while maintaining security for other projects.
@@ -91,6 +95,7 @@ git commit -m "Enable Claude Code bypass permissions for development"
 
 **Note**: Despite old documentation suggesting `disableBypassPermissionsMode: false`, this is **invalid**. Use `defaultMode: "bypassPermissions"` instead.
 
+<!-- section_id: "ef5dabee-66d1-483d-8263-b907a54e847b" -->
 ### Method 2: Command-Line Flag
 
 Enable bypass mode for a single session without modifying configuration files:
@@ -109,6 +114,7 @@ claude --dangerously-skip-permissions
 - Cannot be overridden by enterprise policies
 - No persistent configuration
 
+<!-- section_id: "84346163-d158-40e4-97d0-27b9840d9d05" -->
 ### Method 3: User-Level Default
 
 Set bypass mode as default for all your projects:
@@ -133,6 +139,7 @@ Create `~/.claude/settings.json`:
 
 **Note**: Project-level settings can still override this.
 
+<!-- section_id: "7a310f91-d441-4243-b30f-53482581cba6" -->
 ### Method 4: Local Development Override
 
 For shared repositories where you want bypass mode locally but not for the team:
@@ -159,6 +166,7 @@ echo ".claude/settings.local.json" >> .gitignore
 
 This allows you to work with bypass mode while team members maintain permission prompts.
 
+<!-- section_id: "4463d118-d7a4-429a-b0b2-6e375283dba3" -->
 ## Settings Hierarchy
 
 Claude Code reads settings in this precedence order (highest to lowest):
@@ -187,6 +195,7 @@ Claude Code reads settings in this precedence order (highest to lowest):
    - Applies to all projects
    - Lowest precedence
 
+<!-- section_id: "f434df53-7cdb-442a-9b0c-f2e818fce902" -->
 ### Example Hierarchy in Action
 
 ```
@@ -209,8 +218,10 @@ Local Settings:        disableBypassPermissionsMode: "disable"
 Result: Bypass mode DISABLED (local settings win)
 ```
 
+<!-- section_id: "385292a5-299d-4f22-8a81-be8c951a7979" -->
 ## Implementation Examples
 
+<!-- section_id: "23be7493-5cf5-4273-a65e-fa969bf9edd8" -->
 ### Example 1: Personal Side Project (CORRECTED)
 
 **Scenario**: Full control, rapid development, no sensitive data
@@ -256,6 +267,7 @@ claude
 # Dangerous operations (in deny list) are still blocked
 ```
 
+<!-- section_id: "f73fcddf-0783-4ef5-8f5c-53b76c1cf97c" -->
 ### Example 2: Shared Repository with Local Override
 
 **Scenario**: Team project, you want bypass locally, team wants prompts
@@ -285,6 +297,7 @@ claude
 echo ".claude/settings.local.json" >> .gitignore
 ```
 
+<!-- section_id: "ec2cf3e5-7141-4c67-a940-d8346a2b19a4" -->
 ### Example 3: Hybrid Approach - Selective Bypass
 
 **Scenario**: Want bypass for most operations, but protect sensitive files
@@ -315,6 +328,7 @@ This configuration:
 - Blocks destructive commands
 - Provides a safety net for critical operations
 
+<!-- section_id: "58b9bab5-2d5c-4806-8f92-77c3ad3697fd" -->
 ### Example 4: Temporary Bypass for Specific Task
 
 **Scenario**: Need bypass for one-time refactoring, normally use permissions
@@ -331,8 +345,10 @@ claude
 # Normal permission prompts return
 ```
 
+<!-- section_id: "61b26300-7224-4e3d-b065-2c2aacc63983" -->
 ## Verification
 
+<!-- section_id: "f6e0e87f-cfc0-4141-bceb-8d19d7734ad0" -->
 ### Check Current Settings
 
 ```bash
@@ -350,6 +366,7 @@ This shows:
 - Active allow/deny rules
 - Settings hierarchy being applied
 
+<!-- section_id: "516513aa-64d5-47c0-87c6-2285408addc3" -->
 ### Test Bypass Mode
 
 Create a test file to verify bypass is working:
@@ -372,12 +389,15 @@ If bypass mode is disabled:
 - You must approve the file creation
 - Operation waits for confirmation
 
+<!-- section_id: "842f6b8e-c4db-43b8-8e7d-edee82f81cd7" -->
 ## Disabling Bypass Mode
 
+<!-- section_id: "af56434f-8e76-4a42-9ea0-df240a48c417" -->
 ### Temporary Disable (Current Session)
 
 Cannot be done - bypass is session-wide if enabled. Restart Claude Code without the flag.
 
+<!-- section_id: "ea652785-93d1-47b3-bf1b-6a9bc04aa694" -->
 ### Permanent Disable for Project
 
 ```json
@@ -389,6 +409,7 @@ Cannot be done - bypass is session-wide if enabled. Restart Claude Code without 
 }
 ```
 
+<!-- section_id: "8262a378-34e2-424e-a8d4-a2aac7e5cb97" -->
 ### Remove All Bypass Configuration
 
 ```bash
@@ -402,8 +423,10 @@ rm ~/.claude/settings.json
 # Claude Code will revert to default (prompts enabled)
 ```
 
+<!-- section_id: "df77cf51-44a2-48b1-ab4d-478864e58906" -->
 ## Enterprise Policy Enforcement
 
+<!-- section_id: "b53a77ce-63c6-4978-a7a0-72c86b1799df" -->
 ### Scenario: Organization Requires Permissions
 
 If your organization deploys managed policies, bypass mode may be disabled regardless of your configuration.
@@ -430,8 +453,10 @@ If your organization deploys managed policies, bypass mode may be disabled regar
 3. Explain business justification
 4. Follow your organization's security approval process
 
+<!-- section_id: "92fdbe4a-d84d-4e1c-935a-f7e0e7aed0ca" -->
 ## Troubleshooting
 
+<!-- section_id: "aa2ad6ab-6e0b-4c41-9156-3eecd3bb28ed" -->
 ### Shift+Tab Toggle Not Appearing
 
 **Symptom**: Cannot see the bypass permissions mode toggle indicator in the UI
@@ -476,6 +501,7 @@ If your organization deploys managed policies, bypass mode may be disabled regar
 
 The `disableBypassPermissionsMode` field only accepts `"disable"` as a value (to prevent bypass mode). Setting it to `false` is invalid according to the schema.
 
+<!-- section_id: "054bf2c4-7b4d-4501-a769-4a8fafdb76f2" -->
 ### Bypass Mode Not Working
 
 **Symptom**: Still seeing permission prompts despite configuration
@@ -499,6 +525,7 @@ claude
 # Then: /permissions
 ```
 
+<!-- section_id: "13dcf9a8-bf75-4ce6-a3fe-d490687c8819" -->
 ### Bypass Mode Active When It Shouldn't Be
 
 **Symptom**: No permission prompts when you expected them
@@ -517,6 +544,7 @@ find ~ -name "settings.json" -o -name "settings.local.json" 2>/dev/null
 # Review each for bypass configuration
 ```
 
+<!-- section_id: "62367a23-2bdc-4b70-90a3-972fc0567004" -->
 ### Specific Operations Still Require Permissions
 
 **Symptom**: Bypass mode enabled, but some operations still prompt
@@ -539,8 +567,10 @@ Even with bypass enabled, `rm` commands will be denied.
 
 **Solution**: Remove deny rules if you want full bypass, or keep them for safety.
 
+<!-- section_id: "14aa5f53-ec14-4328-af6c-109feff71d75" -->
 ## Security Best Practices
 
+<!-- section_id: "ed8b2026-a645-4f9b-97ab-8ad09bbaba5c" -->
 ### 1. Scope Bypass to Specific Projects
 
 ❌ **Don't do this:**
@@ -563,6 +593,7 @@ Even with bypass enabled, `rm` commands will be denied.
 }
 ```
 
+<!-- section_id: "4b030b56-590b-48f2-825b-f57316f8c56e" -->
 ### 2. Document Why Bypass is Enabled
 
 ```json
@@ -577,6 +608,7 @@ Even with bypass enabled, `rm` commands will be denied.
 }
 ```
 
+<!-- section_id: "77f66237-e5c7-4c68-b5a1-d8df931a166c" -->
 ### 3. Use Deny Rules for Critical Operations
 
 Even with bypass mode, protect destructive operations:
@@ -597,6 +629,7 @@ Even with bypass mode, protect destructive operations:
 }
 ```
 
+<!-- section_id: "5cc14bab-beaa-4922-ac39-55965514a143" -->
 ### 4. Regular Security Reviews
 
 Periodically review and audit your bypass configurations:
@@ -609,6 +642,7 @@ find ~ -name "settings*.json" -exec grep -l "disableBypassPermissionsMode.*false
 # Remove bypass from projects that no longer need it
 ```
 
+<!-- section_id: "39f40cd9-81ab-4cc2-9d0b-7f6709995317" -->
 ### 5. Use Version Control Wisely
 
 ```gitignore
@@ -623,6 +657,7 @@ find ~ -name "settings*.json" -exec grep -l "disableBypassPermissionsMode.*false
 git add .claude/settings.json  # Only if personal project
 ```
 
+<!-- section_id: "fdfc756b-219f-4b7a-bcda-549a53ab6346" -->
 ## Alternative: Fine-Grained Permissions
 
 Instead of bypassing all permissions, consider allowing specific operations:
@@ -651,8 +686,10 @@ Instead of bypassing all permissions, consider allowing specific operations:
 
 **See**: [fine-grained-permissions.md](./fine-grained-permissions.md)
 
+<!-- section_id: "3a9b030c-c6b3-43ad-8904-636072d275c5" -->
 ## Frequently Asked Questions
 
+<!-- section_id: "82f2eabc-d20a-446c-b4db-e5453529beca" -->
 ### Q: Is bypass mode safe for personal projects?
 
 **A**: Yes, if:
@@ -661,6 +698,7 @@ Instead of bypassing all permissions, consider allowing specific operations:
 - Not connected to production systems
 - You understand the implications
 
+<!-- section_id: "3f9b6171-ab5b-41e8-855f-843c14852ceb" -->
 ### Q: Can I use bypass mode in a Docker container?
 
 **A**: Yes, containers provide additional isolation:
@@ -672,6 +710,7 @@ COPY .claude/settings.json .claude/
 # Bypass mode contained within container
 ```
 
+<!-- section_id: "0c00f64b-b62a-4fca-8609-4b12ee40edd5" -->
 ### Q: What happens if I forget bypass mode is enabled?
 
 **A**: Claude Code will operate autonomously without prompts. You may experience:
@@ -681,14 +720,17 @@ COPY .claude/settings.json .claude/
 
 **Mitigation**: Use deny rules for critical operations.
 
+<!-- section_id: "eb26f765-53e5-4f4a-a65c-b3cc1b78b670" -->
 ### Q: Can enterprise policies be bypassed?
 
 **A**: No. Managed policies have highest precedence and cannot be overridden.
 
+<!-- section_id: "d8c257ce-2c82-4d3b-a35f-4365bf1a7057" -->
 ### Q: Does bypass mode affect MCP servers?
 
 **A**: Historically yes (Issue #5307), though this may be fixed in newer versions. Test your specific version.
 
+<!-- section_id: "0a2a569c-e787-432d-be7d-88c6e8df6093" -->
 ## Related Documentation
 
 - [Fine-Grained Permissions](./fine-grained-permissions.md)
@@ -696,12 +738,14 @@ COPY .claude/settings.json .claude/
 - [Project Settings Setup](./project-settings.md)
 - [Settings Hierarchy](./settings-hierarchy.md)
 
+<!-- section_id: "113e1211-0741-47f1-be4b-4d5fcd2d5652" -->
 ## External References
 
 - [Official Claude Code Settings Docs](https://docs.claude.com/en/docs/claude-code/settings)
 - [IAM Documentation](https://docs.claude.com/en/docs/claude-code/iam)
 - [Security Best Practices](https://www.anthropic.com/engineering/claude-code-best-practices)
 
+<!-- section_id: "62d41041-3f91-485f-8264-8bc30d1181b7" -->
 ## Version History
 
 | Version | Date | Changes |
