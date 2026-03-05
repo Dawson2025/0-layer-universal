@@ -21,7 +21,7 @@
 | Suite | Tests | What It Validates |
 |-------|-------|-------------------|
 | `test_pointer_sync.sh` (extended) | 108 existing + ~50 new | pointer-sync.sh UUID resolution, backward compat |
-| `test_uuid_scripts.sh` (new) | ~60 tests | assign-uuids.sh, create-stage-registries.sh, migrate-pointers.sh |
+| `test_uuid_scripts.sh` (new) | ~60 tests | assign-uuids.sh, create-stage-indexes.sh, migrate-pointers.sh |
 
 ---
 
@@ -42,15 +42,15 @@
 
 ## Test Category 21: UUID-Based Stage Resolution
 
-**Tests pointer-sync.sh resolves stages by UUID via registry.json.**
+**Tests pointer-sync.sh resolves stages by UUID via stage_index.json.**
 
 | # | Test | Setup | Expected |
 |---|------|-------|----------|
-| 21.1 | Stage UUID resolves via registry | Pointer with `canonical_stage_id`, entity has `registry.json` | Stage directory found |
-| 21.2 | Stage UUID not in registry → BROKEN | Pointer with `canonical_stage_id` that's not in `registry.json` | BROKEN |
-| 21.3 | Stage renamed, UUID still resolves | Stage directory renamed, registry.json updated with new directory name, UUID stays | Resolves via UUID |
+| 21.1 | Stage UUID resolves via registry | Pointer with `canonical_stage_id`, entity has `stage_index.json` | Stage directory found |
+| 21.2 | Stage UUID not in registry → BROKEN | Pointer with `canonical_stage_id` that's not in `stage_index.json` | BROKEN |
+| 21.3 | Stage renamed, UUID still resolves | Stage directory renamed, stage_index.json updated with new directory name, UUID stays | Resolves via UUID |
 | 21.4 | Legacy stage (name only) | Pointer with `canonical_stage` but no `_id` | Resolves via name (backward compat) |
-| 21.5 | Missing registry.json falls back to name | Entity has no `registry.json`, pointer has `canonical_stage_id` | Falls back to name resolution |
+| 21.5 | Missing stage_index.json falls back to name | Entity has no `stage_index.json`, pointer has `canonical_stage_id` | Falls back to name resolution |
 
 ---
 
@@ -67,17 +67,17 @@
 
 ---
 
-## Test Category 23: Cache Behavior
+## Test Category 23: Index Behavior
 
-**Tests `.pointer-cache.json` creation, usage, and rebuild.**
+**Tests `.uuid-index.json` creation, usage, and rebuild.**
 
 | # | Test | Setup | Expected |
 |---|------|-------|----------|
-| 23.1 | `--rebuild-cache` creates cache file | Run pointer-sync.sh --rebuild-cache | `.pointer-cache.json` exists with entity mappings |
-| 23.2 | Cache used for resolution | Cache exists, pointer uses UUID | Resolves without scanning all 0AGNOSTIC.md |
-| 23.3 | Cache miss triggers auto-rebuild | Cache missing, pointer uses UUID | Rebuilds cache, then resolves |
-| 23.4 | Stale cache (entity moved) | Cache has old path, entity moved | Auto-rebuild finds new path |
-| 23.5 | Cache file format valid JSON | Run --rebuild-cache | Valid JSON with "entities" key |
+| 23.1 | `--rebuild-index` creates index file | Run pointer-sync.sh --rebuild-index | `.uuid-index.json` exists with entity mappings |
+| 23.2 | Index used for resolution | Index exists, pointer uses UUID | Resolves without scanning all 0AGNOSTIC.md |
+| 23.3 | Index miss triggers auto-rebuild | Index missing, pointer uses UUID | Rebuilds index, then resolves |
+| 23.4 | Stale index (entity moved) | Index has old path, entity moved | Auto-rebuild finds new path |
+| 23.5 | Index file format valid JSON | Run --rebuild-index | Valid JSON with "entities" key |
 
 ---
 
@@ -110,20 +110,20 @@
 
 ---
 
-## Test Category 26: create-stage-registries.sh
+## Test Category 26: create-stage-indexes.sh
 
 **Tests stage UUID assignment and registry creation.**
 
 | # | Test | Setup | Expected |
 |---|------|-------|----------|
-| 26.1 | Creates registry.json | Entity with stage dirs, no registry yet | `registry.json` in `stage_N_00_stage_registry/` |
-| 26.2 | All stages in registry | Entity with 12 stage dirs | registry.json has 12 entries |
+| 26.1 | Creates stage_index.json | Entity with stage dirs, no registry yet | `stage_index.json` in `stage_N_00_stage_registry/` |
+| 26.2 | All stages in registry | Entity with 12 stage dirs | stage_index.json has 12 entries |
 | 26.3 | Stage 0AGNOSTIC.md gets stage_id | Stage dir with 0AGNOSTIC.md | `stage_id:` inserted |
 | 26.4 | Stage without 0AGNOSTIC.md | Scaffolded stage (no 0AGNOSTIC.md) | UUID only in registry, no file modified |
-| 26.5 | entity_id in registry matches entity | Entity has `entity_id: "X"` | registry.json `entity_id` = "X" |
+| 26.5 | entity_id in registry matches entity | Entity has `entity_id: "X"` | stage_index.json `entity_id` = "X" |
 | 26.6 | Idempotent | Run twice | Same UUIDs, no duplicates |
 | 26.7 | `--dry-run` | Run with --dry-run | No files modified |
-| 26.8 | Valid JSON output | Create registry | `jq .` succeeds on registry.json |
+| 26.8 | Valid JSON output | Create registry | `jq .` succeeds on stage_index.json |
 
 ---
 
@@ -144,7 +144,7 @@
 | 27.9 | Skips 0INDEX.md | `01_knowledge/0INDEX.md` | File unchanged |
 | 27.10 | Skips auto-generated files | `CLAUDE.md`, `.integration.md` | File unchanged |
 | 27.11 | Skips .1merge/ files | `.1merge/claude/overrides/file.md` | File unchanged |
-| 27.12 | Skips registry.json | `stage_3_00_stage_registry/registry.json` | File unchanged |
+| 27.12 | Skips stage_index.json | `stage_3_00_stage_registry/stage_index.json` | File unchanged |
 | 27.13 | Idempotent | Run twice | Same IDs, no duplicates |
 | 27.14 | `--dry-run` | Run with --dry-run | No files modified |
 
@@ -168,13 +168,13 @@
 
 ---
 
-## Test Category 29: Resource Registry
+## Test Category 29: Resource Index
 
-**Tests resource_registry.json creation and usage.**
+**Tests resource_index.json creation and usage.**
 
 | # | Test | Setup | Expected |
 |---|------|-------|----------|
-| 29.1 | Registry created with all resources | Entity with knowledge docs, rules, protocols | `resource_registry.json` has entries for each |
+| 29.1 | Registry created with all resources | Entity with knowledge docs, rules, protocols | `resource_index.json` has entries for each |
 | 29.2 | Registry valid JSON | Create registry | `jq .` succeeds |
 | 29.3 | Resource paths in registry are relative | Registry entries | Paths relative to `.0agnostic/` |
 | 29.4 | Registry matches frontmatter IDs | Create registry, check vs file frontmatter | All IDs match |
@@ -190,8 +190,8 @@
 | 30.3 | UUID with special characters in surrounding YAML | Adjacent YAML fields with quotes, colons | Correct extraction |
 | 30.4 | Two entities, same name, different UUIDs | `layer_1_feature_auth` in two locations | UUID resolves to correct one |
 | 30.5 | Entity deleted but pointer remains | Pointer with UUID, entity directory removed | BROKEN (not crash) |
-| 30.6 | Registry.json corrupted (invalid JSON) | Malformed registry.json | Graceful fallback to name resolution |
-| 30.7 | Cache file corrupted | Malformed .pointer-cache.json | Auto-rebuild, then resolve |
+| 30.6 | Registry.json corrupted (invalid JSON) | Malformed stage_index.json | Graceful fallback to name resolution |
+| 30.7 | Index file corrupted | Malformed .uuid-index.json | Auto-rebuild, then resolve |
 | 30.8 | 0AGNOSTIC.md with entity_id but no ## Identity | entity_id at file top, no section header | Still extracted correctly |
 
 ---

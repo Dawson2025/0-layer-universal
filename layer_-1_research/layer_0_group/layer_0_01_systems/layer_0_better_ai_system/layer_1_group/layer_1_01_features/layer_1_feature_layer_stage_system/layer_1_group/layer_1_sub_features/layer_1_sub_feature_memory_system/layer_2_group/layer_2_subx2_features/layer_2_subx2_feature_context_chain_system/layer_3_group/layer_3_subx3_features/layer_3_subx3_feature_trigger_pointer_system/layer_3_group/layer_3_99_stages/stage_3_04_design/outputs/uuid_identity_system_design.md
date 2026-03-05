@@ -115,7 +115,7 @@ For stages that don't yet have a `0AGNOSTIC.md` (scaffolded stages), the UUID is
 
 ### 3.3 Stage Registry — Machine-Readable Index
 
-The existing `stage_N_00_stage_registry/` directory gets a `registry.json` mapping all stage UUIDs:
+The existing `stage_N_00_stage_registry/` directory gets a `stage_index.json` mapping all stage UUIDs:
 
 ```json
 {
@@ -192,7 +192,7 @@ canonical_subpath: "outputs/by_topic/architecture/context_chain_architecture.md"
 1. Extract canonical_entity_id from frontmatter
 2. If UUID present:
    a. Search all 0AGNOSTIC.md files for matching entity_id
-   b. Cache results in .pointer-cache.json for performance
+   b. Cache results in .uuid-index.json for performance
    c. → entity directory
 3. If UUID absent (legacy pointer):
    a. Extract canonical_entity (name-based)
@@ -200,7 +200,7 @@ canonical_subpath: "outputs/by_topic/architecture/context_chain_architecture.md"
    c. Emit deprecation warning: "Pointer uses name-based resolution. Add canonical_entity_id for rename safety."
 4. Extract canonical_stage_id from frontmatter
 5. If stage UUID present:
-   a. Read registry.json in entity's stage_N_00_stage_registry/
+   a. Read stage_index.json in entity's stage_N_00_stage_registry/
    b. Look up stage_id → get directory name
    c. → stage directory
 6. If stage UUID absent (legacy):
@@ -211,12 +211,12 @@ canonical_subpath: "outputs/by_topic/architecture/context_chain_architecture.md"
 8. Compute relative path from pointer to target
 ```
 
-### Performance: UUID Index Cache
+### Performance: UUID Index
 
-Scanning all `0AGNOSTIC.md` files for UUIDs on every run would be slow. Solution: a cache file.
+Scanning all `0AGNOSTIC.md` files for UUIDs on every run would be slow. Solution: an index file.
 
 ```json
-// .pointer-cache.json (at ROOT level, auto-generated)
+// .uuid-index.json (at ROOT level, auto-generated)
 {
   "generated": "2026-03-02T10:30:00Z",
   "entities": {
@@ -228,9 +228,9 @@ Scanning all `0AGNOSTIC.md` files for UUIDs on every run would be slow. Solution
 }
 ```
 
-Cache behavior:
-- Rebuilt on `pointer-sync.sh --rebuild-cache` or when cache is missing
-- Auto-rebuilt if a UUID lookup fails (entity may have been created since last cache)
+Index behavior:
+- Rebuilt on `pointer-sync.sh --rebuild-index` or when index is missing
+- Auto-rebuilt if a UUID lookup fails (entity may have been created since last index build)
 - Optionally rebuilt as part of `agnostic-sync.sh`
 
 ---
@@ -266,7 +266,7 @@ For each entity with stages:
 1. Find all `stage_N_XX_*` directories
 2. Generate a UUID for each stage
 3. If the stage has a `0AGNOSTIC.md`, insert `stage_id:` into its Identity section
-4. Create/update `registry.json` in `stage_N_00_stage_registry/`
+4. Create/update `stage_index.json` in `stage_N_00_stage_registry/`
 
 ### Phase 3: Update pointer-sync.sh
 
@@ -274,14 +274,14 @@ Modify the resolution algorithm to:
 1. Try UUID-first resolution (read `canonical_entity_id`, search cache/0AGNOSTIC.md files)
 2. Fall back to name-based resolution if no UUID
 3. Emit deprecation warnings for name-based pointers
-4. Add `--rebuild-cache` flag
+4. Add `--rebuild-index` flag
 
 ### Phase 4: Update Entity Creation Skill
 
 Modify `/entity-creation` to:
 1. Auto-generate `entity_id` UUID when creating `0AGNOSTIC.md`
 2. Auto-generate `stage_id` UUIDs for all 12 stages
-3. Create `registry.json` in `stage_N_00_stage_registry/`
+3. Create `stage_index.json` in `stage_N_00_stage_registry/`
 
 ### Phase 5: Migrate Existing Pointers
 
@@ -308,7 +308,7 @@ Regenerate all CLAUDE.md files so they include the `entity_id` from 0AGNOSTIC.md
 | `extract_fm()` | Add extraction of `canonical_entity_id`, `canonical_stage_id` |
 | Entity resolution | UUID-first lookup (cache → scan), name fallback |
 | Stage resolution | Registry lookup by `stage_id`, then name fallback |
-| New flag: `--rebuild-cache` | Rebuild `.pointer-cache.json` |
+| New flag: `--rebuild-index` | Rebuild `.uuid-index.json` |
 | Output | Show UUID in verbose mode, deprecation warnings for name-based |
 
 ### entity-creation skill (SKILL.md)
@@ -317,7 +317,7 @@ Regenerate all CLAUDE.md files so they include the `entity_id` from 0AGNOSTIC.md
 |-----------|--------|
 | 0AGNOSTIC.md template | Add `entity_id: "UUID"` to Identity section |
 | Stage creation loop | Generate UUID per stage, insert into stage 0AGNOSTIC.md |
-| Stage registry | Create `registry.json` with all stage UUIDs |
+| Stage registry | Create `stage_index.json` with all stage UUIDs |
 
 ### agnostic-sync.sh
 
@@ -332,7 +332,7 @@ Regenerate all CLAUDE.md files so they include the `entity_id` from 0AGNOSTIC.md
 |-----------|--------|
 | 0AGNOSTIC.md spec | Document `entity_id` as required field |
 | Stage 0AGNOSTIC.md | Document `stage_id` as required field |
-| stage_N_00_stage_registry | Document `registry.json` format |
+| stage_N_00_stage_registry | Document `stage_index.json` format |
 | Pointer file spec | Document `canonical_entity_id` and `canonical_stage_id` fields |
 
 ---
@@ -383,7 +383,7 @@ previous_ids:
 ### 7.7 Stage Without 0AGNOSTIC.md
 
 **Problem**: Scaffolded stages don't have `0AGNOSTIC.md` yet.
-**Solution**: The stage's UUID still exists in `registry.json`. When the stage's `0AGNOSTIC.md` is eventually created, the UUID from the registry is inserted into it. The registry is the source of truth for stage identity, the stage's `0AGNOSTIC.md` mirrors it.
+**Solution**: The stage's UUID still exists in `stage_index.json`. When the stage's `0AGNOSTIC.md` is eventually created, the UUID from the registry is inserted into it. The registry is the source of truth for stage identity, the stage's `0AGNOSTIC.md` mirrors it.
 
 ---
 
@@ -457,9 +457,9 @@ stage_id: "44444444-aaaa-4bbb-cccc-dddddddddddd"
 You are the **Stage 04 (Design)** agent for the Context Chain System.
 ```
 
-### Example 4: Stage Registry (registry.json)
+### Example 4: Stage Registry (stage_index.json)
 
-**New file** at `stage_2_00_stage_registry/registry.json`:
+**New file** at `stage_2_00_stage_registry/stage_index.json`:
 ```json
 {
   "entity_id": "a1b2c3d4-e5f6-4a7b-8c9d-0e1f2a3b4c5d",
@@ -488,7 +488,7 @@ You are the **Stage 04 (Design)** agent for the Context Chain System.
 | Phase | What | Effort | Risk | Prerequisite |
 |-------|------|--------|------|--------------|
 | 1 | `assign-uuids.sh` — add entity_id to all 0AGNOSTIC.md | 2-3 hours | Low | None |
-| 2 | Stage UUIDs + registry.json | 3-4 hours | Low | Phase 1 |
+| 2 | Stage UUIDs + stage_index.json | 3-4 hours | Low | Phase 1 |
 | 3 | Update pointer-sync.sh for UUID resolution | 4-6 hours | Medium | Phase 1-2 |
 | 4 | Update entity-creation skill | 2-3 hours | Low | Phase 1-2 |
 | 5 | Migrate existing pointers | 2-3 hours | Low | Phase 3 |
@@ -522,7 +522,7 @@ The original design covers entities and stages. However, **anything that can be 
 | Resource Type | ID Field | Where It Lives | Example |
 |---------------|----------|----------------|---------|
 | **Entity** | `entity_id` | `0AGNOSTIC.md` Identity section | `entity_id: "a1b2c3d4-..."` |
-| **Stage** | `stage_id` | Stage's `0AGNOSTIC.md` + `registry.json` | `stage_id: "e5f6a7b8-..."` |
+| **Stage** | `stage_id` | Stage's `0AGNOSTIC.md` + `stage_index.json` | `stage_id: "e5f6a7b8-..."` |
 | **Knowledge doc** | `resource_id` | YAML frontmatter at top of `.md` file | `resource_id: "k1k2k3k4-..."` |
 | **Rule** | `resource_id` | YAML frontmatter at top of rule `.md` | `resource_id: "r1r2r3r4-..."` |
 | **Protocol** | `resource_id` | YAML frontmatter at top of protocol `.md` | `resource_id: "p1p2p3p4-..."` |
@@ -586,7 +586,7 @@ canonical_resource_name: "pointer_sync_knowledge"
 
 ### Resource Registry
 
-Each entity's `.0agnostic/` gets a `resource_registry.json`:
+Each entity's `.0agnostic/` gets a `resource_index.json`:
 
 ```json
 {
@@ -618,7 +618,7 @@ Each entity's `.0agnostic/` gets a `resource_registry.json`:
 | `0INDEX.md` | Dashboard — not a referenceable resource |
 | `README.md` | Human-readable overview — not a pointer target |
 | JSON-LD files (`.gab.jsonld`) | Agent definitions — referenced by agent type, not by ID |
-| `registry.json` | Machine registry — not a pointer target itself |
+| `stage_index.json` | Machine registry — not a pointer target itself |
 
 **Note**: Episodic memory files and handoff documents DO get `resource_id` if they are pointer targets. The criterion is: **if something can be the target of a pointer file's `canonical_*` fields, it gets an ID.**
 

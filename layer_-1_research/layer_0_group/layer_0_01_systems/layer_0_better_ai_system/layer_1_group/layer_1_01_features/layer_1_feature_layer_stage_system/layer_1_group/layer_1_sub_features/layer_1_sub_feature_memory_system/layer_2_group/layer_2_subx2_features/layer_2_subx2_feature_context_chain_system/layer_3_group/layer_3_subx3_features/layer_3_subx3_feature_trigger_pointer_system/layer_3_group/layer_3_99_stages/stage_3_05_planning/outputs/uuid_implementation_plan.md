@@ -81,7 +81,7 @@ Write a script that:
 Write a script that:
 1. Finds all `.md` files in `.0agnostic/01_knowledge/`, `.0agnostic/02_rules/`, `.0agnostic/03_protocols/`
 2. Finds all `.md` files in `outputs/` directories within stages (`stage_*_*/outputs/`)
-3. Skips: `README.md`, `0INDEX.md`, `index.md`, auto-generated files (`CLAUDE.md`, `.integration.md`), `.1merge/` files, `registry.json`, `.gab.jsonld`
+3. Skips: `README.md`, `0INDEX.md`, `index.md`, auto-generated files (`CLAUDE.md`, `.integration.md`), `.1merge/` files, `stage_index.json`, `.gab.jsonld`
 4. For each, checks if `resource_id:` exists in YAML frontmatter
 5. If missing:
    a. If file has no YAML frontmatter (`---`), adds one
@@ -107,7 +107,7 @@ Write a script that:
 
 **Agent**: Script Agent
 **Input**: All `stage_N_00_stage_registry/` directories, stage `0AGNOSTIC.md` files
-**Output**: `create-stage-registries.sh` script at `.0agnostic/`
+**Output**: `create-stage-indexes.sh` script at `.0agnostic/`
 
 ### Task
 
@@ -119,7 +119,7 @@ Write a script that:
    a. If the stage has `0AGNOSTIC.md`, check for `stage_id:`
    b. If missing, generate UUID v4 and insert into stage's `0AGNOSTIC.md`
    c. If stage has no `0AGNOSTIC.md`, generate UUID for registry only
-5. Creates/updates `registry.json` in `stage_N_00_stage_registry/` with all stage UUIDs
+5. Creates/updates `stage_index.json` in `stage_N_00_stage_registry/` with all stage UUIDs
 6. Supports `--dry-run`
 
 ### Registry Format
@@ -139,7 +139,7 @@ Write a script that:
 ```
 
 ### Acceptance Criteria
-- Every entity with stages gets a `registry.json`
+- Every entity with stages gets a `stage_index.json`
 - Every stage gets a UUID (in 0AGNOSTIC.md if it exists, always in registry)
 - Entity UUID in registry matches the entity's `0AGNOSTIC.md` entity_id
 - Idempotent
@@ -164,8 +164,8 @@ Modify pointer-sync.sh to:
 2. **UUID-first entity resolution**:
    ```
    if canonical_entity_id is present:
-     search .pointer-cache.json for UUID → path
-     if not in cache: scan all 0AGNOSTIC.md files for entity_id match
+     search .uuid-index.json for UUID → path
+     if not in index: scan all 0AGNOSTIC.md files for entity_id match
      if found: use as entity directory
      if not found: BROKEN
    else (legacy):
@@ -176,7 +176,7 @@ Modify pointer-sync.sh to:
 3. **UUID-first stage resolution**:
    ```
    if canonical_stage_id is present:
-     read registry.json in entity's stage_N_00_stage_registry/
+     read stage_index.json in entity's stage_N_00_stage_registry/
      look up stage_id → directory name
      if found: use as stage directory
    else (legacy):
@@ -187,20 +187,20 @@ Modify pointer-sync.sh to:
 4. **Resource ID resolution** (new):
    ```
    if canonical_resource_id is present:
-     search resource_registry.json files for UUID → path
+     search resource_index.json files for UUID → path
      if found: use as full canonical path (skip entity/stage resolution)
    ```
 
-5. **Add `--rebuild-cache` flag**: Scans all 0AGNOSTIC.md files, builds `.pointer-cache.json`
+5. **Add `--rebuild-index` flag**: Scans all 0AGNOSTIC.md files, builds `.uuid-index.json`
 
-6. **Cache auto-rebuild**: If UUID not found in cache, rebuild cache once and retry
+6. **Index auto-rebuild**: If UUID not found in index, rebuild index once and retry
 
 ### Acceptance Criteria
 - All 108 existing tests still pass (backward compat)
 - UUID-based pointers resolve correctly
 - Name-based pointers still work with deprecation warning
-- `--rebuild-cache` builds valid cache
-- Cache miss triggers auto-rebuild
+- `--rebuild-index` builds valid index
+- Index miss triggers auto-rebuild
 
 ### Estimated Effort: 6-8 hours
 ### Depends On: Phase 1, Phase 2 (needs UUIDs to exist for testing)
@@ -219,12 +219,12 @@ Update the entity-creation skill to:
 
 1. **Auto-generate entity_id**: When creating `0AGNOSTIC.md`, include `entity_id: "uuid"` in Identity section
 2. **Auto-generate stage_ids**: When creating all 12 stages, generate UUIDs for each
-3. **Create registry.json**: In `stage_N_00_stage_registry/` with all stage UUIDs
+3. **Create stage_index.json**: In `stage_N_00_stage_registry/` with all stage UUIDs
 4. **Insert stage_id in stage 0AGNOSTIC.md**: If the skill creates stage-level `0AGNOSTIC.md` files
 
 ### Acceptance Criteria
 - New entities created via skill have `entity_id` in `0AGNOSTIC.md`
-- New entities have `registry.json` with all 12 stage UUIDs
+- New entities have `stage_index.json` with all 12 stage UUIDs
 - Stage `0AGNOSTIC.md` files (if created) have `stage_id`
 
 ### Estimated Effort: 3-4 hours
@@ -235,7 +235,7 @@ Update the entity-creation skill to:
 ## Phase 5: Migrate Existing Pointers
 
 **Agent**: Script Agent
-**Input**: All pointer files, UUID cache
+**Input**: All pointer files, UUID index
 **Output**: `migrate-pointers.sh` script at `.0agnostic/`
 
 ### Task
@@ -243,11 +243,11 @@ Update the entity-creation skill to:
 Write a script that:
 1. Finds all pointer files (YAML frontmatter with `pointer_to:`)
 2. For each pointer with `canonical_entity:` but no `canonical_entity_id:`:
-   a. Look up entity name in `.pointer-cache.json` or scan 0AGNOSTIC.md files
+   a. Look up entity name in `.uuid-index.json` or scan 0AGNOSTIC.md files
    b. Add `canonical_entity_id:` field
    c. Rename `canonical_entity:` to `canonical_entity_name:` (display only)
 3. For each pointer with `canonical_stage:` but no `canonical_stage_id:`:
-   a. Look up stage name in the entity's `registry.json`
+   a. Look up stage name in the entity's `stage_index.json`
    b. Add `canonical_stage_id:` field
    c. Rename `canonical_stage:` to `canonical_stage_name:` (display only)
 4. Supports `--dry-run`
@@ -273,8 +273,8 @@ Write a script that:
 
 Update these canonical documents:
 
-1. **entity_structure.md** — Add `entity_id` as required field in `0AGNOSTIC.md`, document `registry.json` format, document `resource_id` frontmatter
-2. **pointer_sync_protocol.md** — Add UUID resolution steps, document `--rebuild-cache`, update pointer format spec
+1. **entity_structure.md** — Add `entity_id` as required field in `0AGNOSTIC.md`, document `stage_index.json` format, document `resource_id` frontmatter
+2. **pointer_sync_protocol.md** — Add UUID resolution steps, document `--rebuild-index`, update pointer format spec
 3. **pointer_file_convention.md** — Add `canonical_entity_id`, `canonical_stage_id`, `canonical_resource_id` fields
 4. **pointer_sync_knowledge.md** — Add UUID identity system to architecture overview
 
@@ -305,7 +305,7 @@ Update these canonical documents:
 - All existing 108 tests still pass
 - All new UUID tests pass
 - Migration scripts tested end-to-end
-- Cache rebuild tested
+- Index rebuild tested
 
 ### Estimated Effort: 4-6 hours
 ### Depends On: Phase 1-5 (needs everything implemented to test)
@@ -321,14 +321,14 @@ Update these canonical documents:
 ### Task
 
 1. Run `agnostic-sync.sh` at repo root — regenerates all CLAUDE.md files (now with `entity_id`)
-2. Run `pointer-sync.sh --rebuild-cache` — builds initial UUID cache
+2. Run `pointer-sync.sh --rebuild-index` — builds initial UUID index
 3. Run `pointer-sync.sh --validate` — verify all pointers resolve
 4. Commit all changes with `[AI Context]` prefix
 5. Push to remote
 
 ### Acceptance Criteria
 - All CLAUDE.md files include `entity_id` from their `0AGNOSTIC.md`
-- `.pointer-cache.json` exists and is valid
+- `.uuid-index.json` exists and is valid
 - `pointer-sync.sh --validate` exits 0
 - All changes committed and pushed
 
@@ -343,7 +343,7 @@ Session 1 (Scripts):
   [Coordinator] Review plan → delegate
   [Script Agent] Phase 1: assign-entity-uuids.sh     (2-3h)
   [Script Agent] Phase 1b: assign-resource-uuids.sh   (3-4h, parallel)
-  [Script Agent] Phase 2: create-stage-registries.sh   (4-5h, after Phase 1)
+  [Script Agent] Phase 2: create-stage-indexes.sh   (4-5h, after Phase 1)
   [Test Agent] Verify Phase 1-2 outputs
 
 Session 2 (Core Changes):
@@ -367,7 +367,7 @@ Session 3 (Migration + Polish):
 | Risk | Impact | Mitigation |
 |------|--------|------------|
 | Migration breaks existing pointers | High | `--dry-run` on all scripts, run `--validate` after each phase |
-| UUID cache becomes stale | Medium | Auto-rebuild on cache miss, `--rebuild-cache` flag |
+| UUID index becomes stale | Medium | Auto-rebuild on index miss, `--rebuild-index` flag |
 | Entity creation skill regressions | Medium | Test new entities with skill after changes |
 | Long paths cause ENAMETOOLONG | Low | Work directly (no subagents for deep paths), use git -C |
 | Partial migration (some pointers migrated, some not) | Low | Name-based fallback ensures backward compat |
@@ -380,7 +380,7 @@ After all phases complete:
 
 - [ ] Every `0AGNOSTIC.md` with Identity section has `entity_id`
 - [ ] Every stage's `0AGNOSTIC.md` has `stage_id`
-- [ ] Every entity with stages has `registry.json`
+- [ ] Every entity with stages has `stage_index.json`
 - [ ] All knowledge docs, rules, protocols, output files have `resource_id` frontmatter
 - [ ] `pointer-sync.sh` resolves by UUID-first, name fallback
 - [ ] All 108 existing tests pass
