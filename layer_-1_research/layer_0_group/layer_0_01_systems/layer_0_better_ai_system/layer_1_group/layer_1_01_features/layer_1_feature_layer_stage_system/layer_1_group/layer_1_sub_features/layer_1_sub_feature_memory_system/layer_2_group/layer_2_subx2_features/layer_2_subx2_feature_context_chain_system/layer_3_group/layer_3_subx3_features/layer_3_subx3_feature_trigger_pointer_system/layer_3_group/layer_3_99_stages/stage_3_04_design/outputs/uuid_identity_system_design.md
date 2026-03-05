@@ -82,7 +82,7 @@ Output format: `xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx` (36 chars with hyphens)
 
 ## 3. Where UUIDs Live
 
-**Fundamental rule**: Every file, entity, and stage within `/home/dawson/dawson-workspace/code/0_layer_universal/` MUST have a universally unique identifier (UUID v4). No exceptions for any file type — only binary files (`.png`, `.woff`, `.wav`, `.db`) and empty placeholder files (`.gitkeep` with 0 bytes) are exempt.
+**Fundamental rule**: Every file, every directory, every entity, and every stage within `/home/dawson/dawson-workspace/code/0_layer_universal/` MUST have a universally unique identifier (UUID v4). No exceptions for any file type or directory — only binary files (`.png`, `.woff`, `.wav`, `.db`) are exempt. Empty `.gitkeep` files are replaced by `.dir-id` files (see Section 3.6).
 
 ### 3.1 Entity UUID — in 0AGNOSTIC.md Identity Section
 
@@ -197,6 +197,117 @@ Every non-binary, non-empty file in `0_layer_universal/` gets a UUID, stored usi
 **Coverage achieved**: 17,724/17,724 text files = 100%
 
 **Script**: `assign-file-uuids.sh` handles all types. For edge cases, a Python catch-all script processes remaining files.
+
+### 3.6 Directory UUIDs — Every Directory Gets an ID
+
+Every directory within `0_layer_universal/` gets a UUID via a `.dir-id` file placed inside it.
+
+#### Why `.dir-id` Files (Not a Central Registry)
+
+| Approach | Rename Resilience | Move Resilience | Git Clone Survives | Complexity |
+|----------|-------------------|-----------------|--------------------|-----------|
+| **`.dir-id` file per directory** | **Yes** — file travels with directory | **Yes** — file travels with directory | **Yes** — regular file | Low |
+| Central path-based registry | **No** — path key breaks on rename | **No** — path key breaks on move | Yes | Medium |
+| Extended attributes (xattr) | Yes | Yes | **No** — not preserved by git | Low |
+| Git tree object hashing | N/A (changes on any content change) | N/A | Yes | High |
+| Symlink-based tracking | Fragile | Fragile | Partial | High |
+
+**`.dir-id` is the most robust approach** because:
+1. The UUID physically **travels with the directory** on rename/move — no external system needed
+2. Survives git clone, checkout, merge — it's a regular tracked file
+3. A central path-keyed registry has the **same rename-breakage problem** UUIDs were designed to solve
+4. `xattr` is eliminated — not preserved by `git clone` or `git checkout`
+5. `git diff` does NOT support directory rename detection (only merge/cherry-pick context)
+
+#### `.dir-id` File Format
+
+```
+a1b2c3d4-e5f6-4a7b-8c9d-0e1f2a3b4c5d
+```
+
+Single line containing only the UUID. No YAML, no comments, no metadata. This keeps the file as simple and robust as possible — any tool can read it with `cat .dir-id`.
+
+#### Replacing `.gitkeep` Files
+
+There are ~39,432 empty `.gitkeep` files in the repo. The `.dir-id` file replaces `.gitkeep` because:
+- Git tracks directories only if they contain files. `.gitkeep` exists solely to keep empty dirs in git.
+- `.dir-id` serves the same purpose (non-empty file → git tracks the directory) PLUS provides identity.
+- Migration: For each directory with an empty `.gitkeep`, remove `.gitkeep` and create `.dir-id` with a UUID.
+- For directories that already have files (non-empty), `.dir-id` is added alongside existing content.
+
+#### Directory UUID Index (`.dir-uuid-index.json`)
+
+While `.dir-id` files are the **source of truth**, a central index provides O(1) lookup performance:
+
+```json
+{
+  "generated": "2026-03-02T10:30:00Z",
+  "directories": {
+    "a1b2c3d4-e5f6-4a7b-8c9d-0e1f2a3b4c5d": {
+      "path": "layer_-1_research/layer_0_group/layer_0_01_systems/",
+      "name": "layer_0_01_systems"
+    }
+  }
+}
+```
+
+**Index is a cache, not a source of truth**:
+- Built by scanning all `.dir-id` files: `find . -name .dir-id -exec ...`
+- Rebuilt on demand via `pointer-sync.sh --rebuild-dir-index`
+- Stale entries are harmless — if a path doesn't exist, skip it and find the `.dir-id` via scan
+
+#### Lazy Resolution (Zero-Intervention Rename Handling)
+
+When a directory UUID lookup fails (UUID not in index, or indexed path doesn't exist):
+
+```
+1. Check index for UUID → path
+2. If path exists → return path (cache hit)
+3. If path doesn't exist OR UUID not in index:
+   a. Scan filesystem: find . -name .dir-id -exec grep -l "UUID" {} \;
+   b. If found → update index entry with new path, return new path
+   c. If not found → directory was deleted, return BROKEN
+```
+
+This means **renames and moves are handled automatically** with no hooks, no scripts, no manual intervention. The first lookup after a rename is slower (filesystem scan), but subsequent lookups use the updated cache.
+
+#### Coverage
+
+| Category | Count | Has UUID |
+|----------|-------|----------|
+| Entity directories (have 0AGNOSTIC.md) | ~366 | Yes (entity_id) |
+| Stage registry directories | ~33 | Yes (in stage_index.json) |
+| All other directories | ~98,876 | **Pending** (need `.dir-id`) |
+| **Total directories** | **~99,275** | Target: 100% |
+
+#### Edge Cases
+
+**Nested `.dir-id` on move**: When a directory containing subdirectories is moved, ALL `.dir-id` files in the subtree travel together. The index becomes stale for all of them, but lazy resolution fixes each on first access.
+
+**`.dir-id` in `.gitignore`?**: NO. `.dir-id` files MUST be tracked by git. They are source-of-truth identity files.
+
+**Merge conflicts in `.dir-id`**: Impossible — each `.dir-id` contains only a UUID unique to that directory. Two branches can't independently create the same directory with different UUIDs unless the directory was created on both branches (in which case, keep either UUID).
+
+### 3.7 Section-Level UUIDs — Future Phase
+
+Section-level UUIDs within files would enable stable references to specific headings, code blocks, or paragraphs. This is **deferred to a future phase** after directory UUIDs are stable.
+
+**Rationale for deferral**:
+- File-level and directory-level UUIDs solve 95%+ of reference breakage
+- Section UUIDs add significant complexity (tracking heading renames, content reorganization within files)
+- No current use case requires section-level addressing that can't be solved by file-level UUIDs
+- Can be added incrementally later without breaking existing UUID infrastructure
+
+**When to revisit**: If pointer files need to reference specific sections within large documents (e.g., "Section 3.2 of the design doc") and those sections are frequently renamed or reorganized.
+
+**Proposed format** (for future implementation):
+```yaml
+canonical_section_id: "uuid"  # in pointer file
+```
+```markdown
+<!-- section_id: "uuid" -->
+## Section Heading
+```
 
 ---
 

@@ -13,7 +13,7 @@ resource_name: "uuid_implementation_plan"
 
 ## Overview
 
-This plan breaks the UUID identity system implementation into **10 phases** across **6 agent roles**. Each phase produces testable artifacts. Phases are ordered by dependency — later phases depend on earlier ones. Some phases can run in parallel.
+This plan breaks the UUID identity system implementation into **12 phases** across **6 agent roles**. Each phase produces testable artifacts. Phases are ordered by dependency — later phases depend on earlier ones. Some phases can run in parallel.
 
 ---
 
@@ -39,17 +39,21 @@ Phase 2 (stage indexes) ─────┤──> Phase 5 (migrate pointers)
                               │
 Phase 1b (all file UUIDs) ───┘
 
+Phase 1c (directory UUIDs) — independent, can run parallel with 1b
+
 Phase 3b (reference integrity) — after Phase 3
 
 Phase 4 (entity-creation skill) — independent, can run parallel with 3
 
-Phase 6 (docs update) — after phases 1-5
+Phase 6 (docs update) — after phases 1-5, 1c
 
 Phase 7 (full integration test) — after all phases
 
 Phase 8 (run agnostic-sync.sh) — final
 
 Phase 9 (git hooks + validation) — after Phase 8
+
+Phase 10 (directory UUID index + lazy resolution) — after Phase 1c
 ```
 
 ---
@@ -114,6 +118,54 @@ Write a script that assigns UUIDs to **every file** in the system, using the app
 ### Estimated Effort: 6-8 hours
 
 ### Can Run Parallel With: Phase 1
+
+---
+
+## Phase 1c: Assign Directory UUIDs
+
+**Agent**: Script Agent
+**Input**: ALL directories under `0_layer_universal/`
+**Output**: `assign-dir-uuids.sh` script at `.0agnostic/`
+
+**Fundamental rule**: Every directory within `0_layer_universal/` MUST have a UUID via a `.dir-id` file. This replaces empty `.gitkeep` files and ensures every directory has stable identity.
+
+### Task
+
+Write a script that:
+1. Finds all directories under `0_layer_universal/`
+2. For each directory, checks if `.dir-id` already exists
+3. If missing, generates UUID v4 and creates `.dir-id` containing only the UUID (single line, no metadata)
+4. If directory has an empty `.gitkeep`, removes it (`.dir-id` replaces its git-tracking purpose)
+5. Reports: `Added .dir-id <uuid> to <path>`
+6. Supports `--dry-run` (show what would change)
+
+### `.dir-id` File Format
+
+```
+a1b2c3d4-e5f6-4a7b-8c9d-0e1f2a3b4c5d
+```
+
+Single line. No comments, no YAML, no metadata. Maximum simplicity.
+
+### `.gitkeep` Replacement Rules
+
+| Scenario | Action |
+|----------|--------|
+| Directory has empty `.gitkeep` only | Remove `.gitkeep`, create `.dir-id` |
+| Directory has `.gitkeep` with content | Keep `.gitkeep` (it has data), also create `.dir-id` |
+| Directory has files but no `.dir-id` | Create `.dir-id` |
+| Directory already has `.dir-id` | Skip (idempotent) |
+
+### Acceptance Criteria
+- Every directory under `0_layer_universal/` has a `.dir-id` file
+- All empty `.gitkeep` files are replaced by `.dir-id`
+- `.gitkeep` files with content are preserved
+- Idempotent — running twice doesn't create duplicate `.dir-id` files
+- `--dry-run` shows changes without modifying
+- Coverage target: ~99,275 directories = 100%
+
+### Estimated Effort: 4-6 hours
+### Can Run Parallel With: Phase 1, Phase 1b
 
 ---
 
@@ -411,6 +463,48 @@ Update these canonical documents:
 
 ---
 
+## Phase 10: Directory UUID Index & Lazy Resolution
+
+**Agent**: Pointer-Sync Agent
+**Input**: All `.dir-id` files created in Phase 1c
+**Output**: `.dir-uuid-index.json` at repo root, lazy resolution in pointer-sync.sh
+
+### Task
+
+1. **Build `.dir-uuid-index.json`**: Scan all `.dir-id` files, create a JSON index mapping UUID → path
+2. **Add `--rebuild-dir-index` flag** to pointer-sync.sh: Rebuilds `.dir-uuid-index.json` from filesystem scan
+3. **Implement lazy resolution**: When a directory UUID lookup misses the index (UUID not found or path stale):
+   - Scan filesystem: `find . -name .dir-id -exec grep -l "UUID" {} \;`
+   - Update index with new path
+   - Return resolved path
+4. **Integrate with post-merge hook**: Add `.dir-uuid-index.json` rebuild to post-merge
+
+### Index Format
+
+```json
+{
+  "generated": "2026-03-02T10:30:00Z",
+  "directories": {
+    "a1b2c3d4-e5f6-4a7b-8c9d-0e1f2a3b4c5d": {
+      "path": "layer_-1_research/layer_0_group/",
+      "name": "layer_0_group"
+    }
+  }
+}
+```
+
+### Acceptance Criteria
+- `.dir-uuid-index.json` is generated with all directory UUIDs
+- `--rebuild-dir-index` rebuilds from `.dir-id` files
+- Lazy resolution handles moved/renamed directories without manual intervention
+- Index is `.gitignored` (build artifact, rebuilt from `.dir-id` source files)
+- Post-merge hook triggers rebuild
+
+### Estimated Effort: 3-4 hours
+### Depends On: Phase 1c
+
+---
+
 ## Execution Timeline
 
 ```
@@ -418,6 +512,7 @@ Session 1 (Scripts):
   [Coordinator] Review plan → delegate
   [Script Agent] Phase 1: assign-entity-uuids.sh      (2-3h)
   [Script Agent] Phase 1b: assign-file-uuids.sh       (6-8h, parallel)
+  [Script Agent] Phase 1c: assign-dir-uuids.sh        (4-6h, parallel with 1b)
   [Script Agent] Phase 2: create-stage-indexes.sh      (4-5h, after Phase 1)
   [Test Agent] Verify Phase 1-2 outputs
 
@@ -433,9 +528,10 @@ Session 3 (Migration + Polish):
   [Test Agent] Phase 7: Full integration test               (4-6h)
   [Coordinator] Phase 8: Final sync + commit                (1-2h)
   [Script Agent] Phase 9: Git hooks + validation            (2-3h)
+  [Pointer-Sync Agent] Phase 10: Dir UUID index + lazy res  (3-4h)
 ```
 
-**Total estimated effort**: ~40-55 hours across 3 sessions
+**Total estimated effort**: ~50-65 hours across 3 sessions
 
 ---
 
@@ -465,10 +561,15 @@ After all phases complete:
 - [ ] **Every `.sh` file** has `resource_id` in comment header
 - [ ] **Every `.json`/`.jsonld` file** has `file_id` in root object
 - [ ] **Every auto-generated file** has `derived_from` reference
+- [ ] **Every directory** has a `.dir-id` file with UUID
+- [ ] **All empty `.gitkeep` files** replaced by `.dir-id` files
+- [ ] `.dir-uuid-index.json` exists and is valid
+- [ ] Lazy directory resolution handles renames/moves without manual intervention
 - [ ] `pointer-sync.sh` resolves by UUID-first, name fallback
 - [ ] `pointer-sync.sh --find-references` works (reverse UUID lookup)
 - [ ] `pointer-sync.sh --detect-cycles` reports cycles correctly
 - [ ] `pointer-sync.sh --gc` removes orphaned entries
+- [ ] `pointer-sync.sh --rebuild-dir-index` rebuilds directory UUID index
 - [ ] Atomic write protocol in place for all index mutations
 - [ ] File locking prevents concurrent index corruption
 - [ ] Checksum validation detects corrupt indexes
@@ -476,6 +577,7 @@ After all phases complete:
 - [ ] All new UUID tests pass
 - [ ] `pointer-sync.sh --validate` exits 0 on real repo
 - [ ] Entity creation skill generates UUIDs for new entities
+- [ ] Entity creation skill creates `.dir-id` for all new directories
 - [ ] Documentation updated (entity_structure.md, protocol, convention)
 - [ ] Post-merge git hook installed and functional
 - [ ] All changes committed with `[AI Context]` prefix
