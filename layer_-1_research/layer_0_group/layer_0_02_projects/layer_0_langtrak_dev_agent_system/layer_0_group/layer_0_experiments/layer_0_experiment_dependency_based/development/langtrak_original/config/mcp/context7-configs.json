@@ -1,5 +1,5 @@
 {
-  "file_id": "63890ca1-86d4-4a3f-98a0-d0352d36cdf5",
+  "file_id": "1775cd97-9391-40c7-8333-44905e5e367a",
   "context7_configurations": {
     "local_server": {
       "description": "Local Context7 MCP server using @upstash/context7-mcp package",
