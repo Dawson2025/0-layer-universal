@@ -12,10 +12,10 @@
 
 | Stage | Status | Key Output | Report Location |
 |-------|--------|------------|-----------------|
-| 01 request_gathering | active | Tree of needs: 102 files, 9 leaf needs across 3 branches | `layer_1_group/layer_1_99_stages/stage_1_01_request_gathering/.0agnostic/05_handoff_documents/02_outgoing/01_to_above/stage_report.md` |
-| 02 research | active | 4 formal topics (tool cascading, multi-agent patterns, scope traversal, agent class/object patterns) + implicit via context_chain_system | `layer_1_group/layer_1_99_stages/stage_1_02_research/.0agnostic/05_handoff_documents/02_outgoing/01_to_above/stage_report.md` |
-| 04 design | active | 10 architecture decisions (7 implicit + 3 formal: context propagation, minimal context model, directional scope boundaries) | `layer_1_group/layer_1_99_stages/stage_1_04_design/.0agnostic/05_handoff_documents/02_outgoing/01_to_above/stage_report.md` |
-| 06 development | active | 11 stage guides, 10 principles, 5 rules, 1 protocol, 15 stage 0AGNOSTIC.md files | `layer_1_group/layer_1_99_stages/stage_1_06_development/.0agnostic/05_handoff_documents/02_outgoing/01_to_above/stage_report.md` |
+| 01 request_gathering | active | Tree of needs: 102 files, 9 leaf needs across 3 branches | `layer_2_group/layer_2_99_stages/stage_2_01_request_gathering/.0agnostic/05_handoff_documents/02_outgoing/01_to_above/stage_report.md` |
+| 02 research | active | 4 formal topics (tool cascading, multi-agent patterns, scope traversal, agent class/object patterns) + implicit via context_chain_system | `layer_2_group/layer_2_99_stages/stage_2_02_research/.0agnostic/05_handoff_documents/02_outgoing/01_to_above/stage_report.md` |
+| 04 design | active | 10 architecture decisions (7 implicit + 3 formal: context propagation, minimal context model, directional scope boundaries) | `layer_2_group/layer_2_99_stages/stage_2_04_design/.0agnostic/05_handoff_documents/02_outgoing/01_to_above/stage_report.md` |
+| 06 development | active | 11 stage guides, 10 principles, 5 rules, 1 protocol, 15 stage 0AGNOSTIC.md files | `layer_2_group/layer_2_99_stages/stage_2_06_development/.0agnostic/05_handoff_documents/02_outgoing/01_to_above/stage_report.md` |
 | 03, 05, 07-11 | scaffolded | No content yet | — |
 
 ---
@@ -24,7 +24,7 @@
 
 - **Implicit-first progression**: Stages 02 and 04 produced most decisions implicitly through building the context_chain_system, then formalized them later. This mirrors the research finding that delegation design emerged from practice, not theory.
 - **Universal artifact production**: Development (stage 06) produced artifacts at root `.0agnostic/`, not in entity-specific locations — stage guides, principles, rules, and protocols apply to the entire layer-stage system.
-- **Requirements inform children**: Stage 01's tree of needs directly spawned two child entities (memory_system, multi_agent_system), each taking a branch of the requirements.
+- **Requirements inform lateral entities**: Stage 01's tree of needs originally spawned two child entities (memory_system, multi_agent_system). After reorganization (2026-03-04), these are now lateral/sibling entities — memory_system is an L1 sibling, agent_hierarchy + orchestration (from multi_agent_system) are L2 siblings.
 - **Context propagation design**: Stage 04's formal design decision (context propagation) directly drove the structural fixes across all stages — canonical report locations, output_report naming, entity consolidation documents.
 
 ---
@@ -63,7 +63,7 @@
 ## Overall Readiness
 
 - **Testing (stage 07)**: Ready — universal artifacts exist and are in active use via context_chain_system (76 PASS tests)
-- **Remaining gaps**: Multi-agent spawning patterns not yet designed; Cursor-specific context strategy needs design doc; context_loading child entity stages still have empty 0AGNOSTIC.md files; multi_agent_system child entity not yet developed
+- **Remaining gaps**: Multi-agent spawning patterns not yet designed; Cursor-specific context strategy needs design doc; context_loading child entity stages still have empty 0AGNOSTIC.md files
 
 ---
 
@@ -77,4 +77,4 @@
 | Stage 04 | Multi-agent spawning patterns not yet designed |
 | Stage 04 | Cursor-specific context strategy needs design doc |
 | Stage 06 | context_loading child entity stages still have empty 0AGNOSTIC.md files |
-| Stage 06 | multi_agent_system child entity not yet developed |
+| Stage 06 | ~~multi_agent_system child entity not yet developed~~ (dissolved — absorbed into agent_organization_system) |

@@ -84,7 +84,10 @@ The root need is satisfied when:
 
 ## Research Grounding
 
-All needs trace to the agent delegation system's parent research:
-- `memory_system/` research on context chains, three-tier architecture, knowledge organization
-- `multi_agent_system/` research on agent hierarchies, orchestration, delegation patterns
+All needs trace to the agent delegation system's research and its sibling/lateral entities:
+- **memory_system** (L1 sibling under layer_stage_system): research on context chains, three-tier architecture, knowledge organization — addresses Branch 02 needs
+- **agent_hierarchy** (L2 sibling under agent_organization_system): agent parent-child relationships — addresses Branch 03/need_01
+- **orchestration** (L2 sibling under agent_organization_system): spawning, inter-agent communication, coordination — addresses Branch 03/need_02, need_03
 - Domain concepts defined in `agent_delegation_system/0AGNOSTIC.md`
+
+> **Note (2026-03-04)**: memory_system was promoted from child to L1 sibling. multi_agent_system was dissolved — its children (agent_hierarchy, orchestration) moved to agent_organization_system as L2 siblings of this entity. Branches 02 and 03 remain valid requirements but are now addressed by lateral entities rather than children.
