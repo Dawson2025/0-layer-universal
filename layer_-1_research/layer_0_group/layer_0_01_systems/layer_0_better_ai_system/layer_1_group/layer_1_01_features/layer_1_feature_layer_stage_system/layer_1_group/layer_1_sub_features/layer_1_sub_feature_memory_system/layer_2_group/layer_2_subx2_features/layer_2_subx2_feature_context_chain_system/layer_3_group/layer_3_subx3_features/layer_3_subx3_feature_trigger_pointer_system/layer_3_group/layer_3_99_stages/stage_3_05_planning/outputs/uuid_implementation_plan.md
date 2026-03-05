@@ -17,7 +17,7 @@ resource_name: "uuid_implementation_plan"
 <!-- section_id: "b4b9c0b6-1b6b-44d7-87aa-e744ed5d86da" -->
 ## Overview
 
-This plan breaks the UUID identity system implementation into **13 phases** across **6 agent roles**. Each phase produces testable artifacts. Phases are ordered by dependency — later phases depend on earlier ones. Some phases can run in parallel.
+This plan breaks the UUID identity system implementation into **14 phases** across **6 agent roles**. Each phase produces testable artifacts. Phases are ordered by dependency — later phases depend on earlier ones. Some phases can run in parallel.
 
 ---
 
@@ -49,11 +49,13 @@ Phase 1c (directory UUIDs) — independent, can run parallel with 1b
 
 Phase 1d (section UUIDs) — after Phase 1b (needs file UUIDs to exist)
 
+Phase 1e (submodule/nested repo UUIDs) — after Phase 1b, 1d (reuses same scripts)
+
 Phase 3b (reference integrity) — after Phase 3
 
 Phase 4 (entity-creation skill) — independent, can run parallel with 3
 
-Phase 6 (docs update) — after phases 1-5, 1c
+Phase 6 (docs update) — after phases 1-5, 1c, 1e
 
 Phase 7 (full integration test) — after all phases
 
@@ -124,7 +126,7 @@ Write a script that assigns UUIDs to **every file** in the system, using the app
 <!-- section_id: "12f4bfef-b037-4501-8b7e-528384640554" -->
 ### Acceptance Criteria
 - Every non-binary, non-empty file has `resource_id` or `file_id` or `derived_from`
-- Coverage: 17,724/17,724 text files = 100%
+- Coverage: 17,340/17,340 core text files = 100% (submodules covered in Phase 1e)
 - YAML/JSON remains valid after insertion
 - Idempotent — running twice doesn't duplicate IDs
 - `--dry-run` shows changes without modifying
@@ -249,6 +251,100 @@ Write a script that assigns UUIDs to every `##` (h2) and `###` (h3) heading in m
 ### Estimated Effort: 4-6 hours
 <!-- section_id: "9e3f24a1-f91b-4881-84d2-d75529e85fe2" -->
 ### Depends On: Phase 1b (file UUIDs should exist first)
+
+---
+
+<!-- section_id: "c4e91b3a-7f2d-4e8c-a1d5-9b3f6e8c2d7a" -->
+## Phase 1e: Assign UUIDs to Submodule & Nested Repo Content
+
+**Agent**: Script Agent
+**Input**: All 17 nested repos/submodules under `0_layer_universal/`
+**Output**: File UUIDs and section UUIDs assigned inside each nested repo
+
+**Fundamental rule**: The UUID requirement extends to ALL content under `0_layer_universal/`, including files inside git submodules and unregistered nested git repos. Directory UUIDs (`.dir-id`) are already 100% complete across all nested repos from Phase 1c.
+
+<!-- section_id: "d8f42e1c-3a9b-4c6d-b5e7-1f8a2d4c6e9b" -->
+### Nested Repo Inventory
+
+| Repo | Type | Approx Files | Dir UUIDs | File UUIDs | Section UUIDs |
+|------|------|-------------|-----------|------------|---------------|
+| layer_1_project_school | Submodule | ~23,731 | 100% | 0% | 78% |
+| layer_1_project_physics_simulation | Submodule | ~713 | 100% | 0% | 7% |
+| layer_1_project_portfolio | Submodule | ~36 | 100% | 0% | 38% |
+| layer_1_project_parallelism | Submodule | ~21 | 100% | 0% | 36% |
+| layer_1_project_ds250_course | Submodule | ~19 | 100% | 0% | 0% |
+| layer_1_project_buying_list | Submodule | ~9 | 100% | 0% | 27% |
+| layer_1_project_life_administration | Submodule | ~9 | 100% | 0% | 100% |
+| layer_1_component_setup_hub | Submodule | ~15 | 100% | 0% | 42% |
+| layer_1_component_dotfiles | Submodule | ~30 | 100% | 0% | 0% |
+| layer_1_project_lang_trak | Nested | ~3,741 | 100% | 0% | 75% |
+| layer_1_project_central_website | Nested | ~10 | 100% | 0% | 33% |
+| layer_1_project_internship_prep | Nested | ~27 | 100% | 0% | 69% |
+| layer_1_project_language_tracker | Nested | ~57 | 100% | 0% | 15% |
+| layer_1_project_machine_learning | Nested | ~84 | 100% | 0% | 0% |
+| layer_1_project_web_app | Nested | ~20 | 100% | 0% | 0% |
+| langtrak_original | Nested | ~461 | 100% | 97% | 88% |
+| professor | Nested | ~42 | 100% | 0% | 95% |
+
+<!-- section_id: "a2b7c5d9-4e1f-3c8a-b6d4-7f9e1a3c5d8b" -->
+### Task
+
+For each of the 17 nested repos:
+
+1. **File UUIDs**: Run the same file UUID assignment logic from Phase 1b:
+   - Use appropriate comment syntax per file type
+   - Skip binary files and empty `.gitkeep` files
+   - Skip files that already have UUIDs (idempotent)
+   - Skip Firebase service account JSON files (GitHub push protection)
+2. **Section UUIDs**: Run the same section UUID assignment logic from Phase 1d:
+   - Add `<!-- section_id: "uuid" -->` above every h2/h3 heading in `.md` files
+   - Skip auto-generated files (CLAUDE.md, AGENTS.md, etc.)
+   - Skip headings that already have section_id
+3. **Commit inside each repo**: Use `[AI Context]` prefix
+4. **Push each repo** if it has a remote
+5. **Update parent submodule pointers**: After all nested repos are processed, commit updated gitlinks in `0_layer_universal`
+
+<!-- section_id: "e5c8d2f4-1a3b-4d6e-9c7f-2b5a8d0e3f6c" -->
+### Commit Strategy
+
+```
+For each nested repo (deepest first):
+  1. cd into nested repo
+  2. git add [modified files]
+  3. git commit -m "[AI Context] Assign file + section UUIDs for full coverage"
+  4. git push (if remote exists)
+
+Then in parent 0_layer_universal:
+  5. git add [submodule paths]
+  6. git commit -m "[AI Context] Update submodule pointers after UUID assignment"
+  7. git push
+```
+
+<!-- section_id: "f7a9b1c3-2d4e-5f6a-8b7c-9d0e1f2a3b4c" -->
+### Edge Cases
+
+| Scenario | Handling |
+|----------|----------|
+| Gitignored files (e.g., `.env`) | Skip — not tracked, no UUID needed |
+| Repos without remotes | Commit locally only, no push |
+| Binary-heavy repos (physics_simulation) | Skip binaries, only process text files |
+| Deeply nested submodules (school has nested repos inside) | Process recursively, commit bottom-up |
+| Files with `\r` in path | Skip — pre-existing path corruption issue |
+
+<!-- section_id: "a1b2c3d4-5e6f-7a8b-9c0d-1e2f3a4b5c6d" -->
+### Acceptance Criteria
+- All ~29,000 text files across 17 nested repos have file UUIDs
+- All h2/h3 headings in `.md` files across nested repos have section UUIDs
+- Directory UUIDs remain at 100% (no regression)
+- Each nested repo has its own commit with `[AI Context]` prefix
+- Parent `0_layer_universal` has updated submodule pointers committed
+- No binary files modified
+- No Firebase service account files modified
+
+<!-- section_id: "b3c4d5e6-7f8a-9b0c-1d2e-3f4a5b6c7d8e" -->
+### Estimated Effort: 8-12 hours (largest phase — 17 repos, ~29,000 files)
+<!-- section_id: "c5d6e7f8-9a0b-1c2d-3e4f-5a6b7c8d9e0f" -->
+### Depends On: Phase 1b (file UUID scripts), Phase 1d (section UUID scripts)
 
 ---
 
@@ -648,8 +744,16 @@ Session 1 (Scripts):
   [Script Agent] Phase 1: assign-entity-uuids.sh      (2-3h)
   [Script Agent] Phase 1b: assign-file-uuids.sh       (6-8h, parallel)
   [Script Agent] Phase 1c: assign-dir-uuids.sh        (4-6h, parallel with 1b)
+  [Script Agent] Phase 1d: assign-section-uuids.sh     (4-6h, after 1b)
   [Script Agent] Phase 2: create-stage-indexes.sh      (4-5h, after Phase 1)
   [Test Agent] Verify Phase 1-2 outputs
+
+Session 1b (Submodule Coverage):
+  [Script Agent] Phase 1e: Assign UUIDs to all 17 nested repos (8-12h)
+    - File UUIDs for ~29,000 text files
+    - Section UUIDs for remaining .md headings
+    - Commit inside each repo, push if remote exists
+    - Update parent submodule pointers
 
 Session 2 (Core Changes):
   [Pointer-Sync Agent] Phase 3: Update pointer-sync.sh   (6-8h)
@@ -666,7 +770,7 @@ Session 3 (Migration + Polish):
   [Pointer-Sync Agent] Phase 10: Dir UUID index + lazy res  (3-4h)
 ```
 
-**Total estimated effort**: ~50-65 hours across 3 sessions
+**Total estimated effort**: ~60-77 hours across 4 sessions
 
 ---
 
@@ -694,12 +798,16 @@ After all phases complete:
 - [ ] Every `0AGNOSTIC.md` with Identity section has `entity_id`
 - [ ] Every stage's `0AGNOSTIC.md` has `stage_id`
 - [ ] Every entity with stages has `stage_index.json`
-- [ ] **Every `.md` file** has `resource_id` in YAML frontmatter
-- [ ] **Every `.sh` file** has `resource_id` in comment header
-- [ ] **Every `.json`/`.jsonld` file** has `file_id` in root object
+- [ ] **Every `.md` file** has `resource_id` in YAML frontmatter (core + submodules)
+- [ ] **Every `.sh` file** has `resource_id` in comment header (core + submodules)
+- [ ] **Every `.json`/`.jsonld` file** has `file_id` in root object (core + submodules)
 - [ ] **Every auto-generated file** has `derived_from` reference
-- [ ] **Every directory** has a `.dir-id` file with UUID
+- [ ] **Every directory** has a `.dir-id` file with UUID (core + submodules — already 100%)
 - [ ] **All empty `.gitkeep` files** replaced by `.dir-id` files
+- [ ] **All 17 nested repos** have file UUIDs assigned (~29,000 files)
+- [ ] **All 17 nested repos** have section UUIDs for h2/h3 headings in `.md` files
+- [ ] **Each nested repo** has its own `[AI Context]` commit
+- [ ] **Parent submodule pointers** updated after nested repo UUID assignment
 - [ ] `.dir-uuid-index.json` exists and is valid
 - [ ] Lazy directory resolution handles renames/moves without manual intervention
 - [ ] `pointer-sync.sh` resolves by UUID-first, name fallback

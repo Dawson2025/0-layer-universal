@@ -97,6 +97,14 @@ Output format: `xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx` (36 chars with hyphens)
 
 **Fundamental rule**: Every file, every directory, every entity, and every stage within `/home/dawson/dawson-workspace/code/0_layer_universal/` MUST have a universally unique identifier (UUID v4). No exceptions for any file type or directory — only binary files (`.png`, `.woff`, `.wav`, `.db`) are exempt. Empty `.gitkeep` files are replaced by `.dir-id` files (see Section 3.6).
 
+**Scope includes submodules and nested repos**: The UUID requirement extends to ALL content under `0_layer_universal/`, including files and directories inside git submodules (registered in `.gitmodules`) and unregistered nested git repositories. These are separate git repos that require commits within each repo individually, but they are still part of the `0_layer_universal` system and must have full UUID coverage.
+
+| Nested Repo Type | Count | UUID Responsibility |
+|-------------------|-------|---------------------|
+| Registered submodules (`.gitmodules`) | 9 | Commit inside submodule, update parent pointer |
+| Unregistered nested git repos | 8 | Commit inside nested repo (parent tracks as gitlink) |
+| **Total nested repos** | **17** | Each gets full file UUID + section UUID coverage |
+
 <!-- section_id: "20a1f739-0100-4145-8762-d5baa7619f7d" -->
 ### 3.1 Entity UUID — in 0AGNOSTIC.md Identity Section
 
@@ -212,7 +220,10 @@ Every non-binary, non-empty file in `0_layer_universal/` gets a UUID, stored usi
 | Binary (`.png`, `.woff`, `.wav`, `.db`, `.pdf`) | N/A | Exempt — cannot embed text |
 | Empty `.gitkeep` files | N/A | Exempt — 0 bytes |
 
-**Coverage achieved**: 17,724/17,724 text files = 100%
+**Coverage achieved**:
+- Core repo: 17,340/17,340 text files = 100%
+- Submodules + nested repos: ~29,000 files (Phase 1e — see Section 3.8)
+- **Total**: ~46,340 text files with UUIDs
 
 **Script**: `assign-file-uuids.sh` handles all types. For edge cases, a Python catch-all script processes remaining files.
 
@@ -375,6 +386,57 @@ Section UUIDs are NOT indexed in `.uuid-index.json` (too many entries, would blo
 **Duplicate section_ids within a file**: Should not happen (each section gets a unique UUID). Detection: `assign-section-uuids.sh --validate` checks for duplicates.
 
 **Auto-generated files (CLAUDE.md)**: Do NOT get section UUIDs. They are derived files — sections come from 0AGNOSTIC.md which has the authoritative section IDs.
+
+<!-- section_id: "c7a21e33-4f8b-49d2-b6e1-9a0d3c5f7e82" -->
+### 3.8 Submodule & Nested Repo UUIDs
+
+The `0_layer_universal/` system contains 17 nested git repositories (9 registered submodules + 8 unregistered). These are separate repos but part of the same system — they MUST have full UUID coverage.
+
+#### Nested Repo Inventory
+
+| Type | Repository | Approx Files |
+|------|-----------|-------------|
+| Submodule | `layer_1_project_school` | ~23,700 |
+| Submodule | `layer_1_project_physics_simulation` | ~700 |
+| Submodule | `layer_1_project_portfolio` | ~80 |
+| Submodule | `layer_1_project_parallelism` | ~230 |
+| Submodule | `layer_1_project_ds250_course` | ~120 |
+| Submodule | `layer_1_project_buying_list` | ~13 |
+| Submodule | `layer_1_project_life_administration` | ~23 |
+| Submodule | `layer_1_component_setup_hub` | ~14 |
+| Submodule | `layer_1_component_dotfiles` | ~9 |
+| Nested | `layer_1_project_lang_trak` | ~3,700 |
+| Nested | `layer_1_project_central_website` | ~2 |
+| Nested | `layer_1_project_internship_prep` | ~74 |
+| Nested | `layer_1_project_language_tracker` | ~115 |
+| Nested | `layer_1_project_machine_learning` | ~104 |
+| Nested | `layer_1_project_web_app` | ~23 |
+| Nested | `langtrak_original` | ~461 |
+| Nested | `professor` (AALang fork) | ~42 |
+
+#### What Gets Assigned
+
+Each nested repo receives:
+1. **File UUIDs** — Same comment-syntax-per-file-type approach as the core repo
+2. **Section UUIDs** — `<!-- section_id -->` for h2/h3 headings in .md files (fill gaps)
+3. **Directory UUIDs** — Already complete (`.dir-id` files were assigned repo-wide)
+
+#### Commit Strategy
+
+Each nested repo requires its own commit:
+1. Process the nested repo (assign file + section UUIDs)
+2. Commit inside the nested repo with `[AI Context]` prefix
+3. Push the nested repo (if it has a remote)
+4. In the parent repo, the submodule pointer automatically updates
+5. Commit the parent's updated submodule pointer
+
+#### Edge Cases
+
+**Gitignored files**: Files like `.env`, `firebase-service-account*.json` may be gitignored in the nested repo. UUID assignment still happens on disk, but changes won't be committed.
+
+**Nested repos without remotes**: Some unregistered nested repos may not have a remote. Changes are committed locally only.
+
+**Binary-heavy repos** (e.g., `layer_1_project_school` with ~92K .jpg files): Binary files are exempt. Only text files get UUIDs.
 
 ---
 
