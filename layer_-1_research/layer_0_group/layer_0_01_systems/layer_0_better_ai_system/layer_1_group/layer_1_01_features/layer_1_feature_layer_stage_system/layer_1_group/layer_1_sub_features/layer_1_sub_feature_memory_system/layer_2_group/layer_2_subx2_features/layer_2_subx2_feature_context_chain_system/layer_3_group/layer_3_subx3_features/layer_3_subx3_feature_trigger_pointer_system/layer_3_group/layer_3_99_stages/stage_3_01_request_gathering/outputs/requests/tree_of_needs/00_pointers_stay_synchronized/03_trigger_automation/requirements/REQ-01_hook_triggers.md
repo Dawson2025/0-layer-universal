@@ -1,3 +1,8 @@
+---
+resource_id: "3e2fc187-04d9-4ff0-8ef1-3a2cefcd2bb6"
+resource_type: "output"
+resource_name: "REQ-01_hook_triggers"
+---
 # REQ-01: Claude Code Hook Triggers
 
 **Need**: [Trigger Automation](../README.md)

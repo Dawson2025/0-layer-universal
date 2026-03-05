@@ -1,3 +1,9 @@
+---
+resource_id: "61847c71-dea0-49df-a655-a4ff9b3a376a"
+resource_type: "readme
+output"
+resource_name: "README"
+---
 # Branch: Knowledge LIFECYCLE is Managed
 
 **Parent**: [00_context_survives_boundaries](../)

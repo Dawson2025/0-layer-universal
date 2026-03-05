@@ -1,3 +1,8 @@
+---
+resource_id: "38845c1d-f1f7-417a-bbe2-f80a3502f163"
+resource_type: "protocol"
+resource_name: "cli_vs_gui_launcher_diagnosis_protocol"
+---
 # Protocol: CLI vs GUI Launcher Diagnosis & Recovery
 
 **Date Created**: 2026-02-26

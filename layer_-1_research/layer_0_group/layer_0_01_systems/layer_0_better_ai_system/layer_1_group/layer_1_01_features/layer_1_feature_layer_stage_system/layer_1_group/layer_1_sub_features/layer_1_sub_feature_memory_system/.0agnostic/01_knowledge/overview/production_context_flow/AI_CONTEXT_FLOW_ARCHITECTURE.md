@@ -1,3 +1,8 @@
+---
+resource_id: "6818d384-9f58-4999-aef6-1c0318cf2a10"
+resource_type: "knowledge"
+resource_name: "AI_CONTEXT_FLOW_ARCHITECTURE"
+---
 # AI Context Flow Architecture
 
 ## Complete System Overview

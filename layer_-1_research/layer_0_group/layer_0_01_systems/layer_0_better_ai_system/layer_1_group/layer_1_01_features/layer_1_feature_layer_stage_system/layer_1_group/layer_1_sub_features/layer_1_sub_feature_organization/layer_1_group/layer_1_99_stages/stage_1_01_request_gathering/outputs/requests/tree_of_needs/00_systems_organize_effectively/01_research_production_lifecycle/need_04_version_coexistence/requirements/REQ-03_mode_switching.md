@@ -1,3 +1,8 @@
+---
+resource_id: "d0a6e076-4612-4190-9438-420f181ffdda"
+resource_type: "output"
+resource_name: "REQ-03_mode_switching"
+---
 # Mode Switching
 
 **Need**: [Version Coexistence](../README.md)

@@ -1,3 +1,9 @@
+---
+resource_id: "75f033a5-fca6-45e9-9922-f18b462a6b21"
+resource_type: "agnostic
+document"
+resource_name: "0AGNOSTIC"
+---
 # 0AGNOSTIC.md — sub_layer_0_10_03_universal_tools
 
 # ═══ STATIC CONTEXT (always loaded) ═══

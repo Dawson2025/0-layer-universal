@@ -1,3 +1,8 @@
+---
+resource_id: "4f9fee4f-f8f6-4479-880d-e50e0c2bfd90"
+resource_type: "document"
+resource_name: "LEGACY_FOLDER_STRUCTURE_REPORT.sync-conflict-20260126-035819-IF2WOGZ"
+---
 # Legacy Sublayer Folder Structure Report
 
 Source: commit d64c065 (standalone sublayers 0.06–0.14)

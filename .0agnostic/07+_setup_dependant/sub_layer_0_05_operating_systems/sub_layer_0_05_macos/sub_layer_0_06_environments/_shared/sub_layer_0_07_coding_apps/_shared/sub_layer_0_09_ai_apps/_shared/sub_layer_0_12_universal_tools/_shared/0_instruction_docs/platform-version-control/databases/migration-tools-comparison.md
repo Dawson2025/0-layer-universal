@@ -1,3 +1,8 @@
+---
+resource_id: "872b9cf0-b8c1-4ff6-9d91-54843a15fcaa"
+resource_type: "document"
+resource_name: "migration-tools-comparison"
+---
 # Migration Tools Comparison
 *Choosing the Right Database Migration Tool*
 

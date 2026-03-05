@@ -1,3 +1,9 @@
+---
+resource_id: "9bf86a47-655d-433e-bec9-a269519dc72e"
+resource_type: "readme
+document"
+resource_name: "README"
+---
 # playwright-mcp (cursor_agent on linux_ubuntu)
 
 ## Canonical docs

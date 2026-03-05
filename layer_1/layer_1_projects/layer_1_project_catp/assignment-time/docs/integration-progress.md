@@ -1,3 +1,8 @@
+---
+resource_id: "a2d4dac2-f34d-437b-8a36-31ef37a16276"
+resource_type: "document"
+resource_name: "integration-progress"
+---
 ﻿# Integration Progress
 
 This log captures our tangible progress against the infrastructure blueprint in [docs/integration-plan.md](integration-plan.md).

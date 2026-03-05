@@ -1,3 +1,8 @@
+---
+resource_id: "7fda05d1-967a-4f35-ae21-a82b39b00729"
+resource_type: "knowledge"
+resource_name: "project_creation_checklist"
+---
 # Project Creation Checklist
 
 **Purpose:** Detailed checklist for creating a new project from scratch.

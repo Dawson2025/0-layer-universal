@@ -1,3 +1,8 @@
+---
+resource_id: "9b76951c-952b-4b79-ad0d-606a1bf0277e"
+resource_type: "document"
+resource_name: "README.sync-conflict-20260126-101630-IF2WOGZ"
+---
 # Layer Registry
 
 This directory contains the registry and metadata for layer internal structure.

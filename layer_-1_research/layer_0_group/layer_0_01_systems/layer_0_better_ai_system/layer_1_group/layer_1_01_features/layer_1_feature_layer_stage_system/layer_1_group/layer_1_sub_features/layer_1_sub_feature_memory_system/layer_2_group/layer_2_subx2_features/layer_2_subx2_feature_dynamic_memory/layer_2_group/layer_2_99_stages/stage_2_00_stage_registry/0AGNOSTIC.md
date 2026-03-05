@@ -1,3 +1,9 @@
+---
+resource_id: "8e5e13cc-bc97-4403-a15c-682f8a31f6a1"
+resource_type: "agnostic
+document"
+resource_name: "0AGNOSTIC"
+---
 # dynamic_memory — Stage 00: stage_registry
 
 ## Identity

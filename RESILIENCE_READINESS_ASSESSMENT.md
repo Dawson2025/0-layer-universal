@@ -1,3 +1,8 @@
+---
+resource_id: "94c04d29-c266-4037-8d2d-1cba3b3af19e"
+resource_type: "document"
+resource_name: "RESILIENCE_READINESS_ASSESSMENT"
+---
 # Resilience Readiness Assessment: 0_layer_universal
 
 **Assessment Date**: 2026-01-27

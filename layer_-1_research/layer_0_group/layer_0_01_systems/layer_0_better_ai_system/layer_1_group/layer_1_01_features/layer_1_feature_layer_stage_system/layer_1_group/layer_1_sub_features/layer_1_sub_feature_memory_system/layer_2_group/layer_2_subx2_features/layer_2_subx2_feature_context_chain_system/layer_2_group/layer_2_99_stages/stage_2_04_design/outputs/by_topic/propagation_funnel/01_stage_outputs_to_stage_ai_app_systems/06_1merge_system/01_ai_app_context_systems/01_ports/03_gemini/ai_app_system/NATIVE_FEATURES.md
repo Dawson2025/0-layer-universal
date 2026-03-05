@@ -1,3 +1,8 @@
+---
+resource_id: "365da4f6-b5c3-4cda-aef9-bbedf3f44d9f"
+resource_type: "output"
+resource_name: "NATIVE_FEATURES"
+---
 # Gemini API — Native Features
 
 **Date**: 2026-02-27

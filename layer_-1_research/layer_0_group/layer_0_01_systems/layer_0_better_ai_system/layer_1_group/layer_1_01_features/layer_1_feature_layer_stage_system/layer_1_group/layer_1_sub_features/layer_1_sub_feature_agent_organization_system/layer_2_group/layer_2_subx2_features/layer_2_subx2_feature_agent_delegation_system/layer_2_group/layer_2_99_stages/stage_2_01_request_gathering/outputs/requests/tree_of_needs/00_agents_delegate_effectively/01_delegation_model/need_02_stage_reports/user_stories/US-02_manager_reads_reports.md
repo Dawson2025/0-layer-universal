@@ -1,3 +1,8 @@
+---
+resource_id: "fc85a2ca-40c5-4f55-860a-db0030d32ff8"
+resource_type: "output"
+resource_name: "US-02_manager_reads_reports"
+---
 # US-2: Manager reads stage reports for status
 
 **Need**: [Stage Reports](../README.md)

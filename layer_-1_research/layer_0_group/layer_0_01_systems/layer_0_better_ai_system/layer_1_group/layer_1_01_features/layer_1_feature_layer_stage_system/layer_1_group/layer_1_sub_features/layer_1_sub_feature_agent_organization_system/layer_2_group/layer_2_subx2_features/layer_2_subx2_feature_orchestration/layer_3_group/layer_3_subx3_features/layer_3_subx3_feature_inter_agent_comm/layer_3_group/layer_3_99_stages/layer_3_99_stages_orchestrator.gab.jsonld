@@ -1,5 +1,9 @@
 {
-  "@context": {"@vocab": "https://layer-stage.dev/schema#", "gab": "https://gab-lang.org/schema#"},
+  "file_id": "b02a7aa6-17a9-4355-9127-04b5f1bb22c7",
+  "@context": {
+    "@vocab": "https://layer-stage.dev/schema#",
+    "gab": "https://gab-lang.org/schema#"
+  },
   "@id": "inter_agent_comm_stages_orchestrator",
   "@type": "gab:LLMAgent",
   "name": "inter_agent_comm Stages Orchestrator",

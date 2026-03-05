@@ -1,3 +1,8 @@
+---
+resource_id: "a8090b7c-883d-46f7-a3ad-70c66ab7d735"
+resource_type: "output"
+resource_name: "TREE_TO_FEATURES_MAPPING"
+---
 # Tree of Needs → Further Layering
 
 ## Principle

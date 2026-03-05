@@ -1,3 +1,8 @@
+---
+resource_id: "7adee8b5-681f-4398-9ae1-a937ad8e4713"
+resource_type: "rule"
+resource_name: "when-to-use-terminal-wrapper"
+---
 # When to Use Terminal Wrapper vs. run_terminal_cmd
 
 ## Overview

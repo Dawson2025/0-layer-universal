@@ -1,3 +1,8 @@
+---
+resource_id: "fcb14cac-e21f-430c-a6e9-03b48ca5611e"
+resource_type: "output"
+resource_name: "REQ-01_reference_format"
+---
 # Reference Format
 
 **Need**: [Reference Format Standard](../README.md)

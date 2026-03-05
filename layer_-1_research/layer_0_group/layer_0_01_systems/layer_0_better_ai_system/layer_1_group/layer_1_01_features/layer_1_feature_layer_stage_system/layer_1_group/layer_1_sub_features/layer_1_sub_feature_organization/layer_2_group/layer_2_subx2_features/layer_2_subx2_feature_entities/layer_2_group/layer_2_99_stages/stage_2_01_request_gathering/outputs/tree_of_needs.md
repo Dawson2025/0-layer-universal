@@ -1,3 +1,8 @@
+---
+resource_id: "2d7a0eec-2e36-4a3f-9ba9-24ddb2be3e1f"
+resource_type: "output"
+resource_name: "tree_of_needs"
+---
 # Tree of Needs - Better Layer Stage System
 
 ## Purpose

@@ -1,3 +1,9 @@
+---
+resource_id: "909c365c-ca6e-46bc-bae5-a876f8de948d"
+resource_type: "index
+document"
+resource_name: "0INDEX"
+---
 # 0INDEX.md - layer_3_subx3_feature_context_loading
 
 ## Status

@@ -1,3 +1,8 @@
+---
+resource_id: "c29df734-4e20-4ec8-a45c-6e972e1b8451"
+resource_type: "output"
+resource_name: "31_personal_ai_tutor_systems"
+---
 # Personal AI Tutor Systems
 
 ## Purpose

@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
+# resource_id: "4e4d03c7-9358-451c-af1e-2bf567e3165b"
+# resource_type: "script"
+# resource_name: "test_cross_entity_porting_bridge"
 # test_cross_entity_porting_bridge.sh — Validate upstream/downstream bridge from tool_and_app_agnostic side
 
 set -uo pipefail

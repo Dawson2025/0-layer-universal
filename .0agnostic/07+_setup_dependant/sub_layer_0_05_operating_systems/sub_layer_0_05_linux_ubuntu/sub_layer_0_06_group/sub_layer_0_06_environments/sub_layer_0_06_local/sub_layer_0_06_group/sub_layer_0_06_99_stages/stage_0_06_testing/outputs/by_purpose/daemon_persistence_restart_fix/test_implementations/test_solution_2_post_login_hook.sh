@@ -1,4 +1,7 @@
 #!/bin/bash
+# resource_id: "3fd2f6dd-88b1-4d49-bff1-f2a403878265"
+# resource_type: "script"
+# resource_name: "test_solution_2_post_login_hook"
 # Test Solution 2: Post-Login Hook
 # This script creates a GNOME autostart entry that checks daemon health after login
 

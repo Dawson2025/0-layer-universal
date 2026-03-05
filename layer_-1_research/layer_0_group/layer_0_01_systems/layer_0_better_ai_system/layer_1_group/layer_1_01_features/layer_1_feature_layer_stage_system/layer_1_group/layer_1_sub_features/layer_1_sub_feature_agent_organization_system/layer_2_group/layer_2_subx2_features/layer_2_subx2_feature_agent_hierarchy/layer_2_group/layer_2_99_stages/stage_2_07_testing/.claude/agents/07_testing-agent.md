@@ -1,4 +1,9 @@
 ---
+resource_id: "f3ea5fda-ce61-4943-9c7a-1ef1d6255ad8"
+resource_type: "document"
+resource_name: "07_testing-agent"
+---
+---
 name: 07_testing-agent
 description: Specialized agent for Quality assurance and validation. Use when working on 07_testing tasks.
 tools: Read, Bash, Glob, Grep

@@ -1,3 +1,9 @@
+---
+resource_id: "d0586ae8-a15a-4c69-a4de-b7e735037117"
+resource_type: "readme
+document"
+resource_name: "README"
+---
 # tavily-mcp (claude_code_cli on wsl)
 
 ## Canonical docs

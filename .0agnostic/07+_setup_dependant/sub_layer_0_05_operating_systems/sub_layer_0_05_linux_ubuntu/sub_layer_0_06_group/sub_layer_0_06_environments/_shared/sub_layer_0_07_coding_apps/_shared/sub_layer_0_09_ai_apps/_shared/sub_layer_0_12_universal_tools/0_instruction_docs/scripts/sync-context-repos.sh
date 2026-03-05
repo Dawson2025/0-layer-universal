@@ -1,4 +1,7 @@
 #!/bin/bash
+# resource_id: "3784609f-6889-4fe2-b78e-57a4c50e3bd5"
+# resource_type: "script"
+# resource_name: "sync-context-repos"
 # Sync workflow for universal-context and setup-hub repositories
 # This script helps keep both context repositories in sync
 

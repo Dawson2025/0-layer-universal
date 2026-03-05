@@ -1,3 +1,8 @@
+---
+resource_id: "69c95325-c6df-40c9-84dd-13b0541a3079"
+resource_type: "knowledge"
+resource_name: "implementation_for_0_ai_context"
+---
 # Integrate Ideal AI Manager Hierarchy System Into 0_ai_context
 
 ## Overview

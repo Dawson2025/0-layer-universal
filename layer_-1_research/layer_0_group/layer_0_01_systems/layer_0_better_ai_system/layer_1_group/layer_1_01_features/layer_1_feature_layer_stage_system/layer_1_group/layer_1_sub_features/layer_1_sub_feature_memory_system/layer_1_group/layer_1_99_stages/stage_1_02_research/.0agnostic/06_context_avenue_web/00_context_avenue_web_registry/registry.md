@@ -1,3 +1,8 @@
+---
+resource_id: "ec02684a-554b-4f3e-b43e-8c84cba0c7a3"
+resource_type: "document"
+resource_name: "registry"
+---
 # Context Avenue Web Registry — Stage 02 Research
 
 ## Available Avenues

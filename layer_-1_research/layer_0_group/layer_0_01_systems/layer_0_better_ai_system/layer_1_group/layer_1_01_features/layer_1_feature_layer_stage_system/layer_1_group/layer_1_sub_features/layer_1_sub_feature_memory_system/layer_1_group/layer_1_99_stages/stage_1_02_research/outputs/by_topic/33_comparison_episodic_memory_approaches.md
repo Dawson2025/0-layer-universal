@@ -1,3 +1,8 @@
+---
+resource_id: "d8bcdcec-71b6-417b-83d0-0d08fc077d8e"
+resource_type: "output"
+resource_name: "33_comparison_episodic_memory_approaches"
+---
 # Comparison: Episodic Memory Approaches
 
 ## Purpose

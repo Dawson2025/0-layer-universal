@@ -1,3 +1,9 @@
+---
+resource_id: "b1e70e60-7fd3-4b3d-aace-430befb4f8c3"
+resource_type: "readme
+document"
+resource_name: "README"
+---
 # browser-mcp (claude_code_cli on linux_ubuntu)
 
 ## Canonical docs

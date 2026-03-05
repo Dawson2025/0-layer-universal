@@ -1,3 +1,9 @@
+---
+resource_id: "4903e550-4893-43ef-a555-02b7e220091a"
+resource_type: "readme
+document"
+resource_name: "README"
+---
 ## File Documentation and Organization – Results
 
 Use this folder to store **results and evaluations** from running file documentation workflows:

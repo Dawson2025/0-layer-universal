@@ -1,3 +1,8 @@
+---
+resource_id: "9c823964-69b6-43fd-9253-88a72aff8f3f"
+resource_type: "knowledge"
+resource_name: "rtx_4060_capabilities"
+---
 # RTX 4060 Laptop GPU — TTS Capabilities
 
 ## Hardware

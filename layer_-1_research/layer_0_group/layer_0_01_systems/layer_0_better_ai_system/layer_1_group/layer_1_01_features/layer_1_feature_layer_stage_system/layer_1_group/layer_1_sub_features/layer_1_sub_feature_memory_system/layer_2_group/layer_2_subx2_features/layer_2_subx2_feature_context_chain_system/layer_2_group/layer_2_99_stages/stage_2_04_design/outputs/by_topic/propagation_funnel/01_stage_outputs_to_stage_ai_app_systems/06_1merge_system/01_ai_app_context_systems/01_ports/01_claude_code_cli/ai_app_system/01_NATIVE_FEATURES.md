@@ -1,3 +1,8 @@
+---
+resource_id: "1abf5025-e648-49e6-80ce-448b3c724ec0"
+resource_type: "output"
+resource_name: "01_NATIVE_FEATURES"
+---
 # Codex CLI — Native Features
 
 **Date**: 2026-02-27

@@ -1,22 +1,19 @@
 {
+  "file_id": "3da4e05c-95a1-4516-a6e0-fe345398705e",
   "@context": {
     "@vocab": "https://layer-stage.dev/schema#",
     "nav": "https://layer-stage.dev/nav#",
     "trigger": "https://layer-stage.dev/trigger#"
   },
-
   "@id": "layer_0_group",
   "@type": "LayerGroup",
   "layer": 0,
-
   "name": "Layer 0 Group",
   "description": "Children group for the better_ai_system research project",
-
   "nav:parent": {
     "@id": "../",
     "name": "layer_-1_better_ai_system"
   },
-
   "conventions": {
     "childNaming": {
       "pattern": "layer_{N}_{type}_{name}",
@@ -32,16 +29,16 @@
       ]
     }
   },
-
   "trigger:onEntityCreation": {
     "skill": ".claude/skills/entity-creation/",
-    "loads": ["conventions.childNaming"],
+    "loads": [
+      "conventions.childNaming"
+    ],
     "validates": {
       "namePattern": "^layer_\\d+_(feature|sub_feature|component)_.+$"
     },
     "reference": ".0agnostic/06_context_avenue_web/01_file_based/04_@import_references/entity_structure.md"
   },
-
   "nav:children": [
     {
       "@id": "layer_0_00_layer_registry/",

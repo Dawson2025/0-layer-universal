@@ -1,3 +1,8 @@
+---
+resource_id: "89edc58b-ecb2-46da-9faa-90224325307e"
+resource_type: "handoff"
+resource_name: "session_handoff_2026-02-22"
+---
 # Session Handoff: Perplexity Extraction + 07+ Restructuring
 
 **Date**: 2026-02-22

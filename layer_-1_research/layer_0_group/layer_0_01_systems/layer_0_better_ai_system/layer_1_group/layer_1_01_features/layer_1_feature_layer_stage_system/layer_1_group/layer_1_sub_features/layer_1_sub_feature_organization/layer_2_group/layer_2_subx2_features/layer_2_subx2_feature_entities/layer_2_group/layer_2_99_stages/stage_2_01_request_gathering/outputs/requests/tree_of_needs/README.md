@@ -1,3 +1,9 @@
+---
+resource_id: "385455bf-5d1b-4196-ad25-15d68d7a001f"
+resource_type: "readme
+output"
+resource_name: "README"
+---
 # Tree of Needs - Better Layer Stage System
 
 ## Root Need

@@ -1,3 +1,8 @@
+---
+resource_id: "3849c2ce-d94b-4494-96ad-7ab306a97236"
+resource_type: "knowledge"
+resource_name: "links_and_sources"
+---
 ## AI Manager Hierarchy System – External Links and Sources
 
 This file collects the external links and references that were cited in the original research conversation:

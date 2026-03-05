@@ -1,3 +1,8 @@
+---
+resource_id: "4226db59-a43a-426d-8f0c-a7df7acabd96"
+resource_type: "document"
+resource_name: "REGISTRY"
+---
 # Context Avenue Web Registry
 
 ## Overview

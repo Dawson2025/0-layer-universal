@@ -1,3 +1,8 @@
+---
+resource_id: "648882b6-c82e-4d4c-ac61-70b2d907655c"
+resource_type: "output"
+resource_name: "gemini_quick_reference"
+---
 # Gemini API: Quick Reference Card
 
 **Last Updated**: February 27, 2026

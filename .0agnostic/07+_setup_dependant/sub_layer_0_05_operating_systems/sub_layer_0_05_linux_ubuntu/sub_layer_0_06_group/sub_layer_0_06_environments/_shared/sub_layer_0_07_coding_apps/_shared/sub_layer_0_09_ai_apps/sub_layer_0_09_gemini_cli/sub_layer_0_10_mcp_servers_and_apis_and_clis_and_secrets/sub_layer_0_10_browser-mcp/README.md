@@ -1,3 +1,9 @@
+---
+resource_id: "718ea30d-9ade-4026-b559-defb8aa652cc"
+resource_type: "readme
+document"
+resource_name: "README"
+---
 # browser-mcp (gemini_cli on linux_ubuntu)
 
 ## Canonical docs

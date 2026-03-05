@@ -1,3 +1,8 @@
+---
+resource_id: "48034299-8385-4f95-ae06-ffc605567746"
+resource_type: "output"
+resource_name: "US-03_production_unaffected"
+---
 # Production Unaffected by Research
 
 **As a** production system relying on stable, validated patterns,

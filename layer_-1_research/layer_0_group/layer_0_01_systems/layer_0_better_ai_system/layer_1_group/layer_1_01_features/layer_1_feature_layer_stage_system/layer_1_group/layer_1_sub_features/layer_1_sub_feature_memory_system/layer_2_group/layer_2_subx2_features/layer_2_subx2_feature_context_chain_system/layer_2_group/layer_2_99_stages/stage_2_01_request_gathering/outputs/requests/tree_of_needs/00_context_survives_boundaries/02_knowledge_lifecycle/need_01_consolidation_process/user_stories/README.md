@@ -1,3 +1,9 @@
+---
+resource_id: "ec515678-0e79-4b00-814b-c0d5c82913dc"
+resource_type: "readme
+output"
+resource_name: "README"
+---
 # Consolidation Process -- User Stories Index
 
 **Need**: [Consolidation Process](../README.md)

@@ -1,3 +1,8 @@
+---
+resource_id: "e8c9720d-f8f4-42e8-af74-40a112054c99"
+resource_type: "output"
+resource_name: "01_context_chain_system_design"
+---
 # Context Chain System - Stage 2.04 Design
 
 ## Purpose

@@ -1,3 +1,9 @@
+---
+resource_id: "51c5d6c0-71d1-4cc2-91ea-b0a462fd391a"
+resource_type: "readme
+document"
+resource_name: "README"
+---
 # Current Product - System Management
 
 **Purpose:** The current deliverables of system management work.

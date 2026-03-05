@@ -1,3 +1,8 @@
+---
+resource_id: "b7baa4e2-f50f-4620-9c5b-dede34b68322"
+resource_type: "document"
+resource_name: "comparison_matrix"
+---
 # Comparison Matrix
 
 **Last Updated**: January 12, 2026

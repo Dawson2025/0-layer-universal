@@ -1,3 +1,9 @@
+---
+resource_id: "f2d5495b-dc30-46b7-9baf-42e98daaeaa9"
+resource_type: "agnostic
+document"
+resource_name: "0AGNOSTIC"
+---
 # navigation — Stage 11: archives
 
 ## Identity

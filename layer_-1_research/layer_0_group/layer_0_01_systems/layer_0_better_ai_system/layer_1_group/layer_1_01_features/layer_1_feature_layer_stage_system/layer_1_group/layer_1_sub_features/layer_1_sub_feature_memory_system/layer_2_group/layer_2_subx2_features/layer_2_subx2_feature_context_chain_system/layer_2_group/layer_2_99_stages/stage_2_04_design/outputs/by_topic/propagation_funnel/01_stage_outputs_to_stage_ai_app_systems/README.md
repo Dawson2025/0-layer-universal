@@ -1,3 +1,9 @@
+---
+resource_id: "d9da9b25-24d5-483f-9240-38029c456d39"
+resource_type: "readme
+output"
+resource_name: "README"
+---
 # Level 01: Stage Outputs → Stage Report
 
 **Purpose**: Aggregate all outputs from a stage and produce comprehensive stage report

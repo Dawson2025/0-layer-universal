@@ -1,3 +1,9 @@
+---
+resource_id: "d0a3e7ca-ab30-4858-bf82-7306d856e11d"
+resource_type: "readme
+document"
+resource_name: "README"
+---
 # ⚠️ DEPRECATED - This Sublayer Has Been Consolidated
 
 **Deprecation Date**: 2026-01-01

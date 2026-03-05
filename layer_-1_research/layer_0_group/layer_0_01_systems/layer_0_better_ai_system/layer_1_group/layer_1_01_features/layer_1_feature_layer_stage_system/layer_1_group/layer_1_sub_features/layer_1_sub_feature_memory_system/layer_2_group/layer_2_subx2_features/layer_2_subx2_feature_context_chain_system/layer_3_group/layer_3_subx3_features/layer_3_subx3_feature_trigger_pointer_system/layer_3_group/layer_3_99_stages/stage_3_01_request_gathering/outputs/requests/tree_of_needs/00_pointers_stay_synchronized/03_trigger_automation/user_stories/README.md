@@ -1,3 +1,9 @@
+---
+resource_id: "8b003279-24b4-406d-8704-2fab7ba9b9cd"
+resource_type: "readme
+output"
+resource_name: "README"
+---
 # Trigger Automation -- User Stories Index
 
 **Need**: [Trigger Automation](../README.md)

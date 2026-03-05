@@ -1,3 +1,8 @@
+---
+resource_id: "2b8f94c1-8519-4b5c-98a7-8025db009925"
+resource_type: "output"
+resource_name: "US-04_manager_stays_out"
+---
 # US-4: Manager stays out of stage-level work
 
 **Need**: [Stage Delegation](../README.md)

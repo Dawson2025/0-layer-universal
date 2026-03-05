@@ -1,3 +1,8 @@
+---
+resource_id: "d0a2cc11-9209-48ac-89ca-d8dba3a4a1ef"
+resource_type: "output"
+resource_name: "US-02_researcher_works_in_stages"
+---
 # Researcher Works in Stages
 
 **As a** researcher conducting an experimental investigation,

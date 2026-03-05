@@ -1,3 +1,8 @@
+---
+resource_id: "ac8c2cc6-6ddd-4237-86c3-139065d6d1d2"
+resource_type: "output"
+resource_name: "US-02_school_has_own_rpi_cycle"
+---
 # School System Has Own R/P/I Cycle
 
 **As a** school system nested within the broader AI system,

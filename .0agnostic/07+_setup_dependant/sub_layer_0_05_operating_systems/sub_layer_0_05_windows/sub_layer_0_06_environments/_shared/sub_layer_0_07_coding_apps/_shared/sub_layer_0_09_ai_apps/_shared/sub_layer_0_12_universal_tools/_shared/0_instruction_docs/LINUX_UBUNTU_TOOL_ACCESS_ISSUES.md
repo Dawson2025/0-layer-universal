@@ -1,3 +1,8 @@
+---
+resource_id: "4a67c0ed-7211-4e61-9db5-9b0bb5acc32a"
+resource_type: "document"
+resource_name: "LINUX_UBUNTU_TOOL_ACCESS_ISSUES"
+---
 # Linux/Ubuntu Universal Tools Access Issues
 
 **Date**: 2025-12-02  

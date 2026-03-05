@@ -1,3 +1,8 @@
+---
+resource_id: "faadf8da-727f-4474-bce9-2945a4c43422"
+resource_type: "output"
+resource_name: "03_trajectory_stores_and_grade_strategy"
+---
 # Trajectory Stores & Cascading Grade Strategy System
 
 **Date**: 2026-02-27

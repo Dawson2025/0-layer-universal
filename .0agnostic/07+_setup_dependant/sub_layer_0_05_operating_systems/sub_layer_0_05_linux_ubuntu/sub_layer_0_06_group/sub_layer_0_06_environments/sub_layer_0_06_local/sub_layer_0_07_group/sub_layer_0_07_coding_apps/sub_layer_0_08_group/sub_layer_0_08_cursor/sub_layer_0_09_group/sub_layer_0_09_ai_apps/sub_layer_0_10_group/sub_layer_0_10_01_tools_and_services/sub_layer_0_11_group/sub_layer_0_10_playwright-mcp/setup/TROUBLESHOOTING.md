@@ -1,3 +1,8 @@
+---
+resource_id: "c81cf874-b239-4174-b346-3eee96d9a661"
+resource_type: "document"
+resource_name: "TROUBLESHOOTING"
+---
 # Playwright MCP Troubleshooting Guide
 
 This guide covers common issues encountered when using Playwright MCP with Claude Code CLI on Linux/Ubuntu.

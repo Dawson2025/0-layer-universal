@@ -1,3 +1,8 @@
+---
+resource_id: "de8ac279-c863-49e3-b0eb-28eaeb1d6a45"
+resource_type: "document"
+resource_name: "REQ_006_brightness_volume_buttons_not_working"
+---
 # REQ_006: Brightness and Volume Buttons Not Working
 
 **Date Reported**: 2026-01-29

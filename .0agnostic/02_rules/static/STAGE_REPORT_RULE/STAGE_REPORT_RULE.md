@@ -1,3 +1,8 @@
+---
+resource_id: "d4f6e050-33a7-446c-b6ec-9538f4a0b2f4"
+resource_type: "rule"
+resource_name: "STAGE_REPORT_RULE"
+---
 # Stage Report Rule
 
 **Type**: Static (always applies)

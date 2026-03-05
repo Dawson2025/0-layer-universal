@@ -1,3 +1,8 @@
+---
+resource_id: "0d1c3dc8-184a-4bbc-8425-dbd7221b059e"
+resource_type: "rule"
+resource_name: "AGENT_CONFIG_REFERENCE_TEMPLATE"
+---
 # Agent Configuration File Reference Template
 *Template for Agent-Specific Configuration Files*
 

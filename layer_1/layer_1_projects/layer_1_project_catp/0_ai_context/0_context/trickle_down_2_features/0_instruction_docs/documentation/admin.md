@@ -1,3 +1,8 @@
+---
+resource_id: "e05b43b6-bbf9-41bb-8440-ef9f232668fc"
+resource_type: "document"
+resource_name: "admin"
+---
 # Admin Guide
 
 ## Access

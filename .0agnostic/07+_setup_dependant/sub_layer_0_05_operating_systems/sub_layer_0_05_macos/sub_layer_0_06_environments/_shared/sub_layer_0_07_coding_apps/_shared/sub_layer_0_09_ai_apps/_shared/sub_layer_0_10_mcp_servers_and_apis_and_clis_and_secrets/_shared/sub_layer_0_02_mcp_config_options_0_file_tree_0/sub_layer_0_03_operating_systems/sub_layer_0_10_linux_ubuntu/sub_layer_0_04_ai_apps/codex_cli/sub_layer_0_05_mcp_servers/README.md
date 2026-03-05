@@ -1,3 +1,9 @@
+---
+resource_id: "264d178c-f1de-4405-8e61-37b1241ac726"
+resource_type: "readme
+document"
+resource_name: "README"
+---
 # MCP Servers (codex_cli on linux_ubuntu)
 
 This folder contains linux_ubuntu + codex_cli specific notes for each MCP server we use.

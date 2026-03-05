@@ -1,3 +1,8 @@
+---
+resource_id: "d7bbd097-0fc5-4b05-a80a-fa05450fabda"
+resource_type: "output"
+resource_name: "US-02_agent_prioritizes_recent"
+---
 # US-02: Agent prioritizes recent over stale
 
 **Need**: [Scored Context Retrieval](../README.md)

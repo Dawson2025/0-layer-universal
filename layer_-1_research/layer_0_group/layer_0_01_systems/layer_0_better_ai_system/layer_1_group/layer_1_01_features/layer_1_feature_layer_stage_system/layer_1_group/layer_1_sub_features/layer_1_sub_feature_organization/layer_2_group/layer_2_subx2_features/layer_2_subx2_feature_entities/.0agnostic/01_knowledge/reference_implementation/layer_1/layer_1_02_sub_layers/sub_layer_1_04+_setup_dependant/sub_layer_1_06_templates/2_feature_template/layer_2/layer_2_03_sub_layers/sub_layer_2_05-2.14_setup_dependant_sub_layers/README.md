@@ -1,3 +1,9 @@
+---
+resource_id: "5f84de4e-c080-4f85-bb9f-ce6f4289d840"
+resource_type: "readme
+knowledge"
+resource_name: "README"
+---
 # sub_layer_2.05-2.14_setup - Feature Setup Sublayer
 
 **Sublayer Range**: 2.05 through 2.14

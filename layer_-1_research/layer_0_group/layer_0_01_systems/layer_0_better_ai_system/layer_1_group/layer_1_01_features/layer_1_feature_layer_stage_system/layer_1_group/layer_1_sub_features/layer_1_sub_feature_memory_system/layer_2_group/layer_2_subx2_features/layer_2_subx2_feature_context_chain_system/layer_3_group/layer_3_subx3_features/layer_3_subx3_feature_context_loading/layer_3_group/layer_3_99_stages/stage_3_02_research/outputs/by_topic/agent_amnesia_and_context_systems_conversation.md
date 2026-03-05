@@ -1,3 +1,8 @@
+---
+resource_id: "47ef2597-0853-4206-a3c6-11a7bfea06cd"
+resource_type: "output"
+resource_name: "agent_amnesia_and_context_systems_conversation"
+---
 # Agent Amnesia and Context Systems - Research Conversation
 
 **Layer**: layer_-1 (Research)

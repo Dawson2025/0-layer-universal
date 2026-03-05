@@ -1,3 +1,8 @@
+---
+resource_id: "c802e356-534f-490f-a9c8-07c3975f561f"
+resource_type: "document"
+resource_name: "web_scraping_workflow"
+---
 # Web Scraping Workflow (Playwright MCP)
 
 ## Overview

@@ -1,3 +1,8 @@
+---
+resource_id: "b4c3dd5a-6cad-4745-a537-738471728e2a"
+resource_type: "rule"
+resource_name: "test_design"
+---
 # Test Design: Browser Extraction Rule
 
 **Rule**: `../browser_extraction_rule.md`

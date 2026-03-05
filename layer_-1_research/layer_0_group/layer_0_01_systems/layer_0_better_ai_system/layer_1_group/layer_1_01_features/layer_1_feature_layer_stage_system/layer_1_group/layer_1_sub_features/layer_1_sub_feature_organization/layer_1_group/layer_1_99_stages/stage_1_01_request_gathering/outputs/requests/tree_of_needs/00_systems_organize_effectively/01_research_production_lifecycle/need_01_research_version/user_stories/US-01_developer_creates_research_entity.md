@@ -1,3 +1,8 @@
+---
+resource_id: "0bbf43ea-ea15-4ab1-9628-c84acf960ac5"
+resource_type: "output"
+resource_name: "US-01_developer_creates_research_entity"
+---
 # Developer Creates Research Entity
 
 **As a** developer setting up a new experimental project,

@@ -1,3 +1,9 @@
+---
+resource_id: "9f5642a0-876d-43b0-92e7-6622e687b9a7"
+resource_type: "readme
+output"
+resource_name: "README"
+---
 # Need: Stage Reports
 
 **Branch**: [01_delegation_model](../)

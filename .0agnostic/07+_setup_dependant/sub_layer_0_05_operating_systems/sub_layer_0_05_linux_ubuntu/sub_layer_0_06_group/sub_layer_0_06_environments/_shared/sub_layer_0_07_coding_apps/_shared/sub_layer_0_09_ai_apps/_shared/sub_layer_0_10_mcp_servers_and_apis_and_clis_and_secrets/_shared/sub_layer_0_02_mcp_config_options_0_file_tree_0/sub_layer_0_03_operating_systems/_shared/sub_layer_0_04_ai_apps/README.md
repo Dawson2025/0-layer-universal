@@ -1,3 +1,9 @@
+---
+resource_id: "094a185a-6437-4a7f-bf06-870125f85189"
+resource_type: "readme
+document"
+resource_name: "README"
+---
 # AI Apps (MCP Setup Runbooks)
 
 This folder contains app-specific MCP setup runbooks (where configs live, how to apply changes, and known WSL/OS quirks).

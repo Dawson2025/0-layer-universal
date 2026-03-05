@@ -1,3 +1,8 @@
+---
+resource_id: "958cfb42-5205-4980-bb48-c2bef0a5b2e0"
+resource_type: "document"
+resource_name: "gcloud-cli-setup"
+---
 # gcloud CLI Setup Guide
 
 ## Installation

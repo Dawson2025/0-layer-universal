@@ -1,3 +1,8 @@
+---
+resource_id: "173ef8ef-6647-47db-b287-610c3940465c"
+resource_type: "document"
+resource_name: "CODEX_CLI_MCP_SETUP"
+---
 # Codex CLI MCP Setup (Universal Pattern)
 
 ## Goal

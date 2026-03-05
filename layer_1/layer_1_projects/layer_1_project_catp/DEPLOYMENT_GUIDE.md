@@ -1,3 +1,8 @@
+---
+resource_id: "09e8ca6e-3ed0-46ac-acba-4905cf4e3154"
+resource_type: "document"
+resource_name: "DEPLOYMENT_GUIDE"
+---
 # 🚀 Deployment & Testing Guide
 
 ## ✅ Pre-Deployment Verification

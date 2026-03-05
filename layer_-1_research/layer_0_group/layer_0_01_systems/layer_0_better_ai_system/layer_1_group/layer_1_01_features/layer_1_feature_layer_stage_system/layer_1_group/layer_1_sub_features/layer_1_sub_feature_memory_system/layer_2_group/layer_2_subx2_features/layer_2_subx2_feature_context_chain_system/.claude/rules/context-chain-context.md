@@ -1,4 +1,9 @@
 ---
+resource_id: "1676069e-3759-4c93-9dc5-bd395ae73a49"
+resource_type: "document"
+resource_name: "context-chain-context"
+---
+---
 paths: layer_2_subx2_feature_context_chain_system/**
 ---
 

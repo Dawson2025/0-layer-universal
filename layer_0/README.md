@@ -1,3 +1,9 @@
+---
+resource_id: "8f11590f-7c3f-4457-9c73-2eba2942f644"
+resource_type: "readme
+document"
+resource_name: "README"
+---
 cl# layer_0 (Layer 0) – Operational Overlay
 
 This overlay maps existing universal content into the Layer/Stage system without moving files. Each slot links to current sources. Use these paths when loading context.

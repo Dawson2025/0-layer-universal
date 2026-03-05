@@ -1,3 +1,8 @@
+---
+resource_id: "52bdb0a7-6f01-45de-8d93-ab0007a0ac35"
+resource_type: "document"
+resource_name: "MCP_SERVER_MATRIX"
+---
 # MCP Server Matrix (with tool automation coverage)
 
 Lists all MCP servers we have configs for, plus which AI tools/CLIs have automation or documented setup. Disabled servers remain listed for visibility.

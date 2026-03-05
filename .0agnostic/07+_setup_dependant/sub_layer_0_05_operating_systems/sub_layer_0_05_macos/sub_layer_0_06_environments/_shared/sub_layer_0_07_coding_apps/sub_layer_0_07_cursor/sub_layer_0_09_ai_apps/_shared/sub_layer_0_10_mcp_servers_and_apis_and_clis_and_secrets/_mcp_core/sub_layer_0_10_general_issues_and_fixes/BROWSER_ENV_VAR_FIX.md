@@ -1,3 +1,8 @@
+---
+resource_id: "e55b241b-ee4d-4c7a-b637-5d44416a0e6f"
+resource_type: "document"
+resource_name: "BROWSER_ENV_VAR_FIX"
+---
 # Browser MCP Environment Variable Fix
 
 **Date**: 2025-12-05  

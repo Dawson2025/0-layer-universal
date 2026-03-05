@@ -1,3 +1,8 @@
+---
+resource_id: "dce69976-efb6-4911-b725-6768f2833d6c"
+resource_type: "protocol"
+resource_name: "docx_operations"
+---
 # Protocol: DOCX Operations
 
 ## Overview

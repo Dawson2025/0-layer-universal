@@ -1,3 +1,8 @@
+---
+resource_id: "30c1e758-4fb1-44ab-b37a-f0b7dd26ca9a"
+resource_type: "document"
+resource_name: "codex-windows-vscode"
+---
 # Codex on Windows + VS Code
 
 This guide follows the official [Running Codex on Windows](https://developers.openai.com/codex/windows) playbook and adds a few quality-of-life tweaks for VS Code users.

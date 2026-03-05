@@ -1,3 +1,8 @@
+---
+resource_id: "2d9c5fbb-526f-47e6-ad7f-49d985f12fdf"
+resource_type: "output"
+resource_name: "spec"
+---
 
 # Request 01: Consolidate Cross-OS Compatibility Rules
 

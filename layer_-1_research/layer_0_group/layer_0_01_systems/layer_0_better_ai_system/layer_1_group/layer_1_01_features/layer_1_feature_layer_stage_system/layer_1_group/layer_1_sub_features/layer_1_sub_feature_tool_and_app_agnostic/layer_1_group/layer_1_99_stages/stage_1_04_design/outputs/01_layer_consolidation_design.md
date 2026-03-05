@@ -1,3 +1,8 @@
+---
+resource_id: "b4791f2b-ea36-4d04-b028-82c22293d4d0"
+resource_type: "output"
+resource_name: "01_layer_consolidation_design"
+---
 # Layer Consolidation Design
 
 **Date**: 2026-02-27

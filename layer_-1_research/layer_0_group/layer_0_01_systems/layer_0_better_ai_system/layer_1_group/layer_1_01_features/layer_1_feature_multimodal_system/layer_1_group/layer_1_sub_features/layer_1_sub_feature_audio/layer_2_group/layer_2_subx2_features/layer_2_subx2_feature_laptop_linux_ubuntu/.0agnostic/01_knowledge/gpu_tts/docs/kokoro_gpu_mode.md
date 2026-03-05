@@ -1,3 +1,8 @@
+---
+resource_id: "37babab1-fa33-409a-8c2e-d9a4cb94a5cf"
+resource_type: "knowledge"
+resource_name: "kokoro_gpu_mode"
+---
 # Kokoro TTS — GPU-Accelerated Mode
 
 ## Overview

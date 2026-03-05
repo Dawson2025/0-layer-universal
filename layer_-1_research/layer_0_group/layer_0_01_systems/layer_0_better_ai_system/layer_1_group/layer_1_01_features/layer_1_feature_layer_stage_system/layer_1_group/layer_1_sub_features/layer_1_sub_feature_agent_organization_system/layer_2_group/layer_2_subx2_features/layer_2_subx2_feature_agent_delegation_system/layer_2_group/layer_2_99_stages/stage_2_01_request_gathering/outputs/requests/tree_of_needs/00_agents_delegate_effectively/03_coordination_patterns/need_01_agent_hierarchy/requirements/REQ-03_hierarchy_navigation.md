@@ -1,3 +1,8 @@
+---
+resource_id: "a586bf97-0c0b-4628-96c3-f368158706a1"
+resource_type: "output"
+resource_name: "REQ-03_hierarchy_navigation"
+---
 # Hierarchy Navigation
 
 **Need**: [Agent Hierarchy](../README.md)

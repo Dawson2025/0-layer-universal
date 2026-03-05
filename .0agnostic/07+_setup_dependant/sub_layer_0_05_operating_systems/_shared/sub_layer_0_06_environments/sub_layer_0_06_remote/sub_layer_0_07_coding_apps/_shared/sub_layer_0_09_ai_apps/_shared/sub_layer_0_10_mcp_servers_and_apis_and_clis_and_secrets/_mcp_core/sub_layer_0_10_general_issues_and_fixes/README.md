@@ -1,3 +1,9 @@
+---
+resource_id: "2c0ed054-c693-412d-9089-9cb350d98e5a"
+resource_type: "readme
+document"
+resource_name: "README"
+---
 # General Issues & Fixes (Cross-Server)
 
 This folder contains issues and fixes that apply to **multiple MCP servers** (and often multiple AI apps / OSes), such as:

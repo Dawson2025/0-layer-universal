@@ -1,10 +1,13 @@
 {
+  "file_id": "d6120af9-24f8-4d6f-9728-adfcc91ba955",
   "environment": "production",
   "servers": [
     {
       "name": "web-search",
       "command": "npx",
-      "args": ["tavily-mcp"],
+      "args": [
+        "tavily-mcp"
+      ],
       "env": {
         "TAVILY_API_KEY": "tvly-prod-REPLACE_WITH_PRODUCTION_KEY"
       },
@@ -12,7 +15,9 @@
       "priority": 1,
       "category": "search",
       "description": "Tavily web search MCP server",
-      "dependencies": ["node"],
+      "dependencies": [
+        "node"
+      ],
       "health_check_url": null,
       "timeout": 30,
       "retry_count": 3
@@ -20,7 +25,9 @@
     {
       "name": "github-search",
       "command": "npx",
-      "args": ["github-mcp-server"],
+      "args": [
+        "github-mcp-server"
+      ],
       "env": {
         "GITHUB_TOKEN": "ghp_REPLACE_WITH_PRODUCTION_TOKEN"
       },
@@ -28,7 +35,9 @@
       "priority": 2,
       "category": "search",
       "description": "GitHub search MCP server",
-      "dependencies": ["node"],
+      "dependencies": [
+        "node"
+      ],
       "health_check_url": null,
       "timeout": 30,
       "retry_count": 3
@@ -36,13 +45,18 @@
     {
       "name": "filesystem",
       "command": "npx",
-      "args": ["@modelcontextprotocol/server-filesystem", "/home/dawson/code/lang-trak-in-progress"],
+      "args": [
+        "@modelcontextprotocol/server-filesystem",
+        "/home/dawson/code/lang-trak-in-progress"
+      ],
       "env": {},
       "enabled": true,
       "priority": 1,
       "category": "filesystem",
       "description": "Filesystem access MCP server",
-      "dependencies": ["node"],
+      "dependencies": [
+        "node"
+      ],
       "health_check_url": null,
       "timeout": 30,
       "retry_count": 3
@@ -50,7 +64,9 @@
     {
       "name": "slack",
       "command": "npx",
-      "args": ["@modelcontextprotocol/server-slack"],
+      "args": [
+        "@modelcontextprotocol/server-slack"
+      ],
       "env": {
         "SLACK_BOT_TOKEN": "xoxb-REPLACE_WITH_PRODUCTION_TOKEN"
       },
@@ -58,7 +74,9 @@
       "priority": 3,
       "category": "communication",
       "description": "Slack integration MCP server",
-      "dependencies": ["node"],
+      "dependencies": [
+        "node"
+      ],
       "health_check_url": null,
       "timeout": 30,
       "retry_count": 3
@@ -66,7 +84,9 @@
     {
       "name": "postgres",
       "command": "npx",
-      "args": ["@modelcontextprotocol/server-postgres"],
+      "args": [
+        "@modelcontextprotocol/server-postgres"
+      ],
       "env": {
         "POSTGRES_CONNECTION_STRING": "postgresql://user:password@localhost:5432/firebase_config"
       },
@@ -74,7 +94,10 @@
       "priority": 2,
       "category": "database",
       "description": "PostgreSQL MCP server",
-      "dependencies": ["node", "postgresql"],
+      "dependencies": [
+        "node",
+        "postgresql"
+      ],
       "health_check_url": null,
       "timeout": 30,
       "retry_count": 3
@@ -82,13 +105,20 @@
     {
       "name": "context7-local",
       "command": "npx",
-      "args": ["-y", "@upstash/context7-mcp", "--api-key", "ctx7sk-d20b6dec-5980-4ee1-9beb-0e635d626f46"],
+      "args": [
+        "-y",
+        "@upstash/context7-mcp",
+        "--api-key",
+        "ctx7sk-d20b6dec-5980-4ee1-9beb-0e635d626f46"
+      ],
       "env": {},
       "enabled": true,
       "priority": 3,
       "category": "documentation",
       "description": "Context7 local MCP server with API access",
-      "dependencies": ["node"],
+      "dependencies": [
+        "node"
+      ],
       "health_check_url": null,
       "timeout": 30,
       "retry_count": 3
@@ -96,13 +126,19 @@
     {
       "name": "context7-remote",
       "command": "curl",
-      "args": ["-X", "POST", "https://mcp.context7.com/mcp"],
+      "args": [
+        "-X",
+        "POST",
+        "https://mcp.context7.com/mcp"
+      ],
       "env": {},
       "enabled": false,
       "priority": 4,
       "category": "documentation",
       "description": "Context7 remote MCP server (HTTP-based)",
-      "dependencies": ["curl"],
+      "dependencies": [
+        "curl"
+      ],
       "health_check_url": "https://mcp.context7.com/mcp",
       "timeout": 30,
       "retry_count": 3,

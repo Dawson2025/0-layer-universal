@@ -1,3 +1,8 @@
+---
+resource_id: "c9874be5-fff4-4473-9a44-920488c8868e"
+resource_type: "knowledge"
+resource_name: "react_fiber_extraction"
+---
 # React Fiber Extraction Method — Perplexity
 
 ## Why React Fiber?

@@ -1,3 +1,9 @@
+---
+resource_id: "4d210457-d9c5-494b-b455-2fada5f84bf0"
+resource_type: "readme
+knowledge"
+resource_name: "README"
+---
 # Sub-Project Setup File Tree
 
 This is the main entry point for navigating sub-project setup documentation.

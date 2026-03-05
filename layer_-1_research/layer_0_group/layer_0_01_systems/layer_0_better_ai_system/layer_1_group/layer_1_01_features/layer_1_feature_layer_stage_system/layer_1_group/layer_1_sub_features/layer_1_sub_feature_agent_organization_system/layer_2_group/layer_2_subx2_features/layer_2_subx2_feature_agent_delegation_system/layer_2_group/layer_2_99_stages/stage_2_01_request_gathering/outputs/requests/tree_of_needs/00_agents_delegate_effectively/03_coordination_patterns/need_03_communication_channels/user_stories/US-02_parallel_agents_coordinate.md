@@ -1,3 +1,8 @@
+---
+resource_id: "7ae21d1d-c085-4236-b686-750e6de51ee4"
+resource_type: "output"
+resource_name: "US-02_parallel_agents_coordinate"
+---
 # US-2: Parallel agents coordinate in real time
 
 **Need**: [Communication Channels](../README.md)

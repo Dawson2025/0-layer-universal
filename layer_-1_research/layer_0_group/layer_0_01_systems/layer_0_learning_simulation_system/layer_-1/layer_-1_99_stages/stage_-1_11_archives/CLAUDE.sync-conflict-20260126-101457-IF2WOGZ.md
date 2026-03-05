@@ -1,3 +1,8 @@
+---
+resource_id: "2ddcb212-46e3-4a1b-8d80-ab5cd1194ecf"
+resource_type: "document"
+resource_name: "CLAUDE.sync-conflict-20260126-101457-IF2WOGZ"
+---
 # stage_-1_11_archives
 
 ## Purpose

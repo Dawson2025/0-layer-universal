@@ -1,3 +1,8 @@
+---
+resource_id: "be434e08-2dc0-485a-8fb7-862bf84b7698"
+resource_type: "rule"
+resource_name: "escalate_on_scope_violation"
+---
 # Rule: Escalate on Scope Violation
 
 **Status**: MANDATORY

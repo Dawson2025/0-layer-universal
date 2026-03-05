@@ -1,3 +1,8 @@
+---
+resource_id: "18ada08b-f57d-4f45-894d-d5c3ca1eb3df"
+resource_type: "output"
+resource_name: "REQ-01_graph_schema"
+---
 # Graph Schema
 
 **Need**: [Knowledge Graph](../README.md)

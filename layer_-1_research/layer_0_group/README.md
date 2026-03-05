@@ -1,3 +1,9 @@
+---
+resource_id: "c93f487a-5858-4c3d-8054-6144d9e0c19b"
+resource_type: "readme
+document"
+resource_name: "README"
+---
 # layer_0_group — Layer 0 Research Structures
 
 This directory contains layer_0 level structures being researched and validated in the layer_-1_research context.

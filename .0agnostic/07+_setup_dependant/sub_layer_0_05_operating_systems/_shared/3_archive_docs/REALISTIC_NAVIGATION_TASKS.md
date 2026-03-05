@@ -1,3 +1,8 @@
+---
+resource_id: "b3f3f7d2-eada-4c82-b0c2-cffafd696064"
+resource_type: "document"
+resource_name: "REALISTIC_NAVIGATION_TASKS"
+---
 # Realistic Navigation Conversion Plan
 
 This checklist captures the remaining automation bundles that still rely on direct URL jumps. For each bundle we map the UI-driven journey we need to automate so that the realistic companion script mirrors how a human would move through the app.

@@ -1,3 +1,9 @@
+---
+resource_id: "7c179973-c0b5-42bb-b24b-1e735ee9bd55"
+resource_type: "readme
+output"
+resource_name: "README"
+---
 # AI App Context Systems — Porting Strategy for 5 Tools
 
 **Date**: 2026-02-27

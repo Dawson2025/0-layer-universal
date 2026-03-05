@@ -1,3 +1,9 @@
+---
+resource_id: "85bcf45e-b45f-4feb-b1af-8f8f8d9316ed"
+resource_type: "agnostic
+document"
+resource_name: "0AGNOSTIC"
+---
 # 0AGNOSTIC.md - layer_2_subx3_feature_orchestration
 
 ## Identity

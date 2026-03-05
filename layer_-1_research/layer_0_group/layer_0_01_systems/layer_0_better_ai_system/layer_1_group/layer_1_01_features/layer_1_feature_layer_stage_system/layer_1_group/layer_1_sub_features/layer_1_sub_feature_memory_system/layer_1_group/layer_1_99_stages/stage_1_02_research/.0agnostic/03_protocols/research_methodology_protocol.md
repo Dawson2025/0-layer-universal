@@ -1,3 +1,8 @@
+---
+resource_id: "589c0384-e23f-4e48-98f7-77e41ec23141"
+resource_type: "protocol"
+resource_name: "research_methodology_protocol"
+---
 # Research Methodology Protocol — Memory System Stage 02
 
 ## Purpose

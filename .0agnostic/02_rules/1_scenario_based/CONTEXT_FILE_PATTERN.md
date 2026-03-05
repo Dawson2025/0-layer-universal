@@ -1,3 +1,8 @@
+---
+resource_id: "f8551fa4-037f-45e4-bf45-90b53ecc07a7"
+resource_type: "rule"
+resource_name: "CONTEXT_FILE_PATTERN"
+---
 # Context File Pattern: Identity, Triggers, Pointers
 
 **Layer**: layer_0 (Universal)

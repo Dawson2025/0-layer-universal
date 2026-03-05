@@ -1,3 +1,8 @@
+---
+resource_id: "d22d2653-9c33-4fb0-a359-643bf26da1f4"
+resource_type: "protocol"
+resource_name: "what_to_do_next"
+---
 # What To Do Next
 *Universal Template for Project Context*
 

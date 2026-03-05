@@ -1,3 +1,8 @@
+---
+resource_id: "df1cffcf-5e20-47f4-b9ed-4b96ca981241"
+resource_type: "handoff"
+resource_name: "layer_report"
+---
 # Layer Report: layer_2_subx2_feature_context_chain_system
 
 ## Status

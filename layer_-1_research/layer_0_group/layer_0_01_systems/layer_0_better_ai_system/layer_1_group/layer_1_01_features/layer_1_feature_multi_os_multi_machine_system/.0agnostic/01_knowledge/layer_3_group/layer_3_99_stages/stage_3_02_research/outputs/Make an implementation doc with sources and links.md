@@ -1,3 +1,8 @@
+---
+resource_id: "4b6122e9-0c91-4997-be51-7383b96a3b19"
+resource_type: "knowledge"
+resource_name: "Make an implementation doc with sources and links"
+---
 <img src="https://r2cdn.perplexity.ai/pplx-full-logo-primary-dark%402x.png" style="height:64px;margin-right:32px"/>
 
 # Make an implementation doc with sources and links

@@ -1,3 +1,8 @@
+---
+resource_id: "0f31faac-1a12-46d7-b6a2-8cacda50cfd6"
+resource_type: "knowledge"
+resource_name: "framework_orchestration"
+---
 ## Framework Orchestration Guide
 
 This document provides detailed guidance on using multi-agent frameworks (LangGraph, AutoGen, CrewAI, MetaGPT) within the AI manager hierarchy system.

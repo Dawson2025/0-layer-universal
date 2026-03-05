@@ -1,3 +1,8 @@
+---
+resource_id: "a8e00820-56fc-4256-a2af-1f24a7a4ef71"
+resource_type: "output"
+resource_name: "stages_manager_pattern"
+---
 # Design Decision: Stages Manager Pattern
 
 **Date**: 2026-02-24

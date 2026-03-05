@@ -1,3 +1,8 @@
+---
+resource_id: "7d1b1f50-4519-4a11-9557-ce1983fc7ae6"
+resource_type: "document"
+resource_name: "FirebaseIntegrationTests_HowTheyWork"
+---
 # How Firebase Integration Tests Actually Work
 *Technical Deep Dive: Real Firebase Verification*
 

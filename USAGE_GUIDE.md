@@ -1,3 +1,8 @@
+---
+resource_id: "39c35059-9c1a-4d30-9ff4-f0991dfe8fc0"
+resource_type: "document"
+resource_name: "USAGE_GUIDE"
+---
 # Universal AI Context System - Usage Guide
 
 This directory now follows the Layer + Stage framework (layers: universal/project/feature/component; stages: request_gathering → research → instructions → planning → design → development → testing → criticism → fixing → current_product → archives). Each layer has `layer_<N>_01_ai_manager_system/`, `layer_<N>_02_manager_handoff_documents/layer_<N>_00_to_universal|layer_<N>_01_to_specific/`, sub-layers under `layer_<N>_0X_sub_layers/sub_layer_<N>_XX_*`, and stages under `layer_<N>_99_stages/stage_<N>_XX_*` (each with `hand_off_documents/` and `ai_agent_system/`). Legacy `trickle_down_*` references remain below for historical context; prefer the layer paths for new work.

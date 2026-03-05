@@ -1,3 +1,8 @@
+---
+resource_id: "75565c54-9c9f-4bd1-86dd-438b05b867fd"
+resource_type: "document"
+resource_name: "database_administration"
+---
 # Database Administration Tools
 
 - **Source Prompt**: Existing implementation analysis (2025-10-15)

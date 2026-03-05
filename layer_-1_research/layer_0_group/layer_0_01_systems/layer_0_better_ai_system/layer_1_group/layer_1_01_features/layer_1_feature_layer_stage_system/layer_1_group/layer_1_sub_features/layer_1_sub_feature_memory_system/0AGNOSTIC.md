@@ -1,3 +1,9 @@
+---
+resource_id: "8c9929f8-f045-46a1-9cd9-c8a97301d965"
+resource_type: "agnostic
+document"
+resource_name: "0AGNOSTIC"
+---
 # 0AGNOSTIC.md - layer_1_sub_feature_memory_system
 
 # ═══ STATIC CONTEXT (always loaded) ═══

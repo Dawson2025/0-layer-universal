@@ -1,3 +1,8 @@
+---
+resource_id: "adfb2076-7522-4ef5-a2a6-b040885be7c0"
+resource_type: "output"
+resource_name: "test_design_03_propagation_chain"
+---
 # Test Design: 03 Propagation Chain Architecture
 
 **Validates**: `stage_2_04_design/outputs/by_topic/03_propagation_chain_architecture.md`

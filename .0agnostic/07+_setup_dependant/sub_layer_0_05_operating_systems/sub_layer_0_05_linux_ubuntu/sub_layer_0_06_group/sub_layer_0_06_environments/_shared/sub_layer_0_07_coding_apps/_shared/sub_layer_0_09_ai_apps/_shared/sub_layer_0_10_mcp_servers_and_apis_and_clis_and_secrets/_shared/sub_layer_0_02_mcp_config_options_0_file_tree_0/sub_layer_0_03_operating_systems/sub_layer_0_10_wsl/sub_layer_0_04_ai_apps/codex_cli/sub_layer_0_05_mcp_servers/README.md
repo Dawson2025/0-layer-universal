@@ -1,3 +1,9 @@
+---
+resource_id: "39a60096-debc-41ef-b883-a44d5eb6cff8"
+resource_type: "readme
+document"
+resource_name: "README"
+---
 # MCP Servers (Codex CLI on WSL)
 
 This folder mirrors the top-level `0.05_mcp_servers/` list, but is scoped to **Codex CLI on WSL/WSLg**.

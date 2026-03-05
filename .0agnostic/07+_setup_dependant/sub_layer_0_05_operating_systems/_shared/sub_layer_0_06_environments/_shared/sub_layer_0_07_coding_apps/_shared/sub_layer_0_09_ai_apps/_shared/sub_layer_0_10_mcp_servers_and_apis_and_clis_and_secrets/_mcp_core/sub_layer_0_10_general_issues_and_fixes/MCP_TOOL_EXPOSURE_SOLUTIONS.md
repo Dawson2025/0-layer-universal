@@ -1,3 +1,8 @@
+---
+resource_id: "be26cb06-0bbc-432a-b6e3-857a45b9d467"
+resource_type: "document"
+resource_name: "MCP_TOOL_EXPOSURE_SOLUTIONS"
+---
 # MCP Tool Exposure Solutions and Workarounds
 
 **Date**: 2025-12-05  

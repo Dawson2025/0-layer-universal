@@ -1,4 +1,7 @@
 #!/bin/bash
+# resource_id: "913f8ad8-7c4f-4236-a3cf-e1758c2e5adc"
+# resource_type: "script"
+# resource_name: "create-sub-layer-entity"
 # create-sub-layer-entity.sh
 # Usage: create-sub-layer-entity.sh <entity_dir> <layer_num>
 # Creates canonical entity structure for a sub-layer entity per entity_structure.md

@@ -1,3 +1,9 @@
+---
+resource_id: "e25f7508-e279-4eb4-9f50-1b4879513ee9"
+resource_type: "readme
+output"
+resource_name: "README"
+---
 # Need: Research Version
 
 **Branch**: [Research/Production Lifecycle](../README.md)

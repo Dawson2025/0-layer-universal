@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
+# resource_id: "63523495-02c3-4c40-b51e-a10a7da94738"
+# resource_type: "script"
+# resource_name: "check-codex-setup.sync-conflict-20260126-035815-IF2WOGZ"
 set -euo pipefail
 
 export NVM_DIR="$HOME/.nvm"

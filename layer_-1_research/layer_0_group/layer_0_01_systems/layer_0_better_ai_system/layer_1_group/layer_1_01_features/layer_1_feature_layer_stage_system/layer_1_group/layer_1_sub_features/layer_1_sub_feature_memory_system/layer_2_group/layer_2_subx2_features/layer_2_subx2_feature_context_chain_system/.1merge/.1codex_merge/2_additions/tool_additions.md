@@ -1,3 +1,8 @@
+---
+resource_id: "4cf68151-106a-4590-85e4-fcd6684e53dd"
+resource_type: "document"
+resource_name: "tool_additions"
+---
 ## Codex Discovery Triggers
 
 When requests mention context-chain operations, load these next:

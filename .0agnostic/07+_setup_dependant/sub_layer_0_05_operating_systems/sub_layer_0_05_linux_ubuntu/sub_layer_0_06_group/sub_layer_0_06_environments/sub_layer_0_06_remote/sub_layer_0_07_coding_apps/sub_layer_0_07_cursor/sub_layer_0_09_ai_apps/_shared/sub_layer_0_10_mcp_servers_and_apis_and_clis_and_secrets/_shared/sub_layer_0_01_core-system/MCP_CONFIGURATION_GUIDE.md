@@ -1,3 +1,8 @@
+---
+resource_id: "ff419b3f-3b59-4951-89c3-d917be5b6780"
+resource_type: "document"
+resource_name: "MCP_CONFIGURATION_GUIDE"
+---
 # MCP Configuration Guide - Universal Tools
 
 ## Overview

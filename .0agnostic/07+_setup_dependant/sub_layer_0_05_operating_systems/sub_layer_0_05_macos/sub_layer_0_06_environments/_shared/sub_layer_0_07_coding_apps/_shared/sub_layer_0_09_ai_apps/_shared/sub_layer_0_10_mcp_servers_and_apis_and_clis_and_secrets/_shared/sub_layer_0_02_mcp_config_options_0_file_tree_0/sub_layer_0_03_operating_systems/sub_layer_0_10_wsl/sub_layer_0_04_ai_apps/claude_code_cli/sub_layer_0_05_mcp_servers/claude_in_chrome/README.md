@@ -1,3 +1,9 @@
+---
+resource_id: "646b5f50-8aba-4a92-b888-35f446a44ad4"
+resource_type: "readme
+document"
+resource_name: "README"
+---
 # Claude in Chrome Extension Integration
 
 This directory contains setup and configuration for integrating the **Claude in Chrome** browser extension with **Claude Code CLI** running in WSL.

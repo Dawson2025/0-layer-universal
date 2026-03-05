@@ -1,3 +1,9 @@
+---
+resource_id: "df7701e3-2cfb-44d7-8a07-911efe7f9fbe"
+resource_type: "readme
+document"
+resource_name: "README"
+---
 # browser-mcp (cursor_agent on wsl)
 
 ## Canonical docs

@@ -1,3 +1,9 @@
+---
+resource_id: "2283eae2-f3c2-4ada-8009-668d53ca1e19"
+resource_type: "agnostic
+document"
+resource_name: "0AGNOSTIC"
+---
 # memory_system — Stage 08: criticism
 
 ## Identity

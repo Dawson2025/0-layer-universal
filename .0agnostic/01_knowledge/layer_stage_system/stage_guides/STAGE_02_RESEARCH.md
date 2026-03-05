@@ -1,3 +1,8 @@
+---
+resource_id: "c4f1589d-a70e-470a-b948-441326249d91"
+resource_type: "knowledge"
+resource_name: "STAGE_02_RESEARCH"
+---
 # Stage 02: Research — Universal Guide
 
 ## Purpose

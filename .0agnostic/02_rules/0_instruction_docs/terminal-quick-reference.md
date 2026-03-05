@@ -1,3 +1,8 @@
+---
+resource_id: "f2dda20e-8da8-476c-b9c1-851487a7dd6f"
+resource_type: "rule"
+resource_name: "terminal-quick-reference"
+---
 # Terminal Tool Quick Reference
 *Immediate Reference for AI Agents*
 

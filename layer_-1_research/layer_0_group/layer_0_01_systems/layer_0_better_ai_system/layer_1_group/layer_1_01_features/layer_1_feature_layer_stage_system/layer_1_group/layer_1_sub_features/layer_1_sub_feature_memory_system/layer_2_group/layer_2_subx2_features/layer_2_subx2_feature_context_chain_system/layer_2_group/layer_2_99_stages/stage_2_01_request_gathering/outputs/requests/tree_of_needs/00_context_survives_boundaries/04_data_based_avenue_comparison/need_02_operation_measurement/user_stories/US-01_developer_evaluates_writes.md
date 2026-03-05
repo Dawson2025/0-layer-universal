@@ -1,3 +1,8 @@
+---
+resource_id: "895c946d-eecb-4984-a798-15086b99ea82"
+resource_type: "output"
+resource_name: "US-01_developer_evaluates_writes"
+---
 # US-01: Developer evaluates write performance
 
 **Need**: [Operation Measurement](../README.md)

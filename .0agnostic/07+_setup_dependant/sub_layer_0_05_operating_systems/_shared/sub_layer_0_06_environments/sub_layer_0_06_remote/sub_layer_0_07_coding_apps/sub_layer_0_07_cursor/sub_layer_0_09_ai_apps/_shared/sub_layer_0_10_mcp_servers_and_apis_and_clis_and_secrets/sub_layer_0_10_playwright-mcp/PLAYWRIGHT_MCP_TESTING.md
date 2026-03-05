@@ -1,3 +1,8 @@
+---
+resource_id: "36d70ea9-c90d-49d2-82ce-7f9ea6b9a123"
+resource_type: "document"
+resource_name: "PLAYWRIGHT_MCP_TESTING"
+---
 # Testing Playwright MCP Server - Cursor IDE
 
 **Date**: 2025-12-02  

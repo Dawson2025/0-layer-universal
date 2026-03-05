@@ -1,3 +1,8 @@
+---
+resource_id: "47e69090-7a66-49df-8804-cb30441f06f5"
+resource_type: "handoff"
+resource_name: "layer_1.stage_04_design.stage_report"
+---
 # Stage Report: 04_design
 
 ## Status

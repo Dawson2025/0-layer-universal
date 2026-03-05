@@ -1,3 +1,8 @@
+---
+resource_id: "14988064-1fb8-442d-b8ed-8b5a23c581c7"
+resource_type: "document"
+resource_name: "context_gathering_rules"
+---
 # Context Gathering Rules
 
 ## Overview

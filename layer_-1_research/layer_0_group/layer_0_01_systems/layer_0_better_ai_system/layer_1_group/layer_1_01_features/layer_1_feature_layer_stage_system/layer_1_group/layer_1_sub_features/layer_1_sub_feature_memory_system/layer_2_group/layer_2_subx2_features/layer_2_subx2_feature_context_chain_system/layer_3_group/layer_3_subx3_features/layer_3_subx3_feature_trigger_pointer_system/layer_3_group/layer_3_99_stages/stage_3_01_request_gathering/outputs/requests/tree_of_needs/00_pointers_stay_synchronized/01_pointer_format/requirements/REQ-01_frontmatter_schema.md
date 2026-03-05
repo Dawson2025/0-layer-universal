@@ -1,3 +1,8 @@
+---
+resource_id: "8350765d-5fec-444f-b3fd-a3f5afaa1b29"
+resource_type: "output"
+resource_name: "REQ-01_frontmatter_schema"
+---
 # REQ-01: Frontmatter Schema
 
 **Need**: [Pointer Format](../README.md)

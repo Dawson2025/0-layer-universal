@@ -1,3 +1,8 @@
+---
+resource_id: "46856c54-d6ac-428d-ab64-6abb559c8ecb"
+resource_type: "document"
+resource_name: "SKILLS"
+---
 # Skills Index
 
 ## Purpose

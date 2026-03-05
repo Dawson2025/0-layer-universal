@@ -1,3 +1,9 @@
+---
+resource_id: "2579ad15-52f5-4bb6-af10-55a7ad333692"
+resource_type: "readme
+output"
+resource_name: "README"
+---
 # Design Decisions Overview — Organization Sub-Feature
 
 **Entity**: Organization (layer_1_sub_feature_organization)

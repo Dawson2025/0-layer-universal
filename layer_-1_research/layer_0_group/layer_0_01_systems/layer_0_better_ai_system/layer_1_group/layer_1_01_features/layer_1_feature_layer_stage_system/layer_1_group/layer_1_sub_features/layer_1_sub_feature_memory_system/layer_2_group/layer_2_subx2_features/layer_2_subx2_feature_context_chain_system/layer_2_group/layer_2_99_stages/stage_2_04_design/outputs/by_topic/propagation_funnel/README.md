@@ -1,3 +1,9 @@
+---
+resource_id: "c0671b6e-717b-4ee3-8d4d-d2ba7034027e"
+resource_type: "readme
+output"
+resource_name: "README"
+---
 # Propagation Funnel: Context Flow Architecture
 
 **Date**: 2026-02-27

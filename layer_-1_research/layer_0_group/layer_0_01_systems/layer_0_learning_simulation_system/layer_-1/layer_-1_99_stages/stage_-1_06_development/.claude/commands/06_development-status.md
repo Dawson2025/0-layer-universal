@@ -1,4 +1,9 @@
 ---
+resource_id: "bd627131-86b0-42be-9860-7895fed520de"
+resource_type: "document"
+resource_name: "06_development-status"
+---
+---
 description: Show current status of 06_development stage
 argument-hint: [--verbose]
 ---

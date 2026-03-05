@@ -1,3 +1,8 @@
+---
+resource_id: "977eae42-2693-452b-81be-b77d4a4840cc"
+resource_type: "document"
+resource_name: "REALISTIC_vs_DIRECT_NAVIGATION"
+---
 # Realistic vs Direct Navigation Testing
 
 ## Overview

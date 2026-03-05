@@ -1,3 +1,9 @@
+---
+resource_id: "7b688e22-76b2-484a-a683-b53d50a64f54"
+resource_type: "readme
+output"
+resource_name: "README"
+---
 # Requirements — General Pattern
 
 | ID | Name | Priority |

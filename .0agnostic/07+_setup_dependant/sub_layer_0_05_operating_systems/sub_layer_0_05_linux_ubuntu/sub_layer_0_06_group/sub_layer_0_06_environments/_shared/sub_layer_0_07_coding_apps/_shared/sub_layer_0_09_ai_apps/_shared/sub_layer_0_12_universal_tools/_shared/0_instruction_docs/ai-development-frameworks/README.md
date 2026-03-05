@@ -1,3 +1,9 @@
+---
+resource_id: "b18aeeb1-67cf-4679-b9a2-08769955ff07"
+resource_type: "readme
+document"
+resource_name: "README"
+---
 # AI Development Frameworks
 *Comprehensive Documentation for Spec-Driven and Agentic Development Workflows*
 

@@ -1,3 +1,9 @@
+---
+resource_id: "9a8ae068-40bb-4ba3-a184-c5c95189b334"
+resource_type: "readme
+output"
+resource_name: "README"
+---
 # Communication Channels -- User Stories Index
 
 **Need**: [Communication Channels](../README.md)

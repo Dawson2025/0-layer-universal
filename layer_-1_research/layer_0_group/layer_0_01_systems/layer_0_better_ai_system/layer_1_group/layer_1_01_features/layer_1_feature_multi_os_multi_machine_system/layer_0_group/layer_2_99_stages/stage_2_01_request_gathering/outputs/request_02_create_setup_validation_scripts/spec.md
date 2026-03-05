@@ -1,3 +1,8 @@
+---
+resource_id: "ee2b54be-017c-4ce7-b819-5b55baed5cd6"
+resource_type: "output"
+resource_name: "spec"
+---
 
 # Request 02: Create Setup Validation Scripts
 

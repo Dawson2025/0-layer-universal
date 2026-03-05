@@ -1,3 +1,9 @@
+---
+resource_id: "82884573-a1e6-453a-ae32-41b089c1a978"
+resource_type: "readme
+document"
+resource_name: "README"
+---
 # Firebase Instance Tools
 *Project Tool: Firebase-Specific Implementation of Meta-Intelligent Orchestration*
 

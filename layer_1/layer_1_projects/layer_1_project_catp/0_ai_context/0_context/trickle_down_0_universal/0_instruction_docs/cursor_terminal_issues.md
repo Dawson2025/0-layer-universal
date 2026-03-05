@@ -1,3 +1,8 @@
+---
+resource_id: "cc3dda46-183a-41b7-af12-9d62b4b18dad"
+resource_type: "document"
+resource_name: "cursor_terminal_issues"
+---
 # Cursor Terminal Issues - AI Agent Guidelines
 
 ## Overview

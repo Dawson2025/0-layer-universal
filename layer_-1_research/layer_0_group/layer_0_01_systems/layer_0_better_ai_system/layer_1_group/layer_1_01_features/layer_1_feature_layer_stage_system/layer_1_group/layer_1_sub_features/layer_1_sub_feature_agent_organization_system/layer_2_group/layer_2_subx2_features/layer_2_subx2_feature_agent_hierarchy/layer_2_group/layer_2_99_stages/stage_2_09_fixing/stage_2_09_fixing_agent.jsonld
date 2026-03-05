@@ -1,1 +1,10 @@
-{"@context":{"@vocab":"https://layer-stage.dev/schema#"},"@id":"stage_2_09_fixing_agent","@type":"StageAgent","name":"Stage 2.09_fixing","layer":2}
+{
+  "file_id": "4f47f02e-0cf2-4fc4-aada-8ba598ed9fd4",
+  "@context": {
+    "@vocab": "https://layer-stage.dev/schema#"
+  },
+  "@id": "stage_2_09_fixing_agent",
+  "@type": "StageAgent",
+  "name": "Stage 2.09_fixing",
+  "layer": 2
+}

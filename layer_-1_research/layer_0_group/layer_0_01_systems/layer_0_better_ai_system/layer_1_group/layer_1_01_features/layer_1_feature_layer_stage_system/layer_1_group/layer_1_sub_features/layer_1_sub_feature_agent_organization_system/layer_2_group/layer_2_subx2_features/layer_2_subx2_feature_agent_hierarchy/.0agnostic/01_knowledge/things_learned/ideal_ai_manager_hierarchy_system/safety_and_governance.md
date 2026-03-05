@@ -1,3 +1,8 @@
+---
+resource_id: "665c2898-1185-4026-9ee7-8cd980aaf199"
+resource_type: "knowledge"
+resource_name: "safety_and_governance"
+---
 ## Safety, Permissions, and Governance
 
 This document defines security boundaries, permission models, and governance policies for the AI manager hierarchy system.

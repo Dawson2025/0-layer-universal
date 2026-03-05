@@ -1,3 +1,8 @@
+---
+resource_id: "94639b72-2326-47e7-a427-b9c168b0c013"
+resource_type: "output"
+resource_name: "04_CLAUDE_FILE_PATH_RULES"
+---
 # Claude Code CLI — CLAUDE.md File Path Rules and Discovery
 
 **Date**: 2026-02-28

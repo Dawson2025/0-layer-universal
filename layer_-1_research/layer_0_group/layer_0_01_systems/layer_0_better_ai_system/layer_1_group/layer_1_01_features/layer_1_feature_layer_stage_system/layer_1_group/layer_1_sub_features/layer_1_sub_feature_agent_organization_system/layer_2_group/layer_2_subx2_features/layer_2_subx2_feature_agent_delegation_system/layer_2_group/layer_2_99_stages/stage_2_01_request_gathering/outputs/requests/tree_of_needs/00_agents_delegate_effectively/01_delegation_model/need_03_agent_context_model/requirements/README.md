@@ -1,3 +1,9 @@
+---
+resource_id: "2463fb2f-82bb-4895-89da-92330174c706"
+resource_type: "readme
+output"
+resource_name: "README"
+---
 # Agent Context Model -- Requirements Index
 
 **Need**: [Agent Context Model](../README.md)

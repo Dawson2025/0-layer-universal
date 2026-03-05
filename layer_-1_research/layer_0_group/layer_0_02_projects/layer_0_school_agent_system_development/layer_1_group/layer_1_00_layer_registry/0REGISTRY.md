@@ -1,3 +1,8 @@
+---
+resource_id: "967f3650-7c33-47cf-be0c-45ab4cbe880c"
+resource_type: "document"
+resource_name: "0REGISTRY"
+---
 # Layer 1 Registry — School Agent System Projects
 
 ## Purpose

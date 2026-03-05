@@ -1,3 +1,8 @@
+---
+resource_id: "5768d4b2-2c0f-4326-be31-dd7b7790ec09"
+resource_type: "output"
+resource_name: "test_results_summary"
+---
 # Test Results Summary
 
 **Date**: 2026-02-25 19:09:35

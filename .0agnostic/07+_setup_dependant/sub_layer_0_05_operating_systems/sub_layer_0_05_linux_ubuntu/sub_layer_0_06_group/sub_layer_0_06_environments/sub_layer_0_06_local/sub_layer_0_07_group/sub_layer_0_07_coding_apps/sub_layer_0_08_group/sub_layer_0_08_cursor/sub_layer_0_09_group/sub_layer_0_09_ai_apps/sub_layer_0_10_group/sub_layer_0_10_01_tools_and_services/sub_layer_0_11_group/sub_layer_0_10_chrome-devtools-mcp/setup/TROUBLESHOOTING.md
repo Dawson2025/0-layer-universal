@@ -1,3 +1,8 @@
+---
+resource_id: "17ad9741-c425-49be-91fb-dddcb04f172a"
+resource_type: "document"
+resource_name: "TROUBLESHOOTING"
+---
 # Chrome DevTools MCP Troubleshooting Guide
 
 This guide covers common issues when using the Chrome DevTools MCP server on Linux/Ubuntu with Claude Code CLI.

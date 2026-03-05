@@ -1,3 +1,8 @@
+---
+resource_id: "08db2545-49f4-4de4-89ec-17898ce246e5"
+resource_type: "document"
+resource_name: "MASTER_KNOWLEDGE_MAP"
+---
 # Master Software Engineering Knowledge Map
 *Complete Exhaustive Knowledge Coverage from Pre-Creation to Executive Strategy*
 

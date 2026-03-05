@@ -1,3 +1,8 @@
+---
+resource_id: "fc3d1c47-fa08-44e8-9ce2-1e37bf9cadc9"
+resource_type: "handoff"
+resource_name: "manager_instructions"
+---
 # Manager Instructions for stage_1_08_criticism
 
 ## From

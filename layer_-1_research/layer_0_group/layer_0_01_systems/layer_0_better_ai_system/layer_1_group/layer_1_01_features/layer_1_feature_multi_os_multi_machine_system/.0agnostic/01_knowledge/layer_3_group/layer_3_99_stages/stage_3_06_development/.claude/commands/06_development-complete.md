@@ -1,4 +1,9 @@
 ---
+resource_id: "c30c5ed2-0220-45b6-bd97-62ce9d0d7b4c"
+resource_type: "knowledge"
+resource_name: "06_development-complete"
+---
+---
 description: Mark 06_development stage as complete and prepare handoff
 argument-hint: [--notes "completion notes"]
 ---

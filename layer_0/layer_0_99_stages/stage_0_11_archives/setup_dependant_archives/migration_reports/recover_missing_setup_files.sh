@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
+# resource_id: "aedf65b6-3a86-49ad-90a9-c497e62faf9d"
+# resource_type: "script"
+# resource_name: "recover_missing_setup_files"
 set -euo pipefail
 
 usage() {

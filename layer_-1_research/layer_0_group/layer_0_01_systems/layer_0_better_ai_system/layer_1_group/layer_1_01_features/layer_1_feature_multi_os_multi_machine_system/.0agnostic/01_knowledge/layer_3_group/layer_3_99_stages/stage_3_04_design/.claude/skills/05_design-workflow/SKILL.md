@@ -1,4 +1,10 @@
 ---
+resource_id: "c62d101d-c742-4657-a6f6-1e3c5a22f7a2"
+resource_type: "skill
+knowledge"
+resource_name: "SKILL"
+---
+---
 name: 05_design-workflow
 description: Workflow skill for Technical design and architecture. Activated when working on 05_design tasks.
 version: 1.0.0

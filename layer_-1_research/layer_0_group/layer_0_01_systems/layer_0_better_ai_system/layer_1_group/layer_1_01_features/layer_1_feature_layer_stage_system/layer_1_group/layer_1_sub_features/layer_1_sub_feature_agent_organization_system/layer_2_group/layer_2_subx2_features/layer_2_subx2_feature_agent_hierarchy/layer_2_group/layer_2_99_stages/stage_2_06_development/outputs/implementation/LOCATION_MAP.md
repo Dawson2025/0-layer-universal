@@ -1,3 +1,8 @@
+---
+resource_id: "ef7a61e9-fffd-46eb-a01c-a8ea10c461c0"
+resource_type: "output"
+resource_name: "LOCATION_MAP"
+---
 # AI Manager Hierarchy System - Location Map
 
 **Purpose**: Quick reference for finding specific types of documentation

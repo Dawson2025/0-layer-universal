@@ -1,3 +1,8 @@
+---
+resource_id: "8229b93c-1a62-4ae8-b385-9a11feb6c8e2"
+resource_type: "document"
+resource_name: "ADMIN_FEATURES_ANALYSIS_JAN_24_2025"
+---
 # Admin Features Analysis - January 24, 2025
 
 ## Executive Summary

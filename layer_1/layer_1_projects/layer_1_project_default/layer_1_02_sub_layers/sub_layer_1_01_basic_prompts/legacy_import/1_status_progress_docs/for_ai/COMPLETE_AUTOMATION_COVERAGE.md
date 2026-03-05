@@ -1,3 +1,8 @@
+---
+resource_id: "a40c6428-97e5-4200-9324-664815dfbbdf"
+resource_type: "document"
+resource_name: "COMPLETE_AUTOMATION_COVERAGE"
+---
 # Complete Automation Coverage: All 67 User Stories
 
 **Last Updated**: October 17, 2025

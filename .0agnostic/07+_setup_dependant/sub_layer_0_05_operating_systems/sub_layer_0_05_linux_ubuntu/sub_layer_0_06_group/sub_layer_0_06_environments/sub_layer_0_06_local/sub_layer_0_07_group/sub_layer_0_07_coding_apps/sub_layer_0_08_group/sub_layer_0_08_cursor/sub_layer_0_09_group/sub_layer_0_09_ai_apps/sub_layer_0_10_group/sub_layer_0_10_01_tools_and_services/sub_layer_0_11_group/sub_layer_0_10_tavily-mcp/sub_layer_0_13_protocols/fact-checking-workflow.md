@@ -1,3 +1,8 @@
+---
+resource_id: "8eb98add-22c4-47c3-8ed3-1ff8759c7b0c"
+resource_type: "document"
+resource_name: "fact-checking-workflow"
+---
 # Fact-Checking Workflow
 
 ## Overview

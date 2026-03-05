@@ -1,3 +1,8 @@
+---
+resource_id: "6408c638-d7f4-4c28-851e-30802696cfdf"
+resource_type: "output"
+resource_name: "phase_1_summary"
+---
 # Phase 1: Navigation and Overview Integration - Summary
 
 **Phase**: 1 of 7

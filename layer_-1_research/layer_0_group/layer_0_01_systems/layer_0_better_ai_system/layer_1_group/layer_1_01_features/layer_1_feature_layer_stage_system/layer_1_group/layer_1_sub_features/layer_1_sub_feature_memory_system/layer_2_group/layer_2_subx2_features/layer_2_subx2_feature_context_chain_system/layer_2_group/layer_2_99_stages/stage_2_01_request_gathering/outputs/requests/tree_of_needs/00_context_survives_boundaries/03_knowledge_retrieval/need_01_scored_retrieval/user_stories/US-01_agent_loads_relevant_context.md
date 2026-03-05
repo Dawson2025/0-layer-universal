@@ -1,3 +1,8 @@
+---
+resource_id: "927c3637-3c9e-4f9a-8c2c-55515c22398f"
+resource_type: "output"
+resource_name: "US-01_agent_loads_relevant_context"
+---
 # US-01: Agent loads most relevant context on entry
 
 **Need**: [Scored Context Retrieval](../README.md)

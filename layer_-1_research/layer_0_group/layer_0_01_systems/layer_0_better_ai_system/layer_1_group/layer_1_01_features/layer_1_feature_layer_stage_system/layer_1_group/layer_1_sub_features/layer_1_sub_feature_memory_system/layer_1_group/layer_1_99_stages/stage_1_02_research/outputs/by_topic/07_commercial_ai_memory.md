@@ -1,3 +1,8 @@
+---
+resource_id: "a681bfd2-e7cd-492e-b2d4-df18e32aad03"
+resource_type: "output"
+resource_name: "07_commercial_ai_memory"
+---
 # Memory Features in Commercial AI Platforms
 
 ## Overview

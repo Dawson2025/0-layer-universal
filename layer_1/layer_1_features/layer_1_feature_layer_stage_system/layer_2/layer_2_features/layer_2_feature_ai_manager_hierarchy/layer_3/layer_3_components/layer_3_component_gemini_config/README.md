@@ -1,3 +1,9 @@
+---
+resource_id: "b324f151-15d5-4e51-869a-3ef6c60c488c"
+resource_type: "readme
+document"
+resource_name: "README"
+---
 # Gemini Config Component
 
 ## Purpose

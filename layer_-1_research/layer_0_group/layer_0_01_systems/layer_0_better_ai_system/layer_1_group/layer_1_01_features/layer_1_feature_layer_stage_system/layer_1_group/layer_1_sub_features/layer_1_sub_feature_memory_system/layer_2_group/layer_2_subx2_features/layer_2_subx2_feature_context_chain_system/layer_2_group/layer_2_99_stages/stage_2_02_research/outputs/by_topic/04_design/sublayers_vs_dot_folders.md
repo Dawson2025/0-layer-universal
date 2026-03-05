@@ -1,3 +1,8 @@
+---
+resource_id: "51d0055c-46ef-45b2-9edd-49e0b05f50e2"
+resource_type: "output"
+resource_name: "sublayers_vs_dot_folders"
+---
 # Design Research — Sub-Layers vs. Dot-Folder-Centric Context Organization
 
 ## Purpose

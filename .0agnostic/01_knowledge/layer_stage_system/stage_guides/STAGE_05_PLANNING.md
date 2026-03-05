@@ -1,3 +1,8 @@
+---
+resource_id: "345d0c7d-010f-49b9-b0a8-dc1eca138ce4"
+resource_type: "knowledge"
+resource_name: "STAGE_05_PLANNING"
+---
 # Stage 05: Planning — Universal Guide
 
 ## Purpose

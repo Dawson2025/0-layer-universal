@@ -1,3 +1,9 @@
+---
+resource_id: "f2481005-62a5-4f9d-a2c2-d54155129b0c"
+resource_type: "readme
+output"
+resource_name: "README"
+---
 # Branch: Memory Integration
 
 **Parent**: [00_agents_delegate_effectively](../)

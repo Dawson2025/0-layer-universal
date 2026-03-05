@@ -1,3 +1,8 @@
+---
+resource_id: "e30fe003-948d-45e7-a563-bd564f70654c"
+resource_type: "document"
+resource_name: "INTEGRATION_TEST_QUALITY_ASSESSMENT"
+---
 # Integration Test Quality Assessment
 **Date:** October 21, 2025  
 **Question:** "Do we have good integration tests?"

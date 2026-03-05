@@ -1,3 +1,8 @@
+---
+resource_id: "028ce50d-b8ee-4047-b290-a9bed50b694b"
+resource_type: "document"
+resource_name: "ubuntu-antigravity-testing-notes.sync-conflict-20260126-102106-IF2WOGZ"
+---
 # Ubuntu Antigravity Setup - Testing Notes and Findings
 
 **Date**: November 25, 2025  

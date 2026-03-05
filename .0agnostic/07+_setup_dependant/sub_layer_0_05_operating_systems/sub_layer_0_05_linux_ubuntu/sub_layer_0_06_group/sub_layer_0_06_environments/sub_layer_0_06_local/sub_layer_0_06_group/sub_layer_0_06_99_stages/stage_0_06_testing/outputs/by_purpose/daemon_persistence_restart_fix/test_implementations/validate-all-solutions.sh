@@ -1,4 +1,7 @@
 #!/bin/bash
+# resource_id: "f58f9f04-dec2-4b6d-92ba-20109acd0284"
+# resource_type: "script"
+# resource_name: "validate-all-solutions"
 # Comprehensive validation script - run this AFTER restart to test all solutions
 # Run once per solution (after setting up and restarting for each)
 

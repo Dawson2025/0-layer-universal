@@ -1,3 +1,8 @@
+---
+resource_id: "18412aaf-3281-4530-a978-bb2d022d9a53"
+resource_type: "document"
+resource_name: "ARCHITECTURE"
+---
 # Context Agents Architecture
 
 **Purpose**: Document how context agents execute and persist state, including how we extend AALang's base design.

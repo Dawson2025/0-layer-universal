@@ -1,3 +1,8 @@
+---
+resource_id: "4b10f180-73a0-4eda-8991-3f3edbef81a0"
+resource_type: "output"
+resource_name: "REQ-02_stages_per_feature"
+---
 # Stages per Feature
 
 **Need**: [System Features](../README.md)

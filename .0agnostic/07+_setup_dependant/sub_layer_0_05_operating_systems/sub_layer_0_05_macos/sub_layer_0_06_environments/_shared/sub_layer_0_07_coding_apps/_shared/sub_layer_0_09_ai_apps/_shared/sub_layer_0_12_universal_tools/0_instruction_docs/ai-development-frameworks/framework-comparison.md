@@ -1,3 +1,8 @@
+---
+resource_id: "25102e07-f9a7-458a-9509-d4633a04de51"
+resource_type: "document"
+resource_name: "framework-comparison"
+---
 # Framework Comparison Guide
 *Choosing Between Spec Kit and BMAD Method (or Using Both)*
 

@@ -1,3 +1,8 @@
+---
+resource_id: "3969da28-3618-446b-8ae1-45c616f7a8ba"
+resource_type: "output"
+resource_name: "REQ-01_graph_based_validation"
+---
 # Graph-Based Validation
 
 **Need**: [Chain Validation Enhancement](../README.md)

@@ -1,4 +1,7 @@
 #!/bin/bash
+# resource_id: "bcac347f-f4e3-4047-8171-ed9a20022624"
+# resource_type: "script"
+# resource_name: "create-stage-indexes"
 #
 # create-stage-indexes.sh — Create stage_index.json for all entities with stages
 #

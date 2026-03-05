@@ -1,3 +1,8 @@
+---
+resource_id: "e53d02d2-ae1a-4a71-a1fa-74b5057e9023"
+resource_type: "output"
+resource_name: "audio_architecture_overview"
+---
 # Audio Architecture Overview
 
 ## Two Domains, One Engine Layer

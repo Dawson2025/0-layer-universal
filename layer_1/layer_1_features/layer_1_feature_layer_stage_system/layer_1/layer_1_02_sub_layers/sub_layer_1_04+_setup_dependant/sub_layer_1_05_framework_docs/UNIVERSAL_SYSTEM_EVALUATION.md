@@ -1,3 +1,8 @@
+---
+resource_id: "0aebad8e-cd95-4685-b382-391ca65de7d4"
+resource_type: "document"
+resource_name: "UNIVERSAL_SYSTEM_EVALUATION"
+---
 # Universal System Evaluation: Support for Custom Feature Patterns
 
 **Purpose:** Evaluate how well the universal init prompt supports creating custom feature organizations like workflow features.

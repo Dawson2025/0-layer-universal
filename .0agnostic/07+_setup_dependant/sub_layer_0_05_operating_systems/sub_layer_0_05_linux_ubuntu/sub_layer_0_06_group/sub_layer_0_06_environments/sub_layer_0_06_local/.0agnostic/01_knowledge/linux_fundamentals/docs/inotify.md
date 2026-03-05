@@ -1,3 +1,8 @@
+---
+resource_id: "4b233357-85d0-4ddf-bd11-3ad4ffac47e7"
+resource_type: "knowledge"
+resource_name: "inotify"
+---
 # Inotify - Linux File Watching System
 
 ## What is Inotify?

@@ -1,3 +1,8 @@
+---
+resource_id: "ee4b6c15-b10a-4797-b784-8e76cd196283"
+resource_type: "knowledge"
+resource_name: "architecture"
+---
 ## Architecture, Tools, and OS Variants (Detailed)
 
 This document describes the architecture, tool roles, and OS-aware patterns for your ideal AI manager hierarchy system, as distilled from `../../../chat_history/ai-manager-hierarchy-system-research.md`.

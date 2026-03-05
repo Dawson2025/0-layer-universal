@@ -1,3 +1,9 @@
+---
+resource_id: "4a2b0457-0f72-4e86-9a72-8c56adfc72da"
+resource_type: "readme
+knowledge"
+resource_name: "README"
+---
 # System Management Stages
 
 **Purpose:** Track workflow stages for changes to the Layer + Stage system itself.

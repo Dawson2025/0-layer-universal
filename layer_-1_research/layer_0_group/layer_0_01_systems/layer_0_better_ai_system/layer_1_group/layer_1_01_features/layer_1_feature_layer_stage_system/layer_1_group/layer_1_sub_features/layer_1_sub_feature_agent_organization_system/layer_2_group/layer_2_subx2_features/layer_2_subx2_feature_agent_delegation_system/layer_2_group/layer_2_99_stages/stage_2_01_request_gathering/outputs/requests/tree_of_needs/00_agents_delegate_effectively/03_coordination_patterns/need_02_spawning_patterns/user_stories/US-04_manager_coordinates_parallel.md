@@ -1,3 +1,8 @@
+---
+resource_id: "af79ac04-f81a-483d-8929-d91812689060"
+resource_type: "output"
+resource_name: "US-04_manager_coordinates_parallel"
+---
 # US-4: Manager coordinates parallel work
 
 **Need**: [Spawning Patterns](../README.md)

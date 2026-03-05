@@ -1,3 +1,8 @@
+---
+resource_id: "d0a96189-7091-4798-953c-7c12cd017f0d"
+resource_type: "document"
+resource_name: "README.sync-conflict-20260126-035815-IF2WOGZ"
+---
 # Current Product - System Management
 
 **Purpose:** The current deliverables of system management work.

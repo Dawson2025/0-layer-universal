@@ -1,3 +1,8 @@
+---
+resource_id: "376465c5-ed51-4037-a163-4394f1927524"
+resource_type: "document"
+resource_name: "sudo_password_management"
+---
 # Sudo Password Management - CRITICAL
 
 ## 🚨 **MANDATORY: Sudo Password Access for AI Agents**

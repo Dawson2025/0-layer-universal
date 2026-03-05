@@ -1,4 +1,7 @@
 #!/bin/bash
+# resource_id: "d565c171-ffc5-400b-9fcf-343c2a99317b"
+# resource_type: "script"
+# resource_name: "setup_codex"
 
 # Setup script for OpenAI Codex CLI in Cursor environment
 # This script ensures Node.js and Codex CLI are available in the current session

@@ -1,3 +1,8 @@
+---
+resource_id: "767f8ab9-f6b8-4b01-88dc-05f13f5856c5"
+resource_type: "output"
+resource_name: "US-01_stage_agent_writes_report"
+---
 # US-1: Stage agent writes a report before exiting
 
 **Need**: [Stage Reports](../README.md)

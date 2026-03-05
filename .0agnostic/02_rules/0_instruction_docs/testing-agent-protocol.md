@@ -1,3 +1,8 @@
+---
+resource_id: "fb8b3f6f-94dd-486f-b17e-4c1072cd437c"
+resource_type: "rule"
+resource_name: "testing-agent-protocol"
+---
 # Testing Agent Protocol
 *Universal Protocol for Dedicated Testing Agents*
 

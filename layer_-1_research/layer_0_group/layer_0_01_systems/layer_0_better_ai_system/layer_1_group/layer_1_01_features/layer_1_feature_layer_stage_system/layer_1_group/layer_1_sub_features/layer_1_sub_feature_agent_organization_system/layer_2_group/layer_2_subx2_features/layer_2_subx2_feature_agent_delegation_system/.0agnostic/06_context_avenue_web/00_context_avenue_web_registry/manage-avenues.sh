@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
+# resource_id: "4490cccc-96ec-4186-92e4-c3503cad4633"
+# resource_type: "script"
+# resource_name: "manage-avenues"
 # manage-avenues.sh — CRUD operations for context avenue web directories
 #
 # Usage:

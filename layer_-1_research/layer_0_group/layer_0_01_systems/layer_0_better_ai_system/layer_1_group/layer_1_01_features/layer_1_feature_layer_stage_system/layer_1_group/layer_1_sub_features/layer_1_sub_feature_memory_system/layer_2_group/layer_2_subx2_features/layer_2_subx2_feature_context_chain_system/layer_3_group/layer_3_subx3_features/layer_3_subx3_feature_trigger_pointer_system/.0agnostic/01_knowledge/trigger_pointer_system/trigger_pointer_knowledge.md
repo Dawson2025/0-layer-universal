@@ -1,3 +1,8 @@
+---
+resource_id: "89891764-41a7-4708-81ed-cc72e3b094ac"
+resource_type: "knowledge"
+resource_name: "trigger_pointer_knowledge"
+---
 # Trigger Pointer System — Knowledge
 
 ## Overview

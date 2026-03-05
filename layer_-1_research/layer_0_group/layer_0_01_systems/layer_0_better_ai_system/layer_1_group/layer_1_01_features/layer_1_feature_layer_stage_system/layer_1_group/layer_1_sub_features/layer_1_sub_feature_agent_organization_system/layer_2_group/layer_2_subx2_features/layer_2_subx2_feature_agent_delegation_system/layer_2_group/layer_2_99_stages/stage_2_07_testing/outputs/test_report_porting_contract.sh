@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
+# resource_id: "2dfed501-c014-48bb-93d2-a41461352989"
+# resource_type: "script"
+# resource_name: "test_report_porting_contract"
 # test_report_porting_contract.sh — Validate stage report + handoff contract for active stages
 
 set -uo pipefail

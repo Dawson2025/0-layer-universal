@@ -1,3 +1,8 @@
+---
+resource_id: "fffdc48b-066e-41a0-bd0b-7173d4ed4de1"
+resource_type: "output"
+resource_name: "REQ-01_default_is_production"
+---
 # Default is Production
 
 **Need**: [Version Coexistence](../README.md)

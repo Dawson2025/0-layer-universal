@@ -1,3 +1,8 @@
+---
+resource_id: "49ea2e74-e3a7-432a-baf7-77084368f51a"
+resource_type: "document"
+resource_name: "app_product_overview"
+---
 # App Product Overview
 
 - **Source Prompt**: Live session directive (Codex CLI, feature overview request)

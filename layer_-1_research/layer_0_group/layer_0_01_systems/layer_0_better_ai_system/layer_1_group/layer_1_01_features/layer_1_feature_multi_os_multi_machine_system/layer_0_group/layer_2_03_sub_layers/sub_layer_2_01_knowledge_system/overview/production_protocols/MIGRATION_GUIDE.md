@@ -1,3 +1,8 @@
+---
+resource_id: "719c2a1b-b045-49de-9c2c-5b7a635a8f10"
+resource_type: "document"
+resource_name: "MIGRATION_GUIDE"
+---
 # AI Manager Hierarchy - Migration Guide
 
 **Purpose**: Guide for retrofitting existing projects with AI Manager Hierarchy patterns

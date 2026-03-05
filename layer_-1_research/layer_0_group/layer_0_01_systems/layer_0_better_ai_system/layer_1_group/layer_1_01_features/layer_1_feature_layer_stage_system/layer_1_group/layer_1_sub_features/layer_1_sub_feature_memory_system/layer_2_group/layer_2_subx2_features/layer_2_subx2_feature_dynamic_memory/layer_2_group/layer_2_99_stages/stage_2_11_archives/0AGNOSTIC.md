@@ -1,3 +1,9 @@
+---
+resource_id: "efdbdca0-7a4f-4812-98ac-d3e62c694057"
+resource_type: "agnostic
+document"
+resource_name: "0AGNOSTIC"
+---
 # dynamic_memory — Stage 11: archives
 
 ## Identity

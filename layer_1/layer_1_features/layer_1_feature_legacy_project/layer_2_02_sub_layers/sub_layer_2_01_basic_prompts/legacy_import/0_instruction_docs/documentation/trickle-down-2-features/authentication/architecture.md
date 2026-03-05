@@ -1,3 +1,8 @@
+---
+resource_id: "d122c711-d3e6-4360-9771-ef84017de9d3"
+resource_type: "document"
+resource_name: "architecture"
+---
 # Authentication System Architecture
 *Trickle-Down Level 2: Feature-Level Implementation*
 

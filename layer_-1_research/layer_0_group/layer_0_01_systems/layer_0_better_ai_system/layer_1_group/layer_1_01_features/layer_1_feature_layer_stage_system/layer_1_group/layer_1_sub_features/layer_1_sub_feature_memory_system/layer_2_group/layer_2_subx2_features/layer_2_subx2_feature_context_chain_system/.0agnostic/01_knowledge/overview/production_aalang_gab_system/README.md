@@ -1,3 +1,9 @@
+---
+resource_id: "41015f14-80d7-447f-8844-2d63911e114f"
+resource_type: "readme
+knowledge"
+resource_name: "README"
+---
 # AALang & GAB System - Knowledge Reference
 
 ## Overview

@@ -1,3 +1,8 @@
+---
+resource_id: "d3f7f34f-c21c-4248-af57-9cfab457e201"
+resource_type: "document"
+resource_name: "perplexity-extract"
+---
 # Avenue 05 Registration: perplexity-extract skill
 
 **Skill**: `/perplexity-extract`

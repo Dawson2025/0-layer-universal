@@ -1,3 +1,8 @@
+---
+resource_id: "d14668ab-e325-4a8b-b9a1-e3e2966cea1f"
+resource_type: "knowledge"
+resource_name: "stage_02_instructions"
+---
 # Stage 01: Instructions
 
 ## Purpose

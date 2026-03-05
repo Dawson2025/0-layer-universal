@@ -1,3 +1,8 @@
+---
+resource_id: "1f373fd2-184d-4761-96c3-9c5516edf43e"
+resource_type: "output"
+resource_name: "03_requirements"
+---
 # Requirements: What the Memory System Must Do
 
 ## Requirement Categories

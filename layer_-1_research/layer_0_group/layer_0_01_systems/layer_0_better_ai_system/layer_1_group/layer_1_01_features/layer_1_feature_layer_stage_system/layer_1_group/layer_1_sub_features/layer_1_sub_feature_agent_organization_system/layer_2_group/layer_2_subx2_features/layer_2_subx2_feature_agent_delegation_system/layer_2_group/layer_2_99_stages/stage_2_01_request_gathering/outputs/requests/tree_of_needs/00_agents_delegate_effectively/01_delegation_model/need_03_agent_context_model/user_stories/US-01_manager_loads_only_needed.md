@@ -1,3 +1,8 @@
+---
+resource_id: "9a25bd4c-698d-4727-86bb-39cfae1b8bd4"
+resource_type: "output"
+resource_name: "US-01_manager_loads_only_needed"
+---
 # US-1: Manager loads only what it needs
 
 **Need**: [Agent Context Model](../README.md)

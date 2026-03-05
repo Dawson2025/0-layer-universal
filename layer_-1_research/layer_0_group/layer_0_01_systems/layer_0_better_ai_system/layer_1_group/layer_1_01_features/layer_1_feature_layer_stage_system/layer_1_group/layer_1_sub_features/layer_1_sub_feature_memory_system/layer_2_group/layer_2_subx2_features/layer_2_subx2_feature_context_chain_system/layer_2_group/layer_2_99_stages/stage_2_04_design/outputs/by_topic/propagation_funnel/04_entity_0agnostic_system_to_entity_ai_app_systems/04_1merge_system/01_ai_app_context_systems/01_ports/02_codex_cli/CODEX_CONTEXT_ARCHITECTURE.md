@@ -1,3 +1,8 @@
+---
+resource_id: "36de1186-145d-4710-aaa2-f2f5badd56a7"
+resource_type: "output"
+resource_name: "CODEX_CONTEXT_ARCHITECTURE"
+---
 # OpenAI Codex CLI — Context Architecture & Porting System
 
 **Location**: `.codex/` (root of entity/project)

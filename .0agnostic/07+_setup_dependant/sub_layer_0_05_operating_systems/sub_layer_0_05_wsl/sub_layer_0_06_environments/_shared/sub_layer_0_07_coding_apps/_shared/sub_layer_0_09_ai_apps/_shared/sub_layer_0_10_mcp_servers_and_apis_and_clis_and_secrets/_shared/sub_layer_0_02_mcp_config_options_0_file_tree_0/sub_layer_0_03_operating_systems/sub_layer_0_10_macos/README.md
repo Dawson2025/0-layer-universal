@@ -1,3 +1,9 @@
+---
+resource_id: "6be8fafa-b321-43e1-829f-30d2543d6ca3"
+resource_type: "readme
+document"
+resource_name: "README"
+---
 # macOS MCP Notes
 
 ## Scope

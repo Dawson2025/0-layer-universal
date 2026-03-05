@@ -1,3 +1,8 @@
+---
+resource_id: "91c59563-2d88-4a6e-ae12-646b308ee3cb"
+resource_type: "knowledge"
+resource_name: "TRAVERSAL_GUIDE"
+---
 # System Traversal Guide
 
 ## Overview

@@ -1,3 +1,8 @@
+---
+resource_id: "58a4bc49-6751-40e8-97b2-ee2bbb06f6bd"
+resource_type: "knowledge"
+resource_name: "framework-status"
+---
 # Framework Status Command
 
 Show the current status of the Layer-Stage Framework development.

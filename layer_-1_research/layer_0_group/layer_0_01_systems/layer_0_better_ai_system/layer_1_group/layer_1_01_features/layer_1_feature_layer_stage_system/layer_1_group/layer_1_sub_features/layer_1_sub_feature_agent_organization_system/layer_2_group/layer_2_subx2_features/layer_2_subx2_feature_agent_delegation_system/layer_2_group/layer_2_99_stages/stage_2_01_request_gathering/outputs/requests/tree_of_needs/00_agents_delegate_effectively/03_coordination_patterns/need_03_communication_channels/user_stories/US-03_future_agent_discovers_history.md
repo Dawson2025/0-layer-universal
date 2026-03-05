@@ -1,3 +1,8 @@
+---
+resource_id: "e5f31053-6d06-48fb-9798-8fd052f8301e"
+resource_type: "output"
+resource_name: "US-03_future_agent_discovers_history"
+---
 # US-3: Future agent discovers session history
 
 **Need**: [Communication Channels](../README.md)

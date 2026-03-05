@@ -1,4 +1,9 @@
 ---
+resource_id: "0219ef88-af1e-4f3b-ba0c-9cbeaae945b8"
+resource_type: "knowledge"
+resource_name: "02_research-complete"
+---
+---
 description: Mark 02_research stage as complete and prepare handoff
 argument-hint: [--notes "completion notes"]
 ---

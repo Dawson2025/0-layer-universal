@@ -1,3 +1,8 @@
+---
+resource_id: "611ee15e-fcc3-4251-8329-7f7beff41c08"
+resource_type: "document"
+resource_name: "quick-reference"
+---
 # /init Quick Reference
 *For all AI Coding Agents*
 

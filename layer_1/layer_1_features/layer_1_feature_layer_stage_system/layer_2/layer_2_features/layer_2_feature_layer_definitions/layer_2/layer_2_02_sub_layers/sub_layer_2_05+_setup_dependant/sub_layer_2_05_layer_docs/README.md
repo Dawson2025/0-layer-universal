@@ -1,3 +1,9 @@
+---
+resource_id: "e187581b-b19f-43a1-ba6f-e9397e7e0485"
+resource_type: "readme
+document"
+resource_name: "README"
+---
 # Layer Documentation
 
 This directory contains the formal documentation for the Layer-Stage Framework's layer system.

@@ -1,3 +1,8 @@
+---
+resource_id: "83840c59-0c36-4c02-acb7-39433195e5ce"
+resource_type: "document"
+resource_name: "USER_STORIES"
+---
 # User Stories - Language Tracker Application
 
 **Purpose**: This document provides comprehensive user stories for every feature, sub-feature, and requirement in the Language Tracker application. Each story includes specific user actions and expected outcomes to clarify how features should behave from the user's perspective.

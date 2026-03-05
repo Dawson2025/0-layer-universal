@@ -1,3 +1,8 @@
+---
+resource_id: "951d030d-2567-485f-afe7-b088fc23bc5c"
+resource_type: "rule"
+resource_name: "testing-agent-instructions"
+---
 # Testing Agent Instructions
 *Comprehensive Guide for AI Testing Agents*
 

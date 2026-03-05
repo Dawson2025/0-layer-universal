@@ -1,3 +1,8 @@
+---
+resource_id: "3104b829-8ecd-4b62-be7e-4a849b0e4930"
+resource_type: "knowledge"
+resource_name: "CONTEXT_PROPAGATION_DESIGN"
+---
 # Context Propagation Design
 
 > **This document is a pointer.** The canonical source of truth for context propagation design lives in the context chain system (Layer 3), which owns this domain.

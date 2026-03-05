@@ -1,3 +1,8 @@
+---
+resource_id: "b91bf0cd-8e85-4fe4-8c30-c63f24040959"
+resource_type: "output"
+resource_name: "REQ-03_reference_over_copy"
+---
 # Reference Over Copy
 
 **Need**: [Promotion Workflow](../README.md)

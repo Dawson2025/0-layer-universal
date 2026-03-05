@@ -1,3 +1,8 @@
+---
+resource_id: "b72c7927-3a82-4460-b8be-3ffdd942b7cd"
+resource_type: "output"
+resource_name: "implementation_lessons_learned"
+---
 # AI Manager Hierarchy System - Implementation Lessons Learned
 
 **Purpose**: Living document capturing real-world learnings from implementing the AI Manager Hierarchy System

@@ -1,3 +1,8 @@
+---
+resource_id: "832cec4d-5b30-4cb8-b1f1-cff5ad024b4d"
+resource_type: "document"
+resource_name: "agnostic"
+---
 # layer_0 - Agnostic Context
 
 ## Purpose

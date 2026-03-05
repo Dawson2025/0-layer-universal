@@ -1,3 +1,8 @@
+---
+resource_id: "d6233463-0b60-40e7-a593-4b0358f4055a"
+resource_type: "document"
+resource_name: "index"
+---
 # Episodic Memory Index - better_ai_system
 
 ## Current Status

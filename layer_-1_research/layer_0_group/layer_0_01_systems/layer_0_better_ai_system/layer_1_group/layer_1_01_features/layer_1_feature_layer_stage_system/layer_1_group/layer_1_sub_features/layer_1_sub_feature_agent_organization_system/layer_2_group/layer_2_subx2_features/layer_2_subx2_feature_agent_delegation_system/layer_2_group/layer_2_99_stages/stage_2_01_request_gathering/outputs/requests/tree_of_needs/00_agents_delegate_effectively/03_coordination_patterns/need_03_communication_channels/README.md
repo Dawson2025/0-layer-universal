@@ -1,3 +1,9 @@
+---
+resource_id: "ed3a35d5-3a3e-4420-b772-be26ae1d3b5c"
+resource_type: "readme
+output"
+resource_name: "README"
+---
 # Need: Communication Channels
 
 **Branch**: [03_coordination_patterns](../)

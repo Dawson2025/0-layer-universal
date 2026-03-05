@@ -1,3 +1,8 @@
+---
+resource_id: "2f003608-3558-4175-9fda-42fdadfa27f6"
+resource_type: "output"
+resource_name: "US-01_agent_regains_competence"
+---
 # US-01: Agent regains competence after compaction
 
 **Need**: [Three-Tier Architecture](../README.md)

@@ -1,3 +1,8 @@
+---
+resource_id: "beaaee6f-ec36-486c-8d51-a477ac4a89a2"
+resource_type: "document"
+resource_name: "platform-specific-guides"
+---
 # Platform-Specific Guides
 *Detailed Database Version Control Workflows for Each Platform*
 

@@ -1,3 +1,8 @@
+---
+resource_id: "3866f883-d6cf-4c61-8455-4bb3b03baf9c"
+resource_type: "output"
+resource_name: "REQ-02_manager_delegation_protocol"
+---
 # Manager Delegation Protocol
 
 **Need**: [Stage Delegation](../README.md)

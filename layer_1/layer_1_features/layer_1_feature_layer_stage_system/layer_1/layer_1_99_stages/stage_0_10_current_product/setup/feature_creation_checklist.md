@@ -1,3 +1,8 @@
+---
+resource_id: "bf06f97d-7657-4f06-9fca-463cf142c757"
+resource_type: "document"
+resource_name: "feature_creation_checklist"
+---
 # Feature & Sub-Feature Creation Checklist
 
 **Purpose:** Detailed checklist for creating features and sub-features.

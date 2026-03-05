@@ -1,3 +1,9 @@
+---
+resource_id: "ecae3e9f-d913-43cd-87f0-c59bcc7ddaaf"
+resource_type: "readme
+document"
+resource_name: "README"
+---
 # Sub Layer 0.07: Coding App Setup
 
 **Purpose**: IDE and editor setup, including Cursor IDE configuration.

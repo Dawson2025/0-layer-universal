@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
+# resource_id: "371edc99-0242-4e61-9dd6-f633af8a64bb"
+# resource_type: "script"
+# resource_name: "check-codex-setup"
 set -euo pipefail
 
 export NVM_DIR="$HOME/.nvm"

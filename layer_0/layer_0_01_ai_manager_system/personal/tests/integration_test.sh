@@ -1,4 +1,7 @@
 #!/bin/bash
+# resource_id: "ad7eb497-c936-4bfb-b939-3d030e1cd595"
+# resource_type: "script"
+# resource_name: "integration_test"
 # =============================================================================
 # Orchestrator Integration Test
 # Layer: 0 (Universal)

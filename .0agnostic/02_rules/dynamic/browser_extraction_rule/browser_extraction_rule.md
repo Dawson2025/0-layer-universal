@@ -1,3 +1,8 @@
+---
+resource_id: "15d67213-f863-4d2e-bdbc-a9158e29825e"
+resource_type: "rule"
+resource_name: "browser_extraction_rule"
+---
 # Browser Extraction Rule
 
 **Type**: Dynamic (loaded when triggered)

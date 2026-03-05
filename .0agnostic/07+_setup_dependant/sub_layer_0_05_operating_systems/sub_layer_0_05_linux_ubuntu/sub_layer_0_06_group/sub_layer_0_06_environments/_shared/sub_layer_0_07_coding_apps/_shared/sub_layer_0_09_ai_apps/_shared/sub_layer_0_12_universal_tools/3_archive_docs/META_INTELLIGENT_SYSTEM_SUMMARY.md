@@ -1,3 +1,8 @@
+---
+resource_id: "10a01647-3db5-448b-9f81-fbedc05f9f60"
+resource_type: "document"
+resource_name: "META_INTELLIGENT_SYSTEM_SUMMARY"
+---
 # Meta-Intelligent Universal Orchestration System Summary
 
 ## Overview

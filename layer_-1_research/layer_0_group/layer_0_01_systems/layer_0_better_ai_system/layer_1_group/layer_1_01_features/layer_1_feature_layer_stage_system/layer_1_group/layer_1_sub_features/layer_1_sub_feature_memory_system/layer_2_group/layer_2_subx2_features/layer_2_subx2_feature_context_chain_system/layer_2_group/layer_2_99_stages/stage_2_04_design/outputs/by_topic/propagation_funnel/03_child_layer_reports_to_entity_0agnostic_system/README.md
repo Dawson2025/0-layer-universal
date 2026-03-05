@@ -1,3 +1,9 @@
+---
+resource_id: "a5e7a9a1-215f-4610-84f1-ea6931495004"
+resource_type: "readme
+output"
+resource_name: "README"
+---
 # Level 03: Layer Reports → Entity Reports
 
 **Purpose**: Customize layer context for each child entity, creating entity-specific context and 0AGNOSTIC.md

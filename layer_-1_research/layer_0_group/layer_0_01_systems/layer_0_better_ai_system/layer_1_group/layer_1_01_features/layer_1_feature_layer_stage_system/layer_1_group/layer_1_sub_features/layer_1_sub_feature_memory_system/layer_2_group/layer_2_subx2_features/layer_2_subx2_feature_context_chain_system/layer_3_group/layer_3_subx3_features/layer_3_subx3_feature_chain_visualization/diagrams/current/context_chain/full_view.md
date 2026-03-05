@@ -1,3 +1,8 @@
+---
+resource_id: "c6c3482b-bb3b-4a4e-8507-5ff10745f7c9"
+resource_type: "document"
+resource_name: "full_view"
+---
 # Context Chain — Full View (All Context)
 
 > Chronological loading order of everything sent to the AI model.

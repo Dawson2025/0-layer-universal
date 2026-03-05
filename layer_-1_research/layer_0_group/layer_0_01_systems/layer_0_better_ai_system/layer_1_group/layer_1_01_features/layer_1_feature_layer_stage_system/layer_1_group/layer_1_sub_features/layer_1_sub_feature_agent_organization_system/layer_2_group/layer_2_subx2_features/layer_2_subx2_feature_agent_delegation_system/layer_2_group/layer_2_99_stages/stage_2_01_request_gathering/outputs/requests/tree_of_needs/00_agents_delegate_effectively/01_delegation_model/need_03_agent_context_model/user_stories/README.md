@@ -1,3 +1,9 @@
+---
+resource_id: "55a0cf9d-d7f4-463f-8570-4fd4c79124eb"
+resource_type: "readme
+output"
+resource_name: "README"
+---
 # Agent Context Model -- User Stories Index
 
 **Need**: [Agent Context Model](../README.md)

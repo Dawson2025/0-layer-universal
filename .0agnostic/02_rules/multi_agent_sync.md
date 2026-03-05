@@ -1,3 +1,8 @@
+---
+resource_id: "1555c827-b738-40d8-8308-0698443a076c"
+resource_type: "rule"
+resource_name: "multi_agent_sync"
+---
 # Multi-Agent Sync Rules
 
 ## Rule: Lock Before Writing

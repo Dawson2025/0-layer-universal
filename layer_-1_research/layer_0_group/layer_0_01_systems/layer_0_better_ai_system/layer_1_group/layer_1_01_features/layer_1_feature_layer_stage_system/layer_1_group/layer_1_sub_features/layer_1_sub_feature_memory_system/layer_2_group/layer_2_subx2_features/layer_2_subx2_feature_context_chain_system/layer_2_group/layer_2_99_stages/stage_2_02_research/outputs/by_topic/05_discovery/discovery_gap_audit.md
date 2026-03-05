@@ -1,3 +1,8 @@
+---
+resource_id: "f3f6a6e5-0fa4-4f05-ba9f-6ca9fe5b661e"
+resource_type: "output"
+resource_name: "discovery_gap_audit"
+---
 # Discovery Gap Audit: Context Chain Auto-Discoverability
 
 **Date**: 2026-02-22

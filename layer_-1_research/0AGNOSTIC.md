@@ -1,3 +1,9 @@
+---
+resource_id: "9a0b7c8f-3358-4e63-b26f-046d84c8f862"
+resource_type: "agnostic
+document"
+resource_name: "0AGNOSTIC"
+---
 # Layer -1 - Research Context
 
 ## Identity

@@ -1,3 +1,8 @@
+---
+resource_id: "544cc6b0-4eb6-413c-950f-7c3653ef0af4"
+resource_type: "output"
+resource_name: "ISSUE_004_gsd_display_criticism"
+---
 # Criticism: GSD DISPLAY Environment Variable Issue
 
 ## Issue Reference

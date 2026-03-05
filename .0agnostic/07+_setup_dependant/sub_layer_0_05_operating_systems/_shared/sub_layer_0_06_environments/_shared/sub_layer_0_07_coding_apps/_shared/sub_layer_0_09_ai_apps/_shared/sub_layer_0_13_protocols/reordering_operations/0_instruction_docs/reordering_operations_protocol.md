@@ -1,3 +1,8 @@
+---
+resource_id: "0142bb34-db85-4c6a-9d17-809709dd461e"
+resource_type: "document"
+resource_name: "reordering_operations_protocol"
+---
 # Reordering Operations Protocol
 
 ## Applicability

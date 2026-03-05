@@ -1,3 +1,8 @@
+---
+resource_id: "e2788326-68d5-4351-a861-705e99a4f04f"
+resource_type: "knowledge"
+resource_name: "to_specific_pattern"
+---
 # To Specific Pattern
 
 ## Overview

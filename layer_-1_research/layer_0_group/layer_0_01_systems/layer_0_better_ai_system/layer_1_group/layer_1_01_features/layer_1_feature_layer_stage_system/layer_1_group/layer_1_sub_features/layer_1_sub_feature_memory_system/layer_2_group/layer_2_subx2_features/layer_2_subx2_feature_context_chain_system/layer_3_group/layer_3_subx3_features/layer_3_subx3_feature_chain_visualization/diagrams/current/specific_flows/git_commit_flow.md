@@ -1,3 +1,8 @@
+---
+resource_id: "7b7cc1fa-1649-47ee-aafb-a0a803dcd20c"
+resource_type: "document"
+resource_name: "git_commit_flow"
+---
 # Git Commit Flow
 
 **Purpose**: Show how context loads when an agent needs to commit changes.

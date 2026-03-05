@@ -1,4 +1,9 @@
 ---
+resource_id: "137ffcf2-0518-4a55-8910-eee8a9f19cf4"
+resource_type: "document"
+resource_name: "03_instructions-status"
+---
+---
 description: Show current status of 03_instructions stage
 argument-hint: [--verbose]
 ---

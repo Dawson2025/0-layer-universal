@@ -1,3 +1,8 @@
+---
+resource_id: "45062fb8-0a94-42fe-83b3-578bc0168f68"
+resource_type: "output"
+resource_name: "US-02_user_trusts_stability"
+---
 # User Trusts Production Stability
 
 **As a** user who depends on the system for daily work,

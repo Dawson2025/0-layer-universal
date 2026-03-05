@@ -1,4 +1,7 @@
 ---
+resource_id: "ecb67234-49f5-4ce3-84e3-b24251c76ab2"
+resource_type: "document"
+resource_name: "00_stage_registry-agent.sync-conflict-20260126-101456-IF2WOGZ"
 name: 00_stage_registry-agent
 description: Specialized agent for Stage metadata and registration. Use when working on 00_stage_registry tasks.
 tools: Read, Glob

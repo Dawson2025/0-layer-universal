@@ -1,3 +1,9 @@
+---
+resource_id: "c04ff04d-1b90-4bb8-b7b6-f87d81f90a07"
+resource_type: "index
+document"
+resource_name: "0INDEX"
+---
 # 0INDEX.md - Agentic TTS
 
 ## Current Status

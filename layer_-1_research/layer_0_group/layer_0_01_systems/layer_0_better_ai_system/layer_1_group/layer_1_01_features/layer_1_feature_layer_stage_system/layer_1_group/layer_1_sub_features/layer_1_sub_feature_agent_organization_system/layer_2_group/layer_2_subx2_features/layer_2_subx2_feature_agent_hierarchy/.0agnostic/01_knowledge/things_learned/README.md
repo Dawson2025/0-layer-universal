@@ -1,3 +1,9 @@
+---
+resource_id: "470ab33e-db1c-49d7-a0eb-41c33619f1d9"
+resource_type: "readme
+knowledge"
+resource_name: "README"
+---
 ## AI Manager Hierarchy System – Things Learned
 
 This folder is for distilled notes, specs, and conclusions about the **AI manager hierarchy system** research.

@@ -1,3 +1,9 @@
+---
+resource_id: "065f6299-baea-45a1-9d7f-6a45cbe2be24"
+resource_type: "readme
+output"
+resource_name: "README"
+---
 # Branch 02: Path Resolution
 
 **Core Question**: How are canonical paths found?

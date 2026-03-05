@@ -1,3 +1,8 @@
+---
+resource_id: "37c79dbc-54ec-4535-a1cf-f8b7b0afeba9"
+resource_type: "output"
+resource_name: "29_open_source_memory_implementations"
+---
 # Open-Source AI Agent Memory Implementations
 
 ## Purpose

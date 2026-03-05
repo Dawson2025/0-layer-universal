@@ -1,3 +1,8 @@
+---
+resource_id: "ec9c7618-4d19-40b4-8e77-fba8a76a4d01"
+resource_type: "output"
+resource_name: "REQ-03_goal_career_alignment"
+---
 # Goal/Career Alignment
 
 **Need**: [Instance Context](../README.md)

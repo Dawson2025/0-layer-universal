@@ -1,3 +1,8 @@
+---
+resource_id: "81f72ac3-d849-4c04-8ad7-9cd214d1f001"
+resource_type: "output"
+resource_name: "layer_stage_instantiation_understanding"
+---
 # Layer-Stage Instantiation Understanding
 
 **Date**: 2026-01-31

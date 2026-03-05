@@ -1,3 +1,8 @@
+---
+resource_id: "561ac377-1f3f-481d-9bff-b302b81a0df5"
+resource_type: "knowledge"
+resource_name: "MAINTENANCE_GUIDE"
+---
 # Entity Maintenance Guide
 
 ## Overview

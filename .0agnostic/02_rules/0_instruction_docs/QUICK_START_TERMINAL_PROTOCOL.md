@@ -1,3 +1,8 @@
+---
+resource_id: "a6cbd651-10d3-45b1-a999-f51fd06d4da0"
+resource_type: "rule"
+resource_name: "QUICK_START_TERMINAL_PROTOCOL"
+---
 # Quick Start: Terminal Execution Protocol
 *For ALL AI Agents - Read This First*
 

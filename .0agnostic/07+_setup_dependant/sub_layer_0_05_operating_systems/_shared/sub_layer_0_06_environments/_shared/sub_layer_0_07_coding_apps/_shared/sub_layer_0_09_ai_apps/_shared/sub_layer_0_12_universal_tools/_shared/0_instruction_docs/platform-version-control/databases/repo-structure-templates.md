@@ -1,3 +1,8 @@
+---
+resource_id: "ea42ae7a-eb43-43cd-96cf-921fa7c6136b"
+resource_type: "document"
+resource_name: "repo-structure-templates"
+---
 # Repository Structure Templates
 *Organizing Database Files in Your Version Control System*
 

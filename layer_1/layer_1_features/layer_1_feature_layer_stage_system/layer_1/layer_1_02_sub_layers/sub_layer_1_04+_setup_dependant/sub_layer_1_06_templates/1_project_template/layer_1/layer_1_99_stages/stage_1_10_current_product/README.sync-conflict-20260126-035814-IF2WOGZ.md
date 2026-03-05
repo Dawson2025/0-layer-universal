@@ -1,3 +1,8 @@
+---
+resource_id: "b4055e67-09e3-4de1-9056-543b74e7615d"
+resource_type: "document"
+resource_name: "README.sync-conflict-20260126-035814-IF2WOGZ"
+---
 # Current Product
 
 This stage holds the actual deliverable - the current version of what was built.

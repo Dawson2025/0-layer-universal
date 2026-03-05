@@ -1,3 +1,8 @@
+---
+resource_id: "6437b5b3-68d1-4ad6-80d4-6aa3018c4fa4"
+resource_type: "output"
+resource_name: "US-01_stage_agent_hands_off"
+---
 # US-1: Stage agent hands off to next session
 
 **Need**: [Handoff Protocols](../README.md)

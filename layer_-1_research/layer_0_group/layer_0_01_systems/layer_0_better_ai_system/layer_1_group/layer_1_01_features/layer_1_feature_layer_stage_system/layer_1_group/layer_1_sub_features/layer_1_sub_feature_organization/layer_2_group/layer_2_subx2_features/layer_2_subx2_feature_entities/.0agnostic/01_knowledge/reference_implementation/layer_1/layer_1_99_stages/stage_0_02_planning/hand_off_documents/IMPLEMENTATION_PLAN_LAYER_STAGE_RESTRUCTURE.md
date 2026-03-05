@@ -1,3 +1,8 @@
+---
+resource_id: "74221508-965c-4acb-8bd6-4ea24299a88f"
+resource_type: "knowledge"
+resource_name: "IMPLEMENTATION_PLAN_LAYER_STAGE_RESTRUCTURE"
+---
 # FULL IMPLEMENTATION PLAN: Layer-Stage System Restructure
 
 **Created:** 2026-01-15

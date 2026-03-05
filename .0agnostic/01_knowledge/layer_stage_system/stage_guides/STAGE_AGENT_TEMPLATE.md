@@ -1,3 +1,8 @@
+---
+resource_id: "b0e066fe-25e3-4c7f-848d-48d38b3d000d"
+resource_type: "knowledge"
+resource_name: "STAGE_AGENT_TEMPLATE"
+---
 # {entity_name} — Stage {NN}: {Stage Name}
 
 # ═══ STATIC CONTEXT (always loaded) ═══

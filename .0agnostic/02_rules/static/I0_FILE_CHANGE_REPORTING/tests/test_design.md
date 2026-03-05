@@ -1,3 +1,8 @@
+---
+resource_id: "22c41467-7c70-49c9-b42c-8c9b5d562bea"
+resource_type: "rule"
+resource_name: "test_design"
+---
 # Test Design: I0_FILE_CHANGE_REPORTING
 
 **Rule**: `../I0_FILE_CHANGE_REPORTING.md`

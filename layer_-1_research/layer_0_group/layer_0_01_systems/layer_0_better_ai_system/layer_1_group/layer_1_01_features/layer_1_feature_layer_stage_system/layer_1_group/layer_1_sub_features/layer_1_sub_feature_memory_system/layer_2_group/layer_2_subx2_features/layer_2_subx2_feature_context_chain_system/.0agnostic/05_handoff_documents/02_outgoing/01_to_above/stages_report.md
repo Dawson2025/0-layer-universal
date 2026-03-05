@@ -1,3 +1,8 @@
+---
+resource_id: "d6f4f275-02fe-4dbe-b5be-f377254b7eb6"
+resource_type: "handoff"
+resource_name: "stages_report"
+---
 # Stages Report: layer_2_subx2_feature_context_chain_system
 
 ## Scope

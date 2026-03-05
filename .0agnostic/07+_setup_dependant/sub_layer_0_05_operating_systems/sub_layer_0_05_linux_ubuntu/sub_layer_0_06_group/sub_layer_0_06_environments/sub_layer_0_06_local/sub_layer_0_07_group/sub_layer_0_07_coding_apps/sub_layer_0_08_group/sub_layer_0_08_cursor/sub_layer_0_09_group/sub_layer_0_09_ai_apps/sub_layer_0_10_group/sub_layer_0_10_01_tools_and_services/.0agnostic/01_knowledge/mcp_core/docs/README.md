@@ -1,3 +1,9 @@
+---
+resource_id: "b6c49688-58c8-4f99-8420-f8d9f46e3e3c"
+resource_type: "readme
+knowledge"
+resource_name: "README"
+---
 # _mcp_core
 
 Core MCP (Model Context Protocol) configuration and automation shared across all MCP servers in this structure.

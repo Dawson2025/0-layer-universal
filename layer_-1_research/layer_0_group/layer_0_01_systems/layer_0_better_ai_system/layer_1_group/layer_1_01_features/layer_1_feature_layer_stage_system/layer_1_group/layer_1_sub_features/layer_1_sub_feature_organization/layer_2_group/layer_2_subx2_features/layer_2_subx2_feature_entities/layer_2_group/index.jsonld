@@ -1,21 +1,18 @@
 {
+  "file_id": "739a4cf9-d82f-4766-a7d6-fc6ab408d6d4",
   "@context": {
     "@vocab": "https://layer-stage.dev/schema#",
     "nav": "https://layer-stage.dev/nav#"
   },
-
   "@id": "layer_0_group",
   "@type": "LayerGroup",
-
   "name": "Layer 0 Group (Universal)",
   "description": "Universal content that applies across all contexts",
   "layer": 0,
-
   "nav:parent": {
     "@id": "../",
     "name": "layer_0_feature_better_layer_stage_system"
   },
-
   "nav:children": [
     {
       "@id": "layer_0_features/",
@@ -28,22 +25,69 @@
       "description": "The 11 stages for this layer"
     }
   ],
-
   "nav:stages": {
     "@id": "layer_0_99_stages/",
     "stages": [
-      {"@id": "layer_0_99_stages/stage_0_00_stage_registry/", "stage": 0, "name": "Stage Registry"},
-      {"@id": "layer_0_99_stages/stage_0_01_request_gathering/", "stage": 1, "name": "Request Gathering"},
-      {"@id": "layer_0_99_stages/stage_0_02_research/", "stage": 2, "name": "Research"},
-      {"@id": "layer_0_99_stages/stage_0_03_instructions/", "stage": 3, "name": "Instructions"},
-      {"@id": "layer_0_99_stages/stage_0_04_planning/", "stage": 4, "name": "Planning"},
-      {"@id": "layer_0_99_stages/stage_0_05_design/", "stage": 5, "name": "Design"},
-      {"@id": "layer_0_99_stages/stage_0_06_development/", "stage": 6, "name": "Development"},
-      {"@id": "layer_0_99_stages/stage_0_07_testing/", "stage": 7, "name": "Testing"},
-      {"@id": "layer_0_99_stages/stage_0_08_criticism/", "stage": 8, "name": "Criticism"},
-      {"@id": "layer_0_99_stages/stage_0_09_fixing/", "stage": 9, "name": "Fixing"},
-      {"@id": "layer_0_99_stages/stage_0_10_current_product/", "stage": 10, "name": "Current Product"},
-      {"@id": "layer_0_99_stages/stage_0_11_archives/", "stage": 11, "name": "Archives"}
+      {
+        "@id": "layer_0_99_stages/stage_0_00_stage_registry/",
+        "stage": 0,
+        "name": "Stage Registry"
+      },
+      {
+        "@id": "layer_0_99_stages/stage_0_01_request_gathering/",
+        "stage": 1,
+        "name": "Request Gathering"
+      },
+      {
+        "@id": "layer_0_99_stages/stage_0_02_research/",
+        "stage": 2,
+        "name": "Research"
+      },
+      {
+        "@id": "layer_0_99_stages/stage_0_03_instructions/",
+        "stage": 3,
+        "name": "Instructions"
+      },
+      {
+        "@id": "layer_0_99_stages/stage_0_04_planning/",
+        "stage": 4,
+        "name": "Planning"
+      },
+      {
+        "@id": "layer_0_99_stages/stage_0_05_design/",
+        "stage": 5,
+        "name": "Design"
+      },
+      {
+        "@id": "layer_0_99_stages/stage_0_06_development/",
+        "stage": 6,
+        "name": "Development"
+      },
+      {
+        "@id": "layer_0_99_stages/stage_0_07_testing/",
+        "stage": 7,
+        "name": "Testing"
+      },
+      {
+        "@id": "layer_0_99_stages/stage_0_08_criticism/",
+        "stage": 8,
+        "name": "Criticism"
+      },
+      {
+        "@id": "layer_0_99_stages/stage_0_09_fixing/",
+        "stage": 9,
+        "name": "Fixing"
+      },
+      {
+        "@id": "layer_0_99_stages/stage_0_10_current_product/",
+        "stage": 10,
+        "name": "Current Product"
+      },
+      {
+        "@id": "layer_0_99_stages/stage_0_11_archives/",
+        "stage": 11,
+        "name": "Archives"
+      }
     ]
   }
 }

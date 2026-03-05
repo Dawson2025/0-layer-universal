@@ -1,3 +1,8 @@
+---
+resource_id: "c84b0199-248f-4991-9522-80bac8570d43"
+resource_type: "rule"
+resource_name: "test_design"
+---
 # Test Design: Safety Governance
 
 **Rule**: `../safety_governance.md`

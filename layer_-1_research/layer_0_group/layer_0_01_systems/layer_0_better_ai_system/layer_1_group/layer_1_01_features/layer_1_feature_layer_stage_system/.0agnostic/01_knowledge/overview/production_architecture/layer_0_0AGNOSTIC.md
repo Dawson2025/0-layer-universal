@@ -1,3 +1,8 @@
+---
+resource_id: "77416e41-f267-497e-8e76-8acb75a1f4d9"
+resource_type: "knowledge"
+resource_name: "layer_0_0AGNOSTIC"
+---
 # Layer 0 - Universal Context
 
 ## Identity

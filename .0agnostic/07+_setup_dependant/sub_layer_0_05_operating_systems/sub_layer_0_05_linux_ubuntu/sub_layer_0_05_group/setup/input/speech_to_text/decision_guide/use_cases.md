@@ -1,3 +1,8 @@
+---
+resource_id: "0e594ffb-6865-4212-b768-9aca1ab0131b"
+resource_type: "document"
+resource_name: "use_cases"
+---
 # Use Case Recommendations
 
 **Last Updated**: January 12, 2026

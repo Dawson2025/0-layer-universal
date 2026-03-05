@@ -1,3 +1,8 @@
+---
+resource_id: "a0d9a550-dfae-44dd-888b-3f9e1324fbf5"
+resource_type: "document"
+resource_name: "ENHANCED_RESET_SUMMARY"
+---
 # Enhanced Database Reset Function
 
 ## Overview

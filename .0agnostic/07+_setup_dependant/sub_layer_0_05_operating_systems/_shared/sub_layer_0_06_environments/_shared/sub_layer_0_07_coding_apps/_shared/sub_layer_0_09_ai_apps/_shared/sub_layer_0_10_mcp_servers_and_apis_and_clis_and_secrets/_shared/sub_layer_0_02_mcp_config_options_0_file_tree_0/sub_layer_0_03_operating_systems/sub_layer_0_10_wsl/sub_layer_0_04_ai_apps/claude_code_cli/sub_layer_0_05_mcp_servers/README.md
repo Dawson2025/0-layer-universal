@@ -1,3 +1,9 @@
+---
+resource_id: "73b0aa97-fdc9-472f-a90c-8c9aac85803a"
+resource_type: "readme
+document"
+resource_name: "README"
+---
 # MCP Servers Configuration for Claude Code CLI in WSL
 
 This directory contains configuration and documentation for MCP (Model Context Protocol) servers used with Claude Code CLI in WSL environment.

@@ -1,4 +1,7 @@
 #!/bin/bash
+# resource_id: "33782ca7-8a1e-41bb-b4f8-e490b5876db1"
+# resource_type: "script"
+# resource_name: "audit_helper_commands.sync-conflict-20260126-035814-IF2WOGZ"
 # Helper commands for auditing missing content
 # Use these commands to investigate what content existed before consolidation
 

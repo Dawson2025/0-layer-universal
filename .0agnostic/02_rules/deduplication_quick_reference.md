@@ -1,3 +1,8 @@
+---
+resource_id: "1d881dce-1613-435d-a43e-0bbee8f3bb5c"
+resource_type: "rule"
+resource_name: "deduplication_quick_reference"
+---
 # Deduplication Pattern: Quick Reference for AI Agents
 
 **MANDATORY RULE:** Apply this pattern to ALL documentation work.

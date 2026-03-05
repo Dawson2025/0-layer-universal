@@ -1,3 +1,8 @@
+---
+resource_id: "60e4160d-aa0d-4c5c-99d5-b01bd8bc3c8c"
+resource_type: "output"
+resource_name: "US-02_agent_triggers_consolidation_reminder"
+---
 # US-02: Agent triggers consolidation reminder
 
 **Need**: [Consolidation Process](../README.md)

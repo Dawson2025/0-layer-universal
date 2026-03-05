@@ -1,3 +1,8 @@
+---
+resource_id: "0c5af084-e2ff-47e7-a0e7-c88c985eeca0"
+resource_type: "protocol"
+resource_name: "page_analysis_workflow"
+---
 # Page Analysis Workflow
 
 ## Overview

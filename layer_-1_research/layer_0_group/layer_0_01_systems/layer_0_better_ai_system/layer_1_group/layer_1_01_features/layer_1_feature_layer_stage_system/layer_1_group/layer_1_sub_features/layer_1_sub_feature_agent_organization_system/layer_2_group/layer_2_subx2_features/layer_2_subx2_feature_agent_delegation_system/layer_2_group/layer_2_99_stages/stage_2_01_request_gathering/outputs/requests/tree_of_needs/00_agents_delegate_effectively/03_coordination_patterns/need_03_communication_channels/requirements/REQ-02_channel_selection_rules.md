@@ -1,3 +1,8 @@
+---
+resource_id: "0ea95598-bc1a-4e0e-8960-2fabe827d8fb"
+resource_type: "output"
+resource_name: "REQ-02_channel_selection_rules"
+---
 # Channel Selection Rules
 
 **Need**: [Communication Channels](../README.md)

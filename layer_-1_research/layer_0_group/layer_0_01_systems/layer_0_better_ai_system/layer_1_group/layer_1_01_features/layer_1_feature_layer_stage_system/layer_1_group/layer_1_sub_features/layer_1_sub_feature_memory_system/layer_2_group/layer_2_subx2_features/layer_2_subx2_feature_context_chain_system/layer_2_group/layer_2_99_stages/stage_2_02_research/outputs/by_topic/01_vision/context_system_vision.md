@@ -1,3 +1,8 @@
+---
+resource_id: "594b24d1-a976-411b-b49f-c74c83c906e7"
+resource_type: "output"
+resource_name: "context_system_vision"
+---
 # Vision — A Complete AI Context System
 
 ## What This Document Is

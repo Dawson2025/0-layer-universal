@@ -1,3 +1,8 @@
+---
+resource_id: "8f127e4f-2324-4645-913c-06048840110b"
+resource_type: "document"
+resource_name: "configuration.sync-conflict-20260126-102106-IF2WOGZ"
+---
 # Cursor Movement Configuration
 
 **Last Updated**: December 31, 2025

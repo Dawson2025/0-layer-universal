@@ -1,3 +1,8 @@
+---
+resource_id: "5bd5efb7-9db9-4f6c-b656-3643738d584a"
+resource_type: "output"
+resource_name: "REQ-02_relative_path_computation"
+---
 # REQ-02: Relative Path Computation
 
 ## Requirement

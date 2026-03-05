@@ -1,3 +1,8 @@
+---
+resource_id: "f7ee6e1b-d8f8-4a6d-b7e6-171b81b4534d"
+resource_type: "output"
+resource_name: "05_use_cases"
+---
 # Use Cases: How the Memory System Will Be Used
 
 ## Overview

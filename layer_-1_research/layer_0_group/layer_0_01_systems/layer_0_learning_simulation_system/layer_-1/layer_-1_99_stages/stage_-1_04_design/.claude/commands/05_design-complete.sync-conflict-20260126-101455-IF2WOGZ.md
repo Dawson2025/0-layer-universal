@@ -1,4 +1,7 @@
 ---
+resource_id: "5f127ec0-cad4-4f2c-8bee-b4db02d18bc1"
+resource_type: "document"
+resource_name: "05_design-complete.sync-conflict-20260126-101455-IF2WOGZ"
 description: Mark 05_design stage as complete and prepare handoff
 argument-hint: [--notes "completion notes"]
 ---

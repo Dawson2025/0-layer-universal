@@ -1,3 +1,8 @@
+---
+resource_id: "51407341-f32b-47bf-bc2e-ca5cb2c6e595"
+resource_type: "document"
+resource_name: "tts_integration"
+---
 # Text-to-Speech Integration
 
 - **Source Prompt**: Existing implementation analysis (2025-10-15)

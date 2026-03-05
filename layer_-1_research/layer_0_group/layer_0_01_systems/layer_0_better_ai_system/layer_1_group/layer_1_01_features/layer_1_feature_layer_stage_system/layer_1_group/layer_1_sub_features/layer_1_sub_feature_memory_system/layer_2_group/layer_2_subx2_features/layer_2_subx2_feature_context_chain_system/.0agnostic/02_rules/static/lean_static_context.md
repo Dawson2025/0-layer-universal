@@ -1,3 +1,8 @@
+---
+resource_id: "17c6b5a7-d2b8-4e7b-b026-3dc554ce7131"
+resource_type: "rule"
+resource_name: "lean_static_context"
+---
 # Rule: Lean Static Context
 
 **Status**: MANDATORY

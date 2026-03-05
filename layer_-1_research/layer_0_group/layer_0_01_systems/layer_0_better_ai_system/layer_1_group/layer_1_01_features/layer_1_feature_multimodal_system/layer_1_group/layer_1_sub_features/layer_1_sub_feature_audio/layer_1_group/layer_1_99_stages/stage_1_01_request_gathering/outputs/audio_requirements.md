@@ -1,3 +1,8 @@
+---
+resource_id: "7eb56a68-6d19-41d5-92f9-84197e256d49"
+resource_type: "output"
+resource_name: "audio_requirements"
+---
 # Audio Requirements
 
 ## Core Need

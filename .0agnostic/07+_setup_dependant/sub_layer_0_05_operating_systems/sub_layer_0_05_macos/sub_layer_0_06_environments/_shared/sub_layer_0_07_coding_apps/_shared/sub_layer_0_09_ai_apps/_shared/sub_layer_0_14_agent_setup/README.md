@@ -1,3 +1,9 @@
+---
+resource_id: "d6204293-1043-478b-992f-926beea9c009"
+resource_type: "readme
+document"
+resource_name: "README"
+---
 # sub_layer_0_13_agent_setup
 
 **Purpose**: Agent configuration and setup for AI applications and tools.

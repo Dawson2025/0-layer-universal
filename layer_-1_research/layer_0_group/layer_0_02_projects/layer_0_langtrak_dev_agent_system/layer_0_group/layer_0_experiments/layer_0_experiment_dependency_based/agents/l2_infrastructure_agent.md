@@ -1,3 +1,8 @@
+---
+resource_id: "8c48372e-df2b-4272-860c-15d883974860"
+resource_type: "document"
+resource_name: "l2_infrastructure_agent"
+---
 # L2 Infrastructure Agent
 
 **Role**: Infrastructure Layer Specialist

@@ -1,3 +1,8 @@
+---
+resource_id: "e008f94f-dfcc-4c74-9c9a-652490168f88"
+resource_type: "document"
+resource_name: "feature-spec"
+---
 # Authentication Feature Specification
 *Trickle-Down Level 2: Feature Specification*
 *Generated via GitHub Spec Kit Workflow*

@@ -1,3 +1,8 @@
+---
+resource_id: "d806f421-3471-4ffa-98de-d59a581228c9"
+resource_type: "document"
+resource_name: "MCP_DOCUMENTATION_PLAN.sync-conflict-20260126-035816-IF2WOGZ"
+---
 # MCP Servers & APIs Documentation Plan
 
 ## Overview

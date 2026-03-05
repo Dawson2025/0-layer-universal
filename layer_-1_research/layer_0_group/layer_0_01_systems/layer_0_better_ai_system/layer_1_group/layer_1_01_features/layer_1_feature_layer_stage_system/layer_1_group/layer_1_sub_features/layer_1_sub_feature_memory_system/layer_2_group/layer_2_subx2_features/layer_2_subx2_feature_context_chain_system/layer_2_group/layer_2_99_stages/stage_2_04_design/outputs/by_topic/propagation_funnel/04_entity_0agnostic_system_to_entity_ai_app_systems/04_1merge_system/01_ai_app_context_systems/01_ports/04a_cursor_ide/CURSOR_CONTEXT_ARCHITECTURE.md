@@ -1,3 +1,8 @@
+---
+resource_id: "393bf3e0-d0b2-4a22-ac75-029b1b1eb613"
+resource_type: "output"
+resource_name: "CURSOR_CONTEXT_ARCHITECTURE"
+---
 # Cursor IDE — Context Architecture & Porting System
 
 **Location**: `.cursor/` or `.cursorules` (root of project)

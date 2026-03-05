@@ -1,3 +1,8 @@
+---
+resource_id: "06fabd5d-a669-4a57-bca9-b5f4dac705ca"
+resource_type: "rule"
+resource_name: "test_design"
+---
 # Test Design: Stage Boundary Rule
 
 **Rule**: `../STAGE_BOUNDARY_RULE.md`

@@ -1,3 +1,8 @@
+---
+resource_id: "2974f747-b97b-4338-830f-010230620f5f"
+resource_type: "output"
+resource_name: "DEPENDENCIES"
+---
 # Dependencies
 
 ## Cross-Branch Dependencies

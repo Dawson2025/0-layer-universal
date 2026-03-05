@@ -1,3 +1,8 @@
+---
+resource_id: "eeb87b39-80c4-4cfe-8e9e-f1609e3b247a"
+resource_type: "document"
+resource_name: "agnostic_source_pattern"
+---
 # Agnostic Source Pattern
 
 ## Purpose

@@ -1,3 +1,8 @@
+---
+resource_id: "2c2a6cbe-8da3-45ca-badb-f39305f6ae64"
+resource_type: "output"
+resource_name: "architecture_decision_reference_chain"
+---
 # Architecture Decision — Reference Chain & Three-Layer Redundancy Model
 
 ## Date: 2026-02-07

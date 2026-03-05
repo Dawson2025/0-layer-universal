@@ -1,39 +1,40 @@
 {
-    "taskId": "orchestrated_001",
-    "description": "Analyze the layer_0 sub_layers directory structure. This is an ORCHESTRATOR task - you must decompose it into subtasks and spawn child agents.",
-    "orchestration": {
-        "strategy": "parallel",
-        "aggregation": "synthesize",
-        "subtasks": [
-            {
-                "taskId": "orchestrated_001_a",
-                "description": "Analyze sub_layer_0_01_ai_system: count files, identify key components, summarize purpose",
-                "targetPath": "layer_0/layer_0_03_sub_layers/sub_layer_0_01_ai_system/"
-            },
-            {
-                "taskId": "orchestrated_001_b",
-                "description": "Analyze sub_layer_0_02_context_agents: count files, identify agents, summarize purpose",
-                "targetPath": "layer_0/layer_0_03_sub_layers/sub_layer_0_02_context_agents/"
-            },
-            {
-                "taskId": "orchestrated_001_c",
-                "description": "Analyze sub_layer_0_05_rules: count rule files, list rule names, summarize governance",
-                "targetPath": "layer_0/layer_0_03_sub_layers/sub_layer_0_05_rules/"
-            }
-        ]
-    },
-    "context": {
-        "layer": 0,
-        "workingDir": "/home/dawson/dawson-workspace/code/0_layer_universal",
-        "constraints": {
-            "maxRecursionDepth": 3,
-            "maxConcurrent": 3,
-            "timeout": "120s"
-        }
-    },
-    "priority": "normal",
-    "expectedOutcome": {
-        "type": "aggregated_report",
-        "format": "summary of all 3 sub_layers with file counts and purposes"
+  "file_id": "eb1103ee-6503-44f4-85d4-4bc19c95be75",
+  "taskId": "orchestrated_001",
+  "description": "Analyze the layer_0 sub_layers directory structure. This is an ORCHESTRATOR task - you must decompose it into subtasks and spawn child agents.",
+  "orchestration": {
+    "strategy": "parallel",
+    "aggregation": "synthesize",
+    "subtasks": [
+      {
+        "taskId": "orchestrated_001_a",
+        "description": "Analyze sub_layer_0_01_ai_system: count files, identify key components, summarize purpose",
+        "targetPath": "layer_0/layer_0_03_sub_layers/sub_layer_0_01_ai_system/"
+      },
+      {
+        "taskId": "orchestrated_001_b",
+        "description": "Analyze sub_layer_0_02_context_agents: count files, identify agents, summarize purpose",
+        "targetPath": "layer_0/layer_0_03_sub_layers/sub_layer_0_02_context_agents/"
+      },
+      {
+        "taskId": "orchestrated_001_c",
+        "description": "Analyze sub_layer_0_05_rules: count rule files, list rule names, summarize governance",
+        "targetPath": "layer_0/layer_0_03_sub_layers/sub_layer_0_05_rules/"
+      }
+    ]
+  },
+  "context": {
+    "layer": 0,
+    "workingDir": "/home/dawson/dawson-workspace/code/0_layer_universal",
+    "constraints": {
+      "maxRecursionDepth": 3,
+      "maxConcurrent": 3,
+      "timeout": "120s"
     }
+  },
+  "priority": "normal",
+  "expectedOutcome": {
+    "type": "aggregated_report",
+    "format": "summary of all 3 sub_layers with file counts and purposes"
+  }
 }

@@ -1,3 +1,8 @@
+---
+resource_id: "f037b365-a767-4eba-b71f-b0018c0490b5"
+resource_type: "document"
+resource_name: "TROUBLESHOOTING"
+---
 # Context7 MCP Troubleshooting Guide
 
 This document covers common issues encountered when using the Context7 MCP server and their solutions.

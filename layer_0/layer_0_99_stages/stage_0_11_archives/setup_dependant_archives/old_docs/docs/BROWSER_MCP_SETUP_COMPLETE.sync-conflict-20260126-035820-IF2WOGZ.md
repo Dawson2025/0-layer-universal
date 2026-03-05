@@ -1,3 +1,8 @@
+---
+resource_id: "b1b090c5-f6ad-431b-9cfc-70fa3633a358"
+resource_type: "document"
+resource_name: "BROWSER_MCP_SETUP_COMPLETE.sync-conflict-20260126-035820-IF2WOGZ"
+---
 # Browser MCP Setup - Complete
 
 ## ✅ What's Been Configured

@@ -1,3 +1,8 @@
+---
+resource_id: "58cbcedb-b09b-492d-95a1-ce0ac32250bb"
+resource_type: "knowledge"
+resource_name: "restructuring_migration_protocol"
+---
 # Restructuring & Migration Protocol
 
 **Purpose:** Ensure that when restructuring projects, actual content is migrated alongside structural changes.

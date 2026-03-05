@@ -1,3 +1,8 @@
+---
+resource_id: "5c1aadd0-7075-4473-9070-96a99bcab88b"
+resource_type: "output"
+resource_name: "REQ-02_consolidation_protocol"
+---
 # Consolidation Protocol
 
 **Need**: [Consolidation Process](../README.md)

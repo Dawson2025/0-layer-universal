@@ -1,3 +1,8 @@
+---
+resource_id: "13aa6c4f-b50e-4e22-95b0-252dc27c006e"
+resource_type: "document"
+resource_name: "init_prompt_template"
+---
 # Init Prompt Template
 
 ## Purpose

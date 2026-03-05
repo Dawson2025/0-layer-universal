@@ -1,3 +1,8 @@
+---
+resource_id: "6879c2b0-7f1f-4175-b369-6c2a288ca164"
+resource_type: "output"
+resource_name: "test_results_template"
+---
 # Daemon Persistence Test Results Template
 
 **Test Date**: [TIMESTAMP]  

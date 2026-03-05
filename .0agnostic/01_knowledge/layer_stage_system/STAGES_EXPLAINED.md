@@ -1,3 +1,8 @@
+---
+resource_id: "fb5f1b0a-149a-4d75-af65-ddc4f95196bf"
+resource_type: "knowledge"
+resource_name: "STAGES_EXPLAINED"
+---
 # Stages Explained
 
 ## Overview

@@ -1,3 +1,8 @@
+---
+resource_id: "1d56e791-83be-4757-9d00-0ebffe30bf7c"
+resource_type: "output"
+resource_name: "08_discovery_temperature_model"
+---
 # Discovery Temperature Model
 
 **Date**: 2026-02-23

@@ -1,3 +1,8 @@
+---
+resource_id: "be2cccdf-3de4-4fef-bec7-49113dbad5c6"
+resource_type: "output"
+resource_name: "US-02_manager_delegates_with_context"
+---
 # US-2: Manager delegates with sufficient context
 
 **Need**: [Handoff Protocols](../README.md)

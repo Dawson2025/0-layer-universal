@@ -1,1 +1,10 @@
-{"@context":{"@vocab":"https://layer-stage.dev/schema#"},"@id":"stage_2_05_planning_agent","@type":"StageAgent","name":"Stage 2.05_planning","layer":2}
+{
+  "file_id": "27094772-14ef-479c-a9c3-4b71eb4b9be6",
+  "@context": {
+    "@vocab": "https://layer-stage.dev/schema#"
+  },
+  "@id": "stage_2_05_planning_agent",
+  "@type": "StageAgent",
+  "name": "Stage 2.05_planning",
+  "layer": 2
+}

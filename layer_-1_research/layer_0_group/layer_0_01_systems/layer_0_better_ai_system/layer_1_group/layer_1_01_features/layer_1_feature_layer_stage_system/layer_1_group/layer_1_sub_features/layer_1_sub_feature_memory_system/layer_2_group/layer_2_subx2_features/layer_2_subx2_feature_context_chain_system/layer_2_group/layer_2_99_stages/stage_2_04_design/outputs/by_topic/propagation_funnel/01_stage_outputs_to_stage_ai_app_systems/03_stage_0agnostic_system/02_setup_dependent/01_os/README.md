@@ -1,3 +1,9 @@
+---
+resource_id: "1a780bf5-1d6a-40ad-9f67-20f705fc821e"
+resource_type: "readme
+output"
+resource_name: "README"
+---
 # Operating System (01_os)
 
 ## What This Contains

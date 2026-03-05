@@ -1,3 +1,8 @@
+---
+resource_id: "38cb0f07-4d1e-4f5f-b7dd-07ddbddbf916"
+resource_type: "handoff"
+resource_name: "stages_report"
+---
 # Stages Report: agent_delegation_system
 
 ## Status

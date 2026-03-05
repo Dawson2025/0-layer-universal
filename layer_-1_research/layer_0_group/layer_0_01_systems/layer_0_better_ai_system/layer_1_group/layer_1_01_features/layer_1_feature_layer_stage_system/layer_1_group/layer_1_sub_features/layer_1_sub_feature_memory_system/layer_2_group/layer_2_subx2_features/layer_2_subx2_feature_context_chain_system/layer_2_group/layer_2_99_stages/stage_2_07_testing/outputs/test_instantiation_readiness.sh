@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
+# resource_id: "5a9f65a7-8fe9-4dbb-8798-a72981b33d60"
+# resource_type: "script"
+# resource_name: "test_instantiation_readiness"
 # test_instantiation_readiness.sh — Pre-flight checklist for entity instantiation
 #
 # Checks whether this entity is READY to be populated with real content.

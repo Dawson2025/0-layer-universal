@@ -1,3 +1,8 @@
+---
+resource_id: "104b12b1-01e6-4456-9be5-b424252bcdaf"
+resource_type: "output"
+resource_name: "REQ-03_report_consumption"
+---
 # Report Consumption
 
 **Need**: [Stage Reports](../README.md)

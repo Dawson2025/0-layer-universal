@@ -1,3 +1,8 @@
+---
+resource_id: "deebb788-32fd-4241-a7e3-4d3fb332b100"
+resource_type: "document"
+resource_name: "QUICK_SETUP"
+---
 # Claude in Chrome WSL Bridge - Quick Setup
 
 ## TL;DR

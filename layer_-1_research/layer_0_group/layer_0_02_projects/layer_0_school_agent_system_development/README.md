@@ -1,3 +1,9 @@
+---
+resource_id: "bf721645-d214-4a39-8549-75a25681e53c"
+resource_type: "readme
+document"
+resource_name: "README"
+---
 # layer_-1_school_agent_system_development
 
 **Research project for developing and validating AI agent systems for school-related tasks.**

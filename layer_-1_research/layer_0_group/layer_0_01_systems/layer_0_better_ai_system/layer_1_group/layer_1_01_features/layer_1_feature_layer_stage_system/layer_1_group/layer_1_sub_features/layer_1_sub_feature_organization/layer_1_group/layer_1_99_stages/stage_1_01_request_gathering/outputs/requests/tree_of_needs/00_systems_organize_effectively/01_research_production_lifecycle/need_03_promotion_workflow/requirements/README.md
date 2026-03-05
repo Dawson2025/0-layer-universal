@@ -1,3 +1,9 @@
+---
+resource_id: "3db568e6-1024-4da1-b7a2-6d4c24bf81d6"
+resource_type: "readme
+output"
+resource_name: "README"
+---
 # Requirements — Promotion Workflow
 
 | ID | Name | Priority |

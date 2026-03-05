@@ -1,3 +1,8 @@
+---
+resource_id: "845ee9a2-f2ca-4c33-8dfc-96384c021ba8"
+resource_type: "rule"
+resource_name: "sequential_development_methodology"
+---
 # Sequential Development Methodology
 
 **Level**: Universal (0)

@@ -1,3 +1,8 @@
+---
+resource_id: "baf501f7-9025-4edc-8c7c-e657183f9953"
+resource_type: "output"
+resource_name: "latest_test_results_summary"
+---
 # Test Results Summary
 
 **Date**: 2026-02-25 16:34:13

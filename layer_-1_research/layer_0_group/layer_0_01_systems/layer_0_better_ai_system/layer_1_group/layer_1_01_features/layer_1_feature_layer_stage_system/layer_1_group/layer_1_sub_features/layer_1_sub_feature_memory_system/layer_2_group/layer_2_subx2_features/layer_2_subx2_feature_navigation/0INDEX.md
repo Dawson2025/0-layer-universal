@@ -1,3 +1,9 @@
+---
+resource_id: "f74d477e-fe0a-4887-b2ac-53fed554558d"
+resource_type: "index
+document"
+resource_name: "0INDEX"
+---
 # Navigation — Index
 
 ## Current State

@@ -1,3 +1,9 @@
+---
+resource_id: "e42e6669-6065-4970-8511-b875f6a75fc9"
+resource_type: "readme
+document"
+resource_name: "README"
+---
 # Operating Systems
 
 This level organizes setup documentation by operating system.

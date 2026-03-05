@@ -1,3 +1,8 @@
+---
+resource_id: "d7d7cc17-2cf3-48d8-b1a5-7b2228a14333"
+resource_type: "output"
+resource_name: "06_SETUP_AND_USAGE"
+---
 # Claude Code CLI — Setup and Usage Guide
 
 **Date**: 2026-02-28

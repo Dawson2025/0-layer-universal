@@ -1,3 +1,9 @@
+---
+resource_id: "acadb48b-3172-434c-b096-729ff1d161cb"
+resource_type: "readme
+document"
+resource_name: "README"
+---
 # browser-mcp (codex_cli on macos)
 
 ## Canonical docs

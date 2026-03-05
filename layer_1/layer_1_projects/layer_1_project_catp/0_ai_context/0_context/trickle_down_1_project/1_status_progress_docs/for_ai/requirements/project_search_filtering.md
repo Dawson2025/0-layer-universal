@@ -1,3 +1,8 @@
+---
+resource_id: "14c65d9e-ffef-4a90-b39c-e886d9240880"
+resource_type: "document"
+resource_name: "project_search_filtering"
+---
 # My Projects Search
 
 - **Source Prompt**: Conversation request – add searchable My Projects list (2025-??-??)

@@ -1,3 +1,9 @@
+---
+resource_id: "40fb3d99-8e91-4e41-99bb-ac865ba4ef5a"
+resource_type: "readme
+document"
+resource_name: "README"
+---
 # MCP Servers (codex_cli on macos)
 
 This folder contains macos + codex_cli specific notes for each MCP server we use.

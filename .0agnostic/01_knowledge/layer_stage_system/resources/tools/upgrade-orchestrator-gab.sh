@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
+# resource_id: "f4be4459-80f9-4053-8dcf-d9f163a62585"
+# resource_type: "script"
+# resource_name: "upgrade-orchestrator-gab"
 # upgrade-orchestrator-gab.sh — Upgrade stub orchestrator to full GAB compliance
 # Usage: ./upgrade-orchestrator-gab.sh <input.gab.jsonld>
 set -eu

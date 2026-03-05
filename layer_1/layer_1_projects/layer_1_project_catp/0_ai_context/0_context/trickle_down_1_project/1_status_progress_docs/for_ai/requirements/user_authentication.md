@@ -1,3 +1,8 @@
+---
+resource_id: "b88d37cf-1052-436d-b5f5-4a069feffdc1"
+resource_type: "document"
+resource_name: "user_authentication"
+---
 # User Authentication & Account Management
 
 - **Source Prompt**: Existing implementation analysis (2025-10-15)

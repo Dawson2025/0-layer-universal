@@ -1,3 +1,8 @@
+---
+resource_id: "3ef1e582-b2fe-4a71-8116-75e965832930"
+resource_type: "output"
+resource_name: "PORTING_STRATEGY"
+---
 # Cursor Agent CLI — Porting Strategy for 0AGNOSTIC.md and .0agnostic/ System
 
 **Date**: 2026-02-27

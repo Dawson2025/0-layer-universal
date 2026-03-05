@@ -1,3 +1,8 @@
+---
+resource_id: "6ea15b2d-c14a-49d7-8fda-695c8887d47e"
+resource_type: "knowledge"
+resource_name: "stage_09_current_product"
+---
 # Stage 08: Current Product
 
 ## Purpose

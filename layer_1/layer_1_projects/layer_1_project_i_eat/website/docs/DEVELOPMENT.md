@@ -1,3 +1,8 @@
+---
+resource_id: "ac9eb9f4-2b7c-4d6a-9738-cbe76c8c98d5"
+resource_type: "document"
+resource_name: "DEVELOPMENT"
+---
 # Development Guide
 
 ## Prerequisites

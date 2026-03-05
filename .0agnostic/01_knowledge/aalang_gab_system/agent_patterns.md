@@ -1,3 +1,8 @@
+---
+resource_id: "e6c8d6f4-ffa1-4145-85e4-52260351478c"
+resource_type: "knowledge"
+resource_name: "agent_patterns"
+---
 # Common Agent Patterns
 
 ## Overview

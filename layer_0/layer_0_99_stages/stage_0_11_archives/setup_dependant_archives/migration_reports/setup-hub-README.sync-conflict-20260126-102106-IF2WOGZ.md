@@ -1,3 +1,8 @@
+---
+resource_id: "1fdf3e7b-03b1-4a73-ac5f-f9e98713e105"
+resource_type: "document"
+resource_name: "setup-hub-README.sync-conflict-20260126-102106-IF2WOGZ"
+---
 # setup-hub
 
 Guides for standing up consistent environments quickly.

@@ -1,3 +1,8 @@
+---
+resource_id: "1eaa3212-fe34-433e-bef3-a0cdcefc9fcd"
+resource_type: "rule"
+resource_name: "MCP_API_BUDGET_ENFORCEMENT"
+---
 # MCP API Budget Enforcement Rule
 
 **Type**: Dynamic (triggered by scenario)

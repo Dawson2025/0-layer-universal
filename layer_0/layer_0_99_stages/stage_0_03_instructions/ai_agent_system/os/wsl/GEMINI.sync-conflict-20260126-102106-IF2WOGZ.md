@@ -1,3 +1,8 @@
+---
+resource_id: "7603eb8e-75f2-40ce-92dd-01cd862e368b"
+resource_type: "document"
+resource_name: "GEMINI.sync-conflict-20260126-102106-IF2WOGZ"
+---
 # Gemini CLI Instructions - WSL Environment
 
 **OS Variant**: Windows Subsystem for Linux (WSL)

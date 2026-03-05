@@ -1,3 +1,8 @@
+---
+resource_id: "cfe0ce85-c8b5-43a5-98da-7d72f718fd89"
+resource_type: "output"
+resource_name: "REQ-01_systems_contain_subsystems"
+---
 # Systems Contain Sub-Systems
 
 **Need**: [Nested Systems](../README.md)

@@ -1,4 +1,10 @@
 ---
+resource_id: "4e72fb64-a33d-4649-a3a1-fceb8fcc667e"
+resource_type: "skill
+document"
+resource_name: "SKILL"
+---
+---
 name: handoff-creation
 description: "Create structured handoff documents to preserve session context across agent transitions. Use at the end of a work session, when transitioning between agents, or when context must survive a session boundary."
 ---

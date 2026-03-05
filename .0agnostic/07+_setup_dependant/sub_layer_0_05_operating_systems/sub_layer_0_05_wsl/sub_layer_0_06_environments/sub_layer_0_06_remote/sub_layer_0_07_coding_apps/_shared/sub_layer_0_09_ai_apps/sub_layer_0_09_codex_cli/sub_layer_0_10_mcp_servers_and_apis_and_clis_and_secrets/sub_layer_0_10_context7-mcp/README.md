@@ -1,3 +1,9 @@
+---
+resource_id: "431b0eb0-4e9e-42d1-8d91-a79faa007957"
+resource_type: "readme
+document"
+resource_name: "README"
+---
 # Context7 MCP (Codex CLI on WSL)
 
 ## Canonical docs

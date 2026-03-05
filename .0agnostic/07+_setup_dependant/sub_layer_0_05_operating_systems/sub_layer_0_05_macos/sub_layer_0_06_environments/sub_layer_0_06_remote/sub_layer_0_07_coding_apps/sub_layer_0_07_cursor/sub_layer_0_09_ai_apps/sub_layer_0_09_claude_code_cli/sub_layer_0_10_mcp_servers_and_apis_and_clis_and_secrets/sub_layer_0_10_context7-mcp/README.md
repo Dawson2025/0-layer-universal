@@ -1,3 +1,9 @@
+---
+resource_id: "ecfc6180-bbf4-4f49-a0cc-426052b0bf44"
+resource_type: "readme
+document"
+resource_name: "README"
+---
 # context7-mcp (claude_code_cli on macos)
 
 ## Canonical docs

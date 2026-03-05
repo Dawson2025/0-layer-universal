@@ -1,3 +1,8 @@
+---
+resource_id: "8209522f-7326-4f9d-b244-22d7145675e1"
+resource_type: "output"
+resource_name: "REQ-03_boundary_rules"
+---
 # Boundary Rules
 
 **Need**: [Stage Delegation](../README.md)

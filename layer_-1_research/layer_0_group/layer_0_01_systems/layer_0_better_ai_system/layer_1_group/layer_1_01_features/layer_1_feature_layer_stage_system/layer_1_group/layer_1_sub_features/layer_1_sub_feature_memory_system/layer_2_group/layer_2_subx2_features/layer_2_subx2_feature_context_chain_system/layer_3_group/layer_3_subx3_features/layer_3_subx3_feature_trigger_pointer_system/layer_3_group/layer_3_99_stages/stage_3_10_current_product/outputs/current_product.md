@@ -1,3 +1,8 @@
+---
+resource_id: "50e10df8-5daa-4a4d-883e-4fe474502b30"
+resource_type: "output"
+resource_name: "current_product"
+---
 # Pointer Sync System — Current Product
 
 > **Canonical location**: Root `.0agnostic/pointer-sync.sh`

@@ -1,3 +1,9 @@
+---
+resource_id: "54a286de-772b-48e4-9caa-9655a3f065a5"
+resource_type: "readme
+document"
+resource_name: "README"
+---
 # Setup
 
 Setup guides for initializing the layer/stage system in new projects.

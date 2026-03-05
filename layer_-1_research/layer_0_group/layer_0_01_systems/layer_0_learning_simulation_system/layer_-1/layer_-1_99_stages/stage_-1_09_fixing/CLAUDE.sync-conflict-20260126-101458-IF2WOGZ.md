@@ -1,3 +1,8 @@
+---
+resource_id: "81432d73-1a2f-406a-a086-af72c4fa7e38"
+resource_type: "document"
+resource_name: "CLAUDE.sync-conflict-20260126-101458-IF2WOGZ"
+---
 # stage_-1_09_fixing
 
 ## Purpose

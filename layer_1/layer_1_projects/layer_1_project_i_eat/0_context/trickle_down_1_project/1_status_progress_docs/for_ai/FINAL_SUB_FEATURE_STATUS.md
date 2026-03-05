@@ -1,3 +1,8 @@
+---
+resource_id: "e96e7f73-cb95-48ff-98a6-d2f9afbd9fa9"
+resource_type: "document"
+resource_name: "FINAL_SUB_FEATURE_STATUS"
+---
 # Final Sub-Feature Implementation Status
 
 ## ✅ IMPLEMENTATION COMPLETE

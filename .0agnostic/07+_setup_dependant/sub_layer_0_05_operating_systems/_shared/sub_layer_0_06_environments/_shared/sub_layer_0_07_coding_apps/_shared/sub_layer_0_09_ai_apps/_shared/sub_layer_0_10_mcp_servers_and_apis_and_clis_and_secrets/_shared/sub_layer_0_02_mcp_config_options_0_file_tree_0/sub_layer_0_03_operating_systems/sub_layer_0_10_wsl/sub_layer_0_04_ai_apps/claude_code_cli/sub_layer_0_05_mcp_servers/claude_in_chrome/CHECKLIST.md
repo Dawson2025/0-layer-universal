@@ -1,3 +1,8 @@
+---
+resource_id: "a5e5f931-7460-47fb-b1e4-9b81ce25ca13"
+resource_type: "document"
+resource_name: "CHECKLIST"
+---
 # Claude in Chrome WSL Bridge Setup Checklist
 
 ## WSL Setup (Complete ✓)

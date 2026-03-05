@@ -1,3 +1,8 @@
+---
+resource_id: "a2709b30-7a0f-42eb-bcb4-121a993c0ed5"
+resource_type: "output"
+resource_name: "speech_dispatcher"
+---
 # Design: Speech Dispatcher Integration
 
 **Purpose**: Let any app that uses Speech Dispatcher (spd-say, Orca, etc.) use the same high-quality TTS voice.

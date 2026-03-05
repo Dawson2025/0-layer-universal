@@ -1,3 +1,8 @@
+---
+resource_id: "e142867f-613c-4e32-8fe8-fe3b021177c5"
+resource_type: "output"
+resource_name: "US-02_stage_agent_knows_manager"
+---
 # US-2: Stage agent knows its manager
 
 **Need**: [Agent Hierarchy](../README.md)

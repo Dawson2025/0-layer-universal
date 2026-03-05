@@ -1,4 +1,7 @@
 #!/bin/bash
+# resource_id: "4a7dd066-2475-4446-8518-f05d275c760b"
+# resource_type: "script"
+# resource_name: "integration-test"
 #
 # integration-test.sh - Test all Better AI System components
 #

@@ -1,3 +1,8 @@
+---
+resource_id: "07f24ae1-ab7a-49f4-a9db-42dde8c78016"
+resource_type: "output"
+resource_name: "docx_mcp_research"
+---
 # Research: DOCX MCP Servers and AI Agent Integration
 
 ## Date

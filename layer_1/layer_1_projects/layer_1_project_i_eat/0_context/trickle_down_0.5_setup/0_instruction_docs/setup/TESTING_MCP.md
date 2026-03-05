@@ -1,3 +1,8 @@
+---
+resource_id: "eab159a2-dea9-492e-80f5-d290fc87629b"
+resource_type: "document"
+resource_name: "TESTING_MCP"
+---
 # Testing Playwright MCP Server
 
 ## Prerequisites

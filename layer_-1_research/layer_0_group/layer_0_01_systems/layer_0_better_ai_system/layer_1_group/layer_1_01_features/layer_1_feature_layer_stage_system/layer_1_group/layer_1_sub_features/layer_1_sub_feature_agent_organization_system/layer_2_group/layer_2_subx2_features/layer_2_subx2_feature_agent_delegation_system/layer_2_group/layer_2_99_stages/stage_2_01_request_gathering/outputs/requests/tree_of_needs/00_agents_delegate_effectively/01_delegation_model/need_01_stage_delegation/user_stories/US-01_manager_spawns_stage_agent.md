@@ -1,3 +1,8 @@
+---
+resource_id: "e4e70d25-60ab-45cd-baf8-d850d8002c22"
+resource_type: "output"
+resource_name: "US-01_manager_spawns_stage_agent"
+---
 # US-1: Manager spawns a stage agent
 
 **Need**: [Stage Delegation](../README.md)

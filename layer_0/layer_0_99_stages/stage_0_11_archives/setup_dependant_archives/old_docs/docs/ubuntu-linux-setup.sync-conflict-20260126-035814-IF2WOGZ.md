@@ -1,3 +1,8 @@
+---
+resource_id: "20b4ac31-3b15-469f-97a6-8c9721de448a"
+resource_type: "document"
+resource_name: "ubuntu-linux-setup.sync-conflict-20260126-035814-IF2WOGZ"
+---
 # Ubuntu Linux Setup Guide
 
 This guide documents the setup process for Ubuntu Linux systems, including essential tools and applications.

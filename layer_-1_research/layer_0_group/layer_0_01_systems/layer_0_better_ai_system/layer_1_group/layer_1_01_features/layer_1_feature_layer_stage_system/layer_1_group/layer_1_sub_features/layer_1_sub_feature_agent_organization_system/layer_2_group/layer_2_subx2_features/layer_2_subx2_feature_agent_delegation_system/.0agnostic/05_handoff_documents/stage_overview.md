@@ -1,3 +1,8 @@
+---
+resource_id: "96c6abcf-5721-4fec-8258-89f6ce55b683"
+resource_type: "handoff"
+resource_name: "stage_overview"
+---
 # Stage Overview — Agent Delegation System
 
 **Entity**: agent_delegation_system

@@ -1,3 +1,9 @@
+---
+resource_id: "aa0a94d3-c42b-48ca-bbf5-9f177389b6cf"
+resource_type: "readme
+document"
+resource_name: "README"
+---
 # Feature Layer Template (2.x, zero-padded)
 
 Use this to scaffold any feature-level context. Depends on universal (0.x) and project (1.x) layers.

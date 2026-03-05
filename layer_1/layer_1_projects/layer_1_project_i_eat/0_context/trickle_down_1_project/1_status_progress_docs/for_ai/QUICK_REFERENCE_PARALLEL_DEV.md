@@ -1,3 +1,8 @@
+---
+resource_id: "d5b62187-fab1-4c62-931a-08018e8fa78e"
+resource_type: "document"
+resource_name: "QUICK_REFERENCE_PARALLEL_DEV"
+---
 # Quick Reference: Parallel Development
 
 ## 🚀 Start Here

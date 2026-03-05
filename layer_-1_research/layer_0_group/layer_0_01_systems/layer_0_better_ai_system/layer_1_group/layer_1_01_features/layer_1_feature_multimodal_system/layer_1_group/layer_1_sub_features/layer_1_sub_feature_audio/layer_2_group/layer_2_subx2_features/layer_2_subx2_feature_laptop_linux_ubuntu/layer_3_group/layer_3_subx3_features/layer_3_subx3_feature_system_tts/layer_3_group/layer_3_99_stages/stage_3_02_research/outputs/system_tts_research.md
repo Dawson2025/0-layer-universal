@@ -1,3 +1,8 @@
+---
+resource_id: "c6f90a9d-d51e-4ab8-9e47-9ae8379db07a"
+resource_type: "output"
+resource_name: "system_tts_research"
+---
 # System TTS Research
 
 **Date**: 2026-02-23

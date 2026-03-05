@@ -1,3 +1,8 @@
+---
+resource_id: "18be362b-3552-4421-bb45-9aade6f594f7"
+resource_type: "knowledge"
+resource_name: "SYNC_STATUS_2026-01-09"
+---
 # Multi-OS Workspace Sync Status Report
 **Date:** 2026-01-09 06:10 AM
 **Reporter:** Gemini CLI (Windows)

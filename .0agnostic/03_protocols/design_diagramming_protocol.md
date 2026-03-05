@@ -1,3 +1,8 @@
+---
+resource_id: "1fab2dd5-f44e-4099-857a-1653307ac0ca"
+resource_type: "protocol"
+resource_name: "design_diagramming_protocol"
+---
 # Design Diagramming Protocol
 
 **Scope**: All design stages (stage 04) across all entities

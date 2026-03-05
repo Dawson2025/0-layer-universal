@@ -1,3 +1,9 @@
+---
+resource_id: "7d564027-e3f0-4cc8-99fa-493fef25d6fd"
+resource_type: "agnostic
+document"
+resource_name: "0AGNOSTIC"
+---
 # 0AGNOSTIC.md - layer_3_subx3_feature_agentic_tts
 
 ## Identity

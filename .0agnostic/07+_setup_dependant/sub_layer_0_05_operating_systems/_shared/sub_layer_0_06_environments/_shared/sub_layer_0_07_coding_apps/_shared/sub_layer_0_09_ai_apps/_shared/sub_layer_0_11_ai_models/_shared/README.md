@@ -1,3 +1,9 @@
+---
+resource_id: "5a804675-8b30-42c4-8e3e-a9b1d75e79a4"
+resource_type: "readme
+document"
+resource_name: "README"
+---
 # sub_layer_0_11_ai_models
 
 **Purpose**: Approved AI models and usage guidance.

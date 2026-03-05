@@ -1,3 +1,9 @@
+---
+resource_id: "ad7a2ac4-4360-40c1-9d6a-9c505cbf8cac"
+resource_type: "index
+document"
+resource_name: "0INDEX"
+---
 # Root Application — Stages
 
 | Stage | Name | Status |

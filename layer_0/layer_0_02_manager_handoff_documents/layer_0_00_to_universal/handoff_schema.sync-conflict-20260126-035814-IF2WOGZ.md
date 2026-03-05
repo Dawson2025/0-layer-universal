@@ -1,3 +1,8 @@
+---
+resource_id: "24348bb5-d46e-4588-91d7-ff91b99dd427"
+resource_type: "document"
+resource_name: "handoff_schema.sync-conflict-20260126-035814-IF2WOGZ"
+---
 # Handoff Schema Definition
 
 ## Overview

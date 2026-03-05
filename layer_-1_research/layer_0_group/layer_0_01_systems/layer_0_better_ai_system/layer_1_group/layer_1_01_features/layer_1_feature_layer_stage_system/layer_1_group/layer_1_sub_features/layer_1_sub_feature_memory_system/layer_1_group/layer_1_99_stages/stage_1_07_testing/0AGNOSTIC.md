@@ -1,3 +1,9 @@
+---
+resource_id: "5c2a0227-d807-4c42-993b-4a03a6f40388"
+resource_type: "agnostic
+document"
+resource_name: "0AGNOSTIC"
+---
 # memory_system — Stage 07: testing
 
 ## Identity

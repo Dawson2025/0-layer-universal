@@ -1,3 +1,8 @@
+---
+resource_id: "f58c117c-9601-4e27-b3c8-a764163737b3"
+resource_type: "document"
+resource_name: "UPDATE"
+---
 # Codex CLI - Update Instructions
 
 **Last Updated:** 2025-01-26  

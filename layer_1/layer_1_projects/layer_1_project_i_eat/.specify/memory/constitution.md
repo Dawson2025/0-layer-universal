@@ -1,3 +1,8 @@
+---
+resource_id: "47e697b9-f4d4-42e4-944c-f2060e65e3fa"
+resource_type: "document"
+resource_name: "constitution"
+---
 # I-Eat Platform Constitution
 
 ## Core Principles

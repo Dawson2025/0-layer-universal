@@ -1,3 +1,8 @@
+---
+resource_id: "0d378888-e512-43c4-a009-ab0314863063"
+resource_type: "document"
+resource_name: "console-log-capture-workflow"
+---
 # Console Log Capture Workflow
 
 This workflow describes how to use Chrome DevTools MCP to capture console messages, monitor JavaScript errors, and debug runtime issues.

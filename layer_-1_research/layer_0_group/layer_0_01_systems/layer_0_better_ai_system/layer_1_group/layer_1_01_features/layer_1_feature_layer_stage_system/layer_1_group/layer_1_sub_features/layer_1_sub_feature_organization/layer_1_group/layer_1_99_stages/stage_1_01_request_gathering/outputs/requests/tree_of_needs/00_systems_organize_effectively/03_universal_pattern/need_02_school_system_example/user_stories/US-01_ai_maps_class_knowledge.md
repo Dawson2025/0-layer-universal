@@ -1,3 +1,8 @@
+---
+resource_id: "2d000cd7-e548-41fe-a45a-c0858f87a8d0"
+resource_type: "output"
+resource_name: "US-01_ai_maps_class_knowledge"
+---
 # AI Maps Class Knowledge
 
 **As an** AI tutor in the school system,

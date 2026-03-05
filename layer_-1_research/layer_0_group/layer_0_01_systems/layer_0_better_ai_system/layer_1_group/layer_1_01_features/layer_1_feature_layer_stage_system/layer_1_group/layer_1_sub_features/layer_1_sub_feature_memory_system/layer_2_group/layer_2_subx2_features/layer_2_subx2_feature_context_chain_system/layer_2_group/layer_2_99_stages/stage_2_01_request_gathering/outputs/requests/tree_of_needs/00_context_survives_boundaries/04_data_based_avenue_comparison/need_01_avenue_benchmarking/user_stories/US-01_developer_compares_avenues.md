@@ -1,3 +1,8 @@
+---
+resource_id: "d5caab9e-2b42-4414-beaf-661979a2c732"
+resource_type: "output"
+resource_name: "US-01_developer_compares_avenues"
+---
 # US-01: Developer compares avenues on a capability
 
 **Need**: [Avenue Benchmarking](../README.md)

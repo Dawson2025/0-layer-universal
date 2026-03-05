@@ -1,3 +1,8 @@
+---
+resource_id: "dd3e760e-b549-4122-b92b-1206dcb347a0"
+resource_type: "document"
+resource_name: "stage_workflow_flow"
+---
 # Stage Workflow Flow
 
 **Purpose**: Show how context loads when an agent enters a stage (e.g., 05_design, 07_testing).

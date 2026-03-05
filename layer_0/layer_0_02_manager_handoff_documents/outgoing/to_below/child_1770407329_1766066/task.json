@@ -1,11 +1,12 @@
 {
-    "taskId": "orchestrated_001_c",
-    "parentTaskId": "orchestrated_001",
-    "description": "Analyze sub_layer_0_05_rules: count rule files, list rule names, summarize governance",
-    "context": {
-        "layer": 0,
-        "targetPath": "layer_0/layer_0_03_sub_layers/sub_layer_0_05_rules/",
-        "workingDir": "/home/dawson/dawson-workspace/code/0_layer_universal"
-    },
-    "priority": "normal"
+  "file_id": "e7c317d5-a4ff-419a-a460-3d9cdc052873",
+  "taskId": "orchestrated_001_c",
+  "parentTaskId": "orchestrated_001",
+  "description": "Analyze sub_layer_0_05_rules: count rule files, list rule names, summarize governance",
+  "context": {
+    "layer": 0,
+    "targetPath": "layer_0/layer_0_03_sub_layers/sub_layer_0_05_rules/",
+    "workingDir": "/home/dawson/dawson-workspace/code/0_layer_universal"
+  },
+  "priority": "normal"
 }

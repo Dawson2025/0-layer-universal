@@ -1,3 +1,9 @@
+---
+resource_id: "aeaf07c6-a0d1-4206-b77d-5e99b3e76085"
+resource_type: "readme
+document"
+resource_name: "README"
+---
 # Sub Layer 0.06: Environment Setup
 
 **Purpose**: Environment-level setup that is not OS-specific and not tied to a single coding/AI application (e.g., Git/GitHub auth patterns, credentials, cross-app environment rules).

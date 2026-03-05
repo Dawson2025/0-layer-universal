@@ -1,3 +1,9 @@
+---
+resource_id: "3ab9267c-de42-43a0-ad6d-111d8478d1c2"
+resource_type: "agnostic
+document"
+resource_name: "0AGNOSTIC"
+---
 # dynamic_memory — Stage 03: instructions
 
 ## Identity

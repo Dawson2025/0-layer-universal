@@ -1,3 +1,8 @@
+---
+resource_id: "7d440316-043c-499d-b745-9ac11911b8a1"
+resource_type: "output"
+resource_name: "US-02_existing_instances_unbroken"
+---
 # Existing Instances Unbroken
 
 **As a** student whose personalized instance has been in use for weeks,

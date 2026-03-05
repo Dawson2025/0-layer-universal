@@ -1,3 +1,8 @@
+---
+resource_id: "92814683-1181-4433-a4c5-6b5fd9ff92a4"
+resource_type: "output"
+resource_name: "REQ_001_advanced_audio_research"
+---
 # Advanced Research: Maximum Audio Quality on Linux
 
 ## Request Reference

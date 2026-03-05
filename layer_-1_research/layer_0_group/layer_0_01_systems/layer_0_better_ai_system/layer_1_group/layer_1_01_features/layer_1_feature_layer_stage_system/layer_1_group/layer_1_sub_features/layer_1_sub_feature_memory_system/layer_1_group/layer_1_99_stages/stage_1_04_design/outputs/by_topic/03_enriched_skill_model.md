@@ -1,3 +1,8 @@
+---
+resource_id: "24b5603e-b17a-4900-a88c-d242e5cdc9fb"
+resource_type: "output"
+resource_name: "03_enriched_skill_model"
+---
 # Enriched Skill Model
 
 ## Overview

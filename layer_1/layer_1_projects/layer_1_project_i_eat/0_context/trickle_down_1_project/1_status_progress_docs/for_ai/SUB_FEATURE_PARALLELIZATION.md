@@ -1,3 +1,8 @@
+---
+resource_id: "be827b61-4adb-4efb-8bd1-3e6cc283671e"
+resource_type: "document"
+resource_name: "SUB_FEATURE_PARALLELIZATION"
+---
 # Sub-Feature Parallelization Guide
 
 ## The Next Level: Parallel Work Within a Feature

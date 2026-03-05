@@ -1,3 +1,8 @@
+---
+resource_id: "4b7e131e-14ff-4b7d-89fb-b2544ffe5403"
+resource_type: "rule"
+resource_name: "test_design"
+---
 # Test Design: Sequential Development Methodology
 
 **Rule**: `../sequential_development_methodology.md`

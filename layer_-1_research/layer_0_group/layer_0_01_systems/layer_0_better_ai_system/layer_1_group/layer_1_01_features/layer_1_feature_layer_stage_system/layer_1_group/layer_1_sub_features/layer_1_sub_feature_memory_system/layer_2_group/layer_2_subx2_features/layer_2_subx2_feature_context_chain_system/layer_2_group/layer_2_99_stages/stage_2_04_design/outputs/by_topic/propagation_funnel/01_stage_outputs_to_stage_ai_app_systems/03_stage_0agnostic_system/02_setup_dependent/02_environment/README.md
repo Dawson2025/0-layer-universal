@@ -1,3 +1,9 @@
+---
+resource_id: "1d0b90a6-04b6-4992-993e-f558d0eae21f"
+resource_type: "readme
+output"
+resource_name: "README"
+---
 # Environment (02_environment)
 
 ## What This Contains

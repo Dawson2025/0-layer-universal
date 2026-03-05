@@ -1,3 +1,8 @@
+---
+resource_id: "e5e986be-a9eb-40e8-bf04-5b1bdd2f6ab0"
+resource_type: "output"
+resource_name: "30_complete_ai_agent_systems_with_memory"
+---
 # Complete AI Agent Systems with Memory
 
 ## Purpose

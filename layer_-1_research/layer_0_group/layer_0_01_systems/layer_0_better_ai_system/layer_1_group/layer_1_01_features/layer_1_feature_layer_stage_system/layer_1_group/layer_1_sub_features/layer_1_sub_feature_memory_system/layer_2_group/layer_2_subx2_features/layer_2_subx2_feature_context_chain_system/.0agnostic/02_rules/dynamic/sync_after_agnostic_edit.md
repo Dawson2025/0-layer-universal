@@ -1,3 +1,8 @@
+---
+resource_id: "4e6e0c7d-91a7-4ca0-bbd6-ff230d8cf586"
+resource_type: "rule"
+resource_name: "sync_after_agnostic_edit"
+---
 # Rule: Sync After Every 0AGNOSTIC.md Edit
 
 **Status**: MANDATORY

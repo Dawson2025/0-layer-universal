@@ -1,3 +1,8 @@
+---
+resource_id: "dae38b80-874c-42be-9fe0-fb94abef1345"
+resource_type: "document"
+resource_name: "INSTALLATION_OPTIONS_COMPARISON"
+---
 # Claude Code Installation Options: Comprehensive Comparison
 
 **Last Updated:** 2025-12-31

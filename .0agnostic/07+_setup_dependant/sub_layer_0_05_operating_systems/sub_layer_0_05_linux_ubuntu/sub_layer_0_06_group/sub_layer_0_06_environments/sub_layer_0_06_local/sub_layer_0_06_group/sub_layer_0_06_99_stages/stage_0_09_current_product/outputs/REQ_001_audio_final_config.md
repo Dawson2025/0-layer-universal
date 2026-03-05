@@ -1,3 +1,8 @@
+---
+resource_id: "b66f056e-3c77-4bf7-80f9-69b180dcaf78"
+resource_type: "output"
+resource_name: "REQ_001_audio_final_config"
+---
 # Final Configuration: Laptop Speaker Audio Enhancement
 
 ## Request Reference

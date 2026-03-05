@@ -1,3 +1,8 @@
+---
+resource_id: "ec7fbc06-b321-4a65-826e-0f6f8bb7aa05"
+resource_type: "output"
+resource_name: "US-01_auto_sync_on_move"
+---
 # US-01: Auto-Sync After Directory Move
 
 **Need**: [Trigger Automation](../README.md)

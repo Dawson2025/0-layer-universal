@@ -1,3 +1,8 @@
+---
+resource_id: "f50e0054-7dd8-4c34-b0fe-425ac32f8562"
+resource_type: "output"
+resource_name: "stage_report"
+---
 # Stage Report: 01_request_gathering
 
 ## Status

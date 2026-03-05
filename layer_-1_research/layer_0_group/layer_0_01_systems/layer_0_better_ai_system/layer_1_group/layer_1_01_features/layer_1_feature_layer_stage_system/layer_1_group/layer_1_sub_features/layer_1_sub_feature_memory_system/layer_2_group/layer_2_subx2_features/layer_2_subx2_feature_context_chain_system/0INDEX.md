@@ -1,3 +1,9 @@
+---
+resource_id: "c82ce4da-d7b6-45e5-ab9d-c67c34107be3"
+resource_type: "index
+document"
+resource_name: "0INDEX"
+---
 # Context Chain System — Manager Dashboard
 
 ## Entity Status

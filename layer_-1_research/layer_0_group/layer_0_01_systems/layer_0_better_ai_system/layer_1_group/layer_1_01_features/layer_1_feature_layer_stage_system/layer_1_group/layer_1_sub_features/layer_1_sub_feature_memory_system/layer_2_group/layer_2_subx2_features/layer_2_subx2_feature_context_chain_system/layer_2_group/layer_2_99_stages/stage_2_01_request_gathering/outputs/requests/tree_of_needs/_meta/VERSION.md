@@ -1,3 +1,8 @@
+---
+resource_id: "f3b71a10-ea6d-4ee7-a9de-eb092d1e9747"
+resource_type: "output"
+resource_name: "VERSION"
+---
 # Version
 
 **Current**: 1.0.0

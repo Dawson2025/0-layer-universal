@@ -1,4 +1,7 @@
 #!/bin/bash
+# resource_id: "5f118905-53e7-4810-ae38-061d97faa792"
+# resource_type: "script"
+# resource_name: "run_restructure"
 # Master script to complete the Layer-Stage System restructure
 # Run from: /home/dawson/dawson-workspace/code/0_layer_universal/
 

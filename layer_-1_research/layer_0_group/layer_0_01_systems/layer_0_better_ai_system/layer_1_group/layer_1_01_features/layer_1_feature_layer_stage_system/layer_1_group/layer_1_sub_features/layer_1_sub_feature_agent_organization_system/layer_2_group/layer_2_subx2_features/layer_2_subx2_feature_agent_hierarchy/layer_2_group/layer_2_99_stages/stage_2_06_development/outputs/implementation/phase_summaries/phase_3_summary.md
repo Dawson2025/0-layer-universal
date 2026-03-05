@@ -1,3 +1,8 @@
+---
+resource_id: "c9cca881-5ead-4261-8500-de94bd55d85b"
+resource_type: "output"
+resource_name: "phase_3_summary"
+---
 # Phase 3: Manager/Worker Standardization - Summary
 
 **Phase**: 3 of 7

@@ -1,3 +1,8 @@
+---
+resource_id: "cd16bd7d-12bd-46a6-a58a-44f059303bcc"
+resource_type: "document"
+resource_name: "RESEARCH_PROJECT_ORGANIZATION_PROPOSAL_v2"
+---
 # Proposal v2: Research Project Organization (With Proper Stages)
 
 ## Key Correction

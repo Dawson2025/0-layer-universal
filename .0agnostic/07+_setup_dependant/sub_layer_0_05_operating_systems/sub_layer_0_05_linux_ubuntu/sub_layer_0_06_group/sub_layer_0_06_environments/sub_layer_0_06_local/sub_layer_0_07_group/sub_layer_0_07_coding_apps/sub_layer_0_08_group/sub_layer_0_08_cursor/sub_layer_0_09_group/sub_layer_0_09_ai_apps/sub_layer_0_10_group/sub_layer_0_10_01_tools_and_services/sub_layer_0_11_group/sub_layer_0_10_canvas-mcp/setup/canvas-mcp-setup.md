@@ -1,3 +1,8 @@
+---
+resource_id: "3480c45b-2b84-44b5-9612-d147836ad362"
+resource_type: "document"
+resource_name: "canvas-mcp-setup"
+---
 # Canvas MCP Server Setup for Claude Code CLI
 
 **Last Updated**: 2026-01-26

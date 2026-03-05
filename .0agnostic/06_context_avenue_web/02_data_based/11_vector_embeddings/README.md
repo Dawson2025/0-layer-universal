@@ -1,3 +1,9 @@
+---
+resource_id: "42c00d7b-24cf-4892-b675-b8ccb8899771"
+resource_type: "readme
+document"
+resource_name: "README"
+---
 # Avenue 11: Vector Embeddings
 
 ## Purpose

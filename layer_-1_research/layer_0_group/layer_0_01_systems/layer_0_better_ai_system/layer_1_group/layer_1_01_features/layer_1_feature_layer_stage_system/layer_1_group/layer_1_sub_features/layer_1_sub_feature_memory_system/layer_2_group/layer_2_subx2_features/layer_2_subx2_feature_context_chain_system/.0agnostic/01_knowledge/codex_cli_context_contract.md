@@ -1,3 +1,8 @@
+---
+resource_id: "a0c6a818-34d0-4f48-9a14-b3139c096dc7"
+resource_type: "knowledge"
+resource_name: "codex_cli_context_contract"
+---
 # Codex CLI Context Contract
 
 ## Purpose

@@ -1,3 +1,8 @@
+---
+resource_id: "22a9ce06-f4ed-46a9-bd29-d88881664166"
+resource_type: "output"
+resource_name: "stage_report"
+---
 # Stage Report: 04_design
 
 ## Status

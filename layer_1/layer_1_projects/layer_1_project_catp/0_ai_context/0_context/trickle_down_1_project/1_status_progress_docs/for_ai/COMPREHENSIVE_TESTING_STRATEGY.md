@@ -1,3 +1,8 @@
+---
+resource_id: "32d17350-5c2f-42dd-8587-3ac5990744b0"
+resource_type: "document"
+resource_name: "COMPREHENSIVE_TESTING_STRATEGY"
+---
 # Comprehensive Testing Strategy for Language Tracker
 **Generated:** October 21, 2025  
 **Purpose:** Achieve 100% automated test coverage with minimal manual intervention and maximum effectiveness

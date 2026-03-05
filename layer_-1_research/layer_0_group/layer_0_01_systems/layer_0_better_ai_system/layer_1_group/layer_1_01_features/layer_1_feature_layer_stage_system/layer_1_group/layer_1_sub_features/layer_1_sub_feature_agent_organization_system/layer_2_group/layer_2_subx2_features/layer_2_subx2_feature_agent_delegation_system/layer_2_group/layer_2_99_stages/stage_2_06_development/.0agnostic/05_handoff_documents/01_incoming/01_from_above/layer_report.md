@@ -1,3 +1,8 @@
+---
+resource_id: "25c56b33-5acb-4fb2-994e-07ede112349b"
+resource_type: "handoff"
+resource_name: "layer_report"
+---
 # Layer Report: agent_delegation_system
 
 ## Status

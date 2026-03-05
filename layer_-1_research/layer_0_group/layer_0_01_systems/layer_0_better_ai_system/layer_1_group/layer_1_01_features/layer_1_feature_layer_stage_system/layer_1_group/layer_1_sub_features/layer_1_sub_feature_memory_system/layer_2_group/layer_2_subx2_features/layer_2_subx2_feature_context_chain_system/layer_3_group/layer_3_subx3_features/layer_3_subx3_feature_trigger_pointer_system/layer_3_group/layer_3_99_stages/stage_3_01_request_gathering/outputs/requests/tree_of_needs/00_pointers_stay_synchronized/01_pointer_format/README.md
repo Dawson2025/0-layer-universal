@@ -1,3 +1,9 @@
+---
+resource_id: "2f7029b6-089c-4959-bf48-25e0f2db958a"
+resource_type: "readme
+output"
+resource_name: "README"
+---
 # Branch 01: Pointer Format
 
 **Core Question**: How are pointer files structured?

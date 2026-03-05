@@ -1,3 +1,8 @@
+---
+resource_id: "3de7c66b-8c3a-4879-9df8-2f5341c707f1"
+resource_type: "rule"
+resource_name: "PARENT_NEED_P1"
+---
 # P1: OVERCOME DISCRETIONARY DISCLAIMER
 
 ## Tactical Objective

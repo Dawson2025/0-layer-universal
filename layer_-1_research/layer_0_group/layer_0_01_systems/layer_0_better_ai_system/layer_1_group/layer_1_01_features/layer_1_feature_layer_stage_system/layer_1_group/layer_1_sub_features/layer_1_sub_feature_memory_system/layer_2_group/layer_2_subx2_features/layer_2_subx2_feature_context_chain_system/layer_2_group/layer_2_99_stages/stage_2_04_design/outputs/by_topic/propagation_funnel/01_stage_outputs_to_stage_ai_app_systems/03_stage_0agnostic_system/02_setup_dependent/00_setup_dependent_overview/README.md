@@ -1,3 +1,9 @@
+---
+resource_id: "cab93bec-27a7-4079-a968-940dc8fb3ffc"
+resource_type: "readme
+output"
+resource_name: "README"
+---
 # Setup-Dependent Hierarchy Overview
 
 ## Overview

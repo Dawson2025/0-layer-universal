@@ -1,3 +1,9 @@
+---
+resource_id: "b539e93a-3013-4a6e-a04a-c746a3c08dcf"
+resource_type: "readme
+output"
+resource_name: "README"
+---
 # Level 04: Entity Context → AI Apps
 
 **Purpose**: Port entity context to each AI app's native configuration system using .1merge three-tier merge

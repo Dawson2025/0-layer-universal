@@ -1,3 +1,8 @@
+---
+resource_id: "0937067d-3be1-459f-826b-2e40bd6e0286"
+resource_type: "document"
+resource_name: "entity_creation_flow"
+---
 # Entity Creation Flow
 
 **Purpose**: Show how context loads when an agent needs to create a new entity (feature, sub-feature, component).

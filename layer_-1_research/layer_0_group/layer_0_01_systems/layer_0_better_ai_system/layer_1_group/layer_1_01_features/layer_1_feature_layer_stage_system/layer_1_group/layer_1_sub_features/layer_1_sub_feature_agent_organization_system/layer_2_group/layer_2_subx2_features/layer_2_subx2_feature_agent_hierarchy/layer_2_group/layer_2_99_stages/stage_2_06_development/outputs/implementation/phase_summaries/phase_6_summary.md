@@ -1,3 +1,8 @@
+---
+resource_id: "da308556-b507-4a67-85a5-10985a049446"
+resource_type: "output"
+resource_name: "phase_6_summary"
+---
 # Phase 6: Ops, Safety, and Deployment Guidance - Implementation Summary
 
 **Date**: 2025-12-24

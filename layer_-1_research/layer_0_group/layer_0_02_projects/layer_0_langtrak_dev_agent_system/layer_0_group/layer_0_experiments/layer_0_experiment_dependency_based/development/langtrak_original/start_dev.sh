@@ -1,4 +1,7 @@
 #!/bin/bash
+# resource_id: "ff1bb900-ae58-401a-9b9f-c0f935ee4eaf"
+# resource_type: "script"
+# resource_name: "start_dev"
 # Start development environment with Firebase emulators
 
 echo "🚀 Starting Language Tracker Development Environment"

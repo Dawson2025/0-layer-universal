@@ -1,3 +1,8 @@
+---
+resource_id: "73c9e7ad-5a29-49a0-aac5-de1e45bea65f"
+resource_type: "output"
+resource_name: "problems_and_vision"
+---
 # Problems & Vision — AALang Integration
 
 ## The Core Problems

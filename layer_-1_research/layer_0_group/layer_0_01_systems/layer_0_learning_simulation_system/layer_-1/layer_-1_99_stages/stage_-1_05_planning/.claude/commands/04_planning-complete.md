@@ -1,4 +1,9 @@
 ---
+resource_id: "60198557-da33-4ee7-b572-48f4007a8afc"
+resource_type: "document"
+resource_name: "04_planning-complete"
+---
+---
 description: Mark 04_planning stage as complete and prepare handoff
 argument-hint: [--notes "completion notes"]
 ---

@@ -1,3 +1,8 @@
+---
+resource_id: "019c7028-c9f9-4b03-a8f4-376cad6daf78"
+resource_type: "document"
+resource_name: "ci-cd-integration-guide"
+---
 # CI/CD Integration Guide
 *Automating Database Migrations in Your Deployment Pipeline*
 

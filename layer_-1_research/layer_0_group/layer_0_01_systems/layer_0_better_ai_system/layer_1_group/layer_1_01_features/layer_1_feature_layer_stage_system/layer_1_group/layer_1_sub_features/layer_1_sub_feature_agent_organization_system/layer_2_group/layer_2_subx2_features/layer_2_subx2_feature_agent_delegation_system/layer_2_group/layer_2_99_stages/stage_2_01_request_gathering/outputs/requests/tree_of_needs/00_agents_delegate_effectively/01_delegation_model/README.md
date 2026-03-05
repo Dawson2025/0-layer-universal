@@ -1,3 +1,9 @@
+---
+resource_id: "d624498d-75e3-479d-93fc-d0da07927bed"
+resource_type: "readme
+output"
+resource_name: "README"
+---
 # Branch: Delegation Model
 
 **Parent**: [00_agents_delegate_effectively](../)

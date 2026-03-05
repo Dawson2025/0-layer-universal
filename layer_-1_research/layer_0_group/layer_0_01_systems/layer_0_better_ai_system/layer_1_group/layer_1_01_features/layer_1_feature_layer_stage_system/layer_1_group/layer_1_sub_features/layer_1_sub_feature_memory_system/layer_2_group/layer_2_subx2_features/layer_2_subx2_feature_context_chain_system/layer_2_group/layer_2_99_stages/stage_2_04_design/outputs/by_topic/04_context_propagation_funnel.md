@@ -1,3 +1,8 @@
+---
+resource_id: "8a7d4f85-aaea-48d5-8a0c-d23a1cc5971a"
+resource_type: "output"
+resource_name: "04_context_propagation_funnel"
+---
 # Context Propagation Funnel (Bottom-Up)
 
 **Date**: 2026-02-23

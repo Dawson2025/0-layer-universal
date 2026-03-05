@@ -1,3 +1,9 @@
+---
+resource_id: "00db9adc-72ce-4eaf-a8db-f6699e5f1652"
+resource_type: "readme
+document"
+resource_name: "README"
+---
 # browser-mcp (gemini_cli on wsl)
 
 ## Canonical docs

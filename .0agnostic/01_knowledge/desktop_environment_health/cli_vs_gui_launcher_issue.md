@@ -1,3 +1,8 @@
+---
+resource_id: "2c0b2fb1-f8db-4af2-b44c-9f6c5c42b645"
+resource_type: "knowledge"
+resource_name: "cli_vs_gui_launcher_issue"
+---
 # Knowledge: CLI vs GUI Launcher Failure Pattern
 
 **Topic**: Desktop Environment / Session Management

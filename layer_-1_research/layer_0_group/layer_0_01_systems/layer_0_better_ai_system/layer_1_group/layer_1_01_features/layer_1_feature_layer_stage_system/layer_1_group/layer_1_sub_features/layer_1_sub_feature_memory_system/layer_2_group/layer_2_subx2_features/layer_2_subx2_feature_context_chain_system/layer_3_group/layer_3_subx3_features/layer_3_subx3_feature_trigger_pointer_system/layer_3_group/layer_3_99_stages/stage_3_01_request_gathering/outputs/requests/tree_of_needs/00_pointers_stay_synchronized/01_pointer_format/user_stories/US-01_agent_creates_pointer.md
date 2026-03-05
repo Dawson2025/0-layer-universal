@@ -1,3 +1,8 @@
+---
+resource_id: "5e11fb16-757c-42b6-a23c-da3f6af7c757"
+resource_type: "output"
+resource_name: "US-01_agent_creates_pointer"
+---
 # US-01: Agent Creates New Pointer
 
 **Need**: [Pointer Format](../README.md)

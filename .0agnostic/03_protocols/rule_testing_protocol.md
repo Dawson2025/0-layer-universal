@@ -1,3 +1,8 @@
+---
+resource_id: "422298d9-8661-44f2-8027-ff1a2393a23c"
+resource_type: "protocol"
+resource_name: "rule_testing_protocol"
+---
 # Rule Testing Protocol
 
 **Scope**: Universal — applies to all rule tests at `.0agnostic/02_rules/`

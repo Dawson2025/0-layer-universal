@@ -1,3 +1,9 @@
+---
+resource_id: "d8687c66-f763-42c3-8e98-a148e10e716d"
+resource_type: "readme
+output"
+resource_name: "README"
+---
 # Core System (01-05)
 
 ## What This Contains

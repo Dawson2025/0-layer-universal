@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
+# resource_id: "4ed77708-82ce-4777-bf12-d91a309aebc5"
+# resource_type: "script"
+# resource_name: "reset_db"
 #
 # Reset the working SQLite database to a known-good snapshot.
 # Copy data/phonemes.template.db -> data/phonemes.db

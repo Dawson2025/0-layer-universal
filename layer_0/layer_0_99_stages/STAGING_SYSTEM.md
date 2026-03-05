@@ -1,3 +1,8 @@
+---
+resource_id: "93a519db-5960-4a16-9f18-c42cee0ea968"
+resource_type: "document"
+resource_name: "STAGING_SYSTEM"
+---
 # Universal Staging System
 
 **Layer**: 0 (Universal)

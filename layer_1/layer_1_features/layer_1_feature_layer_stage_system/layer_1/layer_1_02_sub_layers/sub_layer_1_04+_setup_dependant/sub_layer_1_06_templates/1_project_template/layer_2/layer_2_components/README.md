@@ -1,3 +1,9 @@
+---
+resource_id: "9981c839-f1ef-4aa9-b9c2-9a76662ededd"
+resource_type: "readme
+document"
+resource_name: "README"
+---
 # Components
 
 This folder contains components (Layer 2) within this project.

@@ -1,3 +1,8 @@
+---
+resource_id: "9ba9d018-9d50-4099-abd1-81092ee20b4c"
+resource_type: "output"
+resource_name: "US-03_chain_stops_at_right_depth"
+---
 # US-3: Chain stops at the right depth
 
 **Need**: [Context Chain Support](../README.md)

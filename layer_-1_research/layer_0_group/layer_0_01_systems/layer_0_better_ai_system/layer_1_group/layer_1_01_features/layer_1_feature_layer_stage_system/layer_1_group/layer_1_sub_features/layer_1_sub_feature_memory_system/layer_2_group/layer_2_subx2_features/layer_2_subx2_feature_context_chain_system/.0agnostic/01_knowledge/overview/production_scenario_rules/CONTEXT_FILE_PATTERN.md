@@ -1,3 +1,8 @@
+---
+resource_id: "80a14aa3-86e3-460e-8254-c9f6bb84e6e4"
+resource_type: "knowledge"
+resource_name: "CONTEXT_FILE_PATTERN"
+---
 # Context File Pattern: Identity, Triggers, Pointers
 
 **Layer**: layer_0 (Universal)

@@ -1,3 +1,9 @@
+---
+resource_id: "63337039-4845-4ccf-b667-a5bdc489df33"
+resource_type: "agnostic
+document"
+resource_name: "0AGNOSTIC"
+---
 # context_chain_system — Layer 2 Group
 
 ## Identity

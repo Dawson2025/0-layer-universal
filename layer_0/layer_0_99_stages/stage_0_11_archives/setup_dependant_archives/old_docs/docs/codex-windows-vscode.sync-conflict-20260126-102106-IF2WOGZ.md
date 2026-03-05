@@ -1,3 +1,8 @@
+---
+resource_id: "18c1753f-4efd-4971-9de2-16663f658f60"
+resource_type: "document"
+resource_name: "codex-windows-vscode.sync-conflict-20260126-102106-IF2WOGZ"
+---
 # Codex on Windows + VS Code
 
 This guide follows the official [Running Codex on Windows](https://developers.openai.com/codex/windows) playbook and adds a few quality-of-life tweaks for VS Code users.

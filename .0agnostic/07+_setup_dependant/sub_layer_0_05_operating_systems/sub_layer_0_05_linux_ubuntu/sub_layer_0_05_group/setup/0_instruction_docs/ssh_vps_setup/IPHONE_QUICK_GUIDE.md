@@ -1,3 +1,8 @@
+---
+resource_id: "ed402f07-02f5-4bd8-9ff8-aba4cd877662"
+resource_type: "document"
+resource_name: "IPHONE_QUICK_GUIDE"
+---
 # iPhone Quick Guide - Fix Linux via VPS
 
 **Purpose:** Fix Linux login loop using iPhone → VPS → Linux

@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
+# resource_id: "6371b8aa-e1d2-414e-9140-c70d98e26d16"
+# resource_type: "script"
+# resource_name: "validate-entity"
 # validate-entity.sh — Check entity completeness against canonical structure
 # Usage: bash .0agnostic/01_knowledge/layer_stage_system/resources/tools/validate-entity.sh <entity-path>
 # Reference: .0agnostic/06_context_avenue_web/01_file_based/04_@import_references/entity_structure.md

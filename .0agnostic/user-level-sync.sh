@@ -1,4 +1,7 @@
 #!/bin/bash
+# resource_id: "5e3e7995-23d1-42e6-9a11-de1515e6367f"
+# resource_type: "script"
+# resource_name: "user-level-sync"
 #
 # user-level-sync.sh — Sync universal .0agnostic/ content to ~/.0agnostic/
 #

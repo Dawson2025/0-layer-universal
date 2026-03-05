@@ -1,3 +1,9 @@
+---
+resource_id: "7dade600-acca-444a-a739-f275f98923db"
+resource_type: "readme
+output"
+resource_name: "README"
+---
 # Reference Format Standard -- Requirements Index
 
 **Need**: [Reference Format Standard](../README.md)

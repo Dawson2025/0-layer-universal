@@ -1,3 +1,8 @@
+---
+resource_id: "fff53527-996a-42aa-98fb-6e8712177051"
+resource_type: "output"
+resource_name: "09_rag_and_knowledge_graphs"
+---
 # RAG and Knowledge Graph Memory Systems
 
 ## Overview

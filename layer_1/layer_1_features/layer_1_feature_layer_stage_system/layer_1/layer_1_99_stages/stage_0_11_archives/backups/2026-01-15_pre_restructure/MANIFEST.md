@@ -1,3 +1,8 @@
+---
+resource_id: "d6ccfb40-5d17-40e0-852d-fc8c62a63ddb"
+resource_type: "document"
+resource_name: "MANIFEST"
+---
 # Pre-Restructure Backup Manifest
 Created: Thu Jan 15 07:53:31 PM MST 2026
 

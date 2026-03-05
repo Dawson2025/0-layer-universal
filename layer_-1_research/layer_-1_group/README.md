@@ -1,3 +1,9 @@
+---
+resource_id: "d1250f66-6093-4677-98cf-6093f1ca7439"
+resource_type: "readme
+document"
+resource_name: "README"
+---
 # layer_-1_group — Research Layer Organization
 
 This directory contains the organizational structure for the research layer.

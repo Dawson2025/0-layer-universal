@@ -1,3 +1,8 @@
+---
+resource_id: "48ee2771-5996-4691-a945-d0a9acd28ef0"
+resource_type: "output"
+resource_name: "US-04_developer_verifies_alignment"
+---
 # US-4: Developer verifies tier-agent alignment
 
 **Need**: [Three-Tier Delegation](../README.md)

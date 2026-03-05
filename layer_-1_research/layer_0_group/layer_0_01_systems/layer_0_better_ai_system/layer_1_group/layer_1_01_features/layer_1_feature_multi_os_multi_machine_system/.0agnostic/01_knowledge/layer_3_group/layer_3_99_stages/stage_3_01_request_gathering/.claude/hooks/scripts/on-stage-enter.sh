@@ -1,4 +1,7 @@
 #!/bin/bash
+# resource_id: "2abf8606-d85b-4423-bb05-1c7f5021ad24"
+# resource_type: "script"
+# resource_name: "on-stage-enter"
 # Hook script: Called when entering this stage
 # Customize as needed
 

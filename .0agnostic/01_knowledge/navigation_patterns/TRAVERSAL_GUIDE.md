@@ -1,3 +1,8 @@
+---
+resource_id: "5e23bf39-2c01-4d73-baba-ef2df60cb420"
+resource_type: "knowledge"
+resource_name: "TRAVERSAL_GUIDE"
+---
 # System Traversal Guide
 
 ## Overview

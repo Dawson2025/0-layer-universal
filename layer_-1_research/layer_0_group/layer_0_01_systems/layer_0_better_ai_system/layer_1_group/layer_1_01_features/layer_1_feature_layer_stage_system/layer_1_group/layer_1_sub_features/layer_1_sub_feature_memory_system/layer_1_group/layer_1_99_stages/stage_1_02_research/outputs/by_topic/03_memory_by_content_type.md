@@ -1,3 +1,8 @@
+---
+resource_id: "7044c15e-6351-4295-a849-99f103b6cf7e"
+resource_type: "output"
+resource_name: "03_memory_by_content_type"
+---
 # Memory Types by Content / Function
 
 ## Overview

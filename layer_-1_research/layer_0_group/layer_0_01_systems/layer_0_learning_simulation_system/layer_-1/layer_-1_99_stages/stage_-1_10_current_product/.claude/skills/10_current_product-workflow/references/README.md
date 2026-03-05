@@ -1,3 +1,9 @@
+---
+resource_id: "63cc7513-bf33-480d-8944-4c148a7b1640"
+resource_type: "readme
+document"
+resource_name: "README"
+---
 # 10_current_product Workflow References
 
 Place reference documents, templates, and examples here.

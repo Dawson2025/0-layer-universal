@@ -1,3 +1,8 @@
+---
+resource_id: "d4c459a7-9c2b-4393-b1a9-3f486d0f1017"
+resource_type: "output"
+resource_name: "DEPENDENCIES"
+---
 # Need Dependencies
 
 How needs relate to and depend on each other.

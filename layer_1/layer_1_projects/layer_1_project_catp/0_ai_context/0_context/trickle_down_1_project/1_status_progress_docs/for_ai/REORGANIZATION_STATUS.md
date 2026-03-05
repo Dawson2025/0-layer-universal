@@ -1,3 +1,8 @@
+---
+resource_id: "ba4f86d2-3a49-48bd-b7e9-c0f4604c7725"
+resource_type: "document"
+resource_name: "REORGANIZATION_STATUS"
+---
 # Reorganization Status & Recommendations
 
 ## Current Status (October 16, 2025)

@@ -1,3 +1,8 @@
+---
+resource_id: "e323f08d-cfaa-4c61-8ab3-a425cb9c54c0"
+resource_type: "rule"
+resource_name: "git_commit_rule"
+---
 # GIT COMMIT AND SYNC RULE
 
 ## **MANDATORY REQUIREMENTS**

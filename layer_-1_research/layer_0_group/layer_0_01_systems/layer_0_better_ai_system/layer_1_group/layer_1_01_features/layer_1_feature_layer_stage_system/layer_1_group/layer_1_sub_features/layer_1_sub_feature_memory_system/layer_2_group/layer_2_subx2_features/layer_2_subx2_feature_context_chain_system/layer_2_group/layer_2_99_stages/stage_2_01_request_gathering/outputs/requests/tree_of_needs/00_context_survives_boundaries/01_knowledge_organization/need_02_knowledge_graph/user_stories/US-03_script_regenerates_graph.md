@@ -1,3 +1,8 @@
+---
+resource_id: "4b61bf89-3ee5-4770-9229-dbc61b7782e3"
+resource_type: "output"
+resource_name: "US-03_script_regenerates_graph"
+---
 # US-03: Script regenerates graph after changes
 
 **Need**: [Knowledge Graph](../README.md)

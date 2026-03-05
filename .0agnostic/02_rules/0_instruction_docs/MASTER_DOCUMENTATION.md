@@ -1,3 +1,8 @@
+---
+resource_id: "fb11a57e-d7c9-4d3c-a5ee-9bced3b92d22"
+resource_type: "rule"
+resource_name: "MASTER_DOCUMENTATION"
+---
 # Master Documentation
 *Single Source of Truth for ALL AI Agents*
 

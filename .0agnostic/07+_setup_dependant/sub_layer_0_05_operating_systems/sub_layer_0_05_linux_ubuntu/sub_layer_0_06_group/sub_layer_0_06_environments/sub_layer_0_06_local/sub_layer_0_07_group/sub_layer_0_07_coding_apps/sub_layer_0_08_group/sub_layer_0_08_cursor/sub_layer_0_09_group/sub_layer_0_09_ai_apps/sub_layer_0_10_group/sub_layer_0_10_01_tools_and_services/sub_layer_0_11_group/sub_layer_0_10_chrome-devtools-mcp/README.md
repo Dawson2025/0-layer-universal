@@ -1,3 +1,9 @@
+---
+resource_id: "259e7436-d5dc-4d84-9721-5d1344292375"
+resource_type: "readme
+document"
+resource_name: "README"
+---
 # Chrome DevTools MCP Server
 
 Chrome DevTools Protocol (CDP) integration for Model Context Protocol (MCP) servers, enabling AI agents to interact with Chrome/Chromium browsers through the DevTools debugging interface.

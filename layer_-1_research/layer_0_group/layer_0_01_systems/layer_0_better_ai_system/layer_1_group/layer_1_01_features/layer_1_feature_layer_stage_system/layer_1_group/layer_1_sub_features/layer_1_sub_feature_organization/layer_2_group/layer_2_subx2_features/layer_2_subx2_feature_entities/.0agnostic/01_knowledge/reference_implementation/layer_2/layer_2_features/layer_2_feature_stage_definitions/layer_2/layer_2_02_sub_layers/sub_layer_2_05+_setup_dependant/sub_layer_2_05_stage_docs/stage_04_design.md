@@ -1,3 +1,8 @@
+---
+resource_id: "00bd4d95-a307-46de-a380-af817d527985"
+resource_type: "knowledge"
+resource_name: "stage_04_design"
+---
 # Stage 03: Design
 
 ## Purpose

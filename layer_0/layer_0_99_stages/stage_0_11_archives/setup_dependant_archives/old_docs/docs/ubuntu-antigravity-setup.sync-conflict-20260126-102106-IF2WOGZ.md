@@ -1,3 +1,8 @@
+---
+resource_id: "ec510093-4f60-4c61-90c4-dc7a1f3d11fe"
+resource_type: "document"
+resource_name: "ubuntu-antigravity-setup.sync-conflict-20260126-102106-IF2WOGZ"
+---
 # Ubuntu Antigravity IDE Setup Guide
 
 Complete guide for installing and configuring Google Antigravity IDE on native Ubuntu Linux systems.

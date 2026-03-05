@@ -1,3 +1,8 @@
+---
+resource_id: "10a69b32-e214-4005-8ce8-c44570ffbcb7"
+resource_type: "document"
+resource_name: "perplexity-mcp-setup"
+---
 # Perplexity MCP Server Setup for Claude Code CLI
 
 **Last Updated**: 2026-01-26

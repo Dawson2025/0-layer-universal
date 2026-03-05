@@ -1,3 +1,8 @@
+---
+resource_id: "7deecd2f-200d-483d-a0be-66cf1be5a7d9"
+resource_type: "output"
+resource_name: "test_design_06_source_to_avenue"
+---
 # Test Design: 06 Source of Truth to Avenue Flow
 
 **Validates**: `stage_2_04_design/outputs/by_topic/06_source_of_truth_to_avenue_flow.md`

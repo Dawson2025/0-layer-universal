@@ -1,3 +1,8 @@
+---
+resource_id: "2edcb387-6c23-44c0-add1-89981a4a8ec3"
+resource_type: "knowledge"
+resource_name: "STAGE_07_TESTING"
+---
 # Stage 07: Testing — Universal Guide
 
 ## Purpose

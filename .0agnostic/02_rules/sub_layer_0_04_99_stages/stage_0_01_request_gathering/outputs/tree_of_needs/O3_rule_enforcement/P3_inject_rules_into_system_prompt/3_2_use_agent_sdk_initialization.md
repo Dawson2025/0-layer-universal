@@ -1,3 +1,8 @@
+---
+resource_id: "13f52a44-394d-46ef-975f-30f02be8e42d"
+resource_type: "rule"
+resource_name: "3_2_use_agent_sdk_initialization"
+---
 # 3.2: Use Agent SDK Initialization
 
 ## Requirement

@@ -1,3 +1,8 @@
+---
+resource_id: "a8cfc7d1-81e3-4a96-b719-72c35772ff62"
+resource_type: "rule"
+resource_name: "context_traversal"
+---
 # Context Traversal Rules (Context Chain System)
 
 This file has been replaced with a pointer to the canonical source.

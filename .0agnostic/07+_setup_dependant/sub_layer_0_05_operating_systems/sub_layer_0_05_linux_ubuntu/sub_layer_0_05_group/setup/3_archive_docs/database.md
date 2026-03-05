@@ -1,3 +1,8 @@
+---
+resource_id: "3a9a68c4-4c23-413e-bfb9-308fbef8f6a9"
+resource_type: "document"
+resource_name: "database"
+---
 # Database Schema
 
 SQLite database file: `phonemes.db`

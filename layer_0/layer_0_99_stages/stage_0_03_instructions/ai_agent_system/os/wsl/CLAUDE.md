@@ -1,3 +1,4 @@
+<!-- derived_from: "aa24709f-a54e-43db-ac3b-f2b61b2bbaac" -->
 # Claude Code Instructions - WSL Environment
 
 **OS Variant**: Windows Subsystem for Linux (WSL)

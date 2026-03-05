@@ -1,3 +1,9 @@
+---
+resource_id: "17888105-ce55-4629-8129-f2d7430ec4b7"
+resource_type: "readme
+document"
+resource_name: "README"
+---
 # Google Cloud Tools
 
 This directory contains documentation for Google Cloud Platform (GCP) tools and integrations used across AI development workflows.

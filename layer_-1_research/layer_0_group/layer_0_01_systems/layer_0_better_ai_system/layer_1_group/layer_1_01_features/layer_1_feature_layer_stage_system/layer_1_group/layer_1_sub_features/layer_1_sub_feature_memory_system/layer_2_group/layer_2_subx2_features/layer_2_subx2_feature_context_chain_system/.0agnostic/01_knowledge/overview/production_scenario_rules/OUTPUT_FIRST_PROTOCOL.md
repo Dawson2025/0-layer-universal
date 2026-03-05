@@ -1,3 +1,8 @@
+---
+resource_id: "04db4ebc-0d17-4936-bd7f-85279f515824"
+resource_type: "knowledge"
+resource_name: "OUTPUT_FIRST_PROTOCOL"
+---
 # Output-First Protocol
 
 **Layer**: layer_0 (Universal)

@@ -1,3 +1,8 @@
+---
+resource_id: "78daa88b-2d96-4ac5-aa4c-7c8c6be93c43"
+resource_type: "output"
+resource_name: "00_overview_and_taxonomy"
+---
 # AI Agent Memory Systems: Master Taxonomy and Overview
 
 ## Research Scope

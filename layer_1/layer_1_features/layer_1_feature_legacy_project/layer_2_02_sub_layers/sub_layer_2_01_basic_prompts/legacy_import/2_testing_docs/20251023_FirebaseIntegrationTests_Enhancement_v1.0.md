@@ -1,3 +1,8 @@
+---
+resource_id: "ba7fe541-a557-4f1c-a928-f50399189558"
+resource_type: "document"
+resource_name: "20251023_FirebaseIntegrationTests_Enhancement_v1.0"
+---
 # Firebase Integration Tests Enhancement
 *Date: 2025-10-23*
 *Test Suite: Real Firebase Integration Tests*

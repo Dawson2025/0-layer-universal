@@ -1,3 +1,4 @@
+<!-- derived_from: "8e581fc4-e186-4e77-baf2-41e9893ad0c0" -->
 # Claude Code Context
 
 ## Identity

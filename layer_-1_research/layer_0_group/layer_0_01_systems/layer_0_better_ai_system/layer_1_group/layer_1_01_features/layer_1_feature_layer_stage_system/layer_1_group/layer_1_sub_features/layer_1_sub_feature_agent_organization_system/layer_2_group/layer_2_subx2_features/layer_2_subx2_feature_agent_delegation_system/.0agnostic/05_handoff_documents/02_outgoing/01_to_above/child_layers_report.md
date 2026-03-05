@@ -1,3 +1,8 @@
+---
+resource_id: "e9707108-b1c4-40fb-b0ef-4bca13311895"
+resource_type: "handoff"
+resource_name: "child_layers_report"
+---
 # Child Layers Report: agent_delegation_system
 
 ## Status

@@ -1,3 +1,8 @@
+---
+resource_id: "bd8a6253-6fb3-49e5-92ec-1d8162e57db1"
+resource_type: "output"
+resource_name: "US-02_graceful_failure"
+---
 # US-02: Graceful Failure When Entity Not Found
 
 ## User Story

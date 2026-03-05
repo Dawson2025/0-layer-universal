@@ -1,3 +1,8 @@
+---
+resource_id: "2b567ee5-40b9-48a7-be31-bc8d3997f427"
+resource_type: "handoff"
+resource_name: "manager_instructions"
+---
 # Manager Instructions for stage_1_01_request_gathering
 
 ## From

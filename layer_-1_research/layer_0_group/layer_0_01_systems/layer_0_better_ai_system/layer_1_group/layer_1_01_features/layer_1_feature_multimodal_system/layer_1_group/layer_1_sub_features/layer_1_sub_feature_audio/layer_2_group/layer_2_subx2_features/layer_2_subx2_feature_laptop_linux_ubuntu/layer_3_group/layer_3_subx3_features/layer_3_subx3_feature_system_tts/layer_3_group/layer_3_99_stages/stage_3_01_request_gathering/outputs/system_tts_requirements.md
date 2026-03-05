@@ -1,3 +1,8 @@
+---
+resource_id: "7870ecff-d58b-4726-856e-e93649160644"
+resource_type: "output"
+resource_name: "system_tts_requirements"
+---
 # System TTS Requirements
 
 **Date**: 2026-02-23

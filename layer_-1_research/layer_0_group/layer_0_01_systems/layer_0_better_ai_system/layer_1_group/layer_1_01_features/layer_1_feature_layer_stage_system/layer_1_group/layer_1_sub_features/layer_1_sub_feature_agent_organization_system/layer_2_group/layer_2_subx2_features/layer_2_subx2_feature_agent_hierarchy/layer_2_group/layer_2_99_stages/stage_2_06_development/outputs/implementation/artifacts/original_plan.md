@@ -1,4 +1,9 @@
 ---
+resource_id: "d1f45268-9a46-4949-be62-9f5cfb653ad7"
+resource_type: "output"
+resource_name: "original_plan"
+---
+---
 name: Integrate Ideal AI Manager Hierarchy System Into 0aicontext
 overview: ""
 todos:

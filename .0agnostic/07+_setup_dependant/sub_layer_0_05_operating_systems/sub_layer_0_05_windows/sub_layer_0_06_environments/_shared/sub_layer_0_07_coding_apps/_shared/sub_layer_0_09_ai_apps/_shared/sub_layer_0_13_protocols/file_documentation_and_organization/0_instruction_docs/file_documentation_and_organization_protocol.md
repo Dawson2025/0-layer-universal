@@ -1,3 +1,8 @@
+---
+resource_id: "43dacf11-e561-47b7-9e5d-a311fadbf57d"
+resource_type: "document"
+resource_name: "file_documentation_and_organization_protocol"
+---
 # File Documentation and Organization Protocol
 
 ## Applicability

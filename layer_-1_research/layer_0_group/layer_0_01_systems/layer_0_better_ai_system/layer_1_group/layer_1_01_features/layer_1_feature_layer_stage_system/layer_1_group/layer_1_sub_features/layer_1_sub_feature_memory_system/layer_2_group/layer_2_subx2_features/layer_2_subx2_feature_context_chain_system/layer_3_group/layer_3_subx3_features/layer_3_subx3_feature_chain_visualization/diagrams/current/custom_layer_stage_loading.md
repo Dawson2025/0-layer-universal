@@ -1,3 +1,8 @@
+---
+resource_id: "81269c33-ebbc-4d18-9645-29cdcc0e11a6"
+resource_type: "document"
+resource_name: "custom_layer_stage_loading"
+---
 # Custom Layer-Stage Context Loading
 
 **Purpose**: Document how our layer-stage system extends Claude Code's official context loading with custom conventions, navigation, and triggers.

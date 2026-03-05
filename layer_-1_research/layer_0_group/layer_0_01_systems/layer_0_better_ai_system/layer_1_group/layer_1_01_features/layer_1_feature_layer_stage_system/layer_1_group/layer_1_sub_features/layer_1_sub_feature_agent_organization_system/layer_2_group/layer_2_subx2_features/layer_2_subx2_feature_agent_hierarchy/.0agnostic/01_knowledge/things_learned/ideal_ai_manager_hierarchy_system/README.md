@@ -1,3 +1,9 @@
+---
+resource_id: "d7941d4a-4f95-42bc-ab5a-5c82f202ff6e"
+resource_type: "readme
+knowledge"
+resource_name: "README"
+---
 ## Ideal AI Manager Hierarchy System – Directory Guide
 
 This folder contains all of the documentation for your **Ideal AI Manager Hierarchy System**.  

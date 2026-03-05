@@ -1,3 +1,8 @@
+---
+resource_id: "631af721-b958-498e-a271-d9eda8566811"
+resource_type: "knowledge"
+resource_name: "aalang_ai_system"
+---
 # AALang AI System Reference
 
 ## Location

@@ -1,3 +1,8 @@
+---
+resource_id: "4fa72fdd-f363-4496-be06-180f59c29399"
+resource_type: "document"
+resource_name: "implementation-tasks"
+---
 # Meta-Intelligent Orchestration Setup Implementation Tasks
 *Generated from Setup System Specification via Spec Kit Workflow*
 

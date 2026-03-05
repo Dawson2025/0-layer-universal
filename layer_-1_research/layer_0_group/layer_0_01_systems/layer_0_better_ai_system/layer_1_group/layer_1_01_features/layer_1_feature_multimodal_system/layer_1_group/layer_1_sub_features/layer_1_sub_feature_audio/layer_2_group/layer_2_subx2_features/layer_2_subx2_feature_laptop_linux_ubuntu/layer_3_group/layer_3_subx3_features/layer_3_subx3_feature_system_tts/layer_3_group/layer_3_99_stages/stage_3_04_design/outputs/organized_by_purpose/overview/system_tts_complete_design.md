@@ -1,3 +1,8 @@
+---
+resource_id: "4a2aa811-7c1f-41b9-9ef5-90d546a660a4"
+resource_type: "output"
+resource_name: "system_tts_complete_design"
+---
 # System TTS — Complete Design Overview
 
 **Date**: 2026-02-24

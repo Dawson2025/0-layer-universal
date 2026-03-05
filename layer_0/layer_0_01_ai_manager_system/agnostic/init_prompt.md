@@ -1,3 +1,8 @@
+---
+resource_id: "e2c7fbaf-105d-4203-b962-91a9576ba13a"
+resource_type: "document"
+resource_name: "init_prompt"
+---
 # Layer 0: Universal
 
 ## Inherited From

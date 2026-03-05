@@ -1,4 +1,9 @@
 ---
+resource_id: "ea864954-88e7-4904-88a8-68f9a3fdcde6"
+resource_type: "document"
+resource_name: "08_criticism-complete"
+---
+---
 description: Mark 08_criticism stage as complete and prepare handoff
 argument-hint: [--notes "completion notes"]
 ---

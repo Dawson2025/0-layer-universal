@@ -1,3 +1,8 @@
+---
+resource_id: "e9014def-4365-4854-ba4b-50b49d5aa79f"
+resource_type: "document"
+resource_name: "SYSTEM_OVERVIEW"
+---
 # System Overview (Layer + Stage)
 
 ## Big picture

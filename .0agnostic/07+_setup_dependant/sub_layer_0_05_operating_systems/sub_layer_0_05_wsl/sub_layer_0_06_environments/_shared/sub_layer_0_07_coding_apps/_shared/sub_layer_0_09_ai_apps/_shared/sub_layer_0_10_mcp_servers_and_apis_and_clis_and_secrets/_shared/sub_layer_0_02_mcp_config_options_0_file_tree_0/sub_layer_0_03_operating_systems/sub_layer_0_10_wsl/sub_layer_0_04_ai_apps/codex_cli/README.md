@@ -1,3 +1,9 @@
+---
+resource_id: "96eb1cf9-b6ee-483e-b1d3-fd6d9c23fdcd"
+resource_type: "readme
+document"
+resource_name: "README"
+---
 # Codex CLI MCP Setup (WSL)
 
 ## Config location

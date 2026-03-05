@@ -1,4 +1,9 @@
 ---
+resource_id: "f244139e-867d-42e5-ab0a-123ca9a05c33"
+resource_type: "document"
+resource_name: "09_fixing-agent"
+---
+---
 name: 09_fixing-agent
 description: Specialized agent for Address issues from criticism. Use when working on 09_fixing tasks.
 tools: Read, Write, Edit, Bash

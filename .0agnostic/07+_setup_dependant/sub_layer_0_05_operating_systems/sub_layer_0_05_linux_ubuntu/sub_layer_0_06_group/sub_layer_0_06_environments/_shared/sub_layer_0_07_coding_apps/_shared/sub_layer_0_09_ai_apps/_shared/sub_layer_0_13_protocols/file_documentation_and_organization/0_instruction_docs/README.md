@@ -1,3 +1,9 @@
+---
+resource_id: "4f9dec6b-25dd-45cb-b75a-629cae9156cf"
+resource_type: "readme
+document"
+resource_name: "README"
+---
 ## File Documentation and Organization Protocol – Instruction Docs
 
 The canonical definition of the **File Documentation and Organization Protocol** lives in:

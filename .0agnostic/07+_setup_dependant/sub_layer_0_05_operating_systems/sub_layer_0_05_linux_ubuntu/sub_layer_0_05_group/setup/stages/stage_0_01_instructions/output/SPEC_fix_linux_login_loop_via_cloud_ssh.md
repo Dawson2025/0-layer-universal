@@ -1,3 +1,8 @@
+---
+resource_id: "67ca0abc-b52a-40ab-aabf-aaf69ab0b6e7"
+resource_type: "document"
+resource_name: "SPEC_fix_linux_login_loop_via_cloud_ssh"
+---
 # Specification: Fix Linux Login Loop via Cloud Server SSH
 
 **Layer**: 0 (Universal)

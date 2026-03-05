@@ -1,3 +1,8 @@
+---
+resource_id: "8b26f755-ff1e-47d9-9b24-e0204be0411a"
+resource_type: "knowledge"
+resource_name: "INSTANTIATION_GUIDE"
+---
 # Entity Instantiation Guide
 
 ## Overview

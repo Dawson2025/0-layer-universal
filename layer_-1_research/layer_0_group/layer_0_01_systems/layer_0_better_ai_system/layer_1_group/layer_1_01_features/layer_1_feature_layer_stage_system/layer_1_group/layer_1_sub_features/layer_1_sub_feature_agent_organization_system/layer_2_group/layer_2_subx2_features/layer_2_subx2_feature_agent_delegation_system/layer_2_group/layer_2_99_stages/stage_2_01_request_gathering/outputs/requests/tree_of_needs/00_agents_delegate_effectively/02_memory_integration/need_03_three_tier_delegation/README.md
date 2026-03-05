@@ -1,3 +1,9 @@
+---
+resource_id: "798d96cf-3991-49ec-b827-29b1d8d71419"
+resource_type: "readme
+output"
+resource_name: "README"
+---
 # Need: Three-Tier Delegation
 
 **Branch**: [02_memory_integration](../)

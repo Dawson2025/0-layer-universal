@@ -1,3 +1,8 @@
+---
+resource_id: "1b510920-8da5-441e-9dbd-b2a56d038cac"
+resource_type: "document"
+resource_name: "20251210_MCP_Setup_Fix"
+---
 # 2025-12-10 - MCP Server Setup Fix for Linux/Ubuntu
 
 **Status**: Resolved  

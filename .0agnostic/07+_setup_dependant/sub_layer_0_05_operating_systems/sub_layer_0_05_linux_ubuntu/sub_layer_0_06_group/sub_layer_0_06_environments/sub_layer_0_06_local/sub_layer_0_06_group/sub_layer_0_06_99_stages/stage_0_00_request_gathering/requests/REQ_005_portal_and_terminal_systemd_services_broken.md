@@ -1,3 +1,8 @@
+---
+resource_id: "62e546ef-0a08-45ee-ae1a-f7231f22e533"
+resource_type: "document"
+resource_name: "REQ_005_portal_and_terminal_systemd_services_broken"
+---
 # REQ_005: Portal and Terminal systemd Services Completely Broken
 
 **Date Reported**: 2026-01-29

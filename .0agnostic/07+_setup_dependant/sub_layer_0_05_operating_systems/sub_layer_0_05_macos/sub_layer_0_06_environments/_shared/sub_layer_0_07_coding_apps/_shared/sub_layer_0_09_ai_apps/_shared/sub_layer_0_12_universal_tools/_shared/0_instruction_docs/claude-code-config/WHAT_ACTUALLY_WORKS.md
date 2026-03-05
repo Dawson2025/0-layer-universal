@@ -1,3 +1,8 @@
+---
+resource_id: "5479cf0d-9814-4ef3-8452-1069800e1f49"
+resource_type: "document"
+resource_name: "WHAT_ACTUALLY_WORKS"
+---
 # What Actually Works: Bypass Permissions Mode
 *Lessons Learned from Real-World Testing*
 

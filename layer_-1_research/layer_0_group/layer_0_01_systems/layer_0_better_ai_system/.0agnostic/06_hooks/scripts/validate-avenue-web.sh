@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
+# resource_id: "c1bc4701-f805-4b4f-b5b8-4bc67f16cd73"
+# resource_type: "script"
+# resource_name: "validate-avenue-web"
 # validate-avenue-web.sh
 # Validate 8 Avenue Web routes for layer/stage entities under better_ai_system.
 # Usage: validate-avenue-web.sh [target_root] [report_path]

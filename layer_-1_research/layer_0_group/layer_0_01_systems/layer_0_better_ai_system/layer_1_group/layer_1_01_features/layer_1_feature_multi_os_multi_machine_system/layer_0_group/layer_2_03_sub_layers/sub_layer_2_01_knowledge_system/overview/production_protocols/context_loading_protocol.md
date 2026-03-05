@@ -1,3 +1,8 @@
+---
+resource_id: "1c84b14a-bc0a-497b-aca2-25f622dad7ec"
+resource_type: "document"
+resource_name: "context_loading_protocol"
+---
 # Context Loading Protocol
 
 **Purpose**: Define how AI agents load and process context in the layer-stage system.

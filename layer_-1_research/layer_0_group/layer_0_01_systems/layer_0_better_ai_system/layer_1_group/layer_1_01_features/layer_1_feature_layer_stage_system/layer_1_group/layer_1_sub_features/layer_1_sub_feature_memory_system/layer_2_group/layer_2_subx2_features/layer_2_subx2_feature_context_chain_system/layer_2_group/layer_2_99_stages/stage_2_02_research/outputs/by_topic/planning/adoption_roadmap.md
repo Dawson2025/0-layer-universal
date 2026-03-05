@@ -1,3 +1,8 @@
+---
+resource_id: "ec6ac5e6-661c-4150-9587-62acb474a082"
+resource_type: "output"
+resource_name: "adoption_roadmap"
+---
 # AALang Adoption Roadmap (Revised 2026-02-07)
 
 ## Current State

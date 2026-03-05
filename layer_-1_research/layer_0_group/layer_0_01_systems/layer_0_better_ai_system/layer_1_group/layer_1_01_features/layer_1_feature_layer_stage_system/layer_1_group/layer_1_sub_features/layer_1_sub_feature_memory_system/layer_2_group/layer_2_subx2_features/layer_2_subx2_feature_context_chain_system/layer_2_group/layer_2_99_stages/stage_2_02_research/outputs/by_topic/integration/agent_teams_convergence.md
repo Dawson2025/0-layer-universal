@@ -1,3 +1,8 @@
+---
+resource_id: "bb07baf9-3746-4193-ae63-a8a74acc7db3"
+resource_type: "output"
+resource_name: "agent_teams_convergence"
+---
 # Agent Teams + Layer-Stage Convergence
 
 ## The Two Systems

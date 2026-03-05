@@ -1,3 +1,9 @@
+---
+resource_id: "7c709897-f299-4336-8c41-6a6745d180ec"
+resource_type: "readme
+document"
+resource_name: "README"
+---
 # Language-Tracker-App-MCP
 
 ## 🚀 Quick Start

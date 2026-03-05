@@ -1,3 +1,8 @@
+---
+resource_id: "5521877f-d6a2-4eda-9fb1-4db95f282e3d"
+resource_type: "output"
+resource_name: "CLAUDE_CODE_CLI_DOT_CLAUDE_SYSTEM_SETUP"
+---
 # Claude Code CLI — .claude Directory System Setup
 
 **Date Created**: 2026-02-27

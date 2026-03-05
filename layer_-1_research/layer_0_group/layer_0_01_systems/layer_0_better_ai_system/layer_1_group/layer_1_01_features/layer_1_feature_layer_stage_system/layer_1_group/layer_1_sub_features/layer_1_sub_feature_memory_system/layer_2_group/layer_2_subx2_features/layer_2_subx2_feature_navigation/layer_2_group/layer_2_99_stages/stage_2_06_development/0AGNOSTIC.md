@@ -1,3 +1,9 @@
+---
+resource_id: "e77d2e3b-6f95-4ef4-b7d7-a9f6a9e10bbf"
+resource_type: "agnostic
+document"
+resource_name: "0AGNOSTIC"
+---
 # navigation — Stage 06: development
 
 ## Identity

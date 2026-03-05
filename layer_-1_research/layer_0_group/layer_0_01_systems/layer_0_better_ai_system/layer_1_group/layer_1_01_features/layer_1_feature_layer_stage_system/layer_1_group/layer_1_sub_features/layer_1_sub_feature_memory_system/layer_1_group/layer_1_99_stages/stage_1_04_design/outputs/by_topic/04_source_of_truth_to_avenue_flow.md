@@ -1,3 +1,8 @@
+---
+resource_id: "f225aa6c-cb6d-4f51-acef-97d009c3e13c"
+resource_type: "output"
+resource_name: "04_source_of_truth_to_avenue_flow"
+---
 # Source of Truth to Avenue Flow
 
 > **This document is a pointer.** The canonical source of truth lives in the context chain system (Layer 2).

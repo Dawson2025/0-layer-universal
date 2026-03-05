@@ -1,3 +1,8 @@
+---
+resource_id: "681c2aa0-a38d-4c23-b8b2-2c562063fb7f"
+resource_type: "knowledge"
+resource_name: "avenue_redundancy"
+---
 # Principle: Avenue Redundancy
 
 ## Summary

@@ -1,3 +1,8 @@
+---
+resource_id: "51b7289f-c33f-4858-a5cc-b1743668fa5a"
+resource_type: "document"
+resource_name: "browser_opening_rule"
+---
 # Browser Opening Rule
 
 ## Rule: Always Use Playwright MCP for Browser Automation

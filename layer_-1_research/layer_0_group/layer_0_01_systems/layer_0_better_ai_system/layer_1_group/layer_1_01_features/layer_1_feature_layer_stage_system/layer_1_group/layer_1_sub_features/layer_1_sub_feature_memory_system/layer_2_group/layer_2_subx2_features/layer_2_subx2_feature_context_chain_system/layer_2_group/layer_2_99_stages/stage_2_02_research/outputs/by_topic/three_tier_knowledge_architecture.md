@@ -1,3 +1,8 @@
+---
+resource_id: "876729fa-5cb4-4975-a47f-8ca583e7db20"
+resource_type: "output"
+resource_name: "three_tier_knowledge_architecture"
+---
 # Three-Tier Knowledge Architecture
 
 ## Source

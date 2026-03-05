@@ -1,3 +1,8 @@
+---
+resource_id: "b568064f-ea6d-4d61-8715-dd746fc77c61"
+resource_type: "document"
+resource_name: "QUICK_START"
+---
 # Quick Start Guide - Universal Setup File Tree
 
 ## What is This?

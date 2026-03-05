@@ -1,3 +1,8 @@
+---
+resource_id: "460ecd5a-16bb-4539-9660-143b3dbd8d83"
+resource_type: "document"
+resource_name: "layer_registry"
+---
 # Level 10 Layer Registry — AI Apps Children
 
 ## Entity Types at Level 10

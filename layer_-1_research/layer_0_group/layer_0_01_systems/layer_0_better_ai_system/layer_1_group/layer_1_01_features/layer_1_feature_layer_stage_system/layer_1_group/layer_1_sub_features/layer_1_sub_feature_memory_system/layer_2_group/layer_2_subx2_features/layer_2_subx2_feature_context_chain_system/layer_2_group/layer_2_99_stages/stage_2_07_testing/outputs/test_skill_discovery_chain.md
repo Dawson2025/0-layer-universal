@@ -1,3 +1,8 @@
+---
+resource_id: "abd92d0b-57a4-4058-90de-3f54f9ccddd8"
+resource_type: "output"
+resource_name: "test_skill_discovery_chain"
+---
 # Test: Skill Discovery Chain — `/perplexity-extract`
 
 **Date**: 2026-02-23

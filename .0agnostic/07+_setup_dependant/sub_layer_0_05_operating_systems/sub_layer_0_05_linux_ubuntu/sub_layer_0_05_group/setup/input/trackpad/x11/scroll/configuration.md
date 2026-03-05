@@ -1,3 +1,8 @@
+---
+resource_id: "b8c463b8-bd38-4c05-a303-da6ab098594b"
+resource_type: "document"
+resource_name: "configuration"
+---
 # Scroll Configuration
 
 **Last Updated**: January 11, 2026

@@ -1,4 +1,7 @@
 #!/bin/bash
+# resource_id: "8e6cc283-bdc9-4283-867c-1ad22cef9a7f"
+# resource_type: "script"
+# resource_name: "audit_helper_commands"
 # Helper commands for auditing missing content
 # Use these commands to investigate what content existed before consolidation
 

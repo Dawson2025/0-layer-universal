@@ -1,3 +1,9 @@
+---
+resource_id: "a5161c8b-0c3b-4148-9d4e-3c36a2faa379"
+resource_type: "readme
+knowledge"
+resource_name: "README"
+---
 # Codex Config Component
 
 ## Purpose

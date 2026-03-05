@@ -1,3 +1,8 @@
+---
+resource_id: "537f85cb-1c8b-452a-84e2-f0bc8181f4d7"
+resource_type: "document"
+resource_name: "FULL_MESH_SSH_PLAN"
+---
 # Full Mesh SSH Connectivity Plan
 
 **Goal**: Connect ALL devices to ALL other devices (where technically possible) using Termius

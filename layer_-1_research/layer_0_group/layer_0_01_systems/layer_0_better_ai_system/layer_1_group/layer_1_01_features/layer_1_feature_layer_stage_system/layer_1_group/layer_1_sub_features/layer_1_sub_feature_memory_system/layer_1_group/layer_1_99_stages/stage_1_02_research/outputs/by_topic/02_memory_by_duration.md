@@ -1,3 +1,8 @@
+---
+resource_id: "a8d59194-b0b2-4af9-9f3d-3b836e545e91"
+resource_type: "output"
+resource_name: "02_memory_by_duration"
+---
 # Memory Types by Duration / Temporal Scope
 
 ## Overview

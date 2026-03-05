@@ -1,3 +1,8 @@
+---
+resource_id: "578312d7-8bdb-4fd5-bc7f-78e1319f8d82"
+resource_type: "document"
+resource_name: "HANDOFF"
+---
 # Stage 0.00 Handoff: Linux Setup Tasks
 
 ## Status: IN PROGRESS

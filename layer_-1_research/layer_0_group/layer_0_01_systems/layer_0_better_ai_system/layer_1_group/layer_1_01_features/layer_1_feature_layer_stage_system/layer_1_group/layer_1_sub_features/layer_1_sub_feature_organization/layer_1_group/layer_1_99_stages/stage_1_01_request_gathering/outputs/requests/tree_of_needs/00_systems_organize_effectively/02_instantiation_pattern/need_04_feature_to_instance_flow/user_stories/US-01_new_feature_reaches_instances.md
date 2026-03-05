@@ -1,3 +1,8 @@
+---
+resource_id: "0e4ec076-9584-483a-8103-07d61c4caafb"
+resource_type: "output"
+resource_name: "US-01_new_feature_reaches_instances"
+---
 # New Feature Reaches Instances
 
 **As a** system architect responsible for feature propagation,

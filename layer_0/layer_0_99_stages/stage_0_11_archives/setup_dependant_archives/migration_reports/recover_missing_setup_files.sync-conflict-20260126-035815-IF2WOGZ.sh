@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
+# resource_id: "7b25656d-2b5e-4bd2-8374-66d031f97a19"
+# resource_type: "script"
+# resource_name: "recover_missing_setup_files.sync-conflict-20260126-035815-IF2WOGZ"
 set -euo pipefail
 
 usage() {

@@ -1,3 +1,8 @@
+---
+resource_id: "7cef3c8b-c3a2-492a-abf7-37c0991bd57b"
+resource_type: "output"
+resource_name: "US-02_stage_agent_works_from_distilled"
+---
 # US-2: Stage agent works from distilled knowledge
 
 **Need**: [Three-Tier Delegation](../README.md)

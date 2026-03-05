@@ -1,4 +1,9 @@
 ---
+resource_id: "2fe1a869-1ba4-4bc9-80c9-5871394c5f08"
+resource_type: "knowledge"
+resource_name: "03_instructions-complete"
+---
+---
 description: Mark 03_instructions stage as complete and prepare handoff
 argument-hint: [--notes "completion notes"]
 ---

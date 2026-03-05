@@ -1,3 +1,8 @@
+---
+resource_id: "ee838447-f113-4ba4-abed-5a7e04449f36"
+resource_type: "rule"
+resource_name: "FILE_PATH_LINKING_RULE"
+---
 # [CRITICAL] File Path Linking Rule
 
 ## Rule (MANDATORY)

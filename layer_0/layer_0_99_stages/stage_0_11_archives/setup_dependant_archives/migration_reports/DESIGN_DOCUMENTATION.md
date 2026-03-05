@@ -1,3 +1,8 @@
+---
+resource_id: "75a082ca-1024-49be-b0ac-5328711c56c3"
+resource_type: "document"
+resource_name: "DESIGN_DOCUMENTATION"
+---
 # Universal Setup File Tree - Design Documentation
 
 **Created**: 2025-12-31

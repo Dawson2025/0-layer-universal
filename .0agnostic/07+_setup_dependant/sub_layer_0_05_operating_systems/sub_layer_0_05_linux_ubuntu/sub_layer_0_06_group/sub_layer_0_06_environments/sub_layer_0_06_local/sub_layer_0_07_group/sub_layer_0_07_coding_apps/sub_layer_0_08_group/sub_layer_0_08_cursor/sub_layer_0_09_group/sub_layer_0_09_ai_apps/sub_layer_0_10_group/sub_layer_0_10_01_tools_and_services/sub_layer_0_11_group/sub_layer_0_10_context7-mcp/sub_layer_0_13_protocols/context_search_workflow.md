@@ -1,3 +1,8 @@
+---
+resource_id: "94490a1a-e846-46f1-b095-f5084f61a08f"
+resource_type: "document"
+resource_name: "context_search_workflow"
+---
 # Context Search Workflow
 
 This document describes the workflow for searching and resolving library identifiers using the Context7 MCP server.

@@ -1,3 +1,8 @@
+---
+resource_id: "83cbdd61-78fc-4337-a82a-0d81069ce7d8"
+resource_type: "document"
+resource_name: "context_quality_checklist"
+---
 # Context Quality Checklist
 
 **Purpose**: Systematic verification before an agent begins work.

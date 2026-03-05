@@ -1,3 +1,9 @@
+---
+resource_id: "a43a9b21-ac69-4278-96f1-13f685b225b7"
+resource_type: "readme
+knowledge"
+resource_name: "README"
+---
 # Universal Manager Agent (Template)
 
 Purpose: Coordinates all project managers, decides which project(s) to activate, and delegates to universal stage agents as needed.

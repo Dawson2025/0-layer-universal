@@ -1,3 +1,8 @@
+---
+resource_id: "e5fa7c23-f436-45a4-9401-f8f9b9956bc2"
+resource_type: "document"
+resource_name: "protocol_writing_standard"
+---
 # Protocol Writing Standard
 
 ## Applicability

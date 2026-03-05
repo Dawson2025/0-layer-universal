@@ -1,3 +1,9 @@
+---
+resource_id: "c2e3f947-faa9-4067-b9dc-f823036d2f5e"
+resource_type: "readme
+knowledge"
+resource_name: "README"
+---
 # Features
 
 This folder contains features (Layer 3) within this sub-project.

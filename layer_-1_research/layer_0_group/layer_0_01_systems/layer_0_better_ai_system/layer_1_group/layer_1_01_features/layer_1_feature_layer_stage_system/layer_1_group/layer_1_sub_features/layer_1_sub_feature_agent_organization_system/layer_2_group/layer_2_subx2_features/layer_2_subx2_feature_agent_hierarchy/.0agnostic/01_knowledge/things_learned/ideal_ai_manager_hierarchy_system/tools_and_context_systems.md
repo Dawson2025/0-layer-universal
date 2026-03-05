@@ -1,3 +1,8 @@
+---
+resource_id: "bdaa33fa-48bf-428c-9f80-c1d88715bf28"
+resource_type: "knowledge"
+resource_name: "tools_and_context_systems"
+---
 ## Tools and Context Systems
 
 This document expands on how specific tools and their context systems fit into the ideal AI manager hierarchy system.

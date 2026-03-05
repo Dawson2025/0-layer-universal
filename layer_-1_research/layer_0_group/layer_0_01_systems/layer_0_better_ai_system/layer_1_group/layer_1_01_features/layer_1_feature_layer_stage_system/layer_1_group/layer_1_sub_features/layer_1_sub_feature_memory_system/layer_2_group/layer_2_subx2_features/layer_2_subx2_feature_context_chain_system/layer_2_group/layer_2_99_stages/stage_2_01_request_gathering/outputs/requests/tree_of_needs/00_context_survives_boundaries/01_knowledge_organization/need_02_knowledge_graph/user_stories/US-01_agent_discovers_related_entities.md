@@ -1,3 +1,8 @@
+---
+resource_id: "acdb6faa-2208-4491-851b-9d129a76c6fa"
+resource_type: "output"
+resource_name: "US-01_agent_discovers_related_entities"
+---
 # US-01: Agent discovers related entities
 
 **Need**: [Knowledge Graph](../README.md)

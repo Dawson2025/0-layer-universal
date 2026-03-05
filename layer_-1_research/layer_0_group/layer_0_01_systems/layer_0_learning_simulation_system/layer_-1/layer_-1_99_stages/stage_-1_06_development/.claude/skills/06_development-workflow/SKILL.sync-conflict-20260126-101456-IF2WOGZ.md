@@ -1,4 +1,7 @@
 ---
+resource_id: "d0a836e6-0926-4291-bf92-1f2f1f8b7a0d"
+resource_type: "document"
+resource_name: "SKILL.sync-conflict-20260126-101456-IF2WOGZ"
 name: 06_development-workflow
 description: Workflow skill for Implementation and coding. Activated when working on 06_development tasks.
 version: 1.0.0

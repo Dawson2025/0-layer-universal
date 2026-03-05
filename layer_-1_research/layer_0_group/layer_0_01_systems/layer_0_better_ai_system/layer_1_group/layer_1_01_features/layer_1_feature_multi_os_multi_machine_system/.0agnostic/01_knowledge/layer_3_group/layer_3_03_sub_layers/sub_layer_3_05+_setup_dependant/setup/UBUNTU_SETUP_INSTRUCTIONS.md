@@ -1,3 +1,8 @@
+---
+resource_id: "bcb8755c-4d81-458c-bf67-6fa233d46e09"
+resource_type: "knowledge"
+resource_name: "UBUNTU_SETUP_INSTRUCTIONS"
+---
 # Ubuntu Desktop Setup Instructions
 
 ## Overview

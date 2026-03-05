@@ -1,3 +1,8 @@
+---
+resource_id: "359c28a9-011d-4a63-aedb-2151dca5cadd"
+resource_type: "knowledge"
+resource_name: "IDEAL_AI_MANAGER_HIERARCHY_SYSTEM"
+---
 ## IDEAL AI Manager Hierarchy System
 
 This document captures an idealized **AI manager hierarchy system** derived from the research conversation in `../../../chat_history/ai-manager-hierarchy-system-research.md`.  

@@ -1,3 +1,8 @@
+---
+resource_id: "ed9b167b-ec8a-4c09-ae2e-b039c6fef65f"
+resource_type: "output"
+resource_name: "codex_runtime_behavior_test_report"
+---
 # Codex Runtime Behavior Test Report
 
 ## Test Design

@@ -1,3 +1,8 @@
+---
+resource_id: "53587614-cc5d-4639-9de8-d776fea68d8e"
+resource_type: "output"
+resource_name: "REQ-03_adaptive_learning"
+---
 # Adaptive Learning
 
 **Need**: [School System Example](../README.md)

@@ -1,4 +1,5 @@
 {
+  "file_id": "e784005d-c577-41e1-b05c-2c723debd300",
   "@context": {
     "@vocab": "https://layer-stage.dev/orchestrator/",
     "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
@@ -11,12 +12,18 @@
     {
       "severity": "critical",
       "action": "Write code or create implementations — this stage only designs",
-      "appliesTo": ["scope management", "methodology"]
+      "appliesTo": [
+        "scope management",
+        "methodology"
+      ]
     },
     {
       "severity": "critical",
       "action": "Operate outside design scope without escalation to entity manager",
-      "appliesTo": ["delegation", "scope management"]
+      "appliesTo": [
+        "delegation",
+        "scope management"
+      ]
     }
   ],
   "@graph": [
@@ -50,16 +57,25 @@
           "@id": "ads:AgentDelegationOrchestrator",
           "path": "../../AALang_jsonld_agents/orchestrator.gab.jsonld"
         },
-        "inheritsFrom": ["agent_delegation_system"],
+        "inheritsFrom": [
+          "agent_delegation_system"
+        ],
         "canOverride": [],
         "overrides": []
       },
-      "modes": ["ds:ReceiveMode", "ds:ExecuteMode", "ds:ReportMode"],
+      "modes": [
+        "ds:ReceiveMode",
+        "ds:ExecuteMode",
+        "ds:ReportMode"
+      ],
       "actors": [
-        "ds:ReceiveActor1", "ds:ReceiveActor2",
-        "ds:ExecuteActor1", "ds:ExecuteActor2",
+        "ds:ReceiveActor1",
+        "ds:ReceiveActor2",
+        "ds:ExecuteActor1",
+        "ds:ExecuteActor2",
         "ds:ReportActor1",
-        "ds:TaskStateActor", "ds:OutputStateActor"
+        "ds:TaskStateActor",
+        "ds:OutputStateActor"
       ],
       "teamLead": "entity_manager",
       "constraints": [
@@ -73,7 +89,11 @@
       "@id": "ds:TaskStateActor",
       "@type": "gab:Actor",
       "id": "TaskStateActor",
-      "operatesIn": ["ds:ReceiveMode", "ds:ExecuteMode", "ds:ReportMode"],
+      "operatesIn": [
+        "ds:ReceiveMode",
+        "ds:ExecuteMode",
+        "ds:ReportMode"
+      ],
       "activeMode": null,
       "persona": "ds:TaskStatePersona",
       "role": "StateManager",
@@ -86,7 +106,11 @@
       "name": "Task State Manager",
       "role": "StateManager",
       "personality": "Organized, tracks design progress",
-      "responsibilities": ["Track design decisions", "Maintain specification status", "Update progress metrics"],
+      "responsibilities": [
+        "Track design decisions",
+        "Maintain specification status",
+        "Update progress metrics"
+      ],
       "mode": null,
       "actor": "ds:TaskStateActor",
       "canMessage": [],
@@ -97,7 +121,10 @@
       "@id": "ds:OutputStateActor",
       "@type": "gab:Actor",
       "id": "OutputStateActor",
-      "operatesIn": ["ds:ExecuteMode", "ds:ReportMode"],
+      "operatesIn": [
+        "ds:ExecuteMode",
+        "ds:ReportMode"
+      ],
       "activeMode": null,
       "persona": "ds:OutputStatePersona",
       "role": "StateManager",
@@ -110,7 +137,11 @@
       "name": "Output State Manager",
       "role": "StateManager",
       "personality": "Meticulous, tracks specifications",
-      "responsibilities": ["Track design decisions", "Verify specification completeness", "Monitor output directory state"],
+      "responsibilities": [
+        "Track design decisions",
+        "Verify specification completeness",
+        "Monitor output directory state"
+      ],
       "mode": null,
       "actor": "ds:OutputStateActor",
       "canMessage": [],
@@ -127,10 +158,15 @@
         "Read parent .0agnostic/01_knowledge/ for domain context",
         "Do NOT start designing until task is clear"
       ],
-      "contains": ["ds:ReceivePersona1", "ds:ReceivePersona2"],
+      "contains": [
+        "ds:ReceivePersona1",
+        "ds:ReceivePersona2"
+      ],
       "isolatedState": "ds:ReceiveModeState",
       "initialMode": true,
-      "precedes": ["ds:ExecuteMode"]
+      "precedes": [
+        "ds:ExecuteMode"
+      ]
     },
     {
       "@id": "ds:ExecuteMode",
@@ -143,9 +179,14 @@
         "Consider the layer-stage hierarchy in all designs",
         "Do NOT proceed to ReportMode until design is coherent"
       ],
-      "contains": ["ds:ExecutePersona1", "ds:ExecutePersona2"],
+      "contains": [
+        "ds:ExecutePersona1",
+        "ds:ExecutePersona2"
+      ],
       "isolatedState": "ds:ExecuteModeState",
-      "precedes": ["ds:ReportMode"]
+      "precedes": [
+        "ds:ReportMode"
+      ]
     },
     {
       "@id": "ds:ReportMode",
@@ -157,15 +198,21 @@
         "Document all design decisions for traceability",
         "Transition back to ReceiveMode or signal completion"
       ],
-      "contains": ["ds:ReportPersona1"],
+      "contains": [
+        "ds:ReportPersona1"
+      ],
       "isolatedState": "ds:ReportModeState",
-      "precedes": ["ds:ReceiveMode"]
+      "precedes": [
+        "ds:ReceiveMode"
+      ]
     },
     {
       "@id": "ds:ReceiveActor1",
       "@type": "gab:Actor",
       "id": "ReceiveActor1",
-      "operatesIn": ["ds:ReceiveMode"],
+      "operatesIn": [
+        "ds:ReceiveMode"
+      ],
       "activeMode": "ds:ReceiveMode",
       "persona": "ds:ReceivePersona1",
       "role": "Senior",
@@ -175,7 +222,9 @@
       "@id": "ds:ReceiveActor2",
       "@type": "gab:Actor",
       "id": "ReceiveActor2",
-      "operatesIn": ["ds:ReceiveMode"],
+      "operatesIn": [
+        "ds:ReceiveMode"
+      ],
       "activeMode": "ds:ReceiveMode",
       "persona": "ds:ReceivePersona2",
       "role": "Junior",
@@ -185,7 +234,9 @@
       "@id": "ds:ExecuteActor1",
       "@type": "gab:Actor",
       "id": "ExecuteActor1",
-      "operatesIn": ["ds:ExecuteMode"],
+      "operatesIn": [
+        "ds:ExecuteMode"
+      ],
       "activeMode": "ds:ExecuteMode",
       "persona": "ds:ExecutePersona1",
       "role": "Senior",
@@ -195,7 +246,9 @@
       "@id": "ds:ExecuteActor2",
       "@type": "gab:Actor",
       "id": "ExecuteActor2",
-      "operatesIn": ["ds:ExecuteMode"],
+      "operatesIn": [
+        "ds:ExecuteMode"
+      ],
       "activeMode": "ds:ExecuteMode",
       "persona": "ds:ExecutePersona2",
       "role": "Junior",
@@ -205,7 +258,9 @@
       "@id": "ds:ReportActor1",
       "@type": "gab:Actor",
       "id": "ReportActor1",
-      "operatesIn": ["ds:ReportMode"],
+      "operatesIn": [
+        "ds:ReportMode"
+      ],
       "activeMode": "ds:ReportMode",
       "persona": "ds:ReportPersona1",
       "role": "Senior",
@@ -225,8 +280,16 @@
       ],
       "mode": "ds:ReceiveMode",
       "actor": "ds:ReceiveActor1",
-      "canMessage": ["ds:ReceivePersona2", "ds:ExecutePersona1", "user"],
-      "canReceiveFrom": ["user", "ds:ReceivePersona2", "ds:ReportPersona1"],
+      "canMessage": [
+        "ds:ReceivePersona2",
+        "ds:ExecutePersona1",
+        "user"
+      ],
+      "canReceiveFrom": [
+        "user",
+        "ds:ReceivePersona2",
+        "ds:ReportPersona1"
+      ],
       "sessionConsistent": true
     },
     {
@@ -243,8 +306,12 @@
       ],
       "mode": "ds:ReceiveMode",
       "actor": "ds:ReceiveActor2",
-      "canMessage": ["ds:ReceivePersona1"],
-      "canReceiveFrom": ["ds:ReceivePersona1"],
+      "canMessage": [
+        "ds:ReceivePersona1"
+      ],
+      "canReceiveFrom": [
+        "ds:ReceivePersona1"
+      ],
       "sessionConsistent": true
     },
     {
@@ -261,8 +328,15 @@
       ],
       "mode": "ds:ExecuteMode",
       "actor": "ds:ExecuteActor1",
-      "canMessage": ["ds:ExecutePersona2", "ds:ReportPersona1", "user"],
-      "canReceiveFrom": ["ds:ReceivePersona1", "ds:ExecutePersona2"],
+      "canMessage": [
+        "ds:ExecutePersona2",
+        "ds:ReportPersona1",
+        "user"
+      ],
+      "canReceiveFrom": [
+        "ds:ReceivePersona1",
+        "ds:ExecutePersona2"
+      ],
       "sessionConsistent": true
     },
     {
@@ -279,8 +353,12 @@
       ],
       "mode": "ds:ExecuteMode",
       "actor": "ds:ExecuteActor2",
-      "canMessage": ["ds:ExecutePersona1"],
-      "canReceiveFrom": ["ds:ExecutePersona1"],
+      "canMessage": [
+        "ds:ExecutePersona1"
+      ],
+      "canReceiveFrom": [
+        "ds:ExecutePersona1"
+      ],
       "sessionConsistent": true
     },
     {
@@ -297,8 +375,13 @@
       ],
       "mode": "ds:ReportMode",
       "actor": "ds:ReportActor1",
-      "canMessage": ["ds:ReceivePersona1", "user"],
-      "canReceiveFrom": ["ds:ExecutePersona1"],
+      "canMessage": [
+        "ds:ReceivePersona1",
+        "user"
+      ],
+      "canReceiveFrom": [
+        "ds:ExecutePersona1"
+      ],
       "sessionConsistent": true
     },
     {
@@ -306,27 +389,61 @@
       "@type": "gab:IsolatedState",
       "mode": "ds:ReceiveMode",
       "scope": "private to Receive Mode",
-      "includes": ["Design task parsed", "Requirements and research loaded", "Existing design state"],
-      "readableBy": ["ds:ReceivePersona1", "ds:ReceivePersona2"],
-      "unreadableBy": ["ds:ExecutePersona1", "ds:ExecutePersona2", "ds:ReportPersona1"]
+      "includes": [
+        "Design task parsed",
+        "Requirements and research loaded",
+        "Existing design state"
+      ],
+      "readableBy": [
+        "ds:ReceivePersona1",
+        "ds:ReceivePersona2"
+      ],
+      "unreadableBy": [
+        "ds:ExecutePersona1",
+        "ds:ExecutePersona2",
+        "ds:ReportPersona1"
+      ]
     },
     {
       "@id": "ds:ExecuteModeState",
       "@type": "gab:IsolatedState",
       "mode": "ds:ExecuteMode",
       "scope": "private to Execute Mode",
-      "includes": ["Architecture proposals", "Specification documents", "Design decision rationale", "Context models"],
-      "readableBy": ["ds:ExecutePersona1", "ds:ExecutePersona2"],
-      "unreadableBy": ["ds:ReceivePersona1", "ds:ReceivePersona2", "ds:ReportPersona1"]
+      "includes": [
+        "Architecture proposals",
+        "Specification documents",
+        "Design decision rationale",
+        "Context models"
+      ],
+      "readableBy": [
+        "ds:ExecutePersona1",
+        "ds:ExecutePersona2"
+      ],
+      "unreadableBy": [
+        "ds:ReceivePersona1",
+        "ds:ReceivePersona2",
+        "ds:ReportPersona1"
+      ]
     },
     {
       "@id": "ds:ReportModeState",
       "@type": "gab:IsolatedState",
       "mode": "ds:ReportMode",
       "scope": "private to Report Mode",
-      "includes": ["Stage report draft", "Design decisions summary", "Handoff preparation"],
-      "readableBy": ["ds:ReportPersona1"],
-      "unreadableBy": ["ds:ReceivePersona1", "ds:ReceivePersona2", "ds:ExecutePersona1", "ds:ExecutePersona2"]
+      "includes": [
+        "Stage report draft",
+        "Design decisions summary",
+        "Handoff preparation"
+      ],
+      "readableBy": [
+        "ds:ReportPersona1"
+      ],
+      "unreadableBy": [
+        "ds:ReceivePersona1",
+        "ds:ReceivePersona2",
+        "ds:ExecutePersona1",
+        "ds:ExecutePersona2"
+      ]
     }
   ]
 }

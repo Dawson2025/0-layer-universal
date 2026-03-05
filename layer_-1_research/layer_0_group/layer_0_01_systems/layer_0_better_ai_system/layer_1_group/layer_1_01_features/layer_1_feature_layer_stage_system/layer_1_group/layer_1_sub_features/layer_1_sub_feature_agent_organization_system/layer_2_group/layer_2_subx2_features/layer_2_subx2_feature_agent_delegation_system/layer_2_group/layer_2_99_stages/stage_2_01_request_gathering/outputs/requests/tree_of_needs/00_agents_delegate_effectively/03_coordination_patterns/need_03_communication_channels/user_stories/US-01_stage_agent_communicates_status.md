@@ -1,3 +1,8 @@
+---
+resource_id: "e1a4d828-9e7d-4e3d-b8e3-7778ff88d295"
+resource_type: "output"
+resource_name: "US-01_stage_agent_communicates_status"
+---
 # US-1: Stage agent communicates status via report
 
 **Need**: [Communication Channels](../README.md)

@@ -1,3 +1,8 @@
+---
+resource_id: "3ec10c05-d858-4a12-bcad-1e0418d3768c"
+resource_type: "output"
+resource_name: "US-02_feature_has_full_lifecycle"
+---
 # Feature Has Full Lifecycle
 
 **As a** feature agent responsible for developing a capability,

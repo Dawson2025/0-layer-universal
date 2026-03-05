@@ -1,3 +1,8 @@
+---
+resource_id: "b98ffbc7-f239-4887-afb2-e48a141b4108"
+resource_type: "rule"
+resource_name: "OVERARCHING_O2"
+---
 # O2: RULE MANAGEMENT
 
 ## Strategic Question

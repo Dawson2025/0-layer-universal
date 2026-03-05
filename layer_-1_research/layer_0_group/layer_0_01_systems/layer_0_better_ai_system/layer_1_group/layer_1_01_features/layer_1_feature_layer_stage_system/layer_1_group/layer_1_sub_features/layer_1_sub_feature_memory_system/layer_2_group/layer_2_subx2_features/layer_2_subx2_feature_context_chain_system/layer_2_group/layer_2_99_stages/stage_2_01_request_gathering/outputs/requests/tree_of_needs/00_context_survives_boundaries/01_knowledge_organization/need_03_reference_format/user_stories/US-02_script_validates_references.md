@@ -1,3 +1,8 @@
+---
+resource_id: "bf455f6d-00ed-4994-9226-f93e4d2a09c9"
+resource_type: "output"
+resource_name: "US-02_script_validates_references"
+---
 # US-02: Script validates all references
 
 **Need**: [Reference Format Standard](../README.md)

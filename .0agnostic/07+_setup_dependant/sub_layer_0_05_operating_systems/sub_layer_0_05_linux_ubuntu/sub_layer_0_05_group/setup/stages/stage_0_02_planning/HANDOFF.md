@@ -1,3 +1,8 @@
+---
+resource_id: "d414a405-433d-4dc4-aa98-fb3c22ea0ba2"
+resource_type: "document"
+resource_name: "HANDOFF"
+---
 # Stage 0.02 Handoff: Execution Plans
 
 ## Status: COMPLETE

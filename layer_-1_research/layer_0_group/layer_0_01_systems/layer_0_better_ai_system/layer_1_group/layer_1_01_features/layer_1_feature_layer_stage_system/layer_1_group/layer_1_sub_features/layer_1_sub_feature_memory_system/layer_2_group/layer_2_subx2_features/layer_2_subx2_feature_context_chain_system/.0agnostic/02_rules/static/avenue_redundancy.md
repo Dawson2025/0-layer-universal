@@ -1,3 +1,8 @@
+---
+resource_id: "a6414b4a-572f-4831-85ab-9778529052be"
+resource_type: "rule"
+resource_name: "avenue_redundancy"
+---
 # Avenue Redundancy Rule
 
 ## Rule: Minimum 3-Avenue Redundancy for All Critical Context

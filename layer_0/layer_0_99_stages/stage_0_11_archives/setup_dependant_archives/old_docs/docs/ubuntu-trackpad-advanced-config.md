@@ -1,3 +1,8 @@
+---
+resource_id: "c72b9d88-83f1-445f-9d4b-561affc63423"
+resource_type: "document"
+resource_name: "ubuntu-trackpad-advanced-config"
+---
 # Ubuntu Trackpad Advanced Configuration Guide
 
 **Last Updated**: December 2, 2025

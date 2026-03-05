@@ -1,3 +1,8 @@
+---
+resource_id: "67d175da-eb63-4ddf-849b-a15f1492031d"
+resource_type: "output"
+resource_name: "system_tts_criticism"
+---
 # System TTS Criticism / Review
 
 **Date**: 2026-02-23

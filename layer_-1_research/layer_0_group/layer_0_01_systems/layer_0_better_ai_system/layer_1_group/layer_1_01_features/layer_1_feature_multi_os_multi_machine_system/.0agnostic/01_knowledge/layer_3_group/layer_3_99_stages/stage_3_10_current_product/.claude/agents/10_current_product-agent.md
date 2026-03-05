@@ -1,4 +1,9 @@
 ---
+resource_id: "310bbfcc-2453-429b-9f5b-b48c4187ee88"
+resource_type: "knowledge"
+resource_name: "10_current_product-agent"
+---
+---
 name: 10_current_product-agent
 description: Specialized agent for Production-ready artifacts. Use when working on 10_current_product tasks.
 tools: Read, Write, Glob

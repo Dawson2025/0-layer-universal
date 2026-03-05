@@ -1,3 +1,8 @@
+---
+resource_id: "ec5d4159-6ed9-4fa0-b9a5-d0eda7daaee8"
+resource_type: "output"
+resource_name: "suite_design"
+---
 # Cross-Entity Porting Bridge Validation Design
 
 ## Goal

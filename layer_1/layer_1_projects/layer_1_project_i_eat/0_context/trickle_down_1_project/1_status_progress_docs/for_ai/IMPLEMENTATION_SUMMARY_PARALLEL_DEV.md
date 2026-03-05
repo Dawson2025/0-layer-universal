@@ -1,3 +1,8 @@
+---
+resource_id: "df568deb-3730-4127-be53-dd2c1282f524"
+resource_type: "document"
+resource_name: "IMPLEMENTATION_SUMMARY_PARALLEL_DEV"
+---
 # Implementation Summary: Parallel Development Architecture
 
 ## Objective

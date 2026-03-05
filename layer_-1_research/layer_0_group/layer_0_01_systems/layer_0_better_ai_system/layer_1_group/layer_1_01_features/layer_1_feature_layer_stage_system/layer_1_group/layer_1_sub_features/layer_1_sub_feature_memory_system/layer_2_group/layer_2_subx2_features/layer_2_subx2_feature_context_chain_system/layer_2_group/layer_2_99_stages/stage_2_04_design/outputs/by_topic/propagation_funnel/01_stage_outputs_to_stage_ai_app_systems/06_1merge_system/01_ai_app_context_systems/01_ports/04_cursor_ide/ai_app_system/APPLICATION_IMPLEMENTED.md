@@ -1,3 +1,8 @@
+---
+resource_id: "d5071c0c-65d6-4109-b6a2-96f48831b63e"
+resource_type: "output"
+resource_name: "APPLICATION_IMPLEMENTED"
+---
 # Cursor IDE — Application-Implemented Features
 
 **Date**: 2026-02-27

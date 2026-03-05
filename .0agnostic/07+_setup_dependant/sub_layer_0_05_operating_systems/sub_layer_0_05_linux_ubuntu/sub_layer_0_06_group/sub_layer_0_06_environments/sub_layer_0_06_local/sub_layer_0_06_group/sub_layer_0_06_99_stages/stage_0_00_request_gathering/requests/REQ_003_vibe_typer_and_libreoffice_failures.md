@@ -1,3 +1,8 @@
+---
+resource_id: "3775ad33-89a8-420f-8bd4-d9e3d1ed60b4"
+resource_type: "document"
+resource_name: "REQ_003_vibe_typer_and_libreoffice_failures"
+---
 # REQ_003: Vibe-Typer and LibreOffice Application Failures
 
 **Date Reported**: 2026-01-29

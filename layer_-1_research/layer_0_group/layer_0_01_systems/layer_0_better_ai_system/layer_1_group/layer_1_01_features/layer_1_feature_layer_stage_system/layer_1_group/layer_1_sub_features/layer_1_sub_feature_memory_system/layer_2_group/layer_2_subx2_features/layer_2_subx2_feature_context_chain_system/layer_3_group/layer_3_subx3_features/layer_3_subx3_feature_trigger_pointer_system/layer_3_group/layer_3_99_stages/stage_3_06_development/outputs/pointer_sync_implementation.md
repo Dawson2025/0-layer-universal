@@ -1,3 +1,8 @@
+---
+resource_id: "24b87bb5-c981-40b3-94dc-c0b052db0997"
+resource_type: "output"
+resource_name: "pointer_sync_implementation"
+---
 # Pointer Sync System — Implementation
 
 > **Canonical location**: Root `.0agnostic/pointer-sync.sh`

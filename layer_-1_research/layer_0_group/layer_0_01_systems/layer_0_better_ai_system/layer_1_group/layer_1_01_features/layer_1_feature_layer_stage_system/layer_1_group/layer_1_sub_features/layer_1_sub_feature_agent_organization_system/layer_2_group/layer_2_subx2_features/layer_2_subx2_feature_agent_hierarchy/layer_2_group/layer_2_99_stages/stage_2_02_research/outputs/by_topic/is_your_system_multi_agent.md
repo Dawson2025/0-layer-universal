@@ -1,3 +1,8 @@
+---
+resource_id: "2bc42616-f43c-484e-96f8-9356efd9ed0b"
+resource_type: "output"
+resource_name: "is_your_system_multi_agent"
+---
 # Is Your System Multi-Agent?
 
 **Date**: 2026-01-30

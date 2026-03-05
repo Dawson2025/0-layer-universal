@@ -1,4 +1,7 @@
 ---
+resource_id: "e9b33fee-b189-410d-bef6-76f4e9ffc46b"
+resource_type: "document"
+resource_name: "07_testing-complete.sync-conflict-20260126-101456-IF2WOGZ"
 description: Mark 07_testing stage as complete and prepare handoff
 argument-hint: [--notes "completion notes"]
 ---

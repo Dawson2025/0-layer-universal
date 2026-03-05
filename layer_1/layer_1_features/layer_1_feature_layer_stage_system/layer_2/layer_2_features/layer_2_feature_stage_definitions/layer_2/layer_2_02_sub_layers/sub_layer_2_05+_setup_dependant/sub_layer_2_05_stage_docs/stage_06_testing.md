@@ -1,3 +1,8 @@
+---
+resource_id: "fc33a574-5312-4be0-af49-9031896cb027"
+resource_type: "document"
+resource_name: "stage_06_testing"
+---
 # Stage 05: Testing
 
 ## Purpose

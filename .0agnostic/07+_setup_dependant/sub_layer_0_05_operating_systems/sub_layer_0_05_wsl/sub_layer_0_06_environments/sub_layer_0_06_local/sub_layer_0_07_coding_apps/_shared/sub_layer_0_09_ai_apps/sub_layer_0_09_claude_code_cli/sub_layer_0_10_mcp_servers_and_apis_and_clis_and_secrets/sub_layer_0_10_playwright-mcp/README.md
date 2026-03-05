@@ -1,3 +1,9 @@
+---
+resource_id: "03ab7a3c-d780-4fe8-aa59-7f1f6737cc2d"
+resource_type: "readme
+document"
+resource_name: "README"
+---
 # Playwright MCP (Claude Code CLI on WSL/WSLg)
 
 ## Canonical docs

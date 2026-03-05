@@ -1,3 +1,8 @@
+---
+resource_id: "e4576ec0-6a48-401a-a5fd-86f3a3aff99f"
+resource_type: "document"
+resource_name: "implementation-tasks"
+---
 # Firebase Orchestration Implementation Tasks
 *Generated from Feature Specification via Spec Kit Workflow*
 

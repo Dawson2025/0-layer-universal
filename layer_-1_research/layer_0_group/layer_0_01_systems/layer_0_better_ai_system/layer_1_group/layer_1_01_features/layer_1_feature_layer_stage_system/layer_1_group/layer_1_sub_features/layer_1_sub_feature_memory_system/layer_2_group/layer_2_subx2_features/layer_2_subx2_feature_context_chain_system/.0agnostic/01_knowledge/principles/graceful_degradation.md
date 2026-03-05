@@ -1,3 +1,8 @@
+---
+resource_id: "70e8e69c-9bf6-4327-b6bb-f4f7e5cbdc84"
+resource_type: "knowledge"
+resource_name: "graceful_degradation"
+---
 # Principle: Graceful Degradation
 
 **Type**: Resilience

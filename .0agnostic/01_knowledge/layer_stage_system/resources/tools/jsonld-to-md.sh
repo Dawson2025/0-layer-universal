@@ -1,4 +1,7 @@
 #!/bin/bash
+# resource_id: "65010095-9fce-49e0-812a-8f59b332907c"
+# resource_type: "script"
+# resource_name: "jsonld-to-md"
 # jsonld-to-md.sh — Transpile AALang JSON-LD to markdown integration reference
 # Usage: ./jsonld-to-md.sh <input.gab.jsonld> [output.integration.md]
 #

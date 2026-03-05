@@ -1,4 +1,7 @@
 #!/bin/bash
+# resource_id: "6486db30-e71b-4790-97f3-342253fe4dd0"
+# resource_type: "script"
+# resource_name: "renumber-layers"
 # renumber-layers.sh v2 — Shift layer numbers in a directory tree
 # Usage: renumber-layers.sh <directory> [options]
 #

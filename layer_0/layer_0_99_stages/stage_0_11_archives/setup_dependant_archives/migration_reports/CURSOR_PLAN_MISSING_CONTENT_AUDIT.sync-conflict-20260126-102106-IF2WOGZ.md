@@ -1,3 +1,8 @@
+---
+resource_id: "601ec8f0-7f17-42c8-a7fe-dab445db522b"
+resource_type: "document"
+resource_name: "CURSOR_PLAN_MISSING_CONTENT_AUDIT.sync-conflict-20260126-102106-IF2WOGZ"
+---
 # Cursor IDE Plan Mode: Missing Content Audit and Recovery
 
 ## Context

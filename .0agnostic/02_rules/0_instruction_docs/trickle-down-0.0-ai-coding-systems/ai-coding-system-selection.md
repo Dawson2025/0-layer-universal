@@ -1,3 +1,8 @@
+---
+resource_id: "7629800b-6f92-43a3-ad64-eb8cdb415137"
+resource_type: "rule"
+resource_name: "ai-coding-system-selection"
+---
 # AI Agent Coding System Selection
 *Trickle-Down Level 0.0: AI Coding System Choice*
 

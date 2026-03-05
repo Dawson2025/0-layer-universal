@@ -1,3 +1,8 @@
+---
+resource_id: "2373ac3b-e498-4cbb-a6e5-c6887564d30b"
+resource_type: "rule"
+resource_name: "context_scope_boundaries"
+---
 # Context Scope Boundaries
 
 **Purpose**: Define what context applies where and how scope is determined.

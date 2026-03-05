@@ -1,3 +1,8 @@
+---
+resource_id: "15238fd4-78f0-4b42-af79-893802674468"
+resource_type: "output"
+resource_name: "REQ-03_staleness_integration"
+---
 # Staleness Integration
 
 **Need**: [Chain Validation Enhancement](../README.md)

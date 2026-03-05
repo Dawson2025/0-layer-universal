@@ -1,3 +1,9 @@
+---
+resource_id: "4ee6595e-7b1a-431d-be72-9bbb448fac6c"
+resource_type: "agnostic
+document"
+resource_name: "0AGNOSTIC"
+---
 # 0AGNOSTIC.md - layer_3_99_stages
 
 ## Identity

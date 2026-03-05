@@ -1,3 +1,8 @@
+---
+resource_id: "49b2fec8-68b2-4481-9181-de1012817d1b"
+resource_type: "document"
+resource_name: "quick_decision"
+---
 # Quick Decision Guide
 
 **Last Updated**: January 12, 2026

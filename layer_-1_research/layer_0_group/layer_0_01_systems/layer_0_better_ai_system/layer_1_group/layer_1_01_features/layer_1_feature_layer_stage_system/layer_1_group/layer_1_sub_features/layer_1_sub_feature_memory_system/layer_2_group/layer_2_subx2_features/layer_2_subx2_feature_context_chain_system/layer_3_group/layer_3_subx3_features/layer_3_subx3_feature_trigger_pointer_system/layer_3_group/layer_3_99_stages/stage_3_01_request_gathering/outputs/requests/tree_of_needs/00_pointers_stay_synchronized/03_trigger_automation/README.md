@@ -1,3 +1,9 @@
+---
+resource_id: "3b35f6cf-f9e0-44c6-843a-1bbedde770fd"
+resource_type: "readme
+output"
+resource_name: "README"
+---
 # Branch 03: Trigger Automation
 
 **Core Question**: How does the system detect changes and run automatically?

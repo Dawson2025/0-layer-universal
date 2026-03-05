@@ -1,3 +1,8 @@
+---
+resource_id: "d0dd8f5e-997e-4df8-91fe-2ca6f206704d"
+resource_type: "document"
+resource_name: "HANDOFF"
+---
 # Stage 0.01 Handoff: Technical Specifications
 
 ## Status: COMPLETE

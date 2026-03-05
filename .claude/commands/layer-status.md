@@ -1,3 +1,8 @@
+---
+resource_id: "91a54fe3-2346-4aa5-bd37-9644bb961471"
+resource_type: "document"
+resource_name: "layer-status"
+---
 Show the current layer position and status within the Layer-Stage Framework.
 
 Steps:

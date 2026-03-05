@@ -1,3 +1,8 @@
+---
+resource_id: "e7e22665-0b15-45c8-9bad-7bac7f0b6d57"
+resource_type: "output"
+resource_name: "32_comparison_context_chain_vs_commercial_memory"
+---
 # Comparison: Cascading Context Chain vs Commercial Memory Systems
 
 ## Purpose

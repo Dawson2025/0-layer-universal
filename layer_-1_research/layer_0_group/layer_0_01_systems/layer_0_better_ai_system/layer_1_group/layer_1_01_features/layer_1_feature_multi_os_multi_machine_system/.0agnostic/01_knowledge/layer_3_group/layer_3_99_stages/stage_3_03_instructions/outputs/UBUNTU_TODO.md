@@ -1,3 +1,8 @@
+---
+resource_id: "010a8c18-5233-4800-b902-af16cc7ee094"
+resource_type: "knowledge"
+resource_name: "UBUNTU_TODO"
+---
 # Ubuntu TODO List
 
 **Current Status:** Ubuntu device configured, waiting for online verification

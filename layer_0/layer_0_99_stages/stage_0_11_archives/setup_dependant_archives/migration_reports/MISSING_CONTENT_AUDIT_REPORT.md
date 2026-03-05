@@ -1,3 +1,8 @@
+---
+resource_id: "32278630-4bc7-4446-afe4-31880c5e8554"
+resource_type: "document"
+resource_name: "MISSING_CONTENT_AUDIT_REPORT"
+---
 # Missing Content Audit Report
 
 Date: 2026-01-09

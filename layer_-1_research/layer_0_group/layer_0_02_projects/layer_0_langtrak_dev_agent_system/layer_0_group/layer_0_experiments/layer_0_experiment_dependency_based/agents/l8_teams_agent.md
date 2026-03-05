@@ -1,3 +1,8 @@
+---
+resource_id: "5f890c22-81b5-4bf1-a04f-09534cbcd2a3"
+resource_type: "document"
+resource_name: "l8_teams_agent"
+---
 # L8 Teams Agent
 
 **Role**: Collaboration Layer Specialist

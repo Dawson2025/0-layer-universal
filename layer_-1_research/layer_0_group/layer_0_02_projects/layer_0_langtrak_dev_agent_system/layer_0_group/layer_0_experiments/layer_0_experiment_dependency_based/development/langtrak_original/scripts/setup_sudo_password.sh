@@ -1,4 +1,7 @@
 #!/bin/bash
+# resource_id: "882443b8-a5c6-488a-8669-508e0a010821"
+# resource_type: "script"
+# resource_name: "setup_sudo_password"
 # Setup script for sudo password management
 # This creates a secure password file that won't be committed to git
 

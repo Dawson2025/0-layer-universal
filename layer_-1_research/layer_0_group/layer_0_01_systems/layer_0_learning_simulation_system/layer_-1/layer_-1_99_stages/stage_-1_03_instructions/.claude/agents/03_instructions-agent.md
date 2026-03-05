@@ -1,4 +1,9 @@
 ---
+resource_id: "7e6ec0e5-fcb0-4126-b80c-088d6e5c6782"
+resource_type: "document"
+resource_name: "03_instructions-agent"
+---
+---
 name: 03_instructions-agent
 description: Specialized agent for Document setup and usage instructions. Use when working on 03_instructions tasks.
 tools: Read, Write, Edit

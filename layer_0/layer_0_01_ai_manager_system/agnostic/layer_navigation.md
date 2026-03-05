@@ -1,3 +1,8 @@
+---
+resource_id: "d41825a9-0070-43bd-8790-f4f549e750df"
+resource_type: "document"
+resource_name: "layer_navigation"
+---
 # Layer Navigation
 
 ## Overview

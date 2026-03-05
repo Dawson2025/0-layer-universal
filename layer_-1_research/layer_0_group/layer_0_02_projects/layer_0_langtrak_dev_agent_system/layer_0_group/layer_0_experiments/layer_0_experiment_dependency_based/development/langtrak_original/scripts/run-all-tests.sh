@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
+# resource_id: "2fafcb15-5f19-4a28-98e8-a976e1715da5"
+# resource_type: "script"
+# resource_name: "run-all-tests"
 #
 # Run ALL tests (fast tests + dev environment tests)
 # This is what runs in CI/CD on main branch

@@ -1,3 +1,8 @@
+---
+resource_id: "31f4fc71-8b6a-4db4-91b6-73a7fc0f3f76"
+resource_type: "document"
+resource_name: "what_to_do_next"
+---
 # What To Do Next - Updated January 24, 2025
 /home/dawson/dawson-workspace/code/I-eat-repo/0_context follow the instructions and documentation in here along with your judgement to figure out what you should do next. if there is anything you need to update within /home/dawson/dawson-workspace/code/I-eat-repo/0_context to make it better, do so.
 

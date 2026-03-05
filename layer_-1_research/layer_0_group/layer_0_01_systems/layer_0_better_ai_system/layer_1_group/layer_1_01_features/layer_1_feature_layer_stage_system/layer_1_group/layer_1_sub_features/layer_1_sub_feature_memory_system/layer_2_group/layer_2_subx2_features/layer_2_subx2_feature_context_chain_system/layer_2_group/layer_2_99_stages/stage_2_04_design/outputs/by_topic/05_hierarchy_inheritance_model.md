@@ -1,3 +1,8 @@
+---
+resource_id: "245a5166-cc7d-451b-a821-c7eec6556768"
+resource_type: "output"
+resource_name: "05_hierarchy_inheritance_model"
+---
 # Hierarchy Inheritance Model
 
 **Date**: 2026-02-23

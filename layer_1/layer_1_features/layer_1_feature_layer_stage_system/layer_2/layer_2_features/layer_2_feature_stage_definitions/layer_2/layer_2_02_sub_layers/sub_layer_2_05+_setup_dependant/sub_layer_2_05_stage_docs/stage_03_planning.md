@@ -1,3 +1,8 @@
+---
+resource_id: "6661f930-f384-45bd-9b29-57032052bd4b"
+resource_type: "document"
+resource_name: "stage_03_planning"
+---
 # Stage 02: Planning
 
 ## Purpose

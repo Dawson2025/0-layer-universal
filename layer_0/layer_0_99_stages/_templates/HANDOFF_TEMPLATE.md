@@ -1,3 +1,8 @@
+---
+resource_id: "25d8673d-7bed-40fd-a5e1-e955d2e878d3"
+resource_type: "document"
+resource_name: "HANDOFF_TEMPLATE"
+---
 # Stage X.XX Handoff: [Project Name]
 
 ## Status: [NOT STARTED / IN PROGRESS / BLOCKED / COMPLETE]

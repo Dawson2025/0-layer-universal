@@ -1,3 +1,8 @@
+---
+resource_id: "80010f0e-cfe5-4bd1-a01a-02c2b22adda7"
+resource_type: "rule"
+resource_name: "3_3_verify_rules_in_system_prompt"
+---
 # 3.3: Verify Rules in System Prompt
 
 ## Requirement

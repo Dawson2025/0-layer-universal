@@ -1,3 +1,8 @@
+---
+resource_id: "f0880425-8771-487c-a5fe-b3493961f510"
+resource_type: "knowledge"
+resource_name: "linux_audio_stack"
+---
 # Linux Audio Stack
 
 ## Overview

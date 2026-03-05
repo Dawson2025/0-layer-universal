@@ -1,3 +1,9 @@
+---
+resource_id: "a2ad6587-b83f-4bad-b0f2-6a84905a9306"
+resource_type: "readme
+document"
+resource_name: "README"
+---
 # MCP Servers (cursor_agent on wsl)
 
 This folder contains wsl + cursor_agent specific notes for each MCP server we use.

@@ -1,3 +1,8 @@
+---
+resource_id: "273d5d1d-9e9e-411c-8335-42e20fa7160f"
+resource_type: "document"
+resource_name: "vertical_chain_rules"
+---
 # Vertical Chain Rules
 
 ## Always Gather

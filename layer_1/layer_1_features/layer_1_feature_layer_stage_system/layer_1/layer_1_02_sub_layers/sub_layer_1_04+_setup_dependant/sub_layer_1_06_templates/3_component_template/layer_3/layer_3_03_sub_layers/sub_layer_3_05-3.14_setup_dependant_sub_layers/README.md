@@ -1,3 +1,9 @@
+---
+resource_id: "df9d7065-aade-4130-83bc-af92f44e7821"
+resource_type: "readme
+document"
+resource_name: "README"
+---
 # sub_layer_3.05-3.14_setup - Component Setup Sublayer
 
 **Sublayer Range**: 3.05 through 3.14

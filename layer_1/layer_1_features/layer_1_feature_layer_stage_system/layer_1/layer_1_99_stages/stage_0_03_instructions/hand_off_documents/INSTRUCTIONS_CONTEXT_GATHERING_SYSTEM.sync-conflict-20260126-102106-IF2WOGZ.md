@@ -1,3 +1,8 @@
+---
+resource_id: "93485aab-dc63-444f-a182-8a1d0b52b855"
+resource_type: "document"
+resource_name: "INSTRUCTIONS_CONTEXT_GATHERING_SYSTEM.sync-conflict-20260126-102106-IF2WOGZ"
+---
 # INSTRUCTIONS: Context Gathering System
 
 **Created:** 2026-01-15

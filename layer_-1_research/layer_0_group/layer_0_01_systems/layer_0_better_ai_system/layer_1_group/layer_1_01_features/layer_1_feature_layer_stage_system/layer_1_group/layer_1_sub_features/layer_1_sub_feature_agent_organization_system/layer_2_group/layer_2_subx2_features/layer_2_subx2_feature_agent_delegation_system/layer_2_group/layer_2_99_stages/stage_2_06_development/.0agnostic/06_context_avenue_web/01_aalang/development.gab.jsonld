@@ -1,4 +1,5 @@
 {
+  "file_id": "dfd5a2f0-4805-430f-810f-4b65d65b0cbc",
   "@context": {
     "@vocab": "https://layer-stage.dev/agent/",
     "gab": "https://aalang.dev/gab/",
@@ -30,8 +31,16 @@
         "Follow stage 04 design specifications",
         "All artifacts must trace back to requirements and design decisions"
       ],
-      "inputs": ["Stage 04 design decisions", "Stage 01 requirements", "Entity .0agnostic/ structure"],
-      "outputs": ["Entity .0agnostic/ artifacts", "Stage 0AGNOSTIC.md files", "outputs/reports/stage_report.md"]
+      "inputs": [
+        "Stage 04 design decisions",
+        "Stage 01 requirements",
+        "Entity .0agnostic/ structure"
+      ],
+      "outputs": [
+        "Entity .0agnostic/ artifacts",
+        "Stage 0AGNOSTIC.md files",
+        "outputs/reports/stage_report.md"
+      ]
     }
   ]
 }

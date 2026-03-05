@@ -1,3 +1,9 @@
+---
+resource_id: "ad4949f5-e53a-4dc6-b7a5-6cfd07d9125a"
+resource_type: "readme
+document"
+resource_name: "README"
+---
 # context7-mcp (cursor_agent on windows)
 
 ## Canonical docs

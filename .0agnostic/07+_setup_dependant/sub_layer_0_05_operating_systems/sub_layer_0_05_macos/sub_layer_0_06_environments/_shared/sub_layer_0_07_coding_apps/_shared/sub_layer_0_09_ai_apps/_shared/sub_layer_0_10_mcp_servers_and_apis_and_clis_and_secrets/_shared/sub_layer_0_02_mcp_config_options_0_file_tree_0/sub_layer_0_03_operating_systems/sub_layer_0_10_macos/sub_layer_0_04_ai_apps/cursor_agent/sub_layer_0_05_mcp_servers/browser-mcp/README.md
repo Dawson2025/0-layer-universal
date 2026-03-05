@@ -1,3 +1,9 @@
+---
+resource_id: "da08ff63-d9fc-4d6f-b64d-2a80c747b953"
+resource_type: "readme
+document"
+resource_name: "README"
+---
 # browser-mcp (cursor_agent on macos)
 
 ## Canonical docs

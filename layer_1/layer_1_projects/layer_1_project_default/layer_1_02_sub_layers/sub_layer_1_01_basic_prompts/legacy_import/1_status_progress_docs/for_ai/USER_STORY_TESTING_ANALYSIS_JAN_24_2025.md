@@ -1,3 +1,8 @@
+---
+resource_id: "d07804bd-851c-484e-9aeb-b32fd9f975f9"
+resource_type: "document"
+resource_name: "USER_STORY_TESTING_ANALYSIS_JAN_24_2025"
+---
 # User Story Testing Analysis - January 24, 2025
 **Critical Discovery: False Negatives in User Story Testing System**
 

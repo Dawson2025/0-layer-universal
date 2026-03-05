@@ -1,3 +1,8 @@
+---
+resource_id: "0bf48321-e3a4-4b96-855f-223d78872a5e"
+resource_type: "document"
+resource_name: "ENVIRONMENTS_AND_INTEGRATIONS"
+---
 # Project Environments and Integrations
 **Project**: I-Eat University Food Delivery Platform
 **Last Updated**: 2025-01-24

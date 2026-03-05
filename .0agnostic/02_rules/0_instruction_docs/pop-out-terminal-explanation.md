@@ -1,3 +1,8 @@
+---
+resource_id: "9963a8ca-6d13-41fd-8c09-82d95f1b17d5"
+resource_type: "rule"
+resource_name: "pop-out-terminal-explanation"
+---
 # "Pop Out Terminal" Button - Explanation and Workaround
 
 ## What Is "Pop Out Terminal"?

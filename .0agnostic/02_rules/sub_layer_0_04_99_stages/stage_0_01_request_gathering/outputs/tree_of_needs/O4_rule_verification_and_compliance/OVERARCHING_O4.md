@@ -1,3 +1,8 @@
+---
+resource_id: "5737827d-9b06-4dfe-9b12-e61649d66e8a"
+resource_type: "rule"
+resource_name: "OVERARCHING_O4"
+---
 # O4: RULE VERIFICATION & COMPLIANCE
 
 ## Strategic Question

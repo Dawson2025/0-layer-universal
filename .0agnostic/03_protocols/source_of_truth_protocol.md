@@ -1,3 +1,8 @@
+---
+resource_id: "e6996966-ff4b-4f9e-b771-f7f94435d4a1"
+resource_type: "protocol"
+resource_name: "source_of_truth_protocol"
+---
 # Source of Truth Protocol
 
 **Scope**: Universal — applies to all agents when asked to trace or show the source of truth for any concept, artifact, or system component

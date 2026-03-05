@@ -1,4 +1,7 @@
 ---
+resource_id: "e1ec0f4f-ddb2-409a-9ad4-a4890dc4dc1a"
+resource_type: "document"
+resource_name: "10_current_product-agent.sync-conflict-20260126-101455-IF2WOGZ"
 name: 10_current_product-agent
 description: Specialized agent for Production-ready artifacts. Use when working on 10_current_product tasks.
 tools: Read, Write, Glob

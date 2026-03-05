@@ -1,3 +1,8 @@
+---
+resource_id: "59f65726-ff7d-4d08-92d3-80bb3033c028"
+resource_type: "knowledge"
+resource_name: "sequential_development_methodology"
+---
 # Sequential Development Methodology
 
 **Level**: Universal (0)

@@ -1,3 +1,8 @@
+---
+resource_id: "504a0041-1850-4490-a879-16108c5299ea"
+resource_type: "output"
+resource_name: "US-04_developer_validates_chain_integrity"
+---
 # US-04: Developer validates chain integrity
 
 **Need**: [Knowledge Graph](../README.md)

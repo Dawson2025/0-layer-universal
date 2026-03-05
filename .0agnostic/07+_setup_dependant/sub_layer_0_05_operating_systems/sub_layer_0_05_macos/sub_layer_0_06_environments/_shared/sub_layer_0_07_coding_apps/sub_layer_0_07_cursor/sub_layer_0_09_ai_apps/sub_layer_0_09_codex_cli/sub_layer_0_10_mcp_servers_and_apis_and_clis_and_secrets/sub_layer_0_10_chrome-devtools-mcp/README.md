@@ -1,3 +1,9 @@
+---
+resource_id: "9ecc5eba-4db0-46b8-a404-c28e6b7fd1c0"
+resource_type: "readme
+document"
+resource_name: "README"
+---
 # chrome-devtools-mcp (codex_cli on macos)
 
 ## Canonical docs

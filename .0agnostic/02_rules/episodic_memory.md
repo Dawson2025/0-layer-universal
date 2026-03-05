@@ -1,3 +1,8 @@
+---
+resource_id: "5bc9cf52-76aa-4b51-ad9f-ed9d2f3b7b0f"
+resource_type: "rule"
+resource_name: "episodic_memory"
+---
 # Episodic Memory Rules
 
 ## Rule: Record Significant Work

@@ -1,3 +1,9 @@
+---
+resource_id: "7954ad3e-3bfe-4b16-9e20-992c254da690"
+resource_type: "readme
+document"
+resource_name: "README"
+---
 # browser-mcp (cursor_agent on linux_ubuntu)
 
 ## Canonical docs

@@ -1,3 +1,8 @@
+---
+resource_id: "2d99f9d2-3204-4f8c-9c9f-5964efcb0a1d"
+resource_type: "document"
+resource_name: "MCP_TOOL_EXPOSURE_TESTING_LOG"
+---
 # MCP Tool Exposure Testing Log
 
 **Date**: 2025-12-05  

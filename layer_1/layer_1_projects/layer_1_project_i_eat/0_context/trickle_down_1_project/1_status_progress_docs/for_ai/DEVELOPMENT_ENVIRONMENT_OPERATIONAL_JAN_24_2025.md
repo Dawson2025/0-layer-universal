@@ -1,3 +1,8 @@
+---
+resource_id: "ebb8764d-7255-4f46-9fd0-0671c3527c63"
+resource_type: "document"
+resource_name: "DEVELOPMENT_ENVIRONMENT_OPERATIONAL_JAN_24_2025"
+---
 # Development Environment Operational Status
 **Date**: January 24, 2025  
 **Status**: ✅ **FULLY OPERATIONAL**

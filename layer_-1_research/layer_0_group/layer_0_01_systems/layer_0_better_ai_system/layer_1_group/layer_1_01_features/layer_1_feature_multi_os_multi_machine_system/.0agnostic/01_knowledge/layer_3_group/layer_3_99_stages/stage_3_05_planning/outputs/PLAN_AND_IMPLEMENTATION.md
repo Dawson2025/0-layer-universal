@@ -1,3 +1,8 @@
+---
+resource_id: "d6fe0e85-34bc-4a7a-9d0a-e8ca335d2c7b"
+resource_type: "knowledge"
+resource_name: "PLAN_AND_IMPLEMENTATION"
+---
 # Multi-OS Workspace Sync Plan + Implementation
 
 ## Plan Summary

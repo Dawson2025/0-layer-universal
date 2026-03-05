@@ -1,3 +1,8 @@
+---
+resource_id: "33d4373c-ecbc-479a-b2d9-0b99b9c15f65"
+resource_type: "rule"
+resource_name: "UNIVERSAL_TERMINAL_EXECUTION"
+---
 # Universal Terminal Execution
 *Best Practices for ALL AI Agents*
 

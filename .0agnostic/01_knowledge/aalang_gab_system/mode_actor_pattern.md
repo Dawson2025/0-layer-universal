@@ -1,3 +1,8 @@
+---
+resource_id: "28ab104c-0f23-4e8f-b2dc-66ae1d327cf5"
+resource_type: "knowledge"
+resource_name: "mode_actor_pattern"
+---
 # Mode-Actor Pattern
 
 ## Overview

@@ -1,3 +1,8 @@
+---
+resource_id: "6bc2da16-8fdd-44eb-b7c0-9ee783a3ca5a"
+resource_type: "output"
+resource_name: "REQ-01_entity_search"
+---
 # REQ-01: Entity Search Algorithm
 
 **Need**: [Path Resolution](../README.md)

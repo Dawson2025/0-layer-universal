@@ -1,3 +1,8 @@
+---
+resource_id: "8f39baa6-7cdf-4408-b2f3-74a8be58be7d"
+resource_type: "output"
+resource_name: "TEST_STATUS"
+---
 # Daemon Persistence Restart Fix — Test Status Report
 
 **Generated**: 2026-02-26 16:01 MST

@@ -1,3 +1,8 @@
+---
+resource_id: "9f9415c9-c752-4388-9e81-5c0c19b9bb29"
+resource_type: "document"
+resource_name: "WORKFLOW"
+---
 # AI Manager Framework
 
 **Layer**: 0 (Universal)

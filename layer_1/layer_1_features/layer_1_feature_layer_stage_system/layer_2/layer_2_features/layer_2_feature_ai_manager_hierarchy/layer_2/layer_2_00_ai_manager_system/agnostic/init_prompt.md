@@ -1,3 +1,8 @@
+---
+resource_id: "ea03f3bb-167f-4a90-a194-140bdf961374"
+resource_type: "document"
+resource_name: "init_prompt"
+---
 # Init Prompt - Agnostic Source
 
 ## Purpose

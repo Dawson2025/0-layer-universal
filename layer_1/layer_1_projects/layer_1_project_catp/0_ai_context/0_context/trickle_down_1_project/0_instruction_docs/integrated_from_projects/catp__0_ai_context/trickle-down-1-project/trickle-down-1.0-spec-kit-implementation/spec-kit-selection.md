@@ -1,3 +1,8 @@
+---
+resource_id: "a90c8244-52a1-4db2-ae1e-23a1aee82101"
+resource_type: "document"
+resource_name: "spec-kit-selection"
+---
 # GitHub Spec Kit Implementation for Language Tracker
 *Trickle-Down Level 1.0: Project AI Coding System Selection*
 

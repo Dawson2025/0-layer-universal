@@ -1,3 +1,8 @@
+---
+resource_id: "3c38a658-66e5-4bb5-b7dd-14bc96efaa4d"
+resource_type: "output"
+resource_name: "REQ-03_reusable_templates"
+---
 # Reusable Templates
 
 **Need**: [General Pattern](../README.md)

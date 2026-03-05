@@ -1,3 +1,8 @@
+---
+resource_id: "a4bc20c0-2259-41fc-aedf-7159ef98c9b2"
+resource_type: "output"
+resource_name: "agentic_tts_setup"
+---
 # Agentic TTS Setup — Development Log
 
 **Date**: 2026-02-23

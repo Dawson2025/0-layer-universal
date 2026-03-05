@@ -1,3 +1,8 @@
+---
+resource_id: "f029cfaf-0d01-4ae3-8931-8e5c4c283760"
+resource_type: "knowledge"
+resource_name: "voicemode_mcp"
+---
 # VoiceMode MCP Server
 
 ## Overview

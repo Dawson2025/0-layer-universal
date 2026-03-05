@@ -1,3 +1,8 @@
+---
+resource_id: "6e80c1c8-5ce2-4084-ae07-64a04116ff89"
+resource_type: "output"
+resource_name: "DD-03_stage_scaffolding_defaults"
+---
 # DD-03: Stage Scaffolding Defaults
 
 **Date**: 2026-02-25

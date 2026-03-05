@@ -1,3 +1,9 @@
+---
+resource_id: "86d8bc4b-cf9c-4d97-ba84-87328b157de1"
+resource_type: "readme
+output"
+resource_name: "README"
+---
 # Need: Context Chain Support
 
 **Branch**: [02_memory_integration](../)

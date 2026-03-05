@@ -1,3 +1,8 @@
+---
+resource_id: "ad0a8da3-2e51-4191-9ac2-a9dec2cfc2c0"
+resource_type: "output"
+resource_name: "US-04_chain_loads_identity_not_detail"
+---
 # US-4: Chain loads identity, not detail
 
 **Need**: [Context Chain Support](../README.md)

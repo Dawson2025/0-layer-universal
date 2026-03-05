@@ -1,3 +1,8 @@
+---
+resource_id: "3bc2be2a-578f-4a06-abae-f1acf0fac2d8"
+resource_type: "protocol"
+resource_name: "context_quality_checklist"
+---
 # Context Quality Checklist
 
 **Purpose**: Systematic verification before an agent begins work.

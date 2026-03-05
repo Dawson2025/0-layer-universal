@@ -1,3 +1,8 @@
+---
+resource_id: "13f4c28e-308d-45a1-8e17-46c3db2506ea"
+resource_type: "output"
+resource_name: "dependency_based_architecture_diagrams"
+---
 # Dependency-Based Agent Architecture Diagrams
 
 Visualizations of the dependency-based agent hierarchy design for LangTrak.

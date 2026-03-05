@@ -1,3 +1,8 @@
+---
+resource_id: "54613711-aa57-44b8-9c40-83398e1fb066"
+resource_type: "output"
+resource_name: "US-04_manager_identifies_blocked"
+---
 # US-4: Manager identifies blocked stages
 
 **Need**: [Stage Reports](../README.md)

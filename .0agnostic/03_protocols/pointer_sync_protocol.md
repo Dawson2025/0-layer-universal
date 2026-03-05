@@ -1,3 +1,8 @@
+---
+resource_id: "ad9a7a96-744f-45a7-b5a7-d82a9cd15a95"
+resource_type: "protocol"
+resource_name: "pointer_sync_protocol"
+---
 # Pointer Sync Protocol
 
 **Scope**: All agents | **Trigger**: When creating, moving, or validating pointer files

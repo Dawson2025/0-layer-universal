@@ -1,3 +1,8 @@
+---
+resource_id: "21fe4499-5522-4d05-80f6-feb1bcfb42e1"
+resource_type: "document"
+resource_name: "GH_CLI_SETUP"
+---
 # GitHub CLI (gh) Setup for Claude Code
 
 ## Overview

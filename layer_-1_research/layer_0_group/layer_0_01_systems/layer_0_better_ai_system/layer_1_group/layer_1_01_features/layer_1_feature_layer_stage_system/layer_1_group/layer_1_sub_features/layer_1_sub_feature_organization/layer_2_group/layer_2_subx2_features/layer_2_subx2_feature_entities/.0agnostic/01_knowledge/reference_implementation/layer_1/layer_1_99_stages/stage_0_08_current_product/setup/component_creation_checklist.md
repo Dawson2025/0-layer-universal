@@ -1,3 +1,8 @@
+---
+resource_id: "e66acf96-8494-4cc2-8f37-166d2b5f44d2"
+resource_type: "knowledge"
+resource_name: "component_creation_checklist"
+---
 # Component & Sub-Component Creation Checklist
 
 **Purpose:** Detailed checklist for creating components and sub-components.

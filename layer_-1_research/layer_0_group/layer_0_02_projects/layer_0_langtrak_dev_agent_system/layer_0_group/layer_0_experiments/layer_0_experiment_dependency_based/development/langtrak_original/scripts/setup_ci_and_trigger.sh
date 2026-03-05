@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
+# resource_id: "959fa6e9-b6b6-4e0e-aae3-6270a997fe34"
+# resource_type: "script"
+# resource_name: "setup_ci_and_trigger"
 # Interactive helper to create a Google Cloud service account, create a key,
 # add it to GitHub Actions secrets as FIREBASE_SA_KEY, and trigger the
 # `update-auth-domains.yml` workflow in dry-run mode. Run this locally.

@@ -1,3 +1,8 @@
+---
+resource_id: "7007451f-6fb7-4df3-8bed-34e16ab7c797"
+resource_type: "knowledge"
+resource_name: "ic-path"
+---
 # Individual Contributor Learning Path
 *From Novice to Senior IC*
 

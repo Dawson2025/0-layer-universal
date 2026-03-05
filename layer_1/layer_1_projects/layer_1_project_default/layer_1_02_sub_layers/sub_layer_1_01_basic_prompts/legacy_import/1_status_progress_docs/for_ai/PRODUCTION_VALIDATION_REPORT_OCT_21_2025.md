@@ -1,3 +1,8 @@
+---
+resource_id: "61fa66a9-7d01-4eeb-90e8-92f216e864c0"
+resource_type: "document"
+resource_name: "PRODUCTION_VALIDATION_REPORT_OCT_21_2025"
+---
 # Production Validation Report
 **Date**: October 21, 2025  
 **Server**: Gunicorn Production Deployment  

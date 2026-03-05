@@ -1,3 +1,8 @@
+---
+resource_id: "b1cb72c7-15a5-43a2-881a-b62fa64647c9"
+resource_type: "output"
+resource_name: "suite_implementation"
+---
 # Context Chain Validation Suite Implementation
 
 ## Scripts

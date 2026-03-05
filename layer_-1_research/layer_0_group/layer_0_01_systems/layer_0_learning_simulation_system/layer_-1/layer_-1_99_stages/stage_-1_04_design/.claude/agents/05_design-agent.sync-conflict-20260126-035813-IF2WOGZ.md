@@ -1,4 +1,7 @@
 ---
+resource_id: "aec4f07b-281d-4d3c-b4e7-10c37ed39120"
+resource_type: "document"
+resource_name: "05_design-agent.sync-conflict-20260126-035813-IF2WOGZ"
 name: 05_design-agent
 description: Specialized agent for Technical design and architecture. Use when working on 05_design tasks.
 tools: Read, Write, Edit, Glob, Grep

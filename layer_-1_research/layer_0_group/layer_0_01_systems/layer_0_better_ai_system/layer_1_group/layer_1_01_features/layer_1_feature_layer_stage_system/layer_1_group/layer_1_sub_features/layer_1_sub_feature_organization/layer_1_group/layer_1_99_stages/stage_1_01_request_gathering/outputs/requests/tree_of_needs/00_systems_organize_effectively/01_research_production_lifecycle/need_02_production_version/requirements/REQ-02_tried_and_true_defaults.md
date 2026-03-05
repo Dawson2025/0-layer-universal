@@ -1,3 +1,8 @@
+---
+resource_id: "378d5030-b427-4a60-93a0-1f0bc750f6c1"
+resource_type: "output"
+resource_name: "REQ-02_tried_and_true_defaults"
+---
 # Tried-and-True Defaults
 
 **Need**: [Production Version](../README.md)

@@ -1,3 +1,8 @@
+---
+resource_id: "8caf5ad8-a7a4-4744-a460-dd53521dc562"
+resource_type: "rule"
+resource_name: "FOLDER_SUFFIX_RULES"
+---
 # Folder Suffix Rules
 
 ## Mandatory Suffixes

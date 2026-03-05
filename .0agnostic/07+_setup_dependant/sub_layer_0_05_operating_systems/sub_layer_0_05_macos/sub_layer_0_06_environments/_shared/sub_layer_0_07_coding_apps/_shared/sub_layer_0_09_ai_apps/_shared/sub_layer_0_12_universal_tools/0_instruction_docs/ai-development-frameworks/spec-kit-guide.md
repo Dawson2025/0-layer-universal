@@ -1,3 +1,8 @@
+---
+resource_id: "126c7eba-1da4-4d24-a40a-2593428091a6"
+resource_type: "document"
+resource_name: "spec-kit-guide"
+---
 # GitHub Spec Kit - Comprehensive Guide
 *Spec-Driven Development Framework for AI Coding Agents*
 

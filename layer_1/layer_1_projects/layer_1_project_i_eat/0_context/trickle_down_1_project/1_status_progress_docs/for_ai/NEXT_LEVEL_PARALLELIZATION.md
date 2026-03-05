@@ -1,3 +1,8 @@
+---
+resource_id: "d08db351-e9ca-483f-aa0d-25758d720fcc"
+resource_type: "document"
+resource_name: "NEXT_LEVEL_PARALLELIZATION"
+---
 # Next Level: Sub-Feature Parallelization
 
 ## Current State vs. Future State

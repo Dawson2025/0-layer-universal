@@ -1,3 +1,8 @@
+---
+resource_id: "240caf0d-63cc-4872-9e7b-e1a83402c554"
+resource_type: "document"
+resource_name: "TERMINAL_HANGING_SOLUTION"
+---
 # Terminal Hanging Solution
 
 ## Problem

@@ -1,3 +1,8 @@
+---
+resource_id: "f72da99d-1e42-4cf8-9ecd-559e79f22455"
+resource_type: "document"
+resource_name: "to_universal_pattern"
+---
 # To Universal Pattern
 
 ## Overview

@@ -1,4 +1,7 @@
 #!/bin/bash
+# resource_id: "5eb35fd7-6cca-46fd-aa03-6d5079a4f960"
+# resource_type: "script"
+# resource_name: "test_solution_3_relogin_trigger"
 # Test Solution 3: Re-Login Trigger
 # This script creates a systemd service that detects broken keybindings and prompts re-login
 

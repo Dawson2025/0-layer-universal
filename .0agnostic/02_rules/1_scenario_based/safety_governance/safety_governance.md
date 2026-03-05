@@ -1,3 +1,8 @@
+---
+resource_id: "9b368101-19f5-4a42-870a-5635a492dec8"
+resource_type: "rule"
+resource_name: "safety_governance"
+---
 # Safety, Permissions, and Governance Rules
 
 **Rule Type**: Universal

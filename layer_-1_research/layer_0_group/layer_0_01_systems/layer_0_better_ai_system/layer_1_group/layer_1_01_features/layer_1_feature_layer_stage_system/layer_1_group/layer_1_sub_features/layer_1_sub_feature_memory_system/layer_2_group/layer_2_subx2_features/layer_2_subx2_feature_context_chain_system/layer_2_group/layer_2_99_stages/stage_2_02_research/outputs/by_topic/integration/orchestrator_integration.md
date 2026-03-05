@@ -1,3 +1,8 @@
+---
+resource_id: "add9cdf2-80f6-4c80-8e45-7d9863b7f62b"
+resource_type: "output"
+resource_name: "orchestrator_integration"
+---
 # Orchestrator Integration
 
 ## How Orchestrators Work in Our System

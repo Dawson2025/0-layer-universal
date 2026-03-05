@@ -1,3 +1,8 @@
+---
+resource_id: "edc0b547-c522-45f6-9414-618dce4ea679"
+resource_type: "rule"
+resource_name: "PARENT_NEED_P3"
+---
 # P3: INJECT RULES INTO SYSTEM PROMPT
 
 ## Tactical Objective

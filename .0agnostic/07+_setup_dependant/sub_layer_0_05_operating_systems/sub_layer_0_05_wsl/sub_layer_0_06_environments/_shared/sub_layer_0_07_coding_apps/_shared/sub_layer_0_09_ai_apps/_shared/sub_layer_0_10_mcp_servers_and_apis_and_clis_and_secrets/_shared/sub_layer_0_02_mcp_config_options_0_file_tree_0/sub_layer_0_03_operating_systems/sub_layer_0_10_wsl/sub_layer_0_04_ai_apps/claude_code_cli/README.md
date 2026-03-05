@@ -1,3 +1,9 @@
+---
+resource_id: "ee213497-8d4b-4196-90fb-fcb57d3a0f51"
+resource_type: "readme
+document"
+resource_name: "README"
+---
 # Claude Code CLI MCP Setup (WSL)
 
 ## Config location

@@ -1,3 +1,8 @@
+---
+resource_id: "8e28481b-070b-4840-93b0-185512fdf6b2"
+resource_type: "document"
+resource_name: "feature-spec"
+---
 # Meta-Intelligent Orchestration Setup System
 *Trickle-Down Level 0.5: Setup and Configuration System*
 *Generated via GitHub Spec Kit Workflow*

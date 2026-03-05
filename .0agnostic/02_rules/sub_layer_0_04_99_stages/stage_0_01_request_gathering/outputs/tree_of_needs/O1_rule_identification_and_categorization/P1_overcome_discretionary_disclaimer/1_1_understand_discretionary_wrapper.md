@@ -1,3 +1,8 @@
+---
+resource_id: "7bf2a2dd-cbcb-406c-945d-314e169216c7"
+resource_type: "rule"
+resource_name: "1_1_understand_discretionary_wrapper"
+---
 # 1.1: Understand Discretionary Wrapper Mechanism
 
 ## What This Need Covers

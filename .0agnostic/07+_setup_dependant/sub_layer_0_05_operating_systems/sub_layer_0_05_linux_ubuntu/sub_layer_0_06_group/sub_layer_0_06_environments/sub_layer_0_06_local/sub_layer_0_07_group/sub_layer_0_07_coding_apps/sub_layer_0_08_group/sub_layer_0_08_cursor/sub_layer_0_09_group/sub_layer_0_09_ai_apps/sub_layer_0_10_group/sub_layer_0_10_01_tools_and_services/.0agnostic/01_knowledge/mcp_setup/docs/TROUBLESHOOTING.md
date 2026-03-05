@@ -1,3 +1,8 @@
+---
+resource_id: "0be90578-d85d-43dd-bedd-6fdb5dc7a27e"
+resource_type: "knowledge"
+resource_name: "TROUBLESHOOTING"
+---
 # MCP Setup Troubleshooting Guide
 
 Common issues encountered during MCP server setup and their solutions.

@@ -1,3 +1,9 @@
+---
+resource_id: "799754a7-5cbb-4cee-80c9-914b80fb85c5"
+resource_type: "readme
+output"
+resource_name: "README"
+---
 # Context Chain Support -- User Stories Index
 
 **Need**: [Context Chain Support](../README.md)

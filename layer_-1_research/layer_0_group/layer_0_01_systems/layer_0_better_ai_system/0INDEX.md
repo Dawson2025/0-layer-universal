@@ -1,3 +1,9 @@
+---
+resource_id: "3882a527-06d2-4bc1-9d1e-8faa57279cfc"
+resource_type: "index
+document"
+resource_name: "0INDEX"
+---
 # Index: layer_-1_better_ai_system
 
 ## Purpose

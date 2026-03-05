@@ -1,4 +1,9 @@
 ---
+resource_id: "fefeef50-83c3-4d8e-b340-507090d06203"
+resource_type: "knowledge"
+resource_name: "01_request_gathering-status"
+---
+---
 description: Show current status of 01_request_gathering stage
 argument-hint: [--verbose]
 ---

@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
+# resource_id: "caedb309-fe97-4ac0-a2a6-655662aa5a68"
+# resource_type: "script"
+# resource_name: "test_structural"
 # Structural tests for AI_CONTEXT_MODIFICATION_PROTOCOL
 # Usage: bash test_structural.sh [repo_root]
 

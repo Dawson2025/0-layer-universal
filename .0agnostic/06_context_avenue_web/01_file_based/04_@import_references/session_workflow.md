@@ -1,3 +1,8 @@
+---
+resource_id: "99f9ae08-4dfd-4fb7-9135-ad1960cad03b"
+resource_type: "document"
+resource_name: "session_workflow"
+---
 # Session Workflow
 
 ## Session Start Protocol

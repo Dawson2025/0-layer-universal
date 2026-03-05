@@ -1,3 +1,8 @@
+---
+resource_id: "97907507-dc83-43c7-9474-cd498f278cee"
+resource_type: "document"
+resource_name: "config"
+---
 # Claude Code CLI Configuration
 
 ## Environment

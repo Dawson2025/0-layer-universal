@@ -1,3 +1,8 @@
+---
+resource_id: "0f171943-8470-424d-9f6b-5eae331f0a68"
+resource_type: "output"
+resource_name: "35_comparison_data_structures_user_vs_ideal"
+---
 # Comparison: Data Structures -- User's System vs Research-Ideal Memory Architecture
 
 ## Purpose

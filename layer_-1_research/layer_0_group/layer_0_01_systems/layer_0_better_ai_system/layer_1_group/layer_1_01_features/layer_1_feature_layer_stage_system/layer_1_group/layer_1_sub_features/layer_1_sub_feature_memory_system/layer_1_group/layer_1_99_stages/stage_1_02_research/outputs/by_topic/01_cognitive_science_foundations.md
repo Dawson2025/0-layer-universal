@@ -1,3 +1,8 @@
+---
+resource_id: "9359c2c2-9265-43b8-8fb1-081b2196e2e5"
+resource_type: "output"
+resource_name: "01_cognitive_science_foundations"
+---
 # Cognitive Science Foundations of AI Agent Memory
 
 ## Overview

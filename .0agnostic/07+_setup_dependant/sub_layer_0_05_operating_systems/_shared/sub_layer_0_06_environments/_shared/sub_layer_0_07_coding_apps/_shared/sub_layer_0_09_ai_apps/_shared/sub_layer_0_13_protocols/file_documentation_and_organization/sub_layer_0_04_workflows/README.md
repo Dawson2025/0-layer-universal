@@ -1,3 +1,9 @@
+---
+resource_id: "47feca17-505e-4a20-8591-c25e7e5657d8"
+resource_type: "readme
+document"
+resource_name: "README"
+---
 ## File Documentation and Organization – Workflows
 
 This folder is for **concrete workflows** that apply the File Documentation and Organization Protocol, for example:

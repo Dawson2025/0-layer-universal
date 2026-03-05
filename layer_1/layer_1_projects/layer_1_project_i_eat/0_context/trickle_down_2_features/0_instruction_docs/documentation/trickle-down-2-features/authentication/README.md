@@ -1,3 +1,9 @@
+---
+resource_id: "87114b07-caa3-4c1c-83b8-80099660e483"
+resource_type: "readme
+document"
+resource_name: "README"
+---
 # Authentication Feature Documentation
 *Trickle-Down Level 2: Feature-Level Documentation*
 

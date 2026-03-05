@@ -1,4 +1,7 @@
 ---
+resource_id: "2b847b09-450c-4c7c-ba60-7c68aae4099d"
+resource_type: "document"
+resource_name: "10_current_product-status.sync-conflict-20260126-101457-IF2WOGZ"
 description: Show current status of 10_current_product stage
 argument-hint: [--verbose]
 ---

@@ -1,3 +1,8 @@
+---
+resource_id: "e5d5b383-19e5-45f9-aa2e-8f4db1ed470b"
+resource_type: "document"
+resource_name: "troubleshooting-guide"
+---
 # Troubleshooting Guide
 *Common Issues and Solutions for Database Version Control*
 

@@ -1,4 +1,7 @@
 ---
+resource_id: "be63fafa-3964-4417-84c1-2a4d6d53b496"
+resource_type: "document"
+resource_name: "speckit.tasks"
 description: Generate an actionable, dependency-ordered tasks.md for the feature based on available design artifacts.
 ---
 

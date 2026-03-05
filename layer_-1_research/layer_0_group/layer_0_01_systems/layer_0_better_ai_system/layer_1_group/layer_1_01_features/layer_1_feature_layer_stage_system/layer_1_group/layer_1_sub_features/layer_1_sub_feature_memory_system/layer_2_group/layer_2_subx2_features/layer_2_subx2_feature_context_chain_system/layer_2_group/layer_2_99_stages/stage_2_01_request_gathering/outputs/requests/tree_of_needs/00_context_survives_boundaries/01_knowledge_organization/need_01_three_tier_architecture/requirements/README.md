@@ -1,3 +1,9 @@
+---
+resource_id: "18f82772-1e3b-4db5-9819-cf653bdd2b71"
+resource_type: "readme
+output"
+resource_name: "README"
+---
 # Three-Tier Architecture -- Requirements Index
 
 **Need**: [Three-Tier Architecture](../README.md)

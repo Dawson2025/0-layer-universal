@@ -1,3 +1,8 @@
+---
+resource_id: "5b33fd12-524f-48d2-a827-7fb0c5cb6f4e"
+resource_type: "knowledge"
+resource_name: "agnostic_source_pattern"
+---
 # Agnostic Source Pattern
 
 ## Purpose

@@ -1,3 +1,9 @@
+---
+resource_id: "e04d7e6b-0885-4e69-8da4-6571adab9eaa"
+resource_type: "readme
+document"
+resource_name: "README"
+---
 # playwright-mcp (gemini_cli on linux_ubuntu)
 
 ## Canonical docs

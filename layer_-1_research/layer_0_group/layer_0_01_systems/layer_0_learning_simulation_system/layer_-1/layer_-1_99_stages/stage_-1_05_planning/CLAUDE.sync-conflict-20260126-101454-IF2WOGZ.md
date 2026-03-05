@@ -1,3 +1,8 @@
+---
+resource_id: "ed3111d3-6eaa-4670-8155-ce83fd23f92a"
+resource_type: "document"
+resource_name: "CLAUDE.sync-conflict-20260126-101454-IF2WOGZ"
+---
 # stage_-1_04_planning
 
 ## Purpose

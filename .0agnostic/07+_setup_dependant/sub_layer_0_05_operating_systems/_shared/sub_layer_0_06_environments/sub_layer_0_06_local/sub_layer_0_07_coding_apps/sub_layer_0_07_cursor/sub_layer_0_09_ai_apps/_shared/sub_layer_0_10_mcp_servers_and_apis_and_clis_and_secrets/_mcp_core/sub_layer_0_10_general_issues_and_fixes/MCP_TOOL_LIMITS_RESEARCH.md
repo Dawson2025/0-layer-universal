@@ -1,3 +1,8 @@
+---
+resource_id: "565428cb-1060-4bbb-8334-c3c5cc5b72fa"
+resource_type: "document"
+resource_name: "MCP_TOOL_LIMITS_RESEARCH"
+---
 # MCP Tool Limits Research
 
 **Date**: 2025-12-05  

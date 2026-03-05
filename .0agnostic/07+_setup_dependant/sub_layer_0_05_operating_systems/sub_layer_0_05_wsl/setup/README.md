@@ -1,3 +1,9 @@
+---
+resource_id: "6518fe20-64ef-4c8f-a140-3bbbf1591ba4"
+resource_type: "readme
+document"
+resource_name: "README"
+---
 # Sub Layer 0.05: OS Setup
 
 **Purpose**: Operating system setup, configuration, and platform-specific issues.

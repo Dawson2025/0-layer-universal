@@ -1,3 +1,8 @@
+---
+resource_id: "2f75e3eb-475b-4fca-ad89-b3b5d3dabee6"
+resource_type: "document"
+resource_name: "ComprehensiveFirebaseTestingStrategy"
+---
 # Comprehensive Firebase Testing Strategy
 *The Complete Approach: Emulator + Real Environment Verification*
 

@@ -1,3 +1,9 @@
+---
+resource_id: "38458775-458b-4806-9145-ca66fae2b23d"
+resource_type: "readme
+output"
+resource_name: "README"
+---
 # Need: Instance Context
 
 **Branch**: [Instantiation Pattern](../README.md)

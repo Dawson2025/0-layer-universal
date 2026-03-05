@@ -1,3 +1,9 @@
+---
+resource_id: "79ecf3b1-716e-4b7a-96c6-e6254c80b26f"
+resource_type: "readme
+knowledge"
+resource_name: "README"
+---
 # Branch 03: Implementation
 
 **Question**: What was built and where does it live?

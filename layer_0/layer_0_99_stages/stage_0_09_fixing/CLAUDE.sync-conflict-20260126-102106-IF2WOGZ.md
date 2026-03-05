@@ -1,3 +1,8 @@
+---
+resource_id: "4d586148-b69b-46f3-8417-121dc103924e"
+resource_type: "document"
+resource_name: "CLAUDE.sync-conflict-20260126-102106-IF2WOGZ"
+---
 # Stage 07: Fixing
 
 ## Purpose

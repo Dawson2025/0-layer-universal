@@ -1,3 +1,8 @@
+---
+resource_id: "fc469eef-cc35-49b9-8686-405c2c169071"
+resource_type: "knowledge"
+resource_name: "1 I am a software engineer looking for the optimal"
+---
 <img src="https://r2cdn.perplexity.ai/pplx-full-logo-primary-dark%402x.png" style="height:64px;margin-right:32px"/>
 
 # 1 I am a software engineer looking for the optimal architectural

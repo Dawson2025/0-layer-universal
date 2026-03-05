@@ -1,3 +1,8 @@
+---
+resource_id: "00cf9f4f-1e76-4f86-b945-a84cc3bd6f4d"
+resource_type: "output"
+resource_name: "REQ-01_instance_entity_per_user"
+---
 # Instance Entity per User
 
 **Need**: [System Instantiations](../README.md)

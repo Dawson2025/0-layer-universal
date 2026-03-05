@@ -1,3 +1,9 @@
+---
+resource_id: "d3e6d523-9d8c-4d2c-8633-2073d9d8f314"
+resource_type: "readme
+document"
+resource_name: "README"
+---
 # MCP Servers (OS-Specific View)
 
 This OS-specific view mirrors MCP server documentation from the shared tree.

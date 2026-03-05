@@ -1,3 +1,8 @@
+---
+resource_id: "1a7f9159-05a7-48a0-a7ce-ab1a2f022a1c"
+resource_type: "document"
+resource_name: "post-completion-documentation-protocol"
+---
 # Post-Completion Documentation Protocol
 *Universal AI Agent Documentation Standards*
 

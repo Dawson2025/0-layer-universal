@@ -1,4 +1,10 @@
 ---
+resource_id: "760c4490-cb7a-494e-ae99-ebc2d5147e96"
+resource_type: "skill
+document"
+resource_name: "SKILL"
+---
+---
 name: stage-workflow
 description: "Work through stages (01-11) properly, understanding what content belongs in each stage. Use when starting feature work, determining which stage to work in, moving between stages, or creating stage outputs."
 ---

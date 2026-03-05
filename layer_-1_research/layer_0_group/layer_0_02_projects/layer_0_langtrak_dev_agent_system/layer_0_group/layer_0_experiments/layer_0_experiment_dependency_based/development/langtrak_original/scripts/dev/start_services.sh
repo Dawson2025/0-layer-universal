@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
+# resource_id: "9070672d-a1f6-4937-8d85-c189b72ea77c"
+# resource_type: "script"
+# resource_name: "start_services"
 #
 # Bring up local services (Flask app + Playwright MCP server) in the background.
 #

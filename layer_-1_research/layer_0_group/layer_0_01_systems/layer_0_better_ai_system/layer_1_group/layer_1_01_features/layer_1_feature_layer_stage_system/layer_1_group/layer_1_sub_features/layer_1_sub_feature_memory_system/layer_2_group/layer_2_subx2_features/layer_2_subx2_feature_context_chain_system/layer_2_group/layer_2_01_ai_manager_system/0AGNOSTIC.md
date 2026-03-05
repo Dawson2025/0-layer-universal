@@ -1,3 +1,9 @@
+---
+resource_id: "3975a2e4-477c-4bad-840c-b7de2ecf604a"
+resource_type: "agnostic
+document"
+resource_name: "0AGNOSTIC"
+---
 # context_chain_system — AI Manager System
 
 ## Identity

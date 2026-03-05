@@ -1,3 +1,8 @@
+---
+resource_id: "bc5e070e-6185-4f8e-808c-05e9c1e36b8e"
+resource_type: "document"
+resource_name: "MANIFEST.sync-conflict-20260126-035815-IF2WOGZ"
+---
 # Pre-Restructure Backup Manifest
 Created: Thu Jan 15 07:53:31 PM MST 2026
 

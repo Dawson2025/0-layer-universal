@@ -1,3 +1,8 @@
+---
+resource_id: "f73e8192-4427-4be8-bbfc-54e45d56a0e8"
+resource_type: "document"
+resource_name: "STARTUP_SERVICES"
+---
 ## Local Service Bootstrap
 
 To avoid retyping the Flask + Playwright startup commands in every terminal, use the helper script:

@@ -1,3 +1,8 @@
+---
+resource_id: "fa72d574-66be-474a-a8d2-b8e1427b3a7d"
+resource_type: "output"
+resource_name: "rule_propagation_problem"
+---
 # Rule Propagation Problem
 
 **Status**: In Progress

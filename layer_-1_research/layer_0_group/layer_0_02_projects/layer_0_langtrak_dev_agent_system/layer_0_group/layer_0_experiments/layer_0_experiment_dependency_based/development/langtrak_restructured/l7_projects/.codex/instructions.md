@@ -1,3 +1,8 @@
+---
+resource_id: "0e24a8c5-a593-4d43-b338-ec57eef46359"
+resource_type: "document"
+resource_name: "instructions"
+---
 # AutoGen Agent Context
 
 ## Identity

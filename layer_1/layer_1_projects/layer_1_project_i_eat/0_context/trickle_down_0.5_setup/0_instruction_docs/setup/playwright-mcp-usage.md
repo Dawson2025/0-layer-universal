@@ -1,3 +1,8 @@
+---
+resource_id: "8d72cf09-2db4-4566-8534-59f2fa2c94bb"
+resource_type: "document"
+resource_name: "playwright-mcp-usage"
+---
 # Playwright MCP Server Usage Guide
 
 This guide explains how to start, use, and manage the Playwright MCP server with Claude Code.

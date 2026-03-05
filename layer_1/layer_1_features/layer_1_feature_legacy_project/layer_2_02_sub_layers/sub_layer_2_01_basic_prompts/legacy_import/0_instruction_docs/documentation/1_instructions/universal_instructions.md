@@ -1,3 +1,8 @@
+---
+resource_id: "855b2f8f-b952-41dc-886f-e48180c199bd"
+resource_type: "document"
+resource_name: "universal_instructions"
+---
 # Universal Development Instructions - Language Tracker App
 
 ## Project Overview

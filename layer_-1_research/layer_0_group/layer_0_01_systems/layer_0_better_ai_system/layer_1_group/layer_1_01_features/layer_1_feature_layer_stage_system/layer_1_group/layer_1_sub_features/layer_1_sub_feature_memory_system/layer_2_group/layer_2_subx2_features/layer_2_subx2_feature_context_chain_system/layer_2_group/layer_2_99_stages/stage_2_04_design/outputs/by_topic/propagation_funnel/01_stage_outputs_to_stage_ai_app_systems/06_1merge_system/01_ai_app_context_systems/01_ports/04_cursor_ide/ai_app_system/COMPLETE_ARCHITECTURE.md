@@ -1,3 +1,8 @@
+---
+resource_id: "ab9fb9fc-5be9-4e0b-8e57-9b1fbc922506"
+resource_type: "output"
+resource_name: "COMPLETE_ARCHITECTURE"
+---
 # Cursor IDE — Complete Architecture
 
 **Date**: 2026-02-27

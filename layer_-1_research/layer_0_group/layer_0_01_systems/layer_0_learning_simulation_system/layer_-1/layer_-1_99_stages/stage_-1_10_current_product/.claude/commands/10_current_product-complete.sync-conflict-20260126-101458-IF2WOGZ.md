@@ -1,4 +1,7 @@
 ---
+resource_id: "425e560b-b468-46a2-9da3-ee17bcfcfa1d"
+resource_type: "document"
+resource_name: "10_current_product-complete.sync-conflict-20260126-101458-IF2WOGZ"
 description: Mark 10_current_product stage as complete and prepare handoff
 argument-hint: [--notes "completion notes"]
 ---

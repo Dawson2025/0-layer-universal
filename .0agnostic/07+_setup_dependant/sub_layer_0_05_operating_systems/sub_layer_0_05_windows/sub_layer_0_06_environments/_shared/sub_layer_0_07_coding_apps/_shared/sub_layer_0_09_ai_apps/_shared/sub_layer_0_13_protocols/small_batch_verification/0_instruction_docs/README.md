@@ -1,3 +1,9 @@
+---
+resource_id: "3e26b07a-971d-45e9-b82b-b462c6201ab2"
+resource_type: "readme
+document"
+resource_name: "README"
+---
 ## Small Batch Verification Protocol – Instruction Docs
 
 The canonical definition of the **Small Batch Verification Protocol** lives in:

@@ -1,3 +1,9 @@
+---
+resource_id: "a441b7c7-948b-4227-955b-29ac2d89d3da"
+resource_type: "readme
+document"
+resource_name: "README"
+---
 # Firebase Orchestration System
 *Instance of Meta-Intelligent Orchestration System*
 

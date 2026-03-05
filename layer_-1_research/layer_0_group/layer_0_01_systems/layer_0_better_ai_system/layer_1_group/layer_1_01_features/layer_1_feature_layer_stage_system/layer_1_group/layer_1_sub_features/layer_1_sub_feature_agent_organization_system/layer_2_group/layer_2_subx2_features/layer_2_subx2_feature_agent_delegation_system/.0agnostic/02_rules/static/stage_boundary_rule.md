@@ -1,3 +1,8 @@
+---
+resource_id: "9cf62ec6-d851-4d99-a8f4-264169dbe10b"
+resource_type: "rule"
+resource_name: "stage_boundary_rule"
+---
 # Stage Boundary Rule
 
 **Type**: Static (always applies)

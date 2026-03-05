@@ -1,3 +1,8 @@
+---
+resource_id: "c8d88e83-ee42-43c7-baf6-b9913b549aa0"
+resource_type: "output"
+resource_name: "uuid_test_design"
+---
 # UUID Identity System — Test Design
 
 ## Date: 2026-03-02

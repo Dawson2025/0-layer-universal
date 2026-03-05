@@ -1,3 +1,8 @@
+---
+resource_id: "08bc5793-7c03-44ee-b0c5-2feaaeee0b57"
+resource_type: "document"
+resource_name: "MCP_SYSTEM_GUIDE"
+---
 # MCP Configuration Management System
 
 ## Overview

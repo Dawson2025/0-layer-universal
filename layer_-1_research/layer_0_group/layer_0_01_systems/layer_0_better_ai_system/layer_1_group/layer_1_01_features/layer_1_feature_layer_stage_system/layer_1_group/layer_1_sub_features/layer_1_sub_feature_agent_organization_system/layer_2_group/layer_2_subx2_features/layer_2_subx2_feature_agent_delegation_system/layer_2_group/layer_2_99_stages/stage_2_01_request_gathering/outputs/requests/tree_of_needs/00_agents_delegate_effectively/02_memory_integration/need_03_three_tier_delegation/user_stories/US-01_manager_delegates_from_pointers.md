@@ -1,3 +1,8 @@
+---
+resource_id: "820480f9-f4e2-49e0-9d42-56e6531b0996"
+resource_type: "output"
+resource_name: "US-01_manager_delegates_from_pointers"
+---
 # US-1: Manager delegates from pointers alone
 
 **Need**: [Three-Tier Delegation](../README.md)

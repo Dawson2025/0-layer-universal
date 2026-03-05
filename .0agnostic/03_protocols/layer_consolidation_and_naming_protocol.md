@@ -1,3 +1,8 @@
+---
+resource_id: "ba824b39-6669-433f-bd54-4862ee5f8925"
+resource_type: "protocol"
+resource_name: "layer_consolidation_and_naming_protocol"
+---
 # Layer Consolidation and Naming Protocol
 
 **Last Updated**: 2026-02-27

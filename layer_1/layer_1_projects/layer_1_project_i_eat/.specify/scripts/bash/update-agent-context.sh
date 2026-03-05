@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
+# resource_id: "9d98ee64-edc5-49d3-a596-126dcd3a4385"
+# resource_type: "script"
+# resource_name: "update-agent-context"
 
 # Update agent context files with information from plan.md
 #

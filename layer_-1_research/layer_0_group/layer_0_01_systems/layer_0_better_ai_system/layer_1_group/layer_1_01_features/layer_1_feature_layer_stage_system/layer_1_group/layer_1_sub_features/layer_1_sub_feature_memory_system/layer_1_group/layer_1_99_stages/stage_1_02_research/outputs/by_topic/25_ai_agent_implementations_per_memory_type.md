@@ -1,3 +1,8 @@
+---
+resource_id: "94c41d63-7b6a-423e-8ac4-190cf905a540"
+resource_type: "output"
+resource_name: "25_ai_agent_implementations_per_memory_type"
+---
 # AI Agent Implementations Per Memory Type
 
 ## Purpose

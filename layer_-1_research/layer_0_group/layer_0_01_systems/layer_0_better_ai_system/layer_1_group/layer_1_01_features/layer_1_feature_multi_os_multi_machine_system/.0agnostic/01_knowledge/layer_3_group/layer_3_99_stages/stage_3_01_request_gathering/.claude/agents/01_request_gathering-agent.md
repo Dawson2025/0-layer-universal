@@ -1,4 +1,9 @@
 ---
+resource_id: "19ef1fe6-98f9-4759-bba9-06127f5c02f4"
+resource_type: "knowledge"
+resource_name: "01_request_gathering-agent"
+---
+---
 name: 01_request_gathering-agent
 description: Specialized agent for Collect and clarify requirements. Use when working on 01_request_gathering tasks.
 tools: Read, Write, AskUserQuestion

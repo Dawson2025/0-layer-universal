@@ -1,3 +1,8 @@
+---
+resource_id: "a4e53504-0d28-4d0a-8086-fa913f257f8b"
+resource_type: "output"
+resource_name: "US-02_user_switches_to_research"
+---
 # User Switches to Research Mode
 
 **As a** user who wants to work with experimental patterns,

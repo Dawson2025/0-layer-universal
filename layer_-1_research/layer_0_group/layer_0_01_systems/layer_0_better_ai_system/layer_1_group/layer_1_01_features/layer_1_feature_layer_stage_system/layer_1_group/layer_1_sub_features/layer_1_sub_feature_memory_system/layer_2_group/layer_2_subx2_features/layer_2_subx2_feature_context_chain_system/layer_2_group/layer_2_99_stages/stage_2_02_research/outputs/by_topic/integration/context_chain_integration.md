@@ -1,3 +1,8 @@
+---
+resource_id: "9981cd60-2014-4445-acbb-74d82b04c9ca"
+resource_type: "output"
+resource_name: "context_chain_integration"
+---
 # AALang & the Context Chain
 
 ## How AALang Fits the Context Chain

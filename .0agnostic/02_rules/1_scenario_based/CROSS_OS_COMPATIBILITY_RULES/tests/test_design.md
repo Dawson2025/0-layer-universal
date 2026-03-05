@@ -1,3 +1,8 @@
+---
+resource_id: "e46da555-ac4e-4cb7-94bd-206e61f7828d"
+resource_type: "rule"
+resource_name: "test_design"
+---
 # Test Design: Cross-OS Compatibility Rules
 
 **Rule**: `../CROSS_OS_COMPATIBILITY_RULES.md`

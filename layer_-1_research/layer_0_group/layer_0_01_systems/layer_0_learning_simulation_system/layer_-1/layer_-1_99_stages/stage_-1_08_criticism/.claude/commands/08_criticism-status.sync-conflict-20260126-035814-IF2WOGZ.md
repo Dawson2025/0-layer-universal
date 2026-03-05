@@ -1,4 +1,7 @@
 ---
+resource_id: "a6120ed2-6b2c-4df3-af31-cacdabbb5d95"
+resource_type: "document"
+resource_name: "08_criticism-status.sync-conflict-20260126-035814-IF2WOGZ"
 description: Show current status of 08_criticism stage
 argument-hint: [--verbose]
 ---

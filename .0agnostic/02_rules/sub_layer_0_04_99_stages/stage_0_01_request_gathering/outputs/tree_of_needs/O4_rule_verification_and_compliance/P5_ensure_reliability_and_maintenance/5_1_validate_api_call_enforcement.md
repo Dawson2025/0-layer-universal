@@ -1,3 +1,8 @@
+---
+resource_id: "2f2af66d-1251-4745-b61b-9525bbb393a4"
+resource_type: "rule"
+resource_name: "5_1_validate_api_call_enforcement"
+---
 # 5.1: Validate API Call Enforcement
 
 ## Requirement

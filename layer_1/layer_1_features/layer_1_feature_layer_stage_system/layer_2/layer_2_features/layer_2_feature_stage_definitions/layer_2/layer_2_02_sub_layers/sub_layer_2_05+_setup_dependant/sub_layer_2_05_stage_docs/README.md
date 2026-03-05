@@ -1,3 +1,9 @@
+---
+resource_id: "250bd5b4-233e-44e6-a0dc-211e5eda0207"
+resource_type: "readme
+document"
+resource_name: "README"
+---
 # Stage Documentation
 
 This directory contains detailed documentation for each of the 11 workflow stages (00-10) in the Layer-Stage Framework.

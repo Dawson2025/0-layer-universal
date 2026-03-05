@@ -1,4 +1,5 @@
 {
+  "file_id": "8be9c234-cd05-48b6-8b9c-b77dbb3c3680",
   "@context": {
     "@vocab": "https://layer-stage.dev/orchestrator/",
     "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
@@ -11,12 +12,18 @@
     {
       "severity": "absolute",
       "action": "Override layer_0 safety rules without explicit user approval",
-      "appliesTo": ["inheritance", "override resolution"]
+      "appliesTo": [
+        "inheritance",
+        "override resolution"
+      ]
     },
     {
       "severity": "critical",
       "action": "Operate outside agent delegation system scope without escalation",
-      "appliesTo": ["delegation", "scope management"]
+      "appliesTo": [
+        "delegation",
+        "scope management"
+      ]
     }
   ],
   "@graph": [
@@ -50,31 +57,62 @@
           "@id": "orch:LayerStageSystemOrchestrator",
           "path": "../../../../layer_0_orchestrator.gab.jsonld"
         },
-        "inheritsFrom": ["layer_0_feature_layer_stage_system"],
-        "canOverride": ["non-safety context"],
+        "inheritsFrom": [
+          "layer_0_feature_layer_stage_system"
+        ],
+        "canOverride": [
+          "non-safety context"
+        ],
         "overrides": []
       },
-      "modes": ["ads:ReceiveMode", "ads:ResearchMode", "ads:DesignMode", "ads:ImplementMode", "ads:ReviewMode"],
+      "modes": [
+        "ads:ReceiveMode",
+        "ads:ResearchMode",
+        "ads:DesignMode",
+        "ads:ImplementMode",
+        "ads:ReviewMode"
+      ],
       "actors": [
-        "ads:ReceiveActor1", "ads:ReceiveActor2",
-        "ads:ResearchActor1", "ads:ResearchActor2",
-        "ads:DesignActor1", "ads:DesignActor2",
-        "ads:ImplementActor1", "ads:ImplementActor2",
-        "ads:ReviewActor1", "ads:ReviewActor2",
-        "ads:StageStateActor", "ads:ChildRegistryStateActor", "ads:TaskStateActor"
+        "ads:ReceiveActor1",
+        "ads:ReceiveActor2",
+        "ads:ResearchActor1",
+        "ads:ResearchActor2",
+        "ads:DesignActor1",
+        "ads:DesignActor2",
+        "ads:ImplementActor1",
+        "ads:ImplementActor2",
+        "ads:ReviewActor1",
+        "ads:ReviewActor2",
+        "ads:StageStateActor",
+        "ads:ChildRegistryStateActor",
+        "ads:TaskStateActor"
       ],
       "teamLead": "user",
       "entryPoint": {
         "layer": 1,
         "scope": "sub-feature",
         "featurePath": "./",
-        "canSpawnTo": ["stage_agents", "layer_2"],
-        "canEscalateTo": ["layer_0_feature_layer_stage_system", "user"],
+        "canSpawnTo": [
+          "stage_agents",
+          "layer_2"
+        ],
+        "canEscalateTo": [
+          "layer_0_feature_layer_stage_system",
+          "user"
+        ],
         "handOffDocumentsPath": ".0agnostic/09_handoff_documents/"
       },
       "children": {
-        "stages": ["01_request_gathering", "02_research", "04_design", "06_development"],
-        "subFeatures": ["memory_system", "multi_agent_system"]
+        "stages": [
+          "01_request_gathering",
+          "02_research",
+          "04_design",
+          "06_development"
+        ],
+        "subFeatures": [
+          "memory_system",
+          "multi_agent_system"
+        ]
       },
       "constraints": [
         "Scope is limited to agent delegation system research",
@@ -90,7 +128,13 @@
       "@id": "ads:StageStateActor",
       "@type": "gab:Actor",
       "id": "StageStateActor",
-      "operatesIn": ["ads:ReceiveMode", "ads:ResearchMode", "ads:DesignMode", "ads:ImplementMode", "ads:ReviewMode"],
+      "operatesIn": [
+        "ads:ReceiveMode",
+        "ads:ResearchMode",
+        "ads:DesignMode",
+        "ads:ImplementMode",
+        "ads:ReviewMode"
+      ],
       "activeMode": null,
       "persona": "ads:StageStatePersona",
       "role": "StateManager",
@@ -119,7 +163,12 @@
       "@id": "ads:ChildRegistryStateActor",
       "@type": "gab:Actor",
       "id": "ChildRegistryStateActor",
-      "operatesIn": ["ads:ResearchMode", "ads:DesignMode", "ads:ImplementMode", "ads:ReviewMode"],
+      "operatesIn": [
+        "ads:ResearchMode",
+        "ads:DesignMode",
+        "ads:ImplementMode",
+        "ads:ReviewMode"
+      ],
       "activeMode": null,
       "persona": "ads:ChildRegistryStatePersona",
       "role": "StateManager",
@@ -147,7 +196,13 @@
       "@id": "ads:TaskStateActor",
       "@type": "gab:Actor",
       "id": "TaskStateActor",
-      "operatesIn": ["ads:ReceiveMode", "ads:ResearchMode", "ads:DesignMode", "ads:ImplementMode", "ads:ReviewMode"],
+      "operatesIn": [
+        "ads:ReceiveMode",
+        "ads:ResearchMode",
+        "ads:DesignMode",
+        "ads:ImplementMode",
+        "ads:ReviewMode"
+      ],
       "activeMode": null,
       "persona": "ads:TaskStatePersona",
       "role": "StateManager",
@@ -182,10 +237,15 @@
         "Read stage reports to understand current state",
         "Do NOT proceed to ResearchMode until task is fully parsed"
       ],
-      "contains": ["ads:ReceivePersona1", "ads:ReceivePersona2"],
+      "contains": [
+        "ads:ReceivePersona1",
+        "ads:ReceivePersona2"
+      ],
       "isolatedState": "ads:ReceiveModeState",
       "initialMode": true,
-      "precedes": ["ads:ResearchMode"]
+      "precedes": [
+        "ads:ResearchMode"
+      ]
     },
     {
       "@id": "ads:ResearchMode",
@@ -198,9 +258,14 @@
         "Document findings in stage_02_research outputs",
         "Do NOT proceed to DesignMode until research is comprehensive"
       ],
-      "contains": ["ads:ResearchPersona1", "ads:ResearchPersona2"],
+      "contains": [
+        "ads:ResearchPersona1",
+        "ads:ResearchPersona2"
+      ],
       "isolatedState": "ads:ResearchModeState",
-      "precedes": ["ads:DesignMode"]
+      "precedes": [
+        "ads:DesignMode"
+      ]
     },
     {
       "@id": "ads:DesignMode",
@@ -213,9 +278,14 @@
         "Document designs in stage_04_design outputs",
         "Do NOT proceed to ImplementMode until design is reviewed"
       ],
-      "contains": ["ads:DesignPersona1", "ads:DesignPersona2"],
+      "contains": [
+        "ads:DesignPersona1",
+        "ads:DesignPersona2"
+      ],
       "isolatedState": "ads:DesignModeState",
-      "precedes": ["ads:ImplementMode"]
+      "precedes": [
+        "ads:ImplementMode"
+      ]
     },
     {
       "@id": "ads:ImplementMode",
@@ -228,9 +298,14 @@
         "Do NOT modify parent or sibling entity systems directly",
         "Do NOT proceed to ReviewMode until implementation is complete"
       ],
-      "contains": ["ads:ImplementPersona1", "ads:ImplementPersona2"],
+      "contains": [
+        "ads:ImplementPersona1",
+        "ads:ImplementPersona2"
+      ],
       "isolatedState": "ads:ImplementModeState",
-      "precedes": ["ads:ReviewMode"]
+      "precedes": [
+        "ads:ReviewMode"
+      ]
     },
     {
       "@id": "ads:ReviewMode",
@@ -243,15 +318,22 @@
         "Write results to .0agnostic/09_handoff_documents/outgoing/",
         "Transition back to ReceiveMode after delivery"
       ],
-      "contains": ["ads:ReviewPersona1", "ads:ReviewPersona2"],
+      "contains": [
+        "ads:ReviewPersona1",
+        "ads:ReviewPersona2"
+      ],
       "isolatedState": "ads:ReviewModeState",
-      "precedes": ["ads:ReceiveMode"]
+      "precedes": [
+        "ads:ReceiveMode"
+      ]
     },
     {
       "@id": "ads:ReceiveActor1",
       "@type": "gab:Actor",
       "id": "ReceiveActor1",
-      "operatesIn": ["ads:ReceiveMode"],
+      "operatesIn": [
+        "ads:ReceiveMode"
+      ],
       "activeMode": "ads:ReceiveMode",
       "persona": "ads:ReceivePersona1",
       "role": "Senior",
@@ -261,7 +343,9 @@
       "@id": "ads:ReceiveActor2",
       "@type": "gab:Actor",
       "id": "ReceiveActor2",
-      "operatesIn": ["ads:ReceiveMode"],
+      "operatesIn": [
+        "ads:ReceiveMode"
+      ],
       "activeMode": "ads:ReceiveMode",
       "persona": "ads:ReceivePersona2",
       "role": "Junior",
@@ -271,7 +355,9 @@
       "@id": "ads:ResearchActor1",
       "@type": "gab:Actor",
       "id": "ResearchActor1",
-      "operatesIn": ["ads:ResearchMode"],
+      "operatesIn": [
+        "ads:ResearchMode"
+      ],
       "activeMode": "ads:ResearchMode",
       "persona": "ads:ResearchPersona1",
       "role": "Senior",
@@ -281,7 +367,9 @@
       "@id": "ads:ResearchActor2",
       "@type": "gab:Actor",
       "id": "ResearchActor2",
-      "operatesIn": ["ads:ResearchMode"],
+      "operatesIn": [
+        "ads:ResearchMode"
+      ],
       "activeMode": "ads:ResearchMode",
       "persona": "ads:ResearchPersona2",
       "role": "Junior",
@@ -291,7 +379,9 @@
       "@id": "ads:DesignActor1",
       "@type": "gab:Actor",
       "id": "DesignActor1",
-      "operatesIn": ["ads:DesignMode"],
+      "operatesIn": [
+        "ads:DesignMode"
+      ],
       "activeMode": "ads:DesignMode",
       "persona": "ads:DesignPersona1",
       "role": "Senior",
@@ -301,7 +391,9 @@
       "@id": "ads:DesignActor2",
       "@type": "gab:Actor",
       "id": "DesignActor2",
-      "operatesIn": ["ads:DesignMode"],
+      "operatesIn": [
+        "ads:DesignMode"
+      ],
       "activeMode": "ads:DesignMode",
       "persona": "ads:DesignPersona2",
       "role": "Junior",
@@ -311,7 +403,9 @@
       "@id": "ads:ImplementActor1",
       "@type": "gab:Actor",
       "id": "ImplementActor1",
-      "operatesIn": ["ads:ImplementMode"],
+      "operatesIn": [
+        "ads:ImplementMode"
+      ],
       "activeMode": "ads:ImplementMode",
       "persona": "ads:ImplementPersona1",
       "role": "Senior",
@@ -321,7 +415,9 @@
       "@id": "ads:ImplementActor2",
       "@type": "gab:Actor",
       "id": "ImplementActor2",
-      "operatesIn": ["ads:ImplementMode"],
+      "operatesIn": [
+        "ads:ImplementMode"
+      ],
       "activeMode": "ads:ImplementMode",
       "persona": "ads:ImplementPersona2",
       "role": "Junior",
@@ -331,7 +427,9 @@
       "@id": "ads:ReviewActor1",
       "@type": "gab:Actor",
       "id": "ReviewActor1",
-      "operatesIn": ["ads:ReviewMode"],
+      "operatesIn": [
+        "ads:ReviewMode"
+      ],
       "activeMode": "ads:ReviewMode",
       "persona": "ads:ReviewPersona1",
       "role": "Senior",
@@ -341,7 +439,9 @@
       "@id": "ads:ReviewActor2",
       "@type": "gab:Actor",
       "id": "ReviewActor2",
-      "operatesIn": ["ads:ReviewMode"],
+      "operatesIn": [
+        "ads:ReviewMode"
+      ],
       "activeMode": "ads:ReviewMode",
       "persona": "ads:ReviewPersona2",
       "role": "Junior",
@@ -362,8 +462,16 @@
       ],
       "mode": "ads:ReceiveMode",
       "actor": "ads:ReceiveActor1",
-      "canMessage": ["ads:ReceivePersona2", "ads:ResearchPersona1", "user"],
-      "canReceiveFrom": ["user", "ads:ReceivePersona2", "ads:ReviewPersona1"],
+      "canMessage": [
+        "ads:ReceivePersona2",
+        "ads:ResearchPersona1",
+        "user"
+      ],
+      "canReceiveFrom": [
+        "user",
+        "ads:ReceivePersona2",
+        "ads:ReviewPersona1"
+      ],
       "sessionConsistent": true
     },
     {
@@ -380,8 +488,12 @@
       ],
       "mode": "ads:ReceiveMode",
       "actor": "ads:ReceiveActor2",
-      "canMessage": ["ads:ReceivePersona1"],
-      "canReceiveFrom": ["ads:ReceivePersona1"],
+      "canMessage": [
+        "ads:ReceivePersona1"
+      ],
+      "canReceiveFrom": [
+        "ads:ReceivePersona1"
+      ],
       "sessionConsistent": true
     },
     {
@@ -399,8 +511,15 @@
       ],
       "mode": "ads:ResearchMode",
       "actor": "ads:ResearchActor1",
-      "canMessage": ["ads:ResearchPersona2", "ads:DesignPersona1", "user"],
-      "canReceiveFrom": ["ads:ReceivePersona1", "ads:ResearchPersona2"],
+      "canMessage": [
+        "ads:ResearchPersona2",
+        "ads:DesignPersona1",
+        "user"
+      ],
+      "canReceiveFrom": [
+        "ads:ReceivePersona1",
+        "ads:ResearchPersona2"
+      ],
       "sessionConsistent": true
     },
     {
@@ -418,8 +537,12 @@
       ],
       "mode": "ads:ResearchMode",
       "actor": "ads:ResearchActor2",
-      "canMessage": ["ads:ResearchPersona1"],
-      "canReceiveFrom": ["ads:ResearchPersona1"],
+      "canMessage": [
+        "ads:ResearchPersona1"
+      ],
+      "canReceiveFrom": [
+        "ads:ResearchPersona1"
+      ],
       "sessionConsistent": true
     },
     {
@@ -437,8 +560,15 @@
       ],
       "mode": "ads:DesignMode",
       "actor": "ads:DesignActor1",
-      "canMessage": ["ads:DesignPersona2", "ads:ImplementPersona1", "user"],
-      "canReceiveFrom": ["ads:ResearchPersona1", "ads:DesignPersona2"],
+      "canMessage": [
+        "ads:DesignPersona2",
+        "ads:ImplementPersona1",
+        "user"
+      ],
+      "canReceiveFrom": [
+        "ads:ResearchPersona1",
+        "ads:DesignPersona2"
+      ],
       "sessionConsistent": true
     },
     {
@@ -456,8 +586,12 @@
       ],
       "mode": "ads:DesignMode",
       "actor": "ads:DesignActor2",
-      "canMessage": ["ads:DesignPersona1"],
-      "canReceiveFrom": ["ads:DesignPersona1"],
+      "canMessage": [
+        "ads:DesignPersona1"
+      ],
+      "canReceiveFrom": [
+        "ads:DesignPersona1"
+      ],
       "sessionConsistent": true
     },
     {
@@ -475,8 +609,15 @@
       ],
       "mode": "ads:ImplementMode",
       "actor": "ads:ImplementActor1",
-      "canMessage": ["ads:ImplementPersona2", "ads:ReviewPersona1", "user"],
-      "canReceiveFrom": ["ads:DesignPersona1", "ads:ImplementPersona2"],
+      "canMessage": [
+        "ads:ImplementPersona2",
+        "ads:ReviewPersona1",
+        "user"
+      ],
+      "canReceiveFrom": [
+        "ads:DesignPersona1",
+        "ads:ImplementPersona2"
+      ],
       "sessionConsistent": true
     },
     {
@@ -494,8 +635,12 @@
       ],
       "mode": "ads:ImplementMode",
       "actor": "ads:ImplementActor2",
-      "canMessage": ["ads:ImplementPersona1"],
-      "canReceiveFrom": ["ads:ImplementPersona1"],
+      "canMessage": [
+        "ads:ImplementPersona1"
+      ],
+      "canReceiveFrom": [
+        "ads:ImplementPersona1"
+      ],
       "sessionConsistent": true
     },
     {
@@ -513,8 +658,15 @@
       ],
       "mode": "ads:ReviewMode",
       "actor": "ads:ReviewActor1",
-      "canMessage": ["ads:ReviewPersona2", "ads:ReceivePersona1", "user"],
-      "canReceiveFrom": ["ads:ImplementPersona1", "ads:ReviewPersona2"],
+      "canMessage": [
+        "ads:ReviewPersona2",
+        "ads:ReceivePersona1",
+        "user"
+      ],
+      "canReceiveFrom": [
+        "ads:ImplementPersona1",
+        "ads:ReviewPersona2"
+      ],
       "sessionConsistent": true
     },
     {
@@ -532,8 +684,12 @@
       ],
       "mode": "ads:ReviewMode",
       "actor": "ads:ReviewActor2",
-      "canMessage": ["ads:ReviewPersona1"],
-      "canReceiveFrom": ["ads:ReviewPersona1"],
+      "canMessage": [
+        "ads:ReviewPersona1"
+      ],
+      "canReceiveFrom": [
+        "ads:ReviewPersona1"
+      ],
       "sessionConsistent": true
     },
     {
@@ -541,45 +697,130 @@
       "@type": "gab:IsolatedState",
       "mode": "ads:ReceiveMode",
       "scope": "private to Receive Mode",
-      "includes": ["Incoming task files parsed", "Task type classification", "Source identification", "Scope validation results"],
-      "readableBy": ["ads:ReceivePersona1", "ads:ReceivePersona2"],
-      "unreadableBy": ["ads:ResearchPersona1", "ads:ResearchPersona2", "ads:DesignPersona1", "ads:DesignPersona2", "ads:ImplementPersona1", "ads:ImplementPersona2", "ads:ReviewPersona1", "ads:ReviewPersona2"]
+      "includes": [
+        "Incoming task files parsed",
+        "Task type classification",
+        "Source identification",
+        "Scope validation results"
+      ],
+      "readableBy": [
+        "ads:ReceivePersona1",
+        "ads:ReceivePersona2"
+      ],
+      "unreadableBy": [
+        "ads:ResearchPersona1",
+        "ads:ResearchPersona2",
+        "ads:DesignPersona1",
+        "ads:DesignPersona2",
+        "ads:ImplementPersona1",
+        "ads:ImplementPersona2",
+        "ads:ReviewPersona1",
+        "ads:ReviewPersona2"
+      ]
     },
     {
       "@id": "ads:ResearchModeState",
       "@type": "gab:IsolatedState",
       "mode": "ads:ResearchMode",
       "scope": "private to Research Mode",
-      "includes": ["Research methodology", "Delegation pattern data", "Analysis results", "Research gaps identified"],
-      "readableBy": ["ads:ResearchPersona1", "ads:ResearchPersona2"],
-      "unreadableBy": ["ads:ReceivePersona1", "ads:ReceivePersona2", "ads:DesignPersona1", "ads:DesignPersona2", "ads:ImplementPersona1", "ads:ImplementPersona2", "ads:ReviewPersona1", "ads:ReviewPersona2"]
+      "includes": [
+        "Research methodology",
+        "Delegation pattern data",
+        "Analysis results",
+        "Research gaps identified"
+      ],
+      "readableBy": [
+        "ads:ResearchPersona1",
+        "ads:ResearchPersona2"
+      ],
+      "unreadableBy": [
+        "ads:ReceivePersona1",
+        "ads:ReceivePersona2",
+        "ads:DesignPersona1",
+        "ads:DesignPersona2",
+        "ads:ImplementPersona1",
+        "ads:ImplementPersona2",
+        "ads:ReviewPersona1",
+        "ads:ReviewPersona2"
+      ]
     },
     {
       "@id": "ads:DesignModeState",
       "@type": "gab:IsolatedState",
       "mode": "ads:DesignMode",
       "scope": "private to Design Mode",
-      "includes": ["Delegation model proposals", "Specification documents", "Design decision rationale", "Implementation plan"],
-      "readableBy": ["ads:DesignPersona1", "ads:DesignPersona2"],
-      "unreadableBy": ["ads:ReceivePersona1", "ads:ReceivePersona2", "ads:ResearchPersona1", "ads:ResearchPersona2", "ads:ImplementPersona1", "ads:ImplementPersona2", "ads:ReviewPersona1", "ads:ReviewPersona2"]
+      "includes": [
+        "Delegation model proposals",
+        "Specification documents",
+        "Design decision rationale",
+        "Implementation plan"
+      ],
+      "readableBy": [
+        "ads:DesignPersona1",
+        "ads:DesignPersona2"
+      ],
+      "unreadableBy": [
+        "ads:ReceivePersona1",
+        "ads:ReceivePersona2",
+        "ads:ResearchPersona1",
+        "ads:ResearchPersona2",
+        "ads:ImplementPersona1",
+        "ads:ImplementPersona2",
+        "ads:ReviewPersona1",
+        "ads:ReviewPersona2"
+      ]
     },
     {
       "@id": "ads:ImplementModeState",
       "@type": "gab:IsolatedState",
       "mode": "ads:ImplementMode",
       "scope": "private to Implement Mode",
-      "includes": ["Artifacts being created", "Implementation progress", "Convention compliance checks", "Child feature coordination state"],
-      "readableBy": ["ads:ImplementPersona1", "ads:ImplementPersona2"],
-      "unreadableBy": ["ads:ReceivePersona1", "ads:ReceivePersona2", "ads:ResearchPersona1", "ads:ResearchPersona2", "ads:DesignPersona1", "ads:DesignPersona2", "ads:ReviewPersona1", "ads:ReviewPersona2"]
+      "includes": [
+        "Artifacts being created",
+        "Implementation progress",
+        "Convention compliance checks",
+        "Child feature coordination state"
+      ],
+      "readableBy": [
+        "ads:ImplementPersona1",
+        "ads:ImplementPersona2"
+      ],
+      "unreadableBy": [
+        "ads:ReceivePersona1",
+        "ads:ReceivePersona2",
+        "ads:ResearchPersona1",
+        "ads:ResearchPersona2",
+        "ads:DesignPersona1",
+        "ads:DesignPersona2",
+        "ads:ReviewPersona1",
+        "ads:ReviewPersona2"
+      ]
     },
     {
       "@id": "ads:ReviewModeState",
       "@type": "gab:IsolatedState",
       "mode": "ads:ReviewMode",
       "scope": "private to Review Mode",
-      "includes": ["Validation checklist results", "Cross-stage traceability verification", "Hierarchy compliance check", "Handoff report draft"],
-      "readableBy": ["ads:ReviewPersona1", "ads:ReviewPersona2"],
-      "unreadableBy": ["ads:ReceivePersona1", "ads:ReceivePersona2", "ads:ResearchPersona1", "ads:ResearchPersona2", "ads:DesignPersona1", "ads:DesignPersona2", "ads:ImplementPersona1", "ads:ImplementPersona2"]
+      "includes": [
+        "Validation checklist results",
+        "Cross-stage traceability verification",
+        "Hierarchy compliance check",
+        "Handoff report draft"
+      ],
+      "readableBy": [
+        "ads:ReviewPersona1",
+        "ads:ReviewPersona2"
+      ],
+      "unreadableBy": [
+        "ads:ReceivePersona1",
+        "ads:ReceivePersona2",
+        "ads:ResearchPersona1",
+        "ads:ResearchPersona2",
+        "ads:DesignPersona1",
+        "ads:DesignPersona2",
+        "ads:ImplementPersona1",
+        "ads:ImplementPersona2"
+      ]
     }
   ]
 }

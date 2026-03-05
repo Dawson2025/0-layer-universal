@@ -1,3 +1,8 @@
+---
+resource_id: "c1d2ae3a-6a61-49da-bb2a-f1c634f20f6f"
+resource_type: "output"
+resource_name: "28_supporting_data_structures_deep_dive"
+---
 # Supporting Data Structures Deep Dive
 
 ## Purpose

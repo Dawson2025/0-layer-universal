@@ -1,4 +1,10 @@
 ---
+resource_id: "6d9fcda7-b205-4cc0-91ef-cade879937e1"
+resource_type: "skill
+document"
+resource_name: "SKILL"
+---
+---
 name: 10_current_product-workflow
 description: Workflow skill for Production-ready artifacts. Activated when working on 10_current_product tasks.
 version: 1.0.0

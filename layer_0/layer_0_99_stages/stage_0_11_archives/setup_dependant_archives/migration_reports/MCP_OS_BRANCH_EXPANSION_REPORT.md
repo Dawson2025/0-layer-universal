@@ -1,3 +1,8 @@
+---
+resource_id: "ccf3675c-0b22-464d-a368-3cbb08ef5e61"
+resource_type: "document"
+resource_name: "MCP_OS_BRANCH_EXPANSION_REPORT"
+---
 # MCP OS Branch Expansion Report
 
 Shared MCP root: /home/dawson/dawson-workspace/code/0_layer_universal/0_context/layer_0/0.02_sub_layers/sub_layer_0_05-0.014_setup/0.01_universal_setup_file_tree_0/0.05_operating_systems/_shared/0.06_environments/_shared/0.07_coding_apps/_shared/0.09_ai_apps/_shared/0.10_mcp_servers_and_apis_and_secrets/_shared

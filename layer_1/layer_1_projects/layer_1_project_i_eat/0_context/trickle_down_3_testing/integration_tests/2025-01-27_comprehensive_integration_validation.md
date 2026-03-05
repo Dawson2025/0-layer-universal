@@ -1,3 +1,8 @@
+---
+resource_id: "ddf19abb-51dc-418d-bd72-f49db3e06c8d"
+resource_type: "document"
+resource_name: "2025-01-27_comprehensive_integration_validation"
+---
 # COMPREHENSIVE INTEGRATION TEST VALIDATION
 
 ## **DATE**: 2025-01-27

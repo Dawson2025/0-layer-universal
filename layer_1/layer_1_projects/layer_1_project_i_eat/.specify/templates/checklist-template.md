@@ -1,3 +1,8 @@
+---
+resource_id: "26b5706d-8201-40a7-abb0-1aba020f590e"
+resource_type: "document"
+resource_name: "checklist-template"
+---
 # [CHECKLIST TYPE] Checklist: [FEATURE NAME]
 
 **Purpose**: [Brief description of what this checklist covers]

@@ -1,3 +1,8 @@
+---
+resource_id: "5eb7433c-bc47-4355-ba9e-aa2341e32712"
+resource_type: "rule"
+resource_name: "OVERARCHING_O3"
+---
 # O3: RULE ENFORCEMENT
 
 ## Strategic Question

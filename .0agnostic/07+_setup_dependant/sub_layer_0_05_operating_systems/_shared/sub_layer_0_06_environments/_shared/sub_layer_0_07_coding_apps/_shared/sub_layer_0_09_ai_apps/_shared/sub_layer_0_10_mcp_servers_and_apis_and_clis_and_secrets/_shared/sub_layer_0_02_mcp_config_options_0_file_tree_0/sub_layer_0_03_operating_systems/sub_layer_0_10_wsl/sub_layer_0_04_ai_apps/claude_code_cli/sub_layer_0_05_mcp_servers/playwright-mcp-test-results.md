@@ -1,3 +1,8 @@
+---
+resource_id: "8ea5c862-82f6-43b5-9714-398e80350065"
+resource_type: "document"
+resource_name: "playwright-mcp-test-results"
+---
 # Playwright MCP Server Test Results
 
 **Date:** 2025-12-30

@@ -1,3 +1,8 @@
+---
+resource_id: "336e6fae-f937-490a-8cf8-c54d88418e1c"
+resource_type: "document"
+resource_name: "stage_05_development"
+---
 # Stage 04: Development
 
 ## Purpose

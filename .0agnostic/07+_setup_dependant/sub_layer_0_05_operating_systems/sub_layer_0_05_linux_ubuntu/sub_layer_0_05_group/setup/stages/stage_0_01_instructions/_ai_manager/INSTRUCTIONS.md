@@ -1,3 +1,8 @@
+---
+resource_id: "ff9f12cf-0f49-4761-8e9f-af62ba848168"
+resource_type: "document"
+resource_name: "INSTRUCTIONS"
+---
 # AI Manager: Stage 0.01 - Instructions/Specifications
 
 ## Your Role

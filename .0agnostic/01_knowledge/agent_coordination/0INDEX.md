@@ -1,3 +1,9 @@
+---
+resource_id: "857cdf7a-6e59-4bf9-8082-36e68aa4aebf"
+resource_type: "index
+knowledge"
+resource_name: "0INDEX"
+---
 # Agent Coordination Knowledge
 
 ## Purpose

@@ -1,3 +1,9 @@
+---
+resource_id: "e4bedd8d-3e78-4e80-a5ad-7e931a9bacb5"
+resource_type: "readme
+output"
+resource_name: "README"
+---
 # User Stories — Instance Context
 
 ## Actors

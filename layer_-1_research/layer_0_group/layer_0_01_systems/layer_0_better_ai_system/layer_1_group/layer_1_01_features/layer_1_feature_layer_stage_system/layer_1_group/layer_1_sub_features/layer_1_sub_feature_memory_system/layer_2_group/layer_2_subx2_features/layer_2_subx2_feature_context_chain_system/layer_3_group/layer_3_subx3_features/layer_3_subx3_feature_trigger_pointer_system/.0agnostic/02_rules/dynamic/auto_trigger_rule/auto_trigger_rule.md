@@ -1,3 +1,8 @@
+---
+resource_id: "943feef8-db42-4446-bac3-20c55c6353b2"
+resource_type: "rule"
+resource_name: "auto_trigger_rule"
+---
 # Rule: Auto-Trigger Pointer Sync
 
 **Scope**: Triggered when structural changes are detected

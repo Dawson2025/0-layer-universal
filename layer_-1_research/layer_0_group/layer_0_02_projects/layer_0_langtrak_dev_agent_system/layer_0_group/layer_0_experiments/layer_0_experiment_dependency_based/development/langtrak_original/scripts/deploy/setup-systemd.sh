@@ -1,4 +1,7 @@
 #!/bin/bash
+# resource_id: "1871872f-0cdc-4269-9cdc-68f9c4c818c1"
+# resource_type: "script"
+# resource_name: "setup-systemd"
 # Setup SystemD service for Language Tracker
 # Requires sudo privileges
 

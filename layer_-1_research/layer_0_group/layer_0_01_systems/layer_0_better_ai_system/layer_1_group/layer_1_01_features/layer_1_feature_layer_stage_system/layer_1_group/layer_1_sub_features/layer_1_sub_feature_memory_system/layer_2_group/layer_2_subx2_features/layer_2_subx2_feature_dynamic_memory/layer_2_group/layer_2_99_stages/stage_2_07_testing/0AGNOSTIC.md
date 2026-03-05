@@ -1,3 +1,9 @@
+---
+resource_id: "cf50d5eb-638b-4121-bb8d-964b567ff535"
+resource_type: "agnostic
+document"
+resource_name: "0AGNOSTIC"
+---
 # dynamic_memory — Stage 07: testing
 
 ## Identity

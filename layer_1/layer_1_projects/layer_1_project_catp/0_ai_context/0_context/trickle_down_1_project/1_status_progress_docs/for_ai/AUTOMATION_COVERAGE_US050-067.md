@@ -1,3 +1,8 @@
+---
+resource_id: "0f929427-ff3b-4a6c-8acf-5281c0cf4756"
+resource_type: "document"
+resource_name: "AUTOMATION_COVERAGE_US050-067"
+---
 # Automation Coverage Report: US-050 through US-067
 
 **Report Generated**: October 17, 2025

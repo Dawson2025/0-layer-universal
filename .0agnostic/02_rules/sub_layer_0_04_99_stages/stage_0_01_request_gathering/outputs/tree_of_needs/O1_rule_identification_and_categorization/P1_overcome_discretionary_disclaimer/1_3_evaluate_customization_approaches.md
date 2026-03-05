@@ -1,3 +1,8 @@
+---
+resource_id: "8525f349-b425-4a47-bb86-18c7d9826be7"
+resource_type: "rule"
+resource_name: "1_3_evaluate_customization_approaches"
+---
 # 1.3: Evaluate Customization Approaches
 
 ## What This Need Covers

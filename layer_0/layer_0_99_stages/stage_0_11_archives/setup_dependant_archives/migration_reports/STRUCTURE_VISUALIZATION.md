@@ -1,3 +1,8 @@
+---
+resource_id: "8aea5eb8-2943-4b7a-b1e6-f4c9d4117b02"
+resource_type: "document"
+resource_name: "STRUCTURE_VISUALIZATION"
+---
 # Universal Setup File Tree Structure Visualization
 
 ## Complete Hierarchy

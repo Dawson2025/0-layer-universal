@@ -1,3 +1,8 @@
+---
+resource_id: "568a9df1-044e-4c59-b975-cbf3851f107d"
+resource_type: "knowledge"
+resource_name: "production_deployment"
+---
 ## Production Deployment Guide
 
 This document provides guidance for deploying the AI manager hierarchy system to production environments.

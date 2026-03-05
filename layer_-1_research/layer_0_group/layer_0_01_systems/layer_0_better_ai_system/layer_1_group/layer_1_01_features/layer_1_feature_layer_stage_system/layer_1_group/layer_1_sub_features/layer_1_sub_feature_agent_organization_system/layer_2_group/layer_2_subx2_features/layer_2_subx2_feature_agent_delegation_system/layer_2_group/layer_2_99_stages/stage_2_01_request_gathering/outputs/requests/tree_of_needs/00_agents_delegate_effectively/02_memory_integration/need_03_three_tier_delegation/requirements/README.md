@@ -1,3 +1,9 @@
+---
+resource_id: "a14f670f-cff8-44c8-80b4-92ef6c4929ad"
+resource_type: "readme
+output"
+resource_name: "README"
+---
 # Three-Tier Delegation -- Requirements Index
 
 **Need**: [Three-Tier Delegation](../README.md)

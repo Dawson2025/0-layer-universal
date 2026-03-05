@@ -1,3 +1,8 @@
+---
+resource_id: "10a91f28-b8be-476f-8a1e-2ab1cfd2a27b"
+resource_type: "document"
+resource_name: "canvas-api-integration"
+---
 # Canvas LMS API Integration
 
 This guide covers integrating with the Canvas LMS API using credentials stored in Google Secret Manager.

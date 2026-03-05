@@ -1,4 +1,9 @@
 ---
+resource_id: "b29e1de9-43a5-4c13-96fe-606d9fd62602"
+resource_type: "document"
+resource_name: "development-stages"
+---
+---
 paths: "**/stage_*_06_development/**"
 ---
 

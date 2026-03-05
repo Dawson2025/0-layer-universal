@@ -1,4 +1,7 @@
 #!/bin/bash
+# resource_id: "aee5c408-492c-4d3d-b6a1-a55e0bd5bdd3"
+# resource_type: "script"
+# resource_name: "ubuntu-quick-check"
 # Quick health check script for Ubuntu Syncthing setup
 # Run this on Ubuntu to verify everything is working
 # Updated: 2026-01-12

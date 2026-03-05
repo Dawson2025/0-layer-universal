@@ -1,1 +1,10 @@
-{"@context":{"@vocab":"https://layer-stage.dev/schema#"},"@id":"stage_1_00_stage_registry_agent","@type":"StageAgent","name":"Stage 1.00_stage_registry","layer":1}
+{
+  "file_id": "509f11b2-7cc4-4361-9bb2-efe73847cad8",
+  "@context": {
+    "@vocab": "https://layer-stage.dev/schema#"
+  },
+  "@id": "stage_1_00_stage_registry_agent",
+  "@type": "StageAgent",
+  "name": "Stage 1.00_stage_registry",
+  "layer": 1
+}

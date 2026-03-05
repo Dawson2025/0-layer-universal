@@ -1,3 +1,4 @@
+<!-- derived_from: "aa24709f-a54e-43db-ac3b-f2b61b2bbaac" -->
 # Stage 06: Criticism
 
 ## Purpose

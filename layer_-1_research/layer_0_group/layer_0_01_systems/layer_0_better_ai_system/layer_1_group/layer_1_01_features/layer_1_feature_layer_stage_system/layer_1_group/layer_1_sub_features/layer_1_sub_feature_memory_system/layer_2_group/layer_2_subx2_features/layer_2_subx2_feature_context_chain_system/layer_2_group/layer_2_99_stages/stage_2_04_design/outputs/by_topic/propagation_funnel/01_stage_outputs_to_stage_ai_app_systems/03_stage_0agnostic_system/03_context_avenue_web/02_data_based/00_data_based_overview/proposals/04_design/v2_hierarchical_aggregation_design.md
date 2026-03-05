@@ -1,3 +1,8 @@
+---
+resource_id: "a94b8fd2-35b8-40fb-986b-46a7f1e3ea6b"
+resource_type: "output"
+resource_name: "v2_hierarchical_aggregation_design"
+---
 # Context Avenue Database Schema — Proposal v2
 
 ## Improved Design: Hierarchical Aggregation with Flat Tables

@@ -1,4 +1,7 @@
 #!/bin/bash
+# resource_id: "99987129-8381-4302-905e-6bcd8b5062a4"
+# resource_type: "script"
+# resource_name: "ai_sudo_helper"
 # AI Agent Sudo Helper
 # This script provides secure sudo access for AI agents
 

@@ -1,3 +1,8 @@
+---
+resource_id: "73ef0427-5078-4ea3-99bf-a6743a51df78"
+resource_type: "document"
+resource_name: "UPDATE"
+---
 # Claude Code CLI - Update Instructions
 
 **Last Updated:** 2025-01-26  

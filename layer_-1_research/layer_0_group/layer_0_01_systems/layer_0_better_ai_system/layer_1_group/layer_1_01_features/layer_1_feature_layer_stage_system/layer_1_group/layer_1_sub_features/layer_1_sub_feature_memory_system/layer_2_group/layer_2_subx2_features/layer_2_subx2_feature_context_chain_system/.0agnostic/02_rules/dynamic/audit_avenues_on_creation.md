@@ -1,3 +1,8 @@
+---
+resource_id: "366d7dd8-3cc5-4ffd-9326-9756b26d2790"
+resource_type: "rule"
+resource_name: "audit_avenues_on_creation"
+---
 # Rule: Audit Avenue Coverage When Creating Entities
 
 **Status**: MANDATORY

@@ -1,3 +1,8 @@
+---
+resource_id: "84c30b66-41b8-4785-a25a-f205b11ae8b6"
+resource_type: "output"
+resource_name: "REQ_001_audio_testing"
+---
 # Testing: Laptop Speaker Audio Enhancement
 
 ## Request Reference

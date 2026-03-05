@@ -1,3 +1,8 @@
+---
+resource_id: "3e3169c4-ec21-4e4e-add4-95a5c6429a66"
+resource_type: "output"
+resource_name: "agentic_tts_requirements"
+---
 # Agentic TTS Requirements
 
 **Date**: 2026-02-23

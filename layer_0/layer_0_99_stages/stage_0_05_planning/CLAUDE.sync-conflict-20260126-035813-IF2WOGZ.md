@@ -1,3 +1,8 @@
+---
+resource_id: "59af019f-3766-45c8-befb-72429cdc1fda"
+resource_type: "document"
+resource_name: "CLAUDE.sync-conflict-20260126-035813-IF2WOGZ"
+---
 # Stage 02: Planning
 
 ## Purpose

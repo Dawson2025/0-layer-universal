@@ -1,1 +1,10 @@
-{"@context":{"@vocab":"https://layer-stage.dev/schema#"},"@id":"stage_2_01_request_gathering_agent","@type":"StageAgent","name":"Stage 2.01_request_gathering","layer":2}
+{
+  "file_id": "f06c5fd6-2eaf-44f7-9905-5d8eb68bf75f",
+  "@context": {
+    "@vocab": "https://layer-stage.dev/schema#"
+  },
+  "@id": "stage_2_01_request_gathering_agent",
+  "@type": "StageAgent",
+  "name": "Stage 2.01_request_gathering",
+  "layer": 2
+}

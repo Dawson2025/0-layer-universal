@@ -1,20 +1,32 @@
 {
-    "manifest_version": 3,
-    "name": "Canvas Assignment Page Inject",
-    "version": "1.0",
-    "description": "This is a test to see if I can get an extension showing on the assignment page in canvas",
-    "content_scripts": [
-        {
-            "matches": ["*://*.instructure.com/courses/*/assignments*", "*://*.instructure.com/courses/*/quizzes*"],
-            "js": ["content.js"],
-            "css": ["content.css"]
-        }
-    ],
-    "web_accessible_resources": [
-        {
-            "resources": ["bell-curve.webp"],
-            "matches": ["https://*.instructure.com/*"]
-        }
-    ],
-    "permissions": []
+  "file_id": "72f12da5-2854-45f5-b32b-d6bba6b47f6b",
+  "manifest_version": 3,
+  "name": "Canvas Assignment Page Inject",
+  "version": "1.0",
+  "description": "This is a test to see if I can get an extension showing on the assignment page in canvas",
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.instructure.com/courses/*/assignments*",
+        "*://*.instructure.com/courses/*/quizzes*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "css": [
+        "content.css"
+      ]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "bell-curve.webp"
+      ],
+      "matches": [
+        "https://*.instructure.com/*"
+      ]
+    }
+  ],
+  "permissions": []
 }

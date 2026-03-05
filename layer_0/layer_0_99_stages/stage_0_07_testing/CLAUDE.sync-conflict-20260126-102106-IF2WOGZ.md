@@ -1,3 +1,8 @@
+---
+resource_id: "0560c270-1825-4281-a035-ec2ba65dc699"
+resource_type: "document"
+resource_name: "CLAUDE.sync-conflict-20260126-102106-IF2WOGZ"
+---
 # Stage 05: Testing
 
 ## Purpose

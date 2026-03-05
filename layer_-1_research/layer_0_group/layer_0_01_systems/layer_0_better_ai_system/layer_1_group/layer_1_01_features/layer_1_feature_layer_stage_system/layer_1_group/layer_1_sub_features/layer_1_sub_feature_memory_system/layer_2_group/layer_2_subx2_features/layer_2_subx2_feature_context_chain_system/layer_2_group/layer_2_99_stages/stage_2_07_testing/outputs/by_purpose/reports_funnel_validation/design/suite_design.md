@@ -1,3 +1,8 @@
+---
+resource_id: "8fe1a6ba-c1a0-4c00-9a3b-2c3d7b8f7d8d"
+resource_type: "output"
+resource_name: "suite_design"
+---
 # Reports Funnel Validation Suite Design
 
 ## Goal

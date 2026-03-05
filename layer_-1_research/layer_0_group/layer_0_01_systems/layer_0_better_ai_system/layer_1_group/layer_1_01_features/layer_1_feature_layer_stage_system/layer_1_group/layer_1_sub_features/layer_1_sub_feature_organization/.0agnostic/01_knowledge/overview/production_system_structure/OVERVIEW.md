@@ -1,3 +1,8 @@
+---
+resource_id: "efc2526c-361f-4871-9f04-ad8d74f0ab04"
+resource_type: "knowledge"
+resource_name: "OVERVIEW"
+---
 # Layer-Stage System Overview
 
 ## What Is It?

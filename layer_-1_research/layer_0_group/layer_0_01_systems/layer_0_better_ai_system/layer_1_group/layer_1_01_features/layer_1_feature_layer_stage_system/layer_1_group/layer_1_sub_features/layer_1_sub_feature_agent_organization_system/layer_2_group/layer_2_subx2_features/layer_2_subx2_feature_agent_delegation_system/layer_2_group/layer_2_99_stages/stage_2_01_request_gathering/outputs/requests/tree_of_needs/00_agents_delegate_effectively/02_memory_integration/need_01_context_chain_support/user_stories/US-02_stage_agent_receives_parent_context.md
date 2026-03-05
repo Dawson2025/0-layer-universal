@@ -1,3 +1,8 @@
+---
+resource_id: "ae9edc84-5b00-46ac-9f6d-fb0a1318de20"
+resource_type: "output"
+resource_name: "US-02_stage_agent_receives_parent_context"
+---
 # US-2: Stage agent receives parent domain context
 
 **Need**: [Context Chain Support](../README.md)

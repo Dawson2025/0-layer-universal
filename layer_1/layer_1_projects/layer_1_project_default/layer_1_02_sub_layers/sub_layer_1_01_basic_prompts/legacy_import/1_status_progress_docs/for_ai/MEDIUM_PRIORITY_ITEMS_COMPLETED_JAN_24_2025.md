@@ -1,3 +1,8 @@
+---
+resource_id: "8015990a-3068-42cb-b8c2-d42b43fd5a9b"
+resource_type: "document"
+resource_name: "MEDIUM_PRIORITY_ITEMS_COMPLETED_JAN_24_2025"
+---
 # Medium Priority Items Completed - January 24, 2025
 **URL Routing Fixes and Template Creation**
 

@@ -1,3 +1,9 @@
+---
+resource_id: "f45b3e32-4e29-4336-9f73-cb3d233191ed"
+resource_type: "index
+document"
+resource_name: "0INDEX"
+---
 # 0INDEX.md - Laptop Linux Ubuntu
 
 ## Current Status

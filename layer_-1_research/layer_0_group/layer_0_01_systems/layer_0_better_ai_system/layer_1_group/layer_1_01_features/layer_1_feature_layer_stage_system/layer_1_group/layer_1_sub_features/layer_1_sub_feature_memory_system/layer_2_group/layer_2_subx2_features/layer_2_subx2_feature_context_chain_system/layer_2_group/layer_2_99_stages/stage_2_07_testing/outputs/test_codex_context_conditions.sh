@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
+# resource_id: "0f59cfab-961b-4976-886a-a1294868b4f5"
+# resource_type: "script"
+# resource_name: "test_codex_context_conditions"
 # test_codex_context_conditions.sh — Validate Codex static context and conditional discovery mappings
 
 set -uo pipefail

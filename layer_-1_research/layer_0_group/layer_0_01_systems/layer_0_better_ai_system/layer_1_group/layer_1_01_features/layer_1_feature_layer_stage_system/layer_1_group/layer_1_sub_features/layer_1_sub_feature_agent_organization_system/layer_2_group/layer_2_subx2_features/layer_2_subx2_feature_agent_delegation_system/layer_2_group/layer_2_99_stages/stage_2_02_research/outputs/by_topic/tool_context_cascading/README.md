@@ -1,3 +1,9 @@
+---
+resource_id: "2fe7a58c-c875-48e6-829b-6a69382e0115"
+resource_type: "readme
+output"
+resource_name: "README"
+---
 # Tool Context Cascading
 
 ## Research Question

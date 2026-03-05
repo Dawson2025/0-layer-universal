@@ -1,1 +1,6 @@
+---
+resource_id: "0e70d802-55ef-482d-ae21-34af6c57ab9e"
+resource_type: "document"
+resource_name: "project_branches_and_global_actions"
+---
 Create dedicated edit, delete, and share controls for the overall project (not just individual storage variants) so the aggregated project title and collaboration settings can be managed separately. Please add support for branching projects and variants, allowing new branches to be created from existing branches similar to Git workflows. Also remove the “Cloud & Local Storage” option from the Administration section because the My Projects page already exposes those controls.

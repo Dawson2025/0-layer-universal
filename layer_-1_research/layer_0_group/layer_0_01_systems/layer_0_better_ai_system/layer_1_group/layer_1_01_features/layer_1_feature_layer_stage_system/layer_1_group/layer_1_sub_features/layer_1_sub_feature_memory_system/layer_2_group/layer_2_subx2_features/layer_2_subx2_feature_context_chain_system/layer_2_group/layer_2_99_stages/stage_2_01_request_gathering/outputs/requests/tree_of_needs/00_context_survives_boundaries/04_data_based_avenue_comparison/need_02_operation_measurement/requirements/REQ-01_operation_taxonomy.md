@@ -1,3 +1,8 @@
+---
+resource_id: "ecc5ae2c-d0a1-4642-8126-15221f967dcb"
+resource_type: "output"
+resource_name: "REQ-01_operation_taxonomy"
+---
 # Operation Taxonomy
 
 **Need**: [Operation Measurement](../README.md)

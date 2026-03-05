@@ -1,4 +1,9 @@
 ---
+resource_id: "9372578b-af86-4aeb-90f8-1e25a0ae234e"
+resource_type: "document"
+resource_name: "10_current_product-complete"
+---
+---
 description: Mark 10_current_product stage as complete and prepare handoff
 argument-hint: [--notes "completion notes"]
 ---

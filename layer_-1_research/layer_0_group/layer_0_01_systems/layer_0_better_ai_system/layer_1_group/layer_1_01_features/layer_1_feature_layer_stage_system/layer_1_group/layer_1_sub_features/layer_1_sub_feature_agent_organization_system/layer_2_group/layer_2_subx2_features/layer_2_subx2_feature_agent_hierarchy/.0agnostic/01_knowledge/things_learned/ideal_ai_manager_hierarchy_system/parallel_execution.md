@@ -1,3 +1,8 @@
+---
+resource_id: "01104001-339b-4436-9432-67786386c7a9"
+resource_type: "knowledge"
+resource_name: "parallel_execution"
+---
 ## Parallel Execution Cookbook
 
 This document provides concrete patterns and examples for parallelizing work across the AI manager hierarchy system.

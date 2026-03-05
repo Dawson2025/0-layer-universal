@@ -1,3 +1,8 @@
+---
+resource_id: "c8f3e149-bffd-4bec-a68d-335e53ae5d65"
+resource_type: "protocol"
+resource_name: "sqlite_database_creation_troubleshooting_trajectory"
+---
 # Trajectory Store: SQLite Database Creation Troubleshooting
 
 **Created**: 2026-02-28

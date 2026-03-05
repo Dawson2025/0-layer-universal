@@ -1,3 +1,8 @@
+---
+resource_id: "1cb14a24-ff6e-4a62-9b58-9fca2e320d80"
+resource_type: "output"
+resource_name: "REQ-03_decision_matrix"
+---
 # Decision Matrix
 
 **Need**: [Customizable Importance](../README.md)

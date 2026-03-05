@@ -1,3 +1,8 @@
+---
+resource_id: "5dfe4bfa-ddd8-40e0-8366-8e4f4ddeee30"
+resource_type: "document"
+resource_name: "INSTRUCTIONS_LAYER_STAGE_SYSTEM_INTERNAL_STRUCTURE.sync-conflict-20260126-102106-IF2WOGZ"
+---
 # INSTRUCTIONS: Layer-Stage System Internal Structure
 
 **Created:** 2026-01-15

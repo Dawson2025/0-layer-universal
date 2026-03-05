@@ -1,3 +1,8 @@
+---
+resource_id: "7bccb494-0096-465d-b689-043efc0a236f"
+resource_type: "knowledge"
+resource_name: "init_prompt_chain"
+---
 # Init Prompt Chain
 
 ## Overview

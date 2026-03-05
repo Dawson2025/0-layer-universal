@@ -1,4 +1,10 @@
 ---
+resource_id: "7b9324fe-5b4f-4d80-874d-60f68476e425"
+resource_type: "skill
+document"
+resource_name: "SKILL"
+---
+---
 name: 00_stage_registry-workflow
 description: Workflow skill for Stage metadata and registration. Activated when working on 00_stage_registry tasks.
 version: 1.0.0

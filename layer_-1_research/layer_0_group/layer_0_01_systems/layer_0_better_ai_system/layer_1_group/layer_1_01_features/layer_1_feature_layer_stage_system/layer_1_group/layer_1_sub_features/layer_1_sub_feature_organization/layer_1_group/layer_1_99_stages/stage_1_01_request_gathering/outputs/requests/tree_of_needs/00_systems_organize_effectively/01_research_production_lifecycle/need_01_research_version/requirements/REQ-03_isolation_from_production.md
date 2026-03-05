@@ -1,3 +1,8 @@
+---
+resource_id: "898010ab-bb8f-4bf3-abdd-f81ec2c4f7c3"
+resource_type: "output"
+resource_name: "REQ-03_isolation_from_production"
+---
 # Isolation from Production
 
 **Need**: [Research Version](../README.md)

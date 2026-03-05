@@ -1,3 +1,8 @@
+---
+resource_id: "09de4a43-03ef-4b38-aa3f-2e998d3e30e5"
+resource_type: "rule"
+resource_name: "test_design"
+---
 # Test Design: Source of Truth Rule
 
 **Rule**: `../I0_source_of_truth_rule.md`

@@ -1,4 +1,7 @@
 ---
+resource_id: "f2aa5b51-40a9-40aa-b62a-6cc16d9ff75f"
+resource_type: "document"
+resource_name: "SKILL.sync-conflict-20260126-035816-IF2WOGZ"
 name: 11_archives-workflow
 description: Workflow skill for Historical versions and deprecated content. Activated when working on 11_archives tasks.
 version: 1.0.0

@@ -1,3 +1,8 @@
+---
+resource_id: "3ab7badf-f1ae-4787-9016-859c69c55f9c"
+resource_type: "document"
+resource_name: "structure_overview"
+---
 # Structure Overview
 
 ```

@@ -1,3 +1,4 @@
+<!-- derived_from: "3e5c2b6e-f22c-417e-bd2a-a109acf251c2" -->
 # Integration Summary: Layer 2 Group Index (Entities Feature)
 
 This index describes the layer-group container for the entities feature and links layer-wide children and stage routes.

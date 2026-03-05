@@ -1,4 +1,5 @@
 {
+  "file_id": "75c1c053-e572-40f7-aa67-ba218e7a8ea4",
   "@context": {
     "@vocab": "https://layer-stage.dev/agent/",
     "gab": "https://aalang.dev/gab/",
@@ -29,8 +30,15 @@
         "All designs must trace back to stage 01 requirements",
         "All designs must be informed by stage 02 research evidence"
       ],
-      "inputs": ["Stage 01 tree of needs", "Stage 02 research findings", "Parent .0agnostic/01_knowledge/"],
-      "outputs": ["outputs/design_decisions/", "outputs/reports/stage_report.md"]
+      "inputs": [
+        "Stage 01 tree of needs",
+        "Stage 02 research findings",
+        "Parent .0agnostic/01_knowledge/"
+      ],
+      "outputs": [
+        "outputs/design_decisions/",
+        "outputs/reports/stage_report.md"
+      ]
     }
   ]
 }

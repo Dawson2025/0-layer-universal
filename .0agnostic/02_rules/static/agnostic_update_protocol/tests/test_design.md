@@ -1,3 +1,8 @@
+---
+resource_id: "7ba38b90-d065-44a4-9092-c85c34012524"
+resource_type: "rule"
+resource_name: "test_design"
+---
 # Test Design: Agnostic Update Protocol
 
 **Rule**: `../agnostic_update_protocol.md`

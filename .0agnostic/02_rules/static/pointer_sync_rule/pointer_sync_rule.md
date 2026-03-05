@@ -1,3 +1,8 @@
+---
+resource_id: "431bfad1-8f7d-46c7-857c-0ef13769d6e5"
+resource_type: "rule"
+resource_name: "pointer_sync_rule"
+---
 # Pointer Sync Rule
 
 **Type**: Static (always applies) | **Scope**: All agents

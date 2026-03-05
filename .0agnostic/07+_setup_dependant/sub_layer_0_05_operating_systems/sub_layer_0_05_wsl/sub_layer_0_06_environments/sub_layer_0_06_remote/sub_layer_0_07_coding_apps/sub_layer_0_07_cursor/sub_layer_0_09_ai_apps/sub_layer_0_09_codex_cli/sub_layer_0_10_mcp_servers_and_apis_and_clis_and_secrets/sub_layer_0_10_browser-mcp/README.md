@@ -1,3 +1,9 @@
+---
+resource_id: "e2d9561a-41c0-4546-b3bc-66c33a8d2cdb"
+resource_type: "readme
+document"
+resource_name: "README"
+---
 # Browser MCP (Codex CLI on WSL)
 
 ## Canonical docs

@@ -1,3 +1,9 @@
+---
+resource_id: "da2ab441-3102-43a1-95ff-0fd05d0c6d47"
+resource_type: "readme
+output"
+resource_name: "README"
+---
 # Customizable Importance -- Requirements Index
 
 **Need**: [Customizable Importance](../README.md)

@@ -1,3 +1,8 @@
+---
+resource_id: "c3bd69c2-fc7a-44b0-bbcf-fbf4aef99577"
+resource_type: "knowledge"
+resource_name: "01_context_problems"
+---
 # Context System Problems
 
 **Date**: 2026-01-25

@@ -1,3 +1,8 @@
+---
+resource_id: "a11a7bba-c257-428c-a403-02690fd8417f"
+resource_type: "knowledge"
+resource_name: "agnostic_to_tool_porting_bridge_contract"
+---
 # Agnostic to Tool Porting Bridge Contract
 
 ## Purpose

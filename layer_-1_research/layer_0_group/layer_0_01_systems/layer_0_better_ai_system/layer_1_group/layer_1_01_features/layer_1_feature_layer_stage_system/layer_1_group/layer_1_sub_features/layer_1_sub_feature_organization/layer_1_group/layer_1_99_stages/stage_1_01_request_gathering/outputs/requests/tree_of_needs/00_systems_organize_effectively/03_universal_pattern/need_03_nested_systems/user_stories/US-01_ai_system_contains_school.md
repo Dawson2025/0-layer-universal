@@ -1,3 +1,8 @@
+---
+resource_id: "cdf82bb8-2fff-4c18-a085-a1ec250175bf"
+resource_type: "output"
+resource_name: "US-01_ai_system_contains_school"
+---
 # AI System Contains School as Sub-System
 
 **As an** AI system architect,

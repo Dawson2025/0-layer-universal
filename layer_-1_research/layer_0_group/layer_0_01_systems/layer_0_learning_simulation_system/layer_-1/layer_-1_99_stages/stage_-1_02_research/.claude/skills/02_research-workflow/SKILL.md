@@ -1,4 +1,10 @@
 ---
+resource_id: "dd567943-a87b-4e02-af73-ecb460f9dcc1"
+resource_type: "skill
+document"
+resource_name: "SKILL"
+---
+---
 name: 02_research-workflow
 description: Workflow skill for Explore problem space, gather information. Activated when working on 02_research tasks.
 version: 1.0.0

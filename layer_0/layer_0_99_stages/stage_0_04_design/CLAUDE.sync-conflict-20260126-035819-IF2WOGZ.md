@@ -1,3 +1,8 @@
+---
+resource_id: "1023a30b-62ec-4a03-b40c-5f5ace197e89"
+resource_type: "document"
+resource_name: "CLAUDE.sync-conflict-20260126-035819-IF2WOGZ"
+---
 # Stage 03: Design
 
 ## Purpose

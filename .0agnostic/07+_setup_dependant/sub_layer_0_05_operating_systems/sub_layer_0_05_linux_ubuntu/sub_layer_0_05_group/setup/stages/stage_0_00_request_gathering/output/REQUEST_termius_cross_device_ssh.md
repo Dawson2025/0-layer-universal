@@ -1,3 +1,8 @@
+---
+resource_id: "7d840ec3-ed71-46b9-ae81-0734002e1392"
+resource_type: "document"
+resource_name: "REQUEST_termius_cross_device_ssh"
+---
 # Request: Termius Cross-Device SSH Setup
 
 **Layer**: 0 (Universal)

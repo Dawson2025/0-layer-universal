@@ -1,3 +1,8 @@
+---
+resource_id: "0745fea2-caa7-4898-a1f3-162b18bd878d"
+resource_type: "output"
+resource_name: "US-04_developer_visualizes_tree"
+---
 # US-4: Developer visualizes the agent tree
 
 **Need**: [Agent Hierarchy](../README.md)

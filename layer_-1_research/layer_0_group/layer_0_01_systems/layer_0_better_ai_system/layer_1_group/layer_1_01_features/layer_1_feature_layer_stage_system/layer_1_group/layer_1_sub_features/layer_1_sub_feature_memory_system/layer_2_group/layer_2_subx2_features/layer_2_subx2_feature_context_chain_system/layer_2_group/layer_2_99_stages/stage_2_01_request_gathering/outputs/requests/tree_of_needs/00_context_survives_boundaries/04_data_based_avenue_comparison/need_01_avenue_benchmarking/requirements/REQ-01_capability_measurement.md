@@ -1,3 +1,8 @@
+---
+resource_id: "4ba86277-fb25-4844-b9cc-5156ecaec816"
+resource_type: "output"
+resource_name: "REQ-01_capability_measurement"
+---
 # Capability Measurement Framework
 
 **Need**: [Avenue Benchmarking](../README.md)

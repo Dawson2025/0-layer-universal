@@ -1,3 +1,8 @@
+---
+resource_id: "dff4fb28-77e2-4b8b-8497-2dfe29b7fab7"
+resource_type: "knowledge"
+resource_name: "universal_artifacts"
+---
 # Topic: Universal Artifacts
 
 ## Summary

@@ -1,3 +1,8 @@
+---
+resource_id: "ab22e93f-fc80-4eff-aece-a3ba1112383c"
+resource_type: "document"
+resource_name: "INSTALL"
+---
 # Playwright MCP Server Installation Guide
 
 ## Overview

@@ -1,3 +1,8 @@
+---
+resource_id: "047e831b-f56e-4303-8e8d-536748820453"
+resource_type: "document"
+resource_name: "CURSOR_BROWSER_MCP_SETUP"
+---
 # Cursor IDE Browser MCP Setup - Linux/Ubuntu
 
 **Location**: Universal Tools → MCP Tools  

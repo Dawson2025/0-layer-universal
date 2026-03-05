@@ -1,4 +1,7 @@
 #!/bin/bash
+# resource_id: "08419996-e04a-49cb-a493-dcb112e98bdd"
+# resource_type: "script"
+# resource_name: "invoke-testing-agent"
 # Testing Agent Invocation Script
 # Helps create handoff documents for Testing Agent
 

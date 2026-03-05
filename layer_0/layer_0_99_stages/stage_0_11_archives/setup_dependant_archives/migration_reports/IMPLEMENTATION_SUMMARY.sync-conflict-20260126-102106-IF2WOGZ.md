@@ -1,3 +1,8 @@
+---
+resource_id: "839f3c8d-b7f4-409d-839d-8b6943e00511"
+resource_type: "document"
+resource_name: "IMPLEMENTATION_SUMMARY.sync-conflict-20260126-102106-IF2WOGZ"
+---
 # Implementation Summary - Universal Setup File Tree
 
 **Date**: 2025-12-31

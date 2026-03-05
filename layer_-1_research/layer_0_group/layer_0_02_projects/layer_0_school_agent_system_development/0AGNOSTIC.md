@@ -1,3 +1,9 @@
+---
+resource_id: "c3a8361a-4d49-476d-8720-0df36305ece1"
+resource_type: "agnostic
+document"
+resource_name: "0AGNOSTIC"
+---
 # layer_0_school_agent_system_development
 
 # ═══ STATIC CONTEXT (always loaded) ═══

@@ -1,3 +1,8 @@
+---
+resource_id: "56521b8b-48d1-4312-be0d-f6593daf6489"
+resource_type: "output"
+resource_name: "03_propagation_chain_architecture"
+---
 # Propagation Chain Architecture
 
 **Date**: 2026-02-23

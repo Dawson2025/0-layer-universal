@@ -1,3 +1,8 @@
+---
+resource_id: "26963ef5-1b44-4db1-a804-d5061ca0f846"
+resource_type: "document"
+resource_name: "manual_cloud_tests"
+---
 # Manual Cloud E2E Test Checklist
 
 This document contains manual tests for cloud features that require browser interaction and cannot be fully automated due to Google OAuth requirements.

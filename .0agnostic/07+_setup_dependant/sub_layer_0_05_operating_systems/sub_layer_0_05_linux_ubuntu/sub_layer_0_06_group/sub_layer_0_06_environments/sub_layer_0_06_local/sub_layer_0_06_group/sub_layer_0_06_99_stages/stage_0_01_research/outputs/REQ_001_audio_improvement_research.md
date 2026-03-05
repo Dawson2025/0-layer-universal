@@ -1,3 +1,8 @@
+---
+resource_id: "693f3f3b-193a-4a90-bff7-a49c606f9e25"
+resource_type: "output"
+resource_name: "REQ_001_audio_improvement_research"
+---
 # Research: Improving Laptop Speaker Audio on Linux
 
 ## Request Reference

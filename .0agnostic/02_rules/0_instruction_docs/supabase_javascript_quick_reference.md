@@ -1,3 +1,8 @@
+---
+resource_id: "ff6c21ef-8849-44e6-a467-84e8f1f971a4"
+resource_type: "rule"
+resource_name: "supabase_javascript_quick_reference"
+---
 # SUPABASE JAVASCRIPT QUICK REFERENCE
 
 ## **🚨 MANDATORY RULE**

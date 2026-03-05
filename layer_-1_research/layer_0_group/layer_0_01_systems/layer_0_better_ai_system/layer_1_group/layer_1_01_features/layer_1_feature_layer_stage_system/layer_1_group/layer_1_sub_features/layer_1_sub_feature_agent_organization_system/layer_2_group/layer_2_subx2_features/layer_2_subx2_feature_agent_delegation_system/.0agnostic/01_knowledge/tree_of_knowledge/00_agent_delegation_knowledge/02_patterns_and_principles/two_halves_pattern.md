@@ -1,3 +1,8 @@
+---
+resource_id: "92dfafad-7452-48ff-a713-3901e0a10b37"
+resource_type: "knowledge"
+resource_name: "two_halves_pattern"
+---
 # Topic: Two-Halves Context Pattern
 
 ## Summary

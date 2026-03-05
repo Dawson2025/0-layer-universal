@@ -1,3 +1,8 @@
+---
+resource_id: "07720e74-020c-483c-8e82-6379d26afddc"
+resource_type: "document"
+resource_name: "GIT_REPO_SYNC_SYSTEM"
+---
 # Git Repository Sync System
 
 **Last Updated:** 2026-01-11

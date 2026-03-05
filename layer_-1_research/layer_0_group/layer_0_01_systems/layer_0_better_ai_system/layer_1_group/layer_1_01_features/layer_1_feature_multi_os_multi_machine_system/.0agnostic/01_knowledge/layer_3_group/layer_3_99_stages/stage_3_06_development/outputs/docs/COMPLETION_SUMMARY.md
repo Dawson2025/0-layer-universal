@@ -1,3 +1,8 @@
+---
+resource_id: "4d5fba5a-4b37-4f1c-8cbb-9cb758e5efae"
+resource_type: "knowledge"
+resource_name: "COMPLETION_SUMMARY"
+---
 # Multi-OS Workspace Sync - Completion Summary
 
 **Date:** 2026-01-09

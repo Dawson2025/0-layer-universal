@@ -1,3 +1,8 @@
+---
+resource_id: "eca3f209-bb2b-43a6-ab76-e7306ca0caf6"
+resource_type: "document"
+resource_name: "RESEARCH_TO_PRODUCTION_WORKFLOW_PROPOSAL"
+---
 # Proposal: Research-to-Production Workflow
 
 ## Problem Statement

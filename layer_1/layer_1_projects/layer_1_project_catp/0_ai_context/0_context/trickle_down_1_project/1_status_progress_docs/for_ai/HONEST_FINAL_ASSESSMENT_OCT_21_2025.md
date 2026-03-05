@@ -1,3 +1,8 @@
+---
+resource_id: "f192b289-c732-45b3-a12e-a5bec4669ad7"
+resource_type: "document"
+resource_name: "HONEST_FINAL_ASSESSMENT_OCT_21_2025"
+---
 # Honest Final Assessment - October 21, 2025
 **What Was Actually Accomplished vs What Remains**
 

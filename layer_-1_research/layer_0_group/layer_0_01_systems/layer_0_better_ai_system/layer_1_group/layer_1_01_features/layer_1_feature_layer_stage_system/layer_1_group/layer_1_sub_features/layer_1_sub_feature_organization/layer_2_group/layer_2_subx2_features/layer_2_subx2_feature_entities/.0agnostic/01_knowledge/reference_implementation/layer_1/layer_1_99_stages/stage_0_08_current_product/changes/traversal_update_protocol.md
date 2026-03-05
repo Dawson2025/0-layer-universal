@@ -1,3 +1,8 @@
+---
+resource_id: "f09dd337-23f3-492a-868c-2e5d985b81d1"
+resource_type: "knowledge"
+resource_name: "traversal_update_protocol"
+---
 # Traversal Update Protocol
 
 **Purpose:** Ensure AI agents can navigate to the correct context after ANY system change.

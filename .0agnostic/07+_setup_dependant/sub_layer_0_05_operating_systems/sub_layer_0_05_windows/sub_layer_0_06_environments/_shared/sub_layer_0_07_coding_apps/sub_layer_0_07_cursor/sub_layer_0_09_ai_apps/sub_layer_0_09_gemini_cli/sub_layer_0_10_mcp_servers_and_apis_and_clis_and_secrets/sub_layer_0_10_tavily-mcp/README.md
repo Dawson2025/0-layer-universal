@@ -1,3 +1,9 @@
+---
+resource_id: "40cf00ff-fc00-4c09-9348-980d702953b5"
+resource_type: "readme
+document"
+resource_name: "README"
+---
 # tavily-mcp (gemini_cli on windows)
 
 ## Canonical docs

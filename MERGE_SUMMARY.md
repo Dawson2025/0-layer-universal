@@ -1,3 +1,8 @@
+---
+resource_id: "9b12bef2-9cad-4910-b90a-c5775dce95cd"
+resource_type: "document"
+resource_name: "MERGE_SUMMARY"
+---
 # Merge and Universalization Summary
 
 **Date**: 2025-01-27

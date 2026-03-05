@@ -1,3 +1,8 @@
+---
+resource_id: "5b39e3ba-e4db-4a44-949b-503aacbaf6e4"
+resource_type: "document"
+resource_name: "tool_additions"
+---
 # Claude-Specific Additions for AI Apps (Level 09)
 
 ## Perplexity Extraction Skill

@@ -1,3 +1,8 @@
+---
+resource_id: "f432d94c-80be-475e-abb0-54c953c5f6cd"
+resource_type: "document"
+resource_name: "news-monitoring-workflow"
+---
 # News Monitoring Workflow
 
 ## Overview

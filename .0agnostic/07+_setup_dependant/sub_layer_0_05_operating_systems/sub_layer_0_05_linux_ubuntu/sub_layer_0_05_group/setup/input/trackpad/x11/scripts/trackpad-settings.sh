@@ -1,4 +1,7 @@
 #!/bin/bash
+# resource_id: "942ae47a-4d58-458a-8671-9873d4acb28a"
+# resource_type: "script"
+# resource_name: "trackpad-settings"
 # Trackpad settings configuration script
 # Last Updated: January 11, 2026
 #

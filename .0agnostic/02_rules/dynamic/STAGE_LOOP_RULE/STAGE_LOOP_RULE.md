@@ -1,3 +1,8 @@
+---
+resource_id: "616abca3-741e-4f79-a4fd-38b852f86000"
+resource_type: "rule"
+resource_name: "STAGE_LOOP_RULE"
+---
 # Stage Loop Rule
 
 **Type**: Dynamic (triggered by scenario)

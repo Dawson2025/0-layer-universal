@@ -1,3 +1,8 @@
+---
+resource_id: "11398331-582f-4224-a7ef-1c26a8e68497"
+resource_type: "document"
+resource_name: "DEPTH_FIRST_SLICE"
+---
 # Depth-First Slice Prototype Strategy
 
 This repository follows a depth-first, slice-prototype-first approach for changes that span multiple layers (backend, frontend, automation).

@@ -1,3 +1,9 @@
+---
+resource_id: "6f0fc50e-cf7e-48f7-9db0-0e4faa49991b"
+resource_type: "readme
+document"
+resource_name: "README"
+---
 # Context Avenue Web Registry
 
 Management hub for the context avenue web. Tracks all avenues, their ordering, and population status. Provides tooling for insert/delete/move/reorder operations.

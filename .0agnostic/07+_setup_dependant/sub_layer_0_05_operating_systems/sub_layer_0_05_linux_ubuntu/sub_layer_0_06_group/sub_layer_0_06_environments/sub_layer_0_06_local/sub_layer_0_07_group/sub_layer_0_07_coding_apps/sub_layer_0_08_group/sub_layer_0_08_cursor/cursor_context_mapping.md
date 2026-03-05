@@ -1,3 +1,8 @@
+---
+resource_id: "51415cf8-3bd3-4941-b555-19bc95c6229a"
+resource_type: "document"
+resource_name: "cursor_context_mapping"
+---
 # Cursor Context Mapping — Layer-Stage System Integration
 
 *How the agnostic system delivers context to Cursor IDE*

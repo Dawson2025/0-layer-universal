@@ -1,3 +1,8 @@
+---
+resource_id: "54915394-7fb2-41af-9963-db70c272d84d"
+resource_type: "output"
+resource_name: "REQ-01_detection_mechanism"
+---
 # Detection Mechanism
 
 **Need**: [Staleness Detection](../README.md)

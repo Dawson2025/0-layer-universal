@@ -1,3 +1,8 @@
+---
+resource_id: "4096ea5c-332e-400c-af2e-2915a18d36d7"
+resource_type: "output"
+resource_name: "22_core_data_structure_hierarchy"
+---
 # Core Data Structure Hierarchy: From Hardware Primitives to Application Composites
 
 ## Purpose

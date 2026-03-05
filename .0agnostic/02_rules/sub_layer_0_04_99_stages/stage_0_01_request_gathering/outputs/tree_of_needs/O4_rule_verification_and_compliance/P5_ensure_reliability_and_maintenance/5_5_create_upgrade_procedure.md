@@ -1,3 +1,8 @@
+---
+resource_id: "8529c40a-b1c5-4b05-b222-b757542c76d8"
+resource_type: "rule"
+resource_name: "5_5_create_upgrade_procedure"
+---
 # 5.5: Create Upgrade Procedure
 
 ## Requirement

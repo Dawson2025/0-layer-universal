@@ -1,3 +1,9 @@
+---
+resource_id: "faf22d0f-bfe5-4706-8a65-50be3d003e4a"
+resource_type: "agnostic
+document"
+resource_name: "0AGNOSTIC"
+---
 # memory_system — Layer Registry
 
 ## Identity

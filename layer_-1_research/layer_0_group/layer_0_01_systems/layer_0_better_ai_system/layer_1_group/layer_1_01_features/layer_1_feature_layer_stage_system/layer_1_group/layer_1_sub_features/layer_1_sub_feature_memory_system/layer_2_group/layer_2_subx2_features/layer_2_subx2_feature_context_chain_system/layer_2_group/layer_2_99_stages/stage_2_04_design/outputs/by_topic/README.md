@@ -1,3 +1,9 @@
+---
+resource_id: "be52261a-719f-4e34-8742-73c6f9c4f593"
+resource_type: "readme
+output"
+resource_name: "README"
+---
 # Stage 3.04 Design — By Topic Index
 
 Design documents for the context chain system. These are the **canonical source of truth** for context propagation, discovery, and chaining architecture.

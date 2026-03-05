@@ -1,3 +1,8 @@
+---
+resource_id: "086d142d-2e3c-45f1-9c5a-c3bb16449148"
+resource_type: "knowledge"
+resource_name: "agnostic_sync_system_design"
+---
 # Agnostic Sync System Design
 
 **Layer**: layer_-1 (Research)

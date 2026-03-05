@@ -1,3 +1,8 @@
+---
+resource_id: "152a582a-dc72-4fa2-8e15-a68a61947539"
+resource_type: "document"
+resource_name: "CODE_REFERENCE"
+---
 # Code Reference
 
 Complete file-by-file breakdown of the codebase with line-by-line explanations.

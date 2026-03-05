@@ -1,3 +1,8 @@
+---
+resource_id: "5c552cae-373f-45e1-93d9-56fe4ab037a9"
+resource_type: "knowledge"
+resource_name: "system_architecture_diagram"
+---
 # Agent Delegation System — Architecture Diagrams
 
 Comprehensive Mermaid.js diagrams showing how all components of the agent delegation system connect and fit within the greater layer-stage system.

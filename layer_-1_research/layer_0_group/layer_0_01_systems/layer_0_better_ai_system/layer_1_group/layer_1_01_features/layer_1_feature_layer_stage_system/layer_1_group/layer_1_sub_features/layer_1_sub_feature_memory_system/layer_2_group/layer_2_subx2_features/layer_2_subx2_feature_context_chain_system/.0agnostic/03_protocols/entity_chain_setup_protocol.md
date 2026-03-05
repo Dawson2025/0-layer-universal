@@ -1,3 +1,8 @@
+---
+resource_id: "b95c084b-8964-4339-a345-6bfbfe278df6"
+resource_type: "protocol"
+resource_name: "entity_chain_setup_protocol"
+---
 # Protocol: Entity Chain Setup
 
 **Purpose**: Correctly integrate a new entity into the 0AGNOSTIC parent chain so it inherits context from all ancestors.

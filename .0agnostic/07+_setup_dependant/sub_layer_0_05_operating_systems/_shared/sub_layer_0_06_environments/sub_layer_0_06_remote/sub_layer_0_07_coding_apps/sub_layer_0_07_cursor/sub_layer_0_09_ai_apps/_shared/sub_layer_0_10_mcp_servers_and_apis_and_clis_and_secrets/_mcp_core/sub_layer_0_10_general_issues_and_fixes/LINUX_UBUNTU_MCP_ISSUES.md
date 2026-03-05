@@ -1,3 +1,8 @@
+---
+resource_id: "184825c6-bff3-4a89-917c-f7239281cf03"
+resource_type: "document"
+resource_name: "LINUX_UBUNTU_MCP_ISSUES"
+---
 # Linux/Ubuntu-Specific MCP Issues - OS Level
 
 **Date**: 2025-12-02  

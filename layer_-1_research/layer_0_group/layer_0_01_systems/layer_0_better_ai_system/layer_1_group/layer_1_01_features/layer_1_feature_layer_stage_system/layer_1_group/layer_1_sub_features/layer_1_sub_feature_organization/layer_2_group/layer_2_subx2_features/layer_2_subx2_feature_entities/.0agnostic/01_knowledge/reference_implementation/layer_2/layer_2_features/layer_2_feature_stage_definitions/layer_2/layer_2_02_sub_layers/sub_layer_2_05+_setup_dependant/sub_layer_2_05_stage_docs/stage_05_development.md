@@ -1,3 +1,8 @@
+---
+resource_id: "39069733-a0bf-43e9-8f5c-0b3aaef98a24"
+resource_type: "knowledge"
+resource_name: "stage_05_development"
+---
 # Stage 04: Development
 
 ## Purpose

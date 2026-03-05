@@ -1,3 +1,8 @@
+---
+resource_id: "c02f6461-fc6b-40e6-b91b-13a5fed139a5"
+resource_type: "output"
+resource_name: "system_tts_design"
+---
 # System TTS Design
 
 **Date**: 2026-02-24 (Phase 2 update)

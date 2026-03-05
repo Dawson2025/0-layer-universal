@@ -1,3 +1,8 @@
+---
+resource_id: "7d4e9ae9-789f-461e-befa-8877b706d6ac"
+resource_type: "output"
+resource_name: "terminal_ai_file_system_mechanics"
+---
 <img src="https://r2cdn.perplexity.ai/pplx-full-logo-primary-dark%402x.png" style="height:64px;margin-right:32px"/>
 
 # Hey, how's it going?

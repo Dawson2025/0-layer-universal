@@ -1,3 +1,9 @@
+---
+resource_id: "5978b99e-2e64-4999-a875-466ee87173dd"
+resource_type: "readme
+document"
+resource_name: "README"
+---
 # Speech-to-Text Platform Options
 
 **Last Updated**: January 12, 2026

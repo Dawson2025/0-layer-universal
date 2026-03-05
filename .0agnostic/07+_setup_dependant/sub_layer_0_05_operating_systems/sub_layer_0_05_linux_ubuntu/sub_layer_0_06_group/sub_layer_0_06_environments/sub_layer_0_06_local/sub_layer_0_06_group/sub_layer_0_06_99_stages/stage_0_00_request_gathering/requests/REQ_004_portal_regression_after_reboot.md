@@ -1,3 +1,8 @@
+---
+resource_id: "7f551b92-90a6-4cb0-a765-f6ae5822eb81"
+resource_type: "document"
+resource_name: "REQ_004_portal_regression_after_reboot"
+---
 # REQ_004: Portal Service Regression After Reboot
 
 **Date Reported**: 2026-01-29

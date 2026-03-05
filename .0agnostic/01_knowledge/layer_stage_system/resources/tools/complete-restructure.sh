@@ -1,4 +1,7 @@
 #!/bin/bash
+# resource_id: "827ca8fe-c1d0-4ac2-8beb-69200d844688"
+# resource_type: "script"
+# resource_name: "complete-restructure"
 # complete-restructure.sh — Complete the agent_delegation_system restructuring
 # Run from: ~/dawson-workspace/code/0_layer_universal/
 set -e

@@ -1,3 +1,8 @@
+---
+resource_id: "5a9313af-8cdc-4223-bc60-24ae49f8c179"
+resource_type: "document"
+resource_name: "vibe_typer"
+---
 # Vibe Typer
 
 **Last Updated**: January 13, 2026

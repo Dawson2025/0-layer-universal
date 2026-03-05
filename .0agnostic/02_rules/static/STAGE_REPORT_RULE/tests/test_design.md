@@ -1,3 +1,8 @@
+---
+resource_id: "fb812e05-e0ba-4fd7-99fe-45c220aaa34f"
+resource_type: "rule"
+resource_name: "test_design"
+---
 # Test Design: STAGE_REPORT_RULE
 
 **Rule**: `../STAGE_REPORT_RULE.md`

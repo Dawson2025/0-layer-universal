@@ -1,3 +1,8 @@
+---
+resource_id: "57fc2c25-cd6c-40e3-a7e3-40fa7615fa23"
+resource_type: "document"
+resource_name: "codex-notifications"
+---
 ## Codex Desktop & Audio Alerts (WSL)
 
 This guide wires Codex (or any CLI tool) into Windows toast notifications and loud audible alerts while running inside WSL.

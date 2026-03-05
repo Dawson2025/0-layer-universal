@@ -1,3 +1,8 @@
+---
+resource_id: "7e873cb1-2c4b-4334-b13d-7974f52eddea"
+resource_type: "rule"
+resource_name: "why-&&-exit-works"
+---
 # Why `&& exit` Workaround is Recommended
 
 ## Overview

@@ -1,3 +1,9 @@
+---
+resource_id: "2bb110f9-6149-4d9f-ab26-bea4031ccbe8"
+resource_type: "readme
+document"
+resource_name: "README"
+---
 # Platform Version Control System
 *Comprehensive Version Control for All App Development Platforms and Services*
 

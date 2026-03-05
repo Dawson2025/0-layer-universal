@@ -1,3 +1,8 @@
+---
+resource_id: "93b79051-b06b-496a-9723-d57393ed5bda"
+resource_type: "output"
+resource_name: "ISSUE_004_gsd_display_fix"
+---
 # Fix: GSD DISPLAY Environment Variable Issue
 
 ## Issue Reference

@@ -1,3 +1,8 @@
+---
+resource_id: "e3df8872-9952-434b-bf3f-20818e4e28e2"
+resource_type: "document"
+resource_name: "20251023_CompleteDocumentationOrganization_Resolution_v1.0"
+---
 # Complete Documentation Organization Resolution
 *Date: 2025-01-23*
 

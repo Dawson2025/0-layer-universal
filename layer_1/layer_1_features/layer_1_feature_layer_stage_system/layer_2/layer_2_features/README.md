@@ -1,3 +1,9 @@
+---
+resource_id: "ac14a3df-f5d1-4c03-aeb5-746d7062ae57"
+resource_type: "readme
+document"
+resource_name: "README"
+---
 # Layer 2 Features - Layer-Stage System Children
 
 These features define the core concepts of the Layer-Stage Framework.

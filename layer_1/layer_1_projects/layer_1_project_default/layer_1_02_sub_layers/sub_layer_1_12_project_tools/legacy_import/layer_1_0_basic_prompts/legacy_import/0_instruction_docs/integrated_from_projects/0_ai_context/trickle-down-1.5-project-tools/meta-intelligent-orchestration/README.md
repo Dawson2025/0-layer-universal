@@ -1,3 +1,9 @@
+---
+resource_id: "beeb763a-9585-41df-a5ca-7796bb363fc7"
+resource_type: "readme
+document"
+resource_name: "README"
+---
 # Meta-Intelligent Orchestration System
 *Project Tool: Universal Orchestration with Technology-Specific Instances*
 

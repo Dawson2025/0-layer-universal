@@ -1,4 +1,9 @@
 ---
+resource_id: "1de7e187-ad02-4814-adc0-80f8ab7f77da"
+resource_type: "document"
+resource_name: "01_request_gathering-status"
+---
+---
 description: Show current status of 01_request_gathering stage
 argument-hint: [--verbose]
 ---

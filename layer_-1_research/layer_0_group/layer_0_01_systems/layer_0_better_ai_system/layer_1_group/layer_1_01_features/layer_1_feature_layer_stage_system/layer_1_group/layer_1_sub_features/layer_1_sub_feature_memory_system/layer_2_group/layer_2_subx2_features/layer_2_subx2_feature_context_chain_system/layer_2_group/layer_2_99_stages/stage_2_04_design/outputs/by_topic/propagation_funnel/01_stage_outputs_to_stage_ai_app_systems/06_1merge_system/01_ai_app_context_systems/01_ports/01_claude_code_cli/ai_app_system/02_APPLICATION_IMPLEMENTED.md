@@ -1,3 +1,8 @@
+---
+resource_id: "b43f1c06-2f57-4fc7-98e7-d4a73355dd4c"
+resource_type: "output"
+resource_name: "02_APPLICATION_IMPLEMENTED"
+---
 # Claude Code CLI — Application-Implemented Features
 
 **Date**: 2026-02-27

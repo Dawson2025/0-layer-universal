@@ -1,3 +1,9 @@
+---
+resource_id: "4341befb-ee5a-4013-89f9-20258beabd50"
+resource_type: "agnostic
+document"
+resource_name: "0AGNOSTIC"
+---
 # navigation — Stage 07: testing
 
 ## Identity

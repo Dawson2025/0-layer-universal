@@ -1,3 +1,8 @@
+---
+resource_id: "b07e2881-e9c1-4b70-9b40-d71b7dfa8215"
+resource_type: "output"
+resource_name: "REQ-01_context_model_definition"
+---
 # Context Model Definition
 
 **Need**: [Agent Context Model](../README.md)

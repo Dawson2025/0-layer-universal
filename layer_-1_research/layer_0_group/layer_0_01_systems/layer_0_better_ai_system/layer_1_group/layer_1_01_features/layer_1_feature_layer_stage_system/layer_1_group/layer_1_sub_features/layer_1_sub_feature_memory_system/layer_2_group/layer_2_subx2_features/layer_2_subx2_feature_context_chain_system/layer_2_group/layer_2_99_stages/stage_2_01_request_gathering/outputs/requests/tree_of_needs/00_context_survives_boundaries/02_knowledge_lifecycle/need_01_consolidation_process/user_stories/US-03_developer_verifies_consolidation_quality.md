@@ -1,3 +1,8 @@
+---
+resource_id: "00df51bb-1795-41dc-acfa-91591585a4d2"
+resource_type: "output"
+resource_name: "US-03_developer_verifies_consolidation_quality"
+---
 # US-03: Developer verifies consolidation quality
 
 **Need**: [Consolidation Process](../README.md)

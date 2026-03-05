@@ -1,3 +1,8 @@
+---
+resource_id: "de85a83d-7e6f-4ad2-b10f-7b1b901516d8"
+resource_type: "output"
+resource_name: "REQ-03_agent_lifecycle"
+---
 # Agent Lifecycle
 
 **Need**: [Spawning Patterns](../README.md)

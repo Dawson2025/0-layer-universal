@@ -1,3 +1,9 @@
+---
+resource_id: "75c253e1-bf15-4f33-96d7-c74925e9d0a0"
+resource_type: "agnostic
+document"
+resource_name: "0AGNOSTIC"
+---
 # agent_delegation_system — Stage 06: Development
 
 # ═══ STATIC CONTEXT (always loaded) ═══

@@ -1,3 +1,8 @@
+---
+resource_id: "078f365e-362c-40c7-8b64-f183cc3c9016"
+resource_type: "document"
+resource_name: "ubuntu-linux-setup"
+---
 # Ubuntu Linux Setup Guide
 
 This guide documents the setup process for Ubuntu Linux systems, including essential tools and applications.

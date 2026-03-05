@@ -1,3 +1,8 @@
+---
+resource_id: "02734587-89e0-4462-a580-58b68bf26237"
+resource_type: "document"
+resource_name: "2025-01-27_bug_fixes_realtime_sync_transaction_logging"
+---
 # BUG FIXES: Real-time Synchronization & Transaction Logging
 
 ## **DATE**: 2025-01-27

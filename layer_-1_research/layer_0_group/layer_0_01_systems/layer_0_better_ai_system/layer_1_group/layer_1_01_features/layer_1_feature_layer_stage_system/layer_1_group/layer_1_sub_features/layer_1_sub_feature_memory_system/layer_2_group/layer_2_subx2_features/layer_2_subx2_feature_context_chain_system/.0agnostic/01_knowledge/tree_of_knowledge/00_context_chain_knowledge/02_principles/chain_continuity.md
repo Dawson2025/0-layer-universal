@@ -1,3 +1,8 @@
+---
+resource_id: "b4051837-bb3e-4b77-a453-61deb1a549ad"
+resource_type: "knowledge"
+resource_name: "chain_continuity"
+---
 # Principle: Chain Continuity
 
 ## Summary

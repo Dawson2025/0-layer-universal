@@ -1,4 +1,7 @@
 ---
+resource_id: "6fce732a-bf15-4eeb-8441-e97030cda9b7"
+resource_type: "document"
+resource_name: "09_fixing-status.sync-conflict-20260126-101458-IF2WOGZ"
 description: Show current status of 09_fixing stage
 argument-hint: [--verbose]
 ---

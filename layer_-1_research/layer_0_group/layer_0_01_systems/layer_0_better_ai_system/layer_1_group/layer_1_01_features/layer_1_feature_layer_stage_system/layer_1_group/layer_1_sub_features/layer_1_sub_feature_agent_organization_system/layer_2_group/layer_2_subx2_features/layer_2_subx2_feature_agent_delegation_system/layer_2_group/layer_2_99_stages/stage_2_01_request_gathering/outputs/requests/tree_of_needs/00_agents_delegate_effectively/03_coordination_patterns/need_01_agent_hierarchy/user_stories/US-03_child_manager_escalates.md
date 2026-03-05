@@ -1,3 +1,8 @@
+---
+resource_id: "d06264fb-2ddd-4877-8bfe-8855b81ccff3"
+resource_type: "output"
+resource_name: "US-03_child_manager_escalates"
+---
 # US-3: Child manager escalates to parent
 
 **Need**: [Agent Hierarchy](../README.md)

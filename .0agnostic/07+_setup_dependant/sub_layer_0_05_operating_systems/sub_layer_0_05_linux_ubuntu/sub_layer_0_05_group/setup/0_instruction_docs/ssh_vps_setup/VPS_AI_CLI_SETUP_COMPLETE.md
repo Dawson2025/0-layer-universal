@@ -1,3 +1,8 @@
+---
+resource_id: "caf541ea-c5b1-4b70-a2cd-080d9d3a1990"
+resource_type: "document"
+resource_name: "VPS_AI_CLI_SETUP_COMPLETE"
+---
 # VPS AI CLI Setup - Complete
 
 **Date:** 2026-01-17

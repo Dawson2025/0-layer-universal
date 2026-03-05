@@ -1,3 +1,8 @@
+---
+resource_id: "918ec1d1-0a67-4097-b926-8f6075466393"
+resource_type: "rule"
+resource_name: "1_2_identify_system_prompt_architecture"
+---
 # 1.2: Identify System Prompt vs. Foundational Context
 
 ## What This Need Covers

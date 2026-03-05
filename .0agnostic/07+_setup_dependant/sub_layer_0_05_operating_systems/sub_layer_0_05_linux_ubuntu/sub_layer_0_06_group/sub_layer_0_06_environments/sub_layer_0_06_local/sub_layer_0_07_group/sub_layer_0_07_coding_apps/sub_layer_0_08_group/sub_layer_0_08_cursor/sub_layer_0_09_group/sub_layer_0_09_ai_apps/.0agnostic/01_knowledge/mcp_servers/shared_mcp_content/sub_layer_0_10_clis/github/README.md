@@ -1,3 +1,9 @@
+---
+resource_id: "d3380c0d-ee3f-4276-aa00-36b932fd2ffe"
+resource_type: "readme
+knowledge"
+resource_name: "README"
+---
 # GitHub Integration for AI CLI Tools (Shared)
 
 This directory contains documentation that applies across multiple AI CLI tools.

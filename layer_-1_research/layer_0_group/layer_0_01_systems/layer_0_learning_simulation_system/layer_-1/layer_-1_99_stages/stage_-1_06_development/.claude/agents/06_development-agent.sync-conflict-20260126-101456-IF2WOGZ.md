@@ -1,4 +1,7 @@
 ---
+resource_id: "4675d0ee-373b-4999-814c-b4758c848100"
+resource_type: "document"
+resource_name: "06_development-agent.sync-conflict-20260126-101456-IF2WOGZ"
 name: 06_development-agent
 description: Specialized agent for Implementation and coding. Use when working on 06_development tasks.
 tools: Read, Write, Edit, Bash, Glob, Grep

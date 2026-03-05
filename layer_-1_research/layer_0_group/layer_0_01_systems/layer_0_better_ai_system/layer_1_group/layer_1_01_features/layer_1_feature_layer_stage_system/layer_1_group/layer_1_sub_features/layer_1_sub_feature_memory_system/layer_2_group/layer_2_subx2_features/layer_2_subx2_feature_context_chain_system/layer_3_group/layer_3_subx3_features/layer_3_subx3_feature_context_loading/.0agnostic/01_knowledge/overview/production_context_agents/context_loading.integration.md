@@ -1,3 +1,4 @@
+<!-- derived_from: "7a74444f-469a-4f98-ab92-2411744a8c35" -->
 # context_loading — Integration Reference
 <!-- AUTO-GENERATED from context_loading.gab.jsonld — do not edit directly -->
 <!-- Last transpiled: 2026-02-08T03:29:31Z -->

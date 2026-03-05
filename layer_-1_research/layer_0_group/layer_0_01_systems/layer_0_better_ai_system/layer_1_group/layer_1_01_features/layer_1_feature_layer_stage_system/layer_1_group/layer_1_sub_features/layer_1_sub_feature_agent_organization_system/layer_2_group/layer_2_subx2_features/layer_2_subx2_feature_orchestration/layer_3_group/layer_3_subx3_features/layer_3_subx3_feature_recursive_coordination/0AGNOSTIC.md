@@ -1,3 +1,9 @@
+---
+resource_id: "bb368acc-89cc-4fcd-a77e-bd7d19bcbb0f"
+resource_type: "agnostic
+document"
+resource_name: "0AGNOSTIC"
+---
 # 0AGNOSTIC.md - layer_3_subx3_feature_recursive_coordination
 
 ## Identity

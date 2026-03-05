@@ -1,3 +1,9 @@
+---
+resource_id: "f060681b-10a8-46d2-aeb6-ce3639479e6e"
+resource_type: "readme
+document"
+resource_name: "README"
+---
 # MCP Servers (cursor_agent on linux_ubuntu)
 
 This folder contains linux_ubuntu + cursor_agent specific notes for each MCP server we use.

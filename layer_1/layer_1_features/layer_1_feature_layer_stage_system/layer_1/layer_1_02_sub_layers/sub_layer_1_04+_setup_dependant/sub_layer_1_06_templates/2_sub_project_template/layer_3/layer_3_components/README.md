@@ -1,3 +1,9 @@
+---
+resource_id: "83da93b9-d846-42e5-b425-4114f20898c9"
+resource_type: "readme
+document"
+resource_name: "README"
+---
 # Components
 
 This folder contains components (Layer 3) within this sub-project.

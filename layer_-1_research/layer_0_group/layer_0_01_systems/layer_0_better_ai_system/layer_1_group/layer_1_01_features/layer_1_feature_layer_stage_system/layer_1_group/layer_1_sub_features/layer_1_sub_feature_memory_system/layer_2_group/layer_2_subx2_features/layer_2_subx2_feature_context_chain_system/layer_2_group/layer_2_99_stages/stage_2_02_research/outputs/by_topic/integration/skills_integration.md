@@ -1,3 +1,8 @@
+---
+resource_id: "045d53af-f837-43cc-8e68-71223ef3875d"
+resource_type: "output"
+resource_name: "skills_integration"
+---
 # Skills Integration with AALang
 
 > **VERIFIED 2026-02-07**: The skills controllability problem is real and well-documented across multiple sources. See `verification_results.md` for evidence.

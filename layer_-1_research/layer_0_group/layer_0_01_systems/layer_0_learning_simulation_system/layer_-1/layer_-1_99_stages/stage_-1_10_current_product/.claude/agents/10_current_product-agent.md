@@ -1,4 +1,9 @@
 ---
+resource_id: "aa34f995-4e69-456b-8ef4-d0479fc47a95"
+resource_type: "document"
+resource_name: "10_current_product-agent"
+---
+---
 name: 10_current_product-agent
 description: Specialized agent for Production-ready artifacts. Use when working on 10_current_product tasks.
 tools: Read, Write, Glob

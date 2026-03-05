@@ -1,3 +1,8 @@
+---
+resource_id: "403db1fb-e186-4931-bf1b-5fcdb6a5732b"
+resource_type: "output"
+resource_name: "REQ-01_channel_definitions"
+---
 # Channel Definitions
 
 **Need**: [Communication Channels](../README.md)

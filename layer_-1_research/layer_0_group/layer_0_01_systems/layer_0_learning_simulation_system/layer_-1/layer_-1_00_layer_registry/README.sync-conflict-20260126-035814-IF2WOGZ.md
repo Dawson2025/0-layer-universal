@@ -1,3 +1,8 @@
+---
+resource_id: "aab38009-b0d8-4b23-a2b8-657b95586b37"
+resource_type: "document"
+resource_name: "README.sync-conflict-20260126-035814-IF2WOGZ"
+---
 # Layer Registry - learning_simulation_system
 
 ## Layer Information

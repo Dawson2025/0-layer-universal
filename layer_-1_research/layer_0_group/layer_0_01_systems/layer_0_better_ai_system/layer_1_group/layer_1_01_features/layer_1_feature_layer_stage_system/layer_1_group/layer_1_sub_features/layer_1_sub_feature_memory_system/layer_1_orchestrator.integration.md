@@ -1,3 +1,4 @@
+<!-- derived_from: "f62dcffc-4d7c-489f-9a24-ec7659e5c369" -->
 # Memory System Orchestrator
 
 **Type**: Entity Orchestrator | **Layer**: 1

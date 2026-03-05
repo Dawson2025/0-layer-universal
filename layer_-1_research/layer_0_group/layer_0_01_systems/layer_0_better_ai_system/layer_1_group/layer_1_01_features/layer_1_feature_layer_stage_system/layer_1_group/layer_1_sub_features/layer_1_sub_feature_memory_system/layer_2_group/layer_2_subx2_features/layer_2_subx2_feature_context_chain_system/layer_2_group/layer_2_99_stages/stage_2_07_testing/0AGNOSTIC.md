@@ -1,3 +1,9 @@
+---
+resource_id: "3342be83-8ed2-4e66-ae88-d0c0dc2314ed"
+resource_type: "agnostic
+document"
+resource_name: "0AGNOSTIC"
+---
 # context_chain_system — Stage 07: Testing
 
 ## Identity

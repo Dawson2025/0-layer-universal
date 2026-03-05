@@ -1,3 +1,8 @@
+---
+resource_id: "d2410ee1-56af-4c52-855f-735ec86b9b2c"
+resource_type: "output"
+resource_name: "02_0agnostic_1merge_avenue_web_integration_design"
+---
 # 0AGNOSTIC + .1merge Integration Design for the Avenue Web
 
 ## Purpose

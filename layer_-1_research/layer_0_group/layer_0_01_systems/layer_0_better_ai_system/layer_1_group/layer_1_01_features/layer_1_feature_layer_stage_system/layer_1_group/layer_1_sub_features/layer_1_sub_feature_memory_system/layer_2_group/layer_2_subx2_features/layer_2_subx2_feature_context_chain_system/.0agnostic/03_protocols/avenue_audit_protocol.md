@@ -1,3 +1,8 @@
+---
+resource_id: "acd63857-1000-48e2-ac62-8d5564f90e22"
+resource_type: "protocol"
+resource_name: "avenue_audit_protocol"
+---
 # Protocol: Avenue Audit
 
 **Purpose**: Verify that all 8 context delivery avenues are functional for a given entity.

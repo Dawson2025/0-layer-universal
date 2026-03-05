@@ -1,4 +1,7 @@
 ---
+resource_id: "b51a6108-0d60-4906-8fec-edf0171c7f42"
+resource_type: "document"
+resource_name: "01_request_gathering-status.sync-conflict-20260126-101454-IF2WOGZ"
 description: Show current status of 01_request_gathering stage
 argument-hint: [--verbose]
 ---

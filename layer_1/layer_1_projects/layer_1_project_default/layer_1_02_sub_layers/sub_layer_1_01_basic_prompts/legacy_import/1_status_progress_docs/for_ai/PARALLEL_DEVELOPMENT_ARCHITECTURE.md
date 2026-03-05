@@ -1,3 +1,8 @@
+---
+resource_id: "a1f80b6f-0820-48cd-b7ef-56d7c328f841"
+resource_type: "document"
+resource_name: "PARALLEL_DEVELOPMENT_ARCHITECTURE"
+---
 # Parallel Development Architecture
 
 ## Purpose

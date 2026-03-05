@@ -1,3 +1,8 @@
+---
+resource_id: "87e0fa16-c5da-4968-9e5f-06a9832f0888"
+resource_type: "rule"
+resource_name: "google_oauth_production_ready"
+---
 # Google OAuth - Production Ready Implementation
 
 ## 🎯 **COMPLETED: Best Practice Google OAuth Implementation**

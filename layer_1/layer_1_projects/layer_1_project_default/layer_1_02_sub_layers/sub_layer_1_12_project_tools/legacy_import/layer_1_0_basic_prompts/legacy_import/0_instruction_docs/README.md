@@ -1,3 +1,9 @@
+---
+resource_id: "1ddc7f5c-c3fd-47bf-a52c-39214fdb3595"
+resource_type: "readme
+document"
+resource_name: "README"
+---
 # Configure Firebase Authorized Domains (CI)
 
 This repository includes a GitHub Actions workflow `.github/workflows/update-auth-domains.yml`

@@ -1,3 +1,8 @@
+---
+resource_id: "04c34762-04e4-4868-b9b9-0b04c2518286"
+resource_type: "document"
+resource_name: "universal_instructions"
+---
 # Universal AI Agent Instructions
 
 **Use these instructions for any project, any codebase, any task**

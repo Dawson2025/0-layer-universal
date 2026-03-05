@@ -1,3 +1,8 @@
+---
+resource_id: "37f8bb04-b355-4ac8-affb-0e4238b244b6"
+resource_type: "output"
+resource_name: "context_propagation_design"
+---
 # Design Decision: Context Propagation
 
 **Date**: 2026-02-21

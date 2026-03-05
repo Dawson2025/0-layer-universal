@@ -1,3 +1,8 @@
+---
+resource_id: "e66fde4b-dfd2-4352-adb4-4e7239629120"
+resource_type: "document"
+resource_name: "proposal_ai_friendly_output_organization_v4"
+---
 # Proposal v4: Complete AI System Architecture with Inventory
 
 **Date**: 2026-02-02

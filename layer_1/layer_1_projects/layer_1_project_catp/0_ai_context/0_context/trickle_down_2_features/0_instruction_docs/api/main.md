@@ -1,3 +1,8 @@
+---
+resource_id: "2ee609d6-2baf-400d-94c4-4e4ca34903fb"
+resource_type: "document"
+resource_name: "main"
+---
 # API Reference: Main Application (`main.py`)
 
 Importable constants/functions for advanced or scripted usage. Most functions are interactive and intended for TUI workflows.

@@ -1,3 +1,8 @@
+---
+resource_id: "4dfde0b1-ded8-4fd8-a0f6-3b07c6100ff2"
+resource_type: "document"
+resource_name: "EFFICIENCY_TIPS"
+---
 # Browser Automation Efficiency Tips
 *Learned Patterns and Best Practices for Efficient Browser Automation*
 

@@ -1,3 +1,8 @@
+---
+resource_id: "840b0c79-1607-479f-bce9-0758a1c093d2"
+resource_type: "rule"
+resource_name: "context_traversal"
+---
 # Context Traversal Rules
 
 ## Rule: Always Traverse Before Working

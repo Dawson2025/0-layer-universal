@@ -1,3 +1,9 @@
+---
+resource_id: "319f8234-35a3-4a31-a397-02c718243206"
+resource_type: "index
+document"
+resource_name: "0INDEX"
+---
 # Memory System — Index
 
 ## Current State

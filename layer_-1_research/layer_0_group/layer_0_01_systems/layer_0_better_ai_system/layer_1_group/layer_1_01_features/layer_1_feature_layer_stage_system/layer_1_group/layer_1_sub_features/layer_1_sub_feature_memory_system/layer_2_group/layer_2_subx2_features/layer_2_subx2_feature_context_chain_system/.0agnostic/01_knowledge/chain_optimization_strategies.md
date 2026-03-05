@@ -1,3 +1,8 @@
+---
+resource_id: "c01bb828-b00d-4894-8ff1-d960490ba20d"
+resource_type: "knowledge"
+resource_name: "chain_optimization_strategies"
+---
 # Chain Optimization Strategies
 
 **Layer**: layer_2 (Research Sub-Feature)

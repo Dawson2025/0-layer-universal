@@ -1,3 +1,8 @@
+---
+resource_id: "9f8d16be-a329-4263-85d3-2dd2d6ee9242"
+resource_type: "document"
+resource_name: "integration-plan"
+---
 ﻿# Cloud Integration & Credential Plan
 
 This document describes how the ClearSign / Assignment Time project manages Google Cloud, Firebase, and Canvas credentials across development, testing, and production environments.

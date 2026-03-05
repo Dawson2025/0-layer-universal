@@ -1,3 +1,8 @@
+---
+resource_id: "29648d06-b26e-4659-8cf0-dc5096e15a57"
+resource_type: "document"
+resource_name: "README.sync-conflict-20260126-101630-IF2WOGZ"
+---
 # Layer 0 (Universal) AI Manager System
 
 ## Overview

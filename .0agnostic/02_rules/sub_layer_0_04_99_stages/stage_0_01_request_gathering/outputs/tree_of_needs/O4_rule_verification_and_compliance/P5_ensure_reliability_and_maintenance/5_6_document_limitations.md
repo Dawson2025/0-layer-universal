@@ -1,3 +1,8 @@
+---
+resource_id: "341a41d2-022f-4622-8222-c28398a08534"
+resource_type: "rule"
+resource_name: "5_6_document_limitations"
+---
 # 5.6: Document Limitations
 
 ## Requirement

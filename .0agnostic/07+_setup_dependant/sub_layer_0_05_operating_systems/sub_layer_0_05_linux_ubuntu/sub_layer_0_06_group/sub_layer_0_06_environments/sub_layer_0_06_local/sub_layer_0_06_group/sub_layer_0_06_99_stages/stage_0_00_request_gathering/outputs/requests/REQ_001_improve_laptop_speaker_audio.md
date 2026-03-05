@@ -1,3 +1,8 @@
+---
+resource_id: "6d3a4f94-4370-4030-9b1b-5466f67af014"
+resource_type: "output"
+resource_name: "REQ_001_improve_laptop_speaker_audio"
+---
 # Request: Improve Laptop Speaker Audio Quality
 
 ## Request ID

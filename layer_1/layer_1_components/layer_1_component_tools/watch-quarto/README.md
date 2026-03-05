@@ -1,3 +1,9 @@
+---
+resource_id: "64a8639c-b493-4d3e-9d0c-08d0396e55f3"
+resource_type: "readme
+document"
+resource_name: "README"
+---
 # Quarto Watcher Helper
 
 Use `watch-quarto.ps1` to automatically render a Quarto document and capture the output whenever the source (or any watched dependency) changes. Each Quarto file gets its own subfolder of tall PNG screenshots by default—ideal for AI review—and you can optionally export PDFs alongside them.

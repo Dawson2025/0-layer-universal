@@ -1,3 +1,8 @@
+---
+resource_id: "8cbd79a4-fbd5-4a0b-aa3f-c25707ead0ba"
+resource_type: "document"
+resource_name: "bmad-method-guide"
+---
 # BMAD Method - Comprehensive Guide
 *Breakthrough Method for Agile AI-Driven Development*
 

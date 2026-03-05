@@ -1,3 +1,8 @@
+---
+resource_id: "aaff36a4-9c4e-4fcf-b0ac-2d877d246c28"
+resource_type: "output"
+resource_name: "v5_comprehensive_operations_with_customizable_importance"
+---
 # Context Avenue Database Schema — Proposal v5
 
 ## Comprehensive Operations with Customizable Importance Weighting

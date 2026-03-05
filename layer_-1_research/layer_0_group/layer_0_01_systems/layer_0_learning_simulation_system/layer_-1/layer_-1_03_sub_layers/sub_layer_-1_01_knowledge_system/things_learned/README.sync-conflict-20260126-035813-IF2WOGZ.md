@@ -1,3 +1,8 @@
+---
+resource_id: "0d39db83-e86c-474a-813b-2883af141ea2"
+resource_type: "document"
+resource_name: "README.sync-conflict-20260126-035813-IF2WOGZ"
+---
 # Learning Simulation System - Things Learned
 
 This folder contains distilled notes, specifications, and conclusions from research on the Multi-Scale Discovery Environment (MSDE).

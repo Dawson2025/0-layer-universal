@@ -1,3 +1,8 @@
+---
+resource_id: "00e4bcaf-4273-4e64-b88a-a27d3b4354a0"
+resource_type: "document"
+resource_name: "INSTALL_CURSOR_EXTENSION.sync-conflict-20260126-102106-IF2WOGZ"
+---
 # Installing Cursor MCP Chrome Extension
 
 ## Found Extension

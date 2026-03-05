@@ -1,3 +1,9 @@
+---
+resource_id: "0959f774-a5fe-4169-8a60-d972dfe74803"
+resource_type: "readme
+document"
+resource_name: "README"
+---
 # chrome-devtools-mcp (cursor_agent on macos)
 
 ## Canonical docs

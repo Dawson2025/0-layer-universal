@@ -1,3 +1,8 @@
+---
+resource_id: "c697a56b-1b3c-4bfa-a473-9e142319ff56"
+resource_type: "rule"
+resource_name: "testing-agent-report-template"
+---
 # Testing Report Template
 *Standard Template for Testing Agent Reports*
 

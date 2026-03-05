@@ -1,3 +1,8 @@
+---
+resource_id: "3e41bda7-bebe-49a8-b2ab-2f3036d089d4"
+resource_type: "knowledge"
+resource_name: "handoff_schema"
+---
 # Handoff Schema
 
 ## JSON Schema

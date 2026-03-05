@@ -1,3 +1,9 @@
+---
+resource_id: "b05662b0-dc17-438c-b973-8ddf15ec4f63"
+resource_type: "readme
+output"
+resource_name: "README"
+---
 # Stage Reports -- User Stories Index
 
 **Need**: [Stage Reports](../README.md)

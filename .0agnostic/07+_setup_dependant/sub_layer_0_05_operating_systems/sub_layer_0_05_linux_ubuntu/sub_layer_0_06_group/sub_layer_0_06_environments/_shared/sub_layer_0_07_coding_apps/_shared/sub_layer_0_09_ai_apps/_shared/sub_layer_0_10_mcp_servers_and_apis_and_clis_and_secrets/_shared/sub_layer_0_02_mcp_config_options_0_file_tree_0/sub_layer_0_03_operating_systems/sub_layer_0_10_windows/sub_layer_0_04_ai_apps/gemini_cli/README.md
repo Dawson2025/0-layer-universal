@@ -1,3 +1,9 @@
+---
+resource_id: "17513579-2194-4f8f-8fd3-c2d1444d9df5"
+resource_type: "readme
+document"
+resource_name: "README"
+---
 # Gemini CLI MCP Setup (Windows)
 
 ## Config location

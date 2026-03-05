@@ -1,3 +1,9 @@
+---
+resource_id: "ee02d169-ae28-4ffa-bd31-d561e4773b6a"
+resource_type: "readme
+knowledge"
+resource_name: "README"
+---
 # playwright-mcp (claude_code_cli on linux_ubuntu)
 
 ## Canonical docs

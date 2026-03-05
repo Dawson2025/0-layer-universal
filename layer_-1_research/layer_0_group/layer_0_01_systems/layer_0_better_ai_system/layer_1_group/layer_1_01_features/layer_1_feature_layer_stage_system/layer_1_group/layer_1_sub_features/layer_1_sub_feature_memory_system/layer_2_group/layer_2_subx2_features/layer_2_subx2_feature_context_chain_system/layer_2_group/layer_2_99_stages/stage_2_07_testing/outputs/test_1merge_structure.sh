@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
+# resource_id: "87a25544-89ac-4b2c-a006-3fc0f03024ff"
+# resource_type: "script"
+# resource_name: "test_1merge_structure"
 # test_1merge_structure.sh — Test .1merge/ 3-tier system is properly structured
 #
 # Tests that:

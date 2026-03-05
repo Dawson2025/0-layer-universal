@@ -1,3 +1,8 @@
+---
+resource_id: "f711e94e-3ce1-4f42-a74d-0f7c177b5c0c"
+resource_type: "output"
+resource_name: "ISSUE_005_portal_apps_final_config"
+---
 # Final Configuration: XDG Portal / GNOME Apps Fix
 
 ## Issue Reference

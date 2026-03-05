@@ -1,3 +1,8 @@
+---
+resource_id: "c179cf93-9df2-47b9-970b-c2d6d23ab4bb"
+resource_type: "document"
+resource_name: "CLAUDE_CODE_CLI_GUIDE"
+---
 # Claude Code CLI Quick Reference
 
 ## ✅ Setup Complete!

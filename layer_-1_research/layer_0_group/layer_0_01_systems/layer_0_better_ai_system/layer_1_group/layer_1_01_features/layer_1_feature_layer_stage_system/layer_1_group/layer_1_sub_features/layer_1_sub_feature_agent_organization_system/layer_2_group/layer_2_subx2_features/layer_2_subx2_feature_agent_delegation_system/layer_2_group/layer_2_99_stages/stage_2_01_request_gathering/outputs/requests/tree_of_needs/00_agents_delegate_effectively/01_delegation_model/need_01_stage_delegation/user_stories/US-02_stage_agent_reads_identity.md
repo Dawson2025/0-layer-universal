@@ -1,3 +1,8 @@
+---
+resource_id: "90b8e1eb-c765-43ad-9128-7f35734c94f0"
+resource_type: "output"
+resource_name: "US-02_stage_agent_reads_identity"
+---
 # US-2: Stage agent reads its own identity
 
 **Need**: [Stage Delegation](../README.md)

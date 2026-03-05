@@ -1,3 +1,8 @@
+---
+resource_id: "a5080c10-e719-450f-bdf9-3a225d70d5be"
+resource_type: "output"
+resource_name: "02_data_avenue_web_expansion"
+---
 # Data-Based Avenue Web Expansion (Avenues 09-13)
 
 ## Overview

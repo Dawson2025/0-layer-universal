@@ -1,3 +1,9 @@
+---
+resource_id: "8fc9989f-4238-45f4-a3b6-1fe0bfe68401"
+resource_type: "readme
+document"
+resource_name: "README"
+---
 # Context7 MCP Server
 
 Context7 MCP provides AI agents with up-to-date, version-specific documentation and code examples pulled directly from source repositories. It integrates with the Model Context Protocol (MCP) to deliver context-aware library documentation.

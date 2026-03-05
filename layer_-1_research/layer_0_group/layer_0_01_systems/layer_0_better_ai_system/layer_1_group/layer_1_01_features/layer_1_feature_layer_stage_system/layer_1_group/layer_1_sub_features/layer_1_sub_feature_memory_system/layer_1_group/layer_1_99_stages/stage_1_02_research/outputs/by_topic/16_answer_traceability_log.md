@@ -1,3 +1,8 @@
+---
+resource_id: "9cc189f7-a863-4d53-a4f5-0830e15505b8"
+resource_type: "output"
+resource_name: "16_answer_traceability_log"
+---
 # Answer Traceability Log
 
 ## Purpose

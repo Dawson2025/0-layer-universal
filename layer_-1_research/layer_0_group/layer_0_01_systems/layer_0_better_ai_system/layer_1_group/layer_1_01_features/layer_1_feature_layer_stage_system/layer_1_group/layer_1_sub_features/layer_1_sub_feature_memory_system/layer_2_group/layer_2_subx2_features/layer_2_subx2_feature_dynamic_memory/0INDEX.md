@@ -1,3 +1,9 @@
+---
+resource_id: "1f753d8d-2cbf-48fc-ab99-66299e5a66c8"
+resource_type: "index
+document"
+resource_name: "0INDEX"
+---
 # Dynamic Memory — Index
 
 ## Current State

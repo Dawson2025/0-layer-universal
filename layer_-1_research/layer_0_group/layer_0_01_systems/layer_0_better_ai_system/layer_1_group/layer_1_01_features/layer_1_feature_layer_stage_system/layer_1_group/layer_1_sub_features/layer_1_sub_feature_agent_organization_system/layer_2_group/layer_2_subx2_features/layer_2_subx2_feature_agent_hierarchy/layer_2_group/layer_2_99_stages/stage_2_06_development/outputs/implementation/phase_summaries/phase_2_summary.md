@@ -1,3 +1,8 @@
+---
+resource_id: "86663419-3da2-4e19-9f5e-66ce8ac08d6c"
+resource_type: "output"
+resource_name: "phase_2_summary"
+---
 # Phase 2: Framework Alignment - Summary
 
 **Phase**: 2 of 7

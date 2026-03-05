@@ -1,3 +1,8 @@
+---
+resource_id: "c63a8428-7ed1-4c19-8c54-30fdcba32b76"
+resource_type: "output"
+resource_name: "COMPLETE_ARCHITECTURE"
+---
 # Cursor Agent CLI — Complete Architecture
 
 **Date**: 2026-02-27

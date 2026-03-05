@@ -1,3 +1,8 @@
+---
+resource_id: "b4c4e99c-36c4-49e7-96f8-cf73b501c0af"
+resource_type: "rule"
+resource_name: "PARENT_NEED_P4"
+---
 # P4: CREATE EXECUTION INFRASTRUCTURE
 
 ## Tactical Objective

@@ -1,3 +1,9 @@
+---
+resource_id: "9620ea5f-d6bc-47fe-8fad-0560d3277abc"
+resource_type: "readme
+document"
+resource_name: "README"
+---
 # 0.02 MCP Config Options (Traversable File Tree)
 
 This folder is the **traversable MCP documentation file tree**. It is organized so you can always navigate:

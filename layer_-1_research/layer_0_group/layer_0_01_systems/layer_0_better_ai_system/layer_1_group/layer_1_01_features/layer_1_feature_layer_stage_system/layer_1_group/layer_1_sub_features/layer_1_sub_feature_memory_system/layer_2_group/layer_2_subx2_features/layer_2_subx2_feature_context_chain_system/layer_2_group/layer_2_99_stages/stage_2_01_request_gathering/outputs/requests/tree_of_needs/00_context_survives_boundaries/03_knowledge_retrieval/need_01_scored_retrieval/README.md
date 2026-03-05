@@ -1,3 +1,9 @@
+---
+resource_id: "64ebf8e7-9a53-4e45-8ee6-414050b74248"
+resource_type: "readme
+output"
+resource_name: "README"
+---
 # Need: Scored Context Retrieval
 
 **Branch**: [03_knowledge_retrieval](../)

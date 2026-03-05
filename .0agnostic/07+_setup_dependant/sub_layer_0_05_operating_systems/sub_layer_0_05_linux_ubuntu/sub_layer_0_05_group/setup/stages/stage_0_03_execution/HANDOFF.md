@@ -1,3 +1,8 @@
+---
+resource_id: "5503febe-d925-40f6-ae25-cdee9599c16f"
+resource_type: "document"
+resource_name: "HANDOFF"
+---
 # Stage 0.03 Handoff: Execution Progress
 
 ## Status: MOSTLY COMPLETE

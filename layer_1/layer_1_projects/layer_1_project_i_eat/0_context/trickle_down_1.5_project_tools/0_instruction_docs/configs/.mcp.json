@@ -1,4 +1,5 @@
 {
+  "file_id": "5047661a-cdf0-42cc-9e80-1f3d75d1664a",
   "mcpServers": {
     "playwright": {
       "command": "npx",
@@ -17,7 +18,9 @@
     },
     "web-search": {
       "command": "npx",
-      "args": ["tavily-mcp"],
+      "args": [
+        "tavily-mcp"
+      ],
       "env": {
         "TAVILY_API_KEY": "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"
       }

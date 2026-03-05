@@ -1,3 +1,8 @@
+---
+resource_id: "b94bd093-762f-439f-9423-4056fa390f92"
+resource_type: "document"
+resource_name: "bash-wrapper-setup"
+---
 # Claude Code Bash Wrapper Setup Guide
 *Advanced Configuration: Conditional Bypass Permissions via Shell Wrapper*
 

@@ -1,3 +1,9 @@
+---
+resource_id: "ddde35e5-9c13-4647-a959-74cae273f768"
+resource_type: "index
+document"
+resource_name: "0INDEX"
+---
 # 0INDEX.md - layer_3_subx3_feature_chain_visualization
 
 ## Status

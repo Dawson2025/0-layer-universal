@@ -1,3 +1,8 @@
+---
+resource_id: "4ad5e701-2fdd-4fee-8453-cb78a1f8d309"
+resource_type: "document"
+resource_name: "tool_additions"
+---
 # Claude Code CLI — Universal Additions
 
 ## Browser Extraction Capabilities

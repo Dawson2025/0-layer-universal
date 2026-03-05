@@ -1,3 +1,8 @@
+---
+resource_id: "8c2dc746-8a12-440a-adb7-bd9a9c44a96e"
+resource_type: "document"
+resource_name: "Agents"
+---
 # AI Agents Configuration
 
 This file provides configuration guidance for all AI agents working with the Language Tracker project.

@@ -1,3 +1,8 @@
+---
+resource_id: "88cdfa13-db22-4818-801d-fc5825414872"
+resource_type: "output"
+resource_name: "agentic_tts_criticism"
+---
 # Agentic TTS Criticism / Review
 
 **Date**: 2026-02-23

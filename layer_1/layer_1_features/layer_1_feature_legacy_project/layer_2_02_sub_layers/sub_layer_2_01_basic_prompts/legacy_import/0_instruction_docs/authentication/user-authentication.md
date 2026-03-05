@@ -1,3 +1,8 @@
+---
+resource_id: "8ed68bef-2c59-4679-858d-2b5888ded237"
+resource_type: "document"
+resource_name: "user-authentication"
+---
 # User Authentication System
 *Comprehensive authentication system for I-Eat University Food Delivery Platform*
 

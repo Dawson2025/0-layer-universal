@@ -1,3 +1,8 @@
+---
+resource_id: "cba30e00-4f4a-4929-b943-88752a36278f"
+resource_type: "protocol"
+resource_name: "stage_report_protocol"
+---
 # Stage Report Protocol
 
 This file has been replaced with a pointer to the canonical source.

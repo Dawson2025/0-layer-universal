@@ -1,3 +1,9 @@
+---
+resource_id: "e8765061-6a11-46fd-9ac4-c9d57da0fed2"
+resource_type: "agnostic
+document"
+resource_name: "0AGNOSTIC"
+---
 # memory_system — Stage 02: Research
 
 # ═══ STATIC CONTEXT (always loaded) ═══

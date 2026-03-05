@@ -1,3 +1,8 @@
+---
+resource_id: "b5d560cc-bc8a-4465-90f6-188eb58ce3ee"
+resource_type: "document"
+resource_name: "FOLDER_REORGANIZATION_PLAN"
+---
 # Folder Reorganization Plan
 
 ## Current Issues

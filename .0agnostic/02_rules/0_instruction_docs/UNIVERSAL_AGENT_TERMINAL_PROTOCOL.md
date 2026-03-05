@@ -1,3 +1,8 @@
+---
+resource_id: "b8f6c0fb-cdc3-4709-978d-4553b24772b2"
+resource_type: "rule"
+resource_name: "UNIVERSAL_AGENT_TERMINAL_PROTOCOL"
+---
 # Universal Agent Terminal Execution Protocol
 *For ALL AI Agents: Cursor, Codex, Gemini CLI, Claude Code, Warp, and others*
 

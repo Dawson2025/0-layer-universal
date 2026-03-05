@@ -1,3 +1,8 @@
+---
+resource_id: "7e63e24a-2aa6-4b35-836f-199061147349"
+resource_type: "rule"
+resource_name: "2_4_cache_rules_for_performance"
+---
 # 2.4: Cache Rules for Performance
 
 ## Requirement

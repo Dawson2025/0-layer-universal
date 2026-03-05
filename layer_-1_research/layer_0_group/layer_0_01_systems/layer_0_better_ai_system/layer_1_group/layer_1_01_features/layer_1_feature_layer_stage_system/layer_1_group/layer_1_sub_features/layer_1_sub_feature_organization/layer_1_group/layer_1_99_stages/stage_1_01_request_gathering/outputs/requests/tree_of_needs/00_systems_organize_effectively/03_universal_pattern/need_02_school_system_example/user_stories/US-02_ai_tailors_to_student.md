@@ -1,3 +1,8 @@
+---
+resource_id: "7e1fb937-67e6-452c-bdc7-cde57b9a3746"
+resource_type: "output"
+resource_name: "US-02_ai_tailors_to_student"
+---
 # AI Tailors Teaching to Student
 
 **As an** AI tutor with access to a student's personalized instance,

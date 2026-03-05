@@ -1,3 +1,8 @@
+---
+resource_id: "22272300-5a68-4827-8528-d5a9604985b7"
+resource_type: "document"
+resource_name: "MCP_OS_TREE_MERGE_REPORT"
+---
 # MCP OS Tree Merge Report
 
 Source: `/home/dawson/dawson-workspace/code/0_layer_universal/0_context/layer_0/0.02_sub_layers/sub_layer_0_10_mcp_servers_and_tools_setup/0.02_mcp_config_options_0_file_tree_0/0.03_operating_systems`

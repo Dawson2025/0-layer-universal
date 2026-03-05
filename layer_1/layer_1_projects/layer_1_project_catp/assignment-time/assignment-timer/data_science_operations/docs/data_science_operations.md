@@ -1,3 +1,8 @@
+---
+resource_id: "7c39b51e-a3fc-48fc-8b4b-90b8dce46052"
+resource_type: "document"
+resource_name: "data_science_operations"
+---
 ﻿# Data Science Operations
 
 Utilities for aggregating assignment timing data either directly from Firestore or from local fixtures. The CLI lives in `assignment-timer/data_science_operations/data_science_operations.py`.

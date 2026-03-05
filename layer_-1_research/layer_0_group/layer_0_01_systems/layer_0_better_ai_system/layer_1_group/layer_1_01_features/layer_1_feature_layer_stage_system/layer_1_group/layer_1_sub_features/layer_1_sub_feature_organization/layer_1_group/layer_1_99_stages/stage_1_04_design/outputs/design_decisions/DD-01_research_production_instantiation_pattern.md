@@ -1,3 +1,8 @@
+---
+resource_id: "1e6c8090-a437-4c08-aa46-74b682941a1a"
+resource_type: "output"
+resource_name: "DD-01_research_production_instantiation_pattern"
+---
 # DD-01: Research/Production/Instantiation Pattern
 
 **Date**: 2026-02-25

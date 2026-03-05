@@ -1,3 +1,9 @@
+---
+resource_id: "aaa1eaf3-aa3c-4d5c-850a-24dcf60e10e7"
+resource_type: "readme
+document"
+resource_name: "README"
+---
 # GitHub CLI Documentation
 
 This directory contains documentation for using the GitHub CLI (`gh`) with Claude Code.

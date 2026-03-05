@@ -1,3 +1,8 @@
+---
+resource_id: "f49ac7b6-e801-47cf-a439-954445e40723"
+resource_type: "document"
+resource_name: "RESEARCH_PROJECT_ORGANIZATION_PROPOSAL"
+---
 # Proposal: Research Project Organization
 
 ## Problem Statement

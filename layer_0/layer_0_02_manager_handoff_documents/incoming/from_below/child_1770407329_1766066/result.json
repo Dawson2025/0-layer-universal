@@ -1,4 +1,5 @@
 {
+  "file_id": "e0dc4995-2efa-4b4a-bcb9-ea0b45485783",
   "taskId": "orchestrated_001_c",
   "status": "completed",
   "result": {
@@ -81,11 +82,30 @@
         }
       },
       "instructionDocuments": {
-        "terminalExecution": ["MASTER_TERMINAL_EXECUTION_REFERENCE.md", "UNIVERSAL_TERMINAL_EXECUTION.md", "QUICK_START_TERMINAL_PROTOCOL.md"],
-        "agentGuides": ["CURSOR_AGENT_GUIDE.md", "AGENT_DISCOVERY_GUIDE.md", "AGENT_CONFIG_REFERENCE_TEMPLATE.md"],
-        "testing": ["TESTING_AGENT_SYSTEM_README.md", "testing-agent-protocol.md", "testing-agent-instructions.md"],
-        "git": ["git_commit_rule.md", "git_repository_creation_rule.md"],
-        "other": ["canvas_submission_protocol.md", "supabase_javascript_integration_rule.md", "browser_management_policy.md"]
+        "terminalExecution": [
+          "MASTER_TERMINAL_EXECUTION_REFERENCE.md",
+          "UNIVERSAL_TERMINAL_EXECUTION.md",
+          "QUICK_START_TERMINAL_PROTOCOL.md"
+        ],
+        "agentGuides": [
+          "CURSOR_AGENT_GUIDE.md",
+          "AGENT_DISCOVERY_GUIDE.md",
+          "AGENT_CONFIG_REFERENCE_TEMPLATE.md"
+        ],
+        "testing": [
+          "TESTING_AGENT_SYSTEM_README.md",
+          "testing-agent-protocol.md",
+          "testing-agent-instructions.md"
+        ],
+        "git": [
+          "git_commit_rule.md",
+          "git_repository_creation_rule.md"
+        ],
+        "other": [
+          "canvas_submission_protocol.md",
+          "supabase_javascript_integration_rule.md",
+          "browser_management_policy.md"
+        ]
       }
     },
     "confidence": 0.95

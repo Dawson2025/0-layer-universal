@@ -1,3 +1,8 @@
+---
+resource_id: "1c4a055f-311a-43b2-ac68-0dd82eaa25f3"
+resource_type: "output"
+resource_name: "26_long_term_storage_sql_schemas"
+---
 # Long-Term Storage Architecture: SQL Schemas
 
 ## Purpose

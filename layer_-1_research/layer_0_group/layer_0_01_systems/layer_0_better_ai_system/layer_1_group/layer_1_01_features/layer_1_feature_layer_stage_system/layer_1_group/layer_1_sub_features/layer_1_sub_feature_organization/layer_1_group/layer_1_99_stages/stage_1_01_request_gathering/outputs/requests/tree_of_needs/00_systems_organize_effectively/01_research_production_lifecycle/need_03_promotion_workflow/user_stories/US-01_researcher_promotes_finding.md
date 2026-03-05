@@ -1,3 +1,8 @@
+---
+resource_id: "ce192013-7b04-40f0-9f03-4ddad67a2c90"
+resource_type: "output"
+resource_name: "US-01_researcher_promotes_finding"
+---
 # Researcher Promotes Finding
 
 **As a** researcher who has validated an experimental finding,

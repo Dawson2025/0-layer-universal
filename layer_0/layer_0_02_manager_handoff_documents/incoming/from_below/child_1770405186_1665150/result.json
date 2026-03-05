@@ -1,4 +1,5 @@
 {
+  "file_id": "57c55876-4a4b-4c32-893c-ee60c6a9a6bc",
   "taskId": "orchestrated_001_b",
   "status": "completed",
   "result": {
@@ -45,18 +46,41 @@
           "name": "Context Loading Agent",
           "file": "context_loading_gab.jsonld",
           "pattern": "4-mode-13-actor",
-          "modes": ["LoadingMode", "ValidationMode", "PropagationMode", "DeliveryMode"],
+          "modes": [
+            "LoadingMode",
+            "ValidationMode",
+            "PropagationMode",
+            "DeliveryMode"
+          ],
           "actorCount": 13,
-          "stateActors": ["ContextLoadingStateActor", "ContextConfidenceStateActor", "NavigationStateActor", "DebugContextStateActor", "LayerInheritanceStateActor"],
+          "stateActors": [
+            "ContextLoadingStateActor",
+            "ContextConfidenceStateActor",
+            "NavigationStateActor",
+            "DebugContextStateActor",
+            "LayerInheritanceStateActor"
+          ],
           "purpose": "Load, validate, propagate, and deliver context for AI agents operating in the layer-stage system. Implements cross-session persistence and layer inheritance model."
         },
         {
           "name": "Layer 0 Orchestrator",
           "file": "layer_0_orchestrator.gab.jsonld",
           "pattern": "5-mode-15-actor",
-          "modes": ["ReceiveMode", "DelegationMode", "MonitoringMode", "AggregationMode", "ReportMode"],
+          "modes": [
+            "ReceiveMode",
+            "DelegationMode",
+            "MonitoringMode",
+            "AggregationMode",
+            "ReportMode"
+          ],
           "actorCount": 15,
-          "stateActors": ["LayerStateActor", "ChildRegistryStateActor", "TaskStateActor", "ResourceBudgetStateActor", "StageStateActor"],
+          "stateActors": [
+            "LayerStateActor",
+            "ChildRegistryStateActor",
+            "TaskStateActor",
+            "ResourceBudgetStateActor",
+            "StageStateActor"
+          ],
           "purpose": "Universal orchestrator that receives tasks, delegates to child agents across layers, monitors progress, aggregates results, and reports to user/parent. Implements depth limits and circuit breakers for safety."
         }
       ],

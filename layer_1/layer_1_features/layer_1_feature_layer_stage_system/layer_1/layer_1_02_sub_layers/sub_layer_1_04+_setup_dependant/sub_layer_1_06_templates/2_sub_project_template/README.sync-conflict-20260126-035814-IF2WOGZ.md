@@ -1,3 +1,8 @@
+---
+resource_id: "b31d0492-1a95-4187-a0b4-0d6e082cc008"
+resource_type: "document"
+resource_name: "README.sync-conflict-20260126-035814-IF2WOGZ"
+---
 # Sub-Project Layer Template (2.x, zero-padded)
 
 Use this to scaffold any sub-project within a parent project. Sub-projects are nested projects that warrant their own scope, lifecycle, and potentially their own Git repository (submodule).

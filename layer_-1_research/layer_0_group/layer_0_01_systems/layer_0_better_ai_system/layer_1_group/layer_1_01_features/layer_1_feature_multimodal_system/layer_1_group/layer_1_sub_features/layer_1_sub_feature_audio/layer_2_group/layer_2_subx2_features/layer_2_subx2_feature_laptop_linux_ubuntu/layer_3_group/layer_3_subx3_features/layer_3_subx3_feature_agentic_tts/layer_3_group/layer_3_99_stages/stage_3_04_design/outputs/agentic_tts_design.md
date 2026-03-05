@@ -1,3 +1,8 @@
+---
+resource_id: "eaf64a0c-e57f-404b-9b1b-c956c03756ed"
+resource_type: "output"
+resource_name: "agentic_tts_design"
+---
 # Agentic TTS Design
 
 **Date**: 2026-02-23

@@ -1,3 +1,8 @@
+---
+resource_id: "f766b26f-7113-4f4d-9e8b-ff18339ff562"
+resource_type: "document"
+resource_name: "AGENTS.sync-conflict-20260126-102106-IF2WOGZ"
+---
 # Agent Instructions - WSL Environment
 
 **OS Variant**: Windows Subsystem for Linux (WSL)

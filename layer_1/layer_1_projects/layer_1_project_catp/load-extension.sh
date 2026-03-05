@@ -1,4 +1,7 @@
 #!/bin/bash
+# resource_id: "092792de-192a-4f1d-8a1b-4775052f57fd"
+# resource_type: "script"
+# resource_name: "load-extension"
 # Script to launch Chrome with the extension loaded
 
 EXTENSION_PATH="/home/dawson/dawson-workspace/code/catp/task-timer-frontend"

@@ -1,3 +1,8 @@
+---
+resource_id: "20eb49e6-07a5-47b4-a630-21f247c7aea0"
+resource_type: "output"
+resource_name: "US-01_developer_checks_freshness"
+---
 # US-01: Developer checks freshness before a session
 
 **Need**: [Staleness Detection](../README.md)

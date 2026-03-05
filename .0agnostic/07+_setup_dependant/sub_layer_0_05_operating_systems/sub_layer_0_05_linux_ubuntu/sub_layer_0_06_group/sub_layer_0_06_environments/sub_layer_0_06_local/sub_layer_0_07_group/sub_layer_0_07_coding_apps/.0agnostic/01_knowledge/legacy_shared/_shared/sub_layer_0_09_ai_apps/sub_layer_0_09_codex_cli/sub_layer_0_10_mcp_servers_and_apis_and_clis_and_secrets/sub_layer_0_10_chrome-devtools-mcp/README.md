@@ -1,3 +1,9 @@
+---
+resource_id: "3a09128d-0ca6-48db-ab8c-0239ae0683bf"
+resource_type: "readme
+knowledge"
+resource_name: "README"
+---
 # chrome-devtools-mcp (codex_cli on linux_ubuntu)
 
 ## Canonical docs

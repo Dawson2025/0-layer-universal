@@ -1,3 +1,8 @@
+---
+resource_id: "6e54505f-724a-4ca8-b6bb-5c93afd65a18"
+resource_type: "knowledge"
+resource_name: "supervisor_patterns"
+---
 ## Supervisor Patterns and Implementation
 
 This document provides concrete patterns and examples for implementing supervisors in the AI manager hierarchy system.

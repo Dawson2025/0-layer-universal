@@ -1,3 +1,8 @@
+---
+resource_id: "34203b6d-a4d9-4912-b71c-e28a69b01cfd"
+resource_type: "document"
+resource_name: "what_to_do_next"
+---
 # What To Do Next
 *Universal Template for Project Context*
 

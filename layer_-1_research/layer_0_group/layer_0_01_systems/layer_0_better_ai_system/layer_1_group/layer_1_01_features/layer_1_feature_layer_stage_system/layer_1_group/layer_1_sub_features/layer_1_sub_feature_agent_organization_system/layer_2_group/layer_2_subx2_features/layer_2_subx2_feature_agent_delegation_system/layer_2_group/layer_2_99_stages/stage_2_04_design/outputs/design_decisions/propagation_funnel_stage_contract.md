@@ -1,3 +1,8 @@
+---
+resource_id: "663e3e51-0c90-4d1e-9782-99341df4d4d8"
+resource_type: "output"
+resource_name: "propagation_funnel_stage_contract"
+---
 # Design Decision: Propagation Funnel Stage Contract
 
 **Date**: 2026-02-25

@@ -1,3 +1,8 @@
+---
+resource_id: "8a2213b3-44fd-4855-ac61-e2828589ccfc"
+resource_type: "knowledge"
+resource_name: "context_chain_porting_bridge_contract"
+---
 # Context Chain Porting Bridge Contract
 
 ## Purpose

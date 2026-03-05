@@ -1,3 +1,9 @@
+---
+resource_id: "1e1472ae-ec54-4631-bc31-aa57e986ac70"
+resource_type: "readme
+document"
+resource_name: "README"
+---
 # Tavily MCP (web-search) (Codex CLI on WSL)
 
 ## Canonical docs

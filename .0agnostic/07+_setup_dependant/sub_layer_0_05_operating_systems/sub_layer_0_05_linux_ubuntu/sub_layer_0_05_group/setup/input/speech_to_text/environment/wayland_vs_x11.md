@@ -1,3 +1,8 @@
+---
+resource_id: "664d0c5c-507b-4e27-b7b5-5ce321d1f08e"
+resource_type: "document"
+resource_name: "wayland_vs_x11"
+---
 # Wayland vs X11 for Speech-to-Text
 
 **Last Updated**: January 12, 2026

@@ -1,4 +1,9 @@
 ---
+resource_id: "a308c5e3-fd1c-4992-8943-05a94ae2826c"
+resource_type: "document"
+resource_name: "06_development-agent"
+---
+---
 name: 06_development-agent
 description: Specialized agent for Implementation and coding. Use when working on 06_development tasks.
 tools: Read, Write, Edit, Bash, Glob, Grep

@@ -1,3 +1,8 @@
+---
+resource_id: "422b94d2-0b21-492c-93c7-eca6c001912f"
+resource_type: "document"
+resource_name: "README.sync-conflict-20260126-102028-IF2WOGZ"
+---
 # sub_layer_2.05-2.14_setup - Feature Setup Sublayer
 
 **Sublayer Range**: 2.05 through 2.14

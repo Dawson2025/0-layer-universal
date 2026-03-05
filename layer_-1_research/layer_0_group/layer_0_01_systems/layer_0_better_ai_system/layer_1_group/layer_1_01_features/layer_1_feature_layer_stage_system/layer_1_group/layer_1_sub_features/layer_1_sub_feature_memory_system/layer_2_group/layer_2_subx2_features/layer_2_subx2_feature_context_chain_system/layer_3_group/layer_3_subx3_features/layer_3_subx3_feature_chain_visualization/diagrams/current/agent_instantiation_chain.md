@@ -1,3 +1,8 @@
+---
+resource_id: "c720689b-c67e-4b9a-854b-7b029e9c18de"
+resource_type: "document"
+resource_name: "agent_instantiation_chain"
+---
 # Agent Instantiation & Context Chain
 
 **Purpose**: Show what context agents receive at instantiation and how they load more.

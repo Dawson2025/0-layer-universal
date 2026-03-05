@@ -1,3 +1,9 @@
+---
+resource_id: "e7527309-fbba-47da-b6ad-69ee0841383a"
+resource_type: "readme
+output"
+resource_name: "README"
+---
 # Stage 01: Stage Report Generation
 
 ## Purpose

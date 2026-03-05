@@ -1,3 +1,8 @@
+---
+resource_id: "06a0af01-046e-4d5c-a054-cccd7a73451a"
+resource_type: "document"
+resource_name: "DESIGN_DOCUMENTATION.sync-conflict-20260126-035814-IF2WOGZ"
+---
 # Universal Setup File Tree - Design Documentation
 
 **Created**: 2025-12-31

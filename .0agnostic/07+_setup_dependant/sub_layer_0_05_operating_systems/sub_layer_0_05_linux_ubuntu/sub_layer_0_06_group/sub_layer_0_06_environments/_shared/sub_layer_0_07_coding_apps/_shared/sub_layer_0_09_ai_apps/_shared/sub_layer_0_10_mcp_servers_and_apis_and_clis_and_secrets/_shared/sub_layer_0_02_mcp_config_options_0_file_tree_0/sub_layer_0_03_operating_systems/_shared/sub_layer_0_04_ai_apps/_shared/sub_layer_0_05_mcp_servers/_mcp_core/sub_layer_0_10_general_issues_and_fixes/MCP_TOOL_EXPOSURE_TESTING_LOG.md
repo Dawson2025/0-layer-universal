@@ -1,3 +1,8 @@
+---
+resource_id: "fda79115-a10f-4c81-9fe8-42dcb2867d16"
+resource_type: "document"
+resource_name: "MCP_TOOL_EXPOSURE_TESTING_LOG"
+---
 # MCP Tool Exposure Testing Log
 
 **Date**: 2025-12-05  

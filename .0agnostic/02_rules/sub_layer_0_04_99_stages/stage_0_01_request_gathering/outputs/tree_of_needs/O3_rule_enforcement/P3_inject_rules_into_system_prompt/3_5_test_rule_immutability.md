@@ -1,3 +1,8 @@
+---
+resource_id: "b0b05767-1014-43f1-84da-330c4fb8a17d"
+resource_type: "rule"
+resource_name: "3_5_test_rule_immutability"
+---
 # 3.5: Test Rule Immutability
 
 ## Requirement

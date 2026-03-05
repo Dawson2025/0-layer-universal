@@ -1,3 +1,9 @@
+---
+resource_id: "1a87e569-3796-4b6f-80e4-fb3ba875b766"
+resource_type: "agnostic
+document"
+resource_name: "0AGNOSTIC"
+---
 # context_chain_system — Stage 08: Criticism
 
 ## Identity

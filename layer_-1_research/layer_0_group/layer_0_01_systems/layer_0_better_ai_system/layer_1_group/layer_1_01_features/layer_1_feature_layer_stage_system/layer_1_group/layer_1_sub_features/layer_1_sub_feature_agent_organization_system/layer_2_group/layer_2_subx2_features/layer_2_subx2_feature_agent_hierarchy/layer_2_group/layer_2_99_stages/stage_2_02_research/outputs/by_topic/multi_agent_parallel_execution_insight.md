@@ -1,3 +1,8 @@
+---
+resource_id: "375e55f8-e29a-4e82-a28f-6e251e232452"
+resource_type: "output"
+resource_name: "multi_agent_parallel_execution_insight"
+---
 # Multi-Agent Parallel Execution System
 
 **Date**: 2026-01-30

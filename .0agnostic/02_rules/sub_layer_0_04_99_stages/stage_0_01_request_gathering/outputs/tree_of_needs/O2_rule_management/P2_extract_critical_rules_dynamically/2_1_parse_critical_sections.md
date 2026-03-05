@@ -1,3 +1,8 @@
+---
+resource_id: "866a8377-79db-4854-884d-2ead14e9bd5c"
+resource_type: "rule"
+resource_name: "2_1_parse_critical_sections"
+---
 # 2.1: Parse [CRITICAL] Sections from CLAUDE.md
 
 ## Requirement

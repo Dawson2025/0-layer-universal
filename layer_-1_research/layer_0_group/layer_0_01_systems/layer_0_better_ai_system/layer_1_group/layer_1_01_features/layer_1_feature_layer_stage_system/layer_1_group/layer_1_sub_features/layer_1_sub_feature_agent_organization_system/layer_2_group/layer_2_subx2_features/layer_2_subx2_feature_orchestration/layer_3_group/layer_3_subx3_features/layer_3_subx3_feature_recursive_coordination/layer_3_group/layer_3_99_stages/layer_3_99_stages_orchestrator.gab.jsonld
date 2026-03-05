@@ -1,5 +1,9 @@
 {
-  "@context": {"@vocab": "https://layer-stage.dev/schema#", "gab": "https://gab-lang.org/schema#"},
+  "file_id": "dab0f398-e29c-49dd-8cf9-1665dc7057d2",
+  "@context": {
+    "@vocab": "https://layer-stage.dev/schema#",
+    "gab": "https://gab-lang.org/schema#"
+  },
   "@id": "recursive_coordination_stages_orchestrator",
   "@type": "gab:LLMAgent",
   "name": "recursive_coordination Stages Orchestrator",

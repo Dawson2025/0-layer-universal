@@ -1,3 +1,9 @@
+---
+resource_id: "7873bb03-a3a6-497f-a99c-72e672c00605"
+resource_type: "readme
+document"
+resource_name: "README"
+---
 # Chrome DevTools MCP (Codex CLI on WSL)
 
 ## Canonical docs

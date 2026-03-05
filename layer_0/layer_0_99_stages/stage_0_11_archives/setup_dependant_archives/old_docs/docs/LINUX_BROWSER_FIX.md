@@ -1,3 +1,8 @@
+---
+resource_id: "3f46c169-0803-45a0-b639-2cb9b8a424f6"
+resource_type: "document"
+resource_name: "LINUX_BROWSER_FIX"
+---
 # Linux/Ubuntu Browser Automation Fix
 
 ## Problem

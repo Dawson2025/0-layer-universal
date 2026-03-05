@@ -1,3 +1,8 @@
+---
+resource_id: "dbc8b271-7b7f-4315-9a5f-03bd245a77d2"
+resource_type: "document"
+resource_name: "ubuntu-speech-tools-stt-tts"
+---
 # Ubuntu Speech Tools Setup (STT & TTS)
 
 **Date:** December 2, 2025

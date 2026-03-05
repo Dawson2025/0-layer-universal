@@ -1,4 +1,7 @@
 #!/bin/bash
+# resource_id: "11b0eb97-ad30-42fa-8e46-a85ec4bf575b"
+# resource_type: "script"
+# resource_name: "verify_paths.sync-conflict-20260126-102106-IF2WOGZ"
 # verify_paths.sh - Verify that documented paths exist
 # Run this after ANY structural change to the system
 #

@@ -1,4 +1,7 @@
 ---
+resource_id: "8bb919a8-c094-4397-bd59-90639db0ccfa"
+resource_type: "document"
+resource_name: "setup-dependant-context"
 paths: .0agnostic/07+_setup_dependant/**
 ---
 

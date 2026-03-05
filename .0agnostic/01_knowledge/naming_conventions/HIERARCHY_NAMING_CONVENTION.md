@@ -1,3 +1,8 @@
+---
+resource_id: "b20e3df6-3a46-41d6-87e5-f7e72dc65260"
+resource_type: "knowledge"
+resource_name: "HIERARCHY_NAMING_CONVENTION"
+---
 # Hierarchy Naming Convention (`_hierarchy` suffix)
 
 ## Purpose

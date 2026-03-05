@@ -1,3 +1,8 @@
+---
+resource_id: "b9ba8555-4095-4351-94c9-9b305a4aee10"
+resource_type: "output"
+resource_name: "DD-02_school_system_architecture"
+---
 # DD-02: School System Architecture
 
 **Date**: 2026-02-25

@@ -1,3 +1,8 @@
+---
+resource_id: "d71e5d87-4cd6-4573-994f-1bf18045f58c"
+resource_type: "output"
+resource_name: "US-02_agent_detects_broken_reference"
+---
 # US-02: Agent detects broken reference before failing
 
 **Need**: [Chain Validation Enhancement](../README.md)

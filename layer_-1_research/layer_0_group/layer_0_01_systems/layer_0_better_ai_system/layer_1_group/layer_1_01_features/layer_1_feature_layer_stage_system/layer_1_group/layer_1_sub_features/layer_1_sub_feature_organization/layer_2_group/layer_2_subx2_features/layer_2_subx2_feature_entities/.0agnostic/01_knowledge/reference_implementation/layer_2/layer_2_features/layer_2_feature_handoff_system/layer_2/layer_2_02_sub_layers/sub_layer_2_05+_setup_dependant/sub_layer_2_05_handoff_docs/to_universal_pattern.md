@@ -1,3 +1,8 @@
+---
+resource_id: "cd9f6945-b07b-49cd-b0d0-08e9f0ae5832"
+resource_type: "knowledge"
+resource_name: "to_universal_pattern"
+---
 # To Universal Pattern
 
 ## Overview

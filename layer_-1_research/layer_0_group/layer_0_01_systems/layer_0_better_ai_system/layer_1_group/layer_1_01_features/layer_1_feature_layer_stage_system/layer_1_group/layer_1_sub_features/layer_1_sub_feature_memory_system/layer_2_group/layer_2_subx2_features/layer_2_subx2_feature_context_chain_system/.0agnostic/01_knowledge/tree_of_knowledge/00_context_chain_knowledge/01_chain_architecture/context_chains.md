@@ -1,3 +1,8 @@
+---
+resource_id: "020580ab-e5fe-4b8e-9a8d-72c2ac108589"
+resource_type: "knowledge"
+resource_name: "context_chains"
+---
 # Context Chains
 
 ## Summary

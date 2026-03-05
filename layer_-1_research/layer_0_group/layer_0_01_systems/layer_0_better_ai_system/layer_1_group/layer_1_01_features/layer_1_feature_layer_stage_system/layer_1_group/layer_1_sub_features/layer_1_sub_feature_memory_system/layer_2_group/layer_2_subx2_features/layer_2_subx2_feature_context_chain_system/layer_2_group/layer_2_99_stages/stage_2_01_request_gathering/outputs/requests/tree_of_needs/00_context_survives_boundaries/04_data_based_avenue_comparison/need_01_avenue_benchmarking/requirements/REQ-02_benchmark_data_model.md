@@ -1,3 +1,8 @@
+---
+resource_id: "02c1e14f-2dad-4b6a-af34-d491b7ec432f"
+resource_type: "output"
+resource_name: "REQ-02_benchmark_data_model"
+---
 # Benchmark Data Model
 
 **Need**: [Avenue Benchmarking](../README.md)

@@ -1,3 +1,8 @@
+---
+resource_id: "a76ed753-f4ed-48c8-8f18-f83a02e2ede2"
+resource_type: "document"
+resource_name: "WSL_STABILITY_FIX"
+---
 # WSL2 "Catastrophic Failure" & Connection Fix
 
 ## Problem

@@ -1,3 +1,8 @@
+---
+resource_id: "b193566e-fb7a-4073-b736-911373c26157"
+resource_type: "protocol"
+resource_name: "HIERARCHY_QUICK_START"
+---
 # AI Manager Hierarchy - Quick Start Guide
 
 **Reading Time**: 5-10 minutes

@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
+# resource_id: "4d905e02-6608-459c-81ef-2025d6651db3"
+# resource_type: "script"
+# resource_name: "mcp-smoke-test"
 set -euo pipefail
 
 # Simple launcher + smoke test for Playwright MCP server

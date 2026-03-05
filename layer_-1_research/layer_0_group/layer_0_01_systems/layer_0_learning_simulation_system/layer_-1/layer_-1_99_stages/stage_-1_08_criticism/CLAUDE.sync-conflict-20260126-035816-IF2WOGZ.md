@@ -1,3 +1,8 @@
+---
+resource_id: "54b4ae9e-7b17-4bda-8cb0-afe003a553b4"
+resource_type: "document"
+resource_name: "CLAUDE.sync-conflict-20260126-035816-IF2WOGZ"
+---
 # stage_-1_08_criticism
 
 ## Purpose

@@ -1,10 +1,11 @@
 {
-    "taskId": "retry_rules_001",
-    "description": "Analyze sub_layer_0_05_rules: count rule files, list rule names, summarize governance",
-    "context": {
-        "layer": 0,
-        "targetPath": "layer_0/layer_0_03_sub_layers/sub_layer_0_05_rules/",
-        "workingDir": "/home/dawson/dawson-workspace/code/0_layer_universal"
-    },
-    "priority": "normal"
+  "file_id": "f137004b-cb8f-4200-a8b4-34ba75d4d266",
+  "taskId": "retry_rules_001",
+  "description": "Analyze sub_layer_0_05_rules: count rule files, list rule names, summarize governance",
+  "context": {
+    "layer": 0,
+    "targetPath": "layer_0/layer_0_03_sub_layers/sub_layer_0_05_rules/",
+    "workingDir": "/home/dawson/dawson-workspace/code/0_layer_universal"
+  },
+  "priority": "normal"
 }

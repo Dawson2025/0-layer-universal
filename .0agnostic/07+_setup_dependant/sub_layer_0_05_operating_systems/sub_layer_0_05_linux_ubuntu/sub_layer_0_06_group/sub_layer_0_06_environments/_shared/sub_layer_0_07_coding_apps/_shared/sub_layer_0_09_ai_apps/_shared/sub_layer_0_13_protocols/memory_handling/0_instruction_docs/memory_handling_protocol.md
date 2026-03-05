@@ -1,3 +1,8 @@
+---
+resource_id: "2e9bc90e-e4dc-40dd-988a-81cbc19c008a"
+resource_type: "document"
+resource_name: "memory_handling_protocol"
+---
 # Memory Handling Protocol
 
 ## Applicability

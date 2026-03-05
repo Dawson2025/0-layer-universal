@@ -1,3 +1,8 @@
+---
+resource_id: "01dfacf5-0ae5-41c5-b78f-30007989e4b7"
+resource_type: "output"
+resource_name: "v1_hierarchical_schema_design"
+---
 # Context Avenue Database Schema — Proposal v1
 
 ## Improved Hierarchical Architecture

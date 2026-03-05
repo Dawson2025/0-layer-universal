@@ -1,4 +1,7 @@
 #!/bin/bash
+# resource_id: "91cb1aab-b1e4-4ca9-a836-41507a109fff"
+# resource_type: "script"
+# resource_name: "install-playwright"
 # Script to install Playwright and its dependencies
 # Run this script with: bash install-playwright.sh
 

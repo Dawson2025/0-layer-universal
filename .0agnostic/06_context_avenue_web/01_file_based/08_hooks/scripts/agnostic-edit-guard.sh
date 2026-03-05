@@ -1,4 +1,7 @@
 #!/bin/bash
+# resource_id: "72eeed20-312f-47df-9f86-f3e38e2ecb3f"
+# resource_type: "script"
+# resource_name: "agnostic-edit-guard"
 #
 # agnostic-edit-guard.sh — PostToolUse hook for .0agnostic/ edits
 #

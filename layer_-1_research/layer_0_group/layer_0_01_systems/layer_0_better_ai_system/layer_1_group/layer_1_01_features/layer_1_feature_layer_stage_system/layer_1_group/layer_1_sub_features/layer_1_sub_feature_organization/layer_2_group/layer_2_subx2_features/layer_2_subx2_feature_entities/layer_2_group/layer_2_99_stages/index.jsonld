@@ -1,22 +1,19 @@
 {
+  "file_id": "9b4ea4e8-6683-4e62-bb9a-b899996397db",
   "@context": {
     "@vocab": "https://layer-stage.dev/schema#",
     "nav": "https://layer-stage.dev/nav#",
     "trigger": "https://layer-stage.dev/trigger#"
   },
-
   "@id": "layer_0_99_stages",
   "@type": "StagesFolder",
-
   "name": "Layer 0 Stages",
   "description": "The 11 development stages for universal content",
   "layer": 0,
-
   "nav:parent": {
     "@id": "../",
     "name": "layer_0_group"
   },
-
   "stages": [
     {
       "@id": "stage_0_00_stage_registry/",
@@ -96,7 +93,6 @@
       "description": "Historical records, past versions"
     }
   ],
-
   "trigger:onStageEntry": {
     "action": "loadSkill",
     "pattern": "stages[?].trigger:skill"

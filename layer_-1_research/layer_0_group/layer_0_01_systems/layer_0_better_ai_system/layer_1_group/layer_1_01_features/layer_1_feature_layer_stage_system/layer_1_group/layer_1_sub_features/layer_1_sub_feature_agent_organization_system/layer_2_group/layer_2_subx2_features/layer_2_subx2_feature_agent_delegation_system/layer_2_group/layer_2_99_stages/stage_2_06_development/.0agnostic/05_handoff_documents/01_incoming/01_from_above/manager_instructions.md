@@ -1,3 +1,8 @@
+---
+resource_id: "436672e7-f1af-4551-95d4-03970d81012b"
+resource_type: "handoff"
+resource_name: "manager_instructions"
+---
 # Manager Instructions for stage_1_06_development
 
 ## From

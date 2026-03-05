@@ -1,3 +1,8 @@
+---
+resource_id: "6f8047e4-a0e2-4417-8462-244b14dafb2c"
+resource_type: "output"
+resource_name: "inotify_fix"
+---
 # Inotify Limits Fix
 
 ## Problem

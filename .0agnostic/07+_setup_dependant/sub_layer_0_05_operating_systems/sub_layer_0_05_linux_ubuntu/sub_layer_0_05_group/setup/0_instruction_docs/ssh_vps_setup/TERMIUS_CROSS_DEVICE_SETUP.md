@@ -1,3 +1,8 @@
+---
+resource_id: "b38ba758-3124-4b05-a9a0-b64e13856fad"
+resource_type: "document"
+resource_name: "TERMIUS_CROSS_DEVICE_SETUP"
+---
 # Termius Cross-Device SSH Setup
 
 Full bidirectional SSH access between all machines using Termius.

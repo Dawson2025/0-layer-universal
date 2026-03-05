@@ -1,3 +1,8 @@
+---
+resource_id: "ab7f34cc-27e6-4754-9bf2-1a3ffa3a81ab"
+resource_type: "document"
+resource_name: "SUBLAYER_CONTENT_MERGE_REPORT"
+---
 # Sublayer Content Merge Report
 
 Hierarchy root: /home/dawson/dawson-workspace/code/0_layer_universal/0_context/layer_0/0.02_sub_layers/sub_layer_0_05-0.014_setup/0.01_universal_setup_file_tree_0

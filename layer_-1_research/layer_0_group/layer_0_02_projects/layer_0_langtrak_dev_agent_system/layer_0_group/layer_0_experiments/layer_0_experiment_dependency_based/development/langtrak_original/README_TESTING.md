@@ -1,3 +1,8 @@
+---
+resource_id: "62636e60-68cb-4df1-af7f-3d3f6b0fa586"
+resource_type: "document"
+resource_name: "README_TESTING"
+---
 # Testing Guide
 
 ✅ **Status**: Comprehensive testing strategy implemented and verified (2025-10-23)

@@ -1,3 +1,8 @@
+---
+resource_id: "65bf7058-d296-4316-88f4-6d94b93532a4"
+resource_type: "output"
+resource_name: "VERSION"
+---
 # Version
 
 **Current**: 1.0.0

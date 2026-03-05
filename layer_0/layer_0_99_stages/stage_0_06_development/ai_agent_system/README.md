@@ -1,3 +1,9 @@
+---
+resource_id: "24117ac5-3ad3-469d-b444-5abf08a6609a"
+resource_type: "readme
+document"
+resource_name: "README"
+---
 # Stage 0.04 Development - AI Agent System
 
 ## Overview

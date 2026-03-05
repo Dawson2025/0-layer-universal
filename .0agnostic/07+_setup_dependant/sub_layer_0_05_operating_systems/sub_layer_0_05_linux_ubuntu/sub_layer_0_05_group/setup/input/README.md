@@ -1,3 +1,9 @@
+---
+resource_id: "17c4cb5d-d8a4-4279-9877-d1b8c3a04d55"
+resource_type: "readme
+document"
+resource_name: "README"
+---
 # Input Device Setup
 
 **Last Updated**: January 13, 2026

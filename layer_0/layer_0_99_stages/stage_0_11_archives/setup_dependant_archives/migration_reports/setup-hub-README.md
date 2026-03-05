@@ -1,3 +1,8 @@
+---
+resource_id: "1dd185ee-6a75-425b-8117-b688bba1664b"
+resource_type: "document"
+resource_name: "setup-hub-README"
+---
 # setup-hub
 
 Guides for standing up consistent environments quickly.

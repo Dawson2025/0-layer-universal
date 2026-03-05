@@ -1,3 +1,8 @@
+---
+resource_id: "c369fa43-98ca-481f-9490-b0b4a7e86c53"
+resource_type: "document"
+resource_name: "form_filling_workflow"
+---
 # Form Filling Automation Workflow (Playwright MCP)
 
 ## Overview

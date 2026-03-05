@@ -1,3 +1,8 @@
+---
+resource_id: "2007aa5f-4482-448f-81db-51d93de111ea"
+resource_type: "document"
+resource_name: "IMPLEMENTATION_SUMMARY"
+---
 # Claude in Chrome WSL Bridge - Implementation Summary
 
 **Date:** 2025-12-30  

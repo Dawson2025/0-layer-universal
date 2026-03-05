@@ -1,3 +1,8 @@
+---
+resource_id: "9e5969be-04ae-4495-913f-518d1b9aa927"
+resource_type: "output"
+resource_name: "perplexity_research_threads.sync-conflict-20260126-035815-IF2WOGZ"
+---
 # Perplexity Research Threads - Learning Simulation System
 
 **Source**: Perplexity Space "learning simulation system"

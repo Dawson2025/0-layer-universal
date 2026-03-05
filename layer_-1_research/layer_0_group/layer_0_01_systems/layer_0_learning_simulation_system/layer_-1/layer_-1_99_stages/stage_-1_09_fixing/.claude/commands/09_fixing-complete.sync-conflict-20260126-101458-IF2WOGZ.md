@@ -1,4 +1,7 @@
 ---
+resource_id: "8f05cacf-3928-4612-923d-f194f6d779cb"
+resource_type: "document"
+resource_name: "09_fixing-complete.sync-conflict-20260126-101458-IF2WOGZ"
 description: Mark 09_fixing stage as complete and prepare handoff
 argument-hint: [--notes "completion notes"]
 ---

@@ -1,3 +1,8 @@
+---
+resource_id: "7dcc93d6-6d4f-43ed-a5ba-f6c9c6d3b6cf"
+resource_type: "rule"
+resource_name: "cse351_family_search_notes"
+---
 # Universal Notes – CSE 351 Family Search Assignments
 
 These patterns apply to any local BYU CSE 351 assignment that couples a Python client with the provided `server.py` API.

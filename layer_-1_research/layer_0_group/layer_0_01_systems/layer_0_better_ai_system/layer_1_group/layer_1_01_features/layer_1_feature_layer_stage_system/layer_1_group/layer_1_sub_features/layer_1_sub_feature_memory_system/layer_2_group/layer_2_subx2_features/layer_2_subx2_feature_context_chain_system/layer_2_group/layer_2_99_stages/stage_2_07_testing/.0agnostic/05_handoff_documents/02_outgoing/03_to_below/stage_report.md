@@ -1,3 +1,8 @@
+---
+resource_id: "cdd41226-bf5f-414a-b97e-dbe972387431"
+resource_type: "handoff"
+resource_name: "stage_report"
+---
 # Stage Report: 07_testing
 
 ## Status

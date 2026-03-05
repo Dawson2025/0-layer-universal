@@ -1,3 +1,9 @@
+---
+resource_id: "8e22ed03-8178-4cca-a7ae-3f8039695307"
+resource_type: "readme
+output"
+resource_name: "README"
+---
 # Chain Validation Enhancement -- Requirements Index
 
 **Need**: [Chain Validation Enhancement](../README.md)

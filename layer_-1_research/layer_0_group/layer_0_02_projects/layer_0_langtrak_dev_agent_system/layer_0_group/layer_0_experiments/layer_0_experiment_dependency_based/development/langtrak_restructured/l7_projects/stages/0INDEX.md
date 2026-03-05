@@ -1,3 +1,9 @@
+---
+resource_id: "701a6d6b-5247-4c3e-a409-95483135250f"
+resource_type: "index
+document"
+resource_name: "0INDEX"
+---
 # L7 Projects — Stages
 
 | Stage | Name | Status |

@@ -1,3 +1,8 @@
+---
+resource_id: "6a583f7b-e0f9-4f9f-862b-1fd7de5a128e"
+resource_type: "output"
+resource_name: "highlight_and_speak"
+---
 # Design: Highlight-and-Speak (Ctrl+Alt+S)
 
 **Purpose**: Read any highlighted text aloud with a single keyboard shortcut.

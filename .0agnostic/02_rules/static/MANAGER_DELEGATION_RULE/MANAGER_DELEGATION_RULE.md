@@ -1,3 +1,8 @@
+---
+resource_id: "a4dc8810-883e-487a-b7c4-08e54f0105ba"
+resource_type: "rule"
+resource_name: "MANAGER_DELEGATION_RULE"
+---
 # Manager Delegation Rule
 
 **Type**: Static (always applies)

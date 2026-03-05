@@ -1,3 +1,9 @@
+---
+resource_id: "2e78fa96-b04b-432b-9aba-02a6c5aa24a1"
+resource_type: "readme
+document"
+resource_name: "README"
+---
 # Observability and Logging Protocol
 
 **Protocol Type**: Universal

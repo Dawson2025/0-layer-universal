@@ -1,3 +1,8 @@
+---
+resource_id: "c6411bcd-7a6a-4834-a052-8202615ad359"
+resource_type: "rule"
+resource_name: "supabase_javascript_integration_rule"
+---
 # SUPABASE JAVASCRIPT INTEGRATION RULE
 
 ## **MANDATORY REQUIREMENT**

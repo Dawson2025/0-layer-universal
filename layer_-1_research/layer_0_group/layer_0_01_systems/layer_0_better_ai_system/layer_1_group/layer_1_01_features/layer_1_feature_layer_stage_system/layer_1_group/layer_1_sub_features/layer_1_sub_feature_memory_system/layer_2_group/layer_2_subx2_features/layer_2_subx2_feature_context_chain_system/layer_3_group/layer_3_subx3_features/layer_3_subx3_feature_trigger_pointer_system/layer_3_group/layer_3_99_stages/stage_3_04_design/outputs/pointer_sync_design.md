@@ -1,3 +1,8 @@
+---
+resource_id: "bd9022bb-e7fa-4a97-b0a9-00a9557d9e41"
+resource_type: "output"
+resource_name: "pointer_sync_design"
+---
 # Pointer Sync System — Design
 
 > **Canonical location**: Root `.0agnostic/03_protocols/pointer_sync_protocol.md`

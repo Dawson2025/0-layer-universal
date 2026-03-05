@@ -1,3 +1,8 @@
+---
+resource_id: "8f3fcffc-c86f-42fa-aa44-3f2a3ebeca3f"
+resource_type: "document"
+resource_name: "ubuntu-speech-tools-stt-tts.sync-conflict-20260126-102106-IF2WOGZ"
+---
 # Ubuntu Speech Tools Setup (STT & TTS)
 
 **Date:** December 2, 2025

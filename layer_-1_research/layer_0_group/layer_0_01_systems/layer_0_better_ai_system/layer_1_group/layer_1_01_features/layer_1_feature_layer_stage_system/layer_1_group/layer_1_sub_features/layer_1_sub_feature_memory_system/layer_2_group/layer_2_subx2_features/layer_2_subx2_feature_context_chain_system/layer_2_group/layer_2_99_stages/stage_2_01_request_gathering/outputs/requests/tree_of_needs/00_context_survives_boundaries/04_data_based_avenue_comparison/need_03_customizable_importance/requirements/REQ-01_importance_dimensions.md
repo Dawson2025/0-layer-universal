@@ -1,3 +1,8 @@
+---
+resource_id: "aa72bce4-d85f-4f86-b241-ffc32072aec8"
+resource_type: "output"
+resource_name: "REQ-01_importance_dimensions"
+---
 # Importance Dimensions
 
 **Need**: [Customizable Importance](../README.md)

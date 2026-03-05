@@ -1,3 +1,8 @@
+---
+resource_id: "28fba7c2-92c8-4d34-9768-05c2e25ef31e"
+resource_type: "protocol"
+resource_name: "agent_delegation_update_protocol"
+---
 # Agent Delegation Update Protocol
 
 When you need to change agent delegation patterns (Principle 8, Scope Boundary Rule, stage guides, delegation principles, etc.), follow this protocol.

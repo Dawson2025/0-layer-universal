@@ -1,3 +1,9 @@
+---
+resource_id: "b3d64ed2-c4db-4fb0-884f-b1c5c6373fa0"
+resource_type: "readme
+document"
+resource_name: "README"
+---
 # 02_research Workflow References
 
 Place reference documents, templates, and examples here.

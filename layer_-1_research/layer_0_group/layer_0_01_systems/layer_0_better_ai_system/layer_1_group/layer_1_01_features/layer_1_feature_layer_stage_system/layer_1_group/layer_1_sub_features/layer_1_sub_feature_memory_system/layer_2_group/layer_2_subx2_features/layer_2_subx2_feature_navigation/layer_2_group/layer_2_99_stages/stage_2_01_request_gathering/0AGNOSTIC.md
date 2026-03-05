@@ -1,3 +1,9 @@
+---
+resource_id: "74d1c3db-d74b-4ef6-bf53-f524d29c6957"
+resource_type: "agnostic
+document"
+resource_name: "0AGNOSTIC"
+---
 # navigation — Stage 01: request_gathering
 
 ## Identity

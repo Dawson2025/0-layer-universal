@@ -1,3 +1,8 @@
+---
+resource_id: "a41c64dc-5acf-455f-b0f4-cee09840b4c5"
+resource_type: "output"
+resource_name: "GEMINI_CONTEXT_ARCHITECTURE"
+---
 # Google Gemini CLI — Context Architecture & Porting System
 
 **Location**: `.gemini/` (root of entity/project)

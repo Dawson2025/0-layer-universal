@@ -1,3 +1,8 @@
+---
+resource_id: "4828e63d-fa7f-4800-b363-a3ee9996f3b9"
+resource_type: "document"
+resource_name: "supabase_javascript_quick_reference"
+---
 # SUPABASE JAVASCRIPT QUICK REFERENCE
 
 ## **🚨 MANDATORY RULE**

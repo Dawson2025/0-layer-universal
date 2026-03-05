@@ -1,3 +1,9 @@
+---
+resource_id: "8754a666-22cd-467c-979c-2775ce6140f0"
+resource_type: "readme
+document"
+resource_name: "README"
+---
 # layer_3_components: Stage System (3.99)
 
 - 3.01_instructions

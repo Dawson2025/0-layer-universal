@@ -1,3 +1,9 @@
+---
+resource_id: "b923dd47-c202-4441-af8a-fe8e716e1e1f"
+resource_type: "readme
+document"
+resource_name: "README"
+---
 # context7-mcp (codex_cli on linux_ubuntu)
 
 ## Canonical docs

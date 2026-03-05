@@ -1,3 +1,9 @@
+---
+resource_id: "a02a5a4b-44e1-449d-b013-e94c5d3bda46"
+resource_type: "index
+document"
+resource_name: "0INDEX"
+---
 # L3 Users — Stages
 
 | Stage | Name | Status |

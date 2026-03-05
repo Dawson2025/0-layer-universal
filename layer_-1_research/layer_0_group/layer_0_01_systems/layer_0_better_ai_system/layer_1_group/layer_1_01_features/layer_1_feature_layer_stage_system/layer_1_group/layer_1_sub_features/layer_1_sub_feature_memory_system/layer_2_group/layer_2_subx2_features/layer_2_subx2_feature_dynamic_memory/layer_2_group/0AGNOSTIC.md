@@ -1,3 +1,9 @@
+---
+resource_id: "3f013d01-1c28-4c85-b500-d3c7cb824957"
+resource_type: "agnostic
+document"
+resource_name: "0AGNOSTIC"
+---
 # dynamic_memory — Layer 2 Group
 
 ## Identity

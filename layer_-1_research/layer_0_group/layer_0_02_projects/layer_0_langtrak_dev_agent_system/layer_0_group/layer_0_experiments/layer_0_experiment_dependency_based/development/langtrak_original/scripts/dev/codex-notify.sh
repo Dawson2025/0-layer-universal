@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
+# resource_id: "d7bd810c-1356-49fb-9b4d-1115ec04571e"
+# resource_type: "script"
+# resource_name: "codex-notify"
 
 # Wraps a command (e.g. the Codex CLI) and triggers Windows/WSL notifications,
 # speech, and/or sounds whenever the command exits. Intended to run inside WSL.

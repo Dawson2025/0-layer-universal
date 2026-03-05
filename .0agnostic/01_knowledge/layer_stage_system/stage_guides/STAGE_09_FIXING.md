@@ -1,3 +1,8 @@
+---
+resource_id: "738bd48f-bbb6-4ef3-a87b-ad6fab43ce9b"
+resource_type: "knowledge"
+resource_name: "STAGE_09_FIXING"
+---
 # Stage 09: Fixing — Universal Guide
 
 ## Purpose

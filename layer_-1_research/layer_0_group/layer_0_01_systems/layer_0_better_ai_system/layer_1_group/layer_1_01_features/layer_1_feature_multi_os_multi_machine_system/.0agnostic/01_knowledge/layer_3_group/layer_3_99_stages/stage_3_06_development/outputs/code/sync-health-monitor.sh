@@ -1,4 +1,7 @@
 #!/bin/bash
+# resource_id: "7f04c268-3e86-4ef4-acad-5718e276d4f2"
+# resource_type: "script"
+# resource_name: "sync-health-monitor"
 # Syncthing Health Monitor - Run via cron or manually
 # Checks sync status on both local machine and VPS
 # Updated: 2026-01-25

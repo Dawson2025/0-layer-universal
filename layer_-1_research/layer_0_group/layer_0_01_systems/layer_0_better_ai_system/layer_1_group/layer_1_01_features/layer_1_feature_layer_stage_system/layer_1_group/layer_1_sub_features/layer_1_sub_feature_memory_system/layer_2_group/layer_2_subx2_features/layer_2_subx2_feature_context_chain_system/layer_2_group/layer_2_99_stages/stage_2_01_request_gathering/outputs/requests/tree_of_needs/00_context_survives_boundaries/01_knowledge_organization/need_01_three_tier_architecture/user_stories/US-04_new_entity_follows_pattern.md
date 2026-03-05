@@ -1,3 +1,8 @@
+---
+resource_id: "58600ca3-847e-4cf3-ba73-ef797c23325d"
+resource_type: "output"
+resource_name: "US-04_new_entity_follows_pattern"
+---
 # US-04: New entity follows the pattern
 
 **Need**: [Three-Tier Architecture](../README.md)

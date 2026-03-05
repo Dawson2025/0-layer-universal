@@ -1,3 +1,8 @@
+---
+resource_id: "bb57000e-c1ae-46e5-ba59-640a1ca6a166"
+resource_type: "document"
+resource_name: "IMPLEMENTATION_SUMMARY"
+---
 # Firestore-Based Timing Data Collection - Implementation Summary
 
 ## Overview

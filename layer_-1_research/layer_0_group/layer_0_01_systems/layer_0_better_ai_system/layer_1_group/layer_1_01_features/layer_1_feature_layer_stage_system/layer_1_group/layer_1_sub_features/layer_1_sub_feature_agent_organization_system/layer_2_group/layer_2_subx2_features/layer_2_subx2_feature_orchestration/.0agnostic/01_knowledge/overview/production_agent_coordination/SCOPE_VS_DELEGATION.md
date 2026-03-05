@@ -1,3 +1,8 @@
+---
+resource_id: "15f5846b-03bb-41af-b1d3-5c118a1c4042"
+resource_type: "knowledge"
+resource_name: "SCOPE_VS_DELEGATION"
+---
 # Agent Scope vs Delegation Decisions
 
 ## Overview

@@ -1,3 +1,8 @@
+---
+resource_id: "fd89e011-d63b-49dd-8068-7b82a74bd61b"
+resource_type: "document"
+resource_name: "STRUCTURE_VISUALIZATION.sync-conflict-20260126-035816-IF2WOGZ"
+---
 # Universal Setup File Tree Structure Visualization
 
 ## Complete Hierarchy

@@ -1,3 +1,8 @@
+---
+resource_id: "110d6311-add4-4765-bc6b-453054f97c23"
+resource_type: "output"
+resource_name: "US-02_production_updated_safely"
+---
 # Production Updated Safely
 
 **As a** production manager responsible for system stability,

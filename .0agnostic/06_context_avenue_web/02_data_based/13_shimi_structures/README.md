@@ -1,3 +1,9 @@
+---
+resource_id: "0ac601a9-362e-4e33-8423-ca205489bff9"
+resource_type: "readme
+document"
+resource_name: "README"
+---
 # Avenue 13: SHIMI Structures
 
 ## Purpose

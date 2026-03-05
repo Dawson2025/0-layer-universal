@@ -1,3 +1,9 @@
+---
+resource_id: "15ab9d6c-e043-488e-a6f2-13f35168419a"
+resource_type: "readme
+output"
+resource_name: "README"
+---
 # Data-Based Avenues (09-13) — Optional
 
 ## Overview

@@ -1,3 +1,8 @@
+---
+resource_id: "17c3b8d1-dd98-4857-a1ba-572d63336c03"
+resource_type: "document"
+resource_name: "codex-vscode-manual-tests"
+---
 # Codex VS Code Manual Tasks
 
 Use this walkthrough to repeat the manual steps we executed while finishing the Codex + VS Code setup on Windows.

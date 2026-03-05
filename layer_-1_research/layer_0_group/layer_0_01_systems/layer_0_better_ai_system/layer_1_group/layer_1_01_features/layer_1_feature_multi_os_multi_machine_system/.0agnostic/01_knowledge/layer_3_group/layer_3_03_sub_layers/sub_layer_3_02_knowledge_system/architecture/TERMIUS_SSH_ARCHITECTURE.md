@@ -1,3 +1,8 @@
+---
+resource_id: "0426c24c-d1ef-4d04-bdd5-052aefe7aded"
+resource_type: "knowledge"
+resource_name: "TERMIUS_SSH_ARCHITECTURE"
+---
 # Termius SSH Architecture
 
 **Created**: 2026-01-21

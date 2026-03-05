@@ -1,4 +1,5 @@
 {
+  "file_id": "6715be4a-6e63-4b1c-8eec-7e316663d518",
   "firestore": {
     "rules": "config/firebase/firestore.rules"
   },

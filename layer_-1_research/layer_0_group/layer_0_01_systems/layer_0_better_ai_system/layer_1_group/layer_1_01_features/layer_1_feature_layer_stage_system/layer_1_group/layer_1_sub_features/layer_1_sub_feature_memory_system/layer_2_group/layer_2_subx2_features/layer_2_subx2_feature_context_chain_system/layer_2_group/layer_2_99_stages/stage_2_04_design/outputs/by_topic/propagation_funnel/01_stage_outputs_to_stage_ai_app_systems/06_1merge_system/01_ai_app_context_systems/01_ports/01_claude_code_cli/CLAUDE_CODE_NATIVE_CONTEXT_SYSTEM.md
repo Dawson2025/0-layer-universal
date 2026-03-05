@@ -1,3 +1,8 @@
+---
+resource_id: "f8237040-5571-41e1-a777-bba06d954b8c"
+resource_type: "output"
+resource_name: "CLAUDE_CODE_NATIVE_CONTEXT_SYSTEM"
+---
 # Claude Code CLI — Native Context System Architecture
 
 **Date Created**: 2026-02-27

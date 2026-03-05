@@ -1,3 +1,8 @@
+---
+resource_id: "88f4c099-31cd-419d-a8d9-2a99cca21c8a"
+resource_type: "output"
+resource_name: "internal_structure"
+---
 # Design — .0agnostic/ Internal Structure
 
 ## Purpose

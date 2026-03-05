@@ -1,3 +1,8 @@
+---
+resource_id: "840b9e98-c2e0-41d4-975d-23b722a0d858"
+resource_type: "rule"
+resource_name: "browser_management_policy"
+---
 # Browser Management Policy for AI Automation
 
 ## Overview

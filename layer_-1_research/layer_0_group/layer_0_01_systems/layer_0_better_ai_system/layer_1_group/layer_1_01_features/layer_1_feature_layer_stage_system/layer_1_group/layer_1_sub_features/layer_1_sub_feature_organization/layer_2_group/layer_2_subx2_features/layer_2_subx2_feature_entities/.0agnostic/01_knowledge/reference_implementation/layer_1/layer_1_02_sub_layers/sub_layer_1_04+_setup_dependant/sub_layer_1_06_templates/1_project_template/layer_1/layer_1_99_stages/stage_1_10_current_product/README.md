@@ -1,3 +1,9 @@
+---
+resource_id: "68636fc7-e50a-41d6-9c94-8f277ba67dcc"
+resource_type: "readme
+knowledge"
+resource_name: "README"
+---
 # Current Product
 
 This stage holds the actual deliverable - the current version of what was built.

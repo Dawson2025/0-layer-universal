@@ -1,3 +1,8 @@
+---
+resource_id: "85d44162-c206-4488-b40c-64ec6df959d4"
+resource_type: "output"
+resource_name: "agentic_tts_plan"
+---
 # Agentic TTS Implementation Plan
 
 **Date**: 2026-02-23

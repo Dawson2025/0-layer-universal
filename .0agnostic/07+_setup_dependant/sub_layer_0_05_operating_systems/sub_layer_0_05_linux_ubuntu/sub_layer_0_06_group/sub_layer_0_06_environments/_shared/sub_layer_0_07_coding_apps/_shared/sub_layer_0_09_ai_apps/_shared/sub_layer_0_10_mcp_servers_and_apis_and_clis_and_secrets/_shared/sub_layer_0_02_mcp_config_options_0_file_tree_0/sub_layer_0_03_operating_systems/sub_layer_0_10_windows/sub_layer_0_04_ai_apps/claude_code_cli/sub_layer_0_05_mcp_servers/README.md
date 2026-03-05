@@ -1,3 +1,9 @@
+---
+resource_id: "667be0a7-9916-4617-98e0-f0e88c2ffdd7"
+resource_type: "readme
+document"
+resource_name: "README"
+---
 # MCP Servers (claude_code_cli on windows)
 
 This folder contains windows + claude_code_cli specific notes for each MCP server we use.

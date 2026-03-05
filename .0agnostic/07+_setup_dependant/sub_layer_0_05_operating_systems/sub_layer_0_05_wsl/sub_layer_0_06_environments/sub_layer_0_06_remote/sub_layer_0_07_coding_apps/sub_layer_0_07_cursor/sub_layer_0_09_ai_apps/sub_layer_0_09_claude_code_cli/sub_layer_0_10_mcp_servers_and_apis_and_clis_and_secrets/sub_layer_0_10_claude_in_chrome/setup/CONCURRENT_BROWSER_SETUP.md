@@ -1,3 +1,8 @@
+---
+resource_id: "76555112-71cd-4392-976b-3d6d57400ef5"
+resource_type: "document"
+resource_name: "CONCURRENT_BROWSER_SETUP"
+---
 # Concurrent Browser Setup for Multiple AI Tools
 
 ## Problem Statement

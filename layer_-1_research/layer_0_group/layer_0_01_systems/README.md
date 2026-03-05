@@ -1,3 +1,9 @@
+---
+resource_id: "220d8b2c-fc51-4b2d-a42b-b365ad2124ac"
+resource_type: "readme
+document"
+resource_name: "README"
+---
 # layer_0_01_systems — Layer 0 System Research
 
 This directory contains all layer_0 level systems being researched and validated before promotion to production.

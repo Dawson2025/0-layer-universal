@@ -1,3 +1,8 @@
+---
+resource_id: "dddd21d7-d54c-44c3-b8f0-3738e2f32cf1"
+resource_type: "document"
+resource_name: "LEGACY_FOLDER_STRUCTURE_REPORT"
+---
 # Legacy Sublayer Folder Structure Report
 
 Source: commit d64c065 (standalone sublayers 0.06–0.14)

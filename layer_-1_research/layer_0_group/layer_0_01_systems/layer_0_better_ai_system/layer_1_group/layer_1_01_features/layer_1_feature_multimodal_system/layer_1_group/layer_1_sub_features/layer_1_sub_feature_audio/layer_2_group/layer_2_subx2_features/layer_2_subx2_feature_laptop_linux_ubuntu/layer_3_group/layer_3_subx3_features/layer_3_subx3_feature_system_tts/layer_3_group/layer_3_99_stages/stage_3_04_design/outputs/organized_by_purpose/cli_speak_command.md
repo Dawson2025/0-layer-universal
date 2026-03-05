@@ -1,3 +1,8 @@
+---
+resource_id: "12e98370-a924-464a-ab67-e955493aee46"
+resource_type: "output"
+resource_name: "cli_speak_command"
+---
 # Design: CLI `speak` Command
 
 **Purpose**: Speak text from the terminal — arguments, stdin, or pipe.

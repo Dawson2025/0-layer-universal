@@ -1,3 +1,8 @@
+---
+resource_id: "37f33c76-68b0-4755-9bac-fe804c403b14"
+resource_type: "output"
+resource_name: "audio_plan"
+---
 # Audio Implementation Plan (Parent Overview)
 
 **Date**: 2026-02-23

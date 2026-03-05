@@ -1,4 +1,7 @@
 ---
+resource_id: "bf19a436-eb89-4ebc-81a2-8a567ccad36a"
+resource_type: "document"
+resource_name: "06_development-complete.sync-conflict-20260126-035813-IF2WOGZ"
 description: Mark 06_development stage as complete and prepare handoff
 argument-hint: [--notes "completion notes"]
 ---

@@ -1,3 +1,8 @@
+---
+resource_id: "ece413f1-45b4-44a5-9fd5-8fae6747c250"
+resource_type: "knowledge"
+resource_name: "gab_compiler"
+---
 # GAB Compiler — How It Works
 
 ## Overview

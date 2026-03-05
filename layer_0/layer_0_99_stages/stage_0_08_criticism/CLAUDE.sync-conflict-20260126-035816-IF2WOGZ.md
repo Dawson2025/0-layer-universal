@@ -1,3 +1,8 @@
+---
+resource_id: "7869e7bc-9d7c-4e87-8d59-0ee538eedeb6"
+resource_type: "document"
+resource_name: "CLAUDE.sync-conflict-20260126-035816-IF2WOGZ"
+---
 # Stage 06: Criticism
 
 ## Purpose

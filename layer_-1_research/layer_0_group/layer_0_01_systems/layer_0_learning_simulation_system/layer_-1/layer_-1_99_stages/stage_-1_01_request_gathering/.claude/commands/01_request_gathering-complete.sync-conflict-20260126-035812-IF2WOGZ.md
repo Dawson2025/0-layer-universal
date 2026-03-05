@@ -1,4 +1,7 @@
 ---
+resource_id: "63a80539-cd63-4dd9-a805-7f6f25bc2ce8"
+resource_type: "document"
+resource_name: "01_request_gathering-complete.sync-conflict-20260126-035812-IF2WOGZ"
 description: Mark 01_request_gathering stage as complete and prepare handoff
 argument-hint: [--notes "completion notes"]
 ---

@@ -1,3 +1,8 @@
+---
+resource_id: "d7631c75-0f22-4454-9542-30d8da120179"
+resource_type: "output"
+resource_name: "avenue_web_validation_report"
+---
 # Avenue Web Validation Report
 
 - Target root: `/home/dawson/dawson-workspace/code/0_layer_universal/layer_-1_research/layer_-1_better_ai_system/layer_0_group/layer_0_features/layer_0_feature_layer_stage_system`

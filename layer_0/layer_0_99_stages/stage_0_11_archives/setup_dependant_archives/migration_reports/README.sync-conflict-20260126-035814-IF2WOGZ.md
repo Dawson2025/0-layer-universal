@@ -1,3 +1,8 @@
+---
+resource_id: "6ec735d4-43d4-4856-9e40-164cebb574a6"
+resource_type: "document"
+resource_name: "README.sync-conflict-20260126-035814-IF2WOGZ"
+---
 # 0.01 Universal Setup File Tree (Traversable Hierarchy)
 
 This folder is the **traversable universal setup documentation file tree**. It is organized so you can always navigate through the complete setup hierarchy:

@@ -1,4 +1,7 @@
 #!/bin/bash
+# resource_id: "6024af7e-6626-417d-a6fe-39444b8e9e0a"
+# resource_type: "script"
+# resource_name: "setup_claude_code"
 
 # Setup script for Claude Code CLI
 # This loads the Node.js environment and makes the claude command available

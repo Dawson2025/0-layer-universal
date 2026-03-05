@@ -1,3 +1,8 @@
+---
+resource_id: "06117fc9-9bc0-486f-98a3-3b1e90e45fc3"
+resource_type: "rule"
+resource_name: "2_2_handle_rule_hierarchy"
+---
 # 2.2: Handle Rule Hierarchy and Inheritance
 
 ## Requirement

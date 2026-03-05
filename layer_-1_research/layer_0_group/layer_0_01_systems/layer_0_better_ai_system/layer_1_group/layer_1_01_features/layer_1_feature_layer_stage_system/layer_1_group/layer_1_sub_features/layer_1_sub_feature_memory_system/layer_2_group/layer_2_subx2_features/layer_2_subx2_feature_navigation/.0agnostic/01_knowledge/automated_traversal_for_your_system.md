@@ -1,3 +1,8 @@
+---
+resource_id: "937c9476-9dfc-4b32-af44-4b2d888e0eed"
+resource_type: "knowledge"
+resource_name: "automated_traversal_for_your_system"
+---
 # Automated Traversal for Your System
 
 **Date**: 2026-01-30

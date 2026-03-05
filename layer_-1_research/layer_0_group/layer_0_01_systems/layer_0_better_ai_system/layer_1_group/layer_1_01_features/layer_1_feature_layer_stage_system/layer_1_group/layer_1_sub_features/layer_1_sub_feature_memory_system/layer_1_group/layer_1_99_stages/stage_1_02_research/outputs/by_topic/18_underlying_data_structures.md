@@ -1,3 +1,8 @@
+---
+resource_id: "4007e213-a850-4b33-b863-61f159b1428b"
+resource_type: "output"
+resource_name: "18_underlying_data_structures"
+---
 # Underlying Data Structures for AI Agent Memory Systems
 
 ## Purpose

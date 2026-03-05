@@ -1,3 +1,8 @@
+---
+resource_id: "b8580110-478f-4bab-bffb-bd6042dafce7"
+resource_type: "knowledge"
+resource_name: "NEXT_STEPS"
+---
 # Next Steps for Multi-OS Workspace Sync
 
 ## Current Status (2026-01-09)

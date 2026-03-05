@@ -1,3 +1,9 @@
+---
+resource_id: "0896e767-c62e-47c7-8dca-a3d85802bcb0"
+resource_type: "readme
+document"
+resource_name: "README"
+---
 # Avenue 09: Knowledge Graph
 
 ## Purpose

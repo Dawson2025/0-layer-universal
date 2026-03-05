@@ -1,3 +1,8 @@
+---
+resource_id: "f5f0191d-6167-4f4a-9d86-577dd1c1a563"
+resource_type: "document"
+resource_name: "SYSTEM_COMPLETENESS_CHECK"
+---
 # Trickle-Down System Completeness Check
 *Pre-GitHub Spec Kit Assessment*
 

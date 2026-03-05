@@ -1,3 +1,8 @@
+---
+resource_id: "729d00ec-1728-41a0-8fc8-458bc189651b"
+resource_type: "output"
+resource_name: "06_source_of_truth_to_avenue_flow"
+---
 # Source of Truth to Avenue Flow
 
 **Date**: 2026-02-23

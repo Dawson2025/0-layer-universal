@@ -1,3 +1,8 @@
+---
+resource_id: "59c26993-3929-4719-8f1c-eebf5b1388e8"
+resource_type: "output"
+resource_name: "index"
+---
 # Episodic Memory Index
 
 **Layer**: layer_-1_research (research)

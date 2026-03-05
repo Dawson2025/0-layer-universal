@@ -1,3 +1,8 @@
+---
+resource_id: "463dc748-04c4-46df-8b42-2ece4843b208"
+resource_type: "document"
+resource_name: "MCP_SUBLAYER_MISSING_SYNC_REPORT.sync-conflict-20260126-102106-IF2WOGZ"
+---
 # MCP Sublayer Missing Sync Report
 
 Source: /home/dawson/dawson-workspace/code/0_layer_universal/0_context/layer_0/0.02_sub_layers/sub_layer_0_10_mcp_servers_and_tools_setup

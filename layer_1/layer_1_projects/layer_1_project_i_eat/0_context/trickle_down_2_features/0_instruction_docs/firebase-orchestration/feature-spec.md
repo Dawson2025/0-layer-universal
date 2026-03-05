@@ -1,3 +1,8 @@
+---
+resource_id: "c1a90827-ab90-42a6-a4b7-6edc4c889953"
+resource_type: "document"
+resource_name: "feature-spec"
+---
 # Firebase Orchestration System Feature Specification
 *Trickle-Down Level 2: Feature Specification*
 *Generated via GitHub Spec Kit Workflow*

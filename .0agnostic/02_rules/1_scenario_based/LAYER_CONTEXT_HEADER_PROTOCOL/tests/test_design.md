@@ -1,3 +1,8 @@
+---
+resource_id: "32c099bf-3d00-41a7-9238-ab0207b80aba"
+resource_type: "rule"
+resource_name: "test_design"
+---
 # Test Design: Layer Context Header Protocol
 
 **Rule**: `../LAYER_CONTEXT_HEADER_PROTOCOL.md`

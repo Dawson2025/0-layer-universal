@@ -1,3 +1,9 @@
+---
+resource_id: "60266ca6-0fd6-4bde-a399-d7091416db54"
+resource_type: "readme
+document"
+resource_name: "README"
+---
 ## Protocol Writing Standard – Instruction Docs
 
 The canonical definition of the **Protocol Writing Standard** lives in:

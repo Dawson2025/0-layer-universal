@@ -1,0 +1,50 @@
+digraph {
+    rankdir=LR;
+    node [shape=box, style=rounded, fontname="Arial"];
+    edge [fontsize=9];
+
+    // Cluster: Layer 0
+    subgraph cluster_0 {
+        label="Layer 0: Universal";
+        color=lightblue;
+        L0 [label="Universal Root\n0_layer_universal"];
+    }
+
+    // Cluster: Layer 1
+    subgraph cluster_1 {
+        label="Layer 1: Projects";
+        color=lightgreen;
+        L1_school [label="School Project"];
+    }
+
+    // Cluster: Layer 2
+    subgraph cluster_2 {
+        label="Layer 2: Sub-Projects";
+        color=lightyellow;
+        L2_classes [label="Classes System"];
+    }
+
+    // Cluster: Layer 3
+    subgraph cluster_3 {
+        label="Layer 3: Sub²-Projects";
+        color=lightcyan;
+        L3_cs [label="Computer Science"];
+    }
+
+    // Cluster: Layer 4
+    subgraph cluster_4 {
+        label="Layer 4: Courses";
+        color=lightpink;
+        L4_ml [label="Machine Learning"];
+    }
+
+    // Edges
+    L0 -> L1_school [label="parent"];
+    L1_school -> L2_classes [label="parent"];
+    L2_classes -> L3_cs [label="parent"];
+    L3_cs -> L4_ml [label="parent"];
+
+    // Cross-layer references
+    L2_classes -> L4_ml [label="grade_strategy", style=dashed];
+    L2_classes -> L4_ml [label="module_content", style=dashed];
+}

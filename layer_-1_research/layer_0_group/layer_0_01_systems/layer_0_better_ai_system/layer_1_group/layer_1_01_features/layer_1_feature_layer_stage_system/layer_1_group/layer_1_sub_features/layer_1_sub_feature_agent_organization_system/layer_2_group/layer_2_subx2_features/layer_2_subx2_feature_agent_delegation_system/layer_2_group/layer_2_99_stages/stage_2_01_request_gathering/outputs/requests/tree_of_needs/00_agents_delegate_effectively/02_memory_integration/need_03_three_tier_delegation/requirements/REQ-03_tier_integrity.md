@@ -1,3 +1,8 @@
+---
+resource_id: "efc1e2ad-4a72-4879-8ea8-babd13a38ff3"
+resource_type: "output"
+resource_name: "REQ-03_tier_integrity"
+---
 # Tier Integrity
 
 **Need**: [Three-Tier Delegation](../README.md)

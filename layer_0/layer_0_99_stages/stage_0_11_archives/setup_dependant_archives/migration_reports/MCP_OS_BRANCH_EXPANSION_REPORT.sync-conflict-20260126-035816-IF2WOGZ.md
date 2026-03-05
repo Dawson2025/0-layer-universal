@@ -1,3 +1,8 @@
+---
+resource_id: "9807a7dc-cdb6-4a32-873f-6e093d9ce9cd"
+resource_type: "document"
+resource_name: "MCP_OS_BRANCH_EXPANSION_REPORT.sync-conflict-20260126-035816-IF2WOGZ"
+---
 # MCP OS Branch Expansion Report
 
 Shared MCP root: /home/dawson/dawson-workspace/code/0_layer_universal/0_context/layer_0/0.02_sub_layers/sub_layer_0_05-0.014_setup/0.01_universal_setup_file_tree_0/0.05_operating_systems/_shared/0.06_environments/_shared/0.07_coding_apps/_shared/0.09_ai_apps/_shared/0.10_mcp_servers_and_apis_and_secrets/_shared

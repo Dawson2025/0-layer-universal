@@ -1,3 +1,8 @@
+---
+resource_id: "03b34c7b-b44e-4c1c-8e1c-b33611c46091"
+resource_type: "output"
+resource_name: "US-02_agent_finds_shortest_context_path"
+---
 # US-02: Agent finds shortest context path
 
 **Need**: [Knowledge Graph](../README.md)

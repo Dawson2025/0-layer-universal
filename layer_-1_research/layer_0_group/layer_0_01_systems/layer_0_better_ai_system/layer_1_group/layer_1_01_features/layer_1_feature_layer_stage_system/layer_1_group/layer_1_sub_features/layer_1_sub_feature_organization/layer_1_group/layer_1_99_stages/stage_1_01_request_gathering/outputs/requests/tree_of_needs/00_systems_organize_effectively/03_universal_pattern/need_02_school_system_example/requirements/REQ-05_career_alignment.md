@@ -1,3 +1,8 @@
+---
+resource_id: "03b1e5df-fe2d-40e7-9758-2df56a060d22"
+resource_type: "output"
+resource_name: "REQ-05_career_alignment"
+---
 # Career Alignment
 
 **Need**: [School System Example](../README.md)

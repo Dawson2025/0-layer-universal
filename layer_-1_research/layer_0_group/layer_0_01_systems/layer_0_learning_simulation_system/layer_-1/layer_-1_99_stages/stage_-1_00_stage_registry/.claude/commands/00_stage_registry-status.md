@@ -1,4 +1,9 @@
 ---
+resource_id: "004448c0-3d4d-4e22-a666-3a0348da2f8b"
+resource_type: "document"
+resource_name: "00_stage_registry-status"
+---
+---
 description: Show current status of 00_stage_registry stage
 argument-hint: [--verbose]
 ---

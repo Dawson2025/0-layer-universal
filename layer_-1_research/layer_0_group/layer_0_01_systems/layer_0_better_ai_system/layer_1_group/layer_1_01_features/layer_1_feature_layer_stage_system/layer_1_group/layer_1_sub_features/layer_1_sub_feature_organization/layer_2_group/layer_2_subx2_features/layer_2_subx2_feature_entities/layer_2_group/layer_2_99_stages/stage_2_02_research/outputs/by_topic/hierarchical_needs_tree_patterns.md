@@ -1,3 +1,8 @@
+---
+resource_id: "4b44904f-a65d-42e0-a280-ec6552f6223a"
+resource_type: "output"
+resource_name: "hierarchical_needs_tree_patterns"
+---
 # Research: Hierarchical Needs Tree Patterns from Critical Rules System
 
 **Date**: 2026-01-28

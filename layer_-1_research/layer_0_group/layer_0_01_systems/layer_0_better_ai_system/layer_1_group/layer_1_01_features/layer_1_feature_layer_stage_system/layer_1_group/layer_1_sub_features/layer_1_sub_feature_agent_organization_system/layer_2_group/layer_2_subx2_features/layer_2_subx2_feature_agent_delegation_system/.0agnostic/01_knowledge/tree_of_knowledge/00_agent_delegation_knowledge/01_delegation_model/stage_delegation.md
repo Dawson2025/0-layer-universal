@@ -1,3 +1,8 @@
+---
+resource_id: "5d758ed6-d48b-413c-80e0-750ed96eefc6"
+resource_type: "knowledge"
+resource_name: "stage_delegation"
+---
 # Topic: Stage Delegation
 
 ## Summary

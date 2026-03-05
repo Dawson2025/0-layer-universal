@@ -1,3 +1,9 @@
+---
+resource_id: "8a701e62-b5f3-491f-901c-edf8d922b107"
+resource_type: "readme
+document"
+resource_name: "README"
+---
 ## Memory Handling – Results
 
 Use this folder to store **results and retrospectives** from applying the Memory Handling Protocol:

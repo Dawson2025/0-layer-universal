@@ -1,3 +1,8 @@
+---
+resource_id: "b11661ef-b8ec-4241-b3b9-4cad321e7f34"
+resource_type: "knowledge"
+resource_name: "stage_01_research"
+---
 # Stage 01: Research
 
 ## Purpose

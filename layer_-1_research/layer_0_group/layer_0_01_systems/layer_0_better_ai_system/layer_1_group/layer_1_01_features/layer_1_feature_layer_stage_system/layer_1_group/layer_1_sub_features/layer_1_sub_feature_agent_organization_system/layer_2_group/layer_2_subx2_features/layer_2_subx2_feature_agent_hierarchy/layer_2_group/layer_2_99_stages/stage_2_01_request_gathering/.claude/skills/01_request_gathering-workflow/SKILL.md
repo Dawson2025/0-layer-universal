@@ -1,4 +1,10 @@
 ---
+resource_id: "eac52ca0-e447-4125-9dc7-97d2de9072bd"
+resource_type: "skill
+document"
+resource_name: "SKILL"
+---
+---
 name: 01_request_gathering-workflow
 description: Workflow skill for Collect and clarify requirements. Activated when working on 01_request_gathering tasks.
 version: 1.0.0

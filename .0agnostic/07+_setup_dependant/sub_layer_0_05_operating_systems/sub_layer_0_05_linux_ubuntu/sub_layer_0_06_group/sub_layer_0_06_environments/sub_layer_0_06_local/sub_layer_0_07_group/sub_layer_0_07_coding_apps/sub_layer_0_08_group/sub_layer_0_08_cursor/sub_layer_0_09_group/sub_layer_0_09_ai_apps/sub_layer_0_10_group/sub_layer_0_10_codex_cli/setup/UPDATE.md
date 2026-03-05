@@ -1,3 +1,8 @@
+---
+resource_id: "35aa04d0-c7ae-40f7-a247-58f8981e41ca"
+resource_type: "document"
+resource_name: "UPDATE"
+---
 # Codex CLI - Update Instructions (Linux Ubuntu)
 
 **Last Updated:** 2025-01-26  

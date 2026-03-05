@@ -1,3 +1,8 @@
+---
+resource_id: "25e4eb1d-bc7f-4780-8343-f6607b1b1312"
+resource_type: "rule"
+resource_name: "UNIVERSAL_DOCUMENTATION_SYSTEM"
+---
 # Universal Documentation System
 *Meta-Documentation: How to Organize Documentation for ANY Project*
 

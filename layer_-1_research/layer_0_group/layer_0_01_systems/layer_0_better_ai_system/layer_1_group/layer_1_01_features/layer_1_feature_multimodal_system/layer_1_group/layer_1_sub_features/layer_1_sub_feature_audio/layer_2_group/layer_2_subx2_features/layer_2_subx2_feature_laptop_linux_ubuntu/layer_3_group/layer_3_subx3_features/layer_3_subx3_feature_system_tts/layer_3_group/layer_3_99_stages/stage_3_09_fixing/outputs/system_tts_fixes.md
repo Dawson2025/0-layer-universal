@@ -1,3 +1,8 @@
+---
+resource_id: "ba1c94e4-1f8d-40ea-a825-51ecd5c27a0d"
+resource_type: "output"
+resource_name: "system_tts_fixes"
+---
 # System TTS Fixes Log
 
 **Date**: 2026-02-23

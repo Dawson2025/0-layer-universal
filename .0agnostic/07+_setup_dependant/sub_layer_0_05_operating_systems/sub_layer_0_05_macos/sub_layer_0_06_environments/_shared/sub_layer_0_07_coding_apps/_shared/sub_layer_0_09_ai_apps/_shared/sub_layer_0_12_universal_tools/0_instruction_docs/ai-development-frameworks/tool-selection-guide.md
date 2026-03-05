@@ -1,3 +1,8 @@
+---
+resource_id: "fc70ded2-f457-4b19-8a54-4ef1fd58e1f6"
+resource_type: "document"
+resource_name: "tool-selection-guide"
+---
 # Tool Selection Guide
 *Decision Framework for Choosing AI Coding Assistants*
 

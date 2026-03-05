@@ -1,3 +1,8 @@
+---
+resource_id: "d3385f00-0c2b-4eea-aca1-59422210a6b8"
+resource_type: "knowledge"
+resource_name: "DEVICE_IDS"
+---
 # Syncthing Device IDs
 
 This document contains the device IDs for all three systems in the multi-OS workspace sync.

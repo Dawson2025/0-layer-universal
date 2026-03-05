@@ -1,3 +1,8 @@
+---
+resource_id: "a2bd192e-aa78-4e8c-bd8c-ad2e49a72cf1"
+resource_type: "document"
+resource_name: "IMPLEMENTATION_SUMMARY"
+---
 # Firebase Instance Implementation Summary
 *Following Trickle-Down Documentation Structure and Project Constitution*
 

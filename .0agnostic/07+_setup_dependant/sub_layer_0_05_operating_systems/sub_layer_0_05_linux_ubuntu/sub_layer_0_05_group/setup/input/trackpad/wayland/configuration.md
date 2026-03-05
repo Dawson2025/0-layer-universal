@@ -1,3 +1,8 @@
+---
+resource_id: "9f8d39cd-b1f7-4384-8eb9-357eb3f8dcf9"
+resource_type: "document"
+resource_name: "configuration"
+---
 # Trackpad Configuration for Wayland (GNOME)
 
 **Last Updated**: January 11, 2026

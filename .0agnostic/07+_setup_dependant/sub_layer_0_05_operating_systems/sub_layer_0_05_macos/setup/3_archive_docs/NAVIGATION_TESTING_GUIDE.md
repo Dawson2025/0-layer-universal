@@ -1,3 +1,8 @@
+---
+resource_id: "0c2e1a28-11b4-49cd-898c-cbccfc272edf"
+resource_type: "document"
+resource_name: "NAVIGATION_TESTING_GUIDE"
+---
 # Navigation Testing Guide
 
 ## Overview

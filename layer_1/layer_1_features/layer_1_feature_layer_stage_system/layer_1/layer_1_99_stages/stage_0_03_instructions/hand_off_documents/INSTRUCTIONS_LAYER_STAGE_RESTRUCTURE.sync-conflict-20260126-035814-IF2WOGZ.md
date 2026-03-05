@@ -1,3 +1,8 @@
+---
+resource_id: "1acb88c9-b5d5-4659-96de-8cadb43fcb2d"
+resource_type: "document"
+resource_name: "INSTRUCTIONS_LAYER_STAGE_RESTRUCTURE.sync-conflict-20260126-035814-IF2WOGZ"
+---
 # INSTRUCTIONS: Layer-Stage System Restructure
 
 **Created:** 2026-01-15

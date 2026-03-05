@@ -1,3 +1,9 @@
+---
+resource_id: "ba9fbc56-5a64-42da-a665-607b42d37fcb"
+resource_type: "readme
+document"
+resource_name: "README"
+---
 # MCP Servers (gemini_cli on windows)
 
 This folder contains windows + gemini_cli specific notes for each MCP server we use.

@@ -1,3 +1,8 @@
+---
+resource_id: "650830b6-3cbb-4ccf-9d12-e135c221fca3"
+resource_type: "document"
+resource_name: "UPDATE"
+---
 # Gemini CLI - Update Instructions (Linux Ubuntu)
 
 **Last Updated:** 2025-01-26  

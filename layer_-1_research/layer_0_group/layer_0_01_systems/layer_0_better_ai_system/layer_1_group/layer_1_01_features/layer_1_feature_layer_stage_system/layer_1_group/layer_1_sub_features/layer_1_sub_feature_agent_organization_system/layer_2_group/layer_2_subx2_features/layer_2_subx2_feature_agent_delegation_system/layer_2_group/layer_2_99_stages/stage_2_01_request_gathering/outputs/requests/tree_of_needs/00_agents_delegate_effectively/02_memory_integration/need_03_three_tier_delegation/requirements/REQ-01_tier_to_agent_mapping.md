@@ -1,3 +1,8 @@
+---
+resource_id: "98d25913-8d92-4c35-8d70-f8a33cb59a1f"
+resource_type: "output"
+resource_name: "REQ-01_tier_to_agent_mapping"
+---
 # Tier-to-Agent Mapping
 
 **Need**: [Three-Tier Delegation](../README.md)

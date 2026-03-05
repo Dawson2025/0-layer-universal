@@ -1,3 +1,9 @@
+---
+resource_id: "9e94b0ca-5a4e-47cf-8c5b-d179daf112de"
+resource_type: "readme
+document"
+resource_name: "README"
+---
 # Trigger Pointer System
 
 A sub-feature of the context chain system that automates pointer file synchronization.

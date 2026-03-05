@@ -1,3 +1,8 @@
+---
+resource_id: "2cf592fa-9855-4150-82a7-9e928b233026"
+resource_type: "document"
+resource_name: "ubuntu-login-loop-fix.sync-conflict-20260126-035816-IF2WOGZ"
+---
 # Ubuntu Login Loop Fix Guide
 
 **Created:** 2026-01-17

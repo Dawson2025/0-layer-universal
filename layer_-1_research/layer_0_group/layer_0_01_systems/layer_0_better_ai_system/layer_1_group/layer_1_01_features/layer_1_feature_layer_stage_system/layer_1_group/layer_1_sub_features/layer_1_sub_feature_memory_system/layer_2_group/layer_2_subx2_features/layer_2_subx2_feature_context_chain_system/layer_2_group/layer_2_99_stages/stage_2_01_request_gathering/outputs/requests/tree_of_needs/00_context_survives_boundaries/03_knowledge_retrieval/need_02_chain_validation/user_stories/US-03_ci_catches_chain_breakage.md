@@ -1,3 +1,8 @@
+---
+resource_id: "ddf2668b-44a1-486f-ac10-395eb677aebc"
+resource_type: "output"
+resource_name: "US-03_ci_catches_chain_breakage"
+---
 # US-03: CI/hook catches chain breakage on commit
 
 **Need**: [Chain Validation Enhancement](../README.md)

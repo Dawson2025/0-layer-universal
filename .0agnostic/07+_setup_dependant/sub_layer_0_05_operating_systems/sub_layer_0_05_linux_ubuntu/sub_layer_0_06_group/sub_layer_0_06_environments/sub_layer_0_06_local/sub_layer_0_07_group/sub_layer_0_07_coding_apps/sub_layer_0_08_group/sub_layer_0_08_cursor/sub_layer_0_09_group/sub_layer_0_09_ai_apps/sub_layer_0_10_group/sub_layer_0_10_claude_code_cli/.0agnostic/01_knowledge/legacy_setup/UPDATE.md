@@ -1,3 +1,8 @@
+---
+resource_id: "17a19278-b063-4987-b490-6277b35407d1"
+resource_type: "knowledge"
+resource_name: "UPDATE"
+---
 # Claude Code CLI - Update Instructions (Linux Ubuntu)
 
 **Last Updated:** 2025-01-26  

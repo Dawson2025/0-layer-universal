@@ -1,3 +1,8 @@
+---
+resource_id: "11041ecb-3399-4776-a520-03882781b580"
+resource_type: "rule"
+resource_name: "CURSOR_TERMINAL_EXECUTION"
+---
 # Cursor Terminal Execution
 *Cursor-Specific Terminal Solutions*
 

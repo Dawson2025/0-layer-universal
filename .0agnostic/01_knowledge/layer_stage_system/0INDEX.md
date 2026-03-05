@@ -1,3 +1,9 @@
+---
+resource_id: "e0c64f2c-f43b-4819-8871-eff7a6c1ec2d"
+resource_type: "index
+knowledge"
+resource_name: "0INDEX"
+---
 # Layer-Stage System Knowledge
 
 ## Purpose

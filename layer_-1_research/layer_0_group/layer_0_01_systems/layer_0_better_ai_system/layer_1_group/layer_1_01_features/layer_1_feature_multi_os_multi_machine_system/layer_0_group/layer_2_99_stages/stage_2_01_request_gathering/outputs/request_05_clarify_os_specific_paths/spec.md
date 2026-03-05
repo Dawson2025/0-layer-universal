@@ -1,3 +1,8 @@
+---
+resource_id: "37516164-647f-4849-ad76-7b229bd52950"
+resource_type: "output"
+resource_name: "spec"
+---
 
 # Request 05: Clarify OS-Specific vs. Agnostic Paths
 

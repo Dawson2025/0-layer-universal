@@ -1,4 +1,7 @@
 #!/bin/bash
+# resource_id: "0e2b2ffb-6a0d-466f-bb3a-f18567e6407c"
+# resource_type: "script"
+# resource_name: "lock-manager"
 #
 # lock-manager.sh - File locking for multi-agent sync
 #

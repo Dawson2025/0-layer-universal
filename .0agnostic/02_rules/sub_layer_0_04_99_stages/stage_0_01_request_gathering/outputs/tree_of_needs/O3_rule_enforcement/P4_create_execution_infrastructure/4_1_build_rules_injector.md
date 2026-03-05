@@ -1,3 +1,8 @@
+---
+resource_id: "94d71d2a-c113-4505-b663-b731df0bed5a"
+resource_type: "rule"
+resource_name: "4_1_build_rules_injector"
+---
 # 4.1: Build Critical-Rules-Injector.js
 
 ## Requirement

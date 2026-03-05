@@ -1,3 +1,8 @@
+---
+resource_id: "17c4e27d-5e17-41cd-ae5f-80690d1bc28e"
+resource_type: "output"
+resource_name: "21_core_memory_structure_hierarchy"
+---
 # Core Memory Structure Hierarchy: Biological Buildup from Simple to Complex
 
 ## Purpose

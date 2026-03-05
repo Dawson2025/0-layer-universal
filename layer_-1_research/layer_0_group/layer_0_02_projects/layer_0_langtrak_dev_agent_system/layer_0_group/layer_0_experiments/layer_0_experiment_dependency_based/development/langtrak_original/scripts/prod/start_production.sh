@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
+# resource_id: "b213e73d-ab93-4296-833c-75327f30ad11"
+# resource_type: "script"
+# resource_name: "start_production"
 #
 # Start Language Tracker production server with Gunicorn
 #

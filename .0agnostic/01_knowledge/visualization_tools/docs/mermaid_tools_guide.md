@@ -1,3 +1,8 @@
+---
+resource_id: "7f046a05-0848-404a-9f2e-423d408b7071"
+resource_type: "knowledge"
+resource_name: "mermaid_tools_guide"
+---
 # Mermaid.js Tools Guide
 
 Tools, MCP servers, and skills for creating architecture diagrams with Mermaid.js. Primary use: design stage (04) outputs, but available to any stage that needs visual documentation.

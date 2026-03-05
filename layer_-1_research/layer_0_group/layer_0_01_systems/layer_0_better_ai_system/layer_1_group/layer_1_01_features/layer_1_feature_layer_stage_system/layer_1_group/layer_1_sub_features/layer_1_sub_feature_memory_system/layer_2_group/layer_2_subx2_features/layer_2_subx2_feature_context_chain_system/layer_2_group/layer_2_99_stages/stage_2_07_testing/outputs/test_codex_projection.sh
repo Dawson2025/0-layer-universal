@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
+# resource_id: "44879445-c762-4582-a8d2-9abb74db6ef1"
+# resource_type: "script"
+# resource_name: "test_codex_projection"
 # test_codex_projection.sh — Validate Codex-specific projection into AGENTS.md
 
 set -uo pipefail

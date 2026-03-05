@@ -1,3 +1,8 @@
+---
+resource_id: "09c67ffb-70c4-4769-88b8-dc5f2e3a04af"
+resource_type: "knowledge"
+resource_name: "VPS_RESILIENCE_RECOVERY"
+---
 # VPS Resilience & Recovery System
 
 **Created**: 2026-01-21

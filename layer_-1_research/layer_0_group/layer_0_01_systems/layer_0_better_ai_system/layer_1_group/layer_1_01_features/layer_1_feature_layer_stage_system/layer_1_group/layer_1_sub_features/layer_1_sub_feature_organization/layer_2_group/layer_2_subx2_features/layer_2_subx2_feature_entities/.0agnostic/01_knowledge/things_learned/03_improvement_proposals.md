@@ -1,3 +1,8 @@
+---
+resource_id: "64e713fc-d40f-4dac-bd20-1bd05252356e"
+resource_type: "knowledge"
+resource_name: "03_improvement_proposals"
+---
 # Improvement Proposals for Layer-Stage System
 
 ## Date: 2026-01-25

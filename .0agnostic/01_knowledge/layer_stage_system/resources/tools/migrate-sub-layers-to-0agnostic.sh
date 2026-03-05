@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
+# resource_id: "c57e78f3-136a-4093-9b84-62fca6755396"
+# resource_type: "script"
+# resource_name: "migrate-sub-layers-to-0agnostic"
 # migrate-sub-layers-to-0agnostic.sh — Migrate sub_layers content into numbered .0agnostic/ structure
 # Usage: bash tools/migrate-sub-layers-to-0agnostic.sh <entity-path> [--dry-run]
 #

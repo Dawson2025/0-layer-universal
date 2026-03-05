@@ -1,3 +1,8 @@
+---
+resource_id: "6430c288-c3cd-463f-a199-c258e7358ed3"
+resource_type: "document"
+resource_name: "CLAUDE_CODE_LSP_SETUP"
+---
 # Claude Code LSP Support (Video Notes)
 
 Source: https://www.youtube.com/watch?v=lffYEu5MhSQ

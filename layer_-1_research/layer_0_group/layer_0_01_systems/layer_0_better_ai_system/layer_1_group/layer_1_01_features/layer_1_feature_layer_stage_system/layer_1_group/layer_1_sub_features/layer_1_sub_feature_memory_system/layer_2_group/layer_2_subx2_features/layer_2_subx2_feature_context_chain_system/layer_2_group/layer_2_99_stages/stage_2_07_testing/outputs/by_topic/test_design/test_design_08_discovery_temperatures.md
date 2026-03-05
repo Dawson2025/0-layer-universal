@@ -1,3 +1,8 @@
+---
+resource_id: "da09d4fe-8004-41de-81d4-cf7d058210a5"
+resource_type: "output"
+resource_name: "test_design_08_discovery_temperatures"
+---
 # Test Design: 08 Discovery Temperature Model
 
 **Validates**: `stage_2_04_design/outputs/by_topic/08_discovery_temperature_model.md`

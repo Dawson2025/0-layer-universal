@@ -1,3 +1,8 @@
+---
+resource_id: "d86c6a1c-cd0a-449a-9ed4-41ee7bfc8d3a"
+resource_type: "document"
+resource_name: "TEST_ENVIRONMENTS_STATUS"
+---
 # Test Environments Status
 **Date**: 2025-10-23
 **Status**: Development environment fully operational, Staging/Production awaiting credentials

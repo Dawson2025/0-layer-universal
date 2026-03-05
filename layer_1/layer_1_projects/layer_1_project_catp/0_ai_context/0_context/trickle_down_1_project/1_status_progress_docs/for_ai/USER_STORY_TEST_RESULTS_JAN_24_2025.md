@@ -1,3 +1,8 @@
+---
+resource_id: "6062d643-9ac8-42d8-b0dd-e3e133936718"
+resource_type: "document"
+resource_name: "USER_STORY_TEST_RESULTS_JAN_24_2025"
+---
 # User Story Test Results - January 24, 2025
 **Comprehensive Testing of All 71 User Stories Across 18 Categories**
 

@@ -1,3 +1,8 @@
+---
+resource_id: "26a3a927-250a-4c4c-bf23-cb617bb4375d"
+resource_type: "document"
+resource_name: "REGISTRY"
+---
 # Context Avenue Web Registry — Claude in Chrome
 
 **Entity**: Claude in Chrome (MCP Server Feature)

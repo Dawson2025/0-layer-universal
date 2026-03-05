@@ -1,3 +1,9 @@
+---
+resource_id: "c137771c-4441-4f5f-b557-92b19b9ff8a1"
+resource_type: "agnostic
+document"
+resource_name: "0AGNOSTIC"
+---
 # dynamic_memory — Stage 02: research
 
 ## Identity

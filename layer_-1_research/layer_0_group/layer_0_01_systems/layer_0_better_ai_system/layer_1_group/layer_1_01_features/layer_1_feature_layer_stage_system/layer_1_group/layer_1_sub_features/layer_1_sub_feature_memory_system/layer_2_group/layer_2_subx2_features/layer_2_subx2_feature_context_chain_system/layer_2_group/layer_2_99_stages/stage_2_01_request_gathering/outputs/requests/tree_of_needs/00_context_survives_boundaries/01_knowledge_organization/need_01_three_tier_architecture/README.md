@@ -1,3 +1,9 @@
+---
+resource_id: "d493d706-1cfd-4000-b52d-0d61c66120dc"
+resource_type: "readme
+output"
+resource_name: "README"
+---
 # Need: Three-Tier Architecture
 
 **Branch**: [01_knowledge_organization](../)

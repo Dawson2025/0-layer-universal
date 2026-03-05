@@ -1,3 +1,9 @@
+---
+resource_id: "f94e8acd-4b4d-4783-bdea-18506b230cf2"
+resource_type: "readme
+output"
+resource_name: "README"
+---
 # User Stories — Nested Systems
 
 ## Actors

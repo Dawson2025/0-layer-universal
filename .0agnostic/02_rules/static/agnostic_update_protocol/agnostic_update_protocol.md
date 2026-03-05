@@ -1,4 +1,7 @@
 ---
+resource_id: "aa768b5f-9657-4fd1-81ea-3862cc7a052e"
+resource_type: "rule"
+resource_name: "agnostic_update_protocol"
 promote: hot
 hot_summary: "When modifying .0agnostic/ files, also update 0AGNOSTIC.md and run agnostic-sync.sh. Full protocol: .0agnostic/02_rules/static/agnostic_update_protocol.md"
 hot_trigger: "Modifying any file in .0agnostic/"

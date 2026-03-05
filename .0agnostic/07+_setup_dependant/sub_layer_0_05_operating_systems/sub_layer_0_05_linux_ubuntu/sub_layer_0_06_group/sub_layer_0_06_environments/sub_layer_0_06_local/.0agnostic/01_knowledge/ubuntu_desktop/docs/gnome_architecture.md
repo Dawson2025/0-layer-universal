@@ -1,3 +1,8 @@
+---
+resource_id: "afcaad7e-60f8-46b2-87a0-7682c5ad1161"
+resource_type: "knowledge"
+resource_name: "gnome_architecture"
+---
 # Ubuntu Desktop Architecture (GNOME-based)
 
 ## Overview

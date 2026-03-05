@@ -1,3 +1,8 @@
+---
+resource_id: "0cc815b8-baea-45b5-8b9a-b03991cc1a48"
+resource_type: "output"
+resource_name: "agent_hierarchy_structure_experiment"
+---
 # Agent Hierarchy Structure Experiment
 
 **Status**: DESIGN — Experiment framework defined, trials not yet started

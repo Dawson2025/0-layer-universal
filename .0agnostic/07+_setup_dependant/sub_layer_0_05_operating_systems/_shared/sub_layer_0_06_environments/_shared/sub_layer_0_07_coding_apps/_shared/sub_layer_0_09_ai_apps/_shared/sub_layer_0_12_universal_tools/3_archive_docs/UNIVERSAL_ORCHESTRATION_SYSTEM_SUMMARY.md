@@ -1,3 +1,8 @@
+---
+resource_id: "efb77aef-9c60-453b-8096-41023206c3bf"
+resource_type: "document"
+resource_name: "UNIVERSAL_ORCHESTRATION_SYSTEM_SUMMARY"
+---
 # Universal Environments & Integrations System
 
 ## 🌍 Overview

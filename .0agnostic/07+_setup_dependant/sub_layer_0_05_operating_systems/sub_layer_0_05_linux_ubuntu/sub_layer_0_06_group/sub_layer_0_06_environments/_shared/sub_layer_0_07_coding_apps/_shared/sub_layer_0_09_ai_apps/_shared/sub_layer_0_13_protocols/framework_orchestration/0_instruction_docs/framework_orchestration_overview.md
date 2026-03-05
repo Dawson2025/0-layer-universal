@@ -1,3 +1,8 @@
+---
+resource_id: "a3bf84b9-f99d-4639-a0c1-dae2c4943029"
+resource_type: "document"
+resource_name: "framework_orchestration_overview"
+---
 # Framework Orchestration Overview
 
 ## Applicability

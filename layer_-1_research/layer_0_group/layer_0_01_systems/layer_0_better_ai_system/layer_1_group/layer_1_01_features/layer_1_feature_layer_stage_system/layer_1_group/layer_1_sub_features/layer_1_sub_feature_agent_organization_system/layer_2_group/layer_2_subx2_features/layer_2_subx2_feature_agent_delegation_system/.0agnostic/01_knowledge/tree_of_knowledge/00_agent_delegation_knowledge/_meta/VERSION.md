@@ -1,3 +1,8 @@
+---
+resource_id: "15b624f7-ee03-4bd6-8ce8-72b032bfb36c"
+resource_type: "knowledge"
+resource_name: "VERSION"
+---
 # Tree of Knowledge: Version History
 
 ## v1.0.0 — 2026-02-19

@@ -1,3 +1,8 @@
+---
+resource_id: "24d1e3a1-0a1b-4afa-95b7-7080c0dc91ca"
+resource_type: "rule"
+resource_name: "OUTPUT_FIRST_PROTOCOL"
+---
 # Output-First Protocol
 
 **Layer**: layer_0 (Universal)

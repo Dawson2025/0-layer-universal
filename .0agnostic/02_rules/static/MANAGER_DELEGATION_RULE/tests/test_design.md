@@ -1,3 +1,8 @@
+---
+resource_id: "aaec2f8d-8b1b-45ce-938d-98f90200d7e2"
+resource_type: "rule"
+resource_name: "test_design"
+---
 # Test Design: Manager Delegation Rule
 
 **Rule**: `../MANAGER_DELEGATION_RULE.md`

@@ -1,3 +1,8 @@
+---
+resource_id: "269df2b2-1fb9-4baa-9f9a-49768603259a"
+resource_type: "knowledge"
+resource_name: "jsonld_design_vs_runtime"
+---
 # Why AALang Uses JSON-LD (Design-Time vs Run-Time)
 
 ## The Question

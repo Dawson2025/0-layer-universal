@@ -1,4 +1,10 @@
 ---
+resource_id: "7c4d8d5a-8f0d-43f8-8cd8-0e2e9e5c5b62"
+resource_type: "skill
+document"
+resource_name: "SKILL"
+---
+---
 name: 07_testing-workflow
 description: Workflow skill for Quality assurance and validation. Activated when working on 07_testing tasks.
 version: 1.0.0

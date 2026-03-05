@@ -1,3 +1,8 @@
+---
+resource_id: "14c00a6b-990f-4700-82ce-fa2365285a88"
+resource_type: "document"
+resource_name: "l5_templates_agent"
+---
 # L5 Templates Agent
 
 **Role**: Template Layer Specialist

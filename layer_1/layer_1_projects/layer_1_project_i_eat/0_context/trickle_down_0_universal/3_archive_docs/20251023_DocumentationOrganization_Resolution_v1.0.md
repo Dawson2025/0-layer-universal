@@ -1,3 +1,8 @@
+---
+resource_id: "0ad02ad3-dfbf-4156-951c-c584715f1184"
+resource_type: "document"
+resource_name: "20251023_DocumentationOrganization_Resolution_v1.0"
+---
 # Documentation Organization Resolution
 *Date: 2025-01-23*
 

@@ -1,3 +1,8 @@
+---
+resource_id: "7b9e144f-7a80-4664-a802-8bea61e6a3fa"
+resource_type: "rule"
+resource_name: "CROSS_OS_COMPATIBILITY_RULES"
+---
 # Cross-OS Compatibility Rules
 
 **Layer**: 0 (Universal)

@@ -1,3 +1,8 @@
+---
+resource_id: "8da4050f-8535-4758-9b9a-75eb5b136a9d"
+resource_type: "output"
+resource_name: "34_comparison_agent_delegation_patterns"
+---
 # Comparison: Agent Delegation Patterns -- User's System vs Multi-Agent Frameworks
 
 ## Purpose

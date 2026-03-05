@@ -1,3 +1,8 @@
+---
+resource_id: "403d5573-8547-409e-bf84-854e99c10fee"
+resource_type: "output"
+resource_name: "US-01_developer_distills_research"
+---
 # US-01: Developer distills research at stage boundary
 
 **Need**: [Consolidation Process](../README.md)

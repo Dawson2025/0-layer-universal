@@ -1,3 +1,8 @@
+---
+resource_id: "151a0189-cd3f-494e-9a6a-13126ec972fd"
+resource_type: "rule"
+resource_name: "CURSOR_AGENT_GUIDE"
+---
 # Cursor Agent Guide
 *All Cursor-Specific Solutions and Workarounds*
 

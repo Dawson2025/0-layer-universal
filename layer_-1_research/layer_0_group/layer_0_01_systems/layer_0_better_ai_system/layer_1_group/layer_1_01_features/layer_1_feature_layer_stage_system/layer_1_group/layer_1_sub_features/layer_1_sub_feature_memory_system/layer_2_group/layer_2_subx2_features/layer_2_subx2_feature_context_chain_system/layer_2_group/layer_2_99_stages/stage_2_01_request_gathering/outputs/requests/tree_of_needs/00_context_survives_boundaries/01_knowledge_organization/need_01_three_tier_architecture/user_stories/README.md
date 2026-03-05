@@ -1,3 +1,9 @@
+---
+resource_id: "36177f83-a610-4cd3-86cf-e5b8da206ba4"
+resource_type: "readme
+output"
+resource_name: "README"
+---
 # Three-Tier Architecture -- User Stories Index
 
 **Need**: [Three-Tier Architecture](../README.md)

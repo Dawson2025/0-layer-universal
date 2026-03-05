@@ -1,3 +1,9 @@
+---
+resource_id: "5f1c2e26-7610-4aad-b067-41e536ce358d"
+resource_type: "readme
+document"
+resource_name: "README"
+---
 # Playwright MCP - Browser Automation for AI Agents
 
 ## Overview

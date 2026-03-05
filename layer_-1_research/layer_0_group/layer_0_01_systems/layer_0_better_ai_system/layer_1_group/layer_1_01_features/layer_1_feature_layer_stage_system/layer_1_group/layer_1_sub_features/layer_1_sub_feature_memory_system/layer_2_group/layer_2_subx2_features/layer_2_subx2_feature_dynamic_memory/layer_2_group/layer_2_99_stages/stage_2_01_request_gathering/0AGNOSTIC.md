@@ -1,3 +1,9 @@
+---
+resource_id: "5fe0cc64-c0f1-4ed0-b4de-88483f2790f4"
+resource_type: "agnostic
+document"
+resource_name: "0AGNOSTIC"
+---
 # dynamic_memory — Stage 01: request_gathering
 
 ## Identity

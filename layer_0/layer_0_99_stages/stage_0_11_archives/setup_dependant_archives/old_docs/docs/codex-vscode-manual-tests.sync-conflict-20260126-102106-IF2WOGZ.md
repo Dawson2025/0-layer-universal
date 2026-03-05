@@ -1,3 +1,8 @@
+---
+resource_id: "99c5ed0c-e65f-476b-b027-452b09f43007"
+resource_type: "document"
+resource_name: "codex-vscode-manual-tests.sync-conflict-20260126-102106-IF2WOGZ"
+---
 # Codex VS Code Manual Tasks
 
 Use this walkthrough to repeat the manual steps we executed while finishing the Codex + VS Code setup on Windows.

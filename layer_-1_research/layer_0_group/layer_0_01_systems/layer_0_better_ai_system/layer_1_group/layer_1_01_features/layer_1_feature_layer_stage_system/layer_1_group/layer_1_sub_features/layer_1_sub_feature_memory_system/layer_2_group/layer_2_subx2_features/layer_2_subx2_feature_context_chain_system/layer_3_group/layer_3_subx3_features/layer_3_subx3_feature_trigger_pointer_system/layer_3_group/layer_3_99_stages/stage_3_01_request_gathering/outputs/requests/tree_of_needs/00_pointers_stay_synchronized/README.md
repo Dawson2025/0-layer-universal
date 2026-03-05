@@ -1,3 +1,9 @@
+---
+resource_id: "2c3c89f6-6378-430a-aa2d-6c3278e00db7"
+resource_type: "readme
+output"
+resource_name: "README"
+---
 # Root Need: Pointers Stay Synchronized
 
 **The fundamental goal all pointer system requirements derive from.**

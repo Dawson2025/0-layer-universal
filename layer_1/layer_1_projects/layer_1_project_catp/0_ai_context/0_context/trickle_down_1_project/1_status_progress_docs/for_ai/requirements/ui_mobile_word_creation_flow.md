@@ -1,3 +1,8 @@
+---
+resource_id: "d30b6e12-adfd-417c-8726-a97aedf980b0"
+resource_type: "document"
+resource_name: "ui_mobile_word_creation_flow"
+---
 # Mobile Word Creation Flow
 
 - **Source Prompt**: `docs/prompts.txt/UI/ui_flow.md`

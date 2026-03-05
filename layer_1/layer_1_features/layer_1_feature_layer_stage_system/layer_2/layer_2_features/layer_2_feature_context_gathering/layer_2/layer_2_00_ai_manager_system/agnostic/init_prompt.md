@@ -1,3 +1,8 @@
+---
+resource_id: "45331d8a-7f29-495a-aa65-0159653e855f"
+resource_type: "document"
+resource_name: "init_prompt"
+---
 # Context Gathering Feature - Init Prompt
 
 ## Identity

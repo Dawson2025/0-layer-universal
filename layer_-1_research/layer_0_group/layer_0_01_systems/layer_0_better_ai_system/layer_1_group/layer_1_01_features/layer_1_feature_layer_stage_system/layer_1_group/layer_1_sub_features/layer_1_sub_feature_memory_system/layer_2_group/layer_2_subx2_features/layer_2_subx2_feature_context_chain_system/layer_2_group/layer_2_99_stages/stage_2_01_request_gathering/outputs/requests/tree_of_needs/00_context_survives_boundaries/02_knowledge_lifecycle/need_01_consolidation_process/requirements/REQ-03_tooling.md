@@ -1,3 +1,8 @@
+---
+resource_id: "840503e7-8b13-418a-a9d8-718669f6e10b"
+resource_type: "output"
+resource_name: "REQ-03_tooling"
+---
 # Tooling
 
 **Need**: [Consolidation Process](../README.md)

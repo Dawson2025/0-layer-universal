@@ -1,3 +1,8 @@
+---
+resource_id: "5c480dc7-3485-44c2-98b0-ec2cebd3f099"
+resource_type: "output"
+resource_name: "PORTING_STRATEGY"
+---
 # Codex CLI — Porting Strategy
 
 **Date**: 2026-02-27

@@ -1,3 +1,8 @@
+---
+resource_id: "3c31bd35-b8a8-4d53-90a3-bd6a80fc6aed"
+resource_type: "output"
+resource_name: "audio_fixes"
+---
 # Audio Fixes Log (Parent Overview)
 
 **Date**: 2026-02-23

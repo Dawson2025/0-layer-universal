@@ -1,3 +1,8 @@
+---
+resource_id: "c764c5ba-0bfe-441e-a458-19406e7c12c5"
+resource_type: "output"
+resource_name: "REQ-01_stable_entity_structure"
+---
 # Stable Entity Structure
 
 **Need**: [Production Version](../README.md)

@@ -1,3 +1,8 @@
+---
+resource_id: "97156db8-e9a4-4ed1-ac37-9c037c8906b4"
+resource_type: "knowledge"
+resource_name: "LAYERS_EXPLAINED"
+---
 # Layers Explained
 
 ## What is a Layer?

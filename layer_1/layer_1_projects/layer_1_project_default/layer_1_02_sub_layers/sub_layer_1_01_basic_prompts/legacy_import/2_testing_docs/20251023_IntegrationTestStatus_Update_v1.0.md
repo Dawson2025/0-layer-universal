@@ -1,3 +1,8 @@
+---
+resource_id: "0c652156-c5c7-4046-b4da-0b538d8f70cd"
+resource_type: "document"
+resource_name: "20251023_IntegrationTestStatus_Update_v1.0"
+---
 # Integration Test Status Update
 *Date: 2025-10-23*
 *Update Type: Bug Fixes and Test Improvements*

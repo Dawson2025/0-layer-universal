@@ -1,4 +1,9 @@
 ---
+resource_id: "80ab418e-dcb4-4ee7-b433-f59bdf40b8a7"
+resource_type: "knowledge"
+resource_name: "02_research-agent"
+---
+---
 name: 02_research-agent
 description: Specialized agent for Explore problem space, gather information. Use when working on 02_research tasks.
 tools: Read, Glob, Grep, WebFetch, WebSearch, Task

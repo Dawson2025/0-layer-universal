@@ -1,3 +1,8 @@
+---
+resource_id: "47444895-01e1-4c0f-a101-62804800ef8a"
+resource_type: "document"
+resource_name: "SETUP_FOLDER_INTEGRATION_RESEARCH.sync-conflict-20260126-102106-IF2WOGZ"
+---
 # Setup Folder Integration Research
 
 This report summarizes local context instructions and external guidance related to what should live in `setup/` folders across the hierarchy.

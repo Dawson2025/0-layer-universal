@@ -1,3 +1,8 @@
+---
+resource_id: "160be65f-2171-4ac7-a729-9258b525e26f"
+resource_type: "output"
+resource_name: "00_overview"
+---
 # Context Propagation Through 0AGNOSTIC System
 
 ## Overview

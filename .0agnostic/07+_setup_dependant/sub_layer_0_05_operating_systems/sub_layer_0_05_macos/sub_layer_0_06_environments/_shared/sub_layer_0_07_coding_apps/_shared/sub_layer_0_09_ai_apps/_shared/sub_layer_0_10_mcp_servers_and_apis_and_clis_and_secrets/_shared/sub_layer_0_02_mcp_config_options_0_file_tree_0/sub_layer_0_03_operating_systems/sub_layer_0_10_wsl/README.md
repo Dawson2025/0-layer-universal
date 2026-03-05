@@ -1,3 +1,9 @@
+---
+resource_id: "d2a44413-24bd-4d5f-97bf-3a12312cc1e9"
+resource_type: "readme
+document"
+resource_name: "README"
+---
 # WSL (Windows Subsystem for Linux) MCP Notes
 
 ## Scope

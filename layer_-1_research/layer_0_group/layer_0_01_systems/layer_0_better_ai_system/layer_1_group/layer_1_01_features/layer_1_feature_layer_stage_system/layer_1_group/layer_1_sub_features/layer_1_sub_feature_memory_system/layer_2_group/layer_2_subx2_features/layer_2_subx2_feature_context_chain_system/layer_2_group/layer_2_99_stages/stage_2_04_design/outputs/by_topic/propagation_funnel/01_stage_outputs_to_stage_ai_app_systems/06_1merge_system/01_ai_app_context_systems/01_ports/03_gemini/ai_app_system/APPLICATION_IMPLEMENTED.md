@@ -1,3 +1,8 @@
+---
+resource_id: "6bb9840e-a26b-4603-ad8a-758121cf7d1e"
+resource_type: "output"
+resource_name: "APPLICATION_IMPLEMENTED"
+---
 # Gemini — Application-Implemented Features
 
 **Date**: 2026-02-27

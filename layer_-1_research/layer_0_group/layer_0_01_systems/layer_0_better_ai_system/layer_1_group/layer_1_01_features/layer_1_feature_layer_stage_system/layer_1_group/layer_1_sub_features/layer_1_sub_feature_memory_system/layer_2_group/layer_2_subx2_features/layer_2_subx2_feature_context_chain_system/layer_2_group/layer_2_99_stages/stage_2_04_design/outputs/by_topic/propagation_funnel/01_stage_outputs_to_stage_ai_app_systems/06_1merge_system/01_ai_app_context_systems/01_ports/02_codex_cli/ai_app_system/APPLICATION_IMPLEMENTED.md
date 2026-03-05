@@ -1,3 +1,8 @@
+---
+resource_id: "f21f020e-130a-4723-89c5-e3d7d7b51ced"
+resource_type: "output"
+resource_name: "APPLICATION_IMPLEMENTED"
+---
 # Codex CLI — Application-Implemented Features
 
 **Date**: 2026-02-27

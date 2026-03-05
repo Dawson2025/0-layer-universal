@@ -1,3 +1,8 @@
+---
+resource_id: "088ed934-bb00-47bb-a7c9-7c291975125c"
+resource_type: "output"
+resource_name: "REQ-04_parallel_agents"
+---
 # Parallel Agents
 
 **Need**: [Spawning Patterns](../README.md)

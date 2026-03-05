@@ -1,3 +1,8 @@
+---
+resource_id: "9cd506d9-8b73-4aab-b8c5-227be3dc4d38"
+resource_type: "output"
+resource_name: "NATIVE_FEATURES"
+---
 # Cursor IDE — Native Features
 
 **Date**: 2026-02-27

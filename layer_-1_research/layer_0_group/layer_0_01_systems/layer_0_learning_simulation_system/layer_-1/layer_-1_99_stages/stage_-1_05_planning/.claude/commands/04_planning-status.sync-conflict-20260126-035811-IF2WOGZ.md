@@ -1,4 +1,7 @@
 ---
+resource_id: "99ca13bd-0f10-46af-bd78-a8d684ff8dde"
+resource_type: "document"
+resource_name: "04_planning-status.sync-conflict-20260126-035811-IF2WOGZ"
 description: Show current status of 04_planning stage
 argument-hint: [--verbose]
 ---

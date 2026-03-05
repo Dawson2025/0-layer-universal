@@ -1,3 +1,8 @@
+---
+resource_id: "33406187-e3ab-4912-b01f-ea3e32121c0e"
+resource_type: "document"
+resource_name: "AI_MANAGER_INSTRUCTIONS_TEMPLATE"
+---
 # AI Manager: Stage X.XX - [Stage Name]
 
 ## Your Role

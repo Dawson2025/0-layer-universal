@@ -1,3 +1,8 @@
+---
+resource_id: "eb35160d-e84a-4076-a0d4-341bb285356b"
+resource_type: "document"
+resource_name: "proposal_cleanup_and_staged_proposals_v1"
+---
 # Proposal: Cleanup & Staged Proposals System v1
 
 **Status**: Implemented

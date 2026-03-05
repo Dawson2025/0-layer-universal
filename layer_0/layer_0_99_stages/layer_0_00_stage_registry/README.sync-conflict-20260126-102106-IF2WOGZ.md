@@ -1,3 +1,8 @@
+---
+resource_id: "b9c0919d-02f2-48d1-adcd-c870962d51e0"
+resource_type: "document"
+resource_name: "README.sync-conflict-20260126-102106-IF2WOGZ"
+---
 # Stage Registry (Stable IDs)
 
 **Purpose**: Make stage references stable even when numeric ordering changes.

@@ -1,3 +1,8 @@
+---
+resource_id: "9ab86f5c-885f-4ed7-b655-1de25bd6853d"
+resource_type: "document"
+resource_name: "context_management_workflow"
+---
 # Context Management Workflow
 
 This document describes the workflow for managing, caching, and optimizing context retrieved from the Context7 MCP server.

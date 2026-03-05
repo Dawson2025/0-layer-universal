@@ -1,3 +1,8 @@
+---
+resource_id: "0d7c25e3-dcce-43f4-84f2-f3206f58a82e"
+resource_type: "document"
+resource_name: "universal-platform-version-control-guide"
+---
 # Universal Platform Version Control Guide
 *Core Principles and Practices for All Platforms*
 

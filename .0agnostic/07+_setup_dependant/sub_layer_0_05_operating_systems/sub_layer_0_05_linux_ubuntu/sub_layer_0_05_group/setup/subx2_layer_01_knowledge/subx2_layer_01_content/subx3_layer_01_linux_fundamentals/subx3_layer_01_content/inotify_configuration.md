@@ -1,3 +1,8 @@
+---
+resource_id: "f0cd1732-0d6d-47d0-bbf3-02540b1a206e"
+resource_type: "document"
+resource_name: "inotify_configuration"
+---
 # Inotify Configuration
 
 This document explains how to increase the `inotify` limits on a Linux system. These limits control the maximum number of files your user can watch for changes at once.

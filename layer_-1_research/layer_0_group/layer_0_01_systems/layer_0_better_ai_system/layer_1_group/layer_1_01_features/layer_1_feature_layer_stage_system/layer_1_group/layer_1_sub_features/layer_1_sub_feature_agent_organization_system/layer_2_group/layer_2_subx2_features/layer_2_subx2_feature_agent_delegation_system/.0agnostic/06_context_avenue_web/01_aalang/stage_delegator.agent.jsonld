@@ -1,4 +1,5 @@
 {
+  "file_id": "d82ecb52-faec-4b41-bac4-a33df4781648",
   "@context": {
     "@vocab": "https://layer-stage.dev/agent/",
     "gab": "https://aalang.dev/gab/",
@@ -24,9 +25,19 @@
         "Read stage report before re-delegating to check status"
       ],
       "delegationModel": {
-        "whatManagerProvides": ["Task description (what to do)", "Directory pointer (where to work)"],
-        "whatAgentDiscovers": ["Methodology (from own 0AGNOSTIC.md)", "Domain context (from parent .0agnostic/01_knowledge/)", "Success criteria (from own 0AGNOSTIC.md)"],
-        "whatAgentReports": ["Stage report (outputs/reports/stage_report.md)", "Updated Current Status in 0AGNOSTIC.md"]
+        "whatManagerProvides": [
+          "Task description (what to do)",
+          "Directory pointer (where to work)"
+        ],
+        "whatAgentDiscovers": [
+          "Methodology (from own 0AGNOSTIC.md)",
+          "Domain context (from parent .0agnostic/01_knowledge/)",
+          "Success criteria (from own 0AGNOSTIC.md)"
+        ],
+        "whatAgentReports": [
+          "Stage report (outputs/reports/stage_report.md)",
+          "Updated Current Status in 0AGNOSTIC.md"
+        ]
       }
     }
   ]

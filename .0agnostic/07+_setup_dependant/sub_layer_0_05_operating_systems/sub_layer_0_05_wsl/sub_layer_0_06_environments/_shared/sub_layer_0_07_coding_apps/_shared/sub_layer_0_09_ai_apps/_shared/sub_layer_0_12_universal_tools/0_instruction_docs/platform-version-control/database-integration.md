@@ -1,3 +1,8 @@
+---
+resource_id: "6991cf1d-9f95-4c82-a76d-ee6b425eefed"
+resource_type: "document"
+resource_name: "database-integration"
+---
 # Database Integration in Platform Version Control
 *How Databases Fit into the Broader Platform Version Control System*
 

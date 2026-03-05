@@ -1,3 +1,8 @@
+---
+resource_id: "921c97ab-6758-4f3d-95b1-201fbc05d592"
+resource_type: "document"
+resource_name: "official_claude_code_loading"
+---
 # Official Claude Code Context Loading
 
 **Purpose**: Document how Claude Code officially loads context, based on official Anthropic documentation.

@@ -1,3 +1,8 @@
+---
+resource_id: "ada027fb-3c69-4ccf-bb4b-12f90ca6e04e"
+resource_type: "knowledge"
+resource_name: "knowledge_system_0INDEX"
+---
 # AI System Knowledge Base
 
 ## Purpose

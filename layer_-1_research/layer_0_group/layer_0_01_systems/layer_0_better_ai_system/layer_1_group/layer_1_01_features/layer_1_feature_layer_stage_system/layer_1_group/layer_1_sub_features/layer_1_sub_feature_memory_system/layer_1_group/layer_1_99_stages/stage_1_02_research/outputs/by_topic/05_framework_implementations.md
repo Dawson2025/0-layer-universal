@@ -1,3 +1,8 @@
+---
+resource_id: "bea93f0a-f564-4e25-9e35-75fb6f7aa89a"
+resource_type: "output"
+resource_name: "05_framework_implementations"
+---
 # Memory Implementations in AI Agent Frameworks
 
 ## Overview

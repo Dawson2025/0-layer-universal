@@ -1,3 +1,9 @@
+---
+resource_id: "bb49b6e9-5f78-455c-9ab8-08e963faa1fc"
+resource_type: "readme
+document"
+resource_name: "README"
+---
 # playwright-mcp (codex_cli on windows)
 
 ## Canonical docs

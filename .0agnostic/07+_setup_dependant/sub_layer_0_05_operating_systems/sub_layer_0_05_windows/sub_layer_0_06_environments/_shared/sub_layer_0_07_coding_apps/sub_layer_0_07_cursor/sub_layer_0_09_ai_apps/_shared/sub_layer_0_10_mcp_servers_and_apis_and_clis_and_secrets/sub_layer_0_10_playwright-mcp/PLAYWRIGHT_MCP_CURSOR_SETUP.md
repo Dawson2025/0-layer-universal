@@ -1,3 +1,8 @@
+---
+resource_id: "fc6ac745-95dc-4416-8828-8edca8923f10"
+resource_type: "document"
+resource_name: "PLAYWRIGHT_MCP_CURSOR_SETUP"
+---
 # Playwright MCP Server Setup for Cursor IDE
 
 **Location**: Universal Tools → MCP Tools  

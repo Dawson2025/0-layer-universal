@@ -1,3 +1,8 @@
+---
+resource_id: "5e472a46-46c4-4bf9-92d7-6b9e8add7d87"
+resource_type: "document"
+resource_name: "PROGRESS_fix_linux_login_loop_via_cloud_ssh"
+---
 # Progress: Fix Linux Login Loop via Cloud Server SSH
 
 **Layer**: 0 (Universal)

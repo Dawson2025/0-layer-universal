@@ -1,3 +1,8 @@
+---
+resource_id: "25e7f9b6-23bc-4ae7-9493-92c622700db8"
+resource_type: "document"
+resource_name: "agent-file-template"
+---
 # [PROJECT NAME] Development Guidelines
 
 Auto-generated from all feature plans. Last updated: [DATE]

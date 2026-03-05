@@ -1,3 +1,8 @@
+---
+resource_id: "c75cb968-64ee-4c21-b51f-f21245cb6f52"
+resource_type: "output"
+resource_name: "REQ_docx_ai_integration"
+---
 # Request: DOCX AI Integration
 
 ## Date

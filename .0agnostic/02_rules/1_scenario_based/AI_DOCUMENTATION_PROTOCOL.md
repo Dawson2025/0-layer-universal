@@ -1,3 +1,8 @@
+---
+resource_id: "ad1c92a1-9401-40c9-9533-9d56276be546"
+resource_type: "rule"
+resource_name: "AI_DOCUMENTATION_PROTOCOL"
+---
 # AI Documentation Protocol
 
 ## Rule

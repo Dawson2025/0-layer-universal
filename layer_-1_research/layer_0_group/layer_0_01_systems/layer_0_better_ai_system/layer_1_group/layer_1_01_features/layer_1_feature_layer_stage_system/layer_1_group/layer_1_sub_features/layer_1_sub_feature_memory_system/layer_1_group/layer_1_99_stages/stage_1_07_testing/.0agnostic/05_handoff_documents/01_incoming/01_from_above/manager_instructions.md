@@ -1,3 +1,8 @@
+---
+resource_id: "2a3dea8d-88e8-4f9f-a9a2-86bd54522e33"
+resource_type: "handoff"
+resource_name: "manager_instructions"
+---
 # Manager Instructions for stage_1_07_testing
 
 ## From

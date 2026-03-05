@@ -1,3 +1,9 @@
+---
+resource_id: "ad64db32-9fdc-4ffa-b0cb-a08a411ae616"
+resource_type: "readme
+document"
+resource_name: "README"
+---
 # Universal Layer Template (0.x)
 
 Use this when defining the universal layer for any ecosystem.

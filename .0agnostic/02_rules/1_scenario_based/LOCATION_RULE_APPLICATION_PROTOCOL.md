@@ -1,3 +1,8 @@
+---
+resource_id: "88e3a56f-b65d-4185-854d-15e5983f0ca8"
+resource_type: "rule"
+resource_name: "LOCATION_RULE_APPLICATION_PROTOCOL"
+---
 # Location Rule Application Protocol
 
 **Layer**: layer_0 (Universal)

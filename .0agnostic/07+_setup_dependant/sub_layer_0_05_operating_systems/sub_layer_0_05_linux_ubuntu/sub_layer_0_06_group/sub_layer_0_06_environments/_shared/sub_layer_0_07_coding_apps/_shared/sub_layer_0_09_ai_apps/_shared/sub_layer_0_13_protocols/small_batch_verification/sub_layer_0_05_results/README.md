@@ -1,3 +1,9 @@
+---
+resource_id: "a0765650-5a1b-46c0-8e84-c8369ab896c0"
+resource_type: "readme
+document"
+resource_name: "README"
+---
 ## Small Batch Verification – Results
 
 Use this folder to store **results and retrospectives** from running Small Batch Verification workflows, such as:

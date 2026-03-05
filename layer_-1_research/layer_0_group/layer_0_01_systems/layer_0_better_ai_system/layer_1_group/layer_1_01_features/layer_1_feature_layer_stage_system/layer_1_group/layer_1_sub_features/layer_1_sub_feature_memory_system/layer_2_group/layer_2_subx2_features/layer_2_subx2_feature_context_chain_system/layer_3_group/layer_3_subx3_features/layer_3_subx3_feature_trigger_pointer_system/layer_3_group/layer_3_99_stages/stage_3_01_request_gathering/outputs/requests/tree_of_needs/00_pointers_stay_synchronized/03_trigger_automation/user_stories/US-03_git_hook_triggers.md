@@ -1,3 +1,8 @@
+---
+resource_id: "89f5e618-51a5-4063-b6f4-c13f73055e83"
+resource_type: "output"
+resource_name: "US-03_git_hook_triggers"
+---
 # US-03: Git Hook Triggers Pointer Sync
 
 ## User Story

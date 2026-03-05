@@ -1,3 +1,9 @@
+---
+resource_id: "21c42889-b511-4677-be3c-7c99bb0cd13b"
+resource_type: "readme
+document"
+resource_name: "README"
+---
 # Assignment Timer CLI
 
 A command-line interface for tracking how long it takes to complete assignments. This tool integrates with your Canvas courses and stores timing data for future analysis.

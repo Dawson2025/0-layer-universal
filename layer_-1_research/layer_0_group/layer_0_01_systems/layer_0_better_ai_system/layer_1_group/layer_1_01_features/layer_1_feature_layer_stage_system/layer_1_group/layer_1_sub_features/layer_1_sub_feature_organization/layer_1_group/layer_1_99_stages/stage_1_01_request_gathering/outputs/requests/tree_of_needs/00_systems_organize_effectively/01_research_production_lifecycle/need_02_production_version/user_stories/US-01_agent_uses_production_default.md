@@ -1,3 +1,8 @@
+---
+resource_id: "583cb9b9-0677-4769-928d-b2a8307dad1f"
+resource_type: "output"
+resource_name: "US-01_agent_uses_production_default"
+---
 # Agent Uses Production by Default
 
 **As an** AI agent starting a new task with no special instructions,

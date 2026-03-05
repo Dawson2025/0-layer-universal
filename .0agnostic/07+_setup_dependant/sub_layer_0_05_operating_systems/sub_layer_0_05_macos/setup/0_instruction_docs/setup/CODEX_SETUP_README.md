@@ -1,3 +1,8 @@
+---
+resource_id: "4258399a-5a63-4bed-ad2f-be06b75f0c0c"
+resource_type: "document"
+resource_name: "CODEX_SETUP_README"
+---
 # OpenAI Codex CLI Setup Guide
 
 ## ✅ Installation Complete!

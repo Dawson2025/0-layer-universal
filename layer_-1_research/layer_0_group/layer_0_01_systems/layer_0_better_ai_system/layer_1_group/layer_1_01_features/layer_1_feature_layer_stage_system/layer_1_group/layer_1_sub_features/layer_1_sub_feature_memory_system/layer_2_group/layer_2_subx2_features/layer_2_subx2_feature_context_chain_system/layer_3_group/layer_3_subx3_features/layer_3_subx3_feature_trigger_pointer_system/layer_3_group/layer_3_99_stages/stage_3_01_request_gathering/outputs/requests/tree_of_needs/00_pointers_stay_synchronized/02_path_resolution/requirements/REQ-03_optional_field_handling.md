@@ -1,3 +1,8 @@
+---
+resource_id: "fed11c45-e293-449f-97b6-f1a037094292"
+resource_type: "output"
+resource_name: "REQ-03_optional_field_handling"
+---
 # REQ-03: Optional Field Handling
 
 ## Requirement

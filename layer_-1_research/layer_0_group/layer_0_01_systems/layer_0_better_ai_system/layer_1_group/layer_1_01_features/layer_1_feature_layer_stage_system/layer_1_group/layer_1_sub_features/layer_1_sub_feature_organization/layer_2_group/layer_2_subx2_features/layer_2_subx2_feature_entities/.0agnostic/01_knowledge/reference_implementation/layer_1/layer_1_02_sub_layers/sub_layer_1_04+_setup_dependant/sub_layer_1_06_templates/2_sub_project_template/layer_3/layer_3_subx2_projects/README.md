@@ -1,3 +1,9 @@
+---
+resource_id: "8561a693-d84e-4e82-98fb-7817d27f8984"
+resource_type: "readme
+knowledge"
+resource_name: "README"
+---
 # Sub*2 Projects
 
 This folder contains nested sub-projects (subx2 projects) within this sub-project.

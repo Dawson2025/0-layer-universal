@@ -1,5 +1,9 @@
 {
-  "@context": {"@vocab": "https://layer-stage.dev/schema#", "gab": "https://gab-lang.org/schema#"},
+  "file_id": "aa0ca3a8-be8b-4cc5-8b87-fc4d637c07e9",
+  "@context": {
+    "@vocab": "https://layer-stage.dev/schema#",
+    "gab": "https://gab-lang.org/schema#"
+  },
   "@id": "layer_stage_system_stages_orchestrator",
   "@type": "gab:LLMAgent",
   "name": "layer_stage_system Stages Orchestrator",

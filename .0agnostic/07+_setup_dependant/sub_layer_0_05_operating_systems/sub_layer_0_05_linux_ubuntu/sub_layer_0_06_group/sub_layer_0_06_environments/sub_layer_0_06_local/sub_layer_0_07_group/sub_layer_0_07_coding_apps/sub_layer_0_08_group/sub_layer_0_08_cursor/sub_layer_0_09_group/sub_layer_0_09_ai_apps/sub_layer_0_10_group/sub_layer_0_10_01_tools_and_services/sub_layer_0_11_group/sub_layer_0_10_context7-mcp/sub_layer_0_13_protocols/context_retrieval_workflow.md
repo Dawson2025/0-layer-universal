@@ -1,3 +1,8 @@
+---
+resource_id: "4911acc1-64e6-4dc2-a53d-f3ba8a899b76"
+resource_type: "document"
+resource_name: "context_retrieval_workflow"
+---
 # Context Retrieval Workflow
 
 This document describes the workflow for retrieving documentation context using the Context7 MCP server.

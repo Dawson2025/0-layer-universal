@@ -1,4 +1,7 @@
 ---
+resource_id: "edbe8891-6644-4084-8a93-ed3da23f46b0"
+resource_type: "document"
+resource_name: "SKILL.sync-conflict-20260126-101457-IF2WOGZ"
 name: 01_request_gathering-workflow
 description: Workflow skill for Collect and clarify requirements. Activated when working on 01_request_gathering tasks.
 version: 1.0.0

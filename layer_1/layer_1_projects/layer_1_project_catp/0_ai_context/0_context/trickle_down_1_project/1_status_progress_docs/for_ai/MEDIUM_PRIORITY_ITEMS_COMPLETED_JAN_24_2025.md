@@ -1,3 +1,8 @@
+---
+resource_id: "ddd81719-dc12-4196-9db7-13ed6a662b13"
+resource_type: "document"
+resource_name: "MEDIUM_PRIORITY_ITEMS_COMPLETED_JAN_24_2025"
+---
 # Medium Priority Items Completed - January 24, 2025
 **URL Routing Fixes and Template Creation**
 

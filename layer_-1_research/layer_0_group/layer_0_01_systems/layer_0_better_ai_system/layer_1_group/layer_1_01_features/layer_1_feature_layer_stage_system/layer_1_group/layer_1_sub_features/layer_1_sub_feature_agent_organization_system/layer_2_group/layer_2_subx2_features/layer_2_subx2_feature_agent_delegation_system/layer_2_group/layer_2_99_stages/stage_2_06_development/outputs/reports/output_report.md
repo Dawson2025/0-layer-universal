@@ -1,3 +1,8 @@
+---
+resource_id: "7b14da1e-7356-41f1-be1b-96c0124732e2"
+resource_type: "output"
+resource_name: "output_report"
+---
 # Reports Overview — Stage 06: Development
 
 **Entity**: agent_delegation_system

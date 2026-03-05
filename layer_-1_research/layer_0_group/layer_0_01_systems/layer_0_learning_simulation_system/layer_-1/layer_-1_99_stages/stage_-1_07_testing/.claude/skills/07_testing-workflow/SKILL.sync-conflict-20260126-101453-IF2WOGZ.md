@@ -1,4 +1,7 @@
 ---
+resource_id: "220b1209-e1b0-431a-a7b9-319245656c05"
+resource_type: "document"
+resource_name: "SKILL.sync-conflict-20260126-101453-IF2WOGZ"
 name: 07_testing-workflow
 description: Workflow skill for Quality assurance and validation. Activated when working on 07_testing tasks.
 version: 1.0.0

@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
+# resource_id: "ff17aa88-2aba-4871-88f3-c5cb77552dc6"
+# resource_type: "script"
+# resource_name: "run-fast-tests"
 source .venv/bin/activate
 #
 # Run fast tests (unit + emulator integration)

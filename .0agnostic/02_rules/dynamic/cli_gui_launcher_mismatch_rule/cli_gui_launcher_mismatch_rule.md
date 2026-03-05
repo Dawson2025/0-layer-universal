@@ -1,3 +1,8 @@
+---
+resource_id: "093d942f-b7b2-437b-b9ac-776e9239a50c"
+resource_type: "rule"
+resource_name: "cli_gui_launcher_mismatch_rule"
+---
 # Rule: CLI vs GUI Launcher Mismatch Detection & Recovery
 
 **Scope**: Ubuntu/GNOME/Unity systems with CLI/GUI inconsistency

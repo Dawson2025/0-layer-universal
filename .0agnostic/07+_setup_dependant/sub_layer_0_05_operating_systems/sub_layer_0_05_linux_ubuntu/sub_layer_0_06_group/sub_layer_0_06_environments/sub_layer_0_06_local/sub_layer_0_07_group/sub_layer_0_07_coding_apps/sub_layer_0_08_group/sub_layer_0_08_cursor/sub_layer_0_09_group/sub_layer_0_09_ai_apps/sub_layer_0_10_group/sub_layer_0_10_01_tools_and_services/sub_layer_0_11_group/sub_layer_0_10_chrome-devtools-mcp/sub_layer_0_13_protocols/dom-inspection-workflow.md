@@ -1,3 +1,8 @@
+---
+resource_id: "8e8f32e9-f2b6-4c47-816a-bb64debfa07e"
+resource_type: "document"
+resource_name: "dom-inspection-workflow"
+---
 # DOM Inspection Workflow
 
 This workflow describes how to use Chrome DevTools MCP to inspect, query, and manipulate the Document Object Model (DOM) of web pages.

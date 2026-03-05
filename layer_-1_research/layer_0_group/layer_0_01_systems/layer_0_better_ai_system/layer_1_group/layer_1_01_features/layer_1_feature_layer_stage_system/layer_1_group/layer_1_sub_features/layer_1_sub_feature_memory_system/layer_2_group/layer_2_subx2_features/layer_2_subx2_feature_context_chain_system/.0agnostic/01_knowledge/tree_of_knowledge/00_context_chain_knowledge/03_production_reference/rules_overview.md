@@ -1,3 +1,8 @@
+---
+resource_id: "90cd0a3e-0590-4a63-bcda-cd346421b0b9"
+resource_type: "knowledge"
+resource_name: "rules_overview"
+---
 # Production Rules Overview
 
 ## Summary

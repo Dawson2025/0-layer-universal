@@ -1,4 +1,9 @@
 ---
+resource_id: "7c68de25-a01b-4443-9c2b-e04b2e70414a"
+resource_type: "knowledge"
+resource_name: "06_development-status"
+---
+---
 description: Show current status of 06_development stage
 argument-hint: [--verbose]
 ---

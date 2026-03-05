@@ -1,3 +1,8 @@
+---
+resource_id: "06cd2219-2dd9-47ca-a468-c19d934d8edd"
+resource_type: "knowledge"
+resource_name: "chain_continuity"
+---
 # Principle: Chain Continuity
 
 **Type**: Structural Integrity

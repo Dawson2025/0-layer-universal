@@ -1,3 +1,8 @@
+---
+resource_id: "d6cac7f0-4a77-46fb-bd77-d1469aa526db"
+resource_type: "document"
+resource_name: "20251023_EnvironmentDocumentation_Created"
+---
 # Environment Documentation Created
 **Date**: 2025-10-23
 **Status**: ✅ Complete

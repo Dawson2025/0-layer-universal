@@ -1,3 +1,8 @@
+---
+resource_id: "99d57221-ac2e-4c57-ad9f-6ea40df0a65b"
+resource_type: "rule"
+resource_name: "4_3_support_multiple_modes"
+---
 # 4.3: Support Multiple Execution Modes
 
 ## Requirement

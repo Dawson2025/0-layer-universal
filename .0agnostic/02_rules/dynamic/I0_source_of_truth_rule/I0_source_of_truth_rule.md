@@ -1,3 +1,8 @@
+---
+resource_id: "e4855ae3-a609-4e47-bfb0-1cf35995da0d"
+resource_type: "rule"
+resource_name: "I0_source_of_truth_rule"
+---
 # Source of Truth Rule
 
 **Type**: Dynamic (loaded when triggered)

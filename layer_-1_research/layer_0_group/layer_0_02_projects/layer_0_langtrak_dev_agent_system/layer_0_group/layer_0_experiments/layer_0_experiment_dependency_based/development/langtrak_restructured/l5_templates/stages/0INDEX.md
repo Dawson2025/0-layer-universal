@@ -1,3 +1,9 @@
+---
+resource_id: "b43004b3-2201-4a98-bd6d-a82a2c114a8e"
+resource_type: "index
+document"
+resource_name: "0INDEX"
+---
 # L5 Templates — Stages
 
 | Stage | Name | Status |

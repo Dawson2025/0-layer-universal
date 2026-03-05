@@ -1,3 +1,8 @@
+---
+resource_id: "1a4e02ee-5fdd-44f6-b0f8-855aa1bc39f8"
+resource_type: "document"
+resource_name: "CLOUD_E2E_TESTING_COMPLETE_OCT_21_2025"
+---
 # Cloud E2E Testing Implementation - Complete
 
 **Date:** October 21, 2025  

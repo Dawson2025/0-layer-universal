@@ -1,3 +1,8 @@
+---
+resource_id: "5327e258-019a-42ca-8700-80d08b3fc9c6"
+resource_type: "document"
+resource_name: "small_batch_verification_protocol"
+---
 # Small Batch Verification Protocol
 
 **Goal:** Minimize wasted effort and debugging time by verifying changes in small, manageable increments before scaling up.

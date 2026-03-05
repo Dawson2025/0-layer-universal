@@ -1,4 +1,7 @@
 ---
+resource_id: "3f89eb85-4525-42d6-ac97-8abdc5dbc403"
+resource_type: "document"
+resource_name: "SKILL.sync-conflict-20260126-101456-IF2WOGZ"
 name: 00_stage_registry-workflow
 description: Workflow skill for Stage metadata and registration. Activated when working on 00_stage_registry tasks.
 version: 1.0.0

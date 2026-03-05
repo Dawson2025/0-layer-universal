@@ -1,4 +1,7 @@
 ---
+resource_id: "091afe9d-a557-4379-b2c2-893afc8a2311"
+resource_type: "document"
+resource_name: "speckit.constitution"
 description: Create or update the project constitution from interactive or provided principle inputs, ensuring all dependent templates stay in sync
 ---
 

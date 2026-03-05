@@ -1,3 +1,9 @@
+---
+resource_id: "893996be-132f-44df-8b70-3a382dcecd44"
+resource_type: "readme
+document"
+resource_name: "README"
+---
 # Language Tracker App Documentation
 
 Welcome to the documentation for the Language Tracker App.

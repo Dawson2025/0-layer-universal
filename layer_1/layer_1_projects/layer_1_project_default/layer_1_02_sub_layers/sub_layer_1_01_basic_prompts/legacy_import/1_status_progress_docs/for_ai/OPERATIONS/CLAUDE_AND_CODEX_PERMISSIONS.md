@@ -1,3 +1,8 @@
+---
+resource_id: "d0126c67-c26b-478e-b99e-0a2f30699f0c"
+resource_type: "document"
+resource_name: "CLAUDE_AND_CODEX_PERMISSIONS"
+---
 # Claude Code and Codex CLI: Permission configuration log
 
 This document records the changes made to Codex and Claude CLI configurations, the commands run, verification steps, risks, and recommended next steps.

@@ -1,3 +1,8 @@
+---
+resource_id: "b6088ad5-3b84-48a9-89d1-3d2752a119f3"
+resource_type: "knowledge"
+resource_name: "entity_types"
+---
 # Entity Types
 
 ## Projects

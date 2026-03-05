@@ -1,3 +1,8 @@
+---
+resource_id: "be210830-5cea-483e-8587-9940831e3df4"
+resource_type: "document"
+resource_name: "PLAN_termius_cross_device_ssh"
+---
 # Plan: Termius Cross-Device SSH Setup
 
 **Layer**: 0 (Universal)

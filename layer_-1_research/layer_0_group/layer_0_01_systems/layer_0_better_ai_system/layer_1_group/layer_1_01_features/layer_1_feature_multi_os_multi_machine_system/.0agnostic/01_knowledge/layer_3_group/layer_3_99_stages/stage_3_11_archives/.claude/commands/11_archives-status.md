@@ -1,4 +1,9 @@
 ---
+resource_id: "317713d9-aa17-46f7-8a9f-4de51aef714e"
+resource_type: "knowledge"
+resource_name: "11_archives-status"
+---
+---
 description: Show current status of 11_archives stage
 argument-hint: [--verbose]
 ---

@@ -1,3 +1,8 @@
+---
+resource_id: "ef62b7c6-dd15-4673-8d39-db9505bd467e"
+resource_type: "output"
+resource_name: "audio_instructions"
+---
 # Audio Instructions / Constraints (Parent Overview)
 
 **Date**: 2026-02-23

@@ -1,3 +1,8 @@
+---
+resource_id: "840a3a99-507a-4844-8cc6-629bc64a0f8d"
+resource_type: "knowledge"
+resource_name: "lean_static_context"
+---
 # Principle: Lean Static Context
 
 ## Summary

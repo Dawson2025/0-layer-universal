@@ -1,3 +1,9 @@
+---
+resource_id: "9271b69c-f0c1-43db-9544-dd15bf9b5adb"
+resource_type: "index
+document"
+resource_name: "0INDEX"
+---
 # LangTrak Dev Agent System — Navigation Index
 
 ## Status: New (scaffolding complete)

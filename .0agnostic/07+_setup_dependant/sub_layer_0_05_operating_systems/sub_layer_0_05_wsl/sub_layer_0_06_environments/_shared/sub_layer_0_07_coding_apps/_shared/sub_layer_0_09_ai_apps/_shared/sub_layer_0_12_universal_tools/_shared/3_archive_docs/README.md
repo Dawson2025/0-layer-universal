@@ -1,3 +1,9 @@
+---
+resource_id: "4e6bd1e3-026d-4b20-8b14-aa36bb3e9d44"
+resource_type: "readme
+document"
+resource_name: "README"
+---
 # Universal Tools Archive
 *Completed Work and Resolutions for Universal Tools and Utilities*
 

@@ -1,3 +1,8 @@
+---
+resource_id: "6e4bc921-9567-48cc-80ed-686ebd5fd29a"
+resource_type: "knowledge"
+resource_name: "three_tier_knowledge"
+---
 # Topic: Three-Tier Knowledge
 
 ## Summary

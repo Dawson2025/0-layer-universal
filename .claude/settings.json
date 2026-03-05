@@ -1,6 +1,15 @@
 {
+  "file_id": "e52adaec-e57a-4a7e-9f72-d5b143c30c18",
   "permissions": {
-    "allowedTools": ["Read", "Write", "Edit", "Bash", "Glob", "Grep", "Task"]
+    "allowedTools": [
+      "Read",
+      "Write",
+      "Edit",
+      "Bash",
+      "Glob",
+      "Grep",
+      "Task"
+    ]
   },
   "hooks": {
     "PostToolUse": [

@@ -1,3 +1,4 @@
+<!-- derived_from: "5d5be68b-60a5-4801-833c-92876d4105cc" -->
 # Integration Summary: Chain Visualization Diagrams Registry
 
 This registry enumerates the diagram catalog used by the chain visualization sub-feature.

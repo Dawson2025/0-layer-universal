@@ -1,3 +1,8 @@
+---
+resource_id: "63c79ce1-3998-4664-94b2-ef39f58d2bbd"
+resource_type: "knowledge"
+resource_name: "professor_docs_analysis"
+---
 # Professor's Documentation — Analysis & Findings
 
 ## Context

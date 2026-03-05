@@ -1,4 +1,7 @@
 #!/bin/bash
+# resource_id: "01108d42-f7b0-4cce-aabb-e45ed2014074"
+# resource_type: "script"
+# resource_name: "check-test-coverage"
 # Test Coverage Check Script
 # Verifies test coverage meets project standards
 

@@ -1,3 +1,8 @@
+---
+resource_id: "f82271cb-3534-44a4-a3da-88d86efd9e81"
+resource_type: "output"
+resource_name: "multi_avenue_redundancy"
+---
 # Multi-Avenue Redundancy
 
 ## Purpose

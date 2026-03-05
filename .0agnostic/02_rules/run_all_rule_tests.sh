@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
+# resource_id: "93e2422a-26c8-4a28-a6e9-7844adee76bb"
+# resource_type: "script"
+# resource_name: "run_all_rule_tests"
 # Master test runner for all rule tests
 # Usage: bash .0agnostic/02_rules/run_all_rule_tests.sh [repo_root]
 

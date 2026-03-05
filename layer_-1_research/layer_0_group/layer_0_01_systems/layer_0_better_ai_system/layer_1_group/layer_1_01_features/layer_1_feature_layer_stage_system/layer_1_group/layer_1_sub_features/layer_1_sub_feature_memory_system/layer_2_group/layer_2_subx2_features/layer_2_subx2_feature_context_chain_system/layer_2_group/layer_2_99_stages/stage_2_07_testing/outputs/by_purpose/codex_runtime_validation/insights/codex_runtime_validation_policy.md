@@ -1,3 +1,8 @@
+---
+resource_id: "424a6b2c-6d0c-4ceb-8ff0-aaa499190981"
+resource_type: "output"
+resource_name: "codex_runtime_validation_policy"
+---
 # Codex Runtime Validation Report
 
 ## Scope

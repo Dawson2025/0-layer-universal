@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
+# resource_id: "f5895d0c-86e1-47f1-bf31-31ebe406ed74"
+# resource_type: "script"
+# resource_name: "mcp-start"
 # Helper script to start the Playwright MCP server for local development.
 # Usage: bash scripts/mcp-start.sh [--headed] [--port PORT]
 

@@ -1,3 +1,8 @@
+---
+resource_id: "d365f4de-faac-429f-952b-808e525817cc"
+resource_type: "output"
+resource_name: "APPLICATION_IMPLEMENTED"
+---
 # Cursor Agent CLI — Application-Implemented Features
 
 **Date**: 2026-02-27

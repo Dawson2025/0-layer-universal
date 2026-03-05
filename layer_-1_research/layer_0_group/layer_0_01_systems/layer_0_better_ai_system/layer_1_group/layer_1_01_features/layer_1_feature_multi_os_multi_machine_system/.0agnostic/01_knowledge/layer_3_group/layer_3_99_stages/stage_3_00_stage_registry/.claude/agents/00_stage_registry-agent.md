@@ -1,4 +1,9 @@
 ---
+resource_id: "42f08a39-8d54-4a71-8f29-f06524b94010"
+resource_type: "knowledge"
+resource_name: "00_stage_registry-agent"
+---
+---
 name: 00_stage_registry-agent
 description: Specialized agent for Stage metadata and registration. Use when working on 00_stage_registry tasks.
 tools: Read, Glob

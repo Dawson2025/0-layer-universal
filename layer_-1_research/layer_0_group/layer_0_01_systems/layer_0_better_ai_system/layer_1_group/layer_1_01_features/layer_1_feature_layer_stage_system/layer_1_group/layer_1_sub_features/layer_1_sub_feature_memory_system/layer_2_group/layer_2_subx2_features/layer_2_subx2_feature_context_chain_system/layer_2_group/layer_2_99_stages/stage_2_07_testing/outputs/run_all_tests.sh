@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
+# resource_id: "916d0421-fae1-448b-a8e8-d5f4a8beefa4"
+# resource_type: "script"
+# resource_name: "run_all_tests"
 # run_all_tests.sh — Run testing suites and generate summary report
 #
 # Runs each test, captures output, and produces test_results_summary.md

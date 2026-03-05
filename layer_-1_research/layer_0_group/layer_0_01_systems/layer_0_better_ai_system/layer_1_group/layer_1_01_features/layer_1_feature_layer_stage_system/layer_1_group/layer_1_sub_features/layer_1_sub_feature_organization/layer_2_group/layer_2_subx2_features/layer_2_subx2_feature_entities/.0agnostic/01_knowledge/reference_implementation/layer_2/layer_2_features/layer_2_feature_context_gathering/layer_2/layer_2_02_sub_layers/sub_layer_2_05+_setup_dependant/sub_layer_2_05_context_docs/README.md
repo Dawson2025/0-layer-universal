@@ -1,3 +1,9 @@
+---
+resource_id: "e71ac48b-cfff-47dd-a66d-843d04efdb69"
+resource_type: "readme
+knowledge"
+resource_name: "README"
+---
 # Context Gathering Documentation
 
 ## Overview

@@ -1,3 +1,8 @@
+---
+resource_id: "b25aec2e-207e-4282-985f-f32093833528"
+resource_type: "document"
+resource_name: "features_init_prompt"
+---
 # Universal Features Initialization Prompt Template
 
 ## Purpose

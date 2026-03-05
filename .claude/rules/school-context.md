@@ -1,4 +1,9 @@
 ---
+resource_id: "29fe8e9b-2a89-4401-859f-ea2838b5cfa4"
+resource_type: "document"
+resource_name: "school-context"
+---
+---
 paths: layer_1/layer_1_projects/layer_1_project_school/**
 ---
 

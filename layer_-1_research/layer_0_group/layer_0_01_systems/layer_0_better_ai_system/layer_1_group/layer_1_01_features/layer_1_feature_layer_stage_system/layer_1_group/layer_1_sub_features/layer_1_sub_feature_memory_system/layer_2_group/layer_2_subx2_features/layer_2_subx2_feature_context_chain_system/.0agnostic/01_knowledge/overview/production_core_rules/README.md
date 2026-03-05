@@ -1,3 +1,9 @@
+---
+resource_id: "45c2b8aa-4931-4a49-b16e-3cfdf708a029"
+resource_type: "readme
+knowledge"
+resource_name: "README"
+---
 # 0_every_api_request
 
 ## Purpose

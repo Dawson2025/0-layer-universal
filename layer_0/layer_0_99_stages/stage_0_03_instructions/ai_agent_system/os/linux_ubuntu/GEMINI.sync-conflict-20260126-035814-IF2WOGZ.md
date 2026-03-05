@@ -1,3 +1,8 @@
+---
+resource_id: "26567e07-964e-42f3-bc76-e9a2ce01c971"
+resource_type: "document"
+resource_name: "GEMINI.sync-conflict-20260126-035814-IF2WOGZ"
+---
 # Gemini CLI Instructions - Linux Ubuntu Environment
 
 **OS Variant**: Linux Ubuntu (Native)

@@ -1,3 +1,9 @@
+---
+resource_id: "74999769-b10b-43dc-be9e-195d5ef66482"
+resource_type: "agnostic
+document"
+resource_name: "0AGNOSTIC"
+---
 # context_chain_system — Stage 04: Design
 
 ## Identity

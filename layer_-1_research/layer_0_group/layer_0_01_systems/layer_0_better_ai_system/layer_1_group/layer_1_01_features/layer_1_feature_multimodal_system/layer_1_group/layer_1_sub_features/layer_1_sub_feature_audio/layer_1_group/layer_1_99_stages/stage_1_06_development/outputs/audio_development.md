@@ -1,3 +1,8 @@
+---
+resource_id: "cd642b1c-ecfd-4c0f-9fc0-9c9c72979c00"
+resource_type: "output"
+resource_name: "audio_development"
+---
 # Audio Development (Parent Overview)
 
 **Date**: 2026-02-23

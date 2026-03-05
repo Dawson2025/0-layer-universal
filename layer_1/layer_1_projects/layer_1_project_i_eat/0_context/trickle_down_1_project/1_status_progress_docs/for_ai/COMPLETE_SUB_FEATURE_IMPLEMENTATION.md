@@ -1,3 +1,8 @@
+---
+resource_id: "2b74fab2-fae2-41c3-8c3e-52bce0b0e388"
+resource_type: "document"
+resource_name: "COMPLETE_SUB_FEATURE_IMPLEMENTATION"
+---
 # Complete Sub-Feature Implementation Status
 
 ## Mission: COMPLETE ✅

@@ -1,3 +1,9 @@
+---
+resource_id: "29299bff-ee81-436d-8a1f-7f45e5e4e9b1"
+resource_type: "readme
+document"
+resource_name: "README"
+---
 # Universal Scripts
 
 This directory contains universal scripts that can be used across any project.

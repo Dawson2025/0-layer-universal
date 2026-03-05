@@ -1,3 +1,9 @@
+---
+resource_id: "b2c44098-305e-486a-bcd5-000b2350f018"
+resource_type: "readme
+document"
+resource_name: "README"
+---
 # layer_0_02_projects — Layer 0 Project Research
 
 This directory contains all layer_0 level projects being researched and validated before promotion to production.

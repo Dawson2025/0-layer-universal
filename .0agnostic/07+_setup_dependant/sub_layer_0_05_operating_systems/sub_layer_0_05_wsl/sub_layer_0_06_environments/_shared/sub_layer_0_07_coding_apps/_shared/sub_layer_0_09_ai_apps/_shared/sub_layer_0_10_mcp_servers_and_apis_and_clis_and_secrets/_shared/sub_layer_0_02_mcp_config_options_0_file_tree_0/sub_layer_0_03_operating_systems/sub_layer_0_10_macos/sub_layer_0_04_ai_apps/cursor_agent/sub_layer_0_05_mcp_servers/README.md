@@ -1,3 +1,9 @@
+---
+resource_id: "fe625d42-8225-45dc-a544-0631379b6f3e"
+resource_type: "readme
+document"
+resource_name: "README"
+---
 # MCP Servers (cursor_agent on macos)
 
 This folder contains macos + cursor_agent specific notes for each MCP server we use.

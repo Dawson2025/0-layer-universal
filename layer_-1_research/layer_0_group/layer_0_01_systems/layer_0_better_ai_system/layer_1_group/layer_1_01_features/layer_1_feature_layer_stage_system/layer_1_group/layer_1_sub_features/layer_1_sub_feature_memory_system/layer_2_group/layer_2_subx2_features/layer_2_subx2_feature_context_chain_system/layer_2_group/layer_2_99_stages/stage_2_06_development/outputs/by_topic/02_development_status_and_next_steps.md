@@ -1,3 +1,8 @@
+---
+resource_id: "1958adba-9c25-4f99-aa4d-96cf002fb955"
+resource_type: "output"
+resource_name: "02_development_status_and_next_steps"
+---
 # Stage 2.06 Development Status and Next Steps
 
 ## Implemented in This Stage

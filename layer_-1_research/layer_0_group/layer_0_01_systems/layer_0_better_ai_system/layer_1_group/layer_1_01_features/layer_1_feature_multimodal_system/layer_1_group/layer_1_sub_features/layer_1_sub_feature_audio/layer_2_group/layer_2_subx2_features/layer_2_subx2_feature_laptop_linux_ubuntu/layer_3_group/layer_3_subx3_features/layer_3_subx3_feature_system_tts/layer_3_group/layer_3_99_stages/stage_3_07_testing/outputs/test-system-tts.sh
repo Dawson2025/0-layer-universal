@@ -1,4 +1,7 @@
 #!/bin/bash
+# resource_id: "4e13973b-1702-46d1-bf00-7cc951debbfd"
+# resource_type: "script"
+# resource_name: "test-system-tts"
 # test-system-tts.sh — Automated tests for Phase 2 System TTS integration
 # Tests Speech Dispatcher + Piper integration, scripts, and configuration
 

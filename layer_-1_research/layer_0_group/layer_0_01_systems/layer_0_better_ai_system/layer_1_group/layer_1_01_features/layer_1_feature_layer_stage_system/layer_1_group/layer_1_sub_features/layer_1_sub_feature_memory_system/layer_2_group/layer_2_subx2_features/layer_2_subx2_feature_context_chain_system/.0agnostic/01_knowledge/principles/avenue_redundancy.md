@@ -1,3 +1,8 @@
+---
+resource_id: "733ea389-ea1a-4f78-8e00-b7745955aa49"
+resource_type: "knowledge"
+resource_name: "avenue_redundancy"
+---
 # Principle: Avenue Redundancy
 
 **Type**: Reliability

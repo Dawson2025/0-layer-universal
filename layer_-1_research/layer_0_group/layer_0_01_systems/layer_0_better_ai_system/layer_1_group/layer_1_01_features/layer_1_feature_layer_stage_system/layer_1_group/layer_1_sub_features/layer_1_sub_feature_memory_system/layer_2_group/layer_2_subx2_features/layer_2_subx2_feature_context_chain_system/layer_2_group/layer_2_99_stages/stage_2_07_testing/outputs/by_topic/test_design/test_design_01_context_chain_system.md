@@ -1,3 +1,8 @@
+---
+resource_id: "98982bcb-c3dc-4021-9fb1-8686b29cf3e1"
+resource_type: "output"
+resource_name: "test_design_01_context_chain_system"
+---
 # Test Design: 01 Context Chain System Design
 
 **Validates**: `stage_2_04_design/outputs/by_topic/01_context_chain_system_design.md`

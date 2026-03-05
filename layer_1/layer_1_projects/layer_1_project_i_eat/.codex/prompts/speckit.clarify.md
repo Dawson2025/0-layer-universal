@@ -1,4 +1,7 @@
 ---
+resource_id: "70a97216-9e43-4fc2-b0d6-a1f3d3011194"
+resource_type: "document"
+resource_name: "speckit.clarify"
 description: Identify underspecified areas in the current feature spec by asking up to 5 highly targeted clarification questions and encoding answers back into the spec.
 ---
 

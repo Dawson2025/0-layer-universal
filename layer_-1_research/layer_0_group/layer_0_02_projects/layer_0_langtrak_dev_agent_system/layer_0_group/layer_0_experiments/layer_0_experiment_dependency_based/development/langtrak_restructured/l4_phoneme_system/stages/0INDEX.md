@@ -1,3 +1,9 @@
+---
+resource_id: "d5253565-b55a-4309-a550-bf0d6fbc2b68"
+resource_type: "index
+document"
+resource_name: "0INDEX"
+---
 # L4 Phoneme System — Stages
 
 | Stage | Name | Status |

@@ -1,4 +1,9 @@
 ---
+resource_id: "05f83901-b357-4fc4-9f5c-31f7c2e32ac2"
+resource_type: "knowledge"
+resource_name: "02_research-status"
+---
+---
 description: Show current status of 02_research stage
 argument-hint: [--verbose]
 ---

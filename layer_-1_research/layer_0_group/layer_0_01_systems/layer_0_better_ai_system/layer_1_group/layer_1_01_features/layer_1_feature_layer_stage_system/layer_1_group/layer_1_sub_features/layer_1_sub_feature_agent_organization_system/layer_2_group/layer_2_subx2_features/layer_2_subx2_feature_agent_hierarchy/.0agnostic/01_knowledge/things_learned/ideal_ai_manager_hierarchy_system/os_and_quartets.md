@@ -1,3 +1,8 @@
+---
+resource_id: "f08d72cd-3547-407f-9f58-e128f3457269"
+resource_type: "knowledge"
+resource_name: "os_and_quartets"
+---
 ## OS Variants and Quartets
 
 This document expands on how **operating system differences** and **tool-specific context files** are handled in the ideal AI manager hierarchy system.

@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
+# resource_id: "3347b568-5ba5-4075-8145-8db9d6a004d0"
+# resource_type: "script"
+# resource_name: "episodic-sync"
 # episodic-sync.sh — Sync episodic memory from layer-stage system to Claude Code auto-memory
 #
 # Discovers all .0agnostic/episodic_memory/index.md files across the hierarchy,

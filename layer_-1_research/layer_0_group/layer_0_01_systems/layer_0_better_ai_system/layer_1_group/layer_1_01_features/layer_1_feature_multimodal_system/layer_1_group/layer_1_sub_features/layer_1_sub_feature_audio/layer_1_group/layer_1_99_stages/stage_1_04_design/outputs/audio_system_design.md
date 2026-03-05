@@ -1,3 +1,8 @@
+---
+resource_id: "da0fb5c5-3c81-425f-8810-17f48e4c2bb6"
+resource_type: "output"
+resource_name: "audio_system_design"
+---
 # Audio System Design
 
 ## High-Level Architecture

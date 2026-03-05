@@ -1,3 +1,8 @@
+---
+resource_id: "98327cf9-97ee-4896-905d-f34145b8adf6"
+resource_type: "document"
+resource_name: "l4_phoneme_system_agent"
+---
 # L4 Phoneme System Agent
 
 **Role**: Phoneme Domain Specialist

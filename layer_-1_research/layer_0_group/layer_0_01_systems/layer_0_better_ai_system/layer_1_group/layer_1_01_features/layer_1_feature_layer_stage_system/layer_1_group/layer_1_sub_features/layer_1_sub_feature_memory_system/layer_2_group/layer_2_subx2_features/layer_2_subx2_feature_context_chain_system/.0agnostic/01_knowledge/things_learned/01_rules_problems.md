@@ -1,3 +1,8 @@
+---
+resource_id: "c0f0f907-2843-460d-8f1f-95095114d75c"
+resource_type: "knowledge"
+resource_name: "01_rules_problems"
+---
 # Rules System Problems
 
 **Date**: 2026-01-25

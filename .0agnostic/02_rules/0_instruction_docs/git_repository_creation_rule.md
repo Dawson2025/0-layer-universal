@@ -1,3 +1,8 @@
+---
+resource_id: "189c09cb-d43f-4a2e-9299-e59c488a9c68"
+resource_type: "rule"
+resource_name: "git_repository_creation_rule"
+---
 # GIT REPOSITORY CREATION RULE
 
 ## **MANDATORY REQUIREMENTS**

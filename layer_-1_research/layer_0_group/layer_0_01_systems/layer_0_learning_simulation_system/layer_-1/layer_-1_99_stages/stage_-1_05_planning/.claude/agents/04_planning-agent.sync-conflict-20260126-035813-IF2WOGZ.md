@@ -1,4 +1,7 @@
 ---
+resource_id: "1fc62d4a-cac2-477a-a996-4362f372516c"
+resource_type: "document"
+resource_name: "04_planning-agent.sync-conflict-20260126-035813-IF2WOGZ"
 name: 04_planning-agent
 description: Specialized agent for Create implementation plan. Use when working on 04_planning tasks.
 tools: Read, Write, Edit, Task

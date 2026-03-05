@@ -1,3 +1,8 @@
+---
+resource_id: "3355b0b4-2856-4243-8de9-bee3e587e2d9"
+resource_type: "output"
+resource_name: "04_constraints"
+---
 # Constraints: What Limits Our Design
 
 ## Hard Constraints (Cannot Be Changed)

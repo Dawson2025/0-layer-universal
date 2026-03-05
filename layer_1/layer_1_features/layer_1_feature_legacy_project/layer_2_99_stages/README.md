@@ -1,3 +1,9 @@
+---
+resource_id: "49cb24bf-79dc-4f93-8849-7cb0f4211780"
+resource_type: "readme
+document"
+resource_name: "README"
+---
 # layer_2_features: Stage System (2.99)
 
 - 2.01_instructions

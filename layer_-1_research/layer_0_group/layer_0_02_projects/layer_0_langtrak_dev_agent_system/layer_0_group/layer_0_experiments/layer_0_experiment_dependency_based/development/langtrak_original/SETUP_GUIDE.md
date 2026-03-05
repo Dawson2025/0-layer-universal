@@ -1,3 +1,8 @@
+---
+resource_id: "bea24725-cd73-4c3b-b9b5-7084fef30cea"
+resource_type: "document"
+resource_name: "SETUP_GUIDE"
+---
 # Lang-Trak Setup Guide
 
 ## Prerequisites

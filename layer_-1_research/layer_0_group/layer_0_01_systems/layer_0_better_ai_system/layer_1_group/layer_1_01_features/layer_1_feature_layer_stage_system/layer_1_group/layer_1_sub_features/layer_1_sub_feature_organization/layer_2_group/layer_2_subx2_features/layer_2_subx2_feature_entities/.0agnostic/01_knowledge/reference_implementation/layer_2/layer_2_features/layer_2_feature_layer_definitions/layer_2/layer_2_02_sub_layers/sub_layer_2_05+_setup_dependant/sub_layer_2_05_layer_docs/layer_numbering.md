@@ -1,3 +1,8 @@
+---
+resource_id: "cc0803cf-2387-4b82-9765-fbe35d0325d5"
+resource_type: "knowledge"
+resource_name: "layer_numbering"
+---
 # Layer Numbering
 
 ## Rules

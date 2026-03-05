@@ -1,3 +1,8 @@
+---
+resource_id: "89ee34cb-d13e-4cef-a92a-e72a6af8eee6"
+resource_type: "output"
+resource_name: "US-02_agent_flags_stale_knowledge"
+---
 # US-02: Agent flags potentially stale knowledge
 
 **Need**: [Staleness Detection](../README.md)

@@ -1,4 +1,7 @@
 ---
+resource_id: "c700a24c-b18c-4f29-89d2-808a2273f576"
+resource_type: "document"
+resource_name: "07_testing-status.sync-conflict-20260126-035811-IF2WOGZ"
 description: Show current status of 07_testing stage
 argument-hint: [--verbose]
 ---

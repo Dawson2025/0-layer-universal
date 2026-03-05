@@ -1,3 +1,8 @@
+---
+resource_id: "5cc603bf-2a08-41aa-9b9e-6ca520890152"
+resource_type: "output"
+resource_name: "07_unified_sync_architecture"
+---
 # Unified Sync Architecture
 
 **Date**: 2026-02-23

@@ -1,3 +1,8 @@
+---
+resource_id: "6c8bbfda-f923-4546-9aec-0c762c58433a"
+resource_type: "output"
+resource_name: "gemini_practical_guide"
+---
 # Gemini API: Practical Implementation Guide
 
 **Research Date**: February 27, 2026

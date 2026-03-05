@@ -1,4 +1,7 @@
 ---
+resource_id: "0a073fba-c2cb-4091-826e-c7769049ecd7"
+resource_type: "document"
+resource_name: "00_stage_registry-complete.sync-conflict-20260126-101456-IF2WOGZ"
 description: Mark 00_stage_registry stage as complete and prepare handoff
 argument-hint: [--notes "completion notes"]
 ---

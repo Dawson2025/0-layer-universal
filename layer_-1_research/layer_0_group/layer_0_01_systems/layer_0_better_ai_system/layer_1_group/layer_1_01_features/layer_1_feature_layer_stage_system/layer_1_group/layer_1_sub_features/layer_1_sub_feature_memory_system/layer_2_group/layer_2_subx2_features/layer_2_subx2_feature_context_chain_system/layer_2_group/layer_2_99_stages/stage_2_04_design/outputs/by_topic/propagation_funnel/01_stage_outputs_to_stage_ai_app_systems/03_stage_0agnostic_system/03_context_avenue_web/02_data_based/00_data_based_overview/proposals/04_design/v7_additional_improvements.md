@@ -1,3 +1,8 @@
+---
+resource_id: "1989d867-e591-486b-86d5-6a2e194391dd"
+resource_type: "output"
+resource_name: "v7_additional_improvements"
+---
 # Context Avenue Database Schema — Proposal v7
 
 ## Additional Improvements (5 New Tables)

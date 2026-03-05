@@ -1,3 +1,8 @@
+---
+resource_id: "85c039b2-c3ce-4d06-917b-b8ef71634bed"
+resource_type: "document"
+resource_name: "FINAL_SUMMARY"
+---
 # Complete Summary: Claude in Chrome + WSL Integration Attempt
 
 **Date:** 2025-12-31

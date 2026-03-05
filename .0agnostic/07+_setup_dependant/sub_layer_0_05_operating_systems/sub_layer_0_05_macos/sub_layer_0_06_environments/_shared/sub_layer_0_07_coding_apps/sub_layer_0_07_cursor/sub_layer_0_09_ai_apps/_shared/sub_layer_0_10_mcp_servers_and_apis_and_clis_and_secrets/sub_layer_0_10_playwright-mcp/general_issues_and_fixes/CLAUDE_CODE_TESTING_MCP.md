@@ -1,3 +1,8 @@
+---
+resource_id: "f17bd216-28a4-48ea-aeb1-2fd2344ddb28"
+resource_type: "document"
+resource_name: "CLAUDE_CODE_TESTING_MCP"
+---
 # Testing Playwright MCP Server
 
 ## Prerequisites

@@ -1,3 +1,8 @@
+---
+resource_id: "84fc8f19-d499-42c8-96ce-2f878af4e9be"
+resource_type: "output"
+resource_name: "codex_governance_runtime_report"
+---
 # Codex Governance Runtime Report
 
 ## Scope

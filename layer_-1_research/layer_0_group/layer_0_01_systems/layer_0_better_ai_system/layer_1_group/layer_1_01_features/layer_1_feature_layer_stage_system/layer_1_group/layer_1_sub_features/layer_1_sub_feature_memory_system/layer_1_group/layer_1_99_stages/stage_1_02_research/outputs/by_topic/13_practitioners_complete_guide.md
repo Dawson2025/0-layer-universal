@@ -1,3 +1,8 @@
+---
+resource_id: "eb178174-ccac-4b48-804f-b36cc1ed9768"
+resource_type: "output"
+resource_name: "13_practitioners_complete_guide"
+---
 # The Complete Practitioner's Guide to AI Agent Memory Systems
 
 ## Purpose

@@ -1,3 +1,8 @@
+---
+resource_id: "d914123c-ae6f-41a8-b1bb-aae8deb5a255"
+resource_type: "document"
+resource_name: "01_setup_problems"
+---
 # Setup System Problems
 
 **Date**: 2026-01-25

@@ -1,4 +1,7 @@
 #!/bin/bash
+# resource_id: "39e8761e-85f4-4de0-86fd-525b31df1d6c"
+# resource_type: "script"
+# resource_name: "manual-verify-us053"
 # Manual verification script for US-053 endpoint
 # Tests the recalculate phoneme frequencies API directly
 

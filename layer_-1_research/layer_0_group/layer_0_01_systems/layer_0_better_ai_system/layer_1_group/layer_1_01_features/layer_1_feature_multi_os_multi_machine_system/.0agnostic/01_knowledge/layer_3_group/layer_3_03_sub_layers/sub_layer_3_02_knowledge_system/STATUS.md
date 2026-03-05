@@ -1,3 +1,8 @@
+---
+resource_id: "c4d38439-6607-4f5a-bf4f-dbc4e6455ea3"
+resource_type: "knowledge"
+resource_name: "STATUS"
+---
 # Status: Multi-OS Workspace Sync
 
 **Last Updated:** 2026-01-25 18:54 MST (from Ubuntu)

@@ -1,3 +1,8 @@
+---
+resource_id: "944c5783-00ae-49b2-b3ce-cf2169779715"
+resource_type: "knowledge"
+resource_name: "stage_00_request_gathering"
+---
 # Stage 00: Request Gathering
 
 ## Purpose

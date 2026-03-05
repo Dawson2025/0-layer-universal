@@ -1,3 +1,8 @@
+---
+resource_id: "3c78b104-7731-457a-8cf1-3bba7acc8d1b"
+resource_type: "protocol"
+resource_name: "content_extraction_workflow"
+---
 # Content Extraction Workflow
 
 ## Overview

@@ -1,3 +1,8 @@
+---
+resource_id: "dedaba5f-5e2a-4296-9ea6-e6a14cdf1c52"
+resource_type: "document"
+resource_name: "HIERARCHY_ADOPTION_CHECKLIST"
+---
 # AI Manager Hierarchy - Adoption Checklist
 
 **Purpose**: Step-by-step checklist for projects adopting the AI Manager Hierarchy System

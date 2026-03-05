@@ -1,3 +1,8 @@
+---
+resource_id: "fa10b8d0-33ca-4808-bab9-915b2711f9c3"
+resource_type: "document"
+resource_name: "ubuntu-antigravity-testing-notes"
+---
 # Ubuntu Antigravity Setup - Testing Notes and Findings
 
 **Date**: November 25, 2025  

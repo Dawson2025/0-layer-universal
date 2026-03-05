@@ -1,3 +1,8 @@
+---
+resource_id: "89301c5e-5bf8-453c-ae2f-7f139435631a"
+resource_type: "document"
+resource_name: "README.sync-conflict-20260126-035819-IF2WOGZ"
+---
 # Stage 0.04 Development - AI Agent System
 
 ## Overview

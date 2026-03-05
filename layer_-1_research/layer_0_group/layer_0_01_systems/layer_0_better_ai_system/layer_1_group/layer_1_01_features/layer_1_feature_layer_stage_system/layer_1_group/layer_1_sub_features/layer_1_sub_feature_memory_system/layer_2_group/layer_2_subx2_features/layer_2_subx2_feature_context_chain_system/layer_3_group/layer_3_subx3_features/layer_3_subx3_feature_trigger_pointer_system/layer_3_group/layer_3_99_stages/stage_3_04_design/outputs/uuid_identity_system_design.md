@@ -1,3 +1,8 @@
+---
+resource_id: "1f40a5c5-cebc-42b1-a3f2-56c9cbd91c2d"
+resource_type: "output"
+resource_name: "uuid_identity_system_design"
+---
 # Design Proposal: UUID Identity System for Layer-Stage Entities
 
 ## Status: PROPOSED

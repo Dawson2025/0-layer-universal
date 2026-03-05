@@ -1,3 +1,8 @@
+---
+resource_id: "b3b245b7-b606-4500-a9fd-69215a20cab5"
+resource_type: "output"
+resource_name: "skill_reliability_per_tool"
+---
 # Skill & Instruction Reliability Across AI Coding Tools
 
 ## Purpose

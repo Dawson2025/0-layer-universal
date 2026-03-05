@@ -1,3 +1,9 @@
+---
+resource_id: "6badc43e-61bd-4766-b999-fcec07e06ed7"
+resource_type: "index
+knowledge"
+resource_name: "0INDEX"
+---
 # Naming Conventions Knowledge
 
 ## Inherited from Universal Layer

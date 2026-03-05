@@ -1,3 +1,8 @@
+---
+resource_id: "400a70c0-21f4-4623-911c-46505c433208"
+resource_type: "output"
+resource_name: "test_design_rule_compliance_file_change_reporting"
+---
 # Test Design: Rule Compliance — File Change Reporting
 
 **Validates**: `.0agnostic/02_rules/static/I0_FILE_CHANGE_REPORTING.md`

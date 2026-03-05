@@ -1,3 +1,9 @@
+---
+resource_id: "2165bc5a-0764-4b2e-ba9e-b394e3442ab6"
+resource_type: "readme
+output"
+resource_name: "README"
+---
 # MCP Servers (06_mcp_servers)
 
 ## What This Contains

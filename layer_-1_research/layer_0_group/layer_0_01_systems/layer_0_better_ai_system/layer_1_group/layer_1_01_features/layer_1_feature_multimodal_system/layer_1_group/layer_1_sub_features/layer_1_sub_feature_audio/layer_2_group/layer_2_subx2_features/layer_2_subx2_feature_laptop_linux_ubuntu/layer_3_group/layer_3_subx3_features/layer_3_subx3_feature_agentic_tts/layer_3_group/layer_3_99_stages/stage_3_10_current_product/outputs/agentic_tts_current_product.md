@@ -1,3 +1,8 @@
+---
+resource_id: "44241c8d-85ce-4186-ab53-9d85249d0a62"
+resource_type: "output"
+resource_name: "agentic_tts_current_product"
+---
 # Agentic TTS — Current Product
 
 **Date**: 2026-02-23

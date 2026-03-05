@@ -1,3 +1,8 @@
+---
+resource_id: "1e531eda-3707-4fc9-aaf7-0ee8ac5af389"
+resource_type: "output"
+resource_name: "US-04_agent_recovers_after_compaction"
+---
 # US-4: Agent recovers after compaction
 
 **Need**: [Handoff Protocols](../README.md)

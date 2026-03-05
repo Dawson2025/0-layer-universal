@@ -1,3 +1,8 @@
+---
+resource_id: "097062ba-9f3a-4e1a-a15f-07f608bdda24"
+resource_type: "protocol"
+resource_name: "interactive_browsing_workflow"
+---
 # Interactive Browsing Workflow
 
 ## Overview

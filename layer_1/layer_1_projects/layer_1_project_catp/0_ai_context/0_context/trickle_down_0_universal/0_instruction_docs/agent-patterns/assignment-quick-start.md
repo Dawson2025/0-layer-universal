@@ -1,3 +1,8 @@
+---
+resource_id: "ae8084c5-4971-42df-82b4-59027c8a92ba"
+resource_type: "document"
+resource_name: "assignment-quick-start"
+---
 # Quick Start: Structured Assignment Workflow
 
 **TL;DR**: Use `assignment-planner` to create a plan, get user approval, then use `assignment-executor` to execute it automatically.

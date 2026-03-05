@@ -1,3 +1,8 @@
+---
+resource_id: "aa44f2fd-346a-43af-9856-34f5097bf593"
+resource_type: "knowledge"
+resource_name: "context_system"
+---
 # Production Context System
 
 ## Summary

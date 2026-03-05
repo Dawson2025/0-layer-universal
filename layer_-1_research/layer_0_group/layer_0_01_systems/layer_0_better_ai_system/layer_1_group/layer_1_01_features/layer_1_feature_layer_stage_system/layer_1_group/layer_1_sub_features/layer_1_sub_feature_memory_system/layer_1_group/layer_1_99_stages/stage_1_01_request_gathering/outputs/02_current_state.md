@@ -1,3 +1,8 @@
+---
+resource_id: "d4f59f95-aaed-4fbd-a5d1-4f964bc37614"
+resource_type: "output"
+resource_name: "02_current_state"
+---
 # Current State: What Memory Mechanisms Exist Today
 
 ## Overview

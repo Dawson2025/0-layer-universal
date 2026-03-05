@@ -1,3 +1,8 @@
+---
+resource_id: "08ae9f10-e54b-49b1-af95-c6b2c9b84291"
+resource_type: "output"
+resource_name: "DEPENDENCIES"
+---
 # Dependencies
 
 How this tree of needs relates to lateral entities after the 2026-03-04 hierarchy reorganization.

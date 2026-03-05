@@ -1,3 +1,8 @@
+---
+resource_id: "669e8a2c-0424-42ea-ab4c-ba8e0206e896"
+resource_type: "output"
+resource_name: "report_porting_contract_test_report"
+---
 # Report Porting Contract Test Report
 
 ## Test Design

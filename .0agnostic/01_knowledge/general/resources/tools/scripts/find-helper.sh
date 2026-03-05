@@ -1,4 +1,7 @@
 #!/bin/bash
+# resource_id: "adfd4345-94ed-4c37-8c13-52d5cac13c80"
+# resource_type: "script"
+# resource_name: "find-helper"
 #
 # find-helper.sh - Helper for /find skill traversal
 #

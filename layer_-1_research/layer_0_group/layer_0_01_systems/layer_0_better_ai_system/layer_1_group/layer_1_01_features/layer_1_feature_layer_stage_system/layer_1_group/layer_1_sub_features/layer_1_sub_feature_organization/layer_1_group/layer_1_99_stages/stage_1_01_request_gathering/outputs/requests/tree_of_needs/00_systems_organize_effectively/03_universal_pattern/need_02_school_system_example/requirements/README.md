@@ -1,3 +1,9 @@
+---
+resource_id: "2dfdcae5-1990-4405-94eb-318d57b322a2"
+resource_type: "readme
+output"
+resource_name: "README"
+---
 # Requirements — School System Example
 
 | ID | Name | Priority |

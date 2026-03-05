@@ -1,3 +1,9 @@
+---
+resource_id: "fcd13b30-0333-4d9c-b718-06b0a3092739"
+resource_type: "readme
+document"
+resource_name: "README"
+---
 # MCP Servers (gemini_cli on wsl)
 
 This folder contains wsl + gemini_cli specific notes for each MCP server we use.

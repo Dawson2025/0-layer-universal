@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
+# resource_id: "744045bb-b5aa-4b93-9b67-9d773e1e166a"
+# resource_type: "script"
+# resource_name: "create-tree-of-needs"
 # create-tree-of-needs.sh — Create tree_of_needs scaffold in a stage_01 outputs directory
 # Usage: bash .0agnostic/01_knowledge/layer_stage_system/resources/tools/create-tree-of-needs.sh <stage_01_outputs_dir> <root_need_name>
 #

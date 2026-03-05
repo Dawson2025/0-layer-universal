@@ -1,3 +1,8 @@
+---
+resource_id: "bc22f16e-2b37-4007-9db6-eeb16001a8d5"
+resource_type: "output"
+resource_name: "US-03_developer_knows_placement"
+---
 # US-03: Developer knows what goes where
 
 **Need**: [Three-Tier Architecture](../README.md)

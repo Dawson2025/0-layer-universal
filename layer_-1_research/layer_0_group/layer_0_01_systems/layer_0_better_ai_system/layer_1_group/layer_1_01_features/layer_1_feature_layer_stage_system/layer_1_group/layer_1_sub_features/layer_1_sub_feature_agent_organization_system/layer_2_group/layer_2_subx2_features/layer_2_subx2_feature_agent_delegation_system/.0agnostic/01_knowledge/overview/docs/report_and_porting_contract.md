@@ -1,3 +1,8 @@
+---
+resource_id: "4a8b7350-7b0b-44fe-b047-5845b75ad02b"
+resource_type: "knowledge"
+resource_name: "report_and_porting_contract"
+---
 # Report And Porting Contract
 
 ## Purpose

@@ -1,3 +1,8 @@
+---
+resource_id: "c4676dcd-20db-467d-a0cb-722891e30555"
+resource_type: "knowledge"
+resource_name: "mcp_extensions"
+---
 ## MCP Extension Patterns
 
 This document explains how to extend the AI manager hierarchy system with Model Context Protocol (MCP) servers and tools.

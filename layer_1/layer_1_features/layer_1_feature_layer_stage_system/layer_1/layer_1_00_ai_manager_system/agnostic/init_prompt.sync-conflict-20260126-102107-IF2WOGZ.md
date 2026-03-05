@@ -1,3 +1,8 @@
+---
+resource_id: "de4f9b2e-fa3b-46a1-91eb-eb8035d1c16f"
+resource_type: "document"
+resource_name: "init_prompt.sync-conflict-20260126-102107-IF2WOGZ"
+---
 # Layer 1: Layer-Stage System Feature
 
 ## Inherited From

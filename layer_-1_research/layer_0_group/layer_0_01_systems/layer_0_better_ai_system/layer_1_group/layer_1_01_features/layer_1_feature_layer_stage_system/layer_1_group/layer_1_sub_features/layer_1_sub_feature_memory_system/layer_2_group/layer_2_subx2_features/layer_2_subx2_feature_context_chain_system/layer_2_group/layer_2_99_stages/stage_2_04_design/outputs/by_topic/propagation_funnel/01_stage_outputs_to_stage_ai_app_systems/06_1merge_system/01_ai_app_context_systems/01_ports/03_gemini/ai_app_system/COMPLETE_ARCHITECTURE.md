@@ -1,3 +1,8 @@
+---
+resource_id: "21a9a223-5320-4f1b-a14e-7dfd963a07bb"
+resource_type: "output"
+resource_name: "COMPLETE_ARCHITECTURE"
+---
 # Gemini — Complete Architecture
 
 **Date**: 2026-02-27

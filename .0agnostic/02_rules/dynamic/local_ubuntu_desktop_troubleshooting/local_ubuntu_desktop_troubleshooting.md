@@ -1,3 +1,8 @@
+---
+resource_id: "a23d7aa9-c450-4558-a7b6-1330ab348023"
+resource_type: "rule"
+resource_name: "local_ubuntu_desktop_troubleshooting"
+---
 # Local Ubuntu Desktop Troubleshooting Rule
 
 **Type**: Dynamic (loaded when triggered)

@@ -1,3 +1,8 @@
+---
+resource_id: "c164aec8-906b-4e51-9d29-c370125ed234"
+resource_type: "document"
+resource_name: "PARALLEL_DEV_IMPLEMENTATION_COMPLETE"
+---
 # Parallel Development Implementation - COMPLETE
 
 ## 🎉 Mission Accomplished

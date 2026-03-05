@@ -1,3 +1,9 @@
+---
+resource_id: "b985d7f5-473e-498a-b8ec-694e19099757"
+resource_type: "readme
+document"
+resource_name: "README"
+---
 # chrome-devtools-mcp (cursor_agent on linux_ubuntu)
 
 ## Canonical docs

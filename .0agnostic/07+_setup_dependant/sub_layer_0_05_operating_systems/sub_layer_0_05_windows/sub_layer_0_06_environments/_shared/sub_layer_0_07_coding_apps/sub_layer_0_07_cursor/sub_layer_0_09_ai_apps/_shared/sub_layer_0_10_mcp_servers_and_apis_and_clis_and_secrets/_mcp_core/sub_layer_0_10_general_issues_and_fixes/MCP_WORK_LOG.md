@@ -1,3 +1,8 @@
+---
+resource_id: "b4999c64-87ba-445c-b008-e505382d3139"
+resource_type: "document"
+resource_name: "MCP_WORK_LOG"
+---
 # MCP Work Log — Playwright MCP server support
 
 This document records the step-by-step work done to make the Playwright MCP server startable and testable locally, the scripts I added, experiments I ran, the results, and next steps.

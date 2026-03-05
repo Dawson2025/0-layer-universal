@@ -1,3 +1,8 @@
+---
+resource_id: "15e64b61-818e-4e9c-8130-4ffb8a43cfdc"
+resource_type: "document"
+resource_name: "context_flow"
+---
 # Context Flow Diagram
 
 **Purpose**: Answer "When does context load and in what order?"

@@ -1,3 +1,9 @@
+---
+resource_id: "03886084-b94c-44e8-af91-ce5733c3bc82"
+resource_type: "index
+document"
+resource_name: "0INDEX"
+---
 # 0INDEX.md - Trigger Pointer System
 
 ## Current State

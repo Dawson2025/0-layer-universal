@@ -1,3 +1,8 @@
+---
+resource_id: "11ffdd0b-c025-48ed-b995-4c4dd2b95078"
+resource_type: "knowledge"
+resource_name: "init_prompt_template"
+---
 # Init Prompt Template
 
 ## Purpose

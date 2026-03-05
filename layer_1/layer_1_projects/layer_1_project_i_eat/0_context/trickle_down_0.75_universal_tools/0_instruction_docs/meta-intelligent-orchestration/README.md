@@ -1,3 +1,9 @@
+---
+resource_id: "1756971b-4a9d-4474-81b0-f66271bb1ae2"
+resource_type: "readme
+document"
+resource_name: "README"
+---
 # Meta-Intelligent Universal Orchestration System
 
 A meta-intelligent system that actively recommends optimal choices for future projects and continuously adapts to evolving best practices and tools.

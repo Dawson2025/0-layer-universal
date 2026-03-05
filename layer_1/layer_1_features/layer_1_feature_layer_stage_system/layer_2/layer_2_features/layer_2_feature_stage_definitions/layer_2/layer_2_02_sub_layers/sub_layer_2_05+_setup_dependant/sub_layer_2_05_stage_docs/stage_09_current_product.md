@@ -1,3 +1,8 @@
+---
+resource_id: "6e93edd3-dd9d-42b5-983a-d2080ee06e1f"
+resource_type: "document"
+resource_name: "stage_09_current_product"
+---
 # Stage 08: Current Product
 
 ## Purpose

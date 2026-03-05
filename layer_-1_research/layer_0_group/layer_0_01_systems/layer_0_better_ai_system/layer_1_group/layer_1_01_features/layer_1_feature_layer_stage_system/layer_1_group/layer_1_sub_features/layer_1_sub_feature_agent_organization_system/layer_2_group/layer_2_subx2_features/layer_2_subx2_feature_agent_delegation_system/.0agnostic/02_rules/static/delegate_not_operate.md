@@ -1,3 +1,8 @@
+---
+resource_id: "36263aaa-2412-4a5e-a967-ae2a4aefeb1e"
+resource_type: "rule"
+resource_name: "delegate_not_operate"
+---
 # Delegate, Not Operate Rule
 
 **Type**: Static (always applies)

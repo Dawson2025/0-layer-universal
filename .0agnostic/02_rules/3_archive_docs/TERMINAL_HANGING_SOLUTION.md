@@ -1,3 +1,8 @@
+---
+resource_id: "7cb15a5c-0a63-4774-8f67-2ffce3c104de"
+resource_type: "rule"
+resource_name: "TERMINAL_HANGING_SOLUTION"
+---
 # Terminal Hanging Solution
 
 ## Problem

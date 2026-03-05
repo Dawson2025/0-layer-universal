@@ -1,3 +1,8 @@
+---
+resource_id: "fe54c996-eba1-4f5c-8f60-8b1de0c7396a"
+resource_type: "document"
+resource_name: "group_collaboration"
+---
 # Group Collaboration System
 
 - **Source Prompt**: Existing implementation analysis (2025-10-15)

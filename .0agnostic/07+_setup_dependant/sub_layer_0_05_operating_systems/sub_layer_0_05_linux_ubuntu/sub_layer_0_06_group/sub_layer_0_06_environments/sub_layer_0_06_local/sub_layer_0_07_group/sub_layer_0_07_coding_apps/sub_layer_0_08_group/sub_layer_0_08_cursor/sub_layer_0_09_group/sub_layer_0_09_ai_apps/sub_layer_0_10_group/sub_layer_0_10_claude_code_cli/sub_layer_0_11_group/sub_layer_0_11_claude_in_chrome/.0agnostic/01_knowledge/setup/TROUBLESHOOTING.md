@@ -1,3 +1,8 @@
+---
+resource_id: "6db1b04b-3a38-499b-99a2-8b55031d4e3c"
+resource_type: "knowledge"
+resource_name: "TROUBLESHOOTING"
+---
 # Claude in Chrome - Troubleshooting Guide
 
 This document covers common issues encountered when using the Claude in Chrome MCP server and their solutions.

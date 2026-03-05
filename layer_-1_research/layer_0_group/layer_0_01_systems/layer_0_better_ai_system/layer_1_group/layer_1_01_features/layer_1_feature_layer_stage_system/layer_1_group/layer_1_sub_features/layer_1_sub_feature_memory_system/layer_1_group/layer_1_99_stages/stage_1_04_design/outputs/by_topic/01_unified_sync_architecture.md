@@ -1,3 +1,8 @@
+---
+resource_id: "3a9d2591-59f0-4b71-9ec4-6a166dcd1ab9"
+resource_type: "output"
+resource_name: "01_unified_sync_architecture"
+---
 # Unified Sync Architecture
 
 > **This document is a pointer.** The canonical source of truth lives in the context chain system (Layer 2).

@@ -1,3 +1,8 @@
+---
+resource_id: "ec1e4858-b266-40cf-8f17-4254f348f051"
+resource_type: "output"
+resource_name: "agentic_tts_fixes"
+---
 # Agentic TTS Fixes Log
 
 **Date**: 2026-02-23

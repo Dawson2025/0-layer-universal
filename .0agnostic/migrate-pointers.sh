@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
+# resource_id: "7505b140-8772-43f1-abe5-996847e68657"
+# resource_type: "script"
+# resource_name: "migrate-pointers"
 # migrate-pointers.sh — Migrate name-based pointers to UUID-based pointers
 # Phase 5 of the UUID Identity System implementation
 #

@@ -1,3 +1,8 @@
+---
+resource_id: "33ac589f-5809-4fe8-b8b2-d200d508240d"
+resource_type: "document"
+resource_name: "20251023_FirebaseIntegrationTestsCoverage_Update_v1.0"
+---
 # Firebase Integration Tests Coverage Update
 *Date: 2025-10-23*
 *Update Type: Major Test Expansion*

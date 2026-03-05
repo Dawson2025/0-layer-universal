@@ -1,3 +1,8 @@
+---
+resource_id: "aa556dc1-036c-42ab-b7d2-f0ee5a7e8414"
+resource_type: "output"
+resource_name: "03_COMPLETE_ARCHITECTURE"
+---
 # Claude Code CLI — Complete Architecture
 
 **Date**: 2026-02-28

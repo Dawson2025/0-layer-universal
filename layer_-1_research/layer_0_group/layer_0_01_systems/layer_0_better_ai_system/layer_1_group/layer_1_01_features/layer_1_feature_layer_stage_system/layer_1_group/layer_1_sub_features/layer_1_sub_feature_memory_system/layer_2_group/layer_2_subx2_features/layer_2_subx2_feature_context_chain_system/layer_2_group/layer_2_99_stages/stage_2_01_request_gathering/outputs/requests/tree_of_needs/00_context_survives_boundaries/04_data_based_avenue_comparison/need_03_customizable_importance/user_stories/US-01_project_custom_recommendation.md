@@ -1,3 +1,8 @@
+---
+resource_id: "a3c054f9-ec5b-4283-b8e3-4fcd30f1273a"
+resource_type: "output"
+resource_name: "US-01_project_custom_recommendation"
+---
 # US-01: Project gets custom recommendation
 
 **Need**: [Customizable Importance](../README.md)

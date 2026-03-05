@@ -1,3 +1,8 @@
+---
+resource_id: "8183b0fe-5790-4ac5-91ae-1e529428df08"
+resource_type: "output"
+resource_name: "system_tts_test_results"
+---
 # System TTS Test Results
 
 **Date**: 2026-02-24 (Phase 2 update)

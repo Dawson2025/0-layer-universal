@@ -1,3 +1,8 @@
+---
+resource_id: "15651ef8-c994-49e9-9bc0-c448cbf9b5a9"
+resource_type: "document"
+resource_name: "context_propagation"
+---
 # Context Propagation Diagram
 
 > **This document is a pointer.** The canonical source of truth for hierarchy inheritance and propagation lives in the context chain system (Layer 2) design docs.

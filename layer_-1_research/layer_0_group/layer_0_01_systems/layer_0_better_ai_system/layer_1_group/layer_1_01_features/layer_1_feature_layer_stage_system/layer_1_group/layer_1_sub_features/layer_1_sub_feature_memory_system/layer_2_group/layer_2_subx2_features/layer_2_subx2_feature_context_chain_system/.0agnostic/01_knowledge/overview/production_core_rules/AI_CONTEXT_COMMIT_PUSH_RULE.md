@@ -1,3 +1,8 @@
+---
+resource_id: "daa53f69-023e-4882-961a-00a068764d3e"
+resource_type: "knowledge"
+resource_name: "AI_CONTEXT_COMMIT_PUSH_RULE"
+---
 # AI Context Commit and Push Rule
 
 ## Rule

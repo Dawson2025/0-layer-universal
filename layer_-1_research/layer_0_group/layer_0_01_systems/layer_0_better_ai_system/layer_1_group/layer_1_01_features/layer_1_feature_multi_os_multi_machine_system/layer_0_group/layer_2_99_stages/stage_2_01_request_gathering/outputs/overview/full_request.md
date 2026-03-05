@@ -1,3 +1,8 @@
+---
+resource_id: "fdeaaaa1-8427-4ca0-9722-12a118363a2f"
+resource_type: "output"
+resource_name: "full_request"
+---
 # Full Request for Better Setup System
 
 This document provides a comprehensive overview of all the requests identified during the "Request Gathering" stage for the "Better Setup System" feature.

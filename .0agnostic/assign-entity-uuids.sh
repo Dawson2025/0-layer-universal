@@ -1,4 +1,7 @@
 #!/bin/bash
+# resource_id: "92ab3def-22d7-48cd-91be-6744c3466240"
+# resource_type: "script"
+# resource_name: "assign-entity-uuids"
 #
 # assign-entity-uuids.sh — Assign entity_id UUIDs to all 0AGNOSTIC.md files
 #

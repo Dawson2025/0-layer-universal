@@ -1,4 +1,5 @@
 {
+  "file_id": "7dff42f6-ad8c-4ef6-a1e4-bab6e2b80a4f",
   "@context": {
     "@vocab": "https://layer-stage.dev/orchestrator/",
     "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
@@ -11,12 +12,18 @@
     {
       "severity": "critical",
       "action": "Design solutions or write code — this stage only researches",
-      "appliesTo": ["scope management", "methodology"]
+      "appliesTo": [
+        "scope management",
+        "methodology"
+      ]
     },
     {
       "severity": "critical",
       "action": "Operate outside research scope without escalation to entity manager",
-      "appliesTo": ["delegation", "scope management"]
+      "appliesTo": [
+        "delegation",
+        "scope management"
+      ]
     }
   ],
   "@graph": [
@@ -50,16 +57,25 @@
           "@id": "ads:AgentDelegationOrchestrator",
           "path": "../../AALang_jsonld_agents/orchestrator.gab.jsonld"
         },
-        "inheritsFrom": ["agent_delegation_system"],
+        "inheritsFrom": [
+          "agent_delegation_system"
+        ],
         "canOverride": [],
         "overrides": []
       },
-      "modes": ["rs:ReceiveMode", "rs:ExecuteMode", "rs:ReportMode"],
+      "modes": [
+        "rs:ReceiveMode",
+        "rs:ExecuteMode",
+        "rs:ReportMode"
+      ],
       "actors": [
-        "rs:ReceiveActor1", "rs:ReceiveActor2",
-        "rs:ExecuteActor1", "rs:ExecuteActor2",
+        "rs:ReceiveActor1",
+        "rs:ReceiveActor2",
+        "rs:ExecuteActor1",
+        "rs:ExecuteActor2",
         "rs:ReportActor1",
-        "rs:TaskStateActor", "rs:OutputStateActor"
+        "rs:TaskStateActor",
+        "rs:OutputStateActor"
       ],
       "teamLead": "entity_manager",
       "constraints": [
@@ -73,7 +89,11 @@
       "@id": "rs:TaskStateActor",
       "@type": "gab:Actor",
       "id": "TaskStateActor",
-      "operatesIn": ["rs:ReceiveMode", "rs:ExecuteMode", "rs:ReportMode"],
+      "operatesIn": [
+        "rs:ReceiveMode",
+        "rs:ExecuteMode",
+        "rs:ReportMode"
+      ],
       "activeMode": null,
       "persona": "rs:TaskStatePersona",
       "role": "StateManager",
@@ -86,7 +106,11 @@
       "name": "Task State Manager",
       "role": "StateManager",
       "personality": "Organized, tracks research progress",
-      "responsibilities": ["Track research questions", "Maintain investigation status", "Update progress metrics"],
+      "responsibilities": [
+        "Track research questions",
+        "Maintain investigation status",
+        "Update progress metrics"
+      ],
       "mode": null,
       "actor": "rs:TaskStateActor",
       "canMessage": [],
@@ -97,7 +121,10 @@
       "@id": "rs:OutputStateActor",
       "@type": "gab:Actor",
       "id": "OutputStateActor",
-      "operatesIn": ["rs:ExecuteMode", "rs:ReportMode"],
+      "operatesIn": [
+        "rs:ExecuteMode",
+        "rs:ReportMode"
+      ],
       "activeMode": null,
       "persona": "rs:OutputStatePersona",
       "role": "StateManager",
@@ -110,7 +137,11 @@
       "name": "Output State Manager",
       "role": "StateManager",
       "personality": "Meticulous, tracks findings",
-      "responsibilities": ["Track research outputs", "Verify finding documentation", "Monitor output completeness"],
+      "responsibilities": [
+        "Track research outputs",
+        "Verify finding documentation",
+        "Monitor output completeness"
+      ],
       "mode": null,
       "actor": "rs:OutputStateActor",
       "canMessage": [],
@@ -127,10 +158,15 @@
         "Read parent .0agnostic/01_knowledge/ for domain context",
         "Do NOT start researching until task is clear"
       ],
-      "contains": ["rs:ReceivePersona1", "rs:ReceivePersona2"],
+      "contains": [
+        "rs:ReceivePersona1",
+        "rs:ReceivePersona2"
+      ],
       "isolatedState": "rs:ReceiveModeState",
       "initialMode": true,
-      "precedes": ["rs:ExecuteMode"]
+      "precedes": [
+        "rs:ExecuteMode"
+      ]
     },
     {
       "@id": "rs:ExecuteMode",
@@ -143,9 +179,14 @@
         "Track research coverage against stage 01 requirements",
         "Do NOT proceed to ReportMode until investigation is comprehensive"
       ],
-      "contains": ["rs:ExecutePersona1", "rs:ExecutePersona2"],
+      "contains": [
+        "rs:ExecutePersona1",
+        "rs:ExecutePersona2"
+      ],
       "isolatedState": "rs:ExecuteModeState",
-      "precedes": ["rs:ReportMode"]
+      "precedes": [
+        "rs:ReportMode"
+      ]
     },
     {
       "@id": "rs:ReportMode",
@@ -157,15 +198,21 @@
         "Include sources for all research findings",
         "Transition back to ReceiveMode or signal completion"
       ],
-      "contains": ["rs:ReportPersona1"],
+      "contains": [
+        "rs:ReportPersona1"
+      ],
       "isolatedState": "rs:ReportModeState",
-      "precedes": ["rs:ReceiveMode"]
+      "precedes": [
+        "rs:ReceiveMode"
+      ]
     },
     {
       "@id": "rs:ReceiveActor1",
       "@type": "gab:Actor",
       "id": "ReceiveActor1",
-      "operatesIn": ["rs:ReceiveMode"],
+      "operatesIn": [
+        "rs:ReceiveMode"
+      ],
       "activeMode": "rs:ReceiveMode",
       "persona": "rs:ReceivePersona1",
       "role": "Senior",
@@ -175,7 +222,9 @@
       "@id": "rs:ReceiveActor2",
       "@type": "gab:Actor",
       "id": "ReceiveActor2",
-      "operatesIn": ["rs:ReceiveMode"],
+      "operatesIn": [
+        "rs:ReceiveMode"
+      ],
       "activeMode": "rs:ReceiveMode",
       "persona": "rs:ReceivePersona2",
       "role": "Junior",
@@ -185,7 +234,9 @@
       "@id": "rs:ExecuteActor1",
       "@type": "gab:Actor",
       "id": "ExecuteActor1",
-      "operatesIn": ["rs:ExecuteMode"],
+      "operatesIn": [
+        "rs:ExecuteMode"
+      ],
       "activeMode": "rs:ExecuteMode",
       "persona": "rs:ExecutePersona1",
       "role": "Senior",
@@ -195,7 +246,9 @@
       "@id": "rs:ExecuteActor2",
       "@type": "gab:Actor",
       "id": "ExecuteActor2",
-      "operatesIn": ["rs:ExecuteMode"],
+      "operatesIn": [
+        "rs:ExecuteMode"
+      ],
       "activeMode": "rs:ExecuteMode",
       "persona": "rs:ExecutePersona2",
       "role": "Junior",
@@ -205,7 +258,9 @@
       "@id": "rs:ReportActor1",
       "@type": "gab:Actor",
       "id": "ReportActor1",
-      "operatesIn": ["rs:ReportMode"],
+      "operatesIn": [
+        "rs:ReportMode"
+      ],
       "activeMode": "rs:ReportMode",
       "persona": "rs:ReportPersona1",
       "role": "Senior",
@@ -225,8 +280,16 @@
       ],
       "mode": "rs:ReceiveMode",
       "actor": "rs:ReceiveActor1",
-      "canMessage": ["rs:ReceivePersona2", "rs:ExecutePersona1", "user"],
-      "canReceiveFrom": ["user", "rs:ReceivePersona2", "rs:ReportPersona1"],
+      "canMessage": [
+        "rs:ReceivePersona2",
+        "rs:ExecutePersona1",
+        "user"
+      ],
+      "canReceiveFrom": [
+        "user",
+        "rs:ReceivePersona2",
+        "rs:ReportPersona1"
+      ],
       "sessionConsistent": true
     },
     {
@@ -243,8 +306,12 @@
       ],
       "mode": "rs:ReceiveMode",
       "actor": "rs:ReceiveActor2",
-      "canMessage": ["rs:ReceivePersona1"],
-      "canReceiveFrom": ["rs:ReceivePersona1"],
+      "canMessage": [
+        "rs:ReceivePersona1"
+      ],
+      "canReceiveFrom": [
+        "rs:ReceivePersona1"
+      ],
       "sessionConsistent": true
     },
     {
@@ -261,8 +328,15 @@
       ],
       "mode": "rs:ExecuteMode",
       "actor": "rs:ExecuteActor1",
-      "canMessage": ["rs:ExecutePersona2", "rs:ReportPersona1", "user"],
-      "canReceiveFrom": ["rs:ReceivePersona1", "rs:ExecutePersona2"],
+      "canMessage": [
+        "rs:ExecutePersona2",
+        "rs:ReportPersona1",
+        "user"
+      ],
+      "canReceiveFrom": [
+        "rs:ReceivePersona1",
+        "rs:ExecutePersona2"
+      ],
       "sessionConsistent": true
     },
     {
@@ -279,8 +353,12 @@
       ],
       "mode": "rs:ExecuteMode",
       "actor": "rs:ExecuteActor2",
-      "canMessage": ["rs:ExecutePersona1"],
-      "canReceiveFrom": ["rs:ExecutePersona1"],
+      "canMessage": [
+        "rs:ExecutePersona1"
+      ],
+      "canReceiveFrom": [
+        "rs:ExecutePersona1"
+      ],
       "sessionConsistent": true
     },
     {
@@ -297,8 +375,13 @@
       ],
       "mode": "rs:ReportMode",
       "actor": "rs:ReportActor1",
-      "canMessage": ["rs:ReceivePersona1", "user"],
-      "canReceiveFrom": ["rs:ExecutePersona1"],
+      "canMessage": [
+        "rs:ReceivePersona1",
+        "user"
+      ],
+      "canReceiveFrom": [
+        "rs:ExecutePersona1"
+      ],
       "sessionConsistent": true
     },
     {
@@ -306,27 +389,62 @@
       "@type": "gab:IsolatedState",
       "mode": "rs:ReceiveMode",
       "scope": "private to Receive Mode",
-      "includes": ["Research task parsed", "Requirements loaded from stage 01", "Existing research state"],
-      "readableBy": ["rs:ReceivePersona1", "rs:ReceivePersona2"],
-      "unreadableBy": ["rs:ExecutePersona1", "rs:ExecutePersona2", "rs:ReportPersona1"]
+      "includes": [
+        "Research task parsed",
+        "Requirements loaded from stage 01",
+        "Existing research state"
+      ],
+      "readableBy": [
+        "rs:ReceivePersona1",
+        "rs:ReceivePersona2"
+      ],
+      "unreadableBy": [
+        "rs:ExecutePersona1",
+        "rs:ExecutePersona2",
+        "rs:ReportPersona1"
+      ]
     },
     {
       "@id": "rs:ExecuteModeState",
       "@type": "gab:IsolatedState",
       "mode": "rs:ExecuteMode",
       "scope": "private to Execute Mode",
-      "includes": ["Investigation methodology", "Collected data and evidence", "Pattern analysis results", "Coverage tracking"],
-      "readableBy": ["rs:ExecutePersona1", "rs:ExecutePersona2"],
-      "unreadableBy": ["rs:ReceivePersona1", "rs:ReceivePersona2", "rs:ReportPersona1"]
+      "includes": [
+        "Investigation methodology",
+        "Collected data and evidence",
+        "Pattern analysis results",
+        "Coverage tracking"
+      ],
+      "readableBy": [
+        "rs:ExecutePersona1",
+        "rs:ExecutePersona2"
+      ],
+      "unreadableBy": [
+        "rs:ReceivePersona1",
+        "rs:ReceivePersona2",
+        "rs:ReportPersona1"
+      ]
     },
     {
       "@id": "rs:ReportModeState",
       "@type": "gab:IsolatedState",
       "mode": "rs:ReportMode",
       "scope": "private to Report Mode",
-      "includes": ["Stage report draft", "Findings summary", "Handoff preparation", "Source citations"],
-      "readableBy": ["rs:ReportPersona1"],
-      "unreadableBy": ["rs:ReceivePersona1", "rs:ReceivePersona2", "rs:ExecutePersona1", "rs:ExecutePersona2"]
+      "includes": [
+        "Stage report draft",
+        "Findings summary",
+        "Handoff preparation",
+        "Source citations"
+      ],
+      "readableBy": [
+        "rs:ReportPersona1"
+      ],
+      "unreadableBy": [
+        "rs:ReceivePersona1",
+        "rs:ReceivePersona2",
+        "rs:ExecutePersona1",
+        "rs:ExecutePersona2"
+      ]
     }
   ]
 }

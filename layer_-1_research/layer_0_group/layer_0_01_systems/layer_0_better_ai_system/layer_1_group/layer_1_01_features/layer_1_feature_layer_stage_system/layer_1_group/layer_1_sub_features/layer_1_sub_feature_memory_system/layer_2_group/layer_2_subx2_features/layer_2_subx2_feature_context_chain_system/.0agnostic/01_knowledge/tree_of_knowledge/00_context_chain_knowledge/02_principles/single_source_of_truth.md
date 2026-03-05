@@ -1,3 +1,8 @@
+---
+resource_id: "e9919392-2de8-4899-9939-248fbcb63b36"
+resource_type: "knowledge"
+resource_name: "single_source_of_truth"
+---
 # Principle: Single Source of Truth
 
 ## Summary

@@ -1,3 +1,8 @@
+---
+resource_id: "6368eae1-029e-466f-849c-aa5a0e033c24"
+resource_type: "rule"
+resource_name: "playwright-installation-confusion-analysis"
+---
 # Playwright Installation Confusion - Root Cause Analysis
 
 ## The Problem

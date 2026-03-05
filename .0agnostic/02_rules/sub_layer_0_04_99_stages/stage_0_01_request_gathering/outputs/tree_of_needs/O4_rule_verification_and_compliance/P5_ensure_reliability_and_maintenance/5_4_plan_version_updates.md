@@ -1,3 +1,8 @@
+---
+resource_id: "89eb1109-570b-412e-9cb2-afaab4ff38b6"
+resource_type: "rule"
+resource_name: "5_4_plan_version_updates"
+---
 # 5.4: Plan Version Updates
 
 ## Requirement

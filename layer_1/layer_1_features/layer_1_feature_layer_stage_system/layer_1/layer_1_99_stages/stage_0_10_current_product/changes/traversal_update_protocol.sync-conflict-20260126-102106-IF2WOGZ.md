@@ -1,3 +1,8 @@
+---
+resource_id: "445b48c9-6ac4-4997-a3a4-a2ff25d2fad9"
+resource_type: "document"
+resource_name: "traversal_update_protocol.sync-conflict-20260126-102106-IF2WOGZ"
+---
 # Traversal Update Protocol
 
 **Purpose:** Ensure AI agents can navigate to the correct context after ANY system change.

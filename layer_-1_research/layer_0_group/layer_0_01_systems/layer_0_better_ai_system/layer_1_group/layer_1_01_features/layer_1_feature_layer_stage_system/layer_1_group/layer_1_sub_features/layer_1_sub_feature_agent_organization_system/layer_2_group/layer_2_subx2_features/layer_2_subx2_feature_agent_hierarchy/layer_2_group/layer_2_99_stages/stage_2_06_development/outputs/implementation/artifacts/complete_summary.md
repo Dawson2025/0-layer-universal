@@ -1,3 +1,8 @@
+---
+resource_id: "04a7883e-f9ff-401e-87dc-f16e0fd72bdc"
+resource_type: "output"
+resource_name: "complete_summary"
+---
 # AI Manager Hierarchy Integration - COMPLETE ✅
 
 **Date**: 2025-12-24

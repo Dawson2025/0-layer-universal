@@ -1,3 +1,8 @@
+---
+resource_id: "9d51f532-844e-46cd-8449-83270fbed218"
+resource_type: "handoff"
+resource_name: "stage_report"
+---
 # Stage Report: 06_development
 
 ## Status

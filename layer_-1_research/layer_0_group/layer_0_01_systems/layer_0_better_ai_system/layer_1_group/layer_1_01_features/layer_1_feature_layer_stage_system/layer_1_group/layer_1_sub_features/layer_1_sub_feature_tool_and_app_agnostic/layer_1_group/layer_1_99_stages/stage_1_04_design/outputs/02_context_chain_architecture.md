@@ -1,3 +1,8 @@
+---
+resource_id: "828784ae-f8d2-4296-aba6-c87f91993b0c"
+resource_type: "output"
+resource_name: "02_context_chain_architecture"
+---
 # Context Chain Architecture: AI Apps vs MCP Server Tools
 
 **Date**: 2026-02-27

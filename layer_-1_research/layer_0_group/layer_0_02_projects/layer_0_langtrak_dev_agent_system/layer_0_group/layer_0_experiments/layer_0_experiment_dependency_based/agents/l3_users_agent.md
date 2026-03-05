@@ -1,3 +1,8 @@
+---
+resource_id: "669edf58-9d3e-4a23-acda-126d911ac87c"
+resource_type: "document"
+resource_name: "l3_users_agent"
+---
 # L3 Users Agent
 
 **Role**: User Identity Layer Specialist

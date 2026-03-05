@@ -1,4 +1,7 @@
 ---
+resource_id: "ff6fd952-438b-40f4-b13e-43c901e4f2da"
+resource_type: "document"
+resource_name: "speckit.plan"
 description: Execute the implementation planning workflow using the plan template to generate design artifacts.
 ---
 

@@ -1,3 +1,9 @@
+---
+resource_id: "ad1a7c10-1e47-4f85-a518-0191141ae610"
+resource_type: "readme
+output"
+resource_name: "README"
+---
 # Context Avenue Web — Complete Overview with Ordering Principle
 
 ## What Is the Context Avenue Web?

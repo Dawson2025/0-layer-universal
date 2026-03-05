@@ -1,3 +1,8 @@
+---
+resource_id: "57c6fd59-5c9a-4086-ba06-c1597c517444"
+resource_type: "document"
+resource_name: "CLAUDE.sync-conflict-20260126-035815-IF2WOGZ"
+---
 # Stage 04: Development
 
 ## Purpose

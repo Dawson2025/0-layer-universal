@@ -1,3 +1,8 @@
+---
+resource_id: "8988aca1-76ee-4922-a9bd-7e1c8285281c"
+resource_type: "output"
+resource_name: "REQ-03_windows_line_endings"
+---
 # REQ-03: Windows Line Ending Compatibility
 
 ## Requirement

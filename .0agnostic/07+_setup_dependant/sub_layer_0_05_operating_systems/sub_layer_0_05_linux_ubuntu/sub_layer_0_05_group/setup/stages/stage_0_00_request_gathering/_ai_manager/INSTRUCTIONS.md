@@ -1,3 +1,8 @@
+---
+resource_id: "f0e51ba5-1522-42f6-8b9b-0c5a772384a7"
+resource_type: "document"
+resource_name: "INSTRUCTIONS"
+---
 # AI Manager: Stage 0.00 - Request Gathering
 
 ## Your Role

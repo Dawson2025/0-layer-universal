@@ -1,3 +1,9 @@
+---
+resource_id: "4c72feb7-4d03-4255-a494-9bc36de4b53c"
+resource_type: "readme
+document"
+resource_name: "README"
+---
 # Playwright MCP (Codex CLI on WSL/WSLg)
 
 ## Canonical docs

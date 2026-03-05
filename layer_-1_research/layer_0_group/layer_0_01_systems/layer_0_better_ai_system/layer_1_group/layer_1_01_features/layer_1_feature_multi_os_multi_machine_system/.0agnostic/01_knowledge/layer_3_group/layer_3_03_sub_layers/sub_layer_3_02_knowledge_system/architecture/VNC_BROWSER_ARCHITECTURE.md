@@ -1,3 +1,8 @@
+---
+resource_id: "36a1d0aa-9d9c-4f7d-a0e8-d8b4379c5f59"
+resource_type: "knowledge"
+resource_name: "VNC_BROWSER_ARCHITECTURE"
+---
 # VNC Browser Automation Architecture
 
 **Date:** 2026-01-10

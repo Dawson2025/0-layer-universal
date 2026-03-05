@@ -1,3 +1,9 @@
+---
+resource_id: "a1857726-0ee2-453f-93af-cdf25f330023"
+resource_type: "agnostic
+document"
+resource_name: "0AGNOSTIC"
+---
 # context_chain_system — Stage 02: Research
 
 ## Identity

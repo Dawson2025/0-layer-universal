@@ -1,3 +1,8 @@
+---
+resource_id: "bd8aaa4a-242f-4bfa-bee7-4ef2c8d86415"
+resource_type: "output"
+resource_name: "cli_coding_agent_persistent_context_comparison"
+---
 # CLI Coding Agent Tools: Persistent Context & Configuration Comparison
 
 > **Layer**: -1 (Research) | **Stage**: 02 (Research) | **Date**: 2026-02-07

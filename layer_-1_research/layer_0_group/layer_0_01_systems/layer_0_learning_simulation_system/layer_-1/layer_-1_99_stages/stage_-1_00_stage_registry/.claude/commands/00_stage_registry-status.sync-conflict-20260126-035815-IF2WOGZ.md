@@ -1,4 +1,7 @@
 ---
+resource_id: "cf72386a-44bf-4c86-8fd1-894c688742ba"
+resource_type: "document"
+resource_name: "00_stage_registry-status.sync-conflict-20260126-035815-IF2WOGZ"
 description: Show current status of 00_stage_registry stage
 argument-hint: [--verbose]
 ---

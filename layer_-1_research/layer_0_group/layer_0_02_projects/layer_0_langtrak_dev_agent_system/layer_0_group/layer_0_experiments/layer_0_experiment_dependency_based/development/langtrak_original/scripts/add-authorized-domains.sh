@@ -1,4 +1,7 @@
 #!/bin/bash
+# resource_id: "e182a44b-e54f-44cb-8872-251e7751fa09"
+# resource_type: "script"
+# resource_name: "add-authorized-domains"
 
 # Add Authorized Domains to Firebase Authentication
 # This script uses the Google Cloud Identity Toolkit API

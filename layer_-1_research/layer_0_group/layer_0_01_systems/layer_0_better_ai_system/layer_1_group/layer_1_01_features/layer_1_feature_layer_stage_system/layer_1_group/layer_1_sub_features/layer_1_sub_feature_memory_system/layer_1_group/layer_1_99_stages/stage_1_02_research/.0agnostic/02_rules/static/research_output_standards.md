@@ -1,3 +1,8 @@
+---
+resource_id: "f499345a-4cd9-432c-8064-18670e9040c9"
+resource_type: "rule"
+resource_name: "research_output_standards"
+---
 # Research Output Standards
 
 ## Rule: Research documents MUST follow the numbered by_topic convention

@@ -1,3 +1,8 @@
+---
+resource_id: "362621dc-772f-437b-b9cc-31df1cda86f3"
+resource_type: "document"
+resource_name: "INSTALL"
+---
 # Canvas MCP Server Installation Guide
 
 ## Overview

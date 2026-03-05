@@ -1,4 +1,7 @@
 #!/bin/bash
+# resource_id: "be774b52-7ffb-40d2-9f61-3494c9f40974"
+# resource_type: "script"
+# resource_name: "cloud_server_setup_gemini"
 # Gemini CLI Setup for Cloud Server
 # Run this on your cloud server to set up Gemini CLI
 

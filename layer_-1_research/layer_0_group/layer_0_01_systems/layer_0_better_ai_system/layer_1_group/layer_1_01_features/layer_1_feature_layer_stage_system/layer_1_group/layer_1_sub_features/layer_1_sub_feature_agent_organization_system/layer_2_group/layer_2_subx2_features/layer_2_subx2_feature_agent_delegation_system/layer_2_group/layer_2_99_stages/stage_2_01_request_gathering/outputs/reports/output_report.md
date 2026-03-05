@@ -1,3 +1,8 @@
+---
+resource_id: "5fe3c35f-fba0-4b80-a33b-79817adceaa4"
+resource_type: "output"
+resource_name: "output_report"
+---
 # Reports Overview — Stage 01: Request Gathering
 
 **Entity**: agent_delegation_system

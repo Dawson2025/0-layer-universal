@@ -1,3 +1,9 @@
+---
+resource_id: "be1005b3-eeef-4d05-9265-a7c4b545757c"
+resource_type: "readme
+document"
+resource_name: "README"
+---
 # Stage Registry (Stable IDs)
 
 **Purpose**: Make stage references stable even when numeric ordering changes.

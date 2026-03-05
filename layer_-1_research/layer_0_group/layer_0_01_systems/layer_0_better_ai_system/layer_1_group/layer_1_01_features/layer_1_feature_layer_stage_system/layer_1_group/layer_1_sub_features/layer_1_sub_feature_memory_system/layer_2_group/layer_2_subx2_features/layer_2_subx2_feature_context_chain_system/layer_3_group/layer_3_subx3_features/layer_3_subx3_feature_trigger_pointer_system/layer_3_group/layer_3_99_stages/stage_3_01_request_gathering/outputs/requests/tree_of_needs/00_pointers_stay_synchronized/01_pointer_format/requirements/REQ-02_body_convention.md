@@ -1,3 +1,8 @@
+---
+resource_id: "503f8981-ecbc-484a-bee3-6d5128b0b9c9"
+resource_type: "output"
+resource_name: "REQ-02_body_convention"
+---
 # REQ-02: Body Convention
 
 **Need**: [Pointer Format](../README.md)

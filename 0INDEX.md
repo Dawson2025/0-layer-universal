@@ -1,3 +1,9 @@
+---
+resource_id: "90913aaa-445a-4977-970b-add10dc65fd6"
+resource_type: "index
+document"
+resource_name: "0INDEX"
+---
 # Index: 0_layer_universal (Root)
 
 ## Purpose

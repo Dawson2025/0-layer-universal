@@ -1,3 +1,8 @@
+---
+resource_id: "817e0caa-8f02-42ee-a983-7826101ec2cb"
+resource_type: "document"
+resource_name: "setup-pac20026_fall2025-stuff"
+---
 # Does this directory have a repo?
 _Exported on 11/25/2025 at 23:25:21 MST from Cursor (2.0.77)_
 

@@ -1,4 +1,9 @@
 ---
+resource_id: "b0357e4b-fa3e-402e-8f21-daaf9bc61581"
+resource_type: "document"
+resource_name: "stage-manager"
+---
+---
 name: stage-manager
 description: Manages workflow stages and transitions
 tools: Read, Write, Edit

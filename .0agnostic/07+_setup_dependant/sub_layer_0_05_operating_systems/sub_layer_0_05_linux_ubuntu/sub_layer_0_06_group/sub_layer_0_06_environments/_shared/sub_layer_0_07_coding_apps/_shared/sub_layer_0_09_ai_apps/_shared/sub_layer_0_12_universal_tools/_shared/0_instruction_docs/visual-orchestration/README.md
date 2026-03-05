@@ -1,3 +1,9 @@
+---
+resource_id: "a6be58c1-9ec7-4a96-9c70-8a8bc6482076"
+resource_type: "readme
+document"
+resource_name: "README"
+---
 # Visual Orchestration Framework
 *Universal Tool: Visual Planning and Management for Any Technology Stack*
 

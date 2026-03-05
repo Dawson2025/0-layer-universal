@@ -1,3 +1,8 @@
+---
+resource_id: "ec84dd8b-08de-48d6-a44f-4027b9e5aff0"
+resource_type: "output"
+resource_name: "REQ-02_knowledge_file_standards"
+---
 # Knowledge File Standards
 
 **Need**: [Three-Tier Architecture](../README.md)

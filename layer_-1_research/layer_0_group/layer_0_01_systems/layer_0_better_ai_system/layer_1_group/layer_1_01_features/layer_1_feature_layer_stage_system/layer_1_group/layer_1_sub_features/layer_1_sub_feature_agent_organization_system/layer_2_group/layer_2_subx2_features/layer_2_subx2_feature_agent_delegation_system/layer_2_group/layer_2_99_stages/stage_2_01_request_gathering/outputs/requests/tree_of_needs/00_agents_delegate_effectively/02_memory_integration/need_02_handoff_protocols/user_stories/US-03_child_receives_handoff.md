@@ -1,3 +1,8 @@
+---
+resource_id: "4725496e-e335-44c3-af7d-a20a7bedfd60"
+resource_type: "output"
+resource_name: "US-03_child_receives_handoff"
+---
 # US-3: Child entity receives handoff from parent
 
 **Need**: [Handoff Protocols](../README.md)

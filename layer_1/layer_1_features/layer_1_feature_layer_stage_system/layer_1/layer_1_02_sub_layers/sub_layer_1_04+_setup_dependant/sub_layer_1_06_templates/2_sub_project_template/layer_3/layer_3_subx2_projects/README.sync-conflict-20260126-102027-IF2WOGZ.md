@@ -1,3 +1,8 @@
+---
+resource_id: "13c432ac-d555-431c-98de-43275fc1244b"
+resource_type: "document"
+resource_name: "README.sync-conflict-20260126-102027-IF2WOGZ"
+---
 # Sub*2 Projects
 
 This folder contains nested sub-projects (subx2 projects) within this sub-project.

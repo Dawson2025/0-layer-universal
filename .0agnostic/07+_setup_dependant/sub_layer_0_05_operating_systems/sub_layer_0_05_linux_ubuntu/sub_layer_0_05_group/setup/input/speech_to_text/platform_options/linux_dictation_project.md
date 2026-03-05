@@ -1,3 +1,8 @@
+---
+resource_id: "43b28579-a52c-40ed-8944-863bdd11b501"
+resource_type: "document"
+resource_name: "linux_dictation_project"
+---
 # Linux-Dictation-Project
 
 **Last Updated**: January 12, 2026

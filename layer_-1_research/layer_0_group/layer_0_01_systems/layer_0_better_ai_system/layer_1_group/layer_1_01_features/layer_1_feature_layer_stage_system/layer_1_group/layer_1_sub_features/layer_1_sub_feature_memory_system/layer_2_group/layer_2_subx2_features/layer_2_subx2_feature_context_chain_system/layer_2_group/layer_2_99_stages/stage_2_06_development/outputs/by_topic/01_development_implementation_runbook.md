@@ -1,3 +1,8 @@
+---
+resource_id: "04659409-1fb3-4a91-af52-c46615b0a06a"
+resource_type: "output"
+resource_name: "01_development_implementation_runbook"
+---
 # Stage 2.06 Development Runbook: 0agnostic + 1merge + Avenue Web
 
 ## Purpose

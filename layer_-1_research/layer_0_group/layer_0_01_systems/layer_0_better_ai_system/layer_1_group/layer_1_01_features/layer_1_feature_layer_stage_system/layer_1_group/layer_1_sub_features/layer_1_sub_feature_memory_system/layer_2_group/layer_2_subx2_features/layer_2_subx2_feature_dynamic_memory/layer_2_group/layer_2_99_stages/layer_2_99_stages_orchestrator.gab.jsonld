@@ -1,5 +1,9 @@
 {
-  "@context": {"@vocab": "https://layer-stage.dev/schema#", "gab": "https://gab-lang.org/schema#"},
+  "file_id": "2b3c9f35-d179-4541-ae8c-502c4208cb98",
+  "@context": {
+    "@vocab": "https://layer-stage.dev/schema#",
+    "gab": "https://gab-lang.org/schema#"
+  },
   "@id": "dynamic_memory_stages_orchestrator",
   "@type": "gab:LLMAgent",
   "name": "dynamic_memory Stages Orchestrator",

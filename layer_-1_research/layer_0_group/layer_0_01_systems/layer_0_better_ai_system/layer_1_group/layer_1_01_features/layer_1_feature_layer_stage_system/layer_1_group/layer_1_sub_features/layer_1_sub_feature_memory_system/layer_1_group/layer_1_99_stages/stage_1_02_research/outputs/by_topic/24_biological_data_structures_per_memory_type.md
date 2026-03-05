@@ -1,3 +1,8 @@
+---
+resource_id: "609df5d1-9f42-494d-a6aa-40a5b418fb73"
+resource_type: "output"
+resource_name: "24_biological_data_structures_per_memory_type"
+---
 # Biological Data Structures Per Memory Type
 
 ## Purpose

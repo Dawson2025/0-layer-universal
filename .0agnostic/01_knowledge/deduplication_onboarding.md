@@ -1,3 +1,8 @@
+---
+resource_id: "f7fd4d75-e4fd-477c-93bf-fb384e851903"
+resource_type: "knowledge"
+resource_name: "deduplication_onboarding"
+---
 # Deduplication Pattern Onboarding Guide
 
 ## For New Team Members & Agents

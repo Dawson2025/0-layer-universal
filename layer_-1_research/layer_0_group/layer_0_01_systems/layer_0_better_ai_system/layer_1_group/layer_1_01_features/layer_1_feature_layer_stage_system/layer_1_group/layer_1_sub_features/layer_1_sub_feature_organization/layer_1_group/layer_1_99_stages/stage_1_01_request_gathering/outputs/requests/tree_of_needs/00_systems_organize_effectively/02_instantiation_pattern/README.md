@@ -1,3 +1,9 @@
+---
+resource_id: "5e40d7ad-75fb-4601-a5fd-fbeece52af29"
+resource_type: "readme
+output"
+resource_name: "README"
+---
 # Branch 02: Instantiation Pattern
 
 **Question**: How do systems create per-user or per-context instances?

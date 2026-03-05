@@ -1,3 +1,8 @@
+---
+resource_id: "b557cc2f-02bd-44aa-a07f-4247bac7bec9"
+resource_type: "rule"
+resource_name: "TERMINAL_SOLUTION_IMPLEMENTED"
+---
 # Terminal Solution Implementation Complete ✅
 
 ## 🎉 **SOLUTION SUCCESSFULLY IMPLEMENTED**

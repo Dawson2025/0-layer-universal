@@ -1,3 +1,8 @@
+---
+resource_id: "6220cbc8-2a38-49f5-a273-87466933ed11"
+resource_type: "knowledge"
+resource_name: "tool_config_patterns"
+---
 # Tool Configuration Patterns
 
 ## Overview

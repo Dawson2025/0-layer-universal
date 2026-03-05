@@ -1,4 +1,7 @@
 ---
+resource_id: "b7ec172b-f6c0-4eef-b3e7-71b5610f8c99"
+resource_type: "document"
+resource_name: "SKILL.sync-conflict-20260126-035815-IF2WOGZ"
 name: 10_current_product-workflow
 description: Workflow skill for Production-ready artifacts. Activated when working on 10_current_product tasks.
 version: 1.0.0

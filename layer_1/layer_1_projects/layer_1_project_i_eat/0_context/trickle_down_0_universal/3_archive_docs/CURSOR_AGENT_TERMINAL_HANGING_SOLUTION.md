@@ -1,3 +1,8 @@
+---
+resource_id: "e6ea076d-be31-4f5f-8c03-65ad52575fcc"
+resource_type: "document"
+resource_name: "CURSOR_AGENT_TERMINAL_HANGING_SOLUTION"
+---
 # Cursor Agent Terminal Hanging Solution
 
 ## 🚨 **Problem Identified**

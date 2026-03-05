@@ -1,3 +1,8 @@
+---
+resource_id: "eeffd6a2-011f-4582-8a6c-449d3192ac49"
+resource_type: "output"
+resource_name: "aalang_context_integration_proposal"
+---
 # AALang Context Integration Proposal v2
 
 **Date**: 2026-02-05

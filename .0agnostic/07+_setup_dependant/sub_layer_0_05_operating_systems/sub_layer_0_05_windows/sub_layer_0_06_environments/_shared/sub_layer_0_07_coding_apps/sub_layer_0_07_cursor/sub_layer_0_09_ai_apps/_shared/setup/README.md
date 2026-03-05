@@ -1,3 +1,9 @@
+---
+resource_id: "4c40a6b6-9283-49d9-8fc2-900834708c4e"
+resource_type: "readme
+document"
+resource_name: "README"
+---
 # Sub Layer 0.09: AI Apps & Tools Setup
 
 **Purpose:** This sub-layer contains documentation and setup instructions for AI applications and tools used across all projects.

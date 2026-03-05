@@ -1,3 +1,4 @@
+<!-- derived_from: "8da21493-e9da-4430-a539-b9531dab5110" -->
 # Better AI System Orchestrator — Integration Guide
 
 **Agent File**: `better_ai_system_orchestrator.gab.jsonld`

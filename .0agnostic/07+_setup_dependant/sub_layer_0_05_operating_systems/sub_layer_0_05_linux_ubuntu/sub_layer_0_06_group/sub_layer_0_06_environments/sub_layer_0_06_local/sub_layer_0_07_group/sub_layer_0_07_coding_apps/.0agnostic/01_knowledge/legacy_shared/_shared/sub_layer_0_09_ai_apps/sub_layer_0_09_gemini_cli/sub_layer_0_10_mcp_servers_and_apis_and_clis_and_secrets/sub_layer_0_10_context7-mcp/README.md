@@ -1,3 +1,9 @@
+---
+resource_id: "95cfca45-a95c-4490-a1af-ad2c253da55c"
+resource_type: "readme
+knowledge"
+resource_name: "README"
+---
 # context7-mcp (gemini_cli on linux_ubuntu)
 
 ## Canonical docs

@@ -1,3 +1,8 @@
+---
+resource_id: "9a5aa040-5f81-4567-bdf7-aabee5197dae"
+resource_type: "document"
+resource_name: "INSTRUCTIONS_AI_MANAGER_HIERARCHY_SYSTEM.sync-conflict-20260126-035815-IF2WOGZ"
+---
 # INSTRUCTIONS: AI Manager Hierarchy System
 
 **Created:** 2026-01-15

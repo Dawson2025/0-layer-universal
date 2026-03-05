@@ -1,3 +1,8 @@
+---
+resource_id: "e5608b24-efbf-4f79-89d0-cbc98b287f51"
+resource_type: "document"
+resource_name: "DEVELOPMENT_CONVENTIONS"
+---
 # Development Conventions for Parallel AI Agents
 
 ## Purpose

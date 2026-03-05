@@ -1,3 +1,8 @@
+---
+resource_id: "5a05f51e-29c2-42b6-ad2b-848f5fd60bc9"
+resource_type: "output"
+resource_name: "test_design_stages_manager_pattern"
+---
 # Test Design: Stages Manager Pattern
 
 **Validates**: `stage_1_04_design/outputs/design_decisions/stages_manager_pattern.md`

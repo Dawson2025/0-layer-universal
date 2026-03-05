@@ -1,4 +1,5 @@
 {
+  "file_id": "cb7ddd5c-6bc7-496b-bcb3-494ebb9942b9",
   "@context": {
     "@vocab": "https://layer-stage.dev/orchestrator/runtime/",
     "orch": "https://layer-stage.dev/orchestrator/",
@@ -11,7 +12,6 @@
       "purpose": "Shared runtime behaviors for orchestrator agents across all layers",
       "version": "1.0.0"
     },
-
     {
       "@id": "orch:SpawnProtocol",
       "@type": "RuntimeBehavior",
@@ -55,9 +55,11 @@
           "details": "Send message to orch:ResourceBudgetStateActor to increment currentConcurrent"
         }
       ],
-      "appliesTo": ["orch:DelegationMode", "orch:DelegationPersona2"]
+      "appliesTo": [
+        "orch:DelegationMode",
+        "orch:DelegationPersona2"
+      ]
     },
-
     {
       "@id": "orch:HandoffDocumentProtocol",
       "@type": "RuntimeBehavior",
@@ -111,29 +113,55 @@
           "5. Log write operation"
         ]
       },
-      "appliesTo": ["all modes"]
+      "appliesTo": [
+        "all modes"
+      ]
     },
-
     {
       "@id": "orch:StatusFormat",
       "@type": "DataFormat",
       "purpose": "Standard format for child agent status files",
       "schema": {
-        "childId": { "type": "string", "required": true },
-        "agentType": { "type": "string", "required": true },
-        "status": {
+        "childId": {
           "type": "string",
-          "enum": ["pending", "running", "completed", "failed", "timeout"],
           "required": true
         },
-        "depth": { "type": "number" },
-        "startedAt": { "type": "string", "format": "ISO8601" },
-        "lastUpdate": { "type": "string", "format": "ISO8601" },
-        "progress": { "type": "number", "minimum": 0, "maximum": 100 },
-        "pid": { "type": "number" }
+        "agentType": {
+          "type": "string",
+          "required": true
+        },
+        "status": {
+          "type": "string",
+          "enum": [
+            "pending",
+            "running",
+            "completed",
+            "failed",
+            "timeout"
+          ],
+          "required": true
+        },
+        "depth": {
+          "type": "number"
+        },
+        "startedAt": {
+          "type": "string",
+          "format": "ISO8601"
+        },
+        "lastUpdate": {
+          "type": "string",
+          "format": "ISO8601"
+        },
+        "progress": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "pid": {
+          "type": "number"
+        }
       }
     },
-
     {
       "@id": "orch:ErrorHandlingProtocol",
       "@type": "RuntimeBehavior",
@@ -184,9 +212,10 @@
           ]
         }
       },
-      "appliesTo": ["all modes"]
+      "appliesTo": [
+        "all modes"
+      ]
     },
-
     {
       "@id": "orch:CircuitBreakerProtocol",
       "@type": "RuntimeBehavior",
@@ -213,9 +242,11 @@
           "onFailure": "Return to open"
         }
       },
-      "appliesTo": ["orch:DelegationMode", "orch:ResourceBudgetStateActor"]
+      "appliesTo": [
+        "orch:DelegationMode",
+        "orch:ResourceBudgetStateActor"
+      ]
     },
-
     {
       "@id": "orch:ModeTransitionProtocol",
       "@type": "RuntimeBehavior",
@@ -258,9 +289,10 @@
           "note": "This is a cyclical transition"
         }
       },
-      "appliesTo": ["all personas"]
+      "appliesTo": [
+        "all personas"
+      ]
     },
-
     {
       "@id": "orch:AuditTrailProtocol",
       "@type": "RuntimeBehavior",
@@ -288,9 +320,11 @@
         "error_occurred",
         "circuit_breaker_tripped"
       ],
-      "appliesTo": ["all modes", "all personas"]
+      "appliesTo": [
+        "all modes",
+        "all personas"
+      ]
     },
-
     {
       "@id": "orch:ConfidenceCalculationProtocol",
       "@type": "RuntimeBehavior",
@@ -311,11 +345,23 @@
       },
       "formula": "confidence = (childConfidenceAvg * 0.5) + (completedChildren / totalChildren * 0.3) + (agreementScore * 0.2)",
       "thresholds": {
-        "high": { "min": 0.8, "description": "High confidence result" },
-        "medium": { "min": 0.5, "description": "Medium confidence, may need review" },
-        "low": { "min": 0.0, "description": "Low confidence, likely needs human review" }
+        "high": {
+          "min": 0.8,
+          "description": "High confidence result"
+        },
+        "medium": {
+          "min": 0.5,
+          "description": "Medium confidence, may need review"
+        },
+        "low": {
+          "min": 0.0,
+          "description": "Low confidence, likely needs human review"
+        }
       },
-      "appliesTo": ["orch:AggregationMode", "orch:AggregationPersona1"]
+      "appliesTo": [
+        "orch:AggregationMode",
+        "orch:AggregationPersona1"
+      ]
     }
   ]
 }

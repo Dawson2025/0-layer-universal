@@ -1,3 +1,8 @@
+---
+resource_id: "a37951da-00b6-47a3-9af3-c9eeef71858c"
+resource_type: "document"
+resource_name: "README.sync-conflict-20260126-035815-IF2WOGZ"
+---
 # sub_layer_3.05-3.14_setup - Component Setup Sublayer
 
 **Sublayer Range**: 3.05 through 3.14

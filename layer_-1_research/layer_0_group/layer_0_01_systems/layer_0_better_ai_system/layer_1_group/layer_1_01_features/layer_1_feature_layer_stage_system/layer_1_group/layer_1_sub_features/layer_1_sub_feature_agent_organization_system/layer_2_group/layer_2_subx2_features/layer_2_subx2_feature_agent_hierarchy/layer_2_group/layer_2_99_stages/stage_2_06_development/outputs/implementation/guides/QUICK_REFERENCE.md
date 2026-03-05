@@ -1,3 +1,8 @@
+---
+resource_id: "efdf87af-51e6-4d1a-8146-51d89b483aaf"
+resource_type: "output"
+resource_name: "QUICK_REFERENCE"
+---
 # AI Manager Hierarchy - Quick Reference Guide
 
 **Purpose**: Fast lookup for common tasks and locations

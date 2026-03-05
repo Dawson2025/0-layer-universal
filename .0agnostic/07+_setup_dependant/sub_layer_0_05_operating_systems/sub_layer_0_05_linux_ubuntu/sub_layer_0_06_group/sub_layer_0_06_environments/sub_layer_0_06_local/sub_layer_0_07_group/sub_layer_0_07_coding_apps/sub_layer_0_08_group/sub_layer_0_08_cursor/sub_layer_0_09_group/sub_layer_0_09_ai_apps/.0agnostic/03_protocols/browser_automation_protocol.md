@@ -1,3 +1,8 @@
+---
+resource_id: "1a83fe82-1732-49a6-88cd-2bfb6d15352d"
+resource_type: "protocol"
+resource_name: "browser_automation_protocol"
+---
 # Browser Automation Protocol (Shared - All AI Apps)
 
 ## Overview

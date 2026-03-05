@@ -1,3 +1,9 @@
+---
+resource_id: "cb97721c-d77c-4add-b3bc-2eff3b2108b8"
+resource_type: "readme
+document"
+resource_name: "README"
+---
 # tavily-mcp (codex_cli on windows)
 
 ## Canonical docs

@@ -1,3 +1,8 @@
+---
+resource_id: "625c97da-b170-4963-a7da-8f09df8ba1f3"
+resource_type: "output"
+resource_name: "progress_assessment"
+---
 # AI Manager Hierarchy Integration - Progress Assessment
 **Date**: 2025-12-24
 **Plan File**: `/home/dawson/.cursor/plans/integrate_ideal_ai_manager_hierarchy_system_into_0aicontext_8473a05b.plan.md`

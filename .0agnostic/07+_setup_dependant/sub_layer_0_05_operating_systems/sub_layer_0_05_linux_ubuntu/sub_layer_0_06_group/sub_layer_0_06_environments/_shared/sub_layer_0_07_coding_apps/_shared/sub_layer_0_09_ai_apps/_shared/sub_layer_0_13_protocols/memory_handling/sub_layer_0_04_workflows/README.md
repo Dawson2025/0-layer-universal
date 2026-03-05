@@ -1,3 +1,9 @@
+---
+resource_id: "29629674-65dd-4105-8330-2ddfe62c613d"
+resource_type: "readme
+document"
+resource_name: "README"
+---
 ## Memory Handling – Workflows
 
 This folder is for **concrete workflows** that apply the Memory Handling Protocol, such as:

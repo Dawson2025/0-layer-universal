@@ -1,3 +1,8 @@
+---
+resource_id: "ad24f4b2-647b-4646-8f96-d7622a197353"
+resource_type: "document"
+resource_name: "README.sync-conflict-20260126-101631-IF2WOGZ"
+---
 # Layer 0 Universal Manager Handoff Documents
 
 ## Overview

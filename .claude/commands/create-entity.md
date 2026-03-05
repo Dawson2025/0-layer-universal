@@ -1,3 +1,8 @@
+---
+resource_id: "d0993b20-9c36-4696-b709-370f1e0bd4cd"
+resource_type: "document"
+resource_name: "create-entity"
+---
 Create a new entity (project, feature, or component) in the layer hierarchy.
 
 Arguments:

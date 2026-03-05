@@ -1,3 +1,8 @@
+---
+resource_id: "b5f8d079-b3db-45f9-98d3-16e30ce736af"
+resource_type: "output"
+resource_name: "REQ-02_report_content"
+---
 # Report Content
 
 **Need**: [Stage Reports](../README.md)

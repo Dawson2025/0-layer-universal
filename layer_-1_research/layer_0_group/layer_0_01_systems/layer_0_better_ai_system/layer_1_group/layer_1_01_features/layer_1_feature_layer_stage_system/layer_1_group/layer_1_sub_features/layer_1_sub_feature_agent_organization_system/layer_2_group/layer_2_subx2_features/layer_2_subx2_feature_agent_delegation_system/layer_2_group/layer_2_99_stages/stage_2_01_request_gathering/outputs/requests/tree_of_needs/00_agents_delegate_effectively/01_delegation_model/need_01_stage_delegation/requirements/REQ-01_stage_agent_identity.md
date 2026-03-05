@@ -1,3 +1,8 @@
+---
+resource_id: "801fc053-f733-41e9-b52d-d82a9ec85c14"
+resource_type: "output"
+resource_name: "REQ-01_stage_agent_identity"
+---
 # Stage Agent Identity
 
 **Need**: [Stage Delegation](../README.md)

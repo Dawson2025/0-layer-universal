@@ -1,3 +1,8 @@
+---
+resource_id: "f71ec5f2-723c-479b-94fc-46044e85fbe4"
+resource_type: "output"
+resource_name: "stage_report"
+---
 # Stage Report: 02_research
 
 ## Status

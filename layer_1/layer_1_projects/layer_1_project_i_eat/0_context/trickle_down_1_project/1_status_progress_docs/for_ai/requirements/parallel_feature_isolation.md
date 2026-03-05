@@ -1,3 +1,8 @@
+---
+resource_id: "b812a960-05ab-4191-b1ca-560ee40a45ed"
+resource_type: "document"
+resource_name: "parallel_feature_isolation"
+---
 # Parallel Feature Isolation
 
 - **Source Prompt**: Live session request (Codex CLI, parallel work guidance)

@@ -1,3 +1,8 @@
+---
+resource_id: "5ec8b399-5414-47b0-8229-36f3eaf9cfcb"
+resource_type: "output"
+resource_name: "system_context_hierarchy_research"
+---
 # System Context Hierarchy - Research in Progress
 
 **Status**: Active Research

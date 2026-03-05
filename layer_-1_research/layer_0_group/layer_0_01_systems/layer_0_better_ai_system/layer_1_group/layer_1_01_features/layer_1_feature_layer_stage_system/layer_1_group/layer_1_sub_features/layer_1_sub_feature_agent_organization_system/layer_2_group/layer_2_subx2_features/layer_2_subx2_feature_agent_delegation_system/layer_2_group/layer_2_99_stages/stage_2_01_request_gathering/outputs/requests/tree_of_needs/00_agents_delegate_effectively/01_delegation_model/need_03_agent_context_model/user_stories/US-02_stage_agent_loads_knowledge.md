@@ -1,3 +1,8 @@
+---
+resource_id: "97ed063c-11be-4e1d-9a5e-dad015a8ade5"
+resource_type: "output"
+resource_name: "US-02_stage_agent_loads_knowledge"
+---
 # US-2: Stage agent loads domain knowledge on demand
 
 **Need**: [Agent Context Model](../README.md)

@@ -1,3 +1,8 @@
+---
+resource_id: "013ea4b5-ba0d-4b0f-b282-0c26d0193608"
+resource_type: "document"
+resource_name: "agnostic-edits"
+---
 # Agnostic System Edit Rule
 
 **Applies to**: Any file path matching `.0agnostic/**`

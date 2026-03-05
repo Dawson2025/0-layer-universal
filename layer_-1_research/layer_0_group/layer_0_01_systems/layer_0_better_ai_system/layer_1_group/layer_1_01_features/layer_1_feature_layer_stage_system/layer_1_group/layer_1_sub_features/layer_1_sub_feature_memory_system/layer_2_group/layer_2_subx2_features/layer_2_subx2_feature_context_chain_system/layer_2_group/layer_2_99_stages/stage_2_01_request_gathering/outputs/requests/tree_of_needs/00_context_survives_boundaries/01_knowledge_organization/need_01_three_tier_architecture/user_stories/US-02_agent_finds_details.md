@@ -1,3 +1,8 @@
+---
+resource_id: "0d4714f7-45c9-4cdc-a86a-ce3a717cb5ee"
+resource_type: "output"
+resource_name: "US-02_agent_finds_details"
+---
 # US-02: Agent knows where to find details
 
 **Need**: [Three-Tier Architecture](../README.md)

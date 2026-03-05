@@ -1,3 +1,8 @@
+---
+resource_id: "2bdda6f2-a002-4c68-a24b-58defca92976"
+resource_type: "document"
+resource_name: "cursor_capabilities"
+---
 # Cursor IDE — AI Capabilities Reference
 
 *Last updated: 2026-02-24*

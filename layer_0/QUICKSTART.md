@@ -1,3 +1,8 @@
+---
+resource_id: "ffd23c12-2351-46db-83d6-0948b628467c"
+resource_type: "document"
+resource_name: "QUICKSTART"
+---
 # Quick Start Guide - Better AI System
 
 ## 5-Minute Setup

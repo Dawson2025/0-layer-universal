@@ -1,3 +1,8 @@
+---
+resource_id: "7f70afb2-ec38-4d5b-b43d-1f9fb15abadb"
+resource_type: "document"
+resource_name: "BROWSER_MCP_SETUP_COMPLETE"
+---
 # Browser MCP Setup - Complete
 
 ## ✅ What's Been Configured

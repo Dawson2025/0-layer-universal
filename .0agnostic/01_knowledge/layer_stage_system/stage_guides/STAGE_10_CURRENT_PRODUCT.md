@@ -1,3 +1,8 @@
+---
+resource_id: "162d78c9-175b-4e90-922a-7f50672c171d"
+resource_type: "knowledge"
+resource_name: "STAGE_10_CURRENT_PRODUCT"
+---
 # Stage 10: Current Product — Universal Guide
 
 ## Purpose

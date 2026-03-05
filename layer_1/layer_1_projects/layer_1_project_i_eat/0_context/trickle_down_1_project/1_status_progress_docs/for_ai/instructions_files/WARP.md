@@ -1,3 +1,8 @@
+---
+resource_id: "66684a69-924d-4461-bc04-904d66473927"
+resource_type: "document"
+resource_name: "WARP"
+---
 # WARP.md
 
 This file provides guidance to Warp AI Assistant when working with the Language Tracker project.

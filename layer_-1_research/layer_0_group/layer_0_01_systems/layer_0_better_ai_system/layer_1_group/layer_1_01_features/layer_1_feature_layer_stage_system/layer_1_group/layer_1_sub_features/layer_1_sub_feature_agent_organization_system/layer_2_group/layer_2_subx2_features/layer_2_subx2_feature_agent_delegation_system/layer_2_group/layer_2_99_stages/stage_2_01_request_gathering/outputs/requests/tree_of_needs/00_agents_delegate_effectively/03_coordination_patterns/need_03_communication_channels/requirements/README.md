@@ -1,3 +1,9 @@
+---
+resource_id: "9f64718d-68a6-40f2-bb29-b9107c9c2f75"
+resource_type: "readme
+output"
+resource_name: "README"
+---
 # Communication Channels -- Requirements Index
 
 **Need**: [Communication Channels](../README.md)

@@ -1,3 +1,8 @@
+---
+resource_id: "0cc202c3-3dd3-4f00-90e9-255784a6ad48"
+resource_type: "output"
+resource_name: "verification_results"
+---
 # Verification Results
 
 Research conducted 2026-02-07 across 5 parallel research agents. This file documents what was verified as true, what was false, and what needs correction in our other research files.

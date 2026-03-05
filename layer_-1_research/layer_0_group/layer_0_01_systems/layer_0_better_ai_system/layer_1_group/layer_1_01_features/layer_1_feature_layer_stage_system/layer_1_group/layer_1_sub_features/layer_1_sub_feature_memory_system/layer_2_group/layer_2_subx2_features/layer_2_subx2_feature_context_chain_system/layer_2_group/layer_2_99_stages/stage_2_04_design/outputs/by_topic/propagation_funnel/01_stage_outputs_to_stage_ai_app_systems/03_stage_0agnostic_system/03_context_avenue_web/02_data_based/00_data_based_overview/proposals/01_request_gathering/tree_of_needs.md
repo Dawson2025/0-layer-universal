@@ -1,4 +1,7 @@
 ---
+resource_id: "8072d859-9c6c-4ace-95ec-9098fda237c9"
+resource_type: "output"
+resource_name: "tree_of_needs"
 pointer_to: tree_of_needs_root
 canonical_entity: layer_2_subx2_feature_context_chain_system
 canonical_entity_id: "a79b61a7-c4ab-4c93-bed5-bbcc8af0f1a9"

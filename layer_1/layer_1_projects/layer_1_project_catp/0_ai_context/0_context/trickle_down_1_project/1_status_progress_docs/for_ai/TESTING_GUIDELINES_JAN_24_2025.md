@@ -1,3 +1,8 @@
+---
+resource_id: "1bb42856-2a37-4c06-8b0f-a1e0a140c31a"
+resource_type: "document"
+resource_name: "TESTING_GUIDELINES_JAN_24_2025"
+---
 # Testing Guidelines - January 24, 2025
 **Comprehensive Testing Standards and Best Practices**
 

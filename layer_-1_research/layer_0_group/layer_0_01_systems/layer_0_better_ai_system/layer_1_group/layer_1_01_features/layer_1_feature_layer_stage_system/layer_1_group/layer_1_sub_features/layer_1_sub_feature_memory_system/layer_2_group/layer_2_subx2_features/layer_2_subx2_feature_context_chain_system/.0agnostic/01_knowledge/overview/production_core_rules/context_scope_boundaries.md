@@ -1,3 +1,8 @@
+---
+resource_id: "59ed8dae-1c69-48c5-91f4-e7d39f29de03"
+resource_type: "knowledge"
+resource_name: "context_scope_boundaries"
+---
 # Context Scope Boundaries
 
 This file has been replaced with a pointer to the canonical source.

@@ -1,3 +1,9 @@
+---
+resource_id: "b5429122-b02c-4197-8cb8-a8c20c488cbe"
+resource_type: "readme
+output"
+resource_name: "README"
+---
 # Staleness Detection -- Requirements Index
 
 **Need**: [Staleness Detection](../README.md)

@@ -1,3 +1,8 @@
+---
+resource_id: "d0dfe0bf-e9cc-498a-ba95-8bdd2c82f34b"
+resource_type: "document"
+resource_name: "proposal_ai_friendly_output_organization"
+---
 # Proposal v1: AI-Agent-Friendly Output Organization
 
 **Date**: 2026-02-02

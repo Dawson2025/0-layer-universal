@@ -1,3 +1,8 @@
+---
+resource_id: "61fa1db2-4bc4-46ee-ae7e-89891f8ea2fd"
+resource_type: "output"
+resource_name: "system_tts_setup"
+---
 # System TTS Setup — Development Log
 
 **Date**: 2026-02-24 (Phase 2 update)

@@ -1,3 +1,8 @@
+---
+resource_id: "c864e679-5667-4f94-a79e-e21e5429534b"
+resource_type: "output"
+resource_name: "REQ-02_project_customization"
+---
 # Project Customization
 
 **Need**: [Customizable Importance](../README.md)

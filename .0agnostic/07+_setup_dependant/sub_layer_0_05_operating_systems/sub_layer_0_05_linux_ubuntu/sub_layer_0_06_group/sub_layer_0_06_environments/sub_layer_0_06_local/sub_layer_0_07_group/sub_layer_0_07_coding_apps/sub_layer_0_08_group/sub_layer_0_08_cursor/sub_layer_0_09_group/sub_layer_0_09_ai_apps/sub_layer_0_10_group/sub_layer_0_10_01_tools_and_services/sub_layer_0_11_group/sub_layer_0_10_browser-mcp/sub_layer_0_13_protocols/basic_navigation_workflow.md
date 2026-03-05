@@ -1,3 +1,8 @@
+---
+resource_id: "2808fa82-75db-4723-839c-335b2d0b186a"
+resource_type: "document"
+resource_name: "basic_navigation_workflow"
+---
 # Basic Navigation Workflow (Browser MCP)
 
 ## Overview

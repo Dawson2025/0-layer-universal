@@ -1,3 +1,8 @@
+---
+resource_id: "bb779700-0e20-448a-856f-7125d56930a1"
+resource_type: "document"
+resource_name: "proposal_ai_friendly_output_organization_v2"
+---
 # Proposal v2: AI-Agent-Friendly Organization Using Layer-Stage Hierarchy
 
 **Date**: 2026-02-02

@@ -1,3 +1,8 @@
+---
+resource_id: "3c4ab93a-f57b-470b-852d-6c55ef2f704a"
+resource_type: "output"
+resource_name: "REQ-01_session_to_session_handoffs"
+---
 # Session-to-Session Handoffs
 
 **Need**: [Handoff Protocols](../README.md)

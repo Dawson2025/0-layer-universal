@@ -1,4 +1,7 @@
 ---
+resource_id: "8664bf46-095a-4dfd-942d-d40c5901db5d"
+resource_type: "document"
+resource_name: "SKILL.sync-conflict-20260126-101456-IF2WOGZ"
 name: 04_planning-workflow
 description: Workflow skill for Create implementation plan. Activated when working on 04_planning tasks.
 version: 1.0.0

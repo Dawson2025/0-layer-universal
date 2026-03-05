@@ -1,3 +1,8 @@
+---
+resource_id: "7ddaa2ee-7d8d-43e7-8e7b-18df9ad54a23"
+resource_type: "document"
+resource_name: "manual-steps-automation"
+---
 # Manual Steps Automation Protocol
 *Universal AI Agent Manual Task Execution Rules*
 

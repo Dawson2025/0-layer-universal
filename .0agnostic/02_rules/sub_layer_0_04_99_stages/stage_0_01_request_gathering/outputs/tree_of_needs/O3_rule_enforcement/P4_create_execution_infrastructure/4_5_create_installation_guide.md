@@ -1,3 +1,8 @@
+---
+resource_id: "5944262a-2e6f-4e27-90a9-fdf4b6f28db3"
+resource_type: "rule"
+resource_name: "4_5_create_installation_guide"
+---
 # 4.5: Create Installation Guide
 
 ## Requirement

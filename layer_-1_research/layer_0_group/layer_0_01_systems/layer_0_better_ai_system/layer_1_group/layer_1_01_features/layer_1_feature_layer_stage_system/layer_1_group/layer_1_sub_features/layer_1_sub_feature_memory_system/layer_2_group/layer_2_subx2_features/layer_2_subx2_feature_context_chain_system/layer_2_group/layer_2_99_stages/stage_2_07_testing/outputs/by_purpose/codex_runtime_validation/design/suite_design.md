@@ -1,3 +1,8 @@
+---
+resource_id: "44edb0d4-7415-40a2-872a-d9276b43725a"
+resource_type: "output"
+resource_name: "suite_design"
+---
 # Codex Runtime Validation Suite Design
 
 ## Goal

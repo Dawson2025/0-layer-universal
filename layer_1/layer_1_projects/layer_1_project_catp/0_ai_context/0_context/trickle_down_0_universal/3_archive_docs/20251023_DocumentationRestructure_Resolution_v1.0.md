@@ -1,3 +1,8 @@
+---
+resource_id: "4cea8a92-f76e-40ac-b093-4de729422a00"
+resource_type: "document"
+resource_name: "20251023_DocumentationRestructure_Resolution_v1.0"
+---
 # Documentation Restructure Resolution
 *Date: 2025-01-23*
 

@@ -1,3 +1,9 @@
+---
+resource_id: "2b4301fb-bf0e-480a-b4be-a72610a64557"
+resource_type: "readme
+document"
+resource_name: "README"
+---
 # Linux (Ubuntu) MCP Notes
 
 ## Scope

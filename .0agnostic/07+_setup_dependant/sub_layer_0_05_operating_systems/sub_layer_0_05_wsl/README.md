@@ -1,3 +1,9 @@
+---
+resource_id: "b708923c-78e7-4949-9104-fc05236a7d14"
+resource_type: "readme
+document"
+resource_name: "README"
+---
 # Windows Subsystem for Linux (WSL) Setup
 
 Setup documentation specific to Windows Subsystem for Linux environments.

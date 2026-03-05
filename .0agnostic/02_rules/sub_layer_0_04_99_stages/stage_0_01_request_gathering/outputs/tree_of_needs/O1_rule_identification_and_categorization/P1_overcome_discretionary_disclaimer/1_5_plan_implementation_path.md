@@ -1,3 +1,8 @@
+---
+resource_id: "5938b307-6fa3-44a8-98f3-1bb1dbf870f8"
+resource_type: "rule"
+resource_name: "1_5_plan_implementation_path"
+---
 # 1.5: Plan Implementation Path
 
 ## What This Need Covers

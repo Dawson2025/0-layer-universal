@@ -1,4 +1,10 @@
 ---
+resource_id: "f06b0403-ae54-4409-8d4b-e8a81727d46f"
+resource_type: "skill
+document"
+resource_name: "SKILL"
+---
+---
 name: 03_instructions-workflow
 description: Workflow skill for Document setup and usage instructions. Activated when working on 03_instructions tasks.
 version: 1.0.0

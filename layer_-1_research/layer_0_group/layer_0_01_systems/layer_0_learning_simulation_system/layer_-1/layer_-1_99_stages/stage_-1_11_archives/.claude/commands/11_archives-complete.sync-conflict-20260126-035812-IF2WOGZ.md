@@ -1,4 +1,7 @@
 ---
+resource_id: "4b82be73-e10e-4044-8ebb-f7fac5f8baae"
+resource_type: "document"
+resource_name: "11_archives-complete.sync-conflict-20260126-035812-IF2WOGZ"
 description: Mark 11_archives stage as complete and prepare handoff
 argument-hint: [--notes "completion notes"]
 ---

@@ -1,3 +1,8 @@
+---
+resource_id: "ebd0310b-8bdb-4267-a38f-775d26fbce11"
+resource_type: "output"
+resource_name: "05_CONFIGURATION_SYSTEM"
+---
 # Claude Code CLI — Configuration System and Files
 
 **Date**: 2026-02-28

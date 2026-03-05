@@ -1,3 +1,8 @@
+---
+resource_id: "b0b17b27-f5a4-411b-8a09-de73f346e056"
+resource_type: "rule"
+resource_name: "context_priority_rules"
+---
 # Context Priority Rules
 
 **Purpose**: Define how context from different layers is prioritized and how overrides work.

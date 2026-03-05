@@ -1,3 +1,8 @@
+---
+resource_id: "ad8da56f-9e6f-411e-b0db-43432b7fba98"
+resource_type: "output"
+resource_name: "REQ-02_instance_inherits_template"
+---
 # Instance Inherits Template
 
 **Need**: [System Instantiations](../README.md)

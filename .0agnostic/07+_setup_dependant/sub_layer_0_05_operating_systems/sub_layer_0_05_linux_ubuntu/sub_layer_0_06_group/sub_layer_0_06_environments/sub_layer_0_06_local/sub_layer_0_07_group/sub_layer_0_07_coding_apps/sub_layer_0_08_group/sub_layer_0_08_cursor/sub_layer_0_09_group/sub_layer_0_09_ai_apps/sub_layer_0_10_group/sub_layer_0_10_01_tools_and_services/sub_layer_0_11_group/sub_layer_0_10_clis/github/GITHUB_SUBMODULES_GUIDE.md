@@ -1,3 +1,8 @@
+---
+resource_id: "fefc5164-69c5-4194-a1b9-68668f4d5c96"
+resource_type: "document"
+resource_name: "GITHUB_SUBMODULES_GUIDE"
+---
 # GitHub Repositories and Submodules Guide
 
 ## Overview

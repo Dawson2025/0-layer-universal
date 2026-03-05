@@ -1,3 +1,8 @@
+---
+resource_id: "02c420f8-8411-4915-a17e-08121aac5fe6"
+resource_type: "document"
+resource_name: "ubuntu-login-loop-fix"
+---
 # Ubuntu Login Loop Fix Guide
 
 **Created:** 2026-01-17

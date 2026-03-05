@@ -1,3 +1,8 @@
+---
+resource_id: "86460cb8-3fc6-4ee1-97da-2bae33d05ebe"
+resource_type: "output"
+resource_name: "15_vectors_graphs_and_neurology"
+---
 # Vectors, Knowledge Graphs, and Neurology: A Deep Comparison
 
 ## Purpose

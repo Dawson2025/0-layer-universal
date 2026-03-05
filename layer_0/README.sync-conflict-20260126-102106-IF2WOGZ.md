@@ -1,3 +1,8 @@
+---
+resource_id: "64aea41c-5d15-4d2e-9ef7-38688bf27d43"
+resource_type: "document"
+resource_name: "README.sync-conflict-20260126-102106-IF2WOGZ"
+---
 cl# layer_0 (Layer 0) – Operational Overlay
 
 This overlay maps existing universal content into the Layer/Stage system without moving files. Each slot links to current sources. Use these paths when loading context.

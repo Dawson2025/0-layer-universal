@@ -1,4 +1,7 @@
 #!/bin/bash
+# resource_id: "0c300b0c-a80a-4d5e-9017-51c6eab05769"
+# resource_type: "script"
+# resource_name: "fix_linux_login_loop"
 # Linux Login Loop Fix Script
 # Run this from emergency/recovery mode
 # Path on Linux: /home/dawson/dawson-workspace/code/0_ai_context/0_context/layer_0_universal/fix_linux_login_loop.sh

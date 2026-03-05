@@ -1,3 +1,8 @@
+---
+resource_id: "d216a87c-58dd-4dfa-8f92-aa0b20988846"
+resource_type: "protocol"
+resource_name: "chain_validation_protocol"
+---
 # Protocol: Chain Validation
 
 **Purpose**: Verify that the full 0AGNOSTIC parent chain is intact from a given entity to the root.

@@ -1,3 +1,8 @@
+---
+resource_id: "e056d2f4-5101-4285-8205-44d73246ec04"
+resource_type: "knowledge"
+resource_name: "nesting_rules"
+---
 # Nesting Rules
 
 ## Core Principle

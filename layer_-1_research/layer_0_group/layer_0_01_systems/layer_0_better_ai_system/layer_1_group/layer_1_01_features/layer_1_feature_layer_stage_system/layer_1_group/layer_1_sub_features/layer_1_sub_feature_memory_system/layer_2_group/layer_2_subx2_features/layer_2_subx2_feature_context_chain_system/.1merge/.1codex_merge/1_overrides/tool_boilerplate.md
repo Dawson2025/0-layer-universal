@@ -1,3 +1,8 @@
+---
+resource_id: "51daa2e5-35c1-4523-8580-efb00f5ca4a2"
+resource_type: "document"
+resource_name: "tool_boilerplate"
+---
 ## Codex CLI Configuration
 
 ### Context Source

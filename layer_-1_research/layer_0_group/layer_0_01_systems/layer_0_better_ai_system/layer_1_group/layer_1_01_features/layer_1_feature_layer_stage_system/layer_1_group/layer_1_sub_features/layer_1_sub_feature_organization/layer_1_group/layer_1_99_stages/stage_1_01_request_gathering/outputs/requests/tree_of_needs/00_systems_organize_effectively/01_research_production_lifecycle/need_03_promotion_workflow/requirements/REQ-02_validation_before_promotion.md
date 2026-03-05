@@ -1,3 +1,8 @@
+---
+resource_id: "1369d531-7f3e-416c-b7c2-e83c9e360c9d"
+resource_type: "output"
+resource_name: "REQ-02_validation_before_promotion"
+---
 # Validation Before Promotion
 
 **Need**: [Promotion Workflow](../README.md)

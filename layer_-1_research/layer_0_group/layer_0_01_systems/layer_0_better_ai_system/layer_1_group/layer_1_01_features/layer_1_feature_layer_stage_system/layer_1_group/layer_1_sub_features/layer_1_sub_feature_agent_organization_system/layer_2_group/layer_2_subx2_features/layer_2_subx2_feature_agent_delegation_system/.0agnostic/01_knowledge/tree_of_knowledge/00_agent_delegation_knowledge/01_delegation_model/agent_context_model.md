@@ -1,3 +1,8 @@
+---
+resource_id: "facb657e-a7fc-49be-b998-4d0b0b29d86f"
+resource_type: "knowledge"
+resource_name: "agent_context_model"
+---
 # Topic: Agent Context Model
 
 ## Summary

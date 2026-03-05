@@ -1,3 +1,8 @@
+---
+resource_id: "608d5164-dfe2-4f5b-a92a-d15913c8905e"
+resource_type: "document"
+resource_name: "data_extraction_workflow"
+---
 # Data Extraction Workflow (Browser MCP)
 
 ## Overview

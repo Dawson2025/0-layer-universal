@@ -1,3 +1,8 @@
+---
+resource_id: "a925638a-d113-415a-94eb-eddfc2985c83"
+resource_type: "knowledge"
+resource_name: "cli_recursion_syntax"
+---
 ## CLI Recursion Syntax and Patterns
 
 This document provides concrete examples of using CLI recursion to create deep agent hierarchies.

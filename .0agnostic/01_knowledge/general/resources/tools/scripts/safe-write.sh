@@ -1,4 +1,7 @@
 #!/bin/bash
+# resource_id: "a5ee48b1-8d52-4280-9097-9d4c6e6af01b"
+# resource_type: "script"
+# resource_name: "safe-write"
 #
 # safe-write.sh - Atomic write with automatic change tracking
 #

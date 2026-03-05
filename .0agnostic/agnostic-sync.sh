@@ -1,4 +1,7 @@
 #!/bin/bash
+# resource_id: "781698fa-f580-4606-80e4-dc73fb30e3f7"
+# resource_type: "script"
+# resource_name: "agnostic-sync"
 #
 # agnostic-sync.sh v2 — Transform 0AGNOSTIC.md into tool-specific context files
 #

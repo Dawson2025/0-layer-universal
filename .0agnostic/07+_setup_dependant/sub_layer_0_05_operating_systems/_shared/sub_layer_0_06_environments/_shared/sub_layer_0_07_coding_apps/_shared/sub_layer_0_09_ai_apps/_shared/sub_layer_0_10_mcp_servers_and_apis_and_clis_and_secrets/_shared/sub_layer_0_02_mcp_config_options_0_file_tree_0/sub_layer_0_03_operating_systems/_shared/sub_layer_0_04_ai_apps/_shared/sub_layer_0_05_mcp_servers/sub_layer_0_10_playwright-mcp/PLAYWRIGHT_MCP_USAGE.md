@@ -1,3 +1,8 @@
+---
+resource_id: "336c47fc-45db-4f44-a580-d96f3d323c66"
+resource_type: "document"
+resource_name: "PLAYWRIGHT_MCP_USAGE"
+---
 # Playwright MCP Server Usage Guide
 
 **Location**: Universal Tools → MCP Tools  

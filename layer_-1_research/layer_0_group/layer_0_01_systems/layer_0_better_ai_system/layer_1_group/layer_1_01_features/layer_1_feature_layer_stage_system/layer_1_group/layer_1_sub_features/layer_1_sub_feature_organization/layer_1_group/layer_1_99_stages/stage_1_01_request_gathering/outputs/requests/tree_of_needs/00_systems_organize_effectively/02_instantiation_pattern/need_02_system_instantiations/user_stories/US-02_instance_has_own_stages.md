@@ -1,3 +1,8 @@
+---
+resource_id: "69d2c189-daee-4cce-ae23-57fe9e17c4f1"
+resource_type: "output"
+resource_name: "US-02_instance_has_own_stages"
+---
 # Instance Has Own Stages
 
 **As a** system architect designing the instantiation pattern,

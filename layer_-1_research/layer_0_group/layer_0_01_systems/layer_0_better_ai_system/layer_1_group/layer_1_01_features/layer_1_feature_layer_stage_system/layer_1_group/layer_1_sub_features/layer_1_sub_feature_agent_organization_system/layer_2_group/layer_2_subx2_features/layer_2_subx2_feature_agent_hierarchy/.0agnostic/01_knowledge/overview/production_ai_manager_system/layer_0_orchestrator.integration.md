@@ -1,3 +1,4 @@
+<!-- derived_from: "90be5305-d81f-4a63-a7df-435c95efe75c" -->
 # layer_0_orchestrator — Integration Reference
 <!-- AUTO-GENERATED from layer_0_orchestrator.gab.jsonld — do not edit directly -->
 <!-- Last transpiled: 2026-02-08T03:29:31Z -->

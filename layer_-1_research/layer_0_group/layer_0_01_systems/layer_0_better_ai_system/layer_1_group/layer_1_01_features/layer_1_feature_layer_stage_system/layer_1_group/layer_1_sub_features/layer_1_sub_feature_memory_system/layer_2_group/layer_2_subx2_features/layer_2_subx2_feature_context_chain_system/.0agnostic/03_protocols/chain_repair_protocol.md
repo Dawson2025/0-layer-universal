@@ -1,3 +1,8 @@
+---
+resource_id: "2b0181ed-0333-4e4b-8a9e-553621bc1644"
+resource_type: "protocol"
+resource_name: "chain_repair_protocol"
+---
 # Protocol: Chain Repair
 
 **Purpose**: Restore a broken 0AGNOSTIC parent chain to working state.

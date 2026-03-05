@@ -1,4 +1,7 @@
 ---
+resource_id: "d13ddb54-97e4-4b87-bf3b-256f6730442a"
+resource_type: "document"
+resource_name: "02_research-status.sync-conflict-20260126-101453-IF2WOGZ"
 description: Show current status of 02_research stage
 argument-hint: [--verbose]
 ---

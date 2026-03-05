@@ -1,3 +1,9 @@
+---
+resource_id: "f38b3668-0acc-4757-9140-586a71d876a3"
+resource_type: "readme
+output"
+resource_name: "README"
+---
 # User Stories — System Features
 
 ## Actors

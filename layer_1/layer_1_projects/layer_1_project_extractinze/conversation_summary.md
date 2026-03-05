@@ -1,3 +1,8 @@
+---
+resource_id: "0379ed6f-4210-4c1c-b3e8-fc3c0764b995"
+resource_type: "document"
+resource_name: "conversation_summary"
+---
 # iMessage Conversation Analysis Summary
 
 ## Overview

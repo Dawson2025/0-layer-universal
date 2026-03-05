@@ -1,3 +1,8 @@
+---
+resource_id: "a90e53a8-caba-454b-a9fa-946a4af969df"
+resource_type: "document"
+resource_name: "universal-db-version-control-guide"
+---
 # Universal Database Version Control Guide
 *Core Concepts and Practices for All Database Platforms*
 

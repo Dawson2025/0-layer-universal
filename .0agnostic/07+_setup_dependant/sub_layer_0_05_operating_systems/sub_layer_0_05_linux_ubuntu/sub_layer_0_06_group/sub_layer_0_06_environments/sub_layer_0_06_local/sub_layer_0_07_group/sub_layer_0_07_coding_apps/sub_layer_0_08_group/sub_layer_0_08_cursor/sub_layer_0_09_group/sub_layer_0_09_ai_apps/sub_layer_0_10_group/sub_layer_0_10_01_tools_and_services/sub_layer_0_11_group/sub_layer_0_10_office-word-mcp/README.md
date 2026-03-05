@@ -1,3 +1,9 @@
+---
+resource_id: "60992295-730f-48aa-a576-e858ec46ecec"
+resource_type: "readme
+document"
+resource_name: "README"
+---
 # Office Word MCP Server
 
 ## Overview

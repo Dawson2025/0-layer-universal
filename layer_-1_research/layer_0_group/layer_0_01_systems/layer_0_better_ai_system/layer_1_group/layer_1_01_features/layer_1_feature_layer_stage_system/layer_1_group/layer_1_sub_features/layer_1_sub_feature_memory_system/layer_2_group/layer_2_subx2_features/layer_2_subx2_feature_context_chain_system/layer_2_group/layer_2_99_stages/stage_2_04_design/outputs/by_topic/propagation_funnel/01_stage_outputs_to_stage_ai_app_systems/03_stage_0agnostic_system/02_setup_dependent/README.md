@@ -1,3 +1,9 @@
+---
+resource_id: "18e815e4-cc98-4211-9822-081367908e2a"
+resource_type: "readme
+output"
+resource_name: "README"
+---
 # Setup-Dependent (02-08)
 
 ## What This Contains

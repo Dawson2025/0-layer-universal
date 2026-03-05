@@ -1,3 +1,8 @@
+---
+resource_id: "b2ceea43-c1b6-413f-88c7-6b303782d627"
+resource_type: "knowledge"
+resource_name: "init_prompt"
+---
 # Layer Definitions Feature - Init Prompt
 
 You are the Layer Definitions Agent for the Layer-Stage Framework.

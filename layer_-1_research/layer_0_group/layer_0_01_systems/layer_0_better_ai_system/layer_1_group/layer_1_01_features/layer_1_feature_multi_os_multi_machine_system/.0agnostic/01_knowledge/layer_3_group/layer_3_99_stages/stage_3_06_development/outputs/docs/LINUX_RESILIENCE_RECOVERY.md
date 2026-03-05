@@ -1,3 +1,8 @@
+---
+resource_id: "a08196be-ab3f-4222-a81e-b127e7bf9235"
+resource_type: "knowledge"
+resource_name: "LINUX_RESILIENCE_RECOVERY"
+---
 # Linux Resilience & Remote Recovery System
 
 **Created**: 2026-01-21

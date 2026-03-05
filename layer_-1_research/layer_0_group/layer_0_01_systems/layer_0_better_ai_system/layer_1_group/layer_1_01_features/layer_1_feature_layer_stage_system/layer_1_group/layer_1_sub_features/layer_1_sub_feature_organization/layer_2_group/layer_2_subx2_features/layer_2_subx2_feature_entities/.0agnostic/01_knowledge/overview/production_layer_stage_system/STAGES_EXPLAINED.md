@@ -1,3 +1,8 @@
+---
+resource_id: "69c25ab2-e756-4679-8c6b-e4d1821a7cd0"
+resource_type: "knowledge"
+resource_name: "STAGES_EXPLAINED"
+---
 # Stages Explained — CANONICAL SOURCE POINTER
 
 This file has been replaced with a pointer to the canonical source.

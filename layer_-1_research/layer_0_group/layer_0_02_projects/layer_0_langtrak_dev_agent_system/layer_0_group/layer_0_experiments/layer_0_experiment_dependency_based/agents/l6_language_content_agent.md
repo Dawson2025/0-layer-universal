@@ -1,3 +1,8 @@
+---
+resource_id: "056b318e-fb88-485d-b8e4-4ef1400f188d"
+resource_type: "document"
+resource_name: "l6_language_content_agent"
+---
 # L6 Language Content Agent
 
 **Role**: Language Content Layer Specialist

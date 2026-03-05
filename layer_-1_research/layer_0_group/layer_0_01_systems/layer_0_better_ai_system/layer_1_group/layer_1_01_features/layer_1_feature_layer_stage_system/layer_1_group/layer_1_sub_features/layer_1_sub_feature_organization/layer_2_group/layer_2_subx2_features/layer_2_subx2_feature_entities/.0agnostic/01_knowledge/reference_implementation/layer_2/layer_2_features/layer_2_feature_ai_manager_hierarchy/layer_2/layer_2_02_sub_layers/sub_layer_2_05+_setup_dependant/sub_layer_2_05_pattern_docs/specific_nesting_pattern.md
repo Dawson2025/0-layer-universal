@@ -1,3 +1,8 @@
+---
+resource_id: "0d0c0d8d-aa34-4ba7-810d-f4fdbaf39250"
+resource_type: "knowledge"
+resource_name: "specific_nesting_pattern"
+---
 # Specific Nesting Pattern
 
 ## Nesting Levels

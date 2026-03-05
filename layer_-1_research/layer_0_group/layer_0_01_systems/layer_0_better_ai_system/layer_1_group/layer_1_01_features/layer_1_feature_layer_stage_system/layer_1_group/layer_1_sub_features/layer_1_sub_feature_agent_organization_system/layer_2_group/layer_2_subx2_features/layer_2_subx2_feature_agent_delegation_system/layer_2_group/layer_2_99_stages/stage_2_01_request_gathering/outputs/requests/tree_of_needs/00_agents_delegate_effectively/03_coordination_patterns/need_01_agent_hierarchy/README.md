@@ -1,3 +1,9 @@
+---
+resource_id: "ece7fe28-a5f9-414f-9cf5-b0f1a3025f13"
+resource_type: "readme
+output"
+resource_name: "README"
+---
 # Need: Agent Hierarchy
 
 **Branch**: [03_coordination_patterns](../)

@@ -1,3 +1,8 @@
+---
+resource_id: "6baf4700-3026-43e9-ae26-72b11d9c8b31"
+resource_type: "output"
+resource_name: "uuid_implementation_plan"
+---
 # UUID Identity System — Implementation Plan
 
 ## Date: 2026-03-02

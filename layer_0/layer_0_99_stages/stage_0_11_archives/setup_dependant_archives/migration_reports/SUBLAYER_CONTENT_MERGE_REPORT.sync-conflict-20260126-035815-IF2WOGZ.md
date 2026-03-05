@@ -1,3 +1,8 @@
+---
+resource_id: "265b5b2a-36b4-45c5-9d4b-495c58153a65"
+resource_type: "document"
+resource_name: "SUBLAYER_CONTENT_MERGE_REPORT.sync-conflict-20260126-035815-IF2WOGZ"
+---
 # Sublayer Content Merge Report
 
 Hierarchy root: /home/dawson/dawson-workspace/code/0_layer_universal/0_context/layer_0/0.02_sub_layers/sub_layer_0_05-0.014_setup/0.01_universal_setup_file_tree_0

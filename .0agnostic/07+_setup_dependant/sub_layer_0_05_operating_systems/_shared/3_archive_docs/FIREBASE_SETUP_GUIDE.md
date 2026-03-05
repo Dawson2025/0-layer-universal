@@ -1,3 +1,8 @@
+---
+resource_id: "28f36d29-06d3-4072-a291-f1fcb0a105e2"
+resource_type: "document"
+resource_name: "FIREBASE_SETUP_GUIDE"
+---
 # 🚀 COMPREHENSIVE FIREBASE AGENTIC AI SETUP GUIDE
 
 ## 📊 CURRENT STATUS: EXCELLENT FOUNDATION ✅

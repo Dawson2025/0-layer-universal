@@ -1,3 +1,8 @@
+---
+resource_id: "81981f67-697a-4354-9ddb-2b8842321544"
+resource_type: "document"
+resource_name: "CLAUDE.sync-conflict-20260126-035815-IF2WOGZ"
+---
 # Stage 09: Archives
 
 ## Purpose

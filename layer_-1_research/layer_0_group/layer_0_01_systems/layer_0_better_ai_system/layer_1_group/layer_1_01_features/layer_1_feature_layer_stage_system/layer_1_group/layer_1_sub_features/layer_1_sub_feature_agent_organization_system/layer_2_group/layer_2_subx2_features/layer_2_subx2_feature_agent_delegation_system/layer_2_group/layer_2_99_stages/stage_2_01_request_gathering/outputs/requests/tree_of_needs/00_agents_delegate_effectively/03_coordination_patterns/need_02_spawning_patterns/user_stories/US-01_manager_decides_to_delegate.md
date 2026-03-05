@@ -1,3 +1,8 @@
+---
+resource_id: "8dfa7837-b3de-42e4-9a9f-101f7f375b71"
+resource_type: "output"
+resource_name: "US-01_manager_decides_to_delegate"
+---
 # US-1: Manager decides to delegate
 
 **Need**: [Spawning Patterns](../README.md)

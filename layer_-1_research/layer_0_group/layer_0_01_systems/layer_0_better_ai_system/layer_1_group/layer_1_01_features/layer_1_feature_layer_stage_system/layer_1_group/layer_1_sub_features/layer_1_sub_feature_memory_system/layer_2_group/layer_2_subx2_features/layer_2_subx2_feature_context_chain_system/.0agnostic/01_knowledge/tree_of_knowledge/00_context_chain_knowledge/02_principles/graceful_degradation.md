@@ -1,3 +1,8 @@
+---
+resource_id: "1aefb7e0-206f-40ba-85ad-458e877f7632"
+resource_type: "knowledge"
+resource_name: "graceful_degradation"
+---
 # Principle: Graceful Degradation
 
 ## Summary

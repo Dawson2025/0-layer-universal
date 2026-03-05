@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
+# resource_id: "52987c55-7b25-4f0b-9a99-3a0f8614ecef"
+# resource_type: "script"
+# resource_name: "test_codex_discovery_chain"
 # test_codex_discovery_chain.sh — Validate Codex discovery chain checkpoints
 
 set -uo pipefail

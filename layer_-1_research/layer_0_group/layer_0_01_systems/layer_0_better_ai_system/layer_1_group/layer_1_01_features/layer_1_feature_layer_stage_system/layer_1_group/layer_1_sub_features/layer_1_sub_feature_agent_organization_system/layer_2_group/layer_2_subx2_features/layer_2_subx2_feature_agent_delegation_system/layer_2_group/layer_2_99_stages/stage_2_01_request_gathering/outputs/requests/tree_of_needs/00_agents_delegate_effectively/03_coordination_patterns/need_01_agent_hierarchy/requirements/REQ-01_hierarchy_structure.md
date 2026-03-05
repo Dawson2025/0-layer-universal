@@ -1,3 +1,8 @@
+---
+resource_id: "141d35f7-acdc-4f64-8610-5c01378039a5"
+resource_type: "output"
+resource_name: "REQ-01_hierarchy_structure"
+---
 # Hierarchy Structure
 
 **Need**: [Agent Hierarchy](../README.md)

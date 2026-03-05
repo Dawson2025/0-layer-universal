@@ -1,3 +1,8 @@
+---
+resource_id: "f3f45a8c-a89d-4603-b64c-9c60f8dfd90a"
+resource_type: "knowledge"
+resource_name: "MULTI_AGENT_PATTERNS"
+---
 # Multi-Agent Coordination Patterns
 
 ## Overview

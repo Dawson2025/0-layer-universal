@@ -1,3 +1,8 @@
+---
+resource_id: "0cfef7ea-848e-430b-8fe6-d9de17322099"
+resource_type: "output"
+resource_name: "US-01_student_gets_personalized_entity"
+---
 # Student Gets Personalized Entity
 
 **As a** student enrolling in a school system powered by AI,

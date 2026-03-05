@@ -1,3 +1,8 @@
+---
+resource_id: "656101b3-f748-487c-a129-252b3b209fc1"
+resource_type: "output"
+resource_name: "obstacles"
+---
 # Obstacles — What Stands in the Way
 
 ## Purpose

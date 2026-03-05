@@ -1,3 +1,8 @@
+---
+resource_id: "515a88e4-7ddd-4268-bb27-eb27ef0ab11e"
+resource_type: "handoff"
+resource_name: "layer_1.stage_01_request_gathering.stage_report"
+---
 # Stage Report: 01_request_gathering
 
 ## Status

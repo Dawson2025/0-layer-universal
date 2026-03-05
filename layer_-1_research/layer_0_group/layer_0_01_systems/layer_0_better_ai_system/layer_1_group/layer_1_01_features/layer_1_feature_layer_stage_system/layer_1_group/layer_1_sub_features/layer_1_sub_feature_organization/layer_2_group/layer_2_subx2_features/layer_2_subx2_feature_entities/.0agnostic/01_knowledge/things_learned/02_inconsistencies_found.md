@@ -1,3 +1,8 @@
+---
+resource_id: "0e43cb6d-f4f1-4699-b739-f2ed26af1959"
+resource_type: "knowledge"
+resource_name: "02_inconsistencies_found"
+---
 # Inconsistencies Found in Layer-Stage System
 
 ## Date: 2026-01-25

@@ -1,3 +1,8 @@
+---
+resource_id: "c75c0a1d-d64c-44bb-8586-cfcb7a2e056d"
+resource_type: "document"
+resource_name: "2025-01-27_points_service_enhancements"
+---
 # POINTS SERVICE ENHANCEMENTS
 
 ## **DATE**: 2025-01-27

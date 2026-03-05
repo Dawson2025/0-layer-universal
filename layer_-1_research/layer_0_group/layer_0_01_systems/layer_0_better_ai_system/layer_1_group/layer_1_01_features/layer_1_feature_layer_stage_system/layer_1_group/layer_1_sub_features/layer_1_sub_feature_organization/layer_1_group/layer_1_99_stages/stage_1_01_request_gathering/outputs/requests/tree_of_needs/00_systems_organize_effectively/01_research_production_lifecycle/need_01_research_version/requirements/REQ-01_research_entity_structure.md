@@ -1,3 +1,8 @@
+---
+resource_id: "7314b949-2629-4a19-b193-666c692fa993"
+resource_type: "output"
+resource_name: "REQ-01_research_entity_structure"
+---
 # Research Entity Structure
 
 **Need**: [Research Version](../README.md)

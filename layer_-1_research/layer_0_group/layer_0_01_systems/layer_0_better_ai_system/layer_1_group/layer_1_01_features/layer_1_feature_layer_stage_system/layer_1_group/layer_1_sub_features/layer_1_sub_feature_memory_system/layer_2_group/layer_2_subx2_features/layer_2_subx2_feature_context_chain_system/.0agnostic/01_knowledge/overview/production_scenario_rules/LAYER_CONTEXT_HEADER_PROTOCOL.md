@@ -1,3 +1,8 @@
+---
+resource_id: "08848442-96bf-4257-883c-1ec5d2ae7904"
+resource_type: "knowledge"
+resource_name: "LAYER_CONTEXT_HEADER_PROTOCOL"
+---
 # Layer Context Header Protocol
 
 ## Overview

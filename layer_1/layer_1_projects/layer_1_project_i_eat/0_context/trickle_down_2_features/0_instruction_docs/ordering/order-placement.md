@@ -1,3 +1,8 @@
+---
+resource_id: "e9b58308-6975-463c-bcf9-0d399ee40591"
+resource_type: "document"
+resource_name: "order-placement"
+---
 # Order Placement System
 *Comprehensive food ordering system for I-Eat University Food Delivery Platform*
 

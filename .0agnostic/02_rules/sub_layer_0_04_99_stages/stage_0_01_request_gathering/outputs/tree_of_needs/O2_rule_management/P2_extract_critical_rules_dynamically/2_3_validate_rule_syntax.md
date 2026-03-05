@@ -1,3 +1,8 @@
+---
+resource_id: "446be2a7-bf0d-4ff4-9505-2913cc7c9f07"
+resource_type: "rule"
+resource_name: "2_3_validate_rule_syntax"
+---
 # 2.3: Validate Rule Syntax and Structure
 
 ## Requirement

@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
+# resource_id: "479449a0-0384-4877-a2da-b13a19f77421"
+# resource_type: "script"
+# resource_name: "test_avenue_coverage_functional"
 # test_avenue_coverage_functional.sh — Test 8 avenues are FUNCTIONALLY available
 #
 # Goes beyond file existence (structural validation) to check content quality.

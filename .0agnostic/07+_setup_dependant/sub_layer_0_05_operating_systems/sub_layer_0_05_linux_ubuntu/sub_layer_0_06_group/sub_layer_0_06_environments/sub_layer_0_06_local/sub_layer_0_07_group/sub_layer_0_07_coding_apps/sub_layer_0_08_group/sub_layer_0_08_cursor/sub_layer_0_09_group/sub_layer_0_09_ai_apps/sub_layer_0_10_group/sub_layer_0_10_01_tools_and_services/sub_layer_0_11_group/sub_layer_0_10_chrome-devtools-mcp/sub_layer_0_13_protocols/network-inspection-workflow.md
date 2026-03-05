@@ -1,3 +1,8 @@
+---
+resource_id: "a3d34812-d3cf-4678-be95-d05e1705df8d"
+resource_type: "document"
+resource_name: "network-inspection-workflow"
+---
 # Network Request Inspection Workflow
 
 This workflow describes how to use Chrome DevTools MCP to inspect network requests, analyze API responses, and debug network-related issues.

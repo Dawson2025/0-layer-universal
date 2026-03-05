@@ -1,3 +1,8 @@
+---
+resource_id: "cfb35588-655c-4aac-824c-dec48e3c305b"
+resource_type: "document"
+resource_name: "instantiation_guide.sync-conflict-20260126-035815-IF2WOGZ"
+---
 # Instantiation Guide
 
 **Purpose:** Step-by-step instructions for creating new entities in the Layer + Stage Framework.

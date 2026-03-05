@@ -1,4 +1,5 @@
 {
+  "file_id": "feee1421-4d61-46ee-bb70-046a588ac794",
   "taskId": "orchestrated_001_b",
   "status": "completed",
   "result": {
@@ -19,16 +20,39 @@
           "name": "Context Loading Agent",
           "file": "context_loading_gab.jsonld",
           "pattern": "4-mode-13-actor",
-          "modes": ["LoadingMode", "ValidationMode", "PropagationMode", "DeliveryMode"],
-          "stateActors": ["ContextLoadingStateActor", "ContextConfidenceStateActor", "NavigationStateActor", "DebugContextStateActor", "LayerInheritanceStateActor"],
+          "modes": [
+            "LoadingMode",
+            "ValidationMode",
+            "PropagationMode",
+            "DeliveryMode"
+          ],
+          "stateActors": [
+            "ContextLoadingStateActor",
+            "ContextConfidenceStateActor",
+            "NavigationStateActor",
+            "DebugContextStateActor",
+            "LayerInheritanceStateActor"
+          ],
           "purpose": "Loads and validates CLAUDE.md chain before work begins"
         },
         {
           "name": "Layer 0 Universal Orchestrator",
           "file": "layer_0_orchestrator.gab.jsonld",
           "pattern": "5-mode-15-actor",
-          "modes": ["ReceiveMode", "DelegationMode", "MonitoringMode", "AggregationMode", "ReportMode"],
-          "stateActors": ["LayerStateActor", "ChildRegistryStateActor", "TaskStateActor", "ResourceBudgetStateActor", "StageStateActor"],
+          "modes": [
+            "ReceiveMode",
+            "DelegationMode",
+            "MonitoringMode",
+            "AggregationMode",
+            "ReportMode"
+          ],
+          "stateActors": [
+            "LayerStateActor",
+            "ChildRegistryStateActor",
+            "TaskStateActor",
+            "ResourceBudgetStateActor",
+            "StageStateActor"
+          ],
           "purpose": "Manages child agents across all layers"
         }
       ],

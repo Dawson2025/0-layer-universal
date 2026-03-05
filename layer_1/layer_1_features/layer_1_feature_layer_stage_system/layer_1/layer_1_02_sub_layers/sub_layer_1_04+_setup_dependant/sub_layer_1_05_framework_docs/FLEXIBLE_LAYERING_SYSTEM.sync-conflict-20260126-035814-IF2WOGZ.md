@@ -1,3 +1,8 @@
+---
+resource_id: "73fe1daf-e7a6-4c5e-945b-187ee6fc2625"
+resource_type: "document"
+resource_name: "FLEXIBLE_LAYERING_SYSTEM.sync-conflict-20260126-035814-IF2WOGZ"
+---
 # Flexible N-Layer Architecture System
 
 **Purpose:** This document defines the flexible, arbitrarily-nested layer system that supports unlimited depth of features and components.

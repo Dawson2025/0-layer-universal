@@ -1,3 +1,8 @@
+---
+resource_id: "e622c503-2230-41ef-ae65-bf63c0a072f2"
+resource_type: "knowledge"
+resource_name: "runtime_and_formats"
+---
 # Runtime Behaviors & Format Specifications
 
 ## Overview

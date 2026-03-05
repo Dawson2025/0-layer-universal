@@ -1,3 +1,9 @@
+---
+resource_id: "f89dc550-6020-4b1e-a287-f9cac46a44a9"
+resource_type: "readme
+document"
+resource_name: "README"
+---
 # Laptop Linux Ubuntu — Platform-Specific TTS
 
 Platform-specific TTS implementation for Ubuntu Linux on Lenovo Yoga Pro 9 with NVIDIA RTX 4060 GPU.

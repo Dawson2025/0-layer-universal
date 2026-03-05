@@ -1,3 +1,8 @@
+---
+resource_id: "24019224-4cad-4635-8be3-eca39b3e06b8"
+resource_type: "output"
+resource_name: "stage_report"
+---
 # Stage Report: 06_development
 
 ## Status

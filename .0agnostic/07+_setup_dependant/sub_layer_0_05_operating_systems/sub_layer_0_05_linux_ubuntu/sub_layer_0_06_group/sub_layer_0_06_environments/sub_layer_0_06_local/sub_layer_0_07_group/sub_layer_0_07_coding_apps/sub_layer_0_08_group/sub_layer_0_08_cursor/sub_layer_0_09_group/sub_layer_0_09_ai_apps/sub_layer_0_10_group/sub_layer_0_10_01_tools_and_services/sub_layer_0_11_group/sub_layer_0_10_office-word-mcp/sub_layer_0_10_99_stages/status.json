@@ -1,4 +1,5 @@
 {
+  "file_id": "f0807bcd-e54b-4266-bb29-9250db166768",
   "entity": "office-word-mcp",
   "type": "mcp_server",
   "current_stage": "10_current_product",
@@ -31,7 +32,10 @@
     "python_docx_venv": {
       "installed": true,
       "path": "~/.local/venvs/docx-tools",
-      "packages": ["python-docx", "docxedit"]
+      "packages": [
+        "python-docx",
+        "docxedit"
+      ]
     },
     "office_word_mcp": {
       "installed": false,

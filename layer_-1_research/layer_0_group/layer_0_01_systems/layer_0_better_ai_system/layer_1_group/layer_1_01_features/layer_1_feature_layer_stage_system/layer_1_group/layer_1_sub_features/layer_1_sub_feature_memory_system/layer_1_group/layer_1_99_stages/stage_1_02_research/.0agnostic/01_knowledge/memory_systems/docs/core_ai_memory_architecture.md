@@ -1,3 +1,8 @@
+---
+resource_id: "d2d6a5f3-1519-4c8c-a34f-5368d8b48dd7"
+resource_type: "knowledge"
+resource_name: "core_ai_memory_architecture"
+---
 # Core AI Memory Architecture — Knowledge Summary
 
 ## Overview

@@ -1,3 +1,9 @@
+---
+resource_id: "5f5e0833-74dc-4823-b3c0-50332fec7c95"
+resource_type: "readme
+knowledge"
+resource_name: "README"
+---
 # Sub-Components
 
 This folder contains sub-components (Layer 4) within this component.

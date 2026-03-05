@@ -1,3 +1,9 @@
+---
+resource_id: "076467ee-21b7-4440-862d-d6b856aa416e"
+resource_type: "readme
+knowledge"
+resource_name: "README"
+---
 # Multi-OS Workspace Sync Documentation
 
 This directory contains documentation for the multi-OS workspace sync project, which maintains a synchronized `dawson-workspace` across Windows, WSL, and Ubuntu (dual boot) using Syncthing with a VPS relay.

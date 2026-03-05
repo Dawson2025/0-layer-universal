@@ -1,3 +1,8 @@
+---
+resource_id: "d51f6b20-b5b2-4a06-a831-bcf7775760eb"
+resource_type: "document"
+resource_name: "entity_structure"
+---
 # Canonical Entity Structure
 
 This is the **single source of truth** for entity directory structure in the layer-stage system. All entity creation tools, skills, guides, and constraints reference this file.

@@ -1,3 +1,8 @@
+---
+resource_id: "191360e5-325a-40c8-a653-3fcef9fffece"
+resource_type: "output"
+resource_name: "US-03_ambiguous_entity"
+---
 # US-03: Ambiguous Entity Name Resolution
 
 ## User Story

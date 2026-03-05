@@ -1,4 +1,7 @@
 #!/bin/bash
+# resource_id: "771897d5-69d8-401f-9a17-3caf3fab1353"
+# resource_type: "script"
+# resource_name: "deploy-production"
 # Production Deployment Script for Language Tracker
 # Run from project root: bash scripts/deploy/deploy-production.sh
 

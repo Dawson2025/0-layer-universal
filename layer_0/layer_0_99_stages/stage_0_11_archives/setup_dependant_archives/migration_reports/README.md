@@ -1,3 +1,9 @@
+---
+resource_id: "419adc6b-1150-42df-8c51-176e7b8ad6c5"
+resource_type: "readme
+document"
+resource_name: "README"
+---
 # 0.01 Universal Setup File Tree (Traversable Hierarchy)
 
 This folder is the **traversable universal setup documentation file tree**. It is organized so you can always navigate through the complete setup hierarchy:

@@ -1,3 +1,8 @@
+---
+resource_id: "70243ca2-5246-4b7f-b744-2ce3228a03e1"
+resource_type: "output"
+resource_name: "REQ-03_channel_content_standards"
+---
 # Channel Content Standards
 
 **Need**: [Communication Channels](../README.md)

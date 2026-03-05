@@ -1,3 +1,9 @@
+---
+resource_id: "0660b337-de6d-4857-bc2e-57f7f669af03"
+resource_type: "index
+document"
+resource_name: "0INDEX"
+---
 # 0INDEX.md - System TTS
 
 ## Current Status

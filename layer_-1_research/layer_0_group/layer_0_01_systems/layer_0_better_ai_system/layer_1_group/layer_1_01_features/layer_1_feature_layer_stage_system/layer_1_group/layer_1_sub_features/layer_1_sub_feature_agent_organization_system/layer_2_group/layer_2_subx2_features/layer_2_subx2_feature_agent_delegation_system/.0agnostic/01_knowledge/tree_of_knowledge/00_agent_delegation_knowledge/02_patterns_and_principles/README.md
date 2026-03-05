@@ -1,3 +1,9 @@
+---
+resource_id: "10f007b6-0869-429f-8e2e-215f7d73243d"
+resource_type: "readme
+knowledge"
+resource_name: "README"
+---
 # Branch 02: Patterns and Principles
 
 **Question**: What patterns and principles govern agent delegation?

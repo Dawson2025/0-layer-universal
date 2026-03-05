@@ -1,3 +1,8 @@
+---
+resource_id: "4cb1a574-42ff-4672-bff8-04ad314f3cac"
+resource_type: "knowledge"
+resource_name: "stage_06_testing"
+---
 # Stage 05: Testing
 
 ## Purpose

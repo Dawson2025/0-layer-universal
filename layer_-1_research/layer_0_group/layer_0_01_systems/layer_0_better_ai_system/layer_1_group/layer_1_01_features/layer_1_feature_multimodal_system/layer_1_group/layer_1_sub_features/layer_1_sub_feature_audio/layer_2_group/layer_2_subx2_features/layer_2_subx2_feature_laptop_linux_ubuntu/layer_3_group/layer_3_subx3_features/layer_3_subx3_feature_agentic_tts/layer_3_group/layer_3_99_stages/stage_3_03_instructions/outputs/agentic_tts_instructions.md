@@ -1,3 +1,8 @@
+---
+resource_id: "e135aa73-ef6f-4667-863c-9fd298d9d88f"
+resource_type: "output"
+resource_name: "agentic_tts_instructions"
+---
 # Agentic TTS Instructions / Constraints
 
 **Date**: 2026-02-23

@@ -1,4 +1,7 @@
 #!/bin/bash
+# resource_id: "dddf80b7-a622-4543-b83f-1fd9a3822006"
+# resource_type: "script"
+# resource_name: "set_api_key"
 
 # Script to set up OpenAI API key for Codex CLI
 

@@ -1,4 +1,10 @@
 ---
+resource_id: "ce902ca2-b78e-47dc-953b-8b67c9cad3ef"
+resource_type: "skill
+document"
+resource_name: "SKILL"
+---
+---
 name: 09_fixing-workflow
 description: Workflow skill for Address issues from criticism. Activated when working on 09_fixing tasks.
 version: 1.0.0

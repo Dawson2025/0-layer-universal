@@ -1,3 +1,8 @@
+---
+resource_id: "cff8b694-1914-4bf0-a3f0-367385588f9b"
+resource_type: "document"
+resource_name: "20251023_GoogleSignIn_Resolution_v1.0"
+---
 # Google Sign-In Configuration - RESOLUTION
 
 ## 🎯 **Issue Identified**

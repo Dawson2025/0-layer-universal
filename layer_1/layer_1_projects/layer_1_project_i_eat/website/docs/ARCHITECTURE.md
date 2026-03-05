@@ -1,3 +1,8 @@
+---
+resource_id: "f71945cc-6b47-4066-891e-aa924afa767d"
+resource_type: "document"
+resource_name: "ARCHITECTURE"
+---
 # Architecture Overview
 
 ## Tech Stack

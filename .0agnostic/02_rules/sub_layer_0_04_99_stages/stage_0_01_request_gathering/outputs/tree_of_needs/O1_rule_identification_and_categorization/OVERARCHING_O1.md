@@ -1,3 +1,8 @@
+---
+resource_id: "20fdf854-3d1e-4b7c-8077-b3cd442d68be"
+resource_type: "rule"
+resource_name: "OVERARCHING_O1"
+---
 # O1: RULE IDENTIFICATION & CATEGORIZATION
 
 ## Strategic Question

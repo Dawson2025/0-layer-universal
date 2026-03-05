@@ -1,3 +1,9 @@
+---
+resource_id: "184e8329-1115-40fc-a5c0-17b178d2f56a"
+resource_type: "readme
+output"
+resource_name: "README"
+---
 # Requirements — System Features
 
 | ID | Name | Priority |

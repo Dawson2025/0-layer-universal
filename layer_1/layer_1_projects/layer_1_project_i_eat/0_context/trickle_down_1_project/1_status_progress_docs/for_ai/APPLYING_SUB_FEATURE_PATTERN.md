@@ -1,3 +1,8 @@
+---
+resource_id: "eb1c9638-aa96-471f-9c3c-b4a1b02ba910"
+resource_type: "document"
+resource_name: "APPLYING_SUB_FEATURE_PATTERN"
+---
 # Applying Sub-Feature Pattern Across All Features
 
 ## Strategy

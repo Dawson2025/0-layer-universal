@@ -1,3 +1,8 @@
+---
+resource_id: "3bbf7c89-3538-458f-bedd-1dcefad31572"
+resource_type: "handoff"
+resource_name: "overview_report"
+---
 # Reports Overview — Stage 01: Request Gathering
 
 **Entity**: agent_delegation_system

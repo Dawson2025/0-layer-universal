@@ -1,3 +1,9 @@
+---
+resource_id: "e3b3d87d-37ef-40bf-95df-6a8470faf458"
+resource_type: "readme
+document"
+resource_name: "README"
+---
 # browser-mcp (Claude Code CLI on Linux/Ubuntu)
 
 ## Overview

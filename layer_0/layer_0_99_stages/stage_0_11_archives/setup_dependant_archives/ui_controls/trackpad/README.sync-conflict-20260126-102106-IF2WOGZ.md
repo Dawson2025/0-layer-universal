@@ -1,3 +1,8 @@
+---
+resource_id: "fa548aa0-644e-4de4-a553-017ba5006022"
+resource_type: "document"
+resource_name: "README.sync-conflict-20260126-102106-IF2WOGZ"
+---
 # Trackpad Configuration
 
 **Last Updated**: December 31, 2025

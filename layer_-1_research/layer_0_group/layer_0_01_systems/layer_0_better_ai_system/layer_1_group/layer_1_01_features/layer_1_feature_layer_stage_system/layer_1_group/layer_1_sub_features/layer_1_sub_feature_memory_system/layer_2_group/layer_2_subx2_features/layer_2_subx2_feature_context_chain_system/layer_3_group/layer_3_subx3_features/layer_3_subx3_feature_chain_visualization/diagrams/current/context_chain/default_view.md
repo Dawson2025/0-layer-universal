@@ -1,3 +1,8 @@
+---
+resource_id: "a9e3b7f5-b3f3-4688-b6a8-f245f720677d"
+resource_type: "document"
+resource_name: "default_view"
+---
 # Context Chain — Default View (Configurable Context)
 
 > Chronological loading order of everything the user can change.

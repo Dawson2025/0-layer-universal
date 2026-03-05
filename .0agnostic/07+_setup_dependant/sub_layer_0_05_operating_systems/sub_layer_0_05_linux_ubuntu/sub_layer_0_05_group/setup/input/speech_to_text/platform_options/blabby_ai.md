@@ -1,3 +1,8 @@
+---
+resource_id: "a9520807-8541-4dbf-81d3-0d33baf55ae2"
+resource_type: "document"
+resource_name: "blabby_ai"
+---
 # BlabbyAI
 
 **Last Updated**: January 12, 2026

@@ -1,3 +1,8 @@
+---
+resource_id: "988a7052-e372-444a-aa39-b571b99aa1ed"
+resource_type: "knowledge"
+resource_name: "AI_CONTEXT_MODIFICATION_PROTOCOL"
+---
 # AI Context Modification Protocol
 
 ## Rule

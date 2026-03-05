@@ -1,4 +1,9 @@
 ---
+resource_id: "06d72d45-6430-476e-b9a1-96e2e06b2737"
+resource_type: "document"
+resource_name: "research-context"
+---
+---
 paths: layer_-1_research/**
 ---
 

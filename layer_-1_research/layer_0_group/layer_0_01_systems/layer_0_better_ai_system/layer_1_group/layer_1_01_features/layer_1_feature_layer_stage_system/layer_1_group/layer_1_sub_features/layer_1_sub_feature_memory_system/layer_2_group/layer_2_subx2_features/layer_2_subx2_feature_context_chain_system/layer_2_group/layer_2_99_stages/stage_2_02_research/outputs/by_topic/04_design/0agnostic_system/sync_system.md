@@ -1,3 +1,8 @@
+---
+resource_id: "fde0b69a-87c7-4a8d-a48d-a7d647b7948f"
+resource_type: "output"
+resource_name: "sync_system"
+---
 # Sync System — agnostic-sync.sh
 
 ## Purpose

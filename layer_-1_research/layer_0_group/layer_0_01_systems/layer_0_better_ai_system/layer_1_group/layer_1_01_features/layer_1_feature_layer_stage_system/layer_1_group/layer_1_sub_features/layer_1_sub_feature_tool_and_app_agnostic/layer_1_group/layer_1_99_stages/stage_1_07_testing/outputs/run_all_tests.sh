@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
+# resource_id: "61fd551c-a503-49c9-aa09-f2c025f3a1f8"
+# resource_type: "script"
+# resource_name: "run_all_tests"
 # run_all_tests.sh — run bridge and taxonomy tests for tool_and_app_agnostic stage_1_07_testing
 
 set -uo pipefail

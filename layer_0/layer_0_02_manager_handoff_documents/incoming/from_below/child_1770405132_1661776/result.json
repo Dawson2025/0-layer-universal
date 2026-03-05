@@ -1,4 +1,5 @@
 {
+  "file_id": "00eedecf-3e19-4abf-b5e8-c11ea9c3adc5",
   "taskId": "orchestrated_001_a",
   "status": "completed",
   "result": {
@@ -16,22 +17,49 @@
       "keyComponents": {
         "gab": {
           "description": "Generic AALang Builder - An intelligent agent compiler that uses a 4-mode-13-actor pattern",
-          "modes": ["Clarification", "Discussion", "Formalization", "Generation"],
-          "files": ["gab.jsonld", "gab-runtime.jsonld", "gab-formats.jsonld"]
+          "modes": [
+            "Clarification",
+            "Discussion",
+            "Formalization",
+            "Generation"
+          ],
+          "files": [
+            "gab.jsonld",
+            "gab-runtime.jsonld",
+            "gab-formats.jsonld"
+          ]
         },
         "aalang": {
           "description": "Actor-based Agent Language - Programming language for LLM agent consumption and execution",
-          "features": ["Graph-native", "JSON-LD format", "MCP and A2A ready", "Bounded non-determinism"],
-          "files": ["index.jsonld"]
+          "features": [
+            "Graph-native",
+            "JSON-LD format",
+            "MCP and A2A ready",
+            "Bounded non-determinism"
+          ],
+          "files": [
+            "index.jsonld"
+          ]
         },
         "aatest": {
           "description": "Comprehensive testing framework for AALang products",
-          "testTypes": ["MessageResponseTest", "MessageFlowTest", "AgentWorkflowTest"],
-          "files": ["AATest/AATest.jsonld", "AATest/AATest_spec.jsonld"]
+          "testTypes": [
+            "MessageResponseTest",
+            "MessageFlowTest",
+            "AgentWorkflowTest"
+          ],
+          "files": [
+            "AATest/AATest.jsonld",
+            "AATest/AATest_spec.jsonld"
+          ]
         },
         "compressor": {
           "description": "Huffman v2 compression tools for AALang files",
-          "files": ["Compressor/huffman-v2-compressor.jsonld", "Compressor/compress_file.py", "Compressor/count_tokens.py"]
+          "files": [
+            "Compressor/huffman-v2-compressor.jsonld",
+            "Compressor/compress_file.py",
+            "Compressor/count_tokens.py"
+          ]
         },
         "tests": {
           "description": "Test suites for GAB and AATest",

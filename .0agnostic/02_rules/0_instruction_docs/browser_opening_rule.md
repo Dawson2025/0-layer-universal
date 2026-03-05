@@ -1,3 +1,8 @@
+---
+resource_id: "0bc20995-449f-4b82-a2bd-f0ebf0769396"
+resource_type: "rule"
+resource_name: "browser_opening_rule"
+---
 # Browser Opening Rule
 
 ## Rule: Always Use MCP Browser Servers for Browser Automation

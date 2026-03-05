@@ -1,3 +1,8 @@
+---
+resource_id: "69951c9d-11bc-46dc-a3a3-7d620e64531a"
+resource_type: "rule"
+resource_name: "4_2_create_wrapper_script"
+---
 # 4.2: Create Wrapper Script
 
 ## Requirement

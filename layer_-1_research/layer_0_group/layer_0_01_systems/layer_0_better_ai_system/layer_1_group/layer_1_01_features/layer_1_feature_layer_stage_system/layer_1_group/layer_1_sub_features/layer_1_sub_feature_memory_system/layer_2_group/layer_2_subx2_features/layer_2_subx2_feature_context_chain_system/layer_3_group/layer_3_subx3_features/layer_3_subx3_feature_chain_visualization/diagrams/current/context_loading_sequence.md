@@ -1,3 +1,8 @@
+---
+resource_id: "34fb76d0-b479-4616-a52d-d5caefc4c540"
+resource_type: "document"
+resource_name: "context_loading_sequence"
+---
 # Context Loading Sequence
 
 **Purpose**: Show the exact order in which context loads from session start to end.

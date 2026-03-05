@@ -1,3 +1,9 @@
+---
+resource_id: "5cd3294d-32b9-496a-9cbb-eb852bbe2e25"
+resource_type: "readme
+knowledge"
+resource_name: "README"
+---
 # Reference Implementation - Layer-Stage System
 
 This folder contains a copy of the current Layer-Stage System implementation from:

@@ -1,3 +1,9 @@
+---
+resource_id: "09ef1115-efa0-43f8-ab1c-370562dea1bf"
+resource_type: "readme
+document"
+resource_name: "README"
+---
 # context7-mcp (claude_code_cli on windows)
 
 ## Canonical docs

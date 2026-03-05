@@ -1,3 +1,8 @@
+---
+resource_id: "665bc682-3d01-4a05-9bbb-522ae2a66d05"
+resource_type: "output"
+resource_name: "CLAUDE_CODE_CONTEXT_ARCHITECTURE"
+---
 # Claude Code CLI — Context Architecture & Porting System
 
 **Location**: `.claude/` (root of entity/project)

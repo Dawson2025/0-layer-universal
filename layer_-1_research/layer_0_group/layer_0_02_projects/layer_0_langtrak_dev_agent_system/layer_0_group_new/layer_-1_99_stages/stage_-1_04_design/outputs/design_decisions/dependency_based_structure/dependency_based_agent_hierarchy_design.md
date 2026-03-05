@@ -1,3 +1,8 @@
+---
+resource_id: "0aeac172-5c3d-495e-9138-c46e8f51ed8d"
+resource_type: "output"
+resource_name: "dependency_based_agent_hierarchy_design"
+---
 # Dependency-Based Agent Hierarchy Design
 
 **Status**: DESIGN — Ready for experiment implementation

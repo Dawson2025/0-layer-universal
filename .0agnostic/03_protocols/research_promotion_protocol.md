@@ -1,3 +1,8 @@
+---
+resource_id: "5732cbb7-5080-46eb-8682-4fb20f7acc24"
+resource_type: "protocol"
+resource_name: "research_promotion_protocol"
+---
 # Research-to-Production Promotion Protocol
 
 **Scope**: All agents | **Trigger**: When promoting validated research findings to the default context chain

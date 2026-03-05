@@ -1,3 +1,8 @@
+---
+resource_id: "235ffdcf-5946-447e-992d-c2d1abe67af8"
+resource_type: "output"
+resource_name: "rename_propagation_research"
+---
 # Research: Entity/Directory Rename Propagation in Pointer/Reference Systems
 
 ## Executive Summary

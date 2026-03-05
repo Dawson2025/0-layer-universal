@@ -1,3 +1,8 @@
+---
+resource_id: "b2e07bcb-c9c7-45b9-a83b-775847e15a6c"
+resource_type: "knowledge"
+resource_name: "scope_boundary_decisions"
+---
 # Topic: Scope Boundary Decisions
 
 ## Summary

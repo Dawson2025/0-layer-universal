@@ -1,3 +1,9 @@
+---
+resource_id: "99d5a6e7-385c-4538-a128-ba4b1520d752"
+resource_type: "readme
+document"
+resource_name: "README"
+---
 # Advanced Features Documentation
 *Trickle-Down Level 2: Feature-Level Documentation*
 

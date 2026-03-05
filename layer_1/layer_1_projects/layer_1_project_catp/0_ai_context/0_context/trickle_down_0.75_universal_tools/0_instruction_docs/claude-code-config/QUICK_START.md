@@ -1,3 +1,8 @@
+---
+resource_id: "2c83ebfc-5b74-4217-ae4b-0055d2e9e096"
+resource_type: "document"
+resource_name: "QUICK_START"
+---
 # Claude Code Bypass Permissions - Quick Start Guide
 
 ## 5-Minute Setup

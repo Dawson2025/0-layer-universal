@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
+# resource_id: "38d6accc-bb84-4caf-a355-35bd8bda7320"
+# resource_type: "script"
+# resource_name: "sync-to-home"
 # Sync .0agnostic/ from 0_layer_universal to home directory
 # Also updates ~/.claude/CLAUDE.md with relevant rule summaries
 #

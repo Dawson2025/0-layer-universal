@@ -1,4 +1,7 @@
 #!/bin/bash
+# resource_id: "9e6b561d-26c9-45db-93a7-5b1a0d8de437"
+# resource_type: "script"
+# resource_name: "install-speech-tools"
 # Automated Speech Tools Installation Script
 # Ubuntu 24.04+ with NVIDIA GPU support
 # See: docs/ubuntu-speech-tools-stt-tts.md

@@ -1,4 +1,7 @@
 ---
+resource_id: "6460413b-0b09-424b-9620-5ab11dcabbc8"
+resource_type: "document"
+resource_name: "speckit.specify"
 description: Create or update the feature specification from a natural language feature description.
 ---
 

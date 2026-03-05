@@ -1,3 +1,8 @@
+---
+resource_id: "962eabc9-05cf-4bee-ad44-da5ae49d6751"
+resource_type: "document"
+resource_name: "MCP_OS_TREE_SYNC_REPORT"
+---
 # MCP OS Tree Sync Report
 
 Source: /home/dawson/dawson-workspace/code/0_layer_universal/0_context/layer_0/0.02_sub_layers/sub_layer_0_10_mcp_servers_and_tools_setup/0.02_mcp_config_options_0_file_tree_0/0.03_operating_systems

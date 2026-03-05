@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
+# resource_id: "e80d375d-634c-4e3b-9824-0d5476870b9c"
+# resource_type: "script"
+# resource_name: "create-new-feature"
 
 set -e
 

@@ -1,3 +1,8 @@
+---
+resource_id: "ae452c11-5690-4a37-95df-cc321419f719"
+resource_type: "document"
+resource_name: "init-command"
+---
 # Universal AI Agent Initialization System
 *TD0 Universal: /init Command Protocol*
 

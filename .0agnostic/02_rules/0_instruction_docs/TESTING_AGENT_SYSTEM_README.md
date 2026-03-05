@@ -1,3 +1,8 @@
+---
+resource_id: "01398260-5bdf-453f-a16e-f9f6403407bb"
+resource_type: "rule"
+resource_name: "TESTING_AGENT_SYSTEM_README"
+---
 # Testing Agent System
 *Complete Guide to the AI Testing Agent Framework*
 

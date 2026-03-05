@@ -1,3 +1,8 @@
+---
+resource_id: "7d113744-c90b-4a8a-84dd-0aff7462bd65"
+resource_type: "output"
+resource_name: "system_tts_plan"
+---
 # System TTS Implementation Plan
 
 **Date**: 2026-02-23

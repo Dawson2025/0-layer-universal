@@ -1,4 +1,5 @@
 {
+  "file_id": "2cc2892a-dfce-4bc7-9bb5-3b6b8c69d119",
   "@context": {
     "@vocab": "https://layer-stage.dev/schema#",
     "nav": "https://layer-stage.dev/nav#",
@@ -6,24 +7,19 @@
     "need": "https://layer-stage.dev/need#",
     "meta": "https://layer-stage.dev/meta#"
   },
-
   "@id": "tree_of_needs",
   "@type": "TreeOfNeeds",
-
   "name": "Tree of Needs - Agent Delegation System",
   "version": "1.0.0",
-
   "nav:parent": {
     "@id": "../../../",
     "name": "stage_1_01_request_gathering"
   },
-
   "rootNeed": {
     "@id": "00_agents_delegate_effectively/",
     "@type": "RootNeed",
     "name": "Agents Delegate Effectively",
     "description": "Managers delegate work to specialized stage agents and sub-feature agents without carrying operational knowledge. Memory and multi-agent systems work together coherently.",
-
     "branches": [
       {
         "@id": "00_agents_delegate_effectively/01_delegation_model/",
@@ -120,7 +116,6 @@
       }
     ]
   },
-
   "rel:informsFurtherLayering": {
     "description": "This tree hierarchy maps to child entity organization",
     "pattern": {
@@ -129,7 +124,6 @@
       "need": "Component or sub-feature (layer +2)"
     }
   },
-
   "meta:sessions": {
     "@id": "_meta/sessions/",
     "description": "Session logs that contributed to this tree"

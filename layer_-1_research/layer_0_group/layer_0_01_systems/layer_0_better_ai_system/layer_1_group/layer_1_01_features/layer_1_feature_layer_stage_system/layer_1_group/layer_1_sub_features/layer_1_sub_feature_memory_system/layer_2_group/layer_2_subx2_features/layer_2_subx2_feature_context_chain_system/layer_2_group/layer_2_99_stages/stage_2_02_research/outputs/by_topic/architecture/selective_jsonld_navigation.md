@@ -1,3 +1,8 @@
+---
+resource_id: "45b60f16-567a-468c-8987-c21defa3c8ab"
+resource_type: "output"
+resource_name: "selective_jsonld_navigation"
+---
 # Selective JSON-LD Graph Navigation — Research Findings
 
 ## Date: 2026-02-07

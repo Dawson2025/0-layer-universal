@@ -1,3 +1,8 @@
+---
+resource_id: "eafef6fc-a67d-4c19-9787-84fcfae35b3b"
+resource_type: "document"
+resource_name: "ubuntu-trackpad-advanced-config.sync-conflict-20260126-102107-IF2WOGZ"
+---
 # Ubuntu Trackpad Advanced Configuration Guide
 
 **Last Updated**: December 2, 2025

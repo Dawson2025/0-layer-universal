@@ -1,3 +1,8 @@
+---
+resource_id: "2d75a880-0e72-4784-9e48-7cf7feac7a9a"
+resource_type: "document"
+resource_name: "CLAUDE.sync-conflict-20260126-035814-IF2WOGZ"
+---
 # learning_simulation_system (Research Project)
 
 ## Overview

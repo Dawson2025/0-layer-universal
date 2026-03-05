@@ -1,3 +1,8 @@
+---
+resource_id: "1a18edc2-d289-49c6-87db-d45d4dac364d"
+resource_type: "document"
+resource_name: "CLAUDE.sync-conflict-20260126-101455-IF2WOGZ"
+---
 # stage_-1_05_design
 
 ## Purpose

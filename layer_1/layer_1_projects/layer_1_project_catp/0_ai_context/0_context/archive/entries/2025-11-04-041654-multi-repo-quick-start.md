@@ -1,3 +1,8 @@
+---
+resource_id: "4599f1d1-1569-4797-8f98-2ed7c517f78c"
+resource_type: "document"
+resource_name: "2025-11-04-041654-multi-repo-quick-start"
+---
 # 2025-11-04-041654 – Multi-Repo Quick Start Added
 
 **Summary**

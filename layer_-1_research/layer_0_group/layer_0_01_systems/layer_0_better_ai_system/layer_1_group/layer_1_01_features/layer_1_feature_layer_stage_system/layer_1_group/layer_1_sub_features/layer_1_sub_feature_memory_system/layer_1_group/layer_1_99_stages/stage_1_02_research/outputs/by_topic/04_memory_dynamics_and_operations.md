@@ -1,3 +1,8 @@
+---
+resource_id: "26a4b925-b5cf-48b2-a63e-e6d89ce5bfef"
+resource_type: "output"
+resource_name: "04_memory_dynamics_and_operations"
+---
 # Memory Dynamics: Formation, Evolution, Retrieval, and Forgetting
 
 ## Overview

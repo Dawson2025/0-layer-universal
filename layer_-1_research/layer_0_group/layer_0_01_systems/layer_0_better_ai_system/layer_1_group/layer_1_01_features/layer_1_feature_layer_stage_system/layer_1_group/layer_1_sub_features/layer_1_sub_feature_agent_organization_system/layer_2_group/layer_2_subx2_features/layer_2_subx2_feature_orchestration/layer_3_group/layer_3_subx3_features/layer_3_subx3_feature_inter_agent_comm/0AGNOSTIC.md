@@ -1,3 +1,9 @@
+---
+resource_id: "b89052bd-2d10-43e5-afe5-469ba413e7ab"
+resource_type: "agnostic
+document"
+resource_name: "0AGNOSTIC"
+---
 # 0AGNOSTIC.md - layer_3_subx3_feature_inter_agent_comm
 
 ## Identity

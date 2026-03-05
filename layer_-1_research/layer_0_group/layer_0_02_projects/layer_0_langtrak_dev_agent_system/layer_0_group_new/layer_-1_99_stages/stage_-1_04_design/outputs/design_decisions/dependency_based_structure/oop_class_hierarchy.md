@@ -1,3 +1,8 @@
+---
+resource_id: "7ca50f31-d869-4a7b-afb4-40b4e08fdf1d"
+resource_type: "output"
+resource_name: "oop_class_hierarchy"
+---
 # OOP Class Hierarchy for Dependency-Based Agent Structure
 
 **Status**: DESIGN

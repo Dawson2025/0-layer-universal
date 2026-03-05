@@ -1,3 +1,9 @@
+---
+resource_id: "010d7bfa-8369-4053-af71-01cbf0d1818c"
+resource_type: "readme
+document"
+resource_name: "README"
+---
 # System TTS Sub-Feature
 
 System-wide text-to-speech for Ubuntu Linux desktop and terminal.

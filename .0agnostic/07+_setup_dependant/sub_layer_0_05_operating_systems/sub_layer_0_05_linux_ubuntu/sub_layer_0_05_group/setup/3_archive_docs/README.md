@@ -1,3 +1,9 @@
+---
+resource_id: "d17d3a26-f43e-4705-88b5-28b1a4e8c868"
+resource_type: "readme
+document"
+resource_name: "README"
+---
 # Setup and Configuration Archive
 *Completed Work and Resolutions for Environment Setup and Configuration*
 

@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
+# resource_id: "07ae2db8-20ca-4ee0-bb86-171d06639855"
+# resource_type: "script"
+# resource_name: "checkpoint-all"
 set -euo pipefail
 
 ROOT_DEFAULT="/home/dawson/dawson-workspace/code/0_layer_universal"

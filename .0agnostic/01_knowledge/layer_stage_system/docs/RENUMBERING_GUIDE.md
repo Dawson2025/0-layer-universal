@@ -1,3 +1,8 @@
+---
+resource_id: "bec7c645-8ba5-4344-a860-cff5cdb9cf92"
+resource_type: "knowledge"
+resource_name: "RENUMBERING_GUIDE"
+---
 # Layer Renumbering Guide
 
 ## Overview

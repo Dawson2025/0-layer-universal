@@ -1,3 +1,8 @@
+---
+resource_id: "ac9b14dd-f414-4cd2-a159-b87397447749"
+resource_type: "rule"
+resource_name: "STAGE_BOUNDARY_RULE"
+---
 # Scope Boundary Rule
 
 **Type**: Static (always applies)

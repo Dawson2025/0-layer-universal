@@ -1,3 +1,8 @@
+---
+resource_id: "6579f148-8017-44b5-b41f-4c4e7e0a816b"
+resource_type: "rule"
+resource_name: "PARENT_NEED_P5"
+---
 # P5: ENSURE RELIABILITY & MAINTENANCE
 
 ## Tactical Objective

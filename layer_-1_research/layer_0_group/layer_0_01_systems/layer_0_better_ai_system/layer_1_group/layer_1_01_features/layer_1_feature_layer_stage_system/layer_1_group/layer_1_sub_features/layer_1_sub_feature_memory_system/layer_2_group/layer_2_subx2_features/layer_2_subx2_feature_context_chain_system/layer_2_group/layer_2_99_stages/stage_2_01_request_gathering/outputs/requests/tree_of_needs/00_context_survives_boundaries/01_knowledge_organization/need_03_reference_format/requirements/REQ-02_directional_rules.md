@@ -1,3 +1,8 @@
+---
+resource_id: "4861647b-fe0f-4f3f-a066-f51ac87c24d8"
+resource_type: "output"
+resource_name: "REQ-02_directional_rules"
+---
 # Directional Rules
 
 **Need**: [Reference Format Standard](../README.md)

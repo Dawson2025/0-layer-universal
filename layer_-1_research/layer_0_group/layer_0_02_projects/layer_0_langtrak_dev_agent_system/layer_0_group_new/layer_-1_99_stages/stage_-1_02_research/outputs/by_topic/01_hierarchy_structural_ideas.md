@@ -1,3 +1,8 @@
+---
+resource_id: "37eac977-e2f7-448e-bca6-192419dc0098"
+resource_type: "output"
+resource_name: "01_hierarchy_structural_ideas"
+---
 # Hierarchy Structural Ideas for LangTrak
 
 **Status**: RESEARCH — Exploring different organizing principles

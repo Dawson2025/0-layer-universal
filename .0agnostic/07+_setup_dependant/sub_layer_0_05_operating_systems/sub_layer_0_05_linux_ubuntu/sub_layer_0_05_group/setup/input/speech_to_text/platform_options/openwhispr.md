@@ -1,3 +1,8 @@
+---
+resource_id: "32da2ddd-9060-4a35-b164-8a236ffae795"
+resource_type: "document"
+resource_name: "openwhispr"
+---
 # OpenWhispr
 
 **Last Updated**: January 12, 2026

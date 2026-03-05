@@ -1,3 +1,9 @@
+---
+resource_id: "1a3c5269-b855-43f8-bd1b-7d5d0971f03d"
+resource_type: "readme
+document"
+resource_name: "README"
+---
 # playwright-mcp (cursor_agent on wsl)
 
 ## Canonical docs

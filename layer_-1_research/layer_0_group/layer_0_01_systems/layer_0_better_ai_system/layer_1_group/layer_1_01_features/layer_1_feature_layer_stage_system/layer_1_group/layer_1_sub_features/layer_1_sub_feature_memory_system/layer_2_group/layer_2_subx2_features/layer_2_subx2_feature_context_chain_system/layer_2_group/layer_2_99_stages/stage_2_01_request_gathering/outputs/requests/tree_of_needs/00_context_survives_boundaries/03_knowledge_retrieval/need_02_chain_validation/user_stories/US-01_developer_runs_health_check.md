@@ -1,3 +1,8 @@
+---
+resource_id: "5a8ff40c-e54d-4394-88e8-da5334e1bea4"
+resource_type: "output"
+resource_name: "US-01_developer_runs_health_check"
+---
 # US-01: Developer runs full chain health check
 
 **Need**: [Chain Validation Enhancement](../README.md)

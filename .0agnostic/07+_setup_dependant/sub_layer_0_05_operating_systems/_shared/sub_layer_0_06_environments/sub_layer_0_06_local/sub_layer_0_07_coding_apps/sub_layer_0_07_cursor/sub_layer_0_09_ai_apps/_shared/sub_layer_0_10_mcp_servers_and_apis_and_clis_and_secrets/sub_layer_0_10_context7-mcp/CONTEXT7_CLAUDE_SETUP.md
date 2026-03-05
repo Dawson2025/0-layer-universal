@@ -1,3 +1,8 @@
+---
+resource_id: "7c1e36c2-5acc-450f-a3f5-2cbd59bd576a"
+resource_type: "document"
+resource_name: "CONTEXT7_CLAUDE_SETUP"
+---
 # Context7 MCP Server - Claude Code Integration Guide
 
 ## Overview

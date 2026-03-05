@@ -1,3 +1,8 @@
+---
+resource_id: "d7a60949-b285-4694-a184-59d5ad6514d4"
+resource_type: "rule"
+resource_name: "single_source_of_truth"
+---
 # Rule: Single Source of Truth
 
 **Status**: MANDATORY

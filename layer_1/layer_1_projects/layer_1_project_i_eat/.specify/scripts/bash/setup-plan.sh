@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
+# resource_id: "52395eb0-4409-44c2-8016-75d54ea524de"
+# resource_type: "script"
+# resource_name: "setup-plan"
 
 set -e
 

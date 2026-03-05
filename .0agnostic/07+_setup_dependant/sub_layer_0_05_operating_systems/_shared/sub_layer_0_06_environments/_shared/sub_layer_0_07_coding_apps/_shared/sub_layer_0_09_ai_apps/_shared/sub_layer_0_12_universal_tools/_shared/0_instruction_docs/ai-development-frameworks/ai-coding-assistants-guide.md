@@ -1,3 +1,8 @@
+---
+resource_id: "6117d7fa-6a47-4fd1-98d9-9b03e6aeb2e1"
+resource_type: "document"
+resource_name: "ai-coding-assistants-guide"
+---
 # AI Coding Assistants - Comprehensive Guide
 *Complete Guide to AI-Powered Development Tools*
 

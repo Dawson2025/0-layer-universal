@@ -1,3 +1,8 @@
+---
+resource_id: "ce55555a-e0b7-4ddd-b57d-a259927e72d9"
+resource_type: "output"
+resource_name: "20_three_tier_knowledge_architecture"
+---
 # Three-Tier Knowledge Architecture: Where Content Lives
 
 ## The Problem

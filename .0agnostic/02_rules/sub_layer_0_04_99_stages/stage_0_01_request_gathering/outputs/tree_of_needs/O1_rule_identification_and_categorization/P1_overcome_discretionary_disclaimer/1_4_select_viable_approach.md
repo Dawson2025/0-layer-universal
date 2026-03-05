@@ -1,3 +1,8 @@
+---
+resource_id: "d6053490-7c69-4ced-b25c-694d5068e75b"
+resource_type: "rule"
+resource_name: "1_4_select_viable_approach"
+---
 # 1.4: Select Viable Approach
 
 ## What This Need Covers

@@ -1,3 +1,9 @@
+---
+resource_id: "8ae4ad0e-36b5-4ec2-919e-585a5bc5a7f1"
+resource_type: "agnostic
+document"
+resource_name: "0AGNOSTIC"
+---
 # 0AGNOSTIC.md - layer_2_subx2_feature_laptop_linux_ubuntu
 
 ## Identity

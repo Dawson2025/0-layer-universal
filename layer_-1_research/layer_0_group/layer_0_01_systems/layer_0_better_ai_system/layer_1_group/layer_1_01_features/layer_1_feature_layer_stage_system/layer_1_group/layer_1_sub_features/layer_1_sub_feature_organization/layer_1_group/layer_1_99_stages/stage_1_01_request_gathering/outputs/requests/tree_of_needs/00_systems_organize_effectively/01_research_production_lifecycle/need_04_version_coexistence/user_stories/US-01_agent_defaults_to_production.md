@@ -1,3 +1,8 @@
+---
+resource_id: "f8844b6b-f40c-400e-8f85-84752ec18833"
+resource_type: "output"
+resource_name: "US-01_agent_defaults_to_production"
+---
 # Agent Defaults to Production
 
 **As an** AI agent beginning a new session,

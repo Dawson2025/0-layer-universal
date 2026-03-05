@@ -1,3 +1,9 @@
+---
+resource_id: "d3432ac2-a6b6-49df-97ec-25b2c1273a0c"
+resource_type: "readme
+document"
+resource_name: "README"
+---
 # Cursor Config Component
 
 ## Purpose

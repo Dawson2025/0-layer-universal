@@ -1,3 +1,8 @@
+---
+resource_id: "cbb4439a-0d44-4fd6-a97b-27f24634f346"
+resource_type: "document"
+resource_name: "legacy_os_and_environment_setup_README"
+---
 # ⚠️ DEPRECATED - This Sublayer Has Been Consolidated
 
 **Deprecation Date**: 2026-01-01

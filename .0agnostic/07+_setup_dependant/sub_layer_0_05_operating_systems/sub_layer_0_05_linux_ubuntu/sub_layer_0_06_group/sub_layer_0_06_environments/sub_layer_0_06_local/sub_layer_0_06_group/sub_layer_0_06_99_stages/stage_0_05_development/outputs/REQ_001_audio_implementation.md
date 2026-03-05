@@ -1,3 +1,8 @@
+---
+resource_id: "a3daf7eb-0ca8-46ac-8c04-4c95f4d9dd8f"
+resource_type: "output"
+resource_name: "REQ_001_audio_implementation"
+---
 # Implementation: Laptop Speaker Audio Enhancement
 
 ## Request Reference

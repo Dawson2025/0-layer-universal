@@ -1,3 +1,8 @@
+---
+resource_id: "d71e9999-022f-43d3-916c-c06d2667d9b5"
+resource_type: "knowledge"
+resource_name: "STAGE_06_DEVELOPMENT"
+---
 # Stage 06: Development — Universal Guide
 
 ## Purpose

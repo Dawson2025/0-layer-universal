@@ -1,3 +1,8 @@
+---
+resource_id: "2a9f07ba-695c-4a5e-800d-8a371d4f24ad"
+resource_type: "output"
+resource_name: "REQUEST_001_TTS_STT_SYSTEM"
+---
 # Request 001: System-Wide Text-to-Speech & AI CLI Audio Feedback
 
 ## Summary

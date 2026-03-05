@@ -1,3 +1,8 @@
+---
+resource_id: "4d0c488b-581d-44e2-8884-f3a67cfcb424"
+resource_type: "output"
+resource_name: "sub_layer_migration_map"
+---
 # Design — Sub-Layer Migration Map
 
 ## Purpose

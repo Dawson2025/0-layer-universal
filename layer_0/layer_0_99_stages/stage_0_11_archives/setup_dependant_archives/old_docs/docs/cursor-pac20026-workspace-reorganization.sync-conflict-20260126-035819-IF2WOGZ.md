@@ -1,3 +1,8 @@
+---
+resource_id: "1a0abc0b-9592-4b77-ae3b-fd3d749b2399"
+resource_type: "document"
+resource_name: "cursor-pac20026-workspace-reorganization.sync-conflict-20260126-035819-IF2WOGZ"
+---
 # Does this directory have a repo?
 _Exported on 11/25/2025 at 23:25:21 MST from Cursor (2.0.77)_
 

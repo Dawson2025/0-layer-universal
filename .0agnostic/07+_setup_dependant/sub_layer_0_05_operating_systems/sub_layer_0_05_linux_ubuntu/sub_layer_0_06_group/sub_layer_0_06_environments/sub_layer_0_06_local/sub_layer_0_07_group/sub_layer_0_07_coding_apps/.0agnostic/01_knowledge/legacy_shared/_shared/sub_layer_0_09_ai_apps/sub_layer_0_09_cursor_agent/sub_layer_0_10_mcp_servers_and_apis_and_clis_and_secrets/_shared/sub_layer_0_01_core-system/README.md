@@ -1,3 +1,9 @@
+---
+resource_id: "4d0f3108-209c-4498-9dfd-c77fa369b797"
+resource_type: "readme
+knowledge"
+resource_name: "README"
+---
 # 0.01 Core System (MCP Servers & Tools Setup)
 
 This folder contains **cross-OS / cross-app** documentation for how we manage MCP servers and tool availability across AI apps (Codex CLI, Claude Code CLI, Gemini CLI, Cursor Agent).

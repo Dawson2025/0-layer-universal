@@ -1,3 +1,8 @@
+---
+resource_id: "d4901bc4-74b3-4c56-83cd-b9c4054f884b"
+resource_type: "output"
+resource_name: "README_GEMINI_RESEARCH"
+---
 # Gemini API Research: Complete Guide Package
 
 **Date**: February 27, 2026  

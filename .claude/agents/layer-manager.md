@@ -1,4 +1,9 @@
 ---
+resource_id: "0a9856d5-266e-49e4-b45a-309885010c92"
+resource_type: "document"
+resource_name: "layer-manager"
+---
+---
 name: layer-manager
 description: Manages layer navigation and entity creation
 tools: Read, Glob, Grep, Write

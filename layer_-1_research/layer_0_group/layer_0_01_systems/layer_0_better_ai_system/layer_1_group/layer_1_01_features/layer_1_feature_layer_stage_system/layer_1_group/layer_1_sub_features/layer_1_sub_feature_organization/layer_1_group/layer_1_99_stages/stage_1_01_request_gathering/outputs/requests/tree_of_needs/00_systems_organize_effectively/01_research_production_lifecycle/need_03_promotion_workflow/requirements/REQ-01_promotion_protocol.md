@@ -1,3 +1,8 @@
+---
+resource_id: "eb688bd1-8b50-4f01-a671-8cfb38154ab0"
+resource_type: "output"
+resource_name: "REQ-01_promotion_protocol"
+---
 # Promotion Protocol
 
 **Need**: [Promotion Workflow](../README.md)

@@ -1,3 +1,8 @@
+---
+resource_id: "77408a66-a162-474d-9c38-841eacea664c"
+resource_type: "document"
+resource_name: "ADMIN_IMPLEMENTATION"
+---
 # Admin System Implementation Summary
 
 ## Overview

@@ -1,3 +1,8 @@
+---
+resource_id: "ae4f8e33-c33b-45f7-9f1d-d1c8c2ba67bd"
+resource_type: "output"
+resource_name: "US-01_agent_follows_reference"
+---
 # US-01: Agent follows reference to source
 
 **Need**: [Reference Format Standard](../README.md)

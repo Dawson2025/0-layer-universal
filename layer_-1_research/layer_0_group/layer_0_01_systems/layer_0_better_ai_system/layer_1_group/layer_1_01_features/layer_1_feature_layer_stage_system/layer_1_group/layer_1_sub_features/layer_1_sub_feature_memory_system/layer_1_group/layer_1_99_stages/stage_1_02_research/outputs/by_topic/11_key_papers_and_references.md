@@ -1,3 +1,8 @@
+---
+resource_id: "e2b0dd52-13ce-404d-b4c6-533e9abca122"
+resource_type: "output"
+resource_name: "11_key_papers_and_references"
+---
 # Key Papers and References: AI Agent Memory Systems
 
 ## Overview

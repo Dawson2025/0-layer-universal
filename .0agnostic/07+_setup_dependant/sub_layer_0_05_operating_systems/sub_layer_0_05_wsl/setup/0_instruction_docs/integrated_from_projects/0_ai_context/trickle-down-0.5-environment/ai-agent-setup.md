@@ -1,3 +1,8 @@
+---
+resource_id: "7ab05a16-3f9d-4bbe-bb57-67143e223c60"
+resource_type: "document"
+resource_name: "ai-agent-setup"
+---
 # AI Agent Environment Configuration for This Project
 *Trickle-Down Level 0.5: Environment-Specific Configuration*
 

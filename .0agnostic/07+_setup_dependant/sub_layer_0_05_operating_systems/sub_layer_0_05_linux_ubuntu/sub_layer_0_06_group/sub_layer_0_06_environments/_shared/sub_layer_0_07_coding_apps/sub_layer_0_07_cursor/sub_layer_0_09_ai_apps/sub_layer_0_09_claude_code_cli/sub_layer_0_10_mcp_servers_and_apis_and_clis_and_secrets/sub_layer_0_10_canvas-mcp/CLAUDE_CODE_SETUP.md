@@ -1,3 +1,8 @@
+---
+resource_id: "40b64312-a9e8-462f-bbdb-a0ca819136ee"
+resource_type: "document"
+resource_name: "CLAUDE_CODE_SETUP"
+---
 # Canvas MCP Setup for Claude Code CLI in Cursor (Linux Ubuntu)
 
 ## Setup Status

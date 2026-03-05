@@ -1,4 +1,9 @@
 ---
+resource_id: "8565d14f-ab20-48f8-82da-403b743381eb"
+resource_type: "document"
+resource_name: "00_stage_registry-complete"
+---
+---
 description: Mark 00_stage_registry stage as complete and prepare handoff
 argument-hint: [--notes "completion notes"]
 ---

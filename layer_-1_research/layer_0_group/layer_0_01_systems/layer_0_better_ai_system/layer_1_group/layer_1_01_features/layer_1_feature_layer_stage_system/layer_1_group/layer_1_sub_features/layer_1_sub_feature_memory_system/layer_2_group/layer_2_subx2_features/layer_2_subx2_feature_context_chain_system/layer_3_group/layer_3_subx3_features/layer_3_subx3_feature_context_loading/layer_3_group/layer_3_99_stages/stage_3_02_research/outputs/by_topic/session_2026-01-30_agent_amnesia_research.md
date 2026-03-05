@@ -1,3 +1,8 @@
+---
+resource_id: "63930b33-ced5-43a6-9a35-eb47acc742c4"
+resource_type: "output"
+resource_name: "session_2026-01-30_agent_amnesia_research"
+---
 # Session Log: 2026-01-30 - Agent Amnesia & Context Systems Research
 
 **Layer**: layer_-1 (Research)

@@ -1,3 +1,8 @@
+---
+resource_id: "01e21849-d417-4e4a-9575-6bce08bccba4"
+resource_type: "rule"
+resource_name: "testing-agent-handoff-template"
+---
 # Testing Agent Handoff Template
 *Standard Template for Development-to-Testing Handoffs*
 

@@ -1,3 +1,8 @@
+---
+resource_id: "0196a273-434d-4d98-915b-678946f9c38b"
+resource_type: "output"
+resource_name: "perplexity_extraction_2026-02-22_tts-research"
+---
 # Perplexity Extraction: System-Wide TTS + Claude Code TTS
 
 **Source**: https://www.perplexity.ai/search/hey-how-s-it-going-doing-prett-VVzJDBQ9Tkq2MIwXHhxo6w

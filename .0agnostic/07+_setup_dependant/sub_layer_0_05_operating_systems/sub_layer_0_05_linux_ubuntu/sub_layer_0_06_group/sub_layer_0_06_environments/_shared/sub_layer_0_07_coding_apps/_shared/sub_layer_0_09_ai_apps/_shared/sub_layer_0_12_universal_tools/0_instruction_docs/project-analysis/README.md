@@ -1,3 +1,9 @@
+---
+resource_id: "28076c6f-d1d6-41e1-ba3b-c896b3138276"
+resource_type: "readme
+document"
+resource_name: "README"
+---
 # Project Analysis Framework
 *Universal Tool: Intelligent Project Analysis and Recommendation System*
 

@@ -1,3 +1,9 @@
+---
+resource_id: "461d9df7-dbbc-4f34-a0f2-040d1fa32548"
+resource_type: "agnostic
+document"
+resource_name: "0AGNOSTIC"
+---
 # 0AGNOSTIC.md - layer_2_subx2_feature_navigation
 
 ## Identity

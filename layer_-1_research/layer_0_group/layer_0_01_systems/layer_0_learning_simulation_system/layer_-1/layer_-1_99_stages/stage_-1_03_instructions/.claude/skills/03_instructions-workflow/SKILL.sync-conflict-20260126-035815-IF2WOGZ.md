@@ -1,4 +1,7 @@
 ---
+resource_id: "b75a6d6c-88cb-49a4-b5ad-a0b21a384650"
+resource_type: "document"
+resource_name: "SKILL.sync-conflict-20260126-035815-IF2WOGZ"
 name: 03_instructions-workflow
 description: Workflow skill for Document setup and usage instructions. Activated when working on 03_instructions tasks.
 version: 1.0.0

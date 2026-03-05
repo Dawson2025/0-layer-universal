@@ -1,3 +1,8 @@
+---
+resource_id: "69936231-d9dd-4bc8-9dbc-af3ddc773cf1"
+resource_type: "knowledge"
+resource_name: "HOW_CONTEXT_WORKS"
+---
 # How Context Loading Works
 
 ## Overview

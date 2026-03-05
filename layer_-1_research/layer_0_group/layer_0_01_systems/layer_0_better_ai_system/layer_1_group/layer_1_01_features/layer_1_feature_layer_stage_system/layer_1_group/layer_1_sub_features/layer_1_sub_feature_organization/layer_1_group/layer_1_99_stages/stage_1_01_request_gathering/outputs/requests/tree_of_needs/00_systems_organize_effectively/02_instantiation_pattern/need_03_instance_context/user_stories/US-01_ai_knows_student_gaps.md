@@ -1,3 +1,8 @@
+---
+resource_id: "5e506e81-3795-434e-802f-fd3344fddfa6"
+resource_type: "output"
+resource_name: "US-01_ai_knows_student_gaps"
+---
 # AI Knows Student's Knowledge Gaps
 
 **As an** AI tutor working with a specific student,

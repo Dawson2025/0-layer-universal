@@ -1,3 +1,8 @@
+---
+resource_id: "1b1a6ceb-cc33-425c-8ff9-b36358fd4caa"
+resource_type: "document"
+resource_name: "QUICK_START"
+---
 # Multi-Repo Quick Start (assignment-time + task-timer-frontend)
 
 This guide explains how to work on the Firebase backend (`assignment-time`) and the Chrome extension frontend (`task-timer-frontend`) in the same session without crossing wires.

@@ -1,3 +1,9 @@
+---
+resource_id: "0508fe95-5c7b-4683-80b1-fe2c3e310cce"
+resource_type: "readme
+document"
+resource_name: "README"
+---
 # Operating System (MCP Setup)
 
 This folder captures OS-specific requirements, quirks, and runbooks for MCP servers (especially browser automation).

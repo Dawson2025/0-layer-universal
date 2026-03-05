@@ -1,4 +1,9 @@
 ---
+resource_id: "72680fe6-a436-4770-bbed-d2b0101384ac"
+resource_type: "document"
+resource_name: "04_planning-agent"
+---
+---
 name: 04_planning-agent
 description: Specialized agent for Create implementation plan. Use when working on 04_planning tasks.
 tools: Read, Write, Edit, Task

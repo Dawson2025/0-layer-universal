@@ -1,3 +1,8 @@
+---
+resource_id: "5f9089b8-10b0-436d-b9a4-5d16683b00ad"
+resource_type: "knowledge"
+resource_name: "single_source_of_truth"
+---
 # Principle: Single Source of Truth
 
 **Type**: Consistency

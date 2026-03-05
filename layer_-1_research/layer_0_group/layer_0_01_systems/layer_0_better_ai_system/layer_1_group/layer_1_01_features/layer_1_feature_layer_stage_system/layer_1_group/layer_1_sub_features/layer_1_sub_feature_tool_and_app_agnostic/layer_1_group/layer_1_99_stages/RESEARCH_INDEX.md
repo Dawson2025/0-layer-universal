@@ -1,3 +1,8 @@
+---
+resource_id: "eb531dd0-013d-44ac-b44f-8224a9dfa61f"
+resource_type: "document"
+resource_name: "RESEARCH_INDEX"
+---
 # Research Index: Layer Consolidation, Context Chain & Grade Strategy
 
 **Session**: 2026-02-27

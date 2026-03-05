@@ -1,3 +1,8 @@
+---
+resource_id: "35008510-5538-4055-ba80-6471ab436839"
+resource_type: "output"
+resource_name: "spec"
+---
 
 # Request 03: Automate Environment Detection
 

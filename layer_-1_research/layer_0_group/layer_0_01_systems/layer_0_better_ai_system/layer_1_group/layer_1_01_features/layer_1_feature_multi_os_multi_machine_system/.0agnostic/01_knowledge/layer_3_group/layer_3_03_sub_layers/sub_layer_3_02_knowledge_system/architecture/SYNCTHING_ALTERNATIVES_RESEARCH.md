@@ -1,3 +1,8 @@
+---
+resource_id: "366c25f6-3bf8-4cda-8b5c-970a6a1077c6"
+resource_type: "knowledge"
+resource_name: "SYNCTHING_ALTERNATIVES_RESEARCH"
+---
 # Syncthing Alternatives Research
 
 **Date:** 2026-01-11

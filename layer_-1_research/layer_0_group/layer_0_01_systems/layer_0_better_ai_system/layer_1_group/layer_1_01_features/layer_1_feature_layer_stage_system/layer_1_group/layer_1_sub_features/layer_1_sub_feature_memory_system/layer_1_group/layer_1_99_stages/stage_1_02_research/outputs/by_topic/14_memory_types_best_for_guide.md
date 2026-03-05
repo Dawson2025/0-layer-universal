@@ -1,3 +1,8 @@
+---
+resource_id: "56669cab-4f1c-4bb5-8924-3f7c88e2f8b8"
+resource_type: "output"
+resource_name: "14_memory_types_best_for_guide"
+---
 # Memory Types: What Each Is Best For
 
 ## Purpose

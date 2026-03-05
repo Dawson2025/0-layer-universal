@@ -1,3 +1,8 @@
+---
+resource_id: "82df2119-6cea-4efb-a6ae-e59a8415b971"
+resource_type: "output"
+resource_name: "test_design_02_0agnostic_1merge_integration"
+---
 # Test Design: 02 0AGNOSTIC + .1merge Avenue Web Integration
 
 **Validates**: `stage_2_04_design/outputs/by_topic/02_0agnostic_1merge_avenue_web_integration_design.md`

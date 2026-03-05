@@ -1,3 +1,8 @@
+---
+resource_id: "12fa512f-96aa-43dd-a41d-87be73028c3f"
+resource_type: "output"
+resource_name: "12_benchmarks_and_performance"
+---
 # Benchmark Results and Performance Comparison of AI Memory Systems
 
 ## Overview

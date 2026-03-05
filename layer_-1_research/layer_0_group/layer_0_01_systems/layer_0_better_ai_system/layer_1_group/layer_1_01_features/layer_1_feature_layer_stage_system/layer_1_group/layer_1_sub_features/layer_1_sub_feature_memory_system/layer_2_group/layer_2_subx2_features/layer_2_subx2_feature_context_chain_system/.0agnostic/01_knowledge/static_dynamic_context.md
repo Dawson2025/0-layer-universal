@@ -1,3 +1,8 @@
+---
+resource_id: "ef8edc79-2c0d-4985-9835-de24846fc3dd"
+resource_type: "knowledge"
+resource_name: "static_dynamic_context"
+---
 # Static vs Dynamic Context
 
 **Layer**: layer_2 (Research Sub-Feature)

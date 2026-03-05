@@ -1,3 +1,8 @@
+---
+resource_id: "4950d453-30e4-4644-94a0-5e74b503cf97"
+resource_type: "output"
+resource_name: "REQ-03_instance_specific_context"
+---
 # Instance-Specific Context
 
 **Need**: [System Instantiations](../README.md)

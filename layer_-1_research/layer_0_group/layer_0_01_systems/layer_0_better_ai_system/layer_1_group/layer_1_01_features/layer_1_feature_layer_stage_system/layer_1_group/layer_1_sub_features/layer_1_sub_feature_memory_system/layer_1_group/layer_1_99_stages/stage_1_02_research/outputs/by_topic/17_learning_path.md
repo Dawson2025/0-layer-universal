@@ -1,3 +1,8 @@
+---
+resource_id: "dec84abe-ea8f-48cb-ba06-e2ee64af6eb2"
+resource_type: "output"
+resource_name: "17_learning_path"
+---
 # Learning Path: Understanding AI Memory Systems and Their Neurological Foundations
 
 ## Purpose

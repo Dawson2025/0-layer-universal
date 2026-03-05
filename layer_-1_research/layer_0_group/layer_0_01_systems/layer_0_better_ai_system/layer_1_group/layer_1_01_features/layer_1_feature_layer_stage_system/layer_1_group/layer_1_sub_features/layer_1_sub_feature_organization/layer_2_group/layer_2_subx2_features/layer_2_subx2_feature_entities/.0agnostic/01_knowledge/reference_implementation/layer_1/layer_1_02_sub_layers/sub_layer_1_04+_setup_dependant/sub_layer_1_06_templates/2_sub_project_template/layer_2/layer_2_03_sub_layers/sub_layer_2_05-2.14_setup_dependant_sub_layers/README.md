@@ -1,3 +1,9 @@
+---
+resource_id: "b3342c75-129d-4f81-a16c-c5765b107bc5"
+resource_type: "readme
+knowledge"
+resource_name: "README"
+---
 # sub_layer_2.05-2.14_setup - Sub-Project Setup Sublayer
 
 **Sublayer Range**: 2.05 through 2.14

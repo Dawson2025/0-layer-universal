@@ -1,3 +1,9 @@
+---
+resource_id: "02dbc5e4-dd1b-421b-9386-09bf202d94c6"
+resource_type: "readme
+output"
+resource_name: "README"
+---
 # Branch 03: Universal Pattern
 
 **Question**: Does this pattern apply to any system, not just AI?

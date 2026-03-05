@@ -1,3 +1,9 @@
+---
+resource_id: "2d388bac-f25c-47bb-923f-a3907fdd2527"
+resource_type: "readme
+document"
+resource_name: "README"
+---
 # playwright-mcp (cursor_agent on macos)
 
 ## Canonical docs

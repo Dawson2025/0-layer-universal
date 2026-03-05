@@ -1,3 +1,8 @@
+---
+resource_id: "2276a2b8-c1bf-4477-97e1-f07493509e80"
+resource_type: "document"
+resource_name: "Firebase_Testing_Strategy_Analysis"
+---
 # Firebase Testing Strategy Analysis
 *Is Testing Against Real Firebase the Best Approach?*
 

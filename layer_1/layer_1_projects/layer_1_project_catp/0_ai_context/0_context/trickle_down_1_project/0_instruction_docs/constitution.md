@@ -1,3 +1,8 @@
+---
+resource_id: "947ca083-5c2f-4158-aa02-182268e6e92e"
+resource_type: "document"
+resource_name: "constitution"
+---
 # I-Eat Project Constitution
 *University Food Delivery Platform - Project Standards and Guidelines*
 

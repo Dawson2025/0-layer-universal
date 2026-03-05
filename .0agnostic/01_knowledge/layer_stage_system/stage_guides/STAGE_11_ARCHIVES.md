@@ -1,3 +1,8 @@
+---
+resource_id: "195fe9fa-3ff6-4ace-833f-dd22f1e7d129"
+resource_type: "knowledge"
+resource_name: "STAGE_11_ARCHIVES"
+---
 # Stage 11: Archives — Universal Guide
 
 ## Purpose

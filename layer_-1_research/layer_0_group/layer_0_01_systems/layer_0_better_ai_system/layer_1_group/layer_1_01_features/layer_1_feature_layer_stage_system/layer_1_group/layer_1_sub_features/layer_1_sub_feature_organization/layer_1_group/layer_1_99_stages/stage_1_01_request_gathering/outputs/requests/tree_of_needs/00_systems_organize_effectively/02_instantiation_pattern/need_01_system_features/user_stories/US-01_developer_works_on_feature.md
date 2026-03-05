@@ -1,3 +1,8 @@
+---
+resource_id: "5b97f213-49e9-46f9-bd5c-baab577b1945"
+resource_type: "output"
+resource_name: "US-01_developer_works_on_feature"
+---
 # Developer Works on Feature
 
 **As a** developer building a new capability for the system,

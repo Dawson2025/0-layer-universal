@@ -1,4 +1,7 @@
 ---
+resource_id: "218b5e63-fb07-42c2-979e-e1dcf0b70652"
+resource_type: "document"
+resource_name: "08_criticism-complete.sync-conflict-20260126-101457-IF2WOGZ"
 description: Mark 08_criticism stage as complete and prepare handoff
 argument-hint: [--notes "completion notes"]
 ---

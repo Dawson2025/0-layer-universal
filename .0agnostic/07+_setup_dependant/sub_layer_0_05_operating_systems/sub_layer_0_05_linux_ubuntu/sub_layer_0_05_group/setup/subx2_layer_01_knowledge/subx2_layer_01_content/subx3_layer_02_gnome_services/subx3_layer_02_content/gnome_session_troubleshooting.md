@@ -1,3 +1,8 @@
+---
+resource_id: "b599b0b0-f04d-461e-9f84-d5622b7886c9"
+resource_type: "document"
+resource_name: "gnome_session_troubleshooting"
+---
 # GNOME Session Troubleshooting
 
 This document outlines the steps taken to resolve a broken GNOME desktop session where critical services were not running, leading to issues with media keys, brightness control, and application launching.

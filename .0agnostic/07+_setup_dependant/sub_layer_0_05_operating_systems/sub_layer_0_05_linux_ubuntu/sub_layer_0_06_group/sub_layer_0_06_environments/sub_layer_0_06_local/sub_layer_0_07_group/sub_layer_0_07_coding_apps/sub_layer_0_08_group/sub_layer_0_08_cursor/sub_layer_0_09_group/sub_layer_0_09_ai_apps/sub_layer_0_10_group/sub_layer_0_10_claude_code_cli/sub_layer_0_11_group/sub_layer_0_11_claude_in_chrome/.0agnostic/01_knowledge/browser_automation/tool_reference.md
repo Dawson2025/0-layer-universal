@@ -1,3 +1,8 @@
+---
+resource_id: "c5bc0746-9b9b-429f-9fa4-3a3f8ef03339"
+resource_type: "knowledge"
+resource_name: "tool_reference"
+---
 # Claude in Chrome — Tool Reference
 
 ## Core Tools

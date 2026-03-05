@@ -1,3 +1,8 @@
+---
+resource_id: "abb8cf96-87ed-41fb-a9d0-79240e1e5c91"
+resource_type: "document"
+resource_name: "PRODUCTION_STATUS_VERIFIED_JAN_24_2025"
+---
 # Production Status Verification - January 24, 2025
 **Production Server Successfully Deployed and Tested**
 

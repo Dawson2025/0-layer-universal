@@ -1,3 +1,9 @@
+---
+resource_id: "6915f03c-5065-4351-8e11-08f71b24b14a"
+resource_type: "readme
+document"
+resource_name: "README"
+---
 # I-Eat Feature Documentation
 *Comprehensive feature specifications for the I-Eat University Food Delivery Platform*
 

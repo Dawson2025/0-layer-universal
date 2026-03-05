@@ -1,4 +1,9 @@
 ---
+resource_id: "aad75d6a-c623-437a-97b8-8a476e1d7899"
+resource_type: "knowledge"
+resource_name: "09_fixing-complete"
+---
+---
 description: Mark 09_fixing stage as complete and prepare handoff
 argument-hint: [--notes "completion notes"]
 ---

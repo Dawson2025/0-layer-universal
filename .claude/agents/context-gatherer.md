@@ -1,4 +1,9 @@
 ---
+resource_id: "b6f9d14c-5ae1-427a-be4d-c4146e5c716f"
+resource_type: "document"
+resource_name: "context-gatherer"
+---
+---
 name: context-gatherer
 description: Gathers relevant context from layer hierarchy
 tools: Read, Glob, Grep

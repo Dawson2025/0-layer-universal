@@ -1,3 +1,8 @@
+---
+resource_id: "d9177760-6372-4762-ad0b-7e3882fb3780"
+resource_type: "document"
+resource_name: "TERMINAL_HANGING_FIX"
+---
 # Terminal Hanging Fix - Universal AI Agent Solution
 *Critical Fix for Cursor Agent Terminal Hanging Issues*
 

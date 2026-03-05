@@ -1,3 +1,9 @@
+---
+resource_id: "1bf89169-6ca6-4d4b-b9a1-3e231e3d7372"
+resource_type: "readme
+document"
+resource_name: "README"
+---
 # Claude Code CLI MCP Setup
 
 ## Config location

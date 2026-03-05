@@ -1,3 +1,8 @@
+---
+resource_id: "f18a2262-3465-49ba-9862-87228788af9f"
+resource_type: "output"
+resource_name: "02_sublayer_dependency_structures"
+---
 # Sublayer Dependency Structures
 
 **Status**: RESEARCH — Exploring how dependencies work WITHIN layers, not just between them

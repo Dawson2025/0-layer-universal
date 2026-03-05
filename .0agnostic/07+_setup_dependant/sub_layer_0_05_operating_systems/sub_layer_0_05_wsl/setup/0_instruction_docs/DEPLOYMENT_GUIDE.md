@@ -1,3 +1,8 @@
+---
+resource_id: "b1e199ce-67e3-47b2-a673-9fdada8de781"
+resource_type: "document"
+resource_name: "DEPLOYMENT_GUIDE"
+---
 # Production Deployment Guide
 **Language Tracker Application**  
 **Last Updated**: October 21, 2025

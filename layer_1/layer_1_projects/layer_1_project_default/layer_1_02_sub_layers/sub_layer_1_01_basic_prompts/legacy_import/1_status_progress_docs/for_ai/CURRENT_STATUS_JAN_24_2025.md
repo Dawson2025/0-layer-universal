@@ -1,3 +1,8 @@
+---
+resource_id: "cc2d16e6-3f73-40b6-98c5-8dee55f69bff"
+resource_type: "document"
+resource_name: "CURRENT_STATUS_JAN_24_2025"
+---
 # Current Status Report - January 24, 2025
 **Updated Assessment After Critical Bug Fixes**
 

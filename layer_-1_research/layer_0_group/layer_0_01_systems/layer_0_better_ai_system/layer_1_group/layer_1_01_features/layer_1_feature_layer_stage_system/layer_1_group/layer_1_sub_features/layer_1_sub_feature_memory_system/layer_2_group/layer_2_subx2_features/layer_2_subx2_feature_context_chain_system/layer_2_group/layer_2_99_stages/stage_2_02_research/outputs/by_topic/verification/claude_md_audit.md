@@ -1,3 +1,8 @@
+---
+resource_id: "6d1ca636-5f01-46f0-a14f-219aa21fa1cd"
+resource_type: "output"
+resource_name: "claude_md_audit"
+---
 # CLAUDE.md Chain Audit — Findings and Recommendations
 
 ## Date: 2026-02-07

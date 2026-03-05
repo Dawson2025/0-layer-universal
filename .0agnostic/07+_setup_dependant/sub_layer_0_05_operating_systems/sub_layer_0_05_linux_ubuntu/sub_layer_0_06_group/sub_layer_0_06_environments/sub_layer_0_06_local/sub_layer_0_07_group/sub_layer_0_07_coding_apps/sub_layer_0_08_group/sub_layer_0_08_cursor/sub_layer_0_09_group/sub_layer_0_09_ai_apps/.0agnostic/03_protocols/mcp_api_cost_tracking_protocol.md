@@ -1,3 +1,8 @@
+---
+resource_id: "a1316b96-7b50-48f6-ab2c-f4ab192403c2"
+resource_type: "protocol"
+resource_name: "mcp_api_cost_tracking_protocol"
+---
 # MCP API Cost Tracking Protocol
 
 **Purpose**: Track spending on paid MCP APIs to compare against subscription alternatives and enforce budget limits.

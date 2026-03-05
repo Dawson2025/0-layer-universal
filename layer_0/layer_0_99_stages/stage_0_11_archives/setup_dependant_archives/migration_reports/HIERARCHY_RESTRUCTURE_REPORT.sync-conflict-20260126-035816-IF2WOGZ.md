@@ -1,3 +1,8 @@
+---
+resource_id: "b98edfa8-69e8-4a55-bf5f-98502ce99880"
+resource_type: "document"
+resource_name: "HIERARCHY_RESTRUCTURE_REPORT.sync-conflict-20260126-035816-IF2WOGZ"
+---
 # Hierarchy Restructure Report
 
 Root: /home/dawson/dawson-workspace/code/0_layer_universal/0_context/layer_0/0.02_sub_layers/sub_layer_0_05-0.014_setup/0.01_universal_setup_file_tree_0/0.05_operating_systems/_shared/0.06_environments/_shared/0.07_coding_apps/_shared/0.09_ai_apps/_shared

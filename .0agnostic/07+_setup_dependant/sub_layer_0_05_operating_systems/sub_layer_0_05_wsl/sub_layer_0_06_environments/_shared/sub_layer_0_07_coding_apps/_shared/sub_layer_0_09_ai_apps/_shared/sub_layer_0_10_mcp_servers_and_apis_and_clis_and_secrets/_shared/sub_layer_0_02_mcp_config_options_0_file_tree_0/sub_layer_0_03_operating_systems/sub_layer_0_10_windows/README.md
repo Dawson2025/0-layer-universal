@@ -1,3 +1,9 @@
+---
+resource_id: "2c39918e-9a5d-48b6-a21f-04a723df2e72"
+resource_type: "readme
+document"
+resource_name: "README"
+---
 # Windows MCP Notes
 
 ## Scope

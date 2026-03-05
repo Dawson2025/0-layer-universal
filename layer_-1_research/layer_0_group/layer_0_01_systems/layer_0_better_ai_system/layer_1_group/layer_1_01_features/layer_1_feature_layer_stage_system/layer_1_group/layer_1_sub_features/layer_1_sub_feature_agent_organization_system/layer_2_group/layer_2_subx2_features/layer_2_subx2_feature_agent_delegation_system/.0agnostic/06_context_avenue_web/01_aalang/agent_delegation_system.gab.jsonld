@@ -1,4 +1,5 @@
 {
+  "file_id": "2c30769f-61e7-451e-a579-b9ff0ca0bef5",
   "@context": {
     "@vocab": "https://layer-stage.dev/agent/",
     "gab": "https://aalang.dev/gab/",
@@ -16,7 +17,10 @@
         "role": "Agent delegation system manager",
         "domain": "Stage delegation, agent context models, manager-agent communication, stage reports, context chains",
         "parent": "../../../0AGNOSTIC.md",
-        "children": ["memory_system", "multi_agent_system"]
+        "children": [
+          "memory_system",
+          "multi_agent_system"
+        ]
       },
       "capabilities": [
         "Delegate to stage agents (01-11)",
@@ -32,8 +36,17 @@
         "Respect layer_0 safety rules"
       ],
       "contextModel": {
-        "static": ["0AGNOSTIC.md", "CLAUDE.md (auto-generated)", ".0agnostic/09_handoff_documents/stage_overview.md"],
-        "dynamic": ["Stage reports (outputs/reports/stage_report.md)", ".0agnostic/01_knowledge/", ".0agnostic/02_rules/", "Child entity 0AGNOSTIC.md files"]
+        "static": [
+          "0AGNOSTIC.md",
+          "CLAUDE.md (auto-generated)",
+          ".0agnostic/09_handoff_documents/stage_overview.md"
+        ],
+        "dynamic": [
+          "Stage reports (outputs/reports/stage_report.md)",
+          ".0agnostic/01_knowledge/",
+          ".0agnostic/02_rules/",
+          "Child entity 0AGNOSTIC.md files"
+        ]
       }
     }
   ]

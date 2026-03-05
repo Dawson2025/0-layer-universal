@@ -1,3 +1,8 @@
+---
+resource_id: "b9c45685-3a41-4832-af37-5041b0f61a7d"
+resource_type: "rule"
+resource_name: "cse351_preparation_rule"
+---
 # CSE 351 Preparation Rule
 
 For every CSE 351 lesson:

@@ -1,11 +1,15 @@
 {
+  "file_id": "813b0667-43ad-4226-b9cf-e7148e636f07",
   "name": "sub_layer_0_13_protocols_stages",
   "stage_history": [
     {
       "stage": "stage_0_10_current_product",
       "status": "active",
       "completed_date": "2026-01-28",
-      "items": ["docx_operations.md", "github_operations.md"]
+      "items": [
+        "docx_operations.md",
+        "github_operations.md"
+      ]
     }
   ],
   "current_stage": "stage_0_10_current_product",

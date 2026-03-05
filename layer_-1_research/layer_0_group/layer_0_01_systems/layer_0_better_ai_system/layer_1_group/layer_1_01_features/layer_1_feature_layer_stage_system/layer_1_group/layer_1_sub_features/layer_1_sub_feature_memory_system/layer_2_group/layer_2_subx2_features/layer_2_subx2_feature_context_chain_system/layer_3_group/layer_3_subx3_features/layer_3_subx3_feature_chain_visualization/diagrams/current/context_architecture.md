@@ -1,3 +1,8 @@
+---
+resource_id: "6fb9c460-346d-49e0-b5a6-141a3252c7f5"
+resource_type: "document"
+resource_name: "context_architecture"
+---
 # Context Architecture Diagram
 
 **Purpose**: Answer "What context exists and where does it live?"

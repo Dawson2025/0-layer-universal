@@ -1,3 +1,8 @@
+---
+resource_id: "c1c37ba9-a1a9-42ab-824a-6113ad41b330"
+resource_type: "rule"
+resource_name: "validate_before_modify"
+---
 # Rule: Validate Chain Before Structural Modifications
 
 **Status**: MANDATORY

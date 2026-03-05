@@ -1,3 +1,8 @@
+---
+resource_id: "56f017db-679d-4852-9c7f-7593074ea192"
+resource_type: "document"
+resource_name: "search_all_fields_button"
+---
 # All Fields Search Reliability
 
 - **Source Prompt**: `docs/prompts.txt/search_bar/all_fields_search_button_not_working_too_well.md`

@@ -1,4 +1,5 @@
 {
+  "file_id": "0d4fa6da-13f7-42c0-b9b5-b13ac2fb011b",
   "feature": "ai_manager_hierarchy_system",
   "layer": 0,
   "current_stage": "02_research",
@@ -17,8 +18,17 @@
     }
   ],
   "phases": {
-    "completed": [1, 2, 3, 4],
-    "remaining": [5, 6, 7],
+    "completed": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "remaining": [
+      5,
+      6,
+      7
+    ],
     "descriptions": {
       "1": "Navigation and overview integration",
       "2": "Framework alignment",

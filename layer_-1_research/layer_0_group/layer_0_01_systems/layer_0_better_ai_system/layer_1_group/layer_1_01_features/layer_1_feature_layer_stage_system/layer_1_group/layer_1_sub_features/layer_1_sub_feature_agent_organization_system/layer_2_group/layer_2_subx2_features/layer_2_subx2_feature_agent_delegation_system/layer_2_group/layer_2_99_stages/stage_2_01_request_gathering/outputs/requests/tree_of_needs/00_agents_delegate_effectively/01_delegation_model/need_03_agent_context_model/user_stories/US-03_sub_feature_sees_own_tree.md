@@ -1,3 +1,8 @@
+---
+resource_id: "8234ca2c-2df8-4072-baa2-fcef53d23d78"
+resource_type: "output"
+resource_name: "US-03_sub_feature_sees_own_tree"
+---
 # US-3: Sub-feature agent sees its own tree
 
 **Need**: [Agent Context Model](../README.md)

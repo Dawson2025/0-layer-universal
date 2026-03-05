@@ -1,4 +1,7 @@
 #!/bin/bash
+# resource_id: "9100499f-8f31-489d-96fe-e14a34f0d2f0"
+# resource_type: "script"
+# resource_name: "edge-case-tests"
 #
 # edge-case-tests.sh - Test edge cases and stress scenarios
 #

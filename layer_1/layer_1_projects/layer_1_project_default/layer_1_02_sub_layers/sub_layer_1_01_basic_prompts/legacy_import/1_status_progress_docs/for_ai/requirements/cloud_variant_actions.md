@@ -1,3 +1,8 @@
+---
+resource_id: "dccac442-41fd-4331-b761-c8ff75b5887e"
+resource_type: "document"
+resource_name: "cloud_variant_actions"
+---
 # Cloud Variant Controls Parity
 
 - **Source Prompt**: `docs/for_ai/prompts.txt/cloud/cloud_variant_actions.md`

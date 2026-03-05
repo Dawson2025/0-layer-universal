@@ -1,3 +1,9 @@
+---
+resource_id: "737cb997-e290-4a56-a62e-9c866587c50b"
+resource_type: "readme
+output"
+resource_name: "README"
+---
 # Handoff Protocols -- User Stories Index
 
 **Need**: [Handoff Protocols](../README.md)

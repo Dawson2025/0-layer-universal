@@ -1,4 +1,7 @@
 #!/bin/bash
+# resource_id: "619e36df-79dc-4cc5-af50-5b2f5b3ee9e7"
+# resource_type: "script"
+# resource_name: "install-speech-tools.sync-conflict-20260126-035819-IF2WOGZ"
 # Automated Speech Tools Installation Script
 # Ubuntu 24.04+ with NVIDIA GPU support
 # See: docs/ubuntu-speech-tools-stt-tts.md

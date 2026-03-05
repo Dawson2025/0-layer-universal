@@ -1,3 +1,8 @@
+---
+resource_id: "e73a94eb-1530-4114-83d9-e8a557211e70"
+resource_type: "output"
+resource_name: "US-03_developer_tunes_scoring_weights"
+---
 # US-03: Developer tunes scoring weights
 
 **Need**: [Scored Context Retrieval](../README.md)

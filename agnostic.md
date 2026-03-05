@@ -1,3 +1,8 @@
+---
+resource_id: "e680182f-e6ab-4d44-9e52-b785df953a44"
+resource_type: "document"
+resource_name: "agnostic"
+---
 # 0_layer_universal - Agnostic Context
 
 ## Purpose

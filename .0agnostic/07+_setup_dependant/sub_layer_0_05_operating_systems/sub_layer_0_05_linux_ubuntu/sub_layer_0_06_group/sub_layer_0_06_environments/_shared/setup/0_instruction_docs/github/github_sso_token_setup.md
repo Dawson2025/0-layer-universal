@@ -1,3 +1,8 @@
+---
+resource_id: "346c93df-c2d2-447e-8bb5-07747dd8c35d"
+resource_type: "document"
+resource_name: "github_sso_token_setup"
+---
 # GitHub SSO Token Setup Guide
 
 ## Overview

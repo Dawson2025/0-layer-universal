@@ -1,3 +1,9 @@
+---
+resource_id: "ad60e4fe-41e7-454a-998d-79c0ecd79041"
+resource_type: "index
+document"
+resource_name: "0INDEX"
+---
 # Index: layer_1 (Projects)
 
 ## Purpose

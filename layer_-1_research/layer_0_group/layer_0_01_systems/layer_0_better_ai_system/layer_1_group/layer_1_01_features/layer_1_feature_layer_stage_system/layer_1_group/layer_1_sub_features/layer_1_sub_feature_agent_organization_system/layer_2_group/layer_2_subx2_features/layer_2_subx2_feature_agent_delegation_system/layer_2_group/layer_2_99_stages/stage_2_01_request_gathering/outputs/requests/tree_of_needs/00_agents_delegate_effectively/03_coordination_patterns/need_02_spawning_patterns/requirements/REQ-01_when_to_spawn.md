@@ -1,3 +1,8 @@
+---
+resource_id: "48db708f-0c61-4a92-b5df-3eac8e89c7ae"
+resource_type: "output"
+resource_name: "REQ-01_when_to_spawn"
+---
 # When to Spawn
 
 **Need**: [Spawning Patterns](../README.md)

@@ -1,3 +1,9 @@
+---
+resource_id: "09819c2c-877b-41c8-a340-babc0f2bfb49"
+resource_type: "readme
+output"
+resource_name: "README"
+---
 # User Stories — School System Example
 
 ## Actors

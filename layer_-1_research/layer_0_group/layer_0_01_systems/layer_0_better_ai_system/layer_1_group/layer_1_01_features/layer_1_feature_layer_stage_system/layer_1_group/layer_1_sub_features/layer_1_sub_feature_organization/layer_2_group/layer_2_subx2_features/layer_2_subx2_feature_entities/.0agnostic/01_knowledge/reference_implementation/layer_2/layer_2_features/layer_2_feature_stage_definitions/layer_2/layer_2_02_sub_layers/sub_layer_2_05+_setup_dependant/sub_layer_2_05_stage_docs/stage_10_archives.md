@@ -1,3 +1,8 @@
+---
+resource_id: "5ccd1272-7d4e-4b43-933e-6581029427d6"
+resource_type: "knowledge"
+resource_name: "stage_10_archives"
+---
 # Stage 09: Archives
 
 ## Purpose

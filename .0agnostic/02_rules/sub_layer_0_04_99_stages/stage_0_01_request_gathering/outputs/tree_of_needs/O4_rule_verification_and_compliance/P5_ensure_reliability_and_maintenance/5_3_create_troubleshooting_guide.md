@@ -1,3 +1,8 @@
+---
+resource_id: "73f98f46-8d5e-49bf-8d19-2d3f74b87496"
+resource_type: "rule"
+resource_name: "5_3_create_troubleshooting_guide"
+---
 # 5.3: Create Troubleshooting Guide
 
 ## Requirement

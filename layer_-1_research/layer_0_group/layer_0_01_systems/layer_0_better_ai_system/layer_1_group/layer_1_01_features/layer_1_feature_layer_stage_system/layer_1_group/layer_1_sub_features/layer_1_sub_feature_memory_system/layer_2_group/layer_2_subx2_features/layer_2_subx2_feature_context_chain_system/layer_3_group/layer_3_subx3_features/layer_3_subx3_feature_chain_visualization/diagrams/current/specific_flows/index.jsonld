@@ -1,38 +1,49 @@
 {
+  "file_id": "d5ae72bb-c3ea-47f9-a98e-51b092221036",
   "@context": {
     "@vocab": "https://layer-stage.dev/schema#",
     "nav": "https://layer-stage.dev/nav#"
   },
-
   "@id": "specific_flows",
   "@type": "DiagramCollection",
-
   "name": "Specific Context Flows",
   "description": "Diagrams showing how context loads for specific operations",
-
   "nav:parent": {
     "@id": "../",
     "name": "current"
   },
-
   "diagrams": [
     {
       "@id": "entity_creation_flow.md",
       "name": "Entity Creation Flow",
       "purpose": "How context loads when creating features, sub-features, components",
-      "triggers": ["create entity", "new feature", "new sub-feature", "new component"]
+      "triggers": [
+        "create entity",
+        "new feature",
+        "new sub-feature",
+        "new component"
+      ]
     },
     {
       "@id": "git_commit_flow.md",
       "name": "Git Commit Flow",
       "purpose": "How context loads when committing changes",
-      "triggers": ["commit", "git commit", "push changes"]
+      "triggers": [
+        "commit",
+        "git commit",
+        "push changes"
+      ]
     },
     {
       "@id": "stage_workflow_flow.md",
       "name": "Stage Workflow Flow",
       "purpose": "How context loads when entering a stage (01-11)",
-      "triggers": ["enter stage", "design", "testing", "research"]
+      "triggers": [
+        "enter stage",
+        "design",
+        "testing",
+        "research"
+      ]
     }
   ]
 }

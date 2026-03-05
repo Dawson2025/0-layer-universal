@@ -1,3 +1,8 @@
+---
+resource_id: "9e647ac0-5886-4b04-aaf8-f6a8927a3313"
+resource_type: "output"
+resource_name: "REQ-01_knowledge_graph_awareness"
+---
 # Knowledge Graph Awareness
 
 **Need**: [School System Example](../README.md)

@@ -1,3 +1,8 @@
+---
+resource_id: "551b656c-1688-4d25-b439-ba884db8e930"
+resource_type: "knowledge"
+resource_name: "IDEAL_AI_MANAGER_HIERARCHY_SYSTEM"
+---
 ## IDEAL AI Manager Hierarchy System (Summary)
 
 This folder contains a **compact, context-window-friendly overview** of the ideal AI manager hierarchy system, plus links to more detailed documents.

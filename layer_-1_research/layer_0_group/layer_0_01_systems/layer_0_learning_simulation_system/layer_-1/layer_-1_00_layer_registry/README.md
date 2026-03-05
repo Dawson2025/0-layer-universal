@@ -1,3 +1,9 @@
+---
+resource_id: "9d7d4202-8dd8-44d5-a291-092831f05013"
+resource_type: "readme
+document"
+resource_name: "README"
+---
 # Layer Registry - learning_simulation_system
 
 ## Layer Information

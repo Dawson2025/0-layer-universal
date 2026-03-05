@@ -1,3 +1,8 @@
+---
+resource_id: "d84567ad-7440-48a3-b786-bcfdffe1b730"
+resource_type: "document"
+resource_name: "SETUP_FINDINGS"
+---
 # Claude in Chrome Setup Findings for WSL
 
 **Date:** 2025-12-30

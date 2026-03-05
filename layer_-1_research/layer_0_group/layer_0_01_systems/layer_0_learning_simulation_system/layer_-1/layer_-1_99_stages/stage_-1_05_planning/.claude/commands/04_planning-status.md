@@ -1,4 +1,9 @@
 ---
+resource_id: "76c60400-c45c-48c1-a68c-680b20b39a95"
+resource_type: "document"
+resource_name: "04_planning-status"
+---
+---
 description: Show current status of 04_planning stage
 argument-hint: [--verbose]
 ---

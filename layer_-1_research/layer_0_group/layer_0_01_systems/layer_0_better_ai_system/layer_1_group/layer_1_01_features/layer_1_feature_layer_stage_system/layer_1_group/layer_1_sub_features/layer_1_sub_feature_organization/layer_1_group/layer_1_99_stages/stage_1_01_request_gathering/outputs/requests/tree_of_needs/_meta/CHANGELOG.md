@@ -1,3 +1,8 @@
+---
+resource_id: "094431f7-09e7-4946-9bf8-7ae0d6aba813"
+resource_type: "output"
+resource_name: "CHANGELOG"
+---
 # Changelog
 
 ## 2026-02-25

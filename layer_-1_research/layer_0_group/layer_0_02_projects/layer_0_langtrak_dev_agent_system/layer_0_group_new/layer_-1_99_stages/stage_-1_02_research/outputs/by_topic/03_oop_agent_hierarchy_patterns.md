@@ -1,3 +1,8 @@
+---
+resource_id: "85f8d0b3-eed9-4e13-8a94-b7eddf01f9f1"
+resource_type: "output"
+resource_name: "03_oop_agent_hierarchy_patterns"
+---
 # OOP Agent Hierarchy Patterns
 
 **Status**: RESEARCH — Mapping object-oriented programming patterns to agent team structures

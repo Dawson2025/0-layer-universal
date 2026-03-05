@@ -1,3 +1,8 @@
+---
+resource_id: "a265389d-08af-47cd-b1ca-e1eeee485cf4"
+resource_type: "output"
+resource_name: "suite_implementation"
+---
 # Rule Compliance Validation Suite Implementation
 
 ## Source Design

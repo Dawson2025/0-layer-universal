@@ -1,3 +1,8 @@
+---
+resource_id: "994f4a4a-8ed9-4733-a849-499075e7f464"
+resource_type: "output"
+resource_name: "CURSOR_AGENT_CONTEXT_ARCHITECTURE"
+---
 # Cursor Agent CLI — Context Architecture & Porting System
 
 **Location**: `.cursor_agent/` (root of entity/project, separate from IDE)

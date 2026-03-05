@@ -1,3 +1,8 @@
+---
+resource_id: "b9f8c00a-3967-4e8a-a467-712083e9de6d"
+resource_type: "document"
+resource_name: "plan-template"
+---
 # Implementation Plan: [FEATURE]
 
 **Branch**: `[###-feature-name]` | **Date**: [DATE] | **Spec**: [link]

@@ -1,3 +1,8 @@
+---
+resource_id: "f4818bf1-76cc-4e87-ba7b-ff2e85de4ff0"
+resource_type: "document"
+resource_name: "QUICK_START_PARALLEL_DEVELOPMENT"
+---
 # Quick Start: Parallel Development Guide
 
 ## What This Is

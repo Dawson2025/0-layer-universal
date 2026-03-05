@@ -1,4 +1,5 @@
 {
+  "file_id": "c03aef1b-3a78-4201-b167-b09698d10a6f",
   "@context": {
     "@vocab": "https://layer-stage.dev/context/",
     "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
@@ -1400,7 +1401,7 @@
           "description": "Confidence that layer inheritance is fully resolved"
         },
         "requiredContextLoaded": {
-          "weight": 0.20,
+          "weight": 0.2,
           "description": "Confidence that all required context files are loaded"
         }
       },

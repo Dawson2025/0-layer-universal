@@ -1,3 +1,8 @@
+---
+resource_id: "5936cbbe-fd5e-4524-a441-a012e43ae4ce"
+resource_type: "knowledge"
+resource_name: "HANDOFF_PROTOCOLS"
+---
 # Handoff Protocols for Agent Communication
 
 ## Overview

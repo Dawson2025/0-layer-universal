@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
+# resource_id: "5f4698cc-df0e-4f38-a6c6-aacd6d429ed3"
+# resource_type: "script"
+# resource_name: "test_cross_entity_porting_bridge"
 # test_cross_entity_porting_bridge.sh — Validate upstream/downstream agnostic->tool->context bridge contract
 
 set -uo pipefail

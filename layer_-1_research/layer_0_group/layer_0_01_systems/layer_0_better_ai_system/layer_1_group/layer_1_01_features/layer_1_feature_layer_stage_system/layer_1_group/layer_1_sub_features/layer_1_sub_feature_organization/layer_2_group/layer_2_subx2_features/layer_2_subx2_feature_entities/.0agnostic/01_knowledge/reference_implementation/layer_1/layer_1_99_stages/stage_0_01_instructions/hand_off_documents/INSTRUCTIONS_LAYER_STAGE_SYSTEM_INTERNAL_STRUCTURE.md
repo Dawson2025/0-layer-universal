@@ -1,3 +1,8 @@
+---
+resource_id: "ffa55f90-eea1-49bd-906c-bad2deb881ea"
+resource_type: "knowledge"
+resource_name: "INSTRUCTIONS_LAYER_STAGE_SYSTEM_INTERNAL_STRUCTURE"
+---
 # INSTRUCTIONS: Layer-Stage System Internal Structure
 
 **Created:** 2026-01-15

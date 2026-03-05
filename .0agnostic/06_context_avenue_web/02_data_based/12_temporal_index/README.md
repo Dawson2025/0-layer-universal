@@ -1,3 +1,9 @@
+---
+resource_id: "cdcc7da2-46b8-48fa-84b5-29347dba1b78"
+resource_type: "readme
+document"
+resource_name: "README"
+---
 # Avenue 12: Temporal Index
 
 ## Purpose

@@ -1,3 +1,9 @@
+---
+resource_id: "02750a44-82b8-4035-9e86-46fe2b53abbe"
+resource_type: "readme
+document"
+resource_name: "README"
+---
 # MCP Server Automation System
 
 ## Overview

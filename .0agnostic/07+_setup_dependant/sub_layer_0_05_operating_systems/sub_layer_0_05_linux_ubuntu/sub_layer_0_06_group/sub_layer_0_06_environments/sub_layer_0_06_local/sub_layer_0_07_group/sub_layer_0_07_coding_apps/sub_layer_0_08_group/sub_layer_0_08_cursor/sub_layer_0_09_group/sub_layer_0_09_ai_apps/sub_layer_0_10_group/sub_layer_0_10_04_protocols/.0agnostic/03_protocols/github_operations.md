@@ -1,3 +1,8 @@
+---
+resource_id: "db961209-5c4a-46fe-9d59-ef9d2475ae00"
+resource_type: "protocol"
+resource_name: "github_operations"
+---
 # GitHub Operations Protocol (Claude Code CLI)
 
 ## Overview

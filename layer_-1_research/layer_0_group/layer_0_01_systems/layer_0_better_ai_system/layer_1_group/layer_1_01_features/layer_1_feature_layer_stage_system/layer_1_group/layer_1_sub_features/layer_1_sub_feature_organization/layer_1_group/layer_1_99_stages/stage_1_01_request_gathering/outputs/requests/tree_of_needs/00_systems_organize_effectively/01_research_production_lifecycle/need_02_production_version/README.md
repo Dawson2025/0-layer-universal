@@ -1,3 +1,9 @@
+---
+resource_id: "b21e9d71-f121-410f-905c-4bf2df6edee7"
+resource_type: "readme
+output"
+resource_name: "README"
+---
 # Need: Production Version
 
 **Branch**: [Research/Production Lifecycle](../README.md)

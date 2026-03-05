@@ -1,3 +1,9 @@
+---
+resource_id: "2d13a202-8bb2-4858-a6f9-e8051e19ac92"
+resource_type: "index
+document"
+resource_name: "0INDEX"
+---
 # Agent Delegation System — Manager Dashboard
 
 ## Entity Status

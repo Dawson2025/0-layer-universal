@@ -1,4 +1,5 @@
 {
+  "file_id": "44c15c35-8666-430c-ba1f-148a876ee2ad",
   "mcpServers": {
     "playwright": {
       "command": "npx",
@@ -11,14 +12,20 @@
     },
     "context7": {
       "command": "npx",
-      "args": ["-y", "@upstash/context7-mcp"],
+      "args": [
+        "-y",
+        "@upstash/context7-mcp"
+      ],
       "env": {
         "CONTEXT7_API_KEY": "136116c4-6c35-4ffd-b8fa-cc8f11cb22a4"
       }
     },
     "chrome-devtools": {
       "command": "npx",
-      "args": ["-y", "chrome-devtools-mcp@latest"]
+      "args": [
+        "-y",
+        "chrome-devtools-mcp@latest"
+      ]
     },
     "browser": {
       "command": "npx",
@@ -28,7 +35,9 @@
     },
     "web-search": {
       "command": "npx",
-      "args": ["tavily-mcp"],
+      "args": [
+        "tavily-mcp"
+      ],
       "env": {
         "TAVILY_API_KEY": "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"
       }

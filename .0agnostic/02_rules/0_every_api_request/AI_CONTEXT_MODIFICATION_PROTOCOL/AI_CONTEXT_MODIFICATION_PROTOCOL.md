@@ -1,3 +1,8 @@
+---
+resource_id: "38876a7d-fa6c-4e72-8209-a10ebd660ec3"
+resource_type: "rule"
+resource_name: "AI_CONTEXT_MODIFICATION_PROTOCOL"
+---
 # Filesystem Change Visualization Protocol
 
 ## Rule

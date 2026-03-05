@@ -1,4 +1,7 @@
 #!/bin/bash
+# resource_id: "7f51c7a5-9bca-4591-aec2-32ba9d51905a"
+# resource_type: "script"
+# resource_name: "test_pointer_sync"
 #
 # test_pointer_sync.sh — Comprehensive test suite for pointer-sync.sh
 #

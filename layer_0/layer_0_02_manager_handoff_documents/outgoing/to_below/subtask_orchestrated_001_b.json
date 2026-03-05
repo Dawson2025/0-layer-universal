@@ -1,11 +1,12 @@
 {
-    "taskId": "orchestrated_001_b",
-    "parentTaskId": "orchestrated_001",
-    "description": "Analyze sub_layer_0_02_context_agents: count files, identify agents, summarize purpose",
-    "context": {
-        "layer": 0,
-        "targetPath": "layer_0/layer_0_03_sub_layers/sub_layer_0_02_context_agents/",
-        "workingDir": "/home/dawson/dawson-workspace/code/0_layer_universal"
-    },
-    "priority": "normal"
+  "file_id": "68169f44-36e3-479a-8544-068da937d1b2",
+  "taskId": "orchestrated_001_b",
+  "parentTaskId": "orchestrated_001",
+  "description": "Analyze sub_layer_0_02_context_agents: count files, identify agents, summarize purpose",
+  "context": {
+    "layer": 0,
+    "targetPath": "layer_0/layer_0_03_sub_layers/sub_layer_0_02_context_agents/",
+    "workingDir": "/home/dawson/dawson-workspace/code/0_layer_universal"
+  },
+  "priority": "normal"
 }

@@ -1,3 +1,8 @@
+---
+resource_id: "83a024c8-886d-4c97-8bff-ff7d62cd4437"
+resource_type: "document"
+resource_name: "PROGRESS_termius_cross_device_ssh"
+---
 # Progress: Termius Cross-Device SSH Setup
 
 **Layer**: 0 (Universal)

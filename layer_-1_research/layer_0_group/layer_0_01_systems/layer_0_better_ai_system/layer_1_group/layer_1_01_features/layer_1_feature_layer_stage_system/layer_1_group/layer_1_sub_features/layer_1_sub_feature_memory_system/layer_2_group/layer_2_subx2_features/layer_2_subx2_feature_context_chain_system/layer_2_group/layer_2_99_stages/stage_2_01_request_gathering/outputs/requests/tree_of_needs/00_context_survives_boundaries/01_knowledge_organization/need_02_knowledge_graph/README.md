@@ -1,3 +1,9 @@
+---
+resource_id: "95919828-9825-4dc7-8180-e827cf962a50"
+resource_type: "readme
+output"
+resource_name: "README"
+---
 # Need: Knowledge Graph
 
 **Branch**: [01_knowledge_organization](../)

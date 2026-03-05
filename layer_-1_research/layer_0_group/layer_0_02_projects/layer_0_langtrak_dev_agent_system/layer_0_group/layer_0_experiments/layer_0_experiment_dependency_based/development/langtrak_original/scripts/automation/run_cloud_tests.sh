@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
+# resource_id: "77ce9e23-20bc-4eb9-9a7a-731818de0f56"
+# resource_type: "script"
+# resource_name: "run_cloud_tests"
 #
 # Run Firebase cloud integration tests in offline and optional online modes.
 # Usage:

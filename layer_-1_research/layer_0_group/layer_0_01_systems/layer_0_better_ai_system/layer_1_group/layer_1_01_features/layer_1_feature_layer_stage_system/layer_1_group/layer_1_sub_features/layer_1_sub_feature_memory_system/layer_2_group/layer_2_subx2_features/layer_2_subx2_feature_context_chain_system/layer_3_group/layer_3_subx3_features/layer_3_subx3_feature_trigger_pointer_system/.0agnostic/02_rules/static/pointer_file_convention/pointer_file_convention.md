@@ -1,3 +1,8 @@
+---
+resource_id: "d8010749-14a6-489e-a64a-4911d3aebbe4"
+resource_type: "rule"
+resource_name: "pointer_file_convention"
+---
 # Rule: Pointer File Convention (Entity-Level)
 
 **Scope**: All files within `layer_3_subx3_feature_trigger_pointer_system`

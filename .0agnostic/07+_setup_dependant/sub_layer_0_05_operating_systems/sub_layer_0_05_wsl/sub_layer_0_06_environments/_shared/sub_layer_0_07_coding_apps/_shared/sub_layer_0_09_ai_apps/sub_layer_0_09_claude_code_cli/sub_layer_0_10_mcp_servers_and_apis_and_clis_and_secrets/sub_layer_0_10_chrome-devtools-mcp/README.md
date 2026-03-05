@@ -1,3 +1,9 @@
+---
+resource_id: "f314f306-b649-4e8c-84ba-70f730843a06"
+resource_type: "readme
+document"
+resource_name: "README"
+---
 # chrome-devtools-mcp (claude_code_cli on wsl)
 
 ## Canonical docs

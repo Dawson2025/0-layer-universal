@@ -1,3 +1,8 @@
+---
+resource_id: "9b2ba137-31a0-4dfa-9c8e-44f3b9098785"
+resource_type: "document"
+resource_name: "DETAILED_CONTENT_DIFF_REPORT"
+---
 # Detailed Content Diff Report
 
 Source: commit d64c065 (original standalone sublayers)

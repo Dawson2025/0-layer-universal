@@ -1,3 +1,8 @@
+---
+resource_id: "18b3b73f-3e08-4780-bf65-fc5b9c82076a"
+resource_type: "knowledge"
+resource_name: "FEATURE_TYPE_DECISION_GUIDE"
+---
 # Feature Type Decision Guide
 
 **Purpose:** Help you choose the right feature type when starting new work.

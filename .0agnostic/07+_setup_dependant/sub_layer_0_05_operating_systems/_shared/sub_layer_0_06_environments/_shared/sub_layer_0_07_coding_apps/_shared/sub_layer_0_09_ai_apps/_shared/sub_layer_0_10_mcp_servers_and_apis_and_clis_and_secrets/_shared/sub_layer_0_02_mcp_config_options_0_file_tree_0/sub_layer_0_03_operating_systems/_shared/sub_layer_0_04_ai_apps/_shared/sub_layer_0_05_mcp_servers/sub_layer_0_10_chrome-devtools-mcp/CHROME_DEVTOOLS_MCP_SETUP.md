@@ -1,3 +1,8 @@
+---
+resource_id: "fdfaa363-c8d4-4b2b-af9f-8458df6bf03b"
+resource_type: "document"
+resource_name: "CHROME_DEVTOOLS_MCP_SETUP"
+---
 # Chrome DevTools MCP Server Setup Guide
 
 This guide documents the setup process for the Chrome DevTools MCP (Model Context Protocol) server for use with Claude Code.

@@ -1,3 +1,8 @@
+---
+resource_id: "fd74fa0e-fe35-478c-baad-48e7c444dc79"
+resource_type: "knowledge"
+resource_name: "STAGE_DELEGATION_PRINCIPLES"
+---
 # Stage Delegation Principles
 
 These principles govern how agents delegate and operate across the layer-stage hierarchy.

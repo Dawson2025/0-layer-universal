@@ -1,3 +1,8 @@
+---
+resource_id: "826280a9-9746-46fe-bbe9-88d046ce5d83"
+resource_type: "document"
+resource_name: "stage_07_criticism"
+---
 # Stage 06: Criticism
 
 ## Purpose

@@ -1,3 +1,9 @@
+---
+resource_id: "8037ee0b-3546-4c90-ad82-3a1dcfa7ab0b"
+resource_type: "readme
+output"
+resource_name: "README"
+---
 # Staleness Detection -- User Stories Index
 
 **Need**: [Staleness Detection](../README.md)

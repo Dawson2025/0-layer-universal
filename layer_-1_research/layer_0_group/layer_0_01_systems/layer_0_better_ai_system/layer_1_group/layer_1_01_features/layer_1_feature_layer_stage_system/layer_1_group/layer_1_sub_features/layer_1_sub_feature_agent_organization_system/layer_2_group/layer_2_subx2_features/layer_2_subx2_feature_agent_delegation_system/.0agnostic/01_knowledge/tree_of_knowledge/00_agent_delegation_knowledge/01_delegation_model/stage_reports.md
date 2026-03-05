@@ -1,3 +1,8 @@
+---
+resource_id: "b1d74277-0cda-40ba-98f1-972b93970161"
+resource_type: "knowledge"
+resource_name: "stage_reports"
+---
 # Topic: Stage Reports
 
 ## Summary

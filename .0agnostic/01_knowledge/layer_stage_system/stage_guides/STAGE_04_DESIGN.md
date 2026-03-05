@@ -1,3 +1,8 @@
+---
+resource_id: "616e3692-1e02-4287-875b-d38d4e0b2c93"
+resource_type: "knowledge"
+resource_name: "STAGE_04_DESIGN"
+---
 # Stage 04: Design — Universal Guide
 
 ## Purpose

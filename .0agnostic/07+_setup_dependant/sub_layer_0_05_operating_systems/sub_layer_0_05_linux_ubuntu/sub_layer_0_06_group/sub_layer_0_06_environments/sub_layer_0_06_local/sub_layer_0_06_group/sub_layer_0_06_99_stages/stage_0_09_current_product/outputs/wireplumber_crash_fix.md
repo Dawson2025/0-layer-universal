@@ -1,3 +1,8 @@
+---
+resource_id: "197d24a1-7853-43de-b248-a6d4490c7873"
+resource_type: "output"
+resource_name: "wireplumber_crash_fix"
+---
 # WirePlumber Crash Fix
 
 ## Problem

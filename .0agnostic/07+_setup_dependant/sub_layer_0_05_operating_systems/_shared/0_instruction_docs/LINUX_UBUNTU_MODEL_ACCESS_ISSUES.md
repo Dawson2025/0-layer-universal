@@ -1,3 +1,8 @@
+---
+resource_id: "a4608e3f-c7cc-4601-84ff-2f9fa890bfca"
+resource_type: "document"
+resource_name: "LINUX_UBUNTU_MODEL_ACCESS_ISSUES"
+---
 # Linux/Ubuntu AI Model Access Issues
 
 **Date**: 2025-12-02  

@@ -1,3 +1,8 @@
+---
+resource_id: "61b95788-e0a2-4b3f-ad32-c52448bcc74a"
+resource_type: "output"
+resource_name: "US-03_next_agent_picks_up"
+---
 # US-3: Next agent picks up where the last left off
 
 **Need**: [Stage Reports](../README.md)

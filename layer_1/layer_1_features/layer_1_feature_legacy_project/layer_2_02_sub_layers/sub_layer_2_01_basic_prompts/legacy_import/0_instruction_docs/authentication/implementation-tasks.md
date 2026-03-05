@@ -1,3 +1,8 @@
+---
+resource_id: "2e5b1f19-873d-49b6-9560-45cb51edddf5"
+resource_type: "document"
+resource_name: "implementation-tasks"
+---
 # Authentication Implementation Tasks
 *Generated from Feature Specification via Spec Kit Workflow*
 

@@ -1,3 +1,8 @@
+---
+resource_id: "f564c833-904d-474d-8344-4c1ed1934b86"
+resource_type: "knowledge"
+resource_name: "VERSION"
+---
 # Version History
 
 ## v1.0.0 — 2026-02-19

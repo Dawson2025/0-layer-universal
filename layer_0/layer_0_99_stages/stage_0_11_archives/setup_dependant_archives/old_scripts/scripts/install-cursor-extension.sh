@@ -1,4 +1,7 @@
 #!/bin/bash
+# resource_id: "6fdfa0bd-886f-4d37-b982-d5b14861de67"
+# resource_type: "script"
+# resource_name: "install-cursor-extension"
 # Script to help install Cursor browser extension
 
 echo "=========================================="

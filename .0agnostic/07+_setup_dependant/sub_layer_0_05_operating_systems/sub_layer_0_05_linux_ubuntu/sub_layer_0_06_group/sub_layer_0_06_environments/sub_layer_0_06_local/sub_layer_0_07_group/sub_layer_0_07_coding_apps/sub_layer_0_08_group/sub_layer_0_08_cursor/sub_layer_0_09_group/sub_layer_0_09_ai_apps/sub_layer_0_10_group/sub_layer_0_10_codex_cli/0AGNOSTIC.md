@@ -1,3 +1,9 @@
+---
+resource_id: "7c66e510-efde-4b9a-b965-4a381a02461c"
+resource_type: "agnostic
+document"
+resource_name: "0AGNOSTIC"
+---
 # 0AGNOSTIC.md — sub_layer_0_10_codex_cli
 
 # ═══ STATIC CONTEXT (always loaded) ═══

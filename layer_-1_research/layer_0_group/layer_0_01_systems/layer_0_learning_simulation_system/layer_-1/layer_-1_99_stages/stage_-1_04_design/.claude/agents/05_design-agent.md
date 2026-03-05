@@ -1,4 +1,9 @@
 ---
+resource_id: "2977f6f6-329a-472a-9281-8531ab87ab1d"
+resource_type: "document"
+resource_name: "05_design-agent"
+---
+---
 name: 05_design-agent
 description: Specialized agent for Technical design and architecture. Use when working on 05_design tasks.
 tools: Read, Write, Edit, Glob, Grep

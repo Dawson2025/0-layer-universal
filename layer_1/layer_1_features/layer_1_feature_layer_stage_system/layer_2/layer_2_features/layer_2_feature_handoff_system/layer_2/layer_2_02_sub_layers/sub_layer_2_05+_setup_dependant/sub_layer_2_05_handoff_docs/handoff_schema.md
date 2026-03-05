@@ -1,3 +1,8 @@
+---
+resource_id: "2721176e-2858-438e-876f-1ad17d27875f"
+resource_type: "document"
+resource_name: "handoff_schema"
+---
 # Handoff Schema
 
 ## JSON Schema

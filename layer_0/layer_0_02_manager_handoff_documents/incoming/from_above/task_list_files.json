@@ -1,19 +1,22 @@
 {
-    "taskId": "live_test_001",
-    "description": "List the files in the context_agents directory and report how many JSON-LD files exist",
-    "agentType": "claude",
-    "context": {
-        "layer": 0,
-        "stage": "07",
-        "paths": ["layer_0/layer_0_03_sub_layers/sub_layer_0_02_context_agents/"],
-        "constraints": {
-            "maxRecursionDepth": 2,
-            "timeout": "60s"
-        }
-    },
-    "priority": "normal",
-    "expectedOutcome": {
-        "type": "count",
-        "target": "JSON-LD files in context_agents"
+  "file_id": "ba29e32d-ec1d-495a-af2c-e9c6df7b9e81",
+  "taskId": "live_test_001",
+  "description": "List the files in the context_agents directory and report how many JSON-LD files exist",
+  "agentType": "claude",
+  "context": {
+    "layer": 0,
+    "stage": "07",
+    "paths": [
+      "layer_0/layer_0_03_sub_layers/sub_layer_0_02_context_agents/"
+    ],
+    "constraints": {
+      "maxRecursionDepth": 2,
+      "timeout": "60s"
     }
+  },
+  "priority": "normal",
+  "expectedOutcome": {
+    "type": "count",
+    "target": "JSON-LD files in context_agents"
+  }
 }

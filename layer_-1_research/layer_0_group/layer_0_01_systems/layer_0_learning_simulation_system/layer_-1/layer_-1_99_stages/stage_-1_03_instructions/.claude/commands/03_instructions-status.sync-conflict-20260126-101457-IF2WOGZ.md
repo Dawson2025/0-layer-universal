@@ -1,4 +1,7 @@
 ---
+resource_id: "df824a22-df25-4f49-b66a-a52d9fc7bfb3"
+resource_type: "document"
+resource_name: "03_instructions-status.sync-conflict-20260126-101457-IF2WOGZ"
 description: Show current status of 03_instructions stage
 argument-hint: [--verbose]
 ---

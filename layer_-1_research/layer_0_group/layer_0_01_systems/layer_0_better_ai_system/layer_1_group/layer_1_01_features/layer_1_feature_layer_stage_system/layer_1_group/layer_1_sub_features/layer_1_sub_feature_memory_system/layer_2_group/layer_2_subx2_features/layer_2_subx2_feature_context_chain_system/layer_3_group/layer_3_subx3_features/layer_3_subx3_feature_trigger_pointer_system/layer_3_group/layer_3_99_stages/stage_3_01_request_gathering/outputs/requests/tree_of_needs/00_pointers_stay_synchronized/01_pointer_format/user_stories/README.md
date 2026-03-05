@@ -1,3 +1,9 @@
+---
+resource_id: "e99033be-f359-4fc2-8bcb-f957637ad88d"
+resource_type: "readme
+output"
+resource_name: "README"
+---
 # Pointer Format -- User Stories Index
 
 **Need**: [Pointer Format](../README.md)

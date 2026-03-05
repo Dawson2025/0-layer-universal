@@ -1,3 +1,8 @@
+---
+resource_id: "a5c5ad32-96db-42be-827e-ff9f6ac4ef03"
+resource_type: "document"
+resource_name: "screenshot_capture_workflow"
+---
 # Screenshot Capture Workflow (Playwright MCP)
 
 ## Overview

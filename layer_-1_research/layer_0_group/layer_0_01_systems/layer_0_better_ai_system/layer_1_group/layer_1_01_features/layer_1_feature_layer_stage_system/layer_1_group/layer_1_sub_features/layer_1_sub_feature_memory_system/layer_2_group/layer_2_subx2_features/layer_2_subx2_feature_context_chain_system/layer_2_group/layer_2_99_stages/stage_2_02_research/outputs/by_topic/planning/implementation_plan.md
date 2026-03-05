@@ -1,3 +1,8 @@
+---
+resource_id: "cb475f58-7404-47f8-99cb-cf91dd0a5a1d"
+resource_type: "output"
+resource_name: "implementation_plan"
+---
 # Implementation Plan — AALang/GAB + Claude Code Integration
 
 ## Context

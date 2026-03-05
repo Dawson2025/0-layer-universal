@@ -1,3 +1,8 @@
+---
+resource_id: "7d6fa8bc-c032-4f21-a556-58261c0bcdce"
+resource_type: "handoff"
+resource_name: "layer_2.stage_04_design.stage_report"
+---
 # Stage Report: 04_design (Memory System)
 
 ## Status

@@ -1,3 +1,8 @@
+---
+resource_id: "f87803ce-a9d9-420c-8b52-ab42867883cf"
+resource_type: "output"
+resource_name: "00_overview"
+---
 # Daemon Persistence After Restart — Test Suite Design
 
 **Date**: 2026-02-26

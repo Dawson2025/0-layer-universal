@@ -1,3 +1,8 @@
+---
+resource_id: "625d40e9-0801-4140-a025-48e731f164d4"
+resource_type: "output"
+resource_name: "23_core_ai_memory_systems"
+---
 # Core AI Memory Systems: Tiered Architecture from Most to Least Foundational
 
 ## Purpose

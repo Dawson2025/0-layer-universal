@@ -1,3 +1,9 @@
+---
+resource_id: "ea4644e4-9479-4e8d-9041-9627d32e5d07"
+resource_type: "readme
+document"
+resource_name: "README"
+---
 # AI Apps and Tools
 
 This level organizes setup documentation by AI application or tool.

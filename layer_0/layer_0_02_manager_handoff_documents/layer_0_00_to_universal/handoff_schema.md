@@ -1,3 +1,8 @@
+---
+resource_id: "592be24a-3217-4331-8942-57bb31b28ea6"
+resource_type: "document"
+resource_name: "handoff_schema"
+---
 # Handoff Schema Definition
 
 ## Overview

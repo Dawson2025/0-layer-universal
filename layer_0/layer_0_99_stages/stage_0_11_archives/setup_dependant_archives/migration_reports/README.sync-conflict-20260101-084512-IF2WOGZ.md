@@ -1,3 +1,8 @@
+---
+resource_id: "839dac09-dab6-45ff-b32e-1a723781338a"
+resource_type: "document"
+resource_name: "README.sync-conflict-20260101-084512-IF2WOGZ"
+---
 # sub_layer_0_05-0.014_setup - Universal Setup Sublayer
 
 **Sublayer Range**: 0.05 through 0.14

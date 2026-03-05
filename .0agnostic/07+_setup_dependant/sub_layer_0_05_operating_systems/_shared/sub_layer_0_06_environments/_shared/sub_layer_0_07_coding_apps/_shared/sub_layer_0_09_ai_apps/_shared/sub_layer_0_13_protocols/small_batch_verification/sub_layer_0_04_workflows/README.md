@@ -1,3 +1,9 @@
+---
+resource_id: "4c4015ba-a0fc-4b65-9896-88ee167c25fa"
+resource_type: "readme
+document"
+resource_name: "README"
+---
 ## Small Batch Verification – Workflows
 
 This folder is for **concrete workflows** that apply the Small Batch Verification Protocol in specific contexts (data extraction, refactoring, testing, etc.).

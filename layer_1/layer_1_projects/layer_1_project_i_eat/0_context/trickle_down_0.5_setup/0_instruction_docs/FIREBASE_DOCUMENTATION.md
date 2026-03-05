@@ -1,3 +1,8 @@
+---
+resource_id: "8179ce67-1238-4bb5-b6f7-0c1e60f15c92"
+resource_type: "document"
+resource_name: "FIREBASE_DOCUMENTATION"
+---
 # Firebase Documentation
 
 Complete Firebase setup and development documentation for Lang Trak.

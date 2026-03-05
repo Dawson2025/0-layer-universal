@@ -1,3 +1,8 @@
+---
+resource_id: "8d5ec73c-71f4-47d3-ac9b-64c1286bc810"
+resource_type: "knowledge"
+resource_name: "SESSION_LOG_2026-01-17"
+---
 # Session Log - 2026-01-17
 
 ## Summary

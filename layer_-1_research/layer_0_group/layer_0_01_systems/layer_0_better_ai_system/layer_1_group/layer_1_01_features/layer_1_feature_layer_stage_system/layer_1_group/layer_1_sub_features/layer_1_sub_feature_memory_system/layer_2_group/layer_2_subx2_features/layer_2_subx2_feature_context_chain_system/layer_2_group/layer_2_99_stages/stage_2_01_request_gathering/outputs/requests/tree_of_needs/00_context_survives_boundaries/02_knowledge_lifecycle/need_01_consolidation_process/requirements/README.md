@@ -1,3 +1,9 @@
+---
+resource_id: "8ba37699-f4f5-429c-9e73-6f1d22438fde"
+resource_type: "readme
+output"
+resource_name: "README"
+---
 # Consolidation Process -- Requirements Index
 
 **Need**: [Consolidation Process](../README.md)

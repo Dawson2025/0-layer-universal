@@ -1,3 +1,8 @@
+---
+resource_id: "85b11e39-11a7-43e0-8d09-fcb2e4f206b7"
+resource_type: "output"
+resource_name: "37_comparison_context_avenue_web_vs_commercial"
+---
 # Comparison: 8-Avenue Context Web vs Commercial Knowledge Organization Systems
 
 ## Purpose

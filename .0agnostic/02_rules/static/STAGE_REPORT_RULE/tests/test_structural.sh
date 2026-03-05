@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
+# resource_id: "1d565b96-3e08-4c9a-8781-48a2f3155d91"
+# resource_type: "script"
+# resource_name: "test_structural"
 # Structural tests for STAGE_REPORT_RULE
 # Usage: bash test_structural.sh [repo_root]
 

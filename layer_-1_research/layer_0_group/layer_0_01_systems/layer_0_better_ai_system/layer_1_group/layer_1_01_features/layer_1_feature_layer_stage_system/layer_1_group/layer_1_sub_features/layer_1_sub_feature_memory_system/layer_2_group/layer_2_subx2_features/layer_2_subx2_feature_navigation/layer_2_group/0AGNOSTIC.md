@@ -1,3 +1,9 @@
+---
+resource_id: "f7404968-7489-4b8d-a3fe-970ee007aecf"
+resource_type: "agnostic
+document"
+resource_name: "0AGNOSTIC"
+---
 # navigation — Layer 2 Group
 
 ## Identity

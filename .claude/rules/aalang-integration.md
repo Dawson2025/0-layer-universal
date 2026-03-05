@@ -1,4 +1,9 @@
 ---
+resource_id: "710f13d8-0da7-4ec1-af9b-df2e2e5fdb27"
+resource_type: "document"
+resource_name: "aalang-integration"
+---
+---
 paths: layer_0/layer_0_01_ai_manager_system/**
 ---
 

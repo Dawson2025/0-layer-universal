@@ -1,3 +1,8 @@
+---
+resource_id: "893b5967-31aa-46ad-8301-12e7a97d82ab"
+resource_type: "knowledge"
+resource_name: "API_KEYS_SETUP"
+---
 # MCP Servers API Keys Setup Guide
 
 This document explains how to securely manage API keys for MCP servers without exposing them in version control.

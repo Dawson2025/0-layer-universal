@@ -1,3 +1,8 @@
+---
+resource_id: "6fae0b2f-25e2-4af9-a8c7-8f3573240131"
+resource_type: "document"
+resource_name: "SYSTEM_OVERVIEW.sync-conflict-20260126-102106-IF2WOGZ"
+---
 # System Overview (Layer + Stage)
 
 ## Big picture

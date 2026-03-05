@@ -1,3 +1,9 @@
+---
+resource_id: "e4d5b312-23dd-44c6-9da8-1c7507754957"
+resource_type: "readme
+document"
+resource_name: "README"
+---
 # I-Eat Component Documentation
 *Comprehensive component library and implementation guides for the I-Eat University Food Delivery Platform*
 

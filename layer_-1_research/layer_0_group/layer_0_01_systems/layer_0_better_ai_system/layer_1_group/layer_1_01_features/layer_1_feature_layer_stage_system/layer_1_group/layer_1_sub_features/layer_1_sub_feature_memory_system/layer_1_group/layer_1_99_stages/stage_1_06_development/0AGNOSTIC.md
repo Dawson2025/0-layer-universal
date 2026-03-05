@@ -1,3 +1,9 @@
+---
+resource_id: "aa8c400f-9142-40fa-a868-2f813d8387cd"
+resource_type: "agnostic
+document"
+resource_name: "0AGNOSTIC"
+---
 # memory_system — Stage 06: development
 
 ## Identity

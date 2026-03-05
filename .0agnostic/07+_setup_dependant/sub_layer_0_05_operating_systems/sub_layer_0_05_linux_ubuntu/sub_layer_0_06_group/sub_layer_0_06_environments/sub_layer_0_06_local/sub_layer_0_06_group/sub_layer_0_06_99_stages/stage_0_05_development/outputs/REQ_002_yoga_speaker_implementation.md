@@ -1,3 +1,8 @@
+---
+resource_id: "039efae9-9119-4875-9435-6b397e3a1c87"
+resource_type: "output"
+resource_name: "REQ_002_yoga_speaker_implementation"
+---
 # Implementation: Yoga Pro 9 Speaker I2C Configuration
 
 ## Request Reference

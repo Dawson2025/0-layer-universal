@@ -1,3 +1,8 @@
+---
+resource_id: "39886bbe-4505-4ebe-9cbb-ba2645efc4f8"
+resource_type: "output"
+resource_name: "REQ_001_audio_fixes"
+---
 # Fixes Applied: Laptop Speaker Audio Enhancement
 
 ## Request Reference

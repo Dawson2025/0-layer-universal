@@ -1,3 +1,9 @@
+---
+resource_id: "47d9393e-2d51-4696-bfd8-89af4dcdc943"
+resource_type: "readme
+output"
+resource_name: "README"
+---
 # Operation Measurement -- Requirements Index
 
 **Need**: [Operation Measurement](../README.md)

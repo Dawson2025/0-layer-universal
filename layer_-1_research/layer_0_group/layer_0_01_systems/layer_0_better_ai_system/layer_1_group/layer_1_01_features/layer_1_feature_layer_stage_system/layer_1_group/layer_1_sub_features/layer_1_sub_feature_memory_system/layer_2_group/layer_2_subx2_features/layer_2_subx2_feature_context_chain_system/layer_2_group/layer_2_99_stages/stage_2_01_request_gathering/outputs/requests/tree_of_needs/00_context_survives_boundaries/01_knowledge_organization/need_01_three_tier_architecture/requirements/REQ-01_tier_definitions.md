@@ -1,3 +1,8 @@
+---
+resource_id: "1e23b80a-b439-4f71-8c2f-5f2698f1386e"
+resource_type: "output"
+resource_name: "REQ-01_tier_definitions"
+---
 # Tier Definitions
 
 **Need**: [Three-Tier Architecture](../README.md)

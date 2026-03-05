@@ -1,3 +1,8 @@
+---
+resource_id: "83debe39-7615-406c-ab95-10dfccc70601"
+resource_type: "document"
+resource_name: "stage_01_research.sync-conflict-20260126-035814-IF2WOGZ"
+---
 # Stage 01: Research
 
 ## Purpose

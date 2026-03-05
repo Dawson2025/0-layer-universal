@@ -1,3 +1,8 @@
+---
+resource_id: "07d48391-88b6-42e9-b7d1-6fb20f054a08"
+resource_type: "document"
+resource_name: "CLOUD_MANUAL_TEST_RESULTS_OCT_21_2025"
+---
 # Cloud Features Manual Test Results
 **Date:** October 21, 2025  
 **Test Type:** Programmatic verification + code audit  

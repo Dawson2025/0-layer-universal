@@ -1,3 +1,8 @@
+---
+resource_id: "84c6a4e0-552c-4f44-adaf-c76010a4bfd7"
+resource_type: "rule"
+resource_name: "test_design"
+---
 # Test Design: AI_CONTEXT_MODIFICATION_PROTOCOL (Filesystem Change Visualization)
 
 **Rule**: `../AI_CONTEXT_MODIFICATION_PROTOCOL.md`

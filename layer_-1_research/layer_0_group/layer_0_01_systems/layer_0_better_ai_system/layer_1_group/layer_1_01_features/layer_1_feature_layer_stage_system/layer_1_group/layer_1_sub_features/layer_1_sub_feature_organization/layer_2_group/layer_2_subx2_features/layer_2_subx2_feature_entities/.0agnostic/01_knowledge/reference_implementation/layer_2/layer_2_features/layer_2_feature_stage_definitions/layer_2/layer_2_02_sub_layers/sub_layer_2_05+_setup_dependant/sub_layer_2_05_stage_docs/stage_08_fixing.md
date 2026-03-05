@@ -1,3 +1,8 @@
+---
+resource_id: "9b049bb2-b76d-48b0-9a1d-9efc03e0386a"
+resource_type: "knowledge"
+resource_name: "stage_08_fixing"
+---
 # Stage 07: Fixing
 
 ## Purpose

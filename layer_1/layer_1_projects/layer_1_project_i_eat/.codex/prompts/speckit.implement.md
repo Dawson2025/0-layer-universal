@@ -1,4 +1,7 @@
 ---
+resource_id: "0b5abcaa-eeab-46ec-9b87-8d20a2ab4209"
+resource_type: "document"
+resource_name: "speckit.implement"
 description: Execute the implementation plan by processing and executing all tasks defined in tasks.md
 ---
 

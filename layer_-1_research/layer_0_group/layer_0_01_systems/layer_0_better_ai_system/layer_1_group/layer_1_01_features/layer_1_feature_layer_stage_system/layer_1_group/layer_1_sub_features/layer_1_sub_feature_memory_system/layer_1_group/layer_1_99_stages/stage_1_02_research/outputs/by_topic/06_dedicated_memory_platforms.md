@@ -1,3 +1,8 @@
+---
+resource_id: "78a2c98d-19be-4a12-aafc-b9a27502bcdb"
+resource_type: "output"
+resource_name: "06_dedicated_memory_platforms"
+---
 # Dedicated Memory Platforms and Systems
 
 ## Overview

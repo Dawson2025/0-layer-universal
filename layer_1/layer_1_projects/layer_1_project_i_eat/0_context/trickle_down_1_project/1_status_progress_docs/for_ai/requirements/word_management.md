@@ -1,3 +1,8 @@
+---
+resource_id: "96d0dc3a-43be-4b52-88c3-67975f83a736"
+resource_type: "document"
+resource_name: "word_management"
+---
 # Word Management & Editing
 
 - **Source Prompt**: Existing implementation analysis (2025-10-15)

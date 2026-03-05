@@ -1,3 +1,9 @@
+---
+resource_id: "e360b6ce-99c3-4a36-b503-dd152d2a01a4"
+resource_type: "readme
+document"
+resource_name: "README"
+---
 # Cursor MCP Setup
 
 ## Config location

@@ -1,3 +1,8 @@
+---
+resource_id: "046b1c0c-1ca0-4bfc-b587-3f0526ea90ec"
+resource_type: "document"
+resource_name: "LINUX_UBUNTU_AI_APPS_MCP_ISSUES"
+---
 # Linux/Ubuntu AI Apps & Tools MCP Issues
 
 **Date**: 2025-12-02  

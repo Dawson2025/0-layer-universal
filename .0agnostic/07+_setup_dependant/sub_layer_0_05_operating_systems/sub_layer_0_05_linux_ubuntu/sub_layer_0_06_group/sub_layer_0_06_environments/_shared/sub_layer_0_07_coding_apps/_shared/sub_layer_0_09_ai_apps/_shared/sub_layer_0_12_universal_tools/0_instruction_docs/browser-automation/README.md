@@ -1,3 +1,9 @@
+---
+resource_id: "37d31773-2a0c-4512-afc1-2f307868b1d3"
+resource_type: "readme
+document"
+resource_name: "README"
+---
 # Browser Automation Framework
 *Universal Tool: Intelligent Browser Automation Strategy and Management*
 

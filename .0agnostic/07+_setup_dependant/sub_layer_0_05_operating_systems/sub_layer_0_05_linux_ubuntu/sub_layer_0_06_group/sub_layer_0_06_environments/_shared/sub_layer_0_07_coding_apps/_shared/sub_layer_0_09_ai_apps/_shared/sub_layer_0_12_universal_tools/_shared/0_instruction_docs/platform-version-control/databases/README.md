@@ -1,3 +1,9 @@
+---
+resource_id: "93e997c6-c0fc-4a4c-a96f-b191c28583aa"
+resource_type: "readme
+document"
+resource_name: "README"
+---
 # Database Version Control System
 *Comprehensive Documentation for Managing Database Changes Across Multiple Platforms*
 

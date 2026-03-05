@@ -1,3 +1,8 @@
+---
+resource_id: "ba6c99fa-ec1d-4d0f-b493-b8f9ef2544f8"
+resource_type: "output"
+resource_name: "01_implementation_plan_0agnostic_1merge_avenue_web"
+---
 # Implementation Plan: 0AGNOSTIC + .1merge + Avenue Web
 
 ## Objective

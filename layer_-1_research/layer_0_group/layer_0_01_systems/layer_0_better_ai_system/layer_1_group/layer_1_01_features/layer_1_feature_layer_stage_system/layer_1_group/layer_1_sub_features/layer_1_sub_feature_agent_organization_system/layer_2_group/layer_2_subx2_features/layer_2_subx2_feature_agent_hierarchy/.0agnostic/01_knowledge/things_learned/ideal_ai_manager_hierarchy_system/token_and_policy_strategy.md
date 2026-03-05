@@ -1,3 +1,8 @@
+---
+resource_id: "ccb764da-38b8-4b5d-8be9-d283837eb938"
+resource_type: "knowledge"
+resource_name: "token_and_policy_strategy"
+---
 ## Token and Policy Strategy
 
 This document expands on how **tools are assigned to tasks** in a cost-aware, quality-aware way.

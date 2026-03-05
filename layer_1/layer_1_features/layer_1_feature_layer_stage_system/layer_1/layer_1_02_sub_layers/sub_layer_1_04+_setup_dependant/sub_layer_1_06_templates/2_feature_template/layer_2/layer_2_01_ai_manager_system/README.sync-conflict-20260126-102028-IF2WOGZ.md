@@ -1,3 +1,8 @@
+---
+resource_id: "8f2f89df-b78d-45d6-aaee-e41ee17a927c"
+resource_type: "document"
+resource_name: "README.sync-conflict-20260126-102028-IF2WOGZ"
+---
 # Feature Manager Agent (Template)
 
 Purpose: Coordinates all component managers for this feature; delegates to feature stage agents; reports upstream to the project manager.

@@ -1,3 +1,8 @@
+---
+resource_id: "63fa8056-6db2-4808-a5e8-bc5af6a7422b"
+resource_type: "output"
+resource_name: "REQ-01_user_profile_storage"
+---
 # User Profile Storage
 
 **Need**: [Instance Context](../README.md)

@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
+# resource_id: "c17be6e9-ec2c-4c25-b630-0a768714a316"
+# resource_type: "script"
+# resource_name: "test_codex_runtime_behavior"
 # test_codex_runtime_behavior.sh — Runtime validation using Codex in dangerous bypass mode
 
 set -uo pipefail

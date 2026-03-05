@@ -1,3 +1,8 @@
+---
+resource_id: "0832fe58-00f4-4d2e-920d-c982b08a387c"
+resource_type: "document"
+resource_name: "BROWSER_MCP_SETUP_EXPERIENCE"
+---
 # Browser MCP Setup Experience and Lessons Learned
 
 **Date**: 2025-12-02  

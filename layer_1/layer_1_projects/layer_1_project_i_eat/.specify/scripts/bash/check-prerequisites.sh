@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
+# resource_id: "a59bd043-8ccb-4221-9fcb-17e5e83de18e"
+# resource_type: "script"
+# resource_name: "check-prerequisites"
 
 # Consolidated prerequisite checking script
 #

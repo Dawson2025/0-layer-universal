@@ -1,3 +1,8 @@
+---
+resource_id: "b97cdfb8-12bb-4f27-b634-4c9e3a27e77d"
+resource_type: "document"
+resource_name: "phoneme_template_system"
+---
 # Phoneme Template System
 
 - **Source Prompt**: Existing implementation analysis (2025-10-15)

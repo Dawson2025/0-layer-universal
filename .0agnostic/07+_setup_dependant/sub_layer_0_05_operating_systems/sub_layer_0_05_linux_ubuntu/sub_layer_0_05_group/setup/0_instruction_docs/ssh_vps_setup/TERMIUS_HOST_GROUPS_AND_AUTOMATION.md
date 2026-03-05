@@ -1,3 +1,8 @@
+---
+resource_id: "36084c68-fb54-41ce-9231-9ad1d49c4ad0"
+resource_type: "document"
+resource_name: "TERMIUS_HOST_GROUPS_AND_AUTOMATION"
+---
 # Termius Host Groups and Automation Setup
 
 **Status**: LINUX AUTOMATION NOT RECOMMENDED - USE WINDOWS

@@ -1,4 +1,7 @@
 #!/bin/bash
+# resource_id: "a638667b-fb77-4a40-8a09-ed4a89095b0a"
+# resource_type: "script"
+# resource_name: "test_solution_1_gnome_override"
 # Test Solution 1: gnome-session Service Startup Order Fix
 # This script sets up the gnome-session override approach
 

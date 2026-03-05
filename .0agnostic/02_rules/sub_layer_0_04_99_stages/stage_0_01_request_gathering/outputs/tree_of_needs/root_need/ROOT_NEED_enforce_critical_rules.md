@@ -1,3 +1,8 @@
+---
+resource_id: "f4b2a706-c043-4372-91fd-fbe3b2e45f2d"
+resource_type: "rule"
+resource_name: "ROOT_NEED_enforce_critical_rules"
+---
 # ROOT NEED: Enforce Critical Rules Without Deprioritization
 
 ## Problem Statement

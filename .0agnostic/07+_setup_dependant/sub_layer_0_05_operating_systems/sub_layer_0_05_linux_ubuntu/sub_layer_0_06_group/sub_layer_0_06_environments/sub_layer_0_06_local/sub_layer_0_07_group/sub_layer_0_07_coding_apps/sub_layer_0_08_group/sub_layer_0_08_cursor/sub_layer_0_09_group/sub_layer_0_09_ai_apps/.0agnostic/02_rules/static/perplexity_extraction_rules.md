@@ -1,3 +1,8 @@
+---
+resource_id: "274a6804-044b-4b55-9bc0-2db4b8f6e5bf"
+resource_type: "rule"
+resource_name: "perplexity_extraction_rules"
+---
 # Perplexity Page Extraction Rules
 
 **Scope**: All AI apps that extract content from Perplexity search pages

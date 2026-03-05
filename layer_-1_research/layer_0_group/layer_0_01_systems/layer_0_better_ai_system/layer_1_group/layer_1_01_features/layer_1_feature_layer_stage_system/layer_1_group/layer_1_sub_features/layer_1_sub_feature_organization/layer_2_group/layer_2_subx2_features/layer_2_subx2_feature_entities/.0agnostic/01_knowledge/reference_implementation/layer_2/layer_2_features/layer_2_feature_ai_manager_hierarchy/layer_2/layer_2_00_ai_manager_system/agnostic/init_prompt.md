@@ -1,3 +1,8 @@
+---
+resource_id: "bf2fbe17-3f2f-4d1e-9551-583cee81eae1"
+resource_type: "knowledge"
+resource_name: "init_prompt"
+---
 # Init Prompt - Agnostic Source
 
 ## Purpose

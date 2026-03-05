@@ -1,3 +1,9 @@
+---
+resource_id: "a4dd874c-c5a3-4492-80fc-69648bbc16e3"
+resource_type: "agnostic
+document"
+resource_name: "0AGNOSTIC"
+---
 # navigation — Stage 03: instructions
 
 ## Identity

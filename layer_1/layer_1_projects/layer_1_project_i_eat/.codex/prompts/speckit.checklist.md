@@ -1,4 +1,7 @@
 ---
+resource_id: "41b43d0c-9a3c-4d8b-abd8-b22a13eeb870"
+resource_type: "document"
+resource_name: "speckit.checklist"
 description: Generate a custom checklist for the current feature based on user requirements.
 ---
 

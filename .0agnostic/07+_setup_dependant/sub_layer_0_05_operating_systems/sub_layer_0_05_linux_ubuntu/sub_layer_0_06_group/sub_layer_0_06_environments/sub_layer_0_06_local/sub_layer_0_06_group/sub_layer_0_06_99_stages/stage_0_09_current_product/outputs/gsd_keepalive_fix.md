@@ -1,3 +1,8 @@
+---
+resource_id: "5509c4f6-4668-4d98-bc75-002d3559ec78"
+resource_type: "output"
+resource_name: "gsd_keepalive_fix"
+---
 # GSD Keepalive Service Fix
 
 ## Problem

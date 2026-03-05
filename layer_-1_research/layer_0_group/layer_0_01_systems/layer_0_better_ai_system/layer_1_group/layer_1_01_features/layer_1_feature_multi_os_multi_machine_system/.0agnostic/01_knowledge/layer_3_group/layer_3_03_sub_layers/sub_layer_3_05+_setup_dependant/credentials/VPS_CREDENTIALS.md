@@ -1,3 +1,8 @@
+---
+resource_id: "bfa2b378-20ec-438e-bf3a-3dfd04f22c7c"
+resource_type: "knowledge"
+resource_name: "VPS_CREDENTIALS"
+---
 # VPS Credentials and Access Information
 
 **Date:** 2026-01-11

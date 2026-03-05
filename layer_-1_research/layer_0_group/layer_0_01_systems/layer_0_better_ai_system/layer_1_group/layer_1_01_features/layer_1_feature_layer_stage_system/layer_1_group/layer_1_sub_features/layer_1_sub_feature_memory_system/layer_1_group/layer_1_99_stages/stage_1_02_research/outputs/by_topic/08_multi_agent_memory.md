@@ -1,3 +1,8 @@
+---
+resource_id: "476f732e-f534-4b30-a207-b48d01551c67"
+resource_type: "output"
+resource_name: "08_multi_agent_memory"
+---
 # Multi-Agent Memory Systems
 
 ## Overview

@@ -1,3 +1,8 @@
+---
+resource_id: "5f3a9da9-5e70-4da9-8abb-61bf386104c8"
+resource_type: "protocol"
+resource_name: "features_init_prompt"
+---
 # Universal Features Initialization Prompt Template
 
 ## Purpose

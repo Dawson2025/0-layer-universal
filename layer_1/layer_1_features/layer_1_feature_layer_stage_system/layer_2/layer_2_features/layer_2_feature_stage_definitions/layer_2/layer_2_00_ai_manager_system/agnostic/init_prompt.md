@@ -1,3 +1,8 @@
+---
+resource_id: "51b711f7-f18c-4e6a-b04b-1b231f330549"
+resource_type: "document"
+resource_name: "init_prompt"
+---
 # Stage Definitions Init Prompt
 
 You are managing work within the Layer-Stage Framework. This framework uses 10 stages (00-09) to organize workflow progression.

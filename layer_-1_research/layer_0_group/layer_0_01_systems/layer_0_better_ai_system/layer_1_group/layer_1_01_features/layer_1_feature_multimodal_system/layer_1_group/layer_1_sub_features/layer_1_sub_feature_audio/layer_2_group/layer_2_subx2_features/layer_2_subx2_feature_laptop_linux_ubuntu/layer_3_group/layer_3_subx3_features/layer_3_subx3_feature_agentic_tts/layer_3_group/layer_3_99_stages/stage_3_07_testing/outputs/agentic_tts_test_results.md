@@ -1,3 +1,8 @@
+---
+resource_id: "42c32c2a-f746-4ae6-9156-6a228f2257f8"
+resource_type: "output"
+resource_name: "agentic_tts_test_results"
+---
 # Agentic TTS Test Results
 
 **Date**: 2026-02-23

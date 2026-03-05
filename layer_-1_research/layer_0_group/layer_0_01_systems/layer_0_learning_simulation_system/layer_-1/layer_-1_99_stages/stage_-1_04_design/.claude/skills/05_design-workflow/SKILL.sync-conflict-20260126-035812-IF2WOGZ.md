@@ -1,4 +1,7 @@
 ---
+resource_id: "b9c73763-705c-4d70-ba7c-ebc257429066"
+resource_type: "document"
+resource_name: "SKILL.sync-conflict-20260126-035812-IF2WOGZ"
 name: 05_design-workflow
 description: Workflow skill for Technical design and architecture. Activated when working on 05_design tasks.
 version: 1.0.0

@@ -1,4 +1,7 @@
 ---
+resource_id: "f3df7181-eaff-4466-bf73-dfda82329f86"
+resource_type: "document"
+resource_name: "07_testing-agent.sync-conflict-20260126-035813-IF2WOGZ"
 name: 07_testing-agent
 description: Specialized agent for Quality assurance and validation. Use when working on 07_testing tasks.
 tools: Read, Bash, Glob, Grep

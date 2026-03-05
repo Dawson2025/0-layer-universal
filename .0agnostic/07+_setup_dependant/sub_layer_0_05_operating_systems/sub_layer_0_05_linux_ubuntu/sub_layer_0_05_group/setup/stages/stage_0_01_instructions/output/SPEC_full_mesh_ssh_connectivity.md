@@ -1,3 +1,8 @@
+---
+resource_id: "fa5a9074-d42e-4e76-9043-f46c4aa7d2fb"
+resource_type: "document"
+resource_name: "SPEC_full_mesh_ssh_connectivity"
+---
 # Spec: Full Mesh SSH Connectivity
 
 **Layer**: 0 (Universal)

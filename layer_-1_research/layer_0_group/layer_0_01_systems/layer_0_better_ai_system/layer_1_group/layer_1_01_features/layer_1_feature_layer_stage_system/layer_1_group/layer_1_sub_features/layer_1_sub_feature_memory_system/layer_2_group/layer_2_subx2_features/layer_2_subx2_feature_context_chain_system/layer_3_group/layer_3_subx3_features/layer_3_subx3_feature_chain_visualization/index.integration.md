@@ -1,3 +1,4 @@
+<!-- derived_from: "5d5be68b-60a5-4801-833c-92876d4105cc" -->
 # Integration Summary: Chain Visualization Index
 
 This index declares the chain visualization sub-feature as the diagram/tool surface for context architecture, context flow, and context propagation.

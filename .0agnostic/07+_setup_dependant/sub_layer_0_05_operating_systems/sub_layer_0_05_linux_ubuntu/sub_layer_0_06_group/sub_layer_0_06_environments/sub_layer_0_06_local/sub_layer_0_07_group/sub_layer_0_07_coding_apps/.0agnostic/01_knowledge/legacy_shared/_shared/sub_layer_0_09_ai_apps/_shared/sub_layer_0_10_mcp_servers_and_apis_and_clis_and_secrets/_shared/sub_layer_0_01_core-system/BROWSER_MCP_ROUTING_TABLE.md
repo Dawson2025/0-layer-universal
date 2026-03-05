@@ -1,3 +1,8 @@
+---
+resource_id: "a5a6d23c-45fd-4bc5-a308-3619bc2754ae"
+resource_type: "knowledge"
+resource_name: "BROWSER_MCP_ROUTING_TABLE"
+---
 # Browser MCP Routing Table (CLI × OS × Task)
 
 This file is about **recommendations** (which browser MCP to use). For what is **currently automated/configured**, see `MCP_SERVER_MATRIX.md`.

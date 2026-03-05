@@ -1,3 +1,8 @@
+---
+resource_id: "16fa6dcf-1615-43f2-b395-46193ddafeb4"
+resource_type: "output"
+resource_name: "US-02_manager_spawns_with_task_tool"
+---
 # US-2: Manager spawns with Task tool
 
 **Need**: [Spawning Patterns](../README.md)

@@ -1,3 +1,8 @@
+---
+resource_id: "73bcde88-ef62-4350-9b9c-3818b203d841"
+resource_type: "output"
+resource_name: "NATIVE_FEATURES"
+---
 # Cursor Agent CLI — Native Features
 
 **Date**: 2026-02-27

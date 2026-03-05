@@ -1,3 +1,9 @@
+---
+resource_id: "2e5fd3c1-cd7d-4e24-85fc-015429d49713"
+resource_type: "readme
+output"
+resource_name: "README"
+---
 # Need: Chain Validation Enhancement
 
 **Branch**: [03_knowledge_retrieval](../)

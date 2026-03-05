@@ -1,4 +1,5 @@
 {
+  "file_id": "c7217439-7709-48eb-b213-3771ad8eaf47",
   "@context": {
     "@vocab": "https://layer-stage.dev/agent/",
     "gab": "https://aalang.dev/gab/",
@@ -29,8 +30,15 @@
         "Every need must have: README.md, requirements/, user_stories/",
         "Ask questions to clarify — never assume scope"
       ],
-      "inputs": ["Parent 0AGNOSTIC.md", "Parent .0agnostic/01_knowledge/", "User conversations"],
-      "outputs": ["outputs/requests/tree_of_needs/", "outputs/reports/stage_report.md"]
+      "inputs": [
+        "Parent 0AGNOSTIC.md",
+        "Parent .0agnostic/01_knowledge/",
+        "User conversations"
+      ],
+      "outputs": [
+        "outputs/requests/tree_of_needs/",
+        "outputs/reports/stage_report.md"
+      ]
     }
   ]
 }

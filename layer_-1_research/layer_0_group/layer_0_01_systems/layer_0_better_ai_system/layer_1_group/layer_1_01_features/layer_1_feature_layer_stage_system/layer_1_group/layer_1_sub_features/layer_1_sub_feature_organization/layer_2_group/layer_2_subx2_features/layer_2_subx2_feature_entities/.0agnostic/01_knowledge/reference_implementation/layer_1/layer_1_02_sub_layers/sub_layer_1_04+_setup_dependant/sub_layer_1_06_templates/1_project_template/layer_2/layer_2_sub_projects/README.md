@@ -1,3 +1,9 @@
+---
+resource_id: "5a21d894-888e-4753-a018-c829fd6f53d3"
+resource_type: "readme
+knowledge"
+resource_name: "README"
+---
 # Sub-Projects
 
 This folder contains sub-projects (Layer 2) within this project.

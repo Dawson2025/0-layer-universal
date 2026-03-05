@@ -1,3 +1,8 @@
+---
+resource_id: "b6671180-d90f-4ab8-9566-ca0412ec5c99"
+resource_type: "document"
+resource_name: "quickstart"
+---
 # Quickstart
 
 ## Prerequisites

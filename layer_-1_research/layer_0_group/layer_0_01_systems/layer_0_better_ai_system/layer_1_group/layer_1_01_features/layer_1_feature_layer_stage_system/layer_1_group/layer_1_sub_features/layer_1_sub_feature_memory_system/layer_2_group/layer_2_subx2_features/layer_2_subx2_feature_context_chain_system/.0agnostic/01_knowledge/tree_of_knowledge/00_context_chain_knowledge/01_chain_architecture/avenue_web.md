@@ -1,3 +1,8 @@
+---
+resource_id: "50b3c03f-c9a0-4521-82cb-aa4506acfdce"
+resource_type: "knowledge"
+resource_name: "avenue_web"
+---
 # Delivery Avenues
 
 ## Summary

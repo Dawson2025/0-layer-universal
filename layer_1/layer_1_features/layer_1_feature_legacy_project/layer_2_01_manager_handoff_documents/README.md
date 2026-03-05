@@ -1,3 +1,9 @@
+---
+resource_id: "6415c805-a64c-4684-a20e-ed9de1ab7a47"
+resource_type: "readme
+document"
+resource_name: "README"
+---
 # Layer 2 Feature Manager Handoff Documents
 
 ## Overview

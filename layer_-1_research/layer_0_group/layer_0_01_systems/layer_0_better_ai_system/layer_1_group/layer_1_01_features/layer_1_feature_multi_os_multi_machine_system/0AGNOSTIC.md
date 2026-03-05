@@ -1,3 +1,9 @@
+---
+resource_id: "49dc9bfb-6c13-4c37-80b2-c5837a49f9bf"
+resource_type: "agnostic
+document"
+resource_name: "0AGNOSTIC"
+---
 # 0AGNOSTIC.md - layer_1_feature_multi_os_multi_machine_system
 
 ## Identity

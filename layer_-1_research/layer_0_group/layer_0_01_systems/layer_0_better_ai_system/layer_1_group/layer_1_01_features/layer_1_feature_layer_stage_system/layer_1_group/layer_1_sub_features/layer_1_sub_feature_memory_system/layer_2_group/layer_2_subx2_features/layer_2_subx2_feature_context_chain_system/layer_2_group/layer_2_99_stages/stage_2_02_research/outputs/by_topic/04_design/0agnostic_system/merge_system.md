@@ -1,3 +1,8 @@
+---
+resource_id: "d3e45893-b00c-4b3c-a23c-8465e36dd364"
+resource_type: "output"
+resource_name: "merge_system"
+---
 # .1merge Override System
 
 ## Purpose

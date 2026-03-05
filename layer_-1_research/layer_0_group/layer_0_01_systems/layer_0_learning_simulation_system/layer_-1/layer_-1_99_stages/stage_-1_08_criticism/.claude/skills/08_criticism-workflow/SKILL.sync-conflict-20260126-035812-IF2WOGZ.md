@@ -1,4 +1,7 @@
 ---
+resource_id: "a474fdc5-9908-488b-a6b0-9582f8c48510"
+resource_type: "document"
+resource_name: "SKILL.sync-conflict-20260126-035812-IF2WOGZ"
 name: 08_criticism-workflow
 description: Workflow skill for Review and identify improvements. Activated when working on 08_criticism tasks.
 version: 1.0.0

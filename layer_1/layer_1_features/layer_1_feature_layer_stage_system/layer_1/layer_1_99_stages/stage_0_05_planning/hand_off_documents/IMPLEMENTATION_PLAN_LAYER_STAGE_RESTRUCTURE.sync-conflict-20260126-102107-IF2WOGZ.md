@@ -1,3 +1,8 @@
+---
+resource_id: "b4302628-9229-4cbe-a1f3-5a506c704543"
+resource_type: "document"
+resource_name: "IMPLEMENTATION_PLAN_LAYER_STAGE_RESTRUCTURE.sync-conflict-20260126-102107-IF2WOGZ"
+---
 # FULL IMPLEMENTATION PLAN: Layer-Stage System Restructure
 
 **Created:** 2026-01-15

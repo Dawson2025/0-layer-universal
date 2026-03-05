@@ -1,4 +1,7 @@
 #!/bin/bash
+# resource_id: "cec4aa63-bb77-4034-b685-fe7d6eac714a"
+# resource_type: "script"
+# resource_name: "transaction"
 #
 # transaction.sh - Transaction-like rollback mechanism for multi-file operations
 #

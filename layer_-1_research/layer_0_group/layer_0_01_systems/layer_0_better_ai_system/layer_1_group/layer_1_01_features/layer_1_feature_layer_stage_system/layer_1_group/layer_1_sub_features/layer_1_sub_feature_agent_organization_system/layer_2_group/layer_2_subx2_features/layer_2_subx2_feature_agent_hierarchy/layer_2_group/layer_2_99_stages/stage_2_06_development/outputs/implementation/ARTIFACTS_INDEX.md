@@ -1,3 +1,8 @@
+---
+resource_id: "1f67607c-279f-4e81-80f3-7c337286084f"
+resource_type: "output"
+resource_name: "ARTIFACTS_INDEX"
+---
 # AI Manager Hierarchy System - Artifacts Index
 
 **Purpose**: Complete catalog of all files and directories created during implementation

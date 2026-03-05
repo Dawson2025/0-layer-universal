@@ -1,4 +1,9 @@
 ---
+resource_id: "442e0394-4437-4c74-bf0f-6da62ab448d1"
+resource_type: "document"
+resource_name: "11_archives-status"
+---
+---
 description: Show current status of 11_archives stage
 argument-hint: [--verbose]
 ---

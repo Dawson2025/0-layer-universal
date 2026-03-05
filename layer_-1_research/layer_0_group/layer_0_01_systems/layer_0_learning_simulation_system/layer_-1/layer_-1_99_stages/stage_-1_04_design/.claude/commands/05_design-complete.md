@@ -1,4 +1,9 @@
 ---
+resource_id: "ca2d716f-ec34-421a-b71a-9ce883bc921c"
+resource_type: "document"
+resource_name: "05_design-complete"
+---
+---
 description: Mark 05_design stage as complete and prepare handoff
 argument-hint: [--notes "completion notes"]
 ---

@@ -1,3 +1,9 @@
+---
+resource_id: "083dcee4-c56a-4f4a-a167-1a5347dea70e"
+resource_type: "readme
+output"
+resource_name: "README"
+---
 # User Stories — General Pattern
 
 ## Actors

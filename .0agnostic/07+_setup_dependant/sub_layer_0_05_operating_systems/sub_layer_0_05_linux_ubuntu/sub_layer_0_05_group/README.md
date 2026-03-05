@@ -1,3 +1,9 @@
+---
+resource_id: "3ff1770a-bed7-436f-bc75-342826e4e6bc"
+resource_type: "readme
+document"
+resource_name: "README"
+---
 # Linux Ubuntu Setup
 
 Setup documentation specific to Linux Ubuntu systems.

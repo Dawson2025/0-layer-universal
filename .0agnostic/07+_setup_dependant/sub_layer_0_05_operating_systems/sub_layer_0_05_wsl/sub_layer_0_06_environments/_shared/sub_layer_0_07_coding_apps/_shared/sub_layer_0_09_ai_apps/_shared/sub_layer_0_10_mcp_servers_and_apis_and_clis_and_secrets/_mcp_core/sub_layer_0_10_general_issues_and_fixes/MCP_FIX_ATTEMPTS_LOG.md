@@ -1,3 +1,8 @@
+---
+resource_id: "0db6261f-5374-4291-a7ae-6311c492cdcd"
+resource_type: "document"
+resource_name: "MCP_FIX_ATTEMPTS_LOG"
+---
 # MCP Tool Exposure Fix Attempts Log
 
 **Date**: 2025-12-05  

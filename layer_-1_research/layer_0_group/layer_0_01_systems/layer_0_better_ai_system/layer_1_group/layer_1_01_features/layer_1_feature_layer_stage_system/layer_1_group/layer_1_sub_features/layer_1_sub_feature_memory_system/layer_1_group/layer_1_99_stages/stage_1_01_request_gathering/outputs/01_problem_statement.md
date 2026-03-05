@@ -1,3 +1,8 @@
+---
+resource_id: "5d27be98-d657-41b1-953e-b7398105e30d"
+resource_type: "output"
+resource_name: "01_problem_statement"
+---
 # Problem Statement: Memory System for the Layer-Stage Framework
 
 ## The Core Problem

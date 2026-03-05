@@ -1,4 +1,7 @@
 #!/bin/bash
+# resource_id: "8264342c-60e8-460c-8abe-1a854f674a13"
+# resource_type: "script"
+# resource_name: "test_sequential_headed"
 # Run user story tests sequentially in headed mode for visual verification.
 # Useful for debugging and watching the agent interact with the UI.
 

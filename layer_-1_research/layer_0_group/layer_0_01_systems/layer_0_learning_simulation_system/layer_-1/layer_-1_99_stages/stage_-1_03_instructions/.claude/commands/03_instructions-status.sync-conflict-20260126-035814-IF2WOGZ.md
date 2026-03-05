@@ -1,4 +1,7 @@
 ---
+resource_id: "f23f4f54-fffd-4901-b6ee-18ec1d5a60c5"
+resource_type: "document"
+resource_name: "03_instructions-status.sync-conflict-20260126-035814-IF2WOGZ"
 description: Show current status of 03_instructions stage
 argument-hint: [--verbose]
 ---

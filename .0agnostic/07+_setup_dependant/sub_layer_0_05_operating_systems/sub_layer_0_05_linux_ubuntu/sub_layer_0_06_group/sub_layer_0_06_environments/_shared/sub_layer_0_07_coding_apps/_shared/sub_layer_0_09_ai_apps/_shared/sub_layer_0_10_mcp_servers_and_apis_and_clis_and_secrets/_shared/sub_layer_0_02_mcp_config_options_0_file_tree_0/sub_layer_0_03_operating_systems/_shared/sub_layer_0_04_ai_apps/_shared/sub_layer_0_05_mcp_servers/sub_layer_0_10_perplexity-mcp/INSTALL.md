@@ -1,3 +1,8 @@
+---
+resource_id: "1575cd72-f97c-4201-bf79-19b8d8972497"
+resource_type: "document"
+resource_name: "INSTALL"
+---
 # Perplexity MCP Server Installation Guide
 
 ## Overview

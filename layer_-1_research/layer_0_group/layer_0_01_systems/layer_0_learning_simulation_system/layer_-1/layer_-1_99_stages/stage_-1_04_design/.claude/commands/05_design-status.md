@@ -1,4 +1,9 @@
 ---
+resource_id: "bae2d77a-2d5a-4fe6-88d7-585f6faebb35"
+resource_type: "document"
+resource_name: "05_design-status"
+---
+---
 description: Show current status of 05_design stage
 argument-hint: [--verbose]
 ---

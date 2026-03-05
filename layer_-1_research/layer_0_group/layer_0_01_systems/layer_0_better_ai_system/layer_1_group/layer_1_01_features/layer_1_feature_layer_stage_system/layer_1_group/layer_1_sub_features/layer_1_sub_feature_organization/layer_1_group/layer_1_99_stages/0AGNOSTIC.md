@@ -1,3 +1,9 @@
+---
+resource_id: "46364240-9e7b-44bd-8cfb-4fc643d5018d"
+resource_type: "agnostic
+document"
+resource_name: "0AGNOSTIC"
+---
 # organization — Stages Manager
 
 # ═══ STATIC CONTEXT (always loaded) ═══

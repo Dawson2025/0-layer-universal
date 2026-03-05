@@ -1,3 +1,8 @@
+---
+resource_id: "5d16311e-7c09-4315-be1f-5a9eb0864297"
+resource_type: "output"
+resource_name: "directional_scope_boundaries"
+---
 # Design Decision: Directional Scope Boundary Framework
 
 ## Decision

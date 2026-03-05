@@ -1,3 +1,8 @@
+---
+resource_id: "e9cec6eb-0212-43ef-98fe-d47088783f0f"
+resource_type: "document"
+resource_name: "ai_agent_documentation_rule"
+---
 # AI AGENT DOCUMENTATION RULE
 
 ## **MANDATORY REQUIREMENT**

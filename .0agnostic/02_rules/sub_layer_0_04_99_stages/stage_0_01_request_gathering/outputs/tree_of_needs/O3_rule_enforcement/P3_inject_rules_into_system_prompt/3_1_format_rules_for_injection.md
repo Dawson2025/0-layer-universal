@@ -1,3 +1,8 @@
+---
+resource_id: "a6efa005-05a6-4762-92e5-5d1581ac276f"
+resource_type: "rule"
+resource_name: "3_1_format_rules_for_injection"
+---
 # 3.1: Format Rules for Injection
 
 ## Requirement

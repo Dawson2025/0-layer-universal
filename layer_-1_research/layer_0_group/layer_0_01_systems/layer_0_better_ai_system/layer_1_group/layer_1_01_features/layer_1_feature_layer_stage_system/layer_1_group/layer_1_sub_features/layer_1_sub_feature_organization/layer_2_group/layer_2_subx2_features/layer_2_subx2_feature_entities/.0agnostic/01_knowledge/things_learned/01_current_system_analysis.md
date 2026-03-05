@@ -1,3 +1,8 @@
+---
+resource_id: "6769eead-b1ed-41c6-86ff-8f94ab94d000"
+resource_type: "knowledge"
+resource_name: "01_current_system_analysis"
+---
 # Current Layer-Stage System Analysis
 
 ## Date: 2026-01-25

@@ -1,3 +1,8 @@
+---
+resource_id: "30ff641a-1de9-4dfd-a24b-a82d0f2bd637"
+resource_type: "document"
+resource_name: "WSLG_BROWSER_CRASH_FIX"
+---
 # WSLg Browser Crash Fix - Playwright MCP on Cursor IDE
 
 **Date**: 2025-01-26  

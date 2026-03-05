@@ -1,3 +1,8 @@
+---
+resource_id: "01247f23-5098-4626-b4aa-ba8b8e9a5856"
+resource_type: "document"
+resource_name: "PLAYWRIGHT_MCP_WORKING_SOLUTION"
+---
 # Playwright MCP Working Solution
 
 **Date**: 2025-12-05  

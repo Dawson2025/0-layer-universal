@@ -1,3 +1,8 @@
+---
+resource_id: "0d83d580-a2f4-4068-b3ed-af6792ac52d8"
+resource_type: "rule"
+resource_name: "test_design"
+---
 # Test Design: Parallel Stages Rule
 
 **Rule**: `../PARALLEL_STAGES_RULE.md`

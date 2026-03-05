@@ -1,3 +1,9 @@
+---
+resource_id: "b55cd540-297b-447a-bfd0-a8d5d6d94b69"
+resource_type: "readme
+output"
+resource_name: "README"
+---
 # Stage Delegation -- Requirements Index
 
 **Need**: [Stage Delegation](../README.md)

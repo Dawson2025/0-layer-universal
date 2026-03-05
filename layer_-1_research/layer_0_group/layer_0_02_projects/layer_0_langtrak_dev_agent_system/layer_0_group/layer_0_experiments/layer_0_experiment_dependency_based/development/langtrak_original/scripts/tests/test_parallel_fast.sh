@@ -1,4 +1,7 @@
 #!/bin/bash
+# resource_id: "049808ce-1dde-4584-abed-ed36972e6328"
+# resource_type: "script"
+# resource_name: "test_parallel_fast"
 # Run user story tests in parallel HEADLESS mode for maximum speed.
 # Ideal for rapid validation and CI/CD.
 

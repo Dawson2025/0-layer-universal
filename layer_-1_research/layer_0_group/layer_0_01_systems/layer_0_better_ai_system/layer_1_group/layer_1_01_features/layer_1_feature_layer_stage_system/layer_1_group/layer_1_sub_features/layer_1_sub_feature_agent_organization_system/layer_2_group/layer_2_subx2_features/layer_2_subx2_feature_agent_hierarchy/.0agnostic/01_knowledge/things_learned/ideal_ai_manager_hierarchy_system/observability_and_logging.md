@@ -1,3 +1,8 @@
+---
+resource_id: "88b322eb-bc51-45e8-b753-b278cb392970"
+resource_type: "knowledge"
+resource_name: "observability_and_logging"
+---
 ## Observability and Logging Framework
 
 This document defines structured logging, monitoring, and observability patterns for the AI manager hierarchy system.

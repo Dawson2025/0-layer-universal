@@ -1,3 +1,9 @@
+---
+resource_id: "4b59b8aa-26e5-4b16-b1ee-0ca8c3a978a1"
+resource_type: "readme
+output"
+resource_name: "README"
+---
 # Tools and APIs (07_tools_and_apis)
 
 ## What This Contains

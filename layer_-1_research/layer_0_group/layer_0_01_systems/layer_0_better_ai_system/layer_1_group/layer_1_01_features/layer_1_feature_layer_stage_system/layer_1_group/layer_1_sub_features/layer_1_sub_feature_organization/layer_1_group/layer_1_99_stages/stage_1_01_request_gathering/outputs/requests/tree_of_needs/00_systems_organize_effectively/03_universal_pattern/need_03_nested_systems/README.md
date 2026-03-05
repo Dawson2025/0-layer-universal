@@ -1,3 +1,9 @@
+---
+resource_id: "4441ebb8-1301-46be-a9ad-cb244d8c6379"
+resource_type: "readme
+output"
+resource_name: "README"
+---
 # Need: Nested Systems
 
 **Branch**: [Universal Pattern](../README.md)

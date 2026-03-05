@@ -1,4 +1,7 @@
 #!/bin/bash
+# resource_id: "ae35c886-e543-4971-a6d1-34be3c023380"
+# resource_type: "script"
+# resource_name: "orchestrator_runner"
 # =============================================================================
 # Orchestrator Runner - Multi-Agent Demonstration
 # Layer: 0 (Universal)

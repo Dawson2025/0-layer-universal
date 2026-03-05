@@ -1,3 +1,8 @@
+---
+resource_id: "71d636ca-a27f-4228-b73c-8f3ebcb393ba"
+resource_type: "document"
+resource_name: "CLAUDE.sync-conflict-20260126-035814-IF2WOGZ"
+---
 # stage_-1_01_request_gathering
 
 ## Purpose

@@ -1,3 +1,8 @@
+---
+resource_id: "c7ba7a65-8fa9-4fc0-8234-1f977b77bf5a"
+resource_type: "document"
+resource_name: "warp-agent-spec-kit"
+---
 # Warp Agent: Spec Kit Implementation Guide
 *Agent-Specific Instructions for Language Tracker Project*
 

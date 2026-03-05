@@ -1,3 +1,8 @@
+---
+resource_id: "0120e038-4d01-49f8-8fa9-c6375529e716"
+resource_type: "rule"
+resource_name: "context_chain_mode"
+---
 # Context Chain Mode Rule
 
 **Type**: Dynamic (loaded when triggered)

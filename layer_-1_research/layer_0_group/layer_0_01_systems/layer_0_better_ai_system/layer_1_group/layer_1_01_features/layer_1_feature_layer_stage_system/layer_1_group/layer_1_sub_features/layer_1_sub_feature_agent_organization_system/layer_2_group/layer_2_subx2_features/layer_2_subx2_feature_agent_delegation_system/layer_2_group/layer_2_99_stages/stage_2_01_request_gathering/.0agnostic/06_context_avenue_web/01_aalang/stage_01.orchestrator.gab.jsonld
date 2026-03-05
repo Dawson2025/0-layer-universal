@@ -1,4 +1,5 @@
 {
+  "file_id": "2c7c0c9f-89eb-488a-9757-a628e2601639",
   "@context": {
     "@vocab": "https://layer-stage.dev/orchestrator/",
     "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
@@ -11,12 +12,18 @@
     {
       "severity": "critical",
       "action": "Design solutions or write code — this stage only gathers requirements",
-      "appliesTo": ["scope management", "methodology"]
+      "appliesTo": [
+        "scope management",
+        "methodology"
+      ]
     },
     {
       "severity": "critical",
       "action": "Operate outside request gathering scope without escalation to entity manager",
-      "appliesTo": ["delegation", "scope management"]
+      "appliesTo": [
+        "delegation",
+        "scope management"
+      ]
     }
   ],
   "@graph": [
@@ -50,16 +57,25 @@
           "@id": "ads:AgentDelegationOrchestrator",
           "path": "../../AALang_jsonld_agents/orchestrator.gab.jsonld"
         },
-        "inheritsFrom": ["agent_delegation_system"],
+        "inheritsFrom": [
+          "agent_delegation_system"
+        ],
         "canOverride": [],
         "overrides": []
       },
-      "modes": ["rg:ReceiveMode", "rg:ExecuteMode", "rg:ReportMode"],
+      "modes": [
+        "rg:ReceiveMode",
+        "rg:ExecuteMode",
+        "rg:ReportMode"
+      ],
       "actors": [
-        "rg:ReceiveActor1", "rg:ReceiveActor2",
-        "rg:ExecuteActor1", "rg:ExecuteActor2",
+        "rg:ReceiveActor1",
+        "rg:ReceiveActor2",
+        "rg:ExecuteActor1",
+        "rg:ExecuteActor2",
         "rg:ReportActor1",
-        "rg:TaskStateActor", "rg:OutputStateActor"
+        "rg:TaskStateActor",
+        "rg:OutputStateActor"
       ],
       "teamLead": "entity_manager",
       "entryPoint": {
@@ -67,7 +83,10 @@
         "stage": "01",
         "scope": "stage-agent",
         "stagePath": "./",
-        "canEscalateTo": ["entity_manager", "user"]
+        "canEscalateTo": [
+          "entity_manager",
+          "user"
+        ]
       },
       "constraints": [
         "Only gather requirements — do NOT design, research, or implement",
@@ -80,7 +99,11 @@
       "@id": "rg:TaskStateActor",
       "@type": "gab:Actor",
       "id": "TaskStateActor",
-      "operatesIn": ["rg:ReceiveMode", "rg:ExecuteMode", "rg:ReportMode"],
+      "operatesIn": [
+        "rg:ReceiveMode",
+        "rg:ExecuteMode",
+        "rg:ReportMode"
+      ],
       "activeMode": null,
       "persona": "rg:TaskStatePersona",
       "role": "StateManager",
@@ -93,7 +116,11 @@
       "name": "Task State Manager",
       "role": "StateManager",
       "personality": "Organized, tracks progress",
-      "responsibilities": ["Track needs being gathered", "Maintain tree of needs structure", "Update progress metrics"],
+      "responsibilities": [
+        "Track needs being gathered",
+        "Maintain tree of needs structure",
+        "Update progress metrics"
+      ],
       "mode": null,
       "actor": "rg:TaskStateActor",
       "canMessage": [],
@@ -104,7 +131,10 @@
       "@id": "rg:OutputStateActor",
       "@type": "gab:Actor",
       "id": "OutputStateActor",
-      "operatesIn": ["rg:ExecuteMode", "rg:ReportMode"],
+      "operatesIn": [
+        "rg:ExecuteMode",
+        "rg:ReportMode"
+      ],
       "activeMode": null,
       "persona": "rg:OutputStatePersona",
       "role": "StateManager",
@@ -117,7 +147,11 @@
       "name": "Output State Manager",
       "role": "StateManager",
       "personality": "Meticulous, tracks artifacts",
-      "responsibilities": ["Track tree of needs files", "Verify requirement completeness", "Monitor output directory state"],
+      "responsibilities": [
+        "Track tree of needs files",
+        "Verify requirement completeness",
+        "Monitor output directory state"
+      ],
       "mode": null,
       "actor": "rg:OutputStateActor",
       "canMessage": [],
@@ -134,10 +168,15 @@
         "Understand what the manager is asking for",
         "Do NOT start gathering until task is clear"
       ],
-      "contains": ["rg:ReceivePersona1", "rg:ReceivePersona2"],
+      "contains": [
+        "rg:ReceivePersona1",
+        "rg:ReceivePersona2"
+      ],
       "isolatedState": "rg:ReceiveModeState",
       "initialMode": true,
-      "precedes": ["rg:ExecuteMode"]
+      "precedes": [
+        "rg:ExecuteMode"
+      ]
     },
     {
       "@id": "rg:ExecuteMode",
@@ -149,9 +188,14 @@
         "Ask clarifying questions — do not assume",
         "Do NOT proceed to ReportMode until requirements are structured"
       ],
-      "contains": ["rg:ExecutePersona1", "rg:ExecutePersona2"],
+      "contains": [
+        "rg:ExecutePersona1",
+        "rg:ExecutePersona2"
+      ],
       "isolatedState": "rg:ExecuteModeState",
-      "precedes": ["rg:ReportMode"]
+      "precedes": [
+        "rg:ReportMode"
+      ]
     },
     {
       "@id": "rg:ReportMode",
@@ -163,15 +207,21 @@
         "List what was gathered and what gaps remain",
         "Transition back to ReceiveMode or signal completion"
       ],
-      "contains": ["rg:ReportPersona1"],
+      "contains": [
+        "rg:ReportPersona1"
+      ],
       "isolatedState": "rg:ReportModeState",
-      "precedes": ["rg:ReceiveMode"]
+      "precedes": [
+        "rg:ReceiveMode"
+      ]
     },
     {
       "@id": "rg:ReceiveActor1",
       "@type": "gab:Actor",
       "id": "ReceiveActor1",
-      "operatesIn": ["rg:ReceiveMode"],
+      "operatesIn": [
+        "rg:ReceiveMode"
+      ],
       "activeMode": "rg:ReceiveMode",
       "persona": "rg:ReceivePersona1",
       "role": "Senior",
@@ -181,7 +231,9 @@
       "@id": "rg:ReceiveActor2",
       "@type": "gab:Actor",
       "id": "ReceiveActor2",
-      "operatesIn": ["rg:ReceiveMode"],
+      "operatesIn": [
+        "rg:ReceiveMode"
+      ],
       "activeMode": "rg:ReceiveMode",
       "persona": "rg:ReceivePersona2",
       "role": "Junior",
@@ -191,7 +243,9 @@
       "@id": "rg:ExecuteActor1",
       "@type": "gab:Actor",
       "id": "ExecuteActor1",
-      "operatesIn": ["rg:ExecuteMode"],
+      "operatesIn": [
+        "rg:ExecuteMode"
+      ],
       "activeMode": "rg:ExecuteMode",
       "persona": "rg:ExecutePersona1",
       "role": "Senior",
@@ -201,7 +255,9 @@
       "@id": "rg:ExecuteActor2",
       "@type": "gab:Actor",
       "id": "ExecuteActor2",
-      "operatesIn": ["rg:ExecuteMode"],
+      "operatesIn": [
+        "rg:ExecuteMode"
+      ],
       "activeMode": "rg:ExecuteMode",
       "persona": "rg:ExecutePersona2",
       "role": "Junior",
@@ -211,7 +267,9 @@
       "@id": "rg:ReportActor1",
       "@type": "gab:Actor",
       "id": "ReportActor1",
-      "operatesIn": ["rg:ReportMode"],
+      "operatesIn": [
+        "rg:ReportMode"
+      ],
       "activeMode": "rg:ReportMode",
       "persona": "rg:ReportPersona1",
       "role": "Senior",
@@ -231,8 +289,16 @@
       ],
       "mode": "rg:ReceiveMode",
       "actor": "rg:ReceiveActor1",
-      "canMessage": ["rg:ReceivePersona2", "rg:ExecutePersona1", "user"],
-      "canReceiveFrom": ["user", "rg:ReceivePersona2", "rg:ReportPersona1"],
+      "canMessage": [
+        "rg:ReceivePersona2",
+        "rg:ExecutePersona1",
+        "user"
+      ],
+      "canReceiveFrom": [
+        "user",
+        "rg:ReceivePersona2",
+        "rg:ReportPersona1"
+      ],
       "sessionConsistent": true
     },
     {
@@ -249,8 +315,12 @@
       ],
       "mode": "rg:ReceiveMode",
       "actor": "rg:ReceiveActor2",
-      "canMessage": ["rg:ReceivePersona1"],
-      "canReceiveFrom": ["rg:ReceivePersona1"],
+      "canMessage": [
+        "rg:ReceivePersona1"
+      ],
+      "canReceiveFrom": [
+        "rg:ReceivePersona1"
+      ],
       "sessionConsistent": true
     },
     {
@@ -267,8 +337,15 @@
       ],
       "mode": "rg:ExecuteMode",
       "actor": "rg:ExecuteActor1",
-      "canMessage": ["rg:ExecutePersona2", "rg:ReportPersona1", "user"],
-      "canReceiveFrom": ["rg:ReceivePersona1", "rg:ExecutePersona2"],
+      "canMessage": [
+        "rg:ExecutePersona2",
+        "rg:ReportPersona1",
+        "user"
+      ],
+      "canReceiveFrom": [
+        "rg:ReceivePersona1",
+        "rg:ExecutePersona2"
+      ],
       "sessionConsistent": true
     },
     {
@@ -285,8 +362,12 @@
       ],
       "mode": "rg:ExecuteMode",
       "actor": "rg:ExecuteActor2",
-      "canMessage": ["rg:ExecutePersona1"],
-      "canReceiveFrom": ["rg:ExecutePersona1"],
+      "canMessage": [
+        "rg:ExecutePersona1"
+      ],
+      "canReceiveFrom": [
+        "rg:ExecutePersona1"
+      ],
       "sessionConsistent": true
     },
     {
@@ -303,8 +384,13 @@
       ],
       "mode": "rg:ReportMode",
       "actor": "rg:ReportActor1",
-      "canMessage": ["rg:ReceivePersona1", "user"],
-      "canReceiveFrom": ["rg:ExecutePersona1"],
+      "canMessage": [
+        "rg:ReceivePersona1",
+        "user"
+      ],
+      "canReceiveFrom": [
+        "rg:ExecutePersona1"
+      ],
       "sessionConsistent": true
     },
     {
@@ -312,27 +398,62 @@
       "@type": "gab:IsolatedState",
       "mode": "rg:ReceiveMode",
       "scope": "private to Receive Mode",
-      "includes": ["Task parsed from manager", "Domain context loaded", "Existing tree of needs state"],
-      "readableBy": ["rg:ReceivePersona1", "rg:ReceivePersona2"],
-      "unreadableBy": ["rg:ExecutePersona1", "rg:ExecutePersona2", "rg:ReportPersona1"]
+      "includes": [
+        "Task parsed from manager",
+        "Domain context loaded",
+        "Existing tree of needs state"
+      ],
+      "readableBy": [
+        "rg:ReceivePersona1",
+        "rg:ReceivePersona2"
+      ],
+      "unreadableBy": [
+        "rg:ExecutePersona1",
+        "rg:ExecutePersona2",
+        "rg:ReportPersona1"
+      ]
     },
     {
       "@id": "rg:ExecuteModeState",
       "@type": "gab:IsolatedState",
       "mode": "rg:ExecuteMode",
       "scope": "private to Execute Mode",
-      "includes": ["Needs being decomposed", "Requirements being written", "User stories being drafted", "Completeness tracking"],
-      "readableBy": ["rg:ExecutePersona1", "rg:ExecutePersona2"],
-      "unreadableBy": ["rg:ReceivePersona1", "rg:ReceivePersona2", "rg:ReportPersona1"]
+      "includes": [
+        "Needs being decomposed",
+        "Requirements being written",
+        "User stories being drafted",
+        "Completeness tracking"
+      ],
+      "readableBy": [
+        "rg:ExecutePersona1",
+        "rg:ExecutePersona2"
+      ],
+      "unreadableBy": [
+        "rg:ReceivePersona1",
+        "rg:ReceivePersona2",
+        "rg:ReportPersona1"
+      ]
     },
     {
       "@id": "rg:ReportModeState",
       "@type": "gab:IsolatedState",
       "mode": "rg:ReportMode",
       "scope": "private to Report Mode",
-      "includes": ["Stage report draft", "Current status update", "Handoff preparation", "Gap analysis"],
-      "readableBy": ["rg:ReportPersona1"],
-      "unreadableBy": ["rg:ReceivePersona1", "rg:ReceivePersona2", "rg:ExecutePersona1", "rg:ExecutePersona2"]
+      "includes": [
+        "Stage report draft",
+        "Current status update",
+        "Handoff preparation",
+        "Gap analysis"
+      ],
+      "readableBy": [
+        "rg:ReportPersona1"
+      ],
+      "unreadableBy": [
+        "rg:ReceivePersona1",
+        "rg:ReceivePersona2",
+        "rg:ExecutePersona1",
+        "rg:ExecutePersona2"
+      ]
     }
   ]
 }

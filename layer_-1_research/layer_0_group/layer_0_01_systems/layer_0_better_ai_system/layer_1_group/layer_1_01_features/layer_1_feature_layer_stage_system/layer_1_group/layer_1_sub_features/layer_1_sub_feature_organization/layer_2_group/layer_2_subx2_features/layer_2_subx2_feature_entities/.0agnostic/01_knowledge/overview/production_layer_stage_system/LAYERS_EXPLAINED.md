@@ -1,3 +1,8 @@
+---
+resource_id: "53d4c941-456e-444d-ae8c-cd28d6d94b74"
+resource_type: "knowledge"
+resource_name: "LAYERS_EXPLAINED"
+---
 # Layers Explained — CANONICAL SOURCE POINTER
 
 This file has been replaced with a pointer to the canonical source.

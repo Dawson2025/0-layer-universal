@@ -1,3 +1,8 @@
+---
+resource_id: "11a5b726-230d-41f6-a6cb-a6b5e97397b5"
+resource_type: "knowledge"
+resource_name: "AGENT_CONFIG_REFERENCE_TEMPLATE"
+---
 # Agent Configuration File Reference Template
 *Template for Agent-Specific Configuration Files*
 

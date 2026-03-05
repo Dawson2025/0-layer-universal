@@ -1,3 +1,8 @@
+---
+resource_id: "23dda005-4b89-4ff2-a5af-da286f4477c4"
+resource_type: "rule"
+resource_name: "subagent_usage_decision_matrix"
+---
 # Subagent Usage Decision Matrix
 
 **Purpose:** Guide for when AI agents should use subagents/Task tool vs. main conversation in Claude Code.

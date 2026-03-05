@@ -1,3 +1,9 @@
+---
+resource_id: "5a55567c-4f43-4403-a105-ad015a961439"
+resource_type: "agnostic
+document"
+resource_name: "0AGNOSTIC"
+---
 # agent_delegation_system — Stage 02: Research
 
 # ═══ STATIC CONTEXT (always loaded) ═══

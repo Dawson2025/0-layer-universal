@@ -1,3 +1,8 @@
+---
+resource_id: "3c60a70d-15a6-4626-809b-9d788dc18f09"
+resource_type: "document"
+resource_name: "CONTEXT7_QUICK_REFERENCE"
+---
 # Context7 MCP Server - Quick Reference
 
 ## 🔑 Your API Key

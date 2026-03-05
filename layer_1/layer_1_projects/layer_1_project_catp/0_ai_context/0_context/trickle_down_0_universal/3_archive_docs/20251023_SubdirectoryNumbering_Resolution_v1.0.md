@@ -1,3 +1,8 @@
+---
+resource_id: "1edd27b1-ce91-46f6-9380-a22f44cfaa44"
+resource_type: "document"
+resource_name: "20251023_SubdirectoryNumbering_Resolution_v1.0"
+---
 # Subdirectory Numbering Resolution
 *Date: 2025-01-23*
 

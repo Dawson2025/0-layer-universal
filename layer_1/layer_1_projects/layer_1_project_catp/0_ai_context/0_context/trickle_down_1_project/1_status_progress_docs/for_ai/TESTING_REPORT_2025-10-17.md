@@ -1,3 +1,8 @@
+---
+resource_id: "b1cbea94-8aad-40fa-bb04-8dec23f2f438"
+resource_type: "document"
+resource_name: "TESTING_REPORT_2025-10-17"
+---
 # User Stories Testing Report
 **Date**: October 17, 2025
 **Tester**: Claude (AI Agent)

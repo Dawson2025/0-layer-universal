@@ -1,3 +1,8 @@
+---
+resource_id: "3d396e28-0b92-4e9a-9b25-3e4f19ea33ee"
+resource_type: "knowledge"
+resource_name: "avenue_web_architecture"
+---
 # Avenue Web Architecture
 
 **Layer**: layer_2 (Research Sub-Feature)

@@ -1,3 +1,9 @@
+---
+resource_id: "4e535b0a-4009-4b07-85f3-8edd99877ab4"
+resource_type: "readme
+document"
+resource_name: "README"
+---
 # Specific Template
 
 ## Structure

@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
+# resource_id: "bd39e71d-0d80-4323-9f37-fc1185b0d68d"
+# resource_type: "script"
+# resource_name: "run-dev-tests"
 #
 # Run tests against REAL dev Firebase environment
 # CAUTION: This creates and deletes real data in lang-trak-dev

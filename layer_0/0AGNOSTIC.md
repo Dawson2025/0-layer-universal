@@ -1,3 +1,9 @@
+---
+resource_id: "2ed456db-f36e-48f9-8568-9d0c1dba8803"
+resource_type: "agnostic
+document"
+resource_name: "0AGNOSTIC"
+---
 # Layer 0 - Universal Context
 
 ## Identity

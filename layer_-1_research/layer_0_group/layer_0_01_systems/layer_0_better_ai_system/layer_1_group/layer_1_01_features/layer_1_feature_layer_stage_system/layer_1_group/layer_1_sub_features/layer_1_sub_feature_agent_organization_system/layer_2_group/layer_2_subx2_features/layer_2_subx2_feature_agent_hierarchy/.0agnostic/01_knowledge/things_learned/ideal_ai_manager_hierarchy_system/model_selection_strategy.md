@@ -1,3 +1,8 @@
+---
+resource_id: "8320c2a2-678c-4fe5-bd4b-cbc11bf2c58e"
+resource_type: "knowledge"
+resource_name: "model_selection_strategy"
+---
 ## Model Selection and Cost-Aware Routing Strategy
 
 This document provides detailed guidance on choosing models and routing tasks to optimize for cost, quality, and latency.

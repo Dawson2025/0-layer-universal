@@ -1,3 +1,8 @@
+---
+resource_id: "7894f1f5-3cef-4586-af9b-1fd67799a6e1"
+resource_type: "document"
+resource_name: "INSTRUCTIONS"
+---
 # AI Manager: Stage 0.02 - Planning
 
 ## Your Role

@@ -1,3 +1,9 @@
+---
+resource_id: "b89a0594-e0e6-44b4-8a02-f231faf094fd"
+resource_type: "readme
+output"
+resource_name: "README"
+---
 # Scored Context Retrieval -- User Stories Index
 
 **Need**: [Scored Context Retrieval](../README.md)

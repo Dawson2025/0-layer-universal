@@ -1,3 +1,9 @@
+---
+resource_id: "a553664c-6097-4c0a-b8a1-819d7f7476ba"
+resource_type: "readme
+knowledge"
+resource_name: "README"
+---
 # Software Engineering Knowledge System
 *Comprehensive Knowledge Map for Software Engineering from IC to CTO*
 

@@ -1,3 +1,8 @@
+---
+resource_id: "9a0ce052-6d22-4b59-b31d-bbd097edaba5"
+resource_type: "knowledge"
+resource_name: "cross_layer_stage_references"
+---
 # Topic: Cross-Layer Stage References
 
 ## Summary

@@ -1,3 +1,8 @@
+---
+resource_id: "01efbefa-9956-4df1-bc6d-8a3a9358e603"
+resource_type: "document"
+resource_name: "metrics"
+---
 # Experiment Results: Dependency-Based Agent Hierarchy
 
 **Status**: PENDING — No trials executed yet

@@ -1,3 +1,9 @@
+---
+resource_id: "27dc1300-d5e5-4443-967d-35b5e6ae373b"
+resource_type: "readme
+document"
+resource_name: "README"
+---
 # Cursor MCP Setup (WSL)
 
 ## Config location

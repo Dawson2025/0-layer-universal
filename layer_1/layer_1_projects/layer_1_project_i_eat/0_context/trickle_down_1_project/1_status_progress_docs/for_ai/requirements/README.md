@@ -1,3 +1,9 @@
+---
+resource_id: "09532a2a-0461-46f2-b1c3-681cd6ce6e76"
+resource_type: "readme
+document"
+resource_name: "README"
+---
 # Requirements Overview
 
 This directory consolidates feature requirements sourced from stakeholder prompts and ongoing conversations. Each feature has a dedicated specification document that captures goals, functional expectations, acceptance criteria, and intended outcomes. Use this index to stay aligned on scope before starting implementation or test planning.

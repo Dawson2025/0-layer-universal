@@ -1,3 +1,8 @@
+---
+resource_id: "95228e50-d96e-4571-b9ad-a546065fb3ea"
+resource_type: "knowledge"
+resource_name: "layer_research_summary"
+---
 # Layer Research Summary: Memory System
 
 ## Overview

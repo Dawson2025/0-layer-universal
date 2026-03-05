@@ -1,3 +1,8 @@
+---
+resource_id: "cafebc8d-a1c6-45fd-a751-f6eec8a01165"
+resource_type: "document"
+resource_name: "EXTENDING_THE_FRAMEWORK"
+---
 # Extending the Layer/Stage Framework
 
 **Purpose:** Advanced patterns for extending the standard framework beyond basic features, components, and stages.

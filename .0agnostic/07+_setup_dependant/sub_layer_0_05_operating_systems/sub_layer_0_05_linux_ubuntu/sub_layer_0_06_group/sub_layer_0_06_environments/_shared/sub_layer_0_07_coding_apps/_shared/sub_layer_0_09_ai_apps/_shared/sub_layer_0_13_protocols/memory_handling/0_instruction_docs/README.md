@@ -1,3 +1,9 @@
+---
+resource_id: "c877a528-10f7-4fdd-8b18-7f969fdc48a5"
+resource_type: "readme
+document"
+resource_name: "README"
+---
 ## Memory Handling Protocol – Instruction Docs
 
 The canonical definition of the **Memory Handling Protocol** lives in:

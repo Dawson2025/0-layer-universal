@@ -1,3 +1,8 @@
+---
+resource_id: "42b59054-cce8-486d-b3b3-e90449d7f594"
+resource_type: "document"
+resource_name: "ARCHITECTURE_DIAGRAM"
+---
 # Parallel Development Architecture - Visual Diagram
 
 ## Architecture Overview

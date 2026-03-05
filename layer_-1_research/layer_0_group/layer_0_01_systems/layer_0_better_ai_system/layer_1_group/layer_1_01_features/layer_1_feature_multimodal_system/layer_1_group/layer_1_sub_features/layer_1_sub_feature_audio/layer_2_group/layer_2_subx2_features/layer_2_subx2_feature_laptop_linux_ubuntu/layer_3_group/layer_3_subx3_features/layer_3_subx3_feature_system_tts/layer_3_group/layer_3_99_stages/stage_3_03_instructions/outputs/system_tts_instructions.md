@@ -1,3 +1,8 @@
+---
+resource_id: "f962fea4-d3f6-4ee2-a24b-f1518dc8f271"
+resource_type: "output"
+resource_name: "system_tts_instructions"
+---
 # System TTS Instructions / Constraints
 
 **Date**: 2026-02-23

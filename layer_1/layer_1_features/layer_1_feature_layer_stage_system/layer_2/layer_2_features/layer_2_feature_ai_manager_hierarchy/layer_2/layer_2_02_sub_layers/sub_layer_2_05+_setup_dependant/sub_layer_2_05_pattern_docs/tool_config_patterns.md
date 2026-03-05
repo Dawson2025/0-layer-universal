@@ -1,3 +1,8 @@
+---
+resource_id: "1bcee1da-1edb-4ee5-92f6-b29c49cc2f86"
+resource_type: "document"
+resource_name: "tool_config_patterns"
+---
 # Tool Configuration Patterns
 
 ## Overview

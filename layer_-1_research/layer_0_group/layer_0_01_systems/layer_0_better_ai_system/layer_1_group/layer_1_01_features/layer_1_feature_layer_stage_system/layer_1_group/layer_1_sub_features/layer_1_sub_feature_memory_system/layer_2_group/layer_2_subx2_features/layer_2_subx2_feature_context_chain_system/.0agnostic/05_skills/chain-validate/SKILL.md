@@ -1,3 +1,9 @@
+---
+resource_id: "0be2b70d-2734-4ffa-bafa-46dd3cbeefe2"
+resource_type: "skill
+document"
+resource_name: "SKILL"
+---
 # Skill: Chain Validate
 
 ## Purpose

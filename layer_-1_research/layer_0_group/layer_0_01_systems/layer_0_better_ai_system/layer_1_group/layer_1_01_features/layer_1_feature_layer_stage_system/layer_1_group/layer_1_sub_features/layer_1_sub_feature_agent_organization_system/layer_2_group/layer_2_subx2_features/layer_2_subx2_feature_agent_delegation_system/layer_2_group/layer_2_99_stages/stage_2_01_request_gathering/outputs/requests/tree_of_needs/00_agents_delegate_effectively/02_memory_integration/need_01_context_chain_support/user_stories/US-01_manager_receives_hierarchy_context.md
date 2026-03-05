@@ -1,3 +1,8 @@
+---
+resource_id: "eab815f3-e49a-4d31-8808-452f64cf41e7"
+resource_type: "output"
+resource_name: "US-01_manager_receives_hierarchy_context"
+---
 # US-1: Manager receives hierarchy context automatically
 
 **Need**: [Context Chain Support](../README.md)

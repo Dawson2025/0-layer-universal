@@ -1,3 +1,8 @@
+---
+resource_id: "b69f7bc8-0a51-4b6a-86c9-281d01c14374"
+resource_type: "knowledge"
+resource_name: "STAGE_01_REQUEST_GATHERING"
+---
 # Stage 01: Request Gathering — Universal Guide
 
 ## Purpose

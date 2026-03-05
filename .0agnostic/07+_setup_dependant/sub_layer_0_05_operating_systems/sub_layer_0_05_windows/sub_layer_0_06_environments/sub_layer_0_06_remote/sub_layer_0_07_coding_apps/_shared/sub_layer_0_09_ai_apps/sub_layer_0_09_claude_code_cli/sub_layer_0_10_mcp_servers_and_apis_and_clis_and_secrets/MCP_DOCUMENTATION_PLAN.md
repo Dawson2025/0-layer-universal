@@ -1,3 +1,8 @@
+---
+resource_id: "c61bd88f-f425-4b5b-913b-aa212b909a85"
+resource_type: "document"
+resource_name: "MCP_DOCUMENTATION_PLAN"
+---
 # MCP Servers & APIs Documentation Plan
 
 ## Overview

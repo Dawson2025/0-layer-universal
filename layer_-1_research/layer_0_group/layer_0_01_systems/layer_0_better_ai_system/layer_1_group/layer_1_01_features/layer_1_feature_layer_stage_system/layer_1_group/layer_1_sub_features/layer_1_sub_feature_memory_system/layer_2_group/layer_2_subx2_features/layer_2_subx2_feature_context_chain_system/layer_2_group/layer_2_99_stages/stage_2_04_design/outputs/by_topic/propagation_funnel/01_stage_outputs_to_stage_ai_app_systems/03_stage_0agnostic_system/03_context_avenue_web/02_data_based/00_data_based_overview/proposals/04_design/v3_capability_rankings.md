@@ -1,3 +1,8 @@
+---
+resource_id: "c595e1fe-afa2-4eea-8e99-a93358adbade"
+resource_type: "output"
+resource_name: "v3_capability_rankings"
+---
 # Context Avenue Database Schema — Proposal v3
 
 ## Capability Rankings for Data-Based Avenues

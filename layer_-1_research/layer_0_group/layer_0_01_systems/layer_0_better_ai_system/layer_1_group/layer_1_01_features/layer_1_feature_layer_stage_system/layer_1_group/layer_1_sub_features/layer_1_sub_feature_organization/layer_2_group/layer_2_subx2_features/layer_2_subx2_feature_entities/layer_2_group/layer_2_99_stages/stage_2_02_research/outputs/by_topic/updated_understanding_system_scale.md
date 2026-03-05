@@ -1,3 +1,8 @@
+---
+resource_id: "372883f2-83d0-4185-978f-48f2e3314d89"
+resource_type: "output"
+resource_name: "updated_understanding_system_scale"
+---
 # Updated Understanding: System Scale
 
 **Date**: 2026-01-30

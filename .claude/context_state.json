@@ -1,11 +1,10 @@
 {
+  "file_id": "5cb3fa52-f1aa-44ab-bcbf-1af4758dea3c",
   "$schema": "https://layer-stage.dev/context/state-schema.json",
   "version": "1.0.0",
   "description": "Persistent state for context loading across sessions",
-
   "lastUpdated": "2026-02-05T17:55:00Z",
   "sessionId": "test-session-001",
-
   "contextLoadingState": {
     "loadedFiles": [
       {
@@ -51,7 +50,6 @@
     "knowledgeLoaded": false,
     "overrides": []
   },
-
   "contextConfidenceState": {
     "layerIdentified": 1.0,
     "stageIdentified": 1.0,
@@ -60,7 +58,6 @@
     "requiredContextLoaded": 1.0,
     "overallConfidence": 1.0
   },
-
   "navigationState": {
     "currentLayer": 0,
     "currentStage": null,
@@ -69,10 +66,15 @@
     "layerStageDepth": 0,
     "path": "/home/dawson/dawson-workspace/code/0_layer_universal",
     "parent": "~/dawson-workspace/code/CLAUDE.md",
-    "children": ["layer_0/", "layer_1/", "layer_-1_research/"],
-    "inheritanceChain": ["layer_0"]
+    "children": [
+      "layer_0/",
+      "layer_1/",
+      "layer_-1_research/"
+    ],
+    "inheritanceChain": [
+      "layer_0"
+    ]
   },
-
   "debugContextState": {
     "debugMode": false,
     "verboseLoading": false,

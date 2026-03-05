@@ -1,4 +1,7 @@
 #!/bin/bash
+# resource_id: "1a5ddff5-c97f-4578-8c01-e7a6bdcdbfde"
+# resource_type: "script"
+# resource_name: "agnostic-sync"
 # agnostic-sync.sh - Sync 0AGNOSTIC.md to tool-specific system prompts
 # Usage: ./agnostic-sync.sh [all|claude|cursor|copilot|gemini|aider|codex]
 

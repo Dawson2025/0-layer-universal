@@ -1,3 +1,8 @@
+---
+resource_id: "0a1d3fa8-a96b-4fbf-b5fa-2b441f9ea549"
+resource_type: "knowledge"
+resource_name: "STAGE_03_INSTRUCTIONS"
+---
 # Stage 03: Instructions — Universal Guide
 
 ## Purpose

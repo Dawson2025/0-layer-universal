@@ -1,3 +1,8 @@
+---
+resource_id: "8ac4906b-7319-45c5-8f73-113c2b75a266"
+resource_type: "document"
+resource_name: "utilities"
+---
 # API Reference: Utilities
 
 ## `flattened_dataset.py`

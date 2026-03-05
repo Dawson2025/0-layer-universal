@@ -1,3 +1,8 @@
+---
+resource_id: "349bdf4d-350e-4e42-b855-7274d6f479e7"
+resource_type: "document"
+resource_name: "FIREBASE_ORCHESTRATION_DOCUMENTATION_SUMMARY"
+---
 # Firebase Orchestration System - Documentation & Organization Summary
 
 *Complete documentation and organization of the Firebase Master Orchestration System*

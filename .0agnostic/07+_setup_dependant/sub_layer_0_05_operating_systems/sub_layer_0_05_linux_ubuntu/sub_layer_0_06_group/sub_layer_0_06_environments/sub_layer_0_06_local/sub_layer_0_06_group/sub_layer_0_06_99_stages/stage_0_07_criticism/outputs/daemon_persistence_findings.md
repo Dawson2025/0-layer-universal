@@ -1,3 +1,8 @@
+---
+resource_id: "8667fa8c-73e9-4fe6-89a5-c188a5ee7e13"
+resource_type: "output"
+resource_name: "daemon_persistence_findings"
+---
 # Daemon Persistence After Restart — Investigation Findings
 
 **Date**: 2026-02-26

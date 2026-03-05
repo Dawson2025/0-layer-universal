@@ -1,3 +1,8 @@
+---
+resource_id: "f617ce8a-f664-40ed-9b9f-3a15d28dd2a5"
+resource_type: "document"
+resource_name: "git_commit_rule"
+---
 # GIT COMMIT RULE
 
 ## **MANDATORY REQUIREMENT**

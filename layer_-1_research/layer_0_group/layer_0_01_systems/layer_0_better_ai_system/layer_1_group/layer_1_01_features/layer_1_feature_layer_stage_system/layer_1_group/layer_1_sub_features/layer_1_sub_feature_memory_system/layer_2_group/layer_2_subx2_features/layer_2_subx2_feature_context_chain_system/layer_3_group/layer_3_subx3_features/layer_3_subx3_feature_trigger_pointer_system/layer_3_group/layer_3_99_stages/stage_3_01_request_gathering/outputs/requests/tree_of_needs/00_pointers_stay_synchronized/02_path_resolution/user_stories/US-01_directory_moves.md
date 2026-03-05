@@ -1,3 +1,8 @@
+---
+resource_id: "ab7984ae-e0d9-49be-8753-c97d0e3a8f4b"
+resource_type: "output"
+resource_name: "US-01_directory_moves"
+---
 # US-01: Directory Moves, Automatic Pointer Updates
 
 **Need**: [Path Resolution](../README.md)

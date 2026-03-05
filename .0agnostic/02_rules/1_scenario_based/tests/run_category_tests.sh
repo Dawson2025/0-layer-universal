@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
+# resource_id: "d5654343-c5ac-466e-a570-7e160d8ed0dd"
+# resource_type: "script"
+# resource_name: "run_category_tests"
 # Category test runner
 # Usage: bash tests/run_category_tests.sh [repo_root]
 

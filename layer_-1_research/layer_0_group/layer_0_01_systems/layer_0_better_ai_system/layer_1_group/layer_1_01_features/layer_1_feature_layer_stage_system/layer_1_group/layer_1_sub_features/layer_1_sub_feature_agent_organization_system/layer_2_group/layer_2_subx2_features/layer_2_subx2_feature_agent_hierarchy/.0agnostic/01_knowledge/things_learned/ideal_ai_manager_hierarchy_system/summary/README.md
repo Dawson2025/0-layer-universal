@@ -1,3 +1,9 @@
+---
+resource_id: "40079a88-a1d8-486b-926e-53029999615a"
+resource_type: "readme
+knowledge"
+resource_name: "README"
+---
 ## Ideal AI Manager Hierarchy System – Overview
 
 This file is the **primary overview** of the ideal AI manager hierarchy system.  

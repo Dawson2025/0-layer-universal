@@ -1,4 +1,9 @@
 ---
+resource_id: "3d93b24d-5360-49c2-9131-0b52b6fb72e7"
+resource_type: "document"
+resource_name: "11_archives-complete"
+---
+---
 description: Mark 11_archives stage as complete and prepare handoff
 argument-hint: [--notes "completion notes"]
 ---

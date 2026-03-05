@@ -1,4 +1,9 @@
 ---
+resource_id: "47c74c72-b92f-4a49-9711-feade3d0ff71"
+resource_type: "document"
+resource_name: "07_testing-status"
+---
+---
 description: Show current status of 07_testing stage
 argument-hint: [--verbose]
 ---

@@ -1,3 +1,9 @@
+---
+resource_id: "e7eab562-bc75-478f-bd82-cf855693cee8"
+resource_type: "readme
+document"
+resource_name: "README"
+---
 ## Reordering Operations Protocol – Instruction Docs
 
 The canonical definition of the **Reordering Operations Protocol** lives in:

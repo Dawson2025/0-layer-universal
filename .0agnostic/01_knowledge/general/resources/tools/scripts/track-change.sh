@@ -1,4 +1,7 @@
 #!/bin/bash
+# resource_id: "2ac047ef-ac07-414c-9985-a84363bb18b2"
+# resource_type: "script"
+# resource_name: "track-change"
 #
 # track-change.sh - Log file changes to divergence.log
 #

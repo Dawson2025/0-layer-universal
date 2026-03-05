@@ -1,3 +1,8 @@
+---
+resource_id: "3453ff95-f208-48a9-bf61-adcadb4f7003"
+resource_type: "output"
+resource_name: "PORTING_STRATEGY"
+---
 # Gemini — Porting Strategy for 0AGNOSTIC.md and .0agnostic/ System
 
 **Date**: 2026-02-27

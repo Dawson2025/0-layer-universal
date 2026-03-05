@@ -1,3 +1,8 @@
+---
+resource_id: "0c1dad1c-2ad4-4075-bd5b-5c582c821d83"
+resource_type: "rule"
+resource_name: "4_4_add_shell_aliases"
+---
 # 4.4: Add Shell Aliases
 
 ## Requirement

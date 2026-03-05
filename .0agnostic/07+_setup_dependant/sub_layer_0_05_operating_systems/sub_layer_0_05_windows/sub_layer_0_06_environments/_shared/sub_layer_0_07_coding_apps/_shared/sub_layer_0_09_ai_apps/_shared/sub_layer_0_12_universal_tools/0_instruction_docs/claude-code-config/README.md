@@ -1,3 +1,9 @@
+---
+resource_id: "d14f060e-dc87-4858-8ce7-c12e34ca5bd3"
+resource_type: "readme
+document"
+resource_name: "README"
+---
 # Claude Code Configuration Tools
 *Trickle-Down Level 0.75: Universal Tools - Claude Code Configuration*
 

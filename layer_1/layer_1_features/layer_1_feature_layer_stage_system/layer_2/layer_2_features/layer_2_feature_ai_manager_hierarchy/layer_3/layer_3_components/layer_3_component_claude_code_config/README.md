@@ -1,3 +1,9 @@
+---
+resource_id: "5ad7bd18-97bd-4961-bf74-e5b678a0419c"
+resource_type: "readme
+document"
+resource_name: "README"
+---
 # Claude Code Config Component
 
 ## Purpose

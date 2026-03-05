@@ -1,3 +1,8 @@
+---
+resource_id: "b1faae75-0ca8-4c8b-97d7-fd7cf9ab0b1f"
+resource_type: "output"
+resource_name: "REQ-03_context_inheritance"
+---
 # Context Inheritance
 
 **Need**: [Nested Systems](../README.md)

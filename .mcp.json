@@ -1,8 +1,13 @@
 {
+  "file_id": "bb075546-b4d4-4620-b88b-ca16b62b208f",
   "mcpServers": {
     "filesystem": {
       "command": "npx",
-      "args": ["-y", "@modelcontextprotocol/server-filesystem", "/home/dawson/dawson-workspace/code/0_layer_universal"]
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-filesystem",
+        "/home/dawson/dawson-workspace/code/0_layer_universal"
+      ]
     }
   }
 }

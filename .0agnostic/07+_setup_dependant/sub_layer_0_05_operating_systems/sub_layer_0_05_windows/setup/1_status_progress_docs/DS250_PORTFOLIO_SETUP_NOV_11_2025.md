@@ -1,3 +1,8 @@
+---
+resource_id: "3bf13cae-67d2-43fd-a718-2cdd217f2232"
+resource_type: "document"
+resource_name: "DS250_PORTFOLIO_SETUP_NOV_11_2025"
+---
 # DS 250 Portfolio Setup Session - November 11, 2025
 
 ## Session Overview

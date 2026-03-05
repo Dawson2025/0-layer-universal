@@ -1,3 +1,8 @@
+---
+resource_id: "29591211-f267-4e63-ad9a-c51f4de838b3"
+resource_type: "document"
+resource_name: "IMPLEMENTATION_SUMMARY"
+---
 # Letter-Based Filtering System Implementation Summary
 
 ## Overview

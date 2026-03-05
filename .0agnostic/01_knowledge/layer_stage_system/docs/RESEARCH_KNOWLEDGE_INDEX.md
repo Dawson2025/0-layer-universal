@@ -1,3 +1,8 @@
+---
+resource_id: "ca83567a-91cd-4767-be92-426d19db3578"
+resource_type: "knowledge"
+resource_name: "RESEARCH_KNOWLEDGE_INDEX"
+---
 # Research Knowledge Index
 
 This document indexes validated research outputs from `layer_-1_research/` entities.

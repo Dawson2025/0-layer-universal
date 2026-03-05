@@ -1,3 +1,9 @@
+---
+resource_id: "2a281c21-92dc-45be-868e-c84580eb55c7"
+resource_type: "readme
+document"
+resource_name: "README"
+---
 # MCP Core Issues - General Setup and Configuration
 
 This directory documents **core MCP server issues** that affect multiple MCP servers across different configurations.

@@ -1,3 +1,8 @@
+---
+resource_id: "23a87d1d-163d-41e0-ba30-e38722c653ec"
+resource_type: "document"
+resource_name: "02_naming_restructure_proposal"
+---
 # Setup Sub-Layer Naming & Restructure Proposal
 
 **Date**: 2026-01-25

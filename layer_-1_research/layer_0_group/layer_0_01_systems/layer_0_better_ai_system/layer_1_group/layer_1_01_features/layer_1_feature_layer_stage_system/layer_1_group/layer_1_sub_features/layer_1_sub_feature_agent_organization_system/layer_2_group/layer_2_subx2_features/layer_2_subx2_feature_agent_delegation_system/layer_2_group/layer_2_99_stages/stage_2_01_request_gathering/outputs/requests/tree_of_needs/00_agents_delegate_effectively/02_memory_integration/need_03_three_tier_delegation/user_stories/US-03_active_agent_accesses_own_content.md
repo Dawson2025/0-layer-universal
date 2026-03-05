@@ -1,3 +1,8 @@
+---
+resource_id: "3e0ecbd4-d52a-4752-a3f1-feebc8d54899"
+resource_type: "output"
+resource_name: "US-03_active_agent_accesses_own_content"
+---
 # US-3: Active stage agent accesses its own full content
 
 **Need**: [Three-Tier Delegation](../README.md)

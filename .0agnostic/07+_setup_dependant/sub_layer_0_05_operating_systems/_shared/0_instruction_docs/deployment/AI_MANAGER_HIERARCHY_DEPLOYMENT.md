@@ -1,3 +1,8 @@
+---
+resource_id: "2de0f73d-bf72-4931-8a98-a7746f7c60c8"
+resource_type: "document"
+resource_name: "AI_MANAGER_HIERARCHY_DEPLOYMENT"
+---
 # AI Manager Hierarchy System - Deployment Overview
 
 **Document Type**: Deployment Guide

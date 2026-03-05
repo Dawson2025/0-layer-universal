@@ -1,3 +1,8 @@
+---
+resource_id: "12762781-d216-44c3-a554-2eea1bcc59e0"
+resource_type: "document"
+resource_name: "multi_tab_workflow"
+---
 # Multi-Tab Workflow (Browser MCP)
 
 ## Overview

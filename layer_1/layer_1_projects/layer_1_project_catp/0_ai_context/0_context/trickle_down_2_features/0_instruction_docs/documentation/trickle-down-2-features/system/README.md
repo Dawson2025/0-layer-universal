@@ -1,3 +1,9 @@
+---
+resource_id: "d3ca162f-cf70-4430-a6ba-30d9b5a578a8"
+resource_type: "readme
+document"
+resource_name: "README"
+---
 # System Administration Feature Documentation
 *Trickle-Down Level 2: Feature-Level Documentation*
 

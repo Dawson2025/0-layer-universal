@@ -1,3 +1,8 @@
+---
+resource_id: "27381823-1888-4480-bd16-d6a268e45d84"
+resource_type: "document"
+resource_name: "INSTRUCTIONS"
+---
 # AI Manager: Stage 0.03 - Execution
 
 ## Your Role

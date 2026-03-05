@@ -1,3 +1,9 @@
+---
+resource_id: "a58f0e92-884f-4938-b0cb-4488fe02cb68"
+resource_type: "readme
+document"
+resource_name: "README"
+---
 # layer_0_00_layer_registry — Layer 0 Research Registry
 
 This directory contains metadata about layer_0 structures being researched.

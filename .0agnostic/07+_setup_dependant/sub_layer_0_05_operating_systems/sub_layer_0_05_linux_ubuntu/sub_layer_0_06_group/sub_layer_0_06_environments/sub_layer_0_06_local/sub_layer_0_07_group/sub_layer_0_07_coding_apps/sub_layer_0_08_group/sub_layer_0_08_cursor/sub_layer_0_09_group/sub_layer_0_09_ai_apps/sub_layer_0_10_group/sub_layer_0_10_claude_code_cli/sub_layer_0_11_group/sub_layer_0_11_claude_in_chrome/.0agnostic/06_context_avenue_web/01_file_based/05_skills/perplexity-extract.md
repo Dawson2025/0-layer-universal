@@ -1,3 +1,8 @@
+---
+resource_id: "710ce3f6-746f-468f-a892-94996a352446"
+resource_type: "document"
+resource_name: "perplexity-extract"
+---
 # Avenue 05 Registration: perplexity-extract skill (Claude in Chrome)
 
 **Skill**: `/perplexity-extract`

@@ -1,3 +1,8 @@
+---
+resource_id: "75d862b3-c445-4f0f-9211-f88e0ceb428d"
+resource_type: "document"
+resource_name: "cursor-agent-spec-kit"
+---
 # Cursor Agent: Spec Kit Implementation Guide
 *Agent-Specific Instructions for Language Tracker Project*
 

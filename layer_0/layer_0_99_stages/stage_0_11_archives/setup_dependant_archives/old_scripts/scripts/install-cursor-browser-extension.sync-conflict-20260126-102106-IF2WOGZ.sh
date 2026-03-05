@@ -1,4 +1,7 @@
 #!/bin/bash
+# resource_id: "658ec988-538e-4894-b684-170d92510b7b"
+# resource_type: "script"
+# resource_name: "install-cursor-browser-extension.sync-conflict-20260126-102106-IF2WOGZ"
 # Script to help install Cursor browser extension
 
 echo "=========================================="

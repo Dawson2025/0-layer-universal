@@ -1,3 +1,8 @@
+---
+resource_id: "6eb866a4-52bd-47e4-8207-dcc3f544c938"
+resource_type: "output"
+resource_name: "US-03_developer_creates_knowledge_file"
+---
 # US-03: Developer creates new knowledge file
 
 **Need**: [Reference Format Standard](../README.md)

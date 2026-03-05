@@ -1,3 +1,8 @@
+---
+resource_id: "102ff7f6-f349-4a07-bfb6-457c4ec9587f"
+resource_type: "rule"
+resource_name: "PARENT_NEED_P2"
+---
 # P2: EXTRACT CRITICAL RULES DYNAMICALLY
 
 ## Tactical Objective

@@ -1,3 +1,9 @@
+---
+resource_id: "1ffd3862-3fb9-4ce1-992a-263f8f04981e"
+resource_type: "readme
+document"
+resource_name: "README"
+---
 # MCP (Model Context Protocol) Tools - Universal Documentation
 
 ## Overview

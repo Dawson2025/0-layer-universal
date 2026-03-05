@@ -1,3 +1,8 @@
+---
+resource_id: "da2ac16d-6861-4d85-9968-b80594b546b4"
+resource_type: "handoff"
+resource_name: "manager_instructions"
+---
 # Manager Instructions for stage_1_00_stage_registry
 
 ## From

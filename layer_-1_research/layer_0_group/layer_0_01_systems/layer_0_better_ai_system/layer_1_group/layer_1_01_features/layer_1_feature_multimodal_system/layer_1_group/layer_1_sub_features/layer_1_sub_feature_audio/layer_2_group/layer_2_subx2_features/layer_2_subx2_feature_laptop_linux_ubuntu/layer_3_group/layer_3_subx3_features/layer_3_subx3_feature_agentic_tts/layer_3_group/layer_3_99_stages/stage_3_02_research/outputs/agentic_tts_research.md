@@ -1,3 +1,8 @@
+---
+resource_id: "2b48f39b-15fb-4568-afcc-dcddfb04e8be"
+resource_type: "output"
+resource_name: "agentic_tts_research"
+---
 # Agentic TTS Research
 
 **Date**: 2026-02-23

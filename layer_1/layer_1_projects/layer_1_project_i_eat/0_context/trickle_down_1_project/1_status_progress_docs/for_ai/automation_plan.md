@@ -1,3 +1,8 @@
+---
+resource_id: "8ab3f624-fef9-4450-af6b-f36340d5328e"
+resource_type: "document"
+resource_name: "automation_plan"
+---
 # Automation Plan for Remaining User Stories (US-050–US-067)
 
 **📘 For complete automation coverage across all 67 user stories, see [COMPLETE_AUTOMATION_COVERAGE.md](./COMPLETE_AUTOMATION_COVERAGE.md)**

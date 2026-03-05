@@ -1,3 +1,9 @@
+---
+resource_id: "0eaad1fc-1a10-4ab8-9e5e-52924186c3bc"
+resource_type: "readme
+document"
+resource_name: "README"
+---
 # chrome-devtools-mcp (cursor_agent on wsl)
 
 ## Canonical docs

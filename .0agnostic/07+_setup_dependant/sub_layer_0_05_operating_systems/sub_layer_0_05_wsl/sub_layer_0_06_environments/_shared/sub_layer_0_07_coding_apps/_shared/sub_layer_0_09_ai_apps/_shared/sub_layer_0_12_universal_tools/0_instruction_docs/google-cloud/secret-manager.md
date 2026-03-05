@@ -1,3 +1,8 @@
+---
+resource_id: "fc235d77-09f5-4a50-8b38-030f3f84ed16"
+resource_type: "document"
+resource_name: "secret-manager"
+---
 # Google Secret Manager
 
 Google Secret Manager provides secure storage for API keys, passwords, certificates, and other sensitive data.

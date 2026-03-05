@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
+# resource_id: "973fe244-6a0f-4e13-99b4-c771df1d3db7"
+# resource_type: "script"
+# resource_name: "implement-0agnostic-1merge-avenue-web"
 # implement-0agnostic-1merge-avenue-web.sh
 # Stage 2.06 development helper: enforce 0agnostic/.1merge shape and run Avenue Web MVP validation.
 

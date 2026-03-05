@@ -1,3 +1,8 @@
+---
+resource_id: "2990bd30-bf86-4ff5-b84a-277fd1b0ebb1"
+resource_type: "output"
+resource_name: "PORTING_STRATEGY"
+---
 # Cursor IDE — Porting Strategy for 0AGNOSTIC.md and .0agnostic/ System
 
 **Date**: 2026-02-27

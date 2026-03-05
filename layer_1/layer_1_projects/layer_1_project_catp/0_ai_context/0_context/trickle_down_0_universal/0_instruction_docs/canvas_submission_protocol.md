@@ -1,3 +1,8 @@
+---
+resource_id: "e2ca5a6c-3c4c-41f1-a1e7-990d012aef67"
+resource_type: "document"
+resource_name: "canvas_submission_protocol"
+---
 # Canvas Submission Protocol for Programming Assignments
 
 ## Purpose

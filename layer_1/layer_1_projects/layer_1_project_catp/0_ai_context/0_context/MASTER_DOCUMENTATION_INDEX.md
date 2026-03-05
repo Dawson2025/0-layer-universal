@@ -1,3 +1,8 @@
+---
+resource_id: "2156f458-5e7c-4568-aef6-5b75ff52f53d"
+resource_type: "document"
+resource_name: "MASTER_DOCUMENTATION_INDEX"
+---
 # Master Documentation Index
 *Complete Index of All Organized Documentation*
 

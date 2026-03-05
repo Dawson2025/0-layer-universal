@@ -1,3 +1,8 @@
+---
+resource_id: "2271b8cd-0fef-481c-8a3c-c9f40ce51014"
+resource_type: "protocol"
+resource_name: "perplexity_extraction_protocol"
+---
 # Perplexity Extraction Protocol
 
 **Scope**: Extracting structured content and citations from Perplexity search pages

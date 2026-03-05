@@ -1,3 +1,8 @@
+---
+resource_id: "060e5e05-352f-4b4a-9f49-f0cc6d042b87"
+resource_type: "document"
+resource_name: "MIGRATION_PLAN.sync-conflict-20260126-035819-IF2WOGZ"
+---
 # Migration Plan: Old Sub_Layers → Unified File Tree
 
 **Created**: January 12, 2026

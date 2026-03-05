@@ -1,3 +1,8 @@
+---
+resource_id: "771ddb63-cf2c-4845-aebb-7f180e464269"
+resource_type: "document"
+resource_name: "root-directory-organization"
+---
 # Root Directory Organization Guide
 *Proper Organization of Files in Project Root Directory*
 

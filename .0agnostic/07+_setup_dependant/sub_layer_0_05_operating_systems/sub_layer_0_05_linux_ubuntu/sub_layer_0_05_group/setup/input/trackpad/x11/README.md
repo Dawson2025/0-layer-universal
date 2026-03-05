@@ -1,3 +1,9 @@
+---
+resource_id: "3d1716c9-154a-493a-a62d-afa4c4519e28"
+resource_type: "readme
+document"
+resource_name: "README"
+---
 # X11 Trackpad Configuration
 
 **Last Updated**: January 11, 2026

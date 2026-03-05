@@ -1,4 +1,10 @@
 ---
+resource_id: "4120977a-e842-4578-997c-2ec7ed3c04b8"
+resource_type: "skill
+document"
+resource_name: "SKILL"
+---
+---
 name: 06_development-workflow
 description: Workflow skill for Implementation and coding. Activated when working on 06_development tasks.
 version: 1.0.0

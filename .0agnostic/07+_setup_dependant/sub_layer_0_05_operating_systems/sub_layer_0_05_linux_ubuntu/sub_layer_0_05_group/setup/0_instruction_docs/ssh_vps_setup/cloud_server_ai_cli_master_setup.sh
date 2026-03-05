@@ -1,4 +1,7 @@
 #!/bin/bash
+# resource_id: "e4aa7148-7e19-40d0-aabc-2a91e5fc76da"
+# resource_type: "script"
+# resource_name: "cloud_server_ai_cli_master_setup"
 # =============================================================================
 # CLOUD SERVER AI CLI MASTER SETUP
 # Layer: 0 (Universal)

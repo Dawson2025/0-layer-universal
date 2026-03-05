@@ -1,3 +1,8 @@
+---
+resource_id: "5cc4333f-74b8-4c3b-9b8b-13feffdf64bd"
+resource_type: "document"
+resource_name: "LINUX_BROWSER_FIX.sync-conflict-20260126-102106-IF2WOGZ"
+---
 # Linux/Ubuntu Browser Automation Fix
 
 ## Problem

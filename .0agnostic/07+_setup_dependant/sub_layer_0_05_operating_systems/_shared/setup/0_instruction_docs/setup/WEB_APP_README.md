@@ -1,3 +1,8 @@
+---
+resource_id: "9a3a02ae-04e7-4868-840e-17a51cabb814"
+resource_type: "document"
+resource_name: "WEB_APP_README"
+---
 # Phoneme Frequency Tracker - Web Application
 
 A comprehensive web interface for the Phoneme Frequency Tracker, implementing all terminal functions as modern web features.

@@ -1,3 +1,8 @@
+---
+resource_id: "0acf5a3b-610f-4015-9bae-e65af3b8e03d"
+resource_type: "output"
+resource_name: "06_open_questions"
+---
 # Open Questions: Decisions Needed Before Design
 
 ## Questions That Need Answers

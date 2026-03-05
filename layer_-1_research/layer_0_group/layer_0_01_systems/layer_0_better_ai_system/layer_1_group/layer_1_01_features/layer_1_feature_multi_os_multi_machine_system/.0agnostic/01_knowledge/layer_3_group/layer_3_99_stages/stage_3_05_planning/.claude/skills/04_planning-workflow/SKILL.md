@@ -1,4 +1,10 @@
 ---
+resource_id: "0c4794c5-5b85-4627-a970-e63a24bdb0f0"
+resource_type: "skill
+knowledge"
+resource_name: "SKILL"
+---
+---
 name: 04_planning-workflow
 description: Workflow skill for Create implementation plan. Activated when working on 04_planning tasks.
 version: 1.0.0

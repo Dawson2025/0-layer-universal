@@ -1,3 +1,8 @@
+---
+resource_id: "08ed9e43-c532-4d61-911e-5945aa7fa146"
+resource_type: "knowledge"
+resource_name: "persona_library"
+---
 ## Persona Library and Output Styles Guide
 
 This document explains how to create and maintain reusable agent personas using output styles and custom system prompts.

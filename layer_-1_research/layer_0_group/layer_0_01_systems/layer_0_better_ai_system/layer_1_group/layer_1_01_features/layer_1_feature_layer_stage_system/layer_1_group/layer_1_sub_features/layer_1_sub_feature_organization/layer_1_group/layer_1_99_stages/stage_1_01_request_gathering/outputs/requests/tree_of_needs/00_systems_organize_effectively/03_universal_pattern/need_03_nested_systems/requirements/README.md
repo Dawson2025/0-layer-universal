@@ -1,3 +1,9 @@
+---
+resource_id: "b9b45c35-fc80-4024-a01b-2dbb9e10ac30"
+resource_type: "readme
+output"
+resource_name: "README"
+---
 # Requirements — Nested Systems
 
 | ID | Name | Priority |

@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
+# resource_id: "cccce2bb-d3aa-4208-87fe-6e3109eecdcf"
+# resource_type: "script"
+# resource_name: "test_outputs_purpose_taxonomy"
 # test_outputs_purpose_taxonomy.sh — Validate purpose/suite output organization for stage_1_07_testing
 
 set -uo pipefail

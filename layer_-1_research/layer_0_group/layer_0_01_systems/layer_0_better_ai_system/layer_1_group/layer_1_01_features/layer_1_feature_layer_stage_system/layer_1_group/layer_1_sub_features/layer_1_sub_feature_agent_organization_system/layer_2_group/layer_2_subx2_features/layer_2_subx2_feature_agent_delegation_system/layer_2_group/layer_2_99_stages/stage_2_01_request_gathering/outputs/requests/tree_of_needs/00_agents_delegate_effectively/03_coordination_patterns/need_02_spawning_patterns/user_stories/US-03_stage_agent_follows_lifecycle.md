@@ -1,3 +1,8 @@
+---
+resource_id: "23efc37c-0578-45e9-9120-fbedc46ce98b"
+resource_type: "output"
+resource_name: "US-03_stage_agent_follows_lifecycle"
+---
 # US-3: Stage agent follows lifecycle
 
 **Need**: [Spawning Patterns](../README.md)

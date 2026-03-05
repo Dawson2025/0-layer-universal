@@ -1,3 +1,8 @@
+---
+resource_id: "50fcdfb4-6fce-426f-80ba-1586b5e41f7c"
+resource_type: "document"
+resource_name: "TROUBLESHOOTING"
+---
 # Browser MCP Troubleshooting Guide
 
 This document covers common issues encountered when using Browser MCP with Claude Code CLI on Linux/Ubuntu systems.

@@ -1,3 +1,8 @@
+---
+resource_id: "c63f70f1-6466-4c02-82cf-77c7a66b863d"
+resource_type: "document"
+resource_name: "proposal_ai_friendly_output_organization_v5"
+---
 # Proposal v5: Complete AI System Architecture (Corrected)
 
 **Date**: 2026-02-02

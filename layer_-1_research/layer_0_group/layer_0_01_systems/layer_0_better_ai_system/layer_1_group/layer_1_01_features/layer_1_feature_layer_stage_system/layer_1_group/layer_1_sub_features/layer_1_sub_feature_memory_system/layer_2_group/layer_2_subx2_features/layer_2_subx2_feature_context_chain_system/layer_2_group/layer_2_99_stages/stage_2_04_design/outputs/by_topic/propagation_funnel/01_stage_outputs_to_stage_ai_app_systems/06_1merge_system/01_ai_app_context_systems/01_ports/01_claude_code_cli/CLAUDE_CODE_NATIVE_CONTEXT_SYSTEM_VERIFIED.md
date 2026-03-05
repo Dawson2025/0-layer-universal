@@ -1,3 +1,8 @@
+---
+resource_id: "81cffb24-3a2e-4436-85ba-0036cc55f138"
+resource_type: "output"
+resource_name: "CLAUDE_CODE_NATIVE_CONTEXT_SYSTEM_VERIFIED"
+---
 # Claude Code CLI — Native Context System (Verified)
 
 **Date Created**: 2026-02-27

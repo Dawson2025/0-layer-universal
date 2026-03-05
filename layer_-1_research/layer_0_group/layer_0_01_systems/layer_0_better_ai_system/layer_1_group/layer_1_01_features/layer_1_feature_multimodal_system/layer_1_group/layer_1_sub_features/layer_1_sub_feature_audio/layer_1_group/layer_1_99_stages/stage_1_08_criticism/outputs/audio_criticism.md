@@ -1,3 +1,8 @@
+---
+resource_id: "8097540a-be62-4bc8-9bd0-4084b5a8910e"
+resource_type: "output"
+resource_name: "audio_criticism"
+---
 # Audio Criticism / Review (Parent Overview)
 
 **Date**: 2026-02-23

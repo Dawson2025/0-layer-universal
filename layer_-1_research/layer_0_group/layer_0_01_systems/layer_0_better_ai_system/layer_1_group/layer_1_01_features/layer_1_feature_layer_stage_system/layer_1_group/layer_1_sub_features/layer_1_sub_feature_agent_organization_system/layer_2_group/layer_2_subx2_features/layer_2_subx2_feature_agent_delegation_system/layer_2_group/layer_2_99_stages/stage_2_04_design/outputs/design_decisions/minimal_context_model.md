@@ -1,3 +1,8 @@
+---
+resource_id: "499df434-1318-47bb-82c4-d90fd4be9176"
+resource_type: "output"
+resource_name: "minimal_context_model"
+---
 # Design Decision: Minimal Context Model
 
 ## Decision

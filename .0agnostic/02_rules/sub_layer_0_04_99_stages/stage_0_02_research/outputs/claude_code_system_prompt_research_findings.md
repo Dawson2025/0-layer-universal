@@ -1,3 +1,8 @@
+---
+resource_id: "9733536c-143e-41d2-8f08-c82437f8a31a"
+resource_type: "rule"
+resource_name: "claude_code_system_prompt_research_findings"
+---
 # Claude Code System Prompt Customization Research Findings
 
 **Research Date**: January 28, 2026

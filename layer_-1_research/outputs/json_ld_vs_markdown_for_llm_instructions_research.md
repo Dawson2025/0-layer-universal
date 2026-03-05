@@ -1,3 +1,8 @@
+---
+resource_id: "0b9a32f1-a011-4015-8b3b-bf998d851637"
+resource_type: "output"
+resource_name: "json_ld_vs_markdown_for_llm_instructions_research"
+---
 # JSON-LD vs Markdown for LLM Agent Instructions: Research Report
 
 > **Layer**: layer_-1_research | **Stage**: 02_research | **Date**: 2026-02-07

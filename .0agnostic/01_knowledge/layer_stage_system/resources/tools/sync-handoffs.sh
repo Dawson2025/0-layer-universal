@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
+# resource_id: "e3880e72-e7c2-4119-97d9-d338c79bdab7"
+# resource_type: "script"
+# resource_name: "sync-handoffs"
 # sync-handoffs.sh — Populate incoming handoff documents from outgoing stage/layer reports
 #
 # Discovers stage reports and layer reports in outgoing directories, then copies them

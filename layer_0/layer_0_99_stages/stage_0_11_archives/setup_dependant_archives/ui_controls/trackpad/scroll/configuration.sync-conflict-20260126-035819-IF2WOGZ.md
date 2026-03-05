@@ -1,3 +1,8 @@
+---
+resource_id: "91ae6a1d-2487-4e99-9806-31e7ce3dc8d2"
+resource_type: "document"
+resource_name: "configuration.sync-conflict-20260126-035819-IF2WOGZ"
+---
 # Scroll Configuration
 
 **Last Updated**: December 31, 2025

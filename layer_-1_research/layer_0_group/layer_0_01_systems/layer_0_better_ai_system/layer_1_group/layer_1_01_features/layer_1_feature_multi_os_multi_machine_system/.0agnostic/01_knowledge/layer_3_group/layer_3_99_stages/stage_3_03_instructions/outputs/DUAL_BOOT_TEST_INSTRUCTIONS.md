@@ -1,3 +1,8 @@
+---
+resource_id: "3d335b01-feef-4ca0-a598-dcaee78b716a"
+resource_type: "knowledge"
+resource_name: "DUAL_BOOT_TEST_INSTRUCTIONS"
+---
 # Dual Boot Sync Test Instructions
 
 **Last Updated:** 2026-01-12 00:10 MST (from Windows)

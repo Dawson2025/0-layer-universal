@@ -1,3 +1,8 @@
+---
+resource_id: "4a9af46b-6cf0-498c-ab50-53ef471bb532"
+resource_type: "rule"
+resource_name: "2_5_support_rule_versioning"
+---
 # 2.5: Support Rule Versioning
 
 ## Requirement

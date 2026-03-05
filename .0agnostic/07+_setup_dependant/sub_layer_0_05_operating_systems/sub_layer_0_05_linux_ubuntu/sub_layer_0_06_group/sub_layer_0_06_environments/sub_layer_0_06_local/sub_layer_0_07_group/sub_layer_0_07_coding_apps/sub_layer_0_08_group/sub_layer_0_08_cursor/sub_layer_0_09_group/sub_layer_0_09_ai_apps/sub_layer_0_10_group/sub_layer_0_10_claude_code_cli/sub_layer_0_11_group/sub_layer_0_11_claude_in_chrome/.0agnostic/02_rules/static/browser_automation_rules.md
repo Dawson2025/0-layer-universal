@@ -1,3 +1,8 @@
+---
+resource_id: "e2c4e271-60d1-4767-8df1-612ee0d59016"
+resource_type: "rule"
+resource_name: "browser_automation_rules"
+---
 # Browser Automation Rules — Claude in Chrome
 
 **Importance**: I1 (High)

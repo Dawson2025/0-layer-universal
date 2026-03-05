@@ -1,3 +1,9 @@
+---
+resource_id: "c53a9c92-9f5d-44a4-a6e5-97dbb55878ea"
+resource_type: "index
+document"
+resource_name: "0INDEX"
+---
 # Proposals Index
 
 ## Structure

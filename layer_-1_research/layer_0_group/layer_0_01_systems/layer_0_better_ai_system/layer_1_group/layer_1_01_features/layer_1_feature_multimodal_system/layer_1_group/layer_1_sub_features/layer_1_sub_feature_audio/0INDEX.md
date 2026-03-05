@@ -1,3 +1,9 @@
+---
+resource_id: "d656261f-b7b3-4207-aa12-b3f66b9e39fb"
+resource_type: "index
+document"
+resource_name: "0INDEX"
+---
 # 0INDEX.md - Audio Sub-Feature
 
 ## Current Status

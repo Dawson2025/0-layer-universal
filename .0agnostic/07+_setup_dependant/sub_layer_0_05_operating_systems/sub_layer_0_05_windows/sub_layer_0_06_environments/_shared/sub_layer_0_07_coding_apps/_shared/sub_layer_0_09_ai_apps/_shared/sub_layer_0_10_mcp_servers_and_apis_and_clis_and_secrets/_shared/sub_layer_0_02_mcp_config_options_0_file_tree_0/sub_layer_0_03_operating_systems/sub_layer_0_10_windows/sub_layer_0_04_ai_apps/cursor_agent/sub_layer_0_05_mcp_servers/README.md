@@ -1,3 +1,9 @@
+---
+resource_id: "d976c92f-b48f-4624-824b-22b0363cdaa0"
+resource_type: "readme
+document"
+resource_name: "README"
+---
 # MCP Servers (cursor_agent on windows)
 
 This folder contains windows + cursor_agent specific notes for each MCP server we use.

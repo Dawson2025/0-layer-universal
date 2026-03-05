@@ -1,3 +1,8 @@
+---
+resource_id: "58ebd44c-fdaf-46ae-b8c8-436544b85ec9"
+resource_type: "document"
+resource_name: "stage_handoffs"
+---
 # Stage Handoffs
 
 ## Between Stages

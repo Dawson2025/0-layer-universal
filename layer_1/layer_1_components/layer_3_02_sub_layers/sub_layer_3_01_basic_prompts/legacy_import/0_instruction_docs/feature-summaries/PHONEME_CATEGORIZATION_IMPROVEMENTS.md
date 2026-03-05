@@ -1,3 +1,8 @@
+---
+resource_id: "a3e5aeb6-d02d-4ded-801c-04174429f1b2"
+resource_type: "document"
+resource_name: "PHONEME_CATEGORIZATION_IMPROVEMENTS"
+---
 # Phoneme Categorization Improvements - Implementation Summary
 
 ## Overview

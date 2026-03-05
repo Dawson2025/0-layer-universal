@@ -1,3 +1,8 @@
+---
+resource_id: "be6f53ee-9f24-4c46-ad4a-72f4d46faac3"
+resource_type: "document"
+resource_name: "init_prompt_chain"
+---
 # Init Prompt Chain
 
 ## Overview

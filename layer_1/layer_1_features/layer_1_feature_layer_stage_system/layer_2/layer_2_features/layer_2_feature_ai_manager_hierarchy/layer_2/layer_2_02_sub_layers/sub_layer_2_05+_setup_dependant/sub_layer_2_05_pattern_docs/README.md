@@ -1,3 +1,9 @@
+---
+resource_id: "b8b82630-c8f8-4bb4-b6ba-d258c745a8cb"
+resource_type: "readme
+document"
+resource_name: "README"
+---
 # Pattern Documentation
 
 ## Contents

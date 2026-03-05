@@ -1,3 +1,8 @@
+---
+resource_id: "86759683-607f-4a01-a0e1-c667306e78cd"
+resource_type: "output"
+resource_name: "REQ-02_delegation_aware_tiering"
+---
 # Delegation-Aware Tiering
 
 **Need**: [Three-Tier Delegation](../README.md)

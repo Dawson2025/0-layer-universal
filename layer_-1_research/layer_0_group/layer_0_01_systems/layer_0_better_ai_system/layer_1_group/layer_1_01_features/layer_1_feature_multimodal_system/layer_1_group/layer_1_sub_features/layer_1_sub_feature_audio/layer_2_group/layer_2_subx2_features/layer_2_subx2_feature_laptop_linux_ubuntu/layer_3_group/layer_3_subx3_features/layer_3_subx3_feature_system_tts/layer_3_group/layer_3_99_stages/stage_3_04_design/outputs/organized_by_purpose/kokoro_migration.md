@@ -1,3 +1,8 @@
+---
+resource_id: "aacb9ed6-beed-495a-9b65-71a87e41a5fc"
+resource_type: "output"
+resource_name: "kokoro_migration"
+---
 # Design: Kokoro Migration (Piper → Kokoro)
 
 **Purpose**: Upgrade the TTS engine from Piper (CPU, good quality) to Kokoro (GPU, best quality).

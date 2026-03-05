@@ -1,3 +1,8 @@
+---
+resource_id: "aa8f40d0-21ea-4cc7-afad-d8778cf07dc7"
+resource_type: "document"
+resource_name: "20251023_CloudTemplateTests_Resolution_v1.0"
+---
 # Cloud Template Tests Resolution
 *Date: 2025-10-23*
 

@@ -1,3 +1,8 @@
+---
+resource_id: "434b7a99-5009-48a5-8918-b04b1bc348ee"
+resource_type: "rule"
+resource_name: "20251023_FinalRootDirectoryOrganization_Resolution_v1.0"
+---
 # Final Root Directory Organization Resolution
 *Complete Organization of All Project Files*
 

@@ -1,3 +1,8 @@
+---
+resource_id: "9a3f299a-ac68-48d7-8099-a465bcb22db2"
+resource_type: "output"
+resource_name: "REQ-03_change_detection"
+---
 # REQ-03: Change Detection Scope
 
 **Need**: [Trigger Automation](../README.md)

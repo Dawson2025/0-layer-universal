@@ -1,3 +1,8 @@
+---
+resource_id: "11be5f6c-7e8f-4323-9c86-bd768d2de72f"
+resource_type: "document"
+resource_name: "README.sync-conflict-20260126-101634-IF2WOGZ"
+---
 # Learning Simulation System - Overview
 
 ## What This Research Is About

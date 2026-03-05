@@ -1,3 +1,8 @@
+---
+resource_id: "3e51e7c8-42a7-4c11-955e-45b876a6f719"
+resource_type: "document"
+resource_name: "entity_types"
+---
 # Entity Types
 
 ## Projects

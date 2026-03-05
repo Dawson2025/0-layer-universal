@@ -1,3 +1,8 @@
+---
+resource_id: "6f74f45a-51ec-4e2b-899a-3b96a7dae866"
+resource_type: "output"
+resource_name: "DOCX_SKILL_SETUP_GUIDE"
+---
 # Anthropic /docx Skill Setup & Usage Guide
 
 **Date**: January 29, 2026

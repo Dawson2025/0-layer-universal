@@ -1,3 +1,8 @@
+---
+resource_id: "9a3a2b95-c060-4a3c-bf6b-2eb2e4fc2292"
+resource_type: "output"
+resource_name: "REQ-02_student_modeling"
+---
 # Student Modeling
 
 **Need**: [School System Example](../README.md)

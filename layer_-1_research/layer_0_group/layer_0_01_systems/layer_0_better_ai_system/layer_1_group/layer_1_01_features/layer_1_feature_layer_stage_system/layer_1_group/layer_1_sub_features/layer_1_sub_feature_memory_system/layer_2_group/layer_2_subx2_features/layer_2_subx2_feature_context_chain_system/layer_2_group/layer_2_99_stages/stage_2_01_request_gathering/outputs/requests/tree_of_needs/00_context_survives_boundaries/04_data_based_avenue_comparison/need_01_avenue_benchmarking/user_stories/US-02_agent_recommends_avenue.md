@@ -1,3 +1,8 @@
+---
+resource_id: "57b875cd-a686-44eb-b4fb-6eaef63106d7"
+resource_type: "output"
+resource_name: "US-02_agent_recommends_avenue"
+---
 # US-02: Agent recommends avenue based on benchmarks
 
 **Need**: [Avenue Benchmarking](../README.md)

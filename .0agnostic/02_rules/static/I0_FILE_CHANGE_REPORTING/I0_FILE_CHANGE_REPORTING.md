@@ -1,4 +1,9 @@
 ---
+resource_id: "c1f686c1-1201-4a85-8eb6-463a91d7de4f"
+resource_type: "rule"
+resource_name: "I0_FILE_CHANGE_REPORTING"
+---
+---
 promote: hot
 hot_summary: "On every turn with file changes: (1) describe changes INLINE with their full absolute paths in the response body, (2) provide end-of-turn summary of all Added/Updated/Moved/Removed files. All paths start from /home/, NEVER abbreviated. Full rule: .0agnostic/02_rules/static/I0_FILE_CHANGE_REPORTING/I0_FILE_CHANGE_REPORTING.md"
 hot_trigger: "Any turn that modifies files"

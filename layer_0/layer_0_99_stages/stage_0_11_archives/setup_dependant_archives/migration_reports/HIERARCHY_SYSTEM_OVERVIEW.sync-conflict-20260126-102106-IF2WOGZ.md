@@ -1,3 +1,8 @@
+---
+resource_id: "1fef22a9-daab-4c2a-bc31-d6b7fa150b78"
+resource_type: "document"
+resource_name: "HIERARCHY_SYSTEM_OVERVIEW.sync-conflict-20260126-102106-IF2WOGZ"
+---
 # Universal Setup Hierarchy System
 
 This document describes how the universal setup hierarchy is structured and how to navigate it.

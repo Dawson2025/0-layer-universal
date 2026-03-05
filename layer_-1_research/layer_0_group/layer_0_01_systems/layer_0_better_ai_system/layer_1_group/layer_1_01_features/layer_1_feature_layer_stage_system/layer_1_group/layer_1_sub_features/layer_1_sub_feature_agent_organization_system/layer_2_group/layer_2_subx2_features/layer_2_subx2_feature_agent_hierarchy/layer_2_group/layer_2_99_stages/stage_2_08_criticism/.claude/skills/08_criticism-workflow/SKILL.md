@@ -1,4 +1,10 @@
 ---
+resource_id: "69113340-57cf-43db-8aee-0e5ae9487168"
+resource_type: "skill
+document"
+resource_name: "SKILL"
+---
+---
 name: 08_criticism-workflow
 description: Workflow skill for Review and identify improvements. Activated when working on 08_criticism tasks.
 version: 1.0.0

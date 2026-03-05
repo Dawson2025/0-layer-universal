@@ -1,3 +1,8 @@
+---
+resource_id: "2a27ffa5-1fbf-4bcb-a888-68a81dd5cb21"
+resource_type: "knowledge"
+resource_name: "static_dynamic_context"
+---
 # Static vs Dynamic Context
 
 ## Summary

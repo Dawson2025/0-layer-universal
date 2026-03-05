@@ -1,3 +1,8 @@
+---
+resource_id: "d2788dbf-8376-4aee-aa93-41946b91f01b"
+resource_type: "output"
+resource_name: "sync_health_service_fix"
+---
 # Sync Health Service Fix
 
 ## Problem

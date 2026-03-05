@@ -1,3 +1,8 @@
+---
+resource_id: "3f857ca4-7245-41d7-ab20-0bfdaa99ab76"
+resource_type: "output"
+resource_name: "COMPLETE_ARCHITECTURE"
+---
 # Codex CLI — Complete Architecture
 
 **Date**: 2026-02-27

@@ -1,3 +1,8 @@
+---
+resource_id: "4d5f3ee7-0e0d-445d-8e53-e0d6d0635b44"
+resource_type: "output"
+resource_name: "REQ-02_instance_upgrade_protocol"
+---
 # Instance Upgrade Protocol
 
 **Need**: [Feature to Instance Flow](../README.md)

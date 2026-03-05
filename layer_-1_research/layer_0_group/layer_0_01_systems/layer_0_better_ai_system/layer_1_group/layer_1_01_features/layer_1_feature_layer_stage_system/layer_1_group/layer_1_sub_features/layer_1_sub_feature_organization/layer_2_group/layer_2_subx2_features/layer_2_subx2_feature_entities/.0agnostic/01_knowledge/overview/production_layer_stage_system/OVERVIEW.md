@@ -1,3 +1,8 @@
+---
+resource_id: "51b1090b-6645-498d-8de7-5c16c49e836d"
+resource_type: "knowledge"
+resource_name: "OVERVIEW"
+---
 # Layer-Stage System Overview
 
 This file has been replaced with a pointer to the canonical source.

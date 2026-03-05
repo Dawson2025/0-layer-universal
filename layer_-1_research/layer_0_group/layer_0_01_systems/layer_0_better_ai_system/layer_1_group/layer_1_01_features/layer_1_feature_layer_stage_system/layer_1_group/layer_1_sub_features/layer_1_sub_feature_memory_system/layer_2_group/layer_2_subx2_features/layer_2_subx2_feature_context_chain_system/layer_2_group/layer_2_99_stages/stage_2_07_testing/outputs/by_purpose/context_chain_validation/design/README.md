@@ -1,3 +1,9 @@
+---
+resource_id: "c91ccf94-e559-455d-bca9-d962e0e21e80"
+resource_type: "readme
+output"
+resource_name: "README"
+---
 # Test Design Index
 
 Tests designed for all 8 context chain system design documents (docs 01-08 in `stage_2_04_design/outputs/by_topic/`).

@@ -1,3 +1,8 @@
+---
+resource_id: "676d8b96-ea69-4035-944a-1af187534f25"
+resource_type: "knowledge"
+resource_name: "horizontal_sibling_rules"
+---
 # Horizontal Sibling Rules
 
 ## Conditions for Inclusion

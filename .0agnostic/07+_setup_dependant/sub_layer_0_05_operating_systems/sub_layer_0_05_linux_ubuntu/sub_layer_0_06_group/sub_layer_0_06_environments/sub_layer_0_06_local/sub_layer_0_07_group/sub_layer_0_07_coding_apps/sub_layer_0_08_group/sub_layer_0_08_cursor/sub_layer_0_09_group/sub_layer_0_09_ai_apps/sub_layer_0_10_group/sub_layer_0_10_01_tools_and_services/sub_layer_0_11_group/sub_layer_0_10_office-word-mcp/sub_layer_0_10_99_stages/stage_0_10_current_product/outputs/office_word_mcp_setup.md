@@ -1,3 +1,8 @@
+---
+resource_id: "d347939b-bcd7-4e94-a516-fd1a9a80f014"
+resource_type: "output"
+resource_name: "office_word_mcp_setup"
+---
 # Current Setup: Office Word MCP and DOCX Tools
 
 ## Date

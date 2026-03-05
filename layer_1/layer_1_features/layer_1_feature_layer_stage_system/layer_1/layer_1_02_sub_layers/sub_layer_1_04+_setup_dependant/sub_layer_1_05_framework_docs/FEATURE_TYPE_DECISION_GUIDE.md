@@ -1,3 +1,8 @@
+---
+resource_id: "a2ce2ed1-35f2-44c2-ac51-75ac87089b66"
+resource_type: "document"
+resource_name: "FEATURE_TYPE_DECISION_GUIDE"
+---
 # Feature Type Decision Guide
 
 **Purpose:** Help you choose the right feature type when starting new work.

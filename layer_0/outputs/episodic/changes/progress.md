@@ -1,3 +1,8 @@
+---
+resource_id: "61185c3d-7a53-471e-8e0a-86fe293c1db3"
+resource_type: "output"
+resource_name: "progress"
+---
 # Current Progress
 
 **Last Updated**: 2026-01-30

@@ -1,4 +1,7 @@
 ---
+resource_id: "7deadb73-a2d1-4422-937f-c1bd32eb007e"
+resource_type: "document"
+resource_name: "speckit.analyze"
 description: Perform a non-destructive cross-artifact consistency and quality analysis across spec.md, plan.md, and tasks.md after task generation.
 ---
 

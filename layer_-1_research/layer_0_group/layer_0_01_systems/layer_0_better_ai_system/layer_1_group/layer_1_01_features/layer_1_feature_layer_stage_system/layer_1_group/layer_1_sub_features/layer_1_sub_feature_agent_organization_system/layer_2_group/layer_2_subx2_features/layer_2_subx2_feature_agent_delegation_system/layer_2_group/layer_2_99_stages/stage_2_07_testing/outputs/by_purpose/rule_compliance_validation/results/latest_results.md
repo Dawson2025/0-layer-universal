@@ -1,3 +1,8 @@
+---
+resource_id: "bf26eb63-24b5-4740-b540-e10d66273838"
+resource_type: "output"
+resource_name: "latest_results"
+---
 # Rule Compliance Validation Results
 
 See design-driven expected outcomes and scoring rubric in:

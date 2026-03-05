@@ -1,3 +1,9 @@
+---
+resource_id: "6cc429ab-10bb-4425-a008-2941b7199753"
+resource_type: "readme
+document"
+resource_name: "README"
+---
 # context7-mcp (codex_cli on macos)
 
 ## Canonical docs

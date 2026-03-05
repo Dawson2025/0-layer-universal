@@ -1,3 +1,8 @@
+---
+resource_id: "15c4c142-cee5-4ec2-b7a2-e78840f36b19"
+resource_type: "output"
+resource_name: "REQ-02_same_pattern_recursively"
+---
 # Same Pattern Recursively
 
 **Need**: [Nested Systems](../README.md)

@@ -1,3 +1,8 @@
+---
+resource_id: "c115f5b0-861b-4f90-9944-3ea52eb7c759"
+resource_type: "document"
+resource_name: "FIREBASE_AUTH_CONFIGURATION"
+---
 # Firebase Authentication Configuration
 
 **Date:** October 21, 2025  

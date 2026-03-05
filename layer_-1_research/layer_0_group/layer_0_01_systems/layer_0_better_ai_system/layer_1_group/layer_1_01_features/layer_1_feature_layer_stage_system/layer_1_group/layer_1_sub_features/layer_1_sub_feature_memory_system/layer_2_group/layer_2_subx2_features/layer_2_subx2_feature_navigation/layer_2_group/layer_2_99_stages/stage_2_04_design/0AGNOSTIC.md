@@ -1,3 +1,9 @@
+---
+resource_id: "20b7a4a7-a155-4256-b6f9-cc6ce021540e"
+resource_type: "agnostic
+document"
+resource_name: "0AGNOSTIC"
+---
 # navigation — Stage 05: design
 
 ## Identity

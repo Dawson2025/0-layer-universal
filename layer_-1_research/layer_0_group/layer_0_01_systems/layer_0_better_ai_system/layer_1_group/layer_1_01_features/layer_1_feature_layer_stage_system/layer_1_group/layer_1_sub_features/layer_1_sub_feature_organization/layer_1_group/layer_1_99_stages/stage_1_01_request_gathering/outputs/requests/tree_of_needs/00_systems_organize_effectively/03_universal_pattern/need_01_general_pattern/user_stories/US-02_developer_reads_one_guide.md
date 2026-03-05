@@ -1,3 +1,8 @@
+---
+resource_id: "b5ba30ef-8b87-48cd-8206-6f58cb120658"
+resource_type: "output"
+resource_name: "US-02_developer_reads_one_guide"
+---
 # Developer Reads One Guide
 
 **As a** developer encountering the R/P/I pattern for the first time,

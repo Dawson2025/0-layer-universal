@@ -1,4 +1,9 @@
 ---
+resource_id: "6029951d-37ae-482d-8ae6-209a42341721"
+resource_type: "document"
+resource_name: "universal-layer"
+---
+---
 paths: layer_0/**
 ---
 

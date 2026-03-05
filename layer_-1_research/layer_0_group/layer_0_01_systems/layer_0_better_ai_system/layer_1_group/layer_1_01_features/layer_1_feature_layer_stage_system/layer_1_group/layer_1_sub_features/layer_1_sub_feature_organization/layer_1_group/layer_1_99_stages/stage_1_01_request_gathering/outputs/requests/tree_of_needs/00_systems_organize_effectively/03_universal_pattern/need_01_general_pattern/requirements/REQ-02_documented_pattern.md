@@ -1,3 +1,8 @@
+---
+resource_id: "f9cd65f5-2f73-48b7-9e75-5095e3e6e55f"
+resource_type: "output"
+resource_name: "REQ-02_documented_pattern"
+---
 # Documented Pattern
 
 **Need**: [General Pattern](../README.md)

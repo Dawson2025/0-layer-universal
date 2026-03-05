@@ -1,3 +1,8 @@
+---
+resource_id: "f921cded-519d-4547-9b60-202ee70f5709"
+resource_type: "knowledge"
+resource_name: "stage_0agnostic_pattern"
+---
 # What We Learned: Stage 0AGNOSTIC.md Pattern
 
 ## Discovery Date

@@ -1,3 +1,9 @@
+---
+resource_id: "36b6b63b-e013-463f-9f02-62b8ed6fec09"
+resource_type: "index
+document"
+resource_name: "0INDEX"
+---
 # Layer -1 Registry - better_ai_system
 
 ## Purpose

@@ -1,3 +1,8 @@
+---
+resource_id: "00a86f16-abe7-47b0-8535-79868adb87a6"
+resource_type: "output"
+resource_name: "test_design_07_sync_architecture"
+---
 # Test Design: 07 Unified Sync Architecture
 
 **Validates**: `stage_2_04_design/outputs/by_topic/07_unified_sync_architecture.md`

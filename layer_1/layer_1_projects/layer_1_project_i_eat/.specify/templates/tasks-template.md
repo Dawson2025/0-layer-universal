@@ -1,4 +1,7 @@
 ---
+resource_id: "5aed4733-9d6f-4cd1-8516-91090fb6364c"
+resource_type: "document"
+resource_name: "tasks-template"
 
 description: "Task list template for feature implementation"
 ---

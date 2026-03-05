@@ -1,3 +1,9 @@
+---
+resource_id: "3679f3fb-2e21-445a-b539-26745628cd4d"
+resource_type: "readme
+document"
+resource_name: "README"
+---
 # context7-mcp (gemini_cli on windows)
 
 ## Canonical docs

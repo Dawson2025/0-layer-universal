@@ -1,3 +1,8 @@
+---
+resource_id: "018728a9-86f3-49d9-879a-f3593df372e5"
+resource_type: "document"
+resource_name: "universal_init_prompt"
+---
 # Universal Session Initialization
 
 **Purpose:** Entry point for ALL AI assistant sessions. Directs you to the right documentation.

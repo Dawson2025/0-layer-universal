@@ -1,3 +1,9 @@
+---
+resource_id: "36b4d52f-1f23-45db-9ae8-e41abc0e6fe1"
+resource_type: "readme
+document"
+resource_name: "README"
+---
 # Experiment: Dependency-Based Agent Hierarchy
 
 **Status**: READY — Structure created, agents defined, awaiting trial execution

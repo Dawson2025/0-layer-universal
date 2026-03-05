@@ -1,3 +1,8 @@
+---
+resource_id: "155eafb6-87f5-4e62-8609-03143539fdda"
+resource_type: "knowledge"
+resource_name: "I want to come up with a way that I can use ai ter"
+---
 <img src="https://r2cdn.perplexity.ai/pplx-full-logo-primary-dark%402x.png" style="height:64px;margin-right:32px"/>
 
 # I want to come up with a way that I can use ai terminal tools like. Claude code, codex cli, and Gemini Cli, and even the cursor ide from a remote server that I can access both from my mobile phone, and also from my laptop, and also be able to do things like have the cli tools control browsers like Claude in chrome and like playwright mcp servers and see the screen from my phone and from the laptop, all while seeing it from a remote server. And I want there to be shared file systems between them. I currently have sync thing set up with wsl, windows, and Linux Ubuntu on the same computer, and I’d like to set up connections for the same folder and file system in the remote server and be able to have 2 way sync for all of the systems and environments I use it in

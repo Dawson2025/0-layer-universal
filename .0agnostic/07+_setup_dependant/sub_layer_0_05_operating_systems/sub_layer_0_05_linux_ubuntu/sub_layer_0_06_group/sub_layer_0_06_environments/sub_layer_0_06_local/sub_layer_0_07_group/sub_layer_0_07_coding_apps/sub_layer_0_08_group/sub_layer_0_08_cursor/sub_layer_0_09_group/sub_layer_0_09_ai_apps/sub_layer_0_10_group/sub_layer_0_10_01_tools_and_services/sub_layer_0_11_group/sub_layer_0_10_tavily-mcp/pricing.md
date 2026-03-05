@@ -1,3 +1,8 @@
+---
+resource_id: "4633f3a6-96ca-4928-8dbd-ec6ed5c25306"
+resource_type: "document"
+resource_name: "pricing"
+---
 # Tavily API Pricing Reference
 
 Last verified: 2026-02-24

@@ -1,3 +1,8 @@
+---
+resource_id: "b4639622-743b-4ec4-a510-aec8ba8279a2"
+resource_type: "output"
+resource_name: "spec"
+---
 
 # Request 04: Archive Legacy Code and Documentation
 

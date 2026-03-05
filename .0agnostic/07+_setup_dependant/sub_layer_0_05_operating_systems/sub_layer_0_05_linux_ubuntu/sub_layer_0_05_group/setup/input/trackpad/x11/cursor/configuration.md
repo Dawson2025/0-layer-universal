@@ -1,3 +1,8 @@
+---
+resource_id: "f8cbe544-8c7b-4981-b26c-24d763caa242"
+resource_type: "document"
+resource_name: "configuration"
+---
 # Cursor Movement Configuration
 
 **Last Updated**: January 11, 2026

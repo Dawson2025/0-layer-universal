@@ -1,3 +1,8 @@
+---
+resource_id: "644ae2b2-54bf-4915-bd02-536861553fa1"
+resource_type: "document"
+resource_name: "LOAD_EXTENSION_GUIDE"
+---
 # 🎯 How to Load the Extension in Chrome
 
 Since we're on WSL, here's the step-by-step process to load the extension:

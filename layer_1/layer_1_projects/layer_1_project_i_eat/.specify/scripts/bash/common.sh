@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
+# resource_id: "6334a51b-f349-4140-858f-856f61d5d9f8"
+# resource_type: "script"
+# resource_name: "common"
 # Common functions and variables for all scripts
 
 # Get repository root, with fallback for non-git repositories

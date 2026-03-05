@@ -1,3 +1,8 @@
+---
+resource_id: "389e5220-b740-4ab8-9c13-d7bb250a8cc8"
+resource_type: "document"
+resource_name: "spec-template"
+---
 # Feature Specification: [FEATURE NAME]
 
 **Feature Branch**: `[###-feature-name]`  

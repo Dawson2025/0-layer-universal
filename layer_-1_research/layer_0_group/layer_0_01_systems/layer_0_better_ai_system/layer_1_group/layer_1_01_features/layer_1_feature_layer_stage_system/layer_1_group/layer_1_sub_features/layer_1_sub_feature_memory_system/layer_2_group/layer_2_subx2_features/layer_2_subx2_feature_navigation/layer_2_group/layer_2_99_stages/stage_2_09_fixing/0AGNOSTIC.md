@@ -1,3 +1,9 @@
+---
+resource_id: "ad28f53e-dd76-4f6d-860e-ab8546969223"
+resource_type: "agnostic
+document"
+resource_name: "0AGNOSTIC"
+---
 # navigation — Stage 09: fixing
 
 ## Identity

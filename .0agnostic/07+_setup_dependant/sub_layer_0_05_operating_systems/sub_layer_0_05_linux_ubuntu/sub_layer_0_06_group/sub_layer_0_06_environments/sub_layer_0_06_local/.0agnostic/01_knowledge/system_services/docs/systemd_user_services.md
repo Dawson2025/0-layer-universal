@@ -1,3 +1,8 @@
+---
+resource_id: "50b6ee7d-1f57-423c-a142-ee622fad29f6"
+resource_type: "knowledge"
+resource_name: "systemd_user_services"
+---
 # Systemd User Services
 
 ## Overview

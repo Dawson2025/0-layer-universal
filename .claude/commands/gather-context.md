@@ -1,3 +1,8 @@
+---
+resource_id: "d88d00ec-8178-47a4-aabe-e81dda616de6"
+resource_type: "document"
+resource_name: "gather-context"
+---
 Gather relevant context from the layer hierarchy.
 
 Steps:

@@ -1,3 +1,8 @@
+---
+resource_id: "83e03836-f088-4846-8d5d-024d7c666326"
+resource_type: "output"
+resource_name: "ISSUE_004_gsd_display_testing"
+---
 # Testing: GSD DISPLAY Environment Variable Issue
 
 ## Issue Reference

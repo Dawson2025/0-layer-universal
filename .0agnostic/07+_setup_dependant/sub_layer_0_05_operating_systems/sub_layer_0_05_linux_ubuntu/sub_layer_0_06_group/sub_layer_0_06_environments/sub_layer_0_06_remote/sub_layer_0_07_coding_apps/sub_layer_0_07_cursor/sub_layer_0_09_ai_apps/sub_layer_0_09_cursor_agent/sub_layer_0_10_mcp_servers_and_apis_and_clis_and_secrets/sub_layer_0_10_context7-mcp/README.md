@@ -1,3 +1,9 @@
+---
+resource_id: "ccbed287-6c95-4153-8947-d0c5e79158f0"
+resource_type: "readme
+document"
+resource_name: "README"
+---
 # context7-mcp (cursor_agent on linux_ubuntu)
 
 ## Canonical docs

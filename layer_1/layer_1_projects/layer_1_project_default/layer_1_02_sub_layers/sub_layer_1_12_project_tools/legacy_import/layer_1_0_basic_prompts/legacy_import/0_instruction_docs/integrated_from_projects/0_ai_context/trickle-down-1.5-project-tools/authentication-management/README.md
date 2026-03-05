@@ -1,3 +1,9 @@
+---
+resource_id: "a98c308a-31c4-4954-b007-78483379865d"
+resource_type: "readme
+document"
+resource_name: "README"
+---
 # Authentication Management System
 *Project Tool: One-Time Authentication for Automated Operations*
 

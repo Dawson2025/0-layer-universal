@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
+# resource_id: "8ad4778a-e767-4ede-a4ce-5741505dcd0e"
+# resource_type: "script"
+# resource_name: "test_structural"
 # Structural tests for I0_FILE_CHANGE_REPORTING rule
 # Usage: bash test_structural.sh [repo_root]
 

@@ -1,3 +1,8 @@
+---
+resource_id: "3969a250-d8c6-43ed-8ac2-cf1fbbd79c8c"
+resource_type: "document"
+resource_name: "MCP_SERVER_SETUP"
+---
 # MCP Server Setup Guide
 
 ## Overview

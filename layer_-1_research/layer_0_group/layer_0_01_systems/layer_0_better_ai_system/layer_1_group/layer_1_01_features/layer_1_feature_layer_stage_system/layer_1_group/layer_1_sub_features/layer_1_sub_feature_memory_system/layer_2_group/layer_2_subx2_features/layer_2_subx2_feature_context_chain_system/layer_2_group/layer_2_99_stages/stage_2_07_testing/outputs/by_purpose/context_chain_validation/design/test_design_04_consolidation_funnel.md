@@ -1,3 +1,8 @@
+---
+resource_id: "d9cb9697-8795-4503-bccd-ee27e48761eb"
+resource_type: "output"
+resource_name: "test_design_04_consolidation_funnel"
+---
 # Test Design: 04 Consolidation Funnel (Bottom-Up)
 
 **Validates**: `stage_2_04_design/outputs/by_topic/04_context_propagation_funnel.md`

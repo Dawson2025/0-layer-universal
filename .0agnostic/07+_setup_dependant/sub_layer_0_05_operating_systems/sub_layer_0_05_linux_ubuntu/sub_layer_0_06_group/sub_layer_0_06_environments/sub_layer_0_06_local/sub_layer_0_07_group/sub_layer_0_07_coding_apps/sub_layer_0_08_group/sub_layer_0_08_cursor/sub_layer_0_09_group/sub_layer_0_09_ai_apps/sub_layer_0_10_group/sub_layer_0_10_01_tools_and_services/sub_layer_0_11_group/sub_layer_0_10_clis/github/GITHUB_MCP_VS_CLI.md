@@ -1,3 +1,8 @@
+---
+resource_id: "b2763a8d-28f0-4ea9-a51f-075f9f866e59"
+resource_type: "document"
+resource_name: "GITHUB_MCP_VS_CLI"
+---
 # GitHub MCP Server vs gh CLI in Claude Code
 
 ## TL;DR

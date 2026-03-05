@@ -1,3 +1,8 @@
+---
+resource_id: "3f91b3df-ebe8-4da2-ab4c-139c9d598275"
+resource_type: "output"
+resource_name: "ai_context_filesystem_locations"
+---
 # AI Context Files Across the Linux Filesystem
 
 **Status**: Active Research

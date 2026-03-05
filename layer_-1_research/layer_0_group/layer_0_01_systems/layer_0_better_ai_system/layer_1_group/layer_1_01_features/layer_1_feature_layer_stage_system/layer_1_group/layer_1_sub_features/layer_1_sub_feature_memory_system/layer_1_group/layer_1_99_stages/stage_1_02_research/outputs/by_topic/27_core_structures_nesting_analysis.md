@@ -1,3 +1,8 @@
+---
+resource_id: "50808e38-51d4-4d1d-b85b-d6db936af519"
+resource_type: "output"
+resource_name: "27_core_structures_nesting_analysis"
+---
 # Core Structures Nesting Analysis: Vectors, Relations, and Graphs in PostgreSQL
 
 ## Purpose

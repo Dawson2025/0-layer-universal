@@ -1,3 +1,8 @@
+---
+resource_id: "5b621839-316e-46a9-8c17-ed6a766109c6"
+resource_type: "handoff"
+resource_name: "layer_report"
+---
 # Layer Report: memory_system
 
 ## Status

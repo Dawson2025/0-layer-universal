@@ -1,3 +1,8 @@
+---
+resource_id: "c4821178-e3eb-4d58-89d7-8cd6190213db"
+resource_type: "knowledge"
+resource_name: "context_priority_rules"
+---
 # Context Priority Rules
 
 This file has been replaced with a pointer to the canonical source.

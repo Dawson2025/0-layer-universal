@@ -1,4 +1,10 @@
 ---
+resource_id: "49408ef4-3378-46a2-8e63-53bfaf91061f"
+resource_type: "skill
+knowledge"
+resource_name: "SKILL"
+---
+---
 name: 11_archives-workflow
 description: Workflow skill for Historical versions and deprecated content. Activated when working on 11_archives tasks.
 version: 1.0.0

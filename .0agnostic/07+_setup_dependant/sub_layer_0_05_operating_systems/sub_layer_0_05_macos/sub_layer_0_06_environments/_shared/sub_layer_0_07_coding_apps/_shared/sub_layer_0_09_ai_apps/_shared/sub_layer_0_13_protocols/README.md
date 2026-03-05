@@ -1,3 +1,9 @@
+---
+resource_id: "abde06c9-de4c-4ff1-b2b9-d6c5367016a1"
+resource_type: "readme
+document"
+resource_name: "README"
+---
 # Universal Protocols
 
 This sub-layer contains standard operating procedures (SOPs) and protocols that apply across all projects and features, ensuring consistent and high-quality execution of tasks.

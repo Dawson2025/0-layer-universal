@@ -1,4 +1,9 @@
 ---
+resource_id: "fee21612-65ed-43b0-b8d4-d3ee82a6981d"
+resource_type: "knowledge"
+resource_name: "04_planning-status"
+---
+---
 description: Show current status of 04_planning stage
 argument-hint: [--verbose]
 ---

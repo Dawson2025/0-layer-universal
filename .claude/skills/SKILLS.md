@@ -1,3 +1,8 @@
+---
+resource_id: "4f4270f5-c513-4d94-b7fb-4ac0af2283ff"
+resource_type: "document"
+resource_name: "SKILLS"
+---
 # Skills Index (Claude Code)
 
 ## Purpose

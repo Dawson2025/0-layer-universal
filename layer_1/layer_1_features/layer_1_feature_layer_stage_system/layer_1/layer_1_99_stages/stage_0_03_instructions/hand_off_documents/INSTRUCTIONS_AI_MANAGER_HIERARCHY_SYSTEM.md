@@ -1,3 +1,8 @@
+---
+resource_id: "60694f96-7fa0-4f98-89f4-c3a4c86f3eb3"
+resource_type: "document"
+resource_name: "INSTRUCTIONS_AI_MANAGER_HIERARCHY_SYSTEM"
+---
 # INSTRUCTIONS: AI Manager Hierarchy System
 
 **Created:** 2026-01-15

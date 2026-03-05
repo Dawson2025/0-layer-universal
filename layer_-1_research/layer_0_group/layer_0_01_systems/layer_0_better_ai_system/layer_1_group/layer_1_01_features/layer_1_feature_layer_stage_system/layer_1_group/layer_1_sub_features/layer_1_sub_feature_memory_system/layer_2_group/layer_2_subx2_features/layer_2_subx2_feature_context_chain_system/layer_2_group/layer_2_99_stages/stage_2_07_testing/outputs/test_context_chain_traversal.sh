@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
+# resource_id: "b2fc2b8b-8c96-40d6-a909-d038263ae0e8"
+# resource_type: "script"
+# resource_name: "test_context_chain_traversal"
 # test_context_chain_traversal.sh — Test parent reference chain resolves to root
 #
 # Tests that:

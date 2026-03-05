@@ -1,3 +1,8 @@
+---
+resource_id: "5c267084-47d4-433e-9ed9-63e3872d0b66"
+resource_type: "output"
+resource_name: "WINDOWS_INSTRUCTIONS_capture_dolby_impulse"
+---
 # Windows Instructions: Capture Dolby Atmos Impulse Response
 
 ## Purpose

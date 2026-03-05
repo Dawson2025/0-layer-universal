@@ -1,3 +1,8 @@
+---
+resource_id: "e90b8b03-3cfd-4a1b-bb74-b84be0ed4237"
+resource_type: "document"
+resource_name: "NEW_WORD_CREATION_FEATURES"
+---
 # New Word Creation Features
 
 ## Overview

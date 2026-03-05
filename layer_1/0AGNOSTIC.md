@@ -1,3 +1,9 @@
+---
+resource_id: "461b3727-1d41-4c7f-acfb-76ff379ee383"
+resource_type: "agnostic
+document"
+resource_name: "0AGNOSTIC"
+---
 # Layer 1 - Projects Context
 
 ## Identity

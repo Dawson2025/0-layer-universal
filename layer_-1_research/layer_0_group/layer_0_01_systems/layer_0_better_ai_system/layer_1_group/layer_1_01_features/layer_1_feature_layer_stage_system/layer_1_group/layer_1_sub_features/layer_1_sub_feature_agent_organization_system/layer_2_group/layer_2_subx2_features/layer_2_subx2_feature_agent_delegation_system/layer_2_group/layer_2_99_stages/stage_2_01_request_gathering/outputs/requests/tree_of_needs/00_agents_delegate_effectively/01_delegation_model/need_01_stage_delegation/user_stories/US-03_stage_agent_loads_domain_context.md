@@ -1,3 +1,8 @@
+---
+resource_id: "8c22bca7-0522-48be-b84d-46a4ac7203b9"
+resource_type: "output"
+resource_name: "US-03_stage_agent_loads_domain_context"
+---
 # US-3: Stage agent loads domain context from parent
 
 **Need**: [Stage Delegation](../README.md)

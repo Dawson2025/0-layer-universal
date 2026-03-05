@@ -1,3 +1,8 @@
+---
+resource_id: "87e19396-489e-4e5d-bece-e963a5513fce"
+resource_type: "document"
+resource_name: "cursor-pac20026-workspace-reorganization"
+---
 # Does this directory have a repo?
 _Exported on 11/25/2025 at 23:25:21 MST from Cursor (2.0.77)_
 

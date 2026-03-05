@@ -1,3 +1,8 @@
+---
+resource_id: "8b4a0402-1867-4644-b847-9cc6c6ffc6d1"
+resource_type: "document"
+resource_name: "SUMMARY"
+---
 # Proposal: Proposal Storage Protocol & Paragraph Spacing Rule
 
 **Date**: 2026-02-01

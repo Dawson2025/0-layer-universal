@@ -1,3 +1,8 @@
+---
+resource_id: "7aced408-c814-4a01-9f38-5bf14d23fdcd"
+resource_type: "document"
+resource_name: "PLAN_fix_linux_login_loop_via_cloud_ssh"
+---
 # Plan: Fix Linux Login Loop via Cloud Server SSH
 
 **Layer**: 0 (Universal)

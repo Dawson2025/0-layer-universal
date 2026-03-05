@@ -1,3 +1,4 @@
+<!-- derived_from: "d39b1b99-83b0-4e73-96b4-22fd8b03e835" -->
 # project_orchestrator — Integration Reference
 <!-- AUTO-GENERATED from project_orchestrator.gab.jsonld — do not edit directly -->
 <!-- Last transpiled: 2026-02-08T04:38:20Z -->

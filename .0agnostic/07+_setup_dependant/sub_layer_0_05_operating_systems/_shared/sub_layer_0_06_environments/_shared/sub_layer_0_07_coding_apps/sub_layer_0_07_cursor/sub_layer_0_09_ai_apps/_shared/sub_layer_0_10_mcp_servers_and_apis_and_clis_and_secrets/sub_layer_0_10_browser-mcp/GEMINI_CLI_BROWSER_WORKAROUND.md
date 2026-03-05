@@ -1,3 +1,8 @@
+---
+resource_id: "8d010b26-ca83-41a5-aabc-18e945bcb523"
+resource_type: "document"
+resource_name: "GEMINI_CLI_BROWSER_WORKAROUND"
+---
 # Gemini CLI Browser Automation Workaround
 
 **Date**: 2025-12-07  

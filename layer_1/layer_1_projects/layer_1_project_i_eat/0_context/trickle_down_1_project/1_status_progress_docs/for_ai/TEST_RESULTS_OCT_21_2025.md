@@ -1,3 +1,8 @@
+---
+resource_id: "ec523a97-e90d-4299-9bab-6d18c14e6e9d"
+resource_type: "document"
+resource_name: "TEST_RESULTS_OCT_21_2025"
+---
 # Test Results - October 21, 2025
 **Full Automation Suite Execution**  
 **After US-053 Implementation**

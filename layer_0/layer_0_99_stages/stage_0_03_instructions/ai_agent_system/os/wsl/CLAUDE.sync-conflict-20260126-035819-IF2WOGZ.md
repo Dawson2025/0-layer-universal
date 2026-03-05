@@ -1,3 +1,8 @@
+---
+resource_id: "de897cc3-0c1d-4497-bac1-228ba6c739c5"
+resource_type: "document"
+resource_name: "CLAUDE.sync-conflict-20260126-035819-IF2WOGZ"
+---
 # Claude Code Instructions - WSL Environment
 
 **OS Variant**: Windows Subsystem for Linux (WSL)

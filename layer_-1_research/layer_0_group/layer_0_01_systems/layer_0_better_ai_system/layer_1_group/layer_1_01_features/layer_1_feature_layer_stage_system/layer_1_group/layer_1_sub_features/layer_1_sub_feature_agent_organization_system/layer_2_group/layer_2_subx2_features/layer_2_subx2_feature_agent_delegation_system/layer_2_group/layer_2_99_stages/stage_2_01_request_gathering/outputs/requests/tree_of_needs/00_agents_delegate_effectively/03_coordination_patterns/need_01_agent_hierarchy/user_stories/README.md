@@ -1,3 +1,9 @@
+---
+resource_id: "ec65bd1a-b9ae-4dfd-bdc9-57546668d9be"
+resource_type: "readme
+output"
+resource_name: "README"
+---
 # Agent Hierarchy -- User Stories Index
 
 **Need**: [Agent Hierarchy](../README.md)

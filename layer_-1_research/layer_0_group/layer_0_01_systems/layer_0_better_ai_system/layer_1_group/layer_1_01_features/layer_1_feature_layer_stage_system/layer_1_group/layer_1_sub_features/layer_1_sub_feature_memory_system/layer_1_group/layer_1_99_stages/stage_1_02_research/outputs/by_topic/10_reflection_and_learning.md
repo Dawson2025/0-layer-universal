@@ -1,3 +1,8 @@
+---
+resource_id: "80b7e49c-da5a-41be-ab90-1a8d14b50cd5"
+resource_type: "output"
+resource_name: "10_reflection_and_learning"
+---
 # Reflection, Learning, and Experience-Based Memory
 
 ## Overview

@@ -1,3 +1,8 @@
+---
+resource_id: "1f84209e-1548-4297-afee-fd52ffd5ac2f"
+resource_type: "document"
+resource_name: "terminal-tool-replacement"
+---
 # Terminal Tool Replacement System
 *Universal AI Agent Terminal Execution Protocol*
 

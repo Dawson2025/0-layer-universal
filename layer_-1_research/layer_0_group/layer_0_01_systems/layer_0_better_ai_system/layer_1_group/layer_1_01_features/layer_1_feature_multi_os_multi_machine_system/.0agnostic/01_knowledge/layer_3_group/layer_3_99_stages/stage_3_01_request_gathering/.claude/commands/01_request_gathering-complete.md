@@ -1,4 +1,9 @@
 ---
+resource_id: "4737fa60-f121-4d87-a87e-c61418c28cfd"
+resource_type: "knowledge"
+resource_name: "01_request_gathering-complete"
+---
+---
 description: Mark 01_request_gathering stage as complete and prepare handoff
 argument-hint: [--notes "completion notes"]
 ---

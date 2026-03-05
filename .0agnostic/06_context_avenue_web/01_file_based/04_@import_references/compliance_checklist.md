@@ -1,3 +1,8 @@
+---
+resource_id: "2dd3ac46-ca83-4c07-9f1a-3d9a0bcb7165"
+resource_type: "document"
+resource_name: "compliance_checklist"
+---
 # Self-Compliance Checklist
 
 Before completing ANY task, verify:

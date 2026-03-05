@@ -1,3 +1,9 @@
+---
+resource_id: "b613ff30-2ad1-49a0-9bc7-b4b14583f1a3"
+resource_type: "readme
+document"
+resource_name: "README"
+---
 # Development Workflow Tools
 *Project Tool: Streamlined Development and Deployment Workflows*
 

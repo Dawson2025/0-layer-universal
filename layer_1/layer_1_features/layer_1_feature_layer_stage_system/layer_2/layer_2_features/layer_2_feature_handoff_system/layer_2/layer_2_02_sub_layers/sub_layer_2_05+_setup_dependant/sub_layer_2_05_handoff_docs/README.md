@@ -1,3 +1,9 @@
+---
+resource_id: "fb66061c-449b-4b44-9a46-06cb4d01bf7f"
+resource_type: "readme
+document"
+resource_name: "README"
+---
 # Handoff Documentation
 
 This directory contains documentation for handoff schemas and patterns in the Layer-Stage Framework.

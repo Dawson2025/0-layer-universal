@@ -1,3 +1,8 @@
+---
+resource_id: "feaeb5d7-c795-48a3-a95e-15ecef60c620"
+resource_type: "output"
+resource_name: "REQ-03_pointer_standards"
+---
 # Pointer Standards
 
 **Need**: [Three-Tier Architecture](../README.md)

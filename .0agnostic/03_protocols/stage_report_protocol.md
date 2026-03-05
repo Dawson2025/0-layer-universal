@@ -1,3 +1,8 @@
+---
+resource_id: "b2e79838-3b2f-4d0c-92c6-373988119fad"
+resource_type: "protocol"
+resource_name: "stage_report_protocol"
+---
 # Stage Report Protocol
 
 **Scope**: Universal — applies to all stage agents across all entities

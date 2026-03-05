@@ -1,3 +1,8 @@
+---
+resource_id: "4ab47aca-7134-44e4-89d5-621f3853f2a3"
+resource_type: "knowledge"
+resource_name: "STAGE_08_CRITICISM"
+---
 # Stage 08: Criticism — Universal Guide
 
 ## Purpose

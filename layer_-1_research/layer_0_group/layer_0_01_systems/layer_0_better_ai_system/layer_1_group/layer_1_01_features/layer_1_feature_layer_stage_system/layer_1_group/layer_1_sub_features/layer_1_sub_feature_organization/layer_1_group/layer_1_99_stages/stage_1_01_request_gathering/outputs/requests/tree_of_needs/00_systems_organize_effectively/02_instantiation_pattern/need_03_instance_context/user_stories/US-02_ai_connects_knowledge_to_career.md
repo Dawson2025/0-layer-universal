@@ -1,3 +1,8 @@
+---
+resource_id: "ce488541-0503-4a0b-9abf-6a8e1ffd1ebc"
+resource_type: "output"
+resource_name: "US-02_ai_connects_knowledge_to_career"
+---
 # AI Connects Knowledge to Career Goals
 
 **As an** AI tutor helping a student stay motivated,

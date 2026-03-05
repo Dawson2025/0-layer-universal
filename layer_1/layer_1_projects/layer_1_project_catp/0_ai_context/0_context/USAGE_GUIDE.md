@@ -1,3 +1,8 @@
+---
+resource_id: "98aa9d38-dc43-4c2e-8064-f7486d89e3b9"
+resource_type: "document"
+resource_name: "USAGE_GUIDE"
+---
 # Universal AI Context System - Usage Guide
 
 This directory contains a universal trickle-down documentation system that can be used for any AI-assisted coding project. Follow this guide to adapt it for your specific project.

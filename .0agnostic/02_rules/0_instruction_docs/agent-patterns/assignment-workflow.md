@@ -1,3 +1,8 @@
+---
+resource_id: "7497ba8d-616e-4ab7-8e1c-ad6d2a9d1a4f"
+resource_type: "rule"
+resource_name: "assignment-workflow"
+---
 # Structured Assignment Workflow: Two-Agent Architecture
 
 **Pattern**: Separate planning and execution into specialized agents for reliable, automated assignment setup.

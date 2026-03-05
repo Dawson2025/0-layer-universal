@@ -1,3 +1,8 @@
+---
+resource_id: "0137039a-3538-4301-be46-e322cf8d25f7"
+resource_type: "output"
+resource_name: "output_report"
+---
 # Reports Overview — Stage 02: Research
 
 **Entity**: agent_delegation_system

@@ -1,3 +1,8 @@
+---
+resource_id: "c2bb032d-947f-4516-8601-2dd4b8418990"
+resource_type: "document"
+resource_name: "manager_agent"
+---
 # Manager Agent
 
 **Role**: Factory + Mediator

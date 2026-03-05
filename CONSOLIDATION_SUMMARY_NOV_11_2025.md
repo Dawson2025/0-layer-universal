@@ -1,3 +1,8 @@
+---
+resource_id: "72d0f3a9-3fa5-4b97-af87-9e8e55501a90"
+resource_type: "document"
+resource_name: "CONSOLIDATION_SUMMARY_NOV_11_2025"
+---
 # Universal Documentation Consolidation Summary
 *Consolidation of Universal Content from Multiple 0_context Directories*
 

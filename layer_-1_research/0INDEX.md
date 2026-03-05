@@ -1,3 +1,9 @@
+---
+resource_id: "75c4e18f-bb27-43d3-af76-0329548d20c6"
+resource_type: "index
+document"
+resource_name: "0INDEX"
+---
 # Index: layer_-1_research (Research)
 
 ## Purpose

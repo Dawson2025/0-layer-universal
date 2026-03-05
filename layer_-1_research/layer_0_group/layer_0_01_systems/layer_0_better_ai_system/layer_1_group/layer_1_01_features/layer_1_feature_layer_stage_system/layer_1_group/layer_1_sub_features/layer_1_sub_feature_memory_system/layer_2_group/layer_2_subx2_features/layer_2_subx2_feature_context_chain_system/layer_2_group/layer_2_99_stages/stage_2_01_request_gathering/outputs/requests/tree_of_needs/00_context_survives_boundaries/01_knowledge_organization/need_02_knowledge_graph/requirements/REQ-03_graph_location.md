@@ -1,3 +1,8 @@
+---
+resource_id: "f336ec72-40b6-443e-90d5-88f3de7d510d"
+resource_type: "output"
+resource_name: "REQ-03_graph_location"
+---
 # Graph Location
 
 **Need**: [Knowledge Graph](../README.md)

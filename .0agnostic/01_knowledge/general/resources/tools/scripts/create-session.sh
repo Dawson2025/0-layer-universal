@@ -1,4 +1,7 @@
 #!/bin/bash
+# resource_id: "e273436b-d52a-499f-8140-4dc3102b7ea7"
+# resource_type: "script"
+# resource_name: "create-session"
 #
 # create-session.sh - Create an episodic session file
 #

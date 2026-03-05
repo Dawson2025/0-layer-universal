@@ -1,3 +1,8 @@
+---
+resource_id: "28d0d1e1-d8b7-4dd8-aa0f-5a3e8ba12355"
+resource_type: "output"
+resource_name: "audio_current_product"
+---
 # Audio — Current Product (Parent Overview)
 
 **Date**: 2026-02-23

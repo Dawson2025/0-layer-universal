@@ -1,3 +1,8 @@
+---
+resource_id: "ec52fd99-7968-4d55-affe-f33b7e81587c"
+resource_type: "knowledge"
+resource_name: "UBUNTU_HANDOFF"
+---
 # Ubuntu Desktop Setup Handoff Document
 
 ## Purpose

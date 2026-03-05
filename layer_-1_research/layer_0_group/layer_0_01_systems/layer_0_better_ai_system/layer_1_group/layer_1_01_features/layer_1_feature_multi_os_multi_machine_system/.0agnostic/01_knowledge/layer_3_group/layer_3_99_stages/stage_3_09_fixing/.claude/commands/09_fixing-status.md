@@ -1,4 +1,9 @@
 ---
+resource_id: "f47ec80f-afeb-4aa1-92e5-d4bf740f2082"
+resource_type: "knowledge"
+resource_name: "09_fixing-status"
+---
+---
 description: Show current status of 09_fixing stage
 argument-hint: [--verbose]
 ---

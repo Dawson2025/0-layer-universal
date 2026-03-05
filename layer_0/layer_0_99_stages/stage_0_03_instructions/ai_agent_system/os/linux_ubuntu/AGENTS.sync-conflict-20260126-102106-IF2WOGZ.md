@@ -1,3 +1,8 @@
+---
+resource_id: "d17ff3ba-b50b-4b72-91f7-ffb4485ffca8"
+resource_type: "document"
+resource_name: "AGENTS.sync-conflict-20260126-102106-IF2WOGZ"
+---
 # Agent Instructions - Linux Ubuntu Environment
 
 **OS Variant**: Linux Ubuntu (Native)

@@ -1,3 +1,8 @@
+---
+resource_id: "a871c9ef-bdb4-44d4-9040-1aacd21e560d"
+resource_type: "output"
+resource_name: "IMPLEMENTATION_OVERVIEW"
+---
 # AI Manager Hierarchy System - Implementation Overview
 
 **Date**: 2025-12-24

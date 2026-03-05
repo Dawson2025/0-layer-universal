@@ -1,3 +1,9 @@
+---
+resource_id: "790e0fc7-bdf6-43ae-a92e-ff892e5ba54e"
+resource_type: "readme
+document"
+resource_name: "README"
+---
 # chrome-devtools-mcp (gemini_cli on windows)
 
 ## Canonical docs

@@ -1,3 +1,8 @@
+---
+resource_id: "f6ae8ef5-efa1-486c-ac41-b6cb2614228b"
+resource_type: "knowledge"
+resource_name: "PHASE_4_UNREAL_GPU_GUIDE"
+---
 # Phase 4: Unreal Engine & GPU Access from Phone
 
 **Date:** 2026-01-10

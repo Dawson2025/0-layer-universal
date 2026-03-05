@@ -1,3 +1,8 @@
+---
+resource_id: "fae2fdb8-ec9a-4dd8-a557-6dc2f1794567"
+resource_type: "document"
+resource_name: "menu"
+---
 # Menus and Navigation
 
 ## Main Menu

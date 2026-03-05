@@ -1,3 +1,8 @@
+---
+resource_id: "f4e168ba-0beb-47b8-b657-315fcc1aec06"
+resource_type: "document"
+resource_name: "web-research-workflow"
+---
 # Web Research Workflow
 
 ## Overview

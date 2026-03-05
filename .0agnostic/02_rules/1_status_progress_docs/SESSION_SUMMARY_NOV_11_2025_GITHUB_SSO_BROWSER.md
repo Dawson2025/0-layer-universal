@@ -1,3 +1,8 @@
+---
+resource_id: "279659c3-1d0e-468d-b702-38ce3dd643fd"
+resource_type: "rule"
+resource_name: "SESSION_SUMMARY_NOV_11_2025_GITHUB_SSO_BROWSER"
+---
 # Session Summary - November 11, 2025
 ## GitHub SSO Token Setup & Browser Persistence Documentation
 

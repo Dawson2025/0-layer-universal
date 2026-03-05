@@ -1,3 +1,9 @@
+---
+resource_id: "3739f926-2f05-4974-bd27-500759b51f77"
+resource_type: "agnostic
+document"
+resource_name: "0AGNOSTIC"
+---
 # 0AGNOSTIC.md — sub_layer_0_10_gemini_cli
 
 # ═══ STATIC CONTEXT (always loaded) ═══

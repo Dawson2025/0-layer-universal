@@ -1,3 +1,8 @@
+---
+resource_id: "bce76fdd-1e7f-4fe3-9646-f730f76527b3"
+resource_type: "document"
+resource_name: "UPDATE"
+---
 # Gemini CLI - Update Instructions
 
 **Last Updated:** 2025-01-26  

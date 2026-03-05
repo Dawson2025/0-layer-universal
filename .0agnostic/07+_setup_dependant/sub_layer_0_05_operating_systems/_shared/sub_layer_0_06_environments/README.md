@@ -1,3 +1,9 @@
+---
+resource_id: "6c71ea22-619b-402c-810a-5247b2bd90ae"
+resource_type: "readme
+document"
+resource_name: "README"
+---
 # Environments
 
 This level organizes setup documentation by development environment type.

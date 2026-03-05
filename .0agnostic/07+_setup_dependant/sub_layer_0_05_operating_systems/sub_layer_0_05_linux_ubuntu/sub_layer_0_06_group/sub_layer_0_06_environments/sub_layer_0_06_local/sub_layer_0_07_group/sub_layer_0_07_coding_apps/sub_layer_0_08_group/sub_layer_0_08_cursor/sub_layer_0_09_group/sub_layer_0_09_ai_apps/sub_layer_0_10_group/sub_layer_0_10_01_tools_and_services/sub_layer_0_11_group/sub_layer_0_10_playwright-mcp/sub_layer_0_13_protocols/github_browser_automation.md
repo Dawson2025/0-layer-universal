@@ -1,3 +1,8 @@
+---
+resource_id: "d35c571d-5de4-451f-81df-3ab9585ccce3"
+resource_type: "document"
+resource_name: "github_browser_automation"
+---
 # GitHub Browser Automation Protocol (Playwright MCP)
 
 ## Overview

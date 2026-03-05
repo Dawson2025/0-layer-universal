@@ -1,3 +1,9 @@
+---
+resource_id: "ad0589b3-2e82-4bd7-8b92-e7302d3ae986"
+resource_type: "index
+document"
+resource_name: "0INDEX"
+---
 # L8 Teams — Stages
 
 | Stage | Name | Status |

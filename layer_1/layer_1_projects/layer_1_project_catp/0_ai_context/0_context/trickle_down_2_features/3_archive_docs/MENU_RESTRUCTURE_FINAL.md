@@ -1,3 +1,8 @@
+---
+resource_id: "c1fdc3b4-de8c-431b-ab17-8d540d5fb2e4"
+resource_type: "document"
+resource_name: "MENU_RESTRUCTURE_FINAL"
+---
 # Menu Restructuring Update Summary
 
 ## Overview

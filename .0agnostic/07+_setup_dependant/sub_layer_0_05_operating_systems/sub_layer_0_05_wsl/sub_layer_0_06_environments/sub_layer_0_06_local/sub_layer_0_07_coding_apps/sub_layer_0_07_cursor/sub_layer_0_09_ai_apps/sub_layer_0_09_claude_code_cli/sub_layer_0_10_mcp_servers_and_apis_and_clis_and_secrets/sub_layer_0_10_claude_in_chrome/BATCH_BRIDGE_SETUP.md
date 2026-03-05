@@ -1,3 +1,8 @@
+---
+resource_id: "3f8bfe52-d451-4bab-82a3-17bf92601335"
+resource_type: "document"
+resource_name: "BATCH_BRIDGE_SETUP"
+---
 # Claude in Chrome Extension → WSL Claude Code Bridge Setup
 
 ## Overview

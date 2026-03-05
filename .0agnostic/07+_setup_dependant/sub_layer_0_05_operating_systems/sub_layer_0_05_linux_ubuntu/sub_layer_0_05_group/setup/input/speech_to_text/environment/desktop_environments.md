@@ -1,3 +1,8 @@
+---
+resource_id: "9c374ad3-b49d-4c79-85e2-f478dd7a74e2"
+resource_type: "document"
+resource_name: "desktop_environments"
+---
 # Desktop Environment Compatibility
 
 **Last Updated**: January 12, 2026

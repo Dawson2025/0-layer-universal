@@ -1,3 +1,8 @@
+---
+resource_id: "c4923dfc-e095-49fa-a749-270fdf19968f"
+resource_type: "output"
+resource_name: "referencing_methods_and_skill_invocation"
+---
 # Design — Referencing Methods & Getting Agents to Use Skills
 
 ## Purpose

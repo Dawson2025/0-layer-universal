@@ -1,3 +1,8 @@
+---
+resource_id: "bdc38836-b777-4687-88dc-7b741eee3e53"
+resource_type: "document"
+resource_name: "to_specific_pattern"
+---
 # To Specific Pattern
 
 ## Overview

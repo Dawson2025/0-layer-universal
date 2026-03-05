@@ -1,4 +1,9 @@
 ---
+resource_id: "6fdb4eb0-84a7-4de5-b9a1-1f9a1101232b"
+resource_type: "document"
+resource_name: "08_criticism-agent"
+---
+---
 name: 08_criticism-agent
 description: Specialized agent for Review and identify improvements. Use when working on 08_criticism tasks.
 tools: Read, Glob, Grep, Task

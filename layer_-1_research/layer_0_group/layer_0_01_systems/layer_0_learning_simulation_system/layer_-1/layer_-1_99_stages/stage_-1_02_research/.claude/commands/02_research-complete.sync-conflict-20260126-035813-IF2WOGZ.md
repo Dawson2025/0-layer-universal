@@ -1,4 +1,7 @@
 ---
+resource_id: "33ab6db9-1027-47aa-bcb1-0233afb2126d"
+resource_type: "document"
+resource_name: "02_research-complete.sync-conflict-20260126-035813-IF2WOGZ"
 description: Mark 02_research stage as complete and prepare handoff
 argument-hint: [--notes "completion notes"]
 ---

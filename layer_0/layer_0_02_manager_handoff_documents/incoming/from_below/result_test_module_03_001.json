@@ -1,4 +1,5 @@
 {
+  "file_id": "c6b2781f-2092-42aa-a660-2eba1688661c",
   "taskId": "test_module_03_001",
   "parentTaskId": "user_request_001",
   "status": "completed",
@@ -14,7 +15,9 @@
       "title": "Module 03 - Executive Summary",
       "points_possible": 100,
       "due_date": "2026-02-12T23:59:00Z",
-      "submission_types": ["online_upload"]
+      "submission_types": [
+        "online_upload"
+      ]
     },
     "requirements": [
       "Complete the Case Study Project with your team",
@@ -28,12 +31,36 @@
     "rubric": {
       "total_points": 100,
       "criteria": [
-        {"name": "Quality of Implementation and Approach", "points": 40, "focus": "Model tuning, preprocessing, feature engineering"},
-        {"name": "Quality of Insights and Inferences", "points": 20, "focus": "Clear, actionable insights with awareness of limitations"},
-        {"name": "Quality of Visuals", "points": 15, "focus": "Presentational visuals conveying key points"},
-        {"name": "Quality of Writing, Clarity, and Presentation", "points": 10, "focus": "Professional writing, logical order, no grammar errors"},
-        {"name": "Quality of Evaluation", "points": 10, "focus": "Appropriate evaluation metrics for model performance"},
-        {"name": "Discussion Questions Responses", "points": 5, "focus": "Well-reasoned responses with rationale"}
+        {
+          "name": "Quality of Implementation and Approach",
+          "points": 40,
+          "focus": "Model tuning, preprocessing, feature engineering"
+        },
+        {
+          "name": "Quality of Insights and Inferences",
+          "points": 20,
+          "focus": "Clear, actionable insights with awareness of limitations"
+        },
+        {
+          "name": "Quality of Visuals",
+          "points": 15,
+          "focus": "Presentational visuals conveying key points"
+        },
+        {
+          "name": "Quality of Writing, Clarity, and Presentation",
+          "points": 10,
+          "focus": "Professional writing, logical order, no grammar errors"
+        },
+        {
+          "name": "Quality of Evaluation",
+          "points": 10,
+          "focus": "Appropriate evaluation metrics for model performance"
+        },
+        {
+          "name": "Discussion Questions Responses",
+          "points": 5,
+          "focus": "Well-reasoned responses with rationale"
+        }
       ]
     },
     "key_links": {

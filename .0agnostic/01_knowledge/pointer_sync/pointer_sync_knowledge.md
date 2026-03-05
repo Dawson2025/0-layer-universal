@@ -1,3 +1,8 @@
+---
+resource_id: "e3bf770d-abeb-41d8-a558-87d6e27d605f"
+resource_type: "knowledge"
+resource_name: "pointer_sync_knowledge"
+---
 # Pointer Sync System — Knowledge
 
 ## What It Is

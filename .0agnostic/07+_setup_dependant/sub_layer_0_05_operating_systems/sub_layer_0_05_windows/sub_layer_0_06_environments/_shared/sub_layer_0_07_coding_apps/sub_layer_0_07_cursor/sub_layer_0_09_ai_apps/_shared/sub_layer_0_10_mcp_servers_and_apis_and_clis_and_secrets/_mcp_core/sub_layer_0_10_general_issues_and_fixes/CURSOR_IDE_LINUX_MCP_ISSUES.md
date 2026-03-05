@@ -1,3 +1,8 @@
+---
+resource_id: "aceaddee-4e89-4f9e-b38f-609873019921"
+resource_type: "document"
+resource_name: "CURSOR_IDE_LINUX_MCP_ISSUES"
+---
 # Cursor IDE Linux/Ubuntu MCP Issues
 
 **Date**: 2025-12-02  

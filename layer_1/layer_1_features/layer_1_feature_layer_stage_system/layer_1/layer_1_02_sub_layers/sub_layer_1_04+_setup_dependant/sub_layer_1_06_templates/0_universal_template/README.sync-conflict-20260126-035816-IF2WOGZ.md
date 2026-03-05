@@ -1,3 +1,8 @@
+---
+resource_id: "cd050a51-7907-4b8b-8aa8-bc4640d3eda7"
+resource_type: "document"
+resource_name: "README.sync-conflict-20260126-035816-IF2WOGZ"
+---
 # Universal Layer Template (0.x)
 
 Use this when defining the universal layer for any ecosystem.

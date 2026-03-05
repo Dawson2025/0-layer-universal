@@ -1,3 +1,8 @@
+---
+resource_id: "746d5ae2-bb94-4708-aafc-f33d6b34937a"
+resource_type: "knowledge"
+resource_name: "personal_CLAUDE"
+---
 # Personal Orchestrator System
 
 ## Identity

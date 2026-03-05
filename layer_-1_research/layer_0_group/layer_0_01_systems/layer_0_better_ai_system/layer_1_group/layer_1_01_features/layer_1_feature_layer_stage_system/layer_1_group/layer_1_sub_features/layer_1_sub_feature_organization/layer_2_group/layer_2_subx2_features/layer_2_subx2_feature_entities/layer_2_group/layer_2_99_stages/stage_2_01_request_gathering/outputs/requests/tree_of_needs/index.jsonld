@@ -1,28 +1,24 @@
 {
+  "file_id": "cdeb10b6-78e6-485b-ae09-1b05da9aad76",
   "@context": {
     "@vocab": "https://layer-stage.dev/schema#",
     "nav": "https://layer-stage.dev/nav#",
     "rel": "https://layer-stage.dev/rel#",
     "need": "https://layer-stage.dev/need#"
   },
-
   "@id": "tree_of_needs",
   "@type": "TreeOfNeeds",
-
   "name": "Tree of Needs - Better Layer Stage System",
   "version": "1.0.0",
-
   "nav:parent": {
     "@id": "../../../",
     "name": "stage_0_01_request_gathering"
   },
-
   "rootNeed": {
     "@id": "00_better_layer_stage_system/",
     "@type": "RootNeed",
     "name": "Better Layer Stage System",
     "description": "A consistent, navigable layer-stage system that AI agents can work with effectively",
-
     "branches": [
       {
         "@id": "00_better_layer_stage_system/01_consistent_structure/",
@@ -115,7 +111,6 @@
       }
     ]
   },
-
   "rel:informsFurtherLayering": {
     "description": "This tree hierarchy maps to feature/component organization",
     "pattern": {
@@ -125,7 +120,6 @@
       "subNeed": "Sub-component (layer +3)"
     }
   },
-
   "meta:sessions": {
     "@id": "_meta/sessions/",
     "description": "Session logs that contributed to this tree"

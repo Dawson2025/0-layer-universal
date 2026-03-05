@@ -1,4 +1,9 @@
 ---
+resource_id: "ecef9493-5970-428e-84c9-1febf808c642"
+resource_type: "document"
+resource_name: "10_current_product-status"
+---
+---
 description: Show current status of 10_current_product stage
 argument-hint: [--verbose]
 ---

@@ -1,3 +1,8 @@
+---
+resource_id: "59939c33-b5ab-45fd-b577-ccb4679aa095"
+resource_type: "output"
+resource_name: "easyeffects_audio_enhancement"
+---
 # EasyEffects Audio Enhancement Setup
 
 ## Problem

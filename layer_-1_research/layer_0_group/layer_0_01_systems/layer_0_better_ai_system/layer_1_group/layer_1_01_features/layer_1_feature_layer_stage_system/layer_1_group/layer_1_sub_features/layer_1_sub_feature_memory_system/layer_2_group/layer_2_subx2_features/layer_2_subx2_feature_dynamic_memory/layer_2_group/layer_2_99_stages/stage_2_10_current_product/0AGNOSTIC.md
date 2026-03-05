@@ -1,3 +1,9 @@
+---
+resource_id: "c41b98a7-3c82-4dc0-9996-fccf3ae8f4b2"
+resource_type: "agnostic
+document"
+resource_name: "0AGNOSTIC"
+---
 # dynamic_memory — Stage 10: current_product
 
 ## Identity

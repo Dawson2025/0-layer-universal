@@ -1,3 +1,8 @@
+---
+resource_id: "f67ff519-65a8-4245-abc0-c3f1f32fe1ea"
+resource_type: "output"
+resource_name: "01_implementation_roadmap"
+---
 # Implementation Roadmap: Layer Consolidation, Context Chain, & .1merge System
 
 **Date**: 2026-02-27

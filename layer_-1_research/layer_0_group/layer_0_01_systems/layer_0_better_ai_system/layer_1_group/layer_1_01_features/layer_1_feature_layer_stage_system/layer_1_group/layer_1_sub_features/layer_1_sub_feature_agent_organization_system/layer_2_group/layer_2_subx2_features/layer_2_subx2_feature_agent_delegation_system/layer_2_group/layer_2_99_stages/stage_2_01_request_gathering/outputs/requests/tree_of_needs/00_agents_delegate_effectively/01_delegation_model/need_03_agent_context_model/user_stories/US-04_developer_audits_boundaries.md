@@ -1,3 +1,8 @@
+---
+resource_id: "2c7a54f5-5027-4a83-961f-58100a32b932"
+resource_type: "output"
+resource_name: "US-04_developer_audits_boundaries"
+---
 # US-4: Developer can audit context boundaries
 
 **Need**: [Agent Context Model](../README.md)

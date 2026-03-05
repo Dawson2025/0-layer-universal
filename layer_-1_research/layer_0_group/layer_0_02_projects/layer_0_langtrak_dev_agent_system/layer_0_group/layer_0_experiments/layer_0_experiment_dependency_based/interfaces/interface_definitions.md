@@ -1,3 +1,8 @@
+---
+resource_id: "31b6adb3-adbb-410a-8031-44ca67596336"
+resource_type: "document"
+resource_name: "interface_definitions"
+---
 # Interface Definitions
 
 **Purpose**: Contracts between Layer Agents. Each interface defines what a layer PROVIDES to layers above it.

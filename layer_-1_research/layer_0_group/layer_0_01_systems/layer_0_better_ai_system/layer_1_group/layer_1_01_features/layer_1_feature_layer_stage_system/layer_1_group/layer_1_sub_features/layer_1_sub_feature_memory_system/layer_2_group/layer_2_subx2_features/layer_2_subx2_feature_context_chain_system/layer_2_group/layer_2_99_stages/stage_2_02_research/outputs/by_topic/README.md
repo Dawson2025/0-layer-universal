@@ -1,3 +1,9 @@
+---
+resource_id: "37de4586-e45e-4001-aa07-48aa362aad8c"
+resource_type: "readme
+output"
+resource_name: "README"
+---
 # AALang Integration Research
 
 ## Purpose

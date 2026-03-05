@@ -1,4 +1,7 @@
 ---
+resource_id: "62da936e-3f8d-468e-ab7d-309d47c1af70"
+resource_type: "document"
+resource_name: "05_design-status.sync-conflict-20260126-101457-IF2WOGZ"
 description: Show current status of 05_design stage
 argument-hint: [--verbose]
 ---

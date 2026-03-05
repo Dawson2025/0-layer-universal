@@ -1,3 +1,8 @@
+---
+resource_id: "22366ffc-14f0-4aad-b746-d7667ef8ebf4"
+resource_type: "knowledge"
+resource_name: "SUB_STAGES_EXPLAINED"
+---
 # Sub-Stages Explained (sub_stage and subxN_stage)
 
 ## Overview

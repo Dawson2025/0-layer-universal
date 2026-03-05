@@ -1,3 +1,8 @@
+---
+resource_id: "830d734a-aa12-46ce-a7a9-55c4134b6f81"
+resource_type: "output"
+resource_name: "audio_testing"
+---
 # Audio Testing (Parent Overview)
 
 **Date**: 2026-02-23

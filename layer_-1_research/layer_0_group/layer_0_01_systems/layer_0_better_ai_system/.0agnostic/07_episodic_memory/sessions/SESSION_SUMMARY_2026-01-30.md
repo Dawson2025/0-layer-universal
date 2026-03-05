@@ -1,3 +1,8 @@
+---
+resource_id: "80af082e-ff17-45cf-98b6-84284bc68730"
+resource_type: "document"
+resource_name: "SESSION_SUMMARY_2026-01-30"
+---
 # Session Summary - 2026-01-30
 
 **Date**: 2026-01-30

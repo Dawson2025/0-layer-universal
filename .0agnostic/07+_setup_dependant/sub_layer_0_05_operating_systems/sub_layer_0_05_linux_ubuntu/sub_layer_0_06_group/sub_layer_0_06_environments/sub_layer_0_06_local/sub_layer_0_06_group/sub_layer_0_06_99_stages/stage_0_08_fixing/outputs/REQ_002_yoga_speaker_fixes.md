@@ -1,3 +1,8 @@
+---
+resource_id: "ff43095e-76b4-433f-abfd-8c97ea64d2b4"
+resource_type: "output"
+resource_name: "REQ_002_yoga_speaker_fixes"
+---
 # Fixes Applied: Yoga Pro 9 Speaker I2C Configuration
 
 ## Request Reference

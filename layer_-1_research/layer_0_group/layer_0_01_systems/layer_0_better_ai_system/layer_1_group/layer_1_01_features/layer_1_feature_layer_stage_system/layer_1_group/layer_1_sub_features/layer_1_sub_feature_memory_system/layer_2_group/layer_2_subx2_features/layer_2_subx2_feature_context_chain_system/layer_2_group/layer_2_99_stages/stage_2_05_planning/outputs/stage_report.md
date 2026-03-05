@@ -1,3 +1,8 @@
+---
+resource_id: "3df37ec3-6bea-4889-9f53-f4f98473ac52"
+resource_type: "output"
+resource_name: "stage_report"
+---
 # Stage Report: 05_planning
 
 ## Status

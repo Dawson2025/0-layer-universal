@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
+# resource_id: "4fc08955-c1be-414c-bd60-8d05969d0ca9"
+# resource_type: "script"
+# resource_name: "test_reports_funnel_structure"
 # test_reports_funnel_structure.sh — Validate canonical reports + handoff mirror structure
 
 set -uo pipefail

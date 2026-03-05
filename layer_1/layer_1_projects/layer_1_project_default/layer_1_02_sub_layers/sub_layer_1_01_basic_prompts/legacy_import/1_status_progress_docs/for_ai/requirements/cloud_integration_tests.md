@@ -1,3 +1,8 @@
+---
+resource_id: "051e29fc-5347-42c6-879f-4279d084336f"
+resource_type: "document"
+resource_name: "cloud_integration_tests"
+---
 # Cloud Integration Tests
 
 - **Source Prompt**: `docs/prompts.txt/cloud/making_tests/coudTests.md`

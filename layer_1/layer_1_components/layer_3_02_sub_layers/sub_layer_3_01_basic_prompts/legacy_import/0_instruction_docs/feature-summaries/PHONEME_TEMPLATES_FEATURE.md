@@ -1,3 +1,8 @@
+---
+resource_id: "7ab3e2df-2c42-4bd0-a5d2-ef7f3cb25025"
+resource_type: "document"
+resource_name: "PHONEME_TEMPLATES_FEATURE"
+---
 # Phoneme Templates Feature
 
 ## Overview

@@ -1,3 +1,8 @@
+---
+resource_id: "a6000fb0-7a5e-45a1-b072-3eeb29f56504"
+resource_type: "rule"
+resource_name: "documentation_deduplication_rule"
+---
 # Documentation Deduplication Rule
 
 **Status:** MANDATORY | **Scope:** All AI agents | **Level:** Critical

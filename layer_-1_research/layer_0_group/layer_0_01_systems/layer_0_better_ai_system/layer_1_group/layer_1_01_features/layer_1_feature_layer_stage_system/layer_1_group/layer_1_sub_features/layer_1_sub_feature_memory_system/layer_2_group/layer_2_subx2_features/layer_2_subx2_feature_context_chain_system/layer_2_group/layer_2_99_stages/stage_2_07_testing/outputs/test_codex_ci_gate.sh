@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
+# resource_id: "8bc60522-9d72-427e-a302-7b9bf0033db8"
+# resource_type: "script"
+# resource_name: "test_codex_ci_gate"
 # test_codex_ci_gate.sh — CI-style gate for Codex projection quality
 
 set -uo pipefail

@@ -1,3 +1,8 @@
+---
+resource_id: "b869b07e-cf09-4fd0-8198-6dfc9bf0bc6e"
+resource_type: "output"
+resource_name: "REQ-02_git_integration"
+---
 # REQ-02: Git Integration Triggers
 
 **Need**: [Trigger Automation](../README.md)

@@ -1,4 +1,9 @@
 ---
+resource_id: "e0cb2cd7-2242-4ccd-a511-8b59b687905d"
+resource_type: "document"
+resource_name: "08_criticism-status"
+---
+---
 description: Show current status of 08_criticism stage
 argument-hint: [--verbose]
 ---

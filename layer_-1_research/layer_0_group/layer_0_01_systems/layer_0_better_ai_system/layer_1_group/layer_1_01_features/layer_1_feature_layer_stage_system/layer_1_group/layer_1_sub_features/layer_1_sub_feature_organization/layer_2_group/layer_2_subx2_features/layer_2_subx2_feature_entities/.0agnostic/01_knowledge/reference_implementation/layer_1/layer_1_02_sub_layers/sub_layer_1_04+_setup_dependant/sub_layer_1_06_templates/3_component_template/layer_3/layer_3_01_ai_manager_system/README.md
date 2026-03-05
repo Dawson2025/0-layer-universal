@@ -1,3 +1,9 @@
+---
+resource_id: "ac059d5b-575e-4dea-b9c4-a2584c599dc0"
+resource_type: "readme
+knowledge"
+resource_name: "README"
+---
 # Component Manager Agent (Template)
 
 Purpose: Manages this component’s stage agents; reports upstream to the feature manager.

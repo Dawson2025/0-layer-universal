@@ -1,3 +1,8 @@
+---
+resource_id: "c8c33589-8c85-4f56-9f50-628d942b287f"
+resource_type: "document"
+resource_name: "SUB_FEATURE_PATTERN_TEMPLATE"
+---
 # Sub-Feature Pattern Implementation Template
 
 ## How to Apply the Pattern to Any Feature

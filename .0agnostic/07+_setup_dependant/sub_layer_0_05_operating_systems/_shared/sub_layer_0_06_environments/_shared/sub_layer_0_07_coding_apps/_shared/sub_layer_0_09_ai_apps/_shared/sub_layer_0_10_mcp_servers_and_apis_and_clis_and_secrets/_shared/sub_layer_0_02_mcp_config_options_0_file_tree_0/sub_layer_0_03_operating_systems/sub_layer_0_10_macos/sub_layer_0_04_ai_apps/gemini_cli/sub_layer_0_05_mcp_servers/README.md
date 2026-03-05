@@ -1,3 +1,9 @@
+---
+resource_id: "70dc94e8-2224-4ba1-8497-3c2374765799"
+resource_type: "readme
+document"
+resource_name: "README"
+---
 # MCP Servers (gemini_cli on macos)
 
 This folder contains macos + gemini_cli specific notes for each MCP server we use.

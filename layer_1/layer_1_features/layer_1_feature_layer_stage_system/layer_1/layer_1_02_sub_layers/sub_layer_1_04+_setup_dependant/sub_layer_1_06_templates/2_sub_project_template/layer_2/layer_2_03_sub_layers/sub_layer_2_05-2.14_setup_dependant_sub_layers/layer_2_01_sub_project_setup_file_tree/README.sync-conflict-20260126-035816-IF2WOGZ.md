@@ -1,3 +1,8 @@
+---
+resource_id: "d8dd6d00-5424-4f6a-9d42-ff3e6e5bb028"
+resource_type: "document"
+resource_name: "README.sync-conflict-20260126-035816-IF2WOGZ"
+---
 # Sub-Project Setup File Tree
 
 This is the main entry point for navigating sub-project setup documentation.

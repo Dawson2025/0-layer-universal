@@ -1,3 +1,8 @@
+---
+resource_id: "aa2a0c8b-eda7-47bc-92dc-f5c0e6baf4d4"
+resource_type: "rule"
+resource_name: "test_design"
+---
 # Test Design: Stage Loop Rule
 
 **Rule**: `../STAGE_LOOP_RULE.md`

@@ -1,3 +1,8 @@
+---
+resource_id: "c1e1efe5-d68f-4a9f-81e0-ced30e8340d0"
+resource_type: "output"
+resource_name: "REQ_003_diagnostic_findings"
+---
 # REQ_003: Diagnostic Findings
 
 **Date**: 2026-01-29 18:35+ MST

@@ -1,3 +1,9 @@
+---
+resource_id: "0dd26520-6a9c-4146-a882-b98c0eef1523"
+resource_type: "agnostic
+document"
+resource_name: "0AGNOSTIC"
+---
 # dynamic_memory — AI Manager System
 
 ## Identity

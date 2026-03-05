@@ -1,3 +1,8 @@
+---
+resource_id: "51afd590-1bab-43ab-ac08-6fd3037af297"
+resource_type: "output"
+resource_name: "v4_benchmarks_with_measurement_units"
+---
 # Context Avenue Database Schema — Proposal v4
 
 ## Benchmarks with Measurement Units & Methodology

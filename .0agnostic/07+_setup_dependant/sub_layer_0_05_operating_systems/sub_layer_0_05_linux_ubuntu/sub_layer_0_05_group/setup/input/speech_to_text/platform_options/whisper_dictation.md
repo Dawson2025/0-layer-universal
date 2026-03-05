@@ -1,3 +1,8 @@
+---
+resource_id: "e4931636-4df5-4afb-a42a-8f85ee9ed7be"
+resource_type: "document"
+resource_name: "whisper_dictation"
+---
 # Whisper-Dictation
 
 **Last Updated**: January 12, 2026

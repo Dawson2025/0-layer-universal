@@ -1,3 +1,8 @@
+---
+resource_id: "d5e544ac-0a14-4b5c-9cef-ff20f9dc372e"
+resource_type: "knowledge"
+resource_name: "agent_delegation_overview"
+---
 # Agent Delegation Overview
 
 ## What Agent Delegation Is

@@ -1,3 +1,8 @@
+---
+resource_id: "3b3f2d3a-121f-437f-a2e5-c1d4395d361c"
+resource_type: "document"
+resource_name: "COMPONENTS"
+---
 # Component Documentation
 
 ## Component Structure

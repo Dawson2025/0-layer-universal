@@ -1,4 +1,5 @@
 {
+  "file_id": "a1c2b912-1005-444f-9ab6-7d4ab45d03fc",
   "context7_configurations": {
     "local_server": {
       "description": "Local Context7 MCP server using @upstash/context7-mcp package",
@@ -6,7 +7,12 @@
         "mcpServers": {
           "context7": {
             "command": "npx",
-            "args": ["-y", "@upstash/context7-mcp", "--api-key", "ctx7sk-d20b6dec-5980-4ee1-9beb-0e635d626f46"]
+            "args": [
+              "-y",
+              "@upstash/context7-mcp",
+              "--api-key",
+              "ctx7sk-d20b6dec-5980-4ee1-9beb-0e635d626f46"
+            ]
           }
         }
       },

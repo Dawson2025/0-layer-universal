@@ -1,3 +1,8 @@
+---
+resource_id: "3d974d64-ac37-438d-a084-393df47c29b0"
+resource_type: "rule"
+resource_name: "MASTER_TERMINAL_EXECUTION_REFERENCE"
+---
 # Master Terminal Execution Reference
 *Legacy Document - See MASTER_DOCUMENTATION.md*
 

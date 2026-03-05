@@ -1,3 +1,8 @@
+---
+resource_id: "13ec4f72-8dd4-4aa3-8520-d314b13e0e30"
+resource_type: "knowledge"
+resource_name: "deduplication_project_summary"
+---
 # Deduplication Project: Complete Implementation Summary
 
 **Status:** ✓ Complete

@@ -1,3 +1,8 @@
+---
+resource_id: "cd1712db-0110-4e4a-a689-3bb4231ca6a3"
+resource_type: "document"
+resource_name: "INSTALL_CURSOR_EXTENSION"
+---
 # Installing Cursor MCP Chrome Extension
 
 ## Found Extension

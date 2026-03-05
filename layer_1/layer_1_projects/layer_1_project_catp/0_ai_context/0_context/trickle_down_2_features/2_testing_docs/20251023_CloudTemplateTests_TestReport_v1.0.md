@@ -1,3 +1,8 @@
+---
+resource_id: "b36f63fc-f04d-4475-ab1d-0a18978b2a4c"
+resource_type: "document"
+resource_name: "20251023_CloudTemplateTests_TestReport_v1.0"
+---
 # Cloud Template Tests - Test Report
 *Date: 2025-10-23*
 *Test Suite: Integration Tests*

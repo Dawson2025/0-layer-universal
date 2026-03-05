@@ -1,3 +1,8 @@
+---
+resource_id: "5d34df75-3eb6-4845-82e3-be36f462c822"
+resource_type: "output"
+resource_name: "ISSUE_005_portal_apps_testing"
+---
 # Testing: XDG Portal / GNOME Apps Not Opening
 
 ## Issue Reference

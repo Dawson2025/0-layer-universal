@@ -1,3 +1,8 @@
+---
+resource_id: "0247ea78-c7a3-494c-ba2b-86bdb7434d22"
+resource_type: "output"
+resource_name: "DOCX_SKILL_IMPLEMENTATION_REPORT"
+---
 # /docx Skill Implementation Report
 
 **Date**: January 29, 2026

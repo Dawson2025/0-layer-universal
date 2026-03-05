@@ -1,3 +1,8 @@
+---
+resource_id: "cc0a7a41-0665-41a5-a655-129e6aa378da"
+resource_type: "output"
+resource_name: "PORTING_STRATEGY"
+---
 # Claude Code CLI — Porting Strategy for 0AGNOSTIC.md & .0agnostic/
 
 **Date**: 2026-02-27

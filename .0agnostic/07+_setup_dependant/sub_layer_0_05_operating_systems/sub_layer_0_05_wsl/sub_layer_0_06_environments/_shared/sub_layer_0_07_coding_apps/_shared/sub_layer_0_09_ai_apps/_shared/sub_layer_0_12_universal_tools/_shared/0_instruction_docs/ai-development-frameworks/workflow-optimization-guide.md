@@ -1,3 +1,8 @@
+---
+resource_id: "d0eabbbb-1b89-4075-82b9-332d91c393e6"
+resource_type: "document"
+resource_name: "workflow-optimization-guide"
+---
 # Workflow Optimization Guide
 *Phase-Based AI Tool Selection for Maximum Productivity*
 

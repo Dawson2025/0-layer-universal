@@ -1,4 +1,9 @@
 ---
+resource_id: "d63eab9c-c9fd-4353-88e9-3ab6cbaa57d0"
+resource_type: "document"
+resource_name: "11_archives-agent"
+---
+---
 name: 11_archives-agent
 description: Specialized agent for Historical versions and deprecated content. Use when working on 11_archives tasks.
 tools: Read, Write, Bash

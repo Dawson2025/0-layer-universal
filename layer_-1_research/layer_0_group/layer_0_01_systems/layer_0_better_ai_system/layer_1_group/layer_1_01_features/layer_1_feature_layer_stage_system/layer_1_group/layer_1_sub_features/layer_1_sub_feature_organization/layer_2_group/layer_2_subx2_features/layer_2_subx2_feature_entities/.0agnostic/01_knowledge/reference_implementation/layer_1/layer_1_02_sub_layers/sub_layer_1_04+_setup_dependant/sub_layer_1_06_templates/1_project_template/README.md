@@ -1,3 +1,9 @@
+---
+resource_id: "41552fde-9dbd-42c1-aecc-44b3097de0ee"
+resource_type: "readme
+knowledge"
+resource_name: "README"
+---
 # Project Layer Template (1.x, zero-padded)
 
 Use this to scaffold any project-level context. Mirrors the universal 0.x stack but specialized for a single project.

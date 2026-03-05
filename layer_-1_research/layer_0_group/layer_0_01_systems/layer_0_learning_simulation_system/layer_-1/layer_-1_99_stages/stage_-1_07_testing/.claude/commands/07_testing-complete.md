@@ -1,4 +1,9 @@
 ---
+resource_id: "49c31e0e-2797-4476-a4c8-b4ff175def57"
+resource_type: "document"
+resource_name: "07_testing-complete"
+---
+---
 description: Mark 07_testing stage as complete and prepare handoff
 argument-hint: [--notes "completion notes"]
 ---

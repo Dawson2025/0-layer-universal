@@ -1,3 +1,9 @@
+---
+resource_id: "733aac25-d9b1-48f6-bd94-70717e6abbc6"
+resource_type: "agnostic
+document"
+resource_name: "0AGNOSTIC"
+---
 # agent_delegation_system — Stage 01: Request Gathering
 
 # ═══ STATIC CONTEXT (always loaded) ═══

@@ -1,3 +1,8 @@
+---
+resource_id: "53dce2fa-ba50-4f97-a2d0-d5dcb4483b6b"
+resource_type: "output"
+resource_name: "system_tts_current_product"
+---
 # System TTS — Current Product
 
 **Date**: 2026-02-25

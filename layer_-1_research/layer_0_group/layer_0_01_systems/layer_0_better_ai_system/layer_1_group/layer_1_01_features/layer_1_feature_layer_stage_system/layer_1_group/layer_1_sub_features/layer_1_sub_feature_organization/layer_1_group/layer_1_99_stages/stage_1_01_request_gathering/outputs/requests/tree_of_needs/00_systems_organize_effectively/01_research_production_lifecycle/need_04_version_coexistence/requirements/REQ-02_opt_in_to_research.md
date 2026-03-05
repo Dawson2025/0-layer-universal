@@ -1,3 +1,8 @@
+---
+resource_id: "785b0474-bd74-45e1-8cf4-bd09f2307e72"
+resource_type: "output"
+resource_name: "REQ-02_opt_in_to_research"
+---
 # Opt-in to Research
 
 **Need**: [Version Coexistence](../README.md)

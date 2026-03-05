@@ -1,3 +1,9 @@
+---
+resource_id: "19fc3fb0-cb56-460f-9ab0-e878b4a160d5"
+resource_type: "readme
+document"
+resource_name: "README"
+---
 # Project Manager Agent (Template)
 
 Purpose: Coordinates all feature managers for this project; delegates to project stage agents; reports upstream to the universal manager.

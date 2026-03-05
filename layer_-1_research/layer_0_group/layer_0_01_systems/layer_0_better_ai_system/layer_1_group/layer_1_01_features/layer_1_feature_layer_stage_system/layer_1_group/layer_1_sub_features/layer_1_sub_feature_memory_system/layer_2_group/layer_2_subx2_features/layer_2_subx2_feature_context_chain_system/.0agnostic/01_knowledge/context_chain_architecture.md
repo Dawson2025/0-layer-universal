@@ -1,3 +1,8 @@
+---
+resource_id: "78e8afc7-2d6b-4f50-9740-7fc314ed1de9"
+resource_type: "knowledge"
+resource_name: "context_chain_architecture"
+---
 # Context Chain Architecture
 
 **Layer**: layer_2 (Research Sub-Feature)

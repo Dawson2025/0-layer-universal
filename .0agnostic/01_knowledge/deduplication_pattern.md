@@ -1,3 +1,8 @@
+---
+resource_id: "383f63b4-75d8-41c7-8f5b-385bad92e7b2"
+resource_type: "knowledge"
+resource_name: "deduplication_pattern"
+---
 # Deduplication Pattern & Naming Convention
 
 ## Overview

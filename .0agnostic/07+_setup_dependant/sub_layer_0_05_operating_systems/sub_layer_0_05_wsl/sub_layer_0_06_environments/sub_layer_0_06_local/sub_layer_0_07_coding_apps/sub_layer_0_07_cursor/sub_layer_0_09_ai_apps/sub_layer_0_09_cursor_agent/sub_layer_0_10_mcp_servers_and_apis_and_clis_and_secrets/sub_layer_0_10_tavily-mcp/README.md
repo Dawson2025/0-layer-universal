@@ -1,3 +1,9 @@
+---
+resource_id: "5a113f4e-d968-49dc-8381-bea3cbf4463a"
+resource_type: "readme
+document"
+resource_name: "README"
+---
 # tavily-mcp (cursor_agent on wsl)
 
 ## Canonical docs

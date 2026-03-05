@@ -1,3 +1,8 @@
+---
+resource_id: "204beb60-02ac-4c2a-9737-303a321c7c52"
+resource_type: "document"
+resource_name: "constitution"
+---
 # Language Tracker Constitution
 
 ## Core Principles

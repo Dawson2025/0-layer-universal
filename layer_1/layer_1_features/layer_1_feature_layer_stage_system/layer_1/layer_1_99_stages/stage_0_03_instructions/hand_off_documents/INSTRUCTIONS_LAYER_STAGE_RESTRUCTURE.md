@@ -1,3 +1,8 @@
+---
+resource_id: "4d165905-148a-4091-90e0-df1ed9e21580"
+resource_type: "document"
+resource_name: "INSTRUCTIONS_LAYER_STAGE_RESTRUCTURE"
+---
 # INSTRUCTIONS: Layer-Stage System Restructure
 
 **Created:** 2026-01-15

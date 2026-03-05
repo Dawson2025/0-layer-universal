@@ -1,3 +1,8 @@
+---
+resource_id: "8797deca-8b76-43f5-82ca-aa5f7e99bce9"
+resource_type: "output"
+resource_name: "36_technology_integration_roadmap"
+---
 # Technology Integration Roadmap: Where and How Each Technology Fits the Layer-Stage System
 
 ## Purpose

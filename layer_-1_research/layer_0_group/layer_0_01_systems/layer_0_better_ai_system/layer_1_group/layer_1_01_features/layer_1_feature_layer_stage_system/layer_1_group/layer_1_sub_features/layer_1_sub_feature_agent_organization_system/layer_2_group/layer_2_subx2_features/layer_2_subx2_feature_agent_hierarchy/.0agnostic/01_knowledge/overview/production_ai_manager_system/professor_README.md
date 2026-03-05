@@ -1,3 +1,8 @@
+---
+resource_id: "ed8bf264-f33f-4be5-97f7-74f581da7123"
+resource_type: "knowledge"
+resource_name: "professor_README"
+---
 # AALang and GAB
 
 ## Why AALang?

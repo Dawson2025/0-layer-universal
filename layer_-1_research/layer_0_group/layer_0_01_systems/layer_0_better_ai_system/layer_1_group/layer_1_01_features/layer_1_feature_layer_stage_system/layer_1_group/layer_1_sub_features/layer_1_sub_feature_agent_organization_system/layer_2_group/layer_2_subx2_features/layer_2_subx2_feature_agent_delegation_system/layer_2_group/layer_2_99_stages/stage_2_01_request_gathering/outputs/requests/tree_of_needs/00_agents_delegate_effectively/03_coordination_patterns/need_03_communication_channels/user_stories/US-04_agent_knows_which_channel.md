@@ -1,3 +1,8 @@
+---
+resource_id: "10dfc719-c24b-42bc-a2fc-42616abfae33"
+resource_type: "output"
+resource_name: "US-04_agent_knows_which_channel"
+---
 # US-4: Agent knows which channel to use
 
 **Need**: [Communication Channels](../README.md)

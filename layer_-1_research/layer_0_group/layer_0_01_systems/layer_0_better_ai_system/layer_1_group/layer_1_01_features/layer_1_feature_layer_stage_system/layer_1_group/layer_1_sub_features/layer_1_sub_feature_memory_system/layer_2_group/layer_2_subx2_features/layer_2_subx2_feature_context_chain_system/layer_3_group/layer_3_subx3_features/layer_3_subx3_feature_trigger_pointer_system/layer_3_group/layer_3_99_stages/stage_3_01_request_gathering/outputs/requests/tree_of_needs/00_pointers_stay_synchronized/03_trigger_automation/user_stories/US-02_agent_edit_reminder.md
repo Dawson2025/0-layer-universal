@@ -1,3 +1,8 @@
+---
+resource_id: "e502afac-1483-476e-8039-ecb7ee4cac4e"
+resource_type: "output"
+resource_name: "US-02_agent_edit_reminder"
+---
 # US-02: Agent Edits Trigger Validation Reminder
 
 **Need**: [Trigger Automation](../README.md)

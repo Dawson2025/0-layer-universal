@@ -1,3 +1,9 @@
+---
+resource_id: "b1f86758-b529-4d0b-8185-f2052d3a7667"
+resource_type: "readme
+document"
+resource_name: "README"
+---
 # MCP Servers (codex_cli on windows)
 
 This folder contains windows + codex_cli specific notes for each MCP server we use.

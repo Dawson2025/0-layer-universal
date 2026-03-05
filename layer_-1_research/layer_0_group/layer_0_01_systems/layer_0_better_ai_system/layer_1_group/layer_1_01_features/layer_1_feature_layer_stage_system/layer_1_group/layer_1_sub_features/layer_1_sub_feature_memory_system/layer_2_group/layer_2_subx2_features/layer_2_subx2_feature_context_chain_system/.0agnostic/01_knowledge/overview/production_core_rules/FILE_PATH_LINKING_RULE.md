@@ -1,3 +1,8 @@
+---
+resource_id: "542ab8dd-15ee-46d1-8ad2-2c62ae0a3cc7"
+resource_type: "knowledge"
+resource_name: "FILE_PATH_LINKING_RULE"
+---
 # [CRITICAL] File Path Linking Rule
 
 ## Rule (MANDATORY)

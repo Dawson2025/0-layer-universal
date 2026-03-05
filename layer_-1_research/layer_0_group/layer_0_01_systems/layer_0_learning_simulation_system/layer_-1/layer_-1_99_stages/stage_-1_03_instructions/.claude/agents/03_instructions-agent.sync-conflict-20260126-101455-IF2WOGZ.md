@@ -1,4 +1,7 @@
 ---
+resource_id: "0ddb444d-6bde-4a27-aa72-8dfdbf1d91fd"
+resource_type: "document"
+resource_name: "03_instructions-agent.sync-conflict-20260126-101455-IF2WOGZ"
 name: 03_instructions-agent
 description: Specialized agent for Document setup and usage instructions. Use when working on 03_instructions tasks.
 tools: Read, Write, Edit

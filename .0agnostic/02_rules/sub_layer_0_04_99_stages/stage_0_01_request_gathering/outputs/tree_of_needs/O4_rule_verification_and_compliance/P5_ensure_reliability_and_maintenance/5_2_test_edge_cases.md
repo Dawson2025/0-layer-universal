@@ -1,3 +1,8 @@
+---
+resource_id: "32bc4e34-4a13-4f45-a848-3ebf0f7eaaf8"
+resource_type: "rule"
+resource_name: "5_2_test_edge_cases"
+---
 # 5.2: Test Edge Cases
 
 ## Requirement

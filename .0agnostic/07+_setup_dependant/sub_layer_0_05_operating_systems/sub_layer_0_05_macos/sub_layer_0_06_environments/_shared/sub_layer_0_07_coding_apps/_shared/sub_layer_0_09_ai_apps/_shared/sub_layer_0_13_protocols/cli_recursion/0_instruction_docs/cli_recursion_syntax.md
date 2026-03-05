@@ -1,3 +1,8 @@
+---
+resource_id: "0031d509-15be-46ca-b39c-dbd0ed0a6270"
+resource_type: "document"
+resource_name: "cli_recursion_syntax"
+---
 # CLI Recursion Syntax and Patterns
 
 ## Applicability

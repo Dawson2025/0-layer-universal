@@ -1,3 +1,9 @@
+---
+resource_id: "51d582d9-9db7-4de7-b1e6-6102125f31aa"
+resource_type: "agnostic
+document"
+resource_name: "0AGNOSTIC"
+---
 # navigation — Layer Registry
 
 ## Identity

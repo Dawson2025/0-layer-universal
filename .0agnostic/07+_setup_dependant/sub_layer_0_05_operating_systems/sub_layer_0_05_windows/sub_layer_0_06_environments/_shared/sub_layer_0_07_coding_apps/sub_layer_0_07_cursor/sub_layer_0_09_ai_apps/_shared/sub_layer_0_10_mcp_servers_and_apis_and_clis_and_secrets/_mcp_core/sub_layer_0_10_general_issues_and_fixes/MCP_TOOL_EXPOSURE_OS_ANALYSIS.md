@@ -1,3 +1,8 @@
+---
+resource_id: "e71da167-bcc7-487a-ac3c-45883e22cd2e"
+resource_type: "document"
+resource_name: "MCP_TOOL_EXPOSURE_OS_ANALYSIS"
+---
 # MCP Tool Exposure - OS and Configuration Analysis
 
 **Date**: 2025-12-05  

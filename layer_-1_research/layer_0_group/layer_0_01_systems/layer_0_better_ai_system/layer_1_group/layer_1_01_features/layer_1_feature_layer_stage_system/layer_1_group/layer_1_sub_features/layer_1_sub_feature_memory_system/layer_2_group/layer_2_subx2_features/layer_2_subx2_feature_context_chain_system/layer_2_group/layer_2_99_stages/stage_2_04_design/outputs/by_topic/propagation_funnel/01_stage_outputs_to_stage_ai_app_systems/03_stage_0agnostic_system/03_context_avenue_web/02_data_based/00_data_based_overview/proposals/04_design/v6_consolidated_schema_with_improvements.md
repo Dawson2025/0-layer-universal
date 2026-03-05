@@ -1,3 +1,8 @@
+---
+resource_id: "24ccdb73-21e6-41e0-bde3-daacd3001898"
+resource_type: "output"
+resource_name: "v6_consolidated_schema_with_improvements"
+---
 # Context Avenue Database Schema — Proposal v6
 
 ## Consolidated Schema with All Improvements

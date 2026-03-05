@@ -1,3 +1,8 @@
+---
+resource_id: "21c73dce-cdbb-45f3-a694-244d928bef48"
+resource_type: "document"
+resource_name: "wsl2-antigravity-setup"
+---
 # WSL2 Antigravity IDE Setup Guide
 
 Complete guide for installing and configuring Google Antigravity IDE on Windows Subsystem for Linux 2 (WSL2).

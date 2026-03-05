@@ -1,3 +1,8 @@
+---
+resource_id: "433cc023-d002-449e-a9f2-06e24270bd57"
+resource_type: "document"
+resource_name: "setup-pac20026_fall2025-stuff.sync-conflict-20260126-035815-IF2WOGZ"
+---
 # Does this directory have a repo?
 _Exported on 11/25/2025 at 23:25:21 MST from Cursor (2.0.77)_
 

@@ -1,3 +1,8 @@
+---
+resource_id: "1f3b8c91-d4fb-4f2d-9534-041185b42c39"
+resource_type: "knowledge"
+resource_name: "AI_CLI_GITHUB_INTEGRATION_GUIDE"
+---
 # GitHub Integration Guide for AI CLI Tools
 
 ## Overview

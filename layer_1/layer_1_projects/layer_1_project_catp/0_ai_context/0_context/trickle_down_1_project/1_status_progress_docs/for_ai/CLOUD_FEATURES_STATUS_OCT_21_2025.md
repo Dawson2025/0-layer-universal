@@ -1,3 +1,8 @@
+---
+resource_id: "b41d4f4b-bc89-49b6-9206-77f9b198750b"
+resource_type: "document"
+resource_name: "CLOUD_FEATURES_STATUS_OCT_21_2025"
+---
 # Cloud Features Status Report
 **Date:** October 21, 2025  
 **Question:** "Do the cloud features work?"

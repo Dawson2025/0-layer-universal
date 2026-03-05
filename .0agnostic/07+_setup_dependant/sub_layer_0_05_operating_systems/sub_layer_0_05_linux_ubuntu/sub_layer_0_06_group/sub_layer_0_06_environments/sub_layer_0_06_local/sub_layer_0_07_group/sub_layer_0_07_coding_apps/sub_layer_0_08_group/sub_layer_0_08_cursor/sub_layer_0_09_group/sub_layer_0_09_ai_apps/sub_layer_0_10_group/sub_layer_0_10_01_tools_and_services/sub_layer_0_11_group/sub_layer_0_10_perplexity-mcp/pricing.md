@@ -1,3 +1,8 @@
+---
+resource_id: "abb584fe-91e6-4c59-afe8-c8570be795f8"
+resource_type: "document"
+resource_name: "pricing"
+---
 # Perplexity API Pricing Reference
 
 Last verified: 2026-02-24

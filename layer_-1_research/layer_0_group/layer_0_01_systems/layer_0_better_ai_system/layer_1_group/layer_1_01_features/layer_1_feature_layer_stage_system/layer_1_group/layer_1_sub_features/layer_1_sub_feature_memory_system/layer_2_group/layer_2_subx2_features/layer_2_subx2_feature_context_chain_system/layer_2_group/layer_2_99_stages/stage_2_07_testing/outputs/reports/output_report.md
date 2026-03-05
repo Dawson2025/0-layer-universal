@@ -1,3 +1,8 @@
+---
+resource_id: "c0e364a9-5d57-4721-8612-975bc382dd2d"
+resource_type: "output"
+resource_name: "output_report"
+---
 # Output Report: stage_2_07_testing
 
 ## Purpose

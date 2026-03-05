@@ -1,3 +1,9 @@
+---
+resource_id: "407f8d5b-8015-4020-9595-28856ce8d2de"
+resource_type: "skill
+document"
+resource_name: "SKILL"
+---
 # Skill: Entity Creation
 
 ## Purpose

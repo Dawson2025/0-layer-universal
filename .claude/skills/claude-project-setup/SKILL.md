@@ -1,4 +1,8 @@
 ---
+resource_id: "1d2ac45c-33f1-4ba1-8904-78b82290a88e"
+resource_type: "skill
+document"
+resource_name: "SKILL"
 name: claude-project-setup
 description: "Set up a Claude Project on claude.ai with custom instructions and knowledge files via browser automation. Use when the user wants to create a practice/study project, upload context files, or configure a Claude Project from prepared materials."
 ---

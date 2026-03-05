@@ -1,3 +1,8 @@
+---
+resource_id: "215a7a98-1bae-4531-a0bd-a022ea75f280"
+resource_type: "knowledge"
+resource_name: "WORKFLOW_FEATURE_PATTERN"
+---
 # Workflow Feature Pattern
 
 **Purpose:** Template and guide for creating "workflow features" with creation → production → results lifecycle.

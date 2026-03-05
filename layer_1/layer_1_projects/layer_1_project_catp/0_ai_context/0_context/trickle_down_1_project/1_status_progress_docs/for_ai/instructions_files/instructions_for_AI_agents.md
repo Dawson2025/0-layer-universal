@@ -1,3 +1,8 @@
+---
+resource_id: "eaa34dd5-d065-4fbf-af6a-d121315772f0"
+resource_type: "document"
+resource_name: "instructions_for_AI_agents"
+---
 # Instructions for AI Agents
 
 This file provides universal instructions for all AI agents working with the Language Tracker project.

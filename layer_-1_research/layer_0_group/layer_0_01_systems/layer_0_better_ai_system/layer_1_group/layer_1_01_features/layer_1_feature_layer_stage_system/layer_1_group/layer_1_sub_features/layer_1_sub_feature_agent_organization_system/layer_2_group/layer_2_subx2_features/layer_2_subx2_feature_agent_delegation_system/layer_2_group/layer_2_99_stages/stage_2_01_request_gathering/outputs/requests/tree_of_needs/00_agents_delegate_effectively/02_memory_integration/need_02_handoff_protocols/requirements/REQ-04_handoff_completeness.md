@@ -1,3 +1,8 @@
+---
+resource_id: "22dc1573-45bd-4512-a0fa-3e9b35e4c252"
+resource_type: "output"
+resource_name: "REQ-04_handoff_completeness"
+---
 # Handoff Completeness
 
 **Need**: [Handoff Protocols](../README.md)

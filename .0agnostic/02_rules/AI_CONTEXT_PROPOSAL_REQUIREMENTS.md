@@ -1,3 +1,8 @@
+---
+resource_id: "9935526a-ff8f-4ec5-905d-917e61597528"
+resource_type: "rule"
+resource_name: "AI_CONTEXT_PROPOSAL_REQUIREMENTS"
+---
 # AI Context Proposal Requirements
 
 ## [CRITICAL] Rule: Diagram Requirement

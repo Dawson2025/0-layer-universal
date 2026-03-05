@@ -1,3 +1,8 @@
+---
+resource_id: "5330480f-4603-48c9-8af4-4643e3266b45"
+resource_type: "document"
+resource_name: "bypass-permissions-setup"
+---
 # Claude Code Bypass Permissions Setup Guide
 *Universal Configuration for Trusted Development Environments*
 

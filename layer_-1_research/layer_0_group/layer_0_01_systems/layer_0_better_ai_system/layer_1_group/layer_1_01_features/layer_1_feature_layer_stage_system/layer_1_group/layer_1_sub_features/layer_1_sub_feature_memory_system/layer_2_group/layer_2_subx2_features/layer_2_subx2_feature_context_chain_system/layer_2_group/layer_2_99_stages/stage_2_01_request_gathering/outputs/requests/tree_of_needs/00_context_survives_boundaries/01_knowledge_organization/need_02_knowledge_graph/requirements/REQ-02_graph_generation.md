@@ -1,3 +1,8 @@
+---
+resource_id: "391e5b3e-32c5-4d6f-8afb-418c09af8ad3"
+resource_type: "output"
+resource_name: "REQ-02_graph_generation"
+---
 # Graph Generation
 
 **Need**: [Knowledge Graph](../README.md)

@@ -1,3 +1,8 @@
+---
+resource_id: "ab799d8f-fa5d-44d8-9b37-8577c0772465"
+resource_type: "rule"
+resource_name: "PARALLEL_STAGES_RULE"
+---
 # Parallel Stages Rule
 
 **Type**: Dynamic (triggered by scenario)

@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
+# resource_id: "531be5e4-e202-4c4a-aa9f-4d3d65ca47e6"
+# resource_type: "script"
+# resource_name: "test_codex_governance_runtime"
 # test_codex_governance_runtime.sh — Runtime validation for knowledge/principles/rules/protocols behavior
 
 set -uo pipefail

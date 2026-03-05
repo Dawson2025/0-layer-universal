@@ -1,4 +1,7 @@
 #!/bin/bash
+# resource_id: "494a1b7c-2d17-4943-adad-1b232451d0e7"
+# resource_type: "script"
+# resource_name: "atomic-write"
 #
 # atomic-write.sh - Atomic file writes for data safety
 #

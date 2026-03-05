@@ -1,3 +1,8 @@
+---
+resource_id: "221b0264-d750-4317-86b1-7b0276cefa6e"
+resource_type: "document"
+resource_name: "layer_report"
+---
 # Layer Report: layer_2_subx2_feature_context_chain_system
 
 ## Status

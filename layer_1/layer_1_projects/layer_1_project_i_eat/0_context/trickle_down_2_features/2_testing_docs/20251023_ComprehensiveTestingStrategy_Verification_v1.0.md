@@ -1,3 +1,8 @@
+---
+resource_id: "d52c4108-999e-47d9-a0a4-7ad6673efbad"
+resource_type: "document"
+resource_name: "20251023_ComprehensiveTestingStrategy_Verification_v1.0"
+---
 # Comprehensive Testing Strategy - Implementation Verification
 
 **Date**: 2025-10-23

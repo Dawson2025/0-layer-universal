@@ -1,3 +1,8 @@
+---
+resource_id: "6cf09fd4-294a-4974-b943-b0b51ffd7ae2"
+resource_type: "document"
+resource_name: "media_management"
+---
 # Video & Media Management
 
 - **Source Prompt**: Existing implementation analysis (2025-10-15)

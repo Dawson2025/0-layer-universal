@@ -1,3 +1,8 @@
+---
+resource_id: "9b217153-d393-42ac-9d69-7b99589e2b8d"
+resource_type: "document"
+resource_name: "README.sync-conflict-20260126-035814-IF2WOGZ"
+---
 # Stage 0.02 Planning - AI Agent System
 
 ## Overview

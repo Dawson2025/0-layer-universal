@@ -1,3 +1,8 @@
+---
+resource_id: "3db68d51-ee56-46b5-9588-3487c1f38ce3"
+resource_type: "document"
+resource_name: "testing"
+---
 # Testing Guide
 
 ## Overview

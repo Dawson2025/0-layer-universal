@@ -1,3 +1,8 @@
+---
+resource_id: "db506af1-a554-4717-adda-e3c3b317539b"
+resource_type: "document"
+resource_name: "terminal_execution_protocol"
+---
 # Terminal Execution Protocol - CRITICAL
 
 **See also**: [Cursor Terminal Issues - AI Agent Guidelines](cursor_terminal_issues.md) for comprehensive documentation of Cursor terminal problems and solutions.

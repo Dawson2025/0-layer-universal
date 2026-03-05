@@ -1,3 +1,8 @@
+---
+resource_id: "cfeb337c-ce32-4792-a78b-573fa72644cd"
+resource_type: "document"
+resource_name: "TERMIUS_LINUX_SETUP"
+---
 # Termius Setup for Linux
 
 After fixing the login loop, install Termius on Linux to have the same SSH setup across all devices.

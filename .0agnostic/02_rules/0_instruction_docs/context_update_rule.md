@@ -1,3 +1,8 @@
+---
+resource_id: "efd5e6f2-759d-48a5-b516-58c4a728a6fd"
+resource_type: "rule"
+resource_name: "context_update_rule"
+---
 # Context Update Rule
 
 Every AI agent session must keep the knowledge bases in sync:

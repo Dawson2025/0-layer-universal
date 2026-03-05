@@ -1,3 +1,8 @@
+---
+resource_id: "cb77f65d-bc25-4197-93ad-1dacf8978240"
+resource_type: "output"
+resource_name: "REQ-02_feature_level_stages"
+---
 # Feature-Level Stages
 
 **Need**: [Research Version](../README.md)

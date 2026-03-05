@@ -1,3 +1,9 @@
+---
+resource_id: "a1a70caa-68bb-4aa8-8e2e-d59ea9df3243"
+resource_type: "readme
+output"
+resource_name: "README"
+---
 # Need: Handoff Protocols
 
 **Branch**: [02_memory_integration](../)

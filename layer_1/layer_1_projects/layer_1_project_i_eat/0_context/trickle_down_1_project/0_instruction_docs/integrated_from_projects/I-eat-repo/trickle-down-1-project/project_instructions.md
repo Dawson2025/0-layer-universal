@@ -1,3 +1,8 @@
+---
+resource_id: "98d8afc6-e694-4d13-8dda-14a02217dcaf"
+resource_type: "document"
+resource_name: "project_instructions"
+---
 # Lang-Trak Project Instructions
 
 **Auto-loaded at the start of every Claude Code conversation**

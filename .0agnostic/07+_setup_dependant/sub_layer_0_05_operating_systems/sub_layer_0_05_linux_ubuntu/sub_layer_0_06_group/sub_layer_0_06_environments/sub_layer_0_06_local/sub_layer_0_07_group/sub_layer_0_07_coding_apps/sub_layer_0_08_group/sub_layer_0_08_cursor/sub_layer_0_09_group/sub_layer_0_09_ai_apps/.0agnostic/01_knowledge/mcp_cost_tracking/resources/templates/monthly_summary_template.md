@@ -1,3 +1,8 @@
+---
+resource_id: "ed15bbad-a81d-45b1-b4ce-67c32656a54d"
+resource_type: "knowledge"
+resource_name: "monthly_summary_template"
+---
 # Monthly MCP API Cost Summary -- {Month} {Year}
 
 ## Spend Breakdown

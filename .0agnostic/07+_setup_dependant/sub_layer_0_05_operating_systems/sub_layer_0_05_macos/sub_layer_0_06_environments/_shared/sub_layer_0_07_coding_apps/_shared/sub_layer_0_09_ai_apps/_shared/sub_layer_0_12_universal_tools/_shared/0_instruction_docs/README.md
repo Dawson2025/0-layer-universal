@@ -1,3 +1,9 @@
+---
+resource_id: "eee040af-ab10-4f9f-a871-977e7660abb6"
+resource_type: "readme
+document"
+resource_name: "README"
+---
 # Universal Tools
 *Trickle-Down Level 0.75: Universal Tools and Utilities*
 

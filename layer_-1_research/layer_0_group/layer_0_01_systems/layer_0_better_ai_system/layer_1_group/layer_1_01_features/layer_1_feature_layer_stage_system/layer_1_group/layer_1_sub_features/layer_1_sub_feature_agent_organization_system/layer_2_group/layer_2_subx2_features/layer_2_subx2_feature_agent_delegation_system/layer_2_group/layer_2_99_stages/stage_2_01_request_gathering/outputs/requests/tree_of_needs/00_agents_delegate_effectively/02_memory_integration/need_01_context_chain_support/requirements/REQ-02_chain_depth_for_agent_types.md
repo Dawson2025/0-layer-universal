@@ -1,3 +1,8 @@
+---
+resource_id: "15530047-9250-4af6-b144-9edd8cfbc5ad"
+resource_type: "output"
+resource_name: "REQ-02_chain_depth_for_agent_types"
+---
 # Chain Depth for Agent Types
 
 **Need**: [Context Chain Support](../README.md)

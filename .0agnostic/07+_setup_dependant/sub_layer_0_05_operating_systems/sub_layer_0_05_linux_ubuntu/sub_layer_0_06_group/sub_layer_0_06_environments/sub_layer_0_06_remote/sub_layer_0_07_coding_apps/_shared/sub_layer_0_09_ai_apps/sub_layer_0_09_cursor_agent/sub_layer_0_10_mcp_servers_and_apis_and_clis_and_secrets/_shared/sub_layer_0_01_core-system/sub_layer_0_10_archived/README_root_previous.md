@@ -1,3 +1,8 @@
+---
+resource_id: "471e2042-492e-4745-81ce-412877bde8b5"
+resource_type: "document"
+resource_name: "README_root_previous"
+---
 # archived: sub_layer_0_10_mcp_servers_and_tools_setup (previous README)
 
 **Purpose**: MCP (Model Context Protocol) server setup and configuration for AI apps and tools.

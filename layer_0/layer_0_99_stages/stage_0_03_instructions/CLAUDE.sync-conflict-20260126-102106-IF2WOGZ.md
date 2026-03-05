@@ -1,3 +1,8 @@
+---
+resource_id: "543ee1e1-b9be-4d26-a689-8f66d8fd5c1f"
+resource_type: "document"
+resource_name: "CLAUDE.sync-conflict-20260126-102106-IF2WOGZ"
+---
 # Stage 01: Instructions
 
 ## Purpose

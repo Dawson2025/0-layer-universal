@@ -1,4 +1,7 @@
 #!/bin/bash
+# resource_id: "e48c831e-770f-4787-8f19-22f808b7bc80"
+# resource_type: "script"
+# resource_name: "pointer-edit-guard"
 #
 # pointer-edit-guard.sh — PostToolUse hook for pointer file edits
 #

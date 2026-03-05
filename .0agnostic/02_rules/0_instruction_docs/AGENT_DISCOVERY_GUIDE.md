@@ -1,3 +1,8 @@
+---
+resource_id: "56a7c8a4-9737-4a30-8491-03f48630e80c"
+resource_type: "rule"
+resource_name: "AGENT_DISCOVERY_GUIDE"
+---
 # AI Agent Documentation Discovery Guide
 *How AI Agents Find and Use Universal Documentation*
 

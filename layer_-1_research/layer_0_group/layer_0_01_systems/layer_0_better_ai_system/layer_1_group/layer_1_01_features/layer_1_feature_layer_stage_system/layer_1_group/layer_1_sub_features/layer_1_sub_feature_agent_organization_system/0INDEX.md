@@ -1,3 +1,9 @@
+---
+resource_id: "6165cc0f-72c9-48a6-8a2f-66068e38a5cc"
+resource_type: "index
+document"
+resource_name: "0INDEX"
+---
 # Agent Organization System — Manager Dashboard
 
 ## Entity Status

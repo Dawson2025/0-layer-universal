@@ -1,3 +1,8 @@
+---
+resource_id: "cae25223-773a-463d-b3fe-f9827746f9a3"
+resource_type: "document"
+resource_name: "PRODUCTION_DEPLOYMENT_OCT_21_2025"
+---
 # Production Deployment - October 21, 2025
 **Language Tracker Application**  
 **Deployment Status**: ✅ **LIVE IN PRODUCTION**

@@ -1,3 +1,8 @@
+---
+resource_id: "8a972830-833a-43d7-9987-2e69ecaf02b9"
+resource_type: "knowledge"
+resource_name: "START_HERE_UBUNTU"
+---
 # START HERE - Ubuntu Native OS Setup
 
 **👋 Hi Claude Code running on Ubuntu!**

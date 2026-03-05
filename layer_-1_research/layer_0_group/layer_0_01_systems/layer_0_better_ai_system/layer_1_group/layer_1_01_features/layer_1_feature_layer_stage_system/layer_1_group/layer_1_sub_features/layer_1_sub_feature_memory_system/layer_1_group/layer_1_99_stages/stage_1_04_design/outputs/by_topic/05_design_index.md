@@ -1,3 +1,8 @@
+---
+resource_id: "5adcba16-d5b7-4b36-aa72-5fa3ebaddef0"
+resource_type: "output"
+resource_name: "05_design_index"
+---
 # Design Stage Index — Memory System (Stage 04)
 
 ## Purpose

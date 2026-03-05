@@ -1,3 +1,9 @@
+---
+resource_id: "69443c2f-55d4-456a-b7a2-bf1fa05beaa1"
+resource_type: "readme
+output"
+resource_name: "README"
+---
 # Branch: Knowledge is RETRIEVABLE
 
 **Parent**: [00_context_survives_boundaries](../)

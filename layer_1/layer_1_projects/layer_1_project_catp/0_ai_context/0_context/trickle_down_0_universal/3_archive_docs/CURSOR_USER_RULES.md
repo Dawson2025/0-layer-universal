@@ -1,3 +1,8 @@
+---
+resource_id: "d3273378-c981-4072-ba49-2c397b763470"
+resource_type: "document"
+resource_name: "CURSOR_USER_RULES"
+---
 # Cursor User Rules - Copy & Paste Ready
 
 ## 🚨 **CRITICAL: Terminal Tool Replacement Rules**

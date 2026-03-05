@@ -1,3 +1,8 @@
+---
+resource_id: "2d6241cf-46c9-414a-a998-3b50dc1ecaa8"
+resource_type: "output"
+resource_name: "REQ-01_feature_layers_for_rnd"
+---
 # Feature Layers for R&D
 
 **Need**: [System Features](../README.md)

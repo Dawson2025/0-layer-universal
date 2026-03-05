@@ -1,3 +1,8 @@
+---
+resource_id: "ba357d1f-311e-4f33-883c-cd195fbca6e9"
+resource_type: "knowledge"
+resource_name: "task_source_identification"
+---
 # Task Source Identification
 
 ## Priority Order (Highest to Lowest)

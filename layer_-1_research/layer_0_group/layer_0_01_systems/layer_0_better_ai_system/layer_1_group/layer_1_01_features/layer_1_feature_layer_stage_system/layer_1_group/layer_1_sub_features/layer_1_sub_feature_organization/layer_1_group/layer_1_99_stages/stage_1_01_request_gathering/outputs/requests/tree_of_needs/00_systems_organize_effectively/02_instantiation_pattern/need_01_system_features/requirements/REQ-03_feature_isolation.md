@@ -1,3 +1,8 @@
+---
+resource_id: "9460f2e3-6d53-4e3b-bec6-9aa121a4b210"
+resource_type: "output"
+resource_name: "REQ-03_feature_isolation"
+---
 # Feature Isolation
 
 **Need**: [System Features](../README.md)

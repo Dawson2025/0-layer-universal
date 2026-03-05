@@ -1,3 +1,8 @@
+---
+resource_id: "3d4dd574-aad9-48de-b2d8-86eddce425ca"
+resource_type: "document"
+resource_name: "TESTING_WORKFLOW_GUIDE"
+---
 # Testing Workflow Guide
 *Complete Guide to the Comprehensive Firebase Testing Strategy*
 

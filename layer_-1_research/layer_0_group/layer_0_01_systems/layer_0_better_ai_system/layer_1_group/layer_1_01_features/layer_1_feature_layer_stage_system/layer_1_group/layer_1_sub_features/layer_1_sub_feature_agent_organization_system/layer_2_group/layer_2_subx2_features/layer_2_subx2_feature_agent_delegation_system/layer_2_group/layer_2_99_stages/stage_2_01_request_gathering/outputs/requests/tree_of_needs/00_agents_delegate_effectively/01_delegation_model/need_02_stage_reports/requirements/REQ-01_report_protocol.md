@@ -1,3 +1,8 @@
+---
+resource_id: "cb03d93f-9e0b-4b70-84e0-29e440dce03e"
+resource_type: "output"
+resource_name: "REQ-01_report_protocol"
+---
 # Report Protocol
 
 **Need**: [Stage Reports](../README.md)

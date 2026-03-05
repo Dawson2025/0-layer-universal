@@ -1,3 +1,8 @@
+---
+resource_id: "a74d24a5-760c-4d5d-8ef9-d9edda2f42d3"
+resource_type: "knowledge"
+resource_name: "ENTITY_TYPES"
+---
 # Entity Types
 
 ## What is an Entity?

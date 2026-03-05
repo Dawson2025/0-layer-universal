@@ -1,3 +1,8 @@
+---
+resource_id: "d64775a2-e626-443d-a4ec-1696acd3a950"
+resource_type: "output"
+resource_name: "ai-manager-hierarchy-system-research"
+---
 <img src="https://r2cdn.perplexity.ai/pplx-full-logo-primary-dark%402x.png" style="height:64px;margin-right:32px"/>
 
 # Ok, I am planning on making a system that I can use to design and develop ai agent and ai manager and ai sub-agent heirarchy systems and orchestrate those systems. The main use will be for having these ai write code. Please help me do research to find the best way to do this

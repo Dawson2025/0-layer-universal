@@ -1,3 +1,8 @@
+---
+resource_id: "1be27cbc-deb9-4cb4-9708-77235bceccdc"
+resource_type: "output"
+resource_name: "19_prototype_specification"
+---
 # Prototype Specification: Layer-Stage System as Memory System Prototype
 
 ## Decision

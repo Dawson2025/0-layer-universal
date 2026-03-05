@@ -1,3 +1,9 @@
+---
+resource_id: "3fa3e9d3-beec-4df4-8a1e-c82ab34bb2f9"
+resource_type: "readme
+document"
+resource_name: "README"
+---
 # Layer 1 Project Manager Handoff Documents
 
 ## Overview

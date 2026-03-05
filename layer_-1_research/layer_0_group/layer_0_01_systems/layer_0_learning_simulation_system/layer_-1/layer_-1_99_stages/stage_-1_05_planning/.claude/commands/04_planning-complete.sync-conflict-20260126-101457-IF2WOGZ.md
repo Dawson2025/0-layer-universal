@@ -1,4 +1,7 @@
 ---
+resource_id: "423ac907-f762-4647-8434-e1a32e2cb74b"
+resource_type: "document"
+resource_name: "04_planning-complete.sync-conflict-20260126-101457-IF2WOGZ"
 description: Mark 04_planning stage as complete and prepare handoff
 argument-hint: [--notes "completion notes"]
 ---

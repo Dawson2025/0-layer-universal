@@ -1,3 +1,9 @@
+---
+resource_id: "265c5fee-bf68-494e-8e2c-c298d0f68096"
+resource_type: "readme
+output"
+resource_name: "README"
+---
 # AI Manager Hierarchy System - Implementation Documentation
 
 **Implementation Date**: 2025-12-24

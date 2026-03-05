@@ -1,3 +1,9 @@
+---
+resource_id: "2ecda3b2-d165-4fac-9d26-237ed6fb9ccb"
+resource_type: "readme
+document"
+resource_name: "README"
+---
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.

@@ -1,3 +1,4 @@
+<!-- derived_from: "3e5c2b6e-f22c-417e-bd2a-a109acf251c2" -->
 # layer_2_feature_context_gathering
 
 ## Purpose

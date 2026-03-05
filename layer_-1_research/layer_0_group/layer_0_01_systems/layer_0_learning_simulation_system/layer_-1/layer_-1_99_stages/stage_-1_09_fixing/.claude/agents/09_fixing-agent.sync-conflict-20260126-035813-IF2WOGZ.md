@@ -1,4 +1,7 @@
 ---
+resource_id: "a86f62a3-dee3-42f6-93fa-d1c1bf604583"
+resource_type: "document"
+resource_name: "09_fixing-agent.sync-conflict-20260126-035813-IF2WOGZ"
 name: 09_fixing-agent
 description: Specialized agent for Address issues from criticism. Use when working on 09_fixing tasks.
 tools: Read, Write, Edit, Bash

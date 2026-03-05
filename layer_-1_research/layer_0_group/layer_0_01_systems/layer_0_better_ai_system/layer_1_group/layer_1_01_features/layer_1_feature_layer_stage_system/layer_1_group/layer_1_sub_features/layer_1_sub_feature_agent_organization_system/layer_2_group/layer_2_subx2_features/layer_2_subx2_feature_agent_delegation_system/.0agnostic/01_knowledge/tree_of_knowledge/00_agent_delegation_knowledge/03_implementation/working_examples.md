@@ -1,3 +1,8 @@
+---
+resource_id: "8ee8c426-fdf6-4465-ac14-628f009a50a4"
+resource_type: "knowledge"
+resource_name: "working_examples"
+---
 # Topic: Working Examples
 
 ## Summary

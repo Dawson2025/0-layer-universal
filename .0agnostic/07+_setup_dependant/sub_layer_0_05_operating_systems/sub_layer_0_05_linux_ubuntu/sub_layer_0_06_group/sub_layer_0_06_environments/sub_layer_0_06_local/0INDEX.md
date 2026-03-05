@@ -1,3 +1,9 @@
+---
+resource_id: "04a8100a-f981-4006-bd42-c8e77057b19a"
+resource_type: "index
+document"
+resource_name: "0INDEX"
+---
 # Local Ubuntu Environment — Navigation Index
 
 ## Entity Overview

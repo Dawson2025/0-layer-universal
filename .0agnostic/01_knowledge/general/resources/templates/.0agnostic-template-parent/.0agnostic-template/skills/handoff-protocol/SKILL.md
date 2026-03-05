@@ -1,4 +1,10 @@
 ---
+resource_id: "1143b78c-44af-46a4-a4b6-55d0f566705c"
+resource_type: "skill
+knowledge"
+resource_name: "SKILL"
+---
+---
 name: handoff-protocol
 description: How to communicate via handoff documents
 ---

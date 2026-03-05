@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
+# resource_id: "495cddeb-c117-4724-b206-6b32e3334525"
+# resource_type: "script"
+# resource_name: "test_agnostic_sync"
 # test_agnostic_sync.sh — Test agnostic-sync.sh transforms 0AGNOSTIC.md correctly
 #
 # Tests that agnostic-sync.sh:

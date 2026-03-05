@@ -1,3 +1,8 @@
+---
+resource_id: "9cb5357e-841d-453d-8526-861ef38a0f20"
+resource_type: "knowledge"
+resource_name: "NESTED_DEPTH_NAMING"
+---
 # Nested Depth Naming Convention (subxN)
 
 ## Overview

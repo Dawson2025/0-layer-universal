@@ -1,3 +1,9 @@
+---
+resource_id: "f955c8e5-1cc9-4713-b05b-92769b988e47"
+resource_type: "readme
+document"
+resource_name: "README"
+---
 # MCP Servers, APIs & Secrets Management
 
 This directory contains documentation for Model Context Protocol (MCP) servers, API integrations, and secrets management patterns.

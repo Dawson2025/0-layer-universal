@@ -1,3 +1,9 @@
+---
+resource_id: "4ab47b24-0e74-44c9-9ab3-310240c53785"
+resource_type: "readme
+output"
+resource_name: "README"
+---
 # Need: Staleness Detection
 
 **Branch**: [02_knowledge_lifecycle](../)

@@ -1,3 +1,8 @@
+---
+resource_id: "346f2975-9795-4663-9dcd-6946eff7e7bc"
+resource_type: "output"
+resource_name: "US-01_manager_knows_direct_reports"
+---
 # US-1: Entity manager knows its direct reports
 
 **Need**: [Agent Hierarchy](../README.md)

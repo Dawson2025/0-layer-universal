@@ -1,20 +1,17 @@
 {
+  "file_id": "906c2914-499f-4307-8f3c-fd0c87fd2c24",
   "@context": {
     "@vocab": "https://layer-stage.dev/schema#",
     "nav": "https://layer-stage.dev/nav#"
   },
-
   "@id": "diagrams",
   "@type": "DiagramsRegistry",
-
   "name": "Context Visualization Diagrams",
   "description": "Visual diagrams of context architecture, flow, and propagation",
-
   "nav:parent": {
     "@id": "../",
     "name": "layer_1_subx2_feature_context_visualization"
   },
-
   "diagramCategories": [
     {
       "@id": "current/",

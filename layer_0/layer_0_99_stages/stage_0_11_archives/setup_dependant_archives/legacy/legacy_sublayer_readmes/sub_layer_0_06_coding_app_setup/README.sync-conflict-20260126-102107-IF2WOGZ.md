@@ -1,3 +1,8 @@
+---
+resource_id: "01bbc059-a76d-4ae9-85ce-b63e124c19fa"
+resource_type: "document"
+resource_name: "README.sync-conflict-20260126-102107-IF2WOGZ"
+---
 # ⚠️ DEPRECATED - This Sublayer Has Been Consolidated
 
 **Deprecation Date**: 2026-01-01

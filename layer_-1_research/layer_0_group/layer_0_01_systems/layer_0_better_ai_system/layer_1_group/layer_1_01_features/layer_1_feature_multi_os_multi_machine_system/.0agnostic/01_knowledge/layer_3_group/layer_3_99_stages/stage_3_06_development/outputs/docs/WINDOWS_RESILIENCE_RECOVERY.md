@@ -1,3 +1,8 @@
+---
+resource_id: "94c911a5-216f-43c2-8b8c-3db7beb0d432"
+resource_type: "knowledge"
+resource_name: "WINDOWS_RESILIENCE_RECOVERY"
+---
 # Windows Resilience & Remote Recovery System
 
 **Created**: 2026-01-21

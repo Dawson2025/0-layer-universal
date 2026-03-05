@@ -1,4 +1,7 @@
 #!/bin/bash
+# resource_id: "afdd2240-c61e-4f0a-a813-c50de5c570ef"
+# resource_type: "script"
+# resource_name: "verify_paths"
 # verify_paths.sh - Verify that documented paths exist
 # Run this after ANY structural change to the system
 #

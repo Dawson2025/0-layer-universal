@@ -1,4 +1,5 @@
 {
+  "file_id": "8a4d445a-2525-4d9d-b1df-2f81dde0a8f5",
   "report_metadata": {
     "generated_at": "2025-10-23T15:14:26.401928",
     "report_type": "comprehensive_system_report",
@@ -173,9 +174,9 @@
     }
   },
   "recommendations": [
-    "\ud83d\udcca Implement continuous monitoring and alerting",
-    "\ud83d\udd04 Set up automated backup and recovery procedures",
-    "\ud83d\udd12 Review and update security configurations regularly"
+    "📊 Implement continuous monitoring and alerting",
+    "🔄 Set up automated backup and recovery procedures",
+    "🔒 Review and update security configurations regularly"
   ],
   "visualizations": {
     "dashboard": "firebase-dashboard-20251023-151423.png",

@@ -1,3 +1,8 @@
+---
+resource_id: "66c0a2ed-4acc-43bd-aadd-d9ac45ac0eab"
+resource_type: "output"
+resource_name: "gemini_sdk_patterns"
+---
 # Gemini SDK Patterns & Best Practices
 
 This document covers production-ready patterns, common pitfalls, and optimizations for using Gemini in real applications.

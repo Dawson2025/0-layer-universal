@@ -1,3 +1,8 @@
+---
+resource_id: "a5f0a140-49e0-4e76-8ebd-eb2713d7da88"
+resource_type: "output"
+resource_name: "test_design_05_hierarchy_inheritance"
+---
 # Test Design: 05 Hierarchy Inheritance Model
 
 **Validates**: `stage_2_04_design/outputs/by_topic/05_hierarchy_inheritance_model.md`

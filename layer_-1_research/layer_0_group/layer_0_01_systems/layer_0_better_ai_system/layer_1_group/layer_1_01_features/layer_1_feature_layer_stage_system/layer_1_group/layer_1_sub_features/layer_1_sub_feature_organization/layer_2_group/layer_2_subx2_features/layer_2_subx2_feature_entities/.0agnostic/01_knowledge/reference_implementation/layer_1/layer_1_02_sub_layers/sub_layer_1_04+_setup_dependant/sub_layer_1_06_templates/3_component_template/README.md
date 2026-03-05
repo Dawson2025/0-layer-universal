@@ -1,3 +1,9 @@
+---
+resource_id: "e78869bb-36ca-428d-be1a-60d2feec0724"
+resource_type: "readme
+knowledge"
+resource_name: "README"
+---
 # Component Layer Template (3.x, zero-padded)
 
 Use this to scaffold any component-level context. Depends on universal (0.x), project (1.x), and feature (2.x) layers.

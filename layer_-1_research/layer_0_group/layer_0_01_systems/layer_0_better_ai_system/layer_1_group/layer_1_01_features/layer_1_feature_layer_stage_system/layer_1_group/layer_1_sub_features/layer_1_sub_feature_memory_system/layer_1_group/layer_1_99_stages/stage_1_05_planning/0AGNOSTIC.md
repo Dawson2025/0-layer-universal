@@ -1,3 +1,9 @@
+---
+resource_id: "a49edbd3-c441-4025-82fb-51b1a4ff964a"
+resource_type: "agnostic
+document"
+resource_name: "0AGNOSTIC"
+---
 # memory_system — Stage 04: planning
 
 ## Identity

@@ -1,3 +1,8 @@
+---
+resource_id: "aa588271-4a35-4b01-af20-098e2420e1a2"
+resource_type: "output"
+resource_name: "US-01_any_system_uses_pattern"
+---
 # Any System Uses the Pattern
 
 **As a** system designer working in any domain (education, healthcare, finance, etc.),

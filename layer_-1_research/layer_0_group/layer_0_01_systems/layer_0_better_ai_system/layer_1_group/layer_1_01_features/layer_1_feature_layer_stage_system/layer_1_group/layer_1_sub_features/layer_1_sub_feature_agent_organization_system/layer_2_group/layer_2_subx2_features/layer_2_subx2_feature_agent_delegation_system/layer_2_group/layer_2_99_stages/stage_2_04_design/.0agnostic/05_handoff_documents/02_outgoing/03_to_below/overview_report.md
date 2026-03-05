@@ -1,3 +1,8 @@
+---
+resource_id: "d077ab78-bf39-4a1f-9a74-236b8e6a3636"
+resource_type: "handoff"
+resource_name: "overview_report"
+---
 # Output Report — Stage 04: Design
 
 **Entity**: agent_delegation_system

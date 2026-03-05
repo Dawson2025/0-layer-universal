@@ -1,3 +1,9 @@
+---
+resource_id: "e9406a92-82ec-439b-a12c-ff4fe95835bd"
+resource_type: "agnostic
+document"
+resource_name: "0AGNOSTIC"
+---
 # dynamic_memory — Stage 08: criticism
 
 ## Identity

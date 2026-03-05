@@ -1,3 +1,9 @@
+---
+resource_id: "475db46b-237c-4456-82cb-e84e6ac33c4d"
+resource_type: "readme
+output"
+resource_name: "README"
+---
 # Branch 01: Research/Production Lifecycle
 
 **Question**: How do systems move from experimental to stable?

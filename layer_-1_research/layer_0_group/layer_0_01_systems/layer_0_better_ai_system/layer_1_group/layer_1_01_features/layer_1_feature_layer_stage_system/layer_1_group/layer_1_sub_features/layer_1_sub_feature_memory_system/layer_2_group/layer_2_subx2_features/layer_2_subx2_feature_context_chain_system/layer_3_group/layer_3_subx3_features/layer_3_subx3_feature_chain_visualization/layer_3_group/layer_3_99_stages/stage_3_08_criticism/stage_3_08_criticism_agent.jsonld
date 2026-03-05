@@ -1,1 +1,10 @@
-{"@context":{"@vocab":"https://layer-stage.dev/schema#"},"@id":"stage_3_08_criticism_agent","@type":"StageAgent","name":"Stage 3.08_criticism","layer":3}
+{
+  "file_id": "fee9ab90-ff7a-418b-a66b-4e5160c7b630",
+  "@context": {
+    "@vocab": "https://layer-stage.dev/schema#"
+  },
+  "@id": "stage_3_08_criticism_agent",
+  "@type": "StageAgent",
+  "name": "Stage 3.08_criticism",
+  "layer": 3
+}

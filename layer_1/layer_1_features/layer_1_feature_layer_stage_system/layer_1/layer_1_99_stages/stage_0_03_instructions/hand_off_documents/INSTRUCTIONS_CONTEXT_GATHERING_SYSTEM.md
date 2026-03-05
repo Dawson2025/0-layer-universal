@@ -1,3 +1,8 @@
+---
+resource_id: "22d6f36c-4d0e-4126-86e9-73e4cf41ba52"
+resource_type: "document"
+resource_name: "INSTRUCTIONS_CONTEXT_GATHERING_SYSTEM"
+---
 # INSTRUCTIONS: Context Gathering System
 
 **Created:** 2026-01-15

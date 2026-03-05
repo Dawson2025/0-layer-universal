@@ -1,3 +1,8 @@
+---
+resource_id: "0639a1d7-c48e-452a-92d8-3c8763eb1e55"
+resource_type: "document"
+resource_name: "cloud_apis"
+---
 # Cloud Speech-to-Text APIs
 
 **Last Updated**: January 12, 2026

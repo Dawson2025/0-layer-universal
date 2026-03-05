@@ -1,3 +1,8 @@
+---
+resource_id: "8a76e99e-88fc-4aca-8ff2-07f852b5f501"
+resource_type: "document"
+resource_name: "GITHUB_TOKEN_STORAGE_LOCATIONS"
+---
 # GitHub Token Storage Locations
 
 ## Overview

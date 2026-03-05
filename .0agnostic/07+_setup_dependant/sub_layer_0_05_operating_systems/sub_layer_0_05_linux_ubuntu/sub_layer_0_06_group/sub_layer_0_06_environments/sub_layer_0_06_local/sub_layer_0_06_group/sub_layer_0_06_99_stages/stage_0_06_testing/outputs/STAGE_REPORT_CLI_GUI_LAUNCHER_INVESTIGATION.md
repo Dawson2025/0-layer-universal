@@ -1,3 +1,8 @@
+---
+resource_id: "8014497d-3bfd-4abb-a8ca-8d41bc8b3938"
+resource_type: "output"
+resource_name: "STAGE_REPORT_CLI_GUI_LAUNCHER_INVESTIGATION"
+---
 # Stage Report: CLI vs GUI Launcher Failure Investigation
 
 **Date**: 2026-02-26 17:00+ MST

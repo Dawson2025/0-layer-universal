@@ -1,3 +1,8 @@
+---
+resource_id: "fe5645be-ff1d-4d83-9d93-b62d1798f144"
+resource_type: "output"
+resource_name: "suite_implementation"
+---
 # Codex Runtime Validation Suite Implementation
 
 ## Scripts

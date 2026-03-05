@@ -1,3 +1,8 @@
+---
+resource_id: "fbdf2551-3138-4fdf-9246-a8eb0996f509"
+resource_type: "document"
+resource_name: "project_branches_and_global_actions"
+---
 # Project-Level Controls and Branching
 
 - **Source Prompt**: `docs/for_ai/prompts.txt/cloud/project_branches_and_global_actions.md`

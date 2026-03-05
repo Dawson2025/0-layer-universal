@@ -1,3 +1,8 @@
+---
+resource_id: "6dc6f32b-f89e-46eb-8c9d-ba357dfc0756"
+resource_type: "rule"
+resource_name: "20251023_DocumentationRestructure_Resolution_v1.0"
+---
 # Documentation Restructure Resolution
 *Date: 2025-01-23*
 

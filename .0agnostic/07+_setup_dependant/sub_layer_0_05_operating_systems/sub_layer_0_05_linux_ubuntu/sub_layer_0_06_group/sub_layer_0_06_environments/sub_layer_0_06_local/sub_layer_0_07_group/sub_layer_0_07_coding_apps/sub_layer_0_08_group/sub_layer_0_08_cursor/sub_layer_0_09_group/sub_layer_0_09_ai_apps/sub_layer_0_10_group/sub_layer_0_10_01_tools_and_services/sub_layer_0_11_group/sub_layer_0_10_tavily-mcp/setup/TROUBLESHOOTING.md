@@ -1,3 +1,8 @@
+---
+resource_id: "5f5e5542-1f30-4a6a-ae1d-95e806623b2a"
+resource_type: "document"
+resource_name: "TROUBLESHOOTING"
+---
 # Tavily MCP Troubleshooting Guide
 
 This guide covers common issues when using the Tavily MCP server with Claude Code CLI on Linux Ubuntu.

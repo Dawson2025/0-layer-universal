@@ -1,3 +1,9 @@
+---
+resource_id: "d8400bbd-ad5e-4a19-8d69-747eb39d3fc0"
+resource_type: "readme
+document"
+resource_name: "README"
+---
 # sub_layer_0_14_99_stages (Agent Setup Development)
 
 ## Purpose

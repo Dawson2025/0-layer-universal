@@ -1,3 +1,8 @@
+---
+resource_id: "03b534cd-3b94-4fce-99ef-ceede691b2db"
+resource_type: "document"
+resource_name: "wsl-ubuntu-environment"
+---
 # WSL Ubuntu Environment Standards
 *Trickle-Down Level 0.5: Environment-Specific Standards*
 

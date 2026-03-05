@@ -1,4 +1,9 @@
 ---
+resource_id: "2116e6e8-5b40-4120-bbdf-e0579e0446dd"
+resource_type: "knowledge"
+resource_name: "05_design-status"
+---
+---
 description: Show current status of 05_design stage
 argument-hint: [--verbose]
 ---

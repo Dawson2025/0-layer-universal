@@ -1,3 +1,8 @@
+---
+resource_id: "f78b8704-87f3-4067-9762-07642cbb1e36"
+resource_type: "knowledge"
+resource_name: "lean_static_context"
+---
 # Principle: Lean Static Context
 
 **Type**: Efficiency

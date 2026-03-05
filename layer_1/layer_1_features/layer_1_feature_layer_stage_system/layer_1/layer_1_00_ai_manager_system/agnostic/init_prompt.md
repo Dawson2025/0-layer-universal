@@ -1,3 +1,8 @@
+---
+resource_id: "ba9d48f4-b883-49e6-b009-614bc01435e1"
+resource_type: "document"
+resource_name: "init_prompt"
+---
 # Layer 1: Layer-Stage System Feature
 
 ## Inherited From

@@ -1,3 +1,8 @@
+---
+resource_id: "b3d25708-391b-43f1-868f-1d5287c07eac"
+resource_type: "knowledge"
+resource_name: "SUB_LAYERS_AS_ENTRY_POINTS"
+---
 # Sub-Layers as Agent Entry Points
 
 ## Overview

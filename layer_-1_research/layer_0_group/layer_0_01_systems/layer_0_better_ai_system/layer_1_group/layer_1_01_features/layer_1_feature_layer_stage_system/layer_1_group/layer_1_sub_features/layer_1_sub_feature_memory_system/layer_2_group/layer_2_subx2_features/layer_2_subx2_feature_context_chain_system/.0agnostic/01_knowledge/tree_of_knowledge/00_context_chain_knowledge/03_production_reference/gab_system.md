@@ -1,3 +1,8 @@
+---
+resource_id: "73daa3d6-2088-4b69-a774-287ca16a333d"
+resource_type: "knowledge"
+resource_name: "gab_system"
+---
 # GAB/AALang Agent System
 
 ## Summary

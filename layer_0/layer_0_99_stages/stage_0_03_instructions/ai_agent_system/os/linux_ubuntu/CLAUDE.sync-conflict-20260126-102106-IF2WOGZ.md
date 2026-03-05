@@ -1,3 +1,8 @@
+---
+resource_id: "d11b5109-efd0-4f07-84d8-b2e3e367ce07"
+resource_type: "document"
+resource_name: "CLAUDE.sync-conflict-20260126-102106-IF2WOGZ"
+---
 # Claude Code Instructions - Linux Ubuntu Environment
 
 **OS Variant**: Linux Ubuntu (Native)

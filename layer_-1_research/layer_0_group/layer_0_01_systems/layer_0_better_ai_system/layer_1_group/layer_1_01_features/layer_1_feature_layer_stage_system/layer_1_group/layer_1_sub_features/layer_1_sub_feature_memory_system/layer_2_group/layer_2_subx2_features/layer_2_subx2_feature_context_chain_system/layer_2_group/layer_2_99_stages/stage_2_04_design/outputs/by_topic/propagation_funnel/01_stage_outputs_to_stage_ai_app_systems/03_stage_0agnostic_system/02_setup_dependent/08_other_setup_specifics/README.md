@@ -1,3 +1,9 @@
+---
+resource_id: "1b300867-d97c-4920-b523-5f04be06e2ea"
+resource_type: "readme
+output"
+resource_name: "README"
+---
 # Other Setup Specifics (08_other_setup_specifics)
 
 ## What This Contains

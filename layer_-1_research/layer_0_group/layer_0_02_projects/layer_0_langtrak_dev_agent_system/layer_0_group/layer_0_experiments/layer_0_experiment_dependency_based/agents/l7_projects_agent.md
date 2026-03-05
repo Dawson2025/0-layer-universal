@@ -1,3 +1,8 @@
+---
+resource_id: "4b398eb5-11d6-4658-923a-09cf956220b2"
+resource_type: "document"
+resource_name: "l7_projects_agent"
+---
 # L7 Projects Agent
 
 **Role**: Project Layer Specialist

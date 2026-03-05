@@ -1,3 +1,8 @@
+---
+resource_id: "970b14ee-f55a-4b40-b789-6b3dd7a02c65"
+resource_type: "rule"
+resource_name: "chain_integrity"
+---
 # Chain Integrity Rule
 
 ## Rule: Never Break a Parent Reference in 0AGNOSTIC.md

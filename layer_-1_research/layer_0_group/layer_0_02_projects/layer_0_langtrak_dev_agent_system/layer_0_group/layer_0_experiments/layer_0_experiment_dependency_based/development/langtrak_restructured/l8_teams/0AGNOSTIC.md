@@ -1,3 +1,9 @@
+---
+resource_id: "c3684647-2af7-4c2b-a7c1-3be9a2aac58e"
+resource_type: "agnostic
+document"
+resource_name: "0AGNOSTIC"
+---
 # ═══ STATIC CONTEXT (always loaded) ═══
 
 # ── Entity Definition ──

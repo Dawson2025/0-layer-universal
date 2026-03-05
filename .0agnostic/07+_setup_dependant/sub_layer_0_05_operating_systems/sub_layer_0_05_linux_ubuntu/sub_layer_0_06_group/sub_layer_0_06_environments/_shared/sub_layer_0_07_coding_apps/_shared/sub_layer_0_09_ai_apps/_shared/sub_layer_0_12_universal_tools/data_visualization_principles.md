@@ -1,3 +1,8 @@
+---
+resource_id: "f47343f9-5e47-414e-b758-e2601df3c29d"
+resource_type: "document"
+resource_name: "data_visualization_principles"
+---
 # Data Visualization and Analysis Principles
 
 **Level**: Universal Tools (0.75)

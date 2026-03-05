@@ -1,1 +1,10 @@
-{"@context":{"@vocab":"https://layer-stage.dev/schema#"},"@id":"stage_1_07_testing_agent","@type":"StageAgent","name":"Stage 1.07_testing","layer":1}
+{
+  "file_id": "e6f9670d-5723-4ee2-9735-f3e7cc19ac41",
+  "@context": {
+    "@vocab": "https://layer-stage.dev/schema#"
+  },
+  "@id": "stage_1_07_testing_agent",
+  "@type": "StageAgent",
+  "name": "Stage 1.07_testing",
+  "layer": 1
+}

@@ -1,3 +1,8 @@
+---
+resource_id: "9c8d52db-3f74-4ea8-930f-45f4c5e1fda0"
+resource_type: "document"
+resource_name: "CLAUDE_CODE_SETUP"
+---
 # Perplexity MCP Setup for Claude Code CLI in Cursor (Linux Ubuntu)
 
 ## Current Setup Status

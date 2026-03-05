@@ -1,3 +1,9 @@
+---
+resource_id: "f850b3ac-e86d-465a-b903-85dc5bc23170"
+resource_type: "readme
+document"
+resource_name: "README"
+---
 # Coding Apps / IDEs
 
 This level organizes setup documentation by coding application or IDE.

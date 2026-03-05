@@ -1,3 +1,8 @@
+---
+resource_id: "89c786a0-964a-4722-b9ad-fab9d9afc06b"
+resource_type: "document"
+resource_name: "ui_selected_word_phoneme_feedback"
+---
 # Selected Word Phoneme Feedback
 
 - **Source Prompt**: `docs/prompts.txt/UI/chosen_word_individual_phoneme_block_display_and_sound_off_display.md`

@@ -1,3 +1,8 @@
+---
+resource_id: "d2a23fc6-4dd8-4f37-8781-0634588599e4"
+resource_type: "rule"
+resource_name: "agent_delegation_workspace_rule"
+---
 # Agent Delegation Workspace Rule
 
 **Type**: Dynamic (applies when delegation work is identified)

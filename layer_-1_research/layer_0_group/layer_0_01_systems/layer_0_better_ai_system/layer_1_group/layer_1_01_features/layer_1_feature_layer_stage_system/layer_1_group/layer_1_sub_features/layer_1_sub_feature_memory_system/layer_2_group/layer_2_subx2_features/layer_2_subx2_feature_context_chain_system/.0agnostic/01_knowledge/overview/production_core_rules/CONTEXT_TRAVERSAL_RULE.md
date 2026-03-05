@@ -1,3 +1,8 @@
+---
+resource_id: "95f421ad-092f-4eee-9083-45fb5ada2674"
+resource_type: "knowledge"
+resource_name: "CONTEXT_TRAVERSAL_RULE"
+---
 # Context Traversal Rule
 
 ## Status

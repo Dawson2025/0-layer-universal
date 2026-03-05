@@ -1,3 +1,8 @@
+---
+resource_id: "69b567c9-2fe8-44e2-8c08-d1bcf164e744"
+resource_type: "output"
+resource_name: "claude_code_agent_teams_research"
+---
 # Claude Code Agent Teams - Research Report
 
 > **Layer**: -1 (Research) | **Stage**: 02 (Research)

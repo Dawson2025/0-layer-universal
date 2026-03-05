@@ -1,3 +1,8 @@
+---
+resource_id: "e78170ac-d822-44a6-bb8a-7360bec18ba4"
+resource_type: "document"
+resource_name: "playwright-mcp-setup"
+---
 # Playwright MCP Server Setup Guide
 
 This guide documents the complete setup process for the Playwright MCP (Model Context Protocol) server for use with Claude Code.

@@ -1,3 +1,8 @@
+---
+resource_id: "755f2426-c4de-44f0-9777-547a61628b13"
+resource_type: "output"
+resource_name: "US-02_editing_existing_pointers"
+---
 # US-02: Editing Existing Pointers
 
 ## User Story

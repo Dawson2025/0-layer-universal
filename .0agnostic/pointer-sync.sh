@@ -1,4 +1,7 @@
 #!/bin/bash
+# resource_id: "08a4e9bc-8cc1-457e-b966-0a912ae6dff7"
+# resource_type: "script"
+# resource_name: "pointer-sync"
 #
 # pointer-sync.sh — Auto-update pointer files when canonical paths change
 #

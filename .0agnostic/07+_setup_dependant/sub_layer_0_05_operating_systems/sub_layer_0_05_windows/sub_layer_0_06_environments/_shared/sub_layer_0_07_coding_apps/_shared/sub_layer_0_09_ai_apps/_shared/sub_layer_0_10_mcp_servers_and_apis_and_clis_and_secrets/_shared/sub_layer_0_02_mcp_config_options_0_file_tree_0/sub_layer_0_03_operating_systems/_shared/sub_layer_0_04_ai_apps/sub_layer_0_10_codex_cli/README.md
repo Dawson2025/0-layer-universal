@@ -1,3 +1,9 @@
+---
+resource_id: "1661c616-aee0-424a-9a69-1ec40b163449"
+resource_type: "readme
+document"
+resource_name: "README"
+---
 # Codex CLI MCP Setup
 
 ## Config location

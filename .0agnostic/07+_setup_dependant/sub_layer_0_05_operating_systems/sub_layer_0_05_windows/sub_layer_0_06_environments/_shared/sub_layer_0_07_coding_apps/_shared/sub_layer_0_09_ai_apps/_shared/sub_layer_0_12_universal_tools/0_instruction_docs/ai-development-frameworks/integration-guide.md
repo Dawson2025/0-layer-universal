@@ -1,3 +1,8 @@
+---
+resource_id: "ed04f0f9-975e-4ce7-b144-fcea9167fcb1"
+resource_type: "document"
+resource_name: "integration-guide"
+---
 # Integration Guide
 *Integrating Spec Kit and BMAD with Your Existing AI Tools*
 

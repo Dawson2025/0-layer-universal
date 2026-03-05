@@ -1,3 +1,8 @@
+---
+resource_id: "7245fd21-05a1-4904-8710-3ccdd711e1a6"
+resource_type: "output"
+resource_name: "output_report"
+---
 # Output Report: stage_1_07_testing (tool_and_app_agnostic)
 
 ## Purpose

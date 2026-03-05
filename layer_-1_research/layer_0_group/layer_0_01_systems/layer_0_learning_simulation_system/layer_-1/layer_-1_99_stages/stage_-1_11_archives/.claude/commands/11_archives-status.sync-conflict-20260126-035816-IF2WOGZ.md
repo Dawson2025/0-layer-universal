@@ -1,4 +1,7 @@
 ---
+resource_id: "4aec24ac-6631-4c01-9004-252c6e2c923a"
+resource_type: "document"
+resource_name: "11_archives-status.sync-conflict-20260126-035816-IF2WOGZ"
 description: Show current status of 11_archives stage
 argument-hint: [--verbose]
 ---

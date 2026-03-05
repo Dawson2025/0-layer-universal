@@ -1,3 +1,8 @@
+---
+resource_id: "f23ccf73-ec1e-4fc7-b475-22db8b71af4b"
+resource_type: "document"
+resource_name: "QUICK_START.sync-conflict-20260126-035819-IF2WOGZ"
+---
 # Quick Start Guide - Universal Setup File Tree
 
 ## What is This?

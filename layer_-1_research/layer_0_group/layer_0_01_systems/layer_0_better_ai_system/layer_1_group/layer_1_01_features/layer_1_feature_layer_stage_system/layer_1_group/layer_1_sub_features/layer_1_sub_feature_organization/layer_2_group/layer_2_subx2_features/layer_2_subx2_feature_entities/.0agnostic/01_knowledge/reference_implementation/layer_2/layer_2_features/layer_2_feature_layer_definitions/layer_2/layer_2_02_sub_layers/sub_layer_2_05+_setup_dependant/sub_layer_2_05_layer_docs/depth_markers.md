@@ -1,3 +1,8 @@
+---
+resource_id: "8827c23a-8f2e-4699-b742-a0104df668fb"
+resource_type: "knowledge"
+resource_name: "depth_markers"
+---
 # Depth Markers
 
 ## Purpose

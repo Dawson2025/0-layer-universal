@@ -1,3 +1,9 @@
+---
+resource_id: "fa72d32d-d9c4-4bbd-85b1-f7550de4aafa"
+resource_type: "readme
+output"
+resource_name: "README"
+---
 # Pointer Format -- Requirements Index
 
 **Need**: [Pointer Format](../README.md)

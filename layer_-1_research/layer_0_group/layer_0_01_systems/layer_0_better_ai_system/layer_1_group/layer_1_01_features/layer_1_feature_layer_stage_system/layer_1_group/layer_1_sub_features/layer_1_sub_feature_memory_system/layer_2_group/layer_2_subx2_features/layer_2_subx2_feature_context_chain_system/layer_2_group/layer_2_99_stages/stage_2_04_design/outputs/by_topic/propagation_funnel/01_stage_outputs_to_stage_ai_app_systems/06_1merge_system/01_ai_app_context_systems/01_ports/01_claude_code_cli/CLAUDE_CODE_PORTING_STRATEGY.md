@@ -1,3 +1,8 @@
+---
+resource_id: "f1c97cfc-d104-4fdb-8151-34d26f17b2a1"
+resource_type: "output"
+resource_name: "CLAUDE_CODE_PORTING_STRATEGY"
+---
 # Claude Code — Porting Strategy from 0AGNOSTIC.md
 
 **Date Created**: 2026-02-27

@@ -1,0 +1,78 @@
+{
+  "entity_id": "027d94d7-1b15-4950-977a-d2f30f8772fa",
+  "entity_name": "layer_3_subx3_feature_agentic_tts",
+  "stages": [
+    {
+      "stage_id": "b28a3981-3e10-4fe9-90e0-b1519fbae265",
+      "stage_number": "00",
+      "stage_name": "stage_registry",
+      "directory": "stage_3_00_stage_registry"
+    },
+    {
+      "stage_id": "f72e7bfc-6532-4397-a59d-2f88330e0021",
+      "stage_number": "01",
+      "stage_name": "request_gathering",
+      "directory": "stage_3_01_request_gathering"
+    },
+    {
+      "stage_id": "c02f20f8-3682-47ec-bf11-1d55b4c453fa",
+      "stage_number": "02",
+      "stage_name": "research",
+      "directory": "stage_3_02_research"
+    },
+    {
+      "stage_id": "a4b20c76-27d5-47af-8559-a783263ac1d6",
+      "stage_number": "03",
+      "stage_name": "instructions",
+      "directory": "stage_3_03_instructions"
+    },
+    {
+      "stage_id": "e1436ebc-5e26-48ee-8885-436264e1f0c1",
+      "stage_number": "04",
+      "stage_name": "design",
+      "directory": "stage_3_04_design"
+    },
+    {
+      "stage_id": "e912415d-830b-4a2f-bdd2-0488e0dc11cd",
+      "stage_number": "05",
+      "stage_name": "planning",
+      "directory": "stage_3_05_planning"
+    },
+    {
+      "stage_id": "62d05169-0f1a-427e-a615-29201c6ee07d",
+      "stage_number": "06",
+      "stage_name": "development",
+      "directory": "stage_3_06_development"
+    },
+    {
+      "stage_id": "bcb11582-1c1f-47be-bcca-be5f40b30aad",
+      "stage_number": "07",
+      "stage_name": "testing",
+      "directory": "stage_3_07_testing"
+    },
+    {
+      "stage_id": "617bdd97-6c73-4a45-b672-370dfc7c4426",
+      "stage_number": "08",
+      "stage_name": "criticism",
+      "directory": "stage_3_08_criticism"
+    },
+    {
+      "stage_id": "f27a969c-70cf-4677-abde-a8a26d3354a7",
+      "stage_number": "09",
+      "stage_name": "fixing",
+      "directory": "stage_3_09_fixing"
+    },
+    {
+      "stage_id": "7265ce2c-cf5a-4bad-aebb-e6170b2664be",
+      "stage_number": "10",
+      "stage_name": "current_product",
+      "directory": "stage_3_10_current_product"
+    },
+    {
+      "stage_id": "0a112c4c-e41a-4f37-a5fa-c1d3e5b33dc6",
+      "stage_number": "11",
+      "stage_name": "archives",
+      "directory": "stage_3_11_archives"
+    }
+  ]
+}

@@ -1,3 +1,8 @@
+---
+resource_id: "bba18665-6f08-46b4-8859-beaa546e0f1e"
+resource_type: "document"
+resource_name: "GIT_REPO_SYNC_SYSTEM.sync-conflict-20260126-102106-IF2WOGZ"
+---
 # Git Repository Sync System
 
 **Last Updated:** 2026-01-11
