@@ -1363,6 +1363,536 @@ EOFILE
 }
 
 # ============================================================
+# Helper: Setup mock repo WITH UUID infrastructure
+# ============================================================
+
+setup_uuid_mock_repo() {
+    TMPDIR_BASE=$(mktemp -d /tmp/test_pointer_sync.XXXXXX)
+
+    local ROOT="$TMPDIR_BASE/mock_repo"
+    mkdir -p "$ROOT/.0agnostic"
+
+    cp "$REAL_SCRIPT" "$ROOT/.0agnostic/pointer-sync.sh"
+    chmod +x "$ROOT/.0agnostic/pointer-sync.sh"
+
+    # Entity: layer_1_feature_alpha (with entity_id)
+    mkdir -p "$ROOT/layer_1_group/layer_1_features/layer_1_feature_alpha/stage_1_04_design/outputs"
+    mkdir -p "$ROOT/layer_1_group/layer_1_features/layer_1_feature_alpha/stage_1_06_development/outputs"
+    echo "# Alpha Design" > "$ROOT/layer_1_group/layer_1_features/layer_1_feature_alpha/stage_1_04_design/outputs/design.md"
+    cat > "$ROOT/layer_1_group/layer_1_features/layer_1_feature_alpha/0AGNOSTIC.md" <<'EOFILE'
+# 0AGNOSTIC.md - layer_1_feature_alpha
+
+## Identity
+
+entity_id: "aaaa1111-1111-1111-1111-111111111111"
+
+You are alpha.
+EOFILE
+
+    # Entity: layer_1_feature_beta (deeper, with entity_id)
+    mkdir -p "$ROOT/layer_1_group/layer_1_features/layer_1_feature_alpha/layer_1_group/layer_1_features/layer_1_feature_beta/stage_1_04_design/outputs"
+    cat > "$ROOT/layer_1_group/layer_1_features/layer_1_feature_alpha/layer_1_group/layer_1_features/layer_1_feature_beta/0AGNOSTIC.md" <<'EOFILE'
+# 0AGNOSTIC.md - layer_1_feature_beta
+
+## Identity
+
+entity_id: "bbbb2222-2222-2222-2222-222222222222"
+
+You are beta.
+EOFILE
+
+    # Entity: layer_1_feature_gamma (sibling, with entity_id)
+    mkdir -p "$ROOT/layer_1_group/layer_1_features/layer_1_feature_gamma"
+    echo "# Gamma README" > "$ROOT/layer_1_group/layer_1_features/layer_1_feature_gamma/README.md"
+    cat > "$ROOT/layer_1_group/layer_1_features/layer_1_feature_gamma/0AGNOSTIC.md" <<'EOFILE'
+# 0AGNOSTIC.md - layer_1_feature_gamma
+
+## Identity
+
+entity_id: "cccc3333-3333-3333-3333-333333333333"
+
+You are gamma.
+EOFILE
+
+    # Stage registry for alpha (with stage_index.json)
+    mkdir -p "$ROOT/layer_1_group/layer_1_features/layer_1_feature_alpha/layer_1_group/layer_1_99_stages/stage_1_00_stage_registry"
+    cat > "$ROOT/layer_1_group/layer_1_features/layer_1_feature_alpha/layer_1_group/layer_1_99_stages/stage_1_00_stage_registry/stage_index.json" <<'EOFILE'
+{
+  "entity_id": "aaaa1111-1111-1111-1111-111111111111",
+  "entity_name": "layer_1_feature_alpha",
+  "stages": [
+    {
+      "stage_id": "dddd4444-4444-4444-4444-444444444444",
+      "stage_number": "04",
+      "stage_name": "design",
+      "directory": "stage_1_04_design"
+    },
+    {
+      "stage_id": "eeee5555-5555-5555-5555-555555555555",
+      "stage_number": "06",
+      "stage_name": "development",
+      "directory": "stage_1_06_development"
+    }
+  ]
+}
+EOFILE
+
+    # Create the stage directories in the 99_stages path too (so stage UUIDs map to real paths)
+    mkdir -p "$ROOT/layer_1_group/layer_1_features/layer_1_feature_alpha/layer_1_group/layer_1_99_stages/stage_1_04_design/outputs"
+    mkdir -p "$ROOT/layer_1_group/layer_1_features/layer_1_feature_alpha/layer_1_group/layer_1_99_stages/stage_1_06_development/outputs"
+    echo "# Alpha Stage Design" > "$ROOT/layer_1_group/layer_1_features/layer_1_feature_alpha/layer_1_group/layer_1_99_stages/stage_1_04_design/outputs/design.md"
+
+    echo "$ROOT"
+}
+
+# --- Helper: Create a UUID-based pointer file ---
+# Usage: create_uuid_pointer FILE POINTER_TO ENTITY_ID [STAGE_ID] [SUBPATH] [CANONICAL_LOC_LINE]
+create_uuid_pointer() {
+    local file="$1"
+    local pointer_to="$2"
+    local entity_id="$3"
+    local stage_id="${4:-}"
+    local subpath="${5:-}"
+    local canonical_loc="${6:-some/old/path}"
+
+    mkdir -p "$(dirname "$file")"
+
+    {
+        echo "---"
+        echo "pointer_to: $pointer_to"
+        [ -n "$entity_id" ] && echo "canonical_entity_id: $entity_id"
+        [ -n "$stage_id" ] && echo "canonical_stage_id: $stage_id"
+        [ -n "$subpath" ] && echo "canonical_subpath: $subpath"
+        echo "---"
+        echo ""
+        echo "# Pointer to $pointer_to"
+        echo ""
+        echo "> **Canonical location**: \`$canonical_loc\`"
+    } > "$file"
+}
+
+# ============================================================
+# Category 20: UUID Entity Resolution
+# ============================================================
+
+test_uuid_resolution() {
+    echo -e "\n${BLUE}=== Category 20: UUID Entity Resolution ===${NC}"
+
+    local ROOT
+
+    # Test 20.1: UUID-based entity resolution
+    ROOT=$(setup_uuid_mock_repo)
+    "$ROOT/.0agnostic/pointer-sync.sh" --rebuild-index > /dev/null 2>&1
+    create_uuid_pointer "$ROOT/layer_1_group/layer_1_features/layer_1_feature_gamma/ptr_uuid.md" \
+        "alpha via uuid" "aaaa1111-1111-1111-1111-111111111111"
+    run_sync "$ROOT" --verbose
+    assert_contains "20.1 UUID entity resolution → resolved via UUID" "$SYNC_OUTPUT" "Entity resolved via UUID"
+    assert_not_contains "20.1b No BROKEN" "$SYNC_OUTPUT" "BROKEN"
+
+    cleanup
+
+    # Test 20.2: UUID-based entity + stage resolution
+    ROOT=$(setup_uuid_mock_repo)
+    "$ROOT/.0agnostic/pointer-sync.sh" --rebuild-index > /dev/null 2>&1
+    create_uuid_pointer "$ROOT/layer_1_group/layer_1_features/layer_1_feature_gamma/ptr_uuid_stage.md" \
+        "alpha design via uuid" "aaaa1111-1111-1111-1111-111111111111" "dddd4444-4444-4444-4444-444444444444"
+    run_sync "$ROOT" --verbose
+    assert_contains "20.2a Entity resolved via UUID" "$SYNC_OUTPUT" "Entity resolved via UUID"
+    assert_contains "20.2b Stage resolved via UUID" "$SYNC_OUTPUT" "Stage resolved via UUID"
+
+    cleanup
+
+    # Test 20.3: UUID entity + stage + subpath
+    ROOT=$(setup_uuid_mock_repo)
+    "$ROOT/.0agnostic/pointer-sync.sh" --rebuild-index > /dev/null 2>&1
+    create_uuid_pointer "$ROOT/layer_1_group/layer_1_features/layer_1_feature_gamma/ptr_uuid_full.md" \
+        "alpha design output" "aaaa1111-1111-1111-1111-111111111111" "dddd4444-4444-4444-4444-444444444444" "outputs/design.md"
+    run_sync "$ROOT" --verbose
+    assert_contains "20.3a Full path resolved" "$SYNC_OUTPUT" "Full path:"
+    assert_not_contains "20.3b No BROKEN" "$SYNC_OUTPUT" "BROKEN"
+
+    cleanup
+
+    # Test 20.4: Nonexistent UUID → BROKEN
+    ROOT=$(setup_uuid_mock_repo)
+    "$ROOT/.0agnostic/pointer-sync.sh" --rebuild-index > /dev/null 2>&1
+    create_uuid_pointer "$ROOT/layer_1_group/layer_1_features/layer_1_feature_gamma/ptr_bad_uuid.md" \
+        "nonexistent" "ffff9999-9999-9999-9999-999999999999"
+    run_sync "$ROOT" --validate
+    assert_exit_code "20.4 Nonexistent UUID → exit 1" "1" "$SYNC_EXIT"
+    assert_contains "20.4b BROKEN message" "$SYNC_OUTPUT" "BROKEN"
+
+    cleanup
+
+    # Test 20.5: UUID entity valid + UUID stage invalid → BROKEN
+    ROOT=$(setup_uuid_mock_repo)
+    "$ROOT/.0agnostic/pointer-sync.sh" --rebuild-index > /dev/null 2>&1
+    create_uuid_pointer "$ROOT/layer_1_group/layer_1_features/layer_1_feature_gamma/ptr_bad_stage_uuid.md" \
+        "bad stage" "aaaa1111-1111-1111-1111-111111111111" "ffff9999-9999-9999-9999-999999999999"
+    run_sync "$ROOT" --validate
+    assert_exit_code "20.5 Valid entity UUID + invalid stage UUID → exit 1" "1" "$SYNC_EXIT"
+    assert_contains "20.5b BROKEN for stage" "$SYNC_OUTPUT" "BROKEN"
+
+    cleanup
+
+    # Test 20.6: UUID sync then validate → exit 0
+    ROOT=$(setup_uuid_mock_repo)
+    "$ROOT/.0agnostic/pointer-sync.sh" --rebuild-index > /dev/null 2>&1
+    create_uuid_pointer "$ROOT/layer_1_group/layer_1_features/layer_1_feature_gamma/ptr_uuid_val.md" \
+        "alpha" "aaaa1111-1111-1111-1111-111111111111" "" "" "old/stale"
+    "$ROOT/.0agnostic/pointer-sync.sh" > /dev/null 2>&1
+    run_sync "$ROOT" --validate
+    assert_exit_code "20.6 UUID sync then validate → exit 0" "0" "$SYNC_EXIT"
+
+    cleanup
+
+    # Test 20.7: UUID pointer computes correct relative path
+    ROOT=$(setup_uuid_mock_repo)
+    "$ROOT/.0agnostic/pointer-sync.sh" --rebuild-index > /dev/null 2>&1
+    create_uuid_pointer "$ROOT/layer_1_group/layer_1_features/layer_1_feature_gamma/ptr_uuid_relpath.md" \
+        "alpha" "aaaa1111-1111-1111-1111-111111111111" "" "" "old/path"
+    "$ROOT/.0agnostic/pointer-sync.sh" > /dev/null 2>&1
+    local content
+    content=$(cat "$ROOT/layer_1_group/layer_1_features/layer_1_feature_gamma/ptr_uuid_relpath.md")
+    assert_contains "20.7 UUID relpath → ../layer_1_feature_alpha" "$content" "../layer_1_feature_alpha"
+
+    cleanup
+}
+
+# ============================================================
+# Category 21: --rebuild-index
+# ============================================================
+
+test_rebuild_index() {
+    echo -e "\n${BLUE}=== Category 21: --rebuild-index ===${NC}"
+
+    local ROOT
+
+    # Test 21.1: Rebuild creates .uuid-index.json
+    ROOT=$(setup_uuid_mock_repo)
+    run_sync "$ROOT" --rebuild-index
+    assert_exit_code "21.1a Rebuild exits 0" "0" "$SYNC_EXIT"
+    TOTAL=$((TOTAL + 1))
+    if [ -f "$ROOT/.uuid-index.json" ]; then
+        echo -e "  ${GREEN}PASS${NC}: 21.1b .uuid-index.json created"
+        PASS=$((PASS + 1))
+    else
+        echo -e "  ${RED}FAIL${NC}: 21.1b .uuid-index.json not created"
+        FAIL=$((FAIL + 1))
+    fi
+
+    cleanup
+
+    # Test 21.2: Index contains correct entity count
+    ROOT=$(setup_uuid_mock_repo)
+    "$ROOT/.0agnostic/pointer-sync.sh" --rebuild-index > /dev/null 2>&1
+    local entity_count
+    entity_count=$(python3 -c "
+import json
+with open('$ROOT/.uuid-index.json') as f:
+    data = json.load(f)
+print(sum(1 for v in data.get('uuids', {}).values() if v.get('type') == 'entity'))
+" 2>/dev/null)
+    assert_eq "21.2 Index has 3 entities" "3" "$entity_count"
+
+    cleanup
+
+    # Test 21.3: Index contains stage UUIDs from stage_index.json
+    ROOT=$(setup_uuid_mock_repo)
+    "$ROOT/.0agnostic/pointer-sync.sh" --rebuild-index > /dev/null 2>&1
+    local stage_count
+    stage_count=$(python3 -c "
+import json
+with open('$ROOT/.uuid-index.json') as f:
+    data = json.load(f)
+print(sum(1 for v in data.get('uuids', {}).values() if v.get('type') == 'stage'))
+" 2>/dev/null)
+    assert_eq "21.3 Index has 2 stages" "2" "$stage_count"
+
+    cleanup
+
+    # Test 21.4: Index has checksum
+    ROOT=$(setup_uuid_mock_repo)
+    "$ROOT/.0agnostic/pointer-sync.sh" --rebuild-index > /dev/null 2>&1
+    local has_checksum
+    has_checksum=$(python3 -c "
+import json
+with open('$ROOT/.uuid-index.json') as f:
+    data = json.load(f)
+cs = data.get('checksum', '')
+print('yes' if cs.startswith('sha256:') else 'no')
+" 2>/dev/null)
+    assert_eq "21.4 Index has sha256 checksum" "yes" "$has_checksum"
+
+    cleanup
+
+    # Test 21.5: Index has name-to-UUID mappings
+    ROOT=$(setup_uuid_mock_repo)
+    "$ROOT/.0agnostic/pointer-sync.sh" --rebuild-index > /dev/null 2>&1
+    local alpha_uuid
+    alpha_uuid=$(python3 -c "
+import json
+with open('$ROOT/.uuid-index.json') as f:
+    data = json.load(f)
+print(data.get('names', {}).get('layer_1_feature_alpha', ''))
+" 2>/dev/null)
+    assert_eq "21.5 Name mapping alpha → correct UUID" "aaaa1111-1111-1111-1111-111111111111" "$alpha_uuid"
+
+    cleanup
+
+    # Test 21.6: Rebuild is idempotent (same count)
+    ROOT=$(setup_uuid_mock_repo)
+    "$ROOT/.0agnostic/pointer-sync.sh" --rebuild-index > /dev/null 2>&1
+    local count1
+    count1=$(python3 -c "import json; print(len(json.load(open('$ROOT/.uuid-index.json')).get('uuids', {})))" 2>/dev/null)
+    "$ROOT/.0agnostic/pointer-sync.sh" --rebuild-index > /dev/null 2>&1
+    local count2
+    count2=$(python3 -c "import json; print(len(json.load(open('$ROOT/.uuid-index.json')).get('uuids', {})))" 2>/dev/null)
+    assert_eq "21.6 Rebuild idempotent (same count)" "$count1" "$count2"
+
+    cleanup
+
+    # Test 21.7: Duplicate UUIDs produce warning
+    ROOT=$(setup_uuid_mock_repo)
+    # Create a second entity with the same UUID
+    mkdir -p "$ROOT/layer_1_group/layer_1_features/layer_1_feature_delta"
+    cat > "$ROOT/layer_1_group/layer_1_features/layer_1_feature_delta/0AGNOSTIC.md" <<'EOFILE'
+# 0AGNOSTIC.md - layer_1_feature_delta
+
+## Identity
+
+entity_id: "aaaa1111-1111-1111-1111-111111111111"
+
+Duplicate UUID!
+EOFILE
+    run_sync "$ROOT" --rebuild-index
+    assert_contains "21.7 Duplicate UUID → WARN" "$SYNC_OUTPUT" "Duplicate UUID"
+
+    cleanup
+}
+
+# ============================================================
+# Category 22: --find-references
+# ============================================================
+
+test_find_references() {
+    echo -e "\n${BLUE}=== Category 22: --find-references ===${NC}"
+
+    local ROOT
+
+    # Test 22.1: Find references to a UUID used in a pointer
+    ROOT=$(setup_uuid_mock_repo)
+    "$ROOT/.0agnostic/pointer-sync.sh" --rebuild-index > /dev/null 2>&1
+    create_uuid_pointer "$ROOT/layer_1_group/layer_1_features/layer_1_feature_gamma/ptr_ref1.md" \
+        "alpha ref" "aaaa1111-1111-1111-1111-111111111111"
+    create_uuid_pointer "$ROOT/layer_1_group/layer_1_features/layer_1_feature_gamma/ptr_ref2.md" \
+        "alpha ref 2" "aaaa1111-1111-1111-1111-111111111111"
+    run_sync "$ROOT" --find-references "aaaa1111-1111-1111-1111-111111111111"
+    assert_contains "22.1a Finds ptr_ref1" "$SYNC_OUTPUT" "ptr_ref1.md"
+    assert_contains "22.1b Finds ptr_ref2" "$SYNC_OUTPUT" "ptr_ref2.md"
+    assert_contains "22.1c Reports 2 references" "$SYNC_OUTPUT" "2 reference(s)"
+
+    cleanup
+
+    # Test 22.2: UUID with no references → 0 found
+    ROOT=$(setup_uuid_mock_repo)
+    run_sync "$ROOT" --find-references "ffff9999-9999-9999-9999-999999999999"
+    assert_contains "22.2 No references → 0 found" "$SYNC_OUTPUT" "0 reference(s)"
+
+    cleanup
+
+    # Test 22.3: Find references to a stage UUID
+    ROOT=$(setup_uuid_mock_repo)
+    create_uuid_pointer "$ROOT/layer_1_group/layer_1_features/layer_1_feature_gamma/ptr_stage_ref.md" \
+        "alpha design" "aaaa1111-1111-1111-1111-111111111111" "dddd4444-4444-4444-4444-444444444444"
+    run_sync "$ROOT" --find-references "dddd4444-4444-4444-4444-444444444444"
+    assert_contains "22.3 Stage UUID reference found" "$SYNC_OUTPUT" "ptr_stage_ref.md"
+
+    cleanup
+}
+
+# ============================================================
+# Category 23: --detect-cycles
+# ============================================================
+
+test_detect_cycles() {
+    echo -e "\n${BLUE}=== Category 23: --detect-cycles ===${NC}"
+
+    local ROOT
+
+    # Test 23.1: No cycles → clean output
+    ROOT=$(setup_uuid_mock_repo)
+    create_uuid_pointer "$ROOT/layer_1_group/layer_1_features/layer_1_feature_gamma/ptr_no_cycle.md" \
+        "alpha" "aaaa1111-1111-1111-1111-111111111111"
+    run_sync "$ROOT" --detect-cycles
+    assert_contains "23.1 No cycles → clean" "$SYNC_OUTPUT" "No cycles detected"
+
+    cleanup
+
+    # Test 23.2: Exit 0 when no cycles
+    ROOT=$(setup_uuid_mock_repo)
+    run_sync "$ROOT" --detect-cycles
+    assert_exit_code "23.2 No cycles → exit 0" "0" "$SYNC_EXIT"
+
+    cleanup
+}
+
+# ============================================================
+# Category 24: --gc (Garbage Collection)
+# ============================================================
+
+test_garbage_collection() {
+    echo -e "\n${BLUE}=== Category 24: --gc ===${NC}"
+
+    local ROOT
+
+    # Test 24.1: No orphaned entries → clean message
+    ROOT=$(setup_uuid_mock_repo)
+    "$ROOT/.0agnostic/pointer-sync.sh" --rebuild-index > /dev/null 2>&1
+    run_sync "$ROOT" --gc
+    assert_contains "24.1 No orphans → clean" "$SYNC_OUTPUT" "No orphaned entries"
+    assert_exit_code "24.1b Exit 0" "0" "$SYNC_EXIT"
+
+    cleanup
+
+    # Test 24.2: Orphaned entry is removed
+    ROOT=$(setup_uuid_mock_repo)
+    "$ROOT/.0agnostic/pointer-sync.sh" --rebuild-index > /dev/null 2>&1
+    # Remove alpha entity directory — its UUID becomes orphaned
+    rm -rf "$ROOT/layer_1_group/layer_1_features/layer_1_feature_alpha"
+    run_sync "$ROOT" --gc
+    assert_contains "24.2 Orphaned entry removed" "$SYNC_OUTPUT" "REMOVED"
+
+    cleanup
+
+    # Test 24.3: GC reduces index entry count
+    ROOT=$(setup_uuid_mock_repo)
+    "$ROOT/.0agnostic/pointer-sync.sh" --rebuild-index > /dev/null 2>&1
+    local before_count
+    before_count=$(python3 -c "import json; print(len(json.load(open('$ROOT/.uuid-index.json')).get('uuids', {})))" 2>/dev/null)
+    rm -rf "$ROOT/layer_1_group/layer_1_features/layer_1_feature_alpha"
+    "$ROOT/.0agnostic/pointer-sync.sh" --gc > /dev/null 2>&1
+    local after_count
+    after_count=$(python3 -c "import json; print(len(json.load(open('$ROOT/.uuid-index.json')).get('uuids', {})))" 2>/dev/null)
+    TOTAL=$((TOTAL + 1))
+    if [ "$after_count" -lt "$before_count" ]; then
+        echo -e "  ${GREEN}PASS${NC}: 24.3 GC reduced count ($before_count → $after_count)"
+        PASS=$((PASS + 1))
+    else
+        echo -e "  ${RED}FAIL${NC}: 24.3 GC did not reduce count ($before_count → $after_count)"
+        FAIL=$((FAIL + 1))
+    fi
+
+    cleanup
+
+    # Test 24.4: GC without index → error
+    ROOT=$(setup_uuid_mock_repo)
+    run_sync "$ROOT" --gc
+    assert_contains "24.4 GC without index → error message" "$SYNC_OUTPUT" "No UUID index"
+
+    cleanup
+}
+
+# ============================================================
+# Category 25: Index Locking
+# ============================================================
+
+test_index_locking() {
+    echo -e "\n${BLUE}=== Category 25: Index Locking ===${NC}"
+
+    local ROOT
+
+    # Test 25.1: Lock is created and released during rebuild
+    ROOT=$(setup_uuid_mock_repo)
+    "$ROOT/.0agnostic/pointer-sync.sh" --rebuild-index > /dev/null 2>&1
+    TOTAL=$((TOTAL + 1))
+    if [ ! -d "$ROOT/.uuid-index.json.lock" ]; then
+        echo -e "  ${GREEN}PASS${NC}: 25.1 Lock released after rebuild"
+        PASS=$((PASS + 1))
+    else
+        echo -e "  ${RED}FAIL${NC}: 25.1 Lock NOT released after rebuild"
+        FAIL=$((FAIL + 1))
+    fi
+
+    cleanup
+
+    # Test 25.2: Stale lock (>5 min old) is cleaned up
+    ROOT=$(setup_uuid_mock_repo)
+    # Create a fake stale lock
+    mkdir -p "$ROOT/.uuid-index.json.lock"
+    # Touch with old timestamp
+    touch -t 202601010000 "$ROOT/.uuid-index.json.lock"
+    run_sync "$ROOT" --rebuild-index
+    assert_exit_code "25.2 Stale lock cleaned up → rebuild succeeds" "0" "$SYNC_EXIT"
+
+    cleanup
+}
+
+# ============================================================
+# Category 26: UUID + Name Fallback
+# ============================================================
+
+test_uuid_fallback() {
+    echo -e "\n${BLUE}=== Category 26: UUID + Name Fallback ===${NC}"
+
+    local ROOT content
+
+    # Test 26.1: Pointer with both UUID and name → UUID takes precedence
+    ROOT=$(setup_uuid_mock_repo)
+    "$ROOT/.0agnostic/pointer-sync.sh" --rebuild-index > /dev/null 2>&1
+    mkdir -p "$ROOT/layer_1_group/layer_1_features/layer_1_feature_gamma"
+    cat > "$ROOT/layer_1_group/layer_1_features/layer_1_feature_gamma/ptr_both.md" <<'EOFILE'
+---
+pointer_to: alpha both
+canonical_entity_id: aaaa1111-1111-1111-1111-111111111111
+canonical_entity: layer_1_feature_alpha
+---
+
+# Both UUID and name
+
+> **Canonical location**: `old/path`
+EOFILE
+    run_sync "$ROOT" --verbose
+    assert_contains "26.1 UUID takes precedence over name" "$SYNC_OUTPUT" "Entity resolved via UUID"
+
+    cleanup
+
+    # Test 26.2: Name-only pointer still works (no UUID fields)
+    ROOT=$(setup_uuid_mock_repo)
+    "$ROOT/.0agnostic/pointer-sync.sh" --rebuild-index > /dev/null 2>&1
+    create_pointer "$ROOT/layer_1_group/layer_1_features/layer_1_feature_gamma/ptr_name_only.md" \
+        "alpha legacy" "layer_1_feature_alpha" "" "" "old/path"
+    run_sync "$ROOT" --verbose
+    assert_contains "26.2 Name-only still resolves (legacy)" "$SYNC_OUTPUT" "Entity resolved via name"
+
+    cleanup
+
+    # Test 26.3: UUID auto-rebuild on index miss
+    ROOT=$(setup_uuid_mock_repo)
+    # Don't rebuild index — let the sync auto-build
+    create_uuid_pointer "$ROOT/layer_1_group/layer_1_features/layer_1_feature_gamma/ptr_auto.md" \
+        "alpha auto" "aaaa1111-1111-1111-1111-111111111111" "" "" "old/path"
+    "$ROOT/.0agnostic/pointer-sync.sh" > /dev/null 2>&1
+    run_sync "$ROOT" --validate
+    assert_exit_code "26.3 Auto-rebuild resolves UUID → exit 0" "0" "$SYNC_EXIT"
+
+    cleanup
+
+    # Test 26.4: Mixed UUID and name pointers in same run
+    ROOT=$(setup_uuid_mock_repo)
+    "$ROOT/.0agnostic/pointer-sync.sh" --rebuild-index > /dev/null 2>&1
+    create_uuid_pointer "$ROOT/layer_1_group/layer_1_features/layer_1_feature_gamma/ptr_uuid_mix.md" \
+        "alpha uuid" "aaaa1111-1111-1111-1111-111111111111" "" "" "old/path"
+    create_pointer "$ROOT/layer_1_group/layer_1_features/layer_1_feature_gamma/ptr_name_mix.md" \
+        "beta name" "layer_1_feature_beta" "" "" "old/path"
+    "$ROOT/.0agnostic/pointer-sync.sh" > /dev/null 2>&1
+    run_sync "$ROOT" --validate
+    assert_exit_code "26.4 Mixed UUID+name pointers → all valid" "0" "$SYNC_EXIT"
+
+    cleanup
+}
+
+# ============================================================
 # Main
 # ============================================================
 
@@ -1452,6 +1982,34 @@ fi
 
 if [ -z "$CATEGORY_FILTER" ] || [ "$CATEGORY_FILTER" = "awkreplace" ]; then
     test_awk_replacement
+fi
+
+if [ -z "$CATEGORY_FILTER" ] || [ "$CATEGORY_FILTER" = "uuidresolution" ]; then
+    test_uuid_resolution
+fi
+
+if [ -z "$CATEGORY_FILTER" ] || [ "$CATEGORY_FILTER" = "rebuildindex" ]; then
+    test_rebuild_index
+fi
+
+if [ -z "$CATEGORY_FILTER" ] || [ "$CATEGORY_FILTER" = "findreferences" ]; then
+    test_find_references
+fi
+
+if [ -z "$CATEGORY_FILTER" ] || [ "$CATEGORY_FILTER" = "detectcycles" ]; then
+    test_detect_cycles
+fi
+
+if [ -z "$CATEGORY_FILTER" ] || [ "$CATEGORY_FILTER" = "garbagecollection" ]; then
+    test_garbage_collection
+fi
+
+if [ -z "$CATEGORY_FILTER" ] || [ "$CATEGORY_FILTER" = "indexlocking" ]; then
+    test_index_locking
+fi
+
+if [ -z "$CATEGORY_FILTER" ] || [ "$CATEGORY_FILTER" = "uuidfallback" ]; then
+    test_uuid_fallback
 fi
 
 # Summary
