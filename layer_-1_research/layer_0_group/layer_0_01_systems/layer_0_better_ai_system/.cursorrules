@@ -1,18 +1,7 @@
-# Cursor Rules - Auto-generated from 0AGNOSTIC.md
-
-## Identity
-
-You are an agent at **Layer -1** (Research), **Project**: better_ai_system.
-
-- **Role**: Research Project Manager - Coordinate research into improving AI system architecture
-- **Scope**: Research, design, planning for AI framework improvements. Does not implement in production systems.
-- **Parent**: `../0AGNOSTIC.md` (layer_-1_research)
-- **Children**: `layer_0_group/layer_0_features/` contains 8 research features
+# Cursor Rules
 
 
-# Navigation
-- Resources: .0agnostic/
-- Proposals: layer_-1_group/layer_-1_00_layer_registry/proposals/
 
 ---
-*Auto-generated from 0AGNOSTIC.md*
+*Auto-generated from 0AGNOSTIC.md via agnostic-sync.sh*
+*Do not edit directly - edit 0AGNOSTIC.md instead*

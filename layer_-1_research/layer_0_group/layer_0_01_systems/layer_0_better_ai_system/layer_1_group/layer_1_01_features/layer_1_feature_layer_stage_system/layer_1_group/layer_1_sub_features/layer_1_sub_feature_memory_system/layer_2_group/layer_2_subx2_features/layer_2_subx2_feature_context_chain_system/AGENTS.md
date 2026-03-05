@@ -236,7 +236,7 @@ Every agent you instantiate should:
 | Direction | Entity | How to Access |
 |-----------|--------|---------------|
 | UP to parent | memory_system (layer 1) | Traverse parent chain, read `../../../0AGNOSTIC.md` |
-| UP to grandparent | layer_stage_system (layer 0) | Continue chain to `../../../../../../0AGNOSTIC.md` |
+| UP to grandparent | layer_stage_system (layer 1) | Continue chain to `../../../../../../0AGNOSTIC.md` |
 | ACROSS to sibling | navigation, dynamic_memory (layer 2) | Via parent's Children list |
 | DOWN to children | chain_visualization, context_loading, trigger_pointer_system (layer 3) | `layer_3_group/layer_3_subx3_features/` |
 
@@ -279,14 +279,14 @@ Read these from `.0agnostic/01_knowledge/` for deep context:
 
 ## Parent Layer Context (Principle 10)
 
-This entity details **context_chain_support** (Branch 02/need_01) from the grandparent agent_delegation_system. It also serves as the **primary working example** for all agent delegation patterns.
+This entity details **context_chain_support** (Branch 02/need_01) from agent_delegation_system (now a sibling sub-feature under agent_organization_system). It also serves as the **primary working example** for all agent delegation patterns.
 
 | Ancestor | Stage | What It Provides | Path |
 |----------|-------|-----------------|------|
-| agent_delegation_system (Layer 1) | Stage 01 | Original need: context_chain_support + three_tier_delegation | `../../../../../../layer_1_group/layer_1_99_stages/stage_1_01_request_gathering/` |
-| agent_delegation_system (Layer 1) | Stage 04 | Design decisions governing this entity (0AGNOSTIC.md pattern, two-halves, stage reports) | `../../../../../../layer_1_group/layer_1_99_stages/stage_1_04_design/` |
-| agent_delegation_system (Layer 1) | Stage 06 | Universal artifacts this entity uses (stage guides, principles, rules) | `../../../../../../layer_1_group/layer_1_99_stages/stage_1_06_development/` |
-| agent_delegation_system (Layer 1) | Tree of knowledge | Organized summaries of all delegation knowledge | `../../../../../../.0agnostic/01_knowledge/tree_of_knowledge/` |
+| agent_delegation_system (Layer 2) | Stage 01 | Original need: context_chain_support + three_tier_delegation | `../../../../layer_1_sub_feature_agent_organization_system/layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_agent_delegation_system/layer_2_group/layer_2_99_stages/stage_2_01_request_gathering/` |
+| agent_delegation_system (Layer 2) | Stage 04 | Design decisions governing this entity (0AGNOSTIC.md pattern, two-halves, stage reports) | `../../../../layer_1_sub_feature_agent_organization_system/layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_agent_delegation_system/layer_2_group/layer_2_99_stages/stage_2_04_design/` |
+| agent_delegation_system (Layer 2) | Stage 06 | Universal artifacts this entity uses (stage guides, principles, rules) | `../../../../layer_1_sub_feature_agent_organization_system/layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_agent_delegation_system/layer_2_group/layer_2_99_stages/stage_2_06_development/` |
+| agent_delegation_system (Layer 2) | Tree of knowledge | Organized summaries of all delegation knowledge | `../../../../layer_1_sub_feature_agent_organization_system/layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_agent_delegation_system/.0agnostic/01_knowledge/tree_of_knowledge/` |
 | memory_system (Layer 1) | Parent entity | Memory architecture context | `../../../0AGNOSTIC.md` |
 
 ---

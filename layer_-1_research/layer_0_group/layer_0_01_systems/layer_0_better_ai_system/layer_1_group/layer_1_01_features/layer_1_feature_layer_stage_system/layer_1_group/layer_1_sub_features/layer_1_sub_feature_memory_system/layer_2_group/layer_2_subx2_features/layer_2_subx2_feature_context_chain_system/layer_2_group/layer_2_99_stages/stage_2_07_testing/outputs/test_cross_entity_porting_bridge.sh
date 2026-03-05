@@ -6,7 +6,7 @@ set -uo pipefail
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 STAGE_DIR="$(cd "$SCRIPT_DIR/.." && pwd)"
 CC_ENTITY_ROOT="$(cd "$STAGE_DIR/../../.." && pwd)"
-SUB_FEATURES_ROOT="$(cd "$CC_ENTITY_ROOT/../../../../../../../" && pwd)"
+SUB_FEATURES_ROOT="$(cd "$CC_ENTITY_ROOT/../../../../" && pwd)"
 TOOL_ENTITY_ROOT="$SUB_FEATURES_ROOT/layer_1_sub_feature_tool_and_app_agnostic"
 
 PASS=0
