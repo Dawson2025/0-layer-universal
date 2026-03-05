@@ -211,12 +211,15 @@ canonical_subpath: "outputs/by_topic/architecture/context_chain_architecture.md"
 8. Compute relative path from pointer to target
 ```
 
-### Performance: UUID Index
+### Performance: Hybrid Index Architecture
 
-Scanning all `0AGNOSTIC.md` files for UUIDs on every run would be slow. Solution: an index file.
+Scanning all `0AGNOSTIC.md` files for UUIDs on every run would be slow. Solution: a **hybrid index architecture** — local authoritative indexes per entity, aggregated into a global root index.
+
+#### Root Index (`.uuid-index.json` at ROOT level)
+
+Contains ALL UUIDs across the entire system — entities, stages, and resources:
 
 ```json
-// .uuid-index.json (at ROOT level, auto-generated)
 {
   "generated": "2026-03-02T10:30:00Z",
   "entities": {
@@ -224,14 +227,48 @@ Scanning all `0AGNOSTIC.md` files for UUIDs on every run would be slow. Solution
       "name": "layer_2_subx2_feature_context_chain_system",
       "path": "/full/path/to/entity"
     }
+  },
+  "stages": {
+    "33333333-aaaa-4bbb-cccc-dddddddddddd": {
+      "entity_id": "a1b2c3d4-...",
+      "name": "research",
+      "directory": "stage_2_02_research"
+    }
+  },
+  "resources": {
+    "f47ac10b-58cc-4372-a567-0e02b2c3d479": {
+      "entity_id": "a1b2c3d4-...",
+      "type": "knowledge",
+      "name": "pointer_sync_knowledge",
+      "path": ".0agnostic/01_knowledge/pointer_sync/pointer_sync_knowledge.md"
+    }
   }
 }
 ```
 
-Index behavior:
+#### Local Indexes (per entity)
+
+- `stage_index.json` in `stage_N_00_stage_registry/` — authoritative source for that entity's stages
+- `resource_index.json` in `.0agnostic/` — authoritative source for that entity's resources
+
+#### How They Relate
+
+```
+Local (authoritative)          Root (aggregated)
+─────────────────────          ──────────────────
+entity/stage_index.json  ──┐
+entity/resource_index.json ──┼──> .uuid-index.json
+entity_2/stage_index.json ──┘
+```
+
+Root index is **rebuilt from local indexes** — `--rebuild-index` reads all local `stage_index.json` and `resource_index.json` files to produce the global `.uuid-index.json`. This mirrors how databases work: local data files are authoritative, global indexes are derived.
+
+#### Index Behavior
+
 - Rebuilt on `pointer-sync.sh --rebuild-index` or when index is missing
 - Auto-rebuilt if a UUID lookup fails (entity may have been created since last index build)
 - Optionally rebuilt as part of `agnostic-sync.sh`
+- Future: incremental updates instead of full rebuilds (update only changed entities)
 
 ---
 
@@ -631,8 +668,33 @@ The Phase 1-6 migration plan expands to include:
 
 ---
 
+## 12. Document Database Analogy
+
+The layer-stage hierarchy is functionally a **filesystem-backed document database**. Recognizing this validates the UUID design and informs future architecture.
+
+| Document DB Concept | Layer-Stage Equivalent |
+|---|---|
+| **Database** | `0_layer_universal/` root |
+| **Collection** | `layer_N_group/` directory |
+| **Document** | Entity directory + `0AGNOSTIC.md` |
+| **Document ID** (`_id`) | `entity_id` UUID |
+| **Embedded subdocument** | `.0agnostic/` resources |
+| **Nested collection** | `layer_N+1_group/` children |
+| **Foreign key / reference** | Pointer file with `canonical_entity_id` |
+| **Index** | `.uuid-index.json`, `stage_index.json`, `resource_index.json` |
+| **Schema** | `entity_structure.md` |
+| **View / projection** | `CLAUDE.md` (auto-generated from `0AGNOSTIC.md`) |
+| **Migration script** | `agnostic-sync.sh`, `assign-entity-uuids.sh` |
+
+Closest match: **CouchDB** — self-contained documents, materialized views, UUID-based identity, eventual consistency via sync.
+
+Full research: `../../../stage_3_02_research/outputs/uuid_and_database_patterns_research.md`
+
+---
+
 ## Sources
 
 - Research: `../../../stage_3_02_research/outputs/rename_propagation_research.md` — evaluation of 7 rename propagation approaches
+- Research: `../../../stage_3_02_research/outputs/uuid_and_database_patterns_research.md` — UUID universality, document database analogy
 - IETF UUID Specification: RFC 4122
 - Current system: `/home/dawson/dawson-workspace/code/0_layer_universal/.0agnostic/pointer-sync.sh`
