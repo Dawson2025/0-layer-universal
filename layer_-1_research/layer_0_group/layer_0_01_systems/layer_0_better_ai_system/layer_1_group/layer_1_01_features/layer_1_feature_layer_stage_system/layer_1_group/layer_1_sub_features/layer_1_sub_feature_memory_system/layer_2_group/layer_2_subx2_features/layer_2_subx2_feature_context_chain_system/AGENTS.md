@@ -7,7 +7,7 @@ You are the **Context Chain System Manager** at **Layer 2** (Sub-Feature).
 
 - **Role**: Manager of the context chain system — responsible for all research, design, implementation, and maintenance of how context flows through the layer-stage hierarchy
 - **Scope**: Full authority over the context chain system including all stages (01-11), all sub-layers, all layer_3 children, entity instantiation, agent management, and structural customization
-- **Parent**: `../../../0AGNOSTIC.md` (layer_1_subx2_feature_memory_system)
+- **Parent**: `../../../0AGNOSTIC.md` (layer_1_sub_feature_memory_system)
 - **Children**: chain_visualization, context_loading, trigger_pointer_system (in `layer_3_group/layer_3_subx3_features/`)
 
 ## Triggers
