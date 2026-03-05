@@ -1,5 +1,12 @@
 # Claude Code Context
 
+---
+resource_id: "6512d4dd-e3d9-4286-b7c4-48d54da4cf6d"
+resource_type: "agnostic
+document"
+resource_name: "0AGNOSTIC"
+---
+# 0_layer_universal - Agnostic Identity
 
 ## Identity
 
@@ -139,6 +146,11 @@ This file is auto-generated from 0AGNOSTIC.md. Edit 0AGNOSTIC.md to make changes
 - Create session files after significant work
 - Update divergence.log when modifying outputs
 
+---
+resource_id: "4ad5e701-2fdd-4fee-8453-cb78a1f8d309"
+resource_type: "document"
+resource_name: "tool_additions"
+---
 # Claude Code CLI — Universal Additions
 
 ## Browser Extraction Capabilities
