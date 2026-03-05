@@ -78,10 +78,11 @@ Refer to `entity_structure.md` (link above) for the stage creation bash commands
 
 Quick summary:
 1. Create `0AGNOSTIC.md` (templates in INSTANTIATION_GUIDE.md), `0INDEX.md`, `README.md`
-2. Create orchestrator and agent .jsonld files (copy from sibling entity)
-3. Generate `.integration.md` for each `.jsonld` file
-4. Run `agnostic-sync.sh` on ALL `0AGNOSTIC.md` files
-5. Run `validate-entity.sh` to verify
+2. **Generate entity_id UUID** in `0AGNOSTIC.md` `## Identity` section: `entity_id: "$(uuidgen | tr '[:upper:]' '[:lower:]')"`
+3. Create orchestrator and agent .jsonld files (copy from sibling entity)
+4. Generate `.integration.md` for each `.jsonld` file
+5. Run `agnostic-sync.sh` on ALL `0AGNOSTIC.md` files
+6. Run `validate-entity.sh` to verify
 
 ## Naming Conventions
 
@@ -103,6 +104,7 @@ Children are always layer N+1 of their parent.
 **Quick validation**:
 - [ ] ALL 12 stages created (00-11)
 - [ ] `0AGNOSTIC.md`, `0INDEX.md`, `README.md` exist at entity root
+- [ ] `entity_id: "uuid"` present in `0AGNOSTIC.md` `## Identity` section
 - [ ] `agnostic-sync.sh` run on all 0AGNOSTIC.md files
 - [ ] `validate-entity.sh <entity-path>` passes all checks
 
