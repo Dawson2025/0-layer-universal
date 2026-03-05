@@ -1,0 +1,44 @@
+#!/usr/bin/env bash
+# resource_id: "d4f6a8c2-3e51-4b97-8a2d-1c9e5f7b3d60"
+# resource_type: "script"
+# resource_name: "pre-commit-hook"
+#
+# Git pre-commit hook: warn if CLAUDE.md is staged but 0AGNOSTIC.md is not.
+# This catches manual CLAUDE.md edits (should edit 0AGNOSTIC.md instead).
+# Install: ln -sf ../../.0agnostic/git-hooks/pre-commit .git/hooks/pre-commit
+
+set -euo pipefail
+
+STAGED=$(git diff --cached --name-only)
+
+# Check for CLAUDE.md staged without corresponding 0AGNOSTIC.md
+CLAUDE_STAGED=$(echo "$STAGED" | grep 'CLAUDE\.md$' || true)
+AGNOSTIC_STAGED=$(echo "$STAGED" | grep '0AGNOSTIC\.md$' || true)
+
+if [[ -n "$CLAUDE_STAGED" && -z "$AGNOSTIC_STAGED" ]]; then
+    echo ""
+    echo "[pre-commit] WARNING: CLAUDE.md is staged but no 0AGNOSTIC.md is staged."
+    echo "  CLAUDE.md is auto-generated — edit 0AGNOSTIC.md and run agnostic-sync.sh instead."
+    echo "  Staged CLAUDE.md files:"
+    echo "$CLAUDE_STAGED" | sed 's/^/    /'
+    echo ""
+    echo "  Proceeding anyway (warning only)."
+    echo ""
+fi
+
+# Check for new pointer files missing UUID fields
+NEW_POINTERS=$(echo "$STAGED" | while read -r f; do
+    if [[ -f "$f" ]] && head -20 "$f" 2>/dev/null | grep -q 'pointer_to:'; then
+        if ! head -20 "$f" 2>/dev/null | grep -q 'canonical_entity_id:'; then
+            echo "$f"
+        fi
+    fi
+done || true)
+
+if [[ -n "$NEW_POINTERS" ]]; then
+    echo ""
+    echo "[pre-commit] WARNING: Pointer file(s) missing canonical_entity_id:"
+    echo "$NEW_POINTERS" | sed 's/^/    /'
+    echo "  Run: migrate-pointers.sh to add UUID fields."
+    echo ""
+fi

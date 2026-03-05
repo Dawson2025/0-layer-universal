@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+# resource_id: "b2e1c4a3-7f89-4d56-a1e3-9c8b2d4f6a71"
+# resource_type: "script"
+# resource_name: "post-merge-hook"
+#
+# Git post-merge hook: rebuild UUID index and validate pointers after pull/merge.
+# Install: ln -sf ../../.0agnostic/git-hooks/post-merge .git/hooks/post-merge
+
+set -euo pipefail
+
+REPO_ROOT="$(git rev-parse --show-toplevel)"
+SCRIPT_DIR="$REPO_ROOT/.0agnostic"
+
+# Rebuild UUID index if any 0AGNOSTIC.md files changed
+if git diff-tree -r --name-only ORIG_HEAD HEAD | grep -q '0AGNOSTIC.md'; then
+    echo "[post-merge] 0AGNOSTIC.md changed — rebuilding UUID index..."
+    bash "$SCRIPT_DIR/pointer-sync.sh" --rebuild-index
+fi
+
+# Validate pointers if any pointer files or entity directories changed
+echo "[post-merge] Validating pointers..."
+bash "$SCRIPT_DIR/pointer-sync.sh" --validate || {
+    echo "[post-merge] WARNING: Broken pointers detected after merge. Run: pointer-sync.sh"
+}
