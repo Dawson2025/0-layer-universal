@@ -19,10 +19,14 @@ Every pointer file MUST have YAML frontmatter with these fields:
 ---
 pointer_to: logical_id            # Required: human-readable identifier
 canonical_entity: entity_name     # Required: directory name to find via search
+canonical_entity_id: "uuid"       # Required: entity UUID from .uuid-index.json
 canonical_stage: stage_name       # Optional: stage directory within entity
+canonical_stage_id: "uuid"        # Optional: stage UUID from stage_index.json
 canonical_subpath: relative/path  # Optional: path within stage/entity
 ---
 ```
+
+**UUID fields**: `canonical_entity_id` and `canonical_stage_id` are stable identifiers that survive renames. The script resolves UUIDs first, falling back to name-based resolution for backward compatibility.
 
 The body MUST include a `> **Canonical location**:` line that the script updates:
 
@@ -46,6 +50,10 @@ The body MUST include a `> **Canonical location**:` line that the script updates
 | `pointer-sync.sh --dry-run` | Preview changes without modifying files |
 | `pointer-sync.sh --validate` | Check all pointers resolve; exit 1 if broken |
 | `pointer-sync.sh --verbose` | Show detailed resolution steps |
+| `pointer-sync.sh --rebuild-index` | Rebuild `.uuid-index.json` from all entity UUIDs |
+| `pointer-sync.sh --find-references UUID` | Find all pointers referencing a given UUID |
+| `pointer-sync.sh --detect-cycles` | Check for circular pointer references |
+| `pointer-sync.sh --gc` | Find orphaned UUIDs (no matching entity directory) |
 
 **Script location**: `.0agnostic/pointer-sync.sh`
 
@@ -68,18 +76,24 @@ Hook configuration: `.claude/settings.json` → `PostToolUse` → `Edit|Write`
 ## 7. Resolution Algorithm
 
 For each pointer file:
-1. Extract `canonical_entity` from frontmatter
-2. `find` the entity directory by name under `0_layer_universal/`
-3. If `canonical_stage` is set, find that stage within the entity
+1. **UUID-first**: If `canonical_entity_id` exists, look up the entity path in `.uuid-index.json`
+2. **Name fallback**: If no UUID or UUID lookup fails, `find` the entity directory by `canonical_entity` name
+3. **Stage resolution**: If `canonical_stage_id` exists, look up in the entity's `stage_index.json`; otherwise find by `canonical_stage` name
 4. If `canonical_subpath` is set, append it
 5. Compute relative path from pointer file's directory to canonical target
 6. Update the `> **Canonical location**:` line
+7. If name fallback was used, emit a deprecation warning
+
+**UUID index location**: `.uuid-index.json` at repo root
+**Stage index location**: `stage_*_00_stage_registry/stage_index.json` within each entity
 
 ## 8. Troubleshooting
 
 | Problem | Cause | Fix |
 |---------|-------|-----|
-| "entity not found" | Directory renamed or moved | Update `canonical_entity` in frontmatter |
-| "stage not found" | Stage directory missing | Check entity has the expected stage |
+| "entity not found" | Directory renamed or moved | Update `canonical_entity` in frontmatter, or add `canonical_entity_id` |
+| "stage not found" | Stage directory missing | Check entity has the expected stage, or add `canonical_stage_id` |
 | "subpath does not exist" | Content moved within entity | Update `canonical_subpath` in frontmatter |
 | "no Canonical location line" | Pointer body missing required line | Add `> **Canonical location**: \`\`` to body |
+| "UUID not in index" | Entity renamed without index rebuild | Run `pointer-sync.sh --rebuild-index` |
+| "name fallback warning" | Pointer missing UUID fields | Run `migrate-pointers.sh` to add UUID fields |

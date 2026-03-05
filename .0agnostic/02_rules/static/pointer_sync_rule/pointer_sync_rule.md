@@ -12,10 +12,12 @@ resource_name: "pointer_sync_rule"
 When creating or modifying a pointer file:
 
 1. **MUST** include YAML frontmatter with `pointer_to:` and `canonical_entity:` fields
-2. **MUST** include a `> **Canonical location**:` line in the body
-3. **MUST** run `pointer-sync.sh --validate` after creation or modification
-4. **MUST NOT** hardcode absolute paths in pointer files
-5. **MUST NOT** manually compute relative paths — let `pointer-sync.sh` handle it
+2. **MUST** include `canonical_entity_id:` with the target entity's UUID
+3. **MUST** include `canonical_stage_id:` if `canonical_stage:` is set
+4. **MUST** include a `> **Canonical location**:` line in the body
+5. **MUST** run `pointer-sync.sh --validate` after creation or modification
+6. **MUST NOT** hardcode absolute paths in pointer files
+7. **MUST NOT** manually compute relative paths — let `pointer-sync.sh` handle it
 
 ## Pointer File Template
 
@@ -23,7 +25,9 @@ When creating or modifying a pointer file:
 ---
 pointer_to: logical_id
 canonical_entity: entity_directory_name
+canonical_entity_id: "uuid-from-uuid-index"
 canonical_stage: stage_N_NN_name        # optional
+canonical_stage_id: "uuid-from-stage-index"  # required if canonical_stage is set
 canonical_subpath: path/within/stage    # optional
 ---
 # [Title] — Pointer

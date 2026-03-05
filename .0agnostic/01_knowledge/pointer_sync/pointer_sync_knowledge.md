@@ -14,6 +14,11 @@ The pointer sync system keeps pointer files synchronized with their canonical co
 | Component | Location | Purpose |
 |-----------|----------|---------|
 | `pointer-sync.sh` | `.0agnostic/pointer-sync.sh` | Main sync script — finds, resolves, updates pointers |
+| `assign-entity-uuids.sh` | `.0agnostic/assign-entity-uuids.sh` | Assigns UUIDs to all entities (0AGNOSTIC.md) |
+| `assign-file-uuids.sh` | `.0agnostic/assign-file-uuids.sh` | Assigns UUIDs to all files (.md, .sh, .json, .jsonld) |
+| `create-stage-indexes.sh` | `.0agnostic/create-stage-indexes.sh` | Creates stage_index.json for each entity's stages |
+| `migrate-pointers.sh` | `.0agnostic/migrate-pointers.sh` | Adds UUID fields to existing name-based pointers |
+| `.uuid-index.json` | Repo root | Flat UUID→path index for all entities |
 | Protocol | `.0agnostic/03_protocols/pointer_sync_protocol.md` | Step-by-step usage guide |
 | Rule | `.0agnostic/02_rules/static/pointer_sync_rule/` | Always-apply rule for pointer file format |
 | Hook (pointer) | `.0agnostic/06_.../08_hooks/scripts/pointer-edit-guard.sh` | Reminds agents to validate after editing pointers |
@@ -33,11 +38,13 @@ canonical_subpath: outputs/requests/tree_of_needs/00_context_survives_boundaries
 ```
 
 The script uses these fields to:
-1. **Find** the entity directory by name (`find ... -name "$canonical_entity"`)
-2. **Navigate** to the stage within it (if `canonical_stage` is set)
+1. **Resolve entity** — UUID-first: look up `canonical_entity_id` in `.uuid-index.json`; fallback: `find` by `canonical_entity` name
+2. **Resolve stage** — UUID-first: look up `canonical_stage_id` in entity's `stage_index.json`; fallback: find by `canonical_stage` name
 3. **Append** the subpath (if `canonical_subpath` is set)
 4. **Compute** a relative path from the pointer to the canonical location
 5. **Update** the `> **Canonical location**:` line in the pointer body
+
+UUID-first resolution means pointers survive entity/stage renames without breaking.
 
 ## Relationship to Existing Systems
 
@@ -45,10 +52,23 @@ The script uses these fields to:
 - **agnostic-sync.sh**: Pointer validation runs at the end of agnostic-sync. Broken pointers produce warnings.
 - **Claude Code hooks**: The `pointer-edit-guard.sh` hook fires after any Edit/Write on a pointer file, reminding the agent to validate.
 
+## UUID Identity System
+
+Every entity, stage, and file has a UUID v4 identifier:
+
+| Scope | Where UUID Lives | Lookup |
+|-------|-----------------|--------|
+| Entity | `entity_id:` in `0AGNOSTIC.md` Identity section | `.uuid-index.json` at repo root |
+| Stage | `stage_index.json` in `stage_*_00_stage_registry/` | Per-entity stage index |
+| File | `resource_id:` in frontmatter (.md), comment header (.sh), or JSON root (.json/.jsonld) | By file path |
+
+UUIDs are immutable — they never change regardless of renames. This is the foundation that makes pointer resolution rename-safe.
+
 ## Key Design Decisions
 
 1. **Frontmatter-based identification**: Pointers self-declare via `pointer_to:` field. No external registry needed.
-2. **Entity-relative resolution**: Uses `find` to locate entity directories by name. This means pointers survive when parent directories change — only the entity itself needs to keep its name.
+2. **UUID-first resolution**: Pointers include `canonical_entity_id` and `canonical_stage_id` for rename-safe resolution. Name-based `find` is the backward-compatible fallback.
 3. **Relative paths in body**: The displayed path is relative (not absolute), following existing conventions.
 4. **Non-destructive**: The script only modifies the `> **Canonical location**:` line. All other content in the pointer is preserved.
 5. **Validation mode**: `--validate` exits non-zero on broken pointers, suitable for CI or pre-commit checks.
+6. **Flat index**: `.uuid-index.json` maps UUID→path and name→UUID for O(1) lookups instead of `find` scans.
