@@ -668,25 +668,37 @@ The Phase 1-6 migration plan expands to include:
 
 ---
 
-## 12. Document Database Analogy
+## 12. Database Paradigm Analysis
 
-The layer-stage hierarchy is functionally a **filesystem-backed document database**. Recognizing this validates the UUID design and informs future architecture.
+The layer-stage hierarchy is functionally a **filesystem-backed database**. Comparing against all major database paradigms reveals which patterns we're using and validates the UUID design.
+
+### Similarity Ranking
+
+| Rank | Database Type | Overlap | Why |
+|------|--------------|---------|-----|
+| 1 | **Document DB** (MongoDB, CouchDB) | Highest | Self-contained entities with embedded resources, materialized views, two-level indexes |
+| 2 | **Hierarchical DB** (IBM IMS) | Very high | Tree structure, parent-child ownership, path-based traversal |
+| 3 | **Graph DB** (Neo4j) | Moderate | Pointer files create a reference graph across entities |
+| 4 | **Object DB** | Moderate | Encapsulated entities with identity and state |
+| 5 | **Key-Value** (Redis) | Low | UUID index is a key-value lookup (one component) |
+| 6 | **Relational DB** (PostgreSQL) | Lowest | Normalization would destroy self-contained design |
+
+### Key Document DB Parallels
 
 | Document DB Concept | Layer-Stage Equivalent |
 |---|---|
-| **Database** | `0_layer_universal/` root |
-| **Collection** | `layer_N_group/` directory |
 | **Document** | Entity directory + `0AGNOSTIC.md` |
 | **Document ID** (`_id`) | `entity_id` UUID |
 | **Embedded subdocument** | `.0agnostic/` resources |
-| **Nested collection** | `layer_N+1_group/` children |
-| **Foreign key / reference** | Pointer file with `canonical_entity_id` |
-| **Index** | `.uuid-index.json`, `stage_index.json`, `resource_index.json` |
-| **Schema** | `entity_structure.md` |
-| **View / projection** | `CLAUDE.md` (auto-generated from `0AGNOSTIC.md`) |
-| **Migration script** | `agnostic-sync.sh`, `assign-entity-uuids.sh` |
+| **Collection** | `layer_N_group/` directory |
+| **Per-collection index** | Local `stage_index.json`, `resource_index.json` |
+| **Global index** | Root `.uuid-index.json` (aggregated from locals) |
+| **Schema / validation** | `entity_structure.md` |
+| **Materialized view** | `CLAUDE.md` (auto-generated from `0AGNOSTIC.md`) |
 
-Closest match: **CouchDB** — self-contained documents, materialized views, UUID-based identity, eventual consistency via sync.
+### Why Document DB Wins Over Hierarchical DB
+
+Both have high overlap, but the **self-contained entity** pattern is the most defining characteristic. Hierarchical DBs organize by tree structure (which we also do) but don't emphasize data locality — each entity carrying its own resources, indexes, and identity is fundamentally document-oriented. Hierarchical DBs also lack cross-tree references (our pointer files link across branches).
 
 Full research: `../../../stage_3_02_research/outputs/uuid_and_database_patterns_research.md`
 

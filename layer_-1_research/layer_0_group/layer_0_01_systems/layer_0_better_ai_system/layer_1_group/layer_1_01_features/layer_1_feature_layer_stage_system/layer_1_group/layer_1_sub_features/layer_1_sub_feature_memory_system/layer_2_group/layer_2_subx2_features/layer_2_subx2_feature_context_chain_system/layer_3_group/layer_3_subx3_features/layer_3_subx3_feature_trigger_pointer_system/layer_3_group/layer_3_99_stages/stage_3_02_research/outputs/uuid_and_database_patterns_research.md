@@ -37,11 +37,17 @@ UUID v4 (random) is the most commonly used version for application-level identif
 
 ---
 
-## 2. Our System as a Document Database
+## 2. Database Type Similarity Ranking
 
-### The Analogy
+### Which Database Type Does Our System Most Resemble?
 
-The layer-stage hierarchy is functionally a **filesystem-backed document database**. The parallels are structural, not just metaphorical:
+The layer-stage hierarchy is a **filesystem-backed database**. To understand it properly, we compared it against every major database paradigm. The system has characteristics of multiple types, but one is the clear winner.
+
+### Ranked by Overlap
+
+#### 1. Document Database (MongoDB, CouchDB) — Highest Overlap
+
+The defining characteristic of our system is that **each entity is self-contained** — it carries its own resources (knowledge, rules, protocols, skills) embedded within it. This is the core document database principle: documents are autonomous units with internal structure.
 
 | Document DB Concept | Layer-Stage Equivalent | Example |
 |---|---|---|
@@ -52,36 +58,94 @@ The layer-stage hierarchy is functionally a **filesystem-backed document databas
 | **Embedded subdocument** | `.0agnostic/` resources | `01_knowledge/`, `02_rules/`, etc. |
 | **Nested collection** | `layer_N+1_group/` children | Children of a feature are a nested collection |
 | **Foreign key / reference** | Pointer file with `canonical_entity_id` | Points to another document by UUID |
-| **Index** | `.uuid-index.json`, `stage_index.json` | Maps UUID → filesystem path for fast lookup |
-| **Schema** | `entity_structure.md` | Canonical structure all entities must follow |
-| **View / projection** | `CLAUDE.md` (auto-generated) | Read-only view of `0AGNOSTIC.md` for a specific tool |
+| **Per-collection index** | Local `stage_index.json`, `resource_index.json` | Per-entity authoritative UUID mappings |
+| **Global index** | Root `.uuid-index.json` | Aggregated from all local indexes |
+| **Schema / validation** | `entity_structure.md` | Canonical structure all entities must follow |
+| **View / projection** | `CLAUDE.md` (auto-generated) | Read-only materialized view of `0AGNOSTIC.md` |
 | **Migration script** | `agnostic-sync.sh`, `assign-entity-uuids.sh` | Schema evolution and data migration |
 
-### Closest Match: CouchDB / MongoDB
+**Why it's #1**: The self-contained entity pattern is the most defining characteristic. Each entity carries everything it needs — its identity, its resources, its indexes. This is fundamentally document-oriented. The two-level index architecture (local authoritative + global aggregated) directly mirrors how MongoDB indexes work.
 
-The system most closely resembles **CouchDB** because:
+**CouchDB parallels specifically**:
 1. **Documents are self-contained** — each entity carries its own resources in `.0agnostic/`
 2. **Documents have internal structure** — not flat key-value, but nested (knowledge, rules, protocols)
 3. **Unique IDs are the primary accessor** — `entity_id` UUID, not name or path
-4. **Views are generated** — `CLAUDE.md` is a materialized view of `0AGNOSTIC.md`, like CouchDB views are materialized from documents
+4. **Views are generated** — `CLAUDE.md` is a materialized view of `0AGNOSTIC.md`, like CouchDB views
 5. **Eventual consistency** — `agnostic-sync.sh` propagates changes (like CouchDB replication)
 
-MongoDB parallels:
+**MongoDB parallels specifically**:
 - **Collections** = `layer_N_group/` directories
 - **Embedded documents** = `.0agnostic/` subdirectories
 - **References** = pointer files (like MongoDB `$ref` / `ObjectId` references)
-- **Indexes** = `.uuid-index.json` (like `db.collection.createIndex()`)
+- **Per-collection indexes** = local `stage_index.json` (like `db.collection.createIndex()`)
+- **Compound indexes** = root `.uuid-index.json` aggregating all local indexes
+
+#### 2. Hierarchical Database (IBM IMS) — Very High Overlap
+
+The tree structure (parent-child via directory nesting up to 7 levels) is the defining trait of hierarchical databases. Each node owns its children — entities own stages, stages own outputs.
+
+| Hierarchical DB Concept | Layer-Stage Equivalent |
+|---|---|
+| **Record** | Entity directory |
+| **Parent-child relationship** | Directory nesting (entity → stages → outputs) |
+| **Tree traversal** | Parent chain from leaf to root (7 levels) |
+| **Segment** | Each level of the hierarchy (layer 0, 1, 2, 3...) |
+
+**Why it's #2 not #1**: Hierarchical DBs don't typically support cross-tree references. Our pointer files create links across the hierarchy (entity A points to entity B in a different branch). Hierarchical DBs also don't have the self-contained embedded resource pattern — that's document-oriented.
+
+#### 3. Graph Database (Neo4j, ArangoDB) — Moderate Overlap
+
+Pointer files with UUIDs create a graph of references on top of the tree structure. Any entity can reference any other entity by UUID — that's a graph edge.
+
+| Graph DB Concept | Layer-Stage Equivalent |
+|---|---|
+| **Node** | Entity (identified by UUID) |
+| **Edge** | Pointer file (`canonical_entity_id` → target UUID) |
+| **Node properties** | `0AGNOSTIC.md` metadata |
+| **Traversal** | Following pointer chains across entities |
+
+**Why it's #3**: The primary organizational structure is the **tree hierarchy**, not the graph of relationships. Pointer references are secondary — they exist on top of the tree, not instead of it. Graph DBs also don't emphasize data locality (self-contained documents) — they emphasize relationship traversal.
+
+#### 4. Object Database — Moderate Overlap
+
+Each entity is like an object: it has identity (UUID), state (0AGNOSTIC.md), and encapsulated resources (`.0agnostic/`). The rigid schema resembles class definitions.
+
+**Why it's #4**: Object DBs emphasize behavior/methods alongside data. Our entities don't have behavior — they have structure and content. The pattern is closer to documents than objects.
+
+#### 5. Key-Value Store (Redis, DynamoDB) — Low Overlap
+
+The universal UUID index (UUID → path) is a key-value lookup. But that's one component, not the whole system.
+
+**Why it's #5**: Key-value stores are flat. Our system is deeply nested and structured. The key-value pattern only applies to the index layer.
+
+#### 6. Relational Database (PostgreSQL, MySQL) — Lowest Overlap
+
+UUIDs as foreign keys and rigid schema create surface similarity. But relational DBs would require normalizing self-contained entities across multiple tables, destroying the embedded resource design.
+
+**Why it's last**: Normalization is the opposite of our design philosophy. We intentionally denormalize — each entity carries its own copy of what it needs. Relational DBs would fragment that across tables.
+
+### Summary
+
+| Rank | Database Type | Overlap | Key Parallel | Key Difference |
+|------|--------------|---------|-------------|----------------|
+| 1 | **Document DB** | Highest | Self-contained entities with embedded resources, materialized views, two-level indexes | Our schema is rigid (document DBs usually allow flexible schemas) |
+| 2 | **Hierarchical DB** | Very high | Tree structure, parent-child ownership, path-based traversal | No cross-tree references in hierarchical DBs |
+| 3 | **Graph DB** | Moderate | Pointer files create a reference graph across entities | Primary structure is tree, not graph |
+| 4 | **Object DB** | Moderate | Encapsulated entities with identity and state | No behavior/methods, just structure |
+| 5 | **Key-Value** | Low | UUID index is a key-value lookup | Only applies to index layer |
+| 6 | **Relational DB** | Lowest | UUIDs as foreign keys, rigid schema | Normalization destroys self-contained design |
 
 ### What This Means for Design
 
 Recognizing the document database pattern validates several design decisions:
 
 1. **UUIDs as primary keys** — standard practice in every database type
-2. **Indexes for fast lookup** — `.uuid-index.json` is just a database index
+2. **Two-level indexes** — local authoritative + global aggregated, exactly like MongoDB
 3. **References by ID, not name** — pointer files are foreign keys
 4. **Schema enforcement** — `entity_structure.md` is the schema definition
-5. **Denormalization** — each entity carries its own resources (like document DB denormalization)
+5. **Denormalization** — each entity carries its own resources (document DB denormalization)
 6. **Generated views** — `CLAUDE.md` is a materialized view, regenerated on change
+7. **Flat UUID lookup** — universal index enables "any UUID → path" regardless of type
 
 ---
 
