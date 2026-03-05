@@ -1,3 +1,6 @@
+---
+file_id: "f4bf732a-aa78-41b2-af5b-581121ced0af"
+---
 # Google Gemini API: Comprehensive Technical Reference (2024-2026)
 
 **Version**: 1.0

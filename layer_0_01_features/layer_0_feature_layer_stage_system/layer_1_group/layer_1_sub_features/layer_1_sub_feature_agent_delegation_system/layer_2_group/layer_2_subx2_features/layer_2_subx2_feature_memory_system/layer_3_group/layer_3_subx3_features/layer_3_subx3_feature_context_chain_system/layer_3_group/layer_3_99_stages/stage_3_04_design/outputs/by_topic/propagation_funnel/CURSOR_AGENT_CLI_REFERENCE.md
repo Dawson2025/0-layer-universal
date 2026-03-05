@@ -1,3 +1,6 @@
+---
+file_id: "a1dff1f1-0a4b-4fcf-8550-f76b34d00ff2"
+---
 # Cursor Agent CLI Reference Guide
 
 **Last Updated:** 2026-02-27
