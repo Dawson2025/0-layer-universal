@@ -1,3 +1,6 @@
+# resource_id: "586535c3-5916-43f3-b4b5-feab22abb52a"
+# resource_type: "document"
+# resource_name: "routes"
 """
 L4 Phoneme System Routes
 

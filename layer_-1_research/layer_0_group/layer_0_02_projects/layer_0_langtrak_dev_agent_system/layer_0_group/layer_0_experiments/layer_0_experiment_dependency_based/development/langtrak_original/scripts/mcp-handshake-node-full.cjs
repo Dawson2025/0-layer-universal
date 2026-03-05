@@ -1,3 +1,6 @@
+// resource_id: "b26263c7-4a0c-4d0b-8d2e-b76c31e856c1"
+// resource_type: "document"
+// resource_name: "mcp-handshake-node-full"
 #!/usr/bin/env node
 // Full MCP handshake using Playwright's MCP Client to open a page and print a short result.
 const cp = require('child_process');

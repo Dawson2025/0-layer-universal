@@ -1,3 +1,6 @@
+// resource_id: "255eb77e-da05-4adc-ad0e-ccbeff1334c3"
+// resource_type: "document"
+// resource_name: "mcp-storage-resilience"
 #!/usr/bin/env node
 import { Client } from '@modelcontextprotocol/sdk/client/index.js';
 import { StreamableHTTPClientTransport } from '@modelcontextprotocol/sdk/client/streamableHttp.js';

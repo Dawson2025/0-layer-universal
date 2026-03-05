@@ -1,3 +1,6 @@
+# resource_id: "aa5e3c65-4f78-4845-b7c1-9a25e2fa0840"
+# resource_type: "document"
+# resource_name: "display"
 """Dashboard display - user's main view of projects and groups."""
 
 from datetime import datetime

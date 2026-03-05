@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# resource_id: "6dbcf9d5-29cd-4a39-9d57-2ba8a9d8fd66"
+# resource_type: "document"
+# resource_name: "test_json_schema"
 import sqlite3
 import json
 import pytest

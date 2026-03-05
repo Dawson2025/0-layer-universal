@@ -1,3 +1,6 @@
+# resource_id: "b3117206-4c74-40a8-abdb-466579529869"
+# resource_type: "document"
+# resource_name: "__init__"
 """
 Authentication Feature
 

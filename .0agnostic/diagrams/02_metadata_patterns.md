@@ -1,3 +1,8 @@
+---
+resource_id: "2fe0f282-4ef6-41a0-9b59-d40d71ef11c0"
+resource_type: "document"
+resource_name: "02_metadata_patterns"
+---
 # Metadata-Based Organization Patterns
 
 ## Pattern 1: Parent-Child Inheritance

@@ -1,3 +1,6 @@
+// resource_id: "c1c7d1ee-7741-40c1-8894-9a33f3e95b5d"
+// resource_type: "document"
+// resource_name: "PointsManager"
 import React, { useState } from 'react'
 
 const PointsManager = ({ totalPoints, onPointsUpdate, selectedStudents }) => {

@@ -1,3 +1,6 @@
+// resource_id: "2b4fea5c-a19d-49f5-95dc-758650a7269a"
+// resource_type: "document"
+// resource_name: "simulate-shared-credit-problem"
 #!/usr/bin/env node
 
 /**

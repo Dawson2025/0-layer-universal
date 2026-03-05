@@ -1,3 +1,6 @@
+# resource_id: "aec240f6-5a5c-4fb2-8224-ce540c997b99"
+# resource_type: "document"
+# resource_name: "tatus --short"
 .claude/config.json
 .mcp.json
 0_context/0_basic_prompts_throughout/what_to_do_next.md

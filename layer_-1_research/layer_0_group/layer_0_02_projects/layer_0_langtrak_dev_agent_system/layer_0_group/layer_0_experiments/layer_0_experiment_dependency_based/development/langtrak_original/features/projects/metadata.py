@@ -1,3 +1,6 @@
+# resource_id: "1f3b38a5-5ae4-49ed-b4c5-f629c736b06d"
+# resource_type: "document"
+# resource_name: "metadata"
 """
 Helpers for working with project identifiers and metadata.
 

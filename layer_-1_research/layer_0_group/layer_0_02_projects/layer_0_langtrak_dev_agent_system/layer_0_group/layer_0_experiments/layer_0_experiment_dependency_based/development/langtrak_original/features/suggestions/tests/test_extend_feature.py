@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# resource_id: "2245ffca-7138-4613-9312-d3fd6cac95ac"
+# resource_type: "document"
+# resource_name: "test_extend_feature"
 """
 Test the new extend feature for suggestion-based word creation.
 """

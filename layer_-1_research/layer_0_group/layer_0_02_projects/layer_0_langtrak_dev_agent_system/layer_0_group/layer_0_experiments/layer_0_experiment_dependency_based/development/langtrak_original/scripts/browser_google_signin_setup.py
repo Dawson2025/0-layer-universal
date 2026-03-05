@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# resource_id: "adcb212d-b3a6-4c48-b709-28568b6082f5"
+# resource_type: "document"
+# resource_name: "browser_google_signin_setup"
 """
 Browser-based Google Sign-In setup for Firebase projects
 This uses browser automation to properly configure Google Sign-In

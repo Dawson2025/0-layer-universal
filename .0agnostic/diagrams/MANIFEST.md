@@ -1,3 +1,8 @@
+---
+resource_id: "fc9b3af0-09bc-4823-a0d2-a091d8e4f119"
+resource_type: "document"
+resource_name: "MANIFEST"
+---
 # 0AGNOSTIC Diagram Manifest
 
 **Generated**: Sat Feb 28 10:49:00 PM MST 2026

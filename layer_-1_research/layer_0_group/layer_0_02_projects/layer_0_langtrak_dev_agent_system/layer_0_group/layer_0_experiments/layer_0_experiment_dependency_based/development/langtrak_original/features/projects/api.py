@@ -1,3 +1,6 @@
+# resource_id: "a062ba94-51c1-45ed-aa5f-bf4d2e07ec0a"
+# resource_type: "document"
+# resource_name: "api"
 """
 Projects API Module
 

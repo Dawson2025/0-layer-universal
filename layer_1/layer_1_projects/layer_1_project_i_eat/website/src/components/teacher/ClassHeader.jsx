@@ -1,3 +1,6 @@
+// resource_id: "d9f8d713-518f-4178-be96-e7673560a5de"
+// resource_type: "document"
+// resource_name: "ClassHeader"
 import React from 'react'
 
 const ClassHeader = ({ classData }) => {

@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# resource_id: "64aae06d-41b9-4f2a-b151-e7106a601f3c"
+# resource_type: "document"
+# resource_name: "meta_recommendation_engine"
 
 """
 meta_recommendation_engine.py

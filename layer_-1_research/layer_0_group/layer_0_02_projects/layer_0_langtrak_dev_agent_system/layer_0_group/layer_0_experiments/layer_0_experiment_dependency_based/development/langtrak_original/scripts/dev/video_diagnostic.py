@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# resource_id: "de249279-eb43-4da0-85bb-929c6d180326"
+# resource_type: "document"
+# resource_name: "video_diagnostic"
 """Diagnostic script to identify video upload and conversion issues"""
 
 import os

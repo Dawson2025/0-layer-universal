@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# resource_id: "ea0dd26a-bd70-4608-8897-b08644f5e787"
+# resource_type: "document"
+# resource_name: "fix_google_signin_complete"
 """
 Complete Google Sign-In Fix
 This script handles OAuth consent screen setup and Google provider enablement

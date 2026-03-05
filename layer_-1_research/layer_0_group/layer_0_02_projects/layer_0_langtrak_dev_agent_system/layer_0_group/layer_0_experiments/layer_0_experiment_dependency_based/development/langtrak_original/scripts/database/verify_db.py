@@ -1,3 +1,6 @@
+# resource_id: "5ff8cb8e-7e09-4900-960e-7bfa7ce44f21"
+# resource_type: "document"
+# resource_name: "verify_db"
 import sqlite3
 import json
 

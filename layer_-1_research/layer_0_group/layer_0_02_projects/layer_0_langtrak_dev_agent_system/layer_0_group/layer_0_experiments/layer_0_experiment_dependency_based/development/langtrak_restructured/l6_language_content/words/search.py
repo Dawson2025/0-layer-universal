@@ -1,3 +1,6 @@
+# resource_id: "e12b7b2b-c40b-497f-9bdc-364f214025c6"
+# resource_type: "document"
+# resource_name: "search"
 """
 Word Search Module
 

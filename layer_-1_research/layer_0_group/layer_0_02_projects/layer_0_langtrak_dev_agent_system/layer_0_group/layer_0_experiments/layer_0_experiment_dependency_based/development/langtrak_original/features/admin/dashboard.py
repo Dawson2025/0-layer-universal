@@ -1,3 +1,6 @@
+# resource_id: "f03d99e1-eee9-48f9-bff6-186e7b297e96"
+# resource_type: "document"
+# resource_name: "dashboard"
 """
 Admin Dashboard Module
 

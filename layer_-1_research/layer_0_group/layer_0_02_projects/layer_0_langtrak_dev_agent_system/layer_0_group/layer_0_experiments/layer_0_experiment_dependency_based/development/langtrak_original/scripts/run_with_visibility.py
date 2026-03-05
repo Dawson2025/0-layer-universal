@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# resource_id: "a38ae0f7-796d-4afd-9af7-de1a13778c3a"
+# resource_type: "document"
+# resource_name: "run_with_visibility"
 
 """
 run_with_visibility.py

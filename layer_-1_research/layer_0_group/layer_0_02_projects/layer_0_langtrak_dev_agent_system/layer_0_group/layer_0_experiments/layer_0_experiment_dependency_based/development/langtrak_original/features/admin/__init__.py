@@ -1,3 +1,6 @@
+# resource_id: "79cf3bfc-b8cc-4779-ac86-6efeabfcc5ab"
+# resource_type: "document"
+# resource_name: "__init__"
 """
 Admin Feature
 

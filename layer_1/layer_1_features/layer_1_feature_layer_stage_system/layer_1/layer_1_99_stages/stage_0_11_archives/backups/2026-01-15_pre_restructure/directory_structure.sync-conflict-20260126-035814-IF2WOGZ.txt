@@ -1,3 +1,6 @@
+# resource_id: "88786637-7a7d-4c83-af5b-587895fd7466"
+# resource_type: "document"
+# resource_name: "directory_structure.sync-conflict-20260126-035814-IF2WOGZ"
 /home/dawson/dawson-workspace/code/0_layer_ai_context
 /home/dawson/dawson-workspace/code/0_layer_ai_context/0_context
 /home/dawson/dawson-workspace/code/0_layer_ai_context/0_context/0.00_layer_stage_system

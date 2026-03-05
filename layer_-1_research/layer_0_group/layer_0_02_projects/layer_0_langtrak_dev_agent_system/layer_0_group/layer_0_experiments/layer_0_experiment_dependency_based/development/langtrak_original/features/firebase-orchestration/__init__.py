@@ -1,3 +1,6 @@
+# resource_id: "952d4cb3-84ea-43a8-b83e-9463f30e380c"
+# resource_type: "document"
+# resource_name: "__init__"
 """
 Firebase Orchestration System
 

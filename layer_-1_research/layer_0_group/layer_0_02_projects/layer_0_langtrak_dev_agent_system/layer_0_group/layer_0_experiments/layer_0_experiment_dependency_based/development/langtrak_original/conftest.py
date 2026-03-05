@@ -1,3 +1,6 @@
+# resource_id: "246fb20f-a55f-4a7b-b351-d3310b420f3f"
+# resource_type: "document"
+# resource_name: "conftest"
 """
 Pytest configuration and fixtures for Language Tracker project.
 Following project constitution standards and Trickle-Down documentation structure.

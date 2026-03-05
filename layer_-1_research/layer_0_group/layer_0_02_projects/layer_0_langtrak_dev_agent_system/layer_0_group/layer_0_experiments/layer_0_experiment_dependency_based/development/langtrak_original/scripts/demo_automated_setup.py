@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# resource_id: "b00514cb-febc-4d15-9fa1-913b9d3a6b8f"
+# resource_type: "document"
+# resource_name: "demo_automated_setup"
 
 """
 demo_automated_setup.py

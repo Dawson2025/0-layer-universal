@@ -1,3 +1,6 @@
+# resource_id: "fa3e43e0-396b-41f1-b210-39797e6f944a"
+# resource_type: "document"
+# resource_name: "config"
 """Firebase configuration helpers."""
 from __future__ import annotations
 

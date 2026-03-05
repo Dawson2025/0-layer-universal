@@ -1,3 +1,6 @@
+// resource_id: "c8df9a8e-bb04-4b61-bd16-b198f0944d09"
+// resource_type: "document"
+// resource_name: "test-multiple-students-independence"
 import { createClient } from '@supabase/supabase-js';
 import dotenv from 'dotenv';
 

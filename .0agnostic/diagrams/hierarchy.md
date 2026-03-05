@@ -1,3 +1,8 @@
+---
+resource_id: "305b5717-febb-4926-91ff-ff9c8939f497"
+resource_type: "document"
+resource_name: "hierarchy"
+---
 # 0AGNOSTIC System Architecture
 
 ## Hierarchy Diagram

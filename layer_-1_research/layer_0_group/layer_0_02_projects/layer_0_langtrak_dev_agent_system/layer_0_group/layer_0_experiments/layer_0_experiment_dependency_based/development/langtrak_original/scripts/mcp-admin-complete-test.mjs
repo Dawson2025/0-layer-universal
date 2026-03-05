@@ -1,3 +1,6 @@
+// resource_id: "64dec4a8-f44d-4495-9d02-2f83bcbea9bd"
+// resource_type: "document"
+// resource_name: "mcp-admin-complete-test"
 #!/usr/bin/env node
 /**
  * Complete Admin Test with US-053 Validation

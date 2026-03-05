@@ -1,3 +1,6 @@
+# resource_id: "16b1d2f3-7295-42f9-b491-f3dfb9189df4"
+# resource_type: "document"
+# resource_name: "all_stories"
 US-001
 US-002
 US-003

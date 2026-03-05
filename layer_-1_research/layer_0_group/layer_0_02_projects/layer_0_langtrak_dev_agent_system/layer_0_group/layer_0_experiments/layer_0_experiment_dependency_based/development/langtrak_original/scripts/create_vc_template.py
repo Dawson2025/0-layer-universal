@@ -1,3 +1,6 @@
+# resource_id: "dde67829-4222-4374-9e7f-218ad43c19fa"
+# resource_type: "document"
+# resource_name: "create_vc_template"
 """
 Create Phoneme Template for VC Syllables
 

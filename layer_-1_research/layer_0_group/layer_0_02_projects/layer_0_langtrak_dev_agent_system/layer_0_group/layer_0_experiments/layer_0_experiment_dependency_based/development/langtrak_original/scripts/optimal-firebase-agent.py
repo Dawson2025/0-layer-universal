@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# resource_id: "79b11ba4-2e96-407b-b7b2-9df154608a31"
+# resource_type: "document"
+# resource_name: "optimal-firebase-agent"
 
 """
 optimal-firebase-agent.py

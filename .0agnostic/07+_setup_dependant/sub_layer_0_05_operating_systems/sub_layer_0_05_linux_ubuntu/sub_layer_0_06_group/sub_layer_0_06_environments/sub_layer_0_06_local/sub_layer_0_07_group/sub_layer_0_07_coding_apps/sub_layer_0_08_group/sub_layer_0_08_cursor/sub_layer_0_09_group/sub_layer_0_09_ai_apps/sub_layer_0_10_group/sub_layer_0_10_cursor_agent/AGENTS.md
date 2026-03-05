@@ -1,3 +1,4 @@
+<!-- resource_id: "138504b6-7877-4cea-af4b-4f780c3fc07e" -->
 # AutoGen Agent Context
 
 ## Identity

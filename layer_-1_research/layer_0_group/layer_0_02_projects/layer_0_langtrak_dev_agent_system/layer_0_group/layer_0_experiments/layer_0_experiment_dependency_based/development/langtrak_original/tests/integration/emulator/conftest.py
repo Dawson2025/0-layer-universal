@@ -1,3 +1,6 @@
+# resource_id: "58d0031f-d98c-4210-bfc6-d2fbb758d854"
+# resource_type: "document"
+# resource_name: "conftest"
 """
 Configuration for Firebase Emulator-based integration tests.
 

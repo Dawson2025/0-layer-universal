@@ -1,3 +1,6 @@
+# resource_id: "d2fcb2ea-194e-4535-a1f2-aba574db97c1"
+# resource_type: "document"
+# resource_name: "test_phoneme_logic"
 """
 Unit tests for phoneme business logic
 Fast, isolated tests for core phoneme functionality

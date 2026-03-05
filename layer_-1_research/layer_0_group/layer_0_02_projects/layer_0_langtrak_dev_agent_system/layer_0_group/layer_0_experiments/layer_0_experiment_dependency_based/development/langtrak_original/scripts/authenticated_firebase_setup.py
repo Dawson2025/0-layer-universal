@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# resource_id: "916c8f10-7963-41c0-ae93-7fb7d343f830"
+# resource_type: "document"
+# resource_name: "authenticated_firebase_setup"
 
 """
 authenticated_firebase_setup.py

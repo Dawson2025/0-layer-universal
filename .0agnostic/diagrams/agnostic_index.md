@@ -1,3 +1,8 @@
+---
+resource_id: "ea814a86-c293-48d9-8687-dfa122357eac"
+resource_type: "document"
+resource_name: "agnostic_index"
+---
 # 0AGNOSTIC Files Index
 
 ## Summary

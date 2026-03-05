@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# resource_id: "d5c5adfc-4377-481d-b70c-ddadac65e273"
+# resource_type: "document"
+# resource_name: "firebase_visual_orchestrator"
 
 """
 firebase_visual_orchestrator.py

@@ -1,3 +1,6 @@
+# resource_id: "9743d275-86a1-434f-b78d-f6a851227d15"
+# resource_type: "document"
+# resource_name: "app"
 from flask import Flask, render_template, request, jsonify, redirect, url_for, flash, send_file, session, get_flashed_messages, g
 import sqlite3
 import os

@@ -1,3 +1,6 @@
+# resource_id: "c64e5ac0-308d-48ae-af95-9055b601c38e"
+# resource_type: "document"
+# resource_name: "test_admin_tools"
 """
 Integration tests for admin tools (US-050 through US-053)
 Replaces slow browser automation with fast Flask test client

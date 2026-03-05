@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# resource_id: "dfddfc0f-65c1-4a1e-a02a-4220a551addc"
+# resource_type: "document"
+# resource_name: "demo_letter_filtering"
 """
 Demo script for the letter-based filtering system.
 This shows how the filtering works with real examples.

@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# resource_id: "a9c1f98d-d1a7-4582-b2f4-ececd3773446"
+# resource_type: "document"
+# resource_name: "analyze_conversations"
 """
 Analyze iMessage conversation PDFs and categorize them
 based on the life optimization framework

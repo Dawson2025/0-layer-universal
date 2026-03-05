@@ -1,3 +1,6 @@
+# resource_id: "000f4f22-1b79-496e-8d6a-267319be3327"
+# resource_type: "document"
+# resource_name: "creation"
 """Group creation functionality."""
 
 from __future__ import annotations

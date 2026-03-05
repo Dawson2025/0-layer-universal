@@ -1,3 +1,6 @@
+# resource_id: "f88c1bd8-d53c-453d-b63b-c0018b76a8db"
+# resource_type: "document"
+# resource_name: "stage_registry"
 version: "3.0"  # v1: 00-09, v2: 00-10 with research, v3: 01-11 (00 = registry)
 entity: "learning_simulation_system"
 layer: -1

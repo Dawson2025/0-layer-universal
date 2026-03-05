@@ -1,3 +1,6 @@
+// resource_id: "ab427363-d599-4d18-8a17-13b91d0ea28f"
+// resource_type: "document"
+// resource_name: "content"
 
 
 import displayGraph from "./bell_curve.mjs";

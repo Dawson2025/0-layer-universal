@@ -1,3 +1,6 @@
+// resource_id: "e209db88-803a-4533-ae3f-146c62980706"
+// resource_type: "document"
+// resource_name: "auth"
 import { supabase } from './api'
 
 export const authService = {

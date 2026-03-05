@@ -1,3 +1,6 @@
+// resource_id: "890a2cd0-12dd-43af-9adf-e6426b5e8984"
+// resource_type: "document"
+// resource_name: "test"
 #!/usr/bin/env node
 
 import chalk from 'chalk';

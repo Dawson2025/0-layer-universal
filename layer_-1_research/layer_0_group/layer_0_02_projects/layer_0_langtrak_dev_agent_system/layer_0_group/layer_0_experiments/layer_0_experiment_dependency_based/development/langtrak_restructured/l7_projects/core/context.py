@@ -1,3 +1,6 @@
+# resource_id: "a9149918-70c7-4448-8a53-982802778fa0"
+# resource_type: "document"
+# resource_name: "context"
 """
 Projects Context Module
 

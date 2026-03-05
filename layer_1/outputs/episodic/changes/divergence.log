@@ -1,3 +1,6 @@
+# resource_id: "131c47f4-8643-46c9-ae73-aec1f0272e19"
+# resource_type: "output"
+# resource_name: "divergence"
 # Divergence Log (layer_1)
 # Format: TIMESTAMP | AGENT_ID | PATH | ACTION | BEFORE_HASH → AFTER_HASH
 

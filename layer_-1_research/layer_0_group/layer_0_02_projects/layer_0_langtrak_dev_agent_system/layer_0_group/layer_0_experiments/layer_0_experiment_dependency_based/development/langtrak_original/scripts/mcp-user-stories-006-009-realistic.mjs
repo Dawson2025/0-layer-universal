@@ -1,3 +1,6 @@
+// resource_id: "50808dc2-3638-4d2b-9a76-0c9d39fa6aba"
+// resource_type: "document"
+// resource_name: "mcp-user-stories-006-009-realistic"
 #!/usr/bin/env node
 /**
  * USER-REALISTIC Groups & Collaboration Flow (US-006 → US-011)

@@ -1,4 +1,7 @@
 ---
+resource_id: "c9d64968-bfc4-479e-85d9-6b6bea9341ab"
+resource_type: "document"
+resource_name: "resume.qmd"
 layout: cv
 title: Isaac Newtons's CV
 ---

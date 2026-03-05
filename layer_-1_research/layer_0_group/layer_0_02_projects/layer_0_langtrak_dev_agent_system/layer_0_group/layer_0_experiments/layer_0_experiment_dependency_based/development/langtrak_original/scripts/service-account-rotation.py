@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# resource_id: "5b6c0cd6-74e3-4f98-a1ed-f82a411d4ac6"
+# resource_type: "document"
+# resource_name: "service-account-rotation"
 """
 service-account-rotation.py
 

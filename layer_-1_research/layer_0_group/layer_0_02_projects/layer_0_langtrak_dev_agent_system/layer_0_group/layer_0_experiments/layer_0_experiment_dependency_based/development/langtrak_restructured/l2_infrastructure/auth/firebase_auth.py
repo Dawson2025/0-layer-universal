@@ -1,3 +1,6 @@
+# resource_id: "81271592-4be2-4b53-b258-5c17279c0041"
+# resource_type: "document"
+# resource_name: "firebase_auth"
 """Firebase authentication integration."""
 
 from flask import jsonify, request, session

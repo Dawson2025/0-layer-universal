@@ -1,3 +1,6 @@
+// resource_id: "c8b3ea4c-31f1-423a-a796-4b52f2fef620"
+// resource_type: "output"
+// resource_name: "Untitled-1"
 {
 	"$schema": "vscode://schemas/color-theme",
 	"type": "hcDark",

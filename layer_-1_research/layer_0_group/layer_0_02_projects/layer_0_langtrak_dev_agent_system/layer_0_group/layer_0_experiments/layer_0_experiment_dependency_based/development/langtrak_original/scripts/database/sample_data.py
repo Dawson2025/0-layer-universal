@@ -1,3 +1,6 @@
+# resource_id: "faf387b5-c044-45d4-b486-b33f5d95bc4e"
+# resource_type: "document"
+# resource_name: "sample_data"
 syllable_making_dataset = {
     "CVC": {
         "onset": {

@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# resource_id: "61318d38-bdd7-432a-8546-5c13907aeef3"
+# resource_type: "document"
+# resource_name: "test_side_by_side"
 """
 Simple test to verify side-by-side display works correctly.
 """

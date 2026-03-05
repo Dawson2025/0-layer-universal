@@ -1,3 +1,6 @@
+// resource_id: "2e5d60b1-9a96-43ff-a2ce-2ff12f253270"
+// resource_type: "document"
+// resource_name: "index"
 import { registerRootComponent } from 'expo';
 
 import App from './App';

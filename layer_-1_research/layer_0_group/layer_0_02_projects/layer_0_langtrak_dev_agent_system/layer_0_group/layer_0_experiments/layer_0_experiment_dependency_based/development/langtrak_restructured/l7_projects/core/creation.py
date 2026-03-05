@@ -1,3 +1,6 @@
+# resource_id: "80791741-9ef8-4439-a347-920dbff4a904"
+# resource_type: "document"
+# resource_name: "creation"
 """
 Projects Creation Module
 

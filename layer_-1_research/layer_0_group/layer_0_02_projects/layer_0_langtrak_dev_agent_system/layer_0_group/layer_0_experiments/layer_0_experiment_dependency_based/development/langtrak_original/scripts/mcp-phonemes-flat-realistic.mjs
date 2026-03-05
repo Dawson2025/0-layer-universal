@@ -1,3 +1,6 @@
+// resource_id: "91683b26-9cd6-47e9-af1b-aa74fe3dcae7"
+// resource_type: "document"
+// resource_name: "mcp-phonemes-flat-realistic"
 #!/usr/bin/env node
 /**
  * USER-REALISTIC Phoneme Views Flow (US-025 → US-028)

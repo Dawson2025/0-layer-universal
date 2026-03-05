@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# resource_id: "232ca733-7209-4f3f-9202-6a80175f5aa1"
+# resource_type: "document"
+# resource_name: "complete_google_setup_now"
 
 """
 complete_google_setup_now.py

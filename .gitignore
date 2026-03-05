@@ -1,3 +1,6 @@
+# resource_id: "748f78ff-bbea-4d03-a0a9-4d825a9d685f"
+# resource_type: "document"
+# resource_name: ".gitignore"
 # Syncthing temp files
 ~syncthing~*.tmp
 .stfolder

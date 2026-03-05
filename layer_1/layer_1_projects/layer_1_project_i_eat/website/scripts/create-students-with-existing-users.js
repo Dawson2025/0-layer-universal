@@ -1,3 +1,6 @@
+// resource_id: "3a719aa4-e171-4e48-837a-9696bd56cc1c"
+// resource_type: "document"
+// resource_name: "create-students-with-existing-users"
 #!/usr/bin/env node
 
 /**

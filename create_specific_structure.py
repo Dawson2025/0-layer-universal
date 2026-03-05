@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# resource_id: "93b86ceb-66e3-4702-a4c7-0ceea2860856"
+# resource_type: "document"
+# resource_name: "create_specific_structure"
 """
 Create the full nested specific/ structure for AI manager systems.
 

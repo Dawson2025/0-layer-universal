@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# resource_id: "94b7f706-f0c3-4c72-827d-01a49153a3c5"
+# resource_type: "document"
+# resource_name: "demo_all_types_display"
 """
 Demonstration of the enhanced "all types" display for the table-based word creation method.
 This shows what the user would see when selecting "multiple types" for length options.

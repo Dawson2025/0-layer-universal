@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# resource_id: "d0e86bc3-f113-4e92-b0cd-96775f7bcb8a"
+# resource_type: "document"
+# resource_name: "demo_features"
 """
 Demonstration script showing the new video integration and language selection features.
 This script demonstrates the key functionality without requiring user interaction.

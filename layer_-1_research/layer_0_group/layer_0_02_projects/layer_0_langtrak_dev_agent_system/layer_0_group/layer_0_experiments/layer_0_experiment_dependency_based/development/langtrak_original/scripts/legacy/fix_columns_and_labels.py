@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# resource_id: "4e9196a9-01ce-4eda-bfa5-12b044fb6115"
+# resource_type: "document"
+# resource_name: "fix_columns_and_labels"
 """
 Script to fix columns and labels in main.py
 """

@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# resource_id: "7df695dd-2a42-4c98-ab6a-99b66a61de3e"
+# resource_type: "document"
+# resource_name: "run-cloud-e2e-tests"
 
 """
 Comprehensive Cloud E2E Test Runner

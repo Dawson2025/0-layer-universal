@@ -1,3 +1,6 @@
+# resource_id: "1242ec4c-a00b-4157-8d04-287d691a0206"
+# resource_type: "document"
+# resource_name: "display"
 """
 Word Display Module
 

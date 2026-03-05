@@ -1,3 +1,6 @@
+// resource_id: "edd48063-dc5b-4036-a6cc-87bbf1234fc5"
+// resource_type: "document"
+// resource_name: "eslint.config"
 import js from '@eslint/js'
 import globals from 'globals'
 import reactHooks from 'eslint-plugin-react-hooks'

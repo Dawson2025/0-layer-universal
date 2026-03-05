@@ -1,3 +1,4 @@
+<!-- resource_id: "75c63e62-831b-43bf-8ebe-1c2e50c86cac" -->
 # stage_0_04_planning
 
 ## Role

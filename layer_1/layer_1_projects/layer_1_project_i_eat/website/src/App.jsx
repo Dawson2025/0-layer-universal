@@ -1,3 +1,6 @@
+// resource_id: "4f15c422-0b19-4932-9744-b19e3bbbf742"
+// resource_type: "document"
+// resource_name: "App"
 import { useState, useEffect } from 'react'
 import { BrowserRouter as Router, Routes, Route, useSearchParams } from 'react-router-dom'
 import AuthGuard from './components/auth/AuthGuard'

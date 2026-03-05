@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# resource_id: "866f2a05-1f2d-46b1-a12f-af0e3743600b"
+# resource_type: "document"
+# resource_name: "final_google_signin_fix"
 """
 Final Google Sign-In Fix Implementation
 This script provides the complete solution for enabling Google Sign-In

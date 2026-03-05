@@ -1,3 +1,6 @@
+# resource_id: "c633492f-bda1-4f08-8ee6-eac596f08b38"
+# resource_type: "document"
+# resource_name: ".gitmodules"
 [submodule "layer_1/layer_1_projects/layer_1_project_school"]
 	path = layer_1/layer_1_projects/layer_1_project_school
 	url = https://github.com/Dawson2025/1-school.git

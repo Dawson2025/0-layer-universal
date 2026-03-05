@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# resource_id: "437579a8-e08f-4954-913a-f3f33a681dcc"
+# resource_type: "document"
+# resource_name: "start_webapp"
 """
 Startup script for the Phoneme Frequency Tracker Web Application
 This script checks dependencies and provides instructions for running the web app.

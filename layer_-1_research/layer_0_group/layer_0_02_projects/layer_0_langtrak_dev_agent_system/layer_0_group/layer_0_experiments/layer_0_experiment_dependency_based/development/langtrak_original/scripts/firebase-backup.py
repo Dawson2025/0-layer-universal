@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# resource_id: "3f8e4730-6e3c-4bd5-a6d2-12de5c709b8e"
+# resource_type: "document"
+# resource_name: "firebase-backup"
 """
 firebase-backup.py
 

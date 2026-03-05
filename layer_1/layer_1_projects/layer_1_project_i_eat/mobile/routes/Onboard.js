@@ -1,3 +1,6 @@
+// resource_id: "8127e051-fe28-4b9b-a38c-17e66998fea1"
+// resource_type: "document"
+// resource_name: "Onboard"
 import { useEffect, useState } from "react";
 import { StyleSheet, Text, TextInput, TouchableOpacity, View } from "react-native";
 

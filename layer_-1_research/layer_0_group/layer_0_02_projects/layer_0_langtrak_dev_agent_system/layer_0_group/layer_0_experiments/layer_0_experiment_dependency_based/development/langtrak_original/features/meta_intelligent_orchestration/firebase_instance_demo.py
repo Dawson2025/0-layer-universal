@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# resource_id: "c4c85d99-6180-4a6d-86f2-67a796c9155b"
+# resource_type: "document"
+# resource_name: "firebase_instance_demo"
 
 """
 firebase_instance_demo.py

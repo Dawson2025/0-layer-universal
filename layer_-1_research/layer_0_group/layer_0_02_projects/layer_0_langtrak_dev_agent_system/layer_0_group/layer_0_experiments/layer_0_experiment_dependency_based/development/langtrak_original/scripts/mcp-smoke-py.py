@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# resource_id: "533763ff-1d04-4dd8-a6ae-554a8b588c7f"
+# resource_type: "document"
+# resource_name: "mcp-smoke-py"
 """Simple Python smoke test for Playwright MCP server
 Starts the helper, waits for the port, GETs /mcp and checks for expected response.
 """

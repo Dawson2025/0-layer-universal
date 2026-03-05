@@ -1,3 +1,6 @@
+# resource_id: "0c01ca07-059f-418c-af32-ebb9e75d92cb"
+# resource_type: "document"
+# resource_name: "flattened_dataset_complete"
 flattened_dataset_complete = [
     {'syllable_type': 'CVC', 'position': 'onset', 'length_type': 'single_consonants', 'group_type': 'Stops', 'subgroup_type': 'Bilabial', 'sub_subgroup_type': 'Voiceless', 'sub_sub_subgroup_type': 'none', 'phoneme': 'p', 'frequency': 0},
     {'syllable_type': 'CVC', 'position': 'onset', 'length_type': 'single_consonants', 'group_type': 'Stops', 'subgroup_type': 'Bilabial', 'sub_subgroup_type': 'Voiced', 'sub_sub_subgroup_type': 'none', 'phoneme': 'b', 'frequency': 0},

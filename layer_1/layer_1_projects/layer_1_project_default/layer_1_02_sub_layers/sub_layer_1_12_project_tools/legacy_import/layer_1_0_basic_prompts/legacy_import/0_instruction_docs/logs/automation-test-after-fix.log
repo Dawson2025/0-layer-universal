@@ -1,3 +1,6 @@
+# resource_id: "a5567e39-cfb6-4d7c-843b-61e390efdc8a"
+# resource_type: "log"
+# resource_name: "automation-test-after-fix"
 {
   "total": 18,
   "passed": 14,

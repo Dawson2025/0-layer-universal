@@ -1,3 +1,6 @@
+# resource_id: "8183931d-b2ce-4c0a-98a5-3de199b4ff0c"
+# resource_type: "output"
+# resource_name: "conflicts"
 # Conflicts Log
 # Format: TIMESTAMP | AGENT_A | AGENT_B | PATH | RESOLUTION | DETAILS
 # Resolutions: LWW (last-write-wins), MANUAL, MERGED

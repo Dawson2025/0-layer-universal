@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# resource_id: "7ec6d851-21e7-4208-8de5-80e5140eb3ba"
+# resource_type: "document"
+# resource_name: "meta_intelligent_demo"
 
 """
 meta_intelligent_demo.py

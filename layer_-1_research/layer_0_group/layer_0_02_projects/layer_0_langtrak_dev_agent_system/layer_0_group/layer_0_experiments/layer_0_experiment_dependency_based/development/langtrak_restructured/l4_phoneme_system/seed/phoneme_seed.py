@@ -1,3 +1,6 @@
+# resource_id: "08f0a7a2-f5c0-4b18-8fa9-2cefb085d412"
+# resource_type: "document"
+# resource_name: "phoneme_seed"
 """
 Project phoneme seeding utilities.
 

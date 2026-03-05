@@ -1,3 +1,6 @@
+// resource_id: "082e8a0d-d867-4027-83eb-d18999fd06e9"
+// resource_type: "document"
+// resource_name: "mcp-project-share-delete-realistic"
 #!/usr/bin/env node
 /**
  * USER-REALISTIC Project Sharing & Deletion Flow (US-018 → US-023)

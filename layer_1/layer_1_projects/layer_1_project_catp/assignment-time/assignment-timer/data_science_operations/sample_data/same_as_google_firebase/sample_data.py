@@ -1,3 +1,6 @@
+# resource_id: "8c3c95f2-2b83-4fb7-81e6-0f82f6389779"
+# resource_type: "document"
+# resource_name: "sample_data"
 ﻿"""Sample Firestore-like documents for local analytics smoke tests."""
 
 SAMPLE_PROJECT_ID = "sample-data"

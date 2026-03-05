@@ -1,3 +1,6 @@
+# resource_id: "4e95e4d4-7cdf-4cb7-ab03-f269df4f2b40"
+# resource_type: "document"
+# resource_name: "flatten_syllables"
 # flatten_syllables.py
 import os
 from collections import defaultdict

@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# resource_id: "ecf31e8b-6784-46bb-8ce7-8478eb055dd2"
+# resource_type: "document"
+# resource_name: "run-manual-browser-tests"
 
 """
 Interactive Manual Browser Tests for Cloud Features

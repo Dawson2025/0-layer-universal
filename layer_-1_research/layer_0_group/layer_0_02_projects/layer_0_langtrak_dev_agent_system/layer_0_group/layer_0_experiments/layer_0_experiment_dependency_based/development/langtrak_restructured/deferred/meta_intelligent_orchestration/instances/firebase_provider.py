@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# resource_id: "a1b4258a-6ac9-4b51-924e-3dc3a71458b3"
+# resource_type: "document"
+# resource_name: "firebase_provider"
 
 """
 firebase_provider.py

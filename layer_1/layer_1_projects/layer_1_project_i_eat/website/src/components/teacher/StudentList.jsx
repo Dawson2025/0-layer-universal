@@ -1,3 +1,6 @@
+// resource_id: "51c83fa4-f97b-4926-a955-ce143d96ebf5"
+// resource_type: "document"
+// resource_name: "StudentList"
 import React from 'react'
 
 const StudentList = ({ students, selectedStudents, onStudentSelect }) => {

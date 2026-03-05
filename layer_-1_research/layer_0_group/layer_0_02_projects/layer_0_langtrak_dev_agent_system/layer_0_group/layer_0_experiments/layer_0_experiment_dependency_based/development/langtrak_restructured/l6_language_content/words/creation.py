@@ -1,3 +1,6 @@
+# resource_id: "7846ec12-a2c3-4054-aa1c-f6444fb08a99"
+# resource_type: "document"
+# resource_name: "creation"
 """
 Word Creation Module
 

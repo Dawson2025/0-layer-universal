@@ -1,4 +1,7 @@
 #!/bin/bash
+# resource_id: "44f8f145-6ab5-44c0-8538-887e7c652052"
+# resource_type: "script"
+# resource_name: "agnostic-diagram-generator"
 
 ##############################################################################
 # 0AGNOSTIC Diagram Generator

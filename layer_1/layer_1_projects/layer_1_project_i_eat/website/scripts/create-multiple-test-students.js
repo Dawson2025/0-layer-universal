@@ -1,3 +1,6 @@
+// resource_id: "3e5e29ec-51a5-45bd-8b44-51870d16b7dc"
+// resource_type: "document"
+// resource_name: "create-multiple-test-students"
 import { createClient } from '@supabase/supabase-js'
 import dotenv from 'dotenv'
 

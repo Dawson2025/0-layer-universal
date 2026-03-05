@@ -1,3 +1,6 @@
+// resource_id: "c26e007c-f9a1-4a08-ab1d-943238e08521"
+// resource_type: "document"
+// resource_name: "quarto-nav"
 const headroomChanged = new CustomEvent("quarto-hrChanged", {
   detail: {},
   bubbles: true,

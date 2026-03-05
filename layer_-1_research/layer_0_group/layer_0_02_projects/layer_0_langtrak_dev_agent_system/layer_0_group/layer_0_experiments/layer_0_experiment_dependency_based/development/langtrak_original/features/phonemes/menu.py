@@ -1,3 +1,6 @@
+# resource_id: "8f95fba7-c408-4c2b-a82b-9b3785d44c89"
+# resource_type: "document"
+# resource_name: "menu"
 """
 Phonemes Menu Module
 

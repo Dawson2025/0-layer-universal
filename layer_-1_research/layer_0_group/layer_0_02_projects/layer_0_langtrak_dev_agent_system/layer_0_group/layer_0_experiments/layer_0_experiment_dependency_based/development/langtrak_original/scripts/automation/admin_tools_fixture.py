@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# resource_id: "49f0bfc8-248f-4156-af92-dc3f42c385fc"
+# resource_type: "document"
+# resource_name: "admin_tools_fixture"
 """
 Admin Tools Automation Fixture
 

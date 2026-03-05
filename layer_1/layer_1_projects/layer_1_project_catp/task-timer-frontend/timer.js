@@ -1,3 +1,6 @@
+// resource_id: "3922afe0-521f-4d2c-b635-e1e66d7959d2"
+// resource_type: "document"
+// resource_name: "timer"
 let seconds = 0;
 let intervalId;
 let id; // will hold the dynamic ID

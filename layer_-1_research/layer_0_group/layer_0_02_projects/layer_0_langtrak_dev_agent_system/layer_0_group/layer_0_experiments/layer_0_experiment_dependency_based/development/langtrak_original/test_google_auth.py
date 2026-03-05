@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# resource_id: "adab5996-3eb4-4ef1-ba19-c1793d39aafc"
+# resource_type: "document"
+# resource_name: "test_google_auth"
 """
 Test Google OAuth authentication flow
 """

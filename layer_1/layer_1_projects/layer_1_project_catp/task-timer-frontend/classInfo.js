@@ -1,3 +1,6 @@
+// resource_id: "cb91310f-02a4-4d27-9099-ea558017e693"
+// resource_type: "document"
+// resource_name: "classInfo"
 let className = "";
 let assignmentName = "";
 

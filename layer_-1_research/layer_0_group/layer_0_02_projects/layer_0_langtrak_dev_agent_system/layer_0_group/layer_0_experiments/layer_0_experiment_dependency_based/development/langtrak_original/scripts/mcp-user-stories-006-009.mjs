@@ -1,3 +1,6 @@
+// resource_id: "93c16ce0-f52b-4efa-867b-00dde5d9ad77"
+// resource_type: "document"
+// resource_name: "mcp-user-stories-006-009"
 #!/usr/bin/env node
 import { Client } from '@modelcontextprotocol/sdk/client/index.js';
 import { StreamableHTTPClientTransport } from '@modelcontextprotocol/sdk/client/streamableHttp.js';

@@ -1,3 +1,6 @@
+// resource_id: "c17a7bd8-1419-4877-bdac-02901eb55380"
+// resource_type: "document"
+// resource_name: "fix-all-students"
 import { createClient } from '@supabase/supabase-js'
 import dotenv from 'dotenv'
 

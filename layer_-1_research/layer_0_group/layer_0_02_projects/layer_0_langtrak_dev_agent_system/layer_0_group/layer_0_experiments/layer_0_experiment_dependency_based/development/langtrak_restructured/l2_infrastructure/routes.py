@@ -1,3 +1,6 @@
+# resource_id: "4b674b08-9590-476a-ac25-a1063edcbeea"
+# resource_type: "document"
+# resource_name: "routes"
 """
 L2 Infrastructure Routes
 

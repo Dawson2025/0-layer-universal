@@ -1,3 +1,6 @@
+# resource_id: "a0ea9312-7168-48b5-ab0d-6ac00f65c57c"
+# resource_type: "document"
+# resource_name: "helpers"
 """
 Reusable authentication utilities shared across the application.
 

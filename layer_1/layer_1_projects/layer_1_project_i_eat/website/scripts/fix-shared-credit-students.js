@@ -1,3 +1,6 @@
+// resource_id: "744aff09-5fde-462a-b9e8-2859672a890d"
+// resource_type: "document"
+// resource_name: "fix-shared-credit-students"
 import { createClient } from '@supabase/supabase-js';
 import dotenv from 'dotenv';
 

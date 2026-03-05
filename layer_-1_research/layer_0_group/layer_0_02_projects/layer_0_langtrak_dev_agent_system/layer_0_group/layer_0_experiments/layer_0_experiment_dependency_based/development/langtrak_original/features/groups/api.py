@@ -1,3 +1,6 @@
+# resource_id: "36257943-0f19-4f21-9142-f50d9a9aa77d"
+# resource_type: "document"
+# resource_name: "api"
 """API endpoints for the groups feature."""
 
 from __future__ import annotations

@@ -1,3 +1,6 @@
+# resource_id: "2d3d068f-f9ab-4462-a88f-6d71113dd017"
+# resource_type: "log"
+# resource_name: "stdout"
 Task completed. I analyzed the `sub_layer_0_02_context_agents` directory and wrote the result to the specified result file.
 
 **Summary of findings:**

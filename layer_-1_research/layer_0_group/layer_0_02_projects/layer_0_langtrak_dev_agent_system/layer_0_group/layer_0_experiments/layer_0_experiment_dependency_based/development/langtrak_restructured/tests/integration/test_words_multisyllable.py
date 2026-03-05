@@ -1,3 +1,6 @@
+# resource_id: "eaed5935-d45b-468f-9369-6fbf1c040050"
+# resource_type: "document"
+# resource_name: "test_words_multisyllable"
 import json
 import sqlite3
 

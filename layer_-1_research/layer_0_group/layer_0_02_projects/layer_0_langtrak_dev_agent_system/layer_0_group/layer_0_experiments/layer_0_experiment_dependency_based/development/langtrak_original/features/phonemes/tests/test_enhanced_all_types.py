@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# resource_id: "2de036eb-c109-41dd-a807-9b4f5266957f"
+# resource_type: "document"
+# resource_name: "test_enhanced_all_types"
 """
 Comprehensive test for the enhanced "all types" display user story.
 This tests the complete flow from default single phonemes to filtered all types display.

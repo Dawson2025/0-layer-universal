@@ -1,3 +1,6 @@
+// resource_id: "451d9682-0b66-4403-8cc2-09e39cf0ad10"
+// resource_type: "document"
+// resource_name: "index"
 const functions = require('firebase-functions');
 const admin = require('firebase-admin');
 const { SecretManagerServiceClient } = require('@google-cloud/secret-manager');

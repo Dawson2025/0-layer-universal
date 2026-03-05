@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# resource_id: "54950a28-6428-4f8e-977d-45d39f6cf336"
+# resource_type: "document"
+# resource_name: "mcp_concurrent_browser"
 """
 MCP Concurrent Browser Manager
 

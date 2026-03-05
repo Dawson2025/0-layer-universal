@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# resource_id: "811889ff-2658-4ff4-b318-412a5919927c"
+# resource_type: "document"
+# resource_name: "smart_api_verification"
 """
 Smart API Verification System
 Checks if enough time has passed since last check and verifies API sync status

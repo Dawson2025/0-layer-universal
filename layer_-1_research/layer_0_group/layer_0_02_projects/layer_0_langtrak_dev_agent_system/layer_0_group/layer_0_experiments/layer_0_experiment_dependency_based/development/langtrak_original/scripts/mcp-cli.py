@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# resource_id: "ee86fcc2-6692-4af1-8be6-af7bf9d49bdd"
+# resource_type: "document"
+# resource_name: "mcp-cli"
 """
 MCP CLI Tool
 Simple command-line interface for MCP configuration management.

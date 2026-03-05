@@ -1,3 +1,6 @@
+// resource_id: "8639875b-0cce-475e-9b99-685ccdaf3365"
+// resource_type: "document"
+// resource_name: "api"
 import { createClient } from '@supabase/supabase-js'
 
 // Initialize Supabase client

@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# resource_id: "8aeabf70-1762-46a3-a2eb-aedfc740188d"
+# resource_type: "document"
+# resource_name: "check-firestore-data"
 """
 Check Firestore Database for Cloud Feature Data
 Verifies if cloud projects, words, phonemes exist

@@ -1,3 +1,4 @@
+<!-- resource_id: "afc72e60-6f9f-4b0f-8e5b-4f46d9e8564f" -->
 # Claude Code Context
 
 

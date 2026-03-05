@@ -1,3 +1,6 @@
+# resource_id: "bca39cd5-616c-4671-a2aa-6ebeb09d1347"
+# resource_type: "document"
+# resource_name: "database_tools"
 """
 Admin Database Tools Module
 

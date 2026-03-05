@@ -1,3 +1,6 @@
+// resource_id: "b7ad648d-147e-4352-a442-6b8ffd101252"
+// resource_type: "document"
+// resource_name: "mcp-admin-us053-working"
 #!/usr/bin/env node
 /**
  * US-053 Test - Following Exact Pattern of Passing Test

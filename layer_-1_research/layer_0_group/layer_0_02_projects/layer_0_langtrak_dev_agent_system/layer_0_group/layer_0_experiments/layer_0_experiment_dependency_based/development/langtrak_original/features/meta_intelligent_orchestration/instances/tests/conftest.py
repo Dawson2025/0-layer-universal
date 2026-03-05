@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# resource_id: "4447190e-612e-488a-847e-7ed2fd857b5e"
+# resource_type: "document"
+# resource_name: "conftest"
 
 """
 conftest.py

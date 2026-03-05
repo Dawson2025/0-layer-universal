@@ -1,3 +1,6 @@
+# resource_id: "98f4bbd1-4aac-4c05-87c3-ae0ae8055bd2"
+# resource_type: "document"
+# resource_name: "decorators"
 """
 Core Decorators Module
 

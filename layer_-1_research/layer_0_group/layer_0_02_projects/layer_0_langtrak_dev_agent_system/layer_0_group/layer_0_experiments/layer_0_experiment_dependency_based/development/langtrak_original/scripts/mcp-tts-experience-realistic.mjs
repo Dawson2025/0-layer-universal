@@ -1,3 +1,6 @@
+// resource_id: "452a55fb-8257-4075-90e2-3775ddeb9c1e"
+// resource_type: "document"
+// resource_name: "mcp-tts-experience-realistic"
 #!/usr/bin/env node
 /**
  * USER-REALISTIC TTS Experience Test (US-054-056)

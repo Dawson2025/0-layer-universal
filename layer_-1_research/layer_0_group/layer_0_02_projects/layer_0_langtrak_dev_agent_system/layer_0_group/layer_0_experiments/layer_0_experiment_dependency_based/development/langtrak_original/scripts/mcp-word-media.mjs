@@ -1,3 +1,6 @@
+// resource_id: "ad0d1da2-7e2c-452f-8d7f-1fd6d00f752a"
+// resource_type: "document"
+// resource_name: "mcp-word-media"
 #!/usr/bin/env node
 import { Client } from '@modelcontextprotocol/sdk/client/index.js';
 import { StreamableHTTPClientTransport } from '@modelcontextprotocol/sdk/client/streamableHttp.js';

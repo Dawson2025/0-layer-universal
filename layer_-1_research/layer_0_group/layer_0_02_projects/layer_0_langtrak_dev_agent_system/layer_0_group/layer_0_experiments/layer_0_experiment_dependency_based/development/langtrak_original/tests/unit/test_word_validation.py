@@ -1,3 +1,6 @@
+# resource_id: "17d7a684-c2b3-46db-9b39-0a408b847bbb"
+# resource_type: "document"
+# resource_name: "test_word_validation"
 """
 Unit tests for word validation logic
 Fast, isolated tests for word processing

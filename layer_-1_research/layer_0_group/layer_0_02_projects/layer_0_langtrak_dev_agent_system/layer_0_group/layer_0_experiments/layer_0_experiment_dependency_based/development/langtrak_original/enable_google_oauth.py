@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# resource_id: "5872d7fa-321b-405d-baae-06127cd9a6e5"
+# resource_type: "document"
+# resource_name: "enable_google_oauth"
 """
 Enable Google OAuth for Firebase project using Firebase Admin API
 """

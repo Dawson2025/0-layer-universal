@@ -1,3 +1,6 @@
+// resource_id: "52d438ee-1705-47c1-8206-541f9301f130"
+// resource_type: "document"
+// resource_name: "mcp-project-share-delete"
 #!/usr/bin/env node
 import { Client } from '@modelcontextprotocol/sdk/client/index.js';
 import { StreamableHTTPClientTransport } from '@modelcontextprotocol/sdk/client/streamableHttp.js';

@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# resource_id: "fbc185e2-3157-42f7-8c18-a894ac040d15"
+# resource_type: "document"
+# resource_name: "test_integration"
 """
 Integration test demonstrating video integration and language selection features.
 This script tests the complete workflow without requiring user interaction.

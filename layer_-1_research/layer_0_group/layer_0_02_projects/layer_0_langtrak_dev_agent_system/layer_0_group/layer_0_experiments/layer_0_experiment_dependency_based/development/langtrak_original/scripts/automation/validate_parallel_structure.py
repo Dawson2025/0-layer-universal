@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# resource_id: "d76c4a20-4c94-46db-9c07-3733df2f82d0"
+# resource_type: "document"
+# resource_name: "validate_parallel_structure"
 """
 Validate feature directory isolation and optional tests.
 

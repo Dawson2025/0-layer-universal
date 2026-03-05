@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# resource_id: "eddbe920-539f-4c1e-8bf3-cfc76b40bcb9"
+# resource_type: "document"
+# resource_name: "universal_visual_orchestrator"
 
 """
 universal_visual_orchestrator.py

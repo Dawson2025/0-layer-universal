@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# resource_id: "509137f0-452a-49a1-bb35-879976d679de"
+# resource_type: "document"
+# resource_name: "universal_master_orchestrator"
 
 """
 universal_master_orchestrator.py

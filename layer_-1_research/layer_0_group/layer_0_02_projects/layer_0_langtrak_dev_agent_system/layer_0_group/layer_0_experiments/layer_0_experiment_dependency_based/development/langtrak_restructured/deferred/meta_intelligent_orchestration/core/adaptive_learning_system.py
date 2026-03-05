@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# resource_id: "c0ad264b-a596-4235-8c91-7be70657f995"
+# resource_type: "document"
+# resource_name: "adaptive_learning_system"
 
 """
 adaptive_learning_system.py

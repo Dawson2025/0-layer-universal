@@ -1,3 +1,4 @@
+<!-- resource_id: "ef2a3a33-5b44-4df5-9d47-a2e4d737a599" -->
 # stage_0_01_request_gathering
 
 ## Role

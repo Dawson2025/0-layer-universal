@@ -1,3 +1,6 @@
+// resource_id: "48f46315-b66c-47e7-9034-49906731c75d"
+// resource_type: "document"
+// resource_name: "mcp-project-variants"
 #!/usr/bin/env node
 import { Client } from '@modelcontextprotocol/sdk/client/index.js';
 import { StreamableHTTPClientTransport } from '@modelcontextprotocol/sdk/client/streamableHttp.js';

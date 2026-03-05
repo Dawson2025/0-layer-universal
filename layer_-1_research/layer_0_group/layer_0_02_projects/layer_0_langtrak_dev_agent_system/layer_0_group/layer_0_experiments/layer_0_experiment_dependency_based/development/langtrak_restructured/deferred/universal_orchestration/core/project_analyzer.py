@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# resource_id: "a2db1114-279c-4755-bed9-864358decedd"
+# resource_type: "document"
+# resource_name: "project_analyzer"
 
 """
 project_analyzer.py

@@ -1,3 +1,6 @@
+# resource_id: "f9821543-7fae-4e8b-85ad-48aaeef0757e"
+# resource_type: "document"
+# resource_name: "editing"
 """
 Projects Editing Module
 

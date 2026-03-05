@@ -1,3 +1,6 @@
+// resource_id: "56a4b295-7eef-40df-82d8-86583cfc1bc7"
+// resource_type: "document"
+// resource_name: "main"
 //import {Auth} from '@supabase/auth-ui-react'
 import { createClient, auth } from '@supabase/supabase-js'
 const supabase = createClient(

@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# resource_id: "876abc6a-7e75-4258-b314-d66f4b87019d"
+# resource_type: "document"
+# resource_name: "monitor_api_sync"
 """
 API Synchronization Monitor
 Monitors the API synchronization status for Google Sign-In providers

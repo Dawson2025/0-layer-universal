@@ -1,3 +1,6 @@
+# resource_id: "dac363ac-6ecf-4113-a63f-7280bc3662c8"
+# resource_type: "knowledge"
+# resource_name: "directory_structure"
 /home/dawson/dawson-workspace/code/0_layer_ai_context
 /home/dawson/dawson-workspace/code/0_layer_ai_context/0_context
 /home/dawson/dawson-workspace/code/0_layer_ai_context/0_context/0.00_layer_stage_system

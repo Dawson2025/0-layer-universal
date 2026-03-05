@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# resource_id: "4e740a63-5393-4155-947c-039c47dfc64d"
+# resource_type: "document"
+# resource_name: "test_azure_tts"
 """
 Azure Speech TTS integration verification.
 

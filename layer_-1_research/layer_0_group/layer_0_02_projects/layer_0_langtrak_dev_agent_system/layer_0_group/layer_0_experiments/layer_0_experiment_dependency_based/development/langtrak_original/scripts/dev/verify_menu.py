@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# resource_id: "4540ef87-110e-4ec6-bd96-938aa67bbb97"
+# resource_type: "document"
+# resource_name: "verify_menu"
 """Quick menu verification"""
 
 import sys

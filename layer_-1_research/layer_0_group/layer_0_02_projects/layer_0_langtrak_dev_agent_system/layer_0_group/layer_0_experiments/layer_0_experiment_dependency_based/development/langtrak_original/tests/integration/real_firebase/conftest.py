@@ -1,3 +1,6 @@
+# resource_id: "d5e35903-fc96-4a7c-9f95-205d9e755933"
+# resource_type: "document"
+# resource_name: "conftest"
 """
 Configuration for real Firebase environment tests.
 

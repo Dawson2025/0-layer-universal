@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# resource_id: "af5ab487-8bb4-4e72-b0ef-314a9faae26c"
+# resource_type: "document"
+# resource_name: "test_hierarchy_display"
 """
 Test script for the new group/subgroup hierarchy display in table-based method.
 This tests the enhanced display_phoneme_tables_side_by_side_with_filters function.

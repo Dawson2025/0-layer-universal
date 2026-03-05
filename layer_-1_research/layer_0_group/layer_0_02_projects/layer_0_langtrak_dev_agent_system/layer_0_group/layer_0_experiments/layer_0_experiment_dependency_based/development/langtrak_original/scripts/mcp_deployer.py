@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# resource_id: "4d7965ae-1aaa-4758-8c77-4c9e6af713d6"
+# resource_type: "document"
+# resource_name: "mcp_deployer"
 """
 MCP Deployer
 Automated deployment and management system for MCP configurations across environments.

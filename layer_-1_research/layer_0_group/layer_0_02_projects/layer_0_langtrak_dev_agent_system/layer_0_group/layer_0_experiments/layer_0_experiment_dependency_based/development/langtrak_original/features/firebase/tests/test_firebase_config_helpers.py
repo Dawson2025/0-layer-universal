@@ -1,3 +1,6 @@
+# resource_id: "83491580-53a6-4ed9-a6a7-1cd14c6ff89a"
+# resource_type: "document"
+# resource_name: "test_firebase_config_helpers"
 import os
 import tempfile
 import unittest

@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# resource_id: "516fcfda-f2a8-4476-809e-75aa35d99e41"
+# resource_type: "document"
+# resource_name: "configure_google_auth_automated"
 
 """
 configure_google_auth_automated.py

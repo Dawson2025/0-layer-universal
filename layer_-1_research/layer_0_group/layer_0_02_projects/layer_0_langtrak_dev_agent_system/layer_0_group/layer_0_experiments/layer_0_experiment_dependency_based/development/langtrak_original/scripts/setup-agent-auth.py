@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# resource_id: "562b93d8-c6d8-40c3-9df6-c85e8524a700"
+# resource_type: "document"
+# resource_name: "setup-agent-auth"
 
 """
 setup-agent-auth.py

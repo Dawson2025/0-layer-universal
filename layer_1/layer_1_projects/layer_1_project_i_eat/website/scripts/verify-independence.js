@@ -1,3 +1,6 @@
+// resource_id: "c4179f92-bba0-4a41-84a4-d1d6286575c6"
+// resource_type: "document"
+// resource_name: "verify-independence"
 import { createClient } from '@supabase/supabase-js';
 import dotenv from 'dotenv';
 

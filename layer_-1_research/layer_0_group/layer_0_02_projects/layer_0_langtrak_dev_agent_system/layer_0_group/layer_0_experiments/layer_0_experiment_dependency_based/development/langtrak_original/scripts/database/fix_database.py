@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# resource_id: "03831eab-af98-4cb9-85a7-2bbee6f7208a"
+# resource_type: "document"
+# resource_name: "fix_database"
 """
 Fix the database by initializing schema and inserting sample data.
 """

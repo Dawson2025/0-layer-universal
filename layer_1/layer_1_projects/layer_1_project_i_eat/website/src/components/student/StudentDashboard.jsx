@@ -1,3 +1,6 @@
+// resource_id: "34f0c127-2965-4f08-bcf2-8e172af4a1a4"
+// resource_type: "document"
+// resource_name: "StudentDashboard"
 import { useState, useEffect } from 'react'
 import { dashboardService } from '../../services/dashboard'
 import { pointsService } from '../../services/points'

@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# resource_id: "c66e7d3a-7da3-478e-90e9-b50c5f1f28a7"
+# resource_type: "backup"
+# resource_name: "app.py"
 """
 Flask Web Application for Phoneme Frequency Tracker
 Implements all terminal functions as web endpoints

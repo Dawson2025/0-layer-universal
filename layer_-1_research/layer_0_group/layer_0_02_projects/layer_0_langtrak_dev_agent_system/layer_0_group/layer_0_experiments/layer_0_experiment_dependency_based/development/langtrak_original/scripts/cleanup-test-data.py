@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# resource_id: "fcc469b8-fe74-442f-ab87-86b8f4ccdb4c"
+# resource_type: "document"
+# resource_name: "cleanup-test-data"
 
 """
 Cleanup Test Data from Firebase

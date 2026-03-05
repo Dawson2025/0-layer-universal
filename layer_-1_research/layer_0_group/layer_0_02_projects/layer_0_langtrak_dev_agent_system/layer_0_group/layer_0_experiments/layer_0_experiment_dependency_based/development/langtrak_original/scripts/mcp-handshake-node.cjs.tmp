@@ -1,4 +1,7 @@
 #!/usr/bin/env node
+# resource_id: "bf02487a-c4ba-48c6-a243-3083b949f29c"
+# resource_type: "document"
+# resource_name: "mcp-handshake-node.cjs"
 const cp = require('child_process');
 const net = require('net');
 const path = require('path');

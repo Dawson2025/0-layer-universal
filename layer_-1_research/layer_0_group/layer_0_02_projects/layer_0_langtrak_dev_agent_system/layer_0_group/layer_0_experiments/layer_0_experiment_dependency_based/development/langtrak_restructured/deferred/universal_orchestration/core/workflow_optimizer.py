@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# resource_id: "11d01099-0069-4a5e-a58f-fb01e484f1b5"
+# resource_type: "document"
+# resource_name: "workflow_optimizer"
 
 """
 workflow_optimizer.py

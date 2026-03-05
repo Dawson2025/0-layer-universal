@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# resource_id: "d836e5ea-12d7-4f6d-936f-660044b2b49d"
+# resource_type: "document"
+# resource_name: "test_clean_display"
 """
 Test script to verify the cleaner hierarchy display format.
 """

@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# resource_id: "cebfdde8-10db-4356-87b4-e9bf6a05df21"
+# resource_type: "document"
+# resource_name: "test_tie_breaking"
 """
 Test script to verify that length type tie-breaking logic works correctly.
 This tests that when groups have the same aggregate frequency, 

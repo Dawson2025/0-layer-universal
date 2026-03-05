@@ -1,3 +1,6 @@
+# resource_id: "632454da-5755-48b0-a848-c81fd07c640c"
+# resource_type: "document"
+# resource_name: "__init__"
 """
 L2 Infrastructure Layer
 

@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# resource_id: "f5f45c65-ffcc-48b9-a45e-8b39256b436e"
+# resource_type: "document"
+# resource_name: "orchestration_system"
 
 """
 firebase_orchestration_system.py

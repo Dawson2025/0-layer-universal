@@ -1,3 +1,6 @@
+// resource_id: "2ff7775d-ee51-4072-b8cb-33702505de1f"
+// resource_type: "document"
+// resource_name: "mcp-admin-us053-test"
 #!/usr/bin/env node
 /**
  * US-050-053 Admin Database Tools Test - Proper MCP Tools Version

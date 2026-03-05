@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# resource_id: "7bab65b8-f090-4add-a8eb-d5dea73c6a53"
+# resource_type: "document"
+# resource_name: "test_phoneme_management"
 """Test script for the new phoneme management functions"""
 
 import sys

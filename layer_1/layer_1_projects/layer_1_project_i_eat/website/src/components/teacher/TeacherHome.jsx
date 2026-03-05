@@ -1,3 +1,6 @@
+// resource_id: "06275497-a04f-4a8f-9093-cad2eb465326"
+// resource_type: "document"
+// resource_name: "TeacherHome"
 import React, { useState } from 'react'
 import { dashboardService } from '../../services/dashboard'
 

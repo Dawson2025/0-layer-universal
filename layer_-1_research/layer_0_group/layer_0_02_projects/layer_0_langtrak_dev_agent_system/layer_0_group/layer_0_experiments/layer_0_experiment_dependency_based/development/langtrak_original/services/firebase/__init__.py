@@ -1,3 +1,6 @@
+# resource_id: "246debb5-158c-4777-8427-002f20da1e5e"
+# resource_type: "document"
+# resource_name: "__init__"
 """Firebase service package exports."""
 
 from .config import firebase_config

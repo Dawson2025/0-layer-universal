@@ -1,3 +1,6 @@
+# resource_id: "253d494e-7332-4587-8951-04a91f8fd606"
+# resource_type: "document"
+# resource_name: "__init__"
 """
 Phonemes Feature
 

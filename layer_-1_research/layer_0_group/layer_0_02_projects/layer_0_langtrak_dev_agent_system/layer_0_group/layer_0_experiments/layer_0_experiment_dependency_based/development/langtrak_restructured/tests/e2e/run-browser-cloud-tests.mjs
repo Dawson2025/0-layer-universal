@@ -1,3 +1,6 @@
+// resource_id: "8bc1c998-f534-40fb-9948-1fe88fe6881f"
+// resource_type: "document"
+// resource_name: "run-browser-cloud-tests"
 #!/usr/bin/env node
 
 /**

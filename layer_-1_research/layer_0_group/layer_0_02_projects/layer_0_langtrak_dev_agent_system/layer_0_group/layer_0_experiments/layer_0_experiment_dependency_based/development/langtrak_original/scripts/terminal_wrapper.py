@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# resource_id: "d320ff54-0a81-4165-a129-3239614273a8"
+# resource_type: "document"
+# resource_name: "terminal_wrapper"
 """
 Terminal Wrapper - A replacement for the terminal tool that doesn't hang
 """

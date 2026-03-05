@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# resource_id: "3d955419-2c6b-4c2f-9eca-b60c4503413a"
+# resource_type: "document"
+# resource_name: "test_suggestion_method"
 """
 Test script for the new suggestion-based word creation method.
 """

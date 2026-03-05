@@ -1,3 +1,6 @@
+# resource_id: "4e321aa4-c872-45e8-8046-e7f58ba646b1"
+# resource_type: "document"
+# resource_name: "__init__"
 """Groups feature blueprint and exports."""
 
 from flask import Blueprint

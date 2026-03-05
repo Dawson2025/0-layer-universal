@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# resource_id: "53f56cf1-224c-472a-9cbc-0b46cf6ed51c"
+# resource_type: "document"
+# resource_name: "create_github_repos"
 """
 Create private GitHub repositories for AI context
 Uses GitHub REST API

@@ -1,3 +1,6 @@
+// resource_id: "66048712-1ef8-4f4a-9006-532c2c95369c"
+// resource_type: "document"
+// resource_name: "mcp-tts-experience"
 #!/usr/bin/env node
 import { Client } from '@modelcontextprotocol/sdk/client/index.js';
 import { StreamableHTTPClientTransport } from '@modelcontextprotocol/sdk/client/streamableHttp.js';

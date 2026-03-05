@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# resource_id: "b49db073-119a-4e20-aca8-0f23f30f4a79"
+# resource_type: "document"
+# resource_name: "firebase-setup-implementation"
 
 """
 firebase-setup-implementation.py

@@ -1,4 +1,7 @@
 ---
+resource_id: "be42d3dc-8d0d-44f6-956f-2edb7ea0c6b5"
+resource_type: "document"
+resource_name: "project1.qmd"
 title: "Client Report - [Insert Project Title]"
 subtitle: "Course DS 250"
 author: "[STUDENT NAME]"

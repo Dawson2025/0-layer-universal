@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# resource_id: "1edc670a-1ba3-46a4-9fba-4ac30ad1099a"
+# resource_type: "document"
+# resource_name: "browser-auth-setup"
 
 """
 browser-auth-setup.py

@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# resource_id: "017e09bf-d42b-443a-a37f-8af98e7151aa"
+# resource_type: "document"
+# resource_name: "test_nucleus_bc"
 """
 Quick test to verify nucleus 'bc' command shows all phoneme types.
 """

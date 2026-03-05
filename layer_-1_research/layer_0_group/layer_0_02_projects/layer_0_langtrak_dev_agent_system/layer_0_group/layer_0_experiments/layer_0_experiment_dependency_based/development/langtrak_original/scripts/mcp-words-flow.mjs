@@ -1,3 +1,6 @@
+// resource_id: "b6045213-f3eb-496d-8770-45fb22ea6206"
+// resource_type: "document"
+// resource_name: "mcp-words-flow"
 #!/usr/bin/env node
 import { Client } from '@modelcontextprotocol/sdk/client/index.js';
 import { StreamableHTTPClientTransport } from '@modelcontextprotocol/sdk/client/streamableHttp.js';

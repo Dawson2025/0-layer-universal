@@ -1,3 +1,6 @@
+# resource_id: "0b283eb3-a45e-4705-b11c-58a0b673ed35"
+# resource_type: "document"
+# resource_name: "data_science_operations"
 ﻿# TODO: make features that take care of outliers and any other data anylitics features you deem important
 
 from __future__ import annotations

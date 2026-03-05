@@ -1,3 +1,6 @@
+// resource_id: "1b433f20-2752-4459-b6a4-e06d6594e275"
+// resource_type: "document"
+// resource_name: "firestore-admin-client"
 import fs from 'node:fs/promises';
 import path from 'node:path';
 

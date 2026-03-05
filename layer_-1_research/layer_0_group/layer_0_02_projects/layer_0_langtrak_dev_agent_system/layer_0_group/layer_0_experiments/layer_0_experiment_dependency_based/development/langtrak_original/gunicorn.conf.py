@@ -1,3 +1,6 @@
+# resource_id: "a8eb4e41-84fe-48e2-b5c6-a2971742ab1b"
+# resource_type: "document"
+# resource_name: "gunicorn.conf"
 """
 Gunicorn configuration for Language Tracker production deployment
 """

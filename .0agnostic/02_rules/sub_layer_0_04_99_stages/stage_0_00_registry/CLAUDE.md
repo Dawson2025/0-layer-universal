@@ -1,3 +1,4 @@
+<!-- resource_id: "ffab5ba5-de62-4a64-bf8a-2613383d50d4" -->
 # stage_0_00_registry
 
 ## Role

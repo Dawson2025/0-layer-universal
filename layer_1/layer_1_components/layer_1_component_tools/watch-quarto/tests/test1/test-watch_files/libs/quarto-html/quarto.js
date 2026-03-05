@@ -1,3 +1,6 @@
+// resource_id: "8a14bcf7-8cf3-4d62-92ce-92aac29e3ac5"
+// resource_type: "document"
+// resource_name: "quarto"
 import * as tabsets from "./tabsets/tabsets.js";
 
 const sectionChanged = new CustomEvent("quarto-sectionChanged", {

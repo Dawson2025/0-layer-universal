@@ -1,3 +1,6 @@
+# resource_id: "5eb43760-8795-4cfc-aa1a-9209c7d40946"
+# resource_type: "document"
+# resource_name: "__init__"
 """
 Projects Feature
 

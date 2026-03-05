@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# resource_id: "d0bbbdcd-77fc-4599-a8b6-6b5432215067"
+# resource_type: "document"
+# resource_name: "storage_manager"
 """
 Storage Manager - Hybrid Local/Cloud Data Management
 Handles both SQLite (local) and Firestore (cloud) storage with migration capabilities

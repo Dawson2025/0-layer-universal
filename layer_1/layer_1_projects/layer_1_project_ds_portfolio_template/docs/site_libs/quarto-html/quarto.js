@@ -1,3 +1,6 @@
+// resource_id: "d98b9f34-6036-4870-9f59-625c8e61a76d"
+// resource_type: "document"
+// resource_name: "quarto"
 const sectionChanged = new CustomEvent("quarto-sectionChanged", {
   detail: {},
   bubbles: true,

@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# resource_id: "3bd9cdba-8c9f-4f9d-a9bd-bb9efd555b57"
+# resource_type: "document"
+# resource_name: "codex-turn-notify"
 """
 Codex notification hook executed via the `notify` config option.
 

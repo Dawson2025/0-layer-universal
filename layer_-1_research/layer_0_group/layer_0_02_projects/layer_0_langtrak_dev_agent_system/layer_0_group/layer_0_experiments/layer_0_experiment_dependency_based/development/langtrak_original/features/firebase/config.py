@@ -1,3 +1,6 @@
+# resource_id: "8807177e-8a34-471d-9188-73e041c8ff63"
+# resource_type: "document"
+# resource_name: "config"
 """
 Firebase client configuration helpers.
 

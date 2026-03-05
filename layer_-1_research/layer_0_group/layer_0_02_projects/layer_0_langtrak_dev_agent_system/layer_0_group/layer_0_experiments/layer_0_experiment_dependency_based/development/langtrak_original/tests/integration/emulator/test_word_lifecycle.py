@@ -1,3 +1,6 @@
+# resource_id: "447ac028-edd9-420c-86a8-ddda2ac48b1f"
+# resource_type: "document"
+# resource_name: "test_word_lifecycle"
 """
 Word lifecycle tests using Firebase Emulator.
 """

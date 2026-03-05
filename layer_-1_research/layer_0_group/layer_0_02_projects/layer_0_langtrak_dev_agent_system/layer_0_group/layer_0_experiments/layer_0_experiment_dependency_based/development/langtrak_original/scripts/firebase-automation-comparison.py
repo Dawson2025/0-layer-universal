@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# resource_id: "57f6eccb-de3c-4ec8-b850-d2f45638e2e4"
+# resource_type: "document"
+# resource_name: "firebase-automation-comparison"
 
 """
 firebase-automation-comparison.py

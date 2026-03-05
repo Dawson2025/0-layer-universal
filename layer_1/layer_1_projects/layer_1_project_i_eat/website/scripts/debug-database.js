@@ -1,3 +1,6 @@
+// resource_id: "722aa5ad-fece-44e0-b5ee-8084e4ca0c23"
+// resource_type: "document"
+// resource_name: "debug-database"
 #!/usr/bin/env node
 
 /**

@@ -1,3 +1,6 @@
+# resource_id: "cf62bc2f-31e5-489d-a615-bea64cf39ae8"
+# resource_type: "document"
+# resource_name: "template_system"
 """
 Admin Template System Module
 

@@ -1,3 +1,6 @@
+// resource_id: "c4f57f5f-7d8a-4479-b21e-fd5df916aa57"
+// resource_type: "document"
+// resource_name: "manual-cloud-test"
 #!/usr/bin/env node
 /**
  * Manual Cloud Features Test

@@ -1,3 +1,6 @@
+# resource_id: "cb2de4a5-432e-48d5-9db1-ba49cda561e4"
+# resource_type: "document"
+# resource_name: "search"
 """
 Word Search Module
 

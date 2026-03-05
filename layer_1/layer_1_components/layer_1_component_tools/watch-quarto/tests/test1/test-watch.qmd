@@ -1,4 +1,7 @@
 ---
+resource_id: "37aa932f-9e38-4429-a213-e01a5b7fa463"
+resource_type: "document"
+resource_name: "test-watch.qmd"
 title: Watch Test
 format: html
 ---

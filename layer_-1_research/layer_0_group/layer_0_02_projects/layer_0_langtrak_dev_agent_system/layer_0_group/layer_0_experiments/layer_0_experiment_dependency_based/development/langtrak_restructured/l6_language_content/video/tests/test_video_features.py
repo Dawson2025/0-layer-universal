@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# resource_id: "1595fac7-b54d-4ffb-b607-4658e4ffbcdd"
+# resource_type: "document"
+# resource_name: "test_video_features"
 """Test script for video integration and language selection features"""
 
 import os

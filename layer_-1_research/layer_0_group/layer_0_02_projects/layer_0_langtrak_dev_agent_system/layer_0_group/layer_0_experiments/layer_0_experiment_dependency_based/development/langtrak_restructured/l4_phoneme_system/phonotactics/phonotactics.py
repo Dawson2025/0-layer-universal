@@ -1,3 +1,6 @@
+# resource_id: "05558b0f-74e6-40b9-97b1-aa7ad994eb74"
+# resource_type: "document"
+# resource_name: "phonotactics"
 
 """
 Phonotactic rules for validating and improving word generation.

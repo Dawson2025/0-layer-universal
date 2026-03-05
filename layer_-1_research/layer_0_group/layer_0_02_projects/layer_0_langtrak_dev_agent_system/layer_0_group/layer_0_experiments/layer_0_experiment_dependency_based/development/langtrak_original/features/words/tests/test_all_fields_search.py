@@ -1,3 +1,6 @@
+# resource_id: "1299eb14-60c1-49af-bb51-4f15144fc20a"
+# resource_type: "document"
+# resource_name: "test_all_fields_search"
 import json
 import os
 import sqlite3

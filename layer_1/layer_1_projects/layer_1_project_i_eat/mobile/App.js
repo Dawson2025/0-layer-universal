@@ -1,3 +1,6 @@
+// resource_id: "b847dec2-4c73-4119-a79f-a7f27cbc7335"
+// resource_type: "document"
+// resource_name: "App"
 import { useState } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 

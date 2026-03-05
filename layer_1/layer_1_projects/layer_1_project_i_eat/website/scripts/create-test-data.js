@@ -1,3 +1,6 @@
+// resource_id: "33e98229-617a-4bfa-8785-60635b4138a8"
+// resource_type: "document"
+// resource_name: "create-test-data"
 #!/usr/bin/env node
 
 /**

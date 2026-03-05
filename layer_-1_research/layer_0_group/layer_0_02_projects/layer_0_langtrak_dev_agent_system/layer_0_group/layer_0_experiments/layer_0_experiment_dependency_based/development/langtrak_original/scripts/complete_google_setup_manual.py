@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# resource_id: "fefc4912-f2f2-4354-8633-914f47ad1a45"
+# resource_type: "document"
+# resource_name: "complete_google_setup_manual"
 
 """
 complete_google_setup_manual.py

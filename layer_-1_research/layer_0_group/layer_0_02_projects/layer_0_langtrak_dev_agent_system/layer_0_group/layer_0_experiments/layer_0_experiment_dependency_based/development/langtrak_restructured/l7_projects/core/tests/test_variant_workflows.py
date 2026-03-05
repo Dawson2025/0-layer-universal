@@ -1,3 +1,6 @@
+# resource_id: "94f10f53-554a-46ef-8715-6ccdb9ef2534"
+# resource_type: "document"
+# resource_name: "test_variant_workflows"
 from typing import Iterator, Tuple
 import sqlite3
 from datetime import datetime

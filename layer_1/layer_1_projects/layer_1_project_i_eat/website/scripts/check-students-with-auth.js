@@ -1,3 +1,6 @@
+// resource_id: "55350cf7-fbc3-41e2-bd13-74fc3ddc63c6"
+// resource_type: "document"
+// resource_name: "check-students-with-auth"
 #!/usr/bin/env node
 
 /**

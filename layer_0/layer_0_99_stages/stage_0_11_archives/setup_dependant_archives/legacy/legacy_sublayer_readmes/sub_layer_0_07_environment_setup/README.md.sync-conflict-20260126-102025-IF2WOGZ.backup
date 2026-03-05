@@ -1,3 +1,6 @@
+# resource_id: "6ede50c3-eade-4cea-9ac8-fa516ce2aa6d"
+# resource_type: "backup"
+# resource_name: "README.md.sync-conflict-20260126-102025-IF2WOGZ"
 # Sub Layer 0.06: Environment Setup
 
 **Purpose**: Environment-level setup that is not OS-specific and not tied to a single coding/AI application (e.g., Git/GitHub auth patterns, credentials, cross-app environment rules).

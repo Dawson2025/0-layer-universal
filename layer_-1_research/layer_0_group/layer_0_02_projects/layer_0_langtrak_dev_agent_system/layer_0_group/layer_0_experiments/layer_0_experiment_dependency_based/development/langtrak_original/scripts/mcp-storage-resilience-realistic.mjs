@@ -1,3 +1,6 @@
+// resource_id: "698ee777-98ba-4615-b4fb-968ba355c6f2"
+// resource_type: "document"
+// resource_name: "mcp-storage-resilience-realistic"
 #!/usr/bin/env node
 /**
  * USER-REALISTIC Storage Resilience Test (US-057-059)

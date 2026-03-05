@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# resource_id: "56cf1957-daf6-4ffa-aaa2-7774ac3395c3"
+# resource_type: "document"
+# resource_name: "setup_mcp_system"
 """
 MCP System Setup
 Comprehensive setup and initialization script for the MCP configuration management system.

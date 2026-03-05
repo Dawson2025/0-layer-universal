@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# resource_id: "dd52d70e-b81a-4300-b8bf-660e7d2e8f98"
+# resource_type: "document"
+# resource_name: "test_cloud_integration"
 """
 End-to-end Firebase integration tests.
 

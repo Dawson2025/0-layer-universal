@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# resource_id: "e36044a4-efbb-445f-ae88-981859f4074b"
+# resource_type: "document"
+# resource_name: "configure-firebase-auth"
 
 """
 Automated Firebase Authentication Configuration

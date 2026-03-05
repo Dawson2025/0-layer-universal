@@ -1,3 +1,6 @@
+// resource_id: "abde73a3-0e68-46e1-aff1-5bb6b42a6475"
+// resource_type: "document"
+// resource_name: "create-more-students"
 #!/usr/bin/env node
 
 /**

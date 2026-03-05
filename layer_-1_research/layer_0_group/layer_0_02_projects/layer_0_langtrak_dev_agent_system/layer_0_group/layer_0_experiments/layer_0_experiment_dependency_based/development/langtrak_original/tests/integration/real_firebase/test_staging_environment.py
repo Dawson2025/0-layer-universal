@@ -1,3 +1,6 @@
+# resource_id: "d5a1a908-af3f-4d2e-8803-e450699cbfe4"
+# resource_type: "document"
+# resource_name: "test_staging_environment"
 """
 Staging Environment Verification Tests.
 

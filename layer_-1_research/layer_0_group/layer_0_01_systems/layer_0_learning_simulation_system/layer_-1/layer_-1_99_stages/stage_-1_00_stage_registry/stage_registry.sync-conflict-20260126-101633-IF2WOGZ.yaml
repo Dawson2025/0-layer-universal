@@ -1,3 +1,6 @@
+# resource_id: "b1ae8331-8c93-4b68-a63b-3523a51dc2d7"
+# resource_type: "document"
+# resource_name: "stage_registry.sync-conflict-20260126-101633-IF2WOGZ"
 version: "3.0"  # v1: 00-09, v2: 00-10 with research, v3: 01-11 (00 = registry)
 entity: "learning_simulation_system"
 layer: -1

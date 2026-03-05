@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# resource_id: "41c371a6-2ef4-4ba8-908d-96170eae3666"
+# resource_type: "document"
+# resource_name: "firebase_auth_script"
 """
 Test Firebase Admin SDK authentication
 """

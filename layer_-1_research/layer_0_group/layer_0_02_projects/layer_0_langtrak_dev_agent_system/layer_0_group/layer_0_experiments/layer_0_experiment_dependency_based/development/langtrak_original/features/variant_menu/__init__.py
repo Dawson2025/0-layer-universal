@@ -1,3 +1,6 @@
+# resource_id: "e54106b9-b955-4547-bc2e-92966ae7fd76"
+# resource_type: "document"
+# resource_name: "__init__"
 """Variant menu feature blueprint and exports.
 
 Note: Variant menu functionality is integrated into the projects feature.

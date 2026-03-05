@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# resource_id: "28ac9092-55ba-4eb3-bb45-06ab8d2fde22"
+# resource_type: "document"
+# resource_name: "add_sample_words"
 import sqlite3
 import json
 

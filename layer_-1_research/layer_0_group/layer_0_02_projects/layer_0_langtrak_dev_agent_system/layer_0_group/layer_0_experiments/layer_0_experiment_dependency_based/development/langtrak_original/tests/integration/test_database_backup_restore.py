@@ -1,3 +1,6 @@
+# resource_id: "2ee15250-f6a0-407d-855c-56ef3f52bd7a"
+# resource_type: "document"
+# resource_name: "test_database_backup_restore"
 """
 Comprehensive Database Backup/Restore Tests
 Tests US-052 and database management features

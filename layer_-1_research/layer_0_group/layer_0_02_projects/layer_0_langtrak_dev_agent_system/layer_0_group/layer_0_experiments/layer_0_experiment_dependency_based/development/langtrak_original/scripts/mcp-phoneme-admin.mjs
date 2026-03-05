@@ -1,3 +1,6 @@
+// resource_id: "3b9a339f-e800-45bf-bdb8-c64975076d74"
+// resource_type: "document"
+// resource_name: "mcp-phoneme-admin"
 #!/usr/bin/env node
 import { Client } from '@modelcontextprotocol/sdk/client/index.js';
 import { StreamableHTTPClientTransport } from '@modelcontextprotocol/sdk/client/streamableHttp.js';

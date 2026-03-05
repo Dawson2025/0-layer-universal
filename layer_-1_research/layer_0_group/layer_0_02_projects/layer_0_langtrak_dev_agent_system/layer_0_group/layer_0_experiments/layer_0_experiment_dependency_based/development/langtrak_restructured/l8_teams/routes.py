@@ -1,3 +1,6 @@
+# resource_id: "48bb4703-5338-481d-a63d-2e512bb01b27"
+# resource_type: "document"
+# resource_name: "routes"
 """L8 Teams - All team/group routes consolidated into a single blueprint.
 
 Covers:

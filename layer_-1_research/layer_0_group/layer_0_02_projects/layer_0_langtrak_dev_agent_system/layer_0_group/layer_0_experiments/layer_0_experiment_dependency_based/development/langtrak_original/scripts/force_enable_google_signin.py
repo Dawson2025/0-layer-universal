@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# resource_id: "b2cc555b-53c7-4bc0-967b-c3a802702d2f"
+# resource_type: "document"
+# resource_name: "force_enable_google_signin"
 """
 Force Enable Google Sign-In via API
 Directly enables Google Sign-In provider for all Firebase projects using the Identity Toolkit Admin API

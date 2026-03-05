@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# resource_id: "ab2522bc-feb4-44ef-8812-cc9d0da0fb66"
+# resource_type: "document"
+# resource_name: "meta_decision_engine"
 
 """
 meta_decision_engine.py

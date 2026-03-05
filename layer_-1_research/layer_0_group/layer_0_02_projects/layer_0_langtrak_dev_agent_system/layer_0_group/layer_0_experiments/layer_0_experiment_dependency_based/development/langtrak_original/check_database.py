@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# resource_id: "ec12f2c3-1f05-4b92-a975-4b2576bffc82"
+# resource_type: "document"
+# resource_name: "check_database"
 """
 Check database tables and schema
 """

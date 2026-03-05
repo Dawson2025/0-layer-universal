@@ -1,3 +1,6 @@
+# resource_id: "9dc76132-e4e9-44b0-9d26-1c46bca58177"
+# resource_type: "document"
+# resource_name: "flattened_dataset_improved"
 flattened_dataset = [
     # CVC Onset Single Consonants - Stops with Voicing and Place of Articulation
     {'syllable_type': 'CVC', 'position': 'onset', 'length_type': 'single_consonants', 'group_type': 'Stops', 'subgroup_type': 'Voiceless', 'phoneme': 'p', 'frequency': 0},

@@ -1,3 +1,6 @@
+# resource_id: "006bb3c1-a182-456b-bf1d-90d00062b3cd"
+# resource_type: "log"
+# resource_name: "flask"
 WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
 E0000 00:00:1761024937.549833  140851 alts_credentials.cc:93] ALTS creds ignored. Not running on GCP and untrusted ALTS is not enabled.
 Azure TTS available: True

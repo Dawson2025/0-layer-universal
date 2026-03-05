@@ -1,3 +1,6 @@
+// resource_id: "308bfcea-ef0a-4987-8503-00edd85b735a"
+// resource_type: "document"
+// resource_name: "realtime"
 import { supabase } from './api.js'
 
 export const realtimeService = {

@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# resource_id: "725b9175-e041-4cd6-93bb-ec8f90112023"
+# resource_type: "document"
+# resource_name: "test_firebase_direct"
 """
 Direct Firebase test with nam7 region
 """

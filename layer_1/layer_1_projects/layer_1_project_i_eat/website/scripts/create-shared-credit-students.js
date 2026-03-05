@@ -1,3 +1,6 @@
+// resource_id: "7c81a1ed-4e33-4acd-acd4-c75082fcd523"
+// resource_type: "document"
+// resource_name: "create-shared-credit-students"
 #!/usr/bin/env node
 
 /**

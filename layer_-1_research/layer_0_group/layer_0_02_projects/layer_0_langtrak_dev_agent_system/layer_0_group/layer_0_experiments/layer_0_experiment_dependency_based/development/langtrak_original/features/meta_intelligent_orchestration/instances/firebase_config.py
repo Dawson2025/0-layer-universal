@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# resource_id: "74e02832-6496-41e6-9acf-5a12d7e8b6fb"
+# resource_type: "document"
+# resource_name: "firebase_config"
 
 """
 firebase_config.py

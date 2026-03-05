@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# resource_id: "208ddc1e-8d30-4bfa-95c8-c9caecffeda3"
+# resource_type: "document"
+# resource_name: "check_script_status"
 
 """
 check_script_status.py

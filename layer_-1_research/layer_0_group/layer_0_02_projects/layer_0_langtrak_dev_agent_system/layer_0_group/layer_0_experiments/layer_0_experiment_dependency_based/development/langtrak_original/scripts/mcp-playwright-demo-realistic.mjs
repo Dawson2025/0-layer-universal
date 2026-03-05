@@ -1,3 +1,6 @@
+// resource_id: "92f6ea1d-c5f9-448b-b14c-42069cd6ebb4"
+// resource_type: "document"
+// resource_name: "mcp-playwright-demo-realistic"
 #!/usr/bin/env node
 /**
  * USER-REALISTIC Authentication Flow Test (US-001-005)

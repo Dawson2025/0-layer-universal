@@ -1,3 +1,6 @@
+// resource_id: "0a34d296-1b9c-47a5-aa29-33a2d3bcab70"
+// resource_type: "knowledge"
+// resource_name: "axe-check"
 class QuartoAxeReporter {
   constructor(axeResult, options) {
     this.axeResult = axeResult;

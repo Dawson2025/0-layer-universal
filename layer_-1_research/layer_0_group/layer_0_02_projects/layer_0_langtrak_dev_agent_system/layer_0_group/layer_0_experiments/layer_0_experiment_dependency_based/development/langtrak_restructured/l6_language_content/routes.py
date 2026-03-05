@@ -1,3 +1,6 @@
+# resource_id: "43e5d063-bb12-4ed1-8cbe-5546d37a6c3b"
+# resource_type: "document"
+# resource_name: "routes"
 """
 L6 Language Content — Blueprint Routes
 

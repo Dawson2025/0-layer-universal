@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# resource_id: "3e796bb2-d0a7-43ff-887a-28cb728e5837"
+# resource_type: "document"
+# resource_name: "test_user_story_integration"
 """
 Test script for the complete user story integration.
 This tests the table-based word creation method with the new hierarchy display.

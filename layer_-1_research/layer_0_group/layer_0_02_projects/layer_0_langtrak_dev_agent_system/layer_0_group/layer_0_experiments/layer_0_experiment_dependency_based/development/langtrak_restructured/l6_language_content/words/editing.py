@@ -1,3 +1,6 @@
+# resource_id: "01e5a6bd-fcef-4da0-8596-319d5d185ecd"
+# resource_type: "document"
+# resource_name: "editing"
 """
 Word Editing Module
 

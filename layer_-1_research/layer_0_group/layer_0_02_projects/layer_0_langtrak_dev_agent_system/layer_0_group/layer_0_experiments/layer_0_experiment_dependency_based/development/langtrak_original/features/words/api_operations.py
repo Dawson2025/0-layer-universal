@@ -1,3 +1,6 @@
+# resource_id: "010a1324-444c-4fdf-a607-2e606ab68ee9"
+# resource_type: "document"
+# resource_name: "api_operations"
 """
 Word API Operations Module
 

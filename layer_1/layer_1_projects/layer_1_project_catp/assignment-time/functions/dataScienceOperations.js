@@ -1,3 +1,6 @@
+// resource_id: "3b6852a1-6be7-4fe4-8855-828b652b8000"
+// resource_type: "document"
+// resource_name: "dataScienceOperations"
 // functions/dataScienceOperations.js
 
 function calculateStatistics(times) {

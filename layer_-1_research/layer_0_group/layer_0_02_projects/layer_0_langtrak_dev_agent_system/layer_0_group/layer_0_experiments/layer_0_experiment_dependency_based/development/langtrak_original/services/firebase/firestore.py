@@ -1,3 +1,6 @@
+# resource_id: "004cb27f-02dd-441c-9e6d-05b667878ef7"
+# resource_type: "document"
+# resource_name: "firestore"
 """Unified Firebase Admin and Firestore services."""
 from __future__ import annotations
 

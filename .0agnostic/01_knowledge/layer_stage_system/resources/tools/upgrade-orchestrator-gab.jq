@@ -1,3 +1,6 @@
+# resource_id: "45144598-7bc0-4fe2-8fa2-ec6a14b1747d"
+# resource_type: "knowledge"
+# resource_name: "upgrade-orchestrator-gab"
 # upgrade-orchestrator-gab.jq — Upgrades a stub orchestrator to full GAB compliance
 # Usage: jq -f upgrade-orchestrator-gab.jq <stub.gab.jsonld> > <output.gab.jsonld>
 #

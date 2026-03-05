@@ -1,3 +1,6 @@
+# resource_id: "fc265cb3-efbf-4769-9b09-8de0d6aa96fe"
+# resource_type: "document"
+# resource_name: ".codex_alias"
 # Codex CLI aliases and environment setup
 # Source this file to set up Codex CLI in your current shell session
 # Usage: source .codex_alias

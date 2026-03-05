@@ -1,3 +1,6 @@
+// resource_id: "ca3ccf94-bfe6-4809-bff9-872cf25082f4"
+// resource_type: "document"
+// resource_name: "RoleSelection"
 import { useState } from 'react'
 import { authService } from '../../services/auth'
 

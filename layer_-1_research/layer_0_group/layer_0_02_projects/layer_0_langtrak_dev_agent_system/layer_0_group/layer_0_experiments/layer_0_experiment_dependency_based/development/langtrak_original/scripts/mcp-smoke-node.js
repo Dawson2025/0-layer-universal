@@ -1,3 +1,6 @@
+// resource_id: "2ae5a103-3c0b-411b-8b37-9546f5a26303"
+// resource_type: "document"
+// resource_name: "mcp-smoke-node"
 #!/usr/bin/env node
 // Simple Node smoke test for Playwright MCP server
 const { spawn } = require('child_process');

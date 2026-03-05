@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# resource_id: "5523dc6d-1adb-408e-a43c-8e3df1db1848"
+# resource_type: "document"
+# resource_name: "test_updated_menu"
 """
 Test the updated menu system with frequency commands moved to admin
 """

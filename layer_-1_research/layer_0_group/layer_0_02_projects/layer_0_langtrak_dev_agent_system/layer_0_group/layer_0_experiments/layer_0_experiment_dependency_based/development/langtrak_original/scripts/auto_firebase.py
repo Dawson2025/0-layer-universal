@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# resource_id: "95382348-6754-4934-8a76-16724cc806de"
+# resource_type: "document"
+# resource_name: "auto_firebase"
 
 """
 auto_firebase.py

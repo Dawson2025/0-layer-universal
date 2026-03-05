@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# resource_id: "f1050300-5f6b-4868-a5b6-0b4f6a241c2c"
+# resource_type: "document"
+# resource_name: "test_clean_firebase"
 """
 Test the clean Firebase setup
 """

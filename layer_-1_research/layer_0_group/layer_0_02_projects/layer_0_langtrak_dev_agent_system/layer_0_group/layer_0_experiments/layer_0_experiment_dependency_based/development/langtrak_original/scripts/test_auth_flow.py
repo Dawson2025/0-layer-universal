@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# resource_id: "97d6f7f0-7aa0-4499-917b-339fd36f9835"
+# resource_type: "document"
+# resource_name: "test_auth_flow"
 
 """
 test_auth_flow.py

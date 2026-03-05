@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# resource_id: "144921bb-b612-4716-bd7d-a26243657359"
+# resource_type: "document"
+# resource_name: "comprehensive-cloud-test"
 
 """
 Comprehensive Cloud Feature Test

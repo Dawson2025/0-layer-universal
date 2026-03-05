@@ -1,3 +1,6 @@
+// resource_id: "d233de8b-dcea-4988-9207-1f56cde25adf"
+// resource_type: "document"
+// resource_name: "mcp-client"
 #!/usr/bin/env node
 import { Client } from '@modelcontextprotocol/sdk/client/index.js';
 import { StreamableHTTPClientTransport } from '@modelcontextprotocol/sdk/client/streamableHttp.js';

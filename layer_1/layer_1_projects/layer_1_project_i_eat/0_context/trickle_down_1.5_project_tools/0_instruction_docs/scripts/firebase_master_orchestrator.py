@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# resource_id: "83715e23-7476-4c0d-953c-633485e4eef2"
+# resource_type: "document"
+# resource_name: "firebase_master_orchestrator"
 
 """
 firebase_master_orchestrator.py

@@ -1,3 +1,6 @@
+// resource_id: "703e24d2-7c37-41fa-a592-7e461a48af53"
+// resource_type: "document"
+// resource_name: "firebase"
 import { initializeApp } from "firebase/app"
 import { getFirestore } from "firebase/firestore"
 

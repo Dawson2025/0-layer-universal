@@ -1,3 +1,6 @@
+# resource_id: "1756b851-4583-4afc-819e-7b963f4de46b"
+# resource_type: "data"
+# resource_name: "result_orchestrated_001"
 {
     "taskId": "orchestrated_001",
     "status": "completed",

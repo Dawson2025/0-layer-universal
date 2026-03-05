@@ -1,3 +1,6 @@
+// resource_id: "8b0bfe4f-a04b-40e8-b923-aa2e9d8eeb97"
+// resource_type: "document"
+// resource_name: "test-student-course-details"
 const { initializeApp, getApps } = require('firebase-admin/app');
 const { getFirestore } = require('firebase-admin/firestore');
 const axios = require('axios');

@@ -1,3 +1,6 @@
+# resource_id: "944afd5a-8016-45c7-b909-578f35e21b51"
+# resource_type: "backup"
+# resource_name: "README.md"
 # Sub Layer 0.06: Environment Setup
 
 **Purpose**: Environment-level setup that is not OS-specific and not tied to a single coding/AI application (e.g., Git/GitHub auth patterns, credentials, cross-app environment rules).

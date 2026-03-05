@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# resource_id: "f0fe5685-bffa-4c1c-bc02-55e17ad6c33b"
+# resource_type: "document"
+# resource_name: "update_main"
 """
 Script to update main.py with cleaner hierarchy display format.
 """

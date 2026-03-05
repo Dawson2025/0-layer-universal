@@ -1,3 +1,4 @@
+<!-- resource_id: "a938c513-3c0c-460c-a88e-2c6f805b9dcb" -->
 # GitHub Copilot Instructions
 
 
@@ -6,7 +7,9 @@
 | When | Rule |
 |------|------|
 | Modifying any file in .0agnostic/ | When modifying .0agnostic/ files, also update 0AGNOSTIC.md and run agnostic-sync.sh. Full protocol: .0agnostic/02_rules/static/agnostic_update_protocol.md |
-| Any turn that modifies files | On every turn with file changes: (1) describe changes INLINE with their full absolute paths in the response body, (2) provide end-of-turn summary of all Added/Updated/Moved/Removed files. All paths start from /home/, NEVER abbreviated. Full rule: .0agnostic/02_rules/static/I0_FILE_CHANGE_REPORTING/I0_FILE_CHANGE_REPORTING.md |
+| Any turn that modifies files
+ | On every turn with file changes: (1) describe changes INLINE with their full absolute paths in the response body, (2) provide end-of-turn summary of all Added/Updated/Moved/Removed files. All paths start from /home/, NEVER abbreviated. Full rule: .0agnostic/02_rules/static/I0_FILE_CHANGE_REPORTING/I0_FILE_CHANGE_REPORTING.md
+ |
 
 
 

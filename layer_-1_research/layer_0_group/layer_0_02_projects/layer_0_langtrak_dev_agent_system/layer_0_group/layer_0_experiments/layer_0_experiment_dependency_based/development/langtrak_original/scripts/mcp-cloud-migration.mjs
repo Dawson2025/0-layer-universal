@@ -1,3 +1,6 @@
+// resource_id: "ed31592d-31bc-4f4d-b4d5-499795d394d1"
+// resource_type: "document"
+// resource_name: "mcp-cloud-migration"
 #!/usr/bin/env node
 /**
  * Cloud Migration Test

@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# resource_id: "ad88bda5-94e8-4d8b-bcda-162784324558"
+# resource_type: "document"
+# resource_name: "migrate_content"
 """
 Migrate content from old directory structure to new structure.
 

@@ -1,3 +1,6 @@
+# resource_id: "5d81f8c9-f4cf-4b38-801a-89271a790e3d"
+# resource_type: "document"
+# resource_name: "test_cloud_templates"
 """
 Comprehensive Cloud Template Tests
 Tests cloud-based phoneme template sharing and synchronization

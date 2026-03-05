@@ -1,3 +1,4 @@
+<!-- resource_id: "fd3d584b-6c21-43e1-9bf4-31773fc15f6a" -->
 # stage_0_10_current_product
 
 ## Role

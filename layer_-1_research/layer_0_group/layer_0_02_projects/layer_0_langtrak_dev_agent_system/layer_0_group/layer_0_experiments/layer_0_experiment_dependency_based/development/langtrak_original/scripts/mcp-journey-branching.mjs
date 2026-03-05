@@ -1,3 +1,6 @@
+// resource_id: "880116f4-5fa1-44c4-b07b-2567f212d8ce"
+// resource_type: "document"
+// resource_name: "mcp-journey-branching"
 #!/usr/bin/env node
 /**
  * US-066: Advanced User - Branching and Variant Experimentation Journey

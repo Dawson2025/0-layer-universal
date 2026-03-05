@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# resource_id: "0a6e00a8-69b2-4e51-9644-1a7e898dc7d7"
+# resource_type: "document"
+# resource_name: "enable_google_signin_properly"
 """
 Properly enable Google Sign-In for all Firebase projects
 This script handles the OAuth consent screen setup and provider enablement

@@ -1,3 +1,6 @@
+# resource_id: "d8a185f4-9e6c-4b83-ac67-574cb139cc3c"
+# resource_type: "log"
+# resource_name: "stdout"
 Task completed successfully.
 
 **Summary**: I executed the task to list files in the `context_agents` directory and count JSON-LD files.

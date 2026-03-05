@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# resource_id: "1213f861-656c-407e-a250-a63b6ab1bc57"
+# resource_type: "document"
+# resource_name: "tts_ipa"
 """
 IPA Text-to-Speech module using Azure Cognitive Services for accurate IPA pronunciation
 """

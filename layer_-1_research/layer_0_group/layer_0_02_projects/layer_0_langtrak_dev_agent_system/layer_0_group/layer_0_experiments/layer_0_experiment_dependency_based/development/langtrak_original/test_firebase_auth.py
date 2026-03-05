@@ -1,3 +1,6 @@
+# resource_id: "5bb278ff-230c-4ae6-b2b6-55173b421571"
+# resource_type: "document"
+# resource_name: "test_firebase_auth"
 import pytest
 import json
 import os

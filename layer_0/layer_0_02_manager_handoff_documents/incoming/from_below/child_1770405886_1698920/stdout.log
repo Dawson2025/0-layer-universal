@@ -1,3 +1,6 @@
+# resource_id: "3c9e8117-3524-47e1-a952-06691d8e483a"
+# resource_type: "log"
+# resource_name: "stdout"
 I have completed the task. The result has been written to the specified result file.
 
 **Summary**: Analyzed sub_layer_0_05_rules and found:

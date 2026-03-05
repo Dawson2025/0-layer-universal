@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# resource_id: "342b3628-240a-4404-a2ed-0da6e251ae07"
+# resource_type: "document"
+# resource_name: "test_robust_runner"
 """
 Test script to demonstrate the robust runner solution
 """

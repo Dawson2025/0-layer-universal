@@ -1,3 +1,6 @@
+# resource_id: "99282645-3830-4404-b67c-c46924dc47a5"
+# resource_type: "document"
+# resource_name: "integration"
 name: Integration Tests
 
 on:

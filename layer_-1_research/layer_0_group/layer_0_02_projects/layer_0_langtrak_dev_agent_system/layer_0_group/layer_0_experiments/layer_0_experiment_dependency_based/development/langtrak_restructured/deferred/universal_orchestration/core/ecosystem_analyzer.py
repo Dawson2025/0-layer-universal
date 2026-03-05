@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# resource_id: "0134487e-f1a2-4ce0-914a-2b6e1ffa5d14"
+# resource_type: "document"
+# resource_name: "ecosystem_analyzer"
 
 """
 ecosystem_analyzer.py

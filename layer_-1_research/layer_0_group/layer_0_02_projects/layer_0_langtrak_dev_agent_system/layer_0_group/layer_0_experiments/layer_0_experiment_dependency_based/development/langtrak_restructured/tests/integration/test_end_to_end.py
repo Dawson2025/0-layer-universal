@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# resource_id: "fec8111f-ac0f-467c-ae64-3a985d7af5be"
+# resource_type: "document"
+# resource_name: "test_end_to_end"
 """
 End-to-end test for the letter-based filtering system.
 This test simulates the complete user story from start to finish.

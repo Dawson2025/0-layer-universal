@@ -1,3 +1,6 @@
+# resource_id: "d42ebfcc-51f4-4681-bc8b-378e4afc6db4"
+# resource_type: "document"
+# resource_name: ".replit"
 modules = ["bash", "nodejs-20", "python-3.11", "web"]
 [agent]
 expertMode = true

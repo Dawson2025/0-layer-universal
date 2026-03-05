@@ -1,3 +1,6 @@
+# resource_id: "a056df8c-02a7-47bc-97eb-5f65e3bd11bf"
+# resource_type: "document"
+# resource_name: "test_dev_environment"
 """
 Development Environment Verification Tests.
 

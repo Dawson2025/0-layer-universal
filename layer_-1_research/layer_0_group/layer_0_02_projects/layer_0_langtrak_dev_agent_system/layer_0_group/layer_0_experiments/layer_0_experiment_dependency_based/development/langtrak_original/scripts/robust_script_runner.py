@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# resource_id: "944ca71f-c7d0-4273-b1a1-fb40e5ec68d9"
+# resource_type: "document"
+# resource_name: "robust_script_runner"
 """
 Robust Script Runner - Solves the terminal tool hanging issue
 """

@@ -1,3 +1,6 @@
+// resource_id: "819b7906-7d04-49f5-b97a-c368b23c9a0b"
+// resource_type: "knowledge"
+// resource_name: "quarto"
 import * as tabsets from "./tabsets/tabsets.js";
 import * as axe from "./axe/axe-check.js";
 

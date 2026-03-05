@@ -1,3 +1,6 @@
+# resource_id: "1ba9cff8-1ee7-4f42-8ca4-fd581131415c"
+# resource_type: "output"
+# resource_name: ".gitignore"
 # SQLite databases
 *.db
 *.sqlite

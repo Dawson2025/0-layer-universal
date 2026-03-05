@@ -1,3 +1,6 @@
+// resource_id: "b32f30bf-9824-43ec-ad02-b4e25a863838"
+// resource_type: "document"
+// resource_name: "mcp-journey-collaboration"
 #!/usr/bin/env node
 /**
  * US-065: Team Collaboration Journey

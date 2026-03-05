@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# resource_id: "3b1418ca-6b07-4e5c-993b-2e247aeeb077"
+# resource_type: "document"
+# resource_name: "test_user_story_traceability"
 """
 User Story Traceability Validator
 

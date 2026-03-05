@@ -1,3 +1,6 @@
+# resource_id: "cc1a555e-191f-4e36-86ce-d02faa58b9e9"
+# resource_type: "document"
+# resource_name: "routes"
 """L5 Templates - All template routes (local, cloud, admin, phoneme templates)"""
 
 from flask import Blueprint, render_template, request, jsonify, session, Response

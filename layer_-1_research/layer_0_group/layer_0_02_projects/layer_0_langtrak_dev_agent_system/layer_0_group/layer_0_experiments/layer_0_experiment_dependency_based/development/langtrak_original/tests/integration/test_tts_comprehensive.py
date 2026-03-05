@@ -1,3 +1,6 @@
+# resource_id: "57edfd3e-9116-4df8-8849-963d8521ef58"
+# resource_type: "document"
+# resource_name: "test_tts_comprehensive"
 """
 Comprehensive TTS (Text-to-Speech) Tests
 Covers all user interactions with audio/pronunciation features

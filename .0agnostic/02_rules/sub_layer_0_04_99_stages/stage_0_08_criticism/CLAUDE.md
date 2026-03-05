@@ -1,3 +1,4 @@
+<!-- resource_id: "1e9cd191-32a5-40d0-89ca-ae2a448a93a2" -->
 # stage_0_08_criticism
 
 ## Role

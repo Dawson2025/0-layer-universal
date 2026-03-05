@@ -1,3 +1,6 @@
+# resource_id: "5f355d60-adf6-47af-8b0f-9d51d9c8327a"
+# resource_type: "document"
+# resource_name: "test_conflict_detection"
 
 #!/usr/bin/env python3
 """Test conflict detection for the specific case of 'wɪð'"""

@@ -1,3 +1,6 @@
+// resource_id: "d64e8fa9-3ed5-4c54-a4cf-7bf00da7b634"
+// resource_type: "document"
+// resource_name: "mcp-phonemes-flat"
 #!/usr/bin/env node
 import { Client } from '@modelcontextprotocol/sdk/client/index.js';
 import { StreamableHTTPClientTransport } from '@modelcontextprotocol/sdk/client/streamableHttp.js';

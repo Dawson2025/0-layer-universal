@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# resource_id: "57c9dab9-3f84-4182-a2d4-f654225ef87b"
+# resource_type: "document"
+# resource_name: "browser_google_signin_automation"
 """
 Browser-based Google Sign-In Automation
 This script uses browser automation to properly configure Google Sign-In

@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# resource_id: "77958849-70bc-417b-92ca-4a762a74c0eb"
+# resource_type: "document"
+# resource_name: "check_and_configure_domains"
 
 """
 check_and_configure_domains.py

@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# resource_id: "8d812877-e930-42ff-bee1-762ee51e298c"
+# resource_type: "document"
+# resource_name: "configure_google_auth_all_environments"
 
 """
 configure_google_auth_all_environments.py

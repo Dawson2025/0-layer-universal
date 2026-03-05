@@ -1,3 +1,6 @@
+// resource_id: "7f43e7cc-108f-4066-87ee-768bead95747"
+// resource_type: "document"
+// resource_name: "bell_curve"
 import {
     Chart,
     BarController,

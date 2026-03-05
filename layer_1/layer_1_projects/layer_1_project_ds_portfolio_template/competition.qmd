@@ -1,4 +1,7 @@
 ---
+resource_id: "7334342b-ce46-4e2b-aa6e-d43e27070325"
+resource_type: "document"
+resource_name: "competition.qmd"
 title: "about me"
 subtitle: "my data science portfolio"
 # use quarto markdown to 

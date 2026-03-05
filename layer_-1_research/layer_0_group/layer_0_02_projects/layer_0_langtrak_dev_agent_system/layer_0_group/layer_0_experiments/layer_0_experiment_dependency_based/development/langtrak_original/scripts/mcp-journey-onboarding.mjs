@@ -1,3 +1,6 @@
+// resource_id: "dc392c72-e4b6-41c2-83cc-1d49e42cda2d"
+// resource_type: "document"
+// resource_name: "mcp-journey-onboarding"
 #!/usr/bin/env node
 import { Client } from '@modelcontextprotocol/sdk/client/index.js';
 import { StreamableHTTPClientTransport } from '@modelcontextprotocol/sdk/client/streamableHttp.js';

@@ -1,3 +1,6 @@
+// resource_id: "c6a500bd-9fbd-4b82-b03b-3aa3a4537be0"
+// resource_type: "document"
+// resource_name: "fix-current-class-students"
 import { createClient } from '@supabase/supabase-js'
 import dotenv from 'dotenv'
 

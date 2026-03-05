@@ -1,3 +1,6 @@
+# resource_id: "b311ef07-d3cb-4d53-b942-6eba9fc19d97"
+# resource_type: "document"
+# resource_name: "storage"
 rules_version = '2';
 service firebase.storage {
   match /b/{bucket}/o {

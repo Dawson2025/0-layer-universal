@@ -1,3 +1,6 @@
+# resource_id: "e333d635-0f13-4bbd-9956-ea617d92d93b"
+# resource_type: "document"
+# resource_name: "configure-auth-domains"
 
 #!/usr/bin/env python3
 

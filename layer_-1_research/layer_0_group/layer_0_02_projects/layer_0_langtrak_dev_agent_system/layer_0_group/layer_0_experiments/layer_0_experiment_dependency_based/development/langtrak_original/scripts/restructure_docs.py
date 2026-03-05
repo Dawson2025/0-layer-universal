@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# resource_id: "2e26c048-b2f5-490b-b8cd-48a32e108359"
+# resource_type: "document"
+# resource_name: "restructure_docs"
 """
 Script to restructure trickle-down documentation directories
 to include 2_testing_docs as the third category

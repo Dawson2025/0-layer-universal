@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# resource_id: "86334b1f-fcc8-495c-af9b-15f618156f98"
+# resource_type: "document"
+# resource_name: "extract_pdf_content"
 """
 Extract text content from image-based PDF files using OCR
 """

@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# resource_id: "c3c175f2-1523-4d02-bf7d-36061ba79fbc"
+# resource_type: "document"
+# resource_name: "enable_google_provider_automated"
 
 """
 enable_google_provider_automated.py

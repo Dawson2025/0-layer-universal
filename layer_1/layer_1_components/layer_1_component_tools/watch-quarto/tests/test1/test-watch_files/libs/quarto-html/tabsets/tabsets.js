@@ -1,3 +1,6 @@
+// resource_id: "93db7e51-042c-44a6-ba63-37edb97c1925"
+// resource_type: "document"
+// resource_name: "tabsets"
 // grouped tabsets
 
 export function init() {

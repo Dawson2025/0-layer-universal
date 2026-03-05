@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# resource_id: "c1ab3b37-a74f-48ad-b7b3-9430b49f0a30"
+# resource_type: "document"
+# resource_name: "browser_automation_strategy"
 
 """
 browser_automation_strategy.py

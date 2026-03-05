@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# resource_id: "f373c1f8-fa4c-423c-8a33-54e3e0657a5f"
+# resource_type: "document"
+# resource_name: "script_monitor"
 
 """
 script_monitor.py

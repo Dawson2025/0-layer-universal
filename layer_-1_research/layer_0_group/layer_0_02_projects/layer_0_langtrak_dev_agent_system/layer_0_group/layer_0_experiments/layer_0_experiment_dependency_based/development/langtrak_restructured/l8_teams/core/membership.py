@@ -1,3 +1,6 @@
+# resource_id: "15c77399-e63b-46aa-a35d-300ab4de172d"
+# resource_type: "document"
+# resource_name: "membership"
 """Group membership and invitation management."""
 
 from __future__ import annotations

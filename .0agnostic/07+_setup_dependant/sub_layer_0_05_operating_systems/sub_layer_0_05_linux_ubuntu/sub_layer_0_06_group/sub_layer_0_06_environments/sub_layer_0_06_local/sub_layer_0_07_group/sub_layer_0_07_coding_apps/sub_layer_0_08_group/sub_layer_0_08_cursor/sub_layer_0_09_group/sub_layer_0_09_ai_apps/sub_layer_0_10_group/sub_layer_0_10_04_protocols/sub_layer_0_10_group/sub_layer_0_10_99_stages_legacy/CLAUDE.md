@@ -1,3 +1,4 @@
+<!-- resource_id: "98043172-254d-4398-bd62-6669fa9e7467" -->
 # sub_layer_0_13_protocols (Stages Manager)
 
 ## Role

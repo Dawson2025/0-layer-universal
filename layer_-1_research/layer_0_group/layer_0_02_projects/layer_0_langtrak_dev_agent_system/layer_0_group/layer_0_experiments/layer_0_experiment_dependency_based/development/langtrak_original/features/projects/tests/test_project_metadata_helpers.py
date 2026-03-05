@@ -1,3 +1,6 @@
+# resource_id: "cf84301e-00fc-4788-ae8b-505e45f7a304"
+# resource_type: "document"
+# resource_name: "test_project_metadata_helpers"
 import os
 import sqlite3
 import tempfile

@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# resource_id: "6e233271-cbf2-410c-9ce0-c72c57273e04"
+# resource_type: "document"
+# resource_name: "workflow_test"
 """Workflow simulation test for enhanced phoneme functions"""
 
 import sqlite3

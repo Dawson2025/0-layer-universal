@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# resource_id: "5ee15400-6d67-4a4f-9beb-fb111e020e72"
+# resource_type: "document"
+# resource_name: "migrate_to_firestore"
 """
 Migration Script: SQLite to Firestore
 Migrates all data from the existing SQLite database to Firestore collections

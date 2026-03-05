@@ -1,3 +1,6 @@
+// resource_id: "4e1aed66-56d1-45b4-8751-2dc402fef6e6"
+// resource_type: "document"
+// resource_name: "test_cloud_full_e2e"
 #!/usr/bin/env node
 
 /**

@@ -1,3 +1,6 @@
+# resource_id: "7741ce40-b2ad-4fa7-8d07-1f34c86cf225"
+# resource_type: "document"
+# resource_name: ".firebaserc"
 {
   "projects": {
     "default": "assignment-time",

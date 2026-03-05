@@ -1,3 +1,6 @@
+# resource_id: "0474c88f-5805-47f4-882c-06cb8ba49f46"
+# resource_type: "document"
+# resource_name: "requirements-prod"
 # Production Requirements for Language Tracker
 # Includes all base requirements plus production WSGI server
 

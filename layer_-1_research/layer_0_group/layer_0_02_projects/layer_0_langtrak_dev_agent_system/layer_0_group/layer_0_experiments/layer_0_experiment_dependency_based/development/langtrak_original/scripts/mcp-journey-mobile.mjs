@@ -1,3 +1,6 @@
+// resource_id: "bd94f26c-12e4-49c6-a1a0-7b7999b2de8a"
+// resource_type: "document"
+// resource_name: "mcp-journey-mobile"
 #!/usr/bin/env node
 /**
  * US-067: Mobile-First Creator Journey

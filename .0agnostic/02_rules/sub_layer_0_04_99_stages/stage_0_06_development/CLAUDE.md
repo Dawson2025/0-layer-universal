@@ -1,3 +1,4 @@
+<!-- resource_id: "716b14ae-8ffb-4db7-983a-982c6cbbe6d4" -->
 # stage_0_06_development
 
 ## Role

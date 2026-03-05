@@ -1,3 +1,6 @@
+# resource_id: "b34e78bd-9e06-4ee3-a01d-3899df903db1"
+# resource_type: "document"
+# resource_name: "firestore"
 rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {

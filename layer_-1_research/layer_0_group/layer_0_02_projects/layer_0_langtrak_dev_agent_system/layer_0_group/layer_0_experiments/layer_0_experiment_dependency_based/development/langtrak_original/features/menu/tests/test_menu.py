@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# resource_id: "f3d8fc4e-8f48-4d8c-8d9a-aa7e7ade8531"
+# resource_type: "document"
+# resource_name: "test_menu"
 """
 Test the main menu system to ensure proper functionality
 """

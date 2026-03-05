@@ -1,3 +1,6 @@
+// resource_id: "a85f6103-b192-4cc1-aa42-ed61fcf8e3f5"
+// resource_type: "document"
+// resource_name: "mcp-words-multisyllable"
 #!/usr/bin/env node
 import { Client } from '@modelcontextprotocol/sdk/client/index.js';
 import { StreamableHTTPClientTransport } from '@modelcontextprotocol/sdk/client/streamableHttp.js';

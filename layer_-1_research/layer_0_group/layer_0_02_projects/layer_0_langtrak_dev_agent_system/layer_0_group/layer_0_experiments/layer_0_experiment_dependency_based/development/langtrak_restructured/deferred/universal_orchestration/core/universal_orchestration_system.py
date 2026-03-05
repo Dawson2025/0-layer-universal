@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# resource_id: "dba4a074-932c-4594-b00e-6af893ce1c83"
+# resource_type: "document"
+# resource_name: "universal_orchestration_system"
 
 """
 universal_orchestration_system.py

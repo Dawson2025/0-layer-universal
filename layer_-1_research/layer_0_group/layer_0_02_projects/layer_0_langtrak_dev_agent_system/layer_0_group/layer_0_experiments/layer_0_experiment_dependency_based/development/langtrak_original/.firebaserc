@@ -1,3 +1,6 @@
+# resource_id: "f35440ce-b284-4f7f-ba46-f02bdf9aca2f"
+# resource_type: "document"
+# resource_name: ".firebaserc"
 {
   "projects": {
     "default": "lang-trak-dev",

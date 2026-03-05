@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# resource_id: "5a80b029-7f81-4f7c-b67d-f90b8ce0117f"
+# resource_type: "document"
+# resource_name: "test_english_conflict_filter"
 """
 Test the English word conflict filtering functionality.
 """

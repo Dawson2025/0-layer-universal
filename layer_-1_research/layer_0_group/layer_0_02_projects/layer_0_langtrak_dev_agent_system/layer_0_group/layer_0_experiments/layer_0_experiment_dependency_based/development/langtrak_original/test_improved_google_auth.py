@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# resource_id: "b21280aa-6ce1-493a-81c7-c6c45085aefa"
+# resource_type: "document"
+# resource_name: "test_improved_google_auth"
 """
 Test improved Google OAuth authentication with proper dev/prod handling
 """

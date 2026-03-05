@@ -1,3 +1,6 @@
+# resource_id: "cb108719-0b52-4170-a70b-ce38a1295306"
+# resource_type: "document"
+# resource_name: ".gitignore"
 /.quarto/
 /_site/
 .Rproj.user

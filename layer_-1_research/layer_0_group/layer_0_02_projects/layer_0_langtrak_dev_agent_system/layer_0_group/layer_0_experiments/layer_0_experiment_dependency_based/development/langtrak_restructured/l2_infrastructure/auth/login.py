@@ -1,3 +1,6 @@
+# resource_id: "7db9f20c-bb92-41d2-8066-122fe0ccfdfc"
+# resource_type: "document"
+# resource_name: "login"
 """User login functionality."""
 
 from flask import flash, redirect, render_template, request, session, url_for

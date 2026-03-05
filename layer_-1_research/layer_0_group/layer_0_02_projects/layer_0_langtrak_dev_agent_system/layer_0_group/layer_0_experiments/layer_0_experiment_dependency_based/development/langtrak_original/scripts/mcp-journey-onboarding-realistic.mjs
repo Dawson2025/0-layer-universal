@@ -1,3 +1,6 @@
+// resource_id: "13545845-ff92-496e-9f07-d28e3ab73b5a"
+// resource_type: "document"
+// resource_name: "mcp-journey-onboarding-realistic"
 #!/usr/bin/env node
 /**
  * USER-REALISTIC Onboarding Journey Test (US-064)

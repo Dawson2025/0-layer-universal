@@ -1,3 +1,6 @@
+// resource_id: "466768c5-3485-472f-be63-c87f2ecf63a8"
+// resource_type: "document"
+// resource_name: "index"
 #!/usr/bin/env node
 
 import inquirer from 'inquirer';

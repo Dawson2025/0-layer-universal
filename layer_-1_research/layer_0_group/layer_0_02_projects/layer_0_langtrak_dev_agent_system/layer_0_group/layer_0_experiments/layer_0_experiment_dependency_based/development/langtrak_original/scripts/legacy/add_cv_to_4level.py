@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# resource_id: "555cc298-56f1-463b-bdbf-919adf1f21d9"
+# resource_type: "document"
+# resource_name: "add_cv_to_4level"
 """
 Script to add CV phonemes to the 4-level hierarchy dataset
 """

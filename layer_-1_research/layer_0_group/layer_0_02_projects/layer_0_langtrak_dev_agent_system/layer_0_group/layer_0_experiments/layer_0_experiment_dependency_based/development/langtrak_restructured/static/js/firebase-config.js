@@ -1,3 +1,6 @@
+// resource_id: "07aed9b0-ee33-4111-91d8-3a15fda569cf"
+// resource_type: "document"
+// resource_name: "firebase-config"
 // Initialize Firebase using CDN (loaded in HTML)
 // Firebase is loaded via CDN in the HTML template
 const app = firebase.initializeApp(window.FIREBASE_CONFIG);

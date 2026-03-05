@@ -1,3 +1,6 @@
+# resource_id: "f667d8fb-a211-492a-b12e-fb42dc1b3ce9"
+# resource_type: "document"
+# resource_name: "Picsew_20251110151649_extracted"
 
 === TOP SECTION ===
 @ ©

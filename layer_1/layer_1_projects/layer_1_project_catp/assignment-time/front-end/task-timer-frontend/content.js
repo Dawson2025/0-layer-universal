@@ -1,3 +1,6 @@
+// resource_id: "d45e7c7c-3589-4c4c-8d09-3cb9e4f6fa8a"
+// resource_type: "document"
+// resource_name: "content"
 // Create sidebar
 const sidebar = document.createElement("div");
 sidebar.id = "mySidebar";

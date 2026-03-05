@@ -1,3 +1,6 @@
+# resource_id: "da1ceeab-273a-41b1-b78c-75a0af27a842"
+# resource_type: "document"
+# resource_name: "__init__"
 """
 Core Infrastructure Module
 

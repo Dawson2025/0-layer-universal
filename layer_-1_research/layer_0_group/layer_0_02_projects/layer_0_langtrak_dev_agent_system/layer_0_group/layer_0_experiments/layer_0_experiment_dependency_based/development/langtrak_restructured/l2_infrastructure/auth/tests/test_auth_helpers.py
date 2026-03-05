@@ -1,3 +1,6 @@
+# resource_id: "be31fdba-5746-49eb-a9c5-d58896ebe6bb"
+# resource_type: "document"
+# resource_name: "test_auth_helpers"
 import os
 import sqlite3
 import tempfile

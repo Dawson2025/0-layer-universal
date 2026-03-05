@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# resource_id: "8847f3dc-65d2-4c99-9547-1b8e453345af"
+# resource_type: "document"
+# resource_name: "test_admin"
 """
 Test the admin functionality in main.py
 """

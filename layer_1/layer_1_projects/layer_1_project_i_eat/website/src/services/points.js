@@ -1,3 +1,6 @@
+// resource_id: "5d410d68-2620-43da-856b-1e8cd3710a80"
+// resource_type: "document"
+// resource_name: "points"
 import { supabase } from './api'
 
 export const pointsService = {

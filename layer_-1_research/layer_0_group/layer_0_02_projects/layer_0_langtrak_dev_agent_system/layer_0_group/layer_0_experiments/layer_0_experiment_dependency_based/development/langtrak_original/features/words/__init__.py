@@ -1,3 +1,6 @@
+# resource_id: "fb898fed-452b-4b6f-a9b4-d58badad7acc"
+# resource_type: "document"
+# resource_name: "__init__"
 """
 Words Feature
 

@@ -1,3 +1,6 @@
+// resource_id: "cbebd4f3-a5af-40b3-aa6e-4ef3b174aa5f"
+// resource_type: "document"
+// resource_name: "mcp-admin-database-tools-realistic"
 #!/usr/bin/env node
 import { Client } from '@modelcontextprotocol/sdk/client/index.js';
 import { StreamableHTTPClientTransport } from '@modelcontextprotocol/sdk/client/streamableHttp.js';

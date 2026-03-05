@@ -1,3 +1,6 @@
+# resource_id: "96d05ce1-fc74-438c-9633-ca15563ffdf4"
+# resource_type: "document"
+# resource_name: "requirements"
 Flask==2.3.2
 Werkzeug==2.3.6
 Jinja2==3.1.2

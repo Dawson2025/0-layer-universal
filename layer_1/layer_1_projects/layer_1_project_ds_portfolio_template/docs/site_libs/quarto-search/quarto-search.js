@@ -1,3 +1,6 @@
+// resource_id: "fd6bfd15-0637-4df2-95b0-82ebca884766"
+// resource_type: "document"
+// resource_name: "quarto-search"
 const kQueryArg = "q";
 const kResultsArg = "show-results";
 

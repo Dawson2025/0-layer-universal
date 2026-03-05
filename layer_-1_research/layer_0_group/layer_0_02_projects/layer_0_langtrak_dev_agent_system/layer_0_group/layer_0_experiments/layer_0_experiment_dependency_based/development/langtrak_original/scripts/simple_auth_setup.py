@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# resource_id: "a2239620-a13e-4129-b08b-9ff5da7b620e"
+# resource_type: "document"
+# resource_name: "simple_auth_setup"
 
 """
 simple_auth_setup.py

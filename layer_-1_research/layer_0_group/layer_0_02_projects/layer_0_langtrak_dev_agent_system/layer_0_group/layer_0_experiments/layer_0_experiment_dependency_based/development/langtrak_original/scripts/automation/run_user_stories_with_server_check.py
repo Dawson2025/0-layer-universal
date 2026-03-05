@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# resource_id: "e8ede493-eff8-4004-83a9-2440511892bc"
+# resource_type: "document"
+# resource_name: "run_user_stories_with_server_check"
 """
 # 🧪 IMPROVED TESTING SYSTEM: Tests ALL 71 user stories across 18 categories
 # WITH SERVER CONNECTIVITY VERIFICATION

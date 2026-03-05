@@ -1,3 +1,6 @@
+# resource_id: "a332b3fb-f3c6-48bf-b3f9-865413643acf"
+# resource_type: "document"
+# resource_name: "app"
 """
 LangTrak Application Factory
 

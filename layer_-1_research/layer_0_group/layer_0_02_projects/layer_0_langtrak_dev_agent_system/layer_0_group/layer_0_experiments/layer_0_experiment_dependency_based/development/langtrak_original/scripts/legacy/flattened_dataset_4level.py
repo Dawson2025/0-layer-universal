@@ -1,3 +1,6 @@
+# resource_id: "ba1cd30e-d9a5-4df5-906d-be7badf5a56a"
+# resource_type: "document"
+# resource_name: "flattened_dataset_4level"
 # 4-Level Hierarchical Consonant Classification System
 # Based on research: Manner > Place > Voicing > Additional Features
 

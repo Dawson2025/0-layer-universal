@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# resource_id: "522e578e-544b-4b72-8b86-4e8e54c65e03"
+# resource_type: "document"
+# resource_name: "test_server_connectivity"
 """
 Test script to verify server connectivity check functionality.
 """

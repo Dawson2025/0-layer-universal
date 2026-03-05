@@ -1,3 +1,6 @@
+# resource_id: "e1e81730-f87d-422e-9b75-de47538b72e5"
+# resource_type: "document"
+# resource_name: "phoneme_management"
 """
 Admin Phoneme Management Module
 

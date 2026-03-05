@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# resource_id: "ad050bb2-d4dc-4f01-9ab4-e08306d66782"
+# resource_type: "document"
+# resource_name: "test_expanded_english_words"
 """
 Test script for the expanded English word conflict filtering (500+ words)
 """

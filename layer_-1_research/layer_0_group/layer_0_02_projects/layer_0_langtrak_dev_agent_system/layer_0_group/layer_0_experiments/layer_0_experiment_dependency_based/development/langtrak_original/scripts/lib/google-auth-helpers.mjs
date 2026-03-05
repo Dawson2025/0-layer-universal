@@ -1,3 +1,6 @@
+// resource_id: "c1f612b6-5c38-4af0-800b-1026cfdd670a"
+// resource_type: "document"
+// resource_name: "google-auth-helpers"
 /**
  * Google OAuth helper utilities for MCP browser automation scripts.
  *

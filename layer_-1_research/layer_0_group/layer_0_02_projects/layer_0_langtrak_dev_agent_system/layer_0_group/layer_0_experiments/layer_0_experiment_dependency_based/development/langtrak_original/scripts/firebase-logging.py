@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# resource_id: "1b847e5e-3c6d-4a6d-9ccb-271c32389714"
+# resource_type: "document"
+# resource_name: "firebase-logging"
 """
 firebase-logging.py
 

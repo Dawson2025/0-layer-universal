@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# resource_id: "8ab449e7-0c85-49b9-8cb9-c580bc4ffe43"
+# resource_type: "document"
+# resource_name: "complete_firebase_setup"
 
 """
 complete_firebase_setup.py

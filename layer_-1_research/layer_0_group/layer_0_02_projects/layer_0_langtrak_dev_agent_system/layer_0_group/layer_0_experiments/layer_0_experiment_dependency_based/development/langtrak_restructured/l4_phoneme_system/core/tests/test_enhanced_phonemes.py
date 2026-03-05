@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# resource_id: "7bce14ae-bd77-4082-bd5b-59bec0ccda57"
+# resource_type: "document"
+# resource_name: "test_enhanced_phonemes"
 """Test script for enhanced phoneme management functions"""
 
 import sqlite3

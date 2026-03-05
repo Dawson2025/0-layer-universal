@@ -1,3 +1,6 @@
+# resource_id: "5ef80eb6-3fd1-498c-aac9-f5cc4ee91dd7"
+# resource_type: "document"
+# resource_name: "stage_registry"
 # Stage registry for Layer-Stage Framework
 # Updated: 2026-01-25
 # Note: Position 00 reserved for stage_registry, stages are numbered 01-11

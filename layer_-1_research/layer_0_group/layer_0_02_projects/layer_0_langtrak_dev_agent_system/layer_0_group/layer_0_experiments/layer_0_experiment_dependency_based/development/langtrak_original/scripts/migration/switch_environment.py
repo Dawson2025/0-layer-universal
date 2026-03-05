@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# resource_id: "509461cc-b4a7-4ffa-b00b-0b2202f50132"
+# resource_type: "document"
+# resource_name: "switch_environment"
 """
 Firebase Environment Switcher
 """

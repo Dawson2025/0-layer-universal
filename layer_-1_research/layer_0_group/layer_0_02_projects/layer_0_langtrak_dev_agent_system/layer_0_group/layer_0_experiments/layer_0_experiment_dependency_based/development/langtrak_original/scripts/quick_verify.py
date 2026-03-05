@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# resource_id: "3ccbeec5-801e-42c8-a943-28c58286e05d"
+# resource_type: "document"
+# resource_name: "quick_verify"
 
 """
 quick_verify.py

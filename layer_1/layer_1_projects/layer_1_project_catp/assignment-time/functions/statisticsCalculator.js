@@ -1,3 +1,6 @@
+// resource_id: "0e78ecff-b34a-4075-b73d-6721e63c3ade"
+// resource_type: "document"
+// resource_name: "statisticsCalculator"
 /**
  * Statistical calculation functions for assignment timing data
  */

@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# resource_id: "01c2b0f1-3d7f-462c-87a1-26f9b544341e"
+# resource_type: "document"
+# resource_name: "context7-setup"
 """
 Context7 MCP Server Setup Script
 Easy setup and switching between local and remote Context7 MCP server configurations.

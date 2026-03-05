@@ -1,3 +1,4 @@
+<!-- resource_id: "a4e50cd4-b87d-4f54-8193-b9226b79f96a" -->
 # Claude Code Context
 
 ## Identity

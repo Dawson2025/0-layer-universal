@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# resource_id: "2d781ff7-ab7a-4268-affe-2b06564fccab"
+# resource_type: "document"
+# resource_name: "test_new_functionality"
 """
 Test script for the new table-based word creation functionality
 """

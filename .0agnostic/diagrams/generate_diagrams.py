@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# resource_id: "1d68516f-c85d-42c3-ab25-34ee552919fd"
+# resource_type: "document"
+# resource_name: "generate_diagrams"
 """
 Generate Mermaid diagrams from the 0AGNOSTIC hierarchy.
 Works around long path issues by using absolute paths internally.

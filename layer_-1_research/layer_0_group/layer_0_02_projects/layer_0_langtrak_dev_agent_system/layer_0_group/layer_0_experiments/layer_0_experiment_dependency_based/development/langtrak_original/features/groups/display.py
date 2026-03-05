@@ -1,3 +1,6 @@
+# resource_id: "1af88cbc-9a4c-4aab-b8b2-9f001a40c09a"
+# resource_type: "document"
+# resource_name: "display"
 """Display and viewing routes for groups."""
 
 from __future__ import annotations

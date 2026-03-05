@@ -1,3 +1,6 @@
+# resource_id: "28a92350-fdb7-4188-9915-61a15eadedd4"
+# resource_type: "document"
+# resource_name: "test_group_lifecycle"
 """
 Group lifecycle tests using Firebase Emulator.
 """

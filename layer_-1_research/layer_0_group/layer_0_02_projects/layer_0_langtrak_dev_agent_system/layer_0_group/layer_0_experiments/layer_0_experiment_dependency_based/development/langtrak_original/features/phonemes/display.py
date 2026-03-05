@@ -1,3 +1,6 @@
+# resource_id: "7fc581dc-e498-453e-8f2e-f09b83381c2b"
+# resource_type: "document"
+# resource_name: "display"
 """
 Phonemes Display Module
 

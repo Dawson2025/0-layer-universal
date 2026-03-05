@@ -1,3 +1,6 @@
+// resource_id: "4116c075-c20a-49ff-88e9-60c96fbb8290"
+// resource_type: "document"
+// resource_name: "mcp-projects-flow"
 #!/usr/bin/env node
 import { Client } from '@modelcontextprotocol/sdk/client/index.js';
 import { StreamableHTTPClientTransport } from '@modelcontextprotocol/sdk/client/streamableHttp.js';

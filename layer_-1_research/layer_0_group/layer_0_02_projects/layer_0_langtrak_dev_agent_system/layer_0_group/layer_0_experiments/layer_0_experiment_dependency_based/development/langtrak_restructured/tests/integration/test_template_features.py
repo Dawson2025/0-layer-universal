@@ -1,3 +1,6 @@
+# resource_id: "7d2c8f07-23b3-4de1-879a-baad479b18dd"
+# resource_type: "document"
+# resource_name: "test_template_features"
 """
 Comprehensive Phoneme Template Tests
 Tests template creation, management, and cloud synchronization

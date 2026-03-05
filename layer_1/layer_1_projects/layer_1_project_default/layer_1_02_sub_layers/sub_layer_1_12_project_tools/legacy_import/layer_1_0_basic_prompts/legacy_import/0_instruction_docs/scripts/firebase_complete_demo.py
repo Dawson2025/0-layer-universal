@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# resource_id: "41423f1e-0997-422a-9c00-5af50e48a170"
+# resource_type: "document"
+# resource_name: "firebase_complete_demo"
 
 """
 firebase_complete_demo.py

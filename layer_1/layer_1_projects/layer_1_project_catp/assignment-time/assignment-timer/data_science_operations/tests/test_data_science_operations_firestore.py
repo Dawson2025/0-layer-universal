@@ -1,3 +1,6 @@
+# resource_id: "82794890-3617-4655-a58c-3215a587aa51"
+# resource_type: "document"
+# resource_name: "test_data_science_operations_firestore"
 ﻿"""Smoke test that exercises Firestore-backed analytics if credentials are available."""
 from __future__ import annotations
 

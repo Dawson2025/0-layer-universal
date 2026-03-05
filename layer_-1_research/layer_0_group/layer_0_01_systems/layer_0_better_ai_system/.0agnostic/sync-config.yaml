@@ -1,3 +1,6 @@
+# resource_id: "b50ce102-7741-46f1-8efd-52a8f2475b4d"
+# resource_type: "document"
+# resource_name: "sync-config"
 # Agnostic Sync Configuration
 # Defines how 0AGNOSTIC.md and .0agnostic/ are synced to tool-specific outputs
 

@@ -1,3 +1,4 @@
+<!-- resource_id: "a29ef496-9b27-4e33-b732-541590f35ebf" -->
 # stage_0_04_design
 
 ## Role

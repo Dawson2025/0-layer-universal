@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# resource_id: "98fc0c07-6f19-4989-92d8-c2774b52c4a5"
+# resource_type: "document"
+# resource_name: "copy_and_adapt_context"
 """
 Copy 0_context from DS250-Course-Draft to pac20026_fall2025 and adapt content
 """

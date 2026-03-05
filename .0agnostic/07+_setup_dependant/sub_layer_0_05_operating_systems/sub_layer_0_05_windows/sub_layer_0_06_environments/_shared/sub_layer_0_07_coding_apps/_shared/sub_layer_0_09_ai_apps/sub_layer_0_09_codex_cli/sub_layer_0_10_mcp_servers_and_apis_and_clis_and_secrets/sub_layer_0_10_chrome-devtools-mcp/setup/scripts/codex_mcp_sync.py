@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# resource_id: "a248793f-d924-4c32-8d27-d2f1cbdc773f"
+# resource_type: "document"
+# resource_name: "codex_mcp_sync"
 """
 Sync Codex CLI MCP servers from environment presets into ~/.codex/config.toml.
 

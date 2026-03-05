@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# resource_id: "1bea4ae4-df91-4c82-acb3-6e050ca8f8e0"
+# resource_type: "document"
+# resource_name: "tts_ipa_old"
 """
 IPA Text-to-Speech module with multiple backends for high-quality pronunciation
 Supports eSpeak-NG (primary) and Azure Cognitive Services (fallback)

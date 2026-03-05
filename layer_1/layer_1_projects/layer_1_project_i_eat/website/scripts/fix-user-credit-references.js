@@ -1,3 +1,6 @@
+// resource_id: "333feed4-2523-41ec-9d9a-bf8019d0e65c"
+// resource_type: "document"
+// resource_name: "fix-user-credit-references"
 #!/usr/bin/env node
 
 /**

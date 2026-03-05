@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# resource_id: "2f34e20e-aec0-45fc-8768-101cfafc2858"
+# resource_type: "document"
+# resource_name: "test_app"
 
 print("Starting Flask app test...")
 

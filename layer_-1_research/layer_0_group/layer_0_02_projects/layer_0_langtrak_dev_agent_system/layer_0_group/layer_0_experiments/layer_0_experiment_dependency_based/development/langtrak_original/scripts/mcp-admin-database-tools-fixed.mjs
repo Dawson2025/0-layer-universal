@@ -1,3 +1,6 @@
+// resource_id: "3cef69f4-50a2-4a8b-85c1-05f72aa76d0c"
+// resource_type: "document"
+// resource_name: "mcp-admin-database-tools-fixed"
 #!/usr/bin/env node
 /**
  * US-050-053: Admin Database Tools

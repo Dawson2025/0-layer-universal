@@ -1,3 +1,6 @@
+# resource_id: "3a733494-e5d9-4ed2-b70e-7e9b537c1d8d"
+# resource_type: "backup"
+# resource_name: "README.md"
 # Sub Layer 0.08: Apps, Browsers, and Extensions Setup
 
 **Purpose**: Setup for general apps (non-AI), browsers, and browser extensions used across projects.

@@ -1,3 +1,6 @@
+# resource_id: "b5a97eeb-5fe8-4b56-81e4-574680f9a603"
+# resource_type: "document"
+# resource_name: "test_prod_smoke"
 """
 Production Smoke Tests (READ-ONLY!)
 

@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# resource_id: "6cf1403c-2067-4cdb-beaa-a7402994ca67"
+# resource_type: "document"
+# resource_name: "agent-firebase-manager"
 
 """
 agent-firebase-manager.py

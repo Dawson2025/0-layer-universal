@@ -1,4 +1,7 @@
 ---
+resource_id: "f6ef77af-5bdf-4a07-9930-67209f6678c8"
+resource_type: "document"
+resource_name: "index.qmd"
 title: "about me"
 subtitle: "my data science portfolio"
 # use quarto markdown to 

@@ -1,3 +1,6 @@
+# resource_id: "7b632fa0-1b20-4788-8474-15d05c8a166e"
+# resource_type: "document"
+# resource_name: ".gitignore"
 node_modules/
 lib/
 .tsbuildinfo

@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# resource_id: "c07678f5-a2d1-4056-b97f-e22208e7eead"
+# resource_type: "document"
+# resource_name: "automated_google_setup"
 
 """
 automated_google_setup.py

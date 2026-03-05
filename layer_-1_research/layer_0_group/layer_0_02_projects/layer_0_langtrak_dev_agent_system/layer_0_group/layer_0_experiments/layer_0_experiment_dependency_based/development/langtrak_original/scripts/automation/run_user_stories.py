@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# resource_id: "5541cd75-ba4b-45cc-800e-0a5ca7ce67ad"
+# resource_type: "document"
+# resource_name: "run_user_stories"
 """
 # 🧪 MAIN TESTING SYSTEM: Tests ALL 71 user stories across 18 categories
 # Always run with --navigation-mode=both for complete coverage

@@ -1,3 +1,6 @@
+# resource_id: "44e76a0a-8dfc-40e6-a959-58ab75cd517e"
+# resource_type: "document"
+# resource_name: "test_phoneme_lifecycle"
 """
 Phoneme lifecycle tests using Firebase Emulator.
 

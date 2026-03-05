@@ -1,3 +1,6 @@
+# resource_id: "e4e2d1ef-4add-4d41-abef-f8c4c1d0a614"
+# resource_type: "document"
+# resource_name: "database"
 """Utility helpers for resetting the local SQLite database."""
 from __future__ import annotations
 

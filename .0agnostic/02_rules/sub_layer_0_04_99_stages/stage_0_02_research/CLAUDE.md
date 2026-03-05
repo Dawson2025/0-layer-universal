@@ -1,3 +1,4 @@
+<!-- resource_id: "35c98bd9-fc22-4187-b631-161aa918dbb3" -->
 # stage_0_02_research
 
 ## Role

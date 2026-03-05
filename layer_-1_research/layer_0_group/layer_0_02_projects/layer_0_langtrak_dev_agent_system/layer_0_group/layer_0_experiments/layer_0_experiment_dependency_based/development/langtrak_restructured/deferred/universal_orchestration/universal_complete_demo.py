@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# resource_id: "d92aedae-aa64-4789-9217-fb29aa352d0a"
+# resource_type: "document"
+# resource_name: "universal_complete_demo"
 
 """
 universal_complete_demo.py

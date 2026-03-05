@@ -1,3 +1,6 @@
+# resource_id: "1ca3656c-7a73-45dd-8930-94ba2c3cf83c"
+# resource_type: "document"
+# resource_name: "agnostic_graph"
 digraph {
     rankdir=LR;
     node [shape=box, style=rounded, fontname="Arial"];

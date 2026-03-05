@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# resource_id: "e9e151a2-7da9-47e8-a6a8-b9285315dff4"
+# resource_type: "document"
+# resource_name: "fix_database_schema"
 """
 Fix database schema to allow NULL password_hash for Google OAuth users
 """

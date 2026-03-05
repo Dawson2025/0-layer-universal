@@ -1,3 +1,6 @@
+# resource_id: "9d493a60-a7ec-477c-a623-33e5b2eaa87f"
+# resource_type: "document"
+# resource_name: "add_syllables_data"
 """
 Database Migration: Add syllables_data column to words table
 

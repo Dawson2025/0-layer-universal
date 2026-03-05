@@ -1,3 +1,6 @@
+// resource_id: "fb5615cb-31b4-4ec3-9549-0f6841c709cc"
+// resource_type: "document"
+// resource_name: "TeacherDashboard"
 // components/teacher/TeacherDashboard.jsx
 import React, { useState, useEffect, useCallback } from 'react'
 import { pointsService } from '../../services/points'

@@ -1,3 +1,8 @@
+---
+resource_id: "7d64fe6a-602c-4962-91a4-42afe632229a"
+resource_type: "document"
+resource_name: "01_hierarchy"
+---
 # System Architecture - Hierarchy Visualization
 
 ## Layer Hierarchy (Layer 0 → Layer 4)

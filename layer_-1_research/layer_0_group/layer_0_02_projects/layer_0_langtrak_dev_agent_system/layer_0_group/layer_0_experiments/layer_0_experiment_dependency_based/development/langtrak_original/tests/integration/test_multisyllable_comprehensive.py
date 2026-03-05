@@ -1,3 +1,6 @@
+# resource_id: "5a62f7fb-c318-4f1c-b63a-4e1a2dead1f5"
+# resource_type: "document"
+# resource_name: "test_multisyllable_comprehensive"
 """
 Comprehensive Multi-Syllable Word Tests
 Covers US-069: Build Multi-Syllable Word Structure

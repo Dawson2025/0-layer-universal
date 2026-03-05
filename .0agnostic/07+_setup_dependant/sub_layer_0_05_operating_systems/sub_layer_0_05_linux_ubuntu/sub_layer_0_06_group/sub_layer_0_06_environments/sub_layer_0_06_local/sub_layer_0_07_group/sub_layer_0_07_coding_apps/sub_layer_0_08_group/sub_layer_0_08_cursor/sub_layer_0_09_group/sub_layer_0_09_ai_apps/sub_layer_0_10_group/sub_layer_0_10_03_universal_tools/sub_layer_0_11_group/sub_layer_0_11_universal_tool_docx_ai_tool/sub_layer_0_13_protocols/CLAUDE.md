@@ -1,3 +1,4 @@
+<!-- resource_id: "c47f6c74-469f-4184-b3d0-13dbd281f69d" -->
 # sub_layer_0_13_protocols (Protocols Manager)
 
 ## Role

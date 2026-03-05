@@ -1,3 +1,6 @@
+# resource_id: "3a38e546-f40c-4b53-8bfe-5f219097b94a"
+# resource_type: "document"
+# resource_name: "routes"
 """L7 Projects Layer - All project, dashboard, and navigation routes.
 
 Consolidates:

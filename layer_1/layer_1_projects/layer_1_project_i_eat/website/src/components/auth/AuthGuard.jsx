@@ -1,3 +1,6 @@
+// resource_id: "345a0575-c26b-4fee-aa87-49ccf50d75ed"
+// resource_type: "document"
+// resource_name: "AuthGuard"
 import { useState, useEffect } from 'react'
 import { authService } from '../../services/auth'
 import RoleSelection from './RoleSelection'

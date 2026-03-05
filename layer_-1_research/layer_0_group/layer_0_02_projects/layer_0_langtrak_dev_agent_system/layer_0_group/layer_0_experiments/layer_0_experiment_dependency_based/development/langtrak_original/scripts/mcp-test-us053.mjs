@@ -1,3 +1,6 @@
+// resource_id: "4bef7ceb-0f6c-4803-ba3a-b92eadde8eaf"
+// resource_type: "document"
+// resource_name: "mcp-test-us053"
 #!/usr/bin/env node
 /**
  * Simple US-053 Test - Recalculate Phoneme Frequencies

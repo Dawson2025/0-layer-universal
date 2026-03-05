@@ -1,3 +1,6 @@
+# resource_id: "1a35032f-2ad8-4952-b6b9-aa071e444c77"
+# resource_type: "output"
+# resource_name: "conflicts"
 # Conflicts Log (layer_-1_research)
 # Format: TIMESTAMP | AGENT_A | AGENT_B | PATH | RESOLUTION | DETAILS
 

@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# resource_id: "d7487c77-dd56-457c-a265-97e73122c58e"
+# resource_type: "document"
+# resource_name: "test_cloud_templates"
 """
 Script to test cloud templates functionality
 """

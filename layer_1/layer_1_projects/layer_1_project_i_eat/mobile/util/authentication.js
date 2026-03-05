@@ -1,3 +1,6 @@
+// resource_id: "408a3ea7-f116-4536-b294-f530099a4686"
+// resource_type: "document"
+// resource_name: "authentication"
 import { createClient } from '@supabase/supabase-js'
 
 const SUPABASE_URL = process.env.EXPO_PUBLIC_SUPABASE_URL ?? 'uhhhhh'

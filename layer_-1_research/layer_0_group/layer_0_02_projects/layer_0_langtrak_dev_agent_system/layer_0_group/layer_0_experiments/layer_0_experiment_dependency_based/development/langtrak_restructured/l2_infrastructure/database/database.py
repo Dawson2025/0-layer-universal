@@ -1,3 +1,6 @@
+# resource_id: "18232bba-d5c9-493b-9e1d-ac3d310cc263"
+# resource_type: "document"
+# resource_name: "database"
 import sqlite3
 import os
 

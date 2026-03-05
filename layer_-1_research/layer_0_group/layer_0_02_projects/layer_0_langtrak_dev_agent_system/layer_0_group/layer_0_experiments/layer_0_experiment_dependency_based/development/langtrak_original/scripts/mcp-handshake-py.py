@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# resource_id: "ae13fa21-3848-4e67-8695-a5261d271f26"
+# resource_type: "document"
+# resource_name: "mcp-handshake-py"
 """Run the Node MCP handshake script and print output. This is a pragmatic Python-side handshake
 by delegating to the Node client implemented in scripts/mcp-handshake-node-full.cjs.
 """

@@ -1,3 +1,6 @@
+// resource_id: "6559405e-5bd6-4441-bd8b-4e293ec3d15b"
+// resource_type: "document"
+// resource_name: "test-session-persistence"
 /**
  * Test if Playwright MCP maintains session cookies across navigations
  */

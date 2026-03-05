@@ -1,3 +1,6 @@
+// resource_id: "0307d7d3-4976-455f-ba61-47414dada493"
+// resource_type: "document"
+// resource_name: "run-user-stories"
 #!/usr/bin/env node
 /**
  * Orchestrator: start Playwright MCP server (Chromium), run user-story automations,

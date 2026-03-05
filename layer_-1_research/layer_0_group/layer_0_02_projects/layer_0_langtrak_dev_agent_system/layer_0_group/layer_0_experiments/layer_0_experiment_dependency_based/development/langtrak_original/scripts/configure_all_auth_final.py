@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# resource_id: "6a846967-0d4f-4e73-81c8-b585963a40b7"
+# resource_type: "document"
+# resource_name: "configure_all_auth_final"
 
 """
 configure_all_auth_final.py

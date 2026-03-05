@@ -1,3 +1,6 @@
+# resource_id: "4024e8b4-3bee-44ba-8429-27a103e1dd42"
+# resource_type: "document"
+# resource_name: "automate-extension-load"
 # PowerShell script to load the Chrome extension
 # Run this in PowerShell as Administrator
 

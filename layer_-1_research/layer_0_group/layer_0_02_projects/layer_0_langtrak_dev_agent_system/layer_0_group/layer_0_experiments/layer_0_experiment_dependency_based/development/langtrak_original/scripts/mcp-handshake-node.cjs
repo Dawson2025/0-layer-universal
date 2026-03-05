@@ -1,3 +1,6 @@
+// resource_id: "b0831a9e-7503-4542-8ccb-8dca58756639"
+// resource_type: "document"
+// resource_name: "mcp-handshake-node"
 #!/usr/bin/env node
 // Diagnostic script to probe @playwright/mcp.createConnection at runtime.
 const cp = require('child_process');

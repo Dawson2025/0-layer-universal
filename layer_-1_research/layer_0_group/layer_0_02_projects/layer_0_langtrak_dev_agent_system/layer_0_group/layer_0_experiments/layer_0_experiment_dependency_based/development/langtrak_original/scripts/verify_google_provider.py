@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# resource_id: "044e3504-b1fd-4de4-9dbc-6d55c878deb2"
+# resource_type: "document"
+# resource_name: "verify_google_provider"
 
 """
 verify_google_provider.py

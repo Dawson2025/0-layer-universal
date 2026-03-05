@@ -1,3 +1,8 @@
+---
+resource_id: "02e9dc7f-9195-4538-a1c1-5c0c42f28fd9"
+resource_type: "document"
+resource_name: "README"
+---
 # 0AGNOSTIC Visualization Tools
 
 This directory contains tools and diagrams for visualizing the hierarchical structure of your AI context system (0AGNOSTIC).

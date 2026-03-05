@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# resource_id: "ef0c8697-b1b6-4c62-b6f2-193fc021c6f4"
+# resource_type: "document"
+# resource_name: "test_improved_suggestions"
 """
 Test the improved suggestion generation algorithm.
 """

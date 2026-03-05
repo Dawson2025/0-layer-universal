@@ -1,3 +1,6 @@
+// resource_id: "0cd1ed73-537e-407f-b757-36a27ef476d0"
+// resource_type: "document"
+// resource_name: "mcp-cloud-projects"
 #!/usr/bin/env node
 /**
  * Cloud Project Lifecycle Test

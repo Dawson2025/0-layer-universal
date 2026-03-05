@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# resource_id: "758dec03-9515-484e-949c-65898d5e559c"
+# resource_type: "document"
+# resource_name: "manual-cloud-browser-tests"
 
 """
 Manual Cloud Browser Tests

@@ -1,3 +1,6 @@
+// resource_id: "1c696987-d846-4589-8cdd-c157827b256e"
+// resource_type: "document"
+// resource_name: "firebase-config"
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getAnalytics, isSupported } from "firebase/analytics";

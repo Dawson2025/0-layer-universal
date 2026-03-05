@@ -1,3 +1,6 @@
+// resource_id: "f0890e61-a250-4360-9dc8-c7d5fec23fd3"
+// resource_type: "document"
+// resource_name: "mcp-google-auth"
 #!/usr/bin/env node
 /**
  * Google OAuth Authentication Test

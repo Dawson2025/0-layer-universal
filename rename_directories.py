@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# resource_id: "e7b6e549-def2-40b4-b641-ce6c0b353bb7"
+# resource_type: "document"
+# resource_name: "rename_directories"
 """
 Script to rename directories from old naming convention (dots) to new convention (underscores).
 """

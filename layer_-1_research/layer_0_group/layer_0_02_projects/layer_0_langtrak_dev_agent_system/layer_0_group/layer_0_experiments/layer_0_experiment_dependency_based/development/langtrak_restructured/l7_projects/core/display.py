@@ -1,3 +1,6 @@
+# resource_id: "1afe8810-c148-41a4-b9fe-f1534757495d"
+# resource_type: "document"
+# resource_name: "display"
 """
 Projects Display Module
 

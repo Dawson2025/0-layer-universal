@@ -1,3 +1,6 @@
+# resource_id: "37c17d09-61f5-476f-88ed-9f6b15e59bde"
+# resource_type: "document"
+# resource_name: "flattened_dataset"
 flattened_dataset = [
     {'syllable_type': 'CVC', 'position': 'onset', 'length_type': 'single_consonants', 'group_type': 'Stops', 'subgroup_type': 'Voiceless', 'phoneme': 'p', 'frequency': 0, 'sub_subgroup_type': 'none'},
     {'syllable_type': 'CVC', 'position': 'onset', 'length_type': 'single_consonants', 'group_type': 'Stops', 'subgroup_type': 'Voiceless', 'phoneme': 't', 'frequency': 0, 'sub_subgroup_type': 'none'},

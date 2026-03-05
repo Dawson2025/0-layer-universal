@@ -1,3 +1,6 @@
+# resource_id: "a4e1beb6-90ef-4d0e-9f70-d9ffae2d2e79"
+# resource_type: "document"
+# resource_name: "__init__"
 """
 Authentication Feature
 

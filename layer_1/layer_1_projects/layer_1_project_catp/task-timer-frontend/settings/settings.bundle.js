@@ -1,3 +1,6 @@
+// resource_id: "7bef8f5c-78be-43e0-a5bd-a24c03db329e"
+// resource_type: "document"
+// resource_name: "settings.bundle"
 (() => {
   var __getOwnPropNames = Object.getOwnPropertyNames;
   var __esm = (fn, res) => function __init() {

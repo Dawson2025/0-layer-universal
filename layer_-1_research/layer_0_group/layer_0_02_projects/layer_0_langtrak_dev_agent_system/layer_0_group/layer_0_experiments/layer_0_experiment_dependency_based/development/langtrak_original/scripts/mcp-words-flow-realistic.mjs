@@ -1,3 +1,6 @@
+// resource_id: "17419137-1e34-47ca-815d-4585a5d79532"
+// resource_type: "document"
+// resource_name: "mcp-words-flow-realistic"
 #!/usr/bin/env node
 /**
  * USER-REALISTIC Words & Media Flow (US-029 → US-037)

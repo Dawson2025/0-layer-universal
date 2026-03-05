@@ -1,3 +1,6 @@
+# resource_id: "5154d194-6f40-4314-9c70-1efeae0c46e4"
+# resource_type: "document"
+# resource_name: "api_routes"
 from flask import Blueprint, request, jsonify, session, url_for, redirect, flash
 import sqlite3
 import os

@@ -1,3 +1,6 @@
+// resource_id: "371e0d61-0e08-458f-960e-38a906cbbb60"
+// resource_type: "document"
+// resource_name: "test-statistics"
 /**
  * Test script for statistics calculator
  * Run with: node test-statistics.js

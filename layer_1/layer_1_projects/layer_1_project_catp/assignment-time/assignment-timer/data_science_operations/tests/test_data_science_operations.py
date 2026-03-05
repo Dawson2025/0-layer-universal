@@ -1,3 +1,6 @@
+# resource_id: "08b6b343-8ca4-4149-a390-d6b1a680e1ad"
+# resource_type: "document"
+# resource_name: "test_data_science_operations"
 ﻿"""Quick smoke tests for data_science_operations using bundled sample data."""
 from __future__ import annotations
 

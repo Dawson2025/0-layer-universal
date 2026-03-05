@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# resource_id: "d8d34a6c-a81c-4cb4-92ae-035abf9c3759"
+# resource_type: "document"
+# resource_name: "optimization_engine"
 
 """
 optimization_engine.py

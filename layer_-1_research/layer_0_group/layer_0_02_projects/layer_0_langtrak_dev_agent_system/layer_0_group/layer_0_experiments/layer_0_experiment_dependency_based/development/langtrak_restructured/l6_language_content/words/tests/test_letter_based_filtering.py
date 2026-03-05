@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# resource_id: "2c8ba081-094c-47ed-bfe8-9a52573e00e8"
+# resource_type: "document"
+# resource_name: "test_letter_based_filtering"
 """
 Comprehensive test script for the letter-based filtering system.
 This script simulates real user interactions with the app to test the new filtering functionality.

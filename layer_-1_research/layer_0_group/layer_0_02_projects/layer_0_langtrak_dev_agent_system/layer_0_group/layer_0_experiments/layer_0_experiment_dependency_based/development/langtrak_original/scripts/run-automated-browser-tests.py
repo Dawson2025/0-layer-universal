@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# resource_id: "26c2812b-543c-4d44-bc4b-0e0f927b6b3d"
+# resource_type: "document"
+# resource_name: "run-automated-browser-tests"
 
 """
 Fully Automated Browser Tests for Cloud Features

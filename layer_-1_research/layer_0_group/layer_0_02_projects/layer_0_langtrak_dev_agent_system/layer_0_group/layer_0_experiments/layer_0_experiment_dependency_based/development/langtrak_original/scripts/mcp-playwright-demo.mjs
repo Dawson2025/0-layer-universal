@@ -1,3 +1,6 @@
+// resource_id: "50df7e18-dd2c-4e60-8935-1f01b8ec0e87"
+// resource_type: "document"
+// resource_name: "mcp-playwright-demo"
 #!/usr/bin/env node
 import { Client } from '@modelcontextprotocol/sdk/client/index.js';
 import { StreamableHTTPClientTransport } from '@modelcontextprotocol/sdk/client/streamableHttp.js';

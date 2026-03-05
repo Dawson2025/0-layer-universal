@@ -1,4 +1,7 @@
 #!/usr/bin/env node
+# resource_id: "7058c421-8efe-4ba7-a923-0082f5ecf6b6"
+# resource_type: "backup"
+# resource_name: "mcp-journey-collaboration.mjs"
 /**
  * US-065: Team Collaboration Journey
  *

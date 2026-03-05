@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# resource_id: "3f726454-530c-4f47-bc64-152fccc48a25"
+# resource_type: "knowledge"
+# resource_name: "mcp_manager"
 import json
 import os
 import sys

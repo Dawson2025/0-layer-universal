@@ -1,3 +1,6 @@
+# resource_id: "f12e9f34-5bd5-46c9-95e3-90cc6df51889"
+# resource_type: "document"
+# resource_name: ".claude_alias"
 # Claude Code CLI aliases and environment setup
 # Source this file to set up Claude Code CLI in your current shell session
 # Usage: source .claude_alias

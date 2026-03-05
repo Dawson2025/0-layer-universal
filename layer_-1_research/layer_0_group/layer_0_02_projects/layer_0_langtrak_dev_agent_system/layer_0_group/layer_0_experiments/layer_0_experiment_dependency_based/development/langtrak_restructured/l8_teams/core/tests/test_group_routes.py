@@ -1,3 +1,6 @@
+# resource_id: "a4ed259f-4c30-4c0a-85d9-5b72bcf67268"
+# resource_type: "document"
+# resource_name: "test_group_routes"
 """Integration tests for the groups blueprint routes and APIs."""
 
 from __future__ import annotations

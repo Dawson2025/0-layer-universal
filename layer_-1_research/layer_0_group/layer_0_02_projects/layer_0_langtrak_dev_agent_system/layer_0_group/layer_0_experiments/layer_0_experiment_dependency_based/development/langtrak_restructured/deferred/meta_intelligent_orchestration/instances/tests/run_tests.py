@@ -1,4 +1,7 @@
 #!/usr/bin/env python33
+# resource_id: "a94d7934-51a5-49ac-bbc7-2f9b669447b4"
+# resource_type: "document"
+# resource_name: "run_tests"
 
 """
 run_tests.py

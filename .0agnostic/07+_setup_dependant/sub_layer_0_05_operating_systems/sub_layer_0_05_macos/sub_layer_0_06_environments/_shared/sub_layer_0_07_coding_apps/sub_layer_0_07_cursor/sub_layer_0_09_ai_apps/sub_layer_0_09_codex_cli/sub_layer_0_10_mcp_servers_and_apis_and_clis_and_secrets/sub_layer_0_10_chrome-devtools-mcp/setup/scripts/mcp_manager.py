@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# resource_id: "215c4959-596c-436b-88da-631d9bd29c8c"
+# resource_type: "document"
+# resource_name: "mcp_manager"
 import json
 import os
 import sys

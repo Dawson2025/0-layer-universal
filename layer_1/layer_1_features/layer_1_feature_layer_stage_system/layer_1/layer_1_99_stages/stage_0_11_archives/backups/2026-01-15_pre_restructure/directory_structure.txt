@@ -1,3 +1,6 @@
+# resource_id: "4ffda992-8382-466b-9ecc-a87e290e8550"
+# resource_type: "document"
+# resource_name: "directory_structure"
 /home/dawson/dawson-workspace/code/0_layer_ai_context
 /home/dawson/dawson-workspace/code/0_layer_ai_context/0_context
 /home/dawson/dawson-workspace/code/0_layer_ai_context/0_context/0.00_layer_stage_system

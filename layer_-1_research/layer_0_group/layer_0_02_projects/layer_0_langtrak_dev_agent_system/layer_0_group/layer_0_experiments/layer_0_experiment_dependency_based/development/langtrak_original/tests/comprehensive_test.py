@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# resource_id: "22498dc8-edec-43a6-8ec5-7051819aa6ae"
+# resource_type: "document"
+# resource_name: "comprehensive_test"
 """Comprehensive test suite for enhanced phoneme management functions"""
 
 import sqlite3

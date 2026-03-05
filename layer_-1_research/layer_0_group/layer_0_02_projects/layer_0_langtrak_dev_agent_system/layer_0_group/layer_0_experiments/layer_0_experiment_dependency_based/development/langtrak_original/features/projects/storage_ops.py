@@ -1,3 +1,6 @@
+# resource_id: "f6941527-e68a-4156-bd1f-49e027972127"
+# resource_type: "document"
+# resource_name: "storage_ops"
 """
 Projects Storage Operations Module
 

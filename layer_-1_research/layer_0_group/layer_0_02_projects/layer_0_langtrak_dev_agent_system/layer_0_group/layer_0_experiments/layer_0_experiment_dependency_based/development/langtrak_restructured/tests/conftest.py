@@ -1,3 +1,6 @@
+# resource_id: "e09c09fc-98f8-4784-ad41-3681c6c8b78b"
+# resource_type: "document"
+# resource_name: "conftest"
 """Shared pytest configuration and fixtures for the Lang-Trak test suite.
 
 Ensures the repository root is available on ``sys.path`` so tests in

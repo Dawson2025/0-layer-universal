@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# resource_id: "f1f7a3c5-2edf-49ac-a52e-47d5a68963ad"
+# resource_type: "document"
+# resource_name: "enable_google_providers_api"
 
 """
 enable_google_providers_api.py

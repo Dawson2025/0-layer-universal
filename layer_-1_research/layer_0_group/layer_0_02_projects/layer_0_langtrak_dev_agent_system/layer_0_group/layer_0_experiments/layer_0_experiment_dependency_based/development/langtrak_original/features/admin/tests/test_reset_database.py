@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# resource_id: "c4b09766-c347-4d8f-ba0f-72feff80dbb6"
+# resource_type: "document"
+# resource_name: "test_reset_database"
 """
 Test the enhanced reset_database function with warnings and confirmations
 """

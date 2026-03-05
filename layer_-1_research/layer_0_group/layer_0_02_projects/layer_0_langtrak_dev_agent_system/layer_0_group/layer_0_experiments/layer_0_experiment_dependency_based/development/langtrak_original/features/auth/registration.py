@@ -1,3 +1,6 @@
+# resource_id: "434d43f7-145d-4f2d-8d26-dab82d510476"
+# resource_type: "document"
+# resource_name: "registration"
 """User registration functionality."""
 
 from flask import flash, redirect, render_template, request, session, url_for

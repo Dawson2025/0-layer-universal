@@ -1,3 +1,6 @@
+# resource_id: "7f78a8f4-0297-49f3-ba4f-76b0bb017dfe"
+# resource_type: "document"
+# resource_name: "prompt"
 You are a subagent at depth 2 (max: 5).
 
 TASK FILE: /home/dawson/dawson-workspace/code/0_layer_universal/hand_off_documents/outgoing/to_below/child_1770405239_1668418/task.json

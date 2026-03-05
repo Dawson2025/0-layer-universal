@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# resource_id: "92fe1728-98ed-4740-a599-0459fd810b34"
+# resource_type: "document"
+# resource_name: "test_suggestion_limit_fix"
 """
 Test that the suggestion limit fix allows for many more suggestions.
 """

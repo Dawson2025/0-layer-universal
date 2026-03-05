@@ -1,3 +1,6 @@
+# resource_id: "d2dcf4e4-cefc-45fe-aaa9-5106752fcd82"
+# resource_type: "document"
+# resource_name: "watch-quarto"
 param(
     [Parameter(Mandatory = $true)]
     [string]$QuartoFile,

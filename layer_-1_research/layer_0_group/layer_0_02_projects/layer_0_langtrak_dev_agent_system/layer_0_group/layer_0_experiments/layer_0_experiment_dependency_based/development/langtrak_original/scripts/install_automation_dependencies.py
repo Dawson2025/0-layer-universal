@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# resource_id: "d41d5736-cd53-4579-b359-2fcd8d847e43"
+# resource_type: "document"
+# resource_name: "install_automation_dependencies"
 
 """
 install_automation_dependencies.py

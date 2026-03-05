@@ -1,3 +1,6 @@
+// resource_id: "e03ad373-4ea0-49f7-bec4-22e76774713c"
+// resource_type: "knowledge"
+// resource_name: "tabsets"
 // grouped tabsets
 
 export function init() {

@@ -1,3 +1,6 @@
+# resource_id: "72077ddd-0f34-434d-bd01-b9ba0a28d0e9"
+# resource_type: "document"
+# resource_name: "CURSOR_PLAN_PROMPT.sync-conflict-20260126-035814-IF2WOGZ"
 CONTEXT:
 We consolidated 10 separate setup sublayers (0.06-0.14) into a hierarchical structure at sub_layer_0.05-0.014_setup/0.01_universal_setup_file_tree_0/. Not all original content from the old sublayers appears to be in the new structure.
 

@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# resource_id: "a2754826-ad50-4c70-9763-f736ae91b370"
+# resource_type: "document"
+# resource_name: "configure_oauth_consent_api"
 """
 OAuth Consent Screen Configuration via API
 Configures OAuth consent screen for Firebase projects using Google Cloud APIs

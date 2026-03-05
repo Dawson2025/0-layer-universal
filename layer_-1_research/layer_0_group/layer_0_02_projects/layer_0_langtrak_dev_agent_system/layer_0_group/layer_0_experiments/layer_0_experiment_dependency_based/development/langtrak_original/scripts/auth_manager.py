@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# resource_id: "e22e1912-62ef-41d2-b1f5-aff7df9eec2e"
+# resource_type: "document"
+# resource_name: "auth_manager"
 
 """
 auth_manager.py

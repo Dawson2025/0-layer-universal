@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# resource_id: "e6cacaf1-1bdb-4d7d-85c4-be32d902482f"
+# resource_type: "document"
+# resource_name: "agent-firebase-simple"
 
 """
 agent-firebase-simple.py

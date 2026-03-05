@@ -1,3 +1,6 @@
+# resource_id: "341e9251-2019-490b-8527-884ae47292b2"
+# resource_type: "document"
+# resource_name: "_quarto"
 project: 
   type: website
   output-dir: docs

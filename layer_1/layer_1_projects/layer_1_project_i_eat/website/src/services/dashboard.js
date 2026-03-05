@@ -1,3 +1,6 @@
+// resource_id: "28e6906d-4587-4242-b1ad-aeca5500a91a"
+// resource_type: "document"
+// resource_name: "dashboard"
 import { supabase } from './api'
 
 export const dashboardService = {

@@ -1,3 +1,6 @@
+# resource_id: "c521d1b3-68d5-4da7-9a96-0e6855c01eca"
+# resource_type: "document"
+# resource_name: "main"
 # main.py
 import sqlite3
 import os

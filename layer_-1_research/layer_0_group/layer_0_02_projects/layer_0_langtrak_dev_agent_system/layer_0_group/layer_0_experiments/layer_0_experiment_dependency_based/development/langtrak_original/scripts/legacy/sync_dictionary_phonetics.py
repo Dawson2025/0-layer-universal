@@ -1,3 +1,6 @@
+# resource_id: "c6a40c8f-742e-4bce-a163-2aae61506c4f"
+# resource_type: "document"
+# resource_name: "sync_dictionary_phonetics"
 
 #!/usr/bin/env python3
 """

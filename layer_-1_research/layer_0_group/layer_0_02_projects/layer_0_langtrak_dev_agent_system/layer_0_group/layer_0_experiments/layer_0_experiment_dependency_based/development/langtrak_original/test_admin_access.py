@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# resource_id: "f29c5701-9980-4e17-9fc8-6c1549604708"
+# resource_type: "document"
+# resource_name: "test_admin_access"
 """
 Test script to verify admin features work when properly authenticated.
 This bypasses the terminal issues by using direct HTTP requests.

@@ -1,3 +1,6 @@
+// resource_id: "61ec5072-4866-4d2b-be08-729b41201533"
+// resource_type: "document"
+// resource_name: "navigation-helpers"
 /**
  * Navigation Helpers for Realistic UI Testing
  *

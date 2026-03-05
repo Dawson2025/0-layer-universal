@@ -1,3 +1,6 @@
+# resource_id: "9434ec41-ae77-4eab-b05c-cf46214ddd0b"
+# resource_type: "document"
+# resource_name: "Picsew_20251110152925_extracted"
 
 === TOP SECTION ===
 < Qe

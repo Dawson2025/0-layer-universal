@@ -1,3 +1,6 @@
+// resource_id: "3fe778a3-94d1-4ddb-bd9e-8831c242038a"
+// resource_type: "document"
+// resource_name: "JoinClass"
 import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import { supabase } from '../../services/api'

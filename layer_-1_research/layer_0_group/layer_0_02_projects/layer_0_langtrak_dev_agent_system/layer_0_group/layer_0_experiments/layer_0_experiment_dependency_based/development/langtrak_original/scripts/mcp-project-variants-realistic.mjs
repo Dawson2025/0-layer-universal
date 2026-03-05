@@ -1,3 +1,6 @@
+// resource_id: "2577dd3a-912c-42ad-8bb6-63b2660afc43"
+// resource_type: "document"
+// resource_name: "mcp-project-variants-realistic"
 #!/usr/bin/env node
 /**
  * USER-REALISTIC Project Variant Flow (US-016 → US-024)

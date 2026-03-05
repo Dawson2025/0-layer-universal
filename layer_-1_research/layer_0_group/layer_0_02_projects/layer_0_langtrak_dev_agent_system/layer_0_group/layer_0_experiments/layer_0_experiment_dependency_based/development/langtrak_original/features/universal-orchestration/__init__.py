@@ -1,3 +1,6 @@
+# resource_id: "c487bfa1-5140-4459-89bc-7967d1634d3a"
+# resource_type: "document"
+# resource_name: "__init__"
 """
 Universal Environments & Integrations Orchestration System
 

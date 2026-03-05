@@ -1,3 +1,6 @@
+// resource_id: "3012aad6-90c1-4d9f-a3bc-309f463fa819"
+// resource_type: "document"
+// resource_name: "settings"
 import 'emoji-picker-element';
 
 document.addEventListener("DOMContentLoaded", () => {

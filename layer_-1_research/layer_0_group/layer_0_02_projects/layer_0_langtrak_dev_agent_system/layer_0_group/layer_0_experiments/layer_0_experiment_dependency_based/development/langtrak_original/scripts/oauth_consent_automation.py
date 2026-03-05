@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# resource_id: "65dd95dd-a578-4710-82b2-ced73c78306d"
+# resource_type: "document"
+# resource_name: "oauth_consent_automation"
 """
 OAuth Consent Screen Automation Script
 Automates the configuration of OAuth consent screen for Firebase projects

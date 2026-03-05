@@ -1,3 +1,4 @@
+<!-- resource_id: "c73c1e99-f671-42b9-9052-676d7a023103" -->
 # stage_0_09_fixing
 
 ## Role

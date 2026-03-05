@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# resource_id: "3d44f784-141f-46a4-8f31-05a317579c36"
+# resource_type: "document"
+# resource_name: "mcp_config_manager"
 """
 MCP Configuration Manager
 Centralized management system for MCP (Model Context Protocol) configurations.

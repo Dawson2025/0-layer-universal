@@ -1,4 +1,7 @@
 ---
+resource_id: "f94a1ead-33b9-4204-8c61-18793d2ec0b2"
+resource_type: "document"
+resource_name: "story_telling.qmd"
 title: "about me"
 subtitle: "my data science portfolio"
 # use quarto markdown to 

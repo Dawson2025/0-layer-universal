@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# resource_id: "056dafb8-379a-47e3-beb8-35749baeaedb"
+# resource_type: "document"
+# resource_name: "configure_oauth_consent_screen"
 """
 Configure OAuth Consent Screen for Google Sign-In
 This script sets up the OAuth consent screen which is required for Google Sign-In to work.

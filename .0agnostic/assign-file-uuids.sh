@@ -1,15 +1,23 @@
 #!/usr/bin/env bash
+# resource_id: "68c9cfcc-9915-47f6-be3a-2c75fbd7ef7e"
+# resource_type: "script"
+# resource_name: "assign-file-uuids"
 # assign-file-uuids.sh — Assign resource_id/file_id UUIDs to every file
 # Phase 1b of the UUID Identity System implementation
 #
 # Usage:
-#   assign-file-uuids.sh [--dry-run] [--type=md|sh|json|jsonld|derived] [--verbose] [REPO_ROOT]
+#   assign-file-uuids.sh [--dry-run] [--type=TYPE] [--verbose] [REPO_ROOT]
+#
+# Types: md, sh, json, jsonld, derived, py, js, html, css, txt, yaml, qmd, ini, rules, svg, env
 #
 # What it does:
-#   - .md files: adds resource_id in YAML frontmatter
-#   - .sh files: adds resource_id in comment header after shebang
-#   - .json files: adds file_id in JSON root object
-#   - .jsonld files: adds file_id in JSON root object
+#   - .md/.qmd files: adds resource_id in YAML frontmatter
+#   - .sh/.py/.yaml/.yml/.ini/.rules/.env files: adds resource_id as # comment header
+#   - .js/.mjs/.jsx files: adds resource_id as // comment header
+#   - .css files: adds resource_id as /* */ comment header
+#   - .html/.svg files: adds resource_id as <!-- --> comment header
+#   - .txt files: adds resource_id as # comment header
+#   - .json/.jsonld files: adds file_id in JSON root object
 #   - Auto-generated files (CLAUDE.md, AGENTS.md, etc.): adds derived_from comment
 #
 # Only processes files tracked by git (skips submodule contents)
@@ -46,6 +54,14 @@ COUNTS[jsonld_added]=0
 COUNTS[jsonld_skipped]=0
 COUNTS[derived_added]=0
 COUNTS[derived_skipped]=0
+COUNTS[hash_added]=0
+COUNTS[hash_skipped]=0
+COUNTS[slash_added]=0
+COUNTS[slash_skipped]=0
+COUNTS[css_added]=0
+COUNTS[css_skipped]=0
+COUNTS[html_added]=0
+COUNTS[html_skipped]=0
 COUNTS[errors]=0
 
 log() { echo "$@"; }
@@ -390,6 +406,188 @@ process_derived() {
   verbose "Added derived_from to: $rel"
 }
 
+# Process files that use # comment syntax (py, yaml, yml, ini, rules, txt, env)
+process_hash_comment() {
+  local file="$1"
+  local ext="$2"
+  local rel="${file#$REPO_ROOT/}"
+
+  # Check if already has resource_id
+  if head -5 "$file" 2>/dev/null | grep -q '^# resource_id:'; then
+    COUNTS[hash_skipped]=$((${COUNTS[hash_skipped]} + 1))
+    return 0
+  fi
+
+  local uuid
+  uuid=$(gen_uuid)
+  local rname
+  rname=$(basename "$file" ".$ext")
+  local rtype
+  rtype=$(get_resource_type "$rel")
+
+  if [[ "$DRY_RUN" == true ]]; then
+    verbose "Would add resource_id to: $rel"
+    COUNTS[hash_added]=$((${COUNTS[hash_added]} + 1))
+    return 0
+  fi
+
+  local tmp="${file}.uuid.tmp"
+  local first_line
+  first_line=$(head -1 "$file" 2>/dev/null) || return 0
+
+  if [[ "$first_line" == "#!"* ]]; then
+    {
+      echo "$first_line"
+      echo "# resource_id: \"$uuid\""
+      echo "# resource_type: \"$rtype\""
+      echo "# resource_name: \"$rname\""
+      tail -n +2 "$file"
+    } > "$tmp"
+  else
+    {
+      echo "# resource_id: \"$uuid\""
+      echo "# resource_type: \"$rtype\""
+      echo "# resource_name: \"$rname\""
+      cat "$file"
+    } > "$tmp"
+  fi
+
+  mv "$tmp" "$file"
+  COUNTS[hash_added]=$((${COUNTS[hash_added]} + 1))
+  verbose "Added resource_id to: $rel"
+}
+
+# Process files that use // comment syntax (js, mjs, jsx)
+process_slash_comment() {
+  local file="$1"
+  local ext="$2"
+  local rel="${file#$REPO_ROOT/}"
+
+  if head -5 "$file" 2>/dev/null | grep -q '^// resource_id:'; then
+    COUNTS[slash_skipped]=$((${COUNTS[slash_skipped]} + 1))
+    return 0
+  fi
+
+  local uuid
+  uuid=$(gen_uuid)
+  local rname
+  rname=$(basename "$file" ".$ext")
+  local rtype
+  rtype=$(get_resource_type "$rel")
+
+  if [[ "$DRY_RUN" == true ]]; then
+    verbose "Would add resource_id to: $rel"
+    COUNTS[slash_added]=$((${COUNTS[slash_added]} + 1))
+    return 0
+  fi
+
+  local tmp="${file}.uuid.tmp"
+  {
+    echo "// resource_id: \"$uuid\""
+    echo "// resource_type: \"$rtype\""
+    echo "// resource_name: \"$rname\""
+    cat "$file"
+  } > "$tmp"
+
+  mv "$tmp" "$file"
+  COUNTS[slash_added]=$((${COUNTS[slash_added]} + 1))
+  verbose "Added resource_id to: $rel"
+}
+
+# Process .css files — use /* */ comment syntax
+process_css() {
+  local file="$1"
+  local rel="${file#$REPO_ROOT/}"
+
+  if head -5 "$file" 2>/dev/null | grep -q 'resource_id:'; then
+    COUNTS[css_skipped]=$((${COUNTS[css_skipped]} + 1))
+    return 0
+  fi
+
+  local uuid
+  uuid=$(gen_uuid)
+  local rname
+  rname=$(basename "$file" .css)
+  local rtype
+  rtype=$(get_resource_type "$rel")
+
+  if [[ "$DRY_RUN" == true ]]; then
+    verbose "Would add resource_id to: $rel"
+    COUNTS[css_added]=$((${COUNTS[css_added]} + 1))
+    return 0
+  fi
+
+  local tmp="${file}.uuid.tmp"
+  {
+    echo "/* resource_id: \"$uuid\" */"
+    echo "/* resource_type: \"$rtype\" */"
+    echo "/* resource_name: \"$rname\" */"
+    cat "$file"
+  } > "$tmp"
+
+  mv "$tmp" "$file"
+  COUNTS[css_added]=$((${COUNTS[css_added]} + 1))
+  verbose "Added resource_id to: $rel"
+}
+
+# Process .html/.svg files — use <!-- --> comment syntax
+process_html_comment() {
+  local file="$1"
+  local ext="$2"
+  local rel="${file#$REPO_ROOT/}"
+
+  if head -5 "$file" 2>/dev/null | grep -q 'resource_id:'; then
+    COUNTS[html_skipped]=$((${COUNTS[html_skipped]} + 1))
+    return 0
+  fi
+
+  local uuid
+  uuid=$(gen_uuid)
+  local rname
+  rname=$(basename "$file" ".$ext")
+  local rtype
+  rtype=$(get_resource_type "$rel")
+
+  if [[ "$DRY_RUN" == true ]]; then
+    verbose "Would add resource_id to: $rel"
+    COUNTS[html_added]=$((${COUNTS[html_added]} + 1))
+    return 0
+  fi
+
+  local tmp="${file}.uuid.tmp"
+  local first_line
+  first_line=$(head -1 "$file" 2>/dev/null) || return 0
+
+  if [[ "$first_line" == "<!DOCTYPE"* || "$first_line" == "<!doctype"* ]]; then
+    {
+      echo "$first_line"
+      echo "<!-- resource_id: \"$uuid\" -->"
+      echo "<!-- resource_type: \"$rtype\" -->"
+      echo "<!-- resource_name: \"$rname\" -->"
+      tail -n +2 "$file"
+    } > "$tmp"
+  elif [[ "$first_line" == "<?xml"* ]]; then
+    {
+      echo "$first_line"
+      echo "<!-- resource_id: \"$uuid\" -->"
+      echo "<!-- resource_type: \"$rtype\" -->"
+      echo "<!-- resource_name: \"$rname\" -->"
+      tail -n +2 "$file"
+    } > "$tmp"
+  else
+    {
+      echo "<!-- resource_id: \"$uuid\" -->"
+      echo "<!-- resource_type: \"$rtype\" -->"
+      echo "<!-- resource_name: \"$rname\" -->"
+      cat "$file"
+    } > "$tmp"
+  fi
+
+  mv "$tmp" "$file"
+  COUNTS[html_added]=$((${COUNTS[html_added]} + 1))
+  verbose "Added resource_id to: $rel"
+}
+
 log "=== File UUID Assignment Tool ==="
 log "Repo root: $REPO_ROOT"
 [[ "$DRY_RUN" == true ]] && log "Mode: DRY RUN"
@@ -475,10 +673,170 @@ if [[ -z "$FILE_TYPE" || "$FILE_TYPE" == "derived" ]]; then
   log "  derived: ${COUNTS[derived_added]} added, ${COUNTS[derived_skipped]} already had ref"
 fi
 
+# Process .py files (# comment)
+if [[ -z "$FILE_TYPE" || "$FILE_TYPE" == "py" ]]; then
+  log "Processing .py files..."
+  while IFS= read -r rel_file; do
+    [[ -z "$rel_file" ]] && continue
+    local_file="$REPO_ROOT/$rel_file"
+    [[ -f "$local_file" ]] || continue
+    process_hash_comment "$local_file" "py"
+  done < <(get_tracked_files "py")
+  log "  .py: ${COUNTS[hash_added]} added, ${COUNTS[hash_skipped]} already had ID"
+  # Reset for next type
+  py_added=${COUNTS[hash_added]}
+  py_skipped=${COUNTS[hash_skipped]}
+  COUNTS[hash_added]=0
+  COUNTS[hash_skipped]=0
+fi
+
+# Process .js files (// comment)
+if [[ -z "$FILE_TYPE" || "$FILE_TYPE" == "js" ]]; then
+  log "Processing .js/.mjs/.jsx files..."
+  for ext in js mjs jsx; do
+    while IFS= read -r rel_file; do
+      [[ -z "$rel_file" ]] && continue
+      local_file="$REPO_ROOT/$rel_file"
+      [[ -f "$local_file" ]] || continue
+      process_slash_comment "$local_file" "$ext"
+    done < <(get_tracked_files "$ext")
+  done
+  log "  .js/.mjs/.jsx: ${COUNTS[slash_added]} added, ${COUNTS[slash_skipped]} already had ID"
+fi
+
+# Process .html files (<!-- --> comment)
+if [[ -z "$FILE_TYPE" || "$FILE_TYPE" == "html" ]]; then
+  log "Processing .html files..."
+  while IFS= read -r rel_file; do
+    [[ -z "$rel_file" ]] && continue
+    local_file="$REPO_ROOT/$rel_file"
+    [[ -f "$local_file" ]] || continue
+    process_html_comment "$local_file" "html"
+  done < <(get_tracked_files "html")
+  log "  .html: ${COUNTS[html_added]} added, ${COUNTS[html_skipped]} already had ID"
+fi
+
+# Process .svg files (<!-- --> comment)
+if [[ -z "$FILE_TYPE" || "$FILE_TYPE" == "svg" ]]; then
+  log "Processing .svg files..."
+  html_before=${COUNTS[html_added]}
+  while IFS= read -r rel_file; do
+    [[ -z "$rel_file" ]] && continue
+    local_file="$REPO_ROOT/$rel_file"
+    [[ -f "$local_file" ]] || continue
+    process_html_comment "$local_file" "svg"
+  done < <(get_tracked_files "svg")
+  svg_added=$(( ${COUNTS[html_added]} - html_before ))
+  log "  .svg: $svg_added added"
+fi
+
+# Process .css files (/* */ comment)
+if [[ -z "$FILE_TYPE" || "$FILE_TYPE" == "css" ]]; then
+  log "Processing .css files..."
+  while IFS= read -r rel_file; do
+    [[ -z "$rel_file" ]] && continue
+    local_file="$REPO_ROOT/$rel_file"
+    [[ -f "$local_file" ]] || continue
+    process_css "$local_file"
+  done < <(get_tracked_files "css")
+  log "  .css: ${COUNTS[css_added]} added, ${COUNTS[css_skipped]} already had ID"
+fi
+
+# Process .qmd files (YAML frontmatter like .md)
+if [[ -z "$FILE_TYPE" || "$FILE_TYPE" == "qmd" ]]; then
+  log "Processing .qmd files..."
+  qmd_added=0
+  qmd_skipped=0
+  while IFS= read -r rel_file; do
+    [[ -z "$rel_file" ]] && continue
+    local_file="$REPO_ROOT/$rel_file"
+    [[ -f "$local_file" ]] || continue
+    # Reuse md processing but track separately
+    before=${COUNTS[md_added]}
+    process_md "$local_file"
+    if [[ ${COUNTS[md_added]} -gt $before ]]; then
+      qmd_added=$((qmd_added + 1))
+    else
+      qmd_skipped=$((qmd_skipped + 1))
+    fi
+  done < <(get_tracked_files "qmd")
+  log "  .qmd: $qmd_added added, $qmd_skipped already had ID"
+fi
+
+# Process .yaml/.yml files (# comment)
+if [[ -z "$FILE_TYPE" || "$FILE_TYPE" == "yaml" ]]; then
+  log "Processing .yaml/.yml files..."
+  for ext in yaml yml; do
+    while IFS= read -r rel_file; do
+      [[ -z "$rel_file" ]] && continue
+      local_file="$REPO_ROOT/$rel_file"
+      [[ -f "$local_file" ]] || continue
+      process_hash_comment "$local_file" "$ext"
+    done < <(get_tracked_files "$ext")
+  done
+  log "  .yaml/.yml: ${COUNTS[hash_added]} added, ${COUNTS[hash_skipped]} already had ID"
+fi
+
+# Process .txt files (# comment)
+if [[ -z "$FILE_TYPE" || "$FILE_TYPE" == "txt" ]]; then
+  log "Processing .txt files..."
+  COUNTS[hash_added]=0
+  COUNTS[hash_skipped]=0
+  while IFS= read -r rel_file; do
+    [[ -z "$rel_file" ]] && continue
+    local_file="$REPO_ROOT/$rel_file"
+    [[ -f "$local_file" ]] || continue
+    process_hash_comment "$local_file" "txt"
+  done < <(get_tracked_files "txt")
+  log "  .txt: ${COUNTS[hash_added]} added, ${COUNTS[hash_skipped]} already had ID"
+fi
+
+# Process .rules files (# comment)
+if [[ -z "$FILE_TYPE" || "$FILE_TYPE" == "rules" ]]; then
+  log "Processing .rules files..."
+  COUNTS[hash_added]=0
+  COUNTS[hash_skipped]=0
+  while IFS= read -r rel_file; do
+    [[ -z "$rel_file" ]] && continue
+    local_file="$REPO_ROOT/$rel_file"
+    [[ -f "$local_file" ]] || continue
+    process_hash_comment "$local_file" "rules"
+  done < <(get_tracked_files "rules")
+  log "  .rules: ${COUNTS[hash_added]} added, ${COUNTS[hash_skipped]} already had ID"
+fi
+
+# Process .ini files (# comment — ini also supports ; but # is safer)
+if [[ -z "$FILE_TYPE" || "$FILE_TYPE" == "ini" ]]; then
+  log "Processing .ini files..."
+  COUNTS[hash_added]=0
+  COUNTS[hash_skipped]=0
+  while IFS= read -r rel_file; do
+    [[ -z "$rel_file" ]] && continue
+    local_file="$REPO_ROOT/$rel_file"
+    [[ -f "$local_file" ]] || continue
+    process_hash_comment "$local_file" "ini"
+  done < <(get_tracked_files "ini")
+  log "  .ini: ${COUNTS[hash_added]} added, ${COUNTS[hash_skipped]} already had ID"
+fi
+
+# Process .env files (# comment)
+if [[ -z "$FILE_TYPE" || "$FILE_TYPE" == "env" ]]; then
+  log "Processing .env files..."
+  COUNTS[hash_added]=0
+  COUNTS[hash_skipped]=0
+  while IFS= read -r rel_file; do
+    [[ -z "$rel_file" ]] && continue
+    local_file="$REPO_ROOT/$rel_file"
+    [[ -f "$local_file" ]] || continue
+    process_hash_comment "$local_file" "env"
+  done < <(get_tracked_files "env")
+  log "  .env: ${COUNTS[hash_added]} added, ${COUNTS[hash_skipped]} already had ID"
+fi
+
 log ""
 log "=== Summary ==="
-total_added=$(( ${COUNTS[md_added]} + ${COUNTS[sh_added]} + ${COUNTS[json_added]} + ${COUNTS[jsonld_added]} + ${COUNTS[derived_added]} ))
-total_skipped=$(( ${COUNTS[md_skipped]} + ${COUNTS[sh_skipped]} + ${COUNTS[json_skipped]} + ${COUNTS[jsonld_skipped]} + ${COUNTS[derived_skipped]} ))
+total_added=$(( ${COUNTS[md_added]} + ${COUNTS[sh_added]} + ${COUNTS[json_added]} + ${COUNTS[jsonld_added]} + ${COUNTS[derived_added]} + ${COUNTS[slash_added]} + ${COUNTS[css_added]} + ${COUNTS[html_added]} + ${py_added:-0} ))
+total_skipped=$(( ${COUNTS[md_skipped]} + ${COUNTS[sh_skipped]} + ${COUNTS[json_skipped]} + ${COUNTS[jsonld_skipped]} + ${COUNTS[derived_skipped]} + ${COUNTS[slash_skipped]} + ${COUNTS[css_skipped]} + ${COUNTS[html_skipped]} + ${py_skipped:-0} ))
 log "Total added: $total_added"
 log "Total skipped: $total_skipped"
 log "Errors: ${COUNTS[errors]}"

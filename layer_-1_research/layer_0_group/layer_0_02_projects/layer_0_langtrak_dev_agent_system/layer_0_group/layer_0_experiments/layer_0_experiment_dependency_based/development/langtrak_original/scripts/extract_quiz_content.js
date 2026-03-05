@@ -1,3 +1,6 @@
+// resource_id: "f8593d74-4997-42cc-b69e-3658dcd3e5d5"
+// resource_type: "document"
+// resource_name: "extract_quiz_content"
 import { chromium } from 'playwright';
 import path from 'path';
 import fs from 'fs';

@@ -1,3 +1,6 @@
+# resource_id: "30d6593e-fd27-4a3b-956b-1c7e03998bee"
+# resource_type: "document"
+# resource_name: ".gitignore"
 # Logs
 logs
 *.log

@@ -1,3 +1,6 @@
+# resource_id: "b92f6931-8c2c-48cd-a6ad-faf093ac0230"
+# resource_type: "document"
+# resource_name: "session"
 """
 Core Session Module
 

@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# resource_id: "b9887a50-804a-4c30-92ce-a58ae5fc0f6b"
+# resource_type: "document"
+# resource_name: "hybrid-firebase-agent"
 
 """
 hybrid-firebase-agent.py

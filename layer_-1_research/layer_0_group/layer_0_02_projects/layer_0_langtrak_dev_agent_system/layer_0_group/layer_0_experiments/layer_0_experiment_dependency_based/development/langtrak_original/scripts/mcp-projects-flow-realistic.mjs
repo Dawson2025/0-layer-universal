@@ -1,3 +1,6 @@
+// resource_id: "b5c93343-004c-4900-8bdd-94bb1cef7286"
+// resource_type: "document"
+// resource_name: "mcp-projects-flow-realistic"
 #!/usr/bin/env node
 /**
  * USER-REALISTIC Projects Flow Test (US-012-015)

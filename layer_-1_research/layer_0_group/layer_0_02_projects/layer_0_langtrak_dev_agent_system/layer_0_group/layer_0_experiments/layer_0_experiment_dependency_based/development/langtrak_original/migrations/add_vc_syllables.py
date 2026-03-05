@@ -1,3 +1,6 @@
+# resource_id: "23a597c2-04b8-4065-b5ba-ab725ba111bd"
+# resource_type: "document"
+# resource_name: "add_vc_syllables"
 """
 Database Migration: Add VC (Vowel-Consonant) syllables
 
