@@ -82,47 +82,34 @@ Write a script that:
 ## Phase 1b: Assign Universal File UUIDs
 
 **Agent**: Script Agent
-**Input**: ALL files in the AI system (`.md`, `.sh`, `.json`, `.jsonld`)
+**Input**: ALL files in the AI system — every file type, every directory, every subdirectory under `0_layer_universal/`
 **Output**: `assign-file-uuids.sh` script at `.0agnostic/`
+
+**Fundamental rule**: Every file that has `0_layer_universal/` as an ancestor in its path MUST have a UUID. No file type exceptions — only binary files and empty `.gitkeep` placeholders are exempt.
 
 ### Task
 
-Write a script that assigns UUIDs to **every file** in the system, using the appropriate storage method per file type:
+Write a script that assigns UUIDs to **every file** in the system, using the appropriate comment syntax per file type:
 
-1. **`.md` files** — `resource_id` in YAML frontmatter:
-   a. Finds ALL `.md` files under `0_layer_universal/`
-   b. For each, checks if `resource_id:` exists in YAML frontmatter
-   c. If missing: adds frontmatter with `resource_id`, `resource_type`, `resource_name`
-   d. Determines `resource_type` from path (`01_knowledge/` → "knowledge", `02_rules/` → "rule", `outputs/` → "output", `README.md` → "readme", `0INDEX.md` → "index", `SKILL.md` → "skill", etc.)
-
-2. **`.sh` scripts** — `resource_id` in comment header:
-   a. Finds all `.sh` files
-   b. Inserts `# resource_id: "uuid"` after shebang line
-   c. Adds `# resource_type: "script"` and `# resource_name: "script-name"`
-
-3. **`.json` files** — `file_id` in JSON root:
-   a. Finds all `.json` files (`stage_index.json`, `resource_index.json`, etc.)
-   b. Adds `"file_id": "uuid"` to root object
-
-4. **`.jsonld` files** — `file_id` in JSON root:
-   a. Finds all `.gab.jsonld` files
-   b. Adds `"file_id": "uuid"` to root object
-
-5. **Auto-generated files** (`CLAUDE.md`, `AGENTS.md`, `GEMINI.md`, `OPENAI.md`, `.integration.md`):
-   a. Adds `<!-- derived_from: "source-uuid" -->` comment
-   b. Does NOT assign independent UUID — references source file's UUID
-   c. Source UUID comes from the corresponding `0AGNOSTIC.md` entity_id or `.gab.jsonld` file_id
-
-6. Supports `--dry-run`, `--type=md|sh|json|jsonld|derived` (process only one type)
+1. **`.md`/`.qmd` files** — `resource_id` in YAML frontmatter
+2. **`# comment` files** (`.sh`, `.py`, `.yaml`, `.yml`, `.txt`, `.ini`, `.rules`, `.env`, `.gitignore`, `.csv`, `.template`, `.jq`, `.dot`, `.Rproj`, `.replit`) — `# resource_id:` header
+3. **`// comment` files** (`.js`, `.mjs`, `.jsx`, `.cjs`, `.jsonc`, `.jsonl`) — `// resource_id:` header
+4. **`/* */` comment files** (`.css`) — `/* resource_id: */` header
+5. **`<!-- -->` comment files** (`.html`, `.svg`, `.mermaid`) — `<!-- resource_id: -->` header
+6. **`.ps1` files** — `# resource_id:` header
+7. **`.json`/`.jsonld` files** — `"file_id"` in JSON root object
+8. **Auto-generated files** (`CLAUDE.md`, `AGENTS.md`, `GEMINI.md`, `OPENAI.md`, `.integration.md`, `.cursorrules`, `copilot-instructions.md`) — `derived_from` referencing source entity_id
+9. **Extensionless text files** — `# resource_id:` header as default
+10. **Binary files** (`.png`, `.woff`, `.wav`, `.db`, `.pdf`, `.pid`) — EXEMPT (cannot embed text)
+11. **Empty `.gitkeep` files** — EXEMPT (0 bytes)
 
 ### Acceptance Criteria
-- Every `.md` file has `resource_id` in YAML frontmatter
-- Every `.sh` file has `resource_id` in comment header
-- Every `.json`/`.jsonld` file has `file_id` in root object
-- Auto-generated files have `derived_from` referencing their source
+- Every non-binary, non-empty file has `resource_id` or `file_id` or `derived_from`
+- Coverage: 17,724/17,724 text files = 100%
 - YAML/JSON remains valid after insertion
 - Idempotent — running twice doesn't duplicate IDs
 - `--dry-run` shows changes without modifying
+- Firebase service account JSON files are excluded from UUID insertion (GitHub push protection blocks credential file changes)
 
 ### Estimated Effort: 6-8 hours
 

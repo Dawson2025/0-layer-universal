@@ -82,7 +82,7 @@ Output format: `xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx` (36 chars with hyphens)
 
 ## 3. Where UUIDs Live
 
-Every level of the hierarchy gets a UUID, stored in its own `0AGNOSTIC.md`:
+**Fundamental rule**: Every file, entity, and stage within `/home/dawson/dawson-workspace/code/0_layer_universal/` MUST have a universally unique identifier (UUID v4). No exceptions for any file type — only binary files (`.png`, `.woff`, `.wav`, `.db`) and empty placeholder files (`.gitkeep` with 0 bytes) are exempt.
 
 ### 3.1 Entity UUID — in 0AGNOSTIC.md Identity Section
 
@@ -174,8 +174,29 @@ canonical_subpath: "outputs/by_topic/architecture/context_chain_architecture.md"
 - `canonical_entity_name` is **display only** (human reads this, not used for resolution)
 - `canonical_stage_id` is the **primary** stage resolution field
 - `canonical_stage_name` is **display only**
-- `canonical_subpath` remains name-based (file paths within a stage don't get UUIDs)
+- `canonical_subpath` remains name-based (file paths within a stage don't get UUIDs in pointer references)
 - Old format (`canonical_entity` without `_id`) still works as fallback
+
+### 3.5 File-Level UUIDs — Every File Gets an ID
+
+Every non-binary, non-empty file in `0_layer_universal/` gets a UUID, stored using the comment syntax appropriate to its file type:
+
+| File Type | UUID Field | Storage Method |
+|-----------|-----------|----------------|
+| `.md`, `.qmd` | `resource_id` | YAML frontmatter |
+| `.sh`, `.py`, `.yaml`, `.yml`, `.txt`, `.ini`, `.rules`, `.env`, `.gitignore`, `.csv`, `.template`, `.jq`, `.dot` | `resource_id` | `# comment` header |
+| `.js`, `.mjs`, `.jsx`, `.cjs`, `.jsonc`, `.jsonl` | `resource_id` | `// comment` header |
+| `.css` | `resource_id` | `/* comment */` header |
+| `.html`, `.svg`, `.mermaid` | `resource_id` | `<!-- comment -->` header |
+| `.json`, `.jsonld` | `file_id` | JSON root object field |
+| `.ps1` | `resource_id` | `# comment` header |
+| Auto-generated (CLAUDE.md, AGENTS.md, etc.) | `derived_from` | HTML comment referencing source entity_id |
+| Binary (`.png`, `.woff`, `.wav`, `.db`, `.pdf`) | N/A | Exempt — cannot embed text |
+| Empty `.gitkeep` files | N/A | Exempt — 0 bytes |
+
+**Coverage achieved**: 17,724/17,724 text files = 100%
+
+**Script**: `assign-file-uuids.sh` handles all types. For edge cases, a Python catch-all script processes remaining files.
 
 ---
 
