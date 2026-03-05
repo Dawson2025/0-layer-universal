@@ -73,30 +73,31 @@ Write a script that:
 ## Phase 1b: Assign Resource UUIDs
 
 **Agent**: Script Agent
-**Input**: All knowledge docs, rules, protocols, skills in `.0agnostic/` directories
+**Input**: All knowledge docs, rules, protocols, skills, and output files in `.0agnostic/` and `outputs/` directories
 **Output**: `assign-resource-uuids.sh` script at `.0agnostic/`
 
 ### Task
 
 Write a script that:
 1. Finds all `.md` files in `.0agnostic/01_knowledge/`, `.0agnostic/02_rules/`, `.0agnostic/03_protocols/`
-2. Skips: `README.md`, `0INDEX.md`, `index.md`, files in `04_episodic_memory/`, `05_handoff_documents/`
-3. For each, checks if `resource_id:` exists in YAML frontmatter
-4. If missing:
+2. Finds all `.md` files in `outputs/` directories within stages (`stage_*_*/outputs/`)
+3. Skips: `README.md`, `0INDEX.md`, `index.md`, auto-generated files (`CLAUDE.md`, `.integration.md`), `.1merge/` files, `registry.json`, `.gab.jsonld`
+4. For each, checks if `resource_id:` exists in YAML frontmatter
+5. If missing:
    a. If file has no YAML frontmatter (`---`), adds one
    b. Generates UUID v4
-   c. Determines `resource_type` from path (`01_knowledge/` → "knowledge", `02_rules/` → "rule", etc.)
+   c. Determines `resource_type` from path (`01_knowledge/` → "knowledge", `02_rules/` → "rule", `outputs/` → "output", etc.)
    d. Inserts frontmatter with `resource_id`, `resource_type`, `resource_name`
-5. Also finds `SKILL.md` files and adds `resource_id` to their frontmatter
-6. Supports `--dry-run`
+6. Also finds `SKILL.md` files and adds `resource_id` to their frontmatter
+7. Supports `--dry-run`
 
 ### Acceptance Criteria
-- All knowledge docs, rules, protocols, skills get `resource_id`
+- All knowledge docs, rules, protocols, skills, and output files get `resource_id`
 - YAML frontmatter is valid after insertion
 - Idempotent
-- Skips files that shouldn't have IDs (episodic memory, handoffs, indexes)
+- Skips files that shouldn't have IDs (auto-generated files, indexes, registries, JSON-LD)
 
-### Estimated Effort: 3-4 hours
+### Estimated Effort: 4-5 hours
 
 ### Can Run Parallel With: Phase 1
 
@@ -380,7 +381,7 @@ After all phases complete:
 - [ ] Every `0AGNOSTIC.md` with Identity section has `entity_id`
 - [ ] Every stage's `0AGNOSTIC.md` has `stage_id`
 - [ ] Every entity with stages has `registry.json`
-- [ ] All knowledge docs, rules, protocols have `resource_id` frontmatter
+- [ ] All knowledge docs, rules, protocols, output files have `resource_id` frontmatter
 - [ ] `pointer-sync.sh` resolves by UUID-first, name fallback
 - [ ] All 108 existing tests pass
 - [ ] All new UUID tests pass

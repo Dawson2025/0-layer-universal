@@ -360,8 +360,9 @@ Regenerate all CLAUDE.md files so they include the `entity_id` from 0AGNOSTIC.md
 ### 7.4 Subpath Changes
 
 **Problem**: Files within a stage are renamed/moved.
-**Behavior**: `canonical_subpath` is still name-based (file paths don't get UUIDs — that would be excessive). Subpath renames still break pointers.
-**Mitigation**: The CLI `--rename` flag (Phase 1 from research) handles subpath renames. Subpath renames are much rarer than entity/stage renames.
+**Behavior**: Every `.md` file that could be a pointer target gets a `resource_id` in its YAML frontmatter — including output files. When `canonical_resource_id` is present in a pointer, the file can be renamed freely and the pointer still resolves via UUID.
+**Fallback**: `canonical_subpath` is kept as a display-only field (like `canonical_entity_name`). If no `canonical_resource_id` is present, subpath resolution falls back to name-based.
+**Principle**: Every referenceable thing gets an ID — same as primary keys in a database. This eliminates the entire class of rename-breaks-reference problems.
 
 ### 7.5 UUID Collision
 
@@ -504,7 +505,7 @@ You are the **Stage 04 (Design)** agent for the Context Chain System.
 1. **Should `canonical_entity` (old field) be removed or kept?** Recommendation: keep during migration, remove after all pointers are migrated.
 2. **Should the cache be git-tracked or .gitignored?** Recommendation: .gitignored (it's a build artifact).
 3. **Should `previous_ids` be supported from day 1?** Recommendation: defer until an actual merge occurs.
-4. **Should subpaths eventually get IDs too?** Recommendation: no — file-level UUIDs are excessive. Use `--rename` CLI for subpath renames.
+4. **~~Should subpaths eventually get IDs too?~~** RESOLVED: Yes — every referenceable `.md` file gets a `resource_id` in YAML frontmatter (see Section 11). This includes output files, knowledge docs, rules, protocols, and skills.
 
 ---
 
@@ -526,6 +527,7 @@ The original design covers entities and stages. However, **anything that can be 
 | **Rule** | `resource_id` | YAML frontmatter at top of rule `.md` | `resource_id: "r1r2r3r4-..."` |
 | **Protocol** | `resource_id` | YAML frontmatter at top of protocol `.md` | `resource_id: "p1p2p3p4-..."` |
 | **Skill** | `resource_id` | YAML frontmatter in `SKILL.md` | `resource_id: "s1s2s3s4-..."` |
+| **Output file** | `resource_id` | YAML frontmatter at top of output `.md` | `resource_id: "o1o2o3o4-..."` |
 
 ### Resource ID Format
 
@@ -611,11 +613,14 @@ Each entity's `.0agnostic/` gets a `resource_registry.json`:
 | Thing | Why Not |
 |-------|---------|
 | Scripts (`.sh`) | Invoked by path/name, not referenced by pointers |
-| Auto-generated files (`CLAUDE.md`, `.integration.md`) | Derivative — identity comes from source |
-| Episodic memory files | Temporal — referenced by timestamp, not stable ID |
+| Auto-generated files (`CLAUDE.md`, `.integration.md`) | Derivative — identity comes from source (`0AGNOSTIC.md`) |
 | `.1merge/` files | Override mechanism — identity comes from target |
 | `0INDEX.md` | Dashboard — not a referenceable resource |
-| Handoff documents | Communication artifacts — transient by nature |
+| `README.md` | Human-readable overview — not a pointer target |
+| JSON-LD files (`.gab.jsonld`) | Agent definitions — referenced by agent type, not by ID |
+| `registry.json` | Machine registry — not a pointer target itself |
+
+**Note**: Episodic memory files and handoff documents DO get `resource_id` if they are pointer targets. The criterion is: **if something can be the target of a pointer file's `canonical_*` fields, it gets an ID.**
 
 ### Migration Impact
 

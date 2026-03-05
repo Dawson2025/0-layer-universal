@@ -129,7 +129,7 @@
 
 ## Test Category 27: assign-resource-uuids.sh
 
-**Tests resource UUID assignment to knowledge, rules, protocols.**
+**Tests resource UUID assignment to knowledge, rules, protocols, skills, and output files.**
 
 | # | Test | Setup | Expected |
 |---|------|-------|----------|
@@ -137,13 +137,16 @@
 | 27.2 | Rule gets resource_id | `.0agnostic/02_rules/static/rule/rule.md` | `resource_type: "rule"` |
 | 27.3 | Protocol gets resource_id | `.0agnostic/03_protocols/protocol.md` | `resource_type: "protocol"` |
 | 27.4 | SKILL.md gets resource_id | `.0agnostic/.../05_skills/skill/SKILL.md` | `resource_type: "skill"` |
-| 27.5 | Existing frontmatter preserved | File already has `---` frontmatter with other fields | `resource_id` added, other fields kept |
-| 27.6 | Skips README.md | `01_knowledge/README.md` | File unchanged |
-| 27.7 | Skips 0INDEX.md | `01_knowledge/0INDEX.md` | File unchanged |
-| 27.8 | Skips episodic memory files | `04_episodic_memory/sessions/session.md` | File unchanged |
-| 27.9 | Skips handoff documents | `05_handoff_documents/01_incoming/doc.md` | File unchanged |
-| 27.10 | Idempotent | Run twice | Same IDs, no duplicates |
-| 27.11 | `--dry-run` | Run with --dry-run | No files modified |
+| 27.5 | Output file gets resource_id | `stage_3_04_design/outputs/design_doc.md` without frontmatter | YAML frontmatter with `resource_id`, `resource_type: "output"` |
+| 27.6 | Nested output file gets resource_id | `stage_3_02_research/outputs/by_topic/arch/doc.md` | `resource_type: "output"` |
+| 27.7 | Existing frontmatter preserved | File already has `---` frontmatter with other fields | `resource_id` added, other fields kept |
+| 27.8 | Skips README.md | `01_knowledge/README.md` | File unchanged |
+| 27.9 | Skips 0INDEX.md | `01_knowledge/0INDEX.md` | File unchanged |
+| 27.10 | Skips auto-generated files | `CLAUDE.md`, `.integration.md` | File unchanged |
+| 27.11 | Skips .1merge/ files | `.1merge/claude/overrides/file.md` | File unchanged |
+| 27.12 | Skips registry.json | `stage_3_00_stage_registry/registry.json` | File unchanged |
+| 27.13 | Idempotent | Run twice | Same IDs, no duplicates |
+| 27.14 | `--dry-run` | Run with --dry-run | No files modified |
 
 ---
 
@@ -198,9 +201,9 @@
 | Suite | Categories | Estimated Tests |
 |-------|-----------|-----------------|
 | test_pointer_sync.sh (extended) | 20-24, 30 | ~40 new tests |
-| test_uuid_scripts.sh (new) | 25-29 | ~45 tests |
-| **Total new** | **11 categories** | **~85 tests** |
-| **Grand total (with existing 108)** | **30 categories** | **~193 tests** |
+| test_uuid_scripts.sh (new) | 25-29 | ~48 tests |
+| **Total new** | **11 categories** | **~88 tests** |
+| **Grand total (with existing 108)** | **30 categories** | **~196 tests** |
 
 ### Test Execution Order
 
