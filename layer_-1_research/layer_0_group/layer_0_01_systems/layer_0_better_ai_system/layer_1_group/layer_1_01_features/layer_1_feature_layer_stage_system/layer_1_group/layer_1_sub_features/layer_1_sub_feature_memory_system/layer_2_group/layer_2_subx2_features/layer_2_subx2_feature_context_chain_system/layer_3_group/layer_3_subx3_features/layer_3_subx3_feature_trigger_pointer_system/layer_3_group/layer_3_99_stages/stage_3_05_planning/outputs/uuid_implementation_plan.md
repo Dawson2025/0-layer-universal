@@ -8,7 +8,7 @@
 
 ## Overview
 
-This plan breaks the UUID identity system implementation into **8 phases** across **6 agent roles**. Each phase produces testable artifacts. Phases are ordered by dependency — later phases depend on earlier ones. Some phases can run in parallel.
+This plan breaks the UUID identity system implementation into **10 phases** across **6 agent roles**. Each phase produces testable artifacts. Phases are ordered by dependency — later phases depend on earlier ones. Some phases can run in parallel.
 
 ---
 
@@ -28,11 +28,13 @@ This plan breaks the UUID identity system implementation into **8 phases** acros
 ## Phase Dependency Graph
 
 ```
-Phase 1 (assign-uuids.sh) ──┬──> Phase 3 (pointer-sync.sh update)
-                             │
-Phase 2 (stage registries) ──┤──> Phase 5 (migrate pointers)
-                             │
-Phase 1b (resource IDs) ─────┘
+Phase 1 (entity UUIDs) ─────┬──> Phase 3 (pointer-sync.sh update)
+                              │
+Phase 2 (stage indexes) ─────┤──> Phase 5 (migrate pointers)
+                              │
+Phase 1b (all file UUIDs) ───┘
+
+Phase 3b (reference integrity) — after Phase 3
 
 Phase 4 (entity-creation skill) — independent, can run parallel with 3
 
@@ -41,6 +43,8 @@ Phase 6 (docs update) — after phases 1-5
 Phase 7 (full integration test) — after all phases
 
 Phase 8 (run agnostic-sync.sh) — final
+
+Phase 9 (git hooks + validation) — after Phase 8
 ```
 
 ---
@@ -70,34 +74,52 @@ Write a script that:
 
 ---
 
-## Phase 1b: Assign Resource UUIDs
+## Phase 1b: Assign Universal File UUIDs
 
 **Agent**: Script Agent
-**Input**: All knowledge docs, rules, protocols, skills, and output files in `.0agnostic/` and `outputs/` directories
-**Output**: `assign-resource-uuids.sh` script at `.0agnostic/`
+**Input**: ALL files in the AI system (`.md`, `.sh`, `.json`, `.jsonld`)
+**Output**: `assign-file-uuids.sh` script at `.0agnostic/`
 
 ### Task
 
-Write a script that:
-1. Finds all `.md` files in `.0agnostic/01_knowledge/`, `.0agnostic/02_rules/`, `.0agnostic/03_protocols/`
-2. Finds all `.md` files in `outputs/` directories within stages (`stage_*_*/outputs/`)
-3. Skips: `README.md`, `0INDEX.md`, `index.md`, auto-generated files (`CLAUDE.md`, `.integration.md`), `.1merge/` files, `stage_index.json`, `.gab.jsonld`
-4. For each, checks if `resource_id:` exists in YAML frontmatter
-5. If missing:
-   a. If file has no YAML frontmatter (`---`), adds one
-   b. Generates UUID v4
-   c. Determines `resource_type` from path (`01_knowledge/` → "knowledge", `02_rules/` → "rule", `outputs/` → "output", etc.)
-   d. Inserts frontmatter with `resource_id`, `resource_type`, `resource_name`
-6. Also finds `SKILL.md` files and adds `resource_id` to their frontmatter
-7. Supports `--dry-run`
+Write a script that assigns UUIDs to **every file** in the system, using the appropriate storage method per file type:
+
+1. **`.md` files** — `resource_id` in YAML frontmatter:
+   a. Finds ALL `.md` files under `0_layer_universal/`
+   b. For each, checks if `resource_id:` exists in YAML frontmatter
+   c. If missing: adds frontmatter with `resource_id`, `resource_type`, `resource_name`
+   d. Determines `resource_type` from path (`01_knowledge/` → "knowledge", `02_rules/` → "rule", `outputs/` → "output", `README.md` → "readme", `0INDEX.md` → "index", `SKILL.md` → "skill", etc.)
+
+2. **`.sh` scripts** — `resource_id` in comment header:
+   a. Finds all `.sh` files
+   b. Inserts `# resource_id: "uuid"` after shebang line
+   c. Adds `# resource_type: "script"` and `# resource_name: "script-name"`
+
+3. **`.json` files** — `file_id` in JSON root:
+   a. Finds all `.json` files (`stage_index.json`, `resource_index.json`, etc.)
+   b. Adds `"file_id": "uuid"` to root object
+
+4. **`.jsonld` files** — `file_id` in JSON root:
+   a. Finds all `.gab.jsonld` files
+   b. Adds `"file_id": "uuid"` to root object
+
+5. **Auto-generated files** (`CLAUDE.md`, `AGENTS.md`, `GEMINI.md`, `OPENAI.md`, `.integration.md`):
+   a. Adds `<!-- derived_from: "source-uuid" -->` comment
+   b. Does NOT assign independent UUID — references source file's UUID
+   c. Source UUID comes from the corresponding `0AGNOSTIC.md` entity_id or `.gab.jsonld` file_id
+
+6. Supports `--dry-run`, `--type=md|sh|json|jsonld|derived` (process only one type)
 
 ### Acceptance Criteria
-- All knowledge docs, rules, protocols, skills, and output files get `resource_id`
-- YAML frontmatter is valid after insertion
-- Idempotent
-- Skips files that shouldn't have IDs (auto-generated files, indexes, registries, JSON-LD)
+- Every `.md` file has `resource_id` in YAML frontmatter
+- Every `.sh` file has `resource_id` in comment header
+- Every `.json`/`.jsonld` file has `file_id` in root object
+- Auto-generated files have `derived_from` referencing their source
+- YAML/JSON remains valid after insertion
+- Idempotent — running twice doesn't duplicate IDs
+- `--dry-run` shows changes without modifying
 
-### Estimated Effort: 4-5 hours
+### Estimated Effort: 6-8 hours
 
 ### Can Run Parallel With: Phase 1
 
@@ -232,6 +254,36 @@ Update the entity-creation skill to:
 
 ---
 
+## Phase 3b: Reference Integrity Tools
+
+**Agent**: Pointer-Sync Agent
+**Input**: Updated `pointer-sync.sh` from Phase 3
+**Output**: New flags added to `pointer-sync.sh`
+
+### Task
+
+Add reference integrity features to pointer-sync.sh:
+
+1. **`--find-references <uuid>`**: Find all pointer files that reference a given UUID (reverse lookup)
+2. **`--detect-cycles`**: Build directed graph from all pointer files, report any cycles
+3. **`--gc`**: Garbage collection — scan index, remove entries whose paths don't exist
+4. **Atomic write protocol**: All index writes use temp → fsync → atomic rename
+5. **File locking**: `mkdir`-based lock around index mutations (5-minute stale lock timeout)
+6. **Checksum validation**: On index load, compute SHA256 and compare to stored checksum. Mismatch → auto-rebuild
+7. **Duplicate UUID detection**: During `--rebuild-index`, report any duplicate UUIDs
+
+### Acceptance Criteria
+- `--find-references` returns all pointers referencing a given UUID
+- `--detect-cycles` correctly identifies circular reference chains
+- `--gc` removes orphaned index entries without affecting valid ones
+- Concurrent `--rebuild-index` from two processes doesn't corrupt the index
+- Checksum mismatch triggers rebuild, not crash
+
+### Estimated Effort: 4-6 hours
+### Depends On: Phase 3
+
+---
+
 ## Phase 5: Migrate Existing Pointers
 
 **Agent**: Script Agent
@@ -336,29 +388,62 @@ Update these canonical documents:
 
 ---
 
+## Phase 9: Git Hooks & Validation Infrastructure
+
+**Agent**: Script Agent
+**Input**: Updated pointer-sync.sh, agnostic-sync.sh
+**Output**: Git hook scripts, validation runner
+
+### Task
+
+1. **Post-merge hook** (`.git/hooks/post-merge`):
+   - Run `pointer-sync.sh --rebuild-index`
+   - Run `pointer-sync.sh --validate`
+   - Report any BROKEN pointers
+
+2. **Pre-commit hook** (optional, `.git/hooks/pre-commit`):
+   - If any `0AGNOSTIC.md` changed, warn if `agnostic-sync.sh` hasn't been run (stale CLAUDE.md)
+   - If any pointer file changed, run `pointer-sync.sh --validate` on changed files
+
+3. **Materialized view staleness detection**:
+   - Add `<!-- source-hash: sha256:... -->` to generated CLAUDE.md files
+   - Validation script compares stored hash vs current source hash
+
+### Acceptance Criteria
+- Post-merge hook runs automatically and catches dangling references
+- Pre-commit hook warns about stale materialized views
+- Hooks don't block normal commits (warnings only, not errors)
+
+### Estimated Effort: 2-3 hours
+### Depends On: Phase 8
+
+---
+
 ## Execution Timeline
 
 ```
 Session 1 (Scripts):
   [Coordinator] Review plan → delegate
-  [Script Agent] Phase 1: assign-entity-uuids.sh     (2-3h)
-  [Script Agent] Phase 1b: assign-resource-uuids.sh   (3-4h, parallel)
-  [Script Agent] Phase 2: create-stage-indexes.sh   (4-5h, after Phase 1)
+  [Script Agent] Phase 1: assign-entity-uuids.sh      (2-3h)
+  [Script Agent] Phase 1b: assign-file-uuids.sh       (6-8h, parallel)
+  [Script Agent] Phase 2: create-stage-indexes.sh      (4-5h, after Phase 1)
   [Test Agent] Verify Phase 1-2 outputs
 
 Session 2 (Core Changes):
-  [Pointer-Sync Agent] Phase 3: Update pointer-sync.sh  (6-8h)
-  [Skill Agent] Phase 4: Update entity-creation skill   (3-4h, parallel)
+  [Pointer-Sync Agent] Phase 3: Update pointer-sync.sh   (6-8h)
+  [Pointer-Sync Agent] Phase 3b: Reference integrity     (4-6h, after Phase 3)
+  [Skill Agent] Phase 4: Update entity-creation skill     (3-4h, parallel with 3)
   [Test Agent] Run existing tests + new UUID tests
 
 Session 3 (Migration + Polish):
-  [Script Agent] Phase 5: migrate-pointers.sh           (3-4h)
-  [Docs Agent] Phase 6: Update documentation             (2-3h, parallel)
-  [Test Agent] Phase 7: Full integration test            (4-6h)
-  [Coordinator] Phase 8: Final sync + commit             (1-2h)
+  [Script Agent] Phase 5: migrate-pointers.sh              (3-4h)
+  [Docs Agent] Phase 6: Update documentation                (2-3h, parallel)
+  [Test Agent] Phase 7: Full integration test               (4-6h)
+  [Coordinator] Phase 8: Final sync + commit                (1-2h)
+  [Script Agent] Phase 9: Git hooks + validation            (2-3h)
 ```
 
-**Total estimated effort**: ~30-40 hours across 3 sessions
+**Total estimated effort**: ~40-55 hours across 3 sessions
 
 ---
 
@@ -368,9 +453,12 @@ Session 3 (Migration + Polish):
 |------|--------|------------|
 | Migration breaks existing pointers | High | `--dry-run` on all scripts, run `--validate` after each phase |
 | UUID index becomes stale | Medium | Auto-rebuild on index miss, `--rebuild-index` flag |
+| Index corruption from concurrent access | Medium | File-based locking, atomic writes, checksum validation |
 | Entity creation skill regressions | Medium | Test new entities with skill after changes |
 | Long paths cause ENAMETOOLONG | Low | Work directly (no subagents for deep paths), use git -C |
 | Partial migration (some pointers migrated, some not) | Low | Name-based fallback ensures backward compat |
+| Dangling references after entity deletion | Low | `--find-references` before delete, `--validate` after |
+| Git merge creates orphaned UUIDs | Low | Post-merge hook runs `--gc` and `--validate` |
 
 ---
 
@@ -381,11 +469,21 @@ After all phases complete:
 - [ ] Every `0AGNOSTIC.md` with Identity section has `entity_id`
 - [ ] Every stage's `0AGNOSTIC.md` has `stage_id`
 - [ ] Every entity with stages has `stage_index.json`
-- [ ] All knowledge docs, rules, protocols, output files have `resource_id` frontmatter
+- [ ] **Every `.md` file** has `resource_id` in YAML frontmatter
+- [ ] **Every `.sh` file** has `resource_id` in comment header
+- [ ] **Every `.json`/`.jsonld` file** has `file_id` in root object
+- [ ] **Every auto-generated file** has `derived_from` reference
 - [ ] `pointer-sync.sh` resolves by UUID-first, name fallback
+- [ ] `pointer-sync.sh --find-references` works (reverse UUID lookup)
+- [ ] `pointer-sync.sh --detect-cycles` reports cycles correctly
+- [ ] `pointer-sync.sh --gc` removes orphaned entries
+- [ ] Atomic write protocol in place for all index mutations
+- [ ] File locking prevents concurrent index corruption
+- [ ] Checksum validation detects corrupt indexes
 - [ ] All 108 existing tests pass
 - [ ] All new UUID tests pass
 - [ ] `pointer-sync.sh --validate` exits 0 on real repo
 - [ ] Entity creation skill generates UUIDs for new entities
 - [ ] Documentation updated (entity_structure.md, protocol, convention)
+- [ ] Post-merge git hook installed and functional
 - [ ] All changes committed with `[AI Context]` prefix

@@ -196,22 +196,91 @@
 
 ---
 
+## Test Category 31: Reference Integrity
+
+**Tests `--find-references`, `--detect-cycles`, `--gc`, and duplicate UUID detection.**
+
+| # | Test | Setup | Expected |
+|---|------|-------|----------|
+| 31.1 | `--find-references` finds all pointers to UUID | 3 pointers reference entity UUID X | Output lists all 3 pointer files |
+| 31.2 | `--find-references` returns empty for unreferenced UUID | Entity with UUID that no pointer references | Output: "0 references found" |
+| 31.3 | `--detect-cycles` finds simple cycle | Pointer A→B and B→A | Reports cycle: A → B → A |
+| 31.4 | `--detect-cycles` finds no cycles | Linear pointer chain A→B→C | Exit 0, no cycles reported |
+| 31.5 | `--detect-cycles` handles 3-node cycle | A→B, B→C, C→A | Reports cycle: A → B → C → A |
+| 31.6 | `--gc` removes orphaned entry | Index has entry for deleted entity | Entry removed, other entries preserved |
+| 31.7 | `--gc` keeps valid entries | Index has only valid entries | Index unchanged |
+| 31.8 | Duplicate UUID detected during rebuild | Two entities with same `entity_id` | Error reported, first kept |
+| 31.9 | `--find-references` works with stage UUIDs | Pointer references stage UUID | Found correctly |
+| 31.10 | `--find-references` works with resource UUIDs | Pointer references resource UUID | Found correctly |
+
+---
+
+## Test Category 32: Index Safety & Concurrency
+
+**Tests atomic writes, file locking, checksum validation.**
+
+| # | Test | Setup | Expected |
+|---|------|-------|----------|
+| 32.1 | Atomic write produces valid JSON | Interrupt index write mid-stream | Old or new file — never partial |
+| 32.2 | Lock prevents concurrent writes | Run `--rebuild-index` from two processes | Both complete, no corruption |
+| 32.3 | Stale lock removed after timeout | Lock dir older than 5 minutes | Lock removed, operation proceeds |
+| 32.4 | Checksum mismatch triggers rebuild | Manually edit index content (change a path) | Auto-rebuild from local indexes |
+| 32.5 | Valid checksum passes | Unmodified index | No rebuild triggered |
+| 32.6 | Lock dir cleaned up after operation | Run any index mutation | No `.lock` directory remains |
+
+---
+
+## Test Category 33: Universal File IDs
+
+**Tests `assign-file-uuids.sh` across all file types.**
+
+| # | Test | Setup | Expected |
+|---|------|-------|----------|
+| 33.1 | `.sh` script gets comment-header UUID | Script without resource_id | `# resource_id: "uuid"` after shebang |
+| 33.2 | `.sh` with existing resource_id skipped | Script already has UUID | File unchanged |
+| 33.3 | `.json` file gets file_id | JSON file without file_id | `"file_id": "uuid"` in root |
+| 33.4 | `.jsonld` file gets file_id | JSONLD without file_id | `"file_id": "uuid"` in root |
+| 33.5 | Auto-generated `.md` gets derived_from | `CLAUDE.md` without derived_from | `<!-- derived_from: "source-uuid" -->` |
+| 33.6 | `README.md` gets resource_id | README without frontmatter | YAML frontmatter with `resource_id` |
+| 33.7 | `0INDEX.md` gets resource_id | 0INDEX without frontmatter | YAML frontmatter with `resource_id` |
+| 33.8 | `.1merge/` file gets resource_id | .1merge override file | YAML frontmatter with `resource_id` |
+| 33.9 | `--type=sh` only processes scripts | Run with --type=sh | Only .sh files modified |
+| 33.10 | Idempotent across all types | Run twice on all types | Same UUIDs, no duplicates |
+
+---
+
+## Test Category 34: Git Hooks & Validation
+
+**Tests post-merge hooks, materialized view staleness detection.**
+
+| # | Test | Setup | Expected |
+|---|------|-------|----------|
+| 34.1 | Post-merge hook runs `--validate` | Simulate merge that deletes entity | BROKEN pointers reported |
+| 34.2 | Post-merge hook runs `--rebuild-index` | Simulate merge that adds entity | New entity in index |
+| 34.3 | Materialized view staleness detected | Edit 0AGNOSTIC.md, don't run sync | Validation reports stale CLAUDE.md |
+| 34.4 | Fresh materialized view passes | Run agnostic-sync.sh after edit | Validation passes |
+
+---
+
 ## Summary
 
 | Suite | Categories | Estimated Tests |
 |-------|-----------|-----------------|
-| test_pointer_sync.sh (extended) | 20-24, 30 | ~40 new tests |
-| test_uuid_scripts.sh (new) | 25-29 | ~48 tests |
-| **Total new** | **11 categories** | **~88 tests** |
-| **Grand total (with existing 108)** | **30 categories** | **~196 tests** |
+| test_pointer_sync.sh (extended) | 20-24, 30-32 | ~60 new tests |
+| test_uuid_scripts.sh (new) | 25-29, 33 | ~58 tests |
+| test_hooks.sh (new) | 34 | ~4 tests |
+| **Total new** | **15 categories** | **~122 tests** |
+| **Grand total (with existing 108)** | **34 categories** | **~230 tests** |
 
 ### Test Execution Order
 
 1. Run existing 108 tests first (regression gate)
 2. Run UUID resolution tests (cat 20-24) after pointer-sync.sh is updated
-3. Run script tests (cat 25-29) after each script is written
-4. Run edge cases (cat 30) last
-5. Full suite run as final gate before commit
+3. Run script tests (cat 25-29, 33) after each script is written
+4. Run reference integrity tests (cat 31-32) after Phase 3b
+5. Run edge cases (cat 30) after all core phases
+6. Run hook tests (cat 34) after Phase 9
+7. Full suite run as final gate before commit
 
 ### Pass Criteria
 
@@ -219,3 +288,5 @@
 - **All new UUID tests**: PASS
 - **pointer-sync.sh --validate on real repo**: exit 0
 - **No BROKEN pointers introduced by migration**
+- **Index locking prevents concurrent corruption**
+- **Checksum validation catches corrupted indexes**

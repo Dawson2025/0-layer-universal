@@ -222,29 +222,38 @@ Contains ALL UUIDs across the entire system — entities, stages, and resources:
 ```json
 {
   "generated": "2026-03-02T10:30:00Z",
-  "entities": {
+  "checksum": "sha256:a1b2c3d4...",
+  "uuids": {
     "a1b2c3d4-e5f6-4a7b-8c9d-0e1f2a3b4c5d": {
+      "type": "entity",
       "name": "layer_2_subx2_feature_context_chain_system",
       "path": "/full/path/to/entity"
-    }
-  },
-  "stages": {
+    },
     "33333333-aaaa-4bbb-cccc-dddddddddddd": {
-      "entity_id": "a1b2c3d4-...",
+      "type": "stage",
       "name": "research",
-      "directory": "stage_2_02_research"
-    }
-  },
-  "resources": {
-    "f47ac10b-58cc-4372-a567-0e02b2c3d479": {
       "entity_id": "a1b2c3d4-...",
-      "type": "knowledge",
+      "path": "/full/path/to/entity/layer_2_group/layer_2_99_stages/stage_2_02_research"
+    },
+    "f47ac10b-58cc-4372-a567-0e02b2c3d479": {
+      "type": "resource",
       "name": "pointer_sync_knowledge",
+      "entity_id": "a1b2c3d4-...",
       "path": ".0agnostic/01_knowledge/pointer_sync/pointer_sync_knowledge.md"
     }
+  },
+  "names": {
+    "layer_2_subx2_feature_context_chain_system": "a1b2c3d4-e5f6-4a7b-8c9d-0e1f2a3b4c5d",
+    "pointer_sync_knowledge": "f47ac10b-58cc-4372-a567-0e02b2c3d479"
   }
 }
 ```
+
+**Key design choices**:
+- **Flat `uuids` map**: Any UUID in, one path out — no need to know the type beforehand
+- **`names` reverse map**: Name→UUID for fast name-based fallback (O(1) instead of O(n) scanning)
+- **`checksum`**: SHA256 of index content for corruption detection on load
+- **`type` field**: Distinguishes entity/stage/resource after lookup if needed
 
 #### Local Indexes (per entity)
 
@@ -269,6 +278,13 @@ Root index is **rebuilt from local indexes** — `--rebuild-index` reads all loc
 - Auto-rebuilt if a UUID lookup fails (entity may have been created since last index build)
 - Optionally rebuilt as part of `agnostic-sync.sh`
 - Future: incremental updates instead of full rebuilds (update only changed entities)
+
+#### Index Safety
+
+- **Atomic writes**: Write to temp file → fsync → atomic rename. Never write directly to index files
+- **Checksum validation**: On load, compute SHA256 of content and compare to stored `checksum` field. If mismatch → auto-rebuild from local indexes
+- **File locking**: Use lockfile (`<index>.lock`) around index mutations to prevent concurrent write corruption
+- **Idempotent rebuilds**: Running `--rebuild-index` twice produces identical output — safe to re-run after any suspected corruption
 
 ---
 
@@ -599,26 +615,36 @@ canonical_resource_name: "pointer_sync_knowledge"
 
 **Resolution order**: `canonical_resource_id` (if present, resolves directly to the file) → `canonical_entity_id` + `canonical_stage_id` + `canonical_subpath` (composed path) → name-based fallback.
 
-### Where Resources Get IDs
+### Where Files Get IDs — Every File
 
 ```
 .0agnostic/
 ├── 01_knowledge/
 │   ├── pointer_sync/
-│   │   └── pointer_sync_knowledge.md    ← resource_id in frontmatter
-│   ├── deduplication_pattern.md          ← resource_id in frontmatter
+│   │   └── pointer_sync_knowledge.md    ← resource_id in YAML frontmatter
+│   ├── deduplication_pattern.md          ← resource_id in YAML frontmatter
 │   └── layer_stage_system/
-│       └── LAYERS_EXPLAINED.md           ← resource_id in frontmatter
+│       └── LAYERS_EXPLAINED.md           ← resource_id in YAML frontmatter
 ├── 02_rules/
 │   ├── static/
 │   │   └── pointer_sync_rule/
-│   │       └── pointer_sync_rule.md      ← resource_id in frontmatter
+│   │       └── pointer_sync_rule.md      ← resource_id in YAML frontmatter
 │   └── dynamic/
 │       └── auto_trigger_rule/
-│           └── auto_trigger_rule.md      ← resource_id in frontmatter
+│           └── auto_trigger_rule.md      ← resource_id in YAML frontmatter
 ├── 03_protocols/
-│   └── pointer_sync_protocol.md          ← resource_id in frontmatter
-└── pointer-sync.sh                       ← NO ID (scripts are invoked, not referenced by pointers)
+│   └── pointer_sync_protocol.md          ← resource_id in YAML frontmatter
+├── pointer-sync.sh                       ← resource_id in comment header
+├── resource_index.json                   ← file_id in JSON root
+└── agnostic-sync.sh                      ← resource_id in comment header
+
+# Root level
+├── 0AGNOSTIC.md                          ← entity_id in Identity section
+├── 0INDEX.md                             ← resource_id in YAML frontmatter
+├── README.md                             ← resource_id in YAML frontmatter
+├── CLAUDE.md                             ← derived_from (source entity_id)
+├── layer_2_orchestrator.gab.jsonld       ← file_id in JSON
+└── layer_2_orchestrator.integration.md   ← derived_from (source file_id)
 ```
 
 ### Resource Registry
@@ -645,24 +671,79 @@ Each entity's `.0agnostic/` gets a `resource_index.json`:
 }
 ```
 
-### What Does NOT Get an ID
+### Universal File IDs — Every File Gets a UUID
 
-| Thing | Why Not |
-|-------|---------|
-| Scripts (`.sh`) | Invoked by path/name, not referenced by pointers |
-| Auto-generated files (`CLAUDE.md`, `.integration.md`) | Derivative — identity comes from source (`0AGNOSTIC.md`) |
-| `.1merge/` files | Override mechanism — identity comes from target |
-| `0INDEX.md` | Dashboard — not a referenceable resource |
-| `README.md` | Human-readable overview — not a pointer target |
-| JSON-LD files (`.gab.jsonld`) | Agent definitions — referenced by agent type, not by ID |
-| `stage_index.json` | Machine registry — not a pointer target itself |
+**Design principle**: Every file in the AI system gets an ID. No exceptions. This eliminates ambiguity ("does this file have an ID?"), future-proofs against any file becoming a reference target, and enables stable cross-tool addressing.
 
-**Note**: Episodic memory files and handoff documents DO get `resource_id` if they are pointer targets. The criterion is: **if something can be the target of a pointer file's `canonical_*` fields, it gets an ID.**
+#### ID Storage by File Type
+
+| File Type | ID Field | Storage Method | Example |
+|-----------|----------|---------------|---------|
+| `.md` files | `resource_id` | YAML frontmatter (`---`) | `resource_id: "uuid"` |
+| `.sh` scripts | `resource_id` | Comment header | `# resource_id: "uuid"` |
+| `.json` files | `file_id` | JSON field | `"file_id": "uuid"` |
+| `.jsonld` files | `file_id` | JSON field | `"file_id": "uuid"` |
+| Auto-generated files | `derived_from` | Reference to source file's UUID | `derived_from: "source-uuid"` |
+
+#### Previously Excluded Files — Now Included
+
+| File Type | ID Field | Notes |
+|-----------|----------|-------|
+| Scripts (`.sh`) | `resource_id` in comment header | `# resource_id: "uuid"` after shebang |
+| `CLAUDE.md`, `.integration.md` | `derived_from` | Points to source file's UUID — not an independent ID |
+| `.1merge/` files | `resource_id` | Independent ID per override file |
+| `0INDEX.md` | `resource_id` | YAML frontmatter |
+| `README.md` | `resource_id` | YAML frontmatter |
+| `.gab.jsonld` files | `file_id` | JSON field in the top-level object |
+| `stage_index.json` | `file_id` | JSON field in the root object |
+| `resource_index.json` | `file_id` | JSON field in the root object |
+
+#### Auto-Generated Files: Derived Identity
+
+Auto-generated files (`CLAUDE.md`, `AGENTS.md`, `GEMINI.md`, `OPENAI.md`, `.integration.md`) do NOT get independent UUIDs. Instead, they carry a `derived_from` field pointing to their source file's UUID:
+
+```markdown
+<!-- derived_from: "a1b2c3d4-..." -->
+<!-- This file is auto-generated from 0AGNOSTIC.md. Do not edit directly. -->
+```
+
+This means:
+- The source file (`0AGNOSTIC.md`) has the authoritative `entity_id`
+- Generated files reference the source's ID
+- If the source is deleted, generated files are also deleted (they have no independent identity)
+
+#### Script ID Format
+
+Scripts get their UUID in a comment immediately after the shebang:
+
+```bash
+#!/bin/bash
+# resource_id: "f47ac10b-58cc-4372-a567-0e02b2c3d479"
+# resource_type: "script"
+# resource_name: "pointer-sync"
+
+# pointer-sync.sh — ...
+```
+
+#### JSON File ID Format
+
+JSON files get a `file_id` at the root level:
+
+```json
+{
+  "file_id": "99999999-aaaa-4bbb-cccc-dddddddddddd",
+  "entity_id": "a1b2c3d4-...",
+  "stages": [...]
+}
+```
 
 ### Migration Impact
 
 The Phase 1-6 migration plan expands to include:
-- **Phase 1b**: Assign `resource_id` to all knowledge docs, rules, protocols at root `.0agnostic/`
+- **Phase 1b**: Assign `resource_id` to ALL `.md` files (knowledge, rules, protocols, outputs, README, 0INDEX)
+- **Phase 1c**: Assign `resource_id` to ALL `.sh` scripts (comment header format)
+- **Phase 1d**: Assign `file_id` to ALL `.json` and `.jsonld` files
+- **Phase 1e**: Add `derived_from` to ALL auto-generated files
 - **Phase 2b**: Assign `resource_id` to resources in entity-level `.0agnostic/` dirs
 - **Phase 5b**: Migrate pointer files that reference resources (add `canonical_resource_id`)
 
@@ -701,6 +782,209 @@ The layer-stage hierarchy is functionally a **filesystem-backed database**. Comp
 Both have high overlap, but the **self-contained entity** pattern is the most defining characteristic. Hierarchical DBs organize by tree structure (which we also do) but don't emphasize data locality — each entity carrying its own resources, indexes, and identity is fundamentally document-oriented. Hierarchical DBs also lack cross-tree references (our pointer files link across branches).
 
 Full research: `../../../stage_3_02_research/outputs/uuid_and_database_patterns_research.md`
+
+---
+
+## 13. Reference Integrity
+
+### 13.1 Dangling References
+
+A **dangling reference** occurs when a pointer file references a UUID that no longer exists (entity deleted, resource removed).
+
+**Detection**: `pointer-sync.sh --validate` scans all pointer files and checks each `canonical_entity_id`, `canonical_stage_id`, and `canonical_resource_id` against the UUID index. Any UUID not found → BROKEN.
+
+**Prevention**:
+- Before deleting an entity, run `pointer-sync.sh --find-references <uuid>` to find all pointers referencing it
+- Display warning: "N pointer files reference this entity. Delete anyway?"
+- After deletion, re-run `--validate` to confirm no new BROKEN pointers
+
+**Recovery**:
+- BROKEN pointers fall back to name-based resolution (if `canonical_entity_name` still matches)
+- If name-based also fails → pointer is truly broken, requires manual fix
+
+### 13.2 Cascading Operations
+
+**Policy**: No automatic cascading deletes. Deleting an entity does NOT automatically delete pointers to it.
+
+**Rationale**: Cascading deletes are dangerous in a filesystem — accidental deletion of a widely-referenced entity could destroy dozens of pointer files. Better to leave dangling references and fix them explicitly.
+
+**Soft delete pattern** (recommended):
+1. Mark entity as deleted by adding `deleted: true` to its `0AGNOSTIC.md` Identity section
+2. `--validate` flags pointers to soft-deleted entities as WARN (not BROKEN)
+3. After grace period (or explicit confirmation), physically delete the entity directory
+4. Run `--rebuild-index` to remove from UUID index
+
+### 13.3 Circular References
+
+**Policy**: Circular references are **allowed** but detectable.
+
+**Rationale**: In a context hierarchy, circular references can be legitimate (entity A references entity B's research, entity B references entity A's design). Forbidding them would be too restrictive.
+
+**Detection**: `pointer-sync.sh --detect-cycles` builds a directed graph from all pointer files and reports any cycles found. This is informational — cycles are logged but not treated as errors.
+
+**When cycles matter**: If a future tool needs to traverse references recursively (e.g., "find all transitive dependencies"), it must implement cycle detection with a visited set to avoid infinite loops.
+
+### 13.4 Orphaned UUIDs
+
+An **orphaned UUID** is an entry in the UUID index that points to a path that no longer exists.
+
+**Detection**: `pointer-sync.sh --gc` (garbage collection) scans the UUID index and checks that every path still exists on the filesystem. Missing paths → remove from index.
+
+**Causes**:
+- Entity directory deleted without running `--rebuild-index`
+- File moved or renamed without updating its `resource_id`
+- Git branch merge where one branch deleted an entity
+
+**Recovery**: `--gc` removes orphaned entries. `--rebuild-index` is the nuclear option — rebuilds from scratch.
+
+### 13.5 Duplicate UUIDs
+
+Two entities/resources should never share the same UUID. UUID v4 collision probability is near-zero, but copy-paste errors can create duplicates.
+
+**Detection**: `--rebuild-index` checks for duplicate UUIDs during aggregation. If two entities have the same `entity_id`, it reports an error and keeps the first one found (alphabetically by path).
+
+**Prevention**: UUID assignment scripts check for existing UUIDs before inserting a new one.
+
+---
+
+## 14. Failure Modes & Recovery
+
+### 14.1 Index Corruption
+
+| Failure | Cause | Detection | Recovery |
+|---------|-------|-----------|----------|
+| Partial JSON | Crash during index write | JSON parse fails on load | Auto-rebuild from local indexes |
+| Stale entries | Entity moved, index not updated | UUID lookup succeeds but path doesn't exist | Remove stale entry, re-scan for UUID |
+| Missing index file | Accidental deletion, new clone | File not found on first lookup | Auto-rebuild triggered |
+| Checksum mismatch | Bit rot, manual edit, partial write | SHA256 doesn't match on load | Auto-rebuild from local indexes |
+
+**Recovery priority**: Always rebuild from local indexes (authoritative) → root index (derived). Never rebuild local from root.
+
+### 14.2 Atomic Write Protocol
+
+All index file writes MUST follow this protocol:
+
+```bash
+# 1. Write to temp file
+temp_file="${index_file}.tmp.$$"
+echo "$new_content" > "$temp_file"
+
+# 2. Sync to disk
+sync "$temp_file"
+
+# 3. Atomic rename (overwrites old file)
+mv "$temp_file" "$index_file"
+```
+
+This ensures the index file is always either the old version or the new version — never a partial write.
+
+### 14.3 Concurrent Access
+
+**Problem**: Multiple AI agents may run `pointer-sync.sh` or `--rebuild-index` simultaneously.
+
+**Solution**: File-based locking.
+
+```bash
+lockfile="${index_file}.lock"
+
+# Acquire lock (wait up to 30 seconds)
+if ! mkdir "$lockfile" 2>/dev/null; then
+    # Lock exists — check if stale (older than 5 minutes)
+    if [[ $(find "$lockfile" -maxdepth 0 -mmin +5 2>/dev/null) ]]; then
+        rm -rf "$lockfile"
+        mkdir "$lockfile"
+    else
+        echo "Index locked by another process. Waiting..."
+        # Retry loop with timeout
+    fi
+fi
+
+# ... do index work ...
+
+# Release lock
+rm -rf "$lockfile"
+```
+
+**Why `mkdir`**: `mkdir` is atomic on all filesystems — it either succeeds or fails, never creates a partial lock.
+
+### 14.4 Materialized View Staleness
+
+**Problem**: `0AGNOSTIC.md` is edited but `agnostic-sync.sh` is not run → `CLAUDE.md` is stale.
+
+**Detection**: Store hash of source file in the generated view:
+```
+<!-- source-hash: sha256:abc123... -->
+```
+
+A validation tool can compare the stored hash against the current `0AGNOSTIC.md` hash. Mismatch → view is stale.
+
+**Prevention**: Git hooks can run `agnostic-sync.sh` on commit if any `0AGNOSTIC.md` file changed.
+
+### 14.5 Git Branch Merge Conflicts
+
+**Scenario**: Branch A adds entity X with UUID `aaa`. Branch B deletes entity Y with UUID `bbb`. Branch A has a pointer to entity Y. On merge:
+- Entity Y is gone (deleted in B)
+- Pointer to `bbb` is dangling (added in A)
+
+**Solution**: Post-merge validation.
+
+```bash
+# After any git merge
+pointer-sync.sh --validate
+pointer-sync.sh --gc
+```
+
+Add to `.git/hooks/post-merge`:
+```bash
+#!/bin/bash
+pointer-sync.sh --rebuild-index
+pointer-sync.sh --validate
+```
+
+### 14.6 Performance at Scale
+
+| Scale | Entity Count | UUID Count | Index Size | Rebuild Time |
+|-------|-------------|-----------|------------|-------------|
+| Small | <100 | <1,000 | <100KB | <1 second |
+| Medium | 100-1,000 | 1K-10K | 100KB-1MB | 1-10 seconds |
+| Large | 1,000-10,000 | 10K-100K | 1-10MB | 10-60 seconds |
+| Very Large | 10,000+ | 100K+ | 10MB+ | Minutes |
+
+**Mitigation strategies**:
+- **Incremental index updates** (Phase 2): Only rebuild portions where local indexes changed
+- **Name→UUID reverse map** in root index: Eliminates O(n) scanning for name-based fallback
+- **Binary index format** (future): msgpack or protobuf instead of JSON if parsing becomes bottleneck
+- **Parallel scanning**: Scan multiple entity directories concurrently during rebuild
+
+### 14.7 Observability
+
+All UUID operations should produce structured log output:
+
+```
+[pointer-sync] RESOLVE entity_id=a1b2c3d4 → path=/full/path result=OK
+[pointer-sync] RESOLVE entity_id=deadbeef → result=BROKEN (not in index)
+[pointer-sync] REBUILD index entries=1234 duration=2.3s
+[pointer-sync] GC removed=5 orphaned_uuids
+[pointer-sync] VALIDATE total=89 ok=87 broken=1 warn=1
+```
+
+This enables:
+- Debugging reference resolution failures
+- Tracking index rebuild frequency and duration
+- Detecting patterns (frequently broken pointers → systemic issue)
+
+### 14.8 Chaos Testing
+
+Recommended chaos tests for the UUID system:
+
+| Test | What It Does | Expected Result |
+|------|-------------|-----------------|
+| Delete random entity, run `--validate` | Simulates accidental deletion | Pointers to it flagged BROKEN, no crash |
+| Corrupt `.uuid-index.json` (truncate), run any UUID operation | Simulates crash during write | Auto-rebuild, operation succeeds |
+| Run `--rebuild-index` from two processes simultaneously | Simulates concurrent access | Lock prevents corruption, both complete |
+| Delete `.uuid-index.json` entirely | Simulates fresh clone | Auto-rebuild on first UUID lookup |
+| Create two entities with same UUID (manual) | Simulates copy-paste error | `--rebuild-index` reports duplicate, keeps first |
+| Rename entity directory, run `--validate` | Simulates rename without migration | UUID resolves to old path (stale), name fallback finds new path |
 
 ---
 

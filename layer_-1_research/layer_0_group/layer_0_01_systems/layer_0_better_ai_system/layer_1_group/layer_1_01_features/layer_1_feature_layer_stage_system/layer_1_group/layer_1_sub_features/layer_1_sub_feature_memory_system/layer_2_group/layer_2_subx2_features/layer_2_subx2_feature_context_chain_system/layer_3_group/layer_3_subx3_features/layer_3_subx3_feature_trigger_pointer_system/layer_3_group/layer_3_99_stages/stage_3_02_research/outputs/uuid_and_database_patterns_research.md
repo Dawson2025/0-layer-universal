@@ -220,6 +220,136 @@ Add a hash-based staleness check:
 
 ---
 
+## 5. Reference Integrity Patterns
+
+### 5.1 Dangling References
+
+A **dangling reference** is a pointer that refers to a UUID no longer present in the system (entity deleted, resource removed). Every database system must handle this.
+
+**Database parallel**: In SQL, foreign key constraints prevent dangling references. In document DBs (schemaless), dangling references must be detected and handled at the application level — which is what our system does.
+
+**Our approach**:
+- `--validate` scans all pointers and checks each UUID against the index
+- `--find-references <uuid>` lists all pointers that reference a given UUID (reverse lookup)
+- No automatic cascading deletes (too dangerous in a filesystem context)
+- Soft-delete pattern: mark entity as `deleted: true` before physical removal
+
+### 5.2 Circular References
+
+In graph databases (Neo4j), cycles are natural and expected. In hierarchical databases (IBM IMS), cycles are impossible (tree structure). Our system is a hybrid — the tree prevents structural cycles, but **pointer files can create reference cycles** (A → B → A).
+
+**Our approach**: Circular references are **allowed** but detectable. `--detect-cycles` builds a directed graph and reports cycles. This is informational, not an error.
+
+**When cycles matter**: Any tool that recursively traverses references must implement a visited set to avoid infinite loops.
+
+### 5.3 Orphaned Entries
+
+An **orphaned entry** is a UUID in the index that points to a path that no longer exists on the filesystem.
+
+**Database parallel**: In Redis, expired keys are garbage-collected. In MongoDB, orphaned references require periodic cleanup scripts. Same principle here.
+
+**Our approach**: `--gc` (garbage collection) scans the index and removes entries whose paths don't exist. `--rebuild-index` is the nuclear option — discards everything and rebuilds from scratch.
+
+### 5.4 Duplicate UUIDs
+
+UUID v4 collision probability is near-zero (2^122 random bits), but **copy-paste errors** can create duplicates when entities are cloned.
+
+**Detection**: `--rebuild-index` checks for duplicates during aggregation. If two entities share a UUID, it reports an error and keeps the first one found (alphabetically by path).
+
+**Prevention**: UUID assignment scripts always check for existing UUIDs before inserting.
+
+---
+
+## 6. Failure Modes & Recovery
+
+### 6.1 Index Corruption
+
+| Failure | Cause | Detection | Recovery |
+|---------|-------|-----------|----------|
+| Partial JSON | Crash during write | JSON parse fails on load | Auto-rebuild from local indexes |
+| Stale entries | Entity moved, index not updated | UUID lookup succeeds but path doesn't exist | Re-scan for UUID, update index |
+| Missing index file | Accidental deletion, fresh clone | File not found | Auto-rebuild triggered |
+| Checksum mismatch | Bit rot, manual edit, partial write | SHA256 doesn't match | Auto-rebuild from local indexes |
+
+**Recovery hierarchy**: Always rebuild from local indexes (authoritative) → root index (derived). Never rebuild local from root.
+
+### 6.2 Atomic Write Protocol
+
+All index writes should follow: write to temp → fsync → atomic rename. This ensures the index is always either the old version or the new version — never a partial write.
+
+**Database parallel**: Write-ahead logging (WAL) in PostgreSQL, journal files in SQLite. Our simpler approach (atomic rename) is sufficient because we can always rebuild from source.
+
+### 6.3 Concurrent Access
+
+Multiple AI agents may run pointer operations simultaneously. File-based locking via `mkdir` (atomic on all filesystems) prevents concurrent write corruption.
+
+**Stale lock detection**: If a lock is older than 5 minutes, it's assumed stale and forcibly removed.
+
+**Database parallel**: Pessimistic locking (our approach) vs optimistic concurrency (used in CouchDB). We choose pessimistic because our operations are short and filesystem locks are cheap.
+
+### 6.4 Materialized View Staleness
+
+`CLAUDE.md` is a materialized view of `0AGNOSTIC.md`. If the source changes but `agnostic-sync.sh` doesn't run, the view is stale.
+
+**Detection**: Store source hash in the generated view (`<!-- source-hash: sha256:abc123 -->`). Validation can compare stored hash vs current source hash.
+
+**Database parallel**: Materialized views in PostgreSQL require explicit `REFRESH MATERIALIZED VIEW`. CouchDB views update lazily on query. Our `agnostic-sync.sh` is the refresh command.
+
+### 6.5 Git Branch Merge Conflicts
+
+When branches diverge (one adds entities, another deletes entities), merges can create dangling references.
+
+**Solution**: Post-merge hook runs `--validate` and `--rebuild-index` automatically.
+
+**Database parallel**: Multi-master replication conflict resolution (CouchDB has built-in conflict detection). Our approach: detect after merge, repair manually.
+
+### 6.6 Performance at Scale
+
+| Scale | Entity Count | UUID Count | Index Size | Rebuild Time |
+|-------|-------------|-----------|------------|-------------|
+| Small | <100 | <1,000 | <100KB | <1 second |
+| Medium | 100-1,000 | 1K-10K | 100KB-1MB | 1-10 seconds |
+| Large | 1,000-10,000 | 10K-100K | 1-10MB | 10-60 seconds |
+| Very Large | 10,000+ | 100K+ | 10MB+ | Minutes |
+
+**Mitigation**: Incremental updates (only rebuild changed portions), name→UUID reverse map (O(1) name lookup), parallel scanning during rebuild.
+
+---
+
+## 7. Universal File IDs
+
+### The Case for Every File Having a UUID
+
+The original scope limited UUIDs to "pointer targets" — files that could be referenced by pointer files. However, there are strong arguments for giving **every file** in the system a UUID:
+
+1. **Future-proofing** — any file might become a pointer target later. Pre-assigning IDs avoids retroactive migration
+2. **Git history tracking** — UUIDs enable tracking a file's identity across renames in git history
+3. **Cross-tool references** — external tools (NotebookLM, search engines, dashboards) can reference files by stable ID
+4. **Audit trail** — every file is uniquely addressable regardless of restructuring
+5. **Consistency** — no ambiguity about "does this file have an ID?" — the answer is always yes
+
+### What Changes
+
+Previously excluded files that now get UUIDs:
+- Scripts (`.sh`) — get `resource_id` in a comment header
+- Auto-generated files (`CLAUDE.md`, `.integration.md`) — get `resource_id` from their source's ID (derived, not independent)
+- `.1merge/` files — get independent `resource_id`
+- `0INDEX.md`, `README.md` — get `resource_id` in YAML frontmatter
+- JSON-LD files (`.gab.jsonld`) — get `resource_id` as a `@id` field or companion sidecar
+- `stage_index.json`, `resource_index.json` — get a `file_id` in their JSON structure
+
+### ID Storage by File Type
+
+| File Type | ID Field | Storage Method |
+|-----------|----------|---------------|
+| `.md` files | `resource_id` | YAML frontmatter (`---`) |
+| `.sh` scripts | `resource_id` | Comment header (`# resource_id: "uuid"`) |
+| `.json` files | `file_id` | JSON field (`"file_id": "uuid"`) |
+| `.jsonld` files | `file_id` | JSON field or `@id` annotation |
+| Auto-generated files | `derived_from` | Reference to source file's UUID (not independent) |
+
+---
+
 ## Sources
 
 - RFC 4122 — UUID specification
@@ -227,3 +357,5 @@ Add a hash-based staleness check:
 - CouchDB documentation — document structure, views, replication
 - PostgreSQL documentation — UUID type, indexing
 - Cassandra documentation — UUID and timeuuid partition keys
+- Database Systems: The Complete Book (Garcia-Molina et al.) — reference integrity, index structures
+- Designing Data-Intensive Applications (Kleppmann) — distributed ID generation, consistency models
