@@ -284,7 +284,7 @@ canonical_entity: "layer_1_feature_alpha"
 EOFILE
     run_sync "$ROOT" --verbose
     # The script strips quotes, so it should resolve the entity
-    assert_contains "2.2 Double-quoted values → entity resolved" "$SYNC_OUTPUT" "Entity found:"
+    assert_contains "2.2 Double-quoted values → entity resolved" "$SYNC_OUTPUT" "Entity resolved"
 
     cleanup
     ROOT=$(setup_mock_repo)
@@ -301,7 +301,7 @@ canonical_entity: 'layer_1_feature_alpha'
 > **Canonical location**: `old/path`
 EOFILE
     run_sync "$ROOT" --verbose
-    assert_contains "2.3 Single-quoted values → entity resolved" "$SYNC_OUTPUT" "Entity found:"
+    assert_contains "2.3 Single-quoted values → entity resolved" "$SYNC_OUTPUT" "Entity resolved"
 
     cleanup
     ROOT=$(setup_mock_repo)
@@ -310,7 +310,7 @@ EOFILE
     create_pointer "$ROOT/layer_1_group/layer_1_features/layer_1_feature_gamma/ptr_no_stage.md" \
         "entity only" "layer_1_feature_alpha" "" ""
     run_sync "$ROOT" --verbose
-    assert_contains "2.4 Missing canonical_stage → still resolves entity" "$SYNC_OUTPUT" "Entity found:"
+    assert_contains "2.4 Missing canonical_stage → still resolves entity" "$SYNC_OUTPUT" "Entity resolved"
 
     cleanup
 }
@@ -352,7 +352,7 @@ test_entity_resolution() {
     create_pointer "$ROOT/layer_1_group/layer_1_features/layer_1_feature_gamma/ptr_with_stage.md" \
         "alpha design" "layer_1_feature_alpha" "stage_1_04_design"
     run_sync "$ROOT" --verbose
-    assert_contains "3.3 Entity + valid stage → stage found" "$SYNC_OUTPUT" "Stage found:"
+    assert_contains "3.3 Entity + valid stage → stage found" "$SYNC_OUTPUT" "Stage resolved"
 
     cleanup
 
@@ -694,7 +694,7 @@ test_spaces_in_paths() {
         "spaced entity" "layer_1_feature_has spaces" "" "" "old/path"
     run_sync "$ROOT" --verbose
     # Should resolve the entity despite spaces
-    assert_contains "9.1 Entity with spaces in name → resolves" "$SYNC_OUTPUT" "Entity found:"
+    assert_contains "9.1 Entity with spaces in name → resolves" "$SYNC_OUTPUT" "Entity resolved"
 
     cleanup
 
@@ -754,7 +754,7 @@ test_duplicate_entities() {
     run_sync "$ROOT" --verbose
     # Should NOT error — should resolve to one of them
     assert_not_contains "10.1 Duplicate entity names → no BROKEN" "$SYNC_OUTPUT" "BROKEN"
-    assert_contains "10.1b Resolves to some entity" "$SYNC_OUTPUT" "Entity found:"
+    assert_contains "10.1b Resolves to some entity" "$SYNC_OUTPUT" "Entity resolved"
 
     cleanup
 
@@ -924,7 +924,7 @@ test_symlinks() {
     run_sync "$ROOT" --verbose
     # find -type d won't match symlinks — this should be BROKEN
     # (unless the script uses -type d -o -type l or similar)
-    if echo "$SYNC_OUTPUT" | grep -qF "Entity found:"; then
+    if echo "$SYNC_OUTPUT" | grep -qF "Entity resolved"; then
         TOTAL=$((TOTAL + 1))
         echo -e "  ${GREEN}PASS${NC}: 14.1 Symlinked entity → resolves (find follows symlinks)"
         PASS=$((PASS + 1))
@@ -987,7 +987,7 @@ test_long_paths() {
     create_pointer "$ROOT/layer_1_group/layer_1_features/layer_1_feature_gamma/ptr_deep_target.md" \
         "deep entity" "layer_3_feature_epsilon" "" "" "old/path"
     run_sync "$ROOT" --verbose
-    assert_contains "15.1 Deeply nested entity → resolves" "$SYNC_OUTPUT" "Entity found:"
+    assert_contains "15.1 Deeply nested entity → resolves" "$SYNC_OUTPUT" "Entity resolved"
     assert_not_contains "15.1b No errors" "$SYNC_OUTPUT" "BROKEN"
 
     cleanup
@@ -1183,8 +1183,8 @@ version: 1.0
 > **Canonical location**: `old/path`
 EOFILE
     run_sync "$ROOT" --verbose
-    assert_contains "18.1a Extra fields → entity resolves" "$SYNC_OUTPUT" "Entity found:"
-    assert_contains "18.1b Extra fields → stage resolves" "$SYNC_OUTPUT" "Stage found:"
+    assert_contains "18.1a Extra fields → entity resolves" "$SYNC_OUTPUT" "Entity resolved"
+    assert_contains "18.1b Extra fields → stage resolves" "$SYNC_OUTPUT" "Stage resolved"
     assert_not_contains "18.1c No BROKEN" "$SYNC_OUTPUT" "BROKEN"
 
     cleanup
@@ -1206,7 +1206,7 @@ description: "This pointer_to is not the first field"
 > **Canonical location**: `old/path`
 EOFILE
     run_sync "$ROOT" --verbose
-    assert_contains "18.2 pointer_to after other fields → still detected" "$SYNC_OUTPUT" "Entity found:"
+    assert_contains "18.2 pointer_to after other fields → still detected" "$SYNC_OUTPUT" "Entity resolved"
 
     cleanup
 
@@ -1225,7 +1225,7 @@ canonical_entity: layer_1_feature_alpha
 EOFILE
     run_sync "$ROOT" --verbose
     # pointer_to extracts "alpha: design docs" — the script should still resolve via canonical_entity
-    assert_contains "18.3 Colon in pointer_to value → entity still resolves" "$SYNC_OUTPUT" "Entity found:"
+    assert_contains "18.3 Colon in pointer_to value → entity still resolves" "$SYNC_OUTPUT" "Entity resolved"
 
     cleanup
 
@@ -1246,9 +1246,9 @@ canonical_entity: layer_1_feature_alpha
 > **Canonical location**: `old/path`
 EOFILE
     run_sync "$ROOT" --verbose
-    assert_contains "18.4a YAML comments → entity resolves" "$SYNC_OUTPUT" "Entity found:"
+    assert_contains "18.4a YAML comments → entity resolves" "$SYNC_OUTPUT" "Entity resolved"
     # The commented-out canonical_stage should NOT be extracted
-    assert_not_contains "18.4b Commented canonical_stage → not extracted" "$SYNC_OUTPUT" "Stage found:"
+    assert_not_contains "18.4b Commented canonical_stage → not extracted" "$SYNC_OUTPUT" "Stage resolved"
 
     cleanup
 }
