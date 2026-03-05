@@ -1,4 +1,4 @@
-# agent_delegation_system — Layer 1 Sub-Feature
+# agent_delegation_system — Layer 2 Sub-Feature
 
 # ═══ STATIC CONTEXT (always loaded) ═══
 
@@ -6,12 +6,12 @@
 
 ## Identity
 
-You are an agent at **Layer 1** (Sub-Feature), **Sub-Feature**: Agent Delegation System.
+You are an agent at **Layer 2** (Sub-Feature), **Sub-Feature**: Agent Delegation System.
 
 - **Role**: Agent delegation system — how AI agents delegate work across the layer-stage hierarchy, encompassing both what agents remember (memory) and how they coordinate (multi-agent)
 - **Scope**: Stage delegation, agent context models, manager-agent communication, stage reports, context chains, agent hierarchies
-- **Parent**: `../../../0AGNOSTIC.md` (layer_0_feature_layer_stage_system)
-- **Children**: memory_system, multi_agent_system (in `layer_2_group/layer_2_subx2_features/`)
+- **Parent**: `../../../0AGNOSTIC.md` (layer_1_sub_feature_agent_organization_system)
+- **Children**: None (memory_system and multi_agent_system have been reorganized — memory_system promoted to L1 sibling, multi_agent_system absorbed into agent_organization_system)
 
 ## Key Behaviors
 
@@ -52,7 +52,7 @@ Load this context when:
 - Working on: How managers delegate to stage agents, what agents know, how agents coordinate
 - Changing: delegation patterns, scope boundary decisions, agent communication protocols, stage methodology, stage guides
 - Keywords: Principle 8, Scope Boundary Rule, manager-agent contracts, delegation principles, context chains, consolidation funnel, agent context model, stage report protocol
-- Entering: `layer_1_sub_feature_agent_delegation_system/`
+- Entering: `layer_2_subx2_feature_agent_delegation_system/`
 
 ## AALang Agent Context
 
@@ -62,7 +62,7 @@ Load this context when:
 
 | File | Type | Purpose |
 |------|------|---------|
-| `layer_1.orchestrator.gab.jsonld` | Orchestrator | 5-mode-13-actor pattern for entity delegation management |
+| `layer_2.orchestrator.gab.jsonld` | Orchestrator | 5-mode-13-actor pattern for entity delegation management |
 | `agent_delegation_system.gab.jsonld` | GAB Agent | Main entity identity — capabilities, constraints, context model |
 | `stage_delegator.agent.jsonld` | Agent Stub | Lightweight purpose agent for delegation decisions |
 
@@ -80,17 +80,17 @@ Load this context when:
 
 ```bash
 # List all modes and their purposes
-jq '."@graph"[] | select(."@type" == "gab:Mode") | {id: ."@id", purpose: .purpose}' .0agnostic/06_context_avenue_web/01_aalang/layer_1.orchestrator.gab.jsonld
+jq '."@graph"[] | select(."@type" == "gab:Mode") | {id: ."@id", purpose: .purpose}' .0agnostic/06_context_avenue_web/01_aalang/layer_2.orchestrator.gab.jsonld
 
 # Load a specific mode's constraints
-jq '."@graph"[] | select(."@id" == "ads:ImplementMode")' .0agnostic/06_context_avenue_web/01_aalang/layer_1.orchestrator.gab.jsonld
+jq '."@graph"[] | select(."@id" == "ads:ImplementMode")' .0agnostic/06_context_avenue_web/01_aalang/layer_2.orchestrator.gab.jsonld
 ```
 
 ### Parent Orchestrator
 
-**File**: `../../../../layer_0_orchestrator.gab.jsonld` (layer_0_feature_layer_stage_system)
+**File**: `../../../layer_1_orchestrator.gab.jsonld` (layer_1_sub_feature_agent_organization_system)
 
-The entity-level orchestrator inherits from and is scoped by the parent feature's orchestrator.
+The entity-level orchestrator inherits from and is scoped by the parent sub-feature's orchestrator.
 
 # ── Current Status ──
 
@@ -110,9 +110,9 @@ Stages 01, 02, 04, and 06 have produced universal artifacts at root `.0agnostic/
 
 | Stage Work | What Was Produced | Where It Lives |
 |-----------|-------------------|----------------|
-| **01 Request Gathering** | Tree of needs: 9 requirements across 3 branches (delegation_model, memory_integration, coordination_patterns) | `layer_1_group/layer_1_99_stages/stage_1_01_request_gathering/outputs/requests/tree_of_needs/` |
-| **02 Research** | 4 formal topics (tool cascading, multi-agent patterns, scope traversal, agent class/object patterns) + implicit via context_chain_system living laboratory | `layer_1_group/layer_1_99_stages/stage_1_02_research/outputs/by_topic/` |
-| **04 Design** | 10 architecture decisions: 0AGNOSTIC.md pattern, two-halves, stage reports, scope boundaries, universal guides, context propagation, minimal context model, directional scope boundaries | `layer_1_group/layer_1_99_stages/stage_1_04_design/outputs/design_decisions/` |
+| **01 Request Gathering** | Tree of needs: 9 requirements across 3 branches (delegation_model, memory_integration, coordination_patterns) | `layer_2_group/layer_2_99_stages/stage_2_01_request_gathering/outputs/requests/tree_of_needs/` |
+| **02 Research** | 4 formal topics (tool cascading, multi-agent patterns, scope traversal, agent class/object patterns) + implicit via context_chain_system living laboratory | `layer_2_group/layer_2_99_stages/stage_2_02_research/outputs/by_topic/` |
+| **04 Design** | 10 architecture decisions: 0AGNOSTIC.md pattern, two-halves, stage reports, scope boundaries, universal guides, context propagation, minimal context model, directional scope boundaries | `layer_2_group/layer_2_99_stages/stage_2_04_design/outputs/design_decisions/` |
 | **05 Planning** | Planned stage-by-stage guide creation for all 11 stages | Plan executed across all 11 stages |
 | **06 Development** | Created 11 universal stage guides, 3 static rules, 2 dynamic rules, 7 delegation principles, stage report protocol | See "Universal Artifacts" below |
 
@@ -129,13 +129,13 @@ Stages 01, 02, 04, and 06 have produced universal artifacts at root `.0agnostic/
 
 ### Working Example: context_chain_system
 
-The context_chain_system (grandchild entity via memory_system) serves as the **primary working example** of agent delegation in practice:
+The context_chain_system (now under memory_system, a sibling sub-feature) serves as the **primary working example** of agent delegation in practice:
 - All 11 stage 0AGNOSTIC.md files populated with identity, methodology, scope, current state
 - Stages 01-07 active with real outputs (requirements, research, design, plans, implementations, tests)
 - 76 PASS tests validating the context chain implementation
 - Entity-level `.0agnostic/` fully populated: 50+ files (knowledge, rules, protocols, skills)
 
-**Path**: `layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_memory_system/layer_3_group/layer_3_subx3_features/layer_3_subx3_feature_context_chain_system/`
+**Path**: `../../../layer_1_sub_feature_memory_system/layer_1_group/layer_1_sub_features/layer_1_sub_feature_context_chain_system/` (sibling tree under layer_stage_system)
 
 ### Key Discoveries (Formalized as Universal Principles)
 
@@ -164,10 +164,9 @@ Entity knowledge is organized as a **tree of knowledge** (mirroring the tree of 
 
 ### Children
 
-| Child | Purpose | Location |
-|-------|---------|----------|
-| memory_system | Context chains, navigation, dynamic memory | `layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_memory_system/` |
-| multi_agent_system | Agent hierarchies, orchestration, delegation patterns | `layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_multi_agent_system/` |
+No active children. Former children have been reorganized:
+- **memory_system** → promoted to L1 sibling under layer_stage_system
+- **multi_agent_system** → absorbed into agent_organization_system (agent_hierarchy + orchestration extracted)
 
 ### Key Locations
 
@@ -175,10 +174,10 @@ Entity knowledge is organized as a **tree of knowledge** (mirroring the tree of 
 |---------|----------|
 | Entity source of truth | `0AGNOSTIC.md` (this file) |
 | Dashboard | `0INDEX.md` |
-| Stages | `layer_1_group/layer_1_99_stages/` |
+| Stages | `layer_2_group/layer_2_99_stages/` |
 | On-demand resources | `.0agnostic/` (01_knowledge, 02_rules, 03_protocols, 04_episodic_memory, 05_handoff_documents, 06_context_avenue_web, 07+_setup_dependant) |
 | Tree of knowledge | `.0agnostic/01_knowledge/tree_of_knowledge/00_agent_delegation_knowledge/` |
-| Tree of needs | `layer_1_group/layer_1_99_stages/stage_1_01_request_gathering/outputs/requests/tree_of_needs/` |
+| Tree of needs | `layer_2_group/layer_2_99_stages/stage_2_01_request_gathering/outputs/requests/tree_of_needs/` |
 | Things learned | `.0agnostic/01_knowledge/things_learned/docs/` |
 | Handoff documents | `.0agnostic/05_handoff_documents/` (01_incoming/{from_above,from_below}, 02_outgoing/{to_above,to_below}) |
 | Layer report | `.0agnostic/05_handoff_documents/02_outgoing/01_to_above/layer_report.md` |
@@ -186,7 +185,7 @@ Entity knowledge is organized as a **tree of knowledge** (mirroring the tree of 
 | Child layers report | `.0agnostic/05_handoff_documents/02_outgoing/01_to_above/child_layers_report.md` |
 | Report + Porting contract | `.0agnostic/01_knowledge/overview/docs/report_and_porting_contract.md` |
 | Context avenue web | `.0agnostic/06_context_avenue_web/` (aalang, integration MDs, auto-memory, @imports, skills, agents, rules, hooks) |
-| Children | `layer_2_group/layer_2_subx2_features/` |
+| Children | `layer_3_group/layer_3_subx3_features/` |
 
 ## Success Criteria
 

@@ -41,17 +41,14 @@
 
 ## Children
 
-| Sub-Feature | Purpose | Status |
-|-------------|---------|--------|
-| memory_system | Context chains, navigation, dynamic memory, episodic memory | active |
-| multi_agent_system | Agent hierarchies, orchestration, delegation patterns | scaffolded |
-
-**Location**: `layer_2_group/layer_2_subx2_features/`
+No active children. Former children reorganized:
+- **memory_system** → promoted to L1 sibling under layer_stage_system
+- **multi_agent_system** → absorbed into agent_organization_system
 
 ## Working Example
 
 The **context_chain_system** (grandchild via memory_system) is the primary working example:
-- Path: `layer_2_group/.../layer_3_subx3_feature_context_chain_system/`
+- Path: `../../../layer_1_sub_feature_memory_system/.../layer_1_sub_feature_context_chain_system/` (sibling tree)
 - All 11 stages populated with full 0AGNOSTIC.md definitions
 - Stages 01-07 active with real outputs
 - Entity `.0agnostic/` fully populated (50+ files)
@@ -61,7 +58,7 @@ The **context_chain_system** (grandchild via memory_system) is the primary worki
 | Content | Location |
 |---------|----------|
 | Entity source of truth | `0AGNOSTIC.md` |
-| Stages | `layer_1_group/layer_1_99_stages/stage_1_*` |
+| Stages | `layer_2_group/layer_2_99_stages/stage_2_*` |
 | On-demand resources | `.0agnostic/` |
 | Report + Porting contract | `.0agnostic/01_knowledge/overview/docs/report_and_porting_contract.md` |
 | Children | `layer_2_group/layer_2_subx2_features/` |

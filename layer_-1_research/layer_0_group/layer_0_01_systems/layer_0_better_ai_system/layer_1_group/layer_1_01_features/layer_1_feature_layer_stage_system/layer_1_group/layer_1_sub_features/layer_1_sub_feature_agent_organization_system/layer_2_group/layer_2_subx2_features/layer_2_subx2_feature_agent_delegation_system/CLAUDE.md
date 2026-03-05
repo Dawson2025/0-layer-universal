@@ -4,12 +4,12 @@
 
 ## Identity
 
-You are an agent at **Layer 1** (Sub-Feature), **Sub-Feature**: Agent Delegation System.
+You are an agent at **Layer 2** (Sub-Feature), **Sub-Feature**: Agent Delegation System.
 
 - **Role**: Agent delegation system — how AI agents delegate work across the layer-stage hierarchy, encompassing both what agents remember (memory) and how they coordinate (multi-agent)
 - **Scope**: Stage delegation, agent context models, manager-agent communication, stage reports, context chains, agent hierarchies
-- **Parent**: `../../../0AGNOSTIC.md` (layer_0_feature_layer_stage_system)
-- **Children**: memory_system, multi_agent_system (in `layer_2_group/layer_2_subx2_features/`)
+- **Parent**: `../../../0AGNOSTIC.md` (layer_1_sub_feature_agent_organization_system)
+- **Children**: None (memory_system and multi_agent_system have been reorganized — memory_system promoted to L1 sibling, multi_agent_system absorbed into agent_organization_system)
 
 ## Key Behaviors
 
@@ -50,7 +50,7 @@ Load this context when:
 - Working on: How managers delegate to stage agents, what agents know, how agents coordinate
 - Changing: delegation patterns, scope boundary decisions, agent communication protocols, stage methodology, stage guides
 - Keywords: Principle 8, Scope Boundary Rule, manager-agent contracts, delegation principles, context chains, consolidation funnel, agent context model, stage report protocol
-- Entering: `layer_1_sub_feature_agent_delegation_system/`
+- Entering: `layer_2_subx2_feature_agent_delegation_system/`
 
 ## AALang Agent Context
 
@@ -60,7 +60,7 @@ Load this context when:
 
 | File | Type | Purpose |
 |------|------|---------|
-| `layer_1.orchestrator.gab.jsonld` | Orchestrator | 5-mode-13-actor pattern for entity delegation management |
+| `layer_2.orchestrator.gab.jsonld` | Orchestrator | 5-mode-13-actor pattern for entity delegation management |
 | `agent_delegation_system.gab.jsonld` | GAB Agent | Main entity identity — capabilities, constraints, context model |
 | `stage_delegator.agent.jsonld` | Agent Stub | Lightweight purpose agent for delegation decisions |
 
@@ -78,17 +78,17 @@ Load this context when:
 
 ```bash
 # List all modes and their purposes
-jq '."@graph"[] | select(."@type" == "gab:Mode") | {id: ."@id", purpose: .purpose}' .0agnostic/06_context_avenue_web/01_aalang/layer_1.orchestrator.gab.jsonld
+jq '."@graph"[] | select(."@type" == "gab:Mode") | {id: ."@id", purpose: .purpose}' .0agnostic/06_context_avenue_web/01_aalang/layer_2.orchestrator.gab.jsonld
 
 # Load a specific mode's constraints
-jq '."@graph"[] | select(."@id" == "ads:ImplementMode")' .0agnostic/06_context_avenue_web/01_aalang/layer_1.orchestrator.gab.jsonld
+jq '."@graph"[] | select(."@id" == "ads:ImplementMode")' .0agnostic/06_context_avenue_web/01_aalang/layer_2.orchestrator.gab.jsonld
 ```
 
 ### Parent Orchestrator
 
-**File**: `../../../../layer_0_orchestrator.gab.jsonld` (layer_0_feature_layer_stage_system)
+**File**: `../../../layer_1_orchestrator.gab.jsonld` (layer_1_sub_feature_agent_organization_system)
 
-The entity-level orchestrator inherits from and is scoped by the parent feature's orchestrator.
+The entity-level orchestrator inherits from and is scoped by the parent sub-feature's orchestrator.
 
 
 ## Current Status
