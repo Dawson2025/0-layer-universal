@@ -1,7 +1,9 @@
 ---
 pointer_to: tree_of_needs_root
 canonical_entity: layer_2_subx2_feature_context_chain_system
+canonical_entity_id: "a79b61a7-c4ab-4c93-bed5-bbcc8af0f1a9"
 canonical_stage: stage_2_01_request_gathering
+canonical_stage_id: "60b21a39-3d8b-4584-addc-3b5a2c2fe722"
 canonical_subpath: outputs/requests/tree_of_needs
 ---
 # Tree of Needs — Pointer
