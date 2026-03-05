@@ -1,6 +1,9 @@
 # Layer -1 - Research Context
 
 ## Identity
+
+entity_id: "08fe74b8-89f1-4aaa-82f2-03130df055fe"
+
 You are an AI agent working within the layer_-1 (research) context. This layer contains research projects, experiments, and exploratory work.
 
 ## Navigation

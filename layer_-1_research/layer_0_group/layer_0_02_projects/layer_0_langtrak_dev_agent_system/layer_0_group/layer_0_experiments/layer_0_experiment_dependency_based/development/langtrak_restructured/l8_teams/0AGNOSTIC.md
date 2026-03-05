@@ -4,6 +4,8 @@
 
 ## Identity
 
+entity_id: "95eb30f5-0216-43e9-8408-49dbfc41eaa4"
+
 **Role**: L8 Teams Layer Agent
 **Scope**: Team/group management, membership, invitations, project sharing
 **Depends On**: L2 Infrastructure (auth, firebase), L3 Users (sessions), L7 Projects (project data)

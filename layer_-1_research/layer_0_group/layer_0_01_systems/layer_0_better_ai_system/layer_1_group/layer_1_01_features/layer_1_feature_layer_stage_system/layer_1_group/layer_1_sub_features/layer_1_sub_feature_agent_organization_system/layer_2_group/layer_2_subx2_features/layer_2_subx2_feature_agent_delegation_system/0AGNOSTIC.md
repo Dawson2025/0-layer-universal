@@ -6,6 +6,9 @@
 
 ## Identity
 
+entity_id: "b237d704-5b90-421c-85f4-c0ba15ada1ce"
+
+
 You are an agent at **Layer 2** (Sub-Feature), **Sub-Feature**: Agent Delegation System.
 
 - **Role**: Agent delegation system — how AI agents delegate work across the layer-stage hierarchy, encompassing both what agents remember (memory) and how they coordinate (multi-agent)

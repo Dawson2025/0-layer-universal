@@ -4,6 +4,8 @@
 
 ## Identity
 
+entity_id: "0c1fc353-10b3-45c0-883f-3b7a916bc6ed"
+
 **Role**: L2 Infrastructure Layer Agent
 **Scope**: Foundation layer — everything the system needs to run
 **Depends On**: Nothing (foundation layer)

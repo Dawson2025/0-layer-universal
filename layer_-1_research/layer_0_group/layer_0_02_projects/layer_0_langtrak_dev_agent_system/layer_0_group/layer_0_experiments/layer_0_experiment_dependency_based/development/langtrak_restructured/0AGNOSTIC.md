@@ -4,6 +4,8 @@
 
 ## Identity
 
+entity_id: "7d7217a2-0afa-4559-bd77-d01174ac0276"
+
 **Role**: LangTrak Restructured Application Manager
 **Scope**: Dependency-based 7-layer architecture for LangTrak language tracking platform
 **Architecture**: L2 Infrastructure → L3 Users → L4 Phonemes → L5 Templates → L6 Content → L7 Projects → L8 Teams

@@ -1,6 +1,9 @@
 # context_chain_system — Layer 2 Group
 
 ## Identity
+
+entity_id: "d6d87ebc-58a1-4379-bd39-f756aec62aa3"
+
 Internal structure container for the context_chain_system entity.
 - **Parent**: `../0AGNOSTIC.md`
 

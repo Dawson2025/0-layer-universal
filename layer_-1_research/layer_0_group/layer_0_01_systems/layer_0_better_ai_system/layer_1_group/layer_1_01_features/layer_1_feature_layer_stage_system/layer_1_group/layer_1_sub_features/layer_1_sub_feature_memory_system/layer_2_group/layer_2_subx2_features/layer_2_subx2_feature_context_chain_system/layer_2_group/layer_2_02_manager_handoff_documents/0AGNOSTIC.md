@@ -1,6 +1,9 @@
 # context_chain_system — Handoff Documents
 
 ## Identity
+
+entity_id: "75253909-28b1-4407-bd20-5d1bed681aae"
+
 Handoff communication for context_chain_system.
 - **Parent**: `../0AGNOSTIC.md`
 

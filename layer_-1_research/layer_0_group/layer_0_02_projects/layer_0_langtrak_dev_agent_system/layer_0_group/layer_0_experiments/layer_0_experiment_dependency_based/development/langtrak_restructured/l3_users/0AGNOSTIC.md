@@ -4,6 +4,8 @@
 
 ## Identity
 
+entity_id: "15103670-9902-4b01-89b1-8f45aa3f08b7"
+
 **Role**: L3 Users Layer Agent
 **Scope**: User model, profiles, sessions
 **Depends On**: L2 Infrastructure (auth, firebase)

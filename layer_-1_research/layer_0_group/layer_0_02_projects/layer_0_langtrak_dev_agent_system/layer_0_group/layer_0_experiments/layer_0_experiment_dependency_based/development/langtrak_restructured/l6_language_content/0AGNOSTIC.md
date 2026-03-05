@@ -4,6 +4,8 @@
 
 ## Identity
 
+entity_id: "378da9b4-0a65-4467-8869-9bc3fa8717b4"
+
 **Role**: L6 Language Content Layer Agent
 **Scope**: Words, syllables, phoneme references, TTS for words, suggestions, video content
 **Depends On**: L2 Infrastructure (auth, firebase, storage, TTS), L3 Users (sessions), L4 Phoneme System (phoneme data)

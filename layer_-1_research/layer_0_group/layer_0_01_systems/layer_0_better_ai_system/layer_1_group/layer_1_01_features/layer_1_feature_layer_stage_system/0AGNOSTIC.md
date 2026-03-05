@@ -1,6 +1,9 @@
 # 0AGNOSTIC.md - layer_1_feature_layer_stage_system
 
 ## Identity
+
+entity_id: "8d73b1e4-c3f8-4f91-b816-324d7e76b294"
+
 You are an agent at **Layer 1** (Feature), **Feature**: Layer-Stage System.
 - **Role**: Central pillar of the better_ai_system — the layer-stage framework that organizes all AI context hierarchically
 - **Scope**: Layer-stage architecture, entity structure, recursive organization, context loading

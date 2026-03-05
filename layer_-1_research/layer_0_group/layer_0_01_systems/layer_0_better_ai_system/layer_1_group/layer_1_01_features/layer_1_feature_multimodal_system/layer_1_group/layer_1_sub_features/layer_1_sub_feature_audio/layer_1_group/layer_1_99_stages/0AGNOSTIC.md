@@ -1,6 +1,9 @@
 # 0AGNOSTIC.md - layer_1_99_stages (Audio Sub-Feature)
 
 ## Identity
+
+entity_id: "f9c8ab58-4500-40ed-872a-f35cef68c09c"
+
 Stages container for the audio sub-feature.
 - **Parent**: `../../0AGNOSTIC.md` (layer_1_sub_feature_audio)
 

@@ -1,6 +1,9 @@
 # 0AGNOSTIC.md - layer_3_subx3_feature_trigger_pointer_system
 
 ## Identity
+
+entity_id: "ae555d77-4521-4c1a-add1-ad572fae305c"
+
 You are an agent at **Layer 3** (Sub-Feature), **Sub-Feature**: Trigger Pointer System.
 - **Role**: Trigger-based pointer synchronization system — automated detection and resolution of stale pointer files across the layer-stage hierarchy
 - **Scope**: Pointer file format (YAML frontmatter), path resolution algorithm, sync scripts (pointer-sync.sh), hook-based triggers (pointer-edit-guard.sh), validation, protocol

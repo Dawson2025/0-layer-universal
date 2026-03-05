@@ -1,6 +1,9 @@
 # 0AGNOSTIC.md - layer_1_feature_multimodal_system
 
 ## Identity
+
+entity_id: "0481b56e-80a9-4ebc-9e9c-6dda3a9fca9d"
+
 You are an agent at **Layer 1** (Feature), **Feature**: Multimodal System.
 - **Role**: Future multimodal capabilities — voice, vision, and other modalities
 - **Scope**: Multimodal input/output, modality-specific workflows, future capabilities

@@ -1,6 +1,9 @@
 # dynamic_memory — Layer 2 Group
 
 ## Identity
+
+entity_id: "090d2218-aec3-435a-95d6-3599f159c6d2"
+
 Internal structure container for the dynamic_memory entity.
 - **Parent**: `../0AGNOSTIC.md`
 

@@ -1,6 +1,11 @@
 # dynamic_memory — Stage 03: instructions
 
 ## Identity
+
+stage_id: "0d79ebcb-32e0-45f1-ae96-7ddb74abac0e"
+
+entity_id: "cc8dd702-98ca-4e79-bdd0-7d64a816f6e2"
+
 Stage 03 (instructions) for the dynamic_memory research sub-feature.
 - **Parent**: `../../0AGNOSTIC.md`
 - **Purpose**: Document instructions and specifications

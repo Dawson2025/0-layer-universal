@@ -1,6 +1,9 @@
 # navigation — Layer 2 Group
 
 ## Identity
+
+entity_id: "b5979ab2-15bc-47e3-9ed8-a9cd650d4451"
+
 Internal structure container for the navigation entity.
 - **Parent**: `../0AGNOSTIC.md`
 

@@ -4,6 +4,8 @@
 
 ## Identity
 
+entity_id: "3283e3a7-922a-4857-be48-32b99bc92897"
+
 **Role**: L5 Templates Layer Agent
 **Scope**: Template creation, application, cloud sharing, phoneme selection templates
 **Depends On**: L2 Infrastructure (auth, firebase, storage), L3 Users (sessions), L4 Phoneme System (phoneme data)

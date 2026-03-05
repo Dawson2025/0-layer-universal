@@ -1,6 +1,9 @@
 # 0AGNOSTIC.md - layer_2_99_stages (Laptop Linux Ubuntu)
 
 ## Identity
+
+entity_id: "70228222-a4b6-48f5-b599-ed6ab57226fe"
+
 Stages container for the laptop linux ubuntu platform sub-feature.
 - **Parent**: `../../0AGNOSTIC.md` (layer_2_subx2_feature_laptop_linux_ubuntu)
 

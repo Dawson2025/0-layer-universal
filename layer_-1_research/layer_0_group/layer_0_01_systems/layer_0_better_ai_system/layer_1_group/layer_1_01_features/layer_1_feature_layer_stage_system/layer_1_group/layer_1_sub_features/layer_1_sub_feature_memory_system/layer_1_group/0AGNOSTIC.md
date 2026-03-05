@@ -1,6 +1,9 @@
 # memory_system — Layer 1 Group
 
 ## Identity
+
+entity_id: "a0d3e2e2-bd7c-40c9-9fc6-d73d7c8d53fa"
+
 Internal structure container for the memory_system entity.
 - **Parent**: `../0AGNOSTIC.md`
 

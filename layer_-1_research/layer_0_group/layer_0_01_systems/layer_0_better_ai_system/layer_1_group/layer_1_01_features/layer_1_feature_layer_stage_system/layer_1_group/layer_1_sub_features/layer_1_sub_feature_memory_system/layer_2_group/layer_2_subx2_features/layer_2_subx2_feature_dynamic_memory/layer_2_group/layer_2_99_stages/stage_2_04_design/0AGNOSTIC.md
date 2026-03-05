@@ -1,6 +1,11 @@
 # dynamic_memory — Stage 05: design
 
 ## Identity
+
+stage_id: "990f9903-4625-4f8e-81dd-4f2f2b90508d"
+
+entity_id: "973135c8-a69d-4300-aa29-6d3c2bd9e417"
+
 Stage 05 (design) for the dynamic_memory research sub-feature.
 - **Parent**: `../../0AGNOSTIC.md`
 - **Purpose**: Design solutions and architecture

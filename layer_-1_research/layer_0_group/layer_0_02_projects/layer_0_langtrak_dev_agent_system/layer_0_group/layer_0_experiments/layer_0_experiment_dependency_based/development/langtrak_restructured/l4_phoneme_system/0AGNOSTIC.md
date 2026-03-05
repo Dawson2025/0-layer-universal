@@ -4,6 +4,8 @@
 
 ## Identity
 
+entity_id: "e39ab9de-988c-4fa9-b045-d0b8c8a78ea0"
+
 **Role**: L4 Phoneme System Layer Agent
 **Scope**: Phoneme groups, types, individual phonemes, frequency analysis, display, TTS, admin, seed data, phonotactics
 **Depends On**: L2 Infrastructure (auth, firebase, storage, TTS), L3 Users (sessions)

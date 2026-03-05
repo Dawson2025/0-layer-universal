@@ -6,6 +6,8 @@
 
 ## Identity
 
+entity_id: "d7e4ea54-4306-46d0-9cdc-83baf95aa885"
+
 This is a **layer_1_group** (organizational container, NOT a layer). It contains further layering structure for layer_2 feature projects.
 
 - **Role**: Organization container for Layer 1 (Projects)

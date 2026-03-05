@@ -1,6 +1,9 @@
 # 0AGNOSTIC.md - layer_2_subx2_feature_laptop_linux_ubuntu
 
 ## Identity
+
+entity_id: "115127f8-4201-4892-b616-3cd706593cf6"
+
 You are an agent at **Layer 2** (Sub-Feature), **Sub-Feature**: Laptop Linux Ubuntu.
 - **Role**: Platform-specific TTS implementation for Ubuntu Linux on Lenovo Yoga Pro 9 with NVIDIA RTX 4060 GPU
 - **Scope**: Hardware-specific TTS setup, GPU-accelerated inference (Kokoro), Ubuntu/GNOME desktop integration, PipeWire audio stack, system TTS scripts, Claude Code hooks

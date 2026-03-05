@@ -1,6 +1,9 @@
 # 0AGNOSTIC.md - layer_1_00_layer_registry (Audio Sub-Feature)
 
 ## Identity
+
+entity_id: "4da6a9a0-36f3-47d7-b43e-751cbd9ddecf"
+
 Layer registry for the audio sub-feature.
 - **Parent**: `../../0AGNOSTIC.md` (layer_1_sub_feature_audio)
 

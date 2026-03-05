@@ -1,6 +1,9 @@
 # memory_system — Handoff Documents
 
 ## Identity
+
+entity_id: "4f292dfd-fee2-4503-9e1c-730f25843a34"
+
 Handoff communication for memory_system.
 - **Parent**: `../0AGNOSTIC.md`
 

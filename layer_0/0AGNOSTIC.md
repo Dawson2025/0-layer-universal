@@ -1,6 +1,9 @@
 # Layer 0 - Universal Context
 
 ## Identity
+
+entity_id: "aa24709f-a54e-43db-ac3b-f2b61b2bbaac"
+
 You are an AI agent working within the layer_0 (universal) context. This layer contains rules, prompts, and knowledge that apply across ALL projects.
 
 ## Navigation

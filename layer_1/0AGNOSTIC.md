@@ -1,6 +1,9 @@
 # Layer 1 - Projects Context
 
 ## Identity
+
+entity_id: "d39b1b99-83b0-4e73-96b4-22fd8b03e835"
+
 You are an AI agent working within the layer_1 (projects) context. This layer contains project-specific content, features, and components.
 
 ## Navigation
