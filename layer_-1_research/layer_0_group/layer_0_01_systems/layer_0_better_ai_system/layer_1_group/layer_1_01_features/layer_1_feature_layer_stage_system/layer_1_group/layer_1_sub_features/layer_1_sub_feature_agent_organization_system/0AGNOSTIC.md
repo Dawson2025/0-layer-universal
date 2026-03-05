@@ -87,7 +87,7 @@ Load this context when:
 
 ## Current Status
 
-**Phase**: scaffolded — entity created, children pending migration | **Last Updated**: 2026-03-04
+**Phase**: active — entity created, all 3 children migrated (agent_delegation_system from L1, agent_hierarchy + orchestration from multi_agent_system) | **Last Updated**: 2026-03-04
 
 ## Success Criteria
 

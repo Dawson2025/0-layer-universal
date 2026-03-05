@@ -1,7 +1,7 @@
 # Agent Organization System — Manager Dashboard
 
 ## Entity Status
-**Phase**: scaffolded — entity created, children pending migration
+**Phase**: active — entity created, all children migrated successfully
 **Last Updated**: 2026-03-04
 
 ## Stage Summary
@@ -24,9 +24,9 @@
 
 | Sub-Feature | Purpose | Status |
 |-------------|---------|--------|
-| agent_delegation_system | Which agents handle which work, how delegation decisions are made | pending migration |
-| agent_hierarchy | Parent-child management relationships, who manages whom | pending migration |
-| orchestration | Agent spawning, inter-agent communication, runtime coordination | pending migration |
+| agent_delegation_system | Which agents handle which work, how delegation decisions are made | active (migrated from L1) |
+| agent_hierarchy | Parent-child management relationships, who manages whom | scaffolded (migrated from multi_agent_system) |
+| orchestration | Agent spawning, inter-agent communication, runtime coordination | scaffolded (migrated from multi_agent_system) |
 
 **Location**: `layer_2_group/layer_2_subx2_features/`
 
