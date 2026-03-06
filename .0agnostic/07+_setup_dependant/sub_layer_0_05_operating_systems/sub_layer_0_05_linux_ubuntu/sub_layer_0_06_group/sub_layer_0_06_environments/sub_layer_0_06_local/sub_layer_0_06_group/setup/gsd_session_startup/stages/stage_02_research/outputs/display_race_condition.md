@@ -1,5 +1,5 @@
 ---
-resource_id: "d4e5f6a7-b8c9-0123-defa-345678901234"
+resource_id: "4961c5aa-4266-46df-ad0d-fac5d072b7d1"
 resource_type: "output"
 resource_name: "display_race_condition"
 ---
@@ -8,12 +8,12 @@ resource_name: "display_race_condition"
 **Date**: 2026-03-06
 **Method**: Post-reboot journal analysis + manual daemon testing
 
-<!-- section_id: "c9d0e1f2-a3b4-5c6d-7e8f-9a0b1c2d3e4f" -->
+<!-- section_id: "69f5a671-e44c-49e3-94ee-98bcfd302518" -->
 ## Summary
 
 Unity desktop (`XDG_CURRENT_DESKTOP=Unity`) doesn't import `DISPLAY` into the systemd user environment before GNOME session triggers gsd-media-keys and gsd-power. This causes 5 rapid "Cannot open display:" crashes in <1 second, after which systemd permanently gives up on the services.
 
-<!-- section_id: "d0e1f2a3-b4c5-6d7e-8f9a-0b1c2d3e4f5a" -->
+<!-- section_id: "23cdce01-ba3d-4fb7-856f-97b2409d4be5" -->
 ## Timeline (from journal, 2026-03-06 reboot)
 
 ```
@@ -31,7 +31,7 @@ Unity desktop (`XDG_CURRENT_DESKTOP=Unity`) doesn't import `DISPLAY` into the sy
               ...but it's too late. Services are dead forever.
 ```
 
-<!-- section_id: "e1f2a3b4-c5d6-7e8f-9a0b-1c2d3e4f5a6b" -->
+<!-- section_id: "fc6f4842-425a-4126-aa61-9d7b98948f1a" -->
 ## Journal Evidence
 
 ### gsd-media-keys crashes
@@ -60,7 +60,7 @@ media-keys-plugin-WARNING: Failed to set new screen percentage:
 ```
 Brightness key presses route through gsd-media-keys → D-Bus call to gsd-power. Since gsd-power is also dead, brightness control fails completely.
 
-<!-- section_id: "f2a3b4c5-d6e7-8f9a-0b1c-2d3e4f5a6b7c" -->
+<!-- section_id: "86a0a653-7e4e-4720-a890-e2186ba8107d" -->
 ## Why Unity Is Different
 
 On **stock GNOME**, `gnome-session` calls:
@@ -75,7 +75,7 @@ On **Unity** (`XDG_CURRENT_DESKTOP=Unity`):
 - Does NOT import DISPLAY into systemd user env before services trigger
 - Result: services crash because `DISPLAY` is empty/unset
 
-<!-- section_id: "a3b4c5d6-e7f8-9a0b-1c2d-3e4f5a6b7c8d" -->
+<!-- section_id: "d8886a42-112b-41b2-98e5-91e81b5bac06" -->
 ## Current Band-Aid Stack
 
 | Layer | Mechanism | What It Does | Limitation |
@@ -85,7 +85,7 @@ On **Unity** (`XDG_CURRENT_DESKTOP=Unity`):
 | 3 | `Environment=DISPLAY=:0` | Hardcoded in keepalive service | Fragile; doesn't fix GNOME's service |
 | 4 | Inline `DISPLAY=:0` on ExecStart | Redundant env setting | Same fragility |
 
-<!-- section_id: "b4c5d6e7-f8a9-0b1c-2d3e-4f5a6b7c8d9e" -->
+<!-- section_id: "9e3928f8-c867-4aa6-bcce-8a4bed17f189" -->
 ## Proper Fix Direction
 
 Import `DISPLAY` and `XAUTHORITY` into the systemd user environment **before** gsd services start. Options:
@@ -96,7 +96,7 @@ Import `DISPLAY` and `XAUTHORITY` into the systemd user environment **before** g
 
 See `../stage_04_design/outputs/pre_testing/solution_overview.md` for detailed solution designs.
 
-<!-- section_id: "c5d6e7f8-a90b-1c2d-3e4f-5a6b7c8d9e0f" -->
+<!-- section_id: "27d1c63f-04c6-475e-a64a-7277bb0fc1fd" -->
 ## Functional Impact (observed 2026-03-06)
 
 | Feature | Status After Reboot | Root Cause |

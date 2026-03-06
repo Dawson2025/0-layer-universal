@@ -1,5 +1,5 @@
 ---
-resource_id: "e5f6a7b8-c9d0-1234-efab-456789012345"
+resource_id: "e2983eb7-c5e8-48c6-a4eb-e286b7e169c9"
 resource_type: "output"
 resource_name: "solution_overview"
 ---
@@ -9,7 +9,7 @@ resource_name: "solution_overview"
 **Status**: Pre-testing — designs ready, none tested after reboot yet
 **Source**: Consolidated from parent entity's `daemon_persistence_test_design.md`
 
-<!-- section_id: "d6e7f8a9-0b1c-2d3e-4f5a-6b7c8d9e0f1a" -->
+<!-- section_id: "d254263b-0046-4d75-8d76-4770f819225a" -->
 ## Solution 1: gnome-session Service Startup Order Override
 
 **Approach**: Create a systemd readiness gate that blocks gsd services until DISPLAY is available.
@@ -32,7 +32,7 @@ gsd-media-keys, gsd-power can now start reliably
 
 **Existing implementation**: Parent entity `daemon_persistence_test_design.md` has full config
 
-<!-- section_id: "e7f8a90b-1c2d-3e4f-5a6b-7c8d9e0f1a2b" -->
+<!-- section_id: "c1bbd255-0886-4e9e-af0f-36c02e36f653" -->
 ## Solution 2: Post-Login Autostart Hook
 
 **Approach**: XDG autostart `.desktop` file that runs after login, checks daemon health, restarts if needed.
@@ -55,7 +55,7 @@ Keybindings work
 
 **Key improvement over keepalive**: Runs once at login (not every 60s), can include `systemctl --user reset-failed` to clear the D-Bus name conflict, eliminates the ~5 min dead zone.
 
-<!-- section_id: "f8a90b1c-2d3e-4f5a-6b7c-8d9e0f1a2b3c" -->
+<!-- section_id: "ca5a3ac6-0caa-466c-a3cc-ec2db55a7bb9" -->
 ## Solution 3: Re-Login Trigger Notification
 
 **Approach**: Detect broken state, notify user to log out and back in.
@@ -78,7 +78,7 @@ Keys work
 
 **Limitation**: Requires manual user action (logout/login). Not automated.
 
-<!-- section_id: "a90b1c2d-3e4f-5a6b-7c8d-9e0f1a2b3c4d" -->
+<!-- section_id: "d5b58292-378f-43f9-adfc-39f592ecdfba" -->
 ## Recommended Test Order
 
 1. **Baseline**: Fresh reboot, no changes → confirm problem exists (already done 2026-03-06)
@@ -87,7 +87,7 @@ Keys work
 4. **Solution 3** (fallback): Re-login notification if nothing else works
 5. **Combination**: Solutions 1 + 2 together for defense in depth
 
-<!-- section_id: "b0c1d2e3-4f5a-6b7c-8d9e-0f1a2b3c4d5e" -->
+<!-- section_id: "be8e3dcd-8d82-4938-b653-60a7802b2572" -->
 ## New Solution Idea: Early DISPLAY Import
 
 **Not in original 3 solutions** — discovered during root cause analysis:
@@ -98,7 +98,7 @@ This directly addresses the root cause (DISPLAY not in systemd env) without rest
 
 **To investigate**: What autostart phase runs before gsd services? Can we use `X-GNOME-Autostart-Phase=EarlyInitialization`?
 
-<!-- section_id: "c1d2e3f4-5a6b-7c8d-9e0f-1a2b3c4d5e6f" -->
+<!-- section_id: "48ae96cb-a4ca-4592-b6f2-5251551f7c67" -->
 ## Success Criteria
 
 From `requirements_tree.md`:

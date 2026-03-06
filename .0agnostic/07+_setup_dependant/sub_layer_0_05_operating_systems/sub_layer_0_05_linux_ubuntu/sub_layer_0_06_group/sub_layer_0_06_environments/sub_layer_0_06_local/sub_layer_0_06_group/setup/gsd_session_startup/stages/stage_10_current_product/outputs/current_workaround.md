@@ -1,11 +1,11 @@
 ---
-resource_id: "f6a7b8c9-d0e1-2345-fabc-567890123456"
+resource_id: "9f09783e-fcb0-4934-82b9-f460abb6cac2"
 resource_type: "output"
 resource_name: "current_workaround"
 ---
 # Current Workaround — GSD Keepalive Timer
 
-<!-- section_id: "e2f3a4b5-c6d7-8e9f-0a1b-2c3d4e5f6a7b" -->
+<!-- section_id: "4abaa750-7b55-4d51-ac7f-e2825845cb98" -->
 ## Pointer
 
 The current active workaround is documented in the parent entity's current product stage:

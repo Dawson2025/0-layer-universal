@@ -1,12 +1,14 @@
 ---
-resource_id: "a1b2c3d4-e5f6-7890-abcd-ef1234567890"
+resource_id: "81d7c01c-62f7-410a-a873-d98af4f43fb4"
 resource_type: "agnostic_document"
 resource_name: "gsd_session_startup"
 ---
 # GSD Session Startup — Agnostic Identity
 
-<!-- section_id: "d4e5f6a7-b8c9-0d1e-2f3a-4b5c6d7e8f9a" -->
+<!-- section_id: "de0c3e61-20b6-4925-82aa-d4a534405eda" -->
 ## Identity
+
+entity_id: "40e7fab8-642b-42a6-b3eb-a94ed47b0944"
 
 **Role**: Setup Entity — GSD Session Startup Fix
 **Scope**: Fix the DISPLAY race condition that prevents GNOME Settings Daemons (gsd-media-keys, gsd-power) from starting reliably after every reboot on Unity desktop.

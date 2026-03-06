@@ -1,11 +1,11 @@
 ---
-resource_id: "c3d4e5f6-a7b8-9012-cdef-234567890123"
+resource_id: "93207d9c-f2b0-4ab1-ae8c-292ca4a73a11"
 resource_type: "output"
 resource_name: "requirements_tree"
 ---
 # GSD Session Startup — Requirements Tree
 
-<!-- section_id: "f6a7b8c9-d0e1-2f3a-4b5c-6d7e8f9a0b1c" -->
+<!-- section_id: "d9ecb963-f8ba-45e3-8a8e-cca286492f28" -->
 ## Root Requirement
 
 **GSD daemons must start reliably after every reboot without manual intervention.**
@@ -47,7 +47,7 @@ GSD daemons start reliably after every reboot
     └── Volume keys — handled by custom volume-control.sh script, NOT dependent on gsd
 ```
 
-<!-- section_id: "a7b8c9d0-e1f2-3a4b-5c6d-7e8f9a0b1c2d" -->
+<!-- section_id: "a2a7a110-8908-49e0-a214-53f64d227c39" -->
 ## Priority
 
 | Requirement | Priority | Impact |
@@ -59,7 +59,7 @@ GSD daemons start reliably after every reboot
 | R5 (No multi-instance) | Medium | Stability issue |
 | R6 (Visible errors) | Medium | Debugging/maintenance |
 
-<!-- section_id: "b8c9d0e1-f2a3-4b5c-6d7e-8f9a0b1c2d3e" -->
+<!-- section_id: "5e672ab5-221f-47dd-a044-bff75b3429cc" -->
 ## Acceptance Criteria
 
 The fix is considered complete when:

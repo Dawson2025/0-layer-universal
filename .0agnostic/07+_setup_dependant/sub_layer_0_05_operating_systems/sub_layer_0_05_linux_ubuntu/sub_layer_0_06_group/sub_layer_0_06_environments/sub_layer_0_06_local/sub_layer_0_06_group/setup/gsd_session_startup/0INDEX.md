@@ -1,11 +1,11 @@
 ---
-resource_id: "b2c3d4e5-f6a7-8901-bcde-f12345678901"
+resource_id: "5248e0b5-6417-4314-84f8-688f9db8c42e"
 resource_type: "index"
 resource_name: "gsd_session_startup_index"
 ---
 # GSD Session Startup — Status Dashboard
 
-<!-- section_id: "e5f6a7b8-c9d0-1e2f-3a4b-5c6d7e8f9a0b" -->
+<!-- section_id: "a89d7885-4767-43e5-929e-5b009f9f6c1f" -->
 ## Current Status
 
 **Phase**: Research & Design (pre-testing)
