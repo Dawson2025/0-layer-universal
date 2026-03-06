@@ -1,4 +1,3 @@
-<!-- resource_id: "d07ecbdd-c051-4e17-9eef-c9060a6ef2c9" -->
 # GitHub Copilot Instructions
 
 ## Identity
@@ -6,10 +5,11 @@
 **Entity**: Local Ubuntu Environment
 **Sub-Layer**: 0.06
 **Type**: Increased Specificity (narrows from Environments → Local machine setup)
-**Scope**: Local Ubuntu desktop environment — GNOME/Unity desktop, system services, audio stack, TTS
+**Scope**: Comprehensive knowledge base and operational hub for this specific Ubuntu machine — everything needed to understand, configure, troubleshoot, optimize, and maintain the system. Includes: GNOME/Unity desktop, system services, audio stack, TTS, hardware-specific setup, daemon persistence, performance tuning, and all related troubleshooting procedures.
 
 **Specificity Chain**: OS (05) → Linux Ubuntu (05) → Environments (06) → **Local (06)**
 
+<!-- section_id: "ef660a6a-3dbf-494d-a28e-de3c63cb7020" -->
 
 
 ---

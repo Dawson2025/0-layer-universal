@@ -104,7 +104,8 @@ Prior work scattered across parent entity stages:
 - **REQ_006**: `../../sub_layer_0_06_99_stages/stage_0_00_request_gathering/requests/REQ_006_brightness_volume_buttons_not_working.md`
 - **Test design**: `../../sub_layer_0_06_99_stages/stage_0_04_design/outputs/daemon_persistence_test_design.md`
 - **Test framework**: `../../sub_layer_0_06_99_stages/stage_0_06_testing/outputs/by_purpose/daemon_persistence_restart_fix/`
-- **Current fix**: `../../sub_layer_0_06_99_stages/stage_0_09_current_product/outputs/gsd_keepalive_fix.md`
+- **Legacy workaround**: `../../sub_layer_0_06_99_stages/stage_0_09_current_product/outputs/gsd_keepalive_fix.md`
+- **Current fix**: `stages/stage_10_current_product/outputs/current_fix.md`
 
 ## Claude-Specific Rules
 

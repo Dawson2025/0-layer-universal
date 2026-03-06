@@ -40,6 +40,7 @@ Before starting any task:
 - **Desktop**: Unity (XDG_CURRENT_DESKTOP=Unity), NOT GNOME Shell — but uses GNOME components underneath
 - **GNOME Shell 46** on X11: Handles standard media keys (volume, brightness) NATIVELY via mutter compositor
 - **gsd-media-keys**: Still needed for CUSTOM keybindings (e.g., Ctrl+Alt+S for speak-selection)
+- **GSD startup fix**: Dedicated setup entity at `sub_layer_0_06_group/setup/gsd_session_startup/` tracks the DISPLAY race and X11/Wayland backend mismatch fix
 - **gsd-keepalive.timer**: Auto-restarts dead gsd-media-keys/gsd-power but CANNOT fix stale gnome-shell grabs
 - **Post-sleep recovery**: gnome-shell's grab table can become stale after suspend/resume; `gnome-shell --replace` on X11 fixes this (WARNING: kills Cursor/Electron apps)
 - **TTS stack**: Piper (neural TTS) + Speech Dispatcher + espeak-ng (fallback)
@@ -71,10 +72,10 @@ Before starting any task:
 | Situation | Action |
 |-----------|--------|
 | Ubuntu desktop issues | Read `.0agnostic/01_knowledge/ubuntu_desktop/` |
-| Volume/brightness/keybinding issues | Read `.0agnostic/01_knowledge/ubuntu_desktop/docs/gnome_architecture.md` + `system_services/docs/systemd_user_services.md` |
+| Volume/brightness/keybinding issues | Check `sub_layer_0_06_group/setup/0AGNOSTIC.md` first, then load `.0agnostic/01_knowledge/ubuntu_desktop/docs/gnome_architecture.md` + `system_services/docs/systemd_user_services.md` as needed |
 | Audio stack problems | Read `.0agnostic/01_knowledge/audio/docs/linux_audio_stack.md` |
 | Inotify exhaustion | Read `.0agnostic/01_knowledge/linux_fundamentals/docs/inotify.md` |
-| Post-sleep daemon failures | Check stage outputs: `sub_layer_0_06_group/sub_layer_0_06_99_stages/stage_0_09_current_product/outputs/gsd_keepalive_fix.md` |
+| Post-sleep daemon failures | Check `sub_layer_0_06_group/setup/gsd_session_startup/0AGNOSTIC.md` for startup failures, or `sub_layer_0_06_group/sub_layer_0_06_99_stages/stage_0_09_current_product/outputs/gsd_keepalive_fix.md` for legacy keepalive behavior |
 | Coding app issues | Navigate to `sub_layer_0_07_group/sub_layer_0_07_coding_apps/` |
 
 <!-- section_id: "e173ce40-2d8f-458a-837a-305a92671d52" -->

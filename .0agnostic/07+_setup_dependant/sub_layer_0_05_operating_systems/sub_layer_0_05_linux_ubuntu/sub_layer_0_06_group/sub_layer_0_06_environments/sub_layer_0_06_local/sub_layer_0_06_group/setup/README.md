@@ -76,10 +76,11 @@ See `sub_layer_0_06_99_stages/status.json` for tracked issues.
 
 <!-- section_id: "a3b4c5d6-e7f8-9012-3456-789abcdef012" -->
 ### Active
-- **GSD Session Startup** (2026-03-06): DISPLAY race condition causes gsd-media-keys/gsd-power to fail after every reboot
+- **GSD Session Startup** (2026-03-06): Fix implemented and pre-reboot verified; reboot validation pending
   - Entity: `gsd_session_startup/` — dedicated entity with full stage hierarchy
-  - Root cause: Unity doesn't import DISPLAY into systemd user env before GNOME services start
-  - Current workaround: `sub_layer_0_06_99_stages/stage_0_09_current_product/outputs/gsd_keepalive_fix.md`
+  - Root causes: Unity does not import DISPLAY early enough for gsd startup, and systemd user services inherited `GDK_BACKEND=wayland` on an X11 session
+  - Current fix: `gsd_session_startup/stages/stage_10_current_product/outputs/current_fix.md`
+  - Legacy workaround history: `sub_layer_0_06_99_stages/stage_0_09_current_product/outputs/gsd_keepalive_fix.md`
 
 <!-- section_id: "b9ebc2ec-8cc0-41f1-b9a5-12f5931f40d3" -->
 ### Resolved
