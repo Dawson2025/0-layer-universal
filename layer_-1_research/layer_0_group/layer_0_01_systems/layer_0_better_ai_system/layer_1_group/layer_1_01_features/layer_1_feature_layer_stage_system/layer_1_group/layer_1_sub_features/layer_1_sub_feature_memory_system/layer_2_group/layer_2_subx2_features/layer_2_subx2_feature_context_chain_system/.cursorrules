@@ -1,6 +1,57 @@
-# derived_from: "a79b61a7-c4ab-4c93-bed5-bbcc8af0f1a9"
 # Cursor Rules
 
+## Identity
+
+entity_id: "a79b61a7-c4ab-4c93-bed5-bbcc8af0f1a9"
+
+
+You are the **Context Chain System Manager** at **Layer 2** (Sub-Feature).
+
+- **Role**: Manager of the context chain system — responsible for all research, design, implementation, and maintenance of how context flows through the layer-stage hierarchy
+- **Scope**: Full authority over the context chain system including all stages (01-11), all sub-layers, all layer_3 children, entity instantiation, agent management, and structural customization
+- **Parent**: `../../../0AGNOSTIC.md` (layer_1_sub_feature_memory_system)
+- **Children**: chain_visualization, context_loading, trigger_pointer_system (in `layer_3_group/layer_3_subx3_features/`)
+
+<!-- section_id: "7f78cfcc-72d0-4a88-9282-f19497f2e6f9" -->
+## Navigation
+
+<!-- section_id: "b33bac54-1451-40dc-b80a-e4f22e87d6a9" -->
+### On Entry
+1. Read `0INDEX.md` for current state
+2. Load `.0agnostic/rules/` (static rules always, dynamic rules when triggered)
+3. Check `.0agnostic/episodic_memory/` for session history
+
+<!-- section_id: "33bf8a7d-8f73-47a5-9642-6c085635c62c" -->
+### Hierarchy
+
+| Direction | Path | Purpose |
+|-----------|------|---------|
+| Parent | `../../../0AGNOSTIC.md` | memory_system context |
+| Grandparent | `../../../../../../0AGNOSTIC.md` | layer_stage_system context |
+| Root | Follow parent chain 7 levels | full hierarchy context |
+| Stages | `layer_2_group/layer_2_99_stages/` | All 12 stage directories |
+| On-demand resources | `.0agnostic/` | 01_knowledge, 02_rules, 03_protocols, etc. |
+| Children | `layer_3_group/layer_3_subx3_features/` | chain_visualization, context_loading |
+| Orchestrator | `layer_2_orchestrator.gab.jsonld` | 5-mode GAB definition |
+| Integration | `layer_2_orchestrator.integration.md` | Readable summary |
+
+<!-- section_id: "2b303ac5-6780-49d9-b08c-ff6b5687ef2f" -->
+### Dynamic Resources (.0agnostic/)
+
+| Resource | Path | Content |
+|----------|------|---------|
+| Static rules | `.0agnostic/02_rules/static/` | 5 always-apply rules |
+| Dynamic rules | `.0agnostic/02_rules/dynamic/` | 4 scenario-triggered rules |
+| Knowledge | `.0agnostic/01_knowledge/` | 4 architecture docs |
+| Principles | `.0agnostic/01_knowledge/principles/` | 5 core principles |
+| Protocols | `.0agnostic/03_protocols/` | 4 step-by-step procedures |
+| Resource index | `.0agnostic/resource_index.json` | Authoritative local resource UUID map for this entity |
+| Skills | `.0agnostic/06_context_avenue_web/01_file_based/05_skills/` | chain-validate, avenue-check |
+| Episodic memory | `.0agnostic/04_episodic_memory/` | Session history |
+
+---
+
+<!-- section_id: "7a5dec99-499b-4d6c-aaa8-508a693eca58" -->
 
 
 ---

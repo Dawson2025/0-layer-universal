@@ -9,7 +9,7 @@
 # resolves the canonical location, computes the relative path,
 # and updates the pointer file's "Canonical location" line.
 #
-# Resolution: UUID-first (canonical_entity_id), name fallback (canonical_entity).
+# Resolution: resource UUID first, then entity/stage UUIDs, then legacy name fallback.
 #
 # Usage:
 #   pointer-sync.sh                           # Update all pointers
@@ -278,6 +278,51 @@ for s in data.get('stages', []):
 
     done < <(find "$ROOT" -name "stage_index.json" -not -path "*/node_modules/*" -not -path "*/.git/*" 2>/dev/null | sort)
 
+    # Scan all resource_index.json for resource UUIDs
+    while IFS= read -r index_file; do
+        if ! python3 -c "import json; json.load(open('$index_file'))" 2>/dev/null; then
+            vlog "WARN: Invalid JSON in $index_file — skipping"
+            continue
+        fi
+
+        local resources_data
+        resources_data=$(python3 -c "
+import json, os.path
+with open('$index_file') as f:
+    data = json.load(f)
+entity_dir = os.path.dirname(os.path.dirname('$index_file'))
+entity_path = data.get('entity_path') or os.path.relpath(entity_dir, '$ROOT')
+entity_id = data.get('entity_id', '')
+for resource in data.get('resources', []):
+    rid = resource.get('resource_id', '')
+    rname = resource.get('resource_name', '')
+    rtype = resource.get('resource_type', '')
+    id_field = resource.get('id_field', '')
+    rpath = resource.get('path', '')
+    if not rid or not rpath:
+        continue
+    rel = os.path.normpath(os.path.join(entity_path, rpath))
+    print(f'{rid}|{rname}|{entity_id}|{rtype}|{id_field}|{rel}')
+" 2>/dev/null || true)
+
+        while IFS='|' read -r rid rname eid rtype id_field rel; do
+            if [ -z "$rid" ]; then continue; fi
+
+            if [ -n "${seen_uuids[$rid]+x}" ]; then
+                echo "  WARN: Duplicate UUID $rid (resource) at $rel"
+                duplicates=$((duplicates + 1))
+                continue
+            fi
+            seen_uuids[$rid]="$rel"
+
+            if ! $first_uuid; then uuids_json+=","; fi
+            first_uuid=false
+            uuids_json+="
+    \"$rid\": {\"type\": \"resource\", \"name\": \"$rname\", \"entity_id\": \"$eid\", \"resource_type\": \"$rtype\", \"id_field\": \"$id_field\", \"path\": \"$rel\"}"
+        done <<< "$resources_data"
+
+    done < <(find "$ROOT" -name "resource_index.json" -not -path "*/node_modules/*" -not -path "*/.git/*" 2>/dev/null | sort)
+
     uuids_json+="
   }"
     names_json+="
@@ -419,6 +464,10 @@ if entry:
     print(f'path: {entry.get(\"path\", \"\")}')
     if entry.get('entity_id'):
         print(f'entity_id: {entry.get(\"entity_id\", \"\")}')
+    if entry.get('resource_type'):
+        print(f'resource_type: {entry.get(\"resource_type\", \"\")}')
+    if entry.get('id_field'):
+        print(f'id_field: {entry.get(\"id_field\", \"\")}')
     sys.exit(0)
 
 resolved_uuid = data.get('names', {}).get(target)
@@ -687,67 +736,92 @@ for POINTER_FILE in "${POINTER_FILES[@]}"; do
     CANONICAL_PATH=""
     ENTITY_DIR=""
 
-    # === ENTITY RESOLUTION ===
-    if [ -n "$CANONICAL_ENTITY_ID" ]; then
-        # UUID-first entity resolution
-        local_path=$(uuid_lookup "$CANONICAL_ENTITY_ID")
+    # === RESOURCE RESOLUTION ===
+    if [ -n "$CANONICAL_RESOURCE_ID" ]; then
+        local_path=$(uuid_lookup "$CANONICAL_RESOURCE_ID")
         if [ -n "$local_path" ]; then
-            ENTITY_DIR="$ROOT/$local_path"
-            vlog "  Entity resolved via UUID: $local_path"
+            CANONICAL_PATH="$ROOT/$local_path"
+            vlog "  Resource resolved via UUID: $local_path"
         else
-            # Index miss — try auto-rebuild
-            vlog "  UUID not in index — rebuilding..."
+            vlog "  Resource UUID not in index — rebuilding..."
             do_rebuild_index >/dev/null 2>&1
-            local_path=$(uuid_lookup "$CANONICAL_ENTITY_ID")
+            local_path=$(uuid_lookup "$CANONICAL_RESOURCE_ID")
             if [ -n "$local_path" ]; then
-                ENTITY_DIR="$ROOT/$local_path"
-                vlog "  Entity resolved after rebuild: $local_path"
+                CANONICAL_PATH="$ROOT/$local_path"
+                vlog "  Resource resolved after rebuild: $local_path"
             else
-                echo "  BROKEN: $RELATIVE_POINTER — entity UUID '$CANONICAL_ENTITY_ID' not found"
+                echo "  BROKEN: $RELATIVE_POINTER — resource UUID '$CANONICAL_RESOURCE_ID' not found"
                 BROKEN=$((BROKEN + 1))
                 continue
             fi
         fi
-    elif [ -n "$CANONICAL_ENTITY" ] || [ -n "$CANONICAL_ENTITY_NAME" ]; then
-        # Legacy name-based resolution
-        entity_name="${CANONICAL_ENTITY:-$CANONICAL_ENTITY_NAME}"
-        ENTITY_DIR=$(find "$ROOT" -type d -name "$entity_name" -path "*/layer_*" 2>/dev/null | head -1)
-        if [ -z "$ENTITY_DIR" ]; then
-            echo "  BROKEN: $RELATIVE_POINTER — entity '$entity_name' not found"
-            BROKEN=$((BROKEN + 1))
-            continue
-        fi
-        vlog "  Entity resolved via name (legacy): ${ENTITY_DIR#$ROOT/}"
-    else
-        echo "  SKIP: $RELATIVE_POINTER — no canonical_entity_id or canonical_entity"
-        continue
     fi
 
-    CANONICAL_PATH="$ENTITY_DIR"
-
-    # === STAGE RESOLUTION ===
-    if [ -n "$CANONICAL_STAGE_ID" ]; then
-        # UUID-first stage resolution via index
-        local_path=$(uuid_lookup "$CANONICAL_STAGE_ID")
-        if [ -n "$local_path" ]; then
-            CANONICAL_PATH="$ROOT/$local_path"
-            vlog "  Stage resolved via UUID: $local_path"
+    if [ -z "$CANONICAL_PATH" ]; then
+        # === ENTITY RESOLUTION ===
+        if [ -n "$CANONICAL_ENTITY_ID" ]; then
+            # UUID-first entity resolution
+            local_path=$(uuid_lookup "$CANONICAL_ENTITY_ID")
+            if [ -n "$local_path" ]; then
+                ENTITY_DIR="$ROOT/$local_path"
+                vlog "  Entity resolved via UUID: $local_path"
+            else
+                # Index miss — try auto-rebuild
+                vlog "  UUID not in index — rebuilding..."
+                do_rebuild_index >/dev/null 2>&1
+                local_path=$(uuid_lookup "$CANONICAL_ENTITY_ID")
+                if [ -n "$local_path" ]; then
+                    ENTITY_DIR="$ROOT/$local_path"
+                    vlog "  Entity resolved after rebuild: $local_path"
+                else
+                    echo "  BROKEN: $RELATIVE_POINTER — entity UUID '$CANONICAL_ENTITY_ID' not found"
+                    BROKEN=$((BROKEN + 1))
+                    continue
+                fi
+            fi
+        elif [ -n "$CANONICAL_ENTITY" ] || [ -n "$CANONICAL_ENTITY_NAME" ]; then
+            # Legacy name-based resolution
+            entity_name="${CANONICAL_ENTITY:-$CANONICAL_ENTITY_NAME}"
+            ENTITY_DIR=$(find "$ROOT" -type d -name "$entity_name" -path "*/layer_*" 2>/dev/null | head -1)
+            if [ -z "$ENTITY_DIR" ]; then
+                echo "  BROKEN: $RELATIVE_POINTER — entity '$entity_name' not found"
+                BROKEN=$((BROKEN + 1))
+                continue
+            fi
+            vlog "  Entity resolved via name (legacy): ${ENTITY_DIR#$ROOT/}"
         else
-            echo "  BROKEN: $RELATIVE_POINTER — stage UUID '$CANONICAL_STAGE_ID' not found"
-            BROKEN=$((BROKEN + 1))
+            echo "  SKIP: $RELATIVE_POINTER — no canonical_resource_id, canonical_entity_id, or canonical_entity"
             continue
         fi
-    elif [ -n "$CANONICAL_STAGE" ] || [ -n "$CANONICAL_STAGE_NAME" ]; then
-        # Legacy name-based stage resolution
-        stage_name="${CANONICAL_STAGE:-$CANONICAL_STAGE_NAME}"
-        STAGE_DIR=$(find "$ENTITY_DIR" -type d -name "$stage_name" 2>/dev/null | while IFS= read -r d; do echo "${#d} $d"; done | sort -n | head -1 | sed 's/^[0-9]* //')
-        if [ -z "$STAGE_DIR" ]; then
-            echo "  BROKEN: $RELATIVE_POINTER — stage '$stage_name' not found in entity"
-            BROKEN=$((BROKEN + 1))
-            continue
+
+        CANONICAL_PATH="$ENTITY_DIR"
+
+        # === STAGE RESOLUTION ===
+        if [ -n "$CANONICAL_STAGE_ID" ]; then
+            # UUID-first stage resolution via index
+            local_path=$(uuid_lookup "$CANONICAL_STAGE_ID")
+            if [ -n "$local_path" ]; then
+                CANONICAL_PATH="$ROOT/$local_path"
+                vlog "  Stage resolved via UUID: $local_path"
+            else
+                echo "  BROKEN: $RELATIVE_POINTER — stage UUID '$CANONICAL_STAGE_ID' not found"
+                BROKEN=$((BROKEN + 1))
+                continue
+            fi
+        elif [ -n "$CANONICAL_STAGE" ] || [ -n "$CANONICAL_STAGE_NAME" ]; then
+            # Legacy name-based stage resolution
+            stage_name="${CANONICAL_STAGE:-$CANONICAL_STAGE_NAME}"
+            STAGE_DIR=$(find "$ENTITY_DIR" -type d -name "$stage_name" 2>/dev/null | while IFS= read -r d; do echo "${#d} $d"; done | sort -n | head -1 | sed 's/^[0-9]* //')
+            if [ -z "$STAGE_DIR" ]; then
+                echo "  BROKEN: $RELATIVE_POINTER — stage '$stage_name' not found in entity"
+                BROKEN=$((BROKEN + 1))
+                continue
+            fi
+            CANONICAL_PATH="$STAGE_DIR"
+            vlog "  Stage resolved via name (legacy): ${STAGE_DIR#$ROOT/}"
         fi
-        CANONICAL_PATH="$STAGE_DIR"
-        vlog "  Stage resolved via name (legacy): ${STAGE_DIR#$ROOT/}"
+    else
+        vlog "  Using canonical_resource_id; skipping entity/stage fallback"
     fi
 
     # === SUBPATH RESOLUTION ===

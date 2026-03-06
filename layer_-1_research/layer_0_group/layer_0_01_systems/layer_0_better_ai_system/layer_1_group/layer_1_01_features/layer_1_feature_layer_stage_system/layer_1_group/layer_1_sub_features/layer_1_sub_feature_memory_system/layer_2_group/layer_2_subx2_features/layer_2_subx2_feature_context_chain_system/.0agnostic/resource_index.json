@@ -1,0 +1,3614 @@
+{
+  "file_id": "39229bb7-c134-44b3-bc71-9901763e12b4",
+  "generated": "2026-03-06T20:44:12Z",
+  "entity_id": "a79b61a7-c4ab-4c93-bed5-bbcc8af0f1a9",
+  "entity_name": "layer_2_subx2_feature_context_chain_system",
+  "entity_path": "layer_-1_research/layer_0_group/layer_0_01_systems/layer_0_better_ai_system/layer_1_group/layer_1_01_features/layer_1_feature_layer_stage_system/layer_1_group/layer_1_sub_features/layer_1_sub_feature_memory_system/layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_context_chain_system",
+  "resources": [
+    {
+      "resource_id": "3d396e28-0b92-4e9a-9b25-3e4f19ea33ee",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": "avenue_web_architecture",
+      "path": ".0agnostic/01_knowledge/avenue_web_architecture.md"
+    },
+    {
+      "resource_id": "c01bb828-b00d-4894-8ff1-d960490ba20d",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": "chain_optimization_strategies",
+      "path": ".0agnostic/01_knowledge/chain_optimization_strategies.md"
+    },
+    {
+      "resource_id": "a0c6a818-34d0-4f48-9a14-b3139c096dc7",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": "codex_cli_context_contract",
+      "path": ".0agnostic/01_knowledge/codex_cli_context_contract.md"
+    },
+    {
+      "resource_id": "78e8afc7-2d6b-4f50-9740-7fc314ed1de9",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": "context_chain_architecture",
+      "path": ".0agnostic/01_knowledge/context_chain_architecture.md"
+    },
+    {
+      "resource_id": "8a2213b3-44fd-4855-ac61-e2828589ccfc",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": "context_chain_porting_bridge_contract",
+      "path": ".0agnostic/01_knowledge/overview/docs/context_chain_porting_bridge_contract.md"
+    },
+    {
+      "resource_id": "41015f14-80d7-447f-8844-2d63911e114f",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": ".0agnostic/01_knowledge/overview/production_aalang_gab_system/README.md"
+    },
+    {
+      "resource_id": "2b2fcbd7-b6b0-4f8d-8455-9bb567eba3e1",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": "agent_patterns",
+      "path": ".0agnostic/01_knowledge/overview/production_aalang_gab_system/agent_patterns.md"
+    },
+    {
+      "resource_id": "ece413f1-45b4-44a5-9fd5-8fae6747c250",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": "gab_compiler",
+      "path": ".0agnostic/01_knowledge/overview/production_aalang_gab_system/gab_compiler.md"
+    },
+    {
+      "resource_id": "feb1ee50-0827-466a-880f-0bd4c7a00550",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": "jsonld_design_vs_runtime",
+      "path": ".0agnostic/01_knowledge/overview/production_aalang_gab_system/jsonld_design_vs_runtime.md"
+    },
+    {
+      "resource_id": "94b64730-beb9-4e7f-a9a4-0baf82756bc9",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": "mode_actor_pattern",
+      "path": ".0agnostic/01_knowledge/overview/production_aalang_gab_system/mode_actor_pattern.md"
+    },
+    {
+      "resource_id": "63c79ce1-3998-4664-94b2-ef39f58d2bbd",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": "professor_docs_analysis",
+      "path": ".0agnostic/01_knowledge/overview/production_aalang_gab_system/professor_docs_analysis.md"
+    },
+    {
+      "resource_id": "e622c503-2230-41ef-ae65-bf63c0a072f2",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": "runtime_and_formats",
+      "path": ".0agnostic/01_knowledge/overview/production_aalang_gab_system/runtime_and_formats.md"
+    },
+    {
+      "resource_id": "69936231-d9dd-4bc8-9dbc-af3ddc773cf1",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": "HOW_CONTEXT_WORKS",
+      "path": ".0agnostic/01_knowledge/overview/production_context_system/HOW_CONTEXT_WORKS.md"
+    },
+    {
+      "resource_id": "648e8b66-1628-43cf-a4d8-9500f4541f10",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": "context_agents_ARCHITECTURE",
+      "path": ".0agnostic/01_knowledge/overview/production_context_system/context_agents_ARCHITECTURE.md"
+    },
+    {
+      "resource_id": "daa53f69-023e-4882-961a-00a068764d3e",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": "AI_CONTEXT_COMMIT_PUSH_RULE",
+      "path": ".0agnostic/01_knowledge/overview/production_core_rules/AI_CONTEXT_COMMIT_PUSH_RULE.md"
+    },
+    {
+      "resource_id": "988a7052-e372-444a-aa39-b571b99aa1ed",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": "AI_CONTEXT_MODIFICATION_PROTOCOL",
+      "path": ".0agnostic/01_knowledge/overview/production_core_rules/AI_CONTEXT_MODIFICATION_PROTOCOL.md"
+    },
+    {
+      "resource_id": "95f421ad-092f-4eee-9083-45fb5ada2674",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": "CONTEXT_TRAVERSAL_RULE",
+      "path": ".0agnostic/01_knowledge/overview/production_core_rules/CONTEXT_TRAVERSAL_RULE.md"
+    },
+    {
+      "resource_id": "542ab8dd-15ee-46d1-8ad2-2c62ae0a3cc7",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": "FILE_PATH_LINKING_RULE",
+      "path": ".0agnostic/01_knowledge/overview/production_core_rules/FILE_PATH_LINKING_RULE.md"
+    },
+    {
+      "resource_id": "45c2b8aa-4931-4a49-b16e-3cfdf708a029",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": ".0agnostic/01_knowledge/overview/production_core_rules/README.md"
+    },
+    {
+      "resource_id": "c4821178-e3eb-4d58-89d7-8cd6190213db",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": "context_priority_rules",
+      "path": ".0agnostic/01_knowledge/overview/production_core_rules/context_priority_rules.md"
+    },
+    {
+      "resource_id": "59ed8dae-1c69-48c5-91f4-e7d39f29de03",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": "context_scope_boundaries",
+      "path": ".0agnostic/01_knowledge/overview/production_core_rules/context_scope_boundaries.md"
+    },
+    {
+      "resource_id": "81743498-38c8-4d91-b027-1af9ec56dbe6",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": "AI_DOCUMENTATION_PROTOCOL",
+      "path": ".0agnostic/01_knowledge/overview/production_scenario_rules/AI_DOCUMENTATION_PROTOCOL.md"
+    },
+    {
+      "resource_id": "80a14aa3-86e3-460e-8254-c9f6bb84e6e4",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": "CONTEXT_FILE_PATTERN",
+      "path": ".0agnostic/01_knowledge/overview/production_scenario_rules/CONTEXT_FILE_PATTERN.md"
+    },
+    {
+      "resource_id": "c8109dc2-8d1c-4789-8764-1157d1724ad6",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": "CROSS_OS_COMPATIBILITY_RULES",
+      "path": ".0agnostic/01_knowledge/overview/production_scenario_rules/CROSS_OS_COMPATIBILITY_RULES.md"
+    },
+    {
+      "resource_id": "08848442-96bf-4257-883c-1ec5d2ae7904",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": "LAYER_CONTEXT_HEADER_PROTOCOL",
+      "path": ".0agnostic/01_knowledge/overview/production_scenario_rules/LAYER_CONTEXT_HEADER_PROTOCOL.md"
+    },
+    {
+      "resource_id": "0adff19a-5b91-4d73-9f2b-4ae2c48698ed",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": "LOCATION_RULE_APPLICATION_PROTOCOL",
+      "path": ".0agnostic/01_knowledge/overview/production_scenario_rules/LOCATION_RULE_APPLICATION_PROTOCOL.md"
+    },
+    {
+      "resource_id": "04db4ebc-0d17-4936-bd7f-85279f515824",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": "OUTPUT_FIRST_PROTOCOL",
+      "path": ".0agnostic/01_knowledge/overview/production_scenario_rules/OUTPUT_FIRST_PROTOCOL.md"
+    },
+    {
+      "resource_id": "2be48daf-c1ad-4fb1-8ee3-4cef5f50d0a0",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": ".0agnostic/01_knowledge/overview/production_scenario_rules/README.md"
+    },
+    {
+      "resource_id": "4dad7642-f75b-4741-94ce-27f10145e7a5",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": "safety_governance",
+      "path": ".0agnostic/01_knowledge/overview/production_scenario_rules/safety_governance.md"
+    },
+    {
+      "resource_id": "59f65726-ff7d-4d08-92d3-80bb3033c028",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": "sequential_development_methodology",
+      "path": ".0agnostic/01_knowledge/overview/production_scenario_rules/sequential_development_methodology.md"
+    },
+    {
+      "resource_id": "733ea389-ea1a-4f78-8e00-b7745955aa49",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": "avenue_redundancy",
+      "path": ".0agnostic/01_knowledge/principles/avenue_redundancy.md"
+    },
+    {
+      "resource_id": "06cd2219-2dd9-47ca-a468-c19d934d8edd",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": "chain_continuity",
+      "path": ".0agnostic/01_knowledge/principles/chain_continuity.md"
+    },
+    {
+      "resource_id": "70e8e69c-9bf6-4327-b6bb-f4f7e5cbdc84",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": "graceful_degradation",
+      "path": ".0agnostic/01_knowledge/principles/graceful_degradation.md"
+    },
+    {
+      "resource_id": "f78b8704-87f3-4067-9762-07642cbb1e36",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": "lean_static_context",
+      "path": ".0agnostic/01_knowledge/principles/lean_static_context.md"
+    },
+    {
+      "resource_id": "5f9089b8-10b0-436d-b9a4-5d16683b00ad",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": "single_source_of_truth",
+      "path": ".0agnostic/01_knowledge/principles/single_source_of_truth.md"
+    },
+    {
+      "resource_id": "ef8edc79-2c0d-4985-9835-de24846fc3dd",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": "static_dynamic_context",
+      "path": ".0agnostic/01_knowledge/static_dynamic_context.md"
+    },
+    {
+      "resource_id": "c0f0f907-2843-460d-8f1f-95095114d75c",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": "01_rules_problems",
+      "path": ".0agnostic/01_knowledge/things_learned/01_rules_problems.md"
+    },
+    {
+      "resource_id": "1717cf48-bbf0-4a0e-a813-906ac945e173",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": ".0agnostic/01_knowledge/tree_of_knowledge/00_context_chain_knowledge/01_chain_architecture/README.md"
+    },
+    {
+      "resource_id": "50b3c03f-c9a0-4521-82cb-aa4506acfdce",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": "avenue_web",
+      "path": ".0agnostic/01_knowledge/tree_of_knowledge/00_context_chain_knowledge/01_chain_architecture/avenue_web.md"
+    },
+    {
+      "resource_id": "020580ab-e5fe-4b8e-9a8d-72c2ac108589",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": "context_chains",
+      "path": ".0agnostic/01_knowledge/tree_of_knowledge/00_context_chain_knowledge/01_chain_architecture/context_chains.md"
+    },
+    {
+      "resource_id": "2a27ffa5-1fbf-4bcb-a888-68a81dd5cb21",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": "static_dynamic_context",
+      "path": ".0agnostic/01_knowledge/tree_of_knowledge/00_context_chain_knowledge/01_chain_architecture/static_dynamic_context.md"
+    },
+    {
+      "resource_id": "c26fe8b5-f6b5-4557-9481-4f7deb542c85",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": ".0agnostic/01_knowledge/tree_of_knowledge/00_context_chain_knowledge/02_principles/README.md"
+    },
+    {
+      "resource_id": "681c2aa0-a38d-4c23-b8b2-2c562063fb7f",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": "avenue_redundancy",
+      "path": ".0agnostic/01_knowledge/tree_of_knowledge/00_context_chain_knowledge/02_principles/avenue_redundancy.md"
+    },
+    {
+      "resource_id": "b4051837-bb3e-4b77-a453-61deb1a549ad",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": "chain_continuity",
+      "path": ".0agnostic/01_knowledge/tree_of_knowledge/00_context_chain_knowledge/02_principles/chain_continuity.md"
+    },
+    {
+      "resource_id": "1aefb7e0-206f-40ba-85ad-458e877f7632",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": "graceful_degradation",
+      "path": ".0agnostic/01_knowledge/tree_of_knowledge/00_context_chain_knowledge/02_principles/graceful_degradation.md"
+    },
+    {
+      "resource_id": "840a3a99-507a-4844-8cc6-629bc64a0f8d",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": "lean_static_context",
+      "path": ".0agnostic/01_knowledge/tree_of_knowledge/00_context_chain_knowledge/02_principles/lean_static_context.md"
+    },
+    {
+      "resource_id": "e9919392-2de8-4899-9939-248fbcb63b36",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": "single_source_of_truth",
+      "path": ".0agnostic/01_knowledge/tree_of_knowledge/00_context_chain_knowledge/02_principles/single_source_of_truth.md"
+    },
+    {
+      "resource_id": "0db828f8-1a2f-4dc8-a953-1e383ae7921a",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": ".0agnostic/01_knowledge/tree_of_knowledge/00_context_chain_knowledge/03_production_reference/README.md"
+    },
+    {
+      "resource_id": "aa44f2fd-346a-43af-9856-34f5097bf593",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": "context_system",
+      "path": ".0agnostic/01_knowledge/tree_of_knowledge/00_context_chain_knowledge/03_production_reference/context_system.md"
+    },
+    {
+      "resource_id": "73daa3d6-2088-4b69-a774-287ca16a333d",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": "gab_system",
+      "path": ".0agnostic/01_knowledge/tree_of_knowledge/00_context_chain_knowledge/03_production_reference/gab_system.md"
+    },
+    {
+      "resource_id": "90cd0a3e-0590-4a63-bcda-cd346421b0b9",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": "rules_overview",
+      "path": ".0agnostic/01_knowledge/tree_of_knowledge/00_context_chain_knowledge/03_production_reference/rules_overview.md"
+    },
+    {
+      "resource_id": "218b7644-f28f-4857-997f-53d27b5d672a",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": ".0agnostic/01_knowledge/tree_of_knowledge/00_context_chain_knowledge/README.md"
+    },
+    {
+      "resource_id": "f564c833-904d-474d-8344-4c1ed1934b86",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": "VERSION",
+      "path": ".0agnostic/01_knowledge/tree_of_knowledge/00_context_chain_knowledge/_meta/VERSION.md"
+    },
+    {
+      "resource_id": "366d7dd8-3cc5-4ffd-9326-9756b26d2790",
+      "id_field": "resource_id",
+      "resource_type": "rule",
+      "resource_name": "audit_avenues_on_creation",
+      "path": ".0agnostic/02_rules/dynamic/audit_avenues_on_creation.md"
+    },
+    {
+      "resource_id": "be434e08-2dc0-485a-8fb7-862bf84b7698",
+      "id_field": "resource_id",
+      "resource_type": "rule",
+      "resource_name": "escalate_on_scope_violation",
+      "path": ".0agnostic/02_rules/dynamic/escalate_on_scope_violation.md"
+    },
+    {
+      "resource_id": "4e6e0c7d-91a7-4ca0-bbd6-ff230d8cf586",
+      "id_field": "resource_id",
+      "resource_type": "rule",
+      "resource_name": "sync_after_agnostic_edit",
+      "path": ".0agnostic/02_rules/dynamic/sync_after_agnostic_edit.md"
+    },
+    {
+      "resource_id": "c1c37ba9-a1a9-42ab-824a-6113ad41b330",
+      "id_field": "resource_id",
+      "resource_type": "rule",
+      "resource_name": "validate_before_modify",
+      "path": ".0agnostic/02_rules/dynamic/validate_before_modify.md"
+    },
+    {
+      "resource_id": "a6414b4a-572f-4831-85ab-9778529052be",
+      "id_field": "resource_id",
+      "resource_type": "rule",
+      "resource_name": "avenue_redundancy",
+      "path": ".0agnostic/02_rules/static/avenue_redundancy.md"
+    },
+    {
+      "resource_id": "970b14ee-f55a-4b40-b789-6b3dd7a02c65",
+      "id_field": "resource_id",
+      "resource_type": "rule",
+      "resource_name": "chain_integrity",
+      "path": ".0agnostic/02_rules/static/chain_integrity.md"
+    },
+    {
+      "resource_id": "a8cfc7d1-81e3-4a96-b719-72c35772ff62",
+      "id_field": "resource_id",
+      "resource_type": "rule",
+      "resource_name": "context_traversal",
+      "path": ".0agnostic/02_rules/static/context_traversal.md"
+    },
+    {
+      "resource_id": "17c6b5a7-d2b8-4e7b-b026-3dc554ce7131",
+      "id_field": "resource_id",
+      "resource_type": "rule",
+      "resource_name": "lean_static_context",
+      "path": ".0agnostic/02_rules/static/lean_static_context.md"
+    },
+    {
+      "resource_id": "d7a60949-b285-4694-a184-59d5ad6514d4",
+      "id_field": "resource_id",
+      "resource_type": "rule",
+      "resource_name": "single_source_of_truth",
+      "path": ".0agnostic/02_rules/static/single_source_of_truth.md"
+    },
+    {
+      "resource_id": "acd63857-1000-48e2-ac62-8d5564f90e22",
+      "id_field": "resource_id",
+      "resource_type": "protocol",
+      "resource_name": "avenue_audit_protocol",
+      "path": ".0agnostic/03_protocols/avenue_audit_protocol.md"
+    },
+    {
+      "resource_id": "2b0181ed-0333-4e4b-8a9e-553621bc1644",
+      "id_field": "resource_id",
+      "resource_type": "protocol",
+      "resource_name": "chain_repair_protocol",
+      "path": ".0agnostic/03_protocols/chain_repair_protocol.md"
+    },
+    {
+      "resource_id": "d216a87c-58dd-4dfa-8f92-aa0b20988846",
+      "id_field": "resource_id",
+      "resource_type": "protocol",
+      "resource_name": "chain_validation_protocol",
+      "path": ".0agnostic/03_protocols/chain_validation_protocol.md"
+    },
+    {
+      "resource_id": "b95c084b-8964-4339-a345-6bfbfe278df6",
+      "id_field": "resource_id",
+      "resource_type": "protocol",
+      "resource_name": "entity_chain_setup_protocol",
+      "path": ".0agnostic/03_protocols/entity_chain_setup_protocol.md"
+    },
+    {
+      "resource_id": "cba30e00-4f4a-4929-b943-88752a36278f",
+      "id_field": "resource_id",
+      "resource_type": "protocol",
+      "resource_name": "stage_report_protocol",
+      "path": ".0agnostic/03_protocols/stage_report_protocol.md"
+    },
+    {
+      "resource_id": "df1cffcf-5e20-47f4-b9ed-4b96ca981241",
+      "id_field": "resource_id",
+      "resource_type": "handoff",
+      "resource_name": "layer_report",
+      "path": ".0agnostic/05_handoff_documents/02_outgoing/01_to_above/layer_report.md"
+    },
+    {
+      "resource_id": "d6f4f275-02fe-4dbe-b5be-f377254b7eb6",
+      "id_field": "resource_id",
+      "resource_type": "handoff",
+      "resource_name": "stages_report",
+      "path": ".0agnostic/05_handoff_documents/02_outgoing/01_to_above/stages_report.md"
+    },
+    {
+      "resource_id": "7a6a7e45-70d6-47e2-91c9-8e477e9da75b",
+      "id_field": "resource_id",
+      "resource_type": "handoff",
+      "resource_name": "layer_report",
+      "path": ".0agnostic/05_handoff_documents/02_outgoing/03_to_below/layer_report.md"
+    },
+    {
+      "resource_id": "75b359f0-f47a-49d2-84d2-9fb4109632d5",
+      "id_field": "resource_id",
+      "resource_type": "handoff",
+      "resource_name": "stages_report",
+      "path": ".0agnostic/05_handoff_documents/02_outgoing/03_to_below/stages_report.md"
+    },
+    {
+      "resource_id": "9cf6e0c7-cce0-4195-b646-d2668f7fae2c",
+      "id_field": "resource_id",
+      "resource_type": "skill",
+      "resource_name": "SKILL",
+      "path": ".0agnostic/05_skills/avenue-check/SKILL.md"
+    },
+    {
+      "resource_id": "0be2b70d-2734-4ffa-bafa-46dd3cbeefe2",
+      "id_field": "resource_id",
+      "resource_type": "skill",
+      "resource_name": "SKILL",
+      "path": ".0agnostic/05_skills/chain-validate/SKILL.md"
+    },
+    {
+      "resource_id": "51daa2e5-35c1-4523-8580-efb00f5ca4a2",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "tool_boilerplate",
+      "path": ".1merge/.1codex_merge/1_overrides/tool_boilerplate.md"
+    },
+    {
+      "resource_id": "4cf68151-106a-4590-85e4-fcd6684e53dd",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "tool_additions",
+      "path": ".1merge/.1codex_merge/2_additions/tool_additions.md"
+    },
+    {
+      "resource_id": "1676069e-3759-4c93-9dc5-bd395ae73a49",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "context-chain-context",
+      "path": ".claude/rules/context-chain-context.md"
+    },
+    {
+      "resource_id": "ea3f4d94-fa39-4b87-b5f2-afd7d238d19e",
+      "id_field": "resource_id",
+      "resource_type": "agnostic",
+      "resource_name": "0AGNOSTIC",
+      "path": "0AGNOSTIC.md"
+    },
+    {
+      "resource_id": "c82ce4da-d7b6-45e5-ab9d-c67c34107be3",
+      "id_field": "resource_id",
+      "resource_type": "index",
+      "resource_name": "0INDEX",
+      "path": "0INDEX.md"
+    },
+    {
+      "resource_id": "4205cf87-11a0-4247-9b73-e17bf5258e69",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "README.md"
+    },
+    {
+      "resource_id": "6aa151a4-f6c2-4a94-9323-2cc3dae4ccc7",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "context_chain_system",
+      "path": "context_chain_system.md"
+    },
+    {
+      "resource_id": "63337039-4845-4ccf-b667-a5bdc489df33",
+      "id_field": "resource_id",
+      "resource_type": "agnostic",
+      "resource_name": "0AGNOSTIC",
+      "path": "layer_2_group/0AGNOSTIC.md"
+    },
+    {
+      "resource_id": "9691fc04-818a-4ab3-8c30-2a72a611a35d",
+      "id_field": "resource_id",
+      "resource_type": "agnostic",
+      "resource_name": "0AGNOSTIC",
+      "path": "layer_2_group/layer_2_00_layer_registry/0AGNOSTIC.md"
+    },
+    {
+      "resource_id": "3975a2e4-477c-4bad-840c-b7de2ecf604a",
+      "id_field": "resource_id",
+      "resource_type": "agnostic",
+      "resource_name": "0AGNOSTIC",
+      "path": "layer_2_group/layer_2_01_ai_manager_system/0AGNOSTIC.md"
+    },
+    {
+      "resource_id": "8aff89b9-b059-42e6-bce6-d900dd572919",
+      "id_field": "resource_id",
+      "resource_type": "agnostic",
+      "resource_name": "0AGNOSTIC",
+      "path": "layer_2_group/layer_2_02_manager_handoff_documents/0AGNOSTIC.md"
+    },
+    {
+      "resource_id": "221b0264-d750-4317-86b1-7b0276cefa6e",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "layer_report",
+      "path": "layer_2_group/layer_2_02_manager_handoff_documents/outgoing/to_above/layer_report.md"
+    },
+    {
+      "resource_id": "e0707ede-32c1-4ead-b516-fad3ca4ce829",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "layer_report",
+      "path": "layer_2_group/layer_2_02_manager_handoff_documents/outgoing/to_below/layer_report.md"
+    },
+    {
+      "resource_id": "d8444b11-b1fc-4852-a2db-23ec39a6e8f4",
+      "id_field": "resource_id",
+      "resource_type": "agnostic",
+      "resource_name": "0AGNOSTIC",
+      "path": "layer_2_group/layer_2_99_stages/0AGNOSTIC.md"
+    },
+    {
+      "resource_id": "f09f92b0-7eaa-4cd6-a7e7-6cf536c17c15",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "layer_2_99_stages_orchestrator.gab",
+      "path": "layer_2_group/layer_2_99_stages/layer_2_99_stages_orchestrator.gab.jsonld"
+    },
+    {
+      "resource_id": "e93e520a-c486-466c-819b-4cb757d7e467",
+      "id_field": "resource_id",
+      "resource_type": "agnostic",
+      "resource_name": "0AGNOSTIC",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_00_stage_registry/0AGNOSTIC.md"
+    },
+    {
+      "resource_id": "cc631b0a-70f5-42f0-a942-712da65530e2",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "stage_2_00_stage_registry_agent",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_00_stage_registry/stage_2_00_stage_registry_agent.jsonld"
+    },
+    {
+      "resource_id": "31976b60-126a-4cb7-9f4b-2e6f9794b28c",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "stage_index",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_00_stage_registry/stage_index.json"
+    },
+    {
+      "resource_id": "3b023004-e06f-439c-a147-5046e517dbfb",
+      "id_field": "resource_id",
+      "resource_type": "agnostic",
+      "resource_name": "0AGNOSTIC",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_01_request_gathering/0AGNOSTIC.md"
+    },
+    {
+      "resource_id": "80fd9fca-07f1-460c-8e37-9c5238bbe6dc",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_01_request_gathering/outputs/requests/tree_of_needs/00_context_survives_boundaries/01_knowledge_organization/README.md"
+    },
+    {
+      "resource_id": "d493d706-1cfd-4000-b52d-0d61c66120dc",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_01_request_gathering/outputs/requests/tree_of_needs/00_context_survives_boundaries/01_knowledge_organization/need_01_three_tier_architecture/README.md"
+    },
+    {
+      "resource_id": "18f82772-1e3b-4db5-9819-cf653bdd2b71",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_01_request_gathering/outputs/requests/tree_of_needs/00_context_survives_boundaries/01_knowledge_organization/need_01_three_tier_architecture/requirements/README.md"
+    },
+    {
+      "resource_id": "1e23b80a-b439-4f71-8c2f-5f2698f1386e",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "REQ-01_tier_definitions",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_01_request_gathering/outputs/requests/tree_of_needs/00_context_survives_boundaries/01_knowledge_organization/need_01_three_tier_architecture/requirements/REQ-01_tier_definitions.md"
+    },
+    {
+      "resource_id": "ec84dd8b-08de-48d6-a44f-4027b9e5aff0",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "REQ-02_knowledge_file_standards",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_01_request_gathering/outputs/requests/tree_of_needs/00_context_survives_boundaries/01_knowledge_organization/need_01_three_tier_architecture/requirements/REQ-02_knowledge_file_standards.md"
+    },
+    {
+      "resource_id": "feaeb5d7-c795-48a3-a95e-15ecef60c620",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "REQ-03_pointer_standards",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_01_request_gathering/outputs/requests/tree_of_needs/00_context_survives_boundaries/01_knowledge_organization/need_01_three_tier_architecture/requirements/REQ-03_pointer_standards.md"
+    },
+    {
+      "resource_id": "36177f83-a610-4cd3-86cf-e5b8da206ba4",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_01_request_gathering/outputs/requests/tree_of_needs/00_context_survives_boundaries/01_knowledge_organization/need_01_three_tier_architecture/user_stories/README.md"
+    },
+    {
+      "resource_id": "2f003608-3558-4175-9fda-42fdadfa27f6",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "US-01_agent_regains_competence",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_01_request_gathering/outputs/requests/tree_of_needs/00_context_survives_boundaries/01_knowledge_organization/need_01_three_tier_architecture/user_stories/US-01_agent_regains_competence.md"
+    },
+    {
+      "resource_id": "0d4714f7-45c9-4cdc-a86a-ce3a717cb5ee",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "US-02_agent_finds_details",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_01_request_gathering/outputs/requests/tree_of_needs/00_context_survives_boundaries/01_knowledge_organization/need_01_three_tier_architecture/user_stories/US-02_agent_finds_details.md"
+    },
+    {
+      "resource_id": "bc22f16e-2b37-4007-9db6-eeb16001a8d5",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "US-03_developer_knows_placement",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_01_request_gathering/outputs/requests/tree_of_needs/00_context_survives_boundaries/01_knowledge_organization/need_01_three_tier_architecture/user_stories/US-03_developer_knows_placement.md"
+    },
+    {
+      "resource_id": "58600ca3-847e-4cf3-ba73-ef797c23325d",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "US-04_new_entity_follows_pattern",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_01_request_gathering/outputs/requests/tree_of_needs/00_context_survives_boundaries/01_knowledge_organization/need_01_three_tier_architecture/user_stories/US-04_new_entity_follows_pattern.md"
+    },
+    {
+      "resource_id": "95919828-9825-4dc7-8180-e827cf962a50",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_01_request_gathering/outputs/requests/tree_of_needs/00_context_survives_boundaries/01_knowledge_organization/need_02_knowledge_graph/README.md"
+    },
+    {
+      "resource_id": "9e4bebc9-5246-4b1b-b469-fd62e33db0b0",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_01_request_gathering/outputs/requests/tree_of_needs/00_context_survives_boundaries/01_knowledge_organization/need_02_knowledge_graph/requirements/README.md"
+    },
+    {
+      "resource_id": "18ada08b-f57d-4f45-894d-d5c3ca1eb3df",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "REQ-01_graph_schema",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_01_request_gathering/outputs/requests/tree_of_needs/00_context_survives_boundaries/01_knowledge_organization/need_02_knowledge_graph/requirements/REQ-01_graph_schema.md"
+    },
+    {
+      "resource_id": "391e5b3e-32c5-4d6f-8afb-418c09af8ad3",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "REQ-02_graph_generation",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_01_request_gathering/outputs/requests/tree_of_needs/00_context_survives_boundaries/01_knowledge_organization/need_02_knowledge_graph/requirements/REQ-02_graph_generation.md"
+    },
+    {
+      "resource_id": "f336ec72-40b6-443e-90d5-88f3de7d510d",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "REQ-03_graph_location",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_01_request_gathering/outputs/requests/tree_of_needs/00_context_survives_boundaries/01_knowledge_organization/need_02_knowledge_graph/requirements/REQ-03_graph_location.md"
+    },
+    {
+      "resource_id": "af551ab3-8096-4453-b291-ae9dd4ea3b95",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_01_request_gathering/outputs/requests/tree_of_needs/00_context_survives_boundaries/01_knowledge_organization/need_02_knowledge_graph/user_stories/README.md"
+    },
+    {
+      "resource_id": "acdb6faa-2208-4491-851b-9d129a76c6fa",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "US-01_agent_discovers_related_entities",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_01_request_gathering/outputs/requests/tree_of_needs/00_context_survives_boundaries/01_knowledge_organization/need_02_knowledge_graph/user_stories/US-01_agent_discovers_related_entities.md"
+    },
+    {
+      "resource_id": "03b34c7b-b44e-4c1c-8e1c-b33611c46091",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "US-02_agent_finds_shortest_context_path",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_01_request_gathering/outputs/requests/tree_of_needs/00_context_survives_boundaries/01_knowledge_organization/need_02_knowledge_graph/user_stories/US-02_agent_finds_shortest_context_path.md"
+    },
+    {
+      "resource_id": "4b61bf89-3ee5-4770-9229-dbc61b7782e3",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "US-03_script_regenerates_graph",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_01_request_gathering/outputs/requests/tree_of_needs/00_context_survives_boundaries/01_knowledge_organization/need_02_knowledge_graph/user_stories/US-03_script_regenerates_graph.md"
+    },
+    {
+      "resource_id": "504a0041-1850-4490-a879-16108c5299ea",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "US-04_developer_validates_chain_integrity",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_01_request_gathering/outputs/requests/tree_of_needs/00_context_survives_boundaries/01_knowledge_organization/need_02_knowledge_graph/user_stories/US-04_developer_validates_chain_integrity.md"
+    },
+    {
+      "resource_id": "8be5cb48-1cf6-49ed-8748-12e094c76a75",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_01_request_gathering/outputs/requests/tree_of_needs/00_context_survives_boundaries/01_knowledge_organization/need_03_reference_format/README.md"
+    },
+    {
+      "resource_id": "7dade600-acca-444a-a739-f275f98923db",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_01_request_gathering/outputs/requests/tree_of_needs/00_context_survives_boundaries/01_knowledge_organization/need_03_reference_format/requirements/README.md"
+    },
+    {
+      "resource_id": "fcb14cac-e21f-430c-a6e9-03b48ca5611e",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "REQ-01_reference_format",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_01_request_gathering/outputs/requests/tree_of_needs/00_context_survives_boundaries/01_knowledge_organization/need_03_reference_format/requirements/REQ-01_reference_format.md"
+    },
+    {
+      "resource_id": "4861647b-fe0f-4f3f-a066-f51ac87c24d8",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "REQ-02_directional_rules",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_01_request_gathering/outputs/requests/tree_of_needs/00_context_survives_boundaries/01_knowledge_organization/need_03_reference_format/requirements/REQ-02_directional_rules.md"
+    },
+    {
+      "resource_id": "2fa76925-dd19-4433-bd55-8a0749e9af20",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_01_request_gathering/outputs/requests/tree_of_needs/00_context_survives_boundaries/01_knowledge_organization/need_03_reference_format/user_stories/README.md"
+    },
+    {
+      "resource_id": "ae4f8e33-c33b-45f7-9f1d-d1c8c2ba67bd",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "US-01_agent_follows_reference",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_01_request_gathering/outputs/requests/tree_of_needs/00_context_survives_boundaries/01_knowledge_organization/need_03_reference_format/user_stories/US-01_agent_follows_reference.md"
+    },
+    {
+      "resource_id": "bf455f6d-00ed-4994-9226-f93e4d2a09c9",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "US-02_script_validates_references",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_01_request_gathering/outputs/requests/tree_of_needs/00_context_survives_boundaries/01_knowledge_organization/need_03_reference_format/user_stories/US-02_script_validates_references.md"
+    },
+    {
+      "resource_id": "6eb866a4-52bd-47e4-8207-dcc3f544c938",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "US-03_developer_creates_knowledge_file",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_01_request_gathering/outputs/requests/tree_of_needs/00_context_survives_boundaries/01_knowledge_organization/need_03_reference_format/user_stories/US-03_developer_creates_knowledge_file.md"
+    },
+    {
+      "resource_id": "61847c71-dea0-49df-a655-a4ff9b3a376a",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_01_request_gathering/outputs/requests/tree_of_needs/00_context_survives_boundaries/02_knowledge_lifecycle/README.md"
+    },
+    {
+      "resource_id": "f64c6561-151e-4b24-a2ce-295609df65c0",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_01_request_gathering/outputs/requests/tree_of_needs/00_context_survives_boundaries/02_knowledge_lifecycle/need_01_consolidation_process/README.md"
+    },
+    {
+      "resource_id": "8ba37699-f4f5-429c-9e73-6f1d22438fde",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_01_request_gathering/outputs/requests/tree_of_needs/00_context_survives_boundaries/02_knowledge_lifecycle/need_01_consolidation_process/requirements/README.md"
+    },
+    {
+      "resource_id": "6053ae1c-dc37-4a86-ab8b-0d2d6c354563",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "REQ-01_trigger_definition",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_01_request_gathering/outputs/requests/tree_of_needs/00_context_survives_boundaries/02_knowledge_lifecycle/need_01_consolidation_process/requirements/REQ-01_trigger_definition.md"
+    },
+    {
+      "resource_id": "5c1aadd0-7075-4473-9070-96a99bcab88b",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "REQ-02_consolidation_protocol",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_01_request_gathering/outputs/requests/tree_of_needs/00_context_survives_boundaries/02_knowledge_lifecycle/need_01_consolidation_process/requirements/REQ-02_consolidation_protocol.md"
+    },
+    {
+      "resource_id": "840503e7-8b13-418a-a9d8-718669f6e10b",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "REQ-03_tooling",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_01_request_gathering/outputs/requests/tree_of_needs/00_context_survives_boundaries/02_knowledge_lifecycle/need_01_consolidation_process/requirements/REQ-03_tooling.md"
+    },
+    {
+      "resource_id": "ec515678-0e79-4b00-814b-c0d5c82913dc",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_01_request_gathering/outputs/requests/tree_of_needs/00_context_survives_boundaries/02_knowledge_lifecycle/need_01_consolidation_process/user_stories/README.md"
+    },
+    {
+      "resource_id": "403d5573-8547-409e-bf84-854e99c10fee",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "US-01_developer_distills_research",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_01_request_gathering/outputs/requests/tree_of_needs/00_context_survives_boundaries/02_knowledge_lifecycle/need_01_consolidation_process/user_stories/US-01_developer_distills_research.md"
+    },
+    {
+      "resource_id": "60e4160d-aa0d-4c5c-99d5-b01bd8bc3c8c",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "US-02_agent_triggers_consolidation_reminder",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_01_request_gathering/outputs/requests/tree_of_needs/00_context_survives_boundaries/02_knowledge_lifecycle/need_01_consolidation_process/user_stories/US-02_agent_triggers_consolidation_reminder.md"
+    },
+    {
+      "resource_id": "00df51bb-1795-41dc-acfa-91591585a4d2",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "US-03_developer_verifies_consolidation_quality",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_01_request_gathering/outputs/requests/tree_of_needs/00_context_survives_boundaries/02_knowledge_lifecycle/need_01_consolidation_process/user_stories/US-03_developer_verifies_consolidation_quality.md"
+    },
+    {
+      "resource_id": "4ab47b24-0e74-44c9-9ab3-310240c53785",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_01_request_gathering/outputs/requests/tree_of_needs/00_context_survives_boundaries/02_knowledge_lifecycle/need_02_staleness_detection/README.md"
+    },
+    {
+      "resource_id": "b5429122-b02c-4197-8cb8-a8c20c488cbe",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_01_request_gathering/outputs/requests/tree_of_needs/00_context_survives_boundaries/02_knowledge_lifecycle/need_02_staleness_detection/requirements/README.md"
+    },
+    {
+      "resource_id": "54915394-7fb2-41af-9963-db70c272d84d",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "REQ-01_detection_mechanism",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_01_request_gathering/outputs/requests/tree_of_needs/00_context_survives_boundaries/02_knowledge_lifecycle/need_02_staleness_detection/requirements/REQ-01_detection_mechanism.md"
+    },
+    {
+      "resource_id": "91b1c765-f4a2-4f1a-a779-54da72dca7ec",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "REQ-02_reporting",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_01_request_gathering/outputs/requests/tree_of_needs/00_context_survives_boundaries/02_knowledge_lifecycle/need_02_staleness_detection/requirements/REQ-02_reporting.md"
+    },
+    {
+      "resource_id": "8037ee0b-3546-4c90-ad82-3a1dcfa7ab0b",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_01_request_gathering/outputs/requests/tree_of_needs/00_context_survives_boundaries/02_knowledge_lifecycle/need_02_staleness_detection/user_stories/README.md"
+    },
+    {
+      "resource_id": "20eb49e6-07a5-47b4-a630-21f247c7aea0",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "US-01_developer_checks_freshness",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_01_request_gathering/outputs/requests/tree_of_needs/00_context_survives_boundaries/02_knowledge_lifecycle/need_02_staleness_detection/user_stories/US-01_developer_checks_freshness.md"
+    },
+    {
+      "resource_id": "89ee34cb-d13e-4cef-a92a-e72a6af8eee6",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "US-02_agent_flags_stale_knowledge",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_01_request_gathering/outputs/requests/tree_of_needs/00_context_survives_boundaries/02_knowledge_lifecycle/need_02_staleness_detection/user_stories/US-02_agent_flags_stale_knowledge.md"
+    },
+    {
+      "resource_id": "69443c2f-55d4-456a-b7a2-bf1fa05beaa1",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_01_request_gathering/outputs/requests/tree_of_needs/00_context_survives_boundaries/03_knowledge_retrieval/README.md"
+    },
+    {
+      "resource_id": "64ebf8e7-9a53-4e45-8ee6-414050b74248",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_01_request_gathering/outputs/requests/tree_of_needs/00_context_survives_boundaries/03_knowledge_retrieval/need_01_scored_retrieval/README.md"
+    },
+    {
+      "resource_id": "645cf795-ec75-4419-8124-e29a5e509a04",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_01_request_gathering/outputs/requests/tree_of_needs/00_context_survives_boundaries/03_knowledge_retrieval/need_01_scored_retrieval/requirements/README.md"
+    },
+    {
+      "resource_id": "de873c6b-a8da-4891-8d6a-2054929d8de1",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "REQ-01_scoring_function",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_01_request_gathering/outputs/requests/tree_of_needs/00_context_survives_boundaries/03_knowledge_retrieval/need_01_scored_retrieval/requirements/REQ-01_scoring_function.md"
+    },
+    {
+      "resource_id": "814f98f1-a85a-474b-b71a-c65bbc81d43f",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "REQ-02_metadata_enrichment",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_01_request_gathering/outputs/requests/tree_of_needs/00_context_survives_boundaries/03_knowledge_retrieval/need_01_scored_retrieval/requirements/REQ-02_metadata_enrichment.md"
+    },
+    {
+      "resource_id": "4e795333-06d4-47c6-9796-c72f14d621d3",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "REQ-03_integration",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_01_request_gathering/outputs/requests/tree_of_needs/00_context_survives_boundaries/03_knowledge_retrieval/need_01_scored_retrieval/requirements/REQ-03_integration.md"
+    },
+    {
+      "resource_id": "b89a0594-e0e6-44b4-8a02-f231faf094fd",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_01_request_gathering/outputs/requests/tree_of_needs/00_context_survives_boundaries/03_knowledge_retrieval/need_01_scored_retrieval/user_stories/README.md"
+    },
+    {
+      "resource_id": "927c3637-3c9e-4f9a-8c2c-55515c22398f",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "US-01_agent_loads_relevant_context",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_01_request_gathering/outputs/requests/tree_of_needs/00_context_survives_boundaries/03_knowledge_retrieval/need_01_scored_retrieval/user_stories/US-01_agent_loads_relevant_context.md"
+    },
+    {
+      "resource_id": "d7bbd097-0fc5-4b05-a80a-fa05450fabda",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "US-02_agent_prioritizes_recent",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_01_request_gathering/outputs/requests/tree_of_needs/00_context_survives_boundaries/03_knowledge_retrieval/need_01_scored_retrieval/user_stories/US-02_agent_prioritizes_recent.md"
+    },
+    {
+      "resource_id": "e73a94eb-1530-4114-83d9-e8a557211e70",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "US-03_developer_tunes_scoring_weights",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_01_request_gathering/outputs/requests/tree_of_needs/00_context_survives_boundaries/03_knowledge_retrieval/need_01_scored_retrieval/user_stories/US-03_developer_tunes_scoring_weights.md"
+    },
+    {
+      "resource_id": "2e5fd3c1-cd7d-4e24-85fc-015429d49713",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_01_request_gathering/outputs/requests/tree_of_needs/00_context_survives_boundaries/03_knowledge_retrieval/need_02_chain_validation/README.md"
+    },
+    {
+      "resource_id": "8e22ed03-8178-4cca-a7ae-3f8039695307",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_01_request_gathering/outputs/requests/tree_of_needs/00_context_survives_boundaries/03_knowledge_retrieval/need_02_chain_validation/requirements/README.md"
+    },
+    {
+      "resource_id": "3969da28-3618-446b-8ae1-45c616f7a8ba",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "REQ-01_graph_based_validation",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_01_request_gathering/outputs/requests/tree_of_needs/00_context_survives_boundaries/03_knowledge_retrieval/need_02_chain_validation/requirements/REQ-01_graph_based_validation.md"
+    },
+    {
+      "resource_id": "f2fc6215-5386-4af0-b190-b8bfaae3de00",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "REQ-02_reference_validation",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_01_request_gathering/outputs/requests/tree_of_needs/00_context_survives_boundaries/03_knowledge_retrieval/need_02_chain_validation/requirements/REQ-02_reference_validation.md"
+    },
+    {
+      "resource_id": "15238fd4-78f0-4b42-af79-893802674468",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "REQ-03_staleness_integration",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_01_request_gathering/outputs/requests/tree_of_needs/00_context_survives_boundaries/03_knowledge_retrieval/need_02_chain_validation/requirements/REQ-03_staleness_integration.md"
+    },
+    {
+      "resource_id": "63802c72-d205-4b9e-9032-d3a1e0894e14",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_01_request_gathering/outputs/requests/tree_of_needs/00_context_survives_boundaries/03_knowledge_retrieval/need_02_chain_validation/user_stories/README.md"
+    },
+    {
+      "resource_id": "5a8ff40c-e54d-4394-88e8-da5334e1bea4",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "US-01_developer_runs_health_check",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_01_request_gathering/outputs/requests/tree_of_needs/00_context_survives_boundaries/03_knowledge_retrieval/need_02_chain_validation/user_stories/US-01_developer_runs_health_check.md"
+    },
+    {
+      "resource_id": "d71e5d87-4cd6-4573-994f-1bf18045f58c",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "US-02_agent_detects_broken_reference",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_01_request_gathering/outputs/requests/tree_of_needs/00_context_survives_boundaries/03_knowledge_retrieval/need_02_chain_validation/user_stories/US-02_agent_detects_broken_reference.md"
+    },
+    {
+      "resource_id": "ddf2668b-44a1-486f-ac10-395eb677aebc",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "US-03_ci_catches_chain_breakage",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_01_request_gathering/outputs/requests/tree_of_needs/00_context_survives_boundaries/03_knowledge_retrieval/need_02_chain_validation/user_stories/US-03_ci_catches_chain_breakage.md"
+    },
+    {
+      "resource_id": "f6bf1ff5-f331-4751-9419-709e819a2730",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_01_request_gathering/outputs/requests/tree_of_needs/00_context_survives_boundaries/03_knowledge_retrieval/need_03_auto_discovery/README.md"
+    },
+    {
+      "resource_id": "8c218fb2-b2dd-45a1-9f15-54705413bff5",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_01_request_gathering/outputs/requests/tree_of_needs/00_context_survives_boundaries/04_data_based_avenue_comparison/README.md"
+    },
+    {
+      "resource_id": "9a018d99-f67c-45ad-b88c-2ae5f4fea55b",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_01_request_gathering/outputs/requests/tree_of_needs/00_context_survives_boundaries/04_data_based_avenue_comparison/need_01_avenue_benchmarking/README.md"
+    },
+    {
+      "resource_id": "19f0b606-69bd-4229-9f1a-3c669f47e48a",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_01_request_gathering/outputs/requests/tree_of_needs/00_context_survives_boundaries/04_data_based_avenue_comparison/need_01_avenue_benchmarking/requirements/README.md"
+    },
+    {
+      "resource_id": "4ba86277-fb25-4844-b9cc-5156ecaec816",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "REQ-01_capability_measurement",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_01_request_gathering/outputs/requests/tree_of_needs/00_context_survives_boundaries/04_data_based_avenue_comparison/need_01_avenue_benchmarking/requirements/REQ-01_capability_measurement.md"
+    },
+    {
+      "resource_id": "02c1e14f-2dad-4b6a-af34-d491b7ec432f",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "REQ-02_benchmark_data_model",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_01_request_gathering/outputs/requests/tree_of_needs/00_context_survives_boundaries/04_data_based_avenue_comparison/need_01_avenue_benchmarking/requirements/REQ-02_benchmark_data_model.md"
+    },
+    {
+      "resource_id": "b77862e2-bd9d-4e67-8574-7a23f17d88c9",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "REQ-03_ranking_derivation",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_01_request_gathering/outputs/requests/tree_of_needs/00_context_survives_boundaries/04_data_based_avenue_comparison/need_01_avenue_benchmarking/requirements/REQ-03_ranking_derivation.md"
+    },
+    {
+      "resource_id": "34bbc69d-31ec-41ee-adf6-4b4a6e5b095d",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_01_request_gathering/outputs/requests/tree_of_needs/00_context_survives_boundaries/04_data_based_avenue_comparison/need_01_avenue_benchmarking/user_stories/README.md"
+    },
+    {
+      "resource_id": "d5caab9e-2b42-4414-beaf-661979a2c732",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "US-01_developer_compares_avenues",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_01_request_gathering/outputs/requests/tree_of_needs/00_context_survives_boundaries/04_data_based_avenue_comparison/need_01_avenue_benchmarking/user_stories/US-01_developer_compares_avenues.md"
+    },
+    {
+      "resource_id": "57b875cd-a686-44eb-b4fb-6eaef63106d7",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "US-02_agent_recommends_avenue",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_01_request_gathering/outputs/requests/tree_of_needs/00_context_survives_boundaries/04_data_based_avenue_comparison/need_01_avenue_benchmarking/user_stories/US-02_agent_recommends_avenue.md"
+    },
+    {
+      "resource_id": "3edb2f14-b386-40f5-beb4-48d1f18438fd",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_01_request_gathering/outputs/requests/tree_of_needs/00_context_survives_boundaries/04_data_based_avenue_comparison/need_02_operation_measurement/README.md"
+    },
+    {
+      "resource_id": "47d9393e-2d51-4696-bfd8-89af4dcdc943",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_01_request_gathering/outputs/requests/tree_of_needs/00_context_survives_boundaries/04_data_based_avenue_comparison/need_02_operation_measurement/requirements/README.md"
+    },
+    {
+      "resource_id": "ecc5ae2c-d0a1-4642-8126-15221f967dcb",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "REQ-01_operation_taxonomy",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_01_request_gathering/outputs/requests/tree_of_needs/00_context_survives_boundaries/04_data_based_avenue_comparison/need_02_operation_measurement/requirements/REQ-01_operation_taxonomy.md"
+    },
+    {
+      "resource_id": "7d38fb79-7db1-43b4-9cff-e6ccbff9bc9c",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "REQ-02_operation_benchmarks",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_01_request_gathering/outputs/requests/tree_of_needs/00_context_survives_boundaries/04_data_based_avenue_comparison/need_02_operation_measurement/requirements/REQ-02_operation_benchmarks.md"
+    },
+    {
+      "resource_id": "d8f0a830-47bb-4376-96c8-b0ea761fa6fe",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_01_request_gathering/outputs/requests/tree_of_needs/00_context_survives_boundaries/04_data_based_avenue_comparison/need_02_operation_measurement/user_stories/README.md"
+    },
+    {
+      "resource_id": "895c946d-eecb-4984-a798-15086b99ea82",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "US-01_developer_evaluates_writes",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_01_request_gathering/outputs/requests/tree_of_needs/00_context_survives_boundaries/04_data_based_avenue_comparison/need_02_operation_measurement/user_stories/US-01_developer_evaluates_writes.md"
+    },
+    {
+      "resource_id": "ceadad1c-f5ba-493a-a327-7aee3e09e89f",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_01_request_gathering/outputs/requests/tree_of_needs/00_context_survives_boundaries/04_data_based_avenue_comparison/need_03_customizable_importance/README.md"
+    },
+    {
+      "resource_id": "da2ab441-3102-43a1-95ff-0fd05d0c6d47",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_01_request_gathering/outputs/requests/tree_of_needs/00_context_survives_boundaries/04_data_based_avenue_comparison/need_03_customizable_importance/requirements/README.md"
+    },
+    {
+      "resource_id": "aa72bce4-d85f-4f86-b241-ffc32072aec8",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "REQ-01_importance_dimensions",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_01_request_gathering/outputs/requests/tree_of_needs/00_context_survives_boundaries/04_data_based_avenue_comparison/need_03_customizable_importance/requirements/REQ-01_importance_dimensions.md"
+    },
+    {
+      "resource_id": "c864e679-5667-4f94-a79e-e21e5429534b",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "REQ-02_project_customization",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_01_request_gathering/outputs/requests/tree_of_needs/00_context_survives_boundaries/04_data_based_avenue_comparison/need_03_customizable_importance/requirements/REQ-02_project_customization.md"
+    },
+    {
+      "resource_id": "1cb14a24-ff6e-4a62-9b58-9fca2e320d80",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "REQ-03_decision_matrix",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_01_request_gathering/outputs/requests/tree_of_needs/00_context_survives_boundaries/04_data_based_avenue_comparison/need_03_customizable_importance/requirements/REQ-03_decision_matrix.md"
+    },
+    {
+      "resource_id": "4c05234e-5bf4-42f9-bc90-d60874ae8fb9",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_01_request_gathering/outputs/requests/tree_of_needs/00_context_survives_boundaries/04_data_based_avenue_comparison/need_03_customizable_importance/user_stories/README.md"
+    },
+    {
+      "resource_id": "a3c054f9-ec5b-4283-b8e3-4fcd30f1273a",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "US-01_project_custom_recommendation",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_01_request_gathering/outputs/requests/tree_of_needs/00_context_survives_boundaries/04_data_based_avenue_comparison/need_03_customizable_importance/user_stories/US-01_project_custom_recommendation.md"
+    },
+    {
+      "resource_id": "c9912856-871c-4860-8c72-5c25610e3aeb",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_01_request_gathering/outputs/requests/tree_of_needs/00_context_survives_boundaries/README.md"
+    },
+    {
+      "resource_id": "d52906d5-ba3e-43f8-8ef6-8c073110bf61",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "CHANGELOG",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_01_request_gathering/outputs/requests/tree_of_needs/_meta/CHANGELOG.md"
+    },
+    {
+      "resource_id": "d4c459a7-9c2b-4393-b1a9-3f486d0f1017",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "DEPENDENCIES",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_01_request_gathering/outputs/requests/tree_of_needs/_meta/DEPENDENCIES.md"
+    },
+    {
+      "resource_id": "f3b71a10-ea6d-4ee7-a9de-eb092d1e9747",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "VERSION",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_01_request_gathering/outputs/requests/tree_of_needs/_meta/VERSION.md"
+    },
+    {
+      "resource_id": "c0ecf5aa-5474-4b5e-b649-1d619d60d526",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "stage_report",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_01_request_gathering/outputs/stage_report.md"
+    },
+    {
+      "resource_id": "cd0740ee-8dc2-4bc9-bc54-e5a5fe99d98d",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "stage_2_01_request_gathering_agent",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_01_request_gathering/stage_2_01_request_gathering_agent.jsonld"
+    },
+    {
+      "resource_id": "a1857726-0ee2-453f-93af-cdf25f330023",
+      "id_field": "resource_id",
+      "resource_type": "agnostic",
+      "resource_name": "0AGNOSTIC",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_02_research/0AGNOSTIC.md"
+    },
+    {
+      "resource_id": "594b24d1-a976-411b-b49f-c74c83c906e7",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "context_system_vision",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_02_research/outputs/by_topic/01_vision/context_system_vision.md"
+    },
+    {
+      "resource_id": "73c9e7ad-5a29-49a0-aac5-de1e45bea65f",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "problems_and_vision",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_02_research/outputs/by_topic/02_problem_analysis/problems_and_vision.md"
+    },
+    {
+      "resource_id": "fa72d574-66be-474a-a8d2-b8e1427b3a7d",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "rule_propagation_problem",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_02_research/outputs/by_topic/02_problem_analysis/rule_propagation_problem.md"
+    },
+    {
+      "resource_id": "656101b3-f748-487c-a129-252b3b209fc1",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "obstacles",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_02_research/outputs/by_topic/03_obstacles/obstacles.md"
+    },
+    {
+      "resource_id": "b3b245b7-b606-4500-a9fd-69215a20cab5",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "skill_reliability_per_tool",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_02_research/outputs/by_topic/03_obstacles/skill_reliability_per_tool.md"
+    },
+    {
+      "resource_id": "6f90ee3f-baca-436f-9d04-37124ea8999a",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_02_research/outputs/by_topic/04_design/0agnostic_system/README.md"
+    },
+    {
+      "resource_id": "88f4c099-31cd-419d-a8d9-2a99cca21c8a",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "internal_structure",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_02_research/outputs/by_topic/04_design/0agnostic_system/internal_structure.md"
+    },
+    {
+      "resource_id": "d3e45893-b00c-4b3c-a23c-8465e36dd364",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "merge_system",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_02_research/outputs/by_topic/04_design/0agnostic_system/merge_system.md"
+    },
+    {
+      "resource_id": "f82271cb-3534-44a4-a3da-88d86efd9e81",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "multi_avenue_redundancy",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_02_research/outputs/by_topic/04_design/0agnostic_system/multi_avenue_redundancy.md"
+    },
+    {
+      "resource_id": "fde0b69a-87c7-4a8d-a48d-a7d647b7948f",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "sync_system",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_02_research/outputs/by_topic/04_design/0agnostic_system/sync_system.md"
+    },
+    {
+      "resource_id": "c4923dfc-e095-49fa-a749-270fdf19968f",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "referencing_methods_and_skill_invocation",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_02_research/outputs/by_topic/04_design/referencing_methods_and_skill_invocation.md"
+    },
+    {
+      "resource_id": "4d0c488b-581d-44e2-8884-f3a67cfcb424",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "sub_layer_migration_map",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_02_research/outputs/by_topic/04_design/sub_layer_migration_map.md"
+    },
+    {
+      "resource_id": "51d0055c-46ef-45b2-9edd-49e0b05f50e2",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "sublayers_vs_dot_folders",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_02_research/outputs/by_topic/04_design/sublayers_vs_dot_folders.md"
+    },
+    {
+      "resource_id": "f3f6a6e5-0fa4-4f05-ba9f-6ca9fe5b661e",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "discovery_gap_audit",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_02_research/outputs/by_topic/05_discovery/discovery_gap_audit.md"
+    },
+    {
+      "resource_id": "37de4586-e45e-4001-aa07-48aa362aad8c",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_02_research/outputs/by_topic/README.md"
+    },
+    {
+      "resource_id": "2c2a6cbe-8da3-45ca-badb-f39305f6ae64",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "architecture_decision_reference_chain",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_02_research/outputs/by_topic/architecture/architecture_decision_reference_chain.md"
+    },
+    {
+      "resource_id": "45b60f16-567a-468c-8987-c21defa3c8ab",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "selective_jsonld_navigation",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_02_research/outputs/by_topic/architecture/selective_jsonld_navigation.md"
+    },
+    {
+      "resource_id": "bb07baf9-3746-4193-ae63-a8a74acc7db3",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "agent_teams_convergence",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_02_research/outputs/by_topic/integration/agent_teams_convergence.md"
+    },
+    {
+      "resource_id": "9981cd60-2014-4445-acbb-74d82b04c9ca",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "context_chain_integration",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_02_research/outputs/by_topic/integration/context_chain_integration.md"
+    },
+    {
+      "resource_id": "add9cdf2-80f6-4c80-8e45-7d9863b7f62b",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "orchestrator_integration",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_02_research/outputs/by_topic/integration/orchestrator_integration.md"
+    },
+    {
+      "resource_id": "045d53af-f837-43cc-8e68-71223ef3875d",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "skills_integration",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_02_research/outputs/by_topic/integration/skills_integration.md"
+    },
+    {
+      "resource_id": "ec6ac5e6-661c-4150-9587-62acb474a082",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "adoption_roadmap",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_02_research/outputs/by_topic/planning/adoption_roadmap.md"
+    },
+    {
+      "resource_id": "cb475f58-7404-47f8-99cb-cf91dd0a5a1d",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "implementation_plan",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_02_research/outputs/by_topic/planning/implementation_plan.md"
+    },
+    {
+      "resource_id": "876729fa-5cb4-4975-a47f-8ca583e7db20",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "three_tier_knowledge_architecture",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_02_research/outputs/by_topic/three_tier_knowledge_architecture.md"
+    },
+    {
+      "resource_id": "6d1ca636-5f01-46f0-a14f-219aa21fa1cd",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "claude_md_audit",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_02_research/outputs/by_topic/verification/claude_md_audit.md"
+    },
+    {
+      "resource_id": "0cc202c3-3dd3-4f00-90e9-255784a6ad48",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "verification_results",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_02_research/outputs/by_topic/verification/verification_results.md"
+    },
+    {
+      "resource_id": "f71ec5f2-723c-479b-94fc-46044e85fbe4",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "stage_report",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_02_research/outputs/stage_report.md"
+    },
+    {
+      "resource_id": "0872b61f-c4b2-4a5f-b63e-995dc3552a12",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "stage_2_02_research_agent",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_02_research/stage_2_02_research_agent.jsonld"
+    },
+    {
+      "resource_id": "c813bdbb-8c45-4322-9ee9-ad3ba632e79a",
+      "id_field": "resource_id",
+      "resource_type": "agnostic",
+      "resource_name": "0AGNOSTIC",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_03_instructions/0AGNOSTIC.md"
+    },
+    {
+      "resource_id": "f4e64279-276e-491c-8288-c5193249cb46",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "stage_2_03_instructions_agent",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_03_instructions/stage_2_03_instructions_agent.jsonld"
+    },
+    {
+      "resource_id": "74999769-b10b-43dc-be9e-195d5ef66482",
+      "id_field": "resource_id",
+      "resource_type": "agnostic",
+      "resource_name": "0AGNOSTIC",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_04_design/0AGNOSTIC.md"
+    },
+    {
+      "resource_id": "e8c9720d-f8f4-42e8-af74-40a112054c99",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "01_context_chain_system_design",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_04_design/outputs/by_topic/01_context_chain_system_design.md"
+    },
+    {
+      "resource_id": "d2410ee1-56af-4c52-855f-735ec86b9b2c",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "02_0agnostic_1merge_avenue_web_integration_design",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_04_design/outputs/by_topic/02_0agnostic_1merge_avenue_web_integration_design.md"
+    },
+    {
+      "resource_id": "56521b8b-48d1-4312-be0d-f6593daf6489",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "03_propagation_chain_architecture",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_04_design/outputs/by_topic/03_propagation_chain_architecture.md"
+    },
+    {
+      "resource_id": "8a7d4f85-aaea-48d5-8a0c-d23a1cc5971a",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "04_context_propagation_funnel",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_04_design/outputs/by_topic/04_context_propagation_funnel.md"
+    },
+    {
+      "resource_id": "245a5166-cc7d-451b-a821-c7eec6556768",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "05_hierarchy_inheritance_model",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_04_design/outputs/by_topic/05_hierarchy_inheritance_model.md"
+    },
+    {
+      "resource_id": "729d00ec-1728-41a0-8fc8-458bc189651b",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "06_source_of_truth_to_avenue_flow",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_04_design/outputs/by_topic/06_source_of_truth_to_avenue_flow.md"
+    },
+    {
+      "resource_id": "5cc603bf-2a08-41aa-9b9e-6ca520890152",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "07_unified_sync_architecture",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_04_design/outputs/by_topic/07_unified_sync_architecture.md"
+    },
+    {
+      "resource_id": "1d56e791-83be-4757-9d00-0ebffe30bf7c",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "08_discovery_temperature_model",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_04_design/outputs/by_topic/08_discovery_temperature_model.md"
+    },
+    {
+      "resource_id": "be52261a-719f-4e34-8742-73c6f9c4f593",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_04_design/outputs/by_topic/README.md"
+    },
+    {
+      "resource_id": "160be65f-2171-4ac7-a729-9258b525e26f",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "00_overview",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_04_design/outputs/by_topic/propagation_funnel/01_stage_outputs_to_stage_ai_app_systems/03_stage_0agnostic_system/00_overview.md"
+    },
+    {
+      "resource_id": "55158857-718b-4c9c-9616-2e59b19f77ac",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_04_design/outputs/by_topic/propagation_funnel/01_stage_outputs_to_stage_ai_app_systems/03_stage_0agnostic_system/01_core_system/00_core_system_overview/README.md"
+    },
+    {
+      "resource_id": "d8687c66-f763-42c3-8e98-a148e10e716d",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_04_design/outputs/by_topic/propagation_funnel/01_stage_outputs_to_stage_ai_app_systems/03_stage_0agnostic_system/01_core_system/README.md"
+    },
+    {
+      "resource_id": "cab93bec-27a7-4079-a968-940dc8fb3ffc",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_04_design/outputs/by_topic/propagation_funnel/01_stage_outputs_to_stage_ai_app_systems/03_stage_0agnostic_system/02_setup_dependent/00_setup_dependent_overview/README.md"
+    },
+    {
+      "resource_id": "1a780bf5-1d6a-40ad-9f67-20f705fc821e",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_04_design/outputs/by_topic/propagation_funnel/01_stage_outputs_to_stage_ai_app_systems/03_stage_0agnostic_system/02_setup_dependent/01_os/README.md"
+    },
+    {
+      "resource_id": "1d0b90a6-04b6-4992-993e-f558d0eae21f",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_04_design/outputs/by_topic/propagation_funnel/01_stage_outputs_to_stage_ai_app_systems/03_stage_0agnostic_system/02_setup_dependent/02_environment/README.md"
+    },
+    {
+      "resource_id": "9b3d61d3-5d08-4655-ba19-4c98865ada29",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_04_design/outputs/by_topic/propagation_funnel/01_stage_outputs_to_stage_ai_app_systems/03_stage_0agnostic_system/02_setup_dependent/03_coding_apps/README.md"
+    },
+    {
+      "resource_id": "e9688528-9029-4e62-8d8c-b985d17bec1b",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_04_design/outputs/by_topic/propagation_funnel/01_stage_outputs_to_stage_ai_app_systems/03_stage_0agnostic_system/02_setup_dependent/04_ai_apps/README.md"
+    },
+    {
+      "resource_id": "b6f4d111-fa6d-476f-baf6-777494a1da7a",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_04_design/outputs/by_topic/propagation_funnel/01_stage_outputs_to_stage_ai_app_systems/03_stage_0agnostic_system/02_setup_dependent/05_plugins/README.md"
+    },
+    {
+      "resource_id": "2165bc5a-0764-4b2e-ba9e-b394e3442ab6",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_04_design/outputs/by_topic/propagation_funnel/01_stage_outputs_to_stage_ai_app_systems/03_stage_0agnostic_system/02_setup_dependent/06_mcp_servers/README.md"
+    },
+    {
+      "resource_id": "4b59b8aa-26e5-4b16-b1ee-0ca8c3a978a1",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_04_design/outputs/by_topic/propagation_funnel/01_stage_outputs_to_stage_ai_app_systems/03_stage_0agnostic_system/02_setup_dependent/07_tools_and_apis/README.md"
+    },
+    {
+      "resource_id": "1b300867-d97c-4920-b523-5f04be06e2ea",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_04_design/outputs/by_topic/propagation_funnel/01_stage_outputs_to_stage_ai_app_systems/03_stage_0agnostic_system/02_setup_dependent/08_other_setup_specifics/README.md"
+    },
+    {
+      "resource_id": "18e815e4-cc98-4211-9822-081367908e2a",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_04_design/outputs/by_topic/propagation_funnel/01_stage_outputs_to_stage_ai_app_systems/03_stage_0agnostic_system/02_setup_dependent/README.md"
+    },
+    {
+      "resource_id": "ad1a7c10-1e47-4f85-a518-0191141ae610",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_04_design/outputs/by_topic/propagation_funnel/01_stage_outputs_to_stage_ai_app_systems/03_stage_0agnostic_system/03_context_avenue_web/00_context_avenue_web_overview/README.md"
+    },
+    {
+      "resource_id": "2230d429-673e-4985-ad79-e39c53554a73",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_04_design/outputs/by_topic/propagation_funnel/01_stage_outputs_to_stage_ai_app_systems/03_stage_0agnostic_system/03_context_avenue_web/01_file_based/00_file_based_overview/README.md"
+    },
+    {
+      "resource_id": "1ba9cff8-1ee7-4f42-8ca4-fd581131415c",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": ".gitignore",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_04_design/outputs/by_topic/propagation_funnel/01_stage_outputs_to_stage_ai_app_systems/03_stage_0agnostic_system/03_context_avenue_web/02_data_based/00_data_based_overview/.gitignore"
+    },
+    {
+      "resource_id": "15ab9d6c-e043-488e-a6f2-13f35168419a",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_04_design/outputs/by_topic/propagation_funnel/01_stage_outputs_to_stage_ai_app_systems/03_stage_0agnostic_system/03_context_avenue_web/02_data_based/00_data_based_overview/README.md"
+    },
+    {
+      "resource_id": "8072d859-9c6c-4ace-95ec-9098fda237c9",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "tree_of_needs",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_04_design/outputs/by_topic/propagation_funnel/01_stage_outputs_to_stage_ai_app_systems/03_stage_0agnostic_system/03_context_avenue_web/02_data_based/00_data_based_overview/proposals/01_request_gathering/tree_of_needs.md"
+    },
+    {
+      "resource_id": "01dfacf5-0ae5-41c5-b78f-30007989e4b7",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "v1_hierarchical_schema_design",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_04_design/outputs/by_topic/propagation_funnel/01_stage_outputs_to_stage_ai_app_systems/03_stage_0agnostic_system/03_context_avenue_web/02_data_based/00_data_based_overview/proposals/04_design/v1_hierarchical_schema_design.md"
+    },
+    {
+      "resource_id": "a94b8fd2-35b8-40fb-986b-46a7f1e3ea6b",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "v2_hierarchical_aggregation_design",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_04_design/outputs/by_topic/propagation_funnel/01_stage_outputs_to_stage_ai_app_systems/03_stage_0agnostic_system/03_context_avenue_web/02_data_based/00_data_based_overview/proposals/04_design/v2_hierarchical_aggregation_design.md"
+    },
+    {
+      "resource_id": "c595e1fe-afa2-4eea-8e99-a93358adbade",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "v3_capability_rankings",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_04_design/outputs/by_topic/propagation_funnel/01_stage_outputs_to_stage_ai_app_systems/03_stage_0agnostic_system/03_context_avenue_web/02_data_based/00_data_based_overview/proposals/04_design/v3_capability_rankings.md"
+    },
+    {
+      "resource_id": "51afd590-1bab-43ab-ac08-6fd3037af297",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "v4_benchmarks_with_measurement_units",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_04_design/outputs/by_topic/propagation_funnel/01_stage_outputs_to_stage_ai_app_systems/03_stage_0agnostic_system/03_context_avenue_web/02_data_based/00_data_based_overview/proposals/04_design/v4_benchmarks_with_measurement_units.md"
+    },
+    {
+      "resource_id": "aaff36a4-9c4e-4fcf-b0ac-2d877d246c28",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "v5_comprehensive_operations_with_customizable_importance",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_04_design/outputs/by_topic/propagation_funnel/01_stage_outputs_to_stage_ai_app_systems/03_stage_0agnostic_system/03_context_avenue_web/02_data_based/00_data_based_overview/proposals/04_design/v5_comprehensive_operations_with_customizable_importance.md"
+    },
+    {
+      "resource_id": "24ccdb73-21e6-41e0-bde3-daacd3001898",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "v6_consolidated_schema_with_improvements",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_04_design/outputs/by_topic/propagation_funnel/01_stage_outputs_to_stage_ai_app_systems/03_stage_0agnostic_system/03_context_avenue_web/02_data_based/00_data_based_overview/proposals/04_design/v6_consolidated_schema_with_improvements.md"
+    },
+    {
+      "resource_id": "1989d867-e591-486b-86d5-6a2e194391dd",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "v7_additional_improvements",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_04_design/outputs/by_topic/propagation_funnel/01_stage_outputs_to_stage_ai_app_systems/03_stage_0agnostic_system/03_context_avenue_web/02_data_based/00_data_based_overview/proposals/04_design/v7_additional_improvements.md"
+    },
+    {
+      "resource_id": "8bfc716a-525c-446e-b2e1-581e8d4f0fa9",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_04_design/outputs/by_topic/propagation_funnel/01_stage_outputs_to_stage_ai_app_systems/03_stage_0agnostic_system/03_context_avenue_web/README.md"
+    },
+    {
+      "resource_id": "e7527309-fbba-47da-b6ad-69ee0841383a",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_04_design/outputs/by_topic/propagation_funnel/01_stage_outputs_to_stage_ai_app_systems/04_stage_report/README.md"
+    },
+    {
+      "resource_id": "caa5cffa-a258-483f-bcb7-7454c8bb1ba0",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_04_design/outputs/by_topic/propagation_funnel/01_stage_outputs_to_stage_ai_app_systems/05_0AGNOSTIC_system_prompt/README.md"
+    },
+    {
+      "resource_id": "5521877f-d6a2-4eda-9fb1-4db95f282e3d",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "CLAUDE_CODE_CLI_DOT_CLAUDE_SYSTEM_SETUP",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_04_design/outputs/by_topic/propagation_funnel/01_stage_outputs_to_stage_ai_app_systems/06_1merge_system/01_ai_app_context_systems/01_ports/01_claude_code_cli/CLAUDE_CODE_CLI_DOT_CLAUDE_SYSTEM_SETUP.md"
+    },
+    {
+      "resource_id": "23dab768-1080-431e-beaf-f53a955b8c79",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "CLAUDE_CODE_CONTEXT_ARCHITECTURE",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_04_design/outputs/by_topic/propagation_funnel/01_stage_outputs_to_stage_ai_app_systems/06_1merge_system/01_ai_app_context_systems/01_ports/01_claude_code_cli/CLAUDE_CODE_CONTEXT_ARCHITECTURE.md"
+    },
+    {
+      "resource_id": "f8237040-5571-41e1-a777-bba06d954b8c",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "CLAUDE_CODE_NATIVE_CONTEXT_SYSTEM",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_04_design/outputs/by_topic/propagation_funnel/01_stage_outputs_to_stage_ai_app_systems/06_1merge_system/01_ai_app_context_systems/01_ports/01_claude_code_cli/CLAUDE_CODE_NATIVE_CONTEXT_SYSTEM.md"
+    },
+    {
+      "resource_id": "81cffb24-3a2e-4436-85ba-0036cc55f138",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "CLAUDE_CODE_NATIVE_CONTEXT_SYSTEM_VERIFIED",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_04_design/outputs/by_topic/propagation_funnel/01_stage_outputs_to_stage_ai_app_systems/06_1merge_system/01_ai_app_context_systems/01_ports/01_claude_code_cli/CLAUDE_CODE_NATIVE_CONTEXT_SYSTEM_VERIFIED.md"
+    },
+    {
+      "resource_id": "f1c97cfc-d104-4fdb-8151-34d26f17b2a1",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "CLAUDE_CODE_PORTING_STRATEGY",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_04_design/outputs/by_topic/propagation_funnel/01_stage_outputs_to_stage_ai_app_systems/06_1merge_system/01_ai_app_context_systems/01_ports/01_claude_code_cli/CLAUDE_CODE_PORTING_STRATEGY.md"
+    },
+    {
+      "resource_id": "1abf5025-e648-49e6-80ce-448b3c724ec0",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "01_NATIVE_FEATURES",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_04_design/outputs/by_topic/propagation_funnel/01_stage_outputs_to_stage_ai_app_systems/06_1merge_system/01_ai_app_context_systems/01_ports/01_claude_code_cli/ai_app_system/01_NATIVE_FEATURES.md"
+    },
+    {
+      "resource_id": "b43f1c06-2f57-4fc7-98e7-d4a73355dd4c",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "02_APPLICATION_IMPLEMENTED",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_04_design/outputs/by_topic/propagation_funnel/01_stage_outputs_to_stage_ai_app_systems/06_1merge_system/01_ai_app_context_systems/01_ports/01_claude_code_cli/ai_app_system/02_APPLICATION_IMPLEMENTED.md"
+    },
+    {
+      "resource_id": "aa556dc1-036c-42ab-b7d2-f0ee5a7e8414",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "03_COMPLETE_ARCHITECTURE",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_04_design/outputs/by_topic/propagation_funnel/01_stage_outputs_to_stage_ai_app_systems/06_1merge_system/01_ai_app_context_systems/01_ports/01_claude_code_cli/ai_app_system/03_COMPLETE_ARCHITECTURE.md"
+    },
+    {
+      "resource_id": "94639b72-2326-47e7-a427-b9c168b0c013",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "04_CLAUDE_FILE_PATH_RULES",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_04_design/outputs/by_topic/propagation_funnel/01_stage_outputs_to_stage_ai_app_systems/06_1merge_system/01_ai_app_context_systems/01_ports/01_claude_code_cli/ai_app_system/04_CLAUDE_FILE_PATH_RULES.md"
+    },
+    {
+      "resource_id": "ebd0310b-8bdb-4267-a38f-775d26fbce11",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "05_CONFIGURATION_SYSTEM",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_04_design/outputs/by_topic/propagation_funnel/01_stage_outputs_to_stage_ai_app_systems/06_1merge_system/01_ai_app_context_systems/01_ports/01_claude_code_cli/ai_app_system/05_CONFIGURATION_SYSTEM.md"
+    },
+    {
+      "resource_id": "d7d7cc17-2cf3-48d8-b1a5-7b2228a14333",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "06_SETUP_AND_USAGE",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_04_design/outputs/by_topic/propagation_funnel/01_stage_outputs_to_stage_ai_app_systems/06_1merge_system/01_ai_app_context_systems/01_ports/01_claude_code_cli/ai_app_system/06_SETUP_AND_USAGE.md"
+    },
+    {
+      "resource_id": "cc0a7a41-0665-41a5-a655-129e6aa378da",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "PORTING_STRATEGY",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_04_design/outputs/by_topic/propagation_funnel/01_stage_outputs_to_stage_ai_app_systems/06_1merge_system/01_ai_app_context_systems/01_ports/01_claude_code_cli/port_system/PORTING_STRATEGY.md"
+    },
+    {
+      "resource_id": "f21f020e-130a-4723-89c5-e3d7d7b51ced",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "APPLICATION_IMPLEMENTED",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_04_design/outputs/by_topic/propagation_funnel/01_stage_outputs_to_stage_ai_app_systems/06_1merge_system/01_ai_app_context_systems/01_ports/02_codex_cli/ai_app_system/APPLICATION_IMPLEMENTED.md"
+    },
+    {
+      "resource_id": "3f857ca4-7245-41d7-ab20-0bfdaa99ab76",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "COMPLETE_ARCHITECTURE",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_04_design/outputs/by_topic/propagation_funnel/01_stage_outputs_to_stage_ai_app_systems/06_1merge_system/01_ai_app_context_systems/01_ports/02_codex_cli/ai_app_system/COMPLETE_ARCHITECTURE.md"
+    },
+    {
+      "resource_id": "fff32592-583c-474c-934c-57eb12ae06da",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "NATIVE_FEATURES",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_04_design/outputs/by_topic/propagation_funnel/01_stage_outputs_to_stage_ai_app_systems/06_1merge_system/01_ai_app_context_systems/01_ports/02_codex_cli/ai_app_system/NATIVE_FEATURES.md"
+    },
+    {
+      "resource_id": "5c480dc7-3485-44c2-98b0-ec2cebd3f099",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "PORTING_STRATEGY",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_04_design/outputs/by_topic/propagation_funnel/01_stage_outputs_to_stage_ai_app_systems/06_1merge_system/01_ai_app_context_systems/01_ports/02_codex_cli/port_system/PORTING_STRATEGY.md"
+    },
+    {
+      "resource_id": "6bb9840e-a26b-4603-ad8a-758121cf7d1e",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "APPLICATION_IMPLEMENTED",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_04_design/outputs/by_topic/propagation_funnel/01_stage_outputs_to_stage_ai_app_systems/06_1merge_system/01_ai_app_context_systems/01_ports/03_gemini/ai_app_system/APPLICATION_IMPLEMENTED.md"
+    },
+    {
+      "resource_id": "21a9a223-5320-4f1b-a14e-7dfd963a07bb",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "COMPLETE_ARCHITECTURE",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_04_design/outputs/by_topic/propagation_funnel/01_stage_outputs_to_stage_ai_app_systems/06_1merge_system/01_ai_app_context_systems/01_ports/03_gemini/ai_app_system/COMPLETE_ARCHITECTURE.md"
+    },
+    {
+      "resource_id": "365da4f6-b5c3-4cda-aef9-bbedf3f44d9f",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "NATIVE_FEATURES",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_04_design/outputs/by_topic/propagation_funnel/01_stage_outputs_to_stage_ai_app_systems/06_1merge_system/01_ai_app_context_systems/01_ports/03_gemini/ai_app_system/NATIVE_FEATURES.md"
+    },
+    {
+      "resource_id": "3453ff95-f208-48a9-bf61-adcadb4f7003",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "PORTING_STRATEGY",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_04_design/outputs/by_topic/propagation_funnel/01_stage_outputs_to_stage_ai_app_systems/06_1merge_system/01_ai_app_context_systems/01_ports/03_gemini/port_system/PORTING_STRATEGY.md"
+    },
+    {
+      "resource_id": "d5071c0c-65d6-4109-b6a2-96f48831b63e",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "APPLICATION_IMPLEMENTED",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_04_design/outputs/by_topic/propagation_funnel/01_stage_outputs_to_stage_ai_app_systems/06_1merge_system/01_ai_app_context_systems/01_ports/04_cursor_ide/ai_app_system/APPLICATION_IMPLEMENTED.md"
+    },
+    {
+      "resource_id": "ab9fb9fc-5be9-4e0b-8e57-9b1fbc922506",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "COMPLETE_ARCHITECTURE",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_04_design/outputs/by_topic/propagation_funnel/01_stage_outputs_to_stage_ai_app_systems/06_1merge_system/01_ai_app_context_systems/01_ports/04_cursor_ide/ai_app_system/COMPLETE_ARCHITECTURE.md"
+    },
+    {
+      "resource_id": "9cd506d9-8b73-4aab-b8c5-227be3dc4d38",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "NATIVE_FEATURES",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_04_design/outputs/by_topic/propagation_funnel/01_stage_outputs_to_stage_ai_app_systems/06_1merge_system/01_ai_app_context_systems/01_ports/04_cursor_ide/ai_app_system/NATIVE_FEATURES.md"
+    },
+    {
+      "resource_id": "2990bd30-bf86-4ff5-b84a-277fd1b0ebb1",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "PORTING_STRATEGY",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_04_design/outputs/by_topic/propagation_funnel/01_stage_outputs_to_stage_ai_app_systems/06_1merge_system/01_ai_app_context_systems/01_ports/04_cursor_ide/port_system/PORTING_STRATEGY.md"
+    },
+    {
+      "resource_id": "d365f4de-faac-429f-952b-808e525817cc",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "APPLICATION_IMPLEMENTED",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_04_design/outputs/by_topic/propagation_funnel/01_stage_outputs_to_stage_ai_app_systems/06_1merge_system/01_ai_app_context_systems/01_ports/05_cursor_agent_cli/ai_app_system/APPLICATION_IMPLEMENTED.md"
+    },
+    {
+      "resource_id": "c63a8428-7ed1-4c19-8c54-30fdcba32b76",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "COMPLETE_ARCHITECTURE",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_04_design/outputs/by_topic/propagation_funnel/01_stage_outputs_to_stage_ai_app_systems/06_1merge_system/01_ai_app_context_systems/01_ports/05_cursor_agent_cli/ai_app_system/COMPLETE_ARCHITECTURE.md"
+    },
+    {
+      "resource_id": "73bcde88-ef62-4350-9b9c-3818b203d841",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "NATIVE_FEATURES",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_04_design/outputs/by_topic/propagation_funnel/01_stage_outputs_to_stage_ai_app_systems/06_1merge_system/01_ai_app_context_systems/01_ports/05_cursor_agent_cli/ai_app_system/NATIVE_FEATURES.md"
+    },
+    {
+      "resource_id": "3ef1e582-b2fe-4a71-8116-75e965832930",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "PORTING_STRATEGY",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_04_design/outputs/by_topic/propagation_funnel/01_stage_outputs_to_stage_ai_app_systems/06_1merge_system/01_ai_app_context_systems/01_ports/05_cursor_agent_cli/port_system/PORTING_STRATEGY.md"
+    },
+    {
+      "resource_id": "7c179973-c0b5-42bb-b24b-1e735ee9bd55",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_04_design/outputs/by_topic/propagation_funnel/01_stage_outputs_to_stage_ai_app_systems/06_1merge_system/01_ai_app_context_systems/01_ports/README.md"
+    },
+    {
+      "resource_id": "cc721803-873f-40ff-b6c2-23f6607e95ac",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_04_design/outputs/by_topic/propagation_funnel/01_stage_outputs_to_stage_ai_app_systems/06_1merge_system/README.md"
+    },
+    {
+      "resource_id": "d9da9b25-24d5-483f-9240-38029c456d39",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_04_design/outputs/by_topic/propagation_funnel/01_stage_outputs_to_stage_ai_app_systems/README.md"
+    },
+    {
+      "resource_id": "4fc1a3fb-94ca-45b3-b89b-d1ef62e8281f",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_04_design/outputs/by_topic/propagation_funnel/02_stage_reports_to_entity_0agnostic_system/README.md"
+    },
+    {
+      "resource_id": "a5e7a9a1-215f-4610-84f1-ea6931495004",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_04_design/outputs/by_topic/propagation_funnel/03_child_layer_reports_to_entity_0agnostic_system/README.md"
+    },
+    {
+      "resource_id": "665bc682-3d01-4a05-9bbb-522ae2a66d05",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "CLAUDE_CODE_CONTEXT_ARCHITECTURE",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_04_design/outputs/by_topic/propagation_funnel/04_entity_0agnostic_system_to_entity_ai_app_systems/04_1merge_system/01_ai_app_context_systems/01_ports/01_claude_code_cli/CLAUDE_CODE_CONTEXT_ARCHITECTURE.md"
+    },
+    {
+      "resource_id": "36de1186-145d-4710-aaa2-f2f5badd56a7",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "CODEX_CONTEXT_ARCHITECTURE",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_04_design/outputs/by_topic/propagation_funnel/04_entity_0agnostic_system_to_entity_ai_app_systems/04_1merge_system/01_ai_app_context_systems/01_ports/02_codex_cli/CODEX_CONTEXT_ARCHITECTURE.md"
+    },
+    {
+      "resource_id": "a41c64dc-5acf-455f-b0f4-cee09840b4c5",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "GEMINI_CONTEXT_ARCHITECTURE",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_04_design/outputs/by_topic/propagation_funnel/04_entity_0agnostic_system_to_entity_ai_app_systems/04_1merge_system/01_ai_app_context_systems/01_ports/03_gemini_cli/GEMINI_CONTEXT_ARCHITECTURE.md"
+    },
+    {
+      "resource_id": "393bf3e0-d0b2-4a22-ac75-029b1b1eb613",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "CURSOR_CONTEXT_ARCHITECTURE",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_04_design/outputs/by_topic/propagation_funnel/04_entity_0agnostic_system_to_entity_ai_app_systems/04_1merge_system/01_ai_app_context_systems/01_ports/04a_cursor_ide/CURSOR_CONTEXT_ARCHITECTURE.md"
+    },
+    {
+      "resource_id": "994f4a4a-8ed9-4733-a849-499075e7f464",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "CURSOR_AGENT_CONTEXT_ARCHITECTURE",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_04_design/outputs/by_topic/propagation_funnel/04_entity_0agnostic_system_to_entity_ai_app_systems/04_1merge_system/01_ai_app_context_systems/01_ports/04b_cursor_agent_cli/CURSOR_AGENT_CONTEXT_ARCHITECTURE.md"
+    },
+    {
+      "resource_id": "b539e93a-3013-4a6e-a04a-c746a3c08dcf",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_04_design/outputs/by_topic/propagation_funnel/04_entity_0agnostic_system_to_entity_ai_app_systems/README.md"
+    },
+    {
+      "resource_id": "c0671b6e-717b-4ee3-8d4d-d2ba7034027e",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_04_design/outputs/by_topic/propagation_funnel/README.md"
+    },
+    {
+      "resource_id": "d4901bc4-74b3-4c56-83cd-b9c4054f884b",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "README_GEMINI_RESEARCH",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_04_design/outputs/by_topic/propagation_funnel/README_GEMINI_RESEARCH.md"
+    },
+    {
+      "resource_id": "6c8bbfda-f923-4546-9aec-0c762c58433a",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "gemini_practical_guide",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_04_design/outputs/by_topic/propagation_funnel/gemini_practical_guide.md"
+    },
+    {
+      "resource_id": "648882b6-c82e-4d4c-ac61-70b2d907655c",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "gemini_quick_reference",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_04_design/outputs/by_topic/propagation_funnel/gemini_quick_reference.md"
+    },
+    {
+      "resource_id": "66c0a2ed-4acc-43bd-aadd-d9ac45ac0eab",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "gemini_sdk_patterns",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_04_design/outputs/by_topic/propagation_funnel/gemini_sdk_patterns.md"
+    },
+    {
+      "resource_id": "2eaff663-8578-4163-9b19-fa7edcbd8c44",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "stage_report",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_04_design/outputs/stage_report.md"
+    },
+    {
+      "resource_id": "a7daa0a6-a303-450b-84c7-29441dc2f039",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "stage_2_04_design_agent",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_04_design/stage_2_04_design_agent.jsonld"
+    },
+    {
+      "resource_id": "1cf80044-1b70-4e47-a8bf-959d4cdde7f8",
+      "id_field": "resource_id",
+      "resource_type": "agnostic",
+      "resource_name": "0AGNOSTIC",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_05_planning/0AGNOSTIC.md"
+    },
+    {
+      "resource_id": "ba6c99fa-ec1d-4d0f-b493-b8f9ef2544f8",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "01_implementation_plan_0agnostic_1merge_avenue_web",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_05_planning/outputs/by_topic/01_implementation_plan_0agnostic_1merge_avenue_web.md"
+    },
+    {
+      "resource_id": "6cea9df1-c16f-4361-8b16-a3255d7915f1",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_05_planning/outputs/by_topic/README.md"
+    },
+    {
+      "resource_id": "3df37ec3-6bea-4889-9f53-f4f98473ac52",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "stage_report",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_05_planning/outputs/stage_report.md"
+    },
+    {
+      "resource_id": "27094772-14ef-479c-a9c3-4b71eb4b9be6",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "stage_2_05_planning_agent",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_05_planning/stage_2_05_planning_agent.jsonld"
+    },
+    {
+      "resource_id": "90862834-186e-4af4-bd6e-a64801130724",
+      "id_field": "resource_id",
+      "resource_type": "protocol",
+      "resource_name": ".gitkeep",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_06_development/.0agnostic/03_protocols/.gitkeep"
+    },
+    {
+      "resource_id": "973fe244-6a0f-4e13-99b4-c771df1d3db7",
+      "id_field": "resource_id",
+      "resource_type": "script",
+      "resource_name": "implement-0agnostic-1merge-avenue-web",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_06_development/.0agnostic/06_hooks/scripts/implement-0agnostic-1merge-avenue-web.sh"
+    },
+    {
+      "resource_id": "9beea6da-e12c-452a-bdf7-e52163027fb1",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": ".gitkeep",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_06_development/.0agnostic/principles/.gitkeep"
+    },
+    {
+      "resource_id": "a0f977ac-a073-4b96-b82d-231e0287fb95",
+      "id_field": "resource_id",
+      "resource_type": "agnostic",
+      "resource_name": "0AGNOSTIC",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_06_development/0AGNOSTIC.md"
+    },
+    {
+      "resource_id": "04659409-1fb3-4a91-af52-c46615b0a06a",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "01_development_implementation_runbook",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_06_development/outputs/by_topic/01_development_implementation_runbook.md"
+    },
+    {
+      "resource_id": "1958adba-9c25-4f99-aa4d-96cf002fb955",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "02_development_status_and_next_steps",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_06_development/outputs/by_topic/02_development_status_and_next_steps.md"
+    },
+    {
+      "resource_id": "0078cbc9-76eb-4ade-bdac-474cb597e717",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_06_development/outputs/by_topic/README.md"
+    },
+    {
+      "resource_id": "b8e15223-6da5-4a1e-871b-a7900ce689a4",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "stage_report",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_06_development/outputs/stage_report.md"
+    },
+    {
+      "resource_id": "84109fc0-4194-4653-8473-dba4a87d1723",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "stage_2_06_development_agent",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_06_development/stage_2_06_development_agent.jsonld"
+    },
+    {
+      "resource_id": "d328cace-b04a-40d4-b2c4-f826746cfb4b",
+      "id_field": "resource_id",
+      "resource_type": "handoff",
+      "resource_name": "overview_report",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_07_testing/.0agnostic/05_handoff_documents/02_outgoing/01_to_above/overview_report.md"
+    },
+    {
+      "resource_id": "750df435-ace1-497c-a22a-17d3d639c411",
+      "id_field": "resource_id",
+      "resource_type": "handoff",
+      "resource_name": "stage_report",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_07_testing/.0agnostic/05_handoff_documents/02_outgoing/01_to_above/stage_report.md"
+    },
+    {
+      "resource_id": "6dfb7208-010d-4695-a3ad-dec1c495d20a",
+      "id_field": "resource_id",
+      "resource_type": "handoff",
+      "resource_name": "overview_report",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_07_testing/.0agnostic/05_handoff_documents/02_outgoing/03_to_below/overview_report.md"
+    },
+    {
+      "resource_id": "cdd41226-bf5f-414a-b97e-dbe972387431",
+      "id_field": "resource_id",
+      "resource_type": "handoff",
+      "resource_name": "stage_report",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_07_testing/.0agnostic/05_handoff_documents/02_outgoing/03_to_below/stage_report.md"
+    },
+    {
+      "resource_id": "3342be83-8ed2-4e66-ae88-d0c0dc2314ed",
+      "id_field": "resource_id",
+      "resource_type": "agnostic",
+      "resource_name": "0AGNOSTIC",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_07_testing/0AGNOSTIC.md"
+    },
+    {
+      "resource_id": "ca47121d-ad62-4cf1-890b-f273220df00d",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_07_testing/outputs/by_purpose/README.md"
+    },
+    {
+      "resource_id": "41a70b3a-f460-4a6f-b372-dcde3d9e3195",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "suite_design",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_07_testing/outputs/by_purpose/avenue_web_validation/design/suite_design.md"
+    },
+    {
+      "resource_id": "43dc91dc-7732-4acc-b582-c011b5451b23",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "suite_implementation",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_07_testing/outputs/by_purpose/avenue_web_validation/implementation/suite_implementation.md"
+    },
+    {
+      "resource_id": "583e0e95-9d9d-4cea-b83a-ef8cd481ea74",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "latest_insights",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_07_testing/outputs/by_purpose/avenue_web_validation/insights/latest_insights.md"
+    },
+    {
+      "resource_id": "d7631c75-0f22-4454-9542-30d8da120179",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "avenue_web_validation_report",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_07_testing/outputs/by_purpose/avenue_web_validation/results/avenue_web_validation_report.md"
+    },
+    {
+      "resource_id": "21c277dc-cdd3-42c7-9bbf-2b758b40bc7e",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "2026-02-25_run",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_07_testing/outputs/by_purpose/avenue_web_validation/runs/2026-02-25_run.md"
+    },
+    {
+      "resource_id": "44edb0d4-7415-40a2-872a-d9276b43725a",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "suite_design",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_07_testing/outputs/by_purpose/codex_runtime_validation/design/suite_design.md"
+    },
+    {
+      "resource_id": "fe5645be-ff1d-4d83-9d93-b62d1798f144",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "suite_implementation",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_07_testing/outputs/by_purpose/codex_runtime_validation/implementation/suite_implementation.md"
+    },
+    {
+      "resource_id": "424a6b2c-6d0c-4ceb-8ff0-aaa499190981",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "codex_runtime_validation_policy",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_07_testing/outputs/by_purpose/codex_runtime_validation/insights/codex_runtime_validation_policy.md"
+    },
+    {
+      "resource_id": "3cfa900e-e4dc-4680-8d20-fd9ed5028620",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "latest_insights",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_07_testing/outputs/by_purpose/codex_runtime_validation/insights/latest_insights.md"
+    },
+    {
+      "resource_id": "84fc8f19-d499-42c8-96ce-2f878af4e9be",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "codex_governance_runtime_report",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_07_testing/outputs/by_purpose/codex_runtime_validation/results/codex_governance_runtime_report.md"
+    },
+    {
+      "resource_id": "ed9b167b-ec8a-4c09-ae2e-b039c6fef65f",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "codex_runtime_behavior_test_report",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_07_testing/outputs/by_purpose/codex_runtime_validation/results/codex_runtime_behavior_test_report.md"
+    },
+    {
+      "resource_id": "a54dda2f-79f9-4b9d-b750-592ba4321ce7",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "codex_runtime_validation_report",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_07_testing/outputs/by_purpose/codex_runtime_validation/results/codex_runtime_validation_report.md"
+    },
+    {
+      "resource_id": "b0f18a3c-5c4f-4c69-985e-9c11a44e4e0d",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "2026-02-25_run",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_07_testing/outputs/by_purpose/codex_runtime_validation/runs/2026-02-25_run.md"
+    },
+    {
+      "resource_id": "c91ccf94-e559-455d-bca9-d962e0e21e80",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_07_testing/outputs/by_purpose/context_chain_validation/design/README.md"
+    },
+    {
+      "resource_id": "825a73aa-e852-4cb0-a5b7-02329ec028cd",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "test_design_01_context_chain_system",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_07_testing/outputs/by_purpose/context_chain_validation/design/test_design_01_context_chain_system.md"
+    },
+    {
+      "resource_id": "82df2119-6cea-4efb-a6ae-e59a8415b971",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "test_design_02_0agnostic_1merge_integration",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_07_testing/outputs/by_purpose/context_chain_validation/design/test_design_02_0agnostic_1merge_integration.md"
+    },
+    {
+      "resource_id": "adfb2076-7522-4ef5-a2a6-b040885be7c0",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "test_design_03_propagation_chain",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_07_testing/outputs/by_purpose/context_chain_validation/design/test_design_03_propagation_chain.md"
+    },
+    {
+      "resource_id": "d9cb9697-8795-4503-bccd-ee27e48761eb",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "test_design_04_consolidation_funnel",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_07_testing/outputs/by_purpose/context_chain_validation/design/test_design_04_consolidation_funnel.md"
+    },
+    {
+      "resource_id": "c7912baa-66ab-40f1-b554-a960e530b1e5",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "test_design_05_hierarchy_inheritance",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_07_testing/outputs/by_purpose/context_chain_validation/design/test_design_05_hierarchy_inheritance.md"
+    },
+    {
+      "resource_id": "e8604430-bf45-4da1-88a8-594dddf5c342",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "test_design_06_source_to_avenue",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_07_testing/outputs/by_purpose/context_chain_validation/design/test_design_06_source_to_avenue.md"
+    },
+    {
+      "resource_id": "3c46f414-eeee-4a53-b411-97c3b705f0ad",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "test_design_07_sync_architecture",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_07_testing/outputs/by_purpose/context_chain_validation/design/test_design_07_sync_architecture.md"
+    },
+    {
+      "resource_id": "c2aee898-6279-41e4-8732-5f98787d7926",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "test_design_08_discovery_temperatures",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_07_testing/outputs/by_purpose/context_chain_validation/design/test_design_08_discovery_temperatures.md"
+    },
+    {
+      "resource_id": "b1cb72c7-15a5-43a2-881a-b62fa64647c9",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "suite_implementation",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_07_testing/outputs/by_purpose/context_chain_validation/implementation/suite_implementation.md"
+    },
+    {
+      "resource_id": "e433f6f7-ac60-44c8-a5fe-14e6c50e18b6",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "latest_insights",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_07_testing/outputs/by_purpose/context_chain_validation/insights/latest_insights.md"
+    },
+    {
+      "resource_id": "3627222f-7bbc-4b14-aa7a-d154fceae905",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "latest_results",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_07_testing/outputs/by_purpose/context_chain_validation/results/latest_results.md"
+    },
+    {
+      "resource_id": "cde63253-2907-47f8-84c9-a9c8d07dccae",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "2026-02-25_run",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_07_testing/outputs/by_purpose/context_chain_validation/runs/2026-02-25_run.md"
+    },
+    {
+      "resource_id": "ec5d4159-6ed9-4fa0-b9a5-d0eda7daaee8",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "suite_design",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_07_testing/outputs/by_purpose/cross_entity_porting_bridge_validation/design/suite_design.md"
+    },
+    {
+      "resource_id": "02cd0b76-8010-411a-b172-e42cd2aa7d11",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "suite_implementation",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_07_testing/outputs/by_purpose/cross_entity_porting_bridge_validation/implementation/suite_implementation.md"
+    },
+    {
+      "resource_id": "54098a3f-599f-435a-8919-c1dd075b19e4",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "latest_insights",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_07_testing/outputs/by_purpose/cross_entity_porting_bridge_validation/insights/latest_insights.md"
+    },
+    {
+      "resource_id": "bb8cecbc-0bf9-4b77-a78e-3aed0a13c750",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "latest_results",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_07_testing/outputs/by_purpose/cross_entity_porting_bridge_validation/results/latest_results.md"
+    },
+    {
+      "resource_id": "257b1ef9-c96e-42b6-8c0c-c4d0d5f19d02",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "2026-02-25_run",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_07_testing/outputs/by_purpose/cross_entity_porting_bridge_validation/runs/2026-02-25_run.md"
+    },
+    {
+      "resource_id": "827d75ce-d474-4a6d-8693-7ace50fb05ad",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "suite_design",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_07_testing/outputs/by_purpose/full_suite_validation/design/suite_design.md"
+    },
+    {
+      "resource_id": "44f6f3c6-f6ac-4aa8-9ec6-12821e9f8a48",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "suite_implementation",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_07_testing/outputs/by_purpose/full_suite_validation/implementation/suite_implementation.md"
+    },
+    {
+      "resource_id": "6b013f6f-a2c2-411b-8bb6-f584cca3c09f",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "latest_insights",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_07_testing/outputs/by_purpose/full_suite_validation/insights/latest_insights.md"
+    },
+    {
+      "resource_id": "baf501f7-9025-4edc-8c7c-e657183f9953",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "latest_test_results_summary",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_07_testing/outputs/by_purpose/full_suite_validation/results/latest_test_results_summary.md"
+    },
+    {
+      "resource_id": "52866a20-c068-455e-a0d3-80a39c9c309e",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "2026-02-25_run",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_07_testing/outputs/by_purpose/full_suite_validation/runs/2026-02-25_run.md"
+    },
+    {
+      "resource_id": "8fe1a6ba-c1a0-4c00-9a3b-2c3d7b8f7d8d",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "suite_design",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_07_testing/outputs/by_purpose/reports_funnel_validation/design/suite_design.md"
+    },
+    {
+      "resource_id": "4e6bc79d-4325-42ae-87b5-f3a20604ca79",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "suite_implementation",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_07_testing/outputs/by_purpose/reports_funnel_validation/implementation/suite_implementation.md"
+    },
+    {
+      "resource_id": "0da9e632-2402-4ff5-8987-05baa877d602",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "latest_insights",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_07_testing/outputs/by_purpose/reports_funnel_validation/insights/latest_insights.md"
+    },
+    {
+      "resource_id": "db84a147-777c-4892-a72a-a1a6110d7dc6",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "latest_results",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_07_testing/outputs/by_purpose/reports_funnel_validation/results/latest_results.md"
+    },
+    {
+      "resource_id": "2854dabd-bbdc-4949-9917-036187e5c077",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "2026-02-25_run",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_07_testing/outputs/by_purpose/reports_funnel_validation/runs/2026-02-25_run.md"
+    },
+    {
+      "resource_id": "66652938-570c-4eb7-a5cc-d5fc37709a0c",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_07_testing/outputs/by_topic/README.md"
+    },
+    {
+      "resource_id": "099ef0c5-de70-4dad-be38-1bfc8f844246",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "avenue_web_validation_report",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_07_testing/outputs/by_topic/avenue_web_validation_report.md"
+    },
+    {
+      "resource_id": "fc05e9a3-d486-446d-9af7-ae8236c974fb",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "codex_runtime_behavior_test_report",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_07_testing/outputs/by_topic/codex_runtime_behavior_test_report.md"
+    },
+    {
+      "resource_id": "0700b079-7e9a-4d44-8686-682a8baef11b",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "codex_runtime_validation_report",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_07_testing/outputs/by_topic/codex_runtime_validation_report.md"
+    },
+    {
+      "resource_id": "be7cb92c-92ff-489c-a7c5-4f5a0da0e5f5",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_07_testing/outputs/by_topic/test_design/README.md"
+    },
+    {
+      "resource_id": "98982bcb-c3dc-4021-9fb1-8686b29cf3e1",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "test_design_01_context_chain_system",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_07_testing/outputs/by_topic/test_design/test_design_01_context_chain_system.md"
+    },
+    {
+      "resource_id": "7cd5c20b-666f-4a2c-bf1c-20c241fad408",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "test_design_02_0agnostic_1merge_integration",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_07_testing/outputs/by_topic/test_design/test_design_02_0agnostic_1merge_integration.md"
+    },
+    {
+      "resource_id": "aa9ff70f-fec0-4e47-9e1b-46c9813d8fc6",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "test_design_03_propagation_chain",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_07_testing/outputs/by_topic/test_design/test_design_03_propagation_chain.md"
+    },
+    {
+      "resource_id": "4b487a9b-8e95-422c-9cf8-9192370a1adc",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "test_design_04_consolidation_funnel",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_07_testing/outputs/by_topic/test_design/test_design_04_consolidation_funnel.md"
+    },
+    {
+      "resource_id": "a5f0a140-49e0-4e76-8ebd-eb2713d7da88",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "test_design_05_hierarchy_inheritance",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_07_testing/outputs/by_topic/test_design/test_design_05_hierarchy_inheritance.md"
+    },
+    {
+      "resource_id": "7deecd2f-200d-483d-a0be-66cf1be5a7d9",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "test_design_06_source_to_avenue",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_07_testing/outputs/by_topic/test_design/test_design_06_source_to_avenue.md"
+    },
+    {
+      "resource_id": "00a86f16-abe7-47b0-8535-79868adb87a6",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "test_design_07_sync_architecture",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_07_testing/outputs/by_topic/test_design/test_design_07_sync_architecture.md"
+    },
+    {
+      "resource_id": "da09d4fe-8004-41de-81d4-cf7d058210a5",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "test_design_08_discovery_temperatures",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_07_testing/outputs/by_topic/test_design/test_design_08_discovery_temperatures.md"
+    },
+    {
+      "resource_id": "62129197-e58a-4217-968b-ca893565d56b",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "codex_runtime_validation_report",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_07_testing/outputs/reports/codex_runtime_validation_report.md"
+    },
+    {
+      "resource_id": "c0e364a9-5d57-4721-8612-975bc382dd2d",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "output_report",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_07_testing/outputs/reports/output_report.md"
+    },
+    {
+      "resource_id": "a3e97dd4-e458-44d4-86e0-4e3143f5329c",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "stage_report",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_07_testing/outputs/reports/stage_report.md"
+    },
+    {
+      "resource_id": "5768d4b2-2c0f-4326-be31-dd7b7790ec09",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "test_results_summary",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_07_testing/outputs/reports/test_results_summary.md"
+    },
+    {
+      "resource_id": "916d0421-fae1-448b-a8e8-d5f4a8beefa4",
+      "id_field": "resource_id",
+      "resource_type": "script",
+      "resource_name": "run_all_tests",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_07_testing/outputs/run_all_tests.sh"
+    },
+    {
+      "resource_id": "ce0d5386-7ea0-4404-902b-d664c86ce1b7",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "stage_report",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_07_testing/outputs/stage_report.md"
+    },
+    {
+      "resource_id": "87a25544-89ac-4b2c-a006-3fc0f03024ff",
+      "id_field": "resource_id",
+      "resource_type": "script",
+      "resource_name": "test_1merge_structure",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_07_testing/outputs/test_1merge_structure.sh"
+    },
+    {
+      "resource_id": "495cddeb-c117-4724-b206-6b32e3334525",
+      "id_field": "resource_id",
+      "resource_type": "script",
+      "resource_name": "test_agnostic_sync",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_07_testing/outputs/test_agnostic_sync.sh"
+    },
+    {
+      "resource_id": "479449a0-0384-4877-a2da-b13a19f77421",
+      "id_field": "resource_id",
+      "resource_type": "script",
+      "resource_name": "test_avenue_coverage_functional",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_07_testing/outputs/test_avenue_coverage_functional.sh"
+    },
+    {
+      "resource_id": "8bc60522-9d72-427e-a302-7b9bf0033db8",
+      "id_field": "resource_id",
+      "resource_type": "script",
+      "resource_name": "test_codex_ci_gate",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_07_testing/outputs/test_codex_ci_gate.sh"
+    },
+    {
+      "resource_id": "0f59cfab-961b-4976-886a-a1294868b4f5",
+      "id_field": "resource_id",
+      "resource_type": "script",
+      "resource_name": "test_codex_context_conditions",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_07_testing/outputs/test_codex_context_conditions.sh"
+    },
+    {
+      "resource_id": "52987c55-7b25-4f0b-9a99-3a0f8614ecef",
+      "id_field": "resource_id",
+      "resource_type": "script",
+      "resource_name": "test_codex_discovery_chain",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_07_testing/outputs/test_codex_discovery_chain.sh"
+    },
+    {
+      "resource_id": "531be5e4-e202-4c4a-aa9f-4d3d65ca47e6",
+      "id_field": "resource_id",
+      "resource_type": "script",
+      "resource_name": "test_codex_governance_runtime",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_07_testing/outputs/test_codex_governance_runtime.sh"
+    },
+    {
+      "resource_id": "44879445-c762-4582-a8d2-9abb74db6ef1",
+      "id_field": "resource_id",
+      "resource_type": "script",
+      "resource_name": "test_codex_projection",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_07_testing/outputs/test_codex_projection.sh"
+    },
+    {
+      "resource_id": "c17be6e9-ec2c-4c25-b630-0a768714a316",
+      "id_field": "resource_id",
+      "resource_type": "script",
+      "resource_name": "test_codex_runtime_behavior",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_07_testing/outputs/test_codex_runtime_behavior.sh"
+    },
+    {
+      "resource_id": "b2fc2b8b-8c96-40d6-a909-d038263ae0e8",
+      "id_field": "resource_id",
+      "resource_type": "script",
+      "resource_name": "test_context_chain_traversal",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_07_testing/outputs/test_context_chain_traversal.sh"
+    },
+    {
+      "resource_id": "5f4698cc-df0e-4f38-a6c6-aacd6d429ed3",
+      "id_field": "resource_id",
+      "resource_type": "script",
+      "resource_name": "test_cross_entity_porting_bridge",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_07_testing/outputs/test_cross_entity_porting_bridge.sh"
+    },
+    {
+      "resource_id": "5a9f65a7-8fe9-4dbb-8798-a72981b33d60",
+      "id_field": "resource_id",
+      "resource_type": "script",
+      "resource_name": "test_instantiation_readiness",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_07_testing/outputs/test_instantiation_readiness.sh"
+    },
+    {
+      "resource_id": "029be80e-608b-4035-957c-3d79c48b93af",
+      "id_field": "resource_id",
+      "resource_type": "script",
+      "resource_name": "test_outputs_purpose_taxonomy",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_07_testing/outputs/test_outputs_purpose_taxonomy.sh"
+    },
+    {
+      "resource_id": "4fc08955-c1be-414c-bd60-8d05969d0ca9",
+      "id_field": "resource_id",
+      "resource_type": "script",
+      "resource_name": "test_reports_funnel_structure",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_07_testing/outputs/test_reports_funnel_structure.sh"
+    },
+    {
+      "resource_id": "3fe1d0fa-52df-4aac-b5e7-f8e7135fff81",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "test_results_summary",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_07_testing/outputs/test_results_summary.md"
+    },
+    {
+      "resource_id": "abd92d0b-57a4-4058-90de-3f54f9ccddd8",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "test_skill_discovery_chain",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_07_testing/outputs/test_skill_discovery_chain.md"
+    },
+    {
+      "resource_id": "ef6ad248-a98e-4f52-a1d2-941bb62dafb8",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "stage_2_07_testing_agent",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_07_testing/stage_2_07_testing_agent.jsonld"
+    },
+    {
+      "resource_id": "1a87e569-3796-4b6f-80e4-fb3ba875b766",
+      "id_field": "resource_id",
+      "resource_type": "agnostic",
+      "resource_name": "0AGNOSTIC",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_08_criticism/0AGNOSTIC.md"
+    },
+    {
+      "resource_id": "877e416b-b804-4cef-8dd6-7fdb23820a5e",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "stage_2_08_criticism_agent",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_08_criticism/stage_2_08_criticism_agent.jsonld"
+    },
+    {
+      "resource_id": "b0843957-ca79-4165-b466-9dfd045663de",
+      "id_field": "resource_id",
+      "resource_type": "agnostic",
+      "resource_name": "0AGNOSTIC",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_09_fixing/0AGNOSTIC.md"
+    },
+    {
+      "resource_id": "48b91f64-1069-475f-907c-0cd8b9a6c695",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "stage_2_09_fixing_agent",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_09_fixing/stage_2_09_fixing_agent.jsonld"
+    },
+    {
+      "resource_id": "2009ddbb-63f0-4f2d-a916-df8db9a52c9c",
+      "id_field": "resource_id",
+      "resource_type": "agnostic",
+      "resource_name": "0AGNOSTIC",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_10_current_product/0AGNOSTIC.md"
+    },
+    {
+      "resource_id": "74f396ce-0a78-47a7-9475-fa4b11694ec6",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "stage_2_10_current_product_agent",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_10_current_product/stage_2_10_current_product_agent.jsonld"
+    },
+    {
+      "resource_id": "6993ef95-0c47-477f-96e8-cd0f79377c4d",
+      "id_field": "resource_id",
+      "resource_type": "agnostic",
+      "resource_name": "0AGNOSTIC",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_11_archives/0AGNOSTIC.md"
+    },
+    {
+      "resource_id": "954ee9ce-591f-486c-85a4-973c33352b07",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "stage_2_11_archives_agent",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_11_archives/stage_2_11_archives_agent.jsonld"
+    },
+    {
+      "resource_id": "1eca0524-f46c-4234-9959-b2f75fc9ec5d",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "status_2",
+      "path": "layer_2_group/layer_2_99_stages/status_2.json"
+    },
+    {
+      "resource_id": "3abcb767-2e5c-40f4-970f-3de35aaa95a2",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "layer_2_orchestrator.gab",
+      "path": "layer_2_orchestrator.gab.jsonld"
+    },
+    {
+      "resource_id": "c9d63975-df00-4e34-8429-77fceff2c3e8",
+      "id_field": "resource_id",
+      "resource_type": "agnostic",
+      "resource_name": "0AGNOSTIC",
+      "path": "layer_3_group/layer_3_subx3_features/layer_3_subx3_feature_chain_visualization/0AGNOSTIC.md"
+    },
+    {
+      "resource_id": "ddde35e5-9c13-4647-a959-74cae273f768",
+      "id_field": "resource_id",
+      "resource_type": "index",
+      "resource_name": "0INDEX",
+      "path": "layer_3_group/layer_3_subx3_features/layer_3_subx3_feature_chain_visualization/0INDEX.md"
+    },
+    {
+      "resource_id": "8e6e4b19-4bcc-490e-8a17-7ffa03fa7fff",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_3_group/layer_3_subx3_features/layer_3_subx3_feature_chain_visualization/README.md"
+    },
+    {
+      "resource_id": "c720689b-c67e-4b9a-854b-7b029e9c18de",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "agent_instantiation_chain",
+      "path": "layer_3_group/layer_3_subx3_features/layer_3_subx3_feature_chain_visualization/diagrams/current/agent_instantiation_chain.md"
+    },
+    {
+      "resource_id": "6fb9c460-346d-49e0-b5a6-141a3252c7f5",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "context_architecture",
+      "path": "layer_3_group/layer_3_subx3_features/layer_3_subx3_feature_chain_visualization/diagrams/current/context_architecture.md"
+    },
+    {
+      "resource_id": "a9e3b7f5-b3f3-4688-b6a8-f245f720677d",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "default_view",
+      "path": "layer_3_group/layer_3_subx3_features/layer_3_subx3_feature_chain_visualization/diagrams/current/context_chain/default_view.md"
+    },
+    {
+      "resource_id": "c6c3482b-bb3b-4a4e-8507-5ff10745f7c9",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "full_view",
+      "path": "layer_3_group/layer_3_subx3_features/layer_3_subx3_feature_chain_visualization/diagrams/current/context_chain/full_view.md"
+    },
+    {
+      "resource_id": "15e64b61-818e-4e9c-8130-4ffb8a43cfdc",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "context_flow",
+      "path": "layer_3_group/layer_3_subx3_features/layer_3_subx3_feature_chain_visualization/diagrams/current/context_flow.md"
+    },
+    {
+      "resource_id": "34fb76d0-b479-4616-a52d-d5caefc4c540",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "context_loading_sequence",
+      "path": "layer_3_group/layer_3_subx3_features/layer_3_subx3_feature_chain_visualization/diagrams/current/context_loading_sequence.md"
+    },
+    {
+      "resource_id": "15651ef8-c994-49e9-9bc0-c448cbf9b5a9",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "context_propagation",
+      "path": "layer_3_group/layer_3_subx3_features/layer_3_subx3_feature_chain_visualization/diagrams/current/context_propagation.md"
+    },
+    {
+      "resource_id": "81269c33-ebbc-4d18-9645-29cdcc0e11a6",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "custom_layer_stage_loading",
+      "path": "layer_3_group/layer_3_subx3_features/layer_3_subx3_feature_chain_visualization/diagrams/current/custom_layer_stage_loading.md"
+    },
+    {
+      "resource_id": "921c97ab-6758-4f3d-95b1-201fbc05d592",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "official_claude_code_loading",
+      "path": "layer_3_group/layer_3_subx3_features/layer_3_subx3_feature_chain_visualization/diagrams/current/official_claude_code_loading.md"
+    },
+    {
+      "resource_id": "0937067d-3be1-459f-826b-2e40bd6e0286",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "entity_creation_flow",
+      "path": "layer_3_group/layer_3_subx3_features/layer_3_subx3_feature_chain_visualization/diagrams/current/specific_flows/entity_creation_flow.md"
+    },
+    {
+      "resource_id": "7b7cc1fa-1649-47ee-aafb-a0a803dcd20c",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "git_commit_flow",
+      "path": "layer_3_group/layer_3_subx3_features/layer_3_subx3_feature_chain_visualization/diagrams/current/specific_flows/git_commit_flow.md"
+    },
+    {
+      "resource_id": "d5ae72bb-c3ea-47f9-a98e-51b092221036",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "index",
+      "path": "layer_3_group/layer_3_subx3_features/layer_3_subx3_feature_chain_visualization/diagrams/current/specific_flows/index.jsonld"
+    },
+    {
+      "resource_id": "dd3e760e-b549-4122-b92b-1206dcb347a0",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "stage_workflow_flow",
+      "path": "layer_3_group/layer_3_subx3_features/layer_3_subx3_feature_chain_visualization/diagrams/current/specific_flows/stage_workflow_flow.md"
+    },
+    {
+      "resource_id": "906c2914-499f-4307-8f3c-fd0c87fd2c24",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "index",
+      "path": "layer_3_group/layer_3_subx3_features/layer_3_subx3_feature_chain_visualization/diagrams/index.jsonld"
+    },
+    {
+      "resource_id": "8a695b6b-bea6-4ee2-9124-807900c0322b",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "index",
+      "path": "layer_3_group/layer_3_subx3_features/layer_3_subx3_feature_chain_visualization/index.jsonld"
+    },
+    {
+      "resource_id": "04e04cb4-6199-4a61-af2d-ded6379b5f9e",
+      "id_field": "resource_id",
+      "resource_type": "agnostic",
+      "resource_name": "0AGNOSTIC",
+      "path": "layer_3_group/layer_3_subx3_features/layer_3_subx3_feature_chain_visualization/layer_3_group/layer_3_99_stages/0AGNOSTIC.md"
+    },
+    {
+      "resource_id": "2074e94a-6aee-402c-9434-01d93ecf88f4",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "layer_3_99_stages_orchestrator.gab",
+      "path": "layer_3_group/layer_3_subx3_features/layer_3_subx3_feature_chain_visualization/layer_3_group/layer_3_99_stages/layer_3_99_stages_orchestrator.gab.jsonld"
+    },
+    {
+      "resource_id": "9f9b5513-23ec-4e1c-8324-70f4e31d38b5",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "stage_3_00_stage_registry_agent",
+      "path": "layer_3_group/layer_3_subx3_features/layer_3_subx3_feature_chain_visualization/layer_3_group/layer_3_99_stages/stage_3_00_stage_registry/stage_3_00_stage_registry_agent.jsonld"
+    },
+    {
+      "resource_id": "7d5dfb4a-0954-4213-80b6-0d20a80654a7",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "stage_index",
+      "path": "layer_3_group/layer_3_subx3_features/layer_3_subx3_feature_chain_visualization/layer_3_group/layer_3_99_stages/stage_3_00_stage_registry/stage_index.json"
+    },
+    {
+      "resource_id": "78e0df69-38bd-41b3-8163-008de2f3bfa1",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "stage_3_01_request_gathering_agent",
+      "path": "layer_3_group/layer_3_subx3_features/layer_3_subx3_feature_chain_visualization/layer_3_group/layer_3_99_stages/stage_3_01_request_gathering/stage_3_01_request_gathering_agent.jsonld"
+    },
+    {
+      "resource_id": "c863674b-3b97-4030-a1d6-8523c135583f",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "stage_3_02_research_agent",
+      "path": "layer_3_group/layer_3_subx3_features/layer_3_subx3_feature_chain_visualization/layer_3_group/layer_3_99_stages/stage_3_02_research/stage_3_02_research_agent.jsonld"
+    },
+    {
+      "resource_id": "d9334238-4eef-4876-84be-cbc55809a6a8",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "stage_3_03_instructions_agent",
+      "path": "layer_3_group/layer_3_subx3_features/layer_3_subx3_feature_chain_visualization/layer_3_group/layer_3_99_stages/stage_3_03_instructions/stage_3_03_instructions_agent.jsonld"
+    },
+    {
+      "resource_id": "d43c7bba-0228-4e63-ac1f-618c50cfb786",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "stage_3_05_design_agent",
+      "path": "layer_3_group/layer_3_subx3_features/layer_3_subx3_feature_chain_visualization/layer_3_group/layer_3_99_stages/stage_3_04_design/stage_3_05_design_agent.jsonld"
+    },
+    {
+      "resource_id": "01164eb7-3b41-4e61-a713-b824eeb93c4a",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "stage_3_04_planning_agent",
+      "path": "layer_3_group/layer_3_subx3_features/layer_3_subx3_feature_chain_visualization/layer_3_group/layer_3_99_stages/stage_3_05_planning/stage_3_04_planning_agent.jsonld"
+    },
+    {
+      "resource_id": "258085d9-2de7-4c88-a707-47e0c5d61869",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "stage_3_06_development_agent",
+      "path": "layer_3_group/layer_3_subx3_features/layer_3_subx3_feature_chain_visualization/layer_3_group/layer_3_99_stages/stage_3_06_development/stage_3_06_development_agent.jsonld"
+    },
+    {
+      "resource_id": "f65b1393-f22c-4096-95b6-9ec6f1e65382",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "stage_3_07_testing_agent",
+      "path": "layer_3_group/layer_3_subx3_features/layer_3_subx3_feature_chain_visualization/layer_3_group/layer_3_99_stages/stage_3_07_testing/stage_3_07_testing_agent.jsonld"
+    },
+    {
+      "resource_id": "fee9ab90-ff7a-418b-a66b-4e5160c7b630",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "stage_3_08_criticism_agent",
+      "path": "layer_3_group/layer_3_subx3_features/layer_3_subx3_feature_chain_visualization/layer_3_group/layer_3_99_stages/stage_3_08_criticism/stage_3_08_criticism_agent.jsonld"
+    },
+    {
+      "resource_id": "26075d6f-26d8-474d-bdb4-de767f3be52a",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "stage_3_09_fixing_agent",
+      "path": "layer_3_group/layer_3_subx3_features/layer_3_subx3_feature_chain_visualization/layer_3_group/layer_3_99_stages/stage_3_09_fixing/stage_3_09_fixing_agent.jsonld"
+    },
+    {
+      "resource_id": "c44d4573-2494-4264-8a93-52ab21c4dde6",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "stage_3_10_current_product_agent",
+      "path": "layer_3_group/layer_3_subx3_features/layer_3_subx3_feature_chain_visualization/layer_3_group/layer_3_99_stages/stage_3_10_current_product/stage_3_10_current_product_agent.jsonld"
+    },
+    {
+      "resource_id": "e4b4ff59-c6ff-44a2-a93d-75fe6cb96968",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "stage_3_11_archives_agent",
+      "path": "layer_3_group/layer_3_subx3_features/layer_3_subx3_feature_chain_visualization/layer_3_group/layer_3_99_stages/stage_3_11_archives/stage_3_11_archives_agent.jsonld"
+    },
+    {
+      "resource_id": "46cdbfc9-79a6-49e9-a93e-76a609174a93",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "status_3",
+      "path": "layer_3_group/layer_3_subx3_features/layer_3_subx3_feature_chain_visualization/layer_3_group/layer_3_99_stages/status_3.json"
+    },
+    {
+      "resource_id": "739d1402-e7c5-4d0e-80ea-6c3e353946cb",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "layer_3_orchestrator.gab",
+      "path": "layer_3_group/layer_3_subx3_features/layer_3_subx3_feature_chain_visualization/layer_3_orchestrator.gab.jsonld"
+    },
+    {
+      "resource_id": "8b5d1937-1e8d-42b3-97b6-5f693235e867",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": "ARCHITECTURE",
+      "path": "layer_3_group/layer_3_subx3_features/layer_3_subx3_feature_context_loading/.0agnostic/01_knowledge/overview/production_context_agents/ARCHITECTURE.md"
+    },
+    {
+      "resource_id": "bc78c32e-5f47-44ba-ab9a-ce1624024c6e",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "context_loading.gab",
+      "path": "layer_3_group/layer_3_subx3_features/layer_3_subx3_feature_context_loading/.0agnostic/01_knowledge/overview/production_context_agents/context_loading.gab.jsonld"
+    },
+    {
+      "resource_id": "c617bd1c-374a-499c-9163-7a0bedddd412",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": "HOW_CONTEXT_WORKS",
+      "path": "layer_3_group/layer_3_subx3_features/layer_3_subx3_feature_context_loading/.0agnostic/01_knowledge/overview/production_context_loading/HOW_CONTEXT_WORKS.md"
+    },
+    {
+      "resource_id": "c3bd69c2-fc7a-44b0-bbcf-fbf4aef99577",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": "01_context_problems",
+      "path": "layer_3_group/layer_3_subx3_features/layer_3_subx3_feature_context_loading/.0agnostic/01_knowledge/things_learned/01_context_problems.md"
+    },
+    {
+      "resource_id": "47f5b7d9-1993-4e3f-86b2-17d1ba53722f",
+      "id_field": "resource_id",
+      "resource_type": "agnostic",
+      "resource_name": "0AGNOSTIC",
+      "path": "layer_3_group/layer_3_subx3_features/layer_3_subx3_feature_context_loading/0AGNOSTIC.md"
+    },
+    {
+      "resource_id": "909c365c-ca6e-46bc-bae5-a876f8de948d",
+      "id_field": "resource_id",
+      "resource_type": "index",
+      "resource_name": "0INDEX",
+      "path": "layer_3_group/layer_3_subx3_features/layer_3_subx3_feature_context_loading/0INDEX.md"
+    },
+    {
+      "resource_id": "553c535b-910b-4a44-b600-319f55b72e5f",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_3_group/layer_3_subx3_features/layer_3_subx3_feature_context_loading/README.md"
+    },
+    {
+      "resource_id": "20ef862d-685e-44fc-99c1-ae93d4832445",
+      "id_field": "resource_id",
+      "resource_type": "agnostic",
+      "resource_name": "0AGNOSTIC",
+      "path": "layer_3_group/layer_3_subx3_features/layer_3_subx3_feature_context_loading/layer_3_group/layer_3_99_stages/0AGNOSTIC.md"
+    },
+    {
+      "resource_id": "52278cbf-7f00-4abf-8cb2-b8421c0bc3d3",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "layer_3_99_stages_orchestrator.gab",
+      "path": "layer_3_group/layer_3_subx3_features/layer_3_subx3_feature_context_loading/layer_3_group/layer_3_99_stages/layer_3_99_stages_orchestrator.gab.jsonld"
+    },
+    {
+      "resource_id": "7393914f-967b-4af0-aa34-12b837b3a42a",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "stage_3_00_stage_registry_agent",
+      "path": "layer_3_group/layer_3_subx3_features/layer_3_subx3_feature_context_loading/layer_3_group/layer_3_99_stages/stage_3_00_stage_registry/stage_3_00_stage_registry_agent.jsonld"
+    },
+    {
+      "resource_id": "518796e5-8e0d-407e-aa33-f0df7d992758",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "stage_index",
+      "path": "layer_3_group/layer_3_subx3_features/layer_3_subx3_feature_context_loading/layer_3_group/layer_3_99_stages/stage_3_00_stage_registry/stage_index.json"
+    },
+    {
+      "resource_id": "0c7a326a-a194-4797-bdf2-50b6a2f90ab7",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "stage_3_01_request_gathering_agent",
+      "path": "layer_3_group/layer_3_subx3_features/layer_3_subx3_feature_context_loading/layer_3_group/layer_3_99_stages/stage_3_01_request_gathering/stage_3_01_request_gathering_agent.jsonld"
+    },
+    {
+      "resource_id": "eeffd6a2-011f-4582-8a6c-449d3192ac49",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "aalang_context_integration_proposal",
+      "path": "layer_3_group/layer_3_subx3_features/layer_3_subx3_feature_context_loading/layer_3_group/layer_3_99_stages/stage_3_02_research/outputs/aalang_context_integration_proposal.md"
+    },
+    {
+      "resource_id": "47ef2597-0853-4206-a3c6-11a7bfea06cd",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "agent_amnesia_and_context_systems_conversation",
+      "path": "layer_3_group/layer_3_subx3_features/layer_3_subx3_feature_context_loading/layer_3_group/layer_3_99_stages/stage_3_02_research/outputs/by_topic/agent_amnesia_and_context_systems_conversation.md"
+    },
+    {
+      "resource_id": "3f91b3df-ebe8-4da2-ab4c-139c9d598275",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "ai_context_filesystem_locations",
+      "path": "layer_3_group/layer_3_subx3_features/layer_3_subx3_feature_context_loading/layer_3_group/layer_3_99_stages/stage_3_02_research/outputs/by_topic/ai_context_filesystem_locations.md"
+    },
+    {
+      "resource_id": "63930b33-ced5-43a6-9a35-eb47acc742c4",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "session_2026-01-30_agent_amnesia_research",
+      "path": "layer_3_group/layer_3_subx3_features/layer_3_subx3_feature_context_loading/layer_3_group/layer_3_99_stages/stage_3_02_research/outputs/by_topic/session_2026-01-30_agent_amnesia_research.md"
+    },
+    {
+      "resource_id": "5ec8b399-5414-47b0-8229-36f3eaf9cfcb",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "system_context_hierarchy_research",
+      "path": "layer_3_group/layer_3_subx3_features/layer_3_subx3_feature_context_loading/layer_3_group/layer_3_99_stages/stage_3_02_research/outputs/by_topic/system_context_hierarchy_research.md"
+    },
+    {
+      "resource_id": "8a6c8a07-7f2e-466a-96d0-653f2556ca8f",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "stage_3_02_research_agent",
+      "path": "layer_3_group/layer_3_subx3_features/layer_3_subx3_feature_context_loading/layer_3_group/layer_3_99_stages/stage_3_02_research/stage_3_02_research_agent.jsonld"
+    },
+    {
+      "resource_id": "6a1d3790-45fa-4ff1-9a0d-f06f0f350e40",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "stage_3_03_instructions_agent",
+      "path": "layer_3_group/layer_3_subx3_features/layer_3_subx3_feature_context_loading/layer_3_group/layer_3_99_stages/stage_3_03_instructions/stage_3_03_instructions_agent.jsonld"
+    },
+    {
+      "resource_id": "f31b42f2-2ba5-496b-8d71-275c2a8095b5",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "stage_3_05_design_agent",
+      "path": "layer_3_group/layer_3_subx3_features/layer_3_subx3_feature_context_loading/layer_3_group/layer_3_99_stages/stage_3_04_design/stage_3_05_design_agent.jsonld"
+    },
+    {
+      "resource_id": "0d45b8c6-cfe1-481b-92a4-2e6b6feb85ae",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "stage_3_04_planning_agent",
+      "path": "layer_3_group/layer_3_subx3_features/layer_3_subx3_feature_context_loading/layer_3_group/layer_3_99_stages/stage_3_05_planning/stage_3_04_planning_agent.jsonld"
+    },
+    {
+      "resource_id": "0a934ce6-2259-4e25-9950-f98b80c7f85a",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "stage_3_06_development_agent",
+      "path": "layer_3_group/layer_3_subx3_features/layer_3_subx3_feature_context_loading/layer_3_group/layer_3_99_stages/stage_3_06_development/stage_3_06_development_agent.jsonld"
+    },
+    {
+      "resource_id": "79a12a02-e508-4495-b8cd-ea0a45c2b948",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "stage_3_07_testing_agent",
+      "path": "layer_3_group/layer_3_subx3_features/layer_3_subx3_feature_context_loading/layer_3_group/layer_3_99_stages/stage_3_07_testing/stage_3_07_testing_agent.jsonld"
+    },
+    {
+      "resource_id": "646010ef-eb83-4f1d-8b60-52e23ea64a08",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "stage_3_08_criticism_agent",
+      "path": "layer_3_group/layer_3_subx3_features/layer_3_subx3_feature_context_loading/layer_3_group/layer_3_99_stages/stage_3_08_criticism/stage_3_08_criticism_agent.jsonld"
+    },
+    {
+      "resource_id": "585fa0b1-41ec-407b-ba0b-0cb136de130e",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "stage_3_09_fixing_agent",
+      "path": "layer_3_group/layer_3_subx3_features/layer_3_subx3_feature_context_loading/layer_3_group/layer_3_99_stages/stage_3_09_fixing/stage_3_09_fixing_agent.jsonld"
+    },
+    {
+      "resource_id": "e6251e00-4487-4360-a29b-04864f47ab75",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "stage_3_10_current_product_agent",
+      "path": "layer_3_group/layer_3_subx3_features/layer_3_subx3_feature_context_loading/layer_3_group/layer_3_99_stages/stage_3_10_current_product/stage_3_10_current_product_agent.jsonld"
+    },
+    {
+      "resource_id": "5bc797f3-929b-478b-9ec6-e7243769fed4",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "stage_3_11_archives_agent",
+      "path": "layer_3_group/layer_3_subx3_features/layer_3_subx3_feature_context_loading/layer_3_group/layer_3_99_stages/stage_3_11_archives/stage_3_11_archives_agent.jsonld"
+    },
+    {
+      "resource_id": "04e96ca6-ac52-4180-b305-c6a47a27efd4",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "status_3",
+      "path": "layer_3_group/layer_3_subx3_features/layer_3_subx3_feature_context_loading/layer_3_group/layer_3_99_stages/status_3.json"
+    },
+    {
+      "resource_id": "a2e07d74-0275-496e-b8b7-25270c2ea468",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "layer_3_orchestrator.gab",
+      "path": "layer_3_group/layer_3_subx3_features/layer_3_subx3_feature_context_loading/layer_3_orchestrator.gab.jsonld"
+    },
+    {
+      "resource_id": "89891764-41a7-4708-81ed-cc72e3b094ac",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": "trigger_pointer_knowledge",
+      "path": "layer_3_group/layer_3_subx3_features/layer_3_subx3_feature_trigger_pointer_system/.0agnostic/01_knowledge/trigger_pointer_system/trigger_pointer_knowledge.md"
+    },
+    {
+      "resource_id": "943feef8-db42-4446-bac3-20c55c6353b2",
+      "id_field": "resource_id",
+      "resource_type": "rule",
+      "resource_name": "auto_trigger_rule",
+      "path": "layer_3_group/layer_3_subx3_features/layer_3_subx3_feature_trigger_pointer_system/.0agnostic/02_rules/dynamic/auto_trigger_rule/auto_trigger_rule.md"
+    },
+    {
+      "resource_id": "d8010749-14a6-489e-a64a-4911d3aebbe4",
+      "id_field": "resource_id",
+      "resource_type": "rule",
+      "resource_name": "pointer_file_convention",
+      "path": "layer_3_group/layer_3_subx3_features/layer_3_subx3_feature_trigger_pointer_system/.0agnostic/02_rules/static/pointer_file_convention/pointer_file_convention.md"
+    },
+    {
+      "resource_id": "c40951ce-b9a2-4c62-b5d1-7578710436aa",
+      "id_field": "resource_id",
+      "resource_type": "agnostic",
+      "resource_name": "0AGNOSTIC",
+      "path": "layer_3_group/layer_3_subx3_features/layer_3_subx3_feature_trigger_pointer_system/0AGNOSTIC.md"
+    },
+    {
+      "resource_id": "03886084-b94c-44e8-af91-ce5733c3bc82",
+      "id_field": "resource_id",
+      "resource_type": "index",
+      "resource_name": "0INDEX",
+      "path": "layer_3_group/layer_3_subx3_features/layer_3_subx3_feature_trigger_pointer_system/0INDEX.md"
+    },
+    {
+      "resource_id": "9e94b0ca-5a4e-47cf-8c5b-d179daf112de",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_3_group/layer_3_subx3_features/layer_3_subx3_feature_trigger_pointer_system/README.md"
+    },
+    {
+      "resource_id": "0dc8a950-fe45-4152-8e63-016d7f507103",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "stage_index",
+      "path": "layer_3_group/layer_3_subx3_features/layer_3_subx3_feature_trigger_pointer_system/layer_3_group/layer_3_99_stages/stage_3_00_stage_registry/stage_index.json"
+    },
+    {
+      "resource_id": "2f7029b6-089c-4959-bf48-25e0f2db958a",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_3_group/layer_3_subx3_features/layer_3_subx3_feature_trigger_pointer_system/layer_3_group/layer_3_99_stages/stage_3_01_request_gathering/outputs/requests/tree_of_needs/00_pointers_stay_synchronized/01_pointer_format/README.md"
+    },
+    {
+      "resource_id": "fa72d32d-d9c4-4bbd-85b1-f7550de4aafa",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_3_group/layer_3_subx3_features/layer_3_subx3_feature_trigger_pointer_system/layer_3_group/layer_3_99_stages/stage_3_01_request_gathering/outputs/requests/tree_of_needs/00_pointers_stay_synchronized/01_pointer_format/requirements/README.md"
+    },
+    {
+      "resource_id": "8350765d-5fec-444f-b3fd-a3f5afaa1b29",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "REQ-01_frontmatter_schema",
+      "path": "layer_3_group/layer_3_subx3_features/layer_3_subx3_feature_trigger_pointer_system/layer_3_group/layer_3_99_stages/stage_3_01_request_gathering/outputs/requests/tree_of_needs/00_pointers_stay_synchronized/01_pointer_format/requirements/REQ-01_frontmatter_schema.md"
+    },
+    {
+      "resource_id": "503f8981-ecbc-484a-bee3-6d5128b0b9c9",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "REQ-02_body_convention",
+      "path": "layer_3_group/layer_3_subx3_features/layer_3_subx3_feature_trigger_pointer_system/layer_3_group/layer_3_99_stages/stage_3_01_request_gathering/outputs/requests/tree_of_needs/00_pointers_stay_synchronized/01_pointer_format/requirements/REQ-02_body_convention.md"
+    },
+    {
+      "resource_id": "8988aca1-76ee-4922-a9bd-7e1c8285281c",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "REQ-03_windows_line_endings",
+      "path": "layer_3_group/layer_3_subx3_features/layer_3_subx3_feature_trigger_pointer_system/layer_3_group/layer_3_99_stages/stage_3_01_request_gathering/outputs/requests/tree_of_needs/00_pointers_stay_synchronized/01_pointer_format/requirements/REQ-03_windows_line_endings.md"
+    },
+    {
+      "resource_id": "e99033be-f359-4fc2-8bcb-f957637ad88d",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_3_group/layer_3_subx3_features/layer_3_subx3_feature_trigger_pointer_system/layer_3_group/layer_3_99_stages/stage_3_01_request_gathering/outputs/requests/tree_of_needs/00_pointers_stay_synchronized/01_pointer_format/user_stories/README.md"
+    },
+    {
+      "resource_id": "5e11fb16-757c-42b6-a23c-da3f6af7c757",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "US-01_agent_creates_pointer",
+      "path": "layer_3_group/layer_3_subx3_features/layer_3_subx3_feature_trigger_pointer_system/layer_3_group/layer_3_99_stages/stage_3_01_request_gathering/outputs/requests/tree_of_needs/00_pointers_stay_synchronized/01_pointer_format/user_stories/US-01_agent_creates_pointer.md"
+    },
+    {
+      "resource_id": "755f2426-c4de-44f0-9777-547a61628b13",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "US-02_editing_existing_pointers",
+      "path": "layer_3_group/layer_3_subx3_features/layer_3_subx3_feature_trigger_pointer_system/layer_3_group/layer_3_99_stages/stage_3_01_request_gathering/outputs/requests/tree_of_needs/00_pointers_stay_synchronized/01_pointer_format/user_stories/US-02_editing_existing_pointers.md"
+    },
+    {
+      "resource_id": "065f6299-baea-45a1-9d7f-6a45cbe2be24",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_3_group/layer_3_subx3_features/layer_3_subx3_feature_trigger_pointer_system/layer_3_group/layer_3_99_stages/stage_3_01_request_gathering/outputs/requests/tree_of_needs/00_pointers_stay_synchronized/02_path_resolution/README.md"
+    },
+    {
+      "resource_id": "d2728874-b50b-4be7-a5fd-9c9234dc3e85",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_3_group/layer_3_subx3_features/layer_3_subx3_feature_trigger_pointer_system/layer_3_group/layer_3_99_stages/stage_3_01_request_gathering/outputs/requests/tree_of_needs/00_pointers_stay_synchronized/02_path_resolution/requirements/README.md"
+    },
+    {
+      "resource_id": "6bc2da16-8fdd-44eb-b7c0-9ee783a3ca5a",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "REQ-01_entity_search",
+      "path": "layer_3_group/layer_3_subx3_features/layer_3_subx3_feature_trigger_pointer_system/layer_3_group/layer_3_99_stages/stage_3_01_request_gathering/outputs/requests/tree_of_needs/00_pointers_stay_synchronized/02_path_resolution/requirements/REQ-01_entity_search.md"
+    },
+    {
+      "resource_id": "5bd5efb7-9db9-4f6c-b656-3643738d584a",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "REQ-02_relative_path_computation",
+      "path": "layer_3_group/layer_3_subx3_features/layer_3_subx3_feature_trigger_pointer_system/layer_3_group/layer_3_99_stages/stage_3_01_request_gathering/outputs/requests/tree_of_needs/00_pointers_stay_synchronized/02_path_resolution/requirements/REQ-02_relative_path_computation.md"
+    },
+    {
+      "resource_id": "fed11c45-e293-449f-97b6-f1a037094292",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "REQ-03_optional_field_handling",
+      "path": "layer_3_group/layer_3_subx3_features/layer_3_subx3_feature_trigger_pointer_system/layer_3_group/layer_3_99_stages/stage_3_01_request_gathering/outputs/requests/tree_of_needs/00_pointers_stay_synchronized/02_path_resolution/requirements/REQ-03_optional_field_handling.md"
+    },
+    {
+      "resource_id": "737eb6e3-c874-4cef-bc27-2407ef17081f",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_3_group/layer_3_subx3_features/layer_3_subx3_feature_trigger_pointer_system/layer_3_group/layer_3_99_stages/stage_3_01_request_gathering/outputs/requests/tree_of_needs/00_pointers_stay_synchronized/02_path_resolution/user_stories/README.md"
+    },
+    {
+      "resource_id": "ab7984ae-e0d9-49be-8753-c97d0e3a8f4b",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "US-01_directory_moves",
+      "path": "layer_3_group/layer_3_subx3_features/layer_3_subx3_feature_trigger_pointer_system/layer_3_group/layer_3_99_stages/stage_3_01_request_gathering/outputs/requests/tree_of_needs/00_pointers_stay_synchronized/02_path_resolution/user_stories/US-01_directory_moves.md"
+    },
+    {
+      "resource_id": "bd8a6253-6fb3-49e5-92ec-1d8162e57db1",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "US-02_graceful_failure",
+      "path": "layer_3_group/layer_3_subx3_features/layer_3_subx3_feature_trigger_pointer_system/layer_3_group/layer_3_99_stages/stage_3_01_request_gathering/outputs/requests/tree_of_needs/00_pointers_stay_synchronized/02_path_resolution/user_stories/US-02_graceful_failure.md"
+    },
+    {
+      "resource_id": "191360e5-325a-40c8-a653-3fcef9fffece",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "US-03_ambiguous_entity",
+      "path": "layer_3_group/layer_3_subx3_features/layer_3_subx3_feature_trigger_pointer_system/layer_3_group/layer_3_99_stages/stage_3_01_request_gathering/outputs/requests/tree_of_needs/00_pointers_stay_synchronized/02_path_resolution/user_stories/US-03_ambiguous_entity.md"
+    },
+    {
+      "resource_id": "3b35f6cf-f9e0-44c6-843a-1bbedde770fd",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_3_group/layer_3_subx3_features/layer_3_subx3_feature_trigger_pointer_system/layer_3_group/layer_3_99_stages/stage_3_01_request_gathering/outputs/requests/tree_of_needs/00_pointers_stay_synchronized/03_trigger_automation/README.md"
+    },
+    {
+      "resource_id": "15c42026-03f3-40bb-8404-63974f30a7f0",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_3_group/layer_3_subx3_features/layer_3_subx3_feature_trigger_pointer_system/layer_3_group/layer_3_99_stages/stage_3_01_request_gathering/outputs/requests/tree_of_needs/00_pointers_stay_synchronized/03_trigger_automation/requirements/README.md"
+    },
+    {
+      "resource_id": "3e2fc187-04d9-4ff0-8ef1-3a2cefcd2bb6",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "REQ-01_hook_triggers",
+      "path": "layer_3_group/layer_3_subx3_features/layer_3_subx3_feature_trigger_pointer_system/layer_3_group/layer_3_99_stages/stage_3_01_request_gathering/outputs/requests/tree_of_needs/00_pointers_stay_synchronized/03_trigger_automation/requirements/REQ-01_hook_triggers.md"
+    },
+    {
+      "resource_id": "b869b07e-cf09-4fd0-8198-6dfc9bf0bc6e",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "REQ-02_git_integration",
+      "path": "layer_3_group/layer_3_subx3_features/layer_3_subx3_feature_trigger_pointer_system/layer_3_group/layer_3_99_stages/stage_3_01_request_gathering/outputs/requests/tree_of_needs/00_pointers_stay_synchronized/03_trigger_automation/requirements/REQ-02_git_integration.md"
+    },
+    {
+      "resource_id": "9a3f299a-ac68-48d7-8099-a465bcb22db2",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "REQ-03_change_detection",
+      "path": "layer_3_group/layer_3_subx3_features/layer_3_subx3_feature_trigger_pointer_system/layer_3_group/layer_3_99_stages/stage_3_01_request_gathering/outputs/requests/tree_of_needs/00_pointers_stay_synchronized/03_trigger_automation/requirements/REQ-03_change_detection.md"
+    },
+    {
+      "resource_id": "8b003279-24b4-406d-8704-2fab7ba9b9cd",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_3_group/layer_3_subx3_features/layer_3_subx3_feature_trigger_pointer_system/layer_3_group/layer_3_99_stages/stage_3_01_request_gathering/outputs/requests/tree_of_needs/00_pointers_stay_synchronized/03_trigger_automation/user_stories/README.md"
+    },
+    {
+      "resource_id": "ec7fbc06-b321-4a65-826e-0f6f8bb7aa05",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "US-01_auto_sync_on_move",
+      "path": "layer_3_group/layer_3_subx3_features/layer_3_subx3_feature_trigger_pointer_system/layer_3_group/layer_3_99_stages/stage_3_01_request_gathering/outputs/requests/tree_of_needs/00_pointers_stay_synchronized/03_trigger_automation/user_stories/US-01_auto_sync_on_move.md"
+    },
+    {
+      "resource_id": "e502afac-1483-476e-8039-ecb7ee4cac4e",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "US-02_agent_edit_reminder",
+      "path": "layer_3_group/layer_3_subx3_features/layer_3_subx3_feature_trigger_pointer_system/layer_3_group/layer_3_99_stages/stage_3_01_request_gathering/outputs/requests/tree_of_needs/00_pointers_stay_synchronized/03_trigger_automation/user_stories/US-02_agent_edit_reminder.md"
+    },
+    {
+      "resource_id": "89f5e618-51a5-4063-b6f4-c13f73055e83",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "US-03_git_hook_triggers",
+      "path": "layer_3_group/layer_3_subx3_features/layer_3_subx3_feature_trigger_pointer_system/layer_3_group/layer_3_99_stages/stage_3_01_request_gathering/outputs/requests/tree_of_needs/00_pointers_stay_synchronized/03_trigger_automation/user_stories/US-03_git_hook_triggers.md"
+    },
+    {
+      "resource_id": "2c3c89f6-6378-430a-aa2d-6c3278e00db7",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_3_group/layer_3_subx3_features/layer_3_subx3_feature_trigger_pointer_system/layer_3_group/layer_3_99_stages/stage_3_01_request_gathering/outputs/requests/tree_of_needs/00_pointers_stay_synchronized/README.md"
+    },
+    {
+      "resource_id": "235ffdcf-5946-447e-992d-c2d1abe67af8",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "rename_propagation_research",
+      "path": "layer_3_group/layer_3_subx3_features/layer_3_subx3_feature_trigger_pointer_system/layer_3_group/layer_3_99_stages/stage_3_02_research/outputs/rename_propagation_research.md"
+    },
+    {
+      "resource_id": "8d962438-cb21-4cb6-9737-a0d5dff91bd0",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "uuid_and_database_patterns_research",
+      "path": "layer_3_group/layer_3_subx3_features/layer_3_subx3_feature_trigger_pointer_system/layer_3_group/layer_3_99_stages/stage_3_02_research/outputs/uuid_and_database_patterns_research.md"
+    },
+    {
+      "resource_id": "bd9022bb-e7fa-4a97-b0a9-00a9557d9e41",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "pointer_sync_design",
+      "path": "layer_3_group/layer_3_subx3_features/layer_3_subx3_feature_trigger_pointer_system/layer_3_group/layer_3_99_stages/stage_3_04_design/outputs/pointer_sync_design.md"
+    },
+    {
+      "resource_id": "1f40a5c5-cebc-42b1-a3f2-56c9cbd91c2d",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "uuid_identity_system_design",
+      "path": "layer_3_group/layer_3_subx3_features/layer_3_subx3_feature_trigger_pointer_system/layer_3_group/layer_3_99_stages/stage_3_04_design/outputs/uuid_identity_system_design.md"
+    },
+    {
+      "resource_id": "6baf4700-3026-43e9-ae26-72b11d9c8b31",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "uuid_implementation_plan",
+      "path": "layer_3_group/layer_3_subx3_features/layer_3_subx3_feature_trigger_pointer_system/layer_3_group/layer_3_99_stages/stage_3_05_planning/outputs/uuid_implementation_plan.md"
+    },
+    {
+      "resource_id": "24b87bb5-c981-40b3-94dc-c0b052db0997",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "pointer_sync_implementation",
+      "path": "layer_3_group/layer_3_subx3_features/layer_3_subx3_feature_trigger_pointer_system/layer_3_group/layer_3_99_stages/stage_3_06_development/outputs/pointer_sync_implementation.md"
+    },
+    {
+      "resource_id": "7f51c7a5-9bca-4591-aec2-32ba9d51905a",
+      "id_field": "resource_id",
+      "resource_type": "script",
+      "resource_name": "test_pointer_sync",
+      "path": "layer_3_group/layer_3_subx3_features/layer_3_subx3_feature_trigger_pointer_system/layer_3_group/layer_3_99_stages/stage_3_07_testing/outputs/test_pointer_sync.sh"
+    },
+    {
+      "resource_id": "c8d88e83-ee42-43c7-baf6-b9913b549aa0",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "uuid_test_design",
+      "path": "layer_3_group/layer_3_subx3_features/layer_3_subx3_feature_trigger_pointer_system/layer_3_group/layer_3_99_stages/stage_3_07_testing/outputs/uuid_test_design.md"
+    },
+    {
+      "resource_id": "50e10df8-5daa-4a4d-883e-4fe474502b30",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "current_product",
+      "path": "layer_3_group/layer_3_subx3_features/layer_3_subx3_feature_trigger_pointer_system/layer_3_group/layer_3_99_stages/stage_3_10_current_product/outputs/current_product.md"
+    }
+  ]
+}

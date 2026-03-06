@@ -144,6 +144,7 @@ Agents at this layer and below communicate via:
 | Knowledge | `.0agnostic/01_knowledge/` | 4 architecture docs |
 | Principles | `.0agnostic/01_knowledge/principles/` | 5 core principles |
 | Protocols | `.0agnostic/03_protocols/` | 4 step-by-step procedures |
+| Resource index | `.0agnostic/resource_index.json` | Authoritative local resource UUID map for this entity |
 | Skills | `.0agnostic/06_context_avenue_web/01_file_based/05_skills/` | chain-validate, avenue-check |
 | Episodic memory | `.0agnostic/04_episodic_memory/` | Session history |
 
