@@ -8,16 +8,19 @@ resource_name: "0AGNOSTIC"
 ---
 # 0_layer_universal - Agnostic Identity
 
+<!-- section_id: "b2aab0fd-e9c1-4f32-85ff-4d13f0649c26" -->
 ## Identity
 
 **Role**: Root Manager
 **Scope**: Coordinates all layers in the AI context system
 **Layer**: Root (contains layer_0, layer_1, layer_-1_research)
 
+<!-- section_id: "f80cb478-72aa-4967-91e4-1aacd1b77565" -->
 ## Critical Rules
 
 These rules apply to EVERY AI agent at this level and below:
 
+<!-- section_id: "60ba0156-da52-4d22-a78a-7d5b1b1c9765" -->
 ### 1. Filesystem Change Visualization Protocol
 
 **Two tiers** — show proposed changes before executing:
@@ -30,6 +33,7 @@ These rules apply to EVERY AI agent at this level and below:
 
 **Full rule**: `.0agnostic/02_rules/0_every_api_request/AI_CONTEXT_MODIFICATION_PROTOCOL/AI_CONTEXT_MODIFICATION_PROTOCOL.md`
 
+<!-- section_id: "4bda3538-1a9c-45f7-8ead-48acec10920e" -->
 ### 2. Stage Completeness Rule
 
 When creating entities with stages: **ALL 11 stages MUST exist**.
@@ -38,6 +42,7 @@ Empty stages are valid. Missing stages are NOT.
 
 **Reference**: `layer_0/.../layer_stage_system/STAGES_EXPLAINED.md`
 
+<!-- section_id: "d98bbf96-7989-4c0d-b933-707f4a989053" -->
 ### 3. AI Context Commit/Push Rule
 
 After approved changes:
@@ -45,6 +50,7 @@ After approved changes:
 2. `git commit -m "[AI Context] description"`
 3. `git push`
 
+<!-- section_id: "2c6faf1a-3bb1-4b09-ba53-3d0deefa908d" -->
 ### 4. Submodule Integrity Protocol
 
 When any nested repository exists in a child path:
@@ -61,6 +67,7 @@ When any nested repository exists in a child path:
    - properly registered as a submodule, or
    - de-initialized as a standalone repo and converted to regular tracked files.
 
+<!-- section_id: "de02eca7-38ba-422c-83f2-46ea04923b46" -->
 ## Triggers
 
 | Situation | Action |
@@ -77,6 +84,7 @@ When any nested repository exists in a child path:
 | Creating or modifying pointer files | Follow `.0agnostic/03_protocols/pointer_sync_protocol.md` and run `pointer-sync.sh --validate` |
 | Modifying agent delegation patterns | Load `.0agnostic/02_rules/dynamic/agent_delegation_workspace_rule/agent_delegation_workspace_rule.md` |
 
+<!-- section_id: "1aa0e072-d338-4d31-a103-534f50df4ab8" -->
 ## Resources
 
 | Resource | Location | Purpose |
@@ -97,6 +105,7 @@ When any nested repository exists in a child path:
 | Pointer Sync Rule | `.0agnostic/02_rules/static/pointer_sync_rule/pointer_sync_rule.md` | Always-apply rule for pointer file format |
 | Context Chain Mode | `.0agnostic/02_rules/dynamic/CONTEXT_CHAIN_MODE/context_chain_mode.md` | Default vs Research mode switching |
 
+<!-- section_id: "7a3af372-8f41-431b-b5ed-e58c6c883565" -->
 ## Children
 
 | Layer | Purpose |
@@ -110,6 +119,7 @@ When any nested repository exists in a child path:
 *This is the source of truth for 0_layer_universal identity.*
 *Tool-specific files (CLAUDE.md, GEMINI.md, AGENTS.md) are generated from this.*
 
+<!-- section_id: "4dc9b6d7-b64d-4d67-9e22-7ff75e2e800e" -->
 ## Mandatory Checkpoint Cadence
 
 1. Commit and push for each new item.
@@ -127,7 +137,7 @@ Active chain map (school -> module_03):
 | When | Rule |
 |------|------|
 | Modifying any file in .0agnostic/ | When modifying .0agnostic/ files, also update 0AGNOSTIC.md and run agnostic-sync.sh. Full protocol: .0agnostic/02_rules/static/agnostic_update_protocol.md |
-| Any turn that modifies files | On every turn with file changes: (1) describe changes INLINE with their full absolute paths in the response body, (2) provide end-of-turn summary of all Added/Updated/Moved/Removed files. All paths start from /home/, NEVER abbreviated. Full rule: .0agnostic/02_rules/static/I0_FILE_CHANGE_REPORTING/I0_FILE_CHANGE_REPORTING.md |
+| Any turn that modifies files | On every turn with file changes: (1) describe changes INLINE with their full absolute paths in the response body, (2) provide end-of-turn summary of all Added/Updated/Moved/Removed files. All paths start from /home/, NEVER abbreviated. Full rule: .0agnostic/02_rules/static/I0_FILE_CHANGE_REPORTING/I0_FILE_CHANGE_REPORTING.md |
 
 
 ## Claude-Specific Rules
@@ -153,16 +163,19 @@ resource_name: "tool_additions"
 ---
 # Claude Code CLI — Universal Additions
 
+<!-- section_id: "e59fa8d3-f2c3-425a-8362-dc3acab35963" -->
 ## Browser Extraction Capabilities
 
 Claude Code CLI has browser extraction capabilities via the **Claude in Chrome** MCP server. When you need to extract content from web pages — especially pages that use React rendering (Perplexity, SPAs) — use the following:
 
+<!-- section_id: "bee1bdb1-028f-4325-9173-8c5aecf85506" -->
 ### Available Skills
 
 | Skill | Trigger | What It Does |
 |-------|---------|--------------|
 | `/perplexity-extract` | User provides a Perplexity URL | Extracts structured content + citation source URLs using React fiber traversal |
 
+<!-- section_id: "26803820-3e44-47fb-aaba-5baead604ad7" -->
 ### When to Use Browser Extraction
 
 - User shares a Perplexity search URL and wants the content/citations preserved
@@ -171,11 +184,13 @@ Claude Code CLI has browser extraction capabilities via the **Claude in Chrome**
 - Any page where URLs are stored in React component props, not DOM attributes
 - User asks to open Claude in Chrome and navigate to or work in Perplexity (e.g., "open Perplexity in the browser", "search Perplexity for X")
 
+<!-- section_id: "c3908443-8b63-4644-a07f-a21bd382685b" -->
 ### Prerequisites
 
 - Claude in Chrome MCP server must be connected (check with `tabs_context_mcp`)
 - If MCP server is not available, fall back to `WebFetch` for basic content or ask the user to copy/paste
 
+<!-- section_id: "1a3c3a40-d60e-45fc-8ded-b28eb49ea7f5" -->
 ### Key Knowledge
 
 - React fiber traversal (`__reactFiber$*` → `memoizedProps.children.props`) is the ONLY reliable method for Perplexity citation URLs

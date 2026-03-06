@@ -1,17 +1,19 @@
-# resource_id: "a087f3d9-dda9-4f67-b470-db576ecc0572"
-# resource_type: "document"
-# resource_name: ".cursorrules"
 # Cursor Rules
 
+## Identity
+
+**Role**: Root Manager
+**Scope**: Coordinates all layers in the AI context system
+**Layer**: Root (contains layer_0, layer_1, layer_-1_research)
+
+<!-- section_id: "f80cb478-72aa-4967-91e4-1aacd1b77565" -->
 
 ## Promoted Rules
 
 | When | Rule |
 |------|------|
 | Modifying any file in .0agnostic/ | When modifying .0agnostic/ files, also update 0AGNOSTIC.md and run agnostic-sync.sh. Full protocol: .0agnostic/02_rules/static/agnostic_update_protocol.md |
-| Any turn that modifies files
- | On every turn with file changes: (1) describe changes INLINE with their full absolute paths in the response body, (2) provide end-of-turn summary of all Added/Updated/Moved/Removed files. All paths start from /home/, NEVER abbreviated. Full rule: .0agnostic/02_rules/static/I0_FILE_CHANGE_REPORTING/I0_FILE_CHANGE_REPORTING.md
- |
+| Any turn that modifies files | On every turn with file changes: (1) describe changes INLINE with their full absolute paths in the response body, (2) provide end-of-turn summary of all Added/Updated/Moved/Removed files. All paths start from /home/, NEVER abbreviated. Full rule: .0agnostic/02_rules/static/I0_FILE_CHANGE_REPORTING/I0_FILE_CHANGE_REPORTING.md |
 
 
 

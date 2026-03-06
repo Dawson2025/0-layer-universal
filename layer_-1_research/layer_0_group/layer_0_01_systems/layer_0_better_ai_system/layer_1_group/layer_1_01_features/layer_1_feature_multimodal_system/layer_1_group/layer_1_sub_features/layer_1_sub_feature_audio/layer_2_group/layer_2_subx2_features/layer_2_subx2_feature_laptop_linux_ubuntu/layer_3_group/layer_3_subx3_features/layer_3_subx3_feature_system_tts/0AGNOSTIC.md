@@ -68,3 +68,14 @@ Load this context when:
 <!-- section_id: "71474be6-aaa8-485b-80d1-6060e6671869" -->
 ### Platform Dependencies
 Platform-specific details (hardware specs, Ubuntu/GNOME configuration, audio stack, gsd-* daemons) are documented in the parent entity: `../../../0AGNOSTIC.md`
+
+### GSD Session Startup (Setup Dependency)
+The Ctrl+Alt+S keybinding depends on `gsd-media-keys` running. After reboot, Unity's DISPLAY race condition causes gsd daemons to fail. The fix is tracked in a dedicated setup entity:
+
+**Entity**: `.0agnostic/07+_setup_dependant/.../sub_layer_0_06_local/sub_layer_0_06_group/setup/gsd_session_startup/`
+(from repo root)
+
+Key files:
+- Root cause: `stages/stage_02_research/outputs/display_race_condition.md`
+- Solutions: `stages/stage_04_design/outputs/pre_testing/solution_overview.md`
+- Current workaround: `stages/stage_10_current_product/outputs/current_workaround.md`

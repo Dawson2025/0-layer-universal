@@ -13,21 +13,50 @@ GNOME Settings Daemons (`gsd-media-keys`, `gsd-power`) repeatedly failing, causi
 - Brightness buttons not working
 
 <!-- section_id: "2a3eed74-3292-4ffe-84e4-d4aef95b32d2" -->
-### Root Cause
+### Root Cause: DISPLAY Race Condition
 
-1. Services failed during login (due to inotify exhaustion or portal issues)
-2. Systemd gave up after 5 restart attempts
-3. Services configured to only start via GNOME session, not manually
-4. Manual starts work but nothing restarts them if they die
+**Single root cause**: Unity desktop doesn't import `DISPLAY` into the systemd user environment before GNOME session triggers gsd-media-keys and gsd-power.
+
+**Timeline (every boot)**:
+1. `09:08:20.000` — systemd user session starts (reaches default.target in 141ms)
+2. `09:08:20.141` — GNOME session triggers gsd-media-keys, gsd-power
+3. `09:08:21` — gsd-media-keys: `Cannot open display:` — crashes
+4. 5 crashes in <1 second — systemd enters permanent `failed` state
+5. `09:08:2?` — Display manager finally exports `DISPLAY=:0` ... too late
+
+**Why Unity is different**: On stock GNOME, `gnome-session` calls `systemctl --user import-environment DISPLAY` before activating gsd targets. Unity (`XDG_CURRENT_DESKTOP=Unity`) uses GNOME components but has a different session startup sequence — it doesn't import `DISPLAY` into systemd fast enough.
+
+**The keepalive system is a band-aid**:
+- Band-aid 1: `gsd-keepalive.timer` — polls every 60s, restarts dead daemons
+- Band-aid 2: `wait-for-display.sh` — waits for X11 before starting
+- Band-aid 3: `Environment=DISPLAY=:0` — hardcoded fallback in service
+- Still broken: ~5 min dead zone, multi-instance spawning, silent errors
+
+**Proper fix**: Import DISPLAY into systemd user env before gsd services start (e.g., systemd drop-in override or session startup script running `systemctl --user import-environment DISPLAY XAUTHORITY` early in the login sequence).
+
+> **NOTE**: This problem is being tracked in a dedicated entity. See `../../../setup/gsd_session_startup/` for the full requirements tree, design, and testing.
 
 <!-- section_id: "88aa64cd-8bd7-4368-85d4-be5f2dbbbebf" -->
 ### Error Evidence
 
+Journal output from 2026-03-06 reboot:
 ```
+gsd-media-keys: Cannot open display:
+gsd-media-keys: Cannot open display:
+gsd-media-keys: Cannot open display:
+gsd-media-keys: Cannot open display:
+gsd-media-keys: Cannot open display:
 × org.gnome.SettingsDaemon.MediaKeys.service
   Active: failed (Result: exit-code)
   "Start request repeated too quickly"
   "Failed with result 'exit-code'"
+```
+
+gsd-media-keys D-Bus dependency failure (brightness keys → gsd-power):
+```
+media-keys-plugin-WARNING: Failed to set new screen percentage:
+  GDBus.Error:org.freedesktop.DBus.Error.ServiceUnknown:
+  The name org.gnome.SettingsDaemon.Power was not provided by any .service files
 ```
 
 <!-- section_id: "71512a44-d982-4580-9882-338b246b8977" -->
@@ -120,7 +149,9 @@ The keepalive timer successfully restarts gsd-media-keys and gsd-power processes
 <!-- section_id: "9893c362-614f-432f-8b16-a9b0fbe8a1c2" -->
 ## Long-term Fix
 
-Log out and log back in after the underlying issues (inotify, portals) are resolved. This allows GNOME session to properly start all services. After a fresh login, the keepalive timer becomes a safety net rather than a necessity.
+Import `DISPLAY` and `XAUTHORITY` into the systemd user environment early in the Unity session startup, before GNOME triggers gsd services. This is the proper fix — it eliminates the race condition instead of working around it. See `../../../setup/gsd_session_startup/` for investigation and implementation of the proper fix.
+
+Current workaround: the keepalive timer provides eventual recovery (~5 min delay). A fresh logout/login also works because it restarts the full GNOME session.
 
 <!-- section_id: "e1f7a2b3-4c5d-6e7f-8a9b-0c1d2e3f4a5b" -->
 ## Reboot Test Results (2026-03-06)

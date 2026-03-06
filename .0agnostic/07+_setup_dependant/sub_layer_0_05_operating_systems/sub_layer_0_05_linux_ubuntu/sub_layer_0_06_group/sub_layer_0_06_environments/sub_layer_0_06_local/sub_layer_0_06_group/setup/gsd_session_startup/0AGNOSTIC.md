@@ -1,0 +1,70 @@
+---
+resource_id: "a1b2c3d4-e5f6-7890-abcd-ef1234567890"
+resource_type: "agnostic_document"
+resource_name: "gsd_session_startup"
+---
+# GSD Session Startup — Agnostic Identity
+
+<!-- section_id: "d4e5f6a7-b8c9-0d1e-2f3a-4b5c6d7e8f9a" -->
+## Identity
+
+**Role**: Setup Entity — GSD Session Startup Fix
+**Scope**: Fix the DISPLAY race condition that prevents GNOME Settings Daemons (gsd-media-keys, gsd-power) from starting reliably after every reboot on Unity desktop.
+**Parent**: `../README.md` (Local Environment Setup)
+
+## Problem Statement
+
+Unity desktop (`XDG_CURRENT_DESKTOP=Unity`) doesn't import `DISPLAY` into the systemd user environment before GNOME session triggers gsd-media-keys and gsd-power. This causes 5 rapid "Cannot open display:" crashes in <1 second, after which systemd permanently gives up on the services.
+
+Stock GNOME calls `systemctl --user import-environment DISPLAY` before activating gsd targets. Unity doesn't.
+
+**Impact**:
+- ~5 min dead zone after every boot for custom keybindings (Ctrl+Alt+S speak-selection)
+- Brightness keys broken until gsd-power manually restarted
+- Brightness OSD not appearing
+- Multiple band-aid workarounds required (keepalive timer, wait-for-display.sh, hardcoded DISPLAY)
+
+## Triggers
+
+Load this context when:
+- User mentions: gsd failing, DISPLAY race condition, post-reboot daemon failures, brightness not working after boot
+- Working on: Session startup ordering, systemd user environment, gsd-media-keys/gsd-power reliability
+- Entering: `setup/gsd_session_startup/`
+
+## Pointers
+
+### On Entry
+1. Read `0INDEX.md` for current status and stage progress
+2. Check `stages/` for specific stage content
+
+### Navigation
+| Direction | Path |
+|-----------|------|
+| Parent | `../README.md` (setup/) |
+| Current workaround | `../../sub_layer_0_06_99_stages/stage_0_09_current_product/outputs/gsd_keepalive_fix.md` |
+| GNOME architecture knowledge | `../../../.0agnostic/01_knowledge/ubuntu_desktop/docs/gnome_architecture.md` |
+| Systemd knowledge | `../../../.0agnostic/01_knowledge/system_services/docs/systemd_user_services.md` |
+| Audio/TTS (depends on this) | See layer_2_subx2_feature_laptop_linux_ubuntu and layer_3_subx3_feature_system_tts in research tree |
+
+### Stage Hierarchy
+| Stage | Purpose | Key Content |
+|-------|---------|-------------|
+| stage_01_request_gathering | Requirements | `requirements_tree.md` — hierarchical needs tree |
+| stage_02_research | Investigation | `display_race_condition.md` — root cause analysis |
+| stage_03_instructions | Constraints | (empty) |
+| stage_04_design | Solutions | `pre_testing/solution_overview.md` — 3 solution approaches |
+| stage_05_planning | Task breakdown | (empty) |
+| stage_06_development | Implementation | (empty) |
+| stage_07_testing | Verification | Subdirs: test_design, test_development, test_runs, test_insights |
+| stage_08_criticism | Review | (empty) |
+| stage_09_fixing | Corrections | (empty) |
+| stage_10_current_product | Active fix | Pointer to gsd_keepalive_fix.md (current workaround) |
+| stage_11_archives | History | (empty) |
+
+## Existing Work (Consolidated Here)
+
+Prior work scattered across parent entity stages:
+- **REQ_006**: `../../sub_layer_0_06_99_stages/stage_0_00_request_gathering/requests/REQ_006_brightness_volume_buttons_not_working.md`
+- **Test design**: `../../sub_layer_0_06_99_stages/stage_0_04_design/outputs/daemon_persistence_test_design.md`
+- **Test framework**: `../../sub_layer_0_06_99_stages/stage_0_06_testing/outputs/by_purpose/daemon_persistence_restart_fix/`
+- **Current fix**: `../../sub_layer_0_06_99_stages/stage_0_09_current_product/outputs/gsd_keepalive_fix.md`
