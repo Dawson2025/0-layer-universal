@@ -23,6 +23,7 @@ Load this context when:
 - User mentions: system TTS, highlight-and-speak, speak-selection, Ctrl+Alt+S, Speech Dispatcher
 - Working on: System-wide TTS setup, voice engine installation, keyboard shortcuts for speech
 - Entering: `layer_3_subx3_feature_system_tts/`
+- Ctrl+Alt+S not working after reboot → traverse to GSD Session Startup entity (see Platform Dependencies below)
 
 <!-- section_id: "349d1f81-c7a9-41dd-9bc3-9e56acb19d0a" -->
 ## Pointers

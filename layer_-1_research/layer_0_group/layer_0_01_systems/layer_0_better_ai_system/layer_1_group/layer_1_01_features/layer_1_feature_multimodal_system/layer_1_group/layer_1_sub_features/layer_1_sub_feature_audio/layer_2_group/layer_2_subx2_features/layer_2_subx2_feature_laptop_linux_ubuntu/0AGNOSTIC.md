@@ -23,6 +23,7 @@ Load this context when:
 - User mentions: Ubuntu, Linux, GNOME, Unity, PipeWire, RTX 4060, GPU TTS, Lenovo Yoga, laptop audio
 - Working on: Platform-specific TTS setup, GPU-accelerated TTS, desktop audio integration
 - Entering: `layer_2_subx2_feature_laptop_linux_ubuntu/`
+- Post-reboot daemon/keybinding/brightness failures → traverse to setup entity at `.0agnostic/.../sub_layer_0_06_local/sub_layer_0_06_group/setup/0AGNOSTIC.md`
 
 <!-- section_id: "2840d544-7387-4639-a04a-39bd81b5554d" -->
 ## Pointers

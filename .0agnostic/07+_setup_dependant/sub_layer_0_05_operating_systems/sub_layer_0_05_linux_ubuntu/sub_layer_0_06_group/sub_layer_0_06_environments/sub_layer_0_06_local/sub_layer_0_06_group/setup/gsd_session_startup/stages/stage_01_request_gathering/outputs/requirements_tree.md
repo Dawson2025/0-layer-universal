@@ -3,6 +3,24 @@ resource_id: "93207d9c-f2b0-4ab1-ae8c-292ca4a73a11"
 resource_type: "output"
 resource_name: "requirements_tree"
 ---
+
+<!-- section_id: "b8d8ec5b-40fb-4681-a46e-edc2559d26c4" -->
+## Parent Requirements Reference
+
+This tree details the requirements for the **GSD Session Startup** entity.
+
+- **Parent tree of needs**: `../../../requirements_tree.md` (setup root)
+- **This entity addresses parent needs**:
+  - **N1** (Desktop Services): R1 (gsd-media-keys) + R2 (gsd-power) ensure desktop daemons run
+  - **N4** (Display Server Availability): R3 (DISPLAY env) fixes the root cause
+
+### Completion Triggers
+| When | Parent Need Satisfied |
+|------|----------------------|
+| R3 (DISPLAY env imported before gsd starts) | N4 (Display Server Availability) |
+| R1 (gsd-media-keys running) + R2 (gsd-power running) | N1 (Desktop Services) |
+| R4 (no dead zone) + R5 (no multi-instance) | N1 quality criteria |
+
 # GSD Session Startup — Requirements Tree
 
 <!-- section_id: "d9ecb963-f8ba-45e3-8a8e-cca286492f28" -->

@@ -23,6 +23,7 @@ Load this context when:
 - User mentions: audio, TTS, text-to-speech, speech synthesis, voice output
 - Working on: Audio integration, TTS pipelines, speech output for CLI or desktop
 - Entering: `layer_1_sub_feature_audio/`
+- Post-reboot keybinding/TTS failures → traverse to setup entity (see Platform Setup Dependencies below)
 
 <!-- section_id: "d556e4ab-2b29-4367-843e-8a1748f10a0a" -->
 ## Pointers
@@ -62,3 +63,19 @@ Load this context when:
 - TTS engines (general): Kokoro, Piper, eSpeak NG, Coqui, OpenAI TTS API
 - Claude Code TTS patterns: Hooks (PostToolUse/Stop), MCP plugins, split-output (spoken_summary)
 - Platform implementations: See child entity `layer_2_subx2_feature_laptop_linux_ubuntu/`
+
+<!-- section_id: "f9bec584-667a-4df8-a501-c56bea70d41b" -->
+## Platform Setup Dependencies
+
+Audio features (especially TTS keybindings like Ctrl+Alt+S) depend on the local desktop environment being properly configured. When keybindings fail or daemons crash after reboot, traverse to the setup entity.
+
+**Setup entity** (from repo root): `.0agnostic/07+_setup_dependant/sub_layer_0_05_operating_systems/sub_layer_0_05_linux_ubuntu/sub_layer_0_06_group/sub_layer_0_06_environments/sub_layer_0_06_local/sub_layer_0_06_group/setup/`
+
+| Resource | Location (from setup/) |
+|----------|----------------------|
+| Setup identity | `0AGNOSTIC.md` — start here for all setup issues |
+| Setup requirements | `requirements_tree.md` — tree of needs for all setup concerns |
+| GSD Session Startup | `gsd_session_startup/` — fixes DISPLAY race condition that breaks Ctrl+Alt+S |
+
+### Traversal Trigger
+When Ctrl+Alt+S (speak-selection) stops working after reboot → traverse to `setup/gsd_session_startup/`

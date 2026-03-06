@@ -12,7 +12,7 @@ entity_id: "40e7fab8-642b-42a6-b3eb-a94ed47b0944"
 
 **Role**: Setup Entity — GSD Session Startup Fix
 **Scope**: Fix the DISPLAY race condition that prevents GNOME Settings Daemons (gsd-media-keys, gsd-power) from starting reliably after every reboot on Unity desktop.
-**Parent**: `../README.md` (Local Environment Setup)
+**Parent**: `../0AGNOSTIC.md` (Setup Container)
 
 ## Problem Statement
 
@@ -42,7 +42,7 @@ Load this context when:
 ### Navigation
 | Direction | Path |
 |-----------|------|
-| Parent | `../README.md` (setup/) |
+| Parent | `../0AGNOSTIC.md` (setup/) |
 | Current workaround | `../../sub_layer_0_06_99_stages/stage_0_09_current_product/outputs/gsd_keepalive_fix.md` |
 | GNOME architecture knowledge | `../../../.0agnostic/01_knowledge/ubuntu_desktop/docs/gnome_architecture.md` |
 | Systemd knowledge | `../../../.0agnostic/01_knowledge/system_services/docs/systemd_user_services.md` |
@@ -62,6 +62,33 @@ Load this context when:
 | stage_09_fixing | Corrections | (empty) |
 | stage_10_current_product | Active fix | Pointer to gsd_keepalive_fix.md (current workaround) |
 | stage_11_archives | History | (empty) |
+
+<!-- section_id: "358ab81d-27b0-4619-a18e-97957776faae" -->
+## Cross-References
+
+### Parent Requirements
+This entity satisfies the following needs from the parent setup tree (`../requirements_tree.md`):
+
+| Parent Need | This Entity's Coverage |
+|-------------|----------------------|
+| N1: Desktop Services | R1 (gsd-media-keys) + R2 (gsd-power) + R4 (no dead zone) + R5 (no multi-instance) |
+| N4: Display Server Availability | R3 (DISPLAY env) — the root cause |
+
+### Dependent Entities
+These entities depend on this fix working:
+
+| Entity | Dependency | Location (from repo root) |
+|--------|-----------|--------------------------|
+| System TTS | Ctrl+Alt+S keybinding needs gsd-media-keys | `layer_-1_research/.../layer_3_subx3_feature_system_tts/` |
+| Laptop Linux Ubuntu | Platform desktop services | `layer_-1_research/.../layer_2_subx2_feature_laptop_linux_ubuntu/` |
+| Audio (Sub-Feature) | TTS keybindings pipeline | `layer_-1_research/.../layer_1_sub_feature_audio/` |
+
+### Triggers
+| When | Action |
+|------|--------|
+| R3 (DISPLAY env) fixed | Parent N4 (Display Server) satisfied — update `../requirements_tree.md` status |
+| R1 + R2 (gsd daemons running) | Parent N1 (Desktop Services) satisfied — update `../requirements_tree.md` status |
+| All requirements met | Notify dependent entities: audio, laptop_linux_ubuntu, system_tts |
 
 ## Existing Work (Consolidated Here)
 

@@ -16,6 +16,7 @@ Load this context when:
 - User mentions: audio, TTS, text-to-speech, speech synthesis, voice output
 - Working on: Audio integration, TTS pipelines, speech output for CLI or desktop
 - Entering: `layer_1_sub_feature_audio/`
+- Post-reboot keybinding/TTS failures → traverse to setup entity (see Platform Setup Dependencies below)
 
 <!-- section_id: "d556e4ab-2b29-4367-843e-8a1748f10a0a" -->
 
