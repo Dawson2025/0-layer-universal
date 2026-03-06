@@ -1,3 +1,5 @@
+# Claude Code Context
+
 ---
 resource_id: "81d7c01c-62f7-410a-a873-d98af4f43fb4"
 resource_type: "agnostic_document"
@@ -103,3 +105,23 @@ Prior work scattered across parent entity stages:
 - **Test design**: `../../sub_layer_0_06_99_stages/stage_0_04_design/outputs/daemon_persistence_test_design.md`
 - **Test framework**: `../../sub_layer_0_06_99_stages/stage_0_06_testing/outputs/by_purpose/daemon_persistence_restart_fix/`
 - **Current fix**: `../../sub_layer_0_06_99_stages/stage_0_09_current_product/outputs/gsd_keepalive_fix.md`
+
+## Claude-Specific Rules
+
+### CLAUDE.md Integration
+This file is auto-generated from 0AGNOSTIC.md. Edit 0AGNOSTIC.md to make changes.
+
+### Tool Usage
+- Use Read tool to load .0agnostic/ resources on-demand
+- Use Bash for git operations and commands
+- Use Write/Edit for file modifications
+- Use Task tool for complex multi-step work
+
+### Session Continuity
+- Read .0agnostic/episodic_memory/index.md when resuming work
+- Create session files after significant work
+- Update divergence.log when modifying outputs
+
+---
+*Auto-generated from 0AGNOSTIC.md via agnostic-sync.sh*
+*Do not edit directly - edit 0AGNOSTIC.md instead*

@@ -1,0 +1,17 @@
+# Cursor Rules
+
+## Identity
+
+entity_id: "c26536ad-4655-48f2-8517-a832d7e19b6c"
+
+**Role**: Setup Container — Local Ubuntu Environment Setup
+**Scope**: Setup, configuration, and troubleshooting for the local Ubuntu Linux desktop environment. Groups all setup-related entities and tracks system-level requirements.
+**Parent**: `../../0AGNOSTIC.md` (Local Ubuntu Entity)
+**Children**: `gsd_session_startup/` (GSD Session Startup Fix)
+
+<!-- section_id: "285e0f6c-1f5b-4ca2-909b-f357be49dd7e" -->
+
+
+---
+*Auto-generated from 0AGNOSTIC.md via agnostic-sync.sh*
+*Do not edit directly - edit 0AGNOSTIC.md instead*

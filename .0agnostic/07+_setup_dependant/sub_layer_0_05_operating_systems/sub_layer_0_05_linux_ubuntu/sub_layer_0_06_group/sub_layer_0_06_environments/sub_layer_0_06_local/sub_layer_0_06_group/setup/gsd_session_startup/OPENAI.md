@@ -1,3 +1,5 @@
+# OpenAI Context
+
 ---
 resource_id: "81d7c01c-62f7-410a-a873-d98af4f43fb4"
 resource_type: "agnostic_document"
@@ -103,3 +105,20 @@ Prior work scattered across parent entity stages:
 - **Test design**: `../../sub_layer_0_06_99_stages/stage_0_04_design/outputs/daemon_persistence_test_design.md`
 - **Test framework**: `../../sub_layer_0_06_99_stages/stage_0_06_testing/outputs/by_purpose/daemon_persistence_restart_fix/`
 - **Current fix**: `../../sub_layer_0_06_99_stages/stage_0_09_current_product/outputs/gsd_keepalive_fix.md`
+
+## OpenAI-Specific Notes
+
+### Function Calling
+When using OpenAI function calling:
+- Read .0agnostic/ resources for detailed instructions
+- Check episodic memory for context
+- Follow multi-agent sync rules for shared files
+
+### Context Window Management
+- 0AGNOSTIC.md is lean (<400 tokens)
+- Load .0agnostic/ resources on-demand
+- Avoid loading everything upfront
+
+---
+*Auto-generated from 0AGNOSTIC.md via agnostic-sync.sh*
+*Do not edit directly - edit 0AGNOSTIC.md instead*

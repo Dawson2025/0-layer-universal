@@ -1,3 +1,5 @@
+# AutoGen Agent Context
+
 ---
 resource_id: "81d7c01c-62f7-410a-a873-d98af4f43fb4"
 resource_type: "agnostic_document"
@@ -103,3 +105,26 @@ Prior work scattered across parent entity stages:
 - **Test design**: `../../sub_layer_0_06_99_stages/stage_0_04_design/outputs/daemon_persistence_test_design.md`
 - **Test framework**: `../../sub_layer_0_06_99_stages/stage_0_06_testing/outputs/by_purpose/daemon_persistence_restart_fix/`
 - **Current fix**: `../../sub_layer_0_06_99_stages/stage_0_09_current_product/outputs/gsd_keepalive_fix.md`
+
+## AutoGen-Specific Configuration
+
+### Agent Registration
+Register this context in your AutoGen agent configuration:
+
+```python
+agent_config = {
+    "context_file": "AGENTS.md",
+    "resources_dir": ".0agnostic/",
+    "episodic_dir": ".0agnostic/episodic_memory/"
+}
+```
+
+### Multi-Agent Coordination
+- Check .locks/ before modifying shared files
+- Use atomic writes (temp file → rename)
+- Log changes to divergence.log
+- Read session files to understand previous work
+
+---
+*Auto-generated from 0AGNOSTIC.md via agnostic-sync.sh*
+*Do not edit directly - edit 0AGNOSTIC.md instead*

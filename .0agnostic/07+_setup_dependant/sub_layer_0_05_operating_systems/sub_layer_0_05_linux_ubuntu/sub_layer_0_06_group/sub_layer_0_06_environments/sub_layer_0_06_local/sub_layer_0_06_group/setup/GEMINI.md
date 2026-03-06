@@ -1,3 +1,5 @@
+# Gemini Context
+
 ---
 resource_id: "06514dfc-47ce-4cea-864e-d123c820f0c3"
 resource_type: "agnostic_document"
@@ -71,3 +73,22 @@ These entities depend on the local desktop setup being correct:
 | Audio (Sub-Feature) | TTS keybindings need gsd-media-keys | `layer_-1_research/.../layer_1_sub_feature_audio/` |
 | Laptop Linux Ubuntu | Platform-specific TTS needs working desktop | `layer_-1_research/.../layer_2_subx2_feature_laptop_linux_ubuntu/` |
 | System TTS | Ctrl+Alt+S speak-selection needs gsd-media-keys | `layer_-1_research/.../layer_3_subx3_feature_system_tts/` |
+
+## Gemini-Specific Notes
+
+### Context Loading
+Load detailed resources from .0agnostic/ when needed:
+- rules/ - Behavioral constraints
+- prompts/ - Task-specific prompts
+- knowledge/ - Reference information
+- agents/ - Agent definitions
+
+### Session Continuity
+Maintain episodic memory in .0agnostic/episodic_memory/:
+- sessions/ - Timestamped session records
+- changes/ - Divergence and conflict logs
+- index.md - Searchable session index
+
+---
+*Auto-generated from 0AGNOSTIC.md via agnostic-sync.sh*
+*Do not edit directly - edit 0AGNOSTIC.md instead*

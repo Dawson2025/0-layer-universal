@@ -66,7 +66,7 @@ Local Ubuntu environment must work reliably without manual intervention
 
 | Need | Status | Last Checked |
 |------|--------|-------------|
-| N1: Desktop Services | **Active** — gsd_session_startup entity created, solutions designed, testing not started | 2026-03-06 |
+| N1: Desktop Services | **Implemented (pre-reboot verified)** — gsd services active with single-instance checks passing; reboot validation pending | 2026-03-06 |
 | N2: System Resource Limits | **Resolved** | 2026-01-25 |
 | N3: Audio Stack | **Resolved** (workarounds) | 2026-03-06 |
-| N4: Display Server | **Active** — root cause identified, fix pending | 2026-03-06 |
+| N4: Display Server | **Implemented (pre-reboot verified)** — DISPLAY/XAUTHORITY boot import + service-level X11 backend override applied; reboot validation pending | 2026-03-06 |

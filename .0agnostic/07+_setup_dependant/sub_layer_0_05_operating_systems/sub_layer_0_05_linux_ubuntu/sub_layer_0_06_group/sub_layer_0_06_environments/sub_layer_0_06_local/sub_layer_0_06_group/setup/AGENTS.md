@@ -1,3 +1,5 @@
+# AutoGen Agent Context
+
 ---
 resource_id: "06514dfc-47ce-4cea-864e-d123c820f0c3"
 resource_type: "agnostic_document"
@@ -71,3 +73,26 @@ These entities depend on the local desktop setup being correct:
 | Audio (Sub-Feature) | TTS keybindings need gsd-media-keys | `layer_-1_research/.../layer_1_sub_feature_audio/` |
 | Laptop Linux Ubuntu | Platform-specific TTS needs working desktop | `layer_-1_research/.../layer_2_subx2_feature_laptop_linux_ubuntu/` |
 | System TTS | Ctrl+Alt+S speak-selection needs gsd-media-keys | `layer_-1_research/.../layer_3_subx3_feature_system_tts/` |
+
+## AutoGen-Specific Configuration
+
+### Agent Registration
+Register this context in your AutoGen agent configuration:
+
+```python
+agent_config = {
+    "context_file": "AGENTS.md",
+    "resources_dir": ".0agnostic/",
+    "episodic_dir": ".0agnostic/episodic_memory/"
+}
+```
+
+### Multi-Agent Coordination
+- Check .locks/ before modifying shared files
+- Use atomic writes (temp file → rename)
+- Log changes to divergence.log
+- Read session files to understand previous work
+
+---
+*Auto-generated from 0AGNOSTIC.md via agnostic-sync.sh*
+*Do not edit directly - edit 0AGNOSTIC.md instead*
