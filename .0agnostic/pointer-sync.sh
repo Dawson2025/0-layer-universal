@@ -38,6 +38,7 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"  # 0_layer_universal root
 UUID_INDEX="$ROOT/.uuid-index.json"
 LOCK_DIR="${UUID_INDEX}.lock"
+LOCK_HELD=false
 
 DRY_RUN=false
 VALIDATE=false
@@ -46,17 +47,31 @@ REBUILD_INDEX=false
 FIND_REFS=""
 DETECT_CYCLES=false
 GC_MODE=false
+LOOKUP_TARGET=""
 
-for arg in "$@"; do
-    case "$arg" in
-        --dry-run)        DRY_RUN=true ;;
-        --validate)       VALIDATE=true ;;
-        --verbose)        VERBOSE=true ;;
-        --rebuild-index)  REBUILD_INDEX=true ;;
-        --detect-cycles)  DETECT_CYCLES=true ;;
-        --gc)             GC_MODE=true ;;
+while [ $# -gt 0 ]; do
+    case "$1" in
+        --dry-run)        DRY_RUN=true; shift ;;
+        --validate)       VALIDATE=true; shift ;;
+        --verbose)        VERBOSE=true; shift ;;
+        --rebuild-index)  REBUILD_INDEX=true; shift ;;
+        --detect-cycles)  DETECT_CYCLES=true; shift ;;
+        --gc)             GC_MODE=true; shift ;;
+        --lookup)
+            if [ $# -lt 2 ] || [[ "$2" =~ ^- ]]; then
+                echo "ERROR: --lookup requires a UUID or entity name argument"
+                exit 1
+            fi
+            LOOKUP_TARGET="$2"
+            shift 2
+            ;;
         --find-references)
-            # Next arg is the UUID — handled below
+            if [ $# -lt 2 ] || [[ "$2" =~ ^- ]]; then
+                echo "ERROR: --find-references requires a UUID argument"
+                exit 1
+            fi
+            FIND_REFS="$2"
+            shift 2
             ;;
         --help|-h)
             echo "Usage: pointer-sync.sh [OPTIONS]"
@@ -65,34 +80,18 @@ for arg in "$@"; do
             echo "  --validate                  Check all pointers resolve; exit 1 if any broken"
             echo "  --verbose                   Show each resolution step"
             echo "  --rebuild-index             Rebuild .uuid-index.json from all entities"
+            echo "  --lookup <uuid|name>        Lookup UUID entry or resolve entity name to UUID"
             echo "  --find-references <uuid>    Find all pointers referencing a UUID"
             echo "  --detect-cycles             Detect circular reference chains"
             echo "  --gc                        Remove orphaned entries from index"
             exit 0
             ;;
         *)
-            # Check if previous arg was --find-references
-            if [ -n "$FIND_REFS" ] || [[ "$arg" =~ ^- ]]; then
-                echo "Unknown option: $arg"
-                exit 1
-            fi
-            FIND_REFS="$arg"
+            echo "Unknown option: $1"
+            exit 1
             ;;
     esac
 done
-
-# Handle --find-references with positional UUID
-if [ $# -ge 2 ]; then
-    for i in $(seq 1 $(($# - 1))); do
-        arg="${!i}"
-        next_i=$((i + 1))
-        next_arg="${!next_i}"
-        if [ "$arg" = "--find-references" ]; then
-            FIND_REFS="$next_arg"
-            break
-        fi
-    done
-fi
 
 # --- Counters ---
 UPDATED=0
@@ -163,11 +162,20 @@ acquire_lock() {
             exit 1
         fi
     done
+    LOCK_HELD=true
 }
 
 release_lock() {
     rm -rf "$LOCK_DIR" 2>/dev/null || true
+    LOCK_HELD=false
 }
+
+cleanup_lock_on_exit() {
+    if $LOCK_HELD; then
+        release_lock
+    fi
+}
+trap cleanup_lock_on_exit EXIT
 
 # --- Atomic write helper ---
 atomic_write() {
@@ -284,13 +292,12 @@ for s in data.get('stages', []):
   \"names\": $names_json
 }"
 
-    # Compute and add checksum
-    local checksum
-    checksum=$(echo "$full_json" | sha256sum | cut -d' ' -f1)
+    # Compute and add checksum from canonical JSON (without checksum field)
     full_json=$(echo "$full_json" | python3 -c "
-import sys, json
+import sys, json, hashlib
 data = json.load(sys.stdin)
-data['checksum'] = 'sha256:$checksum'
+payload = json.dumps(data, sort_keys=True, separators=(',', ':')).encode('utf-8')
+data['checksum'] = 'sha256:' + hashlib.sha256(payload).hexdigest()
 print(json.dumps(data, indent=2))
 " 2>/dev/null || echo "$full_json")
 
@@ -308,9 +315,23 @@ load_uuid_index() {
         do_rebuild_index
     fi
 
-    # Validate checksum
-    if ! python3 -c "import json; json.load(open('$UUID_INDEX'))" 2>/dev/null; then
-        vlog "UUID index is corrupted — rebuilding..."
+    # Validate parse + checksum
+    if ! python3 -c "
+import json, hashlib, sys
+with open('$UUID_INDEX') as f:
+    data = json.load(f)
+checksum = data.get('checksum', '')
+if not checksum.startswith('sha256:'):
+    sys.exit(1)
+existing = checksum.split(':', 1)[1]
+payload = dict(data)
+payload.pop('checksum', None)
+computed = hashlib.sha256(
+    json.dumps(payload, sort_keys=True, separators=(',', ':')).encode('utf-8')
+).hexdigest()
+sys.exit(0 if computed == existing else 1)
+" 2>/dev/null; then
+        vlog "UUID index is invalid or checksum-mismatched — rebuilding..."
         do_rebuild_index
     fi
 }
@@ -379,6 +400,40 @@ if $REBUILD_INDEX; then
     echo "Rebuilding UUID index..."
     do_rebuild_index
     exit 0
+fi
+
+# ===== COMMAND: --lookup =====
+if [ -n "$LOOKUP_TARGET" ]; then
+    load_uuid_index
+    python3 -c "
+import json, sys
+target = '$LOOKUP_TARGET'
+with open('$UUID_INDEX') as f:
+    data = json.load(f)
+
+entry = data.get('uuids', {}).get(target)
+if entry:
+    print(f'uuid: {target}')
+    print(f'type: {entry.get(\"type\", \"\")}')
+    print(f'name: {entry.get(\"name\", \"\")}')
+    print(f'path: {entry.get(\"path\", \"\")}')
+    if entry.get('entity_id'):
+        print(f'entity_id: {entry.get(\"entity_id\", \"\")}')
+    sys.exit(0)
+
+resolved_uuid = data.get('names', {}).get(target)
+if resolved_uuid:
+    resolved_entry = data.get('uuids', {}).get(resolved_uuid, {})
+    print(f'name: {target}')
+    print(f'uuid: {resolved_uuid}')
+    print(f'type: {resolved_entry.get(\"type\", \"\")}')
+    print(f'path: {resolved_entry.get(\"path\", \"\")}')
+    sys.exit(0)
+
+print(f'Not found: {target}')
+sys.exit(1)
+" 2>/dev/null
+    exit $?
 fi
 
 # ===== COMMAND: --find-references =====
@@ -523,17 +578,20 @@ if $GC_MODE; then
         exit 1
     fi
 
-    removed=0
+    acquire_lock
+    GC_TMP="${UUID_INDEX}.gc.$$"
     python3 -c "
-import json, os
+import json, os, hashlib
 
-with open('$UUID_INDEX') as f:
+index_path = '$UUID_INDEX'
+tmp_path = '$GC_TMP'
+root = '$ROOT'
+
+with open(index_path) as f:
     data = json.load(f)
 
-root = '$ROOT'
 orphaned = []
 uuids = data.get('uuids', {})
-
 for uid, entry in list(uuids.items()):
     path = entry.get('path', '')
     full_path = os.path.join(root, path)
@@ -541,7 +599,6 @@ for uid, entry in list(uuids.items()):
         orphaned.append((uid, path))
         del uuids[uid]
 
-# Also clean names
 names = data.get('names', {})
 valid_uuids = set(uuids.keys())
 for name in list(names.keys()):
@@ -549,10 +606,14 @@ for name in list(names.keys()):
         del names[name]
 
 if orphaned:
-    import sys
     data['uuids'] = uuids
     data['names'] = names
-    with open('$UUID_INDEX', 'w') as f:
+    payload = dict(data)
+    payload.pop('checksum', None)
+    data['checksum'] = 'sha256:' + hashlib.sha256(
+        json.dumps(payload, sort_keys=True, separators=(',', ':')).encode('utf-8')
+    ).hexdigest()
+    with open(tmp_path, 'w') as f:
         json.dump(data, f, indent=2)
     for uid, path in orphaned:
         print(f'  REMOVED: {uid} -> {path}')
@@ -561,6 +622,10 @@ if orphaned:
 else:
     print('No orphaned entries found.')
 " 2>/dev/null
+    if [ -f "$GC_TMP" ]; then
+        mv "$GC_TMP" "$UUID_INDEX"
+    fi
+    release_lock
     exit 0
 fi
 
