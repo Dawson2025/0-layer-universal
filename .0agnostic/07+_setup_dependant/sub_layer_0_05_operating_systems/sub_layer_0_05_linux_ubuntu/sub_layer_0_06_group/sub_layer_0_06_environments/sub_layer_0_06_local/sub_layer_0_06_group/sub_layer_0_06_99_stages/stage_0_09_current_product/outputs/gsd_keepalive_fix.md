@@ -47,7 +47,11 @@ After=graphical-session.target
 [Service]
 Type=oneshot
 Environment=DISPLAY=:0
-ExecStart=/bin/bash -c 'pgrep -x gsd-media-keys || DISPLAY=:0 /usr/libexec/gsd-media-keys & pgrep -x gsd-power || DISPLAY=:0 /usr/libexec/gsd-power &'
+Environment=XAUTHORITY=%h/.Xauthority
+# Wait for display to be ready dynamically before attempting to start daemons
+ExecStartPre=/home/dawson/.local/bin/wait-for-display.sh
+# Start/restart daemons - attempt manual start as fallback
+ExecStart=/bin/bash -c 'pgrep -x gsd-media-keys > /dev/null || DISPLAY=:0 XAUTHORITY=%h/.Xauthority /usr/libexec/gsd-media-keys 2>/dev/null & pgrep -x gsd-power > /dev/null || DISPLAY=:0 XAUTHORITY=%h/.Xauthority /usr/libexec/gsd-power 2>/dev/null &'
 
 [Install]
 WantedBy=default.target
@@ -57,13 +61,17 @@ WantedBy=default.target
 >
 > **IMPORTANT**: `DISPLAY=:0` must be set both in `Environment=` AND inline on the exec commands. Without it, the daemons fail with "Cannot open display:" because systemd services don't inherit the X11 display variable.
 
+**~/.local/bin/wait-for-display.sh** (ExecStartPre dependency)
+- Polls every 2s (up to 120s) for: DISPLAY set, X11 socket exists, XAUTHORITY accessible, gnome-shell running
+- Exits 0 when all conditions met, exits 1 on timeout
+
 **~/.config/systemd/user/gsd-keepalive.timer**
 ```ini
 [Unit]
 Description=Check GNOME Settings Daemons every minute
 
 [Timer]
-OnBootSec=30
+OnBootSec=60
 OnUnitActiveSec=60
 
 [Install]
@@ -113,6 +121,56 @@ The keepalive timer successfully restarts gsd-media-keys and gsd-power processes
 ## Long-term Fix
 
 Log out and log back in after the underlying issues (inotify, portals) are resolved. This allows GNOME session to properly start all services. After a fresh login, the keepalive timer becomes a safety net rather than a necessity.
+
+<!-- section_id: "e1f7a2b3-4c5d-6e7f-8a9b-0c1d2e3f4a5b" -->
+## Reboot Test Results (2026-03-06)
+
+Fresh reboot test to verify keepalive reliability.
+
+### Timeline
+
+| Time | Event |
+|------|-------|
+| 09:08:20 | System boot, kokoro-tts.service starts, gsd-keepalive.timer starts |
+| 09:08:22 | GNOME's `org.gnome.SettingsDaemon.MediaKeys.service` crashes 5 times → enters **permanent failure** |
+| 09:09:06 | First keepalive run — display check passes, ExecStart runs, reports "Finished" |
+| 09:09–09:13 | Keepalive fires every 60s, always succeeds, but **gsd-media-keys is NOT running** |
+| ~09:14 | Manual keepalive trigger → gsd-media-keys finally stays alive (3 instances spawned) |
+
+### Findings
+
+1. **GNOME session service fails every boot**: `org.gnome.SettingsDaemon.MediaKeys.service` crashes 5 times during login and enters permanent `failed` state. This happens every reboot — it's not a one-time issue.
+
+2. **Keepalive fires but daemons die silently**: The keepalive ExecStart runs, pgrep correctly finds gsd-media-keys dead, starts a new one — but the process exits immediately. The `2>/dev/null` hides the error. This repeats for ~5 minutes.
+
+3. **Likely cause — D-Bus name conflict**: The crashed GNOME service may still hold the D-Bus name `org.gnome.SettingsDaemon.MediaKeys`. The keepalive's new process can't register the same name and exits. Once the D-Bus name times out/releases, the next attempt succeeds.
+
+4. **Multi-instance spawning**: No duplicate prevention. When the daemon finally stays alive, subsequent keepalive runs can spawn additional instances (observed 3 concurrent processes). The `pgrep` check should prevent this, but there's a race window between pgrep and process startup.
+
+5. **gsd-power never starts**: The keepalive attempts to start it every 60s but it never comes up. Not critical for TTS but affects power management features.
+
+### Post-Reboot Functional Status
+
+| Feature | Status | Notes |
+|---------|--------|-------|
+| Ctrl+Alt+S speak-selection | Working | After ~5 min dead zone |
+| Volume keys (custom script) | Working | Uses custom volume-control.sh, not gsd-media-keys |
+| Brightness keys | **NOT working** | gsd-power not running; brightness OSD not appearing |
+| Kokoro TTS server | Working | systemd service auto-started, GPU healthy |
+| Audio stack (PipeWire) | Working | paplay functional |
+
+<!-- section_id: "b2c3d4e5-f6a7-8b9c-0d1e-2f3a4b5c6d7e" -->
+## Open Bugs
+
+1. **~5 min dead zone after boot**: Custom keybindings don't work for ~5 minutes after every reboot. Root cause: D-Bus name conflict between GNOME's failed service and keepalive's restart attempt. Potential fix: reset the GNOME systemd service first (`systemctl --user reset-failed org.gnome.SettingsDaemon.MediaKeys.service`) before starting a new process.
+
+2. **Multi-instance spawning**: Race condition between pgrep check and process startup can produce duplicate gsd-media-keys processes. Potential fix: use a PID file or `flock` for mutual exclusion.
+
+3. **gsd-power not starting**: Keepalive tries every 60s but gsd-power never stays alive. Needs investigation — may be same D-Bus conflict, or missing dependency.
+
+4. **Silent error suppression**: `2>/dev/null` in ExecStart hides all startup errors. Should log to journal instead for debugging.
+
+5. **Brightness keys/OSD broken**: Brightness hardware keys don't work and the GNOME brightness OSD doesn't appear in the top corner. Likely caused by gsd-power not running.
 
 <!-- section_id: "3254b793-d966-4c9e-a39a-70be3d88668e" -->
 ## Related Issues
