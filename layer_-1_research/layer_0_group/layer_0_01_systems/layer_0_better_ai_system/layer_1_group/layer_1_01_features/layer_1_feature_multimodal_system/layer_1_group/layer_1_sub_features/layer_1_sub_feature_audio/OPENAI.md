@@ -77,7 +77,7 @@ Audio features (especially TTS keybindings like Ctrl+Alt+S) depend on the local 
 |----------|----------------------|
 | Setup identity | `0AGNOSTIC.md` — start here for all setup issues |
 | Setup requirements | `requirements_tree.md` — tree of needs for all setup concerns |
-| GSD Session Startup | `gsd_session_startup/` — fixes DISPLAY race condition that breaks Ctrl+Alt+S |
+| GSD Session Startup | `gsd_session_startup/` — fixes the gsd startup issues (DISPLAY race + GDK backend mismatch) that break Ctrl+Alt+S |
 
 ### Traversal Trigger
 When Ctrl+Alt+S (speak-selection) stops working after reboot → traverse to `setup/gsd_session_startup/`

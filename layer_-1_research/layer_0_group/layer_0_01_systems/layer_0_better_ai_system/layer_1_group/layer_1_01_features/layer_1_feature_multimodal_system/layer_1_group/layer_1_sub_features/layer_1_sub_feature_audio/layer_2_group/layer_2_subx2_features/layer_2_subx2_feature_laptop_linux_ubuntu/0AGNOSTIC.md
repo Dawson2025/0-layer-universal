@@ -85,7 +85,7 @@ This entity's TTS implementations depend on the local desktop environment. The l
 | Systemd User Services | `.0agnostic/01_knowledge/system_services/docs/systemd_user_services.md` |
 | Inotify | `.0agnostic/01_knowledge/linux_fundamentals/docs/inotify.md` |
 | GSD Keepalive Fix | `sub_layer_0_06_group/sub_layer_0_06_99_stages/stage_0_09_current_product/outputs/gsd_keepalive_fix.md` |
-| **GSD Session Startup** | `sub_layer_0_06_group/setup/gsd_session_startup/` — dedicated entity for fixing the DISPLAY race condition that prevents gsd daemons from starting after reboot |
+| **GSD Session Startup** | `sub_layer_0_06_group/setup/gsd_session_startup/` — dedicated entity for fixing the gsd startup issues after reboot (DISPLAY race + GDK backend mismatch on X11) |
 | EasyEffects Config | `sub_layer_0_06_group/sub_layer_0_06_99_stages/stage_0_09_current_product/outputs/easyeffects_audio_enhancement.md` |
 | WirePlumber Fix | `sub_layer_0_06_group/sub_layer_0_06_99_stages/stage_0_09_current_product/outputs/wireplumber_crash_fix.md` |
 
