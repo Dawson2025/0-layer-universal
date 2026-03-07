@@ -20,11 +20,17 @@ resource_name: "README"
 <!-- section_id: "99ac2ac9-74be-4747-9f46-4edb324b2b3b" -->
 ## The Problem
 
+**The reference fragility problem spans two layers:**
+
+### Layer 1: Pointer Files (Branches 01-04)
 Current pointer files use hardcoded relative paths. When directories move:
 - Paths break silently
 - No agent is warned about the stale reference
 - Manual path computation is error-prone and tedious
 - No way to validate all pointers at once
+
+### Layer 2: All References Across the Entire Codebase (Branch 05)
+The broader and more fundamental problem: **every reference in the system uses hardcoded filesystem paths**. This affects not just pointer files but everything — scripts calling scripts, documentation referencing resources, context files pointing to tools, hooks calling scripts, knowledge docs citing other docs. When anything moves (a file, directory, entity, stage, or subtree), dozens to hundreds of references break simultaneously. The script protocol migration (2026-03-07) proved this: moving 12 scripts required manually updating 81+ files. This is slow, error-prone, and the exact inefficiency that a UUID-based system should eliminate.
 
 ---
 
@@ -41,7 +47,7 @@ A system where:
 ---
 
 <!-- section_id: "abcfd27e-1598-479a-bb28-7543224467c6" -->
-## Four Branches
+## Five Branches
 
 | Branch | Question | Description |
 |--------|----------|-------------|
@@ -49,6 +55,7 @@ A system where:
 | [**02_path_resolution**](./02_path_resolution/) | "How are canonical paths found?" | Entity search, stage navigation, subpath resolution |
 | [**03_trigger_automation**](./03_trigger_automation/) | "How are pointers validated automatically?" | Hooks, agnostic-sync integration, CI-ready validation |
 | [**04_uuid_graph_traversal**](./04_uuid_graph_traversal/) | "How does the UUID system support graph traversal and queries?" | Parent/children graph, query CLI, resource indexes, efficient agent lookups |
+| [**05_uuid_based_reference_resolution**](./05_uuid_based_reference_resolution/) | "How do we eliminate path-based references so moves don't break things?" | resolve-uuid function, placeholder syntax, self-healing context files, trivial move workflow |
 
 ---
 
@@ -71,9 +78,15 @@ A system where:
 |   +-- need_02_sync_integration         agnostic-sync.sh end-of-run validation
 |
 +-- 04_uuid_graph_traversal/             How the UUID system supports graph traversal
-    +-- need_01_parent_children_graph    Entity hierarchy as navigable graph
-    +-- need_02_query_cli                Flexible filtering and search across all UUIDs
-    +-- need_03_resource_indexes         Per-entity resource indexes for O(1) lookup
+|   +-- need_01_parent_children_graph    Entity hierarchy as navigable graph
+|   +-- need_02_query_cli                Flexible filtering and search across all UUIDs
+|   +-- need_03_resource_indexes         Per-entity resource indexes for O(1) lookup
+|
++-- 05_uuid_based_reference_resolution/  How ALL references use UUID instead of paths
+    +-- need_01_resolve_uuid_function    Shell function: UUID → current path (~5ms)
+    +-- need_02_placeholder_syntax       {{resolve:UUID}} in 0AGNOSTIC.md source files
+    +-- need_03_self_healing_contexts    AI apps resolve UUIDs at moment of use
+    +-- need_04_move_workflow            mv + rebuild-index = done (no grep-replace)
 ```
 
 ---
@@ -95,3 +108,11 @@ The root need is satisfied when:
 - [ ] Incremental index updates (rebuild only changed entities)
 - [ ] Short-name resolution for entities (fuzzy/partial matching)
 - [ ] Auto-UUID assignment on entity creation (entity-creation skill integration)
+- [ ] `resolve-uuid` function exists and resolves any UUID → current path in <10ms
+- [ ] Scripts use `resolve-uuid` for cross-protocol calls instead of hardcoded paths
+- [ ] 0AGNOSTIC.md files use `{{resolve:UUID}}` placeholders for resource references
+- [ ] `agnostic-sync.sh` resolves `{{resolve:UUID}}` placeholders during generation
+- [ ] Generated context files include UUID references with resolve-uuid instructions (self-healing)
+- [ ] Moving a file/directory/entity requires only `mv` + `rebuild-index` (no grep-replace)
+- [ ] Pre-commit hook validates all UUID references resolve to existing paths
+- [ ] Auto-rebuild of UUID index via git hooks (post-checkout, post-merge)

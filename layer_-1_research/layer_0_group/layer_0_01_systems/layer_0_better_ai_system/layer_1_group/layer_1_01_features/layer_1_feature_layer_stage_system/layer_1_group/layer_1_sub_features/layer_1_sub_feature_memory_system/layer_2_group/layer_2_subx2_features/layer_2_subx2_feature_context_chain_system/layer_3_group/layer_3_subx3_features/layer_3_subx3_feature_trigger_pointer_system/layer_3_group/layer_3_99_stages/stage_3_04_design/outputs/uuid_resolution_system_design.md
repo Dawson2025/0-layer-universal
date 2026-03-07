@@ -249,6 +249,117 @@ INDEX="$ROOT/.uuid-index.json"
 
 This is the one hardcoded path in the entire system — the index location relative to repo root. Everything else resolves through it.
 
+<!-- section_id: "a0b1c2d3-e4f5-4678-9345-678901234567" -->
+## Enhancement Designs
+
+### Enhancement 1: Auto-Rebuild via Git Hooks
+
+Add `pointer-sync.sh --rebuild-index` to `post-checkout` and `post-merge` git hooks. After any `git checkout`, `git pull`, or `git merge`, the index is automatically rebuilt. The move workflow becomes just `mv` + `commit`.
+
+```bash
+# .git/hooks/post-checkout (append)
+"$(git rev-parse --show-toplevel)/.0agnostic/03_protocols/pointer_sync_protocol/tools/pointer-sync.sh" --rebuild-index --quiet
+```
+
+### Enhancement 2: Pre-Commit UUID Validation
+
+Add a pre-commit check that greps staged files for UUID references (`resolve-uuid` calls and `{{resolve:UUID}}` patterns) and verifies each resolves in the current index.
+
+```bash
+# In pre-commit hook:
+for uuid in $(grep -rohP 'resolve[-_]uuid\s+([0-9a-f-]{8,36})' "$staged_files" | grep -oP '[0-9a-f-]{8,36}'); do
+  if ! jq -e --arg id "$uuid" '.[$id]' "$ROOT/.uuid-index.json" >/dev/null 2>&1; then
+    echo "ERROR: UUID $uuid not found in index"
+    exit 1
+  fi
+done
+```
+
+### Enhancement 3: UUID Short-Form (Prefix Matching)
+
+Support 8-character UUID prefixes like git does with commit SHAs. With 5,300 entries, collisions at 8 hex characters are essentially impossible (16^8 = 4.3 billion possible prefixes).
+
+```bash
+resolve-uuid() {
+  local uuid="$1"
+  local root="$(git rev-parse --show-toplevel)"
+  local index="$root/.uuid-index.json"
+
+  # Try exact match first, then prefix match
+  local path
+  path=$(jq -r --arg id "$uuid" '
+    if .[$id] then .[$id].path
+    else [to_entries[] | select(.key | startswith($id))] |
+      if length == 1 then .[0].value.path
+      elif length == 0 then empty
+      else "AMBIGUOUS"
+      end
+    end // empty' "$index")
+
+  if [[ "$path" == "AMBIGUOUS" ]]; then
+    echo "ERROR: UUID prefix $uuid is ambiguous (multiple matches)" >&2
+    return 1
+  elif [[ -z "$path" ]]; then
+    echo "ERROR: UUID $uuid not found" >&2
+    return 1
+  fi
+
+  echo "$root/$path"
+}
+```
+
+### Enhancement 4: Logical Names (resolve-name)
+
+A human-friendly alias layer for the most commonly referenced scripts and resources:
+
+```bash
+# .uuid-aliases.tsv (manually curated, small file)
+pointer-sync	08a4e9bc-8cc1-457e-b966-0a912ae6dff7
+entity-find	f4a2b3c5-d6e7-4f89-a0b1-c2d3e4f5a6b7
+agnostic-sync	781698fa-f580-4606-80e4-dc73fb30e3f7
+assign-entity-uuids	92ab3def-22d7-48cd-91be-6744c3466240
+
+# Usage:
+resolve-name() {
+  local name="$1"
+  local root="$(git rev-parse --show-toplevel)"
+  local uuid=$(grep "^${name}	" "$root/.uuid-aliases.tsv" | cut -f2)
+  resolve-uuid "$uuid"
+}
+
+# In scripts:
+bash "$(resolve-name pointer-sync)" --validate
+```
+
+Names are mutable convenience aliases. The UUID underneath is the stable identity. If a name changes, update the aliases file (one line). If a file moves, rebuild the UUID index (automatic). Neither requires updating references in scripts.
+
+### Enhancement 5: Batch Move Command
+
+```bash
+# move-entity.sh — wraps mv + rebuild + sync
+move-entity() {
+  local src="$1" dst="$2"
+  mv "$src" "$dst"
+  pointer-sync.sh --rebuild-index
+  agnostic-sync.sh "$dst"
+  echo "Moved $src → $dst. Index rebuilt, context regenerated."
+}
+```
+
+### Enhancement 6: Reference Impact Analysis
+
+Before moving, see what references a UUID:
+
+```bash
+pointer-sync.sh --find-references 08a4e9bc
+# Output: 14 files reference this UUID
+#   .0agnostic/01_knowledge/pointer_sync/pointer_sync_knowledge.md
+#   .0agnostic/03_protocols/agnostic_sync_protocol/tools/agnostic-sync.sh
+#   ...
+```
+
+This already exists via `--find-references`. Combined with UUID-based references, this becomes purely informational ("these files will auto-resolve after rebuild") rather than a mandatory update checklist.
+
 <!-- section_id: "b0c1d2e3-f4a5-4678-9345-678901234567" -->
 ## Why This Solves the Problem
 

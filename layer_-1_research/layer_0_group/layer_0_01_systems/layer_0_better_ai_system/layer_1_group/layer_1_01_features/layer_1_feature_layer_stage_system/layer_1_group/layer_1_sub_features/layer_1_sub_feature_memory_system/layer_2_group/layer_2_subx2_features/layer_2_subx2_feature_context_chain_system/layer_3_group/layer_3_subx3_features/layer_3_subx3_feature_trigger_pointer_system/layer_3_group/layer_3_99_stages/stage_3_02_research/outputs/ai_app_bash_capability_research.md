@@ -87,6 +87,52 @@ This means:
 4. **Sandboxing considerations**: Some apps (Codex CLI, Cursor) sandbox bash execution. The `resolve-uuid` function must work within sandboxed environments — it only reads a local TSV/JSON file, so no network or elevated permissions needed.
 
 <!-- section_id: "b8c9d0e1-f2a3-4456-7123-456789012345" -->
+## Further Enhancement Ideas
+
+Beyond the core resolve-uuid function, several additional improvements could make the system even more robust:
+
+### 1. Auto-Rebuild on Move (Git Hooks)
+
+A `post-checkout` and `post-merge` git hook that automatically runs `pointer-sync.sh --rebuild-index` after any structural change. This eliminates the manual rebuild step entirely — the move workflow becomes just `mv` + `commit`.
+
+**Feasibility**: High. The hooks infrastructure already exists (pre-commit, post-merge hooks are in place). Adding `--rebuild-index` to post-checkout/post-merge is a one-line addition. Rebuild takes ~3 seconds.
+
+### 2. Pre-Commit UUID Reference Validation
+
+A pre-commit hook that scans staged files for `resolve-uuid` calls and `{{resolve:UUID}}` placeholders, then checks each UUID against the current index. Catches broken references before they're committed.
+
+**Feasibility**: High. Already have `pointer-sync.sh --validate` for pointer files. Extending to UUID references is straightforward — grep for UUID patterns, look up each in the index.
+
+### 3. Filesystem Watcher (inotify)
+
+An `inotify`-based daemon that monitors the repo for `mv`, `rename`, and `delete` events and automatically rebuilds the UUID index in real-time. Eliminates even the git-hook-based rebuild step.
+
+**Feasibility**: Medium. Linux supports `inotifywait` natively. But adds a running daemon dependency, which is a maintenance burden for a system that's already adequately served by git hooks. Probably overkill.
+
+### 4. UUID Short-Form (Prefix Matching)
+
+Allow short UUID prefixes (e.g., `08a4e9bc` instead of `08a4e9bc-8cc1-457e-b966-0a912ae6dff7`), similar to how git allows short commit SHAs. The resolver matches by prefix and returns the full match if unambiguous.
+
+**Feasibility**: High. The `.uuid-index.json` keys are full UUIDs. A jq prefix match is trivial: `jq -r 'to_entries[] | select(.key | startswith("08a4e9bc")) | .value.path'`. With 5,300 entries, prefix collisions are astronomically unlikely at 8 characters.
+
+### 5. Logical Names (Human-Friendly Aliases)
+
+A human-friendly alias layer: `resolve-name pointer-sync` instead of `resolve-uuid 08a4e9bc...`. A simple TSV or JSON mapping `logical_name → UUID → path`. More readable in scripts and documentation.
+
+**Feasibility**: High. The `.entity-lookup.tsv` already maps entity names to paths. Extending this to scripts and resources (e.g., `pointer-sync → 08a4e9bc → .0agnostic/03_protocols/.../pointer-sync.sh`) adds a more ergonomic interface. Names are mutable (can change), but the UUID underneath is the stable reference — the name is just a convenience alias.
+
+### 6. Batch Move Support
+
+A `move-entity` command that wraps `mv` + `rebuild-index` + `agnostic-sync.sh` into a single operation. Handles the entire workflow in one step.
+
+**Feasibility**: High. A simple wrapper script that chains the three commands. Could also handle git staging of the moved files.
+
+### 7. Reference Graph Visualization
+
+A command that shows which files reference a given UUID, enabling impact analysis before a move: "if I move this, what needs to resolve?"
+
+**Feasibility**: Medium. Already have `--find-references` in pointer-sync.sh. Extending to show all files containing a UUID reference (via grep) would give a complete dependency graph.
+
 ## Sources
 
 - Perplexity AI searches conducted 2026-03-07:
