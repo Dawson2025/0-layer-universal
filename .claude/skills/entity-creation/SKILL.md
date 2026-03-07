@@ -93,10 +93,12 @@ Refer to `entity_structure.md` (link above) for the stage creation bash commands
 Quick summary:
 1. Create `0AGNOSTIC.md` (templates in INSTANTIATION_GUIDE.md), `0INDEX.md`, `README.md`
 2. **Generate entity_id UUID** in `0AGNOSTIC.md` `## Identity` section: `entity_id: "$(uuidgen | tr '[:upper:]' '[:lower:]')"`
-3. Create orchestrator and agent .jsonld files (copy from sibling entity)
-4. Generate `.integration.md` for each `.jsonld` file
-5. Run `agnostic-sync.sh` on ALL `0AGNOSTIC.md` files
-6. Run `validate-entity.sh` to verify
+3. **Generate stage_index.json** with UUIDs for all 12 stages in `layer_N_group/layer_N_00_layer_registry/stage_index.json` (see entity_structure.md Stage Creation Template)
+4. Create orchestrator and agent .jsonld files (copy from sibling entity)
+5. Generate `.integration.md` for each `.jsonld` file
+6. Run `agnostic-sync.sh` on ALL `0AGNOSTIC.md` files
+7. Run `.0agnostic/pointer-sync.sh --rebuild-index` to register the new entity in the global UUID index
+8. Run `validate-entity.sh` to verify
 
 <!-- section_id: "ca201922-5542-4c37-b715-fb060e6a81d1" -->
 ## Naming Conventions
@@ -121,6 +123,8 @@ Children are always layer N+1 of their parent.
 - [ ] ALL 12 stages created (00-11)
 - [ ] `0AGNOSTIC.md`, `0INDEX.md`, `README.md` exist at entity root
 - [ ] `entity_id: "uuid"` present in `0AGNOSTIC.md` `## Identity` section
+- [ ] `stage_index.json` created with UUIDs for all 12 stages
+- [ ] `pointer-sync.sh --rebuild-index` run (registers entity in global UUID index)
 - [ ] `agnostic-sync.sh` run on all 0AGNOSTIC.md files
 - [ ] `validate-entity.sh <entity-path>` passes all checks
 

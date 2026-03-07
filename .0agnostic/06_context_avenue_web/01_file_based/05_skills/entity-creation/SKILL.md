@@ -58,13 +58,44 @@ Read `.0agnostic/06_context_avenue_web/01_file_based/04_@import_references/entit
 **Stage Completeness Rule**: If the entity has stages, create ALL 11. Empty stages are valid. Missing stages are NOT.
 
 <!-- section_id: "a6681b94-3342-4ea4-aa26-64b18409f4df" -->
-### 4. Create Required Files
+### 4. Assign UUIDs
 
-- `0AGNOSTIC.md` and `0INDEX.md` (see INSTANTIATION_GUIDE.md for templates)
+Every new entity gets stable UUID identity at creation time:
+
+1. **Entity UUID**: Generate and add `entity_id` to `0AGNOSTIC.md` `## Identity` section:
+   ```bash
+   ENTITY_UUID=$(uuidgen | tr '[:upper:]' '[:lower:]')
+   # Add to 0AGNOSTIC.md: entity_id: "$ENTITY_UUID"
+   ```
+
+2. **Stage UUIDs**: Generate a UUID for each of the 12 stages and create `stage_index.json`:
+   ```bash
+   # In layer_N_group/layer_N_00_layer_registry/stage_index.json
+   echo '{"entity": "<entity_name>", "stages": {' > stage_index.json
+   first=true
+   for stage_dir in layer_N_group/layer_N_99_stages/stage_N_*/; do
+     stage_name=$(basename "$stage_dir")
+     stage_uuid=$(uuidgen | tr '[:upper:]' '[:lower:]')
+     [ "$first" = true ] && first=false || echo ',' >> stage_index.json
+     printf '  "%s": "%s"' "$stage_name" "$stage_uuid" >> stage_index.json
+   done
+   echo -e '\n}}' >> stage_index.json
+   ```
+
+3. **Rebuild global index**: After entity creation, run:
+   ```bash
+   .0agnostic/pointer-sync.sh --rebuild-index
+   ```
+
+<!-- section_id: "6a8b7c9d-0e1f-4a2b-3c4d-5e6f7a8b9c0d" -->
+### 5. Create Required Files
+
+- `0AGNOSTIC.md` with `entity_id` in `## Identity` (see INSTANTIATION_GUIDE.md for templates)
+- `0INDEX.md`
 - Run `agnostic-sync.sh` to generate tool files
 
 <!-- section_id: "12f95bd8-c4b3-42bc-a62c-5b6ebb82f19d" -->
-### 5. Update Parent
+### 6. Update Parent
 
 - Update parent's `0INDEX.md` and registry
 
@@ -84,8 +115,11 @@ Before completing:
 - [ ] Read `.0agnostic/06_context_avenue_web/01_file_based/04_@import_references/entity_structure.md`
 - [ ] Full canonical directory structure created
 - [ ] All 11 stages created (if entity has stages)
+- [ ] `entity_id` UUID generated and added to `0AGNOSTIC.md` `## Identity`
+- [ ] `stage_index.json` created with UUIDs for all stages
 - [ ] `0AGNOSTIC.md` and `0INDEX.md` created
 - [ ] `agnostic-sync.sh` run
+- [ ] `pointer-sync.sh --rebuild-index` run
 - [ ] Parent updated
 
 ---
