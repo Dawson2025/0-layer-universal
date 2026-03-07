@@ -209,3 +209,158 @@ The system now supports all four primary database operations:
 - **Read**: `--lookup`, `--parent`, `--children`, `--query`
 - **Update**: Edit source files, `--rebuild-index` to refresh
 - **Delete**: Remove files, `--gc` to clean index (via design doc Section 13)
+
+---
+
+<!-- section_id: "a1c3e5f7-b2d4-4a6b-8c0d-2e4f6a8b0c1d" -->
+## 6. Agent Interaction Layer Design (2026-03-06)
+
+The question of **how agents interact** with the UUID index system is as important as the system itself. This section designs the agent-facing interface based on industry research.
+
+<!-- section_id: "b2d4f6a8-c3e5-4b7c-9d1e-3f5a7b9c1d2e" -->
+### 6.1 Design Decision: Bash + Skills Over SQL or Custom Tools
+
+**Decision**: Agents interact with the UUID system through bash commands (pointer-sync.sh CLI, jq on JSON) guided by Claude Code skills. No SQL database or custom MCP tools.
+
+**Rationale** (from research Section 8):
+
+| Alternative | Why Not |
+|-------------|---------|
+| SQL (SQLite/PostgreSQL) | Text-to-SQL has 5-10% error rates. Requires schema learning. Adds infrastructure. Agents already know bash. |
+| Custom MCP tools | Each tool costs 500+ tokens in tool descriptions. Increases tool selection confusion. Black-box debugging. |
+| Direct file manipulation | Too low-level. No query abstraction. Error-prone for complex lookups. |
+
+**Why bash + skills wins**:
+1. **Zero prompt overhead** — no tool descriptions needed; bash is pretrained
+2. **Skill loads on-demand** — zero tokens until `/uuid-query` is invoked
+3. **Familiar interface** — agents have internalized grep, jq, CLI patterns from training
+4. **Transparent debugging** — every command is visible and reproducible
+5. **Graceful degradation** — without the skill, agents can still `grep` the raw JSON
+
+<!-- section_id: "c3e5a7b9-d4f6-4c8d-0e2f-4a6b8c0d2e3f" -->
+### 6.2 Skill Interface Design: `/uuid-query`
+
+The recommended Claude Code skill would provide:
+
+```
+/uuid-query — Query and navigate the UUID identity system
+
+WHEN TO USE:
+- Finding entities, stages, or resources by UUID, name, or pattern
+- Navigating parent/children hierarchy
+- Discovering resources within an entity
+- Checking pointer integrity
+
+COMMANDS:
+  # Lookup by UUID or name
+  .0agnostic/pointer-sync.sh --lookup <uuid-or-name>
+
+  # Navigate hierarchy
+  .0agnostic/pointer-sync.sh --parent <uuid>            # Direct parent
+  .0agnostic/pointer-sync.sh --parent <uuid> --verbose   # Full chain to root
+  .0agnostic/pointer-sync.sh --children <uuid>           # Direct children
+
+  # Query with filters (AND-combined, glob patterns)
+  .0agnostic/pointer-sync.sh --query type=entity name=*research*
+  .0agnostic/pointer-sync.sh --query type=resource resource_type=script
+  .0agnostic/pointer-sync.sh --query parent_id=<uuid>
+  .0agnostic/pointer-sync.sh --query has_children=true
+
+  # Find references to a UUID
+  .0agnostic/pointer-sync.sh --find-references <uuid>
+
+  # Direct jq queries for advanced use
+  jq '.[] | select(.type=="entity" and (.name | test("memory")))' .uuid-index.json
+
+  # Per-entity resource catalog
+  jq '.resources[] | select(.resource_type=="knowledge")' <entity>/.0agnostic/resource_index.json
+
+WHEN NOT TO USE:
+- Simple file reads (use Read tool directly)
+- Creating new entities (use /entity-creation skill)
+- Modifying pointer files (use pointer-sync.sh --sync)
+```
+
+<!-- section_id: "d4f6b8c0-e5a7-4d9e-1f3a-5b7c9d1e3f4a" -->
+### 6.3 Harness Engineering Alignment
+
+This design follows the harness engineering framework (constrain/inform/verify/correct):
+
+| Function | How the Skill Serves It |
+|----------|------------------------|
+| **Inform** | Skill teaches agents available commands and when to use each |
+| **Constrain** | Commands have defined input/output contracts (not free-form) |
+| **Verify** | `--validate` checks integrity; agents can self-verify results |
+| **Correct** | `--sync` auto-fixes stale paths; `--rebuild-index` recovers from corruption |
+
+The skill is part of the agent harness, not a standalone tool. It makes agents more capable by teaching them patterns they already understand.
+
+---
+
+<!-- section_id: "e5a7c9d1-f6b8-4e0f-2a4b-6c8d0e2f4a5b" -->
+## 7. Concurrency Architecture: Future Database Backend (2026-03-06)
+
+<!-- section_id: "f6b8d0e2-a7c9-4f1a-3b5c-7d9e1f3a5b6c" -->
+### 7.1 The Virtual Filesystem Pattern
+
+When concurrency demands exceed file-locking capabilities, the architecture supports upgrading the **storage backend** without changing the **agent interface**:
+
+```
+Current:  Agent → pointer-sync.sh → jq → .uuid-index.json (JSON file)
+Future:   Agent → pointer-sync.sh → sqlite3 → .uuid-index.db (SQLite file)
+```
+
+The agent still runs the same bash commands. The script internally switches from `jq` to `sqlite3`. This is the "virtual filesystem" pattern validated by Vercel, Letta, and LangSmith in production.
+
+<!-- section_id: "a7c9e1f3-b8d0-4a2b-4c6d-8e0f2a4b6c7d" -->
+### 7.2 SQLite Migration Design
+
+| Component | Current (JSON) | Future (SQLite) |
+|-----------|---------------|-----------------|
+| Storage format | `.uuid-index.json` (2.6MB) | `.uuid-index.db` (~1MB, B-tree indexed) |
+| Read concurrency | Unlimited (file reads) | Unlimited (WAL mode) |
+| Write concurrency | One at a time (mkdir lock) | One writer + many readers (WAL mode) |
+| Query engine | `jq` + `fnmatch` in Python | SQL with `json_extract()`, `LIKE`, `GLOB` |
+| Index rebuild | Full JSON rewrite | `INSERT OR REPLACE` per entry |
+| Full-text search | Not supported | FTS5 on name, path columns |
+| Lookup time | <0.03ms (in-memory after load) | <0.01ms (B-tree index) |
+| CLI compatibility | `pointer-sync.sh --query` | Same CLI, different backend |
+
+<!-- section_id: "b8d0f2a4-c9e1-4b3c-5d7e-9f1a3b5c7d8e" -->
+### 7.3 Schema Design (for future SQLite migration)
+
+```sql
+CREATE TABLE uuid_entries (
+  uuid TEXT PRIMARY KEY,
+  type TEXT NOT NULL,           -- 'entity', 'stage', 'resource'
+  name TEXT NOT NULL,
+  path TEXT NOT NULL,
+  parent_id TEXT,               -- FK to uuid_entries.uuid (nullable)
+  entity_id TEXT,               -- owning entity UUID (for stages/resources)
+  resource_type TEXT,           -- 'knowledge', 'rule', 'script', etc.
+  resource_name TEXT,
+  updated_at TEXT DEFAULT (datetime('now'))
+);
+
+CREATE INDEX idx_type ON uuid_entries(type);
+CREATE INDEX idx_name ON uuid_entries(name);
+CREATE INDEX idx_parent ON uuid_entries(parent_id);
+CREATE INDEX idx_entity ON uuid_entries(entity_id);
+CREATE INDEX idx_resource_type ON uuid_entries(resource_type);
+
+-- Children are computed via parent_id (no separate table needed)
+-- Full-text search for natural language queries
+CREATE VIRTUAL TABLE uuid_fts USING fts5(name, path, resource_name, content=uuid_entries);
+```
+
+<!-- section_id: "c9e1a3b5-d0f2-4c4d-6e8f-0a2b4c6d8e9f" -->
+### 7.4 Migration Trigger Conditions
+
+Do NOT migrate until any one of:
+- Index exceeds 50K entries (currently 5,313)
+- 3+ agents regularly write concurrently
+- Query latency exceeds 500ms (currently <100ms)
+- Need atomic multi-entity operations
+- Multi-machine concurrent access required
+
+**Current assessment**: No migration needed. JSON approach is correct for current scale.

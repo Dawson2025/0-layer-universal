@@ -390,6 +390,206 @@ Previously excluded files that now get UUIDs:
 
 ---
 
+<!-- section_id: "c4a8b2d6-e1f3-4a5b-7c9d-0e2f4a6b8c1d" -->
+## 8. Agent Interaction Interface Research (2026-03-06)
+
+A critical question for the UUID/index system: **how should AI agents interact with it?** Three options were evaluated against industry research and production experience.
+
+<!-- section_id: "d5b9c3e7-f2a4-4b6c-8d0e-1f3a5b7c9d2e" -->
+### 8.1 Three Approaches Evaluated
+
+| Approach | Description | Example |
+|----------|-------------|---------|
+| **Filesystem + Bash** | Agents use familiar shell tools (grep, jq, bash scripts) to query JSON indexes on the filesystem | `pointer-sync.sh --query type=entity name=*research*` |
+| **SQL Database** | Index data stored in SQLite/PostgreSQL, agents generate SQL queries | `SELECT * FROM entities WHERE name LIKE '%research%'` |
+| **Custom MCP Tools** | Dedicated MCP tools wrapping index operations with typed schemas | `mcp__uuid__query_entities(name_pattern="*research*")` |
+
+<!-- section_id: "e6c0d4f8-a3b5-4c7d-9e1f-2a4b6c8d0e3f" -->
+### 8.2 Key Finding: Filesystem + Bash Wins
+
+Vercel conducted a controlled experiment replacing their sophisticated text-to-SQL agent (12+ custom tools) with a filesystem + bash approach. Results:
+
+| Metric | Custom Tooling | Filesystem + Bash | Improvement |
+|--------|---------------|-------------------|-------------|
+| Completion time | 724s worst case | ~207s | **3.5x faster** |
+| Token consumption | 145,463 tokens | ~91,642 tokens | **37% fewer** |
+| Success rate | Failed on complex queries | 100% | **Dramatically better** |
+| Per-operation cost | ~$1.00 | ~$0.25 | **75% cheaper** |
+
+Letta (agent orchestration platform) independently validated: filesystem-based agents achieved **74% accuracy** on memory tasks using basic Unix commands, outperforming specialized memory tools built explicitly for the purpose.
+
+<!-- section_id: "f7d1e5a9-b4c6-4d8e-0f2a-3b5c7d9e1f4a" -->
+### 8.3 Why Filesystem Interfaces Outperform
+
+The root cause is **pretraining data distribution**. Modern LLMs were trained on millions of GitHub repos, Stack Overflow answers, and developer workflows. They have deeply internalized:
+
+1. **Directory navigation** — `ls`, `find`, `tree` patterns
+2. **Content search** — `grep`, `rg` for pattern matching
+3. **JSON processing** — `jq` for structured data extraction
+4. **Shell scripting** — Piping, argument parsing, output formatting
+5. **CLI tool usage** — Reading `--help` output and constructing commands
+
+When agents encounter these familiar interfaces, they operate with **zero learning overhead**. Novel APIs (SQL schemas, custom MCP tool signatures) impose a **token tax** — the model spends tokens understanding the interface before it can reason about the actual task.
+
+**Quantified overhead**: Tool definitions average 500+ tokens each. An agent with 10 custom tools consumes 5,000+ tokens of context before the user's question. Filesystem commands require zero prompt-loaded tool definitions.
+
+<!-- section_id: "a8e2f6b0-c5d7-4e9f-1a3b-4c6d8e0f2a5b" -->
+### 8.4 Cognitive Load Comparison
+
+| Factor | Filesystem + Bash | SQL | Custom MCP Tools |
+|--------|------------------|-----|------------------|
+| **Learning curve for model** | None (pretrained) | Moderate (must learn schema) | High (must learn each tool's API) |
+| **Tool selection accuracy** | N/A (bash is general-purpose) | N/A (single query language) | Degrades with tool count |
+| **Error interpretability** | Clear (exit codes, stderr) | Moderate (SQL errors are cryptic) | Poor (tool-specific error formats) |
+| **Debugging transparency** | Excellent (see exact commands) | Moderate (can log SQL) | Poor (black-box calls) |
+| **Token cost per query** | Low (no tool descriptions) | Medium (schema context needed) | High (tool descriptions loaded) |
+| **Context window pressure** | Minimal | Medium | High |
+
+<!-- section_id: "b9f3a7c1-d6e8-4f0a-2b4c-5d7e9f1a3b6c" -->
+### 8.5 The Text-to-SQL Challenge
+
+Microsoft's production research on text-to-SQL agents found that simple end-to-end approaches (LLM reads schema, generates SQL) have 5-10% error rates even with careful prompt engineering. Effective SQL agents require:
+
+1. **Multi-agent staging** — one agent identifies relevant tables, another generates SQL
+2. **Error correction loops** — feeding SQL errors back for iterative fixing
+3. **Semantic memory** — caching successful query patterns for reuse
+
+These add complexity that our current bash-based approach avoids entirely. The agent doesn't need to generate SQL, reason about joins, or handle schema complexity — it just runs `--query` with familiar CLI patterns.
+
+---
+
+<!-- section_id: "c0a4b8d2-e7f9-4a1b-3c5d-6e8f0a2b4c7d" -->
+## 9. Harness Engineering Research (2026-03-06)
+
+<!-- section_id: "d1b5c9e3-f8a0-4b2c-4d6e-7f9a1b3c5d8e" -->
+### 9.1 What Is Harness Engineering?
+
+An emerging discipline (2025-2026) focused on designing the **environment, constraints, and feedback loops** around AI agents rather than the model itself. The key principle: an LLM's effective capabilities are defined not by the model, but by **the harness it operates in**.
+
+A harness has four functions:
+1. **Constrain** — Architectural boundaries that limit what agents can do
+2. **Inform** — Context engineering that tells agents what they should do
+3. **Verify** — Testing and validation that confirms correct execution
+4. **Correct** — Feedback loops that fix errors automatically
+
+<!-- section_id: "e2c6d0f4-a9b1-4c3d-5e7f-8a0b2c4d6e9f" -->
+### 9.2 How Our System Maps to Harness Engineering
+
+| Harness Function | Our Implementation |
+|-----------------|-------------------|
+| **Constrain** | `.0agnostic/02_rules/` (static + dynamic rules), entity_structure.md (canonical structure) |
+| **Inform** | `0AGNOSTIC.md` chain, CLAUDE.md auto-generation, pointer-sync.sh CLI |
+| **Verify** | `--validate`, `--rebuild-index`, agnostic-sync.sh validation section |
+| **Correct** | `--sync` (auto-fix stale paths), pointer-edit-guard.sh (pre-commit hook), `--gc` (garbage collection) |
+
+The pointer-sync system IS part of our agent harness. Skills that teach agents how to use it are the **Inform** layer.
+
+<!-- section_id: "f3d7e1a5-b0c2-4d4e-6f8a-9b1c3d5e7f0a" -->
+### 9.3 Skill-Based Approach (Recommended)
+
+Rather than building new tools, the harness engineering principle suggests creating a **Claude Code skill** (`/uuid-query`) that:
+
+1. **Loads on-demand** — zero token overhead until invoked
+2. **Uses familiar tools** — teaches the agent bash patterns it already knows
+3. **Provides worked examples** — shows exact commands for common queries
+4. **Degrades gracefully** — if the skill isn't loaded, agents can still `grep` the JSON directly
+
+This matches Anthropic's own tool design guidance: "fewer, more capable tools" that "match natural user intents."
+
+<!-- section_id: "a4e8f2b6-c1d3-4e5f-7a9b-0c2d4e6f8a1b" -->
+### 9.4 Industry Tool Design Recommendations
+
+| Source | Recommendation |
+|--------|---------------|
+| Anthropic (tool design guide) | Fewer, high-level tools > many overlapping micro-tools |
+| Vercel (production agents) | Strip away custom tools, use filesystem + bash |
+| Letta (agent memory platform) | Filesystem interfaces + semantic search layered underneath |
+| Martin Fowler (harness engineering) | Good constraints make agents MORE capable, not less |
+| OpenAI Codex team | 1M+ line application built by agents using carefully designed harness, zero human-written code |
+
+---
+
+<!-- section_id: "b5f9a3c7-d2e4-4f6a-8b0c-1d3e5f7a9b2c" -->
+## 10. Concurrency and Parallelism Research (2026-03-06)
+
+<!-- section_id: "c6a0b4d8-e3f5-4a7b-9c1d-2e4f6a8b0c3d" -->
+### 10.1 The Multi-Agent Concurrency Problem
+
+As agent systems scale, multiple agents will operate on the same data simultaneously. Our current filesystem-based approach handles this through:
+
+- **Read-heavy workload** — 95%+ of operations are reads (lookups, queries, traversals)
+- **File-level locking** — `mkdir`-based atomic locks for write operations
+- **Rebuild-on-miss** — Auto-rebuild if index is missing or corrupted
+- **Atomic writes** — Write to temp → fsync → rename prevents partial corruption
+
+This is sufficient for our current scale (single agent, occasional concurrent subagents).
+
+<!-- section_id: "d7b1c5e9-f4a6-4b8c-0d2e-3f5a7b9c1d4e" -->
+### 10.2 When a Database Backend Would Help
+
+A proper database backend (e.g., SQLite) would add value at these thresholds:
+
+| Threshold | Problem | Database Solution |
+|-----------|---------|-------------------|
+| **5+ concurrent write agents** | File lock contention, stale lock detection failures | WAL-mode SQLite handles concurrent writes natively |
+| **50K+ UUID entries** | Full-scan queries slow down (>500ms) | B-tree indexes enable O(log n) lookups |
+| **Cross-entity transactions** | Move entity + update all references must be atomic | Database transactions guarantee atomicity |
+| **Real-time index updates** | Full rebuild after every change is wasteful | Triggers/hooks update individual entries |
+| **Multi-machine access** | File locking doesn't work across NFS/network mounts | PostgreSQL/CockroachDB handle distributed access |
+
+<!-- section_id: "e8c2d6f0-a5b7-4c9d-1e3f-4a6b8c0d2e5f" -->
+### 10.3 The Virtual Filesystem Pattern
+
+The most sophisticated production teams converged on a pattern that gives us both worlds:
+
+```
+Agent → Familiar interface (bash, CLI, filesystem) → Virtual layer → Database backend
+```
+
+Key insight: **decouple the interface from the storage**. The agent sees files and bash commands. The backend can be anything.
+
+| Layer | Current Implementation | Future Upgrade Path |
+|-------|----------------------|-------------------|
+| **Agent interface** | `pointer-sync.sh` CLI, `jq` on JSON files | Same — no change needed |
+| **Virtual layer** | Direct filesystem reads | Script translates CLI to DB queries |
+| **Storage** | `.uuid-index.json` (2.6MB JSON file) | SQLite `.uuid-index.db` |
+| **Concurrency** | `mkdir` file locking | SQLite WAL mode |
+
+The critical point: **the agent's interface does NOT change**. It still runs `pointer-sync.sh --query type=entity`. The script internally switches from `jq` on JSON to `sqlite3` queries. From the agent's perspective, nothing changed.
+
+<!-- section_id: "f9d3e7a1-b6c8-4d0e-2f4a-5b7c9d1e3f6a" -->
+### 10.4 SQLite as the Natural Upgrade
+
+SQLite is the strongest candidate for a future database backend because:
+
+1. **Zero infrastructure** — single file, no server process, works everywhere bash works
+2. **Concurrent reads** — unlimited concurrent readers (our primary workload)
+3. **WAL mode** — allows one writer + many readers simultaneously without locking
+4. **Built-in CLI** — `sqlite3` is available on every Linux/macOS system (agents know it)
+5. **Transaction support** — atomic multi-row updates for cross-entity operations
+6. **Full-text search** — FTS5 extension enables semantic search on entity names/paths
+7. **JSON support** — `json_extract()` functions for complex queries
+8. **File-based** — still fits our filesystem philosophy (it IS a file)
+
+Migration path: `pointer-sync.sh --rebuild-index` would write to SQLite instead of JSON. `--query` would use `sqlite3` instead of `jq`. All external interfaces stay identical.
+
+<!-- section_id: "a0e4f8b2-c7d9-4e1f-3a5b-6c8d0e2f4a7b" -->
+### 10.5 When to Trigger This Migration
+
+**Not now.** The current JSON approach is correct for our scale:
+- 5,313 entries loads in 3ms — no bottleneck
+- Single-agent primary workload — no contention
+- Full rebuild takes <5 seconds — acceptable
+
+**Trigger conditions** (any one):
+- Index exceeds 50K entries
+- 3+ agents regularly write concurrently
+- Query latency exceeds 500ms
+- Need transactional guarantees for multi-entity operations
+- Multi-machine sync required (Syncthing + file locks = unreliable)
+
+---
+
 <!-- section_id: "a09d817f-4b5b-4c4d-a502-4dbb244ebc1f" -->
 ## Sources
 
@@ -400,3 +600,14 @@ Previously excluded files that now get UUIDs:
 - Cassandra documentation — UUID and timeuuid partition keys
 - Database Systems: The Complete Book (Garcia-Molina et al.) — reference integrity, index structures
 - Designing Data-Intensive Applications (Kleppmann) — distributed ID generation, consistency models
+- [Vercel: We Removed 80% of Our Agent's Tools](https://vercel.com/blog/we-removed-80-percent-of-our-agents-tools) — production experiment replacing custom tools with filesystem + bash
+- [Vercel: How to Build Agents with Filesystems and Bash](https://vercel.com/blog/how-to-build-agents-with-filesystems-and-bash) — filesystem agent architecture, cost reduction findings
+- [Anthropic: Writing Effective Tools for Agents](https://www.anthropic.com/engineering/writing-tools-for-agents) — tool design best practices, fewer tools > many tools
+- [NxCode: Harness Engineering Complete Guide](https://www.nxcode.io/resources/news/harness-engineering-complete-guide-ai-agent-codex-2026) — constrain/inform/verify/correct framework
+- [Hugo Bowne: Harness Engineering — Why Agent Context Matters](https://hugobowne.substack.com/p/harness-engineering-why-agent-context) — tools define agent capabilities
+- [Microsoft: Collaborating Agents — Chatting with Your Database the Right Way](https://devblogs.microsoft.com/azure-sql/a-story-of-collaborating-agents-chatting-with-your-database-the-right-way/) — multi-agent text-to-SQL, staged reasoning
+- [Oracle: Comparing File Systems and Databases for AI Agent Memory](https://blogs.oracle.com/developers/comparing-file-systems-and-databases-for-effective-ai-agent-memory-management) — virtual filesystem pattern
+- [TrueFoundry: Querying Data Seamlessly with MCP Tools](https://www.truefoundry.com/blog/truefoundry-accelerator-series-querying-structured-and-unstructured-data-seamlessly-with-mcp-tools) — MCP-based query integration
+- [Jentic: Just-in-Time Tooling](https://jentic.com/blog/just-in-time-tooling) — dynamic tool loading reduces cognitive load 70-80%
+- [AgentSM (arXiv:2601.15709)](https://arxiv.org/abs/2601.15709) — semantic memory reduces token usage 25%, trajectory length 35%
+- [AI Jason: wtf is Harness Engineer & why is it important](https://www.youtube.com/watch?v=kJPvfoLtFFY) — harness engineering overview

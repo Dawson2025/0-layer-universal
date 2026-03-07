@@ -1342,9 +1342,38 @@ The core UUID identity system design (Sections 1-14) has been extended with grap
 
 ---
 
+<!-- section_id: "4ae9f3b7-c0d2-4e5f-8a1b-3c5d7e9f1a2b" -->
+## 16. Addendum: Agent Interaction Layer & Concurrency Architecture (2026-03-06)
+
+The UUID system's value depends on how effectively agents can use it. This addendum documents the design decision for agent-facing interfaces and future concurrency architecture.
+
+### Agent Interface Decision
+
+**Decision**: Agents interact via **bash + Claude Code skills**, not SQL or custom MCP tools.
+
+**Evidence**: Vercel's production experiment showed filesystem+bash agents are 3.5x faster, use 37% fewer tokens, and achieve 100% success rates compared to custom-tooled equivalents. This aligns with the harness engineering principle: agents perform best with interfaces they were pretrained on.
+
+**Implementation**: A `/uuid-query` skill teaches agents the pointer-sync.sh CLI commands. Zero prompt overhead until invoked. See `uuid_graph_and_query_design.md` Section 6 for full design.
+
+### Concurrency Upgrade Path
+
+**Current**: JSON file + mkdir locking (sufficient for single-agent, read-heavy workload)
+
+**Future**: SQLite backend behind the same CLI interface (virtual filesystem pattern). Triggers: 50K+ entries, 3+ concurrent write agents, or >500ms query latency. See `uuid_graph_and_query_design.md` Section 7 for schema design.
+
+**Full research**: `../../../stage_3_02_research/outputs/uuid_and_database_patterns_research.md` Sections 8-10
+
+---
+
 ## Sources
 
 - Research: `../../../stage_3_02_research/outputs/rename_propagation_research.md` — evaluation of 7 rename propagation approaches
-- Research: `../../../stage_3_02_research/outputs/uuid_and_database_patterns_research.md` — UUID universality, document database analogy
+- Research: `../../../stage_3_02_research/outputs/uuid_and_database_patterns_research.md` — UUID universality, document database analogy, agent interaction research, concurrency patterns
 - IETF UUID Specification: RFC 4122
 - Current system: `/home/dawson/dawson-workspace/code/0_layer_universal/.0agnostic/pointer-sync.sh`
+- [Vercel: We Removed 80% of Our Agent's Tools](https://vercel.com/blog/we-removed-80-percent-of-our-agents-tools)
+- [Vercel: How to Build Agents with Filesystems and Bash](https://vercel.com/blog/how-to-build-agents-with-filesystems-and-bash)
+- [Anthropic: Writing Effective Tools for Agents](https://www.anthropic.com/engineering/writing-tools-for-agents)
+- [NxCode: Harness Engineering Complete Guide](https://www.nxcode.io/resources/news/harness-engineering-complete-guide-ai-agent-codex-2026)
+- [Hugo Bowne: Harness Engineering — Why Agent Context Matters](https://hugobowne.substack.com/p/harness-engineering-why-agent-context)
+- [Microsoft: Collaborating Agents — Chatting with Your Database the Right Way](https://devblogs.microsoft.com/azure-sql/a-story-of-collaborating-agents-chatting-with-your-database-the-right-way/)
