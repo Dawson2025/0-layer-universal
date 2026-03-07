@@ -561,3 +561,167 @@ This graph could be:
 - Used as AALang agent context (LLMs understand JSON-LD natively)
 
 **Decision**: This is a future capability. Current implementation stays with structured JSON index. JSON-LD knowledge graph generation would be added as a `pointer-sync.sh --export-graph` command when graph traversal queries are needed beyond what recursive CTEs provide.
+
+---
+
+<!-- section_id: "a0b1c2d3-e4f5-4a6b-7c8d-9e0f1a2b3c4d" -->
+## 10. Skill Context Avenue Design: `/uuid-query` (2026-03-06)
+
+This section designs the context avenue architecture for exposing the UUID identity system to agents through the skill system. It connects to the interface design in Section 6.2 and the existing `.0agnostic/` resources (knowledge, rules, protocols) already created during development.
+
+<!-- section_id: "b1c2d3e4-f5a6-4b7c-8d9e-0f1a2b3c4d5e" -->
+### 10.1 Problem: Agents Don't Know the UUID System Exists
+
+The UUID identity system has a CLI (`pointer-sync.sh`), documentation (knowledge, rules, protocols), and query capabilities (Sections 3-6). But agents only discover it if:
+1. They happen to read a trigger in `0AGNOSTIC.md` that mentions pointer-sync
+2. They stumble on `.0agnostic/01_knowledge/pointer_sync/`
+3. A user explicitly tells them to use it
+
+A **skill** solves this by making the UUID system discoverable through the standard skill-matching mechanism: agents check WHEN/WHEN NOT conditions against their current task. If a match, they load the skill and gain the full UUID query interface.
+
+<!-- section_id: "c2d3e4f5-a6b7-4c8d-9e0f-1a2b3c4d5e6f" -->
+### 10.2 Skill Architecture (Three Tiers)
+
+The skill follows the established three-tier pattern from the context avenue web:
+
+```
+Tier 1: Canonical Skill Definition
+  Location: .0agnostic/06_context_avenue_web/01_file_based/05_skills/uuid-query/
+  Contents: SKILL.md + references/
+  Purpose: Tool-agnostic source of truth for what the skill teaches
+
+Tier 2: Tool-Specific Ports
+  Location: .claude/skills/uuid-query/SKILL.md (Claude Code)
+            .codex/skills/uuid-query/SKILL.md (Codex CLI, if supported)
+  Purpose: Adapted for each tool's skill format and frontmatter
+  Method: agnostic-sync.sh copies + adapts from canonical
+
+Tier 3: Embedded References (in generated context files)
+  Location: CLAUDE.md, AGENTS.md, GEMINI.md, OPENAI.md, .cursorrules, copilot-instructions.md
+  Purpose: Agents without skill-loading capability still see trigger text
+  Method: agnostic-sync.sh injects trigger + skill reference from 0AGNOSTIC.md
+```
+
+<!-- section_id: "d3e4f5a6-b7c8-4d9e-0f1a-2b3c4d5e6f7a" -->
+### 10.3 Skill Content Design
+
+The `/uuid-query` skill content is derived from the interface designed in Section 6.2:
+
+```markdown
+# /uuid-query — Query and navigate the UUID identity system
+
+WHEN TO USE:
+- You need entity metadata (UUID, type, path, parent, children)
+- You need parent/child relationships between entities
+- You need to find resources within a specific entity
+- You need to look up an entity, stage, or resource by UUID
+- You need to search for entities/resources by name pattern
+
+WHEN NOT TO USE:
+- Simple file reads where you already know the path (use Read tool)
+- Creating new entities (use /entity-creation skill)
+- Modifying pointer files (use pointer-sync.sh --sync)
+- General file searching (use Glob/Grep tools)
+
+COMMANDS:
+  # Lookup by UUID
+  .0agnostic/pointer-sync.sh --lookup <uuid>
+
+  # Lookup by name (searches index for matching entries)
+  .0agnostic/pointer-sync.sh --query name=<exact-or-glob-pattern>
+
+  # Navigate hierarchy
+  .0agnostic/pointer-sync.sh --parent <uuid>            # Direct parent
+  .0agnostic/pointer-sync.sh --parent <uuid> --verbose   # Full chain to root
+  .0agnostic/pointer-sync.sh --children <uuid>           # Direct children
+
+  # Query with filters (AND-combined, glob patterns supported)
+  .0agnostic/pointer-sync.sh --query type=entity
+  .0agnostic/pointer-sync.sh --query type=entity name=*research*
+  .0agnostic/pointer-sync.sh --query type=resource resource_type=script
+  .0agnostic/pointer-sync.sh --query type=resource entity_id=<uuid>
+  .0agnostic/pointer-sync.sh --query parent_id=<uuid>
+  .0agnostic/pointer-sync.sh --query has_children=true
+
+  # Find all references to a UUID (reverse lookup)
+  .0agnostic/pointer-sync.sh --find-references <uuid>
+
+  # Validate system integrity
+  .0agnostic/pointer-sync.sh --validate
+
+  # Advanced: Direct jq on index
+  jq '.[] | select(.type=="entity" and (.name | test("memory")))' .uuid-index.json
+
+  # Per-entity resource catalog
+  jq '.resources[]' <entity>/.0agnostic/resource_index.json
+
+REFERENCES:
+  Knowledge:  .0agnostic/01_knowledge/pointer_sync/pointer_sync_knowledge.md
+  Rule:       .0agnostic/02_rules/static/pointer_sync_rule/pointer_sync_rule.md
+  Protocol:   .0agnostic/03_protocols/pointer_sync_protocol.md
+  Script:     .0agnostic/pointer-sync.sh
+```
+
+<!-- section_id: "e4f5a6b7-c8d9-4e0f-1a2b-3c4d5e6f7a8b" -->
+### 10.4 Resource Dependencies
+
+The skill references existing production resources — it does NOT create new knowledge, only makes existing knowledge discoverable:
+
+| Resource Type | Already Exists | Path (root .0agnostic/) |
+|--------------|----------------|------------------------|
+| Knowledge | Yes | `01_knowledge/pointer_sync/pointer_sync_knowledge.md` |
+| Rule (static) | Yes | `02_rules/static/pointer_sync_rule/pointer_sync_rule.md` |
+| Protocol | Yes | `03_protocols/pointer_sync_protocol.md` |
+| Script | Yes | `pointer-sync.sh` |
+| Skill (canonical) | **No — to be created** | `06_context_avenue_web/01_file_based/05_skills/uuid-query/SKILL.md` |
+| Skill (Claude port) | **No — to be created** | `.claude/skills/uuid-query/SKILL.md` (or via agnostic-sync) |
+
+The `references/` subdirectory in the skill folder will contain pointers (not copies) to the knowledge, rule, and protocol files.
+
+<!-- section_id: "f5a6b7c8-d9e0-4f1a-2b3c-4d5e6f7a8b9c" -->
+### 10.5 Porting Matrix
+
+| AI Tool | Skill Location | Port Method | Skill Discovery |
+|---------|---------------|-------------|-----------------|
+| Claude Code | `.claude/skills/uuid-query/SKILL.md` | Direct port with Claude YAML frontmatter | `/uuid-query` invocation or WHEN condition match |
+| Codex CLI | `.codex/skills/uuid-query/SKILL.md` | Adapted for Codex format (if skill system exists) | Codex skill matching |
+| Cursor | `.cursorrules` reference | Lean trigger text via agnostic-sync.sh (no separate skill file) | Trigger keyword match in rules |
+| Gemini | `GEMINI.md` reference | Full trigger text via agnostic-sync.sh | Trigger keyword match in context |
+| Copilot | `.github/copilot-instructions.md` reference | Medium trigger text via agnostic-sync.sh | Trigger keyword match in instructions |
+| OpenAI | `OPENAI.md` reference | Full trigger text via agnostic-sync.sh | Trigger keyword match in context |
+
+For tools without a dedicated skill system (Cursor, Gemini, Copilot, OpenAI), the skill content is embedded in the generated context file as a trigger entry in `0AGNOSTIC.md`. The `agnostic-sync.sh` script propagates it to all generated files.
+
+<!-- section_id: "a6b7c8d9-e0f1-4a2b-3c4d-5e6f7a8b9c0d" -->
+### 10.6 Integration with 0AGNOSTIC.md
+
+The skill requires two additions to the root `0AGNOSTIC.md`:
+
+**Triggers table** (new row):
+```markdown
+| Querying UUID identity system (entity lookup, hierarchy, resources) | Load skill: uuid-query |
+```
+
+**Resources table** (new row):
+```markdown
+| UUID Query Skill | `.0agnostic/06_context_avenue_web/01_file_based/05_skills/uuid-query/SKILL.md` | Agent interface for UUID system queries |
+```
+
+These entries ensure that:
+1. `agnostic-sync.sh` includes the trigger in all generated context files
+2. Agents matching the trigger condition discover the skill
+3. The resource table provides direct path for on-demand loading
+
+<!-- section_id: "b7c8d9e0-f1a2-4b3c-4d5e-6f7a8b9c0d1e" -->
+### 10.7 Connection to Section 6 Interface Design
+
+This skill context avenue implements the `/uuid-query` skill interface designed in Section 6.2. The relationship:
+
+| Section 6 (Interface Design) | Section 10 (Context Avenue) |
+|-----------------------------|-----------------------------|
+| Defines WHAT the skill teaches | Defines WHERE it lives and HOW it's delivered |
+| Specifies commands and WHEN/WHEN NOT | Specifies file structure, porting, discovery |
+| Designed the agent-facing interface | Designs the delivery system for that interface |
+| Part of the agent interaction layer | Part of the context avenue web (Avenue A3: Skills) |
+
+Together, Sections 6 and 10 fully specify the `/uuid-query` skill from interface to implementation to delivery.

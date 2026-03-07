@@ -17,7 +17,7 @@ resource_name: "uuid_implementation_plan"
 <!-- section_id: "b4b9c0b6-1b6b-44d7-87aa-e744ed5d86da" -->
 ## Overview
 
-This plan breaks the UUID identity system implementation into **14 phases** across **6 agent roles**, plus **3 additional phases** (11-13) added after the initial implementation for graph traversal and query capabilities. Each phase produces testable artifacts. Phases are ordered by dependency — later phases depend on earlier ones. Some phases can run in parallel.
+This plan breaks the UUID identity system implementation into **14 phases** across **6 agent roles**, plus **4 additional phases** (11-14) added after the initial implementation for graph traversal, query capabilities, and skill context avenue delivery. Each phase produces testable artifacts. Phases are ordered by dependency — later phases depend on earlier ones. Some phases can run in parallel.
 
 <!-- section_id: "f1a2b3c4-d5e6-4f7a-8b9c-0d1e2f3a4b5c" -->
 ## Implementation Status (2026-03-06)
@@ -42,6 +42,7 @@ This plan breaks the UUID identity system implementation into **14 phases** acro
 | **11 (parent/children graph)** | **COMPLETE** | **Added 2026-03-06** |
 | **12 (query CLI)** | **COMPLETE** | **Added 2026-03-06** |
 | **13 (bulk resource indexes)** | **COMPLETE** | **Added 2026-03-06** |
+| **14 (UUID query skill avenue)** | **PENDING** | **Added 2026-03-06** |
 
 ---
 
@@ -88,6 +89,8 @@ Phase 8 (run agnostic-sync.sh) — final
 Phase 9 (git hooks + validation) — after Phase 8
 
 Phase 10 (directory UUID index + lazy resolution) — after Phase 1c
+
+Phase 14 (UUID query skill context avenue) — after Phase 12, 13
 ```
 
 ---
@@ -886,6 +889,130 @@ Session 3 (Migration + Polish):
 
 ---
 
+<!-- section_id: "d5e6f7a8-b9c0-4d1e-2f3a-4b5c6d7e8f9a" -->
+## Phase 14: UUID Query Skill Context Avenue
+
+**Agent**: Skill Agent + Docs Agent
+**Status**: PENDING (designed 2026-03-06)
+**Input**: Design doc Section 6.2 (skill interface), Section 10 (skill context avenue design)
+**Output**: Canonical skill, Claude Code port, 0AGNOSTIC.md references, regenerated context files
+**Design Reference**: `../../stage_3_04_design/outputs/uuid_graph_and_query_design.md` Sections 6 and 10
+
+<!-- section_id: "e6f7a8b9-c0d1-4e2f-3a4b-5c6d7e8f9a0b" -->
+### Task
+
+Create the `/uuid-query` skill that teaches agents how to use the UUID identity system for entity lookup, hierarchy navigation, and resource discovery. The skill exposes the existing `pointer-sync.sh` CLI through the standard skill context avenue.
+
+#### Step 1: Create Canonical Skill
+
+Create at `.0agnostic/06_context_avenue_web/01_file_based/05_skills/uuid-query/`:
+
+```
+uuid-query/
+├── SKILL.md              ← Instructions: WHEN/WHEN NOT, commands, output format
+└── references/           ← Pointers to existing resources
+    ├── pointer_sync_knowledge.md  → ../../01_knowledge/pointer_sync/pointer_sync_knowledge.md
+    ├── pointer_sync_rule.md       → ../../02_rules/static/pointer_sync_rule/pointer_sync_rule.md
+    └── pointer_sync_protocol.md   → ../../03_protocols/pointer_sync_protocol.md
+```
+
+SKILL.md content comes from design doc Section 10.3 (skill content design).
+
+#### Step 2: Create Claude Code Port
+
+Create at `.claude/skills/uuid-query/SKILL.md` with Claude-specific frontmatter:
+
+```yaml
+---
+resource_id: "<generate-uuid-v4>"
+resource_type: "skill"
+resource_name: "uuid-query"
+---
+---
+name: uuid-query
+description: Query and navigate the UUID identity system for entity lookup, hierarchy traversal, and resource discovery
+---
+```
+
+Body content matches canonical SKILL.md from Step 1, with Claude-specific adaptations (e.g., tool references like "Read tool" instead of generic "file read").
+
+#### Step 3: Update SKILLS.md Index
+
+Add row to `.0agnostic/06_context_avenue_web/01_file_based/05_skills/SKILLS.md`:
+
+```markdown
+| uuid-query | Querying UUID identity system, entity lookup, hierarchy navigation | `uuid-query/` |
+```
+
+#### Step 4: Update Root 0AGNOSTIC.md
+
+Add to Triggers table:
+```markdown
+| Querying UUID identity system (entity lookup, hierarchy, resources) | Load skill: uuid-query |
+```
+
+Add to Resources table:
+```markdown
+| UUID Query Skill | `.0agnostic/06_context_avenue_web/01_file_based/05_skills/uuid-query/SKILL.md` | Agent interface for UUID system queries |
+```
+
+#### Step 5: Run agnostic-sync.sh
+
+Regenerate all context files (CLAUDE.md, AGENTS.md, GEMINI.md, OPENAI.md, .cursorrules, copilot-instructions.md) so the trigger and resource reference appear in all tool contexts.
+
+#### Step 6: Verify Porting
+
+| Tool | Verification |
+|------|-------------|
+| Claude Code | `.claude/skills/uuid-query/SKILL.md` exists, `/uuid-query` invocable |
+| Cursor | `.cursorrules` contains uuid-query trigger text |
+| Gemini | `GEMINI.md` contains uuid-query trigger text |
+| Copilot | `.github/copilot-instructions.md` contains uuid-query trigger text |
+| OpenAI | `OPENAI.md` contains uuid-query trigger text |
+
+#### Step 7: Commit and Push
+
+```bash
+git add .0agnostic/06_context_avenue_web/01_file_based/05_skills/uuid-query/
+git add .0agnostic/06_context_avenue_web/01_file_based/05_skills/SKILLS.md
+git add .claude/skills/uuid-query/
+git add 0AGNOSTIC.md CLAUDE.md AGENTS.md GEMINI.md OPENAI.md .cursorrules .github/copilot-instructions.md
+git commit -m "[AI Context] Add /uuid-query skill context avenue with Claude Code port"
+git push
+```
+
+<!-- section_id: "f7a8b9c0-d1e2-4f3a-4b5c-6d7e8f9a0b1c" -->
+### Dependencies
+
+| Dependency | Status | Why Needed |
+|-----------|--------|-----------|
+| Phase 11 (parent/children graph) | COMPLETE | Skill teaches `--parent`, `--children` commands |
+| Phase 12 (query CLI) | COMPLETE | Skill teaches `--query` command |
+| Phase 13 (resource indexes) | COMPLETE | Skill teaches resource catalog queries |
+| Design doc Section 6.2 | COMPLETE | Defines skill interface (WHEN/WHEN NOT, commands) |
+| Design doc Section 10 | COMPLETE | Defines skill context avenue architecture |
+
+All dependencies are satisfied — this phase can be executed immediately.
+
+<!-- section_id: "a8b9c0d1-e2f3-4a4b-5c6d-7e8f9a0b1c2d" -->
+### Acceptance Criteria
+
+- [ ] Canonical SKILL.md exists at `.0agnostic/06_context_avenue_web/01_file_based/05_skills/uuid-query/SKILL.md`
+- [ ] `references/` directory has pointer files to knowledge, rule, and protocol
+- [ ] Claude Code port exists at `.claude/skills/uuid-query/SKILL.md`
+- [ ] SKILLS.md index includes uuid-query row
+- [ ] Root `0AGNOSTIC.md` has trigger and resource entries
+- [ ] `agnostic-sync.sh` regenerated all context files
+- [ ] Trigger text appears in generated CLAUDE.md, GEMINI.md, OPENAI.md, .cursorrules, copilot-instructions.md
+- [ ] All changes committed with `[AI Context]` prefix and pushed
+
+<!-- section_id: "b9c0d1e2-f3a4-4b5c-6d7e-8f9a0b1c2d3e" -->
+### Estimated Effort: 2-3 hours
+### Depends On: Phase 12, Phase 13 (needs query CLI and resource indexes to be complete)
+### Can Run Parallel With: Phase 3b, Phase 4, Phase 5
+
+---
+
 ## Verification Checklist
 
 After all phases complete:
@@ -926,3 +1053,8 @@ After all phases complete:
 - [x] `--query` CLI with flexible filtering works (Phase 12)
 - [x] Per-entity resource indexes rolled out to 50 entities (Phase 13)
 - [x] Root index aggregates 5,313 entries across entities, stages, resources (Phase 13)
+- [ ] Canonical `/uuid-query` skill exists at `.0agnostic/.../05_skills/uuid-query/SKILL.md` (Phase 14)
+- [ ] Claude Code port exists at `.claude/skills/uuid-query/SKILL.md` (Phase 14)
+- [ ] SKILLS.md index includes uuid-query (Phase 14)
+- [ ] Root `0AGNOSTIC.md` has uuid-query trigger and resource entries (Phase 14)
+- [ ] Trigger text propagated to all generated context files via agnostic-sync.sh (Phase 14)
