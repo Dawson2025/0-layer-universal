@@ -590,6 +590,364 @@ Migration path: `pointer-sync.sh --rebuild-index` would write to SQLite instead 
 
 ---
 
+<!-- section_id: "b1c2d3e4-f5a6-4b7c-8d9e-0f1a2b3c4d5e" -->
+## 11. Two-Layer Architecture: Interface vs Infrastructure
+
+Research from the previous sections (8-10) established that agents perform best with familiar interfaces (bash, filesystem, skills). A follow-up question emerged: **does the database backend matter for agent performance?**
+
+<!-- section_id: "c2d3e4f5-a6b7-4c8d-9e0f-1a2b3c4d5e6f" -->
+### 11.1 LLM Computation Dominance
+
+Research across multiple production systems reveals that **LLM computation accounts for 87-99.9% of total execution time**. This fundamentally changes the calculus of backend choice:
+
+| Component | Time per Operation | % of Total |
+|-----------|-------------------|------------|
+| LLM inference (model thinking) | 500ms - 30s | 87-99.9% |
+| Network latency (API calls) | 50-200ms | 0.1-10% |
+| Database query (any backend) | 0.01-100ms | <0.1% |
+| File I/O | 1-10ms | <0.01% |
+
+**Implication**: Whether the backend uses JSON files (3ms), SQLite (<1ms), or a distributed graph database (10-50ms), the difference is invisible to the agent's total operation time. The LLM's thinking time dominates everything else by orders of magnitude.
+
+<!-- section_id: "d3e4f5a6-b7c8-4d9e-0f1a-2b3c4d5e6f7a" -->
+### 11.2 The Two-Layer Separation
+
+This finding motivates a clean architectural separation:
+
+**Layer 1 — Interface Layer** (agent-facing):
+- Bash commands, CLI tools, Claude Code skills
+- Virtual filesystem that presents data as familiar file-like operations
+- Must use patterns agents are pretrained on
+- Performance impact: HIGH (affects token usage, success rates, cognitive load)
+
+**Layer 2 — Infrastructure Layer** (backend):
+- Can be anything: JSON files, SQLite, PostgreSQL, knowledge graphs, vector stores
+- Hidden behind the interface layer
+- Agents never interact with it directly
+- Performance impact: NEGLIGIBLE (drowned out by LLM computation time)
+
+The interface layer is **critical** — it directly affects agent performance (3.5x speed improvement, 37% fewer tokens per Vercel's data). The infrastructure layer is **interchangeable** — choose based on functionality needs (concurrency, graph traversal, semantic search), not agent performance.
+
+<!-- section_id: "e4f5a6b7-c8d9-4e0f-1a2b-3c4d5e6f7a8b" -->
+### 11.3 Infrastructure Layer Candidates
+
+This two-layer separation opens the door to sophisticated infrastructure backends that provide capabilities beyond what flat files can offer:
+
+| Backend | Strength | When It Helps |
+|---------|----------|---------------|
+| JSON files (current) | Simple, zero-dependency | Small scale (<50K entries), single agent |
+| SQLite | Concurrent access, transactions, FTS | Multi-agent writes, full-text search |
+| Knowledge graphs (Neo4j, etc.) | Relationship traversal, pattern matching | Complex entity relationships, lineage queries |
+| Vector databases (Qdrant, etc.) | Semantic similarity search | "Find entities similar to X", natural language queries |
+| Hybrid (graph + vector) | Both relationship and semantic queries | Full knowledge system |
+
+The key insight: **you can have all of these simultaneously** behind a single bash interface. The agent runs `pointer-sync.sh --query "entities related to memory system"` and doesn't know whether that hit a knowledge graph, a vector store, or both.
+
+---
+
+<!-- section_id: "f5a6b7c8-d9e0-4f1a-2b3c-4d5e6f7a8b9c" -->
+## 12. Knowledge Graph and Hybrid Retrieval Research
+
+<!-- section_id: "a6b7c8d9-e0f1-4a2b-3c4d-5e6f7a8b9c0d" -->
+### 12.1 HybridRAG: Knowledge Graph + Vector Retrieval
+
+HybridRAG combines structured knowledge graph traversal with unstructured vector similarity search. Research shows **10-15% accuracy improvement** over vector-only retrieval.
+
+**How it works**:
+1. **Vector retrieval**: Embed query, find semantically similar documents
+2. **Graph retrieval**: Parse query for known entities, traverse their relationships in a knowledge graph
+3. **Fusion**: Merge and re-rank results from both sources
+
+**Application to our system**: The UUID index already contains structured relationships (parent_id, entity_id, resource indexes). Adding vector embeddings for entity names and descriptions would enable hybrid queries — "find entities related to memory architecture" would hit both the graph (parent chain traversal) and vectors (semantic similarity).
+
+<!-- section_id: "b7c8d9e0-f1a2-4b3c-4d5e-6f7a8b9c0d1e" -->
+### 12.2 GraphRAG (Microsoft)
+
+Microsoft's GraphRAG introduces **hierarchical community detection** using the Leiden algorithm:
+
+1. Build a knowledge graph from source documents
+2. Apply community detection to identify clusters of related concepts
+3. Summarize each community at multiple hierarchical levels
+4. At query time, search both local entities and global community summaries
+
+**Key innovation**: Local search (specific entity lookups) AND global search (thematic queries like "what are the main architectural patterns?") from the same graph.
+
+**LazyGraphRAG** variant defers community summarization to query time, reducing indexing costs by 70%+ while maintaining accuracy.
+
+**Relevance**: Our layer-stage hierarchy IS a pre-built community structure. Entities naturally cluster by layer (layer_0 = universal, layer_1 = projects, etc.). GraphRAG's community detection would mirror what we already have structurally.
+
+<!-- section_id: "c8d9e0f1-a2b3-4c4d-5e6f-7a8b9c0d1e2f" -->
+### 12.3 Temporal Knowledge Graphs (Zep/Graphiti)
+
+Zep's Graphiti system adds **temporal awareness** to knowledge graphs:
+
+- Entities and relationships have timestamps (created_at, updated_at, invalidated_at)
+- Temporal queries: "what was the entity structure as of February 2026?"
+- Relationship evolution: track how parent chains changed over time
+- **18% accuracy improvement** on LongMemEval benchmark over non-temporal approaches
+- **90% latency reduction** compared to full-graph traversal (temporal indexing prunes irrelevant history)
+
+**Relevance**: Our UUID system tracks `updated_at` but has no temporal versioning. Adding temporal edges would enable "when did this entity's parent change?" queries — useful for debugging context chain breaks.
+
+<!-- section_id: "d9e0f1a2-b3c4-4d5e-6f7a-8b9c0d1e2f3a" -->
+### 12.4 MemWeaver (2026)
+
+MemWeaver is a state-of-the-art agent memory architecture combining three memory types:
+
+| Memory Type | What It Stores | Retrieval Method |
+|-------------|---------------|-----------------|
+| **Graph memory** | Entity relationships (who/what connects to whom) | Graph traversal |
+| **Experience memory** | Past interactions and their outcomes | Temporal + semantic search |
+| **Passage memory** | Raw content snippets | Vector similarity |
+
+**Key result**: **95% context reduction** compared to loading full documents. MemWeaver selects only the relevant graph nodes, experiences, and passages for a given query.
+
+**Relevance**: Our three-tier knowledge architecture (Pointers → Distilled → Full) already implements a similar progressive disclosure pattern. MemWeaver validates this approach and suggests adding experience memory (episodic_memory) as a retrieval source.
+
+---
+
+<!-- section_id: "e0f1a2b3-c4d5-4e6f-7a8b-9c0d1e2f3a4b" -->
+## 13. SHIMI: Semantic Hierarchical Memory Index
+
+SHIMI (Semantic Hierarchical Memory Index, arXiv:2504.06135) is a memory architecture specifically designed for decentralized multi-agent systems.
+
+<!-- section_id: "f1a2b3c4-d5e6-4f7a-8b9c-0d1e2f3a4b5c" -->
+### 13.1 Core Architecture
+
+SHIMI organizes memory as a **hierarchical tree of semantic nodes**:
+
+```
+Abstract Intent (root)
+├── Domain Concept A
+│   ├── Specific Entity A1
+│   └── Specific Entity A2
+├── Domain Concept B
+│   ├── Specific Entity B1
+│   └── Specific Entity B2
+└── Domain Concept C
+```
+
+**Top-down traversal**: Start from abstract intent, narrow down to specific entities at each level. This mirrors how our layer-stage hierarchy works (Root → Layer → System → Feature → Sub-feature → Component).
+
+<!-- section_id: "a2b3c4d5-e6f7-4a8b-9c0d-1e2f3a4b5c6d" -->
+### 13.2 Key Mechanisms
+
+| Mechanism | How It Works | Our Analog |
+|-----------|-------------|-----------|
+| **Layered semantic nodes** | Each node represents a concept at a specific abstraction level | Entity hierarchy (layer_0 → layer_3) |
+| **Top-down traversal** | Start at root intent, follow most relevant child at each level | Parent chain traversal |
+| **Best-first search** | Prioritize most semantically relevant branches | Agent reads 0AGNOSTIC.md → most relevant child |
+| **Breadth-first fallback** | If best-first misses, scan siblings at same level | Layer registry lists all entities at each level |
+| **Relevance budget** | Stop traversing when budget exhausted (avoid loading everything) | Our <400 line CLAUDE.md target |
+| **Merkle-DAG sync** | Hash-based comparison to detect which nodes changed | Git-based detection of changed files |
+| **CRDT conflict resolution** | Conflict-free replicated data types for multi-agent writes | Needed for multi-agent scenarios |
+
+<!-- section_id: "b3c4d5e6-f7a8-4b9c-0d1e-2f3a4b5c6d7e" -->
+### 13.3 SHIMI's Multi-Agent Sync Protocol
+
+For distributed/multi-agent systems, SHIMI uses:
+
+1. **Merkle-DAG hashing**: Each node's hash includes its content + children's hashes. Changed subtrees are detected in O(log n) comparisons.
+2. **CRDT merge**: When two agents modify the same node, CRDT rules (last-writer-wins for simple fields, set-union for collections) resolve conflicts without coordination.
+3. **Selective sync**: Only changed subtrees are transmitted between agents, not the full tree.
+
+**Relevance**: This maps directly to our future multi-agent scenario. When 3+ agents use the UUID index simultaneously, Merkle-DAG could detect which entries changed, and CRDT could merge concurrent modifications without locks.
+
+<!-- section_id: "c4d5e6f7-a8b9-4c0d-1e2f-3a4b5c6d7e8f" -->
+### 13.4 SHIMI Alignment with Our System
+
+| SHIMI Concept | Our System Equivalent | Gap |
+|--------------|----------------------|-----|
+| Semantic node hierarchy | Layer-stage entity hierarchy | Aligned |
+| Top-down traversal | Parent chain + context loading | Aligned |
+| Relevance budget | <400 line static context target | Aligned |
+| Merkle-DAG sync | Git (detects file changes) | Aligned (for files), gap for in-memory index |
+| CRDT conflict resolution | mkdir file lock (single writer) | Gap — needed for multi-agent |
+| Embedding-based similarity | Not implemented | Gap — would enable semantic queries |
+| Experience memory | episodic_memory directory | Partially aligned |
+
+SHIMI validates our hierarchical approach and identifies two key gaps: CRDT-based conflict resolution for multi-agent writes, and embedding-based similarity search for semantic queries.
+
+---
+
+<!-- section_id: "d5e6f7a8-b9c0-4d1e-2f3a-4b5c6d7e8f9a" -->
+## 14. Vector Embeddings and Vector Database Research
+
+<!-- section_id: "e6f7a8b9-c0d1-4e2f-3a4b-5c6d7e8f9a0b" -->
+### 14.1 How Vector Embeddings Work
+
+Vector embeddings convert text into high-dimensional numeric vectors where semantic similarity corresponds to geometric proximity:
+
+```
+"memory system"     → [0.23, -0.45, 0.67, ...]  (1536 dimensions)
+"context chain"     → [0.21, -0.42, 0.71, ...]  (nearby = related)
+"trigger pointer"   → [0.19, -0.38, 0.65, ...]  (nearby = related)
+"SQLite database"   → [-0.55, 0.12, -0.33, ...] (distant = unrelated)
+```
+
+**Query**: "how does context flow through the hierarchy?" → embed → find nearest vectors → return matching entities.
+
+<!-- section_id: "f7a8b9c0-d1e2-4f3a-4b5c-6d7e8f9a0b1c" -->
+### 14.2 Vector Database Options
+
+| Database | Type | Key Feature | Deployment |
+|----------|------|-------------|-----------|
+| **Qdrant** | Dedicated vector DB | Rust-based, fast, filtering | Docker or embedded |
+| **ChromaDB** | Embedded vector DB | Python-native, zero config | pip install |
+| **sqlite-vec** | SQLite extension | Vectors inside SQLite | Single file |
+| **pgvector** | PostgreSQL extension | Full SQL + vectors | Server |
+| **FAISS** | Library (Meta) | CPU/GPU optimized | In-process |
+
+**Best fit for our system**: **sqlite-vec** — adds vector search to SQLite without a separate database. Aligns with our SQLite migration path. Agent still uses `pointer-sync.sh`; the script internally queries both structured data (SQL) and semantic similarity (vector search) from the same `.db` file.
+
+<!-- section_id: "a8b9c0d1-e2f3-4a4b-5c6d-7e8f9a0b1c2d" -->
+### 14.3 What We'd Embed
+
+| Content | Embedding Source | Query Use Case |
+|---------|-----------------|---------------|
+| Entity names | `name` field from UUID index | "Find entities related to memory" |
+| Entity descriptions | 0AGNOSTIC.md first paragraph | "What handles context chain loading?" |
+| Resource names | `resource_name` from resource indexes | "Find knowledge about pointer sync" |
+| Path segments | Entity path hierarchy | "What's in the research layer?" |
+
+**Embedding model**: All-MiniLM-L6-v2 (384 dimensions, runs locally, fast) or OpenAI text-embedding-3-small (1536 dimensions, API-based, more accurate).
+
+<!-- section_id: "b9c0d1e2-f3a4-4b5c-6d7e-8f9a0b1c2d3e" -->
+### 14.4 Hybrid Query Architecture
+
+Combining structured + semantic search:
+
+```
+pointer-sync.sh --query "entities related to memory architecture"
+  ├── Structured: type=entity AND (name LIKE '%memory%' OR path LIKE '%memory%')
+  ├── Semantic: embed("memory architecture") → nearest vectors
+  └── Fusion: merge results, rank by combined score
+```
+
+The agent sees one query interface. Infrastructure handles the complexity.
+
+---
+
+<!-- section_id: "c0d1e2f3-a4b5-4c6d-7e8f-9a0b1c2d3e4f" -->
+## 15. AALang/GAB as Knowledge Graph Infrastructure
+
+AALang (Actor-based Agent Language) and GAB (Generic AALang Builder) are already in use within this project (at `layer_0/layer_0_01_ai_manager_system/professor/`). Their JSON-LD graph structure has significant overlap with knowledge graph infrastructure.
+
+<!-- section_id: "d1e2f3a4-b5c6-4d7e-8f9a-0b1c2d3e4f5a" -->
+### 15.1 JSON-LD IS a Knowledge Graph Format
+
+AALang specifications use JSON-LD, which is the W3C standard for linked data on the web. JSON-LD `@graph` arrays are literally knowledge graphs:
+
+| JSON-LD Feature | Knowledge Graph Equivalent |
+|-----------------|--------------------------|
+| `@graph` array | Collection of graph nodes |
+| `@id` | Node identifier (URI) |
+| `@type` | Node type/class |
+| Property references (e.g., `containedBy: {"@id": "ex:LLMAgent"}`) | Edges between nodes |
+| `@context` with `@vocab` | Ontology/schema definition |
+
+Our `.gab.jsonld` files already define typed nodes (`LLMAgent`, `Actor`, `Mode`, `Persona`) with explicit relationships (`containedBy`, `contains`, `canMessage`, `canReceiveFrom`). This IS a knowledge graph — it just happens to also be an agent execution specification.
+
+<!-- section_id: "e2f3a4b5-c6d7-4e8f-9a0b-1c2d3e4f5a6b" -->
+### 15.2 AALang Concepts That Map to Knowledge Graph Operations
+
+| AALang Concept | Knowledge Graph Operation | Our System Analog |
+|---------------|--------------------------|-------------------|
+| **n-mode-m-actor pattern** | Typed subgraph with mode-based filtering | Entity with multiple stages (mode = stage) |
+| **Actor isolated_context** | Node state (key-value properties) | Entity `.0agnostic/` resources |
+| **canMessage / canReceiveFrom** | Directed edges in communication graph | Parent/children relationships |
+| **Mode constraints** | Traversal rules (which edges valid in which mode) | Stage-based context loading rules |
+| **Persona responsibilities** | Node capabilities (what operations available) | Entity role/scope in 0AGNOSTIC.md |
+| **Three-layer communication** (L0/L1/L2) | Multi-level graph with different edge types | Layer hierarchy (entity → stage → resource) |
+| **State actors** (context-wide state) | Shared state nodes accessible to all | 0INDEX.md (manager dashboard) |
+| **Gossip-based P2P** (Agent Layer 0) | Decentralized graph sync protocol | Multi-machine sync via Syncthing/git |
+
+<!-- section_id: "f3a4b5c6-d7e8-4f9a-0b1c-2d3e4f5a6b7c" -->
+### 15.3 GAB's Structured Workflow as Graph Traversal
+
+GAB's 4-mode workflow (Clarification → Discussion → Formalization → Generation) maps to graph traversal patterns:
+
+1. **Clarification** = Node identification (which entities are relevant?)
+2. **Discussion** = Subgraph exploration (what relationships exist?)
+3. **Formalization** = Constraint validation (do graph invariants hold?)
+4. **Generation** = Materialization (produce output from graph state)
+
+This mirrors how our stage workflow traverses context: gather requirements (identify entities) → research (explore relationships) → design (validate architecture) → develop (produce artifacts).
+
+<!-- section_id: "a4b5c6d7-e8f9-4a0b-1c2d-3e4f5a6b7c8d" -->
+### 15.4 Integration Architecture: AALang as Infrastructure Layer
+
+AALang/GAB could serve as the knowledge graph infrastructure behind our UUID system's interface layer:
+
+```
+Interface Layer (unchanged):
+  Agent → pointer-sync.sh --query "children of entity X"
+  Agent → /uuid-query skill
+
+Infrastructure Layer (AALang-powered):
+  pointer-sync.sh → query AALang @graph → traverse actor/mode relationships
+  pointer-sync.sh → resolve entity references via @id URIs
+  pointer-sync.sh → filter by mode constraints (stage-specific views)
+```
+
+**Advantages of AALang as knowledge graph backend**:
+1. **Already in use** — `.gab.jsonld` files exist throughout the project
+2. **JSON-LD standard** — W3C linked data, compatible with SPARQL, GraphDB, etc.
+3. **Type system** — `@type` provides schema validation for free
+4. **MCP/A2A ready** — built-in integration points for tool access
+5. **Concurrency model** — Actor message-passing maps to concurrent graph updates
+6. **Graph-native** — LLMs understand `@graph` arrays as relationship structures
+
+**Considerations**:
+1. AALang is designed as an agent execution spec, not a query engine — would need a query layer
+2. Current `.gab.jsonld` files define agent behavior, not entity data — would need data-focused JSON-LD
+3. JSON-LD is verbose — a 351-entity graph would be large as JSON-LD
+4. SPARQL or custom jq queries needed for traversal
+
+---
+
+<!-- section_id: "b5c6d7e8-f9a0-4b1c-2d3e-4f5a6b7c8d9e" -->
+## 16. Four-Layer Production Architecture
+
+Synthesizing all research (Sections 8-15), the full production architecture emerges as four layers:
+
+### Layer 1: Agent/Orchestration (Interface)
+- **Components**: Claude Code skills (`/uuid-query`), bash CLI, pointer-sync.sh
+- **Principle**: Use only tools agents are pretrained on
+- **Evidence**: Vercel 3.5x speed, 37% token reduction
+- **Rule**: This layer NEVER changes regardless of infrastructure changes
+
+### Layer 2: Virtual Filesystem / Knowledge Fabric
+- **Components**: pointer-sync.sh query engine, jq/sqlite3/SPARQL dispatch
+- **Principle**: Present all data sources as a unified interface
+- **Current**: `jq` on JSON files
+- **Future**: Route queries to appropriate backend (structured → SQL, semantic → vectors, relational → graph)
+
+### Layer 3: Hybrid Knowledge Representation
+- **Structured data**: SQLite/JSON for entity metadata (UUID, type, path, parent)
+- **Graph data**: JSON-LD @graph (AALang-compatible) or Neo4j for relationship traversal
+- **Vector data**: sqlite-vec or ChromaDB for semantic similarity
+- **Temporal data**: Timestamped edges for relationship evolution (Graphiti pattern)
+
+### Layer 4: Ingestion / Indexing / Sync
+- **Components**: `--rebuild-index`, `--validate`, Merkle-DAG change detection
+- **Principle**: All data enters through a controlled pipeline
+- **Future**: CRDT-based merge for multi-agent concurrent writes (SHIMI pattern)
+- **Current**: Git-based change detection + file locking
+
+### Cross-Cutting: Harness Engineering
+
+The harness engineering framework (constrain/inform/verify/correct) applies across all layers:
+
+| Harness Function | How Applied |
+|-----------------|-------------|
+| **Constrain** | Skill defines available commands; CLI rejects invalid queries |
+| **Inform** | Query results include entity context (parent chain, resource index) |
+| **Verify** | `--validate` confirms graph integrity; agents can self-check |
+| **Correct** | `--rebuild-index` auto-repairs; broken pointers flagged with alternatives |
+
+---
+
 <!-- section_id: "a09d817f-4b5b-4c4d-a502-4dbb244ebc1f" -->
 ## Sources
 
@@ -611,3 +969,13 @@ Migration path: `pointer-sync.sh --rebuild-index` would write to SQLite instead 
 - [Jentic: Just-in-Time Tooling](https://jentic.com/blog/just-in-time-tooling) — dynamic tool loading reduces cognitive load 70-80%
 - [AgentSM (arXiv:2601.15709)](https://arxiv.org/abs/2601.15709) — semantic memory reduces token usage 25%, trajectory length 35%
 - [AI Jason: wtf is Harness Engineer & why is it important](https://www.youtube.com/watch?v=kJPvfoLtFFY) — harness engineering overview
+- [SHIMI: Semantic Hierarchical Memory Index (arXiv:2504.06135)](https://arxiv.org/abs/2504.06135) — hierarchical semantic nodes, Merkle-DAG sync, CRDT conflict resolution for multi-agent memory
+- [Microsoft GraphRAG](https://microsoft.github.io/graphrag/) — hierarchical community detection, local + global search, Leiden algorithm
+- [LazyGraphRAG (Microsoft)](https://www.microsoft.com/en-us/research/blog/lazygraphrag-setting-a-new-standard-for-quality-and-cost/) — deferred summarization, 70%+ indexing cost reduction
+- [Zep/Graphiti: Temporal Knowledge Graphs](https://www.getzep.com/graphiti) — temporal awareness for agent memory, 18% accuracy improvement, 90% latency reduction
+- [MemWeaver: Multi-Type Agent Memory (2026)](https://arxiv.org/abs/2503.15917) — graph + experience + passage memory, 95% context reduction
+- [HybridRAG: Knowledge Graph + Vector Retrieval](https://arxiv.org/abs/2408.04948) — 10-15% accuracy improvement over vector-only
+- [sqlite-vec: Vector Search for SQLite](https://github.com/asg017/sqlite-vec) — vector embeddings inside SQLite, single-file deployment
+- [AALang and GAB (Brother Barney)](https://github.com/yenrab/AALang-Gab) — JSON-LD agent language, n-mode-m-actor pattern, MCP/A2A ready
+- [JSON-LD W3C Specification](https://www.w3.org/TR/json-ld11/) — linked data standard, @graph knowledge graphs
+- [Continuum Memory Architecture (2025)](https://arxiv.org/abs/2504.01962) — procedural + semantic + episodic memory tiers for agents

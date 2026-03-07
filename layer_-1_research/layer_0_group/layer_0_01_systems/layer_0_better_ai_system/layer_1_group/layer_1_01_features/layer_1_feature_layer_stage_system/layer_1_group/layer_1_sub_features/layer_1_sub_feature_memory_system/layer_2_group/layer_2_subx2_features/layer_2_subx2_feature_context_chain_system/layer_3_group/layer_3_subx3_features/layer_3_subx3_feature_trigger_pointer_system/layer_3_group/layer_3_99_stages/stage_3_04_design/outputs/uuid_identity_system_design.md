@@ -1365,6 +1365,46 @@ The UUID system's value depends on how effectively agents can use it. This adden
 
 ---
 
+<!-- section_id: "5bf9a3c1-d2e4-4f6a-8b7c-9d0e1f2a3b4c" -->
+## 17. Addendum: Advanced Infrastructure Layer & Hybrid Knowledge Architecture (2026-03-06)
+
+The UUID identity system's infrastructure layer can be extended with sophisticated knowledge representations without changing the agent-facing interface (Addendum 16).
+
+### Two-Layer Architecture Principle
+
+**Interface layer** (Addendum 16): Bash + skills + virtual filesystem. Agent performance depends on this layer (3.5x speed improvement, 37% fewer tokens). MUST use familiar tools. NEVER changes.
+
+**Infrastructure layer** (this addendum): Backend data stores. Agent performance is NOT affected by this layer (LLM computation is 87-99.9% of execution time). Choose based on functionality needs, not agent performance.
+
+### Hybrid Knowledge Capabilities
+
+The infrastructure layer can combine four data representation types, all behind the unchanged pointer-sync.sh CLI:
+
+| Capability | Technology | Query Example | When Needed |
+|-----------|-----------|---------------|-------------|
+| Structured queries | SQLite | `--query type=entity parent=X` | Phase 1 (multi-agent writes) |
+| Semantic search | sqlite-vec | `--query "entities related to memory"` | When natural language queries needed |
+| Graph traversal | JSON-LD @graph / recursive CTEs | `--query "ancestors of entity X"` | When complex relationship queries needed |
+| Temporal history | SQLite history table | `--query "parent history of X"` | When evolution tracking needed |
+
+### AALang/GAB Integration
+
+AALang's JSON-LD `@graph` format is inherently a knowledge graph. Our existing `.gab.jsonld` files define typed nodes (LLMAgent, Actor, Mode) with explicit relationship edges (containedBy, contains, canMessage). This creates a natural integration path: the UUID index could cross-reference entity UUIDs with JSON-LD `@id` values, enabling graph queries across both systems.
+
+Future capability: `pointer-sync.sh --export-graph` generates a unified JSON-LD knowledge graph queryable with SPARQL or loadable into graph databases.
+
+### SHIMI Alignment
+
+SHIMI (Semantic Hierarchical Memory Index, arXiv:2504.06135) validates our hierarchical approach — its semantic node hierarchy mirrors our layer-stage tree. Key gaps identified: CRDT-based conflict resolution for multi-agent writes, and embedding-based similarity search. Both are addressed in the hybrid schema design.
+
+### Cross-References
+
+- **Full research**: `../../../stage_3_02_research/outputs/uuid_and_database_patterns_research.md` Sections 11-16
+- **Infrastructure design**: `uuid_graph_and_query_design.md` Sections 8-9
+- **Interface design**: `uuid_graph_and_query_design.md` Sections 6-7 (Addendum 16)
+
+---
+
 ## Sources
 
 - Research: `../../../stage_3_02_research/outputs/rename_propagation_research.md` — evaluation of 7 rename propagation approaches
@@ -1377,3 +1417,11 @@ The UUID system's value depends on how effectively agents can use it. This adden
 - [NxCode: Harness Engineering Complete Guide](https://www.nxcode.io/resources/news/harness-engineering-complete-guide-ai-agent-codex-2026)
 - [Hugo Bowne: Harness Engineering — Why Agent Context Matters](https://hugobowne.substack.com/p/harness-engineering-why-agent-context)
 - [Microsoft: Collaborating Agents — Chatting with Your Database the Right Way](https://devblogs.microsoft.com/azure-sql/a-story-of-collaborating-agents-chatting-with-your-database-the-right-way/)
+- [SHIMI: Semantic Hierarchical Memory Index (arXiv:2504.06135)](https://arxiv.org/abs/2504.06135)
+- [Microsoft GraphRAG](https://microsoft.github.io/graphrag/)
+- [HybridRAG: Knowledge Graph + Vector Retrieval (arXiv:2408.04948)](https://arxiv.org/abs/2408.04948)
+- [Zep/Graphiti: Temporal Knowledge Graphs](https://www.getzep.com/graphiti)
+- [MemWeaver: Multi-Type Agent Memory (arXiv:2503.15917)](https://arxiv.org/abs/2503.15917)
+- [sqlite-vec: Vector Search for SQLite](https://github.com/asg017/sqlite-vec)
+- [AALang and GAB (Brother Barney)](https://github.com/yenrab/AALang-Gab)
+- [JSON-LD W3C Specification](https://www.w3.org/TR/json-ld11/)

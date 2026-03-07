@@ -364,3 +364,200 @@ Do NOT migrate until any one of:
 - Multi-machine concurrent access required
 
 **Current assessment**: No migration needed. JSON approach is correct for current scale.
+
+---
+
+<!-- section_id: "d0e1f2a3-b4c5-4d6e-7f8a-9b0c1d2e3f4a" -->
+## 8. Infrastructure Layer Design: Hybrid Knowledge Architecture (2026-03-06)
+
+Building on the two-layer separation (interface vs infrastructure) from research Section 11, this section designs the infrastructure layer that sits behind our bash/skill interface.
+
+<!-- section_id: "e1f2a3b4-c5d6-4e7f-8a9b-0c1d2e3f4a5b" -->
+### 8.1 The Two-Layer Principle
+
+**Interface layer** (Sections 6-7): Agent-facing. Bash + skills + virtual filesystem. NEVER changes.
+
+**Infrastructure layer** (this section): Backend. Can use any combination of data stores. Chosen for **functionality** (what queries are possible), not agent performance (which is dominated by LLM computation at 87-99.9%).
+
+<!-- section_id: "f2a3b4c5-d6e7-4f8a-9b0c-1d2e3f4a5b6c" -->
+### 8.2 Hybrid Knowledge Store Design
+
+The infrastructure layer supports four data representation types, each optimized for different query patterns:
+
+| Data Store | What It Holds | Query Pattern | Technology |
+|-----------|---------------|---------------|------------|
+| **Structured store** | Entity metadata (UUID, type, path, parent, timestamps) | Exact match, range, full-text | SQLite + FTS5 |
+| **Graph store** | Entity relationships (parent chains, siblings, resource ownership) | Traversal, path finding, pattern matching | JSON-LD @graph (AALang-compatible) or SQLite recursive CTEs |
+| **Vector store** | Semantic embeddings of entity names, descriptions, resource content | Similarity search, semantic queries | sqlite-vec extension |
+| **Temporal store** | Relationship history (when parent changed, when entity created/modified) | Historical queries, evolution tracking | SQLite with `valid_from`/`valid_to` columns |
+
+All four stores live in a **single SQLite database file** (`.uuid-index.db`), using SQLite extensions for graph and vector operations. This preserves our single-file philosophy.
+
+<!-- section_id: "a3b4c5d6-e7f8-4a9b-0c1d-2e3f4a5b6c7d" -->
+### 8.3 Unified Query Router
+
+The pointer-sync.sh query engine dispatches to the appropriate store(s) based on query type:
+
+```
+pointer-sync.sh --query "type=entity parent=abc-123"
+  → Structured store (exact match on fields)
+
+pointer-sync.sh --query "children of entity X recursively"
+  → Graph store (recursive CTE traversal)
+
+pointer-sync.sh --query "entities related to memory architecture"
+  → Vector store (embed query, find nearest neighbors)
+  → + Structured store (filter by type=entity)
+  → Fusion: merge and re-rank results
+
+pointer-sync.sh --query "parent history of entity X"
+  → Temporal store (list parent changes over time)
+```
+
+The agent doesn't specify which store to use. The query router auto-detects based on:
+- Named fields (type=, parent=) → structured
+- Traversal keywords (children, ancestors, path) → graph
+- Natural language / no field names → vector
+- History keywords (history, when, changed) → temporal
+
+<!-- section_id: "b4c5d6e7-f8a9-4b0c-1d2e-3f4a5b6c7d8e" -->
+### 8.4 Extended Schema (Hybrid)
+
+Building on the SQLite schema from Section 7.3:
+
+```sql
+-- Core structured store (same as Section 7.3)
+CREATE TABLE uuid_entries (
+  uuid TEXT PRIMARY KEY,
+  type TEXT NOT NULL,
+  name TEXT NOT NULL,
+  path TEXT NOT NULL,
+  parent_id TEXT,
+  entity_id TEXT,
+  resource_type TEXT,
+  resource_name TEXT,
+  updated_at TEXT DEFAULT (datetime('now'))
+);
+
+-- Vector store (sqlite-vec extension)
+CREATE VIRTUAL TABLE uuid_vectors USING vec0(
+  uuid TEXT PRIMARY KEY,
+  embedding FLOAT[384]    -- All-MiniLM-L6-v2 dimensions
+);
+
+-- Temporal store (relationship history)
+CREATE TABLE uuid_history (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  uuid TEXT NOT NULL,
+  field TEXT NOT NULL,        -- 'parent_id', 'path', 'name', etc.
+  old_value TEXT,
+  new_value TEXT,
+  changed_at TEXT DEFAULT (datetime('now')),
+  FOREIGN KEY (uuid) REFERENCES uuid_entries(uuid)
+);
+
+-- Full-text search (already in Section 7.3)
+CREATE VIRTUAL TABLE uuid_fts USING fts5(name, path, resource_name, content=uuid_entries);
+```
+
+<!-- section_id: "c5d6e7f8-a9b0-4c1d-2e3f-4a5b6c7d8e9f" -->
+### 8.5 Migration Strategy
+
+This hybrid architecture is an **additive extension** of the Section 7 SQLite design, not a replacement:
+
+| Phase | What | When |
+|-------|------|------|
+| Current | JSON file with jq | Now (sufficient) |
+| Phase 1 | SQLite with structured queries | When triggers from Section 7.4 hit |
+| Phase 2 | + FTS5 for full-text search | With Phase 1 |
+| Phase 3 | + sqlite-vec for semantic search | When natural language queries needed |
+| Phase 4 | + temporal history table | When relationship evolution tracking needed |
+| Phase 5 | + CRDT merge for multi-agent writes | When 3+ agents write concurrently |
+
+Each phase is independent and backward-compatible. The CLI interface remains unchanged throughout.
+
+---
+
+<!-- section_id: "d6e7f8a9-b0c1-4d2e-3f4a-5b6c7d8e9f0a" -->
+## 9. AALang/GAB Integration Architecture (2026-03-06)
+
+AALang (Actor-based Agent Language) and its JSON-LD graph format offer a unique integration opportunity: our `.gab.jsonld` agent definitions are ALREADY knowledge graphs that describe entity relationships, constraints, and capabilities.
+
+<!-- section_id: "e7f8a9b0-c1d2-4e3f-4a5b-6c7d8e9f0a1b" -->
+### 9.1 How AALang JSON-LD Maps to Our Entity Graph
+
+| Our Entity System | AALang Equivalent | Notes |
+|-------------------|-------------------|-------|
+| Entity (layer_N_feature_X) | `LLMAgent` or `Actor` node | Each entity has an agent definition |
+| Parent-child relationship | `containedBy` / `contains` edges | Direct mapping |
+| Entity stages (01-11) | `Mode` nodes | Stages = behavioral modes of the entity |
+| Entity resources (.0agnostic/) | Actor `isolated_context` | Resources = actor's private state |
+| Context chain (parent traversal) | Communication Layer 1 (actor-to-actor routing) | Chain = communication path |
+| Cross-entity communication | Communication Layer 0 (gossip P2P) | Handoff documents = agent messages |
+| Stage-specific rules | Mode `constraints` | Rules = mode constraints |
+
+<!-- section_id: "f8a9b0c1-d2e3-4f4a-5b6c-7d8e9f0a1b2c" -->
+### 9.2 AALang as Query Infrastructure
+
+AALang's JSON-LD `@graph` arrays can be queried with standard tools:
+
+```bash
+# List all actors (entities) in a graph
+jq '."@graph"[] | select(."@type" == "Actor") | {id: ."@id", purpose: .purpose}' system.gab.jsonld
+
+# Find what communicates with what (edges)
+jq '."@graph"[] | select(.canMessage) | {from: ."@id", to: .canMessage}' system.gab.jsonld
+
+# Get mode constraints (traversal rules)
+jq '."@graph"[] | select(."@type" == "Mode") | {mode: ."@id", constraints: .constraints}' system.gab.jsonld
+```
+
+This is already our recommended approach (see context_chain_system `0AGNOSTIC.md` Section "JSON-LD Navigation"). The UUID system would extend this by indexing `@id` values into the UUID graph, enabling cross-file graph traversal.
+
+<!-- section_id: "a9b0c1d2-e3f4-4a5b-6c7d-8e9f0a1b2c3d" -->
+### 9.3 Integration Points
+
+| Integration | How | Benefit |
+|------------|-----|---------|
+| UUID ↔ @id mapping | Each entity's UUID maps to its `@id` in the JSON-LD graph | Cross-reference between UUID index and agent definitions |
+| Skill ↔ Mode mapping | `/uuid-query` skill knows which modes (stages) are valid for queries | Stage-aware querying |
+| pointer-sync.sh ↔ @graph | Index builder extracts relationships from `.gab.jsonld` `@graph` arrays | Automatic relationship discovery |
+| MCP integration | AALang is MCP-ready; pointer-sync.sh could expose as MCP tool | Other agents can query our UUID system via MCP |
+| A2A communication | AALang supports agent-to-agent gossip protocol | Multi-agent UUID system coordination |
+
+<!-- section_id: "b0c1d2e3-f4a5-4b6c-7d8e-9f0a1b2c3d4e" -->
+### 9.4 Future: System-Wide Knowledge Graph
+
+The ultimate integration generates a **unified JSON-LD knowledge graph** of the entire entity hierarchy:
+
+```jsonld
+{
+  "@context": {"@vocab": "https://layer-stage.dev/ontology/"},
+  "@graph": [
+    {
+      "@id": "uuid:a79b61a7-c4ab-4c93-bed5-bbcc8af0f1a9",
+      "@type": "Entity",
+      "name": "context_chain_system",
+      "layer": 2,
+      "containedBy": {"@id": "uuid:f62dcffc-..."},
+      "contains": [
+        {"@id": "uuid:chain_viz_uuid"},
+        {"@id": "uuid:context_loading_uuid"},
+        {"@id": "uuid:trigger_pointer_uuid"}
+      ],
+      "stages": ["01_request_gathering", "02_research", ...],
+      "resources": [...]
+    },
+    ...
+  ]
+}
+```
+
+This graph could be:
+- Queried with SPARQL (W3C standard)
+- Loaded into Neo4j or ArangoDB for graph algorithms
+- Extended with vector embeddings for semantic queries
+- Synced across machines via Merkle-DAG (SHIMI pattern)
+- Used as AALang agent context (LLMs understand JSON-LD natively)
+
+**Decision**: This is a future capability. Current implementation stays with structured JSON index. JSON-LD knowledge graph generation would be added as a `pointer-sync.sh --export-graph` command when graph traversal queries are needed beyond what recursive CTEs provide.
