@@ -17,6 +17,12 @@ if git diff-tree -r --name-only ORIG_HEAD HEAD | grep -q '0AGNOSTIC.md'; then
     bash "$SCRIPT_DIR/pointer-sync.sh" --rebuild-index
 fi
 
+# Rebuild directory UUID index if any .dir-id files changed
+if git diff-tree -r --name-only ORIG_HEAD HEAD | grep -q '\.dir-id$'; then
+    echo "[post-merge] .dir-id files changed — rebuilding directory UUID index..."
+    bash "$SCRIPT_DIR/pointer-sync.sh" --rebuild-dir-index
+fi
+
 # Validate pointers if any pointer files or entity directories changed
 echo "[post-merge] Validating pointers..."
 bash "$SCRIPT_DIR/pointer-sync.sh" --validate || {

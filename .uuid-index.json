@@ -1,5 +1,5 @@
 {
-  "generated": "2026-03-07T09:06:49Z",
+  "generated": "2026-03-07T19:51:36Z",
   "uuids": {
     "08fe74b8-89f1-4aaa-82f2-03130df055fe": {
       "type": "entity",
@@ -765,6 +765,7 @@
       "path": "layer_-1_research/layer_0_group/layer_0_01_systems/layer_0_better_ai_system/layer_1_group/layer_1_01_features/layer_1_feature_layer_stage_system/layer_1_group/layer_1_sub_features/layer_1_sub_feature_tool_and_app_agnostic",
       "parent_id": "8d73b1e4-c3f8-4f91-b816-324d7e76b294",
       "children": [
+        "0566fc7e-3e31-4fe2-bc24-eed84bd38628",
         "2c9df44f-d0c6-4eac-88aa-60ff92cd9a0c"
       ]
     },
@@ -773,6 +774,21 @@
       "name": "layer_1_99_stages",
       "path": "layer_-1_research/layer_0_group/layer_0_01_systems/layer_0_better_ai_system/layer_1_group/layer_1_01_features/layer_1_feature_layer_stage_system/layer_1_group/layer_1_sub_features/layer_1_sub_feature_tool_and_app_agnostic/layer_1_group/layer_1_99_stages",
       "parent_id": "56fc3df0-5122-4ebf-b62c-063d22c838dc"
+    },
+    "0566fc7e-3e31-4fe2-bc24-eed84bd38628": {
+      "type": "entity",
+      "name": "layer_2_subx2_feature_porting_system",
+      "path": "layer_-1_research/layer_0_group/layer_0_01_systems/layer_0_better_ai_system/layer_1_group/layer_1_01_features/layer_1_feature_layer_stage_system/layer_1_group/layer_1_sub_features/layer_1_sub_feature_tool_and_app_agnostic/layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_porting_system",
+      "parent_id": "56fc3df0-5122-4ebf-b62c-063d22c838dc",
+      "children": [
+        "07a7090c-66b1-4504-86d9-9377fccb14c1"
+      ]
+    },
+    "07a7090c-66b1-4504-86d9-9377fccb14c1": {
+      "type": "entity",
+      "name": "layer_2_99_stages",
+      "path": "layer_-1_research/layer_0_group/layer_0_01_systems/layer_0_better_ai_system/layer_1_group/layer_1_01_features/layer_1_feature_layer_stage_system/layer_1_group/layer_1_sub_features/layer_1_sub_feature_tool_and_app_agnostic/layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_porting_system/layer_2_group/layer_2_99_stages",
+      "parent_id": "0566fc7e-3e31-4fe2-bc24-eed84bd38628"
     },
     "d0f66aa7-6b98-4af4-b92b-13a666d9407c": {
       "type": "entity",
@@ -2787,6 +2803,78 @@
       "name": "archives",
       "entity_id": "74919ea4-fd18-47b0-83e0-edc0a0c9fb79",
       "path": "layer_-1_research/layer_0_group/layer_0_01_systems/layer_0_better_ai_system/layer_1_group/layer_1_01_features/layer_1_feature_layer_stage_system/layer_1_group/layer_1_sub_features/layer_1_sub_feature_organization/layer_1_group/layer_1_99_stages/stage_1_11_archives"
+    },
+    "cddcfa8d-706f-4a49-847d-7682672d06ff": {
+      "type": "stage",
+      "name": "stage_registry",
+      "entity_id": "0566fc7e-3e31-4fe2-bc24-eed84bd38628",
+      "path": "layer_-1_research/layer_0_group/layer_0_01_systems/layer_0_better_ai_system/layer_1_group/layer_1_01_features/layer_1_feature_layer_stage_system/layer_1_group/layer_1_sub_features/layer_1_sub_feature_tool_and_app_agnostic/layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_porting_system/layer_2_group/layer_2_99_stages/stage_2_00_stage_registry"
+    },
+    "e4456948-52c5-4be6-a316-51eb8feda49b": {
+      "type": "stage",
+      "name": "request_gathering",
+      "entity_id": "0566fc7e-3e31-4fe2-bc24-eed84bd38628",
+      "path": "layer_-1_research/layer_0_group/layer_0_01_systems/layer_0_better_ai_system/layer_1_group/layer_1_01_features/layer_1_feature_layer_stage_system/layer_1_group/layer_1_sub_features/layer_1_sub_feature_tool_and_app_agnostic/layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_porting_system/layer_2_group/layer_2_99_stages/stage_2_01_request_gathering"
+    },
+    "198c9e6c-6d1f-4866-a529-e7de8644e6ba": {
+      "type": "stage",
+      "name": "research",
+      "entity_id": "0566fc7e-3e31-4fe2-bc24-eed84bd38628",
+      "path": "layer_-1_research/layer_0_group/layer_0_01_systems/layer_0_better_ai_system/layer_1_group/layer_1_01_features/layer_1_feature_layer_stage_system/layer_1_group/layer_1_sub_features/layer_1_sub_feature_tool_and_app_agnostic/layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_porting_system/layer_2_group/layer_2_99_stages/stage_2_02_research"
+    },
+    "a3475230-5cd8-4e29-8552-ebe2bcbfe441": {
+      "type": "stage",
+      "name": "instructions",
+      "entity_id": "0566fc7e-3e31-4fe2-bc24-eed84bd38628",
+      "path": "layer_-1_research/layer_0_group/layer_0_01_systems/layer_0_better_ai_system/layer_1_group/layer_1_01_features/layer_1_feature_layer_stage_system/layer_1_group/layer_1_sub_features/layer_1_sub_feature_tool_and_app_agnostic/layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_porting_system/layer_2_group/layer_2_99_stages/stage_2_03_instructions"
+    },
+    "adc93868-06d5-4799-8d49-47dddacd043b": {
+      "type": "stage",
+      "name": "design",
+      "entity_id": "0566fc7e-3e31-4fe2-bc24-eed84bd38628",
+      "path": "layer_-1_research/layer_0_group/layer_0_01_systems/layer_0_better_ai_system/layer_1_group/layer_1_01_features/layer_1_feature_layer_stage_system/layer_1_group/layer_1_sub_features/layer_1_sub_feature_tool_and_app_agnostic/layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_porting_system/layer_2_group/layer_2_99_stages/stage_2_04_design"
+    },
+    "386cc482-5605-4d2d-a313-42b4c35f2786": {
+      "type": "stage",
+      "name": "planning",
+      "entity_id": "0566fc7e-3e31-4fe2-bc24-eed84bd38628",
+      "path": "layer_-1_research/layer_0_group/layer_0_01_systems/layer_0_better_ai_system/layer_1_group/layer_1_01_features/layer_1_feature_layer_stage_system/layer_1_group/layer_1_sub_features/layer_1_sub_feature_tool_and_app_agnostic/layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_porting_system/layer_2_group/layer_2_99_stages/stage_2_05_planning"
+    },
+    "857b8d9d-5927-4df1-9082-dcd853d290c5": {
+      "type": "stage",
+      "name": "development",
+      "entity_id": "0566fc7e-3e31-4fe2-bc24-eed84bd38628",
+      "path": "layer_-1_research/layer_0_group/layer_0_01_systems/layer_0_better_ai_system/layer_1_group/layer_1_01_features/layer_1_feature_layer_stage_system/layer_1_group/layer_1_sub_features/layer_1_sub_feature_tool_and_app_agnostic/layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_porting_system/layer_2_group/layer_2_99_stages/stage_2_06_development"
+    },
+    "a325b23a-cc0c-45bb-aa2b-3d0513dc75d5": {
+      "type": "stage",
+      "name": "testing",
+      "entity_id": "0566fc7e-3e31-4fe2-bc24-eed84bd38628",
+      "path": "layer_-1_research/layer_0_group/layer_0_01_systems/layer_0_better_ai_system/layer_1_group/layer_1_01_features/layer_1_feature_layer_stage_system/layer_1_group/layer_1_sub_features/layer_1_sub_feature_tool_and_app_agnostic/layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_porting_system/layer_2_group/layer_2_99_stages/stage_2_07_testing"
+    },
+    "77b4d738-4e3b-4318-b3c9-f8d02cd1a002": {
+      "type": "stage",
+      "name": "criticism",
+      "entity_id": "0566fc7e-3e31-4fe2-bc24-eed84bd38628",
+      "path": "layer_-1_research/layer_0_group/layer_0_01_systems/layer_0_better_ai_system/layer_1_group/layer_1_01_features/layer_1_feature_layer_stage_system/layer_1_group/layer_1_sub_features/layer_1_sub_feature_tool_and_app_agnostic/layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_porting_system/layer_2_group/layer_2_99_stages/stage_2_08_criticism"
+    },
+    "03f301ca-1251-42a7-90d9-00da78235f7c": {
+      "type": "stage",
+      "name": "fixing",
+      "entity_id": "0566fc7e-3e31-4fe2-bc24-eed84bd38628",
+      "path": "layer_-1_research/layer_0_group/layer_0_01_systems/layer_0_better_ai_system/layer_1_group/layer_1_01_features/layer_1_feature_layer_stage_system/layer_1_group/layer_1_sub_features/layer_1_sub_feature_tool_and_app_agnostic/layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_porting_system/layer_2_group/layer_2_99_stages/stage_2_09_fixing"
+    },
+    "f0e861a9-6966-437d-a82a-00ddfa70a932": {
+      "type": "stage",
+      "name": "current_product",
+      "entity_id": "0566fc7e-3e31-4fe2-bc24-eed84bd38628",
+      "path": "layer_-1_research/layer_0_group/layer_0_01_systems/layer_0_better_ai_system/layer_1_group/layer_1_01_features/layer_1_feature_layer_stage_system/layer_1_group/layer_1_sub_features/layer_1_sub_feature_tool_and_app_agnostic/layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_porting_system/layer_2_group/layer_2_99_stages/stage_2_10_current_product"
+    },
+    "ee3bbc57-501d-4171-bf75-d6459917643c": {
+      "type": "stage",
+      "name": "archives",
+      "entity_id": "0566fc7e-3e31-4fe2-bc24-eed84bd38628",
+      "path": "layer_-1_research/layer_0_group/layer_0_01_systems/layer_0_better_ai_system/layer_1_group/layer_1_01_features/layer_1_feature_layer_stage_system/layer_1_group/layer_1_sub_features/layer_1_sub_feature_tool_and_app_agnostic/layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_porting_system/layer_2_group/layer_2_99_stages/stage_2_11_archives"
     },
     "dfd1c77e-8b18-44cd-9afe-907bc22d3941": {
       "type": "stage",
@@ -41031,6 +41119,7 @@
     "layer_1_sub_feature_organization": "74919ea4-fd18-47b0-83e0-edc0a0c9fb79",
     "layer_2_subx2_feature_entities": "3e5c2b6e-f22c-417e-bd2a-a109acf251c2",
     "layer_1_sub_feature_tool_and_app_agnostic": "56fc3df0-5122-4ebf-b62c-063d22c838dc",
+    "layer_2_subx2_feature_porting_system": "0566fc7e-3e31-4fe2-bc24-eed84bd38628",
     "layer_1_feature_multi_os_multi_machine_system": "d0f66aa7-6b98-4af4-b92b-13a666d9407c",
     "layer_1_feature_multimodal_system": "0481b56e-80a9-4ebc-9e9c-6dda3a9fca9d",
     "layer_1_sub_feature_audio": "1bcfc63a-46b2-4d46-9b1e-ad1da3ed2607",
@@ -41119,5 +41208,5 @@
     "layer_5_subx4_feature_unit_03_integration_and_probability": "8ee1c950-a594-4bac-9d73-7908c860b9e7",
     "layer_6_subx5_feature_project_03": "f4bd1eda-5fa4-4916-ae6e-91d782511f6c"
   },
-  "checksum": "sha256:7b03277e5adfe37b576e0c1264113e7fb047c7faee7403ffa8135010931ea4ca"
+  "checksum": "sha256:ae2d10da38a93c1feef0bffd8f2c3edef86760866956bf1b8235007952e8f872"
 }

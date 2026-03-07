@@ -10,6 +10,9 @@
 .env
 *.env
 
+# Build artifacts (rebuilt from source files)
+.dir-uuid-index.json
+
 # OS files
 .DS_Store
 Thumbs.db

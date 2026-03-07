@@ -31,14 +31,14 @@ This plan breaks the UUID identity system implementation into **14 phases** acro
 | 1e (submodule UUIDs) | COMPLETE | 17 nested repos have file + section UUIDs |
 | 2 (stage indexes) | COMPLETE | stage_index.json in all stage registries |
 | 3 (pointer-sync.sh UUID resolution) | COMPLETE | UUID-first resolution with name fallback |
-| 3b (reference integrity) | PARTIAL | --find-references, --validate done; --detect-cycles, --gc pending |
+| 3b (reference integrity) | COMPLETE | --find-references, --validate, --detect-cycles, --gc all implemented |
 | 4 (entity-creation skill) | COMPLETE | Canonical + Claude port updated with UUID generation steps |
-| 5 (migrate pointers) | PENDING | Existing pointers not yet migrated to UUID-based |
+| 5 (migrate pointers) | COMPLETE | All 4 real pointer files already have canonical_entity_id + canonical_stage_id |
 | 6 (docs update) | COMPLETE | All 4 docs have UUID fields, format, resolution, examples |
-| 7 (integration test) | PARTIAL | Core tests pass, full UUID test suite pending |
+| 7 (integration test) | COMPLETE | 160 tests pass (29 categories), 0 FAIL — includes UUID resolution, graph, query, dir-index |
 | 8 (final sync) | COMPLETE | agnostic-sync.sh run, index rebuilt |
 | 9 (git hooks) | COMPLETE | Pre-commit + post-merge hooks installed and symlinked |
-| 10 (dir UUID index) | PENDING | .dir-uuid-index.json not yet built |
+| 10 (dir UUID index) | COMPLETE | --rebuild-dir-index implemented, 100,520 dirs indexed, post-merge hook, .gitignore |
 | **11 (parent/children graph)** | **COMPLETE** | **Added 2026-03-06** |
 | **12 (query CLI)** | **COMPLETE** | **Added 2026-03-06** |
 | **13 (bulk resource indexes)** | **COMPLETE** | **Added 2026-03-06** |

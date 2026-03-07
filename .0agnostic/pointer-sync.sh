@@ -24,6 +24,7 @@
 #   pointer-sync.sh --query type=entity name=*memory*  # Query/filter index entries
 #   pointer-sync.sh --detect-cycles           # Detect circular reference chains
 #   pointer-sync.sh --gc                      # Remove orphaned entries from index
+#   pointer-sync.sh --rebuild-dir-index       # Rebuild .dir-uuid-index.json from .dir-id files
 #
 # Designed to run from any directory within 0_layer_universal.
 # Integrates with agnostic-sync.sh (called at end of sync).
@@ -51,6 +52,7 @@ REBUILD_INDEX=false
 FIND_REFS=""
 DETECT_CYCLES=false
 GC_MODE=false
+REBUILD_DIR_INDEX=false
 LOOKUP_TARGET=""
 CHILDREN_TARGET=""
 PARENT_TARGET=""
@@ -64,6 +66,7 @@ while [ $# -gt 0 ]; do
         --rebuild-index)  REBUILD_INDEX=true; shift ;;
         --detect-cycles)  DETECT_CYCLES=true; shift ;;
         --gc)             GC_MODE=true; shift ;;
+        --rebuild-dir-index) REBUILD_DIR_INDEX=true; shift ;;
         --lookup)
             if [ $# -lt 2 ] || [[ "$2" =~ ^- ]]; then
                 echo "ERROR: --lookup requires a UUID or entity name argument"
@@ -123,6 +126,7 @@ while [ $# -gt 0 ]; do
             echo "  --query <filters>           Query index (type=entity|stage|resource name=*pat* resource_type=rule)"
             echo "  --detect-cycles             Detect circular reference chains"
             echo "  --gc                        Remove orphaned entries from index"
+            echo "  --rebuild-dir-index         Rebuild .dir-uuid-index.json from all .dir-id files"
             exit 0
             ;;
         *)
@@ -909,6 +913,56 @@ else:
         mv "$GC_TMP" "$UUID_INDEX"
     fi
     release_lock
+    exit 0
+fi
+
+# ===== COMMAND: --rebuild-dir-index =====
+if $REBUILD_DIR_INDEX; then
+    DIR_UUID_INDEX="$ROOT/.dir-uuid-index.json"
+    DIR_TMP="${DIR_UUID_INDEX}.tmp.$$"
+    echo "Rebuilding directory UUID index from .dir-id files..."
+
+    python3 -c "
+import json, os, datetime
+
+root = '$ROOT'
+index_path = '$DIR_TMP'
+count = 0
+directories = {}
+
+for dirpath, dirnames, filenames in os.walk(root):
+    if '.git' in dirpath.split(os.sep):
+        continue
+    dirid_path = os.path.join(dirpath, '.dir-id')
+    if os.path.isfile(dirid_path):
+        try:
+            with open(dirid_path) as f:
+                uuid = f.read().strip()
+            if uuid and len(uuid) == 36:
+                rel_path = os.path.relpath(dirpath, root)
+                name = os.path.basename(dirpath)
+                directories[uuid] = {'path': rel_path, 'name': name}
+                count += 1
+        except Exception:
+            pass
+
+data = {
+    'generated': datetime.datetime.now(datetime.timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ'),
+    'count': count,
+    'directories': directories
+}
+
+with open(index_path, 'w') as f:
+    json.dump(data, f, separators=(',', ':'))
+    f.flush()
+    os.fsync(f.fileno())
+
+print(f'[pointer-sync] dir-index built: {count} directories indexed')
+" 2>&1
+
+    if [ -f "$DIR_TMP" ]; then
+        mv "$DIR_TMP" "$DIR_UUID_INDEX"
+    fi
     exit 0
 fi
 

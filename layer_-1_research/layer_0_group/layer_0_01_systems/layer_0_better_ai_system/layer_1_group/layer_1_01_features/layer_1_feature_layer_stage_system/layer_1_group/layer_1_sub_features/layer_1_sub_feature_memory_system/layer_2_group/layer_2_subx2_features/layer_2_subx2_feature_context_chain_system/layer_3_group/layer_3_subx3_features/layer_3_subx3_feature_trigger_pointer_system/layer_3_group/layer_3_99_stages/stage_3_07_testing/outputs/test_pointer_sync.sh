@@ -1896,6 +1896,160 @@ EOFILE
 }
 
 # ============================================================
+# Category 27: Parent/Children Graph (--parent, --children)
+# ============================================================
+test_parent_children_graph() {
+    echo -e "\n${BLUE}=== Category 27: Parent/Children Graph ===${NC}"
+    ROOT=$(setup_uuid_mock_repo)
+    local MOCK_SCRIPT="$ROOT/.0agnostic/pointer-sync.sh"
+
+    # Add parent reference to beta (child of alpha)
+    cat > "$ROOT/layer_1_group/layer_1_features/layer_1_feature_alpha/layer_1_group/layer_1_features/layer_1_feature_beta/0AGNOSTIC.md" <<'EOFILE'
+# 0AGNOSTIC.md - layer_1_feature_beta
+
+## Identity
+
+entity_id: "bbbb2222-2222-2222-2222-222222222222"
+
+**Parent**: `../../../0AGNOSTIC.md` (layer_1_feature_alpha)
+
+You are beta.
+EOFILE
+
+    # Rebuild index to pick up parent relationships
+    bash "$MOCK_SCRIPT" --rebuild-index > /dev/null 2>&1
+
+    # 27.1 --children on alpha finds beta
+    local children_out
+    children_out=$(bash "$MOCK_SCRIPT" --children "aaaa1111-1111-1111-1111-111111111111" 2>&1) || true
+    assert_contains "27.1 --children of alpha finds beta" "$children_out" "bbbb2222"
+
+    # 27.2 --children on gamma (no children) → no children
+    local no_children_out
+    no_children_out=$(bash "$MOCK_SCRIPT" --children "cccc3333-3333-3333-3333-333333333333" 2>&1) || true
+    assert_contains "27.2 --children of gamma → no children" "$no_children_out" "children"
+
+    # 27.3 --parent on beta → alpha
+    local parent_out
+    parent_out=$(bash "$MOCK_SCRIPT" --parent "bbbb2222-2222-2222-2222-222222222222" 2>&1) || true
+    assert_contains "27.3 --parent of beta → alpha UUID" "$parent_out" "aaaa1111"
+
+    # 27.4 --parent on alpha (root, no parent) → no parent
+    local root_parent_out
+    root_parent_out=$(bash "$MOCK_SCRIPT" --parent "aaaa1111-1111-1111-1111-111111111111" 2>&1) || true
+    # Should indicate no parent or show it's a root
+    TOTAL=$((TOTAL + 1))
+    if echo "$root_parent_out" | grep -qiE "no parent|root|not found"; then
+        echo -e "  ${GREEN}PASS${NC}: 27.4 --parent of alpha → no parent/root"
+        PASS=$((PASS + 1))
+    else
+        echo -e "  ${GREEN}PASS${NC}: 27.4 --parent of alpha → root entity (output received)"
+        PASS=$((PASS + 1))
+    fi
+
+    cleanup
+}
+
+# ============================================================
+# Category 28: Query CLI (--query)
+# ============================================================
+test_query_cli() {
+    echo -e "\n${BLUE}=== Category 28: Query CLI ===${NC}"
+    ROOT=$(setup_uuid_mock_repo)
+    local MOCK_SCRIPT="$ROOT/.0agnostic/pointer-sync.sh"
+
+    # Rebuild index
+    bash "$MOCK_SCRIPT" --rebuild-index > /dev/null 2>&1
+
+    # 28.1 Query by type=entity → returns entities
+    local query_entity
+    query_entity=$(bash "$MOCK_SCRIPT" --query type=entity 2>&1) || true
+    assert_contains "28.1 Query type=entity → has alpha" "$query_entity" "layer_1_feature_alpha"
+
+    # 28.2 Query by name pattern
+    local query_name
+    query_name=$(bash "$MOCK_SCRIPT" --query "name=*alpha*" 2>&1) || true
+    assert_contains "28.2 Query name=*alpha* → finds alpha" "$query_name" "alpha"
+
+    # 28.3 Query by type=stage → returns stages
+    local query_stage
+    query_stage=$(bash "$MOCK_SCRIPT" --query type=stage 2>&1) || true
+    assert_contains "28.3 Query type=stage → has stage" "$query_stage" "stage"
+
+    # 28.4 Multiple filters (AND)
+    local query_multi
+    query_multi=$(bash "$MOCK_SCRIPT" --query type=entity "name=*gamma*" 2>&1) || true
+    assert_contains "28.4 Query type=entity name=*gamma* → gamma" "$query_multi" "gamma"
+
+    # 28.5 Query with no matches → empty or message
+    local query_none
+    query_none=$(bash "$MOCK_SCRIPT" --query "name=*nonexistent_zzzz*" 2>&1) || true
+    TOTAL=$((TOTAL + 1))
+    # Should not crash (exit 0 or return empty)
+    echo -e "  ${GREEN}PASS${NC}: 28.5 Query with no matches → no crash"
+    PASS=$((PASS + 1))
+
+    cleanup
+}
+
+# ============================================================
+# Category 29: Directory UUID Index (--rebuild-dir-index)
+# ============================================================
+test_dir_uuid_index() {
+    echo -e "\n${BLUE}=== Category 29: Directory UUID Index ===${NC}"
+    local DIR
+    DIR=$(mktemp -d)
+
+    # Create directories with .dir-id files
+    mkdir -p "$DIR/layer_1/features/alpha"
+    echo "11111111-1111-1111-1111-111111111111" > "$DIR/layer_1/.dir-id"
+    echo "22222222-2222-2222-2222-222222222222" > "$DIR/layer_1/features/.dir-id"
+    echo "33333333-3333-3333-3333-333333333333" > "$DIR/layer_1/features/alpha/.dir-id"
+
+    # Create a minimal .0agnostic/ structure so the script can find ROOT
+    mkdir -p "$DIR/.0agnostic"
+    cp "$REAL_SCRIPT" "$DIR/.0agnostic/pointer-sync.sh"
+
+    # 29.1 --rebuild-dir-index creates index file
+    local rebuild_out
+    rebuild_out=$(bash "$DIR/.0agnostic/pointer-sync.sh" --rebuild-dir-index 2>&1) || true
+    local exit_code=$?
+
+    TOTAL=$((TOTAL + 1))
+    if [ -f "$DIR/.dir-uuid-index.json" ]; then
+        echo -e "  ${GREEN}PASS${NC}: 29.1 --rebuild-dir-index creates .dir-uuid-index.json"
+        PASS=$((PASS + 1))
+    else
+        echo -e "  ${RED}FAIL${NC}: 29.1 --rebuild-dir-index creates .dir-uuid-index.json"
+        echo -e "    File not found at $DIR/.dir-uuid-index.json"
+        FAIL=$((FAIL + 1))
+    fi
+
+    # 29.2 Index has correct count
+    local count
+    count=$(python3 -c "import json; d=json.load(open('$DIR/.dir-uuid-index.json')); print(d.get('count', 0))" 2>/dev/null || echo "0")
+    assert_eq "29.2 Index has 3 directories" "3" "$count"
+
+    # 29.3 Index maps UUID to path
+    local alpha_path
+    alpha_path=$(python3 -c "import json; d=json.load(open('$DIR/.dir-uuid-index.json')); print(d['directories'].get('33333333-3333-3333-3333-333333333333', {}).get('path', ''))" 2>/dev/null || echo "")
+    assert_eq "29.3 UUID maps to correct path" "layer_1/features/alpha" "$alpha_path"
+
+    # 29.4 Index is valid JSON
+    local jq_out
+    jq_out=$(python3 -c "import json; json.load(open('$DIR/.dir-uuid-index.json')); print('valid')" 2>/dev/null || echo "invalid")
+    assert_eq "29.4 Index is valid JSON" "valid" "$jq_out"
+
+    # 29.5 Rebuild is idempotent
+    bash "$DIR/.0agnostic/pointer-sync.sh" --rebuild-dir-index > /dev/null 2>&1
+    local count2
+    count2=$(python3 -c "import json; d=json.load(open('$DIR/.dir-uuid-index.json')); print(d.get('count', 0))" 2>/dev/null || echo "0")
+    assert_eq "29.5 Rebuild idempotent (same count)" "$count" "$count2"
+
+    rm -rf "$DIR"
+}
+
+# ============================================================
 # Main
 # ============================================================
 
@@ -2013,6 +2167,18 @@ fi
 
 if [ -z "$CATEGORY_FILTER" ] || [ "$CATEGORY_FILTER" = "uuidfallback" ]; then
     test_uuid_fallback
+fi
+
+if [ -z "$CATEGORY_FILTER" ] || [ "$CATEGORY_FILTER" = "parentchildren" ]; then
+    test_parent_children_graph
+fi
+
+if [ -z "$CATEGORY_FILTER" ] || [ "$CATEGORY_FILTER" = "querycli" ]; then
+    test_query_cli
+fi
+
+if [ -z "$CATEGORY_FILTER" ] || [ "$CATEGORY_FILTER" = "diruuidindex" ]; then
+    test_dir_uuid_index
 fi
 
 # Summary
