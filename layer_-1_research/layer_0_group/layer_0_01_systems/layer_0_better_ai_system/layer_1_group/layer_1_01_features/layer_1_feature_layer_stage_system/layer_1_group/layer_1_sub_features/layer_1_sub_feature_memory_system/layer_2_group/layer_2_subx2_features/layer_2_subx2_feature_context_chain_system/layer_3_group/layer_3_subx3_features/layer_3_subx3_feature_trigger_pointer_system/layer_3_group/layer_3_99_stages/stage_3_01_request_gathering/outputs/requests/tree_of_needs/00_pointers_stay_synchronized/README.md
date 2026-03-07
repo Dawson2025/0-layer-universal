@@ -41,13 +41,14 @@ A system where:
 ---
 
 <!-- section_id: "abcfd27e-1598-479a-bb28-7543224467c6" -->
-## Three Branches
+## Four Branches
 
 | Branch | Question | Description |
 |--------|----------|-------------|
 | [**01_pointer_format**](./01_pointer_format/) | "How are pointers structured?" | YAML frontmatter format, required fields, body conventions |
 | [**02_path_resolution**](./02_path_resolution/) | "How are canonical paths found?" | Entity search, stage navigation, subpath resolution |
 | [**03_trigger_automation**](./03_trigger_automation/) | "How are pointers validated automatically?" | Hooks, agnostic-sync integration, CI-ready validation |
+| [**04_uuid_graph_traversal**](./04_uuid_graph_traversal/) | "How does the UUID system support graph traversal and queries?" | Parent/children graph, query CLI, resource indexes, efficient agent lookups |
 
 ---
 
@@ -66,8 +67,13 @@ A system where:
 |   +-- need_02_relative_path_compute    Compute portable relative paths
 |
 +-- 03_trigger_automation/               How pointers validate automatically
-    +-- need_01_hook_triggers            Claude Code PostToolUse hooks
-    +-- need_02_sync_integration         agnostic-sync.sh end-of-run validation
+|   +-- need_01_hook_triggers            Claude Code PostToolUse hooks
+|   +-- need_02_sync_integration         agnostic-sync.sh end-of-run validation
+|
++-- 04_uuid_graph_traversal/             How the UUID system supports graph traversal
+    +-- need_01_parent_children_graph    Entity hierarchy as navigable graph
+    +-- need_02_query_cli                Flexible filtering and search across all UUIDs
+    +-- need_03_resource_indexes         Per-entity resource indexes for O(1) lookup
 ```
 
 ---
@@ -76,9 +82,16 @@ A system where:
 ## Success Criteria
 
 The root need is satisfied when:
-- [ ] All pointer files use YAML frontmatter with `pointer_to:` and `canonical_entity:`
-- [ ] `pointer-sync.sh` resolves all pointers correctly
-- [ ] `pointer-sync.sh --validate` exits 0 when all pointers are valid, 1 when any are broken
-- [ ] Claude Code hook fires after editing pointer files
-- [ ] `agnostic-sync.sh` reports pointer validation at end of run
-- [ ] Creating a new pointer takes <1 minute (fill frontmatter, run script)
+- [x] All pointer files use YAML frontmatter with `pointer_to:` and `canonical_entity:`
+- [x] `pointer-sync.sh` resolves all pointers correctly
+- [x] `pointer-sync.sh --validate` exits 0 when all pointers are valid, 1 when any are broken
+- [x] Claude Code hook fires after editing pointer files
+- [x] `agnostic-sync.sh` reports pointer validation at end of run
+- [x] Creating a new pointer takes <1 minute (fill frontmatter, run script)
+- [x] UUID index supports parent/children graph traversal (`--parent`, `--children`)
+- [x] Query CLI enables flexible filtering across all UUID entries (`--query`)
+- [x] Per-entity `resource_index.json` rolled out to all entities (50 entities)
+- [x] Root `.uuid-index.json` aggregates entities, stages, and resources (5,313 entries)
+- [ ] Incremental index updates (rebuild only changed entities)
+- [ ] Short-name resolution for entities (fuzzy/partial matching)
+- [ ] Auto-UUID assignment on entity creation (entity-creation skill integration)

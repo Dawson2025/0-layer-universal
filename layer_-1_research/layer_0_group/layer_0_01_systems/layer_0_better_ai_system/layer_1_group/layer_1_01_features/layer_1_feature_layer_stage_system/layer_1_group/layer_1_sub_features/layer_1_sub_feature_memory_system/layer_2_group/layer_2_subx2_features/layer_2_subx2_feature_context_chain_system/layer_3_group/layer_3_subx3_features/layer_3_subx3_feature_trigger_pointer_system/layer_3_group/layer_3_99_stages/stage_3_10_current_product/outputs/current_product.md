@@ -14,7 +14,10 @@ The current working product is the `pointer-sync.sh` script at the root `.0agnos
 
 | Component | Status | Location |
 |-----------|--------|----------|
-| `pointer-sync.sh` | Production | `.0agnostic/pointer-sync.sh` |
+| `pointer-sync.sh` | Production | `.0agnostic/pointer-sync.sh` (~1050 lines) |
+| `create-resource-indexes.sh` | Production | `.0agnostic/create-resource-indexes.sh` (~345 lines) |
+| Root UUID index | Production | `.uuid-index.json` (5,313 entries) |
+| Per-entity resource indexes | Production | `<entity>/.0agnostic/resource_index.json` (50 entities) |
 | Pointer sync protocol | Production | `.0agnostic/03_protocols/pointer_sync_protocol.md` |
 | Pointer sync knowledge | Production | `.0agnostic/01_knowledge/pointer_sync/pointer_sync_knowledge.md` |
 | Pointer sync rule | Production | `.0agnostic/02_rules/static/pointer_sync_rule/pointer_sync_rule.md` |
@@ -36,4 +39,47 @@ The current working product is the `pointer-sync.sh` script at the root `.0agnos
 
 # Dry run (show what would change)
 .0agnostic/pointer-sync.sh --dry-run
+
+# Rebuild UUID index from source files
+.0agnostic/pointer-sync.sh --rebuild-index
+
+# Look up a UUID or entity name
+.0agnostic/pointer-sync.sh --lookup <uuid-or-name>
+
+# Navigate parent chain
+.0agnostic/pointer-sync.sh --parent <uuid>
+.0agnostic/pointer-sync.sh --parent <uuid> --verbose  # full chain to root
+
+# List children of an entity
+.0agnostic/pointer-sync.sh --children <uuid>
+
+# Query with flexible filters
+.0agnostic/pointer-sync.sh --query type=entity name=*research*
+.0agnostic/pointer-sync.sh --query type=resource resource_type=script
+.0agnostic/pointer-sync.sh --query has_children=true
+.0agnostic/pointer-sync.sh --query parent_id=<uuid>
+
+# Find references to a UUID
+.0agnostic/pointer-sync.sh --find-references <uuid>
+
+# Generate resource indexes for all entities
+.0agnostic/create-resource-indexes.sh
+.0agnostic/create-resource-indexes.sh --entity <path>
+.0agnostic/create-resource-indexes.sh --dry-run
 ```
+
+<!-- section_id: "c3d5e7f9-a0b2-4c1d-8e3f-6a7b9c0d2e4f" -->
+## Index Statistics (2026-03-06)
+
+| Metric | Count |
+|--------|-------|
+| Total UUID entries | 5,313 |
+| Entity entries | 351 |
+| Stage entries | 396 |
+| Resource entries | 4,566 |
+| Entities with parent links | 122 |
+| Entities with children | 34 |
+| Entities with resource indexes | 50 |
+| Index file size | ~2.6 MB |
+| Index load time | ~3ms |
+| Single lookup time | <0.03ms |

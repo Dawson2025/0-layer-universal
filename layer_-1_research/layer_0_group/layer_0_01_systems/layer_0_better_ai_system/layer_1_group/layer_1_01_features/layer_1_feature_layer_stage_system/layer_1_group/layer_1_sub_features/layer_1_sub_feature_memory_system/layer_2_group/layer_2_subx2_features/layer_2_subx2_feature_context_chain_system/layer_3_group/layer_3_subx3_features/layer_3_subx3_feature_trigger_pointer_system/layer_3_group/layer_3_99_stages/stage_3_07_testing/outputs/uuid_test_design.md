@@ -320,3 +320,75 @@ resource_name: "uuid_test_design"
 - **No BROKEN pointers introduced by migration**
 - **Index locking prevents concurrent corruption**
 - **Checksum validation catches corrupted indexes**
+
+---
+
+<!-- section_id: "a4b6c8d0-e2f3-4a5b-7c9d-1e3f5a7b9c0d" -->
+## Test Category 35: Parent/Children Graph
+
+**Tests `--parent` and `--children` CLI commands and graph data in the index.**
+
+| # | Test | Setup | Expected |
+|---|------|-------|----------|
+| 35.1 | `--parent` returns correct parent | Entity with known parent link | Shows parent UUID, name, path |
+| 35.2 | `--parent` on root entity | Entity with no parent_id | Reports "no parent" or root status |
+| 35.3 | `--parent --verbose` walks full chain | Entity 3 levels deep | Shows chain: entity → parent → grandparent → root |
+| 35.4 | `--children` lists direct children | Entity with 3 known children | Lists all 3 children with UUIDs and paths |
+| 35.5 | `--children` on leaf entity | Entity with no children | Reports "no children" |
+| 35.6 | Parent/children consistency | Build index, check graph | Every entity in parent.children also has parent_id = parent |
+| 35.7 | Broken parent path | Entity with `**Parent**:` pointing to nonexistent file | Warning emitted, no parent_id in index |
+| 35.8 | Parent without entity_id | Entity referencing parent whose 0AGNOSTIC.md lacks entity_id | Warning emitted, no parent_id in index |
+
+---
+
+<!-- section_id: "b5c7d9e1-f3a4-4b6c-8d0e-2f4a6b8c0d1e" -->
+## Test Category 36: Query CLI
+
+**Tests `--query` command with various filter combinations.**
+
+| # | Test | Setup | Expected |
+|---|------|-------|----------|
+| 36.1 | Query by type=entity | Index with mixed types | Returns only entity entries |
+| 36.2 | Query by type=stage | Index with mixed types | Returns only stage entries |
+| 36.3 | Query by type=resource | Index with mixed types | Returns only resource entries |
+| 36.4 | Query by name=*pattern* | Index with various names | Returns entries matching glob pattern |
+| 36.5 | Query by resource_type=script | Index with resources | Returns only script-type resources |
+| 36.6 | Query with multiple filters (AND) | type=entity name=*research* | Returns entities with "research" in name |
+| 36.7 | Query by has_children=true | Index with graph data | Returns only entities with children |
+| 36.8 | Query by parent_id=<uuid> | Index with graph data | Returns children of specific parent |
+| 36.9 | Query by path=*pattern* | Index entries | Returns entries with matching paths |
+| 36.10 | Query with no matches | Specific filter that matches nothing | Empty result, no error |
+| 36.11 | Query with no filters | No key=value args | Returns all entries (or error) |
+
+---
+
+<!-- section_id: "c6d8e0f2-a4b5-4c7d-9e1f-3a5b7c9d1e2f" -->
+## Test Category 37: Resource Index Generation
+
+**Tests `create-resource-indexes.sh` bulk and per-entity generation.**
+
+| # | Test | Setup | Expected |
+|---|------|-------|----------|
+| 37.1 | Creates resource_index.json for entity | Entity with .0agnostic/ and UUID-bearing files | Valid JSON index at .0agnostic/resource_index.json |
+| 37.2 | Skips entity without entity_id | Entity with 0AGNOSTIC.md but no entity_id | Skipped with verbose message, no error |
+| 37.3 | Skips derived files | Entity with CLAUDE.md, .integration.md | Derived files not in resource index |
+| 37.4 | Resource types inferred correctly | Entity with script, knowledge, rule files | Correct resource_type for each |
+| 37.5 | Paths relative to entity root | Entity with nested resources | All paths are relative, not absolute |
+| 37.6 | Duplicate UUID detection | Two files with same resource_id in entity | Error reported |
+| 37.7 | --dry-run shows without creating | Entity without index | No file created, output shows what would change |
+| 37.8 | --entity flag processes single entity | Specific entity path | Only that entity processed |
+| 37.9 | Idempotent (run twice) | Run script twice | Same output, file_id preserved |
+| 37.10 | Valid JSON output | Create index | `jq .` succeeds on resource_index.json |
+
+---
+
+<!-- section_id: "d7e9f1a3-b5c6-4d8e-0f2a-4b6c8d0e2f3a" -->
+## Updated Summary
+
+| Suite | Categories | Estimated Tests |
+|-------|-----------|-----------------|
+| test_pointer_sync.sh (extended) | 20-24, 30-32, 35-36 | ~80 new tests |
+| test_uuid_scripts.sh (new) | 25-29, 33, 37 | ~68 tests |
+| test_hooks.sh (new) | 34 | ~4 tests |
+| **Total new** | **18 categories** | **~152 tests** |
+| **Grand total (with existing 108)** | **37 categories** | **~260 tests** |

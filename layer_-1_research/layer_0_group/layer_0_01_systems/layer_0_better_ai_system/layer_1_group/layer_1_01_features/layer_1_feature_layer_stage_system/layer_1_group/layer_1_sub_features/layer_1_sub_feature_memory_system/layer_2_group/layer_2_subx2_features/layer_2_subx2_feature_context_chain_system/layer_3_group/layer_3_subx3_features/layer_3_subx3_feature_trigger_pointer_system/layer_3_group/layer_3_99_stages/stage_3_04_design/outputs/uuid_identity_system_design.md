@@ -6,7 +6,7 @@ resource_name: "uuid_identity_system_design"
 # Design Proposal: UUID Identity System for Layer-Stage Entities
 
 <!-- section_id: "954bade0-48e4-46cf-9d58-493f6771bed5" -->
-## Status: PROPOSED
+## Status: IMPLEMENTED (core phases complete, see Addendum 15 for graph + query extensions)
 <!-- section_id: "8f196934-70c1-4cab-a2be-3328663704d4" -->
 ## Date: 2026-03-02
 <!-- section_id: "0c009ec6-14a4-4a2a-a1a1-817c94690c49" -->
@@ -1314,6 +1314,34 @@ Recommended chaos tests for the UUID system:
 ---
 
 <!-- section_id: "3fe8772e-1285-4d36-8d52-2c42396ebf03" -->
+## 15. Addendum: Parent/Children Graph & Query CLI (2026-03-06)
+
+The core UUID identity system design (Sections 1-14) has been extended with graph traversal and query capabilities. These are documented in a separate design doc:
+
+**Full design**: `uuid_graph_and_query_design.md` (same directory)
+
+### Summary of Extensions
+
+| Extension | Section in New Doc | Status |
+|-----------|-------------------|--------|
+| Parent/children entity graph | Section 2 | IMPLEMENTED |
+| Query CLI with flexible filters | Section 3 | IMPLEMENTED |
+| Per-entity resource indexes | Section 4 | IMPLEMENTED (50 entities) |
+| Index as document database | Section 5 | Architectural analysis |
+
+### Key Metrics After Extensions
+
+| Metric | Value |
+|--------|-------|
+| Total UUID index entries | 5,313 |
+| Entities with parent links | 122 / 351 |
+| Entities with children | 34 |
+| Resource indexes generated | 50 |
+| Index load time | ~3ms |
+| Query execution | <100ms |
+
+---
+
 ## Sources
 
 - Research: `../../../stage_3_02_research/outputs/rename_propagation_research.md` — evaluation of 7 rename propagation approaches

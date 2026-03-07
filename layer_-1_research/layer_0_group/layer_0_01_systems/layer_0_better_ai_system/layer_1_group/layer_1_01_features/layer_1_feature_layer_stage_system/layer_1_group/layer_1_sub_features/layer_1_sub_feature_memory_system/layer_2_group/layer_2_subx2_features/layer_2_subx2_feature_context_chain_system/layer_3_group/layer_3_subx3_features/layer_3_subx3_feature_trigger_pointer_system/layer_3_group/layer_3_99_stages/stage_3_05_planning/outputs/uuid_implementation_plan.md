@@ -17,7 +17,31 @@ resource_name: "uuid_implementation_plan"
 <!-- section_id: "b4b9c0b6-1b6b-44d7-87aa-e744ed5d86da" -->
 ## Overview
 
-This plan breaks the UUID identity system implementation into **14 phases** across **6 agent roles**. Each phase produces testable artifacts. Phases are ordered by dependency — later phases depend on earlier ones. Some phases can run in parallel.
+This plan breaks the UUID identity system implementation into **14 phases** across **6 agent roles**, plus **3 additional phases** (11-13) added after the initial implementation for graph traversal and query capabilities. Each phase produces testable artifacts. Phases are ordered by dependency — later phases depend on earlier ones. Some phases can run in parallel.
+
+<!-- section_id: "f1a2b3c4-d5e6-4f7a-8b9c-0d1e2f3a4b5c" -->
+## Implementation Status (2026-03-06)
+
+| Phase | Status | Notes |
+|-------|--------|-------|
+| 1 (entity UUIDs) | COMPLETE | All entities have entity_id in 0AGNOSTIC.md |
+| 1b (file UUIDs) | COMPLETE | 17,340 core text files have resource_id/file_id |
+| 1c (directory UUIDs) | COMPLETE | ~99,275 directories have .dir-id files |
+| 1d (section UUIDs) | COMPLETE | h2/h3 headings have section_id comments |
+| 1e (submodule UUIDs) | COMPLETE | 17 nested repos have file + section UUIDs |
+| 2 (stage indexes) | COMPLETE | stage_index.json in all stage registries |
+| 3 (pointer-sync.sh UUID resolution) | COMPLETE | UUID-first resolution with name fallback |
+| 3b (reference integrity) | PARTIAL | --find-references, --validate done; --detect-cycles, --gc pending |
+| 4 (entity-creation skill) | PENDING | Skill not yet updated for auto-UUID |
+| 5 (migrate pointers) | PENDING | Existing pointers not yet migrated to UUID-based |
+| 6 (docs update) | PARTIAL | Design docs updated, canonical references pending |
+| 7 (integration test) | PARTIAL | Core tests pass, full UUID test suite pending |
+| 8 (final sync) | COMPLETE | agnostic-sync.sh run, index rebuilt |
+| 9 (git hooks) | PENDING | Post-merge hook not yet installed |
+| 10 (dir UUID index) | PENDING | .dir-uuid-index.json not yet built |
+| **11 (parent/children graph)** | **COMPLETE** | **Added 2026-03-06** |
+| **12 (query CLI)** | **COMPLETE** | **Added 2026-03-06** |
+| **13 (bulk resource indexes)** | **COMPLETE** | **Added 2026-03-06** |
 
 ---
 
@@ -791,38 +815,114 @@ Session 3 (Migration + Polish):
 ---
 
 <!-- section_id: "42f5e43c-be51-422e-b7c5-0072fc30f5ea" -->
+## Phase 11: Parent/Children Entity Graph
+
+**Agent**: Pointer-Sync Agent
+**Status**: COMPLETE (2026-03-06)
+**Input**: All `0AGNOSTIC.md` files with `**Parent**:` references
+**Output**: Modified `pointer-sync.sh` with graph-aware `build_uuid_index()`
+
+<!-- section_id: "a2b4c6d8-e0f2-4a1b-3c5d-7e9f1a3b5c7d" -->
+### What Was Done
+
+1. **Rewrote `build_uuid_index()`** from bash string-building to embedded Python (PYINDEX heredoc)
+2. **Phase 1 of rebuild** now extracts parent references from 0AGNOSTIC.md, resolves relative paths, reads parent entity_id
+3. **Computes `children[]`** by inverting the parent map after all entities are processed
+4. **Added `--parent <uuid>` command** with `--verbose` for full chain walk
+5. **Added `--children <uuid>` command** to list direct children
+6. **Fixed stderr/stdout separation** so warnings don't corrupt JSON output
+
+### Results
+
+- 351 entities in index, 122 with resolved parent links, 34 with children
+- Parent chain walks work correctly to root
+- Children listings show all direct descendants
+
+---
+
+## Phase 12: Query CLI
+
+**Agent**: Pointer-Sync Agent
+**Status**: COMPLETE (2026-03-06)
+**Input**: `.uuid-index.json` with 5,313 entries
+**Output**: `--query` command in `pointer-sync.sh`
+
+<!-- section_id: "b3c5d7e9-f0a1-4b2c-4d6e-8f0a2b4c6d8e" -->
+### What Was Done
+
+1. **Added `--query` CLI option** with key=value argument parsing
+2. **Implemented Python query engine** (PYQUERY heredoc) with fnmatch-based filtering
+3. **7 filter keys**: type, name, path, resource_type, entity_id, parent_id, has_children
+4. **Multiple filters** combine with AND logic
+
+### Results
+
+- Queries execute in <100ms on full index
+- All filter combinations tested and working
+
+---
+
+## Phase 13: Bulk Resource Index Rollout
+
+**Agent**: Script Agent
+**Status**: COMPLETE (2026-03-06)
+**Input**: All entities with `.0agnostic/` directories
+**Output**: 50 `resource_index.json` files, updated root index
+
+<!-- section_id: "c4d6e8f0-a1b2-4c3d-5e7f-9a1b3c5d7e9f" -->
+### What Was Done
+
+1. **Fixed `create-resource-indexes.sh`** to skip entities without entity_id (graceful skip vs error)
+2. **Ran bulk creation** across all eligible entities: 50 indexes created
+3. **Rebuilt root index** to aggregate all resource entries
+4. **Fixed stdout/stderr separation** in `do_rebuild_index()` to prevent JSON corruption
+
+### Results
+
+- 50 entities have resource indexes
+- 4,566 resource entries aggregated into root index
+- Total index: 5,313 entries (351 entity + 396 stage + 4,566 resource)
+- Index size: ~2.6MB, load time: ~3ms
+
+---
+
 ## Verification Checklist
 
 After all phases complete:
 
-- [ ] Every `0AGNOSTIC.md` with Identity section has `entity_id`
-- [ ] Every stage's `0AGNOSTIC.md` has `stage_id`
-- [ ] Every entity with stages has `stage_index.json`
-- [ ] **Every `.md` file** has `resource_id` in YAML frontmatter (core + submodules)
-- [ ] **Every `.sh` file** has `resource_id` in comment header (core + submodules)
-- [ ] **Every `.json`/`.jsonld` file** has `file_id` in root object (core + submodules)
-- [ ] **Every auto-generated file** has `derived_from` reference
-- [ ] **Every directory** has a `.dir-id` file with UUID (core + submodules — already 100%)
-- [ ] **All empty `.gitkeep` files** replaced by `.dir-id` files
-- [ ] **All 17 nested repos** have file UUIDs assigned (~29,000 files)
-- [ ] **All 17 nested repos** have section UUIDs for h2/h3 headings in `.md` files
-- [ ] **Each nested repo** has its own `[AI Context]` commit
-- [ ] **Parent submodule pointers** updated after nested repo UUID assignment
+- [x] Every `0AGNOSTIC.md` with Identity section has `entity_id`
+- [x] Every stage's `0AGNOSTIC.md` has `stage_id`
+- [x] Every entity with stages has `stage_index.json`
+- [x] **Every `.md` file** has `resource_id` in YAML frontmatter (core + submodules)
+- [x] **Every `.sh` file** has `resource_id` in comment header (core + submodules)
+- [x] **Every `.json`/`.jsonld` file** has `file_id` in root object (core + submodules)
+- [x] **Every auto-generated file** has `derived_from` reference
+- [x] **Every directory** has a `.dir-id` file with UUID (core + submodules — already 100%)
+- [x] **All empty `.gitkeep` files** replaced by `.dir-id` files
+- [x] **All 17 nested repos** have file UUIDs assigned (~29,000 files)
+- [x] **All 17 nested repos** have section UUIDs for h2/h3 headings in `.md` files
+- [x] **Each nested repo** has its own `[AI Context]` commit
+- [x] **Parent submodule pointers** updated after nested repo UUID assignment
 - [ ] `.dir-uuid-index.json` exists and is valid
 - [ ] Lazy directory resolution handles renames/moves without manual intervention
-- [ ] `pointer-sync.sh` resolves by UUID-first, name fallback
-- [ ] `pointer-sync.sh --find-references` works (reverse UUID lookup)
+- [x] `pointer-sync.sh` resolves by UUID-first, name fallback
+- [x] `pointer-sync.sh --find-references` works (reverse UUID lookup)
 - [ ] `pointer-sync.sh --detect-cycles` reports cycles correctly
 - [ ] `pointer-sync.sh --gc` removes orphaned entries
 - [ ] `pointer-sync.sh --rebuild-dir-index` rebuilds directory UUID index
-- [ ] Atomic write protocol in place for all index mutations
-- [ ] File locking prevents concurrent index corruption
+- [x] Atomic write protocol in place for all index mutations
+- [x] File locking prevents concurrent index corruption
 - [ ] Checksum validation detects corrupt indexes
-- [ ] All 108 existing tests pass
+- [x] All 108 existing tests pass
 - [ ] All new UUID tests pass
-- [ ] `pointer-sync.sh --validate` exits 0 on real repo
+- [x] `pointer-sync.sh --validate` exits 0 on real repo
 - [ ] Entity creation skill generates UUIDs for new entities
 - [ ] Entity creation skill creates `.dir-id` for all new directories
 - [ ] Documentation updated (entity_structure.md, protocol, convention)
 - [ ] Post-merge git hook installed and functional
-- [ ] All changes committed with `[AI Context]` prefix
+- [x] All changes committed with `[AI Context]` prefix
+- [x] Parent/children entity graph in UUID index (Phase 11)
+- [x] `--parent`, `--children` CLI commands work (Phase 11)
+- [x] `--query` CLI with flexible filtering works (Phase 12)
+- [x] Per-entity resource indexes rolled out to 50 entities (Phase 13)
+- [x] Root index aggregates 5,313 entries across entities, stages, resources (Phase 13)
