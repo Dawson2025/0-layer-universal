@@ -21,6 +21,7 @@ Skills provide task-specific instructions with references to knowledge. Load the
 | context-gathering | Understanding current location in hierarchy | `context-gathering/` |
 | handoff-creation | Creating handoff documents | `handoff-creation/` |
 | stage-workflow | Working through stages | `stage-workflow/` |
+| uuid-query | Querying UUID identity system, entity lookup, hierarchy navigation | `uuid-query/` |
 
 ---
 

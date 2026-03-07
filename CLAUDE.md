@@ -83,6 +83,30 @@ When any nested repository exists in a child path:
 | Promoting research to production | Load `.0agnostic/03_protocols/research_promotion_protocol.md` |
 | Creating or modifying pointer files | Follow `.0agnostic/03_protocols/pointer_sync_protocol.md` and run `pointer-sync.sh --validate` |
 | Modifying agent delegation patterns | Load `.0agnostic/02_rules/dynamic/agent_delegation_workspace_rule/agent_delegation_workspace_rule.md` |
+| Querying UUID identity system (entity lookup, hierarchy, resources) | Load skill: uuid-query |
+| Multi-step development tasks | Load `.0agnostic/02_rules/1_scenario_based/sequential_development_methodology/sequential_development_methodology.md` |
+| Security decisions, access control, or sensitive operations | Load `.0agnostic/02_rules/1_scenario_based/safety_governance/safety_governance.md` |
+| Creating file headers or context headers | Load `.0agnostic/02_rules/1_scenario_based/LAYER_CONTEXT_HEADER_PROTOCOL/LAYER_CONTEXT_HEADER_PROTOCOL.md` |
+| Cross-platform or multi-OS work | Load `.0agnostic/02_rules/1_scenario_based/CROSS_OS_COMPATIBILITY_RULES/CROSS_OS_COMPATIBILITY_RULES.md` |
+| Running stages in parallel or managing concurrent stage work | Load `.0agnostic/02_rules/dynamic/PARALLEL_STAGES_RULE/PARALLEL_STAGES_RULE.md` |
+| Looping between stages (testing→criticism→fixing) | Load `.0agnostic/02_rules/dynamic/STAGE_LOOP_RULE/STAGE_LOOP_RULE.md` |
+| Source of truth conflicts or duplicate content | Load `.0agnostic/02_rules/dynamic/I0_source_of_truth_rule/I0_source_of_truth_rule.md` |
+| CLI vs GUI launcher issues (apps opening wrong way) | Load `.0agnostic/02_rules/dynamic/cli_gui_launcher_mismatch_rule/cli_gui_launcher_mismatch_rule.md` |
+| Browser content extraction | Load `.0agnostic/02_rules/dynamic/browser_extraction_rule/browser_extraction_rule.md` |
+| Manager delegating to stage agents | Load `.0agnostic/02_rules/static/MANAGER_DELEGATION_RULE/MANAGER_DELEGATION_RULE.md` |
+| Stage boundary transitions (entering/exiting stages) | Load `.0agnostic/02_rules/static/STAGE_BOUNDARY_RULE/STAGE_BOUNDARY_RULE.md` |
+| Writing or reading stage reports | Load `.0agnostic/02_rules/static/STAGE_REPORT_RULE/STAGE_REPORT_RULE.md` |
+| Designing system architecture or creating diagrams | Load `.0agnostic/03_protocols/design_diagramming_protocol.md` |
+| Context loading or chain traversal | Load `.0agnostic/03_protocols/context_loading_protocol.md` |
+| Checking context quality | Load `.0agnostic/03_protocols/context_quality_checklist.md` |
+| Initializing features or sub-features | Load `.0agnostic/03_protocols/features_init_prompt.md` |
+| Adopting the hierarchy in a new project | Load `.0agnostic/03_protocols/HIERARCHY_ADOPTION_CHECKLIST.md` and `.0agnostic/03_protocols/HIERARCHY_QUICK_START.md` |
+| Consolidating, renaming, or reorganizing layers | Load `.0agnostic/03_protocols/layer_consolidation_and_naming_protocol.md` |
+| Migrating to the layer-stage system | Load `.0agnostic/03_protocols/MIGRATION_GUIDE.md` |
+| Testing rules | Load `.0agnostic/03_protocols/rule_testing_protocol.md` |
+| SQLite database creation issues | Load `.0agnostic/03_protocols/sqlite_database_creation_troubleshooting_trajectory.md` |
+| Writing or reviewing stage reports (protocol) | Load `.0agnostic/03_protocols/stage_report_protocol.md` |
+| Deciding what to work on next | Load `.0agnostic/03_protocols/what_to_do_next.md` |
 
 <!-- section_id: "1aa0e072-d338-4d31-a103-534f50df4ab8" -->
 ## Resources
@@ -105,6 +129,32 @@ When any nested repository exists in a child path:
 | Pointer Sync Knowledge | `.0agnostic/01_knowledge/pointer_sync/pointer_sync_knowledge.md` | How the pointer sync system works |
 | Pointer Sync Rule | `.0agnostic/02_rules/static/pointer_sync_rule/pointer_sync_rule.md` | Always-apply rule for pointer file format |
 | Context Chain Mode | `.0agnostic/02_rules/dynamic/CONTEXT_CHAIN_MODE/context_chain_mode.md` | Default vs Research mode switching |
+| UUID Query Skill | `.0agnostic/06_context_avenue_web/01_file_based/05_skills/uuid-query/SKILL.md` | Agent interface for UUID system queries |
+| Skills Index | `.0agnostic/06_context_avenue_web/01_file_based/05_skills/SKILLS.md` | All available skills |
+| AALang/GAB System | `.0agnostic/01_knowledge/aalang_gab_system/` | AALang language spec, agent definitions, JSON-LD patterns |
+| Agent Coordination | `.0agnostic/01_knowledge/agent_coordination/` | Multi-agent coordination patterns |
+| Context Loading | `.0agnostic/01_knowledge/context_loading/` | Context chain traversal and loading strategies |
+| Entity Lifecycle | `.0agnostic/01_knowledge/entity_lifecycle/` | Entity creation, instantiation, types |
+| Naming Conventions | `.0agnostic/01_knowledge/naming_conventions/` | Layer-stage naming rules |
+| Navigation Patterns | `.0agnostic/01_knowledge/navigation_patterns/` | How agents navigate the hierarchy |
+| Principles | `.0agnostic/01_knowledge/principles/` | Core design principles |
+| Visualization Tools | `.0agnostic/01_knowledge/visualization_tools/` | Diagram and visualization resources |
+| Desktop Environment Health | `.0agnostic/01_knowledge/desktop_environment_health/` | GNOME/desktop troubleshooting knowledge |
+| Software Engineering Knowledge | `.0agnostic/01_knowledge/software_engineering_knowledge_system/` | General software engineering reference |
+| File Change Reporting Rule | `.0agnostic/02_rules/static/I0_FILE_CHANGE_REPORTING/I0_FILE_CHANGE_REPORTING.md` | Mandatory path:line file references on every turn |
+| Manager Delegation Rule | `.0agnostic/02_rules/static/MANAGER_DELEGATION_RULE/` | How managers delegate to stage agents |
+| Stage Boundary Rule | `.0agnostic/02_rules/static/STAGE_BOUNDARY_RULE/` | Rules for entering/exiting stages |
+| Stage Report Rule | `.0agnostic/02_rules/static/STAGE_REPORT_RULE/` | Stage report format and timing |
+| Source of Truth Rule | `.0agnostic/02_rules/dynamic/I0_source_of_truth_rule/` | Canonical vs derived content rules |
+| Context Loading Protocol | `.0agnostic/03_protocols/context_loading_protocol.md` | Step-by-step context loading procedure |
+| Stage Report Protocol | `.0agnostic/03_protocols/stage_report_protocol.md` | Stage report format and delivery |
+| Context Quality Checklist | `.0agnostic/03_protocols/context_quality_checklist.md` | Verify context completeness |
+| Design Diagramming Protocol | `.0agnostic/03_protocols/design_diagramming_protocol.md` | Creating architecture diagrams |
+| Hierarchy Quick Start | `.0agnostic/03_protocols/HIERARCHY_QUICK_START.md` | Fast onboarding to the hierarchy |
+| CLI vs GUI Diagnosis | `.0agnostic/03_protocols/cli_vs_gui_launcher_diagnosis_protocol.md` | Diagnosing launcher mismatches |
+| Source of Truth Protocol | `.0agnostic/03_protocols/source_of_truth_protocol.md` | Resolving canonical vs derived conflicts |
+| Universal Init Prompt | `.0agnostic/03_protocols/universal_init_prompt.md` | Standard agent initialization prompt |
+| Protocols README | `.0agnostic/03_protocols/README.md` | Overview of all protocols |
 
 <!-- section_id: "7a3af372-8f41-431b-b5ed-e58c6c883565" -->
 ## Children
