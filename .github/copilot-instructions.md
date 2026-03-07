@@ -23,6 +23,8 @@
 | Creating or modifying pointer files | Follow `.0agnostic/03_protocols/pointer_sync_protocol.md` and run `pointer-sync.sh --validate` |
 | Modifying agent delegation patterns | Load `.0agnostic/02_rules/dynamic/agent_delegation_workspace_rule/agent_delegation_workspace_rule.md` |
 | Querying UUID identity system (entity lookup, hierarchy, resources) | Load skill: uuid-query |
+| Finding an entity, stage, or resource by name or UUID | Run `pointer-sync.sh --query` or load skill: uuid-query |
+| Checking references before renaming or deleting an entity | Run `pointer-sync.sh --find-references <uuid>` |
 | Multi-step development tasks | Load `.0agnostic/02_rules/1_scenario_based/sequential_development_methodology/sequential_development_methodology.md` |
 | Security decisions, access control, or sensitive operations | Load `.0agnostic/02_rules/1_scenario_based/safety_governance/safety_governance.md` |
 | Creating file headers or context headers | Load `.0agnostic/02_rules/1_scenario_based/LAYER_CONTEXT_HEADER_PROTOCOL/LAYER_CONTEXT_HEADER_PROTOCOL.md` |
@@ -53,8 +55,8 @@
 
 | When | Rule |
 |------|------|
-| Any turn that modifies files | On every turn with file changes: (1) describe changes INLINE with full absolute paths using path:line format (e.g., /home/dawson/.../file.md:42) for ctrl-click navigation, (2) provide end-of-turn summary of all Added/Updated/Moved/Removed files. All paths start from /home/, NEVER abbreviated. Use path:line for ANY file reference pointing to a specific location. Full rule: .0agnostic/02_rules/static/I0_FILE_CHANGE_REPORTING/I0_FILE_CHANGE_REPORTING.md |
 | Modifying any file in .0agnostic/ | When modifying .0agnostic/ files, also update 0AGNOSTIC.md and run agnostic-sync.sh. Full protocol: .0agnostic/02_rules/static/agnostic_update_protocol.md |
+| Any turn that modifies files | On every turn with file changes: (1) describe changes INLINE with full absolute paths using path:line format (e.g., /home/dawson/.../file.md:42) for ctrl-click navigation, (2) provide end-of-turn summary of all Added/Updated/Moved/Removed files. All paths start from /home/, NEVER abbreviated. Use path:line for ANY file reference pointing to a specific location. Full rule: .0agnostic/02_rules/static/I0_FILE_CHANGE_REPORTING/I0_FILE_CHANGE_REPORTING.md |
 
 
 

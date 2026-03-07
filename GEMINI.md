@@ -67,6 +67,33 @@ When any nested repository exists in a child path:
    - properly registered as a submodule, or
    - de-initialized as a standalone repo and converted to regular tracked files.
 
+<!-- section_id: "a1b2c3d4-e5f6-4a7b-8c9d-0e1f2a3b4c5d" -->
+## UUID Identity System
+
+Every entity, stage, file, and directory has a stable UUID that survives renames and moves.
+
+| Component | Where | Example |
+|-----------|-------|---------|
+| Entity UUIDs | `entity_id:` in every `0AGNOSTIC.md` | `entity_id: "a79b61a7-..."` |
+| File UUIDs | `resource_id:` in file headers | `resource_id: "6512d4dd-..."` |
+| Stage UUIDs | `stage_index.json` in stage registries | Maps stage names to UUIDs |
+| Section UUIDs | `<!-- section_id: "..." -->` comments | Anchor links within files |
+| Directory UUIDs | `.dir-id` file in each directory | Single UUID per directory |
+| Global index | `.uuid-index.json` at repo root | 5,313 entries (entities + stages + resources) |
+
+**Quick commands** (run from repo root):
+
+```bash
+pointer-sync.sh --query type=entity name=*memory*   # Find entities by name
+pointer-sync.sh --lookup <uuid>                      # Look up any UUID
+pointer-sync.sh --parent <uuid>                      # Get parent entity
+pointer-sync.sh --children <uuid>                    # List child entities
+pointer-sync.sh --find-references <uuid>             # Find all references before rename/delete
+pointer-sync.sh --query type=resource entity_id=<uuid>  # Resources within an entity
+```
+
+**Full reference**: Load `/uuid-query` skill or read `.0agnostic/01_knowledge/pointer_sync/pointer_sync_knowledge.md`
+
 <!-- section_id: "de02eca7-38ba-422c-83f2-46ea04923b46" -->
 ## Triggers
 
@@ -84,6 +111,8 @@ When any nested repository exists in a child path:
 | Creating or modifying pointer files | Follow `.0agnostic/03_protocols/pointer_sync_protocol.md` and run `pointer-sync.sh --validate` |
 | Modifying agent delegation patterns | Load `.0agnostic/02_rules/dynamic/agent_delegation_workspace_rule/agent_delegation_workspace_rule.md` |
 | Querying UUID identity system (entity lookup, hierarchy, resources) | Load skill: uuid-query |
+| Finding an entity, stage, or resource by name or UUID | Run `pointer-sync.sh --query` or load skill: uuid-query |
+| Checking references before renaming or deleting an entity | Run `pointer-sync.sh --find-references <uuid>` |
 | Multi-step development tasks | Load `.0agnostic/02_rules/1_scenario_based/sequential_development_methodology/sequential_development_methodology.md` |
 | Security decisions, access control, or sensitive operations | Load `.0agnostic/02_rules/1_scenario_based/safety_governance/safety_governance.md` |
 | Creating file headers or context headers | Load `.0agnostic/02_rules/1_scenario_based/LAYER_CONTEXT_HEADER_PROTOCOL/LAYER_CONTEXT_HEADER_PROTOCOL.md` |
@@ -188,8 +217,8 @@ Active chain map (school -> module_03):
 
 | When | Rule |
 |------|------|
-| Any turn that modifies files | On every turn with file changes: (1) describe changes INLINE with full absolute paths using path:line format (e.g., /home/dawson/.../file.md:42) for ctrl-click navigation, (2) provide end-of-turn summary of all Added/Updated/Moved/Removed files. All paths start from /home/, NEVER abbreviated. Use path:line for ANY file reference pointing to a specific location. Full rule: .0agnostic/02_rules/static/I0_FILE_CHANGE_REPORTING/I0_FILE_CHANGE_REPORTING.md |
 | Modifying any file in .0agnostic/ | When modifying .0agnostic/ files, also update 0AGNOSTIC.md and run agnostic-sync.sh. Full protocol: .0agnostic/02_rules/static/agnostic_update_protocol.md |
+| Any turn that modifies files | On every turn with file changes: (1) describe changes INLINE with full absolute paths using path:line format (e.g., /home/dawson/.../file.md:42) for ctrl-click navigation, (2) provide end-of-turn summary of all Added/Updated/Moved/Removed files. All paths start from /home/, NEVER abbreviated. Use path:line for ANY file reference pointing to a specific location. Full rule: .0agnostic/02_rules/static/I0_FILE_CHANGE_REPORTING/I0_FILE_CHANGE_REPORTING.md |
 
 
 ## Gemini-Specific Notes
