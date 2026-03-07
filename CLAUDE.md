@@ -81,7 +81,15 @@ Every entity, stage, file, and directory has a stable UUID that survives renames
 | Directory UUIDs | `.dir-id` file in each directory | Single UUID per directory |
 | Global index | `.uuid-index.json` at repo root | 5,313 entries (entities + stages + resources) |
 
-**Quick commands** (run from repo root):
+**Fast entity lookup** (run from repo root):
+
+```bash
+.0agnostic/entity-find.sh memory            # Find entities by name (~5ms, no Python)
+.0agnostic/entity-find.sh --path chain       # Just show paths
+.0agnostic/entity-find.sh --uuid memory      # Just show UUIDs
+```
+
+**Advanced commands** (full UUID system, uses Python):
 
 ```bash
 pointer-sync.sh --query type=entity name=*memory*   # Find entities by name
@@ -111,6 +119,7 @@ pointer-sync.sh --query type=resource entity_id=<uuid>  # Resources within an en
 | Creating or modifying pointer files | Follow `.0agnostic/03_protocols/pointer_sync_protocol.md` and run `pointer-sync.sh --validate` |
 | Modifying agent delegation patterns | Load `.0agnostic/02_rules/dynamic/agent_delegation_workspace_rule/agent_delegation_workspace_rule.md` |
 | Querying UUID identity system (entity lookup, hierarchy, resources) | Load skill: uuid-query |
+| Locating an entity by name or finding where something lives | Run `.0agnostic/entity-find.sh <name>` (fast, no Python) |
 | Finding an entity, stage, or resource by name or UUID | Run `pointer-sync.sh --query` or load skill: uuid-query |
 | Checking references before renaming or deleting an entity | Run `pointer-sync.sh --find-references <uuid>` |
 | Multi-step development tasks | Load `.0agnostic/02_rules/1_scenario_based/sequential_development_methodology/sequential_development_methodology.md` |
@@ -153,6 +162,7 @@ pointer-sync.sh --query type=resource entity_id=<uuid>  # Resources within an en
 | Research Knowledge Index | `.0agnostic/01_knowledge/layer_stage_system/docs/RESEARCH_KNOWLEDGE_INDEX.md` | Index of all research outputs with paths and promotion status |
 | Setup-Dependant | `.0agnostic/07+_setup_dependant/` | Machine/OS-specific context (Ubuntu, coding apps, etc.) |
 | Research Promotion Protocol | `.0agnostic/03_protocols/research_promotion_protocol.md` | How to promote validated research to production |
+| Entity Find Tool | `.0agnostic/entity-find.sh` | Fast entity lookup by name (~5ms, no Python) |
 | Resource Index Tool | `.0agnostic/create-resource-indexes.sh` | Generate per-entity `resource_index.json` files for resource UUID traversal |
 | Pointer Sync Protocol | `.0agnostic/03_protocols/pointer_sync_protocol.md` | Auto-updating pointer files when canonical paths change |
 | Pointer Sync Knowledge | `.0agnostic/01_knowledge/pointer_sync/pointer_sync_knowledge.md` | How the pointer sync system works |

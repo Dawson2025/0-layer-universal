@@ -12,6 +12,7 @@
 
 # Build artifacts (rebuilt from source files)
 .dir-uuid-index.json
+.entity-lookup.tsv
 
 # OS files
 .DS_Store

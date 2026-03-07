@@ -19,6 +19,8 @@ The trigger pointer system automates the maintenance of pointer files across the
 | Component | Purpose | Location |
 |-----------|---------|----------|
 | pointer-sync.sh | Main sync script — finds, resolves, updates pointers | Root `.0agnostic/pointer-sync.sh` |
+| entity-find.sh | Fast entity lookup by name (~5ms, no Python) | Root `.0agnostic/entity-find.sh` |
+| .entity-lookup.tsv | Flat entity index (name/uuid/path), generated | Root `.entity-lookup.tsv` |
 | pointer_sync_protocol.md | Pointer file format, creation guide, resolution algorithm | Root `.0agnostic/03_protocols/` |
 | pointer_sync_rule.md | Always-apply rule for pointer file conventions | Root `.0agnostic/02_rules/static/` |
 | pointer-edit-guard.sh | Claude Code PostToolUse hook — reminds agents to validate | Root `.0agnostic/06_.../08_hooks/scripts/` |

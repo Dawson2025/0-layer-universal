@@ -23,6 +23,7 @@
 | Creating or modifying pointer files | Follow `.0agnostic/03_protocols/pointer_sync_protocol.md` and run `pointer-sync.sh --validate` |
 | Modifying agent delegation patterns | Load `.0agnostic/02_rules/dynamic/agent_delegation_workspace_rule/agent_delegation_workspace_rule.md` |
 | Querying UUID identity system (entity lookup, hierarchy, resources) | Load skill: uuid-query |
+| Locating an entity by name or finding where something lives | Run `.0agnostic/entity-find.sh <name>` (fast, no Python) |
 | Finding an entity, stage, or resource by name or UUID | Run `pointer-sync.sh --query` or load skill: uuid-query |
 | Checking references before renaming or deleting an entity | Run `pointer-sync.sh --find-references <uuid>` |
 | Multi-step development tasks | Load `.0agnostic/02_rules/1_scenario_based/sequential_development_methodology/sequential_development_methodology.md` |

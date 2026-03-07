@@ -31,10 +31,14 @@ This entity governs the **pointer synchronization system** — all tooling and d
 | Artifact | Root Location | Purpose |
 |----------|---------------|---------|
 | `pointer-sync.sh` | `.0agnostic/pointer-sync.sh` | Main sync script |
+| `entity-find.sh` | `.0agnostic/entity-find.sh` | Fast entity lookup (~5ms, no Python) |
+| `.entity-lookup.tsv` | `.entity-lookup.tsv` | Flat entity index (generated) |
 | Protocol | `.0agnostic/03_protocols/pointer_sync_protocol.md` | Usage guide |
 | Knowledge | `.0agnostic/01_knowledge/pointer_sync/pointer_sync_knowledge.md` | System overview |
 | Rule | `.0agnostic/02_rules/static/pointer_sync_rule/pointer_sync_rule.md` | Format requirements |
+| UUID Rule | `.claude/rules/uuid-identity-system.md` | Agent discoverability |
 | Hook | `.0agnostic/06_.../08_hooks/scripts/pointer-edit-guard.sh` | Edit-time trigger |
+| UUID Skill | `.0agnostic/06_.../05_skills/uuid-query/SKILL.md` | Agent skill interface |
 
 <!-- section_id: "5f39911f-20d8-4c08-bc76-d46bc6dfe474" -->
 ### Connection to Parent
@@ -44,8 +48,8 @@ The trigger pointer system is a subset of the context chain system. Pointers ARE
 <!-- section_id: "3c81300d-020e-4d49-9c24-a6ba03a4d61b" -->
 ## Triggers
 Load this context when:
-- User mentions: pointer sync, trigger pointer, auto-update pointers, stale pointers, pointer validation
-- Working on: pointer-sync.sh improvements, new hook triggers, pointer format changes, path resolution bugs
+- User mentions: pointer sync, trigger pointer, auto-update pointers, stale pointers, pointer validation, entity-find, entity lookup
+- Working on: pointer-sync.sh improvements, entity-find.sh, new hook triggers, pointer format changes, path resolution bugs
 - Entering: `layer_3_subx3_feature_trigger_pointer_system/`
 
 <!-- section_id: "0cae297e-ba44-4a29-8d01-15e19023dec9" -->

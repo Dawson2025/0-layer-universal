@@ -43,6 +43,7 @@ This plan breaks the UUID identity system implementation into **14 phases** acro
 | **12 (query CLI)** | **COMPLETE** | **Added 2026-03-06** |
 | **13 (bulk resource indexes)** | **COMPLETE** | **Added 2026-03-06** |
 | **14 (UUID query skill avenue)** | **COMPLETE** | **Added 2026-03-06, implemented 2026-03-07** |
+| **15 (entity-find.sh lightweight lookup)** | **COMPLETE** | **Added 2026-03-07** — `.entity-lookup.tsv` + `entity-find.sh`, design at `stage_3_04_design/outputs/entity_find_design.md` |
 
 ---
 

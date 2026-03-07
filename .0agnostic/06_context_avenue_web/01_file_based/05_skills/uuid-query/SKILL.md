@@ -33,6 +33,14 @@ Query and navigate the UUID identity system for entity lookup, hierarchy travers
 <!-- section_id: "7e1a3b5c-f6b8-4d0e-2a4b-6c8d0e2f4a5b" -->
 ## Commands
 
+### Fast Entity Lookup (preferred for simple name searches)
+
+```bash
+.0agnostic/entity-find.sh <pattern>      # Find entity by name (~5ms)
+.0agnostic/entity-find.sh --path <pattern>  # Just show paths
+.0agnostic/entity-find.sh --uuid <pattern>  # Just show UUIDs
+```
+
 ### Lookup by UUID
 
 ```bash

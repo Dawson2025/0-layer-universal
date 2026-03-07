@@ -14,7 +14,9 @@ The current working product is the `pointer-sync.sh` script at the root `.0agnos
 
 | Component | Status | Location |
 |-----------|--------|----------|
-| `pointer-sync.sh` | Production | `.0agnostic/pointer-sync.sh` (~1050 lines) |
+| `pointer-sync.sh` | Production | `.0agnostic/pointer-sync.sh` (~1150 lines) |
+| `entity-find.sh` | Production | `.0agnostic/entity-find.sh` (~55 lines) |
+| Entity lookup TSV | Production | `.entity-lookup.tsv` (353 entities, generated) |
 | `create-resource-indexes.sh` | Production | `.0agnostic/create-resource-indexes.sh` (~345 lines) |
 | Root UUID index | Production | `.uuid-index.json` (5,313 entries) |
 | Per-entity resource indexes | Production | `<entity>/.0agnostic/resource_index.json` (50 entities) |
@@ -28,6 +30,11 @@ The current working product is the `pointer-sync.sh` script at the root `.0agnos
 ## Usage
 
 ```bash
+# Fast entity lookup (~5ms, no Python)
+.0agnostic/entity-find.sh memory          # Find entities by name
+.0agnostic/entity-find.sh --path chain    # Just show paths
+.0agnostic/entity-find.sh --uuid memory   # Just show UUIDs
+
 # Sync all pointers (fix stale paths)
 .0agnostic/pointer-sync.sh
 

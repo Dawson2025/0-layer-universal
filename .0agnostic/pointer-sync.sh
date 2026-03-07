@@ -492,6 +492,27 @@ do_rebuild_index() {
     json_content=$(build_uuid_index)
 
     atomic_write "$UUID_INDEX" "$json_content"
+
+    # Generate flat .entity-lookup.tsv for fast entity lookup (no Python needed)
+    local tsv_content
+    tsv_content=$(python3 -c "
+import json
+with open('$UUID_INDEX') as f:
+    data = json.load(f)
+lines = ['name\tuuid\tpath\tparent_uuid']
+for uid, entry in sorted(data.get('uuids', {}).items(), key=lambda x: x[1].get('name', '')):
+    if entry.get('type') != 'entity':
+        continue
+    lines.append('\t'.join([
+        entry.get('name', ''),
+        uid,
+        entry.get('path', ''),
+        entry.get('parent_id', '')
+    ]))
+print('\n'.join(lines))
+" 2>/dev/null)
+    atomic_write "$ROOT/.entity-lookup.tsv" "$tsv_content"
+
     release_lock
 
     local count
@@ -501,7 +522,9 @@ with open('$UUID_INDEX') as f:
     data = json.load(f)
 print(len(data.get('uuids', {})))
 " 2>/dev/null || echo "?")
-    echo "[pointer-sync] REBUILD index entries=$count"
+    local entity_count
+    entity_count=$(( $(wc -l < "$ROOT/.entity-lookup.tsv") - 1 ))
+    echo "[pointer-sync] REBUILD index entries=$count entities=$entity_count (tsv)"
 }
 
 # ===== COMMAND: --rebuild-index =====

@@ -1,6 +1,23 @@
-<!-- derived_from: "ae555d77-4521-4c1a-add1-ad572fae305c" -->
 # GitHub Copilot Instructions
 
+## Identity
+
+entity_id: "ae555d77-4521-4c1a-add1-ad572fae305c"
+
+You are an agent at **Layer 3** (Sub-Feature), **Sub-Feature**: Trigger Pointer System.
+- **Role**: Trigger-based pointer synchronization system — automated detection and resolution of stale pointer files across the layer-stage hierarchy
+- **Scope**: Pointer file format (YAML frontmatter), path resolution algorithm, sync scripts (pointer-sync.sh), hook-based triggers (pointer-edit-guard.sh), validation, protocol
+- **Parent**: `../../../0AGNOSTIC.md` (layer_2_subx2_feature_context_chain_system)
+- **Children**: None (leaf entity)
+
+<!-- section_id: "5ded17a3-7104-4e06-b25c-db03496a1d53" -->
+## Triggers
+Load this context when:
+- User mentions: pointer sync, trigger pointer, auto-update pointers, stale pointers, pointer validation, entity-find, entity lookup
+- Working on: pointer-sync.sh improvements, entity-find.sh, new hook triggers, pointer format changes, path resolution bugs
+- Entering: `layer_3_subx3_feature_trigger_pointer_system/`
+
+<!-- section_id: "0cae297e-ba44-4a29-8d01-15e19023dec9" -->
 
 
 ---
