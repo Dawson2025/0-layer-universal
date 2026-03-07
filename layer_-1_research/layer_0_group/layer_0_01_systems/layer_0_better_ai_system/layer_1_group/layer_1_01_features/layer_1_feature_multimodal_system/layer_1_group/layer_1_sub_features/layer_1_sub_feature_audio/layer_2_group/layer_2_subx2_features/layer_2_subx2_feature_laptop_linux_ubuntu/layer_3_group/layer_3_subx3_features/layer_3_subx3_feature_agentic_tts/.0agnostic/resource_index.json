@@ -1,0 +1,114 @@
+{
+  "file_id": "47df6d78-f29f-4330-a995-12e8e1895342",
+  "generated": "2026-03-07T09:05:44Z",
+  "entity_id": "027d94d7-1b15-4950-977a-d2f30f8772fa",
+  "entity_name": "layer_3_subx3_feature_agentic_tts",
+  "entity_path": "layer_-1_research/layer_0_group/layer_0_01_systems/layer_0_better_ai_system/layer_1_group/layer_1_01_features/layer_1_feature_multimodal_system/layer_1_group/layer_1_sub_features/layer_1_sub_feature_audio/layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_laptop_linux_ubuntu/layer_3_group/layer_3_subx3_features/layer_3_subx3_feature_agentic_tts",
+  "resources": [
+    {
+      "resource_id": "7d564027-e3f0-4cc8-99fa-493fef25d6fd",
+      "id_field": "resource_id",
+      "resource_type": "agnostic",
+      "resource_name": "0AGNOSTIC",
+      "path": "0AGNOSTIC.md"
+    },
+    {
+      "resource_id": "c04ff04d-1b90-4bb8-b7b6-f87d81f90a07",
+      "id_field": "resource_id",
+      "resource_type": "index",
+      "resource_name": "0INDEX",
+      "path": "0INDEX.md"
+    },
+    {
+      "resource_id": "a38a1dce-b171-4ae0-b265-33fddb984343",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "README.md"
+    },
+    {
+      "resource_id": "d073cb8c-5c8a-4563-95e8-dc4ebfe1bb60",
+      "id_field": "resource_id",
+      "resource_type": "agnostic",
+      "resource_name": "0AGNOSTIC",
+      "path": "layer_3_group/layer_3_99_stages/0AGNOSTIC.md"
+    },
+    {
+      "resource_id": "6ced6886-9e1c-4de8-aa2f-9d629620d4dd",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "stage_index",
+      "path": "layer_3_group/layer_3_99_stages/stage_3_00_stage_registry/stage_index.json"
+    },
+    {
+      "resource_id": "3e3169c4-ec21-4e4e-add4-95a5c6429a66",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "agentic_tts_requirements",
+      "path": "layer_3_group/layer_3_99_stages/stage_3_01_request_gathering/outputs/agentic_tts_requirements.md"
+    },
+    {
+      "resource_id": "2b48f39b-15fb-4568-afcc-dcddfb04e8be",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "agentic_tts_research",
+      "path": "layer_3_group/layer_3_99_stages/stage_3_02_research/outputs/agentic_tts_research.md"
+    },
+    {
+      "resource_id": "e135aa73-ef6f-4667-863c-9fd298d9d88f",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "agentic_tts_instructions",
+      "path": "layer_3_group/layer_3_99_stages/stage_3_03_instructions/outputs/agentic_tts_instructions.md"
+    },
+    {
+      "resource_id": "eaf64a0c-e57f-404b-9b1b-c956c03756ed",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "agentic_tts_design",
+      "path": "layer_3_group/layer_3_99_stages/stage_3_04_design/outputs/agentic_tts_design.md"
+    },
+    {
+      "resource_id": "85d44162-c206-4488-b40c-64ec6df959d4",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "agentic_tts_plan",
+      "path": "layer_3_group/layer_3_99_stages/stage_3_05_planning/outputs/agentic_tts_plan.md"
+    },
+    {
+      "resource_id": "a4bc20c0-2259-41fc-aedf-7159ef98c9b2",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "agentic_tts_setup",
+      "path": "layer_3_group/layer_3_99_stages/stage_3_06_development/outputs/agentic_tts_setup.md"
+    },
+    {
+      "resource_id": "42c32c2a-f746-4ae6-9156-6a228f2257f8",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "agentic_tts_test_results",
+      "path": "layer_3_group/layer_3_99_stages/stage_3_07_testing/outputs/agentic_tts_test_results.md"
+    },
+    {
+      "resource_id": "88cdfa13-db22-4818-801d-fc5825414872",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "agentic_tts_criticism",
+      "path": "layer_3_group/layer_3_99_stages/stage_3_08_criticism/outputs/agentic_tts_criticism.md"
+    },
+    {
+      "resource_id": "ec1e4858-b266-40cf-8f17-4254f348f051",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "agentic_tts_fixes",
+      "path": "layer_3_group/layer_3_99_stages/stage_3_09_fixing/outputs/agentic_tts_fixes.md"
+    },
+    {
+      "resource_id": "44241c8d-85ce-4186-ab53-9d85249d0a62",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "agentic_tts_current_product",
+      "path": "layer_3_group/layer_3_99_stages/stage_3_10_current_product/outputs/agentic_tts_current_product.md"
+    }
+  ]
+}

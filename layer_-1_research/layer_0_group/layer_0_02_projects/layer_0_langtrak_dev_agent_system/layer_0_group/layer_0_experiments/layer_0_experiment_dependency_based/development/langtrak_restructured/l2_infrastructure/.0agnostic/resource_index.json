@@ -1,0 +1,184 @@
+{
+  "file_id": "fa237c2d-6b06-4192-934b-cee541bc278d",
+  "generated": "2026-03-07T09:05:44Z",
+  "entity_id": "0c1fc353-10b3-45c0-883f-3b7a916bc6ed",
+  "entity_name": "l2_infrastructure",
+  "entity_path": "layer_-1_research/layer_0_group/layer_0_02_projects/layer_0_langtrak_dev_agent_system/layer_0_group/layer_0_experiments/layer_0_experiment_dependency_based/development/langtrak_restructured/l2_infrastructure",
+  "resources": [
+    {
+      "resource_id": "27849cf1-870c-429f-9a75-f6f5031611e5",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "instructions",
+      "path": ".codex/instructions.md"
+    },
+    {
+      "resource_id": "06d6706e-6094-4e27-9b51-9351a6c327a0",
+      "id_field": "resource_id",
+      "resource_type": "agnostic",
+      "resource_name": "0AGNOSTIC",
+      "path": "0AGNOSTIC.md"
+    },
+    {
+      "resource_id": "632454da-5755-48b0-a848-c81fd07c640c",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "__init__",
+      "path": "__init__.py"
+    },
+    {
+      "resource_id": "6119ff0a-543c-4583-8c14-d07b5ed18379",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "api_routes",
+      "path": "api_gateway/api_routes.py"
+    },
+    {
+      "resource_id": "a4e1beb6-90ef-4d0e-9f70-d9ffae2d2e79",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "__init__",
+      "path": "auth/__init__.py"
+    },
+    {
+      "resource_id": "e6175b30-866d-47cd-a211-5630a2dccc19",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "decorators",
+      "path": "auth/decorators.py"
+    },
+    {
+      "resource_id": "81271592-4be2-4b53-b258-5c17279c0041",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "firebase_auth",
+      "path": "auth/firebase_auth.py"
+    },
+    {
+      "resource_id": "4bd03616-aae9-4d02-ab29-fff0a8bfaac8",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "helpers",
+      "path": "auth/helpers.py"
+    },
+    {
+      "resource_id": "7db9f20c-bb92-41d2-8066-122fe0ccfdfc",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "login",
+      "path": "auth/login.py"
+    },
+    {
+      "resource_id": "3bf3d229-db15-4d35-a0bc-735945766aa9",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "registration",
+      "path": "auth/registration.py"
+    },
+    {
+      "resource_id": "c9f8d819-7a05-496d-ae70-dbae45d73137",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "login",
+      "path": "auth/templates/login.html"
+    },
+    {
+      "resource_id": "69e49e4c-db85-4f82-8a16-2676428c7659",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "register",
+      "path": "auth/templates/register.html"
+    },
+    {
+      "resource_id": "ac6282cc-39ca-48ab-850e-eb78a96e4e1e",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "__init__",
+      "path": "auth/tests/__init__.py"
+    },
+    {
+      "resource_id": "be31fdba-5746-49eb-a9c5-d58896ebe6bb",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "test_auth_helpers",
+      "path": "auth/tests/test_auth_helpers.py"
+    },
+    {
+      "resource_id": "ed80884e-9baa-4150-8248-be3db856dc56",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "__init__",
+      "path": "database/__init__.py"
+    },
+    {
+      "resource_id": "18232bba-d5c9-493b-9e1d-ac3d310cc263",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "database",
+      "path": "database/database.py"
+    },
+    {
+      "resource_id": "bca39cd5-616c-4671-a2aa-6ebeb09d1347",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "database_tools",
+      "path": "db_admin/database_tools.py"
+    },
+    {
+      "resource_id": "0bfb834a-63e0-495d-ac5f-7a7f14ddcc24",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "__init__",
+      "path": "firebase/__init__.py"
+    },
+    {
+      "resource_id": "136a9f4d-cea8-4182-9375-e4b20eaf2ba0",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "config",
+      "path": "firebase/config.py"
+    },
+    {
+      "resource_id": "22d5bb6f-753a-46f9-9a65-8fda7e989e94",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "firestore",
+      "path": "firebase/firestore.py"
+    },
+    {
+      "resource_id": "4b674b08-9590-476a-ac25-a1063edcbeea",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "routes",
+      "path": "routes.py"
+    },
+    {
+      "resource_id": "a57f49d9-d62a-4b3a-8238-bb989daed52b",
+      "id_field": "resource_id",
+      "resource_type": "index",
+      "resource_name": "0INDEX",
+      "path": "stages/0INDEX.md"
+    },
+    {
+      "resource_id": "76147db2-4328-4d0c-915a-1ea03aa4bd79",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "storage_manager",
+      "path": "storage/storage_manager.py"
+    },
+    {
+      "resource_id": "555eb024-5bea-4a35-b353-46dbc500522f",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "__init__",
+      "path": "tts/__init__.py"
+    },
+    {
+      "resource_id": "f6684fa8-d01a-48a9-a35f-b584b41cbacf",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "tts_ipa",
+      "path": "tts/tts_ipa.py"
+    }
+  ]
+}

@@ -1,0 +1,254 @@
+{
+  "file_id": "778d56db-9ce0-4474-ac46-68834fbbbb4d",
+  "generated": "2026-03-07T09:05:43Z",
+  "entity_id": "5d5be68b-60a5-4801-833c-92876d4105cc",
+  "entity_name": "layer_3_subx3_feature_chain_visualization",
+  "entity_path": "layer_-1_research/layer_0_group/layer_0_01_systems/layer_0_better_ai_system/layer_1_group/layer_1_01_features/layer_1_feature_layer_stage_system/layer_1_group/layer_1_sub_features/layer_1_sub_feature_memory_system/layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_context_chain_system/layer_3_group/layer_3_subx3_features/layer_3_subx3_feature_chain_visualization",
+  "resources": [
+    {
+      "resource_id": "c9d63975-df00-4e34-8429-77fceff2c3e8",
+      "id_field": "resource_id",
+      "resource_type": "agnostic",
+      "resource_name": "0AGNOSTIC",
+      "path": "0AGNOSTIC.md"
+    },
+    {
+      "resource_id": "ddde35e5-9c13-4647-a959-74cae273f768",
+      "id_field": "resource_id",
+      "resource_type": "index",
+      "resource_name": "0INDEX",
+      "path": "0INDEX.md"
+    },
+    {
+      "resource_id": "8e6e4b19-4bcc-490e-8a17-7ffa03fa7fff",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "README.md"
+    },
+    {
+      "resource_id": "c720689b-c67e-4b9a-854b-7b029e9c18de",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "agent_instantiation_chain",
+      "path": "diagrams/current/agent_instantiation_chain.md"
+    },
+    {
+      "resource_id": "6fb9c460-346d-49e0-b5a6-141a3252c7f5",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "context_architecture",
+      "path": "diagrams/current/context_architecture.md"
+    },
+    {
+      "resource_id": "a9e3b7f5-b3f3-4688-b6a8-f245f720677d",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "default_view",
+      "path": "diagrams/current/context_chain/default_view.md"
+    },
+    {
+      "resource_id": "c6c3482b-bb3b-4a4e-8507-5ff10745f7c9",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "full_view",
+      "path": "diagrams/current/context_chain/full_view.md"
+    },
+    {
+      "resource_id": "15e64b61-818e-4e9c-8130-4ffb8a43cfdc",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "context_flow",
+      "path": "diagrams/current/context_flow.md"
+    },
+    {
+      "resource_id": "34fb76d0-b479-4616-a52d-d5caefc4c540",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "context_loading_sequence",
+      "path": "diagrams/current/context_loading_sequence.md"
+    },
+    {
+      "resource_id": "15651ef8-c994-49e9-9bc0-c448cbf9b5a9",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "context_propagation",
+      "path": "diagrams/current/context_propagation.md"
+    },
+    {
+      "resource_id": "81269c33-ebbc-4d18-9645-29cdcc0e11a6",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "custom_layer_stage_loading",
+      "path": "diagrams/current/custom_layer_stage_loading.md"
+    },
+    {
+      "resource_id": "921c97ab-6758-4f3d-95b1-201fbc05d592",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "official_claude_code_loading",
+      "path": "diagrams/current/official_claude_code_loading.md"
+    },
+    {
+      "resource_id": "0937067d-3be1-459f-826b-2e40bd6e0286",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "entity_creation_flow",
+      "path": "diagrams/current/specific_flows/entity_creation_flow.md"
+    },
+    {
+      "resource_id": "7b7cc1fa-1649-47ee-aafb-a0a803dcd20c",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "git_commit_flow",
+      "path": "diagrams/current/specific_flows/git_commit_flow.md"
+    },
+    {
+      "resource_id": "d5ae72bb-c3ea-47f9-a98e-51b092221036",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "index",
+      "path": "diagrams/current/specific_flows/index.jsonld"
+    },
+    {
+      "resource_id": "dd3e760e-b549-4122-b92b-1206dcb347a0",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "stage_workflow_flow",
+      "path": "diagrams/current/specific_flows/stage_workflow_flow.md"
+    },
+    {
+      "resource_id": "906c2914-499f-4307-8f3c-fd0c87fd2c24",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "index",
+      "path": "diagrams/index.jsonld"
+    },
+    {
+      "resource_id": "8a695b6b-bea6-4ee2-9124-807900c0322b",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "index",
+      "path": "index.jsonld"
+    },
+    {
+      "resource_id": "04e04cb4-6199-4a61-af2d-ded6379b5f9e",
+      "id_field": "resource_id",
+      "resource_type": "agnostic",
+      "resource_name": "0AGNOSTIC",
+      "path": "layer_3_group/layer_3_99_stages/0AGNOSTIC.md"
+    },
+    {
+      "resource_id": "2074e94a-6aee-402c-9434-01d93ecf88f4",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "layer_3_99_stages_orchestrator.gab",
+      "path": "layer_3_group/layer_3_99_stages/layer_3_99_stages_orchestrator.gab.jsonld"
+    },
+    {
+      "resource_id": "9f9b5513-23ec-4e1c-8324-70f4e31d38b5",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "stage_3_00_stage_registry_agent",
+      "path": "layer_3_group/layer_3_99_stages/stage_3_00_stage_registry/stage_3_00_stage_registry_agent.jsonld"
+    },
+    {
+      "resource_id": "7d5dfb4a-0954-4213-80b6-0d20a80654a7",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "stage_index",
+      "path": "layer_3_group/layer_3_99_stages/stage_3_00_stage_registry/stage_index.json"
+    },
+    {
+      "resource_id": "78e0df69-38bd-41b3-8163-008de2f3bfa1",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "stage_3_01_request_gathering_agent",
+      "path": "layer_3_group/layer_3_99_stages/stage_3_01_request_gathering/stage_3_01_request_gathering_agent.jsonld"
+    },
+    {
+      "resource_id": "c863674b-3b97-4030-a1d6-8523c135583f",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "stage_3_02_research_agent",
+      "path": "layer_3_group/layer_3_99_stages/stage_3_02_research/stage_3_02_research_agent.jsonld"
+    },
+    {
+      "resource_id": "d9334238-4eef-4876-84be-cbc55809a6a8",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "stage_3_03_instructions_agent",
+      "path": "layer_3_group/layer_3_99_stages/stage_3_03_instructions/stage_3_03_instructions_agent.jsonld"
+    },
+    {
+      "resource_id": "d43c7bba-0228-4e63-ac1f-618c50cfb786",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "stage_3_05_design_agent",
+      "path": "layer_3_group/layer_3_99_stages/stage_3_04_design/stage_3_05_design_agent.jsonld"
+    },
+    {
+      "resource_id": "01164eb7-3b41-4e61-a713-b824eeb93c4a",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "stage_3_04_planning_agent",
+      "path": "layer_3_group/layer_3_99_stages/stage_3_05_planning/stage_3_04_planning_agent.jsonld"
+    },
+    {
+      "resource_id": "258085d9-2de7-4c88-a707-47e0c5d61869",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "stage_3_06_development_agent",
+      "path": "layer_3_group/layer_3_99_stages/stage_3_06_development/stage_3_06_development_agent.jsonld"
+    },
+    {
+      "resource_id": "f65b1393-f22c-4096-95b6-9ec6f1e65382",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "stage_3_07_testing_agent",
+      "path": "layer_3_group/layer_3_99_stages/stage_3_07_testing/stage_3_07_testing_agent.jsonld"
+    },
+    {
+      "resource_id": "fee9ab90-ff7a-418b-a66b-4e5160c7b630",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "stage_3_08_criticism_agent",
+      "path": "layer_3_group/layer_3_99_stages/stage_3_08_criticism/stage_3_08_criticism_agent.jsonld"
+    },
+    {
+      "resource_id": "26075d6f-26d8-474d-bdb4-de767f3be52a",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "stage_3_09_fixing_agent",
+      "path": "layer_3_group/layer_3_99_stages/stage_3_09_fixing/stage_3_09_fixing_agent.jsonld"
+    },
+    {
+      "resource_id": "c44d4573-2494-4264-8a93-52ab21c4dde6",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "stage_3_10_current_product_agent",
+      "path": "layer_3_group/layer_3_99_stages/stage_3_10_current_product/stage_3_10_current_product_agent.jsonld"
+    },
+    {
+      "resource_id": "e4b4ff59-c6ff-44a2-a93d-75fe6cb96968",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "stage_3_11_archives_agent",
+      "path": "layer_3_group/layer_3_99_stages/stage_3_11_archives/stage_3_11_archives_agent.jsonld"
+    },
+    {
+      "resource_id": "46cdbfc9-79a6-49e9-a93e-76a609174a93",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "status_3",
+      "path": "layer_3_group/layer_3_99_stages/status_3.json"
+    },
+    {
+      "resource_id": "739d1402-e7c5-4d0e-80ea-6c3e353946cb",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "layer_3_orchestrator.gab",
+      "path": "layer_3_orchestrator.gab.jsonld"
+    }
+  ]
+}

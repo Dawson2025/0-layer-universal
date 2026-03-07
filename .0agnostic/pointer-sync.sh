@@ -17,7 +17,11 @@
 #   pointer-sync.sh --validate                # Check all pointers resolve (exit 1 if broken)
 #   pointer-sync.sh --verbose                 # Show each resolution step
 #   pointer-sync.sh --rebuild-index           # Rebuild .uuid-index.json from all entities
+#   pointer-sync.sh --lookup <uuid|name>      # Lookup UUID or entity name -> path, parent, children
 #   pointer-sync.sh --find-references <uuid>  # Find all pointers referencing a UUID
+#   pointer-sync.sh --children <uuid>         # List direct children of an entity
+#   pointer-sync.sh --parent <uuid>           # Show parent (add --verbose for full chain to root)
+#   pointer-sync.sh --query type=entity name=*memory*  # Query/filter index entries
 #   pointer-sync.sh --detect-cycles           # Detect circular reference chains
 #   pointer-sync.sh --gc                      # Remove orphaned entries from index
 #
@@ -48,6 +52,9 @@ FIND_REFS=""
 DETECT_CYCLES=false
 GC_MODE=false
 LOOKUP_TARGET=""
+CHILDREN_TARGET=""
+PARENT_TARGET=""
+QUERY_ARGS=""
 
 while [ $# -gt 0 ]; do
     case "$1" in
@@ -73,6 +80,35 @@ while [ $# -gt 0 ]; do
             FIND_REFS="$2"
             shift 2
             ;;
+        --children)
+            if [ $# -lt 2 ] || [[ "$2" =~ ^- ]]; then
+                echo "ERROR: --children requires a UUID argument"
+                exit 1
+            fi
+            CHILDREN_TARGET="$2"
+            shift 2
+            ;;
+        --parent)
+            if [ $# -lt 2 ] || [[ "$2" =~ ^- ]]; then
+                echo "ERROR: --parent requires a UUID argument"
+                exit 1
+            fi
+            PARENT_TARGET="$2"
+            shift 2
+            ;;
+        --query)
+            shift
+            QUERY_ARGS=""
+            while [ $# -gt 0 ] && [[ ! "$1" =~ ^-- ]]; do
+                QUERY_ARGS+="$1 "
+                shift
+            done
+            QUERY_ARGS=$(echo "$QUERY_ARGS" | sed 's/ $//')
+            if [ -z "$QUERY_ARGS" ]; then
+                echo "ERROR: --query requires filter arguments (e.g., type=entity name=*memory*)"
+                exit 1
+            fi
+            ;;
         --help|-h)
             echo "Usage: pointer-sync.sh [OPTIONS]"
             echo ""
@@ -82,6 +118,9 @@ while [ $# -gt 0 ]; do
             echo "  --rebuild-index             Rebuild .uuid-index.json from all entities"
             echo "  --lookup <uuid|name>        Lookup UUID entry or resolve entity name to UUID"
             echo "  --find-references <uuid>    Find all pointers referencing a UUID"
+            echo "  --children <uuid>           List direct children of an entity"
+            echo "  --parent <uuid>             Show parent of an entity (walk up chain with --verbose)"
+            echo "  --query <filters>           Query index (type=entity|stage|resource name=*pat* resource_type=rule)"
             echo "  --detect-cycles             Detect circular reference chains"
             echo "  --gc                        Remove orphaned entries from index"
             exit 0
@@ -189,168 +228,197 @@ atomic_write() {
 
 # --- UUID Index: Build ---
 build_uuid_index() {
-    vlog "Building UUID index from all entities..."
+    vlog "Building UUID index from all entities (with parent/children graph)..."
 
-    local uuids_json="{"
-    local names_json="{"
-    local first_uuid=true
-    local first_name=true
-    local duplicates=0
-
-    # Track seen UUIDs for duplicate detection
-    declare -A seen_uuids
-
-    # Scan all 0AGNOSTIC.md for entity_id
-    while IFS= read -r file; do
-        local eid
-        eid=$(grep "^entity_id:" "$file" 2>/dev/null | head -1 | sed 's/^entity_id:[[:space:]]*//' | sed 's/^["'"'"']//;s/["'"'"']$//' || true)
-        if [ -z "$eid" ]; then
-            continue
-        fi
-
-        local entity_dir
-        entity_dir=$(dirname "$file")
-        local entity_name
-        entity_name=$(basename "$entity_dir")
-        local rel_path="${entity_dir#$ROOT/}"
-
-        # Duplicate detection
-        if [ -n "${seen_uuids[$eid]+x}" ]; then
-            echo "  WARN: Duplicate UUID $eid at $rel_path (already at ${seen_uuids[$eid]})"
-            duplicates=$((duplicates + 1))
-            continue
-        fi
-        seen_uuids[$eid]="$rel_path"
-
-        if ! $first_uuid; then uuids_json+=","; fi
-        first_uuid=false
-        uuids_json+="
-    \"$eid\": {\"type\": \"entity\", \"name\": \"$entity_name\", \"path\": \"$rel_path\"}"
-
-        if ! $first_name; then names_json+=","; fi
-        first_name=false
-        names_json+="
-    \"$entity_name\": \"$eid\""
-
-    done < <(find "$ROOT" -name "0AGNOSTIC.md" -path "*/layer_*" -not -path "*/node_modules/*" -not -path "*/.git/*" 2>/dev/null | sort)
-
-    # Scan all stage_index.json for stage UUIDs
-    while IFS= read -r index_file; do
-        if ! python3 -c "import json; json.load(open('$index_file'))" 2>/dev/null; then
-            vlog "WARN: Invalid JSON in $index_file — skipping"
-            continue
-        fi
-
-        local stages_data
-        stages_data=$(python3 -c "
+    python3 - "$ROOT" "$VERBOSE" <<'PYINDEX'
 import json
-with open('$index_file') as f:
-    data = json.load(f)
-eid = data.get('entity_id', '')
-for s in data.get('stages', []):
-    sid = s.get('stage_id', '')
-    sname = s.get('stage_name', '')
-    sdir = s.get('directory', '')
-    # Compute stage path relative to ROOT
-    import os.path
-    registry_dir = os.path.dirname('$index_file')
-    stages_dir = os.path.dirname(registry_dir)
-    stage_path = os.path.join(stages_dir, sdir)
-    rel = os.path.relpath(stage_path, '$ROOT')
-    print(f'{sid}|{sname}|{eid}|{rel}')
-" 2>/dev/null || true)
+import hashlib
+import os
+import re
+import sys
+from datetime import datetime, timezone
 
-        while IFS='|' read -r sid sname eid rel; do
-            if [ -z "$sid" ]; then continue; fi
+root = os.path.abspath(sys.argv[1])
+verbose = sys.argv[2].lower() == "true"
 
-            if [ -n "${seen_uuids[$sid]+x}" ]; then
-                echo "  WARN: Duplicate UUID $sid (stage) at $rel"
-                duplicates=$((duplicates + 1))
-                continue
-            fi
-            seen_uuids[$sid]="$rel"
+def vlog(msg):
+    if verbose:
+        print(f"  [verbose] {msg}", file=sys.stderr)
 
-            if ! $first_uuid; then uuids_json+=","; fi
-            first_uuid=false
-            uuids_json+="
-    \"$sid\": {\"type\": \"stage\", \"name\": \"$sname\", \"entity_id\": \"$eid\", \"path\": \"$rel\"}"
-        done <<< "$stages_data"
+def read_head(path, limit=8192):
+    with open(path, "r", encoding="utf-8", errors="ignore") as f:
+        return f.read(limit)
 
-    done < <(find "$ROOT" -name "stage_index.json" -not -path "*/node_modules/*" -not -path "*/.git/*" 2>/dev/null | sort)
+def extract_field(text, field):
+    """Extract field: value from text (handles entity_id:, etc.)."""
+    pattern = re.compile(rf'^{re.escape(field)}:\s*["\']?(.+?)["\']?\s*$', re.MULTILINE)
+    m = pattern.search(text)
+    return m.group(1).strip() if m else ""
 
-    # Scan all resource_index.json for resource UUIDs
-    while IFS= read -r index_file; do
-        if ! python3 -c "import json; json.load(open('$index_file'))" 2>/dev/null; then
-            vlog "WARN: Invalid JSON in $index_file — skipping"
-            continue
-        fi
+def extract_parent_ref(text):
+    """Extract relative path from **Parent**: `../../../0AGNOSTIC.md` lines."""
+    m = re.search(r'\*\*Parent\*\*:\s*`([^`]+)`', text)
+    return m.group(1).strip() if m else ""
 
-        local resources_data
-        resources_data=$(python3 -c "
-import json, os.path
-with open('$index_file') as f:
-    data = json.load(f)
-entity_dir = os.path.dirname(os.path.dirname('$index_file'))
-entity_path = data.get('entity_path') or os.path.relpath(entity_dir, '$ROOT')
-entity_id = data.get('entity_id', '')
-for resource in data.get('resources', []):
-    rid = resource.get('resource_id', '')
-    rname = resource.get('resource_name', '')
-    rtype = resource.get('resource_type', '')
-    id_field = resource.get('id_field', '')
-    rpath = resource.get('path', '')
-    if not rid or not rpath:
+# ---- Phase 1: Scan all entities ----
+uuids = {}
+names = {}
+seen = {}
+duplicates = 0
+entity_parent_map = {}  # entity_id -> parent_entity_id
+entity_path_to_id = {}  # abs_path_of_entity_dir -> entity_id
+
+vlog("Phase 1: Scanning entities...")
+agnostic_files = []
+for dirpath, dirs, files in os.walk(root):
+    dirs[:] = [d for d in dirs if d not in {".git", "node_modules"}]
+    if "0AGNOSTIC.md" in files and "/layer_" in dirpath:
+        agnostic_files.append(os.path.join(dirpath, "0AGNOSTIC.md"))
+agnostic_files.sort()
+
+for filepath in agnostic_files:
+    text = read_head(filepath)
+    eid = extract_field(text, "entity_id")
+    if not eid:
         continue
-    rel = os.path.normpath(os.path.join(entity_path, rpath))
-    print(f'{rid}|{rname}|{entity_id}|{rtype}|{id_field}|{rel}')
-" 2>/dev/null || true)
 
-        while IFS='|' read -r rid rname eid rtype id_field rel; do
-            if [ -z "$rid" ]; then continue; fi
+    entity_dir = os.path.dirname(filepath)
+    entity_name = os.path.basename(entity_dir)
+    rel_path = os.path.relpath(entity_dir, root)
 
-            if [ -n "${seen_uuids[$rid]+x}" ]; then
-                echo "  WARN: Duplicate UUID $rid (resource) at $rel"
-                duplicates=$((duplicates + 1))
-                continue
-            fi
-            seen_uuids[$rid]="$rel"
+    if eid in seen:
+        print(f"  WARN: Duplicate UUID {eid} at {rel_path} (already at {seen[eid]})", file=sys.stderr)
+        duplicates += 1
+        continue
+    seen[eid] = rel_path
 
-            if ! $first_uuid; then uuids_json+=","; fi
-            first_uuid=false
-            uuids_json+="
-    \"$rid\": {\"type\": \"resource\", \"name\": \"$rname\", \"entity_id\": \"$eid\", \"resource_type\": \"$rtype\", \"id_field\": \"$id_field\", \"path\": \"$rel\"}"
-        done <<< "$resources_data"
+    # Resolve parent reference
+    parent_ref = extract_parent_ref(text)
+    parent_id = ""
+    if parent_ref:
+        parent_agnostic = os.path.normpath(os.path.join(entity_dir, parent_ref))
+        if os.path.isfile(parent_agnostic):
+            parent_text = read_head(parent_agnostic)
+            parent_id = extract_field(parent_text, "entity_id")
 
-    done < <(find "$ROOT" -name "resource_index.json" -not -path "*/node_modules/*" -not -path "*/.git/*" 2>/dev/null | sort)
+    uuids[eid] = {"type": "entity", "name": entity_name, "path": rel_path}
+    if parent_id:
+        uuids[eid]["parent_id"] = parent_id
+        entity_parent_map[eid] = parent_id
 
-    uuids_json+="
-  }"
-    names_json+="
-  }"
+    names[entity_name] = eid
+    entity_path_to_id[entity_dir] = eid
 
-    local timestamp
-    timestamp=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
+# Compute children for each entity
+children_map = {}  # entity_id -> [child_entity_ids]
+for child_id, parent_id in entity_parent_map.items():
+    children_map.setdefault(parent_id, []).append(child_id)
 
-    local full_json="{
-  \"generated\": \"$timestamp\",
-  \"uuids\": $uuids_json,
-  \"names\": $names_json
-}"
+# Add children[] to entity entries
+for eid, child_ids in children_map.items():
+    if eid in uuids:
+        uuids[eid]["children"] = sorted(child_ids)
 
-    # Compute and add checksum from canonical JSON (without checksum field)
-    full_json=$(echo "$full_json" | python3 -c "
-import sys, json, hashlib
-data = json.load(sys.stdin)
-payload = json.dumps(data, sort_keys=True, separators=(',', ':')).encode('utf-8')
-data['checksum'] = 'sha256:' + hashlib.sha256(payload).hexdigest()
-print(json.dumps(data, indent=2))
-" 2>/dev/null || echo "$full_json")
+vlog(f"  Entities: {sum(1 for v in uuids.values() if v['type'] == 'entity')}")
+vlog(f"  Parent links: {len(entity_parent_map)}")
+vlog(f"  Entities with children: {len(children_map)}")
 
-    echo "$full_json"
+# ---- Phase 2: Scan stage indexes ----
+vlog("Phase 2: Scanning stage indexes...")
+for dirpath, dirs, files in os.walk(root):
+    dirs[:] = [d for d in dirs if d not in {".git", "node_modules"}]
+    if "stage_index.json" not in files:
+        continue
+    index_path = os.path.join(dirpath, "stage_index.json")
+    try:
+        with open(index_path) as f:
+            data = json.load(f)
+    except Exception:
+        vlog(f"WARN: Invalid JSON in {index_path}")
+        continue
 
-    if [ "$duplicates" -gt 0 ]; then
-        echo "  WARNING: $duplicates duplicate UUIDs detected" >&2
-    fi
+    stage_eid = data.get("entity_id", "")
+    registry_dir = os.path.dirname(index_path)
+    stages_dir = os.path.dirname(registry_dir)
+
+    for s in data.get("stages", []):
+        sid = s.get("stage_id", "")
+        sname = s.get("stage_name", "")
+        sdir = s.get("directory", "")
+        if not sid or not sdir:
+            continue
+
+        stage_path = os.path.join(stages_dir, sdir)
+        rel = os.path.relpath(stage_path, root)
+
+        if sid in seen:
+            print(f"  WARN: Duplicate UUID {sid} (stage) at {rel}", file=sys.stderr)
+            duplicates += 1
+            continue
+        seen[sid] = rel
+
+        entry = {"type": "stage", "name": sname, "entity_id": stage_eid, "path": rel}
+        uuids[sid] = entry
+
+vlog(f"  Stages: {sum(1 for v in uuids.values() if v['type'] == 'stage')}")
+
+# ---- Phase 3: Scan resource indexes ----
+vlog("Phase 3: Scanning resource indexes...")
+for dirpath, dirs, files in os.walk(root):
+    dirs[:] = [d for d in dirs if d not in {".git", "node_modules"}]
+    if "resource_index.json" not in files:
+        continue
+    index_path = os.path.join(dirpath, "resource_index.json")
+    try:
+        with open(index_path) as f:
+            data = json.load(f)
+    except Exception:
+        vlog(f"WARN: Invalid JSON in {index_path}")
+        continue
+
+    entity_dir = os.path.dirname(os.path.dirname(index_path))
+    entity_path = data.get("entity_path") or os.path.relpath(entity_dir, root)
+    res_eid = data.get("entity_id", "")
+
+    for resource in data.get("resources", []):
+        rid = resource.get("resource_id", "")
+        rname = resource.get("resource_name", "")
+        rtype = resource.get("resource_type", "")
+        id_field = resource.get("id_field", "")
+        rpath = resource.get("path", "")
+        if not rid or not rpath:
+            continue
+
+        rel = os.path.normpath(os.path.join(entity_path, rpath))
+
+        if rid in seen:
+            print(f"  WARN: Duplicate UUID {rid} (resource) at {rel}", file=sys.stderr)
+            duplicates += 1
+            continue
+        seen[rid] = rel
+
+        entry = {"type": "resource", "name": rname, "entity_id": res_eid,
+                 "resource_type": rtype, "id_field": id_field, "path": rel}
+        uuids[rid] = entry
+
+vlog(f"  Resources: {sum(1 for v in uuids.values() if v['type'] == 'resource')}")
+
+# ---- Build output ----
+index_data = {
+    "generated": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
+    "uuids": uuids,
+    "names": names,
+}
+
+# Add checksum
+payload = json.dumps(index_data, sort_keys=True, separators=(",", ":")).encode("utf-8")
+index_data["checksum"] = "sha256:" + hashlib.sha256(payload).hexdigest()
+
+print(json.dumps(index_data, indent=2))
+
+if duplicates > 0:
+    print(f"  WARNING: {duplicates} duplicate UUIDs detected", file=sys.stderr)
+PYINDEX
 }
 
 # --- UUID Index: Load ---
@@ -415,17 +483,9 @@ print(data.get('names', {}).get('$name', ''))
 # --- Do rebuild index ---
 do_rebuild_index() {
     acquire_lock
-    local index_content
-    index_content=$(build_uuid_index 2>&1)
-    # Separate warnings from JSON
+    # Python script sends JSON to stdout, warnings to stderr
     local json_content
-    json_content=$(echo "$index_content" | grep -v "^\s*WARN\|^\s*WARNING\|^\s*\[verbose\]" || true)
-    local warnings
-    warnings=$(echo "$index_content" | grep "^\s*WARN\|^\s*WARNING" || true)
-
-    if [ -n "$warnings" ]; then
-        echo "$warnings"
-    fi
+    json_content=$(build_uuid_index)
 
     atomic_write "$UUID_INDEX" "$json_content"
     release_lock
@@ -456,32 +516,206 @@ target = '$LOOKUP_TARGET'
 with open('$UUID_INDEX') as f:
     data = json.load(f)
 
-entry = data.get('uuids', {}).get(target)
-if entry:
-    print(f'uuid: {target}')
+def show_entry(uid, entry):
+    print(f'uuid: {uid}')
     print(f'type: {entry.get(\"type\", \"\")}')
     print(f'name: {entry.get(\"name\", \"\")}')
     print(f'path: {entry.get(\"path\", \"\")}')
     if entry.get('entity_id'):
-        print(f'entity_id: {entry.get(\"entity_id\", \"\")}')
+        print(f'entity_id: {entry[\"entity_id\"]}')
+    if entry.get('parent_id'):
+        parent = data.get('uuids', {}).get(entry['parent_id'], {})
+        print(f'parent_id: {entry[\"parent_id\"]}  ({parent.get(\"name\", \"?\")})')
+    if entry.get('children'):
+        print(f'children: {len(entry[\"children\"])}')
+        for cid in entry['children']:
+            child = data.get('uuids', {}).get(cid, {})
+            print(f'  {cid}  {child.get(\"name\", \"?\")}')
     if entry.get('resource_type'):
-        print(f'resource_type: {entry.get(\"resource_type\", \"\")}')
+        print(f'resource_type: {entry[\"resource_type\"]}')
     if entry.get('id_field'):
-        print(f'id_field: {entry.get(\"id_field\", \"\")}')
+        print(f'id_field: {entry[\"id_field\"]}')
+
+entry = data.get('uuids', {}).get(target)
+if entry:
+    show_entry(target, entry)
     sys.exit(0)
 
 resolved_uuid = data.get('names', {}).get(target)
 if resolved_uuid:
     resolved_entry = data.get('uuids', {}).get(resolved_uuid, {})
-    print(f'name: {target}')
-    print(f'uuid: {resolved_uuid}')
-    print(f'type: {resolved_entry.get(\"type\", \"\")}')
-    print(f'path: {resolved_entry.get(\"path\", \"\")}')
+    show_entry(resolved_uuid, resolved_entry)
     sys.exit(0)
 
 print(f'Not found: {target}')
 sys.exit(1)
 " 2>/dev/null
+    exit $?
+fi
+
+# ===== COMMAND: --children =====
+if [ -n "$CHILDREN_TARGET" ]; then
+    load_uuid_index
+    python3 -c "
+import json, sys
+target = '$CHILDREN_TARGET'
+with open('$UUID_INDEX') as f:
+    data = json.load(f)
+
+entry = data.get('uuids', {}).get(target)
+if not entry:
+    print(f'Not found: {target}')
+    sys.exit(1)
+
+if entry.get('type') != 'entity':
+    print(f'Not an entity (type={entry.get(\"type\")}). --children only works on entities.')
+    sys.exit(1)
+
+children = entry.get('children', [])
+if not children:
+    print(f'{entry[\"name\"]}: no children')
+    sys.exit(0)
+
+print(f'{entry[\"name\"]}: {len(children)} children')
+print()
+for cid in children:
+    child = data.get('uuids', {}).get(cid, {})
+    print(f'  {child.get(\"name\", \"?\")}')
+    print(f'    uuid: {cid}')
+    print(f'    path: {child.get(\"path\", \"?\")}')
+" 2>/dev/null
+    exit $?
+fi
+
+# ===== COMMAND: --parent =====
+if [ -n "$PARENT_TARGET" ]; then
+    load_uuid_index
+    python3 - "$UUID_INDEX" "$PARENT_TARGET" "$VERBOSE" <<'PYPARENT'
+import json, sys
+
+index_path = sys.argv[1]
+target = sys.argv[2]
+verbose = sys.argv[3].lower() == "true"
+
+with open(index_path) as f:
+    data = json.load(f)
+
+entry = data.get("uuids", {}).get(target)
+if not entry:
+    print(f"Not found: {target}")
+    sys.exit(1)
+
+if entry.get("type") != "entity":
+    print(f"Not an entity (type={entry.get('type')}). --parent only works on entities.")
+    sys.exit(1)
+
+parent_id = entry.get("parent_id")
+if not parent_id:
+    print(f"{entry['name']}: root entity (no parent)")
+    sys.exit(0)
+
+parent = data.get("uuids", {}).get(parent_id, {})
+print(f"parent of {entry['name']}:")
+print(f"  name: {parent.get('name', '?')}")
+print(f"  uuid: {parent_id}")
+print(f"  path: {parent.get('path', '?')}")
+
+# In verbose mode, walk the full chain to root
+if verbose:
+    print()
+    print("Full parent chain:")
+    current_id = target
+    depth = 0
+    visited = set()
+    while current_id:
+        if current_id in visited:
+            print(f"{'  ' * depth}CYCLE DETECTED at {current_id}")
+            break
+        visited.add(current_id)
+        e = data.get("uuids", {}).get(current_id, {})
+        indent = "  " * depth
+        print(f"{indent}{e.get('name', '?')}  ({current_id})")
+        current_id = e.get("parent_id")
+        depth += 1
+PYPARENT
+    exit $?
+fi
+
+# ===== COMMAND: --query =====
+if [ -n "$QUERY_ARGS" ]; then
+    load_uuid_index
+    python3 - "$UUID_INDEX" "$QUERY_ARGS" <<'PYQUERY'
+import json, sys, re, fnmatch
+
+index_path = sys.argv[1]
+query_str = sys.argv[2]
+
+with open(index_path) as f:
+    data = json.load(f)
+
+# Parse key=value filters
+filters = {}
+for part in query_str.split():
+    if "=" in part:
+        key, val = part.split("=", 1)
+        filters[key] = val
+
+results = []
+for uid, entry in data.get("uuids", {}).items():
+    match = True
+    for key, val in filters.items():
+        if key == "type":
+            if entry.get("type") != val:
+                match = False
+        elif key == "name":
+            if not fnmatch.fnmatch(entry.get("name", ""), val):
+                match = False
+        elif key == "resource_type":
+            if entry.get("resource_type") != val:
+                match = False
+        elif key == "entity_id":
+            if entry.get("entity_id") != val:
+                match = False
+        elif key == "parent_id":
+            if entry.get("parent_id") != val:
+                match = False
+        elif key == "has_children":
+            has = bool(entry.get("children"))
+            if val.lower() in ("true", "1", "yes"):
+                if not has:
+                    match = False
+            else:
+                if has:
+                    match = False
+        elif key == "path":
+            if not fnmatch.fnmatch(entry.get("path", ""), val):
+                match = False
+        else:
+            match = False
+    if match:
+        results.append((uid, entry))
+
+results.sort(key=lambda x: x[1].get("path", ""))
+
+print(f"{len(results)} result(s)")
+print()
+for uid, entry in results:
+    etype = entry.get("type", "?")
+    name = entry.get("name", "?")
+    path = entry.get("path", "?")
+    extras = []
+    if entry.get("parent_id"):
+        parent = data.get("uuids", {}).get(entry["parent_id"], {})
+        extras.append(f"parent={parent.get('name', '?')}")
+    if entry.get("children"):
+        extras.append(f"children={len(entry['children'])}")
+    if entry.get("resource_type"):
+        extras.append(f"rtype={entry['resource_type']}")
+    extra_str = f"  [{', '.join(extras)}]" if extras else ""
+    print(f"  {name}  ({etype}){extra_str}")
+    print(f"    {uid}")
+    print(f"    {path}")
+PYQUERY
     exit $?
 fi
 

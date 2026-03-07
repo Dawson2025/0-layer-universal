@@ -1,0 +1,1934 @@
+{
+  "file_id": "ce80f5d5-9de9-47f7-a2a3-2dcacee7e271",
+  "generated": "2026-03-07T09:05:44Z",
+  "entity_id": "7d7217a2-0afa-4559-bd77-d01174ac0276",
+  "entity_name": "langtrak_restructured",
+  "entity_path": "layer_-1_research/layer_0_group/layer_0_02_projects/layer_0_langtrak_dev_agent_system/layer_0_group/layer_0_experiments/layer_0_experiment_dependency_based/development/langtrak_restructured",
+  "resources": [
+    {
+      "resource_id": "33ba5d8d-8223-43b2-a865-b788d7eef2bc",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "instructions",
+      "path": ".codex/instructions.md"
+    },
+    {
+      "resource_id": "7fcc9368-26ec-45f6-b70f-31c889622423",
+      "id_field": "resource_id",
+      "resource_type": "agnostic",
+      "resource_name": "0AGNOSTIC",
+      "path": "0AGNOSTIC.md"
+    },
+    {
+      "resource_id": "2d0fc612-8c77-46dd-a855-ad9cf905cd2b",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "README.md"
+    },
+    {
+      "resource_id": "a332b3fb-f3c6-48bf-b3f9-865413643acf",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "app",
+      "path": "app.py"
+    },
+    {
+      "resource_id": "cb76885a-7b26-4f5b-bee8-843605fd220c",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "firebase-config",
+      "path": "config/firebase/firebase-config.js"
+    },
+    {
+      "resource_id": "fdbeb2eb-4ae5-45b0-b481-a4b88ddf9376",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "firestore",
+      "path": "config/firebase/firestore.rules"
+    },
+    {
+      "resource_id": "4869a562-ca10-47b6-a58f-5a392942050d",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "lang-trak-prod",
+      "path": "config/firebase/lang-trak-prod.json"
+    },
+    {
+      "resource_id": "a1c2b912-1005-444f-9ab6-7d4ab45d03fc",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "context7-configs",
+      "path": "config/mcp/context7-configs.json"
+    },
+    {
+      "resource_id": "29b5c6ba-4f42-430d-bca5-d281463ec58b",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "development",
+      "path": "config/mcp/development.json"
+    },
+    {
+      "resource_id": "4fbf18a0-9d88-4970-b068-77105e602b93",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "context7-hybrid",
+      "path": "config/mcp/examples/context7-hybrid.json"
+    },
+    {
+      "resource_id": "0b7ee08e-9f0a-4e2c-9051-57610445d4d2",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "context7-local",
+      "path": "config/mcp/examples/context7-local.json"
+    },
+    {
+      "resource_id": "a70e3f77-d3fe-4ba5-a96a-5e7d02c5aa42",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "context7-remote",
+      "path": "config/mcp/examples/context7-remote.json"
+    },
+    {
+      "resource_id": "fa46eced-a793-40f9-9435-ebea01dde49e",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "production",
+      "path": "config/mcp/production.json"
+    },
+    {
+      "resource_id": "1ef4637a-56fe-4c48-9dda-852bf61e9434",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "testing",
+      "path": "config/mcp/testing.json"
+    },
+    {
+      "resource_id": "0d8db208-cfaa-49cd-b9c2-b0611b73cbcc",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "conftest",
+      "path": "conftest.py"
+    },
+    {
+      "resource_id": "358542a4-bbbb-413f-8dd9-31fbd43e7566",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "deferred/firebase_orchestration/README.md"
+    },
+    {
+      "resource_id": "12f5679f-f229-4a45-aadc-a3131cd051a7",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "__init__",
+      "path": "deferred/firebase_orchestration/__init__.py"
+    },
+    {
+      "resource_id": "4b6c02ac-6a69-43cc-b1c4-90d121536097",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "__init__",
+      "path": "deferred/firebase_orchestration/core/__init__.py"
+    },
+    {
+      "resource_id": "5df7fd94-a82f-40be-8b55-29dfc5ba16fe",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "master_orchestrator",
+      "path": "deferred/firebase_orchestration/core/master_orchestrator.py"
+    },
+    {
+      "resource_id": "f5f45c65-ffcc-48b9-a45e-8b39256b436e",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "orchestration_system",
+      "path": "deferred/firebase_orchestration/core/orchestration_system.py"
+    },
+    {
+      "resource_id": "07ffd39f-142e-4b32-a49d-0b93f1961a27",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "visual_orchestrator",
+      "path": "deferred/firebase_orchestration/core/visual_orchestrator.py"
+    },
+    {
+      "resource_id": "5f6657bb-29aa-4eac-8bc4-57dcc42310d6",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "complete_demo",
+      "path": "deferred/firebase_orchestration/scripts/complete_demo.py"
+    },
+    {
+      "resource_id": "d3c94889-bbdf-458c-851b-e74d1eead899",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "deferred/meta_intelligent_orchestration/README.md"
+    },
+    {
+      "resource_id": "8510d0a9-c3ce-4592-aa95-dcdfaf7e9e17",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "__init__",
+      "path": "deferred/meta_intelligent_orchestration/__init__.py"
+    },
+    {
+      "resource_id": "c0ad264b-a596-4235-8c91-7be70657f995",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "adaptive_learning_system",
+      "path": "deferred/meta_intelligent_orchestration/core/adaptive_learning_system.py"
+    },
+    {
+      "resource_id": "9bd8948d-5c24-47e9-b428-c1255987966c",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "browser_automation_strategy",
+      "path": "deferred/meta_intelligent_orchestration/core/browser_automation_strategy.py"
+    },
+    {
+      "resource_id": "c17b9374-392d-4959-a377-90d4e9033991",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "meta_decision_engine",
+      "path": "deferred/meta_intelligent_orchestration/core/meta_decision_engine.py"
+    },
+    {
+      "resource_id": "64aae06d-41b9-4f2a-b151-e7106a601f3c",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "meta_recommendation_engine",
+      "path": "deferred/meta_intelligent_orchestration/core/meta_recommendation_engine.py"
+    },
+    {
+      "resource_id": "cac9f2df-773d-4d11-97af-59d6087efb1a",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "universal_master_orchestrator",
+      "path": "deferred/meta_intelligent_orchestration/core/orchestration/universal_master_orchestrator.py"
+    },
+    {
+      "resource_id": "3b22c8bb-be96-428a-a802-026622b331ef",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "universal_orchestration_system",
+      "path": "deferred/meta_intelligent_orchestration/core/orchestration/universal_orchestration_system.py"
+    },
+    {
+      "resource_id": "eddbe920-539f-4c1e-8bf3-cfc76b40bcb9",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "universal_visual_orchestrator",
+      "path": "deferred/meta_intelligent_orchestration/core/orchestration/universal_visual_orchestrator.py"
+    },
+    {
+      "resource_id": "a6bdbe8e-08a8-469d-b958-1814ec83043f",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "firebase_instance_demo",
+      "path": "deferred/meta_intelligent_orchestration/firebase_instance_demo.py"
+    },
+    {
+      "resource_id": "dd77abc7-e25c-4caf-89f7-6d13d68d268f",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "IMPLEMENTATION_SUMMARY",
+      "path": "deferred/meta_intelligent_orchestration/instances/firebase/IMPLEMENTATION_SUMMARY.md"
+    },
+    {
+      "resource_id": "0cd3489f-a337-4c63-9ddf-d6ab2ff1b94d",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "firebase_config",
+      "path": "deferred/meta_intelligent_orchestration/instances/firebase_config.py"
+    },
+    {
+      "resource_id": "a1b4258a-6ac9-4b51-924e-3dc3a71458b3",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "firebase_provider",
+      "path": "deferred/meta_intelligent_orchestration/instances/firebase_provider.py"
+    },
+    {
+      "resource_id": "a952b595-b614-4ae6-b576-b1a68461446f",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "conftest",
+      "path": "deferred/meta_intelligent_orchestration/instances/tests/conftest.py"
+    },
+    {
+      "resource_id": "3b2164f2-d5c8-4fc3-8be4-b8882270e808",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "pytest",
+      "path": "deferred/meta_intelligent_orchestration/instances/tests/pytest.ini"
+    },
+    {
+      "resource_id": "a94d7934-51a5-49ac-bbc7-2f9b669447b4",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "run_tests",
+      "path": "deferred/meta_intelligent_orchestration/instances/tests/run_tests.py"
+    },
+    {
+      "resource_id": "4df8a318-af1e-4bad-8968-a562cd9948d2",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "test_firebase_config",
+      "path": "deferred/meta_intelligent_orchestration/instances/tests/test_firebase_config.py"
+    },
+    {
+      "resource_id": "49288944-296c-4701-924f-68ff61485a12",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "test_firebase_provider",
+      "path": "deferred/meta_intelligent_orchestration/instances/tests/test_firebase_provider.py"
+    },
+    {
+      "resource_id": "7ec6d851-21e7-4208-8de5-80e5140eb3ba",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "meta_intelligent_demo",
+      "path": "deferred/meta_intelligent_orchestration/meta_intelligent_demo.py"
+    },
+    {
+      "resource_id": "97905f9c-736d-4afc-aa6a-d9ae48b22378",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "__init__",
+      "path": "deferred/universal_orchestration/__init__.py"
+    },
+    {
+      "resource_id": "c1ab3b37-a74f-48ad-b7b3-9430b49f0a30",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "browser_automation_strategy",
+      "path": "deferred/universal_orchestration/core/browser_automation_strategy.py"
+    },
+    {
+      "resource_id": "0134487e-f1a2-4ce0-914a-2b6e1ffa5d14",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "ecosystem_analyzer",
+      "path": "deferred/universal_orchestration/core/ecosystem_analyzer.py"
+    },
+    {
+      "resource_id": "dc2855e0-ac5b-45dd-816d-2da784e5e63f",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "optimization_engine",
+      "path": "deferred/universal_orchestration/core/optimization_engine.py"
+    },
+    {
+      "resource_id": "a2db1114-279c-4755-bed9-864358decedd",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "project_analyzer",
+      "path": "deferred/universal_orchestration/core/project_analyzer.py"
+    },
+    {
+      "resource_id": "accb6f72-5cd7-4729-813e-01f657304ee9",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "universal_master_orchestrator",
+      "path": "deferred/universal_orchestration/core/universal_master_orchestrator.py"
+    },
+    {
+      "resource_id": "dba4a074-932c-4594-b00e-6af893ce1c83",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "universal_orchestration_system",
+      "path": "deferred/universal_orchestration/core/universal_orchestration_system.py"
+    },
+    {
+      "resource_id": "c4a10f7e-b6a1-4a39-82dc-5e29e5de842c",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "universal_visual_orchestrator",
+      "path": "deferred/universal_orchestration/core/universal_visual_orchestrator.py"
+    },
+    {
+      "resource_id": "11d01099-0069-4a5e-a58f-fb01e484f1b5",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "workflow_optimizer",
+      "path": "deferred/universal_orchestration/core/workflow_optimizer.py"
+    },
+    {
+      "resource_id": "d92aedae-aa64-4789-9217-fb29aa352d0a",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "universal_complete_demo",
+      "path": "deferred/universal_orchestration/universal_complete_demo.py"
+    },
+    {
+      "resource_id": "bba97156-6308-4d94-8c10-5e7dc17894dd",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "firebase-admin-config",
+      "path": "firebase-admin-config.json"
+    },
+    {
+      "resource_id": "2b73d62e-7d3f-43d1-966f-1ef9059f75be",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "firebase",
+      "path": "firebase.json"
+    },
+    {
+      "resource_id": "1880ec22-92b2-4934-8c09-1871411309e1",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "firestore.indexes",
+      "path": "firestore.indexes.json"
+    },
+    {
+      "resource_id": "eb298719-03c3-41e0-acd5-c863df068acb",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "firestore",
+      "path": "firestore.rules"
+    },
+    {
+      "resource_id": "29a10894-e52c-4055-a7c9-5427be5949a7",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "gunicorn.conf",
+      "path": "gunicorn.conf.py"
+    },
+    {
+      "resource_id": "27849cf1-870c-429f-9a75-f6f5031611e5",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "instructions",
+      "path": "l2_infrastructure/.codex/instructions.md"
+    },
+    {
+      "resource_id": "06d6706e-6094-4e27-9b51-9351a6c327a0",
+      "id_field": "resource_id",
+      "resource_type": "agnostic",
+      "resource_name": "0AGNOSTIC",
+      "path": "l2_infrastructure/0AGNOSTIC.md"
+    },
+    {
+      "resource_id": "632454da-5755-48b0-a848-c81fd07c640c",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "__init__",
+      "path": "l2_infrastructure/__init__.py"
+    },
+    {
+      "resource_id": "6119ff0a-543c-4583-8c14-d07b5ed18379",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "api_routes",
+      "path": "l2_infrastructure/api_gateway/api_routes.py"
+    },
+    {
+      "resource_id": "a4e1beb6-90ef-4d0e-9f70-d9ffae2d2e79",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "__init__",
+      "path": "l2_infrastructure/auth/__init__.py"
+    },
+    {
+      "resource_id": "e6175b30-866d-47cd-a211-5630a2dccc19",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "decorators",
+      "path": "l2_infrastructure/auth/decorators.py"
+    },
+    {
+      "resource_id": "81271592-4be2-4b53-b258-5c17279c0041",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "firebase_auth",
+      "path": "l2_infrastructure/auth/firebase_auth.py"
+    },
+    {
+      "resource_id": "4bd03616-aae9-4d02-ab29-fff0a8bfaac8",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "helpers",
+      "path": "l2_infrastructure/auth/helpers.py"
+    },
+    {
+      "resource_id": "7db9f20c-bb92-41d2-8066-122fe0ccfdfc",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "login",
+      "path": "l2_infrastructure/auth/login.py"
+    },
+    {
+      "resource_id": "3bf3d229-db15-4d35-a0bc-735945766aa9",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "registration",
+      "path": "l2_infrastructure/auth/registration.py"
+    },
+    {
+      "resource_id": "c9f8d819-7a05-496d-ae70-dbae45d73137",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "login",
+      "path": "l2_infrastructure/auth/templates/login.html"
+    },
+    {
+      "resource_id": "69e49e4c-db85-4f82-8a16-2676428c7659",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "register",
+      "path": "l2_infrastructure/auth/templates/register.html"
+    },
+    {
+      "resource_id": "ac6282cc-39ca-48ab-850e-eb78a96e4e1e",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "__init__",
+      "path": "l2_infrastructure/auth/tests/__init__.py"
+    },
+    {
+      "resource_id": "be31fdba-5746-49eb-a9c5-d58896ebe6bb",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "test_auth_helpers",
+      "path": "l2_infrastructure/auth/tests/test_auth_helpers.py"
+    },
+    {
+      "resource_id": "ed80884e-9baa-4150-8248-be3db856dc56",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "__init__",
+      "path": "l2_infrastructure/database/__init__.py"
+    },
+    {
+      "resource_id": "18232bba-d5c9-493b-9e1d-ac3d310cc263",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "database",
+      "path": "l2_infrastructure/database/database.py"
+    },
+    {
+      "resource_id": "bca39cd5-616c-4671-a2aa-6ebeb09d1347",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "database_tools",
+      "path": "l2_infrastructure/db_admin/database_tools.py"
+    },
+    {
+      "resource_id": "0bfb834a-63e0-495d-ac5f-7a7f14ddcc24",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "__init__",
+      "path": "l2_infrastructure/firebase/__init__.py"
+    },
+    {
+      "resource_id": "136a9f4d-cea8-4182-9375-e4b20eaf2ba0",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "config",
+      "path": "l2_infrastructure/firebase/config.py"
+    },
+    {
+      "resource_id": "22d5bb6f-753a-46f9-9a65-8fda7e989e94",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "firestore",
+      "path": "l2_infrastructure/firebase/firestore.py"
+    },
+    {
+      "resource_id": "4b674b08-9590-476a-ac25-a1063edcbeea",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "routes",
+      "path": "l2_infrastructure/routes.py"
+    },
+    {
+      "resource_id": "a57f49d9-d62a-4b3a-8238-bb989daed52b",
+      "id_field": "resource_id",
+      "resource_type": "index",
+      "resource_name": "0INDEX",
+      "path": "l2_infrastructure/stages/0INDEX.md"
+    },
+    {
+      "resource_id": "76147db2-4328-4d0c-915a-1ea03aa4bd79",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "storage_manager",
+      "path": "l2_infrastructure/storage/storage_manager.py"
+    },
+    {
+      "resource_id": "555eb024-5bea-4a35-b353-46dbc500522f",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "__init__",
+      "path": "l2_infrastructure/tts/__init__.py"
+    },
+    {
+      "resource_id": "f6684fa8-d01a-48a9-a35f-b584b41cbacf",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "tts_ipa",
+      "path": "l2_infrastructure/tts/tts_ipa.py"
+    },
+    {
+      "resource_id": "7cc8a314-24b2-4c36-be0a-2448facf9034",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "instructions",
+      "path": "l3_users/.codex/instructions.md"
+    },
+    {
+      "resource_id": "e110e59e-622f-4c0e-a07c-e8425aee96d8",
+      "id_field": "resource_id",
+      "resource_type": "agnostic",
+      "resource_name": "0AGNOSTIC",
+      "path": "l3_users/0AGNOSTIC.md"
+    },
+    {
+      "resource_id": "d233005f-a882-45cd-814a-7d0bb5c71d2b",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "__init__",
+      "path": "l3_users/__init__.py"
+    },
+    {
+      "resource_id": "a53d1796-4c07-4386-ad40-19784b377396",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "__init__",
+      "path": "l3_users/model/__init__.py"
+    },
+    {
+      "resource_id": "98f6fb48-b403-40cd-89c3-227df22a226d",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "__init__",
+      "path": "l3_users/profiles/__init__.py"
+    },
+    {
+      "resource_id": "7bd173d1-fd5f-4624-88e0-fe75f2486322",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "routes",
+      "path": "l3_users/routes.py"
+    },
+    {
+      "resource_id": "68c280ef-5c29-4b40-8a93-ec7d099282a3",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "__init__",
+      "path": "l3_users/sessions/__init__.py"
+    },
+    {
+      "resource_id": "b92f6931-8c2c-48cd-a6ad-faf093ac0230",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "session",
+      "path": "l3_users/sessions/session.py"
+    },
+    {
+      "resource_id": "a02a5a4b-44e1-449d-b013-e94c5d3bda46",
+      "id_field": "resource_id",
+      "resource_type": "index",
+      "resource_name": "0INDEX",
+      "path": "l3_users/stages/0INDEX.md"
+    },
+    {
+      "resource_id": "e009df1d-2c09-4b6d-be37-6d3d5d0374f7",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "instructions",
+      "path": "l4_phoneme_system/.codex/instructions.md"
+    },
+    {
+      "resource_id": "b6970a54-8971-4fcd-97f0-567337d95127",
+      "id_field": "resource_id",
+      "resource_type": "agnostic",
+      "resource_name": "0AGNOSTIC",
+      "path": "l4_phoneme_system/0AGNOSTIC.md"
+    },
+    {
+      "resource_id": "c58086f5-9263-4be9-b3a0-e3a1a06d658f",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "__init__",
+      "path": "l4_phoneme_system/__init__.py"
+    },
+    {
+      "resource_id": "8683ddc3-c6a7-49d4-b5ab-ed4f2b0a095c",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "__init__",
+      "path": "l4_phoneme_system/admin/__init__.py"
+    },
+    {
+      "resource_id": "e1e81730-f87d-422e-9b75-de47538b72e5",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "phoneme_management",
+      "path": "l4_phoneme_system/admin/phoneme_management.py"
+    },
+    {
+      "resource_id": "37b11377-87c7-454b-91df-90a78c3f4628",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "__init__",
+      "path": "l4_phoneme_system/core/__init__.py"
+    },
+    {
+      "resource_id": "f4ad06dc-6dbe-4f07-aa71-ed7edd0145c2",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "display",
+      "path": "l4_phoneme_system/core/display.py"
+    },
+    {
+      "resource_id": "424af4e3-cb66-4b7f-95c2-be104859a1b9",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "menu",
+      "path": "l4_phoneme_system/core/menu.py"
+    },
+    {
+      "resource_id": "3fee70a3-9f5c-4587-84f1-bf9e9f6e8e72",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "phonemes_full",
+      "path": "l4_phoneme_system/core/templates/phonemes_full.html"
+    },
+    {
+      "resource_id": "ba0b2f8f-8bd0-4005-9edb-900ff28ee61d",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "phonemes_menu",
+      "path": "l4_phoneme_system/core/templates/phonemes_menu.html"
+    },
+    {
+      "resource_id": "fbfc8f2f-dd9c-482a-bd99-e547fec5b3b1",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "__init__",
+      "path": "l4_phoneme_system/core/tests/__init__.py"
+    },
+    {
+      "resource_id": "d836e5ea-12d7-4f6d-936f-660044b2b49d",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "test_clean_display",
+      "path": "l4_phoneme_system/core/tests/test_clean_display.py"
+    },
+    {
+      "resource_id": "935b8273-9df6-418f-97d3-b688b7475b94",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "test_enhanced_all_types",
+      "path": "l4_phoneme_system/core/tests/test_enhanced_all_types.py"
+    },
+    {
+      "resource_id": "7bce14ae-bd77-4082-bd5b-59bec0ccda57",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "test_enhanced_phonemes",
+      "path": "l4_phoneme_system/core/tests/test_enhanced_phonemes.py"
+    },
+    {
+      "resource_id": "9760059e-12a1-4601-a272-70735f56cf1d",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "test_hierarchy_display",
+      "path": "l4_phoneme_system/core/tests/test_hierarchy_display.py"
+    },
+    {
+      "resource_id": "017e09bf-d42b-443a-a37f-8af98e7151aa",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "test_nucleus_bc",
+      "path": "l4_phoneme_system/core/tests/test_nucleus_bc.py"
+    },
+    {
+      "resource_id": "7bab65b8-f090-4add-a8eb-d5dea73c6a53",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "test_phoneme_management",
+      "path": "l4_phoneme_system/core/tests/test_phoneme_management.py"
+    },
+    {
+      "resource_id": "61318d38-bdd7-432a-8546-5c13907aeef3",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "test_side_by_side",
+      "path": "l4_phoneme_system/core/tests/test_side_by_side.py"
+    },
+    {
+      "resource_id": "f5678374-9c64-48f3-9c5c-35243b41dc7a",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "test_user_story_integration",
+      "path": "l4_phoneme_system/core/tests/test_user_story_integration.py"
+    },
+    {
+      "resource_id": "e06ac308-760d-4180-ba33-504eaf98ef27",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "__init__",
+      "path": "l4_phoneme_system/display/__init__.py"
+    },
+    {
+      "resource_id": "c96b1982-95d6-4c58-9478-c2f37bd04fca",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "__init__",
+      "path": "l4_phoneme_system/frequency/__init__.py"
+    },
+    {
+      "resource_id": "5fc4e7c2-e58e-46a2-8cfa-d4414662a27a",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "__init__",
+      "path": "l4_phoneme_system/phonotactics/__init__.py"
+    },
+    {
+      "resource_id": "05558b0f-74e6-40b9-97b1-aa7ad994eb74",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "phonotactics",
+      "path": "l4_phoneme_system/phonotactics/phonotactics.py"
+    },
+    {
+      "resource_id": "586535c3-5916-43f3-b4b5-feab22abb52a",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "routes",
+      "path": "l4_phoneme_system/routes.py"
+    },
+    {
+      "resource_id": "cb3c0a0c-c9eb-4a90-b999-ad8a6c75e82f",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "__init__",
+      "path": "l4_phoneme_system/seed/__init__.py"
+    },
+    {
+      "resource_id": "08f0a7a2-f5c0-4b18-8fa9-2cefb085d412",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "phoneme_seed",
+      "path": "l4_phoneme_system/seed/phoneme_seed.py"
+    },
+    {
+      "resource_id": "d5253565-b55a-4309-a550-bf0d6fbc2b68",
+      "id_field": "resource_id",
+      "resource_type": "index",
+      "resource_name": "0INDEX",
+      "path": "l4_phoneme_system/stages/0INDEX.md"
+    },
+    {
+      "resource_id": "9f38a78a-ebe7-462d-88bf-e090734041bd",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "__init__",
+      "path": "l4_phoneme_system/tts/__init__.py"
+    },
+    {
+      "resource_id": "e48d42f0-ee72-42ee-b4a7-0d33e1421431",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "instructions",
+      "path": "l5_templates/.codex/instructions.md"
+    },
+    {
+      "resource_id": "48c06808-7ce3-4f75-a3c1-6a0e8bc94229",
+      "id_field": "resource_id",
+      "resource_type": "agnostic",
+      "resource_name": "0AGNOSTIC",
+      "path": "l5_templates/0AGNOSTIC.md"
+    },
+    {
+      "resource_id": "64e9c8f5-0cb1-488b-88b2-e0d316db562b",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "__init__",
+      "path": "l5_templates/__init__.py"
+    },
+    {
+      "resource_id": "0e7510d4-8b18-4559-b9f6-0f9f0e44c233",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "__init__",
+      "path": "l5_templates/admin/__init__.py"
+    },
+    {
+      "resource_id": "cf62bc2f-31e5-489d-a615-bea64cf39ae8",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "template_system",
+      "path": "l5_templates/admin/template_system.py"
+    },
+    {
+      "resource_id": "c1b6e9bc-9975-49e5-a675-6316f72b7cb5",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "__init__",
+      "path": "l5_templates/core/__init__.py"
+    },
+    {
+      "resource_id": "cc1a555e-191f-4e36-86ce-d02faa58b9e9",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "routes",
+      "path": "l5_templates/routes.py"
+    },
+    {
+      "resource_id": "b43004b3-2201-4a98-bd6d-a82a2c114a8e",
+      "id_field": "resource_id",
+      "resource_type": "index",
+      "resource_name": "0INDEX",
+      "path": "l5_templates/stages/0INDEX.md"
+    },
+    {
+      "resource_id": "5863407e-9d2c-4cf8-9ae4-0aac12651b7a",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "instructions",
+      "path": "l6_language_content/.codex/instructions.md"
+    },
+    {
+      "resource_id": "1e176ffa-1d49-4aa5-9633-42471e5651b4",
+      "id_field": "resource_id",
+      "resource_type": "agnostic",
+      "resource_name": "0AGNOSTIC",
+      "path": "l6_language_content/0AGNOSTIC.md"
+    },
+    {
+      "resource_id": "3d3290a7-f602-447e-ae38-7c4642fab8b1",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "__init__",
+      "path": "l6_language_content/__init__.py"
+    },
+    {
+      "resource_id": "43e5d063-bb12-4ed1-8cbe-5546d37a6c3b",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "routes",
+      "path": "l6_language_content/routes.py"
+    },
+    {
+      "resource_id": "15f688ad-9a3e-4e12-b301-f14fae6dfec7",
+      "id_field": "resource_id",
+      "resource_type": "index",
+      "resource_name": "0INDEX",
+      "path": "l6_language_content/stages/0INDEX.md"
+    },
+    {
+      "resource_id": "b56362bf-b713-4de0-a5bb-e38ae39697eb",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "__init__",
+      "path": "l6_language_content/suggestions/__init__.py"
+    },
+    {
+      "resource_id": "59d8c33c-3c07-4182-8e97-fbe9b22d3268",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "__init__",
+      "path": "l6_language_content/suggestions/tests/__init__.py"
+    },
+    {
+      "resource_id": "5f355d60-adf6-47af-8b0f-9d51d9c8327a",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "test_conflict_detection",
+      "path": "l6_language_content/suggestions/tests/test_conflict_detection.py"
+    },
+    {
+      "resource_id": "c47e3d97-6c27-4a21-9c28-e4762f180717",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "test_english_conflict_filter",
+      "path": "l6_language_content/suggestions/tests/test_english_conflict_filter.py"
+    },
+    {
+      "resource_id": "ca591186-964c-4734-9ff7-486b5a7a4ee1",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "test_extend_feature",
+      "path": "l6_language_content/suggestions/tests/test_extend_feature.py"
+    },
+    {
+      "resource_id": "ef0c8697-b1b6-4c62-b6f2-193fc021c6f4",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "test_improved_suggestions",
+      "path": "l6_language_content/suggestions/tests/test_improved_suggestions.py"
+    },
+    {
+      "resource_id": "4a5bdbf9-af67-4760-ba96-2361be1a36a3",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "test_suggestion_limit_fix",
+      "path": "l6_language_content/suggestions/tests/test_suggestion_limit_fix.py"
+    },
+    {
+      "resource_id": "3d955419-2c6b-4c2f-9eca-b60c4503413a",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "test_suggestion_method",
+      "path": "l6_language_content/suggestions/tests/test_suggestion_method.py"
+    },
+    {
+      "resource_id": "cebfdde8-10db-4356-87b4-e9bf6a05df21",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "test_tie_breaking",
+      "path": "l6_language_content/suggestions/tests/test_tie_breaking.py"
+    },
+    {
+      "resource_id": "64418d9f-6c8f-4b06-ab77-cba644ac995e",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "__init__",
+      "path": "l6_language_content/tts/__init__.py"
+    },
+    {
+      "resource_id": "2995d41b-35f5-4ab8-b32f-bc241b648e05",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "__init__",
+      "path": "l6_language_content/video/__init__.py"
+    },
+    {
+      "resource_id": "5efc5fd7-b261-4ee3-9abb-2c484ac5fd7a",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "__init__",
+      "path": "l6_language_content/video/tests/__init__.py"
+    },
+    {
+      "resource_id": "1595fac7-b54d-4ffb-b607-4658e4ffbcdd",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "test_video_features",
+      "path": "l6_language_content/video/tests/test_video_features.py"
+    },
+    {
+      "resource_id": "8f41721e-2b47-4658-8270-0f382205936f",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "__init__",
+      "path": "l6_language_content/words/__init__.py"
+    },
+    {
+      "resource_id": "8e55e569-e8c2-46bb-a129-340419eee5cf",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "api",
+      "path": "l6_language_content/words/api.py"
+    },
+    {
+      "resource_id": "6b93c65d-e778-4797-b401-e3bedaf00e76",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "api_operations",
+      "path": "l6_language_content/words/api_operations.py"
+    },
+    {
+      "resource_id": "7846ec12-a2c3-4054-aa1c-f6444fb08a99",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "creation",
+      "path": "l6_language_content/words/creation.py"
+    },
+    {
+      "resource_id": "1242ec4c-a00b-4157-8d04-287d691a0206",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "display",
+      "path": "l6_language_content/words/display.py"
+    },
+    {
+      "resource_id": "01e5a6bd-fcef-4da0-8596-319d5d185ecd",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "editing",
+      "path": "l6_language_content/words/editing.py"
+    },
+    {
+      "resource_id": "e12b7b2b-c40b-497f-9bdc-364f214025c6",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "search",
+      "path": "l6_language_content/words/search.py"
+    },
+    {
+      "resource_id": "12e38970-1033-4ddd-9382-e93d70742e53",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "word_creation_menu",
+      "path": "l6_language_content/words/templates/words/word_creation_menu.html"
+    },
+    {
+      "resource_id": "42247e88-88b2-4025-b806-76cdf9023542",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "word_creation_table",
+      "path": "l6_language_content/words/templates/words/word_creation_table.html"
+    },
+    {
+      "resource_id": "423cf22c-809f-4322-86f6-7be379e98aa5",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "word_edit",
+      "path": "l6_language_content/words/templates/words/word_edit.html"
+    },
+    {
+      "resource_id": "f95f44da-a6d7-46e3-960a-0eabb10ce12d",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "word_lookup",
+      "path": "l6_language_content/words/templates/words/word_lookup.html"
+    },
+    {
+      "resource_id": "9c8c55b5-f258-461e-a0c2-2dd7db320643",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "words_display",
+      "path": "l6_language_content/words/templates/words/words_display.html"
+    },
+    {
+      "resource_id": "a02c4466-d6a3-40d6-a171-d6a3886f2f9d",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "words_menu",
+      "path": "l6_language_content/words/templates/words/words_menu.html"
+    },
+    {
+      "resource_id": "de742e12-5f8f-4872-a37f-1b541177fea0",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "__init__",
+      "path": "l6_language_content/words/tests/__init__.py"
+    },
+    {
+      "resource_id": "d5e01957-03f3-4c1d-aeb8-92d3ee8fd8f2",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "test_all_fields_search",
+      "path": "l6_language_content/words/tests/test_all_fields_search.py"
+    },
+    {
+      "resource_id": "a1c633f8-3acf-429b-b8bd-d410856defc9",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "test_expanded_english_words",
+      "path": "l6_language_content/words/tests/test_expanded_english_words.py"
+    },
+    {
+      "resource_id": "9880c0a7-62ab-4baf-b5ef-ffc93d4af1be",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "test_json_schema",
+      "path": "l6_language_content/words/tests/test_json_schema.py"
+    },
+    {
+      "resource_id": "2c8ba081-094c-47ed-bfe8-9a52573e00e8",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "test_letter_based_filtering",
+      "path": "l6_language_content/words/tests/test_letter_based_filtering.py"
+    },
+    {
+      "resource_id": "e68c75d4-5006-42d4-a360-bcc60cc00db4",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "test_new_functionality",
+      "path": "l6_language_content/words/tests/test_new_functionality.py"
+    },
+    {
+      "resource_id": "afadd53b-c96c-4de7-9265-e83cee074b61",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "test_new_functions",
+      "path": "l6_language_content/words/tests/test_new_functions.py"
+    },
+    {
+      "resource_id": "0e24a8c5-a593-4d43-b338-ec57eef46359",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "instructions",
+      "path": "l7_projects/.codex/instructions.md"
+    },
+    {
+      "resource_id": "b6d2ab73-db3b-4ba8-8ee3-4e108f9499aa",
+      "id_field": "resource_id",
+      "resource_type": "agnostic",
+      "resource_name": "0AGNOSTIC",
+      "path": "l7_projects/0AGNOSTIC.md"
+    },
+    {
+      "resource_id": "29fc1c9d-c710-46ea-aac9-4cf96cc78193",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "__init__",
+      "path": "l7_projects/__init__.py"
+    },
+    {
+      "resource_id": "696d3768-7e9a-4879-9d4f-0607dc7f09fe",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "__init__",
+      "path": "l7_projects/core/__init__.py"
+    },
+    {
+      "resource_id": "9791d9dc-7620-42c7-8504-341db7fb3bfe",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "api",
+      "path": "l7_projects/core/api.py"
+    },
+    {
+      "resource_id": "a9149918-70c7-4448-8a53-982802778fa0",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "context",
+      "path": "l7_projects/core/context.py"
+    },
+    {
+      "resource_id": "80791741-9ef8-4439-a347-920dbff4a904",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "creation",
+      "path": "l7_projects/core/creation.py"
+    },
+    {
+      "resource_id": "1afe8810-c148-41a4-b9fe-f1534757495d",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "display",
+      "path": "l7_projects/core/display.py"
+    },
+    {
+      "resource_id": "ad29d78c-f6e4-4fad-a669-d13fa3593493",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "editing",
+      "path": "l7_projects/core/editing.py"
+    },
+    {
+      "resource_id": "0b633c71-bbb0-49f3-aaa9-e62190e0d736",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "metadata",
+      "path": "l7_projects/core/metadata.py"
+    },
+    {
+      "resource_id": "a80277a8-4012-49bc-94f5-7acfa0a095a6",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "storage_ops",
+      "path": "l7_projects/core/storage_ops.py"
+    },
+    {
+      "resource_id": "5751908d-a64e-4558-82b6-7fdce244a105",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "projects_menu",
+      "path": "l7_projects/core/templates/projects_menu.html"
+    },
+    {
+      "resource_id": "f0267963-b236-4fff-a824-5df8b9f1e7fe",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "__init__",
+      "path": "l7_projects/core/tests/__init__.py"
+    },
+    {
+      "resource_id": "a48a082c-c8fd-49f7-9158-f3baabb288ec",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "test_project_metadata_helpers",
+      "path": "l7_projects/core/tests/test_project_metadata_helpers.py"
+    },
+    {
+      "resource_id": "94f10f53-554a-46ef-8715-6ccdb9ef2534",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "test_variant_workflows",
+      "path": "l7_projects/core/tests/test_variant_workflows.py"
+    },
+    {
+      "resource_id": "35c368ad-df63-41ca-9de9-c5cd663af9b5",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "__init__",
+      "path": "l7_projects/dashboard/__init__.py"
+    },
+    {
+      "resource_id": "95d06890-624b-47ee-a278-d53d052031d1",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "api",
+      "path": "l7_projects/dashboard/api.py"
+    },
+    {
+      "resource_id": "aa5e3c65-4f78-4845-b7c1-9a25e2fa0840",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "display",
+      "path": "l7_projects/dashboard/display.py"
+    },
+    {
+      "resource_id": "c5f1ba6e-33ef-4e4a-ba1d-244dc7f75926",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "__init__",
+      "path": "l7_projects/navigation/__init__.py"
+    },
+    {
+      "resource_id": "0bf55ca1-9dae-47bc-8003-f7d82bf7dd78",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "__init__",
+      "path": "l7_projects/navigation/tests/__init__.py"
+    },
+    {
+      "resource_id": "5f057bd7-cda9-4dcd-861a-074def5bf22f",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "test_menu",
+      "path": "l7_projects/navigation/tests/test_menu.py"
+    },
+    {
+      "resource_id": "5523dc6d-1adb-408e-a43c-8e3df1db1848",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "test_updated_menu",
+      "path": "l7_projects/navigation/tests/test_updated_menu.py"
+    },
+    {
+      "resource_id": "3a38e546-f40c-4b53-8bfe-5f219097b94a",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "routes",
+      "path": "l7_projects/routes.py"
+    },
+    {
+      "resource_id": "701a6d6b-5247-4c3e-a409-95483135250f",
+      "id_field": "resource_id",
+      "resource_type": "index",
+      "resource_name": "0INDEX",
+      "path": "l7_projects/stages/0INDEX.md"
+    },
+    {
+      "resource_id": "29eaa37f-1470-4a21-9db7-b47041bd08b4",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "__init__",
+      "path": "l7_projects/storage_type/__init__.py"
+    },
+    {
+      "resource_id": "dc4822f9-fb8b-4758-b0ef-e1b142bac3f7",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "__init__",
+      "path": "l7_projects/variants/__init__.py"
+    },
+    {
+      "resource_id": "ef672d5f-7f05-4dbd-8c10-5d1a668569f6",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "api",
+      "path": "l7_projects/variants/api.py"
+    },
+    {
+      "resource_id": "7789748e-5bb6-40fc-83c4-d367b697ad5f",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "instructions",
+      "path": "l8_teams/.codex/instructions.md"
+    },
+    {
+      "resource_id": "c3684647-2af7-4c2b-a7c1-3be9a2aac58e",
+      "id_field": "resource_id",
+      "resource_type": "agnostic",
+      "resource_name": "0AGNOSTIC",
+      "path": "l8_teams/0AGNOSTIC.md"
+    },
+    {
+      "resource_id": "d233dea7-76c0-4d9d-b272-8b903aabde34",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "__init__",
+      "path": "l8_teams/__init__.py"
+    },
+    {
+      "resource_id": "1e12aae9-494c-4001-ab46-a8d70a7099af",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "__init__",
+      "path": "l8_teams/core/__init__.py"
+    },
+    {
+      "resource_id": "30e2d706-bf14-4153-97b1-32c955f05133",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "api",
+      "path": "l8_teams/core/api.py"
+    },
+    {
+      "resource_id": "000f4f22-1b79-496e-8d6a-267319be3327",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "creation",
+      "path": "l8_teams/core/creation.py"
+    },
+    {
+      "resource_id": "3226c6de-12db-479b-b022-58ec5fd6bdd6",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "display",
+      "path": "l8_teams/core/display.py"
+    },
+    {
+      "resource_id": "15c77399-e63b-46aa-a35d-300ab4de172d",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "membership",
+      "path": "l8_teams/core/membership.py"
+    },
+    {
+      "resource_id": "92b22150-3322-4405-9ce8-2a160f780609",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "create_group",
+      "path": "l8_teams/core/templates/create_group.html"
+    },
+    {
+      "resource_id": "51c140fc-3329-424f-9b83-7c09fa775ef8",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "group_detail",
+      "path": "l8_teams/core/templates/group_detail.html"
+    },
+    {
+      "resource_id": "e886b130-58e3-4df9-acc2-7950a6292c52",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "groups_menu",
+      "path": "l8_teams/core/templates/groups_menu.html"
+    },
+    {
+      "resource_id": "1b22a120-10ae-42d6-b963-a9fb88a9964c",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "__init__",
+      "path": "l8_teams/core/tests/__init__.py"
+    },
+    {
+      "resource_id": "a4ed259f-4c30-4c0a-85d9-5b72bcf67268",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "test_group_routes",
+      "path": "l8_teams/core/tests/test_group_routes.py"
+    },
+    {
+      "resource_id": "2aa3afbf-fc9c-439e-a53a-42b5a944675c",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "__init__",
+      "path": "l8_teams/invites/__init__.py"
+    },
+    {
+      "resource_id": "2d289d6b-fbd0-4235-b5aa-d27047b3fc9d",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "__init__",
+      "path": "l8_teams/membership/__init__.py"
+    },
+    {
+      "resource_id": "7f20f68c-3467-4bea-9506-a4b9c4c2ffbd",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "__init__",
+      "path": "l8_teams/project_sharing/__init__.py"
+    },
+    {
+      "resource_id": "48bb4703-5338-481d-a63d-2e512bb01b27",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "routes",
+      "path": "l8_teams/routes.py"
+    },
+    {
+      "resource_id": "ad0589b3-2e82-4bd7-8b92-e7302d3ae986",
+      "id_field": "resource_id",
+      "resource_type": "index",
+      "resource_name": "0INDEX",
+      "path": "l8_teams/stages/0INDEX.md"
+    },
+    {
+      "resource_id": "c521d1b3-68d5-4da7-9a96-0e6855c01eca",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "main",
+      "path": "main.py"
+    },
+    {
+      "resource_id": "6bf39602-eeb6-4854-89a3-a8a458e3d7ba",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "add_syllables_data",
+      "path": "migrations/add_syllables_data.py"
+    },
+    {
+      "resource_id": "01dc20a4-3685-4ddd-9c3b-4d8b62fc2839",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "add_vc_syllables",
+      "path": "migrations/add_vc_syllables.py"
+    },
+    {
+      "resource_id": "a53faa62-3cad-4b61-97c5-dde6efa3b4d4",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "pytest",
+      "path": "pytest.ini"
+    },
+    {
+      "resource_id": "90c5e17f-4531-463a-adc9-c92794139f05",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "requirements-prod",
+      "path": "requirements-prod.txt"
+    },
+    {
+      "resource_id": "92eff482-4155-46e2-b73e-5d02ba47eae0",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "requirements",
+      "path": "requirements.txt"
+    },
+    {
+      "resource_id": "1b05c522-1541-41c9-af5c-8236bb4c38c4",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "setup",
+      "path": "setup.py"
+    },
+    {
+      "resource_id": "ad7a2ac4-4360-40c1-9d6a-9c505cbf8cac",
+      "id_field": "resource_id",
+      "resource_type": "index",
+      "resource_name": "0INDEX",
+      "path": "stages/0INDEX.md"
+    },
+    {
+      "resource_id": "28ae0ce3-53a0-4103-af16-abad9fa49e2e",
+      "id_field": "resource_id",
+      "resource_type": "script",
+      "resource_name": "start_dev",
+      "path": "start_dev.sh"
+    },
+    {
+      "resource_id": "07aed9b0-ee33-4111-91d8-3a15fda569cf",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "firebase-config",
+      "path": "static/js/firebase-config.js"
+    },
+    {
+      "resource_id": "b311ef07-d3cb-4d53-b942-6eba9fc19d97",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "storage",
+      "path": "storage.rules"
+    },
+    {
+      "resource_id": "9bb086cf-2153-4326-b4b8-8629f42e6e2d",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "add_word",
+      "path": "templates/add_word.html"
+    },
+    {
+      "resource_id": "59b6c679-49fe-479b-b599-68fbf0b8a368",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "admin_menu",
+      "path": "templates/admin_menu.html"
+    },
+    {
+      "resource_id": "2e806fb2-0e98-4a52-8a2a-fcebb8228bef",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "admin_phonemes",
+      "path": "templates/admin_phonemes.html"
+    },
+    {
+      "resource_id": "dc038895-0c55-4fb1-b20a-c0d17fd14ca1",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "admin_templates",
+      "path": "templates/admin_templates.html"
+    },
+    {
+      "resource_id": "05e3b610-df6b-4aa1-a21b-8c449653a890",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "create_group",
+      "path": "templates/create_group.html"
+    },
+    {
+      "resource_id": "c6f9c570-d52a-4b52-a825-aade88c99319",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "create_project",
+      "path": "templates/create_project.html"
+    },
+    {
+      "resource_id": "b13a33bd-1f99-46b4-9878-e7cd1b7269e4",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "dashboard",
+      "path": "templates/dashboard.html"
+    },
+    {
+      "resource_id": "6d39cb86-9446-4a0a-ac36-e5710b1de2c8",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "edit_project",
+      "path": "templates/edit_project.html"
+    },
+    {
+      "resource_id": "a1e9190f-56ad-4c57-8f93-ff21c7772bb9",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "group_detail",
+      "path": "templates/group_detail.html"
+    },
+    {
+      "resource_id": "c0911cf9-7eab-4fad-a685-9e7a83ea7b70",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "groups_menu",
+      "path": "templates/groups_menu.html"
+    },
+    {
+      "resource_id": "492f1f8b-ae84-4a02-af52-01d11831e9fd",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "index",
+      "path": "templates/index.html"
+    },
+    {
+      "resource_id": "7d322abf-3b4b-4a26-84e8-45647a7be4b3",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "login",
+      "path": "templates/login.html"
+    },
+    {
+      "resource_id": "d1a43ea3-4521-4c4a-adfc-3638db63a85c",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "main_menu",
+      "path": "templates/main_menu.html"
+    },
+    {
+      "resource_id": "acb38465-c1c9-4bd2-8f8a-7f8279212ea1",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "phonemes_full",
+      "path": "templates/phonemes_full.html"
+    },
+    {
+      "resource_id": "502d8ecb-8fe6-4a69-880d-734919437e54",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "phonemes_menu",
+      "path": "templates/phonemes_menu.html"
+    },
+    {
+      "resource_id": "ecfa3dca-2e25-4b13-b5dd-6798c9502d71",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "phonemes_nested",
+      "path": "templates/phonemes_nested.html"
+    },
+    {
+      "resource_id": "8d39689f-9eaa-4525-a75f-5a4e4c3bb8ba",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "project_group_detail",
+      "path": "templates/project_group_detail.html"
+    },
+    {
+      "resource_id": "74d68d1a-d3a5-404d-ad6a-c7b4821342ec",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "projects_menu",
+      "path": "templates/projects_menu.html"
+    },
+    {
+      "resource_id": "28162199-82ee-495d-bbc8-7617b84cea4a",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "register",
+      "path": "templates/register.html"
+    },
+    {
+      "resource_id": "27e8d18b-c590-4b18-9c0e-c46d03b583c6",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "word_creation_menu",
+      "path": "templates/word_creation_menu.html"
+    },
+    {
+      "resource_id": "f68cbca6-867d-4adb-9578-53f5abee9130",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "word_creation_table",
+      "path": "templates/word_creation_table.html"
+    },
+    {
+      "resource_id": "d2f58ad3-9823-4ade-a915-1556e63a4c2a",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "word_edit",
+      "path": "templates/word_edit.html"
+    },
+    {
+      "resource_id": "0044589d-6040-4ab1-8130-5d1083cea37d",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "word_lookup",
+      "path": "templates/word_lookup.html"
+    },
+    {
+      "resource_id": "9bffef24-daae-402d-bce6-b2b7f431de56",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "words_display",
+      "path": "templates/words_display.html"
+    },
+    {
+      "resource_id": "abec6883-3393-4dbb-9b8f-9c64dcb5a881",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "words_menu",
+      "path": "templates/words_menu.html"
+    },
+    {
+      "resource_id": "466506fb-5b8b-4d02-83b7-9685039872fb",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "__init__",
+      "path": "tests/__init__.py"
+    },
+    {
+      "resource_id": "59a3f3dc-d6db-4460-b4a9-412de1b3de6c",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "comprehensive_test",
+      "path": "tests/comprehensive_test.py"
+    },
+    {
+      "resource_id": "e09c09fc-98f8-4784-ad41-3681c6c8b78b",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "conftest",
+      "path": "tests/conftest.py"
+    },
+    {
+      "resource_id": "26963ef5-1b44-4db1-a804-d5061ca0f846",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "manual_cloud_tests",
+      "path": "tests/e2e/manual_cloud_tests.md"
+    },
+    {
+      "resource_id": "8bc1c998-f534-40fb-9948-1fe88fe6881f",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "run-browser-cloud-tests",
+      "path": "tests/e2e/run-browser-cloud-tests.mjs"
+    },
+    {
+      "resource_id": "4e1aed66-56d1-45b4-8751-2dc402fef6e6",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "test_cloud_full_e2e",
+      "path": "tests/e2e/test_cloud_full_e2e.mjs"
+    },
+    {
+      "resource_id": "80d1a054-3548-49f6-812c-ea419b576114",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "__init__",
+      "path": "tests/integration/__init__.py"
+    },
+    {
+      "resource_id": "0a4df35d-65a7-4293-9c48-9951fd7ad83b",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "conftest",
+      "path": "tests/integration/emulator/conftest.py"
+    },
+    {
+      "resource_id": "28a92350-fdb7-4188-9915-61a15eadedd4",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "test_group_lifecycle",
+      "path": "tests/integration/emulator/test_group_lifecycle.py"
+    },
+    {
+      "resource_id": "44e76a0a-8dfc-40e6-a959-58ab75cd517e",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "test_phoneme_lifecycle",
+      "path": "tests/integration/emulator/test_phoneme_lifecycle.py"
+    },
+    {
+      "resource_id": "44d941f5-6349-4b8d-a79c-00d823eb3f93",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "test_word_lifecycle",
+      "path": "tests/integration/emulator/test_word_lifecycle.py"
+    },
+    {
+      "resource_id": "18ca634e-ea97-4690-b8f3-0a8217656ce6",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "conftest",
+      "path": "tests/integration/real_firebase/conftest.py"
+    },
+    {
+      "resource_id": "b5bf5481-9a5a-43a3-8fbf-5bad05e7eedb",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "test_cloud_integration",
+      "path": "tests/integration/real_firebase/test_cloud_integration.py"
+    },
+    {
+      "resource_id": "261e1348-a1f2-40e4-a5d3-ac088dd65459",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "test_dev_environment",
+      "path": "tests/integration/real_firebase/test_dev_environment.py"
+    },
+    {
+      "resource_id": "b5a97eeb-5fe8-4b56-81e4-574680f9a603",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "test_prod_smoke",
+      "path": "tests/integration/real_firebase/test_prod_smoke.py"
+    },
+    {
+      "resource_id": "09524f4b-1358-4047-a419-64212adf53f3",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "test_staging_environment",
+      "path": "tests/integration/real_firebase/test_staging_environment.py"
+    },
+    {
+      "resource_id": "c64e5ac0-308d-48ae-af95-9055b601c38e",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "test_admin_tools",
+      "path": "tests/integration/test_admin_tools.py"
+    },
+    {
+      "resource_id": "59661319-073f-4a91-bc6f-132bd2f42701",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "test_azure_tts",
+      "path": "tests/integration/test_azure_tts.py"
+    },
+    {
+      "resource_id": "5d81f8c9-f4cf-4b38-801a-89271a790e3d",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "test_cloud_templates",
+      "path": "tests/integration/test_cloud_templates.py"
+    },
+    {
+      "resource_id": "305a8df5-c1e4-4da4-bd70-2f106401a5e1",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "test_database_backup_restore",
+      "path": "tests/integration/test_database_backup_restore.py"
+    },
+    {
+      "resource_id": "fec8111f-ac0f-467c-ae64-3a985d7af5be",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "test_end_to_end",
+      "path": "tests/integration/test_end_to_end.py"
+    },
+    {
+      "resource_id": "3873f1c4-631c-4402-bdf7-d9d704193df9",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "test_integration",
+      "path": "tests/integration/test_integration.py"
+    },
+    {
+      "resource_id": "53cecb03-8d9f-4578-a5d8-2b2eada7dbb4",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "test_multisyllable_comprehensive",
+      "path": "tests/integration/test_multisyllable_comprehensive.py"
+    },
+    {
+      "resource_id": "7d2c8f07-23b3-4de1-879a-baad479b18dd",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "test_template_features",
+      "path": "tests/integration/test_template_features.py"
+    },
+    {
+      "resource_id": "5d8897b3-1cf6-4244-88b3-045054c88810",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "test_tts_comprehensive",
+      "path": "tests/integration/test_tts_comprehensive.py"
+    },
+    {
+      "resource_id": "eaed5935-d45b-468f-9369-6fbf1c040050",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "test_words_multisyllable",
+      "path": "tests/integration/test_words_multisyllable.py"
+    },
+    {
+      "resource_id": "3b1418ca-6b07-4e5c-993b-2e247aeeb077",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "test_user_story_traceability",
+      "path": "tests/test_user_story_traceability.py"
+    },
+    {
+      "resource_id": "d2fcb2ea-194e-4535-a1f2-aba574db97c1",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "test_phoneme_logic",
+      "path": "tests/unit/test_phoneme_logic.py"
+    },
+    {
+      "resource_id": "04b08801-729b-4ba9-a61d-7b2f719eaf7d",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "test_word_validation",
+      "path": "tests/unit/test_word_validation.py"
+    },
+    {
+      "resource_id": "345b96ac-6975-4e03-86b3-48fc702b75e3",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "workflow_test",
+      "path": "tests/workflow_test.py"
+    }
+  ]
+}

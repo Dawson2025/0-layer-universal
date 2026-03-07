@@ -1,0 +1,156 @@
+{
+  "file_id": "83931f49-56f7-452a-9ef9-045a39633a59",
+  "generated": "2026-03-07T09:05:44Z",
+  "entity_id": "7cab7cdd-b645-40d0-8350-3f3ad1a26705",
+  "entity_name": "layer_3_subx3_feature_system_tts",
+  "entity_path": "layer_-1_research/layer_0_group/layer_0_01_systems/layer_0_better_ai_system/layer_1_group/layer_1_01_features/layer_1_feature_multimodal_system/layer_1_group/layer_1_sub_features/layer_1_sub_feature_audio/layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_laptop_linux_ubuntu/layer_3_group/layer_3_subx3_features/layer_3_subx3_feature_system_tts",
+  "resources": [
+    {
+      "resource_id": "c40dec3f-7a09-4f6c-981c-8201fe38cda7",
+      "id_field": "resource_id",
+      "resource_type": "agnostic",
+      "resource_name": "0AGNOSTIC",
+      "path": "0AGNOSTIC.md"
+    },
+    {
+      "resource_id": "0660b337-de6d-4857-bc2e-57f7f669af03",
+      "id_field": "resource_id",
+      "resource_type": "index",
+      "resource_name": "0INDEX",
+      "path": "0INDEX.md"
+    },
+    {
+      "resource_id": "010d7bfa-8369-4053-af71-01cbf0d1818c",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "README.md"
+    },
+    {
+      "resource_id": "b8c4fabb-05e4-4fee-a6fb-e63e56d78682",
+      "id_field": "resource_id",
+      "resource_type": "agnostic",
+      "resource_name": "0AGNOSTIC",
+      "path": "layer_3_group/layer_3_99_stages/0AGNOSTIC.md"
+    },
+    {
+      "resource_id": "515a212c-0490-4623-9f81-2eb373af02f8",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "stage_index",
+      "path": "layer_3_group/layer_3_99_stages/stage_3_00_stage_registry/stage_index.json"
+    },
+    {
+      "resource_id": "7870ecff-d58b-4726-856e-e93649160644",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "system_tts_requirements",
+      "path": "layer_3_group/layer_3_99_stages/stage_3_01_request_gathering/outputs/system_tts_requirements.md"
+    },
+    {
+      "resource_id": "c6f90a9d-d51e-4ab8-9e47-9ae8379db07a",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "system_tts_research",
+      "path": "layer_3_group/layer_3_99_stages/stage_3_02_research/outputs/system_tts_research.md"
+    },
+    {
+      "resource_id": "f962fea4-d3f6-4ee2-a24b-f1518dc8f271",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "system_tts_instructions",
+      "path": "layer_3_group/layer_3_99_stages/stage_3_03_instructions/outputs/system_tts_instructions.md"
+    },
+    {
+      "resource_id": "12e98370-a924-464a-ab67-e955493aee46",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "cli_speak_command",
+      "path": "layer_3_group/layer_3_99_stages/stage_3_04_design/outputs/organized_by_purpose/cli_speak_command.md"
+    },
+    {
+      "resource_id": "6a583f7b-e0f9-4f9f-862b-1fd7de5a128e",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "highlight_and_speak",
+      "path": "layer_3_group/layer_3_99_stages/stage_3_04_design/outputs/organized_by_purpose/highlight_and_speak.md"
+    },
+    {
+      "resource_id": "aacb9ed6-beed-495a-9b65-71a87e41a5fc",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "kokoro_migration",
+      "path": "layer_3_group/layer_3_99_stages/stage_3_04_design/outputs/organized_by_purpose/kokoro_migration.md"
+    },
+    {
+      "resource_id": "4a2aa811-7c1f-41b9-9ef5-90d546a660a4",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "system_tts_complete_design",
+      "path": "layer_3_group/layer_3_99_stages/stage_3_04_design/outputs/organized_by_purpose/overview/system_tts_complete_design.md"
+    },
+    {
+      "resource_id": "a2709b30-7a0f-42eb-bcb4-121a993c0ed5",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "speech_dispatcher",
+      "path": "layer_3_group/layer_3_99_stages/stage_3_04_design/outputs/organized_by_purpose/speech_dispatcher.md"
+    },
+    {
+      "resource_id": "c02f6461-fc6b-40e6-b91b-13a5fed139a5",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "system_tts_design",
+      "path": "layer_3_group/layer_3_99_stages/stage_3_04_design/outputs/system_tts_design.md"
+    },
+    {
+      "resource_id": "7d113744-c90b-4a8a-84dd-0aff7462bd65",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "system_tts_plan",
+      "path": "layer_3_group/layer_3_99_stages/stage_3_05_planning/outputs/system_tts_plan.md"
+    },
+    {
+      "resource_id": "61fa1db2-4bc4-46ee-ae7e-89891f8ea2fd",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "system_tts_setup",
+      "path": "layer_3_group/layer_3_99_stages/stage_3_06_development/outputs/system_tts_setup.md"
+    },
+    {
+      "resource_id": "8183b0fe-5790-4ac5-91ae-1e529428df08",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "system_tts_test_results",
+      "path": "layer_3_group/layer_3_99_stages/stage_3_07_testing/outputs/system_tts_test_results.md"
+    },
+    {
+      "resource_id": "4e13973b-1702-46d1-bf00-7cc951debbfd",
+      "id_field": "resource_id",
+      "resource_type": "script",
+      "resource_name": "test-system-tts",
+      "path": "layer_3_group/layer_3_99_stages/stage_3_07_testing/outputs/test-system-tts.sh"
+    },
+    {
+      "resource_id": "67d175da-eb63-4ddf-849b-a15f1492031d",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "system_tts_criticism",
+      "path": "layer_3_group/layer_3_99_stages/stage_3_08_criticism/outputs/system_tts_criticism.md"
+    },
+    {
+      "resource_id": "ba1c94e4-1f8d-40ea-a825-51ecd5c27a0d",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "system_tts_fixes",
+      "path": "layer_3_group/layer_3_99_stages/stage_3_09_fixing/outputs/system_tts_fixes.md"
+    },
+    {
+      "resource_id": "53dce2fa-ba50-4f97-a2d0-d5dcb4483b6b",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "system_tts_current_product",
+      "path": "layer_3_group/layer_3_99_stages/stage_3_10_current_product/outputs/system_tts_current_product.md"
+    }
+  ]
+}

@@ -1,0 +1,1234 @@
+{
+  "file_id": "63d852a2-9ee8-4a1d-8892-e5348225f654",
+  "generated": "2026-03-07T09:05:44Z",
+  "entity_id": "d0f66aa7-6b98-4af4-b92b-13a666d9407c",
+  "entity_name": "layer_1_feature_multi_os_multi_machine_system",
+  "entity_path": "layer_-1_research/layer_0_group/layer_0_01_systems/layer_0_better_ai_system/layer_1_group/layer_1_01_features/layer_1_feature_multi_os_multi_machine_system",
+  "resources": [
+    {
+      "resource_id": "ec52fd99-7968-4d55-affe-f33b7e81587c",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": "UBUNTU_HANDOFF",
+      "path": ".0agnostic/01_knowledge/layer_3_group/layer_3_02_manager_handoff_documents/UBUNTU_HANDOFF.md"
+    },
+    {
+      "resource_id": "076467ee-21b7-4440-862d-d6b856aa416e",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": ".0agnostic/01_knowledge/layer_3_group/layer_3_03_sub_layers/sub_layer_3_02_knowledge_system/README.md"
+    },
+    {
+      "resource_id": "c4d38439-6607-4f5a-bf4f-dbc4e6455ea3",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": "STATUS",
+      "path": ".0agnostic/01_knowledge/layer_3_group/layer_3_03_sub_layers/sub_layer_3_02_knowledge_system/STATUS.md"
+    },
+    {
+      "resource_id": "366c25f6-3bf8-4cda-8b5c-970a6a1077c6",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": "SYNCTHING_ALTERNATIVES_RESEARCH",
+      "path": ".0agnostic/01_knowledge/layer_3_group/layer_3_03_sub_layers/sub_layer_3_02_knowledge_system/architecture/SYNCTHING_ALTERNATIVES_RESEARCH.md"
+    },
+    {
+      "resource_id": "0426c24c-d1ef-4d04-bdd5-052aefe7aded",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": "TERMIUS_SSH_ARCHITECTURE",
+      "path": ".0agnostic/01_knowledge/layer_3_group/layer_3_03_sub_layers/sub_layer_3_02_knowledge_system/architecture/TERMIUS_SSH_ARCHITECTURE.md"
+    },
+    {
+      "resource_id": "36a1d0aa-9d9c-4f7d-a0e8-d8b4379c5f59",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": "VNC_BROWSER_ARCHITECTURE",
+      "path": ".0agnostic/01_knowledge/layer_3_group/layer_3_03_sub_layers/sub_layer_3_02_knowledge_system/architecture/VNC_BROWSER_ARCHITECTURE.md"
+    },
+    {
+      "resource_id": "d3385f00-0c2b-4eea-aca1-59422210a6b8",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": "DEVICE_IDS",
+      "path": ".0agnostic/01_knowledge/layer_3_group/layer_3_03_sub_layers/sub_layer_3_05+_setup_dependant/credentials/DEVICE_IDS.md"
+    },
+    {
+      "resource_id": "bfa2b378-20ec-438e-bf3a-3dfd04f22c7c",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": "VPS_CREDENTIALS",
+      "path": ".0agnostic/01_knowledge/layer_3_group/layer_3_03_sub_layers/sub_layer_3_05+_setup_dependant/credentials/VPS_CREDENTIALS.md"
+    },
+    {
+      "resource_id": "bcb8755c-4d81-458c-bf67-6fa233d46e09",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": "UBUNTU_SETUP_INSTRUCTIONS",
+      "path": ".0agnostic/01_knowledge/layer_3_group/layer_3_03_sub_layers/sub_layer_3_05+_setup_dependant/setup/UBUNTU_SETUP_INSTRUCTIONS.md"
+    },
+    {
+      "resource_id": "ccd868f6-75c7-4c20-ae9a-8d26db9f3fea",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": "VPS_SETUP_2026-01-17",
+      "path": ".0agnostic/01_knowledge/layer_3_group/layer_3_03_sub_layers/sub_layer_3_05+_setup_dependant/setup/VPS_SETUP_2026-01-17.md"
+    },
+    {
+      "resource_id": "42f08a39-8d54-4a71-8f29-f06524b94010",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": "00_stage_registry-agent",
+      "path": ".0agnostic/01_knowledge/layer_3_group/layer_3_99_stages/stage_3_00_stage_registry/.claude/agents/00_stage_registry-agent.md"
+    },
+    {
+      "resource_id": "d1b2e122-dd67-4356-ae1f-3793c35f7fe2",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": "00_stage_registry-complete",
+      "path": ".0agnostic/01_knowledge/layer_3_group/layer_3_99_stages/stage_3_00_stage_registry/.claude/commands/00_stage_registry-complete.md"
+    },
+    {
+      "resource_id": "7582c09e-ec4e-4e07-bc06-22d3d2d854a5",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": "00_stage_registry-status",
+      "path": ".0agnostic/01_knowledge/layer_3_group/layer_3_99_stages/stage_3_00_stage_registry/.claude/commands/00_stage_registry-status.md"
+    },
+    {
+      "resource_id": "6917e620-3f25-4321-8b85-b5b27107d51c",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "hooks",
+      "path": ".0agnostic/01_knowledge/layer_3_group/layer_3_99_stages/stage_3_00_stage_registry/.claude/hooks/hooks.json"
+    },
+    {
+      "resource_id": "0863586a-736c-49ba-9899-2cd09b66d8cf",
+      "id_field": "resource_id",
+      "resource_type": "script",
+      "resource_name": "on-stage-enter",
+      "path": ".0agnostic/01_knowledge/layer_3_group/layer_3_99_stages/stage_3_00_stage_registry/.claude/hooks/scripts/on-stage-enter.sh"
+    },
+    {
+      "resource_id": "890b0d07-18d4-4337-987e-474e165fa42e",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": ".0agnostic/01_knowledge/layer_3_group/layer_3_99_stages/stage_3_00_stage_registry/.claude/scripts/README.md"
+    },
+    {
+      "resource_id": "fcf43966-e96e-4ccf-9009-e3c1afb3d974",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "settings",
+      "path": ".0agnostic/01_knowledge/layer_3_group/layer_3_99_stages/stage_3_00_stage_registry/.claude/settings.json"
+    },
+    {
+      "resource_id": "4a72a175-d0f8-4207-b04b-43724c76e644",
+      "id_field": "resource_id",
+      "resource_type": "skill",
+      "resource_name": "SKILL",
+      "path": ".0agnostic/01_knowledge/layer_3_group/layer_3_99_stages/stage_3_00_stage_registry/.claude/skills/00_stage_registry-workflow/SKILL.md"
+    },
+    {
+      "resource_id": "46383945-1129-44ea-847b-50163fe936b8",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": ".0agnostic/01_knowledge/layer_3_group/layer_3_99_stages/stage_3_00_stage_registry/.claude/skills/00_stage_registry-workflow/references/README.md"
+    },
+    {
+      "resource_id": "19ef1fe6-98f9-4759-bba9-06127f5c02f4",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": "01_request_gathering-agent",
+      "path": ".0agnostic/01_knowledge/layer_3_group/layer_3_99_stages/stage_3_01_request_gathering/.claude/agents/01_request_gathering-agent.md"
+    },
+    {
+      "resource_id": "4737fa60-f121-4d87-a87e-c61418c28cfd",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": "01_request_gathering-complete",
+      "path": ".0agnostic/01_knowledge/layer_3_group/layer_3_99_stages/stage_3_01_request_gathering/.claude/commands/01_request_gathering-complete.md"
+    },
+    {
+      "resource_id": "fefeef50-83c3-4d8e-b340-507090d06203",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": "01_request_gathering-status",
+      "path": ".0agnostic/01_knowledge/layer_3_group/layer_3_99_stages/stage_3_01_request_gathering/.claude/commands/01_request_gathering-status.md"
+    },
+    {
+      "resource_id": "babc4714-c772-4783-ac52-015a8dcea872",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "hooks",
+      "path": ".0agnostic/01_knowledge/layer_3_group/layer_3_99_stages/stage_3_01_request_gathering/.claude/hooks/hooks.json"
+    },
+    {
+      "resource_id": "2abf8606-d85b-4423-bb05-1c7f5021ad24",
+      "id_field": "resource_id",
+      "resource_type": "script",
+      "resource_name": "on-stage-enter",
+      "path": ".0agnostic/01_knowledge/layer_3_group/layer_3_99_stages/stage_3_01_request_gathering/.claude/hooks/scripts/on-stage-enter.sh"
+    },
+    {
+      "resource_id": "27da01c1-a485-43db-a651-13c6e0a64e0c",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": ".0agnostic/01_knowledge/layer_3_group/layer_3_99_stages/stage_3_01_request_gathering/.claude/scripts/README.md"
+    },
+    {
+      "resource_id": "77552a25-cee1-41b8-80d1-16227a57d59d",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "settings",
+      "path": ".0agnostic/01_knowledge/layer_3_group/layer_3_99_stages/stage_3_01_request_gathering/.claude/settings.json"
+    },
+    {
+      "resource_id": "e24160ab-2704-4e9c-a341-78ca2104c0d1",
+      "id_field": "resource_id",
+      "resource_type": "skill",
+      "resource_name": "SKILL",
+      "path": ".0agnostic/01_knowledge/layer_3_group/layer_3_99_stages/stage_3_01_request_gathering/.claude/skills/01_request_gathering-workflow/SKILL.md"
+    },
+    {
+      "resource_id": "dd2f3975-dd66-4d99-9eb5-e13caef5930b",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": ".0agnostic/01_knowledge/layer_3_group/layer_3_99_stages/stage_3_01_request_gathering/.claude/skills/01_request_gathering-workflow/references/README.md"
+    },
+    {
+      "resource_id": "fc469eef-cc35-49b9-8686-405c2c169071",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": "1 I am a software engineer looking for the optimal",
+      "path": ".0agnostic/01_knowledge/layer_3_group/layer_3_99_stages/stage_3_01_request_gathering/outputs/1 I am a software engineer looking for the optimal.md"
+    },
+    {
+      "resource_id": "80ab418e-dcb4-4ee7-b433-f59bdf40b8a7",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": "02_research-agent",
+      "path": ".0agnostic/01_knowledge/layer_3_group/layer_3_99_stages/stage_3_02_research/.claude/agents/02_research-agent.md"
+    },
+    {
+      "resource_id": "0219ef88-af1e-4f3b-ba0c-9cbeaae945b8",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": "02_research-complete",
+      "path": ".0agnostic/01_knowledge/layer_3_group/layer_3_99_stages/stage_3_02_research/.claude/commands/02_research-complete.md"
+    },
+    {
+      "resource_id": "05f83901-b357-4fc4-9f5c-31f7c2e32ac2",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": "02_research-status",
+      "path": ".0agnostic/01_knowledge/layer_3_group/layer_3_99_stages/stage_3_02_research/.claude/commands/02_research-status.md"
+    },
+    {
+      "resource_id": "820798ea-4f27-4bfd-8ae3-f138530cf351",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "hooks",
+      "path": ".0agnostic/01_knowledge/layer_3_group/layer_3_99_stages/stage_3_02_research/.claude/hooks/hooks.json"
+    },
+    {
+      "resource_id": "7691ebcd-0b88-49ff-bf7c-339bc2608810",
+      "id_field": "resource_id",
+      "resource_type": "script",
+      "resource_name": "on-stage-enter",
+      "path": ".0agnostic/01_knowledge/layer_3_group/layer_3_99_stages/stage_3_02_research/.claude/hooks/scripts/on-stage-enter.sh"
+    },
+    {
+      "resource_id": "6da9725e-ef41-4b2e-ada6-2c6cbc5698a3",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": ".0agnostic/01_knowledge/layer_3_group/layer_3_99_stages/stage_3_02_research/.claude/scripts/README.md"
+    },
+    {
+      "resource_id": "de1fd1e1-acdb-4ee1-99b4-b1cb06dc5929",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "settings",
+      "path": ".0agnostic/01_knowledge/layer_3_group/layer_3_99_stages/stage_3_02_research/.claude/settings.json"
+    },
+    {
+      "resource_id": "6c6f95b4-2b17-4480-8074-a13a4da869c2",
+      "id_field": "resource_id",
+      "resource_type": "skill",
+      "resource_name": "SKILL",
+      "path": ".0agnostic/01_knowledge/layer_3_group/layer_3_99_stages/stage_3_02_research/.claude/skills/02_research-workflow/SKILL.md"
+    },
+    {
+      "resource_id": "2d54cccf-a771-45a9-89fa-93450c17f13b",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": ".0agnostic/01_knowledge/layer_3_group/layer_3_99_stages/stage_3_02_research/.claude/skills/02_research-workflow/references/README.md"
+    },
+    {
+      "resource_id": "155eafb6-87f5-4e62-8609-03143539fdda",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": "I want to come up with a way that I can use ai ter",
+      "path": ".0agnostic/01_knowledge/layer_3_group/layer_3_99_stages/stage_3_02_research/outputs/I want to come up with a way that I can use ai ter.md"
+    },
+    {
+      "resource_id": "4b6122e9-0c91-4997-be51-7383b96a3b19",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": "Make an implementation doc with sources and links",
+      "path": ".0agnostic/01_knowledge/layer_3_group/layer_3_99_stages/stage_3_02_research/outputs/Make an implementation doc with sources and links.md"
+    },
+    {
+      "resource_id": "18be362b-3552-4421-bb45-9aade6f594f7",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": "SYNC_STATUS_2026-01-09",
+      "path": ".0agnostic/01_knowledge/layer_3_group/layer_3_99_stages/stage_3_02_research/outputs/SYNC_STATUS_2026-01-09.md"
+    },
+    {
+      "resource_id": "7e1f37ee-5d36-4c4c-b602-ff9e188cc10b",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": "SESSION_2026-01-10",
+      "path": ".0agnostic/01_knowledge/layer_3_group/layer_3_99_stages/stage_3_02_research/outputs/chat_history/SESSION_2026-01-10.md"
+    },
+    {
+      "resource_id": "8d5ec73c-71f4-47d3-ac9b-64c1286bc810",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": "SESSION_LOG_2026-01-17",
+      "path": ".0agnostic/01_knowledge/layer_3_group/layer_3_99_stages/stage_3_02_research/outputs/chat_history/SESSION_LOG_2026-01-17.md"
+    },
+    {
+      "resource_id": "09c67ffb-70c4-4769-88b8-dc5f2e3a04af",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": "VPS_RESILIENCE_RECOVERY",
+      "path": ".0agnostic/01_knowledge/layer_3_group/layer_3_99_stages/stage_3_02_research/outputs/screenshots/VPS_RESILIENCE_RECOVERY.md"
+    },
+    {
+      "resource_id": "93c1bde5-992c-4f87-a823-1b2408a6311c",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": "WINDOWS_RESILIENCE_RECOVERY",
+      "path": ".0agnostic/01_knowledge/layer_3_group/layer_3_99_stages/stage_3_02_research/outputs/screenshots/WINDOWS_RESILIENCE_RECOVERY.md"
+    },
+    {
+      "resource_id": "6c68f267-5dc1-419f-9624-0502fa5a9783",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": "03_instructions-agent",
+      "path": ".0agnostic/01_knowledge/layer_3_group/layer_3_99_stages/stage_3_03_instructions/.claude/agents/03_instructions-agent.md"
+    },
+    {
+      "resource_id": "2fe1a869-1ba4-4bc9-80c9-5871394c5f08",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": "03_instructions-complete",
+      "path": ".0agnostic/01_knowledge/layer_3_group/layer_3_99_stages/stage_3_03_instructions/.claude/commands/03_instructions-complete.md"
+    },
+    {
+      "resource_id": "0e76b7bd-99d8-4398-8840-3ccce321a271",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": "03_instructions-status",
+      "path": ".0agnostic/01_knowledge/layer_3_group/layer_3_99_stages/stage_3_03_instructions/.claude/commands/03_instructions-status.md"
+    },
+    {
+      "resource_id": "20875731-f07b-4897-b046-b3552e142c1c",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "hooks",
+      "path": ".0agnostic/01_knowledge/layer_3_group/layer_3_99_stages/stage_3_03_instructions/.claude/hooks/hooks.json"
+    },
+    {
+      "resource_id": "e2f2e041-d88c-434f-82d6-4fbe785642c6",
+      "id_field": "resource_id",
+      "resource_type": "script",
+      "resource_name": "on-stage-enter",
+      "path": ".0agnostic/01_knowledge/layer_3_group/layer_3_99_stages/stage_3_03_instructions/.claude/hooks/scripts/on-stage-enter.sh"
+    },
+    {
+      "resource_id": "d2ab6a62-f49c-4d50-a337-33ea2299bf61",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": ".0agnostic/01_knowledge/layer_3_group/layer_3_99_stages/stage_3_03_instructions/.claude/scripts/README.md"
+    },
+    {
+      "resource_id": "fddb5bcb-c018-4b7e-a1dc-1da8486ba6c4",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "settings",
+      "path": ".0agnostic/01_knowledge/layer_3_group/layer_3_99_stages/stage_3_03_instructions/.claude/settings.json"
+    },
+    {
+      "resource_id": "0e4e6ad0-0275-4325-b3a2-7733b3642690",
+      "id_field": "resource_id",
+      "resource_type": "skill",
+      "resource_name": "SKILL",
+      "path": ".0agnostic/01_knowledge/layer_3_group/layer_3_99_stages/stage_3_03_instructions/.claude/skills/03_instructions-workflow/SKILL.md"
+    },
+    {
+      "resource_id": "ccd8c268-ba39-4c06-a15f-4c5de6f4f251",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": ".0agnostic/01_knowledge/layer_3_group/layer_3_99_stages/stage_3_03_instructions/.claude/skills/03_instructions-workflow/references/README.md"
+    },
+    {
+      "resource_id": "3d335b01-feef-4ca0-a598-dcaee78b716a",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": "DUAL_BOOT_TEST_INSTRUCTIONS",
+      "path": ".0agnostic/01_knowledge/layer_3_group/layer_3_99_stages/stage_3_03_instructions/outputs/DUAL_BOOT_TEST_INSTRUCTIONS.md"
+    },
+    {
+      "resource_id": "b8580110-478f-4bab-bffb-bd6042dafce7",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": "NEXT_STEPS",
+      "path": ".0agnostic/01_knowledge/layer_3_group/layer_3_99_stages/stage_3_03_instructions/outputs/NEXT_STEPS.md"
+    },
+    {
+      "resource_id": "8a972830-833a-43d7-9987-2e69ecaf02b9",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": "START_HERE_UBUNTU",
+      "path": ".0agnostic/01_knowledge/layer_3_group/layer_3_99_stages/stage_3_03_instructions/outputs/START_HERE_UBUNTU.md"
+    },
+    {
+      "resource_id": "010a8c18-5233-4800-b902-af16cc7ee094",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": "UBUNTU_TODO",
+      "path": ".0agnostic/01_knowledge/layer_3_group/layer_3_99_stages/stage_3_03_instructions/outputs/UBUNTU_TODO.md"
+    },
+    {
+      "resource_id": "2726241a-3523-41b0-9415-34826a02643f",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": "05_design-agent",
+      "path": ".0agnostic/01_knowledge/layer_3_group/layer_3_99_stages/stage_3_04_design/.claude/agents/05_design-agent.md"
+    },
+    {
+      "resource_id": "53344ef1-ab4b-49dd-ada8-0a4917f878b9",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": "05_design-complete",
+      "path": ".0agnostic/01_knowledge/layer_3_group/layer_3_99_stages/stage_3_04_design/.claude/commands/05_design-complete.md"
+    },
+    {
+      "resource_id": "2116e6e8-5b40-4120-bbdf-e0579e0446dd",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": "05_design-status",
+      "path": ".0agnostic/01_knowledge/layer_3_group/layer_3_99_stages/stage_3_04_design/.claude/commands/05_design-status.md"
+    },
+    {
+      "resource_id": "394552e0-91aa-4d18-95be-55b2bc0c26ed",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "hooks",
+      "path": ".0agnostic/01_knowledge/layer_3_group/layer_3_99_stages/stage_3_04_design/.claude/hooks/hooks.json"
+    },
+    {
+      "resource_id": "71235abb-189a-45f5-9f2e-bedc16780fd6",
+      "id_field": "resource_id",
+      "resource_type": "script",
+      "resource_name": "on-stage-enter",
+      "path": ".0agnostic/01_knowledge/layer_3_group/layer_3_99_stages/stage_3_04_design/.claude/hooks/scripts/on-stage-enter.sh"
+    },
+    {
+      "resource_id": "c5ffb499-c136-4ee0-bb13-f774ccd9d5e1",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": ".0agnostic/01_knowledge/layer_3_group/layer_3_99_stages/stage_3_04_design/.claude/scripts/README.md"
+    },
+    {
+      "resource_id": "5b43f592-e5fe-46a1-aa0d-4260696869cc",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "settings",
+      "path": ".0agnostic/01_knowledge/layer_3_group/layer_3_99_stages/stage_3_04_design/.claude/settings.json"
+    },
+    {
+      "resource_id": "c62d101d-c742-4657-a6f6-1e3c5a22f7a2",
+      "id_field": "resource_id",
+      "resource_type": "skill",
+      "resource_name": "SKILL",
+      "path": ".0agnostic/01_knowledge/layer_3_group/layer_3_99_stages/stage_3_04_design/.claude/skills/05_design-workflow/SKILL.md"
+    },
+    {
+      "resource_id": "b417a22c-a248-4dea-a7e9-9ef6c50843a0",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": ".0agnostic/01_knowledge/layer_3_group/layer_3_99_stages/stage_3_04_design/.claude/skills/05_design-workflow/references/README.md"
+    },
+    {
+      "resource_id": "835f898b-507f-48c2-8e20-426ee0debeeb",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": "04_planning-agent",
+      "path": ".0agnostic/01_knowledge/layer_3_group/layer_3_99_stages/stage_3_05_planning/.claude/agents/04_planning-agent.md"
+    },
+    {
+      "resource_id": "5fcf8d97-c279-45cd-bb53-59c72b7160f1",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": "04_planning-complete",
+      "path": ".0agnostic/01_knowledge/layer_3_group/layer_3_99_stages/stage_3_05_planning/.claude/commands/04_planning-complete.md"
+    },
+    {
+      "resource_id": "fee21612-65ed-43b0-b8d4-d3ee82a6981d",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": "04_planning-status",
+      "path": ".0agnostic/01_knowledge/layer_3_group/layer_3_99_stages/stage_3_05_planning/.claude/commands/04_planning-status.md"
+    },
+    {
+      "resource_id": "e36b6d9f-cecb-4d41-b528-ed604e08c3f7",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "hooks",
+      "path": ".0agnostic/01_knowledge/layer_3_group/layer_3_99_stages/stage_3_05_planning/.claude/hooks/hooks.json"
+    },
+    {
+      "resource_id": "53e2e770-ed3b-4b62-93d7-2f36ef6eabd7",
+      "id_field": "resource_id",
+      "resource_type": "script",
+      "resource_name": "on-stage-enter",
+      "path": ".0agnostic/01_knowledge/layer_3_group/layer_3_99_stages/stage_3_05_planning/.claude/hooks/scripts/on-stage-enter.sh"
+    },
+    {
+      "resource_id": "761c54e5-ae70-4bab-991c-bf2e9d7a100b",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": ".0agnostic/01_knowledge/layer_3_group/layer_3_99_stages/stage_3_05_planning/.claude/scripts/README.md"
+    },
+    {
+      "resource_id": "05780c03-2b5d-4841-be09-5d043ec4ec3c",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "settings",
+      "path": ".0agnostic/01_knowledge/layer_3_group/layer_3_99_stages/stage_3_05_planning/.claude/settings.json"
+    },
+    {
+      "resource_id": "0c4794c5-5b85-4627-a970-e63a24bdb0f0",
+      "id_field": "resource_id",
+      "resource_type": "skill",
+      "resource_name": "SKILL",
+      "path": ".0agnostic/01_knowledge/layer_3_group/layer_3_99_stages/stage_3_05_planning/.claude/skills/04_planning-workflow/SKILL.md"
+    },
+    {
+      "resource_id": "eebcf8a5-1eaa-4da0-b1c9-fac488d760a2",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": ".0agnostic/01_knowledge/layer_3_group/layer_3_99_stages/stage_3_05_planning/.claude/skills/04_planning-workflow/references/README.md"
+    },
+    {
+      "resource_id": "d6fe0e85-34bc-4a7a-9d0a-e8ca335d2c7b",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": "PLAN_AND_IMPLEMENTATION",
+      "path": ".0agnostic/01_knowledge/layer_3_group/layer_3_99_stages/stage_3_05_planning/outputs/PLAN_AND_IMPLEMENTATION.md"
+    },
+    {
+      "resource_id": "72358dac-b65f-46af-b700-be8c6a2c876a",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": "06_development-agent",
+      "path": ".0agnostic/01_knowledge/layer_3_group/layer_3_99_stages/stage_3_06_development/.claude/agents/06_development-agent.md"
+    },
+    {
+      "resource_id": "c30c5ed2-0220-45b6-bd97-62ce9d0d7b4c",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": "06_development-complete",
+      "path": ".0agnostic/01_knowledge/layer_3_group/layer_3_99_stages/stage_3_06_development/.claude/commands/06_development-complete.md"
+    },
+    {
+      "resource_id": "7c68de25-a01b-4443-9c2b-e04b2e70414a",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": "06_development-status",
+      "path": ".0agnostic/01_knowledge/layer_3_group/layer_3_99_stages/stage_3_06_development/.claude/commands/06_development-status.md"
+    },
+    {
+      "resource_id": "6ef66673-d76a-4257-9792-06b28c5b706c",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "hooks",
+      "path": ".0agnostic/01_knowledge/layer_3_group/layer_3_99_stages/stage_3_06_development/.claude/hooks/hooks.json"
+    },
+    {
+      "resource_id": "7d6a3824-3425-4f44-9d8b-ded423b993b3",
+      "id_field": "resource_id",
+      "resource_type": "script",
+      "resource_name": "on-stage-enter",
+      "path": ".0agnostic/01_knowledge/layer_3_group/layer_3_99_stages/stage_3_06_development/.claude/hooks/scripts/on-stage-enter.sh"
+    },
+    {
+      "resource_id": "668e90a2-86af-40e2-96d6-0c6c4dbc7487",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": ".0agnostic/01_knowledge/layer_3_group/layer_3_99_stages/stage_3_06_development/.claude/scripts/README.md"
+    },
+    {
+      "resource_id": "df918cef-6525-44a2-9c3b-d403c050890e",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "settings",
+      "path": ".0agnostic/01_knowledge/layer_3_group/layer_3_99_stages/stage_3_06_development/.claude/settings.json"
+    },
+    {
+      "resource_id": "f78db289-4062-4954-a934-19d764f7b581",
+      "id_field": "resource_id",
+      "resource_type": "skill",
+      "resource_name": "SKILL",
+      "path": ".0agnostic/01_knowledge/layer_3_group/layer_3_99_stages/stage_3_06_development/.claude/skills/06_development-workflow/SKILL.md"
+    },
+    {
+      "resource_id": "0e26c924-0aeb-4cb6-b72b-80127f0b22ec",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": ".0agnostic/01_knowledge/layer_3_group/layer_3_99_stages/stage_3_06_development/.claude/skills/06_development-workflow/references/README.md"
+    },
+    {
+      "resource_id": "7f04c268-3e86-4ef4-acad-5718e276d4f2",
+      "id_field": "resource_id",
+      "resource_type": "script",
+      "resource_name": "sync-health-monitor",
+      "path": ".0agnostic/01_knowledge/layer_3_group/layer_3_99_stages/stage_3_06_development/outputs/code/sync-health-monitor.sh"
+    },
+    {
+      "resource_id": "aee5c408-492c-4d3d-b6a1-a55e0bd5bdd3",
+      "id_field": "resource_id",
+      "resource_type": "script",
+      "resource_name": "ubuntu-quick-check",
+      "path": ".0agnostic/01_knowledge/layer_3_group/layer_3_99_stages/stage_3_06_development/outputs/code/ubuntu-quick-check.sh"
+    },
+    {
+      "resource_id": "4d5fba5a-4b37-4f1c-8cbb-9cb758e5efae",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": "COMPLETION_SUMMARY",
+      "path": ".0agnostic/01_knowledge/layer_3_group/layer_3_99_stages/stage_3_06_development/outputs/docs/COMPLETION_SUMMARY.md"
+    },
+    {
+      "resource_id": "a08196be-ab3f-4222-a81e-b127e7bf9235",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": "LINUX_RESILIENCE_RECOVERY",
+      "path": ".0agnostic/01_knowledge/layer_3_group/layer_3_99_stages/stage_3_06_development/outputs/docs/LINUX_RESILIENCE_RECOVERY.md"
+    },
+    {
+      "resource_id": "f6ae8ef5-efa1-486c-ac41-b6cb2614228b",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": "PHASE_4_UNREAL_GPU_GUIDE",
+      "path": ".0agnostic/01_knowledge/layer_3_group/layer_3_99_stages/stage_3_06_development/outputs/docs/PHASE_4_UNREAL_GPU_GUIDE.md"
+    },
+    {
+      "resource_id": "f395bf4c-6fcc-4de1-834f-e1cdb698a505",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": "VPS_RESILIENCE_RECOVERY",
+      "path": ".0agnostic/01_knowledge/layer_3_group/layer_3_99_stages/stage_3_06_development/outputs/docs/VPS_RESILIENCE_RECOVERY.md"
+    },
+    {
+      "resource_id": "94c911a5-216f-43c2-8b8c-3db7beb0d432",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": "WINDOWS_RESILIENCE_RECOVERY",
+      "path": ".0agnostic/01_knowledge/layer_3_group/layer_3_99_stages/stage_3_06_development/outputs/docs/WINDOWS_RESILIENCE_RECOVERY.md"
+    },
+    {
+      "resource_id": "178e1e28-627f-4d2b-b66f-aaed0c9800c6",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": "07_testing-agent",
+      "path": ".0agnostic/01_knowledge/layer_3_group/layer_3_99_stages/stage_3_07_testing/.claude/agents/07_testing-agent.md"
+    },
+    {
+      "resource_id": "68c987af-81c4-4d38-a491-50f7436fcba2",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": "07_testing-complete",
+      "path": ".0agnostic/01_knowledge/layer_3_group/layer_3_99_stages/stage_3_07_testing/.claude/commands/07_testing-complete.md"
+    },
+    {
+      "resource_id": "72de713a-c11e-4a52-b00d-154f523fa9be",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": "07_testing-status",
+      "path": ".0agnostic/01_knowledge/layer_3_group/layer_3_99_stages/stage_3_07_testing/.claude/commands/07_testing-status.md"
+    },
+    {
+      "resource_id": "cdb63188-5248-4557-9117-6c6bb373a1f7",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "hooks",
+      "path": ".0agnostic/01_knowledge/layer_3_group/layer_3_99_stages/stage_3_07_testing/.claude/hooks/hooks.json"
+    },
+    {
+      "resource_id": "04c44e5c-9c79-4da4-bd7a-e957e78efd0f",
+      "id_field": "resource_id",
+      "resource_type": "script",
+      "resource_name": "on-stage-enter",
+      "path": ".0agnostic/01_knowledge/layer_3_group/layer_3_99_stages/stage_3_07_testing/.claude/hooks/scripts/on-stage-enter.sh"
+    },
+    {
+      "resource_id": "bcd28b68-1553-4002-ae46-227dd6c3de1a",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": ".0agnostic/01_knowledge/layer_3_group/layer_3_99_stages/stage_3_07_testing/.claude/scripts/README.md"
+    },
+    {
+      "resource_id": "b5c9a63f-261e-4ec0-b46b-76dcaeaa830d",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "settings",
+      "path": ".0agnostic/01_knowledge/layer_3_group/layer_3_99_stages/stage_3_07_testing/.claude/settings.json"
+    },
+    {
+      "resource_id": "01256d85-f2f8-4a74-a42c-9df024993962",
+      "id_field": "resource_id",
+      "resource_type": "skill",
+      "resource_name": "SKILL",
+      "path": ".0agnostic/01_knowledge/layer_3_group/layer_3_99_stages/stage_3_07_testing/.claude/skills/07_testing-workflow/SKILL.md"
+    },
+    {
+      "resource_id": "3b4c2987-8e17-4e62-b649-0ed541184b4a",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": ".0agnostic/01_knowledge/layer_3_group/layer_3_99_stages/stage_3_07_testing/.claude/skills/07_testing-workflow/references/README.md"
+    },
+    {
+      "resource_id": "6b3d519d-9b13-4715-8e9a-889d663cf100",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": "08_criticism-agent",
+      "path": ".0agnostic/01_knowledge/layer_3_group/layer_3_99_stages/stage_3_08_criticism/.claude/agents/08_criticism-agent.md"
+    },
+    {
+      "resource_id": "f3f94d29-b006-4865-98bd-227cdbd5ae9b",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": "08_criticism-complete",
+      "path": ".0agnostic/01_knowledge/layer_3_group/layer_3_99_stages/stage_3_08_criticism/.claude/commands/08_criticism-complete.md"
+    },
+    {
+      "resource_id": "51654e8c-29a6-4265-a584-59158dde1ed3",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": "08_criticism-status",
+      "path": ".0agnostic/01_knowledge/layer_3_group/layer_3_99_stages/stage_3_08_criticism/.claude/commands/08_criticism-status.md"
+    },
+    {
+      "resource_id": "64de92df-a89d-4a25-af04-fef5a8a0300a",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "hooks",
+      "path": ".0agnostic/01_knowledge/layer_3_group/layer_3_99_stages/stage_3_08_criticism/.claude/hooks/hooks.json"
+    },
+    {
+      "resource_id": "2d6296ce-0be1-497c-927c-02538a81fcdb",
+      "id_field": "resource_id",
+      "resource_type": "script",
+      "resource_name": "on-stage-enter",
+      "path": ".0agnostic/01_knowledge/layer_3_group/layer_3_99_stages/stage_3_08_criticism/.claude/hooks/scripts/on-stage-enter.sh"
+    },
+    {
+      "resource_id": "941ec1b7-8be8-4663-a2ba-3d290184faf9",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": ".0agnostic/01_knowledge/layer_3_group/layer_3_99_stages/stage_3_08_criticism/.claude/scripts/README.md"
+    },
+    {
+      "resource_id": "15608ad6-b89c-47e1-9e96-8f306d4d3c2a",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "settings",
+      "path": ".0agnostic/01_knowledge/layer_3_group/layer_3_99_stages/stage_3_08_criticism/.claude/settings.json"
+    },
+    {
+      "resource_id": "d7e73f14-e183-4a46-815c-0f8bc51f08cc",
+      "id_field": "resource_id",
+      "resource_type": "skill",
+      "resource_name": "SKILL",
+      "path": ".0agnostic/01_knowledge/layer_3_group/layer_3_99_stages/stage_3_08_criticism/.claude/skills/08_criticism-workflow/SKILL.md"
+    },
+    {
+      "resource_id": "56222211-dafc-4d41-953a-d94c4d3590c9",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": ".0agnostic/01_knowledge/layer_3_group/layer_3_99_stages/stage_3_08_criticism/.claude/skills/08_criticism-workflow/references/README.md"
+    },
+    {
+      "resource_id": "2a3b52c7-bec0-4daf-a18d-e0ff225bb4bc",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": "09_fixing-agent",
+      "path": ".0agnostic/01_knowledge/layer_3_group/layer_3_99_stages/stage_3_09_fixing/.claude/agents/09_fixing-agent.md"
+    },
+    {
+      "resource_id": "aad75d6a-c623-437a-97b8-8a476e1d7899",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": "09_fixing-complete",
+      "path": ".0agnostic/01_knowledge/layer_3_group/layer_3_99_stages/stage_3_09_fixing/.claude/commands/09_fixing-complete.md"
+    },
+    {
+      "resource_id": "f47ec80f-afeb-4aa1-92e5-d4bf740f2082",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": "09_fixing-status",
+      "path": ".0agnostic/01_knowledge/layer_3_group/layer_3_99_stages/stage_3_09_fixing/.claude/commands/09_fixing-status.md"
+    },
+    {
+      "resource_id": "1d6c33a7-0e62-44c5-8e39-ed01595d27fd",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "hooks",
+      "path": ".0agnostic/01_knowledge/layer_3_group/layer_3_99_stages/stage_3_09_fixing/.claude/hooks/hooks.json"
+    },
+    {
+      "resource_id": "efc4918a-8667-4104-ad1a-3e0cfa5c17b2",
+      "id_field": "resource_id",
+      "resource_type": "script",
+      "resource_name": "on-stage-enter",
+      "path": ".0agnostic/01_knowledge/layer_3_group/layer_3_99_stages/stage_3_09_fixing/.claude/hooks/scripts/on-stage-enter.sh"
+    },
+    {
+      "resource_id": "4dfe7b6b-71c8-432a-af30-e133a34b005a",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": ".0agnostic/01_knowledge/layer_3_group/layer_3_99_stages/stage_3_09_fixing/.claude/scripts/README.md"
+    },
+    {
+      "resource_id": "0890a356-b4c3-4a0d-8bfe-d11f18ef714c",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "settings",
+      "path": ".0agnostic/01_knowledge/layer_3_group/layer_3_99_stages/stage_3_09_fixing/.claude/settings.json"
+    },
+    {
+      "resource_id": "6d838af5-f91d-402b-bb39-59b19e41bec9",
+      "id_field": "resource_id",
+      "resource_type": "skill",
+      "resource_name": "SKILL",
+      "path": ".0agnostic/01_knowledge/layer_3_group/layer_3_99_stages/stage_3_09_fixing/.claude/skills/09_fixing-workflow/SKILL.md"
+    },
+    {
+      "resource_id": "45dce793-46cf-4772-b024-4d7bdf1f07e4",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": ".0agnostic/01_knowledge/layer_3_group/layer_3_99_stages/stage_3_09_fixing/.claude/skills/09_fixing-workflow/references/README.md"
+    },
+    {
+      "resource_id": "310bbfcc-2453-429b-9f5b-b48c4187ee88",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": "10_current_product-agent",
+      "path": ".0agnostic/01_knowledge/layer_3_group/layer_3_99_stages/stage_3_10_current_product/.claude/agents/10_current_product-agent.md"
+    },
+    {
+      "resource_id": "19307e95-8524-491e-8307-ff948312ab7e",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": "10_current_product-complete",
+      "path": ".0agnostic/01_knowledge/layer_3_group/layer_3_99_stages/stage_3_10_current_product/.claude/commands/10_current_product-complete.md"
+    },
+    {
+      "resource_id": "3f0a9c5a-3c57-486d-b255-0ebbc62407c2",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": "10_current_product-status",
+      "path": ".0agnostic/01_knowledge/layer_3_group/layer_3_99_stages/stage_3_10_current_product/.claude/commands/10_current_product-status.md"
+    },
+    {
+      "resource_id": "7ee8ca7c-144e-400e-8c91-a9d96cc59eed",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "hooks",
+      "path": ".0agnostic/01_knowledge/layer_3_group/layer_3_99_stages/stage_3_10_current_product/.claude/hooks/hooks.json"
+    },
+    {
+      "resource_id": "ebf8a0a9-16d5-4741-b405-9d75791dc24b",
+      "id_field": "resource_id",
+      "resource_type": "script",
+      "resource_name": "on-stage-enter",
+      "path": ".0agnostic/01_knowledge/layer_3_group/layer_3_99_stages/stage_3_10_current_product/.claude/hooks/scripts/on-stage-enter.sh"
+    },
+    {
+      "resource_id": "0ecc700b-8f9a-4807-ad00-44e88b9b2a59",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": ".0agnostic/01_knowledge/layer_3_group/layer_3_99_stages/stage_3_10_current_product/.claude/scripts/README.md"
+    },
+    {
+      "resource_id": "2642ef27-1ba4-46f3-b01b-8cf1d4f381ca",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "settings",
+      "path": ".0agnostic/01_knowledge/layer_3_group/layer_3_99_stages/stage_3_10_current_product/.claude/settings.json"
+    },
+    {
+      "resource_id": "a5eb457f-f150-4a7e-af7e-50ae2aa332a0",
+      "id_field": "resource_id",
+      "resource_type": "skill",
+      "resource_name": "SKILL",
+      "path": ".0agnostic/01_knowledge/layer_3_group/layer_3_99_stages/stage_3_10_current_product/.claude/skills/10_current_product-workflow/SKILL.md"
+    },
+    {
+      "resource_id": "4ec3fbd4-57a1-4022-a90d-e10209c3f3e7",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": ".0agnostic/01_knowledge/layer_3_group/layer_3_99_stages/stage_3_10_current_product/.claude/skills/10_current_product-workflow/references/README.md"
+    },
+    {
+      "resource_id": "231715f9-227b-4733-a491-9d137f635884",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": "11_archives-agent",
+      "path": ".0agnostic/01_knowledge/layer_3_group/layer_3_99_stages/stage_3_11_archives/.claude/agents/11_archives-agent.md"
+    },
+    {
+      "resource_id": "6f03b2a8-b743-472e-9a09-30d9e9dc6065",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": "11_archives-complete",
+      "path": ".0agnostic/01_knowledge/layer_3_group/layer_3_99_stages/stage_3_11_archives/.claude/commands/11_archives-complete.md"
+    },
+    {
+      "resource_id": "317713d9-aa17-46f7-8a9f-4de51aef714e",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": "11_archives-status",
+      "path": ".0agnostic/01_knowledge/layer_3_group/layer_3_99_stages/stage_3_11_archives/.claude/commands/11_archives-status.md"
+    },
+    {
+      "resource_id": "3ec70505-e27c-4787-9630-5c11c5f24222",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "hooks",
+      "path": ".0agnostic/01_knowledge/layer_3_group/layer_3_99_stages/stage_3_11_archives/.claude/hooks/hooks.json"
+    },
+    {
+      "resource_id": "e7c6295c-392f-4526-8f70-eea9b0b1fa2b",
+      "id_field": "resource_id",
+      "resource_type": "script",
+      "resource_name": "on-stage-enter",
+      "path": ".0agnostic/01_knowledge/layer_3_group/layer_3_99_stages/stage_3_11_archives/.claude/hooks/scripts/on-stage-enter.sh"
+    },
+    {
+      "resource_id": "e2a6b017-7e32-4737-937c-9613d0660167",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": ".0agnostic/01_knowledge/layer_3_group/layer_3_99_stages/stage_3_11_archives/.claude/scripts/README.md"
+    },
+    {
+      "resource_id": "29a87bbf-01d3-4878-a97c-c227fab1623d",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "settings",
+      "path": ".0agnostic/01_knowledge/layer_3_group/layer_3_99_stages/stage_3_11_archives/.claude/settings.json"
+    },
+    {
+      "resource_id": "49408ef4-3378-46a2-8e63-53bfaf91061f",
+      "id_field": "resource_id",
+      "resource_type": "skill",
+      "resource_name": "SKILL",
+      "path": ".0agnostic/01_knowledge/layer_3_group/layer_3_99_stages/stage_3_11_archives/.claude/skills/11_archives-workflow/SKILL.md"
+    },
+    {
+      "resource_id": "b27e3daa-d0ba-4a13-abb8-0b88064a0c5a",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": ".0agnostic/01_knowledge/layer_3_group/layer_3_99_stages/stage_3_11_archives/.claude/skills/11_archives-workflow/references/README.md"
+    },
+    {
+      "resource_id": "7f3e2fab-ce31-40b1-898a-2060c2db25ed",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "status_1",
+      "path": ".0agnostic/01_knowledge/layer_3_group/layer_3_99_stages/status_1.json"
+    },
+    {
+      "resource_id": "49dc9bfb-6c13-4c37-80b2-c5837a49f9bf",
+      "id_field": "resource_id",
+      "resource_type": "agnostic",
+      "resource_name": "0AGNOSTIC",
+      "path": "0AGNOSTIC.md"
+    },
+    {
+      "resource_id": "6c13687f-8f54-461e-abfb-30d291375a76",
+      "id_field": "resource_id",
+      "resource_type": "agnostic",
+      "resource_name": "0AGNOSTIC",
+      "path": "layer_0_group/layer_0_99_stages/0AGNOSTIC.md"
+    },
+    {
+      "resource_id": "b3bfffc9-2d42-400d-85f8-17844d9da2e8",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "layer_0_99_stages_orchestrator.gab",
+      "path": "layer_0_group/layer_0_99_stages/layer_0_99_stages_orchestrator.gab.jsonld"
+    },
+    {
+      "resource_id": "4ad67646-1b46-4cb5-9c3e-09d60e80e030",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "stage_0_00_stage_registry_agent",
+      "path": "layer_0_group/layer_0_99_stages/stage_0_00_stage_registry/stage_0_00_stage_registry_agent.jsonld"
+    },
+    {
+      "resource_id": "b6ed2e6d-0cf6-4c83-92b9-d0304be19090",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "stage_index",
+      "path": "layer_0_group/layer_0_99_stages/stage_0_00_stage_registry/stage_index.json"
+    },
+    {
+      "resource_id": "16d9ed0a-dec1-4d1c-befc-c9e882d5d867",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "stage_0_01_request_gathering_agent",
+      "path": "layer_0_group/layer_0_99_stages/stage_0_01_request_gathering/stage_0_01_request_gathering_agent.jsonld"
+    },
+    {
+      "resource_id": "213f6067-c5d0-4c83-adbc-55fd6c061cd8",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "stage_0_02_research_agent",
+      "path": "layer_0_group/layer_0_99_stages/stage_0_02_research/stage_0_02_research_agent.jsonld"
+    },
+    {
+      "resource_id": "89b3550d-cd61-47df-87f9-6ced593a643d",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "stage_0_03_instructions_agent",
+      "path": "layer_0_group/layer_0_99_stages/stage_0_03_instructions/stage_0_03_instructions_agent.jsonld"
+    },
+    {
+      "resource_id": "36ccde99-00f7-40e5-acf4-65638c733859",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "stage_0_05_design_agent",
+      "path": "layer_0_group/layer_0_99_stages/stage_0_04_design/stage_0_05_design_agent.jsonld"
+    },
+    {
+      "resource_id": "e78163f5-112f-440f-b2d1-8df5599bbf16",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "stage_0_04_planning_agent",
+      "path": "layer_0_group/layer_0_99_stages/stage_0_05_planning/stage_0_04_planning_agent.jsonld"
+    },
+    {
+      "resource_id": "3f9ca5bd-6088-45e8-af8f-48f113c48d69",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "stage_0_06_development_agent",
+      "path": "layer_0_group/layer_0_99_stages/stage_0_06_development/stage_0_06_development_agent.jsonld"
+    },
+    {
+      "resource_id": "9d74d461-1a84-4a6a-ab62-6f0326df6d80",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "stage_0_07_testing_agent",
+      "path": "layer_0_group/layer_0_99_stages/stage_0_07_testing/stage_0_07_testing_agent.jsonld"
+    },
+    {
+      "resource_id": "dbf9dbac-be3c-4efd-880d-f19fa513c5e0",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "stage_0_08_criticism_agent",
+      "path": "layer_0_group/layer_0_99_stages/stage_0_08_criticism/stage_0_08_criticism_agent.jsonld"
+    },
+    {
+      "resource_id": "f87a9108-c2d5-4991-8218-eecd7c132c09",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "stage_0_09_fixing_agent",
+      "path": "layer_0_group/layer_0_99_stages/stage_0_09_fixing/stage_0_09_fixing_agent.jsonld"
+    },
+    {
+      "resource_id": "b461e830-b6da-4a06-b47a-e8b17610e248",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "stage_0_10_current_product_agent",
+      "path": "layer_0_group/layer_0_99_stages/stage_0_10_current_product/stage_0_10_current_product_agent.jsonld"
+    },
+    {
+      "resource_id": "ab53c762-49d1-44b0-8527-370c04fb0a07",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "stage_0_11_archives_agent",
+      "path": "layer_0_group/layer_0_99_stages/stage_0_11_archives/stage_0_11_archives_agent.jsonld"
+    },
+    {
+      "resource_id": "65770f5e-3ca8-4d30-88b6-a363c48785ab",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "status_0",
+      "path": "layer_0_group/layer_0_99_stages/status_0.json"
+    },
+    {
+      "resource_id": "dedaba5f-5e2a-4296-9ea6-e6a14cdf1c52",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "HIERARCHY_ADOPTION_CHECKLIST",
+      "path": "layer_0_group/layer_2_03_sub_layers/sub_layer_2_01_knowledge_system/overview/production_protocols/HIERARCHY_ADOPTION_CHECKLIST.md"
+    },
+    {
+      "resource_id": "cc46c939-33c9-4c60-b689-540a4d20445e",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "HIERARCHY_QUICK_START",
+      "path": "layer_0_group/layer_2_03_sub_layers/sub_layer_2_01_knowledge_system/overview/production_protocols/HIERARCHY_QUICK_START.md"
+    },
+    {
+      "resource_id": "719c2a1b-b045-49de-9c2c-5b7a635a8f10",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "MIGRATION_GUIDE",
+      "path": "layer_0_group/layer_2_03_sub_layers/sub_layer_2_01_knowledge_system/overview/production_protocols/MIGRATION_GUIDE.md"
+    },
+    {
+      "resource_id": "c2c08713-b7e4-4bb7-8c1e-7eac4503822f",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_0_group/layer_2_03_sub_layers/sub_layer_2_01_knowledge_system/overview/production_protocols/README.md"
+    },
+    {
+      "resource_id": "1c84b14a-bc0a-497b-aca2-25f622dad7ec",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "context_loading_protocol",
+      "path": "layer_0_group/layer_2_03_sub_layers/sub_layer_2_01_knowledge_system/overview/production_protocols/context_loading_protocol.md"
+    },
+    {
+      "resource_id": "83cbdd61-78fc-4337-a82a-0d81069ce7d8",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "context_quality_checklist",
+      "path": "layer_0_group/layer_2_03_sub_layers/sub_layer_2_01_knowledge_system/overview/production_protocols/context_quality_checklist.md"
+    },
+    {
+      "resource_id": "b25aec2e-207e-4282-985f-f32093833528",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "features_init_prompt",
+      "path": "layer_0_group/layer_2_03_sub_layers/sub_layer_2_01_knowledge_system/overview/production_protocols/features_init_prompt.md"
+    },
+    {
+      "resource_id": "018728a9-86f3-49d9-879a-f3593df372e5",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "universal_init_prompt",
+      "path": "layer_0_group/layer_2_03_sub_layers/sub_layer_2_01_knowledge_system/overview/production_protocols/universal_init_prompt.md"
+    },
+    {
+      "resource_id": "34203b6d-a4d9-4912-b71c-e28a69b01cfd",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "what_to_do_next",
+      "path": "layer_0_group/layer_2_03_sub_layers/sub_layer_2_01_knowledge_system/overview/production_protocols/what_to_do_next.md"
+    },
+    {
+      "resource_id": "d914123c-ae6f-41a8-b1bb-aae8deb5a255",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "01_setup_problems",
+      "path": "layer_0_group/layer_2_03_sub_layers/sub_layer_2_01_knowledge_system/things_learned/01_setup_problems.md"
+    },
+    {
+      "resource_id": "23a87d1d-163d-41e0-ba30-e38722c653ec",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "02_naming_restructure_proposal",
+      "path": "layer_0_group/layer_2_03_sub_layers/sub_layer_2_01_knowledge_system/things_learned/02_naming_restructure_proposal.md"
+    },
+    {
+      "resource_id": "2a9f07ba-695c-4a5e-800d-8a371d4f24ad",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "REQUEST_001_TTS_STT_SYSTEM",
+      "path": "layer_0_group/layer_2_99_stages/stage_2_01_request_gathering/outputs/REQUEST_001_TTS_STT_SYSTEM.md"
+    },
+    {
+      "resource_id": "fdeaaaa1-8427-4ca0-9722-12a118363a2f",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "full_request",
+      "path": "layer_0_group/layer_2_99_stages/stage_2_01_request_gathering/outputs/overview/full_request.md"
+    },
+    {
+      "resource_id": "2d9c5fbb-526f-47e6-ad7f-49d985f12fdf",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "spec",
+      "path": "layer_0_group/layer_2_99_stages/stage_2_01_request_gathering/outputs/request_01_consolidate_cross_os_rules/spec.md"
+    },
+    {
+      "resource_id": "ee2b54be-017c-4ce7-b819-5b55baed5cd6",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "spec",
+      "path": "layer_0_group/layer_2_99_stages/stage_2_01_request_gathering/outputs/request_02_create_setup_validation_scripts/spec.md"
+    },
+    {
+      "resource_id": "35008510-5538-4055-ba80-6471ab436839",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "spec",
+      "path": "layer_0_group/layer_2_99_stages/stage_2_01_request_gathering/outputs/request_03_automate_environment_detection/spec.md"
+    },
+    {
+      "resource_id": "b4639622-743b-4ec4-a510-aec8ba8279a2",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "spec",
+      "path": "layer_0_group/layer_2_99_stages/stage_2_01_request_gathering/outputs/request_04_archive_legacy_code/spec.md"
+    },
+    {
+      "resource_id": "37516164-647f-4849-ad76-7b229bd52950",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "spec",
+      "path": "layer_0_group/layer_2_99_stages/stage_2_01_request_gathering/outputs/request_05_clarify_os_specific_paths/spec.md"
+    },
+    {
+      "resource_id": "006a197e-fb23-45e8-be4a-fbf823b1a396",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "layer_0_orchestrator.gab",
+      "path": "layer_0_orchestrator.gab.jsonld"
+    }
+  ]
+}

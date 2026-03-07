@@ -1,0 +1,135 @@
+{
+  "file_id": "49275397-8e49-4f96-bbf2-3d8e78c1c134",
+  "generated": "2026-03-07T09:05:43Z",
+  "entity_id": "1a361090-4fe8-46d0-93d6-078c98fa8a3b",
+  "entity_name": "layer_3_subx3_feature_recursive_coordination",
+  "entity_path": "layer_-1_research/layer_0_group/layer_0_01_systems/layer_0_better_ai_system/layer_1_group/layer_1_01_features/layer_1_feature_layer_stage_system/layer_1_group/layer_1_sub_features/layer_1_sub_feature_agent_organization_system/layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_orchestration/layer_3_group/layer_3_subx3_features/layer_3_subx3_feature_recursive_coordination",
+  "resources": [
+    {
+      "resource_id": "bb368acc-89cc-4fcd-a77e-bd7d19bcbb0f",
+      "id_field": "resource_id",
+      "resource_type": "agnostic",
+      "resource_name": "0AGNOSTIC",
+      "path": "0AGNOSTIC.md"
+    },
+    {
+      "resource_id": "1af73c8c-fd33-4cbf-ad64-360431b173bd",
+      "id_field": "resource_id",
+      "resource_type": "agnostic",
+      "resource_name": "0AGNOSTIC",
+      "path": "layer_3_group/layer_3_99_stages/0AGNOSTIC.md"
+    },
+    {
+      "resource_id": "dab0f398-e29c-49dd-8cf9-1665dc7057d2",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "layer_3_99_stages_orchestrator.gab",
+      "path": "layer_3_group/layer_3_99_stages/layer_3_99_stages_orchestrator.gab.jsonld"
+    },
+    {
+      "resource_id": "cb6f7fb1-9a7c-4280-860d-3c1220f5dd9d",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "stage_3_00_stage_registry_agent",
+      "path": "layer_3_group/layer_3_99_stages/stage_3_00_stage_registry/stage_3_00_stage_registry_agent.jsonld"
+    },
+    {
+      "resource_id": "8d9883cf-dba6-4cee-a125-06615b4bf885",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "stage_index",
+      "path": "layer_3_group/layer_3_99_stages/stage_3_00_stage_registry/stage_index.json"
+    },
+    {
+      "resource_id": "94e9730d-4a02-44d5-aa4a-675e3f04fbd0",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "stage_3_01_request_gathering_agent",
+      "path": "layer_3_group/layer_3_99_stages/stage_3_01_request_gathering/stage_3_01_request_gathering_agent.jsonld"
+    },
+    {
+      "resource_id": "43abed37-c2d9-4ae4-9f11-991046ab1d4a",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "stage_3_02_research_agent",
+      "path": "layer_3_group/layer_3_99_stages/stage_3_02_research/stage_3_02_research_agent.jsonld"
+    },
+    {
+      "resource_id": "ef678081-bc5f-4bea-ad82-c77ab375b9dd",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "stage_3_03_instructions_agent",
+      "path": "layer_3_group/layer_3_99_stages/stage_3_03_instructions/stage_3_03_instructions_agent.jsonld"
+    },
+    {
+      "resource_id": "4c0cb161-3235-4e5c-85f1-3e05b9300875",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "stage_3_05_design_agent",
+      "path": "layer_3_group/layer_3_99_stages/stage_3_04_design/stage_3_05_design_agent.jsonld"
+    },
+    {
+      "resource_id": "3ad8b4e6-5959-42ee-98aa-70b49e540135",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "stage_3_04_planning_agent",
+      "path": "layer_3_group/layer_3_99_stages/stage_3_05_planning/stage_3_04_planning_agent.jsonld"
+    },
+    {
+      "resource_id": "e72e29e2-de3f-4f9c-83ed-0ba0de13cc9c",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "stage_3_06_development_agent",
+      "path": "layer_3_group/layer_3_99_stages/stage_3_06_development/stage_3_06_development_agent.jsonld"
+    },
+    {
+      "resource_id": "cb8c7503-b237-4cf9-90fc-dd2d70328221",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "stage_3_07_testing_agent",
+      "path": "layer_3_group/layer_3_99_stages/stage_3_07_testing/stage_3_07_testing_agent.jsonld"
+    },
+    {
+      "resource_id": "332bdf99-94a2-4441-a05e-d1e779733378",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "stage_3_08_criticism_agent",
+      "path": "layer_3_group/layer_3_99_stages/stage_3_08_criticism/stage_3_08_criticism_agent.jsonld"
+    },
+    {
+      "resource_id": "70657563-f86d-4e48-b9f9-b08a82ff5210",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "stage_3_09_fixing_agent",
+      "path": "layer_3_group/layer_3_99_stages/stage_3_09_fixing/stage_3_09_fixing_agent.jsonld"
+    },
+    {
+      "resource_id": "105a5da2-8458-4720-b9e1-f2350710fa9c",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "stage_3_10_current_product_agent",
+      "path": "layer_3_group/layer_3_99_stages/stage_3_10_current_product/stage_3_10_current_product_agent.jsonld"
+    },
+    {
+      "resource_id": "007af772-239e-45b9-ab74-a6042cb7e19a",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "stage_3_11_archives_agent",
+      "path": "layer_3_group/layer_3_99_stages/stage_3_11_archives/stage_3_11_archives_agent.jsonld"
+    },
+    {
+      "resource_id": "e2d2d5da-a9b3-439d-b715-45b7b0808970",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "status_3",
+      "path": "layer_3_group/layer_3_99_stages/status_3.json"
+    },
+    {
+      "resource_id": "7fd7c2f2-4b83-431a-bce9-af96e4370a2a",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "layer_3_orchestrator.gab",
+      "path": "layer_3_orchestrator.gab.jsonld"
+    }
+  ]
+}

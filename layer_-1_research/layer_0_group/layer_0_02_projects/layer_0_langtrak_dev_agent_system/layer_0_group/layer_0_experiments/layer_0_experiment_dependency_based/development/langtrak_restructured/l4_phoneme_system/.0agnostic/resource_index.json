@@ -1,0 +1,205 @@
+{
+  "file_id": "c260b9c7-5437-400e-9da4-34f3eec21b1f",
+  "generated": "2026-03-07T09:05:44Z",
+  "entity_id": "e39ab9de-988c-4fa9-b045-d0b8c8a78ea0",
+  "entity_name": "l4_phoneme_system",
+  "entity_path": "layer_-1_research/layer_0_group/layer_0_02_projects/layer_0_langtrak_dev_agent_system/layer_0_group/layer_0_experiments/layer_0_experiment_dependency_based/development/langtrak_restructured/l4_phoneme_system",
+  "resources": [
+    {
+      "resource_id": "e009df1d-2c09-4b6d-be37-6d3d5d0374f7",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "instructions",
+      "path": ".codex/instructions.md"
+    },
+    {
+      "resource_id": "b6970a54-8971-4fcd-97f0-567337d95127",
+      "id_field": "resource_id",
+      "resource_type": "agnostic",
+      "resource_name": "0AGNOSTIC",
+      "path": "0AGNOSTIC.md"
+    },
+    {
+      "resource_id": "c58086f5-9263-4be9-b3a0-e3a1a06d658f",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "__init__",
+      "path": "__init__.py"
+    },
+    {
+      "resource_id": "8683ddc3-c6a7-49d4-b5ab-ed4f2b0a095c",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "__init__",
+      "path": "admin/__init__.py"
+    },
+    {
+      "resource_id": "e1e81730-f87d-422e-9b75-de47538b72e5",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "phoneme_management",
+      "path": "admin/phoneme_management.py"
+    },
+    {
+      "resource_id": "37b11377-87c7-454b-91df-90a78c3f4628",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "__init__",
+      "path": "core/__init__.py"
+    },
+    {
+      "resource_id": "f4ad06dc-6dbe-4f07-aa71-ed7edd0145c2",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "display",
+      "path": "core/display.py"
+    },
+    {
+      "resource_id": "424af4e3-cb66-4b7f-95c2-be104859a1b9",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "menu",
+      "path": "core/menu.py"
+    },
+    {
+      "resource_id": "3fee70a3-9f5c-4587-84f1-bf9e9f6e8e72",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "phonemes_full",
+      "path": "core/templates/phonemes_full.html"
+    },
+    {
+      "resource_id": "ba0b2f8f-8bd0-4005-9edb-900ff28ee61d",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "phonemes_menu",
+      "path": "core/templates/phonemes_menu.html"
+    },
+    {
+      "resource_id": "fbfc8f2f-dd9c-482a-bd99-e547fec5b3b1",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "__init__",
+      "path": "core/tests/__init__.py"
+    },
+    {
+      "resource_id": "d836e5ea-12d7-4f6d-936f-660044b2b49d",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "test_clean_display",
+      "path": "core/tests/test_clean_display.py"
+    },
+    {
+      "resource_id": "935b8273-9df6-418f-97d3-b688b7475b94",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "test_enhanced_all_types",
+      "path": "core/tests/test_enhanced_all_types.py"
+    },
+    {
+      "resource_id": "7bce14ae-bd77-4082-bd5b-59bec0ccda57",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "test_enhanced_phonemes",
+      "path": "core/tests/test_enhanced_phonemes.py"
+    },
+    {
+      "resource_id": "9760059e-12a1-4601-a272-70735f56cf1d",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "test_hierarchy_display",
+      "path": "core/tests/test_hierarchy_display.py"
+    },
+    {
+      "resource_id": "017e09bf-d42b-443a-a37f-8af98e7151aa",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "test_nucleus_bc",
+      "path": "core/tests/test_nucleus_bc.py"
+    },
+    {
+      "resource_id": "7bab65b8-f090-4add-a8eb-d5dea73c6a53",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "test_phoneme_management",
+      "path": "core/tests/test_phoneme_management.py"
+    },
+    {
+      "resource_id": "61318d38-bdd7-432a-8546-5c13907aeef3",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "test_side_by_side",
+      "path": "core/tests/test_side_by_side.py"
+    },
+    {
+      "resource_id": "f5678374-9c64-48f3-9c5c-35243b41dc7a",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "test_user_story_integration",
+      "path": "core/tests/test_user_story_integration.py"
+    },
+    {
+      "resource_id": "e06ac308-760d-4180-ba33-504eaf98ef27",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "__init__",
+      "path": "display/__init__.py"
+    },
+    {
+      "resource_id": "c96b1982-95d6-4c58-9478-c2f37bd04fca",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "__init__",
+      "path": "frequency/__init__.py"
+    },
+    {
+      "resource_id": "5fc4e7c2-e58e-46a2-8cfa-d4414662a27a",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "__init__",
+      "path": "phonotactics/__init__.py"
+    },
+    {
+      "resource_id": "05558b0f-74e6-40b9-97b1-aa7ad994eb74",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "phonotactics",
+      "path": "phonotactics/phonotactics.py"
+    },
+    {
+      "resource_id": "586535c3-5916-43f3-b4b5-feab22abb52a",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "routes",
+      "path": "routes.py"
+    },
+    {
+      "resource_id": "cb3c0a0c-c9eb-4a90-b999-ad8a6c75e82f",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "__init__",
+      "path": "seed/__init__.py"
+    },
+    {
+      "resource_id": "08f0a7a2-f5c0-4b18-8fa9-2cefb085d412",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "phoneme_seed",
+      "path": "seed/phoneme_seed.py"
+    },
+    {
+      "resource_id": "d5253565-b55a-4309-a550-bf0d6fbc2b68",
+      "id_field": "resource_id",
+      "resource_type": "index",
+      "resource_name": "0INDEX",
+      "path": "stages/0INDEX.md"
+    },
+    {
+      "resource_id": "9f38a78a-ebe7-462d-88bf-e090734041bd",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "__init__",
+      "path": "tts/__init__.py"
+    }
+  ]
+}

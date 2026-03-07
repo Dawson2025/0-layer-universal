@@ -1,0 +1,275 @@
+{
+  "file_id": "9532ceb6-fe99-4ebe-9679-497568189880",
+  "generated": "2026-03-07T09:05:44Z",
+  "entity_id": "378da9b4-0a65-4467-8869-9bc3fa8717b4",
+  "entity_name": "l6_language_content",
+  "entity_path": "layer_-1_research/layer_0_group/layer_0_02_projects/layer_0_langtrak_dev_agent_system/layer_0_group/layer_0_experiments/layer_0_experiment_dependency_based/development/langtrak_restructured/l6_language_content",
+  "resources": [
+    {
+      "resource_id": "5863407e-9d2c-4cf8-9ae4-0aac12651b7a",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "instructions",
+      "path": ".codex/instructions.md"
+    },
+    {
+      "resource_id": "1e176ffa-1d49-4aa5-9633-42471e5651b4",
+      "id_field": "resource_id",
+      "resource_type": "agnostic",
+      "resource_name": "0AGNOSTIC",
+      "path": "0AGNOSTIC.md"
+    },
+    {
+      "resource_id": "3d3290a7-f602-447e-ae38-7c4642fab8b1",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "__init__",
+      "path": "__init__.py"
+    },
+    {
+      "resource_id": "43e5d063-bb12-4ed1-8cbe-5546d37a6c3b",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "routes",
+      "path": "routes.py"
+    },
+    {
+      "resource_id": "15f688ad-9a3e-4e12-b301-f14fae6dfec7",
+      "id_field": "resource_id",
+      "resource_type": "index",
+      "resource_name": "0INDEX",
+      "path": "stages/0INDEX.md"
+    },
+    {
+      "resource_id": "b56362bf-b713-4de0-a5bb-e38ae39697eb",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "__init__",
+      "path": "suggestions/__init__.py"
+    },
+    {
+      "resource_id": "59d8c33c-3c07-4182-8e97-fbe9b22d3268",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "__init__",
+      "path": "suggestions/tests/__init__.py"
+    },
+    {
+      "resource_id": "5f355d60-adf6-47af-8b0f-9d51d9c8327a",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "test_conflict_detection",
+      "path": "suggestions/tests/test_conflict_detection.py"
+    },
+    {
+      "resource_id": "c47e3d97-6c27-4a21-9c28-e4762f180717",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "test_english_conflict_filter",
+      "path": "suggestions/tests/test_english_conflict_filter.py"
+    },
+    {
+      "resource_id": "ca591186-964c-4734-9ff7-486b5a7a4ee1",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "test_extend_feature",
+      "path": "suggestions/tests/test_extend_feature.py"
+    },
+    {
+      "resource_id": "ef0c8697-b1b6-4c62-b6f2-193fc021c6f4",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "test_improved_suggestions",
+      "path": "suggestions/tests/test_improved_suggestions.py"
+    },
+    {
+      "resource_id": "4a5bdbf9-af67-4760-ba96-2361be1a36a3",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "test_suggestion_limit_fix",
+      "path": "suggestions/tests/test_suggestion_limit_fix.py"
+    },
+    {
+      "resource_id": "3d955419-2c6b-4c2f-9eca-b60c4503413a",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "test_suggestion_method",
+      "path": "suggestions/tests/test_suggestion_method.py"
+    },
+    {
+      "resource_id": "cebfdde8-10db-4356-87b4-e9bf6a05df21",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "test_tie_breaking",
+      "path": "suggestions/tests/test_tie_breaking.py"
+    },
+    {
+      "resource_id": "64418d9f-6c8f-4b06-ab77-cba644ac995e",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "__init__",
+      "path": "tts/__init__.py"
+    },
+    {
+      "resource_id": "2995d41b-35f5-4ab8-b32f-bc241b648e05",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "__init__",
+      "path": "video/__init__.py"
+    },
+    {
+      "resource_id": "5efc5fd7-b261-4ee3-9abb-2c484ac5fd7a",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "__init__",
+      "path": "video/tests/__init__.py"
+    },
+    {
+      "resource_id": "1595fac7-b54d-4ffb-b607-4658e4ffbcdd",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "test_video_features",
+      "path": "video/tests/test_video_features.py"
+    },
+    {
+      "resource_id": "8f41721e-2b47-4658-8270-0f382205936f",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "__init__",
+      "path": "words/__init__.py"
+    },
+    {
+      "resource_id": "8e55e569-e8c2-46bb-a129-340419eee5cf",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "api",
+      "path": "words/api.py"
+    },
+    {
+      "resource_id": "6b93c65d-e778-4797-b401-e3bedaf00e76",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "api_operations",
+      "path": "words/api_operations.py"
+    },
+    {
+      "resource_id": "7846ec12-a2c3-4054-aa1c-f6444fb08a99",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "creation",
+      "path": "words/creation.py"
+    },
+    {
+      "resource_id": "1242ec4c-a00b-4157-8d04-287d691a0206",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "display",
+      "path": "words/display.py"
+    },
+    {
+      "resource_id": "01e5a6bd-fcef-4da0-8596-319d5d185ecd",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "editing",
+      "path": "words/editing.py"
+    },
+    {
+      "resource_id": "e12b7b2b-c40b-497f-9bdc-364f214025c6",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "search",
+      "path": "words/search.py"
+    },
+    {
+      "resource_id": "12e38970-1033-4ddd-9382-e93d70742e53",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "word_creation_menu",
+      "path": "words/templates/words/word_creation_menu.html"
+    },
+    {
+      "resource_id": "42247e88-88b2-4025-b806-76cdf9023542",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "word_creation_table",
+      "path": "words/templates/words/word_creation_table.html"
+    },
+    {
+      "resource_id": "423cf22c-809f-4322-86f6-7be379e98aa5",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "word_edit",
+      "path": "words/templates/words/word_edit.html"
+    },
+    {
+      "resource_id": "f95f44da-a6d7-46e3-960a-0eabb10ce12d",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "word_lookup",
+      "path": "words/templates/words/word_lookup.html"
+    },
+    {
+      "resource_id": "9c8c55b5-f258-461e-a0c2-2dd7db320643",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "words_display",
+      "path": "words/templates/words/words_display.html"
+    },
+    {
+      "resource_id": "a02c4466-d6a3-40d6-a171-d6a3886f2f9d",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "words_menu",
+      "path": "words/templates/words/words_menu.html"
+    },
+    {
+      "resource_id": "de742e12-5f8f-4872-a37f-1b541177fea0",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "__init__",
+      "path": "words/tests/__init__.py"
+    },
+    {
+      "resource_id": "d5e01957-03f3-4c1d-aeb8-92d3ee8fd8f2",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "test_all_fields_search",
+      "path": "words/tests/test_all_fields_search.py"
+    },
+    {
+      "resource_id": "a1c633f8-3acf-429b-b8bd-d410856defc9",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "test_expanded_english_words",
+      "path": "words/tests/test_expanded_english_words.py"
+    },
+    {
+      "resource_id": "9880c0a7-62ab-4baf-b5ef-ffc93d4af1be",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "test_json_schema",
+      "path": "words/tests/test_json_schema.py"
+    },
+    {
+      "resource_id": "2c8ba081-094c-47ed-bfe8-9a52573e00e8",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "test_letter_based_filtering",
+      "path": "words/tests/test_letter_based_filtering.py"
+    },
+    {
+      "resource_id": "e68c75d4-5006-42d4-a360-bcc60cc00db4",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "test_new_functionality",
+      "path": "words/tests/test_new_functionality.py"
+    },
+    {
+      "resource_id": "afadd53b-c96c-4de7-9265-e83cee074b61",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "test_new_functions",
+      "path": "words/tests/test_new_functions.py"
+    }
+  ]
+}

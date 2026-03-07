@@ -1,0 +1,198 @@
+{
+  "file_id": "577c7cd4-c318-4470-8028-7508948b5c1e",
+  "generated": "2026-03-07T09:05:45Z",
+  "entity_id": "a6706b6b-0d1c-45aa-9db9-0b856c3654c5",
+  "entity_name": "l7_projects",
+  "entity_path": "layer_-1_research/layer_0_group/layer_0_02_projects/layer_0_langtrak_dev_agent_system/layer_0_group/layer_0_experiments/layer_0_experiment_dependency_based/development/langtrak_restructured/l7_projects",
+  "resources": [
+    {
+      "resource_id": "0e24a8c5-a593-4d43-b338-ec57eef46359",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "instructions",
+      "path": ".codex/instructions.md"
+    },
+    {
+      "resource_id": "b6d2ab73-db3b-4ba8-8ee3-4e108f9499aa",
+      "id_field": "resource_id",
+      "resource_type": "agnostic",
+      "resource_name": "0AGNOSTIC",
+      "path": "0AGNOSTIC.md"
+    },
+    {
+      "resource_id": "29fc1c9d-c710-46ea-aac9-4cf96cc78193",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "__init__",
+      "path": "__init__.py"
+    },
+    {
+      "resource_id": "696d3768-7e9a-4879-9d4f-0607dc7f09fe",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "__init__",
+      "path": "core/__init__.py"
+    },
+    {
+      "resource_id": "9791d9dc-7620-42c7-8504-341db7fb3bfe",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "api",
+      "path": "core/api.py"
+    },
+    {
+      "resource_id": "a9149918-70c7-4448-8a53-982802778fa0",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "context",
+      "path": "core/context.py"
+    },
+    {
+      "resource_id": "80791741-9ef8-4439-a347-920dbff4a904",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "creation",
+      "path": "core/creation.py"
+    },
+    {
+      "resource_id": "1afe8810-c148-41a4-b9fe-f1534757495d",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "display",
+      "path": "core/display.py"
+    },
+    {
+      "resource_id": "ad29d78c-f6e4-4fad-a669-d13fa3593493",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "editing",
+      "path": "core/editing.py"
+    },
+    {
+      "resource_id": "0b633c71-bbb0-49f3-aaa9-e62190e0d736",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "metadata",
+      "path": "core/metadata.py"
+    },
+    {
+      "resource_id": "a80277a8-4012-49bc-94f5-7acfa0a095a6",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "storage_ops",
+      "path": "core/storage_ops.py"
+    },
+    {
+      "resource_id": "5751908d-a64e-4558-82b6-7fdce244a105",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "projects_menu",
+      "path": "core/templates/projects_menu.html"
+    },
+    {
+      "resource_id": "f0267963-b236-4fff-a824-5df8b9f1e7fe",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "__init__",
+      "path": "core/tests/__init__.py"
+    },
+    {
+      "resource_id": "a48a082c-c8fd-49f7-9158-f3baabb288ec",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "test_project_metadata_helpers",
+      "path": "core/tests/test_project_metadata_helpers.py"
+    },
+    {
+      "resource_id": "94f10f53-554a-46ef-8715-6ccdb9ef2534",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "test_variant_workflows",
+      "path": "core/tests/test_variant_workflows.py"
+    },
+    {
+      "resource_id": "35c368ad-df63-41ca-9de9-c5cd663af9b5",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "__init__",
+      "path": "dashboard/__init__.py"
+    },
+    {
+      "resource_id": "95d06890-624b-47ee-a278-d53d052031d1",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "api",
+      "path": "dashboard/api.py"
+    },
+    {
+      "resource_id": "aa5e3c65-4f78-4845-b7c1-9a25e2fa0840",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "display",
+      "path": "dashboard/display.py"
+    },
+    {
+      "resource_id": "c5f1ba6e-33ef-4e4a-ba1d-244dc7f75926",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "__init__",
+      "path": "navigation/__init__.py"
+    },
+    {
+      "resource_id": "0bf55ca1-9dae-47bc-8003-f7d82bf7dd78",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "__init__",
+      "path": "navigation/tests/__init__.py"
+    },
+    {
+      "resource_id": "5f057bd7-cda9-4dcd-861a-074def5bf22f",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "test_menu",
+      "path": "navigation/tests/test_menu.py"
+    },
+    {
+      "resource_id": "5523dc6d-1adb-408e-a43c-8e3df1db1848",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "test_updated_menu",
+      "path": "navigation/tests/test_updated_menu.py"
+    },
+    {
+      "resource_id": "3a38e546-f40c-4b53-8bfe-5f219097b94a",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "routes",
+      "path": "routes.py"
+    },
+    {
+      "resource_id": "701a6d6b-5247-4c3e-a409-95483135250f",
+      "id_field": "resource_id",
+      "resource_type": "index",
+      "resource_name": "0INDEX",
+      "path": "stages/0INDEX.md"
+    },
+    {
+      "resource_id": "29eaa37f-1470-4a21-9db7-b47041bd08b4",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "__init__",
+      "path": "storage_type/__init__.py"
+    },
+    {
+      "resource_id": "dc4822f9-fb8b-4758-b0ef-e1b142bac3f7",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "__init__",
+      "path": "variants/__init__.py"
+    },
+    {
+      "resource_id": "ef672d5f-7f05-4dbd-8c10-5d1a668569f6",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "api",
+      "path": "variants/api.py"
+    }
+  ]
+}

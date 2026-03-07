@@ -1,0 +1,135 @@
+{
+  "file_id": "f5bcbe64-d1da-456f-8663-64d176a5d6db",
+  "generated": "2026-03-07T09:05:45Z",
+  "entity_id": "95eb30f5-0216-43e9-8408-49dbfc41eaa4",
+  "entity_name": "l8_teams",
+  "entity_path": "layer_-1_research/layer_0_group/layer_0_02_projects/layer_0_langtrak_dev_agent_system/layer_0_group/layer_0_experiments/layer_0_experiment_dependency_based/development/langtrak_restructured/l8_teams",
+  "resources": [
+    {
+      "resource_id": "7789748e-5bb6-40fc-83c4-d367b697ad5f",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "instructions",
+      "path": ".codex/instructions.md"
+    },
+    {
+      "resource_id": "c3684647-2af7-4c2b-a7c1-3be9a2aac58e",
+      "id_field": "resource_id",
+      "resource_type": "agnostic",
+      "resource_name": "0AGNOSTIC",
+      "path": "0AGNOSTIC.md"
+    },
+    {
+      "resource_id": "d233dea7-76c0-4d9d-b272-8b903aabde34",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "__init__",
+      "path": "__init__.py"
+    },
+    {
+      "resource_id": "1e12aae9-494c-4001-ab46-a8d70a7099af",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "__init__",
+      "path": "core/__init__.py"
+    },
+    {
+      "resource_id": "30e2d706-bf14-4153-97b1-32c955f05133",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "api",
+      "path": "core/api.py"
+    },
+    {
+      "resource_id": "000f4f22-1b79-496e-8d6a-267319be3327",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "creation",
+      "path": "core/creation.py"
+    },
+    {
+      "resource_id": "3226c6de-12db-479b-b022-58ec5fd6bdd6",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "display",
+      "path": "core/display.py"
+    },
+    {
+      "resource_id": "15c77399-e63b-46aa-a35d-300ab4de172d",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "membership",
+      "path": "core/membership.py"
+    },
+    {
+      "resource_id": "92b22150-3322-4405-9ce8-2a160f780609",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "create_group",
+      "path": "core/templates/create_group.html"
+    },
+    {
+      "resource_id": "51c140fc-3329-424f-9b83-7c09fa775ef8",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "group_detail",
+      "path": "core/templates/group_detail.html"
+    },
+    {
+      "resource_id": "e886b130-58e3-4df9-acc2-7950a6292c52",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "groups_menu",
+      "path": "core/templates/groups_menu.html"
+    },
+    {
+      "resource_id": "1b22a120-10ae-42d6-b963-a9fb88a9964c",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "__init__",
+      "path": "core/tests/__init__.py"
+    },
+    {
+      "resource_id": "a4ed259f-4c30-4c0a-85d9-5b72bcf67268",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "test_group_routes",
+      "path": "core/tests/test_group_routes.py"
+    },
+    {
+      "resource_id": "2aa3afbf-fc9c-439e-a53a-42b5a944675c",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "__init__",
+      "path": "invites/__init__.py"
+    },
+    {
+      "resource_id": "2d289d6b-fbd0-4235-b5aa-d27047b3fc9d",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "__init__",
+      "path": "membership/__init__.py"
+    },
+    {
+      "resource_id": "7f20f68c-3467-4bea-9506-a4b9c4c2ffbd",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "__init__",
+      "path": "project_sharing/__init__.py"
+    },
+    {
+      "resource_id": "48bb4703-5338-481d-a63d-2e512bb01b27",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "routes",
+      "path": "routes.py"
+    },
+    {
+      "resource_id": "ad0589b3-2e82-4bd7-8b92-e7302d3ae986",
+      "id_field": "resource_id",
+      "resource_type": "index",
+      "resource_name": "0INDEX",
+      "path": "stages/0INDEX.md"
+    }
+  ]
+}

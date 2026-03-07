@@ -1,0 +1,863 @@
+{
+  "file_id": "fddfa3de-bf9d-454e-a151-68feecbd7e0f",
+  "generated": "2026-03-07T09:05:43Z",
+  "entity_id": "9fff3008-69fe-4387-8aaf-66ec8fb065a7",
+  "entity_name": "layer_1_99_stages",
+  "entity_path": "layer_-1_research/layer_0_group/layer_0_01_systems/layer_0_better_ai_system/layer_1_group/layer_1_01_features/layer_1_feature_layer_stage_system/layer_1_group/layer_1_sub_features/layer_1_sub_feature_organization/layer_1_group/layer_1_99_stages",
+  "resources": [
+    {
+      "resource_id": "46364240-9e7b-44bd-8cfb-4fc643d5018d",
+      "id_field": "resource_id",
+      "resource_type": "agnostic",
+      "resource_name": "0AGNOSTIC",
+      "path": "0AGNOSTIC.md"
+    },
+    {
+      "resource_id": "5bab0e42-4250-4207-bf85-2fd13576273e",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "layer_1_99_stages_orchestrator.gab",
+      "path": "layer_1_99_stages_orchestrator.gab.jsonld"
+    },
+    {
+      "resource_id": "e27104a7-680c-4510-a102-ea6ca159dc8e",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "stage_1_00_stage_registry_agent",
+      "path": "stage_1_00_stage_registry/stage_1_00_stage_registry_agent.jsonld"
+    },
+    {
+      "resource_id": "624957c1-ca24-431b-9d41-035bbac45cd4",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "stage_index",
+      "path": "stage_1_00_stage_registry/stage_index.json"
+    },
+    {
+      "resource_id": "81a44911-232c-4960-8235-49725c0b7094",
+      "id_field": "resource_id",
+      "resource_type": "agnostic",
+      "resource_name": "0AGNOSTIC",
+      "path": "stage_1_01_request_gathering/0AGNOSTIC.md"
+    },
+    {
+      "resource_id": "475db46b-237c-4456-82cb-e84e6ac33c4d",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/01_research_production_lifecycle/README.md"
+    },
+    {
+      "resource_id": "e25f7508-e279-4eb4-9f50-1b4879513ee9",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/01_research_production_lifecycle/need_01_research_version/README.md"
+    },
+    {
+      "resource_id": "841a27b8-bb83-44a8-b5d6-388e1de62905",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/01_research_production_lifecycle/need_01_research_version/requirements/README.md"
+    },
+    {
+      "resource_id": "7314b949-2629-4a19-b193-666c692fa993",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "REQ-01_research_entity_structure",
+      "path": "stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/01_research_production_lifecycle/need_01_research_version/requirements/REQ-01_research_entity_structure.md"
+    },
+    {
+      "resource_id": "cb77f65d-bc25-4197-93ad-1dacf8978240",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "REQ-02_feature_level_stages",
+      "path": "stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/01_research_production_lifecycle/need_01_research_version/requirements/REQ-02_feature_level_stages.md"
+    },
+    {
+      "resource_id": "898010ab-bb8f-4bf3-abdd-f81ec2c4f7c3",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "REQ-03_isolation_from_production",
+      "path": "stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/01_research_production_lifecycle/need_01_research_version/requirements/REQ-03_isolation_from_production.md"
+    },
+    {
+      "resource_id": "c8b3ea4c-31f1-423a-a796-4b52f2fef620",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "Untitled-1",
+      "path": "stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/01_research_production_lifecycle/need_01_research_version/requirements/Untitled-1.jsonc"
+    },
+    {
+      "resource_id": "9a7e09bf-75da-4a5c-888f-e2cdb0c9c431",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/01_research_production_lifecycle/need_01_research_version/user_stories/README.md"
+    },
+    {
+      "resource_id": "0bbf43ea-ea15-4ab1-9628-c84acf960ac5",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "US-01_developer_creates_research_entity",
+      "path": "stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/01_research_production_lifecycle/need_01_research_version/user_stories/US-01_developer_creates_research_entity.md"
+    },
+    {
+      "resource_id": "d0a2cc11-9209-48ac-89ca-d8dba3a4a1ef",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "US-02_researcher_works_in_stages",
+      "path": "stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/01_research_production_lifecycle/need_01_research_version/user_stories/US-02_researcher_works_in_stages.md"
+    },
+    {
+      "resource_id": "48034299-8385-4f95-ae06-ffc605567746",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "US-03_production_unaffected",
+      "path": "stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/01_research_production_lifecycle/need_01_research_version/user_stories/US-03_production_unaffected.md"
+    },
+    {
+      "resource_id": "b21e9d71-f121-410f-905c-4bf2df6edee7",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/01_research_production_lifecycle/need_02_production_version/README.md"
+    },
+    {
+      "resource_id": "5bd305a3-81f5-42b3-8b52-deb45c5e1e6e",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/01_research_production_lifecycle/need_02_production_version/requirements/README.md"
+    },
+    {
+      "resource_id": "c764c5ba-0bfe-441e-a458-19406e7c12c5",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "REQ-01_stable_entity_structure",
+      "path": "stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/01_research_production_lifecycle/need_02_production_version/requirements/REQ-01_stable_entity_structure.md"
+    },
+    {
+      "resource_id": "378d5030-b427-4a60-93a0-1f0bc750f6c1",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "REQ-02_tried_and_true_defaults",
+      "path": "stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/01_research_production_lifecycle/need_02_production_version/requirements/REQ-02_tried_and_true_defaults.md"
+    },
+    {
+      "resource_id": "ee09f59c-b719-4c99-8e4c-5c7e4cd29638",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "REQ-03_version_tracking",
+      "path": "stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/01_research_production_lifecycle/need_02_production_version/requirements/REQ-03_version_tracking.md"
+    },
+    {
+      "resource_id": "557d69f4-05ce-485a-ab00-e9cd3dda36f2",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/01_research_production_lifecycle/need_02_production_version/user_stories/README.md"
+    },
+    {
+      "resource_id": "583cb9b9-0677-4769-928d-b2a8307dad1f",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "US-01_agent_uses_production_default",
+      "path": "stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/01_research_production_lifecycle/need_02_production_version/user_stories/US-01_agent_uses_production_default.md"
+    },
+    {
+      "resource_id": "45062fb8-0a94-42fe-83b3-578bc0168f68",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "US-02_user_trusts_stability",
+      "path": "stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/01_research_production_lifecycle/need_02_production_version/user_stories/US-02_user_trusts_stability.md"
+    },
+    {
+      "resource_id": "f3a1cb07-bd54-4a9a-9919-094dce8b1f87",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/01_research_production_lifecycle/need_03_promotion_workflow/README.md"
+    },
+    {
+      "resource_id": "3db568e6-1024-4da1-b7a2-6d4c24bf81d6",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/01_research_production_lifecycle/need_03_promotion_workflow/requirements/README.md"
+    },
+    {
+      "resource_id": "eb688bd1-8b50-4f01-a671-8cfb38154ab0",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "REQ-01_promotion_protocol",
+      "path": "stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/01_research_production_lifecycle/need_03_promotion_workflow/requirements/REQ-01_promotion_protocol.md"
+    },
+    {
+      "resource_id": "1369d531-7f3e-416c-b7c2-e83c9e360c9d",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "REQ-02_validation_before_promotion",
+      "path": "stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/01_research_production_lifecycle/need_03_promotion_workflow/requirements/REQ-02_validation_before_promotion.md"
+    },
+    {
+      "resource_id": "b91bf0cd-8e85-4fe4-8c30-c63f24040959",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "REQ-03_reference_over_copy",
+      "path": "stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/01_research_production_lifecycle/need_03_promotion_workflow/requirements/REQ-03_reference_over_copy.md"
+    },
+    {
+      "resource_id": "f6d9ce96-1243-45ae-9fe7-a623951e3a76",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/01_research_production_lifecycle/need_03_promotion_workflow/user_stories/README.md"
+    },
+    {
+      "resource_id": "ce192013-7b04-40f0-9f03-4ddad67a2c90",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "US-01_researcher_promotes_finding",
+      "path": "stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/01_research_production_lifecycle/need_03_promotion_workflow/user_stories/US-01_researcher_promotes_finding.md"
+    },
+    {
+      "resource_id": "110d6311-add4-4765-bc6b-453054f97c23",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "US-02_production_updated_safely",
+      "path": "stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/01_research_production_lifecycle/need_03_promotion_workflow/user_stories/US-02_production_updated_safely.md"
+    },
+    {
+      "resource_id": "f4159f8c-dc0a-4d3a-a8ca-359fd8eb3147",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/01_research_production_lifecycle/need_04_version_coexistence/README.md"
+    },
+    {
+      "resource_id": "3e2aed18-c227-4fcc-8143-dacbbdd57a3b",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/01_research_production_lifecycle/need_04_version_coexistence/requirements/README.md"
+    },
+    {
+      "resource_id": "fffdc48b-066e-41a0-bd0b-7173d4ed4de1",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "REQ-01_default_is_production",
+      "path": "stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/01_research_production_lifecycle/need_04_version_coexistence/requirements/REQ-01_default_is_production.md"
+    },
+    {
+      "resource_id": "785b0474-bd74-45e1-8cf4-bd09f2307e72",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "REQ-02_opt_in_to_research",
+      "path": "stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/01_research_production_lifecycle/need_04_version_coexistence/requirements/REQ-02_opt_in_to_research.md"
+    },
+    {
+      "resource_id": "d0a6e076-4612-4190-9438-420f181ffdda",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "REQ-03_mode_switching",
+      "path": "stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/01_research_production_lifecycle/need_04_version_coexistence/requirements/REQ-03_mode_switching.md"
+    },
+    {
+      "resource_id": "fdf01c40-fe1b-42ae-b177-5f324bf1a56f",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/01_research_production_lifecycle/need_04_version_coexistence/user_stories/README.md"
+    },
+    {
+      "resource_id": "f8844b6b-f40c-400e-8f85-84752ec18833",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "US-01_agent_defaults_to_production",
+      "path": "stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/01_research_production_lifecycle/need_04_version_coexistence/user_stories/US-01_agent_defaults_to_production.md"
+    },
+    {
+      "resource_id": "a4e53504-0d28-4d0a-8086-fa913f257f8b",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "US-02_user_switches_to_research",
+      "path": "stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/01_research_production_lifecycle/need_04_version_coexistence/user_stories/US-02_user_switches_to_research.md"
+    },
+    {
+      "resource_id": "5e40d7ad-75fb-4601-a5fd-fbeece52af29",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/02_instantiation_pattern/README.md"
+    },
+    {
+      "resource_id": "88ed30ee-76a5-40cc-b01c-00bc93ca2a33",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/02_instantiation_pattern/need_01_system_features/README.md"
+    },
+    {
+      "resource_id": "184e8329-1115-40fc-a5c0-17b178d2f56a",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/02_instantiation_pattern/need_01_system_features/requirements/README.md"
+    },
+    {
+      "resource_id": "2d6241cf-46c9-414a-a998-3b50dc1ecaa8",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "REQ-01_feature_layers_for_rnd",
+      "path": "stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/02_instantiation_pattern/need_01_system_features/requirements/REQ-01_feature_layers_for_rnd.md"
+    },
+    {
+      "resource_id": "4b10f180-73a0-4eda-8991-3f3edbef81a0",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "REQ-02_stages_per_feature",
+      "path": "stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/02_instantiation_pattern/need_01_system_features/requirements/REQ-02_stages_per_feature.md"
+    },
+    {
+      "resource_id": "9460f2e3-6d53-4e3b-bec6-9aa121a4b210",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "REQ-03_feature_isolation",
+      "path": "stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/02_instantiation_pattern/need_01_system_features/requirements/REQ-03_feature_isolation.md"
+    },
+    {
+      "resource_id": "f38b3668-0acc-4757-9140-586a71d876a3",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/02_instantiation_pattern/need_01_system_features/user_stories/README.md"
+    },
+    {
+      "resource_id": "5b97f213-49e9-46f9-bd5c-baab577b1945",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "US-01_developer_works_on_feature",
+      "path": "stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/02_instantiation_pattern/need_01_system_features/user_stories/US-01_developer_works_on_feature.md"
+    },
+    {
+      "resource_id": "3ec10c05-d858-4a12-bcad-1e0418d3768c",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "US-02_feature_has_full_lifecycle",
+      "path": "stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/02_instantiation_pattern/need_01_system_features/user_stories/US-02_feature_has_full_lifecycle.md"
+    },
+    {
+      "resource_id": "25149742-f3ec-4a2d-bd49-041eae9c5bf4",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/02_instantiation_pattern/need_02_system_instantiations/README.md"
+    },
+    {
+      "resource_id": "863fa6be-358f-44b7-b0e2-16ba840ee888",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/02_instantiation_pattern/need_02_system_instantiations/requirements/README.md"
+    },
+    {
+      "resource_id": "00cf9f4f-1e76-4f86-b945-a84cc3bd6f4d",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "REQ-01_instance_entity_per_user",
+      "path": "stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/02_instantiation_pattern/need_02_system_instantiations/requirements/REQ-01_instance_entity_per_user.md"
+    },
+    {
+      "resource_id": "ad8da56f-9e6f-411e-b0db-43432b7fba98",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "REQ-02_instance_inherits_template",
+      "path": "stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/02_instantiation_pattern/need_02_system_instantiations/requirements/REQ-02_instance_inherits_template.md"
+    },
+    {
+      "resource_id": "4950d453-30e4-4644-94a0-5e74b503cf97",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "REQ-03_instance_specific_context",
+      "path": "stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/02_instantiation_pattern/need_02_system_instantiations/requirements/REQ-03_instance_specific_context.md"
+    },
+    {
+      "resource_id": "04654d6f-728c-49c9-aea4-675294b1a86b",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/02_instantiation_pattern/need_02_system_instantiations/user_stories/README.md"
+    },
+    {
+      "resource_id": "0cfef7ea-848e-430b-8fe6-d9de17322099",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "US-01_student_gets_personalized_entity",
+      "path": "stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/02_instantiation_pattern/need_02_system_instantiations/user_stories/US-01_student_gets_personalized_entity.md"
+    },
+    {
+      "resource_id": "69d2c189-daee-4cce-ae23-57fe9e17c4f1",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "US-02_instance_has_own_stages",
+      "path": "stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/02_instantiation_pattern/need_02_system_instantiations/user_stories/US-02_instance_has_own_stages.md"
+    },
+    {
+      "resource_id": "38458775-458b-4806-9145-ca66fae2b23d",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/02_instantiation_pattern/need_03_instance_context/README.md"
+    },
+    {
+      "resource_id": "27604255-bfce-4364-b464-1077781ad3dd",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/02_instantiation_pattern/need_03_instance_context/requirements/README.md"
+    },
+    {
+      "resource_id": "63fa8056-6db2-4808-a5e8-bc5af6a7422b",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "REQ-01_user_profile_storage",
+      "path": "stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/02_instantiation_pattern/need_03_instance_context/requirements/REQ-01_user_profile_storage.md"
+    },
+    {
+      "resource_id": "0f86ff35-ec97-45b9-8179-2bde501e58e9",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "REQ-02_knowledge_state_tracking",
+      "path": "stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/02_instantiation_pattern/need_03_instance_context/requirements/REQ-02_knowledge_state_tracking.md"
+    },
+    {
+      "resource_id": "ec9c7618-4d19-40b4-8e77-fba8a76a4d01",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "REQ-03_goal_career_alignment",
+      "path": "stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/02_instantiation_pattern/need_03_instance_context/requirements/REQ-03_goal_career_alignment.md"
+    },
+    {
+      "resource_id": "e4bedd8d-3e78-4e80-a5ad-7e931a9bacb5",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/02_instantiation_pattern/need_03_instance_context/user_stories/README.md"
+    },
+    {
+      "resource_id": "5e506e81-3795-434e-802f-fd3344fddfa6",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "US-01_ai_knows_student_gaps",
+      "path": "stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/02_instantiation_pattern/need_03_instance_context/user_stories/US-01_ai_knows_student_gaps.md"
+    },
+    {
+      "resource_id": "ce488541-0503-4a0b-9abf-6a8e1ffd1ebc",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "US-02_ai_connects_knowledge_to_career",
+      "path": "stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/02_instantiation_pattern/need_03_instance_context/user_stories/US-02_ai_connects_knowledge_to_career.md"
+    },
+    {
+      "resource_id": "f86831bf-0dcc-4c64-af6c-15dd68285004",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/02_instantiation_pattern/need_04_feature_to_instance_flow/README.md"
+    },
+    {
+      "resource_id": "48e8357f-98b0-4698-9a63-0ccd5aeaf422",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/02_instantiation_pattern/need_04_feature_to_instance_flow/requirements/README.md"
+    },
+    {
+      "resource_id": "5cba63b0-e50a-4538-bdae-30baf987870d",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "REQ-01_template_propagation",
+      "path": "stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/02_instantiation_pattern/need_04_feature_to_instance_flow/requirements/REQ-01_template_propagation.md"
+    },
+    {
+      "resource_id": "4d5f3ee7-0e0d-445d-8e53-e0d6d0635b44",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "REQ-02_instance_upgrade_protocol",
+      "path": "stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/02_instantiation_pattern/need_04_feature_to_instance_flow/requirements/REQ-02_instance_upgrade_protocol.md"
+    },
+    {
+      "resource_id": "0355ef42-9e07-4de7-8e23-6999168d39f9",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "REQ-03_backward_compatibility",
+      "path": "stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/02_instantiation_pattern/need_04_feature_to_instance_flow/requirements/REQ-03_backward_compatibility.md"
+    },
+    {
+      "resource_id": "2e07eb47-af0e-4446-a1a4-d9a81b79a878",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/02_instantiation_pattern/need_04_feature_to_instance_flow/user_stories/README.md"
+    },
+    {
+      "resource_id": "0e4ec076-9584-483a-8103-07d61c4caafb",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "US-01_new_feature_reaches_instances",
+      "path": "stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/02_instantiation_pattern/need_04_feature_to_instance_flow/user_stories/US-01_new_feature_reaches_instances.md"
+    },
+    {
+      "resource_id": "7d440316-043c-499d-b745-9ac11911b8a1",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "US-02_existing_instances_unbroken",
+      "path": "stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/02_instantiation_pattern/need_04_feature_to_instance_flow/user_stories/US-02_existing_instances_unbroken.md"
+    },
+    {
+      "resource_id": "02dbc5e4-dd1b-421b-9386-09bf202d94c6",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/03_universal_pattern/README.md"
+    },
+    {
+      "resource_id": "86bf8bf3-690d-486a-96cd-76ea39d2f24b",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/03_universal_pattern/need_01_general_pattern/README.md"
+    },
+    {
+      "resource_id": "7b688e22-76b2-484a-a683-b53d50a64f54",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/03_universal_pattern/need_01_general_pattern/requirements/README.md"
+    },
+    {
+      "resource_id": "5a5217a3-7dbf-4c4c-905c-6199db846ccd",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "REQ-01_domain_agnostic_structure",
+      "path": "stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/03_universal_pattern/need_01_general_pattern/requirements/REQ-01_domain_agnostic_structure.md"
+    },
+    {
+      "resource_id": "f9cd65f5-2f73-48b7-9e75-5095e3e6e55f",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "REQ-02_documented_pattern",
+      "path": "stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/03_universal_pattern/need_01_general_pattern/requirements/REQ-02_documented_pattern.md"
+    },
+    {
+      "resource_id": "3c38a658-66e5-4bb5-b7dd-14bc96efaa4d",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "REQ-03_reusable_templates",
+      "path": "stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/03_universal_pattern/need_01_general_pattern/requirements/REQ-03_reusable_templates.md"
+    },
+    {
+      "resource_id": "083dcee4-c56a-4f4a-a167-1a5347dea70e",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/03_universal_pattern/need_01_general_pattern/user_stories/README.md"
+    },
+    {
+      "resource_id": "aa588271-4a35-4b01-af20-098e2420e1a2",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "US-01_any_system_uses_pattern",
+      "path": "stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/03_universal_pattern/need_01_general_pattern/user_stories/US-01_any_system_uses_pattern.md"
+    },
+    {
+      "resource_id": "b5ba30ef-8b87-48cd-8206-6f58cb120658",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "US-02_developer_reads_one_guide",
+      "path": "stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/03_universal_pattern/need_01_general_pattern/user_stories/US-02_developer_reads_one_guide.md"
+    },
+    {
+      "resource_id": "9ea85da7-54cd-4532-bbe6-a8d147fbc47a",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/03_universal_pattern/need_02_school_system_example/README.md"
+    },
+    {
+      "resource_id": "2dfdcae5-1990-4405-94eb-318d57b322a2",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/03_universal_pattern/need_02_school_system_example/requirements/README.md"
+    },
+    {
+      "resource_id": "9e647ac0-5886-4b04-aaf8-f6a8927a3313",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "REQ-01_knowledge_graph_awareness",
+      "path": "stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/03_universal_pattern/need_02_school_system_example/requirements/REQ-01_knowledge_graph_awareness.md"
+    },
+    {
+      "resource_id": "9a3a2b95-c060-4a3c-bf6b-2eb2e4fc2292",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "REQ-02_student_modeling",
+      "path": "stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/03_universal_pattern/need_02_school_system_example/requirements/REQ-02_student_modeling.md"
+    },
+    {
+      "resource_id": "53587614-cc5d-4639-9de8-d776fea68d8e",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "REQ-03_adaptive_learning",
+      "path": "stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/03_universal_pattern/need_02_school_system_example/requirements/REQ-03_adaptive_learning.md"
+    },
+    {
+      "resource_id": "ee315c47-ced4-4a6c-92d7-516f563a6d3c",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "REQ-04_prerequisite_tracking",
+      "path": "stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/03_universal_pattern/need_02_school_system_example/requirements/REQ-04_prerequisite_tracking.md"
+    },
+    {
+      "resource_id": "03b1e5df-fe2d-40e7-9758-2df56a060d22",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "REQ-05_career_alignment",
+      "path": "stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/03_universal_pattern/need_02_school_system_example/requirements/REQ-05_career_alignment.md"
+    },
+    {
+      "resource_id": "09819c2c-877b-41c8-a340-babc0f2bfb49",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/03_universal_pattern/need_02_school_system_example/user_stories/README.md"
+    },
+    {
+      "resource_id": "2d000cd7-e548-41fe-a45a-c0858f87a8d0",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "US-01_ai_maps_class_knowledge",
+      "path": "stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/03_universal_pattern/need_02_school_system_example/user_stories/US-01_ai_maps_class_knowledge.md"
+    },
+    {
+      "resource_id": "7e1fb937-67e6-452c-bdc7-cde57b9a3746",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "US-02_ai_tailors_to_student",
+      "path": "stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/03_universal_pattern/need_02_school_system_example/user_stories/US-02_ai_tailors_to_student.md"
+    },
+    {
+      "resource_id": "4441ebb8-1301-46be-a9ad-cb244d8c6379",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/03_universal_pattern/need_03_nested_systems/README.md"
+    },
+    {
+      "resource_id": "b9b45c35-fc80-4024-a01b-2dbb9e10ac30",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/03_universal_pattern/need_03_nested_systems/requirements/README.md"
+    },
+    {
+      "resource_id": "cfe0ce85-c8b5-43a5-98da-7d72f718fd89",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "REQ-01_systems_contain_subsystems",
+      "path": "stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/03_universal_pattern/need_03_nested_systems/requirements/REQ-01_systems_contain_subsystems.md"
+    },
+    {
+      "resource_id": "15c4c142-cee5-4ec2-b7a2-e78840f36b19",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "REQ-02_same_pattern_recursively",
+      "path": "stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/03_universal_pattern/need_03_nested_systems/requirements/REQ-02_same_pattern_recursively.md"
+    },
+    {
+      "resource_id": "b1faae75-0ca8-4c8b-97d7-fd7cf9ab0b1f",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "REQ-03_context_inheritance",
+      "path": "stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/03_universal_pattern/need_03_nested_systems/requirements/REQ-03_context_inheritance.md"
+    },
+    {
+      "resource_id": "f94e8acd-4b4d-4783-bdea-18506b230cf2",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/03_universal_pattern/need_03_nested_systems/user_stories/README.md"
+    },
+    {
+      "resource_id": "cdf82bb8-2fff-4c18-a085-a1ec250175bf",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "US-01_ai_system_contains_school",
+      "path": "stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/03_universal_pattern/need_03_nested_systems/user_stories/US-01_ai_system_contains_school.md"
+    },
+    {
+      "resource_id": "ac8c2cc6-6ddd-4237-86c3-139065d6d1d2",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "US-02_school_has_own_rpi_cycle",
+      "path": "stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/03_universal_pattern/need_03_nested_systems/user_stories/US-02_school_has_own_rpi_cycle.md"
+    },
+    {
+      "resource_id": "d0d25c4d-382b-47af-99f0-06bccd758e5e",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/README.md"
+    },
+    {
+      "resource_id": "094431f7-09e7-4946-9bf8-7ae0d6aba813",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "CHANGELOG",
+      "path": "stage_1_01_request_gathering/outputs/requests/tree_of_needs/_meta/CHANGELOG.md"
+    },
+    {
+      "resource_id": "2974f747-b97b-4338-830f-010230620f5f",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "DEPENDENCIES",
+      "path": "stage_1_01_request_gathering/outputs/requests/tree_of_needs/_meta/DEPENDENCIES.md"
+    },
+    {
+      "resource_id": "1adad994-737e-440a-91c0-ddda469cef1c",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "VERSION",
+      "path": "stage_1_01_request_gathering/outputs/requests/tree_of_needs/_meta/VERSION.md"
+    },
+    {
+      "resource_id": "e93e6235-5349-4d25-a91a-6f8c0795a88e",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "index",
+      "path": "stage_1_01_request_gathering/outputs/requests/tree_of_needs/index.jsonld"
+    },
+    {
+      "resource_id": "426c2767-c5dc-4634-bcd9-74730ca0c813",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "stage_1_01_request_gathering_agent",
+      "path": "stage_1_01_request_gathering/stage_1_01_request_gathering_agent.jsonld"
+    },
+    {
+      "resource_id": "34ce723c-9829-4017-849f-70560b6b20a1",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "stage_1_02_research_agent",
+      "path": "stage_1_02_research/stage_1_02_research_agent.jsonld"
+    },
+    {
+      "resource_id": "3592cf67-e84e-48a0-a1a2-32fcf2c05b0c",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "stage_1_03_instructions_agent",
+      "path": "stage_1_03_instructions/stage_1_03_instructions_agent.jsonld"
+    },
+    {
+      "resource_id": "94eb49e1-0062-48b3-85db-4c9ef2cb078b",
+      "id_field": "resource_id",
+      "resource_type": "agnostic",
+      "resource_name": "0AGNOSTIC",
+      "path": "stage_1_04_design/0AGNOSTIC.md"
+    },
+    {
+      "resource_id": "1e6c8090-a437-4c08-aa46-74b682941a1a",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "DD-01_research_production_instantiation_pattern",
+      "path": "stage_1_04_design/outputs/design_decisions/DD-01_research_production_instantiation_pattern.md"
+    },
+    {
+      "resource_id": "b9ba8555-4095-4351-94c9-9b305a4aee10",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "DD-02_school_system_architecture",
+      "path": "stage_1_04_design/outputs/design_decisions/DD-02_school_system_architecture.md"
+    },
+    {
+      "resource_id": "6e80c1c8-5ce2-4084-ae07-64a04116ff89",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "DD-03_stage_scaffolding_defaults",
+      "path": "stage_1_04_design/outputs/design_decisions/DD-03_stage_scaffolding_defaults.md"
+    },
+    {
+      "resource_id": "2579ad15-52f5-4bb6-af10-55a7ad333692",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "stage_1_04_design/outputs/design_decisions/overview/README.md"
+    },
+    {
+      "resource_id": "b40c7d66-b798-4637-894f-082c66a07bec",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "stage_1_05_design_agent",
+      "path": "stage_1_04_design/stage_1_05_design_agent.jsonld"
+    },
+    {
+      "resource_id": "2aa0a7f1-5211-426d-ac7c-3939de68a858",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "stage_1_04_planning_agent",
+      "path": "stage_1_05_planning/stage_1_04_planning_agent.jsonld"
+    },
+    {
+      "resource_id": "13d234c7-fc2c-4752-a07e-c573147be444",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "stage_1_06_development_agent",
+      "path": "stage_1_06_development/stage_1_06_development_agent.jsonld"
+    },
+    {
+      "resource_id": "e6f9670d-5723-4ee2-9735-f3e7cc19ac41",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "stage_1_07_testing_agent",
+      "path": "stage_1_07_testing/stage_1_07_testing_agent.jsonld"
+    },
+    {
+      "resource_id": "766a3c38-60a2-4732-baae-9f5523c7f1c2",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "stage_1_08_criticism_agent",
+      "path": "stage_1_08_criticism/stage_1_08_criticism_agent.jsonld"
+    },
+    {
+      "resource_id": "99cea852-3e7b-4cc1-b309-715f1d3a250f",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "stage_1_09_fixing_agent",
+      "path": "stage_1_09_fixing/stage_1_09_fixing_agent.jsonld"
+    },
+    {
+      "resource_id": "53d4ac1b-b7ce-45ef-b787-d77a73ab73ab",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "stage_1_10_current_product_agent",
+      "path": "stage_1_10_current_product/stage_1_10_current_product_agent.jsonld"
+    },
+    {
+      "resource_id": "15e50e60-2d08-4b62-ac7f-2eb344d8fc01",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "stage_1_11_archives_agent",
+      "path": "stage_1_11_archives/stage_1_11_archives_agent.jsonld"
+    },
+    {
+      "resource_id": "c5f25273-e9fc-40e1-9309-df0c4e634ea3",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "status_1",
+      "path": "status_1.json"
+    }
+  ]
+}

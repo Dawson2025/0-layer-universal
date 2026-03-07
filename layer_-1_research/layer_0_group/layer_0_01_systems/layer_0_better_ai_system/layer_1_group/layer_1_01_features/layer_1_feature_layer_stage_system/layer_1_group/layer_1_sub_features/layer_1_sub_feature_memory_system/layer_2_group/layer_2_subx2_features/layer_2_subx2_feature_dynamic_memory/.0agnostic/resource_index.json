@@ -1,0 +1,261 @@
+{
+  "file_id": "8caa7473-2916-4bef-8d0a-deea52591b64",
+  "generated": "2026-03-07T09:05:43Z",
+  "entity_id": "bdf1d87a-2bd0-4517-bbe1-564e726fe6e3",
+  "entity_name": "layer_2_subx2_feature_dynamic_memory",
+  "entity_path": "layer_-1_research/layer_0_group/layer_0_01_systems/layer_0_better_ai_system/layer_1_group/layer_1_01_features/layer_1_feature_layer_stage_system/layer_1_group/layer_1_sub_features/layer_1_sub_feature_memory_system/layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_dynamic_memory",
+  "resources": [
+    {
+      "resource_id": "0a05375a-4633-44ab-9a45-6899453ff3ed",
+      "id_field": "resource_id",
+      "resource_type": "agnostic",
+      "resource_name": "0AGNOSTIC",
+      "path": "0AGNOSTIC.md"
+    },
+    {
+      "resource_id": "1f753d8d-2cbf-48fc-ab99-66299e5a66c8",
+      "id_field": "resource_id",
+      "resource_type": "index",
+      "resource_name": "0INDEX",
+      "path": "0INDEX.md"
+    },
+    {
+      "resource_id": "605c3c95-f87c-44ce-889c-82c894e3ae11",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "README.md"
+    },
+    {
+      "resource_id": "3f013d01-1c28-4c85-b500-d3c7cb824957",
+      "id_field": "resource_id",
+      "resource_type": "agnostic",
+      "resource_name": "0AGNOSTIC",
+      "path": "layer_2_group/0AGNOSTIC.md"
+    },
+    {
+      "resource_id": "76281009-e0b5-46b0-9110-b2ed12915a2c",
+      "id_field": "resource_id",
+      "resource_type": "agnostic",
+      "resource_name": "0AGNOSTIC",
+      "path": "layer_2_group/layer_2_00_layer_registry/0AGNOSTIC.md"
+    },
+    {
+      "resource_id": "0dd26520-6a9c-4146-a882-b98c0eef1523",
+      "id_field": "resource_id",
+      "resource_type": "agnostic",
+      "resource_name": "0AGNOSTIC",
+      "path": "layer_2_group/layer_2_01_ai_manager_system/0AGNOSTIC.md"
+    },
+    {
+      "resource_id": "6d31ce8f-45e1-458a-9742-8c946d872357",
+      "id_field": "resource_id",
+      "resource_type": "agnostic",
+      "resource_name": "0AGNOSTIC",
+      "path": "layer_2_group/layer_2_02_manager_handoff_documents/0AGNOSTIC.md"
+    },
+    {
+      "resource_id": "be5c8175-130b-45ae-b877-0f8e6bf6c896",
+      "id_field": "resource_id",
+      "resource_type": "agnostic",
+      "resource_name": "0AGNOSTIC",
+      "path": "layer_2_group/layer_2_99_stages/0AGNOSTIC.md"
+    },
+    {
+      "resource_id": "2b3c9f35-d179-4541-ae8c-502c4208cb98",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "layer_2_99_stages_orchestrator.gab",
+      "path": "layer_2_group/layer_2_99_stages/layer_2_99_stages_orchestrator.gab.jsonld"
+    },
+    {
+      "resource_id": "8e5e13cc-bc97-4403-a15c-682f8a31f6a1",
+      "id_field": "resource_id",
+      "resource_type": "agnostic",
+      "resource_name": "0AGNOSTIC",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_00_stage_registry/0AGNOSTIC.md"
+    },
+    {
+      "resource_id": "be055be5-d7f3-4934-a5a2-bb66c70c7439",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "stage_2_00_stage_registry_agent",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_00_stage_registry/stage_2_00_stage_registry_agent.jsonld"
+    },
+    {
+      "resource_id": "11cb8e29-1b74-4ebd-aeae-654c434f0cac",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "stage_index",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_00_stage_registry/stage_index.json"
+    },
+    {
+      "resource_id": "5fe0cc64-c0f1-4ed0-b4de-88483f2790f4",
+      "id_field": "resource_id",
+      "resource_type": "agnostic",
+      "resource_name": "0AGNOSTIC",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_01_request_gathering/0AGNOSTIC.md"
+    },
+    {
+      "resource_id": "61ac52bc-6eb5-4628-aaf6-624c57d5951d",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "stage_2_01_request_gathering_agent",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_01_request_gathering/stage_2_01_request_gathering_agent.jsonld"
+    },
+    {
+      "resource_id": "c137771c-4441-4f5f-b557-92b19b9ff8a1",
+      "id_field": "resource_id",
+      "resource_type": "agnostic",
+      "resource_name": "0AGNOSTIC",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_02_research/0AGNOSTIC.md"
+    },
+    {
+      "resource_id": "156f50f1-0690-4b50-a728-128fdb8eab35",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "stage_2_02_research_agent",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_02_research/stage_2_02_research_agent.jsonld"
+    },
+    {
+      "resource_id": "3ab9267c-de42-43a0-ad6d-111d8478d1c2",
+      "id_field": "resource_id",
+      "resource_type": "agnostic",
+      "resource_name": "0AGNOSTIC",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_03_instructions/0AGNOSTIC.md"
+    },
+    {
+      "resource_id": "7218bc49-ac41-4b90-beb3-b16cef960f9e",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "stage_2_03_instructions_agent",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_03_instructions/stage_2_03_instructions_agent.jsonld"
+    },
+    {
+      "resource_id": "201a152d-c58a-4cb8-af81-1850ee450a81",
+      "id_field": "resource_id",
+      "resource_type": "agnostic",
+      "resource_name": "0AGNOSTIC",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_04_design/0AGNOSTIC.md"
+    },
+    {
+      "resource_id": "d3bb5ed7-d7a6-41b1-b27b-05890f0aec89",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "stage_2_05_design_agent",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_04_design/stage_2_05_design_agent.jsonld"
+    },
+    {
+      "resource_id": "97b42a39-8563-40df-baad-4c8b5a9905f5",
+      "id_field": "resource_id",
+      "resource_type": "agnostic",
+      "resource_name": "0AGNOSTIC",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_05_planning/0AGNOSTIC.md"
+    },
+    {
+      "resource_id": "51840731-673f-4b58-97dc-0bc303cc9f66",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "stage_2_04_planning_agent",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_05_planning/stage_2_04_planning_agent.jsonld"
+    },
+    {
+      "resource_id": "3bb48676-fdba-4bb1-b369-033645303ed6",
+      "id_field": "resource_id",
+      "resource_type": "agnostic",
+      "resource_name": "0AGNOSTIC",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_06_development/0AGNOSTIC.md"
+    },
+    {
+      "resource_id": "d3e2d998-999e-4421-b6fe-bd7389117e0a",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "stage_2_06_development_agent",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_06_development/stage_2_06_development_agent.jsonld"
+    },
+    {
+      "resource_id": "cf50d5eb-638b-4121-bb8d-964b567ff535",
+      "id_field": "resource_id",
+      "resource_type": "agnostic",
+      "resource_name": "0AGNOSTIC",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_07_testing/0AGNOSTIC.md"
+    },
+    {
+      "resource_id": "28655faa-e1fd-4be8-8eb5-6602e3aadf43",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "stage_2_07_testing_agent",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_07_testing/stage_2_07_testing_agent.jsonld"
+    },
+    {
+      "resource_id": "e9406a92-82ec-439b-a12c-ff4fe95835bd",
+      "id_field": "resource_id",
+      "resource_type": "agnostic",
+      "resource_name": "0AGNOSTIC",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_08_criticism/0AGNOSTIC.md"
+    },
+    {
+      "resource_id": "05d89a07-b77a-4010-a566-820d5889ea87",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "stage_2_08_criticism_agent",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_08_criticism/stage_2_08_criticism_agent.jsonld"
+    },
+    {
+      "resource_id": "228e9246-8fd0-424e-a4a7-c4303453bced",
+      "id_field": "resource_id",
+      "resource_type": "agnostic",
+      "resource_name": "0AGNOSTIC",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_09_fixing/0AGNOSTIC.md"
+    },
+    {
+      "resource_id": "6d18800f-0872-4485-8442-c54d71187496",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "stage_2_09_fixing_agent",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_09_fixing/stage_2_09_fixing_agent.jsonld"
+    },
+    {
+      "resource_id": "c41b98a7-3c82-4dc0-9996-fccf3ae8f4b2",
+      "id_field": "resource_id",
+      "resource_type": "agnostic",
+      "resource_name": "0AGNOSTIC",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_10_current_product/0AGNOSTIC.md"
+    },
+    {
+      "resource_id": "18d0e67e-67cf-4a9f-a47c-c21d5508c00d",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "stage_2_10_current_product_agent",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_10_current_product/stage_2_10_current_product_agent.jsonld"
+    },
+    {
+      "resource_id": "efdbdca0-7a4f-4812-98ac-d3e62c694057",
+      "id_field": "resource_id",
+      "resource_type": "agnostic",
+      "resource_name": "0AGNOSTIC",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_11_archives/0AGNOSTIC.md"
+    },
+    {
+      "resource_id": "02bf9b99-321a-4d5c-86fa-20d9cc6365ed",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "stage_2_11_archives_agent",
+      "path": "layer_2_group/layer_2_99_stages/stage_2_11_archives/stage_2_11_archives_agent.jsonld"
+    },
+    {
+      "resource_id": "50ad4251-f827-4cef-b303-ecd05c245cc7",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "status_2",
+      "path": "layer_2_group/layer_2_99_stages/status_2.json"
+    },
+    {
+      "resource_id": "f495fb3a-3fde-4072-b8d4-e0c749fbcbca",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "layer_2_orchestrator.gab",
+      "path": "layer_2_orchestrator.gab.jsonld"
+    }
+  ]
+}

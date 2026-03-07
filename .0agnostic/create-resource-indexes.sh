@@ -313,6 +313,13 @@ for entity_dir in entities:
     vlog(f"Processing entity: {entity_rel}")
     try:
         output_path, index_data, count = build_index(entity_dir)
+    except RuntimeError as exc:
+        msg = str(exc)
+        if "entity_id missing" in msg:
+            vlog(f"SKIP: {entity_rel} — no entity_id")
+            continue
+        print(f"  ERROR: {exc}", file=sys.stderr)
+        sys.exit(1)
     except Exception as exc:
         print(f"  ERROR: {exc}", file=sys.stderr)
         sys.exit(1)

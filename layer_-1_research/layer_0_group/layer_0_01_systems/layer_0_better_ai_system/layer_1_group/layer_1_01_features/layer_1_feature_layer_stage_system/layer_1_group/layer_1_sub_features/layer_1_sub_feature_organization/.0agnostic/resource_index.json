@@ -1,0 +1,2305 @@
+{
+  "file_id": "b5ad733c-80ae-41ae-bb77-5747d5e32c35",
+  "generated": "2026-03-07T09:05:43Z",
+  "entity_id": "74919ea4-fd18-47b0-83e0-edc0a0c9fb79",
+  "entity_name": "layer_1_sub_feature_organization",
+  "entity_path": "layer_-1_research/layer_0_group/layer_0_01_systems/layer_0_better_ai_system/layer_1_group/layer_1_01_features/layer_1_feature_layer_stage_system/layer_1_group/layer_1_sub_features/layer_1_sub_feature_organization",
+  "resources": [
+    {
+      "resource_id": "d8e68b36-54b7-49d9-9e31-e060bd38d796",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": "HIERARCHY_NAMING_CONVENTION",
+      "path": ".0agnostic/01_knowledge/overview/production_system_structure/HIERARCHY_NAMING_CONVENTION.md"
+    },
+    {
+      "resource_id": "efc2526c-361f-4871-9f04-ad8d74f0ab04",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": "OVERVIEW",
+      "path": ".0agnostic/01_knowledge/overview/production_system_structure/OVERVIEW.md"
+    },
+    {
+      "resource_id": "9fe09a42-5a31-4908-9eb0-9badbe2b8559",
+      "id_field": "resource_id",
+      "resource_type": "agnostic",
+      "resource_name": "0AGNOSTIC",
+      "path": "0AGNOSTIC.md"
+    },
+    {
+      "resource_id": "46364240-9e7b-44bd-8cfb-4fc643d5018d",
+      "id_field": "resource_id",
+      "resource_type": "agnostic",
+      "resource_name": "0AGNOSTIC",
+      "path": "layer_1_group/layer_1_99_stages/0AGNOSTIC.md"
+    },
+    {
+      "resource_id": "5bab0e42-4250-4207-bf85-2fd13576273e",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "layer_1_99_stages_orchestrator.gab",
+      "path": "layer_1_group/layer_1_99_stages/layer_1_99_stages_orchestrator.gab.jsonld"
+    },
+    {
+      "resource_id": "e27104a7-680c-4510-a102-ea6ca159dc8e",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "stage_1_00_stage_registry_agent",
+      "path": "layer_1_group/layer_1_99_stages/stage_1_00_stage_registry/stage_1_00_stage_registry_agent.jsonld"
+    },
+    {
+      "resource_id": "624957c1-ca24-431b-9d41-035bbac45cd4",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "stage_index",
+      "path": "layer_1_group/layer_1_99_stages/stage_1_00_stage_registry/stage_index.json"
+    },
+    {
+      "resource_id": "81a44911-232c-4960-8235-49725c0b7094",
+      "id_field": "resource_id",
+      "resource_type": "agnostic",
+      "resource_name": "0AGNOSTIC",
+      "path": "layer_1_group/layer_1_99_stages/stage_1_01_request_gathering/0AGNOSTIC.md"
+    },
+    {
+      "resource_id": "475db46b-237c-4456-82cb-e84e6ac33c4d",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_1_group/layer_1_99_stages/stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/01_research_production_lifecycle/README.md"
+    },
+    {
+      "resource_id": "e25f7508-e279-4eb4-9f50-1b4879513ee9",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_1_group/layer_1_99_stages/stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/01_research_production_lifecycle/need_01_research_version/README.md"
+    },
+    {
+      "resource_id": "841a27b8-bb83-44a8-b5d6-388e1de62905",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_1_group/layer_1_99_stages/stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/01_research_production_lifecycle/need_01_research_version/requirements/README.md"
+    },
+    {
+      "resource_id": "7314b949-2629-4a19-b193-666c692fa993",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "REQ-01_research_entity_structure",
+      "path": "layer_1_group/layer_1_99_stages/stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/01_research_production_lifecycle/need_01_research_version/requirements/REQ-01_research_entity_structure.md"
+    },
+    {
+      "resource_id": "cb77f65d-bc25-4197-93ad-1dacf8978240",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "REQ-02_feature_level_stages",
+      "path": "layer_1_group/layer_1_99_stages/stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/01_research_production_lifecycle/need_01_research_version/requirements/REQ-02_feature_level_stages.md"
+    },
+    {
+      "resource_id": "898010ab-bb8f-4bf3-abdd-f81ec2c4f7c3",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "REQ-03_isolation_from_production",
+      "path": "layer_1_group/layer_1_99_stages/stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/01_research_production_lifecycle/need_01_research_version/requirements/REQ-03_isolation_from_production.md"
+    },
+    {
+      "resource_id": "c8b3ea4c-31f1-423a-a796-4b52f2fef620",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "Untitled-1",
+      "path": "layer_1_group/layer_1_99_stages/stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/01_research_production_lifecycle/need_01_research_version/requirements/Untitled-1.jsonc"
+    },
+    {
+      "resource_id": "9a7e09bf-75da-4a5c-888f-e2cdb0c9c431",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_1_group/layer_1_99_stages/stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/01_research_production_lifecycle/need_01_research_version/user_stories/README.md"
+    },
+    {
+      "resource_id": "0bbf43ea-ea15-4ab1-9628-c84acf960ac5",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "US-01_developer_creates_research_entity",
+      "path": "layer_1_group/layer_1_99_stages/stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/01_research_production_lifecycle/need_01_research_version/user_stories/US-01_developer_creates_research_entity.md"
+    },
+    {
+      "resource_id": "d0a2cc11-9209-48ac-89ca-d8dba3a4a1ef",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "US-02_researcher_works_in_stages",
+      "path": "layer_1_group/layer_1_99_stages/stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/01_research_production_lifecycle/need_01_research_version/user_stories/US-02_researcher_works_in_stages.md"
+    },
+    {
+      "resource_id": "48034299-8385-4f95-ae06-ffc605567746",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "US-03_production_unaffected",
+      "path": "layer_1_group/layer_1_99_stages/stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/01_research_production_lifecycle/need_01_research_version/user_stories/US-03_production_unaffected.md"
+    },
+    {
+      "resource_id": "b21e9d71-f121-410f-905c-4bf2df6edee7",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_1_group/layer_1_99_stages/stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/01_research_production_lifecycle/need_02_production_version/README.md"
+    },
+    {
+      "resource_id": "5bd305a3-81f5-42b3-8b52-deb45c5e1e6e",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_1_group/layer_1_99_stages/stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/01_research_production_lifecycle/need_02_production_version/requirements/README.md"
+    },
+    {
+      "resource_id": "c764c5ba-0bfe-441e-a458-19406e7c12c5",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "REQ-01_stable_entity_structure",
+      "path": "layer_1_group/layer_1_99_stages/stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/01_research_production_lifecycle/need_02_production_version/requirements/REQ-01_stable_entity_structure.md"
+    },
+    {
+      "resource_id": "378d5030-b427-4a60-93a0-1f0bc750f6c1",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "REQ-02_tried_and_true_defaults",
+      "path": "layer_1_group/layer_1_99_stages/stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/01_research_production_lifecycle/need_02_production_version/requirements/REQ-02_tried_and_true_defaults.md"
+    },
+    {
+      "resource_id": "ee09f59c-b719-4c99-8e4c-5c7e4cd29638",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "REQ-03_version_tracking",
+      "path": "layer_1_group/layer_1_99_stages/stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/01_research_production_lifecycle/need_02_production_version/requirements/REQ-03_version_tracking.md"
+    },
+    {
+      "resource_id": "557d69f4-05ce-485a-ab00-e9cd3dda36f2",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_1_group/layer_1_99_stages/stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/01_research_production_lifecycle/need_02_production_version/user_stories/README.md"
+    },
+    {
+      "resource_id": "583cb9b9-0677-4769-928d-b2a8307dad1f",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "US-01_agent_uses_production_default",
+      "path": "layer_1_group/layer_1_99_stages/stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/01_research_production_lifecycle/need_02_production_version/user_stories/US-01_agent_uses_production_default.md"
+    },
+    {
+      "resource_id": "45062fb8-0a94-42fe-83b3-578bc0168f68",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "US-02_user_trusts_stability",
+      "path": "layer_1_group/layer_1_99_stages/stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/01_research_production_lifecycle/need_02_production_version/user_stories/US-02_user_trusts_stability.md"
+    },
+    {
+      "resource_id": "f3a1cb07-bd54-4a9a-9919-094dce8b1f87",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_1_group/layer_1_99_stages/stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/01_research_production_lifecycle/need_03_promotion_workflow/README.md"
+    },
+    {
+      "resource_id": "3db568e6-1024-4da1-b7a2-6d4c24bf81d6",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_1_group/layer_1_99_stages/stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/01_research_production_lifecycle/need_03_promotion_workflow/requirements/README.md"
+    },
+    {
+      "resource_id": "eb688bd1-8b50-4f01-a671-8cfb38154ab0",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "REQ-01_promotion_protocol",
+      "path": "layer_1_group/layer_1_99_stages/stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/01_research_production_lifecycle/need_03_promotion_workflow/requirements/REQ-01_promotion_protocol.md"
+    },
+    {
+      "resource_id": "1369d531-7f3e-416c-b7c2-e83c9e360c9d",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "REQ-02_validation_before_promotion",
+      "path": "layer_1_group/layer_1_99_stages/stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/01_research_production_lifecycle/need_03_promotion_workflow/requirements/REQ-02_validation_before_promotion.md"
+    },
+    {
+      "resource_id": "b91bf0cd-8e85-4fe4-8c30-c63f24040959",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "REQ-03_reference_over_copy",
+      "path": "layer_1_group/layer_1_99_stages/stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/01_research_production_lifecycle/need_03_promotion_workflow/requirements/REQ-03_reference_over_copy.md"
+    },
+    {
+      "resource_id": "f6d9ce96-1243-45ae-9fe7-a623951e3a76",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_1_group/layer_1_99_stages/stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/01_research_production_lifecycle/need_03_promotion_workflow/user_stories/README.md"
+    },
+    {
+      "resource_id": "ce192013-7b04-40f0-9f03-4ddad67a2c90",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "US-01_researcher_promotes_finding",
+      "path": "layer_1_group/layer_1_99_stages/stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/01_research_production_lifecycle/need_03_promotion_workflow/user_stories/US-01_researcher_promotes_finding.md"
+    },
+    {
+      "resource_id": "110d6311-add4-4765-bc6b-453054f97c23",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "US-02_production_updated_safely",
+      "path": "layer_1_group/layer_1_99_stages/stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/01_research_production_lifecycle/need_03_promotion_workflow/user_stories/US-02_production_updated_safely.md"
+    },
+    {
+      "resource_id": "f4159f8c-dc0a-4d3a-a8ca-359fd8eb3147",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_1_group/layer_1_99_stages/stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/01_research_production_lifecycle/need_04_version_coexistence/README.md"
+    },
+    {
+      "resource_id": "3e2aed18-c227-4fcc-8143-dacbbdd57a3b",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_1_group/layer_1_99_stages/stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/01_research_production_lifecycle/need_04_version_coexistence/requirements/README.md"
+    },
+    {
+      "resource_id": "fffdc48b-066e-41a0-bd0b-7173d4ed4de1",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "REQ-01_default_is_production",
+      "path": "layer_1_group/layer_1_99_stages/stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/01_research_production_lifecycle/need_04_version_coexistence/requirements/REQ-01_default_is_production.md"
+    },
+    {
+      "resource_id": "785b0474-bd74-45e1-8cf4-bd09f2307e72",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "REQ-02_opt_in_to_research",
+      "path": "layer_1_group/layer_1_99_stages/stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/01_research_production_lifecycle/need_04_version_coexistence/requirements/REQ-02_opt_in_to_research.md"
+    },
+    {
+      "resource_id": "d0a6e076-4612-4190-9438-420f181ffdda",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "REQ-03_mode_switching",
+      "path": "layer_1_group/layer_1_99_stages/stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/01_research_production_lifecycle/need_04_version_coexistence/requirements/REQ-03_mode_switching.md"
+    },
+    {
+      "resource_id": "fdf01c40-fe1b-42ae-b177-5f324bf1a56f",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_1_group/layer_1_99_stages/stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/01_research_production_lifecycle/need_04_version_coexistence/user_stories/README.md"
+    },
+    {
+      "resource_id": "f8844b6b-f40c-400e-8f85-84752ec18833",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "US-01_agent_defaults_to_production",
+      "path": "layer_1_group/layer_1_99_stages/stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/01_research_production_lifecycle/need_04_version_coexistence/user_stories/US-01_agent_defaults_to_production.md"
+    },
+    {
+      "resource_id": "a4e53504-0d28-4d0a-8086-fa913f257f8b",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "US-02_user_switches_to_research",
+      "path": "layer_1_group/layer_1_99_stages/stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/01_research_production_lifecycle/need_04_version_coexistence/user_stories/US-02_user_switches_to_research.md"
+    },
+    {
+      "resource_id": "5e40d7ad-75fb-4601-a5fd-fbeece52af29",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_1_group/layer_1_99_stages/stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/02_instantiation_pattern/README.md"
+    },
+    {
+      "resource_id": "88ed30ee-76a5-40cc-b01c-00bc93ca2a33",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_1_group/layer_1_99_stages/stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/02_instantiation_pattern/need_01_system_features/README.md"
+    },
+    {
+      "resource_id": "184e8329-1115-40fc-a5c0-17b178d2f56a",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_1_group/layer_1_99_stages/stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/02_instantiation_pattern/need_01_system_features/requirements/README.md"
+    },
+    {
+      "resource_id": "2d6241cf-46c9-414a-a998-3b50dc1ecaa8",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "REQ-01_feature_layers_for_rnd",
+      "path": "layer_1_group/layer_1_99_stages/stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/02_instantiation_pattern/need_01_system_features/requirements/REQ-01_feature_layers_for_rnd.md"
+    },
+    {
+      "resource_id": "4b10f180-73a0-4eda-8991-3f3edbef81a0",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "REQ-02_stages_per_feature",
+      "path": "layer_1_group/layer_1_99_stages/stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/02_instantiation_pattern/need_01_system_features/requirements/REQ-02_stages_per_feature.md"
+    },
+    {
+      "resource_id": "9460f2e3-6d53-4e3b-bec6-9aa121a4b210",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "REQ-03_feature_isolation",
+      "path": "layer_1_group/layer_1_99_stages/stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/02_instantiation_pattern/need_01_system_features/requirements/REQ-03_feature_isolation.md"
+    },
+    {
+      "resource_id": "f38b3668-0acc-4757-9140-586a71d876a3",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_1_group/layer_1_99_stages/stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/02_instantiation_pattern/need_01_system_features/user_stories/README.md"
+    },
+    {
+      "resource_id": "5b97f213-49e9-46f9-bd5c-baab577b1945",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "US-01_developer_works_on_feature",
+      "path": "layer_1_group/layer_1_99_stages/stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/02_instantiation_pattern/need_01_system_features/user_stories/US-01_developer_works_on_feature.md"
+    },
+    {
+      "resource_id": "3ec10c05-d858-4a12-bcad-1e0418d3768c",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "US-02_feature_has_full_lifecycle",
+      "path": "layer_1_group/layer_1_99_stages/stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/02_instantiation_pattern/need_01_system_features/user_stories/US-02_feature_has_full_lifecycle.md"
+    },
+    {
+      "resource_id": "25149742-f3ec-4a2d-bd49-041eae9c5bf4",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_1_group/layer_1_99_stages/stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/02_instantiation_pattern/need_02_system_instantiations/README.md"
+    },
+    {
+      "resource_id": "863fa6be-358f-44b7-b0e2-16ba840ee888",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_1_group/layer_1_99_stages/stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/02_instantiation_pattern/need_02_system_instantiations/requirements/README.md"
+    },
+    {
+      "resource_id": "00cf9f4f-1e76-4f86-b945-a84cc3bd6f4d",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "REQ-01_instance_entity_per_user",
+      "path": "layer_1_group/layer_1_99_stages/stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/02_instantiation_pattern/need_02_system_instantiations/requirements/REQ-01_instance_entity_per_user.md"
+    },
+    {
+      "resource_id": "ad8da56f-9e6f-411e-b0db-43432b7fba98",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "REQ-02_instance_inherits_template",
+      "path": "layer_1_group/layer_1_99_stages/stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/02_instantiation_pattern/need_02_system_instantiations/requirements/REQ-02_instance_inherits_template.md"
+    },
+    {
+      "resource_id": "4950d453-30e4-4644-94a0-5e74b503cf97",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "REQ-03_instance_specific_context",
+      "path": "layer_1_group/layer_1_99_stages/stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/02_instantiation_pattern/need_02_system_instantiations/requirements/REQ-03_instance_specific_context.md"
+    },
+    {
+      "resource_id": "04654d6f-728c-49c9-aea4-675294b1a86b",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_1_group/layer_1_99_stages/stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/02_instantiation_pattern/need_02_system_instantiations/user_stories/README.md"
+    },
+    {
+      "resource_id": "0cfef7ea-848e-430b-8fe6-d9de17322099",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "US-01_student_gets_personalized_entity",
+      "path": "layer_1_group/layer_1_99_stages/stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/02_instantiation_pattern/need_02_system_instantiations/user_stories/US-01_student_gets_personalized_entity.md"
+    },
+    {
+      "resource_id": "69d2c189-daee-4cce-ae23-57fe9e17c4f1",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "US-02_instance_has_own_stages",
+      "path": "layer_1_group/layer_1_99_stages/stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/02_instantiation_pattern/need_02_system_instantiations/user_stories/US-02_instance_has_own_stages.md"
+    },
+    {
+      "resource_id": "38458775-458b-4806-9145-ca66fae2b23d",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_1_group/layer_1_99_stages/stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/02_instantiation_pattern/need_03_instance_context/README.md"
+    },
+    {
+      "resource_id": "27604255-bfce-4364-b464-1077781ad3dd",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_1_group/layer_1_99_stages/stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/02_instantiation_pattern/need_03_instance_context/requirements/README.md"
+    },
+    {
+      "resource_id": "63fa8056-6db2-4808-a5e8-bc5af6a7422b",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "REQ-01_user_profile_storage",
+      "path": "layer_1_group/layer_1_99_stages/stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/02_instantiation_pattern/need_03_instance_context/requirements/REQ-01_user_profile_storage.md"
+    },
+    {
+      "resource_id": "0f86ff35-ec97-45b9-8179-2bde501e58e9",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "REQ-02_knowledge_state_tracking",
+      "path": "layer_1_group/layer_1_99_stages/stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/02_instantiation_pattern/need_03_instance_context/requirements/REQ-02_knowledge_state_tracking.md"
+    },
+    {
+      "resource_id": "ec9c7618-4d19-40b4-8e77-fba8a76a4d01",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "REQ-03_goal_career_alignment",
+      "path": "layer_1_group/layer_1_99_stages/stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/02_instantiation_pattern/need_03_instance_context/requirements/REQ-03_goal_career_alignment.md"
+    },
+    {
+      "resource_id": "e4bedd8d-3e78-4e80-a5ad-7e931a9bacb5",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_1_group/layer_1_99_stages/stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/02_instantiation_pattern/need_03_instance_context/user_stories/README.md"
+    },
+    {
+      "resource_id": "5e506e81-3795-434e-802f-fd3344fddfa6",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "US-01_ai_knows_student_gaps",
+      "path": "layer_1_group/layer_1_99_stages/stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/02_instantiation_pattern/need_03_instance_context/user_stories/US-01_ai_knows_student_gaps.md"
+    },
+    {
+      "resource_id": "ce488541-0503-4a0b-9abf-6a8e1ffd1ebc",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "US-02_ai_connects_knowledge_to_career",
+      "path": "layer_1_group/layer_1_99_stages/stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/02_instantiation_pattern/need_03_instance_context/user_stories/US-02_ai_connects_knowledge_to_career.md"
+    },
+    {
+      "resource_id": "f86831bf-0dcc-4c64-af6c-15dd68285004",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_1_group/layer_1_99_stages/stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/02_instantiation_pattern/need_04_feature_to_instance_flow/README.md"
+    },
+    {
+      "resource_id": "48e8357f-98b0-4698-9a63-0ccd5aeaf422",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_1_group/layer_1_99_stages/stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/02_instantiation_pattern/need_04_feature_to_instance_flow/requirements/README.md"
+    },
+    {
+      "resource_id": "5cba63b0-e50a-4538-bdae-30baf987870d",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "REQ-01_template_propagation",
+      "path": "layer_1_group/layer_1_99_stages/stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/02_instantiation_pattern/need_04_feature_to_instance_flow/requirements/REQ-01_template_propagation.md"
+    },
+    {
+      "resource_id": "4d5f3ee7-0e0d-445d-8e53-e0d6d0635b44",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "REQ-02_instance_upgrade_protocol",
+      "path": "layer_1_group/layer_1_99_stages/stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/02_instantiation_pattern/need_04_feature_to_instance_flow/requirements/REQ-02_instance_upgrade_protocol.md"
+    },
+    {
+      "resource_id": "0355ef42-9e07-4de7-8e23-6999168d39f9",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "REQ-03_backward_compatibility",
+      "path": "layer_1_group/layer_1_99_stages/stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/02_instantiation_pattern/need_04_feature_to_instance_flow/requirements/REQ-03_backward_compatibility.md"
+    },
+    {
+      "resource_id": "2e07eb47-af0e-4446-a1a4-d9a81b79a878",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_1_group/layer_1_99_stages/stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/02_instantiation_pattern/need_04_feature_to_instance_flow/user_stories/README.md"
+    },
+    {
+      "resource_id": "0e4ec076-9584-483a-8103-07d61c4caafb",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "US-01_new_feature_reaches_instances",
+      "path": "layer_1_group/layer_1_99_stages/stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/02_instantiation_pattern/need_04_feature_to_instance_flow/user_stories/US-01_new_feature_reaches_instances.md"
+    },
+    {
+      "resource_id": "7d440316-043c-499d-b745-9ac11911b8a1",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "US-02_existing_instances_unbroken",
+      "path": "layer_1_group/layer_1_99_stages/stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/02_instantiation_pattern/need_04_feature_to_instance_flow/user_stories/US-02_existing_instances_unbroken.md"
+    },
+    {
+      "resource_id": "02dbc5e4-dd1b-421b-9386-09bf202d94c6",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_1_group/layer_1_99_stages/stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/03_universal_pattern/README.md"
+    },
+    {
+      "resource_id": "86bf8bf3-690d-486a-96cd-76ea39d2f24b",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_1_group/layer_1_99_stages/stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/03_universal_pattern/need_01_general_pattern/README.md"
+    },
+    {
+      "resource_id": "7b688e22-76b2-484a-a683-b53d50a64f54",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_1_group/layer_1_99_stages/stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/03_universal_pattern/need_01_general_pattern/requirements/README.md"
+    },
+    {
+      "resource_id": "5a5217a3-7dbf-4c4c-905c-6199db846ccd",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "REQ-01_domain_agnostic_structure",
+      "path": "layer_1_group/layer_1_99_stages/stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/03_universal_pattern/need_01_general_pattern/requirements/REQ-01_domain_agnostic_structure.md"
+    },
+    {
+      "resource_id": "f9cd65f5-2f73-48b7-9e75-5095e3e6e55f",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "REQ-02_documented_pattern",
+      "path": "layer_1_group/layer_1_99_stages/stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/03_universal_pattern/need_01_general_pattern/requirements/REQ-02_documented_pattern.md"
+    },
+    {
+      "resource_id": "3c38a658-66e5-4bb5-b7dd-14bc96efaa4d",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "REQ-03_reusable_templates",
+      "path": "layer_1_group/layer_1_99_stages/stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/03_universal_pattern/need_01_general_pattern/requirements/REQ-03_reusable_templates.md"
+    },
+    {
+      "resource_id": "083dcee4-c56a-4f4a-a167-1a5347dea70e",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_1_group/layer_1_99_stages/stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/03_universal_pattern/need_01_general_pattern/user_stories/README.md"
+    },
+    {
+      "resource_id": "aa588271-4a35-4b01-af20-098e2420e1a2",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "US-01_any_system_uses_pattern",
+      "path": "layer_1_group/layer_1_99_stages/stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/03_universal_pattern/need_01_general_pattern/user_stories/US-01_any_system_uses_pattern.md"
+    },
+    {
+      "resource_id": "b5ba30ef-8b87-48cd-8206-6f58cb120658",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "US-02_developer_reads_one_guide",
+      "path": "layer_1_group/layer_1_99_stages/stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/03_universal_pattern/need_01_general_pattern/user_stories/US-02_developer_reads_one_guide.md"
+    },
+    {
+      "resource_id": "9ea85da7-54cd-4532-bbe6-a8d147fbc47a",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_1_group/layer_1_99_stages/stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/03_universal_pattern/need_02_school_system_example/README.md"
+    },
+    {
+      "resource_id": "2dfdcae5-1990-4405-94eb-318d57b322a2",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_1_group/layer_1_99_stages/stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/03_universal_pattern/need_02_school_system_example/requirements/README.md"
+    },
+    {
+      "resource_id": "9e647ac0-5886-4b04-aaf8-f6a8927a3313",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "REQ-01_knowledge_graph_awareness",
+      "path": "layer_1_group/layer_1_99_stages/stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/03_universal_pattern/need_02_school_system_example/requirements/REQ-01_knowledge_graph_awareness.md"
+    },
+    {
+      "resource_id": "9a3a2b95-c060-4a3c-bf6b-2eb2e4fc2292",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "REQ-02_student_modeling",
+      "path": "layer_1_group/layer_1_99_stages/stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/03_universal_pattern/need_02_school_system_example/requirements/REQ-02_student_modeling.md"
+    },
+    {
+      "resource_id": "53587614-cc5d-4639-9de8-d776fea68d8e",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "REQ-03_adaptive_learning",
+      "path": "layer_1_group/layer_1_99_stages/stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/03_universal_pattern/need_02_school_system_example/requirements/REQ-03_adaptive_learning.md"
+    },
+    {
+      "resource_id": "ee315c47-ced4-4a6c-92d7-516f563a6d3c",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "REQ-04_prerequisite_tracking",
+      "path": "layer_1_group/layer_1_99_stages/stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/03_universal_pattern/need_02_school_system_example/requirements/REQ-04_prerequisite_tracking.md"
+    },
+    {
+      "resource_id": "03b1e5df-fe2d-40e7-9758-2df56a060d22",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "REQ-05_career_alignment",
+      "path": "layer_1_group/layer_1_99_stages/stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/03_universal_pattern/need_02_school_system_example/requirements/REQ-05_career_alignment.md"
+    },
+    {
+      "resource_id": "09819c2c-877b-41c8-a340-babc0f2bfb49",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_1_group/layer_1_99_stages/stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/03_universal_pattern/need_02_school_system_example/user_stories/README.md"
+    },
+    {
+      "resource_id": "2d000cd7-e548-41fe-a45a-c0858f87a8d0",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "US-01_ai_maps_class_knowledge",
+      "path": "layer_1_group/layer_1_99_stages/stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/03_universal_pattern/need_02_school_system_example/user_stories/US-01_ai_maps_class_knowledge.md"
+    },
+    {
+      "resource_id": "7e1fb937-67e6-452c-bdc7-cde57b9a3746",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "US-02_ai_tailors_to_student",
+      "path": "layer_1_group/layer_1_99_stages/stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/03_universal_pattern/need_02_school_system_example/user_stories/US-02_ai_tailors_to_student.md"
+    },
+    {
+      "resource_id": "4441ebb8-1301-46be-a9ad-cb244d8c6379",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_1_group/layer_1_99_stages/stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/03_universal_pattern/need_03_nested_systems/README.md"
+    },
+    {
+      "resource_id": "b9b45c35-fc80-4024-a01b-2dbb9e10ac30",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_1_group/layer_1_99_stages/stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/03_universal_pattern/need_03_nested_systems/requirements/README.md"
+    },
+    {
+      "resource_id": "cfe0ce85-c8b5-43a5-98da-7d72f718fd89",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "REQ-01_systems_contain_subsystems",
+      "path": "layer_1_group/layer_1_99_stages/stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/03_universal_pattern/need_03_nested_systems/requirements/REQ-01_systems_contain_subsystems.md"
+    },
+    {
+      "resource_id": "15c4c142-cee5-4ec2-b7a2-e78840f36b19",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "REQ-02_same_pattern_recursively",
+      "path": "layer_1_group/layer_1_99_stages/stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/03_universal_pattern/need_03_nested_systems/requirements/REQ-02_same_pattern_recursively.md"
+    },
+    {
+      "resource_id": "b1faae75-0ca8-4c8b-97d7-fd7cf9ab0b1f",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "REQ-03_context_inheritance",
+      "path": "layer_1_group/layer_1_99_stages/stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/03_universal_pattern/need_03_nested_systems/requirements/REQ-03_context_inheritance.md"
+    },
+    {
+      "resource_id": "f94e8acd-4b4d-4783-bdea-18506b230cf2",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_1_group/layer_1_99_stages/stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/03_universal_pattern/need_03_nested_systems/user_stories/README.md"
+    },
+    {
+      "resource_id": "cdf82bb8-2fff-4c18-a085-a1ec250175bf",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "US-01_ai_system_contains_school",
+      "path": "layer_1_group/layer_1_99_stages/stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/03_universal_pattern/need_03_nested_systems/user_stories/US-01_ai_system_contains_school.md"
+    },
+    {
+      "resource_id": "ac8c2cc6-6ddd-4237-86c3-139065d6d1d2",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "US-02_school_has_own_rpi_cycle",
+      "path": "layer_1_group/layer_1_99_stages/stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/03_universal_pattern/need_03_nested_systems/user_stories/US-02_school_has_own_rpi_cycle.md"
+    },
+    {
+      "resource_id": "d0d25c4d-382b-47af-99f0-06bccd758e5e",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_1_group/layer_1_99_stages/stage_1_01_request_gathering/outputs/requests/tree_of_needs/00_systems_organize_effectively/README.md"
+    },
+    {
+      "resource_id": "094431f7-09e7-4946-9bf8-7ae0d6aba813",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "CHANGELOG",
+      "path": "layer_1_group/layer_1_99_stages/stage_1_01_request_gathering/outputs/requests/tree_of_needs/_meta/CHANGELOG.md"
+    },
+    {
+      "resource_id": "2974f747-b97b-4338-830f-010230620f5f",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "DEPENDENCIES",
+      "path": "layer_1_group/layer_1_99_stages/stage_1_01_request_gathering/outputs/requests/tree_of_needs/_meta/DEPENDENCIES.md"
+    },
+    {
+      "resource_id": "1adad994-737e-440a-91c0-ddda469cef1c",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "VERSION",
+      "path": "layer_1_group/layer_1_99_stages/stage_1_01_request_gathering/outputs/requests/tree_of_needs/_meta/VERSION.md"
+    },
+    {
+      "resource_id": "e93e6235-5349-4d25-a91a-6f8c0795a88e",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "index",
+      "path": "layer_1_group/layer_1_99_stages/stage_1_01_request_gathering/outputs/requests/tree_of_needs/index.jsonld"
+    },
+    {
+      "resource_id": "426c2767-c5dc-4634-bcd9-74730ca0c813",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "stage_1_01_request_gathering_agent",
+      "path": "layer_1_group/layer_1_99_stages/stage_1_01_request_gathering/stage_1_01_request_gathering_agent.jsonld"
+    },
+    {
+      "resource_id": "34ce723c-9829-4017-849f-70560b6b20a1",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "stage_1_02_research_agent",
+      "path": "layer_1_group/layer_1_99_stages/stage_1_02_research/stage_1_02_research_agent.jsonld"
+    },
+    {
+      "resource_id": "3592cf67-e84e-48a0-a1a2-32fcf2c05b0c",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "stage_1_03_instructions_agent",
+      "path": "layer_1_group/layer_1_99_stages/stage_1_03_instructions/stage_1_03_instructions_agent.jsonld"
+    },
+    {
+      "resource_id": "94eb49e1-0062-48b3-85db-4c9ef2cb078b",
+      "id_field": "resource_id",
+      "resource_type": "agnostic",
+      "resource_name": "0AGNOSTIC",
+      "path": "layer_1_group/layer_1_99_stages/stage_1_04_design/0AGNOSTIC.md"
+    },
+    {
+      "resource_id": "1e6c8090-a437-4c08-aa46-74b682941a1a",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "DD-01_research_production_instantiation_pattern",
+      "path": "layer_1_group/layer_1_99_stages/stage_1_04_design/outputs/design_decisions/DD-01_research_production_instantiation_pattern.md"
+    },
+    {
+      "resource_id": "b9ba8555-4095-4351-94c9-9b305a4aee10",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "DD-02_school_system_architecture",
+      "path": "layer_1_group/layer_1_99_stages/stage_1_04_design/outputs/design_decisions/DD-02_school_system_architecture.md"
+    },
+    {
+      "resource_id": "6e80c1c8-5ce2-4084-ae07-64a04116ff89",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "DD-03_stage_scaffolding_defaults",
+      "path": "layer_1_group/layer_1_99_stages/stage_1_04_design/outputs/design_decisions/DD-03_stage_scaffolding_defaults.md"
+    },
+    {
+      "resource_id": "2579ad15-52f5-4bb6-af10-55a7ad333692",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_1_group/layer_1_99_stages/stage_1_04_design/outputs/design_decisions/overview/README.md"
+    },
+    {
+      "resource_id": "b40c7d66-b798-4637-894f-082c66a07bec",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "stage_1_05_design_agent",
+      "path": "layer_1_group/layer_1_99_stages/stage_1_04_design/stage_1_05_design_agent.jsonld"
+    },
+    {
+      "resource_id": "2aa0a7f1-5211-426d-ac7c-3939de68a858",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "stage_1_04_planning_agent",
+      "path": "layer_1_group/layer_1_99_stages/stage_1_05_planning/stage_1_04_planning_agent.jsonld"
+    },
+    {
+      "resource_id": "13d234c7-fc2c-4752-a07e-c573147be444",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "stage_1_06_development_agent",
+      "path": "layer_1_group/layer_1_99_stages/stage_1_06_development/stage_1_06_development_agent.jsonld"
+    },
+    {
+      "resource_id": "e6f9670d-5723-4ee2-9735-f3e7cc19ac41",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "stage_1_07_testing_agent",
+      "path": "layer_1_group/layer_1_99_stages/stage_1_07_testing/stage_1_07_testing_agent.jsonld"
+    },
+    {
+      "resource_id": "766a3c38-60a2-4732-baae-9f5523c7f1c2",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "stage_1_08_criticism_agent",
+      "path": "layer_1_group/layer_1_99_stages/stage_1_08_criticism/stage_1_08_criticism_agent.jsonld"
+    },
+    {
+      "resource_id": "99cea852-3e7b-4cc1-b309-715f1d3a250f",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "stage_1_09_fixing_agent",
+      "path": "layer_1_group/layer_1_99_stages/stage_1_09_fixing/stage_1_09_fixing_agent.jsonld"
+    },
+    {
+      "resource_id": "53d4ac1b-b7ce-45ef-b787-d77a73ab73ab",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "stage_1_10_current_product_agent",
+      "path": "layer_1_group/layer_1_99_stages/stage_1_10_current_product/stage_1_10_current_product_agent.jsonld"
+    },
+    {
+      "resource_id": "15e50e60-2d08-4b62-ac7f-2eb344d8fc01",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "stage_1_11_archives_agent",
+      "path": "layer_1_group/layer_1_99_stages/stage_1_11_archives/stage_1_11_archives_agent.jsonld"
+    },
+    {
+      "resource_id": "c5f25273-e9fc-40e1-9309-df0c4e634ea3",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "status_1",
+      "path": "layer_1_group/layer_1_99_stages/status_1.json"
+    },
+    {
+      "resource_id": "adbb3401-1879-488a-b106-7698b9ba0af1",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "layer_1_orchestrator.gab",
+      "path": "layer_1_orchestrator.gab.jsonld"
+    },
+    {
+      "resource_id": "a74d24a5-760c-4d5d-8ef9-d9edda2f42d3",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": "ENTITY_TYPES",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/.0agnostic/01_knowledge/overview/production_entity_lifecycle/ENTITY_TYPES.md"
+    },
+    {
+      "resource_id": "8133bcf5-fed8-40d0-9667-c650a5e90a3d",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": "INSTANTIATION_GUIDE",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/.0agnostic/01_knowledge/overview/production_entity_lifecycle/INSTANTIATION_GUIDE.md"
+    },
+    {
+      "resource_id": "561ac377-1f3f-481d-9bff-b302b81a0df5",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": "MAINTENANCE_GUIDE",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/.0agnostic/01_knowledge/overview/production_entity_lifecycle/MAINTENANCE_GUIDE.md"
+    },
+    {
+      "resource_id": "05ded9c0-0ceb-4dc7-9a5c-dfc28fc05903",
+      "id_field": "resource_id",
+      "resource_type": "index",
+      "resource_name": "0INDEX",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/.0agnostic/01_knowledge/overview/production_layer_stage_system/0INDEX.md"
+    },
+    {
+      "resource_id": "53d4c941-456e-444d-ae8c-cd28d6d94b74",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": "LAYERS_EXPLAINED",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/.0agnostic/01_knowledge/overview/production_layer_stage_system/LAYERS_EXPLAINED.md"
+    },
+    {
+      "resource_id": "be3621c4-4e6c-4bcd-98ea-17d6b34a9158",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": "NESTED_DEPTH_NAMING",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/.0agnostic/01_knowledge/overview/production_layer_stage_system/NESTED_DEPTH_NAMING.md"
+    },
+    {
+      "resource_id": "51b1090b-6645-498d-8de7-5c16c49e836d",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": "OVERVIEW",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/.0agnostic/01_knowledge/overview/production_layer_stage_system/OVERVIEW.md"
+    },
+    {
+      "resource_id": "69c25ab2-e756-4679-8c6b-e4d1821a7cd0",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": "STAGES_EXPLAINED",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/.0agnostic/01_knowledge/overview/production_layer_stage_system/STAGES_EXPLAINED.md"
+    },
+    {
+      "resource_id": "2d5f50ba-ba74-4127-9844-c4123258a20e",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": "SUB_LAYERS_AS_ENTRY_POINTS",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/.0agnostic/01_knowledge/overview/production_layer_stage_system/SUB_LAYERS_AS_ENTRY_POINTS.md"
+    },
+    {
+      "resource_id": "c92ff017-3f5d-40f1-ad16-2c28dfb356ed",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": "SUB_STAGES_EXPLAINED",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/.0agnostic/01_knowledge/overview/production_layer_stage_system/SUB_STAGES_EXPLAINED.md"
+    },
+    {
+      "resource_id": "9ab46661-f3e2-4d4e-8d69-96b8d4ab41c3",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": "HIERARCHY_NAMING_CONVENTION",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/.0agnostic/01_knowledge/overview/production_naming_conventions/HIERARCHY_NAMING_CONVENTION.md"
+    },
+    {
+      "resource_id": "58a4bc49-6751-40e8-97b2-ee2bbb06f6bd",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": "framework-status",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/.0agnostic/01_knowledge/reference_implementation/.claude/commands/framework-status.md"
+    },
+    {
+      "resource_id": "5cd3294d-32b9-496a-9cbb-eb852bbe2e25",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/.0agnostic/01_knowledge/reference_implementation/README.md"
+    },
+    {
+      "resource_id": "bd4223d9-3ae0-4e69-aa72-f1cb1fb7c01f",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": "init_prompt",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/.0agnostic/01_knowledge/reference_implementation/layer_1/layer_1_00_ai_manager_system/agnostic/init_prompt.md"
+    },
+    {
+      "resource_id": "584a2e46-5f36-4a82-8763-ff784102fe78",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": "EXTENDING_THE_FRAMEWORK",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/.0agnostic/01_knowledge/reference_implementation/layer_1/layer_1_02_sub_layers/sub_layer_1_04+_setup_dependant/sub_layer_1_05_framework_docs/EXTENDING_THE_FRAMEWORK.md"
+    },
+    {
+      "resource_id": "18b3b73f-3e08-4780-bf65-fc5b9c82076a",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": "FEATURE_TYPE_DECISION_GUIDE",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/.0agnostic/01_knowledge/reference_implementation/layer_1/layer_1_02_sub_layers/sub_layer_1_04+_setup_dependant/sub_layer_1_05_framework_docs/FEATURE_TYPE_DECISION_GUIDE.md"
+    },
+    {
+      "resource_id": "f5ddb1bc-13ab-4bab-9200-26e1535b8f96",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": "FLEXIBLE_LAYERING_SYSTEM",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/.0agnostic/01_knowledge/reference_implementation/layer_1/layer_1_02_sub_layers/sub_layer_1_04+_setup_dependant/sub_layer_1_05_framework_docs/FLEXIBLE_LAYERING_SYSTEM.md"
+    },
+    {
+      "resource_id": "cba87593-5aab-417e-bfe2-5e396269e12c",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/.0agnostic/01_knowledge/reference_implementation/layer_1/layer_1_02_sub_layers/sub_layer_1_04+_setup_dependant/sub_layer_1_05_framework_docs/README.md"
+    },
+    {
+      "resource_id": "95b90aa1-50fb-4cbf-8642-5f838dd28a97",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": "UNIVERSAL_SYSTEM_EVALUATION",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/.0agnostic/01_knowledge/reference_implementation/layer_1/layer_1_02_sub_layers/sub_layer_1_04+_setup_dependant/sub_layer_1_05_framework_docs/UNIVERSAL_SYSTEM_EVALUATION.md"
+    },
+    {
+      "resource_id": "215a7a98-1bae-4531-a0bd-a022ea75f280",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": "WORKFLOW_FEATURE_PATTERN",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/.0agnostic/01_knowledge/reference_implementation/layer_1/layer_1_02_sub_layers/sub_layer_1_04+_setup_dependant/sub_layer_1_05_framework_docs/WORKFLOW_FEATURE_PATTERN.md"
+    },
+    {
+      "resource_id": "2888884c-5471-4771-9040-1bef8f1fc508",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/.0agnostic/01_knowledge/reference_implementation/layer_1/layer_1_02_sub_layers/sub_layer_1_04+_setup_dependant/sub_layer_1_06_templates/0_universal_template/README.md"
+    },
+    {
+      "resource_id": "a43a9b21-ac69-4278-96f1-13f685b225b7",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/.0agnostic/01_knowledge/reference_implementation/layer_1/layer_1_02_sub_layers/sub_layer_1_04+_setup_dependant/sub_layer_1_06_templates/0_universal_template/layer_0/layer_0_01_ai_manager_system/README.md"
+    },
+    {
+      "resource_id": "deea1cfb-dafc-4a4d-87d4-0120e5d66169",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/.0agnostic/01_knowledge/reference_implementation/layer_1/layer_1_02_sub_layers/sub_layer_1_04+_setup_dependant/sub_layer_1_06_templates/0_universal_template/layer_0/layer_0_03_sub_layers/sub_layer_0_01_basic_prompts_throughout/README.md"
+    },
+    {
+      "resource_id": "3ed43e8f-97c5-44e8-adbc-9d61fd4555fa",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/.0agnostic/01_knowledge/reference_implementation/layer_1/layer_1_02_sub_layers/sub_layer_1_04+_setup_dependant/sub_layer_1_06_templates/0_universal_template/layer_0/layer_0_03_sub_layers/sub_layer_0_02_software_engineering_knowledge_system/README.md"
+    },
+    {
+      "resource_id": "5d8ca26c-3e9f-43a9-8373-eeed76513684",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/.0agnostic/01_knowledge/reference_implementation/layer_1/layer_1_02_sub_layers/sub_layer_1_04+_setup_dependant/sub_layer_1_06_templates/0_universal_template/layer_0/layer_0_03_sub_layers/sub_layer_0_03_universal_principles/README.md"
+    },
+    {
+      "resource_id": "8cd93bda-b435-43ce-8e6e-d4e222c221af",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/.0agnostic/01_knowledge/reference_implementation/layer_1/layer_1_02_sub_layers/sub_layer_1_04+_setup_dependant/sub_layer_1_06_templates/0_universal_template/layer_0/layer_0_03_sub_layers/sub_layer_0_04_universal_rules/README.md"
+    },
+    {
+      "resource_id": "45730fdf-0ad0-4ea8-8a42-c2642a10e3e2",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/.0agnostic/01_knowledge/reference_implementation/layer_1/layer_1_02_sub_layers/sub_layer_1_04+_setup_dependant/sub_layer_1_06_templates/0_universal_template/layer_0/layer_0_03_sub_layers/sub_layer_0_05_os_setup/README.md"
+    },
+    {
+      "resource_id": "ac6749b9-cf66-4668-810a-e411ccd77190",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/.0agnostic/01_knowledge/reference_implementation/layer_1/layer_1_02_sub_layers/sub_layer_1_04+_setup_dependant/sub_layer_1_06_templates/0_universal_template/layer_0/layer_0_03_sub_layers/sub_layer_0_06_coding_app_setup/README.md"
+    },
+    {
+      "resource_id": "feef8821-d197-495d-916f-d1455c0b0001",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/.0agnostic/01_knowledge/reference_implementation/layer_1/layer_1_02_sub_layers/sub_layer_1_04+_setup_dependant/sub_layer_1_06_templates/0_universal_template/layer_0/layer_0_03_sub_layers/sub_layer_0_07_apps_browsers_extensions_setup/README.md"
+    },
+    {
+      "resource_id": "8b90f64c-998f-42cc-bfd6-ab2e1a37112f",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/.0agnostic/01_knowledge/reference_implementation/layer_1/layer_1_02_sub_layers/sub_layer_1_04+_setup_dependant/sub_layer_1_06_templates/0_universal_template/layer_0/layer_0_03_sub_layers/sub_layer_0_08_ai_apps_tools_setup/README.md"
+    },
+    {
+      "resource_id": "5b4d398a-91aa-46b9-b0af-996d6ed93845",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/.0agnostic/01_knowledge/reference_implementation/layer_1/layer_1_02_sub_layers/sub_layer_1_04+_setup_dependant/sub_layer_1_06_templates/0_universal_template/layer_0/layer_0_03_sub_layers/sub_layer_0_09_mcp_servers_and_tools_setup/README.md"
+    },
+    {
+      "resource_id": "c46fc394-0136-48e8-8cd4-91ed26f76302",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/.0agnostic/01_knowledge/reference_implementation/layer_1/layer_1_02_sub_layers/sub_layer_1_04+_setup_dependant/sub_layer_1_06_templates/0_universal_template/layer_0/layer_0_03_sub_layers/sub_layer_0_10_ai_models/README.md"
+    },
+    {
+      "resource_id": "503a4921-7770-4aa8-93e5-a50d071b52c8",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/.0agnostic/01_knowledge/reference_implementation/layer_1/layer_1_02_sub_layers/sub_layer_1_04+_setup_dependant/sub_layer_1_06_templates/0_universal_template/layer_0/layer_0_03_sub_layers/sub_layer_0_11_universal_tools/README.md"
+    },
+    {
+      "resource_id": "44b434f0-8125-42e1-90dc-71004a2dda7c",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/.0agnostic/01_knowledge/reference_implementation/layer_1/layer_1_02_sub_layers/sub_layer_1_04+_setup_dependant/sub_layer_1_06_templates/0_universal_template/layer_0/layer_0_03_sub_layers/sub_layer_0_12_agent_setup/README.md"
+    },
+    {
+      "resource_id": "e4b204b3-a870-4f2f-9190-9a6426474495",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": ".gitkeep",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/.0agnostic/01_knowledge/reference_implementation/layer_1/layer_1_02_sub_layers/sub_layer_1_04+_setup_dependant/sub_layer_1_06_templates/0_universal_template/layer_0/layer_0_99_stages/stage_0_01_request_gathering/ai_agent_system/.gitkeep"
+    },
+    {
+      "resource_id": "574f11b3-99a3-4316-86f0-e0f4ddb678b9",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": ".gitkeep",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/.0agnostic/01_knowledge/reference_implementation/layer_1/layer_1_02_sub_layers/sub_layer_1_04+_setup_dependant/sub_layer_1_06_templates/0_universal_template/layer_0/layer_0_99_stages/stage_0_01_request_gathering/hand_off_documents/.gitkeep"
+    },
+    {
+      "resource_id": "be7432c4-8ebb-42b0-b270-037cf594357a",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/.0agnostic/01_knowledge/reference_implementation/layer_1/layer_1_02_sub_layers/sub_layer_1_04+_setup_dependant/sub_layer_1_06_templates/0_universal_template/layer_0/layer_0_99_stages/stage_0_10_current_product/README.md"
+    },
+    {
+      "resource_id": "5b1d6e70-e0ce-4219-bcd4-ced49a0849ee",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "status_template",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/.0agnostic/01_knowledge/reference_implementation/layer_1/layer_1_02_sub_layers/sub_layer_1_04+_setup_dependant/sub_layer_1_06_templates/0_universal_template/layer_0/layer_0_99_stages/status_template.json"
+    },
+    {
+      "resource_id": "41552fde-9dbd-42c1-aecc-44b3097de0ee",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/.0agnostic/01_knowledge/reference_implementation/layer_1/layer_1_02_sub_layers/sub_layer_1_04+_setup_dependant/sub_layer_1_06_templates/1_project_template/README.md"
+    },
+    {
+      "resource_id": "a2a63244-9040-42c8-bda5-e5e1d598713a",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/.0agnostic/01_knowledge/reference_implementation/layer_1/layer_1_02_sub_layers/sub_layer_1_04+_setup_dependant/sub_layer_1_06_templates/1_project_template/layer_1/layer_1_01_ai_manager_system/README.md"
+    },
+    {
+      "resource_id": "900f94b5-8a0d-4097-bd85-dd8f7b2b44d7",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/.0agnostic/01_knowledge/reference_implementation/layer_1/layer_1_02_sub_layers/sub_layer_1_04+_setup_dependant/sub_layer_1_06_templates/1_project_template/layer_1/layer_1_03_sub_layers/sub_layer_1_01_basic_prompts/README.md"
+    },
+    {
+      "resource_id": "c391d24d-3ac9-4abb-bb24-f6a744cfc9a6",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/.0agnostic/01_knowledge/reference_implementation/layer_1/layer_1_02_sub_layers/sub_layer_1_04+_setup_dependant/sub_layer_1_06_templates/1_project_template/layer_1/layer_1_03_sub_layers/sub_layer_1_02_project_se_knowledge/README.md"
+    },
+    {
+      "resource_id": "53b4b9fd-ef0c-4816-85cb-21a9c9245475",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/.0agnostic/01_knowledge/reference_implementation/layer_1/layer_1_02_sub_layers/sub_layer_1_04+_setup_dependant/sub_layer_1_06_templates/1_project_template/layer_1/layer_1_03_sub_layers/sub_layer_1_03_project_principles/README.md"
+    },
+    {
+      "resource_id": "b472d2a3-0c23-43da-8b1c-f294edd20437",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/.0agnostic/01_knowledge/reference_implementation/layer_1/layer_1_02_sub_layers/sub_layer_1_04+_setup_dependant/sub_layer_1_06_templates/1_project_template/layer_1/layer_1_03_sub_layers/sub_layer_1_04_project_rules/README.md"
+    },
+    {
+      "resource_id": "72b3332a-829f-4e71-a496-f50e9986af91",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/.0agnostic/01_knowledge/reference_implementation/layer_1/layer_1_02_sub_layers/sub_layer_1_04+_setup_dependant/sub_layer_1_06_templates/1_project_template/layer_1/layer_1_03_sub_layers/sub_layer_1_05_project_os_setup/README.md"
+    },
+    {
+      "resource_id": "dedb5ab1-3e61-4fe6-aa7f-cc724a34fd41",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/.0agnostic/01_knowledge/reference_implementation/layer_1/layer_1_02_sub_layers/sub_layer_1_04+_setup_dependant/sub_layer_1_06_templates/1_project_template/layer_1/layer_1_03_sub_layers/sub_layer_1_06_project_coding_app_setup/README.md"
+    },
+    {
+      "resource_id": "eb4d0626-cf76-4752-9f3e-bb60f1a31a0b",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/.0agnostic/01_knowledge/reference_implementation/layer_1/layer_1_02_sub_layers/sub_layer_1_04+_setup_dependant/sub_layer_1_06_templates/1_project_template/layer_1/layer_1_03_sub_layers/sub_layer_1_07_project_apps_browsers_extensions_setup/README.md"
+    },
+    {
+      "resource_id": "17513483-68dd-487f-b123-05319ff64f30",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/.0agnostic/01_knowledge/reference_implementation/layer_1/layer_1_02_sub_layers/sub_layer_1_04+_setup_dependant/sub_layer_1_06_templates/1_project_template/layer_1/layer_1_03_sub_layers/sub_layer_1_08_project_ai_apps_tools_setup/README.md"
+    },
+    {
+      "resource_id": "3c0d1fd2-0514-4ea1-9b0d-e4b03db75fc7",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/.0agnostic/01_knowledge/reference_implementation/layer_1/layer_1_02_sub_layers/sub_layer_1_04+_setup_dependant/sub_layer_1_06_templates/1_project_template/layer_1/layer_1_03_sub_layers/sub_layer_1_09_project_mcp_servers_and_tools_setup/README.md"
+    },
+    {
+      "resource_id": "d8aaf2c9-1cd4-4a2f-884e-6fc90832722e",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/.0agnostic/01_knowledge/reference_implementation/layer_1/layer_1_02_sub_layers/sub_layer_1_04+_setup_dependant/sub_layer_1_06_templates/1_project_template/layer_1/layer_1_03_sub_layers/sub_layer_1_10_project_ai_models/README.md"
+    },
+    {
+      "resource_id": "afee62f7-6756-4b80-9382-82cb8ebca98c",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/.0agnostic/01_knowledge/reference_implementation/layer_1/layer_1_02_sub_layers/sub_layer_1_04+_setup_dependant/sub_layer_1_06_templates/1_project_template/layer_1/layer_1_03_sub_layers/sub_layer_1_11_project_tools/README.md"
+    },
+    {
+      "resource_id": "818e4cb8-5dfb-4a1b-be46-97ca39e26917",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/.0agnostic/01_knowledge/reference_implementation/layer_1/layer_1_02_sub_layers/sub_layer_1_04+_setup_dependant/sub_layer_1_06_templates/1_project_template/layer_1/layer_1_03_sub_layers/sub_layer_1_12_project_agent_setup/README.md"
+    },
+    {
+      "resource_id": "ea2cc366-11da-463b-8b41-79920eb5b391",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": ".gitkeep",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/.0agnostic/01_knowledge/reference_implementation/layer_1/layer_1_02_sub_layers/sub_layer_1_04+_setup_dependant/sub_layer_1_06_templates/1_project_template/layer_1/layer_1_99_stages/stage_1_01_request_gathering/ai_agent_system/.gitkeep"
+    },
+    {
+      "resource_id": "b8d1d88e-277d-4b57-9f1f-050ba539828d",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": ".gitkeep",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/.0agnostic/01_knowledge/reference_implementation/layer_1/layer_1_02_sub_layers/sub_layer_1_04+_setup_dependant/sub_layer_1_06_templates/1_project_template/layer_1/layer_1_99_stages/stage_1_01_request_gathering/hand_off_documents/.gitkeep"
+    },
+    {
+      "resource_id": "68636fc7-e50a-41d6-9c94-8f277ba67dcc",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/.0agnostic/01_knowledge/reference_implementation/layer_1/layer_1_02_sub_layers/sub_layer_1_04+_setup_dependant/sub_layer_1_06_templates/1_project_template/layer_1/layer_1_99_stages/stage_1_10_current_product/README.md"
+    },
+    {
+      "resource_id": "7f3a9756-553d-458b-8410-551b5422f514",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "status_template",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/.0agnostic/01_knowledge/reference_implementation/layer_1/layer_1_02_sub_layers/sub_layer_1_04+_setup_dependant/sub_layer_1_06_templates/1_project_template/layer_1/layer_1_99_stages/status_template.json"
+    },
+    {
+      "resource_id": "286b2f1c-22f4-49f5-9da1-c1388f67cb21",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/.0agnostic/01_knowledge/reference_implementation/layer_1/layer_1_02_sub_layers/sub_layer_1_04+_setup_dependant/sub_layer_1_06_templates/1_project_template/layer_2/layer_2_components/README.md"
+    },
+    {
+      "resource_id": "b27ad415-bf1f-4715-bc17-c564101bddee",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/.0agnostic/01_knowledge/reference_implementation/layer_1/layer_1_02_sub_layers/sub_layer_1_04+_setup_dependant/sub_layer_1_06_templates/1_project_template/layer_2/layer_2_features/README.md"
+    },
+    {
+      "resource_id": "5a21d894-888e-4753-a018-c829fd6f53d3",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/.0agnostic/01_knowledge/reference_implementation/layer_1/layer_1_02_sub_layers/sub_layer_1_04+_setup_dependant/sub_layer_1_06_templates/1_project_template/layer_2/layer_2_sub_projects/README.md"
+    },
+    {
+      "resource_id": "f8befdc2-aeea-4949-9720-a56f9427ff0e",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/.0agnostic/01_knowledge/reference_implementation/layer_1/layer_1_02_sub_layers/sub_layer_1_04+_setup_dependant/sub_layer_1_06_templates/2_feature_template/README.md"
+    },
+    {
+      "resource_id": "6398ce16-4fb9-4a20-be04-537f986012e3",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/.0agnostic/01_knowledge/reference_implementation/layer_1/layer_1_02_sub_layers/sub_layer_1_04+_setup_dependant/sub_layer_1_06_templates/2_feature_template/layer_2/layer_2_01_ai_manager_system/README.md"
+    },
+    {
+      "resource_id": "4ecfcb27-586b-4e09-979c-f74d16a7f7d0",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/.0agnostic/01_knowledge/reference_implementation/layer_1/layer_1_02_sub_layers/sub_layer_1_04+_setup_dependant/sub_layer_1_06_templates/2_feature_template/layer_2/layer_2_03_sub_layers/sub_layer_2_01_basic_prompts/README.md"
+    },
+    {
+      "resource_id": "e9b14c5a-6afc-4b34-8a40-51a0e43c1d65",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/.0agnostic/01_knowledge/reference_implementation/layer_1/layer_1_02_sub_layers/sub_layer_1_04+_setup_dependant/sub_layer_1_06_templates/2_feature_template/layer_2/layer_2_03_sub_layers/sub_layer_2_02_feature_knowledge/README.md"
+    },
+    {
+      "resource_id": "201d4704-6181-4403-8b49-26c7b70893b2",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/.0agnostic/01_knowledge/reference_implementation/layer_1/layer_1_02_sub_layers/sub_layer_1_04+_setup_dependant/sub_layer_1_06_templates/2_feature_template/layer_2/layer_2_03_sub_layers/sub_layer_2_03_feature_principles/README.md"
+    },
+    {
+      "resource_id": "45326843-8d95-4c38-8e87-a4192e2b53d3",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/.0agnostic/01_knowledge/reference_implementation/layer_1/layer_1_02_sub_layers/sub_layer_1_04+_setup_dependant/sub_layer_1_06_templates/2_feature_template/layer_2/layer_2_03_sub_layers/sub_layer_2_04_feature_rules/README.md"
+    },
+    {
+      "resource_id": "5f84de4e-c080-4f85-bb9f-ce6f4289d840",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/.0agnostic/01_knowledge/reference_implementation/layer_1/layer_1_02_sub_layers/sub_layer_1_04+_setup_dependant/sub_layer_1_06_templates/2_feature_template/layer_2/layer_2_03_sub_layers/sub_layer_2_05-2.14_setup_dependant_sub_layers/README.md"
+    },
+    {
+      "resource_id": "b39e802c-1121-4c87-9a97-fe7aba10c44b",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": ".gitkeep",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/.0agnostic/01_knowledge/reference_implementation/layer_1/layer_1_02_sub_layers/sub_layer_1_04+_setup_dependant/sub_layer_1_06_templates/2_feature_template/layer_2/layer_2_99_stages/stage_2_01_request_gathering/ai_agent_system/.gitkeep"
+    },
+    {
+      "resource_id": "abf7d4f8-7c61-4482-9d45-e7faa83105e7",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": ".gitkeep",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/.0agnostic/01_knowledge/reference_implementation/layer_1/layer_1_02_sub_layers/sub_layer_1_04+_setup_dependant/sub_layer_1_06_templates/2_feature_template/layer_2/layer_2_99_stages/stage_2_01_request_gathering/hand_off_documents/.gitkeep"
+    },
+    {
+      "resource_id": "a2c77896-a432-4f0d-aa03-819c5c3e42fc",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/.0agnostic/01_knowledge/reference_implementation/layer_1/layer_1_02_sub_layers/sub_layer_1_04+_setup_dependant/sub_layer_1_06_templates/2_feature_template/layer_2/layer_2_99_stages/stage_2_10_current_product/README.md"
+    },
+    {
+      "resource_id": "c601568c-9a30-4ba2-a37a-e07d79cc5ba8",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "status_template",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/.0agnostic/01_knowledge/reference_implementation/layer_1/layer_1_02_sub_layers/sub_layer_1_04+_setup_dependant/sub_layer_1_06_templates/2_feature_template/layer_2/layer_2_99_stages/status_template.json"
+    },
+    {
+      "resource_id": "f4c36934-56b8-4115-8d6d-f0406168d866",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/.0agnostic/01_knowledge/reference_implementation/layer_1/layer_1_02_sub_layers/sub_layer_1_04+_setup_dependant/sub_layer_1_06_templates/2_feature_template/layer_3/layer_3_sub_components/README.md"
+    },
+    {
+      "resource_id": "71177863-896a-4104-b4ab-84ccebad020a",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/.0agnostic/01_knowledge/reference_implementation/layer_1/layer_1_02_sub_layers/sub_layer_1_04+_setup_dependant/sub_layer_1_06_templates/2_feature_template/layer_3/layer_3_sub_features/README.md"
+    },
+    {
+      "resource_id": "04d95b02-4064-48f1-bc9e-311411eac89e",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/.0agnostic/01_knowledge/reference_implementation/layer_1/layer_1_02_sub_layers/sub_layer_1_04+_setup_dependant/sub_layer_1_06_templates/2_sub_project_template/README.md"
+    },
+    {
+      "resource_id": "d1fa1c50-8fc1-4c9b-a2c9-2ecc7314f0cb",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/.0agnostic/01_knowledge/reference_implementation/layer_1/layer_1_02_sub_layers/sub_layer_1_04+_setup_dependant/sub_layer_1_06_templates/2_sub_project_template/layer_2/layer_2_01_ai_manager_system/README.md"
+    },
+    {
+      "resource_id": "76a6a78b-0757-4dc5-9c96-4dce6fdb4f41",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/.0agnostic/01_knowledge/reference_implementation/layer_1/layer_1_02_sub_layers/sub_layer_1_04+_setup_dependant/sub_layer_1_06_templates/2_sub_project_template/layer_2/layer_2_03_sub_layers/sub_layer_2_01_basic_prompts/README.md"
+    },
+    {
+      "resource_id": "69382b4b-3d71-45a2-8226-d3b7a2887351",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/.0agnostic/01_knowledge/reference_implementation/layer_1/layer_1_02_sub_layers/sub_layer_1_04+_setup_dependant/sub_layer_1_06_templates/2_sub_project_template/layer_2/layer_2_03_sub_layers/sub_layer_2_02_sub_project_se_knowledge/README.md"
+    },
+    {
+      "resource_id": "15dac909-12f1-4822-83cb-2dcad8b46255",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/.0agnostic/01_knowledge/reference_implementation/layer_1/layer_1_02_sub_layers/sub_layer_1_04+_setup_dependant/sub_layer_1_06_templates/2_sub_project_template/layer_2/layer_2_03_sub_layers/sub_layer_2_03_sub_project_principles/README.md"
+    },
+    {
+      "resource_id": "abe3fdb3-ba2e-455d-85c1-c83c08e2c665",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/.0agnostic/01_knowledge/reference_implementation/layer_1/layer_1_02_sub_layers/sub_layer_1_04+_setup_dependant/sub_layer_1_06_templates/2_sub_project_template/layer_2/layer_2_03_sub_layers/sub_layer_2_04_sub_project_rules/README.md"
+    },
+    {
+      "resource_id": "b3342c75-129d-4f81-a16c-c5765b107bc5",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/.0agnostic/01_knowledge/reference_implementation/layer_1/layer_1_02_sub_layers/sub_layer_1_04+_setup_dependant/sub_layer_1_06_templates/2_sub_project_template/layer_2/layer_2_03_sub_layers/sub_layer_2_05-2.14_setup_dependant_sub_layers/README.md"
+    },
+    {
+      "resource_id": "4d210457-d9c5-494b-b455-2fada5f84bf0",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/.0agnostic/01_knowledge/reference_implementation/layer_1/layer_1_02_sub_layers/sub_layer_1_04+_setup_dependant/sub_layer_1_06_templates/2_sub_project_template/layer_2/layer_2_03_sub_layers/sub_layer_2_05-2.14_setup_dependant_sub_layers/layer_2_01_sub_project_setup_file_tree/README.md"
+    },
+    {
+      "resource_id": "61fa503b-6146-49c3-9c3b-75f642d4fc51",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": ".gitkeep",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/.0agnostic/01_knowledge/reference_implementation/layer_1/layer_1_02_sub_layers/sub_layer_1_04+_setup_dependant/sub_layer_1_06_templates/2_sub_project_template/layer_2/layer_2_99_stages/stage_2_01_request_gathering/ai_agent_system/.gitkeep"
+    },
+    {
+      "resource_id": "c58f7fef-f3ea-4d52-9d70-376d74a29ba4",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": ".gitkeep",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/.0agnostic/01_knowledge/reference_implementation/layer_1/layer_1_02_sub_layers/sub_layer_1_04+_setup_dependant/sub_layer_1_06_templates/2_sub_project_template/layer_2/layer_2_99_stages/stage_2_01_request_gathering/hand_off_documents/.gitkeep"
+    },
+    {
+      "resource_id": "1bd3d6bf-f58f-483d-ac20-85d57d45e96b",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/.0agnostic/01_knowledge/reference_implementation/layer_1/layer_1_02_sub_layers/sub_layer_1_04+_setup_dependant/sub_layer_1_06_templates/2_sub_project_template/layer_2/layer_2_99_stages/stage_2_10_current_product/README.md"
+    },
+    {
+      "resource_id": "24e39122-32e7-493b-b6ad-811ac8736f88",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "status_template",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/.0agnostic/01_knowledge/reference_implementation/layer_1/layer_1_02_sub_layers/sub_layer_1_04+_setup_dependant/sub_layer_1_06_templates/2_sub_project_template/layer_2/layer_2_99_stages/status_template.json"
+    },
+    {
+      "resource_id": "cef43b87-83ec-49ae-a756-04db43429235",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/.0agnostic/01_knowledge/reference_implementation/layer_1/layer_1_02_sub_layers/sub_layer_1_04+_setup_dependant/sub_layer_1_06_templates/2_sub_project_template/layer_3/layer_3_components/README.md"
+    },
+    {
+      "resource_id": "c2e3f947-faa9-4067-b9dc-f823036d2f5e",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/.0agnostic/01_knowledge/reference_implementation/layer_1/layer_1_02_sub_layers/sub_layer_1_04+_setup_dependant/sub_layer_1_06_templates/2_sub_project_template/layer_3/layer_3_features/README.md"
+    },
+    {
+      "resource_id": "8561a693-d84e-4e82-98fb-7817d27f8984",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/.0agnostic/01_knowledge/reference_implementation/layer_1/layer_1_02_sub_layers/sub_layer_1_04+_setup_dependant/sub_layer_1_06_templates/2_sub_project_template/layer_3/layer_3_subx2_projects/README.md"
+    },
+    {
+      "resource_id": "e78869bb-36ca-428d-be1a-60d2feec0724",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/.0agnostic/01_knowledge/reference_implementation/layer_1/layer_1_02_sub_layers/sub_layer_1_04+_setup_dependant/sub_layer_1_06_templates/3_component_template/README.md"
+    },
+    {
+      "resource_id": "ac059d5b-575e-4dea-b9c4-a2584c599dc0",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/.0agnostic/01_knowledge/reference_implementation/layer_1/layer_1_02_sub_layers/sub_layer_1_04+_setup_dependant/sub_layer_1_06_templates/3_component_template/layer_3/layer_3_01_ai_manager_system/README.md"
+    },
+    {
+      "resource_id": "fea2ab3d-abe9-4a19-9372-e1dfb87edbd8",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/.0agnostic/01_knowledge/reference_implementation/layer_1/layer_1_02_sub_layers/sub_layer_1_04+_setup_dependant/sub_layer_1_06_templates/3_component_template/layer_3/layer_3_03_sub_layers/sub_layer_3_01_basic_prompts/README.md"
+    },
+    {
+      "resource_id": "5211c3be-889e-46a2-80ea-8de859f93b82",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/.0agnostic/01_knowledge/reference_implementation/layer_1/layer_1_02_sub_layers/sub_layer_1_04+_setup_dependant/sub_layer_1_06_templates/3_component_template/layer_3/layer_3_03_sub_layers/sub_layer_3_02_component_knowledge/README.md"
+    },
+    {
+      "resource_id": "98058158-e535-4398-80bc-8b469cd01be4",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/.0agnostic/01_knowledge/reference_implementation/layer_1/layer_1_02_sub_layers/sub_layer_1_04+_setup_dependant/sub_layer_1_06_templates/3_component_template/layer_3/layer_3_03_sub_layers/sub_layer_3_03_component_principles/README.md"
+    },
+    {
+      "resource_id": "24b17abd-31c7-4f57-9475-df4caa88ee1a",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/.0agnostic/01_knowledge/reference_implementation/layer_1/layer_1_02_sub_layers/sub_layer_1_04+_setup_dependant/sub_layer_1_06_templates/3_component_template/layer_3/layer_3_03_sub_layers/sub_layer_3_04_component_rules/README.md"
+    },
+    {
+      "resource_id": "750cf10f-65c7-4096-b970-820d334c81f3",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/.0agnostic/01_knowledge/reference_implementation/layer_1/layer_1_02_sub_layers/sub_layer_1_04+_setup_dependant/sub_layer_1_06_templates/3_component_template/layer_3/layer_3_03_sub_layers/sub_layer_3_05-3.14_setup_dependant_sub_layers/README.md"
+    },
+    {
+      "resource_id": "4d213c82-1498-4c53-9577-d81b2d9485b5",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": ".gitkeep",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/.0agnostic/01_knowledge/reference_implementation/layer_1/layer_1_02_sub_layers/sub_layer_1_04+_setup_dependant/sub_layer_1_06_templates/3_component_template/layer_3/layer_3_99_stages/stage_3_01_request_gathering/ai_agent_system/.gitkeep"
+    },
+    {
+      "resource_id": "3e139408-401a-458f-a3b2-242c2373c031",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": ".gitkeep",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/.0agnostic/01_knowledge/reference_implementation/layer_1/layer_1_02_sub_layers/sub_layer_1_04+_setup_dependant/sub_layer_1_06_templates/3_component_template/layer_3/layer_3_99_stages/stage_3_01_request_gathering/hand_off_documents/.gitkeep"
+    },
+    {
+      "resource_id": "97e8595e-fb33-4e78-8582-ca54e8898408",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/.0agnostic/01_knowledge/reference_implementation/layer_1/layer_1_02_sub_layers/sub_layer_1_04+_setup_dependant/sub_layer_1_06_templates/3_component_template/layer_3/layer_3_99_stages/stage_3_10_current_product/README.md"
+    },
+    {
+      "resource_id": "89b80f51-8a67-49dc-a7c3-b216039b6bb9",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "status_template",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/.0agnostic/01_knowledge/reference_implementation/layer_1/layer_1_02_sub_layers/sub_layer_1_04+_setup_dependant/sub_layer_1_06_templates/3_component_template/layer_3/layer_3_99_stages/status_template.json"
+    },
+    {
+      "resource_id": "5f5e0833-74dc-4823-b3c0-50332fec7c95",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/.0agnostic/01_knowledge/reference_implementation/layer_1/layer_1_02_sub_layers/sub_layer_1_04+_setup_dependant/sub_layer_1_06_templates/3_component_template/layer_4/layer_4_sub_components/README.md"
+    },
+    {
+      "resource_id": "9d12bc1b-7810-45c5-b00b-1a7e1054cc22",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/.0agnostic/01_knowledge/reference_implementation/layer_1/layer_1_02_sub_layers/sub_layer_1_04+_setup_dependant/sub_layer_1_06_templates/README.md"
+    },
+    {
+      "resource_id": "8facd0f8-3c82-47dd-b4f6-b29d2e4c3459",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/.0agnostic/01_knowledge/reference_implementation/layer_1/layer_1_02_sub_layers/sub_layer_1_04+_setup_dependant/sub_layer_1_07_scripts/README.md"
+    },
+    {
+      "resource_id": "4a2b0457-0f72-4e86-9a72-8c56adfc72da",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/.0agnostic/01_knowledge/reference_implementation/layer_1/layer_1_99_stages/README.md"
+    },
+    {
+      "resource_id": "72083449-6509-4292-b8b2-b24fcd498b38",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": "INSTRUCTIONS_AI_MANAGER_HIERARCHY_SYSTEM",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/.0agnostic/01_knowledge/reference_implementation/layer_1/layer_1_99_stages/stage_0_01_instructions/hand_off_documents/INSTRUCTIONS_AI_MANAGER_HIERARCHY_SYSTEM.md"
+    },
+    {
+      "resource_id": "2a5f3b6b-0cef-437b-9cfc-e4550cebd5a3",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": "INSTRUCTIONS_CONTEXT_GATHERING_SYSTEM",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/.0agnostic/01_knowledge/reference_implementation/layer_1/layer_1_99_stages/stage_0_01_instructions/hand_off_documents/INSTRUCTIONS_CONTEXT_GATHERING_SYSTEM.md"
+    },
+    {
+      "resource_id": "f868ae87-46e8-4795-9828-a974a4032a8e",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": "INSTRUCTIONS_LAYER_STAGE_RESTRUCTURE",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/.0agnostic/01_knowledge/reference_implementation/layer_1/layer_1_99_stages/stage_0_01_instructions/hand_off_documents/INSTRUCTIONS_LAYER_STAGE_RESTRUCTURE.md"
+    },
+    {
+      "resource_id": "ffa55f90-eea1-49bd-906c-bad2deb881ea",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": "INSTRUCTIONS_LAYER_STAGE_SYSTEM_INTERNAL_STRUCTURE",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/.0agnostic/01_knowledge/reference_implementation/layer_1/layer_1_99_stages/stage_0_01_instructions/hand_off_documents/INSTRUCTIONS_LAYER_STAGE_SYSTEM_INTERNAL_STRUCTURE.md"
+    },
+    {
+      "resource_id": "74221508-965c-4acb-8bd6-4ea24299a88f",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": "IMPLEMENTATION_PLAN_LAYER_STAGE_RESTRUCTURE",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/.0agnostic/01_knowledge/reference_implementation/layer_1/layer_1_99_stages/stage_0_02_planning/hand_off_documents/IMPLEMENTATION_PLAN_LAYER_STAGE_RESTRUCTURE.md"
+    },
+    {
+      "resource_id": "d24a8ead-fd93-4bb0-badb-f6be157e2b22",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": "MCP_DOCUMENTATION_PLAN",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/.0agnostic/01_knowledge/reference_implementation/layer_1/layer_1_99_stages/stage_0_02_planning/hand_off_documents/MCP_DOCUMENTATION_PLAN.md"
+    },
+    {
+      "resource_id": "d1b7c122-84db-4e05-a262-0600c03ea2d7",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/.0agnostic/01_knowledge/reference_implementation/layer_1/layer_1_99_stages/stage_0_08_current_product/README.md"
+    },
+    {
+      "resource_id": "588f2669-8d31-407e-8d6d-930e8191e1a5",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/.0agnostic/01_knowledge/reference_implementation/layer_1/layer_1_99_stages/stage_0_08_current_product/changes/README.md"
+    },
+    {
+      "resource_id": "58cbcedb-b09b-492d-95a1-ce0ac32250bb",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": "restructuring_migration_protocol",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/.0agnostic/01_knowledge/reference_implementation/layer_1/layer_1_99_stages/stage_0_08_current_product/changes/restructuring_migration_protocol.md"
+    },
+    {
+      "resource_id": "f09dd337-23f3-492a-868c-2e5d985b81d1",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": "traversal_update_protocol",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/.0agnostic/01_knowledge/reference_implementation/layer_1/layer_1_99_stages/stage_0_08_current_product/changes/traversal_update_protocol.md"
+    },
+    {
+      "resource_id": "e2a65ae4-f59f-4c3d-adf6-6aa0a81e1c1b",
+      "id_field": "resource_id",
+      "resource_type": "script",
+      "resource_name": "verify_paths",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/.0agnostic/01_knowledge/reference_implementation/layer_1/layer_1_99_stages/stage_0_08_current_product/changes/verify_paths.sh"
+    },
+    {
+      "resource_id": "a7673a89-9f68-41ae-9de7-45cd92ef543a",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/.0agnostic/01_knowledge/reference_implementation/layer_1/layer_1_99_stages/stage_0_08_current_product/setup/README.md"
+    },
+    {
+      "resource_id": "e66acf96-8494-4cc2-8f37-166d2b5f44d2",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": "component_creation_checklist",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/.0agnostic/01_knowledge/reference_implementation/layer_1/layer_1_99_stages/stage_0_08_current_product/setup/component_creation_checklist.md"
+    },
+    {
+      "resource_id": "938de726-f4e8-4a25-9977-a903f19ff90b",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": "feature_creation_checklist",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/.0agnostic/01_knowledge/reference_implementation/layer_1/layer_1_99_stages/stage_0_08_current_product/setup/feature_creation_checklist.md"
+    },
+    {
+      "resource_id": "2556fe38-c289-45e2-a2d2-8be5d70e5848",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": "instantiation_guide",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/.0agnostic/01_knowledge/reference_implementation/layer_1/layer_1_99_stages/stage_0_08_current_product/setup/instantiation_guide.md"
+    },
+    {
+      "resource_id": "7fda05d1-967a-4f35-ae21-a82b39b00729",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": "project_creation_checklist",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/.0agnostic/01_knowledge/reference_implementation/layer_1/layer_1_99_stages/stage_0_08_current_product/setup/project_creation_checklist.md"
+    },
+    {
+      "resource_id": "38e69a48-05e5-4821-a22c-b53355aa090a",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": "MANIFEST",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/.0agnostic/01_knowledge/reference_implementation/layer_1/layer_1_99_stages/stage_0_09_archives/backups/2026-01-15_pre_restructure/MANIFEST.md"
+    },
+    {
+      "resource_id": "dac363ac-6ecf-4113-a63f-7280bc3662c8",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": "directory_structure",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/.0agnostic/01_knowledge/reference_implementation/layer_1/layer_1_99_stages/stage_0_09_archives/backups/2026-01-15_pre_restructure/directory_structure.txt"
+    },
+    {
+      "resource_id": "b4665543-ffc6-40fb-bb28-7e193490381f",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "status",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/.0agnostic/01_knowledge/reference_implementation/layer_1/layer_1_99_stages/status.json"
+    },
+    {
+      "resource_id": "56bae0a0-3ec8-4d1e-ab9a-c836c18cb1e4",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "status_1",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/.0agnostic/01_knowledge/reference_implementation/layer_1/layer_1_99_stages/status_1.json"
+    },
+    {
+      "resource_id": "8b7a8038-3d4f-47ab-9aa3-3a7bc7fd1f3a",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/.0agnostic/01_knowledge/reference_implementation/layer_2/layer_2_features/README.md"
+    },
+    {
+      "resource_id": "bf2fbe17-3f2f-4d1e-9551-583cee81eae1",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": "init_prompt",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/.0agnostic/01_knowledge/reference_implementation/layer_2/layer_2_features/layer_2_feature_ai_manager_hierarchy/layer_2/layer_2_00_ai_manager_system/agnostic/init_prompt.md"
+    },
+    {
+      "resource_id": "cb3d4a3e-6029-478b-9f4c-64d103cbe6cb",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/.0agnostic/01_knowledge/reference_implementation/layer_2/layer_2_features/layer_2_feature_ai_manager_hierarchy/layer_2/layer_2_02_sub_layers/sub_layer_2_05+_setup_dependant/sub_layer_2_05_pattern_docs/README.md"
+    },
+    {
+      "resource_id": "5b33fd12-524f-48d2-a827-7fb0c5cb6f4e",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": "agnostic_source_pattern",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/.0agnostic/01_knowledge/reference_implementation/layer_2/layer_2_features/layer_2_feature_ai_manager_hierarchy/layer_2/layer_2_02_sub_layers/sub_layer_2_05+_setup_dependant/sub_layer_2_05_pattern_docs/agnostic_source_pattern.md"
+    },
+    {
+      "resource_id": "0d0c0d8d-aa34-4ba7-810d-f4fdbaf39250",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": "specific_nesting_pattern",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/.0agnostic/01_knowledge/reference_implementation/layer_2/layer_2_features/layer_2_feature_ai_manager_hierarchy/layer_2/layer_2_02_sub_layers/sub_layer_2_05+_setup_dependant/sub_layer_2_05_pattern_docs/specific_nesting_pattern.md"
+    },
+    {
+      "resource_id": "6220cbc8-2a38-49f5-a273-87466933ed11",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": "tool_config_patterns",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/.0agnostic/01_knowledge/reference_implementation/layer_2/layer_2_features/layer_2_feature_ai_manager_hierarchy/layer_2/layer_2_02_sub_layers/sub_layer_2_05+_setup_dependant/sub_layer_2_05_pattern_docs/tool_config_patterns.md"
+    },
+    {
+      "resource_id": "e5f36429-7860-4641-b6cc-2eba5c7bf10c",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/.0agnostic/01_knowledge/reference_implementation/layer_2/layer_2_features/layer_2_feature_ai_manager_hierarchy/layer_2/layer_2_02_sub_layers/sub_layer_2_05+_setup_dependant/sub_layer_2_06_templates/README.md"
+    },
+    {
+      "resource_id": "11ffdd0b-c025-48ed-b995-4c4dd2b95078",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": "init_prompt_template",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/.0agnostic/01_knowledge/reference_implementation/layer_2/layer_2_features/layer_2_feature_ai_manager_hierarchy/layer_2/layer_2_02_sub_layers/sub_layer_2_05+_setup_dependant/sub_layer_2_06_templates/agnostic_template/init_prompt_template.md"
+    },
+    {
+      "resource_id": "bd4c5397-4272-4853-a837-e91c68068e57",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/.0agnostic/01_knowledge/reference_implementation/layer_2/layer_2_features/layer_2_feature_ai_manager_hierarchy/layer_2/layer_2_02_sub_layers/sub_layer_2_05+_setup_dependant/sub_layer_2_06_templates/specific_template/README.md"
+    },
+    {
+      "resource_id": "32ac84e0-06b6-4263-bd33-1165d553df43",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "status_2",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/.0agnostic/01_knowledge/reference_implementation/layer_2/layer_2_features/layer_2_feature_ai_manager_hierarchy/layer_2/layer_2_99_stages/status_2.json"
+    },
+    {
+      "resource_id": "cc6f8924-208c-4723-b501-c35e5721e2da",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/.0agnostic/01_knowledge/reference_implementation/layer_2/layer_2_features/layer_2_feature_ai_manager_hierarchy/layer_3/layer_3_components/layer_3_component_claude_code_config/README.md"
+    },
+    {
+      "resource_id": "a5161c8b-0c3b-4148-9d4e-3c36a2faa379",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/.0agnostic/01_knowledge/reference_implementation/layer_2/layer_2_features/layer_2_feature_ai_manager_hierarchy/layer_3/layer_3_components/layer_3_component_codex_config/README.md"
+    },
+    {
+      "resource_id": "231d48be-ceea-4d8c-9f3d-0c5e302c5d65",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/.0agnostic/01_knowledge/reference_implementation/layer_2/layer_2_features/layer_2_feature_ai_manager_hierarchy/layer_3/layer_3_components/layer_3_component_cursor_config/README.md"
+    },
+    {
+      "resource_id": "5b3c4e5b-b352-4e84-a862-4af225df209b",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/.0agnostic/01_knowledge/reference_implementation/layer_2/layer_2_features/layer_2_feature_ai_manager_hierarchy/layer_3/layer_3_components/layer_3_component_gemini_config/README.md"
+    },
+    {
+      "resource_id": "27e4509d-c084-4ed7-97b7-2e1ec3224d54",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": "init_prompt",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/.0agnostic/01_knowledge/reference_implementation/layer_2/layer_2_features/layer_2_feature_context_gathering/layer_2/layer_2_00_ai_manager_system/agnostic/init_prompt.md"
+    },
+    {
+      "resource_id": "e71ac48b-cfff-47dd-a66d-843d04efdb69",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/.0agnostic/01_knowledge/reference_implementation/layer_2/layer_2_features/layer_2_feature_context_gathering/layer_2/layer_2_02_sub_layers/sub_layer_2_05+_setup_dependant/sub_layer_2_05_context_docs/README.md"
+    },
+    {
+      "resource_id": "676d8b96-ea69-4035-944a-1af187534f25",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": "horizontal_sibling_rules",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/.0agnostic/01_knowledge/reference_implementation/layer_2/layer_2_features/layer_2_feature_context_gathering/layer_2/layer_2_02_sub_layers/sub_layer_2_05+_setup_dependant/sub_layer_2_05_context_docs/horizontal_sibling_rules.md"
+    },
+    {
+      "resource_id": "7bccb494-0096-465d-b689-043efc0a236f",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": "init_prompt_chain",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/.0agnostic/01_knowledge/reference_implementation/layer_2/layer_2_features/layer_2_feature_context_gathering/layer_2/layer_2_02_sub_layers/sub_layer_2_05+_setup_dependant/sub_layer_2_05_context_docs/init_prompt_chain.md"
+    },
+    {
+      "resource_id": "ba357d1f-311e-4f33-883c-cd195fbca6e9",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": "task_source_identification",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/.0agnostic/01_knowledge/reference_implementation/layer_2/layer_2_features/layer_2_feature_context_gathering/layer_2/layer_2_02_sub_layers/sub_layer_2_05+_setup_dependant/sub_layer_2_05_context_docs/task_source_identification.md"
+    },
+    {
+      "resource_id": "069c3fdd-819d-4333-9842-527bd761315e",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": "vertical_chain_rules",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/.0agnostic/01_knowledge/reference_implementation/layer_2/layer_2_features/layer_2_feature_context_gathering/layer_2/layer_2_02_sub_layers/sub_layer_2_05+_setup_dependant/sub_layer_2_05_context_docs/vertical_chain_rules.md"
+    },
+    {
+      "resource_id": "5ca14726-8bf6-431a-a046-0ca4393921b7",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "status_2",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/.0agnostic/01_knowledge/reference_implementation/layer_2/layer_2_features/layer_2_feature_context_gathering/layer_2/layer_2_99_stages/status_2.json"
+    },
+    {
+      "resource_id": "e029fce2-6d1f-4f89-b149-3875ea8b6ede",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": "init_prompt",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/.0agnostic/01_knowledge/reference_implementation/layer_2/layer_2_features/layer_2_feature_handoff_system/layer_2/layer_2_00_ai_manager_system/agnostic/init_prompt.md"
+    },
+    {
+      "resource_id": "509fcacc-95b0-46fd-b07e-75c90682aaeb",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/.0agnostic/01_knowledge/reference_implementation/layer_2/layer_2_features/layer_2_feature_handoff_system/layer_2/layer_2_02_sub_layers/sub_layer_2_05+_setup_dependant/sub_layer_2_05_handoff_docs/README.md"
+    },
+    {
+      "resource_id": "3e41bda7-bebe-49a8-b2ab-2f3036d089d4",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": "handoff_schema",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/.0agnostic/01_knowledge/reference_implementation/layer_2/layer_2_features/layer_2_feature_handoff_system/layer_2/layer_2_02_sub_layers/sub_layer_2_05+_setup_dependant/sub_layer_2_05_handoff_docs/handoff_schema.md"
+    },
+    {
+      "resource_id": "2ec425f3-1ce6-4fc6-ab87-535bc974c566",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": "stage_handoffs",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/.0agnostic/01_knowledge/reference_implementation/layer_2/layer_2_features/layer_2_feature_handoff_system/layer_2/layer_2_02_sub_layers/sub_layer_2_05+_setup_dependant/sub_layer_2_05_handoff_docs/stage_handoffs.md"
+    },
+    {
+      "resource_id": "e2788326-68d5-4351-a861-705e99a4f04f",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": "to_specific_pattern",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/.0agnostic/01_knowledge/reference_implementation/layer_2/layer_2_features/layer_2_feature_handoff_system/layer_2/layer_2_02_sub_layers/sub_layer_2_05+_setup_dependant/sub_layer_2_05_handoff_docs/to_specific_pattern.md"
+    },
+    {
+      "resource_id": "cd9f6945-b07b-49cd-b0d0-08e9f0ae5832",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": "to_universal_pattern",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/.0agnostic/01_knowledge/reference_implementation/layer_2/layer_2_features/layer_2_feature_handoff_system/layer_2/layer_2_02_sub_layers/sub_layer_2_05+_setup_dependant/sub_layer_2_05_handoff_docs/to_universal_pattern.md"
+    },
+    {
+      "resource_id": "44c3bacb-7faf-47d8-a507-4f0b719bc5e3",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "status_2",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/.0agnostic/01_knowledge/reference_implementation/layer_2/layer_2_features/layer_2_feature_handoff_system/layer_2/layer_2_99_stages/status_2.json"
+    },
+    {
+      "resource_id": "b2ceea43-c1b6-413f-88c7-6b303782d627",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": "init_prompt",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/.0agnostic/01_knowledge/reference_implementation/layer_2/layer_2_features/layer_2_feature_layer_definitions/layer_2/layer_2_00_ai_manager_system/agnostic/init_prompt.md"
+    },
+    {
+      "resource_id": "04c9799b-0bf5-4387-b1bf-dc5f11f1f9c2",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/.0agnostic/01_knowledge/reference_implementation/layer_2/layer_2_features/layer_2_feature_layer_definitions/layer_2/layer_2_02_sub_layers/sub_layer_2_05+_setup_dependant/sub_layer_2_05_layer_docs/README.md"
+    },
+    {
+      "resource_id": "8827c23a-8f2e-4699-b742-a0104df668fb",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": "depth_markers",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/.0agnostic/01_knowledge/reference_implementation/layer_2/layer_2_features/layer_2_feature_layer_definitions/layer_2/layer_2_02_sub_layers/sub_layer_2_05+_setup_dependant/sub_layer_2_05_layer_docs/depth_markers.md"
+    },
+    {
+      "resource_id": "b6088ad5-3b84-48a9-89d1-3d2752a119f3",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": "entity_types",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/.0agnostic/01_knowledge/reference_implementation/layer_2/layer_2_features/layer_2_feature_layer_definitions/layer_2/layer_2_02_sub_layers/sub_layer_2_05+_setup_dependant/sub_layer_2_05_layer_docs/entity_types.md"
+    },
+    {
+      "resource_id": "cc0803cf-2387-4b82-9765-fbe35d0325d5",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": "layer_numbering",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/.0agnostic/01_knowledge/reference_implementation/layer_2/layer_2_features/layer_2_feature_layer_definitions/layer_2/layer_2_02_sub_layers/sub_layer_2_05+_setup_dependant/sub_layer_2_05_layer_docs/layer_numbering.md"
+    },
+    {
+      "resource_id": "e056d2f4-5101-4285-8205-44d73246ec04",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": "nesting_rules",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/.0agnostic/01_knowledge/reference_implementation/layer_2/layer_2_features/layer_2_feature_layer_definitions/layer_2/layer_2_02_sub_layers/sub_layer_2_05+_setup_dependant/sub_layer_2_05_layer_docs/nesting_rules.md"
+    },
+    {
+      "resource_id": "12ec3116-5101-4181-a515-d3258223df92",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "status_2",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/.0agnostic/01_knowledge/reference_implementation/layer_2/layer_2_features/layer_2_feature_layer_definitions/layer_2/layer_2_99_stages/status_2.json"
+    },
+    {
+      "resource_id": "2c244b62-6ea8-4d7a-8289-6eb33e635960",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": "init_prompt",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/.0agnostic/01_knowledge/reference_implementation/layer_2/layer_2_features/layer_2_feature_stage_definitions/layer_2/layer_2_00_ai_manager_system/agnostic/init_prompt.md"
+    },
+    {
+      "resource_id": "ff8f2be2-63fa-4330-9f6c-2362a0dc1b30",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/.0agnostic/01_knowledge/reference_implementation/layer_2/layer_2_features/layer_2_feature_stage_definitions/layer_2/layer_2_02_sub_layers/sub_layer_2_05+_setup_dependant/sub_layer_2_05_stage_docs/README.md"
+    },
+    {
+      "resource_id": "944c5783-00ae-49b2-b3ce-cf2169779715",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": "stage_00_request_gathering",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/.0agnostic/01_knowledge/reference_implementation/layer_2/layer_2_features/layer_2_feature_stage_definitions/layer_2/layer_2_02_sub_layers/sub_layer_2_05+_setup_dependant/sub_layer_2_05_stage_docs/stage_00_request_gathering.md"
+    },
+    {
+      "resource_id": "b11661ef-b8ec-4241-b3b9-4cad321e7f34",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": "stage_01_research",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/.0agnostic/01_knowledge/reference_implementation/layer_2/layer_2_features/layer_2_feature_stage_definitions/layer_2/layer_2_02_sub_layers/sub_layer_2_05+_setup_dependant/sub_layer_2_05_stage_docs/stage_01_research.md"
+    },
+    {
+      "resource_id": "d14668ab-e325-4a8b-b9a1-e3e2966cea1f",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": "stage_02_instructions",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/.0agnostic/01_knowledge/reference_implementation/layer_2/layer_2_features/layer_2_feature_stage_definitions/layer_2/layer_2_02_sub_layers/sub_layer_2_05+_setup_dependant/sub_layer_2_05_stage_docs/stage_02_instructions.md"
+    },
+    {
+      "resource_id": "5f415d5d-88d4-4f84-960b-cb70a89a336b",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": "stage_03_planning",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/.0agnostic/01_knowledge/reference_implementation/layer_2/layer_2_features/layer_2_feature_stage_definitions/layer_2/layer_2_02_sub_layers/sub_layer_2_05+_setup_dependant/sub_layer_2_05_stage_docs/stage_03_planning.md"
+    },
+    {
+      "resource_id": "00bd4d95-a307-46de-a380-af817d527985",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": "stage_04_design",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/.0agnostic/01_knowledge/reference_implementation/layer_2/layer_2_features/layer_2_feature_stage_definitions/layer_2/layer_2_02_sub_layers/sub_layer_2_05+_setup_dependant/sub_layer_2_05_stage_docs/stage_04_design.md"
+    },
+    {
+      "resource_id": "39069733-a0bf-43e9-8f5c-0b3aaef98a24",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": "stage_05_development",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/.0agnostic/01_knowledge/reference_implementation/layer_2/layer_2_features/layer_2_feature_stage_definitions/layer_2/layer_2_02_sub_layers/sub_layer_2_05+_setup_dependant/sub_layer_2_05_stage_docs/stage_05_development.md"
+    },
+    {
+      "resource_id": "4cb1a574-42ff-4672-bff8-04ad314f3cac",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": "stage_06_testing",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/.0agnostic/01_knowledge/reference_implementation/layer_2/layer_2_features/layer_2_feature_stage_definitions/layer_2/layer_2_02_sub_layers/sub_layer_2_05+_setup_dependant/sub_layer_2_05_stage_docs/stage_06_testing.md"
+    },
+    {
+      "resource_id": "457c47cb-ab4f-4c60-83b4-d8a0ce1cbbc5",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": "stage_07_criticism",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/.0agnostic/01_knowledge/reference_implementation/layer_2/layer_2_features/layer_2_feature_stage_definitions/layer_2/layer_2_02_sub_layers/sub_layer_2_05+_setup_dependant/sub_layer_2_05_stage_docs/stage_07_criticism.md"
+    },
+    {
+      "resource_id": "9b049bb2-b76d-48b0-9a1d-9efc03e0386a",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": "stage_08_fixing",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/.0agnostic/01_knowledge/reference_implementation/layer_2/layer_2_features/layer_2_feature_stage_definitions/layer_2/layer_2_02_sub_layers/sub_layer_2_05+_setup_dependant/sub_layer_2_05_stage_docs/stage_08_fixing.md"
+    },
+    {
+      "resource_id": "6ea15b2d-c14a-49d7-8fda-695c8887d47e",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": "stage_09_current_product",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/.0agnostic/01_knowledge/reference_implementation/layer_2/layer_2_features/layer_2_feature_stage_definitions/layer_2/layer_2_02_sub_layers/sub_layer_2_05+_setup_dependant/sub_layer_2_05_stage_docs/stage_09_current_product.md"
+    },
+    {
+      "resource_id": "5ccd1272-7d4e-4b43-933e-6581029427d6",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": "stage_10_archives",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/.0agnostic/01_knowledge/reference_implementation/layer_2/layer_2_features/layer_2_feature_stage_definitions/layer_2/layer_2_02_sub_layers/sub_layer_2_05+_setup_dependant/sub_layer_2_05_stage_docs/stage_10_archives.md"
+    },
+    {
+      "resource_id": "c8f39b3a-91e5-41f5-b485-0af7aea81570",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "status_2",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/.0agnostic/01_knowledge/reference_implementation/layer_2/layer_2_features/layer_2_feature_stage_definitions/layer_2/layer_2_99_stages/status_2.json"
+    },
+    {
+      "resource_id": "6769eead-b1ed-41c6-86ff-8f94ab94d000",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": "01_current_system_analysis",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/.0agnostic/01_knowledge/things_learned/01_current_system_analysis.md"
+    },
+    {
+      "resource_id": "0e43cb6d-f4f1-4699-b739-f2ed26af1959",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": "02_inconsistencies_found",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/.0agnostic/01_knowledge/things_learned/02_inconsistencies_found.md"
+    },
+    {
+      "resource_id": "64e713fc-d40f-4dac-bd20-1bd05252356e",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": "03_improvement_proposals",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/.0agnostic/01_knowledge/things_learned/03_improvement_proposals.md"
+    },
+    {
+      "resource_id": "5028ec81-c546-4402-a52f-10b1e75c6274",
+      "id_field": "resource_id",
+      "resource_type": "agnostic",
+      "resource_name": "0AGNOSTIC",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/0AGNOSTIC.md"
+    },
+    {
+      "resource_id": "739a4cf9-d82f-4766-a7d6-fc6ab408d6d4",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "index",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/layer_2_group/index.jsonld"
+    },
+    {
+      "resource_id": "ecee6629-36f9-44e6-9338-6f3fedadc235",
+      "id_field": "resource_id",
+      "resource_type": "agnostic",
+      "resource_name": "0AGNOSTIC",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/layer_2_group/layer_2_99_stages/0AGNOSTIC.md"
+    },
+    {
+      "resource_id": "9b4ea4e8-6683-4e62-bb9a-b899996397db",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "index",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/layer_2_group/layer_2_99_stages/index.jsonld"
+    },
+    {
+      "resource_id": "a30eb3bc-1175-48d9-ac1f-c2c1bb18f088",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "layer_2_99_stages_orchestrator.gab",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/layer_2_group/layer_2_99_stages/layer_2_99_stages_orchestrator.gab.jsonld"
+    },
+    {
+      "resource_id": "8f42d2b5-ade6-46c3-a816-17c5bd8fc10d",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "stage_2_00_stage_registry_agent",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/layer_2_group/layer_2_99_stages/stage_2_00_stage_registry/stage_2_00_stage_registry_agent.jsonld"
+    },
+    {
+      "resource_id": "bc00264b-61da-4f21-9453-cc642e85bbd3",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "stage_index",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/layer_2_group/layer_2_99_stages/stage_2_00_stage_registry/stage_index.json"
+    },
+    {
+      "resource_id": "4e0c4ec9-66d4-4023-9375-5ae6f94fc14e",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "index",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/layer_2_group/layer_2_99_stages/stage_2_01_request_gathering/index.jsonld"
+    },
+    {
+      "resource_id": "385455bf-5d1b-4196-ad25-15d68d7a001f",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/layer_2_group/layer_2_99_stages/stage_2_01_request_gathering/outputs/requests/tree_of_needs/README.md"
+    },
+    {
+      "resource_id": "a8090b7c-883d-46f7-a3ad-70c66ab7d735",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "TREE_TO_FEATURES_MAPPING",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/layer_2_group/layer_2_99_stages/stage_2_01_request_gathering/outputs/requests/tree_of_needs/TREE_TO_FEATURES_MAPPING.md"
+    },
+    {
+      "resource_id": "cdeb10b6-78e6-485b-ae09-1b05da9aad76",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "index",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/layer_2_group/layer_2_99_stages/stage_2_01_request_gathering/outputs/requests/tree_of_needs/index.jsonld"
+    },
+    {
+      "resource_id": "2d7a0eec-2e36-4a3f-9ba9-24ddb2be3e1f",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "tree_of_needs",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/layer_2_group/layer_2_99_stages/stage_2_01_request_gathering/outputs/tree_of_needs.md"
+    },
+    {
+      "resource_id": "f06c5fd6-2eaf-44f7-9905-5d8eb68bf75f",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "stage_2_01_request_gathering_agent",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/layer_2_group/layer_2_99_stages/stage_2_01_request_gathering/stage_2_01_request_gathering_agent.jsonld"
+    },
+    {
+      "resource_id": "4b44904f-a65d-42e0-a280-ec6552f6223a",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "hierarchical_needs_tree_patterns",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/layer_2_group/layer_2_99_stages/stage_2_02_research/outputs/by_topic/hierarchical_needs_tree_patterns.md"
+    },
+    {
+      "resource_id": "81f72ac3-d849-4c04-8ad7-9cd214d1f001",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "layer_stage_instantiation_understanding",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/layer_2_group/layer_2_99_stages/stage_2_02_research/outputs/by_topic/layer_stage_instantiation_understanding.md"
+    },
+    {
+      "resource_id": "372883f2-83d0-4185-978f-48f2e3314d89",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "updated_understanding_system_scale",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/layer_2_group/layer_2_99_stages/stage_2_02_research/outputs/by_topic/updated_understanding_system_scale.md"
+    },
+    {
+      "resource_id": "7215515d-719d-4e08-9039-a709d56f3461",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "stage_2_02_research_agent",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/layer_2_group/layer_2_99_stages/stage_2_02_research/stage_2_02_research_agent.jsonld"
+    },
+    {
+      "resource_id": "052f4b42-3eaf-48b4-9611-9d0e01629b4b",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "stage_2_03_instructions_agent",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/layer_2_group/layer_2_99_stages/stage_2_03_instructions/stage_2_03_instructions_agent.jsonld"
+    },
+    {
+      "resource_id": "b8430518-8e7d-44bc-a27c-838e2c4f9d06",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "stage_2_05_design_agent",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/layer_2_group/layer_2_99_stages/stage_2_04_design/stage_2_05_design_agent.jsonld"
+    },
+    {
+      "resource_id": "69921d55-417c-496c-8291-3e002ba46651",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "stage_2_04_planning_agent",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/layer_2_group/layer_2_99_stages/stage_2_05_planning/stage_2_04_planning_agent.jsonld"
+    },
+    {
+      "resource_id": "3087df6b-199b-49da-b288-75b77ac9a95e",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "stage_2_06_development_agent",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/layer_2_group/layer_2_99_stages/stage_2_06_development/stage_2_06_development_agent.jsonld"
+    },
+    {
+      "resource_id": "8167c823-fb1e-4813-ac40-53e742a655bb",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "stage_2_07_testing_agent",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/layer_2_group/layer_2_99_stages/stage_2_07_testing/stage_2_07_testing_agent.jsonld"
+    },
+    {
+      "resource_id": "5e5c9c51-8831-47e6-b411-da7e8b5a0cda",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "stage_2_08_criticism_agent",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/layer_2_group/layer_2_99_stages/stage_2_08_criticism/stage_2_08_criticism_agent.jsonld"
+    },
+    {
+      "resource_id": "f99ce22d-d650-4a18-8cf3-af1f833e708a",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "stage_2_09_fixing_agent",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/layer_2_group/layer_2_99_stages/stage_2_09_fixing/stage_2_09_fixing_agent.jsonld"
+    },
+    {
+      "resource_id": "8b4bdb29-329a-407b-aeab-333d6a45dc19",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "stage_2_10_current_product_agent",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/layer_2_group/layer_2_99_stages/stage_2_10_current_product/stage_2_10_current_product_agent.jsonld"
+    },
+    {
+      "resource_id": "df905e42-7fc2-45b9-a6e8-9892e8c7c173",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "stage_2_11_archives_agent",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/layer_2_group/layer_2_99_stages/stage_2_11_archives/stage_2_11_archives_agent.jsonld"
+    },
+    {
+      "resource_id": "c4a29103-25d0-49f7-beea-856e2fc51af4",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "status_2",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/layer_2_group/layer_2_99_stages/status_2.json"
+    },
+    {
+      "resource_id": "ab68f92a-7717-4c81-8c9f-b5e6fb6e9591",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "layer_2_orchestrator.gab",
+      "path": "layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/layer_2_orchestrator.gab.jsonld"
+    }
+  ]
+}

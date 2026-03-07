@@ -1,0 +1,72 @@
+{
+  "file_id": "2de6f972-7c2f-4896-a39a-ee12d277045d",
+  "generated": "2026-03-07T09:05:44Z",
+  "entity_id": "15103670-9902-4b01-89b1-8f45aa3f08b7",
+  "entity_name": "l3_users",
+  "entity_path": "layer_-1_research/layer_0_group/layer_0_02_projects/layer_0_langtrak_dev_agent_system/layer_0_group/layer_0_experiments/layer_0_experiment_dependency_based/development/langtrak_restructured/l3_users",
+  "resources": [
+    {
+      "resource_id": "7cc8a314-24b2-4c36-be0a-2448facf9034",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "instructions",
+      "path": ".codex/instructions.md"
+    },
+    {
+      "resource_id": "e110e59e-622f-4c0e-a07c-e8425aee96d8",
+      "id_field": "resource_id",
+      "resource_type": "agnostic",
+      "resource_name": "0AGNOSTIC",
+      "path": "0AGNOSTIC.md"
+    },
+    {
+      "resource_id": "d233005f-a882-45cd-814a-7d0bb5c71d2b",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "__init__",
+      "path": "__init__.py"
+    },
+    {
+      "resource_id": "a53d1796-4c07-4386-ad40-19784b377396",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "__init__",
+      "path": "model/__init__.py"
+    },
+    {
+      "resource_id": "98f6fb48-b403-40cd-89c3-227df22a226d",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "__init__",
+      "path": "profiles/__init__.py"
+    },
+    {
+      "resource_id": "7bd173d1-fd5f-4624-88e0-fe75f2486322",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "routes",
+      "path": "routes.py"
+    },
+    {
+      "resource_id": "68c280ef-5c29-4b40-8a93-ec7d099282a3",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "__init__",
+      "path": "sessions/__init__.py"
+    },
+    {
+      "resource_id": "b92f6931-8c2c-48cd-a6ad-faf093ac0230",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "session",
+      "path": "sessions/session.py"
+    },
+    {
+      "resource_id": "a02a5a4b-44e1-449d-b013-e94c5d3bda46",
+      "id_field": "resource_id",
+      "resource_type": "index",
+      "resource_name": "0INDEX",
+      "path": "stages/0INDEX.md"
+    }
+  ]
+}

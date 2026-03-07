@@ -1,0 +1,310 @@
+{
+  "file_id": "a7154cf0-b72f-423b-b6bd-df3051a17899",
+  "generated": "2026-03-07T09:05:43Z",
+  "entity_id": "ae555d77-4521-4c1a-add1-ad572fae305c",
+  "entity_name": "layer_3_subx3_feature_trigger_pointer_system",
+  "entity_path": "layer_-1_research/layer_0_group/layer_0_01_systems/layer_0_better_ai_system/layer_1_group/layer_1_01_features/layer_1_feature_layer_stage_system/layer_1_group/layer_1_sub_features/layer_1_sub_feature_memory_system/layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_context_chain_system/layer_3_group/layer_3_subx3_features/layer_3_subx3_feature_trigger_pointer_system",
+  "resources": [
+    {
+      "resource_id": "89891764-41a7-4708-81ed-cc72e3b094ac",
+      "id_field": "resource_id",
+      "resource_type": "knowledge",
+      "resource_name": "trigger_pointer_knowledge",
+      "path": ".0agnostic/01_knowledge/trigger_pointer_system/trigger_pointer_knowledge.md"
+    },
+    {
+      "resource_id": "943feef8-db42-4446-bac3-20c55c6353b2",
+      "id_field": "resource_id",
+      "resource_type": "rule",
+      "resource_name": "auto_trigger_rule",
+      "path": ".0agnostic/02_rules/dynamic/auto_trigger_rule/auto_trigger_rule.md"
+    },
+    {
+      "resource_id": "d8010749-14a6-489e-a64a-4911d3aebbe4",
+      "id_field": "resource_id",
+      "resource_type": "rule",
+      "resource_name": "pointer_file_convention",
+      "path": ".0agnostic/02_rules/static/pointer_file_convention/pointer_file_convention.md"
+    },
+    {
+      "resource_id": "c40951ce-b9a2-4c62-b5d1-7578710436aa",
+      "id_field": "resource_id",
+      "resource_type": "agnostic",
+      "resource_name": "0AGNOSTIC",
+      "path": "0AGNOSTIC.md"
+    },
+    {
+      "resource_id": "03886084-b94c-44e8-af91-ce5733c3bc82",
+      "id_field": "resource_id",
+      "resource_type": "index",
+      "resource_name": "0INDEX",
+      "path": "0INDEX.md"
+    },
+    {
+      "resource_id": "9e94b0ca-5a4e-47cf-8c5b-d179daf112de",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "README.md"
+    },
+    {
+      "resource_id": "0dc8a950-fe45-4152-8e63-016d7f507103",
+      "id_field": "file_id",
+      "resource_type": "data",
+      "resource_name": "stage_index",
+      "path": "layer_3_group/layer_3_99_stages/stage_3_00_stage_registry/stage_index.json"
+    },
+    {
+      "resource_id": "2f7029b6-089c-4959-bf48-25e0f2db958a",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_3_group/layer_3_99_stages/stage_3_01_request_gathering/outputs/requests/tree_of_needs/00_pointers_stay_synchronized/01_pointer_format/README.md"
+    },
+    {
+      "resource_id": "fa72d32d-d9c4-4bbd-85b1-f7550de4aafa",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_3_group/layer_3_99_stages/stage_3_01_request_gathering/outputs/requests/tree_of_needs/00_pointers_stay_synchronized/01_pointer_format/requirements/README.md"
+    },
+    {
+      "resource_id": "8350765d-5fec-444f-b3fd-a3f5afaa1b29",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "REQ-01_frontmatter_schema",
+      "path": "layer_3_group/layer_3_99_stages/stage_3_01_request_gathering/outputs/requests/tree_of_needs/00_pointers_stay_synchronized/01_pointer_format/requirements/REQ-01_frontmatter_schema.md"
+    },
+    {
+      "resource_id": "503f8981-ecbc-484a-bee3-6d5128b0b9c9",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "REQ-02_body_convention",
+      "path": "layer_3_group/layer_3_99_stages/stage_3_01_request_gathering/outputs/requests/tree_of_needs/00_pointers_stay_synchronized/01_pointer_format/requirements/REQ-02_body_convention.md"
+    },
+    {
+      "resource_id": "8988aca1-76ee-4922-a9bd-7e1c8285281c",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "REQ-03_windows_line_endings",
+      "path": "layer_3_group/layer_3_99_stages/stage_3_01_request_gathering/outputs/requests/tree_of_needs/00_pointers_stay_synchronized/01_pointer_format/requirements/REQ-03_windows_line_endings.md"
+    },
+    {
+      "resource_id": "e99033be-f359-4fc2-8bcb-f957637ad88d",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_3_group/layer_3_99_stages/stage_3_01_request_gathering/outputs/requests/tree_of_needs/00_pointers_stay_synchronized/01_pointer_format/user_stories/README.md"
+    },
+    {
+      "resource_id": "5e11fb16-757c-42b6-a23c-da3f6af7c757",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "US-01_agent_creates_pointer",
+      "path": "layer_3_group/layer_3_99_stages/stage_3_01_request_gathering/outputs/requests/tree_of_needs/00_pointers_stay_synchronized/01_pointer_format/user_stories/US-01_agent_creates_pointer.md"
+    },
+    {
+      "resource_id": "755f2426-c4de-44f0-9777-547a61628b13",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "US-02_editing_existing_pointers",
+      "path": "layer_3_group/layer_3_99_stages/stage_3_01_request_gathering/outputs/requests/tree_of_needs/00_pointers_stay_synchronized/01_pointer_format/user_stories/US-02_editing_existing_pointers.md"
+    },
+    {
+      "resource_id": "065f6299-baea-45a1-9d7f-6a45cbe2be24",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_3_group/layer_3_99_stages/stage_3_01_request_gathering/outputs/requests/tree_of_needs/00_pointers_stay_synchronized/02_path_resolution/README.md"
+    },
+    {
+      "resource_id": "d2728874-b50b-4be7-a5fd-9c9234dc3e85",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_3_group/layer_3_99_stages/stage_3_01_request_gathering/outputs/requests/tree_of_needs/00_pointers_stay_synchronized/02_path_resolution/requirements/README.md"
+    },
+    {
+      "resource_id": "6bc2da16-8fdd-44eb-b7c0-9ee783a3ca5a",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "REQ-01_entity_search",
+      "path": "layer_3_group/layer_3_99_stages/stage_3_01_request_gathering/outputs/requests/tree_of_needs/00_pointers_stay_synchronized/02_path_resolution/requirements/REQ-01_entity_search.md"
+    },
+    {
+      "resource_id": "5bd5efb7-9db9-4f6c-b656-3643738d584a",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "REQ-02_relative_path_computation",
+      "path": "layer_3_group/layer_3_99_stages/stage_3_01_request_gathering/outputs/requests/tree_of_needs/00_pointers_stay_synchronized/02_path_resolution/requirements/REQ-02_relative_path_computation.md"
+    },
+    {
+      "resource_id": "fed11c45-e293-449f-97b6-f1a037094292",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "REQ-03_optional_field_handling",
+      "path": "layer_3_group/layer_3_99_stages/stage_3_01_request_gathering/outputs/requests/tree_of_needs/00_pointers_stay_synchronized/02_path_resolution/requirements/REQ-03_optional_field_handling.md"
+    },
+    {
+      "resource_id": "737eb6e3-c874-4cef-bc27-2407ef17081f",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_3_group/layer_3_99_stages/stage_3_01_request_gathering/outputs/requests/tree_of_needs/00_pointers_stay_synchronized/02_path_resolution/user_stories/README.md"
+    },
+    {
+      "resource_id": "ab7984ae-e0d9-49be-8753-c97d0e3a8f4b",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "US-01_directory_moves",
+      "path": "layer_3_group/layer_3_99_stages/stage_3_01_request_gathering/outputs/requests/tree_of_needs/00_pointers_stay_synchronized/02_path_resolution/user_stories/US-01_directory_moves.md"
+    },
+    {
+      "resource_id": "bd8a6253-6fb3-49e5-92ec-1d8162e57db1",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "US-02_graceful_failure",
+      "path": "layer_3_group/layer_3_99_stages/stage_3_01_request_gathering/outputs/requests/tree_of_needs/00_pointers_stay_synchronized/02_path_resolution/user_stories/US-02_graceful_failure.md"
+    },
+    {
+      "resource_id": "191360e5-325a-40c8-a653-3fcef9fffece",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "US-03_ambiguous_entity",
+      "path": "layer_3_group/layer_3_99_stages/stage_3_01_request_gathering/outputs/requests/tree_of_needs/00_pointers_stay_synchronized/02_path_resolution/user_stories/US-03_ambiguous_entity.md"
+    },
+    {
+      "resource_id": "3b35f6cf-f9e0-44c6-843a-1bbedde770fd",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_3_group/layer_3_99_stages/stage_3_01_request_gathering/outputs/requests/tree_of_needs/00_pointers_stay_synchronized/03_trigger_automation/README.md"
+    },
+    {
+      "resource_id": "15c42026-03f3-40bb-8404-63974f30a7f0",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_3_group/layer_3_99_stages/stage_3_01_request_gathering/outputs/requests/tree_of_needs/00_pointers_stay_synchronized/03_trigger_automation/requirements/README.md"
+    },
+    {
+      "resource_id": "3e2fc187-04d9-4ff0-8ef1-3a2cefcd2bb6",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "REQ-01_hook_triggers",
+      "path": "layer_3_group/layer_3_99_stages/stage_3_01_request_gathering/outputs/requests/tree_of_needs/00_pointers_stay_synchronized/03_trigger_automation/requirements/REQ-01_hook_triggers.md"
+    },
+    {
+      "resource_id": "b869b07e-cf09-4fd0-8198-6dfc9bf0bc6e",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "REQ-02_git_integration",
+      "path": "layer_3_group/layer_3_99_stages/stage_3_01_request_gathering/outputs/requests/tree_of_needs/00_pointers_stay_synchronized/03_trigger_automation/requirements/REQ-02_git_integration.md"
+    },
+    {
+      "resource_id": "9a3f299a-ac68-48d7-8099-a465bcb22db2",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "REQ-03_change_detection",
+      "path": "layer_3_group/layer_3_99_stages/stage_3_01_request_gathering/outputs/requests/tree_of_needs/00_pointers_stay_synchronized/03_trigger_automation/requirements/REQ-03_change_detection.md"
+    },
+    {
+      "resource_id": "8b003279-24b4-406d-8704-2fab7ba9b9cd",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_3_group/layer_3_99_stages/stage_3_01_request_gathering/outputs/requests/tree_of_needs/00_pointers_stay_synchronized/03_trigger_automation/user_stories/README.md"
+    },
+    {
+      "resource_id": "ec7fbc06-b321-4a65-826e-0f6f8bb7aa05",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "US-01_auto_sync_on_move",
+      "path": "layer_3_group/layer_3_99_stages/stage_3_01_request_gathering/outputs/requests/tree_of_needs/00_pointers_stay_synchronized/03_trigger_automation/user_stories/US-01_auto_sync_on_move.md"
+    },
+    {
+      "resource_id": "e502afac-1483-476e-8039-ecb7ee4cac4e",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "US-02_agent_edit_reminder",
+      "path": "layer_3_group/layer_3_99_stages/stage_3_01_request_gathering/outputs/requests/tree_of_needs/00_pointers_stay_synchronized/03_trigger_automation/user_stories/US-02_agent_edit_reminder.md"
+    },
+    {
+      "resource_id": "89f5e618-51a5-4063-b6f4-c13f73055e83",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "US-03_git_hook_triggers",
+      "path": "layer_3_group/layer_3_99_stages/stage_3_01_request_gathering/outputs/requests/tree_of_needs/00_pointers_stay_synchronized/03_trigger_automation/user_stories/US-03_git_hook_triggers.md"
+    },
+    {
+      "resource_id": "2c3c89f6-6378-430a-aa2d-6c3278e00db7",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "layer_3_group/layer_3_99_stages/stage_3_01_request_gathering/outputs/requests/tree_of_needs/00_pointers_stay_synchronized/README.md"
+    },
+    {
+      "resource_id": "235ffdcf-5946-447e-992d-c2d1abe67af8",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "rename_propagation_research",
+      "path": "layer_3_group/layer_3_99_stages/stage_3_02_research/outputs/rename_propagation_research.md"
+    },
+    {
+      "resource_id": "8d962438-cb21-4cb6-9737-a0d5dff91bd0",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "uuid_and_database_patterns_research",
+      "path": "layer_3_group/layer_3_99_stages/stage_3_02_research/outputs/uuid_and_database_patterns_research.md"
+    },
+    {
+      "resource_id": "bd9022bb-e7fa-4a97-b0a9-00a9557d9e41",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "pointer_sync_design",
+      "path": "layer_3_group/layer_3_99_stages/stage_3_04_design/outputs/pointer_sync_design.md"
+    },
+    {
+      "resource_id": "1f40a5c5-cebc-42b1-a3f2-56c9cbd91c2d",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "uuid_identity_system_design",
+      "path": "layer_3_group/layer_3_99_stages/stage_3_04_design/outputs/uuid_identity_system_design.md"
+    },
+    {
+      "resource_id": "6baf4700-3026-43e9-ae26-72b11d9c8b31",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "uuid_implementation_plan",
+      "path": "layer_3_group/layer_3_99_stages/stage_3_05_planning/outputs/uuid_implementation_plan.md"
+    },
+    {
+      "resource_id": "24b87bb5-c981-40b3-94dc-c0b052db0997",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "pointer_sync_implementation",
+      "path": "layer_3_group/layer_3_99_stages/stage_3_06_development/outputs/pointer_sync_implementation.md"
+    },
+    {
+      "resource_id": "7f51c7a5-9bca-4591-aec2-32ba9d51905a",
+      "id_field": "resource_id",
+      "resource_type": "script",
+      "resource_name": "test_pointer_sync",
+      "path": "layer_3_group/layer_3_99_stages/stage_3_07_testing/outputs/test_pointer_sync.sh"
+    },
+    {
+      "resource_id": "c8d88e83-ee42-43c7-baf6-b9913b549aa0",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "uuid_test_design",
+      "path": "layer_3_group/layer_3_99_stages/stage_3_07_testing/outputs/uuid_test_design.md"
+    },
+    {
+      "resource_id": "50e10df8-5daa-4a4d-883e-4fe474502b30",
+      "id_field": "resource_id",
+      "resource_type": "output",
+      "resource_name": "current_product",
+      "path": "layer_3_group/layer_3_99_stages/stage_3_10_current_product/outputs/current_product.md"
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "file_id": "dac18a3e-76b6-4147-8c65-884787090d96",
+  "generated": "2026-03-07T09:05:44Z",
+  "entity_id": "3283e3a7-922a-4857-be48-32b99bc92897",
+  "entity_name": "l5_templates",
+  "entity_path": "layer_-1_research/layer_0_group/layer_0_02_projects/layer_0_langtrak_dev_agent_system/layer_0_group/layer_0_experiments/layer_0_experiment_dependency_based/development/langtrak_restructured/l5_templates",
+  "resources": [
+    {
+      "resource_id": "e48d42f0-ee72-42ee-b4a7-0d33e1421431",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "instructions",
+      "path": ".codex/instructions.md"
+    },
+    {
+      "resource_id": "48c06808-7ce3-4f75-a3c1-6a0e8bc94229",
+      "id_field": "resource_id",
+      "resource_type": "agnostic",
+      "resource_name": "0AGNOSTIC",
+      "path": "0AGNOSTIC.md"
+    },
+    {
+      "resource_id": "64e9c8f5-0cb1-488b-88b2-e0d316db562b",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "__init__",
+      "path": "__init__.py"
+    },
+    {
+      "resource_id": "0e7510d4-8b18-4559-b9f6-0f9f0e44c233",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "__init__",
+      "path": "admin/__init__.py"
+    },
+    {
+      "resource_id": "cf62bc2f-31e5-489d-a615-bea64cf39ae8",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "template_system",
+      "path": "admin/template_system.py"
+    },
+    {
+      "resource_id": "c1b6e9bc-9975-49e5-a675-6316f72b7cb5",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "__init__",
+      "path": "core/__init__.py"
+    },
+    {
+      "resource_id": "cc1a555e-191f-4e36-86ce-d02faa58b9e9",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "routes",
+      "path": "routes.py"
+    },
+    {
+      "resource_id": "b43004b3-2201-4a98-bd6d-a82a2c114a8e",
+      "id_field": "resource_id",
+      "resource_type": "index",
+      "resource_name": "0INDEX",
+      "path": "stages/0INDEX.md"
+    }
+  ]
+}

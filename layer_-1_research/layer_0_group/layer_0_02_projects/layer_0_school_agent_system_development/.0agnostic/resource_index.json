@@ -1,0 +1,37 @@
+{
+  "file_id": "1056fe74-bd34-4ff0-ba0b-2427cf1b8151",
+  "generated": "2026-03-07T09:05:45Z",
+  "entity_id": "1446c131-14db-440e-b3f4-04d50a3d721a",
+  "entity_name": "layer_0_school_agent_system_development",
+  "entity_path": "layer_-1_research/layer_0_group/layer_0_02_projects/layer_0_school_agent_system_development",
+  "resources": [
+    {
+      "resource_id": "c3a8361a-4d49-476d-8720-0df36305ece1",
+      "id_field": "resource_id",
+      "resource_type": "agnostic",
+      "resource_name": "0AGNOSTIC",
+      "path": "0AGNOSTIC.md"
+    },
+    {
+      "resource_id": "bf721645-d214-4a39-8549-75a25681e53c",
+      "id_field": "resource_id",
+      "resource_type": "readme",
+      "resource_name": "README",
+      "path": "README.md"
+    },
+    {
+      "resource_id": "2a35b265-188d-467f-a442-840937cfffa8",
+      "id_field": "resource_id",
+      "resource_type": "agnostic",
+      "resource_name": "0AGNOSTIC",
+      "path": "layer_1_group/0AGNOSTIC.md"
+    },
+    {
+      "resource_id": "967f3650-7c33-47cf-be0c-45ab4cbe880c",
+      "id_field": "resource_id",
+      "resource_type": "document",
+      "resource_name": "0REGISTRY",
+      "path": "layer_1_group/layer_1_00_layer_registry/0REGISTRY.md"
+    }
+  ]
+}
