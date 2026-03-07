@@ -36,28 +36,28 @@ Query and navigate the UUID identity system for entity lookup, hierarchy travers
 ### Fast Entity Lookup (preferred for simple name searches)
 
 ```bash
-.0agnostic/entity-find.sh <pattern>      # Find entity by name (~5ms)
-.0agnostic/entity-find.sh --path <pattern>  # Just show paths
-.0agnostic/entity-find.sh --uuid <pattern>  # Just show UUIDs
+.0agnostic/03_protocols/pointer_sync_protocol/tools/entity-find.sh <pattern>      # Find entity by name (~5ms)
+.0agnostic/03_protocols/pointer_sync_protocol/tools/entity-find.sh --path <pattern>  # Just show paths
+.0agnostic/03_protocols/pointer_sync_protocol/tools/entity-find.sh --uuid <pattern>  # Just show UUIDs
 ```
 
 ### Lookup by UUID
 
 ```bash
-.0agnostic/pointer-sync.sh --lookup <uuid>
+.0agnostic/03_protocols/pointer_sync_protocol/tools/pointer-sync.sh --lookup <uuid>
 ```
 
 ### Navigate Hierarchy
 
 ```bash
 # Direct parent
-.0agnostic/pointer-sync.sh --parent <uuid>
+.0agnostic/03_protocols/pointer_sync_protocol/tools/pointer-sync.sh --parent <uuid>
 
 # Full chain to root
-.0agnostic/pointer-sync.sh --parent <uuid> --verbose
+.0agnostic/03_protocols/pointer_sync_protocol/tools/pointer-sync.sh --parent <uuid> --verbose
 
 # Direct children
-.0agnostic/pointer-sync.sh --children <uuid>
+.0agnostic/03_protocols/pointer_sync_protocol/tools/pointer-sync.sh --children <uuid>
 ```
 
 ### Query with Filters
@@ -66,22 +66,22 @@ Filters are AND-combined. Values support glob patterns.
 
 ```bash
 # List all entities
-.0agnostic/pointer-sync.sh --query type=entity
+.0agnostic/03_protocols/pointer_sync_protocol/tools/pointer-sync.sh --query type=entity
 
 # Find by name pattern
-.0agnostic/pointer-sync.sh --query type=entity name=*research*
+.0agnostic/03_protocols/pointer_sync_protocol/tools/pointer-sync.sh --query type=entity name=*research*
 
 # Find resources by type
-.0agnostic/pointer-sync.sh --query type=resource resource_type=script
+.0agnostic/03_protocols/pointer_sync_protocol/tools/pointer-sync.sh --query type=resource resource_type=script
 
 # Find resources within an entity
-.0agnostic/pointer-sync.sh --query type=resource entity_id=<uuid>
+.0agnostic/03_protocols/pointer_sync_protocol/tools/pointer-sync.sh --query type=resource entity_id=<uuid>
 
 # Find children of a parent
-.0agnostic/pointer-sync.sh --query parent_id=<uuid>
+.0agnostic/03_protocols/pointer_sync_protocol/tools/pointer-sync.sh --query parent_id=<uuid>
 
 # Find entities with children
-.0agnostic/pointer-sync.sh --query has_children=true
+.0agnostic/03_protocols/pointer_sync_protocol/tools/pointer-sync.sh --query has_children=true
 ```
 
 **Available filter keys**: `type`, `name`, `path`, `resource_type`, `entity_id`, `parent_id`, `has_children`
@@ -90,13 +90,13 @@ Filters are AND-combined. Values support glob patterns.
 
 ```bash
 # Find all references to a UUID (reverse lookup)
-.0agnostic/pointer-sync.sh --find-references <uuid>
+.0agnostic/03_protocols/pointer_sync_protocol/tools/pointer-sync.sh --find-references <uuid>
 
 # Validate system integrity
-.0agnostic/pointer-sync.sh --validate
+.0agnostic/03_protocols/pointer_sync_protocol/tools/pointer-sync.sh --validate
 
 # Rebuild the UUID index from source files
-.0agnostic/pointer-sync.sh --rebuild-index
+.0agnostic/03_protocols/pointer_sync_protocol/tools/pointer-sync.sh --rebuild-index
 ```
 
 ### Advanced: Direct jq Queries
@@ -136,8 +136,8 @@ child-uuid → parent-uuid → grandparent-uuid → ... → root-uuid
 |----------|------|---------|
 | Knowledge | `.0agnostic/01_knowledge/pointer_sync/pointer_sync_knowledge.md` | How the pointer sync system works |
 | Rule | `.0agnostic/02_rules/static/pointer_sync_rule/pointer_sync_rule.md` | Pointer file format requirements |
-| Protocol | `.0agnostic/03_protocols/pointer_sync_protocol.md` | Step-by-step usage guide |
-| Script | `.0agnostic/pointer-sync.sh` | The CLI tool itself |
+| Protocol | `.0agnostic/03_protocols/pointer_sync_protocol/pointer_sync_protocol.md` | Step-by-step usage guide |
+| Script | `.0agnostic/03_protocols/pointer_sync_protocol/tools/pointer-sync.sh` | The CLI tool itself |
 | Index | `.uuid-index.json` | The UUID index (5,313 entries) |
 
 ---

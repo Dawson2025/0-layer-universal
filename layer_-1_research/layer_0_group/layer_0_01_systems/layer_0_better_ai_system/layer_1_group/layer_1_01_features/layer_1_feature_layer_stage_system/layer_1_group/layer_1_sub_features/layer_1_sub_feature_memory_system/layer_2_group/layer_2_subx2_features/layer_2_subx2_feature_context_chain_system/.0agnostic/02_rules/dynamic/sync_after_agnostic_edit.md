@@ -25,7 +25,7 @@ After editing `0AGNOSTIC.md`, immediately run `agnostic-sync.sh` to regenerate t
 1. **Edit** `0AGNOSTIC.md` with the desired changes
 2. **Run sync**:
    ```bash
-   bash .0agnostic/agnostic-sync.sh [directory-containing-0AGNOSTIC.md]
+   bash .0agnostic/03_protocols/agnostic_sync_protocol/tools/agnostic-sync.sh [directory-containing-0AGNOSTIC.md]
    ```
 3. **Verify** the generated files match expectations:
    ```bash

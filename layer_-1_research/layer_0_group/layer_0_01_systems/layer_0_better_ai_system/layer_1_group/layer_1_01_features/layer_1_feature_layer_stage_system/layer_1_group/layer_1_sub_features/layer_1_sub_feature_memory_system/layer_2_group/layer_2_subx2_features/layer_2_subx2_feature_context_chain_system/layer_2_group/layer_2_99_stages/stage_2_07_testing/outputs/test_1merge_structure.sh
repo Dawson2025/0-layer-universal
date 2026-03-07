@@ -17,7 +17,7 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 ENTITY_ROOT="$(cd "$SCRIPT_DIR/../../../../" && pwd)"
 REPO_ROOT="$(cd "$ENTITY_ROOT" && git rev-parse --show-toplevel 2>/dev/null)"
 [ -z "$REPO_ROOT" ] && REPO_ROOT="$(cd "$ENTITY_ROOT/../../../../../../../../../../../" && pwd)"
-SYNC_SCRIPT="$REPO_ROOT/.0agnostic/agnostic-sync.sh"
+SYNC_SCRIPT="$REPO_ROOT/.0agnostic/03_protocols/agnostic_sync_protocol/tools/agnostic-sync.sh"
 
 # --- Counters ---
 PASS=0

@@ -444,9 +444,9 @@ if [ -d "$DIR/.0agnostic" ]; then
 fi
 
 # --- Pointer Sync Validation ---
-# Find pointer-sync.sh relative to this script's location
+# Find pointer-sync.sh in its protocol directory (cross-protocol reference)
 _SYNC_SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-POINTER_SYNC="$_SYNC_SCRIPT_DIR/pointer-sync.sh"
+POINTER_SYNC="$_SYNC_SCRIPT_DIR/../../pointer_sync_protocol/tools/pointer-sync.sh"
 if [ -x "$POINTER_SYNC" ]; then
     echo ""
     echo "--- Pointer Validation ---"

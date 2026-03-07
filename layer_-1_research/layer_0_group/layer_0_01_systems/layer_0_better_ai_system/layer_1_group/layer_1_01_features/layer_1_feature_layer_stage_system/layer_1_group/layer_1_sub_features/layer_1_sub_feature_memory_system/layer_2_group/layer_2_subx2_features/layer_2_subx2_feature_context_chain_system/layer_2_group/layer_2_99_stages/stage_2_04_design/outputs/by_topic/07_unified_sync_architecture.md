@@ -26,7 +26,7 @@ The layer-stage system uses multiple sync scripts that transform source content 
 
 | Property | Value |
 |----------|-------|
-| **Location** | `.0agnostic/agnostic-sync.sh` (at repo root, cascades to all entities) |
+| **Location** | `.0agnostic/03_protocols/agnostic_sync_protocol/tools/agnostic-sync.sh` (at repo root, cascades to all entities) |
 | **From** | `0AGNOSTIC.md` STATIC content + `.1merge/` overrides + hot rule frontmatter |
 | **To** | CLAUDE.md, AGENTS.md, GEMINI.md, OPENAI.md, .cursorrules, .github/copilot-instructions.md |
 | **Scope** | Single entity (pass directory as argument) |

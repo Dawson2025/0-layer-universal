@@ -97,7 +97,7 @@ Quick summary:
 4. Create orchestrator and agent .jsonld files (copy from sibling entity)
 5. Generate `.integration.md` for each `.jsonld` file
 6. Run `agnostic-sync.sh` on ALL `0AGNOSTIC.md` files
-7. Run `.0agnostic/pointer-sync.sh --rebuild-index` to register the new entity in the global UUID index
+7. Run `.0agnostic/03_protocols/pointer_sync_protocol/tools/pointer-sync.sh --rebuild-index` to register the new entity in the global UUID index
 8. Run `validate-entity.sh` to verify
 
 <!-- section_id: "ca201922-5542-4c37-b715-fb060e6a81d1" -->

@@ -430,7 +430,7 @@ When adding a new project/feature/class:
 
 6. **Generate tool files** (CLAUDE.md, AGENTS.md, etc.)
    ```bash
-   bash ../.0agnostic/agnostic-sync.sh .
+   bash ../.0agnostic/03_protocols/agnostic_sync_protocol/tools/agnostic-sync.sh .
    ```
 
 7. **Commit**

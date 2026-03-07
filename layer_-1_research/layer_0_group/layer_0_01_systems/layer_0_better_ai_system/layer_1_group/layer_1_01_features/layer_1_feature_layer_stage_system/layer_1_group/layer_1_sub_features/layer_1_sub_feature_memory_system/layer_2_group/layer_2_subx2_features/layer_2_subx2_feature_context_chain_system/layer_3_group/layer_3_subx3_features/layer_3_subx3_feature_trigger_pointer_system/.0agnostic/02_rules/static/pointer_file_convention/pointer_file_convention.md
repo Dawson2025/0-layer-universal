@@ -30,4 +30,4 @@ When creating or editing pointer files within this entity:
 ## References
 
 - Root pointer sync rule: `../../../../../../../../../../../../../../.0agnostic/02_rules/static/pointer_sync_rule/pointer_sync_rule.md`
-- Pointer sync protocol: `../../../../../../../../../../../../../../.0agnostic/03_protocols/pointer_sync_protocol.md`
+- Pointer sync protocol: `../../../../../../../../../../../../../../.0agnostic/03_protocols/pointer_sync_protocol/pointer_sync_protocol.md`

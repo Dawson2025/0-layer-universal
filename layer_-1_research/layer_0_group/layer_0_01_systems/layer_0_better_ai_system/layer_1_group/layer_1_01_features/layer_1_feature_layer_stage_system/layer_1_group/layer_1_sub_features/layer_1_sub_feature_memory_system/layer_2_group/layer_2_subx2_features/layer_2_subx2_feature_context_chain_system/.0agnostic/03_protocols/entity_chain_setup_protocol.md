@@ -75,7 +75,7 @@ test -f "$parent_dir/0AGNOSTIC.md" && echo "Parent exists" || echo "ERROR: Paren
 ### Step 4: Run agnostic-sync
 
 ```bash
-bash .0agnostic/agnostic-sync.sh [new-entity-dir]
+bash .0agnostic/03_protocols/agnostic_sync_protocol/tools/agnostic-sync.sh [new-entity-dir]
 ```
 
 This generates `CLAUDE.md`, `AGENTS.md`, `GEMINI.md`, `OPENAI.md`.

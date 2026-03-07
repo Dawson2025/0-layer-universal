@@ -49,4 +49,4 @@ diff <(grep "^## Identity" -A 20 CLAUDE.md) <(grep "^## Identity" -A 20 0AGNOSTI
 ## Related
 
 - Principle: `knowledge/principles/single_source_of_truth.md`
-- Sync script: `.0agnostic/agnostic-sync.sh`
+- Sync script: `.0agnostic/03_protocols/agnostic_sync_protocol/tools/agnostic-sync.sh`

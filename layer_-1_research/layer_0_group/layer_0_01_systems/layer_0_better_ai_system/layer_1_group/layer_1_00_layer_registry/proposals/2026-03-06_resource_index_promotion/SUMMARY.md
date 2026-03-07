@@ -26,12 +26,12 @@ This proposal is intentionally limited to a first canonical rollout:
 
 ### Root canonical tooling
 
-- `UPDATE` `/home/dawson/dawson-workspace/code/0_layer_universal/.0agnostic/pointer-sync.sh`
+- `UPDATE` `/home/dawson/dawson-workspace/code/0_layer_universal/.0agnostic/03_protocols/pointer_sync_protocol/tools/pointer-sync.sh`
   - Read per-entity `resource_index.json`
   - Include resource UUIDs in root `.uuid-index.json`
   - Resolve `canonical_resource_id` before entity/stage fallback
 
-- `NEW` `/home/dawson/dawson-workspace/code/0_layer_universal/.0agnostic/create-resource-indexes.sh`
+- `NEW` `/home/dawson/dawson-workspace/code/0_layer_universal/.0agnostic/03_protocols/pointer_sync_protocol/tools/create-resource-indexes.sh`
   - Build per-entity `.0agnostic/resource_index.json` from tracked UUID-bearing files
 
 - `UPDATE` `/home/dawson/dawson-workspace/code/0_layer_universal/.uuid-index.json`
@@ -84,7 +84,7 @@ This proposal is intentionally limited to a first canonical rollout:
 
 ## Execution Notes
 
-- Canonical `/home/dawson/dawson-workspace/code/0_layer_universal/.0agnostic/create-resource-indexes.sh` added.
-- Canonical `/home/dawson/dawson-workspace/code/0_layer_universal/.0agnostic/pointer-sync.sh` updated to aggregate `resource_index.json` entries and resolve `canonical_resource_id`.
+- Canonical `/home/dawson/dawson-workspace/code/0_layer_universal/.0agnostic/03_protocols/pointer_sync_protocol/tools/create-resource-indexes.sh` added.
+- Canonical `/home/dawson/dawson-workspace/code/0_layer_universal/.0agnostic/03_protocols/pointer_sync_protocol/tools/pointer-sync.sh` updated to aggregate `resource_index.json` entries and resolve `canonical_resource_id`.
 - Pilot `/home/dawson/dawson-workspace/code/0_layer_universal/layer_-1_research/layer_0_group/layer_0_01_systems/layer_0_better_ai_system/layer_1_group/layer_1_01_features/layer_1_feature_layer_stage_system/layer_1_group/layer_1_sub_features/layer_1_sub_feature_memory_system/layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_context_chain_system/.0agnostic/resource_index.json` generated.
 - Root and pilot generated tool files were regenerated via `agnostic-sync.sh` to satisfy the agnostic update protocol.

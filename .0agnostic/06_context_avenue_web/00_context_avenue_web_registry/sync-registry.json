@@ -6,7 +6,7 @@
   "scripts": [
     {
       "name": "agnostic-sync",
-      "script": ".0agnostic/agnostic-sync.sh",
+      "script": ".0agnostic/03_protocols/agnostic_sync_protocol/tools/agnostic-sync.sh",
       "scope": "entity",
       "phase": 1,
       "required": true,

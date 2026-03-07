@@ -14,7 +14,7 @@ Define how this entity projects agnostic context into Codex-consumable artifacts
 ## Canonical Mapping
 
 - Source of truth: `0AGNOSTIC.md`
-- Sync engine: `.0agnostic/agnostic-sync.sh`
+- Sync engine: `.0agnostic/03_protocols/agnostic_sync_protocol/tools/agnostic-sync.sh`
 - Codex context target: `AGENTS.md`
 - Codex merge input: `.1merge/.1codex_merge/`
 

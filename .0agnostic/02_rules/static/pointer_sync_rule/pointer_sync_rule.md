@@ -52,6 +52,6 @@ Do not duplicate content here — read the canonical location instead.
 <!-- section_id: "a93b9c17-242e-47c3-b20c-0efe11b34036" -->
 ## References
 
-- Protocol: `.0agnostic/03_protocols/pointer_sync_protocol.md`
+- Protocol: `.0agnostic/03_protocols/pointer_sync_protocol/pointer_sync_protocol.md`
 - Knowledge: `.0agnostic/01_knowledge/pointer_sync/pointer_sync_knowledge.md`
-- Script: `.0agnostic/pointer-sync.sh`
+- Script: `.0agnostic/03_protocols/pointer_sync_protocol/tools/pointer-sync.sh`

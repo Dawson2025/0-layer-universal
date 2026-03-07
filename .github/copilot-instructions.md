@@ -20,12 +20,12 @@
 | Local Ubuntu desktop issues (volume, brightness, keybindings, audio, GNOME, post-sleep) | Load `.0agnostic/02_rules/dynamic/local_ubuntu_desktop_troubleshooting/` |
 | User says "use research context chain" | Load `.0agnostic/02_rules/dynamic/CONTEXT_CHAIN_MODE/context_chain_mode.md` and switch to research mode |
 | Promoting research to production | Load `.0agnostic/03_protocols/research_promotion_protocol.md` |
-| Creating or modifying pointer files | Follow `.0agnostic/03_protocols/pointer_sync_protocol.md` and run `pointer-sync.sh --validate` |
+| Creating or modifying pointer files | Follow `.0agnostic/03_protocols/pointer_sync_protocol/pointer_sync_protocol.md` and run `.0agnostic/03_protocols/pointer_sync_protocol/tools/pointer-sync.sh --validate` |
 | Modifying agent delegation patterns | Load `.0agnostic/02_rules/dynamic/agent_delegation_workspace_rule/agent_delegation_workspace_rule.md` |
 | Querying UUID identity system (entity lookup, hierarchy, resources) | Load skill: uuid-query |
-| Locating an entity by name or finding where something lives | Run `.0agnostic/entity-find.sh <name>` (fast, no Python) |
-| Finding an entity, stage, or resource by name or UUID | Run `pointer-sync.sh --query` or load skill: uuid-query |
-| Checking references before renaming or deleting an entity | Run `pointer-sync.sh --find-references <uuid>` |
+| Locating an entity by name or finding where something lives | Run `.0agnostic/03_protocols/pointer_sync_protocol/tools/entity-find.sh <name>` (fast, no Python) |
+| Finding an entity, stage, or resource by name or UUID | Run `.0agnostic/03_protocols/pointer_sync_protocol/tools/pointer-sync.sh --query` or load skill: uuid-query |
+| Checking references before renaming or deleting an entity | Run `.0agnostic/03_protocols/pointer_sync_protocol/tools/pointer-sync.sh --find-references <uuid>` |
 | Multi-step development tasks | Load `.0agnostic/02_rules/1_scenario_based/sequential_development_methodology/sequential_development_methodology.md` |
 | Security decisions, access control, or sensitive operations | Load `.0agnostic/02_rules/1_scenario_based/safety_governance/safety_governance.md` |
 | Creating file headers or context headers | Load `.0agnostic/02_rules/1_scenario_based/LAYER_CONTEXT_HEADER_PROTOCOL/LAYER_CONTEXT_HEADER_PROTOCOL.md` |

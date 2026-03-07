@@ -199,7 +199,7 @@ resource_name: "test_results_summary"
 ```
 === Test: agnostic-sync.sh ===
 Entity: layer_2_subx2_feature_context_chain_system
-Sync script: /home/dawson/dawson-workspace/code/0_layer_universal/.0agnostic/agnostic-sync.sh
+Sync script: /home/dawson/dawson-workspace/code/0_layer_universal/.0agnostic/03_protocols/agnostic_sync_protocol/tools/agnostic-sync.sh
 
   [32mPASS[0m  agnostic-sync.sh exists and is executable
   [32mPASS[0m  0AGNOSTIC.md exists at entity root
@@ -481,7 +481,7 @@ Path: /home/dawson/dawson-workspace/code/0_layer_universal/layer_-1_research/lay
   [32mREADY[0m      Has parent reference
 
 --- Check 2: agnostic-sync.sh ---
-  [32mREADY[0m      agnostic-sync.sh found at /home/dawson/dawson-workspace/code/0_layer_universal/.0agnostic/agnostic-sync.sh
+  [32mREADY[0m      agnostic-sync.sh found at /home/dawson/dawson-workspace/code/0_layer_universal/.0agnostic/03_protocols/agnostic_sync_protocol/tools/agnostic-sync.sh
   [32mREADY[0m      agnostic-sync.sh is executable
 
 --- Check 3: .0agnostic/ structure ---

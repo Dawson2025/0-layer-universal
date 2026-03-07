@@ -25,17 +25,34 @@ You are an agent at **Layer 3** (Sub-Feature), **Sub-Feature**: Trigger Pointer 
 <!-- section_id: "c3eff18b-c425-40b2-a1a3-7a626c531797" -->
 ### What This Entity Owns
 
-This entity governs the **pointer synchronization system** — all tooling and design for keeping pointer files in sync with their canonical targets. The actual tools live at root `.0agnostic/` (production location), but this entity owns the stages for their ongoing development.
+This entity governs the **pointer synchronization system** — all tooling and design for keeping pointer files in sync with their canonical targets. The tools live in organized protocol directories under `.0agnostic/03_protocols/` (pointer_sync_protocol, uuid_assignment_protocol, agnostic_sync_protocol). Each script has a stable UUID (`resource_id`) that survives renames and moves — the path is convenience, the UUID is truth.
 
 <!-- section_id: "a77c8da4-37e8-4685-93e8-ad32d96b8c96" -->
-### Production Artifacts (at root .0agnostic/)
+### Production Artifacts (organized by protocol in .0agnostic/03_protocols/)
 
-| Artifact | Root Location | Purpose |
-|----------|---------------|---------|
-| `pointer-sync.sh` | `.0agnostic/pointer-sync.sh` | Main sync script |
-| `entity-find.sh` | `.0agnostic/entity-find.sh` | Fast entity lookup (~5ms, no Python) |
+Scripts are organized into three protocol directories. Each script has a stable `resource_id` (UUID) so references survive path changes.
+
+| Artifact | Protocol | Path | resource_id |
+|----------|----------|------|-------------|
+| `pointer-sync.sh` | pointer_sync | `.0agnostic/03_protocols/pointer_sync_protocol/tools/` | `08a4e9bc-8cc1-457e-b966-0a912ae6dff7` |
+| `entity-find.sh` | pointer_sync | `.0agnostic/03_protocols/pointer_sync_protocol/tools/` | `f4a2b3c5-d6e7-4f89-a0b1-c2d3e4f5a6b7` |
+| `create-resource-indexes.sh` | pointer_sync | `.0agnostic/03_protocols/pointer_sync_protocol/tools/` | `9f294247-a227-4bf1-8a51-bdee7555115c` |
+| `migrate-pointers.sh` | pointer_sync | `.0agnostic/03_protocols/pointer_sync_protocol/tools/` | `7505b140-8772-43f1-abe5-996847e68657` |
+| `assign-entity-uuids.sh` | uuid_assignment | `.0agnostic/03_protocols/uuid_assignment_protocol/tools/` | `92ab3def-22d7-48cd-91be-6744c3466240` |
+| `assign-file-uuids.sh` | uuid_assignment | `.0agnostic/03_protocols/uuid_assignment_protocol/tools/` | `68c9cfcc-9915-47f6-be3a-2c75fbd7ef7e` |
+| `assign-dir-uuids.sh` | uuid_assignment | `.0agnostic/03_protocols/uuid_assignment_protocol/tools/` | `c7d8e9f0-1a2b-4c3d-e4f5-6a7b8c9d0e1f` |
+| `assign-section-uuids.sh` | uuid_assignment | `.0agnostic/03_protocols/uuid_assignment_protocol/tools/` | `d8e9f0a1-2b3c-4d5e-f6a7-8b9c0d1e2f3a` |
+| `create-stage-indexes.sh` | uuid_assignment | `.0agnostic/03_protocols/uuid_assignment_protocol/tools/` | `bcac347f-f4e3-4047-8171-ed9a20022624` |
+| `agnostic-sync.sh` | agnostic_sync | `.0agnostic/03_protocols/agnostic_sync_protocol/tools/` | `781698fa-f580-4606-80e4-dc73fb30e3f7` |
+| `agnostic-diagram-generator.sh` | agnostic_sync | `.0agnostic/03_protocols/agnostic_sync_protocol/tools/` | `44f8f145-6ab5-44c0-8538-887e7c652052` |
+| `user-level-sync.sh` | agnostic_sync | `.0agnostic/03_protocols/agnostic_sync_protocol/tools/` | `5e3e7995-23d1-42e6-9a11-de1515e6367f` |
+
+**Non-script artifacts**:
+
+| Artifact | Path | Purpose |
+|----------|------|---------|
 | `.entity-lookup.tsv` | `.entity-lookup.tsv` | Flat entity index (generated) |
-| Protocol | `.0agnostic/03_protocols/pointer_sync_protocol.md` | Usage guide |
+| Protocol | `.0agnostic/03_protocols/pointer_sync_protocol/pointer_sync_protocol.md` | Usage guide |
 | Knowledge | `.0agnostic/01_knowledge/pointer_sync/pointer_sync_knowledge.md` | System overview |
 | Rule | `.0agnostic/02_rules/static/pointer_sync_rule/pointer_sync_rule.md` | Format requirements |
 | UUID Rule | `.claude/rules/uuid-identity-system.md` | Agent discoverability |

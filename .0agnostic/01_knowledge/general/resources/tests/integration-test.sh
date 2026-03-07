@@ -70,7 +70,7 @@ else
 fi
 
 # Test 1.3: agnostic-sync.sh exists and is executable
-if [ -x "$LAYER_0/.0agnostic/agnostic-sync.sh" ]; then
+if [ -x "$LAYER_0/.0agnostic/03_protocols/agnostic_sync_protocol/tools/agnostic-sync.sh" ]; then
     pass "agnostic-sync.sh is executable"
 else
     fail "agnostic-sync.sh not found or not executable"

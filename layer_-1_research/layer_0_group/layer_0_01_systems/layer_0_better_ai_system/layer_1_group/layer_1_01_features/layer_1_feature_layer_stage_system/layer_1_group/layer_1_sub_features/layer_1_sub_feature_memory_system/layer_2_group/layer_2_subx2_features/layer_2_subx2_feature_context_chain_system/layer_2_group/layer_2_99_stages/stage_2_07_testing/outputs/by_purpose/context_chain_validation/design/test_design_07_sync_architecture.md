@@ -25,7 +25,7 @@ resource_name: "test_design_07_sync_architecture"
 ### TC-07-01: agnostic-sync.sh — input/output contract
 
 **Steps**:
-1. Verify script exists and is executable at `.0agnostic/agnostic-sync.sh`
+1. Verify script exists and is executable at `.0agnostic/03_protocols/agnostic_sync_protocol/tools/agnostic-sync.sh`
 2. Run against context_chain_system entity
 3. Verify inputs consumed: 0AGNOSTIC.md, .1merge/ (if present), promote:hot rules
 4. Verify outputs produced: CLAUDE.md, AGENTS.md, GEMINI.md, OPENAI.md, .cursorrules, .github/copilot-instructions.md

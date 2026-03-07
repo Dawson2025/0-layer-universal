@@ -142,4 +142,4 @@ Each tool has different auto-loading mechanisms:
 - Audit conducted using systematic grep across all auto-loaded files
 - agnostic_update_protocol.md: `.0agnostic/02_rules/static/agnostic_update_protocol.md`
 - Skill discovery chain test: `../stage_2_07_testing/outputs/test_skill_discovery_chain.md`
-- agnostic-sync.sh validation: `.0agnostic/agnostic-sync.sh` (lines 298-390)
+- agnostic-sync.sh validation: `.0agnostic/03_protocols/agnostic_sync_protocol/tools/agnostic-sync.sh` (lines 298-390)

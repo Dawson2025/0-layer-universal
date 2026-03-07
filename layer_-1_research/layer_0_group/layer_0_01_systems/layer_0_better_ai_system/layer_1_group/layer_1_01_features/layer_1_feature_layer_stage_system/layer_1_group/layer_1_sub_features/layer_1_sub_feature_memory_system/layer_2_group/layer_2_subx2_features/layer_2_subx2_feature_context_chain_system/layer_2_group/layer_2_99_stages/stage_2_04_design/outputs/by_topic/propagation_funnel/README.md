@@ -420,5 +420,5 @@ propagation_funnel/
 **References**:
 - Context Chain Architecture: `../../../stage_2_04_design/outputs/02_context_chain_architecture.md`
 - Implementation Roadmap Phase 5: `../../../stage_2_05_planning/outputs/01_implementation_roadmap.md`
-- agnostic-sync.sh: `0_layer_universal/.0agnostic/agnostic-sync.sh`
+- agnostic-sync.sh: `0_layer_universal/.0agnostic/03_protocols/agnostic_sync_protocol/tools/agnostic-sync.sh`
 - .1merge System: `.0agnostic/03_protocols/.1merge_port_system_protocol.md` (to be created)

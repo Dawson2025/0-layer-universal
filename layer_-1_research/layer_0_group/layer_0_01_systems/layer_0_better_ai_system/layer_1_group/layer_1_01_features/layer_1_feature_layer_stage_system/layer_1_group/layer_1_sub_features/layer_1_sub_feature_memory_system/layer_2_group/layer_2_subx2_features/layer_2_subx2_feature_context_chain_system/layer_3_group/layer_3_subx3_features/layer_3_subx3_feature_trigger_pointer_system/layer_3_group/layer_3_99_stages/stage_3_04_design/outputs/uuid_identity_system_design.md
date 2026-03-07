@@ -1410,7 +1410,7 @@ SHIMI (Semantic Hierarchical Memory Index, arXiv:2504.06135) validates our hiera
 - Research: `../../../stage_3_02_research/outputs/rename_propagation_research.md` — evaluation of 7 rename propagation approaches
 - Research: `../../../stage_3_02_research/outputs/uuid_and_database_patterns_research.md` — UUID universality, document database analogy, agent interaction research, concurrency patterns
 - IETF UUID Specification: RFC 4122
-- Current system: `/home/dawson/dawson-workspace/code/0_layer_universal/.0agnostic/pointer-sync.sh`
+- Current system: `/home/dawson/dawson-workspace/code/0_layer_universal/.0agnostic/03_protocols/pointer_sync_protocol/tools/pointer-sync.sh`
 - [Vercel: We Removed 80% of Our Agent's Tools](https://vercel.com/blog/we-removed-80-percent-of-our-agents-tools)
 - [Vercel: How to Build Agents with Filesystems and Bash](https://vercel.com/blog/how-to-build-agents-with-filesystems-and-bash)
 - [Anthropic: Writing Effective Tools for Agents](https://www.anthropic.com/engineering/writing-tools-for-agents)

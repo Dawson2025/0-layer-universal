@@ -148,4 +148,4 @@ Only include rows that actually apply to this specific piece of knowledge. Most 
 - **Context Loading Protocol**: `context_loading_protocol.md` — how agents load context on session start
 - **Avenue Web Architecture**: `layer_-1_research/.../context_chain_system/.0agnostic/01_knowledge/avenue_web_architecture.md` — the 8-avenue model
 - **Static/Dynamic Context**: `layer_-1_research/.../context_chain_system/.0agnostic/01_knowledge/static_dynamic_context.md` — the 2x2 matrix
-- **Agnostic Sync**: `.0agnostic/agnostic-sync.sh` — the propagation mechanism
+- **Agnostic Sync**: `.0agnostic/03_protocols/agnostic_sync_protocol/tools/agnostic-sync.sh` — the propagation mechanism

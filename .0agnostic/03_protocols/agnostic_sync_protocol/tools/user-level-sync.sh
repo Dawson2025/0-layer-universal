@@ -25,7 +25,8 @@ fi
 
 # Resolve paths
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
-UNIVERSAL_AGNOSTIC="$SCRIPT_DIR"
+ROOT="$(cd "$SCRIPT_DIR/../../../.." && pwd)"  # tools/ → protocol/ → 03_protocols/ → .0agnostic/ → ROOT
+UNIVERSAL_AGNOSTIC="$ROOT/.0agnostic"
 USER_AGNOSTIC="$HOME/.0agnostic"
 
 if [ ! -d "$USER_AGNOSTIC" ]; then

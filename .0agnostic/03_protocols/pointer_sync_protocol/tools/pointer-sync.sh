@@ -40,7 +40,7 @@ fi
 
 # --- Configuration ---
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"  # 0_layer_universal root
+ROOT="$(cd "$SCRIPT_DIR/../../../.." && pwd)"  # 0_layer_universal root (tools/ → protocol/ → 03_protocols/ → .0agnostic/ → ROOT)
 UUID_INDEX="$ROOT/.uuid-index.json"
 LOCK_DIR="${UUID_INDEX}.lock"
 LOCK_HELD=false

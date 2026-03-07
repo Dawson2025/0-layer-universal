@@ -25,7 +25,7 @@ for arg in "$@"; do
 done
 
 if [[ -z "$ROOT_DIR" ]]; then
-    ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+    ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/../../../.." && pwd)"  # tools/ → protocol/ → 03_protocols/ → .0agnostic/ → ROOT
 fi
 
 # Use Python for reliable multi-line processing

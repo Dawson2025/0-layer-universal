@@ -253,21 +253,21 @@ WHEN TO USE:
 
 COMMANDS:
   # Lookup by UUID or name
-  .0agnostic/pointer-sync.sh --lookup <uuid-or-name>
+  .0agnostic/03_protocols/pointer_sync_protocol/tools/pointer-sync.sh --lookup <uuid-or-name>
 
   # Navigate hierarchy
-  .0agnostic/pointer-sync.sh --parent <uuid>            # Direct parent
-  .0agnostic/pointer-sync.sh --parent <uuid> --verbose   # Full chain to root
-  .0agnostic/pointer-sync.sh --children <uuid>           # Direct children
+  .0agnostic/03_protocols/pointer_sync_protocol/tools/pointer-sync.sh --parent <uuid>            # Direct parent
+  .0agnostic/03_protocols/pointer_sync_protocol/tools/pointer-sync.sh --parent <uuid> --verbose   # Full chain to root
+  .0agnostic/03_protocols/pointer_sync_protocol/tools/pointer-sync.sh --children <uuid>           # Direct children
 
   # Query with filters (AND-combined, glob patterns)
-  .0agnostic/pointer-sync.sh --query type=entity name=*research*
-  .0agnostic/pointer-sync.sh --query type=resource resource_type=script
-  .0agnostic/pointer-sync.sh --query parent_id=<uuid>
-  .0agnostic/pointer-sync.sh --query has_children=true
+  .0agnostic/03_protocols/pointer_sync_protocol/tools/pointer-sync.sh --query type=entity name=*research*
+  .0agnostic/03_protocols/pointer_sync_protocol/tools/pointer-sync.sh --query type=resource resource_type=script
+  .0agnostic/03_protocols/pointer_sync_protocol/tools/pointer-sync.sh --query parent_id=<uuid>
+  .0agnostic/03_protocols/pointer_sync_protocol/tools/pointer-sync.sh --query has_children=true
 
   # Find references to a UUID
-  .0agnostic/pointer-sync.sh --find-references <uuid>
+  .0agnostic/03_protocols/pointer_sync_protocol/tools/pointer-sync.sh --find-references <uuid>
 
   # Direct jq queries for advanced use
   jq '.[] | select(.type=="entity" and (.name | test("memory")))' .uuid-index.json
@@ -625,29 +625,29 @@ WHEN NOT TO USE:
 
 COMMANDS:
   # Lookup by UUID
-  .0agnostic/pointer-sync.sh --lookup <uuid>
+  .0agnostic/03_protocols/pointer_sync_protocol/tools/pointer-sync.sh --lookup <uuid>
 
   # Lookup by name (searches index for matching entries)
-  .0agnostic/pointer-sync.sh --query name=<exact-or-glob-pattern>
+  .0agnostic/03_protocols/pointer_sync_protocol/tools/pointer-sync.sh --query name=<exact-or-glob-pattern>
 
   # Navigate hierarchy
-  .0agnostic/pointer-sync.sh --parent <uuid>            # Direct parent
-  .0agnostic/pointer-sync.sh --parent <uuid> --verbose   # Full chain to root
-  .0agnostic/pointer-sync.sh --children <uuid>           # Direct children
+  .0agnostic/03_protocols/pointer_sync_protocol/tools/pointer-sync.sh --parent <uuid>            # Direct parent
+  .0agnostic/03_protocols/pointer_sync_protocol/tools/pointer-sync.sh --parent <uuid> --verbose   # Full chain to root
+  .0agnostic/03_protocols/pointer_sync_protocol/tools/pointer-sync.sh --children <uuid>           # Direct children
 
   # Query with filters (AND-combined, glob patterns supported)
-  .0agnostic/pointer-sync.sh --query type=entity
-  .0agnostic/pointer-sync.sh --query type=entity name=*research*
-  .0agnostic/pointer-sync.sh --query type=resource resource_type=script
-  .0agnostic/pointer-sync.sh --query type=resource entity_id=<uuid>
-  .0agnostic/pointer-sync.sh --query parent_id=<uuid>
-  .0agnostic/pointer-sync.sh --query has_children=true
+  .0agnostic/03_protocols/pointer_sync_protocol/tools/pointer-sync.sh --query type=entity
+  .0agnostic/03_protocols/pointer_sync_protocol/tools/pointer-sync.sh --query type=entity name=*research*
+  .0agnostic/03_protocols/pointer_sync_protocol/tools/pointer-sync.sh --query type=resource resource_type=script
+  .0agnostic/03_protocols/pointer_sync_protocol/tools/pointer-sync.sh --query type=resource entity_id=<uuid>
+  .0agnostic/03_protocols/pointer_sync_protocol/tools/pointer-sync.sh --query parent_id=<uuid>
+  .0agnostic/03_protocols/pointer_sync_protocol/tools/pointer-sync.sh --query has_children=true
 
   # Find all references to a UUID (reverse lookup)
-  .0agnostic/pointer-sync.sh --find-references <uuid>
+  .0agnostic/03_protocols/pointer_sync_protocol/tools/pointer-sync.sh --find-references <uuid>
 
   # Validate system integrity
-  .0agnostic/pointer-sync.sh --validate
+  .0agnostic/03_protocols/pointer_sync_protocol/tools/pointer-sync.sh --validate
 
   # Advanced: Direct jq on index
   jq '.[] | select(.type=="entity" and (.name | test("memory")))' .uuid-index.json
@@ -658,8 +658,8 @@ COMMANDS:
 REFERENCES:
   Knowledge:  .0agnostic/01_knowledge/pointer_sync/pointer_sync_knowledge.md
   Rule:       .0agnostic/02_rules/static/pointer_sync_rule/pointer_sync_rule.md
-  Protocol:   .0agnostic/03_protocols/pointer_sync_protocol.md
-  Script:     .0agnostic/pointer-sync.sh
+  Protocol:   .0agnostic/03_protocols/pointer_sync_protocol/pointer_sync_protocol.md
+  Script:     .0agnostic/03_protocols/pointer_sync_protocol/tools/pointer-sync.sh
 ```
 
 <!-- section_id: "e4f5a6b7-c8d9-4e0f-1a2b-3c4d5e6f7a8b" -->
@@ -671,7 +671,7 @@ The skill references existing production resources — it does NOT create new kn
 |--------------|----------------|------------------------|
 | Knowledge | Yes | `01_knowledge/pointer_sync/pointer_sync_knowledge.md` |
 | Rule (static) | Yes | `02_rules/static/pointer_sync_rule/pointer_sync_rule.md` |
-| Protocol | Yes | `03_protocols/pointer_sync_protocol.md` |
+| Protocol | Yes | `03_protocols/pointer_sync_protocol/pointer_sync_protocol.md` |
 | Script | Yes | `pointer-sync.sh` |
 | Skill (canonical) | **No — to be created** | `06_context_avenue_web/01_file_based/05_skills/uuid-query/SKILL.md` |
 | Skill (Claude port) | **No — to be created** | `.claude/skills/uuid-query/SKILL.md` (or via agnostic-sync) |

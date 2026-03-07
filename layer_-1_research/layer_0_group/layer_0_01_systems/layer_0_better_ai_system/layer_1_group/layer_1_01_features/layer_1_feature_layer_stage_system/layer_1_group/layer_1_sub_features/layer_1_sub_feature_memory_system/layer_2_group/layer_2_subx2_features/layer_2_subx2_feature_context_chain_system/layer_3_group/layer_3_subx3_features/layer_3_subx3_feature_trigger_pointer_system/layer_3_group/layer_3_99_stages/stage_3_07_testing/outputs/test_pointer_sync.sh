@@ -19,7 +19,7 @@
 set -uo pipefail
 
 # --- Configuration ---
-REAL_SCRIPT="/home/dawson/dawson-workspace/code/0_layer_universal/.0agnostic/pointer-sync.sh"
+REAL_SCRIPT="/home/dawson/dawson-workspace/code/0_layer_universal/.0agnostic/03_protocols/pointer_sync_protocol/tools/pointer-sync.sh"
 TMPDIR_BASE=""
 PASS=0
 FAIL=0
@@ -125,7 +125,7 @@ assert_file_contains() {
 run_sync() {
     local root="$1"
     shift
-    SYNC_OUTPUT=$("$root/.0agnostic/pointer-sync.sh" "$@" 2>&1)
+    SYNC_OUTPUT=$("$root/.0agnostic/03_protocols/pointer_sync_protocol/tools/pointer-sync.sh" "$@" 2>&1)
     SYNC_EXIT=$?
 }
 
@@ -139,8 +139,8 @@ setup_mock_repo() {
     mkdir -p "$ROOT/.0agnostic"
 
     # Copy the real pointer-sync.sh into the mock .0agnostic/
-    cp "$REAL_SCRIPT" "$ROOT/.0agnostic/pointer-sync.sh"
-    chmod +x "$ROOT/.0agnostic/pointer-sync.sh"
+    cp "$REAL_SCRIPT" "$ROOT/.0agnostic/03_protocols/pointer_sync_protocol/tools/pointer-sync.sh"
+    chmod +x "$ROOT/.0agnostic/03_protocols/pointer_sync_protocol/tools/pointer-sync.sh"
 
     # Create a mock layer-stage hierarchy
     # Entity: layer_1_feature_alpha (a target entity)
@@ -332,7 +332,7 @@ test_entity_resolution() {
     create_pointer "$ROOT/layer_1_group/layer_1_features/layer_1_feature_gamma/ptr_known.md" \
         "alpha entity" "layer_1_feature_alpha"
     # First sync to update the canonical location to the correct path
-    "$ROOT/.0agnostic/pointer-sync.sh" > /dev/null 2>&1
+    "$ROOT/.0agnostic/03_protocols/pointer_sync_protocol/tools/pointer-sync.sh" > /dev/null 2>&1
     # Now validate — should be all correct
     run_sync "$ROOT" --validate
     assert_exit_code "3.1 Known entity → exit 0 (valid)" "0" "$SYNC_EXIT"
@@ -402,7 +402,7 @@ test_relative_path() {
     ROOT=$(setup_mock_repo)
     create_pointer "$ROOT/layer_1_group/layer_1_features/layer_1_feature_gamma/ptr_sibling.md" \
         "sibling" "layer_1_feature_alpha" "" "" "old/wrong/path"
-    "$ROOT/.0agnostic/pointer-sync.sh" > /dev/null 2>&1
+    "$ROOT/.0agnostic/03_protocols/pointer_sync_protocol/tools/pointer-sync.sh" > /dev/null 2>&1
     content=$(cat "$ROOT/layer_1_group/layer_1_features/layer_1_feature_gamma/ptr_sibling.md")
     assert_contains "4.1 Sibling relative path contains ../layer_1_feature_alpha" "$content" "../layer_1_feature_alpha"
 
@@ -413,7 +413,7 @@ test_relative_path() {
     mkdir -p "$ROOT/layer_1_group/layer_1_features/layer_1_feature_alpha/layer_1_group/layer_1_features/layer_1_feature_beta/pointers"
     create_pointer "$ROOT/layer_1_group/layer_1_features/layer_1_feature_alpha/layer_1_group/layer_1_features/layer_1_feature_beta/pointers/ptr_up.md" \
         "up to gamma" "layer_1_feature_gamma" "" "" "old/path"
-    "$ROOT/.0agnostic/pointer-sync.sh" > /dev/null 2>&1
+    "$ROOT/.0agnostic/03_protocols/pointer_sync_protocol/tools/pointer-sync.sh" > /dev/null 2>&1
     content=$(cat "$ROOT/layer_1_group/layer_1_features/layer_1_feature_alpha/layer_1_group/layer_1_features/layer_1_feature_beta/pointers/ptr_up.md")
     # Path from beta/pointers/ up to gamma: ../../../../layer_1_feature_gamma
     # pointers -> beta -> layer_1_features -> layer_1_group -> alpha -> layer_1_features -> layer_1_feature_gamma
@@ -433,7 +433,7 @@ test_relative_path() {
     ROOT=$(setup_mock_repo)
     create_pointer "$ROOT/layer_1_group/layer_1_features/layer_1_feature_alpha/ptr_self.md" \
         "self reference" "layer_1_feature_alpha" "" "" "old/path"
-    "$ROOT/.0agnostic/pointer-sync.sh" > /dev/null 2>&1
+    "$ROOT/.0agnostic/03_protocols/pointer_sync_protocol/tools/pointer-sync.sh" > /dev/null 2>&1
     content=$(cat "$ROOT/layer_1_group/layer_1_features/layer_1_feature_alpha/ptr_self.md")
     # Self-reference: pointer is IN alpha, pointing TO alpha → relative path is "."
     assert_contains "4.3 Self-reference → dot path" "$content" '`.'
@@ -526,7 +526,7 @@ test_cli_flags() {
     create_pointer "$ROOT/layer_1_group/layer_1_features/layer_1_feature_gamma/ptr_valid.md" \
         "alpha entity" "layer_1_feature_alpha"
     # First sync to make canonical location correct
-    "$ROOT/.0agnostic/pointer-sync.sh" > /dev/null 2>&1
+    "$ROOT/.0agnostic/03_protocols/pointer_sync_protocol/tools/pointer-sync.sh" > /dev/null 2>&1
     run_sync "$ROOT" --validate
     assert_exit_code "6.3 --validate all valid → exit 0" "0" "$SYNC_EXIT"
 
@@ -672,7 +672,7 @@ test_idempotency() {
     create_pointer "$ROOT/layer_1_group/layer_1_features/layer_1_feature_gamma/ptr_b.md" \
         "alpha design" "layer_1_feature_alpha" "stage_1_04_design" "" "wrong/b"
     # First run
-    "$ROOT/.0agnostic/pointer-sync.sh" > /dev/null 2>&1
+    "$ROOT/.0agnostic/03_protocols/pointer_sync_protocol/tools/pointer-sync.sh" > /dev/null 2>&1
     # Second run with validate — all should be valid
     run_sync "$ROOT" --validate
     assert_exit_code "8.2 Multiple pointers synced then validated → exit 0" "0" "$SYNC_EXIT"
@@ -730,7 +730,7 @@ test_spaces_in_paths() {
     echo "# Spaced" > "$ROOT/layer_1_group/layer_1_features/layer_1_feature_has spaces/README.md"
     create_pointer "$ROOT/layer_1_group/layer_1_features/layer_1_feature_gamma/ptr_relpath_spaces.md" \
         "spaced" "layer_1_feature_has spaces" "" "" "old/path"
-    "$ROOT/.0agnostic/pointer-sync.sh" > /dev/null 2>&1
+    "$ROOT/.0agnostic/03_protocols/pointer_sync_protocol/tools/pointer-sync.sh" > /dev/null 2>&1
     content=$(cat "$ROOT/layer_1_group/layer_1_features/layer_1_feature_gamma/ptr_relpath_spaces.md")
     assert_contains "9.4 Relative path with spaces → correct" "$content" "layer_1_feature_has spaces"
 
@@ -767,7 +767,7 @@ test_duplicate_entities() {
     create_pointer "$ROOT/layer_1_group/layer_1_features/layer_1_feature_alpha/ptr_ambig_val.md" \
         "gamma" "layer_1_feature_gamma"
     # Sync first to update canonical location
-    "$ROOT/.0agnostic/pointer-sync.sh" > /dev/null 2>&1
+    "$ROOT/.0agnostic/03_protocols/pointer_sync_protocol/tools/pointer-sync.sh" > /dev/null 2>&1
     # Then validate
     run_sync "$ROOT" --validate
     assert_exit_code "10.2 Validate with duplicate entities → exit 0" "0" "$SYNC_EXIT"
@@ -798,7 +798,7 @@ test_file_subpath() {
     ROOT=$(setup_mock_repo)
     create_pointer "$ROOT/layer_1_group/layer_1_features/layer_1_feature_gamma/ptr_file_rel.md" \
         "alpha design doc" "layer_1_feature_alpha" "stage_1_04_design" "outputs/design.md" "old/path"
-    "$ROOT/.0agnostic/pointer-sync.sh" > /dev/null 2>&1
+    "$ROOT/.0agnostic/03_protocols/pointer_sync_protocol/tools/pointer-sync.sh" > /dev/null 2>&1
     content=$(cat "$ROOT/layer_1_group/layer_1_features/layer_1_feature_gamma/ptr_file_rel.md")
     assert_contains "11.2 Relative path to file contains filename" "$content" "design.md"
 
@@ -808,7 +808,7 @@ test_file_subpath() {
     ROOT=$(setup_mock_repo)
     create_pointer "$ROOT/layer_1_group/layer_1_features/layer_1_feature_gamma/ptr_file_val.md" \
         "alpha design doc" "layer_1_feature_alpha" "stage_1_04_design" "outputs/design.md" "old/path"
-    "$ROOT/.0agnostic/pointer-sync.sh" > /dev/null 2>&1
+    "$ROOT/.0agnostic/03_protocols/pointer_sync_protocol/tools/pointer-sync.sh" > /dev/null 2>&1
     run_sync "$ROOT" --validate
     assert_exit_code "11.3 File subpath synced then validated → exit 0" "0" "$SYNC_EXIT"
 
@@ -858,7 +858,7 @@ test_combination_flags() {
     ROOT=$(setup_mock_repo)
     create_pointer "$ROOT/layer_1_group/layer_1_features/layer_1_feature_gamma/ptr_vval.md" \
         "alpha" "layer_1_feature_alpha"
-    "$ROOT/.0agnostic/pointer-sync.sh" > /dev/null 2>&1
+    "$ROOT/.0agnostic/03_protocols/pointer_sync_protocol/tools/pointer-sync.sh" > /dev/null 2>&1
     run_sync "$ROOT" --verbose --validate
     assert_contains "12.4 Verbose + validate → shows Processing:" "$SYNC_OUTPUT" "Processing:"
     assert_exit_code "12.4b Exits 0 for valid pointer" "0" "$SYNC_EXIT"
@@ -880,7 +880,7 @@ test_python3_dependency() {
     ROOT=$(setup_mock_repo)
     create_pointer "$ROOT/layer_1_group/layer_1_features/layer_1_feature_alpha/layer_1_group/layer_1_features/layer_1_feature_beta/ptr_deep.md" \
         "gamma" "layer_1_feature_gamma" "" "" "old/path"
-    "$ROOT/.0agnostic/pointer-sync.sh" > /dev/null 2>&1
+    "$ROOT/.0agnostic/03_protocols/pointer_sync_protocol/tools/pointer-sync.sh" > /dev/null 2>&1
     local content
     content=$(cat "$ROOT/layer_1_group/layer_1_features/layer_1_feature_alpha/layer_1_group/layer_1_features/layer_1_feature_beta/ptr_deep.md")
     # Count the number of ../ in the path — should be exactly 4
@@ -1001,7 +1001,7 @@ test_long_paths() {
     mkdir -p "$DEEP_PATH"
     create_pointer "$DEEP_PATH/ptr_up_from_deep.md" \
         "gamma from deep" "layer_1_feature_gamma" "" "" "old/path"
-    "$ROOT/.0agnostic/pointer-sync.sh" > /dev/null 2>&1
+    "$ROOT/.0agnostic/03_protocols/pointer_sync_protocol/tools/pointer-sync.sh" > /dev/null 2>&1
     local content
     content=$(cat "$DEEP_PATH/ptr_up_from_deep.md")
     # Should contain many ../ segments
@@ -1019,7 +1019,7 @@ test_long_paths() {
     mkdir -p "$DEEP_PATH"
     create_pointer "$DEEP_PATH/ptr_val_deep.md" \
         "gamma" "layer_1_feature_gamma" "" "" "old/path"
-    "$ROOT/.0agnostic/pointer-sync.sh" > /dev/null 2>&1
+    "$ROOT/.0agnostic/03_protocols/pointer_sync_protocol/tools/pointer-sync.sh" > /dev/null 2>&1
     run_sync "$ROOT" --validate
     assert_exit_code "15.3 Deep path synced then validated → exit 0" "0" "$SYNC_EXIT"
 
@@ -1116,7 +1116,7 @@ test_multiple_pointers_same_target() {
     # Pointer B: in beta (child of alpha)
     create_pointer "$ROOT/layer_1_group/layer_1_features/layer_1_feature_alpha/layer_1_group/layer_1_features/layer_1_feature_beta/ptr_to_alpha_b.md" \
         "alpha from beta" "layer_1_feature_alpha" "" "" "old/b"
-    "$ROOT/.0agnostic/pointer-sync.sh" > /dev/null 2>&1
+    "$ROOT/.0agnostic/03_protocols/pointer_sync_protocol/tools/pointer-sync.sh" > /dev/null 2>&1
 
     content_a=$(cat "$ROOT/layer_1_group/layer_1_features/layer_1_feature_gamma/ptr_to_alpha_a.md")
     content_b=$(cat "$ROOT/layer_1_group/layer_1_features/layer_1_feature_alpha/layer_1_group/layer_1_features/layer_1_feature_beta/ptr_to_alpha_b.md")
@@ -1150,7 +1150,7 @@ test_multiple_pointers_same_target() {
         "alpha" "layer_1_feature_alpha" "" "" "old/a"
     create_pointer "$ROOT/layer_1_group/layer_1_features/layer_1_feature_alpha/layer_1_group/layer_1_features/layer_1_feature_beta/ptr_multi_b.md" \
         "alpha" "layer_1_feature_alpha" "" "" "old/b"
-    "$ROOT/.0agnostic/pointer-sync.sh" > /dev/null 2>&1
+    "$ROOT/.0agnostic/03_protocols/pointer_sync_protocol/tools/pointer-sync.sh" > /dev/null 2>&1
     run_sync "$ROOT" --validate
     assert_exit_code "17.2 Multiple pointers to same target → validate exit 0" "0" "$SYNC_EXIT"
 
@@ -1290,7 +1290,7 @@ This paragraph should survive the update.
 echo "code block should survive too"
 ```
 EOFILE
-    "$ROOT/.0agnostic/pointer-sync.sh" > /dev/null 2>&1
+    "$ROOT/.0agnostic/03_protocols/pointer_sync_protocol/tools/pointer-sync.sh" > /dev/null 2>&1
     content=$(cat "$ROOT/layer_1_group/layer_1_features/layer_1_feature_gamma/ptr_content_below.md")
     assert_contains "19.1a Content below canonical line → paragraph preserved" "$content" "This paragraph should survive the update."
     assert_contains "19.1b Bullets preserved" "$content" "Bullet 2"
@@ -1316,7 +1316,7 @@ canonical_entity: layer_1_feature_alpha
 
 Mentioned again: > **Canonical location**: `some/other/reference`
 EOFILE
-    "$ROOT/.0agnostic/pointer-sync.sh" > /dev/null 2>&1
+    "$ROOT/.0agnostic/03_protocols/pointer_sync_protocol/tools/pointer-sync.sh" > /dev/null 2>&1
     content=$(cat "$ROOT/layer_1_group/layer_1_features/layer_1_feature_gamma/ptr_multi_loc.md")
     # First line should be updated, second mention preserved as-is
     assert_contains "19.2a First canonical line updated" "$content" "../layer_1_feature_alpha"
@@ -1337,7 +1337,7 @@ canonical_entity: layer_1_feature_alpha
 
 > **Canonical location**: `../../../some/path with spaces & special (chars)/target`
 EOFILE
-    "$ROOT/.0agnostic/pointer-sync.sh" > /dev/null 2>&1
+    "$ROOT/.0agnostic/03_protocols/pointer_sync_protocol/tools/pointer-sync.sh" > /dev/null 2>&1
     content=$(cat "$ROOT/layer_1_group/layer_1_features/layer_1_feature_gamma/ptr_special_old.md")
     assert_contains "19.3 Special chars in old path → replaced with correct path" "$content" "../layer_1_feature_alpha"
     assert_not_contains "19.3b Old special path gone" "$content" "special (chars)"
@@ -1358,7 +1358,7 @@ custom_field: preserve_me
 
 > **Canonical location**: `old/path`
 EOFILE
-    "$ROOT/.0agnostic/pointer-sync.sh" > /dev/null 2>&1
+    "$ROOT/.0agnostic/03_protocols/pointer_sync_protocol/tools/pointer-sync.sh" > /dev/null 2>&1
     content=$(cat "$ROOT/layer_1_group/layer_1_features/layer_1_feature_gamma/ptr_fm_preserve.md")
     assert_contains "19.4 Frontmatter preserved after update" "$content" "custom_field: preserve_me"
 
@@ -1375,8 +1375,8 @@ setup_uuid_mock_repo() {
     local ROOT="$TMPDIR_BASE/mock_repo"
     mkdir -p "$ROOT/.0agnostic"
 
-    cp "$REAL_SCRIPT" "$ROOT/.0agnostic/pointer-sync.sh"
-    chmod +x "$ROOT/.0agnostic/pointer-sync.sh"
+    cp "$REAL_SCRIPT" "$ROOT/.0agnostic/03_protocols/pointer_sync_protocol/tools/pointer-sync.sh"
+    chmod +x "$ROOT/.0agnostic/03_protocols/pointer_sync_protocol/tools/pointer-sync.sh"
 
     # Entity: layer_1_feature_alpha (with entity_id)
     mkdir -p "$ROOT/layer_1_group/layer_1_features/layer_1_feature_alpha/stage_1_04_design/outputs"
@@ -1485,7 +1485,7 @@ test_uuid_resolution() {
 
     # Test 20.1: UUID-based entity resolution
     ROOT=$(setup_uuid_mock_repo)
-    "$ROOT/.0agnostic/pointer-sync.sh" --rebuild-index > /dev/null 2>&1
+    "$ROOT/.0agnostic/03_protocols/pointer_sync_protocol/tools/pointer-sync.sh" --rebuild-index > /dev/null 2>&1
     create_uuid_pointer "$ROOT/layer_1_group/layer_1_features/layer_1_feature_gamma/ptr_uuid.md" \
         "alpha via uuid" "aaaa1111-1111-1111-1111-111111111111"
     run_sync "$ROOT" --verbose
@@ -1496,7 +1496,7 @@ test_uuid_resolution() {
 
     # Test 20.2: UUID-based entity + stage resolution
     ROOT=$(setup_uuid_mock_repo)
-    "$ROOT/.0agnostic/pointer-sync.sh" --rebuild-index > /dev/null 2>&1
+    "$ROOT/.0agnostic/03_protocols/pointer_sync_protocol/tools/pointer-sync.sh" --rebuild-index > /dev/null 2>&1
     create_uuid_pointer "$ROOT/layer_1_group/layer_1_features/layer_1_feature_gamma/ptr_uuid_stage.md" \
         "alpha design via uuid" "aaaa1111-1111-1111-1111-111111111111" "dddd4444-4444-4444-4444-444444444444"
     run_sync "$ROOT" --verbose
@@ -1507,7 +1507,7 @@ test_uuid_resolution() {
 
     # Test 20.3: UUID entity + stage + subpath
     ROOT=$(setup_uuid_mock_repo)
-    "$ROOT/.0agnostic/pointer-sync.sh" --rebuild-index > /dev/null 2>&1
+    "$ROOT/.0agnostic/03_protocols/pointer_sync_protocol/tools/pointer-sync.sh" --rebuild-index > /dev/null 2>&1
     create_uuid_pointer "$ROOT/layer_1_group/layer_1_features/layer_1_feature_gamma/ptr_uuid_full.md" \
         "alpha design output" "aaaa1111-1111-1111-1111-111111111111" "dddd4444-4444-4444-4444-444444444444" "outputs/design.md"
     run_sync "$ROOT" --verbose
@@ -1518,7 +1518,7 @@ test_uuid_resolution() {
 
     # Test 20.4: Nonexistent UUID → BROKEN
     ROOT=$(setup_uuid_mock_repo)
-    "$ROOT/.0agnostic/pointer-sync.sh" --rebuild-index > /dev/null 2>&1
+    "$ROOT/.0agnostic/03_protocols/pointer_sync_protocol/tools/pointer-sync.sh" --rebuild-index > /dev/null 2>&1
     create_uuid_pointer "$ROOT/layer_1_group/layer_1_features/layer_1_feature_gamma/ptr_bad_uuid.md" \
         "nonexistent" "ffff9999-9999-9999-9999-999999999999"
     run_sync "$ROOT" --validate
@@ -1529,7 +1529,7 @@ test_uuid_resolution() {
 
     # Test 20.5: UUID entity valid + UUID stage invalid → BROKEN
     ROOT=$(setup_uuid_mock_repo)
-    "$ROOT/.0agnostic/pointer-sync.sh" --rebuild-index > /dev/null 2>&1
+    "$ROOT/.0agnostic/03_protocols/pointer_sync_protocol/tools/pointer-sync.sh" --rebuild-index > /dev/null 2>&1
     create_uuid_pointer "$ROOT/layer_1_group/layer_1_features/layer_1_feature_gamma/ptr_bad_stage_uuid.md" \
         "bad stage" "aaaa1111-1111-1111-1111-111111111111" "ffff9999-9999-9999-9999-999999999999"
     run_sync "$ROOT" --validate
@@ -1540,10 +1540,10 @@ test_uuid_resolution() {
 
     # Test 20.6: UUID sync then validate → exit 0
     ROOT=$(setup_uuid_mock_repo)
-    "$ROOT/.0agnostic/pointer-sync.sh" --rebuild-index > /dev/null 2>&1
+    "$ROOT/.0agnostic/03_protocols/pointer_sync_protocol/tools/pointer-sync.sh" --rebuild-index > /dev/null 2>&1
     create_uuid_pointer "$ROOT/layer_1_group/layer_1_features/layer_1_feature_gamma/ptr_uuid_val.md" \
         "alpha" "aaaa1111-1111-1111-1111-111111111111" "" "" "old/stale"
-    "$ROOT/.0agnostic/pointer-sync.sh" > /dev/null 2>&1
+    "$ROOT/.0agnostic/03_protocols/pointer_sync_protocol/tools/pointer-sync.sh" > /dev/null 2>&1
     run_sync "$ROOT" --validate
     assert_exit_code "20.6 UUID sync then validate → exit 0" "0" "$SYNC_EXIT"
 
@@ -1551,10 +1551,10 @@ test_uuid_resolution() {
 
     # Test 20.7: UUID pointer computes correct relative path
     ROOT=$(setup_uuid_mock_repo)
-    "$ROOT/.0agnostic/pointer-sync.sh" --rebuild-index > /dev/null 2>&1
+    "$ROOT/.0agnostic/03_protocols/pointer_sync_protocol/tools/pointer-sync.sh" --rebuild-index > /dev/null 2>&1
     create_uuid_pointer "$ROOT/layer_1_group/layer_1_features/layer_1_feature_gamma/ptr_uuid_relpath.md" \
         "alpha" "aaaa1111-1111-1111-1111-111111111111" "" "" "old/path"
-    "$ROOT/.0agnostic/pointer-sync.sh" > /dev/null 2>&1
+    "$ROOT/.0agnostic/03_protocols/pointer_sync_protocol/tools/pointer-sync.sh" > /dev/null 2>&1
     local content
     content=$(cat "$ROOT/layer_1_group/layer_1_features/layer_1_feature_gamma/ptr_uuid_relpath.md")
     assert_contains "20.7 UUID relpath → ../layer_1_feature_alpha" "$content" "../layer_1_feature_alpha"
@@ -1588,7 +1588,7 @@ test_rebuild_index() {
 
     # Test 21.2: Index contains correct entity count
     ROOT=$(setup_uuid_mock_repo)
-    "$ROOT/.0agnostic/pointer-sync.sh" --rebuild-index > /dev/null 2>&1
+    "$ROOT/.0agnostic/03_protocols/pointer_sync_protocol/tools/pointer-sync.sh" --rebuild-index > /dev/null 2>&1
     local entity_count
     entity_count=$(python3 -c "
 import json
@@ -1602,7 +1602,7 @@ print(sum(1 for v in data.get('uuids', {}).values() if v.get('type') == 'entity'
 
     # Test 21.3: Index contains stage UUIDs from stage_index.json
     ROOT=$(setup_uuid_mock_repo)
-    "$ROOT/.0agnostic/pointer-sync.sh" --rebuild-index > /dev/null 2>&1
+    "$ROOT/.0agnostic/03_protocols/pointer_sync_protocol/tools/pointer-sync.sh" --rebuild-index > /dev/null 2>&1
     local stage_count
     stage_count=$(python3 -c "
 import json
@@ -1616,7 +1616,7 @@ print(sum(1 for v in data.get('uuids', {}).values() if v.get('type') == 'stage')
 
     # Test 21.4: Index has checksum
     ROOT=$(setup_uuid_mock_repo)
-    "$ROOT/.0agnostic/pointer-sync.sh" --rebuild-index > /dev/null 2>&1
+    "$ROOT/.0agnostic/03_protocols/pointer_sync_protocol/tools/pointer-sync.sh" --rebuild-index > /dev/null 2>&1
     local has_checksum
     has_checksum=$(python3 -c "
 import json
@@ -1631,7 +1631,7 @@ print('yes' if cs.startswith('sha256:') else 'no')
 
     # Test 21.5: Index has name-to-UUID mappings
     ROOT=$(setup_uuid_mock_repo)
-    "$ROOT/.0agnostic/pointer-sync.sh" --rebuild-index > /dev/null 2>&1
+    "$ROOT/.0agnostic/03_protocols/pointer_sync_protocol/tools/pointer-sync.sh" --rebuild-index > /dev/null 2>&1
     local alpha_uuid
     alpha_uuid=$(python3 -c "
 import json
@@ -1645,10 +1645,10 @@ print(data.get('names', {}).get('layer_1_feature_alpha', ''))
 
     # Test 21.6: Rebuild is idempotent (same count)
     ROOT=$(setup_uuid_mock_repo)
-    "$ROOT/.0agnostic/pointer-sync.sh" --rebuild-index > /dev/null 2>&1
+    "$ROOT/.0agnostic/03_protocols/pointer_sync_protocol/tools/pointer-sync.sh" --rebuild-index > /dev/null 2>&1
     local count1
     count1=$(python3 -c "import json; print(len(json.load(open('$ROOT/.uuid-index.json')).get('uuids', {})))" 2>/dev/null)
-    "$ROOT/.0agnostic/pointer-sync.sh" --rebuild-index > /dev/null 2>&1
+    "$ROOT/.0agnostic/03_protocols/pointer_sync_protocol/tools/pointer-sync.sh" --rebuild-index > /dev/null 2>&1
     local count2
     count2=$(python3 -c "import json; print(len(json.load(open('$ROOT/.uuid-index.json')).get('uuids', {})))" 2>/dev/null)
     assert_eq "21.6 Rebuild idempotent (same count)" "$count1" "$count2"
@@ -1685,7 +1685,7 @@ test_find_references() {
 
     # Test 22.1: Find references to a UUID used in a pointer
     ROOT=$(setup_uuid_mock_repo)
-    "$ROOT/.0agnostic/pointer-sync.sh" --rebuild-index > /dev/null 2>&1
+    "$ROOT/.0agnostic/03_protocols/pointer_sync_protocol/tools/pointer-sync.sh" --rebuild-index > /dev/null 2>&1
     create_uuid_pointer "$ROOT/layer_1_group/layer_1_features/layer_1_feature_gamma/ptr_ref1.md" \
         "alpha ref" "aaaa1111-1111-1111-1111-111111111111"
     create_uuid_pointer "$ROOT/layer_1_group/layer_1_features/layer_1_feature_gamma/ptr_ref2.md" \
@@ -1751,7 +1751,7 @@ test_garbage_collection() {
 
     # Test 24.1: No orphaned entries → clean message
     ROOT=$(setup_uuid_mock_repo)
-    "$ROOT/.0agnostic/pointer-sync.sh" --rebuild-index > /dev/null 2>&1
+    "$ROOT/.0agnostic/03_protocols/pointer_sync_protocol/tools/pointer-sync.sh" --rebuild-index > /dev/null 2>&1
     run_sync "$ROOT" --gc
     assert_contains "24.1 No orphans → clean" "$SYNC_OUTPUT" "No orphaned entries"
     assert_exit_code "24.1b Exit 0" "0" "$SYNC_EXIT"
@@ -1760,7 +1760,7 @@ test_garbage_collection() {
 
     # Test 24.2: Orphaned entry is removed
     ROOT=$(setup_uuid_mock_repo)
-    "$ROOT/.0agnostic/pointer-sync.sh" --rebuild-index > /dev/null 2>&1
+    "$ROOT/.0agnostic/03_protocols/pointer_sync_protocol/tools/pointer-sync.sh" --rebuild-index > /dev/null 2>&1
     # Remove alpha entity directory — its UUID becomes orphaned
     rm -rf "$ROOT/layer_1_group/layer_1_features/layer_1_feature_alpha"
     run_sync "$ROOT" --gc
@@ -1770,11 +1770,11 @@ test_garbage_collection() {
 
     # Test 24.3: GC reduces index entry count
     ROOT=$(setup_uuid_mock_repo)
-    "$ROOT/.0agnostic/pointer-sync.sh" --rebuild-index > /dev/null 2>&1
+    "$ROOT/.0agnostic/03_protocols/pointer_sync_protocol/tools/pointer-sync.sh" --rebuild-index > /dev/null 2>&1
     local before_count
     before_count=$(python3 -c "import json; print(len(json.load(open('$ROOT/.uuid-index.json')).get('uuids', {})))" 2>/dev/null)
     rm -rf "$ROOT/layer_1_group/layer_1_features/layer_1_feature_alpha"
-    "$ROOT/.0agnostic/pointer-sync.sh" --gc > /dev/null 2>&1
+    "$ROOT/.0agnostic/03_protocols/pointer_sync_protocol/tools/pointer-sync.sh" --gc > /dev/null 2>&1
     local after_count
     after_count=$(python3 -c "import json; print(len(json.load(open('$ROOT/.uuid-index.json')).get('uuids', {})))" 2>/dev/null)
     TOTAL=$((TOTAL + 1))
@@ -1807,7 +1807,7 @@ test_index_locking() {
 
     # Test 25.1: Lock is created and released during rebuild
     ROOT=$(setup_uuid_mock_repo)
-    "$ROOT/.0agnostic/pointer-sync.sh" --rebuild-index > /dev/null 2>&1
+    "$ROOT/.0agnostic/03_protocols/pointer_sync_protocol/tools/pointer-sync.sh" --rebuild-index > /dev/null 2>&1
     TOTAL=$((TOTAL + 1))
     if [ ! -d "$ROOT/.uuid-index.json.lock" ]; then
         echo -e "  ${GREEN}PASS${NC}: 25.1 Lock released after rebuild"
@@ -1842,7 +1842,7 @@ test_uuid_fallback() {
 
     # Test 26.1: Pointer with both UUID and name → UUID takes precedence
     ROOT=$(setup_uuid_mock_repo)
-    "$ROOT/.0agnostic/pointer-sync.sh" --rebuild-index > /dev/null 2>&1
+    "$ROOT/.0agnostic/03_protocols/pointer_sync_protocol/tools/pointer-sync.sh" --rebuild-index > /dev/null 2>&1
     mkdir -p "$ROOT/layer_1_group/layer_1_features/layer_1_feature_gamma"
     cat > "$ROOT/layer_1_group/layer_1_features/layer_1_feature_gamma/ptr_both.md" <<'EOFILE'
 ---
@@ -1862,7 +1862,7 @@ EOFILE
 
     # Test 26.2: Name-only pointer still works (no UUID fields)
     ROOT=$(setup_uuid_mock_repo)
-    "$ROOT/.0agnostic/pointer-sync.sh" --rebuild-index > /dev/null 2>&1
+    "$ROOT/.0agnostic/03_protocols/pointer_sync_protocol/tools/pointer-sync.sh" --rebuild-index > /dev/null 2>&1
     create_pointer "$ROOT/layer_1_group/layer_1_features/layer_1_feature_gamma/ptr_name_only.md" \
         "alpha legacy" "layer_1_feature_alpha" "" "" "old/path"
     run_sync "$ROOT" --verbose
@@ -1875,7 +1875,7 @@ EOFILE
     # Don't rebuild index — let the sync auto-build
     create_uuid_pointer "$ROOT/layer_1_group/layer_1_features/layer_1_feature_gamma/ptr_auto.md" \
         "alpha auto" "aaaa1111-1111-1111-1111-111111111111" "" "" "old/path"
-    "$ROOT/.0agnostic/pointer-sync.sh" > /dev/null 2>&1
+    "$ROOT/.0agnostic/03_protocols/pointer_sync_protocol/tools/pointer-sync.sh" > /dev/null 2>&1
     run_sync "$ROOT" --validate
     assert_exit_code "26.3 Auto-rebuild resolves UUID → exit 0" "0" "$SYNC_EXIT"
 
@@ -1883,12 +1883,12 @@ EOFILE
 
     # Test 26.4: Mixed UUID and name pointers in same run
     ROOT=$(setup_uuid_mock_repo)
-    "$ROOT/.0agnostic/pointer-sync.sh" --rebuild-index > /dev/null 2>&1
+    "$ROOT/.0agnostic/03_protocols/pointer_sync_protocol/tools/pointer-sync.sh" --rebuild-index > /dev/null 2>&1
     create_uuid_pointer "$ROOT/layer_1_group/layer_1_features/layer_1_feature_gamma/ptr_uuid_mix.md" \
         "alpha uuid" "aaaa1111-1111-1111-1111-111111111111" "" "" "old/path"
     create_pointer "$ROOT/layer_1_group/layer_1_features/layer_1_feature_gamma/ptr_name_mix.md" \
         "beta name" "layer_1_feature_beta" "" "" "old/path"
-    "$ROOT/.0agnostic/pointer-sync.sh" > /dev/null 2>&1
+    "$ROOT/.0agnostic/03_protocols/pointer_sync_protocol/tools/pointer-sync.sh" > /dev/null 2>&1
     run_sync "$ROOT" --validate
     assert_exit_code "26.4 Mixed UUID+name pointers → all valid" "0" "$SYNC_EXIT"
 
@@ -1901,7 +1901,7 @@ EOFILE
 test_parent_children_graph() {
     echo -e "\n${BLUE}=== Category 27: Parent/Children Graph ===${NC}"
     ROOT=$(setup_uuid_mock_repo)
-    local MOCK_SCRIPT="$ROOT/.0agnostic/pointer-sync.sh"
+    local MOCK_SCRIPT="$ROOT/.0agnostic/03_protocols/pointer_sync_protocol/tools/pointer-sync.sh"
 
     # Add parent reference to beta (child of alpha)
     cat > "$ROOT/layer_1_group/layer_1_features/layer_1_feature_alpha/layer_1_group/layer_1_features/layer_1_feature_beta/0AGNOSTIC.md" <<'EOFILE'
@@ -1956,7 +1956,7 @@ EOFILE
 test_query_cli() {
     echo -e "\n${BLUE}=== Category 28: Query CLI ===${NC}"
     ROOT=$(setup_uuid_mock_repo)
-    local MOCK_SCRIPT="$ROOT/.0agnostic/pointer-sync.sh"
+    local MOCK_SCRIPT="$ROOT/.0agnostic/03_protocols/pointer_sync_protocol/tools/pointer-sync.sh"
 
     # Rebuild index
     bash "$MOCK_SCRIPT" --rebuild-index > /dev/null 2>&1
@@ -2008,11 +2008,11 @@ test_dir_uuid_index() {
 
     # Create a minimal .0agnostic/ structure so the script can find ROOT
     mkdir -p "$DIR/.0agnostic"
-    cp "$REAL_SCRIPT" "$DIR/.0agnostic/pointer-sync.sh"
+    cp "$REAL_SCRIPT" "$DIR/.0agnostic/03_protocols/pointer_sync_protocol/tools/pointer-sync.sh"
 
     # 29.1 --rebuild-dir-index creates index file
     local rebuild_out
-    rebuild_out=$(bash "$DIR/.0agnostic/pointer-sync.sh" --rebuild-dir-index 2>&1) || true
+    rebuild_out=$(bash "$DIR/.0agnostic/03_protocols/pointer_sync_protocol/tools/pointer-sync.sh" --rebuild-dir-index 2>&1) || true
     local exit_code=$?
 
     TOTAL=$((TOTAL + 1))
@@ -2041,7 +2041,7 @@ test_dir_uuid_index() {
     assert_eq "29.4 Index is valid JSON" "valid" "$jq_out"
 
     # 29.5 Rebuild is idempotent
-    bash "$DIR/.0agnostic/pointer-sync.sh" --rebuild-dir-index > /dev/null 2>&1
+    bash "$DIR/.0agnostic/03_protocols/pointer_sync_protocol/tools/pointer-sync.sh" --rebuild-dir-index > /dev/null 2>&1
     local count2
     count2=$(python3 -c "import json; d=json.load(open('$DIR/.dir-uuid-index.json')); print(d.get('count', 0))" 2>/dev/null || echo "0")
     assert_eq "29.5 Rebuild idempotent (same count)" "$count" "$count2"

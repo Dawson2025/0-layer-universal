@@ -5,7 +5,7 @@ resource_name: "pointer_sync_implementation"
 ---
 # Pointer Sync System — Implementation
 
-> **Canonical location**: Root `.0agnostic/pointer-sync.sh`
+> **Canonical location**: Root `.0agnostic/03_protocols/pointer_sync_protocol/tools/pointer-sync.sh`
 
 The implementation artifacts live at the root `.0agnostic/` level. This pointer connects stage_3_06_development to the canonical script and hook.
 
@@ -14,11 +14,11 @@ The implementation artifacts live at the root `.0agnostic/` level. This pointer 
 
 | Artifact | Canonical Location | Status |
 |----------|-------------------|--------|
-| Main script | `.0agnostic/pointer-sync.sh` | Production (~1050 lines) |
-| Resource index script | `.0agnostic/create-resource-indexes.sh` | Production (~345 lines) |
+| Main script | `.0agnostic/03_protocols/pointer_sync_protocol/tools/pointer-sync.sh` | Production (~1050 lines) |
+| Resource index script | `.0agnostic/03_protocols/pointer_sync_protocol/tools/create-resource-indexes.sh` | Production (~345 lines) |
 | Claude Code hook | `.0agnostic/06_context_avenue_web/01_file_based/08_hooks/scripts/pointer-edit-guard.sh` | Production |
 | Hook registration | `.claude/settings.json` (PostToolUse entry) | Production |
-| agnostic-sync integration | `.0agnostic/agnostic-sync.sh` (pointer validation section) | Production |
+| agnostic-sync integration | `.0agnostic/03_protocols/agnostic_sync_protocol/tools/agnostic-sync.sh` (pointer validation section) | Production |
 | Root UUID index | `.uuid-index.json` | Production (5,313 entries, ~2.6MB) |
 | Resource indexes | `<entity>/.0agnostic/resource_index.json` (50 entities) | Production |
 

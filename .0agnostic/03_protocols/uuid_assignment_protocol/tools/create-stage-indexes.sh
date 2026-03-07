@@ -19,7 +19,7 @@
 set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
+ROOT="$(cd "$SCRIPT_DIR/../../../.." && pwd)"  # tools/ → protocol/ → 03_protocols/ → .0agnostic/ → ROOT
 
 DRY_RUN=false
 VERBOSE=false

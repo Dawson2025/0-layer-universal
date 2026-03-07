@@ -28,7 +28,7 @@ fi
 if [ -f "$FILE_PATH" ] && head -20 "$FILE_PATH" 2>/dev/null | grep -q "^pointer_to:"; then
     cat <<'EOF'
 {
-  "additionalContext": "You just modified a pointer file (contains pointer_to: frontmatter). Run `pointer-sync.sh --validate` to verify the pointer resolves correctly. Script location: .0agnostic/pointer-sync.sh. Protocol: .0agnostic/03_protocols/pointer_sync_protocol.md"
+  "additionalContext": "You just modified a pointer file (contains pointer_to: frontmatter). Run `pointer-sync.sh --validate` to verify the pointer resolves correctly. Script: .0agnostic/03_protocols/pointer_sync_protocol/tools/pointer-sync.sh (resource_id: 08a4e9bc-8cc1-457e-b966-0a912ae6dff7). Protocol: .0agnostic/03_protocols/pointer_sync_protocol/pointer_sync_protocol.md"
 }
 EOF
 else

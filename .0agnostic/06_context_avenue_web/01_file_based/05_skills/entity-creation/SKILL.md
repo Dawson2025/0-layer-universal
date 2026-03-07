@@ -84,7 +84,7 @@ Every new entity gets stable UUID identity at creation time:
 
 3. **Rebuild global index**: After entity creation, run:
    ```bash
-   .0agnostic/pointer-sync.sh --rebuild-index
+   .0agnostic/03_protocols/pointer_sync_protocol/tools/pointer-sync.sh --rebuild-index
    ```
 
 <!-- section_id: "6a8b7c9d-0e1f-4a2b-3c4d-5e6f7a8b9c0d" -->
@@ -92,7 +92,7 @@ Every new entity gets stable UUID identity at creation time:
 
 - `0AGNOSTIC.md` with `entity_id` in `## Identity` (see INSTANTIATION_GUIDE.md for templates)
 - `0INDEX.md`
-- Run `agnostic-sync.sh` to generate tool files
+- Run `.0agnostic/03_protocols/agnostic_sync_protocol/tools/agnostic-sync.sh` to generate tool files
 
 <!-- section_id: "12f95bd8-c4b3-42bc-a62c-5b6ebb82f19d" -->
 ### 6. Update Parent

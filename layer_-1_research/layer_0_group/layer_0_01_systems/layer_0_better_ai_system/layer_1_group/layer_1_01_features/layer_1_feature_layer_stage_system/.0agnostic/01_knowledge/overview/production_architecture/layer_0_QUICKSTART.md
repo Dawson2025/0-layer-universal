@@ -84,7 +84,7 @@ bash .0agnostic/scripts/create-session.sh "my_agent" "Brief summary of work" "CO
 
 ```bash
 # After editing 0AGNOSTIC.md, regenerate tool files
-bash .0agnostic/agnostic-sync.sh .
+bash .0agnostic/03_protocols/agnostic_sync_protocol/tools/agnostic-sync.sh .
 ```
 
 ---
@@ -141,7 +141,7 @@ layer_0/
 ### Syncing Tool-Specific Files
 
 1. Edit `0AGNOSTIC.md` (source of truth)
-2. Run `bash .0agnostic/agnostic-sync.sh .`
+2. Run `bash .0agnostic/03_protocols/agnostic_sync_protocol/tools/agnostic-sync.sh .`
 3. All tool files (CLAUDE.md, etc.) updated
 
 ---

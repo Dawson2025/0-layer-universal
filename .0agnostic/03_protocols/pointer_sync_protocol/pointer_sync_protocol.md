@@ -59,7 +59,7 @@ The body MUST include a `> **Canonical location**:` line that the script updates
 | `pointer-sync.sh --detect-cycles` | Check for circular pointer references |
 | `pointer-sync.sh --gc` | Find orphaned UUIDs (no matching entity directory) |
 
-**Script location**: `.0agnostic/pointer-sync.sh`
+**Script location**: `.0agnostic/03_protocols/pointer_sync_protocol/tools/pointer-sync.sh`
 
 <!-- section_id: "d9a470ca-7637-4331-9f69-2f9352c58f00" -->
 ## 5. When to Run

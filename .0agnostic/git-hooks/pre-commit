@@ -18,7 +18,7 @@ AGNOSTIC_STAGED=$(echo "$STAGED" | grep '0AGNOSTIC\.md$' || true)
 if [[ -n "$CLAUDE_STAGED" && -z "$AGNOSTIC_STAGED" ]]; then
     echo ""
     echo "[pre-commit] WARNING: CLAUDE.md is staged but no 0AGNOSTIC.md is staged."
-    echo "  CLAUDE.md is auto-generated — edit 0AGNOSTIC.md and run agnostic-sync.sh instead."
+    echo "  CLAUDE.md is auto-generated — edit 0AGNOSTIC.md and run .0agnostic/03_protocols/agnostic_sync_protocol/tools/agnostic-sync.sh instead."
     echo "  Staged CLAUDE.md files:"
     echo "$CLAUDE_STAGED" | sed 's/^/    /'
     echo ""
@@ -39,6 +39,6 @@ if [[ -n "$NEW_POINTERS" ]]; then
     echo ""
     echo "[pre-commit] WARNING: Pointer file(s) missing canonical_entity_id:"
     echo "$NEW_POINTERS" | sed 's/^/    /'
-    echo "  Run: migrate-pointers.sh to add UUID fields."
+    echo "  Run: .0agnostic/03_protocols/pointer_sync_protocol/tools/migrate-pointers.sh to add UUID fields."
     echo ""
 fi

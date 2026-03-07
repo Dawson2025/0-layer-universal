@@ -168,7 +168,7 @@ At the end of CLAUDE.md:
 <!-- section_id: "b6a9746a-fd51-49e2-a5b9-ba5faed6dc3d" -->
 ### Step 5: Generate agnostic-sync.sh Integration
 
-**Tool**: `agnostic-sync.sh` (at `.0agnostic/agnostic-sync.sh`)
+**Tool**: `agnostic-sync.sh` (at `.0agnostic/03_protocols/agnostic_sync_protocol/tools/agnostic-sync.sh`)
 
 **What it does**:
 ```bash
@@ -436,7 +436,7 @@ The entity CLAUDE.md **overrides** the user CLAUDE.md for that project.
 **Command**:
 ```bash
 cd [entity]
-bash ../.0agnostic/agnostic-sync.sh .
+bash ../.0agnostic/03_protocols/agnostic_sync_protocol/tools/agnostic-sync.sh .
 ```
 
 **Output**:
@@ -529,7 +529,7 @@ Claude Code context is successful when:
 <!-- section_id: "47e602fd-6bf5-4d3e-b12c-cc61963bcacf" -->
 ## References
 
-- **agnostic-sync.sh**: `.0agnostic/agnostic-sync.sh`
+- **agnostic-sync.sh**: `.0agnostic/03_protocols/agnostic_sync_protocol/tools/agnostic-sync.sh`
 - **Entity structure**: `.0agnostic/06_context_avenue_web/01_file_based/04_@import_references/entity_structure.md`
 - **0AGNOSTIC template**: `.0agnostic/01_knowledge/layer_stage_system/entity_lifecycle/INSTANTIATION_GUIDE.md`
 - **Merge protocol**: `.0agnostic/03_protocols/.1merge_port_system_protocol.md`

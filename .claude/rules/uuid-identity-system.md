@@ -13,10 +13,10 @@ Every entity, stage, file, and directory in this repository has a stable UUID. T
 To find any entity by name, use entity-find.sh (fastest option, ~5ms, no Python):
 
 ```bash
-.0agnostic/entity-find.sh <pattern>     # Find entity by name
-.0agnostic/entity-find.sh memory        # Example: find memory-related entities
-.0agnostic/entity-find.sh --path chain  # Just show paths
-.0agnostic/entity-find.sh --uuid memory # Just show UUIDs
+.0agnostic/03_protocols/pointer_sync_protocol/tools/entity-find.sh <pattern>     # Find entity by name
+.0agnostic/03_protocols/pointer_sync_protocol/tools/entity-find.sh memory        # Example: find memory-related entities
+.0agnostic/03_protocols/pointer_sync_protocol/tools/entity-find.sh --path chain  # Just show paths
+.0agnostic/03_protocols/pointer_sync_protocol/tools/entity-find.sh --uuid memory # Just show UUIDs
 ```
 
 Use this BEFORE grep/glob when looking for entities. It searches a pre-built index and is faster than scanning the codebase.
@@ -33,27 +33,27 @@ Use this BEFORE grep/glob when looking for entities. It searches a pre-built ind
 <!-- section_id: "b9c0d1e2-f3a4-4b5c-6d7e-8f9a0b1c2d3e" -->
 ## When to Use Which Tool
 
-- **Finding where an entity lives** → `.0agnostic/entity-find.sh <name>` (fast, simple)
-- **Navigating hierarchy** (parent, children, chain to root) → `pointer-sync.sh --parent/--children`
-- **Pre-rename check** → `pointer-sync.sh --find-references <uuid>`
-- **Resource discovery** → `pointer-sync.sh --query type=resource entity_id=<uuid>`
-- **Pointer validation** → `pointer-sync.sh --validate`
+- **Finding where an entity lives** → `.0agnostic/03_protocols/pointer_sync_protocol/tools/entity-find.sh <name>` (fast, simple)
+- **Navigating hierarchy** (parent, children, chain to root) → `.0agnostic/03_protocols/pointer_sync_protocol/tools/pointer-sync.sh --parent/--children`
+- **Pre-rename check** → `.0agnostic/03_protocols/pointer_sync_protocol/tools/pointer-sync.sh --find-references <uuid>`
+- **Resource discovery** → `.0agnostic/03_protocols/pointer_sync_protocol/tools/pointer-sync.sh --query type=resource entity_id=<uuid>`
+- **Pointer validation** → `.0agnostic/03_protocols/pointer_sync_protocol/tools/pointer-sync.sh --validate`
 
 <!-- section_id: "c0d1e2f3-a4b5-4c6d-7e8f-9a0b1c2d3e4f" -->
 ## Quick Reference
 
 | Task | Command |
 |------|---------|
-| Find entity by name (fast) | `.0agnostic/entity-find.sh <pattern>` |
-| Find entity path only | `.0agnostic/entity-find.sh --path <pattern>` |
-| Look up any UUID | `pointer-sync.sh --lookup <uuid>` |
-| Get parent entity | `pointer-sync.sh --parent <uuid>` |
-| List children | `pointer-sync.sh --children <uuid>` |
-| Check references | `pointer-sync.sh --find-references <uuid>` |
-| Find resources | `pointer-sync.sh --query type=resource entity_id=<uuid>` |
-| Validate all pointers | `pointer-sync.sh --validate` |
+| Find entity by name (fast) | `.0agnostic/03_protocols/pointer_sync_protocol/tools/entity-find.sh <pattern>` |
+| Find entity path only | `.0agnostic/03_protocols/pointer_sync_protocol/tools/entity-find.sh --path <pattern>` |
+| Look up any UUID | `.0agnostic/03_protocols/pointer_sync_protocol/tools/pointer-sync.sh --lookup <uuid>` |
+| Get parent entity | `.0agnostic/03_protocols/pointer_sync_protocol/tools/pointer-sync.sh --parent <uuid>` |
+| List children | `.0agnostic/03_protocols/pointer_sync_protocol/tools/pointer-sync.sh --children <uuid>` |
+| Check references | `.0agnostic/03_protocols/pointer_sync_protocol/tools/pointer-sync.sh --find-references <uuid>` |
+| Find resources | `.0agnostic/03_protocols/pointer_sync_protocol/tools/pointer-sync.sh --query type=resource entity_id=<uuid>` |
+| Validate all pointers | `.0agnostic/03_protocols/pointer_sync_protocol/tools/pointer-sync.sh --validate` |
 
-All commands run from repo root. Scripts at `.0agnostic/`.
+All commands run from repo root. Scripts at `.0agnostic/03_protocols/pointer_sync_protocol/tools/`.
 
 <!-- section_id: "d1e2f3a4-b5c6-4d7e-8f9a-0b1c2d3e4f5a" -->
 ## Full Reference
@@ -63,4 +63,4 @@ For complete command documentation, examples, and advanced queries: load the `/u
 Key resources:
 - Knowledge: `.0agnostic/01_knowledge/pointer_sync/pointer_sync_knowledge.md`
 - Rule: `.0agnostic/02_rules/static/pointer_sync_rule/pointer_sync_rule.md`
-- Protocol: `.0agnostic/03_protocols/pointer_sync_protocol.md`
+- Protocol: `.0agnostic/03_protocols/pointer_sync_protocol/pointer_sync_protocol.md`

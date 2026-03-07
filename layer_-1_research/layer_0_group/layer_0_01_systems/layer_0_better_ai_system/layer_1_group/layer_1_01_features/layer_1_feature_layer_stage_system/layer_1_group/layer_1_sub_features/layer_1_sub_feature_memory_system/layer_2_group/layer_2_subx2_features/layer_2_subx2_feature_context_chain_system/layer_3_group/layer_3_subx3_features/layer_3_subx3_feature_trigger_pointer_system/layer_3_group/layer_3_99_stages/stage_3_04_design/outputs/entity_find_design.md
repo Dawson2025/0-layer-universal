@@ -25,7 +25,7 @@ Generated as a side-effect of `pointer-sync.sh --rebuild-index`. Listed in `.git
 
 ### entity-find.sh (Script)
 
-Lightweight bash script at `.0agnostic/entity-find.sh`. Pure bash + grep. No Python dependency. ~55 lines.
+Lightweight bash script at `.0agnostic/03_protocols/pointer_sync_protocol/tools/entity-find.sh`. Pure bash + grep. No Python dependency. ~55 lines.
 
 **Modes**:
 - `entity-find.sh <pattern>` — full output (name/uuid/path/parent)
@@ -46,7 +46,7 @@ Lightweight bash script at `.0agnostic/entity-find.sh`. Pure bash + grep. No Pyt
 ## Propagation Path
 
 1. **Source**: `stage_3_06_development/outputs/entity-find.sh` (this entity)
-2. **Production copy**: Root `.0agnostic/entity-find.sh`
+2. **Production copy**: Root `.0agnostic/03_protocols/pointer_sync_protocol/tools/entity-find.sh`
 3. **Knowledge**: Root `.0agnostic/01_knowledge/pointer_sync/` (updated)
 4. **Rules**: Root `.0agnostic/02_rules/` (pointer_sync_rule covers this)
 5. **Context avenues**: Root `.claude/rules/uuid-identity-system.md`

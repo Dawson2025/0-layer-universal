@@ -193,7 +193,7 @@ else
 fi
 
 # Test: agnostic-sync.sh handles missing 0AGNOSTIC.md
-if bash "$LAYER_0/.0agnostic/agnostic-sync.sh" /nonexistent 2>&1 | grep -qi "error\|not found"; then
+if bash "$LAYER_0/.0agnostic/03_protocols/agnostic_sync_protocol/tools/agnostic-sync.sh" /nonexistent 2>&1 | grep -qi "error\|not found"; then
     pass "agnostic-sync.sh handles missing file"
 else
     warn "agnostic-sync.sh error handling unclear"

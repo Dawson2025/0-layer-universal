@@ -5,7 +5,7 @@ resource_name: "entity_find_implementation"
 ---
 # Entity Find — Implementation
 
-> **Production script**: Root `.0agnostic/entity-find.sh`
+> **Production script**: Root `.0agnostic/03_protocols/pointer_sync_protocol/tools/entity-find.sh`
 > **Data file**: Root `.entity-lookup.tsv` (generated, in .gitignore)
 
 <!-- section_id: "b4c5d6e7-f8a9-4b0c-1d2e-3f4a5b6c7d8f" -->
@@ -13,9 +13,9 @@ resource_name: "entity_find_implementation"
 
 | Artifact | Canonical Location | Status |
 |----------|-------------------|--------|
-| `entity-find.sh` | `.0agnostic/entity-find.sh` (~55 lines) | Production |
+| `entity-find.sh` | `.0agnostic/03_protocols/pointer_sync_protocol/tools/entity-find.sh` (~55 lines) | Production |
 | `.entity-lookup.tsv` | `.entity-lookup.tsv` (353 entities) | Production (generated) |
-| TSV generation | `.0agnostic/pointer-sync.sh` `do_rebuild_index()` | Production (integrated) |
+| TSV generation | `.0agnostic/03_protocols/pointer_sync_protocol/tools/pointer-sync.sh` `do_rebuild_index()` | Production (integrated) |
 
 <!-- section_id: "c5d6e7f8-a9b0-4c1d-2e3f-4a5b6c7d8e90" -->
 ## How TSV Generation Works
@@ -41,7 +41,7 @@ Pure bash + grep. No Python. Steps:
 ```
 stage_3_06_development (this doc)
   ↓ copy
-root .0agnostic/entity-find.sh (production script)
+root .0agnostic/03_protocols/pointer_sync_protocol/tools/entity-find.sh (production script)
   ↓ referenced in
 root .0agnostic/01_knowledge/pointer_sync/ (knowledge)
 root .claude/rules/uuid-identity-system.md (rule)

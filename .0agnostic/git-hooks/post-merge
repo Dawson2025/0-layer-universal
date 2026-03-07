@@ -9,7 +9,7 @@
 set -euo pipefail
 
 REPO_ROOT="$(git rev-parse --show-toplevel)"
-SCRIPT_DIR="$REPO_ROOT/.0agnostic"
+SCRIPT_DIR="$REPO_ROOT/.0agnostic/03_protocols/pointer_sync_protocol/tools"
 
 # Rebuild UUID index if any 0AGNOSTIC.md files changed
 if git diff-tree -r --name-only ORIG_HEAD HEAD | grep -q '0AGNOSTIC.md'; then

@@ -1,16 +1,20 @@
 #!/usr/bin/env bash
+# resource_id: "f4a2b3c5-d6e7-4f89-a0b1-c2d3e4f5a6b7"
+# resource_type: "script"
+# resource_name: "entity-find"
 # entity-find.sh — Fast entity lookup from pre-built .entity-lookup.tsv
 # Usage: entity-find.sh [--path|--uuid] <pattern>
 # No Python dependency. ~5ms lookups via grep on flat TSV.
 set -euo pipefail
 
-ROOT="$(cd "$(dirname "$0")/.." && pwd)"
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+ROOT="$(cd "$SCRIPT_DIR/../../../.." && pwd)"  # 0_layer_universal root (tools/ → protocol/ → 03_protocols/ → .0agnostic/ → ROOT)
 TSV="$ROOT/.entity-lookup.tsv"
 
 # Auto-rebuild if TSV missing
 if [ ! -f "$TSV" ]; then
     echo "Building entity index..." >&2
-    bash "$ROOT/.0agnostic/pointer-sync.sh" --rebuild-index >/dev/null 2>&1
+    bash "$SCRIPT_DIR/pointer-sync.sh" --rebuild-index >/dev/null 2>&1
     if [ ! -f "$TSV" ]; then
         echo "ERROR: Failed to generate $TSV" >&2
         exit 1

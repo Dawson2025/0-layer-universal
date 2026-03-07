@@ -623,7 +623,7 @@ When requests mention context-chain operations, load these next:
 If projection looks wrong:
 - Verify `.1merge/.1codex_merge/1_overrides/tool_boilerplate.md` is non-empty.
 - Verify `.1merge/.1codex_merge/2_additions/tool_additions.md` is non-empty.
-- Re-run `.0agnostic/agnostic-sync.sh` for this entity.
+- Re-run `.0agnostic/03_protocols/agnostic_sync_protocol/tools/agnostic-sync.sh` for this entity.
 - Re-run `stage_2_07_testing/outputs/test_codex_projection.sh`.
 
 ---

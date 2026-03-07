@@ -64,7 +64,7 @@ bash .0agnostic/01_knowledge/layer_stage_system/resources/tools/renumber-layers.
 The tool lists all `0AGNOSTIC.md` files that need resync. Run `agnostic-sync.sh` on each:
 
 ```bash
-SYNC=".0agnostic/agnostic-sync.sh"
+SYNC=".0agnostic/03_protocols/agnostic_sync_protocol/tools/agnostic-sync.sh"
 for f in $(find ./path/to/entity -name "0AGNOSTIC.md" -type f); do
   dir=$(dirname "$f")
   bash "$SYNC" "$dir"

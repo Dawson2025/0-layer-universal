@@ -44,23 +44,23 @@ description: "Query and navigate the UUID identity system for entity lookup, hie
 
 ```bash
 # By UUID
-.0agnostic/pointer-sync.sh --lookup <uuid>
+.0agnostic/03_protocols/pointer_sync_protocol/tools/pointer-sync.sh --lookup <uuid>
 
 # By name pattern
-.0agnostic/pointer-sync.sh --query name=*memory*
+.0agnostic/03_protocols/pointer_sync_protocol/tools/pointer-sync.sh --query name=*memory*
 ```
 
 ### Hierarchy Navigation
 
 ```bash
 # Direct parent
-.0agnostic/pointer-sync.sh --parent <uuid>
+.0agnostic/03_protocols/pointer_sync_protocol/tools/pointer-sync.sh --parent <uuid>
 
 # Full chain to root
-.0agnostic/pointer-sync.sh --parent <uuid> --verbose
+.0agnostic/03_protocols/pointer_sync_protocol/tools/pointer-sync.sh --parent <uuid> --verbose
 
 # Direct children
-.0agnostic/pointer-sync.sh --children <uuid>
+.0agnostic/03_protocols/pointer_sync_protocol/tools/pointer-sync.sh --children <uuid>
 ```
 
 ### Filtered Queries
@@ -69,22 +69,22 @@ Filters are AND-combined. Values support glob patterns.
 
 ```bash
 # All entities
-.0agnostic/pointer-sync.sh --query type=entity
+.0agnostic/03_protocols/pointer_sync_protocol/tools/pointer-sync.sh --query type=entity
 
 # Entities matching name
-.0agnostic/pointer-sync.sh --query type=entity name=*research*
+.0agnostic/03_protocols/pointer_sync_protocol/tools/pointer-sync.sh --query type=entity name=*research*
 
 # Resources of a type
-.0agnostic/pointer-sync.sh --query type=resource resource_type=script
+.0agnostic/03_protocols/pointer_sync_protocol/tools/pointer-sync.sh --query type=resource resource_type=script
 
 # Resources within an entity
-.0agnostic/pointer-sync.sh --query type=resource entity_id=<uuid>
+.0agnostic/03_protocols/pointer_sync_protocol/tools/pointer-sync.sh --query type=resource entity_id=<uuid>
 
 # Children of a parent
-.0agnostic/pointer-sync.sh --query parent_id=<uuid>
+.0agnostic/03_protocols/pointer_sync_protocol/tools/pointer-sync.sh --query parent_id=<uuid>
 
 # Entities with children
-.0agnostic/pointer-sync.sh --query has_children=true
+.0agnostic/03_protocols/pointer_sync_protocol/tools/pointer-sync.sh --query has_children=true
 ```
 
 **Filter keys**: `type`, `name`, `path`, `resource_type`, `entity_id`, `parent_id`, `has_children`
@@ -93,13 +93,13 @@ Filters are AND-combined. Values support glob patterns.
 
 ```bash
 # Find all references to a UUID
-.0agnostic/pointer-sync.sh --find-references <uuid>
+.0agnostic/03_protocols/pointer_sync_protocol/tools/pointer-sync.sh --find-references <uuid>
 
 # Validate all pointers
-.0agnostic/pointer-sync.sh --validate
+.0agnostic/03_protocols/pointer_sync_protocol/tools/pointer-sync.sh --validate
 
 # Rebuild index from source
-.0agnostic/pointer-sync.sh --rebuild-index
+.0agnostic/03_protocols/pointer_sync_protocol/tools/pointer-sync.sh --rebuild-index
 ```
 
 ### Advanced: Direct jq
@@ -127,8 +127,8 @@ a79b61a7-c4ab-4c93-bed5-bbcc8af0f1a9  entity    context_chain_system    layer_-1
 |----------|------|
 | Knowledge | `.0agnostic/01_knowledge/pointer_sync/pointer_sync_knowledge.md` |
 | Rule | `.0agnostic/02_rules/static/pointer_sync_rule/pointer_sync_rule.md` |
-| Protocol | `.0agnostic/03_protocols/pointer_sync_protocol.md` |
-| Script | `.0agnostic/pointer-sync.sh` |
+| Protocol | `.0agnostic/03_protocols/pointer_sync_protocol/pointer_sync_protocol.md` |
+| Script | `.0agnostic/03_protocols/pointer_sync_protocol/tools/pointer-sync.sh` |
 | Index | `.uuid-index.json` (5,313 entries) |
 
 ---

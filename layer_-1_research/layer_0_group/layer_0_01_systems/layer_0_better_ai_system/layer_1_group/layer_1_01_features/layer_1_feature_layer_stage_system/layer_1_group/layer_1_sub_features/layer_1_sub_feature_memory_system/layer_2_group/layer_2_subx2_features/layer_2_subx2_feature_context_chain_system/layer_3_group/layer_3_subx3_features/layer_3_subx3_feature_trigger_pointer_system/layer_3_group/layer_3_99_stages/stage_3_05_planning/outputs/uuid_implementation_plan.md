@@ -17,7 +17,7 @@ resource_name: "uuid_implementation_plan"
 <!-- section_id: "b4b9c0b6-1b6b-44d7-87aa-e744ed5d86da" -->
 ## Overview
 
-This plan breaks the UUID identity system implementation into **14 phases** across **6 agent roles**, plus **4 additional phases** (11-14) added after the initial implementation for graph traversal, query capabilities, and skill context avenue delivery. Each phase produces testable artifacts. Phases are ordered by dependency — later phases depend on earlier ones. Some phases can run in parallel.
+This plan breaks the UUID identity system implementation into **14 phases** across **6 agent roles**, plus **4 additional phases** (11-14) added after the initial implementation for graph traversal, query capabilities, and skill context avenue delivery, plus **Phase 15** for lightweight entity lookup and **Phase 16** for script protocol migration. Each phase produces testable artifacts. Phases are ordered by dependency — later phases depend on earlier ones. Some phases can run in parallel.
 
 <!-- section_id: "f1a2b3c4-d5e6-4f7a-8b9c-0d1e2f3a4b5c" -->
 ## Implementation Status (2026-03-06)
@@ -44,6 +44,7 @@ This plan breaks the UUID identity system implementation into **14 phases** acro
 | **13 (bulk resource indexes)** | **COMPLETE** | **Added 2026-03-06** |
 | **14 (UUID query skill avenue)** | **COMPLETE** | **Added 2026-03-06, implemented 2026-03-07** |
 | **15 (entity-find.sh lightweight lookup)** | **COMPLETE** | **Added 2026-03-07** — `.entity-lookup.tsv` + `entity-find.sh`, design at `stage_3_04_design/outputs/entity_find_design.md` |
+| **16 (script protocol migration)** | **COMPLETE** | **Added 2026-03-07** — All 12 scripts moved from `.0agnostic/` root into `03_protocols/{protocol}/tools/`, 81+ files updated, design at `stage_3_04_design/outputs/script_protocol_migration_design.md` |
 
 ---
 
@@ -92,6 +93,8 @@ Phase 9 (git hooks + validation) — after Phase 8
 Phase 10 (directory UUID index + lazy resolution) — after Phase 1c
 
 Phase 14 (UUID query skill context avenue) — after Phase 12, 13
+
+Phase 16 (script protocol migration) — after Phase 15 (uses entity-find.sh)
 ```
 
 ---
@@ -433,7 +436,7 @@ Write a script that:
 
 **Agent**: Pointer-Sync Agent
 **Input**: Current `pointer-sync.sh` (253 lines), design doc Section 4
-**Output**: Modified `pointer-sync.sh` at `.0agnostic/pointer-sync.sh`
+**Output**: Modified `pointer-sync.sh` at `.0agnostic/03_protocols/pointer_sync_protocol/tools/pointer-sync.sh`
 
 <!-- section_id: "76279962-632d-4017-a481-52a26e53f0eb" -->
 ### Task
@@ -914,7 +917,7 @@ uuid-query/
 └── references/           ← Pointers to existing resources
     ├── pointer_sync_knowledge.md  → ../../01_knowledge/pointer_sync/pointer_sync_knowledge.md
     ├── pointer_sync_rule.md       → ../../02_rules/static/pointer_sync_rule/pointer_sync_rule.md
-    └── pointer_sync_protocol.md   → ../../03_protocols/pointer_sync_protocol.md
+    └── pointer_sync_protocol.md   → ../../03_protocols/pointer_sync_protocol/pointer_sync_protocol.md
 ```
 
 SKILL.md content comes from design doc Section 10.3 (skill content design).
@@ -1014,6 +1017,56 @@ All dependencies are satisfied — this phase can be executed immediately.
 
 ---
 
+## Phase 16: Script Protocol Migration
+
+**Agent**: Coordinator + Docs Agent
+**Status**: COMPLETE (2026-03-07)
+**Input**: 12 shell scripts loose at `.0agnostic/` root
+**Output**: All scripts organized into protocol directories with UUID-based references
+**Design Reference**: `../../stage_3_04_design/outputs/script_protocol_migration_design.md`
+
+<!-- section_id: "a1c2d3e4-f5a6-4b7c-8d9e-0f1a2b3c4d5e" -->
+### Problem
+
+12 shell scripts sat loose at `.0agnostic/` root, violating the convention that everything in `.0agnostic/` belongs in numbered subdirectories (01_knowledge, 02_rules, 03_protocols, etc.). Additionally, all 65+ documentation references used hardcoded paths (`.0agnostic/pointer-sync.sh`) — exactly the brittleness that the UUID system was designed to eliminate.
+
+**Core insight**: The UUID identity system exists precisely to solve this problem. Every script already had a `resource_id` (UUID). When we move scripts, the UUID stays stable — only the path changes. References should use UUID for stability with path as human-readable convenience.
+
+### What Was Done
+
+1. **Created protocol directory structure**: Three protocol directories under `.0agnostic/03_protocols/`, each with a `tools/` subdirectory
+2. **Moved all 12 scripts** from `.0agnostic/` root into their protocol's `tools/` directory:
+   - 4 scripts → `pointer_sync_protocol/tools/`
+   - 5 scripts → `uuid_assignment_protocol/tools/`
+   - 3 scripts → `agnostic_sync_protocol/tools/`
+3. **Fixed internal ROOT/path references** in all scripts (scripts were now 4 levels deeper)
+4. **Fixed cross-protocol references** (agnostic-sync.sh → pointer-sync.sh uses relative path traversal)
+5. **Created protocol docs** for uuid_assignment_protocol and agnostic_sync_protocol (pointer_sync_protocol already existed)
+6. **Updated 81+ files** with hardcoded path references to use new paths
+7. **Updated git hooks** (pre-commit, post-merge) and pointer-edit-guard.sh
+8. **Assigned resource_id** to entity-find.sh (only script missing one)
+
+### Script Organization
+
+| Protocol | Scripts | Count |
+|----------|---------|-------|
+| pointer_sync_protocol | pointer-sync.sh, entity-find.sh, create-resource-indexes.sh, migrate-pointers.sh | 4 |
+| uuid_assignment_protocol | assign-entity-uuids.sh, assign-file-uuids.sh, assign-dir-uuids.sh, assign-section-uuids.sh, create-stage-indexes.sh | 5 |
+| agnostic_sync_protocol | agnostic-sync.sh, agnostic-diagram-generator.sh, user-level-sync.sh | 3 |
+
+### Key Design Decision: Path is Convenience, UUID is Truth
+
+After this migration, references in documentation include both UUID and path:
+```
+| pointer-sync.sh | `.../pointer_sync_protocol/tools/` | resource_id: `08a4e9bc-...` |
+```
+
+If the path changes again in the future, the UUID remains stable. The `.uuid-index.json` resolves UUID → current path. This eliminates the "bajillion file changes" problem — future moves only require: (1) physically move the file, (2) rebuild the UUID index. All UUID-based lookups automatically resolve to the new path.
+
+### Depends On: Phase 15 (entity-find.sh existed and needed a resource_id)
+
+---
+
 ## Verification Checklist
 
 After all phases complete:
@@ -1059,3 +1112,11 @@ After all phases complete:
 - [x] SKILLS.md index includes uuid-query (Phase 14)
 - [x] Root `0AGNOSTIC.md` has uuid-query trigger and resource entries (Phase 14)
 - [x] Trigger text propagated to all generated context files via agnostic-sync.sh (Phase 14)
+- [x] All 12 scripts moved from `.0agnostic/` root into `03_protocols/` subdirectories (Phase 16)
+- [x] No `.sh` files remain at `.0agnostic/` root (Phase 16)
+- [x] All scripts have `resource_id` in their headers (Phase 16)
+- [x] Internal ROOT path references updated for new depth (Phase 16)
+- [x] Cross-protocol script references use relative path traversal (Phase 16)
+- [x] Protocol docs created for uuid_assignment_protocol and agnostic_sync_protocol (Phase 16)
+- [x] Git hooks updated with new script paths (Phase 16)
+- [x] 81+ documentation files updated with new paths (Phase 16)

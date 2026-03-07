@@ -24,7 +24,7 @@ Pointer files reference canonical content locations using relative paths. When d
 
 All promoted to root `.0agnostic/`:
 - `pointer-sync.sh` — main sync script
-- `03_protocols/pointer_sync_protocol.md` — usage protocol
+- `03_protocols/pointer_sync_protocol/pointer_sync_protocol.md` — usage protocol
 - `01_knowledge/pointer_sync/pointer_sync_knowledge.md` — system knowledge
 - `02_rules/static/pointer_sync_rule/` — format rule
 - `06_.../08_hooks/scripts/pointer-edit-guard.sh` — edit-time hook

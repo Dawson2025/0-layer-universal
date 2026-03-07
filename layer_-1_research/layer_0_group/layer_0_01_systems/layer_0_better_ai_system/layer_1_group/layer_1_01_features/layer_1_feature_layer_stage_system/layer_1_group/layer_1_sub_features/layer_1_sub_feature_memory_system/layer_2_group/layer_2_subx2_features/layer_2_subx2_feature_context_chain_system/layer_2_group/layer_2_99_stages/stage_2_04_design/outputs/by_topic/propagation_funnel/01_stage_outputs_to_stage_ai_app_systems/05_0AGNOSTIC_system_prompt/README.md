@@ -209,7 +209,7 @@ Checklist before committing 0AGNOSTIC.md:
 
 ```bash
 cd /entity/root
-bash /.0agnostic/agnostic-sync.sh .
+bash /.0agnostic/03_protocols/agnostic_sync_protocol/tools/agnostic-sync.sh .
 ```
 
 This generates:

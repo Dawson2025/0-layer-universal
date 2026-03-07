@@ -18,13 +18,13 @@ The trigger pointer system automates the maintenance of pointer files across the
 
 | Component | Purpose | Location |
 |-----------|---------|----------|
-| pointer-sync.sh | Main sync script — finds, resolves, updates pointers | Root `.0agnostic/pointer-sync.sh` |
-| entity-find.sh | Fast entity lookup by name (~5ms, no Python) | Root `.0agnostic/entity-find.sh` |
+| pointer-sync.sh | Main sync script — finds, resolves, updates pointers | Root `.0agnostic/03_protocols/pointer_sync_protocol/tools/pointer-sync.sh` |
+| entity-find.sh | Fast entity lookup by name (~5ms, no Python) | Root `.0agnostic/03_protocols/pointer_sync_protocol/tools/entity-find.sh` |
 | .entity-lookup.tsv | Flat entity index (name/uuid/path), generated | Root `.entity-lookup.tsv` |
 | pointer_sync_protocol.md | Pointer file format, creation guide, resolution algorithm | Root `.0agnostic/03_protocols/` |
 | pointer_sync_rule.md | Always-apply rule for pointer file conventions | Root `.0agnostic/02_rules/static/` |
 | pointer-edit-guard.sh | Claude Code PostToolUse hook — reminds agents to validate | Root `.0agnostic/06_.../08_hooks/scripts/` |
-| agnostic-sync integration | Validation runs at end of every `agnostic-sync.sh` run | Root `.0agnostic/agnostic-sync.sh` |
+| agnostic-sync integration | Validation runs at end of every `agnostic-sync.sh` run | Root `.0agnostic/03_protocols/agnostic_sync_protocol/tools/agnostic-sync.sh` |
 
 <!-- section_id: "1bac227b-3dab-4316-8cc4-cccc83f797fe" -->
 ### How Pointers Work
