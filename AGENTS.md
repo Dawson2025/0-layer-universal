@@ -131,6 +131,7 @@ When any nested repository exists in a child path:
 | Context Chain Mode | `.0agnostic/02_rules/dynamic/CONTEXT_CHAIN_MODE/context_chain_mode.md` | Default vs Research mode switching |
 | UUID Query Skill | `.0agnostic/06_context_avenue_web/01_file_based/05_skills/uuid-query/SKILL.md` | Agent interface for UUID system queries |
 | Skills Index | `.0agnostic/06_context_avenue_web/01_file_based/05_skills/SKILLS.md` | All available skills |
+| Canonical Entity Structure | `.0agnostic/06_context_avenue_web/01_file_based/04_@import_references/entity_structure.md` | Authoritative entity directory structure entrypoint |
 | AALang/GAB System | `.0agnostic/01_knowledge/aalang_gab_system/` | AALang language spec, agent definitions, JSON-LD patterns |
 | Agent Coordination | `.0agnostic/01_knowledge/agent_coordination/` | Multi-agent coordination patterns |
 | Context Loading | `.0agnostic/01_knowledge/context_loading/` | Context chain traversal and loading strategies |
@@ -187,8 +188,8 @@ Active chain map (school -> module_03):
 
 | When | Rule |
 |------|------|
-| Modifying any file in .0agnostic/ | When modifying .0agnostic/ files, also update 0AGNOSTIC.md and run agnostic-sync.sh. Full protocol: .0agnostic/02_rules/static/agnostic_update_protocol.md |
 | Any turn that modifies files | On every turn with file changes: (1) describe changes INLINE with full absolute paths using path:line format (e.g., /home/dawson/.../file.md:42) for ctrl-click navigation, (2) provide end-of-turn summary of all Added/Updated/Moved/Removed files. All paths start from /home/, NEVER abbreviated. Use path:line for ANY file reference pointing to a specific location. Full rule: .0agnostic/02_rules/static/I0_FILE_CHANGE_REPORTING/I0_FILE_CHANGE_REPORTING.md |
+| Modifying any file in .0agnostic/ | When modifying .0agnostic/ files, also update 0AGNOSTIC.md and run agnostic-sync.sh. Full protocol: .0agnostic/02_rules/static/agnostic_update_protocol.md |
 
 
 ## AutoGen-Specific Configuration

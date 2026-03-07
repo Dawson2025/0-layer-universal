@@ -129,6 +129,7 @@ When any nested repository exists in a child path:
 | Context Chain Mode | `.0agnostic/02_rules/dynamic/CONTEXT_CHAIN_MODE/context_chain_mode.md` | Default vs Research mode switching |
 | UUID Query Skill | `.0agnostic/06_context_avenue_web/01_file_based/05_skills/uuid-query/SKILL.md` | Agent interface for UUID system queries |
 | Skills Index | `.0agnostic/06_context_avenue_web/01_file_based/05_skills/SKILLS.md` | All available skills |
+| Canonical Entity Structure | `.0agnostic/06_context_avenue_web/01_file_based/04_@import_references/entity_structure.md` | Authoritative entity directory structure entrypoint |
 | AALang/GAB System | `.0agnostic/01_knowledge/aalang_gab_system/` | AALang language spec, agent definitions, JSON-LD patterns |
 | Agent Coordination | `.0agnostic/01_knowledge/agent_coordination/` | Multi-agent coordination patterns |
 | Context Loading | `.0agnostic/01_knowledge/context_loading/` | Context chain traversal and loading strategies |

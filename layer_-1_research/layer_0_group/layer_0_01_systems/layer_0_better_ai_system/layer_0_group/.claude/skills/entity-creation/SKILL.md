@@ -21,7 +21,10 @@ This skill is triggered when:
 <!-- section_id: "a000b035-cd5e-41d7-b4e6-ff01c47e6ada" -->
 ## Canonical Structure
 
-Read `.0agnostic/06_context_avenue_web/01_file_based/04_@import_references/entity_structure.md` for the complete directory tree every entity needs. This is the single source of truth for entity structure.
+Read the root canonical entrypoint first:
+`/home/dawson/dawson-workspace/code/0_layer_universal/.0agnostic/06_context_avenue_web/01_file_based/04_@import_references/entity_structure.md`
+
+Project-local files with the same name may exist as compatibility bridges, but the root `0_layer_universal` path is authoritative.
 
 <!-- section_id: "7169b95f-abf0-486d-8fcb-352fe80976df" -->
 ## Naming Pattern
@@ -62,12 +65,12 @@ layer_0_group/
 <!-- section_id: "48b3f0ff-ec6c-424f-ae2b-1836de9895e9" -->
 ## Before Creating an Entity
 
-1. **Read `.0agnostic/06_context_avenue_web/01_file_based/04_@import_references/entity_structure.md`** for canonical directory structure
+1. **Read `/home/dawson/dawson-workspace/code/0_layer_universal/.0agnostic/06_context_avenue_web/01_file_based/04_@import_references/entity_structure.md`** for canonical directory structure and current source-doc links
 2. **Read parent's index.jsonld** (if it exists)
    - Find `conventions.childNaming`
    - Note `currentLayer` and `childLayer`
 3. **Determine correct name**: parent layer + 1 = child layer
-4. **Create full canonical structure** using mkdir template from `.0agnostic/06_context_avenue_web/01_file_based/04_@import_references/entity_structure.md`
+4. **Create full canonical structure** using the scaffold in the root canonical `entity_structure.md`
 5. **Create `0AGNOSTIC.md` and `0INDEX.md`** (see INSTANTIATION_GUIDE.md for templates)
 6. **Run `agnostic-sync.sh`** to generate tool files
 
@@ -76,7 +79,7 @@ layer_0_group/
 
 Before creating any entity:
 
-- [ ] Read `.0agnostic/06_context_avenue_web/01_file_based/04_@import_references/entity_structure.md`
+- [ ] Read root canonical `entity_structure.md`
 - [ ] Calculate child layer: parent layer + 1
 - [ ] Use `sub_feature` (not `subfeature`) for sub-features
 - [ ] Include layer prefix: `layer_{N}_`
@@ -99,10 +102,11 @@ Before creating any entity:
 <!-- section_id: "1ecb92cd-7782-42a8-bd15-2336b12cd557" -->
 ## Key References
 
-- Canonical structure: `.0agnostic/06_context_avenue_web/01_file_based/04_@import_references/entity_structure.md`
-- Instantiation guide: `layer_0/.../entity_lifecycle/INSTANTIATION_GUIDE.md`
-- Entity types: `layer_0/.../entity_lifecycle/ENTITY_TYPES.md`
+- Canonical structure entrypoint: `/home/dawson/dawson-workspace/code/0_layer_universal/.0agnostic/06_context_avenue_web/01_file_based/04_@import_references/entity_structure.md`
+- Instantiation guide: `layer_1_group/layer_1_01_features/layer_1_feature_layer_stage_system/layer_1_group/layer_1_sub_features/layer_1_sub_feature_organization/layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/.0agnostic/01_knowledge/overview/production_entity_lifecycle/INSTANTIATION_GUIDE.md`
+- Entity types: `layer_1_group/layer_1_01_features/layer_1_feature_layer_stage_system/layer_1_group/layer_1_sub_features/layer_1_sub_feature_organization/layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/.0agnostic/01_knowledge/overview/production_entity_lifecycle/ENTITY_TYPES.md`
+- Maintenance guide: `layer_1_group/layer_1_01_features/layer_1_feature_layer_stage_system/layer_1_group/layer_1_sub_features/layer_1_sub_feature_organization/layer_2_group/layer_2_subx2_features/layer_2_subx2_feature_entities/.0agnostic/01_knowledge/overview/production_entity_lifecycle/MAINTENANCE_GUIDE.md`
 
 ---
 
-*This skill enforces naming conventions and canonical entity structure from `.0agnostic/06_context_avenue_web/01_file_based/04_@import_references/entity_structure.md`*
+*This skill uses the root-level `0_layer_universal/.0agnostic/.../entity_structure.md` file as the stable entrypoint for canonical entity structure*

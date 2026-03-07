@@ -7,6 +7,14 @@ resource_name: "entity_structure"
 
 This is the **single source of truth** for entity directory structure in the layer-stage system. All entity creation tools, skills, guides, and constraints reference this file.
 
+## Canonical Filesystem Path
+
+Authoritative path on this machine:
+
+`/home/dawson/dawson-workspace/code/0_layer_universal/.0agnostic/06_context_avenue_web/01_file_based/04_@import_references/entity_structure.md`
+
+Project-local files with the same name may exist as compatibility shims, but this root-level file is the canonical source.
+
 <!-- section_id: "88f7eddd-2611-43af-b87c-963afd110b95" -->
 ## Where This Is Referenced
 
