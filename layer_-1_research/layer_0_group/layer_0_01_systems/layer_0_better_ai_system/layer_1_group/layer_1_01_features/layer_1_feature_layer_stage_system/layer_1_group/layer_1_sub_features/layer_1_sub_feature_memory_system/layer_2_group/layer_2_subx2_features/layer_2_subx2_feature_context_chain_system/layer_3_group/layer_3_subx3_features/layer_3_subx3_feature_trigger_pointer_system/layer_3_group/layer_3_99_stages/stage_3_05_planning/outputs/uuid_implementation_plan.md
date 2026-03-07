@@ -17,7 +17,7 @@ resource_name: "uuid_implementation_plan"
 <!-- section_id: "b4b9c0b6-1b6b-44d7-87aa-e744ed5d86da" -->
 ## Overview
 
-This plan breaks the UUID identity system implementation into **14 phases** across **6 agent roles**, plus **4 additional phases** (11-14) added after the initial implementation for graph traversal, query capabilities, and skill context avenue delivery, plus **Phase 15** for lightweight entity lookup and **Phase 16** for script protocol migration. Each phase produces testable artifacts. Phases are ordered by dependency — later phases depend on earlier ones. Some phases can run in parallel.
+This plan breaks the UUID identity system implementation into **14 phases** across **6 agent roles**, plus **4 additional phases** (11-14) added after the initial implementation for graph traversal, query capabilities, and skill context avenue delivery, plus **Phase 15** for lightweight entity lookup, **Phase 16** for script protocol migration, and **Phases 17-24** for the UUID resolution system — making UUID the primary reference mechanism so paths become derived artifacts resolved at runtime. Each phase produces testable artifacts. Phases are ordered by dependency — later phases depend on earlier ones. Some phases can run in parallel.
 
 <!-- section_id: "f1a2b3c4-d5e6-4f7a-8b9c-0d1e2f3a4b5c" -->
 ## Implementation Status (2026-03-06)
@@ -45,6 +45,14 @@ This plan breaks the UUID identity system implementation into **14 phases** acro
 | **14 (UUID query skill avenue)** | **COMPLETE** | **Added 2026-03-06, implemented 2026-03-07** |
 | **15 (entity-find.sh lightweight lookup)** | **COMPLETE** | **Added 2026-03-07** — `.entity-lookup.tsv` + `entity-find.sh`, design at `stage_3_04_design/outputs/entity_find_design.md` |
 | **16 (script protocol migration)** | **COMPLETE** | **Added 2026-03-07** — All 12 scripts moved from `.0agnostic/` root into `03_protocols/{protocol}/tools/`, 81+ files updated, design at `stage_3_04_design/outputs/script_protocol_migration_design.md` |
+| **17 (resolve-uuid function)** | **PLANNED** | **Added 2026-03-07** — Shell function: UUID → current path via `.uuid-index.json` lookup (~5ms) |
+| **18 (scripts use resolve-uuid)** | **PLANNED** | **Added 2026-03-07** — Replace hardcoded cross-protocol script paths with `resolve-uuid` calls |
+| **19 ({{resolve:UUID}} placeholder syntax)** | **PLANNED** | **Added 2026-03-07** — Stable UUID placeholders in 0AGNOSTIC.md source files |
+| **20 (agnostic-sync.sh UUID integration)** | **PLANNED** | **Added 2026-03-07** — Resolve placeholders during generation, emit UUID refs in all context files |
+| **21 (git hooks: auto-rebuild + UUID validation)** | **PLANNED** | **Added 2026-03-07** — post-checkout/post-merge auto-rebuild, pre-commit UUID ref validation |
+| **22 (UUID short-form prefix matching)** | **PLANNED** | **Added 2026-03-07** — 8-char prefix matching (like git short SHAs) |
+| **23 (logical names: resolve-name)** | **PLANNED** | **Added 2026-03-07** — Human-friendly alias layer: `.uuid-aliases.tsv` → UUID → path |
+| **24 (end-to-end validation)** | **PLANNED** | **Added 2026-03-07** — Move a script, rebuild index, verify all references auto-resolve |
 
 ---
 
@@ -95,6 +103,30 @@ Phase 10 (directory UUID index + lazy resolution) — after Phase 1c
 Phase 14 (UUID query skill context avenue) — after Phase 12, 13
 
 Phase 16 (script protocol migration) — after Phase 15 (uses entity-find.sh)
+
+--- UUID Resolution System (Phases 17-24) ---
+
+Phase 17 (resolve-uuid function) — after Phase 13 (needs .uuid-index.json), Phase 16 (scripts organized)
+                                  ├──> Phase 18 (scripts use resolve-uuid)
+                                  ├──> Phase 19 (placeholder syntax)
+                                  ├──> Phase 21 (git hooks UUID validation)
+                                  ├──> Phase 22 (UUID short-form)
+                                  └──> Phase 23 (logical names)
+
+Phase 18 (scripts use resolve-uuid) — after Phase 17
+
+Phase 19 ({{resolve:UUID}} syntax) — after Phase 17
+  └──> Phase 20 (agnostic-sync.sh UUID integration)
+
+Phase 20 (agnostic-sync.sh UUID integration) — after Phase 19
+
+Phase 21 (git hooks: auto-rebuild + UUID validation) — after Phase 17, Phase 18
+
+Phase 22 (UUID short-form prefix matching) — after Phase 17, can run parallel with 18-21
+
+Phase 23 (logical names: resolve-name) — after Phase 17, can run parallel with 18-22
+
+Phase 24 (end-to-end validation) — after Phases 17-23 (all must be complete)
 ```
 
 ---
@@ -1067,6 +1099,536 @@ If the path changes again in the future, the UUID remains stable. The `.uuid-ind
 
 ---
 
+<!-- section_id: "a2b3c4d5-e6f7-4a8b-9c0d-1e2f3a4b5c6d" -->
+## UUID Resolution System — Phases 17-24
+
+**Design Reference**: `../../stage_3_04_design/outputs/uuid_resolution_system_design.md`
+**Research Reference**: `../../stage_3_02_research/outputs/ai_app_bash_capability_research.md`
+**Requirements Reference**: `../../stage_3_01_request_gathering/outputs/requests/tree_of_needs/00_pointers_stay_synchronized/05_uuid_based_reference_resolution/`
+
+### Problem Being Solved
+
+Phases 1-16 built a comprehensive UUID identity system — every entity, file, directory, section, and stage has a stable UUID. But **references throughout the codebase still use hardcoded filesystem paths**. When anything moves, all path references break (81+ files during the script protocol migration in Phase 16). UUIDs exist as metadata alongside paths, but nothing resolves via UUID at runtime.
+
+### Goal
+
+Make UUID the **primary reference mechanism**. Paths become derived artifacts, resolved at the moment of use from the UUID index. Moving anything requires only: `mv` + `rebuild-index` = done.
+
+### Key Research Finding
+
+All major AI coding apps (Claude Code, Codex CLI, Gemini CLI, Copilot, Cursor, Windsurf, Aider, Cline, Continue.dev, Amazon Q, JetBrains AI, Open Interpreter) can run bash. UUID references with `resolve-uuid` instructions can go in **all** ported context files. No app needs pre-resolved paths as its primary mechanism.
+
+---
+
+<!-- section_id: "b3c4d5e6-f7a8-4b9c-0d1e-2f3a4b5c6d7e" -->
+## Phase 17: Create resolve-uuid Function
+
+**Agent**: Script Agent
+**Status**: PLANNED
+**Input**: `.uuid-index.json` (5,313 entries from Phase 13), design doc resolve-uuid specification
+**Output**: `resolve-uuid.sh` at `.0agnostic/03_protocols/pointer_sync_protocol/tools/`
+
+<!-- section_id: "c4d5e6f7-a8b9-4c0d-1e2f-3a4b5c6d7e8f" -->
+### Task
+
+Create a standalone shell function/script that resolves any UUID to its current filesystem path:
+
+1. **Core function**:
+   ```bash
+   resolve-uuid() {
+     local uuid="$1"
+     local root
+     root="$(git rev-parse --show-toplevel 2>/dev/null || echo "$HOME/dawson-workspace/code/0_layer_universal")"
+     local index="$root/.uuid-index.json"
+
+     if [[ ! -f "$index" ]]; then
+       echo "ERROR: UUID index not found at $index" >&2
+       return 1
+     fi
+
+     local path
+     path=$(jq -r --arg id "$uuid" '.[$id].path // empty' "$index")
+
+     if [[ -z "$path" ]]; then
+       echo "ERROR: UUID $uuid not found in index" >&2
+       return 1
+     fi
+
+     echo "$root/$path"
+   }
+   ```
+
+2. **Bootstrapping**: Uses `git rev-parse --show-toplevel` to find repo root. Index is always at `$ROOT/.uuid-index.json`. This is the one hardcoded path in the entire system.
+
+3. **Distribution**: Two modes:
+   - **Standalone script** at a well-known location (sourced by other scripts)
+   - **Inline function** that scripts can copy into their preamble (for bootstrap independence)
+
+4. **Assign `resource_id`** to the new script (UUID v4)
+
+5. **Error handling**: Clear stderr messages for missing index, missing UUID, ambiguous prefix (Phase 22)
+
+<!-- section_id: "d5e6f7a8-b9c0-4d1e-2f3a-4b5c6d7e8f9a" -->
+### Acceptance Criteria
+- `resolve-uuid <full-uuid>` returns the absolute path for any UUID in the index
+- Resolution completes in <10ms (load + lookup)
+- Works from any directory within the repo (uses `git rev-parse` for root)
+- Works in sandboxed environments (only reads a local JSON file, no network)
+- Clear error messages for: missing index, UUID not found, ambiguous prefix
+- Script has `resource_id` in its header
+- Script is executable and has correct shebang
+
+### Estimated Effort: 2-3 hours
+### Depends On: Phase 13 (`.uuid-index.json` must exist with 5,313+ entries), Phase 16 (scripts organized into protocols)
+
+---
+
+<!-- section_id: "e6f7a8b9-c0d1-4e2f-3a4b-5c6d7e8f9a0b" -->
+## Phase 18: Update Scripts to Use resolve-uuid
+
+**Agent**: Script Agent
+**Status**: PLANNED
+**Input**: All 12 scripts in `.0agnostic/03_protocols/*/tools/`, `resolve-uuid` from Phase 17
+**Output**: Modified scripts using UUID-based cross-protocol references
+
+<!-- section_id: "f7a8b9c0-d1e2-4f3a-4b5c-6d7e8f9a0b1c" -->
+### Task
+
+Replace hardcoded cross-protocol path references in scripts with `resolve-uuid` calls:
+
+1. **Identify cross-protocol calls**: Scripts that call scripts in *different* protocol directories. Key examples:
+   - `agnostic-sync.sh` calls `pointer-sync.sh` for validation → currently uses relative path traversal
+   - `pointer-sync.sh` calls `entity-find.sh` → currently uses `$SCRIPT_DIR/entity-find.sh` (same directory, keep as-is)
+
+2. **Replace cross-protocol references**:
+   ```bash
+   # Before (hardcoded relative path — breaks if either script moves):
+   POINTER_SYNC="$ROOT/.0agnostic/03_protocols/pointer_sync_protocol/tools/pointer-sync.sh"
+
+   # After (UUID — doesn't matter where either script lives):
+   POINTER_SYNC="$(resolve-uuid 08a4e9bc-8cc1-457e-b966-0a912ae6dff7)"
+   ```
+
+3. **Keep same-directory references**: Scripts in the same `tools/` directory can still use `$SCRIPT_DIR/` for efficiency (they'll always move together as a group)
+
+4. **Source resolve-uuid**: Each script that needs cross-protocol resolution sources the function:
+   ```bash
+   source "$(git rev-parse --show-toplevel)/.0agnostic/03_protocols/pointer_sync_protocol/tools/resolve-uuid.sh"
+   ```
+   Or inline the function in scripts that need bootstrap independence.
+
+5. **Update git hooks**: Hooks in `.git/hooks/` (pre-commit, post-merge) currently use hardcoded paths to scripts. Replace with `resolve-uuid` calls.
+
+<!-- section_id: "a8b9c0d1-e2f3-4a4b-5c6d-7e8f9a0b1c2d" -->
+### Scripts to Modify
+
+| Script | Current Cross-Protocol Calls | Change |
+|--------|------------------------------|--------|
+| `agnostic-sync.sh` | calls `pointer-sync.sh` | Use `resolve-uuid 08a4e9bc` |
+| `user-level-sync.sh` | calls `agnostic-sync.sh` | Use `resolve-uuid 781698fa` |
+| `.git/hooks/pre-commit` | calls `pointer-sync.sh` | Use `resolve-uuid 08a4e9bc` |
+| `.git/hooks/post-merge` | calls `pointer-sync.sh` | Use `resolve-uuid 08a4e9bc` |
+| `pointer-edit-guard.sh` | calls `pointer-sync.sh` | Use `resolve-uuid 08a4e9bc` |
+
+Scripts that only call within their own `tools/` directory (entity-find.sh, create-resource-indexes.sh, etc.) keep `$SCRIPT_DIR/` references — no change needed.
+
+### Acceptance Criteria
+- All cross-protocol script references use `resolve-uuid` instead of hardcoded paths
+- Same-directory references (`$SCRIPT_DIR/`) are preserved (not changed)
+- Git hooks use `resolve-uuid` for script discovery
+- All scripts still execute correctly from their current locations
+- Moving any single script to a new location + rebuilding index = cross-protocol calls still work
+
+### Estimated Effort: 3-4 hours
+### Depends On: Phase 17 (resolve-uuid must exist)
+
+---
+
+<!-- section_id: "b9c0d1e2-f3a4-4b5c-6d7e-8f9a0b1c2d3e" -->
+## Phase 19: Add {{resolve:UUID}} Placeholder Syntax to 0AGNOSTIC.md
+
+**Agent**: Docs Agent
+**Status**: PLANNED
+**Input**: Root `0AGNOSTIC.md` and all entity-level `0AGNOSTIC.md` files that reference scripts/resources by path
+**Output**: 0AGNOSTIC.md files with `{{resolve:UUID}}` placeholders instead of hardcoded paths
+
+<!-- section_id: "c0d1e2f3-a4b5-4c6d-7e8f-9a0b1c2d3e4f" -->
+### Task
+
+Define and deploy the `{{resolve:UUID}}` placeholder syntax in 0AGNOSTIC.md source files:
+
+1. **Syntax definition**:
+   ```markdown
+   | pointer-sync.sh | `{{resolve:08a4e9bc-8cc1-457e-b966-0a912ae6dff7}}` | Sync all pointers |
+   ```
+   The `{{resolve:UUID}}` placeholder is:
+   - **Human-scannable**: The UUID is visible, can be looked up manually
+   - **Machine-resolvable**: `agnostic-sync.sh` replaces it with the current path during generation
+   - **Stable**: Never needs updating when things move
+   - **Grep-searchable**: `grep -r '{{resolve:' .` finds all UUID references
+
+2. **Convert key references in root 0AGNOSTIC.md**: Replace hardcoded script paths in the Triggers table, Resources table, and any inline references with `{{resolve:UUID}}` placeholders
+
+3. **Convert entity-level 0AGNOSTIC.md files**: The trigger_pointer_system's 0AGNOSTIC.md has a Production Artifacts table with hardcoded paths — convert to placeholders
+
+4. **Document the syntax**: Add a brief section to the root 0AGNOSTIC.md explaining the placeholder convention
+
+### Key Conversions
+
+| Current Reference | Placeholder |
+|-------------------|-------------|
+| `.0agnostic/03_protocols/pointer_sync_protocol/tools/pointer-sync.sh` | `{{resolve:08a4e9bc-8cc1-457e-b966-0a912ae6dff7}}` |
+| `.0agnostic/03_protocols/agnostic_sync_protocol/tools/agnostic-sync.sh` | `{{resolve:781698fa-f580-4606-80e4-dc73fb30e3f7}}` |
+| `.0agnostic/03_protocols/pointer_sync_protocol/tools/entity-find.sh` | `{{resolve:f4a2b3c5-d6e7-4f89-a0b1-c2d3e4f5a6b7}}` |
+| `.0agnostic/03_protocols/uuid_assignment_protocol/tools/assign-entity-uuids.sh` | `{{resolve:92ab3def-22d7-48cd-91be-6744c3466240}}` |
+| (and all other scripts with resource_ids) | (corresponding `{{resolve:UUID}}`) |
+
+### Acceptance Criteria
+- `{{resolve:UUID}}` syntax is defined and documented
+- Root `0AGNOSTIC.md` uses placeholders for all script/resource references
+- Trigger_pointer_system `0AGNOSTIC.md` uses placeholders in Production Artifacts table
+- Placeholders are valid markdown (render as code blocks with the UUID visible)
+- `grep -r '{{resolve:' .` finds all placeholder references
+- No `agnostic-sync.sh` changes yet (that's Phase 20) — placeholders are inert until Phase 20
+
+### Estimated Effort: 3-4 hours
+### Depends On: Phase 17 (resolve-uuid function exists to validate UUIDs)
+
+---
+
+<!-- section_id: "d1e2f3a4-b5c6-4d7e-8f9a-0b1c2d3e4f5a" -->
+## Phase 20: Update agnostic-sync.sh for UUID Integration
+
+**Agent**: Script Agent
+**Status**: PLANNED
+**Input**: `agnostic-sync.sh`, `{{resolve:UUID}}` syntax from Phase 19, `resolve-uuid` from Phase 17
+**Output**: Modified `agnostic-sync.sh` that resolves placeholders and emits UUID references
+
+<!-- section_id: "e2f3a4b5-c6d7-4e8f-9a0b-1c2d3e4f5a6b" -->
+### Task
+
+Enhance `agnostic-sync.sh` to handle UUID placeholders during context file generation:
+
+1. **Placeholder resolution**: When processing 0AGNOSTIC.md content, detect `{{resolve:UUID}}` patterns and replace with:
+   - **For all context files** (CLAUDE.md, AGENTS.md, GEMINI.md, OPENAI.md, .cursorrules, copilot-instructions.md): Emit the current path (resolved at generation time) plus the UUID and resolve-uuid instruction for self-healing:
+     ```markdown
+     | pointer-sync.sh | `.0agnostic/03_protocols/.../pointer-sync.sh` | UUID: `08a4e9bc` · `resolve-uuid 08a4e9bc` |
+     ```
+   - This gives both human-readable path AND UUID for runtime resolution
+
+2. **Emit resolve-uuid instructions**: Add a section to generated context files explaining how to resolve UUID references:
+   ```markdown
+   ## UUID Resolution
+   Scripts and resources are referenced by UUID for stability.
+   To resolve any UUID to its current path: `resolve-uuid <UUID>`
+   Or: `jq -r --arg id "<UUID>" '.[$id].path' .uuid-index.json`
+   ```
+
+3. **Self-healing property**: Even if `agnostic-sync.sh` hasn't been re-run after a move:
+   - The UUID reference in the generated file is still valid
+   - The AI app runs `resolve-uuid` and gets the current path from the rebuilt index
+   - No stale window between move and context file regeneration
+
+4. **Placeholder validation**: During generation, verify each `{{resolve:UUID}}` resolves in the current index. Warn if any UUID is not found (catches typos in 0AGNOSTIC.md).
+
+### Acceptance Criteria
+- `agnostic-sync.sh` detects and resolves `{{resolve:UUID}}` patterns in 0AGNOSTIC.md
+- Generated context files contain both human-readable path and UUID reference
+- Generated context files include resolve-uuid instructions section
+- Unresolvable UUIDs produce a warning during generation (not a fatal error)
+- All 6 context file formats updated: CLAUDE.md, AGENTS.md, GEMINI.md, OPENAI.md, .cursorrules, copilot-instructions.md
+- Existing non-placeholder content is unaffected
+
+### Estimated Effort: 4-6 hours
+### Depends On: Phase 17 (resolve-uuid function), Phase 19 (placeholders exist in 0AGNOSTIC.md)
+
+---
+
+<!-- section_id: "f3a4b5c6-d7e8-4f9a-0b1c-2d3e4f5a6b7c" -->
+## Phase 21: Git Hooks — Auto-Rebuild + UUID Reference Validation
+
+**Agent**: Script Agent
+**Status**: PLANNED
+**Input**: Existing git hooks (pre-commit, post-merge), `resolve-uuid` from Phase 17
+**Output**: Enhanced git hooks with auto-rebuild and UUID validation
+
+<!-- section_id: "a4b5c6d7-e8f9-4a0b-1c2d-3e4f5a6b7c8d" -->
+### Task
+
+Enhance git hooks to support the UUID resolution system:
+
+1. **Post-checkout + post-merge auto-rebuild**:
+   Add `pointer-sync.sh --rebuild-index` to post-checkout and post-merge hooks. After any `git checkout`, `git pull`, or `git merge`, the UUID index is automatically rebuilt. Combined with Phase 18 (scripts use resolve-uuid), the move workflow becomes: `mv` + `commit` — the index rebuilds automatically on the next checkout/merge.
+
+   ```bash
+   # Append to .git/hooks/post-checkout and post-merge:
+   "$(resolve-uuid 08a4e9bc-8cc1-457e-b966-0a912ae6dff7)" --rebuild-index --quiet
+   ```
+
+2. **Pre-commit UUID reference validation**:
+   Scan staged files for UUID references (`resolve-uuid` calls and `{{resolve:UUID}}` patterns) and verify each resolves in the current index. Catches broken UUID references before they're committed.
+
+   ```bash
+   # In pre-commit hook:
+   for uuid in $(grep -rohP 'resolve[-_]uuid\s+([0-9a-f-]{8,36})' "$staged_files" | grep -oP '[0-9a-f-]{8,36}'); do
+     if ! jq -e --arg id "$uuid" '.[$id]' "$ROOT/.uuid-index.json" >/dev/null 2>&1; then
+       echo "WARNING: UUID $uuid not found in index" >&2
+     fi
+   done
+   ```
+
+3. **Post-checkout hook creation**: Currently only pre-commit and post-merge exist. Create post-checkout hook.
+
+### Acceptance Criteria
+- Post-checkout hook runs `--rebuild-index` automatically
+- Post-merge hook runs `--rebuild-index` automatically (already has pointer-sync calls, add rebuild)
+- Pre-commit hook validates UUID references in staged files
+- UUID validation is a warning, not a blocking error (gradual adoption)
+- Hooks use `resolve-uuid` to find pointer-sync.sh (not hardcoded paths) — bootstrapping via `git rev-parse`
+- Moving a file + committing + checking out on another machine = index auto-rebuilds
+
+### Estimated Effort: 2-3 hours
+### Depends On: Phase 17 (resolve-uuid), Phase 18 (scripts using resolve-uuid, so hooks need it too)
+
+---
+
+<!-- section_id: "b5c6d7e8-f9a0-4b1c-2d3e-4f5a6b7c8d9e" -->
+## Phase 22: UUID Short-Form Prefix Matching
+
+**Agent**: Script Agent
+**Status**: PLANNED
+**Input**: `resolve-uuid` from Phase 17
+**Output**: Enhanced `resolve-uuid` with prefix matching support
+
+<!-- section_id: "c6d7e8f9-a0b1-4c2d-3e4f-5a6b7c8d9e0f" -->
+### Task
+
+Support 8-character UUID prefixes like git does with commit SHAs. With 5,300 entries, collisions at 8 hex characters are essentially impossible (16^8 = 4.3 billion possible prefixes).
+
+1. **Enhance resolve-uuid**:
+   ```bash
+   resolve-uuid() {
+     local uuid="$1"
+     local root="$(git rev-parse --show-toplevel)"
+     local index="$root/.uuid-index.json"
+
+     # Try exact match first, then prefix match
+     local path
+     path=$(jq -r --arg id "$uuid" '
+       if .[$id] then .[$id].path
+       else [to_entries[] | select(.key | startswith($id))] |
+         if length == 1 then .[0].value.path
+         elif length == 0 then empty
+         else "AMBIGUOUS"
+         end
+       end // empty' "$index")
+
+     if [[ "$path" == "AMBIGUOUS" ]]; then
+       echo "ERROR: UUID prefix $uuid is ambiguous (multiple matches)" >&2
+       return 1
+     elif [[ -z "$path" ]]; then
+       echo "ERROR: UUID $uuid not found" >&2
+       return 1
+     fi
+
+     echo "$root/$path"
+   }
+   ```
+
+2. **Update all documentation** to show short-form examples alongside full UUIDs:
+   ```markdown
+   | pointer-sync.sh | `08a4e9bc` | `$(resolve-uuid 08a4e9bc)` |
+   ```
+
+3. **Performance**: Prefix matching requires scanning all keys, but with <6,000 entries and jq, this still completes in <50ms. Acceptable for interactive use.
+
+### Acceptance Criteria
+- `resolve-uuid 08a4e9bc` resolves the same as `resolve-uuid 08a4e9bc-8cc1-457e-b966-0a912ae6dff7`
+- Ambiguous prefixes (multiple matches) produce a clear error with the matching UUIDs listed
+- Non-matching prefixes produce a clear "not found" error
+- Resolution with short-form still completes in <50ms
+- Documentation updated to show short-form usage
+
+### Estimated Effort: 1-2 hours
+### Depends On: Phase 17 (resolve-uuid must exist to enhance)
+### Can Run Parallel With: Phases 18, 19, 20, 21
+
+---
+
+<!-- section_id: "d7e8f9a0-b1c2-4d3e-4f5a-6b7c8d9e0f1a" -->
+## Phase 23: Logical Names — resolve-name Aliases
+
+**Agent**: Script Agent + Docs Agent
+**Status**: PLANNED
+**Input**: `resolve-uuid` from Phase 17, script inventory from Phase 16
+**Output**: `.uuid-aliases.tsv`, `resolve-name` function
+
+<!-- section_id: "e8f9a0b1-c2d3-4e4f-5a6b-7c8d9e0f1a2b" -->
+### Task
+
+Create a human-friendly alias layer for the most commonly referenced scripts and resources:
+
+1. **Create `.uuid-aliases.tsv`** at repo root (manually curated, small file):
+   ```tsv
+   pointer-sync	08a4e9bc-8cc1-457e-b966-0a912ae6dff7
+   entity-find	f4a2b3c5-d6e7-4f89-a0b1-c2d3e4f5a6b7
+   agnostic-sync	781698fa-f580-4606-80e4-dc73fb30e3f7
+   assign-entity-uuids	92ab3def-22d7-48cd-91be-6744c3466240
+   assign-file-uuids	68c9cfcc-9915-47f6-be3a-2c75fbd7ef7e
+   assign-dir-uuids	c7d8e9f0-1a2b-4c3d-e4f5-6a7b8c9d0e1f
+   assign-section-uuids	d8e9f0a1-2b3c-4d5e-f6a7-8b9c0d1e2f3a
+   create-stage-indexes	bcac347f-f4e3-4047-8171-ed9a20022624
+   create-resource-indexes	9f294247-a227-4bf1-8a51-bdee7555115c
+   migrate-pointers	7505b140-8772-43f1-abe5-996847e68657
+   agnostic-diagram-generator	44f8f145-6ab5-44c0-8538-887e7c652052
+   user-level-sync	5e3e7995-23d1-42e6-9a11-de1515e6367f
+   ```
+
+2. **Create `resolve-name` function** (in resolve-uuid.sh or separate):
+   ```bash
+   resolve-name() {
+     local name="$1"
+     local root="$(git rev-parse --show-toplevel)"
+     local uuid=$(grep "^${name}	" "$root/.uuid-aliases.tsv" | cut -f2)
+     if [[ -z "$uuid" ]]; then
+       echo "ERROR: Name '$name' not found in .uuid-aliases.tsv" >&2
+       return 1
+     fi
+     resolve-uuid "$uuid"
+   }
+   ```
+
+3. **Usage in scripts**:
+   ```bash
+   # Human-friendly:
+   bash "$(resolve-name pointer-sync)" --validate
+
+   # Equivalent to:
+   bash "$(resolve-uuid 08a4e9bc)" --validate
+   ```
+
+4. **Names are mutable convenience aliases**: The UUID underneath is the stable identity. If a name changes, update the aliases file (one line). If a file moves, rebuild the UUID index (automatic). Neither requires updating references in scripts.
+
+### Acceptance Criteria
+- `.uuid-aliases.tsv` exists at repo root with all 12 script aliases
+- `resolve-name pointer-sync` returns the absolute path to pointer-sync.sh
+- Unknown names produce a clear error
+- Names are case-sensitive and exact-match
+- Aliases file is git-tracked (manually curated, not generated)
+- Documentation shows `resolve-name` usage alongside `resolve-uuid`
+
+### Estimated Effort: 1-2 hours
+### Depends On: Phase 17 (resolve-uuid must exist)
+### Can Run Parallel With: Phases 18, 19, 20, 21, 22
+
+---
+
+<!-- section_id: "f9a0b1c2-d3e4-4f5a-6b7c-8d9e0f1a2b3c" -->
+## Phase 24: End-to-End Validation
+
+**Agent**: Test Agent + Coordinator
+**Status**: PLANNED
+**Input**: All outputs from Phases 17-23
+**Output**: Validation report, updated test suite
+
+<!-- section_id: "a0b1c2d3-e4f5-4a6b-7c8d-9e0f1a2b3c4d" -->
+### Task
+
+Comprehensive end-to-end validation that the UUID resolution system works correctly:
+
+1. **Move test — script**:
+   - Move `pointer-sync.sh` to a temporary location
+   - Run `pointer-sync.sh --rebuild-index`
+   - Verify `resolve-uuid 08a4e9bc` returns the new path
+   - Verify `agnostic-sync.sh` still calls pointer-sync.sh correctly (via resolve-uuid)
+   - Move pointer-sync.sh back, rebuild index
+
+2. **Move test — entity directory**:
+   - Rename an entity directory
+   - Rebuild index
+   - Verify all UUID references to that entity and its contents resolve correctly
+   - Rename back, rebuild index
+
+3. **Self-healing test**:
+   - Move a script, rebuild index, but do NOT re-run agnostic-sync.sh
+   - Verify that an AI app reading CLAUDE.md can still resolve the script via the UUID reference + resolve-uuid instruction
+   - Confirms the self-healing property (no stale window)
+
+4. **Git hook test**:
+   - Move a script, commit, push to a branch
+   - Checkout the branch on a fresh clone
+   - Verify post-checkout hook rebuilds the index automatically
+   - Verify all resolve-uuid calls work on the fresh clone
+
+5. **Short-form test**: Verify all 12 scripts resolve via 8-char prefix
+
+6. **Logical name test**: Verify all 12 scripts resolve via `resolve-name`
+
+7. **Pre-commit validation test**: Stage a file with a bad UUID reference, verify pre-commit warns
+
+8. **Placeholder test**: Verify `agnostic-sync.sh` correctly resolves `{{resolve:UUID}}` placeholders in generated files
+
+9. **Performance test**: Time `resolve-uuid` for 100 random UUIDs, verify average <10ms
+
+10. **Update test suite**: Add these tests to `test_pointer_sync.sh` or a new `test_uuid_resolution.sh`
+
+### Acceptance Criteria
+- All 9 test scenarios pass
+- Moving a script + rebuilding index = all UUID references resolve automatically
+- Self-healing property confirmed (CLAUDE.md not regenerated, UUID still resolves)
+- Git hooks trigger automatic rebuild
+- Short-form and logical name resolution both work
+- Pre-commit catches bad UUID references
+- Performance within budget (<10ms per resolution)
+- Test suite committed and executable
+
+### Estimated Effort: 4-6 hours
+### Depends On: All of Phases 17-23
+
+---
+
+<!-- section_id: "b1c2d3e4-f5a6-4b7c-8d9e-0f1a2b3c4d5e" -->
+## Execution Timeline (Phases 17-24)
+
+```
+Session 5 (UUID Resolution Core):
+  [Script Agent] Phase 17: Create resolve-uuid function            (2-3h)
+  [Script Agent] Phase 22: UUID short-form prefix matching         (1-2h, after 17)
+  [Script Agent] Phase 23: Logical names / resolve-name            (1-2h, after 17, parallel with 22)
+  [Script Agent] Phase 18: Update scripts to use resolve-uuid      (3-4h, after 17)
+
+Session 6 (Placeholder System + Hooks):
+  [Docs Agent] Phase 19: {{resolve:UUID}} syntax in 0AGNOSTIC.md   (3-4h, after 17)
+  [Script Agent] Phase 20: agnostic-sync.sh UUID integration       (4-6h, after 19)
+  [Script Agent] Phase 21: Git hooks auto-rebuild + validation     (2-3h, after 17, 18)
+
+Session 7 (Validation):
+  [Test Agent] Phase 24: End-to-end validation                     (4-6h, after all)
+  [Coordinator] Final commit and push
+```
+
+**Total estimated effort (Phases 17-24)**: ~20-30 hours across 3 sessions
+
+**Grand total (Phases 1-24)**: ~80-107 hours across 7 sessions
+
+---
+
+<!-- section_id: "c2d3e4f5-a6b7-4c8d-9e0f-1a2b3c4d5e6f" -->
+## Risk Assessment (Phases 17-24)
+
+| Risk | Impact | Mitigation |
+|------|--------|------------|
+| resolve-uuid adds latency to every script call | Medium | Performance budget: <10ms. jq on 2.6MB JSON is ~3ms load + <0.03ms lookup. Well within budget. |
+| `{{resolve:UUID}}` placeholders break markdown rendering | Low | Placeholders render as inline code — visually acceptable. Test in all 6 context file formats. |
+| agnostic-sync.sh changes break existing generation | High | Test thoroughly before deploying. Existing non-placeholder content must be unaffected. |
+| Short-form prefix collisions | Very Low | 16^8 = 4.3B possible prefixes for ~5,300 entries. Collision probability ~0.000003%. Detect and warn if it occurs. |
+| Developers forget to rebuild index after moves | Medium | Post-checkout/post-merge hooks auto-rebuild (Phase 21). Manual rebuilds become rarely needed. |
+| Bootstrap problem (resolve-uuid finding itself) | Low | `git rev-parse --show-toplevel` is always available. One hardcoded relative path: `.uuid-index.json` from repo root. |
+| Partial adoption (some refs UUID, some still hardcoded) | Medium | Gradual migration is acceptable. Hardcoded paths still work — UUID refs are additive, not replacing. Pre-commit validation warns about unresolvable UUIDs. |
+| Index becomes stale in working tree | Medium | Auto-rebuild on checkout/merge. For in-session staleness, manual `--rebuild-index` is fast (~3s). |
+
+---
+
 ## Verification Checklist
 
 After all phases complete:
@@ -1120,3 +1682,26 @@ After all phases complete:
 - [x] Protocol docs created for uuid_assignment_protocol and agnostic_sync_protocol (Phase 16)
 - [x] Git hooks updated with new script paths (Phase 16)
 - [x] 81+ documentation files updated with new paths (Phase 16)
+- [ ] `resolve-uuid` function exists and resolves any UUID → current path in <10ms (Phase 17)
+- [ ] `resolve-uuid` works from any directory within the repo (Phase 17)
+- [ ] `resolve-uuid` works in sandboxed environments (Phase 17)
+- [ ] Cross-protocol script calls use `resolve-uuid` instead of hardcoded paths (Phase 18)
+- [ ] Git hooks use `resolve-uuid` to find scripts (Phase 18)
+- [ ] Same-directory `$SCRIPT_DIR/` references preserved (Phase 18)
+- [ ] `{{resolve:UUID}}` syntax defined and documented (Phase 19)
+- [ ] Root `0AGNOSTIC.md` uses `{{resolve:UUID}}` placeholders (Phase 19)
+- [ ] trigger_pointer_system `0AGNOSTIC.md` uses `{{resolve:UUID}}` placeholders (Phase 19)
+- [ ] `agnostic-sync.sh` resolves `{{resolve:UUID}}` placeholders during generation (Phase 20)
+- [ ] Generated context files contain both path and UUID reference (Phase 20)
+- [ ] Generated context files include resolve-uuid instructions section (Phase 20)
+- [ ] Unresolvable UUIDs produce warnings during generation (Phase 20)
+- [ ] Post-checkout hook runs `--rebuild-index` automatically (Phase 21)
+- [ ] Pre-commit hook validates UUID references in staged files (Phase 21)
+- [ ] UUID short-form (8-char prefix) resolves correctly (Phase 22)
+- [ ] Ambiguous prefixes produce clear error with candidates listed (Phase 22)
+- [ ] `.uuid-aliases.tsv` exists with all 12 script aliases (Phase 23)
+- [ ] `resolve-name` function resolves logical names → UUID → path (Phase 23)
+- [ ] Move test passes: move script → rebuild → all UUID refs resolve (Phase 24)
+- [ ] Self-healing test passes: CLAUDE.md not regenerated, UUID still resolves (Phase 24)
+- [ ] Git hook auto-rebuild test passes on fresh checkout (Phase 24)
+- [ ] Performance test: <10ms average for resolve-uuid (Phase 24)
