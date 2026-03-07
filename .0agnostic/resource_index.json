@@ -1,0 +1,99 @@
+{
+  "entity_id": "6512d4dd-e3d9-4286-b7c4-48d54da4cf6d",
+  "entity_name": "0_layer_universal",
+  "entity_path": ".",
+  "generated": "2026-03-07T00:00:00Z",
+  "resources": [
+    {
+      "resource_id": "08a4e9bc-8cc1-457e-b966-0a912ae6dff7",
+      "resource_name": "pointer-sync",
+      "resource_type": "script",
+      "id_field": "resource_id",
+      "path": ".0agnostic/03_protocols/pointer_sync_protocol/tools/pointer-sync.sh"
+    },
+    {
+      "resource_id": "f4a2b3c5-d6e7-4f89-a0b1-c2d3e4f5a6b7",
+      "resource_name": "entity-find",
+      "resource_type": "script",
+      "id_field": "resource_id",
+      "path": ".0agnostic/03_protocols/pointer_sync_protocol/tools/entity-find.sh"
+    },
+    {
+      "resource_id": "9f294247-a227-4bf1-8a51-bdee7555115c",
+      "resource_name": "create-resource-indexes",
+      "resource_type": "script",
+      "id_field": "resource_id",
+      "path": ".0agnostic/03_protocols/pointer_sync_protocol/tools/create-resource-indexes.sh"
+    },
+    {
+      "resource_id": "7505b140-8772-43f1-abe5-996847e68657",
+      "resource_name": "migrate-pointers",
+      "resource_type": "script",
+      "id_field": "resource_id",
+      "path": ".0agnostic/03_protocols/pointer_sync_protocol/tools/migrate-pointers.sh"
+    },
+    {
+      "resource_id": "e3f4a5b6-c7d8-4e9f-0a1b-2c3d4e5f6a7b",
+      "resource_name": "resolve-uuid",
+      "resource_type": "script",
+      "id_field": "resource_id",
+      "path": ".0agnostic/03_protocols/pointer_sync_protocol/tools/resolve-uuid.sh"
+    },
+    {
+      "resource_id": "92ab3def-22d7-48cd-91be-6744c3466240",
+      "resource_name": "assign-entity-uuids",
+      "resource_type": "script",
+      "id_field": "resource_id",
+      "path": ".0agnostic/03_protocols/uuid_assignment_protocol/tools/assign-entity-uuids.sh"
+    },
+    {
+      "resource_id": "68c9cfcc-9915-47f6-be3a-2c75fbd7ef7e",
+      "resource_name": "assign-file-uuids",
+      "resource_type": "script",
+      "id_field": "resource_id",
+      "path": ".0agnostic/03_protocols/uuid_assignment_protocol/tools/assign-file-uuids.sh"
+    },
+    {
+      "resource_id": "c7d8e9f0-1a2b-4c3d-e4f5-6a7b8c9d0e1f",
+      "resource_name": "assign-dir-uuids",
+      "resource_type": "script",
+      "id_field": "resource_id",
+      "path": ".0agnostic/03_protocols/uuid_assignment_protocol/tools/assign-dir-uuids.sh"
+    },
+    {
+      "resource_id": "d8e9f0a1-2b3c-4d5e-f6a7-8b9c0d1e2f3a",
+      "resource_name": "assign-section-uuids",
+      "resource_type": "script",
+      "id_field": "resource_id",
+      "path": ".0agnostic/03_protocols/uuid_assignment_protocol/tools/assign-section-uuids.sh"
+    },
+    {
+      "resource_id": "bcac347f-f4e3-4047-8171-ed9a20022624",
+      "resource_name": "create-stage-indexes",
+      "resource_type": "script",
+      "id_field": "resource_id",
+      "path": ".0agnostic/03_protocols/uuid_assignment_protocol/tools/create-stage-indexes.sh"
+    },
+    {
+      "resource_id": "781698fa-f580-4606-80e4-dc73fb30e3f7",
+      "resource_name": "agnostic-sync",
+      "resource_type": "script",
+      "id_field": "resource_id",
+      "path": ".0agnostic/03_protocols/agnostic_sync_protocol/tools/agnostic-sync.sh"
+    },
+    {
+      "resource_id": "44f8f145-6ab5-44c0-8538-887e7c652052",
+      "resource_name": "agnostic-diagram-generator",
+      "resource_type": "script",
+      "id_field": "resource_id",
+      "path": ".0agnostic/03_protocols/agnostic_sync_protocol/tools/agnostic-diagram-generator.sh"
+    },
+    {
+      "resource_id": "5e3e7995-23d1-42e6-9a11-de1515e6367f",
+      "resource_name": "user-level-sync",
+      "resource_type": "script",
+      "id_field": "resource_id",
+      "path": ".0agnostic/03_protocols/agnostic_sync_protocol/tools/user-level-sync.sh"
+    }
+  ]
+}

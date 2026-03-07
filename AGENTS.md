@@ -81,6 +81,15 @@ Every entity, stage, file, and directory has a stable UUID that survives renames
 | Directory UUIDs | `.dir-id` file in each directory | Single UUID per directory |
 | Global index | `.uuid-index.json` at repo root | 5,313 entries (entities + stages + resources) |
 
+**UUID resolution** (resolve UUID → current path, survives any move):
+
+```bash
+source .0agnostic/03_protocols/pointer_sync_protocol/tools/resolve-uuid.sh   # Load resolve-uuid into shell
+resolve-uuid 08a4e9bc                                         # Short prefix → path
+resolve-uuid 08a4e9bc-8cc1-457e-b966-0a912ae6dff7             # Full UUID → path
+resolve-name pointer-sync                                      # Logical name → path
+```
+
 **Fast entity lookup** (run from repo root):
 
 ```bash
@@ -99,6 +108,8 @@ Every entity, stage, file, and directory has a stable UUID that survives renames
 .0agnostic/03_protocols/pointer_sync_protocol/tools/pointer-sync.sh --find-references <uuid>             # Find all references before rename/delete
 .0agnostic/03_protocols/pointer_sync_protocol/tools/pointer-sync.sh --query type=resource entity_id=<uuid>  # Resources within an entity
 ```
+
+**`{{resolve:UUID}}` syntax**: In `0AGNOSTIC.md` source files, `{{resolve:UUID}}` placeholders are resolved to current paths by `agnostic-sync.sh` during generation. UUIDs are the stable identity; paths are derived.
 
 **Full reference**: Load `/uuid-query` skill or read `.0agnostic/01_knowledge/pointer_sync/pointer_sync_knowledge.md`
 
@@ -162,6 +173,7 @@ Every entity, stage, file, and directory has a stable UUID that survives renames
 | Research Knowledge Index | `.0agnostic/01_knowledge/layer_stage_system/docs/RESEARCH_KNOWLEDGE_INDEX.md` | Index of all research outputs with paths and promotion status |
 | Setup-Dependant | `.0agnostic/07+_setup_dependant/` | Machine/OS-specific context (Ubuntu, coding apps, etc.) |
 | Research Promotion Protocol | `.0agnostic/03_protocols/research_promotion_protocol.md` | How to promote validated research to production |
+| Resolve UUID Tool | `.0agnostic/03_protocols/pointer_sync_protocol/tools/resolve-uuid.sh` | UUID → current path resolution (`resolve-uuid`, `resolve-name`) |
 | Entity Find Tool | `.0agnostic/03_protocols/pointer_sync_protocol/tools/entity-find.sh` | Fast entity lookup by name (~5ms, no Python) |
 | Resource Index Tool | `.0agnostic/03_protocols/pointer_sync_protocol/tools/create-resource-indexes.sh` | Generate per-entity `resource_index.json` files for resource UUID traversal |
 | Pointer Sync Protocol | `.0agnostic/03_protocols/pointer_sync_protocol/pointer_sync_protocol.md` | Auto-updating pointer files when canonical paths change |
@@ -222,6 +234,7 @@ Active chain map (school -> module_03):
 - `0_layer_universal` tracks `layer_1/layer_1_projects/layer_1_project_school` as submodule.
 - `layer_1_project_school` currently contains one active nested gitlink at `.../layer_6_sub_feature_team_work/school-machine-learning-teamwork`.
 - If any additional nested repos appear, they must be declared in `.gitmodules` at the same repository level before commit/push.
+
 
 ## Promoted Rules
 

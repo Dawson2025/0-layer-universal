@@ -9,22 +9,23 @@
 set -euo pipefail
 
 REPO_ROOT="$(git rev-parse --show-toplevel)"
-SCRIPT_DIR="$REPO_ROOT/.0agnostic/03_protocols/pointer_sync_protocol/tools"
 
-# Rebuild UUID index if any 0AGNOSTIC.md files changed
-if git diff-tree -r --name-only ORIG_HEAD HEAD | grep -q '0AGNOSTIC.md'; then
-    echo "[post-merge] 0AGNOSTIC.md changed — rebuilding UUID index..."
-    bash "$SCRIPT_DIR/pointer-sync.sh" --rebuild-index
-fi
+# Source resolve-uuid for UUID-based script discovery
+source "$REPO_ROOT/.0agnostic/03_protocols/pointer_sync_protocol/tools/resolve-uuid.sh"
+POINTER_SYNC="$(resolve-uuid 08a4e9bc-8cc1-457e-b966-0a912ae6dff7 2>/dev/null || echo "$REPO_ROOT/.0agnostic/03_protocols/pointer_sync_protocol/tools/pointer-sync.sh")"
+
+# Always rebuild UUID index after merge (ensures resolve-uuid works for subsequent calls)
+echo "[post-merge] Rebuilding UUID index..."
+bash "$POINTER_SYNC" --rebuild-index
 
 # Rebuild directory UUID index if any .dir-id files changed
 if git diff-tree -r --name-only ORIG_HEAD HEAD | grep -q '\.dir-id$'; then
     echo "[post-merge] .dir-id files changed — rebuilding directory UUID index..."
-    bash "$SCRIPT_DIR/pointer-sync.sh" --rebuild-dir-index
+    bash "$POINTER_SYNC" --rebuild-dir-index
 fi
 
-# Validate pointers if any pointer files or entity directories changed
+# Validate pointers
 echo "[post-merge] Validating pointers..."
-bash "$SCRIPT_DIR/pointer-sync.sh" --validate || {
+bash "$POINTER_SYNC" --validate || {
     echo "[post-merge] WARNING: Broken pointers detected after merge. Run: pointer-sync.sh"
 }

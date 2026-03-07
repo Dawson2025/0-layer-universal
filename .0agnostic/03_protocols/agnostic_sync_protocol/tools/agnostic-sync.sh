@@ -80,6 +80,35 @@ esac
 STATIC_CONTENT=$(echo "$STATIC_CONTENT" | sed '/./,$!d')
 
 # ═══════════════════════════════════════════════
+# UUID Placeholder Resolution
+# ═══════════════════════════════════════════════
+# Resolve {{resolve:UUID}} placeholders to current filesystem paths.
+# UUIDs are stable identifiers; paths are derived at generation time.
+# Usage in 0AGNOSTIC.md: {{resolve:08a4e9bc-8cc1-457e-b966-0a912ae6dff7}}
+# → resolves to: .0agnostic/03_protocols/pointer_sync_protocol/tools/pointer-sync.sh
+
+_SYNC_SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+_SYNC_REPO_ROOT="$(cd "$_SYNC_SCRIPT_DIR/../../../.." && pwd)"
+
+if echo "$STATIC_CONTENT" | grep -q '{{resolve:'; then
+    source "$_SYNC_REPO_ROOT/.0agnostic/03_protocols/pointer_sync_protocol/tools/resolve-uuid.sh"
+    _RESOLVE_LOADED=1
+    RESOLVED_CONTENT=""
+    while IFS= read -r line; do
+        while [[ "$line" =~ \{\{resolve:([0-9a-f-]+)\}\} ]]; do
+            uuid="${BASH_REMATCH[1]}"
+            resolved_path=$(resolve-uuid "$uuid" 2>/dev/null || echo "UNRESOLVED:$uuid")
+            # Make path relative to repo root
+            resolved_path="${resolved_path#$_SYNC_REPO_ROOT/}"
+            line="${line/\{\{resolve:$uuid\}\}/$resolved_path}"
+        done
+        RESOLVED_CONTENT+="$line"$'\n'
+    done <<< "$STATIC_CONTENT"
+    STATIC_CONTENT="$RESOLVED_CONTENT"
+    echo "Resolved {{resolve:UUID}} placeholders"
+fi
+
+# ═══════════════════════════════════════════════
 # Hot Rule Promotion
 # ═══════════════════════════════════════════════
 # Rules with `promote: hot` frontmatter get a summary pointer injected
@@ -444,10 +473,12 @@ if [ -d "$DIR/.0agnostic" ]; then
 fi
 
 # --- Pointer Sync Validation ---
-# Find pointer-sync.sh in its protocol directory (cross-protocol reference)
-_SYNC_SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-POINTER_SYNC="$_SYNC_SCRIPT_DIR/../../pointer_sync_protocol/tools/pointer-sync.sh"
-if [ -x "$POINTER_SYNC" ]; then
+# _SYNC_SCRIPT_DIR and _SYNC_REPO_ROOT defined above (UUID Placeholder Resolution)
+if [ -z "${_RESOLVE_LOADED:-}" ]; then
+    source "$_SYNC_REPO_ROOT/.0agnostic/03_protocols/pointer_sync_protocol/tools/resolve-uuid.sh"
+fi
+POINTER_SYNC="$(resolve-uuid 08a4e9bc-8cc1-457e-b966-0a912ae6dff7 2>/dev/null || echo "")"
+if [ -n "$POINTER_SYNC" ] && [ -x "$POINTER_SYNC" ]; then
     echo ""
     echo "--- Pointer Validation ---"
     if "$POINTER_SYNC" --validate 2>/dev/null; then

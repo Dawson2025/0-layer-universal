@@ -1,0 +1,13 @@
+pointer-sync	08a4e9bc-8cc1-457e-b966-0a912ae6dff7
+entity-find	f4a2b3c5-d6e7-4f89-a0b1-c2d3e4f5a6b7
+agnostic-sync	781698fa-f580-4606-80e4-dc73fb30e3f7
+assign-entity-uuids	92ab3def-22d7-48cd-91be-6744c3466240
+assign-file-uuids	68c9cfcc-9915-47f6-be3a-2c75fbd7ef7e
+assign-dir-uuids	c7d8e9f0-1a2b-4c3d-e4f5-6a7b8c9d0e1f
+assign-section-uuids	d8e9f0a1-2b3c-4d5e-f6a7-8b9c0d1e2f3a
+create-stage-indexes	bcac347f-f4e3-4047-8171-ed9a20022624
+create-resource-indexes	9f294247-a227-4bf1-8a51-bdee7555115c
+migrate-pointers	7505b140-8772-43f1-abe5-996847e68657
+agnostic-diagram-generator	44f8f145-6ab5-44c0-8538-887e7c652052
+user-level-sync	5e3e7995-23d1-42e6-9a11-de1515e6367f
+resolve-uuid	e3f4a5b6-c7d8-4e9f-0a1b-2c3d4e5f6a7b

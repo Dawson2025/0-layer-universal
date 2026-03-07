@@ -79,24 +79,35 @@ Every entity, stage, file, and directory has a stable UUID that survives renames
 | Directory UUIDs | `.dir-id` file in each directory | Single UUID per directory |
 | Global index | `.uuid-index.json` at repo root | 5,313 entries (entities + stages + resources) |
 
+**UUID resolution** (resolve UUID → current path, survives any move):
+
+```bash
+source {{resolve:e3f4a5b6-c7d8-4e9f-0a1b-2c3d4e5f6a7b}}   # Load resolve-uuid into shell
+resolve-uuid 08a4e9bc                                         # Short prefix → path
+resolve-uuid 08a4e9bc-8cc1-457e-b966-0a912ae6dff7             # Full UUID → path
+resolve-name pointer-sync                                      # Logical name → path
+```
+
 **Fast entity lookup** (run from repo root):
 
 ```bash
-.0agnostic/03_protocols/pointer_sync_protocol/tools/entity-find.sh memory            # Find entities by name (~5ms, no Python)
-.0agnostic/03_protocols/pointer_sync_protocol/tools/entity-find.sh --path chain       # Just show paths
-.0agnostic/03_protocols/pointer_sync_protocol/tools/entity-find.sh --uuid memory      # Just show UUIDs
+{{resolve:f4a2b3c5-d6e7-4f89-a0b1-c2d3e4f5a6b7}} memory            # Find entities by name (~5ms, no Python)
+{{resolve:f4a2b3c5-d6e7-4f89-a0b1-c2d3e4f5a6b7}} --path chain       # Just show paths
+{{resolve:f4a2b3c5-d6e7-4f89-a0b1-c2d3e4f5a6b7}} --uuid memory      # Just show UUIDs
 ```
 
 **Advanced commands** (full UUID system, uses Python):
 
 ```bash
-.0agnostic/03_protocols/pointer_sync_protocol/tools/pointer-sync.sh --query type=entity name=*memory*   # Find entities by name
-.0agnostic/03_protocols/pointer_sync_protocol/tools/pointer-sync.sh --lookup <uuid>                      # Look up any UUID
-.0agnostic/03_protocols/pointer_sync_protocol/tools/pointer-sync.sh --parent <uuid>                      # Get parent entity
-.0agnostic/03_protocols/pointer_sync_protocol/tools/pointer-sync.sh --children <uuid>                    # List child entities
-.0agnostic/03_protocols/pointer_sync_protocol/tools/pointer-sync.sh --find-references <uuid>             # Find all references before rename/delete
-.0agnostic/03_protocols/pointer_sync_protocol/tools/pointer-sync.sh --query type=resource entity_id=<uuid>  # Resources within an entity
+{{resolve:08a4e9bc-8cc1-457e-b966-0a912ae6dff7}} --query type=entity name=*memory*   # Find entities by name
+{{resolve:08a4e9bc-8cc1-457e-b966-0a912ae6dff7}} --lookup <uuid>                      # Look up any UUID
+{{resolve:08a4e9bc-8cc1-457e-b966-0a912ae6dff7}} --parent <uuid>                      # Get parent entity
+{{resolve:08a4e9bc-8cc1-457e-b966-0a912ae6dff7}} --children <uuid>                    # List child entities
+{{resolve:08a4e9bc-8cc1-457e-b966-0a912ae6dff7}} --find-references <uuid>             # Find all references before rename/delete
+{{resolve:08a4e9bc-8cc1-457e-b966-0a912ae6dff7}} --query type=resource entity_id=<uuid>  # Resources within an entity
 ```
+
+**`{{resolve:UUID}}` syntax**: In `0AGNOSTIC.md` source files, `{{resolve:UUID}}` placeholders are resolved to current paths by `agnostic-sync.sh` during generation. UUIDs are the stable identity; paths are derived.
 
 **Full reference**: Load `/uuid-query` skill or read `.0agnostic/01_knowledge/pointer_sync/pointer_sync_knowledge.md`
 
@@ -114,12 +125,12 @@ Every entity, stage, file, and directory has a stable UUID that survives renames
 | Local Ubuntu desktop issues (volume, brightness, keybindings, audio, GNOME, post-sleep) | Load `.0agnostic/02_rules/dynamic/local_ubuntu_desktop_troubleshooting/` |
 | User says "use research context chain" | Load `.0agnostic/02_rules/dynamic/CONTEXT_CHAIN_MODE/context_chain_mode.md` and switch to research mode |
 | Promoting research to production | Load `.0agnostic/03_protocols/research_promotion_protocol.md` |
-| Creating or modifying pointer files | Follow `.0agnostic/03_protocols/pointer_sync_protocol/pointer_sync_protocol.md` and run `.0agnostic/03_protocols/pointer_sync_protocol/tools/pointer-sync.sh --validate` |
+| Creating or modifying pointer files | Follow `.0agnostic/03_protocols/pointer_sync_protocol/pointer_sync_protocol.md` and run `{{resolve:08a4e9bc-8cc1-457e-b966-0a912ae6dff7}} --validate` |
 | Modifying agent delegation patterns | Load `.0agnostic/02_rules/dynamic/agent_delegation_workspace_rule/agent_delegation_workspace_rule.md` |
 | Querying UUID identity system (entity lookup, hierarchy, resources) | Load skill: uuid-query |
-| Locating an entity by name or finding where something lives | Run `.0agnostic/03_protocols/pointer_sync_protocol/tools/entity-find.sh <name>` (fast, no Python) |
-| Finding an entity, stage, or resource by name or UUID | Run `.0agnostic/03_protocols/pointer_sync_protocol/tools/pointer-sync.sh --query` or load skill: uuid-query |
-| Checking references before renaming or deleting an entity | Run `.0agnostic/03_protocols/pointer_sync_protocol/tools/pointer-sync.sh --find-references <uuid>` |
+| Locating an entity by name or finding where something lives | Run `{{resolve:f4a2b3c5-d6e7-4f89-a0b1-c2d3e4f5a6b7}} <name>` (fast, no Python) |
+| Finding an entity, stage, or resource by name or UUID | Run `{{resolve:08a4e9bc-8cc1-457e-b966-0a912ae6dff7}} --query` or load skill: uuid-query |
+| Checking references before renaming or deleting an entity | Run `{{resolve:08a4e9bc-8cc1-457e-b966-0a912ae6dff7}} --find-references <uuid>` |
 | Multi-step development tasks | Load `.0agnostic/02_rules/1_scenario_based/sequential_development_methodology/sequential_development_methodology.md` |
 | Security decisions, access control, or sensitive operations | Load `.0agnostic/02_rules/1_scenario_based/safety_governance/safety_governance.md` |
 | Creating file headers or context headers | Load `.0agnostic/02_rules/1_scenario_based/LAYER_CONTEXT_HEADER_PROTOCOL/LAYER_CONTEXT_HEADER_PROTOCOL.md` |
@@ -160,8 +171,9 @@ Every entity, stage, file, and directory has a stable UUID that survives renames
 | Research Knowledge Index | `.0agnostic/01_knowledge/layer_stage_system/docs/RESEARCH_KNOWLEDGE_INDEX.md` | Index of all research outputs with paths and promotion status |
 | Setup-Dependant | `.0agnostic/07+_setup_dependant/` | Machine/OS-specific context (Ubuntu, coding apps, etc.) |
 | Research Promotion Protocol | `.0agnostic/03_protocols/research_promotion_protocol.md` | How to promote validated research to production |
-| Entity Find Tool | `.0agnostic/03_protocols/pointer_sync_protocol/tools/entity-find.sh` | Fast entity lookup by name (~5ms, no Python) |
-| Resource Index Tool | `.0agnostic/03_protocols/pointer_sync_protocol/tools/create-resource-indexes.sh` | Generate per-entity `resource_index.json` files for resource UUID traversal |
+| Resolve UUID Tool | `{{resolve:e3f4a5b6-c7d8-4e9f-0a1b-2c3d4e5f6a7b}}` | UUID → current path resolution (`resolve-uuid`, `resolve-name`) |
+| Entity Find Tool | `{{resolve:f4a2b3c5-d6e7-4f89-a0b1-c2d3e4f5a6b7}}` | Fast entity lookup by name (~5ms, no Python) |
+| Resource Index Tool | `{{resolve:9f294247-a227-4bf1-8a51-bdee7555115c}}` | Generate per-entity `resource_index.json` files for resource UUID traversal |
 | Pointer Sync Protocol | `.0agnostic/03_protocols/pointer_sync_protocol/pointer_sync_protocol.md` | Auto-updating pointer files when canonical paths change |
 | Pointer Sync Knowledge | `.0agnostic/01_knowledge/pointer_sync/pointer_sync_knowledge.md` | How the pointer sync system works |
 | Pointer Sync Rule | `.0agnostic/02_rules/static/pointer_sync_rule/pointer_sync_rule.md` | Always-apply rule for pointer file format |

@@ -9,6 +9,7 @@
 
 set -euo pipefail
 
+REPO_ROOT="$(git rev-parse --show-toplevel)"
 STAGED=$(git diff --cached --name-only)
 
 # Check for CLAUDE.md staged without corresponding 0AGNOSTIC.md
@@ -18,7 +19,8 @@ AGNOSTIC_STAGED=$(echo "$STAGED" | grep '0AGNOSTIC\.md$' || true)
 if [[ -n "$CLAUDE_STAGED" && -z "$AGNOSTIC_STAGED" ]]; then
     echo ""
     echo "[pre-commit] WARNING: CLAUDE.md is staged but no 0AGNOSTIC.md is staged."
-    echo "  CLAUDE.md is auto-generated — edit 0AGNOSTIC.md and run .0agnostic/03_protocols/agnostic_sync_protocol/tools/agnostic-sync.sh instead."
+    echo "  CLAUDE.md is auto-generated — edit 0AGNOSTIC.md and run agnostic-sync.sh instead."
+    echo "  (resolve-uuid 781698fa or resolve-name agnostic-sync to find it)"
     echo "  Staged CLAUDE.md files:"
     echo "$CLAUDE_STAGED" | sed 's/^/    /'
     echo ""
@@ -39,6 +41,30 @@ if [[ -n "$NEW_POINTERS" ]]; then
     echo ""
     echo "[pre-commit] WARNING: Pointer file(s) missing canonical_entity_id:"
     echo "$NEW_POINTERS" | sed 's/^/    /'
-    echo "  Run: .0agnostic/03_protocols/pointer_sync_protocol/tools/migrate-pointers.sh to add UUID fields."
+    echo "  Run: migrate-pointers.sh (resolve-uuid 7505b140) to add UUID fields."
     echo ""
+fi
+
+# Validate UUID references in staged files (Phase 21)
+UUID_INDEX="$REPO_ROOT/.uuid-index.json"
+if [[ -f "$UUID_INDEX" ]]; then
+    BAD_UUIDS=""
+    # Check for resolve-uuid calls and {{resolve:UUID}} placeholders in staged files
+    for f in $STAGED; do
+        [[ -f "$f" ]] || continue
+        # Extract UUIDs from resolve-uuid calls and {{resolve:...}} patterns
+        FOUND_UUIDS=$(grep -oP '(?:resolve[-_]uuid\s+|resolve-name\s+\S+\s+|\{\{resolve:)([0-9a-f]{8}(?:-[0-9a-f]{4}){3}-[0-9a-f]{12})' "$f" 2>/dev/null | grep -oP '[0-9a-f]{8}(?:-[0-9a-f]{4}){3}-[0-9a-f]{12}' || true)
+        for uuid in $FOUND_UUIDS; do
+            if ! python3 -c "import json,sys; d=json.load(open(sys.argv[1])); sys.exit(0 if sys.argv[2] in d.get('uuids',d) else 1)" "$UUID_INDEX" "$uuid" 2>/dev/null; then
+                BAD_UUIDS="${BAD_UUIDS}  $uuid in $f\n"
+            fi
+        done
+    done
+    if [[ -n "$BAD_UUIDS" ]]; then
+        echo ""
+        echo "[pre-commit] WARNING: UUID reference(s) not found in index:"
+        echo -e "$BAD_UUIDS"
+        echo "  Run: pointer-sync.sh --rebuild-index to update the index."
+        echo ""
+    fi
 fi
