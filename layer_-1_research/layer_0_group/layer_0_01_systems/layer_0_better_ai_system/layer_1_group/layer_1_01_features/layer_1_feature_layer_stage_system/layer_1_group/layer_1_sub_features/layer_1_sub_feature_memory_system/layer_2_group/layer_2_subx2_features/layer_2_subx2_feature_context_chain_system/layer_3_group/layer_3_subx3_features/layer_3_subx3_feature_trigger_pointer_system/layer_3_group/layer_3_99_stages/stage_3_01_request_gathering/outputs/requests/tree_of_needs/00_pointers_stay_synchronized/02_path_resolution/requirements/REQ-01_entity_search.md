@@ -10,11 +10,13 @@ resource_name: "REQ-01_entity_search"
 <!-- section_id: "d823aad4-3042-4de9-b79f-e8b69190868c" -->
 ## Requirements
 
-- **MUST** find entity directories by name using `find ... -type d -name "$canonical_entity" -path "*/layer_*"`
-- **MUST** handle case where multiple directories match (use first match)
+- **MUST** locate entity directories by name; implementation may use filesystem search, indexing, or other mechanisms
+- **MUST** handle case where multiple directories match (resolve deterministically)
 - **MUST** report BROKEN if entity not found
 - **MUST** optionally navigate to a stage within the entity (`canonical_stage`)
 - **MUST** optionally append a subpath within the stage (`canonical_subpath`)
 - **MUST** verify the final resolved path exists before updating
 - **MUST** compute relative path from pointer file's directory to canonical target
 - **MUST** tolerate both Unix and Windows line endings in pointer files
+
+> **Design note**: The specific search mechanism (e.g., `find`, UUID index lookup, TSV grep) is documented in stage 04 design outputs.

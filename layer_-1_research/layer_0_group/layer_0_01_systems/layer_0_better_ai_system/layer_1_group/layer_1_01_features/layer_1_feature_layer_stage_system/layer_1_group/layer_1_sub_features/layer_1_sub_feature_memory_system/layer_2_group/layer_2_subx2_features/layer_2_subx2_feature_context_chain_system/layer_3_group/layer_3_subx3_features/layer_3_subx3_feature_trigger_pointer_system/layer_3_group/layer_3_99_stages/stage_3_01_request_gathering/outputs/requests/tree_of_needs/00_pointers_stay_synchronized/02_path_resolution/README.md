@@ -18,8 +18,8 @@ The pointer-sync script must dynamically locate canonical targets. This branch d
 
 | Need | Question | Description |
 |------|----------|-------------|
-| need_01_entity_search | How do we find entity directories? | `find` by name under 0_layer_universal, handle ambiguity |
-| need_02_relative_path_compute | How do we compute relative paths? | Python `os.path.relpath` for reliability, handle symlinks |
+| need_01_entity_search | How do we find entity directories? | Locate entities by name, handle ambiguity deterministically |
+| need_02_relative_path_compute | How do we compute relative paths? | Compute portable relative paths that survive repository relocation |
 
 <!-- section_id: "3404e6cd-c0bc-4c74-9288-dc338504fb29" -->
 ## Key Insight

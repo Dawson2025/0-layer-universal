@@ -16,9 +16,9 @@ resource_name: "US-02_agent_edit_reminder"
 <!-- section_id: "c8c0680e-5143-42ca-867c-de4bfdfa68cb" -->
 ### What Happens
 
-1. AI agent uses Edit or Write tool on a `.md` file
-2. PostToolUse hook fires and checks if the file has pointer YAML frontmatter
-3. If it does, hook outputs a reminder: "This is a pointer file — run pointer-sync.sh --validate"
+1. AI agent uses a file editing tool on a `.md` file
+2. The system detects that the file has pointer YAML frontmatter
+3. A non-blocking notification reminds the agent: "This is a pointer file — validate pointers"
 4. Agent sees the reminder and runs validation
 5. If validation fails, agent runs full sync to fix paths
 

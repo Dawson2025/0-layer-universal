@@ -23,7 +23,9 @@ so that stale pointers are caught before they propagate to the remote repository
 <!-- section_id: "00debf5c-c241-481f-ab8c-69eaf985ae0a" -->
 ## Integration with Existing Hooks
 
-The Claude Code PostToolUse hook (`pointer-edit-guard.sh`) already triggers warnings when pointer files are edited. The git hook provides a second safety net at commit time.
+The editing tool's notification system already triggers warnings when pointer files are edited. The git hook provides a second safety net at commit time.
+
+> **Design note**: The specific notification mechanism (e.g., Claude Code PostToolUse hooks, Cursor rules, VS Code file watchers) is documented in stage 04 design outputs.
 
 <!-- section_id: "5f72e2f5-6f90-4166-b1f7-33929ddfb7fa" -->
 ## Status

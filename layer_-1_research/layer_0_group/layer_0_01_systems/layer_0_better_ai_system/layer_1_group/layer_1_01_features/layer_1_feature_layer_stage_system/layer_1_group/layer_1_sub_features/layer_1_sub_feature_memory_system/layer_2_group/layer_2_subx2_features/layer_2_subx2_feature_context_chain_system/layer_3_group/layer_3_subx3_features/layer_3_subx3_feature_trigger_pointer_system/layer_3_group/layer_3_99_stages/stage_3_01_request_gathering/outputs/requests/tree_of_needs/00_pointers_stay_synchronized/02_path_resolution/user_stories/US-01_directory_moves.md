@@ -28,7 +28,7 @@ resource_name: "US-01_directory_moves"
 ### Acceptance Criteria
 
 - Pointer resolves correctly after parent directory is renamed — no manual intervention needed
-- Detection happens automatically (hook-triggered, not manually invoked)
+- Detection happens without manual developer intervention
 - `pointer-sync.sh --validate` exits 0 after automatic sync
 - Old relative paths are replaced with new computed paths
 - Developer receives a summary of which pointers were updated

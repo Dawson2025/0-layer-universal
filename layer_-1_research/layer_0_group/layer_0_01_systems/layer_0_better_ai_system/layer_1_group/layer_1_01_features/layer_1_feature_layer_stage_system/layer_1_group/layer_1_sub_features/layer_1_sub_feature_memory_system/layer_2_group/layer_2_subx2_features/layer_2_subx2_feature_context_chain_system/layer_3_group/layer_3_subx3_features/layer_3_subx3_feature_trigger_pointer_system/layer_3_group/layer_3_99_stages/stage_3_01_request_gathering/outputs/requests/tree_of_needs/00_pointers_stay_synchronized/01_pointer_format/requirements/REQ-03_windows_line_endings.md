@@ -13,23 +13,24 @@ The pointer sync system MUST handle files with Windows line endings (`\r\n`) cor
 <!-- section_id: "c5a50874-c642-4823-b125-c09665e3d3f8" -->
 ## Specification
 
-- `has_pointer_fm()` must strip `\r` when checking the first line for `---`
-- `extract_fm()` must strip `\r` from field values
-- `grep` searches for frontmatter must work regardless of line ending style
-- Updated pointer files should preserve the original line ending style (currently writes Unix-style `\n`)
+- Frontmatter detection MUST work regardless of whether the file uses Unix (`\n`) or Windows (`\r\n`) line endings
+- Field value extraction MUST produce clean values without trailing `\r` characters
+- Content searching MUST work regardless of line ending style
+- Updated pointer files SHOULD preserve the original line ending style when possible
 
 <!-- section_id: "900a148f-261d-47b2-ac99-abedfd452698" -->
 ## Rationale
 
-In a cross-platform team (or when files are edited on Windows), `.md` files may have `\r\n` line endings. The sync script must not break on these files.
+In a cross-platform team (or when files are edited on Windows), `.md` files may have `\r\n` line endings. The system must not break on these files.
+
+> **Design note**: Implementation details (specific stripping mechanisms, function names) are documented in stage 04 design outputs.
 
 <!-- section_id: "674b2369-a64f-4a65-927e-421373f7f726" -->
 ## Test Coverage
 
 - Test 1.5 validates that Windows line ending files are detected as pointer files
-- The script uses `tr -d '\r'` in both `has_pointer_fm` and `extract_fm` to strip carriage returns
 
 <!-- section_id: "21dd5046-2ff2-45fb-ab78-c566524ce559" -->
 ## Known Limitation
 
-The awk-based update mechanism writes Unix-style line endings. If the original file had `\r\n`, the updated line will have `\n` while the rest of the file retains `\r\n`. This is acceptable for most workflows but could be improved.
+Current implementation writes Unix-style line endings on updates. Mixed line endings within a file are acceptable for most workflows but could be improved.

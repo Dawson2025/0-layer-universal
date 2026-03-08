@@ -74,7 +74,7 @@ A system where:
 |   +-- need_02_relative_path_compute    Compute portable relative paths
 |
 +-- 03_trigger_automation/               How pointers validate automatically
-|   +-- need_01_hook_triggers            Claude Code PostToolUse hooks
+|   +-- need_01_hook_triggers            Automated notification on pointer edits
 |   +-- need_02_sync_integration         agnostic-sync.sh end-of-run validation
 |
 +-- 04_uuid_graph_traversal/             How the UUID system supports graph traversal
@@ -98,7 +98,7 @@ The root need is satisfied when:
 - [x] All pointer files use YAML frontmatter with `pointer_to:` and `canonical_entity:`
 - [x] `pointer-sync.sh` resolves all pointers correctly
 - [x] `pointer-sync.sh --validate` exits 0 when all pointers are valid, 1 when any are broken
-- [x] Claude Code hook fires after editing pointer files
+- [x] Editing agent is notified when pointer files are modified
 - [x] `agnostic-sync.sh` reports pointer validation at end of run
 - [x] Creating a new pointer takes <1 minute (fill frontmatter, run script)
 - [x] UUID index supports parent/children graph traversal (`--parent`, `--children`)
@@ -116,3 +116,20 @@ The root need is satisfied when:
 - [ ] Moving a file/directory/entity requires only `mv` + `rebuild-index` (no grep-replace)
 - [ ] Pre-commit hook validates all UUID references resolve to existing paths
 - [ ] Auto-rebuild of UUID index via git hooks (post-checkout, post-merge)
+
+---
+
+<!-- section_id: "3f4a5b6c-7d8e-4f9a-0b1c-2d3e4f5a6b7c" -->
+## Operations View
+
+The needs above translate into three categories of operations:
+
+| Category | Description | Examples |
+|----------|-------------|---------|
+| **Fully Automated** | Deterministic, no judgment — runs without agent | Index rebuilds, pointer validation, UUID assignment, git hooks |
+| **Agent-Assisted** | Requires search, discovery, or creative decisions — agent does it with system-provided interfaces | Entity lookup, UUID resolution, hierarchy navigation, pointer creation |
+| **Hybrid** | Automated trigger, but agent needs to see or act on results | Edit notifications, stale pointer reports, move impact summaries |
+
+> **Design details**: See `stage_3_04_design/outputs/operations_and_interface_design.md` for the full operations inventory, automation decision framework, and agent interface design.
+>
+> **Situational analysis**: See `stage_3_02_research/outputs/operational_situations_analysis.md` for detailed documentation of when, why, and under what conditions each operation is triggered.

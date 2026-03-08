@@ -15,16 +15,9 @@ so that pointer targets are predictable.
 <!-- section_id: "480fe62b-de44-44ba-b145-aa4e5c5733b2" -->
 ## Acceptance Criteria
 
-1. When `find` returns multiple directories matching the entity name, the system uses the first result (`head -1`)
-2. The behavior is documented: first-match-wins, ordered by filesystem traversal
-3. Future enhancement: if ambiguity is detected, warn the user
+1. When multiple entities share the same or similar names, the system MUST resolve deterministically (same input always produces same output)
+2. The resolution strategy MUST be documented so users can predict the outcome
+3. When ambiguity is detected (multiple matches), the system SHOULD warn the user
+4. The user SHOULD have a way to see which entity was selected
 
-<!-- section_id: "41f0919c-1c46-4a4a-8fc5-c56af2c16aba" -->
-## Current Behavior
-
-The script uses `find "$ROOT" -type d -name "$CANONICAL_ENTITY" -path "*/layer_*" | head -1` which selects the first match found by filesystem traversal order. This is deterministic but not user-controllable.
-
-<!-- section_id: "1d048329-9993-45e5-8aeb-ddb86591768a" -->
-## Open Question
-
-Should the system detect ambiguity (multiple matches) and warn? Currently it silently picks the first match. A `--verbose` flag shows which directory was selected, but there's no explicit ambiguity warning.
+> **Design note**: The specific resolution strategy (e.g., first-match-wins, priority ordering, disambiguation prompts) is documented in stage 04 design outputs.

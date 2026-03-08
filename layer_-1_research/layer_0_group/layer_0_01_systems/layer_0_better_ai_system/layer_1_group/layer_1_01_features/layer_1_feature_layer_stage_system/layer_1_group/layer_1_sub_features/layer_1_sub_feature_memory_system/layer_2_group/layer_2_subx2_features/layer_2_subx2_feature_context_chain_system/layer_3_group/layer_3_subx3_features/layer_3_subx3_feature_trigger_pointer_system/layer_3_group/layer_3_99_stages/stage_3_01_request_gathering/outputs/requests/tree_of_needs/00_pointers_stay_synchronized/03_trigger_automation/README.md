@@ -18,7 +18,7 @@ The pointer system must not require manual invocation. This branch defines the t
 
 | Need | Question | Description |
 |------|----------|-------------|
-| need_01_hook_triggers | How do Claude Code hooks trigger sync? | PostToolUse hooks detect pointer edits, remind agents, fire validation |
+| need_01_hook_triggers | How do editing tools trigger sync? | Automated notifications detect pointer edits, remind agents, fire validation |
 | need_02_git_integration | How do git operations trigger sync? | Post-commit/post-checkout hooks detect renames and moves |
 | need_03_change_detection | How do we detect what actually changed? | Diff analysis to identify affected pointers vs full rescan |
 

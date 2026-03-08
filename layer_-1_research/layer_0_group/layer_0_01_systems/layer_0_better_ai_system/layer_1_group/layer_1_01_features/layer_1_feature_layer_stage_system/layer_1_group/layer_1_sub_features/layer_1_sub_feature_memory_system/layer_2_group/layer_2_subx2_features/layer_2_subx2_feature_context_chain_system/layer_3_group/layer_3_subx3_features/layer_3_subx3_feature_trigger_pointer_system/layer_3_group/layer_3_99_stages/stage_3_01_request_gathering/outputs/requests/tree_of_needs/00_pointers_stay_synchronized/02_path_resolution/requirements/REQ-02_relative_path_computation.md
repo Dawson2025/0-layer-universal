@@ -8,15 +8,14 @@ resource_name: "REQ-02_relative_path_computation"
 <!-- section_id: "b7b5638e-dfde-4329-abb7-24e21c3f06de" -->
 ## Requirement
 
-The pointer sync system MUST compute relative paths from the pointer file's directory to the resolved canonical target using `python3 os.path.relpath`.
+The pointer sync system MUST compute correct relative paths from the pointer file's directory to the resolved canonical target.
 
 <!-- section_id: "c493bcbc-49e4-498b-a578-d2812537de9c" -->
 ## Specification
 
-- Input: absolute path of pointer file's parent directory, absolute path of canonical target
+- Input: location of pointer file, location of canonical target
 - Output: relative path string (e.g., `../sibling_entity`, `.`, `../../parent/child`)
-- Depends on: python3 being available in PATH
-- Edge cases:
+- Edge cases MUST be handled:
   - Same directory → `.`
   - Parent directory → `..`
   - Deeply nested → correct chain of `../` segments
@@ -25,7 +24,9 @@ The pointer sync system MUST compute relative paths from the pointer file's dire
 <!-- section_id: "6d9b2ef7-e3d2-4f58-a923-9f3cabc39b49" -->
 ## Rationale
 
-Relative paths ensure pointers survive repository relocation (the repo can be cloned to any absolute path and pointers still work). Using `os.path.relpath` provides a battle-tested implementation.
+Relative paths ensure pointers survive repository relocation (the repo can be cloned to any absolute path and pointers still work).
+
+> **Design note**: Implementation details (specific tools, languages, libraries) are documented in stage 04 design outputs.
 
 <!-- section_id: "51e049d3-c126-4125-8f3b-6e52b492a371" -->
 ## Test Coverage
