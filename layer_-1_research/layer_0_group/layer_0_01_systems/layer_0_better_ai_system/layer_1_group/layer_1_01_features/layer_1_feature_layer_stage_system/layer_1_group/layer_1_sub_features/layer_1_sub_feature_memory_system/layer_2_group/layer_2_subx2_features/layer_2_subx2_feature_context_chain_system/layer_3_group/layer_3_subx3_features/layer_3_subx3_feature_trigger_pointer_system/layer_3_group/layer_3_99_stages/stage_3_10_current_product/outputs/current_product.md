@@ -75,18 +75,68 @@ The pointer sync system's tools are organized into three protocol directories un
 .0agnostic/03_protocols/pointer_sync_protocol/tools/create-resource-indexes.sh --dry-run
 ```
 
+<!-- section_id: "a1b2c3d4-e5f6-4a7b-8c9d-0e1f2a3b4c5d" -->
+## Agent-Friendly Entity Discovery (2026-03-07)
+
+### Primary Interface: Grep on .entity-lookup.tsv
+
+Testing revealed that AI agents systematically prefer Grep/Glob/Read over Bash scripts due to Claude Code's system prompt directives. The entity discovery interface was redesigned to work WITH agent preferences:
+
+```bash
+# Agent uses native Grep tool (preferred):
+Grep pattern="memory" path=".entity-lookup.tsv"
+
+# Each line returns: name<TAB>UUID<TAB>path<TAB>parent_UUID
+# Example result:
+# layer_1_sub_feature_memory_system  f62dcffc-...  layer_-1_research/.../memory_system  8da21493-...
+```
+
+**Why this works**: Grep is the agent's 3rd most preferred tool (after Read and Glob). `.entity-lookup.tsv` is a flat file — one entity per line, tab-separated. Zero friction, single tool call, ~400 tokens of output for 77 matches.
+
+**What replaced**: `entity-find.sh` (Bash script) — agents ignored it in 3/3 test runs because the system prompt says "use Grep instead of grep" and "use Glob instead of find". The script still exists as a CLI tool for human use.
+
+### Secondary Interface: .uuid-index.json via Read
+
+For detailed lookups (full metadata, parent chains, resource types):
+
+```bash
+# Agent reads and mentally parses JSON:
+Read .uuid-index.json
+# Then finds: .uuids["UUID-HERE"].path
+
+# Or via jq in Bash (for scripts, not agents):
+jq -r '.uuids["UUID-HERE"].path // empty' .uuid-index.json
+```
+
+### Hook System: entity-search-redirect.sh
+
+PostToolUse hook fires after Glob/Grep operations. When the search pattern looks like entity discovery (e.g., `*0AGNOSTIC.md`, `*entity_type*`), injects a context tip suggesting Grep on .entity-lookup.tsv.
+
+**Location**: `.0agnostic/06_context_avenue_web/01_file_based/08_hooks/scripts/entity-search-redirect.sh`
+**Registered in**: `.claude/settings.json` (PostToolUse matcher: `Glob|Grep`)
+
+### Known Limitation: Subagent Context
+
+Task tool subagents do NOT receive `.claude/rules/` files. Entity lookup instructions reach subagents via:
+1. CLAUDE.md chain (Critical Rule #5, line ~71)
+2. PostToolUse hooks (fire for subagents — same process)
+3. Task prompt string (explicit instructions from parent agent)
+
 <!-- section_id: "c3d5e7f9-a0b2-4c1d-8e3f-6a7b9c0d2e4f" -->
-## Index Statistics (2026-03-06)
+## Index Statistics (2026-03-07)
 
 | Metric | Count |
 |--------|-------|
 | Total UUID entries | 5,313 |
-| Entity entries | 351 |
+| Entity entries | 351+ |
 | Stage entries | 396 |
 | Resource entries | 4,566 |
 | Entities with parent links | 122 |
 | Entities with children | 34 |
 | Entities with resource indexes | 50 |
+| Entity lookup TSV entries | 382 |
 | Index file size | ~2.6 MB |
+| TSV file size | ~30 KB |
 | Index load time | ~3ms |
 | Single lookup time | <0.03ms |
+| Grep on TSV (typical) | 1 tool call, <500 tokens |
