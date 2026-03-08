@@ -9,12 +9,11 @@
 #        If no directory specified, uses current directory
 #
 # Generates:
-#   - CLAUDE.md      (Claude Code — full STATIC content)
-#   - AGENTS.md      (AutoGen / Codex — full STATIC content)
-#   - GEMINI.md      (Google Gemini — full STATIC content)
-#   - OPENAI.md      (OpenAI — full STATIC content)
-#   - .cursorrules   (Cursor IDE — lean: Identity + Navigation)
-#   - .github/copilot-instructions.md (GitHub Copilot — medium)
+#   - CLAUDE.md      (Claude Code — full content, UUID runtime resolution)
+#   - AGENTS.md      (AutoGen / Codex — full content, UUID runtime resolution)
+#   - GEMINI.md      (Google Gemini — full content, UUID runtime resolution)
+#   - .cursorrules   (Cursor IDE — lean: Identity + Navigation, static paths)
+#   - .github/copilot-instructions.md (GitHub Copilot — medium, static paths)
 #
 # Supports three 0AGNOSTIC.md formats:
 #   - New: Has # ═══ STATIC CONTEXT / # ═══ DYNAMIC CONTEXT markers
@@ -80,32 +79,49 @@ esac
 STATIC_CONTENT=$(echo "$STATIC_CONTENT" | sed '/./,$!d')
 
 # ═══════════════════════════════════════════════
-# UUID Placeholder Resolution
+# UUID Placeholder Resolution (Dual-Mode)
 # ═══════════════════════════════════════════════
-# Resolve {{resolve:UUID}} placeholders to current filesystem paths.
-# UUIDs are stable identifiers; paths are derived at generation time.
-# Usage in 0AGNOSTIC.md: {{resolve:08a4e9bc-8cc1-457e-b966-0a912ae6dff7}}
-# → resolves to: .0agnostic/03_protocols/pointer_sync_protocol/tools/pointer-sync.sh
+# Dual-mode resolution for {{resolve:UUID}} placeholders:
+#   - Runtime mode (CLAUDE.md, AGENTS.md, GEMINI.md): keeps UUID as $(resolve-uuid UUID)
+#     Agent resolves UUID at runtime via .uuid-index.json — survives moves without re-sync
+#   - Static mode (.cursorrules, copilot-instructions.md): resolves to current filesystem path
 
 _SYNC_SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 _SYNC_REPO_ROOT="$(cd "$_SYNC_SCRIPT_DIR/../../../.." && pwd)"
 
+RUNTIME_CONTENT="$STATIC_CONTENT"
+
 if echo "$STATIC_CONTENT" | grep -q '{{resolve:'; then
     source "$_SYNC_REPO_ROOT/.0agnostic/03_protocols/pointer_sync_protocol/tools/resolve-uuid.sh"
     _RESOLVE_LOADED=1
+
+    # Runtime content: {{resolve:UUID}} → $(resolve-uuid UUID)
+    # Agents resolve at runtime — no static paths to go stale
+    RUNTIME_RESOLVED=""
+    while IFS= read -r line; do
+        while [[ "$line" =~ \{\{resolve:([0-9a-f-]+)\}\} ]]; do
+            uuid="${BASH_REMATCH[1]}"
+            line="${line/\{\{resolve:$uuid\}\}/\$(resolve-uuid $uuid)}"
+        done
+        RUNTIME_RESOLVED+="$line"$'\n'
+    done <<< "$STATIC_CONTENT"
+    RUNTIME_CONTENT="$RUNTIME_RESOLVED"
+
+    # Static content: {{resolve:UUID}} → current filesystem path
+    # For tools without shell access (lean formats)
     RESOLVED_CONTENT=""
     while IFS= read -r line; do
         while [[ "$line" =~ \{\{resolve:([0-9a-f-]+)\}\} ]]; do
             uuid="${BASH_REMATCH[1]}"
             resolved_path=$(resolve-uuid "$uuid" 2>/dev/null || echo "UNRESOLVED:$uuid")
-            # Make path relative to repo root
             resolved_path="${resolved_path#$_SYNC_REPO_ROOT/}"
             line="${line/\{\{resolve:$uuid\}\}/$resolved_path}"
         done
         RESOLVED_CONTENT+="$line"$'\n'
     done <<< "$STATIC_CONTENT"
     STATIC_CONTENT="$RESOLVED_CONTENT"
-    echo "Resolved {{resolve:UUID}} placeholders"
+
+    echo "Resolved {{resolve:UUID}} placeholders (runtime + static)"
 fi
 
 # ═══════════════════════════════════════════════
@@ -233,11 +249,12 @@ generate_full() {
     local title="$2"
     local tool="$3"
     local default_bp="$4"
+    local content="${5:-$STATIC_CONTENT}"
 
     {
         echo "# $title"
         echo ""
-        echo "$STATIC_CONTENT"
+        echo "$content"
         # Promoted rules (from hot frontmatter)
         if [ -n "$PROMOTED_RULES" ]; then
             echo "$PROMOTED_RULES"
@@ -305,6 +322,13 @@ This file is auto-generated from 0AGNOSTIC.md. Edit 0AGNOSTIC.md to make changes
 - Use Write/Edit for file modifications
 - Use Task tool for complex multi-step work
 
+### UUID Runtime Resolution
+Tool paths use stable UUIDs that survive moves/renames. When you see $(resolve-uuid UUID) in this file, resolve it to get the current path:
+```bash
+ROOT=$(git rev-parse --show-toplevel)
+jq -r '."UUID" // empty' "$ROOT/.uuid-index.json"
+```
+
 ### Session Continuity
 - Read .0agnostic/episodic_memory/index.md when resuming work
 - Create session files after significant work
@@ -326,6 +350,13 @@ agent_config = {
 }
 ```
 
+### UUID Runtime Resolution
+Tool paths use stable UUIDs that survive moves/renames. When you see $(resolve-uuid UUID) in this file, resolve it to get the current path:
+```bash
+ROOT=$(git rev-parse --show-toplevel)
+jq -r '."UUID" // empty' "$ROOT/.uuid-index.json"
+```
+
 ### Multi-Agent Coordination
 - Check .locks/ before modifying shared files
 - Use atomic writes (temp file → rename)
@@ -344,6 +375,13 @@ Load detailed resources from .0agnostic/ when needed:
 - knowledge/ - Reference information
 - agents/ - Agent definitions
 
+### UUID Runtime Resolution
+Tool paths use stable UUIDs that survive moves/renames. When you see $(resolve-uuid UUID) in this file, resolve it to get the current path:
+```bash
+ROOT=$(git rev-parse --show-toplevel)
+jq -r '."UUID" // empty' "$ROOT/.uuid-index.json"
+```
+
 ### Session Continuity
 Maintain episodic memory in .0agnostic/episodic_memory/:
 - sessions/ - Timestamped session records
@@ -351,31 +389,17 @@ Maintain episodic memory in .0agnostic/episodic_memory/:
 - index.md - Searchable session index
 BPEOF
 
-read -r -d '' OPENAI_BP << 'BPEOF' || true
-
-## OpenAI-Specific Notes
-
-### Function Calling
-When using OpenAI function calling:
-- Read .0agnostic/ resources for detailed instructions
-- Check episodic memory for context
-- Follow multi-agent sync rules for shared files
-
-### Context Window Management
-- 0AGNOSTIC.md is lean (<400 tokens)
-- Load .0agnostic/ resources on-demand
-- Avoid loading everything upfront
-BPEOF
-
 # ═══════════════════════════════════════════════
 # Generate All Files
 # ═══════════════════════════════════════════════
 
-# Full context files (all STATIC content + tool boilerplate)
-generate_full "$DIR/CLAUDE.md" "Claude Code Context" "claude" "$CLAUDE_BP"
-generate_full "$DIR/AGENTS.md" "AutoGen Agent Context" "agents" "$AGENTS_BP"
-generate_full "$DIR/GEMINI.md" "Gemini Context" "gemini" "$GEMINI_BP"
-generate_full "$DIR/OPENAI.md" "OpenAI Context" "openai" "$OPENAI_BP"
+# Full context files (RUNTIME content with UUID refs + tool boilerplate)
+generate_full "$DIR/CLAUDE.md" "Claude Code Context" "claude" "$CLAUDE_BP" "$RUNTIME_CONTENT"
+generate_full "$DIR/AGENTS.md" "AutoGen Agent Context" "agents" "$AGENTS_BP" "$RUNTIME_CONTENT"
+generate_full "$DIR/GEMINI.md" "Gemini Context" "gemini" "$GEMINI_BP" "$RUNTIME_CONTENT"
+
+# Clean up deprecated OPENAI.md if it exists
+[ -f "$DIR/OPENAI.md" ] && rm "$DIR/OPENAI.md" && echo "Removed deprecated: OPENAI.md"
 
 # Lean context files (selected sections only)
 generate_lean "$DIR/.cursorrules" "Cursor Rules" "cursor" "Identity|Navigation"
@@ -496,7 +520,6 @@ echo "Files created:"
 echo "  - CLAUDE.md"
 echo "  - AGENTS.md"
 echo "  - GEMINI.md"
-echo "  - OPENAI.md"
 echo "  - .cursorrules"
 echo "  - .github/copilot-instructions.md"
 if [ "$WARN_COUNT" -gt 0 ]; then
