@@ -13,10 +13,10 @@ Context files (CLAUDE.md, AGENTS.md, GEMINI.md) contain `$(resolve-uuid UUID)` r
 
 ```bash
 ROOT=$(git rev-parse --show-toplevel)
-jq -r '."THE-UUID-HERE" // empty' "$ROOT/.uuid-index.json"
+jq -r '.uuids["THE-UUID-HERE"].path // empty' "$ROOT/.uuid-index.json"
 ```
 
-Do NOT copy `$(resolve-uuid ...)` into a shell command. Do NOT hardcode paths you see in old documentation — always resolve the UUID.
+Do NOT copy `$(resolve-uuid ...)` into a shell command. Do NOT hardcode paths you see in old documentation — always resolve the UUID. UUIDs are nested under `.uuids` in the index and each entry has a `.path` field.
 
 <!-- section_id: "a8b9c0d1-e2f3-4a5b-6c7d-8e9f0a1b2c3d" -->
 ## MANDATORY: Entity Lookup
@@ -25,7 +25,7 @@ When you need to find entities by name, path, or UUID, you MUST use entity-find.
 
 ```bash
 ROOT=$(git rev-parse --show-toplevel)
-ENTITY_FIND=$(jq -r '."f4a2b3c5-d6e7-4f89-a0b1-c2d3e4f5a6b7" // empty' "$ROOT/.uuid-index.json")
+ENTITY_FIND="$ROOT/$(jq -r '.uuids["f4a2b3c5-d6e7-4f89-a0b1-c2d3e4f5a6b7"].path // empty' "$ROOT/.uuid-index.json")"
 $ENTITY_FIND memory         # Find entities matching "memory"
 $ENTITY_FIND --path chain   # Show paths only
 $ENTITY_FIND --uuid memory  # Show UUIDs only

@@ -73,7 +73,7 @@ When any nested repository exists in a child path:
 When finding entities by name, path, or type, you MUST use entity-find.sh. Do NOT use Glob, Grep, or find commands for entity discovery — they miss nested registries, parent chains, and UUID relationships.
 
 ```bash
-ROOT=$(git rev-parse --show-toplevel) && $(jq -r '."f4a2b3c5-d6e7-4f89-a0b1-c2d3e4f5a6b7" // empty' "$ROOT/.uuid-index.json") <search-term>
+ROOT=$(git rev-parse --show-toplevel) && "$ROOT/$(jq -r '.uuids["f4a2b3c5-d6e7-4f89-a0b1-c2d3e4f5a6b7"].path // empty' "$ROOT/.uuid-index.json")" <search-term>
 ```
 
 <!-- section_id: "a1b2c3d4-e5f6-4a7b-8c9d-0e1f2a3b4c5d" -->
@@ -266,9 +266,9 @@ Load detailed resources from .0agnostic/ when needed:
 This file contains $(resolve-uuid UUID) references. These are NOT runnable shell functions. You MUST resolve them before use:
 ```bash
 ROOT=$(git rev-parse --show-toplevel)
-jq -r '."THE-UUID" // empty' "$ROOT/.uuid-index.json"
+jq -r '.uuids["THE-UUID"].path // empty' "$ROOT/.uuid-index.json"
 ```
-Do NOT hardcode paths from this file — always resolve the UUID to get the current path.
+This returns a relative path from repo root. Prefix with $ROOT/ for absolute path. Do NOT hardcode paths — always resolve the UUID.
 
 ### Session Continuity
 Maintain episodic memory in .0agnostic/episodic_memory/:

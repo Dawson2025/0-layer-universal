@@ -27,6 +27,16 @@
             "timeout": 10000
           }
         ]
+      },
+      {
+        "matcher": "Glob|Grep",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \"$CLAUDE_PROJECT_DIR/.0agnostic/06_context_avenue_web/01_file_based/08_hooks/scripts/entity-search-redirect.sh\"",
+            "timeout": 5000
+          }
+        ]
       }
     ]
   }

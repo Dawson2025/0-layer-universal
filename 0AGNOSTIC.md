@@ -71,7 +71,7 @@ When any nested repository exists in a child path:
 When finding entities by name, path, or type, you MUST use entity-find.sh. Do NOT use Glob, Grep, or find commands for entity discovery — they miss nested registries, parent chains, and UUID relationships.
 
 ```bash
-ROOT=$(git rev-parse --show-toplevel) && $(jq -r '."f4a2b3c5-d6e7-4f89-a0b1-c2d3e4f5a6b7" // empty' "$ROOT/.uuid-index.json") <search-term>
+ROOT=$(git rev-parse --show-toplevel) && "$ROOT/$(jq -r '.uuids["f4a2b3c5-d6e7-4f89-a0b1-c2d3e4f5a6b7"].path // empty' "$ROOT/.uuid-index.json")" <search-term>
 ```
 
 <!-- section_id: "a1b2c3d4-e5f6-4a7b-8c9d-0e1f2a3b4c5d" -->
