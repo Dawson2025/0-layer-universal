@@ -123,8 +123,68 @@ Every interface has a token budget. Prefer TSV (~80-530 tokens per query) over J
 | Auto-UUID on entity creation | **A: Fully Automated** | Entity creation skill can call assign-entity-uuids.sh automatically |
 | Move impact notification (C4) | **C: Hybrid** | Automated detection, but agent should know what changed |
 
+<!-- section_id: "f6a7b8c9-d0e1-4f2a-3b4c-5d6e7f8a9b0c" -->
+## 6. Importance Rankings
+
+Operations ranked by criticality to system functioning. **Tier 1** operations must work or the system is broken. **Tier 4** operations are future enhancements.
+
+### Tier 1: Critical — System Broken Without These
+
+| Rank | Op | Operation | Why Critical | Frequency |
+|------|----|-----------|-------------|-----------|
+| 1 | A1 | Rebuild UUID index | Everything downstream depends on an accurate index. Stale index = wrong paths everywhere | On every structural change |
+| 2 | A2 | Rebuild entity lookup TSV | Agent's primary search interface. Without it, agents can't find entities | Generated with A1 |
+| 3 | B1 | Find entities by name/keyword | Most frequent agent operation. First thing agents do in every session | Multiple times per session |
+| 4 | B2 | Resolve UUID to current path | Core of the UUID-based system. UUIDs are meaningless without path resolution | Every UUID encounter |
+| 5 | A3 | Validate all pointers | Only way to confirm system integrity. Without validation, stale pointers go undetected | After every sync, before commits |
+| 6 | A5 | Resolve {{resolve:UUID}} placeholders | Enables UUID-based references in 0AGNOSTIC.md → CLAUDE.md generation. Without it, context files have unresolved placeholders | Every agnostic-sync run |
+
+### Tier 2: High — Major Usability Impact
+
+| Rank | Op | Operation | Why Important | Frequency |
+|------|----|-----------|--------------|-----------|
+| 7 | B3 | Navigate parent/child hierarchy | Agents need this to understand where they are in the system. Fundamental to orientation | Every new context entry |
+| 8 | A4 | Validate pointers after agnostic-sync | Catches breakage immediately after generation — the highest-risk moment for stale pointers | Every agnostic-sync run |
+| 9 | B8 | Find all children of an entity | Common navigation need. Managers need to know what's under them | Multiple times per session |
+| 10 | C2 | Pointer edit reminder | Prevents the most common failure mode: agent edits a pointer and forgets to validate | Every pointer file edit |
+| 11 | A6 | Assign UUIDs to new files | Without this, new files lack identity. Manual UUID assignment is error-prone | Every new file creation |
+| 12 | A7 | Assign UUIDs to new entities | Same as A6 but for entities (entity_id vs resource_id) | Every new entity creation |
+
+### Tier 3: Medium — Valuable, System Works Without
+
+| Rank | Op | Operation | Value | Frequency |
+|------|----|-----------|-------|-----------|
+| 13 | B9 | Trace full parent chain to root | Needed for deep context loading, but agents usually don't traverse the full chain | Occasional |
+| 14 | A8 | Generate per-entity resource indexes | Powers B6 (resource lookups). Useful for discovery but agents can also just browse .0agnostic/ | Periodic maintenance |
+| 15 | B6 | Look up resource metadata | Nice-to-have for entity exploration. Agents can browse directories directly | Occasional |
+| 16 | B4 | Create new pointer files | Agent can write frontmatter manually without system help. Template just makes it easier | When creating pointers |
+| 17 | B5 | Edit existing pointer files | Agent does this naturally with Edit tool. System just reminds about validation | When editing pointers |
+| 18 | C1 | Entity search hint | Helpful nudge when agent is searching inefficiently, but agent can figure it out | When agent uses suboptimal search |
+| 19 | C3 | Stale pointer report | Diagnostic output. Useful but only matters when things are already broken | After validation failure |
+| 20 | B7 | Query entities by type/filter | Partially implemented. Regex on TSV works, but no dedicated filter interface | Occasional |
+
+### Tier 4: Future — Not Yet Implemented, High Value When Done
+
+| Rank | Op | Operation | Expected Impact | Priority |
+|------|----|-----------|----------------|----------|
+| 21 | A10 | Auto-rebuild index on git operations | Eliminates the most common "stale index" problem. Agent never starts a session with bad data | **HIGH** — should be next implemented |
+| 22 | A9 | Detect renames/moves on git operations | Enables fully automated pointer repair after moves. Currently requires manual sync | **HIGH** — enables the vision |
+| 23 | A11 | Pre-commit pointer validation | Last safety net. Prevents broken pointers from ever reaching remote | **MEDIUM** — hook exists but optional |
+| 24 | A12 | Incremental index rebuild | Performance optimization for large repos. Full rebuild works now but gets slower as repo grows | **LOW** — optimize when needed |
+| 25 | C4 | Move impact summary | Informational. Agent sees what changed after automated moves. Nice but not blocking | **LOW** — convenience feature |
+
+### Summary by Tier
+
+| Tier | Count | Status | Coverage |
+|------|-------|--------|----------|
+| Tier 1: Critical | 6 operations | All implemented | 100% |
+| Tier 2: High | 6 operations | All implemented | 100% |
+| Tier 3: Medium | 8 operations | 7 implemented, 1 partial | 88% |
+| Tier 4: Future | 5 operations | 0 implemented | 0% |
+| **Total** | **25 operations** | **19 implemented** | **76%** |
+
 <!-- section_id: "e5f6a7b8-c9d0-4e1f-2a3b-4c5d6e7f8a9b" -->
-## 6. Relationship to Tree of Needs
+## 7. Relationship to Tree of Needs
 
 | Tree Branch | Primary Operations | Category |
 |-------------|-------------------|----------|
